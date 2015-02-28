@@ -1,0 +1,50 @@
+Lix hacker's guide
+==================
+
+How to use and hack on the Lix source.
+
+
+
+Building Lix
+------------
+
+See this file: doc/build.txt
+
+It has instructions on how to install a D compiler, the build system dub,
+and the required libraries.
+
+
+
+Lix code style
+--------------
+
+I like C++ headers as documentation for myself, and I don't like
+automatically generated documentation. In D, I'm therefore doing something
+similar to a header, I declare the methods at the top of each module before
+they are defined below in the same module.
+
+The drawback of this, of course, is redundancy. One has to watch out that
+the declaration and definition have the same signature. A definition is
+also a declaration, so the "header" could get out of date without stopping
+the compilation. It's not necessary in D to forward-declare.
+
+
+
+Notes about D
+-------------
+
+*   To search the web, use "dlang" in your query. e.g., "dlang writefln"
+
+*   const int* foo() { ... } is the same as int* foo() const { ... }, both
+    are valid D and do what the latter would have done in C++: make the method
+    callable on a const class object. If you want to return a const pointer:
+    const (int*) foo() { ... }; a pointer to const int: const(int)* foo().
+
+*   To do formatted output to stdout, use writefln() in std.stdio, which works
+    like printf(). The equivalent to C's sprintf() is format() in std.string,
+    which returns a D string.
+
+*   D is garbage-collected by default. You can still do RAII by alloceating
+    resources in the constructor this(), and deallocate in ~this(). To invoke
+    the deallocation at the correct time, call clear(myobject), which calls
+    the destructor and prevents automatic calls to the destructor later.

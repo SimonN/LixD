@@ -1,0 +1,4 @@
+# Lix D port gitignore
+
+.dub
+lix
