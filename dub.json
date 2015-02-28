@@ -1,0 +1,14 @@
+{
+    "name": "Lix",
+    "description": "Single- and multiplayer puzzle game, inspired by Lemmings",
+    "homepage": "http://asdfasdf.ethz.ch/~simon/",
+    "copyright": "public domain",
+    "authors": ["Simon N."],
+
+    "dependencies": {
+        "allegro": "~master"
+    },
+    "subConfigurations": {
+        "allegro": "all-addons"
+    }
+}
