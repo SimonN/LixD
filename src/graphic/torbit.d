@@ -32,6 +32,7 @@ public:
     void set_torus_y (bool b = true)  { ty = b; }
     void set_torus_xy(bool x, bool y) { tx = x; ty = y; }
 
+    // drawing functions
     void draw_from(AlBit, int x = 0, int y = 0,
                    bool mirr = false, double rot = 0, double scal = 0);
 
@@ -82,6 +83,30 @@ this(const Torbit rhs)
 
 invariant()
 {
+    if (bitmap) {
+        assert (xl == al_get_bitmap_width (cast (AlBit) bitmap));
+        assert (yl == al_get_bitmap_height(cast (AlBit) bitmap));
+    }
+}
+
+
+
+void resize(int _xl, int _yl)
+{
+    if (bitmap) al_destroy_bitmap(bitmap);
+    xl = _xl;
+    yl = _yl;
+    bitmap = albit_create(xl, yl);
+    assert (bitmap);
+}
+
+
+
+private void use_drawing_delegate(
+    void delegate(int, int) drawing_delegate,
+    int x,
+    int y
+) {
     assert (bitmap);
     assert (xl == al_get_bitmap_width (cast (AlBit) bitmap));
     assert (yl == al_get_bitmap_height(cast (AlBit) bitmap));
@@ -114,39 +139,78 @@ void draw_from(
         draw_from_at =
          delegate void(int x_at, int y_at)
         {
+            immutable int xsl = al_get_bitmap_width (bit);
+            immutable int ysl = al_get_bitmap_height(bit);
+            al_draw_rectangle(x_at + 0.5, y_at + 0.5, x_at + xsl - 0.5, y_at + ysl - 0.5, AlCol(0.6, 0.6, 0, 1), 3);
+            al_draw_rectangle(x_at + 0.5, y_at + 0.5, x_at + xsl - 0.5, y_at + ysl - 0.5, AlCol(0, 0.5, 1, 1), 1);
             al_draw_bitmap(bit, x_at, y_at, ALLEGRO_FLIP_VERTICAL * mirr);
+            al_draw_pixel(x_at, y_at, AlCol(1,1,1,1));
         };
     }
     else if (rot == 2 && ! scal) {
         draw_from_at =
          delegate void(int x_at, int y_at)
         {
+            immutable int xsl = al_get_bitmap_width (bit);
+            immutable int ysl = al_get_bitmap_height(bit);
+            al_draw_rectangle(x_at + 0.5, y_at + 0.5, x_at + xsl - 0.5, y_at + ysl - 0.5, AlCol(0.6, 0.6, 0, 1), 3);
+            al_draw_rectangle(x_at + 0.5, y_at + 0.5, x_at + xsl - 0.5, y_at + ysl - 0.5, AlCol(0, 0.5, 1, 1), 1);
             al_draw_bitmap(bit, x_at, y_at,
              (ALLEGRO_FLIP_VERTICAL * !mirr) | ALLEGRO_FLIP_HORIZONTAL);
+            al_draw_pixel(x_at, y_at, AlCol(1,1,1,1));
         };
     }
     else {
-        // everything will be much simpler for these values of r, we don't
-        // have to fix rounding mistakes then
-        bool b = (rot == 0 || rot == 2);
+        // We don't expect non-square things to be rotated by non-integer
+        // amounts of quarter turns. Squares will have xdr = ydr = 0 in this
+        // scope, see the variable definitions below.
+        // The non-square terrain will only be rotated in steps of quarter
+        // turns, and its top-left corner after rotation shall remain at
+        // the specified level coordinates, no matter how it's rotated.
+        // Terrain rotated by 0 or 2 quarter turns has already been managed
+        // by the (if)s above. Now, we'll be doing a noncontinuous jump at
+        // exactly 1 and 3 quarter turns, which will manage the terrain well,
+        // and doesn't affect continuous rotations of squares anyway.
+        immutable bool b = (rot == 1 || rot == 3);
 
         // x/y-length of the source bitmap
         immutable int xsl = al_get_bitmap_width (bit);
         immutable int ysl = al_get_bitmap_height(bit);
-        int xdr = xsl/2;
-        int ydr = ysl/2;
 
-        // fixed sind die Allegro-Typen, die die Sprite-Funktionen wollen
-        draw_from_at =
+        // We don't want to rotate around the center point of the source
+        // bitmap. That would only be the case if the source is a square.
+        // We wish to have the top-left corner of the rotated shape at x/y
+        // whenever we perform a multiple of a quarter turn.
+        // TODO: Test this on Linux and Windows, whether it generates the same
+        // terrain.
+        float xdr = b ? ysl/2.0 : xsl/2.0;
+        float ydr = b ? xsl/2.0 : ysl/2.0;
+
+        if (! scal) draw_from_at =
+         delegate void(int x_at, int y_at)
+        {
+            al_draw_rectangle(x_at + 0.5, y_at + 0.5, x_at + xsl - 0.5, y_at + ysl - 0.5, AlCol(0.6, 0.6, 0, 1), 3);
+            al_draw_rectangle(x_at + 0.5, y_at + 0.5, x_at + xsl - 0.5, y_at + ysl - 0.5, AlCol(0, 0.5, 1, 1), 1);
+            al_draw_rotated_bitmap(bit,
+                xsl/2.0,
+                ysl/2.0,
+                xdr + x_at,
+                ydr + y_at,
+                rot * ALLEGRO_PI / 2,
+                mirr ? ALLEGRO_FLIP_VERTICAL : 0
+            );
+            al_draw_pixel(x_at, y_at, AlCol(1,1,1,1));
+        };
+        else draw_from_at =
          delegate void(int x_at, int y_at)
         {
             al_draw_scaled_rotated_bitmap(bit,
-                xdr,
-                ydr,
-                x_at + xdr,
-                y_at + ydr,
-                scal ? scal : 1,
-                scal ? scal : 1,
+                xsl/2.0,
+                ysl/2.0,
+                xdr + x_at,
+                ydr + y_at,
+                scal,
+                scal,
                 rot * ALLEGRO_PI / 2,
                 mirr ? ALLEGRO_FLIP_VERTICAL : 0
             );
@@ -163,38 +227,12 @@ void draw_from(
     if (tx && ty) draw_from_at(x - xl, y - yl);
 }
 
-/*
-
-        // rotate_sprite dreht leider um das Zentrum und hat obendrein
-        // wuselige Angewohnheiten, wann bei ungeraden Laengen nach vorn
-        // oder hinten gerundet wird. Mein Algorithmus faengt das auf.
-
-        // Wir koennen Truemmer trotzdem mit dieser Methode zeichnen!
-        // Fuer xl == yl liefert dies gerade wieder das Urspruengliche!
-
-        //  draw position   move the center     correct rounding mistakes
-        int xdr = b ? 0  :  0 - xsl/2 + ysl/2 - ((xsl + ysl)%2 && xsl < ysl);
-        int ydr = b ? 0  :  0 - ysl/2 + xsl/2 - ((xsl + ysl)%2 && ysl < xsl);
-
-        // fixing additional, very stupid rounding mistakes from Allegro 4,
-        // these brought desyncs between the Linux and Windows versions
-        if (!b && xsl%2 == 1 && ysl%2 == 0 && ysl < xsl) {
-            --xdr;
-            ++ydr;
-        }
-        else if (!b && xsl%2 == 0 && ysl%2 == 1 && xsl < ysl) {
-            ++xdr;
-            --ydr;
-        }
-*/
-
 
 
 void copy_to_screen()
 {
     AlBit last_target = al_get_target_bitmap();
     scope (exit) al_set_target_bitmap(last_target);
-
     al_set_target_backbuffer(alleg5.display);
 
     al_draw_bitmap(bitmap, 0, 0, 0);

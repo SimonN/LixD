@@ -1,5 +1,4 @@
 import alleg5;
-import std.stdio;
 import torbit;
 
 class MainLoop {
@@ -12,7 +11,7 @@ public:
 private:
 
     bool   exit;
-    AlBit  wurstbit;
+    AlBit[] wuerste;
     Torbit osd;
 
     void process_events();
@@ -27,12 +26,18 @@ void main_loop()
 {
     exit = false;
 
-    wurstbit = al_load_bitmap("./images/piece.png");
-    al_convert_mask_to_alpha(wurstbit, AlCol(1, 0, 1, 1));
-
+    foreach (i; 0 .. 4) {
+        AlBit wurst = albit_create(50 + 31 * (i % 2), 50 + 21 * (i/2));
+        mixin(temp_target!"wurst");
+        al_clear_to_color(AlCol(1,0,0,1));
+        wuerste ~= wurst;
+    }
     scope (exit) {
-        if (wurstbit) al_destroy_bitmap(wurstbit);
-        wurstbit = null;
+        foreach (ref wurst; wuerste) {
+            if (wurst) al_destroy_bitmap(wurst);
+            wurst = null;
+        }
+        assert (wuerste[0] == null);
     }
 
     osd = new Torbit(alleg5.map_xl, alleg5.map_yl, true, true);
@@ -77,21 +82,31 @@ void process_events()
 }
 
 
+double wurstrotation(int tick)
+{
+    int phase = tick / 150;
+    int mod = tick % 150;
+
+    if (mod >= 100) {
+        mod = 0;
+        phase += 1;
+    }
+    return phase + mod / 100.0;
+}
+
 
 void calc()
 {
     int tick = al_get_timer_count(alleg5.timer) % (2 << 30);
-    import std.string;
-    al_set_window_title(alleg5.display, format("%d", tick).toStringz);
-    writefln("%d" ~ (tick % 60 == 0 ? "------------" : ""), tick);
 
     mixin(temp_target!"osd.get_albit()");
     al_clear_to_color(AlCol(0, 0, 0, 1));
-    al_draw_triangle(20 + tick, 20, 30, 30, 40, 20, AlCol(1, 1, 1, 1), 2);
+    al_draw_triangle(20 + tick, 20, 30, 80, 40, 20, AlCol(1, 1, 1, 1), 2);
 
-    osd.draw_from(wurstbit, 100 + tick, 100, false, tick / 100.0);
-    osd.draw_from(wurstbit, 200 + tick, 100, true);
-    osd.draw_from(wurstbit, 100 + tick, 200);
+    osd.draw_from(wuerste[0], 100 + 0, 100, false, wurstrotation(tick));
+    osd.draw_from(wuerste[1], 200 + 0, 100, true, wurstrotation(tick/2));
+    osd.draw_from(wuerste[2], 100 + 0, 200, true, wurstrotation(tick/3));
+    osd.draw_from(wuerste[3], 200 + 0, 200, false, wurstrotation(tick/5));
 }
 
 
