@@ -12,7 +12,6 @@ public:
 private:
 
     bool   exit;
-    int    tick;
     AlBit  wurstbit;
     Torbit osd;
 
@@ -27,11 +26,10 @@ public:
 void main_loop()
 {
     exit = false;
-    tick = 0;
 
-    wurstbit = albit_create(50, 35);
-    al_set_target_bitmap(wurstbit);
-    al_clear_to_color(AlCol(0, 0, 0, 1));
+    wurstbit = al_load_bitmap("./images/piece.png");
+    al_convert_mask_to_alpha(wurstbit, AlCol(1, 0, 1, 1));
+
     scope (exit) {
         if (wurstbit) al_destroy_bitmap(wurstbit);
         wurstbit = null;
@@ -39,13 +37,18 @@ void main_loop()
 
     osd = new Torbit(alleg5.map_xl, alleg5.map_yl, true, true);
 
+    long last_tick;
+
     while (true) {
+        last_tick = al_get_timer_count(alleg5.timer);
         process_events();
         if (exit) break;
         calc();
-        draw(); // we're not doing too well with frameskipping right now
+        draw();
 
-        ++tick;
+        while (last_tick == al_get_timer_count(alleg5.timer)) {
+            //al_rest(0.001);
+        }
     }
 }
 
@@ -77,17 +80,18 @@ void process_events()
 
 void calc()
 {
-    al_set_target_bitmap(wurstbit);
-    al_clear_to_color(AlCol(tick % 400 / 400.0, tick % 95 / 95.0, 0, 1));
+    int tick = al_get_timer_count(alleg5.timer) % (2 << 30);
+    import std.string;
+    al_set_window_title(alleg5.display, format("%d", tick).toStringz);
+    writefln("%d" ~ (tick % 60 == 0 ? "------------" : ""), tick);
 
-    al_set_target_backbuffer(alleg5.display);
-    al_clear_to_color(AlCol(tick/600.0, 0.3, 1-(tick/800.0), 1));
-    al_draw_triangle(20, 20, 300, 30, 200, 200, AlCol(1, 1, 1, 1), 4);
+    mixin(temp_target!"osd.get_albit()");
+    al_clear_to_color(AlCol(0, 0, 0, 1));
+    al_draw_triangle(20 + tick, 20, 30, 30, 40, 20, AlCol(1, 1, 1, 1), 2);
 
-    import std.conv;
-    import std.math;
-    foreach (i; 0 .. 1) osd.draw_from(wurstbit, tick,
-        to!int(100 + tick / 2.1 + sin(tick / 300.0) * 40.0));
+    osd.draw_from(wurstbit, 100 + tick, 100, false, tick / 100.0);
+    osd.draw_from(wurstbit, 200 + tick, 100, true);
+    osd.draw_from(wurstbit, 100 + tick, 200);
 }
 
 
@@ -96,7 +100,6 @@ void draw()
 {
     osd.copy_to_screen();
     al_flip_display();
-    //al_wait_for_vsync();
 }
 
 }

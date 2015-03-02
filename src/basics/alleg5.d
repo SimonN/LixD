@@ -15,6 +15,7 @@ AlBit albit_create(int xl, int yl);
 
 ALLEGRO_DISPLAY*     display;
 ALLEGRO_EVENT_QUEUE* queue;
+ALLEGRO_TIMER*       timer;
 
 int map_xl = 640;
 int map_yl = 400;
@@ -27,8 +28,15 @@ void initialize_allegro_5()
 {
     al_init();
 
+    // set the timer to 60 Hz
+    timer = al_create_timer(1.0 / 60.0);
+    al_start_timer(timer);
+    assert (timer);
+
     display    = al_create_display(map_xl, map_yl);
     queue      = al_create_event_queue();
+
+    al_set_window_title(display, "Slowpoke likes A5.");
 
     al_install_keyboard();
     al_install_mouse();
@@ -48,6 +56,9 @@ void initialize_allegro_5()
 
 void deinitialize_allegro_5()
 {
+    al_stop_timer(timer);
+    al_destroy_timer(timer);
+    timer = null;
 }
 
 
@@ -66,4 +77,14 @@ AlBit albit_create(int xl, int yl)
     assert (al_get_bitmap_height(ret) == yl);
 
     return ret;
+}
+
+
+
+template temp_target(string bitmap)
+{
+    const char[] temp_target = "
+    AlBit last_target_before_" ~ bitmap[0] ~ " = al_get_target_bitmap();
+    scope (exit) al_set_target_bitmap(last_target_before_" ~ bitmap[0] ~ ");
+    al_set_target_bitmap(" ~ bitmap  ~ ");";
 }

@@ -1,7 +1,7 @@
 Lix hacker's guide
 ==================
 
-How to use and hack on the Lix source.
+How to use and hack the Lix source.
 
 
 
@@ -18,15 +18,16 @@ and the required libraries.
 Lix code style
 --------------
 
-I like C++ headers as documentation for myself, and I don't like
-automatically generated documentation. In D, I'm therefore doing something
-similar to a header, I declare the methods at the top of each module before
-they are defined below in the same module.
+I like C++ headers as documentation for myself, and I don't like the extensive
+commenting for auto-generated documentation in my own source. Therefore, in D,
+I'm writing in each module something similar to a header: I forward-declare
+the methods at the top before they are defined below in the same module.
 
 The drawback of this, of course, is redundancy. One has to watch out that
 the declaration and definition have the same signature. A definition is
 also a declaration, so the "header" could get out of date without stopping
-the compilation. It's not necessary in D to forward-declare.
+the compilation. It's not necessary in D to forward-declare, and it's outright
+forbidden for the destructor ~this() and the contract invariant().
 
 
 

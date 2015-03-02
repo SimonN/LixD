@@ -63,7 +63,7 @@ can build the release version instead:
 
     dub -b release-nobounds
 
-The release version will run faster, but cannot output useful information
+The release version might run faster, but cannot output useful information
 in case of a crash.
 
 
