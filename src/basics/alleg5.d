@@ -36,7 +36,7 @@ void initialize_allegro_5()
     display    = al_create_display(map_xl, map_yl);
     queue      = al_create_event_queue();
 
-    al_set_window_title(display, "Slowpoke likes A5.");
+    al_set_window_title(display, "Nagetier, Allegro 5.");
 
     al_install_keyboard();
     al_install_mouse();
@@ -87,4 +87,15 @@ template temp_target(string bitmap)
     AlBit last_target_before_" ~ bitmap[0] ~ " = al_get_target_bitmap();
     scope (exit) al_set_target_bitmap(last_target_before_" ~ bitmap[0] ~ ");
     al_set_target_bitmap(" ~ bitmap  ~ ");";
+}
+
+
+
+template temp_lock(string bitmap)
+{
+    const char[] temp_lock = "
+    ALLEGRO_LOCKED_REGION* lock_" ~ bitmap[0] ~ " = al_lock_bitmap("
+     ~ bitmap ~ ", al_get_bitmap_format("
+     ~ bitmap ~ "), ALLEGRO_LOCK_READWRITE);
+    scope (exit) if (lock_" ~ bitmap[0] ~ ") al_unlock_bitmap(" ~bitmap~ ");";
 }

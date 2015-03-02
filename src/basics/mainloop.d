@@ -26,7 +26,10 @@ void main_loop()
 {
     exit = false;
 
-    foreach (i; 0 .. 4) {
+    wuerste ~= al_load_bitmap("./images/piece.png");
+    assert (wuerste[0]);
+    al_convert_mask_to_alpha(wuerste[0], AlCol(1,0,1,1));
+    foreach (i; 1 .. 4) {
         AlBit wurst = albit_create(50 + 31 * (i % 2), 50 + 21 * (i/2));
         mixin(temp_target!"wurst");
         al_clear_to_color(AlCol(1,0,0,1));
@@ -52,7 +55,7 @@ void main_loop()
         draw();
 
         while (last_tick == al_get_timer_count(alleg5.timer)) {
-            //al_rest(0.001);
+            al_rest(0.001);
         }
     }
 }
@@ -103,10 +106,14 @@ void calc()
     al_clear_to_color(AlCol(0, 0, 0, 1));
     al_draw_triangle(20 + tick, 20, 30, 80, 40, 20, AlCol(1, 1, 1, 1), 2);
 
+    osd.draw_rectangle(100 + tick*2, 100 + tick*3, 130, 110, AlCol(0.2, 1, 0.3, 1));
     osd.draw_from(wuerste[0], 100 + 0, 100, false, wurstrotation(tick));
     osd.draw_from(wuerste[1], 200 + 0, 100, true, wurstrotation(tick/2));
     osd.draw_from(wuerste[2], 100 + 0, 200, true, wurstrotation(tick/3));
     osd.draw_from(wuerste[3], 200 + 0, 200, false, wurstrotation(tick/5));
+
+    osd.replace_color_in_rect(220, 220, 100, 100, AlCol(1,0,0,1), AlCol(0.8,0.9,0,1));
+    osd.replace_color_in_rect(220, 220, 100, 100, AlCol(0,0,0,1), AlCol(0.2,0.4,0,1));
 }
 
 
