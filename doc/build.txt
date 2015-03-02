@@ -1,7 +1,7 @@
 How to build Lix from source
 ============================
 
-Lix is written in the D Programming Language and uses SDL 2.0.
+Lix is written in the D Programming Language and uses Allegro 5.
 
 I'm describing the build process for Linux. It should be very similar for
 Windows. I don't know where you install libraries, though.
@@ -40,8 +40,7 @@ We need the following libraries:
 
 * zlib
 * libpng
-* SDL2
-* SDL2-image, this is a separate library, installing SDL 2.0 won't suffice
+* Allegro 5
 * enet, not needed right now, this is the networking library
 
 You can get these from your distribution. Alternatively, go to the libraries'
@@ -58,6 +57,14 @@ Open a shell, navigate to Lix's root directory, and run
 
 without arguments. dub will read the Lix packaging information in dub.json
 and build the game, then run it.
+
+The above command builds the debugging version. For maximum performance, you
+can build the release version instead:
+
+    dub -b release-nobounds
+
+The release version will run faster, but cannot output useful information
+in case of a crash.
 
 
 

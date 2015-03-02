@@ -14,8 +14,6 @@ void deinitialize_allegro_5();
 AlBit albit_create(int xl, int yl);
 
 ALLEGRO_DISPLAY*     display;
-AlBit                pre_screen;
-
 ALLEGRO_EVENT_QUEUE* queue;
 
 int map_xl = 640;
@@ -30,7 +28,6 @@ void initialize_allegro_5()
     al_init();
 
     display    = al_create_display(map_xl, map_yl);
-    pre_screen = albit_create     (map_xl, map_yl);
     queue      = al_create_event_queue();
 
     al_install_keyboard();
@@ -62,5 +59,11 @@ AlBit albit_create(int xl, int yl)
      &~ ALLEGRO_MEMORY_BITMAP);
     scope (exit) al_set_new_bitmap_flags(default_new_bitmap_flags);
 
-    return al_create_bitmap(xl, yl);
+    AlBit ret = al_create_bitmap(xl, yl);
+
+    assert (ret);
+    assert (al_get_bitmap_width (ret) == xl);
+    assert (al_get_bitmap_height(ret) == yl);
+
+    return ret;
 }

@@ -1,5 +1,6 @@
 import alleg5;
 import std.stdio;
+import torbit;
 
 class MainLoop {
 
@@ -10,9 +11,10 @@ public:
 
 private:
 
-    bool  exit;
-    int   tick;
-    AlBit wurstbit;
+    bool   exit;
+    int    tick;
+    AlBit  wurstbit;
+    Torbit osd;
 
     void process_events();
     void calc();
@@ -27,14 +29,19 @@ void main_loop()
     exit = false;
     tick = 0;
 
-    wurstbit = albit_create(310, 380);
+    wurstbit = albit_create(50, 35);
+    al_set_target_bitmap(wurstbit);
+    al_clear_to_color(AlCol(0, 0, 0, 1));
     scope (exit) {
         if (wurstbit) al_destroy_bitmap(wurstbit);
         wurstbit = null;
     }
 
-    while (! exit) {
+    osd = new Torbit(alleg5.map_xl, alleg5.map_yl, true, true);
+
+    while (true) {
         process_events();
+        if (exit) break;
         calc();
         draw(); // we're not doing too well with frameskipping right now
 
@@ -70,19 +77,24 @@ void process_events()
 
 void calc()
 {
-    al_set_target_bitmap(alleg5.pre_screen);
-    al_clear_to_color(AlCol(tick/600.0, 0.5, 1-(tick/800.0), 1));
+    al_set_target_bitmap(wurstbit);
+    al_clear_to_color(AlCol(tick % 400 / 400.0, tick % 95 / 95.0, 0, 1));
+
+    al_set_target_backbuffer(alleg5.display);
+    al_clear_to_color(AlCol(tick/600.0, 0.3, 1-(tick/800.0), 1));
     al_draw_triangle(20, 20, 300, 30, 200, 200, AlCol(1, 1, 1, 1), 4);
-    foreach (i; 0 .. 10) al_draw_bitmap(wurstbit, tick + 20, 100 + 10*i, 0);
+
+    import std.conv;
+    import std.math;
+    foreach (i; 0 .. 1) osd.draw_from(wurstbit, tick,
+        to!int(100 + tick / 2.1 + sin(tick / 300.0) * 40.0));
 }
 
 
 
 void draw()
 {
-    // draw prescreen to screen
-    al_set_target_backbuffer(alleg5.display);
-    al_draw_bitmap(pre_screen, 0, 0, 0);
+    osd.copy_to_screen();
     al_flip_display();
     //al_wait_for_vsync();
 }
