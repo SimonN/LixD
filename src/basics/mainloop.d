@@ -3,6 +3,7 @@ module basics.mainloop;
 import basics.alleg5;
 import file.filename;
 import graphic.cutbit;
+import graphic.textout;
 import graphic.torbit;
 
 class MainLoop {
@@ -124,6 +125,11 @@ void calc()
     mycut.draw(osd, 300 + to!int(40*sin(tick/41.0)),
                     300 + to!int(30*sin(tick/25.0)),
                     to!int(2.5 + 2.49 * sin(tick/20.0))); // x_frame
+
+    drtx(osd, "Hi with a TTF font from Allegro 5.", 300, 100);
+    drtx(osd, "Non-square rectangles jump when they", 300, 120);
+    drtx(osd, "finish a half rotation, this is intended.", 300, 140);
+
 }
 
 

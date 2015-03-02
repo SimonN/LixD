@@ -7,8 +7,12 @@ public import allegro5.allegro_font;
 public import allegro5.allegro_ttf;
 public import allegro5.allegro_color;
 
+import graphic.color;
+import graphic.textout;
+
 alias ALLEGRO_BITMAP* AlBit;
 alias ALLEGRO_COLOR   AlCol;
+alias ALLEGRO_FONT*   AlFont;
 
 void initialize_allegro_5();
 void deinitialize_allegro_5();
@@ -51,6 +55,9 @@ void initialize_allegro_5()
 
     default_new_bitmap_flags = al_get_new_bitmap_flags();
 
+    graphic.color.initialize();
+    graphic.textout.initialize();
+
     al_register_event_source(queue, al_get_display_event_source(display));
     al_register_event_source(queue, al_get_keyboard_event_source());
     al_register_event_source(queue, al_get_mouse_event_source());
@@ -60,6 +67,12 @@ void initialize_allegro_5()
 
 void deinitialize_allegro_5()
 {
+    graphic.textout.deinitialize();
+    graphic.color.deinitialize();
+
+    al_shutdown_font_addon();
+    al_shutdown_ttf_addon();
+
     al_stop_timer(timer);
     al_destroy_timer(timer);
     timer = null;
