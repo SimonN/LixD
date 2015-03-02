@@ -1,23 +1,12 @@
+module graphic.torbit;
+
 import std.math; // fmod, abs
 import std.algorithm; // minPos
 
-import alleg5;
-import help; // positive_mod
+import basics.alleg5;
+import basics.help; // positive_mod
 
 class Torbit {
-
-private:
-
-    AlBit bitmap;
-
-    int  xl;
-    int  yl;
-    bool tx;
-    bool ty;
-
-    void use_drawing_delegate(void delegate(int, int), int x, int y);
-
-public:
 
     this(int xl, int yl, bool tx = false, bool ty = false);
     this(const Torbit rhs);
@@ -30,7 +19,7 @@ public:
     bool get_torus_x() const { return tx; }
     bool get_torus_y() const { return ty; }
 
-    void resize      (int, int);
+    void resize(int, int);
 
     void set_torus_x (bool b = true)  { tx = b; }
     void set_torus_y (bool b = true)  { ty = b; }
@@ -46,7 +35,12 @@ public:
     //                            px   py   Rx   Ry   Rxl  Ryl
     bool   get_point_in_rectangle(int, int, int, int, int, int) const;
 
-    void draw_from(AlBit, int x = 0, int y = 0,
+    void draw     (Torbit, int x = 0, int y = 0) const
+        { assert(false, "Torbit.draw to Torbit not implemented"); }
+    void draw     (AlBit,  int x = 0, int y = 0, int rxl=0, int ryl=0) const
+        { assert(false, "Torbit.draw to AlBit not implemented"); }
+
+    void draw_from(AlBit,  int x = 0, int y = 0,
                    bool mirr = false, double rot = 0, double scal = 0);
 
     void copy_to_screen();
@@ -55,14 +49,29 @@ public:
     void  set_pixel     (int, int, AlCol);
     AlCol get_pixel     (int, int) const;
 
-    // rectangles are specified by Rx, Ry, Rxl, Ryl, unlike Allegro 4
+    // rectangles are given by Rx,  Ry,  Rxl, Ryl
     void draw_rectangle       (int, int, int, int, AlCol);
     void draw_filled_rectangle(int, int, int, int, AlCol);
 
     // These methods are very slow, try not to use them each tick.
-    // They're locking the entire (this.bitmap), which may be very large.
+    // You should lock (Torbit.get_albit()) before calling these functions,
+    // they do not lock the bitmap themselves.
     void replace_color        (AlCol, AlCol);
     void replace_color_in_rect(int, int, int, int, AlCol, AlCol);
+
+private:
+
+    AlBit bitmap;
+
+    // height and width of bitmap ("x-length" and "y-length")
+    int  xl;
+    int  yl;
+
+    // torus property in either direction, making edges of the bitmap loop
+    bool tx;
+    bool ty;
+
+    void use_drawing_delegate(void delegate(int, int), int x, int y);
 
 
 
@@ -195,7 +204,7 @@ private void use_drawing_delegate(
     assert (bitmap);
     assert (drawing_delegate != null);
 
-    mixin(alleg5.temp_target!"bitmap");
+    mixin(temp_target!"bitmap");
     if (true    ) drawing_delegate(x,      y     );
     if (tx      ) drawing_delegate(x - xl, y     );
     if (      ty) drawing_delegate(x,      y - yl);
@@ -230,25 +239,15 @@ void draw_from(
         draw_from_at =
          delegate void(int x_at, int y_at)
         {
-            immutable int xsl = al_get_bitmap_width (bit);
-            immutable int ysl = al_get_bitmap_height(bit);
-            al_draw_rectangle(x_at + 0.5, y_at + 0.5, x_at + xsl - 0.5, y_at + ysl - 0.5, AlCol(0.6, 0.6, 0, 1), 3);
-            al_draw_rectangle(x_at + 0.5, y_at + 0.5, x_at + xsl - 0.5, y_at + ysl - 0.5, AlCol(0, 0.5, 1, 1), 1);
             al_draw_bitmap(bit, x_at, y_at, ALLEGRO_FLIP_VERTICAL * mirr);
-            al_draw_pixel(x_at, y_at, AlCol(1,1,1,1));
         };
     }
     else if (rot == 2 && ! scal) {
         draw_from_at =
          delegate void(int x_at, int y_at)
         {
-            immutable int xsl = al_get_bitmap_width (bit);
-            immutable int ysl = al_get_bitmap_height(bit);
-            al_draw_rectangle(x_at + 0.5, y_at + 0.5, x_at + xsl - 0.5, y_at + ysl - 0.5, AlCol(0.6, 0.6, 0, 1), 3);
-            al_draw_rectangle(x_at + 0.5, y_at + 0.5, x_at + xsl - 0.5, y_at + ysl - 0.5, AlCol(0, 0.5, 1, 1), 1);
             al_draw_bitmap(bit, x_at, y_at,
              (ALLEGRO_FLIP_VERTICAL * !mirr) | ALLEGRO_FLIP_HORIZONTAL);
-            al_draw_pixel(x_at, y_at, AlCol(1,1,1,1));
         };
     }
     else {
@@ -280,28 +279,18 @@ void draw_from(
         if (! scal) draw_from_at =
          delegate void(int x_at, int y_at)
         {
-            al_draw_rectangle(x_at + 0.5, y_at + 0.5, x_at + xsl - 0.5, y_at + ysl - 0.5, AlCol(0.6, 0.6, 0, 1), 3);
-            al_draw_rectangle(x_at + 0.5, y_at + 0.5, x_at + xsl - 0.5, y_at + ysl - 0.5, AlCol(0, 0.5, 1, 1), 1);
-            al_draw_rotated_bitmap(bit,
-                xsl/2.0,
-                ysl/2.0,
-                xdr + x_at,
-                ydr + y_at,
+            al_draw_rotated_bitmap(bit, xsl/2.0, ysl/2.0,
+                xdr + x_at, ydr + y_at,
                 rot * ALLEGRO_PI / 2,
                 mirr ? ALLEGRO_FLIP_VERTICAL : 0
             );
-            al_draw_pixel(x_at, y_at, AlCol(1,1,1,1));
         };
         else draw_from_at =
          delegate void(int x_at, int y_at)
         {
-            al_draw_scaled_rotated_bitmap(bit,
-                xsl/2.0,
-                ysl/2.0,
-                xdr + x_at,
-                ydr + y_at,
-                scal,
-                scal,
+            al_draw_scaled_rotated_bitmap(bit, xsl/2.0, ysl/2.0,
+                xdr + x_at, ydr + y_at,
+                scal, scal,
                 rot * ALLEGRO_PI / 2,
                 mirr ? ALLEGRO_FLIP_VERTICAL : 0
             );
@@ -318,7 +307,7 @@ void copy_to_screen()
 {
     AlBit last_target = al_get_target_bitmap();
     scope (exit) al_set_target_bitmap(last_target);
-    al_set_target_backbuffer(alleg5.display);
+    al_set_target_backbuffer(basics.alleg5.display);
 
     al_draw_bitmap(bitmap, 0, 0, 0);
 }
@@ -422,11 +411,10 @@ void replace_color_in_rect(
         // the bitmap before passing this delegate DTODO, no locking yet
         foreach (x; start_x .. end_x)
          foreach (y; start_y .. end_y)
-         if (al_get_pixel(bitmap, x, y) == c_old)
-         al_put_pixel(x, y, c_new);
+         if (al_get_pixel(bitmap, x, y) == c_old) al_put_pixel(x, y, c_new);
     };
 
-    mixin(temp_lock!"bitmap");
+    //mixin(temp_lock!"bitmap");
     use_drawing_delegate(deg, rx, ry);
 }
 

@@ -1,5 +1,13 @@
-import alleg5;
-import mainloop;
+/*
+ * Lix
+ *
+ * This is written in the D Programming Language with the Allegro 5 library.
+ *
+ * See doc/build.txt for information about how to build from source.
+ */
+
+import basics.alleg5;
+import basics.mainloop;
 
 void main()
 {

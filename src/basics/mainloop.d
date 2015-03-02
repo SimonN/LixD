@@ -1,5 +1,9 @@
-import alleg5;
-import torbit;
+module basics.mainloop;
+
+import basics.alleg5;
+import file.filename;
+import graphic.cutbit;
+import graphic.torbit;
 
 class MainLoop {
 
@@ -13,6 +17,7 @@ private:
     bool   exit;
     AlBit[] wuerste;
     Torbit osd;
+    Cutbit mycut;
 
     void process_events();
     void calc();
@@ -43,18 +48,21 @@ void main_loop()
         assert (wuerste[0] == null);
     }
 
-    osd = new Torbit(alleg5.map_xl, alleg5.map_yl, true, true);
+    Filename fn = new Filename("./images/constr-hatch.png");
+    mycut = new Cutbit(fn, true);
+
+    osd = new Torbit(basics.alleg5.map_xl, basics.alleg5.map_yl, true, true);
 
     long last_tick;
 
     while (true) {
-        last_tick = al_get_timer_count(alleg5.timer);
+        last_tick = al_get_timer_count(basics.alleg5.timer);
         process_events();
         if (exit) break;
         calc();
         draw();
 
-        while (last_tick == al_get_timer_count(alleg5.timer)) {
+        while (last_tick == al_get_timer_count(basics.alleg5.timer)) {
             al_rest(0.001);
         }
     }
@@ -68,7 +76,7 @@ void process_events()
 {
 
     ALLEGRO_EVENT event;
-    while(al_get_next_event(alleg5.queue, &event))
+    while(al_get_next_event(basics.alleg5.queue, &event))
     {
         if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
             exit = true;
@@ -100,7 +108,7 @@ double wurstrotation(int tick)
 
 void calc()
 {
-    int tick = al_get_timer_count(alleg5.timer) % (2 << 30);
+    int tick = al_get_timer_count(basics.alleg5.timer) % (2 << 30);
 
     mixin(temp_target!"osd.get_albit()");
     al_clear_to_color(AlCol(0, 0, 0, 1));
@@ -112,8 +120,10 @@ void calc()
     osd.draw_from(wuerste[2], 100 + 0, 200, true, wurstrotation(tick/3));
     osd.draw_from(wuerste[3], 200 + 0, 200, false, wurstrotation(tick/5));
 
-    osd.replace_color_in_rect(220, 220, 100, 100, AlCol(1,0,0,1), AlCol(0.8,0.9,0,1));
-    osd.replace_color_in_rect(220, 220, 100, 100, AlCol(0,0,0,1), AlCol(0.2,0.4,0,1));
+    import std.math, std.conv;
+    mycut.draw(osd, 300 + to!int(40*sin(tick/41.0)),
+                    300 + to!int(30*sin(tick/25.0)),
+                    to!int(2.5 + 2.49 * sin(tick/20.0))); // x_frame
 }
 
 

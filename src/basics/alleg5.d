@@ -1,3 +1,5 @@
+module basics.alleg5;
+
 public import allegro5.allegro;
 public import allegro5.allegro_primitives;
 public import allegro5.allegro_image;
@@ -12,6 +14,8 @@ void initialize_allegro_5();
 void deinitialize_allegro_5();
 
 AlBit albit_create(int xl, int yl);
+
+bool equals(AlCol lhs, AlCol rhs);
 
 ALLEGRO_DISPLAY*     display;
 ALLEGRO_EVENT_QUEUE* queue;
@@ -81,8 +85,20 @@ AlBit albit_create(int xl, int yl)
 
 
 
+bool equals(AlCol lhs, AlCol rhs)
+{
+    ubyte lr, lg, lb, la, rr, rg, rb, ra;
+    al_unmap_rgba(lhs, &lr, &lg, &lb, &la);
+    al_unmap_rgba(rhs, &rr, &rg, &rb, &ra);
+    return lr == rr && lg == rg && lb == rb && la == ra;
+}
+
+
+
 template temp_target(string bitmap)
 {
+    // set the bitmap as target, and reset the target back to what it was
+    // at the end of the caller's current scope
     const char[] temp_target = "
     AlBit last_target_before_" ~ bitmap[0] ~ " = al_get_target_bitmap();
     scope (exit) al_set_target_bitmap(last_target_before_" ~ bitmap[0] ~ ");
@@ -93,6 +109,7 @@ template temp_target(string bitmap)
 
 template temp_lock(string bitmap)
 {
+    // lock the bitmap; if locking was succesful, unlock at end of scope
     const char[] temp_lock = "
     ALLEGRO_LOCKED_REGION* lock_" ~ bitmap[0] ~ " = al_lock_bitmap("
      ~ bitmap ~ ", al_get_bitmap_format("
