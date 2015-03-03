@@ -5,6 +5,12 @@ Character sprites and non-level graphics by Simon.
 In-Level graphics, e.g. terrain, by Matt C., geoo, Proxima, and Amanda (NaOH).
 The files in ./src/graphic/png constitute loadpng by Peter Wang.
 
+The font djvusans.ttf in ./data/fonts/ is exempt from the following public
+domain dedication/CC0 waiver. It's licensed under the Bitstream Vera Fonts
+Copyright, see http://dejavu-fonts.org/wiki/License
+
+For everything except that font, the following shall hold.
+
 To the extent possible under law, the authors have dedicated all
 copyright and related and neighboring rights to this software to the
 public domain worldwide, by the means of the CC0 1.0 public domain
