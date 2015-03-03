@@ -11,8 +11,8 @@ import basics.mainloop;
 
 void main()
 {
-	al_run_allegro(
-	{
+    al_run_allegro(
+    {
         initialize_allegro_5();
 
         MainLoop ml = new MainLoop();

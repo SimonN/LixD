@@ -255,6 +255,8 @@ void draw(
              sprite = al_create_sub_bitmap(cast (AlBit) bitmap, 0, 0, xl, yl);
         else sprite = al_create_sub_bitmap(cast (AlBit) bitmap, fx * (xl+1)+1,
                                                    fy * (yl+1) + 1, xl, yl);
+        scope (exit) al_destroy_bitmap(sprite);
+
         if (mode == Mode.NORMAL) {
             target_torbit.draw_from(sprite, x, y, mirr, rot, scal);
         }
@@ -305,11 +307,10 @@ void draw(
             }
         }
         */
-        // Fertig
-        al_destroy_bitmap(sprite);
     }
 
-    // Keine gueltige Frame-Angabe
+    // no frame inside the cutbit has been specified, or the cutbit
+    // has a null bitmap
     else {
         assert (false, "DTODO: implement printing message for nonexistant frame");
         /*
