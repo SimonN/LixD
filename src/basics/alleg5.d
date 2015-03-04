@@ -29,8 +29,6 @@ ALLEGRO_DISPLAY*     display;
 ALLEGRO_EVENT_QUEUE* queue;
 ALLEGRO_TIMER*       timer;
 
-double timer_per_sec = 60.0;
-
 int map_xl = 640;
 int map_yl = 400;
 
@@ -43,16 +41,17 @@ void initialize_allegro_5()
     al_init();
 
     // set the timer to 60 Hz
-    timer = al_create_timer(1.0 / timer_per_sec);
+    timer = al_create_timer(1.0 / basics.globals.ticks_per_sec);
     al_start_timer(timer);
     assert (timer);
 
     file.log.Log.initialize();
+    basics.globconf.load();
 
     display    = al_create_display(map_xl, map_yl);
     queue      = al_create_event_queue();
 
-    al_set_window_title(display, gloB_al_window_title.toStringz);
+    al_set_window_title(display, "Lix"); // DTODOLANG
 
     al_install_keyboard();
     al_install_mouse();
@@ -83,6 +82,7 @@ void deinitialize_allegro_5()
 
     // maybe destroy display here
 
+    basics.globconf.save();
     file.log.Log.deinitialize();
 
     al_stop_timer(timer);

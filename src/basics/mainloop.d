@@ -130,13 +130,17 @@ void calc()
     drtx(osd, "Non-square rectangles jump when they", 300, 120);
     drtx(osd, "finish a half rotation, this is intended.", 300, 140);
     import basics.globals;
+    import basics.globconf;
     import basics.versioning;
-    drtx(osd, gloB_name_of_the_game ~ " version " ~ get_version_string(), 20, 360);
-    if (tick % 600 <= 90) {
-        int ver = 380;
-        drtx(osd, "Logging to logfile!", 20, ver);
-        import file.log;
-        if (tick % 600 == 0) Log.log("logging something to the logfile", tick);
+    drtx(osd, "D Lix port version " ~ get_version_string(), 20, 360);
+
+    static bool showstring = false;
+    import std.array;
+    if (basics.globconf.user_name.empty) {
+        drtx(osd, "Enter your username in data/config.txt for a greeting", 20, 380);
+    }
+    else {
+        drtx(osd, "Hello " ~ user_name ~ ", loading the config file works.", 20, 380);
     }
 
 }

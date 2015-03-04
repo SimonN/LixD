@@ -70,7 +70,7 @@ this(string s)
 
 
 
-override string toString()
+override string toString() const
 {
     return format("%04d-%02d-%02d %02d:%02d:%02d",
         year, month, day, hour, minute, second);

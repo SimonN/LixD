@@ -20,6 +20,10 @@ Finishing the port
 Simon shall search the code for instances of DTODO, which mark things that
 shall be tested/altered when most things have been ported.
 
+Instances of DTODOLANG point to missing use of the Language class, which
+has not yet been ported.
+
+
 
 Lix code style
 --------------

@@ -46,12 +46,12 @@ private:
     // be at a later time than these instantiations, the current solution is
     // to concatenate upon each call to get_[dir_]rootful[_z]() with root.
 
-    string rootless;
-    string extension;
-    string rootless_no_ext;
-    string file;
-    string file_no_exts;
-    string dir_rootless;
+    string rootless = "";
+    string extension = "";
+    string rootless_no_ext = "";
+    string file = "";
+    string file_no_exts = "";
+    string dir_rootless = "";
 
     char pre_extension;
 
@@ -71,7 +71,7 @@ this(string s)
     rootless = s[sos .. $];
 
     // Determine the extension, this is done by finding the last '.'
-    auto last_dot = rootless.length - 1;
+    long last_dot = rootless.length - 1L;
     int extension_length = 0;
     while (last_dot >= 0 && rootless[last_dot] != '.') {
         --last_dot;
@@ -96,7 +96,7 @@ this(string s)
         pre_extension = rootless[last_dot - 1];
 
     // Determine the file. This is done similar as finding the extension.
-    auto last_slash = rootless.length - 1;
+    long last_slash = rootless.length - 1L;
     while (last_slash >= 0 && rootless[last_slash] != '/') --last_slash;
     if (last_slash >= 0) {
         file         = rootless[last_slash + 1 .. $];
@@ -108,7 +108,7 @@ this(string s)
     }
 
     // For file_no_exts, find the first dot in file
-    file_no_exts = file;
+    file_no_exts = this.file;
     for (int i = 0; i < file.length; ++i) {
         if (file[i] == '.') {
             file_no_exts = file[0 .. i];

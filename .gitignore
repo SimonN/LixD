@@ -4,4 +4,5 @@
 lix
 
 data/log.txt
+data/config.txt
 data/user/*.txt
