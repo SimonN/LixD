@@ -38,12 +38,13 @@ private:
 
     static string root;
 
-    // We don't have the variables rootful and dir_rootful anymore, dub
-    // gave an error when compiling the non-static constructor this() with
-    // { rootful = root ~ rootless; } in it, complaining that the static var
-    // couldn't be read at compile time. I don't see why it should be read
-    // at compile time; I solved it now by concatenating upon each call to
-    // get_[dir_]rootful[_z]() with root.
+    // We don't have the variables rootful and dir_rootful anymore.
+    // Module basics.globals instatiates Filename objects before main() runs,
+    // which will produce an error when compiling the non-static constructor
+    // this() with { rootful = root ~ rootless; } in it: The static var
+    // cannot be read at compile time. Since the call to set_root_dir() will
+    // be at a later time than these instantiations, the current solution is
+    // to concatenate upon each call to get_[dir_]rootful[_z]() with root.
 
     string rootless;
     string extension;
