@@ -7,6 +7,7 @@ public import allegro5.allegro_font;
 public import allegro5.allegro_ttf;
 public import allegro5.allegro_color;
 
+import file.log;
 import graphic.color;
 import graphic.textout;
 
@@ -25,6 +26,8 @@ ALLEGRO_DISPLAY*     display;
 ALLEGRO_EVENT_QUEUE* queue;
 ALLEGRO_TIMER*       timer;
 
+double timer_per_sec = 60.0;
+
 int map_xl = 640;
 int map_yl = 400;
 
@@ -37,9 +40,11 @@ void initialize_allegro_5()
     al_init();
 
     // set the timer to 60 Hz
-    timer = al_create_timer(1.0 / 60.0);
+    timer = al_create_timer(1.0 / timer_per_sec);
     al_start_timer(timer);
     assert (timer);
+
+    file.log.Log.initialize();
 
     display    = al_create_display(map_xl, map_yl);
     queue      = al_create_event_queue();
@@ -72,6 +77,10 @@ void deinitialize_allegro_5()
 
     al_shutdown_font_addon();
     al_shutdown_ttf_addon();
+
+    // maybe destroy display here
+
+    file.log.Log.deinitialize();
 
     al_stop_timer(timer);
     al_destroy_timer(timer);

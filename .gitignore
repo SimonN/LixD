@@ -2,3 +2,6 @@
 
 .dub
 lix
+
+data/log.txt
+data/user/*.txt

@@ -129,6 +129,11 @@ void calc()
     drtx(osd, "Hi with a TTF font from Allegro 5.", 300, 100);
     drtx(osd, "Non-square rectangles jump when they", 300, 120);
     drtx(osd, "finish a half rotation, this is intended.", 300, 140);
+    if (tick % 60 == 0) {
+        drtx(osd, "Logging to logfile!", 20, 380);
+        import file.log;
+        Log.log("logging something to the logfile", tick);
+    }
 
 }
 
