@@ -7,6 +7,9 @@ public import allegro5.allegro_font;
 public import allegro5.allegro_ttf;
 public import allegro5.allegro_color;
 
+import std.string;
+
+import basics.globals;
 import file.log;
 import graphic.color;
 import graphic.textout;
@@ -49,7 +52,7 @@ void initialize_allegro_5()
     display    = al_create_display(map_xl, map_yl);
     queue      = al_create_event_queue();
 
-    al_set_window_title(display, "Nagetier, Allegro 5.");
+    al_set_window_title(display, gloB_al_window_title.toStringz);
 
     al_install_keyboard();
     al_install_mouse();

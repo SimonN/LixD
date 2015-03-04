@@ -129,10 +129,14 @@ void calc()
     drtx(osd, "Hi with a TTF font from Allegro 5.", 300, 100);
     drtx(osd, "Non-square rectangles jump when they", 300, 120);
     drtx(osd, "finish a half rotation, this is intended.", 300, 140);
-    if (tick % 60 == 0) {
-        drtx(osd, "Logging to logfile!", 20, 380);
+    import basics.globals;
+    import basics.versioning;
+    drtx(osd, gloB_name_of_the_game ~ " version " ~ get_version_string(), 20, 360);
+    if (tick % 600 <= 90) {
+        int ver = 380;
+        drtx(osd, "Logging to logfile!", 20, ver);
         import file.log;
-        Log.log("logging something to the logfile", tick);
+        if (tick % 600 == 0) Log.log("logging something to the logfile", tick);
     }
 
 }
