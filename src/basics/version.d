@@ -2,7 +2,8 @@ module basics.versioning;
 
 import std.string;
 
-// convention: use year - 1000 to distinguish from C++/A4 Lix
+// Convention: use year - 1000 to distinguish from C++/A4 Lix
+// We'll use the correct year 20xx once D/A5 Lix becomes standard.
 private int  ver        = concat(1015, 03, 04, 00);
 private int  ver_min    = concat(1015, 03, 04, 00);
 private bool ver_stable = false;
@@ -24,6 +25,7 @@ string version_to_string(int v)
     int day    = v / 100 % 100;
     int month  = v / 100 / 100 % 100;
     int year   = v / 100 / 100 / 100;
+    assert (year <= 9999);
 
     if (subday) return format("%04d-%02d-%02d-%02", year, month, day, subday);
     else        return format("%04d-%02d-%02d",     year, month, day);

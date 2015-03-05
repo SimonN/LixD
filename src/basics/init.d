@@ -7,6 +7,7 @@ import basics.globals;
 import basics.globconf;
 import file.language;
 import graphic.color;
+import hardware.mouse;
 
 // routines to initialize and deinitialize most things before/after
 // the main loop runs
@@ -30,8 +31,8 @@ void initialize()
     // load user config here
     Lang.switch_to_language(Lang.Language.ENGLISH); // DTODO: read user file
 
-    display    = al_create_display(screen_windowed_x, screen_windowed_y);
-    queue      = al_create_event_queue();
+    display = al_create_display(screen_windowed_x, screen_windowed_y);
+    queue_DTODO_split_up = al_create_event_queue();
 
     al_set_window_title(display, Lang["main_name_of_the_game"].toStringz);
 
@@ -44,12 +45,14 @@ void initialize()
 
     default_new_bitmap_flags = al_get_new_bitmap_flags();
 
+    hardware.mouse.initialize();
+
     graphic.color.initialize();
     graphic.textout.initialize();
 
-    al_register_event_source(queue, al_get_display_event_source(display));
-    al_register_event_source(queue, al_get_keyboard_event_source());
-    al_register_event_source(queue, al_get_mouse_event_source());
+    al_register_event_source(queue_DTODO_split_up, al_get_display_event_source(display));
+    al_register_event_source(queue_DTODO_split_up, al_get_keyboard_event_source());
+
 }
 
 
@@ -58,6 +61,8 @@ void deinitialize()
 {
     graphic.textout.deinitialize();
     graphic.color.deinitialize();
+
+    hardware.mouse.deinitialize();
 
     al_shutdown_font_addon();
     al_shutdown_ttf_addon();

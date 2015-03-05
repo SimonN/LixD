@@ -22,8 +22,8 @@ class Cutbit {
 
     this() {}
     this(const Cutbit);
-    this(AlBit,          const bool cut); // takes ownership of bitmap!
-    this(const Filename, const bool cut);
+    this(AlBit,          const bool cut = true); // takes ownership of bitmap!
+    this(const Filename, const bool cut = true);
     this(AlBit[]);
 
     bool opEquals(const Cutbit) const;
@@ -85,7 +85,7 @@ this(const Cutbit cb)
 
 
 
-this(AlBit bit, const bool cut)
+this(AlBit bit, const bool cut = true)
 {
     bitmap = bit;
     if (!bitmap) return;
@@ -101,7 +101,7 @@ this(AlBit bit, const bool cut)
 
 
 
-this(const Filename fn, const bool cut)
+this(const Filename fn, const bool cut = true)
 {
     // Try loading the file. If not found, don't crash, but make a log entry.
     bitmap = al_load_bitmap(fn.get_rootful_z());

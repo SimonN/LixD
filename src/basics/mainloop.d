@@ -5,6 +5,7 @@ import file.filename;
 import graphic.cutbit;
 import graphic.textout;
 import graphic.torbit;
+import hardware.mouse;
 
 // right now, this class tests various other classes. There will be a lot
 // of random things created here.
@@ -22,6 +23,7 @@ private:
     AlBit[] wuerste;
     Torbit osd;
     Cutbit mycut;
+    Cutbit mouse;
 
     void process_events();
     void calc();
@@ -35,7 +37,12 @@ void main_loop()
 {
     exit = false;
 
+    import graphic.color;
+    mouse   =  new Cutbit(new Filename("./data/images/mouse.I.png"));
+    al_convert_mask_to_alpha(mouse.get_albit(), color.pink);
+
     wuerste ~= al_load_bitmap("./images/piece.png");
+    assert (mouse);
     assert (wuerste[0]);
     al_convert_mask_to_alpha(wuerste[0], AlCol(1,0,1,1));
     foreach (i; 1 .. 4) {
@@ -50,6 +57,7 @@ void main_loop()
             wurst = null;
         }
         assert (wuerste[0] == null);
+        clear(mouse);
     }
 
     Filename fn = new Filename("./images/constr-hatch.png");
@@ -80,22 +88,24 @@ private:
 
 void process_events()
 {
-
     ALLEGRO_EVENT event;
-    while(al_get_next_event(basics.alleg5.queue, &event))
+    while(al_get_next_event(basics.alleg5.queue_DTODO_split_up, &event))
     {
         if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
             exit = true;
         }
-        else if (event.type == ALLEGRO_EVENT_KEY_DOWN
-         && event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
-            exit = true;
-        }
-        else if (event.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
-            exit = true;
+        else if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
+            if (event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
+                exit = true;
+            }
+            else if (event.keyboard.keycode == ALLEGRO_KEY_F10) {
+                hardware.mouse.set_trap_mouse(false);
+            }
         }
     }
     // end while (get next event)
+
+    hardware.mouse.update();
 }
 
 
@@ -131,7 +141,7 @@ void calc()
                     300 + to!int(30*sin(tick/25.0)),
                     to!int(2.5 + 2.49 * sin(tick/20.0))); // x_frame
 
-    drtx(osd, "Hi with a TTF font from Allegro 5.", 300, 100);
+    drtx(osd, "Press F10 to release the mouse.", 300, 100);
     drtx(osd, "Non-square rectangles jump when they", 300, 120);
     drtx(osd, "finish a half rotation, this is intended.", 300, 140);
     import basics.globals;
@@ -148,6 +158,9 @@ void calc()
     else {
         drtx(osd, "Hello " ~ user_name ~ ", loading the config file works.", 20, 380);
     }
+
+    mouse.draw(osd, get_mx() - mouse.get_xl()/2 + 1,
+                    get_my() - mouse.get_yl()/2 + 1);
 
 }
 
