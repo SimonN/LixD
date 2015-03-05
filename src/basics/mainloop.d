@@ -6,6 +6,9 @@ import graphic.cutbit;
 import graphic.textout;
 import graphic.torbit;
 
+// right now, this class tests various other classes. There will be a lot
+// of random things created here.
+
 class MainLoop {
 
 public:
@@ -52,7 +55,9 @@ void main_loop()
     Filename fn = new Filename("./images/constr-hatch.png");
     mycut = new Cutbit(fn, true);
 
-    osd = new Torbit(basics.alleg5.map_xl, basics.alleg5.map_yl, true, true);
+    osd = new Torbit(al_get_display_width (basics.alleg5.display),
+                     al_get_display_height(basics.alleg5.display), true, true);
+    scope (exit) clear(osd);
 
     long last_tick;
 

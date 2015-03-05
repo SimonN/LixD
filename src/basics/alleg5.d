@@ -7,91 +7,17 @@ public import allegro5.allegro_font;
 public import allegro5.allegro_ttf;
 public import allegro5.allegro_color;
 
-import std.string;
-
-import basics.globals;
-import file.language;
-import file.log;
-import graphic.color;
-import graphic.textout;
-
 alias ALLEGRO_BITMAP* AlBit;
 alias ALLEGRO_COLOR   AlCol;
 alias ALLEGRO_FONT*   AlFont;
 
-void initialize_allegro_5();
-void deinitialize_allegro_5();
-
 AlBit albit_create(int xl, int yl);
-
-bool equals(AlCol lhs, AlCol rhs);
 
 ALLEGRO_DISPLAY*     display;
 ALLEGRO_EVENT_QUEUE* queue;
 ALLEGRO_TIMER*       timer;
 
-int map_xl = 640;
-int map_yl = 400;
-
 int default_new_bitmap_flags;
-
-
-
-void initialize_allegro_5()
-{
-    al_init();
-
-    // set the timer to 60 Hz
-    timer = al_create_timer(1.0 / basics.globals.ticks_per_sec);
-    al_start_timer(timer);
-    assert (timer);
-
-    file.log.Log.initialize();
-    basics.globconf.load();
-    // load user config here
-    Lang.switch_to_language(Lang.Language.ENGLISH); // DTODO: read user file
-
-    display    = al_create_display(map_xl, map_yl);
-    queue      = al_create_event_queue();
-
-    al_set_window_title(display, Lang["main_name_of_the_game"].toStringz);
-
-    al_install_keyboard();
-    al_install_mouse();
-    al_init_image_addon();
-    al_init_font_addon();
-    al_init_ttf_addon();
-    al_init_primitives_addon();
-
-    default_new_bitmap_flags = al_get_new_bitmap_flags();
-
-    graphic.color.initialize();
-    graphic.textout.initialize();
-
-    al_register_event_source(queue, al_get_display_event_source(display));
-    al_register_event_source(queue, al_get_keyboard_event_source());
-    al_register_event_source(queue, al_get_mouse_event_source());
-}
-
-
-
-void deinitialize_allegro_5()
-{
-    graphic.textout.deinitialize();
-    graphic.color.deinitialize();
-
-    al_shutdown_font_addon();
-    al_shutdown_ttf_addon();
-
-    // maybe destroy display here
-
-    basics.globconf.save();
-    file.log.Log.deinitialize();
-
-    al_stop_timer(timer);
-    al_destroy_timer(timer);
-    timer = null;
-}
 
 
 
@@ -109,16 +35,6 @@ AlBit albit_create(int xl, int yl)
     assert (al_get_bitmap_height(ret) == yl);
 
     return ret;
-}
-
-
-
-bool equals(AlCol lhs, AlCol rhs)
-{
-    ubyte lr, lg, lb, la, rr, rg, rb, ra;
-    al_unmap_rgba(lhs, &lr, &lg, &lb, &la);
-    al_unmap_rgba(rhs, &rr, &rg, &rb, &ra);
-    return lr == rr && lg == rg && lb == rb && la == ra;
 }
 
 

@@ -167,18 +167,18 @@ private void cut_bitmap()
     // pixel must be of a different color, to count as a frame grid.
     AlCol c = al_get_pixel(bitmap, 0, 0);
     if (x_max > 1 && y_max > 1
-     && c == al_get_pixel(bitmap, 0, 1)
-     && c == al_get_pixel(bitmap, 1, 0)
-     && c != al_get_pixel(bitmap, 1, 1)) {
+     && al_get_pixel(bitmap, 0, 1) == c
+     && al_get_pixel(bitmap, 1, 0) == c
+     && al_get_pixel(bitmap, 1, 1) != c) {
         // find the end of the first frame in each direction
         for (xl = 2; xl < x_max; ++xl) {
-            if (equals(c, al_get_pixel(bitmap, xl, 1))) {
+            if (al_get_pixel(bitmap, xl, 1) == c) {
                 --xl;
                 break;
             }
         }
         for (yl = 2; yl < y_max; ++yl) {
-            if (equals(c, al_get_pixel(bitmap, 1, yl))) {
+            if (al_get_pixel(bitmap, 1, yl) == c) {
                 --yl;
                 break;
             }
