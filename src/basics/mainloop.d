@@ -132,7 +132,8 @@ void calc()
     import basics.globals;
     import basics.globconf;
     import basics.versioning;
-    drtx(osd, "D Lix port version " ~ get_version_string(), 20, 360);
+    import file.language;
+    drtx(osd, Lang["net_chat_unstable_1"] ~ Lang["nage"] ~ " " ~ get_version_string(), 20, 360);
 
     static bool showstring = false;
     import std.array;

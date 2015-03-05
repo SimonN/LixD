@@ -10,6 +10,7 @@ public import allegro5.allegro_color;
 import std.string;
 
 import basics.globals;
+import file.language;
 import file.log;
 import graphic.color;
 import graphic.textout;
@@ -47,11 +48,13 @@ void initialize_allegro_5()
 
     file.log.Log.initialize();
     basics.globconf.load();
+    // load user config here
+    Lang.switch_to_language(Lang.Language.ENGLISH); // DTODO: read user file
 
     display    = al_create_display(map_xl, map_yl);
     queue      = al_create_event_queue();
 
-    al_set_window_title(display, "Lix"); // DTODOLANG
+    al_set_window_title(display, Lang["main_name_of_the_game"].toStringz);
 
     al_install_keyboard();
     al_install_mouse();
