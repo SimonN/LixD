@@ -1,0 +1,78 @@
+How to build Lix from source
+============================
+
+Lix is written in the D Programming Language and uses Allegro 5.
+
+I'm describing the build process for Linux. It should be very similar for
+Windows. I don't know where you install libraries, though.
+
+
+
+Installing D
+------------
+
+Install a compiler for the D Programming Language. I recommend dmd, which
+can be downloaded for various platforms from here:
+
+    http://dlang.org/download.html
+
+You should install dub, the D packaging tool. dub automates the build process,
+i.e., it replaces make, and it will fetch the D bindings for installed and
+used libraries. Download here:
+
+    http://code.dlang.org/download
+
+If you want to search the web about D, use "dlang" in your query to get
+better search results.
+
+
+
+Installing the libraries
+------------------------
+
+Even though dub can download the libraries' D bindings from the dub website
+and install them in ~/.dub for you, it cannot install the shared libraries
+themselves to your system.
+
+This part of the instructions is about installing binary files that can be
+called from various programming languages. It's not particular to D.
+We need the following libraries:
+
+* zlib
+* libpng
+* Allegro 5
+* enet, not needed right now, this is the networking library
+
+You can get these from your distribution. Alternatively, go to the libraries'
+homepages, download the source, then build and install them yourself.
+
+
+
+Run dub
+-------
+
+Open a shell, navigate to Lix's root directory, and run
+
+    dub
+
+without arguments. dub will read the Lix packaging information in dub.json
+and build the game, then run it.
+
+The above command builds the debugging version. For maximum performance, you
+can build the release version instead:
+
+    dub -b release-nobounds
+
+The release version might run faster, but cannot output useful information
+in case of a crash.
+
+
+
+Get help
+--------
+
+If you run into any kind of roadblock, don't be shy and ask:
+
+IRC channel: irc.quakenet.org #lix
+Email Simon: eiderdaus@gmail.com
+Lix website: http://asdfasdf.etzh.ch/~simon
