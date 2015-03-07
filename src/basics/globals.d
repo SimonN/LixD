@@ -14,12 +14,12 @@ const int scroll_torus_max  =  2;
 
 const net_ip_localhost             = "127.0.0.1";
 const error_wrong_working_dir      = "Wrong working directory!\n"
-                                    "Run the game from its root directory\n"
-                                    "or from its subdirectory bin/.\n"
-                                    "\n"
-                                    "Falsches Arbeitsverzeichnis!\n"
-                                    "Starte das Spiel aus seinem\n"
-                                    "Wurzelverzeichnis oder aus bin/.\n";
+                                     "Run the game from its root directory\n"
+                                     "or from its subdirectory bin/.\n"
+                                     "\n"
+                                     "Falsches Arbeitsverzeichnis!\n"
+                                     "Starte das Spiel aus seinem\n"
+                                     "Wurzelverzeichnis oder aus bin/.\n";
 // loading files
 const ext_level                    = ".txt";
 const ext_level_orig               = ".lvl";
@@ -37,7 +37,6 @@ const file_level_dir_german        = "_german.X.txt";
 const file_level_dir_userlang      = "_userlang.X.txt";
 
 // pre-extensions of image files
-const pre_ext_null                 = ":"; // this should never be used
 const pre_ext_internal             = "I";
 const pre_ext_steel                = "S";
 const pre_ext_deco                 = "D";

@@ -31,10 +31,9 @@ void initialize()
     // load user config here
     Lang.switch_to_language(Lang.Language.ENGLISH); // DTODO: read user file
 
-    display = al_create_display(screen_windowed_x, screen_windowed_y);
-    queue_DTODO_split_up = al_create_event_queue();
+    hardware.display.set_screen_mode(true);
 
-    al_set_window_title(display, Lang["main_name_of_the_game"].toStringz);
+    queue_DTODO_split_up = al_create_event_queue();
 
     al_install_keyboard();
     al_install_mouse();
@@ -50,7 +49,6 @@ void initialize()
     graphic.color.initialize();
     graphic.textout.initialize();
 
-    al_register_event_source(queue_DTODO_split_up, al_get_display_event_source(display));
     al_register_event_source(queue_DTODO_split_up, al_get_keyboard_event_source());
 
 }

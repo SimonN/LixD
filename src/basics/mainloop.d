@@ -6,6 +6,7 @@ import graphic.cutbit;
 import graphic.textout;
 import graphic.torbit;
 import hardware.mouse;
+import hardware.display;
 
 // right now, this class tests various other classes. There will be a lot
 // of random things created here.
@@ -63,8 +64,8 @@ void main_loop()
     Filename fn = new Filename("./images/constr-hatch.png");
     mycut = new Cutbit(fn, true);
 
-    osd = new Torbit(al_get_display_width (basics.alleg5.display),
-                     al_get_display_height(basics.alleg5.display), true, true);
+    osd = new Torbit(al_get_display_width (display),
+                     al_get_display_height(display), true, true);
     scope (exit) clear(osd);
 
     long last_tick;
@@ -91,10 +92,7 @@ void process_events()
     ALLEGRO_EVENT event;
     while(al_get_next_event(basics.alleg5.queue_DTODO_split_up, &event))
     {
-        if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
-            exit = true;
-        }
-        else if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
+        if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
             if (event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
                 exit = true;
             }
@@ -105,7 +103,10 @@ void process_events()
     }
     // end while (get next event)
 
-    hardware.mouse.update();
+    hardware.display.calc();
+    hardware.mouse.calc();
+
+    exit = exit || hardware.display.get_display_close_was_clicked();
 }
 
 
@@ -148,7 +149,7 @@ void calc()
     import basics.globconf;
     import basics.versioning;
     import file.language;
-    drtx(osd, Lang["net_chat_unstable_1"] ~ Lang["nage"] ~ " " ~ get_version_string(), 20, 360);
+    drtx(osd, Lang["net_chat_unstable_1"] ~ " " ~ get_version_string(), 20, 360);
 
     static bool showstring = false;
     import std.array;

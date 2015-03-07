@@ -5,6 +5,7 @@ import std.algorithm; // minPos
 
 import basics.alleg5;
 import basics.help; // positive_mod
+import hardware.display;
 
 class Torbit {
 
@@ -307,7 +308,7 @@ void copy_to_screen()
 {
     AlBit last_target = al_get_target_bitmap();
     scope (exit) al_set_target_bitmap(last_target);
-    al_set_target_backbuffer(basics.alleg5.display);
+    al_set_target_backbuffer(display);
 
     al_draw_bitmap(bitmap, 0, 0, 0);
 }

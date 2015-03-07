@@ -3,11 +3,12 @@ module hardware.mouse;
 import basics.alleg5;
 import basics.globals;
 import basics.user;
+import hardware.display;
 
 void initialize();
 void deinitialize();
 
-void update();
+void calc();
 
 int  get_mickey_x() { return mickey_x;         }
 int  get_mickey_y() { return mickey_y;         }
@@ -33,11 +34,14 @@ void center_mouse();
 void freeze_mouse_x();
 void freeze_mouse_y();
 
+
+
 private:
 
     ALLEGRO_EVENT_QUEUE* queue;
 
-    bool trap_mouse = true; // move mouse back to center in each update
+    bool trap_mouse = true;
+    bool center_mouse_at_next_update = true;
 
     int  mouse_own_x; // where the cursor will appear, != al_mouse
     int  mouse_own_y;
@@ -83,7 +87,7 @@ void deinitialize()
 
 
 
-void update()
+void calc()
 {
     immutable int xl = al_get_display_width (display);
     immutable int yl = al_get_display_height(display);
@@ -159,6 +163,14 @@ void update()
 
     if (trap_mouse) {
         al_hide_mouse_cursor(display);
+        if (center_mouse_at_next_update) {
+            center_mouse_at_next_update = false;
+            immutable int x = al_get_display_width (display) / 2;
+            immutable int y = al_get_display_height(display) / 2;
+            al_set_mouse_xy(display, x, y);
+            mouse_own_x = x;
+            mouse_own_y = y;
+        }
         if (mouse_cur_x < xl/4 || mouse_cur_x > xl*3/4
          || mouse_cur_y < yl/4 || mouse_cur_y > yl*3/4) {
              // do not call center_mouse, that would move mouse_own_xy
@@ -175,11 +187,7 @@ void update()
 
 void center_mouse()
 {
-    immutable int x = al_get_display_width (display) / 2;
-    immutable int y = al_get_display_height(display) / 2;
-    al_set_mouse_xy(display, x, y);
-    mouse_own_x = x;
-    mouse_own_y = y;
+    center_mouse_at_next_update = true;
 }
 
 

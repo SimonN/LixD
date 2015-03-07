@@ -21,7 +21,6 @@ int    screen_resolution_y   =  480;
 int    screen_windowed_x     =  640;
 int    screen_windowed_y     =  480;
 bool   screen_vsync          = false;
-bool   screen_fullscreen_now = false;
 
 bool   sound_load_driver     = true;
 
@@ -73,6 +72,7 @@ void load()
     // end foreach
 }
 // end function load()
+
 
 
 void save()
