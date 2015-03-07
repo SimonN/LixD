@@ -50,6 +50,8 @@ private:
     int  mickey_leftover_x; // leftover movement from the previous mickeys,
     int  mickey_leftover_y; // yet unspent to mouse_own_xy, for smoothening
 
+    immutable int divid = 20; // divide mickeys by this for mouse speed
+
     // The mouse has 3 buttons: #0 is left, #1 is right, #2 is middle.
     bool mouse_click  [3]; // there just was a single click
     bool mouse_double [3]; // there just was a double click
@@ -112,7 +114,7 @@ void calc()
 
     // I will adhere to my convention from C++/A4 Lix to multiply all incoming
     // mouse movements by the mouse speed, and then later divide by the
-    // constant 20.
+    // constant "divid".
     ALLEGRO_EVENT event;
     while (al_get_next_event(queue, &event)) {
         // discard mouse events that do not pertain to our display
@@ -151,10 +153,10 @@ void calc()
             break;
         }
     }
-    mouse_own_x      += mickey_x / 20;
-    mouse_own_y      += mickey_y / 20;
-    mickey_leftover_x = mickey_x % 20; // here we want signed %
-    mickey_leftover_y = mickey_y % 20;
+    mouse_own_x      += mickey_x / divid;
+    mouse_own_y      += mickey_y / divid;
+    mickey_leftover_x = mickey_x % divid; // here we want signed %
+    mickey_leftover_y = mickey_y % divid;
 
     if (mouse_own_x < 0)   mouse_own_x = 0;
     if (mouse_own_y < 0)   mouse_own_y = 0;
@@ -194,8 +196,8 @@ void center_mouse()
 
 void freeze_mouse_x()
 {
-    immutable int xl = al_get_display_height(display);
-    mouse_own_x -= mickey_x;
+    immutable int xl = al_get_display_width(display);
+    mouse_own_x -= mickey_x / divid;
     if (mouse_own_x < 0)   mouse_own_x = 0;
     if (mouse_own_x >= xl) mouse_own_x = xl - 1;
     mickey_x = 0;
@@ -206,7 +208,7 @@ void freeze_mouse_x()
 void freeze_mouse_y()
 {
     immutable int yl = al_get_display_height(display);
-    mouse_own_y -= mickey_y;
+    mouse_own_y -= mickey_y / divid;
     if (mouse_own_y < 0)   mouse_own_y = 0;
     if (mouse_own_y >= yl) mouse_own_y = yl - 1;
     mickey_y = 0;

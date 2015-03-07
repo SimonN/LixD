@@ -106,6 +106,8 @@ void process_events()
     hardware.display.calc();
     hardware.mouse.calc();
 
+    if (get_mrh()) freeze_mouse_y();
+
     exit = exit || hardware.display.get_display_close_was_clicked();
 }
 

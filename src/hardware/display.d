@@ -179,7 +179,8 @@ void calc()
             hardware.mouse.set_trap_mouse(false);
         }
         else if (event.type == ALLEGRO_EVENT_DISPLAY_SWITCH_IN) {
-            hardware.mouse.set_trap_mouse(true);
+            // Ignore. Don't trap the mouse; the mouse shall only be trapped
+            // when it is clicked in the game window
         }
     }
 }
