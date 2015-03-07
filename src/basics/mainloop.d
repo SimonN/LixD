@@ -6,6 +6,7 @@ import graphic.cutbit;
 import graphic.textout;
 import graphic.torbit;
 import hardware.mouse;
+import hardware.keyboard;
 import hardware.display;
 
 // right now, this class tests various other classes. There will be a lot
@@ -89,26 +90,14 @@ private:
 
 void process_events()
 {
-    ALLEGRO_EVENT event;
-    while(al_get_next_event(basics.alleg5.queue_DTODO_split_up, &event))
-    {
-        if (event.type == ALLEGRO_EVENT_KEY_DOWN) {
-            if (event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
-                exit = true;
-            }
-            else if (event.keyboard.keycode == ALLEGRO_KEY_F10) {
-                hardware.mouse.set_trap_mouse(false);
-            }
-        }
-    }
-    // end while (get next event)
-
-    hardware.display.calc();
-    hardware.mouse.calc();
+    hardware.display .calc();
+    hardware.keyboard.calc();
+    hardware.mouse   .calc();
 
     if (get_mrh()) freeze_mouse_y();
 
-    exit = exit || hardware.display.get_display_close_was_clicked();
+    exit = hardware.display.get_display_close_was_clicked()
+     ||    key_once(ALLEGRO_KEY_ESCAPE);
 }
 
 
@@ -144,7 +133,17 @@ void calc()
                     300 + to!int(30*sin(tick/25.0)),
                     to!int(2.5 + 2.49 * sin(tick/20.0))); // x_frame
 
-    drtx(osd, "Press F10 to release the mouse.", 300, 100);
+    static string typetext = "Type some UTF-8 chars: ";
+    typetext ~= get_utf8_input();
+    if (typetext != null && get_backspace()) {
+        import std.utf;
+        typetext = typetext[0 .. $ - strideBack(typetext, typetext.length)];
+    }
+
+    drtx(osd, typetext ~ (tick % 30 < 15 ? "_" : ""), 300, 100);
+    drtx(osd, "Letter A once: " ~ (key_once(ALLEGRO_KEY_A)?"1":"0"), 20, 400);
+    drtx(osd, "Letter A hold: " ~ (key_hold(ALLEGRO_KEY_A)?"1":"0"), 20, 420);
+    drtx(osd, "Letter A rlsd: " ~ (key_rlsd(ALLEGRO_KEY_A)?"1":"0"), 20, 440);
     drtx(osd, "Non-square rectangles jump when they", 300, 120);
     drtx(osd, "finish a half rotation, this is intended.", 300, 140);
     import basics.globals;

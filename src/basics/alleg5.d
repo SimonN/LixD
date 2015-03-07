@@ -13,7 +13,6 @@ alias ALLEGRO_FONT*   AlFont;
 
 AlBit albit_create(int xl, int yl);
 
-ALLEGRO_EVENT_QUEUE* queue_DTODO_split_up;
 ALLEGRO_TIMER*       timer;
 
 int default_new_bitmap_flags;

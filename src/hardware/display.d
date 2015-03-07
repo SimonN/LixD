@@ -42,12 +42,16 @@ void blit_to_screen(AlBit) {
 // components next time, this is probably a C++/A4 Lix legacy variable
 public bool clear_screen_at_next_blit;
 
-private {
+
+
+private :
+
     ALLEGRO_EVENT_QUEUE* queue;
     bool display_close_was_clicked;
-}
 
 
+
+public:
 
 // This is like initialize() of other modules.
 // Will use global variables if res == (0, 0).
@@ -179,7 +183,8 @@ void calc()
             hardware.mouse.set_trap_mouse(false);
         }
         else if (event.type == ALLEGRO_EVENT_DISPLAY_SWITCH_IN) {
-            // Ignore. Don't trap the mouse; the mouse shall only be trapped
+            hardware.keyboard.clear_key_buffer_after_alt_tab();
+            // Don't affect the mouse: the mouse shall only be trapped
             // when it is clicked in the game window
         }
     }

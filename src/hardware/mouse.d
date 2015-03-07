@@ -70,7 +70,8 @@ public:
 
 void initialize()
 {
-    // A5 and the A5 mouse must have been initialized already.
+    // A5 must have been initialized already.
+    al_install_mouse();
     assert (! queue);
     queue = al_create_event_queue();
     assert (queue);

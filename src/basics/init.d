@@ -1,7 +1,5 @@
 module basics.init;
 
-import std.string : toStringz;
-
 import basics.alleg5;
 import basics.globals;
 import basics.globconf;
@@ -33,10 +31,6 @@ void initialize()
 
     hardware.display.set_screen_mode(true);
 
-    queue_DTODO_split_up = al_create_event_queue();
-
-    al_install_keyboard();
-    al_install_mouse();
     al_init_image_addon();
     al_init_font_addon();
     al_init_ttf_addon();
@@ -44,13 +38,13 @@ void initialize()
 
     default_new_bitmap_flags = al_get_new_bitmap_flags();
 
+    hardware.keyboard.initialize();
     hardware.mouse.initialize();
 
     graphic.color.initialize();
     graphic.textout.initialize();
 
-    al_register_event_source(queue_DTODO_split_up, al_get_keyboard_event_source());
-
+    // load all graphics here, because we can print text already
 }
 
 
@@ -61,11 +55,12 @@ void deinitialize()
     graphic.color.deinitialize();
 
     hardware.mouse.deinitialize();
+    hardware.keyboard.deinitialize();
 
     al_shutdown_font_addon();
     al_shutdown_ttf_addon();
 
-    // maybe destroy display here
+    hardware.display.deinitialize();
 
     basics.globconf.save();
     file.log.Log.deinitialize();
