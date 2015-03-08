@@ -152,6 +152,49 @@ Instructions come from the same page as the zlib installation info.
 
 
 
+FREETYPE
+--------
+
+Freetype is an optional requirement of Allegro 5, and Lix expects Allegro to
+find and use it.
+
+Download a recent version of the source. I got mine from here:
+
+    http://sourceforge.net/projects/freetype/files/freetype2/
+
+You should be fine to install the newest version, or a reasonably new
+version that has been around for a longer time. Unpack the source (e.g.
+with tar xjf yourfile.tar.bz) and cd into the extracted dir.
+
+Freetype builds with cmake. I have managed to point cmake to use the MinGW
+compiler, but I have not managed to give cmake correct path prefixes for
+make install. In my described workaround here, we will do the normal cmake
+build up to the point of running make, and take over manually from there.
+
+In the cmake dir, do:
+
+    mkdir BuildWin32
+    cd BuildWin32
+
+The name of that directory is arbitrary. Should you screw up, you can rm
+-rf this dir and try again. In the dir:
+
+    cmake --host=i586-mingw32msvc ..
+    make
+
+Now, we have to install source and libraries ourselves:
+
+    sudo cp libfreetype.a /usr/i586-mingw32msvc/lib
+    sudo cp -r include/*  /usr/i586-mingw32msvc/include
+
+That concludes the installation of FreeType. Allegro 5 should be able find
+it later. DTODO: no, it doesn't find it. :-/
+
+If you know how to give cmake the desired installation prefixes, please let
+me know, so I can simplify the build process description.
+
+
+
 ALLEGRO 5.x
 -----------
 
@@ -190,9 +233,10 @@ Therefore I've done:
 In the downloaded A5 source, do:
 
     mkdir BuildMinGW
+    cd BuildMinGW
 
 The name of that dir is arbitrary. If you screw up, you can rm -rf that
-directory and start again. cd into that directory now.
+directory and start again.
 
 Then, from within (Allegro 5)/BuildMinGW, we do:
 
@@ -214,23 +258,3 @@ This will install A5 to ${MINGDIR}/lib, ${MINGDIR}/include, etc., as desired.
 BUILDING LIX
 ------------
 
-The Lix makefile has a target "cross" to make the binaries. Make sure you
-have all the libraries installed first.
-
-Run from the Lix root directory:
-
-    make cross
-
-Even if your MinGW directory is different from mine, MinGW should know its
-own library directory and find all libraries in it. If you get undefined
-references nonetheless, edit the following line in the Lix makefile to match
-your MinGW directory:
-
-    CRO_MINGDIR  = /usr/i586-mingw32msvc
-
-The makefile builds the Windows game executable "./bin/binwin/lix.exe" and the
-server application "./bin/binwin/lixserv.exe". To test them, run them in Wine.
-
-The default makefile target "all" doesn't imply "cross". You have to
-specify "cross" separately. If you wish to build both the Linux and Windows
-binaries, you can run "make all cross".

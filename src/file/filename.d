@@ -36,7 +36,7 @@ class Filename {
 
 private:
 
-    static string root;
+    static string root = "./";
 
     // We don't have the variables rootful and dir_rootful anymore.
     // Module basics.globals instatiates Filename objects before main() runs,

@@ -27,9 +27,9 @@ const ext_level_lemmini            = ".ini";
 const ext_replay                   = ".txt";
 const ext_user                     = ".txt";
 const ext_object_definitions       = ".txt";
-const mask_anything                = "*.*";
-const mask_ext_replay              = "*.txt";
-const mask_ext_user                = "*.txt";
+deprecated const mask_anything     = "";
+deprecated const mask_ext_replay   = ext_replay;
+deprecated const mask_ext_user     = ext_user;
 
 const file_level_dir_order         = "_order.X.txt";
 const file_level_dir_english       = "_english.X.txt";
