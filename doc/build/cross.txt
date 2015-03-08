@@ -1,13 +1,12 @@
 How to cross-compile Lix
 ========================
 
-This document describes how to build Windows binaries on a Linux system
-from Lix's D source.
+This document will later, with hope, describe how to build Windows binaries
+on a Linux system from Lix's D source.
 
-I don't know whether my build method is standard: I'm using Ditial Mars's
-Windows version of their D compiler in Wine. Even though D is a growing
-language, few people seem to cross-compile D. ;-) Anyway, even a weird method
-may be better than none.
+I don't have a working cross-compiler right now. wine dmd.exe pagefaults
+for me. Therefore, I can only describe how to build the libraries, not
+Lix itself.
 
 I assume that you:
 
@@ -162,36 +161,29 @@ Download a recent version of the source. I got mine from here:
 
     http://sourceforge.net/projects/freetype/files/freetype2/
 
-You should be fine to install the newest version, or a reasonably new
-version that has been around for a longer time. Unpack the source (e.g.
+To follow my instructions, get version 2.4.12, not 2.5.x.
+
+The newer versions 2.5.x build with cmake. I couldn't get that one configured
+correctly. I managed to build libfreetype.a, but had to install that lib and
+the freetype headers manually. When building Allegro 5, I got linker errors
+that I couldn't fix. That's why I advise version 2.4.12.
+
+Version 2.4.12 builds with autotools. That's easy! Unpack the source (e.g.
 with tar xjf yourfile.tar.bz) and cd into the extracted dir.
 
-Freetype builds with cmake. I have managed to point cmake to use the MinGW
-compiler, but I have not managed to give cmake correct path prefixes for
-make install. In my described workaround here, we will do the normal cmake
-build up to the point of running make, and take over manually from there.
+You might have to edit --build=... or leave it out altogether. It specifies
+the machine on which we build. Most important is the target machine --host.
 
-In the cmake dir, do:
-
-    mkdir BuildWin32
-    cd BuildWin32
-
-The name of that directory is arbitrary. Should you screw up, you can rm
--rf this dir and try again. In the dir:
-
-    cmake --host=i586-mingw32msvc ..
+    ./configure --prefix=/usr/i586-mingw32msvc --build=i686-linux-gnu --host=i586-mingw32msvc
     make
-
-Now, we have to install source and libraries ourselves:
-
-    sudo cp libfreetype.a /usr/i586-mingw32msvc/lib
-    sudo cp -r include/*  /usr/i586-mingw32msvc/include
+    sudo make install | tee simon-make-install.txt
 
 That concludes the installation of FreeType. Allegro 5 should be able find
-it later. DTODO: no, it doesn't find it. :-/
+it later.
 
-If you know how to give cmake the desired installation prefixes, please let
-me know, so I can simplify the build process description.
+If you know how to build FreeType 2.5.x with cmake, including the desired
+installation prefixes and choice of host machine, please let me know, so I
+can offer advice on the newer versions of FreeType.
 
 
 
