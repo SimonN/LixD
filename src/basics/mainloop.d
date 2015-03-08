@@ -3,6 +3,7 @@ module basics.mainloop;
 import basics.alleg5;
 import file.filename;
 import graphic.cutbit;
+import graphic.graphic;
 import graphic.textout;
 import graphic.torbit;
 import hardware.mouse;
@@ -24,8 +25,9 @@ private:
     bool   exit;
     AlBit[] wuerste;
     Torbit osd;
-    Cutbit mycut;
     Cutbit mouse;
+    Graphic myhatch1;
+    Graphic myhatch2;
 
     void process_events();
     void calc();
@@ -62,12 +64,13 @@ void main_loop()
         clear(mouse);
     }
 
-    Filename fn = new Filename("./images/constr-hatch.png");
-    mycut = new Cutbit(fn, true);
-
     osd = new Torbit(al_get_display_width (display),
                      al_get_display_height(display), true, true);
     scope (exit) clear(osd);
+
+    myhatch1 = new Graphic(new Cutbit(new Filename("./images/constr-hatch.png")), osd);
+    myhatch2 = new Graphic(myhatch1.get_cutbit(), osd);
+    scope (exit) clear(myhatch1.get_cutbit());
 
     long last_tick;
 
@@ -129,9 +132,14 @@ void calc()
     osd.draw_from(wuerste[3], 200 + 0, 200, false, wurstrotation(tick/5));
 
     import std.math, std.conv;
-    mycut.draw(osd, 300 + to!int(40*sin(tick/41.0)),
-                    300 + to!int(30*sin(tick/25.0)),
-                    to!int(2.5 + 2.49 * sin(tick/20.0))); // x_frame
+    myhatch1.set_xy(300 + to!int(40*sin(tick/41.0)),
+                    300 + to!int(30*sin(tick/25.0)));
+    myhatch2.set_xy(450 + to!int(50*sin(tick/47.0)),
+                    280 + to!int(42*sin(tick/27.0)));
+    myhatch1.set_x_frame(to!int(2.5 + 2.49 * sin(tick/20.0)));
+    myhatch2.set_x_frame(to!int(2.5 + 2.49 * sin(tick/25.0)));
+    myhatch1.draw();
+    myhatch2.draw();
 
     static string typetext = "Type some UTF-8 chars: ";
     typetext ~= get_utf8_input();
