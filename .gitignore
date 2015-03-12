@@ -1,7 +1,7 @@
 # Lix D port gitignore
 
 .dub
-lix
+bin/lix
 
 data/log.txt
 data/config.txt

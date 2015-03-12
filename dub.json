@@ -5,6 +5,10 @@
     "copyright": "public domain",
     "authors": ["Simon N."],
 
+    "targetName": "lix",
+    "targetPath": "bin",
+    "workingDirectory": "./",
+
     "dependencies": {
         "allegro": "~master"
     },
