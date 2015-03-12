@@ -142,7 +142,7 @@ void calc()
     myhatch2.set_xy(450 + to!int(50*sin(tick/47.0)),
                     280 + to!int(42*sin(tick/27.0)));
     myhatch1.set_x_frame(to!int(2.5 + 2.49 * sin(tick/20.0)));
-    myhatch2.set_x_frame(to!int(2.5 + 2.49 * sin(tick/25.0)));
+    myhatch2.set_x_frame(to!int(2.5 + 6.3  * sin(tick/25.0)));
     myhatch1.draw();
     myhatch2.draw();
 

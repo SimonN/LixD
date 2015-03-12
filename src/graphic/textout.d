@@ -98,6 +98,11 @@ void drtx(Torbit bmp, string str, int x, int y)
     draw_shadow_text(bmp, djvu_m, str, x, y, color.white, color.shadow);
 }
 
+void drtx(Torbit bmp, string str, int x, int y, AlCol c)
+{
+    draw_shadow_text(bmp, djvu_m, str, x, y, c, color.shadow);
+}
+
 /*
 void draw_shaded_centered_text(BITMAP *bmp, AlFont f, const char* s,
  int x, int y, int r, int g, int b) {

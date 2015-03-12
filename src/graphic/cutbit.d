@@ -3,6 +3,7 @@ module graphic.cutbit;
 import basics.alleg5;
 import graphic.color;
 import graphic.torbit;
+import graphic.textout; // write error message instead of drawing bitmap
 import file.filename;
 import file.language;
 import file.log; // log bad filename when trying to load a bitmap
@@ -312,16 +313,13 @@ void draw(
     // no frame inside the cutbit has been specified, or the cutbit
     // has a null bitmap
     else {
-        assert (false, "DTODO: implement printing message for nonexistant frame");
-        /*
-        int          col_text = makecol(255, 255, 255);
-        int          col_back = makecol( 64,  64,  64);
-        if (!bitmap) col_back = makecol(255,  64,  64);
-        std::ostringstream str;
-        str << "( " << fx << " | " << fy << " )";
-        textout_ex(target, font, "Frame?!?!", x, y,        col_text, col_back);
-        textout_ex(target, font, str.str().c_str(), x, y+8,col_text, col_back);
-        */
+        string str = "File N/A";
+        AlCol  col = color.cb_bad_bitmap;
+        if (bitmap) {
+            str = format("(%d,%d)", fx, fy);
+            col = color.cb_bad_frame;
+        }
+        drtx(target_torbit, str, x, y, col);
     }
 }
 
