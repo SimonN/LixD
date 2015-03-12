@@ -57,8 +57,10 @@ void deinitialize()
     hardware.mouse.deinitialize();
     hardware.keyboard.deinitialize();
 
-    al_shutdown_font_addon();
+    al_shutdown_primitives_addon();
     al_shutdown_ttf_addon();
+    al_shutdown_font_addon();
+    al_shutdown_image_addon();
 
     hardware.display.deinitialize();
 
@@ -68,4 +70,6 @@ void deinitialize()
     al_stop_timer(timer);
     al_destroy_timer(timer);
     timer = null;
+
+    al_uninstall_system();
 }

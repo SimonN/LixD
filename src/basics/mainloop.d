@@ -44,9 +44,10 @@ void main_loop()
     import graphic.color;
     mouse   =  new Cutbit(new Filename("./data/images/mouse.I.png"));
     al_convert_mask_to_alpha(mouse.get_albit(), color.pink);
+    assert (mouse);
+    scope (exit) clear(mouse);
 
     wuerste ~= al_load_bitmap("./images/piece.png");
-    assert (mouse);
     assert (wuerste[0]);
     al_convert_mask_to_alpha(wuerste[0], AlCol(1,0,1,1));
     foreach (i; 1 .. 4) {
@@ -61,16 +62,20 @@ void main_loop()
             wurst = null;
         }
         assert (wuerste[0] == null);
-        clear(mouse);
     }
 
     osd = new Torbit(al_get_display_width (display),
                      al_get_display_height(display), true, true);
     scope (exit) clear(osd);
 
-    myhatch1 = new Graphic(new Cutbit(new Filename("./images/constr-hatch.png")), osd);
-    myhatch2 = new Graphic(myhatch1.get_cutbit(), osd);
-    scope (exit) clear(myhatch1.get_cutbit());
+    Cutbit hatch_cb = new Cutbit(new Filename("./images/constr-hatch.png"));
+    myhatch1 = new Graphic(hatch_cb, osd);
+    myhatch2 = new Graphic(hatch_cb, osd);
+    scope (exit) {
+        clear(myhatch2);
+        clear(myhatch1);
+        clear(hatch_cb);
+    }
 
     long last_tick;
 
