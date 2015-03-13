@@ -35,9 +35,10 @@ private:
 
     // The int variables should be != 0 for the character spreadsheet and
     // similar things that require both a GUI and a player color recoloring.
+    // recolor_into_vector() assumes the cutbit's bitmap to be locked already.
     void eidrecol_api       (in Filename);
     void eidrecol_api       (Cutbit, in int = 0);
-    void recolor_into_vector(const(Cutbit), Cutbit[], int = 0);
+    void recolor_into_vector(const(Cutbit), ref Cutbit[Style], int = 0);
 
     // I believe these magic numbers are only to separate between recoloring
     // lixes and recoloring icons. eidrecol behaves differently based on
@@ -50,8 +51,12 @@ private:
 
 public:
 
+import file.log; // debugging
+alias Log.log writefln;
+
 void initialize()
 {
+    writefln("entering intitialize");
     null_cutbit = new Cutbit(cast (Cutbit) null);
 
     // find all internal bitmaps
@@ -71,47 +76,23 @@ void initialize()
         assert (get(fn).is_valid(), "not valid: " ~ fn.get_rootful());
     }
 
-    // Make GUI elements have the correct colors. We assume the user file
-    // to have been loaded already, and therefore the correct GUI colors
-    // have been computed.
-    eidrecol_api(file_bitmap_api_number);
-    eidrecol_api(file_bitmap_checkbox);
-    eidrecol_api(file_bitmap_edit_flip);
-    eidrecol_api(file_bitmap_edit_hatch);
-    eidrecol_api(file_bitmap_edit_panel);
-    eidrecol_api(file_bitmap_game_arrow);
-    eidrecol_api(file_bitmap_game_icon);
-    eidrecol_api(file_bitmap_game_nuke);
-    eidrecol_api(file_bitmap_game_panel);
-    eidrecol_api(file_bitmap_game_panel_2);
-    eidrecol_api(file_bitmap_game_panel_hints);
-    eidrecol_api(file_bitmap_game_spi_fix);
-    eidrecol_api(file_bitmap_game_pause);
-    eidrecol_api(file_bitmap_lobby_spec);
-    eidrecol_api(file_bitmap_menu_checkmark);
-    eidrecol_api(file_bitmap_preview_icon);
-
-    // commented-out test output of the eidrecoloring
-    // al_save_bitmap("./atest.png", get(file_bitmap_game_panel).get_albit());
-
     // Create the matrix of eye coordinates.
     // Each frame of the Lix spritesheet has the eyes in some position.
     // The exploder fuse shall start at that position, let's calculate it.
     Cutbit* cb_ptr = (file_bitmap_lix.get_rootless_no_extension() in internal);
-    assert (cb_ptr);
+    assert (cb_ptr, "missing image: the main Lix spritesheet");
     if (! cb_ptr) return;
     Cutbit cb = *cb_ptr;
 
     AlBit b = cb.get_albit();
-    assert (b);
-
-    // debugging
-    scope (exit) al_save_bitmap("./z-lix-nachher.png", b);
+    assert (b, "apparently your gfx card can't store the Lix spritesheet");
 
     mixin(temp_lock!"b");
 
     lix.matrix.countdown = new XY[][cb.get_x_frames()];
     foreach (ref XY[] row; countdown) row = new XY[cb.get_y_frames()];
+
+    writefln("start xy-ing");
 
     // fx, fy = which x- respective y-frame
     // x,  y  = which pixel inside this frame, offset from frame's top left
@@ -146,16 +127,55 @@ void initialize()
     }
     // All pixels of the entire spritesheet have been examined.
 
-/*
-    // Prepare Lix sprites in multiple colors and
-    // prepare panel icons in multiple colors. recolor_lix is a speed switch:
-    // In replay verify mode, there is no relocoring, only copying
-    recolor_into_vector(recolor_lix, cb, style, magicnr_sheet);
-    recolor_into_vector(recolor_lix, internal[gloB->file_bitmap_game_icon.
-                        get_rootless_no_extension()], icons, magicnr_icons);
+    writefln("done xy-ing");
 
-    load_all_file_replacements();
-*/
+    // ########################################################################
+    // Done making the matrix, now eidrecoloring. That will be very slow. #####
+    // ########################################################################
+
+    // Prepare Lix sprites in multiple colors
+    recolor_into_vector(cb, style, magicnr_sheet);
+
+    // Prepare the panel icons in multiple colors
+    Cutbit* icon_ptr = (file_bitmap_game_icon.get_rootless_no_extension()
+                       in internal);
+    assert (icon_ptr, "missing image: in-game panel icon of a Lix");
+    if (icon_ptr) {
+        Cutbit cb_icons = *icon_ptr;
+        AlBit  cb_bmp   = cb_icons.get_albit();
+        mixin(temp_lock!"cb_bmp");
+        recolor_into_vector(cb_icons, icons, magicnr_icons);
+    }
+
+    // Make GUI elements have the correct colors. We assume the user file
+    // to have been loaded already, and therefore the correct GUI colors
+    // have been computed.
+    writefln("starting recoloring");
+    eidrecol_api(file_bitmap_api_number);
+    writefln("done recoloring the 1st one, api number");
+    eidrecol_api(file_bitmap_checkbox);
+    writefln("done recoloring the 2nd one, api checkbox");
+    eidrecol_api(file_bitmap_edit_flip);
+    eidrecol_api(file_bitmap_edit_hatch);
+    eidrecol_api(file_bitmap_edit_panel);
+    eidrecol_api(file_bitmap_game_arrow);
+    eidrecol_api(file_bitmap_game_icon);
+    eidrecol_api(file_bitmap_game_nuke);
+    eidrecol_api(file_bitmap_game_panel);
+    eidrecol_api(file_bitmap_game_panel_2);
+    eidrecol_api(file_bitmap_game_panel_hints);
+    eidrecol_api(file_bitmap_game_spi_fix);
+    eidrecol_api(file_bitmap_game_pause);
+    eidrecol_api(file_bitmap_lobby_spec);
+    eidrecol_api(file_bitmap_menu_checkmark);
+    eidrecol_api(file_bitmap_preview_icon);
+    writefln("done recoloring");
+
+    // DTODO: move load_all_file_replacements(); into obj_lib
+
+    // DTODO: move this line ahead and see how much time we save, and whether
+    // we get crashes
+    if (basics.globconf.verify_mode) return;
 }
 
 
@@ -216,7 +236,12 @@ void eidrecol_api(Cutbit cutbit, in int magicnr)
     assert (bitmap);
     if (! bitmap) return;
 
-    mixin(temp_lock!"bitmap");
+    if (magicnr == 0) {
+        auto region = al_lock_bitmap(bitmap,
+         ALLEGRO_PIXEL_FORMAT.ALLEGRO_PIXEL_FORMAT_ANY,
+         ALLEGRO_LOCK_READWRITE);
+        assert (region, "can't lock bitmap despite magicnr == 0");
+    }
     mixin(temp_target!"bitmap");
 
     alias al_put_pixel pp;
@@ -244,47 +269,161 @@ void eidrecol_api(Cutbit cutbit, in int magicnr)
             else if (c == color.gui_f_l)   pp(x, y, color.gui_pic_l);
         }
     }
-    else assert (false, "DTODO: other magignrs not implemented!");
-/*
     else if (magicnr == magicnr_sheet)
-     for (int y = 0; y < bitmap->h; ++y) {
+     for (int y = 0; y < bmp_yl; ++y) {
         for (int x = 0; x < 2 * (cutbit.get_xl() + 1); ++x) {
-            const AlCol c = ::getpixel(bitmap, x, y);
-            if      (c == color[COL_API_FILE_SHADOW]) putpixel(bitmap, x, y,
-                          color[COL_API_SHADOW]);
+            immutable AlCol c = al_get_pixel(bitmap, x, y);
+            if      (c == color.gui_f_sha) pp(x, y, color.gui_sha);
             else if (x < cutbit.get_xl() + 1) continue;
-            else if (c == color[COL_BLACK]) putpixel(bitmap, x, y,
-                          color[COL_PINK]);
-            else if (c == color[COL_API_FILE_D]) putpixel(bitmap, x, y,
-                          color[COL_API_PIC_D]);
-            else if (c == color[COL_API_FILE_M]) putpixel(bitmap, x, y,
-                          color[COL_API_PIC_M]);
-            else if (c == color[COL_API_FILE_L]) putpixel(bitmap, x, y,
-                          color[COL_API_PIC_L]);
+            else if (c == color.black)   pp(x, y, color.transp);
+            else if (c == color.gui_f_d) pp(x, y, color.gui_pic_d);
+            else if (c == color.gui_f_m) pp(x, y, color.gui_pic_m);
+            else if (c == color.gui_f_l) pp(x, y, color.gui_pic_l);
         }
     }
     else if (magicnr == magicnr_icons) {
         // Recolor the API things (except shadow, which will be done in
         // an upcoming loop) in the second row.
         for (int y = cutbit.get_yl() + 1; y < 2 * (cutbit.get_yl() + 1); ++y)
-         for (int x = 0; x < bitmap->w; ++x) {
-            const AlCol c = ::getpixel(bitmap, x, y);
-            if      (c == color[COL_BLACK]) putpixel(bitmap, x, y,
-                          color[COL_PINK]);
-            else if (c == color[COL_API_FILE_D]) putpixel(bitmap, x, y,
-                          color[COL_API_PIC_D]);
-            else if (c == color[COL_API_FILE_M]) putpixel(bitmap, x, y,
-                          color[COL_API_PIC_M]);
-            else if (c == color[COL_API_FILE_L]) putpixel(bitmap, x, y,
-                          color[COL_API_PIC_L]);
+         for (int x = 0; x < bmp_xl; ++x) {
+            immutable AlCol c = al_get_pixel(bitmap, x, y);
+            if      (c == color.black)   pp(x, y, color.transp);
+            else if (c == color.gui_f_d) pp(x, y, color.gui_pic_d);
+            else if (c == color.gui_f_m) pp(x, y, color.gui_pic_m);
+            else if (c == color.gui_f_l) pp(x, y, color.gui_pic_l);
         }
         // Recolor the shadow of all frames
-        for (int y = 0; y < bitmap->h; ++y)
-         for (int x = 0; x < bitmap->w; ++x) {
-            const AlCol c = ::getpixel(bitmap, x, y);
-            if (c == color[COL_API_FILE_SHADOW]) putpixel(bitmap, x, y,
-                          color[COL_API_SHADOW]);
+        for (int y = 0; y < bmp_yl; ++y)
+         for (int x = 0; x < bmp_xl; ++x) {
+            immutable AlCol c = al_get_pixel(bitmap, x, y);
+            if (c == color.gui_f_sha) pp(x, y, color.gui_sha);
         }
     }
-*/
+
+    if (magicnr == 0) {
+        al_unlock_bitmap(bitmap);
+    }
+
 }
+
+
+
+void recolor_into_vector(
+    const(Cutbit)     cutbit,
+    ref Cutbit[Style] vector,
+    int               magicnr
+) {
+    // We assume the bitmap to be locked already. If you write code calling
+    // this function, make sure it's locked. Otherwise, everything will work
+    // extremely slowly.
+
+    // debugging
+    import file.log;
+
+    assert (cutbit.is_valid());
+    Cutbit* rcl_p = (file_bitmap_lix_recol.get_rootless_no_extension()
+                     in internal);
+    assert (rcl_p && rcl_p.is_valid(), "can't recolor, missing map image");
+
+    AlBit recol = rcl_p .get_albit();
+    AlBit lix   = cutbit.get_albit();
+    if (!recol || !lix) return;
+
+    immutable int   recol_xl  = al_get_bitmap_width (recol);
+    immutable int   recol_yl  = al_get_bitmap_height(recol);
+    immutable int   lix_xl    = al_get_bitmap_width (lix);
+    immutable int   lix_yl    = al_get_bitmap_height(lix);
+    immutable AlCol col_break = al_get_pixel(lix, lix_xl - 1, 0);
+
+    mixin(temp_lock!"recol");
+
+
+
+    void recolor_one_bitmap(AlBit target, in int style_id)
+    {
+        assert(target);
+        assert(style_id < recol_yl - 1);
+
+        // Build the recolor array for this particular style
+        AlCol[AlCol] recol_arr;
+        for (int conv = 0; conv < recol_xl; ++conv) {
+            recol_arr[al_get_pixel(recol, conv, 0)] =
+                      al_get_pixel(recol, conv, style_id + 1);
+        }
+
+        mixin(temp_target!"target");
+
+        // The first row (y == 0) contains the source pixels. The first style
+        // (garden) is at y == 1. Thus the recol->h - 1 is correct as we count
+        // styles starting at 0.
+        for  (int y = 0; y < lix_yl; y++)
+         for (int x = 0; x < lix_xl; x++) {
+
+            // The large Lix spritesheet has a column with greyed-out
+            // skills. These do not get recolored per player, skip them.
+            if (x == cutbit.get_xl() + 1 && magicnr == magicnr_sheet) {
+                // skip the column with the greyed out skill icons
+                x += cutbit.get_xl();
+                continue;
+            }
+
+            // I don't recall what this else-if does, it's probably important.
+            else if (magicnr == magicnr_icons
+             && y >= cutbit.get_yl() + 1
+             && y <  2 * (cutbit.get_yl() + 1)) {
+                // skip all x pixels in the second row in this
+                continue;
+            }
+
+            immutable AlCol col = al_get_pixel(lix, x, y);
+            if (col == col_break) {
+                // bad solution here: immediately begin next pixel, too slow
+                // bad solution too:  immediately begin next row, because
+                //                    we may have separating col_break-colored
+                //                    frames in the file.
+                // good solution:     immediately begin next frame
+                x += cutbit.get_xl();
+                continue;
+            }
+            // No exceptions for speed encountered so far. Now do the
+            // per-player recoloring. We don't consider the color conversion
+            // bitmap (recol) anymore, only recol_arr.
+            if (AlCol* col_ptr = (col in recol_arr)) {
+                al_put_pixel(x, y, *col_ptr);
+            }
+            // end of single-pixel color replacement
+        }
+        // end of for-all-pixels in source bitmap
+    }
+    // end of function recolor_one_bitmap
+
+
+
+    foreach (int i; 0 .. Style.STYLE_MAX) {
+        Style st = cast (Style) i;
+        vector[st] = new Cutbit(cutbit);
+        AlBit target = vector[st].get_albit();
+        assert (target);
+
+        mixin(temp_lock!"target");
+        writefln("recol in vec: bitmap locked: %d", i);
+        recolor_one_bitmap(target, i);
+
+        // Invoke eidrecol on the bitmap. Whenever eidrecol is invoked
+        // with a magicnr != 0, it does not lock/unlock the bitmaps itself,
+        // but assumes they are locked.
+        // writefln("eidrecol now: %d", i);
+        eidrecol_api(vector[st], magicnr);
+    }
+
+    // debugging: saving to files
+    static if (false)
+     foreach (int i; 0 .. Style.STYLE_MAX) {
+        Style st = cast (Style) i;
+        import std.string;
+        al_save_bitmap(format("./nagetier-%d-%d.png", magicnr, i).toStringz, vector[st].get_albit());
+        writefln("done saving: %d", i);
+    }
+
+}
+

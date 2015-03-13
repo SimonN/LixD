@@ -6,6 +6,7 @@ import basics.globconf;
 import file.language;
 import graphic.color;
 import graphic.gralib;
+import hardware.display;
 import hardware.mouse;
 
 // routines to initialize and deinitialize most things before/after
@@ -45,6 +46,11 @@ void initialize()
 
     graphic.color.initialize();
     graphic.textout.initialize();
+
+    import graphic.textout;
+    al_draw_text(djvu_m, color.white, 20, 20, ALLEGRO_ALIGN_LEFT,
+     "Loading images. This may take 5 to 10 seconds.");
+    al_flip_display();
 
     graphic.gralib.initialize();
 }

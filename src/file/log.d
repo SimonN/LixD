@@ -95,6 +95,7 @@ static void log(int i)
 {
     log_header_if_necessary();
     singl.file.writefln("%s %d", format_al_ticks(), i);
+    singl.file.flush();
 }
 
 
@@ -103,6 +104,7 @@ static void log(string s)
 {
     log_header_if_necessary();
     singl.file.writefln("%s %s", format_al_ticks(), s);
+    singl.file.flush();
 }
 
 
@@ -111,6 +113,7 @@ static void log(string s, int i)
 {
     log_header_if_necessary();
     singl.file.writefln("%s %s %d", format_al_ticks(), s, i);
+    singl.file.flush();
 }
 
 
@@ -119,6 +122,7 @@ static void log(string s1, string s2)
 {
     log_header_if_necessary();
     singl.file.writefln("%s %s %s", format_al_ticks(), s1, s2);
+    singl.file.flush();
 }
 
 }
