@@ -22,7 +22,7 @@ class Cutbit {
     }
 
     this() {}
-    this(const Cutbit);
+    this(in Cutbit);
     this(AlBit,          const bool cut = true); // takes ownership of bitmap!
     this(const Filename, const bool cut = true);
     this(AlBit[]);
@@ -68,7 +68,7 @@ private:
 
 public:
 
-this(const Cutbit cb)
+this(in Cutbit cb)
 {
     if (! cb) return;
     xl = cb.xl;

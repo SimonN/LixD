@@ -54,7 +54,7 @@ template temp_lock(string bitmap)
     // lock the bitmap; if locking was succesful, unlock at end of scope
     const char[] temp_lock = "
     ALLEGRO_LOCKED_REGION* lock_" ~ bitmap[0] ~ " = al_lock_bitmap("
-     ~ bitmap ~ ", al_get_bitmap_format("
-     ~ bitmap ~ "), ALLEGRO_LOCK_READWRITE);
+     ~ bitmap ~ ", ALLEGRO_PIXEL_FORMAT.ALLEGRO_PIXEL_FORMAT_ANY,
+     ALLEGRO_LOCK_READWRITE);
     scope (exit) if (lock_" ~ bitmap[0] ~ ") al_unlock_bitmap(" ~bitmap~ ");";
 }

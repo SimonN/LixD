@@ -16,7 +16,7 @@ import lix.enums;
 void initialize();
 void deinitialize();
 
-const(Cutbit) get     (in const(Filename));
+const(Cutbit) get     (in Filename);
 const(Cutbit) get_lix (in Style);
 const(Cutbit) get_icon(in Style); // for the panel
 
@@ -34,8 +34,8 @@ private:
 
     // The int variables should be != 0 for the character spreadsheet and
     // similar things that require both a GUI and a player color recoloring.
-    void eidrecol_api       (in const(Filename));
-    void eidrecol_api       (Cutbit, int = 0);
+    void eidrecol_api       (in Filename);
+    void eidrecol_api       (Cutbit, in int = 0);
     void recolor_into_vector(const(Cutbit), Cutbit[], int = 0);
 
     // I believe these magic numbers are only to separate between recoloring
@@ -69,6 +69,29 @@ void initialize()
         internal[fn.get_rootless_no_extension()] = cb;
         assert (get(fn).is_valid(), "not valid: " ~ fn.get_rootful());
     }
+
+    // Make GUI elements have the correct colors. We assume the user file
+    // to have been loaded already, and therefore the correct GUI colors
+    // have been computed.
+    eidrecol_api(file_bitmap_api_number);
+    eidrecol_api(file_bitmap_checkbox);
+    eidrecol_api(file_bitmap_edit_flip);
+    eidrecol_api(file_bitmap_edit_hatch);
+    eidrecol_api(file_bitmap_edit_panel);
+    eidrecol_api(file_bitmap_game_arrow);
+    eidrecol_api(file_bitmap_game_icon);
+    eidrecol_api(file_bitmap_game_nuke);
+    eidrecol_api(file_bitmap_game_panel);
+    eidrecol_api(file_bitmap_game_panel_2);
+    eidrecol_api(file_bitmap_game_panel_hints);
+    eidrecol_api(file_bitmap_game_spi_fix);
+    eidrecol_api(file_bitmap_game_pause);
+    eidrecol_api(file_bitmap_lobby_spec);
+    eidrecol_api(file_bitmap_menu_checkmark);
+    eidrecol_api(file_bitmap_preview_icon);
+
+    // commented-out test output of the eidrecoloring
+    // al_save_bitmap("./atest.png", get(file_bitmap_game_panel).get_albit());
 
 /*
     // Countdown-Matrix erstellen
@@ -119,24 +142,6 @@ void initialize()
     recolor_into_vector(recolor_lix, internal[gloB->file_bitmap_game_icon.
                         get_rootless_no_extension()], icons, magicnr_icons);
 
-    // Make GUI elements have the correct colors
-    eidrecol_api(gloB->file_bitmap_api_number);
-    eidrecol_api(gloB->file_bitmap_checkbox);
-    eidrecol_api(gloB->file_bitmap_edit_flip);
-    eidrecol_api(gloB->file_bitmap_edit_hatch);
-    eidrecol_api(gloB->file_bitmap_edit_panel);
-    eidrecol_api(gloB->file_bitmap_game_arrow);
-    eidrecol_api(gloB->file_bitmap_game_icon);
-    eidrecol_api(gloB->file_bitmap_game_nuke);
-    eidrecol_api(gloB->file_bitmap_game_panel);
-    eidrecol_api(gloB->file_bitmap_game_panel_2);
-    eidrecol_api(gloB->file_bitmap_game_panel_hints);
-    eidrecol_api(gloB->file_bitmap_game_spi_fix);
-    eidrecol_api(gloB->file_bitmap_game_pause);
-    eidrecol_api(gloB->file_bitmap_lobby_spec);
-    eidrecol_api(gloB->file_bitmap_menu_checkmark);
-    eidrecol_api(gloB->file_bitmap_preview_icon);
-
     load_all_file_replacements();
 */
 }
@@ -158,7 +163,7 @@ void deinitialize()
 
 
 
-const(Cutbit) get(in const(Filename) fn)
+const(Cutbit) get(in Filename fn)
 {
     immutable string str = fn.get_rootless_no_extension();
     if (str in internal) return internal[str];
@@ -181,3 +186,93 @@ const(Cutbit) get_icon(in Style st)
     else return null_cutbit;
 }
 
+
+
+private:
+
+void eidrecol_api(in Filename fn)
+{
+    Cutbit* cutbit = (fn.get_rootless_no_extension() in internal);
+    if (cutbit) eidrecol_api(*cutbit);
+}
+
+
+
+void eidrecol_api(Cutbit cutbit, in int magicnr)
+{
+    AlBit bitmap = cutbit.get_al_bitmap();
+    assert (bitmap);
+    if (! bitmap) return;
+
+    mixin(temp_lock!"bitmap");
+    mixin(temp_target!"bitmap");
+
+    alias al_put_pixel pp;
+
+    immutable bmp_xl = al_get_bitmap_width (bitmap);
+    immutable bmp_yl = al_get_bitmap_height(bitmap);
+
+    if (! magicnr)
+     for (int y = 0; y < bmp_yl; ++y) {
+        immutable bool light = (y > cutbit.get_yl());
+        if (light) for (int x = 0; x < bmp_xl; ++x) {
+            immutable AlCol c = al_get_pixel(bitmap, x, y);
+            if      (c == color.black)     pp(x, y, color.transp);
+            else if (c == color.gui_f_sha) pp(x, y, color.gui_sha);
+            else if (c == color.gui_f_d)   pp(x, y, color.gui_pic_on_d);
+            else if (c == color.gui_f_m)   pp(x, y, color.gui_pic_on_m);
+            else if (c == color.gui_f_l)   pp(x, y, color.gui_pic_on_l);
+        }
+        else for (int x = 0; x < bmp_xl; ++x) {
+            immutable AlCol c = al_get_pixel(bitmap, x, y);
+            if      (c == color.black)     pp(x, y, color.transp);
+            else if (c == color.gui_f_sha) pp(x, y, color.gui_sha);
+            else if (c == color.gui_f_d)   pp(x, y, color.gui_pic_d);
+            else if (c == color.gui_f_m)   pp(x, y, color.gui_pic_m);
+            else if (c == color.gui_f_l)   pp(x, y, color.gui_pic_l);
+        }
+    }
+    else assert (false, "DTODO: other magignrs not implemented!");
+/*
+    else if (magicnr == magicnr_sheet)
+     for (int y = 0; y < bitmap->h; ++y) {
+        for (int x = 0; x < 2 * (cutbit.get_xl() + 1); ++x) {
+            const AlCol c = ::getpixel(bitmap, x, y);
+            if      (c == color[COL_API_FILE_SHADOW]) putpixel(bitmap, x, y,
+                          color[COL_API_SHADOW]);
+            else if (x < cutbit.get_xl() + 1) continue;
+            else if (c == color[COL_BLACK]) putpixel(bitmap, x, y,
+                          color[COL_PINK]);
+            else if (c == color[COL_API_FILE_D]) putpixel(bitmap, x, y,
+                          color[COL_API_PIC_D]);
+            else if (c == color[COL_API_FILE_M]) putpixel(bitmap, x, y,
+                          color[COL_API_PIC_M]);
+            else if (c == color[COL_API_FILE_L]) putpixel(bitmap, x, y,
+                          color[COL_API_PIC_L]);
+        }
+    }
+    else if (magicnr == magicnr_icons) {
+        // Recolor the API things (except shadow, which will be done in
+        // an upcoming loop) in the second row.
+        for (int y = cutbit.get_yl() + 1; y < 2 * (cutbit.get_yl() + 1); ++y)
+         for (int x = 0; x < bitmap->w; ++x) {
+            const AlCol c = ::getpixel(bitmap, x, y);
+            if      (c == color[COL_BLACK]) putpixel(bitmap, x, y,
+                          color[COL_PINK]);
+            else if (c == color[COL_API_FILE_D]) putpixel(bitmap, x, y,
+                          color[COL_API_PIC_D]);
+            else if (c == color[COL_API_FILE_M]) putpixel(bitmap, x, y,
+                          color[COL_API_PIC_M]);
+            else if (c == color[COL_API_FILE_L]) putpixel(bitmap, x, y,
+                          color[COL_API_PIC_L]);
+        }
+        // Recolor the shadow of all frames
+        for (int y = 0; y < bitmap->h; ++y)
+         for (int x = 0; x < bitmap->w; ++x) {
+            const AlCol c = ::getpixel(bitmap, x, y);
+            if (c == color[COL_API_FILE_SHADOW]) putpixel(bitmap, x, y,
+                          color[COL_API_SHADOW]);
+        }
+    }
+*/
+}
