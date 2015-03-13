@@ -8,6 +8,7 @@ import graphic.cutbit;
 import file.filename;
 import file.search;
 import lix.enums;
+import lix.matrix;
 
 // Graphics library, loads spritesheets and offers them for use via string
 // lookup. This does not handle Lix terrain, special objects, or L1/L2 graphics
@@ -93,15 +94,27 @@ void initialize()
     // commented-out test output of the eidrecoloring
     // al_save_bitmap("./atest.png", get(file_bitmap_game_panel).get_albit());
 
-/*
-    // Countdown-Matrix erstellen
-    const Cutbit& cb = internal[gloB->file_bitmap_lix.
-                                get_rootless_no_extension()];
-          BITMAP* b  = cb.get_al_bitmap();
-    Lixxie::countdown = Lixxie::Matrix(
-     cb.get_x_frames(), std::vector <Lixxie::XY> (cb.get_y_frames()) );
-    // fx, fy = welcher X- bzw. Y-Frame
-    // x,  y  = wo in diesem Frame
+    // Create the matrix of eye coordinates.
+    // Each frame of the Lix spritesheet has the eyes in some position.
+    // The exploder fuse shall start at that position, let's calculate it.
+    Cutbit* cb_ptr = (file_bitmap_lix.get_rootless_no_extension() in internal);
+    assert (cb_ptr);
+    if (! cb_ptr) return;
+    Cutbit cb = *cb_ptr;
+
+    AlBit b = cb.get_albit();
+    assert (b);
+
+    // debugging
+    scope (exit) al_save_bitmap("./z-lix-nachher.png", b);
+
+    mixin(temp_lock!"b");
+
+    lix.matrix.countdown = new XY[][cb.get_x_frames()];
+    foreach (ref XY[] row; countdown) row = new XY[cb.get_y_frames()];
+
+    // fx, fy = which x- respective y-frame
+    // x,  y  = which pixel inside this frame, offset from frame's top left
     for  (int fy = 0; fy < cb.get_y_frames(); ++fy)
      for (int fx = 0; fx < cb.get_x_frames(); ++fx) {
         for  (int y = 0; y < cb.get_yl(); ++y )
@@ -109,9 +122,9 @@ void initialize()
             // Is it the pixel of the eye?
             const int real_x = 1 + fx * (cb.get_xl() + 1) + x;
             const int real_y = 1 + fy * (cb.get_yl() + 1) + y;
-            if (_getpixel16(b, real_x, real_y) == color[COL_LIXFILE_EYE]) {
-                Lixxie::countdown[fx][fy].x = x;
-                Lixxie::countdown[fx][fy].y = y - 1;
+            if (al_get_pixel(b, real_x, real_y) == color.lixfile_eye) {
+                countdown[fx][fy].x = x;
+                countdown[fx][fy].y = y - 1;
                 goto GOTO_NEXTFRAME;
             }
             // If not yet gone to GOTO_NEXTFRAME:
@@ -120,19 +133,18 @@ void initialize()
             // Frames (0, y) and (1, y) are the skill button images.
             if (y == cb.get_yl() - 1 && x == cb.get_xl() - 1) {
                 if (fx < 3) {
-                    Lixxie::countdown[fx][fy].x = cb.get_xl() / 2 - 1;
-                    Lixxie::countdown[fx][fy].y = 12;
+                    countdown[fx][fy].x = cb.get_xl() / 2 - 1;
+                    countdown[fx][fy].y = 12;
                 }
-                else Lixxie::countdown[fx][fy] = Lixxie::countdown[fx - 1][fy];
+                else countdown[fx][fy] = countdown[fx - 1][fy];
             }
         }
         GOTO_NEXTFRAME:
-        if (fy == LixEn::BLOCKER - 1) {
-            Lixxie::countdown[fx][fy].x = LixEn::ex_offset;
+        if (fy == Ac.BLOCKER - 1) {
+            countdown[fx][fy].x = lix.enums.ex_offset;
         }
     }
-    // Alle Pixel sind abgegrast.
-*/
+    // All pixels of the entire spritesheet have been examined.
 
 /*
     // Prepare Lix sprites in multiple colors and

@@ -25,6 +25,8 @@ class Color {
         red,
         black,
 
+        lixfile_eye, // for detection of where exploder fuses are positioned
+
         gui_f_sha, // how it looks in an image file, these get
         gui_f_d,   // recolored to gui_d, gui_on_d, ..., accordingly.
         gui_f_m,
@@ -66,6 +68,8 @@ private:
 
         cb_bad_frame  = AlCol(0.8,  0.8,  0.8,  1  );
         cb_bad_bitmap = AlCol(1,    0.5,  0.5,  1  );
+
+        lixfile_eye   = makecol(0x50, 0x50, 0x50);
 
         white         = AlCol(1,    1,    1,    1  );
         shadow        = AlCol(0.5,  0.4,  0.25, 1  );
