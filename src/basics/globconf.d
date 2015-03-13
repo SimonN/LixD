@@ -34,6 +34,9 @@ string ip_last_used          = "127.0.0.1";
 string ip_central_server     = "asdfasdf.ethz.ch";
 int    server_port           = 22934;
 
+// extra variable that is not saved into config file
+bool   verify_mode           = false;
+
 
 
 void load()

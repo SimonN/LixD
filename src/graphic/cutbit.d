@@ -70,6 +70,7 @@ public:
 
 this(const Cutbit cb)
 {
+    if (! cb) return;
     xl = cb.xl;
     yl = cb.yl;
     x_frames = cb.x_frames;

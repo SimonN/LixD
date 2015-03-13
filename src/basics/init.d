@@ -5,10 +5,12 @@ import basics.globals;
 import basics.globconf;
 import file.language;
 import graphic.color;
+import graphic.gralib;
 import hardware.mouse;
 
 // routines to initialize and deinitialize most things before/after
-// the main loop runs
+// the main loop runs. Some things have module constructors (static this()),
+// but modules using Allegro need to be initialized from here.
 
 void initialize();
 void deinitialize();
@@ -44,13 +46,15 @@ void initialize()
     graphic.color.initialize();
     graphic.textout.initialize();
 
-    // load all graphics here, because we can print text already
+    graphic.gralib.initialize();
 }
 
 
 
 void deinitialize()
 {
+    graphic.gralib.deinitialize();
+
     graphic.textout.deinitialize();
     graphic.color.deinitialize();
 

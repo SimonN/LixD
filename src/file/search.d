@@ -10,9 +10,11 @@ import file.filename;
 // find_files() finds only regular files, no dirs, and has no recursion.
 // find_dirs()  finds only dirs, and has no recursion.
 // find_tree()  finds only regular files, no dirs, recursing through subdirs.
-const(Filename)[] find_files(const Filename fn_where, const string what);
+// Whenever what == "", every possible file is retrieved because
+// has_correct_ending("") will always be true; see that function for details.
+const(Filename)[] find_files(const Filename fn_where, const string what = "");
 const(Filename)[] find_dirs (const Filename fn_where);
-const(Filename)[] find_tree (const Filename fn_where, const string what);
+const(Filename)[] find_tree (const Filename fn_where, const string what = "");
 
 bool dir_exists(const Filename);
 
@@ -28,7 +30,7 @@ private pure bool has_correct_ending(const string fn, const string ending)
 
 const(Filename)[] find_files(
     const Filename fn_where,
-    const string   what,
+    const string   what = "",
 ) {
     const(Filename)[] ret;
     // shallow = don't recurse through subdirs, false = don't follow symlinks
@@ -62,7 +64,7 @@ const(Filename)[] find_dirs(
 
 const(Filename)[] find_tree(
     const Filename fn_where,
-    const string   what,
+    const string   what = "",
 ) {
     const(Filename)[] ret;
     // breadth-first search through the entire given tree

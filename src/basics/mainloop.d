@@ -1,8 +1,10 @@
 module basics.mainloop;
 
 import basics.alleg5;
+import basics.globals;
 import file.filename;
 import graphic.cutbit;
+import graphic.gralib;
 import graphic.graphic;
 import graphic.textout;
 import graphic.torbit;
@@ -17,6 +19,8 @@ class MainLoop {
 
 public:
 
+    this();
+
     // create an object and call this method once, then exit the program
     void main_loop();
 
@@ -25,7 +29,7 @@ private:
     bool   exit;
     AlBit[] wuerste;
     Torbit osd;
-    Cutbit mouse;
+    const(Cutbit) mouse;
     Graphic myhatch1;
     Graphic myhatch2;
 
@@ -37,15 +41,21 @@ private:
 
 public:
 
+
+
+this()
+{
+    mouse = graphic.gralib.get(file_bitmap_mouse);
+    assert (mouse.is_valid());
+}
+
+
+
 void main_loop()
 {
     exit = false;
 
     import graphic.color;
-    mouse   =  new Cutbit(new Filename("./data/images/mouse.I.png"));
-    al_convert_mask_to_alpha(mouse.get_albit(), color.pink);
-    assert (mouse);
-    scope (exit) clear(mouse);
 
     wuerste ~= al_load_bitmap("./images/piece.png");
     assert (wuerste[0]);
