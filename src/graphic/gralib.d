@@ -51,12 +51,8 @@ private:
 
 public:
 
-import file.log; // debugging
-alias Log.log writefln;
-
 void initialize()
 {
-    writefln("entering intitialize");
     null_cutbit = new Cutbit(cast (Cutbit) null);
 
     // find all internal bitmaps
@@ -91,8 +87,6 @@ void initialize()
 
     lix.enums.countdown = new Matrix!XY(cb.get_x_frames(), cb.get_y_frames());
 
-    writefln("start xy-ing");
-
     // fx, fy = which x- respective y-frame
     // x,  y  = which pixel inside this frame, offset from frame's top left
     for  (int fy = 0; fy < cb.get_y_frames(); ++fy)
@@ -124,8 +118,6 @@ void initialize()
     }
     // All pixels of the entire spritesheet have been examined.
 
-    writefln("done xy-ing");
-
     // ########################################################################
     // Done making the matrix, now eidrecoloring. That will be very slow. #####
     // ########################################################################
@@ -147,11 +139,8 @@ void initialize()
     // Make GUI elements have the correct colors. We assume the user file
     // to have been loaded already, and therefore the correct GUI colors
     // have been computed.
-    writefln("starting recoloring");
     eidrecol_api(file_bitmap_api_number);
-    writefln("done recoloring the 1st one, api number");
     eidrecol_api(file_bitmap_checkbox);
-    writefln("done recoloring the 2nd one, api checkbox");
     eidrecol_api(file_bitmap_edit_flip);
     eidrecol_api(file_bitmap_edit_hatch);
     eidrecol_api(file_bitmap_edit_panel);
@@ -166,7 +155,6 @@ void initialize()
     eidrecol_api(file_bitmap_lobby_spec);
     eidrecol_api(file_bitmap_menu_checkmark);
     eidrecol_api(file_bitmap_preview_icon);
-    writefln("done recoloring");
 
     // DTODO: move load_all_file_replacements(); into obj_lib
 
@@ -395,7 +383,7 @@ void recolor_into_vector(
     // end of function recolor_one_bitmap
 
 
-
+    // now invoke the above code on each Lix style
     foreach (int i; 0 .. Style.STYLE_MAX) {
         Style st = cast (Style) i;
         vector[st] = new Cutbit(cutbit);
@@ -403,7 +391,6 @@ void recolor_into_vector(
         assert (target);
 
         mixin(temp_lock!"target");
-        writefln("recol in vec: bitmap locked: %d", i);
         recolor_one_bitmap(target, i);
 
         // Invoke eidrecol on the bitmap. Whenever eidrecol is invoked
@@ -418,8 +405,8 @@ void recolor_into_vector(
      foreach (int i; 0 .. Style.STYLE_MAX) {
         Style st = cast (Style) i;
         import std.string;
-        al_save_bitmap(format("./nagetier-%d-%d.png", magicnr, i).toStringz, vector[st].get_albit());
-        writefln("done saving: %d", i);
+        al_save_bitmap(format("./nagetier-%d-%d.png", magicnr, i).toStringz,
+         vector[st].get_albit());
     }
 
 }

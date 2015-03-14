@@ -1,5 +1,7 @@
 module graphic.color;
 
+public import basics.alleg5 : AlCol;
+
 import basics.alleg5;
 import basics.user;
 

@@ -14,5 +14,7 @@
     },
     "subConfigurations": {
         "allegro": "all-addons"
-    }
+    },
+
+    "buildOptions": ["deprecationErrors"]
 }

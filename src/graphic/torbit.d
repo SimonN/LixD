@@ -9,7 +9,7 @@ import hardware.display;
 
 class Torbit {
 
-    this(int xl, int yl, bool tx = false, bool ty = false);
+    this(in int _xl, in int _yl, in bool _tx = false, in bool _ty = false);
     this(const Torbit rhs);
 
     AlBit get_albit()        { return bitmap; }
@@ -79,10 +79,10 @@ private:
 public:
 
 this(
-    int _xl,
-    int _yl,
-    bool _tx = false,
-    bool _ty = false
+    in int _xl,
+    in int _yl,
+    in bool _tx = false,
+    in bool _ty = false
 ) {
     xl = _xl;
     yl = _yl;

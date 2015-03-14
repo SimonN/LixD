@@ -16,6 +16,8 @@ import graphic.torbit;
 class Graphic {
 
     this(const Cutbit, Torbit, const int = 0, const int = 0);
+    ~this() { }
+    // invariant() -- exists, see below
 
     const(Cutbit) get_cutbit() const          { return cutbit; }
 
@@ -50,12 +52,12 @@ class Graphic {
     int  get_yl() const;
     int  get_x_frames()  const { return cutbit.get_x_frames(); }
     int  get_y_frames()  const { return cutbit.get_y_frames(); }
-    bool is_last_frame() const;
-    bool get_frame_exists(int, int) const;
+    bool get_frame_exists(in int, in int) const;
+    AlCol get_pixel      (in int, in int) const; // warning: very slow!
 
-    AlCol get_pixel      (int, int) const;
+    // bool is_last_frame() const; -- exists, see below
 
-    void draw  ();
+    void draw();
 
 private:
 
@@ -92,12 +94,6 @@ this(
 
     x_frame = 0;
     y_frame = 0;
-}
-
-
-
-~this()
-{
 }
 
 
@@ -147,26 +143,19 @@ int get_yl() const
 
 bool is_last_frame() const
 {
-    // DTODOVRAM: have the cutbit compute its last row per frame ahead
-    // of time, save it, and have this query it
-    return x_frame == get_x_frames() - 1
-     || cutbit.get_pixel(x_frame + 1, y_frame, 0, 0)
-     == al_get_pixel(cutbit.get_al_bitmap(), 0, 0);
+    return ! cutbit.get_frame_exists(x_frame + 1, y_frame);
 }
 
 
 
-bool get_frame_exists(int xf, int yf) const
+bool get_frame_exists(in int xf, in int yf) const
 {
-    // DTODOVRAM: same problem as in is_last_frame()
-    return xf < get_x_frames() && yf < get_y_frames()
-     && cutbit.get_pixel(xf, yf, 0, 0)
-     != al_get_pixel(cutbit.get_al_bitmap(), 0, 0);
+    return cutbit.get_frame_exists(xf, yf);
 }
 
 
 
-AlCol get_pixel(int gx, int gy) const
+AlCol get_pixel(in int gx, in int gy) const
 {
     immutable int xl = cutbit.get_xl();
     immutable int yl = cutbit.get_yl();
