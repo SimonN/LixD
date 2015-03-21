@@ -3,12 +3,12 @@ module graphic.gralib;
 import basics.alleg5;
 import basics.globconf; // skip Lix recoloring loading in verify mode
 import basics.globals;  // name of internal bitmap dir
+import basics.matrix;
 import graphic.color;   // replace pink with transparencys
 import graphic.cutbit;
 import file.filename;
 import file.search;
 import lix.enums;
-import lix.matrix;
 
 // Graphics library, loads spritesheets and offers them for use via string
 // lookup. This does not handle Lix terrain, special objects, or L1/L2 graphics
@@ -89,8 +89,7 @@ void initialize()
 
     mixin(temp_lock!"b");
 
-    lix.matrix.countdown = new XY[][cb.get_x_frames()];
-    foreach (ref XY[] row; countdown) row = new XY[cb.get_y_frames()];
+    lix.enums.countdown = new Matrix!XY(cb.get_x_frames(), cb.get_y_frames());
 
     writefln("start xy-ing");
 
@@ -104,8 +103,7 @@ void initialize()
             const int real_x = 1 + fx * (cb.get_xl() + 1) + x;
             const int real_y = 1 + fy * (cb.get_yl() + 1) + y;
             if (al_get_pixel(b, real_x, real_y) == color.lixfile_eye) {
-                countdown[fx][fy].x = x;
-                countdown[fx][fy].y = y - 1;
+                countdown.set(fx, fy, XY(x, y-1));
                 goto GOTO_NEXTFRAME;
             }
             // If not yet gone to GOTO_NEXTFRAME:
@@ -113,16 +111,15 @@ void initialize()
             // nothing found, and a default value for the leftmost frames.
             // Frames (0, y) and (1, y) are the skill button images.
             if (y == cb.get_yl() - 1 && x == cb.get_xl() - 1) {
-                if (fx < 3) {
-                    countdown[fx][fy].x = cb.get_xl() / 2 - 1;
-                    countdown[fx][fy].y = 12;
-                }
-                else countdown[fx][fy] = countdown[fx - 1][fy];
+                if (fx < 3) countdown.set(fx, fy, XY(cb.get_xl() / 2 - 1, 12));
+                else        countdown.set(fx, fy, countdown.get(fx - 1, fy));
             }
         }
         GOTO_NEXTFRAME:
         if (fy == Ac.BLOCKER - 1) {
-            countdown[fx][fy].x = lix.enums.ex_offset;
+            XY blocker_eyes = countdown.get(fx, fy);
+            blocker_eyes.x = lix.enums.ex_offset;
+            countdown.set(fx, fy, blocker_eyes);
         }
     }
     // All pixels of the entire spritesheet have been examined.

@@ -1,10 +1,14 @@
 module lix.enums;
 
+import basics.matrix;
+
 const int ex_offset = 16; // offset of the effective coordinate of the lix
 const int ey_offset = 26; // sprite from the top left corner
 
 const int skill_infinity = -1;  // for SkillButtons
 const int skill_nr_max   = 999; // for SkillButtons
+
+Matrix!XY countdown;
 
 deprecated const int infinity = -1; // should use skill_infinity;
 
