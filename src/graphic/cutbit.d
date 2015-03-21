@@ -1,6 +1,7 @@
 module graphic.cutbit;
 
 import basics.alleg5;
+import basics.matrix; // which frames exist?
 import graphic.color;
 import graphic.torbit;
 import graphic.textout; // write error message instead of drawing bitmap
@@ -39,11 +40,17 @@ class Cutbit {
     int   get_x_frames()  const { return x_frames; }
     int   get_y_frames()  const { return y_frames; }
 
+    // these two are slow, consider get_frame_exists() instead
     AlCol get_pixel(int px, int py)                 const;
     AlCol get_pixel(int fx, int fy, int px, int py) const;
 
-    // Cutbit zeichnen auf die angegebene Unterlage
-    // DTODO: translate comments here to English
+    // Checks whether the given frame contains interesting image data, instead
+    // of being marked as nonexistant by being filled with frame color.
+    // This is very fast, it uses the cached data in RAM.
+    bool get_frame_exists(in int fx, in int fy) const;
+
+    // draw a cutbit onto the given Torbit
+    // DTODOLANG: translate comments here to English
     void draw(Torbit,
               const int    = 0, const int = 0, // X-, Y-Position
               const int    = 0, const int = 0, // X-, Y-Frame
@@ -62,6 +69,8 @@ private:
     int x_frames;
     int y_frames;
 
+    Matrix!bool existing_frames;
+
     void cut_bitmap();
 
 
@@ -75,6 +84,7 @@ this(in Cutbit cb)
     yl = cb.yl;
     x_frames = cb.x_frames;
     y_frames = cb.y_frames;
+    existing_frames = new Matrix!bool(cb.existing_frames);
 
     if (cb.bitmap) {
         bitmap = albit_create(al_get_bitmap_width (cast (AlBit) cb.bitmap),
@@ -90,7 +100,7 @@ this(in Cutbit cb)
 this(AlBit bit, const bool cut = true)
 {
     bitmap = bit;
-    if (!bitmap) return;
+    if (! bitmap) return;
 
     if (cut) cut_bitmap();
     else {
@@ -98,6 +108,9 @@ this(AlBit bit, const bool cut = true)
         yl = al_get_bitmap_height(bitmap);
         x_frames = 1;
         y_frames = 1;
+
+        existing_frames = new Matrix!bool(1, 1);
+        existing_frames.set(0, 0, true);
     }
 }
 
@@ -107,7 +120,7 @@ this(const Filename fn, const bool cut = true)
 {
     // Try loading the file. If not found, don't crash, but make a log entry.
     bitmap = al_load_bitmap(fn.get_rootful_z());
-    if (!bitmap) {
+    if (! bitmap) {
         Log.log(Lang["log_bitmap_bad"] ~ " " ~ fn.get_rootless());
         this();
     }
@@ -138,12 +151,14 @@ invariant()
     if (bitmap) {
         assert (al_get_bitmap_width (cast (AlBit) bitmap) >= xl);
         assert (al_get_bitmap_height(cast (AlBit) bitmap) >= yl);
+        assert (existing_frames !is null);
     }
     else {
         assert (xl == 0);
         assert (yl == 0);
         assert (x_frames == 0);
         assert (y_frames == 0);
+        assert (existing_frames is null);
     }
 }
 
@@ -207,7 +222,20 @@ private void cut_bitmap()
         x_frames = 1;
         y_frames = 1;
     }
-    // done cutting
+
+    // done cutting, now generate matrix. The bitmap is still locked.
+    existing_frames = new Matrix!bool(x_frames, y_frames);
+    if (x_frames == 1 && y_frames == 1) {
+        existing_frames.set(0, 0, true);
+    }
+    else {
+        for (int yf = 0; yf < y_frames; ++yf)
+         for (int xf = 0; xf < x_frames; ++xf) {
+            immutable bool has_frame_color = (get_pixel(xf, yf, 0, 0) == c);
+            existing_frames.set(xf, yf, ! has_frame_color);
+        }
+    }
+    // done making the matrix
 }
 
 
@@ -232,6 +260,15 @@ AlCol get_pixel(int fx, int fy,
          return al_get_pixel(cast (AlBit) bitmap, px, py);
     else return al_get_pixel(cast (AlBit) bitmap, fx * (xl+1) + 1 + px,
                                                   fy * (yl+1) + 1 + py);
+}
+
+
+
+bool get_frame_exists(in int fx, in int fy) const
+{
+    if (fx < 0 || fx >= x_frames
+     || fy < 0 || fy >= y_frames) return false;
+    else return existing_frames.get(fx, fy);
 }
 
 
