@@ -43,6 +43,7 @@ void initialize()
 
     hardware.keyboard.initialize();
     hardware.mouse.initialize();
+    hardware.sound.initialize();
 
     graphic.color.initialize();
     graphic.textout.initialize();
@@ -59,6 +60,7 @@ void deinitialize()
     graphic.textout.deinitialize();
     graphic.color.deinitialize();
 
+    hardware.sound.deinitialize();
     hardware.mouse.deinitialize();
     hardware.keyboard.deinitialize();
 

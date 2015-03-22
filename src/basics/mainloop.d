@@ -11,6 +11,7 @@ import graphic.torbit;
 import hardware.mouse;
 import hardware.keyboard;
 import hardware.display;
+import hardware.sound;
 
 // right now, this class tests various other classes. There will be a lot
 // of random things created here.
@@ -164,9 +165,9 @@ void calc()
     }
 
     drtx(osd, typetext ~ (tick % 30 < 15 ? "_" : ""), 300, 100);
-    drtx(osd, "Letter A once: " ~ (key_once(ALLEGRO_KEY_A)?"1":"0"), 20, 400);
-    drtx(osd, "Letter A hold: " ~ (key_hold(ALLEGRO_KEY_A)?"1":"0"), 20, 420);
-    drtx(osd, "Letter A rlsd: " ~ (key_rlsd(ALLEGRO_KEY_A)?"1":"0"), 20, 440);
+    drtx(osd, "Key A once: " ~ (key_once(ALLEGRO_KEY_A)?"1":"0"), 20, 400);
+    drtx(osd, "Key A hold: " ~ (key_hold(ALLEGRO_KEY_A)?"1":"0"), 20, 420);
+    drtx(osd, "Key A rlsd: " ~ (key_rlsd(ALLEGRO_KEY_A)?"1":"0"), 20, 440);
     drtx(osd, "Non-square rectangles jump when they", 300, 120);
     drtx(osd, "finish a half rotation, this is intended.", 300, 140);
     import basics.globals;
@@ -184,6 +185,10 @@ void calc()
         drtx(osd, "Hello " ~ user_name ~ ", loading the config file works.", 20, 380);
     }
 
+    if (tick % 240 == 0) {
+        play_loud(Sound.HATCH_OPEN);
+    }
+
     mouse.draw(osd, get_mx() - mouse.get_xl()/2 + 1,
                     get_my() - mouse.get_yl()/2 + 1);
 
@@ -195,6 +200,8 @@ void draw()
 {
     osd.copy_to_screen();
     al_flip_display();
+
+    draw_scheduled_sounds();
 }
 
 }

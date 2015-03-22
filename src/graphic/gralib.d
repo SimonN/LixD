@@ -411,7 +411,8 @@ void recolor_into_vector(
          display_startup_message(style_to_string(st));
 
         mixin(temp_lock!"target");
-        recolor_one_bitmap(target, i);
+        // DEBUGGING to load faster
+        if (i < Style.YELLOW) recolor_one_bitmap(target, i);
 
         // Invoke eidrecol on the bitmap. Whenever eidrecol is invoked
         // with a magicnr != 0, it does not lock/unlock the bitmaps itself,
