@@ -5,6 +5,8 @@ import std.string;
 
 import basics.alleg5;
 import basics.globconf;
+import graphic.color; // inside display_startup_message()
+import graphic.textout; // inside display_startup_message()
 import file.language;
 import file.log;
 import hardware.mouse; // center mouse after changing resolution
@@ -22,6 +24,8 @@ void set_screen_mode(bool want_full, int want_x = 0, int want_y = 0);
 void deinitialize();
 
 void calc(); // call once per main_loop to trap/untrap mouse
+
+void display_startup_message(string); // before main_loop draws
 
 bool get_display_close_was_clicked() {
     return display_close_was_clicked;
@@ -188,4 +192,23 @@ void calc()
             // when it is clicked in the game window
         }
     }
+}
+
+
+
+void display_startup_message(string str)
+{
+    static string[] msgs;
+    msgs ~= str;
+
+    AlBit backbuffer = al_get_backbuffer(display);
+    mixin(temp_target!"backbuffer");
+
+    al_clear_to_color(color.black);
+    int y = 0;
+    foreach (msg; msgs) {
+        al_draw_text(djvu_m, color.white, 20, y += 20, ALLEGRO_ALIGN_LEFT,
+         msg.toStringz());
+    }
+    al_flip_display();
 }

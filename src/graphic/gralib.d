@@ -8,6 +8,7 @@ import graphic.color;   // replace pink with transparencys
 import graphic.cutbit;
 import file.filename;
 import file.search;
+import hardware.display; // display startup progress
 import lix.enums;
 
 // Graphics library, loads spritesheets and offers them for use via string
@@ -55,6 +56,9 @@ void initialize()
 {
     null_cutbit = new Cutbit(cast (Cutbit) null);
 
+    // DTODOLANG
+    display_startup_message("Loading internal bitmaps...");
+
     // find all internal bitmaps
     auto files = file.search.find_tree(dir_data_bitmap);
 
@@ -82,6 +86,9 @@ void initialize()
 
     AlBit b = cb.get_albit();
     assert (b, "apparently your gfx card can't store the Lix spritesheet");
+
+    // DTODOLANG
+    display_startup_message("Examining Lix spritesheet for eye positions...");
 
     mixin(temp_lock!"b");
 
@@ -122,8 +129,14 @@ void initialize()
     // Done making the matrix, now eidrecoloring. That will be very slow. #####
     // ########################################################################
 
+    // DTODOLANG
+    display_startup_message("Recoloring Lix sprites for multiplayer...");
+
     // Prepare Lix sprites in multiple colors
     recolor_into_vector(cb, style, magicnr_sheet);
+
+    // DTODOLANG
+    display_startup_message("Recoloring panel icons for multiplayer...");
 
     // Prepare the panel icons in multiple colors
     Cutbit* icon_ptr = (file_bitmap_game_icon.get_rootless_no_extension()
@@ -135,6 +148,9 @@ void initialize()
         mixin(temp_lock!"cb_bmp");
         recolor_into_vector(cb_icons, icons, magicnr_icons);
     }
+
+    // DTODOLANG
+    display_startup_message("Recoloring GUI elements...");
 
     // Make GUI elements have the correct colors. We assume the user file
     // to have been loaded already, and therefore the correct GUI colors
@@ -389,6 +405,10 @@ void recolor_into_vector(
         vector[st] = new Cutbit(cutbit);
         AlBit target = vector[st].get_albit();
         assert (target);
+
+        // DTODOLANG
+        if (magicnr == magicnr_sheet)
+         display_startup_message(style_to_string(st));
 
         mixin(temp_lock!"target");
         recolor_one_bitmap(target, i);
