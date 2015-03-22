@@ -57,7 +57,7 @@ class Graphic {
 
     // bool is_last_frame() const; -- exists, see below
 
-    void draw();
+    // void draw(); -- exists, see below
 
 private:
 

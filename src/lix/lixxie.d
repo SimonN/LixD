@@ -2,6 +2,7 @@ module lix.lixxie;
 
 import std.algorithm; // swap
 
+import basics.globals; // fuse image
 import basics.help;
 import basics.matrix;
 import game.lookup;
@@ -600,6 +601,54 @@ void next_frame(in int loop)
     // Kludge: do we want frame + 3 here or frame + 1? Examine this's callers
     if (is_last_frame() || frame + 3 == loop) frame = 0;
     else frame++;
+}
+
+
+
+override void draw()
+{
+    if (ac == Ac.NOTHING) return;
+
+    set_x_frame(frame_to_x_frame());
+    set_y_frame(   ac_to_y_frame());
+
+    // draw the fuse if necessary
+    if (updates_since_bomb > 0) {
+        immutable XY fuse_xy = get_fuse_xy();
+        immutable int fuse_x = fuse_xy.x;
+        immutable int fuse_y = fuse_xy.y;
+
+        // draw onto this
+        Torbit tb = ground_map;
+
+        int x = 0;
+        int y = 0;
+        for (; -y < (updates_for_bomb - updates_since_bomb)/5+1; --y) {
+            /*
+            // DTODOVRAM: decide on how to draw the pixel-rendered fuse
+            const int u = updates_since_bomb;
+            x           = (int) (std::sin(u/2.0) * 0.02 * (y-4) * (y-4));
+            tb.set_pixel(fuse_x + x-1, fuse_y + y-1, color[COL_GREY_FUSE_L]);
+            tb.set_pixel(fuse_x + x-1, fuse_y + y  , color[COL_GREY_FUSE_L]);
+            tb.set_pixel(fuse_x + x  , fuse_y + y-1, color[COL_GREY_FUSE_D]);
+            tb.set_pixel(fuse_x + x  , fuse_y + y  , color[COL_GREY_FUSE_D]);
+            */
+        }
+        // draw the flame
+        auto cb = graphic.gralib.get(file_bitmap_fuse_flame);
+        cb.draw(ground_map,
+         fuse_x + x - cb.get_xl()/2,
+         fuse_y + y - cb.get_yl()/2,
+         updates_since_bomb % cb.get_x_frames(), 0);
+    }
+    // end of drawing the fuse
+
+    // mirror kippt vertikal, also muss bei dir < 0 auch noch um 180 Grad
+    // gedreht werden. Allegro-Zeichenfunktionen bieten oft ebenfalls nur
+    // vertikale Kippung, ich benutze daher ebenfalls diese Konvention.
+    set_mirror  (     dir < 0 );
+    set_rotation(2 * (dir < 0));
+    Graphic.draw();
 }
 
 
