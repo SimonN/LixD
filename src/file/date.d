@@ -5,13 +5,15 @@ import std.c.time;
 
 class Date {
 
-    this();
+    static Date now();
     this(string);
 
     bool opEquals(const Date rhs) const;
     int  opCmp   (const Date rhs) const;
 
 private:
+
+    private this() { }
 
     int year;
     int month;
@@ -24,18 +26,21 @@ private:
 
 public:
 
-this()
+static Date now()
 {
     long my_null = 0;
     time_t timestamp = time(&my_null);
-	tm*    now       = localtime(&timestamp);
+	tm*    loctime   = localtime(&timestamp);
 
-	year   = now.tm_year + 1900;
-	month  = now.tm_mon  +    1;
-    day    = now.tm_mday;
-    hour   = now.tm_hour;
-    minute = now.tm_min;
-    second = now.tm_sec;
+    Date ret   = new Date();
+	ret.year   = loctime.tm_year + 1900;
+	ret.month  = loctime.tm_mon  +    1;
+    ret.day    = loctime.tm_mday;
+    ret.hour   = loctime.tm_hour;
+    ret.minute = loctime.tm_min;
+    ret.second = loctime.tm_sec;
+
+    return ret;
 }
 
 

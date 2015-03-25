@@ -77,7 +77,7 @@ private static void log_header_if_necessary()
 
         // a free line and then the current datetime in its own line
         singl.file.writefln("");
-        singl.file.writefln((new Date()).toString);
+        singl.file.writefln(Date.now().toString);
     }
 }
 

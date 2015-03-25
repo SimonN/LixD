@@ -159,9 +159,8 @@ void calc()
 
     static string typetext = "Type some UTF-8 chars: ";
     typetext ~= get_utf8_input();
-    if (typetext != null && get_backspace()) {
-        import std.utf;
-        typetext = typetext[0 .. $ - strideBack(typetext, typetext.length)];
+    if (get_backspace()) {
+        typetext = basics.help.backspace(typetext);
     }
 
     drtx(osd, typetext ~ (tick % 30 < 15 ? "_" : ""), 300, 100);

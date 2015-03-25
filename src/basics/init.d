@@ -3,6 +3,7 @@ module basics.init;
 import basics.alleg5;
 import basics.globals;
 import basics.globconf;
+import basics.user;
 import file.language;
 import graphic.color;
 import graphic.gralib;
@@ -29,8 +30,7 @@ void initialize()
 
     file.log.Log.initialize();
     basics.globconf.load();
-    // load user config here
-    Lang.switch_to_language(Language.ENGLISH); // DTODO: read user file
+    basics.user.load();
 
     hardware.display.set_screen_mode(true);
 
@@ -71,6 +71,7 @@ void deinitialize()
 
     hardware.display.deinitialize();
 
+    basics.user.save();
     basics.globconf.save();
     file.log.Log.deinitialize();
 

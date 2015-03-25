@@ -11,7 +11,8 @@ import std.array; // property empty
 
 class Filename {
 
-    this(string s);
+    this(in string);
+    this(in Filename);
 
     static void set_root_dir(string str) { if (! root) root = str.idup; }
 
@@ -59,7 +60,7 @@ private:
 
 public:
 
-this(string s)
+this(in string s)
 {
     // All strings start empty, for the pre_extension we clarify:
     pre_extension = '\0';
@@ -115,6 +116,20 @@ this(string s)
             break;
         }
     }
+}
+
+
+
+this(in Filename fn)
+{
+    rootless        = fn.rootless;
+    extension       = fn.extension;
+    rootless_no_ext = fn.rootless_no_ext;
+    file            = fn.file;
+    file_no_exts    = fn.file_no_exts;
+    dir_rootless    = fn.dir_rootless;
+
+    pre_extension   = fn.pre_extension;
 }
 
 
