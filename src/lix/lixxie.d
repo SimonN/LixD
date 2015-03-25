@@ -5,6 +5,7 @@ import std.algorithm; // swap
 import basics.globals; // fuse image
 import basics.help;
 import basics.matrix;
+import basics.user; // multiple_builders
 import game.lookup;
 import graphic.color;
 import graphic.graphic;
@@ -130,9 +131,6 @@ public:
     Sound get_sound_assign() const { return ac_func[ac].sound_assign; }
     Sound get_sound_become() const { return ac_func[ac].sound_become; }
 
-    void evaluate_click(Ac);
-    int  get_priority  (Ac, bool);
-
     int  get_special_x()      { return special_x; }
     int  get_special_y()      { return special_y; }
     int  get_queue()          { return queue;     }
@@ -198,10 +196,13 @@ public:
     void        set_body_encounters(Lookup.LoNr n) { enc_body = n; }
     void        set_foot_encounters(Lookup.LoNr n) { enc_foot = n; }
 
+    int  get_priority  (in Ac, in bool);
+    void evaluate_click(in Ac ac) { assclk(ac); }
     void assclk        (in Ac);
     void become        (in Ac);
     void become_default(in Ac);
     void update        (in UpdateArgs);
+
 
     // override void draw(); -- exists, see below
 
@@ -646,6 +647,108 @@ override void draw()
     set_mirror  (     dir < 0 );
     set_rotation(2 * (dir < 0));
     Graphic.draw();
+}
+
+
+// ############################################################################
+// ######################### click priority -- was lix/lix_ac.cpp in C++/A4 Lix
+// ############################################################################
+
+
+
+// returns 0 iff lix is not clickable and the cursor should be closed
+// returns 1 iff lix is not clickable, but the cursor should open still
+// returns >= 2 and <= 99,998 iff lix is clickable
+// higher return values mean higher priority. The player can invert priority,
+// e.g., by holding the right mouse button. This inversion is not handled by
+// this function, but should be done by the calling game code.
+int get_priority(
+    in Ac  new_ac,
+    in bool personal // Shall personal settings override the default valuation?
+) {                  // If false, allow anything anyone could do, for network
+    int p = 0;
+
+    // Nothing allowed at all, don't even open the cursor
+    if (ac == Ac.NOTHING || ac_func[ac].leaving) return 0;
+
+    // Permanent skills
+    if ((new_ac == Ac.EXPLODER  && updates_since_bomb > 0)
+     || (new_ac == Ac.EXPLODER2 && updates_since_bomb > 0)
+     || (new_ac == Ac.RUNNER    && runner)
+     || (new_ac == Ac.CLIMBER   && climber)
+     || (new_ac == Ac.FLOATER   && floater) ) return 1;
+
+    switch (ac) {
+        // When a blocker shall be freed/exploded, the blocker has extremely
+        // high priority, more than anything else on the field.
+        case Ac.BLOCKER:
+            if (new_ac == Ac.WALKER
+             || new_ac == Ac.EXPLODER
+             || new_ac == Ac.EXPLODER2) p = 5000;
+            else return 1;
+            break;
+
+        // Stunners/ascenders may be turned in their later frames, but
+        // otherwise act like regular mostly unassignable-to acitivities
+        case Ac.STUNNER:
+            if (get_frame() >= 16) {
+                p = 3000;
+                break;
+            }
+            else goto GOTO_TARGET_FULL_ATTENTION;
+
+        case Ac.ASCENDER:
+            if (get_frame() >= 5) {
+                p = 3000;
+                break;
+            }
+            else goto GOTO_TARGET_FULL_ATTENTION;
+
+        // further activities that take all of the lix's attention; she
+        // canot be assigned anything except permanent skills
+        case Ac.FALLER:
+        case Ac.TUMBLER:
+        case Ac.CLIMBER:
+        case Ac.FLOATER:
+        case Ac.JUMPER:
+        GOTO_TARGET_FULL_ATTENTION:
+            if (new_ac == Ac.RUNNER
+             || new_ac == Ac.CLIMBER
+             || new_ac == Ac.FLOATER
+             || new_ac == Ac.EXPLODER
+             || new_ac == Ac.EXPLODER2) p = 2000;
+            else return 1;
+            break;
+
+        // standard activities, not considered working lixes
+        case Ac.WALKER:
+        case Ac.LANDER:
+        case Ac.RUNNER:
+            p = 3000;
+            break;
+
+        // builders and platformers can be queued. Use the personal variable
+        // to see whether we should read the user's setting. If false, we're
+        // having a replay or multiplayer game, and then queuing must work
+        // even if the user has disabled it for themselves.
+        case Ac.BUILDER:
+        case Ac.PLATFORMER:
+            if (new_ac == ac
+             && (! personal || multiple_builders)) p = 1000;
+            else if (new_ac != ac)                 p = 4000;
+            else                                   return 1;
+            break;
+
+        // Usually, anything different from the current activity can be assign.
+        default:
+            if (new_ac != ac) p = 4000;
+            else return 1;
+
+    }
+    p += (new_ac == Ac.BATTER && batter_priority
+          ? (- updates_since_bomb) : updates_since_bomb);
+    p += 400 * runner + 200 * climber + 100 * floater;
+    return p;
 }
 
 

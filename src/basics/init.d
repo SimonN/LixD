@@ -30,7 +30,7 @@ void initialize()
     file.log.Log.initialize();
     basics.globconf.load();
     // load user config here
-    Lang.switch_to_language(Lang.Language.ENGLISH); // DTODO: read user file
+    Lang.switch_to_language(Language.ENGLISH); // DTODO: read user file
 
     hardware.display.set_screen_mode(true);
 

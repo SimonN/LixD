@@ -4,14 +4,15 @@ import std.array;
 
 import file.log;
 
-abstract class Lang {
+enum Language {
+    NONE,
+    ENGLISH,
+    GERMAN,
+    USERLANG,
+    MAX
+}
 
-    enum Language {
-        ENGLISH,
-        GERMAN,
-        USERLANG,
-        MAX
-    }
+abstract class Lang {
 
     // opIndex implements Lang["my_key_string"];
     static string   opIndex(string key);
