@@ -2,25 +2,19 @@ module lix.acfunc;
 
 import lix.enums;
 import lix.lixxie;
-//import graphic.sound;
-
-class Sound {
-    enum Id { A, B }
-}
+import hardware.sound;
 
 struct AcFunc {
-    bool      pass_top;
-    bool      leaving;
-    bool      blockable;
-    bool      aiming;
+    bool  pass_top;
+    bool  leaving;
+    bool  blockable;
 
-    Sound.Id sound_assign;
-    Sound.Id sound_become;
-    Sound.Id sound_aim;
+    Sound sound_assign;
+    Sound sound_become;
 
     void function(Lixxie) assclk;
     void function(Lixxie) become;
-    void function(Lixxie, const UpdateArgs) update;
+    void function(Lixxie, in UpdateArgs) update;
 }
 
 AcFunc[Ac] ac_func;

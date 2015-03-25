@@ -10,6 +10,7 @@ import graphic.color;
 import graphic.graphic;
 import graphic.gralib;
 import graphic.torbit;
+import hardware.sound;
 import lix.enums;
 import lix.acfunc;
 
@@ -17,21 +18,18 @@ import lix.acfunc;
 // import game.lookup;
 // import graphic.map;
 // import graphic.graphbg;
-// import graphic.sound;
 // import basics.types;
 
 // DTODOCOMMENT: add the interesting things from the 150+ line comment in
 // C++/A4 Lix's lix/lix.h top comment.
-
-import lix.acfunc;
 
 // DTODO: implement these classes
 struct GameState { int update; }
 struct UpdateArgs { int id; int ud; GameState st; }
 class EdGraphic { }
 class EffectManager {
-    void add_sound        (in int, in Tribe, int, in Sound.Id) { }
-    void add_sound_if_trlo(in int, in Tribe, int, in Sound.Id) { }
+    void add_sound        (in int, in Tribe, int, in Sound) { }
+    void add_sound_if_trlo(in int, in Tribe, int, in Sound) { }
 }
 class Tribe { Style style; }
 class Map : Torbit {
@@ -130,8 +128,8 @@ public:
     bool get_leaving  () const { return ac_func[ac].leaving;   }
     bool get_blockable() const { return ac_func[ac].blockable; }
 
-    Sound.Id get_sound_assign() const { return ac_func[ac].sound_assign; }
-    Sound.Id get_sound_become() const { return ac_func[ac].sound_become; }
+    Sound get_sound_assign() const { return ac_func[ac].sound_assign; }
+    Sound get_sound_become() const { return ac_func[ac].sound_become; }
 
     void evaluate_click(Ac);
     int  get_priority  (Ac, bool);
@@ -187,8 +185,8 @@ public:
     void draw_brick       (int, int, int, int);
     void draw_frame_to_map(int, int, int, int, int, int, int, int);
 
-    void play_sound        (in ref UpdateArgs, in Sound.Id);
-    void play_sound_if_trlo(in ref UpdateArgs, in Sound.Id);
+    void play_sound        (in ref UpdateArgs, in Sound);
+    void play_sound_if_trlo(in ref UpdateArgs, in Sound);
 
     int  get_frame() const   { return frame; }
     void set_frame(in int i) { frame = i;    }
@@ -570,7 +568,7 @@ void draw_frame_to_map
 
 
 
-void play_sound(in ref UpdateArgs ua, in Sound.Id sound_id)
+void play_sound(in ref UpdateArgs ua, in Sound sound_id)
 {
     assert (effect);
     effect.add_sound(ua.st.update, tribe, ua.id, sound_id);
@@ -578,7 +576,7 @@ void play_sound(in ref UpdateArgs ua, in Sound.Id sound_id)
 
 
 
-void play_sound_if_trlo(in ref UpdateArgs ua, in Sound.Id sound_id)
+void play_sound_if_trlo(in ref UpdateArgs ua, in Sound sound_id)
 {
     assert (effect);
     effect.add_sound_if_trlo(ua.st.update, tribe, ua.id, sound_id);
