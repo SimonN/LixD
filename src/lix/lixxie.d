@@ -25,13 +25,15 @@ import lix.acfunc;
 
 // DTODO: implement these classes
 struct GameState { int update; }
-struct UpdateArgs { int id; int ud; GameState st; }
 class EdGraphic { }
 class EffectManager {
     void add_sound        (in int, in Tribe, int, in Sound) { }
     void add_sound_if_trlo(in int, in Tribe, int, in Sound) { }
 }
-class Tribe { Style style; }
+class Tribe {
+    Style style;
+    void return_skills(Ac, int) { }
+}
 class Map : Torbit {
     this(in int xl, in int yl, in bool tx = false, in bool ty = false) {
         super(xl, yl, tx, ty);
@@ -89,9 +91,6 @@ public:
     this(Tribe = null, int = 0, int = 0); // tribe==null ? NOTHING : FALLER
     ~this() { }
     // invariant() -- exists, see below
-
-    deprecated static void initialize_this_gets_called_from_glob_gfx_cpp()
-        { assert (false, "DTODO: initialize_this_gets..."); }
 
     static void    set_static_maps   (Torbit, Lookup, Map);
     static void    set_effect_manager(EffectManager e) { effect = e;    }
@@ -202,7 +201,7 @@ public:
     void assclk        (in Ac);
     void become        (in Ac);
     void become_default(in Ac);
-    void update        (in ref UpdateArgs);
+    void update        (in UpdateArgs);
 
     // override void draw(); -- exists, see below
 
@@ -651,11 +650,56 @@ override void draw()
 
 
 
-void assclk        (in Ac) { assert (false, "DTODO: implement assclk!"); }
-void become        (in Ac) { assert (false, "DTODO: implement become!"); }
-void become_default(in Ac) { assert (false, "DTODO: impls become_default!"); }
-void update        (in ref UpdateArgs) {
-    assert (false, "DTODO: implement lixxie.update()!");
+// ############################################################################
+// ############### skill function dispatch -- was lix/ac_func.cpp in C++/A4 Lix
+// ############################################################################
+
+
+
+void assclk(in Ac new_ac)
+{
+    immutable Ac old_ac = ac;
+    if (ac_func[new_ac].assclk) ac_func[new_ac].assclk(this);
+    else                        become(new_ac); // this dispatches again
+
+    if (old_ac != ac) --frame; // can go to -1, then nothing happens on the
+                               // next update and frame 0 will be shown then
+}
+
+
+
+void become(in Ac new_ac)
+{
+    if (new_ac != ac && queue > 0) {
+        tribe.return_skills(ac, queue);
+        queue = 0; // in case other skill_become() redirect again to become()
+    }
+    // Reset sprite placement like climber's offset in x-direction by 1,
+    // or the digger sprite displacement in one frame. This is the same code
+    // as the sprite placement in set_ex/ey().
+    set_x(ex - lix.enums.ex_offset);
+    set_y(ey - lix.enums.ey_offset);
+
+    if (ac_func[new_ac].become) ac_func[new_ac].become(this);
+    else                        become_default(new_ac);
+}
+
+
+
+void become_default(in Ac new_ac)
+{
+    frame     = 0;
+    special_y = 0;
+    special_x = 0;
+    queue     = 0;
+    ac        = new_ac;
+}
+
+
+
+void update(in UpdateArgs ua)
+{
+    if (ac_func[ac].update) ac_func[ac].update(this, ua);
 }
 
 }

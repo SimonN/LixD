@@ -51,7 +51,7 @@ enum Ac {
     BATTER,
     CUBER,
 
-    AC_MAX
+    MAX
 }
 
 enum Style {
@@ -65,7 +65,7 @@ enum Style {
     PURPLE,
     GREY,
     BLACK,
-    STYLE_MAX
+    MAX
 }
 
 private immutable string[Ac]    ac_strings;
@@ -106,7 +106,7 @@ static this()
         Ac.ROPER      : "ROPER",
         Ac.BATTER     : "BATTER",
         Ac.CUBER      : "CUBER",
-        Ac.AC_MAX     : "AC_MAX"
+        Ac.MAX        : "MAX"
     ];
 
     style_strings = [
@@ -129,7 +129,7 @@ Ac string_to_ac(in string str) {
     foreach (key; ac_strings.byKey()) {
         if (ac_strings[key] == str) return key;
     }
-    return Ac.AC_MAX;
+    return Ac.MAX;
 }
 
 

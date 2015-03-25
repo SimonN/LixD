@@ -400,7 +400,7 @@ void recolor_into_vector(
 
 
     // now invoke the above code on each Lix style
-    foreach (int i; 0 .. Style.STYLE_MAX) {
+    foreach (int i; 0 .. Style.MAX) {
         Style st = cast (Style) i;
         vector[st] = new Cutbit(cutbit);
         AlBit target = vector[st].get_albit();
@@ -423,7 +423,7 @@ void recolor_into_vector(
 
     // debugging: saving to files
     static if (false)
-     foreach (int i; 0 .. Style.STYLE_MAX) {
+     foreach (int i; 0 .. Style.MAX) {
         Style st = cast (Style) i;
         import std.string;
         al_save_bitmap(format("./nagetier-%d-%d.png", magicnr, i).toStringz,
