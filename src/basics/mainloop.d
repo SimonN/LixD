@@ -162,13 +162,23 @@ void calc()
     if (get_backspace()) {
         typetext = basics.help.backspace(typetext);
     }
+    if (key_once(ALLEGRO_KEY_A)) {
+        play_loud(Sound.CLOCK);
+    }
+
+    import basics.user;
+    import std.string;
+    import lix.enums;
 
     drtx(osd, typetext ~ (tick % 30 < 15 ? "_" : ""), 300, 100);
-    drtx(osd, "Key A once: " ~ (key_once(ALLEGRO_KEY_A)?"1":"0"), 20, 400);
-    drtx(osd, "Key A hold: " ~ (key_hold(ALLEGRO_KEY_A)?"1":"0"), 20, 420);
-    drtx(osd, "Key A rlsd: " ~ (key_rlsd(ALLEGRO_KEY_A)?"1":"0"), 20, 440);
+    drtx(osd, format("Your builder hotkey scancode: %d", key_skill[Ac.BUILDER]), 20, 400);
+    drtx(osd, "Builder key once: " ~ (key_once(key_skill[Ac.BUILDER])?"now":"--"), 20, 420);
+    drtx(osd, "Builder key hold: " ~ (key_hold(key_skill[Ac.BUILDER])?"now":"--"), 20, 440);
+    drtx(osd, "Builder key rlsd: " ~ (key_rlsd(key_skill[Ac.BUILDER])?"now":"--"), 20, 460);
+    drtx(osd, "Press [A] to playback a sound. Does it play immediately (correct) or with 0.5 s delay (bug)?", 20, 480);
     drtx(osd, "Non-square rectangles jump when they", 300, 120);
     drtx(osd, "finish a half rotation, this is intended.", 300, 140);
+
     import basics.globals;
     import basics.globconf;
     import basics.versioning;
