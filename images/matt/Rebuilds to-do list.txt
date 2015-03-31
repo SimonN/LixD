@@ -1,0 +1,22 @@
+This list is composed of things that have yet to be done, as well as things 
+that could use improving, for the graphics in the /bitmap/Rebuilds, and /bitmap/Universal directories. 
+----------------------------------------------------------------------------
+/bitmap/Rebuilds/:
+----------------------------------------------------------------------------
+- The original Lemmings game contained 9 graphic sets (10 if you count the "Holiday" set).  So my personal goal, is to replace all 10 with new, original graphics, each one with it's own "theme" of some kind.
+Goal Progress: 01 - Earth, 02 - Gold Mine, 03 - Carnival, 04 - Sandy Beach, 05 - Winter, 06 - Oriental, 07 - Underworld
+
+- Create a "Holiday" set that will be big enough to be considered an entire set, and will include graphics that span many holidays: New Year's, Valentine's Day, St. Patrick's Day, Easter, Independence Day, Halloween, and the original, Christmas. 
+
+-
+
+----------------------------------------------------------------------------
+/bitmap/Universal/:
+----------------------------------------------------------------------------
+- Update the water.W.bmp file somehow:
+  - The object is currently 32 pixels square, which seems too small, so it     should be bigger (size should be divisible by 16 to match the grid.)
+  - Animation is not smooth, if you watch it in-game, you will notice the
+    transition between frames.  This needs to be fixed somehow.
+  - Animation is also slow, can possibly fix speed by reducing the amount of     frames. Possible idea is to get rid of the duplicate frames.
+
+- 

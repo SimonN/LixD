@@ -1,0 +1,10 @@
+renamed:
+
+occult_wax16x32 -> occult_wax16x16
+occult_wax16x16_cap_left -> occult_wax32x16_cap_left
+occult_wax16x16_cap_right -> occult_wax32x16_cap_right
+occult_wax32x48_cap_right -> occult_wax32x48_cap_right_soft
+occult_wax32x48_cap_left -> occult_wax32x48_cap_leftt_sheer
+
+occult/steel/occult_steel_overlay* -> /occult/overlays/occult_steel_overlay*
+amanda/occult/steel/occult_steel* -> amanda/steel/steel*
