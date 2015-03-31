@@ -58,7 +58,7 @@ void main_loop()
 
     import graphic.color;
 
-    wuerste ~= al_load_bitmap("./images/piece.png");
+    wuerste ~= al_load_bitmap("./images/proxima/tile/blue1a.png");
     assert (wuerste[0]);
     al_convert_mask_to_alpha(wuerste[0], AlCol(1,0,1,1));
     foreach (i; 1 .. 4) {
@@ -79,7 +79,7 @@ void main_loop()
                      al_get_display_height(display), true, true);
     scope (exit) clear(osd);
 
-    Cutbit hatch_cb = new Cutbit(new Filename("./images/constr-hatch.png"));
+    Cutbit hatch_cb = new Cutbit(new Filename("./images/geoo/construction/Hatch.H.png"));
     myhatch1 = new Graphic(hatch_cb, osd);
     myhatch2 = new Graphic(hatch_cb, osd);
     scope (exit) {

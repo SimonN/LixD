@@ -316,9 +316,6 @@ void recolor_into_vector(
     // this function, make sure it's locked. Otherwise, everything will work
     // extremely slowly.
 
-    // debugging
-    import file.log;
-
     assert (cutbit.is_valid());
     Cutbit* rcl_p = (file_bitmap_lix_recol.get_rootless_no_extension()
                      in internal);
@@ -410,7 +407,7 @@ void recolor_into_vector(
 
         mixin(temp_lock!"target");
         // DEBUGGING to load faster
-        if (i < Style.YELLOW) recolor_one_bitmap(target, i);
+        if (i < Style.ORANGE) recolor_one_bitmap(target, i);
 
         // Invoke eidrecol on the bitmap. Whenever eidrecol is invoked
         // with a magicnr != 0, it does not lock/unlock the bitmaps itself,
