@@ -10,7 +10,7 @@ const int skill_nr_max   = 999; // for SkillButtons
 
 Matrix!XY countdown;
 
-deprecated const int infinity = -1; // should use skill_infinity;
+deprecated("use skill_infinity") const int infinity = -1;
 
 Ac     string_to_ac   (in string);
 Style  string_to_style(in string);

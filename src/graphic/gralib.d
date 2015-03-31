@@ -22,8 +22,6 @@ const(Cutbit) get     (in Filename);
 const(Cutbit) get_lix (in Style);
 const(Cutbit) get_icon(in Style); // for the panel
 
-deprecated void replace_filestring(in string) { } // move to objlib
-
 
 
 private:

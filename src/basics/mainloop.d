@@ -198,6 +198,13 @@ void calc()
         play_loud(Sound.HATCH_OPEN);
     }
 
+    import level.tilelib;
+    import level.tile;
+    const(Tile) mytile = get_tile("geoo/sandstone/arc_big");
+    assert (mytile, "mytile not exist");
+    assert (mytile.cb, "mytile.cb not exist");
+    mytile.cb.draw(osd, 500 + to!int(50 * sin(tick / 30.0)), 10);
+
     mouse.draw(osd, get_mx() - mouse.get_xl()/2 + 1,
                     get_my() - mouse.get_yl()/2 + 1);
 

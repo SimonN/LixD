@@ -1,5 +1,7 @@
 module file.filename;
 
+import std.algorithm;
+
 import std.string;
 import std.array; // property empty
 
@@ -178,10 +180,8 @@ bool is_child_of(const Filename parent) const
 
 bool has_image_extension() const
 {
-    return extension == ".png"
-     ||    extension == ".bmp"
-     ||    extension == ".tga"
-     ||    extension == ".pcx";
+    return [ ".png", ".bmp", ".tga", ".pcx",
+             ".PNG", ".BMP", ".TGA", ".PCX" ].find(extension) != null;
 }
 
 }

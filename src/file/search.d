@@ -16,7 +16,8 @@ const(Filename)[] find_files(const Filename fn_where, const string what = "");
 const(Filename)[] find_dirs (const Filename fn_where);
 const(Filename)[] find_tree (const Filename fn_where, const string what = "");
 
-bool dir_exists(const Filename);
+bool file_exists(const Filename); // test if exists as regular file, not a dir
+bool dir_exists(const Filename);  // test if exists as dir
 
 
 
@@ -33,9 +34,9 @@ const(Filename)[] find_files(
     const string   what = "",
 ) {
     const(Filename)[] ret;
-    // shallow = don't recurse through subdirs, false = don't follow symlinks
+    // shallow = don't recurse through subdirs, true = follow symlinks
     foreach (string s; std.file.dirEntries(fn_where.get_rootful(),
-                                           SpanMode.shallow, false)) {
+                                           SpanMode.shallow, true)) {
         if (! std.file.isDir(s) && s.has_correct_ending(what)) {
             ret ~= new Filename(s);
         }
@@ -50,7 +51,7 @@ const(Filename)[] find_dirs(
 ) {
     const(Filename)[] ret;
     foreach (string s; std.file.dirEntries(fn_where.get_rootful(),
-                                           SpanMode.shallow, false)) {
+                                           SpanMode.shallow, true)) {
         if (std.file.isDir(s)) {
             // convention: dirs have a trailing slash, and dirEntries
             // doesn't add one at the end
@@ -69,12 +70,22 @@ const(Filename)[] find_tree(
     const(Filename)[] ret;
     // breadth-first search through the entire given tree
     foreach (string s; std.file.dirEntries(fn_where.get_rootful(),
-                                           SpanMode.breadth, false)) {
+                                           SpanMode.breadth, true)) {
         if (! std.file.isDir(s) && s.has_correct_ending(what)) {
             ret ~= new Filename(s);
         }
     }
     return ret;
+}
+
+
+
+bool file_exists(const Filename fn)
+{
+    string noslash = fn.get_rootful();
+    if (noslash != null && noslash[$-1] == '/') return false;
+    return std.file.exists(noslash)
+     &&  ! std.file.isDir (noslash);
 }
 
 

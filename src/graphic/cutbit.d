@@ -41,6 +41,7 @@ class Cutbit {
     int   get_y_frames()  const { return y_frames; }
 
     // these two are slow, consider get_frame_exists() instead
+    // or lock the Cutbit's underlying Allegro bitmap yourself
     AlCol get_pixel(int px, int py)                 const;
     AlCol get_pixel(int fx, int fy, int px, int py) const;
 
@@ -124,7 +125,10 @@ this(const Filename fn, const bool cut = true)
         Log.log(Lang["log_bitmap_bad"] ~ " " ~ fn.get_rootless());
         this();
     }
-    else this(bitmap, cut);
+    else {
+        al_convert_mask_to_alpha(bitmap, color.pink);
+        this(bitmap, cut);
+    }
 }
 
 

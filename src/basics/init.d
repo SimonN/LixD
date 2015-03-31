@@ -9,6 +9,7 @@ import graphic.color;
 import graphic.gralib;
 import hardware.display;
 import hardware.mouse;
+import level.tilelib;
 
 // routines to initialize and deinitialize most things before/after
 // the main loop runs. Some things have module constructors (static this()),
@@ -47,16 +48,18 @@ void initialize()
 
     graphic.color.initialize();
     graphic.textout.initialize();
-
     graphic.gralib.initialize();
+
+    level.tilelib.initialize();
 }
 
 
 
 void deinitialize()
 {
-    graphic.gralib.deinitialize();
+    level.tilelib.deinitialize();
 
+    graphic.gralib.deinitialize();
     graphic.textout.deinitialize();
     graphic.color.deinitialize();
 
