@@ -265,11 +265,11 @@ void load_level_finalize(Level level)
 
 
 
-package void save_level_to_file(const(Level) level, in Filename fn)
+package void impl_save_to_file(const(Level) level, in Filename fn)
 {
     try {
         std.stdio.File file = File(fn.get_rootful(), "w");
-        save_level_to_file(level, file);
+        save_to_file(level, file);
         file.close();
     }
     catch (Exception e) {
@@ -279,7 +279,7 @@ package void save_level_to_file(const(Level) level, in Filename fn)
 
 
 
-private void save_level_to_file(const(Level) l, std.stdio.File file)
+private void save_to_file(const(Level) l, std.stdio.File file)
 {
     assert (l);
 

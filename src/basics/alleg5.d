@@ -13,7 +13,8 @@ alias ALLEGRO_BITMAP* AlBit;
 alias ALLEGRO_COLOR   AlCol;
 alias ALLEGRO_FONT*   AlFont;
 
-AlBit albit_create(int xl, int yl);
+AlBit albit_create    (in int xl, in int yl); // create normal VRAM bitmap
+AlBit albit_ram_create(in int xl, in int yl); // create a RAM bitmap, uncommon
 
 ALLEGRO_TIMER*       timer;
 
@@ -21,15 +22,30 @@ int default_new_bitmap_flags;
 
 
 
-AlBit albit_create(int xl, int yl)
+AlBit albit_create(in int xl, in int yl)
 {
-    al_set_new_bitmap_flags(default_new_bitmap_flags
+    return albit_create_with_flags(xl, yl, default_new_bitmap_flags
      | ALLEGRO_VIDEO_BITMAP
      &~ ALLEGRO_MEMORY_BITMAP);
+}
+
+
+
+AlBit albit_ram_create(in int xl, in int yl)
+{
+    return albit_create_with_flags(xl, yl, default_new_bitmap_flags
+     &~ ALLEGRO_VIDEO_BITMAP
+     | ALLEGRO_MEMORY_BITMAP);
+}
+
+
+
+private AlBit albit_create_with_flags(in int xl, in int yl, in int flags)
+{
+    al_set_new_bitmap_flags(flags);
     scope (exit) al_set_new_bitmap_flags(default_new_bitmap_flags);
 
     AlBit ret = al_create_bitmap(xl, yl);
-
     assert (ret);
     assert (al_get_bitmap_width (ret) == xl);
     assert (al_get_bitmap_height(ret) == yl);

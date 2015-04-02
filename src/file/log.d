@@ -18,7 +18,7 @@ public:
     static void log (int);
     static void log (string);
     static void log (string, int);
-    static void log (string  string);
+    static void log (string, string);
 
 private:
 

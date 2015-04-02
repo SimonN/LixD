@@ -88,6 +88,33 @@ void main_loop()
         clear(hatch_cb);
     }
 
+    // test level input/output
+    import level.level;
+    display_startup_message("loading test level");
+    Level lv = new Level(new Filename("./levels/atest.txt"));
+    display_startup_message("saving test level");
+    lv.save_to_file(new Filename("./levels/aout.txt"));
+
+    import game.lookup;
+    display_startup_message("making test land and lookup map");
+
+    Torbit land   = new Torbit(lv.size_x, lv.size_y, lv.torus_x, lv.torus_y);
+    scope (exit) clear(land);
+
+    Lookup lookup = new Lookup(lv.size_x, lv.size_y, lv.torus_x, lv.torus_y);
+    scope (exit) clear(lookup);
+
+    display_startup_message("drawing to test land and lookup map");
+    lv.draw_terrain_to(land, lookup);
+    display_startup_message("saving test land");
+    land.save_to_file(new Filename("z-landtest.png"));
+    display_startup_message("saving test lookup map");
+    lookup.save_to_file(new Filename("y-lookuptest.png"));
+
+
+
+    display_startup_message("entering main loop");
+
     long last_tick;
 
     while (true) {

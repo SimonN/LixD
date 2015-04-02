@@ -100,10 +100,10 @@ this(
 
 invariant()
 {
-    assert(cutbit, "graphic object's Cutbit doesn't exist");
-    assert(ground, "graphic object's ground Torbit doesn't exist");
-    assert(ground.get_xl() > 0);
-    assert(ground.get_yl() > 0);
+    if (ground) {
+        assert(ground.get_xl() > 0);
+        assert(ground.get_yl() > 0);
+    }
 }
 
 

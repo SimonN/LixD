@@ -191,7 +191,12 @@ private void load_tile_from_disk(in string str_no_ext, in Filename fn)
         if (tile_ptr) {
             Filename defs = new Filename(fn.get_rootless_no_extension()
                                        ~ glo.ext_object_definitions);
-            tile_ptr.read_definitions_file(defs);
+            // We test for existence here, because trying to load the file
+            // will generate a log message for nonexisting file otherwise.
+            // It's normal to have no definitions file, so don't log that.
+            if (file_exists(defs)) {
+                tile_ptr.read_definitions_file(defs);
+            }
         }
     }
 }

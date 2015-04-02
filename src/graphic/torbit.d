@@ -5,6 +5,7 @@ import std.algorithm; // minPos
 
 import basics.alleg5;
 import basics.help; // positive_mod
+import file.filename;
 import hardware.display;
 
 class Torbit {
@@ -59,6 +60,9 @@ class Torbit {
     // they do not lock the bitmap themselves.
     void replace_color        (AlCol, AlCol);
     void replace_color_in_rect(int, int, int, int, AlCol, AlCol);
+
+    // for testing
+    void save_to_file(in Filename);
 
 private:
 
@@ -417,6 +421,13 @@ void replace_color_in_rect(
 
     //mixin(temp_lock!"bitmap");
     use_drawing_delegate(deg, rx, ry);
+}
+
+
+
+void save_to_file(in Filename fn)
+{
+    al_save_bitmap(fn.get_rootful_z(), bitmap);
 }
 
 }

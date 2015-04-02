@@ -7,6 +7,7 @@ import game.lookup;
 import graphic.color;
 import graphic.torbit;
 import level.levelio;
+import level.levdraw;
 import level.tile;
 import lix.enums;
 
@@ -102,12 +103,18 @@ public:
 
     inout(string[]) get_hints() inout;
 
-    void   draw_to       (Torbit, Lookup = null) const { assert (false, "DTODO unimpl"); }
-    Torbit create_preview(in int, in int, AlCol) const { assert (false, "DTODO unimpl"); }
+    void draw_terrain_to(Torbit tb, Lookup lo = null) const
+    {
+        impl_draw_terrain_to(this, tb, lo);
+    }
+    Torbit create_preview(in int xl, in int yl, AlCol col) const
+    {
+        return impl_create_preview(this, xl, yl, col);
+    }
 
     // void load_from_stream(std::istream&); DTODO: implement this?
-    void save_to_file(in Filename fn) const { save_level_to_file(this, fn); }
-    void export_image(in Filename fn) const { assert (false, "DTODO unimpl"); }
+    void save_to_file(in Filename fn) const { impl_save_to_file(this, fn); }
+    void export_image(in Filename fn) const { impl_export_image(this, fn); }
 
 package:
 

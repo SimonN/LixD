@@ -304,52 +304,8 @@ void draw(
             target_torbit.draw_from(sprite, x, y, mirr, rot, scal);
         }
         // DTODO: implement the remainin drawing modes
-        else assert (false, "DTODO: implement more drawing modes");
-        /*
         else {
-            const int PINK  = color[COL_PINK];
-            const int BLACK = color[COL_BLACK];
-            const int GREY  = color[COL_EDITOR_DARK];
-            const int size  = xl > yl ? xl : yl;
-            Torbit excerpt(size, size);
-            excerpt.clear_to_color(PINK);
-            excerpt.draw_from(sprite, 0, 0, mirr, rot, scal);
-            if (mode == NOOW) {
-                target_torbit.draw     (excerpt.get_al_bitmap(), x, y);
-                target_torbit.draw_from(excerpt.get_al_bitmap(), x, y);
-            }
-            else if (mode == NOOW_EDITOR) {
-                for  (int ix = 0; ix < size; ++ix)
-                 for (int iy = 0; iy < size; ++iy) {
-                    const int c = target_torbit.get_pixel(x + ix, y + iy);
-                    const int e = excerpt      .get_pixel(    ix,     iy);
-                    if ((c == BLACK || c == PINK || c == GREY)
-                     &&  e != BLACK && e != PINK)
-                     target_torbit.set_pixel(x + ix, y + iy, e);
-            }   }
-            else if (mode == DARK
-                  || mode == DARK_EDITOR
-                  || mode == DARK_SHOW_NOOW) {
-                for  (int ix = 0; ix < size; ++ix)
-                 for (int iy = 0; iy < size; ++iy)
-                 if (excerpt      .get_pixel(  ix,   iy) != PINK
-                 && (target_torbit.get_pixel(x+ix, y+iy) == PINK
-                                                 || mode != DARK_SHOW_NOOW))
-                 target_torbit.set_pixel(x+ix, y+iy,
-                 mode == DARK ? PINK : GREY);
-            }
-            else if (mode == STEEL || mode == STEEL_NOOW) {
-                // Fuer stahlfarbiges Zeichnen auf pinken Hintergrund
-                for  (int ix = 0; ix < size; ++ix)
-                 for (int iy = 0; iy < size; ++iy)
-                 if (excerpt      .get_pixel(  ix,   iy) != PINK
-                 && (target_torbit.get_pixel(x+ix, y+iy) == PINK
-                                                 || mode != STEEL_NOOW))
-                     target_torbit.set_pixel(x+ix, y+iy,
-                      color[COL_STEEL_MASK]);
-            }
         }
-        */
     }
 
     // no frame inside the cutbit has been specified, or the cutbit

@@ -8,9 +8,14 @@ module game.lookup;
  * tell what exact interactive object instance sits there. If this behavior
  * is desired, the object in question must be looked up manually in the list
  * of objects of its type.
+ *
+ *
+ *
  */
 
+import basics.alleg5;
 import basics.help;
+import file.filename;
 
 class Lookup {
 
@@ -59,6 +64,8 @@ public:
     void set_solid_rectangle(int, int, int, int);
     void set_air            (int, int);
 
+    void save_to_file(in Filename) const;
+
 private:
 
     int xl;
@@ -103,7 +110,15 @@ this(
 
 invariant()
 {
-    assert (lt !is null);
+    if (xl > 0 || yl > 0 || lt !is null) {
+        assert (xl > 0);
+        assert (yl > 0);
+        assert (lt !is null);
+        assert (lt.length == xl * yl);
+    }
+    else {
+        assert (lt is null);
+    }
 }
 
 
@@ -118,8 +133,7 @@ body {
     yl = _yl;
     torus_x = _tx;
     torus_y = _ty;
-    lt   = new LoNr[xl * yl];
-    lt[] = 0;
+    lt = new LoNr[xl * yl];
 }
 
 
@@ -252,6 +266,25 @@ void set_air(int x, int y)
     if (! amend_if_inside(x, y))  return;
     if (get_at(x, y) & bit_steel) return;
     rm_at(x, y, bit_terrain);
+}
+
+
+
+// for testing
+public void save_to_file(in Filename fn) const
+{
+    AlBit output_bitmap = albit_ram_create(xl, yl);
+    scope (exit) al_destroy_bitmap(output_bitmap);
+    mixin(temp_target!"output_bitmap");
+
+    foreach (y; 0 .. yl) foreach (x; 0 .. xl) {
+        int red   = get(x, y, bit_terrain);
+        int green = get(x, y, bit_steel);
+        int blue  = get(x, y, bit_goal | bit_fire | bit_water | bit_trap
+                            | bit_fling | bit_trampoline);
+        al_put_pixel(x, y, AlCol(red, blue, green, 1));
+    }
+    al_save_bitmap(fn.get_rootful_z(), output_bitmap);
 }
 
 

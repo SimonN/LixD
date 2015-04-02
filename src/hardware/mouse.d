@@ -76,6 +76,8 @@ void initialize()
     queue = al_create_event_queue();
     assert (queue);
     al_register_event_source(queue, al_get_mouse_event_source());
+
+    if (display) al_hide_mouse_cursor(display);
     center_mouse();
 }
 
