@@ -22,7 +22,7 @@ bool fill_vector_from_file_raw(ref string[], const Filename) {
     assert (false, "DTODO: raw IoLine filling isn't implemented yet");
 }
 
-struct IoLine {
+class IoLine {
 
     char type;
     string text1;
@@ -35,7 +35,7 @@ struct IoLine {
     this(string = "");
     this(char, string, string, string, int, int, int);
 
-    string toString();
+//  override string toString() const;
 
     // Generate IoLine objects for the various line types in Lix.
     // These functions shall look like constructors. LineDollar can be made
@@ -83,42 +83,42 @@ this(char c, string s1, string s2, string s3, int n1, int n2, int n3)
 
 static IoLine Hash(const string t1, const int n1)
 {
-    return IoLine('#', t1, "", "", n1,  0,  0);
+    return new IoLine('#', t1, "", "", n1,  0,  0);
 }
 
 static IoLine Colon(const string t1, const int n1,
                     const int n2, const string t2)
 {
-    return IoLine(':', t1, t2, "", n1, n2,  0);
+    return new IoLine(':', t1, t2, "", n1, n2,  0);
 }
 
 static IoLine Dollar(const string t1, const string t2)
 {
-    return IoLine('$', t1, t2, "",  0,  0,  0);
+    return new IoLine('$', t1, t2, "",  0,  0,  0);
 }
 
 static IoLine Dollar(const string t1, const Date d)
 {
-    return IoLine('$', t1, d.toString(), "",  0,  0,  0);
+    return new IoLine('$', t1, d.toString(), "",  0,  0,  0);
 }
 
 static IoLine Plus(const string t1, const int n1,
                    const string t2, const string t3)
 {
-    return IoLine('+', t1, t2, t3, n1,  0,  0);
+    return new IoLine('+', t1, t2, t3, n1,  0,  0);
 }
 
 
 static IoLine Bang(const int n1, const int n2,
                    const string t1, const int n3)
 {
-    return IoLine('!', t1, "", "", n1, n2, n3);
+    return new IoLine('!', t1, "", "", n1, n2, n3);
 }
 
 static IoLine Angle(const string t1, const int n1,
                     const int n2, const int n3, const string t2)
 {
-    return IoLine('<', t1, t2, "", n1, n2, n3);
+    return new IoLine('<', t1, t2, "", n1, n2, n3);
 }
 
 
@@ -211,7 +211,7 @@ this (string src)
 
 
 
-string toString()
+override string toString() const
 {
     string ret = "" ~ type;
 
@@ -301,7 +301,7 @@ bool fill_vector_from_stream(ref IoLine[] v, File file)
             if (c == ' ' || c == '\n' || c == '\r') line = line[0 .. $-1];
             else break;
         }
-        if (! line.empty) v ~= IoLine(line);
+        if (! line.empty) v ~= new IoLine(line);
     }
     return true;
 }

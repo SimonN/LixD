@@ -254,56 +254,58 @@ const user_key_ed_exit             = "KEY_EDITOR_EXIT";
 
 
 // important directories
-const empty_filename               = new Filename("");
-const dir_levels                   = new Filename("levels/");
-const dir_levels_single            = new Filename("levels/single/");
-const dir_levels_network           = new Filename("levels/network/");
-const dir_replays                  = new Filename("replays/");
-const dir_replays_auto             = new Filename("replays/auto/");
-const dir_data                     = new Filename("data/");
-const dir_data_bitmap              = new Filename("data/images/");
-const dir_data_sound               = new Filename("data/sound/");
-const dir_data_user                = new Filename("data/user/");
-const dir_bitmap                   = new Filename("images/");
-const dir_bitmap_orig              = new Filename("images/orig/");
-const dir_bitmap_orig_l1           = new Filename("images/orig/L1/");
-const dir_bitmap_orig_l2           = new Filename("images/orig/L2/");
+private alias const(Filename) cF;
+
+cF empty_filename               = new cF("");
+cF dir_levels                   = new cF("levels/");
+cF dir_levels_single            = new cF("levels/single/");
+cF dir_levels_network           = new cF("levels/network/");
+cF dir_replays                  = new cF("replays/");
+cF dir_replays_auto             = new cF("replays/auto/");
+cF dir_data                     = new cF("data/");
+cF dir_data_bitmap              = new cF("data/images/");
+cF dir_data_sound               = new cF("data/sound/");
+cF dir_data_user                = new cF("data/user/");
+cF dir_bitmap                   = new cF("images/");
+cF dir_bitmap_orig              = new cF("images/orig/");
+cF dir_bitmap_orig_l1           = new cF("images/orig/L1/");
+cF dir_bitmap_orig_l2           = new cF("images/orig/L2/");
 
 // stubs for various filenames
-const file_replay_auto_single      = new Filename("replays/auto/s");
-const file_replay_auto_multi       = new Filename("replays/auto/m");
+cF file_replay_auto_single      = new cF("replays/auto/s");
+cF file_replay_auto_multi       = new cF("replays/auto/m");
 
 // important single files
-const file_config                  = new Filename("data/config.txt");
-const file_log                     = new Filename("data/log.txt");
-const file_level_network           = new Filename("data/netlevel.txt");
+cF file_config                  = new cF("data/config.txt");
+cF file_log                     = new cF("data/log.txt");
+cF file_level_network           = new cF("data/netlevel.txt");
 
-const file_bitmap_api_number       = new Filename("data/images/api_numb.I");
-const file_bitmap_checkbox         = new Filename("data/images/checkbox.I");
-const file_bitmap_debris           = new Filename("data/images/debris.I");
-const file_bitmap_edit_flip        = new Filename("data/images/edit_flp.I");
-const file_bitmap_edit_hatch       = new Filename("data/images/edit_hat.I");
-const file_bitmap_edit_panel       = new Filename("data/images/edit_pan.I");
-const file_bitmap_explosion        = new Filename("data/images/explode.I");
-const file_bitmap_fuse_flame       = new Filename("data/images/fuse_fla.I");
-const file_bitmap_game_arrow       = new Filename("data/images/game_arr.I");
-const file_bitmap_game_icon        = new Filename("data/images/game_ico.I");
-const file_bitmap_game_nuke        = new Filename("data/images/game_nuk.I");
-const file_bitmap_game_panel       = new Filename("data/images/game_pan.I");
-const file_bitmap_game_panel_2     = new Filename("data/images/game_pa2.I");
-const file_bitmap_game_panel_hints = new Filename("data/images/game_pah.I");
-const file_bitmap_game_spi_fix     = new Filename("data/images/game_spi.I");
-const file_bitmap_game_pause       = new Filename("data/images/game_pau.I");
-const file_bitmap_game_replay      = new Filename("data/images/game_rep.I");
-const file_bitmap_lix              = new Filename("data/images/lix.I");
-const file_bitmap_lix_recol        = new Filename("data/images/lixrecol.I");
-const file_bitmap_lobby_spec       = new Filename("data/images/lobby_sp.I");
-const file_bitmap_menu_background  = new Filename("data/images/menu_bg.I");
-const file_bitmap_menu_checkmark   = new Filename("data/images/menu_chk.I");
-const file_bitmap_mouse            = new Filename("data/images/mouse.I");
-const file_bitmap_preview_icon     = new Filename("data/images/prev_ico.I");
+cF file_bitmap_api_number       = new cF("data/images/api_numb.I");
+cF file_bitmap_checkbox         = new cF("data/images/checkbox.I");
+cF file_bitmap_debris           = new cF("data/images/debris.I");
+cF file_bitmap_edit_flip        = new cF("data/images/edit_flp.I");
+cF file_bitmap_edit_hatch       = new cF("data/images/edit_hat.I");
+cF file_bitmap_edit_panel       = new cF("data/images/edit_pan.I");
+cF file_bitmap_explosion        = new cF("data/images/explode.I");
+cF file_bitmap_fuse_flame       = new cF("data/images/fuse_fla.I");
+cF file_bitmap_game_arrow       = new cF("data/images/game_arr.I");
+cF file_bitmap_game_icon        = new cF("data/images/game_ico.I");
+cF file_bitmap_game_nuke        = new cF("data/images/game_nuk.I");
+cF file_bitmap_game_panel       = new cF("data/images/game_pan.I");
+cF file_bitmap_game_panel_2     = new cF("data/images/game_pa2.I");
+cF file_bitmap_game_panel_hints = new cF("data/images/game_pah.I");
+cF file_bitmap_game_spi_fix     = new cF("data/images/game_spi.I");
+cF file_bitmap_game_pause       = new cF("data/images/game_pau.I");
+cF file_bitmap_game_replay      = new cF("data/images/game_rep.I");
+cF file_bitmap_lix              = new cF("data/images/lix.I");
+cF file_bitmap_lix_recol        = new cF("data/images/lixrecol.I");
+cF file_bitmap_lobby_spec       = new cF("data/images/lobby_sp.I");
+cF file_bitmap_menu_background  = new cF("data/images/menu_bg.I");
+cF file_bitmap_menu_checkmark   = new cF("data/images/menu_chk.I");
+cF file_bitmap_mouse            = new cF("data/images/mouse.I");
+cF file_bitmap_preview_icon     = new cF("data/images/prev_ico.I");
 
-const file_bitmap_font_big         = new Filename("data/images/font_big.I.tga");
-const file_bitmap_font_nar         = new Filename("data/images/font_nar.I.tga");
-const file_bitmap_font_med         = new Filename("data/images/font_med.I.tga");
-const file_bitmap_font_sml         = new Filename("data/images/font_sml.I.tga");
+cF file_bitmap_font_big         = new cF("data/images/font_big.I.tga");
+cF file_bitmap_font_nar         = new cF("data/images/font_nar.I.tga");
+cF file_bitmap_font_med         = new cF("data/images/font_med.I.tga");
+cF file_bitmap_font_sml         = new cF("data/images/font_sml.I.tga");

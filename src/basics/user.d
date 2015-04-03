@@ -7,7 +7,7 @@ module basics.user;
 
 import std.algorithm; // sort filenames before outputting them
 import std.conv;
-import std.file;
+import std.stdio;
 
 import basics.alleg5;
 import basics.globals;
@@ -19,13 +19,12 @@ import file.language;
 import file.log; // when writing to disk fails
 import lix.enums;
 
-// static this(); -- exists, see below
-
-void load();
-void save();
-
-const(Result) get_level_result          (Filename);
-void          set_level_result_carefully(Filename, Result, in int);
+/*  static this();
+ *  void load();
+ *  void save();
+ *  const(Result) get_level_result          (Filename);
+ *  void          set_level_result_carefully(Filename, Result, in int);
+ */
 
 
 
@@ -420,8 +419,8 @@ void load()
         break;
 
     case '<': {
+        auto fn = new Filename(i.text1);
         Result result_read = new Result(new Date(i.text2), i.nr1,i.nr2,i.nr3);
-        Filename fn = new Filename(i.text1);
         Result* result_in_database = (fn in results);
         if (! result_in_database || *result_in_database < result_read) {
             results[fn] = result_read;
@@ -437,7 +436,7 @@ void load()
 
 
 
-void save()
+nothrow void save()
 {
     if (user_name is null) {
         // may happen under very strange circumstances, but generally
@@ -445,149 +444,164 @@ void save()
         // empty name in the options.
         return;
     }
+    try {
+        std.stdio.File f = File(user_file_name().get_rootful(), "w");
 
-    std.stdio.File f;
-    try f = std.stdio.File(user_file_name().get_rootful(), "w");
+        void fwr(in IoLine line)
+        {
+            f.writeln(line);
+            f.flush();
+        }
+
+        fwr(IoLine.Hash  (user_language,                language));
+        fwr(IoLine.Hash  (user_option_group,            option_group));
+        f.writeln();
+
+        fwr(IoLine.Hash  (user_mouse_speed,             mouse_speed));
+        fwr(IoLine.Hash  (user_mouse_acceleration,      mouse_acceleration));
+        fwr(IoLine.Hash  (user_scroll_speed_edge,       scroll_speed_edge));
+        fwr(IoLine.Hash  (user_scroll_speed_click,      scroll_speed_click));
+        fwr(IoLine.Hash  (user_scroll_edge,             scroll_edge));
+        fwr(IoLine.Hash  (user_scroll_right,            scroll_right));
+        fwr(IoLine.Hash  (user_scroll_middle,           scroll_middle));
+        fwr(IoLine.Hash  (user_replay_cancel,           replay_cancel));
+        fwr(IoLine.Hash  (user_replay_cancel_at,        replay_cancel_at));
+        fwr(IoLine.Hash  (user_multiple_builders,       multiple_builders));
+        fwr(IoLine.Hash  (user_batter_priority,         batter_priority));
+        fwr(IoLine.Hash  (user_prioinv_middle,          prioinv_middle));
+        fwr(IoLine.Hash  (user_prioinv_right,           prioinv_right));
+        f.writeln();
+
+        fwr(IoLine.Hash  (user_screen_windowed,         screen_windowed));
+        fwr(IoLine.Hash  (user_arrows_replay,           arrows_replay));
+        fwr(IoLine.Hash  (user_arrows_network,          arrows_network));
+        fwr(IoLine.Hash  (user_gameplay_help,           gameplay_help));
+        fwr(IoLine.Hash  (user_debris_amount,           debris_amount));
+        fwr(IoLine.Hash  (user_debris_type,             debris_type));
+        fwr(IoLine.Hash  (user_gui_color_red,           gui_color_red));
+        fwr(IoLine.Hash  (user_gui_color_green,         gui_color_green));
+        fwr(IoLine.Hash  (user_gui_color_blue,          gui_color_blue));
+        f.writeln();
+
+        fwr(IoLine.Hash  (user_sound_volume,            sound_volume));
+        f.writeln();
+
+        fwr(IoLine.Hash  (user_editor_hex_level_size,   editor_hex_level_size));
+        fwr(IoLine.Hash  (user_editor_grid_selected,    editor_grid_selected));
+        fwr(IoLine.Hash  (user_editor_grid_custom,      editor_grid_custom));
+        f.writeln();
+
+        fwr(IoLine.Dollar(user_single_last_level,       single_last_level.get_rootless()));
+        fwr(IoLine.Dollar(user_network_last_level,      network_last_level.get_rootless()));
+        fwr(IoLine.Dollar(user_replay_last_level,       replay_last_level.get_rootless()));
+        fwr(IoLine.Hash  (user_network_last_style,      network_last_style));
+        f.writeln();
+
+        fwr(IoLine.Dollar(user_editor_last_dir_terrain, editor_last_dir_terrain.get_rootless()));
+        fwr(IoLine.Dollar(user_editor_last_dir_steel,   editor_last_dir_steel.get_rootless()));
+        fwr(IoLine.Dollar(user_editor_last_dir_hatch,   editor_last_dir_hatch.get_rootless()));
+        fwr(IoLine.Dollar(user_editor_last_dir_goal,    editor_last_dir_goal.get_rootless()));
+        fwr(IoLine.Dollar(user_editor_last_dir_deco,    editor_last_dir_deco.get_rootless()));
+        fwr(IoLine.Dollar(user_editor_last_dir_hazard,  editor_last_dir_hazard.get_rootless()));
+        f.writeln();
+
+        fwr(IoLine.Hash  (user_key_force_left,  key_force_left));
+        fwr(IoLine.Hash  (user_key_force_right, key_force_right));
+        fwr(IoLine.Hash  (user_key_scroll,      key_scroll));
+        fwr(IoLine.Hash  (user_key_priority,    key_priority));
+        fwr(IoLine.Hash  (user_key_rate_minus,  key_rate_minus));
+        fwr(IoLine.Hash  (user_key_rate_plus,   key_rate_plus));
+        fwr(IoLine.Hash  (user_key_pause,       key_pause));
+        fwr(IoLine.Hash  (user_key_speed_slow,  key_speed_slow));
+        fwr(IoLine.Hash  (user_key_speed_fast,  key_speed_fast));
+        fwr(IoLine.Hash  (user_key_speed_turbo, key_speed_turbo));
+        fwr(IoLine.Hash  (user_key_restart,     key_restart));
+        fwr(IoLine.Hash  (user_key_state_load,  key_state_load));
+        fwr(IoLine.Hash  (user_key_state_save,  key_state_save));
+        fwr(IoLine.Hash  (user_key_zoom,        key_zoom));
+        fwr(IoLine.Hash  (user_key_nuke,        key_nuke));
+        fwr(IoLine.Hash  (user_key_spec_tribe,  key_spec_tribe));
+        fwr(IoLine.Hash  (user_key_chat,        key_chat));
+        fwr(IoLine.Hash  (user_key_ga_exit,     key_ga_exit));
+
+        foreach (int i, mapped_key; key_skill) {
+            if (mapped_key != 0) {
+                try {
+                    Ac ac = to!Ac(i);
+                    fwr(IoLine.Hash(ac_to_string(ac), mapped_key));
+                }
+                catch (ConvException) { }
+            }
+        }
+        f.writeln();
+
+        fwr(IoLine.Hash  (user_key_me_okay,          key_me_okay));
+        fwr(IoLine.Hash  (user_key_me_edit,          key_me_edit));
+        fwr(IoLine.Hash  (user_key_me_export,        key_me_export));
+        fwr(IoLine.Hash  (user_key_me_delete,        key_me_delete));
+        fwr(IoLine.Hash  (user_key_me_up_dir,        key_me_up_dir));
+        fwr(IoLine.Hash  (user_key_me_up_1,          key_me_up_1));
+        fwr(IoLine.Hash  (user_key_me_up_5,          key_me_up_5));
+        fwr(IoLine.Hash  (user_key_me_down_1,        key_me_down_1));
+        fwr(IoLine.Hash  (user_key_me_down_5,        key_me_down_5));
+        fwr(IoLine.Hash  (user_key_me_exit,          key_me_exit));
+        fwr(IoLine.Hash  (user_key_me_main_single,   key_me_main_single));
+        fwr(IoLine.Hash  (user_key_me_main_network,  key_me_main_network));
+        fwr(IoLine.Hash  (user_key_me_main_replay,   key_me_main_replay));
+        fwr(IoLine.Hash  (user_key_me_main_options,  key_me_main_options));
+        f.writeln();
+
+        fwr(IoLine.Hash  (user_key_ed_left,        key_ed_left));
+        fwr(IoLine.Hash  (user_key_ed_right,       key_ed_right));
+        fwr(IoLine.Hash  (user_key_ed_up,          key_ed_up));
+        fwr(IoLine.Hash  (user_key_ed_down,        key_ed_down));
+        fwr(IoLine.Hash  (user_key_ed_copy,        key_ed_copy));
+        fwr(IoLine.Hash  (user_key_ed_delete,      key_ed_delete));
+        fwr(IoLine.Hash  (user_key_ed_grid,        key_ed_grid));
+        fwr(IoLine.Hash  (user_key_ed_sel_all,     key_ed_sel_all));
+        fwr(IoLine.Hash  (user_key_ed_sel_frame,   key_ed_sel_frame));
+        fwr(IoLine.Hash  (user_key_ed_sel_add,     key_ed_sel_add));
+        fwr(IoLine.Hash  (user_key_ed_background,  key_ed_background));
+        fwr(IoLine.Hash  (user_key_ed_foreground,  key_ed_foreground));
+        fwr(IoLine.Hash  (user_key_ed_mirror,      key_ed_mirror));
+        fwr(IoLine.Hash  (user_key_ed_rotate,      key_ed_rotate));
+        fwr(IoLine.Hash  (user_key_ed_dark,        key_ed_dark));
+        fwr(IoLine.Hash  (user_key_ed_noow,        key_ed_noow));
+        fwr(IoLine.Hash  (user_key_ed_zoom,        key_ed_zoom));
+        fwr(IoLine.Hash  (user_key_ed_help,        key_ed_help));
+        fwr(IoLine.Hash  (user_key_ed_menu_size,   key_ed_menu_size));
+        fwr(IoLine.Hash  (user_key_ed_menu_vars,   key_ed_menu_vars));
+        fwr(IoLine.Hash  (user_key_ed_menu_skills, key_ed_menu_skills));
+        fwr(IoLine.Hash  (user_key_ed_add_terrain, key_ed_add_terrain));
+        fwr(IoLine.Hash  (user_key_ed_add_steel,   key_ed_add_steel));
+        fwr(IoLine.Hash  (user_key_ed_add_hatch,   key_ed_add_hatch));
+        fwr(IoLine.Hash  (user_key_ed_add_goal,    key_ed_add_goal));
+        fwr(IoLine.Hash  (user_key_ed_add_deco,    key_ed_add_deco));
+        fwr(IoLine.Hash  (user_key_ed_add_hazard,  key_ed_add_hazard));
+        fwr(IoLine.Hash  (user_key_ed_exit,        key_ed_exit));
+
+        // output all results, sorting the hash-based associative array first
+        bool wrote_newline = false;
+        auto sorted_keys = results.keys.sort;
+        foreach (fn; sorted_keys) {
+            if (! wrote_newline) {
+                f.writeln();
+                wrote_newline = true;
+                // The sane implementation of this newline before the first
+                // element, of course, is to check for array emptiness before
+                // the loop. However, this drove up release compile time from
+                // 9 seconds to 40 seconds! Compiler bug in dmd v2.065?
+            }
+            Result r = results[fn];
+            fwr(IoLine.Angle(fn.get_rootless(),
+             r.lix_saved, r.skills_used, r.updates_used, r.built.toString()));
+        }
+
+        f.close();
+
+    }
     catch (Exception e) {
         Log.log(e.msg);
         return;
     }
-
-    f.writeln(IoLine.Hash  (user_language,                language));
-    f.writeln(IoLine.Hash  (user_option_group,            option_group));
-    f.writeln();
-
-    f.writeln(IoLine.Hash  (user_mouse_speed,             mouse_speed));
-    f.writeln(IoLine.Hash  (user_mouse_acceleration,      mouse_acceleration));
-    f.writeln(IoLine.Hash  (user_scroll_speed_edge,       scroll_speed_edge));
-    f.writeln(IoLine.Hash  (user_scroll_speed_click,      scroll_speed_click));
-    f.writeln(IoLine.Hash  (user_scroll_edge,             scroll_edge));
-    f.writeln(IoLine.Hash  (user_scroll_right,            scroll_right));
-    f.writeln(IoLine.Hash  (user_scroll_middle,           scroll_middle));
-    f.writeln(IoLine.Hash  (user_replay_cancel,           replay_cancel));
-    f.writeln(IoLine.Hash  (user_replay_cancel_at,        replay_cancel_at));
-    f.writeln(IoLine.Hash  (user_multiple_builders,       multiple_builders));
-    f.writeln(IoLine.Hash  (user_batter_priority,         batter_priority));
-    f.writeln(IoLine.Hash  (user_prioinv_middle,          prioinv_middle));
-    f.writeln(IoLine.Hash  (user_prioinv_right,           prioinv_right));
-    f.writeln();
-
-    f.writeln(IoLine.Hash  (user_screen_windowed,         screen_windowed));
-    f.writeln(IoLine.Hash  (user_arrows_replay,           arrows_replay));
-    f.writeln(IoLine.Hash  (user_arrows_network,          arrows_network));
-    f.writeln(IoLine.Hash  (user_gameplay_help,           gameplay_help));
-    f.writeln(IoLine.Hash  (user_debris_amount,           debris_amount));
-    f.writeln(IoLine.Hash  (user_debris_type,             debris_type));
-    f.writeln(IoLine.Hash  (user_gui_color_red,           gui_color_red));
-    f.writeln(IoLine.Hash  (user_gui_color_green,         gui_color_green));
-    f.writeln(IoLine.Hash  (user_gui_color_blue,          gui_color_blue));
-    f.writeln();
-
-    f.writeln(IoLine.Hash  (user_sound_volume,            sound_volume));
-    f.writeln();
-
-    f.writeln(IoLine.Hash  (user_editor_hex_level_size,   editor_hex_level_size));
-    f.writeln(IoLine.Hash  (user_editor_grid_selected,    editor_grid_selected));
-    f.writeln(IoLine.Hash  (user_editor_grid_custom,      editor_grid_custom));
-    f.writeln();
-
-    f.writeln(IoLine.Dollar(user_single_last_level,       single_last_level.get_rootless()));
-    f.writeln(IoLine.Dollar(user_network_last_level,      network_last_level.get_rootless()));
-    f.writeln(IoLine.Dollar(user_replay_last_level,       replay_last_level.get_rootless()));
-    f.writeln(IoLine.Hash  (user_network_last_style,      network_last_style));
-    f.writeln();
-
-    f.writeln(IoLine.Dollar(user_editor_last_dir_terrain, editor_last_dir_terrain.get_rootless()));
-    f.writeln(IoLine.Dollar(user_editor_last_dir_steel,   editor_last_dir_steel.get_rootless()));
-    f.writeln(IoLine.Dollar(user_editor_last_dir_hatch,   editor_last_dir_hatch.get_rootless()));
-    f.writeln(IoLine.Dollar(user_editor_last_dir_goal,    editor_last_dir_goal.get_rootless()));
-    f.writeln(IoLine.Dollar(user_editor_last_dir_deco,    editor_last_dir_deco.get_rootless()));
-    f.writeln(IoLine.Dollar(user_editor_last_dir_hazard,  editor_last_dir_hazard.get_rootless()));
-    f.writeln();
-
-    f.writeln(IoLine.Hash  (user_key_force_left,  key_force_left));
-    f.writeln(IoLine.Hash  (user_key_force_right, key_force_right));
-    f.writeln(IoLine.Hash  (user_key_scroll,      key_scroll));
-    f.writeln(IoLine.Hash  (user_key_priority,    key_priority));
-    f.writeln(IoLine.Hash  (user_key_rate_minus,  key_rate_minus));
-    f.writeln(IoLine.Hash  (user_key_rate_plus,   key_rate_plus));
-    f.writeln(IoLine.Hash  (user_key_pause,       key_pause));
-    f.writeln(IoLine.Hash  (user_key_speed_slow,  key_speed_slow));
-    f.writeln(IoLine.Hash  (user_key_speed_fast,  key_speed_fast));
-    f.writeln(IoLine.Hash  (user_key_speed_turbo, key_speed_turbo));
-    f.writeln(IoLine.Hash  (user_key_restart,     key_restart));
-    f.writeln(IoLine.Hash  (user_key_state_load,  key_state_load));
-    f.writeln(IoLine.Hash  (user_key_state_save,  key_state_save));
-    f.writeln(IoLine.Hash  (user_key_zoom,        key_zoom));
-    f.writeln(IoLine.Hash  (user_key_nuke,        key_nuke));
-    f.writeln(IoLine.Hash  (user_key_spec_tribe,  key_spec_tribe));
-    f.writeln(IoLine.Hash  (user_key_chat,        key_chat));
-    f.writeln(IoLine.Hash  (user_key_ga_exit,     key_ga_exit));
-
-    foreach (int i, mapped_key; key_skill) {
-        if (mapped_key != 0) {
-            try {
-                Ac ac = to!Ac(i);
-                f.writeln(IoLine.Hash(ac_to_string(ac), mapped_key));
-            }
-            catch (ConvException) { }
-        }
-    }
-    f.writeln();
-
-    f.writeln(IoLine.Hash  (user_key_me_okay,          key_me_okay));
-    f.writeln(IoLine.Hash  (user_key_me_edit,          key_me_edit));
-    f.writeln(IoLine.Hash  (user_key_me_export,        key_me_export));
-    f.writeln(IoLine.Hash  (user_key_me_delete,        key_me_delete));
-    f.writeln(IoLine.Hash  (user_key_me_up_dir,        key_me_up_dir));
-    f.writeln(IoLine.Hash  (user_key_me_up_1,          key_me_up_1));
-    f.writeln(IoLine.Hash  (user_key_me_up_5,          key_me_up_5));
-    f.writeln(IoLine.Hash  (user_key_me_down_1,        key_me_down_1));
-    f.writeln(IoLine.Hash  (user_key_me_down_5,        key_me_down_5));
-    f.writeln(IoLine.Hash  (user_key_me_exit,          key_me_exit));
-    f.writeln(IoLine.Hash  (user_key_me_main_single,   key_me_main_single));
-    f.writeln(IoLine.Hash  (user_key_me_main_network,  key_me_main_network));
-    f.writeln(IoLine.Hash  (user_key_me_main_replay,   key_me_main_replay));
-    f.writeln(IoLine.Hash  (user_key_me_main_options,  key_me_main_options));
-    f.writeln();
-
-    f.writeln(IoLine.Hash  (user_key_ed_left,        key_ed_left));
-    f.writeln(IoLine.Hash  (user_key_ed_right,       key_ed_right));
-    f.writeln(IoLine.Hash  (user_key_ed_up,          key_ed_up));
-    f.writeln(IoLine.Hash  (user_key_ed_down,        key_ed_down));
-    f.writeln(IoLine.Hash  (user_key_ed_copy,        key_ed_copy));
-    f.writeln(IoLine.Hash  (user_key_ed_delete,      key_ed_delete));
-    f.writeln(IoLine.Hash  (user_key_ed_grid,        key_ed_grid));
-    f.writeln(IoLine.Hash  (user_key_ed_sel_all,     key_ed_sel_all));
-    f.writeln(IoLine.Hash  (user_key_ed_sel_frame,   key_ed_sel_frame));
-    f.writeln(IoLine.Hash  (user_key_ed_sel_add,     key_ed_sel_add));
-    f.writeln(IoLine.Hash  (user_key_ed_background,  key_ed_background));
-    f.writeln(IoLine.Hash  (user_key_ed_foreground,  key_ed_foreground));
-    f.writeln(IoLine.Hash  (user_key_ed_mirror,      key_ed_mirror));
-    f.writeln(IoLine.Hash  (user_key_ed_rotate,      key_ed_rotate));
-    f.writeln(IoLine.Hash  (user_key_ed_dark,        key_ed_dark));
-    f.writeln(IoLine.Hash  (user_key_ed_noow,        key_ed_noow));
-    f.writeln(IoLine.Hash  (user_key_ed_zoom,        key_ed_zoom));
-    f.writeln(IoLine.Hash  (user_key_ed_help,        key_ed_help));
-    f.writeln(IoLine.Hash  (user_key_ed_menu_size,   key_ed_menu_size));
-    f.writeln(IoLine.Hash  (user_key_ed_menu_vars,   key_ed_menu_vars));
-    f.writeln(IoLine.Hash  (user_key_ed_menu_skills, key_ed_menu_skills));
-    f.writeln(IoLine.Hash  (user_key_ed_add_terrain, key_ed_add_terrain));
-    f.writeln(IoLine.Hash  (user_key_ed_add_steel,   key_ed_add_steel));
-    f.writeln(IoLine.Hash  (user_key_ed_add_hatch,   key_ed_add_hatch));
-    f.writeln(IoLine.Hash  (user_key_ed_add_goal,    key_ed_add_goal));
-    f.writeln(IoLine.Hash  (user_key_ed_add_deco,    key_ed_add_deco));
-    f.writeln(IoLine.Hash  (user_key_ed_add_hazard,  key_ed_add_hazard));
-    f.writeln(IoLine.Hash  (user_key_ed_exit,        key_ed_exit));
-
-    // now output all results, sorting the hash-based associative array first
-    if (results != null) f.writeln();
-    auto sorted_keys = results.keys.sort();
-    foreach (Filename fn; sorted_keys) {
-        Result r = results[fn];
-        f.writeln(IoLine.Angle(fn.get_rootless(),
-         r.lix_saved, r.skills_used, r.updates_used, r.built.toString()));
-    }
-
-    f.close();
 }

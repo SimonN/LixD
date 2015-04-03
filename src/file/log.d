@@ -15,10 +15,10 @@ public:
     static void initialize();
     static void deinitialize();
 
-    static void log (int);
-    static void log (string);
-    static void log (string, int);
-    static void log (string, string);
+    nothrow static void log (int);
+    nothrow static void log (string);
+    nothrow static void log (string, int);
+    nothrow static void log (string, string);
 
 private:
 
@@ -30,7 +30,7 @@ private:
 
     bool something_was_logged_already_this_session;
     static void   log_header_if_necessary();
-    static string format_al_ticks();
+    nothrow static string format_al_ticks();
 
 
 
@@ -83,46 +83,61 @@ private static void log_header_if_necessary()
 
 
 
-private static string format_al_ticks()
+private nothrow static string format_al_ticks()
 {
-    return format("%9.2f", al_get_timer_count(basics.alleg5.timer) * 1.0
-                                            / basics.globals.ticks_per_sec);
+    try return format("%9.2f", al_get_timer_count(basics.alleg5.timer) * 1.0
+                      / basics.globals.ticks_per_sec);
+    catch (Exception) {
+        return "bad time!";
+    }
 }
 
 
 
-static void log(int i)
+nothrow static void log(int i)
 {
-    log_header_if_necessary();
-    singl.file.writefln("%s %d", format_al_ticks(), i);
-    singl.file.flush();
+    try {
+        log_header_if_necessary();
+        singl.file.writefln("%s %d", format_al_ticks(), i);
+        singl.file.flush();
+    }
+    catch (Exception) { }
 }
 
 
 
-static void log(string s)
+nothrow static void log(string s)
 {
-    log_header_if_necessary();
-    singl.file.writefln("%s %s", format_al_ticks(), s);
-    singl.file.flush();
+    try {
+        log_header_if_necessary();
+        singl.file.writefln("%s %s", format_al_ticks(), s);
+        singl.file.flush();
+    }
+    catch (Exception) { }
 }
 
 
 
-static void log(string s, int i)
+nothrow static void log(string s, int i)
 {
-    log_header_if_necessary();
-    singl.file.writefln("%s %s %d", format_al_ticks(), s, i);
-    singl.file.flush();
+    try {
+        log_header_if_necessary();
+        singl.file.writefln("%s %s %d", format_al_ticks(), s, i);
+        singl.file.flush();
+    }
+    catch (Exception) { }
 }
 
 
 
-static void log(string s1, string s2)
+nothrow static void log(string s1, string s2)
 {
-    log_header_if_necessary();
-    singl.file.writefln("%s %s %s", format_al_ticks(), s1, s2);
-    singl.file.flush();
+    try {
+        log_header_if_necessary();
+        singl.file.writefln("%s %s %s", format_al_ticks(), s1, s2);
+        singl.file.flush();
+    }
+    catch (Exception) { }
 }
 
 }

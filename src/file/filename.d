@@ -13,14 +13,14 @@ import std.array; // property empty
 
 class Filename {
 
-    this(in string);
-    this(in Filename);
+    pure this(in string);
+    pure this(in Filename);
 
     static void set_root_dir(string str) { if (! root) root = str.idup; }
 
-    bool opEquals   (const Filename) const;
-    int  opCmp      (const Filename) const;
-    bool is_child_of(const Filename) const;
+    bool opEquals   (in Filename) const;
+    int  opCmp      (in Filename) const;
+    bool is_child_of(in Filename) const;
 
     string get_rootful()                const { return root ~ rootless;     }
     string get_rootless()               const { return rootless;            }
@@ -49,23 +49,22 @@ private:
     // be at a later time than these instantiations, the current solution is
     // to concatenate upon each call to get_[dir_]rootful[_z]() with root.
 
-    string rootless = "";
-    string extension = "";
-    string rootless_no_ext = "";
-    string file = "";
-    string file_no_exts = "";
-    string dir_rootless = "";
+    immutable string rootless;
+    immutable string extension;
+    immutable string rootless_no_ext;
+    immutable string file;
+    immutable string file_no_exts;
+    immutable string dir_rootless;
 
-    char pre_extension;
+    immutable char pre_extension;
 
 
 
 public:
 
-this(in string s)
+pure this(in string s)
 {
-    // All strings start empty, for the pre_extension we clarify:
-    pre_extension = '\0';
+    // All strings start empty, pre_extension is '\0'
 
     // Possible root dirs are "./" and "../". We erase everything from the
     // start of the filename that is '.' or '/' and call that rootless.
@@ -111,18 +110,16 @@ this(in string s)
     }
 
     // For file_no_exts, find the first dot in file
-    file_no_exts = this.file;
-    for (int i = 0; i < file.length; ++i) {
-        if (file[i] == '.') {
-            file_no_exts = file[0 .. i];
-            break;
-        }
+    int first_dot = 0;
+    for (; first_dot < file.length; ++first_dot) {
+        if (file[first_dot] == '.') break;
     }
+    file_no_exts = this.file[0 .. first_dot];
 }
 
 
 
-this(in Filename fn)
+pure this(in Filename fn)
 {
     rootless        = fn.rootless;
     extension       = fn.extension;
@@ -136,14 +133,14 @@ this(in Filename fn)
 
 
 
-bool opEquals(const Filename rhs) const
+bool opEquals(in Filename rhs) const
 {
     return (rootless == rhs.rootless);
 }
 
 
 
-int opCmp(const Filename rhs) const
+int opCmp(in Filename rhs) const
 {
     // I roll my own here instead of using std::string::operator <, since
     // I use the convention throughout the program that file-less directory
@@ -170,7 +167,7 @@ int opCmp(const Filename rhs) const
 
 
 
-bool is_child_of(const Filename parent) const
+bool is_child_of(in Filename parent) const
 {
     return parent.file.empty
         && parent.rootless == rootless[0 .. parent.rootless.length];
