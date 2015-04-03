@@ -4,6 +4,8 @@ module level.tilelib;
  * In D/A5 Lix, it's not a class anymore, but module-level functions.
  */
 
+import std.typecons; // Rebindable!(const Filename)
+
 static import glo = basics.globals;
 
 import basics.help; // clear_array
@@ -48,7 +50,7 @@ private:
     string[string]   replace_strings;
 
     Tile[string] tiles;
-    const(Filename)[string] queue;
+    Rebindable!(const Filename)[string] queue;
 
     GraphicSet[OrigSet.MAX] grasets;
     Tile[] vgaspecs;
@@ -82,9 +84,9 @@ void initialize()
 
 void deinitialize()
 {
-    clear_array(tiles);
-    clear_array(grasets);
-    clear_array(vgaspecs);
+    destroy_array(tiles);
+    destroy_array(grasets);
+    destroy_array(vgaspecs);
 }
 
 

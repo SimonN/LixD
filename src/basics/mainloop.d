@@ -77,15 +77,15 @@ void main_loop()
 
     osd = new Torbit(al_get_display_width (display),
                      al_get_display_height(display), true, true);
-    scope (exit) clear(osd);
+    scope (exit) destroy(osd);
 
     Cutbit hatch_cb = new Cutbit(new Filename("./images/geoo/construction/Hatch.H.png"));
     myhatch1 = new Graphic(hatch_cb, osd);
     myhatch2 = new Graphic(hatch_cb, osd);
     scope (exit) {
-        clear(myhatch2);
-        clear(myhatch1);
-        clear(hatch_cb);
+        destroy(myhatch2);
+        destroy(myhatch1);
+        destroy(hatch_cb);
     }
 
     // test level input/output
@@ -99,10 +99,10 @@ void main_loop()
     display_startup_message("making test land and lookup map");
 
     Torbit land   = new Torbit(lv.size_x, lv.size_y, lv.torus_x, lv.torus_y);
-    scope (exit) clear(land);
+    scope (exit) destroy(land);
 
     Lookup lookup = new Lookup(lv.size_x, lv.size_y, lv.torus_x, lv.torus_y);
-    scope (exit) clear(lookup);
+    scope (exit) destroy(lookup);
 
     display_startup_message("drawing to test land and lookup map");
     lv.draw_terrain_to(land, lookup);

@@ -44,9 +44,9 @@ private:
     bool last_tick_shift; // get_key() to return modifiers, DTODO: A4 legacy
     bool last_tick_alt;
 
-    bool once[ALLEGRO_KEY_MAX];
-    bool hold[ALLEGRO_KEY_MAX];
-    bool rlsd[ALLEGRO_KEY_MAX];
+    bool[ALLEGRO_KEY_MAX] once;
+    bool[ALLEGRO_KEY_MAX] hold;
+    bool[ALLEGRO_KEY_MAX] rlsd;
 
     string buf_utf8;
 

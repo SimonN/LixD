@@ -31,7 +31,7 @@ class Matrix(T) {
 public:
 
     // this(in int _xl, in int _yl); -- exists, see below
-    this(in Matrix!T);
+    // this(in Matrix!T);
     ~this() { }
 
     T    get(in int x, in int y) const;

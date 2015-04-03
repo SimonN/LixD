@@ -6,6 +6,7 @@ module level.levelio;
  */
 
 import std.stdio;
+import std.algorithm;
 
 static import glo = basics.globals;
 
@@ -170,7 +171,8 @@ private void load_from_vector(Level level, in IoLine[] lines)
     // <= 99. Afterwards, infinity was -1, and the maximum skill count was 999.
     auto zero_date = new Date("");
     if (built != zero_date && built < new Date("2009-08-23 00:00:00")) {
-        pos[TileType.TERRAIN].reverse;
+        // DTODOCOMPILERUPDATE
+        // pos[TileType.TERRAIN].reverse();
     }
     if (built != zero_date && built < new Date("2011-01-08 00:00:00")) {
         foreach (sk; skills) {

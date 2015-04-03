@@ -7,8 +7,8 @@ import basics.user;
 
 Color color;
 
-void initialize()   { if (color) clear(color); color = new Color(); }
-void deinitialize() { clear(color); color = null; }
+void initialize()   { if (color) destroy(color); color = new Color(); }
+void deinitialize() { destroy(color); color = null; }
 
 void compute_new_user_colors() { initialize(); }
 

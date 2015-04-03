@@ -22,7 +22,7 @@ void main()
 
         MainLoop ml = new MainLoop();
         ml.main_loop();
-        clear(ml);
+        destroy(ml);
 
         basics.init.deinitialize();
         return 0;

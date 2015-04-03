@@ -96,7 +96,7 @@ public:
     static void    set_static_maps   (Torbit, Lookup, Map);
     static void    set_effect_manager(EffectManager e) { effect = e;    }
     static EffectManager get_ef()                      { return effect; }
-    static const Torbit  get_land()                    { return land;   }
+    static const(Torbit) get_land()                    { return land;   }
     static bool    get_any_new_flingers()    { return any_new_flingers; }
 
     bool get_mark() const { return marked;  }

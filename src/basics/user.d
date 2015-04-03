@@ -5,6 +5,7 @@ module basics.user;
  * the default values from static this() are used.
  */
 
+import std.typecons; // rebindable
 import std.algorithm; // sort filenames before outputting them
 import std.conv;
 import std.stdio;
@@ -26,9 +27,7 @@ import lix.enums;
  *  void          set_level_result_carefully(Filename, Result, in int);
  */
 
-
-
-private Result[Filename] results;
+private Result[Rebindable!(const Filename)] results;
 
 Language language     = Language.NONE;
 int      option_group = 0;
@@ -225,20 +224,21 @@ class Result {
 
 
 
-const(Result) get_level_result(Filename fn)
+const(Result) get_level_result(in Filename fn)
 {
-    Result* ret = (fn in results);
+    Result* ret = (rebindable!(const Filename)(fn) in results);
     return ret ? (*ret) : null;
 }
 
 
 
 void set_level_result_carefully(
-    Filename fn,
+    in Filename _fn,
     Result r,
     in int required
 ) {
-    Result* saved_result = (fn in results);
+    auto fn = rebindable!(const Filename)(_fn);
+    auto saved_result = (fn in results);
 
     if (saved_result is null) {
         results[fn] = r;
@@ -419,7 +419,7 @@ void load()
         break;
 
     case '<': {
-        auto fn = new Filename(i.text1);
+        auto fn = rebindable!(const Filename)(new Filename(i.text1));
         Result result_read = new Result(new Date(i.text2), i.nr1,i.nr2,i.nr3);
         Result* result_in_database = (fn in results);
         if (! result_in_database || *result_in_database < result_read) {
@@ -582,7 +582,7 @@ nothrow void save()
 
         // output all results, sorting the hash-based associative array first
         bool wrote_newline = false;
-        auto sorted_keys = results.keys.sort;
+        auto sorted_keys = results.keys.sort();
         foreach (fn; sorted_keys) {
             if (! wrote_newline) {
                 f.writeln();
@@ -591,6 +591,7 @@ nothrow void save()
                 // element, of course, is to check for array emptiness before
                 // the loop. However, this drove up release compile time from
                 // 9 seconds to 40 seconds! Compiler bug in dmd v2.065?
+                // It's still 23 seconds with dmd v2.067.
             }
             Result r = results[fn];
             fwr(IoLine.Angle(fn.get_rootless(),

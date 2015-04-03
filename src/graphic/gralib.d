@@ -181,14 +181,14 @@ void initialize()
 
 void deinitialize()
 {
-    foreach (cb; internal) clear(cb);
-    foreach (cb; style)    clear(cb);
-    foreach (cb; icons)    clear(cb);
+    foreach (cb; internal) destroy(cb);
+    foreach (cb; style)    destroy(cb);
+    foreach (cb; icons)    destroy(cb);
     internal    = null;
     style       = null;
     icons       = null;
 
-    clear(null_cutbit);
+    destroy(null_cutbit);
     null_cutbit = null;
 }
 

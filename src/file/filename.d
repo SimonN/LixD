@@ -13,15 +13,15 @@ import std.array; // property empty
 
 class Filename {
 
-    pure this(in string);
-    pure this(in Filename);
-
+/*  pure this(in string);
+ *  pure this(in Filename);
+ */
     static void set_root_dir(string str) { if (! root) root = str.idup; }
 
-    bool opEquals   (in Filename) const;
-    int  opCmp      (in Filename) const;
-    bool is_child_of(in Filename) const;
-
+/*  bool opEquals   (in Filename) const;
+ *  int  opCmp      (in Filename) const;
+ *  bool is_child_of(in Filename) const;
+ */
     string get_rootful()                const { return root ~ rootless;     }
     string get_rootless()               const { return rootless;            }
     string get_extension()              const { return extension;           }

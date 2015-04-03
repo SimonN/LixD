@@ -36,14 +36,14 @@ string user_name_escape_for_filename(in string str)
 
 
 
-template clear_array(T) {
-    void clear_array(ref T arr)
+template destroy_array(T) {
+    void destroy_array(ref T arr)
     {
         foreach (ref var; arr) {
-            clear(var);
+            destroy(var);
             var = null;
         }
-        clear(arr);
+        destroy(arr);
         arr = null;
     }
     // end function clear_array

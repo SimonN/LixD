@@ -46,7 +46,7 @@ static void initialize()
 static void deinitialize()
 {
     if (singl) {
-        clear(singl);
+        destroy(singl);
         singl = null;
     }
 }

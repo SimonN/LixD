@@ -122,7 +122,7 @@ void deinitialize()
     foreach (ref Sample sample; samples) {
         if (sample is null) continue;
         sample.stop();
-        clear(sample);
+        destroy(sample);
         sample = null;
     }
 

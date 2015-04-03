@@ -53,11 +53,11 @@ private:
     immutable int divid = 20; // divide mickeys by this for mouse speed
 
     // The mouse has 3 buttons: #0 is left, #1 is right, #2 is middle.
-    bool mouse_click  [3]; // there just was a single click
-    bool mouse_double [3]; // there just was a double click
-    int  mouse_hold   [3]; // mouse button has been held for... (0 if not)
-    int  mouse_release[3]; // just released button after being held for ...
-    int  mouse_since  [3]; // how long ago was the last click, for doubleclick
+    bool[3] mouse_click;   // there just was a single click
+    bool[3] mouse_double;  // there just was a double click
+    int [3] mouse_hold;    // mouse button has been held for... (0 if not)
+    int [3] mouse_release; // just released button after being held for ...
+    int [3] mouse_since;   // how long ago was the last click, for doubleclick
 
     immutable int doubleclick_speed = basics.globals.ticks_per_sec / 3;
     immutable int doubleclick_for60 = 20;

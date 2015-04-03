@@ -66,7 +66,7 @@ public:
     // named constructor
     static Tile take_over_cutbit(Cutbit, TileType = TileType.EMPTY, int = 0);
 
-    ~this() { clear(cb); cb = null; }
+    ~this() { destroy(cb); cb = null; }
 
     void read_definitions_file(in Filename);
 

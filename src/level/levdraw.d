@@ -60,7 +60,7 @@ private void draw_pos(in ref Pos po, Torbit ground, Lookup lookup)
 
     // We won't draw to ground, it's just to access rotated pixels.
     Graphic tempgra = new Graphic(bit, ground);
-    scope (exit) clear(tempgra);
+    scope (exit) destroy(tempgra);
     AlBit underlying_al_bitmap = bit.get_albit();
     mixin(temp_lock!"underlying_al_bitmap");
     tempgra.set_rotation(po.rot);
