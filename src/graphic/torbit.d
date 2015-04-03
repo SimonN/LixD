@@ -5,6 +5,7 @@ import std.algorithm; // minPos
 
 import basics.alleg5;
 import basics.help; // positive_mod
+import graphic.color; // drawing dark, to analyze transparency
 import file.filename;
 import hardware.display;
 
@@ -42,8 +43,22 @@ class Torbit {
     void draw     (AlBit,  int x = 0, int y = 0, int rxl=0, int ryl=0) const
         { assert(false, "Torbit.draw to AlBit not implemented"); }
 
-    void draw_from(AlBit,  int x = 0, int y = 0,
-                   bool mirr = false, double rot = 0, double scal = 0);
+/*  void draw_from(AlBit, x, y, bool mirr, double rot, double scal)
+ *
+ *      Draw the entire AlBit onto (Torbit this). Can take non-integer quarter
+ *      turns as (double rot).
+ *
+ *  void draw_dark_from(AlBit, x, y, bool mirr, int rot, AlCol col)
+ *
+ *      Implements the eraser piece drawing mode from class Cutbit.
+ *      It's cleaner like this: Torbit knows exactly how to lock itself
+ *      for maximum speed. Torbit doesn't need to know what a Cutbit is,
+ *      only (AlCol col) to draw instead of the normal bitmap color.
+ *
+ *      This is intended for drawing terrain and steel. Integer turns are
+ *      expected, and they must be already positively modded (see function
+ *      in basics.help -- this will be asserted)! No scaling is possible.
+ */
 
     void copy_to_screen();
 
@@ -209,6 +224,8 @@ private void use_drawing_delegate(
     assert (bitmap);
     assert (drawing_delegate != null);
 
+    // DTODOVRAM: Do we need to lock the entire bitmap?
+    // Probably yes without further info. :-(
     mixin(temp_target!"bitmap");
     if (true    ) drawing_delegate(x,      y     );
     if (tx      ) drawing_delegate(x - xl, y     );
@@ -308,6 +325,129 @@ void draw_from(
 
 
 
+void draw_dark_from(
+    AlBit bit,
+    int x,
+    int y,
+    in bool mirr,
+    in int rot, // must be one of 0, 1, 2, 3, that will be asserted.
+    AlCol opaque_to_this_col
+) {
+    assert (bit);
+    assert (bitmap);
+    assert (rot >= 0 && rot < 4);
+
+    if (tx) x = positive_mod(x, xl);
+    if (ty) y = positive_mod(y, yl);
+
+    immutable int bxl = al_get_bitmap_width (bit);
+    immutable int byl = al_get_bitmap_height(bit);
+    immutable int txl = ((rot & 1) == 0 ? bxl : byl);
+    immutable int tyl = ((rot & 1) == 0 ? byl : bxl);
+
+    assert (txl > 0);
+    assert (tyl > 0);
+
+    // Don't draw anything if we're outside of the bitmap. A full torus
+    // won't ever have us outside of it.
+    if (x >= xl      || y >= yl     ) return;
+    if (0 >= x + txl || 0 >= y + tyl) return;
+
+    // Transform a point in the bitmap according to mirr and rot,
+    // where the bitmap has coordinates ranging from 0, 0 to its bxl, byl.
+    // Since we're transforming unrotated/unmirrored coordinates to mirrored
+    // /rotated ones, source and range are either the same, or swapped,
+    // for ix in 0 .. bxl and iy in 0 .. byl.
+    import std.conv; // debugging
+    import file.log;
+    import basics.matrix;
+
+    XY transf_ixy(int ix, int iy)
+    in {
+        assert (ix >= 0);
+        assert (iy >= 0);
+        assert (ix < txl);
+        assert (iy < tyl);
+    }
+    out (ret) {
+        assert (ret.x >= 0);
+        assert (ret.y >= 0);
+        assert (ret.x < bxl);
+        assert (ret.y < byl);
+    }
+    body {
+        XY ret;
+        switch (rot) {
+            // Keep in mind we're transforming back onto the unrotated bitmap,
+            // so cases 1 and 3 should be interchanged from what you'd expect.
+            // But I confused myself a lot here, and have changed them back:
+            case 0: ret.x = ix;       ret.y = iy;       break;
+            case 1: ret.x = iy;       ret.y = txl-1-ix; break;
+            case 2: ret.x = txl-1-ix; ret.y = tyl-1-iy; break;
+            case 3: ret.x = tyl-1-iy; ret.y = ix;       break;
+            default: assert (false);
+        }
+        // drawing first mirrors, then rotates. When we are computing
+        // backwards, rotate first, then flip now.
+        if (mirr) {
+            if (rot & 1) ret.x = bxl-1-ret.x;
+            else         ret.y = byl-1-ret.y;
+        }
+        return ret;
+    }
+
+    // ddf_at means "draw_dark_from_at".
+    // This function will be called with rectangles, fully specified by
+    // their top left corner and txl/tyl of the current scope.
+    // but by start and end coordinates. Its coordinates are not guaranteed
+    // to be on the screen, but it will fix that.
+    void ddf_at(
+        int start_x, int start_y    // where to draw on the torbit
+    ) {
+        int bit_start_x = 0; // where to start iteration on (bit)
+        int bit_start_y = 0;
+        int end_x = start_x + txl;
+        int end_y = start_y + tyl;
+
+        if (start_x < 0)  { bit_start_x = -start_x; start_x = 0; }
+        if (start_y < 0)  { bit_start_y = -start_y; start_y = 0; }
+        if (end_x   > xl) end_x = xl;
+        if (end_y   > yl) end_y = yl;
+        if (start_x >= end_x || start_y >= end_y) return;
+
+        // I'm afraid to call the following Allegro 5 function with off-bitmap
+        // coordinates, that's why I've fixed everything and returned above.
+        ALLEGRO_LOCKED_REGION* locked_region = al_lock_bitmap_region(
+            bitmap, start_x, start_y,
+            end_x - start_x,
+            end_y - start_y,
+            ALLEGRO_PIXEL_FORMAT.ALLEGRO_PIXEL_FORMAT_ANY, // is fastest
+            ALLEGRO_LOCK_READWRITE);
+        scope (exit) al_unlock_bitmap(bitmap);
+
+        mixin(temp_target!"bitmap");
+        foreach  (int target_x; start_x .. end_x)
+         foreach (int target_y; start_y .. end_y) {
+            immutable int ix = target_x - start_x + bit_start_x;
+            immutable int iy = target_y - start_y + bit_start_y;
+            immutable XY    transf  = transf_ixy(ix, iy);
+            immutable AlCol src_col = al_get_pixel(bit, transf.x, transf.y);
+            if (src_col != color.transp)
+                al_put_pixel(target_x, target_y, opaque_to_this_col);
+        }
+        // end foreach
+    }
+    // end local function
+
+    mixin(temp_lock!"bit");
+                  ddf_at(x,      y);
+    if (tx      ) ddf_at(x - xl, y);
+    if (      ty) ddf_at(x,      y - yl);
+    if (tx && ty) ddf_at(x - xl, y - yl);
+}
+
+
+
 void copy_to_screen()
 {
     AlBit last_target = al_get_target_bitmap();
@@ -400,6 +540,8 @@ void replace_color(AlCol c_old, AlCol c_new)
 void replace_color_in_rect(
     int rx, int ry, int rxl, int ryl, AlCol c_old, AlCol c_new
 ) {
+    assert (false, "DTODO: do we even need this function? uncomment it then");
+/*
     if (! bitmap) return;
     if (tx) rx = positive_mod(rx, xl);
     if (ty) ry = positive_mod(ry, yl);
@@ -421,6 +563,7 @@ void replace_color_in_rect(
 
     //mixin(temp_lock!"bitmap");
     use_drawing_delegate(deg, rx, ry);
+*/
 }
 
 

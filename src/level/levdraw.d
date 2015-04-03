@@ -39,11 +39,8 @@ private void draw_pos(in ref Pos po, Torbit ground, Lookup lookup)
     assert (po.ob.cb);
     const(Cutbit) bit = po.ob.cb;
 
-    bit.draw(ground, po.x, po.y,
-     0, 0, // always draw frame (0, 0) for previewing
-     po.mirr,
+    bit.draw(ground, po.x, po.y, po.mirr,
      po.ob.type == TileType.HATCH ? 0 : po.rot, // hatch rot: not for drawing
-     0, // scaling factor
        po.noow ? Cutbit.Mode.NOOW
      : po.dark ? Cutbit.Mode.DARK
      :           Cutbit.Mode.NORMAL);

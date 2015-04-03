@@ -1,6 +1,7 @@
 module graphic.cutbit;
 
 import basics.alleg5;
+import basics.help; // positive_mod
 import basics.matrix; // which frames exist?
 import graphic.color;
 import graphic.torbit;
@@ -13,16 +14,13 @@ class Cutbit {
 
     enum Mode {
         NORMAL,
-        NOOW,
-        DARK,
-        NOOW_EDITOR,
-        DARK_EDITOR,
-        DARK_SHOW_NOOW, // only for some steel mask internal drawing
-        STEEL,
-        STEEL_NOOW
+        NOOW, // no-overwrite, draw only the pixels falling on transparent bg
+        DARK, // instead of drawing a pixel, erase a pixel from the bg
+        NOOW_EDITOR, // Like NOOW, but treats the editor's NOOW color as transp
+        DARK_EDITOR, // like DARK, but draw a dark color, not transparent
     }
 
-    this() {}
+    this() { }
     this(in Cutbit);
     this(AlBit,          const bool cut = true); // takes ownership of bitmap!
     this(const Filename, const bool cut = true);
@@ -45,21 +43,31 @@ class Cutbit {
     AlCol get_pixel(int px, int py)                 const;
     AlCol get_pixel(int fx, int fy, int px, int py) const;
 
-    // Checks whether the given frame contains interesting image data, instead
-    // of being marked as nonexistant by being filled with frame color.
-    // This is very fast, it uses the cached data in RAM.
-    bool get_frame_exists(in int fx, in int fy) const;
-
-    // draw a cutbit onto the given Torbit
-    // DTODOLANG: translate comments here to English
-    void draw(Torbit,
-              const int    = 0, const int = 0, // X-, Y-Position
-              const int    = 0, const int = 0, // X-, Y-Frame
-              const bool   = false,            // Vertikal gespiegelt?
-              const double = 0,                // Vierteldrehungen?
-              const double = 0,                // Strecken? Nein = 0 oder 1.
-              const Mode = Mode.NORMAL) const; // Farbe malen anstatt Objekt,
-                                               // gaengig: -1 fuer Loeschterr.
+/*  bool get_frame_exists(in int fx, in int fy) const;
+ *
+ *      Checks whether the given frame contains interesting image data,
+ *      instead of being marked as nonexistant by being filled with the
+ *      already-detected frame/grid color.
+ *
+ *      This is very fast, it uses the cached data in RAM. It's much better
+ *      to consult this instead of querying for pixels later inside frames.
+ *
+ *  void draw(torbit, x, y, xf, yf, mirr, double rot, double scal) const;
+ *  void draw(torbit, x, y,         mirr, int    rot, Mode   mode) const;
+ *
+ *      The first is intended for free-form drawing without effect on land.
+ *      Interactive objects and the flying pickaxe are drawn with this.
+ *
+ *      The second is intended to draw terrain and steel. These can only
+ *      be rotated by quarter turns, and have only one frame per piece.
+ *      However, they can be drawn with one of the drawing modes, like
+ *      no-overwrite or dark.
+ *
+ *      (rot) (either int or double) means how many quarter turns to be made.
+ *      I believe they're measured counter-clockwise.
+ *
+ *      (double scal) can be set to 0 or 1 when one doesn't wish to rescale.
+ */
 
 private:
 
@@ -277,6 +285,20 @@ bool get_frame_exists(in int fx, in int fy) const
 
 
 
+private void draw_missing_frame_error(
+    Torbit torbit, in int x, in int y, in int fx, in int fy) const
+{
+    string str = "File N/A";
+    AlCol  col = color.cb_bad_bitmap;
+    if (bitmap) {
+        str = format("(%d,%d)", fx, fy);
+        col = color.cb_bad_frame;
+    }
+    drtx(torbit, str, x, y, col);
+}
+
+
+
 void draw(
     Torbit       target_torbit,
     const int    x = 0,
@@ -285,8 +307,7 @@ void draw(
     const int    fy = 0,
     const bool   mirr = false,
     const double rot  = 0,
-    const double scal = 0,
-    const Mode   mode = Mode.NORMAL) const
+    const double scal = 0) const
 {
     AlBit target = target_torbit.get_al_bitmap();
 
@@ -300,26 +321,79 @@ void draw(
                                                    fy * (yl+1) + 1, xl, yl);
         scope (exit) al_destroy_bitmap(sprite);
 
-        if (mode == Mode.NORMAL) {
-            target_torbit.draw_from(sprite, x, y, mirr, rot, scal);
-        }
-        // DTODO: implement the remainin drawing modes
-        else {
-        }
+        target_torbit.draw_from(sprite, x, y, mirr, rot, scal);
     }
-
     // no frame inside the cutbit has been specified, or the cutbit
     // has a null bitmap
     else {
-        string str = "File N/A";
-        AlCol  col = color.cb_bad_bitmap;
-        if (bitmap) {
-            str = format("(%d,%d)", fx, fy);
-            col = color.cb_bad_frame;
-        }
-        drtx(target_torbit, str, x, y, col);
+        draw_missing_frame_error(target_torbit, x, y, fx, fy);
     }
 }
+
+
+
+void draw(
+    Torbit    target_torbit,
+    in int    x,
+    in int    y,
+    in bool   mirr,
+    int       rot,
+    in Mode   mode) const
+{
+    if (! bitmap) {
+        draw_missing_frame_error(target_torbit, x, y, 0, 0);
+        return;
+    }
+    // only one frame allowed, so we don't have to make sub-bitmaps
+    assert (x_frames == 1);
+    assert (y_frames == 1);
+
+    rot = basics.help.positive_mod(rot, 4);
+    assert (rot >= 0 || rot < 4);
+
+    final switch (mode) {
+
+    case Mode.NORMAL:
+        // this is very much like the other draw function
+        target_torbit.draw_from(cast (AlBit) bitmap, x, y, mirr, rot * 1.0f);
+        break;
+
+    case Mode.DARK:
+    case Mode.DARK_EDITOR:
+        // the Torbit will know what to lock for best speed, so we have
+        // moved the implementation there. Here, we only choose the color.
+        target_torbit.draw_dark_from(cast (AlBit) bitmap, x, y, mirr, rot,
+            mode == Mode.DARK ? color.transp : color.shadow);
+        break;
+
+    case Mode.NOOW: {
+        immutable invert_lengths = (rot % 2 == 1);
+        Torbit excerpt = new Torbit(
+            invert_lengths ? yl : xl,
+            invert_lengths ? xl : yl);
+        excerpt.clear_to_color(color.transp);
+        excerpt.draw_from(cast (AlBit) bitmap, 0, 0, mirr, rot);
+        target_torbit.draw     (excerpt.get_albit(), x, y);
+        target_torbit.draw_from(excerpt.get_albit(), x, y);
+        break; }
+
+    case Mode.NOOW_EDITOR:
+        assert (false, "DTODO: implement more drawing modes");
+        /*
+        else if (mode == NOOW_EDITOR) {
+        for  (int ix = 0; ix < size; ++ix)
+         for (int iy = 0; iy < size; ++iy) {
+            const int c = target_torbit.get_pixel(x + ix, y + iy);
+            const int e = excerpt      .get_pixel(    ix,     iy);
+            if ((c == BLACK || c == PINK || c == GREY)
+             &&  e != BLACK && e != PINK)
+             target_torbit.set_pixel(x + ix, y + iy, e);
+        */
+    }
+    // we don't have to draw the missing-frame error here; there could have
+    // only been the missing-image error, and we've checked for that already.
+}
+// end function draw with mode
 
 }
 // end class

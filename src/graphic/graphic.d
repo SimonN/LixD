@@ -17,7 +17,7 @@ class Graphic {
 
     this(const Cutbit, Torbit, const int = 0, const int = 0);
     ~this() { }
-    // invariant() -- exists, see below
+//  invariant();
 
     const(Cutbit) get_cutbit() const          { return cutbit; }
 
@@ -28,8 +28,8 @@ class Graphic {
 
     int  get_x () const { return x; }
     int  get_y () const { return y; }
-    void set_x (const int);
-    void set_y (const int);
+//  void set_x (const int);
+//  void set_y (const int);
     void set_xy(int nx, int ny) { set_x(nx); set_y(ny); }
 
     bool        get_mirror  () const { return mirror;   }
@@ -37,7 +37,7 @@ class Graphic {
     Cutbit.Mode get_mode    () const { return mode;     }
     void set_mode(Cutbit.Mode m)     { mode   = m;      }
     void set_mirror(bool b = true)   { mirror = b;      }
-    void set_rotation(double);
+//  void set_rotation(double);
 
     int  get_x_frame() const { return x_frame; }
     int  get_y_frame() const { return y_frame; }
@@ -48,16 +48,17 @@ class Graphic {
     // If the Graphic object is rotated, get_xl()/yl() are NOT wrappers,
     // but rotate with the Graphic object before they access the Cutbit part.
     // Same thing with get_pixel().
-    int  get_xl() const;
-    int  get_yl() const;
+
+//  int  get_xl() const;
+//  int  get_yl() const;
     int  get_x_frames()  const { return cutbit.get_x_frames(); }
     int  get_y_frames()  const { return cutbit.get_y_frames(); }
-    bool get_frame_exists(in int, in int) const;
-    AlCol get_pixel      (in int, in int) const; // warning: very slow!
+//  bool get_frame_exists(in int, in int) const;
+//  AlCol get_pixel      (in int, in int) const; // warning: very slow!
 
-    // bool is_last_frame() const; -- exists, see below
+//  bool is_last_frame() const;
 
-    // void draw(); -- exists, see below
+//  void draw(); const
 
 private:
 
@@ -176,7 +177,6 @@ AlCol get_pixel(in int gx, in int gy) const
         case 3: use_x = xl-gy-1; use_y = !mirror ? gx      : yl-gx-1; break;
         default: break;
     }
-    // DTODOVRAM
     return cutbit.get_pixel(x_frame, y_frame, use_x, use_y);
 }
 
@@ -184,7 +184,12 @@ AlCol get_pixel(in int gx, in int gy) const
 
 void draw()
 {
-    cutbit.draw(ground, x, y, x_frame, y_frame, mirror, rotation, 0, mode);
+    if (mode == Cutbit.Mode.NORMAL) {
+        cutbit.draw(ground, x, y, x_frame, y_frame, mirror, rotation);
+    }
+    else {
+        cutbit.draw(ground, x, y, mirror, to!int(rotation), mode);
+    }
 }
 
 }

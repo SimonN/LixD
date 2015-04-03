@@ -294,21 +294,14 @@ bool fill_vector_from_file(ref IoLine[] v, const Filename fn)
 // return true on no error
 bool fill_vector_from_stream(ref IoLine[] v, File file)
 {
-    try {
-        foreach (string line; lines(file)) {
-            // prune trailing LFs, CRs, and spaces
-            while (! line.empty) {
-                immutable char c = line[$-1];
-                if (c == ' ' || c == '\n' || c == '\r') line = line[0 .. $-1];
-                else break;
-            }
-            if (! line.empty) v ~= IoLine(line);
+    foreach (string line; lines(file)) {
+        // prune trailing LFs, CRs, and spaces
+        while (! line.empty) {
+            immutable char c = line[$-1];
+            if (c == ' ' || c == '\n' || c == '\r') line = line[0 .. $-1];
+            else break;
         }
-        return true;
+        if (! line.empty) v ~= IoLine(line);
     }
-    catch (Exception e) {
-        // DTODOLANG
-        Log.log(e.msg);
-        return false;
-    }
+    return true;
 }
