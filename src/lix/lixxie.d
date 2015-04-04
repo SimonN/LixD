@@ -633,7 +633,7 @@ override void draw()
             */
         }
         // draw the flame
-        auto cb = graphic.gralib.get(file_bitmap_fuse_flame);
+        auto cb = get_internal(file_bitmap_fuse_flame);
         cb.draw(ground_map,
          fuse_x + x - cb.get_xl()/2,
          fuse_y + y - cb.get_yl()/2,

@@ -8,6 +8,7 @@ import graphic.gralib;
 import graphic.graphic;
 import graphic.textout;
 import graphic.torbit;
+import gui;
 import hardware.mouse;
 import hardware.keyboard;
 import hardware.display;
@@ -33,6 +34,7 @@ private:
     const(Cutbit) mouse;
     Graphic myhatch1;
     Graphic myhatch2;
+    Element[] elems;
 
     void process_events();
     void calc();
@@ -46,7 +48,7 @@ public:
 
 this()
 {
-    mouse = graphic.gralib.get(file_bitmap_mouse);
+    mouse = get_internal(file_bitmap_mouse);
     assert (mouse.is_valid());
 }
 
@@ -87,6 +89,17 @@ void main_loop()
         destroy(myhatch1);
         destroy(hatch_cb);
     }
+
+    // test gui elements
+    elems ~= new Frame (Geom.From.BOTTOM_RIGHT, 40, 50, 60, 70);
+    elems ~= new Button(Geom.From.BOTTOM_RIGHT, 40, 50, 60, 50);
+    elems ~= () {
+        auto a = new TextButton(Geom.From.BOTTOM, 0, 100, 100, 20);
+        import file.language;
+        a.set_text(transl(Lang.editor_button_SELECT_COPY));
+        return a;
+    } ();
+    foreach (e; elems) gui.add_elder(e);
 
     // test level input/output
     import level.level;
@@ -200,29 +213,29 @@ void calc()
     import std.string;
     import lix.enums;
 
-    drtx(osd, typetext ~ (tick % 30 < 15 ? "_" : ""), 300, 100);
-    drtx(osd, format("Your builder hotkey scancode: %d", key_skill[Ac.BUILDER]), 20, 400);
-    drtx(osd, "Builder key once: " ~ (key_once(key_skill[Ac.BUILDER])?"now":"--"), 20, 420);
-    drtx(osd, "Builder key hold: " ~ (key_hold(key_skill[Ac.BUILDER])?"now":"--"), 20, 440);
-    drtx(osd, "Builder key rlsd: " ~ (key_rlsd(key_skill[Ac.BUILDER])?"now":"--"), 20, 460);
-    drtx(osd, "Press [A] to playback a sound. Does it play immediately (correct) or with 0.5 s delay (bug)?", 20, 480);
-    drtx(osd, "Non-square rectangles jump when they", 300, 120);
-    drtx(osd, "finish a half rotation, this is intended.", 300, 140);
+    drtx(typetext ~ (tick % 30 < 15 ? "_" : ""), 300, 100);
+    drtx(format("Your builder hotkey scancode: %d", key_skill[Ac.BUILDER]), 20, 400);
+    drtx("Builder key once: " ~ (key_once(key_skill[Ac.BUILDER])?"now":"--"), 20, 420);
+    drtx("Builder key hold: " ~ (key_hold(key_skill[Ac.BUILDER])?"now":"--"), 20, 440);
+    drtx("Builder key rlsd: " ~ (key_rlsd(key_skill[Ac.BUILDER])?"now":"--"), 20, 460);
+    drtx("Press [A] to playback a sound. Does it play immediately (correct) or with 0.5 s delay (bug)?", 20, 480);
+    drtx("Non-square rectangles jump when they", 300, 120);
+    drtx("finish a half rotation, this is intended.", 300, 140);
 
     import basics.globals;
     import basics.globconf;
     import basics.versioning;
     import file.language;
-    drtx(osd, transl(Lang.net_chat_welcome_unstable)
+    drtx(transl(Lang.net_chat_welcome_unstable)
         ~ " or enjoy hacking in D. " ~ get_version_string(), 20, 360);
 
     static bool showstring = false;
     import std.array;
     if (basics.globconf.user_name.empty) {
-        drtx(osd, "Enter your username in data/config.txt for a greeting", 20, 380);
+        drtx("Enter your username in data/config.txt for a greeting", 20, 380);
     }
     else {
-        drtx(osd, "Hello " ~ user_name ~ ", loading the config file works.", 20, 380);
+        drtx("Hello " ~ user_name ~ ", loading the config file works.", 20, 380);
     }
 
     if (tick % 240 == 0) {
@@ -236,16 +249,19 @@ void calc()
     assert (mytile.cb, "mytile.cb not exist");
     mytile.cb.draw(osd, 500 + to!int(50 * sin(tick / 30.0)), 10);
 
-    mouse.draw(osd, get_mx() - mouse.get_xl()/2 + 1,
-                    get_my() - mouse.get_yl()/2 + 1);
-
+    gui.calc_everything();
 }
 
 
 
 void draw()
 {
+    mouse.draw(osd, get_mx() - mouse.get_xl()/2 + 1,
+                    get_my() - mouse.get_yl()/2 + 1);
     osd.copy_to_screen();
+
+    gui.draw_everything_and_blit_to_screen();
+
     al_flip_display();
 
     draw_scheduled_sounds();

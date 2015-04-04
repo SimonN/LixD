@@ -287,7 +287,6 @@ cF file_level_network           = new cF("data/netlevel.txt");
 cF file_language_english        = new cF("data/transl/english.txt");
 
 cF file_bitmap_api_number       = new cF("data/images/api_numb.I");
-cF file_bitmap_checkbox         = new cF("data/images/checkbox.I");
 cF file_bitmap_debris           = new cF("data/images/debris.I");
 cF file_bitmap_edit_flip        = new cF("data/images/edit_flp.I");
 cF file_bitmap_edit_hatch       = new cF("data/images/edit_hat.I");

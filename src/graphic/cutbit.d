@@ -294,7 +294,8 @@ private void draw_missing_frame_error(
         str = format("(%d,%d)", fx, fy);
         col = color.cb_bad_frame;
     }
-    drtx(torbit, str, x, y, col);
+    mixin(temp_target!"torbit.get_albit()");
+    draw_text(djvu_s, str, x, y, col);
 }
 
 
@@ -363,7 +364,7 @@ void draw(
         // the Torbit will know what to lock for best speed, so we have
         // moved the implementation there. Here, we only choose the color.
         target_torbit.draw_dark_from(cast (AlBit) bitmap, x, y, mirr, rot,
-            mode == Mode.DARK ? color.transp : color.shadow);
+            mode == Mode.DARK ? color.transp : color.gui_sha);
         break;
 
     case Mode.NOOW: {

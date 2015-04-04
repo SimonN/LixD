@@ -11,18 +11,17 @@ import file.search;
 import hardware.display; // display startup progress
 import lix.enums;
 
-// Graphics library, loads spritesheets and offers them for use via string
-// lookup. This does not handle Lix terrain, special objects, or L1/L2 graphics
-// sets. All of those are handled by the tile library.
-
-void initialize();
-void deinitialize();
-
-const(Cutbit) get     (in Filename);
-const(Cutbit) get_lix (in Style);
-const(Cutbit) get_icon(in Style); // for the panel
-
-
+/* Graphics library, loads spritesheets and offers them for use via string
+ * lookup. This does not handle Lix terrain, special objects, or L1/L2 graphics
+ * sets. All of those are handled by the tile library.
+ *
+ *  void initialize();
+ *  void deinitialize();
+ *
+ *  const(Cutbit) get_internal(in Filename);
+ *  const(Cutbit) get_lix     (in Style);
+ *  const(Cutbit) get_icon    (in Style); -- for the panel
+ */
 
 private:
 
@@ -71,7 +70,7 @@ void initialize()
         assert (cb, "error loading internal cutbit: " ~ fn.get_rootful());
         al_convert_mask_to_alpha(cb.get_albit(), color.pink);
         internal[fn.get_rootless_no_extension()] = cb;
-        assert (get(fn).is_valid(), "not valid: " ~ fn.get_rootful());
+        assert (get_internal(fn).is_valid(), "not valid: " ~ fn.get_rootful());
     }
 
     // Create the matrix of eye coordinates.
@@ -154,7 +153,6 @@ void initialize()
     // to have been loaded already, and therefore the correct GUI colors
     // have been computed.
     eidrecol_api(file_bitmap_api_number);
-    eidrecol_api(file_bitmap_checkbox);
     eidrecol_api(file_bitmap_edit_flip);
     eidrecol_api(file_bitmap_edit_hatch);
     eidrecol_api(file_bitmap_edit_panel);
@@ -194,7 +192,7 @@ void deinitialize()
 
 
 
-const(Cutbit) get(in Filename fn)
+const(Cutbit) get_internal(in Filename fn)
 {
     immutable string str = fn.get_rootless_no_extension();
     if (str in internal) return internal[str];

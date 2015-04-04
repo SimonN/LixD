@@ -5,14 +5,14 @@ public import basics.alleg5 : AlCol;
 import basics.alleg5;
 import basics.user;
 
-Color color;
+public ColorPrivate color;
 
-void initialize()   { if (color) destroy(color); color = new Color(); }
+void initialize()   { if (color) destroy(color); color = new ColorPrivate(); }
 void deinitialize() { destroy(color); color = null; }
 
 void compute_new_user_colors() { initialize(); }
 
-class Color {
+private class ColorPrivate {
 
     AlCol
         bad,
@@ -22,7 +22,6 @@ class Color {
         cb_bad_frame,
         cb_bad_bitmap,
 
-        shadow,
         white,
         red,
         black,
@@ -46,6 +45,9 @@ class Color {
         gui_on_d,
         gui_on_m,
         gui_on_l,
+
+        gui_text,
+        gui_text_on,
 
         gui_pic_on_d,
         gui_pic_on_m,
@@ -74,7 +76,6 @@ private:
         lixfile_eye   = makecol(0x50, 0x50, 0x50);
 
         white         = AlCol(1,    1,    1,    1  );
-        shadow        = AlCol(0.5,  0.4,  0.25, 1  );
         red           = AlCol(1,    0,    0,    1  );
         black         = AlCol(0,    0,    0,    1  );
 
@@ -96,6 +97,9 @@ private:
         gui_on_d      = make_sepia(11f   / 16f / 1.1f);
         gui_on_m      = make_sepia(11f   / 16f);
         gui_on_l      = make_sepia(11f   / 16f * 1.1f);
+
+        gui_text      = make_sepia(14f   / 16f); // lighter than an image
+        gui_text_on   = make_sepia(1.0);         // pure white
 
         gui_pic_d     = make_sepia(11f   / 16f / 1.2f);
         gui_pic_m     = make_sepia(11f   / 16f);

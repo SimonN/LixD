@@ -224,8 +224,8 @@ private void use_drawing_delegate(
     assert (bitmap);
     assert (drawing_delegate != null);
 
-    // DTODOVRAM: Do we need to lock the entire bitmap?
-    // Probably yes without further info. :-(
+    // We don't lock the bitmap; drawing with high-level primitives
+    // and blitting other VRAM bitmaps is best without locking
     mixin(temp_target!"bitmap");
     if (true    ) drawing_delegate(x,      y     );
     if (tx      ) drawing_delegate(x - xl, y     );

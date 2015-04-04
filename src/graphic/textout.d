@@ -1,62 +1,48 @@
 module graphic.textout;
 
+import std.conv; // to!int for rounding the screen size division
+import std.math;
 import std.string; // toStringz()
 
 import basics.alleg5;
 import graphic.color; // for the shortcut version only
-import graphic.torbit;
+import hardware.display; // make fonts in a size relative to the display
 
 AlFont font_al;
 AlFont djvu_s;
 AlFont djvu_m;
 
-void initialize();
-void deinitialize();
+private float sha_offs; // x and y offset for printing the text shadow
 
-// DTODO: maybe remove Torbit/AlBit from these and have the caller
-// make sure that the correct one is drawn to?
-void draw_shaded_text(Torbit bmp, AlFont f, string str,
-                      int x, int y, int r, int g, int b)
-    { assert (false, "DTODO: unimplemented textout function"); }
-
-void draw_shadow_text(Torbit bmp, AlFont f, string str,
-                      int x, int y, AlCol c, AlCol sc);
-
-void draw_shaded_centered_text(AlBit bmp, AlFont f, string str,
-                               int x, int y, int r, int g, int b)
-    { assert (false, "DTODO: unimplemented textout function"); }
-
-void draw_shadow_centered_text(Torbit bmp, AlFont f, string str,
-                               int x, int y, AlCol c, AlCol sc)
-    { assert (false, "DTODO: unimplemented textout function"); }
-
-void draw_shadow_fixed_number(Torbit bmp, AlFont f, int number,
-                        int x, int y, AlCol c, bool right_to_left, AlCol sc)
-    { assert (false, "DTODO: unimplemented textout function"); }
-
-void draw_shadow_fixed_text(Torbit bmp, AlFont f, string str,
-                        int x, int y, AlCol c, bool right_to_left, AlCol sc)
-    { assert (false, "DTODO: unimplemented textout function"); }
-
-void draw_shadow_fixed_updates_used(Torbit bmp, AlFont f, int number,
-                        int x, int y, AlCol c, bool rtol, AlCol sc)
-    { assert (false, "DTODO: unimplemented textout function"); }
-
+/*  void initialize();
+ *  void deinitialize();
+ *
+ *  void draw_text(font, str, x, y, col)
+ *  void draw_text_centered(...)
+ */
 
 
 void initialize()
 {
     font_al = al_create_builtin_font();
-    assert(font_al);
+    assert (font_al);
 
+    // We would like the fonts to be in relative size to our resolution.
+    // See gui.geometry for details. Loading the fonts in size 16 gives the
+    // correct height for 24 lines of text stacked vertically on 640 x 480.
+    // Other resolutions require us to scale the font size.
+    assert (display, "need display height to estimate font size");
+    sha_offs            = al_get_display_height(display) / 480f;
+    immutable int size  = floor(sha_offs).to!int;
     immutable int flags = 0;
-    djvu_s = al_load_ttf_font("./data/fonts/djvusans.ttf", 10, flags);
-    djvu_m = al_load_ttf_font("./data/fonts/djvusans.ttf", 16, flags);
+
+    djvu_s = al_load_ttf_font("./data/fonts/djvusans.ttf", size * 10, flags);
+    djvu_m = al_load_ttf_font("./data/fonts/djvusans.ttf", size * 16, flags);
 
     if (! djvu_s) djvu_s = font_al;
     if (! djvu_m) djvu_m = font_al;
-    assert(djvu_s);
-    assert(djvu_m);
+    assert (djvu_s);
+    assert (djvu_m);
 }
 
 
@@ -69,47 +55,46 @@ void deinitialize()
     font_al = djvu_s = djvu_m = null;
 }
 
-/*
-void draw_shaded_text(Torbit& bmp, AlFont f, const char* s,
- int x, int y, int r, int g, int b) {
-    textout_ex(bmp.get_al_bitmap(), f, s, x+2, y+2, makecol(r/4, g/4, b/4),-1);
-    textout_ex(bmp.get_al_bitmap(), f, s, x+1, y+1, makecol(r/2, g/2, b/2),-1);
-    textout_ex(bmp.get_al_bitmap(), f, s, x  , y  , makecol(r  , g  , b  ),-1);
-}
-*/
 
-void draw_shadow_text(
-    Torbit bmp, AlFont f, string str,
-    int x, int y,
-    AlCol c, AlCol sc
+
+void
+draw_text(
+    AlFont f, string str,
+    float x, float y, AlCol col, in int fla = ALLEGRO_ALIGN_LEFT
 ) {
     assert(f);
-    immutable int   fla = ALLEGRO_ALIGN_LEFT;
-    immutable char* s   = str.toStringz();
-    mixin(temp_target!"bmp.get_al_bitmap()");
+    immutable char* s = str.toStringz();
+    if (fla == ALLEGRO_ALIGN_CENTRE) x = to!int(x - sha_offs / 2);
+    y = to!int(y);
 
-    al_draw_text(f, sc, x + 1, y + 1, fla, s);
-    al_draw_text(f, c,  x,     y,     fla, s);
+    al_draw_text(f, color.gui_sha, x + sha_offs, y + sha_offs, fla, s);
+    al_draw_text(f, col,           x,            y,            fla, s);
 }
+
+
+
+void
+draw_text_centered(
+    AlFont f, string str,
+    float x, float y, AlCol c
+) {
+    draw_text(f, str, x, y, c, ALLEGRO_ALIGN_CENTRE);
+}
+
+
 
 // shortcut function while debugging
-void drtx(Torbit bmp, string str, int x, int y)
+void drtx(string str, int x, int y)
 {
-    draw_shadow_text(bmp, djvu_m, str, x, y, color.white, color.shadow);
+    draw_text(djvu_s, str, x, y, color.white);
 }
 
-void drtx(Torbit bmp, string str, int x, int y, AlCol c)
+void drtx(string str, int x, int y, AlCol c)
 {
-    draw_shadow_text(bmp, djvu_m, str, x, y, c, color.shadow);
+    draw_text(djvu_s, str, x, y, c);
 }
 
 /*
-void draw_shaded_centered_text(BITMAP *bmp, AlFont f, const char* s,
- int x, int y, int r, int g, int b) {
-    textout_centre_ex(bmp, f, s, x+1, y+2, makecol(r/4, g/4, b/4), -1);
-    textout_centre_ex(bmp, f, s, x  , y+1, makecol(r/2, g/2, b/2), -1);
-    textout_centre_ex(bmp, f, s, x-1, y  , makecol(r  , g  , b  ), -1);
-}
 void draw_shadow_centered_text(
  Torbit& bmp, AlFont f, const char* s, int x, int y, int c, int sc) {
     textout_centre_ex(bmp.get_al_bitmap(), f, s, x+1, y+1, sc, -1);

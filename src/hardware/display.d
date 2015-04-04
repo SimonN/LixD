@@ -1,5 +1,6 @@
 module hardware.display;
 
+
 import std.array;
 import std.string;
 
@@ -9,6 +10,7 @@ import basics.globconf;
 import graphic.color; // inside display_startup_message()
 import graphic.textout; // inside display_startup_message()
 import file.log;
+import gui;
 import hardware.mouse; // center mouse after changing resolution
 
 /* A module for setting a screen resolution.
@@ -133,12 +135,14 @@ void set_screen_mode(bool want_full, int want_x = 0, int want_y = 0)
     clear_screen_at_next_blit = true;
     hardware.mouse.center_mouse();
 
-    // if we didn't get what we wanted, make an entry in the log file
     immutable int al_x = al_get_display_width (display);
     immutable int al_y = al_get_display_height(display);
     immutable int al_f = al_get_display_flags (display)
                        & fullscreen_flag;
 
+    gui.Geom.set_screen_xyls(al_x, al_y);
+
+    // if we didn't get what we wanted, make an entry in the log file
     if (want_x > 0 && want_y > 0
      && (want_x    != al_x
       || want_y    != al_y
@@ -203,7 +207,7 @@ void display_startup_message(string str)
     al_clear_to_color(color.black);
     int y = 0;
     foreach (msg; msgs) {
-        al_draw_text(djvu_m, color.white, 20, y += 20, ALLEGRO_ALIGN_LEFT,
+        al_draw_text(djvu_s, color.white, 20, y += 20, ALLEGRO_ALIGN_LEFT,
          msg.toStringz());
     }
     al_flip_display();

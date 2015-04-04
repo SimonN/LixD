@@ -8,6 +8,7 @@ import basics.user;
 import file.language;
 import graphic.color;
 import graphic.gralib;
+import gui;
 import hardware.display;
 import hardware.mouse;
 import level.tilelib;
@@ -50,6 +51,8 @@ void initialize(in Cmdargs cmdargs)
     graphic.textout.initialize();
     graphic.gralib.initialize();
 
+    gui.initialize();
+
     level.tilelib.initialize();
 }
 
@@ -58,6 +61,8 @@ void initialize(in Cmdargs cmdargs)
 void deinitialize()
 {
     level.tilelib.deinitialize();
+
+    gui.deinitialize();
 
     graphic.gralib.deinitialize();
     graphic.textout.deinitialize();
