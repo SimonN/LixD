@@ -4,10 +4,10 @@ import std.array;
 import std.string;
 
 import basics.alleg5;
+import basics.globals; // main_name_of_game
 import basics.globconf;
 import graphic.color; // inside display_startup_message()
 import graphic.textout; // inside display_startup_message()
-import file.language;
 import file.log;
 import hardware.mouse; // center mouse after changing resolution
 
@@ -20,22 +20,16 @@ import hardware.mouse; // center mouse after changing resolution
 
 ALLEGRO_DISPLAY* display;
 
-void set_screen_mode(bool want_full, int want_x = 0, int want_y = 0);
-void deinitialize();
-
-void calc(); // call once per main_loop to trap/untrap mouse
-
-void display_startup_message(string); // before main_loop draws
+/*  void set_screen_mode(bool want_full, int want_x = 0, int want_y = 0);
+ *  void deinitialize();
+ *
+ *  void calc(); // call once per main_loop to trap/untrap mouse
+ *
+ *  void display_startup_message(string); // before main_loop draws
+ */
 
 bool get_display_close_was_clicked() {
     return display_close_was_clicked;
-}
-
-void load_all_bitmaps(/* DTODO GraLib::RecolorLix */) {
-    assert (false, "load_all_bitmaps() shall be implemented in GraLib");
-}
-void destroy_all_bitmaps() {
-    assert (false, "destroy_all_bitmaps() shall be implemented in GraLib");
 }
 
 void blit_to_screen(AlBit) {
@@ -110,13 +104,15 @@ void set_screen_mode(bool want_full, int want_x = 0, int want_y = 0)
         add_fullscreen_try_modes();
     }
 
+    immutable fullscreen_flag = ALLEGRO_FULLSCREEN_WINDOW;
+
     // now try the modes in the desired order
     foreach (ref mode; try_modes) {
         int flags = al_get_new_display_flags()
          & ~ ALLEGRO_WINDOWED
          & ~ ALLEGRO_FULLSCREEN
          & ~ ALLEGRO_FULLSCREEN_WINDOW;
-        if (mode.full) flags = flags | ALLEGRO_FULLSCREEN_WINDOW;
+        if (mode.full) flags = flags | fullscreen_flag;
         else           flags = flags | ALLEGRO_WINDOWED;
         al_set_new_display_flags(flags);
 
@@ -129,7 +125,7 @@ void set_screen_mode(bool want_full, int want_x = 0, int want_y = 0)
 
     // cleaning up after the change, (re)instantiating the event queue
     assert (display);
-    al_set_window_title(display, Lang["main_name_of_the_game"].toStringz);
+    al_set_window_title(display, main_name_of_game.toStringz);
 
     queue = al_create_event_queue();
     al_register_event_source(queue, al_get_display_event_source(display));
@@ -141,7 +137,7 @@ void set_screen_mode(bool want_full, int want_x = 0, int want_y = 0)
     immutable int al_x = al_get_display_width (display);
     immutable int al_y = al_get_display_height(display);
     immutable int al_f = al_get_display_flags (display)
-                       & ALLEGRO_FULLSCREEN_WINDOW;
+                       & fullscreen_flag;
 
     if (want_x > 0 && want_y > 0
      && (want_x    != al_x
@@ -149,12 +145,12 @@ void set_screen_mode(bool want_full, int want_x = 0, int want_y = 0)
       || want_full != al_f))
     {
         // DTODOLANG
-        Log.log(format("Your wanted %s mode at %dx%d cannot be used.",
+        Log.logf("Your wanted %s mode at %dx%d cannot be used.",
             want_full ? "fullscreen" : "windowed",
-            want_x, want_y));
-        Log.log(format("  ..falling back to %s at %dx%d.",
+            want_x, want_y);
+        Log.logf("  ..falling back to %s at %dx%d.",
             al_f ? "fullscreen" : "windowed",
-            al_x, al_y));
+            al_x, al_y);
     }
 }
 

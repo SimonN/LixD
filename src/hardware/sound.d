@@ -67,8 +67,8 @@ void initialize()
     if (! al_init_acodec_addon()) {
         Log.log("Allegro 5 can't install codecs");
     }
-    if (! al_reserve_samples(Sound.MAX)) {
-        Log.log("Allegro 5 can't reserve this many samples:", Sound.MAX);
+    if (! al_reserve_samples(8)) {
+        Log.log("Allegro 5 can't reserve 8 samples.");
     }
 
     Sample load(in string str)
@@ -210,7 +210,7 @@ this(in Filename fn)
     filename = fn;
     unique = true;
     sample = al_load_sample(fn.get_rootful_z());
-    if (! sample) Log.log("Missing sound file:", fn.get_rootful());
+    if (! sample) Log.logf("Missing sound file `%s'", fn.get_rootful());
 }
 
 

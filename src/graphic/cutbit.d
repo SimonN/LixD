@@ -130,7 +130,7 @@ this(const Filename fn, const bool cut = true)
     // Try loading the file. If not found, don't crash, but make a log entry.
     bitmap = al_load_bitmap(fn.get_rootful_z());
     if (! bitmap) {
-        Log.log(Lang["log_bitmap_bad"] ~ " " ~ fn.get_rootless());
+        Log.log("Missing image: " ~ fn.get_rootless());
         this();
     }
     else {

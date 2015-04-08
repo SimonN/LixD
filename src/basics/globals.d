@@ -6,6 +6,10 @@ import file.filename;
 // throughout the game. Global variables that may change are in globconf.d,
 // those are the variables saved into the global config file.
 
+// Untranslated strings; for translations of other strings see file.language
+const main_name_of_game = "Lix";
+const main_website      = "asdfasdf.ethz.ch/~simon";
+
 const int ticks_per_sec     = 60;
 const int skill_max         = 12;
 const int panel_gameplay_yl = 80;
@@ -266,6 +270,7 @@ cF dir_data                     = new cF("data/");
 cF dir_data_bitmap              = new cF("data/images/");
 cF dir_data_sound               = new cF("data/sound/");
 cF dir_data_user                = new cF("data/user/");
+cF dir_data_transl              = new cF("data/transl/");
 cF dir_bitmap                   = new cF("images/");
 cF dir_bitmap_orig              = new cF("images/orig/");
 cF dir_bitmap_orig_l1           = new cF("images/orig/L1/");
@@ -279,6 +284,7 @@ cF file_replay_auto_multi       = new cF("replays/auto/m");
 cF file_config                  = new cF("data/config.txt");
 cF file_log                     = new cF("data/log.txt");
 cF file_level_network           = new cF("data/netlevel.txt");
+cF file_language_english        = new cF("data/transl/english.txt");
 
 cF file_bitmap_api_number       = new cF("data/images/api_numb.I");
 cF file_bitmap_checkbox         = new cF("data/images/checkbox.I");

@@ -29,7 +29,7 @@ import lix.enums;
 
 private Result[Rebindable!(const Filename)] results;
 
-Language language     = Language.NONE;
+Filename file_language;
 int      option_group = 0;
 
 bool scroll_edge        = true;
@@ -143,6 +143,8 @@ int[Ac.MAX] key_skill;
 
 static this()
 {
+    file_language            = new Filename(file_language_english);
+
     key_skill[Ac.WALKER]     = ALLEGRO_KEY_D;
     key_skill[Ac.RUNNER]     = ALLEGRO_KEY_LSHIFT;
     key_skill[Ac.BASHER]     = ALLEGRO_KEY_E;
@@ -294,7 +296,9 @@ void load()
     foreach (i; lines) switch (i.type) {
 
     case '$':
-        if      (i.text1 == user_single_last_level      ) single_last_level  = new Filename(i.text2);
+        if      (i.text1 == user_language               ) file_language      = new Filename(i.text2);
+
+        else if (i.text1 == user_single_last_level      ) single_last_level  = new Filename(i.text2);
         else if (i.text1 == user_network_last_level     ) network_last_level = new Filename(i.text2);
         else if (i.text1 == user_replay_last_level      ) replay_last_level  = new Filename(i.text2);
 
@@ -307,11 +311,7 @@ void load()
         break;
 
     case '#':
-        if (i.text1 == user_language) {
-            try language = to!Language(i.nr1);
-            catch (ConvException e) language = Language.ENGLISH;
-        }
-        else if (i.text1 == user_option_group           ) option_group           = i.nr1;
+        if      (i.text1 == user_option_group           ) option_group           = i.nr1;
 
         else if (i.text1 == user_mouse_speed            ) mouse_speed            = i.nr1;
         else if (i.text1 == user_mouse_acceleration     ) mouse_acceleration     = i.nr1;
@@ -431,7 +431,7 @@ void load()
         break;
 
     }
-    Lang.switch_to_language(language);
+    load_user_language_and_if_not_exist_set_user_option_to_english();
 }
 
 
@@ -453,8 +453,8 @@ nothrow void save()
             f.flush();
         }
 
-        fwr(IoLine.Hash  (user_language,                language));
-        fwr(IoLine.Hash  (user_option_group,            option_group));
+        fwr(IoLine.Dollar(user_language, file_language.get_rootless()));
+        fwr(IoLine.Hash  (user_option_group, option_group));
         f.writeln();
 
         fwr(IoLine.Hash  (user_mouse_speed,             mouse_speed));

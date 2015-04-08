@@ -218,7 +218,7 @@ void add_object_from_ascii_line(
     // record a missing image in the logfile
     else {
         level.status = LevelStatus.BAD_IMAGE;
-        Log.log("Missing image:", text1);
+        Log.logf("Missing image `%s'", text1);
     }
 }
 

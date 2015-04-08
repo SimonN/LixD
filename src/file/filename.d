@@ -31,7 +31,7 @@ class Filename {
     string get_dir_rootful()            const { return root ~ dir_rootless; }
     string get_dir_rootless()           const { return dir_rootless;        }
     char   get_pre_extension()          const { return pre_extension;       }
-    bool   has_image_extension()        const;
+//  bool   has_image_extension()        const;
 
     private alias immutable(char)* Ch;
     Ch get_rootful_z()     const { return get_rootful().toStringz;     }

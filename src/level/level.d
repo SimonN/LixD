@@ -148,17 +148,19 @@ this(in Filename fn)
 
 
 string get_name() const {
-    if (Lang.get_current() == Language.GERMAN)
-         return name_german  == null ? name_english : name_german;
-    else return name_english == null ? name_german  : name_english;
+    // DTODOLANG
+    // if (Lang.get_current() == Language.GERMAN)
+    //      return name_german  == null ? name_english : name_german;
+    return name_english == null ? name_german  : name_english;
 }
 
 
 
 inout(string[]) get_hints() inout {
-    if (Lang.get_current() == Language.GERMAN)
-         return hints_german  == null ? hints_english : hints_german;
-    else return hints_english == null ? hints_german  : hints_english;
+    // DTODOLANG
+    // if (Lang.get_current() == Language.GERMAN)
+    //      return hints_german  == null ? hints_english : hints_german;
+    return hints_english == null ? hints_german  : hints_english;
 }
 
 

@@ -8,15 +8,13 @@ import file.date;
 import file.filename;
 import file.log;
 
-// Verarbeiten von Line-Objekten
-// debugging/DTODO: Solve this
-// std::ostream& operator << (std::ostream&, const Line&);
-
-// Fill the vector (first arg) with the lines from the file given in the
-// second arg. Returns false iff the file doesn't exist. Returns true iff
-// the file exists, whether or not it was empty.
-bool fill_vector_from_file  (ref IoLine[], const Filename);
-bool fill_vector_from_stream(ref IoLine[], File);
+/*  bool fill_vector_from_file  (ref IoLine[], const Filename);
+ *  void fill_vector_from_stream(ref IoLine[], File);
+ *
+ *      Fill the vector (first arg) with the lines from the file given in the
+ *      second arg. Returns false iff the file doesn't exist. Returns true iff
+ *      the file exists, whether or not it was empty.
+ */
 
 bool fill_vector_from_file_raw(ref string[], const Filename) {
     assert (false, "DTODO: raw IoLine filling isn't implemented yet");

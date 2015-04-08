@@ -210,7 +210,8 @@ void calc()
     import basics.globconf;
     import basics.versioning;
     import file.language;
-    drtx(osd, Lang["net_chat_unstable_1"] ~ " " ~ get_version_string(), 20, 360);
+    drtx(osd, transl(Lang.net_chat_welcome_unstable)
+        ~ " or enjoy hacking in D. " ~ get_version_string(), 20, 360);
 
     static bool showstring = false;
     import std.array;

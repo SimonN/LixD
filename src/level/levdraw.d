@@ -17,8 +17,6 @@ package void impl_draw_terrain_to(in Level level, Torbit tb, Lookup lookup)
     assert (tb.get_xl() == level.size_x);
     assert (tb.get_yl() == level.size_y);
 
-    Log.log("begin: impl_draw_terrain_to", level.name_english);
-
     tb.clear_to_color(color.transp);
     tb.set_torus_xy(level.torus_x, level.torus_y);
     if (lookup) {
@@ -28,7 +26,6 @@ package void impl_draw_terrain_to(in Level level, Torbit tb, Lookup lookup)
     foreach (ref const(Pos) po; level.pos[TileType.TERRAIN]) {
         draw_pos(po, tb, lookup);
     }
-    Log.log("end:   impl_draw_terrain_to", level.name_english);
 }
 
 

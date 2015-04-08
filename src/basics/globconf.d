@@ -1,25 +1,29 @@
 module basics.globconf;
 
+/* global variables that may change during program run, and are saved
+ * to the global config file. The global config file is different from the
+ * user config file, it pertains to all users.
+ *
+ *  void load();
+ *  void save();
+ *
+ *      Load/save the config from/to the global config file.
+ */
+
+
 import std.file;
 
 import basics.globals;
 import file.io;
 import file.log;
 
-// global variables that may change during program run, and are saved
-// to the global config file. The global config file is different from the
-// user config file, it pertains to all users.
-
-void load();
-void save();
-
 string user_name             = "";
 bool   user_name_ask         = false;
 
-int    screen_resolution_x   =  640;
-int    screen_resolution_y   =  480;
-int    screen_windowed_x     =  640;
-int    screen_windowed_y     =  480;
+int    screen_resolution_x   =   0;
+int    screen_resolution_y   =   0;
+int    screen_windowed_x     = 640;
+int    screen_windowed_y     = 480;
 bool   screen_vsync          = false;
 
 bool   sound_load_driver     = true;
@@ -34,7 +38,9 @@ string ip_last_used          = "127.0.0.1";
 string ip_central_server     = "asdfasdf.ethz.ch";
 int    server_port           = 22934;
 
-// extra variable that is not saved into config file
+// verify_mode: noninteractive replay verifier is running. This is an extra
+// variable that is not saved into config file. If this is set, we can save
+// time during program startup.
 bool   verify_mode           = false;
 
 
@@ -96,6 +102,12 @@ void save()
     f.writeln(IoLine.Dollar(cfg_ip_central_server,       ip_central_server));
     f.writeln(IoLine.Hash  (cfg_server_port,             server_port));
     f.writeln("");
+
+    f.writefln(
+     "// If you set `%s/_y' both to 0, Lix will use your",
+     cfg_screen_resolution_x);
+    f.writeln(
+     "desktop resolution. To override that, enter an actual resolution.");
 
     f.writeln(IoLine.Hash  (cfg_screen_resolution_x,     screen_resolution_x));
     f.writeln(IoLine.Hash  (cfg_screen_resolution_y,     screen_resolution_y));
