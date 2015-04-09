@@ -11,8 +11,8 @@ Windows. I don't know where you install libraries, though.
 Installing D
 ------------
 
-Install a compiler for the D Programming Language. I recommend dmd, which
-can be downloaded for various platforms from here:
+I recommend dmd v2.067 or newer to compile this, or one of the other
+available D compilers. This explains how to set up dmd. Get it here:
 
     http://dlang.org/download.html
 
@@ -40,31 +40,36 @@ We need the following libraries:
 
 * zlib
 * libpng
+* libvorbis
 * Allegro 5
 * enet, not needed right now, this is the networking library
 
 You can get these from your distribution. Alternatively, go to the libraries'
 homepages, download the source, then build and install them yourself.
 
+You should install the libraries in the order listed, because Allegro depends
+on all others coming before it. enet doesn't depend on any of those.
+
 
 
 Run dub
 -------
 
-Open a shell, navigate to Lix's root directory, and run
+Open a shell, navigate to Lix's root directory, and run:
 
-    dub
+    dub build
 
-without arguments. dub will read the Lix packaging information in dub.json
-and build the game, then run it.
+dub will read the Lix packaging information in dub.json and build the game.
+Run ./bin/lix to play the game.
 
-The above command builds the debugging version. For maximum performance, you
-can build the release version instead:
+The above command (dub build) builds the debugging version. For maximum
+performance, build the release version instead:
 
-    dub -b release-nobounds
+    dub build -b release-nobounds
 
-The release version might run faster, but cannot output useful information
-in case of a crash.
+The release version takes longer to compile, because the compiler will do
+many extra optimizations. The resulting binary will run faster, but cannot
+output useful information in case of a crash.
 
 
 

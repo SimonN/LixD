@@ -25,26 +25,27 @@ has not yet been ported.
 
 
 
-Lix code style
---------------
+LF or CRLF terminators
+----------------------
+Source code should have LF terminators. Anything else is crazy.
 
-I like C++ headers as documentation for myself, and I don't like the extensive
-commenting for auto-generated documentation in my own source. Therefore, in D,
-I'm writing in each module something similar to a header: I forward-declare
-the methods at the top before they are defined below in the same module.
+I don't care about what's used in level or replay files. Lix can read them
+with either, and tools like grep or sed will work, too. Inspecting them with
+an interactive editor is a nice-to-have, but not required.
 
-The drawback of this, of course, is redundancy. One has to watch out that
-the declaration and definition have the same signature. A definition is
-also a declaration, so the "header" could get out of date without stopping
-the compilation. It's not necessary in D to forward-declare, and it's outright
-forbidden for the destructor ~this() and the contract invariant().
+Documentation (all ./doc/* files) and translations (all ./data/transl/* files)
+should have CRLF endings. They must be accessible by Windows Notepad users.
+
+The translations (./data/transl/*) should get a UTF-8 byte-order mark, and then
+immediately a CRLF linebreak, for maximum compatibility. I haven't done so yet.
 
 
 
 Notes about D
 -------------
 
-*   To search the web, use "dlang" in your query. e.g., "dlang writefln"
+*   To search the web, use "dlang" in your query. e.g., "dlang writefln".
+    Alternatively, use "d programming language".
 
 *   const int* foo() { ... } is the same as int* foo() const { ... }, both
     are valid D and do what the latter would have done in C++: make the method
@@ -55,7 +56,8 @@ Notes about D
     like printf(). The equivalent to C's sprintf() is format() in std.string,
     which returns a D string.
 
-*   D is garbage-collected by default. You can still do RAII by alloceating
+*   D is garbage-collected by default. You can still do RAII by allocating
     resources in the constructor this(), and deallocate in ~this(). To invoke
-    the deallocation at the correct time, call clear(myobject), which calls
+    the deallocation at the correct time, call destroy(myobject), which calls
     the destructor and prevents automatic calls to the destructor later.
+    This was clear(myobject) in older versions of D, but that's deprecated.
