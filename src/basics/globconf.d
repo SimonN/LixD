@@ -103,10 +103,10 @@ void save()
     f.writeln(IoLine.Hash  (cfg_server_port,             server_port));
     f.writeln("");
 
-    f.writefln("// If you set `%s/_y' both to 0, Lix will use your",
-        cfg_screen_resolution_x);
+    f.writefln("// If you set `%s/Y' both to 0, Lix will use your",
+     cfg_screen_resolution_x);
     f.writeln(
-        "desktop resolution. To override that, enter an actual resolution.");
+     "// desktop resolution. To override that, enter the wanted resolution.");
 
     f.writeln(IoLine.Hash  (cfg_screen_resolution_x,     screen_resolution_x));
     f.writeln(IoLine.Hash  (cfg_screen_resolution_y,     screen_resolution_y));

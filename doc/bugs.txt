@@ -9,3 +9,8 @@ Delayed sound
     On Debian 6, without pulseaudio installed, with ALSA installed,
     each sound playback is delayed by about 0.5 seconds. When it finally
     starts, the sound plays back well.
+
+No loading of L1/L2 graphic sets or levels
+
+    This will either not come at all, or be implemented very late in the port.
+    Since I like Lix as my tool to play L1 levels, it'll come probably.
