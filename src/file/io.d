@@ -30,43 +30,11 @@ class IoLine {
     int nr2;
     int nr3;
 
-    this(string = "");
-    this(char, string, string, string, int, int, int);
-
-//  override string toString() const;
-
-    // Generate IoLine objects for the various line types in Lix.
-    // These functions shall look like constructors. LineDollar can be made
-    // with a date object instead of a string.
-    static IoLine Hash  (const string = "",
-                         const int    = 0);
-    static IoLine Colon (const string = "",
-                         const int    = 0,
-                         const int    = 0,
-                         const string = "");
-    static IoLine Dollar(const string = "",
-                         const string = "");
-    static IoLine Dollar(const string,
-                         const Date);
-    static IoLine Plus  (const string = "",
-                         const int    = 0,
-                         const string = "",
-                         const string = "");
-    static IoLine Bang  (const int    = 0,
-                         const int    = 0,
-                         const string = "",
-                         const int    = 0);
-    static IoLine Angle (const string = "",
-                         const int    = 0,
-                         const int    = 0,
-                         const int    = 0,
-                         const string = "");
-
 
 
 // see further down for the rather long constructor this(string);
 
-this(char c, string s1, string s2, string s3, int n1, int n2, int n3)
+private this(char c, string s1, string s2, string s3, int n1, int n2, int n3)
 {
     type  = c;
     text1 = s1;

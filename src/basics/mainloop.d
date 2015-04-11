@@ -104,12 +104,15 @@ void main_loop()
     Lookup lookup = new Lookup(lv.size_x, lv.size_y, lv.torus_x, lv.torus_y);
     scope (exit) destroy(lookup);
 
-    display_startup_message("drawing to test land and lookup map");
-    lv.draw_terrain_to(land, lookup);
-    display_startup_message("saving test land");
-    land.save_to_file(new Filename("z-landtest.png"));
-    display_startup_message("saving test lookup map");
-    lookup.save_to_file(new Filename("y-lookuptest.png"));
+    // not testing the level drawing right now
+    static if (false) {
+        display_startup_message("drawing to test land and lookup map");
+        lv.draw_terrain_to(land, lookup);
+        display_startup_message("saving test land");
+        land.save_to_file(new Filename("z-landtest.png"));
+        display_startup_message("saving test lookup map");
+        lookup.save_to_file(new Filename("y-lookuptest.png"));
+    }
 
 
 
