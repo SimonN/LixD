@@ -1,6 +1,7 @@
 module basics.init;
 
 import basics.alleg5;
+import basics.cmdargs;
 import basics.globals;
 import basics.globconf;
 import basics.user;
@@ -11,16 +12,15 @@ import hardware.display;
 import hardware.mouse;
 import level.tilelib;
 
-// routines to initialize and deinitialize most things before/after
-// the main loop runs. Some things have module constructors (static this()),
-// but modules using Allegro need to be initialized from here.
+/*  void initialize(cmdargs);
+ *  void deinitialize();
+ *
+ *      Routines to initialize and deinitialize most things before/after
+ *      the main loop runs. Some have module constructors (static this()),
+ *      but modules using Allegro need to be initialized from here.
+ */
 
-void initialize();
-void deinitialize();
-
-
-
-void initialize()
+void initialize(in Cmdargs cmdargs)
 {
     al_init();
 
@@ -33,7 +33,7 @@ void initialize()
     basics.globconf.load();
     basics.user.load();
 
-    hardware.display.set_screen_mode(true);
+    hardware.display.set_screen_mode(! cmdargs.windowed);
 
     al_init_image_addon();
     al_init_font_addon();
