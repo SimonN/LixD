@@ -11,14 +11,15 @@ module gui.root;
  *  void add/rm_elder(Element);
  *  void add/rm_focus(Element);
  *
- *  void calc_everything();
- *  void draw_everything_and_blit_to_screen();
+ *  void calc_gui();
+ *  void draw_gui_and_this_cursor_then_blit_to_screen(Graphic = null);
  */
 
 import std.algorithm;
 
 import basics.alleg5;
 import graphic.color;
+import graphic.graphic; // mouse cursor
 import graphic.torbit;
 import hardware.display;
 import gui;
@@ -113,7 +114,7 @@ rm_focus(Element to_rm)
 
 
 void
-calc_everything()
+calc_gui()
 {
     if (focus.length > 0) {
         focus[$-1].calc();
@@ -128,7 +129,7 @@ calc_everything()
 
 
 void
-draw_everything_and_blit_to_screen()
+draw_gui()
 {
     assert (guiosd);
 
@@ -139,11 +140,9 @@ draw_everything_and_blit_to_screen()
         foreach (element; focus)  element.req_draw();
     }
 
-    {
-        mixin(temp_target!"guiosd.get_albit()");
-        foreach (element; elders) element.draw();
-        foreach (element; focus)  element.draw();
-    }
+    mixin(temp_target!"guiosd.get_albit()");
+    foreach (element; elders) element.draw();
+    foreach (element; focus)  element.draw();
 
     guiosd.copy_to_screen();
 }

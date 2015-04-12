@@ -31,7 +31,7 @@ private:
     bool   exit;
     AlBit[] wuerste;
     Torbit osd;
-    const(Cutbit) mouse;
+    Graphic mouse;
     Graphic myhatch1;
     Graphic myhatch2;
     Element[] elems;
@@ -48,8 +48,6 @@ public:
 
 this()
 {
-    mouse = get_internal(file_bitmap_mouse);
-    assert (mouse.is_valid());
 }
 
 
@@ -80,6 +78,9 @@ void main_loop()
     osd = new Torbit(al_get_display_width (display),
                      al_get_display_height(display), true, true);
     scope (exit) destroy(osd);
+    // mouse shall not be drawn onto any torbit, instead only to screen
+    mouse = new Graphic(get_internal(file_bitmap_mouse), null);
+    scope (exit) destroy(mouse);
 
     Cutbit hatch_cb = new Cutbit(new Filename("./images/geoo/construction/Hatch.H.png"));
     myhatch1 = new Graphic(hatch_cb, osd);
@@ -94,7 +95,7 @@ void main_loop()
     elems ~= new Frame (Geom.From.BOTTOM_RIGHT, 40, 50, 60, 70);
     elems ~= new Button(Geom.From.BOTTOM_RIGHT, 40, 50, 60, 50);
     elems ~= () {
-        auto a = new TextButton(Geom.From.BOTTOM, 0, 100, 100, 20);
+        auto a = new TextButton(Geom.From.BOTTOM, 0, 20);
         import file.language;
         a.set_text(transl(Lang.editor_button_SELECT_COPY));
         return a;
@@ -249,21 +250,22 @@ void calc()
     assert (mytile.cb, "mytile.cb not exist");
     mytile.cb.draw(osd, 500 + to!int(50 * sin(tick / 30.0)), 10);
 
-    gui.calc_everything();
+    calc_gui();
+
 }
 
 
 
 void draw()
 {
-    mouse.draw(osd, get_mx() - mouse.get_xl()/2 + 1,
-                    get_my() - mouse.get_yl()/2 + 1);
     osd.copy_to_screen();
+    draw_gui();
 
-    gui.draw_everything_and_blit_to_screen();
+    mouse.set_x(get_mx() - mouse.get_xl()/2 + 1);
+    mouse.set_y(get_my() - mouse.get_yl()/2 + 1);
+    mouse.draw_directly_to_screen();
 
     al_flip_display();
-
     draw_scheduled_sounds();
 }
 

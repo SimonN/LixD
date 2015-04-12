@@ -16,16 +16,16 @@ import gui;
 
 class Frame : Element {
 
-    this(float x  =  0, float  y =  0,
-         float xl = 20, float yl = 20)
+    this(in int x  =  0, in int  y =  0,
+         in int xl = 20, in int yl = 20)
     {
         this(Geom.From.TOP_LEFT, x, y, xl, yl);
     }
 
 
 
-    this(in Geom.From from, float x  = 0,  float  y =  0,
-                            float xl = 20, float yl = 20)
+    this(in Geom.From from, in int x  = 0,  in int  y =  0,
+                            in int xl = 20, in int yl = 20)
     {
         super(from, x, y, xl, yl);
     }

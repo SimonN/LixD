@@ -1,5 +1,10 @@
 module graphic.graphic;
 
+/* A simple graphic object, i.e., an instance of Cutbit that is drawn to
+ * a certain position on a torbit. This is not about graphic sets from L1,
+ * ONML etc., see level/gra_set.h for that.
+ */
+
 import std.conv; // rounding double to int
 import std.math;
 
@@ -8,16 +13,10 @@ import basics.help;
 import graphic.cutbit;
 import graphic.torbit;
 
-/* A simple graphic object, i.e., an instance of Cutbit that is drawn to
- * a certain position on a torbit. This is not about graphic sets from L1,
- * ONML etc., see level/gra_set.h for that.
- */
-
 class Graphic {
 
     this(const Cutbit, Torbit, const int = 0, const int = 0);
     ~this() { }
-//  invariant();
 
     const(Cutbit) get_cutbit() const          { return cutbit; }
 
@@ -44,21 +43,31 @@ class Graphic {
     void set_x_frame(int new_x_frame) { x_frame = new_x_frame; }
     void set_y_frame(int new_y_frame) { y_frame = new_y_frame; }
 
-    // Wrapper functions, these return things from the Cutbit class
-    // If the Graphic object is rotated, get_xl()/yl() are NOT wrappers,
-    // but rotate with the Graphic object before they access the Cutbit part.
-    // Same thing with get_pixel().
-
-//  int  get_xl() const;
-//  int  get_yl() const;
+/* Wrapper functions, these return things from the Cutbit class
+ * If the Graphic object is rotated, get_xl()/yl() are NOT wrappers,
+ * but rotate with the Graphic object before they access the Cutbit part.
+ * Same thing with get_pixel().
+ *
+ *  int  get_xl() const
+ *  int  get_yl() const
+ */
     int  get_x_frames()  const { return cutbit.get_x_frames(); }
     int  get_y_frames()  const { return cutbit.get_y_frames(); }
-//  bool get_frame_exists(in int, in int) const;
-//  AlCol get_pixel      (in int, in int) const; // warning: very slow!
 
-//  bool is_last_frame() const;
-
-//  void draw(); const
+/*  bool get_frame_exists(int, int) const
+ *  AlCol get_pixel      (int, int) const -- remember to lock target!
+ *
+ *  bool is_last_frame() const
+ *
+ *  void draw() const
+ *
+ *      draw to the torbit, according to mirror and rotation
+ *
+ *  void draw_directly_to_screen() const
+ *
+ *      Ignore (Torbit ground) and mirr/rotat; and blit immediately to the
+ *      screen. This should only be used to draw the mouse cursor.
+ */
 
 private:
 
@@ -99,25 +108,15 @@ this(
 
 
 
-invariant()
-{
-    if (ground) {
-        assert(ground.get_xl() > 0);
-        assert(ground.get_yl() > 0);
-    }
-}
-
-
-
 void set_x(const int i)
 {
     x = i;
-    if (ground.get_torus_x()) x = positive_mod(x, ground.get_xl());
+    if (ground && ground.get_torus_x()) x = positive_mod(x, ground.get_xl());
 }
 void set_y(const int i)
 {
     y = i;
-    if (ground.get_torus_y()) y = positive_mod(y, ground.get_yl());
+    if (ground && ground.get_torus_y()) y = positive_mod(y, ground.get_yl());
 }
 
 
@@ -190,6 +189,14 @@ void draw()
     else {
         cutbit.draw(ground, x, y, mirror, to!int(rotation), mode);
     }
+}
+
+
+
+void
+draw_directly_to_screen() const
+{
+    cutbit.draw_directly_to_screen(x, y, x_frame, y_frame);
 }
 
 }

@@ -1,5 +1,7 @@
 module graphic.cutbit;
 
+import std.algorithm; // max(-x, 0) in draw_directly_to_screen()
+
 import basics.alleg5;
 import basics.help; // positive_mod
 import basics.matrix; // which frames exist?
@@ -9,6 +11,7 @@ import graphic.textout; // write error message instead of drawing bitmap
 import file.filename;
 import file.language;
 import file.log; // log bad filename when trying to load a bitmap
+import hardware.display; // draw_directly_to_screen()
 
 class Cutbit {
 
@@ -67,6 +70,11 @@ class Cutbit {
  *      I believe they're measured counter-clockwise.
  *
  *      (double scal) can be set to 0 or 1 when one doesn't wish to rescale.
+ *
+ *  void draw_directly_to_screen(x, y, xf, yf)
+ *
+ *      This should only be used by the mouse cursor, which draws even on top
+ *      of the gui torbit. Rotation, mirroring, and scaling is not offered.
  */
 
 private:
@@ -300,34 +308,55 @@ private void draw_missing_frame_error(
 
 
 
+// this is used by the first draw(), and by draw_directly_to_screen()
+private AlBit
+create_sub_bitmap_for_frame(
+    in int xf, in int yf,
+    in int xec = 0, // extra cutting from top or left
+    in int yec = 0) const
+in {
+    assert (xf >= 0 && xf < x_frames);
+    assert (yf >= 0 && yf < y_frames);
+    assert (xec >= 0 && xec < xl); // xl, yl are either all the bitmap, or
+    assert (yec >= 0 && yec < xl); // the size of a single frame without grid
+}
+body {
+    // Create a sub-bitmap based on the wanted frames. If (Cutbit this)
+    // doesn't have frames, don't compute +1 for the outermost frame.
+    if (x_frames == 1 && y_frames == 1)
+        return al_create_sub_bitmap(cast (AlBit) bitmap,
+         xec, yec, xl - xec, yl - yec);
+    else
+        return al_create_sub_bitmap(cast (AlBit) bitmap,
+         1 + xf * (xl+1) + xec,
+         1 + yf * (yl+1) + yec,
+         xl - xec, yl - yec);
+}
+
+
+
 void draw(
     Torbit       target_torbit,
     const int    x = 0,
     const int    y = 0,
-    const int    fx = 0,
-    const int    fy = 0,
+    const int    xf = 0,
+    const int    yf = 0,
     const bool   mirr = false,
     const double rot  = 0,
     const double scal = 0) const
 {
+    assert (target_torbit, "trying to draw onto null torbit");
     AlBit target = target_torbit.get_al_bitmap();
 
-    if (bitmap && fx >= 0 && fy >= 0 && fx < x_frames && fy < y_frames) {
-        // Create a sub-bitmap based on the wanted frames. If (Cutbit this)
-        // doesn't have frames, don't compute +1 for the outermost frame.
-        AlBit sprite;
-        if (x_frames == 1 && y_frames == 1)
-             sprite = al_create_sub_bitmap(cast (AlBit) bitmap, 0, 0, xl, yl);
-        else sprite = al_create_sub_bitmap(cast (AlBit) bitmap, fx * (xl+1)+1,
-                                                   fy * (yl+1) + 1, xl, yl);
+    if (bitmap && xf >= 0 && yf >= 0 && xf < x_frames && yf < y_frames) {
+        AlBit sprite = create_sub_bitmap_for_frame(xf, yf);
         scope (exit) al_destroy_bitmap(sprite);
-
         target_torbit.draw_from(sprite, x, y, mirr, rot, scal);
     }
     // no frame inside the cutbit has been specified, or the cutbit
     // has a null bitmap
     else {
-        draw_missing_frame_error(target_torbit, x, y, fx, fy);
+        draw_missing_frame_error(target_torbit, x, y, xf, yf);
     }
 }
 
@@ -341,6 +370,8 @@ void draw(
     int       rot,
     in Mode   mode) const
 {
+    assert (target_torbit, "trying to draw onto null torbit");
+
     if (! bitmap) {
         draw_missing_frame_error(target_torbit, x, y, 0, 0);
         return;
@@ -395,6 +426,28 @@ void draw(
     // only been the missing-image error, and we've checked for that already.
 }
 // end function draw with mode
+
+
+
+void
+draw_directly_to_screen(in int x, in int y, in int xf = 0, in int yf = 0) const
+{
+    assert (display);
+    if (xf < 0 || xf >= x_frames
+     || yf < 0 || yf >= y_frames) return;
+
+    AlBit backbuffer = al_get_backbuffer(display);
+    mixin(temp_target!"backbuffer");
+
+    // usually, select only the correct frame. If we'd draw off the screen
+    // to the left or top, instead do extra cutting by passing > 0 to the
+    // latter two args.
+    AlBit sprite = create_sub_bitmap_for_frame(xf, yf, max(-x, 0), max(-y, 0));
+    scope (exit) al_destroy_bitmap(sprite);
+
+    al_draw_bitmap(sprite, max(0, x), max(0, y), 0);
+}
+// end function draw_directly_to_screen()
 
 }
 // end class
