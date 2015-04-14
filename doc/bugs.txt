@@ -10,7 +10,21 @@ Delayed sound
     each sound playback is delayed by about 0.5 seconds. When it finally
     starts, the sound plays back well.
 
+    Workaround: Compile Allegro 5 yourself, and edit the source so that
+    it uses OpenAL or OSS instead of Alsa. The sound is still delayed by 0.1
+    seconds or so with OpenAL.
+
 No loading of L1/L2 graphic sets or levels
 
     This will either not come at all, or be implemented very late in the port.
     Since I like Lix as my tool to play L1 levels, it'll come probably.
+
+Mouse leaves window
+
+    Run the game -w for windowed mode.
+    While no freeze direction is called in hardware.mouse, move the mouse
+    around very fast. The OS cursor will be shown outside the window
+    occasionally. Holding RMB to freeze directions prevents this.
+
+    Expected: Cursor should be prevented from leaving even without freezing
+    directions.

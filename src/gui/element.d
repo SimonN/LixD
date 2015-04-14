@@ -17,9 +17,6 @@ abstract class Element {
  *
  *      un-parents all children
  */
-    bool get_draw_required() const { return draw_required; }
-    void req_draw(bool b = true)   { draw_required = b;    }
-
     // these functions return the position/length in geoms. See geometry.d
     // for the difference between measuring in geoms and in screen pixels.
     @property float xg()  const { return geom.xg;  }
@@ -54,6 +51,11 @@ abstract class Element {
     bool is_parent_of(in Element chi) const { return geom is chi.geom.parent; }
 
 /*  bool is_mouse_here() const;
+ *
+ *  void req_draw();
+ *
+ *      Require a redraw of the element and all its children, because some
+ *      data of the element has changed.
  *
  *  bool add_child   (Element e);
  *  bool add_children(Element[] ...);
@@ -178,6 +180,16 @@ bool rm_child(Element e)
 
 
 
+void
+req_draw()
+{
+    draw_required = true;
+    foreach (child; children) child.draw_required = true;
+}
+
+
+
+
 bool is_mouse_here() const
 {
     if (! hidden
@@ -252,7 +264,7 @@ draw_3d_button(
 ) {
     alias al_draw_filled_rectangle rf;
 
-    foreach (int i; 0 .. Geom.thickness) {
+    foreach (int i; 0 .. Geom.thicks) {
         rf(xs      +i, ys    +1+i, xs    +1+i, ys+yls-1-i, top); // left
         rf(xs    +1+i, ys      +i, xs+xls-1-i, ys    +1+i, top); // top
         rf(xs+xls-1-i, ys    +1+i, xs+xls  -i, ys+yls-1-i, bot); // right
@@ -264,12 +276,12 @@ draw_3d_button(
     }
     if (mid != color.transp) {
         // draw single pixels in the bottom-left and top-right corners
-        foreach (int i; 0 .. Geom.thickness) {
+        foreach (int i; 0 .. Geom.thicks) {
             rf(xs      +i, ys+yls-1-i, xs  +1+i, ys+yls-i, mid);
             rf(xs+xls-1-i, ys      +i, xs+xls-i, ys  +1+i, mid);
         }
         // draw the large interior
-        alias Geom.thickness i;
+        alias Geom.thicks i;
         rf(xs + i, ys + i, xs + xls - i, ys + yls - i, mid);
     }
 }

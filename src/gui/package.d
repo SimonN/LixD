@@ -11,4 +11,5 @@ public import gui.buttext;
 public import gui.geometry;
 public import gui.element;
 public import gui.frame;
+public import gui.label;
 public import gui.root;

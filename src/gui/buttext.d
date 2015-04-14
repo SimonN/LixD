@@ -10,10 +10,8 @@ import std.conv;
 
 import gui;
 import basics.globals;
-import basics.help;
 import graphic.cutbit;
 import graphic.gralib;
-import graphic.textout;
 
 class TextButton : Button {
 
@@ -26,52 +24,74 @@ class TextButton : Button {
                          in int xl = 100, in int yl = 20)
     {
         super(from, x, y, xl, yl);
+        // the text should not be drawn on the 3D part of the button, but only
+        // to the uniformly colored center. Each side has a thickness of 2.
+        // The checkmark already accounts for this.
+        // The checkmark is at the right of the button, for all text aligns.
+        immutable th = Geom.thickg;
+        left         = new Label(Geom.From.LEFT,  th, 0, xl - 2 * th);
+        left_check   = new Label(Geom.From.LEFT,  th, 0, xl - th - ch_xlg);
+        center       = new Label(Geom.From.CENTER, 0, 0, xl - 2 * th);
+        center_check = new Label(Geom.From.CENTER, 0, 0, xl - 2 * ch_xlg);
+
+        add_children(left, left_check, center, center_check);
     }
 
-    bool get_align_left() const         { return align_left;          }
-    void set_align_left(bool b = true)  { align_left = b; req_draw(); }
+    bool get_align_left() const         { return align_left;         }
+    void set_align_left(bool b = true)  { align_left = b; prepare(); }
 
-    string get_text() const      { return text;          }
-    void   set_text(in string s) { text = s; req_draw(); }
+    string get_text() const      { return text;         }
+    void   set_text(in string s) { text = s; prepare(); }
 
-    int  get_check_frame() const { return check_frame;          }
-    void set_check_frame(int i)  { check_frame = i; req_draw(); }
+    int  get_check_frame() const { return check_frame;         }
+    void set_check_frame(int i)  { check_frame = i; prepare(); }
 
 private:
 
     string text;
-    bool   align_left;  // standard is false, meaning centered
+    bool   align_left;
     int    check_frame; // frame 0 is empty, then don't draw anything and
                         // don't shorten the text maximal length
+    Label left;
+    Label left_check;
+    Label center;
+    Label center_check;
 
-protected:
+    static immutable ch_xlg = 20; // size in geoms of checkbox
 
-override void
+
+
+// need to move these rendering methods into something in Element, such that
+// it's NVI-conformally called by req_draw(); -- or maybe not, since these
+// are pretty complex with the text rendering, which is unnecessary at click
+private void
+prepare()
+{
+    req_draw();
+    foreach (label; [ left, left_check, center, center_check ]) {
+        label.set_text("");
+    }
+    switch (align_left * 2 + (check_frame != 0)) {
+        case 0: center      .set_text(text); break;
+        case 1: center_check.set_text(text); break;
+        case 2: left        .set_text(text); break;
+        case 3: left_check  .set_text(text); break;
+        default: assert (false);
+    }
+}
+
+
+
+protected override void
 draw_self()
 {
     super.draw_self();
 
-    if (text.length > 0) {
-        // compute the length of the text, and display a shorter version
-        // with dots at the end if it's too long.
-        auto pixellen = xls - 2 * Geom.thickness;
+    // draw the checkmark, which doesn't overlap with the children
+    if (check_frame != 0) {
         auto cb = get_internal(file_bitmap_menu_checkmark);
-        if (check_frame != 0) pixellen -= cb.get_xl() * (align_left ? 1 : 2);
-        string text_to_print = shorten_with_dots(text, djvu_m, pixellen);
-
-        if (align_left) {
-            draw_text(djvu_m, text_to_print,
-             xs + Geom.thickness, ys, get_color_text());
-        }
-        else {
-            draw_text_centered(djvu_m, text_to_print,
-             xs + xls/2, ys, get_color_text());
-        }
-        // draw the checkmark
-        if (check_frame != 0) {
-            cb.draw(guiosd, to!int(xs + xls) - cb.get_xl(), to!int(ys),
-             check_frame, 2 * (get_on() && ! get_down()));
-        }
+        cb.draw(guiosd, to!int(xs + xls) - cb.get_xl(), to!int(ys),
+         check_frame, 2 * (get_on() && ! get_down()));
     }
 }
 

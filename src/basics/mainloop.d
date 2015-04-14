@@ -239,6 +239,20 @@ void calc()
         drtx("Hello " ~ user_name ~ ", loading the config file works.", 20, 380);
     }
 
+    // random text in the text button
+    if (tick % 50 == 0) {
+        import std.random;
+        auto but = cast (TextButton) elems[2];
+        but.set_text(uniform(0, Lang.MAX).to!Lang.transl);
+
+        switch (tick / 50 % 4) {
+        case 0: but.set_align_left(true);  break;
+        case 1: but.set_check_frame(1);    break;
+        case 2: but.set_align_left(false); break;
+        case 3: but.set_check_frame(0);    break;
+        default: break;
+        }
+    }
     if (tick % 240 == 0) {
         play_loud(Sound.HATCH_OPEN);
     }

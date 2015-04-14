@@ -43,6 +43,11 @@ module gui.geometry;
  *
  *      Convert the geometry from (geoms, from) to absolute screen coordinates.
  *
+ *  @property From x_from, y_from
+ *
+ *      Return LEFT, CENTER, RIGHT for x_from, or TOP, CENTER, BOTTOM for
+ *      y_from. These functions examine only one nibble of (From from).
+ *
  *  static void set_screen_xyls(in int _xl, in int _yl)
  *
  *      Should be called only by the display changing function.
@@ -78,10 +83,11 @@ class Geom {
     private static const screen_ylg = 480f; // others will change, this won't
     private static float screen_xls = 640;
     private static float screen_yls = 480;
-    private static float stretch_factor    = 1.0;
-    private static int   thickness_2_geoms = 2;
+    private static float stretch_factor   = 1.0;
+    private static int   screen_thickness = 2;
 
-    @property static int thickness() { return thickness_2_geoms; }
+    @property static int thickg() { return 2; }
+    @property static int thicks() { return screen_thickness; }
 
     static float get_screen_xlg() { return screen_xlg; }
     static float get_screen_ylg() { return screen_ylg; }
@@ -94,7 +100,7 @@ class Geom {
         stretch_factor = screen_yls / screen_ylg;
         screen_xlg     = screen_xls / stretch_factor;
 
-        thickness_2_geoms = std.math.floor(2.0 * stretch_factor).to!int;
+        screen_thickness = std.math.floor(2.0 * stretch_factor).to!int;
     }
 
 
@@ -118,6 +124,9 @@ class Geom {
 
 
 
+    @property From x_from() const { return to!From(from & 0x0F | 0x20); }
+    @property From y_from() const { return to!From(from & 0xF0 | 0x02); }
+
     @property float xlg() const { return xl; }
     @property float ylg() const { return yl; }
 
@@ -133,8 +142,8 @@ class Geom {
         immutable float p_xg  = parent ? parent.xg  : 0;
         immutable float p_xlg = parent ? parent.xlg : screen_xlg;
 
-        switch (from & 0x0F | 0x20) { // examine only the x-from byte
-        case From.LEFT:   return x;
+        switch (x_from) {
+        case From.LEFT:   return p_xg + x;
         case From.CENTER: return p_xg + p_xlg/2 - xl/2 - x;
         case From.RIGHT:  return p_xg + p_xlg   - xl   - x;
         default: assert (false);
@@ -146,8 +155,8 @@ class Geom {
         immutable float p_yg  = parent ? parent.yg  : 0;
         immutable float p_ylg = parent ? parent.ylg : screen_ylg;
 
-        switch (from & 0xF0 | 0x02) { // examine only the y-from byte
-        case From.TOP:    return y;
+        switch (y_from) {
+        case From.TOP:    return p_yg + y;
         case From.CENTER: return p_yg + p_ylg/2 - yl/2 - y;
         case From.BOTTOM: return p_yg + p_ylg   - yl   - y;
         default: assert (false);

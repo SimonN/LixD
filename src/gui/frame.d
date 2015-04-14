@@ -36,7 +36,7 @@ protected:
 
     override void draw_self()
     {
-        alias Geom.thickness th;
+        alias Geom.thicks th;
         draw_3d_button(xs - th, ys - th, xls + 2*th, yls + 2*th,
             color.gui_d, color.transp, color.gui_l);
     }
@@ -45,7 +45,7 @@ protected:
 
     override void undraw_self()
     {
-        alias Geom.thickness th;
+        alias Geom.thicks th;
         al_draw_filled_rectangle(
             xs - th, ys - th, xs + xls + th, ys + yls + th,
             get_undraw_color());
