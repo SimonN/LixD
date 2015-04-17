@@ -1,5 +1,7 @@
 module graphic.gralib;
 
+import std.conv; // scale to
+
 import basics.alleg5;
 import basics.globconf; // skip Lix recoloring loading in verify mode
 import basics.globals;  // name of internal bitmap dir
@@ -18,6 +20,8 @@ import lix.enums;
  *  void initialize();
  *  void deinitialize();
  *
+ *  void set_scale_from_gui(float); // exact value, what gui.geometry thinks
+ *
  *  const(Cutbit) get_internal(in Filename);
  *  const(Cutbit) get_lix     (in Style);
  *  const(Cutbit) get_icon    (in Style); -- for the panel
@@ -30,6 +34,8 @@ private:
     Cutbit[Style]  icons;
 
     Cutbit null_cutbit; // invalid bitmap to return instead of null pointer
+
+    string scale_dir = dir_data_bitmap.get_rootless(); // load from which dir?
 
     // The int variables should be != 0 for the character spreadsheet and
     // similar things that require both a GUI and a player color recoloring.
@@ -48,6 +54,16 @@ private:
 
 
 public:
+
+void set_scale_from_gui(float scale)
+{
+    scale_dir =
+        scale < 1.5f ? dir_data_bitmap.get_rootless()
+     :  scale < 2.0f ? dir_data_bitmap_scale.get_rootless() ~ "150/"
+     :                 dir_data_bitmap_scale.get_rootless() ~ "200/";
+}
+
+
 
 void initialize()
 {
@@ -70,7 +86,8 @@ void initialize()
         assert (cb, "error loading internal cutbit: " ~ fn.get_rootful());
         al_convert_mask_to_alpha(cb.get_albit(), color.pink);
         internal[fn.get_rootless_no_extension()] = cb;
-        assert (get_internal(fn).is_valid(), "not valid: " ~ fn.get_rootful());
+        assert (get_internal(fn).is_valid(),
+            "can't retrieve from array: " ~ fn.get_rootful());
     }
 
     // Create the matrix of eye coordinates.
@@ -192,11 +209,26 @@ void deinitialize()
 
 
 
-const(Cutbit) get_internal(in Filename fn)
+private Cutbit get_internal_mutable(in Filename fn)
 {
-    immutable string str = fn.get_rootless_no_extension();
+    Filename correct_scale(in Filename f)
+    {
+        return new Filename(scale_dir ~ f.get_file());
+    }
+    string str = correct_scale(fn).get_rootless_no_extension();
+    if (str in internal) return internal[str];
+
+    // if not yet returned, fall back onto non-scaled bitmap
+    str = fn.get_rootless_no_extension();
     if (str in internal) return internal[str];
     else return null_cutbit;
+}
+
+
+
+const(Cutbit) get_internal(in Filename fn)
+{
+    return get_internal_mutable(fn);
 }
 
 
@@ -221,8 +253,7 @@ private:
 
 void eidrecol_api(in Filename fn)
 {
-    Cutbit* cutbit = (fn.get_rootless_no_extension() in internal);
-    if (cutbit) eidrecol_api(*cutbit);
+    get_internal_mutable(fn).eidrecol_api();
 }
 
 

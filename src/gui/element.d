@@ -135,7 +135,7 @@ this(in Geom.From from, in int x  = 0,  in int  y =  0,
 ~this()
 {
     foreach (child; children) {
-        assert (child.geom.parent == this.geom,
+        assert (child.geom.parent is this.geom,
             "upon destruction, child without properly-set parent exists");
         child.geom.parent = null;
     }
@@ -170,7 +170,7 @@ bool rm_child(Element e)
     if (found == []) return false;
 
     auto fe = found[0];
-    assert (fe.geom.parent == this.geom,
+    assert (fe.geom.parent is this.geom,
         "gui element in child list without its parent set");
     fe.geom.parent = null;
     // remove(n) removes the item with index n. We wish to remove fe.

@@ -34,6 +34,9 @@ class TextButton : Button {
         center       = new Label(Geom.From.CENTER, 0, 0, xl - 2 * th);
         center_check = new Label(Geom.From.CENTER, 0, 0, xl - 2 * ch_xlg);
 
+        check_geom   = new Geom(Geom.From.RIGHT, 0, 0, ch_xlg, ch_xlg);
+        check_geom.parent = this.get_geom();
+
         add_children(left, left_check, center, center_check);
     }
 
@@ -56,6 +59,8 @@ private:
     Label left_check;
     Label center;
     Label center_check;
+
+    Geom  check_geom;
 
     static immutable ch_xlg = 20; // size in geoms of checkbox
 
@@ -87,11 +92,16 @@ draw_self()
 {
     super.draw_self();
 
-    // draw the checkmark, which doesn't overlap with the children
+    // Draw the checkmark, which doesn't overlap with the children.
+    // There's a (ch_xlg) x (ch_xlg) area reserved for the cutbit on the right.
+    // Draw to the center of this square.
     if (check_frame != 0) {
         auto cb = get_internal(file_bitmap_menu_checkmark);
-        cb.draw(guiosd, to!int(xs + xls) - cb.get_xl(), to!int(ys),
-         check_frame, 2 * (get_on() && ! get_down()));
+        cb.draw(guiosd,
+            to!int(check_geom.xs + check_geom.xls/2 - cb.get_xl()/2),
+            to!int(check_geom.ys + check_geom.yls/2 - cb.get_xl()/2),
+            check_frame, 2 * (get_on() && ! get_down())
+        );
     }
 }
 

@@ -268,6 +268,7 @@ cF dir_replays                  = new cF("replays/");
 cF dir_replays_auto             = new cF("replays/auto/");
 cF dir_data                     = new cF("data/");
 cF dir_data_bitmap              = new cF("data/images/");
+cF dir_data_bitmap_scale        = new cF("data/images/scale"); // stub, no /
 cF dir_data_sound               = new cF("data/sound/");
 cF dir_data_user                = new cF("data/user/");
 cF dir_data_transl              = new cF("data/transl/");
@@ -309,8 +310,3 @@ cF file_bitmap_menu_background  = new cF("data/images/menu_bg.I");
 cF file_bitmap_menu_checkmark   = new cF("data/images/menu_chk.I");
 cF file_bitmap_mouse            = new cF("data/images/mouse.I");
 cF file_bitmap_preview_icon     = new cF("data/images/prev_ico.I");
-
-cF file_bitmap_font_big         = new cF("data/images/font_big.I.tga");
-cF file_bitmap_font_nar         = new cF("data/images/font_nar.I.tga");
-cF file_bitmap_font_med         = new cF("data/images/font_med.I.tga");
-cF file_bitmap_font_sml         = new cF("data/images/font_sml.I.tga");

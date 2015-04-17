@@ -62,10 +62,14 @@ module gui.geometry;
 import std.math;
 import std.conv;
 import std.string; // for testing output in toString()
+import std.typecons; // rebindable
+
+import graphic.gralib; // to inform it about the screen scaling factor,
+                       // so it can return scaled-drawn bitmaps later
 
 class Geom {
 
-    Geom parent;
+    Rebindable!(const Geom) parent;
     From from;
 
     float x;
@@ -101,6 +105,8 @@ class Geom {
         screen_xlg     = screen_xls / stretch_factor;
 
         screen_thickness = std.math.floor(2.0 * stretch_factor).to!int;
+
+        graphic.gralib.set_scale_from_gui(stretch_factor);
     }
 
 
