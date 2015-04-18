@@ -74,13 +74,13 @@ prepare()
 {
     req_draw();
     foreach (label; [ left, left_check, center, center_check ]) {
-        label.set_text("");
+        label.text = "";
     }
     switch (align_left * 2 + (check_frame != 0)) {
-        case 0: center      .set_text(text); break;
-        case 1: center_check.set_text(text); break;
-        case 2: left        .set_text(text); break;
-        case 3: left_check  .set_text(text); break;
+        case 0: center      .text = text; break;
+        case 1: center_check.text = text; break;
+        case 2: left        .text = text; break;
+        case 3: left_check  .text = text; break;
         default: assert (false);
     }
 }
