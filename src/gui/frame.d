@@ -46,9 +46,8 @@ protected:
     override void undraw_self()
     {
         alias Geom.thicks th;
-        al_draw_filled_rectangle(
-            xs - th, ys - th, xs + xls + th, ys + yls + th,
-            get_undraw_color());
+        al_draw_filled_rectangle(xs - th, ys - th,
+            xs + xls + th, ys + yls + th, undraw_color);
     }
 
 }

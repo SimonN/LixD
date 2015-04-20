@@ -274,7 +274,7 @@ void set_level_result_carefully(
 
 private Filename user_file_name()
 {
-    return new Filename(dir_data_user.get_dir_rootful()
+    return new Filename(dir_data_user.dir_rootful
      ~ basics.help.user_name_escape_for_filename(user_name)
      ~ ext_config);
 }
@@ -445,7 +445,7 @@ nothrow void save()
         return;
     }
     try {
-        std.stdio.File f = File(user_file_name().get_rootful(), "w");
+        std.stdio.File f = File(user_file_name().rootful, "w");
 
         void fwr(in IoLine line)
         {
@@ -453,7 +453,7 @@ nothrow void save()
             f.flush();
         }
 
-        fwr(IoLine.Dollar(user_language, file_language.get_rootless()));
+        fwr(IoLine.Dollar(user_language, file_language.rootless));
         fwr(IoLine.Hash  (user_option_group, option_group));
         f.writeln();
 
@@ -491,18 +491,18 @@ nothrow void save()
         fwr(IoLine.Hash  (user_editor_grid_custom,      editor_grid_custom));
         f.writeln();
 
-        fwr(IoLine.Dollar(user_single_last_level,       single_last_level.get_rootless()));
-        fwr(IoLine.Dollar(user_network_last_level,      network_last_level.get_rootless()));
-        fwr(IoLine.Dollar(user_replay_last_level,       replay_last_level.get_rootless()));
+        fwr(IoLine.Dollar(user_single_last_level,       single_last_level.rootless));
+        fwr(IoLine.Dollar(user_network_last_level,      network_last_level.rootless));
+        fwr(IoLine.Dollar(user_replay_last_level,       replay_last_level.rootless));
         fwr(IoLine.Hash  (user_network_last_style,      network_last_style));
         f.writeln();
 
-        fwr(IoLine.Dollar(user_editor_last_dir_terrain, editor_last_dir_terrain.get_rootless()));
-        fwr(IoLine.Dollar(user_editor_last_dir_steel,   editor_last_dir_steel.get_rootless()));
-        fwr(IoLine.Dollar(user_editor_last_dir_hatch,   editor_last_dir_hatch.get_rootless()));
-        fwr(IoLine.Dollar(user_editor_last_dir_goal,    editor_last_dir_goal.get_rootless()));
-        fwr(IoLine.Dollar(user_editor_last_dir_deco,    editor_last_dir_deco.get_rootless()));
-        fwr(IoLine.Dollar(user_editor_last_dir_hazard,  editor_last_dir_hazard.get_rootless()));
+        fwr(IoLine.Dollar(user_editor_last_dir_terrain, editor_last_dir_terrain.rootless));
+        fwr(IoLine.Dollar(user_editor_last_dir_steel,   editor_last_dir_steel.rootless));
+        fwr(IoLine.Dollar(user_editor_last_dir_hatch,   editor_last_dir_hatch.rootless));
+        fwr(IoLine.Dollar(user_editor_last_dir_goal,    editor_last_dir_goal.rootless));
+        fwr(IoLine.Dollar(user_editor_last_dir_deco,    editor_last_dir_deco.rootless));
+        fwr(IoLine.Dollar(user_editor_last_dir_hazard,  editor_last_dir_hazard.rootless));
         f.writeln();
 
         fwr(IoLine.Hash  (user_key_force_left,  key_force_left));
@@ -594,7 +594,7 @@ nothrow void save()
                 // It's still 23 seconds with dmd v2.067.
             }
             Result r = results[fn];
-            fwr(IoLine.Angle(fn.get_rootless(),
+            fwr(IoLine.Angle(fn.rootless,
              r.lix_saved, r.skills_used, r.updates_used, r.built.toString()));
         }
 

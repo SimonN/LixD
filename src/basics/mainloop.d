@@ -19,6 +19,7 @@ import hardware.mouse;
 import hardware.mousecur;
 import hardware.sound;
 import menu.mainmenu;
+import menu.browsin;
 
 class MainLoop {
 
@@ -44,6 +45,7 @@ private:
     bool exit;
 
     MainMenu main_menu;
+    BrowserSingle brow_sin;
     Demo demo;
 
 
@@ -56,11 +58,18 @@ kill()
         destroy(main_menu);
         main_menu = null;
     }
+    if (brow_sin) {
+        gui.rm_elder(brow_sin);
+        destroy(brow_sin);
+        brow_sin = null;
+    }
     if (demo) {
         destroy(demo);
         demo = null;
     }
 }
+
+
 
 void
 calc()
@@ -76,9 +85,21 @@ calc()
 
     if (main_menu) {
         // no need to calc the menu, it's a GUI elder
-        if (main_menu.exit_program) {
+        if (main_menu.goto_single) {
+            kill();
+            brow_sin = new BrowserSingle;
+            gui.add_elder(brow_sin);
+        }
+        else if (main_menu.exit_program) {
             kill();
             demo = new Demo;
+        }
+    }
+    else if (brow_sin) {
+        if (brow_sin.goto_main_menu) {
+            kill();
+            main_menu = new MainMenu;
+            gui.add_elder(main_menu);
         }
     }
     else if (demo) {

@@ -35,7 +35,7 @@ private:
 
     Cutbit null_cutbit; // invalid bitmap to return instead of null pointer
 
-    string scale_dir = dir_data_bitmap.get_rootless(); // load from which dir?
+    string scale_dir = dir_data_bitmap.rootless; // load from which dir?
 
     // The int variables should be != 0 for the character spreadsheet and
     // similar things that require both a GUI and a player color recoloring.
@@ -58,9 +58,9 @@ public:
 void set_scale_from_gui(float scale)
 {
     scale_dir =
-        scale < 1.5f ? dir_data_bitmap.get_rootless()
-     :  scale < 2.0f ? dir_data_bitmap_scale.get_rootless() ~ "150/"
-     :                 dir_data_bitmap_scale.get_rootless() ~ "200/";
+        scale < 1.5f ? dir_data_bitmap.rootless
+     :  scale < 2.0f ? dir_data_bitmap_scale.rootless ~ "150/"
+     :                 dir_data_bitmap_scale.rootless ~ "200/";
 }
 
 
@@ -83,17 +83,17 @@ void initialize()
     // filename extensions.
     foreach (fn; files) if (fn.has_image_extension()) {
         Cutbit cb = new Cutbit(fn);
-        assert (cb, "error loading internal cutbit: " ~ fn.get_rootful());
+        assert (cb, "error loading internal cutbit: " ~ fn.rootful);
         al_convert_mask_to_alpha(cb.get_albit(), color.pink);
-        internal[fn.get_rootless_no_extension()] = cb;
+        internal[fn.rootless_no_ext] = cb;
         assert (get_internal(fn).is_valid(),
-            "can't retrieve from array: " ~ fn.get_rootful());
+            "can't retrieve from array: " ~ fn.rootful);
     }
 
     // Create the matrix of eye coordinates.
     // Each frame of the Lix spritesheet has the eyes in some position.
     // The exploder fuse shall start at that position, let's calculate it.
-    Cutbit* cb_ptr = (file_bitmap_lix.get_rootless_no_extension() in internal);
+    Cutbit* cb_ptr = (file_bitmap_lix.rootless_no_ext in internal);
     assert (cb_ptr, "missing image: the main Lix spritesheet");
     if (! cb_ptr) return;
     Cutbit cb = *cb_ptr;
@@ -153,7 +153,7 @@ void initialize()
     display_startup_message("Recoloring panel icons for multiplayer...");
 
     // Prepare the panel icons in multiple colors
-    Cutbit* icon_ptr = (file_bitmap_game_icon.get_rootless_no_extension()
+    Cutbit* icon_ptr = (file_bitmap_game_icon.rootless_no_ext
                        in internal);
     assert (icon_ptr, "missing image: in-game panel icon of a Lix");
     if (icon_ptr) {
@@ -213,13 +213,13 @@ private Cutbit get_internal_mutable(in Filename fn)
 {
     Filename correct_scale(in Filename f)
     {
-        return new Filename(scale_dir ~ f.get_file());
+        return new Filename(scale_dir ~ f.file);
     }
-    string str = correct_scale(fn).get_rootless_no_extension();
+    string str = correct_scale(fn).rootless_no_ext;
     if (str in internal) return internal[str];
 
     // if not yet returned, fall back onto non-scaled bitmap
-    str = fn.get_rootless_no_extension();
+    str = fn.rootless_no_ext;
     if (str in internal) return internal[str];
     else return null_cutbit;
 }
@@ -346,7 +346,7 @@ void recolor_into_vector(
     // extremely slowly.
 
     assert (cutbit.is_valid());
-    Cutbit* rcl_p = (file_bitmap_lix_recol.get_rootless_no_extension()
+    Cutbit* rcl_p = (file_bitmap_lix_recol.rootless_no_ext
                      in internal);
     assert (rcl_p && rcl_p.is_valid(), "can't recolor, missing map image");
 
@@ -445,7 +445,6 @@ void recolor_into_vector(
         eidrecol_api(vector[st], magicnr);
     }
 
-    // debugging: saving to files
     static if (false)
      foreach (int i; 0 .. Style.MAX) {
         Style st = cast (Style) i;

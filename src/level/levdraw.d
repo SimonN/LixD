@@ -2,7 +2,6 @@ module level.levdraw;
 
 import basics.alleg5;
 import file.filename;
-import file.log; // logging debugging output, timing the drawing
 import game.lookup;
 import graphic.color;
 import graphic.cutbit;
@@ -60,10 +59,10 @@ private void draw_pos(in ref Pos po, Torbit ground, Lookup lookup)
     scope (exit) destroy(tempgra);
     AlBit underlying_al_bitmap = bit.get_albit();
     mixin(temp_lock!"underlying_al_bitmap");
-    tempgra.set_rotation(po.rot);
-    tempgra.set_mirror  (po.mirr);
-    for  (int x = po.x; x < po.x + tempgra.get_xl(); ++x)
-     for (int y = po.y; y < po.y + tempgra.get_yl(); ++y)
+    tempgra.rotation = po.rot;
+    tempgra.mirror   = po.mirr;
+    for  (int x = po.x; x < po.x + tempgra.xl; ++x)
+     for (int y = po.y; y < po.y + tempgra.yl; ++y)
      if (tempgra.get_pixel(x - po.x, y - po.y) != color.transp) {
         if (po.noow) {
             if (! lookup.get(x, y, Lookup.bit_terrain))

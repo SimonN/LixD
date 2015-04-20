@@ -35,26 +35,26 @@ class TextButton : Button {
         center_check = new Label(Geom.From.CENTER, 0, 0, xl - 2 * ch_xlg);
 
         check_geom   = new Geom(Geom.From.RIGHT, 0, 0, ch_xlg, ch_xlg);
-        check_geom.parent = this.get_geom();
+        check_geom.parent = this.geom;
 
         add_children(left, left_check, center, center_check);
     }
 
-    bool get_align_left() const         { return align_left;         }
-    void set_align_left(bool b = true)  { align_left = b; prepare(); }
+    bool align_left() const { return _align_left;                          }
+    bool align_left(bool b) { _align_left = b; prep(); return _align_left; }
 
-    string get_text() const      { return text;         }
-    void   set_text(in string s) { text = s; prepare(); }
+    string text() const      { return _text;                }
+    string text(in string s) { _text = s; prep(); return s; }
 
-    int  get_check_frame() const { return check_frame;         }
-    void set_check_frame(int i)  { check_frame = i; prepare(); }
+    int check_frame() const { return _check_frame;                           }
+    int check_frame(int i)  { _check_frame = i; prep(); return _check_frame; }
 
 private:
 
-    string text;
-    bool   align_left;
-    int    check_frame; // frame 0 is empty, then don't draw anything and
-                        // don't shorten the text maximal length
+    string _text;
+    bool   _align_left;
+    int    _check_frame; // frame 0 is empty, then don't draw anything and
+                         // don't shorten the text maximal length
     Label left;
     Label left_check;
     Label center;
@@ -70,17 +70,17 @@ private:
 // it's NVI-conformally called by req_draw(); -- or maybe not, since these
 // are pretty complex with the text rendering, which is unnecessary at click
 private void
-prepare()
+prep()
 {
     req_draw();
     foreach (label; [ left, left_check, center, center_check ]) {
         label.text = "";
     }
-    switch (align_left * 2 + (check_frame != 0)) {
-        case 0: center      .text = text; break;
-        case 1: center_check.text = text; break;
-        case 2: left        .text = text; break;
-        case 3: left_check  .text = text; break;
+    switch (_align_left * 2 + (_check_frame != 0)) {
+        case 0: center      .text = _text; break;
+        case 1: center_check.text = _text; break;
+        case 2: left        .text = _text; break;
+        case 3: left_check  .text = _text; break;
         default: assert (false);
     }
 }
@@ -95,12 +95,12 @@ draw_self()
     // Draw the checkmark, which doesn't overlap with the children.
     // There's a (ch_xlg) x (ch_xlg) area reserved for the cutbit on the right.
     // Draw to the center of this square.
-    if (check_frame != 0) {
+    if (_check_frame != 0) {
         auto cb = get_internal(file_bitmap_menu_checkmark);
         cb.draw(guiosd,
             to!int(check_geom.xs + check_geom.xls/2 - cb.get_xl()/2),
             to!int(check_geom.ys + check_geom.yls/2 - cb.get_xl()/2),
-            check_frame, 2 * (get_on() && ! get_down())
+            _check_frame, 2 * (get_on() && ! get_down())
         );
     }
 }

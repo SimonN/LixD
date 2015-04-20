@@ -256,8 +256,8 @@ private XY get_fuse_xy() const
 {
     XY ret = countdown.get(frame_to_x_frame(), ac_to_y_frame());
     if (dir < 0) ret.x = graphic.gralib.get_lix(style).get_xl() - ret.x;
-    ret.x += get_x();
-    ret.y += get_y();
+    ret.x += super.x;
+    ret.y += super.y;
     return ret;
 }
 
@@ -265,7 +265,7 @@ private XY get_fuse_xy() const
 
 void set_ex(in int n) {
     ex = basics.help.even(n);
-    set_x(ex - lix.enums.ex_offset);
+    super.x = ex - lix.enums.ex_offset;
     if (ground_map.get_torus_x()) ex = positive_mod(ex, land.get_xl());
     immutable XY fuse_xy = get_fuse_xy();
     enc_foot |= lookup.get(ex, ey);
@@ -278,7 +278,7 @@ void set_ex(in int n) {
 
 void set_ey(in int n) {
     ey = n;
-    set_y(ey - lix.enums.ey_offset);
+    super.y = ey - lix.enums.ey_offset;
     if (ground_map.get_torus_y()) ey = positive_mod(ey, land.get_yl());
     immutable XY fuse_xy = get_fuse_xy();
     enc_foot |= lookup.get(ex, ey);
@@ -588,8 +588,7 @@ override bool is_last_frame() const
 {
     // the cutbit does this for us. Lixxie.frame != Graphic.x_frame,
     // so we use Lixxie's private conversion functions
-    return ! get_cutbit().get_frame_exists(frame_to_x_frame() + 1,
-                                           ac_to_y_frame());
+    return ! cutbit.get_frame_exists(frame_to_x_frame() + 1, ac_to_y_frame());
 }
 
 
@@ -607,8 +606,8 @@ override void draw()
 {
     if (ac == Ac.NOTHING) return;
 
-    set_x_frame(frame_to_x_frame());
-    set_y_frame(   ac_to_y_frame());
+    super.xf = frame_to_x_frame();
+    super.yf =    ac_to_y_frame();
 
     // draw the fuse if necessary
     if (updates_since_bomb > 0) {
@@ -644,8 +643,8 @@ override void draw()
     // mirror kippt vertikal, also muss bei dir < 0 auch noch um 180 Grad
     // gedreht werden. Allegro-Zeichenfunktionen bieten oft ebenfalls nur
     // vertikale Kippung, ich benutze daher ebenfalls diese Konvention.
-    set_mirror  (     dir < 0 );
-    set_rotation(2 * (dir < 0));
+    mirror   =      dir < 0;
+    rotation = 2 * (dir < 0);
     Graphic.draw();
 }
 
@@ -780,8 +779,8 @@ void become(in Ac new_ac)
     // Reset sprite placement like climber's offset in x-direction by 1,
     // or the digger sprite displacement in one frame. This is the same code
     // as the sprite placement in set_ex/ey().
-    set_x(ex - lix.enums.ex_offset);
-    set_y(ey - lix.enums.ey_offset);
+    super.x = ex - lix.enums.ex_offset;
+    super.y = ey - lix.enums.ey_offset;
 
     if (ac_func[new_ac].become) ac_func[new_ac].become(this);
     else                        become_default(new_ac);

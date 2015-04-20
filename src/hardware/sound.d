@@ -77,7 +77,7 @@ void initialize()
 
     Sample load(in string str)
     {
-        return new Sample(new Filename(dir_data_sound.get_rootful() ~ str));
+        return new Sample(new Filename(dir_data_sound.rootful ~ str));
     }
 
     samples[Sound.DISKSAVE]    = load("disksave.ogg");
@@ -213,8 +213,8 @@ this(in Filename fn)
 {
     filename = fn;
     unique = true;
-    sample = al_load_sample(fn.get_rootful_z());
-    if (! sample) Log.logf("Missing sound file `%s'", fn.get_rootful());
+    sample = al_load_sample(fn.rootful_z);
+    if (! sample) Log.logf("Missing sound file `%s'", fn.rootful);
 }
 
 

@@ -62,7 +62,7 @@ class Checkbox : BitmapButton {
     {
         super(from, get_internal(file_bitmap_menu_checkmark),
             x, y, sizeg, sizeg);
-        set_on_click(&toggle);
+        this.on_click = &toggle;
     }
 
     void set_checked(bool b = true) { set_x_frame(b ? xf_ck : 0); req_draw(); }

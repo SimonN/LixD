@@ -8,17 +8,14 @@ import file.date;
 import file.filename;
 import file.log;
 
-/*  bool fill_vector_from_file  (ref IoLine[], const Filename);
- *  void fill_vector_from_stream(ref IoLine[], File);
+/*  bool fill_vector_from_file    (ref IoLine[], const Filename);
+ *  void fill_vector_from_stream  (ref IoLine[], File);
+ *  bool fill_vector_from_file_raw(ref string[], const Filename) {
  *
  *      Fill the vector (first arg) with the lines from the file given in the
  *      second arg. Returns false iff the file doesn't exist. Returns true iff
  *      the file exists, whether or not it was empty.
  */
-
-bool fill_vector_from_file_raw(ref string[], const Filename) {
-    assert (false, "DTODO: raw IoLine filling isn't implemented yet");
-}
 
 class IoLine {
 
@@ -210,7 +207,7 @@ override string toString() const
 // end toString()
 
 }
-// end struct
+// end class IoLine
 
 
 
@@ -243,13 +240,12 @@ private void munch(ref string s) {
 bool fill_vector_from_file(ref IoLine[] v, const Filename fn)
 {
     try {
-        File file = File(fn.get_rootful());
+        File file = File(fn.rootful);
         bool was_good = fill_vector_from_stream(v, file);
         file.close();
         return was_good;
     }
     catch (Exception e) {
-        // DTODOLANG
         Log.log(e.msg);
         return false;
     }
@@ -270,4 +266,24 @@ bool fill_vector_from_stream(ref IoLine[] v, File file)
         if (! line.empty) v ~= new IoLine(line);
     }
     return true;
+}
+
+
+
+// this cares about empty lines, doesn't throw them away
+bool fill_vector_from_file_raw(
+    ref string[] v,
+    in Filename fn
+) {
+    try {
+        File file = File(fn.rootful);
+        foreach (string line; lines(file))
+            v ~= line;
+        file.close();
+        return true;
+    }
+    catch (Exception e) {
+        Log.log(e.msg);
+        return false;
+    }
 }

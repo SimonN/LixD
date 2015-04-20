@@ -101,7 +101,7 @@ draw_text_right(
     draw_text(f, str, x, y, c, ALLEGRO_ALIGN_RIGHT);
 }
 
-// shortcut function while debugging
+// shortcut function for the demo screen, permanent debugging
 void drtx(string str, int x, int y)
 {
     draw_text(djvu_s, str, x, y, color.white);

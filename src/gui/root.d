@@ -24,7 +24,7 @@ import graphic.torbit;
 import hardware.display;
 import gui;
 
-package Torbit guiosd; // other gui modules shall use this
+public Torbit guiosd; // other gui modules shall use this
 
 private:
 

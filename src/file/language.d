@@ -466,7 +466,7 @@ load_user_language_and_if_not_exist_set_user_option_to_english()
         if (! lang_file_loaded) return; // IO routine has logged 404 already
         if (! fn_written_to_log) {
             fn_written_to_log = true;
-            Log.logf("While reading `%s':", file_language.get_rootless());
+            Log.logf("While reading `%s':", file_language.rootless);
         }
         Log.logf("  " ~ formatstr, formatargs);
     }

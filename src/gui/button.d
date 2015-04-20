@@ -43,9 +43,8 @@ class Button : Element {
     int  get_hotkey() const      { return hotkey; }
     void set_hotkey(int i = 0)   { hotkey = i;    }
 
-    @property bool clicked() const { return clicked_last_calc; }
-
-    void set_on_click(void delegate() f) { on_click = f; }
+    @property bool clicked() const             { return clicked_last_calc; }
+    @property void on_click(void delegate() f) { _on_click = f; }
 
 private:
 
@@ -57,7 +56,7 @@ private:
     bool down;
     bool on;
 
-    void delegate() on_click;
+    void delegate() _on_click;
 
 
 
@@ -68,7 +67,7 @@ calc_self()
 {
     immutable bool mouse_here = is_mouse_here();
 
-    if (get_hidden()) {
+    if (hidden) {
         clicked_last_calc = false;
     }
     else {
@@ -97,7 +96,7 @@ calc_self()
         else                             b = b || key_once(hotkey);
 
         clicked_last_calc = b;
-        if (on_click !is null && clicked_last_calc) on_click();
+        if (_on_click !is null && clicked_last_calc) _on_click();
     }
 }
 

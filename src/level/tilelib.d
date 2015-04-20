@@ -66,12 +66,12 @@ void initialize()
 
     // fill the queue will all files on the disk, but chop off the
     // "images/" prefix before using the path as the tile's name
-    immutable string imgdir = glo.dir_bitmap.get_dir_rootless();
+    immutable string imgdir = glo.dir_bitmap.dir_rootless;
     auto files = file.search.find_tree(glo.dir_bitmap);
     foreach (fn; files) {
         if (! fn.has_image_extension()) continue;
 
-        string rootless = fn.get_rootless_no_extension();
+        string rootless = fn.rootless_no_ext;
         if (imgdir.length <= rootless.length
          && rootless[0 .. imgdir.length] == imgdir) {
             rootless = rootless[imgdir.length .. $];
@@ -132,8 +132,8 @@ const(Tile) get_tile(in Filename fn)
     // cut away "images/" if that is in front
     // we could eat an extra iteration through get_file(string),
     // but this is negligibly faster. <_<
-    immutable string s = fn.get_rootless_no_extension();
-    immutable string b = glo.dir_bitmap.get_dir_rootless();
+    immutable string s = fn.rootless_no_ext;
+    immutable string b = glo.dir_bitmap.dir_rootless;
 
     if (b.length <= s.length && s[0 .. b.length] == b) {
          return get_tile(s[b.length .. $]);
@@ -165,7 +165,7 @@ string get_filename(in Tile tile)
 
 private void load_tile_from_disk(in string str_no_ext, in Filename fn)
 {
-    char pe = fn.get_pre_extension();
+    char pe = fn.pre_extension;
 
     TileType type = TileType.TERRAIN;
     int st = 0; // subtype
@@ -191,7 +191,7 @@ private void load_tile_from_disk(in string str_no_ext, in Filename fn)
     if (type != TileType.TERRAIN) {
         auto tile_ptr = (str_no_ext in tiles);
         if (tile_ptr) {
-            Filename defs = new Filename(fn.get_rootless_no_extension()
+            Filename defs = new Filename(fn.rootless_no_ext
                                        ~ glo.ext_object_definitions);
             // We test for existence here, because trying to load the file
             // will generate a log message for nonexisting file otherwise.

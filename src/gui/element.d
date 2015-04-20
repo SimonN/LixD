@@ -19,36 +19,33 @@ abstract class Element {
  */
     // these functions return the position/length in geoms. See geometry.d
     // for the difference between measuring in geoms and in screen pixels.
-    @property float xg()  const { return geom.xg;  }
-    @property float yg()  const { return geom.yg;  }
-    @property float xlg() const { return geom.xlg; }
-    @property float ylg() const { return geom.ylg; }
+    @property float xg()  const { return _geom.xg;  }
+    @property float yg()  const { return _geom.yg;  }
+    @property float xlg() const { return _geom.xlg; }
+    @property float ylg() const { return _geom.ylg; }
 
-    @property float xs()  const { return geom.xs;  }
-    @property float ys()  const { return geom.ys;  }
-    @property float xls() const { return geom.xls; }
-    @property float yls() const { return geom.yls; }
+    @property float xs()  const { return _geom.xs;  }
+    @property float ys()  const { return _geom.ys;  }
+    @property float xls() const { return _geom.xls; }
+    @property float yls() const { return _geom.yls; }
 
-    void set_x (float i) { geom.x  = i; req_draw(); }
-    void set_y (float i) { geom.y  = i; req_draw(); }
-    void set_xl(float i) { geom.xl = i; req_draw(); }
-    void set_yl(float i) { geom.yl = i; req_draw(); }
+    // to move an element, assign a new Geom object to it.
+    @property const(Geom) geom() const { return _geom;                 }
+    @property const(Geom) geom(Geom g) { req_draw(); return _geom = g; }
 
-    const(Geom) get_geom() const { return geom; }
+    @property AlCol undraw_color() const  { return _undraw_color;     }
+    @property AlCol undraw_color(AlCol c) { return _undraw_color = c; }
 
-    AlCol get_undraw_color() const  { return undraw_color; }
-    void  set_undraw_color(AlCol c) { undraw_color = c;    }
-
-    bool get_hidden() const        { return hidden; }
-    void set_hidden(bool b = true) { hidden = b; req_draw(); }
-    void hide() { set_hidden(true);  }
-    void show() { set_hidden(false); }
+    @property bool hidden() const {             return _hidden;     }
+    @property bool hidden(bool b) { req_draw(); return _hidden = b; }
+    @property void hide() { hidden = true;  }
+    @property void show() { hidden = false; }
 
     void hide_all_children() { foreach (child; children) child.hide(); }
 
     inout(Element[]) get_children() inout { return children; }
 
-    bool is_parent_of(in Element chi) const { return geom is chi.geom.parent; }
+    bool is_parent_of(in Element ch) const { return _geom is ch._geom.parent; }
 
 /*  bool is_mouse_here() const;
  *
@@ -102,9 +99,9 @@ protected:
 
 private:
 
-    Geom geom;
-    bool hidden;
-    AlCol undraw_color; // if != color.transp, then undraw
+    Geom  _geom;
+    bool  _hidden;
+    AlCol _undraw_color; // if != color.transp, then undraw
 
     bool drawn;
     bool draw_required;
@@ -125,8 +122,8 @@ this(in int x = 0, in int y = 0, in int xl = 20, in int yl = 20)
 this(in Geom.From from, in int x  = 0,  in int  y =  0,
                         in int xl = 20, in int yl = 20)
 {
-    geom          = new Geom(from, x, y, xl, yl);
-    undraw_color  = color.transp;
+    _geom         = new Geom(from, x, y, xl, yl);
+    _undraw_color = color.transp;
     draw_required = true;
 }
 
@@ -135,9 +132,9 @@ this(in Geom.From from, in int x  = 0,  in int  y =  0,
 ~this()
 {
     foreach (child; children) {
-        assert (child.geom.parent is this.geom,
+        assert (child._geom.parent is this._geom,
             "upon destruction, child without properly-set parent exists");
-        child.geom.parent = null;
+        child._geom.parent = null;
     }
 }
 
@@ -146,9 +143,9 @@ this(in Geom.From from, in int x  = 0,  in int  y =  0,
 bool add_child(Element e)
 {
     if (children.find!"a is b"(e) != []) return false;
-    if (e.geom.parent !is null) return false;
+    if (e._geom.parent !is null) return false;
 
-    e.geom.parent = this.geom;
+    e._geom.parent = this._geom;
     children ~= e;
     return true;
 }
@@ -170,9 +167,9 @@ bool rm_child(Element e)
     if (found == []) return false;
 
     auto fe = found[0];
-    assert (fe.geom.parent is this.geom,
+    assert (fe._geom.parent is this._geom,
         "gui element in child list without its parent set");
-    fe.geom.parent = null;
+    fe._geom.parent = null;
     // remove(n) removes the item with index n. We wish to remove fe.
     children.remove(children.length - found.length);
     return true;
@@ -192,7 +189,7 @@ req_draw()
 
 bool is_mouse_here() const
 {
-    if (! hidden
+    if (! _hidden
      && get_mx() >= xs && get_mx() < xs + xls
      && get_my() >= ys && get_my() < ys + yls) return true;
     else return false;
@@ -202,7 +199,7 @@ bool is_mouse_here() const
 
 final void calc()
 {
-    if (hidden) return;
+    if (_hidden) return;
     foreach (child; children) child.calc_self();
     calc_self();
 }
@@ -211,7 +208,7 @@ final void calc()
 
 final void work()
 {
-    if (hidden) return;
+    if (_hidden) return;
     foreach (child; children) child.work_self();
     work_self();
 }
@@ -220,7 +217,7 @@ final void work()
 
 final void draw()
 {
-    if (! hidden) {
+    if (! _hidden) {
         if (draw_required) {
             draw_required = false;
             draw_self();
@@ -229,8 +226,8 @@ final void draw()
         // In the options menu, all stuff has to be undrawn first, then
         // drawn, so that rectangles don't overwrite proper things.
         // Look into this function (final void draw) below.
-        foreach (c; children) if (c.get_hidden())   c.draw();
-        foreach (c; children) if (! c.get_hidden()) c.draw();
+        foreach (c; children) if (  c.hidden) c.draw();
+        foreach (c; children) if (! c.hidden) c.draw();
     }
     // hidden
     else
@@ -242,17 +239,18 @@ final void draw()
 final void undraw()
 {
     if (drawn) {
-        if (undraw_color != color.transp) undraw_self();
+        if (_undraw_color != color.transp)
+            undraw_self();
         drawn = false;
     }
-    draw_required = ! hidden;
+    draw_required = ! _hidden;
 }
 
 
 
 void undraw_self()
 {
-    al_draw_filled_rectangle(xs, ys, xs + xls, ys + yls, undraw_color);
+    al_draw_filled_rectangle(xs, ys, xs + xls, ys + yls, _undraw_color);
 }
 
 

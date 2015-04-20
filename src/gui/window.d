@@ -40,24 +40,15 @@ class Window : Element {
     @property title   (string s) { _title    = s; req_draw(); }
     @property subtitle(string s) { _subtitle = s; req_draw(); }
 
-    @property exit() const       { return _exit; }
-    @property exit(bool b)
-    {
-        _exit = b;
-        if (_exit)
-            gui.rm_focus(this);
-    }
-
     override void hide_all_children()
     {
         foreach (child; get_children())
             if (child !is label_title)
-                child.set_hidden();
+                child.hidden = true;
     }
 
 private:
 
-    bool   _exit;
     string _title;
     string _subtitle;
 

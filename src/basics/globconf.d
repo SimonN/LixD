@@ -88,7 +88,7 @@ void save()
 {
     std.stdio.File f;
 
-    try f = std.stdio.File(file_config.get_rootful(), "w");
+    try f = std.stdio.File(file_config.rootful, "w");
     catch (Exception e) {
         Log.log(e.msg);
         return;

@@ -31,7 +31,7 @@ class Label : Element {
     }
 
     @property string    text   () const { return _text;  }
-    @property Geom.From aligned() const { return get_geom().x_from; }
+    @property Geom.From aligned() const { return geom.x_from; }
     @property AlCol     color  () const { return _color; }
 
     nothrow @property int get_number() const

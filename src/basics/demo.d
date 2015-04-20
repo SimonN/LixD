@@ -73,7 +73,7 @@ this()
     elems ~= () {
         auto a = new TextButton(Geom.From.BOTTOM, 0, 20);
         import file.language;
-        a.set_text(transl(Lang.editor_button_SELECT_COPY));
+        a.text = Lang.editor_button_SELECT_COPY.transl;
         return a;
     } ();
     foreach (e; elems) gui.add_elder(e);
@@ -156,8 +156,8 @@ calc()
                     300 + to!int(30*sin(tick/25.0)));
     myhatch2.set_xy(450 + to!int(50*sin(tick/47.0)),
                     280 + to!int(42*sin(tick/27.0)));
-    myhatch1.set_x_frame(to!int(2.5 + 2.49 * sin(tick/20.0)));
-    myhatch2.set_x_frame(to!int(2.5 + 6.3  * sin(tick/25.0)));
+    myhatch1.xf = to!int(2.5 + 2.49 * sin(tick/20.0));
+    myhatch2.xf = to!int(2.5 + 6.3  * sin(tick/25.0));
     myhatch1.draw();
     myhatch2.draw();
 
@@ -206,13 +206,13 @@ calc()
     if (tick % 50 == 0) {
         import std.random;
         auto but = cast (TextButton) elems[2];
-        but.set_text(uniform(0, Lang.MAX).to!Lang.transl);
+        but.text = uniform(0, Lang.MAX).to!Lang.transl;
 
         switch (tick / 50 % 4) {
-        case 0: but.set_align_left(true);  break;
-        case 1: but.set_check_frame(1);    break;
-        case 2: but.set_align_left(false); break;
-        case 3: but.set_check_frame(0);    break;
+        case 0: but.align_left  = true;  break;
+        case 1: but.check_frame = 1;     break;
+        case 2: but.align_left  = false; break;
+        case 3: but.check_frame = 0;     break;
         default: break;
         }
     }

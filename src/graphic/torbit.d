@@ -360,7 +360,6 @@ void draw_dark_from(
     // Since we're transforming unrotated/unmirrored coordinates to mirrored
     // /rotated ones, source and range are either the same, or swapped,
     // for ix in 0 .. bxl and iy in 0 .. byl.
-    import std.conv; // debugging
     import file.log;
     import basics.matrix;
 
@@ -572,7 +571,7 @@ void replace_color_in_rect(
 
 void save_to_file(in Filename fn)
 {
-    al_save_bitmap(fn.get_rootful_z(), bitmap);
+    al_save_bitmap(fn.rootful_z, bitmap);
 }
 
 }

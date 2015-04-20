@@ -55,7 +55,7 @@ deinitialize()
 private
 this()
 {
-    file = std.stdio.File(basics.globals.file_log.get_rootful(), "a");
+    file = std.stdio.File(basics.globals.file_log.rootful, "a");
     something_was_logged_already_this_session = false;
 }
 

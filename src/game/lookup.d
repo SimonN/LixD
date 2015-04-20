@@ -284,7 +284,7 @@ public void save_to_file(in Filename fn) const
                             | bit_fling | bit_trampoline);
         al_put_pixel(x, y, AlCol(red, blue, green, 1));
     }
-    al_save_bitmap(fn.get_rootful_z(), output_bitmap);
+    al_save_bitmap(fn.rootful_z, output_bitmap);
 }
 
 

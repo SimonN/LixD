@@ -97,12 +97,11 @@ public:
 
     bool opCmp(in Level) const;
 
-    LevelStatus get_status() const { return status;                     }
-    bool        get_good()   const { return status == LevelStatus.GOOD; }
-    string      get_name()   const;
-
-    inout(string[]) get_hints() inout;
-
+    @property LevelStatus status() const { return _status; }
+    @property bool        good()   const { return _status == LevelStatus.GOOD;}
+/*  @property string      name()   const;
+ *  @property string[]    hints()  inout;
+ */
     void draw_terrain_to(Torbit tb, Lookup lo = null) const
     {
         impl_draw_terrain_to(this, tb, lo);
@@ -118,7 +117,7 @@ public:
 
 package:
 
-    LevelStatus status;
+    LevelStatus _status;
 
 
 
@@ -126,8 +125,8 @@ public:
 
 this()
 {
-    built  = Date.now();
-    status = LevelStatus.BAD_EMPTY;
+    built   = Date.now();
+    _status = LevelStatus.BAD_EMPTY;
 
     size_x        = 640; // this comes from the old default res 640 x 480
     size_y        = 400; // old panel y height was 80, so size_y = 480 - 80;
@@ -147,7 +146,9 @@ this(in Filename fn)
 
 
 
-string get_name() const {
+@property string
+name() const
+{
     // DTODOLANG
     // if (Lang.get_current() == Language.GERMAN)
     //      return name_german  == null ? name_english : name_german;
@@ -156,7 +157,9 @@ string get_name() const {
 
 
 
-inout(string[]) get_hints() inout {
+@property inout(string[])
+hints() inout
+{
     // DTODOLANG
     // if (Lang.get_current() == Language.GERMAN)
     //      return hints_german  == null ? hints_english : hints_german;

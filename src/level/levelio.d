@@ -21,22 +21,22 @@ import level.tile;
 import level.tilelib;
 import lix.enums;
 
-private FileFormat get_file_format(in Filename);
+// private FileFormat get_file_format(in Filename);
 
 package void load_from_file(Level level, in Filename fn)
 {
-    level.status = LevelStatus.GOOD;
+    level._status = LevelStatus.GOOD;
 
     final switch (get_file_format(fn)) {
     case FileFormat.NOTHING:
-        level.status = LevelStatus.BAD_FILE_NOT_FOUND;
+        level._status = LevelStatus.BAD_FILE_NOT_FOUND;
         break;
     case FileFormat.LIX:
         IoLine[] lines;
         if (fill_vector_from_file(lines, fn)) {
             load_from_vector(level, lines);
         }
-        else level.status = LevelStatus.BAD_FILE_NOT_FOUND;
+        else level._status = LevelStatus.BAD_FILE_NOT_FOUND;
         break;
     case FileFormat.BINARY:
         // load an original .LVL file from L1/ONML/...
@@ -53,13 +53,14 @@ package void load_from_file(Level level, in Filename fn)
 
 
 
-private FileFormat get_file_format(in Filename fn)
+package FileFormat get_file_format(in Filename fn)
 {
     if (! file_exists(fn)) return FileFormat.NOTHING;
     else return FileFormat.LIX;
 
     // DTODO: Implement the remaining function from C++/A4 Lix that opens
     // a file in binary mode. Implement L1 loader functions.
+    // Consider taking not a Filename, but an already opened (ref std.File)!
 }
 
 
@@ -217,7 +218,7 @@ void add_object_from_ascii_line(
     // image doesn't exist
     // record a missing image in the logfile
     else {
-        level.status = LevelStatus.BAD_IMAGE;
+        level._status = LevelStatus.BAD_IMAGE;
         Log.logf("Missing image `%s'", text1);
     }
 }
@@ -248,12 +249,16 @@ void load_level_finalize(Level level)
 
         // Set level error. The error for file not found, or the error for
         // missing tile images, have been set already.
-        if (status == LevelStatus.GOOD) {
+        if (_status == LevelStatus.GOOD) {
             int count = 0;
-            foreach (poslist; pos) count += poslist.length;
-            if      (count == 0)                status = LevelStatus.BAD_EMPTY;
-            else if (pos[TileType.HATCH]==null) status = LevelStatus.BAD_HATCH;
-            else if (pos[TileType.GOAL ]==null) status = LevelStatus.BAD_GOAL;
+            foreach (poslist; pos)
+                count += poslist.length;
+            if (count == 0)
+                _status = LevelStatus.BAD_EMPTY;
+            else if (pos[TileType.HATCH] == null)
+                _status = LevelStatus.BAD_HATCH;
+            else if (pos[TileType.GOAL ] == null)
+                _status = LevelStatus.BAD_GOAL;
         }
     }
     // end with
@@ -270,7 +275,7 @@ void load_level_finalize(Level level)
 package void impl_save_to_file(const(Level) level, in Filename fn)
 {
     try {
-        std.stdio.File file = File(fn.get_rootful(), "w");
+        std.stdio.File file = File(fn.rootful, "w");
         save_to_file(level, file);
         file.close();
     }

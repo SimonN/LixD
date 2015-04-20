@@ -46,7 +46,7 @@ void
 draw()
 {
     assert (mouse, "call hardware.mousecur.initialize() before drawing mouse");
-    mouse.set_x(get_mx() - mouse.get_xl()/2 + 1);
-    mouse.set_y(get_my() - mouse.get_yl()/2 + 1);
+    mouse.x = get_mx() - mouse.xl/2 + 1;
+    mouse.y = get_my() - mouse.yl/2 + 1;
     mouse.draw_directly_to_screen();
 }
