@@ -446,14 +446,19 @@ public void
 load_user_language_and_if_not_exist_set_user_option_to_english()
 {
     IoLine[] lines;
-    bool lang_file_loaded = fill_vector_from_file(lines, file_language);
-
-    if (! lang_file_loaded && file_language != file_language_english) {
-        Log.log("Falling back to English.");
-        file_language = new Filename(file_language_english);
-        lang_file_loaded = fill_vector_from_file(lines, file_language);
-        if (! lang_file_loaded) {
+    try
+        lines = fill_vector_from_file(file_language);
+    catch (Exception e) {
+        Log.log(e.msg);
+        if (file_language != file_language_english) {
+            Log.log("Falling back to English.");
+            file_language = new Filename(file_language_english);
+            load_user_language_and_if_not_exist_set_user_option_to_english();
+            return;
+        }
+        else {
             Log.log("English language file not found. Broken installation?");
+            return;
         }
     }
     // from here on, the user's language (file_language) is not used anymore
@@ -463,7 +468,6 @@ load_user_language_and_if_not_exist_set_user_option_to_english()
 
     void local_logf(T...)(string formatstr, T formatargs)
     {
-        if (! lang_file_loaded) return; // IO routine has logged 404 already
         if (! fn_written_to_log) {
             fn_written_to_log = true;
             Log.logf("While reading `%s':", file_language.rootless);

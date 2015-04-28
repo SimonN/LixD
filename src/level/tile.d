@@ -203,8 +203,7 @@ void read_definitions_file(in Filename filename)
 {
     // We assume that the object's xl, yl, type, and subtype
     // have been correctly set by the constructor.
-    IoLine[] lines;
-    if (! fill_vector_from_file(lines, filename)) return;
+    IoLine[] lines = fill_vector_from_file_nothrow(filename);
 
     foreach (i; lines) if (i.type == '#') {
         if      (i.text1 == objdef_ta_absolute_x) {

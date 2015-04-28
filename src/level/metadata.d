@@ -49,11 +49,7 @@ file_exists() const
 private void
 read_metadata_lix(in Filename fn)
 {
-    IoLine[] lines;
-    if (! fill_vector_from_file(lines, fn)) {
-        return;
-    }
-    // File exists
+    IoLine[] lines = fill_vector_from_file_nothrow(fn);
     foreach (i; lines) {
         if (i.text1 == level_built)        built        = new Date(i.text2);
         if (i.text1 == level_name_german)  name_german  = i.text2;

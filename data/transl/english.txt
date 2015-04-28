@@ -218,8 +218,8 @@ $win_size_torus_y               Wrap around vertically
 
 $win_scroll_title               Level Visuals
 $win_scroll_manual              Manually set initially visible region
-$win_scroll_x                   X Coordinate (0  left)
-$win_scroll_y                   Y Coordinate (0  top)
+$win_scroll_x                   X Coordinate (0 = left)
+$win_scroll_y                   Y Coordinate (0 = top)
 $win_scroll_r                   Background red
 $win_scroll_g                   Background green
 $win_scroll_b                   Background blue

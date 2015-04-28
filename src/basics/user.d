@@ -289,7 +289,12 @@ void load()
     }
 
     IoLine[] lines;
-    fill_vector_from_file(lines, user_file_name());
+    try
+        lines = fill_vector_from_file(user_file_name());
+    catch (Exception e) {
+        Log.log(e.msg);
+        Log.log("User config for user `" ~ user_name ~ "' was not found.");
+    }
 
     results = null;
 

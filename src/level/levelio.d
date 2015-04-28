@@ -32,11 +32,10 @@ package void load_from_file(Level level, in Filename fn)
         level._status = LevelStatus.BAD_FILE_NOT_FOUND;
         break;
     case FileFormat.LIX:
-        IoLine[] lines;
-        if (fill_vector_from_file(lines, fn)) {
-            load_from_vector(level, lines);
-        }
-        else level._status = LevelStatus.BAD_FILE_NOT_FOUND;
+        try
+            load_from_vector(level, fill_vector_from_file(fn));
+        catch (Exception e)
+            level._status = LevelStatus.BAD_FILE_NOT_FOUND;
         break;
     case FileFormat.BINARY:
         // load an original .LVL file from L1/ONML/...

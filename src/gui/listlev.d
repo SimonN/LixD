@@ -148,12 +148,16 @@ sort_filenames_by_order_txt_then_alpha(
     // Assume that the filenames to be sorted also start with
     // dir_with_oder_file and only have appended the order file's substring.
     string[] orders;
-    bool file_exists = fill_vector_from_file_raw(orders, new Filename(
-        dir_with_order_file.dir_rootful ~ glo.file_level_dir_order));
+    try
+        orders = fill_vector_from_file_raw(new Filename(
+            dir_with_order_file.dir_rootful ~ glo.file_level_dir_order));
+    catch (Exception e) {
+        // do nothing, missing ordering file is not an error at all
+    }
 
     Filename[] unsorted_slice = files;
 
-    if (file_exists) {
+    if (orders.length) {
         if (we_sort_dirs) {
             // sort the "go up one dir" button always to slot 1
             orders = ".." ~ orders;

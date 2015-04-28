@@ -3,12 +3,14 @@ module file.io;
 import std.array;
 import std.file;
 import std.stdio;
+import std.string;
 
 import file.date;
 import file.filename;
-import file.log;
 
-/*  bool fill_vector_from_file    (ref IoLine[], const Filename);
+/* Outdated comment, see the functions near bottom of module sfor signature!
+ *
+ *  bool fill_vector_from_file    (ref IoLine[], const Filename);
  *  void fill_vector_from_stream  (ref IoLine[], File);
  *  bool fill_vector_from_file_raw(ref string[], const Filename) {
  *
@@ -237,25 +239,39 @@ private void munch(ref string s) {
 
 
 
-bool fill_vector_from_file(ref IoLine[] v, const Filename fn)
+nothrow IoLine[]
+fill_vector_from_file_nothrow(in Filename fn)
 {
     try {
-        File file = File(fn.rootful);
-        bool was_good = fill_vector_from_stream(v, file);
-        file.close();
-        return was_good;
+        return fill_vector_from_file(fn);
     }
     catch (Exception e) {
-        Log.log(e.msg);
-        return false;
+        // Ignore the exception, don't log anything. If something should be
+        // logged here, instead call fill_vector_from_file(), catch the
+        // exception, and log in the calling code.
+        return null;
     }
 }
 
 
 
-// return true on no error
-bool fill_vector_from_stream(ref IoLine[] v, File file)
+IoLine[]
+fill_vector_from_file(in Filename fn)
 {
+    // this can throw on file 404, it's intended
+    File file = File(fn.rootful);
+    scope (exit) file.close();
+
+    return fill_vector_from_stream(file);
+}
+
+
+
+// return true on no error
+IoLine[]
+fill_vector_from_stream(File file)
+{
+    IoLine[] ret;
     foreach (string line; lines(file)) {
         // prune trailing LFs, CRs, and spaces
         while (! line.empty) {
@@ -263,27 +279,23 @@ bool fill_vector_from_stream(ref IoLine[] v, File file)
             if (c == ' ' || c == '\n' || c == '\r') line = line[0 .. $-1];
             else break;
         }
-        if (! line.empty) v ~= new IoLine(line);
+        if (! line.empty) ret ~= new IoLine(line);
     }
-    return true;
+    return ret;
 }
 
 
 
 // this cares about empty lines, doesn't throw them away
-bool fill_vector_from_file_raw(
-    ref string[] v,
-    in Filename fn
-) {
-    try {
-        File file = File(fn.rootful);
-        foreach (string line; lines(file))
-            v ~= line;
-        file.close();
-        return true;
-    }
-    catch (Exception e) {
-        Log.log(e.msg);
-        return false;
-    }
+// throws on file 404
+string[]
+fill_vector_from_file_raw(in Filename fn)
+{
+    string[] ret;
+    File file = File(fn.rootful);
+    scope (exit) file.close();
+
+    foreach (string line; lines(file))
+        ret ~= line;
+    return ret;
 }

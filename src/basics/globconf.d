@@ -48,11 +48,12 @@ bool   verify_mode           = false;
 void load()
 {
     IoLine[] lines;
-    bool err = fill_vector_from_file(lines, basics.globals.file_config);
-    if (! err) {
-        Log.log("Config file not found. Standard configuration will be used.");
+    try
+        lines = fill_vector_from_file(basics.globals.file_config);
+    catch (Exception e) {
+        Log.log(e.msg);
+        Log.log("Using standard config because config file was not found.");
         Log.log("This is normal when you run Lix for the first time.");
-        // DTODOLANG
     }
 
     foreach (i; lines) {
