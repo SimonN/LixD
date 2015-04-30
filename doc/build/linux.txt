@@ -8,8 +8,8 @@ Windows. I don't know where you install libraries, though.
 
 
 
-Installing D
-------------
+Install D
+---------
 
 I recommend dmd v2.067 or newer to compile this, or one of the other
 available D compilers. This explains how to set up dmd. Get it here:
@@ -27,8 +27,8 @@ better search results.
 
 
 
-Installing the libraries
-------------------------
+Install required libraries
+--------------------------
 
 Even though dub can download the libraries' D bindings from the dub website
 and install them in ~/.dub for you, it cannot install the shared libraries
@@ -52,24 +52,20 @@ on all others coming before it. enet doesn't depend on any of those.
 
 
 
-Run dub
--------
+Build Lix
+---------
 
 Open a shell, navigate to Lix's root directory, and run:
 
-    dub build
-
-dub will read the Lix packaging information in dub.json and build the game.
-Run ./bin/lix to play the game.
-
-The above command (dub build) builds the debugging version. For maximum
-performance, build the release version instead:
-
     dub build -b release-nobounds
 
-The release version takes longer to compile, because the compiler will do
-many extra optimizations. The resulting binary will run faster, but cannot
-output useful information in case of a crash.
+This builds the game. To play:
+
+    ./bin/lix
+
+The above dub command (dub build -b release-nobounds) builds the release
+version. This uses many optimizations. The resulting binary will run fast.
+If you would like to build the debugging version, use instead: dub build
 
 
 

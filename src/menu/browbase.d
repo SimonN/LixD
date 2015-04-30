@@ -88,15 +88,19 @@ this(
     // longer by 1, without costing quality, and it fits the strange constants
     // in C++-A4 Lix's level.cpp.
 
-    dir_list.base_dir    = base_dir;
+    dir_list.base_dir = base_dir;
+    dir_list.list_file_to_control = lev_list;
     dir_list.current_dir = current_file;
-    lev_list.highlight(current_file);
+
+    // lev_list.highlight(current_file); // DTODO: still needed?
 
     button_play.text = Lang.browser_play.transl;
     button_exit.text = Lang.common_back.transl;
     button_exit.on_click = () { _goto_main_menu = true; };
 
     add_children(preview, dir_list, lev_list, button_play, button_exit);
+
+    subtitle = dir_list.current_dir.rootless;
 }
 
 
@@ -111,6 +115,9 @@ public void set_preview_y_and_yl(in int y, in int yl)
 protected override void
 calc_self()
 {
+    if (dir_list.clicked) {
+        subtitle = dir_list.current_dir.rootless;
+    }
 }
 
 }

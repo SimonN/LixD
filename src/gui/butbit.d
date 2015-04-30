@@ -29,7 +29,7 @@ protected:
     override void draw_self()
     {
         super.draw_self();
-        immutable int y_frame = get_on() && ! get_down() ? 1 : 0;
+        immutable int y_frame = on && ! down ? 1 : 0;
 
         // center the image on the button
         int cb_x = to!int(xs + xls/2 - cutbit.get_xl());

@@ -7,6 +7,7 @@ module gui.listfile;
 import std.array;
 import std.algorithm;
 import std.conv;
+import std.string; // formatting assert message
 import std.typecons;
 
 import basics.user; // custom keys for navigating the file list
@@ -58,18 +59,16 @@ public:
     @property int bottom_button()      { return _bottom_button;     }
     @property int bottom_button(int i) { return _bottom_button = i; }
 
-    void set_activate_clicked_button() { _activate_clicked_button = true; }
-
     @property bool use_hotkeys()       { return _use_hotkeys;     }
     @property bool use_hotkeys(bool b) { return _use_hotkeys = b; }
 
 protected:
 
-/*  final void buttons_clear();
- *  final void button_push_back(Button b);
- */
-    abstract void add_file_button (in int from_top, in int total, in Filename);
-    abstract void add_flip_button ();
+    @property bool clicked(bool b) { return _clicked = b; }
+
+//  final    void   buttons_clear();
+    abstract Button new_file_button(int from_top, int total, in Filename);
+    abstract Button new_flip_button();
 
     enum OnDirLoadAction { CONTINUE, RELOAD, ABORT }
 
@@ -93,7 +92,6 @@ private:
     bool bottom_button_flips_page;
 
     bool _use_hotkeys;
-    bool _activate_clicked_button;
     bool _clicked;
 
     Filename[] files;
@@ -176,16 +174,6 @@ buttons_clear()
 
 
 
-protected final void
-button_push_back(Button b)
-{
-    b.undraw_color = color.gui_m;
-    buttons ~= b;
-    add_child(b);
-}
-
-
-
 public void
 highlight(in Filename fn)
 {
@@ -198,7 +186,9 @@ public void
 highlight_file_number(in int pos)
 {
     assert (pos >= -1);
-    assert (pos < files.length.to!int);
+    assert (pos < files.length.to!int,
+        format("%s.highlight_file_number(%d): argument must be < %d",
+        this, pos, files.length.to!int));
 
     if (pos == -1) {
         // file to be highlighted is not in the directory
@@ -217,19 +207,17 @@ highlight_file_number(in int pos)
     }
     _current_file = files[pos];
 
-    // Highlight-Button anklicken und Zeiger darauf setzen
     Button but = buttons[pos - file_number_at_top];
-    if (_activate_clicked_button) {
-        if (button_last_clicked == but) {
-            but.set_on(! but.get_on());
-        }
-        else if (button_last_clicked) {
-            button_last_clicked.set_off();
-            but.set_on();
-        }
-        else {
-            but.set_on();
-        }
+
+    if (button_last_clicked == but) {
+        but.on = ! but.on;
+    }
+    else if (button_last_clicked) {
+        button_last_clicked.on = false;
+        but.on = true;
+    }
+    else {
+        but.on = true;
     }
     _button_last_clicked = but;
     on_file_highlight();
@@ -281,8 +269,7 @@ load_current_dir()
     bottom_button_flips_page = false;
     buttons_clear();
     _button_last_clicked = null;
-
-    Filename[] files;
+    files = null;
 
     try files = _file_finder(_current_dir)
         .filter!(a => _search_crit(a)).array();
@@ -310,18 +297,30 @@ load_current_dir()
         --file_number_at_top;
 
     int next_from_file = file_number_at_top;
+
+    void add_file_button(in int i)
+    {
+        Button b = new_file_button(i, next_from_file, files[next_from_file]);
+        b.undraw_color = color.gui_m;
+        buttons ~= b;
+        add_child(b);
+        ++next_from_file;
+    }
+
     for (int i = 0; i < bottom_button
      && next_from_file < files.length; ++i) {
-        add_file_button(i, next_from_file, files[next_from_file]);
-        ++next_from_file;
+        add_file_button(i);
     }
     // Add page-flipping button, unless we're filling the first page exactly
     if (next_from_file == files.length - 1 && page == 0) {
-        add_file_button(_bottom_button, next_from_file, files[next_from_file]);
-        ++next_from_file;
+        add_file_button(_bottom_button);
     }
     else if (next_from_file < files.length || page > 0) {
-        add_flip_button();
+        // looks similar to add_file_button() above
+        Button b = new_flip_button();
+        b.undraw_color = color.gui_m;
+        buttons ~= b;
+        add_child(b);
         bottom_button_flips_page = true;
     }
 
@@ -331,7 +330,7 @@ load_current_dir()
             if (i != _bottom_button || ! bottom_button_flips_page)
                 if (_current_file == files[file_number_at_top + i]) {
                     _button_last_clicked = buttons[i];
-                    _button_last_clicked.set_on();
+                    _button_last_clicked.on = true;
                 }
 }
 
@@ -361,7 +360,7 @@ calc_self()
     }
     // end foreach Button
 
-    if (_use_hotkeys && _activate_clicked_button && buttons.length) {
+    if (_use_hotkeys && buttons.length) {
         bool any_movement_with_keys = true;
         if      (key_once(basics.user.key_me_up_1))   highlight_move(-1);
         else if (key_once(basics.user.key_me_up_5))   highlight_move(-5);

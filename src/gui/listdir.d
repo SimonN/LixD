@@ -5,6 +5,7 @@ module gui.listdir;
  * ListFile is slightly beefed up and got hooks to accomodate this.
  */
 
+import std.string; // formatting an assert message
 import std.conv;
 import std.typecons;
 
@@ -13,9 +14,11 @@ import graphic.color;
 import gui;
 import file.filename;
 import file.language;
+import file.log;
 import file.search;
 
-class ListDir : ListFile {
+// see the comment in override on_dir_load() for why this is a final class
+final class ListDir : ListFile {
 
 public:
 
@@ -38,7 +41,7 @@ private:
     @disable @property const(Filename) current_file();
 
     Rebindable!(const Filename) _base_dir;
-    Button dir_up;
+    TextButton dir_up;
 
     ListFile _list_file; // this is reloaded when our dir changes
 
@@ -63,7 +66,10 @@ public this(Geom g)
 
 public ~this()
 {
-    if (dir_up) destroy(dir_up);
+    if (dir_up) {
+        rm_child(dir_up);
+        destroy(dir_up);
+    }
 }
 
 
@@ -113,56 +119,82 @@ protected override super.OnDirLoadAction
 on_dir_load()
 {
     assert (_base_dir, "base directory not set, can't load a dir without it");
-    if (! file.search.dir_exists(current_dir)
-     || ! current_dir.is_child_of(_base_dir)) {
-        current_dir = base_dir;       // again goes through load_current_dir()
-        return OnDirLoadAction.ABORT; // abort the original pass through it
-    }
+    // this must happen even on a non-existing dir
     if (dir_up) {
         rm_child(dir_up);
         destroy(dir_up);
         dir_up = null;
     }
+    // this assert is the reason for finality of this class
+    assert (children.length == 0,
+        format("there should be 0 children, not %d, before any adding buttons",
+        children.length));
+
+    // sanity checks
+    immutable bool bad_exists  = ! file.search.dir_exists(current_dir);
+    immutable bool bad_child   = ! current_dir.is_child_of(_base_dir);
+
+    if (bad_exists || bad_child) {
+        if (! file.search.dir_exists(base_dir)) {
+            // this is extremely bad, abort immediately
+            Log.logf("Base dir `%s' is missing. Broken installation?",
+                base_dir.rootful);
+            return OnDirLoadAction.ABORT;
+        }
+        else if (bad_exists)
+            Log.logf("`%s' doesn't exist. Falling back to `%s'.",
+            current_dir.rootful, base_dir.rootful);
+        else if (bad_child)
+            Log.logf("`%s' is not a subdir of `%s'. Falling back to that.",
+            current_dir.rootful, base_dir.rootful);
+
+        current_dir = base_dir;       // again goes through load_current_dir()
+        return OnDirLoadAction.ABORT; // abort the original pass through it
+    }
+
     if (super.current_dir == _base_dir) {
         bottom_button = ylg.to!int / 20 - 1;
     }
     else {
         bottom_button = ylg.to!int / 20 - 2;
-        TextButton dir_up = new TextButton(new Geom(0, 0, xlg, 20, From.TOP));
+        assert (dir_up is null);
+        dir_up = new TextButton(new Geom(0, 0, xlg, 20, From.TOP));
         dir_up.text = Lang.common_dir_parent.transl;
         dir_up.undraw_color = color.gui_m;
-        dir_up.set_hotkey(basics.user.key_me_up_dir);
-        dir_up.on_click = &set_current_dir_to_parent_dir;
+        dir_up.hotkey = basics.user.key_me_up_dir;
         add_child(dir_up);
+        // We don't put the children-deleting function onto dir_up.on_click,
+        // because I fear bugs from removing array elements during foreach.
+        // Instead, I check for this in calc_self.
     }
     return OnDirLoadAction.CONTINUE;
 }
 
 
 
-private void make_textbutton(int y, string str)
+private final TextButton make_textbutton(int y, string str)
 {
     TextButton b = new TextButton(new Geom(0, y, xlg, 20, Geom.From.TOP));
     b.text = str;
-    button_push_back(b);
+    return b;
 }
 
 
 
-protected override void
-add_file_button(in int from_top, in int total, in Filename fn)
+protected override Button
+new_file_button(int from_top, int total, in Filename fn)
 {
     // the first slot may have been taken by the dir_up button.
     immutable plus_y = dir_up ? 20 : 0;
-    make_textbutton(20 * from_top + plus_y, fn.dir_innermost);
+    return make_textbutton(20 * from_top + plus_y, fn.dir_innermost);
 }
 
 
 
-protected override void
-add_flip_button()
+protected override Button
+new_flip_button()
 {
-    make_textbutton(ylg.to!int - 20, Lang.common_dir_flip_page.transl);
+    return make_textbutton(ylg.to!int - 20, Lang.common_dir_flip_page.transl);
 }
 
 
@@ -171,12 +203,25 @@ protected override void
 on_file_highlight()
 {
     // the file buttons represent dirs that can be switched into
-    string str = current_dir.rootless;
+    string str = super.current_file.rootless;
     if (! str.length) return;
     if (str[$-1] != '/') str ~= '/';
 
     current_dir = new Filename(str);
-    if (_list_file) _list_file.current_dir = current_dir;
+    if (_list_file)
+        _list_file.current_dir = current_dir;
+}
+
+
+
+protected override void
+calc_self()
+{
+    super.calc_self();
+    if (dir_up && dir_up.clicked) {
+        set_current_dir_to_parent_dir();
+        this.clicked = true;
+    }
 }
 
 }

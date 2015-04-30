@@ -12,14 +12,14 @@ module basics.mainloop;
 
 import basics.alleg5;
 import basics.demo;
-import gui;
 import hardware.display;
 import hardware.keyboard;
-import hardware.mouse;
-import hardware.mousecur;
-import hardware.sound;
 import menu.mainmenu;
 import menu.browsin;
+
+static import gui;
+static import hardware.mousecur;
+static import hardware.sound;
 
 class MainLoop {
 
@@ -46,6 +46,7 @@ private:
 
     MainMenu main_menu;
     BrowserSingle brow_sin;
+
     Demo demo;
 
 
@@ -90,9 +91,14 @@ calc()
             brow_sin = new BrowserSingle;
             gui.add_elder(brow_sin);
         }
-        else if (main_menu.exit_program) {
+        else if (main_menu.goto_network) {
+            // DTODO: as long as networking isn't developed, this goes to demo
             kill();
             demo = new Demo;
+        }
+        else if (main_menu.exit_program) {
+            kill();
+            exit = true;
         }
     }
     else if (brow_sin) {
@@ -120,7 +126,8 @@ draw()
 {
     // main_menu etc. are GUI Windows. Those have been added as elders and
     // are therefore supervised by module gui.root.
-    if (demo) demo   .draw();
+
+    if (demo) demo.draw();
 
     gui              .draw();
     hardware.mousecur.draw();

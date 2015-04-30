@@ -24,8 +24,6 @@ class ListLevel : ListFile {
 
 public:
 
-/*  this(from, x, y, xl, yl); -- will set file_sorter to using ordering file
- */
     void write_file_names(bool b) { _write_file_names = b; }
     void replay_style    (bool b) { _replay_style     = b; }
     void checkmark_style (bool b) { _checkmark_style  = b; }
@@ -56,14 +54,14 @@ this(Geom g)
     super(g);
     search_crit = &search_crit_level;
     file_sorter = delegate void(Filename[] arr) {
-        sort_filenames_by_order_txt_then_alpha(file_list, current_dir, false);
+        sort_filenames_by_order_txt_then_alpha(arr, current_dir, false);
     };
 }
 
 
 
-protected override void
-add_file_button(in int nr_from_top, in int total_nr, in Filename fn)
+protected override Button
+new_file_button(int nr_from_top, int total_nr, in Filename fn)
 {
     string button_text;
     // We're using ' ' to pad spaces before the digits whenever there are
@@ -75,7 +73,7 @@ add_file_button(in int nr_from_top, in int total_nr, in Filename fn)
         int      leading_spaces = 0;
         while (max /= 10) ++leading_spaces;
         while (cur /= 10) --leading_spaces;
-        button_text ~= format("%s%d.",
+        button_text ~= format("%s%d. ",
                        ' '.repeat(leading_spaces), total_nr + 1);
         // filename or fetched level name will be written later on.
     }
@@ -86,6 +84,7 @@ add_file_button(in int nr_from_top, in int total_nr, in Filename fn)
     LevelMetaData lev;
 
     if (_replay_style) {
+        assert (false, "replay style not implemented yet");
         // DTODOREPLAY
         /*
         Replay r(f);
@@ -112,18 +111,18 @@ add_file_button(in int nr_from_top, in int total_nr, in Filename fn)
         }
         else t.check_frame = 0;
     }
-    button_push_back(t);
+    return t;
 }
 
 
 
-protected override void
-add_flip_button()
+protected override Button
+new_flip_button()
 {
     TextButton t = new TextButton(new Geom(0,
         bottom_button() * 20, xlg, 20)); // both 20 == height of button
     t.text = Lang.common_dir_flip_page.transl;
-    button_push_back(t);
+    return t;
 }
 
 }

@@ -61,16 +61,16 @@ public this()
     _exit   = buttext_height(Geom.From.TOP,       3);
 
     single .text = Lang.browser_single_title.transl;
-    network.text = Lang.win_lobby_title.transl;
+    network.text = "Demo (Shift+ESC to exit)"; // win_lobby_title.transl DTODO
     replay .text = Lang.browser_replay_title.transl;
     options.text = Lang.option_title.transl;
     _exit  .text = Lang.common_exit.transl;
 
-    single .set_hotkey(basics.user.key_me_main_single);
-    network.set_hotkey(basics.user.key_me_main_network);
-    replay .set_hotkey(basics.user.key_me_main_replay);
-    options.set_hotkey(basics.user.key_me_main_options);
-    _exit  .set_hotkey(basics.user.key_me_exit);
+    single .hotkey = basics.user.key_me_main_single;
+    network.hotkey = basics.user.key_me_main_network;
+    replay .hotkey = basics.user.key_me_main_replay;
+    options.hotkey = basics.user.key_me_main_options;
+    _exit  .hotkey = basics.user.key_me_exit;
 
     import std.conv;
     versioning = new Label(new Geom(0, 40, xlg, 20, Geom.From.BOTTOM),

@@ -10,6 +10,7 @@ import std.conv;
 
 import gui;
 import basics.globals;
+import graphic.color;
 import graphic.cutbit;
 import graphic.gralib;
 
@@ -22,12 +23,12 @@ class TextButton : Button {
         // to the uniformly colored center. Each side has a thickness of 2.
         // The checkmark already accounts for this.
         // The checkmark is at the right of the button, for all text aligns.
-        alias th  = Geom.thickg;
+        float th  = Geom.thickg * 2; // *2 for nice spacing at ends
         alias lef = Geom.From.LEFT;
         alias ctr = Geom.From.CENTER;
         left         = new Label(new Geom(th, 0, g.xl - 2*th,      0, lef));
         left_check   = new Label(new Geom(th, 0, g.xl - th-ch_xlg, 0, lef));
-        center       = new Label(new Geom(0,  0, g.xl - 2*th,      0, ctr));
+        center       = new Label(new Geom(0,  0, g.xl - 1*th,      0, ctr));
         center_check = new Label(new Geom(0,  0, g.xl - 2*ch_xlg,  0, ctr));
 
         check_geom = new Geom(0, 0, ch_xlg, ch_xlg, Geom.From.RIGHT);
@@ -36,14 +37,14 @@ class TextButton : Button {
         add_children(left, left_check, center, center_check);
     }
 
-    bool align_left() const { return _align_left;                          }
-    bool align_left(bool b) { _align_left = b; prep(); return _align_left; }
+    bool align_left() const { return _align_left;                            }
+    bool align_left(bool b) { _align_left=b; req_draw(); return _align_left; }
 
     string text() const      { return _text;                }
-    string text(in string s) { _text = s; prep(); return s; }
+    string text(in string s) { _text = s; req_draw(); return s; }
 
-    int check_frame() const { return _check_frame;                           }
-    int check_frame(int i)  { _check_frame = i; prep(); return _check_frame; }
+    int check_frame() const { return _check_frame;                            }
+    int check_frame(int i)  { _check_frame=i;req_draw(); return _check_frame; }
 
 private:
 
@@ -62,31 +63,18 @@ private:
 
 
 
-// need to move these rendering methods into something in Element, such that
-// it's NVI-conformally called by req_draw(); -- or maybe not, since these
-// are pretty complex with the text rendering, which is unnecessary at click
-private void
-prep()
-{
-    req_draw();
-    foreach (label; [ left, left_check, center, center_check ]) {
-        label.text = "";
-    }
-    switch (_align_left * 2 + (_check_frame != 0)) {
-        case 0: center      .text = _text; break;
-        case 1: center_check.text = _text; break;
-        case 2: left        .text = _text; break;
-        case 3: left_check  .text = _text; break;
-        default: assert (false);
-    }
-}
-
-
-
 protected override void
 draw_self()
 {
     super.draw_self();
+
+    auto label_list = [ center, center_check, left, left_check ];
+    foreach (label; label_list)
+        label.text = "";
+    with (label_list[_align_left * 2 + (_check_frame != 0)]) {
+        text  = this._text;
+        color = this.get_color_text();
+    }
 
     // Draw the checkmark, which doesn't overlap with the children.
     // There's a (ch_xlg) x (ch_xlg) area reserved for the cutbit on the right.
@@ -96,7 +84,7 @@ draw_self()
         cb.draw(guiosd,
             to!int(check_geom.xs + check_geom.xls/2 - cb.get_xl()/2),
             to!int(check_geom.ys + check_geom.yls/2 - cb.get_xl()/2),
-            _check_frame, 2 * (get_on() && ! get_down())
+            _check_frame, 2 * (on && ! down)
         );
     }
 }

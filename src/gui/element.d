@@ -38,9 +38,9 @@ abstract class Element {
     @property void hide() { hidden = true;  }
     @property void show() { hidden = false; }
 
-    void hide_all_children() { foreach (child; children) child.hide(); }
+    void hide_all_children() { foreach (child; _children) child.hide(); }
 
-    inout(Element[]) get_children() inout { return children; }
+    @property inout(Element[]) children() inout { return _children; }
 
     bool is_parent_of(in Element ch) const { return _geom is ch._geom.parent; }
 
@@ -97,7 +97,7 @@ private:
     bool drawn;
     bool draw_required;
 
-    Element[] children;
+    Element[] _children;
 
 
 
@@ -114,7 +114,7 @@ this(Geom g)
 
 ~this()
 {
-    foreach (child; children) {
+    foreach (child; _children) {
         assert (child._geom.parent is this._geom,
             "upon destruction, child without properly-set parent exists");
         child._geom.parent = null;
@@ -125,11 +125,11 @@ this(Geom g)
 
 void add_child(Element e)
 {
-    assert (children.find!"a is b"(e) == [], "child has been added before");
-    assert (e._geom.parent is null,          "child has a parent already");
+    assert (_children.find!"a is b"(e) == [], "child has been added before");
+    assert (e._geom.parent is null,           "child has a parent already");
 
     e._geom.parent = this._geom;
-    children ~= e;
+    _children ~= e;
 }
 
 
@@ -144,7 +144,7 @@ void add_children(Element[] elements ...)
 
 bool rm_child(Element e)
 {
-    auto found = children.find!"a is b"(e);
+    auto found = _children.find!"a is b"(e);
     assert (found != [], "child doesn't exist, can't be removed");
 
     auto fe = found[0];
@@ -152,7 +152,7 @@ bool rm_child(Element e)
         "gui element in child list without its parent set");
     fe._geom.parent = null;
     // remove(n) removes the item with index n. We wish to remove fe.
-    children.remove(children.length - found.length);
+    _children = _children.remove(_children.length - found.length);
     return true;
 }
 
@@ -162,9 +162,9 @@ void
 req_draw()
 {
     draw_required = true;
-    foreach (child; children) child.draw_required = true;
+    foreach (child; _children)
+        child.req_draw();
 }
-
 
 
 
@@ -181,7 +181,7 @@ bool is_mouse_here() const
 final void calc()
 {
     if (_hidden) return;
-    foreach (child; children) child.calc_self();
+    foreach (child; _children) child.calc();
     calc_self();
 }
 
@@ -190,7 +190,7 @@ final void calc()
 final void work()
 {
     if (_hidden) return;
-    foreach (child; children) child.work_self();
+    foreach (child; _children) child.work();
     work_self();
 }
 
@@ -207,8 +207,8 @@ final void draw()
         // In the options menu, all stuff has to be undrawn first, then
         // drawn, so that rectangles don't overwrite proper things.
         // Look into this function (final void draw) below.
-        foreach (c; children) if (  c.hidden) c.draw();
-        foreach (c; children) if (! c.hidden) c.draw();
+        foreach (c; _children) if (  c.hidden) c.draw();
+        foreach (c; _children) if (! c.hidden) c.draw();
     }
     // hidden
     else

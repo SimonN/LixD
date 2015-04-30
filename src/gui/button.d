@@ -15,36 +15,35 @@ import hardware.mouse;
 
 class Button : Element {
 
-    this(Geom g)                 { super(g); }
+    this(Geom g) { super(g); }
 
-    bool get_down() const        { return down;              }
-    bool get_on  () const        { return on;                }
-    void set_down(bool b = true) { down = b;     req_draw(); }
-    void set_on  (bool b = true) { on   = b;     req_draw(); }
-    void set_off ()              { on   = false; req_draw(); }
+    @property bool down() const { return _down; }
+    @property bool on  () const { return _on;   }
+    @property bool down(bool b) { _down = b; req_draw(); return _down; }
+    @property bool on  (bool b) { _on   = b; req_draw(); return _on;   }
 
-    bool get_warm() const        { return warm; }
-    bool get_hot () const        { return hot;  }
-    void set_warm(bool b = true) { warm = b; hot  = false; }
-    void set_hot (bool b = true) { hot  = b; warm = false; }
+    @property bool warm() const { return _warm; }
+    @property bool hot () const { return _hot;  }
+    @property bool warm(bool b) { _warm = b; _hot  = false; return _warm; }
+    @property bool hot (bool b) { _hot  = b; _warm = false; return _hot;  }
 
-    AlCol get_color_text()       { return on && ! down ? color.gui_text_on
-                                                       : color.gui_text; }
-    int  get_hotkey() const      { return hotkey; }
-    void set_hotkey(int i = 0)   { hotkey = i;    }
+    AlCol get_color_text()      { return _on && ! _down ? color.gui_text_on
+                                                        : color.gui_text; }
+    @property int  hotkey() const    { return _hotkey;     }
+    @property int  hotkey(int i = 0) { return _hotkey = i; }
 
-    @property bool clicked() const             { return clicked_last_calc; }
+    @property bool clicked() const             { return _clicked_last_calc; }
     @property void on_click(void delegate() f) { _on_click = f; }
 
 private:
 
-    bool warm;   // if true, activate upon mouse click, not on mouse release
-    bool hot;    // if true, activate upon mouse down,  not on click/release
-    int  hotkey; // default is 0, which is not a key.
+    bool _warm;   // if true, activate upon mouse click, not on mouse release
+    bool _hot;    // if true, activate upon mouse down,  not on click/release
+    int  _hotkey; // default is 0, which is not a key.
 
-    bool clicked_last_calc;
-    bool down;
-    bool on;
+    bool _clicked_last_calc;
+    bool _down;
+    bool _on;
 
     void delegate() _on_click;
 
@@ -58,35 +57,35 @@ calc_self()
     immutable bool mouse_here = is_mouse_here();
 
     if (hidden) {
-        clicked_last_calc = false;
+        _clicked_last_calc = false;
     }
     else {
         // Appear pressed down, but not activated? This is only possible
         // in cold mode. We're using the same check for switching back off
         // a warm button too, but never for hot buttons.
-        if (! hot) {
-            if (mouse_here && get_mlh() && (! warm || ! on)) {
-                if (! down) req_draw();
-                down = true;
+        if (! _hot) {
+            if (mouse_here && get_mlh() && (! _warm || ! _on)) {
+                if (! _down) req_draw();
+                _down = true;
             }
             else {
-                if (down) req_draw();
-                down = false;
+                if (_down) req_draw();
+                _down = false;
             }
         }
         // Active clicking.
         // If the hotkey is ALLEGRO_KEY_ENTER, then we allow
         // ALLEGRO_KEY_PAD_ENTER too.
         bool b =
-            (! warm && ! hot && mouse_here && get_mlr())
-         || (  warm && ! hot && mouse_here && get_ml ())
-         || (            hot && mouse_here && get_mlh());
+            (! _warm && ! _hot && mouse_here && get_mlr())
+         || (  _warm && ! _hot && mouse_here && get_ml ())
+         || (             _hot && mouse_here && get_mlh());
         // See module hardware.keyboard for why Enter is separated
-        if (hotkey == ALLEGRO_KEY_ENTER) b = b || key_enter_once();
-        else                             b = b || key_once(hotkey);
+        if (_hotkey == ALLEGRO_KEY_ENTER) b = b || key_enter_once();
+        else                              b = b || key_once(_hotkey);
 
-        clicked_last_calc = b;
-        if (_on_click !is null && clicked_last_calc) _on_click();
+        _clicked_last_calc = b;
+        if (_on_click !is null && _clicked_last_calc) _on_click();
     }
 }
 
@@ -96,9 +95,9 @@ override void
 draw_self()
 {
     // select the colors according to the button's state
-    immutable c1 = down ? color.gui_down_d : on ? color.gui_on_d : color.gui_l;
-    immutable c2 = down ? color.gui_down_m : on ? color.gui_on_m : color.gui_m;
-    immutable c3 = down ? color.gui_down_l : on ? color.gui_on_l : color.gui_d;
+    auto c1 = _down ? color.gui_down_d : _on ? color.gui_on_d : color.gui_l;
+    auto c2 = _down ? color.gui_down_m : _on ? color.gui_on_m : color.gui_m;
+    auto c3 = _down ? color.gui_down_l : _on ? color.gui_on_l : color.gui_d;
 
     draw_3d_button(xs, ys, xls, yls, c1, c2, c3);
 }

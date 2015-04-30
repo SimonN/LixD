@@ -33,7 +33,7 @@ class Window : Element {
 
     override void hide_all_children()
     {
-        foreach (child; get_children())
+        foreach (child; children)
             if (child !is label_title)
                 child.hidden = true;
     }
