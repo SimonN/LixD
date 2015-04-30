@@ -68,10 +68,10 @@ this()
     myhatch2 = new Graphic(hatch_cb, osd);
 
     // test gui elements
-    elems ~= new Frame (Geom.From.BOTTOM_RIGHT, 40, 50, 60, 70);
-    elems ~= new Button(Geom.From.BOTTOM_RIGHT, 40, 50, 60, 50);
+    elems ~= new Frame (new Geom(40, 50, 60, 70, Geom.From.BOTTOM_RIGHT));
+    elems ~= new Button(new Geom(40, 50, 60, 50, Geom.From.BOTTOM_RIGHT));
     elems ~= () {
-        auto a = new TextButton(Geom.From.BOTTOM, 0, 20);
+        auto a = new TextButton(new Geom(0, 20, 100, 20, Geom.From.BOTTOM));
         import file.language;
         a.text = Lang.editor_button_SELECT_COPY.transl;
         return a;

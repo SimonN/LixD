@@ -44,16 +44,9 @@ private:
 
 
 
-public this(in int x, in int y, in int xl, in int yl)
+public this(Geom g)
 {
-    this(Geom.From.TOP_LEFT, x, y, xl, yl);
-}
-
-
-
-public this(Geom.From from, in int x, in int y, in int xl, in int yl)
-{
-    super(from, x, y, xl, yl);
+    super(g);
 
     file_finder = &(file.search.find_dirs);
     search_crit = function bool(in Filename fn) {
@@ -135,8 +128,7 @@ on_dir_load()
     }
     else {
         bottom_button = ylg.to!int / 20 - 2;
-        TextButton dir_up = new TextButton(Geom.From.TOP,
-                            0, 0, xlg.to!int, 20);
+        TextButton dir_up = new TextButton(new Geom(0, 0, xlg, 20, From.TOP));
         dir_up.text = Lang.common_dir_parent.transl;
         dir_up.undraw_color = color.gui_m;
         dir_up.set_hotkey(basics.user.key_me_up_dir);
@@ -150,8 +142,7 @@ on_dir_load()
 
 private void make_textbutton(int y, string str)
 {
-    TextButton b = new TextButton(Geom.From.TOP,
-                   0, y, xlg.to!int, 20);
+    TextButton b = new TextButton(new Geom(0, y, xlg, 20, Geom.From.TOP));
     b.text = str;
     button_push_back(b);
 }

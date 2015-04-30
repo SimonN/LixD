@@ -111,20 +111,13 @@ private:
 
 public:
 
-this(in int x, in int y, in int xl, in int yl)
+this(Geom g)
 {
-    this(Geom.From.TOP_LEFT, x, y, xl, yl);
-}
-
-
-
-this(Geom.From from, in int x, in int y, in int xl, in int yl)
-{
-    super(from, x, y, xl, yl);
+    super(g);
     _file_finder   = &default_file_finder;
     _search_crit   = &default_search_crit;
     _file_sorter   = &default_file_sorter;
-    _bottom_button = yl / 20 - 1;
+    _bottom_button = g.yl.to!int / 20 - 1;
     _use_hotkeys   = true;
     undraw_color   = color.gui_m;
 }

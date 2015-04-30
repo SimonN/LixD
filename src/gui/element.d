@@ -9,10 +9,7 @@ import hardware.mouse; // is_mouse_here
 
 abstract class Element {
 
-/*  this([Geom.From], x, y, xl, yl);
- *
- *      has the same constructors as class Geom
- *
+/*  this(geom);
  *  ~this();
  *
  *      un-parents all children
@@ -59,13 +56,7 @@ abstract class Element {
  *  bool rm_child    (Element e);
  *
  *      The children are a set, you can have each child only once in there.
- *      The functions return true if the set of children has been changed,
- *      i.e., if the add added a new child, or the rm has found its arg.
- *
  *      The argument must be mutable, since e.geom.parent will be set.
- *
- *      add_children(Element[] ...) returns true iff all individual calls
- *      to add_child() return true.
  *
  *  final void calc();
  *  final void work();
@@ -112,17 +103,9 @@ private:
 
 public:
 
-this(in int x = 0, in int y = 0, in int xl = 20, in int yl = 20)
+this(Geom g)
 {
-    this(Geom.From.TOP_LEFT, x, y, xl, yl);
-}
-
-
-
-this(in Geom.From from, in int x  = 0,  in int  y =  0,
-                        in int xl = 20, in int yl = 20)
-{
-    _geom         = new Geom(from, x, y, xl, yl);
+    _geom         = g;
     _undraw_color = color.transp;
     draw_required = true;
 }
@@ -140,23 +123,21 @@ this(in Geom.From from, in int x  = 0,  in int  y =  0,
 
 
 
-bool add_child(Element e)
+void add_child(Element e)
 {
-    if (children.find!"a is b"(e) != []) return false;
-    if (e._geom.parent !is null) return false;
+    assert (children.find!"a is b"(e) == [], "child has been added before");
+    assert (e._geom.parent is null,          "child has a parent already");
 
     e._geom.parent = this._geom;
     children ~= e;
-    return true;
 }
 
 
 
-bool add_children(Element[] elements ...)
+void add_children(Element[] elements ...)
 {
-    bool ret = true;
-    foreach (e; elements) ret = add_child(e) && ret;
-    return ret;
+    foreach (e; elements)
+        add_child(e);
 }
 
 
@@ -164,7 +145,7 @@ bool add_children(Element[] elements ...)
 bool rm_child(Element e)
 {
     auto found = children.find!"a is b"(e);
-    if (found == []) return false;
+    assert (found != [], "child doesn't exist, can't be removed");
 
     auto fe = found[0];
     assert (fe._geom.parent is this._geom,

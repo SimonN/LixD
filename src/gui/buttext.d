@@ -15,26 +15,22 @@ import graphic.gralib;
 
 class TextButton : Button {
 
-    this(in int x = 0, in int y = 0, in int xl = 100, in int yl = 20)
+    this(Geom g)
     {
-        this(Geom.From.TOP_LEFT, x, y, xl, yl);
-    }
-
-    this(Geom.From from, in int x  =   0, in int y  =  0,
-                         in int xl = 100, in int yl = 20)
-    {
-        super(from, x, y, xl, yl);
+        super(g);
         // the text should not be drawn on the 3D part of the button, but only
         // to the uniformly colored center. Each side has a thickness of 2.
         // The checkmark already accounts for this.
         // The checkmark is at the right of the button, for all text aligns.
-        immutable th = Geom.thickg;
-        left         = new Label(Geom.From.LEFT,  th, 0, xl - 2 * th);
-        left_check   = new Label(Geom.From.LEFT,  th, 0, xl - th - ch_xlg);
-        center       = new Label(Geom.From.CENTER, 0, 0, xl - 2 * th);
-        center_check = new Label(Geom.From.CENTER, 0, 0, xl - 2 * ch_xlg);
+        alias th  = Geom.thickg;
+        alias lef = Geom.From.LEFT;
+        alias ctr = Geom.From.CENTER;
+        left         = new Label(new Geom(th, 0, g.xl - 2*th,      0, lef));
+        left_check   = new Label(new Geom(th, 0, g.xl - th-ch_xlg, 0, lef));
+        center       = new Label(new Geom(0,  0, g.xl - 2*th,      0, ctr));
+        center_check = new Label(new Geom(0,  0, g.xl - 2*ch_xlg,  0, ctr));
 
-        check_geom   = new Geom(Geom.From.RIGHT, 0, 0, ch_xlg, ch_xlg);
+        check_geom = new Geom(0, 0, ch_xlg, ch_xlg, Geom.From.RIGHT);
         check_geom.parent = this.geom;
 
         add_children(left, left_check, center, center_check);

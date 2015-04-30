@@ -44,14 +44,14 @@ public this()
     TextButton buttext_height(Geom.From from, int height)
     {
         int heightg = Window.title_ylg + but_spg + height*(but_ylg+but_spg);
-        return new TextButton(from,
+        return new TextButton(new Geom(
             height == 2 ? but_spg : 0,         heightg,
-            height == 2 ? but_slg : but_xlg,   but_ylg);
+            height == 2 ? but_slg : but_xlg,   but_ylg, from));
     }
 
-    super(Geom.From.CENTER, 0, 0,
+    super(new Geom(0, 0,
         but_xlg     + but_spg * 2,                  // 80 = labels and space
-        but_ylg * 4 + but_spg * 4 + Window.title_ylg + 80,
+        but_ylg * 4 + but_spg * 4 + Window.title_ylg + 80, Geom.From.CENTER),
         basics.globals.main_name_of_game);
 
     single  = buttext_height(Geom.From.TOP,       0);
@@ -72,12 +72,11 @@ public this()
     options.set_hotkey(basics.user.key_me_main_options);
     _exit  .set_hotkey(basics.user.key_me_exit);
 
-    // DTODO: make constructor of Label take floats, because xlg is float
     import std.conv;
-    versioning = new Label(Geom.From.BOTTOM, 0, 40, xlg.to!int,
+    versioning = new Label(new Geom(0, 40, xlg, 20, Geom.From.BOTTOM),
         transl(Lang.main_version) ~ " " ~ get_version_string());
 
-    website = new Label(Geom.From.BOTTOM, 0, 20, xlg.to!int,
+    website    = new Label(new Geom(0, 20, xlg, 20, Geom.From.BOTTOM),
         basics.globals.main_website);
 
     add_children(single, network, replay, options, _exit,

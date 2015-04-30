@@ -15,17 +15,7 @@ import hardware.mouse;
 
 class Button : Element {
 
-    this(in int x  =   0, in int y  =  0,
-         in int xl = 100, in int yl = 20)
-    {
-        this(Geom.From.TOP_LEFT, x, y, xl, yl);
-    }
-
-    this(Geom.From from, in int x  =   0, in int y  =  0,
-                         in int xl = 100, in int yl = 20)
-    {
-        super(from, x, y, xl, yl);
-    }
+    this(Geom g)                 { super(g); }
 
     bool get_down() const        { return down;              }
     bool get_on  () const        { return on;                }

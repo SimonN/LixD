@@ -16,14 +16,10 @@ import gui;
 
 class Label : Element {
 
-    this(int x = 0, int y = 0, int xl = 100, string s = "")
+    this(Geom g, string s = "")
     {
-        this(Geom.From.TOP_LEFT, x, y, xl, s);
-    }
-
-    this(Geom.From from, int x = 0, int y = 0, int xl = 100, string s = "")
-    {
-        super(from, x, y, xl, 20);
+        g.yl = 20;
+        super(g);
         _font  = djvu_m;
         _text  = s;
         _color = graphic.color.color.gui_text;

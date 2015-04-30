@@ -66,22 +66,22 @@ private:
 public:
 
 this(
-       string      window_title,
+    in string      window_title,
     in Filename    base_dir,
        Filename    current_file,
     UseCheckmarks  use_checkmarks = UseCheckmarks.no,
     UseReplayStyle replay_style   = UseReplayStyle.no
 ) {
-    super(0, 0, Geom.screen_xlg.to!int, Geom.screen_ylg.to!int, title);
+    super(new Geom(0, 0, Geom.screen_xlg, Geom.screen_ylg), window_title);
 
     immutable int lxlg = to!int(Geom.screen_xlg - 100 - 140 - 4*20);
 
-    dir_list = new ListDir  (20,  40, 100,  420);
-    lev_list = new ListLevel(140, 40, lxlg, 420);
+    dir_list = new ListDir  (new Geom(20,  40, 100,  420));
+    lev_list = new ListLevel(new Geom(140, 40, lxlg, 420));
 
-    button_play = new TextButton(Geom.From.TOP_RIGHT,    20,  40, 140,  40);
-    preview     = new Preview   (Geom.From.TOP_RIGHT,    20, 100, 140, 100);
-    button_exit = new TextButton(Geom.From.BOTTOM_RIGHT, 20,  20, 140,  40);
+    button_play = new TextButton(new Geom(20,  40, 140,  40, From.TOP_RIG));
+    preview     = new Preview   (new Geom(20, 100, 140, 100, From.TOP_RIG));
+    button_exit = new TextButton(new Geom(20,  20, 140,  40, From.BOT_RIG));
 
     // preview_yl = 100 or 93 doesn't fit exactly for the 640x480 resolution,
     // the correct value there would have been 92. But it'll make the image
@@ -103,8 +103,8 @@ this(
 
 public void set_preview_y_and_yl(in int y, in int yl)
 {
-    preview.geom = new Geom(preview.geom.from,
-        preview.xg, y, preview.xlg, preview.ylg);
+    preview.geom = new Geom(preview.xg, y, preview.xlg, preview.ylg,
+        preview.geom.from);
     req_draw();
 }
 

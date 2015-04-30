@@ -9,18 +9,9 @@ import gui;
 
 class BitmapButton : Button {
 
-    static immutable int sizeg = 20; // in geoms
-
-    this(const(Cutbit) cb, in int x = 0, in int y = 0,
-        in int xl = sizeg, in int yl = sizeg)
+    this(Geom g, const(Cutbit) cb)
     {
-        this(Geom.From.TOP_LEFT, cb, x, y, xl, yl);
-    }
-
-    this(Geom.From from, const(Cutbit) cb, in int x = 0, in int y = 0,
-        in int xl = sizeg, in int yl = sizeg)
-    {
-        super(from, x, y, xl, yl);
+        super(g);
         cutbit = cb;
     }
 
@@ -53,15 +44,11 @@ protected:
 
 class Checkbox : BitmapButton {
 
-    this(int x = 0, int y = 0)
+    this(Geom g)
     {
-        this(Geom.From.TOP_LEFT, x, y);
-    }
-
-    this(Geom.From from, int x = 0, int y = 0)
-    {
-        super(from, get_internal(file_bitmap_menu_checkmark),
-            x, y, sizeg, sizeg);
+        g.xl = 20;
+        g.yl = 20;
+        super(g, get_internal(file_bitmap_menu_checkmark));
         this.on_click = &toggle;
     }
 

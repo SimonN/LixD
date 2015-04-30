@@ -67,6 +67,8 @@ import std.typecons; // rebindable
 import graphic.gralib; // to inform it about the screen scaling factor,
                        // so it can return scaled-drawn bitmaps later
 
+alias From = Geom.From;
+
 class Geom {
 
     Rebindable!(const Geom) parent;
@@ -77,10 +79,14 @@ class Geom {
     float xl;
     float yl;
 
-    enum From : ubyte {
+    enum From {
         TOP_LEFT    = 0x11,     TOP    = 0x12,     TOP_RIGHT    = 0x14,
         LEFT        = 0x21,     CENTER = 0x22,     RIGHT        = 0x24,
         BOTTOM_LEFT = 0x41,     BOTTOM = 0x42,     BOTTOM_RIGHT = 0x44,
+
+        // for convenience
+        TOP_LEF = TOP_LEFT,    TOP_RIG = TOP_RIGHT,
+        BOT_LEF = BOTTOM_LEFT, BOT_RIG = BOTTOM_RIGHT,
     }
 
     private static float _screen_xlg = 640;
@@ -113,16 +119,9 @@ class Geom {
 
 
 
-    this(float _x = 0, float _y = 0, float _xl = 20, float _yl = 20)
-    {
-        this(From.TOP_LEFT, _x, _y, _xl, _yl);
-    }
-
-
-
-    this(in From _from,
-        float _x  =  0, float _y  =  0,
-        float _xl = 20, float _yl = 20
+    this(
+        in float _x  =  0, in float _y  =  0,
+        in float _xl = 20, in float _yl = 20, in From _from = From.TOP_LEFT
     ) {
         parent = null;
         from   = _from;

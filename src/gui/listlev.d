@@ -51,15 +51,9 @@ private:
 
 public:
 
-this(int x, int y, int xl, int yl)
+this(Geom g)
 {
-    this(Geom.From.TOP_LEFT, x, y, xl, yl);
-}
-
-this(Geom.From from, int x, int y, int xl, int yl)
-{
-    super(from, x, y, xl, yl);
-
+    super(g);
     search_crit = &search_crit_level;
     file_sorter = delegate void(Filename[] arr) {
         sort_filenames_by_order_txt_then_alpha(file_list, current_dir, false);
@@ -104,7 +98,7 @@ add_file_button(in int nr_from_top, in int total_nr, in Filename fn)
         button_text ~= lev.name;
     }
 
-    TextButton t = new TextButton(0, nr_from_top * 20, xlg.to!int, 20);
+    TextButton t = new TextButton(new Geom(0, nr_from_top * 20, xlg, 20));
     t.text = button_text;
     t.align_left = true;
 
@@ -126,8 +120,8 @@ add_file_button(in int nr_from_top, in int total_nr, in Filename fn)
 protected override void
 add_flip_button()
 {
-    TextButton t = new TextButton(0,
-        bottom_button() * 20, xlg.to!int, 20); // both 20 == height of button
+    TextButton t = new TextButton(new Geom(0,
+        bottom_button() * 20, xlg, 20)); // both 20 == height of button
     t.text = Lang.common_dir_flip_page.transl;
     button_push_back(t);
 }

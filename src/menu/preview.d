@@ -19,14 +19,9 @@ class Preview : Frame {
 
 public:
 
-    this(int x, int y, int xl, int yl)
+    this(Geom g)
     {
-        this(Geom.From.TOP_LEFT, x, y, xl, yl);
-    }
-
-    this(Geom.From from, int x, int y, int xl, int yl)
-    {
-        super(from, x, y, xl, yl);
+        super(g);
         _status = LevelStatus.BAD_EMPTY;
         auto cb = get_internal(file_bitmap_preview_icon);
         icon_status = new Graphic(cb, guiosd);
