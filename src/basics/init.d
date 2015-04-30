@@ -51,6 +51,8 @@ void initialize(in Cmdargs cmdargs)
     graphic.textout.initialize();
     graphic.gralib.initialize();
 
+    hardware.mousecur.initialize();
+
     gui.initialize();
 
     level.tilelib.initialize();
@@ -63,6 +65,8 @@ void deinitialize()
     level.tilelib.deinitialize();
 
     gui.deinitialize();
+
+    hardware.mousecur.deinitialize();
 
     graphic.gralib.deinitialize();
     graphic.textout.deinitialize();

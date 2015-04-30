@@ -37,7 +37,7 @@ void initialize()
     // Other resolutions require us to scale the font size.
     assert (display, "need display height to estimate font size");
     sha_offs            = al_get_display_height(display) / 480f;
-    djvu_m_offs         = sha_offs * 3 - 2;
+    djvu_m_offs         = sha_offs * 4 - 3;
     immutable int size  = floor(sha_offs).to!int;
     immutable int flags = 0;
 

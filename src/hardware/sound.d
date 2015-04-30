@@ -6,14 +6,18 @@ import basics.user;
 import file.filename;
 import file.log;
 
-void initialize();
-void deinitialize();
-
-void play_loud   (in Sound);
-void play_quiet  (in Sound);
-void play_loud_if(in Sound, in bool);
-
-void draw_scheduled_sounds();
+/*  void initialize();
+ *  void deinitialize();
+ *
+ *  void play_loud   (in Sound);
+ *  void play_quiet  (in Sound);
+ *  void play_loud_if(in Sound, in bool);
+ *
+ *  void draw();
+ *
+ *      Draws all scheduled sounds. Drawing a sound == play it with the
+ *      library function.
+ */
 
 enum Sound {
     NOTHING,
@@ -154,7 +158,7 @@ void play_loud_if(in Sound id, in bool loud)
 
 
 
-void draw_scheduled_sounds()
+void draw()
 {
     foreach (ref sample; samples) {
         if (sample !is null) sample.draw();
@@ -223,7 +227,7 @@ this(in Filename fn)
 
 
 
-// draw plays a sample if it was scheduled by setting (loud) or (quiet)
+// draw plays each sample if it was scheduled by setting (loud) or (quiet)
 void draw()
 {
     if (! sample) return;

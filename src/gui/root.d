@@ -31,7 +31,7 @@ private:
     Element[] elders;
     Element[] focus;
 
-    bool clear_next_draw;
+    bool clear_next_draw = true;
 
 
 
@@ -45,7 +45,6 @@ initialize()
 
     guiosd = new Torbit(al_get_display_width (display),
                         al_get_display_height(display));
-    guiosd.clear_to_color(color.transp);
     assert (guiosd);
     Geom.set_screen_xyls(guiosd.get_xl(), guiosd.get_yl());
 }
@@ -73,7 +72,7 @@ add_elder(Element to_add)
 void
 rm_elder(Element to_rm)
 {
-    elders.remove!(a => a is to_rm);
+    elders = elders.remove!(a => a is to_rm);
     clear_next_draw = true;
 }
 
@@ -108,13 +107,13 @@ add_focus(Element to_add)
 void
 rm_focus(Element to_rm)
 {
-    focus.remove!(a => a is to_rm);
+    focus = focus.remove!(a => a is to_rm);
     clear_next_draw = true;
 }
 
 
 void
-calc_gui()
+calc()
 {
     if (focus.length > 0) {
         focus[$-1].calc();
@@ -129,7 +128,7 @@ calc_gui()
 
 
 void
-draw_gui()
+draw()
 {
     assert (guiosd);
 

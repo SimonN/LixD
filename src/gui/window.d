@@ -12,6 +12,8 @@ import graphic.color;
 
 class Window : Element {
 
+    static immutable title_ylg = 20;
+
     this(in int x  = 0,   in int y  =   0,
          in int xl = 640, in int yl = 480,
          in string ti = "")
@@ -65,10 +67,10 @@ protected:
 
     override void draw_self()
     {
-        label_title.text = subtitle.length ? title : title ~ " - " ~ subtitle;
+        label_title.text = subtitle.length ? title ~ " - " ~ subtitle : title;
 
         // the main area
-        draw_3d_button(xs, ys + label_title.yls, xls, yls - label_title.yls,
+        draw_3d_button(xs, ys, xls, yls,
             color.gui_l, color.gui_m, color.gui_d);
 
         // the title bar

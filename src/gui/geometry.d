@@ -83,26 +83,28 @@ class Geom {
         BOTTOM_LEFT = 0x41,     BOTTOM = 0x42,     BOTTOM_RIGHT = 0x44,
     }
 
-    private static float screen_xlg = 640;
-    private static const screen_ylg = 480f; // others will change, this won't
-    private static float screen_xls = 640;
-    private static float screen_yls = 480;
+    private static float _screen_xlg = 640;
+    private static const _screen_ylg = 480f; // others will change, this won't
+    private static float _screen_xls = 640;
+    private static float _screen_yls = 480;
     private static float stretch_factor   = 1.0;
     private static int   screen_thickness = 2;
 
-    @property static int thickg() { return 2; }
-    @property static int thicks() { return screen_thickness; }
+    @property static int   thickg() { return 2; }
+    @property static int   thicks() { return screen_thickness; }
 
-    static float get_screen_xlg() { return screen_xlg; }
-    static float get_screen_ylg() { return screen_ylg; }
+    @property static float screen_xlg() { return _screen_xlg; }
+    @property static float screen_ylg() { return _screen_ylg; }
+    @property static float screen_xls() { return _screen_xls; }
+    @property static float screen_yls() { return _screen_yls; }
 
     // this function is called from gui.root, when that is initialized
     static void  set_screen_xyls(in int _xl, in int _yl)
     {
-        screen_xls     = _xl;
-        screen_yls     = _yl;
-        stretch_factor = screen_yls / screen_ylg;
-        screen_xlg     = screen_xls / stretch_factor;
+        _screen_xls     = _xl;
+        _screen_yls     = _yl;
+        stretch_factor  = _screen_yls / _screen_ylg;
+        _screen_xlg     = _screen_xls / stretch_factor;
 
         screen_thickness = std.math.floor(2.0 * stretch_factor).to!int;
 
@@ -146,7 +148,7 @@ class Geom {
     @property float xg() const
     {
         immutable float p_xg  = parent ? parent.xg  : 0;
-        immutable float p_xlg = parent ? parent.xlg : screen_xlg;
+        immutable float p_xlg = parent ? parent.xlg : _screen_xlg;
 
         switch (x_from) {
         case From.LEFT:   return p_xg + x;
@@ -159,7 +161,7 @@ class Geom {
     @property float yg() const
     {
         immutable float p_yg  = parent ? parent.yg  : 0;
-        immutable float p_ylg = parent ? parent.ylg : screen_ylg;
+        immutable float p_ylg = parent ? parent.ylg : _screen_ylg;
 
         switch (y_from) {
         case From.TOP:    return p_yg + y;

@@ -43,7 +43,7 @@ class Button : Element {
     int  get_hotkey() const      { return hotkey; }
     void set_hotkey(int i = 0)   { hotkey = i;    }
 
-    bool get_clicked() const     { return clicked_last_calc; }
+    @property bool clicked() const { return clicked_last_calc; }
 
     void set_on_click(void delegate() f) { on_click = f; }
 

@@ -62,7 +62,9 @@ class Torbit {
 
     void copy_to_screen();
 
-    void  clear_to_color(AlCol);
+    void  clear_to_color (AlCol);
+    void  clear_to_black () { clear_to_color(color.black);  }
+    void  clear_to_transp() { clear_to_color(color.transp); }
     void  set_pixel     (int, int, AlCol);
     AlCol get_pixel     (int, int) const;
 
