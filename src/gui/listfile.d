@@ -45,9 +45,11 @@ public:
     @property FileSorter file_sorter() const { return _file_sorter; }
 
     @property bool   clicked()             { return _clicked;             }
-    @property Button button_last_clicked() { return _button_last_clicked; }
     @property int    files_total()         { return files.length.to!int;  }
     @property int    page()                { return _page;                }
+
+    @property const(Button) button_last_clicked() const {
+        return _button_last_clicked; }
 
     deprecated("Do we still need this in the browser?")
     const(Filename) get_file(int i) { return files[i]; }
@@ -209,11 +211,11 @@ highlight_file_number(in int pos)
 
     Button but = buttons[pos - file_number_at_top];
 
-    if (button_last_clicked == but) {
+    if (_button_last_clicked == but) {
         but.on = ! but.on;
     }
-    else if (button_last_clicked) {
-        button_last_clicked.on = false;
+    else if (_button_last_clicked) {
+        _button_last_clicked.on = false;
         but.on = true;
     }
     else {

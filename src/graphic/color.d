@@ -1,5 +1,7 @@
 module graphic.color;
 
+import std.random;
+
 public import basics.alleg5 : AlCol;
 
 import basics.alleg5;
@@ -13,6 +15,13 @@ void deinitialize() { destroy(color); color = null; }
 void compute_new_user_colors() { initialize(); }
 
 private class ColorPrivate {
+
+    @property AlCol random()
+    {
+        alias rnd = uniform01!float;
+        float r = rnd(), g = rnd(), b = rnd();
+        return AlCol(r, g, b, 1);
+    }
 
     AlCol
         bad,
@@ -65,7 +74,7 @@ private:
     }
 
     this() {
-        //             red   green blue  alpha
+        //                    red   green blue  alpha
         bad           = AlCol(0.00, 0.00, 0.00, 0.5);
         transp        = AlCol(0.00, 0.00, 0.00, 0  );
         pink          = AlCol(1,    0,    1,    1  );

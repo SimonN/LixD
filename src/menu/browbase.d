@@ -40,6 +40,7 @@ class BrowserBase : Window {
     @property int  info_y() const   { return _info_y; }
     @property void info_y(in int i) { _info_y = i;    }
 
+    // override these
     void on_file_highlight(in Filename) {}
     void on_file_select   (in Filename) {}
 
@@ -112,11 +113,25 @@ public void set_preview_y_and_yl(in int y, in int yl)
     req_draw();
 }
 
+
+
 protected override void
 calc_self()
 {
     if (dir_list.clicked) {
         subtitle = dir_list.current_dir.rootless;
+    }
+    else if (lev_list.clicked) {
+        auto fn = lev_list.current_file;
+        auto button = lev_list.button_last_clicked;
+        if (fn !is null && button !is null) {
+            // Button clicked for the first time? Then it's on now.
+            if (button.on)
+                on_file_highlight(fn);
+            else
+                // if we switched it off, we've clicked it for the 2nd time
+                on_file_select(fn);
+        }
     }
 }
 

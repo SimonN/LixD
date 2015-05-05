@@ -87,7 +87,11 @@ private void draw_pos(in ref Pos po, Torbit ground, Lookup lookup)
 package Torbit impl_create_preview(
     in Level level, in int w, in int h, in AlCol c)
 {
-    assert (false, "DTODO: not implemented yet");
+    assert (w > 0);
+    assert (h > 0);
+    Torbit ret = new Torbit(w, h);
+    ret.clear_to_color(color.random);
+    return ret;
 }
 
 
