@@ -60,6 +60,7 @@ template temp_target(string bitmap)
     // set the bitmap as target, and reset the target back to what it was
     // at the end of the caller's current scope
     const char[] temp_target = "
+    assert (" ~ bitmap ~ ", \"can't target null bitmap\");
     AlBit last_target_before_" ~ bitmap[0] ~ " = al_get_target_bitmap();
     scope (exit) al_set_target_bitmap(last_target_before_" ~ bitmap[0] ~ ");
     al_set_target_bitmap(" ~ bitmap  ~ ");";
@@ -71,6 +72,7 @@ template temp_lock(string bitmap)
 {
     // lock the bitmap; if locking was succesful, unlock at end of scope
     const char[] temp_lock = "
+    assert (" ~ bitmap ~ ", \"can't lock null bitmap\");
     ALLEGRO_LOCKED_REGION* lock_" ~ bitmap[0] ~ " = al_lock_bitmap("
      ~ bitmap ~ ", ALLEGRO_PIXEL_FORMAT.ALLEGRO_PIXEL_FORMAT_ANY,
      ALLEGRO_LOCK_READWRITE);

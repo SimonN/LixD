@@ -1,5 +1,7 @@
 module basics.init;
 
+import core.memory;
+
 import basics.alleg5;
 import basics.cmdargs;
 import basics.globals;
@@ -71,6 +73,8 @@ void deinitialize()
     graphic.gralib.deinitialize();
     graphic.textout.deinitialize();
     graphic.color.deinitialize();
+
+    core.memory.GC.collect();
 
     hardware.sound.deinitialize();
     hardware.mouse.deinitialize();

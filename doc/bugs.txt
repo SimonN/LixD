@@ -4,6 +4,13 @@ Bugs in D/A5 Lix
 The bugtracker on asdfasdf.etzh.ch/~simon/ lists the bugs for C++/A4 Lix.
 Here are the bugs specific to D/A5 Lix.
 
+Ignoring large animated tiles
+
+    The game can't load very large graphics as video bitmaps: amanda/tar.W.png
+    and amanda/occult/hatch_tentacle.H.png were both over 4,000 pixels wide.
+    Currently, I skip over them and let the level have a missing-image error.
+    See the log file if you get missing-image errors despite having the image.
+
 Delayed sound
 
     On Debian 6, without pulseaudio installed, with ALSA installed,

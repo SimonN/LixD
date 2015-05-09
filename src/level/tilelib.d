@@ -4,6 +4,7 @@ module level.tilelib;
  * In D/A5 Lix, it's not a class anymore, but module-level functions.
  */
 
+import std.conv; // ulong -> int for string lengths
 import std.typecons; // Rebindable!(const Filename)
 
 static import glo = basics.globals;
@@ -163,7 +164,8 @@ string get_filename(in Tile tile)
 
 
 
-private void load_tile_from_disk(in string str_no_ext, in Filename fn)
+private void
+load_tile_from_disk(in string str_no_ext, in Filename fn)
 {
     char pe = fn.pre_extension;
 
@@ -181,6 +183,13 @@ private void load_tile_from_disk(in string str_no_ext, in Filename fn)
 
     // cut into frames unless it's terrain or steel (subtype of terrain)
     Cutbit cb = new Cutbit(fn, type != TileType.TERRAIN);
+    if (! cb.is_valid()) {
+        import file.log;
+        Log.logf("Error loading from disk: `%s' -> `%s'",
+            str_no_ext, fn.rootful);
+        Log.log("D/A5 Lix cannot load very large images. See doc/bugs.txt.");
+        return;
+    }
 
     // DTODO: check whether levels with rotated objects are rendered
     // exactly like in C++/A4 Lix
@@ -216,7 +225,7 @@ private string replace_filestring(in string str)
     // If we get to here, no match has been found in the exact replacements
     foreach (repl_old, repl_new; replace_substring) {
         // find the first occurence of the partial replace string
-        foreach (i; 0 .. str.length - repl_old.length) {
+        foreach (int i; 0 .. str.length.to!int - repl_old.length.to!int) {
             if (str[i .. i + repl_old.length] == repl_old) {
                 // the returned string can be longer or shorter
                 return str[0 .. i] ~ repl_new ~ str[i + repl_old.length .. $];
