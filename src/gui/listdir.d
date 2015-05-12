@@ -64,15 +64,6 @@ public this(Geom g)
 
 
 
-public ~this()
-{
-    if (dir_up) {
-        rm_child(dir_up);
-        destroy(dir_up);
-    }
-}
-
-
 public @property void
 base_dir(in Filename fn)
 {
@@ -122,7 +113,6 @@ on_dir_load()
     // this must happen even on a non-existing dir
     if (dir_up) {
         rm_child(dir_up);
-        destroy(dir_up);
         dir_up = null;
     }
     // this assert is the reason for finality of this class

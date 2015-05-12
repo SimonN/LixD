@@ -54,7 +54,7 @@ initialize()
 void
 deinitialize()
 {
-    destroy(guiosd);
+    if (guiosd) destroy(guiosd);
     guiosd = null;
 }
 

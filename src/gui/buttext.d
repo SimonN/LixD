@@ -46,6 +46,8 @@ class TextButton : Button {
     int check_frame() const { return _check_frame;                            }
     int check_frame(int i)  { _check_frame=i;req_draw(); return _check_frame; }
 
+    override string toString() const { return "But-`" ~  _text ~ "'"; }
+
 private:
 
     string _text;

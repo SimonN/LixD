@@ -70,6 +70,8 @@ void deinitialize()
 
     hardware.mousecur.deinitialize();
 
+    core.memory.GC.collect();
+
     graphic.gralib.deinitialize();
     graphic.textout.deinitialize();
     graphic.color.deinitialize();

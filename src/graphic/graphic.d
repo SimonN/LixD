@@ -16,7 +16,6 @@ import graphic.torbit;
 class Graphic {
 
     this(const Cutbit, Torbit, const int = 0, const int = 0);
-    ~this() { }
 
     @property const(Cutbit) cutbit() const { return _cutbit; }
 

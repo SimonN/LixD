@@ -10,6 +10,8 @@ module basics.mainloop;
  * exit the program when that function is done.
  */
 
+import core.memory;
+
 import basics.alleg5;
 import basics.demo;
 import hardware.display;
@@ -24,8 +26,6 @@ static import hardware.sound;
 class MainLoop {
 
 public:
-
-    ~this() { kill(); }
 
     void main_loop()
     {
@@ -56,18 +56,16 @@ kill()
 {
     if (main_menu) {
         gui.rm_elder(main_menu);
-        destroy(main_menu);
         main_menu = null;
     }
     if (brow_sin) {
         gui.rm_elder(brow_sin);
-        destroy(brow_sin);
         brow_sin = null;
     }
     if (demo) {
-        destroy(demo);
         demo = null;
     }
+    core.memory.GC.collect();
 }
 
 

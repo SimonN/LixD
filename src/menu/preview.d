@@ -33,8 +33,7 @@ public:
     ~this()
     {
         if (torbit) destroy(torbit);
-        destroy(icon_status);
-        destroy(icon_torus);
+        torbit = null;
     }
 
     @property LevelStatus status() { return _status; }

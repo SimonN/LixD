@@ -42,6 +42,8 @@ class Label : Element {
     @property color (AlCol  c) { _color = c; req_draw(); }
     @property fixed (bool   b) { _fixed = b; shorten_text(); }
 
+    override string toString() const { return "Label-`" ~ _text ~ "'"; }
+
 private:
 
     string _text;

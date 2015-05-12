@@ -168,7 +168,6 @@ buttons_clear()
 {
     foreach (b; buttons) {
         rm_child(b);
-        destroy(b);
     }
     buttons = null;
     req_draw();

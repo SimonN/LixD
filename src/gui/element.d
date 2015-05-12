@@ -9,11 +9,8 @@ import hardware.mouse; // is_mouse_here
 
 abstract class Element {
 
-/*  this(geom);
- *  ~this();
- *
- *      un-parents all children
- */
+// this(geom);
+
     // these functions return the position/length in geoms. See geometry.d
     // for the difference between measuring in geoms and in screen pixels.
     @property float xg()  const { return _geom.xg;  }
@@ -51,9 +48,9 @@ abstract class Element {
  *      Require a redraw of the element and all its children, because some
  *      data of the element has changed.
  *
- *  bool add_child   (Element e);
- *  bool add_children(Element[] ...);
- *  bool rm_child    (Element e);
+ *  void add_child   (Element e);
+ *  void add_children(Element[] ...);
+ *  void rm_child    (Element e);
  *
  *      The children are a set, you can have each child only once in there.
  *      The argument must be mutable, since e.geom.parent will be set.
@@ -112,19 +109,9 @@ this(Geom g)
 
 
 
-~this()
-{
-    foreach (child; _children) {
-        assert (child._geom.parent is this._geom,
-            "upon destruction, child without properly-set parent exists");
-        child._geom.parent = null;
-    }
-}
-
-
-
 void add_child(Element e)
 {
+    assert (e !is null, "can't add null child");
     assert (_children.find!"a is b"(e) == [], "child has been added before");
     assert (e._geom.parent is null,           "child has a parent already");
 
@@ -144,6 +131,7 @@ void add_children(Element[] elements ...)
 
 bool rm_child(Element e)
 {
+    assert (e !is null, "can't rm null child");
     auto found = _children.find!"a is b"(e);
     assert (found != [], "child doesn't exist, can't be removed");
 
