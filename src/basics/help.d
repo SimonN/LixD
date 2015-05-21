@@ -1,6 +1,8 @@
 module basics.help;
 
 import std.array;
+import std.conv;
+import std.math;
 import std.string;
 import std.utf;
 
@@ -19,6 +21,17 @@ int positive_mod(in int nr, in int modulo)
 int even(in int x) {
     if (x % 2 == 0) return x;
     else            return x - 1;
+}
+
+
+
+// Phobos has rounding, but tiebreaks only either to the even integer,
+// or away from zero. I want to tiebreak to the larger integer.
+int
+round_int(F)(in F f)
+    if (is (F : float))
+{
+    return (f + 0.5f).floor.to!int;
 }
 
 

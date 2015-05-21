@@ -4,10 +4,9 @@ module menu.preview;
  * Part of package menu, not gui, because only the large menus use it.
  */
 
-import std.conv; // convert float to int when creating torbit fitting the gui
-
 import basics.alleg5;
 import basics.globals;
+import basics.help; // rounding
 import gui;
 import graphic.color;
 import graphic.graphic;
@@ -54,7 +53,9 @@ level(in Level level)
 {
     if (torbit) destroy(torbit);
     if (level !is null) {
-        torbit  = level.create_preview(xls.to!int, yls.to!int, color.gui_m);
+        torbit  = level.create_preview(
+            (xs + xls).round_int - xs.round_int,
+            (ys + yls).round_int - ys.round_int, color.gui_m);
         _status = level.status;
         icon_status.xf = status;
         icon_torus .xf = level.torus_x + 2 * level.torus_y;
@@ -77,18 +78,18 @@ draw_self()
     super.draw_self();
 
     if (torbit)
-        guiosd.draw_from(torbit.get_albit(), xs.to!int, ys.to!int);
+        guiosd.draw_from(torbit.get_albit(), xs.round_int, ys.round_int);
     else
         // target is guiosd already, because we're in an Element's draw
         al_draw_filled_rectangle(xs, ys, xs + xls, ys + yls, undraw_color);
 
-    icon_torus.set_xy(xls, yls);
-    icon_torus.draw();
+    icon_status.set_xy(xs, ys);                icon_status.draw();
+    icon_status.y = ys + yls - icon_status.yl; icon_status.draw();
+    icon_status.x = xs + xls - icon_status.xl; icon_status.draw();
+    icon_status.y = ys;                        icon_status.draw();
 
-    icon_status.set_xy(xs, ys);             icon_status.draw();
-    icon_status.y = ys + yls-icon_status.y; icon_status.draw();
-    icon_status.x = xs + xls-icon_status.x; icon_status.draw();
-    icon_status.y = ys;                     icon_status.draw();
+    icon_torus.set_xy(xs, ys);
+    icon_torus.draw();
 }
 
 }

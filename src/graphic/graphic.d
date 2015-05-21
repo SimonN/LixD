@@ -5,11 +5,11 @@ module graphic.graphic;
  * ONML etc., see level/gra_set.h for that.
  */
 
-import std.conv; // rounding double to int, and float coordinates to int
+import std.conv; // rounding/chopping double to int
 import std.math;
 
 import basics.alleg5;
-import basics.help;
+import basics.help; // rounding float to a good int
 import graphic.cutbit;
 import graphic.torbit;
 
@@ -124,8 +124,8 @@ y(in int i)
     return _y;
 }
 
-@property int x(in float i) { return x(i.to!int); }
-@property int y(in float i) { return y(i.to!int); }
+@property int x(in float fl) { return x = fl.round_int; }
+@property int y(in float fl) { return y = fl.round_int; }
 
 
 
