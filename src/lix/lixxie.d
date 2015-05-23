@@ -10,6 +10,7 @@ import game.lookup;
 import graphic.color;
 import graphic.graphic;
 import graphic.gralib;
+import graphic.map;
 import graphic.torbit;
 import hardware.sound;
 import lix.enums;
@@ -17,7 +18,6 @@ import lix.acfunc;
 
 // import editor.graphed;
 // import game.lookup;
-// import graphic.map;
 // import graphic.graphbg;
 // import basics.types;
 
@@ -34,11 +34,6 @@ class EffectManager {
 class Tribe {
     Style style;
     void return_skills(Ac, int) { }
-}
-class Map : Torbit {
-    this(in int xl, in int yl, in bool tx = false, in bool ty = false) {
-        super(xl, yl, tx, ty);
-    }
 }
 
 class Lixxie : Graphic {

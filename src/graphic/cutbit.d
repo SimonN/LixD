@@ -404,7 +404,7 @@ void draw(
             invert_lengths ? _xl : _yl);
         excerpt.clear_to_color(color.transp);
         excerpt.draw_from(cast (AlBit) bitmap, 0, 0, mirr, rot);
-        target_torbit.draw     (excerpt.albit, x, y);
+        target_torbit.draw_to  (excerpt.albit, x, y);
         target_torbit.draw_from(excerpt.albit, x, y);
         break; }
 

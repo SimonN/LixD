@@ -8,9 +8,6 @@ module game.lookup;
  * tell what exact interactive object instance sits there. If this behavior
  * is desired, the object in question must be looked up manually in the list
  * of objects of its type.
- *
- *
- *
  */
 
 import basics.alleg5;
@@ -37,84 +34,99 @@ public:
     static immutable LoNr bit_fling      = 0x0200;
     static immutable LoNr bit_trampoline = 0x0400;
 
-    this(in int _xl, in int _yl, in bool _tx = false, in bool _ty = false);
-    ~this() { }
+/*  this(in int _xl, in int _yl, in bool _tx = false, in bool _ty = false);
+ *  this(in Lookup rhs);
+ *
+ *  invariant();
+ *
+ *  void resize(in int, in int, in bool, in bool);
+ */
+    @property int  xl()      const { return _xl; }
+    @property int  yl()      const { return _yl; }
+    @property bool torus_x() const { return _tx; }
+    @property bool torus_y() const { return _ty; }
 
-    // invariant(); -- exists, see below
-
-    void resize(in int, in int, in bool, in bool);
-
-    int  get_xl()      const { return xl; }
-    int  get_yl()      const { return yl; }
-    bool get_torus_x() const { return torus_x; }
-    bool get_torus_y() const { return torus_y; }
-
-    LoNr get                (int, int)                 const;
-    bool get                (int, int, LoNr)           const;
-    int  get_rectangle      (int, int, int, int, LoNr) const;
-    bool get_solid          (int, int)                 const;
-    bool get_solid_even     (int, int)                 const;
-    bool get_steel          (int, int)                 const;
-
-    //                       x,   y,   xl,  yl,  bit &
-    void rm                 (int, int,           LoNr);
-    void add                (int, int,           LoNr);
-    void add_rectangle      (int, int, int, int, LoNr);
-    void set_solid          (int, int);
-    void set_solid_rectangle(int, int, int, int);
-    void set_air            (int, int);
-
-    void save_to_file(in Filename) const;
+/*  LoNr get                (int, int)                 const;
+ *  bool get                (int, int, LoNr)           const;
+ *  int  get_rectangle      (int, int, int, int, LoNr) const;
+ *  bool get_solid          (int, int)                 const;
+ *  bool get_solid_even     (int, int)                 const;
+ *  bool get_steel          (int, int)                 const;
+ *
+ *  //                       x,   y,   xl,  yl,  bit &
+ *  void rm                 (int, int,           LoNr);
+ *  void add                (int, int,           LoNr);
+ *  void add_rectangle      (int, int, int, int, LoNr);
+ *  void set_solid          (int, int);
+ *  void set_solid_rectangle(int, int, int, int);
+ *  void set_air            (int, int);
+ *
+ *  void save_to_file(in Filename) const;
+ */
 
 private:
 
-    int xl;
-    int yl;
+    int _xl;
+    int _yl;
 
-    bool torus_x;
-    bool torus_y;
+    bool _tx;
+    bool _ty;
 
     // "lt" == "lookup table", aligned as row, row, row, row, ...
     // I don't use the matrix class here, the code was already
     // written in C++ without it and works well
     LoNr[] lt;
 
-    LoNr get_at(int x, int y) const   { return lt[y * xl + x]; }
-    void add_at(int x, int y, LoNr n) { lt[y * xl + x] |= n;   }
-    void rm_at (int x, int y, LoNr n) { lt[y * xl + x] &= ~n;  }
+    LoNr get_at(int x, int y) const   { return lt[y * _xl + x]; }
+    void add_at(int x, int y, LoNr n) { lt[y * _xl + x] |= n;   }
+    void rm_at (int x, int y, LoNr n) { lt[y * _xl + x] &= ~n;  }
 
-    int  get_rectangle_at(int, int, int, int, LoNr) const;
-    void add_rectangle_at(int, int, int, int, LoNr);
-
-    // move coordinates onto nontorus, or modulo them on torus.
-    void amend(ref int x, ref int y) const;
-
-    // Is the given point on the map?
-    // This shall only be used in set/add functions, not in getters/readers.
-    // On tori, this is the same as amend, and it returns true.
-    // On non-tori, if pixel outide, returns false, otherwise true.
-    bool amend_if_inside(ref int x, ref int y) const;
-
-
+/*  int  get_rectangle_at(int, int, int, int, LoNr) const;
+ *  void add_rectangle_at(int, int, int, int, LoNr);
+ *
+ *  void amend(ref int x, ref int y) const;
+ *
+ *      Move coordinates onto nontorus, or modulo them on torus.
+ *
+ *  bool amend_if_inside(ref int x, ref int y) const;
+ *
+ *      Is the given point on the map?
+ *      This shall only be used in set/add functions, not in getters/readers.
+ *      On tori, this is the same as amend, and it returns true.
+ *      On non-tori, if pixel outide, returns false, otherwise true.
+ */
 
 
 public:
 
 this(
-    in int _xl, in int _yl, in bool _tx = false, in bool _ty = false
+    in int a_xl, in int a_yl, in bool a_tx = false, in bool a_ty = false
 ) {
-    resize(_xl, _yl, _tx, _ty);
+    resize(a_xl, a_yl, a_tx, a_ty);
+}
+
+
+
+this(in Lookup rhs)
+{
+    assert (rhs !is null);
+
+    _xl = rhs._xl;
+    _yl = rhs._yl;
+    _tx = rhs._tx;
+    _ty = rhs._ty;
+    lt  = rhs.lt.dup;
 }
 
 
 
 invariant()
 {
-    if (xl > 0 || yl > 0 || lt !is null) {
-        assert (xl > 0);
-        assert (yl > 0);
+    if (_xl > 0 || _yl > 0 || lt !is null) {
+        assert (_xl > 0);
+        assert (_yl > 0);
         assert (lt !is null);
-        assert (lt.length == xl * yl);
+        assert (lt.length == _xl * _yl);
     }
     else {
         assert (lt is null);
@@ -123,17 +135,17 @@ invariant()
 
 
 
-void resize(in int _xl, in int _yl, in bool _tx, in bool _ty)
+void resize(in int a_xl, in int a_yl, in bool a_tx, in bool a_ty)
 in {
-    assert (_xl > 0);
-    assert (_yl > 0);
+    assert (a_xl > 0);
+    assert (a_yl > 0);
 }
 body {
-    xl = _xl;
-    yl = _yl;
-    torus_x = _tx;
-    torus_y = _ty;
-    lt = new LoNr[xl * yl];
+    _xl = a_xl;
+    _yl = a_yl;
+    _tx = a_tx;
+    _ty = a_ty;
+    lt = new LoNr[_xl * _yl];
 }
 
 
@@ -176,13 +188,13 @@ bool get(int x, int y, LoNr n) const
 int get_rectangle(int x, int y, int xr, int yr, LoNr n) const
 {
     amend(x, y);
-    const int xrr = x + xr <= xl ? xr : xl - x;
-    const int yrr = y + yr <= yl ? yr : yl - y;
-    int count =                       get_rectangle_at(x, y, xrr,    yrr,   n);
-    if (torus_x && xr > xrr) count += get_rectangle_at(0, y, xr-xrr, yrr,   n);
-    if (torus_y && yr > yrr) count += get_rectangle_at(0, y, xrr,    yr-yrr,n);
-    if (torus_x && xr > xrr
-     && torus_y && yr > yrr) count += get_rectangle_at(0, 0, xr-xrr, yr-yrr,n);
+    const int xrr = x + xr <= _xl ? xr : _xl - x;
+    const int yrr = y + yr <= _yl ? yr : _yl - y;
+    int count =                   get_rectangle_at(x, y, xrr,    yrr,   n);
+    if (_tx && xr > xrr) count += get_rectangle_at(0, y, xr-xrr, yrr,   n);
+    if (_ty && yr > yrr) count += get_rectangle_at(0, y, xrr,    yr-yrr,n);
+    if (_tx && xr > xrr
+     && _ty && yr > yrr) count += get_rectangle_at(0, 0, xr-xrr, yr-yrr,n);
     return count;
 }
 
@@ -273,11 +285,11 @@ void set_air(int x, int y)
 // for testing
 public void save_to_file(in Filename fn) const
 {
-    AlBit output_bitmap = albit_ram_create(xl, yl);
+    AlBit output_bitmap = albit_ram_create(_xl, _yl);
     scope (exit) al_destroy_bitmap(output_bitmap);
     mixin(temp_target!"output_bitmap");
 
-    foreach (y; 0 .. yl) foreach (x; 0 .. xl) {
+    foreach (y; 0 .. _yl) foreach (x; 0 .. _xl) {
         int red   = get(x, y, bit_terrain);
         int green = get(x, y, bit_steel);
         int blue  = get(x, y, bit_goal | bit_fire | bit_water | bit_trap
@@ -293,12 +305,12 @@ private:
 
 void amend(ref int x, ref int y) const
 {
-    x = torus_x ? positive_mod(x, xl)
-      : x >= xl ? xl - 1
-      : x <  0  ? 0 : x;
-    y = torus_y ? positive_mod(y, yl)
-      : y >= yl ? yl - 1
-      : y <  0  ? 0 : y;
+    x = _tx ? positive_mod(x, _xl)
+      : x >= _xl ? _xl - 1
+      : x <  0   ? 0 : x;
+    y = _ty ? positive_mod(y, _yl)
+      : y >= _yl ? _yl - 1
+      : y <  0   ? 0 : y;
 }
 
 
@@ -306,8 +318,8 @@ void amend(ref int x, ref int y) const
 // Is the given point on the map?
 bool amend_if_inside(ref int x, ref int y) const
 {
-    if (! torus_x && (x < 0 || x >= xl)) return false;
-    if (! torus_y && (y < 0 || y >= yl)) return false;
+    if (! _tx && (x < 0 || x >= _xl)) return false;
+    if (! _ty && (y < 0 || y >= _yl)) return false;
     amend(x, y);
     return true;
 }

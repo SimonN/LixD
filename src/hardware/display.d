@@ -23,20 +23,52 @@ import hardware.mouse; // center mouse after changing resolution
 ALLEGRO_DISPLAY* display;
 
 /*  void set_screen_mode(bool want_full, int want_x = 0, int want_y = 0);
+ *
  *  void deinitialize();
  *
- *  void calc(); // call once per main_loop to trap/untrap mouse
+ *  void calc()
  *
- *  void display_startup_message(string); // before main_loop draws
+ *      call once per main_loop to trap/untrap mouse
+ *
+ *  @property int display_xl()
+ *  @property int display_yl()
+ *
+ *  void display_startup_message(string)
+ *
+ *      before main_loop draws
  */
 
-bool get_display_close_was_clicked() {
+bool
+get_display_close_was_clicked() {
     return display_close_was_clicked;
 }
 
-void blit_to_screen(AlBit) {
+
+
+void
+blit_to_screen(AlBit) {
     assert (false, "blit_to_screen() not implemented yet");
 }
+
+
+
+@property int
+display_xl()
+{
+    assert(display, "display hasn't been created");
+    return al_get_display_width(display);
+}
+
+
+
+@property int
+display_yl()
+{
+    assert(display, "display hasn't been created");
+    return al_get_display_height(display);
+}
+
+
 
 // Globally writable variable, set this to true to force a redraw of all GUI
 // components next time, this is probably a C++/A4 Lix legacy variable

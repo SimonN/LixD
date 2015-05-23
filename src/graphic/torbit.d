@@ -39,10 +39,10 @@ class Torbit {
  *                              px   py   Rx   Ry   Rxl  Ryl
  *  bool get_point_in_rectangle(int, int, int, int, int, int) const;
  */
-    void draw     (Torbit, int x = 0, int y = 0) const
-        { assert(false, "Torbit.draw to Torbit not implemented"); }
-    void draw     (AlBit,  int x = 0, int y = 0, int rxl=0, int ryl=0) const
-        { assert(false, "Torbit.draw to AlBit not implemented"); }
+    void draw_to(Torbit, int x = 0, int y = 0) const
+        { assert(false, "Torbit.draw_to(Torbit) not implemented"); }
+    void draw_to(AlBit,  int x = 0, int y = 0, int rxl=0, int ryl=0) const
+        { assert(false, "Torbit.draw_to(AlBit) not implemented"); }
 
 /*  void draw_from(AlBit, x, y, bool mirr, double rot, double scal)
  *
@@ -59,6 +59,10 @@ class Torbit {
  *      This is intended for drawing terrain and steel. Integer turns are
  *      expected, and they must be already positively modded (see function
  *      in basics.help -- this will be asserted)! No scaling is possible.
+ *
+ *  protected void use_drawing_delegate(see below)
+ *
+ *      Simplifies drawing onto the torus bitmap.
  *
  *  void copy_to_screen();
  *
@@ -94,8 +98,6 @@ private:
     // torus property in either direction, making edges of the bitmap loop
     bool _tx;
     bool _ty;
-
-    void use_drawing_delegate(void delegate(int, int), int x, int y);
 
 
 
@@ -220,7 +222,7 @@ bool get_point_in_rectangle(
 
 
 
-private void use_drawing_delegate(
+protected void use_drawing_delegate(
     void delegate(int, int) drawing_delegate,
     int x,
     int y
@@ -525,8 +527,7 @@ void draw_filled_rectangle(int x, int y, int rxl, int ryl, AlCol col)
 
     auto deg = delegate void(int x_at, int y_at)
     {
-        al_draw_filled_rectangle(x_at + 0.5, y_at + 0.5,
-         x_at + rxl - 0.5, y_at + ryl - 0.5, col);
+        al_draw_filled_rectangle(x_at, y_at, x_at + rxl, y_at + ryl, col);
     };
     use_drawing_delegate(deg, x, y);
 }
