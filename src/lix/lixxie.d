@@ -255,7 +255,7 @@ private int ac_to_y_frame   () const { return ac - 1;    }
 private XY get_fuse_xy() const
 {
     XY ret = countdown.get(frame_to_x_frame(), ac_to_y_frame());
-    if (dir < 0) ret.x = graphic.gralib.get_lix(style).get_xl() - ret.x;
+    if (dir < 0) ret.x = graphic.gralib.get_lix(style).xl - ret.x;
     ret.x += super.x;
     ret.y += super.y;
     return ret;
@@ -634,9 +634,9 @@ override void draw()
         // draw the flame
         auto cb = get_internal(file_bitmap_fuse_flame);
         cb.draw(ground_map,
-         fuse_x + x - cb.get_xl()/2,
-         fuse_y + y - cb.get_yl()/2,
-         updates_since_bomb % cb.get_x_frames(), 0);
+         fuse_x + x - cb.xl/2,
+         fuse_y + y - cb.yl/2,
+         updates_since_bomb % cb.xfs, 0);
     }
     // end of drawing the fuse
 

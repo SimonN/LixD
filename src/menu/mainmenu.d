@@ -90,9 +90,9 @@ protected override void
 draw_self()
 {
     auto bg = get_internal(file_bitmap_menu_background);
-    if (bg && bg.is_valid())
-        al_draw_scaled_bitmap(bg.get_albit(),
-         0, 0, bg.get_xl(),     bg.get_yl(),
+    if (bg && bg.valid)
+        al_draw_scaled_bitmap(bg.albit,
+         0, 0, bg.xl,           bg.yl,
          0, 0, Geom.screen_xls, Geom.screen_yls, 0);
     else
         torbit.clear_to_black();

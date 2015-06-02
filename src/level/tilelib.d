@@ -183,7 +183,7 @@ load_tile_from_disk(in string str_no_ext, in Filename fn)
 
     // cut into frames unless it's terrain or steel (subtype of terrain)
     Cutbit cb = new Cutbit(fn, type != TileType.TERRAIN);
-    if (! cb.is_valid()) {
+    if (! cb.valid) {
         import file.log;
         Log.logf("Error loading from disk: `%s' -> `%s'",
             str_no_ext, fn.rootful);

@@ -24,7 +24,7 @@ initialize()
     assert (mouse is null, "mouse cursor is already initialized");
     const(Cutbit) cb = get_internal(file_bitmap_mouse);
     assert (cb, "mouse cursor bitmap is not loaded or missing");
-    assert (cb.is_valid(), "mouse cursor bitmap is not valid");
+    assert (cb.valid, "mouse cursor bitmap is not valid");
 
     mouse = new Graphic(cb, null);
 }

@@ -12,29 +12,29 @@ class BitmapButton : Button {
     this(Geom g, const(Cutbit) cb)
     {
         super(g);
-        cutbit = cb;
+        _cutbit = cb;
     }
 
-    void set_x_frame(in int i) { x_frame = i; req_draw();      }
-    int  get_x_frame()  const  { return x_frame;               }
-    int  get_x_frames() const  { return cutbit.get_x_frames(); }
+    @property int xf(in int i) { _xf = i; req_draw(); return _xf; }
+    @property int xf()  const  { return _xf;         }
+    @property int xfs() const  { return _cutbit.xfs; }
 
 private:
 
-    const(Cutbit) cutbit;
-    int           x_frame;
+    const(Cutbit) _cutbit;
+    int           _xf;
 
 protected:
 
     override void draw_self()
     {
         super.draw_self();
-        immutable int y_frame = on && ! down ? 1 : 0;
+        immutable int yf = on && ! down ? 1 : 0;
 
         // center the image on the button
-        int cb_x = to!int(xs + xls/2 - cutbit.get_xl());
-        int cb_y = to!int(ys + yls/2 - cutbit.get_yl());
-        cutbit.draw(guiosd, cb_x, cb_y, x_frame, y_frame);
+        int cb_x = to!int(xs + xls/2 - _cutbit.xl);
+        int cb_y = to!int(ys + yls/2 - _cutbit.yl);
+        _cutbit.draw(guiosd, cb_x, cb_y, _xf, yf);
     }
 
 }
@@ -52,9 +52,10 @@ class Checkbox : BitmapButton {
         this.on_click = &toggle;
     }
 
-    void set_checked(bool b = true) { set_x_frame(b ? xf_ck : 0); req_draw(); }
-    bool get_checked() const        { return get_x_frame() == xf_ck;          }
-    void toggle()                   { set_checked(! get_checked());           }
+    @property bool checked(bool b) { xf = (b ? xf_ck : 0);
+                                     req_draw(); return b; }
+    @property bool checked() const { return xf == xf_ck; }
+    void toggle()                  { checked = ! checked; }
 
     private static immutable xf_ck = 2;
 

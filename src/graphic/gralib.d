@@ -84,9 +84,9 @@ void initialize()
     foreach (fn; files) if (fn.has_image_extension()) {
         Cutbit cb = new Cutbit(fn);
         assert (cb, "error loading internal cutbit: " ~ fn.rootful);
-        al_convert_mask_to_alpha(cb.get_albit(), color.pink);
+        al_convert_mask_to_alpha(cb.albit, color.pink);
         internal[fn.rootless_no_ext] = cb;
-        assert (get_internal(fn).is_valid(),
+        assert (get_internal(fn).valid,
             "can't retrieve from array: " ~ fn.rootful);
     }
 
@@ -98,7 +98,7 @@ void initialize()
     if (! cb_ptr) return;
     Cutbit cb = *cb_ptr;
 
-    AlBit b = cb.get_albit();
+    AlBit b = cb.albit;
     assert (b, "apparently your gfx card can't store the Lix spritesheet");
 
     // DTODOLANG
@@ -106,17 +106,17 @@ void initialize()
 
     mixin(temp_lock!"b");
 
-    lix.enums.countdown = new Matrix!XY(cb.get_x_frames(), cb.get_y_frames());
+    lix.enums.countdown = new Matrix!XY(cb.xfs, cb.yfs);
 
     // fx, fy = which x- respective y-frame
     // x,  y  = which pixel inside this frame, offset from frame's top left
-    for  (int fy = 0; fy < cb.get_y_frames(); ++fy)
-     for (int fx = 0; fx < cb.get_x_frames(); ++fx) {
-        for  (int y = 0; y < cb.get_yl(); ++y )
-         for (int x = 0; x < cb.get_xl(); ++x ) {
+    for  (int fy = 0; fy < cb.yfs; ++fy)
+     for (int fx = 0; fx < cb.xfs; ++fx) {
+        for  (int y = 0; y < cb.yl; ++y )
+         for (int x = 0; x < cb.xl; ++x ) {
             // Is it the pixel of the eye?
-            const int real_x = 1 + fx * (cb.get_xl() + 1) + x;
-            const int real_y = 1 + fy * (cb.get_yl() + 1) + y;
+            const int real_x = 1 + fx * (cb.xl + 1) + x;
+            const int real_y = 1 + fy * (cb.yl + 1) + y;
             if (al_get_pixel(b, real_x, real_y) == color.lixfile_eye) {
                 countdown.set(fx, fy, XY(x, y-1));
                 goto GOTO_NEXTFRAME;
@@ -125,8 +125,8 @@ void initialize()
             // Use the XY of the frame left to the current one if there was
             // nothing found, and a default value for the leftmost frames.
             // Frames (0, y) and (1, y) are the skill button images.
-            if (y == cb.get_yl() - 1 && x == cb.get_xl() - 1) {
-                if (fx < 3) countdown.set(fx, fy, XY(cb.get_xl() / 2 - 1, 12));
+            if (y == cb.yl - 1 && x == cb.xl - 1) {
+                if (fx < 3) countdown.set(fx, fy, XY(cb.xl / 2 - 1, 12));
                 else        countdown.set(fx, fy, countdown.get(fx - 1, fy));
             }
         }
@@ -158,7 +158,7 @@ void initialize()
     assert (icon_ptr, "missing image: in-game panel icon of a Lix");
     if (icon_ptr) {
         Cutbit cb_icons = *icon_ptr;
-        AlBit  cb_bmp   = cb_icons.get_albit();
+        AlBit  cb_bmp   = cb_icons.albit;
         mixin(temp_lock!"cb_bmp");
         recolor_into_vector(cb_icons, icons, magicnr_icons);
     }
@@ -260,7 +260,7 @@ void eidrecol_api(in Filename fn)
 
 void eidrecol_api(Cutbit cutbit, in int magicnr)
 {
-    AlBit bitmap = cutbit.get_al_bitmap();
+    AlBit bitmap = cutbit.albit;
     assert (bitmap);
     if (! bitmap) return;
 
@@ -279,7 +279,7 @@ void eidrecol_api(Cutbit cutbit, in int magicnr)
 
     if (! magicnr)
      for (int y = 0; y < bmp_yl; ++y) {
-        immutable bool light = (y > cutbit.get_yl());
+        immutable bool light = (y > cutbit.yl);
         if (light) for (int x = 0; x < bmp_xl; ++x) {
             immutable AlCol c = al_get_pixel(bitmap, x, y);
             if      (c == color.black)     pp(x, y, color.transp);
@@ -299,10 +299,10 @@ void eidrecol_api(Cutbit cutbit, in int magicnr)
     }
     else if (magicnr == magicnr_sheet)
      for (int y = 0; y < bmp_yl; ++y) {
-        for (int x = 0; x < 2 * (cutbit.get_xl() + 1); ++x) {
+        for (int x = 0; x < 2 * (cutbit.xl + 1); ++x) {
             immutable AlCol c = al_get_pixel(bitmap, x, y);
             if      (c == color.gui_f_sha) pp(x, y, color.gui_sha);
-            else if (x < cutbit.get_xl() + 1) continue;
+            else if (x < cutbit.xl + 1)  continue;
             else if (c == color.black)   pp(x, y, color.transp);
             else if (c == color.gui_f_d) pp(x, y, color.gui_pic_d);
             else if (c == color.gui_f_m) pp(x, y, color.gui_pic_m);
@@ -312,7 +312,7 @@ void eidrecol_api(Cutbit cutbit, in int magicnr)
     else if (magicnr == magicnr_icons) {
         // Recolor the API things (except shadow, which will be done in
         // an upcoming loop) in the second row.
-        for (int y = cutbit.get_yl() + 1; y < 2 * (cutbit.get_yl() + 1); ++y)
+        for (int y = cutbit.yl + 1; y < 2 * (cutbit.yl + 1); ++y)
          for (int x = 0; x < bmp_xl; ++x) {
             immutable AlCol c = al_get_pixel(bitmap, x, y);
             if      (c == color.black)   pp(x, y, color.transp);
@@ -345,13 +345,13 @@ void recolor_into_vector(
     // this function, make sure it's locked. Otherwise, everything will work
     // extremely slowly.
 
-    assert (cutbit.is_valid());
+    assert (cutbit.valid);
     Cutbit* rcl_p = (file_bitmap_lix_recol.rootless_no_ext
                      in internal);
-    assert (rcl_p && rcl_p.is_valid(), "can't recolor, missing map image");
+    assert (rcl_p && rcl_p.valid, "can't recolor, missing map image");
 
-    AlBit recol = rcl_p .get_albit();
-    AlBit lix   = cutbit.get_albit();
+    AlBit recol = rcl_p .albit;
+    AlBit lix   = cutbit.albit;
     if (!recol || !lix) return;
 
     immutable int   recol_xl  = al_get_bitmap_width (recol);
@@ -386,16 +386,16 @@ void recolor_into_vector(
 
             // The large Lix spritesheet has a column with greyed-out
             // skills. These do not get recolored per player, skip them.
-            if (x == cutbit.get_xl() + 1 && magicnr == magicnr_sheet) {
+            if (x == cutbit.xl + 1 && magicnr == magicnr_sheet) {
                 // skip the column with the greyed out skill icons
-                x += cutbit.get_xl();
+                x += cutbit.xl;
                 continue;
             }
 
             // I don't recall what this else-if does, it's probably important.
             else if (magicnr == magicnr_icons
-             && y >= cutbit.get_yl() + 1
-             && y <  2 * (cutbit.get_yl() + 1)) {
+             && y >= cutbit.yl + 1
+             && y <  2 * (cutbit.yl + 1)) {
                 // skip all x pixels in the second row in this
                 continue;
             }
@@ -407,7 +407,7 @@ void recolor_into_vector(
                 //                    we may have separating col_break-colored
                 //                    frames in the file.
                 // good solution:     immediately begin next frame
-                x += cutbit.get_xl();
+                x += cutbit.xl;
                 continue;
             }
             // No exceptions for speed encountered so far. Now do the
@@ -427,7 +427,7 @@ void recolor_into_vector(
     foreach (int i; 0 .. Style.MAX) {
         Style st = cast (Style) i;
         vector[st] = new Cutbit(cutbit);
-        AlBit target = vector[st].get_albit();
+        AlBit target = vector[st].albit;
         assert (target);
 
         // DTODOLANG
@@ -450,7 +450,7 @@ void recolor_into_vector(
         Style st = cast (Style) i;
         import std.string;
         al_save_bitmap(format("./nagetier-%d-%d.png", magicnr, i).toStringz,
-         vector[st].get_albit());
+         vector[st].albit);
     }
 
 }

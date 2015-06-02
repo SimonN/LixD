@@ -19,9 +19,9 @@ class Graphic {
 
     @property const(Cutbit) cutbit() const { return _cutbit; }
 
-    @property AlBit  albit()               { return _cutbit.get_albit(); }
-    @property Torbit ground(Torbit gr)     { return _ground = gr;        }
-    @property inout(Torbit) ground() inout { return _ground;             }
+    @property AlBit  albit()               { return _cutbit.albit; }
+    @property Torbit ground(Torbit gr)     { return _ground = gr;  }
+    @property inout(Torbit) ground() inout { return _ground;       }
 
     @property int x() const { return _x; }
     @property int y() const { return _y; }
@@ -46,11 +46,11 @@ class Graphic {
  * but rotate with the Graphic object before they access the Cutbit part.
  * Same thing with get_pixel().
  *
- *  int  get_xl() const
- *  int  get_yl() const
+ *  @property int xl() const
+ *  @property int yl() const
  */
-    @property int x_frames() const { return cutbit.get_x_frames(); }
-    @property int y_frames() const { return cutbit.get_y_frames(); }
+    @property int xfs() const { return cutbit.xfs; }
+    @property int yfs() const { return cutbit.yfs; }
 
 /*  bool get_frame_exists(int, int) const
  *  AlCol get_pixel      (int, int) const -- remember to lock target!
@@ -132,12 +132,12 @@ y(in int i)
 @property int
 xl() const
 {
-    return (_rot == 0 || _rot == 2) ? cutbit.get_xl() : cutbit.get_yl();
+    return (_rot == 0 || _rot == 2) ? cutbit.xl : cutbit.yl;
 }
 @property int
 yl() const
 {
-    return (_rot == 0 || _rot == 2) ? cutbit.get_yl() : cutbit.get_xl();
+    return (_rot == 0 || _rot == 2) ? cutbit.yl : cutbit.xl;
 }
 
 
@@ -158,8 +158,8 @@ bool get_frame_exists(in int which_xf, in int which_yf) const
 
 AlCol get_pixel(in int gx, in int gy) const
 {
-    immutable int _xl = cutbit.get_xl();
-    immutable int _yl = cutbit.get_yl();
+    immutable int _xl = cutbit.xl;
+    immutable int _yl = cutbit.yl;
     int use_x = gx;
     int use_y = gy;
 

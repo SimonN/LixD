@@ -37,16 +37,18 @@ class TextButton : Button {
         add_children(left, left_check, center, center_check);
     }
 
-    bool align_left() const { return _align_left;                            }
-    bool align_left(bool b) { _align_left=b; req_draw(); return _align_left; }
+    @property bool align_left() const { return _align_left;               }
+    @property bool align_left(bool b) { _align_left = b; req_draw();
+                                        return _align_left;               }
 
-    string text() const      { return _text;                }
-    string text(in string s) { _text = s; req_draw(); return s; }
+    @property string text() const      { return _text;                    }
+    @property string text(in string s) { _text = s; req_draw(); return s; }
 
-    int check_frame() const { return _check_frame;                            }
-    int check_frame(int i)  { _check_frame=i;req_draw(); return _check_frame; }
+    @property int check_frame() const { return _check_frame;              }
+    @property int check_frame(int i)  { _check_frame = i;req_draw();
+                                        return _check_frame;              }
 
-    override string toString() const { return "But-`" ~  _text ~ "'"; }
+    override string toString() const  { return "But-`" ~  _text ~ "'";    }
 
 private:
 
@@ -84,8 +86,8 @@ draw_self()
     if (_check_frame != 0) {
         auto cb = get_internal(file_bitmap_menu_checkmark);
         cb.draw(guiosd,
-            to!int(check_geom.xs + check_geom.xls/2 - cb.get_xl()/2),
-            to!int(check_geom.ys + check_geom.yls/2 - cb.get_xl()/2),
+            to!int(check_geom.xs + check_geom.xls/2 - cb.xl/2),
+            to!int(check_geom.ys + check_geom.yls/2 - cb.yl/2),
             _check_frame, 2 * (on && ! down)
         );
     }

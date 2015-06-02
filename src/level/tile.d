@@ -102,8 +102,8 @@ static Tile take_over_cutbit(
         type     = _type;
         subtype  = _subtype;
 
-        selbox_x = cb.get_xl(); // Initializing the selbox with the smallest
-        selbox_y = cb.get_yl(); // selbox possible, starting at the wrong ends
+        selbox_x = cb.xl; // Initializing the selbox with the smallest
+        selbox_y = cb.yl; // selbox possible, starting at the wrong ends
     }
     new_tile.set_nice_defaults_based_on_type();
     new_tile.determine_selection_box();
@@ -117,21 +117,21 @@ private void set_nice_defaults_based_on_type()
 {
     switch (type) {
     case TileType.HATCH:
-        trigger_x  = cb.get_xl() / 2;
-        trigger_y  = std.algorithm.max(20, cb.get_yl() - 24);
+        trigger_x  = cb.xl / 2;
+        trigger_y  = std.algorithm.max(20, cb.yl - 24);
         special_x  = 1;
         break;
     case TileType.GOAL:
-        trigger_x  = cb.get_xl() / 2;
-        trigger_y  = cb.get_yl() - 2;
+        trigger_x  = cb.xl / 2;
+        trigger_y  = cb.yl - 2;
         trigger_xl = 12;
         trigger_yl = 12;
         trigger_xc = true;
         trigger_yc = true;
         break;
     case TileType.TRAP:
-        trigger_x  = cb.get_xl() / 2;
-        trigger_y  = cb.get_yl() * 4 / 5;
+        trigger_x  = cb.xl / 2;
+        trigger_y  = cb.yl * 4 / 5;
         trigger_xl = 4; // _xl was 6 before July 2014, but 6 is not symmetric
         trigger_yl = 6; // on a piece with width 16 and (lix-xl % 2 == 0)
         trigger_xc = true;
@@ -141,12 +141,12 @@ private void set_nice_defaults_based_on_type()
     case TileType.WATER:
         trigger_x  = 0;
         trigger_y  = 20;
-        trigger_xl = cb.get_xl();
-        trigger_yl = cb.get_yl() - 20;
+        trigger_xl = cb.xl;
+        trigger_yl = cb.yl - 20;
         if (subtype) {
             // then it's fire, not water
             trigger_y  = 0;
-            trigger_yl = cb.get_yl();
+            trigger_yl = cb.yl;
         }
         break;
     default:
@@ -159,37 +159,37 @@ private void set_nice_defaults_based_on_type()
 private void determine_selection_box()
 {
     assert (cb);
-    AlBit albit = cb.get_albit();
+    AlBit albit = cb.albit;
     mixin(temp_lock!"albit");
 
-    for  (int xf = 0; xf < cb.get_x_frames(); ++xf)
-     for (int yf = 0; yf < cb.get_y_frames(); ++yf) {
+    for  (int xf = 0; xf < cb.xfs; ++xf)
+     for (int yf = 0; yf < cb.yfs; ++yf) {
         int  x_min = -1;
-        int  x_max = cb.get_xl();
+        int  x_max = cb.xl;
         int  y_min = -1;
-        int  y_max = cb.get_yl();
+        int  y_max = cb.yl;
 
         WHILE_X_MAX: while (x_max >= 0) {
             x_max -= 1;
-            for (int y = 0; y < cb.get_yl(); y += 1)
+            for (int y = 0; y < cb.yl; y += 1)
              if (cb.get_pixel(xf, yf, x_max, y) != color.transp)
              break WHILE_X_MAX;
         }
         WHILE_X_MIN: while (x_min < x_max) {
             x_min += 1;
-            for (int y = 0; y < cb.get_yl(); y += 1)
+            for (int y = 0; y < cb.yl; y += 1)
              if (cb.get_pixel(xf, yf, x_min, y) != color.transp)
              break WHILE_X_MIN;
         }
         WHILE_Y_MAX: while (y_max >= 0) {
             y_max -= 1;
-            for (int x = 0; x < cb.get_xl(); x += 1)
+            for (int x = 0; x < cb.xl; x += 1)
              if (cb.get_pixel(xf, yf, x, y_max) != color.transp)
              break WHILE_Y_MAX;
         }
         WHILE_Y_MIN: while (y_min < y_max) {
             y_min += 1;
-            for (int x = 0; x < cb.get_xl(); x += 1)
+            for (int x = 0; x < cb.xl; x += 1)
              if (cb.get_pixel(xf, yf, x, y_min) != color.transp)
              break WHILE_Y_MIN;
         }
@@ -218,15 +218,15 @@ void read_definitions_file(in Filename filename)
             trigger_yc = false;
         }
         else if (i.text1 == objdef_ta_from_center_x) {
-            trigger_x = cb.get_xl() / 2 + i.nr1;
+            trigger_x = cb.xl / 2 + i.nr1;
             trigger_xc = true;
         }
         else if (i.text1 == objdef_ta_from_center_y) {
-            trigger_y = cb.get_yl() / 2 + i.nr1;
+            trigger_y = cb.yl / 2 + i.nr1;
             trigger_yc = true;
         }
         else if (i.text1 == objdef_ta_from_bottom_y) {
-            trigger_y = cb.get_yl() - 2 + i.nr1;
+            trigger_y = cb.yl - 2 + i.nr1;
             trigger_yc = true;
         }
         else if (i.text1 == objdef_ta_xl) {
