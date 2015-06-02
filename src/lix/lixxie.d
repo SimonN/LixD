@@ -45,43 +45,28 @@ class Lixxie : Graphic {
 
 private:
 
-    int  ex;
-    int  ey;
-    int  dir;
-    int  special_x;
-    int  special_y;
-    int  queue; // builders and platformers can be queued in advance
+    int  _ex;
+    int  _ey;
+    int  _dir;
 
-    Tribe tribe;
-    bool  marked;
+    Tribe _tribe;
 
-    int  fling_x;
-    int  fling_y;
-    bool fling_new;
-    bool fling_by_same_tribe;
+    int  _fling_x;
+    int  _fling_y;
+    bool _fling_new;
+    bool _fling_by_same_tribe;
 
-    int  frame;
-    int  updates_since_bomb;
-    bool exploder_knockback;
+    static bool _any_new_flingers;
 
-    bool runner;
-    bool climber;
-    bool floater;
+    int  _frame;
 
-    Lookup.LoNr enc_body;
-    Lookup.LoNr enc_foot;
+    Lookup.LoNr _enc_body;
+    Lookup.LoNr _enc_foot;
 
-    Style style;
-    Ac    ac;
+    Style _style;
+    Ac    _ac;
 
     void draw_at(const int, const int);
-
-    static Torbit        land;
-    static Lookup        lookup;
-    static Map           ground_map;
-    static EffectManager effect;
-
-    static bool any_new_flingers;
 
 public:
 
@@ -89,122 +74,115 @@ public:
     static immutable int distance_float     =  60;
     static immutable int updates_for_bomb   =  75;
 
-    this(Tribe = null, int = 0, int = 0); // tribe==null ? NOTHING : FALLER
+    static Torbit        land;
+    static Lookup        lookup;
+    static Map           ground_map;
+    static EffectManager effect;
+
+    int special_x;
+    int special_y;
+    int queue; // builders and platformers can be queued in advance
+
+    bool marked; // used by the game class, marks if already updated
+
+    bool runner;
+    bool climber;
+    bool floater;
+
+    int  updates_since_bomb;
+    bool exploder_knockback;
+
+
+
+//  this(Tribe = null, int = 0, int = 0); // tribe==null ? NOTHING : FALLER
     ~this() { }
-    // invariant() -- exists, see below
+//  invariant();
 
-    static void    set_static_maps   (Torbit, Lookup, Map);
-    static void    set_effect_manager(EffectManager e) { effect = e;    }
-    static EffectManager get_ef()                      { return effect; }
-    static const(Torbit) get_land()                    { return land;   }
-    static bool    get_any_new_flingers()    { return any_new_flingers; }
+    static bool get_any_new_flingers() { return _any_new_flingers; }
 
-    bool get_mark() const { return marked;  }
-    void mark()           { marked = true;  }
-    void unmark()         { marked = false; }
+    inout(Tribe) tribe() inout { return _tribe; }
+          Style  style() const { return _style; }
 
-    inout(Tribe) get_tribe() inout { return tribe; }
-          Style  get_style() const { return style; }
+    @property int ex() const { return _ex; }
+    @property int ey() const { return _ey; }
+/*  @property int ex(in int);
+ *  @property int ey(in int);
+ *
+ *  void move_ahead(   int = 2);
+ *  void move_down (   int = 2);
+ *  void move_up   (in int = 2);
+ */
+    @property int dir() const   { return _dir; }
+    @property int dir(in int i) { return _dir = (i>0)?1 : (i<0)?-1 : _dir; }
+    void turn()                 { _dir *= -1; }
 
-    int  get_ex() const { return ex; }
-    int  get_ey() const { return ey; }
-    void set_ex(in int);
-    void set_ey(in int);
+//  bool get_in_trigger_area(const EdGraphic) const;
 
-    void move_ahead(   int = 2);
-    void move_down (   int = 2);
-    void move_up   (in int = 2);
+    @property Ac ac() const { return _ac; }
 
-    int  get_dir() const   { return dir; }
-    void set_dir(in int i) { dir = (i > 0) ? 1 : (i < 0) ? -1 : dir; }
-    void turn()            { dir *= -1; }
+    void set_ac_without_calling_become(in Ac new_ac) { _ac = new_ac; }
 
-    bool get_in_trigger_area(const EdGraphic) const;
+    @property bool pass_top () const { return ac_func[ac].pass_top;  }
+    @property bool leaving  () const { return ac_func[ac].leaving;   }
+    @property bool blockable() const { return ac_func[ac].blockable; }
 
-    Ac   get_ac() const       { return ac;   }
-    void get_ac(in Ac new_ac) { ac = new_ac; }
+    @property Sound sound_assign() const { return ac_func[ac].sound_assign; }
+    @property Sound sound_become() const { return ac_func[ac].sound_become; }
 
-    bool get_pass_top () const { return ac_func[ac].pass_top;  }
-    bool get_leaving  () const { return ac_func[ac].leaving;   }
-    bool get_blockable() const { return ac_func[ac].blockable; }
+    @property bool fling_new() const { return _fling_new; }
+    @property int  fling_x()   const { return _fling_x;   }
+    @property int  fling_y()   const { return _fling_y;   }
+/*  void add_fling(int, int, bool (from same tribe) = false);
+ *  void reset_fling_new();
+ *
+ *  static bool get_steel_absolute(in int, in int);
+ *  bool get_steel         (in int = 0, in int = 0);
+ *
+ *  void add_land          (in int = 0, in int = 0, in AlCol = color.transp);
+ *  void add_land_absolute (in int = 0, in int = 0, in AlCol = color.transp);
+ *
+ *      don't call add_land from the skills, use draw_pixel. That amends
+ *      the x-direction by left-looking lixes by the desired 1 pixel. Kludge:
+ *      Maybe remove add_land entirely and put the functionality in draw_pixel?
+ *
+ *  bool is_solid          (in int = 0, in int = 2);
+ *  bool is_solid_single   (in int = 0, in int = 2);
+ *  int  solid_wall_height (in int = 0, in int = 0);
+ *  int  count_solid       (int, int, int, int);
+ *  int  count_steel       (int, int, int, int);
+ *
+ *  static void remove_pixel_absolute(in int, in int);
+ *  bool        remove_pixel         (   int, in int);
+ *  bool        remove_rectangle     (int, int, int, int);
+ *
+ *  void draw_pixel       (int,      in int,   in AlCol);
+ *  void draw_rectangle   (int, int, int, int, in AlCol);
+ *  void draw_brick       (int, int, int, int);
+ *  void draw_frame_to_map(int, int, int, int, int, int, int, int);
+ *
+ *  void play_sound        (in ref UpdateArgs, in Sound);
+ *  void play_sound_if_trlo(in ref UpdateArgs, in Sound);
+ */
+    @property int frame() const   { return _frame;     }
+    @property int frame(in int i) { return _frame = i; }
+//           void next_frame();
+//  override bool is_last_frame() const;
 
-    Sound get_sound_assign() const { return ac_func[ac].sound_assign; }
-    Sound get_sound_become() const { return ac_func[ac].sound_become; }
+    @property auto body_encounters() const        { return _enc_body;     }
+    @property auto foot_encounters() const        { return _enc_foot;     }
+    @property auto body_encounters(Lookup.LoNr n) { return _enc_body = n; }
+    @property auto foot_encounters(Lookup.LoNr n) { return _enc_foot = n; }
+    void set_no_encounters() { _enc_body = _enc_foot = 0; }
 
-    int  get_special_x()      { return special_x; }
-    int  get_special_y()      { return special_y; }
-    int  get_queue()          { return queue;     }
-    void set_special_x(int i) { special_x = i;    }
-    void set_special_y(int i) { special_y = i;    }
-    void set_queue    (int i) { queue     = i;    }
-
-    bool get_fling_new() const { return fling_new; }
-    int  get_fling_x()   const { return fling_x;   }
-    int  get_fling_y()   const { return fling_y;   }
-    void add_fling(in int, in int, in bool = false); // bool = from same tribe
-    void reset_fling_new();
-
-    int  get_updates_since_bomb()         { return updates_since_bomb; }
-    void inc_updates_since_bomb()         { ++updates_since_bomb;      }
-    void set_updates_since_bomb(in int i) { updates_since_bomb = i;    }
-
-    bool get_exploder_knockback() const        { return exploder_knockback; }
-    void set_exploder_knockback(bool b = true) { exploder_knockback=b;      }
-
-    bool get_runner () const { return runner;  }
-    bool get_climber() const { return climber; }
-    bool get_floater() const { return floater; }
-    void set_runner ()       { runner  = true; }
-    void set_climber()       { climber = true; }
-    void set_floater()       { floater = true; }
-
-    static bool get_steel_absolute(in int, in int);
-    bool get_steel         (in int = 0, in int = 0);
-
-    // don't call add_land from the skills, use draw_pixel. That amends
-    // the x-direction by left-looking lixes by the desired 1 pixel. Kludge:
-    // Maybe remove add_land entirely and put the functionality in draw_pixel?
-    void add_land          (in int = 0, in int = 0, in AlCol = color.transp);
-    void add_land_absolute (in int = 0, in int = 0, in AlCol = color.transp);
-
-    bool is_solid          (in int = 0, in int = 2);
-    bool is_solid_single   (in int = 0, in int = 2);
-    int  solid_wall_height (in int = 0, in int = 0);
-    int  count_solid       (int, int, int, int);
-    int  count_steel       (int, int, int, int);
-
-    static void remove_pixel_absolute(in int, in int);
-    bool        remove_pixel         (   int, in int);
-    bool        remove_rectangle     (int, int, int, int);
-
-    void draw_pixel       (int,      in int,   in AlCol);
-    void draw_rectangle   (int, int, int, int, in AlCol);
-    void draw_brick       (int, int, int, int);
-    void draw_frame_to_map(int, int, int, int, int, int, int, int);
-
-    void play_sound        (in ref UpdateArgs, in Sound);
-    void play_sound_if_trlo(in ref UpdateArgs, in Sound);
-
-    int  get_frame() const   { return frame; }
-    void set_frame(in int i) { frame = i;    }
-    void next_frame(in int = 0);
-    // override bool is_last_frame() const; -- exists, see below
-
-    Lookup.LoNr get_body_encounters()   { return enc_body;         }
-    Lookup.LoNr get_foot_encounters()   { return enc_foot;         }
-    void        set_no_encounters()     { enc_body = enc_foot = 0; }
-    void        set_body_encounters(Lookup.LoNr n) { enc_body = n; }
-    void        set_foot_encounters(Lookup.LoNr n) { enc_foot = n; }
-
-    int  get_priority  (in Ac, in bool);
+//  int  get_priority  (in Ac, in bool);
     void evaluate_click(in Ac ac) { assclk(ac); }
-    void assclk        (in Ac);
-    void become        (in Ac);
-    void become_default(in Ac);
-    void update        (in UpdateArgs);
-
-
-    // override void draw(); -- exists, see below
+/*  void assclk        (in Ac);
+ *  void become        (in Ac);
+ *  void become_default(in Ac);
+ *  void update        (in UpdateArgs);
+ *
+ *  override void draw();
+ */
 
 
 
@@ -218,24 +196,24 @@ this(
     super(graphic.gralib.get_lix(new_tribe ? new_tribe.style : Style.GARDEN),
           ground_map, even(new_ex) - lix.enums.ex_offset,
                            new_ey  - lix.enums.ey_offset);
-    tribe = new_tribe;
-    dir   = 1;
-    style = tribe ? tribe.style : Style.GARDEN,
-    ac    = Ac.NOTHING;
-    if (tribe) {
+    _tribe = new_tribe;
+    _dir   = 1;
+    _style = tribe ? tribe.style : Style.GARDEN,
+    _ac    = Ac.NOTHING;
+    if (_tribe) {
         become(Ac.FALLER);
-        frame = 4;
+        _frame = 4;
     }
     // important for torus bitmaps: calculate modulo in time
-    set_ex(even(new_ex));
-    set_ey(     new_ey );
+    ex = new_ex.even;
+    ey = new_ey;
 }
 
 
 
 invariant()
 {
-    assert (dir == -1 || dir == 1);
+    assert (_dir == -1 || _dir == 1);
 }
 
 
@@ -255,7 +233,8 @@ private int ac_to_y_frame   () const { return ac - 1;    }
 private XY get_fuse_xy() const
 {
     XY ret = countdown.get(frame_to_x_frame(), ac_to_y_frame());
-    if (dir < 0) ret.x = graphic.gralib.get_lix(style).xl - ret.x;
+    if (_dir < 0)
+        ret.x = graphic.gralib.get_lix(style).xl - ret.x;
     ret.x += super.x;
     ret.y += super.y;
     return ret;
@@ -263,28 +242,34 @@ private XY get_fuse_xy() const
 
 
 
-void set_ex(in int n) {
-    ex = basics.help.even(n);
-    super.x = ex - lix.enums.ex_offset;
-    if (ground_map.torus_x) ex = positive_mod(ex, land.xl);
+@property int
+ex(in int n) {
+    _ex = basics.help.even(n);
+    super.x = _ex - lix.enums.ex_offset;
+    if (ground_map.torus_x)
+        _ex = positive_mod(_ex, land.xl);
     immutable XY fuse_xy = get_fuse_xy();
-    enc_foot |= lookup.get(ex, ey);
-    enc_body |= enc_foot
-             |  lookup.get(ex, ey - 4)
-             |  lookup.get(fuse_xy.x, fuse_xy.y);
+    _enc_foot |= lookup.get(_ex, _ey);
+    _enc_body |= _enc_foot
+              |  lookup.get(_ex, _ey - 4)
+              |  lookup.get(fuse_xy.x, fuse_xy.y);
+    return _ex;
 }
 
 
 
-void set_ey(in int n) {
-    ey = n;
-    super.y = ey - lix.enums.ey_offset;
-    if (ground_map.torus_y) ey = positive_mod(ey, land.yl);
+@property int
+ey(in int n) {
+    _ey = n;
+    super.y = _ey - lix.enums.ey_offset;
+    if (ground_map.torus_y)
+        _ey = positive_mod(_ey, land.yl);
     immutable XY fuse_xy = get_fuse_xy();
-    enc_foot |= lookup.get(ex, ey);
-    enc_body |= enc_foot
-             |  lookup.get(ex, ey - 4)
-             |  lookup.get(fuse_xy.x, fuse_xy.y);
+    _enc_foot |= lookup.get(_ex, _ey);
+    _enc_body |= _enc_foot
+              |  lookup.get(_ex, _ey - 4)
+              |  lookup.get(fuse_xy.x, fuse_xy.y);
+    return _ey;
 }
 
 
@@ -292,18 +277,18 @@ void set_ey(in int n) {
 void move_ahead(int plus_x)
 {
     plus_x = even(plus_x);
-    plus_x *= dir;
+    plus_x *= _dir;
     // move in little steps, to check for lookupmap encounters on the way
-    for ( ; plus_x > 0; plus_x -= 2) set_ex(ex + 2);
-    for ( ; plus_x < 0; plus_x += 2) set_ex(ex - 2);
+    for ( ; plus_x > 0; plus_x -= 2) ex = (_ex + 2);
+    for ( ; plus_x < 0; plus_x += 2) ex = (_ex - 2);
 }
 
 
 
 void move_down(int plus_y)
 {
-    for ( ; plus_y > 0; --plus_y) set_ey(ey + 1);
-    for ( ; plus_y < 0; ++plus_y) set_ey(ey - 1);
+    for ( ; plus_y > 0; --plus_y) ey = (_ey + 1);
+    for ( ; plus_y < 0; ++plus_y) ey = (_ey - 1);
 }
 
 
@@ -332,24 +317,24 @@ bool get_in_trigger_area(const EdGraphic gr) const
 
 void add_fling(in int px, in int py, in bool same_tribe)
 {
-    if (fling_by_same_tribe && same_tribe) return;
+    if (_fling_by_same_tribe && same_tribe) return;
 
-    any_new_flingers    = true;
-    fling_by_same_tribe = (fling_by_same_tribe || same_tribe);
-    fling_new = true;
-    fling_x   += px;
-    fling_y   += py;
+    _any_new_flingers    = true;
+    _fling_by_same_tribe = (_fling_by_same_tribe || same_tribe);
+    _fling_new = true;
+    _fling_x   += px;
+    _fling_y   += py;
 }
 
 
 
 void reset_fling_new()
 {
-    any_new_flingers    = false;
-    fling_new           = false;
-    fling_by_same_tribe = false;
-    fling_x             = 0;
-    fling_y             = 0;
+    _any_new_flingers    = false;
+    _fling_new           = false;
+    _fling_by_same_tribe = false;
+    _fling_x             = 0;
+    _fling_y             = 0;
 }
 
 
@@ -361,7 +346,7 @@ int  get_priority  (Ac ac, bool b) { assert (false, "DTODO: get_priority not imp
 
 bool get_steel(in int px, in int py)
 {
-    return lookup.get_steel(ex + px * dir, ey + py);
+    return lookup.get_steel(_ex + px * _dir, _ey + py);
 }
 
 
@@ -375,7 +360,7 @@ static bool get_steel_absolute(in int x, in int y)
 
 void add_land(in int px, in int py, const AlCol col)
 {
-    add_land_absolute(ex + px * dir, ey + py, col);
+    add_land_absolute(_ex + px * _dir, _ey + py, col);
 }
 
 
@@ -392,14 +377,14 @@ void add_land_absolute(in int x = 0, in int y = 0, in AlCol col = color.transp)
 
 bool is_solid(in int px, in int py)
 {
-    return lookup.get_solid_even(ex + px * dir, ey + py);
+    return lookup.get_solid_even(_ex + px * _dir, _ey + py);
 }
 
 
 
 bool is_solid_single(in int px, in int py)
 {
-    return lookup.get_solid(ex + px * dir, ey + py);
+    return lookup.get_solid(_ex + px * _dir, _ey + py);
 }
 
 
@@ -455,12 +440,12 @@ int count_steel(int x1, int y1, int x2, int y2)
 bool remove_pixel(int px, in int py)
 {
     // this amendmend is only in draw_pixel() and remove_pixel()
-    if (dir < 0) --px;
+    if (_dir < 0) --px;
 
     // test whether the landscape can be dug
     if (! get_steel(px, py) && is_solid(px, py)) {
-        lookup.rm     (ex + px * dir, ey + py, Lookup.bit_terrain);
-        land.set_pixel(ex + px * dir, ey + py, color.transp);
+        lookup.rm     (_ex + px * _dir, _ey + py, Lookup.bit_terrain);
+        land.set_pixel(_ex + px * _dir, _ey + py, color.transp);
         return false;
     }
     // Stahl?
@@ -500,7 +485,7 @@ bool remove_rectangle(int x1, int y1, int x2, int y2)
 void draw_pixel(int px, in int py, in AlCol col)
 {
     // this amendmend is only in draw_pixel() and remove_pixel()
-    if (dir < 0) --px;
+    if (_dir < 0) --px;
 
     if (! is_solid_single(px, py)) add_land(px, py, col);
 }
@@ -528,9 +513,9 @@ void draw_brick(int x1, int y1, int x2, int y2)
     const int col_m = get_cutbit()->get_pixel(20, LixEn::BUILDER - 1, 0, 0);
     const int col_d = get_cutbit()->get_pixel(21, LixEn::BUILDER - 1, 0, 0);
 
-    draw_rectangle(x1 + (dir<0), y1, x2 - (dir>0), y1, col_l);
-    draw_rectangle(x1 + (dir>0), y2, x2 - (dir<0), y2, col_d);
-    if (dir > 0) {
+    draw_rectangle(x1 + (_dir<0), y1, x2 - (_dir>0), y1, col_l);
+    draw_rectangle(x1 + (_dir>0), y2, x2 - (_dir<0), y2, col_d);
+    if (_dir > 0) {
         draw_pixel(x2, y1, col_m);
         draw_pixel(x1, y2, col_m);
     }
@@ -593,11 +578,11 @@ override bool is_last_frame() const
 
 
 
-void next_frame(in int loop)
+void next_frame()
 {
-    // Kludge: do we want frame + 3 here or frame + 1? Examine this's callers
-    if (is_last_frame() || frame + 3 == loop) frame = 0;
-    else frame++;
+    if (is_last_frame())
+        _frame = 0;
+    else _frame++;
 }
 
 
@@ -640,11 +625,10 @@ override void draw()
     }
     // end of drawing the fuse
 
-    // mirror kippt vertikal, also muss bei dir < 0 auch noch um 180 Grad
-    // gedreht werden. Allegro-Zeichenfunktionen bieten oft ebenfalls nur
-    // vertikale Kippung, ich benutze daher ebenfalls diese Konvention.
-    mirror   =      dir < 0;
-    rotation = 2 * (dir < 0);
+    // Mirror flips vertically. Therefore, when _dir < 0, we have to rotate
+    // by 180 degrees in addition.
+    mirror   =      _dir < 0;
+    rotation = 2 * (_dir < 0);
     Graphic.draw();
 }
 
@@ -690,14 +674,14 @@ int get_priority(
         // Stunners/ascenders may be turned in their later frames, but
         // otherwise act like regular mostly unassignable-to acitivities
         case Ac.STUNNER:
-            if (get_frame() >= 16) {
+            if (frame >= 16) {
                 p = 3000;
                 break;
             }
             else goto GOTO_TARGET_FULL_ATTENTION;
 
         case Ac.ASCENDER:
-            if (get_frame() >= 5) {
+            if (frame >= 5) {
                 p = 3000;
                 break;
             }
@@ -764,8 +748,8 @@ void assclk(in Ac new_ac)
     if (ac_func[new_ac].assclk) ac_func[new_ac].assclk(this);
     else                        become(new_ac); // this dispatches again
 
-    if (old_ac != ac) --frame; // can go to -1, then nothing happens on the
-                               // next update and frame 0 will be shown then
+    if (old_ac != ac) --_frame; // can go to -1, then nothing happens on the
+                                // next update and frame 0 will be shown then
 }
 
 
@@ -779,8 +763,8 @@ void become(in Ac new_ac)
     // Reset sprite placement like climber's offset in x-direction by 1,
     // or the digger sprite displacement in one frame. This is the same code
     // as the sprite placement in set_ex/ey().
-    super.x = ex - lix.enums.ex_offset;
-    super.y = ey - lix.enums.ey_offset;
+    super.x = _ex - lix.enums.ex_offset;
+    super.y = _ey - lix.enums.ey_offset;
 
     if (ac_func[new_ac].become) ac_func[new_ac].become(this);
     else                        become_default(new_ac);
@@ -790,11 +774,11 @@ void become(in Ac new_ac)
 
 void become_default(in Ac new_ac)
 {
-    frame     = 0;
+    _frame    = 0;
+    _ac       = new_ac;
     special_y = 0;
     special_x = 0;
     queue     = 0;
-    ac        = new_ac;
 }
 
 
