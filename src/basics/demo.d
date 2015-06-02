@@ -97,7 +97,7 @@ this()
 
     // This test class does lots of drawing during calc().
     // Since that is skipped when it's first created, make one osd-clear here.
-    mixin(temp_target!"osd.get_albit()");
+    mixin(temp_target!"osd.albit");
     al_clear_to_color(AlCol(0, 0, 0, 1));
 }
 
@@ -141,7 +141,7 @@ calc()
 {
     int tick = al_get_timer_count(basics.alleg5.timer) % (2 << 30);
 
-    mixin(temp_target!"osd.get_albit()");
+    mixin(temp_target!"osd.albit");
     al_clear_to_color(AlCol(0, 0, 0, 1));
     al_draw_triangle(20+tick, 20, 30, 80, 40, 20, AlCol(0.3, 0.5, 0.7, 1), 3);
 

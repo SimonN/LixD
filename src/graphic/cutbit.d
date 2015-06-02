@@ -301,7 +301,7 @@ private void draw_missing_frame_error(
         str = format("(%d,%d)", fx, fy);
         col = color.cb_bad_frame;
     }
-    mixin(temp_target!"torbit.get_albit()");
+    mixin(temp_target!"torbit.albit");
     draw_text(djvu_s, str, x, y, col);
 }
 
@@ -345,7 +345,7 @@ void draw(
     const double scal = 0) const
 {
     assert (target_torbit, "trying to draw onto null torbit");
-    AlBit target = target_torbit.get_al_bitmap();
+    AlBit target = target_torbit.albit;
 
     if (bitmap && xf >= 0 && yf >= 0 && xf < _xfs && yf < _yfs) {
         AlBit sprite = create_sub_bitmap_for_frame(xf, yf);
@@ -404,8 +404,8 @@ void draw(
             invert_lengths ? _xl : _yl);
         excerpt.clear_to_color(color.transp);
         excerpt.draw_from(cast (AlBit) bitmap, 0, 0, mirr, rot);
-        target_torbit.draw     (excerpt.get_albit(), x, y);
-        target_torbit.draw_from(excerpt.get_albit(), x, y);
+        target_torbit.draw     (excerpt.albit, x, y);
+        target_torbit.draw_from(excerpt.albit, x, y);
         break; }
 
     case Mode.NOOW_EDITOR:

@@ -13,8 +13,8 @@ import level.tile;
 package void impl_draw_terrain_to(in Level level, Torbit tb, Lookup lookup)
 {
     if (! tb) return;
-    assert (tb.get_xl() == level.size_x);
-    assert (tb.get_yl() == level.size_y);
+    assert (tb.xl == level.size_x);
+    assert (tb.yl == level.size_y);
 
     tb.clear_to_color(color.transp);
     tb.set_torus_xy(level.torus_x, level.torus_y);

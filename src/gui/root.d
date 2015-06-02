@@ -46,7 +46,7 @@ initialize()
     guiosd = new Torbit(al_get_display_width (display),
                         al_get_display_height(display));
     assert (guiosd);
-    Geom.set_screen_xyls(guiosd.get_xl(), guiosd.get_yl());
+    Geom.set_screen_xyls(guiosd.xl, guiosd.yl);
 }
 
 
@@ -139,7 +139,7 @@ draw()
         foreach (element; focus)  element.req_draw();
     }
 
-    mixin(temp_target!"guiosd.get_albit()");
+    mixin(temp_target!"guiosd.albit");
     foreach (element; elders) element.draw();
     foreach (element; focus)  element.draw();
 

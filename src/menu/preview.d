@@ -78,7 +78,7 @@ draw_self()
     super.draw_self();
 
     if (torbit)
-        guiosd.draw_from(torbit.get_albit(), xs.round_int, ys.round_int);
+        guiosd.draw_from(torbit.albit, xs.round_int, ys.round_int);
     else
         // target is guiosd already, because we're in an Element's draw
         al_draw_filled_rectangle(xs, ys, xs + xls, ys + yls, undraw_color);

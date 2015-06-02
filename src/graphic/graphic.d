@@ -110,8 +110,8 @@ this(
 x(in int i)
 {
     _x = i;
-    if (ground && ground.get_torus_x())
-        _x = positive_mod(_x, ground.get_xl());
+    if (ground && ground.torus_x)
+        _x = positive_mod(_x, ground.xl);
     return _x;
 }
 
@@ -119,8 +119,8 @@ x(in int i)
 y(in int i)
 {
     _y = i;
-    if (ground && ground.get_torus_y())
-        _y = positive_mod(_y, ground.get_yl());
+    if (ground && ground.torus_y)
+        _y = positive_mod(_y, ground.yl);
     return _y;
 }
 

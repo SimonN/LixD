@@ -266,7 +266,7 @@ private XY get_fuse_xy() const
 void set_ex(in int n) {
     ex = basics.help.even(n);
     super.x = ex - lix.enums.ex_offset;
-    if (ground_map.get_torus_x()) ex = positive_mod(ex, land.get_xl());
+    if (ground_map.torus_x) ex = positive_mod(ex, land.xl);
     immutable XY fuse_xy = get_fuse_xy();
     enc_foot |= lookup.get(ex, ey);
     enc_body |= enc_foot
@@ -279,7 +279,7 @@ void set_ex(in int n) {
 void set_ey(in int n) {
     ey = n;
     super.y = ey - lix.enums.ey_offset;
-    if (ground_map.get_torus_y()) ey = positive_mod(ey, land.get_yl());
+    if (ground_map.torus_y) ey = positive_mod(ey, land.yl);
     immutable XY fuse_xy = get_fuse_xy();
     enc_foot |= lookup.get(ex, ey);
     enc_body |= enc_foot
