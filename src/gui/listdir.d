@@ -25,9 +25,9 @@ public:
 /*  this(      x, y, xl, yl);
  *  this(from, x, y, xl, yl);
  */
-    @property const(Filename) base_dir() const {
+    @property inout(Filename) base_dir() inout {
         return _base_dir; }
-    @property override const(Filename) current_dir() const {
+    @property override inout(Filename) current_dir() inout {
         return super.current_dir; }
 /*  @property void current_dir(in Filename);
  *  @property void base_dir   (in Filename);
@@ -38,9 +38,9 @@ public:
 
 private:
 
-    @disable @property const(Filename) current_file();
+    @disable @property inout(Filename) current_file() inout;
 
-    Rebindable!(const Filename) _base_dir;
+    Filename   _base_dir;
     TextButton dir_up;
 
     ListFile _list_file; // this is reloaded when our dir changes
@@ -121,8 +121,8 @@ on_dir_load()
         children.length));
 
     // sanity checks
-    immutable bool bad_exists  = ! file.search.dir_exists(current_dir);
-    immutable bool bad_child   = ! current_dir.is_child_of(_base_dir);
+    immutable bool bad_exists = ! file.search.dir_exists(current_dir);
+    immutable bool bad_child  = ! current_dir.is_child_of(_base_dir);
 
     if (bad_exists || bad_child) {
         if (! file.search.dir_exists(base_dir)) {

@@ -1,10 +1,11 @@
 module file.filename;
 
 import std.algorithm;
-
 import std.string;
 import std.array; // property empty
 import std.conv; // to!long for string length
+
+import basics.help;
 
 // Some methods return normal D strings, which are immutable(char)[], i.e.,
 // arrays. D arrays are passed as pointers to start and end.
@@ -67,6 +68,8 @@ public:
 
 pure this(in string s)
 {
+    assert (s.length < int.max);
+
     // All strings start empty, pre_extension is '\0'
 
     // Possible root dirs are "./" and "../". We erase everything from the
@@ -76,7 +79,7 @@ pure this(in string s)
     _rootless = s[sos .. $];
 
     // Determine the extension, this is done by finding the last '.'
-    long last_dot = _rootless.length.to!long - 1L;
+    int last_dot = _rootless.len - 1;
     int extension_length = 0;
     while (last_dot >= 0 && _rootless[last_dot] != '.') {
         --last_dot;
@@ -103,7 +106,7 @@ pure this(in string s)
         _pre_extension = _rootless[last_dot - 1];
 
     // Determine the file. This is done similar as finding the extension.
-    long last_slash = _rootless.length.to!long - 1L;
+    int last_slash = _rootless.len - 1;
     while (last_slash >= 0 && _rootless[last_slash] != '/')
         --last_slash;
     if (last_slash >= 0) {
@@ -117,7 +120,7 @@ pure this(in string s)
 
     // find the innermost dir, based on the now-set dir_rootless.
     // sls = "second-last slash"
-    long sls = _dir_rootless.length.to!long - 1L;
+    int sls = _dir_rootless.len - 1;
     // don't treat the final slash as the second-to-last slash
     if (sls >= 0 && _dir_rootless[sls] == '/')
         --sls;
@@ -152,9 +155,11 @@ pure this(in Filename fn)
 
 
 
-bool opEquals(in Filename rhs) const
+override bool
+opEquals(Object rhs_obj) const
 {
-    return (_rootless == rhs._rootless);
+    const(Filename) rhs = cast (const Filename) rhs_obj;
+    return rhs && this._rootless == rhs._rootless;
 }
 
 
@@ -189,6 +194,7 @@ int opCmp(in Filename rhs) const
 bool is_child_of(in Filename parent) const
 {
     return parent._file.empty
+        && parent._rootless.length <= _rootless.length
         && parent._rootless == _rootless[0 .. parent._rootless.length];
 }
 

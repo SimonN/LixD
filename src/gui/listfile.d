@@ -48,15 +48,15 @@ public:
     @property int    files_total()         { return files.length.to!int;  }
     @property int    page()                { return _page;                }
 
-    @property const(Button) button_last_clicked() const {
+    @property inout(Button) button_last_clicked() inout {
         return _button_last_clicked; }
 
     deprecated("Do we still need this in the browser?")
     const(Filename) get_file(int i) { return files[i]; }
 
     @property void            current_dir(in Filename fn) { load_dir(fn);  }
-    @property const(Filename) current_dir()  const { return _current_dir;  }
-    @property const(Filename) current_file() const { return _current_file; }
+    @property inout(Filename) current_dir()  inout { return _current_dir;  }
+    @property inout(Filename) current_file() inout { return _current_file; }
 
     @property int bottom_button()      { return _bottom_button;     }
     @property int bottom_button(int i) { return _bottom_button = i; }
@@ -100,8 +100,8 @@ private:
     Button[]   buttons;
     Button     _button_last_clicked;
 
-    Rebindable!(const Filename) _current_dir;
-    Rebindable!(const Filename) _current_file; // need not be in current_dir
+    Filename   _current_dir;
+    Filename   _current_file; // need not be in current_dir
 
     FileFinder _file_finder;
     SearchCrit _search_crit;

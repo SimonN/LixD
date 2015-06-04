@@ -1,5 +1,10 @@
 module gui.listlev;
 
+/*  class ListLevel : Listfile
+ *
+ *      This reads only LevelMetaData, not entire Level objects.
+ */
+
 import std.algorithm;
 import std.range;
 import std.string;

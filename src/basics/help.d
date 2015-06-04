@@ -6,6 +6,7 @@ import std.math;
 import std.string;
 import std.utf;
 
+
 // The percent operator can return a negative number, e.g. -5 % 3 == -2.
 // When the desired result here is 1, not -2, use positive_mod().
 int positive_mod(in int nr, in int modulo)
@@ -50,6 +51,14 @@ user_name_escape_for_filename(in string str)
 {
     // DTODO
     return str;
+}
+
+
+
+int
+len(T)(in T[] arr)
+{
+    return arr.length.to!int;
 }
 
 

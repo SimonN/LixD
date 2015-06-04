@@ -82,7 +82,10 @@ calc()
      || hardware.display.get_display_close_was_clicked()
      || get_shift() && key_once(ALLEGRO_KEY_ESCAPE);
 
-    if (main_menu) {
+    if (exit) {
+        kill();
+    }
+    else if (main_menu) {
         // no need to calc the menu, it's a GUI elder
         if (main_menu.goto_single) {
             kill();
