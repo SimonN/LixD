@@ -5,11 +5,12 @@ import std.c.time;
 
 class Date {
 
-    static Date now();
-    this(string);
-
-    bool opEquals(const Date rhs) const;
-    int  opCmp   (const Date rhs) const;
+/*  static Date now();
+ *  this(string);
+ *
+ *  bool opEquals(Date);
+ *  int  opCmp   (Date);
+ */
 
 private:
 
@@ -26,10 +27,10 @@ private:
 
 public:
 
-static Date now()
+static Date
+now()
 {
-    long my_null = 0;
-    time_t timestamp = time(&my_null);
+    time_t timestamp = time(null);
 	tm*    loctime   = localtime(&timestamp);
 
     Date ret   = new Date();
@@ -75,7 +76,8 @@ this(string s)
 
 
 
-override string toString() const
+override string
+toString() const
 {
     return format("%04d-%02d-%02d %02d:%02d:%02d",
         year, month, day, hour, minute, second);
@@ -83,19 +85,23 @@ override string toString() const
 
 
 
-bool opEquals(const Date rhs) const
+override bool
+opEquals(Object rhs_obj) const
 {
-    return year   == rhs.year
-     &&    month  == rhs.month
-     &&    day    == rhs.day
-     &&    hour   == rhs.hour
-     &&    minute == rhs.minute
-     &&    second == rhs.second;
+    auto rhs = cast (const Date) rhs_obj;
+    return rhs !is null
+        && year   == rhs.year
+        && month  == rhs.month
+        && day    == rhs.day
+        && hour   == rhs.hour
+        && minute == rhs.minute
+        && second == rhs.second;
 }
 
 
 
-int opCmp(const Date rhs) const
+int
+opCmp(in Date rhs) const
 {
     return year   < rhs.year   ? -1 : year   > rhs.year   ? 1
      :     month  < rhs.month  ? -1 : month  > rhs.month  ? 1
