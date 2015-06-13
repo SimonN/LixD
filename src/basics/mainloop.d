@@ -38,6 +38,7 @@ public:
             while (last_tick == al_get_timer_count(basics.alleg5.timer))
                 al_rest(0.001);
         }
+        kill();
     }
 
 private:
@@ -60,6 +61,7 @@ kill()
     }
     if (brow_sin) {
         gui.rm_elder(brow_sin);
+        destroy(brow_sin); // to kill the preview torbit
         brow_sin = null;
     }
     if (demo) {
@@ -83,7 +85,7 @@ calc()
      || get_shift() && key_once(ALLEGRO_KEY_ESCAPE);
 
     if (exit) {
-        kill();
+        return;
     }
     else if (main_menu) {
         // no need to calc the menu, it's a GUI elder
@@ -98,7 +100,6 @@ calc()
             demo = new Demo;
         }
         else if (main_menu.exit_program) {
-            kill();
             exit = true;
         }
     }

@@ -19,10 +19,13 @@ class BrowserBase : Window {
  *      bool use_checkmarks = false,
  *      bool replay_style   = false); -- see below for implementation
  */
+
+    ~this() { if (preview) destroy(preview); preview = null; }
+
     void set_button_play_text(in string s) { button_play.text = s; }
 
-    @property bool goto_play()      const { return _goto_play;      }
-    @property bool goto_main_menu() const { return _goto_main_menu; }
+    @property bool  goto_main_menu() const { return _goto_main_menu; }
+    @property bool  goto_play()      const { return _goto_play;      }
 
     @property auto base_dir()     const { return dir_list.base_dir;     }
     @property auto current_file() const { return lev_list.current_file; }
@@ -41,13 +44,13 @@ class BrowserBase : Window {
     @property void info_y(in int i) { _info_y = i;    }
 
     // override these
-    void on_file_highlight(in Filename) {}
-    void on_file_select   (in Filename) {}
+    void on_file_highlight(Filename) {}
+    void on_file_select   (Filename) {}
 
 private:
 
-    bool _goto_play;
     bool _goto_main_menu;
+    bool _goto_play;
 
     int        _info_y;
     Filename   file_recent; // only used for highlighting, not selecting
@@ -61,6 +64,8 @@ private:
     TextButton button_play;
     TextButton button_exit;
     Preview    preview;
+
+//  void       highlight(Filename);
 
 
 
@@ -93,7 +98,11 @@ this(
     dir_list.list_file_to_control = lev_list;
     dir_list.current_dir = current_file;
 
-    // lev_list.highlight(current_file); // DTODO: still needed?
+    lev_list.highlight(current_file);
+    if (lev_list.current_file == current_file)
+        this.highlight(current_file);
+    else
+        this.highlight(null);
 
     button_play.text = Lang.browser_play.transl;
     button_exit.text = Lang.common_back.transl;
@@ -115,23 +124,51 @@ public void set_preview_y_and_yl(in int y, in int yl)
 
 
 
+private void
+highlight(Filename fn)
+{
+    if (fn is null) {
+        button_play.hide();
+        // keep file_recent as it is, we might highlight that again later
+        on_file_highlight(null);
+    }
+    else {
+        button_play.show();
+        file_recent = fn;
+        on_file_highlight(fn);
+    }
+}
+
+
+
 protected override void
 calc_self()
 {
     if (dir_list.clicked) {
         subtitle = dir_list.current_dir.rootless;
+        if (file_recent &&
+            file_recent.dir_rootless == dir_list.current_dir.dir_rootless)
+            highlight(file_recent);
+        else
+            highlight(null);
     }
     else if (lev_list.clicked) {
         auto fn = lev_list.current_file;
         auto button = lev_list.button_last_clicked;
         if (fn !is null && button !is null) {
-            // Button clicked for the first time? Then it's on now.
             if (button.on)
-                on_file_highlight(fn);
+                // button clicked for the first time
+                highlight(fn);
             else
-                // if we switched it off, we've clicked it for the 2nd time
+                // button clicked for the second time
                 on_file_select(fn);
         }
+    }
+    else if (button_play.clicked) {
+        if (file_recent !is null
+         && file_recent.is_child_of(dir_list.current_dir)
+         && file_recent ==          lev_list.current_file)
+            on_file_select(file_recent);
     }
 }
 
