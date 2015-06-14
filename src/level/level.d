@@ -56,6 +56,8 @@ public:
     static immutable int spawnint_min =  1;
     static immutable int spawnint_max = 96;
 
+    // DTODO: implement players_intended;
+
     Date   built;
     string author;
     string name_german;
@@ -91,17 +93,16 @@ public:
     Skill[]             skills;
     Pos[][TileType.MAX] pos; // one array Pos[] for each TileType,
                              // indexed by integers, not by TileType enum vals
-    this();
-    this(in Filename);
-    ~this() { }
-
-    bool opCmp(in Level) const;
-
-    @property LevelStatus status() const { return _status; }
-    @property bool        good()   const { return _status == LevelStatus.GOOD;}
-/*  @property string      name()   const;
+/*  this();
+ *  this(in Filename);
+ *
+ *  override bool opEquals(Object) const
+ *  @property string      name()   const;
  *  @property string[]    hints()  inout;
  */
+    @property LevelStatus status() const { return _status; }
+    @property bool        good()   const { return _status == LevelStatus.GOOD;}
+
     void draw_terrain_to(Torbit tb, Lookup lo = null) const
     {
         impl_draw_terrain_to(this, tb, lo);
@@ -168,8 +169,12 @@ hints() inout
 
 
 
-bool opCmp(in Level rhs) const
+override bool
+opEquals(Object rhs_obj) const
 {
+    const(Level) rhs = cast (const Level) rhs_obj;
+    if (rhs_obj is null) return false;
+
     if (this.author        != rhs.author
      || this.name_german   != rhs.name_german
      || this.name_english  != rhs.name_english

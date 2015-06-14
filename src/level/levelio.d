@@ -187,7 +187,7 @@ private void load_from_vector(Level level, in IoLine[] lines)
 
 
 
-void add_object_from_ascii_line(
+private void add_object_from_ascii_line(
     Level     level,
     in string text1,
     in int    nr1,
@@ -224,7 +224,7 @@ void add_object_from_ascii_line(
 
 
 
-void load_level_finalize(Level level)
+private void load_level_finalize(Level level)
 {
     with (level) {
         // set some standards, in case we've read in rubbish values

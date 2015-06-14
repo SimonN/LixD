@@ -36,8 +36,8 @@ class Graphic {
     @property double      rotation(double dbl)    { return _rot = fmod(dbl,4);}
     @property Cutbit.Mode mode    (Cutbit.Mode m) { return _mode = m;         }
 
-    @property int xf() const { return xf; }
-    @property int yf() const { return yf; }
+    @property int xf() const { return _xf; }
+    @property int yf() const { return _yf; }
     @property int xf(in int new_x_frame) { return _xf = new_x_frame; }
     @property int yf(in int new_y_frame) { return _yf = new_y_frame; }
 
@@ -179,7 +179,7 @@ AlCol get_pixel(in int gx, in int gy) const
         case 3: use_x = _xl-gy-1; use_y = !_mirror ? gx       : _yl-gx-1;break;
         default: break;
     }
-    return cutbit.get_pixel(xf, yf, use_x, use_y);
+    return cutbit.get_pixel(_xf, _yf, use_x, use_y);
 }
 
 
