@@ -7,6 +7,7 @@ import file.filename;
 import game.gamecalc;
 import game.gamedraw;
 import game.gameinit;
+import game.gamepass;
 import game.replay;
 import game.state;
 import graphic.color;
@@ -43,11 +44,10 @@ package:
              // of that land, blits gadgets and lixes on it, and blits the
              // result to the screen. It is both a renderer and a camera.
 
-    int my_debugging_counter = 0;
-
     long altick_last_update;
 
-    void calc_update() { impl_calc_update(this); }
-    void calc_active() { impl_calc_update(this); }
+    void calc_passive() { impl_calc_passive(this); }
+    void calc_active()  { impl_calc_update (this); }
+    void calc_update()  { impl_calc_update (this); }
 
 }

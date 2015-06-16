@@ -359,10 +359,10 @@ draw_camera_these_args_describe_target_corner(
             al_draw_scaled_bitmap(albit, sx, sy, sxl,      syl,
                                          tx, ty, zoom*sxl, zoom*syl, 0);
     }
-                      blit_once(r.x, r.y, r.xl, r.yl, tcx,       tcy);
-    if (drtx        ) blit_once(0,   r.y, xl2,  r.yl, tcx + r.x, tcy);
-    if (        drty) blit_once(r.x, 0,   r.xl, yl2,  tcx,       tcy + r.y);
-    if (drtx && drty) blit_once(0,   r.y, xl2,  yl2,  tcx + r.x, tcy + r.y);
+                      blit_once(r.x, r.y, r.xl, r.yl, tcx,        tcy);
+    if (drtx        ) blit_once(0,   r.y, xl2,  r.yl, tcx + r.xl, tcy);
+    if (        drty) blit_once(r.x, 0,   r.xl, yl2,  tcx,        tcy + r.yl);
+    if (drtx && drty) blit_once(0,   0,   xl2,  yl2,  tcx + r.xl, tcy + r.yl);
 }
 
 

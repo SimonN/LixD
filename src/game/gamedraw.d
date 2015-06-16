@@ -26,15 +26,17 @@ impl_game_draw(Game game) { with (game)
     import graphic.textout;
     draw_text(djvu_m, "Press [ESC] to go back to the menu.", 10, 10,
         graphic.color.color.white);
+    draw_text(djvu_m, "Press [P] to save the map bitmaps to files.", 10, 40,
+        graphic.color.color.white);
 
-    static if (false) {
-        if (my_debugging_counter == 0) {
+    static if (true) {
+        if (hardware.keyboard.key_once(ALLEGRO_KEY_P)) {
             import file.filename;
 
-            my_debugging_counter = 1;
             cs.land.save_to_file(new Filename("./debug-land.png"));
             map    .save_to_file(new Filename("./debug-map-directsave.png"));
             Torbit debug_output = new Torbit(display_xl, display_yl);
+            debug_output.clear_to_color(graphic.color.color.gui_d);
             scope (exit)
                 destroy(debug_output);
             map.draw_camera(debug_output.albit);
