@@ -309,20 +309,20 @@ draw_camera(AlBit target_albit)
         if (less_x != 0) break;
     }
 
-    // Draw the screen border
-    /* DTODO: uncomment and port
-    const int c = useR->screen_border_colored
-                ? color[COL_SCREEN_BORDER] : 0;
+    // To tell apart air from areas outside of the map, color screen borders.
+    void draw_border(in int ax, in int ay, in int axl, in int ayl)
+    {
+        // we assume the correct target bitmap is set.
+        // D/A5 Lix doesn't make screen border coloring optional
+        al_draw_filled_rectangle(ax, ay, ax + axl, ay + ayl,
+                                 color.screen_border);
+    }
     if (less_x) {
-        rectfill(target.get_al_bitmap(), 0, 0, less_x/2 - 1,
-         screen_yl - 1, c);
-        rectfill(target.get_al_bitmap(), screen_xl - less_x/2, 0,
-         screen_xl - 1, screen_yl - 1, c);
+        draw_border(0,                    0, less_x/2,             camera_yl);
+        draw_border(camera_xl - less_x/2, 0, less_x/2,             camera_yl);
     }
     if (less_y)
-     rectfill(target.get_al_bitmap(), less_x/2, 0,
-     screen_xl - less_x/2 - 1, less_y - 1, c);
-    */
+        draw_border(less_x/2,             0, camera_xl - less_x,   less_y);
 }
 
 

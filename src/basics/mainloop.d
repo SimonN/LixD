@@ -15,6 +15,7 @@ import core.memory;
 import basics.alleg5;
 import basics.demo;
 import game.game;
+import file.log; // logging uncaught Exceptions
 import hardware.display;
 import hardware.keyboard;
 import menu.mainmenu;
@@ -30,7 +31,7 @@ public:
 
     void main_loop()
     {
-        while (true) {
+        try while (true) {
             immutable last_tick = al_get_timer_count(basics.alleg5.timer);
             calc();
             if (exit) break;
@@ -38,6 +39,14 @@ public:
 
             while (last_tick == al_get_timer_count(basics.alleg5.timer))
                 al_rest(0.001);
+        }
+        catch (Throwable thr) {
+            // Uncaught exceptions, assert errors, and assert (false) should
+            // fly straight out of main and terminate the program. Since
+            // Windows users won't run the game from a shell, they should
+            // retrieve the error message from the logfile, in addition.
+            Log.log(thr.msg);
+            throw thr;
         }
         kill();
     }
