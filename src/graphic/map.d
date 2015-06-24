@@ -297,7 +297,13 @@ draw_camera(AlBit target_albit)
 
     for     (int x = less_x/2; x < _camera_xl-less_x/2; x += xl * zoom) {
         for (int y = less_y;   y < _camera_yl;          y += yl * zoom) {
-            draw_camera_these_args_describe_target_corner(x, y);
+            // max_xl, max_yl describe the size of the image to be drawn
+            // in this iteration of the double-for loop. This should always
+            // be as much as possible. Only in the last iteration of the loop,
+            // a smaller rectangle is better.
+            immutable int max_xl = min(xl * zoom, _camera_xl - x);
+            immutable int max_yl = min(yl * zoom, _camera_yl - y);
+            draw_camera_with_target_corner(x, y, max_xl, max_yl);
             if (less_y != 0) break;
         }
         if (less_x != 0) break;
@@ -339,15 +345,23 @@ private Rect get_camera_rect()
 
 
 private void
-draw_camera_these_args_describe_target_corner(
+draw_camera_with_target_corner(
     in int tcx,
-    in int tcy
+    in int tcy,
+    in int max_tcxl,
+    in int max_tcyl
 ) {
     immutable r    = get_camera_rect();
-    immutable drtx = r.xl < camera_zoomed_xl && torus_x;
-    immutable drty = r.yl < camera_zoomed_yl && torus_y;
-    immutable xl2  = camera_zoomed_xl - r.xl;
-    immutable yl2  = camera_zoomed_yl - r.yl;
+    immutable drtx = r.xl < camera_zoomed_xl && r.xl < max_tcxl && torus_x;
+    immutable drty = r.yl < camera_zoomed_yl && r.yl < max_tcyl && torus_y;
+
+    // size of the non-wrapped portion
+    immutable xl1 = min(r.xl, max_tcxl);
+    immutable yl1 = min(r.yl, max_tcyl);
+
+    // these two are the size of the wrapped-around torus portion
+    immutable xl2 = min(camera_zoomed_xl - r.xl, max_tcxl - r.xl);
+    immutable yl2 = min(camera_zoomed_yl - r.yl, max_tcyl - r.yl);
 
     void blit_once(int sx,  int sy,  // source x, y
                    int sxl, int syl, // length on the source
@@ -359,10 +373,10 @@ draw_camera_these_args_describe_target_corner(
             al_draw_scaled_bitmap(albit, sx, sy, sxl,      syl,
                                          tx, ty, zoom*sxl, zoom*syl, 0);
     }
-                      blit_once(r.x, r.y, r.xl, r.yl, tcx,        tcy);
-    if (drtx        ) blit_once(0,   r.y, xl2,  r.yl, tcx + r.xl, tcy);
-    if (        drty) blit_once(r.x, 0,   r.xl, yl2,  tcx,        tcy + r.yl);
-    if (drtx && drty) blit_once(0,   0,   xl2,  yl2,  tcx + r.xl, tcy + r.yl);
+                      blit_once(r.x, r.y, xl1, yl1, tcx,        tcy);
+    if (drtx        ) blit_once(0,   r.y, xl2, yl1, tcx + r.xl, tcy);
+    if (        drty) blit_once(r.x, 0,   xl1, yl2, tcx,        tcy + r.yl);
+    if (drtx && drty) blit_once(0,   0,   xl2, yl2, tcx + r.xl, tcy + r.yl);
 }
 
 
