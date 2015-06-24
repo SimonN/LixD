@@ -1,5 +1,14 @@
 module menu.browbase;
 
+/*  class BrowserBase
+ *
+ *      Guarantee for all inherited classes: on_file_highlight will be called
+ *      for every file on which possibly on_file_select could be called later.
+ *      Whenever on_file_select is called, on_file_highlight has been called
+ *      on the same filename before, and no other on_file_highlight calls have
+ *      been made in the meantime. (Impl. by private BrowserBase.file_recent.)
+ */
+
 import std.conv;
 
 import file.filename;
@@ -24,8 +33,7 @@ class BrowserBase : Window {
 
     void set_button_play_text(in string s) { button_play.text = s; }
 
-    @property bool  goto_main_menu() const { return _goto_main_menu; }
-    @property bool  goto_play()      const { return _goto_play;      }
+    @property bool goto_main_menu() const { return _goto_main_menu; }
 
     @property auto base_dir()     const { return dir_list.base_dir;     }
     @property auto current_file() const { return lev_list.current_file; }
@@ -50,7 +58,6 @@ class BrowserBase : Window {
 private:
 
     bool _goto_main_menu;
-    bool _goto_play;
 
     int        _info_y;
     Filename   file_recent; // only used for highlighting, not selecting

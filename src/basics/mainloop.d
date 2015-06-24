@@ -14,6 +14,7 @@ import core.memory;
 
 import basics.alleg5;
 import basics.demo;
+import game.game;
 import hardware.display;
 import hardware.keyboard;
 import menu.mainmenu;
@@ -48,6 +49,8 @@ private:
     MainMenu main_menu;
     BrowserSingle brow_sin;
 
+    Game game;
+
     Demo demo;
 
 
@@ -55,13 +58,17 @@ private:
 void
 kill()
 {
+    if (game) {
+        game = null;
+    }
     if (main_menu) {
         gui.rm_elder(main_menu);
         main_menu = null;
     }
     if (brow_sin) {
         gui.rm_elder(brow_sin);
-        destroy(brow_sin); // to kill the preview torbit
+        destroy(brow_sin); // DTODO: check what is best here. There is a
+                           // Torbit to be destroyed in the browser's preview.
         brow_sin = null;
     }
     if (demo) {
@@ -104,10 +111,24 @@ calc()
         }
     }
     else if (brow_sin) {
-        if (brow_sin.goto_main_menu) {
+        if (brow_sin.goto_game) {
+            auto lv = brow_sin.level;
+            auto fn = brow_sin.filename;
+            kill();
+            game = new Game(lv, fn);
+        }
+        else if (brow_sin.goto_main_menu) {
             kill();
             main_menu = new MainMenu;
             gui.add_elder(main_menu);
+        }
+    }
+    else if (game) {
+        game.calc();
+        if (game.goto_menu) {
+            kill();
+            brow_sin = new BrowserSingle;
+            gui.add_elder(brow_sin);
         }
     }
     else if (demo) {
@@ -129,6 +150,7 @@ draw()
     // main_menu etc. are GUI Windows. Those have been added as elders and
     // are therefore supervised by module gui.root.
 
+    if (game) game.draw();
     if (demo) demo.draw();
 
     gui              .draw();

@@ -73,3 +73,20 @@ destroy_array(T)(ref T arr)
     destroy(arr);
     arr = null;
 }
+
+
+
+T[]
+deep_copy(T)(T[] arr)
+    if (is (T == class) || is (T == struct))
+{
+    static if (is (T == struct))
+        return arr.dup;
+    else {
+        T[] ret;
+        ret.length = arr.length;
+        foreach (int i, T elem; arr)
+            ret[i] = new T(elem);
+        return ret;
+    }
+}

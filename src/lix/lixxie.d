@@ -7,6 +7,7 @@ import basics.help;
 import basics.matrix;
 import basics.user; // multiple_builders
 import game.lookup;
+import game.tribe;
 import graphic.color;
 import graphic.graphic;
 import graphic.gralib;
@@ -17,23 +18,16 @@ import lix.enums;
 import lix.acfunc;
 
 // import editor.graphed;
-// import game.lookup;
 // import graphic.graphbg;
-// import basics.types;
 
 // DTODOCOMMENT: add the interesting things from the 150+ line comment in
 // C++/A4 Lix's lix/lix.h top comment.
 
 // DTODO: implement these classes
-struct GameState { int update; }
 class EdGraphic { }
 class EffectManager {
     void add_sound        (in int, in Tribe, int, in Sound) { }
     void add_sound_if_trlo(in int, in Tribe, int, in Sound) { }
-}
-class Tribe {
-    Style style;
-    void return_skills(Ac, int) { }
 }
 
 class Lixxie : Graphic {
@@ -89,10 +83,10 @@ public:
 
 
 
-//  this(Tribe = null, int = 0, int = 0); // tribe==null ? NOTHING : FALLER
-    ~this() { }
-//  invariant();
-
+/*  this(Tribe = null, int = 0, int = 0); // tribe==null ? NOTHING : FALLER
+ *  this(in Lixxie rhs);
+ *  invariant();
+ */
     static bool get_any_new_flingers() { return _any_new_flingers; }
 
     inout(Tribe) tribe() inout { return _tribe; }
@@ -160,9 +154,9 @@ public:
  */
     @property int frame() const   { return _frame;     }
     @property int frame(in int i) { return _frame = i; }
-//           void next_frame();
-//  override bool is_last_frame() const;
-
+/*           void next_frame();
+ *  override bool is_last_frame() const;
+ */
     @property auto body_encounters() const        { return _enc_body;     }
     @property auto foot_encounters() const        { return _enc_foot;     }
     @property auto body_encounters(Lookup.LoNr n) { return _enc_body = n; }
@@ -202,6 +196,45 @@ this(
     // important for torus bitmaps: calculate modulo in time
     ex = new_ex.even;
     ey = new_ey;
+}
+
+
+
+this(Lixxie rhs)
+{
+    assert (rhs !is null);
+
+    _tribe = rhs._tribe;
+    _dir   = rhs._dir;
+    _style = rhs._style;
+    _ac    = rhs._ac;
+    _frame = rhs._frame;
+    _ex    = rhs._ex;
+    _ey    = rhs._ey;
+
+    super(graphic.gralib.get_lix(_style), ground_map,
+        _ex - lix.enums.ex_offset,
+        _ey - lix.enums.ey_offset);
+
+    _fling_x = rhs._fling_x;
+    _fling_y = rhs._fling_y;
+    _fling_new           = rhs._fling_new;
+    _fling_by_same_tribe = rhs._fling_by_same_tribe;
+
+    _enc_body = rhs._enc_body;
+    _enc_foot = rhs._enc_foot;
+
+    special_x = rhs.special_x;
+    special_y = rhs.special_y;
+    queue     = rhs.queue;
+    marked    = rhs.marked;
+
+    runner    = rhs.runner;
+    climber   = rhs.climber;
+    floater   = rhs.floater;
+
+    updates_since_bomb = rhs.updates_since_bomb;
+    exploder_knockback = rhs.exploder_knockback;
 }
 
 

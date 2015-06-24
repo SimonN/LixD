@@ -1,5 +1,6 @@
 module lix.acfunc;
 
+import game.state;
 import lix.enums;
 import lix.lixxie;
 import hardware.sound;
@@ -12,7 +13,7 @@ struct UpdateArgs {
     GameState st;
     int       id; // the lix's id, to pass to the effect manager
 
-    this(in GameState _st, in int _id = 0) { st = _st; id = _id; }
+    this(GameState _st, in int _id = 0) { st = _st; id = _id; }
 
     // a function to counter compiler warnings in lixxie-updating functions
     // that take an UpdateArgs argument, but don't need it
