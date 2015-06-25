@@ -23,6 +23,11 @@ private class ColorPrivate {
         return AlCol(r, g, b, 1);
     }
 
+    AlCol makecol(int r, int g, int b)
+    {
+        return AlCol(r / 255f, g / 255f, b / 255f, 1);
+    }
+
     AlCol
         bad,
         transp,
@@ -69,10 +74,6 @@ private:
 
     AlCol make_sepia(in float li);
 
-    AlCol makecol(int r, int g, int b) {
-        return AlCol(r / 255f, g / 255f, b / 255f, 1);
-    }
-
     this() {
         //                    red   green blue  alpha
         bad           = AlCol(0.00, 0.00, 0.00, 0.5);
@@ -117,8 +118,6 @@ private:
         gui_pic_on_m  = make_sepia(14f   / 16f);
         gui_pic_on_l  = make_sepia(1.0);
     }
-
-    ~this() { }
 
     // light: max is 1.0, min is 0.0
     AlCol make_sepia(in float light)

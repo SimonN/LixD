@@ -59,10 +59,6 @@ public:
 
     Sound sound;
 
-    ////////////////
-    // Funktionen //
-    ////////////////
-
     // named constructor
     static Tile take_over_cutbit(Cutbit, TileType = TileType.EMPTY, int = 0);
 

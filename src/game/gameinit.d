@@ -10,8 +10,10 @@ import game.lookup;
 import game.replay;
 import game.state;
 import graphic.map;
+import graphic.gadget;
 import graphic.torbit;
 import gui;
+import level.tile;
 
 package void
 impl_game_constructor(Game game, Level lv, Filename fn, Replay rp)
@@ -36,4 +38,28 @@ impl_game_constructor(Game game, Level lv, Filename fn, Replay rp)
         map = new Map(cs.land, Geom.screen_xls.to!int,
                                Geom.screen_yls.to!int * 4 / 5);
     }
+
+    //prepare_players(game);
+    prepare_gadgets(game);
 }
+
+
+
+private void
+prepare_gadgets(Game game) { with (game)
+{
+    foreach (posvec; level.pos)
+        foreach (ref tile; posvec)
+    {
+        switch (tile.ob.type) {
+        case TileType.HATCH:
+            cs.hatches ~= new Hatch(map, tile);
+            break;
+        default:
+            break;
+        }
+    }
+    // end foreach tile
+
+}}
+// end with (game), end function prepare gadgets()

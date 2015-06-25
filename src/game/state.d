@@ -47,6 +47,7 @@ import basics.help; // deep_copy for arrays
 import game.lookup;
 import game.tribe;
 import graphic.torbit;
+import graphic.gadget;
 
 // DTODO: import the correct classes. These are only mockups.
 class Triggerable {
@@ -61,6 +62,9 @@ class GameState {
     bool goals_locked; // in singleplayer, when time has run out
 
     Tribe[] tribes;
+    Hatch[] hatches;
+    Gadget[] goals;
+    Gadget[] decos;
     Triggerable[] traps;
     Triggerable[] flingers;
     Triggerable[] trampolines;
@@ -78,6 +82,9 @@ class GameState {
         goals_locked  = rhs.goals_locked;
 
         tribes      = tribes     .deep_copy;
+        hatches     = hatches    .deep_copy;
+        goals       = goals      .deep_copy;
+        decos       = decos      .deep_copy;
         traps       = traps      .deep_copy;
         flingers    = flingers   .deep_copy;
         trampolines = trampolines.deep_copy;

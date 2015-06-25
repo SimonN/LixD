@@ -15,8 +15,9 @@ import graphic.torbit;
 
 class Graphic {
 
-    this(const Cutbit, Torbit, const int = 0, const int = 0);
-
+/*  this(const Cutbit, Torbit, const int = 0, const int = 0);
+ *  this(Graphic)
+ */
     @property const(Cutbit) cutbit() const { return _cutbit; }
 
     @property AlBit  albit()               { return _cutbit.albit; }
@@ -88,8 +89,8 @@ public:
 this(
     const(Cutbit) cb,
     Torbit        gr,
-    const int     new_x,
-    const int     new_y
+    const int     new_x = 0,
+    const int     new_y = 0
 ) {
     _cutbit = cb;
     _ground = gr;
@@ -102,6 +103,22 @@ this(
 
     _xf = 0;
     _yf = 0;
+}
+
+
+
+this(Graphic rhs)
+{
+    assert (rhs);
+    _cutbit = rhs._cutbit;
+    _ground = rhs._ground;
+    _x      = rhs._x;
+    _y      = rhs._y;
+    _mirror = rhs._mirror;
+    _rot    = rhs._rot;
+    _mode   = rhs._mode;
+    _xf     = rhs._xf;
+    _yf     = rhs._yf;
 }
 
 
@@ -156,7 +173,8 @@ bool get_frame_exists(in int which_xf, in int which_yf) const
 
 
 
-AlCol get_pixel(in int gx, in int gy) const
+AlCol // deprecated("lock target or cache pixels!")
+get_pixel(in int gx, in int gy) const
 {
     immutable int _xl = cutbit.xl;
     immutable int _yl = cutbit.yl;
