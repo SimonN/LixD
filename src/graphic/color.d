@@ -19,8 +19,9 @@ private class ColorPrivate {
     @property AlCol random()
     {
         alias rnd = uniform01!float;
-        float r = rnd(), g = rnd(), b = rnd();
-        return AlCol(r, g, b, 1);
+        float[] arr = [rnd(), 0.7 + 0.3 * rnd(), 0.3 * rnd()];
+        arr.randomShuffle();
+        return AlCol(arr[0], arr[1], arr[2], 1);
     }
 
     AlCol makecol(int r, int g, int b)

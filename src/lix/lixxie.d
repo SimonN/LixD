@@ -255,12 +255,9 @@ static void set_static_maps(Torbit tb, Lookup lo, Map ma)
 
 
 
-private int frame_to_x_frame() const { return frame + 2; }
-private int ac_to_y_frame   () const { return ac - 1;    }
-
 private XY get_fuse_xy() const
 {
-    XY ret = countdown.get(frame_to_x_frame(), ac_to_y_frame());
+    XY ret = countdown.get(frame_to_x_frame(frame), ac_to_y_frame(ac));
     if (_dir < 0)
         ret.x = graphic.gralib.get_lix(style).xl - ret.x;
     ret.x += super.x;
@@ -601,7 +598,8 @@ override bool is_last_frame() const
 {
     // the cutbit does this for us. Lixxie.frame != Graphic.x_frame,
     // so we use Lixxie's private conversion functions
-    return ! cutbit.get_frame_exists(frame_to_x_frame() + 1, ac_to_y_frame());
+    return ! cutbit.frame_exists(frame_to_x_frame(frame) + 1,
+                                    ac_to_y_frame(ac));
 }
 
 
@@ -619,8 +617,8 @@ override void draw()
 {
     if (ac == Ac.NOTHING) return;
 
-    super.xf = frame_to_x_frame();
-    super.yf =    ac_to_y_frame();
+    super.xf = frame_to_x_frame(frame);
+    super.yf =    ac_to_y_frame(ac);
 
     // draw the fuse if necessary
     if (updates_since_bomb > 0) {

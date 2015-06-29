@@ -2,6 +2,7 @@ module game.gamedraw;
 
 import basics.alleg5;
 import game.game;
+import graphic.gadget;
 import graphic.map;
 import graphic.torbit;
 import hardware.display;
@@ -13,13 +14,16 @@ impl_game_draw(Game game) { with (game)
                                      game.level.bg_green,
                                      game.level.bg_blue, 1.0));
 
-    // DTODO: draw gadgets here if they go behind the land
+    cs.foreach_gadget((Gadget g) {
+        g.draw();
+    });
 
     map.load_camera_rectangle(game.cs.land);
 
-    // DTODO: draw gadgets here that go in front of the land
+    // DTODO: draw lix and other things here that go in front of the land
 
     map.draw_camera(al_get_backbuffer(hardware.display.display));
+
 
 
     // debugging

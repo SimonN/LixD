@@ -12,12 +12,15 @@ Matrix!XY countdown;
 
 deprecated("use skill_infinity") const int infinity = -1;
 
-Ac     string_to_ac   (in string);
-Style  string_to_style(in string);
-string ac_to_string   (in Ac);
-string style_to_string(in Style);
-
-
+/*  int frame_to_x_frame(int);
+ *  int ac_to_y_frame   (int);
+ *
+ *   Ac     string_to_ac   (in string);
+ *  Style  string_to_style(in string);
+ *
+ *  string ac_to_string   (in Ac);
+ *  string style_to_string(in Style);
+ */
 
 enum Ac {
     NOTHING,
@@ -122,6 +125,11 @@ static this()
         Style.BLACK   : "Black"
     ];
 }
+
+
+
+int frame_to_x_frame(int fr) { return fr + 2; }
+int ac_to_y_frame   (int ac) { return ac - 1; }
 
 
 

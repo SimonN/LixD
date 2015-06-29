@@ -49,21 +49,17 @@ import game.tribe;
 import graphic.torbit;
 import graphic.gadget;
 
-// DTODO: import the correct classes. These are only mockups.
-class Triggerable {
-    this(in Triggerable rhs) { }
-}
-
 class GameState {
 
     int  update;
     int  clock;
     bool clock_running;
-    bool goals_locked; // in singleplayer, when time has run out
+
+    private bool _goals_locked; // in singleplayer, when time has run out
 
     Tribe[] tribes;
     Hatch[] hatches;
-    Gadget[] goals;
+    Goal[]  goals;
     Gadget[] decos;
     Triggerable[] traps;
     Triggerable[] flingers;
@@ -74,12 +70,15 @@ class GameState {
 
     this() { }
 
+/*  this(Gamestate)               -- copy constructor
+ *  void foreach_gadget(function) -- apply to each gadget in drawing order
+ */
     this(GameState rhs)
     {
         update        = rhs.update;
         clock         = rhs.clock;
         clock_running = rhs.clock_running;
-        goals_locked  = rhs.goals_locked;
+        _goals_locked = rhs._goals_locked;
 
         tribes      = tribes     .deep_copy;
         hatches     = hatches    .deep_copy;
@@ -92,6 +91,26 @@ class GameState {
         land   = new Torbit(land);
         lookup = new Lookup(lookup);
     }
+
+    @property bool goals_locked() const { return _goals_locked; }
+    @property bool goals_locked(in bool b)
+    {
+        _goals_locked = b;
+        foreach (goal; goals)
+            goal.draw_with_no_sign = _goals_locked;
+        return _goals_locked;
+    }
+
+    void foreach_gadget(void function(Gadget) func)
+    {
+        foreach (g; hatches)     func(g);
+        foreach (g; goals)       func(g);
+        foreach (g; decos)       func(g);
+        foreach (g; traps)       func(g);
+        foreach (g; flingers)    func(g);
+        foreach (g; trampolines) func(g);
+    }
+
 }
 
 

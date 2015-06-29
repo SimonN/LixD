@@ -25,6 +25,7 @@ impl_game_constructor(Game game, Level lv, Filename fn, Replay rp)
     scope (exit)
         game.altick_last_update = al_get_timer_count(basics.alleg5.timer);
 
+    // prepare the land, without players or gadgets yet
     with (game) {
         level          = lv;
         level_filename = fn;
@@ -46,20 +47,15 @@ impl_game_constructor(Game game, Level lv, Filename fn, Replay rp)
 
 
 private void
-prepare_gadgets(Game game) { with (game)
+prepare_gadgets(Game game)
 {
-    foreach (posvec; level.pos)
-        foreach (ref tile; posvec)
+    void gadgets_from_pos(T)(ref T[] gadget_vec, TileType tile_type)
     {
-        switch (tile.ob.type) {
-        case TileType.HATCH:
-            cs.hatches ~= new Hatch(map, tile);
-            break;
-        default:
-            break;
-        }
+        foreach (ref pos; game.level.pos[tile_type])
+            gadget_vec ~= new T(game.map, pos);
     }
-    // end foreach tile
 
-}}
-// end with (game), end function prepare gadgets()
+    gadgets_from_pos(game.cs.hatches, TileType.HATCH);
+    gadgets_from_pos(game.cs.goals,   TileType.GOAL);
+}
+// end function prepare gadgets()

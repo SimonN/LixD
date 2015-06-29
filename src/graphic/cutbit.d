@@ -40,12 +40,12 @@ class Cutbit {
     @property int xfs() const { return _xfs; }
     @property int yfs() const { return _yfs; }
 
-    // these two are slow, consider get_frame_exists() instead
+    // these two are slow, consider frame_exists() instead
     // or lock the Cutbit's underlying Allegro bitmap yourself
     AlCol get_pixel(int px, int py)                 const;
     AlCol get_pixel(int fx, int fy, int px, int py) const;
 
-/*  bool get_frame_exists(in int fx, in int fy) const;
+/*  bool frame_exists(in int fx, in int fy) const;
  *
  *      Checks whether the given frame contains interesting image data,
  *      instead of being marked as nonexistant by being filled with the
@@ -283,7 +283,7 @@ AlCol get_pixel(int fx, int fy,
 
 
 
-bool get_frame_exists(in int fx, in int fy) const
+bool frame_exists(in int fx, in int fy) const
 {
     if (fx < 0 || fx >= _xfs
      || fy < 0 || fy >= _yfs) return false;

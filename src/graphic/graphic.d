@@ -53,14 +53,15 @@ class Graphic {
     @property int xfs() const { return cutbit.xfs; }
     @property int yfs() const { return cutbit.yfs; }
 
-/*  bool get_frame_exists(int, int) const
- *  AlCol get_pixel      (int, int) const -- remember to lock target!
+/*  bool  frame_exists(int, int) const
+ *  AlCol get_pixel   (int, int) const -- remember to lock target!
  *
  *  bool is_last_frame() const
  *
- *  void draw() const
+ *  void draw()
  *
- *      draw to the torbit, according to mirror and rotation
+ *      Draw to the torbit, according to mirror and rotation.
+ *      Can't be a const method because of mutable this.torbit.
  *
  *  void draw_directly_to_screen() const
  *
@@ -161,14 +162,14 @@ yl() const
 
 bool is_last_frame() const
 {
-    return ! cutbit.get_frame_exists(_xf + 1, _yf);
+    return ! cutbit.frame_exists(_xf + 1, _yf);
 }
 
 
 
-bool get_frame_exists(in int which_xf, in int which_yf) const
+bool frame_exists(in int which_xf, in int which_yf) const
 {
-    return cutbit.get_frame_exists(which_xf, which_yf);
+    return cutbit.frame_exists(which_xf, which_yf);
 }
 
 

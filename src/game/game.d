@@ -46,8 +46,4 @@ package:
 
     long altick_last_update;
 
-    void calc_passive() { impl_calc_passive(this); }
-    void calc_active()  { impl_calc_update (this); }
-    void calc_update()  { impl_calc_update (this); }
-
 }

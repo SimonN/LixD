@@ -21,7 +21,6 @@ import std.conv;
 import game.lookup;
 import graphic.cutbit;
 import graphic.color;
-import graphic.gralib;
 import graphic.graphic;
 import graphic.gadget;
 import graphic.torbit;
@@ -33,10 +32,14 @@ class Gadget : Graphic {
 public:
 
     const(Tile) tile;
-    bool        draw_with_info; // draw the trigger area and hatch direction,
-                                // this is used by the editor throughout
+    bool        draw_with_editor_info;
 
-    protected void draw_info() { } // override this
+    // override these if necessary
+    protected void draw_game_extras() { }
+    protected void draw_editor_info() { }
+
+    // hatch should override this
+    Pos to_pos() const { return Pos(tile, x, y); }
 
 /*  static Gadget factory(Torbit, const(Tile), int x = 0, int y = 0);
  *  static Gadget factory(Torbit, in ref level.level.Pos);
@@ -53,17 +56,7 @@ public:
  *  final void draw_lookup(Lookup);
  */
 
-package this(Torbit tb, const(Tile) ti, int new_x = 0, int new_y = 0)
-{
-    // the constructor argument order is Torbit, Tile, but in super, it's
-    // Cutbit, Torbit. Maybe decide on one and fix the other at some time.
-    super(ti.cb, tb, new_x, new_y),
-    tile = ti;
-}
-
-
-
-package this(Torbit tb, in ref Pos levelpos)
+protected this(Torbit tb, in ref Pos levelpos)
 {
     super(levelpos.ob.cb, tb, levelpos.x, levelpos.y);
     tile = levelpos.ob;
@@ -77,8 +70,8 @@ this(Gadget rhs)
 {
     assert (rhs);
     super(rhs);
-    tile           = rhs.tile;
-    draw_with_info = rhs.draw_with_info;
+    tile = rhs.tile;
+    draw_with_editor_info = rhs.draw_with_editor_info;
 }
 
 
@@ -89,19 +82,8 @@ factory(Torbit tb, in ref Pos levelpos)
     assert (levelpos.ob);
     switch (levelpos.ob.type) {
         case TileType.HATCH: return new Hatch (tb, levelpos);
+        case TileType.GOAL:  return new Goal  (tb, levelpos);
         default:             return new Gadget(tb, levelpos);
-    }
-}
-
-
-
-static Gadget
-factory(Torbit tb, const(Tile) ti, in int x = 0, in int y = 0)
-{
-    assert (ti);
-    switch (ti.type) {
-        case TileType.HATCH: return new Hatch (tb, ti, x, y);
-        default:             return new Gadget(tb, ti, x, y);
     }
 }
 
@@ -181,21 +163,24 @@ draw()
 {
     super.draw();
 
-    if (draw_with_info)
-        draw_info();
+    draw_game_extras();
 
-    // now draw trigger area on top
-    if (tile.type == TileType.GOAL
-     || tile.type == TileType.HATCH
-     || tile.type == TileType.TRAP
-     || tile.type == TileType.WATER
-     || tile.type == TileType.FLING
-     || tile.type == TileType.TRAMPOLINE
-    )
-        ground.draw_rectangle(x + tile.get_trigger_x(),
-                              y + tile.get_trigger_y(),
-                              tile.trigger_xl, tile.trigger_yl,
-                              color.makecol(0x40, 0xFF, 0xFF));
+    if (draw_with_editor_info) {
+        draw_editor_info();
+
+        // now draw trigger area on top
+        if (tile.type == TileType.GOAL
+         || tile.type == TileType.HATCH
+         || tile.type == TileType.TRAP
+         || tile.type == TileType.WATER
+         || tile.type == TileType.FLING
+         || tile.type == TileType.TRAMPOLINE
+        )
+            ground.draw_rectangle(x + tile.trigger_x,
+                                  y + tile.trigger_y,
+                                  tile.trigger_xl, tile.trigger_yl,
+                                  color.makecol(0x40, 0xFF, 0xFF));
+    }
 }
 
 
@@ -214,8 +199,8 @@ final void draw_lookup(Lookup lk)
         case TileType.TRAMPOLINE: nr = Lookup.bit_trampoline; break;
         default: break;
     }
-    lk.add_rectangle(x + tile.get_trigger_x(),
-                     y + tile.get_trigger_y(),
+    lk.add_rectangle(x + tile.trigger_x,
+                     y + tile.trigger_y,
                      tile.trigger_xl,
                      tile.trigger_yl, nr);
 }

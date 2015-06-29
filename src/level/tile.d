@@ -46,12 +46,18 @@ public:
     int  selbox_xl; // nontransparent pixels. This refines the selection
     int  selbox_yl; // with a pulled selection rectangle in the Editor.
 
-    int  trigger_x;
-    int  trigger_y;
+    @property int trigger_x() const
+    {
+        return _trigger_x - _trigger_xc * trigger_xl/2;
+    }
+
+    @property int trigger_y() const
+    {
+        return _trigger_y - _trigger_yc * trigger_yl/2;
+    }
+
     int  trigger_xl;
     int  trigger_yl;
-    bool trigger_xc; // center around trigger_x instead of going right from it
-    bool trigger_yc; // center around trigger_y instead of going down from it
 
     // these are not used for everything
     int  special_x; // FLING: x-direction, HATCH: start of opening anim
@@ -69,15 +75,16 @@ public:
 
     void read_definitions_file(in Filename);
 
-    // these do automatically the calculation of the absolute trigger location
-    int get_trigger_x() const { return trigger_x - trigger_xc * trigger_xl/2; }
-    int get_trigger_y() const { return trigger_y - trigger_yc * trigger_yl/2; }
-
     // Reorders TERRAIN = 0, HATCH = 1, ... into the correct display order
     // for the editor, gameplay, or level image dumper
     static TileType perm(in int);
 
 private:
+
+    int  _trigger_x;  // raw data, can be center or left
+    int  _trigger_y;  // raw data, can be center or top
+    bool _trigger_xc; // center around trigger_x instead of going right from it
+    bool _trigger_yc; // center around trigger_y instead of going down from it
 
     this() { }
 
@@ -113,35 +120,35 @@ private void set_nice_defaults_based_on_type()
 {
     switch (type) {
     case TileType.HATCH:
-        trigger_x  = cb.xl / 2;
-        trigger_y  = std.algorithm.max(20, cb.yl - 24);
+        _trigger_x = cb.xl / 2;
+        _trigger_y = std.algorithm.max(20, cb.yl - 24);
         special_x  = 1;
         break;
     case TileType.GOAL:
-        trigger_x  = cb.xl / 2;
-        trigger_y  = cb.yl - 2;
+        _trigger_x = cb.xl / 2;
+        _trigger_y = cb.yl - 2;
         trigger_xl = 12;
         trigger_yl = 12;
-        trigger_xc = true;
-        trigger_yc = true;
+        _trigger_xc = true;
+        _trigger_yc = true;
         break;
     case TileType.TRAP:
-        trigger_x  = cb.xl / 2;
-        trigger_y  = cb.yl * 4 / 5;
+        _trigger_x = cb.xl / 2;
+        _trigger_y = cb.yl * 4 / 5;
         trigger_xl = 4; // _xl was 6 before July 2014, but 6 is not symmetric
         trigger_yl = 6; // on a piece with width 16 and (lix-xl % 2 == 0)
-        trigger_xc = true;
-        trigger_yc = true;
+        _trigger_xc = true;
+        _trigger_yc = true;
         sound      = Sound.SPLAT;
         break;
     case TileType.WATER:
-        trigger_x  = 0;
-        trigger_y  = 20;
+        _trigger_x = 0;
+        _trigger_y = 20;
         trigger_xl = cb.xl;
         trigger_yl = cb.yl - 20;
         if (subtype) {
             // then it's fire, not water
-            trigger_y  = 0;
+            _trigger_y = 0;
             trigger_yl = cb.yl;
         }
         break;
@@ -206,24 +213,24 @@ void read_definitions_file(in Filename filename)
 
     foreach (i; lines) if (i.type == '#') {
         if      (i.text1 == objdef_ta_absolute_x) {
-            trigger_x = i.nr1;
-            trigger_xc = false;
+            _trigger_x = i.nr1;
+            _trigger_xc = false;
         }
         else if (i.text1 == objdef_ta_absolute_y) {
-            trigger_y = i.nr1;
-            trigger_yc = false;
+            _trigger_y = i.nr1;
+            _trigger_yc = false;
         }
         else if (i.text1 == objdef_ta_from_center_x) {
-            trigger_x = cb.xl / 2 + i.nr1;
-            trigger_xc = true;
+            _trigger_x = cb.xl / 2 + i.nr1;
+            _trigger_xc = true;
         }
         else if (i.text1 == objdef_ta_from_center_y) {
-            trigger_y = cb.yl / 2 + i.nr1;
-            trigger_yc = true;
+            _trigger_y = cb.yl / 2 + i.nr1;
+            _trigger_yc = true;
         }
         else if (i.text1 == objdef_ta_from_bottom_y) {
-            trigger_y = cb.yl - 2 + i.nr1;
-            trigger_yc = true;
+            _trigger_y = cb.yl - 2 + i.nr1;
+            _trigger_yc = true;
         }
         else if (i.text1 == objdef_ta_xl) {
             trigger_xl = i.nr1;
