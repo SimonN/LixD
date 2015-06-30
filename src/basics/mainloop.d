@@ -168,7 +168,7 @@ draw()
     hardware.mousecur.draw();
     hardware.sound   .draw();
 
-    al_flip_display();
+    flip_display();
 }
 
 }

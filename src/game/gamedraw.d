@@ -32,6 +32,9 @@ impl_game_draw(Game game) { with (game)
         graphic.color.color.white);
     draw_text(djvu_m, "Press [P] to save the map bitmaps to files.", 10, 40,
         graphic.color.color.white);
+    draw_text(djvu_m, std.string.format("Frames per second: %d", display_fps),
+        10, 70,
+        graphic.color.color.white);
 
     static if (true) {
         if (hardware.keyboard.key_once(ALLEGRO_KEY_P)) {

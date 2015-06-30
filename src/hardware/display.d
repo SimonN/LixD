@@ -4,6 +4,7 @@ module hardware.display;
 import std.array;
 import std.string;
 
+import basics.help; // positive mod
 import basics.alleg5;
 import basics.globals; // main_name_of_game
 import basics.globconf;
@@ -33,6 +34,8 @@ ALLEGRO_DISPLAY* display;
  *  @property int display_xl()
  *  @property int display_yl()
  *
+ *  @property int display_fps()
+ *
  *  void display_startup_message(string)
  *
  *      before main_loop draws
@@ -45,9 +48,35 @@ get_display_close_was_clicked() {
 
 
 
+private bool[basics.globals.ticks_per_sec] _fps_arr;
+private int _fps_previous_arr_entry;
+
 void
-blit_to_screen(AlBit) {
-    assert (false, "blit_to_screen() not implemented yet");
+flip_display() {
+    assert(display, "display hasn't been created");
+    al_flip_display();
+
+    // compute FPS
+    immutable int cur_entry = al_get_timer_count(timer) % _fps_arr.len;
+    _fps_arr[cur_entry] = true;
+    for (int null_entry = positive_mod(cur_entry - 1, _fps_arr.len);
+        null_entry != _fps_previous_arr_entry;
+        null_entry = positive_mod(null_entry - 1, _fps_arr.len)
+    ) {
+        _fps_arr[null_entry] = false;
+    }
+    _fps_previous_arr_entry = cur_entry;
+}
+
+
+
+@property int
+display_fps()
+{
+    int sum = 0;
+    foreach (entry; _fps_arr)
+        sum += entry;
+    return sum;
 }
 
 

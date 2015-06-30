@@ -17,6 +17,7 @@ and the required libraries.
 
 Finishing the port
 ------------------
+
 Simon shall search the code for instances of DTODO, which mark things that
 shall be tested/altered when most things have been ported.
 
@@ -27,6 +28,7 @@ has not yet been ported.
 
 LF or CRLF terminators
 ----------------------
+
 Source code should have LF terminators. Anything else is crazy.
 
 I don't care about what's used in level or replay files. Lix can read them
@@ -38,6 +40,89 @@ should have CRLF endings. They must be accessible by Windows Notepad users.
 
 The translations (./data/transl/*) should get a UTF-8 byte-order mark, and then
 immediately a CRLF linebreak, for maximum compatibility. I haven't done so yet.
+
+
+
+Source code formatting
+----------------------
+
+Indentation is 4 spaces. Indenting with tabs is a bug. Indenting with less
+than 4 spaces is unreadable. While 8 spaces would be more readable, it's a
+little much for D code.
+
+Don't nest stuff deeper than 4 or 5 levels, treating classes and functions
+as a nesting level. Write more functions instead. D allows you to declare
+private functions at module level, or to declare local functions.
+
+Most things get the opening brace '{' on the same line: if, for, class, etc.
+
+    if (condition) {
+        a = 5;
+        do_something();
+    }
+
+Nothing goes on the same line as '}', not even else or while. You shouldn't
+use do-while much anyway. Whenever a simple while doesn't do, use for or
+foreach.
+
+Omit braces when a statement is followed by single line. Don't omit braces
+when at least one of the if-else branches has more than one statement.
+
+    scope (exit)
+        clean_up();
+
+    if (condition)
+        do_something();
+
+    if (another_condition) {
+        do_something_else();
+    }
+    else {
+        a + 4;
+        do_whatever();
+    }
+
+Functions have the opening brace on a separate line.
+
+    int
+    my_function()
+    {
+        a + 4;
+        return something(a);
+    }
+
+When you can fit an entire function definition into a single line, do that
+instead of following the above rule. This happens often with class properties.
+
+    @property int some_value() { return _some_value; }
+
+When a line, conditional expression or parameter list gets very long and
+has to be broken into separate lines format it like this:
+
+    private int
+    my_function(
+        LongClassName    long_argument_1,
+        AnotherClassName long_argument_2
+    ) {
+        do_something();
+    }
+
+    if (   my_long_expression     == some_value
+        && another_long_expression > some_other_value
+    ) {
+        do_something();
+        do_something_else();
+    }
+
+Reason: Anything else requires a third, made-up level of identation to
+differentiate between the expression/parameter list and the body. ") {" is
+shorter than the indentation width of 4 spaces, and therefore is a good
+visual separator.
+
+This rule takes precedence over "put the opening brace on the same line".
+There is no "the" line anyway.
+
+Align things horizontally. For this, do what you believe is easiest to read.
 
 
 
