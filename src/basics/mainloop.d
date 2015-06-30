@@ -45,7 +45,9 @@ public:
             // fly straight out of main and terminate the program. Since
             // Windows users won't run the game from a shell, they should
             // retrieve the error message from the logfile, in addition.
+            Log.logf("%s:%d:", thr.file, thr.line);
             Log.log(thr.msg);
+            Log.log(thr.info.toString());
             throw thr;
         }
         kill();
