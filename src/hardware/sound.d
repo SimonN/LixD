@@ -138,6 +138,7 @@ void deinitialize()
 
 void play_loud(in Sound id)
 {
+    assert (samples[id] !is null);
     samples[id].set_loud();
 }
 
@@ -145,6 +146,7 @@ void play_loud(in Sound id)
 
 void play_quiet(in Sound id)
 {
+    assert (samples[id] !is null);
     samples[id].set_quiet();
 }
 

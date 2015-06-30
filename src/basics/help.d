@@ -76,17 +76,30 @@ destroy_array(T)(ref T arr)
 
 
 
-T[]
-deep_copy(T)(T[] arr)
+template CloneableTrivialOverride() {
+    const char[] CloneableTrivialOverride =
+        "this(typeof (this) rhs) { super(rhs); }
+        mixin CloneableOverride;";
+}
+
+mixin template CloneableOverride() {
+    override typeof (this) clone() { return new typeof (this) (this); }
+}
+
+mixin template CloneableBase() {
+    typeof (this) clone() { return new typeof (this) (this); }
+}
+
+@property T[]
+clone(T)(T[] arr)
     if (is (T == class) || is (T == struct))
 {
     static if (is (T == struct))
         return arr.dup;
     else {
-        T[] ret;
-        ret.length = arr.length;
-        foreach (int i, T elem; arr)
-            ret[i] = new T(elem);
+        T[] ret = arr.dup;
+        foreach (ref T e; ret)
+            e = e.clone();
         return ret;
     }
 }

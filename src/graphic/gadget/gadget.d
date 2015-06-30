@@ -18,6 +18,7 @@ module graphic.gadget.gadget;
 
 import std.conv;
 
+import basics.help;
 import game.lookup;
 import graphic.cutbit;
 import graphic.color;
@@ -26,6 +27,13 @@ import graphic.gadget;
 import graphic.torbit;
 import level.level;
 import level.tile;
+import hardware.sound;
+
+package template StandardGadgetCtor()
+{
+    const char[] StandardGadgetCtor =
+        "this(Torbit tb, in ref Pos levelpos) { super(tb, levelpos); }";
+}
 
 class Gadget : Graphic {
 
@@ -41,11 +49,15 @@ public:
     // hatch should override this
     Pos to_pos() const { return Pos(tile, x, y); }
 
+    @property Sound sound() { return Sound.NOTHING; }
+
 /*  static Gadget factory(Torbit, const(Tile), int x = 0, int y = 0);
  *  static Gadget factory(Torbit, in ref level.level.Pos);
  *  static Gadget this(Gadget);
- *
- *  @property int selbox_x()  const;
+ */
+    mixin CloneableBase;
+
+/*  @property int selbox_x()  const;
  *  @property int selbox_y()  const;
  *  @property int selbox_xl() const;
  *  @property int selbox_yl() const;
@@ -80,10 +92,21 @@ static Gadget
 factory(Torbit tb, in ref Pos levelpos)
 {
     assert (levelpos.ob);
-    switch (levelpos.ob.type) {
-        case TileType.HATCH: return new Hatch (tb, levelpos);
-        case TileType.GOAL:  return new Goal  (tb, levelpos);
-        default:             return new Gadget(tb, levelpos);
+    final switch (levelpos.ob.type) {
+        case TileType.TERRAIN:    return new Gadget    (tb, levelpos);
+        case TileType.DECO:       return new Gadget    (tb, levelpos);
+        case TileType.HATCH:      return new Hatch     (tb, levelpos);
+        case TileType.GOAL:       return new Goal      (tb, levelpos);
+        case TileType.TRAP:       return new TrapTrig  (tb, levelpos);
+        case TileType.WATER:      return new Water     (tb, levelpos);
+        case TileType.TRAMPOLINE: return new Trampoline(tb, levelpos);
+        case TileType.FLING:
+            if (levelpos.ob.subtype & 2) return new FlingTrig(tb, levelpos);
+            else                         return new FlingPerm(tb, levelpos);
+        case TileType.EMPTY:
+        case TileType.ONEWAY:
+        case TileType.MAX:
+            assert (false, "TileType isn't supported by Gadget.factory");
     }
 }
 
@@ -92,12 +115,11 @@ factory(Torbit tb, in ref Pos levelpos)
 void
 animate()
 {
+    // the most basic animation loop
     if (is_last_frame())
         xf = 0;
     else
         xf = xf + 1;
-    // Traps won't be animated all the time by the Game class, so we don't have
-    // to check for anything here.
 }
 
 

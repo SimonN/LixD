@@ -4,6 +4,7 @@ module game.game;
 
 import basics.alleg5;
 import file.filename;
+import game.effect;
 import game.gamecalc;
 import game.gamedraw;
 import game.gameinit;
@@ -32,12 +33,14 @@ class Game {
 
 package:
 
-    bool  _goto_menu;
+    GameState cs; // current state
+    bool      _goto_menu;
 
     Level     level;
     Filename  level_filename;
     Replay    replay;
-    GameState cs; // current state
+
+    EffectManager effect;
 
     Map map; // The map does not hold the referential level image, that's
              // in cs.land and cs.lookup. Instead, the map loads a piece

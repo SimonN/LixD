@@ -60,8 +60,10 @@ class Tribe {
         value_fields = rhs.value_fields;
         skill   = rhs.skill  .dup;
         masters = rhs.masters.dup;
-        lixvec  = rhs.lixvec .deep_copy;
+        lixvec  = rhs.lixvec .clone;
     }
+
+    Tribe clone() { return new Tribe(this); }
 
     @property {
         int still_playing()  const { return lix_out + lix_exiting + lix_hatch;}

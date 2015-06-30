@@ -2,6 +2,7 @@ module graphic.gadget.goal;
 
 import std.algorithm; // max
 
+import basics.help;
 import basics.globals; // file_bitmap_mouse
 import basics.help; // len
 import game.tribe;
@@ -33,6 +34,8 @@ public:
         _tribes           = rhs._tribes.dup; // we don't own the tribes
         draw_with_no_sign = rhs.draw_with_no_sign;
     }
+
+    mixin CloneableOverride;
 
     bool has_tribe(in Tribe t) const
     {

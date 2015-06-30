@@ -5,6 +5,7 @@ import std.conv;
 import basics.alleg5;
 import file.filename;
 import level.level;
+import game.effect;
 import game.game;
 import game.lookup;
 import game.replay;
@@ -31,6 +32,8 @@ impl_game_constructor(Game game, Level lv, Filename fn, Replay rp)
         level_filename = fn;
         replay         = rp;
 
+        effect         = new EffectManager;
+
         cs = new GameState();
         cs.land   = new Torbit(lv.size_x, lv.size_y, lv.torus_x, lv.torus_y);
         cs.lookup = new Lookup(lv.size_x, lv.size_y, lv.torus_x, lv.torus_y);
@@ -52,10 +55,16 @@ prepare_gadgets(Game game)
     void gadgets_from_pos(T)(ref T[] gadget_vec, TileType tile_type)
     {
         foreach (ref pos; game.level.pos[tile_type])
-            gadget_vec ~= new T(game.map, pos);
+            gadget_vec ~= cast (T) Gadget.factory(game.map, pos);
     }
 
-    gadgets_from_pos(game.cs.hatches, TileType.HATCH);
-    gadgets_from_pos(game.cs.goals,   TileType.GOAL);
+    gadgets_from_pos(game.cs.hatches,     TileType.HATCH);
+    gadgets_from_pos(game.cs.goals,       TileType.GOAL);
+    gadgets_from_pos(game.cs.decos,       TileType.DECO);
+    gadgets_from_pos(game.cs.traps,       TileType.TRAP);
+    gadgets_from_pos(game.cs.waters,      TileType.WATER);
+    gadgets_from_pos(game.cs.flingers,    TileType.FLING);
+    gadgets_from_pos(game.cs.trampolines, TileType.TRAMPOLINE);
+
 }
 // end function prepare gadgets()

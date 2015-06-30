@@ -2,6 +2,7 @@ module graphic.gadget.hatch;
 
 import std.algorithm; // min
 
+import basics.help;
 import basics.globals; // hatch arrow graphic
 import game.effect;
 import graphic.cutbit;
@@ -49,12 +50,16 @@ public:
         _blink_now        = rhs._blink_now;
     }
 
+    mixin CloneableOverride;
+
     override Pos to_pos() const
     {
         Pos levelpos = super.to_pos();
         levelpos.rot = spawn_facing_left;
         return levelpos;
     }
+
+    override void animate() { }
 
     void animate(EffectManager effect, in int u) // update of the Game
     {

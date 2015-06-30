@@ -58,12 +58,14 @@ class GameState {
     private bool _goals_locked; // in singleplayer, when time has run out
 
     Tribe[] tribes;
+
     Hatch[] hatches;
-    Goal[]  goals;
+    Goal[] goals;
     Gadget[] decos;
-    Triggerable[] traps;
-    Triggerable[] flingers;
-    Triggerable[] trampolines;
+    Water[] waters;
+    TrapTrig[] traps;
+    GadgetCanBeOpen[] flingers;
+    Trampoline[] trampolines;
 
     Torbit land;
     Lookup lookup;
@@ -80,13 +82,15 @@ class GameState {
         clock_running = rhs.clock_running;
         _goals_locked = rhs._goals_locked;
 
-        tribes      = tribes     .deep_copy;
-        hatches     = hatches    .deep_copy;
-        goals       = goals      .deep_copy;
-        decos       = decos      .deep_copy;
-        traps       = traps      .deep_copy;
-        flingers    = flingers   .deep_copy;
-        trampolines = trampolines.deep_copy;
+        tribes      = tribes     .clone;
+
+        hatches     = hatches    .clone;
+        goals       = goals      .clone;
+        decos       = decos      .clone;
+        waters      = waters     .clone;
+        traps       = traps      .clone;
+        flingers    = flingers   .clone;
+        trampolines = trampolines.clone;
 
         land   = new Torbit(land);
         lookup = new Lookup(lookup);
@@ -106,6 +110,7 @@ class GameState {
         foreach (g; hatches)     func(g);
         foreach (g; goals)       func(g);
         foreach (g; decos)       func(g);
+        foreach (g; waters)      func(g);
         foreach (g; traps)       func(g);
         foreach (g; flingers)    func(g);
         foreach (g; trampolines) func(g);

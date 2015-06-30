@@ -87,6 +87,8 @@ public:
  *  this(in Lixxie rhs);
  *  invariant();
  */
+    mixin CloneableBase;
+
     static bool get_any_new_flingers() { return _any_new_flingers; }
 
     inout(Tribe) tribe() inout { return _tribe; }

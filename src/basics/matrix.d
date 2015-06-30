@@ -30,14 +30,15 @@ class Matrix(T) {
 
 public:
 
-    // this(in int _xl, in int _yl); -- exists, see below
-    // this(in Matrix!T);
-    ~this() { }
-
-    T    get(in int x, in int y) const;
-    void set(in int x, in int y, in T value);
-
-    // override string toString() const; -- exists, see below
+/*  this(in int _xl, in int _yl);
+ *  this(in Matrix!T);
+ *  ~this() { }
+ *
+ *  T    get(in int x, in int y) const;
+ *  void set(in int x, in int y, in T value);
+ *
+ *  override string toString() const; -- exists, see below
+ */
 
 private:
 
