@@ -104,7 +104,7 @@ void initialize()
     // DTODOLANG
     display_startup_message("Examining Lix spritesheet for eye positions...");
 
-    mixin(temp_lock!"b");
+    auto lock = LockReadWrite(b);
 
     lix.enums.countdown = new Matrix!XY(cb.xfs, cb.yfs);
 
@@ -159,7 +159,7 @@ void initialize()
     if (icon_ptr) {
         Cutbit cb_icons = *icon_ptr;
         Albit  cb_bmp   = cb_icons.albit;
-        mixin(temp_lock!"cb_bmp");
+        auto lock_icons = LockReadWrite(cb_bmp);
         recolor_into_vector(cb_icons, icons, magicnr_icons);
     }
 
@@ -360,7 +360,7 @@ void recolor_into_vector(
     immutable int   lix_yl    = al_get_bitmap_height(lix);
     immutable AlCol col_break = al_get_pixel(lix, lix_xl - 1, 0);
 
-    mixin(temp_lock!"recol");
+    auto lock = LockReadWrite(recol);
 
 
 
@@ -434,7 +434,7 @@ void recolor_into_vector(
         if (magicnr == magicnr_sheet)
          display_startup_message(style_to_string(st));
 
-        mixin(temp_lock!"target");
+        auto lock_target = LockReadWrite(target);
         // DEBUGGING to load faster
         if (i < Style.ORANGE) recolor_one_bitmap(target, i);
 

@@ -192,7 +192,7 @@ bool opEquals(const Cutbit rhs) const
 
 private void cut_bitmap()
 {
-    mixin(temp_lock!"bitmap");
+    auto lock = LockReadOnly(bitmap);
 
     immutable int x_max = al_get_bitmap_width (bitmap);
     immutable int y_max = al_get_bitmap_height(bitmap);

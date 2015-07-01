@@ -57,8 +57,8 @@ private void draw_pos(in ref Pos po, Torbit ground, Lookup lookup)
     // We won't draw to ground, it's just to access rotated pixels.
     Graphic tempgra = new Graphic(bit, ground);
     scope (exit) destroy(tempgra);
-    Albit underlying_al_bitmap = bit.albit;
-    mixin(temp_lock!"underlying_al_bitmap");
+    const(Albit) underlying_al_bitmap = bit.albit;
+    auto lock = LockReadOnly(underlying_al_bitmap);
     tempgra.rotation = po.rot;
     tempgra.mirror   = po.mirr;
     for  (int x = po.x; x < po.x + tempgra.xl; ++x)

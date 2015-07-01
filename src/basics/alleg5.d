@@ -68,14 +68,40 @@ template temp_target(string bitmap)
 
 
 
-template temp_lock(string bitmap)
+struct LockReadWrite
 {
-    // lock the bitmap; if locking was succesful, unlock at end of scope
-    const char[] temp_lock = "
-    assert (" ~ bitmap ~ ", \"can't lock null bitmap\");
-    ALLEGRO_LOCKED_REGION* lock_" ~ bitmap[0] ~ " = al_lock_bitmap("
-     ~ bitmap ~ ", ALLEGRO_PIXEL_FORMAT.ALLEGRO_PIXEL_FORMAT_ANY,
-     ALLEGRO_LOCK_READWRITE);
-    assert (lock_" ~ bitmap[0] ~ ", \"temp_lock has failed\");
-    scope (exit) if (lock_" ~ bitmap[0] ~ ") al_unlock_bitmap(" ~bitmap~ ");";
+    Albit albit;
+    ALLEGRO_LOCKED_REGION* region;
+
+    this(Albit b)
+    {
+        assert (b !is null, "can't lock a null bitmap");
+        albit = b;
+        region = al_lock_bitmap(albit,
+            ALLEGRO_PIXEL_FORMAT.ALLEGRO_PIXEL_FORMAT_ANY,
+            ALLEGRO_LOCK_READWRITE);
+        assert (region, "error locking a bitmap, even though it's not null");
+    }
+
+    ~this() { al_unlock_bitmap(albit); }
+}
+
+
+
+struct LockReadOnly
+{
+    const(Albit) albit;
+    ALLEGRO_LOCKED_REGION* region;
+
+    this(const(Albit) b)
+    {
+        assert (b !is null, "can't lock a null bitmap");
+        albit = b;
+        region = al_lock_bitmap(cast (Albit) albit,
+            ALLEGRO_PIXEL_FORMAT.ALLEGRO_PIXEL_FORMAT_ANY,
+            ALLEGRO_LOCK_READWRITE);
+        assert (region, "error locking const(Albit), even though not null");
+    }
+
+    ~this() { al_unlock_bitmap(cast (Albit) albit); }
 }

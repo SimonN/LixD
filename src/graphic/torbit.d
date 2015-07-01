@@ -428,7 +428,8 @@ void draw_dark_from(
             end_y - start_y,
             ALLEGRO_PIXEL_FORMAT.ALLEGRO_PIXEL_FORMAT_ANY, // is fastest
             ALLEGRO_LOCK_READWRITE);
-        scope (exit) al_unlock_bitmap(bitmap);
+        scope (exit)
+            al_unlock_bitmap(bitmap);
 
         mixin(temp_target!"bitmap");
         foreach  (int target_x; start_x .. end_x)
@@ -444,7 +445,7 @@ void draw_dark_from(
     }
     // end local function
 
-    mixin(temp_lock!"bit");
+    auto lock_bit = LockReadWrite(bit);
                     ddf_at(x,       y);
     if (_tx       ) ddf_at(x - _xl, y);
     if (       _ty) ddf_at(x,       y - _yl);

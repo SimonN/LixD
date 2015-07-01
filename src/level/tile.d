@@ -162,8 +162,7 @@ private void set_nice_defaults_based_on_type()
 private void determine_selection_box()
 {
     assert (cb);
-    Albit albit = cb.albit;
-    mixin(temp_lock!"albit");
+    auto lock = LockReadOnly(cb.albit);
 
     for  (int xf = 0; xf < cb.xfs; ++xf)
      for (int yf = 0; yf < cb.yfs; ++yf) {
