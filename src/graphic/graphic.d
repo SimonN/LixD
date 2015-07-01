@@ -20,7 +20,7 @@ class Graphic {
  */
     @property const(Cutbit) cutbit() const { return _cutbit; }
 
-    @property AlBit  albit()               { return _cutbit.albit; }
+    @property Albit  albit()               { return _cutbit.albit; }
     @property Torbit ground(Torbit gr)     { return _ground = gr;  }
     @property inout(Torbit) ground() inout { return _ground;       }
 

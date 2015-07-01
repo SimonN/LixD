@@ -98,7 +98,7 @@ void initialize()
     if (! cb_ptr) return;
     Cutbit cb = *cb_ptr;
 
-    AlBit b = cb.albit;
+    Albit b = cb.albit;
     assert (b, "apparently your gfx card can't store the Lix spritesheet");
 
     // DTODOLANG
@@ -158,7 +158,7 @@ void initialize()
     assert (icon_ptr, "missing image: in-game panel icon of a Lix");
     if (icon_ptr) {
         Cutbit cb_icons = *icon_ptr;
-        AlBit  cb_bmp   = cb_icons.albit;
+        Albit  cb_bmp   = cb_icons.albit;
         mixin(temp_lock!"cb_bmp");
         recolor_into_vector(cb_icons, icons, magicnr_icons);
     }
@@ -260,7 +260,7 @@ void eidrecol_api(in Filename fn)
 
 void eidrecol_api(Cutbit cutbit, in int magicnr)
 {
-    AlBit bitmap = cutbit.albit;
+    Albit bitmap = cutbit.albit;
     assert (bitmap);
     if (! bitmap) return;
 
@@ -350,8 +350,8 @@ void recolor_into_vector(
                      in internal);
     assert (rcl_p && rcl_p.valid, "can't recolor, missing map image");
 
-    AlBit recol = rcl_p .albit;
-    AlBit lix   = cutbit.albit;
+    Albit recol = rcl_p .albit;
+    Albit lix   = cutbit.albit;
     if (!recol || !lix) return;
 
     immutable int   recol_xl  = al_get_bitmap_width (recol);
@@ -364,7 +364,7 @@ void recolor_into_vector(
 
 
 
-    void recolor_one_bitmap(AlBit target, in int style_id)
+    void recolor_one_bitmap(Albit target, in int style_id)
     {
         assert(target);
         assert(style_id < recol_yl - 1);
@@ -427,7 +427,7 @@ void recolor_into_vector(
     foreach (int i; 0 .. Style.MAX) {
         Style st = cast (Style) i;
         vector[st] = new Cutbit(cutbit);
-        AlBit target = vector[st].albit;
+        Albit target = vector[st].albit;
         assert (target);
 
         // DTODOLANG

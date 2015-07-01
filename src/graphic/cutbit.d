@@ -25,14 +25,14 @@ class Cutbit {
 
     this() { }
     this(in Cutbit);
-    this(AlBit,          const bool cut = true); // takes ownership of bitmap!
+    this(Albit,          const bool cut = true); // takes ownership of bitmap!
     this(const Filename, const bool cut = true);
-    this(AlBit[]);
+    this(Albit[]);
 
     bool opEquals(const Cutbit) const;
 
     @property bool  valid() const { return bitmap != null; }
-    @property AlBit albit() const { return cast (AlBit) bitmap; }
+    @property Albit albit() const { return cast (Albit) bitmap; }
 
     // get size of a single frame, not necessarily size of entire bitmap
     @property int xl()  const { return _xl;  }
@@ -78,7 +78,7 @@ class Cutbit {
 
 private:
 
-    AlBit bitmap;
+    Albit bitmap;
 
     int _xl;
     int _yl;
@@ -103,17 +103,17 @@ this(in Cutbit cb)
     existing_frames = new Matrix!bool(cb.existing_frames);
 
     if (cb.bitmap) {
-        bitmap = albit_create(al_get_bitmap_width (cast (AlBit) cb.bitmap),
-                              al_get_bitmap_height(cast (AlBit) cb.bitmap));
+        bitmap = albit_create(al_get_bitmap_width (cast (Albit) cb.bitmap),
+                              al_get_bitmap_height(cast (Albit) cb.bitmap));
         mixin(temp_target!"bitmap");
-        al_draw_bitmap(cast (AlBit) cb.bitmap, 0, 0, 0);
+        al_draw_bitmap(cast (Albit) cb.bitmap, 0, 0, 0);
         assert(bitmap);
     }
 }
 
 
 
-this(AlBit bit, const bool cut = true)
+this(Albit bit, const bool cut = true)
 {
     bitmap = bit;
     if (! bitmap) return;
@@ -148,9 +148,9 @@ this(const Filename fn, const bool cut = true)
 
 
 
-this(AlBit[] manybits)
+this(Albit[] manybits)
 {
-    assert (false, "this(AlBit[] many bitmaps) not yet implemented");
+    assert (false, "this(Albit[] many bitmaps) not yet implemented");
 }
 
 
@@ -168,8 +168,8 @@ this(AlBit[] manybits)
 invariant()
 {
     if (bitmap) {
-        assert (al_get_bitmap_width (cast (AlBit) bitmap) >= _xl);
-        assert (al_get_bitmap_height(cast (AlBit) bitmap) >= _yl);
+        assert (al_get_bitmap_width (cast (Albit) bitmap) >= _xl);
+        assert (al_get_bitmap_height(cast (Albit) bitmap) >= _yl);
         assert (existing_frames !is null);
     }
     else {
@@ -276,8 +276,8 @@ AlCol get_pixel(int fx, int fy,
     }
     // otherwise, return the found color
     else if (_xfs == 1 && _yfs == 1)
-         return al_get_pixel(cast (AlBit) bitmap, px, py);
-    else return al_get_pixel(cast (AlBit) bitmap, fx * (_xl+1) + 1 + px,
+         return al_get_pixel(cast (Albit) bitmap, px, py);
+    else return al_get_pixel(cast (Albit) bitmap, fx * (_xl+1) + 1 + px,
                                                   fy * (_yl+1) + 1 + py);
 }
 
@@ -308,7 +308,7 @@ private void draw_missing_frame_error(
 
 
 // this is used by the first draw(), and by draw_directly_to_screen()
-private AlBit
+private Albit
 create_sub_bitmap_for_frame(
     in int xf, in int yf,
     in int xec = 0, // extra cutting from top or left
@@ -323,10 +323,10 @@ body {
     // Create a sub-bitmap based on the wanted frames. If (Cutbit this)
     // doesn't have frames, don't compute +1 for the outermost frame.
     if (_xfs == 1 && _yfs == 1)
-        return al_create_sub_bitmap(cast (AlBit) bitmap,
+        return al_create_sub_bitmap(cast (Albit) bitmap,
          xec, yec, _xl - xec, _yl - yec);
     else
-        return al_create_sub_bitmap(cast (AlBit) bitmap,
+        return al_create_sub_bitmap(cast (Albit) bitmap,
          1 + xf * (_xl+1) + xec,
          1 + yf * (_yl+1) + yec,
          _xl - xec, _yl - yec);
@@ -345,10 +345,10 @@ void draw(
     const double scal = 0) const
 {
     assert (target_torbit, "trying to draw onto null torbit");
-    AlBit target = target_torbit.albit;
+    Albit target = target_torbit.albit;
 
     if (bitmap && xf >= 0 && yf >= 0 && xf < _xfs && yf < _yfs) {
-        AlBit sprite = create_sub_bitmap_for_frame(xf, yf);
+        Albit sprite = create_sub_bitmap_for_frame(xf, yf);
         scope (exit) al_destroy_bitmap(sprite);
         target_torbit.draw_from(sprite, x, y, mirr, rot, scal);
     }
@@ -386,14 +386,14 @@ void draw(
 
     case Mode.NORMAL:
         // this is very much like the other draw function
-        target_torbit.draw_from(cast (AlBit) bitmap, x, y, mirr, rot * 1.0f);
+        target_torbit.draw_from(cast (Albit) bitmap, x, y, mirr, rot * 1.0f);
         break;
 
     case Mode.DARK:
     case Mode.DARK_EDITOR:
         // the Torbit will know what to lock for best speed, so we have
         // moved the implementation there. Here, we only choose the color.
-        target_torbit.draw_dark_from(cast (AlBit) bitmap, x, y, mirr, rot,
+        target_torbit.draw_dark_from(cast (Albit) bitmap, x, y, mirr, rot,
             mode == Mode.DARK ? color.transp : color.gui_sha);
         break;
 
@@ -403,7 +403,7 @@ void draw(
             invert_lengths ? _yl : _xl,
             invert_lengths ? _xl : _yl);
         excerpt.clear_to_color(color.transp);
-        excerpt.draw_from(cast (AlBit) bitmap, 0, 0, mirr, rot);
+        excerpt.draw_from(cast (Albit) bitmap, 0, 0, mirr, rot);
         target_torbit.draw_to  (excerpt.albit, x, y);
         target_torbit.draw_from(excerpt.albit, x, y);
         break; }
@@ -435,13 +435,13 @@ draw_directly_to_screen(in int x, in int y, in int xf = 0, in int yf = 0) const
     if (xf < 0 || xf >= _xfs
      || yf < 0 || yf >= _yfs) return;
 
-    AlBit backbuffer = al_get_backbuffer(display);
+    Albit backbuffer = al_get_backbuffer(display);
     mixin(temp_target!"backbuffer");
 
     // usually, select only the correct frame. If we'd draw off the screen
     // to the left or top, instead do extra cutting by passing > 0 to the
     // latter two args.
-    AlBit sprite = create_sub_bitmap_for_frame(xf, yf, max(-x, 0), max(-y, 0));
+    Albit sprite = create_sub_bitmap_for_frame(xf, yf, max(-x, 0), max(-y, 0));
     scope (exit) al_destroy_bitmap(sprite);
 
     al_draw_bitmap(sprite, max(0, x), max(0, y), 0);

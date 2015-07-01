@@ -285,7 +285,7 @@ void set_air(int x, int y)
 // for testing
 public void save_to_file(in Filename fn) const
 {
-    AlBit output_bitmap = albit_ram_create(_xl, _yl);
+    Albit output_bitmap = albit_ram_create(_xl, _yl);
     scope (exit) al_destroy_bitmap(output_bitmap);
     mixin(temp_target!"output_bitmap");
 

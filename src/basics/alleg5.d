@@ -9,12 +9,12 @@ public import allegro5.allegro_image;
 public import allegro5.allegro_primitives;
 public import allegro5.allegro_ttf;
 
-alias ALLEGRO_BITMAP* AlBit;
+alias ALLEGRO_BITMAP* Albit;
 alias ALLEGRO_COLOR   AlCol;
 alias ALLEGRO_FONT*   AlFont;
 
-AlBit albit_create    (in int xl, in int yl); // create normal VRAM bitmap
-AlBit albit_ram_create(in int xl, in int yl); // create a RAM bitmap, uncommon
+Albit albit_create    (in int xl, in int yl); // create normal VRAM bitmap
+Albit albit_ram_create(in int xl, in int yl); // create a RAM bitmap, uncommon
 
 ALLEGRO_TIMER*       timer;
 
@@ -22,7 +22,7 @@ int default_new_bitmap_flags;
 
 
 
-AlBit albit_create(in int xl, in int yl)
+Albit albit_create(in int xl, in int yl)
 {
     return albit_create_with_flags(xl, yl, default_new_bitmap_flags
      | ALLEGRO_VIDEO_BITMAP
@@ -31,7 +31,7 @@ AlBit albit_create(in int xl, in int yl)
 
 
 
-AlBit albit_ram_create(in int xl, in int yl)
+Albit albit_ram_create(in int xl, in int yl)
 {
     return albit_create_with_flags(xl, yl, default_new_bitmap_flags
      &~ ALLEGRO_VIDEO_BITMAP
@@ -40,12 +40,12 @@ AlBit albit_ram_create(in int xl, in int yl)
 
 
 
-private AlBit albit_create_with_flags(in int xl, in int yl, in int flags)
+private Albit albit_create_with_flags(in int xl, in int yl, in int flags)
 {
     al_set_new_bitmap_flags(flags);
     scope (exit) al_set_new_bitmap_flags(default_new_bitmap_flags);
 
-    AlBit ret = al_create_bitmap(xl, yl);
+    Albit ret = al_create_bitmap(xl, yl);
     assert (ret);
     assert (al_get_bitmap_width (ret) == xl);
     assert (al_get_bitmap_height(ret) == yl);
@@ -61,7 +61,7 @@ template temp_target(string bitmap)
     // at the end of the caller's current scope
     const char[] temp_target = "
     assert (" ~ bitmap ~ ", \"can't target null bitmap\");
-    AlBit last_target_before_" ~ bitmap[0] ~ " = al_get_target_bitmap();
+    Albit last_target_before_" ~ bitmap[0] ~ " = al_get_target_bitmap();
     scope (exit) al_set_target_bitmap(last_target_before_" ~ bitmap[0] ~ ");
     al_set_target_bitmap(" ~ bitmap  ~ ");";
 }

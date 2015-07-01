@@ -14,7 +14,7 @@ class Torbit {
 //  this(xl, yl, torus_x, torus_y);
 //  this(const Torbit rhs);
 
-    @property AlBit albit() { return bitmap; }
+    @property Albit albit() { return bitmap; }
 
     @property int xl() const { return _xl; }
     @property int yl() const { return _yl; }
@@ -41,15 +41,15 @@ class Torbit {
  */
     void draw_to(Torbit, int x = 0, int y = 0) const
         { assert(false, "Torbit.draw_to(Torbit) not implemented"); }
-    void draw_to(AlBit,  int x = 0, int y = 0, int rxl=0, int ryl=0) const
-        { assert(false, "Torbit.draw_to(AlBit) not implemented"); }
+    void draw_to(Albit,  int x = 0, int y = 0, int rxl=0, int ryl=0) const
+        { assert(false, "Torbit.draw_to(Albit) not implemented"); }
 
-/*  void draw_from(AlBit, x, y, bool mirr, double rot, double scal)
+/*  void draw_from(Albit, x, y, bool mirr, double rot, double scal)
  *
- *      Draw the entire AlBit onto (Torbit this). Can take non-integer quarter
+ *      Draw the entire Albit onto (Torbit this). Can take non-integer quarter
  *      turns as (double rot).
  *
- *  void draw_dark_from(AlBit, x, y, bool mirr, int rot, AlCol col)
+ *  void draw_dark_from(Albit, x, y, bool mirr, int rot, AlCol col)
  *
  *      Implements the eraser piece drawing mode from class Cutbit.
  *      It's cleaner like this: Torbit knows exactly how to lock itself
@@ -89,7 +89,7 @@ class Torbit {
 
 private:
 
-    AlBit bitmap;
+    Albit bitmap;
 
     // height and width of bitmap ("x-length" and "y-length")
     int  _xl;
@@ -122,7 +122,7 @@ this(
 this(const Torbit rhs)
 {
     assert (rhs.bitmap);
-    bitmap = al_clone_bitmap(cast (AlBit) rhs.bitmap);
+    bitmap = al_clone_bitmap(cast (Albit) rhs.bitmap);
     if (bitmap) {
         _xl = rhs._xl;
         _yl = rhs._yl;
@@ -146,8 +146,8 @@ this(const Torbit rhs)
 invariant()
 {
     if (bitmap) {
-        assert (_xl == al_get_bitmap_width (cast (AlBit) bitmap));
-        assert (_yl == al_get_bitmap_height(cast (AlBit) bitmap));
+        assert (_xl == al_get_bitmap_width (cast (Albit) bitmap));
+        assert (_yl == al_get_bitmap_height(cast (Albit) bitmap));
     }
 }
 
@@ -242,7 +242,7 @@ protected void use_drawing_delegate(
 
 
 void draw_from(
-    AlBit bit,
+    Albit bit,
     int x = 0,
     int y = 0,
     bool mirr = false,
@@ -260,7 +260,7 @@ void draw_from(
     assert(draw_from_at == null);
 
     // Select the appropriate Allegro function and its arguments.
-    // This function will be called up to 4 times for drawing (AlBit bit) onto
+    // This function will be called up to 4 times for drawing (Albit bit) onto
     // (Torbit this). Only the positions vary based on the torus properties.
 
     if (rot == 0 && ! scal) {
@@ -332,7 +332,7 @@ void draw_from(
 
 
 void draw_dark_from(
-    AlBit bit,
+    Albit bit,
     int x,
     int y,
     in bool mirr,
@@ -455,7 +455,7 @@ void draw_dark_from(
 
 void copy_to_screen()
 {
-    AlBit last_target = al_get_target_bitmap();
+    Albit last_target = al_get_target_bitmap();
     scope (exit) al_set_target_bitmap(last_target);
     al_set_target_backbuffer(display);
 
@@ -481,7 +481,7 @@ AlCol get_pixel(int x, int y) const
 
     // From the Allegro docs: this is slow on video bitmaps, consider locking
     // manually in the class calling this method.
-    return al_get_pixel(cast (AlBit) bitmap,
+    return al_get_pixel(cast (Albit) bitmap,
      _tx      ? positive_mod(x, _xl) :
      x < 0    ? 0                    :
      x >= _xl ? _xl - 1              : x,

@@ -282,7 +282,7 @@ calc_scrolling()
 
 
 void
-draw_camera(AlBit target_albit)
+draw_camera(Albit target_albit)
 {
     // less_x/y: By how much is the camera larger than the map?
     //           These are 0 on torus maps, only > 0 for small non-torus maps.

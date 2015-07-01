@@ -262,7 +262,7 @@ void display_startup_message(string str)
     static string[] msgs;
     msgs ~= str;
 
-    AlBit backbuffer = al_get_backbuffer(display);
+    Albit backbuffer = al_get_backbuffer(display);
     mixin(temp_target!"backbuffer");
 
     al_clear_to_color(color.black);

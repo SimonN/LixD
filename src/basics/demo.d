@@ -31,7 +31,7 @@ class Demo {
 private:
 
     bool   exit;
-    AlBit[] wuerste;
+    Albit[] wuerste;
     Torbit osd;
     Graphic myhatch1;
     Graphic myhatch2;
@@ -54,7 +54,7 @@ this()
     assert (wuerste[0]);
     al_convert_mask_to_alpha(wuerste[0], AlCol(1,0,1,1));
     foreach (i; 1 .. 4) {
-        AlBit wurst = albit_create(50 + 31 * (i % 2), 50 + 21 * (i/2));
+        Albit wurst = albit_create(50 + 31 * (i % 2), 50 + 21 * (i/2));
         mixin(temp_target!"wurst");
         al_clear_to_color(AlCol(1,0,0,1));
         wuerste ~= wurst;
