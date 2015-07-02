@@ -293,7 +293,7 @@ draw_camera(Albit target_albit)
     if (! torus_y && yl * zoom < camera_yl)
         less_y = _camera_yl - yl * zoom;
 
-    mixin(temp_target!"target_albit");
+    auto drata = DrawingTarget(target_albit);
 
     for     (int x = less_x/2; x < _camera_xl-less_x/2; x += xl * zoom) {
         for (int y = less_y;   y < _camera_yl;          y += yl * zoom) {
@@ -397,7 +397,8 @@ load_camera_rectangle(Torbit src)
     immutable bool drtx = torus_x && r.xl < camera_zoomed_xl;
     immutable bool drty = torus_y && r.yl < camera_zoomed_yl;
 
-    mixin(temp_target!"this.albit");
+    auto drata = DrawingTarget(this.albit);
+
     void draw_here(int ax, int ay, int axl, int ayl)
     {
         al_draw_bitmap_region(src.albit, ax, ay, axl, ayl, ax, ay, 0);

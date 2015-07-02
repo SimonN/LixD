@@ -232,7 +232,7 @@ protected void use_drawing_delegate(
 
     // We don't lock the bitmap; drawing with high-level primitives
     // and blitting other VRAM bitmaps is best without locking
-    mixin(temp_target!"bitmap");
+    auto drata = DrawingTarget(bitmap);
     if (true      ) drawing_delegate(x,       y      );
     if (_tx       ) drawing_delegate(x - _xl, y      );
     if (       _ty) drawing_delegate(x,       y - _yl);
@@ -431,7 +431,7 @@ void draw_dark_from(
         scope (exit)
             al_unlock_bitmap(bitmap);
 
-        mixin(temp_target!"bitmap");
+        auto drata = DrawingTarget(bitmap);
         foreach  (int target_x; start_x .. end_x)
          foreach (int target_y; start_y .. end_y) {
             immutable int ix = target_x - start_x + bit_start_x;
@@ -467,7 +467,7 @@ void copy_to_screen()
 
 void clear_to_color(AlCol col)
 {
-    mixin(temp_target!"bitmap");
+    auto drata = DrawingTarget(bitmap);
     al_clear_to_color(col);
 }
 
@@ -498,7 +498,7 @@ void set_pixel(int x, int y, AlCol col)
     assert(bitmap);
     // Here, don't draw outside of the boundaries, unlike the reading in
     // Torbit.get_pixel. Again, it's slow on video bitmaps.
-    mixin(temp_target!"bitmap");
+    auto drata = DrawingTarget(bitmap);
     if ((_tx || (x >= 0 && x < _xl))
      && (_ty || (y >= 0 && y < _yl)) ) al_put_pixel(
      _tx ? positive_mod(x, _xl) : x,

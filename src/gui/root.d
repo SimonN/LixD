@@ -139,7 +139,7 @@ draw()
         foreach (element; focus)  element.req_draw();
     }
 
-    mixin(temp_target!"guiosd.albit");
+    auto drata = DrawingTarget(guiosd.albit);
     foreach (element; elders) element.draw();
     foreach (element; focus)  element.draw();
 

@@ -262,8 +262,7 @@ void display_startup_message(string str)
     static string[] msgs;
     msgs ~= str;
 
-    Albit backbuffer = al_get_backbuffer(display);
-    mixin(temp_target!"backbuffer");
+    auto drata = DrawingTarget(al_get_backbuffer(display));
 
     al_clear_to_color(color.black);
     int y = 0;

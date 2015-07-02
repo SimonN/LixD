@@ -37,13 +37,14 @@ private:
 
     string scale_dir = dir_data_bitmap.rootless; // load from which dir?
 
-    // The int variables should be != 0 for the character spreadsheet and
-    // similar things that require both a GUI and a player color recoloring.
-    // recolor_into_vector() assumes the cutbit's bitmap to be locked already.
-    void eidrecol_api       (in Filename);
-    void eidrecol_api       (Cutbit, in int = 0);
-    void recolor_into_vector(const(Cutbit), ref Cutbit[Style], int = 0);
-
+/*  void eidrecol_api       (in Filename);
+ *  void eidrecol_api       (Albit, in int = 0);
+ *  void recolor_into_vector(const(Albit), ref Cutbit[Style], int = 0);
+ *
+ *      The int variables should be != 0 for the character spreadsheet and
+ *      similar things that require both a GUI and a player color recoloring.
+ *      recolor_into_vector() assumes the cutbit's bitmap to be locked already.
+ */
     // I believe these magic numbers are only to separate between recoloring
     // lixes and recoloring icons. eidrecol behaves differently based on
     // the magic number. recolor_into_vector skips some rows based on them.
@@ -81,13 +82,15 @@ void initialize()
     // Save all image filenames without (extension inclusive dot). That will
     // be helpful should we ever switch image file formats, and thus the
     // filename extensions.
-    foreach (fn; files) if (fn.has_image_extension()) {
-        Cutbit cb = new Cutbit(fn);
-        assert (cb, "error loading internal cutbit: " ~ fn.rootful);
-        al_convert_mask_to_alpha(cb.albit, color.pink);
-        internal[fn.rootless_no_ext] = cb;
-        assert (get_internal(fn).valid,
-            "can't retrieve from array: " ~ fn.rootful);
+    foreach (fn; files) {
+        if (fn.has_image_extension()) {
+            Cutbit cb = new Cutbit(fn);
+            assert (cb, "error loading internal cutbit: " ~ fn.rootful);
+            al_convert_mask_to_alpha(cb.albit, color.pink);
+            internal[fn.rootless_no_ext] = cb;
+            assert (get_internal(fn).valid,
+                "can't retrieve from array: " ~ fn.rootful);
+        }
     }
 
     // Create the matrix of eye coordinates.
@@ -253,7 +256,7 @@ private:
 
 void eidrecol_api(in Filename fn)
 {
-    get_internal_mutable(fn).eidrecol_api();
+    get_internal_mutable(fn).eidrecol_api(0);
 }
 
 
@@ -270,7 +273,7 @@ void eidrecol_api(Cutbit cutbit, in int magicnr)
          ALLEGRO_LOCK_READWRITE);
         assert (region, "can't lock bitmap despite magicnr == 0");
     }
-    mixin(temp_target!"bitmap");
+    auto drata = DrawingTarget(bitmap);
 
     alias al_put_pixel pp;
 
@@ -376,7 +379,7 @@ void recolor_into_vector(
                       al_get_pixel(recol, conv, style_id + 1);
         }
 
-        mixin(temp_target!"target");
+        auto drata = DrawingTarget(target);
 
         // The first row (y == 0) contains the source pixels. The first style
         // (garden) is at y == 1. Thus the recol->h - 1 is correct as we count

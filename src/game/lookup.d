@@ -285,9 +285,10 @@ void set_air(int x, int y)
 // for testing
 public void save_to_file(in Filename fn) const
 {
-    Albit output_bitmap = albit_ram_create(_xl, _yl);
-    scope (exit) al_destroy_bitmap(output_bitmap);
-    mixin(temp_target!"output_bitmap");
+    Albit output_bitmap = albit_memory_create(_xl, _yl);
+    scope (exit)
+        al_destroy_bitmap(output_bitmap);
+    auto drata = DrawingTarget(output_bitmap);
 
     foreach (y; 0 .. _yl) foreach (x; 0 .. _xl) {
         int red   = get(x, y, bit_terrain);

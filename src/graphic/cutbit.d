@@ -105,7 +105,7 @@ this(in Cutbit cb)
     if (cb.bitmap) {
         bitmap = albit_create(al_get_bitmap_width (cast (Albit) cb.bitmap),
                               al_get_bitmap_height(cast (Albit) cb.bitmap));
-        mixin(temp_target!"bitmap");
+        auto drata = DrawingTarget(bitmap);
         al_draw_bitmap(cast (Albit) cb.bitmap, 0, 0, 0);
         assert(bitmap);
     }
@@ -301,7 +301,7 @@ private void draw_missing_frame_error(
         str = format("(%d,%d)", fx, fy);
         col = color.cb_bad_frame;
     }
-    mixin(temp_target!"torbit.albit");
+    auto drata = DrawingTarget(torbit.albit);
     draw_text(djvu_s, str, x, y, col);
 }
 
@@ -435,8 +435,7 @@ draw_directly_to_screen(in int x, in int y, in int xf = 0, in int yf = 0) const
     if (xf < 0 || xf >= _xfs
      || yf < 0 || yf >= _yfs) return;
 
-    Albit backbuffer = al_get_backbuffer(display);
-    mixin(temp_target!"backbuffer");
+    auto drata = DrawingTarget(al_get_backbuffer(display));
 
     // usually, select only the correct frame. If we'd draw off the screen
     // to the left or top, instead do extra cutting by passing > 0 to the

@@ -55,7 +55,7 @@ this()
     al_convert_mask_to_alpha(wuerste[0], AlCol(1,0,1,1));
     foreach (i; 1 .. 4) {
         Albit wurst = albit_create(50 + 31 * (i % 2), 50 + 21 * (i/2));
-        mixin(temp_target!"wurst");
+        auto drata = DrawingTarget(wurst);
         al_clear_to_color(AlCol(1,0,0,1));
         wuerste ~= wurst;
     }
@@ -97,7 +97,7 @@ this()
 
     // This test class does lots of drawing during calc().
     // Since that is skipped when it's first created, make one osd-clear here.
-    mixin(temp_target!"osd.albit");
+    auto drata = DrawingTarget(osd.albit);
     al_clear_to_color(AlCol(0, 0, 0, 1));
 }
 
@@ -141,7 +141,7 @@ calc()
 {
     int tick = al_get_timer_count(basics.alleg5.timer) % (2 << 30);
 
-    mixin(temp_target!"osd.albit");
+    auto drata = DrawingTarget(osd.albit);
     al_clear_to_color(AlCol(0, 0, 0, 1));
     al_draw_triangle(20+tick, 20, 30, 80, 40, 20, AlCol(0.3, 0.5, 0.7, 1), 3);
 
