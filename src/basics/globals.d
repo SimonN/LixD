@@ -284,7 +284,7 @@ cF file_replay_auto_multi       = new cF("replays/auto/m");
 // important single files
 cF file_config                  = new cF("data/config.txt");
 cF file_log                     = new cF("data/log.txt");
-cF file_level_network           = new cF("data/netlevel.txt");
+cF file_tharsis_prof            = new cF("data/profile.txt");
 cF file_language_english        = new cF("data/transl/english.txt");
 
 cF file_bitmap_api_number       = new cF("data/images/api_numb.I");

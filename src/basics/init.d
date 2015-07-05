@@ -45,6 +45,7 @@ void initialize(in Cmdargs cmdargs)
 
     default_new_bitmap_flags = al_get_new_bitmap_flags();
 
+    hardware.tharsis.initialize();
     hardware.keyboard.initialize();
     hardware.mouse.initialize();
     hardware.sound.initialize();
@@ -81,6 +82,7 @@ void deinitialize()
     hardware.sound.deinitialize();
     hardware.mouse.deinitialize();
     hardware.keyboard.deinitialize();
+    hardware.tharsis.deinitialize();
 
     al_shutdown_primitives_addon();
     al_shutdown_ttf_addon();

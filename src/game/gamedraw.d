@@ -6,23 +6,30 @@ import graphic.gadget;
 import graphic.map;
 import graphic.torbit;
 import hardware.display;
+import hardware.tharsis;
 
 package void
 impl_game_draw(Game game) { with (game)
 {
+    auto zone_draw_all = Zone(profiler, "draw-all");
+
     map.clear_screen_rectangle(AlCol(game.level.bg_red,
                                      game.level.bg_green,
                                      game.level.bg_blue, 1.0));
 
-    cs.foreach_gadget((Gadget g) {
-        g.draw();
-    });
+    {
+        auto zone_draw_gadgets = Zone(profiler, "draw-gadgets");
+        cs.foreach_gadget((Gadget g) {
+            g.draw();
+        });
+    }
 
-    map.load_camera_rectangle(game.cs.land);
-
-    // DTODO: draw lix and other things here that go in front of the land
-
-    map.draw_camera(al_get_backbuffer(hardware.display.display));
+    {
+        auto zone_draw_land = Zone(profiler, "draw-land");
+        map.load_camera_rectangle(game.cs.land);
+        // DTODO: draw lix and other things here that go in front of the land
+        map.draw_camera(al_get_backbuffer(hardware.display.display));
+    }
 
 
 
