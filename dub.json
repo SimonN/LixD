@@ -1,6 +1,6 @@
 {
-    "name": "Lix",
-    "description": "Single- and multiplayer puzzle game, inspired by Lemmings",
+    "name": "lix",
+    "description": "single-/multiplayer puzzle game, inspired by Lemmings",
     "homepage": "http://asdfasdf.ethz.ch/~simon/",
     "copyright": "public domain",
     "authors": ["Simon N."],
@@ -10,11 +10,32 @@
     "workingDirectory": "./",
 
     "dependencies": {
-        "allegro": "~master"
-    },
-    "subConfigurations": {
-        "allegro": "all-addons"
+        "allegro": ">=3.0.1+5.1.8",
+        "tharsis-prof": "~>0.5.3",
     },
 
-    "buildOptions": ["deprecationErrors"]
+    "libs": [
+        "allegro",
+        "allegro_acodec",
+        "allegro_audio",
+        "allegro_font",
+        "allegro_ttf",
+        "allegro_image",
+        "allegro_color",
+        "allegro_primitives",
+    ],
+
+    "buildRequirements": ["disallowDeprecations"],
+
+    "buildTypes": {
+        "debug": {
+            "buildOptions": ["debugMode", "debugInfo"],
+            "versions": ["tharsisprofiling"],
+        },
+        "profile": {
+            "buildOptions": ["profile", "optimize", "inline", "debugInfo"],
+            "versions": ["tharsisprofiling"],
+        },
+    },
+
 }
