@@ -5,7 +5,7 @@ module gui.geometry;
  * can be more x-geoms on a Widescreen.
  *
  * The measurement unit of Geom is called "geom" throughout the source code.
- * Therefore, the screen is always 320 geom high, no matter what resolution
+ * Therefore, the screen is always 480 geom high, no matter what resolution
  * it has. If necessary, x-geom and y-geom refer to the measurements in the
  * separate directions.
  *
@@ -15,7 +15,7 @@ module gui.geometry;
  * Returns the number of x-geoms. y-geoms are always 480.
  *
  * Fonts should be 20 geom high. A4 Lix allowed for 24 lines of text aligned
- * vertically, this encouraged tersity. I like that.
+ * vertically, this encouraged terseness. I like that.
  *
  *  this(x, y, xl = 20, yl = 20);
  *  this(Geom, ...);
@@ -105,7 +105,7 @@ class Geom {
     @property static float screen_yls() { return _screen_yls; }
 
     // this function is called from gui.root, when that is initialized
-    static void  set_screen_xyls(in int _xl, in int _yl)
+    static void set_screen_xyls(in int _xl, in int _yl)
     {
         _screen_xls     = _xl;
         _screen_yls     = _yl;
@@ -150,10 +150,10 @@ class Geom {
         immutable float p_xlg = parent ? parent.xlg : _screen_xlg;
 
         switch (x_from) {
-        case From.LEFT:   return p_xg + x;
-        case From.CENTER: return p_xg + p_xlg/2 - xl/2 - x;
-        case From.RIGHT:  return p_xg + p_xlg   - xl   - x;
-        default: assert (false);
+            case From.LEFT:   return p_xg + x;
+            case From.CENTER: return p_xg + p_xlg/2 - xl/2 - x;
+            case From.RIGHT:  return p_xg + p_xlg   - xl   - x;
+            default: assert (false);
         }
     }
 
@@ -163,22 +163,22 @@ class Geom {
         immutable float p_ylg = parent ? parent.ylg : _screen_ylg;
 
         switch (y_from) {
-        case From.TOP:    return p_yg + y;
-        case From.CENTER: return p_yg + p_ylg/2 - yl/2 - y;
-        case From.BOTTOM: return p_yg + p_ylg   - yl   - y;
-        default: assert (false);
+            case From.TOP:    return p_yg + y;
+            case From.CENTER: return p_yg + p_ylg/2 - yl/2 - y;
+            case From.BOTTOM: return p_yg + p_ylg   - yl   - y;
+            default: assert (false);
         }
     }
 
     override string toString() const
     {
         int fl(float a) { return std.math.floor(a).to!int; }
-        return
-           format("from=0x%x x=%d y=%d xl=%d yl=%d\n",
-            from, fl(x), fl(y), fl(xl), fl(yl))
-         ~ format("geoms: xg=%d yg=%d\n", fl(xg), fl(yg))
-         ~ format("scren: xs=%d ys=%d xls=%d yls=%d",
-            fl(xs), fl(ys), fl(xls), fl(yls));
+
+        return format("from=0x%x x=%d y=%d xl=%d yl=%d\n",
+                      from, fl(x), fl(y), fl(xl), fl(yl))
+             ~ format("geoms: xg=%d yg=%d\n", fl(xg), fl(yg))
+             ~ format("scren: xs=%d ys=%d xls=%d yls=%d",
+                      fl(xs), fl(ys), fl(xls), fl(yls));
     }
 
 }
