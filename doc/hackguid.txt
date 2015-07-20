@@ -82,7 +82,8 @@ when at least one of the if-else branches has more than one statement.
         do_whatever();
     }
 
-Functions have the opening brace on a separate line.
+Functions have the opening brace on a separate line. You can put the function
+name on its own line, apart from the return values.
 
     int
     my_function()
@@ -91,13 +92,29 @@ Functions have the opening brace on a separate line.
         return something(a);
     }
 
+    private nothrow void
+    almost_like_java() const @nogc
+    {
+        a += 4;
+    }
+
 When you can fit an entire function definition into a single line, do that
 instead of following the above rule. This happens often with class properties.
 
-    @property int some_value() { return _some_value; }
+    @property int some_value()      { return _some_value;     }
+    @property int some_value(int i) { return _some_value = i; }
+
+The D style (http://dlang.org/dstyle.html) recommends properties over
+get/set_some_value(). The private variable should be prefixed with an
+underscore, because it needs a name different from the property functions.
+
+Digression: The D style also recommends to choose type names LikeThis,
+which I do myself, and other identifier names likeThis, different from my
+like_this. Maybe I should move the codebase to the dStyleNamingConvention.
+The current convention is influenced by my C++ history.
 
 When a line, conditional expression or parameter list gets very long and
-has to be broken into separate lines format it like this:
+has to be broken into separate lines, format it like this:
 
     private int
     my_function(
@@ -135,7 +152,8 @@ Notes about D
 *   const int* foo() { ... } is the same as int* foo() const { ... }, both
     are valid D and do what the latter would have done in C++: make the method
     callable on a const class object. If you want to return a const pointer:
-    const (int*) foo() { ... }; a pointer to const int: const(int)* foo().
+    const(int*) foo() { ... }; a pointer to const int: const(int)* foo().
+    Mnemonic: When describing a const/immutable type, always use brackets.
 
 *   To do formatted output to stdout, use writefln() in std.stdio, which works
     like printf(). The equivalent to C's sprintf() is format() in std.string,
