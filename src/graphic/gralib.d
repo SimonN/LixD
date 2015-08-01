@@ -340,7 +340,7 @@ void eidrecol_api(Cutbit cutbit, in int magicnr)
 
 
 void recolor_into_vector(
-    const(Cutbit)     cutbit,
+    Cutbit            cutbit,
     ref Cutbit[Style] vector,
     int               magicnr
 ) {
@@ -349,8 +349,7 @@ void recolor_into_vector(
     // extremely slowly.
 
     assert (cutbit.valid);
-    Cutbit* rcl_p = (file_bitmap_lix_recol.rootless_no_ext
-                     in internal);
+    Cutbit* rcl_p = (file_bitmap_lix_recol.rootless_no_ext in internal);
     assert (rcl_p && rcl_p.valid, "can't recolor, missing map image");
 
     Albit recol = rcl_p .albit;

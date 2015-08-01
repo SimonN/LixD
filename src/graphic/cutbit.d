@@ -23,14 +23,14 @@ class Cutbit {
         DARK_EDITOR, // like DARK, but draw a dark color, not transparent
     }
 
-    this() { }
-    this(in Cutbit);
-    this(Albit,          const bool cut = true); // takes ownership of bitmap!
-    this(const Filename, const bool cut = true);
-    this(Albit[]);
-
-    bool opEquals(const Cutbit) const;
-
+/*  this() { }
+ *  this(Cutbit);
+ *  this(Albit,    bool cut = true); // takes ownership of bitmap!
+ *  this(Filename, bool cut = true);
+ *  this(Albit[]);
+ *
+ *  bool opEquals(const Cutbit) const;
+ */
     @property bool  valid() const { return bitmap != null; }
     @property Albit albit() const { return cast (Albit) bitmap; }
 
@@ -93,22 +93,23 @@ private:
 
 public:
 
-this(in Cutbit cb)
+this(Cutbit cb)
 {
     if (! cb) return;
     _xl = cb._xl;
     _yl = cb._yl;
     _xfs = cb._xfs;
     _yfs = cb._yfs;
-    existing_frames = new Matrix!bool(cb.existing_frames);
+    existing_frames = new Matrix!bool (cb.existing_frames);
 
     if (cb.bitmap) {
-        bitmap = albit_create(al_get_bitmap_width (cast (Albit) cb.bitmap),
-                              al_get_bitmap_height(cast (Albit) cb.bitmap));
+        bitmap = albit_create(al_get_bitmap_width (cb.bitmap),
+                              al_get_bitmap_height(cb.bitmap));
         auto drata = DrawingTarget(bitmap);
         al_draw_bitmap(cast (Albit) cb.bitmap, 0, 0, 0);
         assert(bitmap);
     }
+
 }
 
 
@@ -136,14 +137,9 @@ this(const Filename fn, const bool cut = true)
 {
     // Try loading the file. If not found, don't crash, but make a log entry.
     bitmap = al_load_bitmap(fn.rootful_z);
-    if (! bitmap) {
-        Log.log("Missing image: " ~ fn.rootless);
-        this();
-    }
-    else {
+    if (bitmap)
         al_convert_mask_to_alpha(bitmap, color.pink);
-        this(bitmap, cut);
-    }
+    this(bitmap, cut);
 }
 
 

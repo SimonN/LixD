@@ -52,22 +52,22 @@ private:
 public:
 
 this(
-    in int _xl,
-    in int _yl
+    in int new_xl,
+    in int new_yl
 )
 in {
-    assert (_xl > 0);
-    assert (_yl > 0);
+    assert (new_xl > 0);
+    assert (new_yl > 0);
 }
 body {
-    xl = _xl;
-    yl = _yl;
+    xl = new_xl;
+    yl = new_yl;
     data = new T[xl * yl];
 }
 
 
 
-this(in Matrix!T rhs)
+this(Matrix!T rhs)
 out {
     assert (data !is null);
     assert (data.length == xl * yl);
@@ -81,7 +81,7 @@ body {
 
 
 
-T get(in int x, in int y) const
+inout(T) get(in int x, in int y) inout
 in {
     assert (x >= 0);
     assert (y >= 0);
@@ -94,7 +94,7 @@ body {
 
 
 
-void set(in int x, in int y, in T value)
+void set(in int x, in int y, T value)
 in {
     assert (x >= 0);
     assert (y >= 0);
