@@ -41,6 +41,7 @@ We need the following libraries:
 * zlib
 * libpng
 * libvorbis
+* freetype
 * Allegro 5
 * enet, not needed right now, this is the networking library
 

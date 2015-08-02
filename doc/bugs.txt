@@ -4,6 +4,25 @@ Bugs in D/A5 Lix
 The bugtracker on asdfasdf.etzh.ch/~simon/ lists the bugs for C++/A4 Lix.
 Here are the bugs specific to D/A5 Lix.
 
+Drawing mode "noow" not implemented
+
+    No-overwrite drawing, if used in levels, aborts the game due to
+    unimplemented function. (assertion failure)
+
+No ogg support -> bad log message
+
+    The message is "file not found", even though the ogg files are present.
+    Should stat the files to see if they're present, and give the correct
+    message. If they exist, say that Lix was compiled without ogg support.
+
+Bad font size guessing
+
+    I've done something for it, test if it's good on most resolutions.
+    You can test arbitrary windowed resolutions: bin/lix --resol=800x600
+
+    Original bug: geoo has a widescreen and the fonts were way too small.
+    The relative font size seemed OK, but both font sizes were small.
+
 Ignoring large animated tiles
 
     The game can't load very large graphics as video bitmaps: amanda/tar.W.png
