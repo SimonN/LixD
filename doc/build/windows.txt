@@ -1,0 +1,174 @@
+How to build Lix on a Windows machine
+=====================================
+
+This is hard. If you get stuck at any point, don't hesitate to contact me
+(Simon N.) and ask me for help:
+
+    IRC:    irc.quakenet.org #lix
+    E-Mail: eiderdaus@gmail.com
+    Forum:  asdfasdf.ethz.ch/~simon/bb/forum.php -- or -- lemmingsforums.net
+
+
+
+Install D and dub
+-----------------
+
+Download dmd, the Digital Mars D compiler. It's possible to use compilers
+other than dmd, for example gdc, but dmd is the one I've been using.
+Get dmd here:
+
+    http://dlang.org/download
+
+During the installation, select the option to add the programs to PATH. You
+want to call them from the command line later. You don't have to add anything
+to the start menu. You don't need D1 support either.
+
+If you would like, you may test the D environment. See appendix 1 at the
+bottom of this file for how to write and compile a hello world program.
+
+Download dub, the D package manager, from here:
+
+    http://code.dlang.org/download
+
+Install it. The default installation options are fine.
+
+
+
+Fork the Lix repo and test dub
+------------------------------
+
+If you don't have git, download the source as a zip archive here, and unzip:
+
+    https://github.com/SimonN/LixD/archive/master.zip
+
+If you have git, you can instead clone the repository:
+
+    git clone https://github.com/SimonN/LixD.git
+
+Open a command line shell, navigate into the Lix root directory (where the
+file dub.json sits) and run:
+
+    dub
+
+The package manager will download and set up D bindings for libraries I use.
+At some point, it will error out. When does it error out for you?
+
+    a)  It reaches the compilation and linking stages of Lix itself, and then
+        errors out when it tries to link Lix. This is expected, because we have
+        not yet installed Allegro 5's binary files. Continue working through
+        these instructions.
+
+    b)  It errors out during downloading or setting up the Allegro 5 bindings.
+        In this case, open dub.json with a text editor, find this line:
+
+            "allegro": ">=3.0.1+5.1.8",
+
+        and change it into:
+
+            "allegro": "~master",
+
+        Save the file, and run dub again. You might get a deprecation
+        warning for using the master branch directly, but we don't care.
+
+        If you still get errors _before_ dub tries to link Lix (see point a)
+        above), ask me for help. See top of this file for how to contact me.
+
+
+
+Install Allegro 5
+-----------------
+
+I have chosen Matthew Leverton's binary distribution of Allegro 5. Go here:
+
+    https://www.allegro.cc/files/
+
+Download at random one of the binary files. I took the archive for MinGW 4.7.0.
+Unpack it. There are three directories inside: bin/, include/, lib/.
+We do _not_ need the include/, that's for C/C++ development. Our D bindings
+against the libraries will be fetched with dub automatically. We don't need
+lib/ either, we will generate our own linktime libraries from the DLLs in bin/.
+
+Locate your D installation directory, and look for the windows/ subdir.
+It might be here:
+
+    C:/"Program Files"/D/dmd2/windows/
+
+This also has subdirectories bin/ and lib/. If you like, make backups of these
+directories, so you can retry if something goes wrong.
+
+Allegro 5's bin/ directory has each DLL in 4 possible versions. You can throw
+away all versions with "-debug" in their name, and then again all versions
+with "-md". This will leave you with one fourth of the DLLs. Put these into
+your D installations's ./dmd/windows/bin/.
+
+
+
+
+
+Generate .lib files
+-------------------
+
+The D linker doesn't like libXXX.a files, and instead wants XXX.lib files.
+We have to make these ourselves. Get implib.exe here:
+
+
+
+(If your D installation doesn't come with implib, notify me, and I will look
+into it. See top of this file for how to contact me.)
+
+
+
+Appendix 1
+----------
+
+To test whether the D compiler is set up, copy this into a file hello.d:
+
+    import std.stdio;
+
+    void main()
+    {
+        writeln("Hello World!");
+    }
+
+Open a command line shell, and run:
+
+    dmd hello.d
+
+It should generate an executable file, hello.exe, and an intermediate object
+file, which you can safely delete.
+
+
+
+Appendix 2
+----------
+
+Here
+
+    implib /s allegro.lib allegro-5.0.11.dll
+    implib /s allegro-debug.lib allegro-debug-5.1.dll
+    implib /s allegro_acodec.lib allegro_acodec-5.1.dll
+    implib /s allegro_acodec-debug.lib allegro_acodec-debug-5.1.dll
+    implib /s allegro_audio.lib allegro_audio-5.1.dll
+    implib /s allegro_audio-debug.lib allegro_audio-debug-5.1.dll
+    implib /s allegro_color.lib allegro_color-5.1.dll
+    implib /s allegro_color-debug.lib allegro_color-debug-5.1.dll
+    implib /s allegro_dialog.lib allegro_dialog-5.1.dll
+    implib /s allegro_dialog-debug.lib allegro_dialog-debug-5.1.dll
+    implib /s allegro_font.lib allegro_font-5.1.dll
+    implib /s allegro_font-debug.lib allegro_font-debug-5.1.dll
+    implib /s allegro_image.lib allegro_image-5.1.dll
+    implib /s allegro_image-debug.lib allegro_image-debug-5.1.dll
+    implib /s allegro_main.lib allegro_main-5.1.dll
+    implib /s allegro_main-debug.lib allegro_main-debug-5.1.dll
+    implib /s allegro_memfile.lib allegro_memfile-5.1.dll
+    implib /s allegro_memfile-debug.lib allegro_memfile-debug-5.1.dll
+    implib /s allegro_monolith.lib allegro_monolith-5.1.dll
+    implib /s allegro_monolith-debug.lib allegro_monolith-debug-5.1.dll
+    implib /s allegro_physfs.lib allegro_physfs-5.1.dll
+    implib /s allegro_physfs-debug.lib allegro_physfs-debug-5.1.dll
+    implib /s allegro_primitives.lib allegro_primitives-5.1.dll
+    implib /s allegro_primitives-debug.lib allegro_primitives-debug-5.1.dll
+    implib /s allegro_ttf.lib allegro_ttf-5.1.dll
+    implib /s allegro_ttf-debug.lib allegro_ttf-debug-5.1.dll
+    implib /s allegro_video.lib allegro_video-5.1.dll
+    implib /s allegro_video-debug.lib allegro_video-debug-5.1.dll

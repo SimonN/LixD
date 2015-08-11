@@ -131,7 +131,7 @@ struct LockReadOnly
         albit = b;
         region = al_lock_bitmap(cast (Albit) albit,
             ALLEGRO_PIXEL_FORMAT.ALLEGRO_PIXEL_FORMAT_ANY,
-            ALLEGRO_LOCK_READWRITE);
+            ALLEGRO_LOCK_READONLY);
         assert (region, "error locking const(Albit), even though not null");
     }
 

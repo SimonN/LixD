@@ -1,5 +1,5 @@
-How to build Lix from source
-============================
+How to build Lix on a Linux machine
+===================================
 
 Lix is written in the D Programming Language and uses Allegro 5.
 
