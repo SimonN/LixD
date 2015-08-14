@@ -35,6 +35,7 @@ void initialize(in Cmdargs cmdargs)
     file.log.Log.initialize();
     basics.globconf.load();
     basics.user.load();
+    load_user_language_and_if_not_exist_set_user_option_to_english();
 
     hardware.display.set_screen_mode(! cmdargs.windowed,
                                      cmdargs.want_res_x, cmdargs.want_res_y);

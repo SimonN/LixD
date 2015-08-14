@@ -16,7 +16,6 @@ import basics.globconf;
 import file.filename;
 import file.date;
 import file.io;
-import file.language;
 import file.log; // when writing to disk fails
 import lix.enums;
 
@@ -282,7 +281,10 @@ private Filename user_file_name()
 
 void load()
 {
-    if (user_name == null) return; // this shouldn't ever happen though
+    if (user_name == null) {
+        // This happens upon first start after installation
+        return;
+    }
 
     while (basics.globconf.user_name.length > player_name_max_length) {
         user_name = basics.help.backspace(user_name);
@@ -436,7 +438,6 @@ void load()
         break;
 
     }
-    load_user_language_and_if_not_exist_set_user_option_to_english();
 }
 
 
