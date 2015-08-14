@@ -39,7 +39,7 @@ Filename[] find_files(
     foreach (string s; std.file.dirEntries(fn_where.rootful,
                                            SpanMode.shallow, true)) {
         if (! std.file.isDir(s) && s.has_correct_ending(what)) {
-            ret ~= new Filename(s.tr('\\', '/'));
+            ret ~= new Filename(s.tr("\\", "/"));
         }
     }
     return ret;
@@ -56,7 +56,7 @@ Filename[] find_dirs(
         if (std.file.isDir(s)) {
             // convention: dirs have a trailing slash, and dirEntries
             // doesn't add one at the end
-            ret ~= new Filename(s.tr('\\', '/') ~ "/");
+            ret ~= new Filename(s.tr("\\", "/") ~ "/");
         }
     }
     return ret;
@@ -73,7 +73,7 @@ Filename[] find_tree(
     foreach (string s; std.file.dirEntries(fn_where.rootful,
                                            SpanMode.breadth, true)) {
         if (! std.file.isDir(s) && s.has_correct_ending(what)) {
-            ret ~= new Filename(s.tr('\\', '/'));
+            ret ~= new Filename(s.tr("\\", "/"));
         }
     }
     return ret;

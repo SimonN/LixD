@@ -8,6 +8,9 @@ module basics.cmdargs;
  * parsed command-line switches in addition to the global/user config.
  */
 
+import std.array; // array()
+import std.algorithm; // splitter
+import std.conv;
 import std.stdio;
 
 import basics.versioning;
@@ -29,6 +32,9 @@ class Cmdargs {
     bool version_and_exit;
     bool help_and_exit;
 
+    int  want_res_x;
+    int  want_res_y;
+
     private string[] bad_switches;
     Filename[]       verify_files;
 
@@ -49,11 +55,34 @@ class Cmdargs {
         // argument 0 is the program name, loop over the extra ones only
         foreach (arg; args[1 .. $]) {
             if (arg.starts_with("--")) {
-                immutable vrf = "--verify=";
-                if (arg.starts_with(vrf))
+                immutable vrf   = "--verify=";
+                immutable resol = "--resol=";
+
+                if (arg.starts_with(vrf)) {
                     verify_files ~= new Filename(arg[vrf.length .. $]);
-                else
+                }
+                else if (arg.starts_with(resol)) {
+                    // this string is expected to be of the form "1234x567"
+                    string want_res = arg[resol.length .. $];
+                    try {
+                        string[] numbers = splitter(want_res, 'x').array();
+                        if (numbers.length != 2)
+                            // leave wanted resolution at 0
+                            throw new Exception("caught in 5 lines anyway");
+                        // these can throw too on bad chars in the string
+                        want_res_x = numbers[0].to!int;
+                        want_res_y = numbers[1].to!int;
+                    }
+                    catch (Exception e) { }
+
+                    if (want_res_x == 0 || want_res_y == 0)
+                        bad_switches ~= arg;
+                    else
+                        windowed = true;
+                }
+                else {
                     bad_switches ~= arg;
+                }
             }
             else if (arg.starts_with("-")) {
                 // allow arguments chained like -nw
@@ -80,7 +109,7 @@ class Cmdargs {
         writeln("Lix version " ~ get_version_string());
         if (bad_switches != null) {
             foreach (sw; bad_switches)
-                writeln("Bad command-line argument: " ~ sw);
+                writeln("Bad command-line argument: `" ~ sw ~ "'");
             if (! help_and_exit) writeln("Try -h or -? for help.");
         }
         if (help_and_exit) writeln(
@@ -88,7 +117,8 @@ class Cmdargs {
             "-n                 ask for player's name on startup\n"
             "-o                 disable all sound\n"
             "-v                 print version and exit\n"
-            "-w                 run in windowed mode\n"
+            "-w                 run in windowed mode at 640x480\n"
+            "--resol=800x600    run in windowed mode at the given resolution\n"
             "--verify=file.txt  verify the replay file `a/b.txt'\n"
             "--verify=mydir     verify all replays in directory `mydir'");
     }

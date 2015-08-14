@@ -1,5 +1,6 @@
 module graphic.textout;
 
+import std.algorithm; // min
 import std.conv; // to!int for rounding the screen size division
 import std.math;
 import std.string; // toStringz()
@@ -14,10 +15,14 @@ AlFont font_al;
 AlFont djvu_s;
 AlFont djvu_m;
 
-private float sha_offs; // x and y offset for printing the text shadow
-private float djvu_m_offs; // Gui code should think this has a height of 20
-                           // geoms, see gui.geometry. We compute this offset.
-                           // This affects the y pos for djvu_m.
+private float _sha_offs;    // x and y offset for printing the text shadow
+private float _djvu_m_offs; // Gui code should think this has a height of 20
+                            // geoms, see gui.geometry. We compute this offset.
+                            // This affects the y pos for djvu_m.
+
+public @property float sha_offs()    { return _sha_offs;    }
+public @property float djvu_m_offs() { return _djvu_m_offs; }
+
 /*  void initialize();
  *  void deinitialize();
  *
@@ -36,18 +41,21 @@ void initialize()
     // correct height for 24 lines of text stacked vertically on 640 x 480.
     // Other resolutions require us to scale the font size.
     assert (display, "need display height to estimate font size");
-    sha_offs            = al_get_display_height(display) / 480f;
-    djvu_m_offs         = sha_offs * 4 - 3;
-    immutable int size  = floor(sha_offs).to!int;
-    immutable int flags = 0;
+    immutable float magnif = min(al_get_display_height(display) / 480f,
+                                 al_get_display_width (display) / 640f);
+    immutable int flags = 0; // we don't need this, A5 function wants it
+    immutable string fn = "./data/fonts/djvusans.ttf";
 
-    djvu_s = al_load_ttf_font("./data/fonts/djvusans.ttf", size *  8, flags);
-    djvu_m = al_load_ttf_font("./data/fonts/djvusans.ttf", size * 13, flags);
+    djvu_s = al_load_ttf_font(fn.ptr, to!int(floor(magnif *  8)), flags);
+    djvu_m = al_load_ttf_font(fn.ptr, to!int(floor(magnif * 14)), flags);
 
     if (! djvu_s) djvu_s = font_al;
     if (! djvu_m) djvu_m = font_al;
     assert (djvu_s);
     assert (djvu_m);
+
+    _sha_offs    = magnif;
+    _djvu_m_offs = magnif * 4 - 3;
 }
 
 

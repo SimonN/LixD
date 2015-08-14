@@ -36,7 +36,8 @@ void initialize(in Cmdargs cmdargs)
     basics.globconf.load();
     basics.user.load();
 
-    hardware.display.set_screen_mode(! cmdargs.windowed);
+    hardware.display.set_screen_mode(! cmdargs.windowed,
+                                     cmdargs.want_res_x, cmdargs.want_res_y);
 
     al_init_image_addon();
     al_init_font_addon();
