@@ -18,6 +18,11 @@ impl_game_draw(Game game) { with (game)
     auto zo = Zone(profiler, "game entire impl_game_draw()");
     with     (Zone(profiler, "game entire drawing to map"))
     {
+        // speeding up drawing by setting the drawing target now.
+        // This RAII struct is used in each innermost loop, too, but it does
+        // nothing except comparing two pointers there if we've set stuff here.
+        DrawingTarget drata = DrawingTarget(map.albit);
+
         with (Zone(profiler, "game clear screen to color"))
             map.clear_screen_rectangle(AlCol(game.level.bg_red,
                                              game.level.bg_green,
