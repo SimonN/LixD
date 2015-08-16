@@ -22,6 +22,16 @@ enum Runmode {
     PRINT_AND_EXIT
 }
 
+private string _help_and_exit_output =
+    "-h or -? or --help   print this help and exit\n"
+    "-n                   ask for player's name on startup\n"
+    "-o                   disable all sound output\n"
+    "-v or --version      print version and exit\n"
+    "-w                   run in windowed mode at 640x480\n"
+    "--resol=800x600      run in windowed mode at the given resolution\n"
+    "--verify=file.txt    verify the replay file `a/b.txt'\n"
+    "--verify=mydir       verify all replays in directory `mydir'";
+
 
 
 class Cmdargs {
@@ -58,7 +68,13 @@ class Cmdargs {
                 immutable vrf   = "--verify=";
                 immutable resol = "--resol=";
 
-                if (arg.starts_with(vrf)) {
+                if (arg == "--version") {
+                    version_and_exit = true;
+                }
+                else if (arg == "--help") {
+                    help_and_exit = true;
+                }
+                else if (arg.starts_with(vrf)) {
                     verify_files ~= new Filename(arg[vrf.length .. $]);
                 }
                 else if (arg.starts_with(resol)) {
@@ -110,17 +126,11 @@ class Cmdargs {
         if (bad_switches != null) {
             foreach (sw; bad_switches)
                 writeln("Bad command-line argument: `" ~ sw ~ "'");
-            if (! help_and_exit) writeln("Try -h or -? for help.");
+            if (! help_and_exit)
+                writeln("Try -h or -? for help.");
         }
-        if (help_and_exit) writeln(
-            "-h or -?           print this help and exit\n"
-            "-n                 ask for player's name on startup\n"
-            "-o                 disable all sound\n"
-            "-v                 print version and exit\n"
-            "-w                 run in windowed mode at 640x480\n"
-            "--resol=800x600    run in windowed mode at the given resolution\n"
-            "--verify=file.txt  verify the replay file `a/b.txt'\n"
-            "--verify=mydir     verify all replays in directory `mydir'");
+        if (help_and_exit)
+            writeln(_help_and_exit_output);
     }
 
 }
