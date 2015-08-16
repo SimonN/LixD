@@ -1,6 +1,5 @@
 module hardware.display;
 
-
 import std.array;
 import std.string;
 
@@ -48,24 +47,17 @@ get_display_close_was_clicked() {
 
 
 
-private bool[basics.globals.ticks_per_sec] _fps_arr;
-private int _fps_previous_arr_entry;
+private long[] _fps_arr;
 
 void
 flip_display() {
-    assert(display, "display hasn't been created");
+    assert (display, "display hasn't been created");
     al_flip_display();
 
-    // compute FPS
-    immutable int cur_entry = al_get_timer_count(timer) % _fps_arr.len;
-    _fps_arr[cur_entry] = true;
-    for (int null_entry = positive_mod(cur_entry - 1, _fps_arr.len);
-        null_entry != _fps_previous_arr_entry;
-        null_entry = positive_mod(null_entry - 1, _fps_arr.len)
-    ) {
-        _fps_arr[null_entry] = false;
-    }
-    _fps_previous_arr_entry = cur_entry;
+    // compute FPS, these can be queried with @property int display_fps()
+    _fps_arr ~= al_get_timer_count(timer);
+    while (_fps_arr != null && _fps_arr[0] <= _fps_arr[$-1] - ticks_per_sec)
+        _fps_arr = _fps_arr[1 .. $];
 }
 
 
@@ -73,10 +65,7 @@ flip_display() {
 @property int
 display_fps()
 {
-    int sum = 0;
-    foreach (entry; _fps_arr)
-        sum += entry;
-    return sum;
+    return _fps_arr.len;
 }
 
 
