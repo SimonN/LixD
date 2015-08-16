@@ -105,7 +105,7 @@ class GameState {
         return _goals_locked;
     }
 
-    void foreach_gadget(void function(Gadget) func)
+    void foreach_gadget(void delegate(Gadget) func)
     {
         foreach (g; hatches)     func(g);
         foreach (g; goals)       func(g);

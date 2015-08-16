@@ -49,4 +49,6 @@ package:
 
     long altick_last_update;
 
+    int _profiling_gadget_count;
+
 }

@@ -8,6 +8,7 @@ import basics.help; // positive_mod
 import graphic.color; // drawing dark, to analyze transparency
 import file.filename;
 import hardware.display;
+import hardware.tharsis;
 
 class Torbit {
 
@@ -229,11 +230,17 @@ protected void use_drawing_delegate(
 ) {
     assert (bitmap);
     assert (drawing_delegate != null);
+    auto zone1 = Zone(profiler, "torbit-deleg-func");
 
     // We don't lock the bitmap; drawing with high-level primitives
     // and blitting other VRAM bitmaps is best without locking
     auto drata = DrawingTarget(bitmap);
-    if (true      ) drawing_delegate(x,       y      );
+
+    {
+        auto zone2 = Zone(profiler, "torbit-deleg-once");
+        drawing_delegate(x, y);
+    }
+
     if (_tx       ) drawing_delegate(x - _xl, y      );
     if (       _ty) drawing_delegate(x,       y - _yl);
     if (_tx && _ty) drawing_delegate(x - _xl, y - _yl);
@@ -249,6 +256,7 @@ void draw_from(
     double rot = 0,
     double scal = 0
 ) {
+    auto my_zone = Zone(profiler, "torbit-draw-from");
     assert (bit);
 
     // DTODO: test whether these mods can be shifted into use_delegate.
@@ -342,6 +350,8 @@ void draw_dark_from(
     assert (bit);
     assert (bitmap);
     assert (rot >= 0 && rot < 4);
+
+    auto my_zone = Zone(profiler, "torbit-draw-dark-from");
 
     if (_tx) x = positive_mod(x, _xl);
     if (_ty) y = positive_mod(y, _yl);
@@ -456,10 +466,7 @@ void draw_dark_from(
 
 void copy_to_screen()
 {
-    Albit last_target = al_get_target_bitmap();
-    scope (exit) al_set_target_bitmap(last_target);
-    al_set_target_backbuffer(display);
-
+    auto drata = DrawingTarget(al_get_backbuffer(display));
     al_draw_bitmap(bitmap, 0, 0, 0);
 }
 
@@ -509,6 +516,8 @@ void set_pixel(int x, int y, AlCol col)
 
 void draw_rectangle(int x, int y, int rxl, int ryl, AlCol col)
 {
+    auto my_zone = Zone(profiler, "torbit-draw-rect");
+
     // DTODO: test whether the mod can be moved into the delegate invoker.
     if (_tx) x = positive_mod(x, _xl);
     if (_ty) y = positive_mod(y, _yl);

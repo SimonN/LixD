@@ -1,5 +1,7 @@
 module game.gamedraw;
 
+import std.string; // format
+
 import basics.alleg5;
 import game.game;
 import graphic.gadget;
@@ -8,40 +10,50 @@ import graphic.torbit;
 import hardware.display;
 import hardware.tharsis;
 
+private string _gadget_count_str = "hallo";
+
 package void
 impl_game_draw(Game game) { with (game)
 {
-    auto zone_draw_all = Zone(profiler, "draw-all");
-
-    map.clear_screen_rectangle(AlCol(game.level.bg_red,
-                                     game.level.bg_green,
-                                     game.level.bg_blue, 1.0));
-
+    auto zo = Zone(profiler, "game entire impl_game_draw()");
+    with     (Zone(profiler, "game entire drawing to map"))
     {
-        auto zone_draw_gadgets = Zone(profiler, "draw-gadgets");
-        cs.foreach_gadget((Gadget g) {
-            g.draw();
-        });
+        with (Zone(profiler, "game clear screen to color"))
+            map.clear_screen_rectangle(AlCol(game.level.bg_red,
+                                             game.level.bg_green,
+                                             game.level.bg_blue, 1.0));
+
+        if (_profiling_gadget_count == 0)
+            with (Zone(profiler, "game counts gadgets, basic loop")) {
+                cs.foreach_gadget((Gadget g) { ++_profiling_gadget_count; } );
+                _gadget_count_str = format("game %d gadgets, %s",
+                                       _profiling_gadget_count, level.name);
+            }
+
+        with (Zone(profiler, _gadget_count_str))
+            cs.foreach_gadget((Gadget g) {
+                with (Zone(profiler, "game draws one gadget"))
+                    g.draw();
+            });
+
+        with (Zone(profiler, "game draws land to map"))
+            map.load_camera_rectangle(game.cs.land);
     }
+    // end drawing target = map
 
-    {
-        auto zone_draw_land = Zone(profiler, "draw-land");
-        map.load_camera_rectangle(game.cs.land);
-        // DTODO: draw lix and other things here that go in front of the land
+    with (Zone(profiler, "game draws map to screen"))
         map.draw_camera(al_get_backbuffer(hardware.display.display));
-    }
-
-
 
     // debugging
-    import graphic.textout;
-    draw_text(djvu_m, "Press [ESC] to go back to the menu.", 10, 10,
-        graphic.color.color.white);
-    draw_text(djvu_m, "Press [P] to save the map bitmaps to files.", 10, 40,
-        graphic.color.color.white);
-    draw_text(djvu_m, std.string.format("Frames per second: %d", display_fps),
-        10, 70,
-        graphic.color.color.white);
+    with (Zone(profiler, "game draws debugging text")) {
+        import graphic.textout;
+        draw_text(djvu_m, "Press [ESC] to go back to the menu.",
+            10, 10, graphic.color.color.white);
+        draw_text(djvu_m, "Press [P] to save the map bitmaps to files.",
+            10, 40, graphic.color.color.white);
+        draw_text(djvu_m, std.string.format("Frames per second: %d",
+            display_fps), 10, 70, graphic.color.color.white);
+    }
 
     static if (true) {
         if (hardware.keyboard.key_once(ALLEGRO_KEY_P)) {

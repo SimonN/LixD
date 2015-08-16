@@ -1,5 +1,17 @@
 module hardware.tharsis;
 
+/* Frame-based profiling.
+ *
+ * To use this in the source, create a RAII struct that measures how long
+ * the current scope takes to complete:
+ *
+ *  auto my_zone = Zone(profiler, "zone-name");
+ *
+ * my_zone can be anything that doens't clash with an existing identifier.
+ * "zone-name" is the zone's name written into data/profile.txt. This should
+ * be as expressive as possible.
+ */
+
 Profiler profiler;
 
 version (tharsisprofiling)
@@ -9,6 +21,8 @@ version (tharsisprofiling)
     import std.stdio;
 
     import basics.globals;
+    import basics.versioning;
+    import file.date;
 
     public import tharsis.prof;
 
@@ -18,8 +32,8 @@ version (tharsisprofiling)
 
     void initialize()
     {
-        // Get 2 MB more than the minimum (maxEventBytes)
-        ubyte[] storage = new ubyte[Profiler.maxEventBytes + 1024 * 1024 * 2];
+        // Get 20 MB more than the minimum (maxEventBytes)
+        ubyte[] storage = new ubyte[Profiler.maxEventBytes + 1024 * 1024 * 20];
         profiler        = new Profiler(storage);
     }
 
@@ -57,12 +71,36 @@ version (tharsisprofiling)
 
         File outfile = File(file_tharsis_prof.rootful, "w");
 
-        foreach (key, st; stats) {
-            assert (st.count > 0);
-            outfile.writefln(
-                "%-20.20s min: %8d, max: %8d, avg: %8d, cnt: %6d",
-                key, st.min_dur, st.max_dur, st.tot_dur / st.count, st.count);
+        outfile.writeln("Lix version ", get_version_string,
+            " profiling results from ", Date.now().toString(), ".");
+        outfile.writeln(
+            "Unit of time: 1 us == 1 microsecond == 1/1000 of a millisecond.");
+        outfile.writeln(
+            "At ", ticks_per_sec, " frames per second, 1 frame takes ",
+            1000 * 1000 / ticks_per_sec, " us.");
+
+        void print_column_desc()
+        {
+            outfile.writeln(' '.repeat(36),
+                "   avg/us   min/us   max/us   amount");
         }
+
+        // for output, sort the keys
+        auto keys = stats.keys.sort();
+        int every_tenth_row = 0;
+
+        foreach (key; keys) {
+            auto st = stats[key];
+            assert (st.count > 0);
+            if (every_tenth_row++ % 10 == 0)
+                print_column_desc();
+            outfile.writefln(
+                "%-36.36s %8d %8d %8d %8d",
+                key, st.tot_dur / st.count / 10,
+                     st.min_dur / 10, st.max_dur / 10, st.count);
+        }
+        print_column_desc();
+
         outfile.close();
         destroy(profiler);
     }

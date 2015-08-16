@@ -2,6 +2,8 @@ module basics.alleg5;
 
 import std.string;
 
+import hardware.tharsis;
+
 public import allegro5.allegro;
 public import allegro5.allegro_acodec;
 public import allegro5.allegro_audio;
@@ -83,8 +85,16 @@ struct DrawingTarget
     this(Albit b)
     {
         assert (b, "can't target null bitmap");
-        old_target = al_get_target_bitmap();
-        al_set_target_bitmap(b);
+        with (Zone(profiler, "DrawingTarget.this()")) {
+            old_target = al_get_target_bitmap();
+            if (old_target == b) {
+                // don't call the expensive al_set_target_bitmap()
+                old_target = null;
+                return;
+            }
+        }
+        with (Zone(profiler, "DrawingTarget.al_set_target_bitmap()"))
+            al_set_target_bitmap(b);
     }
 
     ~this()
@@ -104,18 +114,22 @@ struct LockReadWrite
     this(Albit b)
     {
         assert (b !is null, "can't lock a null bitmap");
-        albit = b;
-        region = al_lock_bitmap(albit,
-            ALLEGRO_PIXEL_FORMAT.ALLEGRO_PIXEL_FORMAT_ANY,
-            ALLEGRO_LOCK_READWRITE);
-        assert (region, "error locking a bitmap, even though it's not null");
+        with (Zone(profiler, "al_lock_bitmap() readwrite")) {
+            albit = b;
+            region = al_lock_bitmap(albit,
+                ALLEGRO_PIXEL_FORMAT.ALLEGRO_PIXEL_FORMAT_ANY,
+                ALLEGRO_LOCK_READWRITE);
+            assert (region, "error locking a bitmap, even though not null");
+        }
     }
 
     ~this()
     {
         if (albit)
-            al_unlock_bitmap(albit);
+            with (Zone(profiler, "al_unlock_bitmap() readwrite"))
+                al_unlock_bitmap(albit);
     }
+
 }
 
 
