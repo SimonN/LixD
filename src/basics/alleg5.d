@@ -85,16 +85,17 @@ struct DrawingTarget
     this(Albit b)
     {
         assert (b, "can't target null bitmap");
-        with (Zone(profiler, "DrawingTarget.this()")) {
-            old_target = al_get_target_bitmap();
-            if (old_target == b) {
-                // don't call the expensive al_set_target_bitmap()
-                old_target = null;
-                return;
-            }
+        // al_get_target_bitmap() is very fast
+        old_target = al_get_target_bitmap();
+        if (old_target == b) {
+            // Don't call the expensive al_set_target_bitmap().
+            // Do nothing now in this(), and nothing either in ~this().
+            old_target = null;
+            return;
         }
-        with (Zone(profiler, "DrawingTarget.al_set_target_bitmap()"))
-            al_set_target_bitmap(b);
+        else
+            with (Zone(profiler, "DrawingTarget.al_set_target_bitmap()"))
+                al_set_target_bitmap(b);
     }
 
     ~this()

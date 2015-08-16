@@ -10,6 +10,10 @@ import file.filename;
 import hardware.display;
 import hardware.tharsis;
 
+private immutable bool _tharsis_profiling_in_torbit = false;
+
+
+
 class Torbit {
 
 //  this(xl, yl, torus_x, torus_y);
@@ -230,14 +234,17 @@ protected void use_drawing_delegate(
 ) {
     assert (bitmap);
     assert (drawing_delegate != null);
-    auto zone1 = Zone(profiler, "torbit-deleg-func");
+
+    static if (_tharsis_profiling_in_torbit)
+        auto zone1 = Zone(profiler, "torbit-deleg-func");
 
     // We don't lock the bitmap; drawing with high-level primitives
     // and blitting other VRAM bitmaps is best without locking
     auto drata = DrawingTarget(bitmap);
 
     {
-        auto zone2 = Zone(profiler, "torbit-deleg-once");
+        static if (_tharsis_profiling_in_torbit)
+            auto zone2 = Zone(profiler, "torbit-deleg-once");
         drawing_delegate(x, y);
     }
 
@@ -256,7 +263,9 @@ void draw_from(
     double rot = 0,
     double scal = 0
 ) {
-    auto my_zone = Zone(profiler, "torbit-draw-from");
+    static if (_tharsis_profiling_in_torbit)
+        auto my_zone = Zone(profiler, "torbit-draw-from");
+
     assert (bit);
 
     // DTODO: test whether these mods can be shifted into use_delegate.
@@ -351,7 +360,8 @@ void draw_dark_from(
     assert (bitmap);
     assert (rot >= 0 && rot < 4);
 
-    auto my_zone = Zone(profiler, "torbit-draw-dark-from");
+    static if (_tharsis_profiling_in_torbit)
+        auto my_zone = Zone(profiler, "torbit-draw-dark-from");
 
     if (_tx) x = positive_mod(x, _xl);
     if (_ty) y = positive_mod(y, _yl);
@@ -516,7 +526,8 @@ void set_pixel(int x, int y, AlCol col)
 
 void draw_rectangle(int x, int y, int rxl, int ryl, AlCol col)
 {
-    auto my_zone = Zone(profiler, "torbit-draw-rect");
+    static if (_tharsis_profiling_in_torbit)
+        auto my_zone = Zone(profiler, "torbit-draw-rect");
 
     // DTODO: test whether the mod can be moved into the delegate invoker.
     if (_tx) x = positive_mod(x, _xl);
