@@ -4,16 +4,18 @@ Lix?
 This shall become a port of Lix to the D Programming Language using Allegro 5.
 It's still in an early state, demonstrating the basic Lix graphics classes.
 
-Read doc/build/linux.txt on how to build this.
+How to build
+------------
 
-I'd love to hear results from a Windows user. I haven't set up a D environment
-on Windows yet, but I can try to walk you through it, if you're willing to
-test this on Windows. :-)
+Look in the directory `./doc/build/' and read the file for your operating
+system, either `linux.txt' or `windows.txt'.
 
-<NaOH>   to be honest, I thought you were joking when you first said you were
-         going to redo this in D, but it looks like you've made some good
-         progress.
-<SimonN> yes, it's become a serious port attempt; there's too much invested
-         already to abort it anytime soon
-<NaOH>   ^sunk cost fallacy?
-<SimonN> sunk love
+In `cross.txt', I've described how I started setting up cross-compilation
+on Linux for Windows. I have not been succesful with that.
+
+How to test
+-----------
+
+Right now, you need to make the directory `./levels/' yourself, and put some
+levels from C++/A4 lix in that directory. Graphic sets are included in D/A5
+Lix already.

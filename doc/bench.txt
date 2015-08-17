@@ -1,9 +1,0 @@
-Results from benchmarking
-
-Drawing 150 gadgets, no  eco mode: 451,000 hns per frame
-Drawing 150 gadgets with eco mode: 676,000 hns per frame
-Drawing 150 gadgets at geoo's:     120,000 hns per frame
-
-This is consistent with drawing the land; the land is always a fixed multiple
-of the gadgets. It varies depending on number of gadgets, but not depending on
-which machine the code is run.
