@@ -44,10 +44,12 @@ class Torbit {
  *                              px   py   Rx   Ry   Rxl  Ryl
  *  bool get_point_in_rectangle(int, int, int, int, int, int) const;
  */
+    // DTODODRAW: import is only here while the next is unimpl
+    import file.log;
     void draw_to(Torbit, int x = 0, int y = 0) const
-        { assert(false, "Torbit.draw_to(Torbit) not implemented"); }
-    void draw_to(Albit,  int x = 0, int y = 0, int rxl=0, int ryl=0) const
-        { assert(false, "Torbit.draw_to(Albit) not implemented"); }
+        { Log.log("DTODODRAW: Torbit.draw_to(Torbit) not implemented"); }
+    void draw_to(Albit,  int x = 0, int y = 0, int rxl = 0, int ryl = 0) const
+        { Log.log("DTODODRAW: Torbit.draw_to(Albit) not implemented"); }
 
 /*  void draw_from(Albit, x, y, bool mirr, double rot, double scal)
  *
