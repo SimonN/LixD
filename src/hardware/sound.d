@@ -5,6 +5,7 @@ import basics.globals;
 import basics.user;
 import file.filename;
 import file.log;
+import file.search; // file exists
 
 /*  void initialize();
  *  void deinitialize();
@@ -216,7 +217,27 @@ this(in Filename fn)
     filename = fn;
     unique = true;
     sample = al_load_sample(fn.rootful_z);
-    if (! sample) Log.logf("Missing sound file `%s'", fn.rootful);
+    if (! sample) {
+        if (! fn.file_exists())
+            Log.logf("Missing sound file `%s'", fn.rootful);
+        else {
+            Log.logf("Can't decode sound file `%s'.", fn.rootful);
+            log_ogg_error_if_necessary();
+        }
+    }
+}
+
+
+
+private void
+log_ogg_error_if_necessary()
+{
+    static bool was_logged = false;
+    if (! was_logged) {
+        was_logged = true;
+        Log.log("  Make sure this is really an .ogg file. If it is,");
+        Log.log("  check if Allegro 5 has been compiled with .ogg support.");
+    }
 }
 
 
