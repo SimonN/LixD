@@ -106,7 +106,7 @@ int key_me_down_5       = ALLEGRO_KEY_E;
 int key_me_exit         = ALLEGRO_KEY_ESCAPE;
 int key_me_main_single  = ALLEGRO_KEY_F;
 int key_me_main_network = ALLEGRO_KEY_D;
-int key_me_main_replay  = ALLEGRO_KEY_S;
+int key_me_main_replays = ALLEGRO_KEY_S;
 int key_me_main_options = ALLEGRO_KEY_A;
 
 int key_ed_left         = ALLEGRO_KEY_S;
@@ -387,7 +387,7 @@ void load()
         else if (i.text1 == user_key_me_exit            ) key_me_exit            = i.nr1;
         else if (i.text1 == user_key_me_main_single     ) key_me_main_single     = i.nr1;
         else if (i.text1 == user_key_me_main_network    ) key_me_main_network    = i.nr1;
-        else if (i.text1 == user_key_me_main_replay     ) key_me_main_replay     = i.nr1;
+        else if (i.text1 == user_key_me_main_replays    ) key_me_main_replays    = i.nr1;
         else if (i.text1 == user_key_me_main_options    ) key_me_main_options    = i.nr1;
 
         else if (i.text1 == user_key_ed_left            ) key_ed_left            = i.nr1;
@@ -553,7 +553,7 @@ nothrow void save()
         fwr(IoLine.Hash  (user_key_me_exit,          key_me_exit));
         fwr(IoLine.Hash  (user_key_me_main_single,   key_me_main_single));
         fwr(IoLine.Hash  (user_key_me_main_network,  key_me_main_network));
-        fwr(IoLine.Hash  (user_key_me_main_replay,   key_me_main_replay));
+        fwr(IoLine.Hash  (user_key_me_main_replays,  key_me_main_replays));
         fwr(IoLine.Hash  (user_key_me_main_options,  key_me_main_options));
         f.writeln();
 

@@ -3,6 +3,8 @@ module menu.mainmenu;
 /* This is shown after the game has initialized everything.
  * When the game is run for the first time, the small dialogues asking
  * for language and name are shown first instead, and only then this.
+ *
+ * DTODO: the button "bench" should be removed at some point.
  */
 
 import basics.alleg5;  // drawing bg to screen
@@ -17,16 +19,18 @@ class MainMenu : Window {
 
     @property bool goto_single()  { return single .clicked; }
     @property bool goto_network() { return network.clicked; }
-    @property bool goto_replay()  { return replay .clicked; }
+    @property bool goto_replays() { return replays.clicked; }
     @property bool goto_options() { return options.clicked; }
+    @property bool goto_bench()   { return bench  .clicked; }
     @property bool exit_program() { return _exit  .clicked; }
 
 private:
 
     TextButton single;
     TextButton network;
-    TextButton replay;
+    TextButton replays;
     TextButton options;
+    TextButton bench;
     TextButton _exit;
 
     Label versioning;
@@ -56,19 +60,19 @@ public this()
 
     single  = buttext_height(Geom.From.TOP,       0);
     network = buttext_height(Geom.From.TOP,       1);
-    replay  = buttext_height(Geom.From.TOP_LEFT , 2);
+    replays = buttext_height(Geom.From.TOP_LEFT , 2);
     options = buttext_height(Geom.From.TOP_RIGHT, 2);
     _exit   = buttext_height(Geom.From.TOP,       3);
 
     single .text = Lang.browser_single_title.transl;
     network.text = "Demo (Shift+ESC to exit)"; // win_lobby_title.transl DTODO
-    replay .text = Lang.browser_replay_title.transl;
+    replays.text = Lang.browser_replay_title.transl;
     options.text = Lang.option_title.transl;
     _exit  .text = Lang.common_exit.transl;
 
     single .hotkey = basics.user.key_me_main_single;
     network.hotkey = basics.user.key_me_main_network;
-    replay .hotkey = basics.user.key_me_main_replay;
+    replays.hotkey = basics.user.key_me_main_replays;
     options.hotkey = basics.user.key_me_main_options;
     _exit  .hotkey = basics.user.key_me_exit;
 
@@ -79,8 +83,15 @@ public this()
     website    = new Label(new Geom(0, 20, xlg, 20, Geom.From.BOTTOM),
         basics.globals.main_website);
 
-    add_children(single, network, replay, options, _exit,
+    add_children(single, network, replays, options, _exit,
         versioning, website);
+
+    bench = new TextButton(new Geom(
+        0, -but_ylg - but_spg,
+        600, single.ylg, Geom.From.TOP));
+    bench.text
+        = "Benchmark! Runs automatically for about 1 minute. Click here!";
+    this.add_child(bench);
 }
 // end this()
 

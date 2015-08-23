@@ -30,7 +30,11 @@ class Demo {
 
 private:
 
+    enum demo_mode_max = 4; // demo mode must be smaller than this
+
     bool   exit;
+    int    demo_mode; // 0 == what you normally get
+                      // 1, 2, 3 == for geoo's code
     Albit[] wuerste;
     Torbit osd;
     Graphic myhatch1;
@@ -44,9 +48,11 @@ private:
 
 public:
 
-this()
+this(in int arg_demo_mode = 0)
 {
     exit = false;
+    demo_mode = arg_demo_mode;
+    assert (demo_mode >= 0 && demo_mode < demo_mode_max);
 
     import graphic.color;
 
@@ -77,23 +83,6 @@ this()
         return a;
     } ();
     foreach (e; elems) gui.add_elder(e);
-
-    // test level input/output
-    import level.level;
-    Level lv = new Level(new Filename("./levels/atest.txt"));
-    lv.save_to_file(new Filename("./levels/aout.txt"));
-
-    import game.lookup;
-
-    land   = new Torbit(lv.size_x, lv.size_y, lv.torus_x, lv.torus_y);
-    lookup = new Lookup(lv.size_x, lv.size_y, lv.torus_x, lv.torus_y);
-
-    // not testing the level drawing right now
-    static if (false) {
-        lv.draw_terrain_to(land, lookup);
-        land.save_to_file(new Filename("z-landtest.png"));
-        lookup.save_to_file(new Filename("y-lookuptest.png"));
-    }
 
     // This test class does lots of drawing during calc().
     // Since that is skipped when it's first created, make one osd-clear here.
@@ -143,6 +132,9 @@ calc()
 
     auto drata = DrawingTarget(osd.albit);
     al_clear_to_color(AlCol(0, 0, 0, 1));
+
+    perform_geoo_benchmarks();
+
     al_draw_triangle(20+tick, 20, 30, 80, 40, 20, AlCol(0.3, 0.5, 0.7, 1), 3);
 
     osd.draw_rectangle(100 + tick*2, 100 + tick*3, 130, 110, AlCol(0.2, 1, 0.3, 1));
@@ -183,7 +175,7 @@ calc()
     drtx("Non-square rectangles jump when they", 300, 120);
     drtx("finish a half rotation, this is intended.", 300, 140);
 
-    if (tick % 120 >= 30 || tick % 10 < 5)
+    if (demo_mode == 0 && (tick % 120 >= 30 || tick % 10 < 5))
         drtx("--> PRESS [SHIFT] + [ESC] TO EXIT! <--", 5, 5);
 
     import basics.globals;
@@ -226,6 +218,70 @@ calc()
     assert (mytile, "mytile not exist");
     assert (mytile.cb, "mytile.cb not exist");
     mytile.cb.draw(osd, 500 + to!int(50 * sin(tick / 30.0)), 10);
+}
+
+
+
+void
+perform_geoo_benchmarks()
+{
+    import hardware.tharsis;
+    enum sx = 80;
+    enum sy = 74;
+
+    // this suddenly becomes slow after 20 seconds or so? Some memory leak?
+    if (demo_mode == 1) {
+        auto my_zone = Zone(profiler, "demo-prim-triangle-list");
+        ALLEGRO_VERTEX[] vertices;
+        foreach (y; 0..100) {
+            foreach (x; 0..500) {
+                // note that in theory this could be reduced to only one bigger
+                // triangle capturing the rectangle to be drawn
+                ALLEGRO_VERTEX[] w = [
+                    {    2*x,     2*y,  0,  0,  0, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    { 2*x+sx,     2*y,  0, sx,  0, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    { 2*x+sx,  2*y+sy,  0, sx, sy, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    {    2*x,     2*y,  0,  0,  0, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    {    2*x,  2*y+sy,  0,  0, sy, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    { 2*x+sx,  2*y+sy,  0, sx, sy, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)}
+
+                ];
+                vertices ~= w;
+            }
+        }
+        al_draw_prim(vertices.ptr, null, wuerste[0], 0, cast(int) vertices.length, ALLEGRO_PRIM_TYPE.ALLEGRO_PRIM_TRIANGLE_LIST);
+    }
+
+    // simple bitmap drawing
+    if (demo_mode == 2) {
+        auto my_zone = Zone(profiler, "demo-bitmap-using-holding");
+        al_hold_bitmap_drawing(true);
+            foreach (y; 0..100) {
+                foreach (x; 0..100) {
+                    al_draw_bitmap(wuerste[0], 2*x, 2*y, 0);
+                    al_draw_bitmap(wuerste[0], 2*x, 2*y, 0);
+                }
+            }
+        al_hold_bitmap_drawing(false);
+    }
+
+    // This is super slow, don't use.
+    if (demo_mode == 3) {
+        auto my_zone = Zone(profiler, "demo-prim-triangle-calls");
+        foreach (y; 0..100) {
+            foreach (x; 0..100) {
+                ALLEGRO_VERTEX[] w = [
+                    {    2*x,     2*y,  0,  0,  0, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    { 2*x+sx,     2*y,  0, sx,  0, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    { 2*x+sx,  2*y+sy,  0, sx, sy, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    {    2*x,     2*y,  0,  0,  0, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    {    2*x,  2*y+sy,  0,  0, sy, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    { 2*x+sx,  2*y+sy,  0, sx, sy, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)}
+                ];
+                al_draw_prim(w.ptr, null, wuerste[0], 0, 3, ALLEGRO_PRIM_TYPE.ALLEGRO_PRIM_TRIANGLE_LIST);
+            }
+        }
+    }
 }
 
 

@@ -13,6 +13,7 @@ module basics.mainloop;
 import core.memory;
 
 import basics.alleg5;
+import basics.bench;
 import basics.demo;
 import game.game;
 import file.log; // logging uncaught Exceptions
@@ -45,6 +46,7 @@ public:
             // fly straight out of main and terminate the program. Since
             // Windows users won't run the game from a shell, they should
             // retrieve the error message from the logfile, in addition.
+            // In a release build, assert (false) crashes instead of throwing.
             Log.logf("%s:%d:", thr.file, thr.line);
             Log.log(thr.msg);
             Log.log(thr.info.toString());
@@ -63,6 +65,7 @@ private:
     Game game;
 
     Demo demo;
+    Benchmark bench;
 
 
 
@@ -85,6 +88,9 @@ kill()
     if (demo) {
         demo = null;
     }
+    if (bench) {
+        bench = null;
+    }
     core.memory.GC.collect();
 }
 
@@ -99,8 +105,8 @@ calc()
     gui              .calc();
 
     exit = exit
-     || hardware.display.get_display_close_was_clicked()
-     || get_shift() && key_once(ALLEGRO_KEY_ESCAPE);
+        || hardware.display.get_display_close_was_clicked()
+        || get_shift() && key_once(ALLEGRO_KEY_ESCAPE);
 
     if (exit) {
         return;
@@ -116,6 +122,10 @@ calc()
             // DTODO: as long as networking isn't developed, this goes to demo
             kill();
             demo = new Demo;
+        }
+        else if (main_menu.goto_bench) {
+            kill();
+            bench = new Benchmark;
         }
         else if (main_menu.exit_program) {
             exit = true;
@@ -145,6 +155,14 @@ calc()
     else if (demo) {
         demo.calc();
     }
+    else if (bench) {
+        bench.calc();
+        if (bench.exit) {
+            kill();
+            main_menu = new MainMenu;
+            gui.add_elder(main_menu);
+        }
+    }
     else {
         // program has just started, nothing exists yet
         main_menu = new MainMenu;
@@ -163,6 +181,7 @@ draw()
 
     if (game) game.draw();
     if (demo) demo.draw();
+    if (bench) bench.draw();
 
     gui              .draw();
     hardware.mousecur.draw();
