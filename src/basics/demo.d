@@ -30,11 +30,11 @@ class Demo {
 
 private:
 
-    enum demo_mode_max = 4; // demo mode must be smaller than this
+    enum demo_mode_max = 7; // demo mode must be smaller than this
 
     bool   exit;
     int    demo_mode; // 0 == what you normally get
-                      // 1, 2, 3 == for geoo's code
+                      // 1 -- 6 == for geoo's code
     Albit[] wuerste;
     Torbit osd;
     Graphic myhatch1;
@@ -56,9 +56,12 @@ this(in int arg_demo_mode = 0)
 
     import graphic.color;
 
-    wuerste ~= al_load_bitmap("./images/proxima/tile/blue1a.png");
+    wuerste ~= al_load_bitmap("./images/matt/earth/07b.png");
+    wuerste ~= al_load_bitmap("./images/matt/oriental/bonsaitree.png");
     assert (wuerste[0]);
+    assert (wuerste[1]);
     al_convert_mask_to_alpha(wuerste[0], AlCol(1,0,1,1));
+    al_convert_mask_to_alpha(wuerste[1], AlCol(1,0,1,1));
     foreach (i; 1 .. 4) {
         Albit wurst = albit_create(50 + 31 * (i % 2), 50 + 21 * (i/2));
         auto drata = DrawingTarget(wurst);
@@ -138,10 +141,10 @@ calc()
     al_draw_triangle(20+tick, 20, 30, 80, 40, 20, AlCol(0.3, 0.5, 0.7, 1), 3);
 
     osd.draw_rectangle(100 + tick*2, 100 + tick*3, 130, 110, AlCol(0.2, 1, 0.3, 1));
-    osd.draw_from(wuerste[0], 100 + 0, 100, false, wurstrotation(tick));
-    osd.draw_from(wuerste[1], 200 + 0, 100, true, wurstrotation(tick/2));
-    osd.draw_from(wuerste[2], 100 + 0, 200, true, wurstrotation(tick/3));
-    osd.draw_from(wuerste[3], 200 + 0, 200, false, wurstrotation(tick/5));
+    osd.draw_from(wuerste[1], 100 + 0, 100, false, wurstrotation(tick));
+    osd.draw_from(wuerste[2], 200 + 0, 100, true, wurstrotation(tick/2));
+    osd.draw_from(wuerste[3], 100 + 0, 200, true, wurstrotation(tick/3));
+    osd.draw_from(wuerste[4], 200 + 0, 200, false, wurstrotation(tick/5));
 
     import std.math, std.conv;
     myhatch1.set_xy(300 + to!int(40*sin(tick/41.0)),
@@ -226,15 +229,18 @@ void
 perform_geoo_benchmarks()
 {
     import hardware.tharsis;
-    enum sx = 80;
-    enum sy = 74;
+    import std.string;
 
+    int sx = al_get_bitmap_width(wuerste[0]);
+    int sy = al_get_bitmap_height(wuerste[0]);
+
+    // one single call to al_draw_prim
     // this suddenly becomes slow after 20 seconds or so? Some memory leak?
     if (demo_mode == 1) {
         auto my_zone = Zone(profiler, "demo-prim-triangle-list");
         ALLEGRO_VERTEX[] vertices;
         foreach (y; 0..100) {
-            foreach (x; 0..500) {
+            foreach (x; 0..100) {
                 // note that in theory this could be reduced to only one bigger
                 // triangle capturing the rectangle to be drawn
                 ALLEGRO_VERTEX[] w = [
@@ -252,8 +258,57 @@ perform_geoo_benchmarks()
         al_draw_prim(vertices.ptr, null, wuerste[0], 0, cast(int) vertices.length, ALLEGRO_PRIM_TYPE.ALLEGRO_PRIM_TRIANGLE_LIST);
     }
 
-    // simple bitmap drawing
+    // one single call to al_draw_prim, 4 times as many pieces
     if (demo_mode == 2) {
+        auto my_zone = Zone(profiler, "demo-prim-triangle-list-more");
+        ALLEGRO_VERTEX[] vertices;
+        foreach (y; 0..100) {
+            foreach (x; 0..400) {
+                // note that in theory this could be reduced to only one bigger
+                // triangle capturing the rectangle to be drawn
+                ALLEGRO_VERTEX[] w = [
+                    {    2*x,     2*y,  0,  0,  0, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    { 2*x+sx,     2*y,  0, sx,  0, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    { 2*x+sx,  2*y+sy,  0, sx, sy, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    {    2*x,     2*y,  0,  0,  0, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    {    2*x,  2*y+sy,  0,  0, sy, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    { 2*x+sx,  2*y+sy,  0, sx, sy, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)}
+
+                ];
+                vertices ~= w;
+            }
+        }
+        al_draw_prim(vertices.ptr, null, wuerste[0], 0, cast(int) vertices.length, ALLEGRO_PRIM_TYPE.ALLEGRO_PRIM_TRIANGLE_LIST);
+    }
+
+    // one single call to al_draw_prim, large bitmap
+    if (demo_mode == 3) {
+        int sx2 = al_get_bitmap_width(wuerste[1]);
+        int sy2 = al_get_bitmap_height(wuerste[1]);
+
+        auto my_zone = Zone(profiler, "demo-prim-triangle-list-large");
+        ALLEGRO_VERTEX[] vertices;
+        foreach (y; 0..100) {
+            foreach (x; 0..100) {
+                // note that in theory this could be reduced to only one bigger
+                // triangle capturing the rectangle to be drawn
+                ALLEGRO_VERTEX[] w = [
+                    {    2*x,     2*y,  0,  0,  0, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    { 2*x+sx2,     2*y,  0, sx2,  0, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    { 2*x+sx2,  2*y+sy2,  0, sx2, sy2, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    {    2*x,     2*y,  0,  0,  0, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    {    2*x,  2*y+sy2,  0,  0, sy2, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)},
+                    { 2*x+sx2,  2*y+sy2,  0, sx2, sy2, al_map_rgba_f(1.0, 1.0, 1.0, 1.0)}
+
+                ];
+                vertices ~= w;
+            }
+        }
+        al_draw_prim(vertices.ptr, null, wuerste[1], 0, cast(int) vertices.length, ALLEGRO_PRIM_TYPE.ALLEGRO_PRIM_TRIANGLE_LIST);
+    }
+
+    // simple bitmap drawing
+    if (demo_mode == 4) {
         auto my_zone = Zone(profiler, "demo-bitmap-using-holding");
         al_hold_bitmap_drawing(true);
             foreach (y; 0..100) {
@@ -265,8 +320,21 @@ perform_geoo_benchmarks()
         al_hold_bitmap_drawing(false);
     }
 
+    // simple bitmap drawing, large bitmap
+    if (demo_mode == 5) {
+        auto my_zone = Zone(profiler, "demo-bitmap-using-holding-large");
+        al_hold_bitmap_drawing(true);
+            foreach (y; 0..100) {
+                foreach (x; 0..100) {
+                    al_draw_bitmap(wuerste[1], 2*x, 2*y, 0);
+                    al_draw_bitmap(wuerste[1], 2*x, 2*y, 0);
+                }
+            }
+        al_hold_bitmap_drawing(false);
+    }
+
     // This is super slow, don't use.
-    if (demo_mode == 3) {
+    if (demo_mode == 6) {
         auto my_zone = Zone(profiler, "demo-prim-triangle-calls");
         foreach (y; 0..100) {
             foreach (x; 0..100) {
@@ -282,6 +350,11 @@ perform_geoo_benchmarks()
             }
         }
     }
+
+    if (demo_mode != 0) {
+        drtx(format("Mode: %d", demo_mode), 20, 20);
+    }
+    
 }
 
 

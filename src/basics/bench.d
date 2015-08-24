@@ -21,7 +21,7 @@ import hardware.display;
 
 class Benchmark {
 
-    enum num_tests = 7;
+    enum num_tests = 10;
     enum ticks_per_test = 10 * ticks_per_sec;
 
     int ticks = 0;
@@ -93,7 +93,7 @@ class Benchmark {
             assert (lv.good, "This is a bad level, aborting.");
             game = new Game(lv);
         }
-        else if (test_id >= 4 && test_id < 7) {
+        else if (test_id >= 4 && test_id < num_tests) {
             Log.logf("Starting test #%d: Demo, mode %d", test_id, test_id - 3);
             demo = new Demo(test_id - 3);
         }
