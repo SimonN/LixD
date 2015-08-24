@@ -10,7 +10,7 @@
     "workingDirectory": "./",
 
     "dependencies": {
-        "allegro": ">=3.0.1+5.1.8",
+        "allegro": "~>2.0",
         "tharsis-prof": "~>0.5.3",
     },
 

@@ -8,8 +8,8 @@ Windows. I don't know where you install libraries, though.
 
 
 
-Install D
----------
+Install a D compiler and dub
+----------------------------
 
 I recommend dmd v2.067 or newer to compile this, or one of the other
 available D compilers. This explains how to set up dmd. Get it here:
@@ -22,8 +22,8 @@ used libraries. Download here:
 
     http://code.dlang.org/download
 
-If you want to search the web about D, use "dlang" in your query to get
-better search results.
+dub is a standalone binary, put it anywhere in your PATH.
+
 
 
 
@@ -58,15 +58,17 @@ Build Lix
 
 Open a shell, navigate to Lix's root directory, and run:
 
-    dub build -b release-nobounds
+    dub
 
-This builds the game. To play:
+This builds a debug version and runs it immediately. To play the game
+at a later time, invoke dub again, or run:
 
     ./bin/lix
 
-The above dub command (dub build -b release-nobounds) builds the release
-version. This uses many optimizations. The resulting binary will run fast.
-If you would like to build the debugging version, use instead: dub build
+If the debugging version compiles, links, and runs with no problems, you
+might want to build a release version for better performance:
+
+    dub build -b release-nobounds
 
 
 

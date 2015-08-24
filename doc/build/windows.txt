@@ -169,11 +169,14 @@ before the black screen with white text lines about the loading progress.
 
 Open dub.json with a text editor, find this line:
 
-    "allegro": ">=3.0.1+5.1.8",
+    "allegro": "~>2.0",
 
 and change it into:
 
     "allegro": "~master",
 
-Save the file, and run dub again. You might get a deprecation
-warning for using the master branch directly, but we don't care.
+Save the file, and run dub again. You might get a deprecation warning for
+using the master branch directly, but we don't care. If that doesn't help,
+you can try to set it to:
+
+    "allegro": ">=3.0.1+5.1.8",

@@ -31,6 +31,11 @@ public @property float djvu_m_offs() { return _djvu_m_offs; }
  *  void draw_text_right(...)
  */
 
+// legacy support: SiegeLord's D bindings don't have this enum flag yet in the
+// latest release. This flag is possible in Allegro 5.0 though. I should
+// remove this once SiegeLord does a release.
+enum ALLEGRO_ALIGN_INTEGER = 4;
+
 void initialize()
 {
     font_al = al_create_builtin_font();
