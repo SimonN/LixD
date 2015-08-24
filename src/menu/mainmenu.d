@@ -88,9 +88,9 @@ public this()
 
     bench = new TextButton(new Geom(
         0, -but_ylg - but_spg,
-        600, single.ylg, Geom.From.TOP));
+        560, single.ylg, Geom.From.TOP));
     bench.text
-        = "Benchmark! Runs automatically for about 1 minute. Click here!";
+        = "Benchmark! Runs automatically for about 2 minutes. Click here!";
     this.add_child(bench);
 }
 // end this()

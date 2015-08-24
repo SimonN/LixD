@@ -100,6 +100,9 @@ this(in int arg_demo_mode = 0)
     if (lookup) destroy(lookup);
     if (land)   destroy(land);
 
+    foreach (e; elems)
+        gui.rm_elder(e);
+
     destroy(myhatch2);
     destroy(myhatch1);
 
@@ -354,7 +357,7 @@ perform_geoo_benchmarks()
     if (demo_mode != 0) {
         drtx(format("Mode: %d", demo_mode), 20, 20);
     }
-    
+
 }
 
 

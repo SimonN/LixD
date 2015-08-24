@@ -4,8 +4,8 @@ import std.string;
 
 // Convention: use year - 1000 to distinguish from C++/A4 Lix
 // We'll use the correct year 20xx once D/A5 Lix becomes standard.
-private int  ver        = concat(1015, 08, 23, 00);
-private int  ver_min    = concat(1015, 08, 23, 00);
+private int  ver        = concat(1015, 08, 24, 00);
+private int  ver_min    = concat(1015, 08, 24, 00);
 private bool ver_stable = false;
 
 int    get_version()       { return ver;        }
