@@ -185,9 +185,8 @@ load_tile_from_disk(in string str_no_ext, in Filename fn)
     Cutbit cb = new Cutbit(fn, type != TileType.TERRAIN);
     if (! cb.valid) {
         import file.log;
-        Log.logf("Error loading from disk: `%s' -> `%s'",
-            str_no_ext, fn.rootful);
-        Log.log("D/A5 Lix cannot load very large images. See doc/bugs.txt.");
+        Log.logf("Image has too large proportions: `%s'", fn.rootful);
+        Log.log ("  See bug report: https://github.com/SimonN/LixD/issues/4");
         return;
     }
 
