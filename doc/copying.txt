@@ -2,8 +2,7 @@ Lix -- a multiplayer-capable action-puzzle game
 
 Written in 2006 to 2015 by Simon <eiderdaus@gmail.com>.
 Character sprites and non-level graphics by Simon.
-In-Level graphics, e.g. terrain, by Matt C., geoo, Proxima, and Amanda (NaOH).
-The files in ./src/graphic/png constitute loadpng by Peter Wang.
+In-Level graphics, e.g., terrain, by Matt C., geoo, Proxima, and Amanda (NaOH).
 
 The font djvusans.ttf in ./data/fonts/ is exempt from the following public
 domain dedication/CC0 waiver. It's licensed under the Bitstream Vera Fonts

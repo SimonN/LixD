@@ -8,14 +8,15 @@ How to build
 ------------
 
 Look in the directory `./doc/build/' and read the file for your operating
-system, either `linux.txt' or `windows.txt'.
+system, either `linux.txt' or `windows.txt'. If you get stuck, those files
+also explain how to contact me. Ignore `cross.txt' for now: I've described
+how I started setting up cross-compilation on Linux for Windows. I have not
+been succesful with that.
 
-In `cross.txt', I've described how I started setting up cross-compilation
-on Linux for Windows. I have not been succesful with that.
-
-How to test
------------
-
-Right now, you need to make the directory `./levels/' yourself, and put some
-levels from C++/A4 lix in that directory. Graphic sets are included in D/A5
-Lix already.
+<NaOH>   to be honest, I thought you were joking when you first said you were
+         going to redo this in D, but it looks like you've made some good
+         progress.
+<SimonN> yes, it's become a serious port attempt; there's too much invested
+         already to abort it anytime soon
+<NaOH>   ^sunk cost fallacy?
+<SimonN> sunk love

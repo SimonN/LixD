@@ -8,10 +8,10 @@ How to use and hack the Lix source.
 Building Lix
 ------------
 
-See this file: doc/build.txt
+Look in the `build' directory and read the file for your operating system.
 
-It has instructions on how to install a D compiler, the build system dub,
-and the required libraries.
+That file has instructions on how to install a D compiler, the build system
+dub, and the required libraries.
 
 
 
@@ -54,7 +54,8 @@ Don't nest stuff deeper than 4 or 5 levels, treating classes and functions
 as a nesting level. Write more functions instead. D allows you to declare
 private functions at module level, or to declare local functions.
 
-Most things get the opening brace '{' on the same line: if, for, class, etc.
+Most non-function things get the opening brace '{' on the same line:
+if, while, for[each], class, struct, etc.
 
     if (condition) {
         a = 5;
@@ -86,16 +87,15 @@ Functions have the opening brace on a separate line. You can put the function
 name on its own line, apart from the return values.
 
     int
-    my_function()
+    my_function(int a)
     {
-        a + 4;
-        return something(a);
+        return something(a * 3);
     }
 
     private nothrow void
     almost_like_java() const @nogc
     {
-        a += 4;
+        // ...
     }
 
 When you can fit an entire function definition into a single line, do that
