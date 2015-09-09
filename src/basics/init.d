@@ -2,6 +2,8 @@ module basics.init;
 
 import core.memory;
 
+import derelict.enet.enet;
+
 import basics.alleg5;
 import basics.cmdargs;
 import basics.globals;
@@ -61,6 +63,9 @@ void initialize(in Cmdargs cmdargs)
     gui.initialize();
 
     level.tilelib.initialize();
+
+    // comment this back in once we've built enet dynamically
+    // DerelictENet.load();
 }
 
 

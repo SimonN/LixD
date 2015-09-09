@@ -11,6 +11,7 @@
 
     "dependencies": {
         "allegro": "~>2.0",
+        "derelict-enet": "~>2.0.0",
         "tharsis-prof": "~>0.5.3",
     },
 

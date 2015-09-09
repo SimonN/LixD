@@ -96,6 +96,8 @@ class GameState {
         lookup = new Lookup(lookup);
     }
 
+    mixin CloneableBase;
+
     @property bool goals_locked() const { return _goals_locked; }
     @property bool goals_locked(in bool b)
     {
