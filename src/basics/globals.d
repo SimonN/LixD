@@ -131,7 +131,7 @@ immutable objdef_type_fling            = "FLING";
 immutable objdef_type_trampoline       = "TRAMPOLINE";
 
 // keys for saving/loading replays
-immutable replay_version_min           = "VERSION_REQUIRED";
+immutable replay_version_min           = "GAME_VERSION_REQUIRED";
 immutable replay_built_required        = "BUILT_REQUIRED";
 immutable replay_level_filename        = "FILENAME";
 immutable replay_friend                = "FRIEND";

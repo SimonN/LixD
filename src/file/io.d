@@ -64,7 +64,9 @@ static IoLine Dollar(const string t1, const string t2)
 
 static IoLine Dollar(const string t1, const Date d)
 {
-    return new IoLine('$', t1, d.toString(), "",  0,  0,  0);
+    return new IoLine('$', t1,
+        d !is null ? d.toString() : "0",
+        "",  0,  0,  0);
 }
 
 static IoLine Plus(const string t1, const int n1,
@@ -195,7 +197,8 @@ override string toString() const
         ret ~= format("%s %d %s %s", text1, nr1, text2, text3);
         break;
     case '!':
-        ret ~= format("%d %d %s %d", nr1, nr2, text1, nr3);
+        // deliberately leave a space before the number, there is no keyword
+        ret ~= format(" %d %d %s %d", nr1, nr2, text1, nr3);
         break;
     case '<':
         ret ~= format("%s> %d %d %d %s", text1, nr1, nr2, nr3, text2);

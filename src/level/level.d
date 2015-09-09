@@ -1,5 +1,7 @@
 module level.level;
 
+public import level.levelio : save_to_file;
+
 import file.date;
 import file.filename;
 import file.language;
@@ -103,6 +105,12 @@ public:
     @property LevelStatus status() const { return _status; }
     @property bool        good()   const { return _status == LevelStatus.GOOD;}
 
+    @property bool nonempty() const
+    {
+        return _status != LevelStatus.BAD_FILE_NOT_FOUND
+            && _status != LevelStatus.BAD_EMPTY;
+    }
+
     void draw_terrain_to(Torbit tb, Lookup lo = null) const
     {
         impl_draw_terrain_to(this, tb, lo);
@@ -115,6 +123,9 @@ public:
     // void load_from_stream(std::istream&); DTODO: implement this?
     void save_to_file(in Filename fn) const { impl_save_to_file(this, fn); }
     void export_image(in Filename fn) const { impl_export_image(this, fn); }
+
+    // to save a level into a replay, call with existing File descriptor:
+    // mylevel.save_to_file(std.stdio.File existing_handle)
 
 package:
 

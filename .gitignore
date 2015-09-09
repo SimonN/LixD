@@ -12,3 +12,9 @@
 /data/config.txt
 /data/profile.txt
 /data/user/*.txt
+
+# exclude replays, but track replay/ and replay/auto/ via a dummy file
+replays/*
+!replays/auto
+replays/auto/*
+!replays/auto/.gitignore

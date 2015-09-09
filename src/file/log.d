@@ -102,6 +102,8 @@ format_al_ticks()
 nothrow static void
 log(string s)
 {
+    if (! singl)
+        return;
     try {
         log_header_if_necessary();
         singl.file.writefln("%s %s", format_al_ticks(), s);
@@ -115,6 +117,8 @@ log(string s)
 nothrow static void
 logf(T...)(string formatstr, T formatargs)
 {
+    if (! singl)
+        return;
     try {
         log_header_if_necessary();
         singl.file.writefln("%s " ~ formatstr, format_al_ticks(), formatargs);

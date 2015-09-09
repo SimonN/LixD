@@ -252,6 +252,8 @@ private void load_level_finalize(Level level)
             int count = 0;
             foreach (poslist; pos)
                 count += poslist.length;
+            foreach (skill; skills)
+                count += skill.nr;
             if (count == 0)
                 _status = LevelStatus.BAD_EMPTY;
             else if (pos[TileType.HATCH] == null)
@@ -285,7 +287,7 @@ package void impl_save_to_file(const(Level) level, in Filename fn)
 
 
 
-private void save_to_file(const(Level) l, std.stdio.File file)
+public void save_to_file(const(Level) l, std.stdio.File file)
 {
     assert (l);
 
