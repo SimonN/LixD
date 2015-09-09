@@ -78,7 +78,7 @@ public this()
 
     import std.conv;
     versioning = new Label(new Geom(0, 40, xlg, 20, Geom.From.BOTTOM),
-        transl(Lang.main_version) ~ " " ~ get_version_string());
+        transl(Lang.main_version) ~ " " ~ get_version().toString());
 
     website    = new Label(new Geom(0, 20, xlg, 20, Geom.From.BOTTOM),
         basics.globals.main_website);

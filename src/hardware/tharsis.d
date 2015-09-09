@@ -71,7 +71,7 @@ version (tharsisprofiling)
 
         File outfile = File(file_tharsis_prof.rootful, "w");
 
-        outfile.writeln("Lix version ", get_version_string,
+        outfile.writeln("Lix version ", get_version(),
             " profiling results from ", Date.now().toString(), ".");
         outfile.writeln(
             "Unit of time: 1 us == 1 microsecond == 1/1000 of a millisecond.");

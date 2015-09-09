@@ -8,7 +8,7 @@ $main_name_of_language          English
 
 $main_loading_1                 ---------- Loading Lix ----------
 $main_loading_2                 ---------- Please Wait ----------
-$main_version                   Version:
+$main_version                   Version
 
 // used in various dialogues
 

@@ -189,7 +189,7 @@ calc()
     import basics.versioning;
     import file.language;
     drtx(transl(Lang.net_chat_welcome_unstable)
-        ~ " or enjoy hacking in D. " ~ get_version_string(), 20, 360);
+        ~ " or enjoy hacking in D. " ~ get_version().toString(), 20, 360);
 
     static bool showstring = false;
     import std.array;

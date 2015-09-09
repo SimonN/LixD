@@ -2,7 +2,7 @@ $main_name_of_language         Deutsch
 
 $main_loading_1                ------- Lix wird geladen -------
 $main_loading_2                --------- Bitte warten ---------
-$main_version                  Version:
+$main_version                  Version
 
 // Verschiedene Dialoge
 

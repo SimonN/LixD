@@ -1,42 +1,97 @@
 module basics.versioning;
 
+/* Lix versioning should be done like semantic versioning.
+ *
+ * Whenever physics or the networking protocol change, increase minor version.
+ * Patches that do not break compatibility should only increase patch version.
+ */
+
+import std.conv;
 import std.string;
 
-// Convention: use year - 1000 to distinguish from C++/A4 Lix
-// We'll use the correct year 20xx once D/A5 Lix becomes standard.
-private int  ver        = concat(1015, 08, 24, 00);
-private int  ver_min    = concat(1015, 08, 24, 00);
-private bool ver_stable = false;
+private immutable ver_current = Version(0, 1, 0);
+private bool      ver_stable  = false;
 
-int    get_version()       { return ver;        }
-int    get_min_version()   { return ver_min;    }
-bool   is_version_stable() { return ver_stable; }
-
-string get_version_string()     { return version_to_string(ver);     }
-string get_min_version_string() { return version_to_string(ver_min); }
-string version_to_string(int v);
+const(Version) get_version()       { return ver_current; }
+bool           is_version_stable() { return ver_stable;  }
 
 
 
-string version_to_string(int v)
-{
-    assert (v >= 0);
-    int subday = v % 100;
-    int day    = v / 100 % 100;
-    int month  = v / 100 / 100 % 100;
-    int year   = v / 100 / 100 / 100;
-    assert (year <= 9999);
+struct Version {
 
-    if (subday) return format("%04d-%02d-%02d-%02", year, month, day, subday);
-    else        return format("%04d-%02d-%02d",     year, month, day);
+    int major;
+    int minor;
+    int patch;
+
+    this(int major, int minor, int patch)
+    {
+        this.major = major;
+        this.minor = minor;
+        this.patch = patch;
+    }
+
+    // parse version string a la "1.234.56"
+    this(in string src)
+    {
+        int*[] next = [&major, &minor, &patch];
+        foreach (c; src) {
+            if (next.length == 0) {
+                break;
+            }
+            else if (c >= '0' && c <= '9') {
+                *next[0] *= 10;
+                *next[0] += (c - '0');
+            }
+            else if (c == '.') {
+                next = next[1 .. $];
+            }
+        }
+        // A4/C++ Lix used dates as versioning numbers, and saved the
+        // version as one integer, e.g., 2015010100 for 2015-01-01 with patch
+        // number 00. These dates fit into the lower 31 bit of a signed int.
+        // Versions like that should come before any A5/D version.
+        if (major >= 2006000000)
+            major = minor = patch = 0;
+    }
+
+    @property toString() const
+    {
+        return major.to!string ~ "."
+            ~  minor.to!string ~ "."
+            ~  patch.to!string;
+    }
+
+    int opCmp(in Version rhs) const
+    {
+        return major > rhs.major ? 1 : major < rhs.major ? -1
+            :  minor > rhs.minor ? 1 : minor < rhs.minor ? -1
+            :  patch > rhs.patch ? 1 : patch < rhs.patch ? -1 : 0;
+    }
+
+    bool compatible_with(in Version rhs) const
+    {
+        return major == rhs.major
+            && minor == rhs.minor;
+    }
+
 }
 
 
 
-private int concat(int year, int month, int day, int subday)
+unittest
 {
-    return year  * 100 * 100 * 100
-     +     month * 100 * 100
-     +     day   * 100
-     +     subday;
+    auto a = Version(12, 34, 56);
+    auto b = Version("12.34.56");
+    auto c = Version("12.34.999");
+    auto d = Version("12.999.56");
+    auto e = Version("2015010100");
+
+    assert (a == b);
+    assert (c >  b);
+    assert (c.compatible_with(b) && b.compatible_with(c));
+    assert (c >  Version());
+    assert (c <  d);
+    assert (! d.compatible_with(b));
+    assert (e == Version());
+    assert (! e.compatible_with(a));
 }

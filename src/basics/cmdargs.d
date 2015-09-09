@@ -122,7 +122,7 @@ class Cmdargs {
     {
         // always print the version; -v is basically used to enter this
         // function without triggering any additional cases
-        writeln("Lix version " ~ get_version_string());
+        writeln("Lix version ", get_version());
         if (bad_switches != null) {
             foreach (sw; bad_switches)
                 writeln("Bad command-line argument: `" ~ sw ~ "'");

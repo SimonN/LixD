@@ -80,7 +80,7 @@ log_header_if_necessary()
 
         // a free line and then the current datetime in its own line
         singl.file.writefln("");
-        singl.file.writefln("Lix version:  " ~ get_version_string());
+        singl.file.writefln("Lix version:  " ~ get_version().toString());
         singl.file.writefln("Session date: " ~ Date.now().toString);
     }
 }
