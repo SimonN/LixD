@@ -75,6 +75,25 @@ Filename editor_last_dir_goal;
 Filename editor_last_dir_deco;
 Filename editor_last_dir_hazard;
 
+@property const(Ac[]) skill_sort() { return _skill_sort; }
+
+private Ac[] _skill_sort = [
+    Ac.WALKER,
+    Ac.JUMPER,
+    Ac.RUNNER,
+    Ac.CLIMBER,
+    Ac.FLOATER,
+    Ac.BATTER,
+    Ac.EXPLODER2,
+    Ac.BLOCKER,
+    Ac.CUBER,
+    Ac.BUILDER,
+    Ac.PLATFORMER,
+    Ac.BASHER,
+    Ac.MINER,
+    Ac.DIGGER
+];
+
 int key_force_left      = ALLEGRO_KEY_S;
 int key_force_right     = ALLEGRO_KEY_F;
 int key_scroll          = ALLEGRO_KEY_PAD_MINUS;

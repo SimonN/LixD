@@ -44,8 +44,7 @@ module game.state;
  */
 
 import basics.help; // deep_copy for arrays
-import game.lookup;
-import game.tribe;
+import game;
 import graphic.torbit;
 import graphic.gadget;
 

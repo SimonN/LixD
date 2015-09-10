@@ -4,8 +4,7 @@ module game.gameupd;
  * With fast forward, it's called more often; during pause, never.
  */
 
-import game.game;
-import game.state;
+import game;
 import graphic.gadget;
 
 package void

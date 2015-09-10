@@ -5,11 +5,7 @@ import std.conv;
 import basics.alleg5;
 import file.filename;
 import level.level;
-import game.effect;
-import game.game;
-import game.lookup;
-import game.replay;
-import game.state;
+import game;
 import graphic.map;
 import graphic.gadget;
 import graphic.torbit;
@@ -32,19 +28,30 @@ impl_game_constructor(Game game, Level lv, Filename fn, Replay rp)
         level_filename = fn;
         replay         = rp;
 
-        effect         = new EffectManager;
+        effect = new EffectManager;
+        pan    = new Panel;
+        gui.add_elder(pan);
 
         cs = new GameState();
         cs.land   = new Torbit(lv.size_x, lv.size_y, lv.torus_x, lv.torus_y);
         cs.lookup = new Lookup(lv.size_x, lv.size_y, lv.torus_x, lv.torus_y);
         lv.draw_terrain_to(cs.land, cs.lookup);
 
-        map = new Map(cs.land, Geom.screen_xls.to!int,
-                               Geom.screen_yls.to!int * 4 / 5);
+        map = new Map(cs.land, Geom.screen_xls.to!int, Geom.screen_yls.to!int
+            * (Geom.panel_yl_divisor - 1) / Geom.panel_yl_divisor);
     }
 
     //prepare_players(game);
     prepare_gadgets(game);
+}
+
+
+
+package void
+impl_game_destructor(Game game)
+{
+    if (game.pan)
+        gui.rm_elder(game.pan);
 }
 
 

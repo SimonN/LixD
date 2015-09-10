@@ -1,9 +1,7 @@
 module game.gamecalc;
 
 import basics.alleg5;
-import game.game;
-import game.gamepass;
-import game.gameupd;
+import game;
 
 package void
 impl_game_calc(Game game)

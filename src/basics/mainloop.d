@@ -73,6 +73,7 @@ void
 kill()
 {
     if (game) {
+        destroy(game);
         game = null;
     }
     if (main_menu) {

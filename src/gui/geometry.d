@@ -18,7 +18,7 @@ module gui.geometry;
  * vertically, this encouraged terseness. I like that.
  *
  *  this(x, y, xl = 20, yl = 20);
- *  this(Geom, ...);
+ *  this(Geom g);
  *
  *      Constructs a Geom with parent = null. The parent will usually be set
  *      via the method gui.element.Element.add_child().
@@ -104,8 +104,18 @@ class Geom {
     @property static float screen_xls() { return _screen_xls; }
     @property static float screen_yls() { return _screen_yls; }
 
+    // 1 / (return value) is the ratio of vertical space occupied by the game's
+    // and editor's panels. Higher values mean less space occupied by panels.
+    @property static int
+    panel_yl_divisor()
+    {
+        return _screen_xlg > 700 ? 5  // widescreen
+                                 : 6; // 4:3 screen
+    }
+
     // this function is called from gui.root, when that is initialized
-    static void set_screen_xyls(in int _xl, in int _yl)
+    static void
+    set_screen_xyls(in int _xl, in int _yl)
     {
         _screen_xls     = _xl;
         _screen_yls     = _yl;
@@ -127,6 +137,11 @@ class Geom {
         from   = _from;
         x = _x; xl = _xl;
         y = _y; yl = _yl;
+    }
+
+    this(in Geom g)
+    {
+        this(g.x, g.y, g.xl, g.yl, g.from);
     }
 
 
