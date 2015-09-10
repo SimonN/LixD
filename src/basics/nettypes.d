@@ -85,6 +85,17 @@ struct ReplayData {
             || action == ASSIGN_RIGHT;
     }
 
+    int opCmp(const ref ReplayData rhs) const
+    {
+        return this.update < rhs.update ? -1
+            :  this.update > rhs.update ?  1
+            :  this.player < rhs.player ? -1
+            :  this.player > rhs.player ?  1 : 0;
+        // do not order by action:
+        // assign, force, nuke -- all of these are equal, and the sorts must
+        // be with these. Keep such records in whatever order they were input.
+    }
+
     ENetPacket* create_packet() const
     {
         ENetPacket* pck = enet_packet_create(null, 12,
@@ -94,8 +105,8 @@ struct ReplayData {
         pck.data[1] = player;
         pck.data[2] = action;
         pck.data[3] = skill;
-        pck.data[4 ..  8] = nativeToBigEndian(update);
-        pck.data[8 .. 12] = nativeToBigEndian(to_which_lix);
+        pck.data[4 ..  8] = nativeToBigEndian!int(update);
+        pck.data[8 .. 12] = nativeToBigEndian!int(to_which_lix);
         return pck;
     }
 

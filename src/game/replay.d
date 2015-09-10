@@ -1,9 +1,11 @@
 module game.replay;
 
 import std.algorithm; // isSorted
+import std.c.string : memmove;
 import std.stdio;
 import std.string;
 
+import basics.help; // array.len of type int
 import basics.globals;
 import basics.globconf;
 import basics.help;
@@ -113,31 +115,39 @@ add_player(PlNr nr, Style s, string name)
 
 
 
+private inout(ReplayData)[]
+data_slice_before_update(in int upd) inout
+{
+    // The binary search algo works also for the cases we're checking in this
+    // if. But we add mostly to the end of the data, so check here for speed.
+    if (_data.length == 0 || _data[$-1].update < upd)
+        return _data;
+
+    int bot = 0;         // first too-large is at a higher position than this
+    int top = _data.len; // first too-large is here _or_ at a lower position
+
+    while (top != bot) {
+        int bisect = (top + bot) / 2;
+        assert (bisect >= 0   && bisect < _data.len);
+        assert (bisect >= bot && bisect < top);
+        if (_data[bisect].update < upd)
+            bot = bisect + 1;
+        if (_data[bisect].update >= upd)
+            top = bisect;
+    }
+    return _data[0 .. bot];
+}
+
+
 
 bool
-equal_before(in typeof(this) rhs, in int before_update) const
+equal_before(in typeof(this) rhs, in int upd) const
 {
     // We don't check whether the metadata/general data is the same.
     // We assume the gameplay class only uses for replays of the same level
     // with the same players.
-    for (int i = 0; ; ++i) {
-        if (i >= _data.length || i >= rhs._data.length) {
-            if (i < _data.length)
-                return _data[i].update >= before_update;
-            else if (i < rhs._data.length)
-                return rhs._data[i].update >= before_update;
-            else
-                return true;
-        }
-        else if (  _data[i].update >= before_update
-            && rhs._data[i].update >= before_update
-        ) {
-            return true;
-        }
-        else if (_data[i] != rhs._data[i]) {
-            return false;
-        }
-    }
+    return this.data_slice_before_update(upd)
+        ==  rhs.data_slice_before_update(upd);
 }
 
 
@@ -162,8 +172,7 @@ void
 erase_data_after_update(in int upd)
 {
     assert (upd >= 0);
-    while (_data.length > 0 && max_updates > upd)
-        _data = _data[0 .. $-1];
+    _data = _data[0 .. data_slice_before_update(upd + 1).length];
     touch();
 }
 
@@ -172,14 +181,11 @@ erase_data_after_update(in int upd)
 const(ReplayData)[]
 get_data_for_update(in int upd) const
 {
-    const(ReplayData)[] slice = _data;
-    while (slice.length && slice[0].update < upd)
-        slice = slice[1 .. $];
-    foreach (i, const ref value; slice)
-        if (value.update > upd)
-            return slice[0 .. i];
-    // above 'if' doesn't trigger if slice == _data[n .. $] for some n
-    return slice;
+    auto slice = data_slice_before_update(upd + 1);
+    int cut = slice.len - 1;
+    while (cut >= 0 && slice[cut].update == upd)
+        --cut;
+    return _data[cut + 1 .. slice.length];
 }
 
 
@@ -196,20 +202,6 @@ get_on_update_lix_clicked(in int upd, in int lix_id, in Ac ac) const
 
 
 
-static int
-compare_data(in ReplayData a, in ReplayData b)
-{
-    return a.update < b.update ? -1
-        :  a.update > b.update ?  1
-        :  a.player < b.player ? -1
-        :  a.player > b.player ?  1 : 0;
-    // do not order by action:
-    // assign, force, nuke -- all of these are equal, and the sort must be
-    // stable later. Keep such records in whatever order they were input.
-}
-
-
-
 void
 add(in ReplayData d)
 {
@@ -222,21 +214,26 @@ add(in ReplayData d)
 private void
 add_without_touching(in ReplayData d)
 {
-    auto slice = _data;
     // Add after the latest record that's smaller than or equal to d
     // Equivalently, add before the earliest record that's greater than d.
+    // data_slice_before_update doesn't do exactly that, it ignores players.
     // DTODO: I believe the C++ version had a bug in the choice of
     // comparison. I have fixed that here. Test to see if it's good now.
-    while (slice.length && compare_data(slice[$-1], d) > 0)
+    auto slice = data_slice_before_update(d.update + 1);
+    while (slice.length && slice[$-1] > d)
         slice = slice[0 .. $-1];
-    _data = slice ~ d ~ _data[slice.length .. $];
 
-    auto sort_predicate = function bool(in ReplayData a, in ReplayData b)
-    {
-        return compare_data(a, b) < 0;
-    };
+    if (slice.length < _data.length) {
+        _data.length += 1;
+        memmove(&_data[slice.length + 1], &_data[slice.length],
+                ReplayData.sizeof * (_data.length - slice.length - 1));
+        _data[slice.length] = d;
+    }
+    else {
+        _data ~= d;
+    }
 
-    assert (_data.isSorted!sort_predicate);
+    assert (_data.isSorted);
 }
 
 
@@ -399,7 +396,7 @@ load_from_file(Filename fn)
             part2 = part2[1 .. $];
 
         ReplayData d;
-        d.update       = i.nr1 & 0xFF;
+        d.update       = i.nr1;
         d.player       = i.nr2 & 0xFF;
         d.to_which_lix = i.nr3;
         d.action = part1 == replay_spawnint     ? ReplayData.SPAWNINT
@@ -434,8 +431,13 @@ unittest
 
     Level lev = new Level(fn0);
     lev.save_to_file(fnl);
+
     Replay r = new Replay(fn0);
+    const int data_len = r._data.len;
+
     r.save_to_file(fn1, lev);
     r = new Replay(fn1);
+    assert (data_len == r._data.len);
+
     r.save_to_file(fn2, lev);
 }
