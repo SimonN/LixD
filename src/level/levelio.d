@@ -145,13 +145,10 @@ private void load_from_vector(Level level, in IoLine[] lines)
         // If nothing matched yet, look up the skill name.
         // We can't add skills if we've reached the globally allowed maximum.
         // If we've read in only rubbish, we don't add the skill.
-        else if (skills.length < glo.skill_max) {
-            Skill sk = Skill();
-            sk.ac = lix.enums.string_to_ac(text1);
-            if (sk.ac != Ac.MAX) {
-                sk.nr = nr1;
-                skills ~= sk;
-            }
+        else {
+            Ac ac = lix.enums.string_to_ac(text1);
+            if (ac != Ac.MAX)
+                skills[ac] = nr1;
         }
         break;
 
@@ -169,16 +166,15 @@ private void load_from_vector(Level level, in IoLine[] lines)
     // time of 0. In early 2011, the maximal number of skills was raised.
     // Prior to that, infinity was 100, and finite skill counts had to be
     // <= 99. Afterwards, infinity was -1, and the maximum skill count was 999.
-    auto zero_date = new Date("");
+    auto zero_date = new Date("0");
     if (built != zero_date && built < new Date("2009-08-23 00:00:00")) {
         // DTODOCOMPILERUPDATE
         // pos[TileType.TERRAIN].reverse();
     }
-    if (built != zero_date && built < new Date("2011-01-08 00:00:00")) {
-        foreach (sk; skills) {
-            if (sk.nr == 100) sk.nr = lix.enums.skill_infinity;
-        }
-    }
+    if (built != zero_date && built < new Date("2011-01-08 00:00:00"))
+        foreach (Ac ac, ref int nr; skills.byKeyValue)
+            if (nr == 100)
+                nr = lix.enums.skill_infinity;
 }
 // end with
 
@@ -252,8 +248,8 @@ private void load_level_finalize(Level level)
             int count = 0;
             foreach (poslist; pos)
                 count += poslist.length;
-            foreach (skill; skills)
-                count += skill.nr;
+            foreach (Ac ac, const int nr; skills)
+                count += nr;
             if (count == 0)
                 _status = LevelStatus.BAD_EMPTY;
             else if (pos[TileType.HATCH] == null)
@@ -340,14 +336,16 @@ public void save_to_file(const(Level) l, std.stdio.File file)
 //  file.writeln(IoLine.Hash(glo.level_count_neutrals_only, l.count_neutrals_only));
 //  file.writeln(IoLine.Hash(glo.level_transfer_skills,     l.transfer_skills));
 
-    // print only as many skill lines as needed, don't print the many NOTHING
-    // at the end
-    const(Skill)[] skills = l.skills;
-    while (skills != null && skills[$-1].ac == Ac.NOTHING) {
-        skills = skills[0 .. $-1];
+    bool at_least_one_skill_written = false;
+    foreach (Ac sk, const int nr; l.skills.byKeyValue) {
+        if (nr == 0)
+            continue;
+        if (! at_least_one_skill_written) {
+            at_least_one_skill_written = true;
+            file.writeln();
+        }
+        file.writeln(IoLine.Hash(ac_to_string(sk), nr));
     }
-    if (skills != null)  file.writeln();
-    foreach (sk; skills) file.writeln(IoLine.Hash(ac_to_string(sk.ac), sk.nr));
 
     // this local function outputs all tiles of a given type
     void save_one_tile_vector(in Pos[] vec)

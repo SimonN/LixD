@@ -1,5 +1,7 @@
 module level.level;
 
+public import enumap;
+
 public import level.levelio : save_to_file;
 
 import file.date;
@@ -41,10 +43,6 @@ struct Pos {
     bool noow; // Nicht ueberzeichnen?
 }
 
-struct Skill {
-    Ac  ac;
-    int nr;
-}
 
 
 class Level {
@@ -92,7 +90,8 @@ public:
     bool count_neutrals_only;
     bool transfer_skills;
 
-    Skill[]             skills;
+    Enumap!(Ac, int) skills;
+
     Pos[][TileType.MAX] pos; // one array Pos[] for each TileType,
                              // indexed by integers, not by TileType enum vals
 /*  this();
@@ -216,18 +215,10 @@ opEquals(Object rhs_obj) const
      || this.transfer_skills     != rhs.transfer_skills) return false;
 
     // compare all tiles in one go
-    if (this.pos != rhs.pos) return false;
+    if (this.pos    != rhs.pos   ) return false;
+    if (this.skills != rhs.skills) return false;
 
-    // Compare skillsets. Here, some skillsets might have empty skills at
-    // the end, which we want to ignore. Since (this) is const, expand/shrink
-    // a temporary array of skills to compare it with rhs.
-    const(Skill)[] temp = this.skills;
-    while (temp.length < rhs.skills.length) temp ~= Skill();
-    while (temp.length > rhs.skills.length) {
-        if (temp[$-1].ac == Ac.NOTHING) temp = temp[0 .. $-1];
-        else return false;
-    }
-    return temp == rhs.skills;
+    return true;
 }
 
 }
