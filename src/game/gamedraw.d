@@ -49,8 +49,7 @@ impl_game_draw(Game game) { with (game)
     with (Zone(profiler, "game draws map to screen"))
         map.draw_camera(al_get_backbuffer(hardware.display.display));
 
-    // debugging
-    with (Zone(profiler, "game draws debugging text")) {
+    with (Zone(profiler, "game draws ingame text")) {
         import graphic.textout;
         draw_text(djvu_m, "Use the mouse to scroll around, as in the old Lix.",
             10, 10, graphic.color.color.white);

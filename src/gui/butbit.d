@@ -32,8 +32,8 @@ protected:
         immutable int yf = on && ! down ? 1 : 0;
 
         // center the image on the button
-        int cb_x = to!int(xs + xls/2 - _cutbit.xl);
-        int cb_y = to!int(ys + yls/2 - _cutbit.yl);
+        int cb_x = to!int(xs + xls / 2f - _cutbit.xl / 2f);
+        int cb_y = to!int(ys + yls / 2f - _cutbit.yl / 2f);
         _cutbit.draw(guiosd, cb_x, cb_y, _xf, yf);
     }
 
