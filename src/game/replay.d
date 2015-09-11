@@ -21,7 +21,7 @@ import lix.enums;
 
 class Replay {
 
-    struct Player {
+    static struct Player {
         PlNr   number;
         Style  style;
         string name;
@@ -272,19 +272,21 @@ save_to_file(std.stdio.File file, in Level lev)
     // anymore once we don't know where it's saved
     file.writeln(IoLine.Dollar(basics.globals.replay_level_filename,
         _level_filename.rootless[dir_levels.rootless.length .. $]));
-    file.writeln(IoLine.Dollar(replay_built_required, _built_required));
-    file.writeln(IoLine.Dollar(replay_version_min,    _game_version.toString));
-    file.writeln();
+    file.writeln(IoLine.Dollar(replay_built_required,
+        _built_required.toString));
+    file.writeln(IoLine.Dollar(replay_version_min, _game_version.toString));
 
+    if (_players.length)
+        file.writeln();
     foreach (pl; _players)
         file.writeln(IoLine.Plus(pl.number == _player_local
              ? basics.globals.replay_player : basics.globals.replay_friend,
              pl.number, style_to_string(pl.style), pl.name));
-    if (players.length > 1)
+    if (_players.length > 1)
         file.writeln(IoLine.Dollar(replay_permu, permu.toString));
-    if (players.length > 0)
-        file.writeln();
 
+    if (_data.length)
+        file.writeln();
     foreach (d; _data) {
         string word
             = d.action == ReplayData.SPAWNINT     ? replay_spawnint
@@ -301,16 +303,15 @@ save_to_file(std.stdio.File file, in Level lev)
         file.writeln(IoLine.Bang(d.update, d.player, word, d.to_which_lix));
     }
 
-    bool ok_to_save_this_one(in Level lev)
+    bool ok_to_save(in Level lev)
     {
         return lev !is null && lev.nonempty;
     }
 
-    const(Level) lev_to_save = ok_to_save_this_one(lev) ? lev
+    const(Level) lev_to_save = ok_to_save(lev) ? lev
                              : new Level(_level_filename);
-    if (lev_to_save !is null) {
-        if (_data.length)
-            file.writeln();
+    if (ok_to_save(lev_to_save)) {
+        file.writeln();
         level.level.save_to_file(lev_to_save, file);
     }
 }

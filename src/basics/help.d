@@ -58,7 +58,11 @@ user_name_escape_for_filename(in string str)
 int
 len(T)(in T[] arr)
 {
-    return arr.length.to!int;
+    // Arrays with more than 2^^31 entries are bugs. Don't call to!int, but
+    // chop off the big bits of the size_t (= uint or ulong). It's the same
+    // effect, but doesn't check if it has to throw.
+    return arr.length & 0x7FFFFFFF;
+    // return arr.length.to!int;
 }
 
 
