@@ -50,7 +50,6 @@ enum Ac {
     DIGGER,
 
     JUMPER,
-    ROPER,
     BATTER,
     CUBER,
 
@@ -106,7 +105,6 @@ static this()
         Ac.DIGGER     : "DIGGER",
 
         Ac.JUMPER     : "JUMPER",
-        Ac.ROPER      : "ROPER",
         Ac.BATTER     : "BATTER",
         Ac.CUBER      : "CUBER",
         Ac.MAX        : "MAX"
