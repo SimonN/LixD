@@ -263,10 +263,6 @@ save_to_file(in Filename fn, in Level lev)
 private void
 save_to_file(std.stdio.File file, in Level lev)
 {
-    auto lmd = new LevelMetaData(_level_filename);
-    if (lmd.file_exists)
-        _built_required = lmd.built;
-
     // Write the path to the level, but omit the leading (dir-levels)/
     // DTODOFHS: we chop off a constant length, we shouldn't do that
     // anymore once we don't know where it's saved
