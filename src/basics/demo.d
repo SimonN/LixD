@@ -26,6 +26,18 @@ import level.tilelib;
  *      create an object and call this method once, then kill the demo.
  */
 
+void drtx(string str, int x, int y)
+{
+    draw_text(djvu_s, str, x, y, graphic.color.color.white);
+}
+
+void drtx(string str, int x, int y, AlCol c)
+{
+    draw_text(djvu_s, str, x, y, c);
+}
+
+
+
 class Demo {
 
 private:

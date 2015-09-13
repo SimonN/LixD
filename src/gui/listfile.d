@@ -342,7 +342,7 @@ calc_self()
 {
     _clicked = false;
     foreach (int i, b; buttons) {
-        if (b.clicked) {
+        if (b.execute) {
             // page-switching button has been clicked?
             if (i == _bottom_button && bottom_button_flips_page) {
                 ++_page;

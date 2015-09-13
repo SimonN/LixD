@@ -2,9 +2,9 @@ module gui.button;
 
 /* A clickable button, can have a hotkey.
  *
- * Two design patterns are supported: a) Event-based and b) polling.
- * a) To poll the button, query get_clicked() during its parent's calc().
- * b) To register a delegate f to be executed on click, use set_on_click(f).
+ * Two design patterns are supported: a) Event-based callback and b) polling.
+ * a) To poll the button, (bool execute() const) during its parent's calc().
+ * b) To register a delegate f to be called back, use on_execute(f).
  */
 
 import basics.alleg5; // keyboard enum
@@ -32,8 +32,11 @@ class Button : Element {
     @property int  hotkey() const    { return _hotkey;     }
     @property int  hotkey(int i = 0) { return _hotkey = i; }
 
-    @property bool clicked() const             { return _clicked_last_calc; }
-    @property void on_click(void delegate() f) { _on_click = f; }
+    // execute is read-only. Derived classes should make their own bool
+    // and then override execute().
+    @property bool execute() const { return _execute; }
+
+    @property void on_execute(void delegate() f) { _on_execute = f; }
 
 private:
 
@@ -41,11 +44,11 @@ private:
     bool _hot;    // if true, activate upon mouse down,  not on click/release
     int  _hotkey; // default is 0, which is not a key.
 
-    bool _clicked_last_calc;
+    bool _execute;
     bool _down;
     bool _on;
 
-    void delegate() _on_click;
+    void delegate() _on_execute;
 
 
 
@@ -57,7 +60,7 @@ calc_self()
     immutable bool mouse_here = is_mouse_here();
 
     if (hidden) {
-        _clicked_last_calc = false;
+        _execute = false;
     }
     else {
         // Appear pressed down, but not activated? This is only possible
@@ -84,8 +87,9 @@ calc_self()
         if (_hotkey == ALLEGRO_KEY_ENTER) b = b || key_enter_once();
         else                              b = b || key_once(_hotkey);
 
-        _clicked_last_calc = b;
-        if (_on_click !is null && _clicked_last_calc) _on_click();
+        _execute = b;
+        if (_on_execute !is null && _execute)
+            _on_execute();
     }
 }
 

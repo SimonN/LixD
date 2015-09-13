@@ -113,7 +113,7 @@ this(
 
     button_play.text = Lang.browser_play.transl;
     button_exit.text = Lang.common_back.transl;
-    button_exit.on_click = () { _goto_main_menu = true; };
+    button_exit.on_execute = () { _goto_main_menu = true; };
 
     add_children(preview, dir_list, lev_list, button_play, button_exit);
 
@@ -164,14 +164,14 @@ calc_self()
         auto button = lev_list.button_last_clicked;
         if (fn !is null && button !is null) {
             if (button.on)
-                // button clicked for the first time
+                // button executed for the first time
                 highlight(fn);
             else
-                // button clicked for the second time
+                // button execute for the second time
                 on_file_select(fn);
         }
     }
-    else if (button_play.clicked) {
+    else if (button_play.execute) {
         if (file_recent !is null
          && file_recent.is_child_of(dir_list.current_dir)
          && file_recent ==          lev_list.current_file)

@@ -208,7 +208,7 @@ protected override void
 calc_self()
 {
     super.calc_self();
-    if (dir_up && dir_up.clicked) {
+    if (dir_up && dir_up.execute) {
         set_current_dir_to_parent_dir();
         this.clicked = true;
     }

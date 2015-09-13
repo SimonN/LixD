@@ -49,7 +49,7 @@ class Checkbox : BitmapButton {
         g.xl = 20;
         g.yl = 20;
         super(g, get_internal(file_bitmap_menu_checkmark));
-        this.on_click = &toggle;
+        this.on_execute = &toggle;
     }
 
     @property bool checked(bool b) { xf = (b ? xf_ck : 0);

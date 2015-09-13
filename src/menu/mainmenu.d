@@ -17,12 +17,12 @@ import gui;
 
 class MainMenu : Window {
 
-    @property bool goto_single()  { return single .clicked; }
-    @property bool goto_network() { return network.clicked; }
-    @property bool goto_replays() { return replays.clicked; }
-    @property bool goto_options() { return options.clicked; }
-    @property bool goto_bench()   { return bench  .clicked; }
-    @property bool exit_program() { return _exit  .clicked; }
+    @property bool goto_single()  { return single .execute; }
+    @property bool goto_network() { return network.execute; }
+    @property bool goto_replays() { return replays.execute; }
+    @property bool goto_options() { return options.execute; }
+    @property bool goto_bench()   { return bench  .execute; }
+    @property bool exit_program() { return _exit  .execute; }
 
 private:
 
