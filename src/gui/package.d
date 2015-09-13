@@ -9,6 +9,8 @@ module gui;
 public import gui.butbit;
 public import gui.button;
 public import gui.buttext;
+public import gui.buttwo;
+
 public import gui.geometry;
 public import gui.element;
 public import gui.frame;

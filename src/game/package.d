@@ -9,6 +9,7 @@ public import game.gamepass;
 public import game.gameupd;
 public import game.lookup;
 public import game.panel;
+public import game.panelinf;
 public import game.replay;
 public import game.state;
 public import game.tribe;
