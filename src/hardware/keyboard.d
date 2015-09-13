@@ -16,9 +16,6 @@ string           get_utf8_input() { return buf_utf8; }
 deprecated int   get_key();
 deprecated dchar get_key_ascii();
 
-bool key_enter_once();    // special because Alt+Enter shall not
-bool key_enter_release(); // these two work for both Enter and Enter_Pad
-
 bool key_once(int alkey) { return once[alkey]; }
 bool key_hold(int alkey) { return hold[alkey]; }
 bool key_rlsd(int alkey) { return rlsd[alkey]; }
@@ -113,6 +110,15 @@ void calc()
     ctrl  = hold[ALLEGRO_KEY_LCTRL]  || hold[ALLEGRO_KEY_RCTRL];
     shift = hold[ALLEGRO_KEY_LSHIFT] || hold[ALLEGRO_KEY_RSHIFT];
     alt   = hold[ALLEGRO_KEY_ALT]    || hold[ALLEGRO_KEY_ALTGR];
+
+    // Lump Enter and Keypad-Enter together already in the hardware. We had
+    // ugly button code in A4/C++ Lix like this copied over and over:
+    //      if (_hotkey == ALLEGRO_KEY_ENTER) b = b || key_enter_once();
+    //      else                              b = b || key_once(_hotkey);
+    enum e1 = ALLEGRO_KEY_ENTER;
+    enum e2 = ALLEGRO_KEY_PAD_ENTER;
+    once[e1] = (once[e2] = once[e1] || once[e2]);
+    rlsd[e1] = (rlsd[e2] = rlsd[e1] || rlsd[e2]);
 }
 
 
@@ -138,22 +144,4 @@ deprecated dchar get_key_ascii()
 {
     if (buf_utf8.empty) return 0;
     else return buf_utf8[0];
-}
-
-
-
-bool key_enter_once()
-{
-    // Don't trigger on fullscreen/windowed switch
-    // We still do it in D/A5 Lix, even though there's no Alt+Enter here
-    return ! get_alt() && (key_once(ALLEGRO_KEY_ENTER)
-                        || key_once(ALLEGRO_KEY_PAD_ENTER));
-}
-
-
-
-bool key_enter_release()
-{
-    return key_release(ALLEGRO_KEY_ENTER)
-     ||    key_release(ALLEGRO_KEY_PAD_ENTER);
 }

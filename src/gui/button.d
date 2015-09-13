@@ -29,8 +29,8 @@ class Button : Element {
 
     AlCol get_color_text()      { return _on && ! _down ? color.gui_text_on
                                                         : color.gui_text; }
-    @property int  hotkey() const    { return _hotkey;     }
-    @property int  hotkey(int i = 0) { return _hotkey = i; }
+    @property int hotkey() const { return _hotkey;     }
+    @property int hotkey(int i)  { return _hotkey = i; }
 
     // execute is read-only. Derived classes should make their own bool
     // and then override execute().
@@ -76,18 +76,12 @@ calc_self()
                 _down = false;
             }
         }
-        // Active clicking.
-        // If the hotkey is ALLEGRO_KEY_ENTER, then we allow
-        // ALLEGRO_KEY_PAD_ENTER too.
-        bool b =
-            (! _warm && ! _hot && mouse_here && get_mlr())
-         || (  _warm && ! _hot && mouse_here && get_ml ())
-         || (             _hot && mouse_here && get_mlh());
-        // See module hardware.keyboard for why Enter is separated
-        if (_hotkey == ALLEGRO_KEY_ENTER) b = b || key_enter_once();
-        else                              b = b || key_once(_hotkey);
-
-        _execute = b;
+        // Check whether to execute by clicks/releases or hotkey down.
+        _execute = key_once(_hotkey);
+        _execute = _execute
+            || (! _warm && ! _hot && mouse_here && get_mlr())
+            || (  _warm && ! _hot && mouse_here && get_ml ())
+            || (             _hot && mouse_here && get_mlh());
         if (_on_execute !is null && _execute)
             _on_execute();
     }
