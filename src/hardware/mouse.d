@@ -140,6 +140,7 @@ void calc()
             mouse_double[i] = (mouse_since[i] < doubleclick_speed);
             mouse_since [i] = 0;
             mouse_hold  [i] = 1;
+            trap_mouse      = true;
             break;
 
         case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
