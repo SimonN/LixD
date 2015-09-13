@@ -16,7 +16,7 @@ class Panel : Element {
 public:
 
     @property float skill_xl() { return Geom.screen_xlg / (14 + 4); }
-    @property float skill_yl() { return this.geom.ylg * 3f / 4f; }
+    @property float skill_yl() { return this.geom.ylg - 20; }
 
     Button[] skills;
 
@@ -70,9 +70,16 @@ this()
     new_control_button(restart,     1, 0,  8);
     new_control_button(nuke_single, 2, 0,  9);
 
+    pause = new BitmapButton(
+        new Geom(0, 0, skill_xl, skill_yl, From.BOTTOM_RIGHT),
+        get_internal(basics.globals.file_bitmap_game_pause));
+
     nuke_multi = new BitmapButton(
-        new Geom(0, 0, 4 * skill_xl, 0, From.BOTTOM_RIGHT),
+        new Geom(0, 0, 4 * skill_xl, this.ylg - skill_yl, From.BOTTOM_RIGHT),
         get_internal(basics.globals.file_bitmap_game_nuke));
+
+    add_child(pause);
+    add_child(nuke_multi);
 
     gapamode = GapaMode.PLAY_SINGLE;
 }
