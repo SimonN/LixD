@@ -18,7 +18,7 @@ public:
     @property float skill_xl() { return Geom.screen_xlg / (14 + 4); }
     @property float skill_yl() { return this.geom.ylg - 20; }
 
-    Button[] skills;
+    SkillButton[] skills;
 
     BitmapButton zoom, restart, pause, nuke_single, nuke_multi;
     TwoTasksButton speed_back, speed_ahead, speed_fast;
@@ -46,10 +46,13 @@ this()
     add_child(_dummy_bg);
 
     skills.length = basics.user.skill_sort.length;
-    foreach (id, ac; basics.user.skill_sort) {
-        skills[id] = new Button(new Geom(id * skill_xl,
-                     0, skill_xl, skill_yl, From.BOTTOM_LEFT));
-        this.add_child(skills[id]);
+    foreach (int id, ac; basics.user.skill_sort) {
+        auto b = new SkillButton(new Geom(id * skill_xl, 0,
+                                 skill_xl, skill_yl, From.BOTTOM_LEFT));
+        b.skill  = ac;
+        b.number = id < 7 ? 5 - id : id - 6;
+        skills[id] = b;
+        add_child(b);
     }
 
     void new_control_button(T)(ref T b, int x, int y, int frame)

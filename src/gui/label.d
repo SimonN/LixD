@@ -36,9 +36,9 @@ class Label : Element {
         catch (Exception) return 0;
     }
 
-    @property font  (AlFont f) { _font  = f; shorten_text(); }
-    @property text  (string s) { _text  = s; shorten_text(); }
-    @property number(in int i) { _text  = i.to!string; shorten_text(); }
+    @property font  (AlFont f) { _font  = f; shorten_text();               }
+    @property text  (string s) { _text  = s; shorten_text(); return _text; }
+    @property number(in int i) { _text  = i.to!string; shorten_text();     }
     @property color (AlCol  c) { _color = c; req_draw(); }
     @property fixed (bool   b) { _fixed = b; shorten_text(); }
 

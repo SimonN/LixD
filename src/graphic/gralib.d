@@ -56,12 +56,13 @@ private:
 
 public:
 
-void set_scale_from_gui(float scale)
+void set_scale_from_gui(in float scale)
 {
     scale_dir =
         scale < 1.5f ? dir_data_bitmap.rootless
      :  scale < 2.0f ? dir_data_bitmap_scale.rootless ~ "150/"
-     :                 dir_data_bitmap_scale.rootless ~ "200/";
+     :  scale < 3.0f ? dir_data_bitmap_scale.rootless ~ "200/"
+     :                 dir_data_bitmap_scale.rootless ~ "300/";
 }
 
 
