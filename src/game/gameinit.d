@@ -61,8 +61,10 @@ prepare_gadgets(Game game)
 {
     void gadgets_from_pos(T)(ref T[] gadget_vec, TileType tile_type)
     {
-        foreach (ref pos; game.level.pos[tile_type])
+        foreach (ref pos; game.level.pos[tile_type]) {
             gadget_vec ~= cast (T) Gadget.factory(game.map, pos);
+            assert (gadget_vec[$-1]);
+        }
     }
 
     gadgets_from_pos(game.cs.hatches,     TileType.HATCH);
