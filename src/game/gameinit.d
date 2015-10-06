@@ -3,6 +3,7 @@ module game.gameinit;
 import std.conv;
 
 import basics.alleg5;
+import basics.globconf;
 import file.filename;
 import level.level;
 import game;
@@ -15,33 +16,19 @@ import level.tile;
 package void
 impl_game_constructor(Game game, Level lv, Filename fn, Replay rp)
 {
-    assert (game !is null);
-    assert (lv !is null);
+    assert (game);
+    assert (lv);
     assert (lv.good);
 
     scope (exit)
         game.altick_last_update = al_get_timer_count(basics.alleg5.timer);
 
-    // prepare the land, without players or gadgets yet
-    with (game) {
-        level          = lv;
-        level_filename = fn;
-        replay         = rp;
+    game.level          = lv;
+    game.level_filename = fn;
+    game.replay         = rp;
 
-        effect = new EffectManager;
-        pan    = new Panel;
-        gui.add_elder(pan);
-
-        cs = new GameState();
-        cs.land   = new Torbit(lv.size_x, lv.size_y, lv.torus_x, lv.torus_y);
-        cs.lookup = new Lookup(lv.size_x, lv.size_y, lv.torus_x, lv.torus_y);
-        lv.draw_terrain_to(cs.land, cs.lookup);
-
-        map = new Map(cs.land, Geom.screen_xls.to!int, Geom.screen_yls.to!int
-            * (Geom.panel_yl_divisor - 1) / Geom.panel_yl_divisor);
-    }
-
-    //prepare_players(game);
+    prepare_land   (game);
+    prepare_players(game);
     prepare_gadgets(game);
 }
 
@@ -53,6 +40,75 @@ impl_game_destructor(Game game)
     if (game.pan)
         gui.rm_elder(game.pan);
 }
+
+
+
+// ############################################################################
+// ############################################################################
+// ############################################################################
+
+
+
+private void
+prepare_land(Game game) { with (game)
+{
+    assert (effect is null);
+    assert (pan    is null);
+
+    effect = new EffectManager;
+    pan    = new Panel;
+    gui.add_elder(pan);
+
+    cs = new GameState();
+    with (level) {
+        cs.land   = new Torbit(size_x, size_y, torus_x, torus_y);
+        cs.lookup = new Lookup(size_x, size_y, torus_x, torus_y);
+        draw_terrain_to(cs.land, cs.lookup);
+    }
+
+    map = new Map(cs.land, Geom.screen_xls.to!int, Geom.screen_yls.to!int
+        * (Geom.panel_yl_divisor - 1) / Geom.panel_yl_divisor);
+}}
+
+
+
+// ############################################################################
+// ############################################################################
+// ############################################################################
+
+
+
+private void
+prepare_players(Game game) { with (game)
+{
+    assert (cs.tribes == null);
+
+    // Make one singleplayer tribe. DTODONETWORK: Query the network to make
+    // the correct number of tribes, with the correct masters in each.
+    cs.tribes ~= new Tribe();
+    cs.tribes[0].masters ~= Tribe.Master(0, basics.globconf.user_name);
+    trlo = cs.tribes[0];
+    malo = trlo.masters[0];
+
+    foreach (tr; cs.tribes) {
+        tr.initial       = level.initial;
+        tr.required      = level.required;
+        tr.lix_hatch     = level.initial;
+        tr.spawnint_slow = level.spawnint_slow;
+        tr.spawnint_fast = level.spawnint_fast;
+        tr.spawnint      = level.spawnint_slow;
+        tr.skills        = level.skills;
+    }
+
+    assert (pan);
+    pan.set_like_tribe(trlo);
+}}
+
+
+
+// ############################################################################
+// ############################################################################
+// ############################################################################
 
 
 

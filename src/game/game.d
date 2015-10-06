@@ -50,6 +50,9 @@ package:
     EffectManager effect;
     Panel pan;
 
+    Tribe trlo;
+    Tribe.Master malo;
+
     long altick_last_update;
 
     int _profiling_gadget_count;

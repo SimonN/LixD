@@ -23,7 +23,6 @@ class Tribe {
     struct Master {
         PlNr   number;
         string name;
-        int    skill_sel;
     }
 
     private static struct PublicValueFields {
