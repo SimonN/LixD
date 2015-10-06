@@ -65,8 +65,22 @@ void initialize()
     assert (djvu_m);
     assert (djvu_l);
 
-    _sha_offs    = magnif;
-    _djvu_m_offs = magnif * 4 - 3;
+    _sha_offs = magnif;
+
+    // djvu_m_offs should be set such that the font centers nicely on a
+    // GUI button/bar having a height of 20 geoms -- equivalent to 1/24th
+    // of the screen height. "yls" == y-length in screen pixels, not in geoms
+    int bounds_yls;
+    int dummy;
+    al_get_text_dimensions(djvu_m, "Afgy()".toStringz,
+        &dummy, &dummy, &dummy, &bounds_yls, &dummy, &dummy);
+    int descent_yls = al_get_font_descent(djvu_m);
+
+    float yls_20_geoms   = al_get_display_height(display) * 24 / 480f;
+    _djvu_m_offs = (yls_20_geoms - bounds_yls - descent_yls) / 2f;
+    // subtracting descent_yls looks better somehow, even though it should
+    // have been included in bounds_yls. The main goal is to make it look
+    // nice on various screen sizes, not to make it theoretically correct.
 }
 
 
