@@ -7,7 +7,7 @@ module game.panel;
 
 import basics.globals;
 import basics.user;
-import game.panelinf;
+import game;
 import graphic.gralib;
 import gui;
 
@@ -28,7 +28,7 @@ public:
 
 private:
 
-    private game.panelinf.GapaMode _gapamode;
+    private GapaMode _gapamode;
 
     private Button _dummy_bg;
 
@@ -47,12 +47,11 @@ this()
 
     skills.length = basics.user.skill_sort.length;
     foreach (int id, ac; basics.user.skill_sort) {
-        auto b = new SkillButton(new Geom(id * skill_xl, 0,
+        skills[id] = new SkillButton(new Geom(id * skill_xl, 0,
                                  skill_xl, skill_yl, From.BOTTOM_LEFT));
-        b.skill  = ac;
-        b.number = id < 7 ? 5 - id : id + 91;
-        skills[id] = b;
-        add_child(b);
+        skills[id].skill = ac;
+        add_child(skills[id]);
+        // DTODO: set hotkeys to skillbuttons
     }
 
     void new_control_button(T)(ref T b, int x, int y, int frame)
@@ -106,14 +105,41 @@ gapamode(in GapaMode gp)
 
 
 
+public void
+set_like_tribe(in Tribe tr)
+{
+    if (tr is null)
+        return;
+
+    foreach (b; skills) {
+        b.style  = tr.style;
+        b.number = tr.skills[b.skill];
+    }
+
+    /*
+    stats.set_tribe_local(tr);
+
+    spawnint_slow.set_spawnint(tr->spawnint_slow);
+    spawnint_cur .set_spawnint(tr->spawnint);
+    rate_fixed   .set_number  (tr->spawnint_fast);
+
+    nuke_single.set_on  (tr->nuke);
+    nuke_multi .set_on  (tr->nuke);
+    spec_tribe .set_text(tr->get_name());
+
+    set_skill_on(skill_last_set_on);
+    */
+
+    req_draw();
+}
+// end function set_like_tribe()
+
+
+
 protected override void
 calc_self()
 {
     _dummy_bg.down = false;
-
-    // debugging
-    if (zoom.down)
-        nuke_single.down = true;
 }
 
 }

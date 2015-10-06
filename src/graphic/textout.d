@@ -72,7 +72,7 @@ void initialize()
     // of the screen height. "yls" == y-length in screen pixels, not in geoms
     int bounds_yls;
     int dummy;
-    al_get_text_dimensions(djvu_m, "Afgy()".toStringz,
+    al_get_text_dimensions(djvu_m, "A/f/g/y)(".toStringz,
         &dummy, &dummy, &dummy, &bounds_yls, &dummy, &dummy);
     int descent_yls = al_get_font_descent(djvu_m);
 

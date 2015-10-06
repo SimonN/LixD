@@ -5,6 +5,8 @@ module game.tribe;
  * In singleplayer, there is one tribe with one master.
  */
 
+import enumap;
+
 import basics.globals;
 import basics.help;
 import basics.nettypes;
@@ -49,7 +51,7 @@ class Tribe {
     PublicValueFields value_fields;
     alias value_fields this;
 
-    Skill[skill_max] skill;
+    Enumap!(Ac, int) skills;
     Master[] masters;
     Lixxie[] lixvec;
 
@@ -58,9 +60,9 @@ class Tribe {
     this(Tribe rhs)
     {
         value_fields = rhs.value_fields;
-        skill   = rhs.skill  .dup;
-        masters = rhs.masters.dup;
-        lixvec  = rhs.lixvec .clone;
+        skills       = rhs.skills;
+        masters      = rhs.masters.dup;
+        lixvec       = rhs.lixvec .clone;
     }
 
     Tribe clone() { return new Tribe(this); }
@@ -84,12 +86,10 @@ class Tribe {
 
     void return_skills(in Ac ac, in int amount)
     {
-        foreach (sk; skill)
-            if (sk.ac == ac && sk.nr != skill_infinity) {
-                sk.nr += amount;
-                skills_used -= amount;
-                break;
-            }
+        if (skills[ac] != skill_infinity) {
+            skills[ac] += amount;
+            skills_used -= amount;
+        }
     }
 
 }
