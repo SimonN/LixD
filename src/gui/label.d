@@ -18,7 +18,8 @@ class Label : Element {
 
     this(Geom g, string s = "")
     {
-        g.yl = 20;
+        if (g.yl < 1f)
+            g.yl = 20;
         super(g);
         _font  = djvu_m;
         _text  = s;

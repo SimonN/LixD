@@ -50,7 +50,7 @@ this()
         auto b = new SkillButton(new Geom(id * skill_xl, 0,
                                  skill_xl, skill_yl, From.BOTTOM_LEFT));
         b.skill  = ac;
-        b.number = id < 7 ? 5 - id : id - 6;
+        b.number = id < 7 ? 5 - id : id + 91;
         skills[id] = b;
         add_child(b);
     }

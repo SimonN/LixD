@@ -12,13 +12,16 @@ import graphic.color; // for the shortcut version only
 import hardware.display; // make fonts in a size relative to the display
 
 AlFont font_al;
-AlFont djvu_s;
-AlFont djvu_m;
+AlFont djvu_s; // small font for editor's bitmap browser filenames
+AlFont djvu_m; // medium font for most things, like button descriptions
+AlFont djvu_l; // large font for number of skills in the game panel
 
 private float _sha_offs;    // x and y offset for printing the text shadow
+
 private float _djvu_m_offs; // Gui code should think this has a height of 20
                             // geoms, see gui.geometry. We compute this offset.
-                            // This affects the y pos for djvu_m.
+                            // This affects the y pos for djvu_m. No other
+                            // font is affected.
 
 public @property float sha_offs()    { return _sha_offs;    }
 public @property float djvu_m_offs() { return _djvu_m_offs; }
@@ -53,11 +56,14 @@ void initialize()
 
     djvu_s = al_load_ttf_font(fn.ptr, to!int(floor(magnif *  8)), flags);
     djvu_m = al_load_ttf_font(fn.ptr, to!int(floor(magnif * 14)), flags);
+    djvu_l = al_load_ttf_font(fn.ptr, to!int(floor(magnif * 20)), flags);
 
     if (! djvu_s) djvu_s = font_al;
     if (! djvu_m) djvu_m = font_al;
+    if (! djvu_l) djvu_l = font_al;
     assert (djvu_s);
     assert (djvu_m);
+    assert (djvu_l);
 
     _sha_offs    = magnif;
     _djvu_m_offs = magnif * 4 - 3;
@@ -67,10 +73,11 @@ void initialize()
 
 void deinitialize()
 {
+    if (djvu_l != null && djvu_l != font_al) al_destroy_font(djvu_l);
     if (djvu_m != null && djvu_m != font_al) al_destroy_font(djvu_m);
     if (djvu_s != null && djvu_s != font_al) al_destroy_font(djvu_s);
     if (font_al)                             al_destroy_font(font_al);
-    font_al = djvu_s = djvu_m = null;
+    font_al = djvu_s = djvu_m = djvu_l = null;
 }
 
 
@@ -86,7 +93,7 @@ draw_text(
 ) {
     assert(f);
     immutable char* s = str.toStringz();
-    if (fla == ALLEGRO_ALIGN_CENTRE) x = to!int(x - sha_offs / 2);
+    if (fla == ALLEGRO_ALIGN_CENTRE) x = to!int(ceil(x - sha_offs / 2));
     y = to!int(y + (f == djvu_m ? djvu_m_offs : 0));
     fla |= ALLEGRO_ALIGN_INTEGER;
 
