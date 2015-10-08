@@ -143,11 +143,27 @@ Align things horizontally. For this, do what you believe is easiest to read.
 
 
 
+Sending in patches
+------------------
+
+You are encouraged to use git to send in patches. Either send your commits
+to me by email -- see the default readme for my contact data -- or make a
+github pull request.
+
+Please limit the first line of your git commit messages to 50 characters.
+If you want to write a longer message, make a blank line below the first,
+and then add more lines of at most 72 characters each.
+
+
+
 Notes about D
 -------------
 
-*   To search the web, use "dlang" in your query. e.g., "dlang writefln".
-    Alternatively, use "d programming language".
+*   To search the web, use "dlang" in your query, e.g., "dlang writefln".
+    Alternatively, use "d programming language". Google wants to be smart,
+    and brings results like "he'd" or "that'd" when you search for "dlang",
+    because it has learned that a single "d" is wanted. The computer wants to
+    be smarter than the user again. :-/
 
 *   const int* foo() { ... } is the same as int* foo() const { ... }, both
     are valid D and do what the latter would have done in C++: make the method
@@ -159,8 +175,18 @@ Notes about D
     like printf(). The equivalent to C's sprintf() is format() in std.string,
     which returns a D string.
 
-*   D is garbage-collected by default. You can still do RAII by allocating
-    resources in the constructor this(), and deallocate in ~this(). To invoke
-    the deallocation at the correct time, call destroy(myobject), which calls
-    the destructor and prevents automatic calls to the destructor later.
-    This was clear(myobject) in older versions of D, but that's deprecated.
+*   You can do RAII by allocating resources in the constructor this(), and
+    deallocate in ~this(). To invoke the deallocation at the correct time,
+    use a struct, not a class -- classes are garbage-collected, structs are
+    destroyed deterministically at end of scope. Remember that a dynamic
+    array of structs is garbage-collected.
+
+*   If you really want to have deterministic destruction for classes,
+    call destroy(myclassobject), which calls the destructor. Some large and
+    important types are imagined best as classes, not structs, and still need
+    deterministic cleanup -- rely on your good taste. destroy(myobject) was
+    clear(myobject) in older versions of D. Destroying a class object doesn't
+    prevent the GC from running the destructor once again later, when the
+    object's fields are all set to their .init values! If you deallocate
+    resources in your destructor, wrap them in a check whether the
+    resource pointer is not null.

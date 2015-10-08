@@ -1,0 +1,23 @@
+Version history of the Lix D/Allegro 5 port
+===========================================
+
+
+0.1.0
+-----
+
+2015-08-24
+
+First Windows build released on Lemmings Forums as a smoke test. It runs
+well for most people. Drawing has bad performance still with about 3,500
+animated gadgets, but is much better with about 200 than in the previous
+months.
+
+
+
+0.0.0
+-----
+
+2015-02-28
+
+Started development by porting the fundamental Lix graphic classes from
+Allegro 4.4 to Allegro 5 with the D Programming Language.
