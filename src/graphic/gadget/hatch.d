@@ -93,10 +93,10 @@ protected:
     override void draw_game_extras()
     {
         if (_blink_now && blink_style != Style.GARDEN) {
-            const(Cutbit) c = get_lix(blink_style);
+            const(Cutbit) c = get_skill_button_icon(blink_style);
             c.draw(ground, x + tile.trigger_x - c.xl / 2,
                            y + tile.trigger_y - c.yl / 2,
-                           0, ac_to_y_frame(Ac.WALKER));
+                           Ac.WALKER, 0);
         }
     }
 

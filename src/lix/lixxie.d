@@ -184,7 +184,7 @@ this(
     int   new_ex,
     int   new_ey
 ) {
-    super(graphic.gralib.get_lix(new_tribe ? new_tribe.style : Style.GARDEN),
+    super(get_spritesheet(new_tribe ? new_tribe.style : Style.GARDEN),
           ground_map, even(new_ex) - lix.enums.ex_offset,
                            new_ey  - lix.enums.ey_offset);
     _tribe = new_tribe;
@@ -214,7 +214,7 @@ this(Lixxie rhs)
     _ex    = rhs._ex;
     _ey    = rhs._ey;
 
-    super(graphic.gralib.get_lix(_style), ground_map,
+    super(graphic.gralib.get_spritesheet(_style), ground_map,
         _ex - lix.enums.ex_offset,
         _ey - lix.enums.ey_offset);
 
@@ -259,9 +259,9 @@ static void set_static_maps(Torbit tb, Lookup lo, Map ma)
 
 private XY get_fuse_xy() const
 {
-    XY ret = countdown.get(frame_to_x_frame(frame), ac_to_y_frame(ac));
+    XY ret = countdown.get(frame, ac);
     if (_dir < 0)
-        ret.x = graphic.gralib.get_lix(style).xl - ret.x;
+        ret.x = this.cutbit.xl - ret.x;
     ret.x += super.x;
     ret.y += super.y;
     return ret;
@@ -598,10 +598,7 @@ void play_sound_if_trlo(in ref UpdateArgs ua, in Sound sound_id)
 
 override bool is_last_frame() const
 {
-    // the cutbit does this for us. Lixxie.frame != Graphic.x_frame,
-    // so we use Lixxie's private conversion functions
-    return ! cutbit.frame_exists(frame_to_x_frame(frame) + 1,
-                                    ac_to_y_frame(ac));
+    return ! cutbit.frame_exists(frame + 1, ac);
 }
 
 
@@ -619,8 +616,8 @@ override void draw()
 {
     if (ac == Ac.NOTHING) return;
 
-    super.xf = frame_to_x_frame(frame);
-    super.yf =    ac_to_y_frame(ac);
+    super.xf = frame;
+    super.yf = ac;
 
     // draw the fuse if necessary
     if (updates_since_bomb > 0) {

@@ -65,12 +65,12 @@ protected:
             foreach (const(Tribe) t; _tribes) {
                 if (t.style == Style.GARDEN)
                     continue;
-                const(Cutbit) c = graphic.gralib.get_lix(t.style);
+                auto c = graphic.gralib.get_skill_button_icon(t.style);
                 c.draw(ground,
                     x + tile.trigger_x + tile.trigger_xl / 2 - c.xl / 2
                       + (20 * offset++) - 10 * (_tribes.len - 1),
                     max(y, y + yl - 70),
-                    0, ac_to_y_frame(Ac.WALKER));
+                    Ac.WALKER, 0);
             }
         }
         else {

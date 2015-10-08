@@ -5,6 +5,7 @@ import std.conv; // scale to
 import basics.alleg5;
 import basics.globconf; // skip Lix recoloring loading in verify mode
 import basics.globals;  // name of internal bitmap dir
+import basics.help;
 import basics.matrix;
 import graphic.color;   // replace pink with transparencys
 import graphic.cutbit;
@@ -30,8 +31,9 @@ import lix.enums;
 private:
 
     Cutbit[string] internal;
-    Cutbit[Style]  style;
-    Cutbit[Style]  icons;
+    Cutbit[Style]  spritesheets;
+    Cutbit[Style]  panel_info_icons;
+    Cutbit[Style]  skill_button_icons;
 
     Cutbit null_cutbit; // invalid bitmap to return instead of null pointer
 
@@ -49,8 +51,9 @@ private:
     // lixes and recoloring icons. eidrecol behaves differently based on
     // the magic number. recolor_into_vector skips some rows based on them.
     // These magic numbers are a relic from C++/A4 Lix.
-    immutable int magicnr_sheet = 1;
-    immutable int magicnr_icons = 2;
+    immutable int magicnr_spritesheets = 1;
+    immutable int magicnr_panel_info_icons = 2;
+    immutable int magicnr_skill_button_icons = 3;
 
 
 
@@ -135,7 +138,7 @@ void initialize()
             }
         }
         GOTO_NEXTFRAME:
-        if (fy == Ac.BLOCKER - 1) {
+        if (fy == Ac.BLOCKER) {
             XY blocker_eyes = countdown.get(fx, fy);
             blocker_eyes.x = lix.enums.ex_offset;
             countdown.set(fx, fy, blocker_eyes);
@@ -151,20 +154,26 @@ void initialize()
     display_startup_message("Recoloring Lix sprites for multiplayer...");
 
     // Prepare Lix sprites in multiple colors
-    recolor_into_vector(cb, style, magicnr_sheet);
+    recolor_into_vector(cb, spritesheets, magicnr_spritesheets);
 
     // DTODOLANG
     display_startup_message("Recoloring panel icons for multiplayer...");
 
-    // Prepare the panel icons in multiple colors
-    Cutbit* icon_ptr = (file_bitmap_game_icon.rootless_no_ext
-                       in internal);
-    assert (icon_ptr, "missing image: in-game panel icon of a Lix");
-    if (icon_ptr) {
-        Cutbit cb_icons = *icon_ptr;
+    // Prepare the panel info icons in multiple colors
+    {
+        Cutbit cb_icons = get_internal_mutable(file_bitmap_game_icon);
         Albit  cb_bmp   = cb_icons.albit;
         auto lock_icons = LockReadWrite(cb_bmp);
-        recolor_into_vector(cb_icons, icons, magicnr_icons);
+        recolor_into_vector(cb_icons, panel_info_icons,
+                              magicnr_panel_info_icons);
+    }
+    // Prepare the skill button icons in multiple colors
+    {
+        Cutbit cb_icons = get_internal_mutable(file_bitmap_skill_icons);
+        Albit  cb_bmp   = cb_icons.albit;
+        auto lock_icons = LockReadWrite(cb_bmp);
+        recolor_into_vector(cb_icons, skill_button_icons,
+                              magicnr_skill_button_icons);
     }
 
     // DTODOLANG
@@ -200,12 +209,10 @@ void initialize()
 
 void deinitialize()
 {
-    foreach (cb; internal) destroy(cb);
-    foreach (cb; style)    destroy(cb);
-    foreach (cb; icons)    destroy(cb);
-    internal    = null;
-    style       = null;
-    icons       = null;
+    destroy_array(skill_button_icons);
+    destroy_array(panel_info_icons);
+    destroy_array(spritesheets);
+    destroy_array(internal);
 
     destroy(null_cutbit);
     null_cutbit = null;
@@ -220,12 +227,15 @@ private Cutbit get_internal_mutable(in Filename fn)
         return new Filename(scale_dir ~ f.file);
     }
     string str = correct_scale(fn).rootless_no_ext;
-    if (str in internal) return internal[str];
+    if (auto ret = str in internal)
+        return *ret;
 
     // if not yet returned, fall back onto non-scaled bitmap
     str = fn.rootless_no_ext;
-    if (str in internal) return internal[str];
-    else return null_cutbit;
+    if (auto ret = str in internal)
+        return *ret;
+    else
+        return null_cutbit;
 }
 
 
@@ -237,18 +247,32 @@ const(Cutbit) get_internal(in Filename fn)
 
 
 
-const(Cutbit) get_lix(in Style st)
+const(Cutbit) get_spritesheet(in Style st)
 {
-    if (st in style) return style[st];
-    else return null_cutbit;
+    if (auto ret = st in spritesheets)
+        return *ret;
+    else
+        return null_cutbit;
 }
 
 
 
-const(Cutbit) get_icon(in Style st)
+const(Cutbit) get_panel_info_icon(in Style st)
 {
-    if (st in icons) return icons[st];
-    else return null_cutbit;
+    if (auto ret = st in panel_info_icons)
+        return *ret;
+    else
+        return null_cutbit;
+}
+
+
+
+const(Cutbit) get_skill_button_icon(in Style st)
+{
+    if (auto ret = st in skill_button_icons)
+        return *ret;
+    else
+        return null_cutbit;
 }
 
 
@@ -301,7 +325,7 @@ void eidrecol_api(Cutbit cutbit, in int magicnr)
             else if (c == color.gui_f_l)   pp(x, y, color.gui_pic_l);
         }
     }
-    else if (magicnr == magicnr_sheet)
+    else if (magicnr == magicnr_spritesheets)
      for (int y = 0; y < bmp_yl; ++y) {
         for (int x = 0; x < 2 * (cutbit.xl + 1); ++x) {
             immutable AlCol c = al_get_pixel(bitmap, x, y);
@@ -313,7 +337,7 @@ void eidrecol_api(Cutbit cutbit, in int magicnr)
             else if (c == color.gui_f_l) pp(x, y, color.gui_pic_l);
         }
     }
-    else if (magicnr == magicnr_icons) {
+    else if (magicnr == magicnr_panel_info_icons) {
         // Recolor the API things (except shadow, which will be done in
         // an upcoming loop) in the second row.
         for (int y = cutbit.yl + 1; y < 2 * (cutbit.yl + 1); ++y)
@@ -384,19 +408,17 @@ void recolor_into_vector(
         // The first row (y == 0) contains the source pixels. The first style
         // (garden) is at y == 1. Thus the recol->h - 1 is correct as we count
         // styles starting at 0.
-        for  (int y = 0; y < lix_yl; y++)
-         for (int x = 0; x < lix_xl; x++) {
-
-            // The large Lix spritesheet has a column with greyed-out
-            // skills. These do not get recolored per player, skip them.
-            if (x == cutbit.xl + 1 && magicnr == magicnr_sheet) {
-                // skip the column with the greyed out skill icons
-                x += cutbit.xl;
-                continue;
-            }
+        Y_LOOP: for (int y = 0; y < lix_yl; y++)
+            X_LOOP: for (int x = 0; x < lix_xl; x++)
+        {
+            // The skill button icons have two rows: the first has the
+            // skills in player colors, the second has them greyed out.
+            // Ignore the second row here.
+            if (y >= cutbit.yl + 1 && magicnr == magicnr_skill_button_icons)
+                break Y_LOOP;
 
             // I don't recall what this else-if does, it's probably important.
-            else if (magicnr == magicnr_icons
+            else if (magicnr == magicnr_panel_info_icons
              && y >= cutbit.yl + 1
              && y <  2 * (cutbit.yl + 1)) {
                 // skip all x pixels in the second row in this
@@ -434,8 +456,8 @@ void recolor_into_vector(
         assert (target);
 
         // DTODOLANG
-        if (magicnr == magicnr_sheet)
-         display_startup_message(style_to_string(st));
+        if (magicnr == magicnr_spritesheets)
+            display_startup_message(style_to_string(st));
 
         auto lock_target = LockReadWrite(target);
         // DEBUGGING to load faster

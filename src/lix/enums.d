@@ -126,11 +126,6 @@ static this()
 
 
 
-int frame_to_x_frame(int fr) { return fr + 2; }
-int ac_to_y_frame   (int ac) { return ac - 1; }
-
-
-
 Ac string_to_ac(in string str) {
     foreach (key; ac_strings.byKey()) {
         if (ac_strings[key] == str) return key;

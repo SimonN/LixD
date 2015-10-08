@@ -310,3 +310,4 @@ cF file_bitmap_menu_background  = new cF("data/images/menu_bg.I");
 cF file_bitmap_menu_checkmark   = new cF("data/images/menu_chk.I");
 cF file_bitmap_mouse            = new cF("data/images/mouse.I");
 cF file_bitmap_preview_icon     = new cF("data/images/prev_ico.I");
+cF file_bitmap_skill_icons      = new cF("data/images/skillico.I");

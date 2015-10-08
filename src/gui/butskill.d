@@ -58,7 +58,7 @@ public:
 
     @property style(in Style style)
     {
-        _icon = new Graphic(get_lix(style), gui.guiosd);
+        _icon = new Graphic(get_skill_button_icon(style), gui.guiosd);
         req_draw();
     }
 
@@ -79,8 +79,8 @@ protected:
         super.draw_self();
         _icon.x  = this.xs +   this.xls/2 - _icon.xl/2;
         _icon.y  = this.ys + 2*this.yls/3 - _icon.yl/2;
-        _icon.yf = ac_to_y_frame(_skill);
-        _icon.xf = _number == 0 ? 1 : 0; // 0 == colorful, 1 == greyed out
+        _icon.yf = _number == 0 ? 1 : 0; // 0 == colorful, 1 == greyed out
+        _icon.xf = _skill;
         _icon.draw();
     }
 
