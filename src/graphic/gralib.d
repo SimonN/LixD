@@ -1,6 +1,7 @@
 module graphic.gralib;
 
 import std.conv; // scale to
+import std.string; // format
 
 import basics.alleg5;
 import basics.globconf; // skip Lix recoloring loading in verify mode
@@ -157,24 +158,25 @@ void initialize()
     recolor_into_vector(cb, spritesheets, magicnr_spritesheets);
 
     // DTODOLANG
-    display_startup_message("Recoloring panel icons for multiplayer...");
+    display_startup_message("Recoloring panel info icons for multiplayer...");
 
-    // Prepare the panel info icons in multiple colors
+    // local function that is called twice immediately
+    void q(in Filename fn, ref Cutbit[Style] vec, in int magicnr)
     {
-        Cutbit cb_icons = get_internal_mutable(file_bitmap_game_icon);
+        Cutbit cb_icons = get_internal_mutable(fn);
+        assert (cb_icons && cb_icons.valid,
+            format("can't get bitmap for magicnr %d", magicnr));
+        if (! cb_icons || ! cb_icons.valid)
+            return;
         Albit  cb_bmp   = cb_icons.albit;
         auto lock_icons = LockReadWrite(cb_bmp);
-        recolor_into_vector(cb_icons, panel_info_icons,
-                              magicnr_panel_info_icons);
+        recolor_into_vector(cb_icons, vec, magicnr);
     }
-    // Prepare the skill button icons in multiple colors
-    {
-        Cutbit cb_icons = get_internal_mutable(file_bitmap_skill_icons);
-        Albit  cb_bmp   = cb_icons.albit;
-        auto lock_icons = LockReadWrite(cb_bmp);
-        recolor_into_vector(cb_icons, skill_button_icons,
-                              magicnr_skill_button_icons);
-    }
+    q(file_bitmap_game_icon,   panel_info_icons,   magicnr_panel_info_icons);
+
+    // DTODOLANG
+    display_startup_message("Recoloring skill buttons for multiplayer...");
+    q(file_bitmap_skill_icons, skill_button_icons, magicnr_skill_button_icons);
 
     // DTODOLANG
     display_startup_message("Recoloring GUI elements...");
@@ -199,6 +201,10 @@ void initialize()
     eidrecol_api(file_bitmap_preview_icon);
 
     // DTODO: move load_all_file_replacements(); into obj_lib
+
+    auto to_assert = get_skill_button_icon(Style.GARDEN);
+    assert (to_assert);
+    assert (to_assert.valid);
 
     // DTODO: move this line ahead and see how much time we save, and whether
     // we get crashes
@@ -288,6 +294,12 @@ void eidrecol_api(in Filename fn)
 
 void eidrecol_api(Cutbit cutbit, in int magicnr)
 {
+    // don't do anything for magicnr == magicnr_spritesheets. This function
+    // is about GUI recoloring, not player color recoloring. All GUI portions
+    // of the spritesheets have been moved to the skill buttons in 2015-10.
+    if (magicnr == magicnr_spritesheets)
+        return;
+
     Albit bitmap = cutbit.albit;
     assert (bitmap);
     if (! bitmap) return;
@@ -325,16 +337,15 @@ void eidrecol_api(Cutbit cutbit, in int magicnr)
             else if (c == color.gui_f_l)   pp(x, y, color.gui_pic_l);
         }
     }
-    else if (magicnr == magicnr_spritesheets)
-     for (int y = 0; y < bmp_yl; ++y) {
-        for (int x = 0; x < 2 * (cutbit.xl + 1); ++x) {
+    else if (magicnr == magicnr_skill_button_icons)
+     for (int y = cutbit.yl + 1; y < bmp_yl; ++y) { // only row 1 of rows 0, 1
+        for (int x = 0; x < bmp_xl; ++x) {
             immutable AlCol c = al_get_pixel(bitmap, x, y);
-            if      (c == color.gui_f_sha) pp(x, y, color.gui_sha);
-            else if (x < cutbit.xl + 1)  continue;
-            else if (c == color.black)   pp(x, y, color.transp);
-            else if (c == color.gui_f_d) pp(x, y, color.gui_pic_d);
-            else if (c == color.gui_f_m) pp(x, y, color.gui_pic_m);
-            else if (c == color.gui_f_l) pp(x, y, color.gui_pic_l);
+            if      (c == color.black)     pp(x, y, color.transp);
+            else if (c == color.gui_f_sha) pp(x, y, color.gui_sha);
+            else if (c == color.gui_f_d)   pp(x, y, color.gui_pic_d);
+            else if (c == color.gui_f_m)   pp(x, y, color.gui_pic_m);
+            else if (c == color.gui_f_l)   pp(x, y, color.gui_pic_l);
         }
     }
     else if (magicnr == magicnr_panel_info_icons) {
@@ -414,19 +425,20 @@ void recolor_into_vector(
             // The skill button icons have two rows: the first has the
             // skills in player colors, the second has them greyed out.
             // Ignore the second row here.
-            if (y >= cutbit.yl + 1 && magicnr == magicnr_skill_button_icons)
+            if (y >= cutbit.yl + 1 && magicnr == magicnr_skill_button_icons) {
                 break Y_LOOP;
-
+            }
             // I don't recall what this else-if does, it's probably important.
             else if (magicnr == magicnr_panel_info_icons
-             && y >= cutbit.yl + 1
-             && y <  2 * (cutbit.yl + 1)) {
+                 && y >= cutbit.yl + 1
+                 && y <  2 * (cutbit.yl + 1)
+            ) {
                 // skip all x pixels in the second row in this
                 continue;
             }
 
             immutable AlCol col = al_get_pixel(lix, x, y);
-            if (col == col_break) {
+            if (magicnr == magicnr_spritesheets && col == col_break) {
                 // bad solution here: immediately begin next pixel, too slow
                 // bad solution too:  immediately begin next row, because
                 //                    we may have separating col_break-colored
@@ -460,20 +472,17 @@ void recolor_into_vector(
             display_startup_message(style_to_string(st));
 
         auto lock_target = LockReadWrite(target);
-        // DEBUGGING to load faster
-        if (i < Style.ORANGE) recolor_one_bitmap(target, i);
+        recolor_one_bitmap(target, i);
 
         // Invoke eidrecol on the bitmap. Whenever eidrecol is invoked
         // with a magicnr != 0, it does not lock/unlock the bitmaps itself,
         // but assumes they are locked.
-        // writefln("eidrecol now: %d", i);
         eidrecol_api(vector[st], magicnr);
     }
 
     static if (false)
-     foreach (int i; 0 .. Style.MAX) {
+     foreach (int i; 0 .. Style.YELLOW) {
         Style st = cast (Style) i;
-        import std.string;
         al_save_bitmap(format("./nagetier-%d-%d.png", magicnr, i).toStringz,
          vector[st].albit);
     }
