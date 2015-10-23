@@ -362,13 +362,13 @@ calcSelf()
     // end foreach Button
 
     if (_useHotkeys && buttons.length) {
-        bool any_movement_with_keys = true;
-        if      (keyTapped(basics.user.keyMenuUpBy1))   highlight_move(-1);
-        else if (keyTapped(basics.user.keyMenuUpBy5))   highlight_move(-5);
-        else if (keyTapped(basics.user.keyMenuDownBy1)) highlight_move(1);
-        else if (keyTapped(basics.user.keyMenuDownBy5)) highlight_move(5);
-        else any_movement_with_keys = false;
-        if (any_movement_with_keys) _clicked = true;
+        bool anyMovementWithKeys = true;
+        if      (keyTappedAllowingRepeats(keyMenuUpBy1))   highlight_move(-1);
+        else if (keyTappedAllowingRepeats(keyMenuUpBy5))   highlight_move(-5);
+        else if (keyTappedAllowingRepeats(keyMenuDownBy1)) highlight_move(1);
+        else if (keyTappedAllowingRepeats(keyMenuDownBy5)) highlight_move(5);
+        else anyMovementWithKeys = false;
+        if (anyMovementWithKeys) _clicked = true;
     }
 }
 
