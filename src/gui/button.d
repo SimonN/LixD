@@ -15,34 +15,52 @@ import hardware.mouse;
 
 class Button : Element {
 
+    enum WhenToExecute {
+        whenMouseRelease, // cold, normal menu buttons
+        whenMouseClick, // warm, pause button
+        whenMouseHeld, // hot, skill button
+        whenMouseClickAllowingRepeats // spawnint, framestepping
+    }
+
     this(Geom g) { super(g); }
-
-    @property bool down() const { return _down; }
-    @property bool on  () const { return _on;   }
-    @property bool down(bool b) { _down = b; reqDraw(); return _down; }
-    @property bool on  (bool b) { _on   = b; reqDraw(); return _on;   }
-
-    @property bool warm() const { return _warm; }
-    @property bool hot () const { return _hot;  }
-    @property bool warm(bool b) { _warm = b; _hot  = false; return _warm; }
-    @property bool hot (bool b) { _hot  = b; _warm = false; return _hot;  }
-
-    AlCol colorText() { return _on && ! _down ? color.guiTextOn
-                                              : color.guiText; }
 
     @property int hotkey() const { return _hotkey;     }
     @property int hotkey(int i)  { return _hotkey = i; }
 
+    WhenToExecute whenToExecute;
+
     // execute is read-only. Derived classes should make their own bool
     // and then override execute().
-    @property bool execute() const { return _execute; }
+    @property bool execute() const              { return _execute; }
+    @property void onExecute(void delegate() f) { _onExecute = f;  }
 
-    @property void onExecute(void delegate() f) { _onExecute = f; }
+    @property bool down() const { return _down; }
+    @property bool on  () const { return _on;   }
+
+    @property bool down(in bool b)
+    {
+        if (_down != b) {
+            _down = b;
+            reqDraw();
+        }
+        return _down;
+    }
+
+    @property bool on(in bool b)
+    {
+        if (_on != b) {
+            _on = b;
+            reqDraw();
+        }
+        return _on;
+    }
+
+    AlCol colorText() { return _on && ! _down ? color.guiTextOn
+                                              : color.guiText; }
+
 
 private:
 
-    bool _warm;   // if true, activate upon mouse click, not on mouse release
-    bool _hot;    // if true, activate upon mouse down,  not on click/release
     int  _hotkey; // default is 0, which is not a key.
 
     bool _execute;
@@ -62,30 +80,29 @@ calcSelf()
 
     if (hidden) {
         _execute = false;
+        _down    = false;
     }
-    else {
-        // Appear pressed down, but not activated? This is only possible
-        // in cold mode. We're using the same check for switching back off
-        // a warm button too, but never for hot buttons.
-        if (! _hot) {
-            if (mouseHere && mouseHeldLeft && (! _warm || ! _on)) {
-                if (! _down) reqDraw();
-                _down = true;
-            }
-            else {
-                if (_down) reqDraw();
-                _down = false;
-            }
-        }
-        // Check whether to execute by clicks/releases or hotkey down.
-        _execute = keyTapped(_hotkey);
-        _execute = _execute
-            || (! _warm && ! _hot && mouseHere && mouseReleaseLeft)
-            || (  _warm && ! _hot && mouseHere && mouseClickLeft)
-            || (             _hot && mouseHere && mouseHeldLeft);
-        if (_onExecute !is null && _execute)
-            _onExecute();
+    else final switch (whenToExecute) {
+    case WhenToExecute.whenMouseRelease:
+        down     = mouseHere && mouseHeldLeft;
+        _execute = mouseHere && mouseReleaseLeft || _hotkey.keyTapped;
+        break;
+    case WhenToExecute.whenMouseClick:
+        down     = mouseHere && mouseHeldLeft;
+        _execute = mouseHere && mouseClickLeft || _hotkey.keyTapped;
+        break;
+    case WhenToExecute.whenMouseHeld:
+        down     = false;
+        _execute = mouseHere && mouseHeldLeft || _hotkey.keyTapped;
+        break;
+    case WhenToExecute.whenMouseClickAllowingRepeats:
+        down     = mouseHere && mouseHeldLeft;
+        _execute = mouseHere && mouseHeldLongLeft
+            || _hotkey.keyTappedAllowingRepeats;
+        break;
     }
+    if (_onExecute !is null && _execute)
+        _onExecute();
 }
 
 

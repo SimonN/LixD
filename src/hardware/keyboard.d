@@ -22,7 +22,7 @@ bool keyReleased(int alkey) { return _rlsd[alkey];     }
 bool keyTappedAllowingRepeats(int alkey)
 {
     return _once[alkey]
-        || _hold[alkey] > basics.globals.ticksPerSecond / 3;
+        || _hold[alkey] > basics.globals.ticksForDoubleClick;
 }
 
 @property bool backspace()  { return _backspace;   } // detects hold-repeats

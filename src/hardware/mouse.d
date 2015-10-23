@@ -24,6 +24,9 @@ void calc();
 @property int  mouseHeldLeft()          { return _mouseHeldFor[0]; }
 @property int  mouseHeldRight()         { return _mouseHeldFor[1]; }
 @property int  mouseHeldMiddle()        { return _mouseHeldFor[2]; }
+@property bool mouseHeldLongLeft()      { return _mouseHeldFor[0] > _dSpeed; }
+@property bool mouseHeldLongRight()     { return _mouseHeldFor[1] > _dSpeed; }
+@property bool mouseHeldLongMiddle()    { return _mouseHeldFor[2] > _dSpeed; }
 @property int  mouseReleaseLeft()       { return _mouseRelease[0]; }
 @property int  mouseReleaseRight()      { return _mouseRelease[1]; }
 @property int  mouseReleaseMiddle()     { return _mouseRelease[2]; }
@@ -58,7 +61,7 @@ private:
     int [3] _mouseRelease; // just released button after being held for ...
     int [3] _mouseSince;   // how long ago was the last click, for doubleclick
 
-    immutable int _doubleclickSpeed = basics.globals.ticksPerSecond / 3;
+    alias _dSpeed = basics.globals.ticksForDoubleClick;
 
     void set_mouse_accel_on_windows(bool);
 
@@ -135,7 +138,7 @@ void calc()
         case ALLEGRO_EVENT_MOUSE_BUTTON_DOWN:
             if (i < 0 || i >= 3) break;
             _mouseClick  [i] = true;
-            _mouseDouble [i] = (_mouseSince[i] < _doubleclickSpeed);
+            _mouseDouble [i] = (_mouseSince[i] < _dSpeed);
             _mouseSince  [i] = 0;
             _mouseHeldFor[i] = 1;
             _trapMouse       = true;

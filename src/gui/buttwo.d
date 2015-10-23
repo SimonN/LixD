@@ -7,7 +7,7 @@ module gui.buttwo;
  * Don't execute continuously on LMB hold after a while.
  */
 
-import basics.globals; // bitmap file for the spawnint button
+import basics.globals; // bitmap file for the spawnint button, doubleclick spd
 import graphic.cutbit;
 import graphic.gralib;
 import gui;
@@ -19,12 +19,13 @@ class TwoTasksButton : BitmapButton {
     this(Geom g, const(Cutbit) cb)
     {
         super(g, cb);
+        whenToExecute = Button.WhenToExecute.whenMouseClickAllowingRepeats;
+        // The default behavior for the left mouse button, therefore,
+        // is like a spawn interval button. The right mouse function
+        // always works like Button's whenMouseDown and can't be configured.
+        // Setting whenToExecute configures the left mouse function only.
     }
 
-    // Executing spawn interval buttons works differently from executing
-    // normal buttons. Normal buttons execute on mouse release, this button
-    // executes on a mouse downpress, and can execute repeatedly when the
-    // mouse button is held down. What a joy:
     @property bool executeLeft()  const { return _executeLeft;  }
     @property bool executeRight() const { return _executeRight; }
 
@@ -43,39 +44,21 @@ private:
     bool _executeRight;
 
     int _hotkeyRight;
-    int _ticksLMBIsHeldFor; // to have left mouse button (LMB) behave like
-                            // a keypress that's repeated after a while.
-protected:                  // Doesn't exist for RMB, only for hotkeyRight.
+
+protected:
 
     override void calcSelf()
     {
+        super.calcSelf();
         _executeLeft  = false;
         _executeRight = false;
-        down          = false;
 
-        if (hidden) {
-            _ticksLMBIsHeldFor = 0;
+        if (hidden)
             return;
-        }
 
-        // don't call Button.calcSelf, we're executing on mouse release
-        _executeLeft  = hardware.keyboard.keyTapped(hotkey);
-        _executeRight = hardware.keyboard.keyTapped(_hotkeyRight);
-
-        if (isMouseHere) {
-            _executeLeft  = _executeLeft  || mouseClickLeft();
-            _executeRight = _executeRight || mouseClickRight();
-            if (mouseHeldLeft)
-                ++_ticksLMBIsHeldFor;
-            else
-                _ticksLMBIsHeldFor = 0;
-        }
-        else {
-            _ticksLMBIsHeldFor = 0;
-        }
-        if (! warm && ! hot)
-            if (_ticksLMBIsHeldFor > 30)
-                _executeLeft = true;
+        _executeLeft  = super.execute;
+        _executeRight = isMouseHere && mouseClickRight()
+                     || hardware.keyboard.keyTapped(_hotkeyRight);
 
         down = keyHeld(hotkey) || keyHeld(_hotkeyRight)
             || (isMouseHere && (mouseHeldLeft || mouseHeldRight));
