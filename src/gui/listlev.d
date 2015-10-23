@@ -19,7 +19,7 @@ import gui;
 import level.metadata;
 
 /*  package void -- module-scope function
- *  sort_filenames_by_order_txt_then_alpha(Filename[], Filename dir, bool)
+ *  sortFilenamesByOrderTxtThenAlpha(Filename[], Filename dir, bool)
  *
  *      Sorts the array by the ordering file found in in the dir (2nd arg).
  *      Set bool to true if we're sorting directories, not regular files.
@@ -29,26 +29,26 @@ class ListLevel : ListFile {
 
 public:
 
-    void write_file_names(bool b) { _write_file_names = b; }
-    void replay_style    (bool b) { _replay_style     = b; }
-    void checkmark_style (bool b) { _checkmark_style  = b; }
+    void writeFileNames(bool b) { _writeFileNames = b; }
+    void replayStyle    (bool b) { _replayStyle     = b; }
+    void checkmarkStyle (bool b) { _checkmarkStyle  = b; }
 
     // why public: this isn't invoked by others, but passable as their crit
-    static bool search_crit_level(in Filename fn)
+    static bool searchCrit_level(in Filename fn)
     {
-        return fn.file      != glo.file_level_dir_order
-         &&    fn.file      != glo.file_level_dir_english
-         &&    fn.file      != glo.file_level_dir_german
-         && (  fn.extension == glo.ext_level
-         ||    fn.extension == glo.ext_level_orig
-         ||    fn.extension == glo.ext_level_lemmini);
+        return fn.file      != glo.fileLevelDirOrder
+         &&    fn.file      != glo.fileLevelDirEnglish
+         &&    fn.file      != glo.fileLevelDirGerman
+         && (  fn.extension == glo.filenameExtLevel
+         ||    fn.extension == glo.filenameExtLevelOrig
+         ||    fn.extension == glo.filenameExtLevelLemmini);
     }
 
 private:
 
-    bool _write_file_names; // "dateiname: Levelname" anstatt "Levelname"
-    bool _replay_style;     // Replay-Infos anfordern statt Levelinfos
-    bool _checkmark_style;  // Einzelspieler: Geschaffte Levels abhaken
+    bool _writeFileNames; // "dateiname: Levelname" anstatt "Levelname"
+    bool _replayStyle;     // Replay-Infos anfordern statt Levelinfos
+    bool _checkmarkStyle;  // Einzelspieler: Geschaffte Levels abhaken
 
 
 
@@ -57,64 +57,64 @@ public:
 this(Geom g)
 {
     super(g);
-    search_crit = &search_crit_level;
-    file_sorter = delegate void(Filename[] arr) {
-        sort_filenames_by_order_txt_then_alpha(arr, current_dir, false);
+    searchCrit = &searchCrit_level;
+    fileSorter = delegate void(Filename[] arr) {
+        sortFilenamesByOrderTxtThenAlpha(arr, currentDir, false);
     };
 }
 
 
 
 protected override Button
-new_file_button(int nr_from_top, int total_nr, in Filename fn)
+newFileButton(int nr_from_top, int total_nr, in Filename fn)
 {
-    string button_text;
+    string buttonText;
     // We're using ' ' to pad spaces before the digits whenever there are
     // numbers with different length to be printed. We should use a space
     // that's the same width as a digit. Maybe look back into this.
-    if (! _write_file_names && ! _replay_style) {
-        int max = files_total;
+    if (! _writeFileNames && ! _replayStyle) {
+        int max = filesTotal;
         int cur = total_nr + 1; // +1 more pleasing for non-programmers
-        int      leading_spaces = 0;
-        while (max /= 10) ++leading_spaces;
-        while (cur /= 10) --leading_spaces;
-        button_text ~= format("%s%d. ",
-                       ' '.repeat(leading_spaces), total_nr + 1);
+        int      leadingSpaces = 0;
+        while (max /= 10) ++leadingSpaces;
+        while (cur /= 10) --leadingSpaces;
+        buttonText ~= format("%s%d. ",
+                       ' '.repeat(leadingSpaces), total_nr + 1);
         // filename or fetched level name will be written later on.
     }
     else {
-        button_text ~= fn.file_no_ext_no_pre ~ ": ";
+        buttonText ~= fn.fileNoExtNoPre ~ ": ";
     }
 
     LevelMetaData lev;
 
-    if (_replay_style) {
+    if (_replayStyle) {
         assert (false, "replay style not implemented yet");
         // DTODOREPLAY
         /*
         Replay r(f);
-        lev = new LevelMetaData(r.get_level_filename());
-        button_text ~= lev.get_name();
+        lev = new LevelMetaData(r.get_levelFilename());
+        buttonText ~= lev.get_name();
         */
     }
     else {
         lev = new LevelMetaData(fn);
-        button_text ~= lev.name;
+        buttonText ~= lev.name;
     }
 
     TextButton t = new TextButton(new Geom(0, nr_from_top * 20, xlg, 20));
-    t.text = button_text;
-    t.align_left = true;
+    t.text = buttonText;
+    t.alignLeft = true;
 
-    if (_checkmark_style) {
-        const(Result) result = basics.user.get_level_result(fn);
+    if (_checkmarkStyle) {
+        const(Result) result = basics.user.getLevelResult(fn);
         if (result) {
-            if      (result.built     != lev.built)    t.check_frame = 3;
-            else if (result.lix_saved == lev.initial)  t.check_frame = 1;
-            else if (result.lix_saved >= lev.required) t.check_frame = 2;
-            else                                       t.check_frame = 4;
+            if      (result.built    != lev.built)    t.checkFrame = 3;
+            else if (result.lixSaved == lev.initial)  t.checkFrame = 1;
+            else if (result.lixSaved >= lev.required) t.checkFrame = 2;
+            else                                      t.checkFrame = 4;
         }
-        else t.check_frame = 0;
+        else t.checkFrame = 0;
     }
     return t;
 }
@@ -122,11 +122,11 @@ new_file_button(int nr_from_top, int total_nr, in Filename fn)
 
 
 protected override Button
-new_flip_button()
+newFlipButton()
 {
     TextButton t = new TextButton(new Geom(0,
-        bottom_button() * 20, xlg, 20)); // both 20 == height of button
-    t.text = Lang.common_dir_flip_page.transl;
+        bottomButton() * 20, xlg, 20)); // both 20 == height of button
+    t.text = Lang.commonDirFlipPage.transl;
     return t;
 }
 
@@ -137,7 +137,7 @@ new_flip_button()
 
 // module scope, not member of class
 package void
-sort_filenames_by_order_txt_then_alpha(
+sortFilenamesByOrderTxtThenAlpha(
     Filename[]  files,
     in Filename dir_with_order_file,
     bool we_sort_dirs // this is a little kludge, we add slashes to the
@@ -147,8 +147,8 @@ sort_filenames_by_order_txt_then_alpha(
     // dir_with_oder_file and only have appended the order file's substring.
     string[] orders;
     try
-        orders = fill_vector_from_file_raw(new Filename(
-            dir_with_order_file.dir_rootful ~ glo.file_level_dir_order));
+        orders = fillVectorFromFileRaw(new Filename(
+            dir_with_order_file.dirRootful ~ glo.fileLevelDirOrder));
     catch (Exception e) {
         // do nothing, missing ordering file is not an error at all
     }
@@ -168,7 +168,7 @@ sort_filenames_by_order_txt_then_alpha(
         // (Filename[] files). What is encountered earliest shall go at the
         // very beginning.
         foreach (orit; orders) {
-            Filename fn = new Filename(dir_with_order_file.dir_rootful ~ orit);
+            Filename fn = new Filename(dir_with_order_file.dirRootful ~ orit);
             Filename[] found = unsorted_slice.find(fn);
             if (found.length) {
                 swap(found[0], unsorted_slice[0]);

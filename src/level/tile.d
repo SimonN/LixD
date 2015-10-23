@@ -26,7 +26,6 @@ enum TileType {
     GOAL,
     TRAP,
     WATER,   // subtype 1 = fire
-    ONEWAY,  // subtype 1 = pointing right instead of left
     FLING,	 // subtype & 1 = always same xdir, subtype & 2 = non-constant
     TRAMPOLINE,
     MAX
@@ -41,32 +40,32 @@ public:
     TileType type;
     int  subtype;
 
-    int  selbox_x;  // These coordinates locate the smallest rectangle inside
-    int  selbox_y;  // the object's cutbit's frame (0, 0) that still holds all
-    int  selbox_xl; // nontransparent pixels. This refines the selection
-    int  selbox_yl; // with a pulled selection rectangle in the Editor.
+    int  selboxX;  // These coordinates locate the smallest rectangle inside
+    int  selboxY;  // the object's cutbit's frame (0, 0) that still holds all
+    int  selboxXl; // nontransparent pixels. This refines the selection
+    int  selboxYl; // with a pulled selection rectangle in the Editor.
 
-    @property int trigger_x() const
+    @property int triggerX() const
     {
-        return _trigger_x - _trigger_xc * trigger_xl/2;
+        return _triggerX - _triggerXc * triggerXl/2;
     }
 
-    @property int trigger_y() const
+    @property int triggerY() const
     {
-        return _trigger_y - _trigger_yc * trigger_yl/2;
+        return _triggerY - _triggerYc * triggerYl/2;
     }
 
-    int  trigger_xl;
-    int  trigger_yl;
+    int  triggerXl;
+    int  triggerYl;
 
     // these are not used for everything
-    int  special_x; // FLING: x-direction, HATCH: start of opening anim
-    int  special_y; // FLING: y-direction
+    int  specialX; // FLING: x-direction, HATCH: start of opening anim
+    int  specialY; // FLING: y-direction
 
     Sound sound;
 
     // named constructor
-    static Tile take_over_cutbit(Cutbit, TileType = TileType.EMPTY, int = 0);
+    static Tile takeOverCutbit(Cutbit, TileType = TileType.EMPTY, int = 0);
 
     ~this() {
         if (cb) destroy(cb);
@@ -81,10 +80,10 @@ public:
 
 private:
 
-    int  _trigger_x;  // raw data, can be center or left
-    int  _trigger_y;  // raw data, can be center or top
-    bool _trigger_xc; // center around trigger_x instead of going right from it
-    bool _trigger_yc; // center around trigger_y instead of going down from it
+    int  _triggerX;  // raw data, can be center or left
+    int  _triggerY;  // raw data, can be center or top
+    bool _triggerXc; // center around triggerX instead of going right from it
+    bool _triggerYc; // center around triggerY instead of going down from it
 
     this() { }
 
@@ -92,7 +91,7 @@ private:
 
 public:
 
-static Tile take_over_cutbit(
+static Tile takeOverCutbit(
     Cutbit    _cb,
     TileType  _type = TileType.EMPTY,
     int       _subtype = 0
@@ -105,8 +104,8 @@ static Tile take_over_cutbit(
         type     = _type;
         subtype  = _subtype;
 
-        selbox_x = cb.xl; // Initializing the selbox with the smallest
-        selbox_y = cb.yl; // selbox possible, starting at the wrong ends
+        selboxX = cb.xl; // Initializing the selbox with the smallest
+        selboxY = cb.yl; // selbox possible, starting at the wrong ends
     }
     new_tile.set_nice_defaults_based_on_type();
     new_tile.determine_selection_box();
@@ -120,36 +119,36 @@ private void set_nice_defaults_based_on_type()
 {
     switch (type) {
     case TileType.HATCH:
-        _trigger_x = cb.xl / 2;
-        _trigger_y = std.algorithm.max(20, cb.yl - 24);
-        special_x  = 1;
+        _triggerX = cb.xl / 2;
+        _triggerY = std.algorithm.max(20, cb.yl - 24);
+        specialX  = 1;
         break;
     case TileType.GOAL:
-        _trigger_x = cb.xl / 2;
-        _trigger_y = cb.yl - 2;
-        trigger_xl = 12;
-        trigger_yl = 12;
-        _trigger_xc = true;
-        _trigger_yc = true;
+        _triggerX = cb.xl / 2;
+        _triggerY = cb.yl - 2;
+        triggerXl = 12;
+        triggerYl = 12;
+        _triggerXc = true;
+        _triggerYc = true;
         break;
     case TileType.TRAP:
-        _trigger_x = cb.xl / 2;
-        _trigger_y = cb.yl * 4 / 5;
-        trigger_xl = 4; // _xl was 6 before July 2014, but 6 is not symmetric
-        trigger_yl = 6; // on a piece with width 16 and (lix-xl % 2 == 0)
-        _trigger_xc = true;
-        _trigger_yc = true;
+        _triggerX = cb.xl / 2;
+        _triggerY = cb.yl * 4 / 5;
+        triggerXl = 4; // _xl was 6 before July 2014, but 6 is not symmetric
+        triggerYl = 6; // on a piece with width 16 and (lix-xl % 2 == 0)
+        _triggerXc = true;
+        _triggerYc = true;
         sound      = Sound.SPLAT;
         break;
     case TileType.WATER:
-        _trigger_x = 0;
-        _trigger_y = 20;
-        trigger_xl = cb.xl;
-        trigger_yl = cb.yl - 20;
+        _triggerX = 0;
+        _triggerY = 20;
+        triggerXl = cb.xl;
+        triggerYl = cb.yl - 20;
         if (subtype) {
             // then it's fire, not water
-            _trigger_y = 0;
-            trigger_yl = cb.yl;
+            _triggerY = 0;
+            triggerYl = cb.yl;
         }
         break;
     default:
@@ -166,39 +165,39 @@ private void determine_selection_box()
 
     for  (int xf = 0; xf < cb.xfs; ++xf)
      for (int yf = 0; yf < cb.yfs; ++yf) {
-        int  x_min = -1;
-        int  x_max = cb.xl;
-        int  y_min = -1;
-        int  y_max = cb.yl;
+        int  xMin = -1;
+        int  xMax = cb.xl;
+        int  yMin = -1;
+        int  yMax = cb.yl;
 
-        WHILE_X_MAX: while (x_max >= 0) {
-            x_max -= 1;
+        WHILE_X_MAX: while (xMax >= 0) {
+            xMax -= 1;
             for (int y = 0; y < cb.yl; y += 1)
-             if (cb.get_pixel(xf, yf, x_max, y) != color.transp)
+             if (cb.get_pixel(xf, yf, xMax, y) != color.transp)
              break WHILE_X_MAX;
         }
-        WHILE_X_MIN: while (x_min < x_max) {
-            x_min += 1;
+        WHILE_X_MIN: while (xMin < xMax) {
+            xMin += 1;
             for (int y = 0; y < cb.yl; y += 1)
-             if (cb.get_pixel(xf, yf, x_min, y) != color.transp)
+             if (cb.get_pixel(xf, yf, xMin, y) != color.transp)
              break WHILE_X_MIN;
         }
-        WHILE_Y_MAX: while (y_max >= 0) {
-            y_max -= 1;
+        WHILE_Y_MAX: while (yMax >= 0) {
+            yMax -= 1;
             for (int x = 0; x < cb.xl; x += 1)
-             if (cb.get_pixel(xf, yf, x, y_max) != color.transp)
+             if (cb.get_pixel(xf, yf, x, yMax) != color.transp)
              break WHILE_Y_MAX;
         }
-        WHILE_Y_MIN: while (y_min < y_max) {
-            y_min += 1;
+        WHILE_Y_MIN: while (yMin < yMax) {
+            yMin += 1;
             for (int x = 0; x < cb.xl; x += 1)
-             if (cb.get_pixel(xf, yf, x, y_min) != color.transp)
+             if (cb.get_pixel(xf, yf, x, yMin) != color.transp)
              break WHILE_Y_MIN;
         }
-        selbox_x  = min(selbox_x, x_min);
-        selbox_y  = min(selbox_y, y_min);
-        selbox_xl = max(selbox_xl, x_max - x_min + 1);
-        selbox_yl = max(selbox_yl, y_max - y_min + 1);
+        selboxX  = min(selboxX,  xMin);
+        selboxY  = min(selboxY,  yMin);
+        selboxXl = max(selboxXl, xMax - xMin + 1);
+        selboxYl = max(selboxYl, yMax - yMin + 1);
     }
 }
 
@@ -208,58 +207,58 @@ void read_definitions_file(in Filename filename)
 {
     // We assume that the object's xl, yl, type, and subtype
     // have been correctly set by the constructor.
-    IoLine[] lines = fill_vector_from_file_nothrow(filename);
+    IoLine[] lines = fillVectorFromFileNothrow(filename);
 
     foreach (i; lines) if (i.type == '#') {
-        if      (i.text1 == objdef_ta_absolute_x) {
-            _trigger_x = i.nr1;
-            _trigger_xc = false;
+        if      (i.text1 == tileDefTAAbsoluteX) {
+            _triggerX = i.nr1;
+            _triggerXc = false;
         }
-        else if (i.text1 == objdef_ta_absolute_y) {
-            _trigger_y = i.nr1;
-            _trigger_yc = false;
+        else if (i.text1 == tileDefTAAbsoluteY) {
+            _triggerY = i.nr1;
+            _triggerYc = false;
         }
-        else if (i.text1 == objdef_ta_from_center_x) {
-            _trigger_x = cb.xl / 2 + i.nr1;
-            _trigger_xc = true;
+        else if (i.text1 == tileDefTAFromCenterX) {
+            _triggerX = cb.xl / 2 + i.nr1;
+            _triggerXc = true;
         }
-        else if (i.text1 == objdef_ta_from_center_y) {
-            _trigger_y = cb.yl / 2 + i.nr1;
-            _trigger_yc = true;
+        else if (i.text1 == tileDefTAFromCenterY) {
+            _triggerY = cb.yl / 2 + i.nr1;
+            _triggerYc = true;
         }
-        else if (i.text1 == objdef_ta_from_bottom_y) {
-            _trigger_y = cb.yl - 2 + i.nr1;
-            _trigger_yc = true;
+        else if (i.text1 == tileDefTAFromBottomY) {
+            _triggerY = cb.yl - 2 + i.nr1;
+            _triggerYc = true;
         }
-        else if (i.text1 == objdef_ta_xl) {
-            trigger_xl = i.nr1;
-            if (trigger_xl < 0) trigger_xl = 0;
+        else if (i.text1 == tileDefTAXl) {
+            triggerXl = i.nr1;
+            if (triggerXl < 0) triggerXl = 0;
         }
-        else if (i.text1 == objdef_ta_yl) {
-            trigger_yl = i.nr1;
-            if (trigger_yl < 0) trigger_yl = 0;
+        else if (i.text1 == tileDefTAYl) {
+            triggerYl = i.nr1;
+            if (triggerYl < 0) triggerYl = 0;
         }
-        else if (i.text1 == objdef_hatch_opening_frame) {
+        else if (i.text1 == tileDefHatchOpeningFrame) {
             type = TileType.HATCH;
-            special_x = i.nr1;
+            specialX = i.nr1;
         }
-        else if (i.text1 == objdef_fling_nonpermanent) {
+        else if (i.text1 == tileDefFlingNonpermanent) {
             type = TileType.FLING;
             subtype |= 2; // bit 1 nonpermanent trap
         }
-        else if (i.text1 == objdef_fling_ignore_orient) {
+        else if (i.text1 == tileDefFlingIgnoreOrientation) {
             type = TileType.FLING;
             subtype |= 1; // bit 0 signifies fixed direction
         }
-        else if (i.text1 == objdef_fling_x) {
+        else if (i.text1 == tileDefFlingX) {
             type = TileType.FLING;
-            special_x = i.nr1;
+            specialX = i.nr1;
         }
-        else if (i.text1 == objdef_fling_y) {
+        else if (i.text1 == tileDefFlingY) {
             type = TileType.FLING;
-            special_y = i.nr1;
+            specialY = i.nr1;
         }
-        else if (i.text1 == objdef_type_trampoline) {
+        else if (i.text1 == tileDefTypeTrampoline) {
             type = TileType.TRAMPOLINE;
         }
     }
@@ -280,7 +279,6 @@ TileType perm(in int n)
      :     n == 6 ? TileType.FLING
      :     n == 7 ? TileType.TRAMPOLINE
      :     n == 8 ? TileType.TERRAIN
-     //:   n == 9 ? TileType.ONEWAY
      :              TileType.EMPTY; // I don't know a proper list
 }
 

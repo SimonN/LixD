@@ -5,7 +5,7 @@ import std.algorithm; // swap
 import basics.globals; // fuse image
 import basics.help;
 import basics.matrix;
-import basics.user; // multiple_builders
+import basics.user; // multipleBuilders
 import game.lookup;
 import game.tribe;
 import graphic.color;
@@ -68,8 +68,8 @@ public:
     static Map           ground_map;
     static EffectManager effect;
 
-    int special_x;
-    int special_y;
+    int specialX;
+    int specialY;
     int queue; // builders and platformers can be queued in advance
 
     bool marked; // used by the game class, marks if already updated
@@ -126,8 +126,8 @@ public:
 /*  void add_fling(int, int, bool (from same tribe) = false);
  *  void reset_fling_new();
  *
- *  static bool get_steel_absolute(in int, in int);
- *  bool get_steel         (in int = 0, in int = 0);
+ *  static bool getSteel_absolute(in int, in int);
+ *  bool getSteel         (in int = 0, in int = 0);
  *
  *  void add_land          (in int = 0, in int = 0, in AlCol = color.transp);
  *  void add_land_absolute (in int = 0, in int = 0, in AlCol = color.transp);
@@ -157,7 +157,7 @@ public:
     @property int frame() const   { return _frame;     }
     @property int frame(in int i) { return _frame = i; }
 /*           void next_frame();
- *  override bool is_last_frame() const;
+ *  override bool isLastFrame() const;
  */
     @property auto body_encounters() const        { return _enc_body;     }
     @property auto foot_encounters() const        { return _enc_foot;     }
@@ -184,7 +184,7 @@ this(
     int   new_ex,
     int   new_ey
 ) {
-    super(get_spritesheet(new_tribe ? new_tribe.style : Style.GARDEN),
+    super(getLixSpritesheet(new_tribe ? new_tribe.style : Style.GARDEN),
           ground_map, even(new_ex) - lix.enums.ex_offset,
                            new_ey  - lix.enums.ey_offset);
     _tribe = new_tribe;
@@ -214,7 +214,7 @@ this(Lixxie rhs)
     _ex    = rhs._ex;
     _ey    = rhs._ey;
 
-    super(graphic.gralib.get_spritesheet(_style), ground_map,
+    super(graphic.gralib.getLixSpritesheet(_style), ground_map,
         _ex - lix.enums.ex_offset,
         _ey - lix.enums.ey_offset);
 
@@ -226,8 +226,8 @@ this(Lixxie rhs)
     _enc_body = rhs._enc_body;
     _enc_foot = rhs._enc_foot;
 
-    special_x = rhs.special_x;
-    special_y = rhs.special_y;
+    specialX = rhs.specialX;
+    specialY = rhs.specialY;
     queue     = rhs.queue;
     marked    = rhs.marked;
 
@@ -257,7 +257,7 @@ static void set_static_maps(Torbit tb, Lookup lo, Map ma)
 
 
 
-private XY get_fuse_xy() const
+private XY get_fuseXy() const
 {
     XY ret = countdown.get(frame, ac);
     if (_dir < 0)
@@ -273,13 +273,13 @@ private XY get_fuse_xy() const
 ex(in int n) {
     _ex = basics.help.even(n);
     super.x = _ex - lix.enums.ex_offset;
-    if (ground_map.torus_x)
-        _ex = positive_mod(_ex, land.xl);
-    immutable XY fuse_xy = get_fuse_xy();
+    if (ground_map.torusX)
+        _ex = positiveMod(_ex, land.xl);
+    immutable XY fuseXy = get_fuseXy();
     _enc_foot |= lookup.get(_ex, _ey);
     _enc_body |= _enc_foot
               |  lookup.get(_ex, _ey - 4)
-              |  lookup.get(fuse_xy.x, fuse_xy.y);
+              |  lookup.get(fuseXy.x, fuseXy.y);
     return _ex;
 }
 
@@ -289,13 +289,13 @@ ex(in int n) {
 ey(in int n) {
     _ey = n;
     super.y = _ey - lix.enums.ey_offset;
-    if (ground_map.torus_y)
-        _ey = positive_mod(_ey, land.yl);
-    immutable XY fuse_xy = get_fuse_xy();
+    if (ground_map.torusY)
+        _ey = positiveMod(_ey, land.yl);
+    immutable XY fuseXy = get_fuseXy();
     _enc_foot |= lookup.get(_ex, _ey);
     _enc_body |= _enc_foot
               |  lookup.get(_ex, _ey - 4)
-              |  lookup.get(fuse_xy.x, fuse_xy.y);
+              |  lookup.get(fuseXy.x, fuseXy.y);
     return _ey;
 }
 
@@ -332,11 +332,11 @@ bool get_in_trigger_area(const EdGraphic gr) const
     assert (false, "DTODO: implement get_in_trigger_area");
     /*
     const Object& ob = *gr.get_object();
-    return ground_map->get_point_in_rectangle(
+    return ground_map->isPointInRectangle(
         get_ex(), get_ey(),
-        gr.get_x() + ob.get_trigger_x(),
-        gr.get_y() + ob.get_trigger_y(),
-        ob.trigger_xl, ob.trigger_yl);
+        gr.get_x() + ob.get_triggerX(),
+        gr.get_y() + ob.get_triggerY(),
+        ob.triggerXl, ob.triggerYl);
     */
 }
 
@@ -371,16 +371,16 @@ int  get_priority  (Ac ac, bool b) { assert (false, "DTODO: get_priority not imp
 
 
 
-bool get_steel(in int px, in int py)
+bool getSteel(in int px, in int py)
 {
-    return lookup.get_steel(_ex + px * _dir, _ey + py);
+    return lookup.getSteel(_ex + px * _dir, _ey + py);
 }
 
 
 
-static bool get_steel_absolute(in int x, in int y)
+static bool getSteel_absolute(in int x, in int y)
 {
-    return lookup.get_steel(x, y);
+    return lookup.getSteel(x, y);
 }
 
 
@@ -395,23 +395,23 @@ void add_land(in int px, in int py, const AlCol col)
 // this one could be static
 void add_land_absolute(in int x = 0, in int y = 0, in AlCol col = color.transp)
 {
-    // DTODOVRAM: land.set_pixel should be very slow, think hard
-    land.set_pixel(x, y, col);
-    lookup.add    (x, y, Lookup.bit_terrain);
+    // DTODOVRAM: land.setPixel should be very slow, think hard
+    land.setPixel(x, y, col);
+    lookup.add    (x, y, Lookup.bitTerrain);
 }
 
 
 
 bool is_solid(in int px, in int py)
 {
-    return lookup.get_solid_even(_ex + px * _dir, _ey + py);
+    return lookup.getSolidEven(_ex + px * _dir, _ey + py);
 }
 
 
 
 bool is_solid_single(in int px, in int py)
 {
-    return lookup.get_solid(_ex + px * _dir, _ey + py);
+    return lookup.getSolid(_ex + px * _dir, _ey + py);
 }
 
 
@@ -450,7 +450,7 @@ int count_steel(int x1, int y1, int x2, int y2)
     int ret = 0;
     for (int ix = even(x1); ix <= even(x2); ix += 2) {
         for (int iy = y1; iy <= y2; ++iy) {
-            if (get_steel(ix, iy)) ++ret;
+            if (getSteel(ix, iy)) ++ret;
         }
     }
     return ret;
@@ -470,13 +470,13 @@ bool remove_pixel(int px, in int py)
     if (_dir < 0) --px;
 
     // test whether the landscape can be dug
-    if (! get_steel(px, py) && is_solid(px, py)) {
-        lookup.rm     (_ex + px * _dir, _ey + py, Lookup.bit_terrain);
-        land.set_pixel(_ex + px * _dir, _ey + py, color.transp);
+    if (! getSteel(px, py) && is_solid(px, py)) {
+        lookup.rm     (_ex + px * _dir, _ey + py, Lookup.bitTerrain);
+        land.setPixel(_ex + px * _dir, _ey + py, color.transp);
         return false;
     }
     // Stahl?
-    else if (get_steel(px, py)) return true;
+    else if (getSteel(px, py)) return true;
     else return false;
 }
 
@@ -484,9 +484,9 @@ bool remove_pixel(int px, in int py)
 
 void remove_pixel_absolute(in int x, in int y)
 {
-    if (! get_steel_absolute(x, y) && lookup.get_solid(x, y)) {
-        lookup.rm(x, y, Lookup.bit_terrain);
-        land.set_pixel(x, y, color.transp);
+    if (! getSteel_absolute(x, y) && lookup.getSolid(x, y)) {
+        lookup.rm(x, y, Lookup.bitTerrain);
+        land.setPixel(x, y, color.transp);
     }
 }
 
@@ -570,7 +570,7 @@ void draw_frame_to_map
     for (int y = 0; y < hs; ++y) {
         for (int x = 0; x < ws; ++x) {
             const AlCol col = get_cutbit().get_pixel(frame, anim, xs+x, ys+y);
-            if (col != color.transp && ! get_steel(xd + x, yd + y)) {
+            if (col != color.transp && ! getSteel(xd + x, yd + y)) {
                 add_land(xd + x, yd + y, col);
             }
         }
@@ -596,16 +596,16 @@ void play_sound_if_trlo(in ref UpdateArgs ua, in Sound sound_id)
 
 
 
-override bool is_last_frame() const
+override bool isLastFrame() const
 {
-    return ! cutbit.frame_exists(frame + 1, ac);
+    return ! cutbit.frameExists(frame + 1, ac);
 }
 
 
 
 void next_frame()
 {
-    if (is_last_frame())
+    if (isLastFrame())
         _frame = 0;
     else _frame++;
 }
@@ -621,9 +621,9 @@ override void draw()
 
     // draw the fuse if necessary
     if (updates_since_bomb > 0) {
-        immutable XY fuse_xy = get_fuse_xy();
-        immutable int fuse_x = fuse_xy.x;
-        immutable int fuse_y = fuse_xy.y;
+        immutable XY fuseXy = get_fuseXy();
+        immutable int fuseX = fuseXy.x;
+        immutable int fuseY = fuseXy.y;
 
         // draw onto this
         Torbit tb = ground_map;
@@ -635,17 +635,17 @@ override void draw()
             // DTODOVRAM: decide on how to draw the pixel-rendered fuse
             const int u = updates_since_bomb;
             x           = (int) (std::sin(u/2.0) * 0.02 * (y-4) * (y-4));
-            tb.set_pixel(fuse_x + x-1, fuse_y + y-1, color[COL_GREY_FUSE_L]);
-            tb.set_pixel(fuse_x + x-1, fuse_y + y  , color[COL_GREY_FUSE_L]);
-            tb.set_pixel(fuse_x + x  , fuse_y + y-1, color[COL_GREY_FUSE_D]);
-            tb.set_pixel(fuse_x + x  , fuse_y + y  , color[COL_GREY_FUSE_D]);
+            tb.setPixel(fuseX + x-1, fuseY + y-1, color[COL_GREY_FUSE_L]);
+            tb.setPixel(fuseX + x-1, fuseY + y  , color[COL_GREY_FUSE_L]);
+            tb.setPixel(fuseX + x  , fuseY + y-1, color[COL_GREY_FUSE_D]);
+            tb.setPixel(fuseX + x  , fuseY + y  , color[COL_GREY_FUSE_D]);
             */
         }
         // draw the flame
-        auto cb = get_internal(file_bitmap_fuse_flame);
+        auto cb = getInternal(fileImageFuse_flame);
         cb.draw(ground_map,
-         fuse_x + x - cb.xl/2,
-         fuse_y + y - cb.yl/2,
+         fuseX + x - cb.xl/2,
+         fuseY + y - cb.yl/2,
          updates_since_bomb % cb.xfs, 0);
     }
     // end of drawing the fuse
@@ -742,7 +742,7 @@ int get_priority(
         case Ac.BUILDER:
         case Ac.PLATFORMER:
             if (new_ac == ac
-             && (! personal || multiple_builders)) p = 1000;
+             && (! personal || multipleBuilders)) p = 1000;
             else if (new_ac != ac)                 p = 4000;
             else                                   return 1;
             break;
@@ -753,7 +753,7 @@ int get_priority(
             else return 1;
 
     }
-    p += (new_ac == Ac.BATTER && batter_priority
+    p += (new_ac == Ac.BATTER && batterPriority
           ? (- updates_since_bomb) : updates_since_bomb);
     p += 400 * runner + 200 * climber + 100 * floater;
     return p;
@@ -801,8 +801,8 @@ void become_default(in Ac new_ac)
 {
     _frame    = 0;
     _ac       = new_ac;
-    special_y = 0;
-    special_x = 0;
+    specialY = 0;
+    specialX = 0;
     queue     = 0;
 }
 

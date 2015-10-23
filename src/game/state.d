@@ -52,9 +52,9 @@ class GameState {
 
     int  update;
     int  clock;
-    bool clock_running;
+    bool clockIsRunning;
 
-    private bool _goals_locked; // in singleplayer, when time has run out
+    private bool _goalsLocked; // in singleplayer, when time has run out
 
     Tribe[] tribes;
 
@@ -72,14 +72,14 @@ class GameState {
     this() { }
 
 /*  this(Gamestate)               -- copy constructor
- *  void foreach_gadget(function) -- apply to each gadget in drawing order
+ *  void foreachGadget(function) -- apply to each gadget in drawing order
  */
     this(GameState rhs)
     {
-        update        = rhs.update;
-        clock         = rhs.clock;
-        clock_running = rhs.clock_running;
-        _goals_locked = rhs._goals_locked;
+        update         = rhs.update;
+        clock          = rhs.clock;
+        clockIsRunning = rhs.clockIsRunning;
+        _goalsLocked   = rhs._goalsLocked;
 
         tribes      = tribes     .clone;
 
@@ -97,16 +97,16 @@ class GameState {
 
     mixin CloneableBase;
 
-    @property bool goals_locked() const { return _goals_locked; }
-    @property bool goals_locked(in bool b)
+    @property bool goalsLocked() const { return _goalsLocked; }
+    @property bool goalsLocked(in bool b)
     {
-        _goals_locked = b;
+        _goalsLocked = b;
         foreach (goal; goals)
-            goal.draw_with_no_sign = _goals_locked;
-        return _goals_locked;
+            goal.drawWithNoSign = _goalsLocked;
+        return _goalsLocked;
     }
 
-    void foreach_gadget(void delegate(Gadget) func)
+    void foreachGadget(void delegate(Gadget) func)
     {
         foreach (g; hatches)     func(g);
         foreach (g; goals)       func(g);
@@ -145,7 +145,7 @@ public:
 
     skconst GameState& get_zero()        { return zero;    }
     skconst GameState& get_user()        { return user;    }
-    skconst Replay&    get_user_replay() { return userrep; }
+    skconst Replay&    get_userReplay() { return userrep; }
 
     const        GameState& get_auto(Ulng);
     void                    calc_save_auto(const GameState&);

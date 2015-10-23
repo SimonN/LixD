@@ -5,7 +5,7 @@ import std.algorithm;
 import basics.alleg5;
 import graphic.color;
 import gui;
-import hardware.mouse; // is_mouse_here
+import hardware.mouse; // isMouseHere
 
 abstract class Element {
 
@@ -25,32 +25,32 @@ abstract class Element {
 
     // to move an element, assign a new Geom object to it.
     @property const(Geom) geom() const { return _geom;                 }
-    @property const(Geom) geom(Geom g) { req_draw(); return _geom = g; }
+    @property const(Geom) geom(Geom g) { reqDraw(); return _geom = g; }
 
-    @property AlCol undraw_color() const  { return _undraw_color;     }
-    @property AlCol undraw_color(AlCol c) { return _undraw_color = c; }
+    @property AlCol undrawColor() const  { return _undrawColor;     }
+    @property AlCol undrawColor(AlCol c) { return _undrawColor = c; }
 
     @property bool hidden() const {             return _hidden;     }
-    @property bool hidden(bool b) { req_draw(); return _hidden = b; }
+    @property bool hidden(bool b) { reqDraw(); return _hidden = b; }
     @property void hide() { hidden = true;  }
     @property void show() { hidden = false; }
 
-    void hide_all_children() { foreach (child; _children) child.hide(); }
+    void hideAllChildren() { foreach (child; _children) child.hide(); }
 
     @property inout(Element[]) children() inout { return _children; }
 
-    bool is_parent_of(in Element ch) const { return _geom is ch._geom.parent; }
+    bool isParentOf(in Element ch) const { return _geom is ch._geom.parent; }
 
-/*  bool is_mouse_here() const;
+/*  bool isMouseHere() const;
  *
- *  void req_draw();
+ *  void reqDraw();
  *
  *      Require a redraw of the element and all its children, because some
  *      data of the element has changed.
  *
- *  void add_child   (Element e);
- *  void add_children(Element[] ...);
- *  void rm_child    (Element e);
+ *  void addChild   (Element e);
+ *  void addChildren(Element[] ...);
+ *  void rmChild    (Element e);
  *
  *      The children are a set, you can have each child only once in there.
  *      The argument must be mutable, since e.geom.parent will be set.
@@ -68,11 +68,11 @@ abstract class Element {
 protected:
 
     // override these
-    void calc_self()   { } // do computations when GUI element has focus
+    void calcSelf()   { } // do computations when GUI element has focus
     void work_self()   { } // do computations always, even when not in focus
-    void draw_self()   { } // draw to the screen, this calls geom.get_xs() etc.
+    void drawSelf()   { } // draw to the screen, this calls geom.get_xs() etc.
 
-/*  void undraw_self();    // Called if appropriate before drawing. This
+/*  void undrawSelf();    // Called if appropriate before drawing. This
  *                            is implemented, you can override, don't have to.
  *
  *  static final void draw_3d_rectangle(xs, ys, xls, yls, col, col, col)
@@ -89,10 +89,10 @@ private:
 
     Geom  _geom;
     bool  _hidden;
-    AlCol _undraw_color; // if != color.transp, then undraw
+    AlCol _undrawColor; // if != color.transp, then undraw
 
     bool drawn;
-    bool draw_required;
+    bool drawRequired;
 
     Element[] _children;
 
@@ -102,14 +102,14 @@ public:
 
 this(Geom g)
 {
-    _geom         = g;
-    _undraw_color = color.transp;
-    draw_required = true;
+    _geom        = g;
+    _undrawColor = color.transp;
+    drawRequired = true;
 }
 
 
 
-void add_child(Element e)
+void addChild(Element e)
 {
     assert (e !is null, "can't add null child");
     assert (_children.find!"a is b"(e) == [], "child has been added before");
@@ -121,15 +121,15 @@ void add_child(Element e)
 
 
 
-void add_children(Element[] elements ...)
+void addChildren(Element[] elements ...)
 {
     foreach (e; elements)
-        add_child(e);
+        addChild(e);
 }
 
 
 
-bool rm_child(Element e)
+bool rmChild(Element e)
 {
     assert (e !is null, "can't rm null child");
     auto found = _children.find!"a is b"(e);
@@ -147,20 +147,20 @@ bool rm_child(Element e)
 
 
 void
-req_draw()
+reqDraw()
 {
-    draw_required = true;
+    drawRequired = true;
     foreach (child; _children)
-        child.req_draw();
+        child.reqDraw();
 }
 
 
 
-bool is_mouse_here() const
+bool isMouseHere() const
 {
     if (! _hidden
-     && get_mx() >= xs && get_mx() < xs + xls
-     && get_my() >= ys && get_my() < ys + yls) return true;
+     && mouseX() >= xs && mouseX() < xs + xls
+     && mouseY() >= ys && mouseY() < ys + yls) return true;
     else return false;
 }
 
@@ -170,7 +170,7 @@ final void calc()
 {
     if (_hidden) return;
     foreach (child; _children) child.calc();
-    calc_self();
+    calcSelf();
 }
 
 
@@ -187,9 +187,9 @@ final void work()
 final void draw()
 {
     if (! _hidden) {
-        if (draw_required) {
-            draw_required = false;
-            draw_self();
+        if (drawRequired) {
+            drawRequired = false;
+            drawSelf();
             drawn = true;
         }
         // In the options menu, all stuff has to be undrawn first, then
@@ -208,24 +208,24 @@ final void draw()
 final void undraw()
 {
     if (drawn) {
-        if (_undraw_color != color.transp)
-            undraw_self();
+        if (_undrawColor != color.transp)
+            undrawSelf();
         drawn = false;
     }
-    draw_required = ! _hidden;
+    drawRequired = ! _hidden;
 }
 
 
 
-void undraw_self()
+void undrawSelf()
 {
-    al_draw_filled_rectangle(xs, ys, xs + xls, ys + yls, _undraw_color);
+    al_draw_filled_rectangle(xs, ys, xs + xls, ys + yls, _undrawColor);
 }
 
 
 
 static final void
-draw_3d_button(
+draw3DButton(
     float xs, float ys, float xls, float yls,
     in AlCol top, in AlCol mid, in AlCol bot
 ) {

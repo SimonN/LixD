@@ -2,7 +2,7 @@ module gui.window;
 
 /* The Window class. Many windows derive from this.
  *
- *  override void hide_all_children(bool)
+ *  override void hideAllChildren(bool)
  *
  *      Does not hide the title bar, but all other children.
  */
@@ -12,16 +12,16 @@ import graphic.color;
 
 class Window : Element {
 
-    static immutable title_ylg = 20;
+    static immutable titleYlg = 20;
 
     this(Geom g, string ti = "")
     {
         super(g);
-        label_title = new Label(new Geom(0, 0, xlg, title_ylg, From.TOP));
-        label_title.color = color.white;
+        labelTitle = new Label(new Geom(0, 0, xlg, titleYlg, From.TOP));
+        labelTitle.color = color.white;
         _title = ti;
 
-        add_child(label_title);
+        addChild(labelTitle);
         prepare();
     }
 
@@ -31,10 +31,10 @@ class Window : Element {
     @property void title   (string s) { _title    = s; prepare(); }
     @property void subtitle(string s) { _subtitle = s; prepare(); }
 
-    override void hide_all_children()
+    override void hideAllChildren()
     {
         foreach (child; children)
-            if (child !is label_title)
+            if (child !is labelTitle)
                 child.hidden = true;
     }
 
@@ -43,28 +43,28 @@ private:
     string _title;
     string _subtitle;
 
-    Label  label_title;
+    Label  labelTitle;
 
     void prepare()
     {
-        label_title.text = subtitle.length ? title ~ " - " ~ subtitle : title;
-        req_draw();
+        labelTitle.text = subtitle.length ? title ~ " - " ~ subtitle : title;
+        reqDraw();
     }
 
 
 
 protected:
 
-    override void draw_self()
+    override void drawSelf()
     {
         // the main area
-        draw_3d_button(xs, ys, xls, yls,
-            color.gui_l, color.gui_m, color.gui_d);
+        draw3DButton(xs, ys, xls, yls,
+            color.guiL, color.guiM, color.guiD);
 
         // the title bar
         // title label is drawn automatically afterwards, because it's a child
-        draw_3d_button(xs, ys, xls, label_title.yls,
-            color.gui_on_l, color.gui_on_m, color.gui_on_d);
+        draw3DButton(xs, ys, xls, labelTitle.yls,
+            color.guiOnL, color.guiOnM, color.guiOnD);
     }
 
 }

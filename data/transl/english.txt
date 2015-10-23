@@ -4,193 +4,190 @@
 // options dialogue. Translate this to your language ("Deutsch" or "Français"),
 // don't have your language's name in English (don't put "German" or "French")
 
-$main_name_of_language          English
-
-$main_loading_1                 ---------- Loading Lix ----------
-$main_loading_2                 ---------- Please Wait ----------
-$main_version                   Version
+$mainNameOfLanguage         English
 
 // used in various dialogues
 
-$common_ok                      Okay
-$common_cancel                  Cancel
-$common_yes                     Yes
-$common_no                      No
-$common_back                    Back
-$common_exit                    Exit
-$common_dir_parent              ..
-$common_dir_flip_page           (more...)
+$commonOk                   Okay
+$commonCancel               Cancel
+$commonYes                  Yes
+$commonNo                   No
+$commonBack                 Back
+$commonExit                 Exit
+$commonDirParent            ..
+$commonDirFlipPage          (more...)
+$commonVersion              Version
 
 // level browsers
 
-$browser_single_title           Single Player
-$browser_network_title          Select Multiplayer level
-$browser_replay_title           Replays
-$browser_play                   Play
-$browser_edit                   Edit
-$browser_replay                 Replay
-$browser_delete                 Delete
-$browser_extract                Extract level
-$browser_export_image           Export image
-$browser_export_image_done      Done.
+$browserSingleTitle         Single Player
+$browserNetworkTitle        Select Multiplayer level
+$browserReplayTitle         Replays
+$browserPlay                Play
+$browserEdit                Edit
+$browserReplay              Replay
+$browserDelete              Delete
+$browserExtract             Extract level
+$browserExport_image        Export image
+$browserExport_imageDone    Done.
 
-$browser_info_author            By:
-$browser_info_initgoal          Save:
-$browser_info_initial           Lix:
-$browser_info_hatches           Hatches:
-$browser_info_goals             Goals:
-$browser_info_skills            Skills:
-$browser_info_clock_2           Overtime:
-$browser_info_author_none       ?
-$browser_info_clock_none        --
+$browserInfoAuthor          By:
+$browserInfoInitgoal        Save:
+$browserInfoInitial         Lix:
+$browserInfoHatches         Hatches:
+$browserInfoGoals           Goals:
+$browserInfoSkills          Skills:
+$browserInfoClock2          Overtime:
+$browserInfoAuthorNone      ?
+$browserInfoClockNone       --
 
-$browser_info_result_saved      Saved:
-$browser_info_result_skills     Skills used:
-$browser_info_result_time       Time used:
-$browser_info_result_old_1      The level has
-$browser_info_result_old_2      been edited.
+$browserInfoResultSaved     Saved:
+$browserInfoResultSkills    Skills used:
+$browserInfoResultTime      Time used:
+$browserInfoResultOld1      The level has
+$browserInfoResultOld2      been edited.
 
-$browser_info_player            Player:
-$browser_info_version           Game:
-$browser_info_built             Level:
-$browser_info_new               is too new
-$browser_info_same              fits!
-$browser_info_old               is too old
-$browser_info_holds_level       contained
+$browserInfoPlayer           Player:
+$browserInfoVersion          Game:
+$browserInfoBuilt            Level:
+$browserInfoNew              is too new
+$browserInfoSame             fits!
+$browserInfoOld              is too old
+$browserInfoHoldsLevel       contained
 
-$browser_box_delete_tit_rep     Delete replay?
-$browser_box_delete_que_rep     Do you really want to delete this replay?
-$browser_box_delete_tit_lev     Delete level?
-$browser_box_delete_que_lev     Do you really want to delete this level?
+$browserBoxDeleteReplayTitle    Delete replay?
+$browserBoxDeleteReplayQuestion Do you really want to delete this replay?
+$browserBoxDeleteLevelTitle     Delete level?
+$browserBoxDeleteLevelQuestion  Do you really want to delete this level?
 
 // networking lobby
 
-$win_lobby_title                Network Game
-$win_lobby_title_lobby          Lobby
-$win_lobby_title_room           Room #
-$win_lobby_exit                 Leave network
-$win_lobby_unstable_central     (Experimental version. Please don't use central server.)
-$win_lobby_start_central        Connect to central server
-$win_lobby_start_server         Host a game yourself
-$win_lobby_start_client         Connect to:
-$win_lobby_chat                 Chat:
-$win_lobby_select_level         Choose level
-$win_lobby_ready                Ready for start
-$win_lobby_room_number          Room #
-$win_lobby_room_player          player
-$win_lobby_room_players         players
-$win_lobby_room_create          Open a new room
-$win_lobby_room_leave           Leave room
+$winLobbyTitle                Network Game
+$winLobbyTitleLobby          Lobby
+$winLobbyTitleRoom           Room #
+$winLobbyExit                 Leave network
+$winLobbyUnstableCentral     (Experimental version. Please don't use central server.)
+$winLobbyStartServer        Connect to central server
+$winLobbyStartServer         Host a game yourself
+$winLobbyStartClient         Connect to:
+$winLobbyChat                 Chat:
+$winLobbySelectLevel         Choose level
+$winLobbyReady                Ready for start
+$winLobbyRoomNumber          Room #
+$winLobbyRoomPlayer          player
+$winLobbyRoomPlayers         players
+$winLobbyRoomCreate          Open a new room
+$winLobbyRoomLeave           Leave room
 
 // end-of-game dialog, or pause dialog
-$win_game_title                 Game Menu
-$win_game_result                Result
-$win_game_lix_saved             Lix saved:
-$win_game_lix_saved_in_time     Lix saved in time:
-$win_game_resume                Continue
-$win_game_restart               Restart level
-$win_game_save_replay           Save replay
-$win_game_menu                  Exit
-$win_game_comment_perfect       Perfect! All saved!
+$winGameTitle                 Game Menu
+$winGameResult                Result
+$winGameLix_saved             Lix saved:
+$winGameLix_savedInTime     Lix saved in time:
+$winGameResume                Continue
+$winGameRestart               Restart level
+$winGameSaveReplay           Save replay
+$winGameMenu                  Exit
+$win_game_commentPerfect       Perfect! All saved!
 $win_game_comment_more          Super, more than necessary!
 $win_game_comment_exactly       Target reached exactly!
 $win_game_comment_less          Sorry, those were not enough.
 $win_game_comment_none          That was nothing... Try again?
-$win_game_result_skills         Skills used:
-$win_game_result_time           Time taken:
-$win_game_net_first             Awesome! You're the champion!
-$win_game_net_second            Well done, nice second place.
-$win_game_net_middle            An okay outcome... Revanche?
-$win_game_net_last              Sorry, you lie behind this time.
-$win_game_net_first_tie         Great, you're among the champs!
-$win_game_net_last_tie          At least you're not alone there.
-$win_game_net_all_tie           What's that? No true winner?
-$win_game_net_zero              Rock bottom! Did you nuke them?
-$win_game_net_all_zero          Do we have a nuclear winter?
-$win_game_replay_win_one        has won!
-$win_game_replay_win_team       have won!
-$win_game_replay_tie            The game is a tie.
-$win_game_overwrite_title       Overwrite Replay?
-$win_game_overwrite_question    Do you really want to overwrite this replay?
+$winGameResultSkillsUsed         Skills used:
+$winGameResultTimeUsed           Time taken:
+$winGameNetFirst             Awesome! You're the champion!
+$winGameNetSecond            Well done, nice second place.
+$winGameNetMiddle            An okay outcome... Revanche?
+$winGameNetLast              Sorry, you lie behind this time.
+$winGameNetTieForFirst         Great, you're among the champs!
+$winGameNetTieForLast          At least you're not alone there.
+$winGameNetEverybodyTies           What's that? No true winner?
+$winGameNetZero              Rock bottom! Did you nuke them?
+$winGameNetEverybodyZero          Do we have a nuclear winter?
+$winGameReplayWinOne        has won!
+$winGameReplayWinTeam       have won!
+$winGameReplayTie            The game is a tie.
+$winGameOverwriteTitle       Overwrite Replay?
+$winGameOverwriteQuestion    Do you really want to overwrite this replay?
 
 // help texts inside the game
 
-$gameplay_rate_minus            Raise spawn interval: Lix enter the level slower.
-$gameplay_rate_plus             Lower spawn interval: Lix enter the level faster.
-$gameplay_pause                 Pause the game.
-$gameplay_zoom                  Zoom into the level.
-$gameplay_speed_slow            Slow motion.
-$gameplay_speed_fast            Fast forward.
-$gameplay_speed_turbo           Turbo fast forward.
-$gameplay_state_save            Quicksave the current game position.
-$gameplay_state_load            Load the previously quicksaved position.
-$gameplay_restart               Restart the level.
-$gameplay_nuke                  Nuke. Activate with a double click.
-$gameplay_hint_first            View a hint for this level.
-$gameplay_hint_next             View the next hint.
-$gameplay_hint_prev             View the previous hint.
-$gameplay_hint_off              Hide the hint.
-$gameplay_spec_tribe            Examine the skills of a different team.
+$gameSpawnintSlower            Raise spawn interval: Lix enter the level slower.
+$gameSpawnintFaster             Lower spawn interval: Lix enter the level faster.
+$gamePause                 Pause the game.
+$gameZoom                  Zoom into the level.
+$gameSpeed_slow            Slow motion.
+$gameSpeed_fast            Fast forward.
+$gameSpeedTurbo           Turbo fast forward.
+$gameStateSave            Quicksave the current game position.
+$gameStateLoad            Load the previously quicksaved position.
+$gameRestart               Restart the level.
+$gameNuke                  Nuke. Activate with a double click.
+$gameHintFirst            View a hint for this level.
+$gameHintNext             View the next hint.
+$gameHintPrev             View the previous hint.
+$gameHintOff              Hide the hint.
+$gameSpecTribe            Examine the skills of a different team.
 
 // main editor screen
 
-$editor_unsaved_title           Save changes?
-$editor_unsaved_title_new       Save level?
-$editor_unsaved_question        Would you like to save the changes on this level?
-$editor_unsaved_question_new    Would you like to save this new level?
-$editor_file_name               File name:
+$editorUnsavedTitle           Save changes?
+$editorUnsavedTitleNew       Save level?
+$editorUnsavedQuestion        Would you like to save the changes on this level?
+$editorUnsavedQuestionNew    Would you like to save this new level?
+$editorFileName               File name:
 $editor_level_name              Level title:
-$editor_hotkey                  Hotkey:
-$editor_hotkey_hold             Hotkey: hold
-$editor_bar_at                  at
-$editor_bar_hover               objects about to be selected.
-$editor_bar_selection           objects selected.
-$editor_bar_movekeys_long       Drag objects or move them with [
-$editor_bar_movekeys_short      Move with [
-$editor_bar_movekeys_mid        ], [
-$editor_bar_movekeys_end        ].
+$editorHotkey                  Hotkey:
+$editorHotkeyHold             Hotkey: hold
+$editorBarAt                  at
+$editorBarHover               objects about to be selected.
+$editorBarSelection           objects selected.
+$editorBarMoveWithKeysLong       Drag objects or move them with [
+$editorBarMoveWithKeysShort      Move with [
+$editorBarMoveWithKeysMid        ], [
+$editorBarMoveWithKeysEnd        ].
 
 // editor buttons
 
-$editor_button_FILE_NEW         New: Deletes everything on screen and starts a new level.
-$editor_button_FILE_EXIT        Quit: Exits the editor and asks about saving changed data.
-$editor_button_FILE_SAVE        Save: Saves the current level under its current file name.
-$editor_button_FILE_SAVE_AS     Save As: Saves the current level under a new file name.
-$editor_button_GRID_2           Grid 2: Rounds object coordinates to multiples of 2.
-$editor_button_GRID_CUSTOM      Custom grid: This grid size is settable in the options.
-$editor_button_GRID_16          Grid 16: Rounds object coordinates to multiples of 16.
-$editor_button_SELECT_ALL       Everything: Selects all objects in the level.
-$editor_button_SELECT_FRAME     Frame: Selects multiple objects by dragging a frame.
-$editor_button_SELECT_ADD       Add: Selects new objects, keeping old ones in the selection.
-$editor_button_SELECT_COPY      Copy: Clones the selected objects for placing them elsewhere.
-$editor_button_SELECT_DELETE    Delete: Removes the selected objects.
-$editor_button_SELECT_MINUS     Back: Puts the selected objects behind some others.
-$editor_button_SELECT_PLUS      Forth: Puts the selected objects in front of some others.
-$editor_button_SELECT_BACK      Background: Puts the selected objects into the background.
-$editor_button_SELECT_FRONT     Foreground: Puts the selected objects into the foreground.
-$editor_button_SELECT_FLIP      Flip: Mirrors the selected terrain horizontally.
-$editor_button_SELECT_ROTATE    Rotate: Performs a quarter turn on the selected terrain.
-$editor_button_SELECT_DARK      Dark: Paints the selected terrain in black inside the game.
-$editor_button_SELECT_NOOW      No overwrite: Selected terrain overwrites only dark objects.
-$editor_button_VIEW_ZOOM        Zoom: Activate or deactivate the map zoom.
-$editor_button_HELP             (this doesn't do anything right now)
-$editor_button_MENU_SIZE        Measures: Set the size and the topology for the level.
-$editor_button_MENU_SCROLL      Visuals: Set the scrolling position and background color.
-$editor_button_MENU_VARS        Variables: Set the fundamental level variables.
-$editor_button_MENU_SKILL       Skills: Set the usable lix skills.
-$editor_button_ADD_TERRAIN      Terrain: Add a terrain object that can be dug through.
-$editor_button_ADD_STEEL        Steel: Add a steel object that cannot be dug through.
-$editor_button_ADD_HATCH        Hatch: Add a lix entrance hatch.
-$editor_button_ADD_GOAL         Goal: Add a goal, i.e. an exit for the lix.
-$editor_button_ADD_DECO         Decoration: Add a non-interactive decoration object.
-$editor_button_ADD_HAZARD       Hazard: Add a trap, water or fire.
+$editorButtonFileNew         New: Deletes everything on screen and starts a new level.
+$editorButtonFileExit        Quit: Exits the editor and asks about saving changed data.
+$editorButtonFileSave        Save: Saves the current level under its current file name.
+$editorButtonFileSaveAs     Save As: Saves the current level under a new file name.
+$editorButtonGrid2           Grid 2: Rounds object coordinates to multiples of 2.
+$editorButtonGridCustom      Custom grid: This grid size is settable in the options.
+$editorButtonGrid16          Grid 16: Rounds object coordinates to multiples of 16.
+$editorButtonSelectAll       Everything: Selects all objects in the level.
+$editorButtonSelectFrame     Frame: Selects multiple objects by dragging a frame.
+$editorButtonSelectAdd       Add: Selects new objects, keeping old ones in the selection.
+$editorButtonSelectCopy      Copy: Clones the selected objects for placing them elsewhere.
+$editorButtonSelectDelete    Delete: Removes the selected objects.
+$editorButtonSelectMinus     Back: Puts the selected objects behind some others.
+$editorButtonSelectPlus      Forth: Puts the selected objects in front of some others.
+$editorButtonSelectBack      Background: Puts the selected objects into the background.
+$editorButtonSelectFront     Foreground: Puts the selected objects into the foreground.
+$editorButtonSelectFlip      Flip: Mirrors the selected terrain horizontally.
+$editorButtonSelectRotate    Rotate: Performs a quarter turn on the selected terrain.
+$editorButtonSelectDark      Dark: Paints the selected terrain in black inside the game.
+$editorButtonSelectNoow      No overwrite: Selected terrain overwrites only dark objects.
+$editorButtonViewZoom        Zoom: Activate or deactivate the map zoom.
+$editorButtonHelp             (this doesn't do anything right now)
+$editorButtonMenuSize        Measures: Set the size and the topology for the level.
+$editorButtonMenuScroll      Visuals: Set the scrolling position and background color.
+$editorButtonMenuVars        Variables: Set the fundamental level variables.
+$editorButtonMenuSkill       Skills: Set the usable lix skills.
+$editorButtonAddTerrain      Terrain: Add a terrain object that can be dug through.
+$editorButtonAddSteel        Steel: Add a steel object that cannot be dug through.
+$editorButtonAddHatch        Hatch: Add a lix entrance hatch.
+$editorButtonAddGoal         Goal: Add a goal, i.e. an exit for the lix.
+$editorButtonAddDeco         Decoration: Add a non-interactive decoration object.
+$editorButtonAddHazard       Hazard: Add a trap, water or fire.
 
 // save browser
 
-$save_browser_title             Save As
-$save_filename                  File name:
-$save_box_overwrite_title       Overwrite Level?
-$save_box_overwrite_question    Do you really want to overwrite this level?
+$saveBrowserTitle             Save As
+$saveFilename                  File name:
+$saveBoxOverwriteTitle       Overwrite Level?
+$saveBoxOverwriteQuestion    Do you really want to overwrite this level?
 
 // BitmapBrowser
 
@@ -260,8 +257,8 @@ $export_multi_clock             Overtime:
 $net_chat_welcome_1             You can join the central server, host a game yourself,
 $net_chat_welcome_unstable      This is an experimental version. Host a game yourself,
 $net_chat_welcome_2             or enter an IP address/a host name and click "%s".
-$net_chat_start_server          You are the server. Other players can connect to you now.
-$net_chat_start_client          Searching a server at
+$net_chat_startServer          You are the server. Other players can connect to you now.
+$net_chat_startClient          Searching a server at
 $net_chat_start_cancel          Connection attempt cancelled.
 $net_chat_disconnection          has quit the network.
 $net_chat_we_too_old            You have too old a Lix version to connect to the server.
@@ -413,6 +410,6 @@ $option_ed_grid_custom          Custom grid size
 
 // mini-dialogue to greet a new player
 
-$option_new_player_title        Lix
-$option_new_player_first        Hello and Welcome!
-$option_new_player_second       Please enter your name:
+$optionNew_player_title        Lix
+$optionNew_player_first        Hello and Welcome!
+$optionNew_player_second       Please enter your name:

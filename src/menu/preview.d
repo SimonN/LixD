@@ -22,11 +22,11 @@ public:
     {
         super(g);
         _status = LevelStatus.BAD_EMPTY;
-        auto cb = get_internal(file_bitmap_preview_icon);
-        icon_status = new Graphic(cb, guiosd);
-        icon_torus  = new Graphic(cb, guiosd);
-        undraw_color  = color.gui_m;
-        icon_torus.yf = 1;
+        auto cb = getInternal(fileImagePreviewIcon);
+        iconStatus = new Graphic(cb, guiosd);
+        iconTorus  = new Graphic(cb, guiosd);
+        undrawColor  = color.guiM;
+        iconTorus.yf = 1;
     }
 
     ~this()
@@ -43,8 +43,8 @@ private:
 
     LevelStatus _status;
     Torbit  torbit; // the little canvas, sized like (this), to draw on
-    Graphic icon_status;
-    Graphic icon_torus;
+    Graphic iconStatus;
+    Graphic iconTorus;
 
 
 
@@ -54,42 +54,42 @@ level(in Level level)
     if (torbit) destroy(torbit);
     if (level !is null) {
         torbit  = level.create_preview(
-            (xs + xls).round_int - xs.round_int,
-            (ys + yls).round_int - ys.round_int, color.gui_m);
+            (xs + xls).roundInt - xs.roundInt,
+            (ys + yls).roundInt - ys.roundInt, color.guiM);
         _status = level.status;
-        icon_status.xf = status;
-        icon_torus .xf = level.torus_x + 2 * level.torus_y;
+        iconStatus.xf = status;
+        iconTorus .xf = level.torusX + 2 * level.torusY;
         if (_status == LevelStatus.BAD_EMPTY)
-            icon_status.xf = 0;
+            iconStatus.xf = 0;
     }
     else {
         torbit = null;
-        icon_status.xf = 0;
-        icon_torus .xf = 0;
+        iconStatus.xf = 0;
+        iconTorus .xf = 0;
     }
-    req_draw();
+    reqDraw();
 }
 
 
 
 protected override void
-draw_self()
+drawSelf()
 {
-    super.draw_self();
+    super.drawSelf();
 
     if (torbit)
-        guiosd.draw_from(torbit.albit, xs.round_int, ys.round_int);
+        guiosd.drawFrom(torbit.albit, xs.roundInt, ys.roundInt);
     else
         // target is guiosd already, because we're in an Element's draw
-        al_draw_filled_rectangle(xs, ys, xs + xls, ys + yls, undraw_color);
+        al_draw_filled_rectangle(xs, ys, xs + xls, ys + yls, undrawColor);
 
-    icon_status.set_xy(xs, ys);                icon_status.draw();
-    icon_status.y = ys + yls - icon_status.yl; icon_status.draw();
-    icon_status.x = xs + xls - icon_status.xl; icon_status.draw();
-    icon_status.y = ys;                        icon_status.draw();
+    iconStatus.set_xy(xs, ys);                iconStatus.draw();
+    iconStatus.y = ys + yls - iconStatus.yl; iconStatus.draw();
+    iconStatus.x = xs + xls - iconStatus.xl; iconStatus.draw();
+    iconStatus.y = ys;                        iconStatus.draw();
 
-    icon_torus.set_xy(xs, ys);
-    icon_torus.draw();
+    iconTorus.set_xy(xs, ys);
+    iconTorus.draw();
 }
 
 }

@@ -8,31 +8,44 @@ import game;
 import graphic.gadget;
 
 package void
-impl_calc_update(Game game)
+updateOnce(Game game)
 {
-    update_once(game);
+    game.finalizeInputBeforeUpdate();
+    ++game.cs.update;
+    game.updateOnceGadgets();
 }
 // end calc_update()
 
 
 
-// ############################################################################
-// ############################################################################
-// ############################################################################
-
-
-
-private void update_once(Game game) { with (game.cs)
+private void
+finalizeInputBeforeUpdate(Game game)
 {
-    ++update;
+    // put spawn interval into replay
+    // get network data and put it into replay vector
+}
 
+
+
+
+// ############################################################################
+// ############################################################################
+// ############################################################################
+
+
+
+private void
+updateOnceGadgets(Game game) {
+    with (game)
+    with (game.cs)
+{
     // Animate after we had the traps eat lixes. Eating a lix sets a flag
     // in the trap to run through the animation, showing the first killing
     // frame after this next call to animate().
     foreach (hatch; hatches)
-        hatch.animate(game.effect, update);
+        hatch.animate(effect, update);
 
-    foreach_gadget((Gadget g) {
+    foreachGadget((Gadget g) {
         g.animate();
     });
 }}

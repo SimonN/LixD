@@ -12,7 +12,7 @@ public ColorPrivate color;
 void initialize()   { if (color) destroy(color); color = new ColorPrivate(); }
 void deinitialize() { destroy(color); color = null; }
 
-void compute_new_user_colors() { initialize(); }
+void compute_new_userColors() { initialize(); }
 
 private class ColorPrivate {
 
@@ -34,42 +34,42 @@ private class ColorPrivate {
         transp,
         pink,
 
-        cb_bad_frame,
-        cb_bad_bitmap,
+        cbBadFrame,
+        cbBadBitmap,
 
         white,
         red,
         black,
 
-        lixfile_eye, // for detection of where exploder fuses are positioned
+        lixFileEye, // for detection of where exploder fuses are positioned
 
-        gui_f_sha, // how it looks in an image file, these get
-        gui_f_d,   // recolored to gui_d, gui_on_d, ..., accordingly.
-        gui_f_m,
-        gui_f_l,
+        guiFileSha, // how it looks in an image file, these get
+        guiFileD,   // recolored to guiD, guiOnD, ..., accordingly.
+        guiFileM,
+        guiFileL,
 
-        screen_border,
-        editor_dark,
-        gui_sha,
-        gui_d,
-        gui_m,
-        gui_l,
-        gui_down_d,
-        gui_down_m,
-        gui_down_l,
-        gui_on_d,
-        gui_on_m,
-        gui_on_l,
+        screenBorder,
+        editorDark,
+        guiSha,
+        guiD,
+        guiM,
+        guiL,
+        guiDownD,
+        guiDownM,
+        guiDownL,
+        guiOnD,
+        guiOnM,
+        guiOnL,
 
-        gui_text,
-        gui_text_on,
+        guiText,
+        guiTextOn,
 
-        gui_pic_on_d,
-        gui_pic_on_m,
-        gui_pic_on_l,
-        gui_pic_d,
-        gui_pic_m,
-        gui_pic_l;
+        guiPicOnD,
+        guiPicOnM,
+        guiPicOnL,
+        guiPicD,
+        guiPicM,
+        guiPicL;
 
 private:
 
@@ -81,43 +81,44 @@ private:
         transp        = AlCol(0.00, 0.00, 0.00, 0  );
         pink          = AlCol(1,    0,    1,    1  );
 
-        cb_bad_frame  = AlCol(0.8,  0.8,  0.8,  1  );
-        cb_bad_bitmap = AlCol(1,    0.5,  0.5,  1  );
+        cbBadFrame  = AlCol(0.8,  0.8,  0.8,  1  );
+        cbBadBitmap = AlCol(1,    0.5,  0.5,  1  );
 
-        lixfile_eye   = makecol(0x50, 0x50, 0x50);
+        lixFileEye   = makecol(0x50, 0x50, 0x50);
 
         white         = AlCol(1,    1,    1,    1  );
         red           = AlCol(1,    0,    0,    1  );
         black         = AlCol(0,    0,    0,    1  );
 
         // how it looks in an image file
-        gui_f_sha = makecol(0x40, 0x40, 0x40);
-        gui_f_d   = makecol(0x80, 0x80, 0x80);
-        gui_f_m   = makecol(0xC0, 0xC0, 0xC0);
-        gui_f_l   = makecol(0xFF, 0xFF, 0xFF);
+        guiFileSha = makecol(0x40, 0x40, 0x40);
+        guiFileD   = makecol(0x80, 0x80, 0x80);
+        guiFileM   = makecol(0xC0, 0xC0, 0xC0);
+        guiFileL   = makecol(0xFF, 0xFF, 0xFF);
 
-        screen_border = make_sepia(2f / 16f);
-        editor_dark   = makecol   (0x20, 0x20, 0x20); // erasor pieces
-        gui_sha       = make_sepia(3f / 16f);
-        gui_d         = make_sepia(7.75f / 16f / 1.2f);
-        gui_m         = make_sepia(7.75f / 16f);
-        gui_l         = make_sepia(7.75f / 16f * 1.2f);
-        gui_down_d    = make_sepia(8.75f / 16f / 1.1f);
-        gui_down_m    = make_sepia(8.75f / 16f);
-        gui_down_l    = make_sepia(8.75f / 16f * 1.1f);
-        gui_on_d      = make_sepia(11f   / 16f / 1.1f);
-        gui_on_m      = make_sepia(11f   / 16f);
-        gui_on_l      = make_sepia(11f   / 16f * 1.1f);
+        screenBorder = make_sepia(2f / 16f);
+        editorDark   = makecol   (0x20, 0x20, 0x20); // erasor pieces
 
-        gui_text      = make_sepia(14f   / 16f); // lighter than an image
-        gui_text_on   = make_sepia(1.0);         // pure white
+        guiSha    = make_sepia(3f / 16f);
+        guiD      = make_sepia(7.75f / 16f / 1.2f);
+        guiM      = make_sepia(7.75f / 16f);
+        guiL      = make_sepia(7.75f / 16f * 1.2f);
+        guiDownD  = make_sepia(8.75f / 16f / 1.1f);
+        guiDownM  = make_sepia(8.75f / 16f);
+        guiDownL  = make_sepia(8.75f / 16f * 1.1f);
+        guiOnD    = make_sepia(11f   / 16f / 1.1f);
+        guiOnM    = make_sepia(11f   / 16f);
+        guiOnL    = make_sepia(11f   / 16f * 1.1f);
 
-        gui_pic_d     = make_sepia(11f   / 16f / 1.2f);
-        gui_pic_m     = make_sepia(11f   / 16f);
-        gui_pic_l     = make_sepia(11f   / 16f * 1.2f);
-        gui_pic_on_d  = make_sepia(14f   / 16f / 1.2f);
-        gui_pic_on_m  = make_sepia(14f   / 16f);
-        gui_pic_on_l  = make_sepia(1.0);
+        guiText   = make_sepia(14f   / 16f); // lighter than an image
+        guiTextOn = make_sepia(1.0);         // pure white
+
+        guiPicD   = make_sepia(11f   / 16f / 1.2f);
+        guiPicM   = make_sepia(11f   / 16f);
+        guiPicL   = make_sepia(11f   / 16f * 1.2f);
+        guiPicOnD = make_sepia(14f   / 16f / 1.2f);
+        guiPicOnM = make_sepia(14f   / 16f);
+        guiPicOnL = make_sepia(1.0);
     }
 
     // light: max is 1.0, min is 0.0
@@ -127,9 +128,9 @@ private:
         else if (light >= 1.0) return AlCol(1, 1, 1, 1);
 
         // the user file suggests a base color via integers in 0 .. 255+1
-        alias gui_color_red   r;
-        alias gui_color_green g;
-        alias gui_color_blue  b;
+        alias r = guiColorRed;
+        alias g = guiColorGreen;
+        alias b = guiColorBlue;
         r = (r > 0xFF ? 0xFF : r < 0 ? 0 : r);
         g = (g > 0xFF ? 0xFF : g < 0 ? 0 : g);
         b = (b > 0xFF ? 0xFF : b < 0 ? 0 : b);

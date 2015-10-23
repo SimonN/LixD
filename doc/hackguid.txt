@@ -59,7 +59,7 @@ if, while, for[each], class, struct, etc.
 
     if (condition) {
         a = 5;
-        do_something();
+        doSomething();
     }
 
 Nothing goes on the same line as '}', not even else or while. You shouldn't
@@ -70,30 +70,30 @@ Omit braces when a statement is followed by single line. Don't omit braces
 when at least one of the if-else branches has more than one statement.
 
     scope (exit)
-        clean_up();
+        cleanUp();
 
     if (condition)
-        do_something();
+        doSomething();
 
-    if (another_condition) {
-        do_something_else();
+    if (anotherCondition) {
+        doSomethingElse();
     }
     else {
-        a + 4;
-        do_whatever();
+        number += 4;
+        doWhatever();
     }
 
 Functions have the opening brace on a separate line. You can put the function
 name on its own line, apart from the return values.
 
     int
-    my_function(int a)
+    myFunction(int a)
     {
         return something(a * 3);
     }
 
     private nothrow void
-    almost_like_java() const @nogc
+    almostLikeJava() const @nogc
     {
         // ...
     }
@@ -101,34 +101,36 @@ name on its own line, apart from the return values.
 When you can fit an entire function definition into a single line, do that
 instead of following the above rule. This happens often with class properties.
 
-    @property int some_value()      { return _some_value;     }
-    @property int some_value(int i) { return _some_value = i; }
+    @property int someValue()      { return _someValue;     }
+    @property int someValue(int i) { return _someValue = i; }
 
 The D style (http://dlang.org/dstyle.html) recommends properties over
 get/set_some_value(). The private variable should be prefixed with an
 underscore, because it needs a name different from the property functions.
 
 Digression: The D style also recommends to choose type names LikeThis,
-which I do myself, and other identifier names likeThis, different from my
-like_this. Maybe I should move the codebase to the dStyleNamingConvention.
-The current convention is influenced by my C++ history.
+which I do myself, and other identifier names likeThis. I'm in the middle
+of a conversion of the D codebase to this convention. My old convention was
+to name non-type symbols like_this, as you would do in C. Guideline:
+Use one underscore at the beginning of a private field, and no underscores
+anywhere else, even if some of my old symbols still violate this guideline.
 
 When a line, conditional expression or parameter list gets very long and
 has to be broken into separate lines, format it like this:
 
     private int
-    my_function(
-        LongClassName    long_argument_1,
-        AnotherClassName long_argument_2
+    myFunction(
+        LongClassName    longArgument1,
+        AnotherClassName longArgument2
     ) {
-        do_something();
+        doSomething();
     }
 
-    if (   my_long_expression     == some_value
-        && another_long_expression > some_other_value
+    if (   myLongExpression     == someValue
+        && anotherLongExpression > someOtherValue
     ) {
-        do_something();
-        do_something_else();
+        doSomething();
+        doSomethingElse();
     }
 
 Reason: Anything else requires a third, made-up level of identation to

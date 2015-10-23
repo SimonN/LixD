@@ -18,49 +18,49 @@ class Filename {
 /*  pure this(in string);
  *  pure this(in Filename);
  */
-    static void set_root_dir(string str) { if (! root) root = str.idup; }
+    static void setRootDir(string str) { if (! root) root = str.idup; }
 
 /*  bool opEquals   (in Filename) const;
  *  int  opCmp      (in Filename) const;
- *  bool is_child_of(in Filename) const;
+ *  bool isChildOf(in Filename) const;
  */
-    @property string rootful()            const { return root ~ _rootless;   }
-    @property string rootless()           const { return _rootless;          }
-    @property string extension()          const { return _extension;         }
-    @property string rootless_no_ext()    const { return _rootless_no_ext;   }
-    @property string file()               const { return _file;              }
-    @property string file_no_ext_no_pre() const { return _file_no_exts;      }
-    @property string dir_rootful()        const { return root~_dir_rootless; }
-    @property string dir_rootless()       const { return _dir_rootless;      }
-    @property string dir_innermost()      const { return _dir_innermost;     }
-    @property char   pre_extension()      const { return _pre_extension;     }
-//  bool   has_image_extension()        const;
+    @property string rootful()        const { return root ~ _rootless;    }
+    @property string rootless()       const { return _rootless;           }
+    @property string extension()      const { return _extension;          }
+    @property string rootlessNoExt()  const { return _rootlessNoExt;      }
+    @property string file()           const { return _file;               }
+    @property string fileNoExtNoPre() const { return _fileNoExts;         }
+    @property string dirRootful()     const { return root ~ _dirRootless; }
+    @property string dirRootless()    const { return _dirRootless;        }
+    @property string dirInnermost()   const { return _dirInnermost;       }
+    @property char   preExtension()   const { return _preExtension;       }
+//  bool hasImageExtension()          const;
 
     private alias immutable(char)* Ch;
-    @property Ch rootful_z()     const { return rootful.toStringz;     }
-    @property Ch dir_rootful_z() const { return dir_rootful.toStringz; }
+    @property Ch rootfulZ()    const { return rootful.toStringz;    }
+    @property Ch dirRootfulZ() const { return dirRootful.toStringz; }
 
 private:
 
     static string root = "./";
 
-    // We don't have the variables rootful and dir_rootful anymore.
+    // We don't have the variables rootful and dirRootful anymore.
     // Module basics.globals instatiates Filename objects before main() runs,
     // which will produce an error when compiling the non-static constructor
     // this() with { rootful = root ~ rootless; } in it: The static var
-    // cannot be read at compile time. Since the call to set_root_dir() will
+    // cannot be read at compile time. Since the call to setRootDir() will
     // be at a later time than these instantiations, the current solution is
     // to concatenate upon each call to get_[dir_]rootful[_z]() with root.
 
     immutable string _rootless;
     immutable string _extension;
-    immutable string _rootless_no_ext;
+    immutable string _rootlessNoExt;
     immutable string _file;
-    immutable string _file_no_exts;
-    immutable string _dir_rootless;
-    immutable string _dir_innermost;
+    immutable string _fileNoExts;
+    immutable string _dirRootless;
+    immutable string _dirInnermost;
 
-    immutable char _pre_extension;
+    immutable char _preExtension;
 
 
 
@@ -70,7 +70,7 @@ pure this(in string s)
 {
     assert (s.length < int.max);
 
-    // All strings start empty, pre_extension is '\0'
+    // All strings start empty, preExtension is '\0'
 
     // Possible root dirs are "./" and "../". We erase everything from the
     // start of the filename that is '.' or '/' and call that rootless.
@@ -79,78 +79,78 @@ pure this(in string s)
     _rootless = s[sos .. $];
 
     // Determine the extension, this is done by finding the last '.'
-    int last_dot = _rootless.len - 1;
-    int extension_length = 0;
-    while (last_dot >= 0 && _rootless[last_dot] != '.') {
-        --last_dot;
-        ++extension_length;
+    int lastDot = _rootless.len - 1;
+    int extensionLength = 0;
+    while (lastDot >= 0 && _rootless[lastDot] != '.') {
+        --lastDot;
+        ++extensionLength;
     }
-    // Now, (last_dot == -1) holds iff there is no dot in the filename.
+    // Now, (lastDot == -1) holds iff there is no dot in the filename.
     // Don't mistake a pre-extension (1 uppercase letter) for an extension.
-    if (last_dot >= 0 && (extension_length >= 2
-        || (extension_length >= 1 &&
-            ! (_rootless[last_dot + 1] >= 'A'
-            && _rootless[last_dot + 1] <= 'Z')
+    if (lastDot >= 0 && (extensionLength >= 2
+        || (extensionLength >= 1 &&
+            ! (_rootless[lastDot + 1] >= 'A'
+            && _rootless[lastDot + 1] <= 'Z')
         ))) {
-        _extension       = _rootless[last_dot .. $];
-        _rootless_no_ext = _rootless[0 .. last_dot];
+        _extension     = _rootless[lastDot .. $];
+        _rootlessNoExt = _rootless[0 .. lastDot];
     }
     else {
         // extension stays empty
-        _rootless_no_ext = _rootless;
+        _rootlessNoExt = _rootless;
     }
     // Determine the pre-extension or leave it at '\0'.
-    if (last_dot >= 2 && _rootless[last_dot - 2] == '.'
-        && (_rootless[last_dot - 1] >= 'A'
-        &&  _rootless[last_dot - 1] <= 'Z'))
-        _pre_extension = _rootless[last_dot - 1];
+    if (lastDot >= 2 && _rootless[lastDot - 2] == '.'
+        && (_rootless[lastDot - 1] >= 'A'
+        &&  _rootless[lastDot - 1] <= 'Z'))
+        _preExtension = _rootless[lastDot - 1];
 
     // Determine the file. This is done similar as finding the extension.
-    int last_slash = _rootless.len - 1;
-    while (last_slash >= 0 && _rootless[last_slash] != '/')
-        --last_slash;
-    if (last_slash >= 0) {
-        _file         = _rootless[last_slash + 1 .. $];
-        _dir_rootless = _rootless[0 .. last_slash + 1];
+    int lastSlash = _rootless.len - 1;
+    while (lastSlash >= 0 && _rootless[lastSlash] != '/')
+        --lastSlash;
+    if (lastSlash >= 0) {
+        _file        = _rootless[lastSlash + 1 .. $];
+        _dirRootless = _rootless[0 .. lastSlash + 1];
     }
     else {
         _file         = "";
-        _dir_rootless = _rootless;
+        _dirRootless = _rootless;
     }
 
-    // find the innermost dir, based on the now-set dir_rootless.
+    // find the innermost dir, based on the now-set dirRootless.
     // sls = "second-last slash"
-    int sls = _dir_rootless.len - 1;
+    int sls = _dirRootless.len - 1;
     // don't treat the final slash as the second-to-last slash
-    if (sls >= 0 && _dir_rootless[sls] == '/')
+    if (sls >= 0 && _dirRootless[sls] == '/')
         --sls;
-    while (sls >= 0 && _dir_rootless[sls] != '/')
+    while (sls >= 0 && _dirRootless[sls] != '/')
         --sls;
     // sls can be -1, or somewhere in the file. Start behind this.
     // Contain the trailing slash of the directory.
-    _dir_innermost = _dir_rootless[sls + 1 .. $];
+    _dirInnermost = _dirRootless[sls + 1 .. $];
 
-    // For file_no_exts, find the first dot in file
-    int first_dot = 0;
-    for (; first_dot < _file.length; ++first_dot) {
-        if (_file[first_dot] == '.') break;
+    // For fileNoExts, find the first dot in file
+    int firstDot = 0;
+    for (; firstDot < _file.length; ++firstDot) {
+        if (_file[firstDot] == '.') break;
     }
-    _file_no_exts = _file[0 .. first_dot];
+    _fileNoExts = _file[0 .. firstDot];
 }
 
 
 
 pure this(in Filename fn)
 {
-    _rootless        = fn._rootless;
-    _extension       = fn._extension;
-    _rootless_no_ext = fn._rootless_no_ext;
-    _file            = fn._file;
-    _file_no_exts    = fn._file_no_exts;
-    _dir_rootless    = fn._dir_rootless;
-    _dir_innermost   = fn._dir_innermost;
+    _rootless      = fn._rootless;
+    _extension     = fn._extension;
+    _rootlessNoExt = fn._rootlessNoExt;
+    _file          = fn._file;
+    _fileNoExts    = fn._fileNoExts;
+    _dirRootless   = fn._dirRootless;
+    _dirInnermost  = fn._dirInnermost;
 
-    _pre_extension   = fn._pre_extension;
+    _preExtension   = fn._preExtension;
 }
 
 
@@ -191,7 +191,7 @@ int opCmp(in Filename rhs) const
 
 
 
-bool is_child_of(in Filename parent) const
+bool isChildOf(in Filename parent) const
 {
     return parent._file.empty
         && parent._rootless.length <= _rootless.length
@@ -200,7 +200,7 @@ bool is_child_of(in Filename parent) const
 
 
 
-bool has_image_extension() const
+bool hasImageExtension() const
 {
     return [ ".png", ".bmp", ".tga", ".pcx",
              ".PNG", ".BMP", ".TGA", ".PCX" ].find(_extension) != null;

@@ -18,44 +18,44 @@ class Hatch : Gadget {
 
 private:
 
-    int  _x_frames_open;
-    bool _blink_now;
+    int  _xFramesOpen;
+    bool _blinkNow;
 
 public:
 
-    enum update_lets_go    = 35;
-    enum update_open       = 50;
-    enum update_blink_stop = 48;
-    enum updates_blink_on  =  4;
-    enum updates_blink_off =  2;
+    enum updateLetsGo    = 35;
+    enum updateOpen      = 50;
+    enum updateBlinkStop = 48;
+    enum updatesBlinkOn  =  4;
+    enum updatesBlinkOff =  2;
 
-    bool  spawn_facing_left;
-    Style blink_style = Style.GARDEN; // if left at GARDEN, then don't blink
+    bool  spawnFacingLeft;
+    Style blinkStyle = Style.GARDEN; // if left at GARDEN, then don't blink
 
     this(Torbit tb, in ref Pos levelpos)
     {
         super(tb, levelpos);
-        spawn_facing_left = levelpos.rot != 0;
-        while (this.frame_exists(_x_frames_open, 0))
-            ++_x_frames_open;
+        spawnFacingLeft = levelpos.rot != 0;
+        while (this.frameExists(_xFramesOpen, 0))
+            ++_xFramesOpen;
     }
 
     this(Hatch rhs)
     {
         assert (rhs);
         super(rhs);
-        spawn_facing_left = rhs.spawn_facing_left;
-        blink_style       = rhs.blink_style;
-        _x_frames_open    = rhs._x_frames_open;
-        _blink_now        = rhs._blink_now;
+        spawnFacingLeft = rhs.spawnFacingLeft;
+        blinkStyle      = rhs.blinkStyle;
+        _xFramesOpen    = rhs._xFramesOpen;
+        _blinkNow       = rhs._blinkNow;
     }
 
     mixin CloneableOverride;
 
-    override Pos to_pos() const
+    override Pos toPos() const
     {
-        Pos levelpos = super.to_pos();
-        levelpos.rot = spawn_facing_left;
+        Pos levelpos = super.toPos();
+        levelpos.rot = spawnFacingLeft;
         return levelpos;
     }
 
@@ -63,50 +63,50 @@ public:
 
     void animate(EffectManager effect, in int u) // update of the Game
     {
-        immutable int of = update_open - tile.special_x;
+        immutable int of = updateOpen - tile.specialX;
         // of == first absolute frame of opening. This is earlier if the sound
-        // shall match a later frame of the hatch, as defined in special_x.
+        // shall match a later frame of the hatch, as defined in specialX.
 
         if (u < of)
             xf = yf = 0;
         else {
             // open or just opening
             yf = 0;
-            xf = min(u - of,  _x_frames_open - 1);
+            xf = min(u - of,  _xFramesOpen - 1);
         }
 
-        if (u >= update_blink_stop)
-            _blink_now = false;
+        if (u >= updateBlinkStop)
+            _blinkNow = false;
         else {
-            _blink_now
-            = (u % (updates_blink_on + updates_blink_off) < updates_blink_on);
+            _blinkNow
+            = (u % (updatesBlinkOn + updatesBlinkOff) < updatesBlinkOn);
         }
 
-        if (u == update_lets_go)
-            effect.add_sound_general(u, Sound.LETS_GO);
-        if (u == update_open)
-            effect.add_sound_general(u, Sound.HATCH_OPEN);
+        if (u == updateLetsGo)
+            effect.addSoundGeneral(u, Sound.LETS_GO);
+        if (u == updateOpen)
+            effect.addSoundGeneral(u, Sound.HATCH_OPEN);
     }
 
 protected:
 
-    override void draw_game_extras()
+    override void drawGameExtras()
     {
-        if (_blink_now && blink_style != Style.GARDEN) {
-            const(Cutbit) c = get_skill_button_icon(blink_style);
-            c.draw(ground, x + tile.trigger_x - c.xl / 2,
-                           y + tile.trigger_y - c.yl / 2,
+        if (_blinkNow && blinkStyle != Style.GARDEN) {
+            const(Cutbit) c = getPanelInfoIcon(blinkStyle);
+            c.draw(ground, x + tile.triggerX - c.xl / 2,
+                           y + tile.triggerY - c.yl / 2,
                            Ac.WALKER, 0);
         }
     }
 
-    override void draw_editor_info()
+    override void drawEditorInfo()
     {
         // draw arrow pointing into the hatch's direction
-        const(Cutbit) cb = get_internal(file_bitmap_edit_hatch);
+        const(Cutbit) cb = getInternal(fileImageEditHatch);
         cb.draw(ground, x + yl/2 - cb.xl/2,
                         y + 20, // DTODO: +20 was ::text_height in A4/C++.
-                        spawn_facing_left ? 1 : 0, 0);
+                        spawnFacingLeft ? 1 : 0, 0);
     }
 
 }

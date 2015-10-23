@@ -14,31 +14,31 @@ import gui;
 import level.tile;
 
 package void
-impl_game_constructor(Game game, Level lv, Filename fn, Replay rp)
+implGameConstructor(Game game, Level lv, Filename fn, Replay rp)
 {
     assert (game);
     assert (lv);
     assert (lv.good);
 
     scope (exit)
-        game.altick_last_update = al_get_timer_count(basics.alleg5.timer);
+        game.altickLastUpdate = al_get_timer_count(basics.alleg5.timer);
 
     game.level          = lv;
-    game.level_filename = fn;
+    game.levelFilename = fn;
     game.replay         = rp;
 
-    prepare_land   (game);
-    prepare_players(game);
-    prepare_gadgets(game);
+    prepareLand   (game);
+    preparePlayers(game);
+    prepareGadgets(game);
 }
 
 
 
 package void
-impl_game_destructor(Game game)
+implGameDestructor(Game game)
 {
     if (game.pan)
-        gui.rm_elder(game.pan);
+        gui.rmElder(game.pan);
 }
 
 
@@ -50,24 +50,24 @@ impl_game_destructor(Game game)
 
 
 private void
-prepare_land(Game game) { with (game)
+prepareLand(Game game) { with (game)
 {
     assert (effect is null);
     assert (pan    is null);
 
     effect = new EffectManager;
     pan    = new Panel;
-    gui.add_elder(pan);
+    gui.addElder(pan);
 
     cs = new GameState();
     with (level) {
-        cs.land   = new Torbit(size_x, size_y, torus_x, torus_y);
-        cs.lookup = new Lookup(size_x, size_y, torus_x, torus_y);
-        draw_terrain_to(cs.land, cs.lookup);
+        cs.land   = new Torbit(sizeX, sizeY, torusX, torusY);
+        cs.lookup = new Lookup(sizeX, sizeY, torusX, torusY);
+        drawTerrainTo(cs.land, cs.lookup);
     }
 
-    map = new Map(cs.land, Geom.screen_xls.to!int, Geom.screen_yls.to!int
-        * (Geom.panel_yl_divisor - 1) / Geom.panel_yl_divisor);
+    map = new Map(cs.land, Geom.screenXls.to!int, Geom.screenYls.to!int
+        * (Geom.panelYlDivisor - 1) / Geom.panelYlDivisor);
 }}
 
 
@@ -79,29 +79,29 @@ prepare_land(Game game) { with (game)
 
 
 private void
-prepare_players(Game game) { with (game)
+preparePlayers(Game game) { with (game)
 {
     assert (cs.tribes == null);
 
     // Make one singleplayer tribe. DTODONETWORK: Query the network to make
     // the correct number of tribes, with the correct masters in each.
     cs.tribes ~= new Tribe();
-    cs.tribes[0].masters ~= Tribe.Master(0, basics.globconf.user_name);
+    cs.tribes[0].masters ~= Tribe.Master(0, basics.globconf.userName);
     trlo = cs.tribes[0];
     malo = trlo.masters[0];
 
     foreach (tr; cs.tribes) {
-        tr.initial       = level.initial;
-        tr.required      = level.required;
-        tr.lix_hatch     = level.initial;
-        tr.spawnint_slow = level.spawnint_slow;
-        tr.spawnint_fast = level.spawnint_fast;
-        tr.spawnint      = level.spawnint_slow;
-        tr.skills        = level.skills;
+        tr.initial      = level.initial;
+        tr.required     = level.required;
+        tr.lixHatch     = level.initial;
+        tr.spawnintSlow = level.spawnintSlow;
+        tr.spawnintFast = level.spawnintFast;
+        tr.spawnint     = level.spawnintSlow;
+        tr.skills       = level.skills;
     }
 
     assert (pan);
-    pan.set_like_tribe(trlo);
+    pan.setLikeTribe(trlo);
 }}
 
 
@@ -113,23 +113,23 @@ prepare_players(Game game) { with (game)
 
 
 private void
-prepare_gadgets(Game game)
+prepareGadgets(Game game)
 {
-    void gadgets_from_pos(T)(ref T[] gadget_vec, TileType tile_type)
+    void gadgetsFromPos(T)(ref T[] gadgetVec, TileType tileType)
     {
-        foreach (ref pos; game.level.pos[tile_type]) {
-            gadget_vec ~= cast (T) Gadget.factory(game.map, pos);
-            assert (gadget_vec[$-1]);
+        foreach (ref pos; game.level.pos[tileType]) {
+            gadgetVec ~= cast (T) Gadget.factory(game.map, pos);
+            assert (gadgetVec[$-1]);
         }
     }
 
-    gadgets_from_pos(game.cs.hatches,     TileType.HATCH);
-    gadgets_from_pos(game.cs.goals,       TileType.GOAL);
-    gadgets_from_pos(game.cs.decos,       TileType.DECO);
-    gadgets_from_pos(game.cs.traps,       TileType.TRAP);
-    gadgets_from_pos(game.cs.waters,      TileType.WATER);
-    gadgets_from_pos(game.cs.flingers,    TileType.FLING);
-    gadgets_from_pos(game.cs.trampolines, TileType.TRAMPOLINE);
+    gadgetsFromPos(game.cs.hatches,     TileType.HATCH);
+    gadgetsFromPos(game.cs.goals,       TileType.GOAL);
+    gadgetsFromPos(game.cs.decos,       TileType.DECO);
+    gadgetsFromPos(game.cs.traps,       TileType.TRAP);
+    gadgetsFromPos(game.cs.waters,      TileType.WATER);
+    gadgetsFromPos(game.cs.flingers,    TileType.FLING);
+    gadgetsFromPos(game.cs.trampolines, TileType.TRAMPOLINE);
 
 }
 // end function prepare gadgets()

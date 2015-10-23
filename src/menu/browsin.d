@@ -14,24 +14,24 @@ public:
 
 //  this();
 
-    @property bool            goto_game() const { return _goto_game;    }
-    @property inout(Level)    level()     inout { return _level_recent; }
-    @property inout(Filename) filename()  inout { return _file_recent;  }
+    @property bool            gotoGame() const { return _gotoGame;    }
+    @property inout(Level)    level()    inout { return _levelRecent; }
+    @property inout(Filename) filename() inout { return _fileRecent;  }
 
 private:
 
-    bool     _goto_game;
-    Filename _file_recent;
-    Level    _level_recent;
+    bool     _gotoGame;
+    Filename _fileRecent;
+    Level    _levelRecent;
 
 
 
 public
 this()
 {
-    super(Lang.browser_single_title.transl,
-        basics.globals.dir_levels,
-        basics.user.single_last_level,
+    super(Lang.browserSingleTitle.transl,
+        basics.globals.dirLevels,
+        basics.user.singleLastLevel,
         super.UseCheckmarks.yes,
         super.UseReplayStyle.no
     );
@@ -40,11 +40,11 @@ this()
 
 
 protected override void
-on_file_highlight(Filename fn)
+onFileHighlight(Filename fn)
 {
-    _file_recent  = fn;
-    _level_recent = fn is null ? null : new Level(_file_recent);
-    preview_level(_level_recent);
+    _fileRecent  = fn;
+    _levelRecent = fn is null ? null : new Level(_fileRecent);
+    preview_level(_levelRecent);
 }
 
 
@@ -52,12 +52,12 @@ on_file_highlight(Filename fn)
 protected override void
 on_file_select(Filename fn)
 {
-    assert (_file_recent  !is null);
-    assert (_level_recent !is null);
+    assert (_fileRecent  !is null);
+    assert (_levelRecent !is null);
     // the super class guarantees that on_file_select is only called after
-    // on_file_highlight has been called with the same fn immediately before
-    if (_level_recent.good)
-        _goto_game = true;
+    // onFileHighlight has been called with the same fn immediately before
+    if (_levelRecent.good)
+        _gotoGame = true;
 }
 
 }

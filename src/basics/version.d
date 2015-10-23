@@ -9,11 +9,11 @@ module basics.versioning;
 import std.conv;
 import std.string;
 
-private immutable ver_current = Version(0, 1, 0);
-private bool      ver_stable  = false;
+private immutable _gameVersion = Version(0, 1, 1);
+private bool      _versionIsStable  = false;
 
-const(Version) get_version()       { return ver_current; }
-bool           is_version_stable() { return ver_stable;  }
+const(Version) gameVersion()     { return _gameVersion;     }
+bool           versionIsStable() { return _versionIsStable; }
 
 
 

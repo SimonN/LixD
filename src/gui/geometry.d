@@ -21,7 +21,7 @@ module gui.geometry;
  *  this(Geom g);
  *
  *      Constructs a Geom with parent = null. The parent will usually be set
- *      via the method gui.element.Element.add_child().
+ *      via the method gui.element.Element.addChild().
  *
  *  float x, y, xl, yl;
  *
@@ -43,12 +43,12 @@ module gui.geometry;
  *
  *      Convert the geometry from (geoms, from) to absolute screen coordinates.
  *
- *  @property From x_from, y_from
+ *  @property From xFrom, yFrom
  *
- *      Return LEFT, CENTER, RIGHT for x_from, or TOP, CENTER, BOTTOM for
- *      y_from. These functions examine only one nibble of (From from).
+ *      Return LEFT, CENTER, RIGHT for xFrom, or TOP, CENTER, BOTTOM for
+ *      yFrom. These functions examine only one nibble of (From from).
  *
- *  static void set_screen_xyls(in int _xl, in int _yl)
+ *  static void setScreenXYls(in int _xl, in int _yl)
  *
  *      Should be called only by the display changing function.
  *
@@ -89,42 +89,42 @@ class Geom {
         BOT_LEF = BOTTOM_LEFT, BOT_RIG = BOTTOM_RIGHT,
     }
 
-    private static float _screen_xlg = 640;
-    private static const _screen_ylg = 480f; // others will change, this won't
-    private static float _screen_xls = 640;
-    private static float _screen_yls = 480;
-    private static float stretch_factor   = 1.0;
-    private static int   screen_thickness = 2;
+    private static float _screenXlg = 640;
+    private static const _screenYlg = 480f; // others will change, this won't
+    private static float _screenXls = 640;
+    private static float _screenYls = 480;
+    private static float stretchFactor   = 1.0;
+    private static int   screenThickness = 2;
 
     @property static int   thickg() { return 2; }
-    @property static int   thicks() { return screen_thickness; }
+    @property static int   thicks() { return screenThickness; }
 
-    @property static float screen_xlg() { return _screen_xlg; }
-    @property static float screen_ylg() { return _screen_ylg; }
-    @property static float screen_xls() { return _screen_xls; }
-    @property static float screen_yls() { return _screen_yls; }
+    @property static float screenXlg() { return _screenXlg; }
+    @property static float screenYlg() { return _screenYlg; }
+    @property static float screenXls() { return _screenXls; }
+    @property static float screenYls() { return _screenYls; }
 
     // 1 / (return value) is the ratio of vertical space occupied by the game's
     // and editor's panels. Higher values mean less space occupied by panels.
     @property static int
-    panel_yl_divisor()
+    panelYlDivisor()
     {
-        return _screen_xlg > 700 ? 5  // widescreen
+        return _screenXlg > 700 ? 5  // widescreen
                                  : 6; // 4:3 screen
     }
 
     // this function is called from gui.root, when that is initialized
     static void
-    set_screen_xyls(in int _xl, in int _yl)
+    setScreenXYls(in int _xl, in int _yl)
     {
-        _screen_xls     = _xl;
-        _screen_yls     = _yl;
-        stretch_factor  = _screen_yls / _screen_ylg;
-        _screen_xlg     = _screen_xls / stretch_factor;
+        _screenXls     = _xl;
+        _screenYls     = _yl;
+        stretchFactor  = _screenYls / _screenYlg;
+        _screenXlg     = _screenXls / stretchFactor;
 
-        screen_thickness = std.math.floor(2.0 * stretch_factor).to!int;
+        screenThickness = std.math.floor(2.0 * stretchFactor).to!int;
 
-        graphic.gralib.set_scale_from_gui(stretch_factor);
+        graphic.gralib.setScaleFromGui(stretchFactor);
     }
 
 
@@ -146,41 +146,41 @@ class Geom {
 
 
 
-    @property From x_from() const { return to!From(from & 0x0F | 0x20); }
-    @property From y_from() const { return to!From(from & 0xF0 | 0x02); }
+    @property From xFrom() const { return to!From(from & 0x0F | 0x20); }
+    @property From yFrom() const { return to!From(from & 0xF0 | 0x02); }
 
     @property float xlg() const { return xl; }
     @property float ylg() const { return yl; }
 
-    @property float xs()  const { return xg  * stretch_factor; }
-    @property float ys()  const { return yg  * stretch_factor; }
-    @property float xls() const { return xlg * stretch_factor; }
-    @property float yls() const { return ylg * stretch_factor; }
+    @property float xs()  const { return xg  * stretchFactor; }
+    @property float ys()  const { return yg  * stretchFactor; }
+    @property float xls() const { return xlg * stretchFactor; }
+    @property float yls() const { return ylg * stretchFactor; }
 
 
 
     @property float xg() const
     {
-        immutable float p_xg  = parent ? parent.xg  : 0;
-        immutable float p_xlg = parent ? parent.xlg : _screen_xlg;
+        immutable float pXg  = parent ? parent.xg  : 0;
+        immutable float pXlg = parent ? parent.xlg : _screenXlg;
 
-        switch (x_from) {
-            case From.LEFT:   return p_xg + x;
-            case From.CENTER: return p_xg + p_xlg/2 - xl/2 - x;
-            case From.RIGHT:  return p_xg + p_xlg   - xl   - x;
+        switch (xFrom) {
+            case From.LEFT:   return pXg + x;
+            case From.CENTER: return pXg + pXlg/2 - xl/2 - x;
+            case From.RIGHT:  return pXg + pXlg   - xl   - x;
             default: assert (false);
         }
     }
 
     @property float yg() const
     {
-        immutable float p_yg  = parent ? parent.yg  : 0;
-        immutable float p_ylg = parent ? parent.ylg : _screen_ylg;
+        immutable float pYg  = parent ? parent.yg  : 0;
+        immutable float pYlg = parent ? parent.ylg : _screenYlg;
 
-        switch (y_from) {
-            case From.TOP:    return p_yg + y;
-            case From.CENTER: return p_yg + p_ylg/2 - yl/2 - y;
-            case From.BOTTOM: return p_yg + p_ylg   - yl   - y;
+        switch (yFrom) {
+            case From.TOP:    return pYg + y;
+            case From.CENTER: return pYg + pYlg/2 - yl/2 - y;
+            case From.BOTTOM: return pYg + pYlg   - yl   - y;
             default: assert (false);
         }
     }

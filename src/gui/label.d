@@ -1,6 +1,6 @@
 module gui.label;
 
-/* Alignment of Label (LEFT, CENTER, RIGHT) is set by the x_from nibble of
+/* Alignment of Label (LEFT, CENTER, RIGHT) is set by the xFrom nibble of
  * (Geom.From from). Fixed or non-fixed printing is chosen in class Label.
  */
 
@@ -21,14 +21,14 @@ class Label : Element {
         if (g.yl < 1f)
             g.yl = 20;
         super(g);
-        _font  = djvu_m;
+        _font  = djvuM;
         _text  = s;
-        _color = graphic.color.color.gui_text;
+        _color = graphic.color.color.guiText;
         shorten_text();
     }
 
     @property string    text   () const { return _text;  }
-    @property Geom.From aligned() const { return geom.x_from; }
+    @property Geom.From aligned() const { return geom.xFrom; }
     @property AlCol     color  () const { return _color; }
 
     nothrow @property int get_number() const
@@ -40,7 +40,7 @@ class Label : Element {
     @property font  (AlFont f) { _font  = f; shorten_text();               }
     @property text  (string s) { _text  = s; shorten_text(); return _text; }
     @property number(in int i) { _text  = i.to!string; shorten_text();     }
-    @property color (AlCol  c) { _color = c; req_draw(); }
+    @property color (AlCol  c) { _color = c; reqDraw(); }
     @property fixed (bool   b) { _fixed = b; shorten_text(); }
 
     override string toString() const { return "Label-`" ~ _text ~ "'"; }
@@ -48,8 +48,8 @@ class Label : Element {
 private:
 
     string _text;
-    string text_short; // shortened version of text, can't be returned
-    bool   shortened;  // true if text_short != text
+    string _textShort; // shortened version of text, can't be returned
+    bool   _shortened;  // true if textShort != text
 
     AlFont _font; // check if this crashes if Label not destroyed!
     AlCol  _color;
@@ -60,21 +60,23 @@ private:
 private void
 shorten_text()
 {
-    req_draw();
-    text_short = _text;
-    shortened  = false;
+    reqDraw();
+    _textShort = _text;
+    _shortened = false;
 
     if (! text.length) {
         return;
     }
     else if (_fixed) {
         immutable one_char_geoms = 10;
-        while (text_short.length && text_short.length * one_char_geoms > xlg) {
-            shortened = true;
+        while (_textShort.length > 0
+            && _textShort.length * one_char_geoms > xlg
+        ) {
+            _shortened = true;
             if (aligned == Geom.From.RIGHT)
-                text_short = text_short[1 .. $];
+                _textShort = _textShort[1 .. $];
             else
-                text_short = text_short[0 .. $-1];
+                _textShort = _textShort[0 .. $-1];
         }
     }
     else {
@@ -84,11 +86,11 @@ shorten_text()
             return al_get_text_width(_font, s.toStringz());
         }
 
-        shortened = (textwidth(text) >= xls);
-        if (shortened) {
-            while (text_short.length && textwidth(text_short ~ "...") >= xls)
-                text_short = backspace(text_short);
-            text_short ~= "...";
+        _shortened = (textwidth(text) >= xls);
+        if (_shortened) {
+            while (_textShort.length && textwidth(_textShort ~ "...") >= xls)
+                _textShort = backspace(_textShort);
+            _textShort ~= "...";
         }
     }
 }
@@ -96,19 +98,19 @@ shorten_text()
 
 
 protected override void
-draw_self()
+drawSelf()
 {
     if (! text.length) return;
 
     switch (aligned) {
     case Geom.From.LEFT:
-        draw_text(_font, text_short, xs, ys, _color);
+        drawText(_font, _textShort, xs, ys, _color);
         break;
     case Geom.From.CENTER:
-        draw_text_centered(_font, text_short, xs + xls / 2, ys, _color);
+        drawTextCentered(_font, _textShort, xs + xls / 2, ys, _color);
         break;
     case Geom.From.RIGHT:
-        draw_text_centered(_font, text_short, xs + xls, ys, _color);
+        drawTextCentered(_font, _textShort, xs + xls, ys, _color);
         break;
     default:
         assert (false);

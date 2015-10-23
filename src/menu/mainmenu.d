@@ -17,12 +17,12 @@ import gui;
 
 class MainMenu : Window {
 
-    @property bool goto_single()  { return single .execute; }
-    @property bool goto_network() { return network.execute; }
-    @property bool goto_replays() { return replays.execute; }
-    @property bool goto_options() { return options.execute; }
-    @property bool goto_bench()   { return bench  .execute; }
-    @property bool exit_program() { return _exit  .execute; }
+    @property bool gotoSingle()  { return single .execute; }
+    @property bool gotoNetwork() { return network.execute; }
+    @property bool gotoReplays() { return replays.execute; }
+    @property bool gotoOptions() { return options.execute; }
+    @property bool gotoBench()   { return bench  .execute; }
+    @property bool exitProgram() { return _exit  .execute; }
 
 private:
 
@@ -40,23 +40,23 @@ private:
 
 public this()
 {
-    immutable but_xlg = 200; // large button length
-    immutable but_slg =  90; // small button length
-    immutable but_ylg =  40;
-    immutable but_spg =  20;
+    immutable butXlg = 200; // large button length
+    immutable butSlg =  90; // small button length
+    immutable butYlg =  40; // any button's y length
+    immutable butSpg =  20; // spacing
 
     TextButton buttext_height(Geom.From from, int height)
     {
-        int heightg = Window.title_ylg + but_spg + height*(but_ylg+but_spg);
+        int heightg = Window.titleYlg + butSpg + height*(butYlg+butSpg);
         return new TextButton(new Geom(
-            height == 2 ? but_spg : 0,         heightg,
-            height == 2 ? but_slg : but_xlg,   but_ylg, from));
+            height == 2 ? butSpg : 0,         heightg,
+            height == 2 ? butSlg : butXlg,   butYlg, from));
     }
 
     super(new Geom(0, 0,
-        but_xlg     + but_spg * 2,                  // 80 = labels and space
-        but_ylg * 4 + but_spg * 4 + Window.title_ylg + 80, Geom.From.CENTER),
-        basics.globals.main_name_of_game);
+        butXlg     + butSpg * 2,                  // 80 = labels and space
+        butYlg * 4 + butSpg * 4 + Window.titleYlg + 80, Geom.From.CENTER),
+        basics.globals.nameOfTheGame);
 
     single  = buttext_height(Geom.From.TOP,       0);
     network = buttext_height(Geom.From.TOP,       1);
@@ -64,51 +64,49 @@ public this()
     options = buttext_height(Geom.From.TOP_RIGHT, 2);
     _exit   = buttext_height(Geom.From.TOP,       3);
 
-    single .text = Lang.browser_single_title.transl;
-    network.text = "Demo (Shift+ESC to exit)"; // win_lobby_title.transl DTODO
-    replays.text = Lang.browser_replay_title.transl;
+    single .text = Lang.browserSingleTitle.transl;
+    network.text = "Demo (Shift+ESC to exit)"; // winLobbyTitle.transl DTODO
+    replays.text = Lang.browserReplayTitle.transl;
     options.text = Lang.option_title.transl;
-    _exit  .text = Lang.common_exit.transl;
+    _exit  .text = Lang.commonExit.transl;
 
-    single .hotkey = basics.user.key_me_main_single;
-    network.hotkey = basics.user.key_me_main_network;
-    replays.hotkey = basics.user.key_me_main_replays;
-    options.hotkey = basics.user.key_me_main_options;
-    _exit  .hotkey = basics.user.key_me_exit;
+    single .hotkey = basics.user.keyMenuMainSingle;
+    network.hotkey = basics.user.keyMenuMainNetwork;
+    replays.hotkey = basics.user.keyMenuMainReplays;
+    options.hotkey = basics.user.keyMenuMainOptions;
+    _exit  .hotkey = basics.user.keyMenuExit;
 
     import std.conv;
     versioning = new Label(new Geom(0, 40, xlg, 20, Geom.From.BOTTOM),
-        transl(Lang.main_version) ~ " " ~ get_version().toString());
+        transl(Lang.commonVersion) ~ " " ~ gameVersion().toString());
 
     website    = new Label(new Geom(0, 20, xlg, 20, Geom.From.BOTTOM),
-        basics.globals.main_website);
+        basics.globals.homepageURL);
 
-    add_children(single, network, replays, options, _exit,
+    addChildren(single, network, replays, options, _exit,
         versioning, website);
 
-    bench = new TextButton(new Geom(
-        0, -but_ylg - but_spg,
-        560, single.ylg, Geom.From.TOP));
-    bench.text
-        = "Benchmark! Runs automatically for about 2 minutes. Click here!";
-    this.add_child(bench);
+    bench = new TextButton(new Geom(0, -butYlg - butSpg,
+                           560, single.ylg, Geom.From.TOP));
+    bench.text = "Benchmark! Runs for about 2 minutes. Click here!";
+    this.addChild(bench);
 }
 // end this()
 
 
 
 protected override void
-draw_self()
+drawSelf()
 {
-    auto bg = get_internal(file_bitmap_menu_background);
+    auto bg = getInternal(fileImageMenuBackground);
     if (bg && bg.valid)
         al_draw_scaled_bitmap(bg.albit,
          0, 0, bg.xl,           bg.yl,
-         0, 0, Geom.screen_xls, Geom.screen_yls, 0);
+         0, 0, Geom.screenXls, Geom.screenYls, 0);
     else
-        torbit.clear_to_black();
+        torbit.clearToBlack();
 
-    super.draw_self();
+    super.drawSelf();
 }
 
 }

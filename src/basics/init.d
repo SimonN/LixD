@@ -30,24 +30,24 @@ void initialize(in Cmdargs cmdargs)
     al_init();
 
     // set the timer to 60 Hz
-    timer = al_create_timer(1.0 / basics.globals.ticks_per_sec);
+    timer = al_create_timer(1.0 / basics.globals.ticksPerSecond);
     al_start_timer(timer);
     assert (timer);
 
     file.log.Log.initialize();
     basics.globconf.load();
     basics.user.load();
-    load_user_language_and_if_not_exist_set_user_option_to_english();
+    load_userLanguage_and_if_not_exist_set_userOption_to_english();
 
     hardware.display.set_screen_mode(! cmdargs.windowed,
-                                     cmdargs.want_res_x, cmdargs.want_res_y);
+                                     cmdargs.wantResolutionX, cmdargs.wantResolutionY);
 
     al_init_image_addon();
     al_init_font_addon();
     al_init_ttf_addon();
     al_init_primitives_addon();
 
-    default_new_bitmap_flags = al_get_new_bitmap_flags();
+    defaultNewBitmapFlags = al_get_new_bitmap_flags();
 
     hardware.tharsis.initialize();
     hardware.keyboard.initialize();

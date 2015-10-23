@@ -77,11 +77,11 @@ kill()
         game = null;
     }
     if (main_menu) {
-        gui.rm_elder(main_menu);
+        gui.rmElder(main_menu);
         main_menu = null;
     }
     if (brow_sin) {
-        gui.rm_elder(brow_sin);
+        gui.rmElder(brow_sin);
         destroy(brow_sin); // DTODO: check what is best here. There is a
                            // Torbit to be destroyed in the browser's preview.
         brow_sin = null;
@@ -107,50 +107,50 @@ calc()
 
     exit = exit
         || hardware.display.get_display_close_was_clicked()
-        || get_shift() && key_once(ALLEGRO_KEY_ESCAPE);
+        || shiftHeld() && keyTapped(ALLEGRO_KEY_ESCAPE);
 
     if (exit) {
         return;
     }
     else if (main_menu) {
         // no need to calc the menu, it's a GUI elder
-        if (main_menu.goto_single) {
+        if (main_menu.gotoSingle) {
             kill();
             brow_sin = new BrowserSingle;
-            gui.add_elder(brow_sin);
+            gui.addElder(brow_sin);
         }
-        else if (main_menu.goto_network) {
+        else if (main_menu.gotoNetwork) {
             // DTODO: as long as networking isn't developed, this goes to demo
             kill();
             demo = new Demo;
         }
-        else if (main_menu.goto_bench) {
+        else if (main_menu.gotoBench) {
             kill();
             bench = new Benchmark;
         }
-        else if (main_menu.exit_program) {
+        else if (main_menu.exitProgram) {
             exit = true;
         }
     }
     else if (brow_sin) {
-        if (brow_sin.goto_game) {
+        if (brow_sin.gotoGame) {
             auto lv = brow_sin.level;
             auto fn = brow_sin.filename;
             kill();
             game = new Game(lv, fn);
         }
-        else if (brow_sin.goto_main_menu) {
+        else if (brow_sin.gotoMainMenu) {
             kill();
             main_menu = new MainMenu;
-            gui.add_elder(main_menu);
+            gui.addElder(main_menu);
         }
     }
     else if (game) {
         game.calc();
-        if (game.goto_menu) {
+        if (game.gotoMenu) {
             kill();
             brow_sin = new BrowserSingle;
-            gui.add_elder(brow_sin);
+            gui.addElder(brow_sin);
         }
     }
     else if (demo) {
@@ -161,13 +161,13 @@ calc()
         if (bench.exit) {
             kill();
             main_menu = new MainMenu;
-            gui.add_elder(main_menu);
+            gui.addElder(main_menu);
         }
     }
     else {
         // program has just started, nothing exists yet
         main_menu = new MainMenu;
-        gui.add_elder(main_menu);
+        gui.addElder(main_menu);
     }
 
 }

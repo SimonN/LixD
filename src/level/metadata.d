@@ -13,8 +13,8 @@ class LevelMetaData {
     Date       built;
     int        initial;
     int        required;
-    string     name_german;
-    string     name_english;
+    string     nameGerman;
+    string     nameEnglish;
 
 
 
@@ -33,7 +33,7 @@ this(in Filename fn)
 name() const
 {
     // DTODO, see comment in like-named function in level.level
-    return name_english == null ? name_german : name_english;
+    return nameEnglish == null ? nameGerman : nameEnglish;
 }
 
 
@@ -49,20 +49,20 @@ file_exists() const
 private void
 read_metadata_lix(in Filename fn)
 {
-    IoLine[] lines = fill_vector_from_file_nothrow(fn);
+    IoLine[] lines = fillVectorFromFileNothrow(fn);
     foreach (i; lines) {
-        if (i.text1 == level_built)        built        = new Date(i.text2);
-        if (i.text1 == level_name_german)  name_german  = i.text2;
-        if (i.text1 == level_name_english) name_english = i.text2;
-        if (i.text1 == level_initial)      initial      = i.nr1;
-        if (i.text1 == level_required)     required     = i.nr1;
+        if (i.text1 == levelBuilt)        built        = new Date(i.text2);
+        if (i.text1 == levelName_german)  nameGerman  = i.text2;
+        if (i.text1 == levelName_english) nameEnglish = i.text2;
+        if (i.text1 == levelInitial)      initial      = i.nr1;
+        if (i.text1 == levelRequired)     required     = i.nr1;
     }
 }
 
 
 
-// these functions are defined in level_bi.cpp
-// std::string read_level_name_bytes (std::ifstream&);
+// these functions are defined in levelBi.cpp
+// std::string read_levelName_bytes (std::ifstream&);
 // int         read_two_bytes_levelbi(std::ifstream&);
 private void read_metadata_binary(in Filename fn)
 {
@@ -71,11 +71,11 @@ private void read_metadata_binary(in Filename fn)
     /*
     std::ifstream file(fn.rootful.c_str(), std::ios::binary);
 
-    // see level_bi.cpp for documentation of the L1 format
+    // see levelBi.cpp for documentation of the L1 format
     file.seekg(0x2);
     initial  = read_two_bytes_levelbi(file);
     required = read_two_bytes_levelbi(file);
-    name_english = read_level_name_bytes(file);
+    nameEnglish = read_levelName_bytes(file);
     file.close();
     */
 }
@@ -103,7 +103,7 @@ read_metadata_lemmini(in Filename fn)
                 else if (c == '\n' || c == '\r') break; // done reading name
                 else s += c;
             }
-            name_english = s;
+            nameEnglish = s;
         }
         else if (s == "numLemmings") {
             file >> s; // parse the "="

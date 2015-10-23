@@ -10,7 +10,7 @@ import std.algorithm;
 
 static import glo = basics.globals;
 
-import basics.help; // positive_mod
+import basics.help; // positiveMod
 import file.date;
 import file.filename;
 import file.io;
@@ -23,7 +23,7 @@ import lix.enums;
 
 // private FileFormat get_file_format(in Filename);
 
-package void load_from_file(Level level, in Filename fn)
+package void loadFromFile(Level level, in Filename fn)
 {
     level._status = LevelStatus.GOOD;
 
@@ -33,7 +33,7 @@ package void load_from_file(Level level, in Filename fn)
         break;
     case FileFormat.LIX:
         try
-            load_from_vector(level, fill_vector_from_file(fn));
+            load_from_vector(level, fillVectorFromFile(fn));
         catch (Exception e)
             level._status = LevelStatus.BAD_FILE_NOT_FOUND;
         break;
@@ -96,57 +96,57 @@ private void load_from_vector(Level level, in IoLine[] lines)
     foreach (line; lines) with (line) switch (type) {
     // set a string
     case '$':
-        if      (text1 == glo.level_built       ) built = new Date(text2);
+        if      (text1 == glo.levelBuilt       ) built = new Date(text2);
 
-        else if (text1 == glo.level_author      ) author       = text2;
-        else if (text1 == glo.level_name_german ) name_german  = text2;
-        else if (text1 == glo.level_name_english) name_english = text2;
+        else if (text1 == glo.levelAuthor      ) author       = text2;
+        else if (text1 == glo.levelName_german ) nameGerman  = text2;
+        else if (text1 == glo.levelName_english) nameEnglish = text2;
 
-        else if (text1 == glo.level_hint_german ) hint(hints_german,  text2);
-        else if (text1 == glo.level_hint_english) hint(hints_english, text2);
-        else if (text1 == glo.level_tuto_german ) tuto(hints_german,  text2);
-        else if (text1 == glo.level_tuto_english) tuto(hints_english, text2);
+        else if (text1 == glo.levelHintGerman ) hint(hintsGerman,  text2);
+        else if (text1 == glo.levelHintEnglish) hint(hintsEnglish, text2);
+        else if (text1 == glo.levelTutorialGerman ) tuto(hintsGerman,  text2);
+        else if (text1 == glo.levelTutorialEnglish) tuto(hintsEnglish, text2);
         break;
 
     // set an integer
     case '#':
-        if      (text1 == glo.level_start_x ) {
-            start_manual = true;
-            start_x      = nr1;
+        if      (text1 == glo.levelStartX ) {
+            startManual = true;
+            startX      = nr1;
         }
-        else if (text1 == glo.level_start_y ) {
-            start_manual = true;
-            start_y      = nr1;
+        else if (text1 == glo.levelStartY ) {
+            startManual = true;
+            startY      = nr1;
         }
-        else if (text1 == glo.level_size_x       ) size_x        = nr1;
-        else if (text1 == glo.level_size_y       ) size_y        = nr1;
-        else if (text1 == glo.level_torus_x      ) torus_x       = nr1 > 0;
-        else if (text1 == glo.level_torus_y      ) torus_y       = nr1 > 0;
-        else if (text1 == glo.level_bg_red       ) bg_red        = nr1;
-        else if (text1 == glo.level_bg_green     ) bg_green      = nr1;
-        else if (text1 == glo.level_bg_blue      ) bg_blue       = nr1;
-        else if (text1 == glo.level_seconds      ) seconds       = nr1;
-        else if (text1 == glo.level_initial      ) initial       = nr1;
-        else if (text1 == glo.level_required     ) required      = nr1;
-        else if (text1 == glo.level_spawnint_slow) spawnint_slow = nr1;
-        else if (text1 == glo.level_spawnint_fast) spawnint_fast = nr1;
+        else if (text1 == glo.levelSizeX       ) sizeX        = nr1;
+        else if (text1 == glo.levelSizeY       ) sizeY        = nr1;
+        else if (text1 == glo.levelTorusX      ) torusX       = nr1 > 0;
+        else if (text1 == glo.levelTorusY      ) torusY       = nr1 > 0;
+        else if (text1 == glo.levelBackgroundRed       ) bgRed        = nr1;
+        else if (text1 == glo.levelBackgroundGreen     ) bgGreen      = nr1;
+        else if (text1 == glo.levelBackgroundBlue      ) bgBlue       = nr1;
+        else if (text1 == glo.levelSeconds      ) seconds       = nr1;
+        else if (text1 == glo.levelInitial      ) initial       = nr1;
+        else if (text1 == glo.levelRequired     ) required      = nr1;
+        else if (text1 == glo.levelSpawnintSlow) spawnintSlow = nr1;
+        else if (text1 == glo.levelSpawnintFast) spawnintFast = nr1;
 
-        else if (text1 == glo.level_count_neutrals_only)
-                                             count_neutrals_only = nr1 > 0;
-        else if (text1 == glo.level_transfer_skills)
-                                             transfer_skills     = nr1 > 0;
+        else if (text1 == glo.levelCountNeutralsOnly)
+                                             countNeutralsOnly = nr1 > 0;
+        else if (text1 == glo.levelTransferSkills)
+                                             transferSkills     = nr1 > 0;
 
         // legacy support
-        else if (text1 == glo.level_initial_legacy) initial      = nr1;
-        else if (text1 == glo.level_rate) {
-            spawnint_slow = 4 + (99 - nr1) / 2;
+        else if (text1 == glo.levelInitialLegacy) initial      = nr1;
+        else if (text1 == glo.levelRateLegacy) {
+            spawnintSlow = 4 + (99 - nr1) / 2;
         }
 
         // If nothing matched yet, look up the skill name.
         // We can't add skills if we've reached the globally allowed maximum.
         // If we've read in only rubbish, we don't add the skill.
         else {
-            Ac ac = lix.enums.string_to_ac(text1);
+            Ac ac = lix.enums.stringToAc(text1);
             if (ac != Ac.MAX)
                 skills[ac] = nr1;
         }
@@ -174,7 +174,7 @@ private void load_from_vector(Level level, in IoLine[] lines)
     if (built != zero_date && built < new Date("2011-01-08 00:00:00"))
         foreach (Ac ac, ref int nr; skills.byKeyValue)
             if (nr == 100)
-                nr = lix.enums.skill_infinity;
+                nr = lix.enums.skillInfinity;
 }
 // end with
 
@@ -224,23 +224,23 @@ private void load_level_finalize(Level level)
 {
     with (level) {
         // set some standards, in case we've read in rubbish values
-        if (size_x   < min_xl)             size_x   = Level.min_xl;
-        if (size_y   < min_yl)             size_y   = Level.min_yl;
-        if (size_x   > max_xl)             size_x   = Level.max_xl;
-        if (size_y   > max_yl)             size_y   = Level.max_yl;
+        if (sizeX   < minXl)             sizeX   = Level.minXl;
+        if (sizeY   < minYl)             sizeY   = Level.minYl;
+        if (sizeX   > maxXl)             sizeX   = Level.maxXl;
+        if (sizeY   > maxYl)             sizeY   = Level.maxYl;
         if (initial  < 1)                  initial  = 1;
         if (initial  > 999)                initial  = 999;
         if (required > initial)            required = initial;
-        if (spawnint_fast < spawnint_min)  spawnint_fast = Level.spawnint_min;
-        if (spawnint_slow > spawnint_max)  spawnint_slow = Level.spawnint_max;
-        if (spawnint_fast > spawnint_slow) spawnint_fast = spawnint_slow;
+        if (spawnintFast < spawnintMin)  spawnintFast = Level.spawnintMin;
+        if (spawnintSlow > spawnintMax)  spawnintSlow = Level.spawnintMax;
+        if (spawnintFast > spawnintSlow) spawnintFast = spawnintSlow;
 
-        if (bg_red   < 0) bg_red   = 0; if (bg_red   > 255) bg_red   = 255;
-        if (bg_green < 0) bg_green = 0; if (bg_green > 255) bg_green = 255;
-        if (bg_blue  < 0) bg_blue  = 0; if (bg_blue  > 255) bg_blue  = 255;
+        if (bgRed   < 0) bgRed   = 0; if (bgRed   > 255) bgRed   = 255;
+        if (bgGreen < 0) bgGreen = 0; if (bgGreen > 255) bgGreen = 255;
+        if (bgBlue  < 0) bgBlue  = 0; if (bgBlue  > 255) bgBlue  = 255;
 
-        if (torus_x) start_x = positive_mod(start_x, size_x);
-        if (torus_y) start_y = positive_mod(start_y, size_y);
+        if (torusX) startX = positiveMod(startX, sizeX);
+        if (torusY) startY = positiveMod(startY, sizeY);
 
         // Set level error. The error for file not found, or the error for
         // missing tile images, have been set already.
@@ -269,11 +269,11 @@ private void load_level_finalize(Level level)
 
 
 
-package void impl_save_to_file(const(Level) level, in Filename fn)
+package void implSaveToFile(const(Level) level, in Filename fn)
 {
     try {
         std.stdio.File file = File(fn.rootful, "w");
-        save_to_file(level, file);
+        saveToFile(level, file);
         file.close();
     }
     catch (Exception e) {
@@ -283,14 +283,14 @@ package void impl_save_to_file(const(Level) level, in Filename fn)
 
 
 
-public void save_to_file(const(Level) l, std.stdio.File file)
+public void saveToFile(const(Level) l, std.stdio.File file)
 {
     assert (l);
 
-    file.writeln(IoLine.Dollar(glo.level_built,        l.built       ));
-    file.writeln(IoLine.Dollar(glo.level_author,       l.author      ));
-    file.writeln(IoLine.Dollar(glo.level_name_german,  l.name_german ));
-    file.writeln(IoLine.Dollar(glo.level_name_english, l.name_english));
+    file.writeln(IoLine.Dollar(glo.levelBuilt,        l.built       ));
+    file.writeln(IoLine.Dollar(glo.levelAuthor,       l.author      ));
+    file.writeln(IoLine.Dollar(glo.levelName_german,  l.nameGerman ));
+    file.writeln(IoLine.Dollar(glo.levelName_english, l.nameEnglish));
     file.writeln();
 
     // write hint
@@ -305,36 +305,36 @@ public void save_to_file(const(Level) l, std.stdio.File file)
     }
 
 
-    wrhi(l.hints_german,  glo.level_tuto_german,  glo.level_hint_german );
-    wrhi(l.hints_english, glo.level_tuto_english, glo.level_hint_english);
-    if (l.hints_german != null || l.hints_english != null) {
+    wrhi(l.hintsGerman,  glo.levelTutorialGerman,  glo.levelHintGerman );
+    wrhi(l.hintsEnglish, glo.levelTutorialEnglish, glo.levelHintEnglish);
+    if (l.hintsGerman != null || l.hintsEnglish != null) {
         file.writeln();
     }
 
-    file.writeln(IoLine.Hash(glo.level_size_x,  l.size_x ));
-    file.writeln(IoLine.Hash(glo.level_size_y,  l.size_y ));
-    if (l.torus_x || l.torus_y) {
-        file.writeln(IoLine.Hash(glo.level_torus_x, l.torus_x));
-        file.writeln(IoLine.Hash(glo.level_torus_y, l.torus_y));
+    file.writeln(IoLine.Hash(glo.levelSizeX,  l.sizeX ));
+    file.writeln(IoLine.Hash(glo.levelSizeY,  l.sizeY ));
+    if (l.torusX || l.torusY) {
+        file.writeln(IoLine.Hash(glo.levelTorusX, l.torusX));
+        file.writeln(IoLine.Hash(glo.levelTorusY, l.torusY));
     }
-    if (l.start_manual) {
-        file.writeln(IoLine.Hash(glo.level_start_x, l.start_x));
-        file.writeln(IoLine.Hash(glo.level_start_y, l.start_y));
+    if (l.startManual) {
+        file.writeln(IoLine.Hash(glo.levelStartX, l.startX));
+        file.writeln(IoLine.Hash(glo.levelStartY, l.startY));
     }
-    if (l.bg_red != 0 || l.bg_green != 0 || l.bg_blue != 0) {
-        file.writeln(IoLine.Hash(glo.level_bg_red,   l.bg_red  ));
-        file.writeln(IoLine.Hash(glo.level_bg_green, l.bg_green));
-        file.writeln(IoLine.Hash(glo.level_bg_blue,  l.bg_blue ));
+    if (l.bgRed != 0 || l.bgGreen != 0 || l.bgBlue != 0) {
+        file.writeln(IoLine.Hash(glo.levelBackgroundRed,   l.bgRed  ));
+        file.writeln(IoLine.Hash(glo.levelBackgroundGreen, l.bgGreen));
+        file.writeln(IoLine.Hash(glo.levelBackgroundBlue,  l.bgBlue ));
     }
     file.writeln();
 
-    file.writeln(IoLine.Hash(glo.level_seconds,       l.seconds ));
-    file.writeln(IoLine.Hash(glo.level_initial,       l.initial ));
-    file.writeln(IoLine.Hash(glo.level_required,      l.required));
-    file.writeln(IoLine.Hash(glo.level_spawnint_slow, l.spawnint_slow));
-    file.writeln(IoLine.Hash(glo.level_spawnint_fast, l.spawnint_fast));
-//  file.writeln(IoLine.Hash(glo.level_count_neutrals_only, l.count_neutrals_only));
-//  file.writeln(IoLine.Hash(glo.level_transfer_skills,     l.transfer_skills));
+    file.writeln(IoLine.Hash(glo.levelSeconds,       l.seconds ));
+    file.writeln(IoLine.Hash(glo.levelInitial,       l.initial ));
+    file.writeln(IoLine.Hash(glo.levelRequired,      l.required));
+    file.writeln(IoLine.Hash(glo.levelSpawnintSlow, l.spawnintSlow));
+    file.writeln(IoLine.Hash(glo.levelSpawnintFast, l.spawnintFast));
+//  file.writeln(IoLine.Hash(glo.levelCountNeutralsOnly, l.countNeutralsOnly));
+//  file.writeln(IoLine.Hash(glo.levelTransferSkills,     l.transferSkills));
 
     bool at_least_one_skill_written = false;
     foreach (Ac sk, const int nr; l.skills.byKeyValue) {
@@ -344,7 +344,7 @@ public void save_to_file(const(Level) l, std.stdio.File file)
             at_least_one_skill_written = true;
             file.writeln();
         }
-        file.writeln(IoLine.Hash(ac_to_string(sk), nr));
+        file.writeln(IoLine.Hash(acToString(sk), nr));
     }
 
     // this local function outputs all tiles of a given type

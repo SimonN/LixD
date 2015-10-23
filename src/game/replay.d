@@ -29,36 +29,31 @@ class Replay {
 
 private:
 
-    private bool _file_not_found;
+    private bool _fileNotFound;
 
-    deprecated("use this.game_version instead") int version_min;
+    Version  _gameVersionRequired;
+    Date     _levelBuiltRequired;
+    Filename _levelFilename;
 
-    Version  _game_version;
-    Date     _built_required;
-    Filename _level_filename;
-
-    PlNr     _player_local;
+    PlNr     _playerLocal;
     Player[] _players;
     Permu    _permu;
 
     ReplayData[] _data;
-    Ac           _first_skill_bc; // bc = backwards compat skill,
-                                  // what skill to assign if no SKILL
-                                  // command has occured yet
 
 public:
 
-    @property bool    file_not_found() { return _file_not_found; }
-    @property Version game_version()   { return _game_version;   }
+    @property bool    file_not_found()      { return _fileNotFound;        }
+    @property Version gameVersionRequired() { return _gameVersionRequired; }
 
-    @property built_required()       { return _built_required;     }
-    @property built_required(Date d) { return _built_required = d; }
+    @property levelBuiltRequired()       { return _levelBuiltRequired;     }
+    @property levelBuiltRequired(Date d) { return _levelBuiltRequired = d; }
 
-    @property level_filename()            { return _level_filename;      }
-    @property level_filename(Filename fn) { return _level_filename = fn; }
+    @property levelFilename()            { return _levelFilename;      }
+    @property levelFilename(Filename fn) { return _levelFilename = fn; }
 
-    @property PlNr player_local()       { return _player_local;     }
-    @property PlNr player_local(PlNr n) { return _player_local = n; }
+    @property PlNr playerLocal()       { return _playerLocal;     }
+    @property PlNr playerLocal(PlNr n) { return _playerLocal = n; }
 
     @property const(Player)[] players()        { return _players;      }
     @property const(Permu)    permu()          { return _permu;        }
@@ -69,18 +64,18 @@ public:
         return (_data.length > 0) ? _data[$-1].update : 0;
     }
 
-    @property string player_local_name()
+    @property string playerLocalName()
     {
         foreach (pl; _players)
-            if (pl.number == _player_local)
+            if (pl.number == _playerLocal)
                 return pl.name;
         return null;
     }
 
-    @property string canonical_save_filename()
+    @property string canonicalSaveFilename()
     {
-        string base = level_filename.file_no_ext_no_pre;
-        string plna = this.player_local_name;
+        string base = levelFilename.fileNoExtNoPre;
+        string plna = this.playerLocalName;
         return plna.length ? base ~ "-" ~ plna : base;
     }
 
@@ -88,21 +83,20 @@ public:
 
 this(Filename fn = null)
 {
-    _game_version   = get_version();
-    _built_required = new Date("0");
-    _level_filename = fn ? fn : new Filename("");
-    _first_skill_bc = Ac.NOTHING;
+    _gameVersionRequired   = gameVersion();
+    _levelBuiltRequired = new Date("0");
+    _levelFilename = fn ? fn : new Filename("");
 
     if (fn)
-        this.load_from_file(fn);
+        this.loadFromFile(fn);
 }
 
 
 
 void touch()
 {
-    _game_version   = get_version();
-    _file_not_found = false;
+    _gameVersionRequired = gameVersion();
+    _fileNotFound = false;
 }
 
 
@@ -141,7 +135,7 @@ data_slice_before_update(in int upd) inout
 
 
 bool
-equal_before(in typeof(this) rhs, in int upd) const
+equalBefore(in typeof(this) rhs, in int upd) const
 {
     // We don't check whether the metadata/general data is the same.
     // We assume the gameplay class only uses for replays of the same level
@@ -156,7 +150,7 @@ equal_before(in typeof(this) rhs, in int upd) const
 // that skip the first 30 or so updates, to get into the action faster.
 // The first spawn is still at update 60.
 void
-increase_early_data_to_update(in int upd)
+increaseEarlyDataToUpdate(in int upd)
 {
     foreach (d; _data) {
         if (d.update < upd)
@@ -169,7 +163,7 @@ increase_early_data_to_update(in int upd)
 
 
 void
-erase_data_after_update(in int upd)
+eraseDataAfterUpdate(in int upd)
 {
     assert (upd >= 0);
     _data = _data[0 .. data_slice_before_update(upd + 1).length];
@@ -179,7 +173,7 @@ erase_data_after_update(in int upd)
 
 
 const(ReplayData)[]
-get_data_for_update(in int upd) const
+getDataForUpdate(in int upd) const
 {
     auto slice = data_slice_before_update(upd + 1);
     int cut = slice.len - 1;
@@ -191,11 +185,11 @@ get_data_for_update(in int upd) const
 
 
 bool
-get_on_update_lix_clicked(in int upd, in int lix_id, in Ac ac) const
+getOnUpdateLixClicked(in int upd, in int lix_id, in Ac ac) const
 {
-    auto vec = get_data_for_update(upd);
+    auto vec = getDataForUpdate(upd);
     foreach (const ref d; vec)
-        if (d.is_some_assignment && d.to_which_lix == lix_id && d.skill == ac)
+        if (d.isSomeAssignment && d.to_which_lix == lix_id && d.skill == ac)
             return true;
     return false;
 }
@@ -206,13 +200,13 @@ void
 add(in ReplayData d)
 {
     touch();
-    add_without_touching(d);
+    addWithoutTouching(d);
 }
 
 
 
 private void
-add_without_touching(in ReplayData d)
+addWithoutTouching(in ReplayData d)
 {
     // Add after the latest record that's smaller than or equal to d
     // Equivalently, add before the earliest record that's greater than d.
@@ -245,13 +239,13 @@ add_without_touching(in ReplayData d)
 
 
 public nothrow void
-save_to_file(in Filename fn, in Level lev)
+saveToFile(in Filename fn, in Level lev)
 {
     try {
         std.stdio.File file = File(fn.rootful, "w");
         scope (exit)
             file.close();
-        save_to_file(file, lev);
+        saveToFile(file, lev);
     }
     catch (Exception e) {
         Log.log(e.msg);
@@ -261,40 +255,41 @@ save_to_file(in Filename fn, in Level lev)
 
 
 private void
-save_to_file(std.stdio.File file, in Level lev)
+saveToFile(std.stdio.File file, in Level lev)
 {
     // Write the path to the level, but omit the leading (dir-levels)/
     // DTODOFHS: we chop off a constant length, we shouldn't do that
     // anymore once we don't know where it's saved
-    file.writeln(IoLine.Dollar(basics.globals.replay_level_filename,
-        _level_filename.rootless[dir_levels.rootless.length .. $]));
-    file.writeln(IoLine.Dollar(replay_built_required,
-        _built_required.toString));
-    file.writeln(IoLine.Dollar(replay_version_min, _game_version.toString));
+    file.writeln(IoLine.Dollar(basics.globals.replayLevelFilename,
+        _levelFilename.rootless[dirLevels.rootless.length .. $]));
+    file.writeln(IoLine.Dollar(replayLevelBuiltRequired,
+        _levelBuiltRequired.toString));
+    file.writeln(IoLine.Dollar(replayGameVersionRequired,
+        _gameVersionRequired.toString));
 
     if (_players.length)
         file.writeln();
     foreach (pl; _players)
-        file.writeln(IoLine.Plus(pl.number == _player_local
-             ? basics.globals.replay_player : basics.globals.replay_friend,
-             pl.number, style_to_string(pl.style), pl.name));
+        file.writeln(IoLine.Plus(pl.number == _playerLocal
+             ? basics.globals.replayPlayer : basics.globals.replayFriend,
+             pl.number, styleToString(pl.style), pl.name));
     if (_players.length > 1)
-        file.writeln(IoLine.Dollar(replay_permu, permu.toString));
+        file.writeln(IoLine.Dollar(replayPermu, permu.toString));
 
     if (_data.length)
         file.writeln();
     foreach (d; _data) {
         string word
-            = d.action == ReplayData.SPAWNINT     ? replay_spawnint
-            : d.action == ReplayData.NUKE         ? replay_nuke
-            : d.action == ReplayData.ASSIGN       ? replay_assign_any
-            : d.action == ReplayData.ASSIGN_LEFT  ? replay_assign_left
-            : d.action == ReplayData.ASSIGN_RIGHT ? replay_assign_right : "";
+            = d.action == ReplayData.SPAWNINT     ? replaySpawnint
+            : d.action == ReplayData.NUKE         ? replayNuke
+            : d.action == ReplayData.ASSIGN       ? replayAssignAny
+            : d.action == ReplayData.ASSIGN_LEFT  ? replayAssignLeft
+            : d.action == ReplayData.ASSIGN_RIGHT ? replayAssignRight : "";
         if (word == "")
             throw new Exception("bad replay data written to file");
-        if (d.is_some_assignment) {
+        if (d.isSomeAssignment) {
             word ~= "=";
-            word ~= ac_to_string(cast (Ac) d.skill);
+            word ~= acToString(cast (Ac) d.skill);
         }
         file.writeln(IoLine.Bang(d.update, d.player, word, d.to_which_lix));
     }
@@ -305,10 +300,10 @@ save_to_file(std.stdio.File file, in Level lev)
     }
 
     const(Level) lev_to_save = ok_to_save(lev) ? lev
-                             : new Level(_level_filename);
+                             : new Level(_levelFilename);
     if (ok_to_save(lev_to_save)) {
         file.writeln();
-        level.level.save_to_file(lev_to_save, file);
+        level.level.saveToFile(lev_to_save, file);
     }
 }
 
@@ -319,63 +314,63 @@ save_as_auto_replay(in Level lev)
 {
     const(bool) multi = (_players.length > 1);
 
-    if ( (! multi && ! basics.globconf.replay_auto_single)
-        || (multi && ! basics.globconf.replay_auto_multi)
+    if ( (! multi && ! basics.globconf.replayAutoSingle)
+        || (multi && ! basics.globconf.replayAutoMulti)
     ) {
         return;
     }
 
-    string outfile = multi ? basics.globals.file_replay_auto_multi.rootful
-                           : basics.globals.file_replay_auto_single.rootful;
-    int* nr = multi ? &basics.globconf.replay_auto_next_m
-                    : &basics.globconf.replay_auto_next_s;
+    string outfile = multi ? basics.globals.fileReplayAutoMulti.rootful
+                           : basics.globals.fileReplayAutoSingle.rootful;
+    int* nr = multi ? &basics.globconf.replayAutoNextM
+                    : &basics.globconf.replayAutoNextS;
 
-    if (*nr >= basics.globconf.replay_auto_max)
+    if (*nr >= basics.globconf.replayAutoMax)
         *nr = 0;
-    outfile ~= format("%3.3d%s", *nr, basics.globals.ext_replay);
-    *nr = positive_mod(*nr + 1, basics.globconf.replay_auto_max);
+    outfile ~= format("%3.3d%s", *nr, basics.globals.filenameExtReplay);
+    *nr = positiveMod(*nr + 1, basics.globconf.replayAutoMax);
 
-    save_to_file(new Filename(outfile), lev);
+    saveToFile(new Filename(outfile), lev);
 }
 
 
 
 private void
-load_from_file(Filename fn)
+loadFromFile(Filename fn)
 {
     IoLine[] lines;
     try {
-        lines = fill_vector_from_file(fn);
+        lines = fillVectorFromFile(fn);
     }
     catch (Exception e) {
         Log.log(e.msg);
-        _file_not_found = true;
+        _fileNotFound = true;
         return;
     }
 
     foreach (i; lines) switch (i.type) {
     case '$':
-        if (i.text1 == replay_built_required) {
-            _built_required = new Date(i.text2);
+        if (i.text1 == replayLevelBuiltRequired) {
+            _levelBuiltRequired = new Date(i.text2);
         }
-        else if (i.text1 == replay_permu) {
+        else if (i.text1 == replayPermu) {
             _permu = new Permu(i.text2);
         }
-        else if (i.text1 == replay_version_min) {
-            _game_version = Version(i.text2);
+        else if (i.text1 == replayGameVersionRequired) {
+            _gameVersionRequired = Version(i.text2);
         }
-        else if (i.text1 == replay_level_filename) {
-            _level_filename = new Filename(dir_levels.dir_rootless ~ i.text2);
+        else if (i.text1 == replayLevelFilename) {
+            _levelFilename = new Filename(dirLevels.dirRootless ~ i.text2);
         }
         break;
 
     case '+':
-        if (   i.text1 == replay_player
-            || i.text1 == replay_friend
+        if (   i.text1 == replayPlayer
+            || i.text1 == replayFriend
         ) {
-            add_player(i.nr1 & 0xFF, string_to_style(i.text2), i.text3);
-            if (i.text1 == replay_player)
-                _player_local = i.nr1 & 0xFF;
+            add_player(i.nr1 & 0xFF, stringToStyle(i.text2), i.text3);
+            if (i.text1 == replayPlayer)
+                _playerLocal = i.nr1 & 0xFF;
         }
         break;
 
@@ -396,16 +391,16 @@ load_from_file(Filename fn)
         d.update       = i.nr1;
         d.player       = i.nr2 & 0xFF;
         d.to_which_lix = i.nr3;
-        d.action = part1 == replay_spawnint     ? ReplayData.SPAWNINT
-                 : part1 == replay_assign_any   ? ReplayData.ASSIGN
-                 : part1 == replay_assign_left  ? ReplayData.ASSIGN_LEFT
-                 : part1 == replay_assign_right ? ReplayData.ASSIGN_RIGHT
-                 : part1 == replay_nuke         ? ReplayData.NUKE
+        d.action = part1 == replaySpawnint    ? ReplayData.SPAWNINT
+                 : part1 == replayAssignAny   ? ReplayData.ASSIGN
+                 : part1 == replayAssignLeft  ? ReplayData.ASSIGN_LEFT
+                 : part1 == replayAssignRight ? ReplayData.ASSIGN_RIGHT
+                 : part1 == replayNuke        ? ReplayData.NUKE
                  : ReplayData.NOTHING;
         if (part2.length > 0)
-            d.skill = string_to_ac(part2) & 0xFF;
+            d.skill = stringToAc(part2) & 0xFF;
         if (d.action != ReplayData.NOTHING)
-            add_without_touching(d);
+            addWithoutTouching(d);
         break; }
 
     default:
@@ -427,14 +422,14 @@ unittest
     Filename fnl = new Filename("./replays/unittest-output-level.txt");
 
     Level lev = new Level(fn0);
-    lev.save_to_file(fnl);
+    lev.saveToFile(fnl);
 
     Replay r = new Replay(fn0);
     const int data_len = r._data.len;
 
-    r.save_to_file(fn1, lev);
+    r.saveToFile(fn1, lev);
     r = new Replay(fn1);
     assert (data_len == r._data.len);
 
-    r.save_to_file(fn2, lev);
+    r.saveToFile(fn2, lev);
 }

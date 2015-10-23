@@ -5,21 +5,21 @@ import basics.matrix;
 const int ex_offset = 16; // offset of the effective coordinate of the lix
 const int ey_offset = 26; // sprite from the top left corner
 
-const int skill_infinity = -1;  // for SkillButtons
+const int skillInfinity = -1;  // for SkillButtons
 const int skill_nr_max   = 999; // for SkillButtons
 
 Matrix!XY countdown;
 
-deprecated("use skill_infinity") const int infinity = -1;
+deprecated("use skillInfinity") const int infinity = -1;
 
 /*  int frame_to_x_frame(int);
  *  int ac_to_y_frame   (int);
  *
- *   Ac     string_to_ac   (in string);
- *  Style  string_to_style(in string);
+ *   Ac     stringToAc   (in string);
+ *  Style  stringToStyle(in string);
  *
- *  string ac_to_string   (in Ac);
- *  string style_to_string(in Style);
+ *  string acToString   (in Ac);
+ *  string styleToString(in Style);
  */
 
 enum Ac {
@@ -126,7 +126,7 @@ static this()
 
 
 
-Ac string_to_ac(in string str) {
+Ac stringToAc(in string str) {
     foreach (key; ac_strings.byKey()) {
         if (ac_strings[key] == str) return key;
     }
@@ -135,14 +135,14 @@ Ac string_to_ac(in string str) {
 
 
 
-string ac_to_string(in Ac ac) {
+string acToString(in Ac ac) {
     assert (ac in ac_strings);
     return ac_strings[ac];
 }
 
 
 
-Style string_to_style(in string str) {
+Style stringToStyle(in string str) {
     foreach (key; style_strings.byKey) {
         if (style_strings[key] == str) return key;
     }
@@ -151,7 +151,7 @@ Style string_to_style(in string str) {
 
 
 
-string style_to_string(in Style st) {
+string styleToString(in Style st) {
     assert (st in style_strings);
     return style_strings[st];
 }

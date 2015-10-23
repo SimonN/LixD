@@ -3,7 +3,7 @@ module graphic.gadget.goal;
 import std.algorithm; // max
 
 import basics.help;
-import basics.globals; // file_bitmap_mouse
+import basics.globals; // fileImageMouse
 import basics.help; // len
 import game.tribe;
 import graphic.cutbit;
@@ -14,14 +14,14 @@ import level.level;
 import lix.enums;
 
 /* owners are always drawn onto the goal, unless the owner is GARDEN.
- * When singleplayer time runs out, set draw_with_no_sign.
+ * When singleplayer time runs out, set drawWithNoSign.
  */
 
 class Goal : Gadget {
 
 public:
 
-    bool draw_with_no_sign;
+    bool drawWithNoSign;
 
     this(Torbit tb, in ref Pos levelpos)
     {
@@ -31,23 +31,23 @@ public:
     this(Goal rhs)
     {
         super(rhs);
-        _tribes           = rhs._tribes.dup; // we don't own the tribes
-        draw_with_no_sign = rhs.draw_with_no_sign;
+        _tribes        = rhs._tribes.dup; // we don't own the tribes
+        drawWithNoSign = rhs.drawWithNoSign;
     }
 
     mixin CloneableOverride;
 
-    bool has_tribe(in Tribe t) const
+    bool hasTribe(in Tribe t) const
     {
-        foreach (const(Tribe) tribe_in_array; _tribes)
-            if (t is tribe_in_array)
+        foreach (const(Tribe) inArray; _tribes)
+            if (t is inArray)
                 return true;
         return false;
     }
 
-    void add_tribe(Tribe t)
+    void addTribe(Tribe t)
     {
-        if (! has_tribe(t))
+        if (! hasTribe(t))
             _tribes ~= t;
     }
 
@@ -57,17 +57,17 @@ private:
 
 protected:
 
-    override void draw_game_extras()
+    override void drawGameExtras()
     {
-        if (! draw_with_no_sign) {
+        if (! drawWithNoSign) {
             // draw owners
             int offset = 0;
             foreach (const(Tribe) t; _tribes) {
                 if (t.style == Style.GARDEN)
                     continue;
-                auto c = graphic.gralib.get_skill_button_icon(t.style);
+                auto c = graphic.gralib.getPanelInfoIcon(t.style);
                 c.draw(ground,
-                    x + tile.trigger_x + tile.trigger_xl / 2 - c.xl / 2
+                    x + tile.triggerX + tile.triggerXl / 2 - c.xl / 2
                       + (20 * offset++) - 10 * (_tribes.len - 1),
                     max(y, y + yl - 70),
                     Ac.WALKER, 0);
@@ -75,10 +75,10 @@ protected:
         }
         else {
             // draw no sign
-            const(Cutbit) c = get_internal(file_bitmap_mouse);
+            const(Cutbit) c = getInternal(fileImageMouse);
             c.draw(ground,
-                x + tile.trigger_x + tile.trigger_xl / 2 - c.xl / 2,
-                y + tile.trigger_y + tile.trigger_yl / 2 - c.yl,
+                x + tile.triggerX + tile.triggerXl / 2 - c.xl / 2,
+                y + tile.triggerY + tile.triggerYl / 2 - c.yl,
                 2, 2); // (2,2) are the (xf,yf) of the international "no" sign
         }
     }

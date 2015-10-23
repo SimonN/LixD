@@ -10,9 +10,9 @@ import file.filename;
 
 /* Outdated comment, see the functions near bottom of module sfor signature!
  *
- *  bool fill_vector_from_file    (ref IoLine[], const Filename);
- *  void fill_vector_from_stream  (ref IoLine[], File);
- *  bool fill_vector_from_file_raw(ref string[], const Filename) {
+ *  bool fillVectorFromFile   (ref IoLine[], const Filename);
+ *  void fillVectorFromStream (ref IoLine[], File);
+ *  bool fillVectorFromFileRaw(ref string[], const Filename) {
  *
  *      Fill the vector (first arg) with the lines from the file given in the
  *      second arg. Returns false iff the file doesn't exist. Returns true iff
@@ -243,14 +243,14 @@ private void munch(ref string s) {
 
 
 nothrow IoLine[]
-fill_vector_from_file_nothrow(in Filename fn)
+fillVectorFromFileNothrow(in Filename fn)
 {
     try {
-        return fill_vector_from_file(fn);
+        return fillVectorFromFile(fn);
     }
     catch (Exception e) {
         // Ignore the exception, don't log anything. If something should be
-        // logged here, instead call fill_vector_from_file(), catch the
+        // logged here, instead call fillVectorFromFile(), catch the
         // exception, and log in the calling code.
         return null;
     }
@@ -259,20 +259,20 @@ fill_vector_from_file_nothrow(in Filename fn)
 
 
 IoLine[]
-fill_vector_from_file(in Filename fn)
+fillVectorFromFile(in Filename fn)
 {
     // this can throw on file 404, it's intended
     File file = File(fn.rootful);
     scope (exit) file.close();
 
-    return fill_vector_from_stream(file);
+    return fillVectorFromStream(file);
 }
 
 
 
 // return true on no error
 IoLine[]
-fill_vector_from_stream(File file)
+fillVectorFromStream(File file)
 {
     IoLine[] ret;
     foreach (string line; lines(file)) {
@@ -292,7 +292,7 @@ fill_vector_from_stream(File file)
 // this cares about empty lines, doesn't throw them away
 // throws on file 404
 string[]
-fill_vector_from_file_raw(in Filename fn)
+fillVectorFromFileRaw(in Filename fn)
 {
     string[] ret;
     File file = File(fn.rootful);

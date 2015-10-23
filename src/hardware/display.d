@@ -5,10 +5,10 @@ import std.string;
 
 import basics.help; // positive mod
 import basics.alleg5;
-import basics.globals; // main_name_of_game
+import basics.globals; // nameOfTheGame
 import basics.globconf;
-import graphic.color; // inside display_startup_message()
-import graphic.textout; // inside display_startup_message()
+import graphic.color; // inside displayStartupMessage()
+import graphic.textout; // inside displayStartupMessage()
 import file.log;
 import gui;
 import hardware.mouse; // center mouse after changing resolution
@@ -30,12 +30,12 @@ ALLEGRO_DISPLAY* display;
  *
  *      call once per main_loop to trap/untrap mouse
  *
- *  @property int display_xl()
- *  @property int display_yl()
+ *  @property int displayXl()
+ *  @property int displayYl()
  *
  *  @property int display_fps()
  *
- *  void display_startup_message(string)
+ *  void displayStartupMessage(string)
  *
  *      before main_loop draws
  */
@@ -47,7 +47,7 @@ get_display_close_was_clicked() {
 
 
 
-private long[] _fps_arr;
+private long[] _fpsArr;
 
 void
 flip_display() {
@@ -55,9 +55,9 @@ flip_display() {
     al_flip_display();
 
     // compute FPS, these can be queried with @property int display_fps()
-    _fps_arr ~= al_get_timer_count(timer);
-    while (_fps_arr != null && _fps_arr[0] <= _fps_arr[$-1] - ticks_per_sec)
-        _fps_arr = _fps_arr[1 .. $];
+    _fpsArr ~= al_get_timer_count(timer);
+    while (_fpsArr != null && _fpsArr[0] <= _fpsArr[$-1] - ticksPerSecond)
+        _fpsArr = _fpsArr[1 .. $];
 }
 
 
@@ -65,13 +65,13 @@ flip_display() {
 @property int
 display_fps()
 {
-    return _fps_arr.len;
+    return _fpsArr.len;
 }
 
 
 
 @property int
-display_xl()
+displayXl()
 {
     assert(display, "display hasn't been created");
     return al_get_display_width(display);
@@ -80,7 +80,7 @@ display_xl()
 
 
 @property int
-display_yl()
+displayYl()
 {
     assert(display, "display hasn't been created");
     return al_get_display_height(display);
@@ -134,15 +134,15 @@ void set_screen_mode(bool want_full, int want_x = 0, int want_y = 0)
     // add two more modes for fullscreen, and two more modes for windowed,
     // but choose the order of these additions based on want_full
     void add_fullscreen_try_modes() {
-        if (screen_resolution_x > 0 && screen_resolution_y > 0) {
-            try_modes ~= TryMode(true, screen_resolution_x,
-                                       screen_resolution_y);
+        if (screenResolutionX > 0 && screenResolutionY > 0) {
+            try_modes ~= TryMode(true, screenResolutionX,
+                                       screenResolutionY);
         }
         try_modes  ~= TryMode(true, 640, 480);
     }
     void add_windowed_try_modes() {
-        if (screen_windowed_x > 0 && screen_windowed_y > 0) {
-            try_modes ~= TryMode(false, screen_windowed_x, screen_windowed_y);
+        if (screenWindowedX > 0 && screenWindowedY > 0) {
+            try_modes ~= TryMode(false, screenWindowedX, screenWindowedY);
         }
         try_modes  ~= TryMode(false, 640, 480);
     }
@@ -177,20 +177,20 @@ void set_screen_mode(bool want_full, int want_x = 0, int want_y = 0)
 
     // cleaning up after the change, (re)instantiating the event queue
     assert (display);
-    al_set_window_title(display, main_name_of_game.toStringz);
+    al_set_window_title(display, nameOfTheGame.toStringz);
 
     queue = al_create_event_queue();
     al_register_event_source(queue, al_get_display_event_source(display));
 
     clear_screen_at_next_blit = true;
-    hardware.mouse.center_mouse();
+    hardware.mouse.centerMouse();
 
     immutable int al_x = al_get_display_width (display);
     immutable int al_y = al_get_display_height(display);
     immutable int al_f = al_get_display_flags (display)
                        & fullscreen_flag;
 
-    gui.Geom.set_screen_xyls(al_x, al_y);
+    gui.Geom.setScreenXYls(al_x, al_y);
 
     // if we didn't get what we wanted, make an entry in the log file
     if (want_x > 0 && want_y > 0
@@ -234,10 +234,10 @@ void calc()
             display_close_was_clicked = true;
         }
         else if (event.type == ALLEGRO_EVENT_DISPLAY_SWITCH_OUT) {
-            hardware.mouse.set_trap_mouse(false);
+            hardware.mouse.trapMouse(false);
         }
         else if (event.type == ALLEGRO_EVENT_DISPLAY_SWITCH_IN) {
-            hardware.keyboard.clear_key_buffer_after_alt_tab();
+            hardware.keyboard.clearKeyBufferAfterAltTab();
             // Don't affect the mouse: the mouse shall only be trapped
             // when it is clicked in the game window
         }
@@ -246,7 +246,7 @@ void calc()
 
 
 
-void display_startup_message(string str)
+void displayStartupMessage(string str)
 {
     static string[] msgs;
     msgs ~= str;
@@ -256,7 +256,7 @@ void display_startup_message(string str)
     al_clear_to_color(color.black);
     int y = 0;
     foreach (msg; msgs) {
-        al_draw_text(djvu_s, color.white, 20, y += 20, ALLEGRO_ALIGN_LEFT,
+        al_draw_text(djvuS, color.white, 20, y += 20, ALLEGRO_ALIGN_LEFT,
          msg.toStringz());
     }
     al_flip_display();

@@ -8,8 +8,8 @@ import std.utf;
 
 
 // The percent operator can return a negative number, e.g. -5 % 3 == -2.
-// When the desired result here is 1, not -2, use positive_mod().
-int positive_mod(in int nr, in int modulo)
+// When the desired result here is 1, not -2, use positiveMod().
+int positiveMod(in int nr, in int modulo)
 {
     if (modulo <= 0) return 0;
     immutable int normal_mod = nr % modulo;
@@ -29,7 +29,7 @@ int even(in int x) {
 // Phobos has rounding, but tiebreaks only either to the even integer,
 // or away from zero. I want to tiebreak to the larger integer.
 int
-round_int(F)(in F f)
+roundInt(F)(in F f)
     if (is (F : float))
 {
     return (f + 0.5f).floor.to!int;
@@ -47,7 +47,7 @@ backspace(in string str)
 
 
 string
-user_name_escape_for_filename(in string str)
+userNameEscapeForFilename(in string str)
 {
     // DTODO
     return str;
@@ -68,7 +68,7 @@ len(T)(in T[] arr)
 
 
 void
-destroy_array(T)(ref T arr)
+destroyArray(T)(ref T arr)
 {
     foreach (ref var; arr) {
         destroy(var);

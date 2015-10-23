@@ -25,9 +25,9 @@ public:
     alias SearchCrit = bool function(in Filename);
     alias FileSorter = void delegate(Filename[]);
 
-/*  static SearchCrit default_file_finder;
- *  static SearchCrit default_search_crit;
- *         FileSorter default_file_sorter;
+/*  static SearchCrit default_fileFinder;
+ *  static SearchCrit default_searchCrit;
+ *         FileSorter default_fileSorter;
  *
  *  void load_dir(in Filename, const int which_page = 0);
  *
@@ -37,75 +37,75 @@ public:
  *  void highlight_file_number(int);
  *  void highlight_move       (int);
  */
-    @property void       file_finder(FileFinder ff) { _file_finder = ff; }
-    @property void       search_crit(SearchCrit sc) { _search_crit = sc; }
-    @property void       file_sorter(FileSorter fs) { _file_sorter = fs; }
-    @property FileFinder file_finder() const { return _file_finder; }
-    @property SearchCrit search_crit() const { return _search_crit; }
-    @property FileSorter file_sorter() const { return _file_sorter; }
+    @property void       fileFinder(FileFinder ff) { _fileFinder = ff; }
+    @property void       searchCrit(SearchCrit sc) { _searchCrit = sc; }
+    @property void       fileSorter(FileSorter fs) { _fileSorter = fs; }
+    @property FileFinder fileFinder() const { return _fileFinder; }
+    @property SearchCrit searchCrit() const { return _searchCrit; }
+    @property FileSorter fileSorter() const { return _fileSorter; }
 
     @property bool   clicked()             { return _clicked;             }
-    @property int    files_total()         { return files.length.to!int;  }
+    @property int    filesTotal()          { return files.length.to!int;  }
     @property int    page()                { return _page;                }
 
-    @property inout(Button) button_last_clicked() inout {
-        return _button_last_clicked; }
+    @property inout(Button) buttonLastClicked() inout {
+        return _buttonLastClicked; }
 
     deprecated("Do we still need this in the browser?")
     const(Filename) get_file(int i) { return files[i]; }
 
-    @property void            current_dir(in Filename fn) { load_dir(fn);  }
-    @property inout(Filename) current_dir()  inout { return _current_dir;  }
-    @property inout(Filename) current_file() inout { return _current_file; }
+    @property void            currentDir(in Filename fn) { load_dir(fn);  }
+    @property inout(Filename) currentDir()  inout { return _currentDir;  }
+    @property inout(Filename) currentFile() inout { return _currentFile; }
 
-    @property int bottom_button()      { return _bottom_button;     }
-    @property int bottom_button(int i) { return _bottom_button = i; }
+    @property int bottomButton()      { return _bottomButton;     }
+    @property int bottomButton(int i) { return _bottomButton = i; }
 
-    @property bool use_hotkeys()       { return _use_hotkeys;     }
-    @property bool use_hotkeys(bool b) { return _use_hotkeys = b; }
+    @property bool useHotkeys()       { return _useHotkeys;     }
+    @property bool useHotkeys(bool b) { return _useHotkeys = b; }
 
 protected:
 
     @property bool clicked(bool b) { return _clicked = b; }
 
 //  final    void   buttons_clear();
-    abstract Button new_file_button(int from_top, int total, in Filename);
-    abstract Button new_flip_button();
+    abstract Button newFileButton(int from_top, int total, in Filename);
+    abstract Button newFlipButton();
 
     enum OnDirLoadAction { CONTINUE, RELOAD, ABORT }
 
     // Alter the listed directory contents if necessary, by overriding
     OnDirLoadAction on_dir_load() { return OnDirLoadAction.CONTINUE; }
-    void on_file_highlight() { }
+    void onFileHighlight() { }
     void put_to_file_list(Filename s) { files ~= s; }
 
     // retrieve the raw list of files. Useful when overriding on_dir_load()
     // to sort the files before buttons are drawn.
     @property inout(Filename[]) file_list() inout { return files; }
 
-/*  override void calc_self();
- *  override void draw_self();
+/*  override void calcSelf();
+ *  override void drawSelf();
  */
 private:
 
     int  _page;
-    int  _bottom_button;
-    int  file_number_at_top;
-    bool bottom_button_flips_page;
+    int  _bottomButton;
+    int  _fileNumberAtTop;
+    bool _bottomButtonFlipsPage;
 
-    bool _use_hotkeys;
+    bool _useHotkeys;
     bool _clicked;
 
     Filename[] files;
     Button[]   buttons;
-    Button     _button_last_clicked;
+    Button     _buttonLastClicked;
 
-    Filename   _current_dir;
-    Filename   _current_file; // need not be in current_dir
+    Filename   _currentDir;
+    Filename   _currentFile; // need not be in currentDir
 
-    FileFinder _file_finder;
-    SearchCrit _search_crit;
-    FileSorter _file_sorter;
+    FileFinder _fileFinder;
+    SearchCrit _searchCrit;
+    FileSorter _fileSorter;
 
 
 
@@ -114,18 +114,18 @@ public:
 this(Geom g)
 {
     super(g);
-    _file_finder   = &default_file_finder;
-    _search_crit   = &default_search_crit;
-    _file_sorter   = &default_file_sorter;
-    _bottom_button = g.yl.to!int / 20 - 1;
-    _use_hotkeys   = true;
-    undraw_color   = color.gui_m;
+    _fileFinder   = &default_fileFinder;
+    _searchCrit   = &default_searchCrit;
+    _fileSorter   = &default_fileSorter;
+    _bottomButton = g.yl.to!int / 20 - 1;
+    _useHotkeys   = true;
+    undrawColor   = color.guiM;
 }
 
 
 
 public static Filename[]
-default_file_finder(in Filename where)
+default_fileFinder(in Filename where)
 {
     return file.search.find_files(where);
 }
@@ -133,7 +133,7 @@ default_file_finder(in Filename where)
 
 
 public static bool
-default_search_crit(in Filename fn)
+default_searchCrit(in Filename fn)
 {
     // use everything
     return true;
@@ -142,7 +142,7 @@ default_search_crit(in Filename fn)
 
 
 public void
-default_file_sorter(Filename[] arr)
+default_fileSorter(Filename[] arr)
 {
     // sort by pure filename
     arr.sort();
@@ -154,11 +154,11 @@ public void
 load_dir(in Filename to_load, in int which_page = 0)
 {
     assert (to_load, "dirname to load in file list is null");
-    if (! _current_dir || _current_dir.dir_rootless != to_load.dir_rootless) {
-        _current_dir = new Filename(to_load.dir_rootless);
+    if (! _currentDir || _currentDir.dirRootless != to_load.dirRootless) {
+        _currentDir = new Filename(to_load.dirRootless);
         _page = which_page;
     }
-    load_current_dir();
+    load_currentDir();
 }
 
 
@@ -167,10 +167,10 @@ protected final void
 buttons_clear()
 {
     foreach (b; buttons) {
-        rm_child(b);
+        rmChild(b);
     }
     buttons = null;
-    req_draw();
+    reqDraw();
 }
 
 
@@ -193,35 +193,35 @@ highlight_file_number(in int pos)
 
     if (pos == -1) {
         // file to be highlighted is not in the directory
-        _current_file = current_dir;
-        _button_last_clicked = null;
+        _currentFile = currentDir;
+        _buttonLastClicked = null;
         return;
     }
     // Main progression of this function: the file was found.
     // If not on the current page, swap the page.
-    if (bottom_button_flips_page) {
-        if (pos <  file_number_at_top
-         || pos >= file_number_at_top + bottom_button) {
-            _page = pos / bottom_button;
-            load_current_dir();
+    if (_bottomButtonFlipsPage) {
+        if (pos <  _fileNumberAtTop
+         || pos >= _fileNumberAtTop + bottomButton) {
+            _page = pos / bottomButton;
+            load_currentDir();
         }
     }
-    _current_file = files[pos];
+    _currentFile = files[pos];
 
-    Button but = buttons[pos - file_number_at_top];
+    Button but = buttons[pos - _fileNumberAtTop];
 
-    if (_button_last_clicked == but) {
+    if (_buttonLastClicked == but) {
         but.on = ! but.on;
     }
-    else if (_button_last_clicked) {
-        _button_last_clicked.on = false;
+    else if (_buttonLastClicked) {
+        _buttonLastClicked.on = false;
         but.on = true;
     }
     else {
         but.on = true;
     }
-    _button_last_clicked = but;
-    on_file_highlight();
+    _buttonLastClicked = but;
+    onFileHighlight();
 }
 
 
@@ -232,7 +232,7 @@ public void highlight_move(in int by)
     if (! files.length) return;
 
     // Do we have a valid highlight right now?
-    int pos = files.countUntil(_current_file).to!int;
+    int pos = files.countUntil(_currentFile).to!int;
     immutable int last = (files.length - 1).to!int;
 
     if (pos != -1) {
@@ -244,11 +244,11 @@ public void highlight_move(in int by)
             // If not first or last file, move by the given number of steps,
             // but stop on the first/last entries. Don't wrap around even
             // with steps left!
-            int by_left = by;
+            int byLeft = by;
             do {
-                if (by > 0) { ++pos; --by_left; }
-                else        { --pos; ++by_left; }
-            } while (by_left != 0 && pos != 0 && pos != last);
+                if (by > 0) { ++pos; --byLeft; }
+                else        { --pos; ++byLeft; }
+            } while (byLeft != 0 && pos != 0 && pos != last);
         }
     }
     // If none of the files were highlighted before the method call,
@@ -263,97 +263,97 @@ public void highlight_move(in int by)
 
 
 private void
-load_current_dir()
+load_currentDir()
 {
-    assert (_current_dir, "can't load null dir");
-    req_draw();
-    bottom_button_flips_page = false;
+    assert (_currentDir, "can't load null dir");
+    reqDraw();
+    _bottomButtonFlipsPage = false;
     buttons_clear();
-    _button_last_clicked = null;
+    _buttonLastClicked = null;
     files = null;
 
-    try files = _file_finder(_current_dir)
-        .filter!(a => _search_crit(a)).array();
+    try files = _fileFinder(_currentDir)
+        .filter!(a => _searchCrit(a)).array();
     catch (Exception e) {
         // don't do anything, maybe on_dir_load() will do something
         // on nonexistant dir
     }
-    _file_sorter(files);
+    _fileSorter(files);
 
     // Hook/event function: derived classes may alter file via overriding
     // the empty on_dir_load() and calls to add_to_file_list().
     final switch (on_dir_load()) {
         case OnDirLoadAction.CONTINUE: break;
-        case OnDirLoadAction.RELOAD: load_current_dir(); return;
+        case OnDirLoadAction.RELOAD: load_currentDir(); return;
         case OnDirLoadAction.ABORT: return;
     }
 
     // create one button per file
-    if (_page * _bottom_button >= files.length) _page = 0;
-    file_number_at_top = _page * _bottom_button;
+    if (_page * _bottomButton >= files.length) _page = 0;
+    _fileNumberAtTop = _page * _bottomButton;
     // The following (while) doeis: If there is more than one page, fill
     // each page fully with file buttons. Therefore, the last page may get
     // filled with entries from the second-to-last page.
-    while (_page > 0 && file_number_at_top + _bottom_button > files.length)
-        --file_number_at_top;
+    while (_page > 0 && _fileNumberAtTop + _bottomButton > files.length)
+        --_fileNumberAtTop;
 
-    int next_from_file = file_number_at_top;
+    int nextFromFile = _fileNumberAtTop;
 
     void add_file_button(in int i)
     {
-        Button b = new_file_button(i, next_from_file, files[next_from_file]);
-        b.undraw_color = color.gui_m;
+        Button b = newFileButton(i, nextFromFile, files[nextFromFile]);
+        b.undrawColor = color.guiM;
         buttons ~= b;
-        add_child(b);
-        ++next_from_file;
+        addChild(b);
+        ++nextFromFile;
     }
 
-    for (int i = 0; i < bottom_button
-     && next_from_file < files.length; ++i) {
+    for (int i = 0; i < bottomButton
+     && nextFromFile < files.length; ++i) {
         add_file_button(i);
     }
     // Add page-flipping button, unless we're filling the first page exactly
-    if (next_from_file == files.length - 1 && page == 0) {
-        add_file_button(_bottom_button);
+    if (nextFromFile == files.length - 1 && page == 0) {
+        add_file_button(_bottomButton);
     }
-    else if (next_from_file < files.length || page > 0) {
+    else if (nextFromFile < files.length || page > 0) {
         // looks similar to add_file_button() above
-        Button b = new_flip_button();
-        b.undraw_color = color.gui_m;
+        Button b = newFlipButton();
+        b.undrawColor = color.guiM;
         buttons ~= b;
-        add_child(b);
-        bottom_button_flips_page = true;
+        addChild(b);
+        _bottomButtonFlipsPage = true;
     }
 
     // Maybe highlight a button
-    if (_current_file && _current_dir.dir_rootful == _current_file.dir_rootful)
+    if (_currentFile && _currentDir.dirRootful == _currentFile.dirRootful)
         for (int i = 0; i < buttons.length; ++i)
-            if (i != _bottom_button || ! bottom_button_flips_page)
-                if (_current_file == files[file_number_at_top + i]) {
-                    _button_last_clicked = buttons[i];
-                    _button_last_clicked.on = true;
+            if (i != _bottomButton || ! _bottomButtonFlipsPage)
+                if (_currentFile == files[_fileNumberAtTop + i]) {
+                    _buttonLastClicked = buttons[i];
+                    _buttonLastClicked.on = true;
                 }
 }
 
 
 
 protected override void
-calc_self()
+calcSelf()
 {
     _clicked = false;
     foreach (int i, b; buttons) {
         if (b.execute) {
             // page-switching button has been clicked?
-            if (i == _bottom_button && bottom_button_flips_page) {
+            if (i == _bottomButton && _bottomButtonFlipsPage) {
                 ++_page;
-                if (_page * _bottom_button >= files.length) _page = 0;
-                load_current_dir();
+                if (_page * _bottomButton >= files.length) _page = 0;
+                load_currentDir();
                 _clicked = false;
                 break;
             }
             // otherwise, a normal file button has been clicked
             else {
-                highlight_file_number(file_number_at_top + i);
+                highlight_file_number(_fileNumberAtTop + i);
                 _clicked = true;
                 break;
             }
@@ -361,12 +361,12 @@ calc_self()
     }
     // end foreach Button
 
-    if (_use_hotkeys && buttons.length) {
+    if (_useHotkeys && buttons.length) {
         bool any_movement_with_keys = true;
-        if      (key_once(basics.user.key_me_up_1))   highlight_move(-1);
-        else if (key_once(basics.user.key_me_up_5))   highlight_move(-5);
-        else if (key_once(basics.user.key_me_down_1)) highlight_move(1);
-        else if (key_once(basics.user.key_me_down_5)) highlight_move(5);
+        if      (keyTapped(basics.user.keyMenuUpBy1))   highlight_move(-1);
+        else if (keyTapped(basics.user.keyMenuUpBy5))   highlight_move(-5);
+        else if (keyTapped(basics.user.keyMenuDownBy1)) highlight_move(1);
+        else if (keyTapped(basics.user.keyMenuDownBy5)) highlight_move(5);
         else any_movement_with_keys = false;
         if (any_movement_with_keys) _clicked = true;
     }
@@ -375,10 +375,10 @@ calc_self()
 
 
 protected override void
-draw_self()
+drawSelf()
 {
-    undraw_self();
-    super.draw_self();
+    undrawSelf();
+    super.drawSelf();
 }
 
 }

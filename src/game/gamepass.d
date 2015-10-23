@@ -10,16 +10,16 @@ import hardware.keyboard;
 import hardware.mousecur;
 
 package void
-impl_calc_passive(Game game) { with (game)
+implCalcPassive(Game game) { with (game)
 {
-    if (key_once(ALLEGRO_KEY_ESCAPE))
-        game._goto_menu = true;
+    if (keyTapped(ALLEGRO_KEY_ESCAPE))
+        game._gotoMenu = true;
 
-    mouse.xf = 0;
-    mouse.yf = 0;
+    mouseCursor.xf = 0;
+    mouseCursor.yf = 0;
 
-    map.calc_scrolling();
-    if (map.scrolling_now)
-        mouse.xf = 3;
+    map.calcScrolling();
+    if (map.scrollingNow)
+        mouseCursor.xf = 3;
 }}
-// end with (game), end function impl_calc_passive
+// end with (game), end function implCalcPassive

@@ -78,7 +78,7 @@ void initialize()
 
     Sample load(in string str)
     {
-        return new Sample(new Filename(dir_data_sound.rootful ~ str));
+        return new Sample(new Filename(dirDataSound.rootful ~ str));
     }
 
     samples[Sound.DISKSAVE]    = load("disksave.ogg");
@@ -216,7 +216,7 @@ this(in Filename fn)
 {
     filename = fn;
     unique = true;
-    sample = al_load_sample(fn.rootful_z);
+    sample = al_load_sample(fn.rootfulZ);
     if (! sample) {
         if (! fn.file_exists())
             Log.logf("Missing sound file `%s'", fn.rootful);
@@ -258,7 +258,7 @@ void draw()
     // the user setting allows sound volumes between 0 and 20.
     // The setting 10 corresponds to Allegro 5's default volume of 1.0.
     // Allegro 5 can work with higher settings than 1.0.
-    float our_volume() { return 1.0f * sound_volume / 10; }
+    float our_volume() { return 1.0f * soundVolume / 10; }
 
     if (unique && (loud || (quiet && !last_was_loud))) {
         stop();

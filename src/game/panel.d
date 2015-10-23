@@ -15,13 +15,13 @@ class Panel : Element {
 
 public:
 
-    @property float skill_xl() { return Geom.screen_xlg / (14 + 4); }
-    @property float skill_yl() { return this.geom.ylg - 20; }
+    @property float skillXl() { return Geom.screenXlg / (14 + 4); }
+    @property float skillYl() { return this.geom.ylg - 20; }
 
     SkillButton[] skills;
 
-    BitmapButton zoom, restart, pause, nuke_single, nuke_multi;
-    TwoTasksButton speed_back, speed_ahead, speed_fast;
+    BitmapButton zoom, restart, pause, nukeSingle, nukeMulti;
+    TwoTasksButton speedBack, speedAhead, speedFast;
 
     @property auto gapamode() const { return _gapamode; }
     // setter property is down below
@@ -30,7 +30,7 @@ private:
 
     private GapaMode _gapamode;
 
-    private Button _dummy_bg;
+    private Button _dummyBG;
 
 
 
@@ -38,50 +38,50 @@ public:
 
 this()
 {
-    super(new Geom(0, 0, Geom.screen_xlg,
-                   Geom.screen_ylg / Geom.panel_yl_divisor, From.BOTTOM));
+    super(new Geom(0, 0, Geom.screenXlg,
+                         Geom.screenYlg / Geom.panelYlDivisor, From.BOTTOM));
 
-    _dummy_bg = new Button(new Geom(0, 0, this.xlg / 2,
-                           this.ylg - skill_yl, From.TOP_LEFT));
-    add_child(_dummy_bg);
+    _dummyBG = new Button(new Geom(0, 0, this.xlg / 2,
+                           this.ylg - skillYl, From.TOP_LEFT));
+    addChild(_dummyBG);
 
-    skills.length = basics.user.skill_sort.length;
-    foreach (int id, ac; basics.user.skill_sort) {
-        skills[id] = new SkillButton(new Geom(id * skill_xl, 0,
-                                 skill_xl, skill_yl, From.BOTTOM_LEFT));
+    skills.length = basics.user.skillSort.length;
+    foreach (int id, ac; basics.user.skillSort) {
+        skills[id] = new SkillButton(new Geom(id * skillXl, 0,
+                                 skillXl, skillYl, From.BOTTOM_LEFT));
         skills[id].skill = ac;
-        add_child(skills[id]);
+        addChild(skills[id]);
         // DTODO: set hotkeys to skillbuttons
     }
 
-    void new_control_button(T)(ref T b, int x, int y, int frame)
+    void newControlButton(T)(ref T b, int x, int y, int frame)
         if (is(T : BitmapButton))
     {
-        b = new T(new Geom((3 - x) * skill_xl,
-            y == 0 ?  0.5f * skill_yl : 0, skill_xl,
-            0.5f * skill_yl, From.BOTTOM_RIGHT),
-            get_internal(basics.globals.file_bitmap_game_panel));
+        b = new T(new Geom((3 - x) * skillXl,
+            y == 0 ?  0.5f * skillYl : 0, skillXl,
+            0.5f * skillYl, From.BOTTOM_RIGHT),
+            getInternal(basics.globals.fileImageGame_panel));
         b.xf = frame;
-        add_child(b);
+        addChild(b);
     }
 
-    new_control_button(zoom,        0, 0,  2);
-    new_control_button(speed_back,  0, 1, 10);
-    new_control_button(speed_ahead, 1, 1,  3);
-    new_control_button(speed_fast,  2, 1,  4); // 5 if turbo is on
-    new_control_button(restart,     1, 0,  8);
-    new_control_button(nuke_single, 2, 0,  9);
+    newControlButton(zoom,       0, 0,  2);
+    newControlButton(speedBack,  0, 1, 10);
+    newControlButton(speedAhead, 1, 1,  3);
+    newControlButton(speedFast,  2, 1,  4); // 5 if turbo is on
+    newControlButton(restart,    1, 0,  8);
+    newControlButton(nukeSingle, 2, 0,  9);
 
     pause = new BitmapButton(
-        new Geom(0, 0, skill_xl, skill_yl, From.BOTTOM_RIGHT),
-        get_internal(basics.globals.file_bitmap_game_pause));
+        new Geom(0, 0, skillXl, skillYl, From.BOTTOM_RIGHT),
+        getInternal(basics.globals.fileImageGamePause));
 
-    nuke_multi = new BitmapButton(
-        new Geom(0, 0, 4 * skill_xl, this.ylg - skill_yl, From.BOTTOM_RIGHT),
-        get_internal(basics.globals.file_bitmap_game_nuke));
+    nukeMulti = new BitmapButton(
+        new Geom(0, 0, 4 * skillXl, this.ylg - skillYl, From.BOTTOM_RIGHT),
+        getInternal(basics.globals.fileImageGameNuke));
 
-    add_child(pause);
-    add_child(nuke_multi);
+    addChild(pause);
+    addChild(nukeMulti);
 
     gapamode = GapaMode.PLAY_SINGLE;
 }
@@ -94,7 +94,7 @@ gapamode(in GapaMode gp)
     _gapamode = gp;
 
     if (_gapamode == GapaMode.PLAY_SINGLE) {
-        nuke_multi.hide();
+        nukeMulti.hide();
     }
     else {
         // ...
@@ -106,7 +106,7 @@ gapamode(in GapaMode gp)
 
 
 public void
-set_like_tribe(in Tribe tr)
+setLikeTribe(in Tribe tr)
 {
     if (tr is null)
         return;
@@ -119,27 +119,27 @@ set_like_tribe(in Tribe tr)
     /*
     stats.set_tribe_local(tr);
 
-    spawnint_slow.set_spawnint(tr->spawnint_slow);
+    spawnintSlow.set_spawnint(tr->spawnintSlow);
     spawnint_cur .set_spawnint(tr->spawnint);
-    rate_fixed   .set_number  (tr->spawnint_fast);
+    rate_fixed   .set_number  (tr->spawnintFast);
 
-    nuke_single.set_on  (tr->nuke);
-    nuke_multi .set_on  (tr->nuke);
+    nukeSingle.set_on  (tr->nuke);
+    nukeMulti .set_on  (tr->nuke);
     spec_tribe .set_text(tr->get_name());
 
-    set_skill_on(skill_last_set_on);
+    set_skill_on(skillLastSetOn);
     */
 
-    req_draw();
+    reqDraw();
 }
-// end function set_like_tribe()
+// end function setLikeTribe()
 
 
 
 protected override void
-calc_self()
+calcSelf()
 {
-    _dummy_bg.down = false;
+    _dummyBG.down = false;
 }
 
 }

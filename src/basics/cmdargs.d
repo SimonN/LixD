@@ -22,10 +22,9 @@ enum Runmode {
     PRINT_AND_EXIT
 }
 
-private string _help_and_exit_output =
+private string _helpAndExitOutput =
     "-h or -? or --help   print this help and exit\n"
     "-n                   ask for player's name on startup\n"
-    "-o                   disable all sound output\n"
     "-v or --version      print version and exit\n"
     "-w                   run in windowed mode at 640x480\n"
     "--resol=800x600      run in windowed mode at the given resolution\n"
@@ -36,23 +35,22 @@ private string _help_and_exit_output =
 
 class Cmdargs {
 
-    bool username_ask;
+    bool usernameAsk;
     bool windowed;
-    bool sound_disabled;
-    bool version_and_exit;
-    bool help_and_exit;
+    bool versionAndExit;
+    bool helpAndExit;
 
-    int  want_res_x;
-    int  want_res_y;
+    int  wantResolutionX;
+    int  wantResolutionY;
 
-    private string[] bad_switches;
-    Filename[]       verify_files;
+    private string[] badSwitches;
+    Filename[]       verifyFiles;
 
     @property Runmode mode()
     {
-        if (bad_switches != null || version_and_exit || help_and_exit)
+        if (badSwitches != null || versionAndExit || helpAndExit)
             return Runmode.PRINT_AND_EXIT;
-        else if (verify_files != null)
+        else if (verifyFiles != null)
             return Runmode.VERIFY;
         else
             return Runmode.INTERACTIVE;
@@ -69,13 +67,13 @@ class Cmdargs {
                 immutable resol = "--resol=";
 
                 if (arg == "--version") {
-                    version_and_exit = true;
+                    versionAndExit = true;
                 }
                 else if (arg == "--help") {
-                    help_and_exit = true;
+                    helpAndExit = true;
                 }
                 else if (arg.starts_with(vrf)) {
-                    verify_files ~= new Filename(arg[vrf.length .. $]);
+                    verifyFiles ~= new Filename(arg[vrf.length .. $]);
                 }
                 else if (arg.starts_with(resol)) {
                     // this string is expected to be of the form "1234x567"
@@ -86,51 +84,50 @@ class Cmdargs {
                             // leave wanted resolution at 0
                             throw new Exception("caught in 5 lines anyway");
                         // these can throw too on bad chars in the string
-                        want_res_x = numbers[0].to!int;
-                        want_res_y = numbers[1].to!int;
+                        wantResolutionX = numbers[0].to!int;
+                        wantResolutionY = numbers[1].to!int;
                     }
                     catch (Exception e) { }
 
-                    if (want_res_x == 0 || want_res_y == 0)
-                        bad_switches ~= arg;
+                    if (wantResolutionX == 0 || wantResolutionY == 0)
+                        badSwitches ~= arg;
                     else
                         windowed = true;
                 }
                 else {
-                    bad_switches ~= arg;
+                    badSwitches ~= arg;
                 }
             }
             else if (arg.starts_with("-")) {
                 // allow arguments chained like -nw
                 foreach (c; arg[1 .. $]) switch (c) {
-                case 'h': help_and_exit    = true; break;
-                case 'n': username_ask     = true; break;
-                case 'o': sound_disabled   = true; break;
-                case 'v': version_and_exit = true; break;
-                case 'w': windowed         = true; break;
-                case '?': help_and_exit    = true; break;
-                default : bad_switches ~= "-" ~ c; break;
+                case 'h': helpAndExit    = true; break;
+                case 'n': usernameAsk    = true; break;
+                case 'v': versionAndExit = true; break;
+                case 'w': windowed       = true; break;
+                case '?': helpAndExit    = true; break;
+                default : badSwitches ~= "-" ~ c; break;
                 }
             }
-            else bad_switches ~= arg;
+            else badSwitches ~= arg;
         }
     }
 
 
 
-    void print_noninteractive_output()
+    void printNoninteractiveOutput()
     {
         // always print the version; -v is basically used to enter this
         // function without triggering any additional cases
-        writeln("Lix version ", get_version());
-        if (bad_switches != null) {
-            foreach (sw; bad_switches)
+        writeln("Lix version ", gameVersion());
+        if (badSwitches != null) {
+            foreach (sw; badSwitches)
                 writeln("Bad command-line argument: `" ~ sw ~ "'");
-            if (! help_and_exit)
+            if (! helpAndExit)
                 writeln("Try -h or -? for help.");
         }
-        if (help_and_exit)
-            writeln(_help_and_exit_output);
+        if (helpAndExit)
+            writeln(_helpAndExitOutput);
     }
 
 }

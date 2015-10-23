@@ -15,7 +15,7 @@ class BitmapButton : Button {
         _cutbit = cb;
     }
 
-    @property int xf(in int i) { _xf = i; req_draw(); return _xf; }
+    @property int xf(in int i) { _xf = i; reqDraw(); return _xf; }
     @property int xf()  const  { return _xf;         }
     @property int xfs() const  { return _cutbit.xfs; }
 
@@ -26,15 +26,15 @@ private:
 
 protected:
 
-    override void draw_self()
+    override void drawSelf()
     {
-        super.draw_self();
-        immutable int yf = on && ! down ? 1 : 0;
+        super.drawSelf();
+        immutable int yf = this.on && ! this.down ? 1 : 0;
 
         // center the image on the button
-        int cb_x = to!int(xs + xls / 2f - _cutbit.xl / 2f);
-        int cb_y = to!int(ys + yls / 2f - _cutbit.yl / 2f);
-        _cutbit.draw(guiosd, cb_x, cb_y, _xf, yf);
+        int cbX = to!int(xs + xls / 2f - _cutbit.xl / 2f);
+        int cbY = to!int(ys + yls / 2f - _cutbit.yl / 2f);
+        _cutbit.draw(guiosd, cbX, cbY, xf, yf);
     }
 
 }
@@ -48,16 +48,16 @@ class Checkbox : BitmapButton {
     {
         g.xl = 20;
         g.yl = 20;
-        super(g, get_internal(file_bitmap_menu_checkmark));
-        this.on_execute = &toggle;
+        super(g, getInternal(fileImageMenuCheckmark));
+        this.onExecute = (){ this.toggle; };
     }
 
-    @property bool checked(bool b) { xf = (b ? xf_ck : 0);
-                                     req_draw(); return b; }
-    @property bool checked() const { return xf == xf_ck; }
-    void toggle()                  { checked = ! checked; }
+    @property bool checked(bool b) { xf = (b ? xfCheckmark : 0);
+                                     reqDraw(); return b; }
+    @property bool checked() const { return xf == xfCheckmark;   }
+    bool toggle()                  { return checked = ! checked; }
 
-    private static immutable xf_ck = 2;
+    private enum xfCheckmark = 2;
 
 }
 // end class Checkbox

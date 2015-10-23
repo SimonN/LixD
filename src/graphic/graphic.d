@@ -53,17 +53,17 @@ class Graphic {
     @property int xfs() const { return cutbit.xfs; }
     @property int yfs() const { return cutbit.yfs; }
 
-/*  bool  frame_exists(int, int) const
+/*  bool  frameExists(int, int) const
  *  AlCol get_pixel   (int, int) const -- remember to lock target!
  *
- *  bool is_last_frame() const
+ *  bool isLastFrame() const
  *
  *  void draw()
  *
  *      Draw to the torbit, according to mirror and rotation.
  *      Can't be a const method because of mutable this.torbit.
  *
- *  void draw_directly_to_screen() const
+ *  void drawDirectlyToScreen() const
  *
  *      Ignore (Torbit ground) and mirr/rotat; and blit immediately to the
  *      screen. This should only be used to draw the mouse cursor.
@@ -128,8 +128,8 @@ this(Graphic rhs)
 x(in int i)
 {
     _x = i;
-    if (ground && ground.torus_x)
-        _x = positive_mod(_x, ground.xl);
+    if (ground && ground.torusX)
+        _x = positiveMod(_x, ground.xl);
     return _x;
 }
 
@@ -137,13 +137,13 @@ x(in int i)
 y(in int i)
 {
     _y = i;
-    if (ground && ground.torus_y)
-        _y = positive_mod(_y, ground.yl);
+    if (ground && ground.torusY)
+        _y = positiveMod(_y, ground.yl);
     return _y;
 }
 
-@property int x(in float fl) { return x = fl.round_int; }
-@property int y(in float fl) { return y = fl.round_int; }
+@property int x(in float fl) { return x = fl.roundInt; }
+@property int y(in float fl) { return y = fl.roundInt; }
 
 
 
@@ -160,16 +160,16 @@ yl() const
 
 
 
-bool is_last_frame() const
+bool isLastFrame() const
 {
-    return ! cutbit.frame_exists(_xf + 1, _yf);
+    return ! cutbit.frameExists(_xf + 1, _yf);
 }
 
 
 
-bool frame_exists(in int which_xf, in int which_yf) const
+bool frameExists(in int which_xf, in int which_yf) const
 {
-    return cutbit.frame_exists(which_xf, which_yf);
+    return cutbit.frameExists(which_xf, which_yf);
 }
 
 
@@ -179,26 +179,26 @@ get_pixel(in int gx, in int gy) const
 {
     immutable int _xl = cutbit.xl;
     immutable int _yl = cutbit.yl;
-    int use_x = gx;
-    int use_y = gy;
+    int useX = gx;
+    int useY = gy;
 
     // If the rotation is a multiple of a quarter turn, rotate the values
     // with the Graphic object. If the rotation is a fraction, return
     // the value from the original bitmap (treated as unrotated).
     // Lix terrain can only be rotated in quarter turns.
-    int rotation_integer = to!int(_rot);
-    if (rotation_integer - _rot != 0) rotation_integer = 0;
+    int rotationInteger = to!int(_rot);
+    if (rotationInteger - _rot != 0) rotationInteger = 0;
 
     // DTODO: check if this works still correctly, after we have
     // rewritten this class using D properties instead of getters/setters
-    switch (rotation_integer) {
-        case 0: use_x = gx;       use_y = !_mirror ? gy       : _yl-gy-1;break;
-        case 1: use_x = gy;       use_y = !_mirror ? _yl-gx-1 : gx;      break;
-        case 2: use_x = _xl-gx-1; use_y = !_mirror ? _yl-gy-1 : gy;      break;
-        case 3: use_x = _xl-gy-1; use_y = !_mirror ? gx       : _yl-gx-1;break;
+    switch (rotationInteger) {
+        case 0: useX = gx;       useY = !_mirror ? gy       : _yl-gy-1;break;
+        case 1: useX = gy;       useY = !_mirror ? _yl-gx-1 : gx;      break;
+        case 2: useX = _xl-gx-1; useY = !_mirror ? _yl-gy-1 : gy;      break;
+        case 3: useX = _xl-gy-1; useY = !_mirror ? gx       : _yl-gx-1;break;
         default: break;
     }
-    return cutbit.get_pixel(_xf, _yf, use_x, use_y);
+    return cutbit.get_pixel(_xf, _yf, useX, useY);
 }
 
 
@@ -216,9 +216,9 @@ void draw()
 
 
 void
-draw_directly_to_screen() const
+drawDirectlyToScreen() const
 {
-    cutbit.draw_directly_to_screen(_x, _y, _xf, _yf);
+    cutbit.drawDirectlyToScreen(_x, _y, _xf, _yf);
 }
 
 }

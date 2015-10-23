@@ -1,6 +1,6 @@
 module graphic.gadget.openfor;
 
-/* GadgetCanBeOpen : Gadget      has the method is_open_for(Tribe).
+/* GadgetCanBeOpen : Gadget      has the method isOpenFor(Tribe).
  * Water       : GadgetCanBeOpen is a permanent trap, water or fire.
  * Triggerable : GadgetCanBeOpen is a cooldown trap or cooldown flinger.
  * Trampoline  : GadgetCanBeOpen is permanently active, anims on trigger.
@@ -31,39 +31,39 @@ public:
     {
         super(rhs);
         _tribes     = rhs._tribes;
-        _start_anim = rhs._start_anim;
+        _startAnim = rhs._startAnim;
     }
 
     abstract override typeof (this) clone();
 
-    @property bool start_anim() const { return _start_anim;     }
-    @property bool start_anim(bool b) { return _start_anim = b; }
+    @property bool startAnim() const { return _startAnim;     }
+    @property bool startAnim(bool b) { return _startAnim = b; }
 
-    bool is_open_for(Tribe t) { return ! has_tribe(t); }
+    bool isOpenFor(Tribe t) { return ! hasTribe(t); }
 
-    final void add_tribe(Tribe t)
+    final void addTribe(Tribe t)
     {
-        if (! has_tribe(t))
+        if (! hasTribe(t))
             _tribes ~= t;
     }
 
     override void animate()
     {
-        if (xf != 0 || _start_anim)
+        if (xf != 0 || _startAnim)
             super.animate();
-        _start_anim = false;
+        _startAnim = false;
         _tribes = null;
     }
 
 private:
 
     Tribe[] _tribes;
-    bool _start_anim;
+    bool _startAnim;
 
-    final protected bool has_tribe(const(Tribe) t) const
+    final protected bool hasTribe(const(Tribe) t) const
     {
-        foreach (tribe_in_vec; _tribes)
-            if (t is tribe_in_vec)
+        foreach (tribeInVec; _tribes)
+            if (t is tribeInVec)
                 return false;
         return true;
     }
@@ -78,7 +78,7 @@ private class PermanentlyOpen : GadgetCanBeOpen {
     mixin (StandardGadgetCtor!());
     mixin (CloneableTrivialOverride!());
 
-    override bool is_open_for(Tribe t)
+    override bool isOpenFor(Tribe t)
     {
         return true;
     }
@@ -105,9 +105,9 @@ private class Triggerable : GadgetCanBeOpen {
     mixin (StandardGadgetCtor!());
     mixin (CloneableTrivialOverride!());
 
-    override bool is_open_for(Tribe t)
+    override bool isOpenFor(Tribe t)
     {
-        return xf == 0 && ! has_tribe(t);
+        return xf == 0 && ! hasTribe(t);
     }
 
 }
@@ -120,7 +120,7 @@ class Trampoline : GadgetCanBeOpen {
     mixin (StandardGadgetCtor!());
     mixin (CloneableTrivialOverride!());
 
-    override bool is_open_for(Tribe t)
+    override bool isOpenFor(Tribe t)
     {
         // trampolines are always active, even if they animate only on demand
         return true;

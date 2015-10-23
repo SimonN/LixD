@@ -22,7 +22,7 @@ import hardware.display;
 class Benchmark {
 
     enum num_tests = 10;
-    enum ticks_per_test = 10 * ticks_per_sec;
+    enum ticks_per_test = 10 * ticksPerSecond;
 
     int ticks = 0;
     int ticks_last_fps_log = 0;
@@ -37,7 +37,7 @@ class Benchmark {
     @property bool exit()
     {
         return ticks >= num_tests * ticks_per_test
-            || key_once(ALLEGRO_KEY_ESCAPE);
+            || keyTapped(ALLEGRO_KEY_ESCAPE);
     }
 
     private static int get_al_ticks()

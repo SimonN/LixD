@@ -1,188 +1,187 @@
-$main_name_of_language         Deutsch
+// See `english.txt' for instructions on how to translate the game.
 
-$main_loading_1                ------- Lix wird geladen -------
-$main_loading_2                --------- Bitte warten ---------
-$main_version                  Version
+$mainNameOfLanguage         Deutsch
 
 // Verschiedene Dialoge
 
-$common_ok                     Okay
-$common_cancel                 Abbrechen
-$common_yes                    Ja
-$common_no                     Nein
-$common_back                   Zurück
-$common_exit                   Beenden
-$common_dir_parent             ..
-$common_dir_flip_page          (weitere...)
+$commonOk                     Okay
+$commonCancel                 Abbrechen
+$commonYes                    Ja
+$commonNo                     Nein
+$commonBack                   Zurück
+$commonExit                   Beenden
+$commonDirParent             ..
+$commonDirFlipPage          (weitere...)
+$commonVersion                Version
 
 // Browser
 
-$browser_single_title          Einzelspieler
-$browser_network_title         Netzwerk-Level aussuchen
-$browser_replay_title          Replays
-$browser_play                  Spielen
-$browser_edit                  Editieren
-$browser_replay                Abspielen
-$browser_delete                Löschen
-$browser_extract               Level extrah.
-$browser_export_image          Bild export.
-$browser_export_image_done     Fertig.
+$browserSingleTitle          Einzelspieler
+$browserNetworkTitle         Netzwerk-Level aussuchen
+$browserReplayTitle          Replays
+$browserPlay                  Spielen
+$browserEdit                  Editieren
+$browserReplay                Abspielen
+$browserDelete                Löschen
+$browserExtract               Level extrah.
+$browserExport_image          Bild export.
+$browserExport_imageDone     Fertig.
 
-$browser_info_author           Von:
-$browser_info_initgoal         Ziel:
-$browser_info_initial          Anzahl Lix:
-$browser_info_hatches          Klappen:
-$browser_info_goals            Ausgänge:
-$browser_info_skills           Fähigktn.:
-$browser_info_clock_2          Nachzeit:
-$browser_info_author_none      ?
-$browser_info_clock_none       --
+$browserInfoAuthor           Von:
+$browserInfoInitgoal         Ziel:
+$browserInfoInitial          Anzahl Lix:
+$browserInfoHatches          Klappen:
+$browserInfoGoals            Ausgänge:
+$browserInfoSkills           Fähigktn.:
+$browserInfoClock2          Nachzeit:
+$browserInfoAuthorNone      ?
+$browserInfoClockNone       --
 
-$browser_info_result_saved     Gerettet:
-$browser_info_result_skills    Fähigktn.:
-$browser_info_result_time      Dauer:
-$browser_info_result_old_1     Der Level wurde
-$browser_info_result_old_2     seitdem editiert.
+$browserInfoResultSaved     Gerettet:
+$browserInfoResultSkills    Fähigktn.:
+$browserInfoResultTime      Dauer:
+$browserInfoResultOld1     Der Level wurde
+$browserInfoResultOld2     seitdem editiert.
 
-$browser_info_player           Spieler:
-$browser_info_version          Spiel:
-$browser_info_built            Level:
-$browser_info_new              ist zu neu
-$browser_info_same             passt!
-$browser_info_old              ist zu alt
-$browser_info_holds_level      enthalten
+$browserInfoPlayer           Spieler:
+$browserInfoVersion          Spiel:
+$browserInfoBuilt            Level:
+$browserInfoNew              ist zu neu
+$browserInfoSame             passt!
+$browserInfoOld              ist zu alt
+$browserInfoHoldsLevel      enthalten
 
-$browser_box_delete_tit_rep    Replay löschen?
-$browser_box_delete_que_rep    Soll dieses Replay wirklich gelöscht werden?
-$browser_box_delete_tit_lev    Level löschen?
-$browser_box_delete_que_lev    Soll dieser Level wirklich gelöscht werden?
+$browserBoxDeleteReplayTitle    Replay löschen?
+$browserBoxDeleteReplayQuestion    Soll dieses Replay wirklich gelöscht werden?
+$browserBoxDeleteLevelTitle    Level löschen?
+$browserBoxDeleteLevelQuestion    Soll dieser Level wirklich gelöscht werden?
 
 // Lobby
 
-$win_lobby_title               Netzwerkspiel
-$win_lobby_title_lobby         Lobby
-$win_lobby_title_room          Raum Nr.
-$win_lobby_exit                Netz verlassen
-$win_lobby_unstable_central    (Experimentelle Version, bitte nicht zentralen Server nutzen.)
-$win_lobby_start_central       Verbinden zu zentralem Server
-$win_lobby_start_server        Selbst ein Spiel hosten
-$win_lobby_start_client        Verbinden zu:
-$win_lobby_chat                Chat:
-$win_lobby_select_level        Level aussuchen
-$win_lobby_ready               Bereit zum Start
-$win_lobby_room_number         Raum Nr.
-$win_lobby_room_player         Spieler
-$win_lobby_room_players        Spieler
-$win_lobby_room_create         Neuen Raum eroeffnen
-$win_lobby_room_leave          Raum verlassen
+$winLobbyTitle               Netzwerkspiel
+$winLobbyTitleLobby         Lobby
+$winLobbyTitleRoom          Raum Nr.
+$winLobbyExit                Netz verlassen
+$winLobbyUnstableCentral    (Experimentelle Version, bitte nicht zentralen Server nutzen.)
+$winLobbyStartServer       Verbinden zu zentralem Server
+$winLobbyStartServer        Selbst ein Spiel hosten
+$winLobbyStartClient        Verbinden zu:
+$winLobbyChat                Chat:
+$winLobbySelectLevel        Level aussuchen
+$winLobbyReady               Bereit zum Start
+$winLobbyRoomNumber         Raum Nr.
+$winLobbyRoomPlayer         Spieler
+$winLobbyRoomPlayers        Spieler
+$winLobbyRoomCreate         Neuen Raum eroeffnen
+$winLobbyRoomLeave          Raum verlassen
 
 // Spielfenster
 
-$win_game_title                Spielmenü
-$win_game_result               Ergebnis
-$win_game_lix_saved            Lix gerettet:
-$win_game_lix_saved_in_time    Lix rechtzeitig gerettet:
-$win_game_resume               Weiterspielen
-$win_game_restart              Level neustarten
-$win_game_save_replay          Replay speichern
-$win_game_menu                 Beenden
-$win_game_comment_perfect      Perfekt! Alle gerettet!
+$winGameTitle                Spielmenü
+$winGameResult               Ergebnis
+$winGameLix_saved            Lix gerettet:
+$winGameLix_savedInTime    Lix rechtzeitig gerettet:
+$winGameResume               Weiterspielen
+$winGameRestart              Level neustarten
+$winGameSaveReplay          Replay speichern
+$winGameMenu                 Beenden
+$win_game_commentPerfect      Perfekt! Alle gerettet!
 $win_game_comment_more         Super, mehr als notwendig!
 $win_game_comment_exactly      Ziel haargenau erreicht!
 $win_game_comment_less         Das sind leider zu wenige.
 $win_game_comment_none         Das war wohl nix. Nochmal?
-$win_game_result_skills        Fähigkeiten:
-$win_game_result_time          Gebrauchte Zeit:
-$win_game_net_first            Ein hervorragender Sieg!
-$win_game_net_second           Fein, guter zweiter Platz.
-$win_game_net_middle           Naja, ganz okay. Revanche?
-$win_game_net_last             Schade, du liegst hinten.
-$win_game_net_first_tie        Super, einer der Ersten!
-$win_game_net_last_tie         Immerhin nicht alleine unten.
-$win_game_net_all_tie          Wie das? Kein klarer Sieger?
-$win_game_net_zero             Null komma nix, diese Runde!
-$win_game_net_all_zero         Haben wir nuklearen Winter?
-$win_game_replay_win_one       hat gewonnen!
-$win_game_replay_win_team      haben gewonnen!
-$win_game_replay_tie           Das Spiel ist unentschieden.
-$win_game_overwrite_title      Replay überschreiben?
-$win_game_overwrite_question   Soll dieses Replay wirklich überschrieben werden?
+$winGameResultSkillsUsed        Fähigkeiten:
+$winGameResultTimeUsed          Gebrauchte Zeit:
+$winGameNetFirst            Ein hervorragender Sieg!
+$winGameNetSecond           Fein, guter zweiter Platz.
+$winGameNetMiddle           Naja, ganz okay. Revanche?
+$winGameNetLast             Schade, du liegst hinten.
+$winGameNetTieForFirst        Super, einer der Ersten!
+$winGameNetTieForLast         Immerhin nicht alleine unten.
+$winGameNetEverybodyTies          Wie das? Kein klarer Sieger?
+$winGameNetZero             Null komma nix, diese Runde!
+$winGameNetEverybodyZero         Haben wir nuklearen Winter?
+$winGameReplayWinOne       hat gewonnen!
+$winGameReplayWinTeam      haben gewonnen!
+$winGameReplayTie           Das Spiel ist unentschieden.
+$winGameOverwriteTitle      Replay überschreiben?
+$winGameOverwriteQuestion   Soll dieses Replay wirklich überschrieben werden?
 
 // Help texts inside the game
 
-$gameplay_rate_minus           Fall-Intervall: Lix erscheinen langsamer.
-$gameplay_rate_plus            Fall-Intervall: Lix erscheinen schneller.
-$gameplay_pause                Pause.
-$gameplay_zoom                 Level-Zoom an- oder ausschalten.
-$gameplay_speed_slow           Zeitlupe.
-$gameplay_speed_fast           Schneller Vorlauf.
-$gameplay_speed_turbo          Turbo-Vorlauf.
-$gameplay_state_save           Aktuellen Spielstand schnellspeichern.
-$gameplay_state_load           Den schnellgespeicherten Spielstand laden.
-$gameplay_restart              Level neustarten.
-$gameplay_nuke                 Atombombe. Aktivierung durch Doppelklick.
-$gameplay_hint_first           Einen Tipp für diesen Level lesen.
-$gameplay_hint_next            Den nächsten Tipp lesen.
-$gameplay_hint_prev            Den vorherigen Tipp lesen.
-$gameplay_hint_off             Den Tipp ausblenden.
-$gameplay_spec_tribe           Fähigkeiten eines anderen Teams ansehen.
+$gameSpawnintSlower           Fall-Intervall: Lix erscheinen langsamer.
+$gameSpawnintFaster            Fall-Intervall: Lix erscheinen schneller.
+$gamePause                Pause.
+$gameZoom                 Level-Zoom an- oder ausschalten.
+$gameSpeed_slow           Zeitlupe.
+$gameSpeed_fast           Schneller Vorlauf.
+$gameSpeedTurbo          Turbo-Vorlauf.
+$gameStateSave           Aktuellen Spielstand schnellspeichern.
+$gameStateLoad           Den schnellgespeicherten Spielstand laden.
+$gameRestart              Level neustarten.
+$gameNuke                 Atombombe. Aktivierung durch Doppelklick.
+$gameHintFirst           Einen Tipp für diesen Level lesen.
+$gameHintNext            Den nächsten Tipp lesen.
+$gameHintPrev            Den vorherigen Tipp lesen.
+$gameHintOff             Den Tipp ausblenden.
+$gameSpecTribe           Fähigkeiten eines anderen Teams ansehen.
 
 // Editor allgemein
 
-$editor_unsaved_title          Änderungen speichern?
-$editor_unsaved_title_new      Level speichern?
-$editor_unsaved_question       Moechtest du die Änderungen an diesem Level speichern?
-$editor_unsaved_question_new   Moechtest du diesen neuen Level speichern?
-$editor_file_name              Dateiname:
+$editorUnsavedTitle          Änderungen speichern?
+$editorUnsavedTitleNew      Level speichern?
+$editorUnsavedQuestion       Moechtest du die Änderungen an diesem Level speichern?
+$editorUnsavedQuestionNew   Moechtest du diesen neuen Level speichern?
+$editorFileName              Dateiname:
 $editor_level_name             Leveltitel:
-$editor_hotkey                 Hotkey:
-$editor_hotkey_hold            Hotkey: halte
-$editor_bar_at                 an
-$editor_bar_hover              Objekte werden markiert.
-$editor_bar_selection          Objekte markiert.
-$editor_bar_movekeys_long      Ziehe Objekte umher oder bewege sie mit [
-$editor_bar_movekeys_short     Bewegen mit [
-$editor_bar_movekeys_mid       ], [
-$editor_bar_movekeys_end       ].
+$editorHotkey                 Hotkey:
+$editorHotkeyHold            Hotkey: halte
+$editorBarAt                 an
+$editorBarHover              Objekte werden markiert.
+$editorBarSelection          Objekte markiert.
+$editorBarMoveWithKeysLong      Ziehe Objekte umher oder bewege sie mit [
+$editorBarMoveWithKeysShort     Bewegen mit [
+$editorBarMoveWithKeysMid       ], [
+$editorBarMoveWithKeysEnd       ].
 
-$editor_button_FILE_NEW        Neu: Karte leeren und einen ganz neuen Level bauen.
-$editor_button_FILE_EXIT       Beenden: Editor verlassen, auf Wunsch Änderungen speichern.
-$editor_button_FILE_SAVE       Speichern: Level unter dem bisherigen Dateinamen abspeichern.
-$editor_button_FILE_SAVE_AS    Speichern unter: Level unter einem neuen Dateinamen abspeichern.
-$editor_button_GRID_2          Raster 2: Objekt-Koordinaten beim Umherziehen auf 2er runden.
-$editor_button_GRID_CUSTOM     Benutzerdef. Raster: In den Hauptmenü-Optionen verstellbar.
-$editor_button_GRID_16         Raster 16: Objekt-Koordinaten beim Umherziehen auf 16er runden.
-$editor_button_SELECT_ALL      Alles: Alle Objekte auf dem Bildschirm in die Auswahl setzen.
-$editor_button_SELECT_FRAME    Rahmen: Mehrfachauswahl von Objekten durch Rahmenziehen.
-$editor_button_SELECT_ADD      Hinzufügen: Neue Objekte auswählen, ohne alte abzuwählen.
-$editor_button_SELECT_COPY     Kopieren: Ausgewählte Objekte klonen.
-$editor_button_SELECT_DELETE   Löschen: Ausgewählte Objekte löschen.
-$editor_button_SELECT_MINUS    Hinter: Ausgewählte Objekte hinter einige andere setzen.
-$editor_button_SELECT_PLUS     Hervor: Ausgewählte Objekte vor einige andere holen.
-$editor_button_SELECT_BACK     Hintergrund: Ausgewählte Objekte ganz nach hinten setzen.
-$editor_button_SELECT_FRONT    Vordergrund: Ausgewählte Objekte ganz nach vorn holen.
-$editor_button_SELECT_FLIP     Spiegeln: Ausgewähltes Terrain horizontal spiegeln.
-$editor_button_SELECT_ROTATE   Drehen: Ausgewähltes Terrain um ein Viertel drehen.
-$editor_button_SELECT_DARK     Dunkel: Ausgewähltes Terrain im Spiel schwarz zeichnen.
-$editor_button_SELECT_NOOW     Nicht überschreiben: Ausgew. Ter. ueberschr. nur dunkles Ter.
-$editor_button_VIEW_ZOOM       Zoom: Vergrößerung der Karte ein- oder ausschalten.
-$editor_button_HELP            (dies macht derzeit nichts)
-$editor_button_MENU_SIZE       Abmessungen: Festlegen der Größe und Topologie des Levels.
-$editor_button_MENU_SCROLL     Aussehen: Festlegen der Startposition und Hintergrundfarbe.
-$editor_button_MENU_VARS       Variablen: Festlegen grundsätzlicher Level-Variablen.
-$editor_button_MENU_SKILL      Fähigkeiten: Festlegen der nutzbaren Lix-Fähigkeiten.
-$editor_button_ADD_TERRAIN     Terrain: Ein durchgrabbares Terrain-Object platzieren.
-$editor_button_ADD_STEEL       Stahl: Ein nicht-durchgrabbares Stahlobjekt platzieren.
-$editor_button_ADD_HATCH       Klappe: Eine Lix-Eingangsklappe platzieren.
-$editor_button_ADD_GOAL        Ziel: Ein Ziel, also einen Lix-Ausgang platzieren.
-$editor_button_ADD_DECO        Dekoration: Ein harmloses Dekorationsobjekt platzieren.
-$editor_button_ADD_HAZARD      Gefahr: Eine Falle, Wasser oder Feuer platzieren.
+$editorButtonFileNew        Neu: Karte leeren und einen ganz neuen Level bauen.
+$editorButtonFileExit       Beenden: Editor verlassen, auf Wunsch Änderungen speichern.
+$editorButtonFileSave       Speichern: Level unter dem bisherigen Dateinamen abspeichern.
+$editorButtonFileSaveAs    Speichern unter: Level unter einem neuen Dateinamen abspeichern.
+$editorButtonGrid2          Raster 2: Objekt-Koordinaten beim Umherziehen auf 2er runden.
+$editorButtonGridCustom     Benutzerdef. Raster: In den Hauptmenü-Optionen verstellbar.
+$editorButtonGrid16         Raster 16: Objekt-Koordinaten beim Umherziehen auf 16er runden.
+$editorButtonSelectAll      Alles: Alle Objekte auf dem Bildschirm in die Auswahl setzen.
+$editorButtonSelectFrame    Rahmen: Mehrfachauswahl von Objekten durch Rahmenziehen.
+$editorButtonSelectAdd      Hinzufügen: Neue Objekte auswählen, ohne alte abzuwählen.
+$editorButtonSelectCopy     Kopieren: Ausgewählte Objekte klonen.
+$editorButtonSelectDelete   Löschen: Ausgewählte Objekte löschen.
+$editorButtonSelectMinus    Hinter: Ausgewählte Objekte hinter einige andere setzen.
+$editorButtonSelectPlus     Hervor: Ausgewählte Objekte vor einige andere holen.
+$editorButtonSelectBack     Hintergrund: Ausgewählte Objekte ganz nach hinten setzen.
+$editorButtonSelectFront    Vordergrund: Ausgewählte Objekte ganz nach vorn holen.
+$editorButtonSelectFlip     Spiegeln: Ausgewähltes Terrain horizontal spiegeln.
+$editorButtonSelectRotate   Drehen: Ausgewähltes Terrain um ein Viertel drehen.
+$editorButtonSelectDark     Dunkel: Ausgewähltes Terrain im Spiel schwarz zeichnen.
+$editorButtonSelectNoow     Nicht überschreiben: Ausgew. Ter. ueberschr. nur dunkles Ter.
+$editorButtonViewZoom       Zoom: Vergrößerung der Karte ein- oder ausschalten.
+$editorButtonHelp            (dies macht derzeit nichts)
+$editorButtonMenuSize       Abmessungen: Festlegen der Größe und Topologie des Levels.
+$editorButtonMenuScroll     Aussehen: Festlegen der Startposition und Hintergrundfarbe.
+$editorButtonMenuVars       Variablen: Festlegen grundsätzlicher Level-Variablen.
+$editorButtonMenuSkill      Fähigkeiten: Festlegen der nutzbaren Lix-Fähigkeiten.
+$editorButtonAddTerrain     Terrain: Ein durchgrabbares Terrain-Object platzieren.
+$editorButtonAddSteel       Stahl: Ein nicht-durchgrabbares Stahlobjekt platzieren.
+$editorButtonAddHatch       Klappe: Eine Lix-Eingangsklappe platzieren.
+$editorButtonAddGoal        Ziel: Ein Ziel, also einen Lix-Ausgang platzieren.
+$editorButtonAddDeco        Dekoration: Ein harmloses Dekorationsobjekt platzieren.
+$editorButtonAddHazard      Gefahr: Eine Falle, Wasser oder Feuer platzieren.
 
 // SaveBrowser
-$save_browser_title            Speichern unter
-$save_filename                 Dateiname:
-$save_box_overwrite_title      Level überschreiben?
-$save_box_overwrite_question   Soll dieser Level wirklich überschrieben werden?
+$saveBrowserTitle            Speichern unter
+$saveFilename                 Dateiname:
+$saveBoxOverwriteTitle      Level überschreiben?
+$saveBoxOverwriteQuestion   Soll dieser Level wirklich überschrieben werden?
 
 // BitmapBrowser
 $add_terrain                   Terrain hinzufuegen
@@ -245,8 +244,8 @@ $export_multi_clock            Nachspielzeit:
 $net_chat_welcome_1            Verbinde zum Zentralserver, eröffne selbst ein Spiel oder gib
 $net_chat_welcome_unstable     Diese Version ist experimentell. Eröffne selbst ein Spiel oder gib
 $net_chat_welcome_2            eine IP-Adresse/einen Rechnernamen ein und wähle "%s".
-$net_chat_start_server         Du bist der Server. Andere Spieler koennen zu dir verbinden.
-$net_chat_start_client         Suche Server unter
+$net_chat_startServer         Du bist der Server. Andere Spieler koennen zu dir verbinden.
+$net_chat_startClient         Suche Server unter
 $net_chat_start_cancel         Verbindungsaufbau abgebrochen.
 $net_chat_disconnection         hat das Netzwerk verlassen.
 $net_chat_we_too_old           Deine Lix-Version ist zu alt, um verbinden zu koennen.
@@ -398,6 +397,6 @@ $option_ed_grid_custom         Benutzerdef. Rastergröße
 
 // Neuen Spieler begruessen (Mini-Dialog)
 
-$option_new_player_title       Lix
-$option_new_player_first       Hallo und Willkommen!
-$option_new_player_second      Bitte gib deinen Namen ein:
+$optionNew_player_title       Lix
+$optionNew_player_first       Hallo und Willkommen!
+$optionNew_player_second      Bitte gib deinen Namen ein:

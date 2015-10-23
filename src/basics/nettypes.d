@@ -78,7 +78,7 @@ struct ReplayData {
         action = b;
     }
 
-    @property bool is_some_assignment() const
+    @property bool isSomeAssignment() const
     {
         return action == ASSIGN
             || action == ASSIGN_LEFT

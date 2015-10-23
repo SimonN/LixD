@@ -56,7 +56,7 @@ deinitialize()
 private
 this()
 {
-    file = std.stdio.File(basics.globals.file_log.rootful, "a");
+    file = std.stdio.File(basics.globals.fileLog.rootful, "a");
     something_was_logged_already_this_session = false;
 }
 
@@ -80,7 +80,7 @@ log_header_if_necessary()
 
         // a free line and then the current datetime in its own line
         singl.file.writefln("");
-        singl.file.writefln("Lix version:  " ~ get_version().toString());
+        singl.file.writefln("Lix version:  " ~ gameVersion().toString());
         singl.file.writefln("Session date: " ~ Date.now().toString);
     }
 }
@@ -91,7 +91,7 @@ private nothrow static string
 format_al_ticks()
 {
     try return format("%9.2f", al_get_timer_count(basics.alleg5.timer) * 1.0
-                      / basics.globals.ticks_per_sec);
+                      / basics.globals.ticksPerSecond);
     catch (Exception) {
         return "bad time!";
     }

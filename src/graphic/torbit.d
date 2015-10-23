@@ -4,19 +4,19 @@ import std.math; // fmod, abs
 import std.algorithm; // minPos
 
 import basics.alleg5;
-import basics.help; // positive_mod
+import basics.help; // positiveMod
 import graphic.color; // drawing dark, to analyze transparency
 import file.filename;
 import hardware.display;
 import hardware.tharsis;
 
-private immutable bool _tharsis_profiling_in_torbit = false;
+private immutable bool _tharsisProfilingInTorbit = false;
 
 
 
 class Torbit {
 
-//  this(xl, yl, torus_x, torus_y);
+//  this(xl, yl, torusX, torusY);
 //  this(const Torbit rhs);
 
     @property Albit albit() { return bitmap; }
@@ -26,37 +26,37 @@ class Torbit {
 
 //  void resize(int, int);
 
-    @property bool torus_x(bool b) { return _tx = b; }
-    @property bool torus_y(bool b) { return _ty = b; }
-    @property bool torus_x() const { return _tx; }
-    @property bool torus_y() const { return _ty; }
-    void set_torus_xy(bool x, bool y) { _tx = x; _ty = y; }
+    @property bool torusX(bool b) { return _tx = b; }
+    @property bool torusY(bool b) { return _ty = b; }
+    @property bool torusX() const { return _tx; }
+    @property bool torusY() const { return _ty; }
+    void setTorusXY(bool x, bool y) { _tx = x; _ty = y; }
 
-/*  int    distance_x (in int x1, in int y2)                       const;
- *  int    distance_y (in int y1, in int y2)                       const;
+/*  int    distanceX (in int x1, in int y2)                       const;
+ *  int    distanceY (in int y1, in int y2)                       const;
  *  double hypot      (in int x1, in int y1, in int x2, in int y2) const;
- *  double hypotsquare(in int x1, in int y1, in int x2, in int y2) const;
+ *  double hypotSquared(in int x1, in int y1, in int x2, in int y2) const;
  *
  *      Computing distances, like (1st_arg - 2nd_arg), but these check for
- *      shortcuts around the cylinder/torus if appropriate. Using hypotsquare
+ *      shortcuts around the cylinder/torus if appropriate. Using hypotSquared
  *      is more efficient because the square root doesn't have to be computed.
  *
  *                              px   py   Rx   Ry   Rxl  Ryl
- *  bool get_point_in_rectangle(int, int, int, int, int, int) const;
+ *  bool isPointInRectangle(int, int, int, int, int, int) const;
  */
     // DTODODRAW: import is only here while the next is unimpl
     import file.log;
-    void draw_to(Torbit, int x = 0, int y = 0) const
-        { Log.log("DTODODRAW: Torbit.draw_to(Torbit) not implemented"); }
-    void draw_to(Albit,  int x = 0, int y = 0, int rxl = 0, int ryl = 0) const
-        { Log.log("DTODODRAW: Torbit.draw_to(Albit) not implemented"); }
+    void drawTo(Torbit, int x = 0, int y = 0) const
+        { Log.log("DTODODRAW: Torbit.drawTo(Torbit) not implemented"); }
+    void drawTo(Albit,  int x = 0, int y = 0, int rxl = 0, int ryl = 0) const
+        { Log.log("DTODODRAW: Torbit.drawTo(Albit) not implemented"); }
 
-/*  void draw_from(Albit, x, y, bool mirr, double rot, double scal)
+/*  void drawFrom(Albit, x, y, bool mirr, double rot, double scal)
  *
  *      Draw the entire Albit onto (Torbit this). Can take non-integer quarter
  *      turns as (double rot).
  *
- *  void draw_dark_from(Albit, x, y, bool mirr, int rot, AlCol col)
+ *  void drawDarkFrom(Albit, x, y, bool mirr, int rot, AlCol col)
  *
  *      Implements the eraser piece drawing mode from class Cutbit.
  *      It's cleaner like this: Torbit knows exactly how to lock itself
@@ -67,31 +67,31 @@ class Torbit {
  *      expected, and they must be already positively modded (see function
  *      in basics.help -- this will be asserted)! No scaling is possible.
  *
- *  protected void use_drawing_delegate(see below)
+ *  protected void useDrawingDelegate(see below)
  *
  *      Simplifies drawing onto the torus bitmap.
  *
- *  void copy_to_screen();
+ *  void copyToScreen();
  *
  *  void  clear_to_color (AlCol);
  */
-    void  clear_to_black () { clear_to_color(color.black);  }
-    void  clear_to_transp() { clear_to_color(color.transp); }
-/*  void  set_pixel     (int, int, AlCol);
- *  AlCol get_pixel     (int, int) const;
+    void  clearToBlack () { this.clearToColor(color.black);  }
+    void  clearToTransp() { this.clearToColor(color.transp); }
+/*  void  setPixel     (int, int, AlCol);
+ *  AlCol getPixel     (int, int) const;
  *
  *  // rectangles are given by Rx,  Ry,  Rxl, Ryl
- *  void draw_rectangle       (int, int, int, int, AlCol);
- *  void draw_filled_rectangle(int, int, int, int, AlCol);
+ *  void drawRectangle      (int, int, int, int, AlCol);
+ *  void drawFilledRectangle(int, int, int, int, AlCol);
  *
  *  // These methods are very slow, try not to use them each tick.
  *  // You should lock (Torbit.albit) before calling these functions,
  *  // they do not lock the bitmap themselves.
- *  void replace_color        (AlCol, AlCol);
- *  void replace_color_in_rect(int, int, int, int, AlCol, AlCol);
+ *  void replaceColor        (AlCol, AlCol);
+ *  void replaceColorInRect(int, int, int, int, AlCol, AlCol);
  *
  *  // for testing
- *  void save_to_file(in Filename);
+ *  void saveToFile(in Filename);
  */
 
 private:
@@ -120,7 +120,7 @@ this(
     _yl = a_yl;
     _tx = a_tx;
     _ty = a_ty;
-    bitmap = albit_create(_xl, _yl);
+    bitmap = albitCreate(_xl, _yl);
     assert (bitmap);
 }
 
@@ -165,13 +165,13 @@ void resize(int a_xl, int a_yl)
     if (bitmap) al_destroy_bitmap(bitmap);
     _xl = a_xl;
     _yl = a_yl;
-    bitmap = albit_create(_xl, _yl);
+    bitmap = albitCreate(_xl, _yl);
     assert (bitmap);
 }
 
 
 
-int distance_x(in int x1, in int x2) const
+int distanceX(in int x1, in int x2) const
 {
     if (! _tx) return x2 - x1;
     else {
@@ -182,7 +182,7 @@ int distance_x(in int x1, in int x2) const
 
 
 
-int distance_y(in int y1, in int y2) const
+int distanceY(in int y1, in int y2) const
 {
     if (! _ty) return y2 - y1;
     else {
@@ -195,32 +195,32 @@ int distance_y(in int y1, in int y2) const
 
 double hypot(in int x1, in int y1, in int x2, in int y2) const
 {
-    return std.math.sqrt(this.hypotsquare(x1, y1, x2, y2));
+    return std.math.sqrt(this.hypotSquared(x1, y1, x2, y2));
 }
 
 
 
-double hypotsquare(in int x1, in int y1, in int x2, in int y2) const
+double hypotSquared(in int x1, in int y1, in int x2, in int y2) const
 {
-    immutable int dx = distance_x(x2, x1);
-    immutable int dy = distance_y(y2, y1);
+    immutable int dx = distanceX(x2, x1);
+    immutable int dy = distanceY(y2, y1);
     return (dx * dx + dy * dy);
 }
 
 
 
-bool get_point_in_rectangle(
+bool isPointInRectangle(
     int px, int py, int rx, int ry, int rxl, int ryl) const
 {
     if (_tx) {
-        px = positive_mod(px, _xl);
-        rx = positive_mod(rx, _xl);
+        px = positiveMod(px, _xl);
+        rx = positiveMod(rx, _xl);
         // the following (if) omits the need for a 4-subrectangle-check
         if (px < rx) px += _xl;
     }
     if (_ty) {
-        py = positive_mod(py, _yl);
-        ry = positive_mod(ry, _yl);
+        py = positiveMod(py, _yl);
+        ry = positiveMod(ry, _yl);
         if (py < ry) py += _yl;
     }
     return (px >= rx && px < rx + rxl)
@@ -229,7 +229,7 @@ bool get_point_in_rectangle(
 
 
 
-protected void use_drawing_delegate(
+protected void useDrawingDelegate(
     void delegate(int, int) drawing_delegate,
     int x,
     int y
@@ -237,7 +237,7 @@ protected void use_drawing_delegate(
     assert (bitmap);
     assert (drawing_delegate != null);
 
-    static if (_tharsis_profiling_in_torbit)
+    static if (_tharsisProfilingInTorbit)
         auto zone1 = Zone(profiler, "torbit-deleg-func");
 
     // We don't lock the bitmap; drawing with high-level primitives
@@ -245,7 +245,7 @@ protected void use_drawing_delegate(
     auto drata = DrawingTarget(bitmap);
 
     {
-        static if (_tharsis_profiling_in_torbit)
+        static if (_tharsisProfilingInTorbit)
             auto zone2 = Zone(profiler, "torbit-deleg-once");
         drawing_delegate(x, y);
     }
@@ -257,7 +257,7 @@ protected void use_drawing_delegate(
 
 
 
-void draw_from(
+void drawFrom(
     Albit bit,
     int x = 0,
     int y = 0,
@@ -265,32 +265,32 @@ void draw_from(
     double rot = 0,
     double scal = 0
 ) {
-    static if (_tharsis_profiling_in_torbit)
-        auto my_zone = Zone(profiler, "torbit-draw-from");
+    static if (_tharsisProfilingInTorbit)
+        auto myZone = Zone(profiler, "torbit-draw-from");
 
     assert (bit);
 
     // DTODO: test whether these mods can be shifted into use_delegate.
-    if (_tx) x = positive_mod(x, _xl);
-    if (_ty) y = positive_mod(y, _yl);
+    if (_tx) x = positiveMod(x, _xl);
+    if (_ty) y = positiveMod(y, _yl);
     rot = std.math.fmod(rot, 4);
 
-    void delegate(int, int) draw_from_at;
-    assert(draw_from_at == null);
+    void delegate(int, int) drawFrom_at;
+    assert(drawFrom_at == null);
 
     // Select the appropriate Allegro function and its arguments.
     // This function will be called up to 4 times for drawing (Albit bit) onto
     // (Torbit this). Only the positions vary based on the torus properties.
 
     if (rot == 0 && ! scal) {
-        draw_from_at =
+        drawFrom_at =
          delegate void(int x_at, int y_at)
         {
             al_draw_bitmap(bit, x_at, y_at, ALLEGRO_FLIP_VERTICAL * mirr);
         };
     }
     else if (rot == 2 && ! scal) {
-        draw_from_at =
+        drawFrom_at =
          delegate void(int x_at, int y_at)
         {
             al_draw_bitmap(bit, x_at, y_at,
@@ -323,7 +323,7 @@ void draw_from(
         float xdr = b ? ysl/2.0 : xsl/2.0;
         float ydr = b ? xsl/2.0 : ysl/2.0;
 
-        if (! scal) draw_from_at =
+        if (! scal) drawFrom_at =
          delegate void(int x_at, int y_at)
         {
             al_draw_rotated_bitmap(bit, xsl/2.0, ysl/2.0,
@@ -332,7 +332,7 @@ void draw_from(
                 mirr ? ALLEGRO_FLIP_VERTICAL : 0
             );
         };
-        else draw_from_at =
+        else drawFrom_at =
          delegate void(int x_at, int y_at)
         {
             al_draw_scaled_rotated_bitmap(bit, xsl/2.0, ysl/2.0,
@@ -345,28 +345,28 @@ void draw_from(
         // end delegate
     }
 
-    use_drawing_delegate(draw_from_at, x, y);
+    useDrawingDelegate(drawFrom_at, x, y);
 }
 
 
 
-void draw_dark_from(
+void drawDarkFrom(
     Albit bit,
     int x,
     int y,
     in bool mirr,
     in int rot, // must be one of 0, 1, 2, 3, that will be asserted.
-    AlCol opaque_to_this_col
+    AlCol opaqueToThisCol
 ) {
     assert (bit);
     assert (bitmap);
     assert (rot >= 0 && rot < 4);
 
-    static if (_tharsis_profiling_in_torbit)
-        auto my_zone = Zone(profiler, "torbit-draw-dark-from");
+    static if (_tharsisProfilingInTorbit)
+        auto myZone = Zone(profiler, "torbit-draw-dark-from");
 
-    if (_tx) x = positive_mod(x, _xl);
-    if (_ty) y = positive_mod(y, _yl);
+    if (_tx) x = positiveMod(x, _xl);
+    if (_ty) y = positiveMod(y, _yl);
 
     immutable int bxl = al_get_bitmap_width (bit);
     immutable int byl = al_get_bitmap_height(bit);
@@ -389,7 +389,7 @@ void draw_dark_from(
     import file.log;
     import basics.matrix;
 
-    XY transf_ixy(int ix, int iy)
+    XY transfIxy(int ix, int iy)
     in {
         assert (ix >= 0);
         assert (iy >= 0);
@@ -423,51 +423,51 @@ void draw_dark_from(
         return ret;
     }
 
-    // ddf_at means "draw_dark_from_at".
+    // ddf_at means "drawDarkFrom_at".
     // This function will be called with rectangles, fully specified by
     // their top left corner and txl/tyl of the current scope.
     // but by start and end coordinates. Its coordinates are not guaranteed
     // to be on the screen, but it will fix that.
     void ddf_at(
-        int start_x, int start_y    // where to draw on the torbit
+        int startX, int startY    // where to draw on the torbit
     ) {
-        int bit_start_x = 0; // where to start iteration on (bit)
-        int bit_start_y = 0;
-        int end_x = start_x + txl;
-        int end_y = start_y + tyl;
+        int bitStartX = 0; // where to start iteration on (bit)
+        int bitStartY = 0;
+        int endX = startX + txl;
+        int endY = startY + tyl;
 
-        if (start_x < 0)  { bit_start_x = -start_x; start_x = 0; }
-        if (start_y < 0)  { bit_start_y = -start_y; start_y = 0; }
-        if (end_x   > _xl) end_x = _xl;
-        if (end_y   > _yl) end_y = _yl;
-        if (start_x >= end_x || start_y >= end_y) return;
+        if (startX < 0)  { bitStartX = -startX; startX = 0; }
+        if (startY < 0)  { bitStartY = -startY; startY = 0; }
+        if (endX   > _xl) endX = _xl;
+        if (endY   > _yl) endY = _yl;
+        if (startX >= endX || startY >= endY) return;
 
         // I'm afraid to call the following Allegro 5 function with off-bitmap
         // coordinates, that's why I've fixed everything and returned above.
         ALLEGRO_LOCKED_REGION* locked_region = al_lock_bitmap_region(
-            bitmap, start_x, start_y,
-            end_x - start_x,
-            end_y - start_y,
+            bitmap, startX, startY,
+            endX - startX,
+            endY - startY,
             ALLEGRO_PIXEL_FORMAT.ALLEGRO_PIXEL_FORMAT_ANY, // is fastest
             ALLEGRO_LOCK_READWRITE);
         scope (exit)
             al_unlock_bitmap(bitmap);
 
         auto drata = DrawingTarget(bitmap);
-        foreach  (int target_x; start_x .. end_x)
-         foreach (int target_y; start_y .. end_y) {
-            immutable int ix = target_x - start_x + bit_start_x;
-            immutable int iy = target_y - start_y + bit_start_y;
-            immutable XY    transf  = transf_ixy(ix, iy);
-            immutable AlCol src_col = al_get_pixel(bit, transf.x, transf.y);
-            if (src_col != color.transp)
-                al_put_pixel(target_x, target_y, opaque_to_this_col);
+        foreach  (int targetX; startX .. endX)
+         foreach (int targetY; startY .. endY) {
+            immutable int ix = targetX - startX + bitStartX;
+            immutable int iy = targetY - startY + bitStartY;
+            immutable XY    transf = transfIxy(ix, iy);
+            immutable AlCol srcCol = al_get_pixel(bit, transf.x, transf.y);
+            if (srcCol != color.transp)
+                al_put_pixel(targetX, targetY, opaqueToThisCol);
         }
         // end foreach
     }
     // end local function
 
-    auto lock_bit = LockReadWrite(bit);
+    auto lockBit = LockReadWrite(bit);
                     ddf_at(x,       y);
     if (_tx       ) ddf_at(x - _xl, y);
     if (       _ty) ddf_at(x,       y - _yl);
@@ -476,7 +476,7 @@ void draw_dark_from(
 
 
 
-void copy_to_screen()
+void copyToScreen()
 {
     auto drata = DrawingTarget(al_get_backbuffer(display));
     al_draw_bitmap(bitmap, 0, 0, 0);
@@ -484,7 +484,7 @@ void copy_to_screen()
 
 
 
-void clear_to_color(AlCol col)
+void clearToColor(AlCol col)
 {
     auto drata = DrawingTarget(bitmap);
     al_clear_to_color(col);
@@ -492,7 +492,7 @@ void clear_to_color(AlCol col)
 
 
 
-AlCol get_pixel(int x, int y) const
+AlCol getPixel(int x, int y) const
 {
     assert(bitmap);
     // when checking for pixels behind the border, we're repeating the last
@@ -502,17 +502,17 @@ AlCol get_pixel(int x, int y) const
     // From the Allegro docs: this is slow on video bitmaps, consider locking
     // manually in the class calling this method.
     return al_get_pixel(cast (Albit) bitmap,
-     _tx      ? positive_mod(x, _xl) :
+     _tx      ? positiveMod(x, _xl) :
      x < 0    ? 0                    :
      x >= _xl ? _xl - 1              : x,
-     _ty      ? positive_mod(y, _yl) :
+     _ty      ? positiveMod(y, _yl) :
      y < 0    ? 0                    :
      y >= _yl ? _yl - 1              : y);
 }
 
 
 
-void set_pixel(int x, int y, AlCol col)
+void setPixel(int x, int y, AlCol col)
 {
     assert(bitmap);
     // Here, don't draw outside of the boundaries, unlike the reading in
@@ -520,21 +520,21 @@ void set_pixel(int x, int y, AlCol col)
     auto drata = DrawingTarget(bitmap);
     if ((_tx || (x >= 0 && x < _xl))
      && (_ty || (y >= 0 && y < _yl)) ) al_put_pixel(
-     _tx ? positive_mod(x, _xl) : x,
-     _ty ? positive_mod(y, _yl) : y, col);
+     _tx ? positiveMod(x, _xl) : x,
+     _ty ? positiveMod(y, _yl) : y, col);
 }
 
 
 
-void draw_rectangle(int x, int y, int rxl, int ryl, AlCol col)
+void drawRectangle(int x, int y, int rxl, int ryl, AlCol col)
 {
-    static if (_tharsis_profiling_in_torbit)
-        auto my_zone = Zone(profiler, "torbit-draw-rect");
+    static if (_tharsisProfilingInTorbit)
+        auto myZone = Zone(profiler, "torbit-draw-rect");
 
     // DTODO: test whether the mod can be moved into the delegate invoker.
-    if (_tx) x = positive_mod(x, _xl);
-    if (_ty) y = positive_mod(y, _yl);
-    use_drawing_delegate(delegate void(int x_at, int y_at) {
+    if (_tx) x = positiveMod(x, _xl);
+    if (_ty) y = positiveMod(y, _yl);
+    useDrawingDelegate(delegate void(int x_at, int y_at) {
         al_draw_rectangle(x_at + 0.5, y_at + 0.5,
          x_at + rxl - 0.5, y_at + ryl - 0.5, col, 1);
     }, x, y);
@@ -542,62 +542,62 @@ void draw_rectangle(int x, int y, int rxl, int ryl, AlCol col)
 
 
 
-void draw_filled_rectangle(int x, int y, int rxl, int ryl, AlCol col)
+void drawFilledRectangle(int x, int y, int rxl, int ryl, AlCol col)
 {
     // DTODO: test whether the mod can be moved into the delegate invoker.
-    if (_tx) x = positive_mod(x, _xl);
-    if (_ty) y = positive_mod(y, _yl);
+    if (_tx) x = positiveMod(x, _xl);
+    if (_ty) y = positiveMod(y, _yl);
 
     auto deg = delegate void(int x_at, int y_at)
     {
         al_draw_filled_rectangle(x_at, y_at, x_at + rxl, y_at + ryl, col);
     };
-    use_drawing_delegate(deg, x, y);
+    useDrawingDelegate(deg, x, y);
 }
 
 
 
-void replace_color(AlCol c_old, AlCol c_new)
+void replaceColor(AlCol c_old, AlCol c_new)
 {
-    replace_color_in_rect(0, 0, _xl, _yl, c_old, c_new);
+    replaceColorInRect(0, 0, _xl, _yl, c_old, c_new);
 }
 
 
 
-void replace_color_in_rect(
+void replaceColorInRect(
     int rx, int ry, int rxl, int ryl, AlCol c_old, AlCol c_new
 ) {
     assert (false, "DTODO: do we even need this function? uncomment it then");
 /*
     if (! bitmap) return;
-    if (tx) rx = positive_mod(rx, xl);
-    if (ty) ry = positive_mod(ry, yl);
+    if (tx) rx = positiveMod(rx, xl);
+    if (ty) ry = positiveMod(ry, yl);
 
     auto deg = delegate void(int at_x, int at_y)
     {
         // don't draw outside the boundaries
-        immutable int start_x = max(at_x, 0);
-        immutable int start_y = max(at_y, 0);
-        immutable int end_x = min(at_x + rxl, xl);
-        immutable int end_y = min(at_y + ryl, yl);
+        immutable int startX = max(at_x, 0);
+        immutable int startY = max(at_y, 0);
+        immutable int endX = min(at_x + rxl, xl);
+        immutable int endY = min(at_y + ryl, yl);
 
-        // these functions are slow, so replace_color_in_rect should lock
+        // these functions are slow, so replaceColorInRect should lock
         // the bitmap before passing this delegate DTODO, no locking yet
-        foreach (x; start_x .. end_x)
-         foreach (y; start_y .. end_y)
+        foreach (x; startX .. endX)
+         foreach (y; startY .. endY)
          if (al_get_pixel(bitmap, x, y) == c_old) al_put_pixel(x, y, c_new);
     };
 
     //mixin(temp_lock!"bitmap");
-    use_drawing_delegate(deg, rx, ry);
+    useDrawingDelegate(deg, rx, ry);
 */
 }
 
 
 
-void save_to_file(in Filename fn)
+void saveToFile(in Filename fn)
 {
-    al_save_bitmap(fn.rootful_z, bitmap);
+    al_save_bitmap(fn.rootfulZ, bitmap);
 }
 
 }

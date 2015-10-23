@@ -19,36 +19,36 @@ alias ALLEGRO_FONT*   AlFont;
 
 ALLEGRO_TIMER*        timer;
 
-int default_new_bitmap_flags;
+int defaultNewBitmapFlags;
 
 
 
 private @property int flags_vram()
 {
-    return (default_new_bitmap_flags & ~ ALLEGRO_MEMORY_BITMAP)
+    return (defaultNewBitmapFlags & ~ ALLEGRO_MEMORY_BITMAP)
         | ALLEGRO_VIDEO_BITMAP;
 }
 
 private @property int flags_memory()
 {
-    return (default_new_bitmap_flags & ~ ALLEGRO_VIDEO_BITMAP)
+    return (defaultNewBitmapFlags & ~ ALLEGRO_VIDEO_BITMAP)
         | ALLEGRO_MEMORY_BITMAP;
 }
 
-Albit albit_create(in int xl, in int yl)
+Albit albitCreate(in int xl, in int yl)
 {
-    return albit_create_with_flags(xl, yl, flags_vram);
+    return albitCreateWithFlags(xl, yl, flags_vram);
 }
 
-Albit albit_memory_create(in int xl, in int yl)
+Albit albitMemoryCreate(in int xl, in int yl)
 {
-    return albit_create_with_flags(xl, yl, flags_memory);
+    return albitCreateWithFlags(xl, yl, flags_memory);
 }
 
-private Albit albit_create_with_flags(in int xl, in int yl, in int flags)
+private Albit albitCreateWithFlags(in int xl, in int yl, in int flags)
 {
     al_set_new_bitmap_flags(flags);
-    scope (exit) al_set_new_bitmap_flags(default_new_bitmap_flags);
+    scope (exit) al_set_new_bitmap_flags(defaultNewBitmapFlags);
 
     Albit ret = al_create_bitmap(xl, yl);
     assert (ret);
@@ -58,19 +58,19 @@ private Albit albit_create_with_flags(in int xl, in int yl, in int flags)
     return ret;
 }
 
-Albit albit_load_from_file(string fn)
+Albit albitLoadFromFile(string fn)
 {
     al_set_new_bitmap_flags(flags_vram);
     scope (exit)
-        al_set_new_bitmap_flags(default_new_bitmap_flags);
+        al_set_new_bitmap_flags(defaultNewBitmapFlags);
     return al_load_bitmap(fn.toStringz());
 }
 
-Albit albit_memory_load_from_file(string fn)
+Albit albitMemoryLoadFromFile(string fn)
 {
     al_set_new_bitmap_flags(flags_memory);
     scope (exit)
-        al_set_new_bitmap_flags(default_new_bitmap_flags);
+        al_set_new_bitmap_flags(defaultNewBitmapFlags);
     return al_load_bitmap(fn.toStringz());
 }
 
@@ -80,17 +80,17 @@ Albit albit_memory_load_from_file(string fn)
 
 struct DrawingTarget
 {
-    Albit old_target;
+    Albit oldTarget;
 
     this(Albit b)
     {
         assert (b, "can't target null bitmap");
         // al_get_target_bitmap() is very fast
-        old_target = al_get_target_bitmap();
-        if (old_target == b) {
+        oldTarget = al_get_target_bitmap();
+        if (oldTarget == b) {
             // Don't call the expensive al_set_target_bitmap().
             // Do nothing now in this(), and nothing either in ~this().
-            old_target = null;
+            oldTarget = null;
             return;
         }
         else
@@ -100,8 +100,8 @@ struct DrawingTarget
 
     ~this()
     {
-        if (old_target)
-            al_set_target_bitmap(old_target);
+        if (oldTarget)
+            al_set_target_bitmap(oldTarget);
     }
 }
 

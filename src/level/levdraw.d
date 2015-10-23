@@ -10,16 +10,16 @@ import graphic.torbit;
 import level.level;
 import level.tile;
 
-package void impl_draw_terrain_to(in Level level, Torbit tb, Lookup lookup)
+package void implDrawTerrainTo(in Level level, Torbit tb, Lookup lookup)
 {
     if (! tb) return;
-    assert (tb.xl == level.size_x);
-    assert (tb.yl == level.size_y);
+    assert (tb.xl == level.sizeX);
+    assert (tb.yl == level.sizeY);
 
-    tb.clear_to_color(color.transp);
-    tb.set_torus_xy(level.torus_x, level.torus_y);
+    tb.clearToColor(color.transp);
+    tb.setTorusXY(level.torusX, level.torusY);
     if (lookup) {
-        with (level) lookup.resize(size_x, size_y, torus_x, torus_y);
+        with (level) lookup.resize(sizeX, sizeY, torusX, torusY);
     }
     // Durch die Terrain-Liste iterieren, Wichtiges zuletzt blitten (obenauf)
     foreach (ref const(Pos) po; level.pos[TileType.TERRAIN]) {
@@ -42,7 +42,7 @@ private void draw_pos(in ref Pos po, Torbit ground, Lookup lookup)
      :           Cutbit.Mode.NORMAL);
 
     // draw_pos is not only used for drawing terrain by
-    // impl_draw_terrain_to, but also by the impl_draw_preview.
+    // implDrawTerrainTo, but also by the implDraw_preview.
     // However, that one doesn't prepare a lookup map. So, for the lookupmap,
     // draw_pos is only concerned about drawing terrain and steel lookup.
     if (! lookup || po.ob.type != TileType.TERRAIN) return;
@@ -65,18 +65,18 @@ private void draw_pos(in ref Pos po, Torbit ground, Lookup lookup)
      for (int y = po.y; y < po.y + tempgra.yl; ++y)
      if (tempgra.get_pixel(x - po.x, y - po.y) != color.transp) {
         if (po.noow) {
-            if (! lookup.get(x, y, Lookup.bit_terrain))
+            if (! lookup.get(x, y, Lookup.bitTerrain))
                 lookup.add(x, y, po.ob.subtype == 1 ?
-                Lookup.bit_steel | Lookup.bit_terrain :
-                Lookup.bit_terrain);
+                Lookup.bitSteel | Lookup.bitTerrain :
+                Lookup.bitTerrain);
         }
         else if (po.dark)
-            lookup.rm(x, y, Lookup.bit_terrain | Lookup.bit_steel);
+            lookup.rm(x, y, Lookup.bitTerrain | Lookup.bitSteel);
         else if (po.ob.subtype == 1)
-            lookup.add(x, y, Lookup.bit_terrain | Lookup.bit_steel);
+            lookup.add(x, y, Lookup.bitTerrain | Lookup.bitSteel);
         else {
-            lookup.add(x, y, Lookup.bit_terrain);
-            lookup.rm (x, y, Lookup.bit_steel);
+            lookup.add(x, y, Lookup.bitTerrain);
+            lookup.rm (x, y, Lookup.bitSteel);
         }
     }
     // end of single pixel
@@ -84,19 +84,19 @@ private void draw_pos(in ref Pos po, Torbit ground, Lookup lookup)
 
 
 
-package Torbit impl_create_preview(
+package Torbit implCreatePreview(
     in Level level, in int w, in int h, in AlCol c)
 {
     assert (w > 0);
     assert (h > 0);
     Torbit ret = new Torbit(w, h);
-    ret.clear_to_color(color.random);
+    ret.clearToColor(color.random); // DTODODRAW: draw the level on it
     return ret;
 }
 
 
 
-void impl_export_image(in Level level, in Filename fn)
+void implExportImage(in Level level, in Filename fn)
 {
     assert (false, "DTODO: not implemented yet");
 }

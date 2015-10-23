@@ -40,14 +40,14 @@ class Gadget : Graphic {
 public:
 
     const(Tile) tile;
-    bool        draw_with_editor_info;
+    bool        drawWithEditorInfo;
 
     // override these if necessary
-    protected void draw_game_extras() { }
-    protected void draw_editor_info() { }
+    protected void drawGameExtras() { }
+    protected void drawEditorInfo() { }
 
     // hatch should override this
-    Pos to_pos() const { return Pos(tile, x, y); }
+    Pos toPos() const { return Pos(tile, x, y); }
 
     @property Sound sound() { return Sound.NOTHING; }
 
@@ -57,10 +57,10 @@ public:
  */
     mixin CloneableBase;
 
-/*  @property int selbox_x()  const;
- *  @property int selbox_y()  const;
- *  @property int selbox_xl() const;
- *  @property int selbox_yl() const;
+/*  @property int selboxX()  const;
+ *  @property int selboxY()  const;
+ *  @property int selboxXl() const;
+ *  @property int selboxYl() const;
  *
  *  void animate();
  *
@@ -83,7 +83,7 @@ this(Gadget rhs)
     assert (rhs);
     super(rhs);
     tile = rhs.tile;
-    draw_with_editor_info = rhs.draw_with_editor_info;
+    drawWithEditorInfo = rhs.drawWithEditorInfo;
 }
 
 
@@ -104,7 +104,6 @@ factory(Torbit tb, in ref Pos levelpos)
             if (levelpos.ob.subtype & 2) return new FlingTrig(tb, levelpos);
             else                         return new FlingPerm(tb, levelpos);
         case TileType.EMPTY:
-        case TileType.ONEWAY:
         case TileType.MAX:
             assert (false, "TileType isn't supported by Gadget.factory");
     }
@@ -116,7 +115,7 @@ void
 animate()
 {
     // the most basic animation loop
-    if (is_last_frame())
+    if (isLastFrame())
         xf = 0;
     else
         xf = xf + 1;
@@ -129,16 +128,16 @@ animate()
 // base Gadget instantiation.
 
 @property int
-selbox_x() const
+selboxX() const
 {
     int edge = rotation.to!int;
     if (mirror)
         edge = (edge == 1 ? 3 : edge == 3 ? 1 : edge);
     switch (edge) {
-        case 0: return tile.selbox_x; // rotation is clockwise
-        case 1: return tile.cb.yl - tile.selbox_y - tile.selbox_yl;
-        case 2: return tile.cb.xl - tile.selbox_x - tile.selbox_xl;
-        case 3: return tile.selbox_y;
+        case 0: return tile.selboxX; // rotation is clockwise
+        case 1: return tile.cb.yl - tile.selboxY - tile.selboxYl;
+        case 2: return tile.cb.xl - tile.selboxX - tile.selboxXl;
+        case 3: return tile.selboxY;
         default: assert (false);
     }
 }
@@ -146,16 +145,16 @@ selbox_x() const
 
 
 @property int
-selbox_y() const
+selboxY() const
 {
     int edge = rotation.to!int;
     if (mirror)
         edge = (edge == 0 ? 2 : edge == 2 ? 0 : edge);
     switch (edge) {
-        case 0: return tile.selbox_y;
-        case 1: return tile.selbox_x;
-        case 2: return tile.cb.yl - tile.selbox_y - tile.selbox_yl;
-        case 3: return tile.cb.xl - tile.selbox_x - tile.selbox_xl;
+        case 0: return tile.selboxY;
+        case 1: return tile.selboxX;
+        case 2: return tile.cb.yl - tile.selboxY - tile.selboxYl;
+        case 3: return tile.cb.xl - tile.selboxX - tile.selboxXl;
         default: assert (false);
     }
 }
@@ -163,19 +162,19 @@ selbox_y() const
 
 
 @property int
-selbox_xl() const
+selboxXl() const
 {
-    if (rotation.to!int % 2 == 1) return tile.selbox_yl;
-    else                          return tile.selbox_xl;
+    if (rotation.to!int % 2 == 1) return tile.selboxYl;
+    else                          return tile.selboxXl;
 }
 
 
 
 @property int
-get_selbox_yl() const
+get_selboxYl() const
 {
-    if (rotation.to!int % 2 == 1) return tile.selbox_xl;
-    else                          return tile.selbox_yl;
+    if (rotation.to!int % 2 == 1) return tile.selboxXl;
+    else                          return tile.selboxYl;
 }
 
 
@@ -185,10 +184,10 @@ draw()
 {
     super.draw();
 
-    draw_game_extras();
+    drawGameExtras();
 
-    if (draw_with_editor_info) {
-        draw_editor_info();
+    if (drawWithEditorInfo) {
+        drawEditorInfo();
 
         // now draw trigger area on top
         if (tile.type == TileType.GOAL
@@ -198,10 +197,10 @@ draw()
          || tile.type == TileType.FLING
          || tile.type == TileType.TRAMPOLINE
         )
-            ground.draw_rectangle(x + tile.trigger_x,
-                                  y + tile.trigger_y,
-                                  tile.trigger_xl, tile.trigger_yl,
-                                  color.makecol(0x40, 0xFF, 0xFF));
+            ground.drawRectangle(x + tile.triggerX,
+                                 y + tile.triggerY,
+                                 tile.triggerXl, tile.triggerYl,
+                                 color.makecol(0x40, 0xFF, 0xFF));
     }
 }
 
@@ -212,19 +211,17 @@ final void draw_lookup(Lookup lk)
     assert (tile);
     Lookup.LoNr nr = 0;
     switch (tile.type) {
-        case TileType.GOAL:       nr = Lookup.bit_goal; break;
-        case TileType.TRAP:       nr = Lookup.bit_trap; break;
+        case TileType.GOAL:       nr = Lookup.bitGoal; break;
+        case TileType.TRAP:       nr = Lookup.bitTrap; break;
         case TileType.WATER:      nr = tile.subtype == 0
-                                     ? Lookup.bit_water
-                                     : Lookup.bit_fire; break;
-        case TileType.FLING:      nr = Lookup.bit_fling; break;
-        case TileType.TRAMPOLINE: nr = Lookup.bit_trampoline; break;
+                                     ? Lookup.bitWater
+                                     : Lookup.bitFire; break;
+        case TileType.FLING:      nr = Lookup.bitFling; break;
+        case TileType.TRAMPOLINE: nr = Lookup.bitTrampoline; break;
         default: break;
     }
-    lk.add_rectangle(x + tile.trigger_x,
-                     y + tile.trigger_y,
-                     tile.trigger_xl,
-                     tile.trigger_yl, nr);
+    lk.addRectangle(x + tile.triggerX, y + tile.triggerY,
+                        tile.triggerXl,    tile.triggerYl, nr);
 }
 
 }

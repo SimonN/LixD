@@ -9,7 +9,7 @@ import std.string; // formatting an assert message
 import std.conv;
 import std.typecons;
 
-import basics.user; // hotkey for dir_up button
+import basics.user; // hotkey for dirUp button
 import graphic.color;
 import gui;
 import file.filename;
@@ -25,25 +25,25 @@ public:
 /*  this(      x, y, xl, yl);
  *  this(from, x, y, xl, yl);
  */
-    @property inout(Filename) base_dir() inout {
-        return _base_dir; }
-    @property override inout(Filename) current_dir() inout {
-        return super.current_dir; }
-/*  @property void current_dir(in Filename);
- *  @property void base_dir   (in Filename);
- *  void set_current_dir_to_parent_dir();
+    @property inout(Filename) baseDir() inout {
+        return _baseDir; }
+    @property override inout(Filename) currentDir() inout {
+        return super.currentDir; }
+/*  @property void currentDir(in Filename);
+ *  @property void baseDir   (in Filename);
+ *  void setCurrentDirToParentDir();
  */
-    @property auto list_file_to_control(ListFile l) { return _list_file = l; }
-    @property auto list_file_to_control() const     { return _list_file;     }
+    @property auto listFileToControl(ListFile l) { return _listFile = l; }
+    @property auto listFileToControl() const     { return _listFile;     }
 
 private:
 
-    @disable @property inout(Filename) current_file() inout;
+    @disable @property inout(Filename) currentFile() inout;
 
-    Filename   _base_dir;
-    TextButton dir_up;
+    Filename   _baseDir;
+    TextButton dirUp;
 
-    ListFile _list_file; // this is reloaded when our dir changes
+    ListFile _listFile; // this is reloaded when our dir changes
 
 
 
@@ -51,54 +51,54 @@ public this(Geom g)
 {
     super(g);
 
-    file_finder = &(file.search.find_dirs);
-    search_crit = function bool(in Filename fn) {
+    fileFinder = &(file.search.find_dirs);
+    searchCrit = function bool(in Filename fn) {
         return fn.file != "." && fn.file != "..";
     };
-    file_sorter = delegate void(Filename[] arr) {
-        sort_filenames_by_order_txt_then_alpha(arr, current_dir, true);
+    fileSorter = delegate void(Filename[] arr) {
+        sortFilenamesByOrderTxtThenAlpha(arr, currentDir, true);
     };
-    super.use_hotkeys = false;
+    super.useHotkeys = false;
     // but the (this) class shall still check for the dir-up-change key
 }
 
 
 
 public @property void
-base_dir(in Filename fn)
+baseDir(in Filename fn)
 {
     assert (fn, "base directory can't be set to null");
-    _base_dir = new Filename(fn.dir_rootless);
+    _baseDir = new Filename(fn.dirRootless);
 }
 
 
 
 public void
-set_current_dir_to_parent_dir()
+setCurrentDirToParentDir()
 {
-    string str = current_dir.dir_rootless;
+    string str = currentDir.dirRootless;
     if (str.length && str[$-1] == '/')
         str = str[0 .. $-1];
     while (str.length && str[$-1] != '/')
         str = str[0 .. $-1];
 
-   current_dir = new Filename(str);
-   if (_list_file) _list_file.current_dir = current_dir;
+   currentDir = new Filename(str);
+   if (_listFile) _listFile.currentDir = currentDir;
 }
 
 
 
 public override @property void
-current_dir(in Filename fn)
+currentDir(in Filename fn)
 {
-    assert (_base_dir, "base directory not set, can't load a dir without it");
+    assert (_baseDir, "base directory not set, can't load a dir without it");
     assert (fn, "dirname to load in dir list is null");
 
-    bool good_dir     = dir_exists(fn) && fn.is_child_of(_base_dir);
-    const Filename f  = good_dir ? fn : _base_dir;
-    super.current_dir = f;
-    if (_list_file)
-        _list_file.current_dir = f;
+    bool good_dir     = dir_exists(fn) && fn.isChildOf(_baseDir);
+    const Filename f  = good_dir ? fn : _baseDir;
+    super.currentDir = f;
+    if (_listFile)
+        _listFile.currentDir = f;
 }
 
 
@@ -109,11 +109,11 @@ current_dir(in Filename fn)
 protected override super.OnDirLoadAction
 on_dir_load()
 {
-    assert (_base_dir, "base directory not set, can't load a dir without it");
+    assert (_baseDir, "base directory not set, can't load a dir without it");
     // this must happen even on a non-existing dir
-    if (dir_up) {
-        rm_child(dir_up);
-        dir_up = null;
+    if (dirUp) {
+        rmChild(dirUp);
+        dirUp = null;
     }
     // this assert is the reason for finality of this class
     assert (children.length == 0,
@@ -121,48 +121,48 @@ on_dir_load()
         children.length));
 
     // sanity checks
-    immutable bool bad_exists = ! file.search.dir_exists(current_dir);
-    immutable bool bad_child  = ! current_dir.is_child_of(_base_dir);
+    immutable bool bad_exists = ! file.search.dir_exists(currentDir);
+    immutable bool bad_child  = ! currentDir.isChildOf(_baseDir);
 
     if (bad_exists || bad_child) {
-        if (! file.search.dir_exists(base_dir)) {
+        if (! file.search.dir_exists(baseDir)) {
             // this is extremely bad, abort immediately
             Log.logf("Base dir `%s' is missing. Broken installation?",
-                base_dir.rootful);
+                baseDir.rootful);
             return OnDirLoadAction.ABORT;
         }
         else if (bad_exists)
             Log.logf("`%s' doesn't exist. Falling back to `%s'.",
-            current_dir.rootful, base_dir.rootful);
+            currentDir.rootful, baseDir.rootful);
         else if (bad_child)
             Log.logf("`%s' is not a subdir of `%s'. Falling back to that.",
-            current_dir.rootful, base_dir.rootful);
+            currentDir.rootful, baseDir.rootful);
 
-        current_dir = base_dir;       // again goes through load_current_dir()
+        currentDir = baseDir;       // again goes through load_currentDir()
         return OnDirLoadAction.ABORT; // abort the original pass through it
     }
 
-    if (super.current_dir == _base_dir) {
-        bottom_button = ylg.to!int / 20 - 1;
+    if (super.currentDir == _baseDir) {
+        bottomButton = ylg.to!int / 20 - 1;
     }
     else {
-        bottom_button = ylg.to!int / 20 - 2;
-        assert (dir_up is null);
-        dir_up = new TextButton(new Geom(0, 0, xlg, 20, From.TOP));
-        dir_up.text = Lang.common_dir_parent.transl;
-        dir_up.undraw_color = color.gui_m;
-        dir_up.hotkey = basics.user.key_me_up_dir;
-        add_child(dir_up);
-        // We don't put the children-deleting function onto dir_up.on_click,
+        bottomButton = ylg.to!int / 20 - 2;
+        assert (dirUp is null);
+        dirUp = new TextButton(new Geom(0, 0, xlg, 20, From.TOP));
+        dirUp.text = Lang.commonDirParent.transl;
+        dirUp.undrawColor = color.guiM;
+        dirUp.hotkey = basics.user.keyMenuUpDir;
+        addChild(dirUp);
+        // We don't put the children-deleting function onto dirUp.on_click,
         // because I fear bugs from removing array elements during foreach.
-        // Instead, I check for this in calc_self.
+        // Instead, I check for this in calcSelf.
     }
     return OnDirLoadAction.CONTINUE;
 }
 
 
 
-private final TextButton make_textbutton(int y, string str)
+private final TextButton makeTextButton(int y, string str)
 {
     TextButton b = new TextButton(new Geom(0, y, xlg, 20, Geom.From.TOP));
     b.text = str;
@@ -172,44 +172,44 @@ private final TextButton make_textbutton(int y, string str)
 
 
 protected override Button
-new_file_button(int from_top, int total, in Filename fn)
+newFileButton(int from_top, int total, in Filename fn)
 {
-    // the first slot may have been taken by the dir_up button.
-    immutable plus_y = dir_up ? 20 : 0;
-    return make_textbutton(20 * from_top + plus_y, fn.dir_innermost);
+    // the first slot may have been taken by the dirUp button.
+    immutable plus_y = dirUp ? 20 : 0;
+    return makeTextButton(20 * from_top + plus_y, fn.dirInnermost);
 }
 
 
 
 protected override Button
-new_flip_button()
+newFlipButton()
 {
-    return make_textbutton(ylg.to!int - 20, Lang.common_dir_flip_page.transl);
+    return makeTextButton(ylg.to!int - 20, Lang.commonDirFlipPage.transl);
 }
 
 
 
 protected override void
-on_file_highlight()
+onFileHighlight()
 {
     // the file buttons represent dirs that can be switched into
-    string str = super.current_file.rootless;
+    string str = super.currentFile.rootless;
     if (! str.length) return;
     if (str[$-1] != '/') str ~= '/';
 
-    current_dir = new Filename(str);
-    if (_list_file)
-        _list_file.current_dir = current_dir;
+    currentDir = new Filename(str);
+    if (_listFile)
+        _listFile.currentDir = currentDir;
 }
 
 
 
 protected override void
-calc_self()
+calcSelf()
 {
-    super.calc_self();
-    if (dir_up && dir_up.execute) {
-        set_current_dir_to_parent_dir();
+    super.calcSelf();
+    if (dirUp && dirUp.execute) {
+        setCurrentDirToParentDir();
         this.clicked = true;
     }
 }

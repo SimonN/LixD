@@ -13,9 +13,9 @@ import hardware.tharsis;
 private string _gadget_count_str = "hallo";
 
 package void
-impl_game_draw(Game game) { with (game)
+implGameDraw(Game game) { with (game)
 {
-    auto zo = Zone(profiler, "game entire impl_game_draw()");
+    auto zo = Zone(profiler, "game entire implGameDraw()");
     with     (Zone(profiler, "game entire drawing to map"))
     {
         // speeding up drawing by setting the drawing target now.
@@ -24,25 +24,25 @@ impl_game_draw(Game game) { with (game)
         DrawingTarget drata = DrawingTarget(map.albit);
 
         with (Zone(profiler, "game clear screen to color"))
-            map.clear_screen_rectangle(AlCol(game.level.bg_red,
-                                             game.level.bg_green,
-                                             game.level.bg_blue, 1.0));
+            map.clear_screen_rectangle(AlCol(game.level.bgRed,
+                                             game.level.bgGreen,
+                                             game.level.bgBlue, 1.0));
 
-        if (_profiling_gadget_count == 0)
+        if (_profilingGadgetCount == 0)
             with (Zone(profiler, "game counts gadgets, basic loop")) {
-                cs.foreach_gadget((Gadget g) { ++_profiling_gadget_count; } );
+                cs.foreachGadget((Gadget g) { ++_profilingGadgetCount; } );
                 _gadget_count_str = format("game %d gadgets, %s",
-                                       _profiling_gadget_count, level.name);
+                                       _profilingGadgetCount, level.name);
             }
 
         with (Zone(profiler, _gadget_count_str))
-            cs.foreach_gadget((Gadget g) {
+            cs.foreachGadget((Gadget g) {
                 with (Zone(profiler, "game draws one gadget"))
                     g.draw();
             });
 
         with (Zone(profiler, "game draws land to map"))
-            map.load_camera_rectangle(game.cs.land);
+            map.loadCameraRectangle(game.cs.land);
     }
     // end drawing target = map
 
@@ -51,28 +51,28 @@ impl_game_draw(Game game) { with (game)
 
     with (Zone(profiler, "game draws ingame text")) {
         import graphic.textout;
-        draw_text(djvu_m, "Use the mouse to scroll around, as in the old Lix.",
+        drawText(djvuM, "Use the mouse to scroll around, as in the old Lix.",
             10, 10, graphic.color.color.white);
-        draw_text(djvu_m, "[ESC] aborts. Please don't hit [ESC] during benchmarking.",
+        drawText(djvuM, "[ESC] aborts. Please don't hit [ESC] during benchmarking.",
             10, 40, graphic.color.color.white);
-        draw_text(djvu_m, std.string.format("Frames per second: %d",
+        drawText(djvuM, std.string.format("Frames per second: %d",
             display_fps), 10, 70, graphic.color.color.white);
     }
 
     static if (false) {
-        if (hardware.keyboard.key_once(ALLEGRO_KEY_P)) {
+        if (hardware.keyboard.keyTapped(ALLEGRO_KEY_P)) {
             import file.filename;
 
-            cs.land.save_to_file(new Filename("./debug-land.png"));
-            map    .save_to_file(new Filename("./debug-map-directsave.png"));
-            Torbit debug_output = new Torbit(display_xl, display_yl);
-            debug_output.clear_to_color(graphic.color.color.gui_d);
+            cs.land.saveToFile(new Filename("./debug-land.png"));
+            map    .saveToFile(new Filename("./debug-map-directsave.png"));
+            Torbit debug_output = new Torbit(displayXl, displayYl);
+            debug_output.clear_to_color(graphic.color.color.guiD);
             scope (exit)
                 destroy(debug_output);
             map.draw_camera(debug_output.albit);
-            debug_output.save_to_file(new Filename("./debug-map-drawsave.png"));
+            debug_output.saveToFile(new Filename("./debug-map-drawsave.png"));
         }
     }
 
 }}
-// end with(game), end impl_game_draw()
+// end with(game), end implGameDraw()

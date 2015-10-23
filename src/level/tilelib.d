@@ -63,16 +63,16 @@ public:
 void initialize()
 {
     static import hardware.display;
-    hardware.display.display_startup_message("indexing all files in images/");
+    hardware.display.displayStartupMessage("indexing all files in images/");
 
     // fill the queue will all files on the disk, but chop off the
     // "images/" prefix before using the path as the tile's name
-    immutable string imgdir = glo.dir_bitmap.dir_rootless;
-    auto files = file.search.find_tree(glo.dir_bitmap);
+    immutable string imgdir = glo.dirImages.dirRootless;
+    auto files = file.search.find_tree(glo.dirImages);
     foreach (fn; files) {
-        if (! fn.has_image_extension()) continue;
+        if (! fn.hasImageExtension()) continue;
 
-        string rootless = fn.rootless_no_ext;
+        string rootless = fn.rootlessNoExt;
         if (imgdir.length <= rootless.length
          && rootless[0 .. imgdir.length] == imgdir) {
             rootless = rootless[imgdir.length .. $];
@@ -85,9 +85,9 @@ void initialize()
 
 void deinitialize()
 {
-    destroy_array(tiles);
-    destroy_array(grasets);
-    destroy_array(vgaspecs);
+    destroyArray(tiles);
+    destroyArray(grasets);
+    destroyArray(vgaspecs);
 }
 
 
@@ -133,8 +133,8 @@ const(Tile) get_tile(in Filename fn)
     // cut away "images/" if that is in front
     // we could eat an extra iteration through get_file(string),
     // but this is negligibly faster. <_<
-    immutable string s = fn.rootless_no_ext;
-    immutable string b = glo.dir_bitmap.dir_rootless;
+    immutable string s = fn.rootlessNoExt;
+    immutable string b = glo.dirImages.dirRootless;
 
     if (b.length <= s.length && s[0 .. b.length] == b) {
          return get_tile(s[b.length .. $]);
@@ -167,19 +167,17 @@ string get_filename(in Tile tile)
 private void
 load_tile_from_disk(in string str_no_ext, in Filename fn)
 {
-    char pe = fn.pre_extension;
+    char pe = fn.preExtension;
 
     TileType type = TileType.TERRAIN;
     int st = 0; // subtype
-    if      (pe == glo.pre_ext_steel)        { type = TileType.TERRAIN; st=1;}
-    else if (pe == glo.pre_ext_hatch)        { type = TileType.HATCH;        }
-    else if (pe == glo.pre_ext_deco)         { type = TileType.DECO;         }
-    else if (pe == glo.pre_ext_goal)         { type = TileType.GOAL;         }
-    else if (pe == glo.pre_ext_trap)         { type = TileType.TRAP;         }
-    else if (pe == glo.pre_ext_water)        { type = TileType.WATER;        }
-    else if (pe == glo.pre_ext_fire)         { type = TileType.WATER;  st=1; }
-    else if (pe == glo.pre_ext_oneway_left)  { type = TileType.ONEWAY;       }
-    else if (pe == glo.pre_ext_oneway_right) { type = TileType.ONEWAY; st=1; }
+    if      (pe == glo.preExtSteel)        { type = TileType.TERRAIN; st=1;}
+    else if (pe == glo.preExtHatch)        { type = TileType.HATCH;        }
+    else if (pe == glo.preExtDeco)         { type = TileType.DECO;         }
+    else if (pe == glo.preExtGoal)         { type = TileType.GOAL;         }
+    else if (pe == glo.preExtTrap)         { type = TileType.TRAP;         }
+    else if (pe == glo.preExtWater)        { type = TileType.WATER;        }
+    else if (pe == glo.preExtFire)         { type = TileType.WATER;  st=1; }
 
     // cut into frames unless it's terrain or steel (subtype of terrain)
     Cutbit cb = new Cutbit(fn, type != TileType.TERRAIN);
@@ -192,15 +190,15 @@ load_tile_from_disk(in string str_no_ext, in Filename fn)
 
     // DTODO: check whether levels with rotated objects are rendered
     // exactly like in C++/A4 Lix
-    tiles[str_no_ext] = Tile.take_over_cutbit(cb, type, st);
+    tiles[str_no_ext] = Tile.takeOverCutbit(cb, type, st);
 
     // Load overriding definitions from a possibly accompanying text file.
     // That file must have the same name, only its extension must be replaced.
     if (type != TileType.TERRAIN) {
         auto tile_ptr = (str_no_ext in tiles);
         if (tile_ptr) {
-            Filename defs = new Filename(fn.rootless_no_ext
-                                       ~ glo.ext_object_definitions);
+            Filename defs = new Filename(fn.rootlessNoExt
+                                       ~ glo.filenameExtTileDefinitions);
             // We test for existence here, because trying to load the file
             // will generate a log message for nonexisting file otherwise.
             // It's normal to have no definitions file, so don't log that.

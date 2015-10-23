@@ -16,17 +16,17 @@ import graphic.gralib;
 import graphic.graphic;
 import hardware.mouse;
 
-public Graphic mouse;
+public Graphic mouseCursor;
 
 void
 initialize()
 {
-    assert (mouse is null, "mouse cursor is already initialized");
-    const(Cutbit) cb = get_internal(file_bitmap_mouse);
+    assert (mouseCursor is null, "mouse cursor is already initialized");
+    const(Cutbit) cb = getInternal(fileImageMouse);
     assert (cb, "mouse cursor bitmap is not loaded or missing");
     assert (cb.valid, "mouse cursor bitmap is not valid");
 
-    mouse = new Graphic(cb, null);
+    mouseCursor = new Graphic(cb, null);
 }
 
 
@@ -34,9 +34,9 @@ initialize()
 void
 deinitialize()
 {
-    if (mouse) {
-        destroy(mouse);
-        mouse = null;
+    if (mouseCursor) {
+        destroy(mouseCursor);
+        mouseCursor = null;
     }
 }
 
@@ -45,8 +45,8 @@ deinitialize()
 void
 draw()
 {
-    assert (mouse, "call hardware.mousecur.initialize() before drawing mouse");
-    mouse.x = get_mx() - mouse.xl/2 + 1;
-    mouse.y = get_my() - mouse.yl/2 + 1;
-    mouse.draw_directly_to_screen();
+    assert (mouseCursor, "call hardware.mousecur.initialize() before drawing");
+    mouseCursor.x = hardware.mouse.mouseX - mouseCursor.xl/2 + 1;
+    mouseCursor.y = hardware.mouse.mouseY - mouseCursor.yl/2 + 1;
+    mouseCursor.drawDirectlyToScreen();
 }

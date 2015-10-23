@@ -4,31 +4,31 @@ import basics.alleg5;
 import game;
 
 package void
-impl_game_calc(Game game)
+implGameCalc(Game game)
 {
     // As always, get user input that affect physics first, then process it in
     // case we'll be doing calc_update() further down.
-    game.impl_calc_passive();
-    game.impl_calc_active();
+    game.implCalcPassive();
+    game.implCalcActive();
 
-    long upd_ago = al_get_timer_count(timer) - game.altick_last_update;
+    long updAgo = al_get_timer_count(timer) - game.altickLastUpdate;
 
     void upd(int howmany = 1)
     {
         while (howmany--)
-            game.impl_calc_update();
-        game.altick_last_update = al_get_timer_count(basics.alleg5.timer);
+            game.updateOnce();
+        game.altickLastUpdate = al_get_timer_count(basics.alleg5.timer);
     }
 
-    if (upd_ago >= game.ticks_normal_speed)
+    if (updAgo >= game.ticksNormalSpeed)
         upd();
 }
-// end impl_game_calc()
+// end implGameCalc()
 
 
 
 package void
-impl_calc_active(Game game)
+implCalcActive(Game game)
 {
 }
 // end clac_active()

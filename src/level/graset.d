@@ -35,8 +35,8 @@ public:
 
 ~this()
 {
-    destroy_array(terrain);
-    destroy_array(special);
+    destroyArray(terrain);
+    destroyArray(special);
 }
 
 }

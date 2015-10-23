@@ -22,62 +22,62 @@ import lix.enums;
 /*  static this();
  *  void load();
  *  void save();
- *  const(Result) get_level_result          (Filename);
- *  void          set_level_result_carefully(Filename, Result, in int);
+ *  const(Result) getLevelResult         (Filename);
+ *  void          setLevelResultCarefully(Filename, Result, in int);
  */
 
 private Result[Rebindable!(const Filename)] results;
 
-Filename file_language;
-int      option_group = 0;
+Filename fileLanguage;
+int      optionGroup = 0;
 
-bool scroll_edge        = true;
-bool scroll_right       = true;
-bool scroll_middle      = true;
-bool replay_cancel      = true;
-int  replay_cancel_at   = 30;
-int  mouse_speed        = 20;
-int  mouse_acceleration = 0;
-int  scroll_speed_edge  = 5;
-int  scroll_speed_click = 6;
-bool multiple_builders  = true;
-bool batter_priority    = true;
-bool prioinv_middle     = true;
-bool prioinv_right      = true;
+bool scrollEdge        = true;
+bool scrollRight       = true;
+bool scrollMiddle      = true;
+bool replayCancel      = true;
+int  replayCancelAt   = 30;
+int  mouseSpeed        = 20;
+int  mouseAcceleration = 0;
+int  scrollSpeedEdge  = 5;
+int  scrollSpeedClick = 6;
+bool multipleBuilders  = true;
+bool batterPriority    = true;
+bool priorityInvertMiddle     = true;
+bool priorityInvertRight      = true;
 
-int  sound_volume       = 10;
+int  soundVolume       = 10;
 
-bool screen_windowed    = false;
-bool arrows_replay      = true;
-bool arrows_network     = true;
-bool gameplay_help      = true;
-int  debris_amount      = 2;
-int  debris_type        = 1;
+bool screenWindowed    = false;
+bool arrowsReplay      = true;
+bool arrowsNetwork     = true;
+bool gameplayHelp      = true;
+int  debrisAmount      = 2;
+int  debrisType        = 1;
 
-int  gui_color_red      = 0x70;
-int  gui_color_green    = 0x80;
-int  gui_color_blue     = 0xA0;
+int  guiColorRed      = 0x70;
+int  guiColorGreen    = 0x80;
+int  guiColorBlue     = 0xA0;
 
-bool editor_hex_level_size = false;
-int  editor_grid_selected  = 1;
-int  editor_grid_custom    = 8;
+bool editorHexLevelSize = false;
+int  editorGridSelected  = 1;
+int  editorGridCustom    = 8;
 
-Filename single_last_level;
-Filename network_last_level;
-Filename replay_last_level;
+Filename singleLastLevel;
+Filename networkLastLevel;
+Filename replayLastLevel;
 
-Style    network_last_style = Style.RED;
+Style    networkLastStyle = Style.RED;
 
-Filename editor_last_dir_terrain;
-Filename editor_last_dir_steel;
-Filename editor_last_dir_hatch;
-Filename editor_last_dir_goal;
-Filename editor_last_dir_deco;
-Filename editor_last_dir_hazard;
+Filename editorLastDirTerrain;
+Filename editorLastDirSteel;
+Filename editorLastDirHatch;
+Filename editorLastDirGoal;
+Filename editorLastDirDeco;
+Filename editorLastDirHazard;
 
-@property const(Ac[]) skill_sort() { return _skill_sort; }
+@property const(Ac[]) skillSort() { return _skillSort; }
 
-private Ac[] _skill_sort = [
+private Ac[] _skillSort = [
     Ac.WALKER,
     Ac.JUMPER,
     Ac.RUNNER,
@@ -94,102 +94,102 @@ private Ac[] _skill_sort = [
     Ac.DIGGER
 ];
 
-int key_force_left      = ALLEGRO_KEY_S;
-int key_force_right     = ALLEGRO_KEY_F;
-int key_scroll          = ALLEGRO_KEY_PAD_MINUS;
-int key_priority        = ALLEGRO_KEY_PAD_MINUS;
-int key_rate_minus      = ALLEGRO_KEY_1;
-int key_rate_plus       = ALLEGRO_KEY_2;
-int key_pause           = ALLEGRO_KEY_SPACE;
-int key_speed_slow      = ALLEGRO_KEY_3;
-int key_speed_fast      = ALLEGRO_KEY_4;
-int key_speed_turbo     = ALLEGRO_KEY_5;
-int key_restart         = ALLEGRO_KEY_F1;
-int key_state_load      = ALLEGRO_KEY_F2;
-int key_state_save      = ALLEGRO_KEY_F5;
-int key_zoom            = ALLEGRO_KEY_Y;
-int key_nuke            = ALLEGRO_KEY_F12;
-int key_spec_tribe      = ALLEGRO_KEY_TAB;
-int key_chat            = ALLEGRO_KEY_ENTER;
-int key_ga_exit         = ALLEGRO_KEY_ESCAPE;
+int keyForceLeft       = ALLEGRO_KEY_S;
+int keyForceRight      = ALLEGRO_KEY_F;
+int keyScroll          = ALLEGRO_KEY_PAD_MINUS;
+int keyPriorityInvert  = ALLEGRO_KEY_PAD_MINUS;
+int keySpawnintSlower  = ALLEGRO_KEY_1;
+int keySpawnintFaster  = ALLEGRO_KEY_2;
+int keyPause           = ALLEGRO_KEY_SPACE;
+int key_speed_slow     = ALLEGRO_KEY_3;
+int keySpeedFast       = ALLEGRO_KEY_4;
+int keySpeedTurbo      = ALLEGRO_KEY_5;
+int keyRestart         = ALLEGRO_KEY_F1;
+int keyStateLoad       = ALLEGRO_KEY_F2;
+int keyStateSave       = ALLEGRO_KEY_F5;
+int keyZoom            = ALLEGRO_KEY_Y;
+int keyNuke            = ALLEGRO_KEY_F12;
+int keySpecTribe       = ALLEGRO_KEY_TAB;
+int keyChat            = ALLEGRO_KEY_ENTER;
+int keyGameExit        = ALLEGRO_KEY_ESCAPE;
 
-int key_me_okay         = ALLEGRO_KEY_SPACE;
-int key_me_edit         = ALLEGRO_KEY_F;
-int key_me_export       = ALLEGRO_KEY_R;
-int key_me_delete       = ALLEGRO_KEY_G;
-int key_me_up_dir       = ALLEGRO_KEY_A;
-int key_me_up_1         = ALLEGRO_KEY_S;
-int key_me_up_5         = ALLEGRO_KEY_W;
-int key_me_down_1       = ALLEGRO_KEY_D;
-int key_me_down_5       = ALLEGRO_KEY_E;
-int key_me_exit         = ALLEGRO_KEY_ESCAPE;
-int key_me_main_single  = ALLEGRO_KEY_F;
-int key_me_main_network = ALLEGRO_KEY_D;
-int key_me_main_replays = ALLEGRO_KEY_S;
-int key_me_main_options = ALLEGRO_KEY_A;
+int keyMenuOkay        = ALLEGRO_KEY_SPACE;
+int keyMenuEdit        = ALLEGRO_KEY_F;
+int keyMenuExport      = ALLEGRO_KEY_R;
+int keyMenuDelete      = ALLEGRO_KEY_G;
+int keyMenuUpDir       = ALLEGRO_KEY_A;
+int keyMenuUpBy1       = ALLEGRO_KEY_S;
+int keyMenuUpBy5       = ALLEGRO_KEY_W;
+int keyMenuDownBy1     = ALLEGRO_KEY_D;
+int keyMenuDownBy5     = ALLEGRO_KEY_E;
+int keyMenuExit        = ALLEGRO_KEY_ESCAPE;
+int keyMenuMainSingle  = ALLEGRO_KEY_F;
+int keyMenuMainNetwork = ALLEGRO_KEY_D;
+int keyMenuMainReplays = ALLEGRO_KEY_S;
+int keyMenuMainOptions = ALLEGRO_KEY_A;
 
-int key_ed_left         = ALLEGRO_KEY_S;
-int key_ed_right        = ALLEGRO_KEY_F;
-int key_ed_up           = ALLEGRO_KEY_E;
-int key_ed_down         = ALLEGRO_KEY_D;
-int key_ed_copy         = ALLEGRO_KEY_A;
-int key_ed_delete       = ALLEGRO_KEY_G;
-int key_ed_grid         = ALLEGRO_KEY_C;
-int key_ed_sel_all      = ALLEGRO_KEY_ALT;
-int key_ed_sel_frame    = ALLEGRO_KEY_LSHIFT;
-int key_ed_sel_add      = ALLEGRO_KEY_V;
-int key_ed_background   = ALLEGRO_KEY_T;
-int key_ed_foreground   = ALLEGRO_KEY_B;
-int key_ed_mirror       = ALLEGRO_KEY_W;
-int key_ed_rotate       = ALLEGRO_KEY_R;
-int key_ed_dark         = ALLEGRO_KEY_N;
-int key_ed_noow         = ALLEGRO_KEY_M;
-int key_ed_zoom         = ALLEGRO_KEY_Y;
-int key_ed_help         = ALLEGRO_KEY_H;
-int key_ed_menu_size    = ALLEGRO_KEY_5;
-int key_ed_menu_vars    = ALLEGRO_KEY_Q;
-int key_ed_menu_skills  = ALLEGRO_KEY_X;
-int key_ed_add_terrain  = ALLEGRO_KEY_SPACE;
-int key_ed_add_steel    = ALLEGRO_KEY_TAB;
-int key_ed_add_hatch    = ALLEGRO_KEY_1;
-int key_ed_add_goal     = ALLEGRO_KEY_2;
-int key_ed_add_deco     = ALLEGRO_KEY_3;
-int key_ed_add_hazard   = ALLEGRO_KEY_4;
-int key_ed_exit         = ALLEGRO_KEY_ESCAPE;
+int keyEditorLeft         = ALLEGRO_KEY_S;
+int keyEditorRight        = ALLEGRO_KEY_F;
+int keyEditorUp           = ALLEGRO_KEY_E;
+int keyEditorDown         = ALLEGRO_KEY_D;
+int keyEditorCopy         = ALLEGRO_KEY_A;
+int keyEditorDelete       = ALLEGRO_KEY_G;
+int keyEditorGrid         = ALLEGRO_KEY_C;
+int keyEditorSelectAll      = ALLEGRO_KEY_ALT;
+int keyEditorSelectFrame    = ALLEGRO_KEY_LSHIFT;
+int keyEditorSelectAdd      = ALLEGRO_KEY_V;
+int keyEditorBackground   = ALLEGRO_KEY_T;
+int keyEditorForeground   = ALLEGRO_KEY_B;
+int keyEditorMirror       = ALLEGRO_KEY_W;
+int keyEditorRotate       = ALLEGRO_KEY_R;
+int keyEditorDark         = ALLEGRO_KEY_N;
+int keyEditorNoow         = ALLEGRO_KEY_M;
+int keyEditorZoom         = ALLEGRO_KEY_Y;
+int keyEditorHelp         = ALLEGRO_KEY_H;
+int keyEditorMenuSize    = ALLEGRO_KEY_5;
+int keyEditorMenuVars    = ALLEGRO_KEY_Q;
+int keyEditorMenuSkills  = ALLEGRO_KEY_X;
+int keyEditorAddTerrain  = ALLEGRO_KEY_SPACE;
+int keyEditorAddSteel    = ALLEGRO_KEY_TAB;
+int keyEditorAddHatch    = ALLEGRO_KEY_1;
+int keyEditorAddGoal     = ALLEGRO_KEY_2;
+int keyEditorAddDeco     = ALLEGRO_KEY_3;
+int keyEditorAddHazard   = ALLEGRO_KEY_4;
+int keyEditorExit         = ALLEGRO_KEY_ESCAPE;
 
-int[Ac.MAX] key_skill;
+int[Ac.MAX] keySkill;
 
 static this()
 {
-    file_language            = new Filename(file_language_english);
+    fileLanguage            = new Filename(fileLanguageEnglish);
 
-    key_skill[Ac.WALKER]     = ALLEGRO_KEY_D;
-    key_skill[Ac.RUNNER]     = ALLEGRO_KEY_LSHIFT;
-    key_skill[Ac.BASHER]     = ALLEGRO_KEY_E;
-    key_skill[Ac.BUILDER]    = ALLEGRO_KEY_A;
-    key_skill[Ac.PLATFORMER] = ALLEGRO_KEY_T;
-    key_skill[Ac.DIGGER]     = ALLEGRO_KEY_W;
-    key_skill[Ac.MINER]      = ALLEGRO_KEY_G;
-    key_skill[Ac.BLOCKER]    = ALLEGRO_KEY_X;
-    key_skill[Ac.CUBER]      = ALLEGRO_KEY_X;
-    key_skill[Ac.EXPLODER]   = ALLEGRO_KEY_V;
-    key_skill[Ac.EXPLODER2]  = ALLEGRO_KEY_V;
+    keySkill[Ac.WALKER]     = ALLEGRO_KEY_D;
+    keySkill[Ac.RUNNER]     = ALLEGRO_KEY_LSHIFT;
+    keySkill[Ac.BASHER]     = ALLEGRO_KEY_E;
+    keySkill[Ac.BUILDER]    = ALLEGRO_KEY_A;
+    keySkill[Ac.PLATFORMER] = ALLEGRO_KEY_T;
+    keySkill[Ac.DIGGER]     = ALLEGRO_KEY_W;
+    keySkill[Ac.MINER]      = ALLEGRO_KEY_G;
+    keySkill[Ac.BLOCKER]    = ALLEGRO_KEY_X;
+    keySkill[Ac.CUBER]      = ALLEGRO_KEY_X;
+    keySkill[Ac.EXPLODER]   = ALLEGRO_KEY_V;
+    keySkill[Ac.EXPLODER2]  = ALLEGRO_KEY_V;
 
-    key_skill[Ac.CLIMBER]    = ALLEGRO_KEY_B;
-    key_skill[Ac.FLOATER]    = ALLEGRO_KEY_Q;
-    key_skill[Ac.JUMPER]     = ALLEGRO_KEY_R;
-    key_skill[Ac.BATTER]     = ALLEGRO_KEY_C;
+    keySkill[Ac.CLIMBER]    = ALLEGRO_KEY_B;
+    keySkill[Ac.FLOATER]    = ALLEGRO_KEY_Q;
+    keySkill[Ac.JUMPER]     = ALLEGRO_KEY_R;
+    keySkill[Ac.BATTER]     = ALLEGRO_KEY_C;
 
-    single_last_level  = new Filename(dir_levels_single);
-    network_last_level = new Filename(dir_levels_network);
-    replay_last_level  = new Filename(dir_replays);
+    singleLastLevel  = new Filename(dirLevelsSingle);
+    networkLastLevel = new Filename(dirLevelsNetwork);
+    replayLastLevel  = new Filename(dirReplays);
 
-    editor_last_dir_terrain = new Filename(dir_bitmap);
-    editor_last_dir_steel   = new Filename(dir_bitmap);
-    editor_last_dir_hatch   = new Filename(dir_bitmap);
-    editor_last_dir_goal    = new Filename(dir_bitmap);
-    editor_last_dir_deco    = new Filename(dir_bitmap);
-    editor_last_dir_hazard  = new Filename(dir_bitmap);
+    editorLastDirTerrain = new Filename(dirImages);
+    editorLastDirSteel   = new Filename(dirImages);
+    editorLastDirHatch   = new Filename(dirImages);
+    editorLastDirGoal    = new Filename(dirImages);
+    editorLastDirDeco    = new Filename(dirImages);
+    editorLastDirHazard  = new Filename(dirImages);
 }
 
 
@@ -202,9 +202,9 @@ static this()
 
 class Result {
     Date built;
-    int  lix_saved;
-    int  skills_used;
-    int  updates_used;
+    int  lixSaved;
+    int  skillsUsed;
+    int  updatesUsed;
 
     this ()
     {
@@ -214,28 +214,28 @@ class Result {
 
     this (Date bu, in int sa, in int sk, in int up)
     {
-        built = bu; lix_saved = sa; skills_used = sk; updates_used = up;
+        built = bu; lixSaved = sa; skillsUsed = sk; updatesUsed = up;
     }
 
     int opEquals(in Result rhs) const
     {
-        return built        == rhs.built
-         &&    lix_saved    == rhs.lix_saved
-         &&    skills_used  == rhs.skills_used
-         &&    updates_used == rhs.updates_used;
+        return built       == rhs.built
+            && lixSaved    == rhs.lixSaved
+            && skillsUsed  == rhs.skillsUsed
+            && updatesUsed == rhs.updatesUsed;
     }
 
     // A newly built level's result is always better than older results,
     // when compared with this. However, the user wouldn't want to replace
     // an old solving result with a new-built-using non-solving result.
     // To check in results into the database of solved levels, use
-    // set_level_result_carefully() from this module.
+    // setLevelResultCarefully() from this module.
     int opCmp(in Result r) const
     {
-        return built    != r.built        ? built        < r.built
-         : lix_saved    != r.lix_saved    ? lix_saved    < r.lix_saved
-         : skills_used  != r.skills_used  ? skills_used  > r.skills_used
-         : updates_used != r.updates_used ? updates_used > r.updates_used
+        return built   != r.built       ? built       < r.built
+         : lixSaved    != r.lixSaved    ? lixSaved    < r.lixSaved
+         : skillsUsed  != r.skillsUsed  ? skillsUsed  > r.skillsUsed
+         : updatesUsed != r.updatesUsed ? updatesUsed > r.updatesUsed
          : 0; // all are equal
     }
 
@@ -244,7 +244,7 @@ class Result {
 
 
 
-const(Result) get_level_result(in Filename fn)
+const(Result) getLevelResult(in Filename fn)
 {
     Result* ret = (rebindable!(const Filename)(fn) in results);
     return ret ? (*ret) : null;
@@ -252,21 +252,21 @@ const(Result) get_level_result(in Filename fn)
 
 
 
-void set_level_result_carefully(
+void setLevelResultCarefully(
     in Filename _fn,
     Result r,
     in int required
 ) {
     auto fn = rebindable!(const Filename)(_fn);
-    auto saved_result = (fn in results);
+    auto savedResult = (fn in results);
 
-    if (saved_result is null) {
+    if (savedResult is null) {
         results[fn] = r;
     }
-    else if (saved_result.built == r.built) {
+    else if (savedResult.built == r.built) {
         // carefully means: if the level build times are the same, use the
         // better result of these two
-        if (*saved_result < r) results[fn] = r;
+        if (*savedResult < r) results[fn] = r;
     }
     else {
         // carefully also means: when the bulid times differ, a non-solving
@@ -274,7 +274,7 @@ void set_level_result_carefully(
         // version. Otherwise, the new version is always preferred.
         // required should be supplied by Gameplay, it's the required count
         // for the new Result r
-        if (saved_result.lix_saved >= required && r.lix_saved < required) {
+        if (savedResult.lixSaved >= required && r.lixSaved < required) {
             // do nothing, keep the old result
         }
         else results[fn] = r;
@@ -290,31 +290,31 @@ void set_level_result_carefully(
 
 
 
-private Filename user_file_name()
+private Filename userFileName()
 {
-    return new Filename(dir_data_user.dir_rootful
-     ~ basics.help.user_name_escape_for_filename(user_name)
-     ~ ext_config);
+    return new Filename(dirDataUser.dirRootful
+     ~ basics.help.userNameEscapeForFilename(userName)
+     ~ filenameExtConfig);
 }
 
 
 void load()
 {
-    if (user_name == null) {
+    if (userName == null) {
         // This happens upon first start after installation
         return;
     }
 
-    while (basics.globconf.user_name.length > player_name_max_length) {
-        user_name = basics.help.backspace(user_name);
+    while (basics.globconf.userName.length > playerNameMaxLength) {
+        userName = basics.help.backspace(userName);
     }
 
     IoLine[] lines;
     try
-        lines = fill_vector_from_file(user_file_name());
+        lines = fillVectorFromFile(userFileName());
     catch (Exception e) {
         Log.log(e.msg);
-        Log.log("User config for user `" ~ user_name ~ "' was not found.");
+        Log.log("User config for user `" ~ userName ~ "' was not found.");
     }
 
     results = null;
@@ -322,125 +322,125 @@ void load()
     foreach (i; lines) switch (i.type) {
 
     case '$':
-        if      (i.text1 == user_language               ) file_language      = new Filename(i.text2);
+        if      (i.text1 == userLanguage               ) fileLanguage      = new Filename(i.text2);
 
-        else if (i.text1 == user_single_last_level      ) single_last_level  = new Filename(i.text2);
-        else if (i.text1 == user_network_last_level     ) network_last_level = new Filename(i.text2);
-        else if (i.text1 == user_replay_last_level      ) replay_last_level  = new Filename(i.text2);
+        else if (i.text1 == userSingleLastLevel      ) singleLastLevel  = new Filename(i.text2);
+        else if (i.text1 == userNetworkLastLevel     ) networkLastLevel = new Filename(i.text2);
+        else if (i.text1 == userReplayLastLevel      ) replayLastLevel  = new Filename(i.text2);
 
-        else if (i.text1 == user_editor_last_dir_terrain) editor_last_dir_terrain = new Filename(i.text2);
-        else if (i.text1 == user_editor_last_dir_steel  ) editor_last_dir_steel   = new Filename(i.text2);
-        else if (i.text1 == user_editor_last_dir_hatch  ) editor_last_dir_hatch   = new Filename(i.text2);
-        else if (i.text1 == user_editor_last_dir_goal   ) editor_last_dir_goal    = new Filename(i.text2);
-        else if (i.text1 == user_editor_last_dir_deco   ) editor_last_dir_deco    = new Filename(i.text2);
-        else if (i.text1 == user_editor_last_dir_hazard ) editor_last_dir_hazard  = new Filename(i.text2);
+        else if (i.text1 == userEditorLastDirTerrain) editorLastDirTerrain = new Filename(i.text2);
+        else if (i.text1 == userEditorLastDirSteel  ) editorLastDirSteel   = new Filename(i.text2);
+        else if (i.text1 == userEditorLastDirHatch  ) editorLastDirHatch   = new Filename(i.text2);
+        else if (i.text1 == userEditorLastDirGoal   ) editorLastDirGoal    = new Filename(i.text2);
+        else if (i.text1 == userEditorLastDirDeco   ) editorLastDirDeco    = new Filename(i.text2);
+        else if (i.text1 == userEditorLastDirHazard ) editorLastDirHazard  = new Filename(i.text2);
         break;
 
     case '#':
-        if      (i.text1 == user_option_group           ) option_group           = i.nr1;
+        if      (i.text1 == userOptionGroup           ) optionGroup           = i.nr1;
 
-        else if (i.text1 == user_mouse_speed            ) mouse_speed            = i.nr1;
-        else if (i.text1 == user_mouse_acceleration     ) mouse_acceleration     = i.nr1;
-        else if (i.text1 == user_scroll_speed_edge      ) scroll_speed_edge      = i.nr1;
-        else if (i.text1 == user_scroll_speed_click     ) scroll_speed_click     = i.nr1;
-        else if (i.text1 == user_scroll_edge            ) scroll_edge            = i.nr1 > 0;
-        else if (i.text1 == user_scroll_right           ) scroll_right           = i.nr1 > 0;
-        else if (i.text1 == user_scroll_middle          ) scroll_middle          = i.nr1 > 0;
-        else if (i.text1 == user_replay_cancel          ) replay_cancel          = i.nr1 > 0;
-        else if (i.text1 == user_replay_cancel_at       ) replay_cancel_at       = i.nr1;
-        else if (i.text1 == user_multiple_builders      ) multiple_builders      = i.nr1 > 0;
-        else if (i.text1 == user_batter_priority        ) batter_priority        = i.nr1 > 0;
-        else if (i.text1 == user_prioinv_middle         ) prioinv_middle         = i.nr1 > 0;
-        else if (i.text1 == user_prioinv_right          ) prioinv_right          = i.nr1 > 0;
+        else if (i.text1 == userMouseSpeed            ) mouseSpeed            = i.nr1;
+        else if (i.text1 == userMouseAcceleration     ) mouseAcceleration     = i.nr1;
+        else if (i.text1 == userScrollSpeedEdge      ) scrollSpeedEdge      = i.nr1;
+        else if (i.text1 == userScrollSpeedClick     ) scrollSpeedClick     = i.nr1;
+        else if (i.text1 == userScrollEdge            ) scrollEdge            = i.nr1 > 0;
+        else if (i.text1 == userScrollRight           ) scrollRight           = i.nr1 > 0;
+        else if (i.text1 == userScrollMiddle          ) scrollMiddle          = i.nr1 > 0;
+        else if (i.text1 == userReplayCancel          ) replayCancel          = i.nr1 > 0;
+        else if (i.text1 == userReplayCancelAt       ) replayCancelAt       = i.nr1;
+        else if (i.text1 == userMultipleBuilders      ) multipleBuilders      = i.nr1 > 0;
+        else if (i.text1 == userBatterPriority        ) batterPriority        = i.nr1 > 0;
+        else if (i.text1 == userPriorityInvertMiddle         ) priorityInvertMiddle         = i.nr1 > 0;
+        else if (i.text1 == userPriorityInvertRight          ) priorityInvertRight          = i.nr1 > 0;
 
-        else if (i.text1 == user_screen_windowed        ) screen_windowed        = i.nr1 > 0;
-        else if (i.text1 == user_arrows_replay          ) arrows_replay          = i.nr1 > 0;
-        else if (i.text1 == user_arrows_network         ) arrows_network         = i.nr1 > 0;
-        else if (i.text1 == user_gameplay_help          ) gameplay_help          = i.nr1 > 0;
-        else if (i.text1 == user_debris_amount          ) debris_amount          = i.nr1;
-        else if (i.text1 == user_debris_type            ) debris_type            = i.nr1;
-        else if (i.text1 == user_gui_color_red          ) gui_color_red          = i.nr1;
-        else if (i.text1 == user_gui_color_green        ) gui_color_green        = i.nr1;
-        else if (i.text1 == user_gui_color_blue         ) gui_color_blue         = i.nr1;
+        else if (i.text1 == userScreenWindowed        ) screenWindowed        = i.nr1 > 0;
+        else if (i.text1 == userArrowsReplay          ) arrowsReplay          = i.nr1 > 0;
+        else if (i.text1 == userArrowsNetwork         ) arrowsNetwork         = i.nr1 > 0;
+        else if (i.text1 == userGameplayHelp          ) gameplayHelp          = i.nr1 > 0;
+        else if (i.text1 == userDebrisAmount          ) debrisAmount          = i.nr1;
+        else if (i.text1 == userDebrisType            ) debrisType            = i.nr1;
+        else if (i.text1 == userGuiColorRed          ) guiColorRed          = i.nr1;
+        else if (i.text1 == userGuiColorGreen        ) guiColorGreen        = i.nr1;
+        else if (i.text1 == userGuiColorBlue         ) guiColorBlue         = i.nr1;
 
-        else if (i.text1 == user_sound_volume           ) sound_volume           = i.nr1;
+        else if (i.text1 == userSoundVolume           ) soundVolume           = i.nr1;
 
-        else if (i.text1 == user_editor_hex_level_size  ) editor_hex_level_size  = i.nr1 > 0;
-        else if (i.text1 == user_editor_grid_selected   ) editor_grid_selected   = i.nr1;
-        else if (i.text1 == user_editor_grid_custom     ) editor_grid_custom     = i.nr1;
+        else if (i.text1 == userEditorHexLevelSize  ) editorHexLevelSize  = i.nr1 > 0;
+        else if (i.text1 == userEditorGridSelected   ) editorGridSelected   = i.nr1;
+        else if (i.text1 == userEditorGridCustom     ) editorGridCustom     = i.nr1;
 
-        else if (i.text1 == user_network_last_style) {
-            try network_last_style = to!Style(i.nr1);
-            catch (ConvException e) network_last_style = Style.RED;
-            if (network_last_style < Style.RED) network_last_style = Style.RED;
+        else if (i.text1 == userNetworkLastStyle) {
+            try networkLastStyle = to!Style(i.nr1);
+            catch (ConvException e) networkLastStyle = Style.RED;
+            if (networkLastStyle < Style.RED) networkLastStyle = Style.RED;
         }
 
-        else if (i.text1 == user_key_force_left         ) key_force_left         = i.nr1;
-        else if (i.text1 == user_key_force_right        ) key_force_right        = i.nr1;
-        else if (i.text1 == user_key_scroll             ) key_scroll             = i.nr1;
-        else if (i.text1 == user_key_priority           ) key_priority           = i.nr1;
-        else if (i.text1 == user_key_rate_minus         ) key_rate_minus         = i.nr1;
-        else if (i.text1 == user_key_rate_plus          ) key_rate_plus          = i.nr1;
-        else if (i.text1 == user_key_pause              ) key_pause              = i.nr1;
-        else if (i.text1 == user_key_speed_slow         ) key_speed_slow         = i.nr1;
-        else if (i.text1 == user_key_speed_fast         ) key_speed_fast         = i.nr1;
-        else if (i.text1 == user_key_speed_turbo        ) key_speed_turbo        = i.nr1;
-        else if (i.text1 == user_key_restart            ) key_restart            = i.nr1;
-        else if (i.text1 == user_key_state_load         ) key_state_load         = i.nr1;
-        else if (i.text1 == user_key_state_save         ) key_state_save         = i.nr1;
-        else if (i.text1 == user_key_zoom               ) key_zoom               = i.nr1;
-        else if (i.text1 == user_key_nuke               ) key_nuke               = i.nr1;
-        else if (i.text1 == user_key_spec_tribe         ) key_spec_tribe         = i.nr1;
-        else if (i.text1 == user_key_chat               ) key_chat               = i.nr1;
-        else if (i.text1 == user_key_ga_exit            ) key_ga_exit            = i.nr1;
+        else if (i.text1 == userKeyForceLeft         ) keyForceLeft         = i.nr1;
+        else if (i.text1 == userKeyForceRight        ) keyForceRight        = i.nr1;
+        else if (i.text1 == userKeyScroll             ) keyScroll             = i.nr1;
+        else if (i.text1 == userKeyPriorityInvert           ) keyPriorityInvert           = i.nr1;
+        else if (i.text1 == userKeySpawnintSlower         ) keySpawnintSlower         = i.nr1;
+        else if (i.text1 == userKeySpawnintFaster          ) keySpawnintFaster          = i.nr1;
+        else if (i.text1 == userKeyPause              ) keyPause              = i.nr1;
+        else if (i.text1 == userKey_speed_slow         ) key_speed_slow         = i.nr1;
+        else if (i.text1 == userKeySpeedFast         ) keySpeedFast         = i.nr1;
+        else if (i.text1 == userKeySpeedTurbo        ) keySpeedTurbo        = i.nr1;
+        else if (i.text1 == userKeyRestart            ) keyRestart            = i.nr1;
+        else if (i.text1 == userKeyStateLoad         ) keyStateLoad         = i.nr1;
+        else if (i.text1 == userKeyStateSave         ) keyStateSave         = i.nr1;
+        else if (i.text1 == userKeyZoom               ) keyZoom               = i.nr1;
+        else if (i.text1 == userKeyNuke               ) keyNuke               = i.nr1;
+        else if (i.text1 == userKeySpecTribe         ) keySpecTribe         = i.nr1;
+        else if (i.text1 == userKeyChat               ) keyChat               = i.nr1;
+        else if (i.text1 == userKeyGameExit            ) keyGameExit            = i.nr1;
 
-        else if (i.text1 == user_key_me_okay            ) key_me_okay            = i.nr1;
-        else if (i.text1 == user_key_me_edit            ) key_me_edit            = i.nr1;
-        else if (i.text1 == user_key_me_export          ) key_me_export          = i.nr1;
-        else if (i.text1 == user_key_me_delete          ) key_me_delete          = i.nr1;
-        else if (i.text1 == user_key_me_up_dir          ) key_me_up_dir          = i.nr1;
-        else if (i.text1 == user_key_me_up_1            ) key_me_up_1            = i.nr1;
-        else if (i.text1 == user_key_me_up_5            ) key_me_up_5            = i.nr1;
-        else if (i.text1 == user_key_me_down_1          ) key_me_down_1          = i.nr1;
-        else if (i.text1 == user_key_me_down_5          ) key_me_down_5          = i.nr1;
-        else if (i.text1 == user_key_me_exit            ) key_me_exit            = i.nr1;
-        else if (i.text1 == user_key_me_main_single     ) key_me_main_single     = i.nr1;
-        else if (i.text1 == user_key_me_main_network    ) key_me_main_network    = i.nr1;
-        else if (i.text1 == user_key_me_main_replays    ) key_me_main_replays    = i.nr1;
-        else if (i.text1 == user_key_me_main_options    ) key_me_main_options    = i.nr1;
+        else if (i.text1 == userKeyMenuOkay            ) keyMenuOkay            = i.nr1;
+        else if (i.text1 == userKeyMenuEdit            ) keyMenuEdit            = i.nr1;
+        else if (i.text1 == userKeyMenuExport          ) keyMenuExport          = i.nr1;
+        else if (i.text1 == userKeyMenuDelete          ) keyMenuDelete          = i.nr1;
+        else if (i.text1 == userKeyMenuUpDir          ) keyMenuUpDir          = i.nr1;
+        else if (i.text1 == userKeyMenuUpBy1            ) keyMenuUpBy1            = i.nr1;
+        else if (i.text1 == userKeyMenuUpBy5            ) keyMenuUpBy5            = i.nr1;
+        else if (i.text1 == userKeyMenuDownBy1          ) keyMenuDownBy1          = i.nr1;
+        else if (i.text1 == userKeyMenuDownBy5          ) keyMenuDownBy5          = i.nr1;
+        else if (i.text1 == userKeyMenuExit            ) keyMenuExit            = i.nr1;
+        else if (i.text1 == userKeyMenuMainSingle     ) keyMenuMainSingle     = i.nr1;
+        else if (i.text1 == userKeyMenuMainNetwork    ) keyMenuMainNetwork    = i.nr1;
+        else if (i.text1 == userKeyMenuMainReplays    ) keyMenuMainReplays    = i.nr1;
+        else if (i.text1 == userKeyMenuMainOptions    ) keyMenuMainOptions    = i.nr1;
 
-        else if (i.text1 == user_key_ed_left            ) key_ed_left            = i.nr1;
-        else if (i.text1 == user_key_ed_right           ) key_ed_right           = i.nr1;
-        else if (i.text1 == user_key_ed_up              ) key_ed_up              = i.nr1;
-        else if (i.text1 == user_key_ed_down            ) key_ed_down            = i.nr1;
-        else if (i.text1 == user_key_ed_copy            ) key_ed_copy            = i.nr1;
-        else if (i.text1 == user_key_ed_delete          ) key_ed_delete          = i.nr1;
-        else if (i.text1 == user_key_ed_grid            ) key_ed_grid            = i.nr1;
-        else if (i.text1 == user_key_ed_sel_all         ) key_ed_sel_all         = i.nr1;
-        else if (i.text1 == user_key_ed_sel_frame       ) key_ed_sel_frame       = i.nr1;
-        else if (i.text1 == user_key_ed_sel_add         ) key_ed_sel_add         = i.nr1;
-        else if (i.text1 == user_key_ed_background      ) key_ed_background      = i.nr1;
-        else if (i.text1 == user_key_ed_foreground      ) key_ed_foreground      = i.nr1;
-        else if (i.text1 == user_key_ed_mirror          ) key_ed_mirror          = i.nr1;
-        else if (i.text1 == user_key_ed_rotate          ) key_ed_rotate          = i.nr1;
-        else if (i.text1 == user_key_ed_dark            ) key_ed_dark            = i.nr1;
-        else if (i.text1 == user_key_ed_noow            ) key_ed_noow            = i.nr1;
-        else if (i.text1 == user_key_ed_zoom            ) key_ed_zoom            = i.nr1;
-        else if (i.text1 == user_key_ed_help            ) key_ed_help            = i.nr1;
-        else if (i.text1 == user_key_ed_menu_size       ) key_ed_menu_size       = i.nr1;
-        else if (i.text1 == user_key_ed_menu_vars       ) key_ed_menu_vars       = i.nr1;
-        else if (i.text1 == user_key_ed_menu_skills     ) key_ed_menu_skills     = i.nr1;
-        else if (i.text1 == user_key_ed_add_terrain     ) key_ed_add_terrain     = i.nr1;
-        else if (i.text1 == user_key_ed_add_steel       ) key_ed_add_steel       = i.nr1;
-        else if (i.text1 == user_key_ed_add_hatch       ) key_ed_add_hatch       = i.nr1;
-        else if (i.text1 == user_key_ed_add_goal        ) key_ed_add_goal        = i.nr1;
-        else if (i.text1 == user_key_ed_add_deco        ) key_ed_add_deco        = i.nr1;
-        else if (i.text1 == user_key_ed_add_hazard      ) key_ed_add_hazard      = i.nr1;
-        else if (i.text1 == user_key_ed_exit            ) key_ed_exit            = i.nr1;
+        else if (i.text1 == userKeyEditorLeft            ) keyEditorLeft            = i.nr1;
+        else if (i.text1 == userKeyEditorRight           ) keyEditorRight           = i.nr1;
+        else if (i.text1 == userKeyEditorUp              ) keyEditorUp              = i.nr1;
+        else if (i.text1 == userKeyEditorDown            ) keyEditorDown            = i.nr1;
+        else if (i.text1 == userKeyEditorCopy            ) keyEditorCopy            = i.nr1;
+        else if (i.text1 == userKeyEditorDelete          ) keyEditorDelete          = i.nr1;
+        else if (i.text1 == userKeyEditorGrid            ) keyEditorGrid            = i.nr1;
+        else if (i.text1 == userKeyEditorSelectAll         ) keyEditorSelectAll         = i.nr1;
+        else if (i.text1 == userKeyEditorSelectFrame       ) keyEditorSelectFrame       = i.nr1;
+        else if (i.text1 == userKeyEditorSelectAdd         ) keyEditorSelectAdd         = i.nr1;
+        else if (i.text1 == userKeyEditorBackground      ) keyEditorBackground      = i.nr1;
+        else if (i.text1 == userKeyEditorForeground      ) keyEditorForeground      = i.nr1;
+        else if (i.text1 == userKeyEditorMirror          ) keyEditorMirror          = i.nr1;
+        else if (i.text1 == userKeyEditorRotate          ) keyEditorRotate          = i.nr1;
+        else if (i.text1 == userKeyEditorDark            ) keyEditorDark            = i.nr1;
+        else if (i.text1 == userKeyEditorNoow            ) keyEditorNoow            = i.nr1;
+        else if (i.text1 == userKeyEditorZoom            ) keyEditorZoom            = i.nr1;
+        else if (i.text1 == userKeyEditorHelp            ) keyEditorHelp            = i.nr1;
+        else if (i.text1 == userKeyEditorMenuSize       ) keyEditorMenuSize       = i.nr1;
+        else if (i.text1 == userKeyEditorMenuVars       ) keyEditorMenuVars       = i.nr1;
+        else if (i.text1 == userKeyEditorMenuSkills     ) keyEditorMenuSkills     = i.nr1;
+        else if (i.text1 == userKeyEditorAddTerrain     ) keyEditorAddTerrain     = i.nr1;
+        else if (i.text1 == userKeyEditorAddSteel       ) keyEditorAddSteel       = i.nr1;
+        else if (i.text1 == userKeyEditorAddHatch       ) keyEditorAddHatch       = i.nr1;
+        else if (i.text1 == userKeyEditorAddGoal        ) keyEditorAddGoal        = i.nr1;
+        else if (i.text1 == userKeyEditorAddDeco        ) keyEditorAddDeco        = i.nr1;
+        else if (i.text1 == userKeyEditorAddHazard      ) keyEditorAddHazard      = i.nr1;
+        else if (i.text1 == userKeyEditorExit            ) keyEditorExit            = i.nr1;
 
         else {
-            Ac ac = string_to_ac(i.text1);
-            if (ac != Ac.MAX) key_skill[ac] = i.nr1;
+            Ac ac = stringToAc(i.text1);
+            if (ac != Ac.MAX) keySkill[ac] = i.nr1;
         }
         break;
 
@@ -463,14 +463,14 @@ void load()
 
 nothrow void save()
 {
-    if (user_name is null) {
+    if (userName == null) {
         // may happen under very strange circumstances, but generally
         // shouldn't happen. We have to warn the user when he enters an
         // empty name in the options.
         return;
     }
     try {
-        std.stdio.File f = File(user_file_name().rootful, "w");
+        std.stdio.File f = File(userFileName().rootful, "w");
 
         void fwr(in IoLine line)
         {
@@ -478,140 +478,140 @@ nothrow void save()
             f.flush();
         }
 
-        fwr(IoLine.Dollar(user_language, file_language.rootless));
-        fwr(IoLine.Hash  (user_option_group, option_group));
+        fwr(IoLine.Dollar(userLanguage, fileLanguage.rootless));
+        fwr(IoLine.Hash(userOptionGroup, optionGroup));
         f.writeln();
 
-        fwr(IoLine.Hash  (user_mouse_speed,             mouse_speed));
-        fwr(IoLine.Hash  (user_mouse_acceleration,      mouse_acceleration));
-        fwr(IoLine.Hash  (user_scroll_speed_edge,       scroll_speed_edge));
-        fwr(IoLine.Hash  (user_scroll_speed_click,      scroll_speed_click));
-        fwr(IoLine.Hash  (user_scroll_edge,             scroll_edge));
-        fwr(IoLine.Hash  (user_scroll_right,            scroll_right));
-        fwr(IoLine.Hash  (user_scroll_middle,           scroll_middle));
-        fwr(IoLine.Hash  (user_replay_cancel,           replay_cancel));
-        fwr(IoLine.Hash  (user_replay_cancel_at,        replay_cancel_at));
-        fwr(IoLine.Hash  (user_multiple_builders,       multiple_builders));
-        fwr(IoLine.Hash  (user_batter_priority,         batter_priority));
-        fwr(IoLine.Hash  (user_prioinv_middle,          prioinv_middle));
-        fwr(IoLine.Hash  (user_prioinv_right,           prioinv_right));
+        fwr(IoLine.Hash(userMouseSpeed,             mouseSpeed));
+        fwr(IoLine.Hash(userMouseAcceleration,      mouseAcceleration));
+        fwr(IoLine.Hash(userScrollSpeedEdge,        scrollSpeedEdge));
+        fwr(IoLine.Hash(userScrollSpeedClick,       scrollSpeedClick));
+        fwr(IoLine.Hash(userScrollEdge,             scrollEdge));
+        fwr(IoLine.Hash(userScrollRight,            scrollRight));
+        fwr(IoLine.Hash(userScrollMiddle,           scrollMiddle));
+        fwr(IoLine.Hash(userReplayCancel,           replayCancel));
+        fwr(IoLine.Hash(userReplayCancelAt,         replayCancelAt));
+        fwr(IoLine.Hash(userMultipleBuilders,       multipleBuilders));
+        fwr(IoLine.Hash(userBatterPriority,         batterPriority));
+        fwr(IoLine.Hash(userPriorityInvertMiddle,   priorityInvertMiddle));
+        fwr(IoLine.Hash(userPriorityInvertRight,    priorityInvertRight));
         f.writeln();
 
-        fwr(IoLine.Hash  (user_screen_windowed,         screen_windowed));
-        fwr(IoLine.Hash  (user_arrows_replay,           arrows_replay));
-        fwr(IoLine.Hash  (user_arrows_network,          arrows_network));
-        fwr(IoLine.Hash  (user_gameplay_help,           gameplay_help));
-        fwr(IoLine.Hash  (user_debris_amount,           debris_amount));
-        fwr(IoLine.Hash  (user_debris_type,             debris_type));
-        fwr(IoLine.Hash  (user_gui_color_red,           gui_color_red));
-        fwr(IoLine.Hash  (user_gui_color_green,         gui_color_green));
-        fwr(IoLine.Hash  (user_gui_color_blue,          gui_color_blue));
+        fwr(IoLine.Hash(userScreenWindowed,         screenWindowed));
+        fwr(IoLine.Hash(userArrowsReplay,           arrowsReplay));
+        fwr(IoLine.Hash(userArrowsNetwork,          arrowsNetwork));
+        fwr(IoLine.Hash(userGameplayHelp,           gameplayHelp));
+        fwr(IoLine.Hash(userDebrisAmount,           debrisAmount));
+        fwr(IoLine.Hash(userDebrisType,             debrisType));
+        fwr(IoLine.Hash(userGuiColorRed,            guiColorRed));
+        fwr(IoLine.Hash(userGuiColorGreen,          guiColorGreen));
+        fwr(IoLine.Hash(userGuiColorBlue,           guiColorBlue));
         f.writeln();
 
-        fwr(IoLine.Hash  (user_sound_volume,            sound_volume));
+        fwr(IoLine.Hash(userSoundVolume,            soundVolume));
         f.writeln();
 
-        fwr(IoLine.Hash  (user_editor_hex_level_size,   editor_hex_level_size));
-        fwr(IoLine.Hash  (user_editor_grid_selected,    editor_grid_selected));
-        fwr(IoLine.Hash  (user_editor_grid_custom,      editor_grid_custom));
+        fwr(IoLine.Hash(userEditorHexLevelSize,     editorHexLevelSize));
+        fwr(IoLine.Hash(userEditorGridSelected,     editorGridSelected));
+        fwr(IoLine.Hash(userEditorGridCustom,       editorGridCustom));
         f.writeln();
 
-        fwr(IoLine.Dollar(user_single_last_level,       single_last_level.rootless));
-        fwr(IoLine.Dollar(user_network_last_level,      network_last_level.rootless));
-        fwr(IoLine.Dollar(user_replay_last_level,       replay_last_level.rootless));
-        fwr(IoLine.Hash  (user_network_last_style,      network_last_style));
+        fwr(IoLine.Dollar(userSingleLastLevel,        singleLastLevel.rootless));
+        fwr(IoLine.Dollar(userNetworkLastLevel,       networkLastLevel.rootless));
+        fwr(IoLine.Dollar(userReplayLastLevel,        replayLastLevel.rootless));
+        fwr(IoLine.Hash(userNetworkLastStyle,       networkLastStyle));
         f.writeln();
 
-        fwr(IoLine.Dollar(user_editor_last_dir_terrain, editor_last_dir_terrain.rootless));
-        fwr(IoLine.Dollar(user_editor_last_dir_steel,   editor_last_dir_steel.rootless));
-        fwr(IoLine.Dollar(user_editor_last_dir_hatch,   editor_last_dir_hatch.rootless));
-        fwr(IoLine.Dollar(user_editor_last_dir_goal,    editor_last_dir_goal.rootless));
-        fwr(IoLine.Dollar(user_editor_last_dir_deco,    editor_last_dir_deco.rootless));
-        fwr(IoLine.Dollar(user_editor_last_dir_hazard,  editor_last_dir_hazard.rootless));
+        fwr(IoLine.Dollar(userEditorLastDirTerrain, editorLastDirTerrain.rootless));
+        fwr(IoLine.Dollar(userEditorLastDirSteel,   editorLastDirSteel.rootless));
+        fwr(IoLine.Dollar(userEditorLastDirHatch,   editorLastDirHatch.rootless));
+        fwr(IoLine.Dollar(userEditorLastDirGoal,    editorLastDirGoal.rootless));
+        fwr(IoLine.Dollar(userEditorLastDirDeco,    editorLastDirDeco.rootless));
+        fwr(IoLine.Dollar(userEditorLastDirHazard,  editorLastDirHazard.rootless));
         f.writeln();
 
-        fwr(IoLine.Hash  (user_key_force_left,  key_force_left));
-        fwr(IoLine.Hash  (user_key_force_right, key_force_right));
-        fwr(IoLine.Hash  (user_key_scroll,      key_scroll));
-        fwr(IoLine.Hash  (user_key_priority,    key_priority));
-        fwr(IoLine.Hash  (user_key_rate_minus,  key_rate_minus));
-        fwr(IoLine.Hash  (user_key_rate_plus,   key_rate_plus));
-        fwr(IoLine.Hash  (user_key_pause,       key_pause));
-        fwr(IoLine.Hash  (user_key_speed_slow,  key_speed_slow));
-        fwr(IoLine.Hash  (user_key_speed_fast,  key_speed_fast));
-        fwr(IoLine.Hash  (user_key_speed_turbo, key_speed_turbo));
-        fwr(IoLine.Hash  (user_key_restart,     key_restart));
-        fwr(IoLine.Hash  (user_key_state_load,  key_state_load));
-        fwr(IoLine.Hash  (user_key_state_save,  key_state_save));
-        fwr(IoLine.Hash  (user_key_zoom,        key_zoom));
-        fwr(IoLine.Hash  (user_key_nuke,        key_nuke));
-        fwr(IoLine.Hash  (user_key_spec_tribe,  key_spec_tribe));
-        fwr(IoLine.Hash  (user_key_chat,        key_chat));
-        fwr(IoLine.Hash  (user_key_ga_exit,     key_ga_exit));
+        fwr(IoLine.Hash(userKeyForceLeft,      keyForceLeft));
+        fwr(IoLine.Hash(userKeyForceRight,     keyForceRight));
+        fwr(IoLine.Hash(userKeyScroll,         keyScroll));
+        fwr(IoLine.Hash(userKeyPriorityInvert, keyPriorityInvert));
+        fwr(IoLine.Hash(userKeySpawnintSlower, keySpawnintSlower));
+        fwr(IoLine.Hash(userKeySpawnintFaster, keySpawnintFaster));
+        fwr(IoLine.Hash(userKeyPause,          keyPause));
+        fwr(IoLine.Hash(userKey_speed_slow,    key_speed_slow));
+        fwr(IoLine.Hash(userKeySpeedFast,      keySpeedFast));
+        fwr(IoLine.Hash(userKeySpeedTurbo,     keySpeedTurbo));
+        fwr(IoLine.Hash(userKeyRestart,        keyRestart));
+        fwr(IoLine.Hash(userKeyStateLoad,      keyStateLoad));
+        fwr(IoLine.Hash(userKeyStateSave,      keyStateSave));
+        fwr(IoLine.Hash(userKeyZoom,           keyZoom));
+        fwr(IoLine.Hash(userKeyNuke,           keyNuke));
+        fwr(IoLine.Hash(userKeySpecTribe,      keySpecTribe));
+        fwr(IoLine.Hash(userKeyChat,           keyChat));
+        fwr(IoLine.Hash(userKeyGameExit,       keyGameExit));
 
-        foreach (int i, mapped_key; key_skill) {
-            if (mapped_key != 0) {
+        foreach (int i, mappedKey; keySkill) {
+            if (mappedKey != 0) {
                 try {
                     Ac ac = to!Ac(i);
-                    fwr(IoLine.Hash(ac_to_string(ac), mapped_key));
+                    fwr(IoLine.Hash(acToString(ac), mappedKey));
                 }
                 catch (ConvException) { }
             }
         }
         f.writeln();
 
-        fwr(IoLine.Hash  (user_key_me_okay,          key_me_okay));
-        fwr(IoLine.Hash  (user_key_me_edit,          key_me_edit));
-        fwr(IoLine.Hash  (user_key_me_export,        key_me_export));
-        fwr(IoLine.Hash  (user_key_me_delete,        key_me_delete));
-        fwr(IoLine.Hash  (user_key_me_up_dir,        key_me_up_dir));
-        fwr(IoLine.Hash  (user_key_me_up_1,          key_me_up_1));
-        fwr(IoLine.Hash  (user_key_me_up_5,          key_me_up_5));
-        fwr(IoLine.Hash  (user_key_me_down_1,        key_me_down_1));
-        fwr(IoLine.Hash  (user_key_me_down_5,        key_me_down_5));
-        fwr(IoLine.Hash  (user_key_me_exit,          key_me_exit));
-        fwr(IoLine.Hash  (user_key_me_main_single,   key_me_main_single));
-        fwr(IoLine.Hash  (user_key_me_main_network,  key_me_main_network));
-        fwr(IoLine.Hash  (user_key_me_main_replays,  key_me_main_replays));
-        fwr(IoLine.Hash  (user_key_me_main_options,  key_me_main_options));
+        fwr(IoLine.Hash(userKeyMenuOkay,          keyMenuOkay));
+        fwr(IoLine.Hash(userKeyMenuEdit,          keyMenuEdit));
+        fwr(IoLine.Hash(userKeyMenuExport,        keyMenuExport));
+        fwr(IoLine.Hash(userKeyMenuDelete,        keyMenuDelete));
+        fwr(IoLine.Hash(userKeyMenuUpDir,         keyMenuUpDir));
+        fwr(IoLine.Hash(userKeyMenuUpBy1,         keyMenuUpBy1));
+        fwr(IoLine.Hash(userKeyMenuUpBy5,         keyMenuUpBy5));
+        fwr(IoLine.Hash(userKeyMenuDownBy1,       keyMenuDownBy1));
+        fwr(IoLine.Hash(userKeyMenuDownBy5,       keyMenuDownBy5));
+        fwr(IoLine.Hash(userKeyMenuExit,          keyMenuExit));
+        fwr(IoLine.Hash(userKeyMenuMainSingle,    keyMenuMainSingle));
+        fwr(IoLine.Hash(userKeyMenuMainNetwork,   keyMenuMainNetwork));
+        fwr(IoLine.Hash(userKeyMenuMainReplays,   keyMenuMainReplays));
+        fwr(IoLine.Hash(userKeyMenuMainOptions,   keyMenuMainOptions));
         f.writeln();
 
-        fwr(IoLine.Hash  (user_key_ed_left,        key_ed_left));
-        fwr(IoLine.Hash  (user_key_ed_right,       key_ed_right));
-        fwr(IoLine.Hash  (user_key_ed_up,          key_ed_up));
-        fwr(IoLine.Hash  (user_key_ed_down,        key_ed_down));
-        fwr(IoLine.Hash  (user_key_ed_copy,        key_ed_copy));
-        fwr(IoLine.Hash  (user_key_ed_delete,      key_ed_delete));
-        fwr(IoLine.Hash  (user_key_ed_grid,        key_ed_grid));
-        fwr(IoLine.Hash  (user_key_ed_sel_all,     key_ed_sel_all));
-        fwr(IoLine.Hash  (user_key_ed_sel_frame,   key_ed_sel_frame));
-        fwr(IoLine.Hash  (user_key_ed_sel_add,     key_ed_sel_add));
-        fwr(IoLine.Hash  (user_key_ed_background,  key_ed_background));
-        fwr(IoLine.Hash  (user_key_ed_foreground,  key_ed_foreground));
-        fwr(IoLine.Hash  (user_key_ed_mirror,      key_ed_mirror));
-        fwr(IoLine.Hash  (user_key_ed_rotate,      key_ed_rotate));
-        fwr(IoLine.Hash  (user_key_ed_dark,        key_ed_dark));
-        fwr(IoLine.Hash  (user_key_ed_noow,        key_ed_noow));
-        fwr(IoLine.Hash  (user_key_ed_zoom,        key_ed_zoom));
-        fwr(IoLine.Hash  (user_key_ed_help,        key_ed_help));
-        fwr(IoLine.Hash  (user_key_ed_menu_size,   key_ed_menu_size));
-        fwr(IoLine.Hash  (user_key_ed_menu_vars,   key_ed_menu_vars));
-        fwr(IoLine.Hash  (user_key_ed_menu_skills, key_ed_menu_skills));
-        fwr(IoLine.Hash  (user_key_ed_add_terrain, key_ed_add_terrain));
-        fwr(IoLine.Hash  (user_key_ed_add_steel,   key_ed_add_steel));
-        fwr(IoLine.Hash  (user_key_ed_add_hatch,   key_ed_add_hatch));
-        fwr(IoLine.Hash  (user_key_ed_add_goal,    key_ed_add_goal));
-        fwr(IoLine.Hash  (user_key_ed_add_deco,    key_ed_add_deco));
-        fwr(IoLine.Hash  (user_key_ed_add_hazard,  key_ed_add_hazard));
-        fwr(IoLine.Hash  (user_key_ed_exit,        key_ed_exit));
+        fwr(IoLine.Hash(userKeyEditorLeft,        keyEditorLeft));
+        fwr(IoLine.Hash(userKeyEditorRight,       keyEditorRight));
+        fwr(IoLine.Hash(userKeyEditorUp,          keyEditorUp));
+        fwr(IoLine.Hash(userKeyEditorDown,        keyEditorDown));
+        fwr(IoLine.Hash(userKeyEditorCopy,        keyEditorCopy));
+        fwr(IoLine.Hash(userKeyEditorDelete,      keyEditorDelete));
+        fwr(IoLine.Hash(userKeyEditorGrid,        keyEditorGrid));
+        fwr(IoLine.Hash(userKeyEditorSelectAll,   keyEditorSelectAll));
+        fwr(IoLine.Hash(userKeyEditorSelectFrame, keyEditorSelectFrame));
+        fwr(IoLine.Hash(userKeyEditorSelectAdd,   keyEditorSelectAdd));
+        fwr(IoLine.Hash(userKeyEditorBackground,  keyEditorBackground));
+        fwr(IoLine.Hash(userKeyEditorForeground,  keyEditorForeground));
+        fwr(IoLine.Hash(userKeyEditorMirror,      keyEditorMirror));
+        fwr(IoLine.Hash(userKeyEditorRotate,      keyEditorRotate));
+        fwr(IoLine.Hash(userKeyEditorDark,        keyEditorDark));
+        fwr(IoLine.Hash(userKeyEditorNoow,        keyEditorNoow));
+        fwr(IoLine.Hash(userKeyEditorZoom,        keyEditorZoom));
+        fwr(IoLine.Hash(userKeyEditorHelp,        keyEditorHelp));
+        fwr(IoLine.Hash(userKeyEditorMenuSize,    keyEditorMenuSize));
+        fwr(IoLine.Hash(userKeyEditorMenuVars,    keyEditorMenuVars));
+        fwr(IoLine.Hash(userKeyEditorMenuSkills,  keyEditorMenuSkills));
+        fwr(IoLine.Hash(userKeyEditorAddTerrain,  keyEditorAddTerrain));
+        fwr(IoLine.Hash(userKeyEditorAddSteel,    keyEditorAddSteel));
+        fwr(IoLine.Hash(userKeyEditorAddHatch,    keyEditorAddHatch));
+        fwr(IoLine.Hash(userKeyEditorAddGoal,     keyEditorAddGoal));
+        fwr(IoLine.Hash(userKeyEditorAddDeco,     keyEditorAddDeco));
+        fwr(IoLine.Hash(userKeyEditorAddHazard,   keyEditorAddHazard));
+        fwr(IoLine.Hash(userKeyEditorExit,        keyEditorExit));
 
         // output all results, sorting the hash-based associative array first
-        bool wrote_newline = false;
-        auto sorted_keys = results.keys.sort();
-        foreach (fn; sorted_keys) {
-            if (! wrote_newline) {
+        bool wroteNewline = false;
+        auto sortedKeys = results.keys.sort();
+        foreach (fn; sortedKeys) {
+            if (! wroteNewline) {
                 f.writeln();
-                wrote_newline = true;
+                wroteNewline = true;
                 // The sane implementation of this newline before the first
                 // element, of course, is to check for array emptiness before
                 // the loop. However, this drove up release compile time from
@@ -620,7 +620,7 @@ nothrow void save()
             }
             Result r = results[fn];
             fwr(IoLine.Angle(fn.rootless,
-             r.lix_saved, r.skills_used, r.updates_used, r.built.toString()));
+                r.lixSaved, r.skillsUsed, r.updatesUsed, r.built.toString()));
         }
 
         f.close();

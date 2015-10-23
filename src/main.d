@@ -20,7 +20,7 @@ void main(string[] args)
     Cmdargs cmdargs = new Cmdargs(args);
 
     if (cmdargs.mode == Runmode.PRINT_AND_EXIT) {
-        cmdargs.print_noninteractive_output();
+        cmdargs.printNoninteractiveOutput();
     }
     else al_run_allegro({
         basics.init.initialize(cmdargs);

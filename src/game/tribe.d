@@ -30,25 +30,25 @@ class Tribe {
 
         int  initial;
         int  required;
-        int  lix_hatch;
-        int  lix_saved;
-        int  lix_saved_late; // after the goals have been locked
-        int  lix_out;        // change this only when killing/generating lixes.
-        int  lix_exiting;    // these have been scored, but keep game running
-        int  spawnint_slow = 32;
-        int  spawnint_fast =  4;
-        int  spawnint      = 32;
+        int  lixHatch;
+        int  lixSaved;
+        int  lixSavedLate; // after the goals have been locked
+        int  lixOut;       // change this only when killing/generating lixes.
+        int  lixExiting;   // these have been scored, but keep game running
+        int  spawnintSlow = 32;
+        int  spawnintFast =  4;
+        int  spawnint     = 32;
         bool nuke;
 
         int update_hatch;
         int update_saved; // last lix saved within timelimit
         int hatch_next;
 
-        int skills_used;
+        int skillsUsed;
     }
 
-    PublicValueFields value_fields;
-    alias value_fields this;
+    PublicValueFields valueFields;
+    alias valueFields this;
 
     Enumap!(Ac, int) skills;
     Master[] masters;
@@ -58,18 +58,18 @@ class Tribe {
 
     this(Tribe rhs)
     {
-        value_fields = rhs.value_fields;
-        skills       = rhs.skills;
-        masters      = rhs.masters.dup;
-        lixvec       = rhs.lixvec .clone;
+        valueFields = rhs.valueFields;
+        skills      = rhs.skills;
+        masters     = rhs.masters.dup;
+        lixvec      = rhs.lixvec .clone;
     }
 
     Tribe clone() { return new Tribe(this); }
 
     @property {
-        int still_playing()  const { return lix_out + lix_exiting + lix_hatch;}
-        int score()          const { return lix_saved; }
-        int score_expected() const { return lix_saved + lix_out + lix_hatch; }
+        int stillPlaying()  const { return lixOut + lixExiting + lixHatch;}
+        int score()         const { return lixSaved; }
+        int scoreExpected() const { return lixSaved + lixOut + lixHatch; }
     }
 
     @property string name() const
@@ -85,9 +85,9 @@ class Tribe {
 
     void return_skills(in Ac ac, in int amount)
     {
-        if (skills[ac] != skill_infinity) {
+        if (skills[ac] != skillInfinity) {
             skills[ac] += amount;
-            skills_used -= amount;
+            skillsUsed -= amount;
         }
     }
 

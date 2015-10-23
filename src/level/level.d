@@ -2,7 +2,7 @@ module level.level;
 
 public import enumap;
 
-public import level.levelio : save_to_file;
+public import level.levelio : saveToFile;
 
 import file.date;
 import file.filename;
@@ -49,46 +49,46 @@ class Level {
 
 public:
 
-    static immutable int min_xl = 160;
-    static immutable int min_yl = 160;
-    static immutable int max_xl = 3200;
-    static immutable int max_yl = 2000;
-    static immutable int spawnint_min =  1;
-    static immutable int spawnint_max = 96;
+    static immutable int minXl = 160;
+    static immutable int minYl = 160;
+    static immutable int maxXl = 3200;
+    static immutable int maxYl = 2000;
+    static immutable int spawnintMin =  1;
+    static immutable int spawnintMax = 96;
 
     // DTODO: implement players_intended;
 
     Date   built;
     string author;
-    string name_german;
-    string name_english;
+    string nameGerman;
+    string nameEnglish;
 
-    string[] hints_german;
-    string[] hints_english;
+    string[] hintsGerman;
+    string[] hintsEnglish;
 
-    int  size_x;
-    int  size_y;
-    bool torus_x;
-    bool torus_y;
+    int  sizeX;
+    int  sizeY;
+    bool torusX;
+    bool torusY;
 
-    bool start_manual; // if not set, ignore start_x and start_y.
-    int  start_x;      // start_manual is set in the level file by providing
-    int  start_y;      // at least either start_x or start_y in the file.
-    int  bg_red;
-    int  bg_green;
-    int  bg_blue;
+    bool startManual; // if not set, ignore startX and startY.
+    int  startX;      // startManual is set in the level file by providing
+    int  startY;      // at least either startX or startY in the file.
+    int  bgRed;
+    int  bgGreen;
+    int  bgBlue;
 
     int  seconds;
     int  initial;
     int  required;
-    int  spawnint_slow;
-    int  spawnint_fast;
+    int  spawnintSlow;
+    int  spawnintFast;
 
-    bool nuke_delayed; // true == nuke button triggers overtime if any
-    Ac   nuke_skill;   // NOTHING == use most appropriate exploder
+    bool nukeDelayed; // true == nuke button triggers overtime if any
+    Ac   nukeSkill;   // NOTHING == use most appropriate exploder
 
-    bool count_neutrals_only;
-    bool transfer_skills;
+    bool countNeutralsOnly;
+    bool transferSkills;
 
     Enumap!(Ac, int) skills;
 
@@ -110,21 +110,21 @@ public:
             && _status != LevelStatus.BAD_EMPTY;
     }
 
-    void draw_terrain_to(Torbit tb, Lookup lo = null) const
+    void drawTerrainTo(Torbit tb, Lookup lo = null) const
     {
-        impl_draw_terrain_to(this, tb, lo);
+        implDrawTerrainTo(this, tb, lo);
     }
     Torbit create_preview(in int xl, in int yl, AlCol col) const
     {
-        return impl_create_preview(this, xl, yl, col);
+        return implCreatePreview(this, xl, yl, col);
     }
 
     // void load_from_stream(std::istream&); DTODO: implement this?
-    void save_to_file(in Filename fn) const { impl_save_to_file(this, fn); }
-    void export_image(in Filename fn) const { impl_export_image(this, fn); }
+    void saveToFile (in Filename fn) const { implSaveToFile (this, fn); }
+    void exportImage(in Filename fn) const { implExportImage(this, fn); }
 
     // to save a level into a replay, call with existing File descriptor:
-    // mylevel.save_to_file(std.stdio.File existing_handle)
+    // mylevel.saveToFile(std.stdio.File existing_handle)
 
 package:
 
@@ -139,12 +139,12 @@ this()
     built   = Date.now();
     _status = LevelStatus.BAD_EMPTY;
 
-    size_x        = 640; // this comes from the old default res 640 x 480
-    size_y        = 400; // old panel y height was 80, so size_y = 480 - 80;
-    initial       = 30;
-    required      = 20;
-    spawnint_slow = 32;
-    spawnint_fast =  4;
+    sizeX        = 640; // this comes from the old default res 640 x 480
+    sizeY        = 400; // old panel y height was 80, so sizeY = 480 - 80;
+    initial      =  30;
+    required     =  20;
+    spawnintSlow =  32;
+    spawnintFast =   4;
 }
 
 
@@ -152,7 +152,7 @@ this()
 this(in Filename fn)
 {
     this();
-    level.levelio.load_from_file(this, fn);
+    level.levelio.loadFromFile(this, fn);
 }
 
 
@@ -162,8 +162,8 @@ name() const
 {
     // DTODOLANG
     // if (Lang.get_current() == Language.GERMAN)
-    //      return name_german  == null ? name_english : name_german;
-    return name_english == null ? name_german  : name_english;
+    //      return nameGerman  == null ? nameEnglish : nameGerman;
+    return nameEnglish == null ? nameGerman  : nameEnglish;
 }
 
 
@@ -173,8 +173,8 @@ hints() inout
 {
     // DTODOLANG
     // if (Lang.get_current() == Language.GERMAN)
-    //      return hints_german  == null ? hints_english : hints_german;
-    return hints_english == null ? hints_german  : hints_english;
+    //      return hintsGerman  == null ? hintsEnglish : hintsGerman;
+    return hintsEnglish == null ? hintsGerman  : hintsEnglish;
 }
 
 
@@ -185,34 +185,37 @@ opEquals(Object rhs_obj) const
     const(Level) rhs = cast (const Level) rhs_obj;
     if (rhs_obj is null) return false;
 
-    if (this.author        != rhs.author
-     || this.name_german   != rhs.name_german
-     || this.name_english  != rhs.name_english
-     || this.hints_german  != rhs.hints_german
-     || this.hints_english != rhs.hints_english
+    if (   this.author       != rhs.author
+        || this.nameGerman   != rhs.nameGerman
+        || this.nameEnglish  != rhs.nameEnglish
+        || this.hintsGerman  != rhs.hintsGerman
+        || this.hintsEnglish != rhs.hintsEnglish
 
-     || this.size_x        != rhs.size_x
-     || this.size_y        != rhs.size_y
-     || this.torus_x       != rhs.torus_x
-     || this.torus_y       != rhs.torus_y
-     || this.start_manual  != rhs.start_manual
-     || ( this.start_x     != rhs.start_x && rhs.start_manual)
-     || ( this.start_y     != rhs.start_y && rhs.start_manual)
-     || this.bg_red        != rhs.bg_red
-     || this.bg_green      != rhs.bg_green
-     || this.bg_blue       != rhs.bg_blue
+        || this.sizeX        != rhs.sizeX
+        || this.sizeY        != rhs.sizeY
+        || this.torusX       != rhs.torusX
+        || this.torusY       != rhs.torusY
+        || this.startManual  != rhs.startManual
+        || ( this.startX     != rhs.startX && rhs.startManual)
+        || ( this.startY     != rhs.startY && rhs.startManual)
+        || this.bgRed        != rhs.bgRed
+        || this.bgGreen      != rhs.bgGreen
+        || this.bgBlue       != rhs.bgBlue
 
-     || this.seconds       != rhs.seconds
-     || this.initial       != rhs.initial
-     || this.required      != rhs.required
-     || this.spawnint_slow != rhs.spawnint_slow
-     || this.spawnint_fast != rhs.spawnint_fast
+        || this.seconds      != rhs.seconds
+        || this.initial      != rhs.initial
+        || this.required     != rhs.required
+        || this.spawnintSlow != rhs.spawnintSlow
+        || this.spawnintFast != rhs.spawnintFast
 
-     || this.nuke_delayed  != rhs.nuke_delayed
-     || this.nuke_skill    != rhs.nuke_skill
+        || this.nukeDelayed  != rhs.nukeDelayed
+        || this.nukeSkill    != rhs.nukeSkill
 
-     || this.count_neutrals_only != rhs.count_neutrals_only
-     || this.transfer_skills     != rhs.transfer_skills) return false;
+        || this.countNeutralsOnly != rhs.countNeutralsOnly
+        || this.transferSkills    != rhs.transferSkills
+    ) {
+        return false;
+    }
 
     // compare all tiles in one go
     if (this.pos    != rhs.pos   ) return false;

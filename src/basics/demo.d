@@ -28,12 +28,12 @@ import level.tilelib;
 
 void drtx(string str, int x, int y)
 {
-    draw_text(djvu_s, str, x, y, graphic.color.color.white);
+    drawText(djvuS, str, x, y, graphic.color.color.white);
 }
 
 void drtx(string str, int x, int y, AlCol c)
 {
-    draw_text(djvu_s, str, x, y, c);
+    drawText(djvuS, str, x, y, c);
 }
 
 
@@ -75,7 +75,7 @@ this(in int arg_demo_mode = 0)
     al_convert_mask_to_alpha(wuerste[0], AlCol(1,0,1,1));
     al_convert_mask_to_alpha(wuerste[1], AlCol(1,0,1,1));
     foreach (i; 1 .. 4) {
-        Albit wurst = albit_create(50 + 31 * (i % 2), 50 + 21 * (i/2));
+        Albit wurst = albitCreate(50 + 31 * (i % 2), 50 + 21 * (i/2));
         auto drata = DrawingTarget(wurst);
         al_clear_to_color(AlCol(1,0,0,1));
         wuerste ~= wurst;
@@ -94,10 +94,10 @@ this(in int arg_demo_mode = 0)
     elems ~= () {
         auto a = new TextButton(new Geom(0, 20, 100, 20, Geom.From.BOTTOM));
         import file.language;
-        a.text = Lang.editor_button_SELECT_COPY.transl;
+        a.text = Lang.editorButtonSelectCopy.transl;
         return a;
     } ();
-    foreach (e; elems) gui.add_elder(e);
+    foreach (e; elems) gui.addElder(e);
 
     // This test class does lots of drawing during calc().
     // Since that is skipped when it's first created, make one osd-clear here.
@@ -113,7 +113,7 @@ this(in int arg_demo_mode = 0)
     if (land)   destroy(land);
 
     foreach (e; elems)
-        gui.rm_elder(e);
+        gui.rmElder(e);
 
     destroy(myhatch2);
     destroy(myhatch1);
@@ -155,11 +155,11 @@ calc()
 
     al_draw_triangle(20+tick, 20, 30, 80, 40, 20, AlCol(0.3, 0.5, 0.7, 1), 3);
 
-    osd.draw_rectangle(100 + tick*2, 100 + tick*3, 130, 110, AlCol(0.2, 1, 0.3, 1));
-    osd.draw_from(wuerste[1], 100 + 0, 100, false, wurstrotation(tick));
-    osd.draw_from(wuerste[2], 200 + 0, 100, true, wurstrotation(tick/2));
-    osd.draw_from(wuerste[3], 100 + 0, 200, true, wurstrotation(tick/3));
-    osd.draw_from(wuerste[4], 200 + 0, 200, false, wurstrotation(tick/5));
+    osd.drawRectangle(100 + tick*2, 100 + tick*3, 130, 110, AlCol(0.2, 1, 0.3, 1));
+    osd.drawFrom(wuerste[1], 100 + 0, 100, false, wurstrotation(tick));
+    osd.drawFrom(wuerste[2], 200 + 0, 100, true, wurstrotation(tick/2));
+    osd.drawFrom(wuerste[3], 100 + 0, 200, true, wurstrotation(tick/3));
+    osd.drawFrom(wuerste[4], 200 + 0, 200, false, wurstrotation(tick/5));
 
     import std.math, std.conv;
     myhatch1.set_xy(300 + to!int(40*sin(tick/41.0)),
@@ -172,11 +172,11 @@ calc()
     myhatch2.draw();
 
     static string typetext = "Type some UTF-8 chars: ";
-    typetext ~= get_utf8_input();
-    if (get_backspace()) {
+    typetext ~= utf8Input();
+    if (backspace()) {
         typetext = basics.help.backspace(typetext);
     }
-    if (key_once(ALLEGRO_KEY_A)) {
+    if (keyTapped(ALLEGRO_KEY_A)) {
         play_loud(Sound.CLOCK);
     }
 
@@ -185,10 +185,10 @@ calc()
     import lix.enums;
 
     drtx(typetext ~ (tick % 30 < 15 ? "_" : ""), 300, 100);
-    drtx(format("Your builder hotkey scancode: %d", key_skill[Ac.BUILDER]), 20, 400);
-    drtx("Builder key once: " ~ (key_once(key_skill[Ac.BUILDER])?"now":"--"), 20, 420);
-    drtx("Builder key hold: " ~ (key_hold(key_skill[Ac.BUILDER])?"now":"--"), 20, 440);
-    drtx("Builder key rlsd: " ~ (key_rlsd(key_skill[Ac.BUILDER])?"now":"--"), 20, 460);
+    drtx(format("Your builder hotkey scancode: %d", keySkill[Ac.BUILDER]), 20, 400);
+    drtx("Builder key once: " ~ (keyTapped(keySkill[Ac.BUILDER])?"now":"--"), 20, 420);
+    drtx("Builder key hold: " ~ (keyHeld(keySkill[Ac.BUILDER])?"now":"--"), 20, 440);
+    drtx("Builder key rlsd: " ~ (keyReleased(keySkill[Ac.BUILDER])?"now":"--"), 20, 460);
     drtx("Press [A] to playback a sound. Does it play immediately (correct) or with 0.5 s delay (bug)?", 20, 480);
     drtx("Non-square rectangles jump when they", 300, 120);
     drtx("finish a half rotation, this is intended.", 300, 140);
@@ -201,15 +201,15 @@ calc()
     import basics.versioning;
     import file.language;
     drtx(transl(Lang.net_chat_welcome_unstable)
-        ~ " or enjoy hacking in D. " ~ get_version().toString(), 20, 360);
+        ~ " or enjoy hacking in D. " ~ gameVersion().toString(), 20, 360);
 
     static bool showstring = false;
     import std.array;
-    if (basics.globconf.user_name.empty) {
+    if (basics.globconf.userName.empty) {
         drtx("Enter your username in data/config.txt for a greeting", 20, 380);
     }
     else {
-        drtx("Hello " ~ user_name ~ ", loading the config file works.", 20, 380);
+        drtx("Hello " ~ userName ~ ", loading the config file works.", 20, 380);
     }
 
     // random text in the text button
@@ -219,10 +219,10 @@ calc()
         but.text = uniform(0, Lang.MAX).to!Lang.transl;
 
         switch (tick / 50 % 4) {
-        case 0: but.align_left  = true;  break;
-        case 1: but.check_frame = 1;     break;
-        case 2: but.align_left  = false; break;
-        case 3: but.check_frame = 0;     break;
+        case 0: but.alignLeft  = true;  break;
+        case 1: but.checkFrame = 1;     break;
+        case 2: but.alignLeft  = false; break;
+        case 3: but.checkFrame = 0;     break;
         default: break;
         }
     }
@@ -252,7 +252,7 @@ perform_geoo_benchmarks()
     // one single call to al_draw_prim
     // this suddenly becomes slow after 20 seconds or so? Some memory leak?
     if (demo_mode == 1) {
-        auto my_zone = Zone(profiler, "demo-prim-triangle-list");
+        auto myZone = Zone(profiler, "demo-prim-triangle-list");
         ALLEGRO_VERTEX[] vertices;
         foreach (y; 0..100) {
             foreach (x; 0..100) {
@@ -275,7 +275,7 @@ perform_geoo_benchmarks()
 
     // one single call to al_draw_prim, 4 times as many pieces
     if (demo_mode == 2) {
-        auto my_zone = Zone(profiler, "demo-prim-triangle-list-more");
+        auto myZone = Zone(profiler, "demo-prim-triangle-list-more");
         ALLEGRO_VERTEX[] vertices;
         foreach (y; 0..100) {
             foreach (x; 0..400) {
@@ -301,7 +301,7 @@ perform_geoo_benchmarks()
         int sx2 = al_get_bitmap_width(wuerste[1]);
         int sy2 = al_get_bitmap_height(wuerste[1]);
 
-        auto my_zone = Zone(profiler, "demo-prim-triangle-list-large");
+        auto myZone = Zone(profiler, "demo-prim-triangle-list-large");
         ALLEGRO_VERTEX[] vertices;
         foreach (y; 0..100) {
             foreach (x; 0..100) {
@@ -324,7 +324,7 @@ perform_geoo_benchmarks()
 
     // simple bitmap drawing
     if (demo_mode == 4) {
-        auto my_zone = Zone(profiler, "demo-bitmap-using-holding");
+        auto myZone = Zone(profiler, "demo-bitmap-using-holding");
         al_hold_bitmap_drawing(true);
             foreach (y; 0..100) {
                 foreach (x; 0..100) {
@@ -337,7 +337,7 @@ perform_geoo_benchmarks()
 
     // simple bitmap drawing, large bitmap
     if (demo_mode == 5) {
-        auto my_zone = Zone(profiler, "demo-bitmap-using-holding-large");
+        auto myZone = Zone(profiler, "demo-bitmap-using-holding-large");
         al_hold_bitmap_drawing(true);
             foreach (y; 0..100) {
                 foreach (x; 0..100) {
@@ -350,7 +350,7 @@ perform_geoo_benchmarks()
 
     // This is super slow, don't use.
     if (demo_mode == 6) {
-        auto my_zone = Zone(profiler, "demo-prim-triangle-calls");
+        auto myZone = Zone(profiler, "demo-prim-triangle-calls");
         foreach (y; 0..100) {
             foreach (x; 0..100) {
                 ALLEGRO_VERTEX[] w = [
@@ -377,7 +377,7 @@ perform_geoo_benchmarks()
 void
 draw()
 {
-    osd.copy_to_screen();
+    osd.copyToScreen();
 }
 
 }

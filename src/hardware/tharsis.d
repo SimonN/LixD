@@ -5,9 +5,9 @@ module hardware.tharsis;
  * To use this in the source, create a RAII struct that measures how long
  * the current scope takes to complete:
  *
- *  auto my_zone = Zone(profiler, "zone-name");
+ *  auto myZone = Zone(profiler, "zone-name");
  *
- * my_zone can be anything that doens't clash with an existing identifier.
+ * myZone can be anything that doens't clash with an existing identifier.
  * "zone-name" is the zone's name written into data/profile.txt. This should
  * be as expressive as possible.
  */
@@ -69,15 +69,15 @@ version (tharsisprofiling)
             }
         }
 
-        File outfile = File(file_tharsis_prof.rootful, "w");
+        File outfile = File(fileTharsisProf.rootful, "w");
 
-        outfile.writeln("Lix version ", get_version(),
+        outfile.writeln("Lix version ", gameVersion(),
             " profiling results from ", Date.now().toString(), ".");
         outfile.writeln(
             "Unit of time: 1 us == 1 microsecond == 1/1000 of a millisecond.");
         outfile.writeln(
-            "At ", ticks_per_sec, " frames per second, 1 frame takes ",
-            1000 * 1000 / ticks_per_sec, " us.");
+            "At ", ticksPerSecond, " frames per second, 1 frame takes ",
+            1000 * 1000 / ticksPerSecond, " us.");
 
         void print_column_desc()
         {

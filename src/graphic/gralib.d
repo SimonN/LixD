@@ -4,7 +4,6 @@ import std.conv; // scale to
 import std.string; // format
 
 import basics.alleg5;
-import basics.globconf; // skip Lix recoloring loading in verify mode
 import basics.globals;  // name of internal bitmap dir
 import basics.help;
 import basics.matrix;
@@ -22,26 +21,27 @@ import lix.enums;
  *  void initialize();
  *  void deinitialize();
  *
- *  void set_scale_from_gui(float); // exact value, what gui.geometry thinks
+ *  void setScaleFromGui(float); // exact value, what gui.geometry thinks
  *
- *  const(Cutbit) get_internal(in Filename);
- *  const(Cutbit) get_lix     (in Style);
- *  const(Cutbit) get_icon    (in Style); -- for the panel
+ *  const(Cutbit) getInternal       (Filename);
+ *  const(Cutbit) getLixSpritesheet (Style);
+ *  const(Cutbit) getSkillButtonIcon(Style)
+ *  const(Cutbit) getPanelInfoIcon  (Style)
  */
 
 private:
 
     Cutbit[string] internal;
     Cutbit[Style]  spritesheets;
-    Cutbit[Style]  panel_info_icons;
-    Cutbit[Style]  skill_button_icons;
+    Cutbit[Style]  panelInfoIcons;
+    Cutbit[Style]  skillButtonIcons;
 
-    Cutbit null_cutbit; // invalid bitmap to return instead of null pointer
+    Cutbit nullCutbit; // invalid bitmap to return instead of null pointer
 
-    string scale_dir = dir_data_bitmap.rootless; // load from which dir?
+    string scaleDir = dirDataBitmap.rootless; // load from which dir?
 
-/*  void eidrecol_api       (in Filename);
- *  void eidrecol_api       (Albit, in int = 0);
+/*  void eidrecol       (in Filename);
+ *  void eidrecol       (Albit, in int = 0);
  *  void recolor_into_vector(const(Albit), ref Cutbit[Style], int = 0);
  *
  *      The int variables should be != 0 for the character spreadsheet and
@@ -52,34 +52,34 @@ private:
     // lixes and recoloring icons. eidrecol behaves differently based on
     // the magic number. recolor_into_vector skips some rows based on them.
     // These magic numbers are a relic from C++/A4 Lix.
-    immutable int magicnr_spritesheets = 1;
-    immutable int magicnr_panel_info_icons = 2;
-    immutable int magicnr_skill_button_icons = 3;
+    immutable int magicnrSpritesheets = 1;
+    immutable int magicnrPanelInfoIcons = 2;
+    immutable int magicnrSkillButtonIcons = 3;
 
 
 
 public:
 
-void set_scale_from_gui(in float scale)
+void setScaleFromGui(in float scale)
 {
-    scale_dir =
-        scale < 1.5f ? dir_data_bitmap.rootless
-     :  scale < 2.0f ? dir_data_bitmap_scale.rootless ~ "150/"
-     :  scale < 3.0f ? dir_data_bitmap_scale.rootless ~ "200/"
-     :                 dir_data_bitmap_scale.rootless ~ "300/";
+    scaleDir =
+        scale < 1.5f ? dirDataBitmap.rootless
+     :  scale < 2.0f ? dirDataBitmapScale.rootless ~ "150/"
+     :  scale < 3.0f ? dirDataBitmapScale.rootless ~ "200/"
+     :                 dirDataBitmapScale.rootless ~ "300/";
 }
 
 
 
 void initialize()
 {
-    null_cutbit = new Cutbit(cast (Cutbit) null);
+    nullCutbit = new Cutbit(cast (Cutbit) null);
 
     // DTODOLANG
-    display_startup_message("Loading internal bitmaps...");
+    displayStartupMessage("Loading internal bitmaps...");
 
     // find all internal bitmaps
-    auto files = file.search.find_tree(dir_data_bitmap);
+    auto files = file.search.find_tree(dirDataBitmap);
 
     // Since this is unrelated to the terrain name replacements, the internal
     // graphics are saved WITH dir.
@@ -88,12 +88,12 @@ void initialize()
     // be helpful should we ever switch image file formats, and thus the
     // filename extensions.
     foreach (fn; files) {
-        if (fn.has_image_extension()) {
+        if (fn.hasImageExtension()) {
             Cutbit cb = new Cutbit(fn);
             assert (cb, "error loading internal cutbit: " ~ fn.rootful);
             al_convert_mask_to_alpha(cb.albit, color.pink);
-            internal[fn.rootless_no_ext] = cb;
-            assert (get_internal(fn).valid,
+            internal[fn.rootlessNoExt] = cb;
+            assert (getInternal(fn).valid,
                 "can't retrieve from array: " ~ fn.rootful);
         }
     }
@@ -101,7 +101,7 @@ void initialize()
     // Create the matrix of eye coordinates.
     // Each frame of the Lix spritesheet has the eyes in some position.
     // The exploder fuse shall start at that position, let's calculate it.
-    Cutbit* cb_ptr = (file_bitmap_lix.rootless_no_ext in internal);
+    Cutbit* cb_ptr = (fileImageSpritesheet.rootlessNoExt in internal);
     assert (cb_ptr, "missing image: the main Lix spritesheet");
     if (! cb_ptr) return;
     Cutbit cb = *cb_ptr;
@@ -110,7 +110,7 @@ void initialize()
     assert (b, "apparently your gfx card can't store the Lix spritesheet");
 
     // DTODOLANG
-    display_startup_message("Examining Lix spritesheet for eye positions...");
+    displayStartupMessage("Examining Lix spritesheet for eye positions...");
 
     auto lock = LockReadWrite(b);
 
@@ -125,7 +125,7 @@ void initialize()
             // Is it the pixel of the eye?
             const int real_x = 1 + fx * (cb.xl + 1) + x;
             const int real_y = 1 + fy * (cb.yl + 1) + y;
-            if (al_get_pixel(b, real_x, real_y) == color.lixfile_eye) {
+            if (al_get_pixel(b, real_x, real_y) == color.lixFileEye) {
                 countdown.set(fx, fy, XY(x, y-1));
                 goto GOTO_NEXTFRAME;
             }
@@ -140,9 +140,9 @@ void initialize()
         }
         GOTO_NEXTFRAME:
         if (fy == Ac.BLOCKER) {
-            XY blocker_eyes = countdown.get(fx, fy);
-            blocker_eyes.x = lix.enums.ex_offset;
-            countdown.set(fx, fy, blocker_eyes);
+            XY blockerEyes = countdown.get(fx, fy);
+            blockerEyes.x = lix.enums.ex_offset;
+            countdown.set(fx, fy, blockerEyes);
         }
     }
     // All pixels of the entire spritesheet have been examined.
@@ -152,18 +152,18 @@ void initialize()
     // ########################################################################
 
     // DTODOLANG
-    display_startup_message("Recoloring Lix sprites for multiplayer...");
+    displayStartupMessage("Recoloring Lix sprites for multiplayer...");
 
     // Prepare Lix sprites in multiple colors
-    recolor_into_vector(cb, spritesheets, magicnr_spritesheets);
+    recolor_into_vector(cb, spritesheets, magicnrSpritesheets);
 
     // DTODOLANG
-    display_startup_message("Recoloring panel info icons for multiplayer...");
+    displayStartupMessage("Recoloring panel info icons for multiplayer...");
 
     // local function that is called twice immediately
     void q(in Filename fn, ref Cutbit[Style] vec, in int magicnr)
     {
-        Cutbit cb_icons = get_internal_mutable(fn);
+        Cutbit cb_icons = getInternalMutable(fn);
         assert (cb_icons && cb_icons.valid,
             format("can't get bitmap for magicnr %d", magicnr));
         if (! cb_icons || ! cb_icons.valid)
@@ -172,132 +172,128 @@ void initialize()
         auto lock_icons = LockReadWrite(cb_bmp);
         recolor_into_vector(cb_icons, vec, magicnr);
     }
-    q(file_bitmap_game_icon,   panel_info_icons,   magicnr_panel_info_icons);
+    q(fileImageGame_icon,   panelInfoIcons,   magicnrPanelInfoIcons);
 
     // DTODOLANG
-    display_startup_message("Recoloring skill buttons for multiplayer...");
-    q(file_bitmap_skill_icons, skill_button_icons, magicnr_skill_button_icons);
+    displayStartupMessage("Recoloring skill buttons for multiplayer...");
+    q(fileImageSkillIcons, skillButtonIcons, magicnrSkillButtonIcons);
 
     // DTODOLANG
-    display_startup_message("Recoloring GUI elements...");
+    displayStartupMessage("Recoloring GUI elements...");
 
     // Make GUI elements have the correct colors. We assume the user file
     // to have been loaded already, and therefore the correct GUI colors
     // have been computed.
-    eidrecol_api(file_bitmap_api_number);
-    eidrecol_api(file_bitmap_edit_flip);
-    eidrecol_api(file_bitmap_edit_hatch);
-    eidrecol_api(file_bitmap_edit_panel);
-    eidrecol_api(file_bitmap_game_arrow);
-    eidrecol_api(file_bitmap_game_icon);
-    eidrecol_api(file_bitmap_game_nuke);
-    eidrecol_api(file_bitmap_game_panel);
-    eidrecol_api(file_bitmap_game_panel_2);
-    eidrecol_api(file_bitmap_game_panel_hints);
-    eidrecol_api(file_bitmap_game_spi_fix);
-    eidrecol_api(file_bitmap_game_pause);
-    eidrecol_api(file_bitmap_lobby_spec);
-    eidrecol_api(file_bitmap_menu_checkmark);
-    eidrecol_api(file_bitmap_preview_icon);
+    eidrecol(fileImageApi_number);
+    eidrecol(fileImageEdit_flip);
+    eidrecol(fileImageEditHatch);
+    eidrecol(fileImageEdit_panel);
+    eidrecol(fileImageGame_arrow);
+    eidrecol(fileImageGame_icon);
+    eidrecol(fileImageGameNuke);
+    eidrecol(fileImageGame_panel);
+    eidrecol(fileImageGamePanel2);
+    eidrecol(fileImageGamePanelhints);
+    eidrecol(fileImageGame_spi_fix);
+    eidrecol(fileImageGamePause);
+    eidrecol(fileImageLobbySpec);
+    eidrecol(fileImageMenuCheckmark);
+    eidrecol(fileImagePreviewIcon);
 
     // DTODO: move load_all_file_replacements(); into obj_lib
 
-    auto to_assert = get_skill_button_icon(Style.GARDEN);
-    assert (to_assert);
-    assert (to_assert.valid);
-
-    // DTODO: move this line ahead and see how much time we save, and whether
-    // we get crashes
-    if (basics.globconf.verify_mode) return;
+    auto toAssert = getSkillButtonIcon(Style.GARDEN);
+    assert (toAssert);
+    assert (toAssert.valid);
 }
 
 
 
 void deinitialize()
 {
-    destroy_array(skill_button_icons);
-    destroy_array(panel_info_icons);
-    destroy_array(spritesheets);
-    destroy_array(internal);
+    destroyArray(skillButtonIcons);
+    destroyArray(panelInfoIcons);
+    destroyArray(spritesheets);
+    destroyArray(internal);
 
-    destroy(null_cutbit);
-    null_cutbit = null;
+    destroy(nullCutbit);
+    nullCutbit = null;
 }
 
 
 
-private Cutbit get_internal_mutable(in Filename fn)
+private Cutbit getInternalMutable(in Filename fn)
 {
-    Filename correct_scale(in Filename f)
+    Filename correctScale(in Filename f)
     {
-        return new Filename(scale_dir ~ f.file);
+        return new Filename(scaleDir ~ f.file);
     }
-    string str = correct_scale(fn).rootless_no_ext;
+    string str = correctScale(fn).rootlessNoExt;
     if (auto ret = str in internal)
         return *ret;
 
     // if not yet returned, fall back onto non-scaled bitmap
-    str = fn.rootless_no_ext;
+    str = fn.rootlessNoExt;
     if (auto ret = str in internal)
         return *ret;
     else
-        return null_cutbit;
+        return nullCutbit;
 }
 
 
 
-const(Cutbit) get_internal(in Filename fn)
+const(Cutbit) getInternal(in Filename fn)
 {
-    return get_internal_mutable(fn);
+    return getInternalMutable(fn);
 }
 
 
 
-const(Cutbit) get_spritesheet(in Style st)
+const(Cutbit) getLixSpritesheet(in Style st)
 {
     if (auto ret = st in spritesheets)
         return *ret;
     else
-        return null_cutbit;
+        return nullCutbit;
 }
 
 
 
-const(Cutbit) get_panel_info_icon(in Style st)
+const(Cutbit) getPanelInfoIcon(in Style st)
 {
-    if (auto ret = st in panel_info_icons)
+    if (auto ret = st in panelInfoIcons)
         return *ret;
     else
-        return null_cutbit;
+        return nullCutbit;
 }
 
 
 
-const(Cutbit) get_skill_button_icon(in Style st)
+const(Cutbit) getSkillButtonIcon(in Style st)
 {
-    if (auto ret = st in skill_button_icons)
+    if (auto ret = st in skillButtonIcons)
         return *ret;
     else
-        return null_cutbit;
+        return nullCutbit;
 }
 
 
 
 private:
 
-void eidrecol_api(in Filename fn)
+void eidrecol(in Filename fn)
 {
-    get_internal_mutable(fn).eidrecol_api(0);
+    getInternalMutable(fn).eidrecol(0);
 }
 
 
 
-void eidrecol_api(Cutbit cutbit, in int magicnr)
+void eidrecol(Cutbit cutbit, in int magicnr)
 {
-    // don't do anything for magicnr == magicnr_spritesheets. This function
+    // don't do anything for magicnr == magicnrSpritesheets. This function
     // is about GUI recoloring, not player color recoloring. All GUI portions
     // of the spritesheets have been moved to the skill buttons in 2015-10.
-    if (magicnr == magicnr_spritesheets)
+    if (magicnr == magicnrSpritesheets)
         return;
 
     Albit bitmap = cutbit.albit;
@@ -323,47 +319,47 @@ void eidrecol_api(Cutbit cutbit, in int magicnr)
         if (light) for (int x = 0; x < bmp_xl; ++x) {
             immutable AlCol c = al_get_pixel(bitmap, x, y);
             if      (c == color.black)     pp(x, y, color.transp);
-            else if (c == color.gui_f_sha) pp(x, y, color.gui_sha);
-            else if (c == color.gui_f_d)   pp(x, y, color.gui_pic_on_d);
-            else if (c == color.gui_f_m)   pp(x, y, color.gui_pic_on_m);
-            else if (c == color.gui_f_l)   pp(x, y, color.gui_pic_on_l);
+            else if (c == color.guiFileSha) pp(x, y, color.guiSha);
+            else if (c == color.guiFileD)   pp(x, y, color.guiPicOnD);
+            else if (c == color.guiFileM)   pp(x, y, color.guiPicOnM);
+            else if (c == color.guiFileL)   pp(x, y, color.guiPicOnL);
         }
         else for (int x = 0; x < bmp_xl; ++x) {
             immutable AlCol c = al_get_pixel(bitmap, x, y);
             if      (c == color.black)     pp(x, y, color.transp);
-            else if (c == color.gui_f_sha) pp(x, y, color.gui_sha);
-            else if (c == color.gui_f_d)   pp(x, y, color.gui_pic_d);
-            else if (c == color.gui_f_m)   pp(x, y, color.gui_pic_m);
-            else if (c == color.gui_f_l)   pp(x, y, color.gui_pic_l);
+            else if (c == color.guiFileSha) pp(x, y, color.guiSha);
+            else if (c == color.guiFileD)   pp(x, y, color.guiPicD);
+            else if (c == color.guiFileM)   pp(x, y, color.guiPicM);
+            else if (c == color.guiFileL)   pp(x, y, color.guiPicL);
         }
     }
-    else if (magicnr == magicnr_skill_button_icons)
+    else if (magicnr == magicnrSkillButtonIcons)
      for (int y = cutbit.yl + 1; y < bmp_yl; ++y) { // only row 1 of rows 0, 1
         for (int x = 0; x < bmp_xl; ++x) {
             immutable AlCol c = al_get_pixel(bitmap, x, y);
             if      (c == color.black)     pp(x, y, color.transp);
-            else if (c == color.gui_f_sha) pp(x, y, color.gui_sha);
-            else if (c == color.gui_f_d)   pp(x, y, color.gui_pic_d);
-            else if (c == color.gui_f_m)   pp(x, y, color.gui_pic_m);
-            else if (c == color.gui_f_l)   pp(x, y, color.gui_pic_l);
+            else if (c == color.guiFileSha) pp(x, y, color.guiSha);
+            else if (c == color.guiFileD)   pp(x, y, color.guiPicD);
+            else if (c == color.guiFileM)   pp(x, y, color.guiPicM);
+            else if (c == color.guiFileL)   pp(x, y, color.guiPicL);
         }
     }
-    else if (magicnr == magicnr_panel_info_icons) {
+    else if (magicnr == magicnrPanelInfoIcons) {
         // Recolor the API things (except shadow, which will be done in
         // an upcoming loop) in the second row.
         for (int y = cutbit.yl + 1; y < 2 * (cutbit.yl + 1); ++y)
          for (int x = 0; x < bmp_xl; ++x) {
             immutable AlCol c = al_get_pixel(bitmap, x, y);
             if      (c == color.black)   pp(x, y, color.transp);
-            else if (c == color.gui_f_d) pp(x, y, color.gui_pic_d);
-            else if (c == color.gui_f_m) pp(x, y, color.gui_pic_m);
-            else if (c == color.gui_f_l) pp(x, y, color.gui_pic_l);
+            else if (c == color.guiFileD) pp(x, y, color.guiPicD);
+            else if (c == color.guiFileM) pp(x, y, color.guiPicM);
+            else if (c == color.guiFileL) pp(x, y, color.guiPicL);
         }
         // Recolor the shadow of all frames
         for (int y = 0; y < bmp_yl; ++y)
          for (int x = 0; x < bmp_xl; ++x) {
             immutable AlCol c = al_get_pixel(bitmap, x, y);
-            if (c == color.gui_f_sha) pp(x, y, color.gui_sha);
+            if (c == color.guiFileSha) pp(x, y, color.guiSha);
         }
     }
 
@@ -385,32 +381,32 @@ void recolor_into_vector(
     // extremely slowly.
 
     assert (cutbit.valid);
-    Cutbit* rcl_p = (file_bitmap_lix_recol.rootless_no_ext in internal);
-    assert (rcl_p && rcl_p.valid, "can't recolor, missing map image");
+    Cutbit* rclPtr = (fileImageStyleRecol.rootlessNoExt in internal);
+    assert (rclPtr && rclPtr.valid, "can't recolor, missing map image");
 
-    Albit recol = rcl_p .albit;
+    Albit recol = rclPtr.albit;
     Albit lix   = cutbit.albit;
     if (!recol || !lix) return;
 
-    immutable int   recol_xl  = al_get_bitmap_width (recol);
-    immutable int   recol_yl  = al_get_bitmap_height(recol);
-    immutable int   lix_xl    = al_get_bitmap_width (lix);
-    immutable int   lix_yl    = al_get_bitmap_height(lix);
-    immutable AlCol col_break = al_get_pixel(lix, lix_xl - 1, 0);
+    immutable int   recolXl  = al_get_bitmap_width (recol);
+    immutable int   recolYl  = al_get_bitmap_height(recol);
+    immutable int   lixXl    = al_get_bitmap_width (lix);
+    immutable int   lixYl    = al_get_bitmap_height(lix);
+    immutable AlCol colBreak = al_get_pixel(lix, lixXl - 1, 0);
 
     auto lock = LockReadWrite(recol);
 
 
 
-    void recolor_one_bitmap(Albit target, in int style_id)
+    void recolorOneBitmap(Albit target, in int style_id)
     {
         assert(target);
-        assert(style_id < recol_yl - 1);
+        assert(style_id < recolYl - 1);
 
         // Build the recolor array for this particular style
-        AlCol[AlCol] recol_arr;
-        for (int conv = 0; conv < recol_xl; ++conv) {
-            recol_arr[al_get_pixel(recol, conv, 0)] =
+        AlCol[AlCol] recolArray;
+        for (int conv = 0; conv < recolXl; ++conv) {
+            recolArray[al_get_pixel(recol, conv, 0)] =
                       al_get_pixel(recol, conv, style_id + 1);
         }
 
@@ -419,17 +415,17 @@ void recolor_into_vector(
         // The first row (y == 0) contains the source pixels. The first style
         // (garden) is at y == 1. Thus the recol->h - 1 is correct as we count
         // styles starting at 0.
-        Y_LOOP: for (int y = 0; y < lix_yl; y++)
-            X_LOOP: for (int x = 0; x < lix_xl; x++)
+        Y_LOOP: for (int y = 0; y < lixYl; y++)
+            X_LOOP: for (int x = 0; x < lixXl; x++)
         {
             // The skill button icons have two rows: the first has the
             // skills in player colors, the second has them greyed out.
             // Ignore the second row here.
-            if (y >= cutbit.yl + 1 && magicnr == magicnr_skill_button_icons) {
+            if (y >= cutbit.yl + 1 && magicnr == magicnrSkillButtonIcons) {
                 break Y_LOOP;
             }
             // I don't recall what this else-if does, it's probably important.
-            else if (magicnr == magicnr_panel_info_icons
+            else if (magicnr == magicnrPanelInfoIcons
                  && y >= cutbit.yl + 1
                  && y <  2 * (cutbit.yl + 1)
             ) {
@@ -438,10 +434,10 @@ void recolor_into_vector(
             }
 
             immutable AlCol col = al_get_pixel(lix, x, y);
-            if (magicnr == magicnr_spritesheets && col == col_break) {
+            if (magicnr == magicnrSpritesheets && col == colBreak) {
                 // bad solution here: immediately begin next pixel, too slow
                 // bad solution too:  immediately begin next row, because
-                //                    we may have separating col_break-colored
+                //                    we may have separating colBreak-colored
                 //                    frames in the file.
                 // good solution:     immediately begin next frame
                 x += cutbit.xl;
@@ -449,15 +445,15 @@ void recolor_into_vector(
             }
             // No exceptions for speed encountered so far. Now do the
             // per-player recoloring. We don't consider the color conversion
-            // bitmap (recol) anymore, only recol_arr.
-            if (AlCol* col_ptr = (col in recol_arr)) {
-                al_put_pixel(x, y, *col_ptr);
+            // bitmap (recol) anymore, only recolArray.
+            if (AlCol* colPtr = (col in recolArray)) {
+                al_put_pixel(x, y, *colPtr);
             }
             // end of single-pixel color replacement
         }
         // end of for-all-pixels in source bitmap
     }
-    // end of function recolor_one_bitmap
+    // end of function recolorOneBitmap
 
 
     // now invoke the above code on each Lix style
@@ -468,16 +464,16 @@ void recolor_into_vector(
         assert (target);
 
         // DTODOLANG
-        if (magicnr == magicnr_spritesheets)
-            display_startup_message(style_to_string(st));
+        if (magicnr == magicnrSpritesheets)
+            displayStartupMessage(styleToString(st));
 
-        auto lock_target = LockReadWrite(target);
-        recolor_one_bitmap(target, i);
+        auto lockTarget = LockReadWrite(target);
+        recolorOneBitmap(target, i);
 
         // Invoke eidrecol on the bitmap. Whenever eidrecol is invoked
         // with a magicnr != 0, it does not lock/unlock the bitmaps itself,
         // but assumes they are locked.
-        eidrecol_api(vector[st], magicnr);
+        eidrecol(vector[st], magicnr);
     }
 
     static if (false)

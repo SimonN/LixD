@@ -1,9 +1,9 @@
 module graphic.cutbit;
 
-import std.algorithm; // max(-x, 0) in draw_directly_to_screen()
+import std.algorithm; // max(-x, 0) in drawDirectlyToScreen()
 
 import basics.alleg5;
-import basics.help; // positive_mod
+import basics.help; // positiveMod
 import basics.matrix; // which frames exist?
 import graphic.color;
 import graphic.torbit;
@@ -11,7 +11,7 @@ import graphic.textout; // write error message instead of drawing bitmap
 import file.filename;
 import file.language;
 import file.log; // log bad filename when trying to load a bitmap
-import hardware.display; // draw_directly_to_screen()
+import hardware.display; // drawDirectlyToScreen()
 
 class Cutbit {
 
@@ -40,12 +40,12 @@ class Cutbit {
     @property int xfs() const { return _xfs; }
     @property int yfs() const { return _yfs; }
 
-    // these two are slow, consider frame_exists() instead
+    // these two are slow, consider frameExists() instead
     // or lock the Cutbit's underlying Allegro bitmap yourself
     AlCol get_pixel(int px, int py)                 const;
     AlCol get_pixel(int fx, int fy, int px, int py) const;
 
-/*  bool frame_exists(in int fx, in int fy) const;
+/*  bool frameExists(in int fx, in int fy) const;
  *
  *      Checks whether the given frame contains interesting image data,
  *      instead of being marked as nonexistant by being filled with the
@@ -70,7 +70,7 @@ class Cutbit {
  *
  *      (double scal) can be set to 0 or 1 when one doesn't wish to rescale.
  *
- *  void draw_directly_to_screen(x, y, xf, yf)
+ *  void drawDirectlyToScreen(x, y, xf, yf)
  *
  *      This should only be used by the mouse cursor, which draws even on top
  *      of the gui torbit. Rotation, mirroring, and scaling is not offered.
@@ -85,9 +85,9 @@ private:
     int _xfs; // number of x-frames existing: xf in the interval [0, _xfs[
     int _yfs; // number of y-frames existing
 
-    Matrix!bool existing_frames;
+    Matrix!bool _existingFrames;
 
-    void cut_bitmap();
+    void cutBitmap();
 
 
 
@@ -100,11 +100,11 @@ this(Cutbit cb)
     _yl = cb._yl;
     _xfs = cb._xfs;
     _yfs = cb._yfs;
-    existing_frames = new Matrix!bool (cb.existing_frames);
+    _existingFrames = new Matrix!bool (cb._existingFrames);
 
     if (cb.bitmap) {
-        bitmap = albit_create(al_get_bitmap_width (cb.bitmap),
-                              al_get_bitmap_height(cb.bitmap));
+        bitmap = albitCreate(al_get_bitmap_width (cb.bitmap),
+                             al_get_bitmap_height(cb.bitmap));
         auto drata = DrawingTarget(bitmap);
         al_draw_bitmap(cast (Albit) cb.bitmap, 0, 0, 0);
         assert(bitmap);
@@ -119,15 +119,15 @@ this(Albit bit, const bool cut = true)
     bitmap = bit;
     if (! bitmap) return;
 
-    if (cut) cut_bitmap();
+    if (cut) cutBitmap();
     else {
         _xl = al_get_bitmap_width (bitmap);
         _yl = al_get_bitmap_height(bitmap);
         _xfs = 1;
         _yfs = 1;
 
-        existing_frames = new Matrix!bool(1, 1);
-        existing_frames.set(0, 0, true);
+        _existingFrames = new Matrix!bool(1, 1);
+        _existingFrames.set(0, 0, true);
     }
 }
 
@@ -136,7 +136,7 @@ this(Albit bit, const bool cut = true)
 this(const Filename fn, const bool cut = true)
 {
     // Try loading the file. If not found, don't crash, but make a log entry.
-    bitmap = al_load_bitmap(fn.rootful_z);
+    bitmap = al_load_bitmap(fn.rootfulZ);
     if (bitmap)
         al_convert_mask_to_alpha(bitmap, color.pink);
     this(bitmap, cut);
@@ -166,14 +166,14 @@ invariant()
     if (bitmap) {
         assert (al_get_bitmap_width (cast (Albit) bitmap) >= _xl);
         assert (al_get_bitmap_height(cast (Albit) bitmap) >= _yl);
-        assert (existing_frames !is null);
+        assert (_existingFrames !is null);
     }
     else {
         assert (_xl == 0);
         assert (_yl == 0);
         assert (_xfs == 0);
         assert (_yfs == 0);
-        assert (existing_frames is null);
+        assert (_existingFrames is null);
     }
 }
 
@@ -186,30 +186,30 @@ bool opEquals(const Cutbit rhs) const
 
 
 
-private void cut_bitmap()
+private void cutBitmap()
 {
     auto lock = LockReadOnly(bitmap);
 
-    immutable int x_max = al_get_bitmap_width (bitmap);
-    immutable int y_max = al_get_bitmap_height(bitmap);
+    immutable int xMax = al_get_bitmap_width (bitmap);
+    immutable int yMax = al_get_bitmap_height(bitmap);
 
     // This is called when the constructor was invoked with bool cut == true.
     // To cut a bitmap into frames, check the top left 2x2 block. The three
     // pixels of it touching the edge shall be of one color, and the inner
     // pixel must be of a different color, to count as a frame grid.
     AlCol c = al_get_pixel(bitmap, 0, 0);
-    if (x_max > 1 && y_max > 1
+    if (xMax > 1 && yMax > 1
      && al_get_pixel(bitmap, 0, 1) == c
      && al_get_pixel(bitmap, 1, 0) == c
      && al_get_pixel(bitmap, 1, 1) != c) {
         // find the end of the first frame in each direction
-        for (_xl = 2; _xl < x_max; ++_xl) {
+        for (_xl = 2; _xl < xMax; ++_xl) {
             if (al_get_pixel(bitmap, _xl, 1) == c) {
                 --_xl;
                 break;
             }
         }
-        for (_yl = 2; _yl < y_max; ++_yl) {
+        for (_yl = 2; _yl < yMax; ++_yl) {
             if (al_get_pixel(bitmap, 1, _yl) == c) {
                 --_yl;
                 break;
@@ -217,37 +217,37 @@ private void cut_bitmap()
         }
 
         // don't cut the bitmap if at most 1-by-1 frame is possible
-        if (_xl * 2 > x_max && _yl * 2 > y_max) {
-            _xl = x_max;
-            _yl = y_max;
+        if (_xl * 2 > xMax && _yl * 2 > yMax) {
+            _xl = xMax;
+            _yl = yMax;
             _xfs = 1;
             _yfs = 1;
         }
         // ...otherwise compute the number of frames in each direction
         else {
-            for (_xfs = 0; (_xfs+1)*(_xl+1) < x_max; ++_xfs) {}
-            for (_yfs = 0; (_yfs+1)*(_yl+1) < y_max; ++_yfs) {}
+            for (_xfs = 0; (_xfs+1)*(_xl+1) < xMax; ++_xfs) {}
+            for (_yfs = 0; (_yfs+1)*(_yl+1) < yMax; ++_yfs) {}
         }
     }
 
     // no frame apparent in the top left 2x2 block of pixels
     else {
-        _xl = x_max;
-        _yl = y_max;
+        _xl = xMax;
+        _yl = yMax;
         _xfs = 1;
         _yfs = 1;
     }
 
     // done cutting, now generate matrix. The bitmap is still locked.
-    existing_frames = new Matrix!bool(_xfs, _yfs);
+    _existingFrames = new Matrix!bool(_xfs, _yfs);
     if (_xfs == 1 && _yfs == 1) {
-        existing_frames.set(0, 0, true);
+        _existingFrames.set(0, 0, true);
     }
     else {
         for (int yf = 0; yf < _yfs; ++yf)
          for (int xf = 0; xf < _xfs; ++xf) {
             immutable bool has_frame_color = (get_pixel(xf, yf, 0, 0) == c);
-            existing_frames.set(xf, yf, ! has_frame_color);
+            _existingFrames.set(xf, yf, ! has_frame_color);
         }
     }
     // done making the matrix
@@ -279,31 +279,31 @@ AlCol get_pixel(int fx, int fy,
 
 
 
-bool frame_exists(in int fx, in int fy) const
+bool frameExists(in int fx, in int fy) const
 {
     if (fx < 0 || fx >= _xfs
      || fy < 0 || fy >= _yfs) return false;
-    else return existing_frames.get(fx, fy);
+    else return _existingFrames.get(fx, fy);
 }
 
 
 
-private void draw_missing_frame_error(
+private void drawMissingFrameError(
     Torbit torbit, in int x, in int y, in int fx, in int fy) const
 {
     string str = "File N/A";
-    AlCol  col = color.cb_bad_bitmap;
+    AlCol  col = color.cbBadBitmap;
     if (bitmap) {
         str = format("(%d,%d)", fx, fy);
-        col = color.cb_bad_frame;
+        col = color.cbBadFrame;
     }
     auto drata = DrawingTarget(torbit.albit);
-    draw_text(djvu_s, str, x, y, col);
+    drawText(djvuS, str, x, y, col);
 }
 
 
 
-// this is used by the first draw(), and by draw_directly_to_screen()
+// this is used by the first draw(), and by drawDirectlyToScreen()
 private Albit
 create_sub_bitmap_for_frame(
     in int xf, in int yf,
@@ -331,7 +331,7 @@ body {
 
 
 void draw(
-    Torbit       target_torbit,
+    Torbit       targetTorbit,
     const int    x = 0,
     const int    y = 0,
     const int    xf = 0,
@@ -340,68 +340,68 @@ void draw(
     const double rot  = 0,
     const double scal = 0) const
 {
-    assert (target_torbit, "trying to draw onto null torbit");
-    Albit target = target_torbit.albit;
+    assert (targetTorbit, "trying to draw onto null torbit");
+    Albit target = targetTorbit.albit;
 
     if (bitmap && xf >= 0 && yf >= 0 && xf < _xfs && yf < _yfs) {
         Albit sprite = create_sub_bitmap_for_frame(xf, yf);
         scope (exit) al_destroy_bitmap(sprite);
-        target_torbit.draw_from(sprite, x, y, mirr, rot, scal);
+        targetTorbit.drawFrom(sprite, x, y, mirr, rot, scal);
     }
     // no frame inside the cutbit has been specified, or the cutbit
     // has a null bitmap
     else {
-        draw_missing_frame_error(target_torbit, x, y, xf, yf);
+        drawMissingFrameError(targetTorbit, x, y, xf, yf);
     }
 }
 
 
 
 void draw(
-    Torbit    target_torbit,
+    Torbit    targetTorbit,
     in int    x,
     in int    y,
     in bool   mirr,
     int       rot,
     in Mode   mode) const
 {
-    assert (target_torbit, "trying to draw onto null torbit");
+    assert (targetTorbit, "trying to draw onto null torbit");
 
     if (! bitmap) {
-        draw_missing_frame_error(target_torbit, x, y, 0, 0);
+        drawMissingFrameError(targetTorbit, x, y, 0, 0);
         return;
     }
     // only one frame allowed, so we don't have to make sub-bitmaps
     assert (_xfs == 1);
     assert (_yfs == 1);
 
-    rot = basics.help.positive_mod(rot, 4);
+    rot = basics.help.positiveMod(rot, 4);
     assert (rot >= 0 || rot < 4);
 
     final switch (mode) {
 
     case Mode.NORMAL:
         // this is very much like the other draw function
-        target_torbit.draw_from(cast (Albit) bitmap, x, y, mirr, rot * 1.0f);
+        targetTorbit.drawFrom(cast (Albit) bitmap, x, y, mirr, rot * 1.0f);
         break;
 
     case Mode.DARK:
     case Mode.DARK_EDITOR:
         // the Torbit will know what to lock for best speed, so we have
         // moved the implementation there. Here, we only choose the color.
-        target_torbit.draw_dark_from(cast (Albit) bitmap, x, y, mirr, rot,
-            mode == Mode.DARK ? color.transp : color.gui_sha);
+        targetTorbit.drawDarkFrom(cast (Albit) bitmap, x, y, mirr, rot,
+            mode == Mode.DARK ? color.transp : color.guiSha);
         break;
 
     case Mode.NOOW: {
-        immutable invert_lengths = (rot % 2 == 1);
+        immutable invertLengths = (rot % 2 == 1);
         Torbit excerpt = new Torbit(
-            invert_lengths ? _yl : _xl,
-            invert_lengths ? _xl : _yl);
-        excerpt.clear_to_color(color.transp);
-        excerpt.draw_from(cast (Albit) bitmap, 0, 0, mirr, rot);
-        target_torbit.draw_to  (excerpt.albit, x, y);
-        target_torbit.draw_from(excerpt.albit, x, y);
+            invertLengths ? _yl : _xl,
+            invertLengths ? _xl : _yl);
+        excerpt.clearToColor(color.transp);
+        excerpt.drawFrom(cast (Albit) bitmap, 0, 0, mirr, rot);
+        targetTorbit.drawTo  (excerpt.albit, x, y);
+        targetTorbit.drawFrom(excerpt.albit, x, y);
         break; }
 
     case Mode.NOOW_EDITOR:
@@ -410,11 +410,11 @@ void draw(
         else if (mode == NOOW_EDITOR) {
         for  (int ix = 0; ix < size; ++ix)
          for (int iy = 0; iy < size; ++iy) {
-            const int c = target_torbit.get_pixel(x + ix, y + iy);
+            const int c = targetTorbit.get_pixel(x + ix, y + iy);
             const int e = excerpt      .get_pixel(    ix,     iy);
             if ((c == BLACK || c == PINK || c == GREY)
              &&  e != BLACK && e != PINK)
-             target_torbit.set_pixel(x + ix, y + iy, e);
+             targetTorbit.setPixel(x + ix, y + iy, e);
         */
     }
     // we don't have to draw the missing-frame error here; there could have
@@ -425,7 +425,7 @@ void draw(
 
 
 void
-draw_directly_to_screen(in int x, in int y, in int xf = 0, in int yf = 0) const
+drawDirectlyToScreen(in int x, in int y, in int xf = 0, in int yf = 0) const
 {
     assert (display);
     if (xf < 0 || xf >= _xfs
@@ -441,7 +441,7 @@ draw_directly_to_screen(in int x, in int y, in int xf = 0, in int yf = 0) const
 
     al_draw_bitmap(sprite, max(0, x), max(0, y), 0);
 }
-// end function draw_directly_to_screen()
+// end function drawDirectlyToScreen()
 
 }
 // end class
