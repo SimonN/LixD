@@ -120,9 +120,10 @@ class GameState {
 }
 
 
-/*
+
 class StateManager {
 
+/*
 private:
 
     immutable updates_sml =  10;
@@ -148,7 +149,7 @@ public:
     skconst Replay&    get_userReplay() { return userrep; }
 
     const        GameState& get_auto(Ulng);
-    void                    calc_save_auto(const GameState&);
-
-};
 */
+    void calcSaveAuto(GameState) { }
+
+}

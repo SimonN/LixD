@@ -15,8 +15,10 @@ implGameCalc(Game game)
 
     void upd(int howmany = 1)
     {
+        if (howmany-- > 0)
+            game.syncNetworkThenUpdateOnce();
         while (howmany--)
-            game.updateOnce();
+            game.updateOnceWithoutSyncingNetwork();
         game.altickLastUpdate = al_get_timer_count(basics.alleg5.timer);
     }
 

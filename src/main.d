@@ -25,9 +25,14 @@ void main(string[] args)
     else al_run_allegro({
         basics.init.initialize(cmdargs);
 
-        MainLoop ml = new MainLoop();
-        ml.mainLoop();
-        destroy(ml);
+        if (cmdargs.mode == Runmode.INTERACTIVE) {
+            MainLoop ml = new MainLoop();
+            ml.mainLoop();
+            destroy(ml);
+        }
+        else if (cmdargs.mode == Runmode.VERIFY) {
+            assert (false, "Replay verification isn't implemented yet.");
+        }
 
         basics.init.deinitialize();
         return 0;

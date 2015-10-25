@@ -7,6 +7,8 @@ module game.game;
  * but everything is package (accessible from files in same directory).
  */
 
+public import basics.cmdargs : Runmode;
+
 import basics.alleg5;
 import file.filename;
 import game;
@@ -23,8 +25,9 @@ class Game {
     static immutable int ticksSlowMotion    = 45;
     static immutable int updatesDuringTurbo =  8;
 
-    this(Level lv, Filename fn = null, Replay rp = null)
+    this(Runmode rm, Level lv, Filename fn = null, Replay rp = null)
     {
+        this.runmode = rm;
         implGameConstructor(this, lv, fn, rp);
     }
 
@@ -35,8 +38,8 @@ class Game {
 
 package:
 
-    GameState cs; // current state
-    bool      _gotoMenu;
+    bool _gotoMenu;
+    immutable Runmode runmode;
 
     Level     level;
     Filename  levelFilename;
@@ -47,11 +50,14 @@ package:
              // of that land, blits gadgets and lixes on it, and blits the
              // result to the screen. It is both a renderer and a camera.
 
+    GameState cs; // current state
+    StateManager stateManager;
+
     EffectManager effect;
     Panel pan;
 
     Tribe trlo;
-    Tribe.Master malo;
+    Tribe.Master* malo;
 
     long altickLastUpdate;
 

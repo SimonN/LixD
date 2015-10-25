@@ -83,12 +83,20 @@ class Tribe {
         return ret;
     }
 
-    void return_skills(in Ac ac, in int amount)
+    void returnSkills(in Ac ac, in int amount)
     {
         if (skills[ac] != skillInfinity) {
             skills[ac] += amount;
             skillsUsed -= amount;
         }
+    }
+
+    inout(Master)* getMasterWithNumber(in PlNr number) inout
+    {
+        foreach (ref master; masters)
+            if (master.number == number)
+                return &master;
+        return null;
     }
 
 }

@@ -23,9 +23,9 @@ implGameConstructor(Game game, Level lv, Filename fn, Replay rp)
     scope (exit)
         game.altickLastUpdate = al_get_timer_count(basics.alleg5.timer);
 
-    game.level          = lv;
+    game.level         = lv;
     game.levelFilename = fn;
-    game.replay         = rp;
+    game.replay        = rp;
 
     prepareLand   (game);
     preparePlayers(game);
@@ -88,7 +88,7 @@ preparePlayers(Game game) { with (game)
     cs.tribes ~= new Tribe();
     cs.tribes[0].masters ~= Tribe.Master(0, basics.globconf.userName);
     trlo = cs.tribes[0];
-    malo = trlo.masters[0];
+    malo = &trlo.masters[0];
 
     foreach (tr; cs.tribes) {
         tr.initial      = level.initial;

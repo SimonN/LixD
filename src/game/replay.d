@@ -110,7 +110,7 @@ add_player(PlNr nr, Style s, string name)
 
 
 private inout(ReplayData)[]
-data_slice_before_update(in int upd) inout
+dataSliceBeforeUpdate(in int upd) inout
 {
     // The binary search algo works also for the cases we're checking in this
     // if. But we add mostly to the end of the data, so check here for speed.
@@ -140,8 +140,8 @@ equalBefore(in typeof(this) rhs, in int upd) const
     // We don't check whether the metadata/general data is the same.
     // We assume the gameplay class only uses for replays of the same level
     // with the same players.
-    return this.data_slice_before_update(upd)
-        ==  rhs.data_slice_before_update(upd);
+    return this.dataSliceBeforeUpdate(upd)
+        ==  rhs.dataSliceBeforeUpdate(upd);
 }
 
 
@@ -166,7 +166,7 @@ void
 eraseDataAfterUpdate(in int upd)
 {
     assert (upd >= 0);
-    _data = _data[0 .. data_slice_before_update(upd + 1).length];
+    _data = _data[0 .. dataSliceBeforeUpdate(upd + 1).length];
     touch();
 }
 
@@ -175,7 +175,7 @@ eraseDataAfterUpdate(in int upd)
 const(ReplayData)[]
 getDataForUpdate(in int upd) const
 {
-    auto slice = data_slice_before_update(upd + 1);
+    auto slice = dataSliceBeforeUpdate(upd + 1);
     int cut = slice.len - 1;
     while (cut >= 0 && slice[cut].update == upd)
         --cut;
@@ -210,10 +210,10 @@ addWithoutTouching(in ReplayData d)
 {
     // Add after the latest record that's smaller than or equal to d
     // Equivalently, add before the earliest record that's greater than d.
-    // data_slice_before_update doesn't do exactly that, it ignores players.
+    // dataSliceBeforeUpdate doesn't do exactly that, it ignores players.
     // DTODO: I believe the C++ version had a bug in the choice of
     // comparison. I have fixed that here. Test to see if it's good now.
-    auto slice = data_slice_before_update(d.update + 1);
+    auto slice = dataSliceBeforeUpdate(d.update + 1);
     while (slice.length && slice[$-1] > d)
         slice = slice[0 .. $-1];
 

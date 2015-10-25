@@ -91,7 +91,7 @@ class Benchmark {
             logf("Starting test #%d: Level `%s'", testID, fn);
             Level lv = new Level(new Filename(fn));
             assert (lv.good, "This is a bad level, aborting.");
-            game = new Game(lv);
+            game = new Game(Runmode.INTERACTIVE, lv);
         }
         else if (testID >= 4 && testID < numTests) {
             logf("Starting test #%d: Demo, mode %d", testID, testID - 3);

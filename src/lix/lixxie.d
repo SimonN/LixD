@@ -9,6 +9,7 @@ import basics.user; // multipleBuilders
 import game.lookup;
 import game.tribe;
 import graphic.color;
+import graphic.gadget;
 import graphic.graphic;
 import graphic.gralib;
 import graphic.map;
@@ -24,7 +25,6 @@ import lix.acfunc;
 // C++/A4 Lix's lix/lix.h top comment.
 
 // DTODO: implement these classes
-class EdGraphic { }
 class EffectManager {
     void add_sound        (in int, in Tribe, int, in Sound) { }
     void add_sound_if_trlo(in int, in Tribe, int, in Sound) { }
@@ -65,7 +65,7 @@ public:
 
     static Torbit        land;
     static Lookup        lookup;
-    static Map           ground_map;
+    static Map           groundMap;
     static EffectManager effect;
 
     int specialX;
@@ -185,7 +185,7 @@ this(
     int   new_ey
 ) {
     super(getLixSpritesheet(new_tribe ? new_tribe.style : Style.GARDEN),
-          ground_map, even(new_ex) - lix.enums.ex_offset,
+          groundMap, even(new_ex) - lix.enums.ex_offset,
                            new_ey  - lix.enums.ey_offset);
     _tribe = new_tribe;
     _dir   = 1;
@@ -214,7 +214,7 @@ this(Lixxie rhs)
     _ex    = rhs._ex;
     _ey    = rhs._ey;
 
-    super(graphic.gralib.getLixSpritesheet(_style), ground_map,
+    super(graphic.gralib.getLixSpritesheet(_style), groundMap,
         _ex - lix.enums.ex_offset,
         _ey - lix.enums.ey_offset);
 
@@ -252,7 +252,7 @@ static void set_static_maps(Torbit tb, Lookup lo, Map ma)
 {
     land = tb;
     lookup = lo;
-    ground_map = ma;
+    groundMap = ma;
 }
 
 
@@ -273,7 +273,7 @@ private XY get_fuseXy() const
 ex(in int n) {
     _ex = basics.help.even(n);
     super.x = _ex - lix.enums.ex_offset;
-    if (ground_map.torusX)
+    if (groundMap.torusX)
         _ex = positiveMod(_ex, land.xl);
     immutable XY fuseXy = get_fuseXy();
     _enc_foot |= lookup.get(_ex, _ey);
@@ -289,7 +289,7 @@ ex(in int n) {
 ey(in int n) {
     _ey = n;
     super.y = _ey - lix.enums.ey_offset;
-    if (ground_map.torusY)
+    if (groundMap.torusY)
         _ey = positiveMod(_ey, land.yl);
     immutable XY fuseXy = get_fuseXy();
     _enc_foot |= lookup.get(_ex, _ey);
@@ -327,17 +327,11 @@ void move_up(in int minus_y)
 
 
 
-bool get_in_trigger_area(const EdGraphic gr) const
+bool get_in_trigger_area(in Gadget g) const
 {
-    assert (false, "DTODO: implement get_in_trigger_area");
-    /*
-    const Object& ob = *gr.get_object();
-    return ground_map->isPointInRectangle(
-        get_ex(), get_ey(),
-        gr.get_x() + ob.get_triggerX(),
-        gr.get_y() + ob.get_triggerY(),
-        ob.triggerXl, ob.triggerYl);
-    */
+    return groundMap.isPointInRectangle(ex, ey,
+        g.x + g.tile.triggerX(), g.y + g.tile.triggerY(),
+              g.tile.triggerXl,        g.tile.triggerYl);
 }
 
 
@@ -523,11 +517,9 @@ void draw_rectangle(int x1, int y1, int x2, int y2, in AlCol col)
 {
     if (x2 < x1) swap(x1, x2);
     if (y2 < y1) swap(y1, y2);
-    for (int ix = x1; ix <= x2; ++ix) {
-        for (int iy = y1; iy <= y2; ++iy) {
+    for (int ix = x1; ix <= x2; ++ix)
+        for (int iy = y1; iy <= y2; ++iy)
             draw_pixel(ix, iy, col);
-        }
-    }
 }
 
 
@@ -626,7 +618,7 @@ override void draw()
         immutable int fuseY = fuseXy.y;
 
         // draw onto this
-        Torbit tb = ground_map;
+        Torbit tb = groundMap;
 
         int x = 0;
         int y = 0;
@@ -643,7 +635,7 @@ override void draw()
         }
         // draw the flame
         auto cb = getInternal(fileImageFuse_flame);
-        cb.draw(ground_map,
+        cb.draw(groundMap,
          fuseX + x - cb.xl/2,
          fuseY + y - cb.yl/2,
          updates_since_bomb % cb.xfs, 0);
@@ -782,7 +774,7 @@ void assclk(in Ac new_ac)
 void become(in Ac new_ac)
 {
     if (new_ac != ac && queue > 0) {
-        tribe.return_skills(ac, queue);
+        tribe.returnSkills(ac, queue);
         queue = 0; // in case other skill_become() redirect again to become()
     }
     // Reset sprite placement like climber's offset in x-direction by 1,
