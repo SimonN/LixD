@@ -25,7 +25,9 @@ implGameConstructor(Game game, Level lv, Filename fn, Replay rp)
 
     game.level         = lv;
     game.levelFilename = fn;
-    game.replay        = rp;
+    game.replay        = rp ? rp : new Replay();
+
+    game.stateManager = new StateManager();
 
     prepareLand   (game);
     preparePlayers(game);

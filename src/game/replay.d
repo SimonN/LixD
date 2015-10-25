@@ -176,10 +176,12 @@ const(ReplayData)[]
 getDataForUpdate(in int upd) const
 {
     auto slice = dataSliceBeforeUpdate(upd + 1);
-    int cut = slice.len - 1;
-    while (cut >= 0 && slice[cut].update == upd)
-        --cut;
-    return _data[cut + 1 .. slice.length];
+    int firstGood = slice.len;
+    while (firstGood > 0 && slice[firstGood - 1].update == upd)
+        --firstGood;
+    assert (firstGood >= 0);
+    assert (firstGood <= slice.length);
+    return _data[firstGood .. slice.length];
 }
 
 

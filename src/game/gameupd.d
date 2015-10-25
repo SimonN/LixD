@@ -21,6 +21,7 @@ syncNetworkThenUpdateOnce(Game game)
 package void
 updateOnceWithoutSyncingNetwork(Game game)
 {
+    assert (game.cs);
     ++game.cs.update;
     game.evaluateReplayData();
     game.updateClock();
@@ -29,8 +30,10 @@ updateOnceWithoutSyncingNetwork(Game game)
     game.updateLixxies();
     game.updateOnceGadgets();
 
-    if (game.runmode == Runmode.INTERACTIVE)
+    if (game.runmode == Runmode.INTERACTIVE) {
+        assert (game.stateManager);
         game.stateManager.calcSaveAuto(game.cs);
+    }
 }
 
 
@@ -49,6 +52,7 @@ finalizeInputBeforeUpdate(Game game)
 void
 evaluateReplayData(Game game)
 {
+    assert (game.replay);
     auto dataSlice = game.replay.getDataForUpdate(game.cs.update);
 
     // Evaluating replay data, which carries out mere assignments, should be
@@ -349,6 +353,5 @@ updateOnceGadgets(Game game) {
     foreachGadget((Gadget g) {
         g.animate();
     });
-    std.stdio.writefln("updating gadgets %d", update);
 }}
 // end with (game.cs), end update_once()
