@@ -39,7 +39,7 @@ name() const
 
 
 @property bool
-file_exists() const
+fileExists() const
 {
     return format != FileFormat.NOTHING;
 }
@@ -52,8 +52,8 @@ read_metadata_lix(in Filename fn)
     IoLine[] lines = fillVectorFromFileNothrow(fn);
     foreach (i; lines) {
         if (i.text1 == levelBuilt)        built        = new Date(i.text2);
-        if (i.text1 == levelName_german)  nameGerman  = i.text2;
-        if (i.text1 == levelName_english) nameEnglish = i.text2;
+        if (i.text1 == levelNameGerman)  nameGerman  = i.text2;
+        if (i.text1 == levelNameEnglish) nameEnglish = i.text2;
         if (i.text1 == levelInitial)      initial      = i.nr1;
         if (i.text1 == levelRequired)     required     = i.nr1;
     }
@@ -67,7 +67,7 @@ read_metadata_lix(in Filename fn)
 private void read_metadata_binary(in Filename fn)
 {
     import file.log;
-    Log.log("DTODO: reading binary metadata not impl");
+    log("DTODO: reading binary metadata not impl");
     /*
     std::ifstream file(fn.rootful.c_str(), std::ios::binary);
 
@@ -86,7 +86,7 @@ private void
 read_metadata_lemmini(in Filename fn)
 {
     import file.log;
-    Log.log("DTODO: reading Lemmini metadata not impl");
+    log("DTODO: reading Lemmini metadata not impl");
     /*
     std::ifstream file(fn.rootful.c_str());
     if (! file.good()) return;

@@ -9,10 +9,8 @@ import basics.globals;
 import basics.versioning;
 import file.date;
 
-class Log {
-
-/*  static void initialize();
- *  static void deinitialize();
+/*  nothrow static void initialize();
+ *  nothrow static void deinitialize();
  *
  *  nothrow static void log       (string);
  *  nothrow static void logf(T...)(string, T);
@@ -20,75 +18,67 @@ class Log {
 
 private:
 
-    static Log singl;
-
-    std.stdio.File file;
-
-    this();
-
-    bool something_was_logged_already_this_session;
-    static void   log_header_if_necessary();
-    nothrow static string format_al_ticks();
+    bool _initialized;
+    bool _somethingAlreadyLoggedThisSession;
+    std.stdio.File _file;
 
 
 
 public:
 
-static void
+nothrow static void
 initialize()
 {
-    if (! singl) singl = new Log;
-}
-
-
-
-static void
-deinitialize()
-{
-    if (singl) {
-        destroy(singl);
-        singl = null;
+    if (_initialized)
+        return;
+    _somethingAlreadyLoggedThisSession = false;
+    try {
+        _file = std.stdio.File(basics.globals.fileLog.rootful, "a");
+        _initialized = true;
+    }
+    catch (Exception) {
+        try _file = _file.init;
+        catch (Exception) { }
     }
 }
 
 
 
-private
-this()
+nothrow static void
+deinitialize()
 {
-    file = std.stdio.File(basics.globals.fileLog.rootful, "a");
-    something_was_logged_already_this_session = false;
-}
-
-
-
-private
-~this()
-{
-    file.close();
+    if (! _initialized)
+        return;
+    try {
+        _file.close();
+        _file = _file.init;
+    }
+    catch (Exception) { }
+    _initialized = false;
 }
 
 
 
 private static void
-log_header_if_necessary()
+logHeaderIfNecessary()
 {
-    assert (singl);
-    if (singl.something_was_logged_already_this_session) return;
+    if (! _initialized || _somethingAlreadyLoggedThisSession) {
+        return;
+    }
     else {
-        singl.something_was_logged_already_this_session = true;
+        _somethingAlreadyLoggedThisSession = true;
 
         // a free line and then the current datetime in its own line
-        singl.file.writefln("");
-        singl.file.writefln("Lix version:  " ~ gameVersion().toString());
-        singl.file.writefln("Session date: " ~ Date.now().toString);
+        _file.writefln("");
+        _file.writefln("Lix version:  " ~ gameVersion().toString());
+        _file.writefln("Session date: " ~ Date.now().toString);
     }
 }
 
 
 
 private nothrow static string
-format_al_ticks()
+formatAlTicks()
 {
     try return format("%9.2f", al_get_timer_count(basics.alleg5.timer) * 1.0
                       / basics.globals.ticksPerSecond);
@@ -102,12 +92,12 @@ format_al_ticks()
 nothrow static void
 log(string s)
 {
-    if (! singl)
+    if (! _initialized)
         return;
     try {
-        log_header_if_necessary();
-        singl.file.writefln("%s %s", format_al_ticks(), s);
-        singl.file.flush();
+        logHeaderIfNecessary();
+        _file.writefln("%s %s", formatAlTicks(), s);
+        _file.flush();
     }
     catch (Exception) { }
 }
@@ -117,15 +107,12 @@ log(string s)
 nothrow static void
 logf(T...)(string formatstr, T formatargs)
 {
-    if (! singl)
+    if (! _initialized)
         return;
     try {
-        log_header_if_necessary();
-        singl.file.writefln("%s " ~ formatstr, format_al_ticks(), formatargs);
-        singl.file.flush();
+        logHeaderIfNecessary();
+        _file.writefln("%s " ~ formatstr, formatAlTicks(), formatargs);
+        _file.flush();
     }
     catch (Exception) { }
 }
-
-}
-// end class

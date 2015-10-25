@@ -7,12 +7,6 @@ import std.conv; // to!long for string length
 
 import basics.help;
 
-// Some methods return normal D strings, which are immutable(char)[], i.e.,
-// arrays. D arrays are passed as pointers to start and end.
-// Some methods return immutable(char)* instead. These return pointers to
-// null-terminated C-style strings. Choice of return type is designed based
-// on the expected usage: null-terminated strings are for Allegro functions.
-
 class Filename {
 
 /*  pure this(in string);
@@ -20,8 +14,8 @@ class Filename {
  */
     static void setRootDir(string str) { if (! root) root = str.idup; }
 
-/*  bool opEquals   (in Filename) const;
- *  int  opCmp      (in Filename) const;
+/*  bool opEquals (in Filename) const;
+ *  int  opCmp    (in Filename) const;
  *  bool isChildOf(in Filename) const;
  */
     @property string rootful()        const { return root ~ _rootless;    }
@@ -36,9 +30,9 @@ class Filename {
     @property char   preExtension()   const { return _preExtension;       }
 //  bool hasImageExtension()          const;
 
-    private alias immutable(char)* Ch;
-    @property Ch rootfulZ()    const { return rootful.toStringz;    }
-    @property Ch dirRootfulZ() const { return dirRootful.toStringz; }
+    // null-terminated strings are for Allegro 5's C functions
+    @property rootfulZ()    const { return rootful.toStringz;    }
+    @property dirRootfulZ() const { return dirRootful.toStringz; }
 
 private:
 

@@ -12,9 +12,9 @@ import std.utf;
 int positiveMod(in int nr, in int modulo)
 {
     if (modulo <= 0) return 0;
-    immutable int normal_mod = nr % modulo;
-    if (normal_mod >= 0) return normal_mod;
-    else                 return normal_mod + modulo;
+    immutable int normalMod = nr % modulo;
+    if (normalMod >= 0) return normalMod;
+    else                return normalMod + modulo;
 }
 
 

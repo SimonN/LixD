@@ -44,9 +44,9 @@ void load()
     try
         lines = fillVectorFromFile(basics.globals.fileGlobalConfig);
     catch (Exception e) {
-        Log.log(e.msg);
-        Log.log("Using standard config because config file was not found.");
-        Log.log("This is normal when you run Lix for the first time.");
+        log(e.msg);
+        log("Using standard config because config file was not found.");
+        log("This is normal when you run Lix for the first time.");
     }
 
     foreach (i; lines) {
@@ -54,14 +54,14 @@ void load()
     if      (i.text1 == cfgUserName   ) userName    = i.text2;
     else if (i.text1 == cfgUserNameAsk) userNameAsk = i.nr1 > 0;
 
-    else if (i.text1 == cfgIp_last_used       ) ipLastUsed       = i.text2;
-    else if (i.text1 == cfgIp_central_server  ) ipCentralServer  = i.text2;
+    else if (i.text1 == cfgIPLastUsed       ) ipLastUsed       = i.text2;
+    else if (i.text1 == cfgIPCentralServer  ) ipCentralServer  = i.text2;
 
-    else if (i.text1 == cfgReplay_auto_max    ) replayAutoMax    = i.nr1;
-    else if (i.text1 == cfgReplay_auto_single ) replayAutoSingle = i.nr1;
-    else if (i.text1 == cfgReplay_auto_multi  ) replayAutoMulti  = i.nr1;
-    else if (i.text1 == cfgReplay_auto_next_s ) replayAutoNextS  = i.nr1;
-    else if (i.text1 == cfgReplay_auto_next_m ) replayAutoNextM  = i.nr1;
+    else if (i.text1 == cfgReplayAutoMax    ) replayAutoMax    = i.nr1;
+    else if (i.text1 == cfgReplayAutoSingle ) replayAutoSingle = i.nr1;
+    else if (i.text1 == cfgReplayAutoMulti  ) replayAutoMulti  = i.nr1;
+    else if (i.text1 == cfgReplayAutoNextS ) replayAutoNextS  = i.nr1;
+    else if (i.text1 == cfgReplayAutoNextM ) replayAutoNextM  = i.nr1;
 
     else if (i.text1 == cfgScreenResolutionX) screenResolutionX = i.nr1;
     else if (i.text1 == cfgScreenResolutionY) screenResolutionY = i.nr1;
@@ -69,7 +69,7 @@ void load()
     else if (i.text1 == cfgScreenWindowedY  ) screenWindowedY   = i.nr1;
     else if (i.text1 == cfgScreenVsync      ) screenVsync       = i.nr1 > 0;
 
-    else if (i.text1 == cfgServer_port      ) serverPort         = i.nr1;
+    else if (i.text1 == cfgServerPort      ) serverPort         = i.nr1;
     }
     // end foreach
 }
@@ -83,7 +83,7 @@ void save()
 
     try f = std.stdio.File(fileGlobalConfig.rootful, "w");
     catch (Exception e) {
-        Log.log(e.msg);
+        log(e.msg);
         return;
     }
 
@@ -91,9 +91,9 @@ void save()
     f.writeln(IoLine.Hash  (cfgUserNameAsk,           userNameAsk));
     f.writeln("");
 
-    f.writeln(IoLine.Dollar(cfgIp_last_used,            ipLastUsed));
-    f.writeln(IoLine.Dollar(cfgIp_central_server,       ipCentralServer));
-    f.writeln(IoLine.Hash  (cfgServer_port,             serverPort));
+    f.writeln(IoLine.Dollar(cfgIPLastUsed,            ipLastUsed));
+    f.writeln(IoLine.Dollar(cfgIPCentralServer,       ipCentralServer));
+    f.writeln(IoLine.Hash  (cfgServerPort,             serverPort));
     f.writeln("");
 
     f.writefln("// If you set `%s/Y' both to 0, Lix will use your",
@@ -108,11 +108,11 @@ void save()
     f.writeln(IoLine.Hash(cfgScreenVsync,           screenVsync));
     f.writeln("");
 
-    f.writeln(IoLine.Hash(cfgReplay_auto_max,       replayAutoMax));
-    f.writeln(IoLine.Hash(cfgReplay_auto_single,    replayAutoSingle));
-    f.writeln(IoLine.Hash(cfgReplay_auto_multi,     replayAutoMulti));
-    f.writeln(IoLine.Hash(cfgReplay_auto_next_s,    replayAutoNextS));
-    f.writeln(IoLine.Hash(cfgReplay_auto_next_m,    replayAutoNextM));
+    f.writeln(IoLine.Hash(cfgReplayAutoMax,       replayAutoMax));
+    f.writeln(IoLine.Hash(cfgReplayAutoSingle,    replayAutoSingle));
+    f.writeln(IoLine.Hash(cfgReplayAutoMulti,     replayAutoMulti));
+    f.writeln(IoLine.Hash(cfgReplayAutoNextS,    replayAutoNextS));
+    f.writeln(IoLine.Hash(cfgReplayAutoNextM,    replayAutoNextM));
 
     f.close();
 }

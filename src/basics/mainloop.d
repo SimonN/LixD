@@ -6,7 +6,7 @@ module basics.mainloop;
  * To kill the game at any time, hit Shift + ESC.
  * This breaks straight out of the main loop. Unsaved data is lost.
  *
- * How to use this class: Instantiate, run main_loop() once, and then
+ * How to use this class: Instantiate, run mainLoop() once, and then
  * exit the program when that function is done.
  */
 
@@ -30,7 +30,7 @@ class MainLoop {
 
 public:
 
-    void main_loop()
+    void mainLoop()
     {
         try while (true) {
             immutable last_tick = al_get_timer_count(basics.alleg5.timer);
@@ -47,9 +47,9 @@ public:
             // Windows users won't run the game from a shell, they should
             // retrieve the error message from the logfile, in addition.
             // In a release build, assert (false) crashes instead of throwing.
-            Log.logf("%s:%d:", thr.file, thr.line);
-            Log.log(thr.msg);
-            Log.log(thr.info.toString());
+            logf("%s:%d:", thr.file, thr.line);
+            log(thr.msg);
+            log(thr.info.toString());
             throw thr;
         }
         kill();
@@ -59,8 +59,8 @@ private:
 
     bool exit;
 
-    MainMenu main_menu;
-    BrowserSingle brow_sin;
+    MainMenu mainMenu;
+    BrowserSingle browSin;
 
     Game game;
 
@@ -76,15 +76,15 @@ kill()
         destroy(game);
         game = null;
     }
-    if (main_menu) {
-        gui.rmElder(main_menu);
-        main_menu = null;
+    if (mainMenu) {
+        gui.rmElder(mainMenu);
+        mainMenu = null;
     }
-    if (brow_sin) {
-        gui.rmElder(brow_sin);
-        destroy(brow_sin); // DTODO: check what is best here. There is a
+    if (browSin) {
+        gui.rmElder(browSin);
+        destroy(browSin); // DTODO: check what is best here. There is a
                            // Torbit to be destroyed in the browser's preview.
-        brow_sin = null;
+        browSin = null;
     }
     if (demo) {
         demo = null;
@@ -106,51 +106,51 @@ calc()
     gui              .calc();
 
     exit = exit
-        || hardware.display.get_display_close_was_clicked()
+        || hardware.display.displayCloseWasClicked()
         || shiftHeld() && keyTapped(ALLEGRO_KEY_ESCAPE);
 
     if (exit) {
         return;
     }
-    else if (main_menu) {
+    else if (mainMenu) {
         // no need to calc the menu, it's a GUI elder
-        if (main_menu.gotoSingle) {
+        if (mainMenu.gotoSingle) {
             kill();
-            brow_sin = new BrowserSingle;
-            gui.addElder(brow_sin);
+            browSin = new BrowserSingle;
+            gui.addElder(browSin);
         }
-        else if (main_menu.gotoNetwork) {
+        else if (mainMenu.gotoNetwork) {
             // DTODO: as long as networking isn't developed, this goes to demo
             kill();
             demo = new Demo;
         }
-        else if (main_menu.gotoBench) {
+        else if (mainMenu.gotoBench) {
             kill();
             bench = new Benchmark;
         }
-        else if (main_menu.exitProgram) {
+        else if (mainMenu.exitProgram) {
             exit = true;
         }
     }
-    else if (brow_sin) {
-        if (brow_sin.gotoGame) {
-            auto lv = brow_sin.level;
-            auto fn = brow_sin.filename;
+    else if (browSin) {
+        if (browSin.gotoGame) {
+            auto lv = browSin.level;
+            auto fn = browSin.filename;
             kill();
             game = new Game(lv, fn);
         }
-        else if (brow_sin.gotoMainMenu) {
+        else if (browSin.gotoMainMenu) {
             kill();
-            main_menu = new MainMenu;
-            gui.addElder(main_menu);
+            mainMenu = new MainMenu;
+            gui.addElder(mainMenu);
         }
     }
     else if (game) {
         game.calc();
         if (game.gotoMenu) {
             kill();
-            brow_sin = new BrowserSingle;
-            gui.addElder(brow_sin);
+            browSin = new BrowserSingle;
+            gui.addElder(browSin);
         }
     }
     else if (demo) {
@@ -160,14 +160,14 @@ calc()
         bench.calc();
         if (bench.exit) {
             kill();
-            main_menu = new MainMenu;
-            gui.addElder(main_menu);
+            mainMenu = new MainMenu;
+            gui.addElder(mainMenu);
         }
     }
     else {
         // program has just started, nothing exists yet
-        main_menu = new MainMenu;
-        gui.addElder(main_menu);
+        mainMenu = new MainMenu;
+        gui.addElder(mainMenu);
     }
 
 }
@@ -177,7 +177,7 @@ calc()
 void
 draw()
 {
-    // main_menu etc. are GUI Windows. Those have been added as elders and
+    // mainMenu etc. are GUI Windows. Those have been added as elders and
     // are therefore supervised by module gui.root.
 
     if (game) game.draw();

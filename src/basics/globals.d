@@ -55,21 +55,21 @@ immutable cfgScreenWindowedX         = "SCREEN_WINDOWED_X";
 immutable cfgScreenWindowedY         = "SCREEN_WINDOWED_Y";
 immutable cfgScreenVsync             = "SCREEN_VSYNC";
 
-immutable cfgReplay_auto_max          = "REPLAY_AUTO_MAX";
-immutable cfgReplay_auto_single       = "REPLAY_AUTO_SINGLE";
-immutable cfgReplay_auto_multi        = "REPLAY_AUTO_MULTI";
-immutable cfgReplay_auto_next_s       = "REPLAY_AUTO_SINGLE_NEXT";
-immutable cfgReplay_auto_next_m       = "REPLAY_AUTO_MULTI_NEXT";
+immutable cfgReplayAutoMax          = "REPLAY_AUTO_MAX";
+immutable cfgReplayAutoSingle       = "REPLAY_AUTO_SINGLE";
+immutable cfgReplayAutoMulti        = "REPLAY_AUTO_MULTI";
+immutable cfgReplayAutoNextS       = "REPLAY_AUTO_SINGLE_NEXT";
+immutable cfgReplayAutoNextM       = "REPLAY_AUTO_MULTI_NEXT";
 
-immutable cfgIp_last_used             = "IP_LAST_USED";
-immutable cfgIp_central_server        = "IP_CENTRAL_SERVER";
-immutable cfgServer_port              = "SERVER_PORT";
+immutable cfgIPLastUsed             = "IP_LAST_USED";
+immutable cfgIPCentralServer        = "IP_CENTRAL_SERVER";
+immutable cfgServerPort              = "SERVER_PORT";
 
 // keys for saving/loading level files
 immutable levelBuilt                  = "BUILT";
 immutable levelAuthor                 = "AUTHOR";
-immutable levelName_german            = "GERMAN";
-immutable levelName_english           = "ENGLISH";
+immutable levelNameGerman            = "GERMAN";
+immutable levelNameEnglish           = "ENGLISH";
 immutable levelTutorialGerman         = "TUTORIAL_GERMAN";
 immutable levelTutorialEnglish        = "TUTORIAL_ENGLISH";
 immutable levelHintGerman             = "HINT_GERMAN";

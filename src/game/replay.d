@@ -189,7 +189,7 @@ getOnUpdateLixClicked(in int upd, in int lix_id, in Ac ac) const
 {
     auto vec = getDataForUpdate(upd);
     foreach (const ref d; vec)
-        if (d.isSomeAssignment && d.to_which_lix == lix_id && d.skill == ac)
+        if (d.isSomeAssignment && d.toWhichLix == lix_id && d.skill == ac)
             return true;
     return false;
 }
@@ -248,7 +248,7 @@ saveToFile(in Filename fn, in Level lev)
         saveToFile(file, lev);
     }
     catch (Exception e) {
-        Log.log(e.msg);
+        log(e.msg);
     }
 }
 
@@ -291,7 +291,7 @@ saveToFile(std.stdio.File file, in Level lev)
             word ~= "=";
             word ~= acToString(cast (Ac) d.skill);
         }
-        file.writeln(IoLine.Bang(d.update, d.player, word, d.to_which_lix));
+        file.writeln(IoLine.Bang(d.update, d.player, word, d.toWhichLix));
     }
 
     bool ok_to_save(in Level lev)
@@ -343,7 +343,7 @@ loadFromFile(Filename fn)
         lines = fillVectorFromFile(fn);
     }
     catch (Exception e) {
-        Log.log(e.msg);
+        log(e.msg);
         _fileNotFound = true;
         return;
     }
@@ -390,7 +390,7 @@ loadFromFile(Filename fn)
         ReplayData d;
         d.update       = i.nr1;
         d.player       = i.nr2 & 0xFF;
-        d.to_which_lix = i.nr3;
+        d.toWhichLix = i.nr3;
         d.action = part1 == replaySpawnint    ? ReplayData.SPAWNINT
                  : part1 == replayAssignAny   ? ReplayData.ASSIGN
                  : part1 == replayAssignLeft  ? ReplayData.ASSIGN_LEFT

@@ -54,7 +54,7 @@ package void loadFromFile(Level level, in Filename fn)
 
 package FileFormat get_file_format(in Filename fn)
 {
-    if (! file_exists(fn)) return FileFormat.NOTHING;
+    if (! fileExists(fn)) return FileFormat.NOTHING;
     else return FileFormat.LIX;
 
     // DTODO: Implement the remaining function from C++/A4 Lix that opens
@@ -99,8 +99,8 @@ private void load_from_vector(Level level, in IoLine[] lines)
         if      (text1 == glo.levelBuilt       ) built = new Date(text2);
 
         else if (text1 == glo.levelAuthor      ) author       = text2;
-        else if (text1 == glo.levelName_german ) nameGerman  = text2;
-        else if (text1 == glo.levelName_english) nameEnglish = text2;
+        else if (text1 == glo.levelNameGerman ) nameGerman  = text2;
+        else if (text1 == glo.levelNameEnglish) nameEnglish = text2;
 
         else if (text1 == glo.levelHintGerman ) hint(hintsGerman,  text2);
         else if (text1 == glo.levelHintEnglish) hint(hintsEnglish, text2);
@@ -214,7 +214,7 @@ private void add_object_from_ascii_line(
     // record a missing image in the logfile
     else {
         level._status = LevelStatus.BAD_IMAGE;
-        Log.logf("Missing image `%s'", text1);
+        logf("Missing image `%s'", text1);
     }
 }
 
@@ -277,7 +277,7 @@ package void implSaveToFile(const(Level) level, in Filename fn)
         file.close();
     }
     catch (Exception e) {
-        Log.log(e.msg);
+        log(e.msg);
     }
 }
 
@@ -289,8 +289,8 @@ public void saveToFile(const(Level) l, std.stdio.File file)
 
     file.writeln(IoLine.Dollar(glo.levelBuilt,        l.built       ));
     file.writeln(IoLine.Dollar(glo.levelAuthor,       l.author      ));
-    file.writeln(IoLine.Dollar(glo.levelName_german,  l.nameGerman ));
-    file.writeln(IoLine.Dollar(glo.levelName_english, l.nameEnglish));
+    file.writeln(IoLine.Dollar(glo.levelNameGerman,  l.nameGerman ));
+    file.writeln(IoLine.Dollar(glo.levelNameEnglish, l.nameEnglish));
     file.writeln();
 
     // write hint

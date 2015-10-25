@@ -8,21 +8,21 @@ import file.filename;
 // Finding files and browsing directories. No virtual file system is
 // implemented here.
 
-// find_files() finds only regular files, no dirs, and has no recursion.
-// find_dirs()  finds only dirs, and has no recursion.
-// find_tree()  finds only regular files, no dirs, recursing through subdirs.
+// findFiles() finds only regular files, no dirs, and has no recursion.
+// findDirs()  finds only dirs, and has no recursion.
+// findTree()  finds only regular files, no dirs, recursing through subdirs.
 // Whenever what == "", every possible file is retrieved because
-// has_correct_ending("") will always be true; see that function for details.
-Filename[] find_files(const Filename fn_where, const string what = "");
-Filename[] find_dirs (const Filename fn_where);
-Filename[] find_tree (const Filename fn_where, const string what = "");
+// hasCorrectEnding("") will always be true; see that function for details.
+Filename[] findFiles(const Filename fnWhere, const string what = "");
+Filename[] findDirs (const Filename fnWhere);
+Filename[] findTree (const Filename fnWhere, const string what = "");
 
-bool file_exists(const Filename); // test if exists as regular file, not a dir
-bool dir_exists (const Filename); // test if exists as dir
+bool fileExists(const Filename); // test if exists as regular file, not a dir
+bool dirExists (const Filename); // test if exists as dir
 
 
 
-private pure bool has_correct_ending(const string fn, const string ending)
+private pure bool hasCorrectEnding(const string fn, const string ending)
 {
     return fn.length >= ending.length
      &&    fn[($ - ending.length) .. $] == ending;
@@ -30,15 +30,15 @@ private pure bool has_correct_ending(const string fn, const string ending)
 
 
 
-Filename[] find_files(
-    const Filename fn_where,
+Filename[] findFiles(
+    const Filename fnWhere,
     const string   what = "",
 ) {
     Filename[] ret;
     // shallow = don't recurse through subdirs, true = follow symlinks
-    foreach (string s; std.file.dirEntries(fn_where.rootful,
+    foreach (string s; std.file.dirEntries(fnWhere.rootful,
                                            SpanMode.shallow, true)) {
-        if (! std.file.isDir(s) && s.has_correct_ending(what)) {
+        if (! std.file.isDir(s) && s.hasCorrectEnding(what)) {
             ret ~= new Filename(s.tr("\\", "/"));
         }
     }
@@ -47,11 +47,11 @@ Filename[] find_files(
 
 
 
-Filename[] find_dirs(
-    const Filename fn_where
+Filename[] findDirs(
+    const Filename fnWhere
 ) {
     Filename[] ret;
-    foreach (string s; std.file.dirEntries(fn_where.rootful,
+    foreach (string s; std.file.dirEntries(fnWhere.rootful,
                                            SpanMode.shallow, true)) {
         if (std.file.isDir(s)) {
             // convention: dirs have a trailing slash, and dirEntries
@@ -64,15 +64,15 @@ Filename[] find_dirs(
 
 
 
-Filename[] find_tree(
-    const Filename fn_where,
+Filename[] findTree(
+    const Filename fnWhere,
     const string   what = "",
 ) {
     Filename[] ret;
     // breadth-first search through the entire given tree
-    foreach (string s; std.file.dirEntries(fn_where.rootful,
+    foreach (string s; std.file.dirEntries(fnWhere.rootful,
                                            SpanMode.breadth, true)) {
-        if (! std.file.isDir(s) && s.has_correct_ending(what)) {
+        if (! std.file.isDir(s) && s.hasCorrectEnding(what)) {
             ret ~= new Filename(s.tr("\\", "/"));
         }
     }
@@ -81,7 +81,7 @@ Filename[] find_tree(
 
 
 
-bool file_exists(const Filename fn)
+bool fileExists(const Filename fn)
 {
     string noslash = fn.rootful;
     if (noslash != null && noslash[$-1] == '/') return false;
@@ -91,7 +91,7 @@ bool file_exists(const Filename fn)
 
 
 
-bool dir_exists(const Filename fn)
+bool dirExists(const Filename fn)
 {
     string noslash = fn.rootful;
     while (noslash != null && noslash[$-1] == '/') noslash = noslash[0 .. $-1];

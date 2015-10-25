@@ -79,7 +79,7 @@ void initialize()
     displayStartupMessage("Loading internal bitmaps...");
 
     // find all internal bitmaps
-    auto files = file.search.find_tree(dirDataBitmap);
+    auto files = file.search.findTree(dirDataBitmap);
 
     // Since this is unrelated to the terrain name replacements, the internal
     // graphics are saved WITH dir.

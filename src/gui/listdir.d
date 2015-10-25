@@ -51,7 +51,7 @@ public this(Geom g)
 {
     super(g);
 
-    fileFinder = &(file.search.find_dirs);
+    fileFinder = &(file.search.findDirs);
     searchCrit = function bool(in Filename fn) {
         return fn.file != "." && fn.file != "..";
     };
@@ -94,7 +94,7 @@ currentDir(in Filename fn)
     assert (_baseDir, "base directory not set, can't load a dir without it");
     assert (fn, "dirname to load in dir list is null");
 
-    bool good_dir     = dir_exists(fn) && fn.isChildOf(_baseDir);
+    bool good_dir     = dirExists(fn) && fn.isChildOf(_baseDir);
     const Filename f  = good_dir ? fn : _baseDir;
     super.currentDir = f;
     if (_listFile)
@@ -121,21 +121,21 @@ on_dir_load()
         children.length));
 
     // sanity checks
-    immutable bool bad_exists = ! file.search.dir_exists(currentDir);
+    immutable bool bad_exists = ! file.search.dirExists(currentDir);
     immutable bool bad_child  = ! currentDir.isChildOf(_baseDir);
 
     if (bad_exists || bad_child) {
-        if (! file.search.dir_exists(baseDir)) {
+        if (! file.search.dirExists(baseDir)) {
             // this is extremely bad, abort immediately
-            Log.logf("Base dir `%s' is missing. Broken installation?",
+            logf("Base dir `%s' is missing. Broken installation?",
                 baseDir.rootful);
             return OnDirLoadAction.ABORT;
         }
         else if (bad_exists)
-            Log.logf("`%s' doesn't exist. Falling back to `%s'.",
+            logf("`%s' doesn't exist. Falling back to `%s'.",
             currentDir.rootful, baseDir.rootful);
         else if (bad_child)
-            Log.logf("`%s' is not a subdir of `%s'. Falling back to that.",
+            logf("`%s' is not a subdir of `%s'. Falling back to that.",
             currentDir.rootful, baseDir.rootful);
 
         currentDir = baseDir;       // again goes through load_currentDir()

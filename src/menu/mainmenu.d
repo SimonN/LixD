@@ -45,11 +45,11 @@ public this()
     immutable butYlg =  40; // any button's y length
     immutable butSpg =  20; // spacing
 
-    TextButton buttext_height(Geom.From from, int height)
+    TextButton buttextHeight(Geom.From from, int height)
     {
         int heightg = Window.titleYlg + butSpg + height*(butYlg+butSpg);
         return new TextButton(new Geom(
-            height == 2 ? butSpg : 0,         heightg,
+            height == 2 ? butSpg : 0,        heightg,
             height == 2 ? butSlg : butXlg,   butYlg, from));
     }
 
@@ -58,16 +58,16 @@ public this()
         butYlg * 4 + butSpg * 4 + Window.titleYlg + 80, Geom.From.CENTER),
         basics.globals.nameOfTheGame);
 
-    single  = buttext_height(Geom.From.TOP,       0);
-    network = buttext_height(Geom.From.TOP,       1);
-    replays = buttext_height(Geom.From.TOP_LEFT , 2);
-    options = buttext_height(Geom.From.TOP_RIGHT, 2);
-    _exit   = buttext_height(Geom.From.TOP,       3);
+    single  = buttextHeight(Geom.From.TOP,       0);
+    network = buttextHeight(Geom.From.TOP,       1);
+    replays = buttextHeight(Geom.From.TOP_LEFT , 2);
+    options = buttextHeight(Geom.From.TOP_RIGHT, 2);
+    _exit   = buttextHeight(Geom.From.TOP,       3);
 
     single .text = Lang.browserSingleTitle.transl;
     network.text = "Demo (Shift+ESC to exit)"; // winLobbyTitle.transl DTODO
     replays.text = Lang.browserReplayTitle.transl;
-    options.text = Lang.option_title.transl;
+    options.text = Lang.optionTitle.transl;
     _exit  .text = Lang.commonExit.transl;
 
     single .hotkey = basics.user.keyMenuMainSingle;

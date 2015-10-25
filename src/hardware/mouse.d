@@ -47,7 +47,7 @@ private:
 
     int  _mouseOwnX; // where the cursor will appear, != al_mouse
     int  _mouseOwnY;
-    int  _mickeyX; // Difference of _mouseOwnX since last main_loop
+    int  _mickeyX; // Difference of _mouseOwnX since last mainLoop
     int  _mickeyY;
     int  _mickeyLeftoverX; // leftover movement from the previous mickeys,
     int  _mickeyLeftoverY; // yet unspent to _mouseOwnXy, for smoothening
@@ -98,7 +98,7 @@ void calc()
     immutable int xl = al_get_display_width (display);
     immutable int yl = al_get_display_height(display);
 
-    // Setting to zero all things that are good for only one main_loop,
+    // Setting to zero all things that are good for only one mainLoop,
     // incrementing the times on others.
     _mickeyX = _mickeyLeftoverX;
     _mickeyY = _mickeyLeftoverY;

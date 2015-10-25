@@ -22,13 +22,13 @@ import hardware.mouse; // center mouse after changing resolution
 
 ALLEGRO_DISPLAY* display;
 
-/*  void set_screen_mode(bool want_full, int want_x = 0, int want_y = 0);
+/*  void setScreenMode(bool wantFull, int wantX = 0, int wantY = 0);
  *
  *  void deinitialize();
  *
  *  void calc()
  *
- *      call once per main_loop to trap/untrap mouse
+ *      call once per mainLoop to trap/untrap mouse
  *
  *  @property int displayXl()
  *  @property int displayYl()
@@ -37,12 +37,12 @@ ALLEGRO_DISPLAY* display;
  *
  *  void displayStartupMessage(string)
  *
- *      before main_loop draws
+ *      before mainLoop draws
  */
 
 bool
-get_display_close_was_clicked() {
-    return display_close_was_clicked;
+displayCloseWasClicked() {
+    return _displayCloseWasClicked;
 }
 
 
@@ -63,7 +63,7 @@ flip_display() {
 
 
 @property int
-display_fps()
+displayFps()
 {
     return _fpsArr.len;
 }
@@ -90,14 +90,14 @@ displayYl()
 
 // Globally writable variable, set this to true to force a redraw of all GUI
 // components next time, this is probably a C++/A4 Lix legacy variable
-public bool clear_screen_at_next_blit;
+public bool clearScreenAtNextBlit;
 
 
 
 private :
 
     ALLEGRO_EVENT_QUEUE* queue;
-    bool display_close_was_clicked;
+    bool _displayCloseWasClicked;
 
 
 
@@ -108,7 +108,7 @@ public:
 // If res == (0, 0) and the global variables are also (0, 0),
 // then query the underlying desktop environment for fullscreen resolution,
 // or, if window mode is desired, fall back to 640 x 480.
-void set_screen_mode(bool want_full, int want_x = 0, int want_y = 0)
+void setScreenMode(bool wantFull, int wantX = 0, int wantY = 0)
 {
     struct TryMode {
         bool full;
@@ -126,34 +126,34 @@ void set_screen_mode(bool want_full, int want_x = 0, int want_y = 0)
     // try_modes, the earlier it is tried.
     TryMode[] try_modes;
 
-    // top priority goes to the mode using set_screen_mode()'s arguments
-    if (want_x > 0 && want_y > 0) {
-        try_modes ~= TryMode(want_full, want_x, want_y);
+    // top priority goes to the mode using setScreenMode()'s arguments
+    if (wantX > 0 && wantY > 0) {
+        try_modes ~= TryMode(wantFull, wantX, wantY);
     }
 
     // add two more modes for fullscreen, and two more modes for windowed,
-    // but choose the order of these additions based on want_full
-    void add_fullscreen_try_modes() {
+    // but choose the order of these additions based on wantFull
+    void addFullscreenTryModes() {
         if (screenResolutionX > 0 && screenResolutionY > 0) {
             try_modes ~= TryMode(true, screenResolutionX,
                                        screenResolutionY);
         }
         try_modes  ~= TryMode(true, 640, 480);
     }
-    void add_windowed_try_modes() {
+    void addWindowedTryModes() {
         if (screenWindowedX > 0 && screenWindowedY > 0) {
             try_modes ~= TryMode(false, screenWindowedX, screenWindowedY);
         }
         try_modes  ~= TryMode(false, 640, 480);
     }
 
-    if (want_full) {
-        add_fullscreen_try_modes();
-        add_windowed_try_modes();
+    if (wantFull) {
+        addFullscreenTryModes();
+        addWindowedTryModes();
     }
     else {
-        add_windowed_try_modes();
-        add_fullscreen_try_modes();
+        addWindowedTryModes();
+        addFullscreenTryModes();
     }
 
     immutable fullscreen_flag = ALLEGRO_FULLSCREEN_WINDOW;
@@ -182,7 +182,7 @@ void set_screen_mode(bool want_full, int want_x = 0, int want_y = 0)
     queue = al_create_event_queue();
     al_register_event_source(queue, al_get_display_event_source(display));
 
-    clear_screen_at_next_blit = true;
+    clearScreenAtNextBlit = true;
     hardware.mouse.centerMouse();
 
     immutable int al_x = al_get_display_width (display);
@@ -193,16 +193,16 @@ void set_screen_mode(bool want_full, int want_x = 0, int want_y = 0)
     gui.Geom.setScreenXYls(al_x, al_y);
 
     // if we didn't get what we wanted, make an entry in the log file
-    if (want_x > 0 && want_y > 0
-     && (want_x    != al_x
-      || want_y    != al_y
-      || want_full != al_f))
+    if (wantX > 0 && wantY > 0
+     && (wantX    != al_x
+      || wantY    != al_y
+      || wantFull != al_f))
     {
         // DTODOLANG
-        Log.logf("Your wanted %s mode at %dx%d cannot be used.",
-            want_full ? "fullscreen" : "windowed",
-            want_x, want_y);
-        Log.logf("  ..falling back to %s at %dx%d.",
+        logf("Your wanted %s mode at %dx%d cannot be used.",
+            wantFull ? "fullscreen" : "windowed",
+            wantX, wantY);
+        logf("  ..falling back to %s at %dx%d.",
             al_f ? "fullscreen" : "windowed",
             al_x, al_y);
     }
@@ -231,7 +231,7 @@ void calc()
     while(al_get_next_event(queue, &event))
     {
         if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
-            display_close_was_clicked = true;
+            _displayCloseWasClicked = true;
         }
         else if (event.type == ALLEGRO_EVENT_DISPLAY_SWITCH_OUT) {
             hardware.mouse.trapMouse(false);

@@ -70,8 +70,8 @@ struct ReplayData {
     ubyte action;
     ubyte skill; // only != 0 when action == ASSIGN or ASSIGN_LEFT or _RIGHT
     int   update;
-    int   to_which_lix; // assign to which lix, or change rate to how much
-    alias to_what_spawnint = to_which_lix;
+    int   toWhichLix; // assign to which lix, or change rate to how much
+    alias toWhatSpawnint = toWhichLix;
 
     this(in byte b = 0)
     {
@@ -106,7 +106,7 @@ struct ReplayData {
         pck.data[2] = action;
         pck.data[3] = skill;
         pck.data[4 ..  8] = nativeToBigEndian!int(update);
-        pck.data[8 .. 12] = nativeToBigEndian!int(to_which_lix);
+        pck.data[8 .. 12] = nativeToBigEndian!int(toWhichLix);
         return pck;
     }
 
@@ -116,8 +116,8 @@ struct ReplayData {
         player = pck.data[1];
         action = pck.data[2];
         skill  = pck.data[3];
-        update       = bigEndianToNative!int(pck.data[4 ..  8]);
-        to_which_lix = bigEndianToNative!int(pck.data[8 .. 12]);
+        update     = bigEndianToNative!int(pck.data[4 ..  8]);
+        toWhichLix = bigEndianToNative!int(pck.data[8 .. 12]);
     }
 
 }
@@ -128,34 +128,34 @@ class Permu {
 
     private PlNr[] p;
 
-    this(int new_size)
+    this(int newSize)
     {
-        foreach (i; 0 .. new_size)
+        foreach (i; 0 .. newSize)
             p ~= i & 0xFF;
         p.randomShuffle;
     }
 
-    this(int num_bytes_to_read, PlNr* address)
+    this(int numBytesToRead, PlNr* address)
     {
-        foreach (i; 0 .. num_bytes_to_read)
+        foreach (i; 0 .. numBytesToRead)
             p ~= *(address + i);
     }
 
     // Read in a string that is separated by any non-digit characters
     this(string src)
     {
-        PlNr next_id = 0;
-        bool digit_has_been_read = false;
+        PlNr nextID = 0;
+        bool digitHasBeenRead = false;
 
         foreach (char c; src) {
             if (c >= '0' && c <= '9') {
-                next_id *= 10;
-                next_id += c - '0';
-                digit_has_been_read = true;
+                nextID *= 10;
+                nextID += c - '0';
+                digitHasBeenRead = true;
             }
-            else if (digit_has_been_read) {
-                p ~= next_id;
-                digit_has_been_read = false;
+            else if (digitHasBeenRead) {
+                p ~= nextID;
+                digitHasBeenRead = false;
             }
         }
     }
@@ -164,11 +164,11 @@ class Permu {
     PlNr          opIndex(int id) const { return p[id]; }
 
     deprecated("cut off, or erase too high values?") void
-    shorten_to(int new_size)
+    shortenTo(int newSize)
     {
-        assert (new_size >= 0);
-        assert (new_size < p.len);
-        p = p[0 .. new_size];
+        assert (newSize >= 0);
+        assert (newSize < p.len);
+        p = p[0 .. newSize];
     }
 
     override bool opEquals(Object rhs_obj) const

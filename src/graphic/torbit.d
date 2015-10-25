@@ -47,9 +47,9 @@ class Torbit {
     // DTODODRAW: import is only here while the next is unimpl
     import file.log;
     void drawTo(Torbit, int x = 0, int y = 0) const
-        { Log.log("DTODODRAW: Torbit.drawTo(Torbit) not implemented"); }
+        { log("DTODODRAW: Torbit.drawTo(Torbit) not implemented"); }
     void drawTo(Albit,  int x = 0, int y = 0, int rxl = 0, int ryl = 0) const
-        { Log.log("DTODODRAW: Torbit.drawTo(Albit) not implemented"); }
+        { log("DTODODRAW: Torbit.drawTo(Albit) not implemented"); }
 
 /*  void drawFrom(Albit, x, y, bool mirr, double rot, double scal)
  *

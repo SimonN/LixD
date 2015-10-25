@@ -313,8 +313,8 @@ void load()
     try
         lines = fillVectorFromFile(userFileName());
     catch (Exception e) {
-        Log.log(e.msg);
-        Log.log("User config for user `" ~ userName ~ "' was not found.");
+        log(e.msg);
+        log("User config for user `" ~ userName ~ "' was not found.");
     }
 
     results = null;
@@ -627,7 +627,7 @@ nothrow void save()
 
     }
     catch (Exception e) {
-        Log.log(e.msg);
+        log(e.msg);
         return;
     }
 }

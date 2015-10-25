@@ -127,7 +127,7 @@ this(Geom g)
 public static Filename[]
 default_fileFinder(in Filename where)
 {
-    return file.search.find_files(where);
+    return file.search.findFiles(where);
 }
 
 

@@ -26,7 +26,7 @@ void main(string[] args)
         basics.init.initialize(cmdargs);
 
         MainLoop ml = new MainLoop();
-        ml.main_loop();
+        ml.mainLoop();
         destroy(ml);
 
         basics.init.deinitialize();

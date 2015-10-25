@@ -68,7 +68,7 @@ void initialize()
     // fill the queue will all files on the disk, but chop off the
     // "images/" prefix before using the path as the tile's name
     immutable string imgdir = glo.dirImages.dirRootless;
-    auto files = file.search.find_tree(glo.dirImages);
+    auto files = file.search.findTree(glo.dirImages);
     foreach (fn; files) {
         if (! fn.hasImageExtension()) continue;
 
@@ -183,8 +183,8 @@ load_tile_from_disk(in string str_no_ext, in Filename fn)
     Cutbit cb = new Cutbit(fn, type != TileType.TERRAIN);
     if (! cb.valid) {
         import file.log;
-        Log.logf("Image has too large proportions: `%s'", fn.rootful);
-        Log.log ("  See bug report: https://github.com/SimonN/LixD/issues/4");
+        logf("Image has too large proportions: `%s'", fn.rootful);
+        log ("  See bug report: https://github.com/SimonN/LixD/issues/4");
         return;
     }
 
@@ -202,7 +202,7 @@ load_tile_from_disk(in string str_no_ext, in Filename fn)
             // We test for existence here, because trying to load the file
             // will generate a log message for nonexisting file otherwise.
             // It's normal to have no definitions file, so don't log that.
-            if (file_exists(defs)) {
+            if (fileExists(defs)) {
                 tile_ptr.read_definitions_file(defs);
             }
         }

@@ -17,6 +17,8 @@ import hardware.display;
 import hardware.mouse;
 import level.tilelib;
 
+static import file.log;
+
 /*  void initialize(cmdargs);
  *  void deinitialize();
  *
@@ -34,13 +36,13 @@ void initialize(in Cmdargs cmdargs)
     al_start_timer(timer);
     assert (timer);
 
-    file.log.Log.initialize();
+    file.log.initialize();
     basics.globconf.load();
     basics.user.load();
-    load_userLanguage_and_if_not_exist_set_userOption_to_english();
+    loadUserLanguageAndIfNotExistSetUserOptionToEnglish();
 
-    hardware.display.set_screen_mode(! cmdargs.windowed,
-                                     cmdargs.wantResolutionX, cmdargs.wantResolutionY);
+    hardware.display.setScreenMode(! cmdargs.windowed,
+        cmdargs.wantResolutionX, cmdargs.wantResolutionY);
 
     al_init_image_addon();
     al_init_font_addon();
@@ -100,7 +102,7 @@ void deinitialize()
 
     basics.user.save();
     basics.globconf.save();
-    file.log.Log.deinitialize();
+    file.log.deinitialize();
 
     al_stop_timer(timer);
     al_destroy_timer(timer);

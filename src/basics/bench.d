@@ -21,50 +21,50 @@ import hardware.display;
 
 class Benchmark {
 
-    enum num_tests = 10;
-    enum ticks_per_test = 10 * ticksPerSecond;
+    enum numTests = 10;
+    enum ticksPerTest = 10 * ticksPerSecond;
 
     int ticks = 0;
-    int ticks_last_fps_log = 0;
+    int ticksLastFPSLog = 0;
 
-    int test_id = -1;
+    int testID = -1;
 
-    immutable int alticks_at_start;
+    immutable int alTicksAtStart;
 
     Game game;
     Demo demo;
 
     @property bool exit()
     {
-        return ticks >= num_tests * ticks_per_test
+        return ticks >= numTests * ticksPerTest
             || keyTapped(ALLEGRO_KEY_ESCAPE);
     }
 
-    private static int get_al_ticks()
+    private static int getAlTicks()
     {
         return al_get_timer_count(basics.alleg5.timer).to!int;
     }
 
     this()
     {
-        alticks_at_start = get_al_ticks();
-        Log.log("Starting the benchmarking.");
+        alTicksAtStart = getAlTicks();
+        log("Starting the benchmarking.");
     }
 
     void calc()
     {
-        ticks = get_al_ticks() - alticks_at_start;
-        immutable int curr_test_id = ticks / ticks_per_test;
+        ticks = getAlTicks() - alTicksAtStart;
+        immutable int curr_testID = ticks / ticksPerTest;
 
-        if (ticks >= ticks_last_fps_log + 60) {
-            ticks_last_fps_log = ticks;
-            Log.logf("Frames per second: %d", hardware.display.display_fps);
+        if (ticks >= ticksLastFPSLog + 60) {
+            ticksLastFPSLog = ticks;
+            logf("Frames per second: %d", hardware.display.displayFps);
         }
-        if (curr_test_id != test_id) {
-            test_id = curr_test_id;
-            prepare_test();
+        if (curr_testID != testID) {
+            testID = curr_testID;
+            prepareTest();
         }
-        run_test();
+        runTest();
     }
 
     void draw()
@@ -75,31 +75,31 @@ class Benchmark {
 
 
 
-    private void prepare_test()
+    private void prepareTest()
     {
         game = null;
         demo = null;
 
         core.memory.GC.collect();
 
-        if (test_id >= 0 && test_id < 4) {
+        if (testID >= 0 && testID < 4) {
             string fn = "./levels/bench/" ~ (
-                test_id == 0 ? "downward-reduction-4p.txt" :
-                test_id == 1 ? "anyway.txt" :
-                test_id == 2 ? "200-gadgets.txt" :
+                testID == 0 ? "downward-reduction-4p.txt" :
+                testID == 1 ? "anyway.txt" :
+                testID == 2 ? "200-gadgets.txt" :
                                "3500-gadgets.txt");
-            Log.logf("Starting test #%d: Level `%s'", test_id, fn);
+            logf("Starting test #%d: Level `%s'", testID, fn);
             Level lv = new Level(new Filename(fn));
             assert (lv.good, "This is a bad level, aborting.");
             game = new Game(lv);
         }
-        else if (test_id >= 4 && test_id < num_tests) {
-            Log.logf("Starting test #%d: Demo, mode %d", test_id, test_id - 3);
-            demo = new Demo(test_id - 3);
+        else if (testID >= 4 && testID < numTests) {
+            logf("Starting test #%d: Demo, mode %d", testID, testID - 3);
+            demo = new Demo(testID - 3);
         }
     }
 
-    private void run_test()
+    private void runTest()
     {
         if (game) game.calc();
         if (demo) demo.calc();

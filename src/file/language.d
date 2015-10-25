@@ -8,7 +8,7 @@ module file.language;
  *
  *      translate the ID
  *
- *  void load_userLanguage_and_if_not_exist_set_userOption_to_english()
+ *  void loadUserLanguageAndIfNotExistSetUserOptionToEnglish()
  *
  *      Should be used by loading the user file, or by the options dialogue.
  *      Both of these write to the user file anyway.
@@ -134,7 +134,7 @@ enum Lang {
     gameSpawnintFaster,
     gamePause,
     gameZoom,
-    gameSpeed_slow,
+    gameSpeedSlow,
     gameSpeedFast,
     gameSpeedTurbo,
     gameStateSave,
@@ -238,189 +238,189 @@ enum Lang {
     winScrollCurrent,
 
     // editor window to set level variables
-    win_var_title,
-    win_var_author,
-    win_var_nameGerman,
-    win_var_nameEnglish,
-    win_var_initial,
-    win_var_required,
-    win_var_spawnintSlow,
-    win_var_spawnintFast,
-    win_var_clock,
+    winVarTitle,
+    winVarAuthor,
+    winVarNameGerman,
+    winVarNameEnglish,
+    winVarInitial,
+    winVarRequired,
+    winVarSpawnintSlow,
+    winVarSpawnintFast,
+    winVarClock,
 
     // editor window to set skills
-    win_skill_title,
-    win_skill_clear,
-    win_skill_classic_8,
-    win_skill_classic_12,
-    win_skill_all_to,
+    winSkillTitle,
+    winSkillClear,
+    winSkillClassic8,
+    winSkillClassic12,
+    winSkillAllTo,
 
     // exporting a level into a file
-    export_single_lix,
-    export_single_spawnint,
-    export_single_clock,
-    export_multi_lix,
-    export_multi_spawnint,
-    export_multi_clock,
+    exportSingleLix,
+    exportSingleSpawnint,
+    exportSingleClock,
+    exportMultiLix,
+    exportMultiSpawnint,
+    exportMultiClock,
 
     // network chat messages
-    net_chat_welcome_1,
-    net_chat_welcome_unstable,
-    net_chat_welcome_2,
-    net_chat_startServer,
-    net_chat_startClient,
-    net_chat_start_cancel,
-    net_chat_disconnection,
-    net_chat_we_too_old,
-    net_chat_we_too_new,
-    net_chat_someone_old,
-    net_chat_someone_new,
-    net_chat_named_guy_old,
-    net_chat_version_yours,
-    net_chat_version_server,
-    net_chat_server_update,
-    net_chat_please_download,
-    net_chat_we_connected,
-    net_chat_we_in_room,
-    net_chat_we_in_room_2,
-    net_chat_we_in_lobby,
-    net_chat_player_in_room,
-    net_chat_player_in_room_2,
-    net_chat_player_in_lobby,
-    net_chat_player_out_room,
-    net_chat_player_out_room_2,
-    net_chat_player_out_lobby,
-    net_chat_level_change,
-    net_game_start,
-    net_game_how_to_chat_1,
-    net_game_how_to_chat_2,
-    net_game_end,
-    net_game_end_result,
-    net_game_overtime_1,
-    net_game_overtime_2,
-    net_game_overtime_2_one,
-    net_game_overtime_3,
-    net_game_overtime_4,
-    net_game_overtime_4_one,
-    net_game_overtime_4_sec,
+    netChatWelcome1,
+    netChatWelcomeUnstable,
+    netChatWelcome2,
+    netChatStartServer,
+    netChatStartClient,
+    netChatStartCancel,
+    netChatDisconnection,
+    netChatWeTooOld,
+    netChatWeTooNew,
+    netChatSomeoneOld,
+    netChatSomeoneNew,
+    netChatNamedGuyOld,
+    netChatVersionYours,
+    netChatVersionServer,
+    netChatServerUpdate,
+    netChatPleaseDownload,
+    netChatWeConnected,
+    netChatWeInRoom,
+    netChatWeInRoom2,
+    netChatWeInLobby,
+    netChatPlayerInRoom,
+    netChatPlayerInRoom2,
+    netChatPlayerInLobby,
+    netChatPlayerOutRoom,
+    netChatPlayerOutRoom2,
+    netChatPlayerOutLobby,
+    netChatLevelChange,
+    netGameStart,
+    netGameHowToChat1,
+    netGameHowToChat2,
+    netGameEnd,
+    netGameEndResult,
+    netGameOvertime1,
+    netGameOvertime2,
+    netGameOvertime2One,
+    netGameOvertime3,
+    netGameOvertime4,
+    netGameOvertime4One,
+    netGameOvertime4Sec,
 
     // Optionsfenster
-    option_title,
-    optionGroup_0,
-    optionGroup_1,
-    optionGroup_2,
-    optionGroup_3,
-    optionGroup_4,
-    optionGroup_5,
-    optionGroup_6,
-    option_userName,
-    option_userNameAsk,
-    option_language,
-    option_replayAutoMax,
-    option_replayAutoSingle,
-    option_replayAutoMulti,
-    option_replayCancel,
-    option_replayCancelAt,
-    option_scrollEdge,
-    option_scrollRight,
-    option_scrollMiddle,
-    option_mouseSpeed,
-    option_scrollSpeedEdge,
-    option_scrollSpeedClick,
-    option_multipleBuilders,
-    option_batterPriority,
-    option_priorityInvertMiddle,
-    option_priorityInvertRight,
+    optionTitle,
+    optionGroup0,
+    optionGroup1,
+    optionGroup2,
+    optionGroup3,
+    optionGroup4,
+    optionGroup5,
+    optionGroup6,
+    optionUserName,
+    optionUserNameAsk,
+    optionLanguage,
+    optionReplayAutoMax,
+    optionReplayAutoSingle,
+    optionReplayAutoMulti,
+    optionReplayCancel,
+    optionReplayCancelAt,
+    optionScrollEdge,
+    optionScrollRight,
+    optionScrollMiddle,
+    optionMouseSpeed,
+    optionScrollSpeedEdge,
+    optionScrollSpeedClick,
+    optionMultipleBuilders,
+    optionBatterPriority,
+    optionPriorityInvertMiddle,
+    optionPriorityInvertRight,
 
-    option_screenWindowed,
-    option_screen_resolution,
-    option_screenWindowed_res,
-    option_screenVsync,
-    option_arrowsReplay,
-    option_arrowsNetwork,
-    option_gameplayHelp,
-    option_debrisAmount,
-    option_debrisAmount_none,
-    option_debrisAmount_own,
-    option_debrisAmount_all,
-    option_debrisType,
-    option_debrisType_stars,
-    option_debrisType_pixels,
-    option_guiColorRed,
-    option_guiColorGreen,
-    option_guiColorBlue,
-    option_info,
-    option_gfx_zero,
-    option_sound_load_driver,
-    option_soundVolume,
-    option_info_sound,
+    optionScreenWindowed,
+    optionScreenResolution,
+    optionScreenWindowedRes,
+    optionScreenVsync,
+    optionArrowsReplay,
+    optionArrowsNetwork,
+    optionGameplayHelp,
+    optionDebrisAmount,
+    optionDebrisAmountNone,
+    optionDebrisAmountOwn,
+    optionDebrisAmountAll,
+    optionDebrisType,
+    optionDebrisTypeStars,
+    optionDebrisTypePixels,
+    optionGuiColorRed,
+    optionGuiColorGreen,
+    optionGuiColorBlue,
+    optionInfo,
+    optionGfxZero,
+    optionSoundLoadDriver,
+    optionSoundVolume,
+    optionInfoSound,
 
-    option_key_unassigned,
-    option_keyForceLeft,
-    option_keyForceRight,
-    option_keyScroll,
-    option_keyPriorityInvert,
-    option_keySpawnintSlower,
-    option_keySpawnintFaster,
-    option_keyPause,
-    option_key_speed_slow,
-    option_keySpeedFast,
-    option_keySpeedTurbo,
-    option_keyRestart,
-    option_keyStateLoad,
-    option_keyStateSave,
-    option_keyZoom,
-    option_keyChat,
-    option_keySpecTribe,
-    option_keyNuke,
-    option_key_info_1,
-    option_key_info_2,
-    option_key_info_3,
+    optionKeyUnassigned,
+    optionKeyForceLeft,
+    optionKeyForceRight,
+    optionKeyScroll,
+    optionKeyPriorityInvert,
+    optionKeySpawnintSlower,
+    optionKeySpawnintFaster,
+    optionKeyPause,
+    optionKeySpeedSlow,
+    optionKeySpeedFast,
+    optionKeySpeedTurbo,
+    optionKeyRestart,
+    optionKeyStateLoad,
+    optionKeyStateSave,
+    optionKeyZoom,
+    optionKeyChat,
+    optionKeySpecTribe,
+    optionKeyNuke,
+    optionKeyInfo1,
+    optionKeyInfo2,
+    optionKeyInfo3,
 
-    option_keyMenuOkay,
-    option_keyMenuEdit,
-    option_keyMenuExport,
-    option_keyMenuDelete,
-    option_keyMenuUpDir,
-    option_keyMenuUpBy1,
-    option_keyMenuUpBy5,
-    option_keyMenuDownBy1,
-    option_keyMenuDownBy5,
-    option_keyMenuExit,
+    optionKeyMenuOkay,
+    optionKeyMenuEdit,
+    optionKeyMenuExport,
+    optionKeyMenuDelete,
+    optionKeyMenuUpDir,
+    optionKeyMenuUpBy1,
+    optionKeyMenuUpBy5,
+    optionKeyMenuDownBy1,
+    optionKeyMenuDownBy5,
+    optionKeyMenuExit,
 
-    option_ed_left,
-    option_ed_right,
-    option_ed_up,
-    option_ed_down,
-    option_ed_copy,
-    option_ed_delete,
-    option_ed_grid,
-    option_ed_sel_all,
-    option_ed_sel_frame,
-    option_ed_sel_add,
-    option_ed_foreground,
-    option_ed_background,
-    option_ed_mirror,
-    option_ed_rotate,
-    option_ed_dark,
-    option_ed_noow,
-    option_ed_zoom,
-    option_ed_help,
-    option_ed_menu_size,
-    option_ed_menu_vars,
-    option_ed_menu_skills,
-    option_ed_addTerrain,
-    option_ed_addSteel,
-    option_ed_addHatch,
-    option_ed_addGoal,
-    option_ed_addDeco,
-    option_ed_addHazard,
-    option_ed_grid_custom,
+    optionEdLeft,
+    optionEdRight,
+    optionEdUp,
+    optionEdDown,
+    optionEdCopy,
+    optionEdDelete,
+    optionEdGrid,
+    optionEdSelAll,
+    optionEdSelFrame,
+    optionEdSelAdd,
+    optionEdForeground,
+    optionEdBackground,
+    optionEdMirror,
+    optionEdRotate,
+    optionEdDark,
+    optionEdNoow,
+    optionEdZoom,
+    optionEdHelp,
+    optionEdMenuSize,
+    optionEdMenuVars,
+    optionEdMenuSkills,
+    optionEdAddTerrain,
+    optionEdAddSteel,
+    optionEdAddHatch,
+    optionEdAddGoal,
+    optionEdAddDeco,
+    optionEdAddHazard,
+    optionEdGridCustom,
 
     // mini-dialogue to greet a new player
-    optionNew_player_title,
-    optionNew_player_first,
-    optionNew_player_second,
+    optionNewPlayerTitle,
+    optionNewPlayerFirst,
+    optionNewPlayerSecond,
 
     // This should never be output or read in. Arrays should be created
     // with this as the size, and shouldn't have this as an index.
@@ -441,64 +441,65 @@ transl(in Lang key)
 
 
 public void
-load_userLanguage_and_if_not_exist_set_userOption_to_english()
+loadUserLanguageAndIfNotExistSetUserOptionToEnglish()
 {
     IoLine[] lines;
-    try
+    try {
         lines = fillVectorFromFile(fileLanguage);
+    }
     catch (Exception e) {
-        Log.log(e.msg);
+        log(e.msg);
         if (fileLanguage != fileLanguageEnglish) {
-            Log.log("Falling back to English.");
+            log("Falling back to English.");
             fileLanguage = new Filename(fileLanguageEnglish);
-            load_userLanguage_and_if_not_exist_set_userOption_to_english();
+            loadUserLanguageAndIfNotExistSetUserOptionToEnglish();
             return;
         }
         else {
-            Log.log("English language file not found. Broken installation?");
+            log("English language file not found. Broken installation?");
             return;
         }
     }
     // from here on, the user's language (fileLanguage) is not used anymore
 
-    bool[Lang.MAX] lang_ids_read_in; // all false right now
-    bool fn_written_to_log = false;
+    bool[Lang.MAX] langIdsReadIn; // all false right now
+    bool fnWrittenToLog = false;
 
-    void local_logf(T...)(string formatstr, T formatargs)
+    void localLogf(T...)(string formatstr, T formatargs)
     {
-        if (! fn_written_to_log) {
-            fn_written_to_log = true;
-            Log.logf("While reading `%s':", fileLanguage.rootless);
+        if (! fnWrittenToLog) {
+            fnWrittenToLog = true;
+            logf("While reading `%s':", fileLanguage.rootless);
         }
-        Log.logf("  " ~ formatstr, formatargs);
+        logf("  " ~ formatstr, formatargs);
     }
 
     foreach (line; lines) {
         if (line.type != '$') continue;
 
-        // now come lines in the format $lang_id my translated unquoted string
-        Lang lang_id;
+        // now come lines in the format $langId my translated unquoted string
+        Lang langId;
         try {
-            lang_id = to!Lang(line.text1);
+            langId = to!Lang(line.text1);
         }
         catch (ConvException) {
-            local_logf("Unnecessary line: %s", line.text1);
+            localLogf("Unnecessary line: %s", line.text1);
             continue;
         }
-        // now lang_id is a good index
-        lang[lang_id] = line.text2;
-        lang_ids_read_in[lang_id] = true;
+        // now langId is a good index
+        lang[langId] = line.text2;
+        langIdsReadIn[langId] = true;
     }
     // end foreach line
 
     // warn about undefined language IDs
     foreach (int id; 0 .. Lang.MAX) {
-        if (! lang_ids_read_in[id]) {
-            string lang_id_str = id.to!Lang.to!string;
-            local_logf("New translation required: %s", lang_id_str);
-            lang[id] = "!" ~ lang_id_str ~ "!";
+        if (! langIdsReadIn[id]) {
+            string langIdStr = id.to!Lang.to!string;
+            localLogf("New translation required: %s", langIdStr);
+            lang[id] = "!" ~ langIdStr ~ "!";
         }
     }
     // end foreach for undefined IDs
 }
-// end function load_language_file
+// end function loadLanguageFile

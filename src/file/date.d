@@ -104,12 +104,12 @@ int
 opCmp(in Date rhs) const
 {
     return year   < rhs.year   ? -1 : year   > rhs.year   ? 1
-     :     month  < rhs.month  ? -1 : month  > rhs.month  ? 1
-     :     day    < rhs.day    ? -1 : day    > rhs.day    ? 1
-     :     hour   < rhs.hour   ? -1 : hour   > rhs.hour   ? 1
-     :     minute < rhs.minute ? -1 : minute > rhs.minute ? 1
-     :     second < rhs.second ? -1 : second > rhs.second ? 1
-     : 0;
+        :  month  < rhs.month  ? -1 : month  > rhs.month  ? 1
+        :  day    < rhs.day    ? -1 : day    > rhs.day    ? 1
+        :  hour   < rhs.hour   ? -1 : hour   > rhs.hour   ? 1
+        :  minute < rhs.minute ? -1 : minute > rhs.minute ? 1
+        :  second < rhs.second ? -1 : second > rhs.second ? 1
+        :  0;
 }
 
 }

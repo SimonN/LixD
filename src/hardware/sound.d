@@ -10,9 +10,9 @@ import file.search; // file exists
 /*  void initialize();
  *  void deinitialize();
  *
- *  void play_loud   (in Sound);
- *  void play_quiet  (in Sound);
- *  void play_loud_if(in Sound, in bool);
+ *  void playLoud   (in Sound);
+ *  void playQuiet  (in Sound);
+ *  void playLoudIf(in Sound, in bool);
  *
  *  void draw();
  *
@@ -67,13 +67,13 @@ void initialize()
 {
     // assumes Allegro has been initialized, but audio hasn't been initialized
     if (! al_install_audio()) {
-        Log.log("Allegro 5 can't install audio");
+        log("Allegro 5 can't install audio");
     }
     if (! al_init_acodec_addon()) {
-        Log.log("Allegro 5 can't install codecs");
+        log("Allegro 5 can't install codecs");
     }
     if (! al_reserve_samples(8)) {
-        Log.log("Allegro 5 can't reserve 8 samples.");
+        log("Allegro 5 can't reserve 8 samples.");
     }
 
     Sample load(in string str)
@@ -137,35 +137,35 @@ void deinitialize()
 
 
 
-void play_loud(in Sound id)
+void playLoud(in Sound id)
 {
     assert (samples[id] !is null);
-    samples[id].set_loud();
+    samples[id].scheduleLoud();
 }
 
 
 
-void play_quiet(in Sound id)
+void playQuiet(in Sound id)
 {
     assert (samples[id] !is null);
-    samples[id].set_quiet();
+    samples[id].scheduleQuiet();
 }
 
 
 
-void play_loud_if(in Sound id, in bool loud)
+void playLoudIf(in Sound id, in bool loud)
 {
-    if (loud) samples[id].set_loud();
-    else      samples[id].set_quiet();
+    if (loud) samples[id].scheduleLoud();
+    else      samples[id].scheduleQuiet();
 }
 
 
 
 void draw()
 {
-    foreach (ref sample; samples) {
-        if (sample !is null) sample.draw();
-    }
+    foreach (ref sample; samples)
+        if (sample !is null)
+            sample.draw();
 }
 
 
@@ -174,31 +174,31 @@ private Sample[Sound.MAX] samples;
 
 private class Sample {
 
-    this();
-    this(in Filename);
-    // ~this(); -- exists, see below
-
-    const(Filename) get_filename() const { return filename; }
-    bool get_unique() const        { return unique; }
-    void set_unique(in bool b = true) { unique = b; }
-    void set_loud  (in bool b = true) { loud   = b; }
-    void set_quiet (in bool b = true) { quiet  = b; }
-
-    void draw();
-    void stop();
+/*  this();
+ *  this(in Filename);
+ *  ~this();
+ *
+ *  void draw();
+ *  void stop();
+ */
+    const(Filename) filename() const { return _filename; }
+    @property bool unique() const    { return _unique;     }
+    @property bool unique(in bool b) { return _unique = b; }
+    void scheduleLoud (in bool b = true) { _loud  = b; }
+    void scheduleQuiet(in bool b = true) { _quiet = b; }
 
 private:
 
     alias ALLEGRO_SAMPLE*   AlSamp;
     alias ALLEGRO_SAMPLE_ID PlayId;
 
-    const(Filename) filename;
-    AlSamp  sample;
-    PlayId  play_id;
-    bool    unique;        // if true, kill old sound before playing again
-    bool    loud;          // if true, scheduled to be played normally
-    bool    quiet;         // if true, scheduled to be played quietly
-    bool    last_was_loud;
+    const(Filename) _filename;
+    AlSamp _sample;
+    PlayId _playID;
+    bool   _unique;        // if true, kill old sound before playing again
+    bool   _loud;          // if true, scheduled to be played normally
+    bool   _quiet;         // if true, scheduled to be played quietly
+    bool   _lastWasLoud;
 
 
 
@@ -206,23 +206,24 @@ public:
 
 this()
 {
-    filename = null;
-    unique = true;
+    _filename = null;
+    _unique = true;
 }
 
 
 
 this(in Filename fn)
 {
-    filename = fn;
-    unique = true;
-    sample = al_load_sample(fn.rootfulZ);
-    if (! sample) {
-        if (! fn.file_exists())
-            Log.logf("Missing sound file `%s'", fn.rootful);
+    _filename = fn;
+    _unique = true;
+    _sample = al_load_sample(fn.rootfulZ);
+    if (! _sample) {
+        if (! fn.fileExists()) {
+            logf("Missing sound file `%s'", fn.rootful);
+        }
         else {
-            Log.logf("Can't decode sound file `%s'.", fn.rootful);
-            log_ogg_error_if_necessary();
+            logf("Can't decode sound file `%s'.", fn.rootful);
+            logOggErrorIfNecessary();
         }
     }
 }
@@ -230,13 +231,13 @@ this(in Filename fn)
 
 
 private void
-log_ogg_error_if_necessary()
+logOggErrorIfNecessary()
 {
-    static bool was_logged = false;
-    if (! was_logged) {
-        was_logged = true;
-        Log.log("  Make sure this is really an .ogg file. If it is,");
-        Log.log("  check if Allegro 5 has been compiled with .ogg support.");
+    static bool wasLogged = false;
+    if (! wasLogged) {
+        wasLogged = true;
+        log("  Make sure this is really an .ogg file. If it is,");
+        log("  check if Allegro 5 has been compiled with .ogg support.");
     }
 }
 
@@ -244,8 +245,8 @@ log_ogg_error_if_necessary()
 
 ~this()
 {
-    if (sample) al_destroy_sample(sample);
-    sample = null;
+    if (_sample) al_destroy_sample(_sample);
+    _sample = null;
 }
 
 
@@ -253,40 +254,41 @@ log_ogg_error_if_necessary()
 // draw plays each sample if it was scheduled by setting (loud) or (quiet)
 void draw()
 {
-    if (! sample) return;
+    if (! _sample)
+        return;
 
     // the user setting allows sound volumes between 0 and 20.
     // The setting 10 corresponds to Allegro 5's default volume of 1.0.
     // Allegro 5 can work with higher settings than 1.0.
-    float our_volume() { return 1.0f * soundVolume / 10; }
+    float ourVolume() { return 1.0f * soundVolume / 10; }
 
-    if (unique && (loud || (quiet && !last_was_loud))) {
+    if (_unique && (_loud || (_quiet && !_lastWasLoud))) {
         stop();
     }
-    if (loud) {
-        last_was_loud = true;
-        auto b = al_play_sample(sample, our_volume(),
+    if (_loud) {
+        _lastWasLoud = true;
+        auto b = al_play_sample(_sample, ourVolume(),
          ALLEGRO_AUDIO_PAN_NONE,
          1.0f, // speed factor
-         ALLEGRO_PLAYMODE.ALLEGRO_PLAYMODE_ONCE, &play_id);
+         ALLEGRO_PLAYMODE.ALLEGRO_PLAYMODE_ONCE, &_playID);
     }
-    else if (quiet) {
-        last_was_loud = false;
-        al_play_sample(sample, 0.25f * our_volume(),
+    else if (_quiet) {
+        _lastWasLoud = false;
+        al_play_sample(_sample, 0.25f * ourVolume(),
          ALLEGRO_AUDIO_PAN_NONE,
-         1.0f, ALLEGRO_PLAYMODE.ALLEGRO_PLAYMODE_ONCE, &play_id);
+         1.0f, ALLEGRO_PLAYMODE.ALLEGRO_PLAYMODE_ONCE, &_playID);
     }
     // reset the scheduling variables
-    loud  = false;
-    quiet = false;
+    _loud  = false;
+    _quiet = false;
 }
 
 
 
 void stop()
 {
-    static PlayId null_id;
-    if (play_id != null_id) al_stop_sample(&play_id);
+    static PlayId _nullID;
+    if (_playID != _nullID) al_stop_sample(&_playID);
 }
 
 }

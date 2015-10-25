@@ -56,7 +56,7 @@ implGameDraw(Game game) { with (game)
         drawText(djvuM, "[ESC] aborts. Please don't hit [ESC] during benchmarking.",
             10, 40, graphic.color.color.white);
         drawText(djvuM, std.string.format("Frames per second: %d",
-            display_fps), 10, 70, graphic.color.color.white);
+            displayFps), 10, 70, graphic.color.color.white);
     }
 
     static if (false) {

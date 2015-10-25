@@ -21,7 +21,7 @@ import level.tilelib;
  * of random things created here.
  * the loop runs by itself until ESC is pressed, because it's an old class.
  *
- *  void main_loop()
+ *  void mainLoop()
  *
  *      create an object and call this method once, then kill the demo.
  */
@@ -177,7 +177,7 @@ calc()
         typetext = basics.help.backspace(typetext);
     }
     if (keyTapped(ALLEGRO_KEY_A)) {
-        play_loud(Sound.CLOCK);
+        playLoud(Sound.CLOCK);
     }
 
     import basics.user;
@@ -200,7 +200,7 @@ calc()
     import basics.globconf;
     import basics.versioning;
     import file.language;
-    drtx(transl(Lang.net_chat_welcome_unstable)
+    drtx(transl(Lang.netChatWelcomeUnstable)
         ~ " or enjoy hacking in D. " ~ gameVersion().toString(), 20, 360);
 
     static bool showstring = false;
@@ -227,7 +227,7 @@ calc()
         }
     }
     if (tick % 240 == 0) {
-        play_loud(Sound.HATCH_OPEN);
+        playLoud(Sound.HATCH_OPEN);
     }
 
     import level.tilelib;
