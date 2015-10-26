@@ -83,9 +83,10 @@ public:
 
 this(Filename fn = null)
 {
-    _gameVersionRequired   = gameVersion();
-    _levelBuiltRequired = new Date("0");
-    _levelFilename = fn ? fn : new Filename("");
+    _gameVersionRequired = gameVersion();
+    _levelBuiltRequired  = new Date("0");
+    _levelFilename       = fn ? fn : new Filename("");
+    _permu               = new Permu(1);
 
     if (fn)
         this.loadFromFile(fn);

@@ -27,8 +27,8 @@ struct AcFunc {
     bool  leaving;
     bool  blockable;
 
-    Sound sound_assign;
-    Sound sound_become;
+    Sound soundAssign;
+    Sound soundBecome;
 
     void function(Lixxie) assclk;
     void function(Lixxie) become;
@@ -41,7 +41,7 @@ static this()
 {
     foreach (ref acf; ac_func) {
         acf.blockable = true;
-        acf.sound_assign = Sound.ASSIGN;
+        acf.soundAssign = Sound.ASSIGN;
     }
 
     // DTODO: Uncomment these as they get implemented, or assign them
@@ -114,7 +114,7 @@ static this()
     ac_func[Ac.EXPLODER]  .leaving =
     ac_func[Ac.CUBER]     .leaving = true;
 
-    ac_func[Ac.SPLATTER]  .sound_become = Sound.SPLAT;
-    ac_func[Ac.BURNER]    .sound_become = Sound.FIRE;
-    ac_func[Ac.DROWNER]   .sound_become = Sound.WATER;
+    ac_func[Ac.SPLATTER]  .soundBecome = Sound.SPLAT;
+    ac_func[Ac.BURNER]    .soundBecome = Sound.FIRE;
+    ac_func[Ac.DROWNER]   .soundBecome = Sound.WATER;
 }

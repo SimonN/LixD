@@ -126,7 +126,7 @@ updateOneData(
                         psk->first, upd, i->what);
                     effect.add_arrow(upd, t, i->what, arr);
                 }
-                Sound::Id snd = Lixxie::get_ac_func(psk->first).sound_assign;
+                Sound::Id snd = Lixxie::get_ac_func(psk->first).soundAssign;
                 if (m == malo)
                     effect.add_sound      (upd, t, i->what, snd);
                 else if (&t == trlo)
@@ -159,7 +159,7 @@ void updateClock(Game game) { with (game)
     // Wir muessen dies nach dem Replayauswerten machen, um festzustellen,
     // dass noch kein Nuke-Ereignis im Replay ist.
     if (multiplayer && cs.clock_running &&
-     cs.clock <= (unsigned long) Lixxie::updates_for_bomb)
+     cs.clock <= (unsigned long) Lixxie::updatesForBomb)
      for (Tribe::It tr = cs.tribes.begin(); tr != cs.tribes.end(); ++tr) {
         if (!tr->nuke) {
             // Paket anfertigen
@@ -227,12 +227,14 @@ void
 spawnLixxiesFromHatches(Game game) { with (game.cs)
 {
     foreach (int teamNumber, Tribe tribe; tribes) {
-        immutable int position = game.replay.permu[teamNumber];
         if (tribe.lixHatch != 0
             && update >= 60
             && update >= tribe.updatePreviousSpawn + tribe.spawnint
         ) {
-            const(Gadget) hatch = hatches[tribe.hatchNextSpawn];
+            assert (game.replay);
+            assert (game.replay.permu);
+            immutable int position = game.replay.permu[teamNumber];
+            const(Gadget) hatch    = hatches[tribe.hatchNextSpawn];
             Lixxie newLix = new Lixxie(tribe,
                 hatch.x + hatch.tile.triggerX,
                 hatch.y + hatch.tile.triggerY);
@@ -267,17 +269,17 @@ updateNuke(Game game)
         // Assign exploders in case of nuke
         if (t->nuke == true)
          for (LixIt i = t->lixvec.begin(); i != t->lixvec.end(); ++i) {
-            if (i->get_updates_since_bomb() == 0 && ! i->get_leaving()) {
-                i->inc_updates_since_bomb();
+            if (i->get_updatesSinceBomb() == 0 && ! i->get_leaving()) {
+                i->inc_updatesSinceBomb();
                 // Which exploder shall be assigned?
                 if (cs.tribes.size() > 1) {
-                    i->set_exploder_knockback();
+                    i->set_exploderKnockback();
                 }
                 else for (Level::CSkIt itr =  t->skills.begin();
                                        itr != t->skills.end(); ++itr
                 ) {
                     if (itr->first == LixEn::EXPLODER2) {
-                        i->set_exploder_knockback();
+                        i->set_exploderKnockback();
                         break;
                     }
                 }
@@ -319,7 +321,7 @@ updateLixxies(Game game)
         }
     }
     // Third pass (if necessary): finally becoming flingers
-    if (Lixxie::get_any_new_flingers()) {
+    if (Lixxie::anyNewFlingers()) {
         for (Tribe::It t = cs.tribes.begin(); t != cs.tribes.end(); ++t)
          for (LixIt i = t->lixvec.begin(); i != t->lixvec.end(); ++i) {
             if (i->get_flingNew()) finally_fling(*i);

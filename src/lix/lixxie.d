@@ -45,7 +45,7 @@ private:
     bool _flingNew;
     bool _flingBySameTribe;
 
-    static bool _any_new_flingers;
+    static bool _anyNewFlingers;
 
     int  _frame;
 
@@ -59,9 +59,9 @@ private:
 
 public:
 
-    static immutable int distance_safe_fall = 126;
-    static immutable int distance_float     =  60;
-    static immutable int updates_for_bomb   =  75;
+    static immutable int distanceSafeFall = 126;
+    static immutable int distanceFloat    =  60;
+    static immutable int updatesForBomb   =  75;
 
     static Torbit        land;
     static Lookup        lookup;
@@ -78,8 +78,8 @@ public:
     bool climber;
     bool floater;
 
-    int  updates_since_bomb;
-    bool exploder_knockback;
+    int  updatesSinceBomb;
+    bool exploderKnockback;
 
 
 
@@ -89,7 +89,7 @@ public:
  */
     mixin CloneableBase;
 
-    static bool get_any_new_flingers() { return _any_new_flingers; }
+    static bool anyNewFlingers() { return _anyNewFlingers; }
 
     inout(Tribe) tribe() inout { return _tribe; }
           Style  style() const { return _style; }
@@ -111,14 +111,14 @@ public:
 
     @property Ac ac() const { return _ac; }
 
-    void set_ac_without_calling_become(in Ac new_ac) { _ac = new_ac; }
+    void setAcWithoutCallingBecome(in Ac new_ac) { _ac = new_ac; }
 
     @property bool pass_top () const { return ac_func[ac].pass_top;  }
     @property bool leaving  () const { return ac_func[ac].leaving;   }
     @property bool blockable() const { return ac_func[ac].blockable; }
 
-    @property Sound sound_assign() const { return ac_func[ac].sound_assign; }
-    @property Sound sound_become() const { return ac_func[ac].sound_become; }
+    @property Sound soundAssign() const { return ac_func[ac].soundAssign; }
+    @property Sound soundBecome() const { return ac_func[ac].soundBecome; }
 
     @property bool flingNew() const { return _flingNew; }
     @property int  flingX()   const { return _flingX;   }
@@ -130,15 +130,15 @@ public:
  *  bool getSteel         (in int = 0, in int = 0);
  *
  *  void add_land          (in int = 0, in int = 0, in AlCol = color.transp);
- *  void add_land_absolute (in int = 0, in int = 0, in AlCol = color.transp);
+ *  void addLandAbsolute (in int = 0, in int = 0, in AlCol = color.transp);
  *
  *      don't call add_land from the skills, use draw_pixel. That amends
  *      the x-direction by left-looking lixes by the desired 1 pixel. Kludge:
  *      Maybe remove add_land entirely and put the functionality in draw_pixel?
  *
- *  bool is_solid          (in int = 0, in int = 2);
- *  bool is_solid_single   (in int = 0, in int = 2);
- *  int  solid_wall_height (in int = 0, in int = 0);
+ *  bool isSolid          (in int = 0, in int = 2);
+ *  bool isSolidSingle   (in int = 0, in int = 2);
+ *  int  solidWallHeight (in int = 0, in int = 0);
  *  int  count_solid       (int, int, int, int);
  *  int  count_steel       (int, int, int, int);
  *
@@ -220,7 +220,7 @@ this(Lixxie rhs)
 
     _flingX = rhs._flingX;
     _flingY = rhs._flingY;
-    _flingNew           = rhs._flingNew;
+    _flingNew         = rhs._flingNew;
     _flingBySameTribe = rhs._flingBySameTribe;
 
     _enc_body = rhs._enc_body;
@@ -235,8 +235,8 @@ this(Lixxie rhs)
     climber   = rhs.climber;
     floater   = rhs.floater;
 
-    updates_since_bomb = rhs.updates_since_bomb;
-    exploder_knockback = rhs.exploder_knockback;
+    updatesSinceBomb = rhs.updatesSinceBomb;
+    exploderKnockback = rhs.exploderKnockback;
 }
 
 
@@ -248,7 +248,7 @@ invariant()
 
 
 
-static void set_static_maps(Torbit tb, Lookup lo, Map ma)
+static void setStaticMaps(Torbit tb, Lookup lo, Map ma)
 {
     land = tb;
     lookup = lo;
@@ -340,7 +340,7 @@ void addFling(in int px, in int py, in bool same_tribe)
 {
     if (_flingBySameTribe && same_tribe) return;
 
-    _any_new_flingers    = true;
+    _anyNewFlingers    = true;
     _flingBySameTribe = (_flingBySameTribe || same_tribe);
     _flingNew = true;
     _flingX   += px;
@@ -351,7 +351,7 @@ void addFling(in int px, in int py, in bool same_tribe)
 
 void resetFlingNew()
 {
-    _any_new_flingers = false;
+    _anyNewFlingers   = false;
     _flingNew         = false;
     _flingBySameTribe = false;
     _flingX           = 0;
@@ -376,40 +376,40 @@ static bool getSteel_absolute(in int x, in int y)
 
 void add_land(in int px, in int py, const AlCol col)
 {
-    add_land_absolute(_ex + px * _dir, _ey + py, col);
+    addLandAbsolute(_ex + px * _dir, _ey + py, col);
 }
 
 
 
 // this one could be static
-void add_land_absolute(in int x = 0, in int y = 0, in AlCol col = color.transp)
+void addLandAbsolute(in int x = 0, in int y = 0, in AlCol col = color.transp)
 {
     // DTODOVRAM: land.setPixel should be very slow, think hard
     land.setPixel(x, y, col);
-    lookup.add    (x, y, Lookup.bitTerrain);
+    lookup.add   (x, y, Lookup.bitTerrain);
 }
 
 
 
-bool is_solid(in int px, in int py)
+bool isSolid(in int px, in int py)
 {
     return lookup.getSolidEven(_ex + px * _dir, _ey + py);
 }
 
 
 
-bool is_solid_single(in int px, in int py)
+bool isSolidSingle(in int px, in int py)
 {
     return lookup.getSolid(_ex + px * _dir, _ey + py);
 }
 
 
 
-int solid_wall_height(in int px, in int py)
+int solidWallHeight(in int px, in int py)
 {
     int solid = 0;
     for (int i = 1; i > -12; --i) {
-        if (is_solid(px, py + i)) ++solid;
+        if (isSolid(px, py + i)) ++solid;
         else break;
     }
     return solid;
@@ -424,7 +424,7 @@ int count_solid(int x1, int y1, int x2, int y2)
     int ret = 0;
     for (int ix = basics.help.even(x1); ix <= even(x2); ix += 2) {
         for (int iy = y1; iy <= y2; ++iy) {
-            if (is_solid(ix, iy)) ++ret;
+            if (isSolid(ix, iy)) ++ret;
         }
     }
     return ret;
@@ -459,7 +459,7 @@ bool remove_pixel(int px, in int py)
     if (_dir < 0) --px;
 
     // test whether the landscape can be dug
-    if (! getSteel(px, py) && is_solid(px, py)) {
+    if (! getSteel(px, py) && isSolid(px, py)) {
         lookup.rm     (_ex + px * _dir, _ey + py, Lookup.bitTerrain);
         land.setPixel(_ex + px * _dir, _ey + py, color.transp);
         return false;
@@ -503,7 +503,7 @@ void draw_pixel(int px, in int py, in AlCol col)
     // this amendmend is only in draw_pixel() and remove_pixel()
     if (_dir < 0) --px;
 
-    if (! is_solid_single(px, py)) add_land(px, py, col);
+    if (! isSolidSingle(px, py)) add_land(px, py, col);
 }
 
 
@@ -607,7 +607,7 @@ override void draw()
     super.yf = ac;
 
     // draw the fuse if necessary
-    if (updates_since_bomb > 0) {
+    if (updatesSinceBomb > 0) {
         immutable XY fuseXy = get_fuseXy();
         immutable int fuseX = fuseXy.x;
         immutable int fuseY = fuseXy.y;
@@ -617,10 +617,10 @@ override void draw()
 
         int x = 0;
         int y = 0;
-        for (; -y < (updates_for_bomb - updates_since_bomb)/5+1; --y) {
+        for (; -y < (updatesForBomb - updatesSinceBomb)/5+1; --y) {
             /*
             // DTODOVRAM: decide on how to draw the pixel-rendered fuse
-            const int u = updates_since_bomb;
+            const int u = updatesSinceBomb;
             x           = (int) (std::sin(u/2.0) * 0.02 * (y-4) * (y-4));
             tb.setPixel(fuseX + x-1, fuseY + y-1, color[COL_GREY_FUSE_L]);
             tb.setPixel(fuseX + x-1, fuseY + y  , color[COL_GREY_FUSE_L]);
@@ -633,7 +633,7 @@ override void draw()
         cb.draw(groundMap,
          fuseX + x - cb.xl/2,
          fuseY + y - cb.yl/2,
-         updates_since_bomb % cb.xfs, 0);
+         updatesSinceBomb % cb.xfs, 0);
     }
     // end of drawing the fuse
 
@@ -667,8 +667,8 @@ int get_priority(
     if (ac == Ac.NOTHING || ac_func[ac].leaving) return 0;
 
     // Permanent skills
-    if ((new_ac == Ac.EXPLODER  && updates_since_bomb > 0)
-     || (new_ac == Ac.EXPLODER2 && updates_since_bomb > 0)
+    if ((new_ac == Ac.EXPLODER  && updatesSinceBomb > 0)
+     || (new_ac == Ac.EXPLODER2 && updatesSinceBomb > 0)
      || (new_ac == Ac.RUNNER    && runner)
      || (new_ac == Ac.CLIMBER   && climber)
      || (new_ac == Ac.FLOATER   && floater) ) return 1;
@@ -741,7 +741,7 @@ int get_priority(
 
     }
     p += (new_ac == Ac.BATTER && batterPriority
-          ? (- updates_since_bomb) : updates_since_bomb);
+          ? (- updatesSinceBomb) : updatesSinceBomb);
     p += 400 * runner + 200 * climber + 100 * floater;
     return p;
 }

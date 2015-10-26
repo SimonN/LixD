@@ -160,8 +160,16 @@ class Permu {
         }
     }
 
-    @property int size()          const { return p.len; }
-    PlNr          opIndex(int id) const { return p[id]; }
+    @property int size() const { return p.len; }
+
+    PlNr opIndex(int id) const
+    {
+        if (id >= 0 && id < p.len)
+            return p[id];
+        else
+            // outside of the permuted range, pad with the identity
+            return id & 0xFF;
+    }
 
     deprecated("cut off, or erase too high values?") void
     shortenTo(int newSize)
