@@ -4,23 +4,30 @@ module game.gameupd;
  * With fast forward, it's called more often; during pause, never.
  */
 
+import basics.help : len;
 import basics.cmdargs : Runmode;
 import basics.nettypes;
 import game;
 import graphic.gadget;
+import lix.lixxie;
 
+// This should be called on a regular basis to advance physics, while
+// syncing things that must be done immediately before the advancement.
 package void
 syncNetworkThenUpdateOnce(Game game)
 {
-    game.finalizeInputBeforeUpdate();
+    game.putSpawnintChangesIntoReplay();
+    game.putNetworkDataIntoReplay();
     game.updateOnceWithoutSyncingNetwork();
 }
 
 
 
+// This is the main function that gets executed once per physics update.
 package void
 updateOnceWithoutSyncingNetwork(Game game)
 {
+    assert (game);
     assert (game.cs);
     ++game.cs.update;
     game.evaluateReplayData();
@@ -40,12 +47,8 @@ updateOnceWithoutSyncingNetwork(Game game)
 
 private:
 
-void
-finalizeInputBeforeUpdate(Game game)
-{
-    // put spawn interval into replay
-    // get network data and put it into replay vector
-}
+void putSpawnintChangesIntoReplay(Game game) { }
+void putNetworkDataIntoReplay(Game game) { }
 
 
 
@@ -221,48 +224,36 @@ void updateClock(Game game) { with (game)
 
 
 void
-spawnLixxiesFromHatches(Game game)
+spawnLixxiesFromHatches(Game game) { with (game.cs)
 {
-    /+
-    for (Tribe::It t = cs.tribes.begin(); t != cs.tribes.end(); ++t)
-    {
-        const int position = replay.get_permu()[t - cs.tribes.begin()];
-        // Create new Lixxie if necessary
-        if (t->lix_hatch != 0 && upd >= 60 &&
-         (t->update_hatch == 0 || upd >= t->update_hatch + t->spawnint))
-            // sometimes, spawnint can be more than 60. In this case, it's fine
-            // to spawn earlier than usual if we haven't spawned anything at
-            // all yet, this is the first || criterion.
-        {
-            t->update_hatch = upd;
-            const EdGraphic& h = hatches[t->hatch_next];
-            Lixxie& newlix = t->lixvec[level.initial - t->lix_hatch];
-            newlix = Lixxie(&*t,
-             h.get_x() + h.get_object()->get_trigger_x(),
-             h.get_y() + h.get_object()->get_trigger_y());
-            --t->lix_hatch;
-            ++t->lix_out;
+    foreach (int teamNumber, Tribe tribe; tribes) {
+        immutable int position = game.replay.permu[teamNumber];
+        if (tribe.lixHatch != 0
+            && update >= 60
+            && update >= tribe.updatePreviousSpawn + tribe.spawnint
+        ) {
+            const(Gadget) hatch = hatches[tribe.hatchNextSpawn];
+            Lixxie newLix = new Lixxie(tribe,
+                hatch.x + hatch.tile.triggerX,
+                hatch.y + hatch.tile.triggerY);
+            tribe.lixvec ~= newLix;
+            --tribe.lixHatch;
+            ++tribe.lixOut;
+            tribe.updatePreviousSpawn = update;
 
-            // Lixes start walking to the left instead of right?
-            bool turn_new_lix = false;
-            if (h.get_rotation()) turn_new_lix = true;
-            // This extra turning solution here is necessary to make
-            // some L1 and ONML two-player levels better playable.
-            if (hatches.size() < cs.tribes.size()
-             && (position / hatches.size()) % 2 == 1) turn_new_lix = true;
-
-            if (turn_new_lix) {
-                newlix.turn();
-                newlix.move_ahead();
+            bool walkLeftInsteadOfRight = hatch.rotation
+                // This extra turning solution here is necessary to make
+                // some L1 and ONML two-player levels playable better.
+                || (hatches.len < tribes.len && (position/hatches.len)%2 == 1);
+            if (walkLeftInsteadOfRight) {
+                newLix.turn();
+                newLix.moveAhead();
             }
-
-            // It's the next hatches turn
-            t->hatch_next += cs.tribes.size();
-            t->hatch_next %= hatches.size();
+            tribe.hatchNextSpawn += tribes.len;
+            tribe.hatchNextSpawn %= hatches.len;
         }
     }
-    +/
-}
+}}
 // end spawnLixxiesFromHatches()
 
 

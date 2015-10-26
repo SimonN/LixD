@@ -99,9 +99,9 @@ public:
 /*  @property int ex(in int);
  *  @property int ey(in int);
  *
- *  void move_ahead(   int = 2);
- *  void move_down (   int = 2);
- *  void move_up   (in int = 2);
+ *  void moveAhead(int = 2);
+ *  void move_down(int = 2);
+ *  void move_up  (int = 2);
  */
     @property int dir() const   { return _dir; }
     @property int dir(in int i) { return _dir = (i>0)?1 : (i<0)?-1 : _dir; }
@@ -301,7 +301,7 @@ ey(in int n) {
 
 
 
-void move_ahead(int plus_x)
+void moveAhead(int plus_x = 2)
 {
     plus_x = even(plus_x);
     plus_x *= _dir;

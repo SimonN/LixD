@@ -12,6 +12,7 @@ import basics.help;
 import basics.nettypes;
 import lix.enums;
 import lix.lixxie;
+import level.level; // spawnintMax
 
 class Tribe {
 
@@ -40,9 +41,9 @@ class Tribe {
         int  spawnint     = 32;
         bool nuke;
 
-        int update_hatch;
-        int update_saved; // last lix saved within timelimit
-        int hatch_next;
+        int updatePreviousSpawn = -Level.spawnintMax; // => immediate spawn
+        int updatePreviousSave; // ...within the time limit
+        int hatchNextSpawn;
 
         int skillsUsed;
     }

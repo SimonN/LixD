@@ -40,6 +40,8 @@ class Gadget : Graphic {
 public:
 
     const(Tile) tile;
+    alias       tile this;
+
     bool        drawWithEditorInfo;
 
     // override these if necessary
