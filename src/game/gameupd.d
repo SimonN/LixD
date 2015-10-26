@@ -322,7 +322,7 @@ updateLixxies(Game game)
     if (Lixxie::get_any_new_flingers()) {
         for (Tribe::It t = cs.tribes.begin(); t != cs.tribes.end(); ++t)
          for (LixIt i = t->lixvec.begin(); i != t->lixvec.end(); ++i) {
-            if (i->get_fling_new()) finally_fling(*i);
+            if (i->get_flingNew()) finally_fling(*i);
         }
     }
     +/

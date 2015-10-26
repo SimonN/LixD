@@ -336,42 +336,32 @@ public void saveToFile(const(Level) l, std.stdio.File file)
 //  file.writeln(IoLine.Hash(glo.levelCountNeutralsOnly, l.countNeutralsOnly));
 //  file.writeln(IoLine.Hash(glo.levelTransferSkills,     l.transferSkills));
 
-    bool at_least_one_skill_written = false;
+    bool atLeastOneSkillWritten = false;
     foreach (Ac sk, const int nr; l.skills.byKeyValue) {
         if (nr == 0)
             continue;
-        if (! at_least_one_skill_written) {
-            at_least_one_skill_written = true;
+        if (! atLeastOneSkillWritten) {
+            atLeastOneSkillWritten = true;
             file.writeln();
         }
         file.writeln(IoLine.Hash(acToString(sk), nr));
     }
 
-    // this local function outputs all tiles of a given type
-    void save_one_tile_vector(in Pos[] vec)
+    void saveOneTileVector(in Pos[] vec)
     {
-        if (vec != null) {
+        if (vec != null)
             file.writeln();
-        }
-        foreach (tile; vec) {
-            if (tile.ob is null) continue;
-            string str = get_filename(tile.ob);
-            if (str == null) continue;
-
-            string modifiers;
-            if (tile.mirr) modifiers ~= 'f';
-            foreach (r; 0 .. tile.rot) modifiers ~= 'r';
-            if (tile.dark) modifiers ~= 'd';
-            if (tile.noow) modifiers ~= 'n';
-            file.writeln(IoLine.Colon(str, tile.x, tile.y, modifiers));
-        }
+        foreach (ref const(Pos) pos; vec)
+            if (auto ioLine = pos.toIoLine())
+                if (ioLine.text1 != null)
+                    file.writeln(ioLine);
     }
 
     // print all special objects, then print all terrain.
     foreach (ref const(Pos[]) vec; l.pos) {
         if (vec is l.pos[TileType.TERRAIN]) continue;
-        save_one_tile_vector(vec);
+        saveOneTileVector(vec);
     }
-    save_one_tile_vector(l.pos[TileType.TERRAIN]);
+    saveOneTileVector(l.pos[TileType.TERRAIN]);
 
 }

@@ -40,10 +40,10 @@ private:
 
     Tribe _tribe;
 
-    int  _fling_x;
-    int  _fling_y;
-    bool _fling_new;
-    bool _fling_by_same_tribe;
+    int  _flingX;
+    int  _flingY;
+    bool _flingNew;
+    bool _flingBySameTribe;
 
     static bool _any_new_flingers;
 
@@ -100,8 +100,8 @@ public:
  *  @property int ey(in int);
  *
  *  void moveAhead(int = 2);
- *  void move_down(int = 2);
- *  void move_up  (int = 2);
+ *  void moveDown(int = 2);
+ *  void moveUp  (int = 2);
  */
     @property int dir() const   { return _dir; }
     @property int dir(in int i) { return _dir = (i>0)?1 : (i<0)?-1 : _dir; }
@@ -120,11 +120,11 @@ public:
     @property Sound sound_assign() const { return ac_func[ac].sound_assign; }
     @property Sound sound_become() const { return ac_func[ac].sound_become; }
 
-    @property bool fling_new() const { return _fling_new; }
-    @property int  fling_x()   const { return _fling_x;   }
-    @property int  fling_y()   const { return _fling_y;   }
-/*  void add_fling(int, int, bool (from same tribe) = false);
- *  void reset_fling_new();
+    @property bool flingNew() const { return _flingNew; }
+    @property int  flingX()   const { return _flingX;   }
+    @property int  flingY()   const { return _flingY;   }
+/*  void addFling(int, int, bool (from same tribe) = false);
+ *  void resetFlingNew();
  *
  *  static bool getSteel_absolute(in int, in int);
  *  bool getSteel         (in int = 0, in int = 0);
@@ -218,10 +218,10 @@ this(Lixxie rhs)
         _ex - lix.enums.ex_offset,
         _ey - lix.enums.ey_offset);
 
-    _fling_x = rhs._fling_x;
-    _fling_y = rhs._fling_y;
-    _fling_new           = rhs._fling_new;
-    _fling_by_same_tribe = rhs._fling_by_same_tribe;
+    _flingX = rhs._flingX;
+    _flingY = rhs._flingY;
+    _flingNew           = rhs._flingNew;
+    _flingBySameTribe = rhs._flingBySameTribe;
 
     _enc_body = rhs._enc_body;
     _enc_foot = rhs._enc_foot;
@@ -301,28 +301,28 @@ ey(in int n) {
 
 
 
-void moveAhead(int plus_x = 2)
+void moveAhead(int plusX = 2)
 {
-    plus_x = even(plus_x);
-    plus_x *= _dir;
+    plusX = even(plusX);
+    plusX *= _dir;
     // move in little steps, to check for lookupmap encounters on the way
-    for ( ; plus_x > 0; plus_x -= 2) ex = (_ex + 2);
-    for ( ; plus_x < 0; plus_x += 2) ex = (_ex - 2);
+    for ( ; plusX > 0; plusX -= 2) ex = (_ex + 2);
+    for ( ; plusX < 0; plusX += 2) ex = (_ex - 2);
 }
 
 
 
-void move_down(int plus_y)
+void moveDown(int plusY)
 {
-    for ( ; plus_y > 0; --plus_y) ey = (_ey + 1);
-    for ( ; plus_y < 0; ++plus_y) ey = (_ey - 1);
+    for ( ; plusY > 0; --plusY) ey = (_ey + 1);
+    for ( ; plusY < 0; ++plusY) ey = (_ey - 1);
 }
 
 
 
-void move_up(in int minus_y)
+void moveUp(in int minusY)
 {
-    move_down(-minus_y);
+    moveDown(-minusY);
 }
 
 
@@ -336,32 +336,27 @@ bool get_in_trigger_area(in Gadget g) const
 
 
 
-void add_fling(in int px, in int py, in bool same_tribe)
+void addFling(in int px, in int py, in bool same_tribe)
 {
-    if (_fling_by_same_tribe && same_tribe) return;
+    if (_flingBySameTribe && same_tribe) return;
 
     _any_new_flingers    = true;
-    _fling_by_same_tribe = (_fling_by_same_tribe || same_tribe);
-    _fling_new = true;
-    _fling_x   += px;
-    _fling_y   += py;
+    _flingBySameTribe = (_flingBySameTribe || same_tribe);
+    _flingNew = true;
+    _flingX   += px;
+    _flingY   += py;
 }
 
 
 
-void reset_fling_new()
+void resetFlingNew()
 {
-    _any_new_flingers    = false;
-    _fling_new           = false;
-    _fling_by_same_tribe = false;
-    _fling_x             = 0;
-    _fling_y             = 0;
+    _any_new_flingers = false;
+    _flingNew         = false;
+    _flingBySameTribe = false;
+    _flingX           = 0;
+    _flingY           = 0;
 }
-
-
-
-void evaluate_click(Ac ac)         { assert (false, "DTODO: evaluate_click not impl");      }
-int  get_priority  (Ac ac, bool b) { assert (false, "DTODO: get_priority not implemented"); }
 
 
 

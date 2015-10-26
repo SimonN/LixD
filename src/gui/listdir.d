@@ -175,8 +175,8 @@ protected override Button
 newFileButton(int from_top, int total, in Filename fn)
 {
     // the first slot may have been taken by the dirUp button.
-    immutable plus_y = dirUp ? 20 : 0;
-    return makeTextButton(20 * from_top + plus_y, fn.dirInnermost);
+    immutable plusY = dirUp ? 20 : 0;
+    return makeTextButton(20 * from_top + plusY, fn.dirInnermost);
 }
 
 

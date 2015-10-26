@@ -460,6 +460,13 @@ void recolor_into_vector(
     foreach (int i; 0 .. Style.MAX) {
         Style st = cast (Style) i;
         vector[st] = new Cutbit(cutbit);
+
+        static if (true)
+            // Speed up loading to debug the game easier. This is not honte.
+            // Recoloring different styles should not be done at program start.
+            if (st >= Style.YELLOW)
+                continue;
+
         Albit target = vector[st].albit;
         assert (target);
 

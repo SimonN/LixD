@@ -121,7 +121,7 @@ prepareGadgets(Game game)
     {
         foreach (ref pos; game.level.pos[tileType]) {
             gadgetVec ~= cast (T) Gadget.factory(game.map, pos);
-            assert (gadgetVec[$-1]);
+            assert (gadgetVec[$-1], pos.toIoLine.toString);
         }
     }
 

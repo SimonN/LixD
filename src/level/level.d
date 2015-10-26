@@ -5,6 +5,7 @@ public import enumap;
 public import level.levelio : saveToFile;
 
 import file.date;
+import file.io; // IoLine for Pos; all other I/O is in module level.levelio
 import file.filename;
 import file.language;
 import game.lookup;
@@ -13,6 +14,7 @@ import graphic.torbit;
 import level.levelio;
 import level.levdraw;
 import level.tile;
+import level.tilelib : get_filename;
 import lix.enums;
 
 enum LevelStatus {
@@ -41,6 +43,17 @@ struct Pos {
     int  rot;  // rotate tile? 0 = normal, 1, 2, 3 = turned counter-clockwise
     bool dark; // Terrain loeschen anstatt neues malen
     bool noow; // Nicht ueberzeichnen?
+
+    IoLine toIoLine() const
+    {
+        string filename = ob ? get_filename(ob) : null;
+        string modifiers;
+        if (mirr) modifiers ~= 'f';
+        foreach (r; 0 .. rot) modifiers ~= 'r';
+        if (dark) modifiers ~= 'd';
+        if (noow) modifiers ~= 'n';
+        return IoLine.Colon(filename, x, y, modifiers);
+    }
 }
 
 
