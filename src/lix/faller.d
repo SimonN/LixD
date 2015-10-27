@@ -2,25 +2,22 @@ module lix.faller;
 
 import lix;
 
-mixin template FallerFields() {
-    struct {
-        int pixelsFallen;
-        int ySpeed;
+class Faller : PerformedActivity {
+
+    private alias lixxie this;
+
+    int ySpeed = 4;
+    int pixelsFallen = 0;
+
+    enum pixelsSafeToFall = 126;
+
+    override void advancePhysics(UpdateArgs)
+    {
+        moveDown(ySpeed);
+        ++ySpeed;
     }
 }
 
-void becomeFaller(Lixxie lixxie) { with (lixxie)
-{
-    becomeDefault(Ac.FALLER);
-    ySpeed = 4;
-}}
-
-
-
-void updateFaller(Lixxie lixxie, in UpdateArgs ua) { with (lixxie)
-{
-    moveDown(ySpeed);
-    ++ySpeed;
     /+
     for (int i = 0; i <= l.get_special_y() && l.get_ac() == LixEn::FALLER;++i){
         // a bit kludgy, we can't do such a thing for flingers etc, since
@@ -86,4 +83,3 @@ void updateFaller(Lixxie lixxie, in UpdateArgs ua) { with (lixxie)
         }
     }
     +/
-}}

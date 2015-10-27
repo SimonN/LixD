@@ -13,10 +13,6 @@ struct UpdateArgs {
     int       id; // the lix's id, to pass to the effect manager
 
     this(GameState _st, in int _id = 0) { st = _st; id = _id; }
-
-    // a function to counter compiler warnings in lixxie-updating functions
-    // that take an UpdateArgs argument, but don't need it
-    void suppress_unused_variable_warning() const { }
 }
 
 
@@ -32,12 +28,6 @@ struct AcFunc {
     void function(Lixxie) assclk;
     void function(Lixxie) become;
     void function(Lixxie, in UpdateArgs) update;
-}
-
-
-
-union SkillFields {
-    mixin FallerFields;
 }
 
 
@@ -122,4 +112,35 @@ static this()
     acFunc[Ac.SPLATTER]  .soundBecome = Sound.SPLAT;
     acFunc[Ac.BURNER]    .soundBecome = Sound.FIRE;
     acFunc[Ac.DROWNER]   .soundBecome = Sound.WATER;
+}
+
+
+
+
+abstract class PerformedActivity {
+    @property Ac    ac()          const { return _ac; }
+    @property bool  canPassTop()  const { return false; }
+    @property bool  isBlockable() const { return true;  }
+    @property bool  isLeaving()   const { return false; }
+    @property Sound soundBecome() const { return Sound.ASSIGN; }
+
+    void onManualAssignment()       { } // while Lix has old performed ac!
+    void advancePhysics(UpdateArgs) { } // the main method to override
+    void onBecomingSomethingElse()  { } // e.g. return leftover builders
+
+    package Lixxie lixxie;
+    private Ac     _ac;
+
+    final static typeof(this) factory(Lixxie l, Ac newAc)
+    {
+        assert (l, "can't instantiate for a null lix");
+        PerformedActivity newPerf;
+        switch (newAc) {
+            case Ac.FALLER: newPerf = new Faller(); break;
+            default: assert (false, "can't instantiate this newPerf");
+        }
+        newPerf.lixxie = l;
+        newPerf._ac    = newAc;
+        return newPerf;
+    }
 }

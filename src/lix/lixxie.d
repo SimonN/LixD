@@ -42,7 +42,6 @@ private:
     Lookup.LoNr _encFoot;
 
     Style _style;
-    Ac    _ac;
 
     void draw_at(const int, const int);
 
@@ -68,8 +67,8 @@ public:
     int  updatesSinceBomb;
     bool exploderKnockback;
 
-    SkillFields skillFields; // defined in lix.acfunc
-    alias skillFields this;
+    PerformedActivity performedActivity; // defined in lix.acfunc
+    alias performedActivity this;
 
 /*  this(Tribe = null, int = 0, int = 0); // tribe==null ? NOTHING : FALLER
  *  this(in Lixxie rhs);
@@ -96,17 +95,6 @@ public:
     void turn()                 { _dir *= -1; }
 
 //  bool get_in_trigger_area(const EdGraphic) const;
-
-    @property Ac ac() const { return _ac; }
-
-    void setAcWithoutCallingBecome(in Ac newAc) { _ac = newAc; }
-
-    @property bool passTop () const { return acFunc[ac].passTop;  }
-    @property bool leaving  () const { return acFunc[ac].leaving;   }
-    @property bool blockable() const { return acFunc[ac].blockable; }
-
-    @property Sound soundAssign() const { return acFunc[ac].soundAssign; }
-    @property Sound soundBecome() const { return acFunc[ac].soundBecome; }
 
     @property bool flingNew() const { return _flingNew; }
     @property int  flingX()   const { return _flingX;   }
@@ -154,11 +142,10 @@ public:
     void set_no_encounters() { _encBody = _encFoot = 0; }
 
 //  int  get_priority  (in Ac, in bool);
-    void evaluate_click(in Ac ac) { assclk(ac); }
-/*  void assclk        (in Ac);
- *  void become        (in Ac);
- *  void becomeDefault(in Ac);
- *  void update        (in UpdateArgs);
+/*  void manualAssignment(in Ac);
+ *  void become          (in Ac);
+ *  void becomeDefault   (in Ac);
+ *  void update          (in UpdateArgs);
  *
  *  override void draw();
  */
@@ -176,10 +163,9 @@ this(
           groundMap, even(new_ex) - exOffset, new_ey - eyOffset);
     _tribe = new_tribe;
     _dir   = 1;
-    _style = tribe ? tribe.style : Style.GARDEN,
-    _ac    = Ac.NOTHING;
+    _style = tribe ? tribe.style : Style.GARDEN;
     if (_tribe) {
-        become(Ac.FALLER);
+        performedActivity = PerformedActivity.factory(this, Ac.FALLER);
         _frame = 4;
     }
     // important for torus bitmaps: calculate modulo in time
@@ -196,7 +182,6 @@ this(Lixxie rhs)
     _tribe = rhs._tribe;
     _dir   = rhs._dir;
     _style = rhs._style;
-    _ac    = rhs._ac;
     _frame = rhs._frame;
     _ex    = rhs._ex;
     _ey    = rhs._ey;
@@ -221,7 +206,9 @@ this(Lixxie rhs)
 
     updatesSinceBomb  = rhs.updatesSinceBomb;
     exploderKnockback = rhs.exploderKnockback;
-    skillFields       = rhs.skillFields;
+
+    performedActivity = rhs.performedActivity;
+    performedActivity.lixxie = this;
 }
 
 
@@ -737,55 +724,34 @@ int get_priority(
 
 
 
-void assclk(in Ac newAc)
+void manualAssignment(in Ac newAc, bool manualAssignment = true)
 {
-    immutable Ac oldAc = ac;
-    if (acFunc[newAc].assclk)
-        acFunc[newAc].assclk(this);
-    else
-        become(newAc); // this dispatches again
+    assert (performedActivity);
+    performedActivity.onBecomingSomethingElse();
+    auto newPerf = PerformedActivity.factory(this, newAc);
 
-    if (oldAc != ac)
+    if (manualAssignment)
+        // while Lix still has old performed ac
+        newPerf.onManualAssignment();
+
+    // Reset sprite placement like climber's offset in x-direction by 1.
+    // This is the same code as the sprite placement in set_ex/ey().
+    super.x = _ex - exOffset;
+    super.y = _ey - eyOffset;
+    _frame  = 0;
+
+    if (manualAssignment && performedActivity.ac != newPerf.ac)
         --_frame;
         // can go to -1, then nothing happens on the
         // next update and frame 0 will be shown then
+    performedActivity = newPerf;
 }
 
 
 
 void become(in Ac newAc)
 {
-    if (newAc != ac && queue > 0) {
-        tribe.returnSkills(ac, queue);
-        queue = 0; // in case other skill_become() redirect again to become()
-    }
-    // Reset sprite placement like climber's offset in x-direction by 1,
-    // or the digger sprite displacement in one frame. This is the same code
-    // as the sprite placement in set_ex/ey().
-    super.x = _ex - exOffset;
-    super.y = _ey - eyOffset;
-
-    if (acFunc[newAc].become)
-        acFunc[newAc].become(this);
-    else
-        becomeDefault(newAc);
-}
-
-
-
-void becomeDefault(in Ac newAc)
-{
-    _frame   = 0;
-    _ac      = newAc;
-    queue    = 0;
-}
-
-
-
-void update(in UpdateArgs ua)
-{
-    if (acFunc[ac].update)
-        acFunc[ac].update(this, ua);
+    manualAssignment(newAc, false);
 }
 
 }
