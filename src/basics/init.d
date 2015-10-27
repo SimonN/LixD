@@ -16,6 +16,7 @@ import gui;
 import hardware.display;
 import hardware.mouse;
 import level.tilelib;
+import lix;
 
 static import file.log;
 
@@ -74,6 +75,7 @@ void initialize(in Cmdargs cmdargs)
 
 void deinitialize()
 {
+    Lixxie.setStaticMaps(null, null, null);
     level.tilelib.deinitialize();
 
     gui.deinitialize();
