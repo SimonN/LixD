@@ -9,7 +9,7 @@ import basics.cmdargs : Runmode;
 import basics.nettypes;
 import game;
 import graphic.gadget;
-import lix.lixxie;
+import lix;
 
 // This should be called on a regular basis to advance physics, while
 // syncing things that must be done immediately before the advancement.
@@ -295,39 +295,43 @@ updateNuke(Game game)
 void
 updateLixxies(Game game)
 {
-    /+
-    // Lixen updaten
-    UpdateArgs ua(cs);
+    UpdateArgs ua = UpdateArgs(game.cs);
 
-    // Erster Durchlauf: Nur die Arbeitstiere bearbeiten und markieren!
-    for (Tribe::It t = cs.tribes.begin(); t != cs.tribes.end(); ++t) {
-        for (LixIt i = t->lixvec.begin(); i != t->lixvec.end(); ++i) {
-            if (i->get_ac() > LixEn::WALKER) {
-                ua.id = i - t->lixvec.begin();
-                i->mark();
-                update_lix(*i, ua);
+    // First pass: Update only workers and mark them
+    foreach (tribe; game.cs.tribes)
+        foreach (int id, lixxie; tribe.lixvec) {
+            if (lixxie.ac > Ac.WALKER) {
+                ua.id = id;
+                lixxie.marked = true;
+                game.updateSingleLix(lixxie, ua);
             }
-            // Sonst eine vorhandene Markierung ggf. entfernen
-            else i->unmark();
-        }
-    }
-    // Zweiter Durchlauf: Unmarkierte bearbeiten
-    for (Tribe::It t = cs.tribes.begin(); t != cs.tribes.end(); ++t) {
-        for (LixIt i = t->lixvec.begin(); i != t->lixvec.end(); ++i) {
-            if (!i->get_mark()) {
-                ua.id = i - t->lixvec.begin();
-                update_lix(*i, ua);
+            else {
+                lixxie.marked = false;
             }
         }
-    }
+    // Second pass: Update unmarkeded
+    foreach (tribe; game.cs.tribes)
+        foreach (int id, lixxie; tribe.lixvec)
+            if (lixxie.marked == false) {
+                ua.id = id;
+                game.updateSingleLix(lixxie, ua);
+            }
+    /+
     // Third pass (if necessary): finally becoming flingers
-    if (Lixxie::anyNewFlingers()) {
-        for (Tribe::It t = cs.tribes.begin(); t != cs.tribes.end(); ++t)
-         for (LixIt i = t->lixvec.begin(); i != t->lixvec.end(); ++i) {
-            if (i->get_flingNew()) finally_fling(*i);
-        }
-    }
+    if (Lixxie.anyNewFlingers)
+        foreach (tribe; game.cs.tribes)
+            foreach (int id, lixxie; tribe.lixvec)
+                if (lixxie.flingNew)
+                    // DTODO: What is this, where is it defined?
+                    finally_fling(lixxie);
     +/
+}
+
+
+
+void updateSingleLix(Game game, Lixxie l, UpdateArgs ua)
+{
+    l.performActivity(ua);
 }
 
 

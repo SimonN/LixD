@@ -1,12 +1,8 @@
 module lix.acfunc;
 
-import game.state;
+import game;
 import lix;
 import hardware.sound;
-
-AcFunc[Ac.MAX] acFunc;
-
-// static this() -- fills acFunc with the necessary data, see below
 
 struct UpdateArgs {
     GameState st;
@@ -16,84 +12,9 @@ struct UpdateArgs {
 }
 
 
-
-struct AcFunc {
-    bool  passTop;
-    bool  leaving;
-    bool  blockable;
-
-    Sound soundAssign;
-    Sound soundBecome;
-
-    void function(Lixxie) assclk;
-    void function(Lixxie) become;
-    void function(Lixxie, in UpdateArgs) update;
-}
-
-
-
+/+
 static this()
 {
-    foreach (ref acf; acFunc) {
-        acf.blockable = true;
-        acf.soundAssign = Sound.ASSIGN;
-    }
-
-    // DTODO: Uncomment these as they get implemented, or assign them
-    // to acFunc straight from the modules implementing them
-
-    // acFunc[Ac.WALKER]    .assclk = assclk_walker;
-    // acFunc[Ac.RUNNER]    .assclk = assclk_runner;
-    // acFunc[Ac.CLIMBER]   .assclk = assclk_climber;
-    // acFunc[Ac.FLOATER]   .assclk = assclk_floater;
-    // acFunc[Ac.EXPLODER]  .assclk = assclk_exploder;
-    // acFunc[Ac.EXPLODER2] .assclk = assclk_exploder2;
-    // acFunc[Ac.BUILDER]   .assclk = assclk_builder;
-    // acFunc[Ac.PLATFORMER].assclk = assclk_platformer;
-
-    // acFunc[Ac.FALLER]    .become = become_faller;
-    // acFunc[Ac.TUMBLER]   .become = become_tumbler;
-    // acFunc[Ac.DROWNER]   .become = become_drowner;
-    // acFunc[Ac.EXITER]    .become = become_exiter;
-    // acFunc[Ac.WALKER]    .become = become_walker;
-    // acFunc[Ac.CLIMBER]   .become = become_climber;
-    // acFunc[Ac.ASCENDER]  .become = become_ascender;
-    // acFunc[Ac.BUILDER]   .become = become_builder;
-    // acFunc[Ac.CUBER]     .become = become_cuber;
-    // acFunc[Ac.PLATFORMER].become = become_platformer;
-    // acFunc[Ac.DIGGER]    .become = become_digger;
-    // acFunc[Ac.JUMPER]    .become = become_jumper;
-
-    // acFunc[Ac.FALLER]    .update = update_faller;
-    // acFunc[Ac.TUMBLER]   .update = update_tumbler;
-    // acFunc[Ac.STUNNER]   .update = update_stunner;
-    // acFunc[Ac.LANDER]    .update = update_lander;
-    // acFunc[Ac.SPLATTER]  .update = update_splatter;
-    // acFunc[Ac.BURNER]    .update = update_burner;
-    // acFunc[Ac.DROWNER]   .update = update_drowner;
-    // acFunc[Ac.EXITER]    .update = update_exiter;
-    // acFunc[Ac.WALKER]    .update = update_walker;
-    // acFunc[Ac.RUNNER]    .update = update_runner;
-    // acFunc[Ac.CLIMBER]   .update = update_climber;
-    // acFunc[Ac.ASCENDER]  .update = update_ascender;
-    // acFunc[Ac.FLOATER]   .update = update_floater;
-    // acFunc[Ac.EXPLODER]  .update = update_exploder;
-    // acFunc[Ac.BLOCKER]   .update = update_blocker;
-    // acFunc[Ac.BUILDER]   .update = update_builder;
-    // acFunc[Ac.SHRUGGER]  .update = update_shrugger;
-    // acFunc[Ac.PLATFORMER].update = update_platformer;
-    // acFunc[Ac.SHRUGGER2] .update = update_shrugger2;
-    // acFunc[Ac.BASHER]    .update = update_basher;
-    // acFunc[Ac.MINER]     .update = update_miner;
-    // acFunc[Ac.DIGGER]    .update = update_digger;
-    // acFunc[Ac.JUMPER]    .update = update_jumper;
-    // acFunc[Ac.BATTER]    .update = update_batter;
-    // acFunc[Ac.CUBER]     .update = update_cuber;
-
-    acFunc[Ac.FALLER]    .passTop =
-    acFunc[Ac.TUMBLER]   .passTop =
-    acFunc[Ac.FLOATER]   .passTop = true;
-
     acFunc[Ac.CLIMBER]   .blockable =
     acFunc[Ac.ASCENDER]  .blockable =
     acFunc[Ac.BLOCKER]   .blockable =
@@ -113,20 +34,47 @@ static this()
     acFunc[Ac.BURNER]    .soundBecome = Sound.FIRE;
     acFunc[Ac.DROWNER]   .soundBecome = Sound.WATER;
 }
++/
 
+// DTODO: Remove these as they get implemented in other files
+class RemovedLix : PerformedActivity { }
+class Stunner : PerformedActivity { }
+class Lander : PerformedActivity { }
+class Splatter : PerformedActivity { }
+class Burner : PerformedActivity { }
+class Drowner : PerformedActivity { }
+class Exiter : PerformedActivity { }
+
+class Walker : PerformedActivity { }
+class Runner : PerformedActivity { }
+class Climber : PerformedActivity { }
+class Ascender : PerformedActivity { }
+class Exploder : PerformedActivity { }
+class Blocker : PerformedActivity { }
+class Builder : PerformedActivity { }
+class Shrugger : PerformedActivity { }
+class Platformer : PerformedActivity { }
+class Basher : PerformedActivity { }
+class Miner : PerformedActivity { }
+class Digger : PerformedActivity { }
+
+class Jumper : PerformedActivity { }
+class Batter : PerformedActivity { }
+class Cuber : PerformedActivity { }
 
 
 
 abstract class PerformedActivity {
+
     @property Ac    ac()          const { return _ac; }
     @property bool  canPassTop()  const { return false; }
     @property bool  isBlockable() const { return true;  }
     @property bool  isLeaving()   const { return false; }
     @property Sound soundBecome() const { return Sound.ASSIGN; }
 
-    void onManualAssignment()       { } // while Lix has old performed ac!
-    void advancePhysics(UpdateArgs) { } // the main method to override
-    void onBecomingSomethingElse()  { } // e.g. return leftover builders
+    void onManualAssignment()        { } // while Lix has old performed ac!
+    void performActivity(UpdateArgs) { } // the main method to override
+    void onBecomingSomethingElse()   { } // e.g. return leftover builders
 
     package Lixxie lixxie;
     private Ac     _ac;
@@ -134,10 +82,38 @@ abstract class PerformedActivity {
     final static typeof(this) factory(Lixxie l, Ac newAc)
     {
         assert (l, "can't instantiate for a null lix");
-        PerformedActivity newPerf;
-        switch (newAc) {
-            case Ac.FALLER: newPerf = new Faller(); break;
-            default: assert (false, "can't instantiate this newPerf");
+        typeof(this) newPerf;
+        final switch (newAc) {
+            case Ac.NOTHING:    newPerf = new RemovedLix(); break;
+            case Ac.FALLER:     newPerf = new Faller();     break;
+            case Ac.TUMBLER:    newPerf = new Tumbler();    break;
+            case Ac.STUNNER:    newPerf = new Stunner();    break;
+            case Ac.LANDER:     newPerf = new Lander();     break;
+            case Ac.SPLATTER:   newPerf = new Splatter();   break;
+            case Ac.BURNER:     newPerf = new Burner();     break;
+            case Ac.DROWNER:    newPerf = new Drowner();    break;
+            case Ac.EXITER:     newPerf = new Exiter();     break;
+            case Ac.WALKER:     newPerf = new Walker();     break;
+
+            case Ac.RUNNER:     newPerf = new Runner();     break;
+            case Ac.CLIMBER:    newPerf = new Climber();    break;
+            case Ac.ASCENDER:   newPerf = new Ascender();   break;
+            case Ac.FLOATER:    newPerf = new Floater();    break;
+            case Ac.EXPLODER:   newPerf = new Exploder();   break;
+            case Ac.EXPLODER2:  newPerf = new Exploder();   break;
+            case Ac.BLOCKER:    newPerf = new Blocker();    break;
+            case Ac.BUILDER:    newPerf = new Builder();    break;
+            case Ac.SHRUGGER:   newPerf = new Shrugger();   break;
+            case Ac.PLATFORMER: newPerf = new Platformer(); break;
+            case Ac.SHRUGGER2:  newPerf = new Shrugger();   break;
+            case Ac.BASHER:     newPerf = new Basher();     break;
+            case Ac.MINER:      newPerf = new Miner();      break;
+            case Ac.DIGGER:     newPerf = new Digger();     break;
+
+            case Ac.JUMPER:     newPerf = new Jumper();     break;
+            case Ac.BATTER:     newPerf = new Batter();     break;
+            case Ac.CUBER:      newPerf = new Cuber();      break;
+            case Ac.MAX:        assert (false);
         }
         newPerf.lixxie = l;
         newPerf._ac    = newAc;

@@ -43,6 +43,8 @@ private:
 
     Style _style;
 
+    PerformedActivity _perfAc;
+
     void draw_at(const int, const int);
 
 public:
@@ -67,9 +69,6 @@ public:
     int  updatesSinceBomb;
     bool exploderKnockback;
 
-    PerformedActivity performedActivity; // defined in lix.acfunc
-    alias performedActivity this;
-
 /*  this(Tribe = null, int = 0, int = 0); // tribe==null ? NOTHING : FALLER
  *  this(in Lixxie rhs);
  *  invariant();
@@ -93,6 +92,18 @@ public:
     @property int dir() const   { return _dir; }
     @property int dir(in int i) { return _dir = (i>0)?1 : (i<0)?-1 : _dir; }
     void turn()                 { _dir *= -1; }
+
+    @property const(PerformedActivity) performedActivity() const
+    {
+        assert (_perfAc);
+        return _perfAc;
+    }
+
+    @property Ac ac() const
+    {
+        assert (_perfAc);
+        return _perfAc.ac;
+    }
 
 //  bool get_in_trigger_area(const EdGraphic) const;
 
@@ -165,8 +176,8 @@ this(
     _dir   = 1;
     _style = tribe ? tribe.style : Style.GARDEN;
     if (_tribe) {
-        performedActivity = PerformedActivity.factory(this, Ac.FALLER);
-        _frame = 4;
+        _perfAc = PerformedActivity.factory(this, Ac.FALLER);
+        _frame  = 4;
     }
     // important for torus bitmaps: calculate modulo in time
     ex = new_ex.even;
@@ -207,8 +218,8 @@ this(Lixxie rhs)
     updatesSinceBomb  = rhs.updatesSinceBomb;
     exploderKnockback = rhs.exploderKnockback;
 
-    performedActivity = rhs.performedActivity;
-    performedActivity.lixxie = this;
+    _perfAc        = rhs._perfAc;
+    _perfAc.lixxie = this;
 }
 
 
@@ -634,7 +645,7 @@ int get_priority(
     int p = 0;
 
     // Nothing allowed at all, don't even open the cursor
-    if (ac == Ac.NOTHING || acFunc[ac].leaving) return 0;
+    if (ac == Ac.NOTHING || _perfAc.isLeaving) return 0;
 
     // Permanent skills
     if ((newAc == Ac.EXPLODER  && updatesSinceBomb > 0)
@@ -724,10 +735,10 @@ int get_priority(
 
 
 
-void manualAssignment(in Ac newAc, bool manualAssignment = true)
+void manualAssignment(in Ac newAc, bool manualAssignment)
 {
-    assert (performedActivity);
-    performedActivity.onBecomingSomethingElse();
+    assert (_perfAc);
+    _perfAc.onBecomingSomethingElse();
     auto newPerf = PerformedActivity.factory(this, newAc);
 
     if (manualAssignment)
@@ -740,11 +751,11 @@ void manualAssignment(in Ac newAc, bool manualAssignment = true)
     super.y = _ey - eyOffset;
     _frame  = 0;
 
-    if (manualAssignment && performedActivity.ac != newPerf.ac)
+    if (manualAssignment && _perfAc.ac != newPerf.ac)
         --_frame;
         // can go to -1, then nothing happens on the
         // next update and frame 0 will be shown then
-    performedActivity = newPerf;
+    _perfAc = newPerf;
 }
 
 
@@ -752,6 +763,14 @@ void manualAssignment(in Ac newAc, bool manualAssignment = true)
 void become(in Ac newAc)
 {
     manualAssignment(newAc, false);
+}
+
+
+
+void performActivity(UpdateArgs ua)
+{
+    assert (_perfAc);
+    _perfAc.performActivity(ua);
 }
 
 }

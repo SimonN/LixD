@@ -11,7 +11,9 @@ class Faller : PerformedActivity {
 
     enum pixelsSafeToFall = 126;
 
-    override void advancePhysics(UpdateArgs)
+    override @property bool canPassTop() const { return true; }
+
+    override void performActivity(UpdateArgs)
     {
         moveDown(ySpeed);
         ++ySpeed;
