@@ -21,40 +21,38 @@ class Map : Torbit {
 
 /*  this(in int xl, int yl, int srceen_xl, int screen_yl)
  *
- *      Deduct from the real screen xl/yl the GUI elements, then pass the
+ *      Deduct from the real screen xl/yl the GUI elements' yl, then pass the
  *      remainder to this constructor.
  *
  *  void resize(int, int);
  */
-    @property {
-        bool scrollableUp()    { return _cameraY > minY || torusY; }
-        bool scrollableRight() { return _cameraX < maxX || torusX; }
-        bool scrollableLeft()  { return _cameraX > minX || torusX; }
-        bool scrollableDown()  { return _cameraY < maxY || torusY; }
-    }
+    @property bool scrollableUp()   const { return _cameraY > minY || torusY; }
+    @property bool scrollableRight()const { return _cameraX < maxX || torusX; }
+    @property bool scrollableLeft() const { return _cameraX > minX || torusX; }
+    @property bool scrollableDown() const { return _cameraY < maxY || torusY; }
 
-    @property bool scrollable()
+    @property bool scrollable() const
     {
         return scrollableUp()   || scrollableDown()
             || scrollableLeft() || scrollableRight();
     }
 
-    @property bool scrollingNow() { return scrollable && scrollingContinues;}
-    @property int  cameraXl()     { return _cameraXl; }
-    @property int  cameraYl()     { return _cameraYl; }
+    @property bool scrollingNow() const { return scrollingContinues;}
+    @property int  cameraXl()     const { return _cameraXl; }
+    @property int  cameraYl()     const { return _cameraYl; }
 
 /* New and exciting difference to A4/C++ Lix:
  * screen_x/y point to the center of the visible area. This makes computing
  * zoom easier, and copying the resulting viewed area is encapsulated in
  * draw() anyway.
  */
-    @property int  cameraX() { return _cameraX; }
-    @property int  cameraY() { return _cameraY; }
+    @property int  cameraX() const { return _cameraX; }
+    @property int  cameraY() const { return _cameraY; }
 //  @property int  cameraX(int);
 //  @property int  cameraY(int);
     void set_cameraXY(in int x, in int y) { cameraX = x; cameraY = y; }
 
-    @property int zoom() { return _zoom; }
+    @property int zoom() const { return _zoom; }
 //  @property int zoom(in int)
 
 /*  @property int mouseOnLandX();
@@ -84,13 +82,13 @@ private:
     bool scrollingContinues;
 
     // these two don't crop at the edge yet
-    @property int cameraZoomedXl() { return (_cameraXl + zoom - 1) / zoom; }
-    @property int cameraZoomedYl() { return (_cameraYl + zoom - 1) / zoom; }
+    @property int cameraZoomedXl() const { return (_cameraXl+zoom-1) / zoom; }
+    @property int cameraZoomedYl() const { return (_cameraYl+zoom-1) / zoom; }
 
-    @property int minX() { return cameraZoomedXl / 2; }
-    @property int minY() { return cameraZoomedYl / 2; }
-    @property int maxX() { return xl - minX; }
-    @property int maxY() { return yl - minY; }
+    @property int minX() const { return cameraZoomedXl / 2; }
+    @property int minY() const { return cameraZoomedYl / 2; }
+    @property int maxX() const { return xl - minX; }
+    @property int maxY() const { return yl - minY; }
 
 
 
@@ -129,42 +127,69 @@ scrollSpeedClick()
 
 
 
-@property int
-cameraX(in int x)
+private int cameraSetter(ref int camera, in int newCamera, in bool torus,
+                         in int torbitLength, in int min, in int max)
 {
-    _cameraX = x;
-    if (torusX) {
-        _cameraX = basics.help.positiveMod(_cameraX, xl);
+    camera = newCamera;
+    if (torus) {
+        camera = basics.help.positiveMod(camera, torbitLength);
     }
-    else if (minX >= maxX) {
+    else if (min >= max) {
         // this can happen on very small maps
-        _cameraX = this.xl / 2;
+        camera = torbitLength / 2;
     }
     else {
-        if (_cameraX < minX) _cameraX = minX;
-        if (_cameraX > maxX) _cameraX = maxX;
+        if (camera < min) camera = min;
+        if (camera > max) camera = max;
     }
-    return _cameraX;
+    return camera;
+}
+
+@property int
+cameraX(in int a)
+{
+    return cameraSetter(_cameraX, a, torusX, xl, minX, maxX);
+}
+
+@property int
+cameraY(in int a)
+{
+    return cameraSetter(_cameraY, a, torusY, yl, minY, maxY);
 }
 
 
 
-@property int
-cameraY(in int y)
+private int mouseOnLand(
+    ref const(int) camera, in int torus, in int torbitLength,
+    in int cameraL, in int min, in int mousePos) const
 {
-    _cameraY = y;
-    if (torusY) {
-        _cameraY = basics.help.positiveMod(_cameraY, yl);
+    int ret = camera - min + (mousePos / zoom);
+    if (! torus && (cameraL > torbitLength * zoom)) {
+        if (camera is _cameraX)
+            // Small non-torus maps are centered on the camera horizontally.
+            // Compute the left frame width (1/2 of missing x-length)
+            ret -= cameraL - torbitLength * zoom / 2;
+        else
+            // Small non-torus maps are drawn at the lower edge of the camera.
+            ret -= cameraL - torbitLength * zoom;
     }
-    else if (minY >= maxY) {
-        // this can happen on very small maps
-        _cameraY = this.yl / 2;
-    }
-    else {
-        if (_cameraY < minY) _cameraY = minY;
-        if (_cameraY > maxY) _cameraY = maxY;
-    }
-    return _cameraY;
+    if (torus)
+        ret = basics.help.positiveMod(ret, torbitLength);
+    return ret;
+}
+
+@property int
+mouseOnLandX() const
+{
+    return mouseOnLand(_cameraX, torusX, xl, cameraXl, minX,
+                       hardware.mouse.mouseX);
+}
+
+@property int
+mouseOnLandY() const
+{
+    return mouseOnLand(_cameraY, torusY, yl, cameraYl, minY,
+                       hardware.mouse.mouseY);
 }
 
 
@@ -181,40 +206,15 @@ zoom(in int z)
 
 
 
-@property int
-mouseOnLandX()
-{
-    int ret = _cameraX - minX + (hardware.mouse.mouseX() / zoom);
-    if (! torusX && _cameraXl > xl * zoom) {
-        // small non-torus maps are centered on the camera.
-        // Compute the left frame width (1/2 of missing x-length)
-        ret -= _cameraXl - xl * zoom / 2;
-    }
-    if (torusX)
-        ret = basics.help.positiveMod(ret, xl);
-    return ret;
-}
-
-
-
-@property int
-mouseOnLandY()
-{
-    int ret = _cameraY - minY + (hardware.mouse.mouseY() / zoom);
-    if (! torusY && _cameraYl > yl * zoom) {
-        // small non-torus maps are drawn at the lower edge of the camera
-        ret -= cameraYl - yl * zoom;
-    }
-    if (torusY)
-        ret = basics.help.positiveMod(ret, yl);
-    return ret;
-}
-
-
-
 void
 calcScrolling()
 {
+    if (! scrollable) {
+        scrollingStarts = false;
+        scrollingContinues = false;
+        return;
+    }
+
     if (basics.user.scrollEdge) {
         int scrd = this.scrollSpeedEdge;
         if (hardware.mouse.mouseHeldRight()) scrd *= 4;
