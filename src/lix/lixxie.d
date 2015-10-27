@@ -6,8 +6,7 @@ import basics.globals; // fuse image
 import basics.help;
 import basics.matrix;
 import basics.user; // multipleBuilders
-import game.lookup;
-import game.tribe;
+import game;
 import graphic.color;
 import graphic.gadget;
 import graphic.graphic;
@@ -15,20 +14,10 @@ import graphic.gralib;
 import graphic.map;
 import graphic.torbit;
 import hardware.sound;
-import lix.enums;
-import lix.acfunc;
-
-// import editor.graphed;
-// import graphic.graphbg;
+import lix;
 
 // DTODOCOMMENT: add the interesting things from the 150+ line comment in
 // C++/A4 Lix's lix/lix.h top comment.
-
-// DTODO: implement these classes
-class EffectManager {
-    void add_sound        (in int, in Tribe, int, in Sound) { }
-    void add_sound_if_trlo(in int, in Tribe, int, in Sound) { }
-}
 
 class Lixxie : Graphic {
 
@@ -49,8 +38,8 @@ private:
 
     int  _frame;
 
-    Lookup.LoNr _enc_body;
-    Lookup.LoNr _enc_foot;
+    Lookup.LoNr _encBody;
+    Lookup.LoNr _encFoot;
 
     Style _style;
     Ac    _ac;
@@ -63,13 +52,11 @@ public:
     static immutable int distanceFloat    =  60;
     static immutable int updatesForBomb   =  75;
 
-    static Torbit        land;
-    static Lookup        lookup;
+    static Torbit*       land;
+    static Lookup*       lookup;
     static Map           groundMap;
     static EffectManager effect;
 
-    int specialX;
-    int specialY;
     int queue; // builders and platformers can be queued in advance
 
     bool marked; // used by the game class, marks if already updated
@@ -81,7 +68,8 @@ public:
     int  updatesSinceBomb;
     bool exploderKnockback;
 
-
+    SkillFields skillFields; // defined in lix.acfunc
+    alias skillFields this;
 
 /*  this(Tribe = null, int = 0, int = 0); // tribe==null ? NOTHING : FALLER
  *  this(in Lixxie rhs);
@@ -111,14 +99,14 @@ public:
 
     @property Ac ac() const { return _ac; }
 
-    void setAcWithoutCallingBecome(in Ac new_ac) { _ac = new_ac; }
+    void setAcWithoutCallingBecome(in Ac newAc) { _ac = newAc; }
 
-    @property bool pass_top () const { return ac_func[ac].pass_top;  }
-    @property bool leaving  () const { return ac_func[ac].leaving;   }
-    @property bool blockable() const { return ac_func[ac].blockable; }
+    @property bool passTop () const { return acFunc[ac].passTop;  }
+    @property bool leaving  () const { return acFunc[ac].leaving;   }
+    @property bool blockable() const { return acFunc[ac].blockable; }
 
-    @property Sound soundAssign() const { return ac_func[ac].soundAssign; }
-    @property Sound soundBecome() const { return ac_func[ac].soundBecome; }
+    @property Sound soundAssign() const { return acFunc[ac].soundAssign; }
+    @property Sound soundBecome() const { return acFunc[ac].soundBecome; }
 
     @property bool flingNew() const { return _flingNew; }
     @property int  flingX()   const { return _flingX;   }
@@ -126,50 +114,50 @@ public:
 /*  void addFling(int, int, bool (from same tribe) = false);
  *  void resetFlingNew();
  *
- *  static bool getSteel_absolute(in int, in int);
+ *  static bool getSteelAbsolute(in int, in int);
  *  bool getSteel         (in int = 0, in int = 0);
  *
- *  void add_land          (in int = 0, in int = 0, in AlCol = color.transp);
+ *  void addLand          (in int = 0, in int = 0, in AlCol = color.transp);
  *  void addLandAbsolute (in int = 0, in int = 0, in AlCol = color.transp);
  *
- *      don't call add_land from the skills, use draw_pixel. That amends
+ *      don't call addLand from the skills, use drawPixel. That amends
  *      the x-direction by left-looking lixes by the desired 1 pixel. Kludge:
- *      Maybe remove add_land entirely and put the functionality in draw_pixel?
+ *      Maybe remove addLand entirely and put the functionality in drawPixel?
  *
  *  bool isSolid          (in int = 0, in int = 2);
  *  bool isSolidSingle   (in int = 0, in int = 2);
  *  int  solidWallHeight (in int = 0, in int = 0);
- *  int  count_solid       (int, int, int, int);
- *  int  count_steel       (int, int, int, int);
+ *  int  countSolid       (int, int, int, int);
+ *  int  countSteel       (int, int, int, int);
  *
- *  static void remove_pixel_absolute(in int, in int);
- *  bool        remove_pixel         (   int, in int);
- *  bool        remove_rectangle     (int, int, int, int);
+ *  static void removePixelAbsolute(in int, in int);
+ *  bool        removePixel         (   int, in int);
+ *  bool        removeRectangle     (int, int, int, int);
  *
- *  void draw_pixel       (int,      in int,   in AlCol);
- *  void draw_rectangle   (int, int, int, int, in AlCol);
- *  void draw_brick       (int, int, int, int);
- *  void draw_frame_to_map(int, int, int, int, int, int, int, int);
+ *  void drawPixel       (int,      in int,   in AlCol);
+ *  void drawRectangle   (int, int, int, int, in AlCol);
+ *  void drawBrick       (int, int, int, int);
+ *  void drawFrameToMapAsTerrain(int, int, int, int, int, int, int, int);
  *
- *  void play_sound        (in ref UpdateArgs, in Sound);
- *  void play_sound_if_trlo(in ref UpdateArgs, in Sound);
+ *  void playSound        (in ref UpdateArgs, in Sound);
+ *  void playSoundIfTribeLocal(in ref UpdateArgs, in Sound);
  */
     @property int frame() const   { return _frame;     }
     @property int frame(in int i) { return _frame = i; }
-/*           void next_frame();
+/*           void nextFrame();
  *  override bool isLastFrame() const;
  */
-    @property auto body_encounters() const        { return _enc_body;     }
-    @property auto foot_encounters() const        { return _enc_foot;     }
-    @property auto body_encounters(Lookup.LoNr n) { return _enc_body = n; }
-    @property auto foot_encounters(Lookup.LoNr n) { return _enc_foot = n; }
-    void set_no_encounters() { _enc_body = _enc_foot = 0; }
+    @property auto body_encounters() const        { return _encBody;     }
+    @property auto foot_encounters() const        { return _encFoot;     }
+    @property auto body_encounters(Lookup.LoNr n) { return _encBody = n; }
+    @property auto foot_encounters(Lookup.LoNr n) { return _encFoot = n; }
+    void set_no_encounters() { _encBody = _encFoot = 0; }
 
 //  int  get_priority  (in Ac, in bool);
     void evaluate_click(in Ac ac) { assclk(ac); }
 /*  void assclk        (in Ac);
  *  void become        (in Ac);
- *  void become_default(in Ac);
+ *  void becomeDefault(in Ac);
  *  void update        (in UpdateArgs);
  *
  *  override void draw();
@@ -185,8 +173,7 @@ this(
     int   new_ey
 ) {
     super(getLixSpritesheet(new_tribe ? new_tribe.style : Style.GARDEN),
-          groundMap, even(new_ex) - lix.enums.ex_offset,
-                           new_ey  - lix.enums.ey_offset);
+          groundMap, even(new_ex) - exOffset, new_ey - eyOffset);
     _tribe = new_tribe;
     _dir   = 1;
     _style = tribe ? tribe.style : Style.GARDEN,
@@ -215,28 +202,26 @@ this(Lixxie rhs)
     _ey    = rhs._ey;
 
     super(graphic.gralib.getLixSpritesheet(_style), groundMap,
-        _ex - lix.enums.ex_offset,
-        _ey - lix.enums.ey_offset);
+        _ex - exOffset, _ey - eyOffset);
 
     _flingX = rhs._flingX;
     _flingY = rhs._flingY;
     _flingNew         = rhs._flingNew;
     _flingBySameTribe = rhs._flingBySameTribe;
 
-    _enc_body = rhs._enc_body;
-    _enc_foot = rhs._enc_foot;
+    _encBody = rhs._encBody;
+    _encFoot = rhs._encFoot;
 
-    specialX = rhs.specialX;
-    specialY = rhs.specialY;
-    queue     = rhs.queue;
-    marked    = rhs.marked;
+    queue    = rhs.queue;
+    marked   = rhs.marked;
 
-    runner    = rhs.runner;
-    climber   = rhs.climber;
-    floater   = rhs.floater;
+    runner   = rhs.runner;
+    climber  = rhs.climber;
+    floater  = rhs.floater;
 
-    updatesSinceBomb = rhs.updatesSinceBomb;
+    updatesSinceBomb  = rhs.updatesSinceBomb;
     exploderKnockback = rhs.exploderKnockback;
+    skillFields       = rhs.skillFields;
 }
 
 
@@ -248,7 +233,7 @@ invariant()
 
 
 
-static void setStaticMaps(Torbit tb, Lookup lo, Map ma)
+static void setStaticMaps(Torbit* tb, Lookup* lo, Map ma)
 {
     land = tb;
     lookup = lo;
@@ -257,7 +242,7 @@ static void setStaticMaps(Torbit tb, Lookup lo, Map ma)
 
 
 
-private XY get_fuseXy() const
+private XY getFuseXY() const
 {
     XY ret = countdown.get(frame, ac);
     if (_dir < 0)
@@ -272,14 +257,14 @@ private XY get_fuseXy() const
 @property int
 ex(in int n) {
     _ex = basics.help.even(n);
-    super.x = _ex - lix.enums.ex_offset;
+    super.x = _ex - exOffset;
     if (groundMap.torusX)
         _ex = positiveMod(_ex, land.xl);
-    immutable XY fuseXy = get_fuseXy();
-    _enc_foot |= lookup.get(_ex, _ey);
-    _enc_body |= _enc_foot
-              |  lookup.get(_ex, _ey - 4)
-              |  lookup.get(fuseXy.x, fuseXy.y);
+    immutable XY fuseXy = getFuseXY();
+    _encFoot |= lookup.get(_ex, _ey);
+    _encBody |= _encFoot
+             |  lookup.get(_ex, _ey - 4)
+             |  lookup.get(fuseXy.x, fuseXy.y);
     return _ex;
 }
 
@@ -288,14 +273,14 @@ ex(in int n) {
 @property int
 ey(in int n) {
     _ey = n;
-    super.y = _ey - lix.enums.ey_offset;
+    super.y = _ey - eyOffset;
     if (groundMap.torusY)
         _ey = positiveMod(_ey, land.yl);
-    immutable XY fuseXy = get_fuseXy();
-    _enc_foot |= lookup.get(_ex, _ey);
-    _enc_body |= _enc_foot
-              |  lookup.get(_ex, _ey - 4)
-              |  lookup.get(fuseXy.x, fuseXy.y);
+    immutable XY fuseXy = getFuseXY();
+    _encFoot |= lookup.get(_ex, _ey);
+    _encBody |= _encFoot
+             |  lookup.get(_ex, _ey - 4)
+             |  lookup.get(fuseXy.x, fuseXy.y);
     return _ey;
 }
 
@@ -367,14 +352,14 @@ bool getSteel(in int px, in int py)
 
 
 
-static bool getSteel_absolute(in int x, in int y)
+static bool getSteelAbsolute(in int x, in int y)
 {
     return lookup.getSteel(x, y);
 }
 
 
 
-void add_land(in int px, in int py, const AlCol col)
+void addLand(in int px, in int py, const AlCol col)
 {
     addLandAbsolute(_ex + px * _dir, _ey + py, col);
 }
@@ -417,7 +402,7 @@ int solidWallHeight(in int px, in int py)
 
 
 
-int count_solid(int x1, int y1, int x2, int y2)
+int countSolid(int x1, int y1, int x2, int y2)
 {
     if (x2 < x1) swap(x1, x2);
     if (y2 < y1) swap(y1, y2);
@@ -432,7 +417,7 @@ int count_solid(int x1, int y1, int x2, int y2)
 
 
 
-int count_steel(int x1, int y1, int x2, int y2)
+int countSteel(int x1, int y1, int x2, int y2)
 {
     if (x2 < x1) swap(x1, x2);
     if (y2 < y1) swap(y1, y2);
@@ -453,9 +438,9 @@ int count_steel(int x1, int y1, int x2, int y2)
 
 
 
-bool remove_pixel(int px, in int py)
+bool removePixel(int px, in int py)
 {
-    // this amendmend is only in draw_pixel() and remove_pixel()
+    // this amendmend is only in drawPixel() and removePixel()
     if (_dir < 0) --px;
 
     // test whether the landscape can be dug
@@ -471,9 +456,9 @@ bool remove_pixel(int px, in int py)
 
 
 
-void remove_pixel_absolute(in int x, in int y)
+void removePixelAbsolute(in int x, in int y)
 {
-    if (! getSteel_absolute(x, y) && lookup.getSolid(x, y)) {
+    if (! getSteelAbsolute(x, y) && lookup.getSolid(x, y)) {
         lookup.rm(x, y, Lookup.bitTerrain);
         land.setPixel(x, y, color.transp);
     }
@@ -481,7 +466,7 @@ void remove_pixel_absolute(in int x, in int y)
 
 
 
-bool remove_rectangle(int x1, int y1, int x2, int y2)
+bool removeRectangle(int x1, int y1, int x2, int y2)
 {
     if (x2 < x1) swap(x1, x2);
     if (y2 < y1) swap(y1, y2);
@@ -489,7 +474,7 @@ bool remove_rectangle(int x1, int y1, int x2, int y2)
     for (int ix = x1; ix <= x2; ++ix) {
         for (int iy = y1; iy <= y2; ++iy) {
             // return true if at least one pixel has been steel
-            if (remove_pixel(ix, iy)) ret = true;
+            if (removePixel(ix, iy)) ret = true;
         }
     }
     return ret;
@@ -497,31 +482,31 @@ bool remove_rectangle(int x1, int y1, int x2, int y2)
 
 
 
-// like remove_pixel
-void draw_pixel(int px, in int py, in AlCol col)
+// like removePixel
+void drawPixel(int px, in int py, in AlCol col)
 {
-    // this amendmend is only in draw_pixel() and remove_pixel()
+    // this amendmend is only in drawPixel() and removePixel()
     if (_dir < 0) --px;
 
-    if (! isSolidSingle(px, py)) add_land(px, py, col);
+    if (! isSolidSingle(px, py)) addLand(px, py, col);
 }
 
 
 
-void draw_rectangle(int x1, int y1, int x2, int y2, in AlCol col)
+void drawRectangle(int x1, int y1, int x2, int y2, in AlCol col)
 {
     if (x2 < x1) swap(x1, x2);
     if (y2 < y1) swap(y1, y2);
     for (int ix = x1; ix <= x2; ++ix)
         for (int iy = y1; iy <= y2; ++iy)
-            draw_pixel(ix, iy, col);
+            drawPixel(ix, iy, col);
 }
 
 
 
-void draw_brick(int x1, int y1, int x2, int y2)
+void drawBrick(int x1, int y1, int x2, int y2)
 {
-    assert (false, "DTODO: implement lixxie.draw_brick. Cache the colors!");
+    assert (false, "DTODO: implement lixxie.drawBrick. Cache the colors!");
     /*
     const int col_l = get_cutbit()->get_pixel(19, LixEn::BUILDER - 1, 0, 0);
     const int col_m = get_cutbit()->get_pixel(20, LixEn::BUILDER - 1, 0, 0);
@@ -546,19 +531,19 @@ void draw_brick(int x1, int y1, int x2, int y2)
 // specified animation frame onto the level map at position (xd, yd),
 // as diggable terrain. (xd, yd) specifies the top left of the destination
 // rectangle relative to the lix's position
-void draw_frame_to_map
+void drawFrameToMapAsTerrain
 (
     int frame, int anim,
     int xs, int ys, int ws, int hs,
     int xd, int yd
 ) {
-    assert (false, "DTODO: implement draw_frame_to_map (as terrain => speed!");
+    assert (false, "DTODO: implement this function (as terrain => speed!");
     /*
     for (int y = 0; y < hs; ++y) {
         for (int x = 0; x < ws; ++x) {
             const AlCol col = get_cutbit().get_pixel(frame, anim, xs+x, ys+y);
             if (col != color.transp && ! getSteel(xd + x, yd + y)) {
-                add_land(xd + x, yd + y, col);
+                addLand(xd + x, yd + y, col);
             }
         }
     }
@@ -567,18 +552,18 @@ void draw_frame_to_map
 
 
 
-void play_sound(in ref UpdateArgs ua, in Sound sound_id)
+void playSound(in ref UpdateArgs ua, in Sound soundID)
 {
     assert (effect);
-    effect.add_sound(ua.st.update, tribe, ua.id, sound_id);
+    effect.addSound(ua.st.update, tribe, ua.id, soundID);
 }
 
 
 
-void play_sound_if_trlo(in ref UpdateArgs ua, in Sound sound_id)
+void playSoundIfTribeLocal(in ref UpdateArgs ua, in Sound soundID)
 {
     assert (effect);
-    effect.add_sound_if_trlo(ua.st.update, tribe, ua.id, sound_id);
+    effect.addSoundIfTribeLocal(ua.st.update, tribe, ua.id, soundID);
 }
 
 
@@ -590,11 +575,9 @@ override bool isLastFrame() const
 
 
 
-void next_frame()
+void nextFrame()
 {
-    if (isLastFrame())
-        _frame = 0;
-    else _frame++;
+    _frame = isLastFrame() ? 0 : _frame + 1;
 }
 
 
@@ -608,7 +591,7 @@ override void draw()
 
     // draw the fuse if necessary
     if (updatesSinceBomb > 0) {
-        immutable XY fuseXy = get_fuseXy();
+        immutable XY fuseXy = getFuseXY();
         immutable int fuseX = fuseXy.x;
         immutable int fuseY = fuseXy.y;
 
@@ -658,28 +641,28 @@ override void draw()
 // e.g., by holding the right mouse button. This inversion is not handled by
 // this function, but should be done by the calling game code.
 int get_priority(
-    in Ac  new_ac,
+    in Ac   newAc,
     in bool personal // Shall personal settings override the default valuation?
 ) {                  // If false, allow anything anyone could do, for network
     int p = 0;
 
     // Nothing allowed at all, don't even open the cursor
-    if (ac == Ac.NOTHING || ac_func[ac].leaving) return 0;
+    if (ac == Ac.NOTHING || acFunc[ac].leaving) return 0;
 
     // Permanent skills
-    if ((new_ac == Ac.EXPLODER  && updatesSinceBomb > 0)
-     || (new_ac == Ac.EXPLODER2 && updatesSinceBomb > 0)
-     || (new_ac == Ac.RUNNER    && runner)
-     || (new_ac == Ac.CLIMBER   && climber)
-     || (new_ac == Ac.FLOATER   && floater) ) return 1;
+    if ((newAc == Ac.EXPLODER  && updatesSinceBomb > 0)
+     || (newAc == Ac.EXPLODER2 && updatesSinceBomb > 0)
+     || (newAc == Ac.RUNNER    && runner)
+     || (newAc == Ac.CLIMBER   && climber)
+     || (newAc == Ac.FLOATER   && floater) ) return 1;
 
     switch (ac) {
         // When a blocker shall be freed/exploded, the blocker has extremely
         // high priority, more than anything else on the field.
         case Ac.BLOCKER:
-            if (new_ac == Ac.WALKER
-             || new_ac == Ac.EXPLODER
-             || new_ac == Ac.EXPLODER2) p = 5000;
+            if (newAc == Ac.WALKER
+             || newAc == Ac.EXPLODER
+             || newAc == Ac.EXPLODER2) p = 5000;
             else return 1;
             break;
 
@@ -707,11 +690,11 @@ int get_priority(
         case Ac.FLOATER:
         case Ac.JUMPER:
         GOTO_TARGET_FULL_ATTENTION:
-            if (new_ac == Ac.RUNNER
-             || new_ac == Ac.CLIMBER
-             || new_ac == Ac.FLOATER
-             || new_ac == Ac.EXPLODER
-             || new_ac == Ac.EXPLODER2) p = 2000;
+            if (newAc == Ac.RUNNER
+             || newAc == Ac.CLIMBER
+             || newAc == Ac.FLOATER
+             || newAc == Ac.EXPLODER
+             || newAc == Ac.EXPLODER2) p = 2000;
             else return 1;
             break;
 
@@ -728,19 +711,19 @@ int get_priority(
         // even if the user has disabled it for themselves.
         case Ac.BUILDER:
         case Ac.PLATFORMER:
-            if (new_ac == ac
+            if (newAc == ac
              && (! personal || multipleBuilders)) p = 1000;
-            else if (new_ac != ac)                 p = 4000;
+            else if (newAc != ac)                 p = 4000;
             else                                   return 1;
             break;
 
         // Usually, anything different from the current activity can be assign.
         default:
-            if (new_ac != ac) p = 4000;
+            if (newAc != ac) p = 4000;
             else return 1;
 
     }
-    p += (new_ac == Ac.BATTER && batterPriority
+    p += (newAc == Ac.BATTER && batterPriority
           ? (- updatesSinceBomb) : updatesSinceBomb);
     p += 400 * runner + 200 * climber + 100 * floater;
     return p;
@@ -749,55 +732,60 @@ int get_priority(
 
 
 // ############################################################################
-// ############### skill function dispatch -- was lix/ac_func.cpp in C++/A4 Lix
+// ############### skill function dispatch -- was lix/acFunc.cpp in C++/A4 Lix
 // ############################################################################
 
 
 
-void assclk(in Ac new_ac)
+void assclk(in Ac newAc)
 {
-    immutable Ac old_ac = ac;
-    if (ac_func[new_ac].assclk) ac_func[new_ac].assclk(this);
-    else                        become(new_ac); // this dispatches again
+    immutable Ac oldAc = ac;
+    if (acFunc[newAc].assclk)
+        acFunc[newAc].assclk(this);
+    else
+        become(newAc); // this dispatches again
 
-    if (old_ac != ac) --_frame; // can go to -1, then nothing happens on the
-                                // next update and frame 0 will be shown then
+    if (oldAc != ac)
+        --_frame;
+        // can go to -1, then nothing happens on the
+        // next update and frame 0 will be shown then
 }
 
 
 
-void become(in Ac new_ac)
+void become(in Ac newAc)
 {
-    if (new_ac != ac && queue > 0) {
+    if (newAc != ac && queue > 0) {
         tribe.returnSkills(ac, queue);
         queue = 0; // in case other skill_become() redirect again to become()
     }
     // Reset sprite placement like climber's offset in x-direction by 1,
     // or the digger sprite displacement in one frame. This is the same code
     // as the sprite placement in set_ex/ey().
-    super.x = _ex - lix.enums.ex_offset;
-    super.y = _ey - lix.enums.ey_offset;
+    super.x = _ex - exOffset;
+    super.y = _ey - eyOffset;
 
-    if (ac_func[new_ac].become) ac_func[new_ac].become(this);
-    else                        become_default(new_ac);
+    if (acFunc[newAc].become)
+        acFunc[newAc].become(this);
+    else
+        becomeDefault(newAc);
 }
 
 
 
-void become_default(in Ac new_ac)
+void becomeDefault(in Ac newAc)
 {
-    _frame    = 0;
-    _ac       = new_ac;
-    specialY = 0;
-    specialX = 0;
-    queue     = 0;
+    _frame   = 0;
+    _ac      = newAc;
+    queue    = 0;
 }
 
 
 
 void update(in UpdateArgs ua)
 {
-    if (ac_func[ac].update) ac_func[ac].update(this, ua);
+    if (acFunc[ac].update)
+        acFunc[ac].update(this, ua);
 }
 
 }

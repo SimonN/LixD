@@ -1,16 +1,17 @@
 module game.gamedraw;
 
+import std.range : retro;
 import std.string; // format
 
 import basics.alleg5;
-import game.game;
+import game;
 import graphic.gadget;
 import graphic.map;
 import graphic.torbit;
 import hardware.display;
 import hardware.tharsis;
 
-private string _gadget_count_str = "hallo";
+private string _gadgetCountStr = "hallo";
 
 package void
 implGameDraw(Game game) { with (game)
@@ -31,11 +32,11 @@ implGameDraw(Game game) { with (game)
         if (_profilingGadgetCount == 0)
             with (Zone(profiler, "game counts gadgets, basic loop")) {
                 cs.foreachGadget((Gadget g) { ++_profilingGadgetCount; } );
-                _gadget_count_str = format("game %d gadgets, %s",
+                _gadgetCountStr = format("game %d gadgets, %s",
                                        _profilingGadgetCount, level.name);
             }
 
-        with (Zone(profiler, _gadget_count_str))
+        with (Zone(profiler, _gadgetCountStr))
             cs.foreachGadget((Gadget g) {
                 with (Zone(profiler, "game draws one gadget"))
                     g.draw();
@@ -43,11 +44,23 @@ implGameDraw(Game game) { with (game)
 
         with (Zone(profiler, "game draws land to map"))
             map.loadCameraRectangle(game.cs.land);
+
+        with (Zone(profiler, "game draws lixes")) {
+            void drawAllLixes(Tribe tr)
+            {
+                foreach (lix; tr.lixvec.retro) if (! lix.marked) lix.draw();
+                foreach (lix; tr.lixvec.retro) if (  lix.marked) lix.draw();
+            }
+            foreach (otherTribe; cs.tribes)
+                if (otherTribe !is trlo)
+                    drawAllLixes(otherTribe);
+            drawAllLixes(trlo);
+        }
     }
     // end drawing target = map
 
     with (Zone(profiler, "game draws map to screen"))
-        map.draw_camera(al_get_backbuffer(hardware.display.display));
+        map.drawCamera(al_get_backbuffer(hardware.display.display));
 
     with (Zone(profiler, "game draws ingame text")) {
         import graphic.textout;
@@ -65,12 +78,12 @@ implGameDraw(Game game) { with (game)
 
             cs.land.saveToFile(new Filename("./debug-land.png"));
             map    .saveToFile(new Filename("./debug-map-directsave.png"));
-            Torbit debug_output = new Torbit(displayXl, displayYl);
-            debug_output.clear_to_color(graphic.color.color.guiD);
+            Torbit debugOutput = new Torbit(displayXl, displayYl);
+            debugOutput.clearToColor(graphic.color.color.guiD);
             scope (exit)
-                destroy(debug_output);
-            map.draw_camera(debug_output.albit);
-            debug_output.saveToFile(new Filename("./debug-map-drawsave.png"));
+                destroy(debugOutput);
+            map.drawCamera(debugOutput.albit);
+            debugOutput.saveToFile(new Filename("./debug-map-drawsave.png"));
         }
     }
 

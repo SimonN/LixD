@@ -141,7 +141,7 @@ void initialize()
         GOTO_NEXTFRAME:
         if (fy == Ac.BLOCKER) {
             XY blockerEyes = countdown.get(fx, fy);
-            blockerEyes.x = lix.enums.ex_offset;
+            blockerEyes.x = lix.enums.exOffset;
             countdown.set(fx, fy, blockerEyes);
         }
     }

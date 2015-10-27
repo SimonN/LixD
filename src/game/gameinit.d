@@ -12,6 +12,7 @@ import graphic.gadget;
 import graphic.torbit;
 import gui;
 import level.tile;
+import lix.lixxie; // setStaticMaps
 
 package void
 implGameConstructor(Game game, Level lv, Filename fn, Replay rp)
@@ -70,6 +71,8 @@ prepareLand(Game game) { with (game)
 
     map = new Map(cs.land, Geom.screenXls.to!int, Geom.screenYls.to!int
         * (Geom.panelYlDivisor - 1) / Geom.panelYlDivisor);
+
+    Lixxie.setStaticMaps(&cs.land, &cs.lookup, map);
 }}
 
 

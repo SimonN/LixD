@@ -2,8 +2,8 @@ module lix.enums;
 
 import basics.matrix;
 
-const int ex_offset = 16; // offset of the effective coordinate of the lix
-const int ey_offset = 26; // sprite from the top left corner
+const int exOffset = 16; // offset of the effective coordinate of the lix
+const int eyOffset = 26; // sprite from the top left corner
 
 const int skillInfinity = -1;  // for SkillButtons
 const int skill_nr_max   = 999; // for SkillButtons

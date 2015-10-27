@@ -283,7 +283,7 @@ calcScrolling()
 
 
 void
-draw_camera(Albit target_albit)
+drawCamera(Albit target_albit)
 {
     // less_x/y: By how much is the camera larger than the map?
     //           These are 0 on torus maps, only > 0 for small non-torus maps.
@@ -304,7 +304,7 @@ draw_camera(Albit target_albit)
             // a smaller rectangle is better.
             immutable int maxXl = min(xl * zoom, _cameraXl - x);
             immutable int maxYl = min(yl * zoom, _cameraYl - y);
-            draw_camera_with_target_corner(x, y, maxXl, maxYl);
+            drawCamera_with_target_corner(x, y, maxXl, maxYl);
             if (less_y != 0) break;
         }
         if (less_x != 0) break;
@@ -346,7 +346,7 @@ private Rect cameraRectangle()
 
 
 private void
-draw_camera_with_target_corner(
+drawCamera_with_target_corner(
     in int tcx,
     in int tcy,
     in int max_tcxl,
