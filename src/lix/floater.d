@@ -6,6 +6,23 @@ class Floater : PerformedActivity {
 
     private alias lixxie this;
 
-    override @property bool canPassTop() const { return true; }
+    int ySpeed = 0;
 
+    override @property bool canPassTop() const { return true; }
+    override @property bool callBecomeAfterAssignment() const { return false; }
+
+    override void
+    onBecome()
+    {
+        if (ac == Ac.FALLER) {
+            Faller perfCast = cast (Faller) performedActivity;
+            assert (perfCast);
+            ySpeed = perfCast.ySpeed;
+        }
+    }
+
+    override void
+    performActivity(UpdateArgs ua)
+    {
+    }
 }

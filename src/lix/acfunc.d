@@ -2,7 +2,10 @@ module lix.acfunc;
 
 import game;
 import lix;
-import hardware.sound;
+
+// Mimic behavior of A4/C++ Lix as precisely as possible? Might help testing
+// old replays. This flag can be removed after the D port got widespread.
+enum cPlusPlusPhysicsBugs = false;
 
 struct UpdateArgs {
     GameState st;
@@ -11,40 +14,17 @@ struct UpdateArgs {
     this(GameState _st, in int _id = 0) { st = _st; id = _id; }
 }
 
-
 /+
 static this()
 {
-    acFunc[Ac.CLIMBER]   .blockable =
-    acFunc[Ac.ASCENDER]  .blockable =
-    acFunc[Ac.BLOCKER]   .blockable =
-    acFunc[Ac.EXPLODER]  .blockable =
-    acFunc[Ac.BATTER]    .blockable =
-    acFunc[Ac.CUBER]     .blockable = false;
-
-    acFunc[Ac.NOTHING]   .leaving =
-    acFunc[Ac.SPLATTER]  .leaving =
-    acFunc[Ac.BURNER]    .leaving =
-    acFunc[Ac.DROWNER]   .leaving =
-    acFunc[Ac.EXITER]    .leaving =
     acFunc[Ac.EXPLODER]  .leaving =
     acFunc[Ac.CUBER]     .leaving = true;
-
-    acFunc[Ac.SPLATTER]  .soundBecome = Sound.SPLAT;
-    acFunc[Ac.BURNER]    .soundBecome = Sound.FIRE;
-    acFunc[Ac.DROWNER]   .soundBecome = Sound.WATER;
 }
 +/
 
 // DTODO: Remove these as they get implemented in other files
-class RemovedLix : PerformedActivity { }
 class Stunner : PerformedActivity { }
 class Lander : PerformedActivity { }
-class Splatter : PerformedActivity { }
-class Burner : PerformedActivity { }
-class Drowner : PerformedActivity { }
-class Exiter : PerformedActivity { }
-
 class Walker : PerformedActivity { }
 class Runner : PerformedActivity { }
 class Climber : PerformedActivity { }
@@ -57,7 +37,6 @@ class Platformer : PerformedActivity { }
 class Basher : PerformedActivity { }
 class Miner : PerformedActivity { }
 class Digger : PerformedActivity { }
-
 class Jumper : PerformedActivity { }
 class Batter : PerformedActivity { }
 class Cuber : PerformedActivity { }
@@ -70,9 +49,11 @@ abstract class PerformedActivity {
     @property bool  canPassTop()  const { return false; }
     @property bool  isBlockable() const { return true;  }
     @property bool  isLeaving()   const { return false; }
-    @property Sound soundBecome() const { return Sound.ASSIGN; }
+
+    @property bool  callBecomeAfterAssignment() const { return true; }
 
     void onManualAssignment()        { } // while Lix has old performed ac!
+    void onBecome()                  { } // after manual ass., still while old
     void performActivity(UpdateArgs) { } // the main method to override
     void onBecomingSomethingElse()   { } // e.g. return leftover builders
 
@@ -119,4 +100,10 @@ abstract class PerformedActivity {
         newPerf._ac    = newAc;
         return newPerf;
     }
+}
+
+
+
+class RemovedLix : PerformedActivity {
+    override @property bool isLeaving() const { return true; }
 }

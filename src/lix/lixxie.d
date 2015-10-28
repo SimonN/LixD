@@ -49,9 +49,7 @@ private:
 
 public:
 
-    static immutable int distanceSafeFall = 126;
-    static immutable int distanceFloat    =  60;
-    static immutable int updatesForBomb   =  75;
+    static immutable int updatesForBomb = 75;
 
     static Torbit*       land;
     static Lookup*       lookup;
@@ -62,9 +60,9 @@ public:
 
     bool marked; // used by the game class, marks if already updated
 
-    bool runner;
-    bool climber;
-    bool floater;
+    bool abilityToRun;
+    bool abilityToClimb;
+    bool abilityToFloat;
 
     int  updatesSinceBomb;
     bool exploderKnockback;
@@ -143,14 +141,14 @@ public:
  */
     @property int frame() const   { return _frame;     }
     @property int frame(in int i) { return _frame = i; }
-/*           void nextFrame();
+/*           void advanceFrame();
  *  override bool isLastFrame() const;
  */
-    @property auto body_encounters() const        { return _encBody;     }
-    @property auto foot_encounters() const        { return _encFoot;     }
-    @property auto body_encounters(Lookup.LoNr n) { return _encBody = n; }
-    @property auto foot_encounters(Lookup.LoNr n) { return _encFoot = n; }
-    void set_no_encounters() { _encBody = _encFoot = 0; }
+    @property auto bodyEncounters() const              { return _encBody;     }
+    @property auto footEncounters() const              { return _encFoot;     }
+    @property auto bodyEncounters(Lookup.LoNr n) const { return _encBody & n; }
+    @property auto footEncounters(Lookup.LoNr n) const { return _encFoot & n; }
+    void setNoEncounters() { _encBody = _encFoot = 0; }
 
 //  int  get_priority  (in Ac, in bool);
 /*  void manualAssignment(in Ac);
@@ -211,9 +209,9 @@ this(Lixxie rhs)
     queue    = rhs.queue;
     marked   = rhs.marked;
 
-    runner   = rhs.runner;
-    climber  = rhs.climber;
-    floater  = rhs.floater;
+    abilityToRun   = rhs.abilityToRun;
+    abilityToClimb  = rhs.abilityToClimb;
+    abilityToFloat  = rhs.abilityToFloat;
 
     updatesSinceBomb  = rhs.updatesSinceBomb;
     exploderKnockback = rhs.exploderKnockback;
@@ -573,7 +571,7 @@ override bool isLastFrame() const
 
 
 
-void nextFrame()
+void advanceFrame()
 {
     _frame = isLastFrame() ? 0 : _frame + 1;
 }
@@ -650,9 +648,9 @@ int get_priority(
     // Permanent skills
     if ((newAc == Ac.EXPLODER  && updatesSinceBomb > 0)
      || (newAc == Ac.EXPLODER2 && updatesSinceBomb > 0)
-     || (newAc == Ac.RUNNER    && runner)
-     || (newAc == Ac.CLIMBER   && climber)
-     || (newAc == Ac.FLOATER   && floater) ) return 1;
+     || (newAc == Ac.RUNNER    && abilityToRun)
+     || (newAc == Ac.CLIMBER   && abilityToClimb)
+     || (newAc == Ac.FLOATER   && abilityToFloat) ) return 1;
 
     switch (ac) {
         // When a blocker shall be freed/exploded, the blocker has extremely
@@ -723,7 +721,7 @@ int get_priority(
     }
     p += (newAc == Ac.BATTER && batterPriority
           ? (- updatesSinceBomb) : updatesSinceBomb);
-    p += 400 * runner + 200 * climber + 100 * floater;
+    p += 400 * abilityToRun + 200 * abilityToClimb + 100 * abilityToFloat;
     return p;
 }
 
@@ -735,34 +733,40 @@ int get_priority(
 
 
 
-void manualAssignment(in Ac newAc, bool manualAssignment)
+void become(bool manualAssignment = false)(in Ac newAc)
 {
     assert (_perfAc);
-    _perfAc.onBecomingSomethingElse();
     auto newPerf = PerformedActivity.factory(this, newAc);
 
-    if (manualAssignment)
-        // while Lix still has old performed ac
-        newPerf.onManualAssignment();
+    if (newPerf.callBecomeAfterAssignment)
+        _perfAc.onBecomingSomethingElse();
 
-    // Reset sprite placement like climber's offset in x-direction by 1.
-    // This is the same code as the sprite placement in set_ex/ey().
-    super.x = _ex - exOffset;
-    super.y = _ey - eyOffset;
-    _frame  = 0;
+    static if (manualAssignment)
+        newPerf.onManualAssignment(); // while Lix still has old performed ac
 
-    if (manualAssignment && _perfAc.ac != newPerf.ac)
-        --_frame;
-        // can go to -1, then nothing happens on the
-        // next update and frame 0 will be shown then
-    _perfAc = newPerf;
+    if (_perfAc.ac != newPerf.ac
+        && (newPerf.callBecomeAfterAssignment || ! manualAssignment)
+    ) {
+        newPerf.onBecome();
+
+        // Reset sprite placement like climber's offset in x-direction by 1.
+        // This is the same code as the sprite placement in set_ex/ey().
+        super.x = _ex - exOffset;
+        super.y = _ey - eyOffset;
+        _frame  = 0;
+        _perfAc = newPerf;
+
+        static if (manualAssignment)
+            // can go to -1, then after the update, frame 0 will be displayed
+            --_frame;
+    }
 }
 
 
 
-void become(in Ac newAc)
+void assignManually(in Ac newAc)
 {
-    manualAssignment(newAc, false);
+    become!true(newAc);
 }
 
 

@@ -1,5 +1,6 @@
 module lix.faller;
 
+import game.lookup;
 import lix;
 
 class Faller : PerformedActivity {
@@ -9,79 +10,68 @@ class Faller : PerformedActivity {
     int ySpeed = 4;
     int pixelsFallen = 0;
 
+    enum ySpeedTerminal = 8;
     enum pixelsSafeToFall = 126;
+    enum pixelsFallenToBecomeFloater = 60;
 
     override @property bool canPassTop() const { return true; }
 
-    override void performActivity(UpdateArgs)
+    override void
+    performActivity(UpdateArgs)
     {
-        moveDown(ySpeed);
-        ++ySpeed;
+        int ySpeedThisFrame = 0;
+
+        for ( ; ySpeedThisFrame <= ySpeed; ++ySpeedThisFrame) {
+            if (footEncounters(Lookup.bitTrampoline)) {
+                // Stop falling, so the trampoline can be used.
+                // It's a bit kludgy, we can't do such a thing for gadgets
+                // that fling, since the gadget might be nonconstant.
+                break;
+            }
+            else if (isSolid(0, ySpeedThisFrame + 2)) {
+                moveDown(ySpeedThisFrame);
+                pixelsFallen += ySpeedThisFrame;
+
+                bool hasFallenVeryLittle()
+                {
+                    return pixelsFallen <= 9 && this.frame < 1
+                        || pixelsFallen == 0
+                        || this.frame   <  2; // on frame < 2, walker will
+                }                             // select a different frame
+
+                if (pixelsFallen > pixelsSafeToFall && ! abilityToFloat)
+                    become(Ac.SPLATTER);
+                else if (hasFallenVeryLittle)
+                    become(Ac.WALKER);
+                else
+                    become(Ac.LANDER);
+                return;
+            }
+        }
+
+        // On hitting ground, the above loop has already returned from
+        // the function. If we continue here, we're in the air as a faller,
+        // and we have not moved yet. We can move down by the entire ySpeed
+        // and still be in the air.
+        static if (cPlusPlusPhysicsBugs) {
+            ySpeedThisFrame = ySpeed;
+        }
+
+        moveDown(ySpeedThisFrame);
+        pixelsFallen += ySpeedThisFrame;
+
+        if (ySpeed < ySpeedTerminal)
+            ++ySpeed;
+
+        if (isLastFrame)
+            frame = frame - 1;
+        else
+            advanceFrame();
+
+        if (abilityToFloat && pixelsFallen >= pixelsFallenToBecomeFloater)
+            // it's important we have incremented ySpeed correctly for this
+            become(Ac.FLOATER);
     }
+    // end void performActivity()
 }
-
-    /+
-    for (int i = 0; i <= l.get_special_y() && l.get_ac() == LixEn::FALLER;++i){
-        // a bit kludgy, we can't do such a thing for flingers etc, since
-        // they might be nonconstant.
-        if (l.get_foot_encounters() & Lookup::bit_trampoline) {
-            // stop falling, so the trampoline can be used
-            break;
-        }
-        else if (l.is_solid(0, i+2)) {
-            l.move_down(i);
-            l.set_special_x(l.get_special_x() + i);
-
-            // Schirm in letzter Sekunde?
-            if (l.get_special_x() > Lixxie::distance_safe_fall
-                && !l.get_floater()
-            ) {
-                l.become(LixEn::SPLATTER);
-                l.play_sound(ua, Sound::SPLAT);
-                // Nicht explodieren lassen, das täte er bei 76 :-)
-                if (l.get_updates_since_bomb() == 75
-                    || ua.st.tribes.size() <= 1 // singleplayer
-                ) {
-                    l.set_updates_since_bomb(0);
-                }
-            }
-            else if ((l.get_special_x() <= 9 && l.get_frame() < 1)
-             ||       l.get_special_x() == 0) {
-                l.become(LixEn::WALKER);
-                if (l.get_runner()) l.set_frame(6);
-                else                l.set_frame(8);
-            }
-            else if (l.get_frame() < 2) {
-                l.become(LixEn::WALKER);
-                l.set_frame(0);
-            }
-            else if (l.get_frame() < 3) {
-                l.become(LixEn::LANDER);
-                l.set_frame(1);
-            }
-            else {
-                l.become(LixEn::LANDER);
-                // use the regular frame 0
-            }
-        }
-    }
-
-    if (l.get_ac() == LixEn::FALLER) {
-        l.set_special_x(l.get_special_x() + l.get_special_y());
-        l.move_down(l.get_special_y());
-
-        if (l.get_special_y() < 8) l.set_special_y(l.get_special_y() + 1);
-
-        // The last two frames alternate, the first frames are just the
-        // initial frames of falling.
-        if (l.is_last_frame()) l.set_frame(l.get_frame() - 1);
-        else l.next_frame();
-
-        if (l.get_floater()
-         && l.get_special_x() >= Lixxie::distance_float) {
-            const int sy = l.get_special_y();
-            l.become(LixEn::FLOATER);
-            l.set_special_y(sy);
-        }
-    }
-    +/
+// end class
