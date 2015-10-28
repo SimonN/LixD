@@ -23,13 +23,13 @@ enum Runmode {
 }
 
 private string _helpAndExitOutput =
-    "-h or -? or --help   print this help and exit\n"
-    "-n                   ask for player's name on startup\n"
-    "-v or --version      print version and exit\n"
-    "-w                   run in windowed mode at 640x480\n"
-    "--resol=800x600      run in windowed mode at the given resolution\n"
-    "--verify=file.txt    verify the replay file `a/b.txt'\n"
-    "--verify=mydir       verify all replays in directory `mydir'";
+    "-h or -? or --help      print this help and exit\n"
+    "-n                      ask for player's name on startup\n"
+    "-v or --version         print version and exit\n"
+    "-w                      run in windowed mode at 640x480\n"
+    "--resol=800x600         run in windowed mode at the given resolution\n"
+    "--verify=dir/file.txt   verify the replay file `dir/file.txt'\n"
+    "--verify=mydir          verify all replays in directory `mydir'";
 
 
 
@@ -118,8 +118,13 @@ class Cmdargs {
     void printNoninteractiveOutput()
     {
         // always print the version; -v is basically used to enter this
-        // function without triggering any additional cases
-        writeln("Lix version ", gameVersion());
+        // function without triggering any additional cases. However, if
+        // only the version is to be printed, print it without decoration.
+        if (versionAndExit && ! helpAndExit && badSwitches == null)
+            writeln(gameVersion);
+        else
+            writeln("Lix version ", gameVersion);
+
         if (badSwitches != null) {
             foreach (sw; badSwitches)
                 writeln("Bad command-line argument: `" ~ sw ~ "'");

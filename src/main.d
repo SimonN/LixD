@@ -22,6 +22,9 @@ void main(string[] args)
     if (cmdargs.mode == Runmode.PRINT_AND_EXIT) {
         cmdargs.printNoninteractiveOutput();
     }
+    else if (cmdargs.mode == Runmode.VERIFY) {
+        std.stdio.writeln("Replay verification isn't implemented yet.");
+    }
     else al_run_allegro({
         basics.init.initialize(cmdargs);
 
@@ -31,7 +34,10 @@ void main(string[] args)
             destroy(ml);
         }
         else if (cmdargs.mode == Runmode.VERIFY) {
-            assert (false, "Replay verification isn't implemented yet.");
+            // DTODO: implement replay verification
+        }
+        else {
+            assert (false);
         }
 
         basics.init.deinitialize();

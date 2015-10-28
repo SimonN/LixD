@@ -12,6 +12,7 @@ import graphic.cutbit;
 import file.filename;
 import file.search;
 import hardware.display; // display startup progress
+import hardware.tharsis;
 import lix.enums;
 
 /* Graphics library, loads spritesheets and offers them for use via string
@@ -403,11 +404,13 @@ void recolor_into_vector(
         assert(target);
         assert(style_id < recolYl - 1);
 
+        auto zone = Zone(profiler, format("recolor-one-bitmap-%d", magicnr));
+
         // Build the recolor array for this particular style
         AlCol[AlCol] recolArray;
         for (int conv = 0; conv < recolXl; ++conv) {
             recolArray[al_get_pixel(recol, conv, 0)] =
-                      al_get_pixel(recol, conv, style_id + 1);
+                       al_get_pixel(recol, conv, style_id + 1);
         }
 
         auto drata = DrawingTarget(target);
@@ -415,41 +418,39 @@ void recolor_into_vector(
         // The first row (y == 0) contains the source pixels. The first style
         // (garden) is at y == 1. Thus the recol->h - 1 is correct as we count
         // styles starting at 0.
-        Y_LOOP: for (int y = 0; y < lixYl; y++)
-            X_LOOP: for (int x = 0; x < lixXl; x++)
-        {
-            // The skill button icons have two rows: the first has the
-            // skills in player colors, the second has them greyed out.
-            // Ignore the second row here.
-            if (y >= cutbit.yl + 1 && magicnr == magicnrSkillButtonIcons) {
-                break Y_LOOP;
-            }
-            // I don't recall what this else-if does, it's probably important.
-            else if (magicnr == magicnrPanelInfoIcons
-                 && y >= cutbit.yl + 1
-                 && y <  2 * (cutbit.yl + 1)
-            ) {
-                // skip all x pixels in the second row in this
-                continue;
-            }
+        Y_LOOP: for (int y = 0; y < lixYl; y++) {
+            X_LOOP: for (int x = 0; x < lixXl; x++) {
+                // The skill button icons have two rows: the first has the
+                // skills in player colors, the second has them greyed out.
+                // Ignore the second row here.
+                if (y >= cutbit.yl + 1 && magicnr == magicnrSkillButtonIcons) {
+                    break Y_LOOP;
+                }
+                else if (magicnr == magicnrPanelInfoIcons
+                     && y >= cutbit.yl + 1
+                     && y <  2 * (cutbit.yl + 1)
+                ) {
+                    // skip all x pixels in the second row in this
+                    continue;
+                }
+                immutable AlCol col = al_get_pixel(lix, x, y);
+                if (magicnr == magicnrSpritesheets && col == colBreak)
+                    // on two consecutive pixels with colBreak, skip for speed
+                    if (x < lixXl - 1 && al_get_pixel(lix, x+1, y) == colBreak)
+                        // bad:  immediately begin next row, because
+                        //       we may have separating colBreak-colored
+                        //       frames in the file.
+                        // good: immediately begin next frame. We have already
+                        //       advanced into the frame by 1 pixel, as we have
+                        //       seen two
+                        x += cutbit.xl;
 
-            immutable AlCol col = al_get_pixel(lix, x, y);
-            if (magicnr == magicnrSpritesheets && col == colBreak) {
-                // bad solution here: immediately begin next pixel, too slow
-                // bad solution too:  immediately begin next row, because
-                //                    we may have separating colBreak-colored
-                //                    frames in the file.
-                // good solution:     immediately begin next frame
-                x += cutbit.xl;
-                continue;
+                // No exceptions for speed encountered so far.
+                if (AlCol* colPtr = (col in recolArray)) {
+                    al_put_pixel(x, y, *colPtr);
+                }
+                // end of single-pixel color replacement
             }
-            // No exceptions for speed encountered so far. Now do the
-            // per-player recoloring. We don't consider the color conversion
-            // bitmap (recol) anymore, only recolArray.
-            if (AlCol* colPtr = (col in recolArray)) {
-                al_put_pixel(x, y, *colPtr);
-            }
-            // end of single-pixel color replacement
         }
         // end of for-all-pixels in source bitmap
     }
@@ -467,6 +468,8 @@ void recolor_into_vector(
             if (st >= Style.YELLOW)
                 continue;
 
+        auto zone = Zone(profiler, format("recolor-one-foreach-%d", magicnr));
+
         Albit target = vector[st].albit;
         assert (target);
 
@@ -480,7 +483,8 @@ void recolor_into_vector(
         // Invoke eidrecol on the bitmap. Whenever eidrecol is invoked
         // with a magicnr != 0, it does not lock/unlock the bitmaps itself,
         // but assumes they are locked.
-        eidrecol(vector[st], magicnr);
+        if (magicnr != magicnrSpritesheets)
+            eidrecol(vector[st], magicnr);
     }
 
     static if (false)
