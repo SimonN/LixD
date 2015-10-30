@@ -1,6 +1,7 @@
 module game.replay;
 
 import std.algorithm; // isSorted
+import std.file : mkdirRecurse;
 import std.c.string : memmove;
 import std.stdio;
 import std.string;
@@ -43,7 +44,7 @@ private:
 
 public:
 
-    @property bool    file_not_found()      { return _fileNotFound;        }
+    @property bool    fileNotFound()        { return _fileNotFound;        }
     @property Version gameVersionRequired() { return _gameVersionRequired; }
 
     @property levelBuiltRequired()       { return _levelBuiltRequired;     }
@@ -83,7 +84,7 @@ public:
 
 this(Filename fn = null)
 {
-    _gameVersionRequired = gameVersion();
+    touch();
     _levelBuiltRequired  = new Date("0");
     _levelFilename       = fn ? fn : new Filename("");
     _permu               = new Permu(1);
@@ -245,6 +246,7 @@ public nothrow void
 saveToFile(in Filename fn, in Level lev)
 {
     try {
+        std.file.mkdirRecurse(fn.dirRootful);
         std.stdio.File file = File(fn.rootful, "w");
         scope (exit)
             file.close();

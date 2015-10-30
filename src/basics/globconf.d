@@ -12,6 +12,7 @@ module basics.globconf;
 
 
 import std.file;
+import std.stdio;
 
 import basics.globals;
 import file.io;
@@ -35,12 +36,14 @@ int    serverPort        = 22934;
 void load()
 {
     IoLine[] lines;
-    try
+    try {
         lines = fillVectorFromFile(basics.globals.fileGlobalConfig);
+    }
     catch (Exception e) {
-        log(e.msg);
-        log("Using standard config because config file was not found.");
-        log("This is normal when you run Lix for the first time.");
+        log("Can't load the global configuration:");
+        log("    -> " ~ e.msg);
+        log("    -> Falling back to the standard global configuration.");
+        log("    -> This is normal when you run Lix for the first time.");
     }
 
     foreach (i; lines) {
@@ -67,33 +70,33 @@ void load()
 
 void save()
 {
-    std.stdio.File f;
+    try {
+        std.file.mkdirRecurse(fileGlobalConfig.dirRootful);
+        std.stdio.File f = std.stdio.File(fileGlobalConfig.rootful, "w");
 
-    try f = std.stdio.File(fileGlobalConfig.rootful, "w");
+        f.writeln(IoLine.Dollar(cfgUserName,               userName));
+        f.writeln(IoLine.Hash  (cfgUserNameAsk,           userNameAsk));
+        f.writeln("");
+
+        f.writeln(IoLine.Dollar(cfgIPLastUsed,            ipLastUsed));
+        f.writeln(IoLine.Dollar(cfgIPCentralServer,       ipCentralServer));
+        f.writeln(IoLine.Hash  (cfgServerPort,             serverPort));
+        f.writeln("");
+
+        f.writefln("// If you set `%s/Y' both to 0, Lix will use your",
+         cfgScreenResolutionX);
+        f.writeln(
+         "// desktop resolution. To force a different resolution, enter it here.");
+
+        f.writeln(IoLine.Hash(cfgScreenResolutionX,     screenResolutionX));
+        f.writeln(IoLine.Hash(cfgScreenResolutionY,     screenResolutionY));
+        f.writeln(IoLine.Hash(cfgScreenWindowedX,       screenWindowedX));
+        f.writeln(IoLine.Hash(cfgScreenWindowedY,       screenWindowedY));
+        f.writeln(IoLine.Hash(cfgScreenVsync,           screenVsync));
+
+        f.close();
+    }
     catch (Exception e) {
         log(e.msg);
-        return;
     }
-
-    f.writeln(IoLine.Dollar(cfgUserName,               userName));
-    f.writeln(IoLine.Hash  (cfgUserNameAsk,           userNameAsk));
-    f.writeln("");
-
-    f.writeln(IoLine.Dollar(cfgIPLastUsed,            ipLastUsed));
-    f.writeln(IoLine.Dollar(cfgIPCentralServer,       ipCentralServer));
-    f.writeln(IoLine.Hash  (cfgServerPort,             serverPort));
-    f.writeln("");
-
-    f.writefln("// If you set `%s/Y' both to 0, Lix will use your",
-     cfgScreenResolutionX);
-    f.writeln(
-     "// desktop resolution. To force a different resolution, enter it here.");
-
-    f.writeln(IoLine.Hash(cfgScreenResolutionX,     screenResolutionX));
-    f.writeln(IoLine.Hash(cfgScreenResolutionY,     screenResolutionY));
-    f.writeln(IoLine.Hash(cfgScreenWindowedX,       screenWindowedX));
-    f.writeln(IoLine.Hash(cfgScreenWindowedY,       screenWindowedY));
-    f.writeln(IoLine.Hash(cfgScreenVsync,           screenVsync));
-
-    f.close();
 }
