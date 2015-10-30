@@ -1,5 +1,6 @@
 module file.log;
 
+import std.file : mkdirRecurse;
 import std.stdio;
 import std.string;
 public import std.string : format;
@@ -33,6 +34,7 @@ initialize()
         return;
     _somethingAlreadyLoggedThisSession = false;
     try {
+        std.file.mkdirRecurse(basics.globals.fileLog.dirRootful);
         _file = std.stdio.File(basics.globals.fileLog.rootful, "a");
         _initialized = true;
     }

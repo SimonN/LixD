@@ -57,19 +57,14 @@ escapeStringForFilename(string unescapedRemainder)
             allowedSubsequence.encode(c);
     }
     catch (Exception) { }
-
-    // make all non-special characters lowercase
-    string ret = allowedSubsequence.idup;
-    try ret = std.uni.toLower(ret);
-    catch (Exception) { }
-    return ret;
+    return allowedSubsequence.idup;
 }
 
 unittest {
     assert (escapeStringForFilename("hallo") == "hallo");
-    assert (escapeStringForFilename("ÄÖÜß") == "äöüß");
-    assert (escapeStringForFilename(":D ^_^ =|") == "d");
-    assert (escapeStringForFilename("...123") == "123");
+    assert (escapeStringForFilename("Ä ö Ü ß") == "ÄöÜß");
+    assert (escapeStringForFilename(":D ^_^ =|") == "D");
+    assert (escapeStringForFilename(".,123") == "123");
     assert (escapeStringForFilename("リッくス") == "リッくス");
 }
 

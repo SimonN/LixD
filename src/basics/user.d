@@ -305,7 +305,8 @@ private Filename userFileName()
 void load()
 {
     if (userName == null) {
-        // This happens upon first start after installation
+        // This happens upon first start after installation.
+        // Don't try to load anything, and don't log anything.
         return;
     }
 
@@ -314,11 +315,24 @@ void load()
     }
 
     IoLine[] lines;
-    try
+
+    try {
         lines = fillVectorFromFile(userFileName());
+    }
     catch (Exception e) {
-        log(e.msg);
-        log("User config for user `" ~ userName ~ "' was not found.");
+        log("Can't load user configuration for `" ~ userName ~ "':");
+        log("    -> " ~ e.msg);
+        log("    -> Falling back to the unescaped filename `"
+            ~ userName ~ filenameExtConfig ~ "'.");
+        try {
+            lines = fillVectorFromFile(new Filename(
+                dirDataUser.dirRootful ~ userName ~ filenameExtConfig));
+        }
+        catch (Exception e) {
+            log("    -> " ~ e.msg);
+            log("    -> " ~ "Falling back to the default user configuration.");
+            lines = null;
+        }
     }
 
     results = null;
@@ -471,13 +485,13 @@ void load()
 nothrow void save()
 {
     if (userName == null) {
-        // may happen under very strange circumstances, but generally
-        // shouldn't happen. We have to warn the user when he enters an
-        // empty name in the options.
+        log("User name is empty. User configuration will not be saved.");
         return;
     }
     try {
-        std.stdio.File f = File(userFileName().rootful, "w");
+        auto ufn = userFileName();
+        mkdirRecurse(ufn.dirRootful);
+        std.stdio.File f = File(ufn.rootful, "w");
 
         void fwr(in IoLine line)
         {
@@ -639,7 +653,7 @@ nothrow void save()
 
     }
     catch (Exception e) {
-        log(e.msg);
-        return;
+        log("Can't save user configuration for `" ~ userName ~ "':");
+        log("    -> " ~ e.msg);
     }
 }
