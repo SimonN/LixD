@@ -236,8 +236,8 @@ logOggErrorIfNecessary()
     static bool wasLogged = false;
     if (! wasLogged) {
         wasLogged = true;
-        log("  Make sure this is really an .ogg file. If it is,");
-        log("  check if Allegro 5 has been compiled with .ogg support.");
+        log("    -> Make sure this is really an .ogg file. If it is,");
+        log("    -> check if Allegro 5 has been compiled with .ogg support.");
     }
 }
 

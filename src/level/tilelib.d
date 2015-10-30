@@ -184,7 +184,7 @@ load_tile_from_disk(in string str_no_ext, in Filename fn)
     if (! cb.valid) {
         import file.log;
         logf("Image has too large proportions: `%s'", fn.rootful);
-        log ("  See bug report: https://github.com/SimonN/LixD/issues/4");
+        log ("    -> See bug report: https://github.com/SimonN/LixD/issues/4");
         return;
     }
 

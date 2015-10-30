@@ -471,7 +471,7 @@ loadUserLanguageAndIfNotExistSetUserOptionToEnglish()
             fnWrittenToLog = true;
             logf("While reading `%s':", fileLanguage.rootless);
         }
-        logf("  " ~ formatstr, formatargs);
+        logf("    -> " ~ formatstr, formatargs);
     }
 
     foreach (line; lines) {

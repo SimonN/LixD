@@ -202,7 +202,7 @@ void setScreenMode(bool wantFull, int wantX = 0, int wantY = 0)
         logf("Your wanted %s mode at %dx%d cannot be used.",
             wantFull ? "fullscreen" : "windowed",
             wantX, wantY);
-        logf("  ..falling back to %s at %dx%d.",
+        logf("    -> Falling back to %s at %dx%d.",
             al_f ? "fullscreen" : "windowed",
             al_x, al_y);
     }
