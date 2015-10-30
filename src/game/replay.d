@@ -313,26 +313,26 @@ saveToFile(std.stdio.File file, in Level lev)
 
 
 public void
-save_as_auto_replay(in Level lev)
+save_as_auto_replay(in Level lev, bool isSolution)
 {
     const(bool) multi = (_players.length > 1);
 
-    if ( (! multi && ! basics.globconf.replayAutoSingle)
-        || (multi && ! basics.globconf.replayAutoMulti)
-    ) {
-        return;
+    if (multi) {
+        if (! basics.user.replayAutoMulti)
+            return;
     }
-
-    string outfile = multi ? basics.globals.fileReplayAutoMulti.rootful
-                           : basics.globals.fileReplayAutoSingle.rootful;
-    int* nr = multi ? &basics.globconf.replayAutoNextM
-                    : &basics.globconf.replayAutoNextS;
-
-    if (*nr >= basics.globconf.replayAutoMax)
-        *nr = 0;
-    outfile ~= format("%3.3d%s", *nr, basics.globals.filenameExtReplay);
-    *nr = positiveMod(*nr + 1, basics.globconf.replayAutoMax);
-
+    else {
+        if ( ! isSolution && ! basics.user.replayAutoSingleFailures
+            || isSolution && ! basics.user.replayAutoSingleSolutions)
+            return;
+    }
+    string outfile
+        = multi      ? basics.globals.dirReplayAutoMulti.rootful
+        : isSolution ? basics.globals.dirReplayAutoSingleSolutions.rootful
+                     : basics.globals.dirReplayAutoSingleFailures.rootful;
+    outfile ~= lev.name.escapeStringForFilename()
+        ~ "-" ~ playerLocalName
+        ~ "-" ~ Date.now().toString().escapeStringForFilename();
     saveToFile(new Filename(outfile), lev);
 }
 

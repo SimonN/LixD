@@ -26,12 +26,6 @@ int    screenWindowedX   = 640;
 int    screenWindowedY   = 480;
 bool   screenVsync       = false;
 
-int    replayAutoMax     = 60;
-int    replayAutoSingle  =  1;
-int    replayAutoMulti   =  1;
-int    replayAutoNextS   =  0;
-int    replayAutoNextM   =  0;
-
 string ipLastUsed        = "127.0.0.1";
 string ipCentralServer   = "asdfasdf.ethz.ch";
 int    serverPort        = 22934;
@@ -56,12 +50,6 @@ void load()
 
     else if (i.text1 == cfgIPLastUsed       ) ipLastUsed       = i.text2;
     else if (i.text1 == cfgIPCentralServer  ) ipCentralServer  = i.text2;
-
-    else if (i.text1 == cfgReplayAutoMax    ) replayAutoMax    = i.nr1;
-    else if (i.text1 == cfgReplayAutoSingle ) replayAutoSingle = i.nr1;
-    else if (i.text1 == cfgReplayAutoMulti  ) replayAutoMulti  = i.nr1;
-    else if (i.text1 == cfgReplayAutoNextS ) replayAutoNextS  = i.nr1;
-    else if (i.text1 == cfgReplayAutoNextM ) replayAutoNextM  = i.nr1;
 
     else if (i.text1 == cfgScreenResolutionX) screenResolutionX = i.nr1;
     else if (i.text1 == cfgScreenResolutionY) screenResolutionY = i.nr1;
@@ -99,20 +87,13 @@ void save()
     f.writefln("// If you set `%s/Y' both to 0, Lix will use your",
      cfgScreenResolutionX);
     f.writeln(
-     "// desktop resolution. To override that, enter the wanted resolution.");
+     "// desktop resolution. To force a different resolution, enter it here.");
 
     f.writeln(IoLine.Hash(cfgScreenResolutionX,     screenResolutionX));
     f.writeln(IoLine.Hash(cfgScreenResolutionY,     screenResolutionY));
     f.writeln(IoLine.Hash(cfgScreenWindowedX,       screenWindowedX));
     f.writeln(IoLine.Hash(cfgScreenWindowedY,       screenWindowedY));
     f.writeln(IoLine.Hash(cfgScreenVsync,           screenVsync));
-    f.writeln("");
-
-    f.writeln(IoLine.Hash(cfgReplayAutoMax,       replayAutoMax));
-    f.writeln(IoLine.Hash(cfgReplayAutoSingle,    replayAutoSingle));
-    f.writeln(IoLine.Hash(cfgReplayAutoMulti,     replayAutoMulti));
-    f.writeln(IoLine.Hash(cfgReplayAutoNextS,    replayAutoNextS));
-    f.writeln(IoLine.Hash(cfgReplayAutoNextM,    replayAutoNextM));
 
     f.close();
 }

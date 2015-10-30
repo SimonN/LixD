@@ -55,12 +55,6 @@ immutable cfgScreenWindowedX         = "SCREEN_WINDOWED_X";
 immutable cfgScreenWindowedY         = "SCREEN_WINDOWED_Y";
 immutable cfgScreenVsync             = "SCREEN_VSYNC";
 
-immutable cfgReplayAutoMax          = "REPLAY_AUTO_MAX";
-immutable cfgReplayAutoSingle       = "REPLAY_AUTO_SINGLE";
-immutable cfgReplayAutoMulti        = "REPLAY_AUTO_MULTI";
-immutable cfgReplayAutoNextS       = "REPLAY_AUTO_SINGLE_NEXT";
-immutable cfgReplayAutoNextM       = "REPLAY_AUTO_MULTI_NEXT";
-
 immutable cfgIPLastUsed             = "IP_LAST_USED";
 immutable cfgIPCentralServer        = "IP_CENTRAL_SERVER";
 immutable cfgServerPort              = "SERVER_PORT";
@@ -164,14 +158,14 @@ immutable userGuiColorBlue           = "GUI_COLOR_BLUE";
 
 immutable userSoundVolume            = "SOUND_VOLUME";
 
-immutable userEditorHexLevelSize     = "EDITOR_HEX_LEVEL_SIZE";
-immutable userEditorGridSelected     = "EDITOR_GRID_SELECTED";
-immutable userEditorGridCustom       = "EDITORGridCustom";
-
 immutable userSingleLastLevel  = "SINGLE_LAST_LEVEL";
 immutable userNetworkLastLevel = "NETWORK_LAST_LEVEL";
 immutable userReplayLastLevel  = "REPLAY_LAST_LEVEL";
 immutable userNetworkLastStyle = "NETWORK_LAST_STYLE";
+
+immutable userReplayAutoSingleSolutions = "REPLAY_AUTO_SAVE_SINGLE_SOLUTIONS";
+immutable userReplayAutoSingleFailures  = "REPLAY_AUTO_SAVE_SINGLE_FAILS";
+immutable userReplayAutoMulti           = "REPLAY_AUTO_SAVE_MULTI";
 
 immutable userEditorLastDirTerrain = "EDITOR_LAST_DIR_TERRAIN";
 immutable userEditorLastDirSteel   = "EDITOR_LAST_DIR_STEEL";
@@ -179,6 +173,10 @@ immutable userEditorLastDirGoal    = "EDITOR_LAST_DIR_GOAL";
 immutable userEditorLastDirHatch   = "EDITOR_LAST_DIR_HATCH";
 immutable userEditorLastDirDeco    = "EDITOR_LAST_DIR_DECO";
 immutable userEditorLastDirHazard  = "EDITOR_LAST_DIR_HAZARD";
+
+immutable userEditorHexLevelSize   = "EDITOR_HEX_LEVEL_SIZE";
+immutable userEditorGridSelected   = "EDITOR_GRID_SELECTED";
+immutable userEditorGridCustom     = "EDITORGridCustom";
 
 immutable userKeyForceLeft      = "KEY_FORCE_LEFT";
 immutable userKeyForceRight     = "KEY_FORCE_RIGHT";
@@ -246,7 +244,6 @@ immutable userKeyEditorExit        = "KEY_EDITOR_EXIT";
 
 
 
-// important directories
 private alias const(Filename) cF;
 
 cF dirLevels          = new cF("levels/");
@@ -265,11 +262,10 @@ cF dirImagesOrig      = new cF("images/orig/");
 cF dirImagesOrigL1    = new cF("images/orig/L1/");
 cF dirImagesOrigL2    = new cF("images/orig/L2/");
 
-// stubs for various filenames
-cF fileReplayAutoSingle      = new cF("replays/auto/s");
-cF fileReplayAutoMulti       = new cF("replays/auto/m");
+cF dirReplayAutoSingleSolutions = new cF("replays/auto/solutions/");
+cF dirReplayAutoSingleFailures  = new cF("replays/auto/failures/");
+cF dirReplayAutoMulti           = new cF("replays/auto/network/");
 
-// important single files
 cF fileGlobalConfig          = new cF("data/config.txt");
 cF fileLog                   = new cF("data/log.txt");
 cF fileTharsisProf           = new cF("data/profile.txt");

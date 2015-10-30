@@ -62,6 +62,10 @@ bool editorHexLevelSize = false;
 int  editorGridSelected  = 1;
 int  editorGridCustom    = 8;
 
+bool replayAutoSingleSolutions = true;
+bool replayAutoSingleFailures  = false;
+bool replayAutoMulti           = true;
+
 Filename singleLastLevel;
 Filename networkLastLevel;
 Filename replayLastLevel;
@@ -293,7 +297,7 @@ void setLevelResultCarefully(
 private Filename userFileName()
 {
     return new Filename(dirDataUser.dirRootful
-     ~ basics.help.userNameEscapeForFilename(userName)
+     ~ basics.help.escapeStringForFilename(userName)
      ~ filenameExtConfig);
 }
 
@@ -322,11 +326,11 @@ void load()
     foreach (i; lines) switch (i.type) {
 
     case '$':
-        if      (i.text1 == userLanguage               ) fileLanguage      = new Filename(i.text2);
+        if      (i.text1 == userLanguage            ) fileLanguage     = new Filename(i.text2);
 
-        else if (i.text1 == userSingleLastLevel      ) singleLastLevel  = new Filename(i.text2);
-        else if (i.text1 == userNetworkLastLevel     ) networkLastLevel = new Filename(i.text2);
-        else if (i.text1 == userReplayLastLevel      ) replayLastLevel  = new Filename(i.text2);
+        else if (i.text1 == userSingleLastLevel     ) singleLastLevel  = new Filename(i.text2);
+        else if (i.text1 == userNetworkLastLevel    ) networkLastLevel = new Filename(i.text2);
+        else if (i.text1 == userReplayLastLevel     ) replayLastLevel  = new Filename(i.text2);
 
         else if (i.text1 == userEditorLastDirTerrain) editorLastDirTerrain = new Filename(i.text2);
         else if (i.text1 == userEditorLastDirSteel  ) editorLastDirSteel   = new Filename(i.text2);
@@ -337,37 +341,40 @@ void load()
         break;
 
     case '#':
-        if      (i.text1 == userOptionGroup           ) optionGroup           = i.nr1;
+        if      (i.text1 == userOptionGroup         ) optionGroup          = i.nr1;
 
-        else if (i.text1 == userMouseSpeed            ) mouseSpeed            = i.nr1;
-        else if (i.text1 == userMouseAcceleration     ) mouseAcceleration     = i.nr1;
-        else if (i.text1 == userScrollSpeedEdge      ) scrollSpeedEdge      = i.nr1;
-        else if (i.text1 == userScrollSpeedClick     ) scrollSpeedClick     = i.nr1;
-        else if (i.text1 == userScrollEdge            ) scrollEdge            = i.nr1 > 0;
-        else if (i.text1 == userScrollRight           ) scrollRight           = i.nr1 > 0;
-        else if (i.text1 == userScrollMiddle          ) scrollMiddle          = i.nr1 > 0;
-        else if (i.text1 == userReplayCancel          ) replayCancel          = i.nr1 > 0;
-        else if (i.text1 == userReplayCancelAt       ) replayCancelAt       = i.nr1;
-        else if (i.text1 == userMultipleBuilders      ) multipleBuilders      = i.nr1 > 0;
-        else if (i.text1 == userBatterPriority        ) batterPriority        = i.nr1 > 0;
-        else if (i.text1 == userPriorityInvertMiddle         ) priorityInvertMiddle         = i.nr1 > 0;
-        else if (i.text1 == userPriorityInvertRight          ) priorityInvertRight          = i.nr1 > 0;
+        else if (i.text1 == userMouseSpeed          ) mouseSpeed           = i.nr1;
+        else if (i.text1 == userMouseAcceleration   ) mouseAcceleration    = i.nr1;
+        else if (i.text1 == userScrollSpeedEdge     ) scrollSpeedEdge      = i.nr1;
+        else if (i.text1 == userScrollSpeedClick    ) scrollSpeedClick     = i.nr1;
+        else if (i.text1 == userScrollEdge          ) scrollEdge           = i.nr1 > 0;
+        else if (i.text1 == userScrollRight         ) scrollRight          = i.nr1 > 0;
+        else if (i.text1 == userScrollMiddle        ) scrollMiddle         = i.nr1 > 0;
+        else if (i.text1 == userReplayCancel        ) replayCancel         = i.nr1 > 0;
+        else if (i.text1 == userReplayCancelAt      ) replayCancelAt       = i.nr1;
+        else if (i.text1 == userMultipleBuilders    ) multipleBuilders     = i.nr1 > 0;
+        else if (i.text1 == userBatterPriority      ) batterPriority       = i.nr1 > 0;
+        else if (i.text1 == userPriorityInvertMiddle) priorityInvertMiddle = i.nr1 > 0;
+        else if (i.text1 == userPriorityInvertRight ) priorityInvertRight  = i.nr1 > 0;
 
-        else if (i.text1 == userScreenWindowed        ) screenWindowed        = i.nr1 > 0;
-        else if (i.text1 == userArrowsReplay          ) arrowsReplay          = i.nr1 > 0;
-        else if (i.text1 == userArrowsNetwork         ) arrowsNetwork         = i.nr1 > 0;
-        else if (i.text1 == userGameplayHelp          ) gameplayHelp          = i.nr1 > 0;
-        else if (i.text1 == userDebrisAmount          ) debrisAmount          = i.nr1;
-        else if (i.text1 == userDebrisType            ) debrisType            = i.nr1;
-        else if (i.text1 == userGuiColorRed          ) guiColorRed          = i.nr1;
-        else if (i.text1 == userGuiColorGreen        ) guiColorGreen        = i.nr1;
-        else if (i.text1 == userGuiColorBlue         ) guiColorBlue         = i.nr1;
+        else if (i.text1 == userScreenWindowed) screenWindowed = i.nr1 > 0;
+        else if (i.text1 == userArrowsReplay  ) arrowsReplay   = i.nr1 > 0;
+        else if (i.text1 == userArrowsNetwork ) arrowsNetwork  = i.nr1 > 0;
+        else if (i.text1 == userGameplayHelp  ) gameplayHelp   = i.nr1 > 0;
+        else if (i.text1 == userDebrisAmount  ) debrisAmount   = i.nr1;
+        else if (i.text1 == userDebrisType    ) debrisType     = i.nr1;
+        else if (i.text1 == userGuiColorRed   ) guiColorRed    = i.nr1;
+        else if (i.text1 == userGuiColorGreen ) guiColorGreen  = i.nr1;
+        else if (i.text1 == userGuiColorBlue  ) guiColorBlue   = i.nr1;
+        else if (i.text1 == userSoundVolume   ) soundVolume    = i.nr1;
 
-        else if (i.text1 == userSoundVolume           ) soundVolume           = i.nr1;
+        else if (i.text1 == userReplayAutoSingleSolutions) replayAutoSingleSolutions = i.nr1 > 0;
+        else if (i.text1 == userReplayAutoSingleFailures ) replayAutoSingleFailures  = i.nr1 > 0;
+        else if (i.text1 == userReplayAutoMulti          ) replayAutoMulti           = i.nr1 > 0;
 
-        else if (i.text1 == userEditorHexLevelSize  ) editorHexLevelSize  = i.nr1 > 0;
-        else if (i.text1 == userEditorGridSelected   ) editorGridSelected   = i.nr1;
-        else if (i.text1 == userEditorGridCustom     ) editorGridCustom     = i.nr1;
+        else if (i.text1 == userEditorHexLevelSize) editorHexLevelSize = i.nr1 > 0;
+        else if (i.text1 == userEditorGridSelected) editorGridSelected = i.nr1;
+        else if (i.text1 == userEditorGridCustom  ) editorGridCustom   = i.nr1;
 
         else if (i.text1 == userNetworkLastStyle) {
             try networkLastStyle = to!Style(i.nr1);
@@ -509,6 +516,11 @@ nothrow void save()
         f.writeln();
 
         fwr(IoLine.Hash(userSoundVolume,            soundVolume));
+        f.writeln();
+
+        fwr(IoLine.Hash(userReplayAutoSingleSolutions, replayAutoSingleSolutions));
+        fwr(IoLine.Hash(userReplayAutoSingleFailures,  replayAutoSingleFailures));
+        fwr(IoLine.Hash(userReplayAutoMulti,           replayAutoMulti));
         f.writeln();
 
         fwr(IoLine.Hash(userEditorHexLevelSize,     editorHexLevelSize));

@@ -4,8 +4,8 @@ import std.array;
 import std.conv;
 import std.math;
 import std.string;
+import std.uni;
 import std.utf;
-
 
 // The percent operator can return a negative number, e.g. -5 % 3 == -2.
 // When the desired result here is 1, not -2, use positiveMod().
@@ -46,23 +46,42 @@ backspace(in string str)
 
 
 
-string
-userNameEscapeForFilename(in string str)
+nothrow string
+escapeStringForFilename(string unescapedRemainder)
 {
-    // DTODO
-    return str;
+    // remove all special characters
+    char[] allowedSubsequence;
+    try while (unescapedRemainder.length > 0) {
+        dchar c = std.utf.decodeFront(unescapedRemainder);
+        if (c.isAlpha || c.isMark || c.isNumber)
+            allowedSubsequence.encode(c);
+    }
+    catch (Exception) { }
+
+    // make all non-special characters lowercase
+    string ret = allowedSubsequence.idup;
+    try ret = std.uni.toLower(ret);
+    catch (Exception) { }
+    return ret;
+}
+
+unittest {
+    assert (escapeStringForFilename("hallo") == "hallo");
+    assert (escapeStringForFilename("ÄÖÜß") == "äöüß");
+    assert (escapeStringForFilename(":D ^_^ =|") == "d");
+    assert (escapeStringForFilename("...123") == "123");
+    assert (escapeStringForFilename("リッくス") == "リッくス");
 }
 
 
 
-int
+nothrow int
 len(T)(in T[] arr)
 {
-    // Arrays with more than 2^^31 entries are bugs. Don't call to!int, but
+    // Arrays with more than 2^^31 entries are bugs. Let's not call to!int, but
     // chop off the big bits of the size_t (= uint or ulong). It's the same
     // effect, but doesn't check if it has to throw.
-    return arr.length & 0x7FFFFFFF;
-    // return arr.length.to!int;
+    return arr.length & 0x7F_FF_FF_FF;
 }
 
 
