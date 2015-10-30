@@ -3,6 +3,8 @@ module file.date;
 import std.string;
 import std.c.time;
 
+import basics.help : escapeStringForFilename;
+
 class Date {
 
 /*  static Date now();
@@ -81,6 +83,17 @@ toString() const
 {
     return format("%04d-%02d-%02d %02d:%02d:%02d",
         year, month, day, hour, minute, second);
+}
+
+
+
+string
+toStringForFilename() const
+{
+    string ret = format("%04d-%02d-%02d-%02d%02d%02d",
+        year, month, day, hour, minute, second);
+    assert (ret == ret.escapeStringForFilename);
+    return ret;
 }
 
 

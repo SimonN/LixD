@@ -488,6 +488,10 @@ nothrow void save()
         log("User name is empty. User configuration will not be saved.");
         return;
     }
+    else if (userName.escapeStringForFilename == null) {
+        log("Can't save user configuration for user `" ~ "':");
+        log("    -> None of these characters are allowed in filenames.");
+    }
     try {
         auto ufn = userFileName();
         mkdirRecurse(ufn.dirRootful);

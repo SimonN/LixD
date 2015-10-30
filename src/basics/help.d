@@ -1,6 +1,7 @@
 module basics.help;
 
 import std.array;
+import std.algorithm : find;
 import std.conv;
 import std.math;
 import std.string;
@@ -49,21 +50,22 @@ backspace(in string str)
 nothrow string
 escapeStringForFilename(string unescapedRemainder)
 {
-    // remove all special characters
-    char[] allowedSubsequence;
+    // remove all special characters except these few
+    string allowed = "_-";
+    char[] pruned;
     try while (unescapedRemainder.length > 0) {
         dchar c = std.utf.decodeFront(unescapedRemainder);
-        if (c.isAlpha || c.isMark || c.isNumber)
-            allowedSubsequence.encode(c);
+        if (c.isAlpha || c.isMark || c.isNumber || allowed.find(c) != null)
+            pruned.encode(c);
     }
     catch (Exception) { }
-    return allowedSubsequence.idup;
+    return pruned.idup;
 }
 
 unittest {
     assert (escapeStringForFilename("hallo") == "hallo");
     assert (escapeStringForFilename("Ä ö Ü ß") == "ÄöÜß");
-    assert (escapeStringForFilename(":D ^_^ =|") == "D");
+    assert (escapeStringForFilename(":D ^_^ :-|") == "D_-");
     assert (escapeStringForFilename(".,123") == "123");
     assert (escapeStringForFilename("リッくス") == "リッくス");
 }

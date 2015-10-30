@@ -333,8 +333,8 @@ save_as_auto_replay(in Level lev, bool isSolution)
         : isSolution ? basics.globals.dirReplayAutoSingleSolutions.rootful
                      : basics.globals.dirReplayAutoSingleFailures.rootful;
     outfile ~= lev.name.escapeStringForFilename()
-        ~ "-" ~ playerLocalName
-        ~ "-" ~ Date.now().toString().escapeStringForFilename();
+        ~ "-" ~ playerLocalName.escapeStringForFilename()
+        ~ "-" ~ Date.now().toStringForFilename();
     saveToFile(new Filename(outfile), lev);
 }
 
