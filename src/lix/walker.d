@@ -4,6 +4,8 @@ import lix;
 
 class Walker : PerformedActivity {
 
+    mixin(CloneByCopyFrom);
+
 // DTODO: code copied out of faller, after becoming walker.
 // This must be implented in Walker's onBecome.
 /+

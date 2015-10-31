@@ -57,8 +57,8 @@ abstract class PerformedActivity {
 
 public:
 
-    @property Ac    ac()          const { return _ac;    }
-    @property int   frame()       const { return _frame; }
+    @property final Ac  ac()      const { return _ac;    }
+    @property final int frame()   const { return _frame; }
 
     @property bool  canPassTop()  const { return false; }
     @property bool  isBlockable() const { return true;  }
@@ -71,7 +71,7 @@ public:
     void performActivity(UpdateArgs) { } // the main method to override
     void onBecomingSomethingElse()   { } // e.g. return leftover builders
 
-    PerformedActivity clone() { return null; }
+    abstract PerformedActivity clone();
 
     final static typeof(this)
     factory(Lixxie l, Ac newAc)
