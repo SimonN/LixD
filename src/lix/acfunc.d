@@ -23,29 +23,43 @@ static this()
 +/
 
 // DTODO: Remove these as they get implemented in other files
-class Stunner : PerformedActivity { }
-class Lander : PerformedActivity { }
-class Walker : PerformedActivity { }
-class Runner : PerformedActivity { }
-class Climber : PerformedActivity { }
-class Ascender : PerformedActivity { }
-class Exploder : PerformedActivity { }
-class Blocker : PerformedActivity { }
-class Builder : PerformedActivity { }
-class Shrugger : PerformedActivity { }
-class Platformer : PerformedActivity { }
-class Basher : PerformedActivity { }
-class Miner : PerformedActivity { }
-class Digger : PerformedActivity { }
-class Jumper : PerformedActivity { }
-class Batter : PerformedActivity { }
-class Cuber : PerformedActivity { }
+class Stunner    : PerformedActivity { mixin(CloneByCopyFrom); }
+class Lander     : PerformedActivity { mixin(CloneByCopyFrom); }
+class Runner     : PerformedActivity { mixin(CloneByCopyFrom); }
+class Climber    : PerformedActivity { mixin(CloneByCopyFrom); }
+class Ascender   : PerformedActivity { mixin(CloneByCopyFrom); }
+class Exploder   : PerformedActivity { mixin(CloneByCopyFrom); }
+class Blocker    : PerformedActivity { mixin(CloneByCopyFrom); }
+class Builder    : PerformedActivity { mixin(CloneByCopyFrom); }
+class Shrugger   : PerformedActivity { mixin(CloneByCopyFrom); }
+class Platformer : PerformedActivity { mixin(CloneByCopyFrom); }
+class Basher     : PerformedActivity { mixin(CloneByCopyFrom); }
+class Miner      : PerformedActivity { mixin(CloneByCopyFrom); }
+class Digger     : PerformedActivity { mixin(CloneByCopyFrom); }
+class Jumper     : PerformedActivity { mixin(CloneByCopyFrom); }
+class Batter     : PerformedActivity { mixin(CloneByCopyFrom); }
+class Cuber      : PerformedActivity { mixin(CloneByCopyFrom); }
+
+
+
+immutable string CloneByCopyFrom = "
+    override typeof(this) clone()
+    {
+        auto a = new typeof(this)();
+        a.copyFrom(this);
+        return a;
+    }
+    alias copyFrom = super.copyFrom;";
 
 
 
 abstract class PerformedActivity {
 
-    @property Ac    ac()          const { return _ac; }
+public:
+
+    @property Ac    ac()          const { return _ac;    }
+    @property int   frame()       const { return _frame; }
+
     @property bool  canPassTop()  const { return false; }
     @property bool  isBlockable() const { return true;  }
     @property bool  isLeaving()   const { return false; }
@@ -57,10 +71,10 @@ abstract class PerformedActivity {
     void performActivity(UpdateArgs) { } // the main method to override
     void onBecomingSomethingElse()   { } // e.g. return leftover builders
 
-    package Lixxie lixxie;
-    private Ac     _ac;
+    PerformedActivity clone() { return null; }
 
-    final static typeof(this) factory(Lixxie l, Ac newAc)
+    final static typeof(this)
+    factory(Lixxie l, Ac newAc)
     {
         assert (l, "can't instantiate for a null lix");
         typeof(this) newPerf;
@@ -100,10 +114,32 @@ abstract class PerformedActivity {
         newPerf._ac    = newAc;
         return newPerf;
     }
+
+protected:
+
+    void copyFrom(PerformedActivity rhs)
+    {
+        lixxie = rhs.lixxie;
+        _ac    = rhs._ac;
+        _frame = rhs._frame;
+    }
+
+package:
+
+    @property int frame(in int a)  { return _frame = a; }
+
+    Lixxie lixxie;
+
+private:
+
+    Ac  _ac;
+    int _frame;
+
 }
 
 
 
 class RemovedLix : PerformedActivity {
+    mixin(CloneByCopyFrom);
     override @property bool isLeaving() const { return true; }
 }

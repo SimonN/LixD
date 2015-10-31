@@ -5,8 +5,6 @@ import lix;
 
 class Faller : PerformedActivity {
 
-    private alias lixxie this;
-
     int ySpeed = 4;
     int pixelsFallen = 0;
 
@@ -14,7 +12,17 @@ class Faller : PerformedActivity {
     enum pixelsSafeToFall = 126;
     enum pixelsFallenToBecomeFloater = 60;
 
+    mixin(CloneByCopyFrom);
+    protected void copyFrom(Faller rhs)
+    {
+        super.copyFrom(rhs);
+        ySpeed       = rhs.ySpeed;
+        pixelsFallen = rhs.pixelsFallen;
+    }
+
     override @property bool canPassTop() const { return true; }
+
+    private alias lixxie this;
 
     override void
     performActivity(UpdateArgs)

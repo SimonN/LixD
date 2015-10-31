@@ -7,3 +7,4 @@ public import lix.floater;
 public import lix.leaving;
 public import lix.lixxie;
 public import lix.tumbler;
+public import lix.walker;

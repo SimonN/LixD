@@ -36,8 +36,6 @@ private:
 
     static bool _anyNewFlingers;
 
-    int  _frame;
-
     Lookup.LoNr _encBody;
     Lookup.LoNr _encFoot;
 
@@ -139,8 +137,8 @@ public:
  *  void playSound        (in ref UpdateArgs, in Sound);
  *  void playSoundIfTribeLocal(in ref UpdateArgs, in Sound);
  */
-    @property int frame() const   { return _frame;     }
-    @property int frame(in int i) { return _frame = i; }
+    @property int frame() const   { return _perfAc.frame;     }
+    @property int frame(in int i) { return _perfAc.frame = i; }
 /*           void advanceFrame();
  *  override bool isLastFrame() const;
  */
@@ -175,7 +173,7 @@ this(
     _style = tribe ? tribe.style : Style.GARDEN;
     if (_tribe) {
         _perfAc = PerformedActivity.factory(this, Ac.FALLER);
-        _frame  = 4;
+        frame = 4;
     }
     // important for torus bitmaps: calculate modulo in time
     ex = new_ex.even;
@@ -191,7 +189,6 @@ this(Lixxie rhs)
     _tribe = rhs._tribe;
     _dir   = rhs._dir;
     _style = rhs._style;
-    _frame = rhs._frame;
     _ex    = rhs._ex;
     _ey    = rhs._ey;
 
@@ -216,7 +213,7 @@ this(Lixxie rhs)
     updatesSinceBomb  = rhs.updatesSinceBomb;
     exploderKnockback = rhs.exploderKnockback;
 
-    _perfAc        = rhs._perfAc;
+    _perfAc        = rhs._perfAc.clone();
     _perfAc.lixxie = this;
 }
 
@@ -573,7 +570,7 @@ override bool isLastFrame() const
 
 void advanceFrame()
 {
-    _frame = isLastFrame() ? 0 : _frame + 1;
+    frame = (isLastFrame() ? 0 : frame + 1);
 }
 
 
@@ -744,21 +741,19 @@ void become(bool manualAssignment = false)(in Ac newAc)
     static if (manualAssignment)
         newPerf.onManualAssignment(); // while Lix still has old performed ac
 
+    // Reset sprite placement like climber's offset in x-direction by 1.
+    // This is the same code as the sprite placement in set_ex/ey().
+    super.x = _ex - exOffset;
+    super.y = _ey - eyOffset;
+
     if (_perfAc.ac != newPerf.ac
         && (newPerf.callBecomeAfterAssignment || ! manualAssignment)
     ) {
         newPerf.onBecome();
-
-        // Reset sprite placement like climber's offset in x-direction by 1.
-        // This is the same code as the sprite placement in set_ex/ey().
-        super.x = _ex - exOffset;
-        super.y = _ey - eyOffset;
-        _frame  = 0;
         _perfAc = newPerf;
-
         static if (manualAssignment)
             // can go to -1, then after the update, frame 0 will be displayed
-            --_frame;
+            frame = frame - 1;
     }
 }
 
