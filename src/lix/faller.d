@@ -28,7 +28,7 @@ class Faller : PerformedActivity {
         int ySpeedThisFrame = 0;
 
         for ( ; ySpeedThisFrame <= ySpeed; ++ySpeedThisFrame) {
-            if (footEncounters(Lookup.bitTrampoline)) {
+            if (footEncounters & Lookup.bitTrampoline) {
                 // Stop falling, so the trampoline can be used.
                 // It's a bit kludgy, we can't do such a thing for gadgets
                 // that fling, since the gadget might be nonconstant.

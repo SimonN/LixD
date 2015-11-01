@@ -142,11 +142,15 @@ public:
 /*           void advanceFrame();
  *  override bool isLastFrame() const;
  */
-    @property auto bodyEncounters() const              { return _encBody;     }
-    @property auto footEncounters() const              { return _encFoot;     }
-    @property auto bodyEncounters(Lookup.LoNr n) const { return _encBody & n; }
-    @property auto footEncounters(Lookup.LoNr n) const { return _encFoot & n; }
+    @property auto bodyEncounters() const { return _encBody; }
+    @property auto footEncounters() const { return _encFoot; }
     void setNoEncounters() { _encBody = _encFoot = 0; }
+
+    void forceBodyAndFootEncounters(Lookup.LoNr bo, Lookup.LoNr ft)
+    {
+        _encBody = bo;
+        _encFoot = ft;
+    }
 
 //  int  get_priority  (in Ac, in bool);
 /*  void manualAssignment(in Ac);
@@ -733,6 +737,7 @@ int get_priority(
 void become(bool manualAssignment = false)(in Ac newAc)
 {
     assert (_perfAc);
+    auto oldPerf = _perfAc;
     auto newPerf = PerformedActivity.factory(this, newAc);
 
     if (newPerf.callBecomeAfterAssignment)
@@ -750,10 +755,15 @@ void become(bool manualAssignment = false)(in Ac newAc)
         && (newPerf.callBecomeAfterAssignment || ! manualAssignment)
     ) {
         newPerf.onBecome();
-        _perfAc = newPerf;
-        static if (manualAssignment)
-            // can go to -1, then after the update, frame 0 will be displayed
-            frame = frame - 1;
+
+        if (_perfAc is oldPerf) {
+            // if onBecome() calls become() again, only let the last change
+            // through into Lixxie's data. Ignore the intermediate _perfAc.
+            _perfAc = newPerf;
+            static if (manualAssignment)
+                // can go to -1, then after the update, frame 0 is displayed
+                frame = frame - 1;
+        }
     }
 }
 

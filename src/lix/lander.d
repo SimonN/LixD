@@ -1,13 +1,27 @@
 module lix.lander;
 
-// code copied out of Faller, to be moved into Lander.onBecome
-/+
-                else if (l.get_frame() < 3) {
-                    l.become(LixEn::LANDER);
-                    l.set_frame(1);
-                }
-                else {
-                    l.become(LixEn::LANDER);
-                    // use the regular frame 0
-                }
-+/
+import lix;
+
+class Lander : PerformedActivity {
+
+    mixin(CloneByCopyFrom);
+
+    override void onBecome() {
+        if (lixxie.ac == Ac.FALLER) {
+            auto oldAc = cast (const(Faller)) lixxie.performedActivity;
+            assert (oldAc);
+            if (oldAc.frame < 3)
+                frame = 1;
+            // otherwise, use the regular frame 0
+        }
+    }
+
+    override void performActivity(UpdateArgs)
+    {
+        if (isLastFrame)
+            become(Ac.WALKER);
+        else
+            advanceFrame();
+    }
+
+}
