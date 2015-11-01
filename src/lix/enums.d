@@ -10,17 +10,33 @@ const int skill_nr_max   = 999; // for SkillButtons
 
 Matrix!XY countdown;
 
-deprecated("use skillInfinity") const int infinity = -1;
+Ac stringToAc(in string str)
+{
+    foreach (key; acStrings.byKey()) {
+        if (acStrings[key] == str) return key;
+    }
+    return Ac.MAX;
+}
 
-/*  int frame_to_x_frame(int);
- *  int ac_to_y_frame   (int);
- *
- *   Ac     stringToAc   (in string);
- *  Style  stringToStyle(in string);
- *
- *  string acToString   (in Ac);
- *  string styleToString(in Style);
- */
+string acToString(in Ac ac)
+{
+    assert (ac in acStrings);
+    return acStrings[ac];
+}
+
+Style stringToStyle(in string str)
+{
+    foreach (key; styleStrings.byKey) {
+        if (styleStrings[key] == str) return key;
+    }
+    return Style.GARDEN;
+}
+
+string styleToString(in Style st)
+{
+    assert (st in styleStrings);
+    return styleStrings[st];
+}
 
 enum Ac {
     NOTHING,
@@ -70,14 +86,12 @@ enum Style {
     MAX
 }
 
-private immutable string[Ac]    ac_strings;
-private immutable string[Style] style_strings;
-
-
+private immutable string[Ac]    acStrings;
+private immutable string[Style] styleStrings;
 
 static this()
 {
-    ac_strings = [
+    acStrings = [
         Ac.NOTHING    : "NOTHING",
         Ac.FALLER     : "FALLER",
         Ac.TUMBLER    : "TUMBLER",
@@ -110,7 +124,7 @@ static this()
         Ac.MAX        : "MAX"
     ];
 
-    style_strings = [
+    styleStrings = [
         Style.GARDEN  : "Garden",
         Style.NEUTRAL : "Neutral",
         Style.RED     : "Red",
@@ -122,36 +136,4 @@ static this()
         Style.GREY    : "Grey",
         Style.BLACK   : "Black"
     ];
-}
-
-
-
-Ac stringToAc(in string str) {
-    foreach (key; ac_strings.byKey()) {
-        if (ac_strings[key] == str) return key;
-    }
-    return Ac.MAX;
-}
-
-
-
-string acToString(in Ac ac) {
-    assert (ac in ac_strings);
-    return ac_strings[ac];
-}
-
-
-
-Style stringToStyle(in string str) {
-    foreach (key; style_strings.byKey) {
-        if (style_strings[key] == str) return key;
-    }
-    return Style.GARDEN;
-}
-
-
-
-string styleToString(in Style st) {
-    assert (st in style_strings);
-    return style_strings[st];
 }

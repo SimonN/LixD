@@ -95,7 +95,6 @@ public:
 
     @property const(PerformedActivity) performedActivity() const
     {
-        assert (_perfAc);
         return _perfAc;
     }
 

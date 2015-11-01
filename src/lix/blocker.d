@@ -13,3 +13,9 @@ import lix;
     acFunc[Ac.BATTER]    .blockable =
     acFunc[Ac.CUBER]     .blockable = false;
 +/
+
+class Blocker : PerformedActivity {
+
+    mixin(CloneByCopyFrom);
+
+}

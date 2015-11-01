@@ -1,10 +1,20 @@
 module lix;
 
 public import lix.acfunc;
+public import lix.basher;
+public import lix.batter;
+public import lix.blocker;
+public import lix.builder;
+public import lix.climber;
+public import lix.cuber;
+public import lix.digger;
 public import lix.enums;
+public import lix.exploder;
 public import lix.faller;
 public import lix.floater;
+public import lix.lander;
 public import lix.leaving;
 public import lix.lixxie;
+public import lix.miner;
 public import lix.tumbler;
 public import lix.walker;

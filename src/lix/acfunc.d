@@ -14,34 +14,6 @@ struct UpdateArgs {
     this(GameState _st, in int _id = 0) { st = _st; id = _id; }
 }
 
-/+
-static this()
-{
-    acFunc[Ac.EXPLODER]  .leaving =
-    acFunc[Ac.CUBER]     .leaving = true;
-}
-+/
-
-// DTODO: Remove these as they get implemented in other files
-class Stunner    : PerformedActivity { mixin(CloneByCopyFrom); }
-class Lander     : PerformedActivity { mixin(CloneByCopyFrom); }
-class Runner     : PerformedActivity { mixin(CloneByCopyFrom); }
-class Climber    : PerformedActivity { mixin(CloneByCopyFrom); }
-class Ascender   : PerformedActivity { mixin(CloneByCopyFrom); }
-class Exploder   : PerformedActivity { mixin(CloneByCopyFrom); }
-class Blocker    : PerformedActivity { mixin(CloneByCopyFrom); }
-class Builder    : PerformedActivity { mixin(CloneByCopyFrom); }
-class Shrugger   : PerformedActivity { mixin(CloneByCopyFrom); }
-class Platformer : PerformedActivity { mixin(CloneByCopyFrom); }
-class Basher     : PerformedActivity { mixin(CloneByCopyFrom); }
-class Miner      : PerformedActivity { mixin(CloneByCopyFrom); }
-class Digger     : PerformedActivity { mixin(CloneByCopyFrom); }
-class Jumper     : PerformedActivity { mixin(CloneByCopyFrom); }
-class Batter     : PerformedActivity { mixin(CloneByCopyFrom); }
-class Cuber      : PerformedActivity { mixin(CloneByCopyFrom); }
-
-
-
 immutable string CloneByCopyFrom = "
     override typeof(this) clone()
     {

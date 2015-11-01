@@ -1,6 +1,14 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.2
+-----
+
+2015-10-30
+
+Started implementing Lix skills. There will likely be no problem with them
+scanning the terrain from the lookupmap. I'm anxious about them writing to
+the terrain later on, when the more interesting skills get added.
 
 0.1.0
 -----
@@ -11,8 +19,6 @@ First Windows build released on Lemmings Forums as a smoke test. It runs
 well for most people. Drawing has bad performance still with about 3,500
 animated gadgets, but is much better with about 200 than in the previous
 months.
-
-
 
 0.0.0
 -----
