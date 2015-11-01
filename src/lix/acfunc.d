@@ -49,7 +49,9 @@ immutable string CloneByCopyFrom = "
         a.copyFrom(this);
         return a;
     }
-    alias copyFrom = super.copyFrom;";
+    alias copyFrom = super.copyFrom;
+    private alias lixxie this;
+";
 
 
 

@@ -22,8 +22,6 @@ class Faller : PerformedActivity {
 
     override @property bool canPassTop() const { return true; }
 
-    private alias lixxie this;
-
     override void
     performActivity(UpdateArgs)
     {

@@ -16,8 +16,6 @@ class Floater : PerformedActivity {
     override @property bool canPassTop() const { return true; }
     override @property bool callBecomeAfterAssignment() const { return false; }
 
-    private alias lixxie this;
-
     override void
     onBecome()
     {
