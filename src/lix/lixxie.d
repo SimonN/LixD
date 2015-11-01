@@ -25,7 +25,7 @@ private:
 
     int  _ex;
     int  _ey;
-    int  _dir;
+    bool _facingLeft;
 
     Tribe _tribe;
 
@@ -67,7 +67,6 @@ public:
 
 /*  this(Tribe = null, int = 0, int = 0); // tribe==null ? NOTHING : FALLER
  *  this(in Lixxie rhs);
- *  invariant();
  */
     mixin CloneableBase;
 
@@ -85,9 +84,14 @@ public:
  *  void moveDown(int = 2);
  *  void moveUp  (int = 2);
  */
-    @property int dir() const   { return _dir; }
-    @property int dir(in int i) { return _dir = (i>0)?1 : (i<0)?-1 : _dir; }
-    void turn()                 { _dir *= -1; }
+    @property int dir() const { return _facingLeft ? -1 : 1; }
+    @property int dir(in int i)
+    {
+        assert (i != 0);
+        return _facingLeft = (i < 0);
+    }
+
+    void turn() { _facingLeft = ! _facingLeft; }
 
     @property const(PerformedActivity) performedActivity() const
     {
@@ -173,7 +177,6 @@ this(
     super(getLixSpritesheet(new_tribe ? new_tribe.style : Style.GARDEN),
           groundMap, even(new_ex) - exOffset, new_ey - eyOffset);
     _tribe = new_tribe;
-    _dir   = 1;
     _style = tribe ? tribe.style : Style.GARDEN;
     if (_tribe) {
         _perfAc = PerformedActivity.factory(this, Ac.FALLER);
@@ -191,10 +194,11 @@ this(Lixxie rhs)
     assert (rhs !is null);
 
     _tribe = rhs._tribe;
-    _dir   = rhs._dir;
     _style = rhs._style;
     _ex    = rhs._ex;
     _ey    = rhs._ey;
+
+    _facingLeft = rhs._facingLeft;
 
     super(graphic.gralib.getLixSpritesheet(_style), groundMap,
         _ex - exOffset, _ey - eyOffset);
@@ -211,21 +215,14 @@ this(Lixxie rhs)
     marked   = rhs.marked;
 
     abilityToRun   = rhs.abilityToRun;
-    abilityToClimb  = rhs.abilityToClimb;
-    abilityToFloat  = rhs.abilityToFloat;
+    abilityToClimb = rhs.abilityToClimb;
+    abilityToFloat = rhs.abilityToFloat;
 
     updatesSinceBomb  = rhs.updatesSinceBomb;
     exploderKnockback = rhs.exploderKnockback;
 
     _perfAc        = rhs._perfAc.clone();
     _perfAc.lixxie = this;
-}
-
-
-
-invariant()
-{
-    assert (_dir == -1 || _dir == 1);
 }
 
 
@@ -242,7 +239,7 @@ static void setStaticMaps(Torbit* tb, Lookup* lo, Map ma)
 private XY getFuseXY() const
 {
     XY ret = countdown.get(frame, ac);
-    if (_dir < 0)
+    if (_facingLeft)
         ret.x = this.cutbit.xl - ret.x;
     ret.x += super.x;
     ret.y += super.y;
@@ -285,8 +282,7 @@ ey(in int n) {
 
 void moveAhead(int plusX = 2)
 {
-    plusX = even(plusX);
-    plusX *= _dir;
+    plusX = even(plusX) * dir;
     // move in little steps, to check for lookupmap encounters on the way
     for ( ; plusX > 0; plusX -= 2) ex = (_ex + 2);
     for ( ; plusX < 0; plusX += 2) ex = (_ex - 2);
@@ -344,7 +340,7 @@ void resetFlingNew()
 
 bool getSteel(in int px, in int py)
 {
-    return lookup.getSteel(_ex + px * _dir, _ey + py);
+    return lookup.getSteel(_ex + px * dir, _ey + py);
 }
 
 
@@ -358,7 +354,7 @@ static bool getSteelAbsolute(in int x, in int y)
 
 void addLand(in int px, in int py, const AlCol col)
 {
-    addLandAbsolute(_ex + px * _dir, _ey + py, col);
+    addLandAbsolute(_ex + px * dir, _ey + py, col);
 }
 
 
@@ -375,14 +371,14 @@ void addLandAbsolute(in int x = 0, in int y = 0, in AlCol col = color.transp)
 
 bool isSolid(in int px, in int py)
 {
-    return lookup.getSolidEven(_ex + px * _dir, _ey + py);
+    return lookup.getSolidEven(_ex + px * dir, _ey + py);
 }
 
 
 
 bool isSolidSingle(in int px, in int py)
 {
-    return lookup.getSolid(_ex + px * _dir, _ey + py);
+    return lookup.getSolid(_ex + px * dir, _ey + py);
 }
 
 
@@ -438,12 +434,12 @@ int countSteel(int x1, int y1, int x2, int y2)
 bool removePixel(int px, in int py)
 {
     // this amendmend is only in drawPixel() and removePixel()
-    if (_dir < 0) --px;
+    if (_facingLeft) --px;
 
     // test whether the landscape can be dug
     if (! getSteel(px, py) && isSolid(px, py)) {
-        lookup.rm     (_ex + px * _dir, _ey + py, Lookup.bitTerrain);
-        land.setPixel(_ex + px * _dir, _ey + py, color.transp);
+        lookup.rm    (_ex + px * dir, _ey + py, Lookup.bitTerrain);
+        land.setPixel(_ex + px * dir, _ey + py, color.transp);
         return false;
     }
     // Stahl?
@@ -483,7 +479,7 @@ bool removeRectangle(int x1, int y1, int x2, int y2)
 void drawPixel(int px, in int py, in AlCol col)
 {
     // this amendmend is only in drawPixel() and removePixel()
-    if (_dir < 0) --px;
+    if (_facingLeft) --px;
 
     if (! isSolidSingle(px, py)) addLand(px, py, col);
 }
@@ -509,9 +505,9 @@ void drawBrick(int x1, int y1, int x2, int y2)
     const int col_m = get_cutbit()->get_pixel(20, LixEn::BUILDER - 1, 0, 0);
     const int col_d = get_cutbit()->get_pixel(21, LixEn::BUILDER - 1, 0, 0);
 
-    draw_rectangle(x1 + (_dir<0), y1, x2 - (_dir>0), y1, col_l);
-    draw_rectangle(x1 + (_dir>0), y2, x2 - (_dir<0), y2, col_d);
-    if (_dir > 0) {
+    draw_rectangle(x1 + (dir<0), y1, x2 - (dir>0), y1, col_l);
+    draw_rectangle(x1 + (dir>0), y2, x2 - (dir<0), y2, col_d);
+    if (dir > 0) {
         draw_pixel(x2, y1, col_m);
         draw_pixel(x1, y2, col_m);
     }
@@ -617,10 +613,10 @@ override void draw()
     }
     // end of drawing the fuse
 
-    // Mirror flips vertically. Therefore, when _dir < 0, we have to rotate
+    // Mirror flips vertically. Therefore, when _facingLeft, we have to rotate
     // by 180 degrees in addition.
-    mirror   =      _dir < 0;
-    rotation = 2 * (_dir < 0);
+    mirror   =     _facingLeft;
+    rotation = 2 * _facingLeft;
     Graphic.draw();
 }
 
