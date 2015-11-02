@@ -31,7 +31,7 @@ class BrowserBase : Window {
 
     ~this() { if (preview) destroy(preview); preview = null; }
 
-    void set_buttonPlay_text(in string s) { buttonPlay.text = s; }
+    void setButtonPlayText(in string s) { buttonPlay.text = s; }
 
     @property bool gotoMainMenu() const { return _gotoMainMenu; }
 
@@ -45,15 +45,15 @@ class BrowserBase : Window {
  *
  *  void set_preview_y_and_yl(in int y, in int yl);
  */
-    void preview_level(Level l) { preview.level = l;    }
-    void clear_preview()        { preview.level = null; }
+    void previewLevel(Level l) { preview.level = l;    }
+    void clearPreview()        { preview.level = null; }
 
     @property int  infoY() const   { return _infoY; }
     @property void infoY(in int i) { _infoY = i;    }
 
     // override these
     void onFileHighlight(Filename) {}
-    void on_file_select   (Filename) {}
+    void onFileSelect   (Filename) {}
 
 private:
 
@@ -93,7 +93,7 @@ this(
     levList = new ListLevel(new Geom(140, 40, lxlg, 420));
 
     buttonPlay = new TextButton(new Geom(20,  40, 140,  40, From.TOP_RIG));
-    preview     = new Preview  (new Geom(20, 100, 140, 100, From.TOP_RIG));
+    preview    = new Preview   (new Geom(20, 100, 140, 100, From.TOP_RIG));
     buttonExit = new TextButton(new Geom(20,  20, 140,  40, From.BOT_RIG));
 
     // preview_yl = 100 or 93 doesn't fit exactly for the 640x480 resolution,
@@ -106,7 +106,10 @@ this(
     dirList.currentDir = currentFile;
 
     levList.highlight(currentFile);
-    if (levList.currentFile == currentFile)
+    if (levList.currentFile == currentFile
+        && currentFile !is null
+        && currentFile.file != null
+    )
         this.highlight(currentFile);
     else
         this.highlight(null);
@@ -168,14 +171,14 @@ calcSelf()
                 highlight(fn);
             else
                 // button execute for the second time
-                on_file_select(fn);
+                onFileSelect(fn);
         }
     }
     else if (buttonPlay.execute) {
         if (fileRecent !is null
          && fileRecent.isChildOf(dirList.currentDir)
-         && fileRecent ==          levList.currentFile)
-            on_file_select(fileRecent);
+         && fileRecent ==        levList.currentFile)
+            onFileSelect(fileRecent);
     }
 }
 

@@ -44,13 +44,13 @@ onFileHighlight(Filename fn)
 {
     _fileRecent  = fn;
     _levelRecent = fn is null ? null : new Level(_fileRecent);
-    preview_level(_levelRecent);
+    previewLevel(_levelRecent);
 }
 
 
 
 protected override void
-on_file_select(Filename fn)
+onFileSelect(Filename fn)
 {
     assert (_fileRecent  !is null);
     assert (_levelRecent !is null);
