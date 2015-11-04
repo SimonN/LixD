@@ -368,21 +368,21 @@ void addLandAbsolute(in int x = 0, in int y = 0, in AlCol col = color.transp)
 
 
 
-bool isSolid(in int px, in int py)
+bool isSolid(in int px = 0, in int py = 2)
 {
     return lookup.getSolidEven(_ex + px * dir, _ey + py);
 }
 
 
 
-bool isSolidSingle(in int px, in int py)
+bool isSolidSingle(in int px = 0, in int py = 2)
 {
     return lookup.getSolid(_ex + px * dir, _ey + py);
 }
 
 
 
-int solidWallHeight(in int px, in int py)
+int solidWallHeight(in int px = 0, in int py = 0)
 {
     int solid = 0;
     for (int i = 1; i > -12; --i) {

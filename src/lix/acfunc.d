@@ -5,7 +5,7 @@ import lix;
 
 // Mimic behavior of A4/C++ Lix as precisely as possible? Might help testing
 // old replays. This flag can be removed after the D port got widespread.
-enum cPlusPlusPhysicsBugs = false;
+enum cPlusPlusPhysicsBugs = true;
 
 struct UpdateArgs {
     GameState st;

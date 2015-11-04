@@ -102,92 +102,114 @@ class Walker : PerformedActivity {
         if (frame != 0)
             moveAhead();
 
-        bool turnAfterAll = handleWallOrPitHere();
+        immutable bool turnAfterAll = handleWallOrPitHere();
 
         if (turnAfterAll) {
-            // start climbing or turn, both happens at the old position
+            // Start climbing or turn. Either happens at the old position, so
+            // we have to reset position and encounters to where we started.
             ex = oldEx;
             ey = oldEy;
             forceBodyAndFootEncounters(oldEncBody, oldEncFoot);
             bool climbedAfterAll = false;
 
-            /+
-            if (l.get_climber()) {
-                // Auf Landschaft über der derzeitigen Position prüfen
-                bool enough_space = true;
-                for (int i = 1; i < 13; ++i) {
-                    if (l.is_solid(0, -i)) {
-                        enough_space = false;
+            if (abilityToClimb) {
+                bool enoughSpaceToClimb = true;
+                for (int i = 1; i < 13; ++i)
+                    if (isSolid(0, -i)) {
+                        enoughSpaceToClimb = false;
                         break;
                     }
-                }
-                if (enough_space) {
-                    l.become(LixEn::CLIMBER);
-                    climbed_after_all = true;
+                if (enoughSpaceToClimb) {
+                    become(Ac.CLIMBER);
+                    return;
                 }
             }
-            if (! climbed_after_all) {
-                l.turn();
-                // this new check will take care of the bugs around 2012-02,
-                // the lix didn't ascend or fall when caught in 2-pixel gaps.
-                handleWallOrPitHere(l);
-            }
-            +/
+            turn();
+            handleWallOrPitHere();
         }
-        // Ende der Umdrehen-Kontrolle
     }
 
 
 
+    // returns true if the lixxie shall turn or can start to climb
     private final bool handleWallOrPitHere()
     {
-        bool turnAfterAll = false;
-/+
-        // Pruefung auf Boden unter der neuen Position
-        // Falls da nichts ist, gucken wir etwas darüber nach - vielleicht
-        // handelt es sich um eine sehr dünne Aufwärts-Brücke, durch die
-        // wir nicht hindurchfallen wollen?
-        if (l.is_solid() || l.is_solid(0, 1)) {
+        // Check for floor at the new position. If there is none, check
+        // slightly above -- we don't want to fall through checkerboards,
+        // but we want to ascend them.
+        if (isSolid() || isSolid(0, 1)) {
             // do the wall check to turn or ascend
-            int up_by = l.solid_wall_height(0);
-            if      (up_by == 13) turnAfterAll = true;
-            else if (up_by >=  6) l.become(LixEn::ASCENDER);
-            else                  l.move_up(up_by);
+            immutable int upBy = solidWallHeight(0);
+            if (upBy == 13)
+                return true;
+            else if (upBy >= 6)
+                become(Ac.ASCENDER);
+            else
+                moveUp(upBy);
         }
-        // Ende von "Boden unter den Füßen"
 
-        // Kein Boden? Dann hinunter gehen oder zu fallen beginnen
-        else {
-            int moved_down_by = 0;
+        // No floor? Then step down or start falling
+        else if (cPlusPlusPhysicsBugs) {
+            int movedDownBy = 0;
             for (int i = 3; i < 11; ++i) {
-                if (!l.is_solid()) {
-                    l.move_down(1);
-                    ++moved_down_by;
+                if (! isSolid()) {
+                    moveDown(1);
+                    ++movedDownBy;
                 }
                 else break;
             }
-            if (l.is_solid()) {
-                // Bei zu starker Steigung umdrehen
-                if (l.solid_wall_height(0) == 11) {
-                    turnAfterAll = true;
+            if (isSolid()) {
+                // We are standing on something, and maybe we're standing
+                // inside a wall right now.
+                if (solidWallHeight(0) == 11) {
+                    assert (false, "walker code that shouldn't be reached");
+                    // return true;
                 }
                 // Don't move that far back up as the check about 10 lines further
                 // down that reads very similar in its block
-                else if (moved_down_by > 6) {
-                    l.move_up(4);
-                    l.become(LixEn::FALLER);
-                    l.set_special_x(moved_down_by - 4);
+                else if (movedDownBy > 6) {
+                    moveUp(4);
+                    become(Ac.FALLER);
+                    Faller perfFaller = cast (Faller) lixxie.performedActivity;
+                    assert (perfFaller);
+                    perfFaller.pixelsFallen = movedDownBy - 4;
                 }
             }
             else {
-                // Aber nicht direkt so weit nach unten zum Fallen bewegen
-                l.move_up(6);
-                l.become(LixEn::FALLER);
-                l.set_special_x(2);
+                moveUp(6);
+                become(Ac.FALLER);
+                Faller perfFaller = cast (Faller) lixxie.performedActivity;
+                assert (perfFaller);
+                // I don't understand why there is a 2 here
+                // OK, movedDownBy should be 8 here, and moveUp(6) + 2 = 8.
+                perfFaller.pixelsFallen = 2;
             }
         }
-+/
-        return turnAfterAll;
+        else {
+            assert (! cPlusPlusPhysicsBugs);
+            assert (! isSolid(0, 1) && ! isSolid(0, 2));
+            immutable spaceBelowForFalling = 9;
+            int       spaceBelow           = 1; // because of the assertions
+            while (spaceBelow < spaceBelowForFalling
+                && ! isSolid(0, spaceBelow + 2)
+            ) {
+                ++spaceBelow;
+            }
+            if (spaceBelow == spaceBelowForFalling) {
+                immutable fallY = 2;
+                moveDown(fallY);
+                become(Ac.FALLER);
+                Faller perfFaller = cast (Faller) lixxie.performedActivity;
+                assert (perfFaller);
+                perfFaller.pixelsFallen = fallY;
+            }
+            else {
+                moveDown(spaceBelow);
+                if (spaceBelow >= 7)
+                    frame = 0;
+            }
+        }
+        return false;
     }
     // end method handleWallOrPitHere()
 }

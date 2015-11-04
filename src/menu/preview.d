@@ -51,7 +51,12 @@ private:
 public @property void
 level(in Level level)
 {
-    if (torbit) destroy(torbit);
+    if (torbit)
+        destroy(torbit);
+    torbit        = null;
+    iconStatus.xf = 0;
+    iconTorus .xf = 0;
+
     if (level !is null) {
         torbit  = level.create_preview(
             (xs + xls).roundInt - xs.roundInt,
@@ -61,11 +66,6 @@ level(in Level level)
         iconTorus .xf = level.torusX + 2 * level.torusY;
         if (_status == LevelStatus.BAD_EMPTY)
             iconStatus.xf = 0;
-    }
-    else {
-        torbit = null;
-        iconStatus.xf = 0;
-        iconTorus .xf = 0;
     }
     reqDraw();
 }
