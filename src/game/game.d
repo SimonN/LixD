@@ -10,6 +10,7 @@ module game.game;
 public import basics.cmdargs : Runmode;
 
 import basics.alleg5;
+import basics.globals;
 import file.filename;
 import game;
 import graphic.color;
@@ -21,9 +22,10 @@ class Game {
 
     @property bool gotoMenu() { return _gotoMenu; }
 
-    static immutable int ticksNormalSpeed   =  4;
-    static immutable int ticksSlowMotion    = 45;
-    static immutable int updatesDuringTurbo =  8;
+    enum ticksNormalSpeed   =  4;
+    enum updatesDuringTurbo =  8;
+    enum updatesBackMany    = ticksPerSecond / ticksNormalSpeed * 1;
+    enum updatesAheadMany   = ticksPerSecond / ticksNormalSpeed * 10;
 
     this(Runmode rm, Level lv, Filename fn = null, Replay rp = null)
     {

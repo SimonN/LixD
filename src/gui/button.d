@@ -97,8 +97,9 @@ calcSelf()
         break;
     case WhenToExecute.whenMouseClickAllowingRepeats:
         down     = mouseHere && mouseHeldLeft;
-        _execute = mouseHere && mouseHeldLongLeft
-            || _hotkey.keyTappedAllowingRepeats;
+        _execute = mouseHere && mouseClickLeft
+                || mouseHere && mouseHeldLongLeft
+                || _hotkey.keyTappedAllowingRepeats;
         break;
     }
     if (_onExecute !is null && _execute)

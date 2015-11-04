@@ -26,6 +26,9 @@ public:
     @property auto gapamode() const { return _gapamode; }
     // setter property is down below
 
+    enum frameFast  = 4;
+    enum frameTurbo = 5;
+
 private:
 
     private GapaMode _gapamode;
@@ -68,7 +71,7 @@ this()
     newControlButton(zoom,       0, 0,  2);
     newControlButton(speedBack,  0, 1, 10);
     newControlButton(speedAhead, 1, 1,  3);
-    newControlButton(speedFast,  2, 1,  4); // 5 if turbo is on
+    newControlButton(speedFast,  2, 1, frameFast);
     newControlButton(restart,    1, 0,  8);
     newControlButton(nukeSingle, 2, 0,  9);
 
@@ -140,6 +143,32 @@ protected override void
 calcSelf()
 {
     _dummyBG.down = false;
+
+    void setSpeedTo(in int a)
+    {
+        assert (a >= 0);
+        assert (a <  4);
+        pause.on     = (a == 0);
+        speedFast.on = (a >= 2);
+        speedFast.xf = (a < 3 ? frameFast : frameTurbo);
+    }
+
+    if (pause.execute) {
+        setSpeedTo(pause.on ? 1 : 0);
+    }
+    else if (speedBack.executeLeft
+        ||   speedBack.executeRight
+        ||   speedAhead.executeLeft // but not on speedAhead.executeRight
+    ) {
+        setSpeedTo(0);
+    }
+    else if (speedFast.executeLeft) {
+        setSpeedTo(speedFast.on ? 1 : 2);
+    }
+    else if (speedFast.executeRight) {
+        setSpeedTo(speedFast.xf == frameTurbo ? 1 : 3);
+    }
+
 }
 
 }
