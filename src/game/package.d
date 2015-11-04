@@ -2,6 +2,7 @@ module game;
 
 public import game.effect;
 public import game.game;
+public import game.gameacti;
 public import game.gamecalc;
 public import game.gamedraw;
 public import game.gameinit;

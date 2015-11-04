@@ -10,7 +10,7 @@ import hardware.keyboard;
 import hardware.mousecur;
 
 package void
-implCalcPassive(Game game) { with (game)
+calcPassive(Game game) { with (game)
 {
     if (keyTapped(ALLEGRO_KEY_ESCAPE))
         game._gotoMenu = true;
@@ -22,4 +22,4 @@ implCalcPassive(Game game) { with (game)
     if (map.scrollingNow)
         mouseCursor.xf = 3;
 }}
-// end with (game), end function implCalcPassive
+// end with (game), end function calcPassive
