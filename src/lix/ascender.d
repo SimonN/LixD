@@ -15,7 +15,7 @@ class Ascender : PerformedActivity {
             return lixxie.isSolid(0, y) && ! lixxie.isSolid(0, y-1);
         }
         int swh = 0;
-        enum checkBelowHeight = 26;
+        enum checkBelowHeight = (cPlusPlusPhysicsBugs ? 26 : 16);
         while (swh < checkBelowHeight && ! solidPixelWithAirAbove(2 - swh))
             ++swh;
 
@@ -50,7 +50,7 @@ class Ascender : PerformedActivity {
 
     override void performActivity(UpdateArgs)
     {
-        if (frame != 0)
+        if (frame != 5)
             moveUp();
 
         if (isLastFrame)
