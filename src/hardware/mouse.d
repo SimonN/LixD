@@ -57,7 +57,7 @@ private:
     // The mouse has 3 buttons: #0 is left, #1 is right, #2 is middle.
     bool[3] _mouseClick;   // there just was a single click
     bool[3] _mouseDouble;  // there just was a double click
-    int [3] _mouseHeldFor;    // mouse button has been held for... (0 if not)
+    int [3] _mouseHeldFor; // mouse button has been held for... (0 if not)
     int [3] _mouseRelease; // just released button after being held for ...
     int [3] _mouseSince;   // how long ago was the last click, for doubleclick
 
@@ -154,6 +154,14 @@ void calc()
             // This occurs after centralizing the mouse manually. Ignore.
             break;
 
+        case ALLEGRO_EVENT_MOUSE_ENTER_DISPLAY:
+            _trapMouse = true;
+            break;
+
+        case ALLEGRO_EVENT_MOUSE_LEAVE_DISPLAY:
+            _trapMouse = false;
+            break;
+
         default:
             break;
         }
@@ -172,11 +180,9 @@ void calc()
         al_hide_mouse_cursor(display);
         if (_centerMouseAtNextUpdate) {
             _centerMouseAtNextUpdate = false;
-            immutable int x = al_get_display_width (display) / 2;
-            immutable int y = al_get_display_height(display) / 2;
-            al_set_mouse_xy(display, x, y);
-            _mouseOwnX = x;
-            _mouseOwnY = y;
+            al_set_mouse_xy(display, xl/2, yl/2);
+            _mouseOwnX = xl/2;
+            _mouseOwnY = yl/2;
         }
         if (mouseCurX < xl/4 || mouseCurX > xl*3/4
          || mouseCurY < yl/4 || mouseCurY > yl*3/4) {
