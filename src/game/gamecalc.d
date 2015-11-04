@@ -48,3 +48,29 @@ updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
 
 }}
 // end with (game), end function updatePhysicsAccordingToSpeedButtons
+
+
+
+package void
+loadState(Game game, GameState state) { with (game)
+{
+    if (state) {
+        cs = state;
+        if (trlo)
+            pan.setLikeTribe(trlo);
+        effect.deleteAfter(cs.update);
+    }
+}}
+
+
+
+package void
+loadStateManually(Game game, GameState state) { with (game)
+{
+    if (state) {
+        game.loadState(state);
+        altickLastUpdate = al_get_timer_count(basics.alleg5.timer);
+        foreach (hatch; cs.hatches)
+            hatch.animate(effect, cs.update);
+    }
+}}

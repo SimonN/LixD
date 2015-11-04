@@ -128,7 +128,9 @@ this(
 
 this(const Torbit rhs)
 {
-    assert (rhs.bitmap);
+    assert (rhs, "Don't copy-construct from a null Torbit.");
+    assert (rhs.bitmap,
+        "Don't copy-construct from non-null Torbit with null bitmap.");
     bitmap = al_clone_bitmap(cast (Albit) rhs.bitmap);
     if (bitmap) {
         _xl = rhs._xl;
@@ -156,11 +158,15 @@ invariant()
         assert (_xl == al_get_bitmap_width (cast (Albit) bitmap));
         assert (_yl == al_get_bitmap_height(cast (Albit) bitmap));
     }
+    else {
+        assert (_xl == 0);
+        assert (_yl == 0);
+    }
 }
 
 
 
-void resize(int a_xl, int a_yl)
+void resize(in int a_xl, in int a_yl)
 {
     if (bitmap) al_destroy_bitmap(bitmap);
     _xl = a_xl;

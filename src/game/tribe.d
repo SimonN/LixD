@@ -59,6 +59,7 @@ class Tribe {
 
     this(Tribe rhs)
     {
+        assert (rhs, "don't copy-construct from a null Tribe");
         valueFields = rhs.valueFields;
         skills      = rhs.skills;
         masters     = rhs.masters.dup;

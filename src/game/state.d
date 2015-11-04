@@ -4,46 +4,13 @@ module game.state;
  * how we got here. The class Replay saves everything about the history,
  * so you can reconstruct the current state from the beginning gamestate and
  * a replay.
+ *
+ * StateManager holds many states, and knows when to auto-save.
+ * Feed the StateManager with the current state all the time, it will do
+ * nothing most of the time with the state fed.
  */
 
-// DTODOLANG: Translate this comment
-/*
- * gameplay/state.h
- *
- * Statesaves-Manager: Hier werden alle vollwertigen Spielstaende verwaltet,
- * die unterweges so anfallen. Das angeforderte Speichern im Einspielermodus
- * zaehlt dazu, aber auch das automatische Speichern im Netzwerkmodus.
- * In diesen Faellen wird bei verspaetet eintreffenden Paketen ab einem
- * geeingeten Spielstand neu gerechnet.
- *
- * For the user-triggered save, it also remembers the replay that was active
- * then. This is important since the user could otherwise restart, do something
- * deviating, and then load the user state that supposes the old, differing
- * replay.
- *
- * void calc_save_auto(unsigned long, std::vector <Player>&, BITMAP*)
- *
- *   Schaut sich die uebergebene Update-Zahl an und entscheidet, wie mit den
- *   weiteren uebergebenen Daten zu verfahren ist: Speichern oder nichts tun.
- *   In dieser Funktion werden, je nach Bedarf, auch die bisher angesammelten
- *   automatischen Staende per Zeigervertausch umgelegt.
- *
- * const State& load_user()
- * const State& load_auto(unsigned long)
- *
- *   Diese laden einen zuvor gespeicherten Spielstand: Entweder den per
- *   Klick auf die Speichertaste angelegten Stand oder den juengsten Stand,
- *   der mindestens so alt ist wie die angegebene Spielzeit in Updates.
- *
- *   Die letztere Funktion wird die Gameplay-Klasse moeglicherweise dazu
- *   bringen, vieles neu auszurechnen und dabei auch haeufig neue calc()-
- *   -Anforderungen zu stellen. Neuere automatisch gespeicherte Staende als
- *   der von load_auto() zurueckgegebene werden dadurch beim Neurechnen
- *   ebenfalls aktualisiert.
- *
- */
-
-import basics.help; // deep_copy for arrays
+import basics.help; // clone(T[]), a deep copy for arrays
 import game;
 import graphic.torbit;
 import graphic.gadget;
@@ -71,18 +38,15 @@ class GameState {
 
     this() { }
 
-/*  this(Gamestate)               -- copy constructor
- *  void foreachGadget(function) -- apply to each gadget in drawing order
- */
     this(GameState rhs)
     {
+        assert (rhs, "don't copy-construct from a null GameState");
+        assert (rhs.land, "don't copy-construct from GameState without land");
         update         = rhs.update;
         clock          = rhs.clock;
         clockIsRunning = rhs.clockIsRunning;
         _goalsLocked   = rhs._goalsLocked;
-
         tribes      = tribes     .clone;
-
         hatches     = hatches    .clone;
         goals       = goals      .clone;
         decos       = decos      .clone;
@@ -91,8 +55,8 @@ class GameState {
         flingers    = flingers   .clone;
         trampolines = trampolines.clone;
 
-        land   = new Torbit(land);
-        lookup = new Lookup(lookup);
+        land   = new Torbit(rhs.land);
+        lookup = new Lookup(rhs.lookup);
     }
 
     mixin CloneableBase;
@@ -121,35 +85,89 @@ class GameState {
 
 
 
+// ############################################################################
+// ############################################################################
+// ############################################################################
+
+
+
 class StateManager {
 
-/*
 private:
 
-    immutable updates_sml =  10;
-    immutable updates_med =  50;
-    immutable updates_big = 200;
+    enum updatesMostFrequentPair = 10;
+    enum updatesMultiplierNextPairIsSlowerBy = 5; // 10, 50, 250, 1250
+    enum pairsToKeep = 4;
 
-    GameState
-        zero,  user,
-        sml_1, sml_2,
-        med_1, med_2,
-        big_1, big_2;
+    GameState _zero, _user;
+    GameState[2 * pairsToKeep] _auto;
 
-    Replay userrep;
+    // For the user-triggered save (_user), remember the replay that was
+    // correct by then. Otherwise, the user could restart, do something
+    // deviating, and then load the user state that supposes the old,
+    // differing replay.
+    Replay _userReplay;
 
 public:
 
-    skvoid  save_zero(const GameState& s) { zero = s; }
-    skvoid  save_user(const GameState& s,
-                           const Replay& r)    { user = s; userrep = r; }
+    void saveZero(GameState s) { _zero = s; }
+    void saveUser(GameState s, Replay r) { _user = s; _userReplay = r; }
 
-    skconst GameState& get_zero()        { return zero;    }
-    skconst GameState& get_user()        { return user;    }
-    skconst Replay&    get_userReplay() { return userrep; }
+    @property inout(GameState) zero()       inout { return _zero;       }
+    @property inout(GameState) user()       inout { return _user;       }
+    @property inout(Replay)    userReplay() inout { return _userReplay; }
 
-    const        GameState& get_auto(Ulng);
-*/
-    void calcSaveAuto(GameState) { }
+    GameState autoBeforeUpdate(in int u)
+    {
+        GameState ret = _zero;
+        foreach (ref GameState candidate; _auto)
+            if (candidate !is null && candidate.update < u) {
+                ret = candidate;
+                break;
+            }
 
+        foreach (ref GameState possibleGarbage; _auto)
+            if (possibleGarbage && possibleGarbage.update >= ret.update)
+                // DTODO: find out whether we should manually destroy the
+                // torbit and lookup matrix here, and then garbage-collect
+                possibleGarbage = null;
+
+        return ret;
+    }
+
+    // Examine the number of updates in s, then decide what to do with s:
+    // Auto-save this state s, potentially pushing older auto-saved states
+    // down the hierarchy, or do nothing.
+    void calcSaveAuto(GameState s)
+    {
+        assert (s);
+        // First, make the largest copy the second-largest, and so on.
+        // Finally save s into the most frequently updated pair. The most
+        // frequently updated pair has array indices 0 and 1. The next one
+        // has array indices 2 and 3, and so on.
+        for (int pair = pairsToKeep - 1; pair >= 0; --pair) {
+            int updateMultipleForPair = updatesMostFrequentPair;
+            foreach (i; 0 .. pair)
+                updateMultipleForPair *= updatesMultiplierNextPairIsSlowerBy;
+            if (s.update % updateMultipleForPair == 0) {
+                int whichOfPair = (s.update / updateMultipleForPair) % 2;
+                if (pair > 0) {
+                    // make a shallow copy, because we treat states inside
+                    // the save manager like immutable data. If the thing
+                    // to copy is null, don't copy it, because we might
+                    // currently hold good data that is old, and the newer
+                    // data to copy was set to null because it's a wrong
+                    // timeline.
+                    if (_auto[2*(pair-1)] !is null)
+                        _auto[2*pair + whichOfPair] = _auto[2*(pair-1)];
+                }
+                else {
+                    // make a hard copy of the current state
+                    _auto[0 + whichOfPair] = s.clone();
+                }
+            }
+        }
+    }
+    // end function calcSaveAuto
 }
+// end class StateManager

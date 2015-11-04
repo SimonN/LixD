@@ -33,6 +33,8 @@ implGameConstructor(Game game, Level lv, Filename fn, Replay rp)
     prepareLand   (game);
     preparePlayers(game);
     prepareGadgets(game);
+
+    game.stateManager.saveZero(game.cs);
 }
 
 
