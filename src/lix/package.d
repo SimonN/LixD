@@ -1,6 +1,7 @@
 module lix;
 
 public import lix.acfunc;
+public import lix.ascender;
 public import lix.basher;
 public import lix.batter;
 public import lix.blocker;

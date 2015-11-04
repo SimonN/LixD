@@ -247,17 +247,24 @@ private XY getFuseXY() const
 
 
 
+private void addEncountersFromHere()
+{
+    immutable XY fuseXy = getFuseXY();
+    _encFoot |= lookup.get(_ex, _ey);
+    _encBody |= _encFoot
+             |  lookup.get(_ex, _ey - 4)
+             |  lookup.get(fuseXy.x, fuseXy.y);
+}
+
+
+
 @property int
 ex(in int n) {
     _ex = basics.help.even(n);
     super.x = _ex - exOffset;
     if (groundMap.torusX)
         _ex = positiveMod(_ex, land.xl);
-    immutable XY fuseXy = getFuseXY();
-    _encFoot |= lookup.get(_ex, _ey);
-    _encBody |= _encFoot
-             |  lookup.get(_ex, _ey - 4)
-             |  lookup.get(fuseXy.x, fuseXy.y);
+    addEncountersFromHere();
     return _ex;
 }
 
@@ -269,11 +276,7 @@ ey(in int n) {
     super.y = _ey - eyOffset;
     if (groundMap.torusY)
         _ey = positiveMod(_ey, land.yl);
-    immutable XY fuseXy = getFuseXY();
-    _encFoot |= lookup.get(_ex, _ey);
-    _encBody |= _encFoot
-             |  lookup.get(_ex, _ey - 4)
-             |  lookup.get(fuseXy.x, fuseXy.y);
+    addEncountersFromHere();
     return _ey;
 }
 
@@ -289,7 +292,7 @@ void moveAhead(int plusX = 2)
 
 
 
-void moveDown(int plusY)
+void moveDown(int plusY = 2)
 {
     for ( ; plusY > 0; --plusY) ey = (_ey + 1);
     for ( ; plusY < 0; ++plusY) ey = (_ey - 1);
@@ -297,7 +300,7 @@ void moveDown(int plusY)
 
 
 
-void moveUp(in int minusY)
+void moveUp(in int minusY = 2)
 {
     moveDown(-minusY);
 }

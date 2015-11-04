@@ -52,7 +52,6 @@ class Walker : PerformedActivity {
         }
         else if (lixxie.ac == Ac.PLATFORMER && frame > 5) {
             become(Ac.SHRUGGER2);
-            frame = 9;
             // See also the next else-if.
             // Clicking twice on the platformer shall turn it around.
         }
@@ -149,7 +148,8 @@ class Walker : PerformedActivity {
         }
 
         // No floor? Then step down or start falling
-        else if (cPlusPlusPhysicsBugs) {
+        else static if (cPlusPlusPhysicsBugs) {
+            // begin legacy code here
             int movedDownBy = 0;
             for (int i = 3; i < 11; ++i) {
                 if (! isSolid()) {
@@ -165,8 +165,8 @@ class Walker : PerformedActivity {
                     assert (false, "walker code that shouldn't be reached");
                     // return true;
                 }
-                // Don't move that far back up as the check about 10 lines further
-                // down that reads very similar in its block
+                // Don't move that far back up as the check about 10 lines
+                // further down that reads very similar in its block
                 else if (movedDownBy > 6) {
                     moveUp(4);
                     become(Ac.FALLER);
@@ -184,9 +184,10 @@ class Walker : PerformedActivity {
                 // OK, movedDownBy should be 8 here, and moveUp(6) + 2 = 8.
                 perfFaller.pixelsFallen = 2;
             }
+            // end of legacy code
         }
         else {
-            assert (! cPlusPlusPhysicsBugs);
+            static assert (! cPlusPlusPhysicsBugs);
             assert (! isSolid(0, 1) && ! isSolid(0, 2));
             immutable spaceBelowForFalling = 9;
             int       spaceBelow           = 1; // because of the assertions
