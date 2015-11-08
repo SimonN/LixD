@@ -158,8 +158,11 @@ public:
                     // currently hold good data that is old, and the newer
                     // data to copy was set to null because it's a wrong
                     // timeline.
-                    if (_auto[2*(pair-1)] !is null)
-                        _auto[2*pair + whichOfPair] = _auto[2*(pair-1)];
+                    GameState moreFrequentToCopy = _auto[2*(pair-1)];
+                    if (moreFrequentToCopy is null)
+                        moreFrequentToCopy = _auto[2*(pair-1) + 1];
+                    if (moreFrequentToCopy !is null)
+                        _auto[2*pair + whichOfPair] = moreFrequentToCopy;
                 }
                 else {
                     // make a hard copy of the current state
