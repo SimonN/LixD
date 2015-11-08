@@ -119,11 +119,14 @@ public:
 
     GameState autoBeforeUpdate(in int u)
     {
+        assert (zero, "need _zero as a fallback for autoBeforeUpdate");
         GameState ret = _zero;
         foreach (ref GameState candidate; _auto)
-            if (candidate !is null && candidate.update < u) {
+            if (   candidate !is null
+                && candidate.update < u
+                && candidate.update > ret.update
+            ) {
                 ret = candidate;
-                break;
             }
 
         foreach (ref GameState possibleGarbage; _auto)
@@ -141,6 +144,8 @@ public:
     void calcSaveAuto(GameState s)
     {
         assert (s);
+        if (s.update < updatesMostFrequentPair)
+            return;
         // First, make the largest copy the second-largest, and so on.
         // Finally save s into the most frequently updated pair. The most
         // frequently updated pair has array indices 0 and 1. The next one

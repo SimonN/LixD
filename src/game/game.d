@@ -22,8 +22,8 @@ class Game {
 
     @property bool gotoMenu() { return _gotoMenu; }
 
-    enum ticksNormalSpeed   =  4;
-    enum updatesDuringTurbo =  8;
+    enum ticksNormalSpeed   = 4;
+    enum updatesDuringTurbo = 9;
     enum updatesBackMany    = ticksPerSecond / ticksNormalSpeed * 1;
     enum updatesAheadMany   = ticksPerSecond / ticksNormalSpeed * 10;
 
