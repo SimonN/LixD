@@ -11,6 +11,7 @@ public import basics.cmdargs : Runmode;
 
 import basics.alleg5;
 import basics.globals;
+import basics.help : len;
 import file.filename;
 import game;
 import graphic.color;
@@ -58,11 +59,26 @@ package:
     EffectManager effect;
     Panel pan;
 
-    Tribe trlo;
-    Tribe.Master* malo;
+    int _indexTribeLocal;
+    int _indexMasterLocal;
 
     long altickLastUpdate;
 
     int _profilingGadgetCount;
+
+    @property inout(Tribe) tribeLocal() inout
+    {
+        assert (cs);
+        assert (cs.tribes.length > _indexTribeLocal);
+        return cs.tribes[_indexTribeLocal];
+    }
+
+    @property ref inout(Tribe.Master) masterLocal() inout
+    {
+        assert (cs);
+        assert (cs.tribes.len > _indexTribeLocal);
+        assert (cs.tribes[_indexTribeLocal].masters.len > _indexMasterLocal);
+        return cs.tribes[_indexTribeLocal].masters[_indexMasterLocal];
+    }
 
 }

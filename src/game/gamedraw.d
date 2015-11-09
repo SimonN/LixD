@@ -52,9 +52,9 @@ implGameDraw(Game game) { with (game)
                 foreach (lix; tr.lixvec.retro) if (  lix.marked) lix.draw();
             }
             foreach (otherTribe; cs.tribes)
-                if (otherTribe !is trlo)
+                if (otherTribe !is tribeLocal)
                     drawAllLixes(otherTribe);
-            drawAllLixes(trlo);
+            drawAllLixes(tribeLocal);
         }
     }
     // end drawing target = map

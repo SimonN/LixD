@@ -94,8 +94,8 @@ preparePlayers(Game game) { with (game)
     // the correct number of tribes, with the correct masters in each.
     cs.tribes ~= new Tribe();
     cs.tribes[0].masters ~= Tribe.Master(0, basics.globconf.userName);
-    trlo = cs.tribes[0];
-    malo = &trlo.masters[0];
+    _indexTribeLocal  = 0;
+    _indexMasterLocal = 0;
 
     foreach (tr; cs.tribes) {
         tr.initial      = level.initial;
@@ -108,7 +108,7 @@ preparePlayers(Game game) { with (game)
     }
 
     assert (pan);
-    pan.setLikeTribe(trlo);
+    pan.setLikeTribe(tribeLocal);
 }}
 
 

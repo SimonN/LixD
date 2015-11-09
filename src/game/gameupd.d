@@ -83,14 +83,14 @@ updateOneData(
         const int spint = i->what;
         if (spint >= t.spawnint_fast && spint <= t.spawnint_slow) {
             t.spawnint = spint;
-            if (&t == trlo) pan.spawnint_cur.set_spawnint(t.spawnint);
+            if (&t == tribeLocal) pan.spawnint_cur.set_spawnint(t.spawnint);
         }
     }
     else if (i->action == Replay::NUKE) {
         if (!t.nuke) {
             t.lix_hatch = 0;
             t.nuke      = true;
-            if (&t == trlo) {
+            if (&t == tribeLocal) {
                 pan.nuke_single.set_on();
                 pan.nuke_multi .set_on();
             }
@@ -121,15 +121,15 @@ updateOneData(
                 // Draw arrow if necessary, read arrow.h/effect.h for info
                 if ((useR->arrows_replay  && replaying)
                  || (useR->arrows_network && (multiplayer && ! replaying)
-                                          && m != malo)) {
+                                          && m != masterLocal)) {
                     Arrow arr(map, t.style, lix.get_ex(), lix.get_ey(),
                         psk->first, upd, i->what);
                     effect.add_arrow(upd, t, i->what, arr);
                 }
                 Sound::Id snd = Lixxie::get_ac_func(psk->first).soundAssign;
-                if (m == malo)
+                if (m == masterLocal)
                     effect.add_sound      (upd, t, i->what, snd);
-                else if (&t == trlo)
+                else if (&t == tribeLocal)
                     effect.add_sound_quiet(upd, t, i->what, snd);
             }
         }
@@ -171,7 +171,7 @@ void updateClock(Game game) { with (game)
             // Und sofort ausfuehren: Replay wurde ja schon ausgewertet
             tr->lix_hatch = 0;
             tr->nuke           = true;
-            if (&*tr == trlo) {
+            if (&*tr == tribeLocal) {
                 pan.nuke_single.set_on();
                 pan.nuke_multi .set_on();
             }
@@ -183,7 +183,7 @@ void updateClock(Game game) { with (game)
     if (! multiplayer && cs.clock_running && cs.clock == 0
      && ! cs.goals_locked) {
         cs.goals_locked = true;
-        effect.add_sound(upd, *trlo, 0, Sound::OVERTIME);
+        effect.add_sound(upd, *tribeLocal, 0, Sound::OVERTIME);
     }
     // Ebenfalls etwas Uhriges: Gibt es Spieler mit geretteten Lixen,
     // die aber keine Lixen mehr im Spiel haben oder haben werden? Dann
@@ -214,7 +214,7 @@ void updateClock(Game game) { with (game)
      if (!i->lixvec.empty()) {
         // The 0 goes where usually a lixvec ID would go, because this
         // is one of the very few sounds that isn't attached to a lixvec.
-        effect.add_sound(upd, *trlo, 0, Sound::CLOCK);
+        effect.add_sound(upd, *tribeLocal, 0, Sound::CLOCK);
         break;
     }
     +/

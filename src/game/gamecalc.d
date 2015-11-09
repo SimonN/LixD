@@ -73,8 +73,7 @@ loadState(Game game, GameState state) { with (game)
 {
     if (state) {
         cs = state.clone();
-        if (trlo)
-            pan.setLikeTribe(trlo);
+        pan.setLikeTribe(tribeLocal);
         effect.deleteAfter(cs.update);
     }
 }}
