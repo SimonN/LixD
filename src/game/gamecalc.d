@@ -37,13 +37,11 @@ updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
             = pan.speedBack.executeLeft  ? cs.update - 1
             : pan.speedBack.executeRight ? cs.update - Game.updatesBackMany
             : 0;
-        GameState state;
-        if (whatUpdateToLoad <= 0)
-            state = stateManager.zero;
-        else
-            state = stateManager.autoBeforeUpdate(whatUpdateToLoad + 1);
+        GameState state = (whatUpdateToLoad <= 0)
+                        ? stateManager.zero
+                        : stateManager.autoBeforeUpdate(whatUpdateToLoad + 1);
         assert (state, "at least the zero state should be good here");
-        game.loadStateManually(state);
+        game.loadStateAffectAltickLastUpdate(state);
     }
     else if (pan.speedAhead.executeLeft) {
         upd();
@@ -69,22 +67,22 @@ updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
 
 
 package void
-loadState(Game game, GameState state) { with (game)
+loadStateWithoutAffectingAltickLastUpdate(Game game, GameState state)
 {
     if (state) {
-        cs = state.clone();
-        pan.setLikeTribe(tribeLocal);
-        effect.deleteAfter(cs.update);
+        game.cs = state.clone();
+        game.pan.setLikeTribe(game.tribeLocal);
+        game.effect.deleteAfter(game.cs.update);
     }
-}}
+}
 
 
 
 package void
-loadStateManually(Game game, GameState state) { with (game)
+loadStateAffectAltickLastUpdate(Game game, GameState state) { with (game)
 {
     if (state) {
-        game.loadState(state);
+        game.loadStateWithoutAffectingAltickLastUpdate(state);
         altickLastUpdate = al_get_timer_count(basics.alleg5.timer);
         foreach (hatch; cs.hatches)
             hatch.animate(effect, cs.update);

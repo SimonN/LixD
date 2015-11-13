@@ -21,11 +21,5 @@ calcPassive(Game game) { with (game)
     map.calcScrolling();
     if (map.scrollingNow)
         mouseCursor.xf = 3;
-
-
-
-    if (pan.restart.execute)
-        game.loadStateManually(stateManager.zero);
-
 }}
 // end with (game), end function calcPassive

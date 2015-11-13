@@ -68,15 +68,15 @@ package:
 
     @property inout(Tribe) tribeLocal() inout
     {
-        assert (cs);
-        assert (cs.tribes.length > _indexTribeLocal);
+        assert (cs, "null cs, shouldn't ever be null");
+        assert (cs.tribes.length > _indexTribeLocal, "badly cloned cs");
         return cs.tribes[_indexTribeLocal];
     }
 
     @property ref inout(Tribe.Master) masterLocal() inout
     {
-        assert (cs);
-        assert (cs.tribes.len > _indexTribeLocal);
+        assert (cs, "null cs, shouldn't ever be null");
+        assert (cs.tribes.len > _indexTribeLocal, "badly cloned cs");
         assert (cs.tribes[_indexTribeLocal].masters.len > _indexMasterLocal);
         return cs.tribes[_indexTribeLocal].masters[_indexMasterLocal];
     }

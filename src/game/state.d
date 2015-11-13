@@ -46,14 +46,15 @@ class GameState {
         clock          = rhs.clock;
         clockIsRunning = rhs.clockIsRunning;
         _goalsLocked   = rhs._goalsLocked;
-        tribes      = tribes     .clone;
-        hatches     = hatches    .clone;
-        goals       = goals      .clone;
-        decos       = decos      .clone;
-        waters      = waters     .clone;
-        traps       = traps      .clone;
-        flingers    = flingers   .clone;
-        trampolines = trampolines.clone;
+
+        tribes      = rhs.tribes     .clone;
+        hatches     = rhs.hatches    .clone;
+        goals       = rhs.goals      .clone;
+        decos       = rhs.decos      .clone;
+        waters      = rhs.waters     .clone;
+        traps       = rhs.traps      .clone;
+        flingers    = rhs.flingers   .clone;
+        trampolines = rhs.trampolines.clone;
 
         land   = new Torbit(rhs.land);
         lookup = new Lookup(rhs.lookup);

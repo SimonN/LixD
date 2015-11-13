@@ -103,11 +103,21 @@ template CloneableTrivialOverride() {
 }
 
 mixin template CloneableOverride() {
-    override typeof (this) clone() { return new typeof (this) (this); }
+    override typeof (this) clone()
+    {
+        auto cloned = new typeof (this) (this);
+        assert (cloned || ! this);
+        return cloned;
+    }
 }
 
 mixin template CloneableBase() {
-    typeof (this) clone() { return new typeof (this) (this); }
+    typeof (this) clone()
+    {
+        auto cloned = new typeof (this) (this);
+        assert (cloned || ! this);
+        return cloned;
+    }
 }
 
 @property T[]
