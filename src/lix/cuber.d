@@ -11,6 +11,6 @@ static this()
 
 class Cuber : PerformedActivity {
 
-    mixin(CloneByCopyFrom);
+    mixin(CloneByCopyFrom!"Cuber");
 
 }

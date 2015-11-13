@@ -41,16 +41,18 @@ public:
             while (last_tick == al_get_timer_count(basics.alleg5.timer))
                 al_rest(0.001);
         }
-        catch (Throwable thr) {
+        catch (Throwable firstThr) {
             // Uncaught exceptions, assert errors, and assert (false) should
             // fly straight out of main and terminate the program. Since
             // Windows users won't run the game from a shell, they should
             // retrieve the error message from the logfile, in addition.
             // In a release build, assert (false) crashes instead of throwing.
-            logf("%s:%d:", thr.file, thr.line);
-            log(thr.msg);
-            log(thr.info.toString());
-            throw thr;
+            for (Throwable thr = firstThr; thr !is null; thr = thr.next) {
+                logf("%s:%d:", thr.file, thr.line);
+                log(thr.msg);
+                log(thr.info.toString());
+            }
+            throw firstThr;
         }
         kill();
     }

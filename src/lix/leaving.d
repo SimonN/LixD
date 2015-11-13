@@ -2,10 +2,10 @@ module lix.leaving;
 
 import lix;
 
-class Splatter : PerformedActivity { mixin(CloneByCopyFrom); }
-class Burner   : PerformedActivity { mixin(CloneByCopyFrom); }
-class Drowner  : PerformedActivity { mixin(CloneByCopyFrom); }
-class Exiter   : PerformedActivity { mixin(CloneByCopyFrom); }
+class Splatter : PerformedActivity { mixin(CloneByCopyFrom!"Splatter"); }
+class Burner   : PerformedActivity { mixin(CloneByCopyFrom!"Burner"); }
+class Drowner  : PerformedActivity { mixin(CloneByCopyFrom!"Drowner"); }
+class Exiter   : PerformedActivity { mixin(CloneByCopyFrom!"Exiter"); }
 
 // code moved out of lix.faller
 /+

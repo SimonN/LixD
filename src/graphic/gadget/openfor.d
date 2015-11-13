@@ -21,46 +21,56 @@ public alias FlingPerm = PermanentlyOpen;
 public alias TrapTrig  = Triggerable;
 public alias FlingTrig = Triggerable;
 
-class GadgetCanBeOpen : Gadget {
+public alias Flinger   = GadgetCanBeOpen; // both FlingPerm and FlingTrig
+
+private class GadgetCanBeOpen : Gadget {
 
 public:
 
-    mixin (StandardGadgetCtor!());
+    int wasFedDuringFrame;
 
-    this(typeof (this) rhs)
+    mixin (StandardGadgetCtor);
+
+    this(in GadgetCanBeOpen rhs)
     {
         super(rhs);
-        _tribes     = rhs._tribes;
-        _startAnim = rhs._startAnim;
+        _tribes = rhs._tribes.dupConst;
+        wasFedDuringFrame = rhs.wasFedDuringFrame;
     }
 
-    abstract override typeof (this) clone();
+    abstract override GadgetCanBeOpen clone() const;
 
-    @property bool startAnim() const { return _startAnim;     }
-    @property bool startAnim(bool b) { return _startAnim = b; }
+    bool isOpenFor(in Tribe t) const { return ! hasTribe(t); }
 
-    bool isOpenFor(Tribe t) { return ! hasTribe(t); }
-
-    final void addTribe(Tribe t)
+    final void addTribe(in Tribe t)
     {
         if (! hasTribe(t))
             _tribes ~= t;
     }
 
-    override void animate()
+    override void animateForUpdate(in int upd)
     {
-        if (xf != 0 || _startAnim)
-            super.animate();
-        _startAnim = false;
+        // _wasFedDuringFrame == 0 is the init value, there shouldn't ever
+        // happen anything on that frame, Game.update isn't even called then
+        if (wasFedDuringFrame == 0) {
+            xf = 0;
+        }
+        else {
+            immutable fr = (upd - wasFedDuringFrame) + 1;
+            if (fr >= 0 && fr < animationLength)
+                xf = fr;
+            else
+                xf = 0;
+        }
+        // reset list of tribes that have activated the gadget in this frame
         _tribes = null;
     }
 
 private:
 
-    Tribe[] _tribes;
-    bool _startAnim;
+    const(Tribe)[] _tribes;
 
-    final protected bool hasTribe(const(Tribe) t) const
+    final protected bool hasTribe(in Tribe t) const
     {
         foreach (tribeInVec; _tribes)
             if (t is tribeInVec)
@@ -75,17 +85,16 @@ private:
 
 private class PermanentlyOpen : GadgetCanBeOpen {
 
-    mixin (StandardGadgetCtor!());
-    mixin (CloneableTrivialOverride!());
+    mixin (StandardGadgetCtor);
 
-    override bool isOpenFor(Tribe t)
-    {
-        return true;
-    }
+    override PermanentlyOpen clone() const { return new PermanentlyOpen(this);}
+    this(in PermanentlyOpen rhs) { super(rhs); }
 
-    override void animate()
+    override bool isOpenFor(in Tribe t) const { return true; }
+
+    override void animateForUpdate(in int upd)
     {
-        Gadget.animate(); // the constantly looping animation
+        Gadget.animateForUpdate(upd); // the constantly looping animation
     }
 
     override @property Sound sound()
@@ -102,10 +111,12 @@ private class PermanentlyOpen : GadgetCanBeOpen {
 
 private class Triggerable : GadgetCanBeOpen {
 
-    mixin (StandardGadgetCtor!());
-    mixin (CloneableTrivialOverride!());
+    mixin (StandardGadgetCtor);
 
-    override bool isOpenFor(Tribe t)
+    override Triggerable clone() const { return new Triggerable(this);}
+    this(in Triggerable rhs) { super(rhs); }
+
+    override bool isOpenFor(in Tribe t) const
     {
         return xf == 0 && ! hasTribe(t);
     }
@@ -117,10 +128,12 @@ private class Triggerable : GadgetCanBeOpen {
 
 class Trampoline : GadgetCanBeOpen {
 
-    mixin (StandardGadgetCtor!());
-    mixin (CloneableTrivialOverride!());
+    mixin (StandardGadgetCtor);
 
-    override bool isOpenFor(Tribe t)
+    override Trampoline clone() const { return new Trampoline(this);}
+    this(in Trampoline rhs) { super(rhs); }
+
+    override bool isOpenFor(in Tribe t) const
     {
         // trampolines are always active, even if they animate only on demand
         return true;

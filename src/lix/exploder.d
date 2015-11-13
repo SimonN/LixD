@@ -11,6 +11,6 @@ static this()
 
 class Exploder : PerformedActivity {
 
-    mixin(CloneByCopyFrom);
+    mixin(CloneByCopyFrom!"Exploder");
 
 }

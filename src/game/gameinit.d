@@ -122,6 +122,7 @@ preparePlayers(Game game) { with (game)
 private void
 prepareGadgets(Game game)
 {
+    assert (game.map);
     void gadgetsFromPos(T)(ref T[] gadgetVec, TileType tileType)
     {
         foreach (ref pos; game.level.pos[tileType]) {

@@ -23,19 +23,20 @@ public:
 
     bool drawWithNoSign;
 
-    this(Torbit tb, in ref Pos levelpos)
+    this(in Torbit tb, in ref Pos levelpos)
     {
         super(tb, levelpos);
     }
 
-    this(Goal rhs)
+    this(in Goal rhs)
     {
         super(rhs);
-        _tribes        = rhs._tribes.dup; // we don't own the tribes
+        foreach (const(Tribe) t; rhs._tribes)
+            _tribes ~= t;
         drawWithNoSign = rhs.drawWithNoSign;
     }
 
-    mixin CloneableOverride;
+    override Goal clone() const { return new Goal(this); }
 
     bool hasTribe(in Tribe t) const
     {
@@ -53,11 +54,11 @@ public:
 
 private:
 
-    Tribe[] _tribes;
+    const(Tribe)[] _tribes;
 
 protected:
 
-    override void drawGameExtras()
+    override void drawGameExtras(Torbit mutableGround) const
     {
         if (! drawWithNoSign) {
             // draw owners
@@ -66,7 +67,7 @@ protected:
                 if (t.style == Style.GARDEN)
                     continue;
                 auto c = graphic.gralib.getPanelInfoIcon(t.style);
-                c.draw(ground,
+                c.draw(mutableGround,
                     x + tile.triggerX + tile.triggerXl / 2 - c.xl / 2
                       + (20 * offset++) - 10 * (_tribes.len - 1),
                     max(y, y + yl - 70),
@@ -76,7 +77,7 @@ protected:
         else {
             // draw no sign
             const(Cutbit) c = getInternal(fileImageMouse);
-            c.draw(ground,
+            c.draw(mutableGround,
                 x + tile.triggerX + tile.triggerXl / 2 - c.xl / 2,
                 y + tile.triggerY + tile.triggerYl / 2 - c.yl,
                 2, 2); // (2,2) are the (xf,yf) of the international "no" sign

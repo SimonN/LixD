@@ -57,7 +57,7 @@ finalizeUpdateAnimateGadgets(Game game) {
         hatch.animate(effect, update);
 
     foreachGadget((Gadget g) {
-        g.animate();
+        g.animateForUpdate(update);
     });
     game.pan.setLikeTribe(game.tribeLocal);
 }}
@@ -255,7 +255,7 @@ spawnLixxiesFromHatches(Game game) { with (game.cs)
             assert (game.replay.permu);
             immutable int position = game.replay.permu[teamNumber];
             const(Gadget) hatch    = hatches[tribe.hatchNextSpawn];
-            Lixxie newLix = new Lixxie(tribe,
+            Lixxie newLix = new Lixxie(tribe.style,
                 hatch.x + hatch.tile.triggerX,
                 hatch.y + hatch.tile.triggerY);
             tribe.lixvec ~= newLix;
@@ -315,10 +315,10 @@ updateNuke(Game game)
 void
 updateLixxies(Game game)
 {
-    UpdateArgs ua = UpdateArgs(game.cs);
 
     // First pass: Update only workers and mark them
-    foreach (tribe; game.cs.tribes)
+    foreach (tribe; game.cs.tribes) {
+        UpdateArgs ua = UpdateArgs(game.cs, tribe);
         foreach (int id, lixxie; tribe.lixvec) {
             if (lixxie.ac > Ac.WALKER) {
                 ua.id = id;
@@ -329,13 +329,16 @@ updateLixxies(Game game)
                 lixxie.marked = false;
             }
         }
+    }
     // Second pass: Update unmarkeded
-    foreach (tribe; game.cs.tribes)
+    foreach (tribe; game.cs.tribes) {
+        UpdateArgs ua = UpdateArgs(game.cs, tribe);
         foreach (int id, lixxie; tribe.lixvec)
             if (lixxie.marked == false) {
                 ua.id = id;
                 game.updateSingleLix(lixxie, ua);
             }
+    }
     /+
     // Third pass (if necessary): finally becoming flingers
     if (Lixxie.anyNewFlingers)

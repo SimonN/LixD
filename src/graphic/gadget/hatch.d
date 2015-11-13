@@ -32,7 +32,7 @@ public:
     bool  spawnFacingLeft;
     Style blinkStyle = Style.GARDEN; // if left at GARDEN, then don't blink
 
-    this(Torbit tb, in ref Pos levelpos)
+    this(in Torbit tb, in ref Pos levelpos)
     {
         super(tb, levelpos);
         spawnFacingLeft = levelpos.rot != 0;
@@ -40,7 +40,7 @@ public:
             ++_xFramesOpen;
     }
 
-    this(Hatch rhs)
+    this(in Hatch rhs)
     {
         assert (rhs);
         super(rhs);
@@ -50,7 +50,7 @@ public:
         _blinkNow       = rhs._blinkNow;
     }
 
-    mixin CloneableOverride;
+    override Hatch clone() const { return new Hatch(this); }
 
     override Pos toPos() const
     {
@@ -59,7 +59,8 @@ public:
         return levelpos;
     }
 
-    override void animate() { }
+    deprecated("use Hatch.animate(EffectManager, int) instead")
+    override void animateForUpdate(in int) { }
 
     void animate(EffectManager effect, in int u) // update of the Game
     {
@@ -90,23 +91,23 @@ public:
 
 protected:
 
-    override void drawGameExtras()
+    override void drawGameExtras(Torbit mutableGround) const
     {
         if (_blinkNow && blinkStyle != Style.GARDEN) {
             const(Cutbit) c = getPanelInfoIcon(blinkStyle);
-            c.draw(ground, x + tile.triggerX - c.xl / 2,
-                           y + tile.triggerY - c.yl / 2,
-                           Ac.WALKER, 0);
+            c.draw(mutableGround, x + tile.triggerX - c.xl / 2,
+                                  y + tile.triggerY - c.yl / 2,
+                                  Ac.WALKER, 0);
         }
     }
 
-    override void drawEditorInfo()
+    override void drawEditorInfo(Torbit mutableGround) const
     {
         // draw arrow pointing into the hatch's direction
         const(Cutbit) cb = getInternal(fileImageEditHatch);
-        cb.draw(ground, x + yl/2 - cb.xl/2,
-                        y + 20, // DTODO: +20 was ::text_height in A4/C++.
-                        spawnFacingLeft ? 1 : 0, 0);
+        cb.draw(mutableGround, x + yl/2 - cb.xl/2,
+                               y + 20, // DTODO: +20 was text_height in A4/C++.
+                               spawnFacingLeft ? 1 : 0, 0);
     }
 
 }

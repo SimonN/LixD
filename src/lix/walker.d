@@ -23,7 +23,7 @@ setFrameAfterShortFallTo(PerformedActivity newAc, int targetFrame)
 
 class Walker : PerformedActivity {
 
-    mixin (CloneByCopyFrom);
+    mixin (CloneByCopyFrom!"Walker");
 
     override @property bool callBecomeAfterAssignment() const { return false; }
 
@@ -219,7 +219,7 @@ class Walker : PerformedActivity {
 
 class Runner : Walker {
 
-    mixin (CloneByCopyFrom);
+    mixin (CloneByCopyFrom!"Runner");
 
     override @property bool callBecomeAfterAssignment() const { return false; }
 

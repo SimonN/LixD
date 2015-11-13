@@ -4,6 +4,6 @@ import lix;
 
 class Miner : PerformedActivity {
 
-    mixin(CloneByCopyFrom);
+    mixin(CloneByCopyFrom!"Miner");
 
 }

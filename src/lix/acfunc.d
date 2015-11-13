@@ -8,22 +8,29 @@ import lix;
 enum cPlusPlusPhysicsBugs = true;
 
 struct UpdateArgs {
-    GameState st;
+    GameState state;
+    Tribe     tribe;
     int       id; // the lix's id, to pass to the effect manager
 
-    this(GameState _st, in int _id = 0) { st = _st; id = _id; }
+    this(GameState _st, Tribe _tr, in int _id = 0)
+    {
+        state = _st; tribe = _tr, id = _id;
+    }
 }
 
-immutable string CloneByCopyFrom = "
-    override typeof(this) clone()
-    {
-        auto a = new typeof(this)();
-        a.copyFrom(this);
-        return a;
-    }
-    alias copyFrom = super.copyFrom;
-    private alias lixxie this;
-";
+template CloneByCopyFrom(string derivedClass) {
+    immutable string CloneByCopyFrom = "
+        override " ~ derivedClass ~ "
+        cloneAndBindToLix(Lixxie lixToBindTo) const
+        {
+            auto a = new " ~ derivedClass ~ "();
+            a.copyFromAndBindToLix(this, lixToBindTo);
+            return a;
+        }
+        alias copyFromAndBindToLix = super.copyFromAndBindToLix;
+        private alias lixxie this;
+    ";
+}
 
 
 
@@ -45,7 +52,7 @@ public:
     void performActivity(UpdateArgs) { } // the main method to override
     void onBecomingSomethingElse()   { } // e.g. return leftover builders
 
-    abstract PerformedActivity clone();
+    abstract PerformedActivity cloneAndBindToLix(Lixxie) const;
 
     final static typeof(this)
     factory(Lixxie l, Ac newAc)
@@ -91,9 +98,9 @@ public:
 
 protected:
 
-    void copyFrom(PerformedActivity rhs)
+    void copyFromAndBindToLix(in PerformedActivity rhs, Lixxie bindTo)
     {
-        lixxie = rhs.lixxie;
+        lixxie = bindTo;
         _ac    = rhs._ac;
         _frame = rhs._frame;
     }
@@ -114,6 +121,6 @@ private:
 
 
 class RemovedLix : PerformedActivity {
-    mixin(CloneByCopyFrom);
+    mixin(CloneByCopyFrom!"RemovedLix");
     override @property bool isLeaving() const { return true; }
 }

@@ -16,6 +16,6 @@ import lix;
 
 class Blocker : PerformedActivity {
 
-    mixin(CloneByCopyFrom);
+    mixin(CloneByCopyFrom!"Blocker");
 
 }

@@ -27,8 +27,6 @@ private:
     int  _ey;
     bool _facingLeft;
 
-    Tribe _tribe;
-
     int  _flingX;
     int  _flingY;
     bool _flingNew;
@@ -65,15 +63,14 @@ public:
     int  updatesSinceBomb;
     bool exploderKnockback;
 
-/*  this(Tribe = null, int = 0, int = 0); // tribe==null ? NOTHING : FALLER
+/*  this(Style, int = 0, int = 0);
  *  this(in Lixxie rhs);
  */
-    mixin CloneableBase;
+    override Lixxie clone() const { return new Lixxie(this); }
 
     static bool anyNewFlingers() { return _anyNewFlingers; }
 
-    inout(Tribe) tribe() inout { return _tribe; }
-          Style  style() const { return _style; }
+    Style style() const { return _style; }
 
     @property int ex() const { return _ex; }
     @property int ey() const { return _ey; }
@@ -169,18 +166,15 @@ public:
 public:
 
 this(
-    Tribe new_tribe,
+    Style newStyle,
     int   new_ex,
     int   new_ey
 ) {
-    super(getLixSpritesheet(new_tribe ? new_tribe.style : Style.GARDEN),
-          groundMap, even(new_ex) - exOffset, new_ey - eyOffset);
-    _tribe = new_tribe;
-    _style = tribe ? tribe.style : Style.GARDEN;
-    if (_tribe) {
-        _perfAc = PerformedActivity.factory(this, Ac.FALLER);
-        frame = 4;
-    }
+    super(getLixSpritesheet(newStyle), groundMap,
+          even(new_ex) - exOffset, new_ey - eyOffset);
+    _style  = newStyle;
+    _perfAc = PerformedActivity.factory(this, Ac.FALLER);
+    frame   = 4;
     // important for torus bitmaps: calculate modulo in time
     ex = new_ex.even;
     ey = new_ey;
@@ -188,11 +182,10 @@ this(
 
 
 
-this(Lixxie rhs)
+this(in Lixxie rhs)
 {
     assert (rhs !is null);
 
-    _tribe = rhs._tribe;
     _style = rhs._style;
     _ex    = rhs._ex;
     _ey    = rhs._ey;
@@ -220,8 +213,7 @@ this(Lixxie rhs)
     updatesSinceBomb  = rhs.updatesSinceBomb;
     exploderKnockback = rhs.exploderKnockback;
 
-    _perfAc        = rhs._perfAc.clone();
-    _perfAc.lixxie = this;
+    _perfAc = rhs._perfAc.cloneAndBindToLix(this);
 }
 
 
@@ -550,7 +542,7 @@ void drawFrameToMapAsTerrain
 void playSound(in ref UpdateArgs ua, in Sound soundID)
 {
     assert (effect);
-    effect.addSound(ua.st.update, tribe, ua.id, soundID);
+    effect.addSound(ua.state.update, ua.tribe, ua.id, soundID);
 }
 
 
@@ -558,7 +550,7 @@ void playSound(in ref UpdateArgs ua, in Sound soundID)
 void playSoundIfTribeLocal(in ref UpdateArgs ua, in Sound soundID)
 {
     assert (effect);
-    effect.addSoundIfTribeLocal(ua.st.update, tribe, ua.id, soundID);
+    effect.addSoundIfTribeLocal(ua.state.update, ua.tribe, ua.id, soundID);
 }
 
 
@@ -577,7 +569,10 @@ void advanceFrame()
 
 
 
-override void draw()
+deprecated("use Lix.draw(), not Lix.draw(Torbit)")
+override void draw(Torbit) const { }
+
+void draw()
 {
     if (ac == Ac.NOTHING) return;
 
@@ -619,7 +614,7 @@ override void draw()
     // by 180 degrees in addition.
     mirror   =     _facingLeft;
     rotation = 2 * _facingLeft;
-    Graphic.draw();
+    Graphic.draw(groundMap);
 }
 
 

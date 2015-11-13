@@ -4,7 +4,7 @@ import lix;
 
 class Lander : PerformedActivity {
 
-    mixin(CloneByCopyFrom);
+    mixin(CloneByCopyFrom!"Lander");
 
     override void onBecome() {
         if (lixxie.ac == Ac.FALLER) {

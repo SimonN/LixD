@@ -168,8 +168,8 @@ calc()
                     280 + to!int(42*sin(tick/27.0)));
     myhatch1.xf = to!int(2.5 + 2.49 * sin(tick/20.0));
     myhatch2.xf = to!int(2.5 + 6.3  * sin(tick/25.0));
-    myhatch1.draw();
-    myhatch2.draw();
+    myhatch1.draw(osd);
+    myhatch2.draw(osd);
 
     static string typetext = "Type some UTF-8 chars: ";
     typetext ~= utf8Input();

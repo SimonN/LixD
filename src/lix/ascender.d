@@ -6,7 +6,7 @@ import lix;
 
 class Ascender : PerformedActivity {
 
-    mixin(CloneByCopyFrom);
+    mixin(CloneByCopyFrom!"Ascender");
 
     override void onBecome()
     {

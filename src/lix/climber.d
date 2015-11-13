@@ -4,6 +4,6 @@ import lix;
 
 class Climber : PerformedActivity {
 
-    mixin(CloneByCopyFrom);
+    mixin(CloneByCopyFrom!"Climber");
 
 }

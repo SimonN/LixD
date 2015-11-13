@@ -29,8 +29,8 @@ public:
         addChildren(_labelNumL, _labelNumM, _label_hotkey);
     }
 
-    @property Ac  skill() const { return _skill;                 }
-    @property skill(in Ac a)    { reqDraw(); return _skill = a; }
+    @property Ac skill() const { return _skill;                }
+    @property skill(in Ac a)   { reqDraw(); return _skill = a; }
 
     @property hotkey_label(in string s)
     {
@@ -81,7 +81,7 @@ protected:
         _icon.y  = this.ys + 2*this.yls/3 - _icon.yl/2;
         _icon.yf = _number == 0 ? 1 : 0; // 0 == colorful, 1 == greyed out
         _icon.xf = _skill;
-        _icon.draw();
+        _icon.draw(guiosd);
     }
 
 }

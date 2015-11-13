@@ -4,13 +4,13 @@ import lix;
 
 class Jumper : PerformedActivity {
 
-    mixin(CloneByCopyFrom);
+    mixin(CloneByCopyFrom!"Jumper");
 
 }
 
 class Tumbler : PerformedActivity {
 
-    mixin(CloneByCopyFrom);
+    mixin(CloneByCopyFrom!"Tumbler");
 
     override @property bool canPassTop() const { return true; }
 
@@ -18,6 +18,6 @@ class Tumbler : PerformedActivity {
 
 class Stunner : PerformedActivity {
 
-    mixin(CloneByCopyFrom);
+    mixin(CloneByCopyFrom!"Stunner");
 
 }

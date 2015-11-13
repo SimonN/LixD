@@ -6,10 +6,10 @@ class Floater : PerformedActivity {
 
     int ySpeed = 0;
 
-    mixin(CloneByCopyFrom);
-    void copyFrom(Floater rhs)
+    mixin(CloneByCopyFrom!"Floater");
+    void copyFromAndBindToLix(in Floater rhs, Lixxie lixToBindTo)
     {
-        super.copyFrom(rhs);
+        super.copyFromAndBindToLix(rhs, lixToBindTo);
         ySpeed = rhs.ySpeed;
     }
 

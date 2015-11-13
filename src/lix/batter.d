@@ -4,6 +4,6 @@ import lix;
 
 class Batter : PerformedActivity {
 
-    mixin(CloneByCopyFrom);
+    mixin(CloneByCopyFrom!"Batter");
 
 }

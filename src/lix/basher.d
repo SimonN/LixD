@@ -4,6 +4,6 @@ import lix;
 
 class Basher : PerformedActivity {
 
-    mixin(CloneByCopyFrom);
+    mixin(CloneByCopyFrom!"Basher");
 
 }

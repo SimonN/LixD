@@ -83,13 +83,13 @@ drawSelf()
         // target is guiosd already, because we're in an Element's draw
         al_draw_filled_rectangle(xs, ys, xs + xls, ys + yls, undrawColor);
 
-    iconStatus.set_xy(xs, ys);                iconStatus.draw();
-    iconStatus.y = ys + yls - iconStatus.yl; iconStatus.draw();
-    iconStatus.x = xs + xls - iconStatus.xl; iconStatus.draw();
-    iconStatus.y = ys;                        iconStatus.draw();
+    iconStatus.set_xy(xs, ys);               iconStatus.draw(guiosd);
+    iconStatus.y = ys + yls - iconStatus.yl; iconStatus.draw(guiosd);
+    iconStatus.x = xs + xls - iconStatus.xl; iconStatus.draw(guiosd);
+    iconStatus.y = ys;                       iconStatus.draw(guiosd);
 
     iconTorus.set_xy(xs, ys);
-    iconTorus.draw();
+    iconTorus.draw(guiosd);
 }
 
 }

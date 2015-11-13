@@ -29,62 +29,88 @@ import level.level;
 import level.tile;
 import hardware.sound;
 
-package template StandardGadgetCtor()
-{
-    const char[] StandardGadgetCtor =
-        "this(Torbit tb, in ref Pos levelpos) { super(tb, levelpos); }";
-}
+package immutable string StandardGadgetCtor =
+    "this(in Torbit tb, in ref Pos levelpos) { super(tb, levelpos); }";
+
+
 
 class Gadget : Graphic {
 
 public:
 
     const(Tile) tile;
+    const(int)  animationLength;
 
     bool        drawWithEditorInfo;
 
     // override these if necessary
-    protected void drawGameExtras() { }
-    protected void drawEditorInfo() { }
+    protected void drawGameExtras(Torbit) const { }
+    protected void drawEditorInfo(Torbit) const { }
 
     // hatch should override this
     Pos toPos() const { return Pos(tile, x, y); }
 
     @property Sound sound() { return Sound.NOTHING; }
 
-/*  static Gadget factory(Torbit, const(Tile), int x = 0, int y = 0);
- *  static Gadget factory(Torbit, in ref level.level.Pos);
- *  static Gadget this(Gadget);
+/*  static Gadget factory(in Torbit, in ref level.level.Pos);
+ *  static Gadget this(in Gadget);
  */
-    mixin CloneableBase;
 
 /*  @property int selboxX()  const;
  *  @property int selboxY()  const;
  *  @property int selboxXl() const;
  *  @property int selboxYl() const;
  *
- *  void animate();
+ *  void animateForUpdate(int update);
  *
  *  final void draw();
  *  final void draw_lookup(Lookup);
  */
 
-protected this(Torbit tb, in ref Pos levelpos)
-{
+// protected: use the factory to generate gadgets of the correct subclass
+protected this(in Torbit tb, in ref Pos levelpos)
+in {
+    assert (levelpos.ob, "we shouldn't make gadgets from missing tiles");
+    assert (levelpos.ob.cb, "we shouldn't make gadgets from bad tiles");
+}
+body {
     super(levelpos.ob.cb, tb, levelpos.x, levelpos.y);
     tile = levelpos.ob;
+    animationLength = delegate() {
+        if (levelpos.ob.cb is null)
+            return 1;
+        for (int i = 0; i < levelpos.ob.cb.xfs; ++i)
+            if (! levelpos.ob.cb.frameExists(i, 0))
+                return i;
+        return levelpos.ob.cb.xfs;
+    }();
 }
 
 
 
 public:
 
-this(Gadget rhs)
-{
-    assert (rhs);
+override Gadget clone() const { return new Gadget(this); }
+
+this(in Gadget rhs)
+in {
+    assert (rhs !is null, "we shouldn't copy from null rhs");
+    assert (rhs.tile !is null, "don't copy from rhs with missing tile");
+}
+body {
     super(rhs);
-    tile = rhs.tile;
+    tile               = rhs.tile;
+    animationLength    = rhs.animationLength;
     drawWithEditorInfo = rhs.drawWithEditorInfo;
+}
+
+
+
+invariant()
+{
+    assert (tile, "Gadget.tile should not be null");
+    assert (tile.cb, "Gadget.tile.cb (the cutbit) shouldn't be null");
+    assert (animationLength > 0, "Cutbit should have xfs > 0 unless null");
 }
 
 
@@ -113,13 +139,9 @@ factory(Torbit tb, in ref Pos levelpos)
 
 
 void
-animate()
+animateForUpdate(in int upd)
 {
-    // the most basic animation loop
-    if (isLastFrame())
-        xf = 0;
-    else
-        xf = xf + 1;
+    xf = positiveMod(upd, animationLength);
 }
 
 
@@ -181,14 +203,14 @@ get_selboxYl() const
 
 
 final override void
-draw()
+draw(Torbit mutableGround) const
 {
-    super.draw();
+    super.draw(mutableGround);
 
-    drawGameExtras();
+    drawGameExtras(mutableGround);
 
     if (drawWithEditorInfo) {
-        drawEditorInfo();
+        drawEditorInfo(mutableGround);
 
         // now draw trigger area on top
         if (tile.type == TileType.GOAL
@@ -198,10 +220,10 @@ draw()
          || tile.type == TileType.FLING
          || tile.type == TileType.TRAMPOLINE
         )
-            ground.drawRectangle(x + tile.triggerX,
-                                 y + tile.triggerY,
-                                 tile.triggerXl, tile.triggerYl,
-                                 color.makecol(0x40, 0xFF, 0xFF));
+            mutableGround.drawRectangle(x + tile.triggerX,
+                                        y + tile.triggerY,
+                                        tile.triggerXl, tile.triggerYl,
+                                        color.makecol(0x40, 0xFF, 0xFF));
     }
 }
 

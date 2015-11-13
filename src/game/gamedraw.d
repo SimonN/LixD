@@ -39,7 +39,7 @@ implGameDraw(Game game) { with (game)
         with (Zone(profiler, _gadgetCountStr))
             cs.foreachGadget((Gadget g) {
                 with (Zone(profiler, "game draws one gadget"))
-                    g.draw();
+                    g.draw(map);
             });
 
         with (Zone(profiler, "game draws land to map"))
@@ -64,12 +64,12 @@ implGameDraw(Game game) { with (game)
 
     with (Zone(profiler, "game draws ingame text")) {
         import graphic.textout;
-        drawText(djvuM, "Use the mouse to scroll around, as in the old Lix.",
-            10, 10, graphic.color.color.white);
         drawText(djvuM, "[ESC] aborts. Please don't hit [ESC] during benchmarking.",
-            10, 40, graphic.color.color.white);
+            10, 10, graphic.color.color.white);
         drawText(djvuM, std.string.format("Frames per second: %d",
-            displayFps), 10, 70, graphic.color.color.white);
+            displayFps), 10, 40, graphic.color.color.white);
+        drawText(djvuM, std.string.format("Gadgets active: %d",
+            _profilingGadgetCount), 10, 70, graphic.color.color.white);
     }
 
     static if (false) {

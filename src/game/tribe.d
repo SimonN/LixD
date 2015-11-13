@@ -57,7 +57,7 @@ class Tribe {
 
     this() { }
 
-    this(Tribe rhs)
+    this(in Tribe rhs)
     {
         assert (rhs, "don't copy-construct from a null Tribe");
         valueFields = rhs.valueFields;
@@ -66,7 +66,7 @@ class Tribe {
         lixvec      = rhs.lixvec .clone;
     }
 
-    Tribe clone() { return new Tribe(this); }
+    Tribe clone() const { return new Tribe(this); }
 
     @property {
         int stillPlaying()  const { return lixOut + lixExiting + lixHatch;}

@@ -10,7 +10,7 @@ import std.utf;
 
 // The percent operator can return a negative number, e.g. -5 % 3 == -2.
 // When the desired result here is 1, not -2, use positiveMod().
-int positiveMod(in int nr, in int modulo)
+pure int positiveMod(in int nr, in int modulo)
 {
     if (modulo <= 0) return 0;
     immutable int normalMod = nr % modulo;
@@ -20,7 +20,7 @@ int positiveMod(in int nr, in int modulo)
 
 
 
-int even(in int x) {
+pure int even(in int x) {
     if (x % 2 == 0) return x;
     else            return x - 1;
 }
@@ -29,7 +29,7 @@ int even(in int x) {
 
 // Phobos has rounding, but tiebreaks only either to the even integer,
 // or away from zero. I want to tiebreak to the larger integer.
-int
+pure int
 roundInt(F)(in F f)
     if (is (F : float))
 {
@@ -96,42 +96,28 @@ destroyArray(T)(ref T arr)
 
 
 
-template CloneableTrivialOverride() {
-    const char[] CloneableTrivialOverride =
-        "this(typeof (this) rhs) { super(rhs); }
-        mixin CloneableOverride;";
-}
-
-mixin template CloneableOverride() {
-    override typeof(this) clone()
-    {
-        auto cloned = new typeof (this) (this);
-        assert (cloned || ! this);
-        return cloned;
-    }
-}
-
-mixin template CloneableBase() {
-    typeof(this) clone()
-    {
-        auto cloned = new typeof (this) (this);
-        assert (cloned || ! this);
-        return cloned;
-    }
+@property const(T)[]
+dupConst(T)(in const(T[]) arr)
+{
+    const(T)[] dupped;
+    foreach (ref const(T) element; arr)
+        dupped ~= element;
+    return dupped;
 }
 
 
 
 @property T[]
-clone(T)(T[] arr)
+clone(T)(in const(T)[] arr)
     if (is (T == class) || is (T == struct))
 {
     static if (is (T == struct))
         return arr.dup;
     else {
-        T[] ret = arr.dup;
-        foreach (ref T e; ret)
-            e = e.clone();
+        T[] ret;
+        ret.length = arr.length;
+        for (int i = 0; i < arr.length; ++i)
+            ret[i] = arr[i].clone();
         return ret;
     }
 }

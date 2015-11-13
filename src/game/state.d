@@ -32,7 +32,7 @@ class GameState {
     Gadget[] decos;
     Water[] waters;
     TrapTrig[] traps;
-    GadgetCanBeOpen[] flingers;
+    Flinger[] flingers;
     Trampoline[] trampolines;
 
     Torbit land;
@@ -40,7 +40,7 @@ class GameState {
 
     this() { }
 
-    this(GameState rhs)
+    this(in GameState rhs)
     {
         assert (rhs, "don't copy-construct from a null GameState");
         assert (rhs.land, "don't copy-construct from GameState without land");
@@ -62,7 +62,7 @@ class GameState {
         lookup = new Lookup(rhs.lookup);
     }
 
-    mixin CloneableBase;
+    GameState clone() const { return new GameState(this); }
 
     @property bool goalsLocked() const { return _goalsLocked; }
     @property bool goalsLocked(in bool b)

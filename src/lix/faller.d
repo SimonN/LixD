@@ -12,10 +12,10 @@ class Faller : PerformedActivity {
     enum pixelsSafeToFall = 126;
     enum pixelsFallenToBecomeFloater = 60;
 
-    mixin(CloneByCopyFrom);
-    protected void copyFrom(Faller rhs)
+    mixin(CloneByCopyFrom!"Faller");
+    protected void copyFromAndBindToLix(in Faller rhs, Lixxie lixToBindTo)
     {
-        super.copyFrom(rhs);
+        super.copyFromAndBindToLix(rhs, lixToBindTo);
         ySpeed       = rhs.ySpeed;
         pixelsFallen = rhs.pixelsFallen;
     }

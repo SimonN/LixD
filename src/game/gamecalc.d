@@ -43,10 +43,6 @@ updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
         assert (state, "we should get at laest some state here");
         assert (stateManager.zeroState, "zero state is bad");
         game.loadStateAffectAltickLastUpdate(state);
-        /+
-        std.stdio.writefln("debugging upd(%d - %d = %d)",
-            whatUpdateToLoad, cs.update, whatUpdateToLoad - cs.update);
-            +/
         upd(whatUpdateToLoad - cs.update);
     }
     else if (pan.speedAhead.executeLeft) {

@@ -7,6 +7,7 @@ module graphic.graphic;
 
 import std.conv; // rounding/chopping double to int
 import std.math;
+import std.string : format; // for assert error only
 
 import basics.alleg5;
 import basics.help; // rounding float to a good int
@@ -15,14 +16,15 @@ import graphic.torbit;
 
 class Graphic {
 
-/*  this(const Cutbit, Torbit, const int = 0, const int = 0);
+/*  this(const Cutbit, const Torbit, int = 0, int = 0);
  *  this(Graphic)
  */
-    @property const(Cutbit) cutbit() const { return _cutbit; }
+    Graphic clone() const { return new Graphic(this); }
 
-    @property Albit  albit()               { return _cutbit.albit; }
-    @property Torbit ground(Torbit gr)     { return _ground = gr;  }
-    @property inout(Torbit) ground() inout { return _ground;       }
+    const(Cutbit) cutbit;
+    const(Torbit) ground;
+
+    @property const(Albit)  albit()  const { return cutbit.albit; }
 
     @property int x() const { return _x; }
     @property int y() const { return _y; }
@@ -50,8 +52,8 @@ class Graphic {
  *  @property int xl() const
  *  @property int yl() const
  */
-    @property int xfs() const { return cutbit.xfs; }
-    @property int yfs() const { return cutbit.yfs; }
+    @property int xfs() const { return cutbit ? cutbit.xfs : 0; }
+    @property int yfs() const { return cutbit ? cutbit.yfs : 0; }
 
 /*  bool  frameExists(int, int) const
  *  AlCol get_pixel   (int, int) const -- remember to lock target!
@@ -71,9 +73,6 @@ class Graphic {
 
 private:
 
-    const(Cutbit) _cutbit;
-    Torbit        _ground;
-
     int _x;
     int _y;
     bool         _mirror;
@@ -89,30 +88,24 @@ public:
 
 this(
     const(Cutbit) cb,
-    Torbit        gr,
-    const int     new_x = 0,
-    const int     new_y = 0
+    const(Torbit) gr,
+    in int new_x = 0,
+    in int new_y = 0
 ) {
-    _cutbit = cb;
-    _ground = gr;
-
-    _x      = new_x;
-    _y      = new_y;
-    _mirror = false;
-    _rot    = 0;
-    _mode   = Cutbit.Mode.NORMAL;
-
-    _xf = 0;
-    _yf = 0;
+    cutbit = cb;
+    ground = gr;
+    _x     = new_x;
+    _y     = new_y;
+    _mode  = Cutbit.Mode.NORMAL;
 }
 
 
 
-this(Graphic rhs)
+this(in Graphic rhs)
 {
     assert (rhs);
-    _cutbit = rhs._cutbit;
-    _ground = rhs._ground;
+    cutbit  = rhs.cutbit;
+    ground  = rhs.ground;
     _x      = rhs._x;
     _y      = rhs._y;
     _mirror = rhs._mirror;
@@ -203,14 +196,18 @@ get_pixel(in int gx, in int gy) const
 
 
 
-void draw()
+// Must supply the ground again as target, because we only know where to
+// draw, we aren't allowed to draw on the const Torbit.
+void
+draw(Torbit mutableGround) const
 {
-    if (mode == Cutbit.Mode.NORMAL) {
-        cutbit.draw(_ground, _x, _y, _xf, _yf, _mirror, _rot);
-    }
-    else {
-        cutbit.draw(_ground, _x, _y, _mirror, to!int(_rot), _mode);
-    }
+    assert (ground is mutableGround, format("drawing target must be (ground)."
+        " ground=%x, mutable=%x", &ground, &mutableGround));
+
+    if (mode == Cutbit.Mode.NORMAL)
+        cutbit.draw(mutableGround, _x, _y, _xf, _yf, _mirror, _rot);
+    else
+        cutbit.draw(mutableGround, _x, _y, _mirror, to!int(_rot), _mode);
 }
 
 

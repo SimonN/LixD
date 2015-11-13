@@ -2,8 +2,8 @@ module lix.builder;
 
 import lix;
 
-class Builder    : PerformedActivity { mixin(CloneByCopyFrom); }
-class Platformer : PerformedActivity { mixin(CloneByCopyFrom); }
+class Builder    : PerformedActivity { mixin(CloneByCopyFrom!"Builder"); }
+class Platformer : PerformedActivity { mixin(CloneByCopyFrom!"Platformer"); }
 
 // important to implement this in the shrugger's become,
 // this comes from (become walker)
@@ -20,5 +20,5 @@ class Platformer : PerformedActivity { mixin(CloneByCopyFrom); }
         }
 +/
 
-class Shrugger   : PerformedActivity { mixin(CloneByCopyFrom); }
+class Shrugger   : PerformedActivity { mixin(CloneByCopyFrom!"Shrugger"); }
 
