@@ -141,6 +141,16 @@ class Permu {
             p ~= *(address + i);
     }
 
+    pure Permu clone() const
+    {
+        return new Permu(this);
+    }
+
+    pure this(in Permu rhs)
+    {
+        p = rhs.p.dup;
+    }
+
     // Read in a string that is separated by any non-digit characters
     this(string src)
     {

@@ -3,7 +3,7 @@ module file.date;
 import std.string;
 import std.c.time;
 
-import basics.help : escapeStringForFilename;
+import basics.help;
 
 class Date {
 
@@ -48,7 +48,7 @@ now()
 
 
 
-this(string s)
+pure this(string s)
 {
     year = month = day = hour = minute = second = 0;
     int what = 0;
@@ -78,7 +78,26 @@ this(string s)
 
 
 
-override string
+pure Date clone() const { return new Date(this); }
+
+pure this(in Date rhs)
+{
+    this(rhs.toString);
+}
+
+
+
+unittest
+{
+    Date a = now();
+    Date b = a.clone();
+    assert (a !is b);
+    assert (a == b);
+}
+
+
+
+pure override string
 toString() const
 {
     return format("%04d-%02d-%02d %02d:%02d:%02d",
@@ -87,7 +106,7 @@ toString() const
 
 
 
-string
+pure string
 toStringForFilename() const
 {
     string ret = format("%04d-%02d-%02d-%02d%02d%02d",

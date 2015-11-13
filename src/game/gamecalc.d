@@ -38,9 +38,10 @@ updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
             : pan.speedBack.executeRight ? cs.update - Game.updatesBackMany
             : 0;
         GameState state = (whatUpdateToLoad <= 0)
-                        ? stateManager.zero
+                        ? stateManager.zeroState
                         : stateManager.autoBeforeUpdate(whatUpdateToLoad + 1);
-        assert (state, "at least the zero state should be good here");
+        assert (state, "we should get at laest some state here");
+        assert (stateManager.zeroState, "zero state is bad");
         game.loadStateAffectAltickLastUpdate(state);
     }
     else if (pan.speedAhead.executeLeft) {

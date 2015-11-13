@@ -15,6 +15,8 @@ import game;
 import graphic.torbit;
 import graphic.gadget;
 
+import std.string : format;
+
 class GameState {
 
     int  update;
@@ -100,7 +102,7 @@ private:
     enum updatesMultiplierNextPairIsSlowerBy = 5; // 10, 50, 250, 1250
     enum pairsToKeep = 4;
 
-    GameState _zero, _user;
+    GameState _zero, _userState;
     GameState[2 * pairsToKeep] _auto;
 
     // For the user-triggered save (_user), remember the replay that was
@@ -109,18 +111,30 @@ private:
     // differing replay.
     Replay _userReplay;
 
+    invariant()
+    {
+        if (_zero)
+            assert(_zero.update == 0,
+                format("_zero.update is %d instead of 0", _zero.update));
+    }
+
 public:
 
-    void saveZero(GameState s) { _zero = s; }
-    void saveUser(GameState s, Replay r) { _user = s; _userReplay = r; }
+    void saveZero(GameState s) { _zero = s.clone(); }
 
-    @property inout(GameState) zero()       inout { return _zero;       }
-    @property inout(GameState) user()       inout { return _user;       }
+    void saveUser(GameState s, Replay r)
+    {
+        _userState  = s.clone();
+        _userReplay = r.clone();
+    }
+
+    @property inout(GameState) zeroState()  inout { return _zero;       }
+    @property inout(GameState) userState()  inout { return _userState;  }
     @property inout(Replay)    userReplay() inout { return _userReplay; }
 
     GameState autoBeforeUpdate(in int u)
     {
-        assert (zero, "need _zero as a fallback for autoBeforeUpdate");
+        assert (zeroState, "need _zero as a fallback for autoBeforeUpdate");
         GameState ret = _zero;
         foreach (ref GameState candidate; _auto)
             if (   candidate !is null

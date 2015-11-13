@@ -66,6 +66,18 @@ package:
 
     int _profilingGadgetCount;
 
+    @property bool isReplaying() const
+    {
+        assert (replay, "need to instantiate replay before isReplaying()");
+        assert (cs, "need non-null cs to query during isReplaying()");
+        // Replay data for update n means: this will be used when updating
+        // from update n-1 to n. If there is still unapplied replay data,
+        // then we are replaying.
+        // DTODONETWORKING: Add a check that we are never replaying while
+        // we're connected with other players.
+        return replay.latestUpdate > cs.update;
+    }
+
     @property inout(Tribe) tribeLocal() inout
     {
         assert (cs, "null cs, shouldn't ever be null");

@@ -33,10 +33,7 @@ private:
     private bool _fileNotFound;
 
     Version  _gameVersionRequired;
-    Date     _levelBuiltRequired;
-    Filename _levelFilename;
 
-    PlNr     _playerLocal;
     Player[] _players;
     Permu    _permu;
 
@@ -44,23 +41,19 @@ private:
 
 public:
 
-    @property bool    fileNotFound()        { return _fileNotFound;        }
-    @property Version gameVersionRequired() { return _gameVersionRequired; }
+    Date     levelBuiltRequired;
+    Filename levelFilename;
 
-    @property levelBuiltRequired()       { return _levelBuiltRequired;     }
-    @property levelBuiltRequired(Date d) { return _levelBuiltRequired = d; }
+    PlNr     playerLocal;
 
-    @property levelFilename()            { return _levelFilename;      }
-    @property levelFilename(Filename fn) { return _levelFilename = fn; }
+    @property fileNotFound() const        { return _fileNotFound;        }
+    @property gameVersionRequired() const { return _gameVersionRequired; }
 
-    @property PlNr playerLocal()       { return _playerLocal;     }
-    @property PlNr playerLocal(PlNr n) { return _playerLocal = n; }
-
-    @property const(Player)[] players()        { return _players;      }
-    @property const(Permu)    permu()          { return _permu;        }
+    @property const(Player)[] players() const  { return _players;      }
+    @property const(Permu)    permu()   const  { return _permu;        }
     @property       Permu     permu(Permu p)   { _permu = p; return p; }
 
-    @property int max_updates()
+    @property int latestUpdate() const
     {
         return (_data.length > 0) ? _data[$-1].update : 0;
     }
@@ -68,7 +61,7 @@ public:
     @property string playerLocalName()
     {
         foreach (pl; _players)
-            if (pl.number == _playerLocal)
+            if (pl.number == playerLocal)
                 return pl.name;
         return null;
     }
@@ -85,12 +78,33 @@ public:
 this(Filename fn = null)
 {
     touch();
-    _levelBuiltRequired  = new Date("0");
-    _levelFilename       = fn ? fn : new Filename("");
-    _permu               = new Permu(1);
+    levelBuiltRequired = new Date("0");
+    levelFilename      = fn ? fn : new Filename("");
+    _permu             = new Permu(1);
 
     if (fn)
         this.loadFromFile(fn);
+}
+
+
+
+pure Replay clone() const
+{
+    return new Replay(this);
+}
+
+pure this(in Replay rhs)
+{
+    _fileNotFound        = rhs._fileNotFound;
+    _gameVersionRequired = rhs._gameVersionRequired;
+
+    levelBuiltRequired   = rhs.levelBuiltRequired.clone();
+    levelFilename        = rhs.levelFilename.clone();
+    playerLocal          = rhs.playerLocal;
+
+    _players             = rhs._players.dup;
+    _permu               = rhs._permu.clone();
+    _data                = rhs._data.dup;
 }
 
 
@@ -266,16 +280,16 @@ saveToFile(std.stdio.File file, in Level lev)
     // DTODOFHS: we chop off a constant length, we shouldn't do that
     // anymore once we don't know where it's saved
     file.writeln(IoLine.Dollar(basics.globals.replayLevelFilename,
-        _levelFilename.rootless[dirLevels.rootless.length .. $]));
+        levelFilename.rootless[dirLevels.rootless.length .. $]));
     file.writeln(IoLine.Dollar(replayLevelBuiltRequired,
-        _levelBuiltRequired.toString));
+        levelBuiltRequired.toString));
     file.writeln(IoLine.Dollar(replayGameVersionRequired,
         _gameVersionRequired.toString));
 
     if (_players.length)
         file.writeln();
     foreach (pl; _players)
-        file.writeln(IoLine.Plus(pl.number == _playerLocal
+        file.writeln(IoLine.Plus(pl.number == playerLocal
              ? basics.globals.replayPlayer : basics.globals.replayFriend,
              pl.number, styleToString(pl.style), pl.name));
     if (_players.length > 1)
@@ -305,7 +319,7 @@ saveToFile(std.stdio.File file, in Level lev)
     }
 
     const(Level) lev_to_save = ok_to_save(lev) ? lev
-                             : new Level(_levelFilename);
+                             : new Level(levelFilename);
     if (ok_to_save(lev_to_save)) {
         file.writeln();
         level.level.saveToFile(lev_to_save, file);
@@ -356,7 +370,7 @@ loadFromFile(Filename fn)
     foreach (i; lines) switch (i.type) {
     case '$':
         if (i.text1 == replayLevelBuiltRequired) {
-            _levelBuiltRequired = new Date(i.text2);
+            levelBuiltRequired = new Date(i.text2);
         }
         else if (i.text1 == replayPermu) {
             _permu = new Permu(i.text2);
@@ -365,7 +379,7 @@ loadFromFile(Filename fn)
             _gameVersionRequired = Version(i.text2);
         }
         else if (i.text1 == replayLevelFilename) {
-            _levelFilename = new Filename(dirLevels.dirRootless ~ i.text2);
+            levelFilename = new Filename(dirLevels.dirRootless ~ i.text2);
         }
         break;
 
@@ -375,7 +389,7 @@ loadFromFile(Filename fn)
         ) {
             add_player(i.nr1 & 0xFF, stringToStyle(i.text2), i.text3);
             if (i.text1 == replayPlayer)
-                _playerLocal = i.nr1 & 0xFF;
+                playerLocal = i.nr1 & 0xFF;
         }
         break;
 

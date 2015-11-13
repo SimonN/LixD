@@ -134,6 +134,11 @@ pure this(in string s)
 
 
 
+pure Filename clone() const
+{
+    return new Filename(this);
+}
+
 pure this(in Filename fn)
 {
     _rootless      = fn._rootless;

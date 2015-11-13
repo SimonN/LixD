@@ -13,6 +13,7 @@ import std.stdio;
 import basics.alleg5;
 import basics.globals;
 import basics.globconf;
+import basics.help;
 import file.filename;
 import file.date;
 import file.io;

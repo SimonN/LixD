@@ -47,7 +47,7 @@ backspace(in string str)
 
 
 
-nothrow string
+pure nothrow string
 escapeStringForFilename(string unescapedRemainder)
 {
     // remove all special characters except these few
@@ -72,7 +72,7 @@ unittest {
 
 
 
-nothrow int
+pure nothrow int
 len(T)(in T[] arr)
 {
     // Arrays with more than 2^^31 entries are bugs. Let's not call to!int, but
@@ -103,7 +103,7 @@ template CloneableTrivialOverride() {
 }
 
 mixin template CloneableOverride() {
-    override typeof (this) clone()
+    override typeof(this) clone()
     {
         auto cloned = new typeof (this) (this);
         assert (cloned || ! this);
@@ -112,13 +112,15 @@ mixin template CloneableOverride() {
 }
 
 mixin template CloneableBase() {
-    typeof (this) clone()
+    typeof(this) clone()
     {
         auto cloned = new typeof (this) (this);
         assert (cloned || ! this);
         return cloned;
     }
 }
+
+
 
 @property T[]
 clone(T)(T[] arr)

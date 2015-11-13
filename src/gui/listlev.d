@@ -93,7 +93,7 @@ newFileButton(int nr_from_top, int total_nr, in Filename fn)
         // DTODOREPLAY
         /*
         Replay r(f);
-        lev = new LevelMetaData(r.get_levelFilename());
+        lev = new LevelMetaData(r.levelFilename);
         buttonText ~= lev.get_name();
         */
     }
