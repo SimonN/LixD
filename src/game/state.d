@@ -145,7 +145,7 @@ public:
             }
 
         foreach (ref GameState possibleGarbage; _auto)
-            if (possibleGarbage && possibleGarbage.update >= ret.update)
+            if (possibleGarbage && possibleGarbage.update >= u)
                 // DTODO: find out whether we should manually destroy the
                 // torbit and lookup matrix here, and then garbage-collect
                 possibleGarbage = null;
