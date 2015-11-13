@@ -35,13 +35,33 @@ updateOnceWithoutSyncingNetwork(Game game)
     game.spawnLixxiesFromHatches();
     game.updateNuke();
     game.updateLixxies();
-    game.updateOnceGadgets();
+    game.finalizeUpdateAnimateGadgets();
 
     if (game.runmode == Runmode.INTERACTIVE) {
         assert (game.stateManager);
         game.stateManager.calcSaveAuto(game.cs);
     }
 }
+
+
+
+package void
+finalizeUpdateAnimateGadgets(Game game) {
+    with (game)
+    with (game.cs)
+{
+    // Animate after we had the traps eat lixes. Eating a lix sets a flag
+    // in the trap to run through the animation, showing the first killing
+    // frame after this next call to animate(). Physics depend on this anim.
+    foreach (hatch; hatches)
+        hatch.animate(effect, update);
+
+    foreachGadget((Gadget g) {
+        g.animate();
+    });
+    game.pan.setLikeTribe(game.tribeLocal);
+}}
+// end with (game.cs), end update_once()
 
 
 
@@ -333,22 +353,3 @@ void updateSingleLix(Game game, Lixxie l, UpdateArgs ua)
 {
     l.performActivity(ua);
 }
-
-
-
-void
-updateOnceGadgets(Game game) {
-    with (game)
-    with (game.cs)
-{
-    // Animate after we had the traps eat lixes. Eating a lix sets a flag
-    // in the trap to run through the animation, showing the first killing
-    // frame after this next call to animate(). Physics depend on this anim.
-    foreach (hatch; hatches)
-        hatch.animate(effect, update);
-
-    foreachGadget((Gadget g) {
-        g.animate();
-    });
-}}
-// end with (game.cs), end update_once()

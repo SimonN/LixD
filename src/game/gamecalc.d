@@ -22,7 +22,7 @@ updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
     {
         if (howmany-- > 0)
             game.syncNetworkThenUpdateOnce();
-        while (howmany--)
+        while (howmany-- > 0)
             game.updateOnceWithoutSyncingNetwork();
         altickLastUpdate = al_get_timer_count(basics.alleg5.timer);
     }
@@ -43,6 +43,11 @@ updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
         assert (state, "we should get at laest some state here");
         assert (stateManager.zeroState, "zero state is bad");
         game.loadStateAffectAltickLastUpdate(state);
+        /+
+        std.stdio.writefln("debugging upd(%d - %d = %d)",
+            whatUpdateToLoad, cs.update, whatUpdateToLoad - cs.update);
+            +/
+        upd(whatUpdateToLoad - cs.update);
     }
     else if (pan.speedAhead.executeLeft) {
         upd();
@@ -72,7 +77,6 @@ loadStateWithoutAffectingAltickLastUpdate(Game game, GameState state)
 {
     if (state) {
         game.cs = state.clone();
-        game.pan.setLikeTribe(game.tribeLocal);
         game.effect.deleteAfter(game.cs.update);
     }
 }
@@ -84,8 +88,7 @@ loadStateAffectAltickLastUpdate(Game game, GameState state) { with (game)
 {
     if (state) {
         game.loadStateWithoutAffectingAltickLastUpdate(state);
+        game.finalizeUpdateAnimateGadgets();
         altickLastUpdate = al_get_timer_count(basics.alleg5.timer);
-        foreach (hatch; cs.hatches)
-            hatch.animate(effect, cs.update);
     }
 }}
