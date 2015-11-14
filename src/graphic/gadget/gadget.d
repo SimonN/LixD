@@ -146,16 +146,19 @@ animateForUpdate(in int upd)
 
 
 
-// Most gadgets can't be rotated or mirrored. Even hatches have a separate
-// field for that now. However, editor terrain is still realized with a
-// base Gadget instantiation.
-
 @property int
 selboxX() const
 {
     int edge = rotation.to!int;
     if (mirror)
         edge = (edge == 1 ? 3 : edge == 3 ? 1 : edge);
+
+    // Most gadgets can't be rotated or mirrored. Even hatches have a separate
+    // field for that now. However, editor terrain is still realized with a
+    // base Gadget instantiation.
+    assert (tile.type != TileType.TERRAIN || edge == 0,
+        "only editor terrain may be rotated and mirrored, not ingame gadgets");
+
     switch (edge) {
         case 0: return tile.selboxX; // rotation is clockwise
         case 1: return tile.cb.yl - tile.selboxY - tile.selboxYl;
@@ -173,6 +176,8 @@ selboxY() const
     int edge = rotation.to!int;
     if (mirror)
         edge = (edge == 0 ? 2 : edge == 2 ? 0 : edge);
+    assert (tile.type != TileType.TERRAIN || edge == 0,
+        "only editor terrain may be rotated and mirrored, not ingame gadgets");
     switch (edge) {
         case 0: return tile.selboxY;
         case 1: return tile.selboxX;

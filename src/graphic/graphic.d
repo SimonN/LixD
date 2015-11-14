@@ -96,6 +96,7 @@ this(
     ground = gr;
     _x     = new_x;
     _y     = new_y;
+    _rot   = 0.0;
     _mode  = Cutbit.Mode.NORMAL;
 }
 
