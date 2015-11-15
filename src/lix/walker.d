@@ -148,67 +148,34 @@ class Walker : PerformedActivity {
         }
 
         // No floor? Then step down or start falling
-        else static if (cPlusPlusPhysicsBugs) {
-            // begin legacy code here
-            int movedDownBy = 0;
-            for (int i = 3; i < 11; ++i) {
-                if (! isSolid()) {
-                    moveDown(1);
-                    ++movedDownBy;
-                }
-                else break;
-            }
-            if (isSolid()) {
-                // We are standing on something, and maybe we're standing
-                // inside a wall right now.
-                if (solidWallHeight(0) == 11) {
-                    assert (false, "walker code that shouldn't be reached");
-                    // return true;
-                }
-                // Don't move that far back up as the check about 10 lines
-                // further down that reads very similar in its block
-                else if (movedDownBy > 6) {
-                    moveUp(4);
-                    become(Ac.FALLER);
-                    Faller perfFaller = cast (Faller) lixxie.performedActivity;
-                    assert (perfFaller);
-                    perfFaller.pixelsFallen = movedDownBy - 4;
-                }
-            }
-            else {
-                moveUp(6);
-                become(Ac.FALLER);
-                Faller perfFaller = cast (Faller) lixxie.performedActivity;
-                assert (perfFaller);
-                // I don't understand why there is a 2 here
-                // OK, movedDownBy should be 8 here, and moveUp(6) + 2 = 8.
-                perfFaller.pixelsFallen = 2;
-            }
-            // end of legacy code
-        }
         else {
-            static assert (! cPlusPlusPhysicsBugs);
             assert (! isSolid(0, 1) && ! isSolid(0, 2));
-            immutable spaceBelowForFalling = 9;
-            int       spaceBelow           = 1; // because of the assertions
-            while (spaceBelow < spaceBelowForFalling
+            immutable spaceBelowForAnyFalling = 7;
+            immutable spaceBelowForNormalFalling = 9;
+            int       spaceBelow = 1; // because of the assertions
+            while (spaceBelow < spaceBelowForNormalFalling
                 && ! isSolid(0, spaceBelow + 2)
             ) {
                 ++spaceBelow;
             }
-            if (spaceBelow == spaceBelowForFalling) {
-                immutable fallY = 2;
-                moveDown(fallY);
-                become(Ac.FALLER);
+
+            void becomeFallerAndFallPixels(in int fallY)
+            {
+                lixxie.moveDown(fallY);
+                lixxie.become(Ac.FALLER);
                 Faller perfFaller = cast (Faller) lixxie.performedActivity;
                 assert (perfFaller);
                 perfFaller.pixelsFallen = fallY;
             }
-            else {
+
+            if (spaceBelow >= spaceBelowForNormalFalling)
+                becomeFallerAndFallPixels(2);
+            else if (spaceBelow >= spaceBelowForAnyFalling)
+                // Space 7 -> fall 3. Space 8 -> fall 4.
+                // Space >= 9 -> fall 2, but that's handled by the 'if' above.
+                becomeFallerAndFallPixels(spaceBelow - 4);
+            else
                 moveDown(spaceBelow);
-                if (spaceBelow >= 7)
-                    frame = 0;
-            }
         }
         return false;
     }
