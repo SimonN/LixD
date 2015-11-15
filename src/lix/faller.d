@@ -59,9 +59,13 @@ class Faller : PerformedActivity {
         // the function. If we continue here, we're in the air as a faller,
         // and we have not moved yet. We can move down by the entire ySpeed
         // and still be in the air.
-        static if (cPlusPlusPhysicsBugs) {
+        static if (cPlusPlusPhysicsBugs)
+            // Doing it like in C++ might interfere with the trampoline kludge
             ySpeedThisFrame = ySpeed;
-        }
+        else
+            // Because of the loop condition, ySpeedThisFrame will be
+            // 1 greater than ySpeed in the non-trampoline cases. Remedy that.
+            ySpeedThisFrame = min(ySpeedThisFrame, ySpeed);
 
         moveDown(ySpeedThisFrame);
         pixelsFallen += ySpeedThisFrame;
