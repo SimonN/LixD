@@ -184,13 +184,26 @@ void calc()
             _mouseOwnX = xl/2;
             _mouseOwnY = yl/2;
         }
-        if (mouseCurX < xl/4 || mouseCurX > xl*3/4
-         || mouseCurY < yl/4 || mouseCurY > yl*3/4) {
+
+        bool isCloseToEdge(in int mouseCur, in int length)
+        {
+            if (_mouseHeldFor[1] || _mouseHeldFor[2])
+                // RMB scrolling should reset rather often.
+                // Curiously, this is not responsible for trapping the mouse
+                // in the window with guarantee. That's still magic to me.
+                return mouseCur*4 < length || mouseCur*4 >= length*3;
+            else
+                // Make it even easier for the mouse to leave window,
+                // resetting closer to the edge => less speed to leave.
+                return mouseCur*16 < length || mouseCur*16 >= length*15;
+        }
+
+        if (isCloseToEdge(mouseCurX, xl) || isCloseToEdge(mouseCurY, yl))
              // do not call centerMouse, that would move _mouseOwnX/Y
              al_set_mouse_xy(display, xl/2, yl/2);
-        }
     }
     else {
+        assert (! _trapMouse);
         al_show_mouse_cursor(display);
     }
 }
