@@ -128,9 +128,9 @@ public:
         _userReplay = r.clone();
     }
 
-    @property inout(GameState) zeroState()  inout { return _zero;       }
-    @property inout(GameState) userState()  inout { return _userState;  }
-    @property inout(Replay)    userReplay() inout { return _userReplay; }
+    @property const(GameState) zeroState()  const { return _zero;       }
+    @property const(GameState) userState()  const { return _userState;  }
+    @property const(Replay)    userReplay() const { return _userReplay; }
 
     GameState autoBeforeUpdate(in int u)
     {

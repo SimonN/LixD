@@ -37,9 +37,9 @@ updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
             = pan.speedBack.executeLeft  ? cs.update - 1
             : pan.speedBack.executeRight ? cs.update - Game.updatesBackMany
             : 0;
-        GameState state = (whatUpdateToLoad <= 0)
-                        ? stateManager.zeroState
-                        : stateManager.autoBeforeUpdate(whatUpdateToLoad + 1);
+        auto state = (whatUpdateToLoad <= 0)
+                   ? stateManager.zeroState
+                   : stateManager.autoBeforeUpdate(whatUpdateToLoad + 1);
         assert (state, "we should get at laest some state here");
         assert (stateManager.zeroState, "zero state is bad");
         game.loadStateAffectAltickLastUpdate(state);
@@ -69,7 +69,7 @@ updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
 
 
 package void
-loadStateWithoutAffectingAltickLastUpdate(Game game, GameState state)
+loadStateWithoutAffectingAltickLastUpdate(Game game, in GameState state)
 {
     if (state) {
         game.cs = state.clone();
@@ -80,7 +80,7 @@ loadStateWithoutAffectingAltickLastUpdate(Game game, GameState state)
 
 
 package void
-loadStateAffectAltickLastUpdate(Game game, GameState state) { with (game)
+loadStateAffectAltickLastUpdate(Game game, in GameState state) { with (game)
 {
     if (state) {
         game.loadStateWithoutAffectingAltickLastUpdate(state);
