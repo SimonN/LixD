@@ -1,6 +1,25 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.5
+-----
+
+2015-11-19
+
+Map detects mouse on the land properly, at least with zoom == 1. Priority
+computation has been ported over. You can click lix and hear the assign
+sound being played if the assignment were legal. Assignments aren't in yet.
+
+0.1.4
+-----
+
+2015-11-15
+
+Walker, Faller and Ascender are implemented and should perform like their
+C++ versions. I would like to keep close to the C++ behavior for now.
+Savestates have been implemented for framestepping. Skill assignments
+are not possible yet.
+
 0.1.2
 -----
 
