@@ -81,6 +81,8 @@ public:
  *  void moveDown(int = 2);
  *  void moveUp  (int = 2);
  */
+    @property bool facingLeft()  const { return   _facingLeft; }
+    @property bool facingRight() const { return ! _facingLeft; }
     @property int dir() const { return _facingLeft ? -1 : 1; }
     @property int dir(in int i)
     {
@@ -624,20 +626,25 @@ void draw()
 
 
 
+bool cursorShouldOpenOverMe() const
+{
+    return ac != Ac.NOTHING && ! _perfAc.isLeaving;
+}
+
 // returns 0 iff lix is not clickable and the cursor should be closed
 // returns 1 iff lix is not clickable, but the cursor should open still
 // returns >= 2 and <= 99,998 iff lix is clickable
 // higher return values mean higher priority. The player can invert priority,
 // e.g., by holding the right mouse button. This inversion is not handled by
 // this function, but should be done by the calling game code.
-int get_priority(
+int priorityForNewAc(
     in Ac   newAc,
     in bool personal // Shall personal settings override the default valuation?
-) {                  // If false, allow anything anyone could do, for network
+) const {            // If false, allow anything anyone could do, for network
     int p = 0;
 
     // Nothing allowed at all, don't even open the cursor
-    if (ac == Ac.NOTHING || _perfAc.isLeaving) return 0;
+    if (! cursorShouldOpenOverMe) return 0;
 
     // Permanent skills
     if ((newAc == Ac.EXPLODER  && updatesSinceBomb > 0)

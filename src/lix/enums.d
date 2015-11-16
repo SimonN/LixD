@@ -38,7 +38,7 @@ string styleToString(in Style st)
     return styleStrings[st];
 }
 
-enum Ac {
+enum Ac : ubyte {
     NOTHING,
     FALLER,
     TUMBLER,
@@ -72,7 +72,7 @@ enum Ac {
     MAX
 }
 
-enum Style {
+enum Style : ubyte {
     GARDEN,
     NEUTRAL,
     RED,

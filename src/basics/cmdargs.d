@@ -62,54 +62,56 @@ class Cmdargs {
     {
         // argument 0 is the program name, loop over the extra ones only
         foreach (arg; args[1 .. $]) {
-            if (arg.starts_with("--")) {
-                immutable vrf   = "--verify=";
-                immutable resol = "--resol=";
-
-                if (arg == "--version") {
-                    versionAndExit = true;
-                }
-                else if (arg == "--help") {
-                    helpAndExit = true;
-                }
-                else if (arg.starts_with(vrf)) {
-                    verifyFiles ~= new Filename(arg[vrf.length .. $]);
-                }
-                else if (arg.starts_with(resol)) {
-                    // this string is expected to be of the form "1234x567"
-                    string want_res = arg[resol.length .. $];
-                    try {
-                        string[] numbers = splitter(want_res, 'x').array();
-                        if (numbers.length != 2)
-                            // leave wanted resolution at 0
-                            throw new Exception("caught in 5 lines anyway");
-                        // these can throw too on bad chars in the string
-                        wantResolutionX = numbers[0].to!int;
-                        wantResolutionY = numbers[1].to!int;
-                    }
-                    catch (Exception e) { }
-
-                    if (wantResolutionX == 0 || wantResolutionY == 0)
-                        badSwitches ~= arg;
-                    else
-                        windowed = true;
-                }
-                else {
-                    badSwitches ~= arg;
-                }
-            }
-            else if (arg.starts_with("-")) {
+            if (arg.startsWith("--"))
+                parseDashDashArgument(arg);
+            else if (arg.startsWith("-"))
                 // allow arguments chained like -nw
                 foreach (c; arg[1 .. $]) switch (c) {
-                case 'h': helpAndExit    = true; break;
-                case 'n': usernameAsk    = true; break;
-                case 'v': versionAndExit = true; break;
-                case 'w': windowed       = true; break;
-                case '?': helpAndExit    = true; break;
-                default : badSwitches ~= "-" ~ c; break;
+                    case 'h': helpAndExit    = true; break;
+                    case 'n': usernameAsk    = true; break;
+                    case 'v': versionAndExit = true; break;
+                    case 'w': windowed       = true; break;
+                    case '?': helpAndExit    = true; break;
+                    default : badSwitches ~= "-" ~ c; break;
+                }
+            else badSwitches ~= arg;
+        }
+    }
+
+
+    void parseDashDashArgument(string arg)
+    {
+        immutable vrf   = "--verify=";
+        immutable resol = "--resol=";
+
+        if (arg == "--version") {
+            versionAndExit = true;
+        }
+        else if (arg == "--help") {
+            helpAndExit = true;
+        }
+        else if (arg.startsWith(vrf)) {
+            verifyFiles ~= new Filename(arg[vrf.length .. $]);
+        }
+        else if (arg.startsWith(resol)) {
+            // this string is expected to be of the form "1234x567"
+            string want_res = arg[resol.length .. $];
+            try {
+                string[] numbers = splitter(want_res, 'x').array();
+                if (numbers.length == 2) {
+                    wantResolutionX = numbers[0].to!int;
+                    wantResolutionY = numbers[1].to!int;
                 }
             }
-            else badSwitches ~= arg;
+            catch (Exception e) { }
+
+            if (wantResolutionX == 0 || wantResolutionY == 0)
+                badSwitches ~= arg;
+            else
+                windowed = true;
+        }
+        else {
+            badSwitches ~= arg;
         }
     }
 
@@ -141,7 +143,7 @@ class Cmdargs {
 
 
 private bool
-starts_with(string large, string small)
+startsWith(string large, string small)
 {
     return large.length >= small.length
      && large[0 .. small.length] == small;

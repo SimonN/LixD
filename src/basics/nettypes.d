@@ -72,6 +72,7 @@ struct ReplayData {
     int   update;
     int   toWhichLix; // assign to which lix, or change rate to how much
     alias toWhatSpawnint = toWhichLix;
+    deprecated("use toWhichLix/toWhatSpawnint") alias what = toWhichLix;
 
     this(in byte b = 0)
     {

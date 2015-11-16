@@ -78,6 +78,13 @@ package:
         return replay.latestUpdate > cs.update;
     }
 
+    @property bool isMultiplayerGame() const
+    {
+        assert (cs, "query for multiplayer after making the current state");
+        assert (cs.tribes.length > 0, "query for multiplayer after making cs");
+        return (cs.tribes.length > 1);
+    }
+
     @property inout(Tribe) tribeLocal() inout
     {
         assert (cs, "null cs, shouldn't ever be null");

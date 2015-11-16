@@ -10,6 +10,7 @@ import basics.user;
 import game;
 import graphic.gralib;
 import gui;
+import lix.enums;
 
 class Panel : Element {
 
@@ -23,6 +24,8 @@ public:
     BitmapButton zoom, restart, pause, nukeSingle, nukeMulti;
     TwoTasksButton speedBack, speedAhead, speedFast;
 
+    PanelStats stats;
+
     @property auto gapamode() const { return _gapamode; }
     // setter property is down below
 
@@ -33,7 +36,6 @@ private:
 
     private GapaMode _gapamode;
 
-    private Button _dummyBG;
 
 
 
@@ -44,9 +46,9 @@ this()
     super(new Geom(0, 0, Geom.screenXlg,
                          Geom.screenYlg / Geom.panelYlDivisor, From.BOTTOM));
 
-    _dummyBG = new Button(new Geom(0, 0, this.xlg / 2,
+    stats = new PanelStats(new Geom(0, 0, this.xlg / 2,
                            this.ylg - skillYl, From.TOP_LEFT));
-    addChild(_dummyBG);
+    addChild(stats);
 
     skills.length = basics.user.skillSort.length;
     foreach (int id, ac; basics.user.skillSort) {
@@ -91,7 +93,7 @@ this()
 
 
 
-public @property GapaMode
+@property GapaMode
 gapamode(in GapaMode gp)
 {
     _gapamode = gp;
@@ -108,7 +110,7 @@ gapamode(in GapaMode gp)
 
 
 
-public void
+void
 setLikeTribe(in Tribe tr)
 {
     if (tr is null)
@@ -139,11 +141,20 @@ setLikeTribe(in Tribe tr)
 
 
 
+SkillButton
+currentSkill()
+{
+    foreach (b; skills)
+        if (b.on && b.skill != Ac.NOTHING && b.number != 0)
+            return b;
+    return null;
+}
+
+
+
 protected override void
 calcSelf()
 {
-    _dummyBG.down = false;
-
     void setSpeedTo(in int a)
     {
         assert (a >= 0);
