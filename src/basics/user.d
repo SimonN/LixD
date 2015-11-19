@@ -10,6 +10,8 @@ import std.algorithm; // sort filenames before outputting them
 import std.conv;
 import std.stdio;
 
+import enumap;
+
 import basics.alleg5;
 import basics.globals;
 import basics.globconf;
@@ -140,9 +142,9 @@ int keyEditorDown         = ALLEGRO_KEY_D;
 int keyEditorCopy         = ALLEGRO_KEY_A;
 int keyEditorDelete       = ALLEGRO_KEY_G;
 int keyEditorGrid         = ALLEGRO_KEY_C;
-int keyEditorSelectAll      = ALLEGRO_KEY_ALT;
-int keyEditorSelectFrame    = ALLEGRO_KEY_LSHIFT;
-int keyEditorSelectAdd      = ALLEGRO_KEY_V;
+int keyEditorSelectAll    = ALLEGRO_KEY_ALT;
+int keyEditorSelectFrame  = ALLEGRO_KEY_LSHIFT;
+int keyEditorSelectAdd    = ALLEGRO_KEY_V;
 int keyEditorBackground   = ALLEGRO_KEY_T;
 int keyEditorForeground   = ALLEGRO_KEY_B;
 int keyEditorMirror       = ALLEGRO_KEY_W;
@@ -160,9 +162,9 @@ int keyEditorAddHatch    = ALLEGRO_KEY_1;
 int keyEditorAddGoal     = ALLEGRO_KEY_2;
 int keyEditorAddDeco     = ALLEGRO_KEY_3;
 int keyEditorAddHazard   = ALLEGRO_KEY_4;
-int keyEditorExit         = ALLEGRO_KEY_ESCAPE;
+int keyEditorExit        = ALLEGRO_KEY_ESCAPE;
 
-int[Ac.MAX] keySkill;
+Enumap!(Ac, int) keySkill;
 
 static this()
 {
@@ -580,15 +582,9 @@ nothrow void save()
         fwr(IoLine.Hash(userKeyChat,           keyChat));
         fwr(IoLine.Hash(userKeyGameExit,       keyGameExit));
 
-        foreach (int i, mappedKey; keySkill) {
-            if (mappedKey != 0) {
-                try {
-                    Ac ac = to!Ac(i);
-                    fwr(IoLine.Hash(acToString(ac), mappedKey));
-                }
-                catch (ConvException) { }
-            }
-        }
+        foreach (Ac ac, int mappedKey; keySkill)
+            if (mappedKey != 0)
+                fwr(IoLine.Hash(acToString(ac), mappedKey));
         f.writeln();
 
         fwr(IoLine.Hash(userKeyMenuOkay,          keyMenuOkay));

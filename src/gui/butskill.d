@@ -15,6 +15,7 @@ public:
     {
         super(g);
         style = Style.GARDEN;
+        whenToExecute = WhenToExecute.whenMouseHeld;
 
         _labelNumL = new Label(new Geom(0, 2, g.xlg, 30, From.TOP));
         _labelNumL.color = color.white;
@@ -73,6 +74,12 @@ private:
     Label   _label_hotkey;
 
 protected:
+
+    override void calcSelf()
+    {
+        super.calcSelf();
+        down = false;
+    }
 
     override void drawSelf()
     {

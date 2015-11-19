@@ -109,6 +109,7 @@ preparePlayers(Game game) { with (game)
 
     assert (pan);
     pan.setLikeTribe(tribeLocal);
+    pan.highlightFirstSkill();
 }}
 
 

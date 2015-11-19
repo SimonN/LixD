@@ -292,10 +292,10 @@ public void saveToFile(in Filename fn) const
     auto drata = DrawingTarget(outputBitmap);
 
     foreach (y; 0 .. _yl) foreach (x; 0 .. _xl) {
-        int red   = get(x, y, bitTerrain);
-        int green = get(x, y, bitSteel);
-        int blue  = get(x, y, bitGoal | bitFire  | bitWater
-                            | bitTrap | bitFling | bitTrampoline);
+        immutable int red   = get(x, y, bitTerrain);
+        immutable int green = get(x, y, bitSteel);
+        immutable int blue  = get(x, y, bitGoal | bitFire  | bitWater
+                                      | bitTrap | bitFling | bitTrampoline);
         al_put_pixel(x, y, AlCol(red, blue, green, 1));
     }
     al_save_bitmap(fn.rootfulZ, outputBitmap);

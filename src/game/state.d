@@ -102,7 +102,8 @@ private:
     enum updatesMultiplierNextPairIsSlowerBy = 5; // 10, 50, 250, 1250
     enum pairsToKeep = 4;
 
-    GameState _zero, _userState;
+    GameState _zero;
+    GameState _userState;
     GameState[2 * pairsToKeep] _auto;
 
     // For the user-triggered save (_user), remember the replay that was
@@ -120,9 +121,9 @@ private:
 
 public:
 
-    void saveZero(GameState s) { _zero = s.clone(); }
+    void saveZero(in GameState s) { _zero = s.clone(); }
 
-    void saveUser(GameState s, Replay r)
+    void saveUser(in GameState s, Replay r)
     {
         _userState  = s.clone();
         _userReplay = r.clone();
@@ -156,7 +157,7 @@ public:
     // Examine the number of updates in s, then decide what to do with s:
     // Auto-save this state s, potentially pushing older auto-saved states
     // down the hierarchy, or do nothing.
-    void calcSaveAuto(GameState s)
+    void calcSaveAuto(in GameState s)
     {
         assert (s);
         if (s.update < updatesMostFrequentPair)

@@ -10,6 +10,9 @@ import basics.user;
 import game;
 import graphic.gralib;
 import gui;
+import hardware.keyboard; // we need a different behavior of skill button
+import hardware.mouse;    // execution and skill button warning sound
+import hardware.sound;
 import lix.enums;
 
 class Panel : Element {
@@ -55,6 +58,7 @@ this()
         skills[id] = new SkillButton(new Geom(id * skillXl, 0,
                                  skillXl, skillYl, From.BOTTOM_LEFT));
         skills[id].skill = ac;
+        skills[id].hotkey = basics.user.keySkill[skillSort[id]];
         addChild(skills[id]);
         // DTODO: set hotkeys to skillbuttons
     }
@@ -141,6 +145,19 @@ setLikeTribe(in Tribe tr)
 
 
 
+void
+highlightFirstSkill()
+{
+    assert (currentSkill is null);
+    foreach (skill; skills)
+        if (skill.number != 0) {
+            skill.on = true;
+            break;
+        }
+}
+
+
+
 SkillButton
 currentSkill()
 {
@@ -148,6 +165,26 @@ currentSkill()
         if (b.on && b.skill != Ac.NOTHING && b.number != 0)
             return b;
     return null;
+}
+
+
+
+private void
+handleExecutingSkillButton(SkillButton skill)
+{
+    // We set on/off-ness correctly. The game interprets on-ness only.
+    if (skill.number != 0) {
+        if (currentSkill)
+            currentSkill.on = false;
+        skill.on = true;
+    }
+    else {
+        assert (skill.number == 0);
+        // The button executes continually when the mouse button is held down
+        // over it, but we should only play the warning sound on the click.
+        if (mouseClickLeft() || keyTapped(skill.hotkey))
+            hardware.sound.playLoud(Sound.PANEL_EMPTY);
+    }
 }
 
 
@@ -180,6 +217,9 @@ calcSelf()
         setSpeedTo(speedFast.xf == frameTurbo ? 1 : 3);
     }
 
+    foreach (skill; skills)
+        if (skill.execute)
+            handleExecutingSkillButton(skill);
 }
 
 }
