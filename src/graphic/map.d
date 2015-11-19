@@ -82,8 +82,8 @@ private:
     bool scrollingContinues;
 
     // these two don't crop at the edge yet
-    @property int cameraZoomedXl() const { return (_cameraXl+zoom-1) / zoom; }
-    @property int cameraZoomedYl() const { return (_cameraYl+zoom-1) / zoom; }
+    @property int cameraZoomedXl() const { return (_cameraXl+_zoom-1)/_zoom; }
+    @property int cameraZoomedYl() const { return (_cameraYl+_zoom-1)/_zoom; }
 
     @property int minX() const { return cameraZoomedXl / 2; }
     @property int minY() const { return cameraZoomedYl / 2; }
@@ -107,6 +107,13 @@ this(in Torbit like_this, in int a_cameraXl, in int a_cameraYl)
 
     cameraX  = _cameraXl / 2;
     cameraY  = _cameraYl / 2;
+}
+
+
+
+invariant()
+{
+    assert (_zoom > 0);
 }
 
 
@@ -159,36 +166,52 @@ cameraY(in int a)
 
 
 
-private int mouseOnLand(
-    ref const(int) camera, in int torus, in int torbitLength,
-    in int cameraL, in int min, in int mousePos) const
+// By how much is the camera larger than the map?
+// These are 0 on torus maps, only > 0 for small non-torus maps.
+// If something > 0 is returned, we will draw a dark border around the level.
+// The border is split into two equally thick sides in the x direction.
+private @property int borderOneSideXl() const
 {
-    int ret = camera - min + (mousePos / zoom);
-    if (! torus && (cameraL > torbitLength * zoom)) {
-        if (camera is _cameraX)
-            // Small non-torus maps are centered on the camera horizontally.
-            // Compute the left frame width (1/2 of missing x-length)
-            ret -= cameraL - torbitLength * zoom / 2;
-        else
-            // Small non-torus maps are drawn at the lower edge of the camera.
-            ret -= cameraL - torbitLength * zoom;
+    if (torusX || xl * zoom >= cameraXl)
+        return 0;
+    return (_cameraXl - xl * _zoom) / 2;
+}
+
+private @property int borderUpperSideYl() const
+{
+    if (torusY || yl * zoom >= cameraYl)
+        return 0;
+    return _cameraYl - yl * _zoom;
+}
+
+
+
+private int mouseOnLand(
+    ref const(int) camera, in int torbitL, in int torus,
+    in int borderL,
+    in int min, in int mousePos) const
+{
+    immutable int firstDrawnPixel   = (borderL > 0) ? 0 : (camera - min);
+    immutable int mouseOffsetOnLand = (mousePos / _zoom) - borderL;
+    immutable int ret               = firstDrawnPixel + mouseOffsetOnLand;
+    if (torus) {
+        assert (borderL == 0);
+        return basics.help.positiveMod(ret, torbitL);
     }
-    if (torus)
-        ret = basics.help.positiveMod(ret, torbitLength);
     return ret;
 }
 
 @property int
 mouseOnLandX() const
 {
-    return mouseOnLand(_cameraX, torusX, xl, cameraXl, minX,
+    return mouseOnLand(_cameraX, xl, torusX, borderOneSideXl, minX,
                        hardware.mouse.mouseX);
 }
 
 @property int
 mouseOnLandY() const
 {
-    return mouseOnLand(_cameraY, torusY, yl, cameraYl, minY,
+    return mouseOnLand(_cameraY, yl, torusY, borderUpperSideYl, minY,
                        hardware.mouse.mouseY);
 }
 
@@ -218,9 +241,9 @@ calcScrolling()
     if (basics.user.scrollEdge) {
         int scrd = this.scrollSpeedEdge;
         if (hardware.mouse.mouseHeldRight()) scrd *= 4;
-        if (zoom > 1) {
-            scrd += zoom - 1;
-            scrd /= zoom;
+        if (_zoom > 1) {
+            scrd += _zoom - 1;
+            scrd /= _zoom;
         }
         immutable edgeR = hardware.display.displayXl - 1;
         immutable edgeU = hardware.display.displayYl - 1;
@@ -285,29 +308,23 @@ calcScrolling()
 void
 drawCamera(Albit target_albit)
 {
-    // less_x/y: By how much is the camera larger than the map?
-    //           These are 0 on torus maps, only > 0 for small non-torus maps.
-    int less_x = 0;
-    int less_y = 0;
-    if (! torusX && xl * zoom < cameraXl)
-        less_x = _cameraXl - xl * zoom;
-    if (! torusY && yl * zoom < cameraYl)
-        less_y = _cameraYl - yl * zoom;
-
     auto drata = DrawingTarget(target_albit);
 
-    for     (int x = less_x/2; x < _cameraXl-less_x/2; x += xl * zoom) {
-        for (int y = less_y;   y < _cameraYl;          y += yl * zoom) {
+    for (int x = borderOneSideXl;
+             x < _cameraXl - borderOneSideXl;
+             x += xl * _zoom
+    ) {
+        for (int y = borderUpperSideYl; y < _cameraYl; y += yl * zoom) {
             // maxXl, maxYl describe the size of the image to be drawn
             // in this iteration of the double-for loop. This should always
             // be as much as possible. Only in the last iteration of the loop,
             // a smaller rectangle is better.
-            immutable int maxXl = min(xl * zoom, _cameraXl - x);
-            immutable int maxYl = min(yl * zoom, _cameraYl - y);
+            immutable int maxXl = min(xl * _zoom, _cameraXl - x);
+            immutable int maxYl = min(yl * _zoom, _cameraYl - y);
             drawCamera_with_target_corner(x, y, maxXl, maxYl);
-            if (less_y != 0) break;
+            if (borderUpperSideYl != 0) break;
         }
-        if (less_x != 0) break;
+        if (borderOneSideXl != 0) break;
     }
 
     // To tell apart air from areas outside of the map, color screen borders.
@@ -318,12 +335,13 @@ drawCamera(Albit target_albit)
         al_draw_filled_rectangle(ax, ay, ax + axl, ay + ayl,
                                  color.screenBorder);
     }
-    if (less_x) {
-        draw_border(0,                    0, less_x/2,             cameraYl);
-        draw_border(cameraXl - less_x/2, 0, less_x/2,             cameraYl);
+    if (borderOneSideXl > 0) {
+        draw_border(0, 0, borderOneSideXl, cameraYl);
+        draw_border(cameraXl - borderOneSideXl, 0, borderOneSideXl, cameraYl);
     }
-    if (less_y)
-        draw_border(less_x/2,             0, cameraXl - less_x,   less_y);
+    if (borderUpperSideYl > 0)
+        draw_border(borderOneSideXl, 0, cameraXl - 2 * borderOneSideXl,
+                                        borderUpperSideYl);
 }
 
 
