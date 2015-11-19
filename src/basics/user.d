@@ -34,6 +34,11 @@ private Result[Rebindable!(const Filename)] results;
 Filename fileLanguage;
 int      optionGroup = 0;
 
+@property bool languageIsEnglish()
+{
+    return fileLanguage == basics.globals.fileLanguageEnglish;
+}
+
 bool scrollEdge        = true;
 bool scrollRight       = true;
 bool scrollMiddle      = true;

@@ -16,6 +16,8 @@ import graphic.gralib;
 
 class TextButton : Button {
 
+    enum textXFromLeft = Geom.thickg * 2; // *2 for nice spacing at ends
+
     this(Geom g)
     {
         super(g);
@@ -23,7 +25,7 @@ class TextButton : Button {
         // to the uniformly colored center. Each side has a thickness of 2.
         // The checkmark already accounts for this.
         // The checkmark is at the right of the button, for all text aligns.
-        float th  = Geom.thickg * 2; // *2 for nice spacing at ends
+        alias th  = textXFromLeft;
         alias lef = Geom.From.LEFT;
         alias ctr = Geom.From.CENTER;
         left        = new Label(new Geom(th, 0, g.xl - 2*th,     0, lef));

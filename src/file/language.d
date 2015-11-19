@@ -449,7 +449,7 @@ loadUserLanguageAndIfNotExistSetUserOptionToEnglish()
     }
     catch (Exception e) {
         log(e.msg);
-        if (fileLanguage != fileLanguageEnglish) {
+        if (! languageIsEnglish) {
             log("Falling back to English.");
             fileLanguage = new Filename(fileLanguageEnglish);
             loadUserLanguageAndIfNotExistSetUserOptionToEnglish();

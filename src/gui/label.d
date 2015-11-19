@@ -16,6 +16,8 @@ import gui;
 
 class Label : Element {
 
+    enum string abbreviationSuffix = ".";
+
     this(Geom g, string s = "")
     {
         if (g.yl < 1f)
@@ -59,7 +61,10 @@ private:
 
 private void
 shorten_text()
-{
+out {
+    assert (_shortened == (_textShort != _text));
+}
+body {
     reqDraw();
     _textShort = _text;
     _shortened = false;
@@ -88,9 +93,12 @@ shorten_text()
 
         _shortened = (textwidth(text) >= xls);
         if (_shortened) {
-            while (_textShort.length && textwidth(_textShort ~ "...") >= xls)
+            while (_textShort.length > 0
+                && textwidth(_textShort ~ abbreviationSuffix) >= xls
+            ) {
                 _textShort = backspace(_textShort);
-            _textShort ~= "...";
+            }
+            _textShort ~= abbreviationSuffix;
         }
     }
 }
@@ -100,7 +108,8 @@ shorten_text()
 protected override void
 drawSelf()
 {
-    if (! text.length) return;
+    if (! text.length)
+        return;
 
     switch (aligned) {
     case Geom.From.LEFT:

@@ -144,7 +144,7 @@ findPotentialAssignee(Game game) { with (game)
 {
     assert (tribeLocal);
 
-    PotentialAssignee best; // clicks go to her, priority is considered
+    PotentialAssignee best; // clicks go to her, priority is already considered
     PotentialAssignee worst; // if different from best, make tooltip
     PotentialAssignee described; // her action is described on the panel
 
