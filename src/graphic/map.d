@@ -192,7 +192,7 @@ private int mouseOnLand(
     in int min, in int mousePos) const
 {
     immutable int firstDrawnPixel   = (borderL > 0) ? 0 : (camera - min);
-    immutable int mouseOffsetOnLand = (mousePos / _zoom) - borderL;
+    immutable int mouseOffsetOnLand = (mousePos - borderL) / _zoom;
     immutable int ret               = firstDrawnPixel + mouseOffsetOnLand;
     if (torus) {
         assert (borderL == 0);
@@ -314,10 +314,11 @@ drawCamera(Albit target_albit)
              x < _cameraXl - borderOneSideXl;
              x += xl * _zoom
     ) {
-        for (int y = borderUpperSideYl; y < _cameraYl; y += yl * zoom) {
+        for (int y = borderUpperSideYl; y < _cameraYl; y += yl * _zoom) {
             // maxXl, maxYl describe the size of the image to be drawn
             // in this iteration of the double-for loop. This should always
-            // be as much as possible. Only in the last iteration of the loop,
+            // be as much as possible, i.e., the first argument to min().
+            // Only in the last iteration of the loop,
             // a smaller rectangle is better.
             immutable int maxXl = min(xl * _zoom, _cameraXl - x);
             immutable int maxYl = min(yl * _zoom, _cameraYl - y);
@@ -365,37 +366,39 @@ private Rect cameraRectangle()
 
 private void
 drawCamera_with_target_corner(
-    in int tcx,
+    in int tcx, // x coordinate of target corner
     in int tcy,
-    in int max_tcxl,
-    in int max_tcyl
+    in int maxTcxl, // draw at most this much, but maybe even less
+    in int maxTcyl
 ) {
     immutable r    = cameraRectangle();
-    immutable drtx = r.xl < cameraZoomedXl && r.xl < max_tcxl && torusX;
-    immutable drty = r.yl < cameraZoomedYl && r.yl < max_tcyl && torusY;
+    immutable drtx = r.xl < cameraZoomedXl && r.xl < maxTcxl && torusX;
+    immutable drty = r.yl < cameraZoomedYl && r.yl < maxTcyl && torusY;
 
     // size of the non-wrapped portion
-    immutable xl1 = min(r.xl, max_tcxl);
-    immutable yl1 = min(r.yl, max_tcyl);
+    immutable xl1 = min(r.xl, maxTcxl);
+    immutable yl1 = min(r.yl, maxTcyl);
 
-    // these two are the size of the wrapped-around torus portion
-    immutable xl2 = min(cameraZoomedXl - r.xl, max_tcxl - r.xl);
-    immutable yl2 = min(cameraZoomedYl - r.yl, max_tcyl - r.yl);
+    // target corner coordinates and size of the wrapped-around torus portion
+    immutable tcx2 = tcx + r.xl * _zoom;
+    immutable tcy2 = tcy + r.yl * _zoom;
+    immutable xl2  = min(cameraZoomedXl - r.xl, maxTcxl - r.xl);
+    immutable yl2  = min(cameraZoomedYl - r.yl, maxTcyl - r.yl);
 
-    void blit_once(int sx,  int sy,  // source x, y
-                   int sxl, int syl, // length on the source
-                   int tx,  int ty)  // start of the target
+    void blitOnce(in int sx,  in int sy,  // source x, y
+                  in int sxl, in int syl, // length on the source
+                  in int tx,  in int ty)  // start of the target
     {
         if (zoom == 1)
             al_draw_bitmap_region(albit, sx, sy, sxl, syl, tx, ty, 0);
         else
-            al_draw_scaled_bitmap(albit, sx, sy, sxl,      syl,
-                                         tx, ty, zoom*sxl, zoom*syl, 0);
+            al_draw_scaled_bitmap(albit, sx, sy, sxl,       syl,
+                                         tx, ty, _zoom*sxl, _zoom*syl, 0);
     }
-                      blit_once(r.x, r.y, xl1, yl1, tcx,        tcy);
-    if (drtx        ) blit_once(0,   r.y, xl2, yl1, tcx + r.xl, tcy);
-    if (        drty) blit_once(r.x, 0,   xl1, yl2, tcx,        tcy + r.yl);
-    if (drtx && drty) blit_once(0,   0,   xl2, yl2, tcx + r.xl, tcy + r.yl);
+                      blitOnce(r.x, r.y, xl1, yl1, tcx,  tcy);
+    if (drtx        ) blitOnce(0,   r.y, xl2, yl1, tcx2, tcy);
+    if (        drty) blitOnce(r.x, 0,   xl1, yl2, tcx,  tcy2);
+    if (drtx && drty) blitOnce(0,   0,   xl2, yl2, tcx2, tcy2);
 }
 
 
@@ -406,7 +409,6 @@ loadCameraRectangle(Torbit src)
     assert (src.albit);
     assert (this.xl == src.xl);
     assert (this.yl == src.yl);
-    // this doesn't care for the zoom
 
     // We don't use a drawing delegate with the Torbit base cless.
     // That would be like stamping the thing 4x entirelly onto the torbit.
