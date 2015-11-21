@@ -8,8 +8,16 @@ import std.string;
 import std.uni;
 import std.utf;
 
-// The percent operator can return a negative number, e.g. -5 % 3 == -2.
-// When the desired result here is 1, not -2, use positiveMod().
+pure int even(in int x) { return x - (x & 1); }
+
+unittest {
+    assert (even( 5) ==  4);
+    assert (even(-5) == -6);
+    assert (even(-6) == -6);
+}
+
+
+
 pure int positiveMod(in int nr, in int modulo)
 {
     if (modulo <= 0) return 0;
@@ -18,11 +26,10 @@ pure int positiveMod(in int nr, in int modulo)
     else                return normalMod + modulo;
 }
 
-
-
-pure int even(in int x) {
-    if (x % 2 == 0) return x;
-    else            return x - 1;
+unittest {
+    assert (          (-5 % 3) == -2);
+    assert (positiveMod(-5, 3) ==  1);
+    assert (positiveMod( 5, 3) ==  2);
 }
 
 
@@ -43,6 +50,11 @@ backspace(in string str)
 {
     if (str.empty) return null;
     else return str[0 .. str.length - std.utf.strideBack(str, str.length)];
+}
+
+unittest {
+    assert (backspace("hello") == "hell");
+    assert (backspace("") == "");
 }
 
 

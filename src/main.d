@@ -22,9 +22,6 @@ void main(string[] args)
     if (cmdargs.mode == Runmode.PRINT_AND_EXIT) {
         cmdargs.printNoninteractiveOutput();
     }
-    else if (cmdargs.mode == Runmode.VERIFY) {
-        std.stdio.writeln("Replay verification isn't implemented yet.");
-    }
     else al_run_allegro({
         basics.init.initialize(cmdargs);
 
