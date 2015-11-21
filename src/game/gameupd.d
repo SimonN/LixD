@@ -9,7 +9,10 @@ import basics.cmdargs : Runmode;
 import basics.nettypes;
 import game;
 import graphic.gadget;
+import hardware.sound;
 import lix;
+
+static import basics.user; // draw arrows or not
 
 // This should be called on a regular basis to advance physics, while
 // syncing things that must be done immediately before the advancement.
@@ -93,12 +96,53 @@ evaluateReplayData(Game game)
 void
 updateOneData(
     Game game,
-    Tribe t,
-    in Tribe.Master* m,
-    ref const(ReplayData) i
-) {
+    Tribe tribe,
+    in Tribe.Master* master,
+    ref const(ReplayData) i) { with (game)
+{
     immutable upd = game.cs.update;
-/+
+
+    if (i.isSomeAssignment) {
+        // never assert based on the content in ReplayData, which may have
+        // been a maleficious attack from a third party, carrying a lix ID
+        // that is not valid. If bogus data comes, return from this function.
+        if (! master || i.toWhichLix < 0 || i.toWhichLix >= tribe.lixvec.len)
+            return;
+
+        Lixxie lixxie = tribe.lixvec[i.toWhichLix];
+        assert (lixxie);
+
+        if (lixxie.priorityForNewAc(i.skill, false) <= 1
+            || tribe.skills[i.skill] == 0
+            || (lixxie.facingLeft  && i.action == RepAc.ASSIGN_RIGHT)
+            || (lixxie.facingRight && i.action == RepAc.ASSIGN_LEFT)
+        )
+            return;
+
+        // Physics
+        ++(tribe.skillsUsed);
+        if (tribe.skills[i.skill] != lix.skillInfinity)
+            --(tribe.skills[i.skill]);
+        lixxie.assignManually(i.skill);
+
+        // Effects
+        if ((basics.user.arrowsReplay && replaying)
+            || (basics.user.arrowsNetwork
+                && multiplayer && ! replaying && *master !is masterLocal)
+        ) {
+            /+
+            Arrow arr(map, t.style, lix.get_ex(), lix.get_ey(),
+                psk->first, upd, i->what);
+            effect.add_arrow(upd, t, i->what, arr);
+            +/
+        }
+        if (*master is masterLocal)
+            effect.addSound(upd, tribe, i.toWhichLix, Sound.ASSIGN);
+        else if (tribe is tribeLocal)
+            effect.addSoundQuiet(upd, tribe, i.toWhichLix, Sound.ASSIGN);
+    }
+    // end of i.isSomeAssignment
+    /+
     if (i.action == ReplayData.SPAWNINT) {
         const int spint = i->what;
         if (spint >= t.spawnint_fast && spint <= t.spawnint_slow) {
@@ -117,48 +161,9 @@ updateOneData(
             effect.add_sound(upd, t, 0, Sound::NUKE);
         }
     }
-    else if (i->action == Replay::ASSIGN
-          || i->action == Replay::ASSIGN_LEFT
-          || i->action == Replay::ASSIGN_RIGHT) {
-        if (!m) return;
-
-        Level::SkIt psk = t.skills.find(static_cast <LixEn::Ac> (i->skill));
-        if (psk == t.skills.end())
-            // should never happen
-            return;
-
-        if (i->what < t.lixvec.size()) {
-            Lixxie& lix = t.lixvec[i->what];
-            // false: Do not respect the user's options like
-            // disabling the multiple builder feature
-            if (lix.get_priority(psk->first, false) > 1 && psk->second != 0
-             && ! (lix.get_dir() ==  1 && i->action == Replay::ASSIGN_LEFT)
-             && ! (lix.get_dir() == -1 && i->action == Replay::ASSIGN_RIGHT)
-            ) {
-                ++(t.skills_used);
-                if (psk->second != LixEn::infinity) --(psk->second);
-                lix.evaluate_click(psk->first);
-                // Draw arrow if necessary, read arrow.h/effect.h for info
-                if ((useR->arrows_replay  && replaying)
-                 || (useR->arrows_network && (multiplayer && ! replaying)
-                                          && m != masterLocal)) {
-                    Arrow arr(map, t.style, lix.get_ex(), lix.get_ey(),
-                        psk->first, upd, i->what);
-                    effect.add_arrow(upd, t, i->what, arr);
-                }
-                Sound::Id snd = Lixxie::get_ac_func(psk->first).soundAssign;
-                if (m == masterLocal)
-                    effect.add_sound      (upd, t, i->what, snd);
-                else if (&t == tribeLocal)
-                    effect.add_sound_quiet(upd, t, i->what, snd);
-            }
-        }
-        // we will reset all skill numbers on the panel anyway after
-        // this function has finished
-    }
-+/
-}
-// end updateOneData()
+    +/
+}}
+// end with (game), end updateOneData()
 
 
 

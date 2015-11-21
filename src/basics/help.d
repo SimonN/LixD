@@ -18,6 +18,7 @@ unittest {
 
 
 
+// mod function that always returns values in 0 .. modulo
 pure int positiveMod(in int nr, in int modulo)
 {
     if (modulo <= 0) return 0;

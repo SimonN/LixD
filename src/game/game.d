@@ -66,7 +66,7 @@ package:
 
     int _profilingGadgetCount;
 
-    @property bool isReplaying() const
+    @property bool replaying() const
     {
         assert (replay, "need to instantiate replay before isReplaying()");
         assert (cs, "need non-null cs to query during isReplaying()");

@@ -309,11 +309,11 @@ saveToFile(std.stdio.File file, in Level lev)
         file.writeln();
     foreach (d; _data) {
         string word
-            = d.action == ReplayData.SPAWNINT     ? replaySpawnint
-            : d.action == ReplayData.NUKE         ? replayNuke
-            : d.action == ReplayData.ASSIGN       ? replayAssignAny
-            : d.action == ReplayData.ASSIGN_LEFT  ? replayAssignLeft
-            : d.action == ReplayData.ASSIGN_RIGHT ? replayAssignRight : "";
+            = d.action == RepAc.SPAWNINT     ? replaySpawnint
+            : d.action == RepAc.NUKE         ? replayNuke
+            : d.action == RepAc.ASSIGN       ? replayAssignAny
+            : d.action == RepAc.ASSIGN_LEFT  ? replayAssignLeft
+            : d.action == RepAc.ASSIGN_RIGHT ? replayAssignRight : "";
         if (word == "")
             throw new Exception("bad replay data written to file");
         if (d.isSomeAssignment) {
@@ -417,15 +417,15 @@ loadFromFile(Filename fn)
         d.update       = i.nr1;
         d.player       = i.nr2 & 0xFF;
         d.toWhichLix = i.nr3;
-        d.action = part1 == replaySpawnint    ? ReplayData.SPAWNINT
-                 : part1 == replayAssignAny   ? ReplayData.ASSIGN
-                 : part1 == replayAssignLeft  ? ReplayData.ASSIGN_LEFT
-                 : part1 == replayAssignRight ? ReplayData.ASSIGN_RIGHT
-                 : part1 == replayNuke        ? ReplayData.NUKE
-                 : ReplayData.NOTHING;
+        d.action = part1 == replaySpawnint    ? RepAc.SPAWNINT
+                 : part1 == replayAssignAny   ? RepAc.ASSIGN
+                 : part1 == replayAssignLeft  ? RepAc.ASSIGN_LEFT
+                 : part1 == replayAssignRight ? RepAc.ASSIGN_RIGHT
+                 : part1 == replayNuke        ? RepAc.NUKE
+                 : RepAc.NOTHING;
         if (part2.length > 0)
-            d.skill = stringToAc(part2) & 0xFF;
-        if (d.action != ReplayData.NOTHING)
+            d.skill = stringToAc(part2);
+        if (d.action != RepAc.NOTHING)
             addWithoutTouching(d);
         break; }
 

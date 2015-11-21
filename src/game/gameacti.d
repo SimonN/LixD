@@ -314,9 +314,9 @@ assignToPotentialAssignee(
     // (scheduled for the next update) a minute ago during our last attempt.
 
     ReplayData data = game.newReplayDataForNextUpdate();
-    data.action     = forceLeft  ? ReplayData.ASSIGN_LEFT
-                    : forceRight ? ReplayData.ASSIGN_RIGHT
-                    :              ReplayData.ASSIGN;
+    data.action     = forceLeft  ? RepAc.ASSIGN_LEFT
+                    : forceRight ? RepAc.ASSIGN_RIGHT
+                    :              RepAc.ASSIGN;
     data.skill      = currentSkill.skill;
     data.toWhichLix = potAss.id;
     replay.add(data);
