@@ -78,7 +78,7 @@ package:
         return replay.latestUpdate > cs.update;
     }
 
-    @property bool isMultiplayerGame() const
+    @property bool multiplayer() const
     {
         assert (cs, "query for multiplayer after making the current state");
         assert (cs.tribes.length > 0, "query for multiplayer after making cs");
@@ -98,6 +98,13 @@ package:
         assert (cs.tribes.len > _indexTribeLocal, "badly cloned cs");
         assert (cs.tribes[_indexTribeLocal].masters.len > _indexMasterLocal);
         return cs.tribes[_indexTribeLocal].masters[_indexMasterLocal];
+    }
+
+    @property bool singlePlayerHasWon() const
+    {
+        // doesn't assert, might get called in the destructor on an .init game
+        return cs !is null && ! multiplayer
+            && cs.tribes[0].lixSaved >= cs.tribes[0].required;
     }
 
 }

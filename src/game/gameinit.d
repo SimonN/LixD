@@ -26,7 +26,12 @@ implGameConstructor(Game game, Level lv, Filename fn, Replay rp)
 
     game.level         = lv;
     game.levelFilename = fn;
-    game.replay        = rp ? rp : new Replay();
+    game.replay        = rp;
+
+    if (rp is null) {
+        game.replay = new Replay();
+        game.replay.levelFilename = fn;
+    }
 
     game.stateManager = new StateManager();
 
@@ -44,6 +49,8 @@ implGameDestructor(Game game)
 {
     if (game.pan)
         gui.rmElder(game.pan);
+    if (game.replay)
+        game.replay.saveAsAutoReplay(game.level, game.singlePlayerHasWon);
 }
 
 
@@ -106,6 +113,12 @@ preparePlayers(Game game) { with (game)
         tr.spawnint     = level.spawnintSlow;
         tr.skills       = level.skills;
     }
+
+    assert (replay);
+    foreach (tr; cs.tribes)
+        foreach (ma; tr.masters)
+            // DTODONETWORK: Findout what numbers to put in here. ma.number?
+            replay.addPlayer(ma.number, tr.style, ma.name);
 
     assert (pan);
     pan.setLikeTribe(tribeLocal);

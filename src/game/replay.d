@@ -75,15 +75,15 @@ public:
 
 
 
-this(Filename fn = null)
+this(Filename loadFrom = null)
 {
     touch();
     levelBuiltRequired = new Date("0");
-    levelFilename      = fn ? fn : new Filename("");
+    levelFilename      = loadFrom ? loadFrom : new Filename("");
     _permu             = new Permu(1);
 
-    if (fn)
-        this.loadFromFile(fn);
+    if (loadFrom)
+        this.loadFromFile(loadFrom);
 }
 
 
@@ -118,7 +118,7 @@ void touch()
 
 
 void
-add_player(PlNr nr, Style s, string name)
+addPlayer(PlNr nr, Style s, string name)
 {
     _players ~= Player(nr, s, name);
 }
@@ -273,14 +273,24 @@ saveToFile(in Filename fn, in Level lev)
 
 
 
-private void
-saveToFile(std.stdio.File file, in Level lev)
+private string
+mangledLevelFilename()
 {
     // Write the path to the level, but omit the leading (dir-levels)/
     // DTODOFHS: we chop off a constant length, we shouldn't do that
     // anymore once we don't know where it's saved
+    if (dirLevels.rootless.length >= levelFilename.rootless.length)
+        return null;
+    return levelFilename.rootless[dirLevels.rootless.length .. $];
+}
+
+
+
+private void
+saveToFile(std.stdio.File file, in Level lev)
+{
     file.writeln(IoLine.Dollar(basics.globals.replayLevelFilename,
-        levelFilename.rootless[dirLevels.rootless.length .. $]));
+        mangledLevelFilename));
     file.writeln(IoLine.Dollar(replayLevelBuiltRequired,
         levelBuiltRequired.toString));
     file.writeln(IoLine.Dollar(replayGameVersionRequired,
@@ -313,42 +323,39 @@ saveToFile(std.stdio.File file, in Level lev)
         file.writeln(IoLine.Bang(d.update, d.player, word, d.toWhichLix));
     }
 
-    bool ok_to_save(in Level lev)
+    bool okToSave(in Level lev)
     {
         return lev !is null && lev.nonempty;
     }
 
-    const(Level) lev_to_save = ok_to_save(lev) ? lev
+    const(Level) levToSave = okToSave(lev) ? lev
                              : new Level(levelFilename);
-    if (ok_to_save(lev_to_save)) {
+    if (okToSave(levToSave)) {
         file.writeln();
-        level.level.saveToFile(lev_to_save, file);
+        level.level.saveToFile(levToSave, file);
     }
 }
 
 
 
 public void
-save_as_auto_replay(in Level lev, bool isSolution)
+saveAsAutoReplay(in Level lev, bool isSolution)
 {
-    const(bool) multi = (_players.length > 1);
+    immutable bool multi = (_players.length > 1);
+    if (     multi &&                 ! basics.user.replayAutoMulti
+        || ! multi && ! isSolution && ! basics.user.replayAutoSingleFailures
+        || ! multi &&   isSolution && ! basics.user.replayAutoSingleSolutions
+    )
+        return;
 
-    if (multi) {
-        if (! basics.user.replayAutoMulti)
-            return;
-    }
-    else {
-        if ( ! isSolution && ! basics.user.replayAutoSingleFailures
-            || isSolution && ! basics.user.replayAutoSingleSolutions)
-            return;
-    }
     string outfile
         = multi      ? basics.globals.dirReplayAutoMulti.rootful
         : isSolution ? basics.globals.dirReplayAutoSingleSolutions.rootful
                      : basics.globals.dirReplayAutoSingleFailures.rootful;
     outfile ~= lev.name.escapeStringForFilename()
         ~ "-" ~ playerLocalName.escapeStringForFilename()
-        ~ "-" ~ Date.now().toStringForFilename();
+        ~ "-" ~ Date.now().toStringForFilename()
+        ~ basics.globals.filenameExtReplay;
     saveToFile(new Filename(outfile), lev);
 }
 
@@ -387,7 +394,7 @@ loadFromFile(Filename fn)
         if (   i.text1 == replayPlayer
             || i.text1 == replayFriend
         ) {
-            add_player(i.nr1 & 0xFF, stringToStyle(i.text2), i.text3);
+            addPlayer(i.nr1 & 0xFF, stringToStyle(i.text2), i.text3);
             if (i.text1 == replayPlayer)
                 playerLocal = i.nr1 & 0xFF;
         }

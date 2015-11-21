@@ -45,7 +45,6 @@ bool scrollMiddle      = true;
 bool replayCancel      = true;
 int  replayCancelAt   = 30;
 int  mouseSpeed        = 20;
-int  mouseAcceleration = 0;
 int  scrollSpeedEdge  = 5;
 int  scrollSpeedClick = 6;
 bool multipleBuilders  = true;
@@ -366,7 +365,6 @@ void load()
         if      (i.text1 == userOptionGroup         ) optionGroup          = i.nr1;
 
         else if (i.text1 == userMouseSpeed          ) mouseSpeed           = i.nr1;
-        else if (i.text1 == userMouseAcceleration   ) mouseAcceleration    = i.nr1;
         else if (i.text1 == userScrollSpeedEdge     ) scrollSpeedEdge      = i.nr1;
         else if (i.text1 == userScrollSpeedClick    ) scrollSpeedClick     = i.nr1;
         else if (i.text1 == userScrollEdge          ) scrollEdge           = i.nr1 > 0;
@@ -516,7 +514,6 @@ nothrow void save()
         f.writeln();
 
         fwr(IoLine.Hash(userMouseSpeed,             mouseSpeed));
-        fwr(IoLine.Hash(userMouseAcceleration,      mouseAcceleration));
         fwr(IoLine.Hash(userScrollSpeedEdge,        scrollSpeedEdge));
         fwr(IoLine.Hash(userScrollSpeedClick,       scrollSpeedClick));
         fwr(IoLine.Hash(userScrollEdge,             scrollEdge));

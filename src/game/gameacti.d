@@ -75,7 +75,7 @@ private struct PotentialAssignee {
 private void
 handleSpawnIntervalButtons(Game game) { with (game)
 {
-    if (isMultiplayerGame)
+    if (multiplayer)
         // rulings forbid changing the spawn interval in multiplayer
         return;
 
@@ -194,7 +194,7 @@ findPotentialAssignee(Game game) { with (game)
     if (leftFound && rightFound)
         pan.stats.suggestTooltipForceDirection();
 
-    mouseCursor.xf = (forceLeft ? 1 : forceRight ? 2 : 0);
+    mouseCursor.xf = (forceLeft ? 1 : forceRight ? 2 : mouseCursor.xf);
     mouseCursor.yf = (lixesUnderCursor > 0);
 
     pan.stats.targetDescriptionNumber = lixesUnderCursor;

@@ -133,7 +133,6 @@ immutable userLanguage               = "LANGUAGE";
 immutable userOptionGroup            = "OPTION_GROUP";
 
 immutable userMouseSpeed             = "MOUSE_SPEED";
-immutable userMouseAcceleration      = "MOUSE_ACCELERATION";
 immutable userScrollSpeedEdge        = "SCROLL_SPEED_EDGE";
 immutable userScrollSpeedClick       = "SCROLL_SPEED_CLICK";
 immutable userScrollEdge             = "SCROLL_EDGE";
@@ -164,7 +163,7 @@ immutable userReplayLastLevel  = "REPLAY_LAST_LEVEL";
 immutable userNetworkLastStyle = "NETWORK_LAST_STYLE";
 
 immutable userReplayAutoSingleSolutions = "REPLAY_AUTO_SAVE_SINGLE_SOLUTIONS";
-immutable userReplayAutoSingleFailures  = "REPLAY_AUTO_SAVE_SINGLE_FAILS";
+immutable userReplayAutoSingleFailures  = "REPLAY_AUTO_SAVE_SINGLE_FAILURES";
 immutable userReplayAutoMulti           = "REPLAY_AUTO_SAVE_MULTI";
 
 immutable userEditorLastDirTerrain = "EDITOR_LAST_DIR_TERRAIN";
