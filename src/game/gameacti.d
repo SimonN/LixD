@@ -156,9 +156,11 @@ findPotentialAssignee(Game game) { with (game)
     const(SkillButton) currentSkill = game.pan.currentSkill;
 
     assert (map.zoom > 0);
-    immutable int mmldX = 16 / map.zoom;
-    immutable int mmldU = 26 / map.zoom;
-    immutable int mmldD = 12 / map.zoom;
+
+    immutable int cursorThicknessOnLand = 12 / map.zoom;
+    immutable int mmldX = cursorThicknessOnLand +  2; // + lix thickness
+    immutable int mmldU = cursorThicknessOnLand + 15; // + lix height
+    immutable int mmldD = cursorThicknessOnLand +  0;
 
     immutable int mx = map.mouseOnLandX;
     immutable int my = map.mouseOnLandY;
