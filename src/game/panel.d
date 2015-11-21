@@ -217,9 +217,12 @@ calcSelf()
         setSpeedTo(speedFast.xf == frameTurbo ? 1 : 3);
     }
 
+    SkillButton oldSkill = currentSkill();
     foreach (skill; skills)
         if (skill.execute)
             handleExecutingSkillButton(skill);
+    if (currentSkill !is oldSkill)
+        hardware.sound.playLoud(Sound.PANEL);
 }
 
 }

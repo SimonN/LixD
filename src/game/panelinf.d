@@ -33,7 +33,7 @@ class PanelStats : Button {
     {
         if (_targetDescNumber != a) {
             _targetDescNumber = a;
-            reqDraw();
+            // reqDraw();
         }
         return a;
     }
@@ -43,7 +43,7 @@ class PanelStats : Button {
     {
         if (_targetDescLixxie !is l) {
             _targetDescLixxie = l;
-            reqDraw();
+            // reqDraw();
         }
         return l;
     }
@@ -69,8 +69,8 @@ private:
         assert (  _targetDescNumber >= 0,
             format("_targetDescNumber == %d, not >= 0", _targetDescNumber));
         assert ( (_targetDescNumber == 0) == (_targetDescLixxie is null),
-            format("_targetDescLixxie == %x, but _targetDescNumber == %d",
-            _targetDescLixxie, _targetDescNumber));
+            format("_targetDescLixxie %s, but _targetDescNumber == %d",
+            _targetDescLixxie ? "exists" : "null", _targetDescNumber));
     }
     body {
         _targetDesc.text = (! _targetDescLixxie) ? "" : format("%d %s%s",
