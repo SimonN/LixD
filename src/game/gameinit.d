@@ -71,8 +71,8 @@ prepareLand(Game game) { with (game)
         drawTerrainTo(cs.land, cs.lookup);
     }
 
-    map = new Map(cs.land, Geom.screenXls.to!int, Geom.screenYls.to!int
-        * (Geom.panelYlDivisor - 1) / Geom.panelYlDivisor);
+    map = new Map(cs.land, Geom.screenXls.to!int,
+                          (Geom.screenYls - Geom.panelYls).to!int);
 
     Lixxie.setStaticMaps(&cs.land, &cs.lookup, map);
 }}

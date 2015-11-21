@@ -104,14 +104,30 @@ class Geom {
     @property static float screenXls() { return _screenXls; }
     @property static float screenYls() { return _screenYls; }
 
-    // 1 / (return value) is the ratio of vertical space occupied by the game's
-    // and editor's panels. Higher values mean less space occupied by panels.
-    @property static int
-    panelYlDivisor()
-    {
-        return _screenXlg > 700 ? 5  // widescreen
-                                 : 6; // 4:3 screen
+    @property static float
+    mapYls()
+    out (result) {
+        assert (result >= 0);
+        assert (result <= screenYls);
     }
+    body {
+        // 1 / (return value) is the ratio of vertical space occupied by the
+        // game/editor panels. Higher values mean less y-space for panels.
+        int panelYlgDivisor()
+        {
+            return _screenXlg > 700 ? 5  // widescreen
+                                    : 6; // 4:3 screen or taller
+        }
+        // The remaining pixels (for the map above the panel) should be a
+        // multiple of the max zoom level, to make the zoom look nice.
+        enum int multipleForZoom = 4;
+        float mapYls = _screenYls - (_screenYls / panelYlgDivisor);
+        mapYls = floor(mapYls / multipleForZoom) * multipleForZoom;
+        return mapYls;
+    }
+
+    @property static float panelYls() { return screenYls - mapYls;       }
+    @property static float panelYlg() { return panelYls / stretchFactor; }
 
     // this function is called from gui.root, when that is initialized
     static void

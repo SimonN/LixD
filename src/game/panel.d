@@ -46,8 +46,7 @@ public:
 
 this()
 {
-    super(new Geom(0, 0, Geom.screenXlg,
-                         Geom.screenYlg / Geom.panelYlDivisor, From.BOTTOM));
+    super(new Geom(0, 0, Geom.screenXlg, Geom.panelYlg, From.BOTTOM));
 
     stats = new PanelStats(new Geom(0, 0, this.xlg - skillXl,
                            this.ylg - skillYl, From.TOP_LEFT));

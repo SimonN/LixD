@@ -87,8 +87,11 @@ private:
 
     @property int minX() const { return cameraZoomedXl / 2; }
     @property int minY() const { return cameraZoomedYl / 2; }
-    @property int maxX() const { return xl - minX; }
-    @property int maxY() const { return yl - minY; }
+    @property int maxX() const { return xl - cameraZoomedXl + minX; }
+    @property int maxY() const { return yl - cameraZoomedYl + minY; }
+    // Why not simply maxX = xl - minX? If cameraZoomedXl is odd, dividing
+    // by 2 discards length, and we want (maxX - minX) == cameraZoomedXl
+    // exactly. This prevents scrolling too far on strong zoom.
 
 
 
