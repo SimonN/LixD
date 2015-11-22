@@ -292,7 +292,8 @@ assignToPotentialAssignee(
     }
 
     hardware.sound.playLoud(Sound.ASSIGN);
-    effect.addSound(cs.update + 1, tribeLocal, potAss.id, Sound.ASSIGN);
+    effect.addSound(cs.update + 1, tribeID(tribeLocal),
+                    potAss.id, Sound.ASSIGN);
 
     // Decrease the visible number on the panel. This is mostly eye candy.
     // It doesn't affect physics, including judging what's coming in over

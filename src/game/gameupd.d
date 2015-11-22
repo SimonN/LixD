@@ -130,16 +130,16 @@ updateOneData(
             || (basics.user.arrowsNetwork
                 && multiplayer && ! replaying && *master !is masterLocal)
         ) {
+            // DTODOEFFECTS
             /+
             Arrow arr(map, t.style, lix.get_ex(), lix.get_ey(),
                 psk->first, upd, i->what);
             effect.add_arrow(upd, t, i->what, arr);
             +/
         }
-        if (*master is masterLocal)
-            effect.addSound(upd, tribe, i.toWhichLix, Sound.ASSIGN);
-        else if (tribe is tribeLocal)
-            effect.addSoundQuiet(upd, tribe, i.toWhichLix, Sound.ASSIGN);
+        if (tribe is tribeLocal)
+            effect.addSound(upd, tribeID(tribe), i.toWhichLix, Sound.ASSIGN,
+                (*master is masterLocal) ? Loudness.loud : Loudness.quiet);
     }
     // end of i.isSomeAssignment
     /+
@@ -320,13 +320,22 @@ updateNuke(Game game)
 void
 updateLixxies(Game game)
 {
+    UpdateArgs makeUpdateArgs(Tribe tr)
+    {
+        UpdateArgs ua;
+        ua.state   = game.cs;
+        ua.effect  = game.effect;
+        ua.tribe   = tr;
+        ua.tribeID = game.tribeID(tr);
+        return ua;
+    }
 
     // First pass: Update only workers and mark them
     foreach (tribe; game.cs.tribes) {
-        UpdateArgs ua = UpdateArgs(game.cs, tribe);
+        UpdateArgs ua = makeUpdateArgs(tribe);
         foreach (int id, lixxie; tribe.lixvec) {
             if (lixxie.ac > Ac.WALKER) {
-                ua.id = id;
+                ua.lixID = id;
                 lixxie.marked = true;
                 game.updateSingleLix(lixxie, ua);
             }
@@ -337,10 +346,10 @@ updateLixxies(Game game)
     }
     // Second pass: Update unmarkeded
     foreach (tribe; game.cs.tribes) {
-        UpdateArgs ua = UpdateArgs(game.cs, tribe);
+        UpdateArgs ua = makeUpdateArgs(tribe);
         foreach (int id, lixxie; tribe.lixvec)
             if (lixxie.marked == false) {
-                ua.id = id;
+                ua.lixID = id;
                 game.updateSingleLix(lixxie, ua);
             }
     }

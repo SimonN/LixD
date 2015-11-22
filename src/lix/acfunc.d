@@ -8,13 +8,16 @@ import lix;
 enum cPlusPlusPhysicsBugs = false;
 
 struct UpdateArgs {
-    GameState state;
-    Tribe     tribe;
-    int       id; // the lix's id, to pass to the effect manager
+    GameState     state;
+    EffectManager effect;
 
-    this(GameState _st, Tribe _tr, in int _id = 0)
+    Tribe tribe;
+    int   tribeID;
+    int   lixID;
+
+    deprecated this(GameState _st, Tribe _tr, in int _id = 0)
     {
-        state = _st; tribe = _tr, id = _id;
+        state = _st; tribe = _tr, lixID = _id;
     }
 }
 

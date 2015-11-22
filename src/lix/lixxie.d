@@ -50,7 +50,6 @@ public:
     static Torbit*       land;
     static Lookup*       lookup;
     static Map           groundMap;
-    static EffectManager effect;
 
     int queue; // builders and platformers can be queued in advance
 
@@ -541,18 +540,17 @@ void drawFrameToMapAsTerrain
 
 
 
-void playSound(in ref UpdateArgs ua, in Sound soundID)
+void playSound(ref UpdateArgs ua, in Sound soundID)
 {
-    assert (effect);
-    effect.addSound(ua.state.update, ua.tribe, ua.id, soundID);
+    ua.effect.addSound(ua.state.update, ua.tribeID, ua.lixID, soundID);
 }
 
 
 
-void playSoundIfTribeLocal(in ref UpdateArgs ua, in Sound soundID)
+void playSoundIfTribeLocal(ref UpdateArgs ua, in Sound soundID)
 {
-    assert (effect);
-    effect.addSoundIfTribeLocal(ua.state.update, ua.tribe, ua.id, soundID);
+    ua.effect.addSoundIfTribeLocal(ua.state.update,
+                                   ua.tribeID, ua.lixID, soundID);
 }
 
 

@@ -9,6 +9,8 @@ module game.game;
 
 public import basics.cmdargs : Runmode;
 
+import std.algorithm : find;
+
 import basics.alleg5;
 import basics.globals;
 import basics.help : len;
@@ -90,6 +92,16 @@ package:
         assert (cs, "null cs, shouldn't ever be null");
         assert (cs.tribes.length > _indexTribeLocal, "badly cloned cs");
         return cs.tribes[_indexTribeLocal];
+    }
+
+    @property int tribeID(const Tribe tr) const
+    out (result) {
+        assert (result < cs.tribes.length, "tribe must be findable in cs");
+    }
+    body {
+        assert (cs);
+        assert (cs.tribes.length > 0);
+        return cs.tribes.len - cs.tribes.find!"a is b"(tr).len;
     }
 
     @property ref inout(Tribe.Master) masterLocal() inout

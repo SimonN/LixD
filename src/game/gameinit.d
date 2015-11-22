@@ -64,11 +64,8 @@ implGameDestructor(Game game)
 private void
 prepareLand(Game game) { with (game)
 {
-    assert (effect is null);
-    assert (pan    is null);
-
-    effect = new EffectManager;
-    pan    = new Panel;
+    assert (pan is null);
+    pan = new Panel;
     gui.addElder(pan);
 
     cs = new GameState();
@@ -95,7 +92,11 @@ prepareLand(Game game) { with (game)
 private void
 preparePlayers(Game game) { with (game)
 {
+    assert (cs);
     assert (cs.tribes == null);
+    assert (effect is null);
+
+    effect = new EffectManager;
 
     // Make one singleplayer tribe. DTODONETWORK: Query the network to make
     // the correct number of tribes, with the correct masters in each.
@@ -103,6 +104,7 @@ preparePlayers(Game game) { with (game)
     cs.tribes[0].masters ~= Tribe.Master(0, basics.globconf.userName);
     _indexTribeLocal  = 0;
     _indexMasterLocal = 0;
+    effect.tribeLocal = 0;
 
     foreach (tr; cs.tribes) {
         tr.initial      = level.initial;

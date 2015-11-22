@@ -20,6 +20,8 @@ import file.search; // file exists
  *      library function.
  */
 
+enum Loudness { loud, quiet }
+
 enum Sound {
     NOTHING,
     DISKSAVE,    // Save a file to disk, from editor or replay
