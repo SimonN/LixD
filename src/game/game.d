@@ -14,6 +14,7 @@ import std.algorithm : find;
 import basics.alleg5;
 import basics.globals;
 import basics.help : len;
+import basics.nettypes : ReplayData;
 import file.filename;
 import game;
 import graphic.color;
@@ -65,6 +66,11 @@ package:
     int _indexMasterLocal;
 
     long altickLastUpdate;
+
+    // Assignments for the next update go in here, and are only written into
+    // the replay right before the update happens. If the replay is cut off,
+    // the undispatched data is not cut off with it.
+    ReplayData[] undispatchedAssignments;
 
     int _profilingGadgetCount;
 

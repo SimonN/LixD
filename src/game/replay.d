@@ -179,10 +179,10 @@ increaseEarlyDataToUpdate(in int upd)
 
 
 void
-eraseDataAfterUpdate(in int upd)
+deleteOnAndAfterUpdate(in int upd)
 {
     assert (upd >= 0);
-    _data = _data[0 .. dataSliceBeforeUpdate(upd + 1).length];
+    _data = _data[0 .. dataSliceBeforeUpdate(upd).length];
     touch();
 }
 

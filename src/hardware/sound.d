@@ -44,14 +44,13 @@ enum Sound {
     YIPPIE,      // Single player: Enough lixes saved
     NUKE,        // Nuke triggered
     OVERTIME,    // Beginning of overtime. DING!
+    SCISSORS,    // Snipping scissors when a replay is interrupted
 
     OUCH,        // Tumbler hits the ground and becomes a stunner
     SPLAT,       // Lix splats because of high drop distance
-    OHNO,        // L1-style exploder begins oh-no animation
     POP,         // L1-/L2-Exploder explodes
     BRICK,       // Builder/Platformer lays down his last three bricks
     STEEL,       // Ground remover hits steel and stops
-    JUMPER,      // Jumper assignment
     CLIMBER,     // Jumper sticks against the wall and starts to climb
     BATTER_MISS, // Batter doesn't hit anything
     BATTER_HIT,  // Batter hits something
@@ -103,14 +102,13 @@ void initialize()
     samples[Sound.YIPPIE]      = load("yippie.ogg");
     samples[Sound.NUKE]        = load("nuke.ogg");
     samples[Sound.OVERTIME]    = load("overtime.ogg");
+    samples[Sound.SCISSORS]    = load("scissors.ogg");
 
     samples[Sound.OUCH]        = load("ouch.ogg");
     samples[Sound.SPLAT]       = load("splat.ogg");
-    samples[Sound.OHNO]        = null; // load("ohno.ogg");
     samples[Sound.POP]         = load("pop.ogg");
     samples[Sound.BRICK]       = load("brick.ogg");
     samples[Sound.STEEL]       = load("steel.ogg");
-    samples[Sound.JUMPER]      = null; // load("jumper.ogg");
     samples[Sound.CLIMBER]     = load("climber.ogg");
     samples[Sound.BATTER_MISS] = load("bat_miss.ogg");
     samples[Sound.BATTER_HIT]  = load("bat_hit.ogg");

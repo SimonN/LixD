@@ -20,7 +20,9 @@ package void
 syncNetworkThenUpdateOnce(Game game)
 {
     game.putSpawnintChangesIntoReplay();
+    game.putUndispatchedAssignmentsIntoReplay();
     game.putNetworkDataIntoReplay();
+
     game.updateOnceWithoutSyncingNetwork();
 }
 
@@ -32,7 +34,9 @@ updateOnceWithoutSyncingNetwork(Game game)
 {
     assert (game);
     assert (game.cs);
+
     ++game.cs.update;
+
     game.evaluateReplayData();
     game.updateClock();
     game.spawnLixxiesFromHatches();
@@ -71,6 +75,47 @@ finalizeUpdateAnimateGadgets(Game game) {
 private:
 
 void putSpawnintChangesIntoReplay(Game game) { }
+
+void
+putUndispatchedAssignmentsIntoReplay(Game game) { with (game)
+{
+    if (undispatchedAssignments == null)
+        // don't cut the replay or anything
+        return;
+
+    // DTODO: Instead of setting pause to false here, don't dispatch all
+    // assignments in each logic cycle. Instead, introduce a variable of
+    // type ReplayData[] in the game to hold all assignments until the next
+    // update, and only dispatch them (including cutting off the replay)
+    // at that time. We want to prevent dispatching twice for the same update,
+    // thus cutting already-dispatched replay data.
+    pan.pause.on = false;
+
+    if (! multiplayer && cs.update <= replay.latestUpdate) {
+        replay.deleteOnAndAfterUpdate(cs.update);
+
+        // not an effect to be saved by the effect manager
+        // DTODO: Maybe delete/play sound already on generating the data, and
+        // still put the data into the replay only now. The benefit is that
+        // the sound plays faster. Also, there may be other events that
+        // snip the replay, not only this.
+        hardware.sound.playLoud(Sound.SCISSORS);
+    }
+
+    foreach (data; undispatchedAssignments) {
+        replay.add(data);
+        // DTODONETWORK
+        // Network::send_replay_data(data);
+        // or even better: network-send this data as soon as it is
+        // generated in game.gameacti, not only when the update happens,
+        // to combat lag wherever possible
+    }
+    undispatchedAssignments = null;
+}}
+// end void putUndispatchedAssignmentsIntoReplay()
+
+
+
 void putNetworkDataIntoReplay(Game game) { }
 
 

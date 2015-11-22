@@ -33,8 +33,9 @@ calcActive(Game game) { with (game)
 
     if (! pan.isMouseHere) {
         auto potAss = game.findPotentialAssignee();
-        if (potAss.lixxie !is null)
+        if (potAss.lixxie !is null) {
             game.assignToPotentialAssignee(potAss);
+        }
     }
     else
         pan.stats.targetDescriptionNumber = 0;
@@ -291,28 +292,20 @@ assignToPotentialAssignee(
         return;
     }
 
-    hardware.sound.playLoud(Sound.ASSIGN);
     effect.addSound(cs.update + 1, tribeID(tribeLocal),
                     potAss.id, Sound.ASSIGN);
 
-    // Decrease the visible number on the panel. This is mostly eye candy.
-    // It doesn't affect physics, including judging what's coming in over
-    // the network, but it affects our assignment code, e.g. further up
-    // in this very function on two rapid assignments.
     assert (replay);
     if (replay.getOnUpdateLixClicked(cs.update + 1, potAss.id,
                                      currentSkill.skill)
         && currentSkill.number != skillInfinity
     ) {
+        // Decrease the visible number on the panel. This is mostly eye candy.
+        // It doesn't affect physics, including judging what's coming in over
+        // the network, but it affects our assignment code, e.g. further up
+        // in this very function on two rapid assignments.
         currentSkill.number = currentSkill.number - 1;
     }
-
-    pan.pause.on = false;
-    // DTODO: Cut off the replay in case we are replaying right now.
-    // We should go into gameacti even while replaying. This needs lots of
-    // thinking, because we don't want to cut off the assignments we are
-    // making for the next update, but we want to cut off what has been
-    // (scheduled for the next update) a minute ago during our last attempt.
 
     ReplayData data = game.newReplayDataForNextUpdate();
     data.action     = forceLeft  ? RepAc.ASSIGN_LEFT
@@ -320,9 +313,7 @@ assignToPotentialAssignee(
                     :              RepAc.ASSIGN;
     data.skill      = currentSkill.skill;
     data.toWhichLix = potAss.id;
-    replay.add(data);
 
-    // DTODONETWORK
-    // Network::send_replay_data(data);
+    undispatchedAssignments ~= data;
 }}
-// end void assignToPotentialAssignee()
+// end PotentialAssignee assignToPotentialAssignee()
