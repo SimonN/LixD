@@ -69,14 +69,14 @@ class Builder : PerformedActivity {
     private void buildBrick()
     {
         // don't glitch up through steel, but still get killed by top of
-        // screen: first see whether trapped, then make brick. For the
-        // number 13, see walker.cpp, it's because they can ascend 12.
+        // screen: first see whether trapped, then make brick.
         // If we are fully inside terrain, we'll move down later.
-        fullyInsideTerrain = solidWallHeight(0, 2) >= 13;
-
+        fullyInsideTerrain = solidWallHeight(0, 2) > Walker.highestStepUp;
         assert (bricksLeft > 0);
-        drawBrick(-2, 0, 9, 1);
         --bricksLeft;
+        outsideWorld.physicsDrawer.add(TerrainChange(
+            TerrainChange.Type.builderBrick, style,
+            facingRight ? (ex - 2) : (ex - 8), ey));
         if (bricksLeft < 3 && skillsQueued == 0)
             playSoundIfTribeLocal(Sound.BRICK);
     }

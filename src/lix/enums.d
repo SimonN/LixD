@@ -3,8 +3,12 @@ module lix.enums;
 enum int exOffset = 16; // offset of the effective coordinate of the lix
 enum int eyOffset = 26; // sprite from the top left corner
 
-enum int skillInfinity = -1;  // for SkillButtons
-enum int skill_nr_max  = 999; // for SkillButtons
+enum int skillInfinity  = -1;
+enum int skillNumberMax = 999;
+
+enum int builderBrickXl    = 12;
+enum int platformerBrickXl = 8;
+enum int brickYl           = 2;
 
 Ac stringToAc(in string str)
 {

@@ -12,6 +12,7 @@ import basics.user;
 import file.language;
 import graphic.color;
 import graphic.gralib;
+import graphic.physdraw;
 import gui;
 import hardware.display;
 import hardware.mouse;
@@ -60,6 +61,7 @@ void initialize(in Cmdargs cmdargs)
     graphic.color.initialize();
     graphic.textout.initialize();
     graphic.gralib.initialize();
+    graphic.physdraw.initialize(cmdargs.mode);
 
     hardware.mousecur.initialize();
 
@@ -84,6 +86,7 @@ void deinitialize()
 
     core.memory.GC.collect();
 
+    graphic.physdraw.deinitialize();
     graphic.gralib.deinitialize();
     graphic.textout.deinitialize();
     graphic.color.deinitialize();

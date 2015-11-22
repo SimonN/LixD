@@ -19,6 +19,7 @@ import file.filename;
 import game;
 import graphic.color;
 import graphic.map;
+import graphic.physdraw;
 import gui;
 import level.level;
 
@@ -58,7 +59,7 @@ package:
 
     GameState cs; // current state
     StateManager stateManager;
-
+    PhysicsDrawer physicsDrawer;
     EffectManager effect;
     Panel pan;
 

@@ -46,20 +46,20 @@ public:
     @property bool torusX() const { return _tx; }
     @property bool torusY() const { return _ty; }
 
-/*  LoNr get                (int, int)                 const;
- *  bool get                (int, int, LoNr)           const;
- *  int  getRectangle      (int, int, int, int, LoNr) const;
- *  bool getSolid          (int, int)                 const;
+/*  LoNr get              (int, int)                 const;
+ *  bool get              (int, int, LoNr)           const;
+ *  int  getRectangle     (int, int, int, int, LoNr) const;
+ *  bool getSolid         (int, int)                 const;
  *  bool getSolidEven     (int, int)                 const;
- *  bool getSteel          (int, int)                 const;
+ *  bool getSteel         (int, int)                 const;
  *
- *  //                       x,   y,   xl,  yl,  bit &
- *  void rm                 (int, int,           LoNr);
- *  void add                (int, int,           LoNr);
- *  void addRectangle      (int, int, int, int, LoNr);
- *  void setSolid          (int, int);
+ *  //                     x,   y,   xl,  yl,  bit &
+ *  void rm               (int, int,           LoNr);
+ *  void add              (int, int,           LoNr);
+ *  void addRectangle     (int, int, int, int, LoNr);
+ *  void setSolid         (int, int);
  *  void setSolidRectangle(int, int, int, int);
- *  void setAir            (int, int);
+ *  void setAir           (int, int);
  *
  *  void saveToFile(in Filename) const;
  */

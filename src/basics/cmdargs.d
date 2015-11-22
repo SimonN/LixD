@@ -46,7 +46,7 @@ class Cmdargs {
     private string[] badSwitches;
     Filename[]       verifyFiles;
 
-    @property Runmode mode()
+    @property Runmode mode() const
     {
         if (badSwitches != null || versionAndExit || helpAndExit)
             return Runmode.PRINT_AND_EXIT;

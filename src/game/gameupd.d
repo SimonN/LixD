@@ -363,21 +363,23 @@ updateNuke(Game game)
 
 
 void
-updateLixxies(Game game)
+updateLixxies(Game game) { with (game)
 {
     lix.OutsideWorld makeGypsyWagon(int tribeID, int lixID)
     {
         OutsideWorld ow;
-        ow.state   = game.cs;
-        ow.effect  = game.effect;
-        ow.tribe   = game.cs.tribes[tribeID];
-        ow.tribeID = tribeID;
-        ow.lixID   = lixID;
+        ow.state         = cs;
+        ow.physicsDrawer = physicsDrawer;
+        ow.effect        = effect;
+        ow.tribe         = cs.tribes[tribeID];
+        ow.tribeID       = tribeID;
+        ow.lixID         = lixID;
         return ow;
     }
 
+    // DTODOPHYSICS: Implement geoo's nice split into many loops
     // First pass: Update only workers and mark them
-    foreach (int tribeID, tribe; game.cs.tribes) {
+    foreach (int tribeID, tribe; cs.tribes) {
         assert (tribeID == game.tribeID(tribe));
         foreach (int lixID, lixxie; tribe.lixvec) {
             if (lixxie.ac > Ac.WALKER) {
@@ -391,15 +393,19 @@ updateLixxies(Game game)
             }
         }
     }
+    physicsDrawer.processDeletions();
+    physicsDrawer.processAdditions();
 
     // Second pass: Update unmarked
-    foreach (int tribeID, tribe; game.cs.tribes)
+    foreach (int tribeID, tribe; cs.tribes)
         foreach (int lixID, lixxie; tribe.lixvec)
             if (lixxie.marked == false) {
                 auto ow = makeGypsyWagon(tribeID, lixID);
                 lixxie.outsideWorld = &ow;
                 game.updateSingleLix(lixxie);
             }
+    physicsDrawer.processDeletions();
+    physicsDrawer.processAdditions();
 
     /+
     // Third pass (if necessary): finally becoming flingers
@@ -410,7 +416,7 @@ updateLixxies(Game game)
                     // DTODO: What is this, where is it defined?
                     finally_fling(lixxie);
     +/
-}
+}}
 
 
 

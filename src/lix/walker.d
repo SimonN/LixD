@@ -23,6 +23,8 @@ setFrameAfterShortFallTo(PerformedActivity newAc, int targetFrame)
 
 class Walker : PerformedActivity {
 
+    enum highestStepUp = 12;
+
     mixin (CloneByCopyFrom!"Walker");
 
     override @property bool callBecomeAfterAssignment() const { return false; }
@@ -113,7 +115,7 @@ class Walker : PerformedActivity {
 
             if (abilityToClimb) {
                 bool enoughSpaceToClimb = true;
-                for (int i = 1; i < 13; ++i)
+                for (int i = 1; i <= highestStepUp; ++i)
                     if (isSolid(0, -i)) {
                         enoughSpaceToClimb = false;
                         break;
@@ -139,7 +141,7 @@ class Walker : PerformedActivity {
         if (isSolid() || isSolid(0, 1)) {
             // do the wall check to turn or ascend
             immutable int upBy = solidWallHeight(0);
-            if (upBy == 13)
+            if (upBy > highestStepUp)
                 return true;
             else if (upBy >= 6)
                 become(Ac.ASCENDER);

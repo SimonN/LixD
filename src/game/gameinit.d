@@ -10,6 +10,7 @@ import game;
 import graphic.map;
 import graphic.gadget;
 import graphic.torbit;
+import graphic.physdraw;
 import gui;
 import level.tile;
 import lix.lixxie; // setStaticMaps
@@ -74,6 +75,8 @@ prepareLand(Game game) { with (game)
         cs.lookup = new Lookup(sizeX, sizeY, torusX, torusY);
         drawTerrainTo(cs.land, cs.lookup);
     }
+
+    physicsDrawer = new PhysicsDrawer(cs.land, cs.lookup);
 
     map = new Map(cs.land, Geom.screenXls.to!int,
                           (Geom.screenYls - Geom.panelYls).to!int);

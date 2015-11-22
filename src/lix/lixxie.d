@@ -383,7 +383,7 @@ bool isSolidSingle(in int px = 0, in int py = 2)
 int solidWallHeight(in int px = 0, in int py = 0)
 {
     int solid = 0;
-    for (int i = 1; i > -12; --i) {
+    for (int i = 1; i > -Walker.highestStepUp; --i) {
         if (isSolid(px, py + i)) ++solid;
         else break;
     }
@@ -426,94 +426,6 @@ int countSteel(int x1, int y1, int x2, int y2)
 // ############# finished with the removal functions, now the drawing functions
 // ############################################################################
 
-
-
-bool removePixel(int px, in int py)
-{
-    // this amendmend is only in drawPixel() and removePixel()
-    if (_facingLeft) --px;
-
-    // test whether the landscape can be dug
-    if (! getSteel(px, py) && isSolid(px, py)) {
-        lookup.rm    (_ex + px * dir, _ey + py, Lookup.bitTerrain);
-        land.setPixel(_ex + px * dir, _ey + py, color.transp);
-        return false;
-    }
-    // Stahl?
-    else if (getSteel(px, py)) return true;
-    else return false;
-}
-
-
-
-void removePixelAbsolute(in int x, in int y)
-{
-    if (! getSteelAbsolute(x, y) && lookup.getSolid(x, y)) {
-        lookup.rm(x, y, Lookup.bitTerrain);
-        land.setPixel(x, y, color.transp);
-    }
-}
-
-
-
-bool removeRectangle(int x1, int y1, int x2, int y2)
-{
-    if (x2 < x1) swap(x1, x2);
-    if (y2 < y1) swap(y1, y2);
-    bool ret = false;
-    for (int ix = x1; ix <= x2; ++ix) {
-        for (int iy = y1; iy <= y2; ++iy) {
-            // return true if at least one pixel has been steel
-            if (removePixel(ix, iy)) ret = true;
-        }
-    }
-    return ret;
-}
-
-
-
-// like removePixel
-void drawPixel(int px, in int py, in AlCol col)
-{
-    // this amendmend is only in drawPixel() and removePixel()
-    if (_facingLeft) --px;
-
-    if (! isSolidSingle(px, py)) addLand(px, py, col);
-}
-
-
-
-void drawRectangle(int x1, int y1, int x2, int y2, in AlCol col)
-{
-    if (x2 < x1) swap(x1, x2);
-    if (y2 < y1) swap(y1, y2);
-    for (int ix = x1; ix <= x2; ++ix)
-        for (int iy = y1; iy <= y2; ++iy)
-            drawPixel(ix, iy, col);
-}
-
-
-
-void drawBrick(int x1, int y1, int x2, int y2)
-{
-    // assert (false, "DTODO: implement lixxie.drawBrick. Cache the colors!");
-    /*
-    const int col_l = get_cutbit()->get_pixel(19, LixEn::BUILDER - 1, 0, 0);
-    const int col_m = get_cutbit()->get_pixel(20, LixEn::BUILDER - 1, 0, 0);
-    const int col_d = get_cutbit()->get_pixel(21, LixEn::BUILDER - 1, 0, 0);
-
-    draw_rectangle(x1 + (dir<0), y1, x2 - (dir>0), y1, col_l);
-    draw_rectangle(x1 + (dir>0), y2, x2 - (dir<0), y2, col_d);
-    if (dir > 0) {
-        draw_pixel(x2, y1, col_m);
-        draw_pixel(x1, y2, col_m);
-    }
-    else {
-        draw_pixel(x1, y1, col_m);
-        draw_pixel(x2, y2, col_m);
-    }
-    */
-}
 
 
 
