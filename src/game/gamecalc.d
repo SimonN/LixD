@@ -31,7 +31,6 @@ updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
     // the panel itself, in Panel.calcSelf().
     if (   pan.speedBack.executeLeft
         || pan.speedBack.executeRight
-        || pan.restart.execute
     ) {
         int whatUpdateToLoad
             = pan.speedBack.executeLeft  ? cs.update - 1
@@ -42,8 +41,12 @@ updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
                    : stateManager.autoBeforeUpdate(whatUpdateToLoad + 1);
         assert (state, "we should get at laest some state here");
         assert (stateManager.zeroState, "zero state is bad");
-        game.loadStateAffectAltickLastUpdate(state);
+        game.loadStateFramestepping(state, whatUpdateToLoad);
         upd(whatUpdateToLoad - cs.update);
+    }
+    else if (pan.restart.execute) {
+        assert (stateManager.zeroState, "want to load zero state, but cannot");
+        game.loadStateManually(stateManager.zeroState);
     }
     else if (pan.speedAhead.executeLeft) {
         upd();
@@ -68,22 +71,31 @@ updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
 
 
 
-package void
-loadStateWithoutAffectingAltickLastUpdate(Game game, in GameState state)
+private void
+loadStateFramestepping(Game game, in GameState state, in int toUpdate)
 {
     if (state) {
         game.cs = state.clone();
-        game.effect.deleteAfter(game.cs.update);
+        game.effect.deleteAfter(toUpdate);
     }
 }
 
 
 
 package void
-loadStateAffectAltickLastUpdate(Game game, in GameState state) { with (game)
+loadStateDuringPhysicsUpdate(Game game, in GameState state)
+{
+    if (state)
+        loadStateFramestepping(game, state, state.update);
+}
+
+
+
+private void
+loadStateManually(Game game, in GameState state) { with (game)
 {
     if (state) {
-        game.loadStateWithoutAffectingAltickLastUpdate(state);
+        game.loadStateDuringPhysicsUpdate(state);
         game.finalizeUpdateAnimateGadgets();
         altickLastUpdate = al_get_timer_count(basics.alleg5.timer);
     }

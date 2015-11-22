@@ -68,8 +68,7 @@ implGameDraw(Game game) { with (game)
             10, 10, graphic.color.color.white);
         drawText(djvuM, std.string.format("Frames per second: %d",
             displayFps), 10, 40, graphic.color.color.white);
-        drawText(djvuM, std.string.format("Mouse on land: (%d, %d)",
-            map.mouseOnLandX, map.mouseOnLandY),
+        drawText(djvuM, effect.toString(),
             10, 70, graphic.color.color.white);
     }
 

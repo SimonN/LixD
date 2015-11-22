@@ -10,6 +10,7 @@ import file.search; // file exists
 /*  void initialize();
  *  void deinitialize();
  *
+ *  void play       (in Sound, in Loudness);
  *  void playLoud   (in Sound);
  *  void playQuiet  (in Sound);
  *  void playLoudIf(in Sound, in bool);
@@ -136,6 +137,15 @@ void deinitialize()
     al_uninstall_audio();
 }
 
+
+
+void play(in Sound id, in Loudness loudness)
+{
+    final switch (loudness) {
+        case Loudness.loud:  playLoud(id);  break;
+        case Loudness.quiet: playQuiet(id); break;
+    }
+}
 
 
 

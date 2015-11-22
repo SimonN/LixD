@@ -2,7 +2,6 @@ module game.effect;
 
 import std.container.rbtree;
 
-import game;
 import hardware.sound;
 
 struct Effect {
@@ -36,16 +35,21 @@ class EffectManager {
         _tree = new RedBlackTree!Effect;
     }
 
-    void addSoundGeneral(in int upd, in Sound sound)
-    {
-        addSound(upd, -1, 0, sound, Loudness.loud);
+    void addSoundGeneral(in int upd,
+        in Sound sound, in Loudness loudness = Loudness.loud
+    ) {
+        addSound(upd, tribeLocal, 0, sound, loudness);
     }
 
     void addSound(
         in int upd, in int tribe, in int lix,
         in Sound sound, in Loudness loudness = Loudness.loud
     ) {
-        _tree.insert(Effect(upd, tribe, lix, sound, loudness));
+        Effect e = Effect(upd, tribe, lix, sound, loudness);
+        if (e !in _tree) {
+            _tree.insert(e);
+            hardware.sound.play(sound, loudness);
+        }
     }
 
     void addSoundIfTribeLocal(
@@ -53,20 +57,24 @@ class EffectManager {
         in Sound sound, in Loudness loudness = Loudness.loud
     ) {
         if (tribe == tribeLocal)
-            _tree.insert(Effect(upd, tribe, lix, sound, loudness));
+            addSound(upd, tribe, lix, sound, loudness);
     }
 
     void deleteAfter(in int upd)
-    {
-        Effect e = Effect(upd, -1 , 0, Sound.NOTHING);
-        _tree.remove(_tree.upperBound(e));
-        _tree.remove(_tree.equalRange(e));
+    out {
+        foreach (e; _tree)
+            assert (e.update <= upd);
+    }
+    body {
+        _tree.remove(_tree.upperBound(Effect(upd + 1, -1 , 0, Sound.NOTHING)));
     }
 
-    auto effectsForUpdate(in int upd) const
+    override string toString() const
     {
-        Effect allWantedAreLargerThanMe = Effect(upd, -1 , 0, Sound.NOTHING);
-        return _tree.upperBound(allWantedAreLargerThanMe);
+        int[] arr;
+        foreach (e; _tree)
+            arr ~= e.update;
+        import std.conv;
+        return arr.to!string();
     }
-
 }
