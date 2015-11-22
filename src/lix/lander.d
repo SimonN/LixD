@@ -16,7 +16,7 @@ class Lander : PerformedActivity {
         }
     }
 
-    override void performActivity(UpdateArgs)
+    override void performActivity()
     {
         if (isLastFrame)
             become(Ac.WALKER);

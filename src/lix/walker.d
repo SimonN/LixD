@@ -76,19 +76,19 @@ class Walker : PerformedActivity {
 
 
 
-    override void performActivity(UpdateArgs ua)
+    override void performActivity()
     {
         if (isLastFrame)
             frame = 3;
         else
             advanceFrame();
 
-        performWalkingOrRunning(ua);
+        performWalkingOrRunning();
     }
 
 
 
-    protected final void performWalkingOrRunning(UpdateArgs ua)
+    protected final void performWalkingOrRunning()
     {
         immutable oldEx = ex;
         immutable oldEy = ey;
@@ -202,7 +202,7 @@ class Runner : Walker {
         this.setFrameAfterShortFallTo(6);
     }
 
-    override void performActivity(UpdateArgs ua)
+    override void performActivity()
     {
         if (isLastFrame)
             frame = 1;
@@ -211,9 +211,9 @@ class Runner : Walker {
 
         // A runner performs two walker cycles per frame, unless stuff happens.
         immutable oldDir = dir;
-        performWalkingOrRunning(ua);
+        performWalkingOrRunning();
         if (lixxie.ac == Ac.RUNNER && oldDir == dir)
-            performWalkingOrRunning(ua);
+            performWalkingOrRunning();
     }
 
 }

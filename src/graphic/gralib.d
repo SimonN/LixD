@@ -14,6 +14,7 @@ import file.search;
 import hardware.display; // display startup progress
 import hardware.tharsis;
 import lix.enums;
+import lix.fields;
 
 /* Graphics library, loads spritesheets and offers them for use via string
  * lookup. This does not handle Lix terrain, special objects, or L1/L2 graphics
@@ -115,7 +116,7 @@ void initialize()
 
     auto lock = LockReadWrite(b);
 
-    lix.enums.countdown = new Matrix!XY(cb.xfs, cb.yfs);
+    lix.fields.countdown = new Matrix!XY(cb.xfs, cb.yfs);
 
     // fx, fy = which x- respective y-frame
     // x,  y  = which pixel inside this frame, offset from frame's top left

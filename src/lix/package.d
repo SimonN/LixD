@@ -12,6 +12,7 @@ public import lix.digger;
 public import lix.enums;
 public import lix.exploder;
 public import lix.faller;
+public import lix.fields;
 public import lix.floater;
 public import lix.lander;
 public import lix.leaving;

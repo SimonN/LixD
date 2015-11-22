@@ -1,25 +1,13 @@
 module lix.acfunc;
 
+public import game.tribe;
+
 import game;
 import lix;
 
 // Mimic behavior of A4/C++ Lix as precisely as possible? Might help testing
 // old replays. This flag can be removed after the D port got widespread.
 enum cPlusPlusPhysicsBugs = false;
-
-struct UpdateArgs {
-    GameState     state;
-    EffectManager effect;
-
-    Tribe tribe;
-    int   tribeID;
-    int   lixID;
-
-    deprecated this(GameState _st, Tribe _tr, in int _id = 0)
-    {
-        state = _st; tribe = _tr, lixID = _id;
-    }
-}
 
 template CloneByCopyFrom(string derivedClass) {
     immutable string CloneByCopyFrom = "
@@ -50,10 +38,10 @@ public:
 
     @property bool  callBecomeAfterAssignment() const { return true; }
 
-    void onManualAssignment()        { } // while Lix has old performed ac!
-    void onBecome()                  { } // after manual ass., still while old
-    void performActivity(UpdateArgs) { } // the main method to override
-    void onBecomingSomethingElse()   { } // e.g. return leftover builders
+    void onManualAssignment()      { } // while Lix has old performed ac!
+    void onBecome()                { } // initialization, still while old
+    void performActivity()         { } // the main method to override
+    void onBecomingSomethingElse() { } // tribe to, e.g., return builders
 
     abstract PerformedActivity cloneAndBindToLix(Lixxie) const;
 

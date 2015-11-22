@@ -1,14 +1,10 @@
 module lix.enums;
 
-import basics.matrix;
+enum int exOffset = 16; // offset of the effective coordinate of the lix
+enum int eyOffset = 26; // sprite from the top left corner
 
-const int exOffset = 16; // offset of the effective coordinate of the lix
-const int eyOffset = 26; // sprite from the top left corner
-
-const int skillInfinity = -1;  // for SkillButtons
-const int skill_nr_max   = 999; // for SkillButtons
-
-Matrix!XY countdown;
+enum int skillInfinity = -1;  // for SkillButtons
+enum int skill_nr_max  = 999; // for SkillButtons
 
 Ac stringToAc(in string str)
 {

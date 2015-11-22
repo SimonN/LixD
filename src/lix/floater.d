@@ -16,6 +16,8 @@ class Floater : PerformedActivity {
     override @property bool canPassTop() const { return true; }
     override @property bool callBecomeAfterAssignment() const { return false; }
 
+    override void onManualAssignment() { abilityToFloat = true; }
+
     override void
     onBecome()
     {
@@ -27,7 +29,7 @@ class Floater : PerformedActivity {
     }
 
     override void
-    performActivity(UpdateArgs ua)
+    performActivity()
     {
     }
 }

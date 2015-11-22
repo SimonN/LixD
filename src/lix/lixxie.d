@@ -47,9 +47,11 @@ public:
 
     static immutable int updatesForBomb = 75;
 
-    static Torbit*       land;
-    static Lookup*       lookup;
-    static Map           groundMap;
+    static Torbit* land;
+    static Lookup* lookup;
+    static Map     groundMap;
+
+    OutsideWorld* outsideWorld; // set this before each physics update anew
 
     int queue; // builders and platformers can be queued in advance
 
@@ -494,7 +496,7 @@ void drawRectangle(int x1, int y1, int x2, int y2, in AlCol col)
 
 void drawBrick(int x1, int y1, int x2, int y2)
 {
-    assert (false, "DTODO: implement lixxie.drawBrick. Cache the colors!");
+    // assert (false, "DTODO: implement lixxie.drawBrick. Cache the colors!");
     /*
     const int col_l = get_cutbit()->get_pixel(19, LixEn::BUILDER - 1, 0, 0);
     const int col_m = get_cutbit()->get_pixel(20, LixEn::BUILDER - 1, 0, 0);
@@ -540,17 +542,20 @@ void drawFrameToMapAsTerrain
 
 
 
-void playSound(ref UpdateArgs ua, in Sound soundID)
+void playSound(in Sound sound)
 {
-    ua.effect.addSound(ua.state.update, ua.tribeID, ua.lixID, soundID);
+    outsideWorld.effect.addSound(
+        outsideWorld.state.update, outsideWorld.tribeID, outsideWorld.lixID,
+        sound);
 }
 
 
 
-void playSoundIfTribeLocal(ref UpdateArgs ua, in Sound soundID)
+void playSoundIfTribeLocal(in Sound sound)
 {
-    ua.effect.addSoundIfTribeLocal(ua.state.update,
-                                   ua.tribeID, ua.lixID, soundID);
+    outsideWorld.effect.addSoundIfTribeLocal(
+        outsideWorld.state.update, outsideWorld.tribeID, outsideWorld.lixID,
+        sound);
 }
 
 
@@ -774,10 +779,10 @@ void assignManually(in Ac newAc)
 
 
 
-void performActivity(UpdateArgs ua)
+void performActivity()
 {
     assert (_perfAc);
-    _perfAc.performActivity(ua);
+    _perfAc.performActivity();
 }
 
 }

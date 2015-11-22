@@ -48,7 +48,7 @@ class Ascender : PerformedActivity {
 
 
 
-    override void performActivity(UpdateArgs)
+    override void performActivity()
     {
         if (frame != 5)
             moveUp();

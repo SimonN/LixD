@@ -23,7 +23,7 @@ class Faller : PerformedActivity {
     override @property bool canPassTop() const { return true; }
 
     override void
-    performActivity(UpdateArgs)
+    performActivity()
     {
         int ySpeedThisFrame = 0;
 

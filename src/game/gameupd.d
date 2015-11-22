@@ -365,39 +365,42 @@ updateNuke(Game game)
 void
 updateLixxies(Game game)
 {
-    UpdateArgs makeUpdateArgs(Tribe tr)
+    lix.OutsideWorld makeGypsyWagon(int tribeID, int lixID)
     {
-        UpdateArgs ua;
-        ua.state   = game.cs;
-        ua.effect  = game.effect;
-        ua.tribe   = tr;
-        ua.tribeID = game.tribeID(tr);
-        return ua;
+        OutsideWorld ow;
+        ow.state   = game.cs;
+        ow.effect  = game.effect;
+        ow.tribe   = game.cs.tribes[tribeID];
+        ow.tribeID = tribeID;
+        ow.lixID   = lixID;
+        return ow;
     }
 
     // First pass: Update only workers and mark them
-    foreach (tribe; game.cs.tribes) {
-        UpdateArgs ua = makeUpdateArgs(tribe);
-        foreach (int id, lixxie; tribe.lixvec) {
+    foreach (int tribeID, tribe; game.cs.tribes) {
+        assert (tribeID == game.tribeID(tribe));
+        foreach (int lixID, lixxie; tribe.lixvec) {
             if (lixxie.ac > Ac.WALKER) {
-                ua.lixID = id;
+                auto ow = makeGypsyWagon(tribeID, lixID);
+                lixxie.outsideWorld = &ow;
                 lixxie.marked = true;
-                game.updateSingleLix(lixxie, ua);
+                game.updateSingleLix(lixxie);
             }
             else {
                 lixxie.marked = false;
             }
         }
     }
-    // Second pass: Update unmarkeded
-    foreach (tribe; game.cs.tribes) {
-        UpdateArgs ua = makeUpdateArgs(tribe);
-        foreach (int id, lixxie; tribe.lixvec)
+
+    // Second pass: Update unmarked
+    foreach (int tribeID, tribe; game.cs.tribes)
+        foreach (int lixID, lixxie; tribe.lixvec)
             if (lixxie.marked == false) {
-                ua.lixID = id;
-                game.updateSingleLix(lixxie, ua);
+                auto ow = makeGypsyWagon(tribeID, lixID);
+                lixxie.outsideWorld = &ow;
+                game.updateSingleLix(lixxie);
             }
-    }
+
     /+
     // Third pass (if necessary): finally becoming flingers
     if (Lixxie.anyNewFlingers)
@@ -411,7 +414,7 @@ updateLixxies(Game game)
 
 
 
-void updateSingleLix(Game game, Lixxie l, UpdateArgs ua)
+void updateSingleLix(Game game, Lixxie l)
 {
-    l.performActivity(ua);
+    l.performActivity();
 }
