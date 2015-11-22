@@ -10,10 +10,11 @@ import file.filename;
 immutable nameOfTheGame = "Lix";
 immutable homepageURL   = "asdfasdf.ethz.ch/~simon";
 
-immutable int ticksPerSecond      = 60;
-immutable int ticksForDoubleClick = 20; // 1/3 of a second at 60 ticks/sec
+enum int ticksPerSecond       = 60;
+enum int ticksForDoubleClick  = 20; // 1/3 of a second at 60 ticks/sec
 
-immutable int playerNameMaxLength = 30;
+enum int playerNameMaxLength  = 30;
+enum int mouseStandardDivisor = 20;
 
 immutable netIPLocalhost        = "127.0.0.1";
 immutable errorWrongWorkingDir  = "Wrong working directory!\n"

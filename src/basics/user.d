@@ -43,14 +43,14 @@ bool scrollEdge        = true;
 bool scrollRight       = true;
 bool scrollMiddle      = true;
 bool replayCancel      = true;
-int  replayCancelAt   = 30;
-int  mouseSpeed        = 20;
-int  scrollSpeedEdge  = 5;
-int  scrollSpeedClick = 6;
+int  replayCancelAt    = 30;
+int  mouseSpeed        = basics.globals.mouseStandardDivisor;
+int  scrollSpeedEdge   = basics.globals.mouseStandardDivisor;
+int  scrollSpeedClick  = basics.globals.mouseStandardDivisor;
 bool multipleBuilders  = true;
 bool batterPriority    = true;
-bool priorityInvertMiddle     = true;
-bool priorityInvertRight      = true;
+bool priorityInvertMiddle = true;
+bool priorityInvertRight  = true;
 
 int  soundVolume       = 10;
 

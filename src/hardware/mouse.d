@@ -52,8 +52,6 @@ private:
     int  _mickeyLeftoverX; // leftover movement from the previous mickeys,
     int  _mickeyLeftoverY; // yet unspent to _mouseOwnXy, for smoothening
 
-    immutable int _divid = 20; // divide mickeys by this for mouse speed
-
     // The mouse has 3 buttons: #0 is left, #1 is right, #2 is middle.
     bool[3] _mouseClick;   // there just was a single click
     bool[3] _mouseDouble;  // there just was a double click
@@ -117,8 +115,7 @@ void calc()
     int mouseCurY = yl / 2;
 
     // I will adhere to my convention from C++/A4 Lix to multiply all incoming
-    // mouse movements by the mouse speed, and then later divide by the
-    // constant "_divid".
+    // mouse movements by the mouse speed, and then later divide by constant
     ALLEGRO_EVENT event;
     while (al_get_next_event(_queue, &event)) {
         // discard mouse events that do not pertain to our display
@@ -166,10 +163,10 @@ void calc()
             break;
         }
     }
-    _mouseOwnX      += _mickeyX / _divid;
-    _mouseOwnY      += _mickeyY / _divid;
-    _mickeyLeftoverX = _mickeyX % _divid; // here we want signed %
-    _mickeyLeftoverY = _mickeyY % _divid;
+    _mouseOwnX      += _mickeyX / mouseStandardDivisor;
+    _mouseOwnY      += _mickeyY / mouseStandardDivisor;
+    _mickeyLeftoverX = _mickeyX % mouseStandardDivisor; // we want signed %
+    _mickeyLeftoverY = _mickeyY % mouseStandardDivisor;
 
     if (_mouseOwnX < 0)   _mouseOwnX = 0;
     if (_mouseOwnY < 0)   _mouseOwnY = 0;
@@ -221,10 +218,9 @@ void centerMouse()
 void freezeMouseX()
 {
     immutable int xl = al_get_display_width(display);
-    _mouseOwnX -= _mickeyX / _divid;
+    _mouseOwnX -= _mickeyX / mouseStandardDivisor;
     if (_mouseOwnX < 0)   _mouseOwnX = 0;
     if (_mouseOwnX >= xl) _mouseOwnX = xl - 1;
-    _mickeyX = 0;
 }
 
 
@@ -232,8 +228,7 @@ void freezeMouseX()
 void freezeMouseY()
 {
     immutable int yl = al_get_display_height(display);
-    _mouseOwnY -= _mickeyY / _divid;
+    _mouseOwnY -= _mickeyY / mouseStandardDivisor;
     if (_mouseOwnY < 0)   _mouseOwnY = 0;
     if (_mouseOwnY >= yl) _mouseOwnY = yl - 1;
-    _mickeyY = 0;
 }

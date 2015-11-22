@@ -121,22 +121,6 @@ invariant()
 
 
 
-private @property int
-scrollSpeedEdge()
-{
-    return basics.user.scrollSpeedEdge;
-}
-
-
-
-private @property int
-scrollSpeedClick()
-{
-    return basics.user.scrollSpeedClick;
-}
-
-
-
 private int cameraSetter(ref int camera, in int newCamera, in bool torus,
                          in int torbitLength, in int min, in int max)
 {
@@ -242,12 +226,15 @@ calcScrolling()
     }
 
     if (basics.user.scrollEdge) {
-        int scrd = this.scrollSpeedEdge;
-        if (hardware.mouse.mouseHeldRight()) scrd *= 4;
+        int scrd = basics.user.scrollSpeedEdge;
+        if (! hardware.mouse.mouseHeldRight())
+            scrd /= 4;
         if (_zoom > 1) {
             scrd += _zoom - 1;
             scrd /= _zoom;
         }
+        if (scrd < 1)
+            scrd = 1;
         immutable edgeR = hardware.display.displayXl - 1;
         immutable edgeU = hardware.display.displayYl - 1;
         // we don't care about this.mouseX/y, because we want to scroll
@@ -272,29 +259,28 @@ calcScrolling()
         scrollGrabbedY = hardware.mouse.mouseY();
     }
     if (scrollingContinues) {
-        immutable bool xp = scrollableRight();
-        immutable bool xm = scrollableLeft();
-        immutable bool yp = scrollableDown();
-        immutable bool ym = scrollableUp();
-        // now scroll the screen and possibly freeze the mouse
-        if ((xm && hardware.mouse.mouseX      () <= scrollGrabbedX
-                && hardware.mouse.mouseMickeyX() <  0)
-         || (xp && hardware.mouse.mouseX      () >= scrollGrabbedX
-                && hardware.mouse.mouseMickeyX() >  0))
-        {
-            cameraX = _cameraX + hardware.mouse.mouseMickeyX()
-                                 * this.scrollSpeedClick / 4;
-            hardware.mouse.freezeMouseX();
+        int clickScrollingOneDimension(in bool minus, in bool plus,
+            in int grabbed, in int mouse, in int mickey, in int cameraCurrent,
+            void function() freeze
+        ) {
+            int ret = cameraCurrent;
+            if (   (minus && mouse <= grabbed && mickey < 0)
+                || (plus  && mouse >= grabbed && mickey > 0)
+            ) {
+                ret += mickey * basics.user.scrollSpeedClick
+                    / basics.globals.mouseStandardDivisor / _zoom
+                    / 2; // no idea why it's still so fast, with / 2 it's OK
+                freeze();
+            }
+            return ret;
         }
-        if ((ym && hardware.mouse.mouseY      () <= scrollGrabbedY
-                && hardware.mouse.mouseMickeyY() <  0)
-         || (yp && hardware.mouse.mouseY      () >= scrollGrabbedY
-                && hardware.mouse.mouseMickeyY() >  0))
-        {
-            cameraY = cameraY + hardware.mouse.mouseMickeyY()
-                              * this.scrollSpeedClick / 4;
-            hardware.mouse.freezeMouseY();
-        }
+        cameraX = clickScrollingOneDimension(scrollableLeft, scrollableRight,
+            scrollGrabbedX, hardware.mouse.mouseX, hardware.mouse.mouseMickeyX,
+            _cameraX, &hardware.mouse.freezeMouseX);
+
+        cameraY = clickScrollingOneDimension(scrollableUp, scrollableDown,
+            scrollGrabbedY, hardware.mouse.mouseY, hardware.mouse.mouseMickeyY,
+            _cameraY, &hardware.mouse.freezeMouseY);
     }
     // end right-click scrolling
 }
