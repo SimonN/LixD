@@ -76,7 +76,7 @@ loadStateFramestepping(Game game, in GameState state, in int toUpdate)
 {
     if (state) {
         game.cs = state.clone();
-        game.physicsDrawer.resetToLand(game.cs.land);
+        game.physicsDrawer.rebind(game.cs.land, game.cs.lookup);
         game.effect.deleteAfter(toUpdate);
     }
 }

@@ -74,18 +74,20 @@ class PhysicsDrawer {
     // queued drawing changes to the land. The savestate comes with a fresh
     // copy of the land that must be registered here.
     void
-    resetToLand(Torbit newLand)
+    rebind(Torbit newLand, Lookup newLookup)
     in {
         assert (_land,
             "You want to reset the draw-to-land queues, but you haven't "
             "registered a land to draw to during construction "
             "of PhysicsDrawer.");
         assert (newLand);
+        assert (newLookup);
         assert (_addsForLookup == null);
         assert (_delsForLookup == null);
     }
     body {
         _land        = newLand;
+        _lookup      = newLookup;
         _addsForLand = null;
         _delsForLand = null;
     }
