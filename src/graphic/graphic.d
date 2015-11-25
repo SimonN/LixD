@@ -206,7 +206,9 @@ draw(Torbit mutableGround) const
         " ground=%x, mutable=%x", &ground, &mutableGround));
 
     if (mode == Cutbit.Mode.NORMAL)
-        cutbit.draw(mutableGround, _x, _y, _xf, _yf, _mirror, _rot);
+        // This calls the virtual xf(), yf() instead of using _xf, _yf.
+        // We want to allow Lixxie to override that with frame and ac.
+        cutbit.draw(mutableGround, _x, _y, xf, yf, _mirror, _rot);
     else
         cutbit.draw(mutableGround, _x, _y, _mirror, to!int(_rot), _mode);
 }

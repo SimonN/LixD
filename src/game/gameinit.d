@@ -80,8 +80,6 @@ prepareLand(Game game) { with (game)
 
     map = new Map(cs.land, Geom.screenXls.to!int,
                           (Geom.screenYls - Geom.panelYls).to!int);
-
-    Lixxie.setStaticMaps(&cs.land, &cs.lookup, map);
 }}
 
 

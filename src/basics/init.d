@@ -77,7 +77,6 @@ void initialize(in Cmdargs cmdargs)
 
 void deinitialize()
 {
-    Lixxie.setStaticMaps(null, null, null);
     level.tilelib.deinitialize();
 
     gui.deinitialize();

@@ -326,8 +326,9 @@ spawnLixxiesFromHatches(Game game) { with (game.cs)
             // passed anew when the lix are updated.
             auto ow = game.makeGypsyWagon(teamNumber, tribe.lixvec.len);
 
-            Lixxie newLix = new Lixxie(&ow, hatch.x + hatch.tile.triggerX,
-                                            hatch.y + hatch.tile.triggerY);
+            Lixxie newLix = new Lixxie(game.map, &ow,
+                hatch.x + hatch.tile.triggerX,
+                hatch.y + hatch.tile.triggerY);
             tribe.lixvec ~= newLix;
             --tribe.lixHatch;
             ++tribe.lixOut;

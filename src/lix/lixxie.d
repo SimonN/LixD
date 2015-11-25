@@ -11,7 +11,6 @@ import graphic.color;
 import graphic.gadget;
 import graphic.graphic;
 import graphic.gralib;
-import graphic.map;
 import graphic.torbit;
 import hardware.sound;
 import lix;
@@ -53,8 +52,6 @@ public:
 
     static immutable int updatesForBomb = 75;
 
-    static Map groundMap;
-
     OutsideWorld* outsideWorld; // set this before each physics update anew
 
     int queue; // builders and platformers can be queued in advance
@@ -67,11 +64,6 @@ public:
 
     int  updatesSinceBomb;
     bool exploderKnockback;
-
-/*  this(Style, int = 0, int = 0);
- *  this(in Lixxie rhs);
- */
-    override Lixxie clone() const { return new Lixxie(this); }
 
     static bool anyNewFlingers() { return _anyNewFlingers; }
 
@@ -92,10 +84,15 @@ public:
     @property int dir(in int i)
     {
         assert (i != 0);
-        return _facingLeft = (i < 0);
+        _facingLeft = (i < 0);
+        // Mirror flips vertically. Therefore, when _facingLeft, we have to
+        // rotate by 180 degrees in addition.
+        super.mirror   =     _facingLeft;
+        super.rotation = 2 * _facingLeft;
+        return i;
     }
 
-    void turn() { _facingLeft = ! _facingLeft; }
+    void turn() { dir = -dir; }
 
     @property const(PerformedActivity) performedActivity() const
     {
@@ -144,6 +141,12 @@ public:
 /*           void advanceFrame();
  *  override bool isLastFrame() const;
  */
+    // (super == Graphic) shall use frame and ac to draw itself
+               override @property int xf() const   { return this.frame; }
+               override @property int yf() const   { return this.ac;    }
+    deprecated override @property int xf(in int i) { assert (false);    }
+    deprecated override @property int yf(in int i) { assert (false);    }
+
     @property auto bodyEncounters() const { return _encBody; }
     @property auto footEncounters() const { return _encFoot; }
     void setNoEncounters() { _encBody = _encFoot = 0; }
@@ -159,6 +162,7 @@ public:
 public:
 
 this(
+    in Torbit     groundMap,
     OutsideWorld* newOutside,
     int   new_ex,
     int   new_ey
@@ -185,10 +189,10 @@ this(in Lixxie rhs)
     _ex    = rhs._ex;
     _ey    = rhs._ey;
 
-    _facingLeft = rhs._facingLeft;
-
-    super(graphic.gralib.getLixSpritesheet(_style), groundMap,
+    super(graphic.gralib.getLixSpritesheet(_style), rhs.ground,
         _ex - exOffset, _ey - eyOffset);
+
+    dir = rhs.dir;
 
     _flingX = rhs._flingX;
     _flingY = rhs._flingY;
@@ -214,12 +218,7 @@ this(in Lixxie rhs)
                          // Can't copy from a const lix, keep it at .init.
 }
 
-
-
-static void setStaticMaps(Torbit* tb, Lookup* lo, Map ma)
-{
-    groundMap = ma;
-}
+override Lixxie clone() const { return new Lixxie(this); }
 
 
 
@@ -249,11 +248,10 @@ private void addEncountersFromHere()
 @property int
 ex(in int n)
 {
-    assert (outsideWorld, "need size of lookup map for ex modulo");
     _ex = basics.help.even(n);
     super.x = _ex - exOffset;
-    if (groundMap.torusX)
-        _ex = positiveMod(_ex, lookup.xl);
+    if (ground.torusX)
+        _ex = positiveMod(_ex, ground.xl);
     addEncountersFromHere();
     return _ex;
 }
@@ -263,11 +261,10 @@ ex(in int n)
 @property int
 ey(in int n)
 {
-    assert (outsideWorld, "need size of lookup map for ex modulo");
     _ey = n;
     super.y = _ey - eyOffset;
-    if (groundMap.torusY)
-        _ey = positiveMod(_ey, lookup.yl);
+    if (ground.torusY)
+        _ey = positiveMod(_ey, ground.yl);
     addEncountersFromHere();
     return _ey;
 }
@@ -301,7 +298,7 @@ void moveUp(in int minusY = 2)
 
 bool get_in_trigger_area(in Gadget g) const
 {
-    return groundMap.isPointInRectangle(ex, ey,
+    return ground.isPointInRectangle(ex, ey,
         g.x + g.tile.triggerX(), g.y + g.tile.triggerY(),
               g.tile.triggerXl,        g.tile.triggerYl);
 }
@@ -427,24 +424,16 @@ void advanceFrame()
 
 
 
-deprecated("use Lix.draw(), not Lix.draw(Torbit)")
-override void draw(Torbit) const { }
-
-void draw()
+override void draw(Torbit tb) const
 {
-    if (ac == Ac.NOTHING) return;
-
-    super.xf = frame;
-    super.yf = ac;
+    if (ac == Ac.NOTHING)
+        return;
 
     // draw the fuse if necessary
     if (updatesSinceBomb > 0) {
         immutable XY fuseXy = getFuseXY();
         immutable int fuseX = fuseXy.x;
         immutable int fuseY = fuseXy.y;
-
-        // draw onto this
-        Torbit tb = groundMap;
 
         int x = 0;
         int y = 0;
@@ -461,18 +450,12 @@ void draw()
         }
         // draw the flame
         auto cb = getInternal(fileImageFuse_flame);
-        cb.draw(groundMap,
-         fuseX + x - cb.xl/2,
-         fuseY + y - cb.yl/2,
-         updatesSinceBomb % cb.xfs, 0);
+        cb.draw(tb, fuseX + x - cb.xl/2,
+                    fuseY + y - cb.yl/2, updatesSinceBomb % cb.xfs, 0);
     }
     // end of drawing the fuse
 
-    // Mirror flips vertically. Therefore, when _facingLeft, we have to rotate
-    // by 180 degrees in addition.
-    mirror   =     _facingLeft;
-    rotation = 2 * _facingLeft;
-    Graphic.draw(groundMap);
+    Graphic.draw(tb);
 }
 
 
