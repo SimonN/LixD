@@ -43,13 +43,17 @@ private:
 
     void draw_at(const int, const int);
 
+    @property inout(Lookup) lookup() inout
+    {
+        assert (outsideWorld);
+        return outsideWorld.state.lookup;
+    }
+
 public:
 
     static immutable int updatesForBomb = 75;
 
-    static Torbit* land;
-    static Lookup* lookup;
-    static Map     groundMap;
+    static Map groundMap;
 
     OutsideWorld* outsideWorld; // set this before each physics update anew
 
@@ -122,23 +126,18 @@ public:
  *      the x-direction by left-looking lixes by the desired 1 pixel. Kludge:
  *      Maybe remove addLand entirely and put the functionality in drawPixel?
  *
- *  bool isSolid          (in int = 0, in int = 2);
- *  bool isSolidSingle   (in int = 0, in int = 2);
- *  int  solidWallHeight (in int = 0, in int = 0);
- *  int  countSolid       (int, int, int, int);
- *  int  countSteel       (int, int, int, int);
+ *  bool isSolid        (in int = 0, in int = 2);
+ *  bool isSolidSingle  (in int = 0, in int = 2);
+ *  int  solidWallHeight(in int = 0, in int = 0);
+ *  int  countSolid     (int, int, int, int);
+ *  int  countSteel     (int, int, int, int);
  *
  *  static void removePixelAbsolute(in int, in int);
  *  bool        removePixel         (   int, in int);
  *  bool        removeRectangle     (int, int, int, int);
  *
- *  void drawPixel       (int,      in int,   in AlCol);
- *  void drawRectangle   (int, int, int, int, in AlCol);
- *  void drawBrick       (int, int, int, int);
- *  void drawFrameToMapAsTerrain(int, int, int, int, int, int, int, int);
- *
- *  void playSound        (in ref UpdateArgs, in Sound);
- *  void playSoundIfTribeLocal(in ref UpdateArgs, in Sound);
+ *  void playSound            (in Sound);
+ *  void playSoundIfTribeLocal(in Sound);
  */
     @property int frame() const   { return _perfAc.frame;     }
     @property int frame(in int i) { return _perfAc.frame = i; }
@@ -155,32 +154,25 @@ public:
         _encFoot = ft;
     }
 
-//  int  get_priority  (in Ac, in bool);
-/*  void manualAssignment(in Ac);
- *  void become          (in Ac);
- *  void becomeDefault   (in Ac);
- *  void update          (in UpdateArgs);
- *
- *  override void draw();
- */
-
 
 
 public:
 
 this(
-    Style newStyle,
+    OutsideWorld* newOutside,
     int   new_ex,
     int   new_ey
 ) {
-    super(getLixSpritesheet(newStyle), groundMap,
+    outsideWorld = newOutside; // needed for setting ex, ey
+    _style       = newOutside.tribe.style;
+
+    super(getLixSpritesheet(_style), groundMap,
           even(new_ex) - exOffset, new_ey - eyOffset);
-    _style  = newStyle;
+
     _perfAc = PerformedActivity.factory(this, Ac.FALLER);
     frame   = 4;
-    // important for torus bitmaps: calculate modulo in time
-    ex = new_ex.even;
-    ey = new_ey;
+    ex      = new_ex.even;
+    ey      = new_ey;
 }
 
 
@@ -217,14 +209,15 @@ this(in Lixxie rhs)
     exploderKnockback = rhs.exploderKnockback;
 
     _perfAc = rhs._perfAc.cloneAndBindToLix(this);
+
+    outsideWorld = null; // Must be passed anew by the next update.
+                         // Can't copy from a const lix, keep it at .init.
 }
 
 
 
 static void setStaticMaps(Torbit* tb, Lookup* lo, Map ma)
 {
-    land = tb;
-    lookup = lo;
     groundMap = ma;
 }
 
@@ -254,11 +247,13 @@ private void addEncountersFromHere()
 
 
 @property int
-ex(in int n) {
+ex(in int n)
+{
+    assert (outsideWorld, "need size of lookup map for ex modulo");
     _ex = basics.help.even(n);
     super.x = _ex - exOffset;
     if (groundMap.torusX)
-        _ex = positiveMod(_ex, land.xl);
+        _ex = positiveMod(_ex, lookup.xl);
     addEncountersFromHere();
     return _ex;
 }
@@ -266,11 +261,13 @@ ex(in int n) {
 
 
 @property int
-ey(in int n) {
+ey(in int n)
+{
+    assert (outsideWorld, "need size of lookup map for ex modulo");
     _ey = n;
     super.y = _ey - eyOffset;
     if (groundMap.torusY)
-        _ey = positiveMod(_ey, land.yl);
+        _ey = positiveMod(_ey, lookup.yl);
     addEncountersFromHere();
     return _ey;
 }
@@ -342,30 +339,6 @@ bool getSteel(in int px, in int py)
 
 
 
-static bool getSteelAbsolute(in int x, in int y)
-{
-    return lookup.getSteel(x, y);
-}
-
-
-
-void addLand(in int px, in int py, const AlCol col)
-{
-    addLandAbsolute(_ex + px * dir, _ey + py, col);
-}
-
-
-
-// this one could be static
-void addLandAbsolute(in int x = 0, in int y = 0, in AlCol col = color.transp)
-{
-    // DTODOVRAM: land.setPixel should be very slow, think hard
-    land.setPixel(x, y, col);
-    lookup.add   (x, y, Lookup.bitTerrain);
-}
-
-
-
 bool isSolid(in int px = 0, in int py = 2)
 {
     return lookup.getSolidEven(_ex + px * dir, _ey + py);
@@ -418,38 +391,6 @@ int countSteel(int x1, int y1, int x2, int y2)
         }
     }
     return ret;
-}
-
-
-
-// ############################################################################
-// ############# finished with the removal functions, now the drawing functions
-// ############################################################################
-
-
-
-
-// Draws the the rectangle specified by xs, ys, ws, hs of the
-// specified animation frame onto the level map at position (xd, yd),
-// as diggable terrain. (xd, yd) specifies the top left of the destination
-// rectangle relative to the lix's position
-void drawFrameToMapAsTerrain
-(
-    int frame, int anim,
-    int xs, int ys, int ws, int hs,
-    int xd, int yd
-) {
-    assert (false, "DTODO: implement this function (as terrain => speed!");
-    /*
-    for (int y = 0; y < hs; ++y) {
-        for (int x = 0; x < ws; ++x) {
-            const AlCol col = get_cutbit().get_pixel(frame, anim, xs+x, ys+y);
-            if (col != color.transp && ! getSteel(xd + x, yd + y)) {
-                addLand(xd + x, yd + y, col);
-            }
-        }
-    }
-    */
 }
 
 

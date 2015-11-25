@@ -118,6 +118,8 @@ this(in Lookup rhs)
     lt  = rhs.lt.dup;
 }
 
+Lookup clone() const { return new Lookup(this); }
+
 
 
 invariant()

@@ -293,6 +293,21 @@ void updateClock(Game game) { with (game)
 
 
 
+lix.OutsideWorld
+makeGypsyWagon(Game game, in int tribeID, in int lixID)
+{
+    OutsideWorld ow;
+    ow.state         = game.cs;
+    ow.physicsDrawer = game.physicsDrawer;
+    ow.effect        = game.effect;
+    ow.tribe         = game.cs.tribes[tribeID];
+    ow.tribeID       = tribeID;
+    ow.lixID         = lixID;
+    return ow;
+}
+
+
+
 void
 spawnLixxiesFromHatches(Game game) { with (game.cs)
 {
@@ -305,9 +320,14 @@ spawnLixxiesFromHatches(Game game) { with (game.cs)
             assert (game.replay.permu);
             immutable int position = game.replay.permu[teamNumber];
             const(Gadget) hatch    = hatches[tribe.hatchNextSpawn];
-            Lixxie newLix = new Lixxie(tribe.style,
-                hatch.x + hatch.tile.triggerX,
-                hatch.y + hatch.tile.triggerY);
+
+            // the only interesting part of OutsideWorld right now is the
+            // lookupmap inside the current state. Everything else will be
+            // passed anew when the lix are updated.
+            auto ow = game.makeGypsyWagon(teamNumber, tribe.lixvec.len);
+
+            Lixxie newLix = new Lixxie(&ow, hatch.x + hatch.tile.triggerX,
+                                            hatch.y + hatch.tile.triggerY);
             tribe.lixvec ~= newLix;
             --tribe.lixHatch;
             ++tribe.lixOut;
@@ -365,25 +385,13 @@ updateNuke(Game game)
 void
 updateLixxies(Game game) { with (game)
 {
-    lix.OutsideWorld makeGypsyWagon(int tribeID, int lixID)
-    {
-        OutsideWorld ow;
-        ow.state         = cs;
-        ow.physicsDrawer = physicsDrawer;
-        ow.effect        = effect;
-        ow.tribe         = cs.tribes[tribeID];
-        ow.tribeID       = tribeID;
-        ow.lixID         = lixID;
-        return ow;
-    }
-
     // DTODOPHYSICS: Implement geoo's nice split into many loops
     // First pass: Update only workers and mark them
     foreach (int tribeID, tribe; cs.tribes) {
         assert (tribeID == game.tribeID(tribe));
         foreach (int lixID, lixxie; tribe.lixvec) {
             if (lixxie.ac > Ac.WALKER) {
-                auto ow = makeGypsyWagon(tribeID, lixID);
+                auto ow = game.makeGypsyWagon(tribeID, lixID);
                 lixxie.outsideWorld = &ow;
                 lixxie.marked = true;
                 game.updateSingleLix(lixxie);
@@ -399,7 +407,7 @@ updateLixxies(Game game) { with (game)
     foreach (int tribeID, tribe; cs.tribes)
         foreach (int lixID, lixxie; tribe.lixvec)
             if (lixxie.marked == false) {
-                auto ow = makeGypsyWagon(tribeID, lixID);
+                auto ow = game.makeGypsyWagon(tribeID, lixID);
                 lixxie.outsideWorld = &ow;
                 game.updateSingleLix(lixxie);
             }
