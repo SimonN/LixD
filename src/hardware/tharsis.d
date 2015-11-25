@@ -12,6 +12,8 @@ module hardware.tharsis;
  * be as expressive as possible.
  */
 
+import basics.versioning;
+
 Profiler profiler;
 
 version (tharsisprofiling)
@@ -21,12 +23,12 @@ version (tharsisprofiling)
     import std.stdio;
 
     import basics.globals;
-    import basics.versioning;
     import file.date;
 
     public import tharsis.prof;
 
-    pragma (msg, "Compiling Lix with profiling information...");
+    pragma (msg, "Compiling Lix " ~ gameVersion().toString() ~
+                 " with profiling information...");
     pragma (msg, "(To optimize for speed, "
                  "use `dub build -b release-nobounds')");
 
@@ -108,7 +110,8 @@ version (tharsisprofiling)
 
 else
 {
-    pragma (msg, "Compiling Lix release build without profiling...");
+    pragma (msg, "Compiling Lix "
+        ~ gameVersion().toString() ~ " release build...");
 
     // empty stubs which the compiler should optimize away fully
     class Profiler { }

@@ -10,6 +10,9 @@ module game.state;
  * nothing most of the time with the state fed.
  */
 
+import std.range;
+import std.algorithm.iteration;
+
 import basics.help; // clone(T[]), a deep copy for arrays
 import game;
 import graphic.torbit;
@@ -75,15 +78,9 @@ class GameState {
 
     void foreachGadget(void delegate(Gadget) func)
     {
-        foreach (g; hatches)     func(g);
-        foreach (g; goals)       func(g);
-        foreach (g; decos)       func(g);
-        foreach (g; waters)      func(g);
-        foreach (g; traps)       func(g);
-        foreach (g; flingers)    func(g);
-        foreach (g; trampolines) func(g);
+        chain(hatches, goals, decos, waters, traps, flingers, trampolines)
+            .each!func;
     }
-
 }
 
 
@@ -162,10 +159,12 @@ public:
         assert (s);
         if (s.update < updatesMostFrequentPair)
             return;
-        // First, make the largest copy the second-largest, and so on.
-        // Finally save s into the most frequently updated pair. The most
-        // frequently updated pair has array indices 0 and 1. The next one
-        // has array indices 2 and 3, and so on.
+        // First, if it's time to copy a frequent state into a less frequent
+        // state, make these copies. Start with least frequent copying the
+        // second-to-least freqent.
+        // After copying the internal states like that, save s into the most
+        // frequently updated pair. The most frequently updated pair has
+        // array indices 0 and 1. The next one has array indices 2 and 3, ...
         for (int pair = pairsToKeep - 1; pair >= 0; --pair) {
             int updateMultipleForPair = updatesMostFrequentPair;
             foreach (i; 0 .. pair)
