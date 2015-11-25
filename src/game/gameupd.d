@@ -393,8 +393,7 @@ updateLixxies(Game game) { with (game)
             }
         }
     }
-    physicsDrawer.processDeletions();
-    physicsDrawer.processAdditions();
+    physicsDrawer.applyChangesToLookup();
 
     // Second pass: Update unmarked
     foreach (int tribeID, tribe; cs.tribes)
@@ -404,8 +403,7 @@ updateLixxies(Game game) { with (game)
                 lixxie.outsideWorld = &ow;
                 game.updateSingleLix(lixxie);
             }
-    physicsDrawer.processDeletions();
-    physicsDrawer.processAdditions();
+    physicsDrawer.applyChangesToLookup();
 
     /+
     // Third pass (if necessary): finally becoming flingers

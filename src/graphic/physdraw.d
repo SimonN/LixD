@@ -11,7 +11,9 @@ module graphic.physdraw;
  * in their many colors.
  */
 
+import std.algorithm;
 import std.conv;
+import std.string;
 
 import basics.alleg5;
 import basics.cmdargs;
@@ -39,6 +41,7 @@ struct TerrainChange {
         diggerSwing
     }
 
+    int   update;
     Type  type;
     Style style;
     int x;
@@ -63,56 +66,68 @@ class PhysicsDrawer {
     void
     add(in TerrainChange tc)
     {
-        (tc.isAddition ? _additions : _deletions) ~= tc;
+        if (tc.isAddition) _addsForLookup ~= tc;
+        else               _delsForLookup ~= tc;
     }
 
+    // This should be called when loading a savestate, to throw away any
+    // queued drawing changes to the land. The savestate comes with a fresh
+    // copy of the land that must be registered here.
     void
-    processDeletions()
-    {
-        // DTODO: set blender to deleting blender
-        foreach (const tc; _deletions) {
-            assert (tc.isDeletion);
-        }
-        _deletions = null;
-        // DTODO: set blender to normal blender by RAII
-    }
-
-    void
-    processAdditions()
+    resetToLand(Torbit newLand)
     in {
-        if (_land)
-            assert (_mask);
+        assert (_land,
+            "You want to reset the draw-to-land queues, but you haven't "
+            "registered a land to draw to during construction "
+            "of PhysicsDrawer.");
+        assert (newLand);
+        assert (_addsForLookup == null);
+        assert (_delsForLookup == null);
     }
     body {
-        foreach (const tc; _additions) {
-            Zone zone = Zone(profiler, "PhysDraw " ~ tc.type.to!string);
+        _land        = newLand;
+        _addsForLand = null;
+        _delsForLand = null;
+    }
 
-            immutable build = (tc.type == TerrainChange.Type.builderBrick);
-            assert   (build || tc.type == TerrainChange.Type.platformerBrick);
+    void
+    applyChangesToLookup()
+    {
+        deletionsToLookup();
+        additionsToLookup();
+    }
 
-            immutable yl = brickYl;
-            immutable y  = build ? 0              : brickYl;
-            immutable xl = build ? builderBrickXl : platformerBrickXl;
-            immutable x  = xl * tc.style;
+    @property bool
+    anyChangesToLand()
+    {
+        return _delsForLand != null || _addsForLand != null;
+    }
 
-            with (Zone(profiler, "PhysDraw lookupmap " ~ tc.type.to!string))
-                _lookup.addRectangle(tc.x, tc.y, xl, yl, Lookup.bitTerrain);
-
-            if (_land) {
-                Albit sprite;
-                with (Zone(profiler, "PhysDraw subbitmap create "
-                                     ~ tc.type.to!string))
-                    sprite = al_create_sub_bitmap(_mask, x, y, xl, yl);
-                scope (exit)
-                    with (Zone(profiler, "PhysDraw subbitmap destroy "
-                                         ~ tc.type.to!string))
-                        al_destroy_bitmap(sprite);
-                with (Zone(profiler, "PhysDraw subbitmap draw "
-                                     ~ tc.type.to!string))
-                    _land.drawFrom(sprite, tc.x, tc.y);
-            }
+    // pass current update of the game to this
+    void
+    applyChangesToLand(in int upd)
+    in {
+        // This doesn't get called each update. But there should never be
+        // something in there that isn't to be processed during this call.
+        assert (_delsForLand == null || _delsForLand[$-1].update <= upd);
+        assert (_addsForLand == null || _addsForLand[$-1].update <= upd);
+    }
+    out {
+        assert (_delsForLand == null);
+        assert (_addsForLand == null);
+    }
+    body {
+        while (_delsForLand != null || _addsForLand != null) {
+            // Do deletions for the first update, then additions for that,
+            // then deletions for the next update, then additions, ...
+            int earliestUpdate
+                = _delsForLand != null && _addsForLand != null
+                ? min(_delsForLand[0].update, _addsForLand[0].update)
+                : _delsForLand != null
+                ? _delsForLand[0].update : _addsForLand[0].update;
+            deletionsToLandForUpdate(earliestUpdate);
+            additionsToLandForUpdate(earliestUpdate);
         }
-        _additions = null;
     }
 
 
@@ -124,8 +139,11 @@ private:
     Torbit _land;
     Lookup _lookup;
 
-    TerrainChange[] _additions;
-    TerrainChange[] _deletions;
+    TerrainChange[] _addsForLookup;
+    TerrainChange[] _delsForLookup;
+
+    TerrainChange[] _addsForLand;
+    TerrainChange[] _delsForLand;
 
     static void
     deinitialize()
@@ -135,6 +153,107 @@ private:
             _mask = null;
         }
     }
+
+    mixin template AdditionsDefs() {
+        immutable build = (tc.type == TerrainChange.Type.builderBrick);
+        immutable yl    = brickYl;
+        immutable y     = build ? 0              : brickYl;
+        immutable xl    = build ? builderBrickXl : platformerBrickXl;
+        immutable x     = xl * tc.style;
+    }
+
+    void
+    deletionsToLookup()
+    {
+        _delsForLand ~= _delsForLookup;
+        _delsForLookup = null;
+    }
+
+
+
+    void
+    deletionsToLandForUpdate(in int upd)
+    {
+        _delsForLand = null;
+    }
+
+
+
+    void
+    additionsToLookup()
+    in {
+        // This should be called on each update. Don't let data of different
+        // updates accumulate here.
+        foreach (const tc; _addsForLookup)
+            assert (tc.update == _addsForLookup[0].update);
+    }
+    out {
+        assert (_addsForLookup == null);
+    }
+    body {
+        foreach (const tc; _addsForLookup) {
+            auto zone = Zone(profiler, "PhysDraw lookupmap "
+                                       ~ tc.type.to!string);
+            mixin AdditionsDefs;
+            assert (build || tc.type == TerrainChange.Type.platformerBrick);
+            _lookup.addRectangle(tc.x, tc.y, xl, yl, Lookup.bitTerrain);
+        }
+        if (_land)
+            // If land exists, remember the changes to be able to draw them
+            // later. If there is no land in noninteractive mode, throw away.
+            _addsForLand ~= _addsForLookup;
+        _addsForLookup = null;
+    }
+
+
+
+    void
+    additionsToLandForUpdate(in int upd)
+    in {
+        // This neend not be called on each update, but only if the land
+        // must be drawn like it should appear now. In noninteractive mode,
+        // this shouldn't be called at all.
+        assert (_land);
+        assert (_mask);
+        assert (isSorted!"a.update < b.update"(_addsForLand));
+        assert (_addsForLand == null || _addsForLand[0].update >= upd, format(
+            "There are additions to the land that should be drawn in "
+            "the earlier update %d. Right now we have update %d. "
+            "If this happens after loading a savestate, "
+            "make sure to empty all queued additions/deletions.",
+            _addsForLand[0].update, upd));
+        assert (al_get_target_bitmap() == _land.albit,
+            "For performance, set the drawing target to _land "
+            "outside of additionsToLandForUpdate(). Slow performance is "
+            "considered a logic bug!");
+    }
+    out {
+        assert (_addsForLand == null
+            ||  _addsForLand[0].update > upd);
+    }
+    body {
+        while (_addsForLand != null && _addsForLand[0].update == upd) {
+            scope (exit)
+                _addsForLand = _addsForLand[1 .. $];
+            auto tc = _addsForLand[0];
+
+            mixin AdditionsDefs;
+
+            Albit sprite;
+            with (Zone(profiler, "PhysDraw subbitmap create "
+                                 ~ tc.type.to!string))
+                sprite = al_create_sub_bitmap(_mask, x, y, xl, yl);
+            scope (exit)
+                with (Zone(profiler, "PhysDraw subbitmap destroy "
+                                     ~ tc.type.to!string))
+                    al_destroy_bitmap(sprite);
+            with (Zone(profiler, "PhysDraw subbitmap draw "
+                                 ~ tc.type.to!string))
+                _land.drawFrom(sprite, tc.x, tc.y);
+        }
+    }
+
+
 
     static void
     initialize(Runmode mode)

@@ -74,9 +74,15 @@ class Builder : PerformedActivity {
         fullyInsideTerrain = solidWallHeight(0, 2) > Walker.highestStepUp;
         assert (bricksLeft > 0);
         --bricksLeft;
-        outsideWorld.physicsDrawer.add(TerrainChange(
-            TerrainChange.Type.builderBrick, style,
-            facingRight ? (ex - 2) : (ex - 8), ey));
+
+        TerrainChange tc;
+        tc.update = outsideWorld.state.update;
+        tc.type   = TerrainChange.Type.builderBrick;
+        tc.style  = style;
+        tc.x      = facingRight ? ex - 2 : ex - 8;
+        tc.y      = ey;
+        outsideWorld.physicsDrawer.add(tc);
+
         if (bricksLeft < 3 && skillsQueued == 0)
             playSoundIfTribeLocal(Sound.BRICK);
     }

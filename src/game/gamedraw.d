@@ -17,7 +17,18 @@ package void
 implGameDraw(Game game) { with (game)
 {
     auto zo = Zone(profiler, "game entire implGameDraw()");
-    with     (Zone(profiler, "game entire drawing to map"))
+
+    if (physicsDrawer.anyChangesToLand) {
+        assert (cs.land);
+        assert (cs.land.albit);
+        with (Zone(profiler, "game physDraw 1 or more")) {
+            DrawingTarget target = cs.land.albit;
+            physicsDrawer.applyChangesToLand(cs.update);
+        }
+        assert (! physicsDrawer.anyChangesToLand);
+    }
+
+    with (Zone(profiler, "game entire drawing to map"))
     {
         // speeding up drawing by setting the drawing target now.
         // This RAII struct is used in each innermost loop, too, but it does
