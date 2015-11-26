@@ -11,6 +11,7 @@ public import game.core.physseq;
 package import game.effect;
 package import game.lookup;
 package import game.panel;
+package import game.physdraw;
 package import game.replay;
 package import game.state;
 package import game.tribe;

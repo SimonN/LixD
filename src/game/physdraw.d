@@ -1,4 +1,4 @@
-module graphic.physdraw;
+module game.physdraw;
 
 /* PhysicsDrawer: responsible for adding/removing terrain on the level torbit
  * during a game. This doesn't render the level at start of game.

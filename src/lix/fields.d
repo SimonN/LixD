@@ -4,8 +4,7 @@ import basics.matrix;
 import game.state;
 import game.effect;
 import game.tribe;
-
-public import graphic.physdraw;
+import game.physdraw;
 
 Matrix!XY countdown;
 

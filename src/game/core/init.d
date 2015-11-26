@@ -10,7 +10,6 @@ import game.core;
 import graphic.map;
 import graphic.gadget;
 import graphic.torbit;
-import graphic.physdraw;
 import gui;
 import level.tile;
 import lix.lixxie; // setStaticMaps

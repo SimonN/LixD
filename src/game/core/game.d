@@ -19,7 +19,6 @@ import file.filename;
 import game.core;
 import graphic.color;
 import graphic.map;
-import graphic.physdraw;
 import gui;
 import level.level;
 
