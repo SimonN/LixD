@@ -44,10 +44,8 @@ updateOnceWithoutSyncingNetwork(Game game)
     game.updateLixxies();
     game.finalizeUpdateAnimateGadgets();
 
-    if (game.runmode == Runmode.INTERACTIVE) {
-        assert (game.stateManager);
-        game.stateManager.calcSaveAuto(game.cs);
-    }
+    if (game.runmode == Runmode.INTERACTIVE)
+        game.considerMakingAutoSavestate();
 }
 
 
@@ -430,4 +428,22 @@ updateLixxies(Game game) { with (game)
 void updateSingleLix(Game game, Lixxie l)
 {
     l.performActivity();
+}
+
+
+
+void considerMakingAutoSavestate(Game game)
+{
+    assert (game.runmode == Runmode.INTERACTIVE);
+    assert (game.stateManager);
+    if (game.stateManager.wouldAutoSave(game.cs)) {
+        // It seems dubious to do drawing to bitmaps during calc/update.
+        // However, savestates save the land too, and they should
+        // hold the correctly updated land. We could save an instance
+        // of a PhysicsDrawer along inside the savestate, but then we would
+        // redraw over and over when loading from this state during
+        // framestepping backwards. Instead, let's calculate the land now.
+        // game.physicsDrawer.applyChangesToLand(game.cs.update);
+        game.stateManager.autoSave(game.cs);
+    }
 }

@@ -141,11 +141,11 @@ private:
     Torbit _land;
     Lookup _lookup;
 
-    TerrainChange[] _addsForLookup;
     TerrainChange[] _delsForLookup;
+    TerrainChange[] _addsForLookup;
 
-    TerrainChange[] _addsForLand;
     TerrainChange[] _delsForLand;
+    TerrainChange[] _addsForLand;
 
     static void
     deinitialize()

@@ -153,14 +153,18 @@ public:
         return ret;
     }
 
-    // Examine the number of updates in s, then decide what to do with s:
-    // Auto-save this state s, potentially pushing older auto-saved states
-    // down the hierarchy, or do nothing.
-    void calcSaveAuto(in GameState s)
+    bool wouldAutoSave(in GameState s) const
     {
-        assert (s);
-        if (s.update < updatesMostFrequentPair)
+        return s !is null
+            && s.update != 0
+            && s.update % updatesMostFrequentPair == 0;
+    }
+
+    void autoSave(in GameState s)
+    {
+        if (! wouldAutoSave(s))
             return;
+        // Potentially push older auto-saved states down the hierarchy.
         // First, if it's time to copy a frequent state into a less frequent
         // state, make these copies. Start with least frequent copying the
         // second-to-least freqent.
