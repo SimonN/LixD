@@ -443,7 +443,7 @@ void considerMakingAutoSavestate(Game game)
         // of a PhysicsDrawer along inside the savestate, but then we would
         // redraw over and over when loading from this state during
         // framestepping backwards. Instead, let's calculate the land now.
-        // game.physicsDrawer.applyChangesToLand(game.cs.update);
+        game.physicsDrawer.applyChangesToLand(game.cs.update);
         game.stateManager.autoSave(game.cs);
     }
 }

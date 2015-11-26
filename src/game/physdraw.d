@@ -109,16 +109,29 @@ class PhysicsDrawer {
     void
     applyChangesToLand(in int upd)
     in {
-        // This doesn't get called each update. But there should never be
-        // something in there that isn't to be processed during this call.
-        assert (_delsForLand == null || _delsForLand[$-1].update <= upd);
-        assert (_addsForLand == null || _addsForLand[$-1].update <= upd);
+        assert (_land);
+        enum msg = "I don't believe you should draw to land when you still "
+            "have changes to be drawn to the lookup map. Edit this assert "
+            "if you have found a reason.";
+        assert (_delsForLookup == null, msg);
+        assert (_addsForLookup == null, msg);
+        enum msg2 = "applyChangesToLand() doesn't get called each update. "
+            "But there should never be something in there that isn't to be "
+            "processed during this call.";
+        assert (_delsForLand == null || _delsForLand[$-1].update <= upd, msg2);
+        assert (_addsForLand == null || _addsForLand[$-1].update <= upd, msg2);
     }
     out {
         assert (_delsForLand == null);
         assert (_addsForLand == null);
     }
     body {
+        if (! anyChangesToLand)
+            return;
+
+        auto zone   = Zone(profiler, "applyChangesToLand >= 1");
+        auto target = DrawingTarget(_land.albit);
+
         while (_delsForLand != null || _addsForLand != null) {
             // Do deletions for the first update, then additions for that,
             // then deletions for the next update, then additions, ...
