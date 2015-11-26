@@ -13,8 +13,5 @@
 /data/profile.txt
 /data/user/*.txt
 
-# exclude replays, but track replay/ and replay/auto/ via a dummy file
-replays/*
-!replays/auto
-replays/auto/*
-!replays/auto/.gitignore
+# exclude replays -- D Lix is smart enough to generate the directory
+/replays/*

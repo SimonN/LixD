@@ -1,4 +1,4 @@
-module game.gameupd;
+module game.core.physseq;
 
 /* Updating the game physics. This usually happens 15 times per second.
  * With fast forward, it's called more often; during pause, never.
@@ -7,7 +7,7 @@ module game.gameupd;
 import basics.help : len;
 import basics.cmdargs : Runmode;
 import basics.nettypes;
-import game;
+import game.core;
 import graphic.gadget;
 import hardware.sound;
 import lix;

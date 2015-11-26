@@ -7,7 +7,8 @@ module game.panel;
 
 import basics.globals;
 import basics.user;
-import game;
+import game.panelinf;
+import game.tribe;
 import graphic.gralib;
 import gui;
 import hardware.keyboard; // we need a different behavior of skill button

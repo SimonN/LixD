@@ -1,4 +1,4 @@
-module game.gameinit;
+module game.core.init;
 
 import std.conv;
 
@@ -6,7 +6,7 @@ import basics.alleg5;
 import basics.globconf;
 import file.filename;
 import level.level;
-import game;
+import game.core;
 import graphic.map;
 import graphic.gadget;
 import graphic.torbit;

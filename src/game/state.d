@@ -14,7 +14,9 @@ import std.range;
 import std.algorithm.iteration;
 
 import basics.help; // clone(T[]), a deep copy for arrays
-import game;
+import game.lookup;
+import game.tribe;
+import game.replay;
 import graphic.torbit;
 import graphic.gadget;
 

@@ -1,7 +1,7 @@
-module game.gamecalc;
+module game.core.calc;
 
 import basics.alleg5;
-import game;
+import game.core;
 
 package void
 implGameCalc(Game game)

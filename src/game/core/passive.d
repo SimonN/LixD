@@ -1,11 +1,11 @@
-module game.gamepass;
+module game.core.passive;
 
 /* This was gamepl_c.cpp in old Lix.
  * These calculations are performed even while a replay is running
  */
 
 import basics.alleg5;
-import game;
+import game.core;
 import hardware.keyboard;
 import hardware.mousecur;
 

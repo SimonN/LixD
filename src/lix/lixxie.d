@@ -6,7 +6,7 @@ import basics.globals; // fuse image
 import basics.help;
 import basics.matrix;
 import basics.user; // multipleBuilders
-import game;
+import game.lookup;
 import graphic.color;
 import graphic.gadget;
 import graphic.graphic;

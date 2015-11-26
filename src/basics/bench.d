@@ -13,7 +13,7 @@ import basics.alleg5;
 import basics.demo;
 import basics.globals;
 import file.filename;
-import game.game;
+import game.core;
 import file.log;
 import level.level;
 import hardware.keyboard;

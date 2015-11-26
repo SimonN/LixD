@@ -1,4 +1,4 @@
-module game.game;
+module game.core.game;
 
 /* 2015-06-03. After 9 years, it's time to write another one of these classes.
  *
@@ -16,7 +16,7 @@ import basics.globals;
 import basics.help : len;
 import basics.nettypes : ReplayData;
 import file.filename;
-import game;
+import game.core;
 import graphic.color;
 import graphic.map;
 import graphic.physdraw;

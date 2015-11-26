@@ -1,10 +1,10 @@
-module game.gamedraw;
+module game.core.draw;
 
 import std.range : retro;
 import std.string; // format
 
 import basics.alleg5;
-import game;
+import game.core;
 import graphic.gadget;
 import graphic.map;
 import graphic.torbit;

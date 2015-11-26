@@ -15,7 +15,7 @@ import core.memory;
 import basics.alleg5;
 import basics.bench;
 import basics.demo;
-import game.game;
+import game.core;
 import file.log; // logging uncaught Exceptions
 import hardware.display;
 import hardware.keyboard;

@@ -2,7 +2,6 @@ module lix.acfunc;
 
 public import game.tribe;
 
-import game;
 import lix;
 
 // Mimic behavior of A4/C++ Lix as precisely as possible? Might help testing

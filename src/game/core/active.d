@@ -1,10 +1,10 @@
-module game.gameacti;
+module game.core.active;
 
 import std.typecons : Rebindable;
 
 import basics.nettypes;
 import basics.user; // hotkeys
-import game;
+import game.core;
 import gui : SkillButton;
 import hardware.keyboard;
 import hardware.mouse;
