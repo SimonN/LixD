@@ -12,7 +12,6 @@ import graphic.gadget;
 import graphic.torbit;
 import gui;
 import level.tile;
-import lix.lixxie; // setStaticMaps
 
 package void
 implGameConstructor(Game game, Level lv, Filename fn, Replay rp)
@@ -51,6 +50,10 @@ implGameDestructor(Game game)
         gui.rmElder(game.pan);
     if (game.replay)
         game.replay.saveAsAutoReplay(game.level, game.singlePlayerHasWon);
+    if (game.physicsDrawer)
+        // DTODO: find out whether we can call destroy here, or should merely
+        // zero the Albit/Torbit references in physicsDrawer
+        destroy(game.physicsDrawer);
 }
 
 

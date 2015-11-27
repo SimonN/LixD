@@ -37,6 +37,7 @@ private @property int flags_memory()
 
 Albit albitCreate(in int xl, in int yl)
 {
+    auto zone = Zone(profiler, "alleg5: create VRAM bitmap");
     return albitCreateWithFlags(xl, yl, flags_vram);
 }
 
@@ -102,6 +103,32 @@ struct DrawingTarget
     {
         if (oldTarget)
             al_set_target_bitmap(oldTarget);
+    }
+}
+
+
+
+struct Blender
+{
+    private alias Bo = ALLEGRO_BLEND_OPERATIONS;
+    private alias Bm = ALLEGRO_BLEND_MODE;
+
+    this(Bo o, Bm s, Bm d)
+    {
+        al_set_blender(o, s, d);
+    }
+
+    this(Bo o, Bm s, Bm d, Bo ao, Bm as, Bm ad)
+    {
+        al_set_separate_blender(o, s, d, ao, as, ad);
+    }
+
+    ~this()
+    {
+        // restore default blending mode
+        al_set_blender(ALLEGRO_BLEND_OPERATIONS.ALLEGRO_ADD,
+                       ALLEGRO_BLEND_MODE.ALLEGRO_ONE,
+                       ALLEGRO_BLEND_MODE.ALLEGRO_INVERSE_ALPHA);
     }
 }
 

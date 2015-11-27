@@ -11,8 +11,11 @@ module game.physdraw;
  * in their many colors.
  */
 
+import std.array;
 import std.algorithm;
 import std.conv;
+import std.functional;
+import std.range;
 import std.string;
 
 import basics.alleg5;
@@ -33,6 +36,10 @@ struct TerrainChange {
     enum Type {
         builderBrick,
         platformerBrick,
+        cuberSlice0,
+        cuberSlice1,
+        cuberSlice2,
+        cuberTopHalf,
 
         imploderCrater,
         exploderCrater,
@@ -47,10 +54,20 @@ struct TerrainChange {
     int x;
     int y;
 
-    @property bool isAddition() const { return type <= Type.platformerBrick; }
+    @property bool isAddition() const { return type < Type.imploderCrater; }
     @property bool isDeletion() const { return ! isAddition; }
-
 }
+
+private struct FlaggedChange
+{
+    TerrainChange terrainChange;
+    alias terrainChange this;
+
+    bool needsRedraw; // if there was land under a land addition,
+                      // or steel amidst a land removal
+}
+
+
 
 
 
@@ -157,8 +174,8 @@ private:
     TerrainChange[] _delsForLookup;
     TerrainChange[] _addsForLookup;
 
-    TerrainChange[] _delsForLand;
-    TerrainChange[] _addsForLand;
+    FlaggedChange[] _delsForLand;
+    FlaggedChange[] _addsForLand;
 
     static void
     deinitialize()
@@ -180,7 +197,7 @@ private:
     void
     deletionsToLookup()
     {
-        _delsForLand ~= _delsForLookup;
+        _delsForLand ~= _delsForLookup.map!(a => FlaggedChange(a)).array;
         _delsForLookup = null;
     }
 
@@ -211,12 +228,21 @@ private:
                                        ~ tc.type.to!string);
             mixin AdditionsDefs;
             assert (build || tc.type == TerrainChange.Type.platformerBrick);
-            _lookup.addRectangle(tc.x, tc.y, xl, yl, Lookup.bitTerrain);
+            scope (success)
+                _lookup.addRectangle(tc.x, tc.y, xl, yl, Lookup.bitTerrain);
+
+            if (_land) {
+                // If land exists, remember the changes to be able to draw them
+                // later. No land in noninteractive mode => needn't save this.
+                auto fc = FlaggedChange(tc);
+                if (_lookup.getRectangle(tc.x, tc.y, xl, yl,
+                    Lookup.bitTerrain) != 0
+                ) {
+                    fc.needsRedraw = true;
+                }
+                _addsForLand ~= fc;
+            }
         }
-        if (_land)
-            // If land exists, remember the changes to be able to draw them
-            // later. If there is no land in noninteractive mode, throw away.
-            _addsForLand ~= _addsForLookup;
         _addsForLookup = null;
     }
 
@@ -247,24 +273,28 @@ private:
             ||  _addsForLand[0].update > upd);
     }
     body {
-        while (_addsForLand != null && _addsForLand[0].update == upd) {
-            scope (exit)
-                _addsForLand = _addsForLand[1 .. $];
-            auto tc = _addsForLand[0];
+        // Split the queue into what needs to be processed during this call,
+        // and what remains in the queue; shorten the queue already
+        int cut = 0;
+        while (cut < _addsForLand.length && _addsForLand[cut].update == upd)
+            ++cut;
+        auto processThese = _addsForLand[0 .. cut];
+        _addsForLand      = _addsForLand[cut .. $];
 
+        if (processThese == null)
+            return;
+
+        foreach (tc; processThese) {
             mixin AdditionsDefs;
-
-            Albit sprite;
-            with (Zone(profiler, "PhysDraw subbitmap create "
-                                 ~ tc.type.to!string))
-                sprite = al_create_sub_bitmap(_mask, x, y, xl, yl);
+            Albit sprite = al_create_sub_bitmap(_mask, x, y, xl, yl);
             scope (exit)
-                with (Zone(profiler, "PhysDraw subbitmap destroy "
-                                     ~ tc.type.to!string))
-                    al_destroy_bitmap(sprite);
-            with (Zone(profiler, "PhysDraw subbitmap draw "
-                                 ~ tc.type.to!string))
-                _land.drawFrom(sprite, tc.x, tc.y);
+                al_destroy_bitmap(sprite);
+            _land.drawFrom(sprite, tc.x, tc.y);
+            // DTODOVRAM: Do something about the bricks overwriting existing
+            // terrain. I've tried it with blenders, I don't think I can
+            // get something useful without changing the target bitmap,
+            // which is too expensive. Look into shaders with Allegro 5.1.
+            // Right now, I'm using Allegro 5.0.11.
         }
     }
 
