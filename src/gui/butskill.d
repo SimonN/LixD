@@ -30,20 +30,30 @@ public:
         addChildren(_labelNumL, _labelNumM, _label_hotkey);
     }
 
-    @property Ac skill() const { return _skill;                }
-    @property skill(in Ac a)   { reqDraw(); return _skill = a; }
-
-    @property hotkey_label(in string s)
+    @property Ac skill() const { return _skill; }
+    @property Ac skill(in Ac a)
     {
+        if (_skill == a)
+            return a;
+        reqDraw();
+        return _skill = a;
+    }
+
+    @property string hotkey_label() const { return _label_hotkey.text; }
+    @property string hotkey_label(in string s)
+    {
+        if (s == _label_hotkey.text)
+            return s;
         reqDraw();
         return _label_hotkey.text = s;
     }
 
     @property int number() const { return _number; }
-
     @property int number(in int i)
     {
         assert (i >= 0 || i == lix.enums.skillInfinity);
+        if (_number == i)
+            return i;
         _number = i;
         _labelNumL.text = "";
         _labelNumM.text = "";
@@ -53,18 +63,27 @@ public:
             _labelNumM.number = _number;
         else if (_number >= 1)
             _labelNumL.number = _number;
+        else if (number == 0)
+            on = false;
         reqDraw();
         return _number;
     }
 
-    @property style(in Style style)
+    @property Style style() const { return _style; }
+    @property Style style(in Style st)
     {
-        _icon = new Graphic(getSkillButtonIcon(style), gui.guiosd);
+        assert (st != Style.MAX);
+        if (_style == st)
+            return st;
+        _style = st;
+        _icon = new Graphic(getSkillButtonIcon(_style), gui.guiosd);
         reqDraw();
+        return st;
     }
 
 private:
 
+    Style _style = Style.MAX;
     int _number;
     Ac  _skill;
 

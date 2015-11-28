@@ -87,10 +87,9 @@ class Tribe {
 
     void returnSkills(in Ac ac, in int amount)
     {
-        if (skills[ac] != skillInfinity) {
+        skillsUsed -= amount;
+        if (skills[ac] != skillInfinity)
             skills[ac] += amount;
-            skillsUsed -= amount;
-        }
     }
 
     inout(Master)* getMasterWithNumber(in PlNr number) inout
