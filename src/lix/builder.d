@@ -28,8 +28,13 @@ class Builder : PerformedActivity {
 
     override void onManualAssignment()
     {
-        if (lixxie.ac == Ac.BUILDER)
-            skillsQueued = skillsQueued + 1;
+        if (lixxie.ac == Ac.BUILDER) {
+            // skillsQueued = ... would be a mistake. The new perfAc (this) is
+            // discarded. We want to give the extra skills to the old perfAc.
+            Builder oldAc = cast (Builder) lixxie.performedActivity;
+            assert (oldAc);
+            oldAc.skillsQueued = oldAc.skillsQueued + 1;
+        }
     }
 
     override void onBecome()

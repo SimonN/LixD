@@ -54,8 +54,6 @@ public:
 
     OutsideWorld* outsideWorld; // set this before each physics update anew
 
-    int queue; // builders and platformers can be queued in advance
-
     bool marked; // used by the game class, marks if already updated
 
     bool abilityToRun;
@@ -94,7 +92,7 @@ public:
 
     void turn() { dir = -dir; }
 
-    @property const(PerformedActivity) performedActivity() const
+    package @property inout(PerformedActivity) performedActivity() inout
     {
         return _perfAc;
     }
@@ -116,22 +114,11 @@ public:
  *  static bool getSteelAbsolute(in int, in int);
  *  bool getSteel         (in int = 0, in int = 0);
  *
- *  void addLand          (in int = 0, in int = 0, in AlCol = color.transp);
- *  void addLandAbsolute (in int = 0, in int = 0, in AlCol = color.transp);
- *
- *      don't call addLand from the skills, use drawPixel. That amends
- *      the x-direction by left-looking lixes by the desired 1 pixel. Kludge:
- *      Maybe remove addLand entirely and put the functionality in drawPixel?
- *
  *  bool isSolid        (in int = 0, in int = 2);
  *  bool isSolidSingle  (in int = 0, in int = 2);
  *  int  solidWallHeight(in int = 0, in int = 0);
  *  int  countSolid     (int, int, int, int);
  *  int  countSteel     (int, int, int, int);
- *
- *  static void removePixelAbsolute(in int, in int);
- *  bool        removePixel         (   int, in int);
- *  bool        removeRectangle     (int, int, int, int);
  *
  *  void playSound            (in Sound);
  *  void playSoundIfTribeLocal(in Sound);
@@ -201,8 +188,6 @@ this(in Lixxie rhs)
 
     _encBody = rhs._encBody;
     _encFoot = rhs._encFoot;
-
-    queue    = rhs.queue;
     marked   = rhs.marked;
 
     abilityToRun   = rhs.abilityToRun;
@@ -579,7 +564,7 @@ void become(bool manualAssignment = false)(in Ac newAc)
     auto oldPerf = _perfAc;
     auto newPerf = PerformedActivity.factory(this, newAc);
 
-    if (newPerf.callBecomeAfterAssignment)
+    if (ac != newPerf.ac)
         _perfAc.onBecomingSomethingElse();
 
     static if (manualAssignment)
