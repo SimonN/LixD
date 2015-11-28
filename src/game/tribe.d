@@ -35,7 +35,7 @@ class Tribe {
         int  lixSaved;
         int  lixSavedLate; // after the goals have been locked
         int  lixOut;       // change this only when killing/generating lixes.
-        int  lixExiting;   // these have been scored, but keep game running
+        int  lixLeaving;   // these have been scored, but keep game running
         int  spawnintSlow = 32;
         int  spawnintFast =  4;
         int  spawnint     = 32;
@@ -69,7 +69,7 @@ class Tribe {
     Tribe clone() const { return new Tribe(this); }
 
     @property {
-        int stillPlaying()  const { return lixOut + lixExiting + lixHatch;}
+        int stillPlaying()  const { return lixOut + lixLeaving + lixHatch;}
         int score()         const { return lixSaved; }
         int scoreExpected() const { return lixSaved + lixOut + lixHatch; }
     }

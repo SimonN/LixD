@@ -50,8 +50,6 @@ private:
 
 public:
 
-    static immutable int updatesForBomb = 75;
-
     OutsideWorld* outsideWorld; // set this before each physics update anew
 
     bool marked; // used by the game class, marks if already updated
@@ -422,7 +420,7 @@ override void draw(Torbit tb) const
 
         int x = 0;
         int y = 0;
-        for (; -y < (updatesForBomb - updatesSinceBomb)/5+1; --y) {
+        for (; -y < (Exploder.updatesForBomb - updatesSinceBomb)/5+1; --y) {
             /*
             // DTODOVRAM: decide on how to draw the pixel-rendered fuse
             const int u = updatesSinceBomb;
@@ -452,7 +450,7 @@ override void draw(Torbit tb) const
 
 bool cursorShouldOpenOverMe() const
 {
-    return ac != Ac.NOTHING && ! _perfAc.isLeaving;
+    return ac != Ac.NOTHING && ! _perfAc.leaving;
 }
 
 // returns 0 iff lix is not clickable and the cursor should be closed

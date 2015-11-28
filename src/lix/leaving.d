@@ -1,35 +1,84 @@
 module lix.leaving;
 
 import lix;
+import hardware.sound;
 
-class Splatter : PerformedActivity { mixin(CloneByCopyFrom!"Splatter"); }
-class Burner   : PerformedActivity { mixin(CloneByCopyFrom!"Burner"); }
-class Drowner  : PerformedActivity { mixin(CloneByCopyFrom!"Drowner"); }
-class Exiter   : PerformedActivity { mixin(CloneByCopyFrom!"Exiter"); }
+class RemovedLix : PerformedActivity {
 
-// code moved out of lix.faller
-/+
-                    l.play_sound(ua, Sound::SPLAT);
+    mixin(CloneByCopyFrom!"RemovedLix");
 
-                    // Nicht explodieren lassen, das täte er bei 76 :-)
-                    if (l.get_updates_since_bomb() == 75
-                        || ua.st.tribes.size() <= 1 // singleplayer
-                    ) {
-                        l.set_updates_since_bomb(0);
-                    }
-+/
+    override @property bool leaving() const { return true; }
 
-// play the correct sounds in onBecome
-/+
-    acFunc[Ac.SPLATTER]  .soundBecome = Sound.SPLAT;
-    acFunc[Ac.BURNER]    .soundBecome = Sound.FIRE;
-    acFunc[Ac.DROWNER]   .soundBecome = Sound.WATER;
-+/
+    override void onBecome()
+    {
+        assert (lixxie.performedActivity.ac != Ac.NOTHING,
+            "Lix can't be killed twice, that would miscount them.");
+        assert (lixxie.performedActivity.leaving,
+            "Lix should only transistion to NOTHING from a killing/exiting "
+            "animation. Otherwise, they won't be counted correctly. "
+            "See template KillingInformation for the counting.");
+        --outsideWorld.tribe.lixLeaving;
+    }
 
-// override methods appropriately
-/+
-    acFunc[Ac.SPLATTER]  .leaving =
-    acFunc[Ac.BURNER]    .leaving =
-    acFunc[Ac.DROWNER]   .leaving =
-    acFunc[Ac.EXITER]    .leaving = true
-+/
+}
+
+
+
+private mixin template KillingAnimation(
+    string className,
+    Sound  soundEffect
+) {
+    mixin(CloneByCopyFrom!className);
+
+    override @property bool leaving() const { return true; }
+
+    override void onBecome()
+    {
+        --outsideWorld.tribe.lixOut;
+        ++outsideWorld.tribe.lixLeaving;
+        static if (soundEffect != Sound.NOTHING)
+            playSound(soundEffect);
+    }
+
+    override void performActivity()
+    {
+        if (isLastFrame)
+            become(Ac.NOTHING);
+        else
+            advanceFrame();
+    }
+}
+
+
+
+class Exiter : PerformedActivity {
+
+    int xOffsetFromGoal;
+
+    mixin KillingAnimation!("Exiter", Sound.NOTHING);
+
+    alias copyFromAndBindToLix = super.copyFromAndBindToLix;
+    protected void copyFromAndBindToLix(in Exiter rhs, Lixxie lixToBindTo)
+    {
+        super.copyFromAndBindToLix(rhs, lixToBindTo);
+        xOffsetFromGoal = rhs.xOffsetFromGoal;
+    }
+
+    // DTODOSKILLS: Implement moving left/right during exiting
+}
+
+
+
+class Splatter : PerformedActivity {
+    mixin KillingAnimation!("Splatter", Sound.SPLAT);
+}
+
+class Burner : PerformedActivity {
+    mixin KillingAnimation!("Burner", Sound.FIRE);
+    // DTODOSKILLS: Implement moving up/down in the air
+}
+
+class Drowner : PerformedActivity {
+    mixin KillingAnimation!("Drowner", Sound.WATER);
+    // DTODOSKILLS: Look at C++ Lix about how we moved during drowning
+}

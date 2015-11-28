@@ -28,14 +28,14 @@ abstract class PerformedActivity {
 
 public:
 
-    @property final Ac  ac()      const { return _ac;    }
-    @property final int frame()   const { return _frame; }
+    @property final Ac  ac()    const { return _ac;    }
+    @property final int frame() const { return _frame; }
 
-    @property bool  canPassTop()  const { return false; }
-    @property bool  isBlockable() const { return true;  }
-    @property bool  isLeaving()   const { return false; }
+    @property bool canPassTop() const { return false; }
+    @property bool blockable()  const { return true;  }
+    @property bool leaving()    const { return false; }
 
-    @property bool  callBecomeAfterAssignment() const { return true; }
+    @property bool callBecomeAfterAssignment() const { return true; }
 
     void onManualAssignment()      { } // while Lix has old performed ac!
     void onBecome()                { } // initialization, still while old
@@ -106,11 +106,4 @@ private:
     Ac  _ac;
     int _frame;
 
-}
-
-
-
-class RemovedLix : PerformedActivity {
-    mixin(CloneByCopyFrom!"RemovedLix");
-    override @property bool isLeaving() const { return true; }
 }
