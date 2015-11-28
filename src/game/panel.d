@@ -60,26 +60,29 @@ this()
         skills[id].skill = ac;
         skills[id].hotkey = basics.user.keySkill[skillSort[id]];
         addChild(skills[id]);
-        // DTODO: set hotkeys to skillbuttons
     }
 
-    void newControlButton(T)(ref T b, int x, int y, int frame)
+    void newControlButton(T)(ref T b, int x, int y, int frame,
+        in int keyLeft = 0, in int keyRight = 0)
         if (is(T : BitmapButton))
     {
         b = new T(new Geom((3 - x) * skillXl,
             y == 0 ?  0.5f * skillYl : 0, skillXl,
             0.5f * skillYl, From.BOTTOM_RIGHT),
             getInternal(basics.globals.fileImageGame_panel));
-        b.xf = frame;
+        b.xf     = frame;
+        b.hotkey = keyLeft;
+        static if (is (T == TwoTasksButton))
+            b.hotkeyRight = keyRight;
         addChild(b);
     }
 
-    newControlButton(zoom,       0, 0,  2);
-    newControlButton(speedBack,  0, 1, 10);
-    newControlButton(speedAhead, 1, 1,  3);
-    newControlButton(speedFast,  2, 1, frameFast);
-    newControlButton(restart,    1, 0,  8);
-    newControlButton(nukeSingle, 2, 0,  9);
+    newControlButton(zoom,       0, 0,  2, keyZoom);
+    newControlButton(speedBack,  0, 1, 10, keyFrameBackOne, keyFrameBackMany);
+    newControlButton(speedAhead, 1, 1,  3, keyFrameAheadOne,keyFrameAheadMany);
+    newControlButton(speedFast,  2, 1, frameFast, keySpeedFast, keySpeedTurbo);
+    newControlButton(restart,    1, 0,  8, keyRestart);
+    newControlButton(nukeSingle, 2, 0,  9, keyNuke);
 
     pause = new BitmapButton(
         new Geom(0, 0, skillXl, skillYl, From.BOTTOM_RIGHT),
@@ -88,6 +91,9 @@ this()
     nukeMulti = new BitmapButton(
         new Geom(0, 0, 4 * skillXl, this.ylg - skillYl, From.BOTTOM_RIGHT),
         getInternal(basics.globals.fileImageGameNuke));
+
+    pause    .hotkey = keyPause;
+    nukeMulti.hotkey = keyNuke;
 
     addChild(pause);
     addChild(nukeMulti);
