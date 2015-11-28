@@ -158,20 +158,16 @@ class Builder : PerformedActivity {
 }
 // end class Builder
 
-/+
-void update_shrugger(Lixxie& l)
-{
-    if (l.is_last_frame()) l.become(LixEn::WALKER);
-    else l.next_frame();
-}
-+/
+class Shrugger : PerformedActivity {
 
-// important to implement this in the shrugger's become,
-// this comes from (become walker)
-/+
-        else if (lixxie.ac == Ac.PLATFORMER && frame > 5) {
+    mixin(CloneByCopyFrom!"Shrugger");
+
+    override void onBecome()
+    {
+        // This comes from C++ Lix's (become walker)
+        if (lixxie.ac == Ac.PLATFORMER && lixxie.frame > 5) {
             become(Ac.SHRUGGER2);
-            frame = 9;
+            lixxie.frame = 9; // frame = 9 would affect the wrong object
             // See also the next else-if.
             // Clicking twice on the platformer shall turn it around.
         }
@@ -179,7 +175,16 @@ void update_shrugger(Lixxie& l)
             become(Ac.WALKER);
             turn();
         }
-+/
+    }
 
-class Shrugger   : PerformedActivity { mixin(CloneByCopyFrom!"Shrugger"); }
+    override void performActivity()
+    {
+        if (isLastFrame)
+            become(Ac.WALKER);
+        else
+            advanceFrame();
+    }
+
+}
+
 class Platformer : PerformedActivity { mixin(CloneByCopyFrom!"Platformer"); }
