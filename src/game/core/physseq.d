@@ -127,10 +127,10 @@ evaluateReplayData(Game game)
     // Evaluating replay data, which carries out mere assignments, should be
     // independent of player order. Nonetheless, out of paranoia, we do it
     // in the order of players first, only then in the order of 'data'.
-    foreach (tribe; game.cs.tribes)
+    foreach (int trID, tribe; game.cs.tribes)
         foreach (ref const(ReplayData) data; dataSlice)
             if (auto master = tribe.getMasterWithNumber(data.player))
-                game.updateOneData(tribe, master, data);
+                game.updateOneData(trID, tribe, master, data);
 }
 
 
@@ -139,7 +139,8 @@ evaluateReplayData(Game game)
 void
 updateOneData(
     Game game,
-    Tribe tribe,
+    in int trID,
+    Tribe  tribe,
     in Tribe.Master* master,
     ref const(ReplayData) i) { with (game)
 {
@@ -166,6 +167,8 @@ updateOneData(
         ++(tribe.skillsUsed);
         if (tribe.skills[i.skill] != lix.skillInfinity)
             --(tribe.skills[i.skill]);
+        auto ow = game.makeGypsyWagon(trID, i.toWhichLix);
+        lixxie.outsideWorld = &ow;
         lixxie.assignManually(i.skill);
 
         // Effects
@@ -186,7 +189,7 @@ updateOneData(
     }
     // end of i.isSomeAssignment
     /+
-    if (i.action == ReplayData.SPAWNINT) {
+    else if (i.action == ReplayData.SPAWNINT) {
         const int spint = i->what;
         if (spint >= t.spawnint_fast && spint <= t.spawnint_slow) {
             t.spawnint = spint;

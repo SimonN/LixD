@@ -429,6 +429,8 @@ private:
         if (mode == Runmode.VERIFY)
             return;
 
+        alias rf = al_draw_filled_rectangle;
+
         // Otherwise, create the mask to blit nice sprites on the land
         displayStartupMessage("Creating physics mask...");
 
@@ -442,7 +444,6 @@ private:
             in AlCol light, in AlCol medium, in AlCol dark
         ) {
             alias yl = brickYl;
-            alias rf = al_draw_filled_rectangle;
             rf(x,      y,      x+xl-1, y+1,  light);  // L L L L L M
             rf(x+1,    y+yl-1, x+xl,   y+yl, dark);   // M D D D D D
             rf(x,      y+yl-1, x+1,    y+yl, medium); // ^
@@ -472,8 +473,8 @@ private:
         }
 
         // digger swing
-        al_draw_filled_rectangle(0, remY, Digger.tunnelWidth, remY + remYl,
-                                 color.white);
+        rf(0, remY, Digger.tunnelWidth, remY + remYl, color.white);
+
         static if (true) {
             import std.string;
             al_save_bitmap("./physicsmask.png".toStringz, _mask);

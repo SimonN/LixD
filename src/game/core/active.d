@@ -302,8 +302,7 @@ assignToPotentialAssignee(
     ) {
         // Decrease the visible number on the panel. This is mostly eye candy.
         // It doesn't affect physics, including judging what's coming in over
-        // the network, but it affects our assignment code, e.g. further up
-        // in this very function on two rapid assignments.
+        // the network, but it affects the assignment user interface.
         currentSkill.number = currentSkill.number - 1;
     }
 
