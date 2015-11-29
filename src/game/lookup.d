@@ -152,25 +152,6 @@ body {
 
 
 
-// These two functions assume the input completely in valid range for speed.
-private int getRectangleAt(int x, int y, int xr, int yr, LoNr n) const
-{
-    int count = 0;
-    for  (int ix = x; ix < xr; ++ix)
-     for (int iy = y; iy < yr; ++iy) if (getAt(ix, iy) & n) ++count;
-    return count;
-}
-
-
-
-private void addRectangleAt(int x, int y, int xr, int yr, LoNr n)
-{
-    for  (int ix = x; ix < xr; ++ix)
-     for (int iy = y; iy < yr; ++iy) addAt(ix, iy, n);
-}
-
-
-
 LoNr get(int x, int y) const
 {
     amend(x, y);
@@ -181,31 +162,14 @@ LoNr get(int x, int y) const
 
 bool get(int x, int y, LoNr n) const
 {
-    amend(x, y);
-    return (getAt(x, y) & n) != 0;
-}
-
-
-
-int getRectangle(int x, int y, int xr, int yr, LoNr n) const
-{
-    amend(x, y);
-    const int xrr = x + xr <= _xl ? xr : _xl - x;
-    const int yrr = y + yr <= _yl ? yr : _yl - y;
-    int count =                   getRectangleAt(x, y, xrr,    yrr,   n);
-    if (_tx && xr > xrr) count += getRectangleAt(0, y, xr-xrr, yrr,   n);
-    if (_ty && yr > yrr) count += getRectangleAt(0, y, xrr,    yr-yrr,n);
-    if (_tx && xr > xrr
-     && _ty && yr > yrr) count += getRectangleAt(0, 0, xr-xrr, yr-yrr,n);
-    return count;
+    return (get(x, y) & n) != 0;
 }
 
 
 
 bool getSolid(int x, int y) const
 {
-    amend(x, y);
-    return (getAt(x, y) & bitTerrain) != 0;
+    return get(x, y, bitTerrain);
 }
 
 
@@ -220,19 +184,15 @@ bool getSolidEven(int x, int y) const
 
 
 
-// int Lookup::getSolidRectEven(int, int, int, int) const;
-
-
-
 bool getSteel(int x, int y) const
 {
-    amend(x, y);
-    return (getAt(x, y) & bitSteel) != 0;
+    if (get(x, y, bitSteel)) {
+        assert (getSolid(x, y));
+        return true;
+    }
+    else
+        return false;
 }
-
-
-
-//    int  getSteelRectangle(int, int, int, int) const;
 
 
 
@@ -252,11 +212,22 @@ void add(int x, int y, LoNr n)
 
 
 
-void addRectangle(int x, int y, int xr, int yr, LoNr n)
-{
+void rect(alias func, Args...)(
+    int x, int y, int xr, int yr, Args args
+) {
     for     (int ix = 0; ix < xr; ++ix)
         for (int iy = 0; iy < yr; ++iy)
-            add(x + ix, y + iy, n);
+            func(x + ix, y + iy, args);
+}
+
+int rectSum(alias func, Args...)(
+    int x, int y, int xr, int yr, Args args)
+{
+    int ret = 0;
+    for     (int ix = 0; ix < xr; ++ix)
+        for (int iy = 0; iy < yr; ++iy)
+            ret += ! ! func(x + ix, y + iy, args);
+    return ret;
 }
 
 
@@ -269,18 +240,19 @@ void setSolid(int x, int y)
 
 
 
-void setSolidRectangle(int x, int y, int xr, int yr)
+bool setAirCountSteel(int x, int y)
 {
-    addRectangle(x, y, xr, yr, bitTerrain);
-}
-
-
-
-void setAir(int x, int y)
-{
-    if (! amendIfInside(x, y))  return;
-    if (getAt(x, y) & bitSteel) return;
-    rmAt(x, y, bitTerrain);
+    if (! amendIfInside(x, y)) {
+        return getSteel(x, y);
+    }
+    else if (getAt(x, y) & bitSteel) {
+        assert (getAt(x, y) & bitTerrain);
+        return true;
+    }
+    else {
+        rmAt(x, y, bitTerrain);
+        return false;
+    }
 }
 
 

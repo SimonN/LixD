@@ -35,6 +35,26 @@ class EffectManager {
         _tree = new RedBlackTree!Effect;
     }
 
+    void deleteAfter(in int upd)
+    out {
+        foreach (e; _tree)
+            assert (e.update <= upd);
+    }
+    body {
+        _tree.remove(_tree.upperBound(Effect(upd + 1, -1 , 0, Sound.NOTHING)));
+    }
+
+    override string toString() const
+    {
+        int[] arr;
+        foreach (e; _tree)
+            arr ~= e.update;
+        import std.conv;
+        return arr.to!string();
+    }
+
+
+
     void addSoundGeneral(in int upd,
         in Sound sound, in Loudness loudness = Loudness.loud
     ) {
@@ -60,21 +80,16 @@ class EffectManager {
             addSound(upd, tribe, lix, sound, loudness);
     }
 
-    void deleteAfter(in int upd)
-    out {
-        foreach (e; _tree)
-            assert (e.update <= upd);
-    }
-    body {
-        _tree.remove(_tree.upperBound(Effect(upd + 1, -1 , 0, Sound.NOTHING)));
+    void addDigHammer(in int upd, in int tribe, in int lix,
+        in int x, in int y
+    ) {
+        Effect e = Effect(upd, tribe, lix,
+            (tribe == tribeLocal ? Sound.STEEL : Sound.NOTHING));
+        if (e !in _tree) {
+            _tree.insert(e);
+            hardware.sound.play(e.sound, e.loudness);
+            // DTODOEFFECT: animate the dig hammer at(x, y)
+        }
     }
 
-    override string toString() const
-    {
-        int[] arr;
-        foreach (e; _tree)
-            arr ~= e.update;
-        import std.conv;
-        return arr.to!string();
-    }
 }

@@ -248,8 +248,8 @@ final void draw_lookup(Lookup lk)
         case TileType.TRAMPOLINE: nr = Lookup.bitTrampoline; break;
         default: break;
     }
-    lk.addRectangle(x + tile.triggerX, y + tile.triggerY,
-                        tile.triggerXl,    tile.triggerYl, nr);
+    lk.rect!(Lookup.add)(x + tile.triggerX, y + tile.triggerY,
+                             tile.triggerXl,    tile.triggerYl, nr);
 }
 
 }

@@ -27,6 +27,7 @@ import graphic.gralib; // must be initialized first
 import hardware.display; // displayStartupMessage
 import hardware.tharsis;
 import lix.enums;
+import lix.digger; // diggerTunnelWidth
 
 void initialize(Runmode mode) { PhysicsDrawer.initialize(mode); }
 void deinitialize()           { PhysicsDrawer.deinitialize();   }
@@ -50,9 +51,10 @@ struct TerrainChange {
 
     int   update;
     Type  type;
-    Style style;
+    Style style; // for additions
     int x;
     int y;
+    int yl; // for digger swing
 
     @property bool isAddition() const { return type < Type.imploderCrater; }
     @property bool isDeletion() const { return ! isAddition; }
@@ -122,14 +124,19 @@ class PhysicsDrawer {
         return _delsForLand != null || _addsForLand != null;
     }
 
-    // pass current update of the game to this
+    // The single public function for any drawing to the land.
+    // Should be understandable from the many asserts, otherwise ask me.
+    // You should know what a lookup map is (class Lookup from game.lookup).
+    // _land is the torus bitmap onto which we draw the terrain, but this
+    // is never queried for physics -- that's what the lookup map is for.
+    // int upd: Pass current update of the game to this.
     void
     applyChangesToLand(in int upd)
     in {
         assert (_land);
         enum msg = "I don't believe you should draw to land when you still "
-            "have changes to be drawn to the lookup map. Edit this assert "
-            "if you have found a reason.";
+            "have changes to be drawn to the lookup map. You may want to call "
+            "applyChangesToLookup() more often.";
         assert (_delsForLookup == null, msg);
         assert (_addsForLookup == null, msg);
         enum msg2 = "applyChangesToLand() doesn't get called each update. "
@@ -152,15 +159,22 @@ class PhysicsDrawer {
         while (_delsForLand != null || _addsForLand != null) {
             // Do deletions for the first update, then additions for that,
             // then deletions for the next update, then additions, ...
-            int earliestUpdate
+            immutable int earliestUpdate
                 = _delsForLand != null && _addsForLand != null
                 ? min(_delsForLand[0].update, _addsForLand[0].update)
                 : _delsForLand != null
                 ? _delsForLand[0].update : _addsForLand[0].update;
+
             deletionsToLandForUpdate(earliestUpdate);
             additionsToLandForUpdate(earliestUpdate);
         }
     }
+
+
+
+// ############################################################################
+// ############################################################################
+// ############################################################################
 
 
 
@@ -177,6 +191,11 @@ private:
     FlaggedChange[] _delsForLand;
     FlaggedChange[] _addsForLand;
 
+    enum buiY  = 0;
+    enum buiYl = 4;
+ 	enum remY  = buiY + buiYl;
+ 	enum remYl = 32;
+
     static void
     deinitialize()
     {
@@ -188,36 +207,156 @@ private:
 
     mixin template AdditionsDefs() {
         immutable build = (tc.type == TerrainChange.Type.builderBrick);
-        immutable yl    = brickYl;
+        immutable yl    = lix.enums.brickYl;
         immutable y     = build ? 0              : brickYl;
         immutable xl    = build ? builderBrickXl : platformerBrickXl;
         immutable x     = xl * tc.style;
     }
 
+    void assertCalledEachUpdate(TerrainChange[] arr)
+    {
+        // don't let data of different updates accumulate here
+        foreach (const tc; arr)
+            assert (tc.update == arr[0].update);
+    }
+
+    void assertChangesForLand(FlaggedChange[] arr, in int upd)
+    {
+        // Functions calling assertChangesForLand need not be called on each
+        // update, but only if the land must be drawn like it should appear
+        // now. In noninteractive mode, this shouldn't be called at all.
+        assert (_land);
+        assert (_mask);
+        assert (isSorted!"a.update < b.update"(arr));
+        assert (arr == null || arr[0].update >= upd, format(
+            "There are additions to the land that should be drawn in "
+            "the earlier update %d. Right now we have update %d. "
+            "If this happens after loading a savestate, "
+            "make sure to empty all queued additions/deletions.",
+            arr[0].update, upd));
+        assert (al_get_target_bitmap() == _land.albit,
+            "For performance, set the drawing target to _land "
+            "outside of *ToLandForUpdate(). Slow performance is "
+            "considered a logic bug!");
+    }
+
+    FlaggedChange[] splitOffFromArray(ref FlaggedChange[] arr, in int upd)
+    {
+        // Split the queue into what needs to be processed during this call,
+        // remove these from the caller's queue (arr).
+        int cut = 0;
+        while (cut < arr.length && arr[cut].update == upd)
+            ++cut;
+        auto ret = arr[0 .. cut];
+        arr      = arr[cut .. $];
+        return ret;
+    }
+
+
+
+// ############################################################################
+// ############################################################################
+// ############################################################################
+
+
+
     void
     deletionsToLookup()
-    {
-        _delsForLand ~= _delsForLookup.map!(a => FlaggedChange(a)).array;
-        _delsForLookup = null;
+    in {
+        assertCalledEachUpdate(_delsForLookup);
+    }
+    out {
+        assert (_delsForLookup == null);
+    }
+    body {
+        scope (exit)
+            _delsForLookup = null;
+
+        foreach (const tc; _delsForLookup) {
+            assert (tc.isDeletion);
+            int steelHit = 0;
+
+            switch (tc.type) {
+            case TerrainChange.Type.diggerSwing:
+                assert (tc.yl > 0);
+                steelHit += _lookup.rectSum!(Lookup.setAirCountSteel)
+                    (tc.x, tc.y, Digger.tunnelWidth, tc.yl);
+                break;
+            default:
+                assert (false, "skill not yet implemented");
+            }
+
+            if (_land)
+                _delsForLand ~= FlaggedChange(tc, steelHit > 0);
+        }
     }
 
 
 
     void
     deletionsToLandForUpdate(in int upd)
-    {
-        _delsForLand = null;
+    in {
+        assertChangesForLand(_delsForLand, upd);
     }
+    out {
+        assert (_delsForLand == null
+            ||  _delsForLand[0].update > upd);
+    }
+    body {
+        auto processThese = splitOffFromArray(_delsForLand, upd);
+        if (processThese == null)
+            return;
+
+        // Terrain-removing masks are drawn with an opaque white pixel
+        // (alpha = 1.0) where a deletion should occur on the land, and
+        // transparent (alpha = 0.0) where no deletion should happen.
+        // Therefore, choose a nonstandard blender that does:
+        // target is opaque => deduct source alpha
+        // target is transp => leave as-is, can't deduct any more alpha anyway
+        with (Blender(
+            ALLEGRO_BLEND_OPERATIONS.ALLEGRO_DEST_MINUS_SRC,
+            ALLEGRO_BLEND_MODE.ALLEGRO_ONE, // subtract all of the source...
+            ALLEGRO_BLEND_MODE.ALLEGRO_ONE) // ...from the target
+        ) {
+            foreach (const tc; processThese) {
+                assert (tc.isDeletion);
+                auto zone = Zone(profiler, "PhysDraw delete 1");
+
+                Albit sprite = null;
+                scope (exit) {
+                    assert (sprite !is null);
+                    al_destroy_bitmap(sprite);
+                }
+
+                switch (tc.type) {
+                case TerrainChange.Type.diggerSwing:
+                    assert (tc.yl > 0);
+                    sprite = al_create_sub_bitmap(_mask,
+                        0, remY, Digger.tunnelWidth, tc.yl);
+                    break;
+                default:
+                    assert (false, "skill isn't implemented yet");
+                }
+                _land.drawFrom(sprite, tc.x, tc.y);
+            }
+        }
+        if (processThese.any!(tc => tc.needsRedraw)) {
+            // DTODOVRAM: draw the steel on top of _land?
+        }
+    }
+
+
+
+// ############################################################################
+// ############################################################################
+// ############################################################################
 
 
 
     void
     additionsToLookup()
     in {
-        // This should be called on each update. Don't let data of different
-        // updates accumulate here.
-        foreach (const tc; _addsForLookup)
-            assert (tc.update == _addsForLookup[0].update);
+        assertCalledEachUpdate(_addsForLookup);
     }
     out {
         assert (_addsForLookup == null);
@@ -227,19 +366,17 @@ private:
             auto zone = Zone(profiler, "PhysDraw lookupmap "
                                        ~ tc.type.to!string);
             mixin AdditionsDefs;
-            assert (build || tc.type == TerrainChange.Type.platformerBrick);
+            assert (build || tc.type == TerrainChange.Type.platformerBrick,
+                "cuber isn't implemented yet");
             scope (success)
-                _lookup.addRectangle(tc.x, tc.y, xl, yl, Lookup.bitTerrain);
+                _lookup.rect!(Lookup.setSolid)(tc.x, tc.y, xl, yl);
 
             if (_land) {
                 // If land exists, remember the changes to be able to draw them
                 // later. No land in noninteractive mode => needn't save this.
                 auto fc = FlaggedChange(tc);
-                if (_lookup.getRectangle(tc.x, tc.y, xl, yl,
-                    Lookup.bitTerrain) != 0
-                ) {
-                    fc.needsRedraw = true;
-                }
+                fc.needsRedraw = _lookup.rectSum!(Lookup.getSolid)
+                                 (tc.x, tc.y, xl, yl) != 0;
                 _addsForLand ~= fc;
             }
         }
@@ -251,40 +388,18 @@ private:
     void
     additionsToLandForUpdate(in int upd)
     in {
-        // This neend not be called on each update, but only if the land
-        // must be drawn like it should appear now. In noninteractive mode,
-        // this shouldn't be called at all.
-        assert (_land);
-        assert (_mask);
-        assert (isSorted!"a.update < b.update"(_addsForLand));
-        assert (_addsForLand == null || _addsForLand[0].update >= upd, format(
-            "There are additions to the land that should be drawn in "
-            "the earlier update %d. Right now we have update %d. "
-            "If this happens after loading a savestate, "
-            "make sure to empty all queued additions/deletions.",
-            _addsForLand[0].update, upd));
-        assert (al_get_target_bitmap() == _land.albit,
-            "For performance, set the drawing target to _land "
-            "outside of additionsToLandForUpdate(). Slow performance is "
-            "considered a logic bug!");
+        assertChangesForLand(_addsForLand, upd);
     }
     out {
         assert (_addsForLand == null
             ||  _addsForLand[0].update > upd);
     }
     body {
-        // Split the queue into what needs to be processed during this call,
-        // and what remains in the queue; shorten the queue already
-        int cut = 0;
-        while (cut < _addsForLand.length && _addsForLand[cut].update == upd)
-            ++cut;
-        auto processThese = _addsForLand[0 .. cut];
-        _addsForLand      = _addsForLand[cut .. $];
-
+        auto processThese = splitOffFromArray(_addsForLand, upd);
         if (processThese == null)
             return;
 
-        foreach (tc; processThese) {
+        foreach (const tc; processThese) {
             mixin AdditionsDefs;
             Albit sprite = al_create_sub_bitmap(_mask, x, y, xl, yl);
             scope (exit)
@@ -297,6 +412,12 @@ private:
             // Right now, I'm using Allegro 5.0.11.
         }
     }
+
+
+
+// ############################################################################
+// ############################################################################
+// ############################################################################
 
 
 
@@ -350,7 +471,10 @@ private:
                 al_get_pixel(recol, recolXl - 1, y));
         }
 
-        static if (false) {
+        // digger swing
+        al_draw_filled_rectangle(0, remY, Digger.tunnelWidth, remY + remYl,
+                                 color.white);
+        static if (true) {
             import std.string;
             al_save_bitmap("./physicsmask.png".toStringz, _mask);
         }

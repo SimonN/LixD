@@ -149,16 +149,16 @@ void play(in Sound id, in Loudness loudness)
 
 void playLoud(in Sound id)
 {
-    assert (samples[id] !is null);
-    samples[id].scheduleLoud();
+    if (samples[id] !is null)
+        samples[id].scheduleLoud();
 }
 
 
 
 void playQuiet(in Sound id)
 {
-    assert (samples[id] !is null);
-    samples[id].scheduleQuiet();
+    if (samples[id] !is null)
+        samples[id].scheduleQuiet();
 }
 
 

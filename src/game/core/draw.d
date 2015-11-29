@@ -67,12 +67,10 @@ implGameDraw(Game game) { with (game)
 
     with (Zone(profiler, "game draws ingame text")) {
         import graphic.textout;
-        drawText(djvuM, "[ESC] aborts. Please don't hit [ESC] during benchmarking.",
+        drawText(djvuM, "[ESC] to abort.",
             10, 10, graphic.color.color.white);
         drawText(djvuM, std.string.format("Frames per second: %d",
             displayFps), 10, 40, graphic.color.color.white);
-        drawText(djvuM, effect.toString(),
-            10, 70, graphic.color.color.white);
     }
 
     static if (false) {
