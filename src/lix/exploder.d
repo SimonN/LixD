@@ -2,25 +2,20 @@ module lix.exploder;
 
 import lix;
 
-/+
-static this()
-{
-    acFunc[Ac.EXPLODER]  .leaving = true;
-}
-+/
-
-
-
 class Exploder : PerformedActivity {
 
     enum updatesForBomb = 75;
 
     mixin(CloneByCopyFrom!"Exploder");
 
-    override @property bool leaving() const { return true; }
+    override @property bool leaving()   const { return true;  }
+    override @property bool blockable() const { return false; }
 
     static void handleUpdatesSinceBomb(Lixxie li)
     {
+        assert (li.ac != Ac.EXPLODER);
+        assert (li.ac != Ac.EXPLODER2);
+
         if (li.updatesSinceBomb == 0)
             return;
 

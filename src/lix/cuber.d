@@ -13,6 +13,7 @@ class Cuber : PerformedActivity {
 
     mixin(CloneByCopyFrom!"Cuber");
 
+    override @property bool blockable() const { return false; }
 
     // DTODOVRAM: Implement this in the physics drawing class, and have
     // the cuber send several terrain change requests to that

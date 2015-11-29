@@ -7,7 +7,8 @@ class RemovedLix : PerformedActivity {
 
     mixin(CloneByCopyFrom!"RemovedLix");
 
-    override @property bool leaving() const { return true; }
+    override @property bool leaving()   const { return true;  }
+    override @property bool blockable() const { return false; }
 
     override void onBecome()
     {
@@ -30,7 +31,8 @@ private mixin template KillingAnimation(
 ) {
     mixin(CloneByCopyFrom!className);
 
-    override @property bool leaving() const { return true; }
+    override @property bool leaving()   const { return true;  }
+    override @property bool blockable() const { return false; }
 
     override void onBecome()
     {

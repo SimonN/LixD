@@ -8,6 +8,8 @@ class Ascender : PerformedActivity {
 
     mixin(CloneByCopyFrom!"Ascender");
 
+    override @property bool blockable() const { return false; }
+
     override void onBecome()
     {
         bool solidPixelWithAirAbove(in int y)
