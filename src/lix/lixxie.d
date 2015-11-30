@@ -40,6 +40,9 @@ private:
 
     PerformedActivity _perfAc;
 
+    OutsideWorld* _outsideWorld; // set whenever physics and tight coupling,
+                                 // are needed, nulled again at end of those
+
     void draw_at(const int, const int);
 
     @property inout(Lookup) lookup() inout
@@ -48,9 +51,15 @@ private:
         return outsideWorld.state.lookup;
     }
 
-public:
+    enum string tmpOutsideWorld = q{
+        assert (ow);
+        assert (! _outsideWorld);
+        _outsideWorld = ow;
+        scope (exit)
+            _outsideWorld = null;
+    };
 
-    OutsideWorld* outsideWorld; // set this before each physics update anew
+public:
 
     bool marked; // used by the game class, marks if already updated
 
@@ -101,6 +110,12 @@ public:
         return _perfAc.ac;
     }
 
+    package @property inout(OutsideWorld*) outsideWorld() inout
+    {
+        assert (_outsideWorld !is null);
+        return _outsideWorld;
+    }
+
 //  bool get_in_trigger_area(const EdGraphic) const;
 
     @property bool flingNew() const { return _flingNew; }
@@ -148,12 +163,13 @@ public:
 
 this(
     in Torbit     groundMap,
-    OutsideWorld* newOutside,
+    OutsideWorld* ow,
     int   new_ex,
     int   new_ey
 ) {
-    outsideWorld = newOutside; // needed for setting ex, ey
-    _style       = newOutside.tribe.style;
+    mixin (tmpOutsideWorld);
+
+    _style = outsideWorld.tribe.style;
 
     super(getLixSpritesheet(_style), groundMap,
           even(new_ex) - exOffset, new_ey - eyOffset);
@@ -197,8 +213,8 @@ this(in Lixxie rhs)
 
     _perfAc = rhs._perfAc.cloneAndBindToLix(this);
 
-    outsideWorld = null; // Must be passed anew by the next update.
-                         // Can't copy from a const lix, keep it at .init.
+    _outsideWorld = null; // Must be passed anew by the next update.
+                          // Can't copy this from const lix, keep it at .init.
 }
 
 override Lixxie clone() const { return new Lixxie(this); }
@@ -556,6 +572,21 @@ int priorityForNewAc(
 
 
 
+void assignManually(OutsideWorld* ow, in Ac newAc)
+{
+    mixin(tmpOutsideWorld);
+    become!true(newAc);
+}
+
+void performActivity(OutsideWorld* ow)
+{
+    mixin(tmpOutsideWorld);
+    assert (_perfAc);
+    _perfAc.performActivity();
+}
+
+
+
 void become(bool manualAssignment = false)(in Ac newAc)
 {
     assert (_perfAc);
@@ -587,21 +618,6 @@ void become(bool manualAssignment = false)(in Ac newAc)
                 frame = frame - 1;
         }
     }
-}
-
-
-
-void assignManually(in Ac newAc)
-{
-    become!true(newAc);
-}
-
-
-
-void performActivity()
-{
-    assert (_perfAc);
-    _perfAc.performActivity();
 }
 
 }

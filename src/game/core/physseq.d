@@ -167,9 +167,8 @@ updateOneData(
         ++(tribe.skillsUsed);
         if (tribe.skills[i.skill] != lix.skillInfinity)
             --(tribe.skills[i.skill]);
-        auto ow = game.makeGypsyWagon(trID, i.toWhichLix);
-        lixxie.outsideWorld = &ow;
-        lixxie.assignManually(i.skill);
+        OutsideWorld ow = game.makeGypsyWagon(trID, i.toWhichLix);
+        lixxie.assignManually(&ow, i.skill);
 
         // Effects
         if ((basics.user.arrowsReplay && replaying)
@@ -394,9 +393,8 @@ updateLixxies(Game game) { with (game)
         foreach (int lixID, lixxie; tribe.lixvec) {
             if (lixxie.ac > Ac.WALKER) {
                 auto ow = game.makeGypsyWagon(tribeID, lixID);
-                lixxie.outsideWorld = &ow;
                 lixxie.marked = true;
-                game.updateSingleLix(lixxie);
+                game.updateSingleLix(lixxie, &ow);
             }
             else {
                 lixxie.marked = false;
@@ -410,8 +408,7 @@ updateLixxies(Game game) { with (game)
         foreach (int lixID, lixxie; tribe.lixvec)
             if (lixxie.marked == false) {
                 auto ow = game.makeGypsyWagon(tribeID, lixID);
-                lixxie.outsideWorld = &ow;
-                game.updateSingleLix(lixxie);
+                game.updateSingleLix(lixxie, &ow);
             }
     physicsDrawer.applyChangesToLookup();
 
@@ -428,9 +425,9 @@ updateLixxies(Game game) { with (game)
 
 
 
-void updateSingleLix(Game game, Lixxie l)
+void updateSingleLix(Game game, Lixxie l, OutsideWorld* ow)
 {
-    l.performActivity();
+    l.performActivity(ow);
 }
 
 
