@@ -1,7 +1,6 @@
 module lix.acfunc;
 
-public import game.tribe;
-
+import std.string;
 import lix;
 
 // Mimic behavior of A4/C++ Lix as precisely as possible? Might help testing
@@ -9,17 +8,19 @@ import lix;
 enum cPlusPlusPhysicsBugs = false;
 
 template CloneByCopyFrom(string derivedClass) {
-    immutable string CloneByCopyFrom = "
-        override " ~ derivedClass ~ "
-        cloneAndBindToLix(Lixxie lixToBindTo) const
-        {
-            auto a = new " ~ derivedClass ~ "();
-            a.copyFromAndBindToLix(this, lixToBindTo);
-            return a;
-        }
-        alias copyFromAndBindToLix = super.copyFromAndBindToLix;
-        private alias lixxie this;
-    ";
+    immutable string CloneByCopyFrom = format(
+        q{
+            override %s
+            cloneAndBindToLix(Lixxie lixToBindTo) const
+            {
+                auto a = new %s();
+                a.copyFromAndBindToLix(this, lixToBindTo);
+                return a;
+            }
+            alias copyFromAndBindToLix = super.copyFromAndBindToLix;
+            private alias lixxie this;
+        },
+        derivedClass, derivedClass);
 }
 
 
