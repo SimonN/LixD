@@ -1,22 +1,39 @@
-Lix?
-====
+Lix D/A5 port
+=============
 
-This shall become a port of Lix (github.com/SimonN/Lix) to the D Programming
-Language using Allegro 5. It's still in an early-to-medium state. You can
-already watch lix walking around the levels.
+Lix is an action-puzzle game inspired by Lemmings (DMA Design, 1991),
+with singleplayer puzzles, networked competitive multiplayer mode,
+and a level editor. The current main repository is over there:
+
+    http://github.com/SimonN/Lix
+
+The repository here instead is an ongoing attempt to port Lix to the
+D Programming Language, using Allegro 5 for graphics, input, and sound.
+The port is not finished yet, but you can already see lix walk around
+the level, and click on them.
+
+If you would like to play Lix, do not build from this repository,
+instead build from the main repository linked above.
 
 How to build
 ------------
 
-Please read `./doc/build/linux.txt' or `.doc/build/windows.txt', according
-to your operating system. If you get stuck, feel free to contact me.
-Ignore `cross.txt' for now, I haven't cross-compiled this successfully yet.
+For detailed instructions, read the file for your operating system:
+`./doc/build/linux.txt' or `.doc/build/windows.txt'. Ignore `cross.txt'.
 
-Contact me
-----------
+Quick instructions:
 
-E-Mail: eiderdaus@gmail.com
-IRC:    irc.quakenet.org #lix
+*   $ git clone https://github.com/SimonN/LixD
+*   Install a D compiler (e.g., dmd, from https://dlang.org/download)
+*   Install dub (the D package handler, ships with dmd)
+*   Install the Allegro 5 runtime library (Allegro 5.0.x or 5.1.x work)
+*   $ dub
+
+If you get stuck, follow the detailed instructions in `./doc/build/',
+or contact me:
+
+    E-Mail: eiderdaus@gmail.com
+    IRC:    irc.quakenet.org #lix
 
 License/Copying
 ---------------

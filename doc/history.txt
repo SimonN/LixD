@@ -1,6 +1,16 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.12
+------
+
+2015-11-30
+
+Implemented builder and digger. The builder still draws on top of existing
+land, which is merely a visual bug, not a physics bug. The digger makes
+steel transparent, but the steel and terrain data inside the steel remains
+present for physics; again only a visual bug.
+
 0.1.5
 -----
 
