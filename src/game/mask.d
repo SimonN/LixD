@@ -1,4 +1,4 @@
-module graphic.mask;
+module game.mask;
 
 import std.conv;
 import std.algorithm;

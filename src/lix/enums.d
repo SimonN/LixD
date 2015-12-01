@@ -12,9 +12,9 @@ enum int brickYl           = 2;
 
 Ac stringToAc(in string str)
 {
-    foreach (key; acStrings.byKey()) {
-        if (acStrings[key] == str) return key;
-    }
+    foreach (key; acStrings.byKey())
+        if (acStrings[key] == str)
+            return key;
     return Ac.MAX;
 }
 
@@ -26,9 +26,9 @@ string acToString(in Ac ac)
 
 Style stringToStyle(in string str)
 {
-    foreach (key; styleStrings.byKey) {
-        if (styleStrings[key] == str) return key;
-    }
+    foreach (key; styleStrings.byKey)
+        if (styleStrings[key] == str)
+            return key;
     return Style.GARDEN;
 }
 

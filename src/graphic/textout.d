@@ -8,7 +8,7 @@ import std.string; // toStringz()
 public import basics.alleg5 : AlFont;
 
 import basics.alleg5;
-import graphic.color; // for the shortcut version only
+import graphic.color; // gui shadow color
 import hardware.display; // make fonts in a size relative to the display
 
 AlFont fontAl;

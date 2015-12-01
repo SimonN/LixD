@@ -18,6 +18,8 @@ import std.functional;
 import std.range;
 import std.string;
 
+static import game.mask;
+
 import basics.alleg5;
 import basics.cmdargs;
 import game.lookup;
@@ -35,18 +37,20 @@ void deinitialize()           { PhysicsDrawer.deinitialize();   }
 struct TerrainChange {
 
     enum Type {
-        builderBrick,
-        platformerBrick,
-        cuberSlice0,
-        cuberSlice1,
-        cuberSlice2,
-        cuberTopHalf,
+        build,
+        platform,
+        cubeSlice0,
+        cubeSlice1,
+        cubeSlice2,
+        cubeTopHalf,
 
-        imploderCrater,
-        exploderCrater,
-        basherSwing,
-        minerSwing,
-        diggerSwing
+        implode,
+        explode,
+        bashLeft,
+        bashRight,
+        mineLeft,
+        mineRight,
+        dig
     }
 
     int   update;
@@ -56,7 +60,7 @@ struct TerrainChange {
     int y;
     int yl; // for digger swing
 
-    @property bool isAddition() const { return type < Type.imploderCrater; }
+    @property bool isAddition() const { return type < Type.implode; }
     @property bool isDeletion() const { return ! isAddition; }
 }
 
@@ -196,6 +200,9 @@ private:
  	enum remY  = buiY + buiYl;
  	enum remYl = 32;
 
+    enum bashX  = 20;
+    enum bashXl = game.mask.bashRight.xl;
+
     static void
     deinitialize()
     {
@@ -206,7 +213,7 @@ private:
     }
 
     mixin template AdditionsDefs() {
-        immutable build = (tc.type == TerrainChange.Type.builderBrick);
+        immutable build = (tc.type == TerrainChange.Type.build);
         immutable yl    = lix.enums.brickYl;
         immutable y     = build ? 0              : brickYl;
         immutable xl    = build ? builderBrickXl : platformerBrickXl;
@@ -277,7 +284,7 @@ private:
             int steelHit = 0;
 
             switch (tc.type) {
-            case TerrainChange.Type.diggerSwing:
+            case TerrainChange.Type.dig:
                 assert (tc.yl > 0);
                 steelHit += _lookup.rectSum!(Lookup.setAirCountSteel)
                     (tc.x, tc.y, Digger.tunnelWidth, tc.yl);
@@ -329,7 +336,7 @@ private:
                 }
 
                 switch (tc.type) {
-                case TerrainChange.Type.diggerSwing:
+                case TerrainChange.Type.dig:
                     assert (tc.yl > 0);
                     sprite = al_create_sub_bitmap(_mask,
                         0, remY, Digger.tunnelWidth, tc.yl);
@@ -366,7 +373,7 @@ private:
             auto zone = Zone(profiler, "PhysDraw lookupmap "
                                        ~ tc.type.to!string);
             mixin AdditionsDefs;
-            assert (build || tc.type == TerrainChange.Type.platformerBrick,
+            assert (build || tc.type == TerrainChange.Type.platform,
                 "cuber isn't implemented yet");
             scope (success)
                 _lookup.rect!(Lookup.setSolid)(tc.x, tc.y, xl, yl);

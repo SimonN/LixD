@@ -83,7 +83,7 @@ class Builder : PerformedActivity {
 
         TerrainChange tc;
         tc.update = outsideWorld.state.update;
-        tc.type   = TerrainChange.Type.builderBrick;
+        tc.type   = TerrainChange.Type.build;
         tc.style  = style;
         tc.x      = facingRight ? ex - 2 : ex - 8;
         tc.y      = ey;

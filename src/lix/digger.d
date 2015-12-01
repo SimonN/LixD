@@ -80,7 +80,7 @@ class Digger : PerformedActivity {
     {
         TerrainChange tc;
         tc.update = outsideWorld.state.update;
-        tc.type   = TerrainChange.Type.diggerSwing;
+        tc.type   = TerrainChange.Type.dig;
         tc.x      = ex - 8;
         tc.y      = ey + y;
         tc.yl     = yl;
