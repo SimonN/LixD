@@ -328,28 +328,28 @@ void resetFlingNew()
 
 
 
-bool getSteel(in int px, in int py)
+bool getSteel(in int px, in int py) const
 {
     return lookup.getSteel(_ex + px * dir, _ey + py);
 }
 
 
 
-bool isSolid(in int px = 0, in int py = 2)
+bool isSolid(in int px = 0, in int py = 2) const
 {
     return lookup.getSolidEven(_ex + px * dir, _ey + py);
 }
 
 
 
-bool isSolidSingle(in int px = 0, in int py = 2)
+bool isSolidSingle(in int px = 0, in int py = 2) const
 {
     return lookup.getSolid(_ex + px * dir, _ey + py);
 }
 
 
 
-int solidWallHeight(in int px = 0, in int py = 0)
+int solidWallHeight(in int px = 0, in int py = 0) const
 {
     int solid = 0;
     for (int i = 1; i > -Walker.highestStepUp; --i) {
@@ -361,7 +361,7 @@ int solidWallHeight(in int px = 0, in int py = 0)
 
 
 
-int countSolid(int x1, int y1, int x2, int y2)
+int countSolid(int x1, int y1, int x2, int y2) const
 {
     if (x2 < x1) swap(x1, x2);
     if (y2 < y1) swap(y1, y2);
@@ -376,7 +376,7 @@ int countSolid(int x1, int y1, int x2, int y2)
 
 
 
-int countSteel(int x1, int y1, int x2, int y2)
+int countSteel(int x1, int y1, int x2, int y2) const
 {
     if (x2 < x1) swap(x1, x2);
     if (y2 < y1) swap(y1, y2);
