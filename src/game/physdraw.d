@@ -202,6 +202,8 @@ private:
 
     enum bashX  = 20;
     enum bashXl = game.mask.bashRight.xl;
+    enum mineX  = bashX + 2 * bashXl + 2;
+    enum mineXl = game.mask.mineRight.xl;
 
     static void
     deinitialize()
@@ -282,15 +284,24 @@ private:
         foreach (const tc; _delsForLookup) {
             assert (tc.isDeletion);
             int steelHit = 0;
+            alias Type = TerrainChange.Type;
 
-            switch (tc.type) {
-            case TerrainChange.Type.dig:
+            if (tc.type == Type.dig) {
                 assert (tc.yl > 0);
                 steelHit += _lookup.rectSum!(Lookup.setAirCountSteel)
                     (tc.x, tc.y, Digger.tunnelWidth, tc.yl);
-                break;
-            default:
-                assert (false, "skill not yet implemented");
+            }
+            else {
+                game.mask.Mask ma =
+                      tc.type == Type.bashLeft  ? game.mask.bashLeft
+                    : tc.type == Type.bashRight ? game.mask.bashRight
+                    : tc.type == Type.mineLeft  ? game.mask.mineLeft
+                    :                             game.mask.mineRight;
+                foreach (int y; 0 .. ma.yl)
+                    foreach (int x; 0 .. ma.xl)
+                        if (ma.get(x, y))
+                            steelHit += _lookup.setAirCountSteel(tc.x + x,
+                                                                 tc.y + y);
             }
 
             if (_land)
@@ -431,6 +442,8 @@ private:
     static void
     initialize(Runmode mode)
     {
+        auto zoneInitialize = Zone(profiler, "physDraw initialize");
+
         assert (! _mask);
         assert (mode == Runmode.INTERACTIVE || mode == Runmode.VERIFY);
         if (mode == Runmode.VERIFY)
@@ -481,6 +494,24 @@ private:
 
         // digger swing
         rf(0, remY, Digger.tunnelWidth, remY + remYl, color.white);
+
+        void drawPixel(in int x, in int y, in AlCol col)
+        {
+            rf(x, y, x + 1, y + 1, col);
+        }
+
+        // basher and miner swings
+        void drawSwing(in int startX, in game.mask.Mask ma)
+        {
+            foreach     (int y; 0 .. ma.yl)
+                foreach (int x; 0 .. ma.xl)
+                    if (ma.get(x, y))
+                        drawPixel(startX + x, remY + y, color.white);
+        }
+        drawSwing(bashX,          game.mask.bashRight);
+        drawSwing(bashX + bashXl, game.mask.bashLeft);
+        drawSwing(mineX,          game.mask.mineRight);
+        drawSwing(mineX + mineXl, game.mask.mineLeft);
 
         static if (true) {
             import std.string;

@@ -41,7 +41,7 @@ class Basher : PerformedActivity {
             case 10: continueOrStop();  break;
             case 11: ..
             case 15: moveAhead();       break; // "..15" is inclusive! 5 cases!
-            default: assert (false);
+            default: break;
         }
         stopIfMovedDownTooFar();
     }
