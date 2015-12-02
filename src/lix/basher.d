@@ -1,6 +1,7 @@
 module lix.basher;
 
 import lix;
+import game.physdraw;
 import hardware.sound;
 
 class Basher : PerformedActivity {
@@ -97,11 +98,14 @@ private:
             */
         }
         else {
-            /*
-            // Leave no relics. Remove a large rectangle.
-                         l.remove_rectangle(  0, -16,  13, -15);
-            steel_hit += l.remove_rectangle(  0, -14,  13,   1);
-            */
+            TerrainChange tc;
+            tc.update = outsideWorld.state.update;
+            tc.type   = facingRight ? TerrainChange.Type.bashRight
+                                    : TerrainChange.Type.bashLeft;
+            tc.x      = ex - (facingRight ? game.mask.bashRight.offsetX
+                                          : game.mask.bashLeft.offsetX);
+            tc.y      = ey + game.mask.bashLeft.offsetY;
+            outsideWorld.physicsDrawer.add(tc);
         }
 
         if (steelWasHit)
