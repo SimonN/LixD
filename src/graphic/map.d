@@ -269,7 +269,7 @@ calcScrolling()
             ) {
                 ret += mickey * basics.user.scrollSpeedClick
                     / basics.globals.mouseStandardDivisor / _zoom
-                    / 2; // no idea why it's still so fast, with / 2 it's OK
+                    / 4; // no idea why it's still so fast, with / 4 it's OK
                 freeze();
             }
             return ret;
