@@ -2,6 +2,7 @@ module lix.builder;
 
 import lix;
 import game.physdraw;
+import game.terchang;
 import hardware.sound;
 
 class Builder : PerformedActivity {

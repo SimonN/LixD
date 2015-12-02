@@ -1,6 +1,7 @@
 module lix.digger;
 
 import game.physdraw;
+import game.terchang;
 import lix;
 
 class Digger : PerformedActivity {

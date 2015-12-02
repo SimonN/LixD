@@ -1,7 +1,9 @@
 module lix.basher;
 
 import lix;
+import game.mask;
 import game.physdraw;
+import game.terchang;
 import hardware.sound;
 
 class Basher : PerformedActivity {
@@ -9,13 +11,6 @@ class Basher : PerformedActivity {
     int  halfPixelsMovedDown; // per pixel down: += 2; per frame passed: -= 1;
     bool omitRelics;
     bool steelWasHit;
-
-    enum maskOffsetX =  0;
-    enum maskOffsetY = 16;
-    enum bool[][] maskFacingRight = [
-        [0, 1],
-        [1, 0],
-    ];
 
     mixin(CloneByCopyFrom!"Basher");
     protected void copyFromAndBindToLix(in Basher rhs, Lixxie lixToBindTo)
@@ -84,29 +79,20 @@ private:
 
     void performSwing()
     {
-        // Steel is only checked in the bottom 16 pixels. The basher tunnel
-        // has a height of 18, we want to ignore hitting steel in the top rows.
-        if (! omitRelics) {
-            /*
-                         l.remove_rectangle(  0, -16,   9, -16); // top relic
-                         l.remove_rectangle(  0, -15,  11, -15); // top relic
-            steel_hit += l.remove_rectangle(  0, -14,  12, -14); // top relic
-            steel_hit += l.remove_rectangle(  0, -13,  13,  -2); // large rect
-            steel_hit += l.remove_rectangle(  0,  -1,  12,  -1); // bottom
-            steel_hit += l.remove_rectangle(  0,   0,  11,   0); // bottom
-            steel_hit += l.remove_rectangle(  0,   1,   9,   1); // bottom
-            */
+        TerrainChange tc;
+        tc.update = outsideWorld.state.update;
+
+        if (omitRelics) {
+            if (dir > 0) tc.type = TerrainChange.Type.bashNoRelicsRight;
+            else         tc.type = TerrainChange.Type.bashNoRelicsLeft;
         }
         else {
-            TerrainChange tc;
-            tc.update = outsideWorld.state.update;
-            tc.type   = facingRight ? TerrainChange.Type.bashRight
-                                    : TerrainChange.Type.bashLeft;
-            tc.x      = ex - (facingRight ? game.mask.bashRight.offsetX
-                                          : game.mask.bashLeft.offsetX);
-            tc.y      = ey + game.mask.bashLeft.offsetY;
-            outsideWorld.physicsDrawer.add(tc);
+            if (dir > 0) tc.type = TerrainChange.Type.bashRight;
+            else         tc.type = TerrainChange.Type.bashLeft;
         }
+        tc.x      = ex - masks[tc.type].offsetX;
+        tc.y      = ey - masks[tc.type].offsetY;
+        outsideWorld.physicsDrawer.add(tc);
 
         if (steelWasHit)
             playSound(Sound.STEEL);

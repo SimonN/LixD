@@ -18,11 +18,14 @@ import std.functional;
 import std.range;
 import std.string;
 
-static import game.mask;
+import enumap;
 
 import basics.alleg5;
 import basics.cmdargs;
+import basics.help;
 import game.lookup;
+import game.mask;
+import game.terchang;
 import graphic.color;
 import graphic.torbit;
 import graphic.gralib; // must be initialized first
@@ -33,47 +36,6 @@ import lix.digger; // diggerTunnelWidth
 
 void initialize(Runmode mode) { PhysicsDrawer.initialize(mode); }
 void deinitialize()           { PhysicsDrawer.deinitialize();   }
-
-struct TerrainChange {
-
-    enum Type {
-        build,
-        platform,
-        cubeSlice0,
-        cubeSlice1,
-        cubeSlice2,
-        cubeTopHalf,
-
-        implode,
-        explode,
-        bashLeft,
-        bashRight,
-        mineLeft,
-        mineRight,
-        dig
-    }
-
-    int   update;
-    Type  type;
-    Style style; // for additions
-    int x;
-    int y;
-    int yl; // for digger swing
-
-    @property bool isAddition() const { return type < Type.implode; }
-    @property bool isDeletion() const { return ! isAddition; }
-}
-
-private struct FlaggedChange
-{
-    TerrainChange terrainChange;
-    alias terrainChange this;
-
-    bool needsRedraw; // if there was land under a land addition,
-                      // or steel amidst a land removal
-}
-
-
 
 
 
@@ -186,6 +148,9 @@ private:
 
     static Albit _mask;
 
+    // this enumap is used by the terrain removers, not by the styled adders
+    static Enumap!(TerrainChange.Type, Albit) _subAlbits;
+
     Torbit _land;
     Lookup _lookup;
 
@@ -200,14 +165,28 @@ private:
  	enum remY  = buiY + buiYl;
  	enum remYl = 32;
 
-    enum bashX  = 20;
-    enum bashXl = game.mask.bashRight.xl;
-    enum mineX  = bashX + 2 * bashXl + 2;
-    enum mineXl = game.mask.mineRight.xl;
+    enum bashX  = Digger.tunnelWidth + 1;
+    enum bashXl = game.mask.masks[TerrainChange.Type.bashRight].xl + 1;
+    enum mineX  = bashX + 4 * bashXl; // 4 basher masks
+    enum mineXl = game.mask.masks[TerrainChange.Type.mineRight].xl + 1;
+
+    struct FlaggedChange
+    {
+        TerrainChange terrainChange;
+        alias terrainChange this;
+
+        bool needsRedraw; // if there was land under a land addition,
+                          // or steel amidst a land removal
+    }
 
     static void
     deinitialize()
     {
+        foreach (enumVal, ref Albit sub; _subAlbits)
+            if (sub !is null) {
+                al_destroy_bitmap(sub);
+                sub = null;
+            }
         if (_mask) {
             al_destroy_bitmap(_mask);
             _mask = null;
@@ -278,11 +257,16 @@ private:
         assert (_delsForLookup == null);
     }
     body {
+        auto zone = Zone(profiler, format("PhysDraw del lookup %dx",
+            _delsForLookup.len));
         scope (exit)
             _delsForLookup = null;
 
         foreach (const tc; _delsForLookup) {
             assert (tc.isDeletion);
+            auto zone2 = Zone(profiler, format("PhysDraw lookup %s",
+                tc.type.to!string));
+
             int steelHit = 0;
             alias Type = TerrainChange.Type;
 
@@ -292,11 +276,8 @@ private:
                     (tc.x, tc.y, Digger.tunnelWidth, tc.yl);
             }
             else {
-                game.mask.Mask ma =
-                      tc.type == Type.bashLeft  ? game.mask.bashLeft
-                    : tc.type == Type.bashRight ? game.mask.bashRight
-                    : tc.type == Type.mineLeft  ? game.mask.mineLeft
-                    :                             game.mask.mineRight;
+                game.mask.Mask ma = game.mask.masks[tc.type];
+                assert (ma.aliasThis);
                 foreach (int y; 0 .. ma.yl)
                     foreach (int x; 0 .. ma.xl)
                         if (ma.get(x, y))
@@ -325,6 +306,9 @@ private:
         if (processThese == null)
             return;
 
+        auto zone = Zone(profiler, format("PhysDraw del land %dx",
+            processThese.len));
+
         // Terrain-removing masks are drawn with an opaque white pixel
         // (alpha = 1.0) where a deletion should occur on the land, and
         // transparent (alpha = 0.0) where no deletion should happen.
@@ -338,24 +322,25 @@ private:
         ) {
             foreach (const tc; processThese) {
                 assert (tc.isDeletion);
-                auto zone = Zone(profiler, "PhysDraw delete 1");
+                auto zone2 = Zone(profiler, format("PhysDraw land %s",
+                    tc.type.to!string));
 
-                Albit sprite = null;
-                scope (exit) {
-                    assert (sprite !is null);
-                    al_destroy_bitmap(sprite);
-                }
+                Albit sprite;
 
                 switch (tc.type) {
                 case TerrainChange.Type.dig:
+                    // digging height is variable length
                     assert (tc.yl > 0);
                     sprite = al_create_sub_bitmap(_mask,
                         0, remY, Digger.tunnelWidth, tc.yl);
+                    _land.drawFrom(sprite, tc.x, tc.y);
+                    al_destroy_bitmap(sprite);
                     break;
                 default:
-                    assert (false, "skill isn't implemented yet");
+                    sprite = _subAlbits[tc.type];
+                    _land.drawFrom(sprite, tc.x, tc.y);
+                    break;
                 }
-                _land.drawFrom(sprite, tc.x, tc.y);
             }
         }
         if (processThese.any!(tc => tc.needsRedraw)) {
@@ -455,10 +440,11 @@ private:
         displayStartupMessage("Creating physics mask...");
 
         assert (builderBrickXl >= platformerBrickXl);
-        _mask = albitCreate(Style.MAX * lix.enums.builderBrickXl, 0x80);
+        _mask = albitCreate(0x100, 0x80);
         assert (_mask, "couldn't create mask bitmap");
 
         auto drawingTarget = DrawingTarget(_mask);
+        al_clear_to_color(color.transp);
 
         void drawBrick(in int x, in int y, in int xl,
             in AlCol light, in AlCol medium, in AlCol dark
@@ -494,6 +480,8 @@ private:
 
         // digger swing
         rf(0, remY, Digger.tunnelWidth, remY + remYl, color.white);
+        _subAlbits[TerrainChange.Type.dig] = al_create_sub_bitmap(
+            _mask, 0, remY, Digger.tunnelWidth, remY + remYl);
 
         void drawPixel(in int x, in int y, in AlCol col)
         {
@@ -501,17 +489,24 @@ private:
         }
 
         // basher and miner swings
-        void drawSwing(in int startX, in game.mask.Mask ma)
+        void drawSwing(in int startX, in TerrainChange.Type type)
         {
-            foreach     (int y; 0 .. ma.yl)
-                foreach (int x; 0 .. ma.xl)
-                    if (ma.get(x, y))
+            foreach     (int y; 0 .. masks[type].yl)
+                foreach (int x; 0 .. masks[type].xl)
+                    if (masks[type].get(x, y))
                         drawPixel(startX + x, remY + y, color.white);
+
+            assert (_subAlbits[type] is null);
+            _subAlbits[type] = al_create_sub_bitmap(
+                _mask, startX, remY, masks[type].xl, masks[type].yl);
+            assert (_subAlbits[type] !is null);
         }
-        drawSwing(bashX,          game.mask.bashRight);
-        drawSwing(bashX + bashXl, game.mask.bashLeft);
-        drawSwing(mineX,          game.mask.mineRight);
-        drawSwing(mineX + mineXl, game.mask.mineLeft);
+        drawSwing(bashX,              TerrainChange.Type.bashRight);
+        drawSwing(bashX +     bashXl, TerrainChange.Type.bashLeft);
+        drawSwing(bashX + 2 * bashXl, TerrainChange.Type.bashNoRelicsRight);
+        drawSwing(bashX + 3 * bashXl, TerrainChange.Type.bashNoRelicsLeft);
+        drawSwing(mineX,              TerrainChange.Type.mineRight);
+        drawSwing(mineX + mineXl,     TerrainChange.Type.mineLeft);
 
         static if (true) {
             import std.string;

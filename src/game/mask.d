@@ -5,11 +5,23 @@ import std.algorithm;
 import std.range;
 import std.string;
 
+import enumap;
+
 import basics.help;
 import basics.matrix;
+import game.terchang;
 
-enum bashLeft  = bashRight.mirrored;
-enum bashRight = Mask([
+enum Mask[TerrainChange.Type] masks = [
+    TerrainChange.Type.bashLeft           : _bashLeft,
+    TerrainChange.Type.bashRight          : _bashRight,
+    TerrainChange.Type.bashNoRelicsLeft   : _bashNoRelicsLeft,
+    TerrainChange.Type.bashNoRelicsRight  : _bashNoRelicsRight,
+    TerrainChange.Type.mineLeft           : _mineLeft,
+    TerrainChange.Type.mineRight          : _mineRight
+];
+
+private enum Mask _bashLeft  = _bashRight.mirrored;
+private enum Mask _bashRight = Mask([
     "XXXXXXXX" "XXXX....", // Top 2 rows can cut through steel without
     "XXXXXXXX" "XXXXXX..", // cancelling the basher. Other rows would cancel.
     "XXXXXXXX" "XXXXXXX."] ~
@@ -19,15 +31,15 @@ enum bashRight = Mask([
     "XXXXXXXX" "XXXX....",
 ]);
 
-enum bashNoRelicsLeft  = bashRight.mirrored;
-enum bashNoRelicsRight = Mask(
+private enum _bashNoRelicsLeft  = _bashRight.mirrored;
+private enum _bashNoRelicsRight = Mask(
     "XXXXXXXX" "XXXXXXXX".repeat(16).array ~ [
     "#XXXXXXX" "XXXXXXXX", // '#' = effective coordinate
     "XXXXXXXX" "XXXXXXXX",
 ]);
 
-enum mineLeft  = mineRight.mirrored;
-enum mineRight = Mask([
+private enum _mineLeft  = _mineRight.mirrored;
+private enum _mineRight = Mask([
     "...XXXXX" "........" "..", // -20
     ".XXXXXXX" "XX......" "..",
     "XXXXXXXX" "XXXX...." "..",
