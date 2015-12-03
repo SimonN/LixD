@@ -3,7 +3,7 @@ module basics.demo;
 import basics.alleg5;
 import basics.globals;
 import file.filename;
-import game.lookup;
+import game.phymap;
 import graphic.cutbit;
 import graphic.gralib;
 import graphic.graphic;
@@ -54,7 +54,7 @@ private:
     Element[] elems;
 
     Torbit land;
-    Lookup lookup;
+    Phymap lookup;
 
 
 

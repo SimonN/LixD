@@ -2,7 +2,7 @@ module level.levdraw;
 
 import basics.alleg5;
 import file.filename;
-import game.lookup;
+import game.phymap;
 import graphic.color;
 import graphic.cutbit;
 import graphic.graphic;
@@ -10,7 +10,7 @@ import graphic.torbit;
 import level.level;
 import level.tile;
 
-package void implDrawTerrainTo(in Level level, Torbit tb, Lookup lookup)
+package void implDrawTerrainTo(in Level level, Torbit tb, Phymap lookup)
 {
     if (! tb) return;
     assert (tb.xl == level.sizeX);
@@ -29,7 +29,7 @@ package void implDrawTerrainTo(in Level level, Torbit tb, Lookup lookup)
 
 
 
-private void draw_pos(in ref Pos po, Torbit ground, Lookup lookup)
+private void draw_pos(in ref Pos po, Torbit ground, Phymap lookup)
 {
     assert (po.ob);
     assert (po.ob.cb);
@@ -65,18 +65,18 @@ private void draw_pos(in ref Pos po, Torbit ground, Lookup lookup)
      for (int y = po.y; y < po.y + tempgra.yl; ++y)
      if (tempgra.get_pixel(x - po.x, y - po.y) != color.transp) {
         if (po.noow) {
-            if (! lookup.get(x, y, Lookup.bitTerrain))
+            if (! lookup.get(x, y, Phybit.terrain))
                 lookup.add(x, y, po.ob.subtype == 1 ?
-                Lookup.bitSteel | Lookup.bitTerrain :
-                Lookup.bitTerrain);
+                Phybit.steel | Phybit.terrain :
+                Phybit.terrain);
         }
         else if (po.dark)
-            lookup.rm(x, y, Lookup.bitTerrain | Lookup.bitSteel);
+            lookup.rm(x, y, Phybit.terrain | Phybit.steel);
         else if (po.ob.subtype == 1)
-            lookup.add(x, y, Lookup.bitTerrain | Lookup.bitSteel);
+            lookup.add(x, y, Phybit.terrain | Phybit.steel);
         else {
-            lookup.add(x, y, Lookup.bitTerrain);
-            lookup.rm (x, y, Lookup.bitSteel);
+            lookup.add(x, y, Phybit.terrain);
+            lookup.rm (x, y, Phybit.steel);
         }
     }
     // end of single pixel

@@ -74,7 +74,7 @@ prepareLand(Game game) { with (game)
     cs = new GameState();
     with (level) {
         cs.land   = new Torbit(sizeX, sizeY, torusX, torusY);
-        cs.lookup = new Lookup(sizeX, sizeY, torusX, torusY);
+        cs.lookup = new Phymap(sizeX, sizeY, torusX, torusY);
         drawTerrainTo(cs.land, cs.lookup);
     }
 

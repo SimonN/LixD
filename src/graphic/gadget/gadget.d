@@ -19,7 +19,7 @@ module graphic.gadget.gadget;
 import std.conv;
 
 import basics.help;
-import game.lookup;
+import game.phymap;
 import graphic.cutbit;
 import graphic.color;
 import graphic.graphic;
@@ -64,7 +64,7 @@ public:
  *  void animateForUpdate(int update);
  *
  *  final void draw();
- *  final void draw_lookup(Lookup);
+ *  final void draw_lookup(Phymap);
  */
 
 // protected: use the factory to generate gadgets of the correct subclass
@@ -234,22 +234,22 @@ draw(Torbit mutableGround) const
 
 
 
-final void draw_lookup(Lookup lk)
+final void draw_lookup(Phymap lk)
 {
     assert (tile);
-    Lookup.LoNr nr = 0;
+    Phybitset phyb = 0;
     switch (tile.type) {
-        case TileType.GOAL:       nr = Lookup.bitGoal; break;
-        case TileType.TRAP:       nr = Lookup.bitTrap; break;
-        case TileType.WATER:      nr = tile.subtype == 0
-                                     ? Lookup.bitWater
-                                     : Lookup.bitFire; break;
-        case TileType.FLING:      nr = Lookup.bitFling; break;
-        case TileType.TRAMPOLINE: nr = Lookup.bitTrampoline; break;
+        case TileType.GOAL:       phyb = Phybit.goal; break;
+        case TileType.TRAP:       phyb = Phybit.trap; break;
+        case TileType.WATER:      phyb =
+                     tile.subtype == 0 ? Phybit.water
+                                       : Phybit.fire; break;
+        case TileType.FLING:      phyb = Phybit.fling; break;
+        case TileType.TRAMPOLINE: phyb = Phybit.trampo; break;
         default: break;
     }
-    lk.rect!(Lookup.add)(x + tile.triggerX, y + tile.triggerY,
-                             tile.triggerXl,    tile.triggerYl, nr);
+    lk.rect!(Phymap.add)(x + tile.triggerX, y + tile.triggerY,
+                             tile.triggerXl,    tile.triggerYl, phyb);
 }
 
 }

@@ -401,7 +401,7 @@ updateLixxies(Game game) { with (game)
             }
         }
     }
-    physicsDrawer.applyChangesToLookup();
+    physicsDrawer.applyChangesToPhymap();
 
     // Second pass: Update unmarked
     foreach (int tribeID, tribe; cs.tribes)
@@ -410,7 +410,7 @@ updateLixxies(Game game) { with (game)
                 auto ow = game.makeGypsyWagon(tribeID, lixID);
                 game.updateSingleLix(lixxie, &ow);
             }
-    physicsDrawer.applyChangesToLookup();
+    physicsDrawer.applyChangesToPhymap();
 
     /+
     // Third pass (if necessary): finally becoming flingers

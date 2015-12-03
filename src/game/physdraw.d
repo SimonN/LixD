@@ -23,7 +23,7 @@ import enumap;
 import basics.alleg5;
 import basics.cmdargs;
 import basics.help;
-import game.lookup;
+import game.phymap;
 import game.mask;
 import game.terchang;
 import graphic.color;
@@ -41,47 +41,47 @@ void deinitialize()           { PhysicsDrawer.deinitialize();   }
 
 class PhysicsDrawer {
 
-    this(Torbit land, Lookup lookup)
+    this(Torbit land, Phymap lookup)
     {
         _land   = land;
-        _lookup = lookup;
-        assert (_lookup, "_land may be null, but not _lookup");
+        _phymap = lookup;
+        assert (_phymap, "_land may be null, but not _phymap");
     }
 
     void
     add(in TerrainChange tc)
     {
-        if (tc.isAddition) _addsForLookup ~= tc;
-        else               _delsForLookup ~= tc;
+        if (tc.isAddition) _addsForPhymap ~= tc;
+        else               _delsForPhymap ~= tc;
     }
 
     // This should be called when loading a savestate, to throw away any
     // queued drawing changes to the land. The savestate comes with a fresh
     // copy of the land that must be registered here.
     void
-    rebind(Torbit newLand, Lookup newLookup)
+    rebind(Torbit newLand, Phymap newPhymap)
     in {
         assert (_land,
             "You want to reset the draw-to-land queues, but you haven't "
             "registered a land to draw to during construction "
             "of PhysicsDrawer.");
         assert (newLand);
-        assert (newLookup);
-        assert (_addsForLookup == null);
-        assert (_delsForLookup == null);
+        assert (newPhymap);
+        assert (_addsForPhymap == null);
+        assert (_delsForPhymap == null);
     }
     body {
         _land        = newLand;
-        _lookup      = newLookup;
+        _phymap      = newPhymap;
         _addsForLand = null;
         _delsForLand = null;
     }
 
     void
-    applyChangesToLookup()
+    applyChangesToPhymap()
     {
-        deletionsToLookup();
-        additionsToLookup();
+        deletionsToPhymap();
+        additionsToPhymap();
     }
 
     @property bool
@@ -92,7 +92,7 @@ class PhysicsDrawer {
 
     // The single public function for any drawing to the land.
     // Should be understandable from the many asserts, otherwise ask me.
-    // You should know what a lookup map is (class Lookup from game.lookup).
+    // You should know what a lookup map is (class Phymap from game.phymap).
     // _land is the torus bitmap onto which we draw the terrain, but this
     // is never queried for physics -- that's what the lookup map is for.
     // int upd: Pass current update of the game to this.
@@ -102,9 +102,9 @@ class PhysicsDrawer {
         assert (_land);
         enum msg = "I don't believe you should draw to land when you still "
             "have changes to be drawn to the lookup map. You may want to call "
-            "applyChangesToLookup() more often.";
-        assert (_delsForLookup == null, msg);
-        assert (_addsForLookup == null, msg);
+            "applyChangesToPhymap() more often.";
+        assert (_delsForPhymap == null, msg);
+        assert (_addsForPhymap == null, msg);
         enum msg2 = "applyChangesToLand() doesn't get called each update. "
             "But there should never be something in there that isn't to be "
             "processed during this call.";
@@ -152,10 +152,10 @@ private:
     static Enumap!(TerrainChange.Type, Albit) _subAlbits;
 
     Torbit _land;
-    Lookup _lookup;
+    Phymap _phymap;
 
-    TerrainChange[] _delsForLookup;
-    TerrainChange[] _addsForLookup;
+    TerrainChange[] _delsForPhymap;
+    TerrainChange[] _addsForPhymap;
 
     FlaggedChange[] _delsForLand;
     FlaggedChange[] _addsForLand;
@@ -249,20 +249,20 @@ private:
 
 
     void
-    deletionsToLookup()
+    deletionsToPhymap()
     in {
-        assertCalledEachUpdate(_delsForLookup);
+        assertCalledEachUpdate(_delsForPhymap);
     }
     out {
-        assert (_delsForLookup == null);
+        assert (_delsForPhymap == null);
     }
     body {
         auto zone = Zone(profiler, format("PhysDraw del lookup %dx",
-            _delsForLookup.len));
+            _delsForPhymap.len));
         scope (exit)
-            _delsForLookup = null;
+            _delsForPhymap = null;
 
-        foreach (const tc; _delsForLookup) {
+        foreach (const tc; _delsForPhymap) {
             assert (tc.isDeletion);
             auto zone2 = Zone(profiler, format("PhysDraw lookup %s",
                 tc.type.to!string));
@@ -272,7 +272,7 @@ private:
 
             if (tc.type == Type.dig) {
                 assert (tc.yl > 0);
-                steelHit += _lookup.rectSum!(Lookup.setAirCountSteel)
+                steelHit += _phymap.rectSum!(Phymap.setAirCountSteel)
                     (tc.x, tc.y, Digger.tunnelWidth, tc.yl);
             }
             else {
@@ -281,7 +281,7 @@ private:
                 foreach (int y; 0 .. ma.yl)
                     foreach (int x; 0 .. ma.xl)
                         if (ma.get(x, y))
-                            steelHit += _lookup.setAirCountSteel(tc.x + x,
+                            steelHit += _phymap.setAirCountSteel(tc.x + x,
                                                                  tc.y + y);
             }
 
@@ -357,33 +357,33 @@ private:
 
 
     void
-    additionsToLookup()
+    additionsToPhymap()
     in {
-        assertCalledEachUpdate(_addsForLookup);
+        assertCalledEachUpdate(_addsForPhymap);
     }
     out {
-        assert (_addsForLookup == null);
+        assert (_addsForPhymap == null);
     }
     body {
-        foreach (const tc; _addsForLookup) {
+        foreach (const tc; _addsForPhymap) {
             auto zone = Zone(profiler, "PhysDraw lookupmap "
                                        ~ tc.type.to!string);
             mixin AdditionsDefs;
             assert (build || tc.type == TerrainChange.Type.platform,
                 "cuber isn't implemented yet");
             scope (success)
-                _lookup.rect!(Lookup.setSolid)(tc.x, tc.y, xl, yl);
+                _phymap.rect!(Phymap.setSolid)(tc.x, tc.y, xl, yl);
 
             if (_land) {
                 // If land exists, remember the changes to be able to draw them
                 // later. No land in noninteractive mode => needn't save this.
                 auto fc = FlaggedChange(tc);
-                fc.needsRedraw = _lookup.rectSum!(Lookup.getSolid)
+                fc.needsRedraw = _phymap.rectSum!(Phymap.getSolid)
                                  (tc.x, tc.y, xl, yl) != 0;
                 _addsForLand ~= fc;
             }
         }
-        _addsForLookup = null;
+        _addsForPhymap = null;
     }
 
 

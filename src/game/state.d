@@ -14,7 +14,7 @@ import std.range;
 import std.algorithm.iteration;
 
 import basics.help; // clone(T[]), a deep copy for arrays
-import game.lookup;
+import game.phymap;
 import game.tribe;
 import game.replay;
 import graphic.torbit;
@@ -41,7 +41,7 @@ class GameState {
     Trampoline[] trampolines;
 
     Torbit land;
-    Lookup lookup;
+    Phymap lookup;
 
     this() { }
 
@@ -64,7 +64,7 @@ class GameState {
         trampolines = rhs.trampolines.clone;
 
         land   = new Torbit(rhs.land);
-        lookup = new Lookup(rhs.lookup);
+        lookup = new Phymap(rhs.lookup);
     }
 
     GameState clone() const { return new GameState(this); }

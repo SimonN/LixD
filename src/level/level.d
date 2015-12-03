@@ -8,7 +8,7 @@ import file.date;
 import file.io; // IoLine for Pos; all other I/O is in module level.levelio
 import file.filename;
 import file.language;
-import game.lookup;
+import game.phymap;
 import graphic.color;
 import graphic.torbit;
 import level.levelio;
@@ -123,7 +123,7 @@ public:
             && _status != LevelStatus.BAD_EMPTY;
     }
 
-    void drawTerrainTo(Torbit tb, Lookup lo = null) const
+    void drawTerrainTo(Torbit tb, Phymap lo = null) const
     {
         implDrawTerrainTo(this, tb, lo);
     }

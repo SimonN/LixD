@@ -6,7 +6,7 @@ import basics.globals; // fuse image
 import basics.help;
 import basics.matrix;
 import basics.user; // multipleBuilders
-import game.lookup;
+import game.phymap;
 import graphic.color;
 import graphic.gadget;
 import graphic.graphic;
@@ -33,8 +33,8 @@ private:
 
     static bool _anyNewFlingers;
 
-    Lookup.LoNr _encBody;
-    Lookup.LoNr _encFoot;
+    Phybitset _encBody;
+    Phybitset _encFoot;
 
     Style _style;
 
@@ -45,7 +45,7 @@ private:
 
     void draw_at(const int, const int);
 
-    @property inout(Lookup) lookup() inout
+    @property inout(Phymap) lookup() inout
     {
         assert (outsideWorld);
         return outsideWorld.state.lookup;
@@ -151,7 +151,7 @@ public:
     @property auto footEncounters() const { return _encFoot; }
     void setNoEncounters() { _encBody = _encFoot = 0; }
 
-    void forceBodyAndFootEncounters(Lookup.LoNr bo, Lookup.LoNr ft)
+    void forceBodyAndFootEncounters(Phybitset bo, Phybitset ft)
     {
         _encBody = bo;
         _encFoot = ft;
