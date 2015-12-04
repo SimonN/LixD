@@ -17,7 +17,8 @@ class Ascender : PerformedActivity {
             return lixxie.isSolid(0, y) && ! lixxie.isSolid(0, y-1);
         }
         int swh = 0;
-        enum checkBelowHeight = (cPlusPlusPhysicsBugs ? 26 : 16);
+        enum checkBelowHeight = 26; // must be rather high like this,
+                                    // for (climber -> this)
         while (swh < checkBelowHeight && ! solidPixelWithAirAbove(2 - swh))
             ++swh;
 

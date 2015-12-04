@@ -51,8 +51,16 @@ implGameDraw(Game game) { with (game)
         with (Zone(profiler, "game draws lixes")) {
             void drawAllLixes(Tribe tr)
             {
-                foreach (lix; tr.lixvec.retro) if (! lix.marked) lix.draw(map);
-                foreach (lix; tr.lixvec.retro) if (  lix.marked) lix.draw(map);
+                foreach (lix; tr.lixvec.retro)
+                    if (! lix.marked) {
+                        lix.prepareDraw();
+                        lix.draw(map);
+                    }
+                foreach (lix; tr.lixvec.retro)
+                    if (lix.marked) {
+                        lix.prepareDraw();
+                        lix.draw(map);
+                    }
             }
             foreach (otherTribe; cs.tribes)
                 if (otherTribe !is tribeLocal)

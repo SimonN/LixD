@@ -29,8 +29,9 @@ abstract class PerformedActivity {
 
 public:
 
-    @property final Ac  ac()    const { return _ac;    }
-    @property final int frame() const { return _frame; }
+    @property final Ac  ac()            const { return _ac;            }
+    @property final int frame()         const { return _frame;         }
+    @property final int spriteOffsetX() const { return _spriteOffsetX; }
 
     @property bool canPassTop() const { return false; }
     @property bool blockable()  const { return true;  }
@@ -91,14 +92,16 @@ protected:
 
     void copyFromAndBindToLix(in PerformedActivity rhs, Lixxie bindTo)
     {
-        lixxie = bindTo;
-        _ac    = rhs._ac;
-        _frame = rhs._frame;
+        lixxie         = bindTo;
+        _ac            = rhs._ac;
+        _frame         = rhs._frame;
+        _spriteOffsetX = rhs._spriteOffsetX;
     }
 
 package:
 
-    @property int frame(in int a)  { return _frame = a; }
+    @property int spriteOffsetX(in int a) { return _spriteOffsetX = a; }
+    @property int frame        (in int a) { return _frame = a;         }
 
     Lixxie lixxie;
 
@@ -106,5 +109,6 @@ private:
 
     Ac  _ac;
     int _frame;
+    int _spriteOffsetX;
 
 }

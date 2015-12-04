@@ -116,31 +116,13 @@ public:
         return _outsideWorld;
     }
 
-//  bool get_in_trigger_area(const EdGraphic) const;
-
     @property bool flingNew() const { return _flingNew; }
     @property int  flingX()   const { return _flingX;   }
     @property int  flingY()   const { return _flingY;   }
-/*  void addFling(int, int, bool (from same tribe) = false);
- *  void resetFlingNew();
- *
- *  static bool getSteelAbsolute(in int, in int);
- *  bool getSteel         (in int = 0, in int = 0);
- *
- *  bool isSolid        (in int = 0, in int = 2);
- *  bool isSolidSingle  (in int = 0, in int = 2);
- *  int  solidWallHeight(in int = 0, in int = 0);
- *  int  countSolid     (int, int, int, int);
- *  int  countSteel     (int, int, int, int);
- *
- *  void playSound            (in Sound);
- *  void playSoundIfTribeLocal(in Sound);
- */
+
     @property int frame() const   { return _perfAc.frame;     }
     @property int frame(in int i) { return _perfAc.frame = i; }
-/*           void advanceFrame();
- *  override bool isLastFrame() const;
- */
+
     // (super == Graphic) shall use frame and ac to draw itself
                override @property int xf() const   { return this.frame; }
                override @property int yf() const   { return this.ac;    }
@@ -248,7 +230,6 @@ private void addEncountersFromHere()
 ex(in int n)
 {
     _ex = basics.help.even(n);
-    super.x = _ex - exOffset;
     if (ground.torusX)
         _ex = positiveMod(_ex, ground.xl);
     addEncountersFromHere();
@@ -261,7 +242,6 @@ ex(in int n)
 ey(in int n)
 {
     _ey = n;
-    super.y = _ey - eyOffset;
     if (ground.torusY)
         _ey = positiveMod(_ey, ground.yl);
     addEncountersFromHere();
@@ -423,6 +403,13 @@ void advanceFrame()
 
 
 
+void prepareDraw()
+{
+    assert (_perfAc);
+    super.x = _ex - exOffset + _perfAc.spriteOffsetX;
+    super.y = _ey - eyOffset;
+}
+
 override void draw(Torbit tb) const
 {
     if (ac == Ac.NOTHING)
@@ -454,7 +441,7 @@ override void draw(Torbit tb) const
     }
     // end of drawing the fuse
 
-    Graphic.draw(tb);
+    super.draw(tb);
 }
 
 
@@ -597,12 +584,8 @@ void become(bool manualAssignment = false)(in Ac newAc)
         _perfAc.onBecomingSomethingElse();
 
     static if (manualAssignment)
-        newPerf.onManualAssignment(); // while Lix still has old performed ac
-
-    // Reset sprite placement like climber's offset in x-direction by 1.
-    // This is the same code as the sprite placement in set_ex/ey().
-    super.x = _ex - exOffset;
-    super.y = _ey - eyOffset;
+        // while Lix still has old performed ac
+        newPerf.onManualAssignment();
 
     if (_perfAc.ac != newPerf.ac
         && (newPerf.callBecomeAfterAssignment || ! manualAssignment)
