@@ -31,7 +31,7 @@ private enum Mask _bashRight = Mask([
     "XXXXXXXX" "XXXX....",
 ]);
 
-private enum _bashNoRelicsLeft  = _bashRight.mirrored;
+private enum _bashNoRelicsLeft  = _bashNoRelicsRight.mirrored;
 private enum _bashNoRelicsRight = Mask(
     "XXXXXXXX" "XXXXXXXX".repeat(16).array ~ [
     "#XXXXXXX" "XXXXXXXX", // '#' = effective coordinate

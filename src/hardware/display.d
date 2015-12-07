@@ -22,23 +22,17 @@ import hardware.mouse; // center mouse after changing resolution
 
 ALLEGRO_DISPLAY* display;
 
-/*  void setScreenMode(bool wantFull, int wantX = 0, int wantY = 0);
- *
- *  void deinitialize();
- *
- *  void calc()
- *
- *      call once per mainLoop to trap/untrap mouse
- *
- *  @property int displayXl()
- *  @property int displayYl()
- *
- *  @property int display_fps()
- *
- *  void displayStartupMessage(string)
- *
- *      before mainLoop draws
- */
+deprecated bool clearScreenAtNextBlit;
+
+private:
+
+    ALLEGRO_EVENT_QUEUE* queue;
+    bool _displayCloseWasClicked;
+    long[] _fpsArr;
+
+
+
+public:
 
 bool
 displayCloseWasClicked() {
@@ -47,14 +41,13 @@ displayCloseWasClicked() {
 
 
 
-private long[] _fpsArr;
 
 void
 flip_display() {
     assert (display, "display hasn't been created");
     al_flip_display();
 
-    // compute FPS, these can be queried with @property int display_fps()
+    // compute FPS, query result with displayFps()
     _fpsArr ~= al_get_timer_count(timer);
     while (_fpsArr != null && _fpsArr[0] <= _fpsArr[$-1] - ticksPerSecond)
         _fpsArr = _fpsArr[1 .. $];
@@ -88,21 +81,6 @@ displayYl()
 
 
 
-// Globally writable variable, set this to true to force a redraw of all GUI
-// components next time, this is probably a C++/A4 Lix legacy variable
-public bool clearScreenAtNextBlit;
-
-
-
-private :
-
-    ALLEGRO_EVENT_QUEUE* queue;
-    bool _displayCloseWasClicked;
-
-
-
-public:
-
 // This is like initialize() of other modules.
 // Will use global variables if res == (0, 0).
 // If res == (0, 0) and the global variables are also (0, 0),
@@ -121,17 +99,15 @@ void setScreenMode(bool wantFull, int wantX = 0, int wantY = 0)
         }
     }
 
-    // try_modes lists interesting screen modes in the order we wish to try
-    // them, using the first one that works. The earlier a mode appears in
-    // try_modes, the earlier it is tried.
+    // FIFO queue of screen modes to try
     TryMode[] try_modes;
 
-    // top priority goes to the mode using setScreenMode()'s arguments
+    // top priority goes to using setScreenMode()'s arguments
     if (wantX > 0 && wantY > 0) {
         try_modes ~= TryMode(wantFull, wantX, wantY);
     }
 
-    // add two more modes for fullscreen, and two more modes for windowed,
+    // two more modes for fullscreen, two more modes for windowed,
     // but choose the order of these additions based on wantFull
     void addFullscreenTryModes() {
         if (screenResolutionX > 0 && screenResolutionY > 0) {
@@ -182,7 +158,6 @@ void setScreenMode(bool wantFull, int wantX = 0, int wantY = 0)
     queue = al_create_event_queue();
     al_register_event_source(queue, al_get_display_event_source(display));
 
-    clearScreenAtNextBlit = true;
     hardware.mouse.centerMouse();
 
     immutable int al_x = al_get_display_width (display);

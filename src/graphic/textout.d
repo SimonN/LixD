@@ -26,14 +26,6 @@ private float _djvuMOffset; // Gui code should think this has a height of 20
 public @property float shaOffset()   { return _shaOffset;   }
 public @property float djvuMOffset() { return _djvuMOffset; }
 
-/*  void initialize();
- *  void deinitialize();
- *
- *  void drawText(font, str, x, y, col)
- *  void drawTextCentered(...)
- *  void drawTextRight(...)
- */
-
 // legacy support: SiegeLord's D bindings don't have this enum flag yet in the
 // latest release. This flag is possible in Allegro 5.0 though. I should
 // remove this once SiegeLord does a release.

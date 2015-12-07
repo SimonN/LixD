@@ -6,11 +6,6 @@ import std.utf;
 import basics.globals : ticksPerSecond;
 import basics.alleg5;
 
-/*  void initialize();
- *  void deinitialize();
- *  void calc();
- */
-
 string utf8Input() { return _bufferUTF8; }
 
 bool keyTapped  (int alkey) { return _once[alkey];     }
