@@ -77,7 +77,7 @@ Filename singleLastLevel;
 Filename networkLastLevel;
 Filename replayLastLevel;
 
-Style    networkLastStyle = Style.RED;
+Style    networkLastStyle = Style.red;
 
 Filename editorLastDirTerrain;
 Filename editorLastDirSteel;
@@ -401,8 +401,8 @@ void load()
 
         else if (i.text1 == userNetworkLastStyle) {
             try networkLastStyle = to!Style(i.nr1);
-            catch (ConvException e)           networkLastStyle = Style.RED;
-            if (networkLastStyle < Style.RED) networkLastStyle = Style.RED;
+            catch (ConvException e)           networkLastStyle = Style.red;
+            if (networkLastStyle < Style.red) networkLastStyle = Style.red;
         }
 
         else if (i.text1 == userKeyForceLeft     ) keyForceLeft      = i.nr1;

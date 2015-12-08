@@ -204,7 +204,7 @@ void initialize()
 
     // DTODO: move load_all_file_replacements(); into obj_lib
 
-    auto toAssert = getSkillButtonIcon(Style.GARDEN);
+    auto toAssert = getSkillButtonIcon(Style.garden);
     assert (toAssert);
     assert (toAssert.valid);
 }
@@ -459,14 +459,14 @@ void recolor_into_vector(
 
 
     // now invoke the above code on each Lix style
-    foreach (int i; 0 .. Style.MAX) {
+    foreach (int i; 0 .. Style.max) {
         Style st = cast (Style) i;
         vector[st] = new Cutbit(cutbit);
 
         static if (true)
             // Speed up loading to debug the game easier. This is not honte.
             // Recoloring different styles should not be done at program start.
-            if (st >= Style.YELLOW)
+            if (st >= Style.yellow)
                 continue;
 
         auto zone = Zone(profiler, format("recolor-one-foreach-%d", magicnr));
@@ -489,7 +489,7 @@ void recolor_into_vector(
     }
 
     static if (false)
-     foreach (int i; 0 .. Style.YELLOW) {
+     foreach (int i; 0 .. Style.yellow) {
         Style st = cast (Style) i;
         al_save_bitmap(format("./nagetier-%d-%d.png", magicnr, i).toStringz,
          vector[st].albit);

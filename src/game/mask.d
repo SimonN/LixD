@@ -149,5 +149,5 @@ unittest {
         "...XX.",
     ]);
     assert (b.offsetX == 2);
-    assert (b == a.mirroredWithEvenOffsetX());
+    assert (b == a.mirrored());
 }

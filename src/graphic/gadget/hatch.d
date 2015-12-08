@@ -30,7 +30,7 @@ public:
     enum updatesBlinkOff =  2;
 
     bool  spawnFacingLeft;
-    Style blinkStyle = Style.GARDEN; // if left at GARDEN, then don't blink
+    Style blinkStyle = Style.garden; // if left at garden, then don't blink
 
     this(in Torbit tb, in ref Pos levelpos)
     {
@@ -93,7 +93,7 @@ protected:
 
     override void drawGameExtras(Torbit mutableGround) const
     {
-        if (_blinkNow && blinkStyle != Style.GARDEN) {
+        if (_blinkNow && blinkStyle != Style.garden) {
             const(Cutbit) c = getPanelInfoIcon(blinkStyle);
             c.draw(mutableGround, x + tile.triggerX - c.xl / 2,
                                   y + tile.triggerY - c.yl / 2,

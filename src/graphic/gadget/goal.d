@@ -64,7 +64,7 @@ protected:
             // draw owners
             int offset = 0;
             foreach (const(Tribe) t; _tribes) {
-                if (t.style == Style.GARDEN)
+                if (t.style == Style.garden)
                     continue;
                 auto c = graphic.gralib.getPanelInfoIcon(t.style);
                 c.draw(mutableGround,

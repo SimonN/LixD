@@ -497,7 +497,7 @@ private:
 
         // the first row of recol contains the file colors, then come several
         // rows, one per style < MAX.
-        for (int i = 0; i < Style.MAX && i < recolYl + 1; ++i) {
+        for (int i = 0; i < Style.max && i < recolYl + 1; ++i) {
             immutable int y = i + 1;
             drawBrick(i * builderBrickXl, 0, builderBrickXl,
                 al_get_pixel(recol, recolXl - 3, y),

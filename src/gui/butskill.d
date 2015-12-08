@@ -14,7 +14,7 @@ public:
     this(Geom g)
     {
         super(g);
-        style = Style.GARDEN;
+        style = Style.garden;
         whenToExecute = WhenToExecute.whenMouseHeld;
 
         _labelNumL = new Label(new Geom(0, 2, g.xlg, 30, From.TOP));
@@ -72,7 +72,7 @@ public:
     @property Style style() const { return _style; }
     @property Style style(in Style st)
     {
-        assert (st != Style.MAX);
+        assert (st != Style.max);
         if (_style == st)
             return st;
         _style = st;
@@ -83,7 +83,7 @@ public:
 
 private:
 
-    Style _style = Style.MAX;
+    Style _style = Style.max;
     int _number;
     Ac  _skill;
 
