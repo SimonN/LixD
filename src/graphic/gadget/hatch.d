@@ -97,7 +97,7 @@ protected:
             const(Cutbit) c = getPanelInfoIcon(blinkStyle);
             c.draw(mutableGround, x + tile.triggerX - c.xl / 2,
                                   y + tile.triggerY - c.yl / 2,
-                                  Ac.WALKER, 0);
+                                  Ac.walker, 0);
         }
     }
 

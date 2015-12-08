@@ -24,7 +24,7 @@ class Floater : PerformedActivity {
     override void
     onBecome()
     {
-        if (ac == Ac.FALLER) {
+        if (ac == Ac.faller) {
             Faller perfCast = cast (Faller) performedActivity;
             assert (perfCast);
             ySpeed = perfCast.ySpeed;

@@ -11,7 +11,7 @@ class RemovedLix : PerformedActivity {
 
     override void onBecome()
     {
-        assert (lixxie.performedActivity.ac != Ac.NOTHING,
+        assert (lixxie.performedActivity.ac != Ac.nothing,
             "Lix can't be killed twice, that would miscount them.");
         assert (cast (Leaver) lixxie.performedActivity,
             "Lix should only transistion to NOTHING from a killing/exiting "
@@ -39,7 +39,7 @@ abstract class Leaver : PerformedActivity {
     final void advanceFrameAndLeave()
     {
         if (lixxie.isLastFrame)
-            lixxie.become(Ac.NOTHING);
+            lixxie.become(Ac.nothing);
         else
             lixxie.advanceFrame();
     }

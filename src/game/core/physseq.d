@@ -391,7 +391,7 @@ updateLixxies(Game game) { with (game)
     foreach (int tribeID, tribe; cs.tribes) {
         assert (tribeID == game.tribeID(tribe));
         foreach (int lixID, lixxie; tribe.lixvec) {
-            if (lixxie.ac > Ac.WALKER) {
+            if (lixxie.ac > Ac.walker) {
                 auto ow = game.makeGypsyWagon(tribeID, lixID);
                 lixxie.marked = true;
                 game.updateSingleLix(lixxie, &ow);

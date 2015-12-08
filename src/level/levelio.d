@@ -147,7 +147,7 @@ private void load_from_vector(Level level, in IoLine[] lines)
         // If we've read in only rubbish, we don't add the skill.
         else {
             Ac ac = lix.enums.stringToAc(text1);
-            if (ac != Ac.MAX)
+            if (ac != Ac.max)
                 skills[ac] = nr1;
         }
         break;

@@ -156,7 +156,7 @@ this(
     super(getLixSpritesheet(_style), groundMap,
           even(new_ex) - exOffset, new_ey - eyOffset);
 
-    _perfAc = PerformedActivity.factory(this, Ac.FALLER);
+    _perfAc = PerformedActivity.factory(this, Ac.faller);
     frame   = 4;
     ex      = new_ex.even;
     ey      = new_ey;
@@ -412,7 +412,7 @@ void prepareDraw()
 
 override void draw(Torbit tb) const
 {
-    if (ac == Ac.NOTHING)
+    if (ac == Ac.nothing)
         return;
 
     // draw the fuse if necessary
@@ -453,7 +453,7 @@ override void draw(Torbit tb) const
 
 bool cursorShouldOpenOverMe() const
 {
-    return ac != Ac.NOTHING && ! cast (Leaver) _perfAc;
+    return ac != Ac.nothing && ! cast (Leaver) _perfAc;
 }
 
 // returns 0 iff lix is not clickable and the cursor should be closed
@@ -472,32 +472,32 @@ int priorityForNewAc(
     if (! cursorShouldOpenOverMe) return 0;
 
     // Permanent skills
-    if ((newAc == Ac.EXPLODER  && updatesSinceBomb > 0)
-     || (newAc == Ac.EXPLODER2 && updatesSinceBomb > 0)
-     || (newAc == Ac.RUNNER    && abilityToRun)
-     || (newAc == Ac.CLIMBER   && abilityToClimb)
-     || (newAc == Ac.FLOATER   && abilityToFloat) ) return 1;
+    if ((newAc == Ac.exploder  && updatesSinceBomb > 0)
+     || (newAc == Ac.exploder2 && updatesSinceBomb > 0)
+     || (newAc == Ac.runner    && abilityToRun)
+     || (newAc == Ac.climber   && abilityToClimb)
+     || (newAc == Ac.floater   && abilityToFloat) ) return 1;
 
     switch (ac) {
         // When a blocker shall be freed/exploded, the blocker has extremely
         // high priority, more than anything else on the field.
-        case Ac.BLOCKER:
-            if (newAc == Ac.WALKER
-             || newAc == Ac.EXPLODER
-             || newAc == Ac.EXPLODER2) p = 5000;
+        case Ac.blocker:
+            if (newAc == Ac.walker
+             || newAc == Ac.exploder
+             || newAc == Ac.exploder2) p = 5000;
             else return 1;
             break;
 
         // Stunners/ascenders may be turned in their later frames, but
         // otherwise act like regular mostly unassignable-to acitivities
-        case Ac.STUNNER:
+        case Ac.stunner:
             if (frame >= 16) {
                 p = 3000;
                 break;
             }
             else goto GOTO_TARGET_FULL_ATTENTION;
 
-        case Ac.ASCENDER:
+        case Ac.ascender:
             if (frame >= 5) {
                 p = 3000;
                 break;
@@ -506,24 +506,24 @@ int priorityForNewAc(
 
         // further activities that take all of the lix's attention; she
         // canot be assigned anything except permanent skills
-        case Ac.FALLER:
-        case Ac.TUMBLER:
-        case Ac.CLIMBER:
-        case Ac.FLOATER:
-        case Ac.JUMPER:
+        case Ac.faller:
+        case Ac.tumbler:
+        case Ac.climber:
+        case Ac.floater:
+        case Ac.jumper:
         GOTO_TARGET_FULL_ATTENTION:
-            if (newAc == Ac.RUNNER
-             || newAc == Ac.CLIMBER
-             || newAc == Ac.FLOATER
-             || newAc == Ac.EXPLODER
-             || newAc == Ac.EXPLODER2) p = 2000;
+            if (newAc == Ac.runner
+             || newAc == Ac.climber
+             || newAc == Ac.floater
+             || newAc == Ac.exploder
+             || newAc == Ac.exploder2) p = 2000;
             else return 1;
             break;
 
         // standard activities, not considered working lixes
-        case Ac.WALKER:
-        case Ac.LANDER:
-        case Ac.RUNNER:
+        case Ac.walker:
+        case Ac.lander:
+        case Ac.runner:
             p = 3000;
             break;
 
@@ -531,8 +531,8 @@ int priorityForNewAc(
         // to see whether we should read the user's setting. If false, we're
         // having a replay or multiplayer game, and then queuing must work
         // even if the user has disabled it for themselves.
-        case Ac.BUILDER:
-        case Ac.PLATFORMER:
+        case Ac.builder:
+        case Ac.platformer:
             if (newAc == ac
              && (! personal || multipleBuilders)) p = 1000;
             else if (newAc != ac)                 p = 4000;
@@ -545,7 +545,7 @@ int priorityForNewAc(
             else return 1;
 
     }
-    p += (newAc == Ac.BATTER && batterPriority
+    p += (newAc == Ac.batter && batterPriority
           ? (- updatesSinceBomb) : updatesSinceBomb);
     p += 400 * abilityToRun + 200 * abilityToClimb + 100 * abilityToFloat;
     return p;

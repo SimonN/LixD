@@ -46,11 +46,11 @@ class Faller : PerformedActivity {
                 }                             // select a different frame
 
                 if (pixelsFallen > pixelsSafeToFall && ! abilityToFloat)
-                    become(Ac.SPLATTER);
+                    become(Ac.splatter);
                 else if (hasFallenVeryLittle)
-                    become(Ac.WALKER);
+                    become(Ac.walker);
                 else
-                    become(Ac.LANDER);
+                    become(Ac.lander);
                 return;
             }
         }
@@ -80,7 +80,7 @@ class Faller : PerformedActivity {
 
         if (abilityToFloat && pixelsFallen >= pixelsFallenToBecomeFloater)
             // it's important we have incremented ySpeed correctly for this
-            become(Ac.FLOATER);
+            become(Ac.floater);
     }
     // end void performActivity()
 }

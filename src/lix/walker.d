@@ -5,7 +5,7 @@ import lix;
 private void
 setFrameAfterShortFallTo(PerformedActivity newAc, int targetFrame)
 {
-    if (newAc.lixxie.ac == Ac.FALLER) {
+    if (newAc.lixxie.ac == Ac.faller) {
         auto oldAc = cast (const(Faller)) newAc.lixxie.performedActivity;
         assert (oldAc);
         if (   oldAc.pixelsFallen <= 9 && oldAc.frame < 1
@@ -31,19 +31,19 @@ class Walker : PerformedActivity {
 
     override void onManualAssignment()
     {
-        if (lixxie.ac == Ac.WALKER
-         || lixxie.ac == Ac.RUNNER
-         || lixxie.ac == Ac.LANDER) {
+        if (lixxie.ac == Ac.walker
+         || lixxie.ac == Ac.runner
+         || lixxie.ac == Ac.lander) {
             turn();
             // frame should be set to -1 by the implementation
         }
-        else if (lixxie.ac == Ac.STUNNER
-              || lixxie.ac == Ac.ASCENDER) {
+        else if (lixxie.ac == Ac.stunner
+              || lixxie.ac == Ac.ascender) {
             // priority allows to get here only when the frame is high enough
-            become(Ac.WALKER);
+            become(Ac.walker);
             turn();
         }
-        else if (lixxie.ac == Ac.BLOCKER) {
+        else if (lixxie.ac == Ac.blocker) {
             if (frame < 20)
                 frame = 21;
                 // frame should be set to 20 by the implementation
@@ -52,17 +52,17 @@ class Walker : PerformedActivity {
                 // by a second walker assignment
                 turn();
         }
-        else if (lixxie.ac == Ac.PLATFORMER && frame > 5) {
-            become(Ac.SHRUGGER2);
+        else if (lixxie.ac == Ac.platformer && frame > 5) {
+            become(Ac.shrugger2);
             // See also the next else-if.
             // Clicking twice on the platformer shall turn it around.
         }
-        else if (lixxie.ac == Ac.SHRUGGER || lixxie.ac == Ac.SHRUGGER2) {
-            become(Ac.WALKER);
+        else if (lixxie.ac == Ac.shrugger || lixxie.ac == Ac.shrugger2) {
+            become(Ac.walker);
             turn();
         }
         else {
-            become(Ac.WALKER);
+            become(Ac.walker);
         }
     }
 
@@ -71,7 +71,7 @@ class Walker : PerformedActivity {
     override void onBecome()
     {
         if (abilityToRun)
-            become(Ac.RUNNER);
+            become(Ac.runner);
         else
             this.setFrameAfterShortFallTo(8);
     }
@@ -121,7 +121,7 @@ class Walker : PerformedActivity {
                         break;
                     }
                 if (enoughSpaceToClimb) {
-                    become(Ac.CLIMBER);
+                    become(Ac.climber);
                     return;
                 }
             }
@@ -144,7 +144,7 @@ class Walker : PerformedActivity {
             if (upBy > highestStepUp)
                 return true;
             else if (upBy >= 6)
-                become(Ac.ASCENDER);
+                become(Ac.ascender);
             else
                 moveUp(upBy);
         }
@@ -164,7 +164,7 @@ class Walker : PerformedActivity {
             void becomeFallerAndFallPixels(in int fallY)
             {
                 lixxie.moveDown(fallY);
-                lixxie.become(Ac.FALLER);
+                lixxie.become(Ac.faller);
                 Faller perfFaller = cast (Faller) lixxie.performedActivity;
                 assert (perfFaller);
                 perfFaller.pixelsFallen = fallY;
@@ -214,7 +214,7 @@ class Runner : Walker {
         // A runner performs two walker cycles per frame, unless stuff happens.
         immutable oldDir = dir;
         performWalkingOrRunning();
-        if (lixxie.ac == Ac.RUNNER && oldDir == dir)
+        if (lixxie.ac == Ac.runner && oldDir == dir)
             performWalkingOrRunning();
     }
 

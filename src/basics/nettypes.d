@@ -120,7 +120,7 @@ struct ReplayData {
         try               action = pck.data[2].to!RepAc;
         catch (Exception) action = RepAc.NOTHING;
         try               skill  = pck.data[3].to!Ac;
-        catch (Exception) skill  = Ac.NOTHING;
+        catch (Exception) skill  = Ac.nothing;
     }
 
 }

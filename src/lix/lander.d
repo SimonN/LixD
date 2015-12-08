@@ -7,7 +7,7 @@ class Lander : PerformedActivity {
     mixin(CloneByCopyFrom!"Lander");
 
     override void onBecome() {
-        if (lixxie.ac == Ac.FALLER) {
+        if (lixxie.ac == Ac.faller) {
             auto oldAc = cast (const(Faller)) lixxie.performedActivity;
             assert (oldAc);
             if (oldAc.frame < 3)
@@ -19,7 +19,7 @@ class Lander : PerformedActivity {
     override void performActivity()
     {
         if (isLastFrame)
-            become(Ac.WALKER);
+            become(Ac.walker);
         else
             advanceFrame();
     }

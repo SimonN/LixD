@@ -89,20 +89,20 @@ Filename editorLastDirHazard;
 @property const(Ac[]) skillSort() { return _skillSort; }
 
 private Ac[] _skillSort = [
-    Ac.WALKER,
-    Ac.JUMPER,
-    Ac.RUNNER,
-    Ac.CLIMBER,
-    Ac.FLOATER,
-    Ac.BATTER,
-    Ac.EXPLODER2,
-    Ac.BLOCKER,
-    Ac.CUBER,
-    Ac.BUILDER,
-    Ac.PLATFORMER,
-    Ac.BASHER,
-    Ac.MINER,
-    Ac.DIGGER
+    Ac.walker,
+    Ac.jumper,
+    Ac.runner,
+    Ac.climber,
+    Ac.floater,
+    Ac.batter,
+    Ac.exploder2,
+    Ac.blocker,
+    Ac.cuber,
+    Ac.builder,
+    Ac.platformer,
+    Ac.basher,
+    Ac.miner,
+    Ac.digger
 ];
 
 int keyForceLeft       = ALLEGRO_KEY_S;
@@ -177,22 +177,22 @@ static this()
 {
     fileLanguage            = new Filename(fileLanguageEnglish);
 
-    keySkill[Ac.WALKER]     = ALLEGRO_KEY_D;
-    keySkill[Ac.RUNNER]     = ALLEGRO_KEY_LSHIFT;
-    keySkill[Ac.BASHER]     = ALLEGRO_KEY_E;
-    keySkill[Ac.BUILDER]    = ALLEGRO_KEY_A;
-    keySkill[Ac.PLATFORMER] = ALLEGRO_KEY_T;
-    keySkill[Ac.DIGGER]     = ALLEGRO_KEY_W;
-    keySkill[Ac.MINER]      = ALLEGRO_KEY_G;
-    keySkill[Ac.BLOCKER]    = ALLEGRO_KEY_X;
-    keySkill[Ac.CUBER]      = ALLEGRO_KEY_X;
-    keySkill[Ac.EXPLODER]   = ALLEGRO_KEY_V;
-    keySkill[Ac.EXPLODER2]  = ALLEGRO_KEY_V;
+    keySkill[Ac.walker]     = ALLEGRO_KEY_D;
+    keySkill[Ac.runner]     = ALLEGRO_KEY_LSHIFT;
+    keySkill[Ac.basher]     = ALLEGRO_KEY_E;
+    keySkill[Ac.builder]    = ALLEGRO_KEY_A;
+    keySkill[Ac.platformer] = ALLEGRO_KEY_T;
+    keySkill[Ac.digger]     = ALLEGRO_KEY_W;
+    keySkill[Ac.miner]      = ALLEGRO_KEY_G;
+    keySkill[Ac.blocker]    = ALLEGRO_KEY_X;
+    keySkill[Ac.cuber]      = ALLEGRO_KEY_X;
+    keySkill[Ac.exploder]   = ALLEGRO_KEY_V;
+    keySkill[Ac.exploder2]  = ALLEGRO_KEY_V;
 
-    keySkill[Ac.CLIMBER]    = ALLEGRO_KEY_B;
-    keySkill[Ac.FLOATER]    = ALLEGRO_KEY_Q;
-    keySkill[Ac.JUMPER]     = ALLEGRO_KEY_R;
-    keySkill[Ac.BATTER]     = ALLEGRO_KEY_C;
+    keySkill[Ac.climber]    = ALLEGRO_KEY_B;
+    keySkill[Ac.floater]    = ALLEGRO_KEY_Q;
+    keySkill[Ac.jumper]     = ALLEGRO_KEY_R;
+    keySkill[Ac.batter]     = ALLEGRO_KEY_C;
 
     singleLastLevel  = new Filename(dirLevelsSingle);
     networkLastLevel = new Filename(dirLevelsNetwork);
@@ -473,7 +473,7 @@ void load()
 
         else {
             Ac ac = stringToAc(i.text1);
-            if (ac != Ac.MAX) keySkill[ac] = i.nr1;
+            if (ac != Ac.max) keySkill[ac] = i.nr1;
         }
         break;
 

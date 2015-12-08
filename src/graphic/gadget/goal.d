@@ -71,7 +71,7 @@ protected:
                     x + tile.triggerX + tile.triggerXl / 2 - c.xl / 2
                       + (20 * offset++) - 10 * (_tribes.len - 1),
                     max(y, y + yl - 70),
-                    Ac.WALKER, 0);
+                    Ac.walker, 0);
             }
         }
         else {

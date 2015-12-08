@@ -28,7 +28,7 @@ class Ascender : PerformedActivity {
         // a further bug when all pixels are solid, but I don't think
         // become_ascender is ever called when that is the case.
         if (swh == checkBelowHeight) {
-            become(Ac.FALLER);
+            become(Ac.faller);
             return;
         }
         // Available frames are 0, 1, 2, 3, 4, 5.
@@ -57,7 +57,7 @@ class Ascender : PerformedActivity {
             moveUp();
 
         if (isLastFrame)
-            become(Ac.WALKER);
+            become(Ac.walker);
         else
             advanceFrame();
     }

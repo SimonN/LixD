@@ -185,10 +185,10 @@ calc()
     import lix.enums;
 
     drtx(typetext ~ (tick % 30 < 15 ? "_" : ""), 300, 100);
-    drtx(format("Your builder hotkey scancode: %d", keySkill[Ac.BUILDER]), 20, 400);
-    drtx("Builder key once: " ~ (keyTapped(keySkill[Ac.BUILDER])?"now":"--"), 20, 420);
-    drtx("Builder key hold: " ~ (keyHeld(keySkill[Ac.BUILDER])?"now":"--"), 20, 440);
-    drtx("Builder key rlsd: " ~ (keyReleased(keySkill[Ac.BUILDER])?"now":"--"), 20, 460);
+    drtx(format("Your builder hotkey scancode: %d", keySkill[Ac.builder]), 20, 400);
+    drtx("Builder key once: " ~ (keyTapped(keySkill[Ac.builder])?"now":"--"), 20, 420);
+    drtx("Builder key hold: " ~ (keyHeld(keySkill[Ac.builder])?"now":"--"), 20, 440);
+    drtx("Builder key rlsd: " ~ (keyReleased(keySkill[Ac.builder])?"now":"--"), 20, 460);
     drtx("Press [A] to playback a sound. Does it play immediately (correct) or with 0.5 s delay (bug)?", 20, 480);
     drtx("Non-square rectangles jump when they", 300, 120);
     drtx("finish a half rotation, this is intended.", 300, 140);

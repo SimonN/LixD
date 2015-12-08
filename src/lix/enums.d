@@ -17,14 +17,14 @@ enum int brickYl           = 2;
 nothrow Ac stringToAc(in string str)
 {
     try
-        return str.toUpper.to!Ac;
+        return str.toLower.to!Ac;
     catch (Exception)
-        return Ac.MAX;
+        return Ac.max;
 }
 
 string acToString(in Ac ac)
 {
-    return ac.to!string.asUpperCase.to!string;
+    return ac.to!string.toUpper;
 }
 
 nothrow Style stringToStyle(in string str)
@@ -41,45 +41,45 @@ string styleToString(in Style sty)
 }
 
 unittest {
-    assert (acToString(Ac.FALLER) == "FALLER");
-    assert (stringToAc("builDER") == Ac.BUILDER);
+    assert (acToString(Ac.faller) == "FALLER");
+    assert (stringToAc("builDER") == Ac.builder);
     assert (styleToString(Style.yellow) == "Yellow");
     assert (stringToStyle("ORAnge") == Style.orange);
     assert (stringToStyle("Not in there") == Style.garden);
 }
 
 enum Ac : ubyte {
-    NOTHING,
-    FALLER,
-    TUMBLER,
-    STUNNER,
-    LANDER,
-    SPLATTER,
-    BURNER,
-    DROWNER,
-    EXITER,
-    WALKER,
-    RUNNER,
+    nothing,
+    faller,
+    tumbler,
+    stunner,
+    lander,
+    splatter,
+    burner,
+    drowner,
+    exiter,
+    walker,
+    runner,
 
-    CLIMBER,
-    ASCENDER,
-    FLOATER,
-    EXPLODER,
-    EXPLODER2,
-    BLOCKER,
-    BUILDER,
-    SHRUGGER,
-    PLATFORMER,
-    SHRUGGER2,
-    BASHER,
-    MINER,
-    DIGGER,
+    climber,
+    ascender,
+    floater,
+    exploder,
+    exploder2,
+    blocker,
+    builder,
+    shrugger,
+    platformer,
+    shrugger2,
+    basher,
+    miner,
+    digger,
 
-    JUMPER,
-    BATTER,
-    CUBER,
+    jumper,
+    batter,
+    cuber,
 
-    MAX
+    max
 }
 
 enum Style : ubyte {

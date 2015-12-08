@@ -206,9 +206,9 @@ findPotentialAssignee(Game game) { with (game)
         && currentSkill.number != 0
         && currentSkill.skill == best.lixxie.ac
     ) {
-        if (best.lixxie.ac == Ac.BUILDER)
+        if (best.lixxie.ac == Ac.builder)
             pan.stats.suggestTooltipBuilders();
-        else if (best.lixxie.ac == Ac.PLATFORMER)
+        else if (best.lixxie.ac == Ac.platformer)
             pan.stats.suggestTooltipPlatformers();
     }
 

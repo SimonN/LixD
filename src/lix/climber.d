@@ -48,7 +48,7 @@ class Climber : PerformedActivity {
             // got this much air below, but we leave it like this for now.
             else if (i > 9 && ! isSolid(2, -i)) {
                 moveAhead();
-                become(Ac.ASCENDER);
+                become(Ac.ascender);
                 break;
             }
         }
@@ -65,14 +65,14 @@ class Climber : PerformedActivity {
             // This method can be called during become, then lixxie.ac might
             // still be walker or runner from before.
             immutable int oldWalkerFrame =
-                (lixxie.ac == Ac.WALKER || lixxie.ac == Ac.RUNNER)
+                (lixxie.ac == Ac.walker || lixxie.ac == Ac.runner)
                 ? lixxie.frame : -999;
-            become(Ac.WALKER);
+            become(Ac.walker);
             if (oldWalkerFrame >= 0)
                 lixxie.frame = oldWalkerFrame;
         }
         else {
-            become(Ac.FALLER);
+            become(Ac.faller);
         }
     }
 
@@ -97,7 +97,7 @@ class Climber : PerformedActivity {
         foreach (unused; 0 .. upBy) {
             if (isSolid(0, ceilingY)) {
                 turn();
-                become(Ac.FALLER);
+                become(Ac.faller);
                 return;
             }
             else if (ascendHoistableLedge)
@@ -120,7 +120,7 @@ class Climber : PerformedActivity {
     {
         if (! isSolid(2, hoistableLedgeY)) {
             moveAhead();
-            become(Ac.ASCENDER);
+            become(Ac.ascender);
             return true;
         }
         else

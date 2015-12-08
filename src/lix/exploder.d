@@ -12,8 +12,8 @@ class Exploder : Leaver {
 
     static void handleUpdatesSinceBomb(Lixxie li)
     {
-        assert (li.ac != Ac.EXPLODER);
-        assert (li.ac != Ac.EXPLODER2);
+        assert (li.ac != Ac.exploder);
+        assert (li.ac != Ac.exploder2);
 
         if (li.updatesSinceBomb == 0)
             return;

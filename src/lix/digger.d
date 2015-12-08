@@ -34,7 +34,7 @@ class Digger : PerformedActivity {
                 outsideWorld.state.update,
                 outsideWorld.tribeID,
                 outsideWorld.lixID, ex, ey - 10);
-            become(Ac.WALKER);
+            become(Ac.walker);
         }
         return enoughSteel;
     }
@@ -43,7 +43,7 @@ class Digger : PerformedActivity {
     {
         bool fall = ! isSolid(-2, 2) && ! isSolid(0, 2) && ! isSolid(2, 2);
         if (fall)
-            become(Ac.FALLER);
+            become(Ac.faller);
         return fall;
     }
 

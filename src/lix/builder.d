@@ -24,12 +24,12 @@ class Builder : PerformedActivity {
 
     override @property bool callBecomeAfterAssignment() const
     {
-        return lixxie.ac != Ac.BUILDER;
+        return lixxie.ac != Ac.builder;
     }
 
     override void onManualAssignment()
     {
-        if (lixxie.ac == Ac.BUILDER) {
+        if (lixxie.ac == Ac.builder) {
             // skillsQueued = ... would be a mistake. The new perfAc (this) is
             // discarded. We want to give the extra skills to the old perfAc.
             Builder oldAc = cast (Builder) lixxie.performedActivity;
@@ -46,7 +46,7 @@ class Builder : PerformedActivity {
 
     override void onBecomingSomethingElse()
     {
-        outsideWorld.tribe.returnSkills(Ac.BUILDER, skillsQueued);
+        outsideWorld.tribe.returnSkills(Ac.builder, skillsQueued);
         skillsQueued = 0;
     }
 
@@ -137,7 +137,7 @@ class Builder : PerformedActivity {
             turn();
             if (fullyInsideTerrain)
                 moveDown();
-            become(Ac.WALKER);
+            become(Ac.walker);
         }
     }
 
@@ -147,7 +147,7 @@ class Builder : PerformedActivity {
         if (bricksLeft == 0) {
             assert (skillsQueued >= 0);
             if (skillsQueued == 0) {
-                become(Ac.SHRUGGER);
+                become(Ac.shrugger);
             }
             else {
                 --skillsQueued;
@@ -166,14 +166,14 @@ class Shrugger : PerformedActivity {
     override void onBecome()
     {
         // This comes from C++ Lix's (become walker)
-        if (lixxie.ac == Ac.PLATFORMER && lixxie.frame > 5) {
-            become(Ac.SHRUGGER2);
+        if (lixxie.ac == Ac.platformer && lixxie.frame > 5) {
+            become(Ac.shrugger2);
             lixxie.frame = 9; // frame = 9 would affect the wrong object
             // See also the next else-if.
             // Clicking twice on the platformer shall turn it around.
         }
-        else if (lixxie.ac == Ac.SHRUGGER || lixxie.ac == Ac.SHRUGGER2) {
-            become(Ac.WALKER);
+        else if (lixxie.ac == Ac.shrugger || lixxie.ac == Ac.shrugger2) {
+            become(Ac.walker);
             turn();
         }
     }
@@ -181,7 +181,7 @@ class Shrugger : PerformedActivity {
     override void performActivity()
     {
         if (isLastFrame)
-            become(Ac.WALKER);
+            become(Ac.walker);
         else
             advanceFrame();
     }

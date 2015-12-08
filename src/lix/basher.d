@@ -105,10 +105,10 @@ private:
     {
         if (steelWasHit) {
             turn();
-            become(Ac.WALKER);
+            become(Ac.walker);
         }
         else if (nothingMoreToBash(0)) {
-            become(Ac.WALKER);
+            become(Ac.walker);
         }
     }
 
@@ -139,7 +139,7 @@ private:
         if (halfPixelsMovedDown >= fallAt) {
             moveUp(1);
             movedDownByThisFrame -= 1;
-            become(Ac.FALLER);
+            become(Ac.faller);
             Faller faller = cast (Faller) performedActivity;
             if (faller)
                 faller.pixelsFallen = movedDownByThisFrame;

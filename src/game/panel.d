@@ -168,7 +168,7 @@ SkillButton
 currentSkill()
 {
     foreach (b; skills)
-        if (b.on && b.skill != Ac.NOTHING && b.number != 0)
+        if (b.on && b.skill != Ac.nothing && b.number != 0)
             return b;
     return null;
 }
