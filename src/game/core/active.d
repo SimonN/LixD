@@ -37,8 +37,10 @@ calcActive(Game game) { with (game)
             game.assignToPotentialAssignee(potAss);
         }
     }
-    else
+    else {
+        pan.stats.targetDescriptionLixxie = null;
         pan.stats.targetDescriptionNumber = 0;
+    }
 }}
 
 
