@@ -1,44 +1,41 @@
 module lix.cuber;
 
+import game.physdraw;
+import game.terchang;
 import lix;
 
-/+
-static this()
-{
-    acFunc[Ac.CUBER]     .leaving = true;
-}
-+/
+class Cuber : Leaver {
 
-class Cuber : PerformedActivity {
+    enum cubeSize = 16;
 
     mixin(CloneByCopyFrom!"Cuber");
 
-    override @property bool blockable() const { return false; }
-
-    // DTODOVRAM: Implement this in the physics drawing class, and have
-    // the cuber send several terrain change requests to that
-
-    // Draws the the rectangle specified by xs, ys, ws, hs of the
-    // specified animation frame onto the level map at position (xd, yd),
-    // as diggable terrain. (xd, yd) specifies the top left of the destination
-    // rectangle relative to the lix's position
-    private void drawFrameToMapAsTerrain
-    (
-        int frame, int anim,
-        int xs, int ys, int ws, int hs,
-        int xd, int yd
-    ) {
-        assert (false, "DTODO: implement this function (as terrain => speed!");
-        /*
-        for (int y = 0; y < hs; ++y) {
-            for (int x = 0; x < ws; ++x) {
-                const AlCol col = cutbit.get_pixel(frame, anim, xs+x, ys+y);
-                if (col != color.transp && ! getSteel(xd + x, yd + y)) {
-                    addLand(xd + x, yd + y, col);
-                }
-            }
+    override void onBecome()
+    {
+        if (facingLeft) {
+            turn();      // moveAhead() makes the two directions balanced,
+            moveAhead(); // just as the hatch spawn positions' moveAhead()
         }
-        */
+    }
+
+    override void performActivity()
+    {
+        if (frame >= 2) {
+            TerrainChange tc;
+            tc.update = outsideWorld.state.update;
+            tc.type   = TerrainChange.Type.cube;
+            tc.style  = style;
+            tc.x      = ex - cubeSize/2;
+
+            assert (isLastFrame == (frame == 5),
+                "the following ?: is written assuming frame 5 is last");
+            tc.yl = isLastFrame ? cubeSize : 2*frame - 2;
+            assert (tc.yl > 0);
+
+            tc.y = ey - tc.yl + 2;
+            outsideWorld.physicsDrawer.add(tc);
+        }
+        super.advanceFrameAndLeave();
     }
 
 }

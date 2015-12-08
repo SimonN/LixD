@@ -7,10 +7,7 @@ struct TerrainChange {
     enum Type {
         build,
         platform,
-        cubeSlice0,
-        cubeSlice1,
-        cubeSlice2,
-        cubeTopHalf,
+        cube,
 
         implode,
         explode,
@@ -28,7 +25,7 @@ struct TerrainChange {
     Style style; // for additions
     int x;
     int y;
-    int yl; // for digger swing
+    int yl; // for digger swing, cuber slice
 
     @property bool isAddition() const { return type < Type.implode; }
     @property bool isDeletion() const { return ! isAddition; }

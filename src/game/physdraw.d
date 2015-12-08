@@ -31,6 +31,7 @@ import graphic.torbit;
 import graphic.gralib; // must be initialized first
 import hardware.display; // displayStartupMessage
 import hardware.tharsis;
+import lix.cuber; // Cuber.cubeSize
 import lix.enums;
 import lix.digger; // diggerTunnelWidth
 
@@ -161,8 +162,8 @@ private:
     FlaggedChange[] _addsForLand;
 
     enum buiY  = 0;
-    enum buiYl = 4;
- 	enum remY  = buiY + buiYl;
+    enum cubeY = 4;
+    enum remY  = cubeY + Cuber.cubeSize;
  	enum remYl = 32;
 
     enum bashX  = Digger.tunnelWidth + 1;
@@ -195,9 +196,14 @@ private:
 
     mixin template AdditionsDefs() {
         immutable build = (tc.type == TerrainChange.Type.build);
-        immutable yl    = lix.enums.brickYl;
-        immutable y     = build ? 0              : brickYl;
-        immutable xl    = build ? builderBrickXl : platformerBrickXl;
+        immutable platf = (tc.type == TerrainChange.Type.platform);
+        immutable yl    = (build || platf) ? lix.enums.brickYl : tc.yl;
+        immutable y     = build ? 0
+                        : platf ? brickYl
+                        :         cubeY + Cuber.cubeSize - yl;
+        immutable xl    = build ? builderBrickXl
+                        : platf ? platformerBrickXl
+                        :         Cuber.cubeSize;
         immutable x     = xl * tc.style;
     }
 
@@ -369,8 +375,8 @@ private:
             auto zone = Zone(profiler, "PhysDraw lookupmap "
                                        ~ tc.type.to!string);
             mixin AdditionsDefs;
-            assert (build || tc.type == TerrainChange.Type.platform,
-                "cuber isn't implemented yet");
+            assert (yl > 0, format("%s queued with yl <= 0; yl = %d",
+                tc.type.to!string, yl));
             scope (success)
                 _phymap.rect!(Phymap.setSolid)(tc.x, tc.y, xl, yl);
 
@@ -446,6 +452,14 @@ private:
         auto drawingTarget = DrawingTarget(_mask);
         al_clear_to_color(color.transp);
 
+        Albit recol = getInternal(basics.globals.fileImageStyleRecol).albit;
+        assert (recol, "we lack the recoloring bitmap");
+        immutable int recolXl = al_get_bitmap_width (recol);
+        immutable int recolYl = al_get_bitmap_height(recol);
+        assert (recolXl >= 3);
+
+        auto lockRecol = LockReadOnly(recol);
+
         void drawBrick(in int x, in int y, in int xl,
             in AlCol light, in AlCol medium, in AlCol dark
         ) {
@@ -456,13 +470,30 @@ private:
             rf(x+xl-1, y,      x+xl,   y+1,  medium); //           ^
         }
 
-        Albit recol = getInternal(basics.globals.fileImageStyleRecol).albit;
-        assert (recol, "we lack the recoloring bitmap");
-        immutable int recolXl = al_get_bitmap_width (recol);
-        immutable int recolYl = al_get_bitmap_height(recol);
-        assert (recolXl >= 3);
+        void drawCube(in int x, in int y,
+            in AlCol light, in AlCol medium, in AlCol dark
+        ) {
+            alias l = Cuber.cubeSize;
+            assert (l >= 10);
+            rf(x, y, x+l, y+l, medium);
 
-        auto lockRecol = LockReadOnly(recol);
+            void symmetrical(in int ax,  in int ay,
+                             in int axl, in int ayl, in AlCol col)
+            {
+                rf(x + ax, y + ay, x + ax + axl, y + ay + ayl, col);
+                rf(x + ay, y + ax, x + ay + ayl, y + ax + axl, col);
+            }
+            symmetrical(0, 0, l-1, 1, light);
+            symmetrical(0, 1, l-2, 1, light);
+
+            symmetrical(2, l-2, l-2, 1, dark);
+            symmetrical(1, l-1, l-1, 1, dark);
+
+            enum o  = 4; // offset of inner relief square from edge
+            enum ol = l - 2*o - 1; // length of a single inner relief line
+            symmetrical(o,   o,     ol, 1, dark);
+            symmetrical(o+1, l-o-1, ol, 1, light);
+        }
 
         // the first row of recol contains the file colors, then come several
         // rows, one per style < MAX.
@@ -473,6 +504,10 @@ private:
                 al_get_pixel(recol, recolXl - 2, y),
                 al_get_pixel(recol, recolXl - 1, y));
             drawBrick(i * platformerBrickXl, brickYl, platformerBrickXl,
+                al_get_pixel(recol, recolXl - 3, y),
+                al_get_pixel(recol, recolXl - 2, y),
+                al_get_pixel(recol, recolXl - 1, y));
+            drawCube(i * Cuber.cubeSize, cubeY,
                 al_get_pixel(recol, recolXl - 3, y),
                 al_get_pixel(recol, recolXl - 2, y),
                 al_get_pixel(recol, recolXl - 1, y));
