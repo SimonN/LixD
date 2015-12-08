@@ -33,9 +33,7 @@ public:
     @property final int frame()         const { return _frame;         }
     @property final int spriteOffsetX() const { return _spriteOffsetX; }
 
-    @property bool canPassTop() const { return false; }
     @property bool blockable()  const { return true;  }
-    @property bool leaving()    const { return false; }
 
     @property bool callBecomeAfterAssignment() const { return true; }
 

@@ -1,5 +1,7 @@
 module lix.faller;
 
+import std.algorithm; // min
+
 import lix;
 import game.phymap;
 
@@ -19,8 +21,6 @@ class Faller : PerformedActivity {
         ySpeed       = rhs.ySpeed;
         pixelsFallen = rhs.pixelsFallen;
     }
-
-    override @property bool canPassTop() const { return true; }
 
     override void
     performActivity()

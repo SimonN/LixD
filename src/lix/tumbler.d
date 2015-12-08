@@ -12,8 +12,6 @@ class Tumbler : PerformedActivity {
 
     mixin(CloneByCopyFrom!"Tumbler");
 
-    override @property bool canPassTop() const { return true; }
-
 }
 
 class Stunner : PerformedActivity {

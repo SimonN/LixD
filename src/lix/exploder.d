@@ -2,13 +2,12 @@ module lix.exploder;
 
 import lix;
 
-class Exploder : PerformedActivity {
+class Exploder : Leaver {
 
     enum updatesForBomb = 75;
 
     mixin(CloneByCopyFrom!"Exploder");
 
-    override @property bool leaving()   const { return true;  }
     override @property bool blockable() const { return false; }
 
     static void handleUpdatesSinceBomb(Lixxie li)
@@ -19,7 +18,7 @@ class Exploder : PerformedActivity {
         if (li.updatesSinceBomb == 0)
             return;
 
-        if (li.performedActivity.leaving) {
+        if (cast (Leaver) li.performedActivity) {
             if (li.updatesSinceBomb > updatesForBomb)
                 li.updatesSinceBomb = 0;
             else

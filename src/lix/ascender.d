@@ -1,6 +1,6 @@
 module lix.ascender;
 
-import std.algorithm : min, max;
+import std.algorithm; // min, max
 
 import lix;
 

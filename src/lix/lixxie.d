@@ -453,7 +453,7 @@ override void draw(Torbit tb) const
 
 bool cursorShouldOpenOverMe() const
 {
-    return ac != Ac.NOTHING && ! _perfAc.leaving;
+    return ac != Ac.NOTHING && ! cast (Leaver) _perfAc;
 }
 
 // returns 0 iff lix is not clickable and the cursor should be closed

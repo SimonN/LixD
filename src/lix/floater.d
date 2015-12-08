@@ -13,7 +13,6 @@ class Floater : PerformedActivity {
         ySpeed = rhs.ySpeed;
     }
 
-    override @property bool canPassTop() const { return true; }
     override @property bool callBecomeAfterAssignment() const { return false; }
 
     override void onManualAssignment()

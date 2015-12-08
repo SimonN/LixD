@@ -15,7 +15,7 @@ public import lix.faller;
 public import lix.fields;
 public import lix.floater;
 public import lix.lander;
-public import lix.leaving;
+public import lix.leaver;
 public import lix.lixxie;
 public import lix.miner;
 public import lix.tumbler;

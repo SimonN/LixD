@@ -1,4 +1,4 @@
-module lix.leaving;
+module lix.leaver;
 
 import lix;
 import hardware.sound;
@@ -7,14 +7,13 @@ class RemovedLix : PerformedActivity {
 
     mixin(CloneByCopyFrom!"RemovedLix");
 
-    override @property bool leaving()   const { return true;  }
     override @property bool blockable() const { return false; }
 
     override void onBecome()
     {
         assert (lixxie.performedActivity.ac != Ac.NOTHING,
             "Lix can't be killed twice, that would miscount them.");
-        assert (lixxie.performedActivity.leaving,
+        assert (cast (Leaver) lixxie.performedActivity,
             "Lix should only transistion to NOTHING from a killing/exiting "
             "animation. Otherwise, they won't be counted correctly. "
             "See template KillingInformation for the counting.");
@@ -25,41 +24,36 @@ class RemovedLix : PerformedActivity {
 
 
 
-private mixin template KillingAnimation(
-    string className,
-    Sound  soundEffect
-) {
-    mixin(CloneByCopyFrom!className);
+abstract class Leaver : PerformedActivity {
 
-    override @property bool leaving()   const { return true;  }
     override @property bool blockable() const { return false; }
 
     override void onBecome()
     {
-        --outsideWorld.tribe.lixOut;
-        ++outsideWorld.tribe.lixLeaving;
-        static if (soundEffect != Sound.NOTHING)
-            playSound(soundEffect);
+        --lixxie.outsideWorld.tribe.lixOut;
+        ++lixxie.outsideWorld.tribe.lixLeaving;
     }
 
-    override void performActivity()
+    override void performActivity() { advanceFrameAndLeave(); }
+
+    final void advanceFrameAndLeave()
     {
-        if (isLastFrame)
-            become(Ac.NOTHING);
+        if (lixxie.isLastFrame)
+            lixxie.become(Ac.NOTHING);
         else
-            advanceFrame();
+            lixxie.advanceFrame();
     }
+
 }
 
 
 
-class Exiter : PerformedActivity {
+class Exiter : Leaver {
 
     int xOffsetFromGoal;
 
-    mixin KillingAnimation!("Exiter", Sound.NOTHING);
+    mixin(CloneByCopyFrom!"Exiter");
 
-    alias copyFromAndBindToLix = super.copyFromAndBindToLix;
     protected void copyFromAndBindToLix(in Exiter rhs, Lixxie lixToBindTo)
     {
         super.copyFromAndBindToLix(rhs, lixToBindTo);
@@ -71,16 +65,37 @@ class Exiter : PerformedActivity {
 
 
 
-class Splatter : PerformedActivity {
-    mixin KillingAnimation!("Splatter", Sound.SPLAT);
+class Splatter : Leaver {
+
+    mixin(CloneByCopyFrom!"Splatter");
+
+    override void onBecome()
+    {
+        playSound(Sound.SPLAT);
+        super.onBecome();
+    }
 }
 
-class Burner : PerformedActivity {
-    mixin KillingAnimation!("Burner", Sound.FIRE);
+class Burner : Leaver {
+
+    mixin(CloneByCopyFrom!"Burner");
+
+    override void onBecome()
+    {
+        playSound(Sound.FIRE);
+        super.onBecome();
+    }
     // DTODOSKILLS: Implement moving up/down in the air
 }
 
-class Drowner : PerformedActivity {
-    mixin KillingAnimation!("Drowner", Sound.WATER);
+class Drowner : Leaver {
+
+    mixin(CloneByCopyFrom!"Burner");
+
+    override void onBecome()
+    {
+        playSound(Sound.WATER);
+        super.onBecome();
+    }
     // DTODOSKILLS: Look at C++ Lix about how we moved during drowning
 }

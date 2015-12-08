@@ -1,5 +1,7 @@
 module lix.basher;
 
+import std.algorithm; // min, max
+
 import lix;
 import game.mask;
 import game.physdraw;
