@@ -2,7 +2,6 @@ module game.panelinf;
 
 import std.string : format;
 import std.typecons : Rebindable;
-import std.uni : asCapitalized;
 
 import basics.user : languageIsEnglish;
 import gui;
@@ -75,7 +74,7 @@ private:
     body {
         _targetDesc.text = (! _targetDescLixxie) ? "" : format("%d %s%s",
             _targetDescNumber,
-            _targetDescLixxie.ac.acToString().asCapitalized(),
+            _targetDescLixxie.ac.acToNiceCase,
             _targetDescNumber > 1 && languageIsEnglish ? "s" : "");
     }
 

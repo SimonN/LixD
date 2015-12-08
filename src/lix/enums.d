@@ -1,5 +1,6 @@
 module lix.enums;
 
+import std.algorithm;
 import std.array;
 import std.conv;
 import std.uni;
@@ -27,6 +28,14 @@ string acToString(in Ac ac)
     return ac.to!string.toUpper;
 }
 
+auto acToNiceCase(in Ac ac)
+{
+    string s = ac.to!string;
+    if (s[$-1] == '2')
+        s = s[0 .. $-1];
+    return s.asCapitalized;
+}
+
 nothrow Style stringToStyle(in string str)
 {
     try
@@ -46,6 +55,8 @@ unittest {
     assert (styleToString(Style.yellow) == "Yellow");
     assert (stringToStyle("ORAnge") == Style.orange);
     assert (stringToStyle("Not in there") == Style.garden);
+    assert (acToNiceCase(Ac.faller).equal("Faller"));
+    assert (acToNiceCase(Ac.shrugger2).equal("Shrugger"));
 }
 
 enum Ac : ubyte {
