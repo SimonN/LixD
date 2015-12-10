@@ -6,6 +6,7 @@ public import game.core.draw;
 public import game.core.game;
 public import game.core.init;
 public import game.core.passive;
+public import game.core.physlix;
 public import game.core.physseq;
 
 package import game.effect;

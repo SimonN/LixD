@@ -425,13 +425,6 @@ updateLixxies(Game game) { with (game)
 
 
 
-void updateSingleLix(Game game, Lixxie l, OutsideWorld* ow)
-{
-    l.performActivity(ow);
-}
-
-
-
 void considerMakingAutoSavestate(Game game)
 {
     assert (game.runmode == Runmode.INTERACTIVE);
