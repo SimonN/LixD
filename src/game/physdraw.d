@@ -162,7 +162,7 @@ private:
     FlaggedChange[] _addsForLand;
 
     enum buiY  = 0;
-    enum cubeY = 4;
+    enum cubeY = 2 * lix.enums.brickYl;
     enum remY  = cubeY + Cuber.cubeSize;
  	enum remYl = 32;
 
@@ -171,7 +171,7 @@ private:
     enum mineX  = bashX + 4 * bashXl; // 4 basher masks
     enum mineXl = game.mask.masks[TerrainChange.Type.mineRight].xl + 1;
 
-    struct FlaggedChange
+    static struct FlaggedChange
     {
         TerrainChange terrainChange;
         alias terrainChange this;
@@ -199,10 +199,10 @@ private:
         immutable platf = (tc.type == TerrainChange.Type.platform);
         immutable yl    = (build || platf) ? lix.enums.brickYl : tc.yl;
         immutable y     = build ? 0
-                        : platf ? brickYl
+                        : platf ? lix.enums.brickYl
                         :         cubeY + Cuber.cubeSize - yl;
-        immutable xl    = build ? builderBrickXl
-                        : platf ? platformerBrickXl
+        immutable xl    = build ? lix.enums.builderBrickXl
+                        : platf ? lix.enums.platformerBrickXl
                         :         Cuber.cubeSize;
         immutable x     = xl * tc.style;
     }

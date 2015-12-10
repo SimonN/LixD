@@ -5,34 +5,36 @@ import game.physdraw;
 import game.terchang;
 import hardware.sound;
 
-class Builder : PerformedActivity {
+// base class for Builder and Platformer
+private abstract class BrickCounter : PerformedActivity {
 
     int skillsQueued;
     int bricksLeft;
-    bool fullyInsideTerrain;
 
     enum bricksAtStart = 12;
 
-    mixin(CloneByCopyFrom!"Builder");
-    protected void copyFromAndBindToLix(in Builder rhs, Lixxie lixToBindTo)
+    int startFrame() const { return 0; }
+
+    alias lixxie this;
+    alias copyFromAndBindToLix = super.copyFromAndBindToLix;
+    protected void copyFromAndBindToLix(in BrickCounter rhs, Lixxie bindToLix)
     {
-        super.copyFromAndBindToLix(rhs, lixToBindTo);
-        skillsQueued       = rhs.skillsQueued;
-        bricksLeft         = rhs.bricksLeft;
-        fullyInsideTerrain = rhs.fullyInsideTerrain;
+        super.copyFromAndBindToLix(rhs, bindToLix);
+        skillsQueued = rhs.skillsQueued;
+        bricksLeft   = rhs.bricksLeft;
     }
 
     override @property bool callBecomeAfterAssignment() const
     {
-        return lixxie.ac != Ac.builder;
+        return lixxie.ac != this.ac;
     }
 
     override void onManualAssignment()
     {
-        if (lixxie.ac == Ac.builder) {
+        if (lixxie.ac == this.ac) {
             // skillsQueued = ... would be a mistake. The new perfAc (this) is
             // discarded. We want to give the extra skills to the old perfAc.
-            Builder oldAc = cast (Builder) lixxie.performedActivity;
+            BrickCounter oldAc = cast (BrickCounter) lixxie.performedActivity;
             assert (oldAc);
             oldAc.skillsQueued = oldAc.skillsQueued + 1;
         }
@@ -41,13 +43,68 @@ class Builder : PerformedActivity {
     override void onBecome()
     {
         bricksLeft = bricksAtStart;
-        frame = 6;
+        frame = startFrame();
     }
 
     override void onBecomingSomethingElse()
     {
-        outsideWorld.tribe.returnSkills(Ac.builder, skillsQueued);
+        outsideWorld.tribe.returnSkills(this.ac, skillsQueued);
         skillsQueued = 0;
+    }
+
+    final void buildBrick()
+    {
+        assert (bricksLeft > 0);
+        --bricksLeft;
+        if (bricksLeft < 3 && skillsQueued == 0)
+            playSoundIfTribeLocal(Sound.BRICK);
+        onBuildingBrick();
+    }
+
+    // override this to draw on terrain
+    void onBuildingBrick() { }
+
+    final bool maybeBecomeShrugger(Ac shruggingAc)
+    {
+        assert (bricksLeft   >= 0);
+        assert (skillsQueued >= 0);
+
+        if (bricksLeft > 0) {
+            return false;
+        }
+        else if (skillsQueued > 0) {
+            --skillsQueued;
+            bricksLeft += bricksAtStart;
+            return false;
+        }
+        else {
+            become(shruggingAc);
+            return true;
+        }
+    }
+
+}
+// end class BrickCounter
+
+
+
+// ############################################################################
+// ############################################################################
+// ############################################################################
+
+
+
+class Builder : BrickCounter {
+
+    bool fullyInsideTerrain;
+
+    override int startFrame() const { return 6; }
+
+    mixin(CloneByCopyFrom!"Builder");
+    protected void copyFromAndBindToLix(in Builder rhs, Lixxie lixToBindTo)
+    {
+        super.copyFromAndBindToLix(rhs, lixToBindTo);
+        fullyInsideTerrain = rhs.fullyInsideTerrain;
     }
 
 
@@ -57,7 +114,7 @@ class Builder : PerformedActivity {
         advanceFrame();
 
         if (frame == 0) {
-            maybeBecomeShrugger();
+            maybeBecomeShrugger(Ac.shrugger);
         }
         else if (frame == 8) {
             buildBrick();
@@ -73,14 +130,13 @@ class Builder : PerformedActivity {
 
 
 
-    private void buildBrick()
+
+    override void onBuildingBrick()
     {
         // don't glitch up through steel, but still get killed by top of
         // screen: first see whether trapped, then make brick.
         // If we are fully inside terrain, we'll move down later.
         fullyInsideTerrain = solidWallHeight(0, 2) > Walker.highestStepUp;
-        assert (bricksLeft > 0);
-        --bricksLeft;
 
         TerrainChange tc;
         tc.update = outsideWorld.state.update;
@@ -89,9 +145,6 @@ class Builder : PerformedActivity {
         tc.x      = facingRight ? ex - 2 : ex - 8;
         tc.y      = ey;
         outsideWorld.physicsDrawer.add(tc);
-
-        if (bricksLeft < 3 && skillsQueued == 0)
-            playSoundIfTribeLocal(Sound.BRICK);
     }
 
     private void bumpAgainstTerrain()
@@ -141,51 +194,162 @@ class Builder : PerformedActivity {
         }
     }
 
-    private void maybeBecomeShrugger()
-    {
-        assert (bricksLeft >= 0);
-        if (bricksLeft == 0) {
-            assert (skillsQueued >= 0);
-            if (skillsQueued == 0) {
-                become(Ac.shrugger);
-            }
-            else {
-                --skillsQueued;
-                bricksLeft += bricksAtStart;
-            }
-        }
-    }
-
 }
 // end class Builder
 
-class Shrugger : PerformedActivity {
 
-    mixin(CloneByCopyFrom!"Shrugger");
 
-    override void onBecome()
+// ############################################################################
+// ############################################################################
+// ############################################################################
+
+
+
+class Platformer : BrickCounter {
+
+    mixin(CloneByCopyFrom!"Platformer");
+
+    enum standingUpFrame = 9;
+
+    override int startFrame() const
     {
-        // This comes from C++ Lix's (become walker)
-        if (lixxie.ac == Ac.platformer && lixxie.frame > 5) {
-            become(Ac.shrugger2);
-            lixxie.frame = 9; // frame = 9 would affect the wrong object
-            // See also the next else-if.
-            // Clicking twice on the platformer shall turn it around.
-        }
-        else if (lixxie.ac == Ac.shrugger || lixxie.ac == Ac.shrugger2) {
-            become(Ac.walker);
-            turn();
-        }
+        if (lixxie.ac == Ac.shrugger2 && lixxie.frame < standingUpFrame)
+            // continue platforming on same height, don't increase by 2
+            return 16;
+        else
+            return 0;
     }
+
+
 
     override void performActivity()
     {
-        if (isLastFrame)
-            become(Ac.walker);
+        enum loopBackToFrame = 10;
+        bool loopCompleted = false;
+
+        if (isLastFrame) {
+            assert (frame == 25, "fix the switch below if you alter frames");
+            frame = loopBackToFrame;
+            loopCompleted = true;
+        }
         else
             advanceFrame();
+
+        // Platforming starts with (loobBackToFrame)-many frames 0, 1, ...
+        // that then merge into the looping 16 frames. In the first set of
+        // frames, one brick is built, and it is higher than the floor height.
+        if (frame == 2)
+            buildBrick();
+        else if (frame == 5)
+            planNextBrickFirstCycle();
+        else if (frame == 7) {
+            moveUpAndCollide();
+            moveAheadAndCollide();
+        }
+        else if (frame == 8)
+            moveAheadAndCollide();
+
+        // Looping 16 frames: build brick at floor height, not above
+        else if (frame == loopBackToFrame) {
+            if (loopCompleted && ! maybeBecomeShrugger(Ac.shrugger2))
+                planNextBrickSubsequentCycles();
+        }
+        else if (frame == 18)
+            buildBrick();
+        else if (frame >= 22 && frame < 25) // 22, 23, 24
+            moveAheadAndCollide();
+    }
+
+
+
+    // this is called from the following private functions, and also
+    // from Walker.become
+    void abortAndStandUp()
+    {
+        become(Ac.shrugger2);
+        assert (lixxie.performedActivity.ac == Ac.shrugger2);
+        lixxie.performedActivity.frame = standingUpFrame;
+    }
+
+
+
+    override void onBuildingBrick()
+    {
+        immutable bool firstCycle = (frame == 2);
+
+        TerrainChange tc;
+        tc.update = outsideWorld.state.update;
+        tc.type   = TerrainChange.Type.platform;
+        tc.style  = style;
+        tc.y      = firstCycle ? ey : ey + 2;
+        tc.x      = firstCycle ? (facingRight ? ex     : ex -  6)
+                               : (facingRight ? ex + 4 : ex - 10);
+        outsideWorld.physicsDrawer.add(tc);
+    }
+
+    private bool platformerTreatsAsSolid(in int x, in int y)
+    {
+        // If the pixel is solid, return false nontheless if there is free air
+        // over the pixel. Strange code from C++ Lix, this had a loop that
+        // checked the exact same set of pixels 3 times.
+        if (! isSolid(x, y))
+            return false;
+        if (isSolid(x + 2, y) && isSolid(x + 4, y))
+            return true;
+        assert (isSolid(x, y));
+        return isSolid(x+2, y-2)
+            || isSolid(x,   y-2)
+            || isSolid(x-2, y-2);
+    }
+
+    private void planNextBrickFirstCycle()
+    {
+        // Plan ahead next brick lyaed in frame 18. Don't turn on collision.
+        // Use -1 instead of -2 to pass through very thin horizontal gaps
+        // above the floor.
+        if (    platformerTreatsAsSolid( 6, -1)
+             && platformerTreatsAsSolid( 8, -1)
+             && platformerTreatsAsSolid(10, -1)
+        )
+            become(Ac.walker);
+    }
+
+    private void moveUpAndCollide()
+    {
+        immutable airAbove = ! isSolid(0, cPlusPlusPhysicsBugs ? -2 : -1);
+        if (airAbove)
+            moveUp();
+        else
+            abortAndStandUp();
+    }
+
+    private void moveAheadAndCollide()
+    {
+        if (! platformerTreatsAsSolid(2, 1))
+            moveAhead();
+        else
+            abortAndStandUp();
+    }
+
+    private void planNextBrickSubsequentCycles()
+    {
+        assert (this is lixxie.performedActivity);
+        if (   platformerTreatsAsSolid(2, 1)
+            && platformerTreatsAsSolid(4, 1)
+            && platformerTreatsAsSolid(6, 1)
+        )
+            abortAndStandUp();
     }
 
 }
 
-class Platformer : PerformedActivity { mixin(CloneByCopyFrom!"Platformer"); }
+
+
+class Shrugger : PerformedActivity {
+    mixin(CloneByCopyFrom!"Shrugger");
+    override void performActivity()
+    {
+        if (isLastFrame) become(Ac.walker);
+        else             advanceFrame();
+    }
+}

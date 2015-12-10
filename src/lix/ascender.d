@@ -1,6 +1,6 @@
 module lix.ascender;
 
-import std.algorithm; // min, max
+import std.algorithm;
 
 import lix;
 
@@ -33,9 +33,7 @@ class Ascender : PerformedActivity {
         }
         // Available frames are 0, 1, 2, 3, 4, 5.
         // If swh is >= 0 and < 4, use frame 5. Late frames == low height.
-        frame = 6 - (swh / 2);
-        frame = min(frame, 5);
-        frame = max(frame, 0);
+        frame = std.algorithm.clamp(6 - (swh / 2), 0, 5);
 
         immutable int swhLeftToAscendDuringPerform = 10 - frame * 2;
         assert (swh >= swhLeftToAscendDuringPerform);

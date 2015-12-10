@@ -52,8 +52,12 @@ class Walker : PerformedActivity {
                 // by a second walker assignment
                 turn();
         }
-        else if (lixxie.ac == Ac.platformer && frame > 5) {
-            become(Ac.shrugger2);
+        else if (lixxie.ac == Ac.platformer && lixxie.frame > 5) {
+            // Don't become walker immediately, instead go through the nice
+            // animation of standing up from kneeling.
+            auto platf = cast (Platformer) lixxie.performedActivity;
+            assert (platf !is null);
+            platf.abortAndStandUp();
             // See also the next else-if.
             // Clicking twice on the platformer shall turn it around.
         }
