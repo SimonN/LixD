@@ -22,14 +22,11 @@ class Lixxie : Graphic {
 
 private:
 
-    int  _ex;
-    int  _ey;
-    bool _facingLeft;
-
-    int  _flingX;
-    int  _flingY;
-    bool _flingNew;
-    bool _flingBySameTribe;
+    int _ex;
+    int _ey;
+    int _flags;
+    int _flingX;
+    int _flingY;
 
     static bool _anyNewFlingers;
 
@@ -40,10 +37,8 @@ private:
 
     PerformedActivity _perfAc;
 
-    OutsideWorld* _outsideWorld; // set whenever physics and tight coupling,
+    OutsideWorld* _outsideWorld; // set whenever physics and tight coupling
                                  // are needed, nulled again at end of those
-
-    void draw_at(const int, const int);
 
     @property inout(Phymap) lookup() inout
     {
@@ -61,14 +56,7 @@ private:
 
 public:
 
-    bool marked; // used by the game class, marks if already updated
-
-    bool abilityToRun;
-    bool abilityToClimb;
-    bool abilityToFloat;
-
     int  updatesSinceBomb;
-    bool exploderKnockback;
 
     static bool anyNewFlingers() { return _anyNewFlingers; }
 
@@ -76,28 +64,7 @@ public:
 
     @property int ex() const { return _ex; }
     @property int ey() const { return _ey; }
-/*  @property int ex(in int);
- *  @property int ey(in int);
- *
- *  void moveAhead(int = 2);
- *  void moveDown(int = 2);
- *  void moveUp  (int = 2);
- */
-    @property bool facingLeft()  const { return   _facingLeft; }
-    @property bool facingRight() const { return ! _facingLeft; }
-    @property int dir() const { return _facingLeft ? -1 : 1; }
-    @property int dir(in int i)
-    {
-        assert (i != 0);
-        _facingLeft = (i < 0);
-        // Mirror flips vertically. Therefore, when _facingLeft, we have to
-        // rotate by 180 degrees in addition.
-        super.mirror   =     _facingLeft;
-        super.rotation = 2 * _facingLeft;
-        return i;
-    }
-
-    void turn() { dir = -dir; }
+    // setters for these are below in the main code
 
     package @property inout(PerformedActivity) performedActivity() inout
     {
@@ -116,7 +83,6 @@ public:
         return _outsideWorld;
     }
 
-    @property bool flingNew() const { return _flingNew; }
     @property int  flingX()   const { return _flingX;   }
     @property int  flingY()   const { return _flingY;   }
 
@@ -138,6 +104,43 @@ public:
         _encBody = bo;
         _encFoot = ft;
     }
+
+    private template flagsProperty(int bit, string name) {
+        enum string flagsProperty = format(q{
+            @property bool %s() const    { return     (_flags &   %d) != 0; }
+            @property bool %s(in bool b) { return b ? (_flags |=  %d) != 0
+                                                    : (_flags &= ~%d) != 0; }
+        }, name, bit, name, bit, bit);
+    }
+
+    mixin(flagsProperty!(0x0001, "facingLeft"));
+    mixin(flagsProperty!(0x0002, "abilityToRun"));
+    mixin(flagsProperty!(0x0004, "abilityToClimb"));
+    mixin(flagsProperty!(0x0008, "abilityToFloat"));
+
+    mixin(flagsProperty!(0x0010, "marked"));
+    mixin(flagsProperty!(0x0020, "exploderKnockback"));
+    mixin(flagsProperty!(0x0040, "flingNew"));
+    mixin(flagsProperty!(0x0080, "flingBySameTribe"));
+
+    mixin(flagsProperty!(0x0100, "turnedByBlocker"));
+    mixin(flagsProperty!(0x0200, "inBlockerFieldLeft"));
+    mixin(flagsProperty!(0x0400, "inBlockerFieldRight"));
+
+    @property bool facingRight() const { return ! facingLeft; }
+    @property int dir()          const { return facingLeft ? -1 : 1; }
+    @property int dir(in int i)
+    {
+        assert (i != 0);
+        facingLeft = (i < 0);
+        // Mirror flips vertically. Therefore, when facingLeft, we have to
+        // rotate by 180 degrees in addition.
+        super.mirror   =     facingLeft;
+        super.rotation = 2 * facingLeft;
+        return dir;
+    }
+
+    void turn() { dir = -dir; }
 
 
 
@@ -171,27 +174,19 @@ this(in Lixxie rhs)
     _style = rhs._style;
     _ex    = rhs._ex;
     _ey    = rhs._ey;
+    _flags = rhs._flags;
 
     super(graphic.gralib.getLixSpritesheet(_style), rhs.ground,
         _ex - exOffset, _ey - eyOffset);
 
-    dir = rhs.dir;
+    dir = rhs.dir; // important to set super's mirr and rot
 
     _flingX = rhs._flingX;
     _flingY = rhs._flingY;
-    _flingNew         = rhs._flingNew;
-    _flingBySameTribe = rhs._flingBySameTribe;
-
     _encBody = rhs._encBody;
     _encFoot = rhs._encFoot;
-    marked   = rhs.marked;
-
-    abilityToRun   = rhs.abilityToRun;
-    abilityToClimb = rhs.abilityToClimb;
-    abilityToFloat = rhs.abilityToFloat;
 
     updatesSinceBomb  = rhs.updatesSinceBomb;
-    exploderKnockback = rhs.exploderKnockback;
 
     _perfAc = rhs._perfAc.cloneAndBindToLix(this);
 
@@ -206,7 +201,7 @@ override Lixxie clone() const { return new Lixxie(this); }
 private XY getFuseXY() const
 {
     XY ret = countdown.get(frame, ac);
-    if (_facingLeft)
+    if (facingLeft)
         ret.x = this.cutbit.xl - ret.x;
     ret.x += super.x;
     ret.y += super.y;
@@ -252,6 +247,10 @@ ey(in int n)
 
 void moveAhead(int plusX = 2)
 {
+    if (inBlockerFieldLeft && inBlockerFieldRight)
+        // don't allow sideways movement if caught between two blockers
+        return;
+
     plusX = even(plusX) * dir;
     // move in little steps, to check for lookupmap encounters on the way
     for ( ; plusX > 0; plusX -= 2) ex = (_ex + 2);
@@ -286,24 +285,26 @@ bool get_in_trigger_area(in Gadget g) const
 
 void addFling(in int px, in int py, in bool same_tribe)
 {
-    if (_flingBySameTribe && same_tribe) return;
+    if (flingBySameTribe && same_tribe) return;
 
-    _anyNewFlingers    = true;
-    _flingBySameTribe = (_flingBySameTribe || same_tribe);
-    _flingNew = true;
-    _flingX   += px;
-    _flingY   += py;
+    _anyNewFlingers  = true;
+
+    flingBySameTribe = (flingBySameTribe || same_tribe);
+    flingNew         = true;
+    _flingX += px;
+    _flingY += py;
 }
 
 
 
 void resetFlingNew()
 {
-    _anyNewFlingers   = false;
-    _flingNew         = false;
-    _flingBySameTribe = false;
-    _flingX           = 0;
-    _flingY           = 0;
+    _anyNewFlingers  = false;
+
+    flingNew         = false;
+    flingBySameTribe = false;
+    _flingX          = 0;
+    _flingY          = 0;
 }
 
 
