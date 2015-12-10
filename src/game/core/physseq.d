@@ -10,6 +10,7 @@ import basics.nettypes;
 import game.core;
 import graphic.gadget;
 import hardware.sound;
+import hardware.tharsis;
 import lix;
 
 static import basics.user; // draw arrows or not
@@ -34,6 +35,8 @@ updateOnceWithoutSyncingNetwork(Game game)
 {
     assert (game);
     assert (game.cs);
+
+    Zone zone = Zone(profiler, "PhysSeq updateOnceNoSync");
 
     ++game.cs.update;
 
@@ -386,6 +389,8 @@ updateNuke(Game game)
 void
 updateLixxies(Game game) { with (game)
 {
+    Zone zone = Zone(profiler, "PhysSeq updateLixxies()");
+
     // DTODOPHYSICS: Implement geoo's nice split into many loops
     // First pass: Update only workers and mark them
     foreach (int tribeID, tribe; cs.tribes) {
@@ -430,6 +435,7 @@ void considerMakingAutoSavestate(Game game)
     assert (game.runmode == Runmode.INTERACTIVE);
     assert (game.stateManager);
     if (game.stateManager.wouldAutoSave(game.cs)) {
+        Zone zone = Zone(profiler, "PhysSeq make auto savestate");
         // It seems dubious to do drawing to bitmaps during calc/update.
         // However, savestates save the land too, and they should
         // hold the correctly updated land. We could save an instance
