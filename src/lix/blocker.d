@@ -13,7 +13,8 @@ class Blocker : PerformedActivity {
 
     mixin(CloneByCopyFrom!"Blocker");
 
-    override @property bool blockable() const { return false; }
+    override @property bool blockable()   const { return false; }
+    override UpdateOrder    updateOrder() const { return UpdateOrder.blocker; }
 
 
 

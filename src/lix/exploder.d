@@ -8,7 +8,8 @@ class Exploder : Leaver {
 
     mixin(CloneByCopyFrom!"Exploder");
 
-    override @property bool blockable() const { return false; }
+    override @property bool blockable()   const { return false; }
+    override UpdateOrder    updateOrder() const { return UpdateOrder.flinger; }
 
     static void handleUpdatesSinceBomb(Lixxie li)
     {

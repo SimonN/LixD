@@ -19,6 +19,8 @@ class Digger : PerformedActivity {
         upstrokeDone = rhs.upstrokeDone;
     }
 
+    override UpdateOrder updateOrder() const { return UpdateOrder.remover; }
+
 
 
     // If true, return from caller immediately

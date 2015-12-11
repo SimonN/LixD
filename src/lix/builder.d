@@ -24,6 +24,8 @@ private abstract class BrickCounter : PerformedActivity {
         bricksLeft   = rhs.bricksLeft;
     }
 
+    override UpdateOrder updateOrder() const { return UpdateOrder.adder; }
+
     override @property bool callBecomeAfterAssignment() const
     {
         return lixxie.ac != this.ac;

@@ -10,6 +10,8 @@ class Cuber : Leaver {
 
     mixin(CloneByCopyFrom!"Cuber");
 
+    override UpdateOrder updateOrder() const { return UpdateOrder.adder; }
+
     override void onBecome()
     {
         if (facingLeft) {

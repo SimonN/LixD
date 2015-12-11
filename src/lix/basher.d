@@ -23,6 +23,8 @@ class Basher : PerformedActivity {
         steelWasHit = rhs.steelWasHit;
     }
 
+    override UpdateOrder updateOrder() const { return UpdateOrder.remover; }
+
     override void onBecome()
     {
         // September 2015: start faster to make the basher slightly stronger

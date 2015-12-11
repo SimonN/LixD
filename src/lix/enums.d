@@ -15,6 +15,14 @@ enum int builderBrickXl    = 12;
 enum int platformerBrickXl = 8;
 enum int brickYl           = 2;
 
+enum UpdateOrder {
+    peaceful, // Least priority -- cannot affect other lix. Updated last.
+    adder,    // Worker that adds terrain. Adders may add in fresh holes.
+    remover,  // Worker that removes terrain.
+    blocker,  // Affects lixes directly other than by flinging -- blocker.
+    flinger,  // Affects lixes directly by flinging. Updated first.
+}
+
 nothrow Ac stringToAc(in string str)
 {
     try
