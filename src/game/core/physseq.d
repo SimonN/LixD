@@ -81,16 +81,7 @@ void
 putUndispatchedAssignmentsIntoReplay(Game game) { with (game)
 {
     if (undispatchedAssignments == null)
-        // don't cut the replay or anything
         return;
-
-    // DTODO: Instead of setting pause to false here, don't dispatch all
-    // assignments in each logic cycle. Instead, introduce a variable of
-    // type ReplayData[] in the game to hold all assignments until the next
-    // update, and only dispatch them (including cutting off the replay)
-    // at that time. We want to prevent dispatching twice for the same update,
-    // thus cutting already-dispatched replay data.
-    pan.pause.on = false;
 
     if (! multiplayer && cs.update <= replay.latestUpdate) {
         replay.deleteOnAndAfterUpdate(cs.update);
@@ -391,41 +382,60 @@ updateLixxies(Game game) { with (game)
 {
     Zone zone = Zone(profiler, "PhysSeq updateLixxies()");
 
-    // DTODOPHYSICS: Implement geoo's nice split into many loops
-    // First pass: Update only workers and mark them
-    foreach (int tribeID, tribe; cs.tribes) {
-        assert (tribeID == game.tribeID(tribe));
-        foreach (int lixID, lixxie; tribe.lixvec) {
-            if (lixxie.ac > Ac.walker) {
-                auto ow = game.makeGypsyWagon(tribeID, lixID);
-                lixxie.marked = true;
-                game.updateSingleLix(lixxie, &ow);
-            }
-            else {
-                lixxie.marked = false;
-            }
-        }
+    bool anyFlingers = false;
+
+    void foreachLix(void delegate(in int, in int, Lixxie) func)
+    {
+        foreach (int tribeID, tribe; cs.tribes)
+            foreach (int lixID, lixxie; tribe.lixvec)
+                func(tribeID, lixID, lixxie);
     }
-    physicsDrawer.applyChangesToPhymap();
 
-    // Second pass: Update unmarked
-    foreach (int tribeID, tribe; cs.tribes)
-        foreach (int lixID, lixxie; tribe.lixvec)
-            if (lixxie.marked == false) {
+    void performFlingersUnmarkOthers()
+    {
+        foreachLix((in int tribeID, in int lixID, Lixxie lixxie) {
+            if (lixxie.updateOrder == UpdateOrder.flinger) {
+                lixxie.marked = true;
+                anyFlingers = true;
                 auto ow = game.makeGypsyWagon(tribeID, lixID);
-                game.updateSingleLix(lixxie, &ow);
+                game.performSingleLix(lixxie, &ow);
             }
+            else
+                lixxie.marked = false;
+        });
+    }
+
+    void applyFlinging()
+    {
+        if (anyFlingers)
+            foreachLix((in int tribeID, in int lixID, Lixxie lixxie) {
+                Tumbler.becomeIfFlung(lixxie);
+            });
+    }
+
+    void performUnmarked(UpdateOrder uo)
+    {
+        foreachLix((in int tribeID, in int lixID, Lixxie lixxie) {
+            if (! lixxie.marked && lixxie.updateOrder == uo) {
+                lixxie.marked = true;
+                auto ow = game.makeGypsyWagon(tribeID, lixID);
+                game.performSingleLix(lixxie, &ow);
+            }
+        });
+    }
+
+    performFlingersUnmarkOthers();
+    applyFlinging();
     physicsDrawer.applyChangesToPhymap();
 
-    /+
-    // Third pass (if necessary): finally becoming flingers
-    if (Lixxie.anyNewFlingers)
-        foreach (tribe; game.cs.tribes)
-            foreach (int id, lixxie; tribe.lixvec)
-                if (lixxie.flingNew)
-                    // DTODO: What is this, where is it defined?
-                    finally_fling(lixxie);
-    +/
+    performUnmarked(UpdateOrder.blocker);
+    performUnmarked(UpdateOrder.remover);
+    physicsDrawer.applyChangesToPhymap();
+
+    performUnmarked(UpdateOrder.adder);
+    physicsDrawer.applyChangesToPhymap();
+
+    performUnmarked(UpdateOrder.peaceful);
 }}
 
 

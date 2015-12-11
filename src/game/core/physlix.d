@@ -3,7 +3,7 @@ module game.core.physlix;
 import game.core;
 import lix;
 
-void updateSingleLix(Game game, Lixxie l, OutsideWorld* ow)
+void performSingleLix(Game game, Lixxie l, OutsideWorld* ow)
 {
     l.performActivity(ow);
 

@@ -19,18 +19,18 @@ class Exploder : Leaver {
         if (li.updatesSinceBomb == 0)
             return;
 
-        if (cast (Leaver) li.performedActivity) {
-            if (li.updatesSinceBomb > updatesForBomb)
-                li.updatesSinceBomb = 0;
-            else
-                li.updatesSinceBomb = li.updatesSinceBomb + li.frame + 1;
-        }
-        else {
+        if (li.healthy) {
             ++li.updatesSinceBomb;
             // because 0 -> 1 -> 2 happens in the same frame, add +1 here:
             if (li.updatesSinceBomb == updatesForBomb + 1) {
                 // explode
             }
+        }
+        else {
+            if (li.updatesSinceBomb > updatesForBomb)
+                li.updatesSinceBomb = 0;
+            else
+                li.updatesSinceBomb = li.updatesSinceBomb + li.frame + 1;
         }
     }
 

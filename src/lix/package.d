@@ -18,5 +18,6 @@ public import lix.lander;
 public import lix.leaver;
 public import lix.lixxie;
 public import lix.miner;
+public import lix.stunner;
 public import lix.tumbler;
 public import lix.walker;

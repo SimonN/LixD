@@ -4,13 +4,15 @@ import lix;
 
 class Floater : PerformedActivity {
 
-    int ySpeed = 0;
+    int speedX = 0;
+    int speedY = 0;
 
     mixin(CloneByCopyFrom!"Floater");
     void copyFromAndBindToLix(in Floater rhs, Lixxie lixToBindTo)
     {
         super.copyFromAndBindToLix(rhs, lixToBindTo);
-        ySpeed = rhs.ySpeed;
+        speedX = rhs.speedX;
+        speedY = rhs.speedY;
     }
 
     override @property bool callBecomeAfterAssignment() const { return false; }
@@ -21,18 +23,22 @@ class Floater : PerformedActivity {
         abilityToFloat = true;
     }
 
-    override void
-    onBecome()
+    override void onBecome()
     {
-        if (ac == Ac.faller) {
+        if (lixxie.ac == Ac.faller) {
             Faller perfCast = cast (Faller) performedActivity;
             assert (perfCast);
-            ySpeed = perfCast.ySpeed;
+            speedY = perfCast.ySpeed;
+        }
+        else if (lixxie.ac == Ac.jumper || lixxie.ac == Ac.tumbler) {
+            BallisticFlyer bf = cast (BallisticFlyer) performedActivity;
+            assert (bf);
+            speedX = bf.speedX;
+            speedY = bf.speedY;
         }
     }
 
-    override void
-    performActivity()
+    override void performActivity()
     {
     }
 }

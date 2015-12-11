@@ -1,5 +1,6 @@
 module lix.climber;
 
+import hardware.sound;
 import lix;
 
 class Climber : PerformedActivity {
@@ -30,7 +31,11 @@ class Climber : PerformedActivity {
 
     override void onBecome()
     {
-        frame = 3;
+        if (cast (Jumper) lixxie.performedActivity)
+            playSound(Sound.CLIMBER);
+        else
+            frame = 3;
+
         stickSpriteToWall();
 
         // become ascender immediately?

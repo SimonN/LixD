@@ -6,7 +6,7 @@ import game.terchang;
 import hardware.sound;
 
 // base class for Builder and Platformer
-private abstract class BrickCounter : PerformedActivity {
+abstract class BrickCounter : PerformedActivity {
 
     int skillsQueued;
     int bricksLeft;

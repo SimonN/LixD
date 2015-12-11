@@ -10,14 +10,15 @@ class RemovedLix : PerformedActivity {
     override @property bool blockable() const { return false; }
 
     override void onBecome()
-    {
+    out {
+        assert (lixxie.outsideWorld.tribe.lixOut     >= 0);
+        assert (lixxie.outsideWorld.tribe.lixLeaving >= 0);
+    }
+    body {
         assert (lixxie.performedActivity.ac != Ac.nothing,
             "Lix can't be killed twice, that would miscount them.");
-        assert (cast (Leaver) lixxie.performedActivity,
-            "Lix should only transistion to NOTHING from a killing/exiting "
-            "animation. Otherwise, they won't be counted correctly. "
-            "See template KillingInformation for the counting.");
-        --outsideWorld.tribe.lixLeaving;
+        if (healthy) --outsideWorld.tribe.lixOut;
+        else         --outsideWorld.tribe.lixLeaving;
     }
 
 }

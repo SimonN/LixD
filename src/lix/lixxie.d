@@ -28,8 +28,6 @@ private:
     int _flingX;
     int _flingY;
 
-    static bool _anyNewFlingers;
-
     Phybitset _encBody;
     Phybitset _encFoot;
 
@@ -58,8 +56,6 @@ public:
 
     int  updatesSinceBomb;
 
-    static bool anyNewFlingers() { return _anyNewFlingers; }
-
     Style style() const { return _style; }
 
     @property int ex() const { return _ex; }
@@ -75,6 +71,12 @@ public:
     {
         assert (_perfAc);
         return _perfAc.ac;
+    }
+
+    @property UpdateOrder updateOrder() const
+    {
+        assert (_perfAc);
+        return _perfAc.updateOrder;
     }
 
     package @property inout(OutsideWorld*) outsideWorld() inout
@@ -287,8 +289,6 @@ void addFling(in int px, in int py, in bool same_tribe)
 {
     if (flingBySameTribe && same_tribe) return;
 
-    _anyNewFlingers  = true;
-
     flingBySameTribe = (flingBySameTribe || same_tribe);
     flingNew         = true;
     _flingX += px;
@@ -299,8 +299,6 @@ void addFling(in int px, in int py, in bool same_tribe)
 
 void resetFlingNew()
 {
-    _anyNewFlingers  = false;
-
     flingNew         = false;
     flingBySameTribe = false;
     _flingX          = 0;
@@ -452,9 +450,14 @@ override void draw(Torbit tb) const
 
 
 
+bool healthy() const
+{
+    return ! cast (Leaver) this.performedActivity;
+}
+
 bool cursorShouldOpenOverMe() const
 {
-    return ac != Ac.nothing && ! cast (Leaver) _perfAc;
+    return ac != Ac.nothing && healthy;
 }
 
 // returns 0 iff lix is not clickable and the cursor should be closed
@@ -588,9 +591,7 @@ void become(bool manualAssignment = false)(in Ac newAc)
         // while Lix still has old performed ac
         newPerf.onManualAssignment();
 
-    if (_perfAc.ac != newPerf.ac
-        && (newPerf.callBecomeAfterAssignment || ! manualAssignment)
-    ) {
+    if (newPerf.callBecomeAfterAssignment || ! manualAssignment) {
         newPerf.onBecome();
 
         if (_perfAc is oldPerf) {
