@@ -202,7 +202,10 @@ override Lixxie clone() const { return new Lixxie(this); }
 
 private XY getFuseXY() const
 {
-    XY ret = countdown.get(frame, ac);
+    // Some skills -- BallisticFlyer -- move before changing their frame,
+    // and then choose a frame based on the result. So, they might move while
+    // frame == -1. Query frame 0 for eye position in this situation.
+    XY ret = countdown.get(max(0, frame), ac);
     if (facingLeft)
         ret.x = this.cutbit.xl - ret.x;
     ret.x += super.x;

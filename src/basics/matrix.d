@@ -74,10 +74,10 @@ public:
 
     inout(T) get(in int x, in int y) inout
     in {
-        assert (x >= 0);
-        assert (y >= 0);
-        assert (x < _xl);
-        assert (y < _yl);
+        assert (x >= 0,  "x is %d, not >= 0".format(x));
+        assert (y >= 0,  "y is %d, not >= 0".format(y));
+        assert (x < _xl, "x is %d, not <= _xl == %d".format(x, _xl));
+        assert (y < _yl, "y is %d, not <= _yl == %d".format(y, _yl));
     }
     body {
         return data[y * _xl + x];
