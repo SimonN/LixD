@@ -1,5 +1,10 @@
 module game.effect;
 
+/* Convention: Effects are passed from the working lix by specifying the
+ * lix's own ex/ey. The effect manager is responsible for drawing the effects
+ * at the correct position/offset.
+ */
+
 import std.container.rbtree;
 
 import hardware.sound;
@@ -81,14 +86,34 @@ class EffectManager {
     }
 
     void addDigHammer(in int upd, in int tribe, in int lix,
-        in int x, in int y
+        in int ex, in int ey
     ) {
         Effect e = Effect(upd, tribe, lix,
             (tribe == tribeLocal ? Sound.STEEL : Sound.NOTHING));
         if (e !in _tree) {
             _tree.insert(e);
             hardware.sound.play(e.sound, e.loudness);
-            // DTODOEFFECT: animate the dig hammer at(x, y)
+            // DTODOEFFECT: animate the dig hammer at(x, y - 10)
+        }
+    }
+
+    void addImplosion(in int upd, in int tribe, in int lix,
+        in int ex, in int ey
+    ) {
+        Effect e = Effect(upd, tribe, lix, Sound.POP);
+        if (e !in _tree) {
+            _tree.insert(e);
+            hardware.sound.play(e.sound, e.loudness);
+        }
+    }
+
+    void addExplosion(in int upd, in int tribe, in int lix,
+        in int ex, in int ey
+    ) {
+        Effect e = Effect(upd, tribe, lix, Sound.POP);
+        if (e !in _tree) {
+            _tree.insert(e);
+            hardware.sound.play(e.sound, e.loudness);
         }
     }
 

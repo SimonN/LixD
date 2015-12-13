@@ -66,7 +66,7 @@ public:
             case Ac.climber:    newPerf = new Climber();    break;
             case Ac.ascender:   newPerf = new Ascender();   break;
             case Ac.floater:    newPerf = new Floater();    break;
-            case Ac.exploder:   newPerf = new Exploder();   break;
+            case Ac.exploder:   newPerf = new Imploder();   break;
             case Ac.exploder2:  newPerf = new Exploder();   break;
             case Ac.blocker:    newPerf = new Blocker();    break;
             case Ac.builder:    newPerf = new Builder();    break;

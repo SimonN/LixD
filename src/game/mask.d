@@ -17,7 +17,9 @@ enum Mask[TerrainChange.Type] masks = [
     TerrainChange.Type.bashNoRelicsLeft   : _bashNoRelicsLeft,
     TerrainChange.Type.bashNoRelicsRight  : _bashNoRelicsRight,
     TerrainChange.Type.mineLeft           : _mineLeft,
-    TerrainChange.Type.mineRight          : _mineRight
+    TerrainChange.Type.mineRight          : _mineRight,
+    TerrainChange.Type.implode            : _implode,
+    TerrainChange.Type.explode            : _explode,
 ];
 
 private enum Mask _bashLeft  = _bashRight.mirrored;
@@ -56,6 +58,42 @@ private enum _mineRight = Mask([
     "......XX" "XXXXXX.." "..", // 4
     "........" "XXXX...." "..", // 5 = deepest air = miner hole depth is 4 px
 ]);
+
+// DTODOSKILLS: This mask is asymmetric! Should be 2 hi-res pixels thicker or
+// thinner, or be mirrored for left-facers.
+// Only asymmetric because of location of #. The X's themselves are symmetric.
+private enum _implode = Mask([
+//   -16.. -9   -8 .. -1   0  ..  7   8  .. 15
+    "........" "....XXXX" "XXXX...." "........", // -26
+    "........" "..XXXXXX" "XXXXXX.." "........",
+    "........" "XXXXXXXX" "XXXXXXXX" "........",
+    ".......X" "XXXXXXXX" "XXXXXXXX" "X.......", // -23
+
+    "......XX" "XXXXXXXX" "XXXXXXXX" "XX......", // -22
+    "......XX" "XXXXXXXX" "XXXXXXXX" "XX......",
+    ".....XXX" "XXXXXXXX" "XXXXXXXX" "XXX.....",
+    ".....XXX" "XXXXXXXX" "XXXXXXXX" "XXX.....", // -19
+    "....XXXX" "XXXXXXXX" "XXXXXXXX" "XXXX....",
+    "....XXXX" "XXXXXXXX" "XXXXXXXX" "XXXX....",
+    "...XXXXX" "XXXXXXXX" "XXXXXXXX" "XXXXX...",
+    "...XXXXX" "XXXXXXXX" "XXXXXXXX" "XXXXX...", // -15
+    ] ~
+    "..XXXXXX" "XXXXXXXX" "XXXXXXXX" "XXXXXX..".repeat(3).array ~// -14,-13,-12
+    ".XXXXXXX" "XXXXXXXX" "XXXXXXXX" "XXXXXXX.".repeat(5).array ~// -11 thrg -7
+    "XXXXXXXX" "XXXXXXXX" "XXXXXXXX" "XXXXXXXX".repeat(6).array ~// -6 thrg -1
+    "XXXXXXXX" "XXXXXXXX" "#XXXXXXX" "XXXXXXXX".repeat(1).array ~// 0
+    "XXXXXXXX" "XXXXXXXX" "XXXXXXXX" "XXXXXXXX".repeat(5).array ~// 1 2 3 4 5
+    ".XXXXXXX" "XXXXXXXX" "XXXXXXXX" "XXXXXXX.".repeat(3).array ~// 6 7 8
+    "..XXXXXX" "XXXXXXXX" "XXXXXXXX" "XXXXXX..".repeat(2).array ~// 9 10
+    "...XXXXX" "XXXXXXXX" "XXXXXXXX" "XXXXX...".repeat(2).array ~ [
+    "....XXXX" "XXXXXXXX" "XXXXXXXX" "XXXX....", // 13
+    ".....XXX" "XXXXXXXX" "XXXXXXXX" "XXX.....", // 14
+    ".......X" "XXXXXXXX" "XXXXXXXX" "X.......", // 15
+    "........" ".XXXXXXX" "XXXXXXX." "........", // 16
+    "........" "...XXXXX" "XXXXX..." "........", // 17
+]);
+
+private enum _explode = _implode; // DTODO: make this mask
 
 struct Mask {
 
@@ -150,4 +188,8 @@ unittest {
     ]);
     assert (b.offsetX == 2);
     assert (b == a.mirrored());
+
+    assert (masks[TerrainChange.Type.implode].mirrored
+        !=  masks[TerrainChange.Type.implode]);
+        // this is a physics bug, we should strive to get == instead of !=
 }

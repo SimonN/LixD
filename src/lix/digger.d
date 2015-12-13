@@ -35,7 +35,7 @@ class Digger : PerformedActivity {
             outsideWorld.effect.addDigHammer(
                 outsideWorld.state.update,
                 outsideWorld.tribeID,
-                outsideWorld.lixID, ex, ey - 10);
+                outsideWorld.lixID, ex, ey);
             become(Ac.walker);
         }
         return enoughSteel;

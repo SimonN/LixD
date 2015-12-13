@@ -9,6 +9,11 @@ module game.physdraw;
  *
  * All lix styles share one large source VRAM bitmap with the masks and bricks
  * in their many colors.
+ *
+ * Convention in storing coordinates: Lix activities are expected to pass
+ * the coordinates of the terrain changes' top-left corners. They do not pass
+ * their own ex/ey. This is different from what Lix do for effects stored
+ * in the EffectManager.
  */
 
 import std.array;
