@@ -30,8 +30,57 @@ abstract class BallisticFlyer : PerformedActivity {
         if (speedX % 2 != 0)
             ++speedX;
 
-        immutable int ySgn  = speedY >= 0 ? 1 : -1;
-        immutable int yAbs  = speedY.abs;
+        moveSeveralTimes();
+
+        if (this !is lixxie.performedActivity)
+            return;
+
+        if      (speedY <= 12) speedY += 2;
+        else if (speedY  < 64) speedY += 1;
+
+        selectFrame();
+
+        if (speedY >= speedYToFloat) {
+            if      (abilityToFloat)  become(Ac.floater);
+            else if (ac == Ac.jumper) become(Ac.tumbler);
+        }
+    }
+
+protected:
+
+    final bool wall  (in int y) { return isSolid(0, y); }
+    final bool behind(in int y) { return wall(y) && isSolid(-2, y); }
+
+    bool splatUpsideDown() const { return false; }
+
+    abstract Collision onHittingWall();
+    abstract void onLandingWithoutSplatting();
+    abstract void selectFrame();
+
+    enum Collision {
+        nothing,         // nothing hit, keep moving
+        stopMovement,    // hit something, stop, but remain in place with state
+        resetEncounters, // we un-glitched out of sth., so reset encounters
+        resetPosition    // we hit something, didn't handle un-glitching yet
+    }
+
+private:
+
+    final void landOnFloor()
+    {
+        if (speedY >= speedYToSplat && ! abilityToFloat) {
+            become(Ac.splatter);
+            if (this.splatUpsideDown)
+                lixxie.frame = 10;
+        }
+        else
+            onLandingWithoutSplatting();
+    }
+
+    final void moveSeveralTimes()
+    {
+        immutable int ySgn = speedY >= 0 ? 1 : -1;
+        immutable int yAbs = speedY.abs;
 
         // advance diagonally, examine collisions at each step.
         BREAK_MOTION:
@@ -76,53 +125,6 @@ abstract class BallisticFlyer : PerformedActivity {
             }
         }
         // end BREAK_MOTION: foreach
-
-        if (this !is lixxie.performedActivity)
-            return;
-
-        if      (speedY <= 12) speedY += 2;
-        else if (speedY  < 64) speedY += 1;
-
-        selectFrame();
-
-        if (speedY >= speedYToFloat) {
-            if (abilityToFloat)
-                become(Ac.floater);
-            else if (ac == Ac.jumper)
-                // DTODO: should this if be refactored with a virtual method?
-                become(Ac.tumbler);
-        }
-    }
-
-protected:
-
-    final bool wall  (in int y) { return isSolid(0, y); }
-    final bool behind(in int y) { return wall(y) && isSolid(-2, y); }
-
-    bool splatUpsideDown() const { return false; }
-
-    abstract Collision onHittingWall();
-    abstract void onLandingWithoutSplatting();
-    abstract void selectFrame();
-
-    enum Collision {
-        nothing,         // nothing hit, keep moving
-        stopMovement,    // hit something, stop, but remain in place with state
-        resetEncounters, // we un-glitched out of sth., so reset encounters
-        resetPosition    // we hit something, didn't handle un-glitching yet
-    }
-
-private:
-
-    final void landOnFloor()
-    {
-        if (speedY >= speedYToSplat && ! abilityToFloat) {
-            become(Ac.splatter);
-            if (this.splatUpsideDown)
-                lixxie.frame = 10;
-        }
-        else
-            onLandingWithoutSplatting();
     }
 
     // Horrible function. Copied out of C++ Lix almost unaltered.
