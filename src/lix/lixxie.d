@@ -81,7 +81,7 @@ public:
 
     package @property inout(OutsideWorld*) outsideWorld() inout
     {
-        assert (_outsideWorld !is null);
+        assert (_outsideWorld !is null, "can't access _outsideWorld here");
         return _outsideWorld;
     }
 
@@ -455,12 +455,12 @@ override void draw(Torbit tb) const
 
 bool healthy() const
 {
-    return ! cast (Leaver) this.performedActivity;
+    return ac != Ac.nothing && ! cast (Leaver) this.performedActivity;
 }
 
 bool cursorShouldOpenOverMe() const
 {
-    return ac != Ac.nothing && healthy;
+    return healthy;
 }
 
 // returns 0 iff lix is not clickable and the cursor should be closed
