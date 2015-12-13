@@ -4,6 +4,7 @@ import std.algorithm;
 import std.math; // abs
 
 import basics.help;
+import game.phymap; // trampoline phybit
 import lix;
 
 abstract class BallisticFlyer : PerformedActivity {
@@ -95,10 +96,21 @@ abstract class BallisticFlyer : PerformedActivity {
 
 protected:
 
+    final bool wall  (in int y) { return isSolid(0, y); }
+    final bool behind(in int y) { return wall(y) && isSolid(-2, y); }
+
     bool splatUpsideDown() const { return false; }
 
-    abstract void selectFrame();
+    abstract Collision onHittingWall();
     abstract void onLandingWithoutSplatting();
+    abstract void selectFrame();
+
+    enum Collision {
+        nothing,         // nothing hit, keep moving
+        stopMovement,    // hit something, stop, but remain in place with state
+        resetEncounters, // we un-glitched out of sth., so reset encounters
+        resetPosition    // we hit something, didn't handle un-glitching yet
+    }
 
 private:
 
@@ -113,17 +125,98 @@ private:
             onLandingWithoutSplatting();
     }
 
-    enum Collision {
-        nothing,
-        stopMovement,
-        resetEncounters,
-        resetPosition
-    }
-
-    Collision collision()
+    // Horrible function. Copied out of C++ Lix almost unaltered.
+    // The problem is that this function's semantics have already been
+    // debugged to no end, C++ Lix had lots of bugs with tumblers over
+    // the years. We'd have to be really smart to make this simpler.
+    // Comments within this function are taken from C++ Lix, too.
+    final Collision collision()
     {
+        int wall_count   = 0;
+        int wall_count_t = 0; // for turning at a wall
+        int swh          = 0; // solid wall height starting above (0, 2)
+        int lowest_floor = -999; // a default value for "no floor here at all"
+        int behind_count = 0;
+
+        for (int i = 1; i > -16; --i)
+            // i <= -1 is tested because the lowest floor check also starts
+            // at -1 and goes further into the negatives. If we don't do that,
+            // we might enter not the ascender check, but instead the climber
+            // check while being sure that we can't ascend,
+            // leading to the ascender in midair bug. (level: No more Clowns)
+            if (wall(i)) {
+                ++wall_count;
+                if (i <= -1 && i > -11) ++wall_count_t;
+            }
+
+        // how high is a solid wall starting above (0, 2)?
+        for (int i = 1; i > -16; --i) {
+            if (wall(i)) ++swh;
+            else break;
+        }
+
+        for (int i = -1; i > -9; --i)
+            behind_count += behind(i);
+
+        for (int i = -1; i > -15; --i)
+            if (! wall(i-1) && wall(i)) {
+                lowest_floor = i;
+                break;
+            }
+
+        // We have already advanced to the current pixel.
+
+        // floor
+        immutable bool down = (speedY > 0);
+        if (   (swh <= 2 && isSolid(0, 1) && (isSolid(2, 0) || down))
+            || (swh <= 2 && isSolid(0, 2) && (isSolid(2, 1) || down))
+        ) {
+            while (isSolid(0, 1)) moveUp(1);
+            landOnFloor();
+            return Collision.resetEncounters;
+        }
+
+        // Stepping up a step we jumped onto
+        if (lowest_floor != -999
+            && ac == Ac.jumper
+            && (lowest_floor > -9
+                || (abilityToClimb && ! behind(lowest_floor)))
+        ) {
+            become(Ac.ascender);
+            return Collision.resetEncounters;
+        }
+
+        // bump head into ceilings
+        if ((behind_count > 0 && speedY < 2)
+            || (wall(-12) && ! wall_count_t && speedY < 0)
+        ) {
+            if (ac != Ac.tumbler)
+                become(Ac.tumbler);
+
+            auto tumbling = cast (BallisticFlyer) lixxie.performedActivity;
+            assert (tumbling);
+            tumbling.speedY = 4;
+            tumbling.speedX = this.speedX / 2;
+
+            if (isSolid(0, 1)) return Collision.resetPosition;
+            else               return Collision.stopMovement;
+        }
+
+        // Jumping against a wall
+        if (wall_count_t)
+            return onHittingWall();
+
+        // No collisions found at this pixel.
+        if (isSolid(0, 1))
+            assert (false, "copy more from tumbler.cpp:213, v2015-09-02");
+
+        if (speedY > 0 && (footEncounters & Phybit.trampo))
+            // Trampolines stop motion, a bit kludgy
+            return Collision.stopMovement;
+
         return Collision.nothing;
     }
+    // end collision()
 
 }
 
@@ -164,6 +257,19 @@ protected:
         become(Ac.lander);
         if (speedY < 12)
             lixxie.advanceFrame(); // of the landing anim
+    }
+
+    override Collision onHittingWall()
+    {
+        if (abilityToClimb) {
+            moveAhead(-2);
+            become(Ac.climber);
+            return Collision.stopMovement;
+        }
+        else {
+            turn();
+            return Collision.resetPosition;
+        }
     }
 
     override void selectFrame()
@@ -240,6 +346,18 @@ protected:
     override bool splatUpsideDown() const { return this.frame >= 9; }
 
     override void onLandingWithoutSplatting() { become(Ac.stunner); }
+
+    override Collision onHittingWall()
+    {
+        if (wall(1) || (wall( 0) && ! behind( 0))
+            || (wall(-1) && ! behind(-1))
+            || (wall(-2) && ! behind(-2))
+        ) {
+            turn();
+            return Collision.resetPosition;
+        }
+        return Collision.nothing;
+    }
 
     override void selectFrame()
     {
