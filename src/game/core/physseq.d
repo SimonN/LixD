@@ -395,7 +395,8 @@ updateLixxies(Game game) { with (game)
     {
         foreachLix((in int tribeID, in int lixID, Lixxie lixxie) {
             if (lixxie.updatesSinceBomb != 0)
-                Ploder.handleUpdatesSinceBomb(lixxie);
+                Ploder.handleUpdatesSinceBomb(lixxie,
+                    multiplayer ? Ploder.Instantly.no : Ploder.Instantly.yes);
             if (lixxie.updateOrder == UpdateOrder.flinger) {
                 lixxie.marked = true;
                 anyFlingers = true;

@@ -7,12 +7,13 @@ import lix;
 abstract class Ploder : PerformedActivity {
 
     enum updatesForBomb = 75;
+    enum Instantly { no, yes }
 
     override @property bool blockable()                 const { return false; }
     override @property bool callBecomeAfterAssignment() const { return false; }
     override UpdateOrder    updateOrder() const { return UpdateOrder.flinger; }
 
-    static void handleUpdatesSinceBomb(Lixxie li)
+    static void handleUpdatesSinceBomb(Lixxie li, Instantly instantly)
     {
         assert (li.ac != Ac.exploder);
         assert (li.ac != Ac.exploder2);
@@ -21,16 +22,14 @@ abstract class Ploder : PerformedActivity {
             return;
 
         if (li.healthy) {
-            if (li.outsideWorld.state.tribes.length == 1
+            if (instantly == Instantly.yes
                 || li.updatesSinceBomb == updatesForBomb
-            ) {
+            )
                 li.become(li.exploderKnockback ? Ac.exploder2 : Ac.exploder);
-            }
-            else {
+            else
                 ++li.updatesSinceBomb;
                 // 0 -> 1 -> 2 happens in the same frame, therefore don't
                 // trigger explosion immediately after reaching updatesForBomb
-            }
         }
         else {
             if (li.updatesSinceBomb > updatesForBomb)
