@@ -54,7 +54,7 @@ private:
 
 public:
 
-    int  updatesSinceBomb;
+    int  ploderTimer;
 
     Style style() const { return _style; }
 
@@ -121,7 +121,7 @@ public:
     mixin(flagsProperty!(0x0008, "abilityToFloat"));
 
     mixin(flagsProperty!(0x0010, "marked"));
-    mixin(flagsProperty!(0x0020, "exploderKnockback"));
+    mixin(flagsProperty!(0x0020, "ploderIsExploder"));
     mixin(flagsProperty!(0x0040, "flingNew"));
     mixin(flagsProperty!(0x0080, "flingBySameTribe"));
 
@@ -188,7 +188,7 @@ this(in Lixxie rhs)
     _encBody = rhs._encBody;
     _encFoot = rhs._encFoot;
 
-    updatesSinceBomb  = rhs.updatesSinceBomb;
+    ploderTimer = rhs.ploderTimer;
 
     _perfAc = rhs._perfAc.cloneAndBindToLix(this);
 
@@ -418,17 +418,17 @@ override void draw(Torbit tb) const
         return;
 
     // draw the fuse if necessary
-    if (updatesSinceBomb > 0) {
+    if (ploderTimer > 0) {
         immutable XY fuseXy = getFuseXY();
         immutable int fuseX = fuseXy.x;
         immutable int fuseY = fuseXy.y;
 
         int x = 0;
         int y = 0;
-        for (; -y < (Exploder.updatesForBomb - updatesSinceBomb)/5+1; --y) {
+        for (; -y < (Exploder.ploderDelay - ploderTimer)/5+1; --y) {
             /*
             // DTODOVRAM: decide on how to draw the pixel-rendered fuse
-            const int u = updatesSinceBomb;
+            const int u = ploderTimer;
             x           = (int) (std::sin(u/2.0) * 0.02 * (y-4) * (y-4));
             tb.setPixel(fuseX + x-1, fuseY + y-1, color[COL_GREY_FUSE_L]);
             tb.setPixel(fuseX + x-1, fuseY + y  , color[COL_GREY_FUSE_L]);
@@ -439,7 +439,7 @@ override void draw(Torbit tb) const
         // draw the flame
         auto cb = getInternal(fileImageFuse_flame);
         cb.draw(tb, fuseX + x - cb.xl/2,
-                    fuseY + y - cb.yl/2, updatesSinceBomb % cb.xfs, 0);
+                    fuseY + y - cb.yl/2, ploderTimer % cb.xfs, 0);
     }
     // end of drawing the fuse
 
@@ -479,8 +479,8 @@ int priorityForNewAc(
     if (! cursorShouldOpenOverMe) return 0;
 
     // Permanent skills
-    if ((newAc == Ac.exploder  && updatesSinceBomb > 0)
-     || (newAc == Ac.exploder2 && updatesSinceBomb > 0)
+    if ((newAc == Ac.exploder  && ploderTimer > 0)
+     || (newAc == Ac.exploder2 && ploderTimer > 0)
      || (newAc == Ac.runner    && abilityToRun)
      || (newAc == Ac.climber   && abilityToClimb)
      || (newAc == Ac.floater   && abilityToFloat) ) return 1;
@@ -553,7 +553,7 @@ int priorityForNewAc(
 
     }
     p += (newAc == Ac.batter && batterPriority
-          ? (- updatesSinceBomb) : updatesSinceBomb);
+          ? (- ploderTimer) : ploderTimer);
     p += 400 * abilityToRun + 200 * abilityToClimb + 100 * abilityToFloat;
     return p;
 }

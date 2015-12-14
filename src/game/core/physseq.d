@@ -394,8 +394,8 @@ updateLixxies(Game game) { with (game)
     void performFlingersUnmarkOthers()
     {
         foreachLix((in int tribeID, in int lixID, Lixxie lixxie) {
-            if (lixxie.updatesSinceBomb != 0)
-                Ploder.handleUpdatesSinceBomb(lixxie,
+            if (lixxie.ploderTimer != 0)
+                Ploder.handlePloderTimer(lixxie,
                     multiplayer ? Ploder.Instantly.no : Ploder.Instantly.yes);
             if (lixxie.updateOrder == UpdateOrder.flinger) {
                 lixxie.marked = true;

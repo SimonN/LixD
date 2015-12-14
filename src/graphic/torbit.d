@@ -274,7 +274,7 @@ void drawFrom(
     static if (_tharsisProfilingInTorbit)
         auto myZone = Zone(profiler, "torbit-draw-from");
 
-    assert (bit);
+    assert (bit, "can't blit the null bitmap onto Torbit");
 
     // DTODO: test whether these mods can be shifted into use_delegate.
     if (_tx) x = positiveMod(x, _xl);

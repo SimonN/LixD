@@ -6,44 +6,42 @@ import lix;
 
 abstract class Ploder : PerformedActivity {
 
-    enum updatesForBomb = 75;
+    enum ploderDelay = 75;
     enum Instantly { no, yes }
 
     override @property bool blockable()                 const { return false; }
     override @property bool callBecomeAfterAssignment() const { return false; }
     override UpdateOrder    updateOrder() const { return UpdateOrder.flinger; }
 
-    static void handleUpdatesSinceBomb(Lixxie li, Instantly instantly)
+    static void handlePloderTimer(Lixxie li, Instantly instantly)
     {
         assert (li.ac != Ac.exploder);
         assert (li.ac != Ac.exploder2);
 
-        if (li.updatesSinceBomb == 0)
+        if (li.ploderTimer == 0)
             return;
 
         if (li.healthy) {
-            if (instantly == Instantly.yes
-                || li.updatesSinceBomb == updatesForBomb
-            )
-                li.become(li.exploderKnockback ? Ac.exploder2 : Ac.exploder);
+            if (instantly == Instantly.yes || li.ploderTimer == ploderDelay)
+                li.become(li.ploderIsExploder ? Ac.exploder2 : Ac.exploder);
             else
-                ++li.updatesSinceBomb;
+                ++li.ploderTimer;
                 // 0 -> 1 -> 2 happens in the same frame, therefore don't
-                // trigger explosion immediately after reaching updatesForBomb
+                // trigger explosion immediately after reaching ploderDelay
         }
         else {
-            if (li.updatesSinceBomb > updatesForBomb)
-                li.updatesSinceBomb = 0;
+            if (li.ploderTimer > ploderDelay)
+                li.ploderTimer = 0;
             else
-                li.updatesSinceBomb = li.updatesSinceBomb + li.frame + 1;
+                li.ploderTimer = li.ploderTimer + li.frame + 1;
         }
     }
 
     final override void onManualAssignment()
     {
-        assert (lixxie.updatesSinceBomb == 0);
-        ++lixxie.updatesSinceBomb;
-        lixxie.exploderKnockback = (ac == Ac.exploder2);
+        assert (lixxie.ploderTimer == 0);
+        ++lixxie.ploderTimer;
+        lixxie.ploderIsExploder = (ac == Ac.exploder2);
     }
 
     // onBecome(): Do nothing, instead wait until we do performActivity(),
