@@ -63,14 +63,13 @@ protected:
              void flingOtherLix() { }
     abstract void makeEffect();
 
-    final void defaultTerrainChange(
-        in TerrainChange.Type type, in int tcx, in int tcy
-    ) {
+    final void defaultTerrainChange(in TerrainChange.Type type)
+    {
         TerrainChange tc;
         tc.update = lixxie.outsideWorld.state.update;
-        tc.type   = TerrainChange.Type.implode;
-        tc.x      = tcx;
-        tc.y      = tcy;
+        tc.type   = type;
+        tc.x      = - masks[type].offsetX + lixxie.ex;
+        tc.y      = - masks[type].offsetY + lixxie.ey;
         lixxie.outsideWorld.physicsDrawer.add(tc);
     }
 
@@ -80,16 +79,13 @@ protected:
 
 class Imploder : Ploder {
 
-    enum offsetX = game.mask.masks[TerrainChange.Type.implode].offsetX;
-    enum offsetY = game.mask.masks[TerrainChange.Type.implode].offsetY;
-
     mixin(CloneByCopyFrom!"Imploder");
 
 protected:
 
     override void changeTerrain()
     {
-        defaultTerrainChange(TerrainChange.Type.implode, offsetX, offsetY);
+        defaultTerrainChange(TerrainChange.Type.implode);
     }
 
     override void makeEffect()
@@ -106,16 +102,13 @@ protected:
 
 class Exploder : Ploder {
 
-    enum offsetX = game.mask.masks[TerrainChange.Type.explode].offsetX;
-    enum offsetY = game.mask.masks[TerrainChange.Type.explode].offsetY;
-
     mixin(CloneByCopyFrom!"Exploder");
 
 protected:
 
     override void changeTerrain()
     {
-        defaultTerrainChange(TerrainChange.Type.explode, offsetX, offsetY);
+        defaultTerrainChange(TerrainChange.Type.explode);
     }
 
     override void makeEffect()
