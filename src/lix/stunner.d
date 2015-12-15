@@ -36,13 +36,15 @@ class Stunner : PerformedActivity {
         else
             advanceFrame();
 
-        int moveDownBy = 0;
+        enum hollowBelow = (in int y) => ! this.isSolid(0, 2 + y);
         enum maxDown = 4; // digger shall not cause eternal stunning
-        for (int i = 2; i < 2 + maxDown; ++i) {
-            if (! isSolid(0, -i)) ++moveDownBy;
-            else                  break;
+
+        int moveDownBy = 0;
+        for (int y = 0; y < maxDown; ++y) {
+            if (hollowBelow(y)) ++moveDownBy;
+            else                break;
         }
-        if (moveDownBy == maxDown && ! isSolid(0, 2 + moveDownBy)) {
+        if (moveDownBy == maxDown && hollowBelow(moveDownBy)) {
             moveDown(1);
             become(Ac.tumbler);
             Tumbler tumbling = cast (Tumbler) lixxie.performedActivity;
