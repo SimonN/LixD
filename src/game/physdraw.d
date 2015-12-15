@@ -170,11 +170,16 @@ private:
     enum cubeY = 2 * lix.enums.brickYl;
     enum remY  = cubeY + Cuber.cubeSize;
  	enum remYl = 32;
+    enum ploY  = remY + remYl;
+    enum ploYl = game.mask.masks[TerrainChange.Type.implode].yl;
 
     enum bashX  = Digger.tunnelWidth + 1;
     enum bashXl = game.mask.masks[TerrainChange.Type.bashRight].xl + 1;
     enum mineX  = bashX + 4 * bashXl; // 4 basher masks
     enum mineXl = game.mask.masks[TerrainChange.Type.mineRight].xl + 1;
+
+    enum implodeX = 0;
+    enum explodeX = game.mask.masks[TerrainChange.Type.implode].xl + 1;
 
     static struct FlaggedChange
     {
@@ -445,7 +450,8 @@ private:
         if (mode == Runmode.VERIFY)
             return;
 
-        alias rf = al_draw_filled_rectangle;
+        alias Type = TerrainChange.Type;
+        alias rf   = al_draw_filled_rectangle;
 
         // Otherwise, create the mask to blit nice sprites on the land
         displayStartupMessage("Creating physics mask...");
@@ -529,24 +535,28 @@ private:
         }
 
         // basher and miner swings
-        void drawSwing(in int startX, in TerrainChange.Type type)
+        void drawSwing(in int startX, in int startY, in Type type)
         {
             foreach     (int y; 0 .. masks[type].yl)
                 foreach (int x; 0 .. masks[type].xl)
                     if (masks[type].get(x, y))
-                        drawPixel(startX + x, remY + y, color.white);
+                        drawPixel(startX + x, startY + y, color.white);
 
             assert (_subAlbits[type] is null);
             _subAlbits[type] = al_create_sub_bitmap(
-                _mask, startX, remY, masks[type].xl, masks[type].yl);
+                _mask, startX, startY, masks[type].xl, masks[type].yl);
             assert (_subAlbits[type] !is null);
         }
-        drawSwing(bashX,              TerrainChange.Type.bashRight);
-        drawSwing(bashX +     bashXl, TerrainChange.Type.bashLeft);
-        drawSwing(bashX + 2 * bashXl, TerrainChange.Type.bashNoRelicsRight);
-        drawSwing(bashX + 3 * bashXl, TerrainChange.Type.bashNoRelicsLeft);
-        drawSwing(mineX,              TerrainChange.Type.mineRight);
-        drawSwing(mineX + mineXl,     TerrainChange.Type.mineLeft);
+        drawSwing(bashX,              remY, Type.bashRight);
+        drawSwing(bashX +     bashXl, remY, Type.bashLeft);
+        drawSwing(bashX + 2 * bashXl, remY, Type.bashNoRelicsRight);
+        drawSwing(bashX + 3 * bashXl, remY, Type.bashNoRelicsLeft);
+        drawSwing(mineX,              remY, Type.mineRight);
+        drawSwing(mineX + mineXl,     remY, Type.mineLeft);
+
+        // imploder, exploder
+        drawSwing(implodeX, ploY, Type.implode);
+        drawSwing(explodeX, ploY, Type.explode);
 
         static if (true) {
             import std.string;
