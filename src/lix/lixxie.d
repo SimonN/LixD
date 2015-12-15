@@ -40,7 +40,6 @@ private:
 
     @property inout(Phymap) lookup() inout
     {
-        assert (outsideWorld);
         return outsideWorld.state.lookup;
     }
 
@@ -579,7 +578,13 @@ void performActivity(OutsideWorld* ow)
     _perfAc.performActivity();
 }
 
-
+void applyFlingXY(OutsideWorld* ow)
+{
+    if (! flingNew || ! healthy)
+        return;
+    mixin(tmpOutsideWorld);
+    Tumbler.applyFlingXY(this);
+}
 
 void become(bool manualAssignment = false)(in Ac newAc)
 {

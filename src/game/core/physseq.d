@@ -410,10 +410,12 @@ updateLixxies(Game game) { with (game)
 
     void applyFlinging()
     {
-        if (anyFlingers)
-            foreachLix((in int tribeID, in int lixID, Lixxie lixxie) {
-                Tumbler.becomeIfFlung(lixxie);
-            });
+        if (! anyFlingers)
+            return;
+        foreachLix((in int tribeID, in int lixID, Lixxie lixxie) {
+            auto ow = game.makeGypsyWagon(tribeID, lixID);
+            lixxie.applyFlingXY(&ow);
+        });
     }
 
     void performUnmarked(UpdateOrder uo)

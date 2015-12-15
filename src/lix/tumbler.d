@@ -296,11 +296,9 @@ class Tumbler : BallisticFlyer {
 
     mixin(CloneByCopyFrom!"Tumbler");
 
-    static becomeIfFlung(Lixxie lix)
+    static applyFlingXY(Lixxie lix)
     {
-        if (! lix.flingNew || ! lix.healthy)
-            return;
-
+        assert (lix.outsideWorld);
         lix.become(Ac.tumbler);
         if (lix.flingX != 0)
             lix.dir = lix.flingX;
@@ -311,8 +309,6 @@ class Tumbler : BallisticFlyer {
         tumbling.selectFrame();
         lix.resetFlingNew();
     }
-
-
 
     override void onBecome()
     {
@@ -364,7 +360,7 @@ protected:
     override void selectFrame()
     {
         immutable int y   = speedY;
-        immutable int x   = max(2, speedX.abs);
+        immutable int x   = max(2, speedX);
         immutable int tan = y * 12 / x;
 
         struct Result { int targetFrame; bool anim; }
