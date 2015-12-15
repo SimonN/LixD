@@ -19,7 +19,7 @@ enum Mask[TerrainChange.Type] masks = [
     TerrainChange.Type.mineLeft           : _mineLeft,
     TerrainChange.Type.mineRight          : _mineRight,
     TerrainChange.Type.implode            : _implode,
-    TerrainChange.Type.explode            : _explode,
+    TerrainChange.Type.explode            : Mask(22, -6),
 ];
 
 private enum Mask _bashLeft  = _bashRight.mirrored;
@@ -93,8 +93,6 @@ private enum _implode = Mask([
     "........" "...XXXXX" "XXXXX..." "........", // 17
 ]);
 
-private enum _explode = _implode; // DTODO: make this mask
-
 struct Mask {
 
     enum CharOK : char {
@@ -147,6 +145,32 @@ struct Mask {
             }
     }
     // end this()
+
+    // generate circular mask
+    this(in int radius, in int offsetFromCenterY)
+    {
+        // you'd normally want 2*radius + 1, but we're hi-res, so we use + 2
+        // instead of + 1 for the central 2x2 block of of pixels.
+        _mat      = new Matrix!bool(2*radius + 2, 2*radius + 2);
+        auto midX = _mat.xl / 2 - 1; // top-left corner of central 2x2 block
+        auto midY = _mat.yl / 2 - 1;
+        offsetX   = midX;
+        offsetY   = midY - offsetFromCenterY;
+
+        foreach (int x; 0 .. _mat.xl)
+            foreach (int y; 0 .. _mat.yl) {
+                immutable int centralX = midX + (x > midX ? 1 : 0);
+                immutable int centralY = midY + (y > midY ? 1 : 0);
+                _mat.set(x, y, (radius + 0.5f)^^2 >=
+                    (x - centralX)^^2 + (y - centralY)^^2);
+            }
+    }
+
+    unittest {
+        auto a = typeof(this)(0, 0);
+        assert (a == a.mirrored);
+        assert (a == typeof(this)(["#X", "XX"]));
+    }
 
     Mask mirrored() const
     in {
