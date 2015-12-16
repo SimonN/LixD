@@ -1,6 +1,23 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.16
+------
+
+2015-12-16
+
+All skills are implemented fully or mostly each, except for the miner,
+which is missing completely still. Effects, like arrows, flying dig hammers,
+and explosions, are missing.
+
+Skills behave mostly identical to C++ Lix. Some extremely arcane behavioral
+bugs were fixed while porting; report if things behave obviously strangely.
+Probably also report if things behave differently.
+
+Known differences: Exploder crater is 1 pixel smaller, diameter of 46 pixels
+instead of 47 pixels, but should be completely symmetrical now. Blocker
+doesn't get released on walker assignment; this is a bug of D Lix.
+
 0.1.12
 ------
 
