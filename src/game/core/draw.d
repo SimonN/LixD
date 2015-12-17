@@ -81,20 +81,5 @@ implGameDraw(Game game) { with (game)
             displayFps), 10, 40, graphic.color.color.white);
     }
 
-    static if (false) {
-        if (hardware.keyboard.keyTapped(ALLEGRO_KEY_P)) {
-            import file.filename;
-
-            cs.land.saveToFile(new Filename("./debug-land.png"));
-            map    .saveToFile(new Filename("./debug-map-directsave.png"));
-            Torbit debugOutput = new Torbit(displayXl, displayYl);
-            debugOutput.clearToColor(graphic.color.color.guiD);
-            scope (exit)
-                destroy(debugOutput);
-            map.drawCamera(debugOutput.albit);
-            debugOutput.saveToFile(new Filename("./debug-map-drawsave.png"));
-        }
-    }
-
 }}
 // end with(game), end implGameDraw()

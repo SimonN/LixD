@@ -487,13 +487,5 @@ void recolor_into_vector(
         if (magicnr != magicnrSpritesheets)
             eidrecol(vector[st], magicnr);
     }
-
-    static if (false)
-     foreach (int i; 0 .. Style.yellow) {
-        Style st = cast (Style) i;
-        al_save_bitmap(format("./nagetier-%d-%d.png", magicnr, i).toStringz,
-         vector[st].albit);
-    }
-
 }
 

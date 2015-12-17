@@ -557,11 +557,6 @@ private:
         // imploder, exploder
         drawSwing(implodeX, ploY, Type.implode);
         drawSwing(explodeX, ploY, Type.explode);
-
-        static if (true) {
-            import std.string;
-            al_save_bitmap("./physicsmask.png".toStringz, _mask);
-        }
     }
 
 }
