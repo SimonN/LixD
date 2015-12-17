@@ -1,6 +1,13 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.17
+------
+
+2015-12-17
+
+Bugfix: Blockers are now released upon walker assignment.
+
 0.1.16
 ------
 
@@ -16,7 +23,7 @@ Probably also report if things behave differently.
 
 Known differences: Exploder crater is 1 pixel smaller, diameter of 46 pixels
 instead of 47 pixels, but should be completely symmetrical now. Blocker
-doesn't get released on walker assignment; this is a bug of D Lix.
+doesn't get released on walker assignment; this fixed only in 0.1.17.
 
 0.1.12
 ------

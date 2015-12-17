@@ -44,9 +44,8 @@ class Walker : PerformedActivity {
             turn();
         }
         else if (lixxie.ac == Ac.blocker) {
-            if (frame < 20)
-                frame = 21;
-                // frame should be set to 20 by the implementation
+            if (lixxie.frame < 20)
+                lixxie.frame = 20; // not 21 since ! callBecomeAfterAssignment
             else
                 // during the blocker->walker transistion, allow turning
                 // by a second walker assignment
