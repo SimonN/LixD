@@ -9,7 +9,7 @@ module basics.versioning;
 import std.conv;
 import std.string;
 
-private immutable _gameVersion     = Version(0, 1, 17);
+private immutable _gameVersion     = Version(0, 1, 18);
 private bool      _versionIsStable = false;
 
 const(Version) gameVersion()     { return _gameVersion;     }
@@ -56,9 +56,7 @@ struct Version {
 
     @property toString() const
     {
-        return major.to!string ~ "."
-            ~  minor.to!string ~ "."
-            ~  patch.to!string;
+        return "%d.%d.%d".format(major, minor, patch);
     }
 
     int opCmp(in Version rhs) const
@@ -68,7 +66,7 @@ struct Version {
             :  patch > rhs.patch ? 1 : patch < rhs.patch ? -1 : 0;
     }
 
-    bool compatible_with(in Version rhs) const
+    bool compatibleWith(in Version rhs) const
     {
         return major == rhs.major
             && minor == rhs.minor;
@@ -88,10 +86,10 @@ unittest
 
     assert (a == b);
     assert (c >  b);
-    assert (c.compatible_with(b) && b.compatible_with(c));
+    assert (c.compatibleWith(b) && b.compatibleWith(c));
     assert (c >  Version());
     assert (c <  d);
-    assert (! d.compatible_with(b));
+    assert (! d.compatibleWith(b));
     assert (e == Version());
-    assert (! e.compatible_with(a));
+    assert (! e.compatibleWith(a));
 }
