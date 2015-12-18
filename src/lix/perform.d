@@ -1,10 +1,16 @@
 module lix.perform;
 
+import std.algorithm; // find
+
+import game.phymap;
+import game.tribe;
+import graphic.gadget.goal;
 import hardware.sound;
 import lix.enums;
 import lix.lixxie;
+import lix.skill.exiter;
 
-// call this from Lixxie.perform(OutsideWorld*)
+// called from Lixxie.perform(OutsideWorld*)
 package void performActivityUseGadgets(Lixxie l)
 {
     l.addEncountersFromHere();
@@ -21,13 +27,60 @@ package void performActivityUseGadgets(Lixxie l)
 
 private:
 
-void useGoals           (Lixxie l) { }
+// DTODO: implement all of these remaining
+
 void useWater           (Lixxie l) { /* and fire */ }
 void useNonconstantTraps(Lixxie l) { }
 void useFlingers        (Lixxie l) { }
 void useTrampos         (Lixxie l) { }
 
-void killOutOfBounds(Lixxie l) { with (l)
+
+
+void useGoals(Lixxie lixxie) { with (lixxie)
+{
+    if (! (footEncounters & Phybit.goal)
+        || priorityForNewAc(Ac.exiter, false) <= 1
+    )
+        return;
+    const(Tribe)[] alreadyScoredFor;
+    foreach (goal; outsideWorld.state.goals)
+        if (inTriggerArea(goal))
+            lixxie.useGoal(goal, alreadyScoredFor);
+}}
+
+void useGoal(Lixxie li, in Goal goal, ref const(Tribe)[] alreadyScoredFor) {
+    with (li)
+{
+    // We may or may not be exiter already, by colliding with stacked goals
+    if (ac != Ac.exiter)
+        become(Ac.exiter);
+
+    Exiter exiter = cast (Exiter) performedActivity;
+    assert (exiter, "exiters shouldn't become anything else upon becoming");
+
+    exiter.determineSidewaysMotion(goal);
+    exiter.playSound(goal);
+
+    void scoreForTribe(Tribe tribe)
+    {
+        if (alreadyScoredFor.find(tribe) != null)
+            return;
+        alreadyScoredFor ~= tribe;
+        exiter.scoreForTribe(tribe);
+    }
+
+    if (goal.hasTribe(outsideWorld.tribe))
+        scoreForTribe(outsideWorld.tribe);
+    else
+        foreach (enemyTribe; outsideWorld.state.tribes)
+            if (goal.hasTribe(enemyTribe))
+                scoreForTribe(enemyTribe);
+}}
+
+
+
+void killOutOfBounds(Lixxie lixxie) {
+    with (lixxie)
 {
     if (! healthy)
         return;

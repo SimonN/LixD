@@ -52,23 +52,6 @@ abstract class Leaver : PerformedActivity {
 
 
 
-class Exiter : Leaver {
-
-    int xOffsetFromGoal;
-
-    mixin(CloneByCopyFrom!"Exiter");
-
-    protected void copyFromAndBindToLix(in Exiter rhs, Lixxie lixToBindTo)
-    {
-        super.copyFromAndBindToLix(rhs, lixToBindTo);
-        xOffsetFromGoal = rhs.xOffsetFromGoal;
-    }
-
-    // DTODOSKILLS: Implement moving left/right during exiting
-}
-
-
-
 class Splatter : Leaver {
 
     mixin(CloneByCopyFrom!"Splatter");

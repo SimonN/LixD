@@ -52,6 +52,8 @@ public:
             _tribes ~= t;
     }
 
+    @property const(Tribe[]) tribes() const { return _tribes; }
+
 private:
 
     const(Tribe)[] _tribes;

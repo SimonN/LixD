@@ -286,7 +286,7 @@ void moveUp(in int minusY = 2)
 
 
 
-bool get_in_trigger_area(in Gadget g) const
+bool inTriggerArea(in Gadget g) const
 {
     return ground.isPointInRectangle(ex, ey,
         g.x + g.tile.triggerX(), g.y + g.tile.triggerY(),

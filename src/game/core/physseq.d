@@ -382,6 +382,8 @@ updateLixxies(Game game) { with (game)
 {
     Zone zone = Zone(profiler, "PhysSeq updateLixxies()");
 
+    immutable bool wonBeforeUpdate = singlePlayerHasWon;
+
     bool anyFlingers = false;
 
     void foreachLix(void delegate(in int, in int, Lixxie) func)
@@ -442,6 +444,9 @@ updateLixxies(Game game) { with (game)
     physicsDrawer.applyChangesToPhymap();
 
     performUnmarked(UpdateOrder.peaceful);
+
+    if (! wonBeforeUpdate && singlePlayerHasWon)
+        effect.addSoundGeneral(cs.update, Sound.YIPPIE);
 }}
 
 

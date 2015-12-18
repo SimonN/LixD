@@ -14,6 +14,7 @@ public import lix.skill.builder;
 public import lix.skill.climber;
 public import lix.skill.cuber;
 public import lix.skill.digger;
+public import lix.skill.exiter;
 public import lix.skill.exploder;
 public import lix.skill.faller;
 public import lix.skill.floater;
