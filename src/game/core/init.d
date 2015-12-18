@@ -110,8 +110,8 @@ preparePlayers(Game game) { with (game)
     effect.tribeLocal = 0;
 
     foreach (tr; cs.tribes) {
-        tr.initial      = level.initial;
-        tr.required     = level.required;
+        tr.lixInitial   = level.initial;
+        tr.lixRequired  = level.required;
         tr.lixHatch     = level.initial;
         tr.spawnintSlow = level.spawnintSlow;
         tr.spawnintFast = level.spawnintFast;

@@ -122,7 +122,7 @@ package:
     {
         // doesn't assert, might get called in the destructor on an .init game
         return cs !is null && ! multiplayer
-            && cs.tribes[0].lixSaved >= cs.tribes[0].required;
+            && cs.tribes[0].lixSaved >= cs.tribes[0].lixRequired;
     }
 
 }
