@@ -12,7 +12,7 @@ class Cuber : Leaver {
 
     override UpdateOrder updateOrder() const { return UpdateOrder.adder; }
 
-    override void onBecome()
+    override void onBecomeLeaver()
     {
         if (facingLeft) {
             turn();      // moveAhead() makes the two directions balanced,

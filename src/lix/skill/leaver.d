@@ -29,11 +29,14 @@ abstract class Leaver : PerformedActivity {
 
     override @property bool blockable() const { return false; }
 
-    override void onBecome()
+    final override void onBecome()
     {
         --lixxie.outsideWorld.tribe.lixOut;
         ++lixxie.outsideWorld.tribe.lixLeaving;
+        onBecomeLeaver();
     }
+
+    void onBecomeLeaver() { } // override this instead of onBecome
 
     override void performActivity() { advanceFrameAndLeave(); }
 
@@ -70,10 +73,9 @@ class Splatter : Leaver {
 
     mixin(CloneByCopyFrom!"Splatter");
 
-    override void onBecome()
+    override void onBecomeLeaver()
     {
         playSound(Sound.SPLAT);
-        super.onBecome();
     }
 }
 
@@ -81,10 +83,9 @@ class Burner : Leaver {
 
     mixin(CloneByCopyFrom!"Burner");
 
-    override void onBecome()
+    override void onBecomeLeaver()
     {
         playSound(Sound.FIRE);
-        super.onBecome();
     }
     // DTODOSKILLS: Implement moving up/down in the air
 }
@@ -93,10 +94,9 @@ class Drowner : Leaver {
 
     mixin(CloneByCopyFrom!"Burner");
 
-    override void onBecome()
+    override void onBecomeLeaver()
     {
         playSound(Sound.WATER);
-        super.onBecome();
     }
     // DTODOSKILLS: Look at C++ Lix about how we moved during drowning
 }
