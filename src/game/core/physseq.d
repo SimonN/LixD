@@ -394,6 +394,7 @@ updateLixxies(Game game) { with (game)
     void performFlingersUnmarkOthers()
     {
         foreachLix((in int tribeID, in int lixID, Lixxie lixxie) {
+            lixxie.setNoEncountersNoBlockerFlags();
             if (lixxie.ploderTimer != 0)
                 Ploder.handlePloderTimer(lixxie,
                     multiplayer ? Ploder.Instantly.no : Ploder.Instantly.yes);
@@ -401,7 +402,7 @@ updateLixxies(Game game) { with (game)
                 lixxie.marked = true;
                 anyFlingers = true;
                 auto ow = game.makeGypsyWagon(tribeID, lixID);
-                game.performSingleLix(lixxie, &ow);
+                lixxie.perform(&ow);
             }
             else
                 lixxie.marked = false;
@@ -424,7 +425,7 @@ updateLixxies(Game game) { with (game)
             if (! lixxie.marked && lixxie.updateOrder == uo) {
                 lixxie.marked = true;
                 auto ow = game.makeGypsyWagon(tribeID, lixID);
-                game.performSingleLix(lixxie, &ow);
+                lixxie.perform(&ow);
             }
         });
     }

@@ -4,6 +4,7 @@ public import lix.acfunc;
 public import lix.enums;
 public import lix.fields;
 public import lix.lixxie;
+public import lix.perform;
 
 public import lix.skill.ascender;
 public import lix.skill.basher;

@@ -98,7 +98,15 @@ public:
 
     @property auto bodyEncounters() const { return _encBody; }
     @property auto footEncounters() const { return _encFoot; }
-    void setNoEncounters() { _encBody = _encFoot = 0; }
+
+    void setNoEncountersNoBlockerFlags()
+    {
+        _encBody = 0;
+        _encFoot = 0;
+        inBlockerFieldLeft  = false;
+        inBlockerFieldRight = false;
+        turnedByBlocker     = false;
+    }
 
     void forceBodyAndFootEncounters(Phybitset bo, Phybitset ft)
     {
@@ -214,7 +222,7 @@ private XY getFuseXY() const
 
 
 
-private void addEncountersFromHere()
+void addEncountersFromHere()
 {
     immutable XY fuseXy = getFuseXY();
     _encFoot |= lookup.get(_ex, _ey);
@@ -571,11 +579,10 @@ void assignManually(OutsideWorld* ow, in Ac newAc)
     become!true(newAc);
 }
 
-void performActivity(OutsideWorld* ow)
+void perform(OutsideWorld* ow)
 {
     mixin(tmpOutsideWorld);
-    assert (_perfAc);
-    _perfAc.performActivity();
+    performActivityUseGadgets(this); // in lix.perform
 }
 
 void applyFlingXY(OutsideWorld* ow)
