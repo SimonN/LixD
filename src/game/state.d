@@ -78,7 +78,8 @@ class GameState {
         return _goalsLocked;
     }
 
-    void foreachGadget(void delegate(Gadget) func)
+    void foreachGadget(T)(void delegate(T) func)
+        if (is(T : const Gadget))
     {
         chain(hatches, goals, decos, waters, traps, flingers, trampolines)
             .each!func;

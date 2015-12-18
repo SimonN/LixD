@@ -234,11 +234,17 @@ draw(Torbit mutableGround) const
 
 
 
-final void draw_lookup(Phymap lk)
+final void drawLookup(Phymap lk) const
 {
     assert (tile);
     Phybitset phyb = 0;
-    switch (tile.type) {
+    final switch (tile.type) {
+        case TileType.EMPTY:
+        case TileType.TERRAIN:
+        case TileType.HATCH:
+        case TileType.DECO:
+        case TileType.MAX: return;
+
         case TileType.GOAL:       phyb = Phybit.goal; break;
         case TileType.TRAP:       phyb = Phybit.trap; break;
         case TileType.WATER:      phyb =
@@ -246,7 +252,6 @@ final void draw_lookup(Phymap lk)
                                        : Phybit.fire; break;
         case TileType.FLING:      phyb = Phybit.fling; break;
         case TileType.TRAMPOLINE: phyb = Phybit.trampo; break;
-        default: break;
     }
     lk.rect!(Phymap.add)(x + tile.triggerX, y + tile.triggerY,
                              tile.triggerXl,    tile.triggerYl, phyb);

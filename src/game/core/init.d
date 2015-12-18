@@ -34,9 +34,14 @@ implGameConstructor(Game game, Level lv, Filename fn, Replay rp)
 
     game.stateManager = new StateManager();
 
-    prepareLand   (game);
-    preparePlayers(game);
-    prepareGadgets(game);
+    game.prepareLand();
+    game.preparePlayers();
+    game.prepareGadgets();
+    game.assignTribesToGoals();
+
+    game.cs.foreachGadget((in Gadget g) {
+        g.drawLookup(game.cs.lookup);
+    });
 
     game.stateManager.saveZero(game.cs);
 }
@@ -86,12 +91,6 @@ prepareLand(Game game) { with (game)
 
 
 
-// ############################################################################
-// ############################################################################
-// ############################################################################
-
-
-
 private void
 preparePlayers(Game game) { with (game)
 {
@@ -132,21 +131,17 @@ preparePlayers(Game game) { with (game)
 
 
 
-// ############################################################################
-// ############################################################################
-// ############################################################################
-
-
-
 private void
 prepareGadgets(Game game)
 {
     assert (game.map);
+    assert (game.cs.lookup);
     void gadgetsFromPos(T)(ref T[] gadgetVec, TileType tileType)
     {
         foreach (ref pos; game.level.pos[tileType]) {
             gadgetVec ~= cast (T) Gadget.factory(game.map, pos);
             assert (gadgetVec[$-1], pos.toIoLine.toString);
+            // don't draw to the lookup map yet, we may remove some goals first
         }
     }
 
@@ -157,6 +152,26 @@ prepareGadgets(Game game)
     gadgetsFromPos(game.cs.waters,      TileType.WATER);
     gadgetsFromPos(game.cs.flingers,    TileType.FLING);
     gadgetsFromPos(game.cs.trampolines, TileType.TRAMPOLINE);
-
 }
-// end function prepare gadgets()
+
+
+
+private void assignTribesToGoals(Game game) {
+    with (game.cs)
+{
+    assert (goals.len,  "can't assign 0 goals to the players");
+    assert (tribes.len, "can't assign the goals to 0 players");
+    while (goals.len % tribes.len != 0
+        && tribes.len % goals.len != 0
+    )
+        goals = goals[0 .. $-1];
+
+    assert (goals.len);
+    assert (tribes.len);
+    if (goals.len >= tribes.len)
+        foreach (int i, goal; goals)
+            goal.addTribe(tribes[i % tribes.len]);
+    else
+        foreach (int i, tribe; tribes)
+            goals[i % goals.len].addTribe(tribe);
+}}

@@ -67,6 +67,8 @@ implGameDraw(Game game) { with (game)
                     drawAllLixes(otherTribe);
             drawAllLixes(tribeLocal);
         }
+
+        pan.stats.showTribe(tribeLocal);
     }
     // end drawing target = map
 

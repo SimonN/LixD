@@ -1,9 +1,10 @@
 module game.panelinf;
 
-import std.string : format;
-import std.typecons : Rebindable;
+import std.string; // format;
+import std.typecons; // Rebindable;
 
-import basics.user : languageIsEnglish;
+import basics.user; // languageIsEnglish
+import game.tribe;
 import gui;
 import lix;
 
@@ -22,9 +23,11 @@ class PanelStats : Button {
     this(Geom g)
     {
         super(g);
-        _targetDesc = new Label(new Geom(TextButton.textXFromLeft,
-                                         0, this.xlg, this.ylg));
-        addChild(_targetDesc);
+        _targetDesc = new Label(new Geom(
+            TextButton.textXFromLeft, 0, this.xlg, this.ylg, From.RIGHT));
+        _debugging = new Label(new Geom(
+            TextButton.textXFromLeft, 0, this.xlg, this.ylg));
+        addChildren(_targetDesc, _debugging);
     }
 
     @property int
@@ -52,17 +55,26 @@ class PanelStats : Button {
     void suggestTooltipBuilders() { }
     void suggestTooltipPlatformers() { }
 
-
+    void showTribe(in Tribe tribe) {
+        with (tribe)
+    {
+        if (tribe !is null)
+            _debugging.text = "out %d/%d, in %d/%d"
+                .format(lixHatch + lixOut, lixInitial, lixSaved, lixRequired);
+        else
+            _debugging.text = "tribeLocal is null";
+    }}
 
 private:
 
     int _targetDescNumber;
     Rebindable!(const(Lixxie)) _targetDescLixxie;
+    Rebindable!(const(Tribe))  _tribe;
 
     Label _targetDesc;
+    Label _debugging; // split into many labels
 
-    void
-    formatTargetDesc()
+    void formatTargetDesc()
     in {
         assert (  _targetDesc);
         assert (  _targetDescNumber >= 0,
@@ -77,7 +89,6 @@ private:
             _targetDescLixxie.ac.acToNiceCase,
             _targetDescNumber > 1 && languageIsEnglish ? "s" : "");
     }
-
 
 protected:
 
