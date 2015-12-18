@@ -1,4 +1,4 @@
-module lix.basher;
+module lix.skill.basher;
 
 import std.algorithm; // min, max
 

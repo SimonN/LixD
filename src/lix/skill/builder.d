@@ -1,4 +1,4 @@
-module lix.builder;
+module lix.skill.builder;
 
 import lix;
 import game.physdraw;

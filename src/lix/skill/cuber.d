@@ -1,4 +1,4 @@
-module lix.cuber;
+module lix.skill.cuber;
 
 import game.physdraw;
 import game.terchang;

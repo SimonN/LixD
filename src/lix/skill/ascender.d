@@ -1,4 +1,4 @@
-module lix.ascender;
+module lix.skill.ascender;
 
 import std.algorithm;
 

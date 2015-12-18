@@ -1,4 +1,4 @@
-module lix.tumbler;
+module lix.skill.tumbler;
 
 import std.algorithm;
 import std.math; // abs

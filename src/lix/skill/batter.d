@@ -1,4 +1,4 @@
-module lix.batter;
+module lix.skill.batter;
 
 import std.math;
 

@@ -1,4 +1,4 @@
-module lix.faller;
+module lix.skill.faller;
 
 import std.algorithm; // min
 

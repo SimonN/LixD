@@ -1,4 +1,4 @@
-module lix.climber;
+module lix.skill.climber;
 
 import hardware.sound;
 import lix;

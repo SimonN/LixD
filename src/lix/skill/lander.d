@@ -1,4 +1,4 @@
-module lix.lander;
+module lix.skill.lander;
 
 import lix;
 

@@ -1,4 +1,4 @@
-module lix.digger;
+module lix.skill.digger;
 
 import game.physdraw;
 import game.terchang;

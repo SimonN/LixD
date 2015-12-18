@@ -1,4 +1,4 @@
-module lix.exploder;
+module lix.skill.exploder;
 
 import game.mask;
 import game.terchang;

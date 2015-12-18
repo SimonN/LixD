@@ -1,4 +1,4 @@
-module lix.stunner;
+module lix.skill.stunner;
 
 import hardware.sound;
 import lix;

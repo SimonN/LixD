@@ -1,4 +1,4 @@
-module lix.leaver;
+module lix.skill.leaver;
 
 import lix;
 import hardware.sound;

@@ -1,4 +1,4 @@
-module lix.blocker;
+module lix.skill.blocker;
 
 import std.math; // abs
 

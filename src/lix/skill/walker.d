@@ -1,4 +1,4 @@
-module lix.walker;
+module lix.skill.walker;
 
 import lix;
 

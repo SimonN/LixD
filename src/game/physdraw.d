@@ -36,9 +36,9 @@ import graphic.torbit;
 import graphic.gralib; // must be initialized first
 import hardware.display; // displayStartupMessage
 import hardware.tharsis;
-import lix.cuber; // Cuber.cubeSize
 import lix.enums;
-import lix.digger; // diggerTunnelWidth
+import lix.skill.cuber; // Cuber.cubeSize
+import lix.skill.digger; // diggerTunnelWidth
 
 void initialize(Runmode mode) { PhysicsDrawer.initialize(mode); }
 void deinitialize()           { PhysicsDrawer.deinitialize();   }

@@ -1,4 +1,4 @@
-module lix.miner;
+module lix.skill.miner;
 
 import lix;
 

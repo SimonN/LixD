@@ -1,4 +1,4 @@
-module lix.floater;
+module lix.skill.floater;
 
 import std.algorithm;
 
