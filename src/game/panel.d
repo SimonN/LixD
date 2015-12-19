@@ -20,8 +20,10 @@ class Panel : Element {
 
 public:
 
-    @property float skillXl() { return Geom.screenXlg / (14 + 4); }
-    @property float skillYl() { return this.geom.ylg - 20; }
+    @property float skillYl() const { return this.geom.ylg - 20; }
+    @property float skillXl() const {
+        return Geom.screenXlg / (skillSort.length + 4);
+    }
 
     SkillButton[] skills;
 
@@ -49,7 +51,7 @@ this()
 {
     super(new Geom(0, 0, Geom.screenXlg, Geom.panelYlg, From.BOTTOM));
 
-    stats = new PanelStats(new Geom(0, 0, this.xlg - skillXl,
+    stats = new PanelStats(new Geom(0, 0, this.xlg - 4 * skillXl,
                            this.ylg - skillYl, From.TOP_LEFT));
     addChild(stats);
 

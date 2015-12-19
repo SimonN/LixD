@@ -58,6 +58,7 @@ class PanelStats : Button {
     void showTribe(in Tribe tribe) {
         with (tribe)
     {
+        reqDraw();
         if (tribe !is null)
             _debugging.text = "out %d/%d, in %d/%d"
                 .format(lixHatch + lixOut, lixInitial, lixSaved, lixRequired);

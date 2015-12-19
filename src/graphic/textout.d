@@ -88,41 +88,24 @@ void deinitialize()
 
 
 
-// the main public function, callable by everyone
-// other public functions should pass font drawing to this one, it does
-// some positional computations with x and y
 void
-drawText(
-    AlFont f, string str,
-    float x, float y, AlCol col,
-    int fla = ALLEGRO_ALIGN_LEFT
+drawText(int tplFlag = ALLEGRO_ALIGN_LEFT)(
+    in AlFont f, in string str, float x, float y, in AlCol col
 ) {
     assert(f);
     immutable char* s = str.toStringz();
-    if (fla == ALLEGRO_ALIGN_CENTRE) x = to!int(ceil(x - shaOffset / 2));
+
+    if (tplFlag == ALLEGRO_ALIGN_CENTRE)
+        x = (x - shaOffset / 2).ceil.to!int;
+    else if (tplFlag == ALLEGRO_ALIGN_RIGHT)
+        x = (x - shaOffset).ceil.to!int;
+
     y = to!int(y + (f == djvuM ? djvuMOffset : 0));
-    fla |= ALLEGRO_ALIGN_INTEGER;
+    enum fla = tplFlag | ALLEGRO_ALIGN_INTEGER;
 
     al_draw_text(f, color.guiSha, x + shaOffset, y + shaOffset, fla, s);
     al_draw_text(f, col,          x,             y,             fla, s);
 }
 
-
-
-void
-drawTextCentered(
-    AlFont f, string str,
-    float x, float y, AlCol c
-) {
-    drawText(f, str, x, y, c, ALLEGRO_ALIGN_CENTRE);
-}
-
-
-
-void
-drawTextRight(
-    AlFont f, string str,
-    float x, float y, AlCol c
-) {
-    drawText(f, str, x, y, c, ALLEGRO_ALIGN_RIGHT);
-}
+alias drawTextCentered = drawText!ALLEGRO_ALIGN_CENTRE;
+alias drawTextRight    = drawText!ALLEGRO_ALIGN_RIGHT;

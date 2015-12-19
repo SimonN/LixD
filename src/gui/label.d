@@ -119,7 +119,7 @@ drawSelf()
         drawTextCentered(_font, _textShort, xs + xls / 2, ys, _color);
         break;
     case Geom.From.RIGHT:
-        drawTextCentered(_font, _textShort, xs + xls, ys, _color);
+        drawTextRight(_font, _textShort, xs + xls, ys, _color);
         break;
     default:
         assert (false);
