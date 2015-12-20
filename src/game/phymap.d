@@ -12,6 +12,7 @@ module game.phymap;
 
 import basics.alleg5;
 import basics.help;
+import basics.topology;
 import file.filename;
 
 alias Phybitset = short;
@@ -29,67 +30,28 @@ enum  Phybit    : Phybitset {
 
 
 
-class Phymap {
-
-    @property int  xl()     const { return _xl; }
-    @property int  yl()     const { return _yl; }
-    @property bool torusX() const { return _tx; }
-    @property bool torusY() const { return _ty; }
+class Phymap : Topology {
 
     this(
-        in int a_xl, in int a_yl, in bool a_tx = false, in bool a_ty = false
+        in int xl, in int yl, in bool _tx = false, in bool _ty = false
     ) {
-        resize(a_xl, a_yl, a_tx, a_ty);
+        super(xl, yl, _tx, _ty);
+        lt = new Phybitset[xl * yl];
     }
 
     this(in typeof(this) rhs)
     {
         assert (rhs !is null);
-
-        _xl = rhs._xl;
-        _yl = rhs._yl;
-        _tx = rhs._tx;
-        _ty = rhs._ty;
-        lt  = rhs.lt.dup;
+        super(rhs);
+        lt = rhs.lt.dup;
     }
 
     Phymap clone() const { return new Phymap(this); }
 
-
-
-    // commenting out the invariant to test PhysicsDrawer performance
-    // even during debugging mode
-    /+
-    invariant()
+    override void onResize()
     {
-        if (_xl > 0 || _yl > 0 || lt !is null) {
-            assert (_xl > 0);
-            assert (_yl > 0);
-            assert (lt !is null);
-            assert (lt.length == _xl * _yl);
-        }
-        else {
-            assert (lt is null);
-        }
+        lt = new Phybitset[xl * yl];
     }
-    +/
-
-
-
-    void resize(in int a_xl, in int a_yl, in bool a_tx, in bool a_ty)
-    in {
-        assert (a_xl > 0);
-        assert (a_yl > 0);
-    }
-    body {
-        _xl = a_xl;
-        _yl = a_yl;
-        _tx = a_tx;
-        _ty = a_ty;
-        lt = new Phybitset[_xl * _yl];
-    }
-
-
 
     Phybitset get(int x, int y) const
     {
@@ -97,21 +59,15 @@ class Phymap {
         return getAt(x, y);
     }
 
-
-
     bool get(int x, int y, Phybitset n) const
     {
         return (get(x, y) & n) != 0;
     }
 
-
-
     bool getSolid(int x, int y) const
     {
         return get(x, y, Phybit.terrain);
     }
-
-
 
     bool getSolidEven(int x, int y) const
     {
@@ -123,8 +79,6 @@ class Phymap {
                | getAt(x |  1, y)) & Phybit.terrain) != 0;
     }
 
-
-
     bool getSteel(int x, int y) const
     {
         if (get(x, y, Phybit.steel)) {
@@ -135,23 +89,17 @@ class Phymap {
             return false;
     }
 
-
-
     void rm(int x, int y, Phybitset n)
     {
         if (! amendIfInside(x, y)) return;
         rmAt(x, y, n);
     }
 
-
-
     void add(int x, int y, Phybitset n)
     {
         if (! amendIfInside(x, y)) return;
         addAt(x, y, n);
     }
-
-
 
     void rect(alias func, Args...)(
         int x, int y, int xr, int yr, Args args
@@ -171,15 +119,11 @@ class Phymap {
         return ret;
     }
 
-
-
     void setSolid(int x, int y)
     {
         if (! amendIfInside(x, y)) return;
         addAt(x, y, Phybit.terrain);
     }
-
-
 
     bool setAirCountSteel(int x, int y)
     {
@@ -196,17 +140,15 @@ class Phymap {
         }
     }
 
-
-
     // for testing
     public void saveToFile(in Filename fn) const
     {
-        Albit outputBitmap = albitMemoryCreate(_xl, _yl);
+        Albit outputBitmap = albitMemoryCreate(xl, yl);
         scope (exit)
             al_destroy_bitmap(outputBitmap);
         auto drata = DrawingTarget(outputBitmap);
 
-        foreach (y; 0 .. _yl) foreach (x; 0 .. _xl) {
+        foreach (y; 0 .. yl) foreach (x; 0 .. xl) {
             immutable int red   = get(x, y, Phybit.terrain);
             immutable int green = get(x, y, Phybit.steel);
             immutable int blue  = get(x, y, Phybit.goal | Phybit.fire
@@ -220,36 +162,30 @@ class Phymap {
 
 private:
 
-    int _xl;
-    int _yl;
-
-    bool _tx;
-    bool _ty;
-
     // "lt" == "lookup table", aligned as row, row, row, row, ...
     // I don't use the matrix class here, the code was already
     // written in C++ without it and works well
     Phybitset[] lt;
 
-    Phybitset getAt(int x, int y) const    { return lt[y * _xl + x]; }
-    void  addAt(int x, int y, Phybitset n) { lt[y * _xl + x] |= n;   }
-    void  rmAt (int x, int y, Phybitset n) { lt[y * _xl + x] &= ~n;  }
+    Phybitset getAt(int x, int y) const    { return lt[y * xl + x]; }
+    void  addAt(int x, int y, Phybitset n) { lt[y * xl + x] |= n;   }
+    void  rmAt (int x, int y, Phybitset n) { lt[y * xl + x] &= ~n;  }
 
     void amend(ref int x, ref int y) const
     {
-        x = _tx ? positiveMod(x, _xl)
-          : x >= _xl ? _xl - 1
-          : x <  0   ? 0 : x;
-        y = _ty ? positiveMod(y, _yl)
-          : y >= _yl ? _yl - 1
-          : y <  0   ? 0 : y;
+        x = torusX ? positiveMod(x, xl)
+          : x >= xl ? xl - 1
+          : x <  0  ? 0 : x;
+        y = torusY ? positiveMod(y, yl)
+          : y >= yl ? yl - 1
+          : y <  0  ? 0 : y;
     }
 
     // Is the given point on the map?
     bool amendIfInside(ref int x, ref int y) const
     {
-        if (! _tx && (x < 0 || x >= _xl)) return false;
-        if (! _ty && (y < 0 || y >= _yl)) return false;
+        if (! torusX && (x < 0 || x >= xl)) return false;
+        if (! torusY && (y < 0 || y >= yl)) return false;
         amend(x, y);
         return true;
     }

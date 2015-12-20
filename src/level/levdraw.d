@@ -19,7 +19,8 @@ package void implDrawTerrainTo(in Level level, Torbit tb, Phymap lookup)
     tb.clearToColor(color.transp);
     tb.setTorusXY(level.torusX, level.torusY);
     if (lookup) {
-        with (level) lookup.resize(sizeX, sizeY, torusX, torusY);
+        lookup.resize    (level.sizeX,  level.sizeY);
+        lookup.setTorusXY(level.torusX, level.torusY);
     }
     // Durch die Terrain-Liste iterieren, Wichtiges zuletzt blitten (obenauf)
     foreach (ref const(Pos) po; level.pos[TileType.TERRAIN]) {
