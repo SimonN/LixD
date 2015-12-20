@@ -48,6 +48,15 @@ class Phymap : Topology {
 
     Phymap clone() const { return new Phymap(this); }
 
+    void copyFrom(in typeof(this) rhs)
+    {
+        assert (rhs);
+        assert (rhs.Topology.opEquals(this),
+            "copy is implemented only between same size for speedup");
+        assert (rhs.lt.length == lt.length);
+        lt[] = rhs.lt[];
+    }
+
     override void onResize()
     {
         lt = new Phybitset[xl * yl];

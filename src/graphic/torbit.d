@@ -85,12 +85,7 @@ this(
     in int _yl,
     in bool _tx = false,
     in bool _ty = false
-)
-in {
-    assert (_xl > 0);
-    assert (_yl > 0);
-}
-body {
+) {
     super(_xl, _yl, _tx, _ty);
     bitmap = albitCreate(_xl, _yl);
     assert (bitmap);
@@ -101,11 +96,23 @@ body {
 this(const Torbit rhs)
 {
     assert (rhs, "Don't copy-construct from a null Torbit.");
-    assert (rhs.bitmap,
-        "Don't copy-construct from non-null Torbit with null bitmap.");
+    assert (rhs.bitmap, "shouldn't ever happen, bug in Torbit");
 
     super(rhs);
     bitmap = al_clone_bitmap(cast (Albit) rhs.bitmap);
+}
+
+
+
+void copyFrom(in Torbit rhs)
+{
+    assert (rhs, "can't copyFrom a null Torbit");
+    assert (bitmap, "null bitmap shouldn't ever happen, bug in Torbit");
+    assert (rhs.bitmap, "null rhs.bitmap shouldn't ever happen");
+    assert (rhs.Topology.opEquals(this),
+        "copyFrom only implemented between same size, for speedup");
+    auto drata = DrawingTarget(bitmap);
+    al_draw_bitmap(cast (Albit) rhs.bitmap, 0, 0, 0);
 }
 
 

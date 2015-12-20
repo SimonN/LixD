@@ -14,6 +14,7 @@ import std.range;
 import std.algorithm.iteration;
 
 import basics.help; // clone(T[]), a deep copy for arrays
+import basics.topology;
 import game.phymap;
 import game.tribe;
 import game.replay;
@@ -44,29 +45,9 @@ class GameState {
     Phymap lookup;
 
     this() { }
-
-    this(in GameState rhs)
-    {
-        assert (rhs, "don't copy-construct from a null GameState");
-        assert (rhs.land, "don't copy-construct from GameState without land");
-        update         = rhs.update;
-        clock          = rhs.clock;
-        clockIsRunning = rhs.clockIsRunning;
-        _goalsLocked   = rhs._goalsLocked;
-
-        tribes      = rhs.tribes     .clone;
-        hatches     = rhs.hatches    .clone;
-        goals       = rhs.goals      .clone;
-        decos       = rhs.decos      .clone;
-        waters      = rhs.waters     .clone;
-        traps       = rhs.traps      .clone;
-        flingers    = rhs.flingers   .clone;
-        trampolines = rhs.trampolines.clone;
-
-        land   = new Torbit(rhs.land);
-        lookup = new Phymap(rhs.lookup);
-    }
-
+/*  this         (in GameState rhs);
+ *  void copyFrom(in GameState rhs);
+ */
     GameState clone() const { return new GameState(this); }
 
     @property bool goalsLocked() const { return _goalsLocked; }
@@ -84,7 +65,67 @@ class GameState {
         chain(hatches, goals, decos, waters, traps, flingers, trampolines)
             .each!func;
     }
+
+
+
+// ############################################################################
+// ############################################################################
+// ############################################################################
+
+
+
+    private void
+    copyValuesArraysFrom(in GameState rhs)
+    {
+        update         = rhs.update;
+        clock          = rhs.clock;
+        clockIsRunning = rhs.clockIsRunning;
+        _goalsLocked   = rhs._goalsLocked;
+
+        tribes      = rhs.tribes     .clone;
+        hatches     = rhs.hatches    .clone;
+        goals       = rhs.goals      .clone;
+        decos       = rhs.decos      .clone;
+        waters      = rhs.waters     .clone;
+        traps       = rhs.traps      .clone;
+        flingers    = rhs.flingers   .clone;
+        trampolines = rhs.trampolines.clone;
+    }
+
+    this(in GameState rhs)
+    {
+        assert (rhs, "don't copy-construct from a null GameState");
+        assert (rhs.land, "don't copy-construct from GameState without land");
+
+        copyValuesArraysFrom(rhs);
+        land   = new Torbit(rhs.land);
+        lookup = new Phymap(rhs.lookup);
+    }
+
+    void copyFrom(in GameState rhs)
+    {
+        assert (rhs);
+        assert (rhs.land);
+        assert (this.land);
+        assert (rhs.land.Topology.opEquals(this.land),
+            "for fast copyFrom, we want to avoid newing Albits, we only blit");
+
+        copyValuesArraysFrom(rhs);
+        land  .copyFrom(rhs.land);
+        lookup.copyFrom(rhs.lookup);
+    }
+
+    // currently unnused, shall be used by StateManager and Game's cs
+    static void cloneOrCopyFrom(ref GameState lhs, in GameState rhs)
+    {
+        if (lhs is null)
+            lhs = new GameState(rhs);
+        else
+            lhs.copyFrom(rhs);
+    }
+
 }
+// end class GameState
 
 
 
