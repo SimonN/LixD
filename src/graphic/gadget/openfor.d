@@ -7,6 +7,7 @@ module graphic.gadget.openfor;
  */
 
 import basics.help;
+import game.state;
 import game.tribe;
 import graphic.gadget;
 import graphic.torbit;
@@ -23,7 +24,7 @@ public alias FlingTrig = Triggerable;
 
 public alias Flinger   = GadgetCanBeOpen; // both FlingPerm and FlingTrig
 
-private class GadgetCanBeOpen : Gadget {
+private class GadgetCanBeOpen : GadgetWithTribeList {
 
 public:
 
@@ -34,18 +35,14 @@ public:
     this(in GadgetCanBeOpen rhs)
     {
         super(rhs);
-        _tribes = rhs._tribes.dupConst;
         wasFedDuringFrame = rhs.wasFedDuringFrame;
     }
 
     abstract override GadgetCanBeOpen clone() const;
 
-    bool isOpenFor(in Tribe t) const { return ! hasTribe(t); }
-
-    final void addTribe(in Tribe t)
+    bool isOpenFor(in GameState s, in Tribe t) const
     {
-        if (! hasTribe(t))
-            _tribes ~= t;
+        return ! hasTribe(s, t);
     }
 
     override void animateForUpdate(in int upd)
@@ -62,20 +59,7 @@ public:
             else
                 xf = 0;
         }
-        // reset list of tribes that have activated the gadget in this frame
-        _tribes = null;
-    }
-
-private:
-
-    const(Tribe)[] _tribes;
-
-    final protected bool hasTribe(in Tribe t) const
-    {
-        foreach (tribeInVec; _tribes)
-            if (t is tribeInVec)
-                return false;
-        return true;
+        clearTribes();
     }
 
 }
@@ -90,7 +74,7 @@ private class PermanentlyOpen : GadgetCanBeOpen {
     override PermanentlyOpen clone() const { return new PermanentlyOpen(this);}
     this(in PermanentlyOpen rhs) { super(rhs); }
 
-    override bool isOpenFor(in Tribe t) const { return true; }
+    override bool isOpenFor(in GameState, in Tribe t) const { return true; }
 
     override void animateForUpdate(in int upd)
     {
@@ -116,9 +100,9 @@ private class Triggerable : GadgetCanBeOpen {
     override Triggerable clone() const { return new Triggerable(this);}
     this(in Triggerable rhs) { super(rhs); }
 
-    override bool isOpenFor(in Tribe t) const
+    override bool isOpenFor(in GameState s, in Tribe t) const
     {
-        return xf == 0 && ! hasTribe(t);
+        return xf == 0 && ! hasTribe(s, t);
     }
 
 }
@@ -133,7 +117,7 @@ class Trampoline : GadgetCanBeOpen {
     override Trampoline clone() const { return new Trampoline(this);}
     this(in Trampoline rhs) { super(rhs); }
 
-    override bool isOpenFor(in Tribe t) const
+    override bool isOpenFor(in GameState s, in Tribe t) const
     {
         // trampolines are always active, even if they animate only on demand
         return true;

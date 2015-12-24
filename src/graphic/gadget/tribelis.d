@@ -11,7 +11,7 @@ import std.algorithm;
 import basics.help;
 import game.state;
 import game.tribe;
-import graphic.gadget.gadget;
+import graphic.gadget;
 import graphic.torbit;
 import level.level;
 
@@ -52,6 +52,11 @@ class GadgetWithTribeList : Gadget {
     {
         if (_tribeIDs.find(i) == null)
             _tribeIDs ~= i;
+    }
+
+    void clearTribes()
+    {
+        _tribeIDs = null;
     }
 
     @property auto tribes(GameState state)
