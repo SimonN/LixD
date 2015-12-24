@@ -38,6 +38,11 @@ class GadgetWithTribeList : Gadget {
         return  _tribeIDs.any!(id => t is state.tribes[id]);
     }
 
+    bool hasTribe(in int i) const
+    {
+        return _tribeIDs.find(i) != null;
+    }
+
     void addTribe(GameState state, Tribe t)
     {
         assert (state);
@@ -50,7 +55,7 @@ class GadgetWithTribeList : Gadget {
 
     void addTribe(in int i)
     {
-        if (_tribeIDs.find(i) == null)
+        if (! hasTribe(i))
             _tribeIDs ~= i;
     }
 

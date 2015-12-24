@@ -4,7 +4,7 @@ import std.algorithm; // find
 
 import game.phymap;
 import game.tribe;
-import graphic.gadget.goal;
+import graphic.gadget;
 import hardware.sound;
 import lix.enums;
 import lix.lixxie;
@@ -28,11 +28,36 @@ package void performActivityUseGadgets(Lixxie l)
 private:
 
 // DTODO: implement all of these remaining
-
-void useWater           (Lixxie l) { /* and fire */ }
-void useNonconstantTraps(Lixxie l) { }
 void useFlingers        (Lixxie l) { }
 void useTrampos         (Lixxie l) { }
+
+
+
+
+void useWater(Lixxie lixxie) { with (lixxie)
+{
+    if (! healthy)
+        return;
+    else if (bodyEncounters & Phybit.fire)
+        become(Ac.burner);
+    else if (footEncounters & Phybit.water)
+        become(Ac.drowner);
+}}
+
+void useNonconstantTraps(Lixxie lixxie) { with (lixxie)
+{
+    if (! healthy || ! (footEncounters & Phybit.trap))
+        return;
+    foreach (TrapTrig trap; outsideWorld.state.traps)
+        if (inTriggerArea(trap)
+            && trap.isOpenFor(outsideWorld.tribeID, outsideWorld.state.update)
+        ) {
+            trap.feed(outsideWorld.tribeID, outsideWorld.state.update);
+            playSound(trap.tile.sound);
+            become(Ac.nothing);
+            return;
+        }
+}}
 
 
 

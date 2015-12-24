@@ -1,9 +1,15 @@
 module graphic.gadget.openfor;
 
-/* GadgetCanBeOpen : Gadget      has the method isOpenFor(Tribe).
- * Water       : GadgetCanBeOpen is a permanent trap, water or fire.
- * Triggerable : GadgetCanBeOpen is a cooldown trap or cooldown flinger.
- * Trampoline  : GadgetCanBeOpen is permanently active, anims on trigger.
+/* GadgetAnimsOnFeed : Gadget      has the method isOpenFor(Tribe).
+ * Water       : GadgetAnimsOnFeed is a permanent trap, water or fire.
+ * Triggerable : GadgetAnimsOnFeed is a cooldown trap or cooldown flinger.
+ * Trampoline  : GadgetAnimsOnFeed is permanently active, anims on trigger.
+ *
+ * GadgetAnimsOnFeed allows for two different rows of animation: The first row
+ * is played back once whenever a lix enters the gadget. The second row is
+ * looped while the gadget is idle. If the second row doesn't exist, frame 0
+ * from the first row is shown all the time while idle. Frame 0 from the first
+ * row never belongs to the once-played-back anim, even if there is a 2nd row.
  */
 
 import basics.help;
@@ -19,62 +25,110 @@ public alias Water     = PermanentlyOpen;
 public alias Fire      = PermanentlyOpen;
 public alias FlingPerm = PermanentlyOpen;
 
-public alias TrapTrig  = Triggerable;
-public alias FlingTrig = Triggerable;
+public alias TrapTrig  = GadgetAnimsOnFeed;
+public alias FlingTrig = GadgetAnimsOnFeed;
+public alias Flinger   = GadgetAnimsOnFeed; // both FlingPerm and FlingTrig
 
-public alias Flinger   = GadgetCanBeOpen; // both FlingPerm and FlingTrig
+private class GadgetAnimsOnFeed : GadgetWithTribeList {
 
-private class GadgetCanBeOpen : GadgetWithTribeList {
+    int wasFedDuringUpdate;
+    const(int) idleAnimLength;
 
-public:
-
-    int wasFedDuringFrame;
-
-    mixin (StandardGadgetCtor);
-
-    this(in GadgetCanBeOpen rhs)
+    this(in Torbit tb, in ref Pos levelpos)
     {
-        super(rhs);
-        wasFedDuringFrame = rhs.wasFedDuringFrame;
+        super(tb, levelpos);
+        idleAnimLength = delegate() {
+            if (! tile || ! tile.cb)
+                return 0;
+            else for (int i = 0; i < levelpos.ob.cb.xfs; ++i)
+                if (! levelpos.ob.cb.frameExists(i, 1))
+                    return i;
+            return levelpos.ob.cb.xfs;
+        }();
     }
 
-    abstract override GadgetCanBeOpen clone() const;
-
-    bool isOpenFor(in GameState s, in Tribe t) const
+    this(in GadgetAnimsOnFeed rhs)
     {
-        return ! hasTribe(s, t);
+        super(rhs);
+        wasFedDuringUpdate = rhs.wasFedDuringUpdate;
+        idleAnimLength    = rhs.idleAnimLength;
+    }
+
+    override GadgetAnimsOnFeed clone() const
+    {
+        return new GadgetAnimsOnFeed(this);
+    }
+
+    bool isOpenFor(in int tribeID, in int upd) const
+    {
+        if (wasFedDuringUpdate == upd)
+            return ! hasTribe(tribeID);
+        else
+            return ! isEating(upd);
+    }
+
+    void feed(in int tribeID, in int upd)
+    {
+        assert (isOpenFor(tribeID, upd), "don't feed what it's not open for");
+        super.addTribe(tribeID);
+        wasFedDuringUpdate = upd;
     }
 
     override void animateForUpdate(in int upd)
     {
-        // _wasFedDuringFrame == 0 is the init value, there shouldn't ever
-        // happen anything on that frame, Game.update isn't even called then
-        if (wasFedDuringFrame == 0) {
+        if (isEating(upd)) {
+            yf = 0;
+            xf = upd - wasFedDuringUpdate + 1;
+        }
+        else if (idleAnimLength == 0) {
+            yf = 0;
             xf = 0;
         }
         else {
-            immutable fr = (upd - wasFedDuringFrame) + 1;
-            if (fr >= 0 && fr < animationLength)
-                xf = fr;
-            else
-                xf = 0;
+            yf = 1;
+            xf = (upd - firstIdlingUpdateAfterEating) % idleAnimLength;
         }
         clearTribes();
     }
 
+private:
+
+    int firstIdlingUpdateAfterEating() const
+    {
+        if (wasFedDuringUpdate == 0)
+            // _wasFedDuringUpdate == 0 is the init value, there shouldn't
+            // happen anything on that frame, Game.update isn't even called.
+            return 0;
+        else
+            // - 1, because frame 0 is never part of the eating anim
+            return wasFedDuringUpdate + animationLength - 1;
+    }
+
+    bool isEating(in int upd) const
+    {
+        assert (upd >= wasFedDuringUpdate, "relics from the future");
+        return upd < firstIdlingUpdateAfterEating;
+    }
+
 }
-// end class GadgetCanBeOpen
+// end class GadgetAnimsOnFeed
 
 
 
-private class PermanentlyOpen : GadgetCanBeOpen {
+// ############################################################################
+// ############################################################################
+// ############################################################################
+
+
+
+private class PermanentlyOpen : GadgetAnimsOnFeed {
 
     mixin (StandardGadgetCtor);
 
     override PermanentlyOpen clone() const { return new PermanentlyOpen(this);}
     this(in PermanentlyOpen rhs) { super(rhs); }
 
-    override bool isOpenFor(in GameState, in Tribe t) const { return true; }
+    override bool isOpenFor(in int tribeID, in int upd) const { return true; }
 
     override void animateForUpdate(in int upd)
     {
@@ -93,35 +147,15 @@ private class PermanentlyOpen : GadgetCanBeOpen {
 
 
 
-private class Triggerable : GadgetCanBeOpen {
-
-    mixin (StandardGadgetCtor);
-
-    override Triggerable clone() const { return new Triggerable(this);}
-    this(in Triggerable rhs) { super(rhs); }
-
-    override bool isOpenFor(in GameState s, in Tribe t) const
-    {
-        return xf == 0 && ! hasTribe(s, t);
-    }
-
-}
-// end class Triggerable
-
-
-
-class Trampoline : GadgetCanBeOpen {
+class Trampoline : GadgetAnimsOnFeed {
 
     mixin (StandardGadgetCtor);
 
     override Trampoline clone() const { return new Trampoline(this);}
     this(in Trampoline rhs) { super(rhs); }
 
-    override bool isOpenFor(in GameState s, in Tribe t) const
-    {
-        // trampolines are always active, even if they animate only on demand
-        return true;
-    }
+    // trampolines are always active, even if they animate only on demand
+    override bool isOpenFor(in int tribeID, in int upd) const { return true; }
 
 }
 // end class Trampoline
