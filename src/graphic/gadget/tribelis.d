@@ -120,7 +120,7 @@ private:
             assert (!empty);
             ++id;
         }
-
     }
-
+    // end struct TribeRange
 }
+// end class GadgetWithTribeList

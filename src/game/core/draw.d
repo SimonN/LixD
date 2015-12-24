@@ -42,10 +42,8 @@ implGameDraw(Game game) { with (game)
         with (Zone(profiler, _gadgetCountStr)) {
             cs.foreachGadget((Gadget g) {
                 with (Zone(profiler, "game draws one gadget"))
-                    g.draw(map);
+                    g.draw(map, cs);
             });
-            foreach (goal; cs.goals)
-                goal.drawStateExtras(map, cs);
         }
 
         with (Zone(profiler, "game draws land to map"))

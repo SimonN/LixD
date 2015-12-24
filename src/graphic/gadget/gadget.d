@@ -20,6 +20,7 @@ import std.conv;
 
 import basics.help;
 import game.phymap;
+import game.state;
 import graphic.cutbit;
 import graphic.color;
 import graphic.graphic;
@@ -44,7 +45,7 @@ public:
     bool        drawWithEditorInfo;
 
     // override these if necessary
-    protected void drawGameExtras(Torbit) const { }
+    protected void drawGameExtras(Torbit, in GameState) const { }
     protected void drawEditorInfo(Torbit) const { }
 
     // hatch should override this
@@ -207,14 +208,18 @@ get_selboxYl() const
 
 
 
-final override void
-draw(Torbit mutableGround) const
+deprecated("Gadgets should be drawn with const GameState") final override void
+draw(Torbit mutableGround) const { super.draw(mutableGround); }
+
+final void
+draw(Torbit mutableGround, in GameState state = null) const
 {
     super.draw(mutableGround);
 
-    drawGameExtras(mutableGround);
+    drawGameExtras(mutableGround, state);
 
     if (drawWithEditorInfo) {
+        assert (state is null, "are we in the editor or the game?");
         drawEditorInfo(mutableGround);
 
         // now draw trigger area on top

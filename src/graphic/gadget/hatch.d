@@ -5,6 +5,7 @@ import std.algorithm; // min
 import basics.help;
 import basics.globals; // hatch arrow graphic
 import game.effect;
+import game.state;
 import graphic.cutbit;
 import graphic.gadget;
 import graphic.gralib;
@@ -91,7 +92,7 @@ public:
 
 protected:
 
-    override void drawGameExtras(Torbit mutableGround) const
+    override void drawGameExtras(Torbit mutableGround, in GameState) const
     {
         if (_blinkNow && blinkStyle != Style.garden) {
             const(Cutbit) c = getPanelInfoIcon(blinkStyle);

@@ -20,14 +20,12 @@ import lix.enums;
 
 class Goal : GadgetWithTribeList {
 
-public:
-
-    bool drawWithNoSign;
-
     this(in Torbit tb, in ref Pos levelpos) { super(tb, levelpos); }
     this(in Goal rhs)                       { super(rhs); }
 
     override Goal clone() const { return new Goal(this); }
+
+protected:
 
     override void drawStateExtras(Torbit t, in GameState s) const
     {
