@@ -29,7 +29,7 @@ class GameState {
     int  clock;
     bool clockIsRunning;
 
-    private bool _goalsLocked; // in singleplayer, when time has run out
+    bool goalsLocked; // in singleplayer, when time has run out
 
     Tribe[] tribes;
 
@@ -49,15 +49,6 @@ class GameState {
  *  void copyFrom(in GameState rhs);
  */
     GameState clone() const { return new GameState(this); }
-
-    @property bool goalsLocked() const { return _goalsLocked; }
-    @property bool goalsLocked(in bool b)
-    {
-        _goalsLocked = b;
-        foreach (goal; goals)
-            goal.drawWithNoSign = _goalsLocked;
-        return _goalsLocked;
-    }
 
     void foreachGadget(T)(void delegate(T) func)
         if (is(T : const Gadget))
@@ -80,7 +71,7 @@ class GameState {
         update         = rhs.update;
         clock          = rhs.clock;
         clockIsRunning = rhs.clockIsRunning;
-        _goalsLocked   = rhs._goalsLocked;
+        goalsLocked    = rhs.goalsLocked;
 
         tribes      = rhs.tribes     .clone;
         hatches     = rhs.hatches    .clone;

@@ -24,18 +24,18 @@ public:
 
     bool drawWithNoSign;
 
-    this(in Torbit tb, in ref Pos levelpos)
-    {
-        super(tb, levelpos);
-    }
-
-    this(in Goal rhs)
-    {
-        super(rhs);
-        drawWithNoSign = rhs.drawWithNoSign;
-    }
+    this(in Torbit tb, in ref Pos levelpos) { super(tb, levelpos); }
+    this(in Goal rhs)                       { super(rhs); }
 
     override Goal clone() const { return new Goal(this); }
+
+    override void drawStateExtras(Torbit t, in GameState s) const
+    {
+        drawOwners(t, s);
+        drawNoSign(t, s);
+    }
+
+private:
 
     void drawOwners(Torbit mutableGround, in GameState state) const
     {
@@ -54,17 +54,15 @@ public:
         }
     }
 
-protected:
-
-    override void drawGameExtras(Torbit mutableGround) const
+    void drawNoSign(Torbit mutableGround, in GameState state) const
     {
-        if (drawWithNoSign) {
-            const(Cutbit) c = getInternal(fileImageMouse);
-            c.draw(mutableGround,
-                x + tile.triggerX + tile.triggerXl / 2 - c.xl / 2,
-                y + tile.triggerY + tile.triggerYl / 2 - c.yl,
-                2, 2); // (2,2) are the (xf,yf) of the international "no" sign
-        }
+        if (! state.goalsLocked)
+            return;
+        const(Cutbit) c = getInternal(fileImageMouse);
+        c.draw(mutableGround,
+            x + tile.triggerX + tile.triggerXl / 2 - c.xl / 2,
+            y + tile.triggerY + tile.triggerYl / 2 - c.yl,
+            2, 2); // (2,2) are the (xf,yf) of the international "no" sign
     }
 
 }

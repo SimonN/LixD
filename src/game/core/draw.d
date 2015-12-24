@@ -45,7 +45,7 @@ implGameDraw(Game game) { with (game)
                     g.draw(map);
             });
             foreach (goal; cs.goals)
-                goal.drawOwners(map, cs);
+                goal.drawStateExtras(map, cs);
         }
 
         with (Zone(profiler, "game draws land to map"))

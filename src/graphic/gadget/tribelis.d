@@ -66,7 +66,8 @@ class GadgetWithTribeList : Gadget {
         return TribeRange!(const(This), const(GameState))(this, state);
     }
 
-
+    // override this
+    void drawStateExtras(Torbit, in GameState) { }
 
 private:
 
