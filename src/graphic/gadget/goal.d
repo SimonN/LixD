@@ -6,6 +6,7 @@ import basics.help;
 import basics.globals; // fileImageMouse
 import basics.help; // len
 import game.tribe;
+import game.state;
 import graphic.cutbit;
 import graphic.gadget;
 import graphic.gralib;
@@ -17,7 +18,7 @@ import lix.enums;
  * When singleplayer time runs out, set drawWithNoSign.
  */
 
-class Goal : Gadget {
+class Goal : GadgetWithTribeList {
 
 public:
 
@@ -31,53 +32,33 @@ public:
     this(in Goal rhs)
     {
         super(rhs);
-        foreach (const(Tribe) t; rhs._tribes)
-            _tribes ~= t;
         drawWithNoSign = rhs.drawWithNoSign;
     }
 
     override Goal clone() const { return new Goal(this); }
 
-    bool hasTribe(in Tribe t) const
+    void drawOwners(Torbit mutableGround, in GameState state) const
     {
-        foreach (const(Tribe) inArray; _tribes)
-            if (t is inArray)
-                return true;
-        return false;
+        assert (state);
+        int offset = 0;
+        int tribesLen = tribes(state).len;
+        foreach (const(Tribe) t; tribes(state)) {
+            if (t.style == Style.garden)
+                continue;
+            auto c = graphic.gralib.getPanelInfoIcon(t.style);
+            c.draw(mutableGround,
+                x + tile.triggerX + tile.triggerXl / 2 - c.xl / 2
+                  + (20 * offset++) - 10 * (tribesLen - 1),
+                max(y, y + yl - 70),
+                Ac.walker, 0);
+        }
     }
-
-    void addTribe(Tribe t)
-    {
-        if (! hasTribe(t))
-            _tribes ~= t;
-    }
-
-    @property const(Tribe[]) tribes() const { return _tribes; }
-
-private:
-
-    const(Tribe)[] _tribes;
 
 protected:
 
     override void drawGameExtras(Torbit mutableGround) const
     {
-        if (! drawWithNoSign) {
-            // draw owners
-            int offset = 0;
-            foreach (const(Tribe) t; _tribes) {
-                if (t.style == Style.garden)
-                    continue;
-                auto c = graphic.gralib.getPanelInfoIcon(t.style);
-                c.draw(mutableGround,
-                    x + tile.triggerX + tile.triggerXl / 2 - c.xl / 2
-                      + (20 * offset++) - 10 * (_tribes.len - 1),
-                    max(y, y + yl - 70),
-                    Ac.walker, 0);
-            }
-        }
-        else {
-            // draw no sign
+        if (drawWithNoSign) {
             const(Cutbit) c = getInternal(fileImageMouse);
             c.draw(mutableGround,
                 x + tile.triggerX + tile.triggerXl / 2 - c.xl / 2,

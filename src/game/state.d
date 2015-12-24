@@ -21,7 +21,7 @@ import game.replay;
 import graphic.torbit;
 import graphic.gadget;
 
-import std.string : format;
+import std.string; // format
 
 class GameState {
 

@@ -170,8 +170,8 @@ private void assignTribesToGoals(Game game) {
     assert (tribes.len);
     if (goals.len >= tribes.len)
         foreach (int i, goal; goals)
-            goal.addTribe(tribes[i % tribes.len]);
+            goal.addTribe(i % tribes.len);
     else
         foreach (int i, tribe; tribes)
-            goals[i % goals.len].addTribe(tribe);
+            goals[i % goals.len].addTribe(i);
 }}

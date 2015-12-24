@@ -39,11 +39,14 @@ implGameDraw(Game game) { with (game)
                                        _profilingGadgetCount, level.name);
             }
 
-        with (Zone(profiler, _gadgetCountStr))
+        with (Zone(profiler, _gadgetCountStr)) {
             cs.foreachGadget((Gadget g) {
                 with (Zone(profiler, "game draws one gadget"))
                     g.draw(map);
             });
+            foreach (goal; cs.goals)
+                goal.drawOwners(map, cs);
+        }
 
         with (Zone(profiler, "game draws land to map"))
             map.loadCameraRectangle(game.cs.land);

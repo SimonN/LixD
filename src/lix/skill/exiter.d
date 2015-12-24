@@ -41,7 +41,7 @@ class Exiter : Leaver {
 
     void playSound(in Goal goal)
     {
-        if (goal.hasTribe(outsideWorld.tribe))
+        if (goal.hasTribe(outsideWorld.state, outsideWorld.tribe))
             lixxie.playSound(Sound.GOAL);
         else
             playSoundIfTribeLocal(Sound.GOAL_BAD);
