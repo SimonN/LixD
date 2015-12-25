@@ -76,9 +76,13 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
 
     override void animateForUpdate(in int upd)
     {
+
         if (isEating(upd)) {
             yf = 0;
-            xf = upd - wasFedDuringUpdate + 1;
+            xf = (upd == firstIdlingUpdateAfterEating - 1)
+                ? 0 // Last frame of eating is a frame that looks like idling.
+                    // This is a mechanic taken over 1:1 from C++ Lix.
+                : upd - wasFedDuringUpdate + 1;
         }
         else if (idleAnimLength == 0) {
             yf = 0;
@@ -100,8 +104,10 @@ private:
             // happen anything on that frame, Game.update isn't even called.
             return 0;
         else
-            // - 1, because frame 0 is never part of the eating anim
-            return wasFedDuringUpdate + animationLength - 1;
+            // Frame 0 may not be part of the anim, but even under a very dense
+            // stream of lix, frame 0 is shown after eating for 1 update.
+            // Thus, no -1 here.
+            return wasFedDuringUpdate + animationLength;
     }
 
     bool isEating(in int upd) const
