@@ -1,5 +1,7 @@
 module game.core.calc;
 
+import std.algorithm; // all
+
 import basics.user;
 import game.core;
 import game.gui.wduring;
@@ -19,7 +21,19 @@ implGameCalc(Game game)
         game.calcPassive();
         game.calcActive();
         game.updatePhysicsAccordingToSpeedButtons();
+
+        if (game.isFinished)
+            game.createModalWindow;
     }
+}
+
+private bool
+isFinished(const(Game) game)
+{
+    assert (game.cs);
+    return game.cs.tribes.all!(a => ! a.stillPlaying)
+        && game.cs.traps .all!(a => ! a.isEating(game.cs.update))
+        && game.effect.nothingGoingOn;
 }
 
 private void
@@ -27,7 +41,9 @@ createModalWindow(Game game)
 {
     game.modalWindow =
         // multiplayer && ! replaying ? : ? : ? :
-        new WindowDuringOffline();
+        game.isFinished
+        ? new WindowEndSingle(game.tribeLocal, game.level)
+        : new WindowDuringOffline();
     addFocus(game.modalWindow);
 }
 

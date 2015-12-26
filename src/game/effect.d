@@ -41,6 +41,15 @@ class EffectManager {
         _tree = new RedBlackTree!Effect;
     }
 
+    bool nothingGoingOn() const
+    {
+        // DTODO: make lists of the effect graphics flying around, and return
+        // true iff all these lists are empty.
+        // _tree is irrelevant for checking whether anything is still flying,
+        // because _tree remembers whether the same effect was added before.
+        return true;
+    }
+
     void deleteAfter(in int upd)
     out {
         foreach (e; _tree)

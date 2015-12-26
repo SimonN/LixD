@@ -39,11 +39,11 @@ class Label : Element {
         catch (Exception) return 0;
     }
 
-    @property font  (AlFont f) { _font  = f; shorten_text();               }
+    @property font  (AlFont f) { _font  = f; shorten_text(); return _font; }
     @property text  (string s) { _text  = s; shorten_text(); return _text; }
     @property number(in int i) { _text  = i.to!string; shorten_text();     }
-    @property color (AlCol  c) { _color = c; reqDraw(); }
-    @property fixed (bool   b) { _fixed = b; shorten_text(); }
+    @property color (AlCol  c) { _color = c; reqDraw(); return _color;     }
+    @property fixed (bool   b) { _fixed = b; shorten_text(); return b;     }
 
     override string toString() const { return "Label-`" ~ _text ~ "'"; }
 

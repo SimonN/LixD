@@ -69,7 +69,7 @@ class Tribe {
     Tribe clone() const { return new Tribe(this); }
 
     @property {
-        int stillPlaying()  const { return lixOut + lixLeaving + lixHatch;}
+        int stillPlaying()  const { return lixOut + lixLeaving + lixHatch; }
         int score()         const { return lixSaved; }
         int scoreExpected() const { return lixSaved + lixOut + lixHatch; }
     }

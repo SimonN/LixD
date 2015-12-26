@@ -182,7 +182,7 @@ class Geom {
 
         switch (xFrom) {
             case From.LEFT:   return pXg + x;
-            case From.CENTER: return pXg + pXlg/2 - xl/2 - x;
+            case From.CENTER: return pXg + pXlg/2 - xl/2 + x;
             case From.RIGHT:  return pXg + pXlg   - xl   - x;
             default: assert (false);
         }
@@ -195,7 +195,7 @@ class Geom {
 
         switch (yFrom) {
             case From.TOP:    return pYg + y;
-            case From.CENTER: return pYg + pYlg/2 - yl/2 - y;
+            case From.CENTER: return pYg + pYlg/2 - yl/2 + y;
             case From.BOTTOM: return pYg + pYlg   - yl   - y;
             default: assert (false);
         }
