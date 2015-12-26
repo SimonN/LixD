@@ -7,14 +7,15 @@ module game.effect;
 
 import std.container.rbtree;
 
+import basics.nettypes;
 import hardware.sound;
 
 struct Effect {
 
-    int update;
-    int tribe; // array slot in game.cs.tribes
-    int lix; // if not necessary, set to 0
-    Sound sound; // if not necessary, set to 0 == Sound::NOTHING
+    Update   update;
+    int      tribe; // array slot in game.cs.tribes
+    int      lix;   // if not necessary, set to 0
+    Sound    sound; // if not necessary, set to 0 == Sound::NOTHING
     Loudness loudness;
 
     int opCmp(ref in Effect rhs) const
@@ -46,7 +47,8 @@ class EffectManager {
             assert (e.update <= upd);
     }
     body {
-        _tree.remove(_tree.upperBound(Effect(upd + 1, -1 , 0, Sound.NOTHING)));
+        _tree.remove(_tree.upperBound(Effect(Update(upd + 1),
+                                      -1 , 0, Sound.NOTHING)));
     }
 
     override string toString() const
@@ -60,14 +62,14 @@ class EffectManager {
 
 
 
-    void addSoundGeneral(in int upd,
+    void addSoundGeneral(in Update upd,
         in Sound sound, in Loudness loudness = Loudness.loud
     ) {
         addSound(upd, tribeLocal, 0, sound, loudness);
     }
 
     void addSound(
-        in int upd, in int tribe, in int lix,
+        in Update upd, in int tribe, in int lix,
         in Sound sound, in Loudness loudness = Loudness.loud
     ) {
         Effect e = Effect(upd, tribe, lix, sound, loudness);
@@ -78,14 +80,14 @@ class EffectManager {
     }
 
     void addSoundIfTribeLocal(
-        in int upd, in int tribe, in int lix,
+        in Update upd, in int tribe, in int lix,
         in Sound sound, in Loudness loudness = Loudness.loud
     ) {
         if (tribe == tribeLocal)
             addSound(upd, tribe, lix, sound, loudness);
     }
 
-    void addDigHammer(in int upd, in int tribe, in int lix,
+    void addDigHammer(in Update upd, in int tribe, in int lix,
         in int ex, in int ey
     ) {
         Effect e = Effect(upd, tribe, lix,
@@ -97,7 +99,7 @@ class EffectManager {
         }
     }
 
-    void addImplosion(in int upd, in int tribe, in int lix,
+    void addImplosion(in Update upd, in int tribe, in int lix,
         in int ex, in int ey
     ) {
         Effect e = Effect(upd, tribe, lix, Sound.POP);
@@ -107,7 +109,7 @@ class EffectManager {
         }
     }
 
-    void addExplosion(in int upd, in int tribe, in int lix,
+    void addExplosion(in Update upd, in int tribe, in int lix,
         in int ex, in int ey
     ) {
         Effect e = Effect(upd, tribe, lix, Sound.POP);

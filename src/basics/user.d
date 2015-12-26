@@ -16,6 +16,7 @@ import basics.alleg5;
 import basics.globals;
 import basics.globconf;
 import basics.help;
+import basics.nettypes;
 import file.filename;
 import file.date;
 import file.io;
@@ -215,10 +216,10 @@ static this()
 
 
 class Result {
-    Date built;
-    int  lixSaved;
-    int  skillsUsed;
-    int  updatesUsed;
+    Date   built;
+    int    lixSaved;
+    int    skillsUsed;
+    Update updatesUsed;
 
     this ()
     {
@@ -226,7 +227,7 @@ class Result {
         // all other fields are initialized to zero
     }
 
-    this (Date bu, in int sa, in int sk, in int up)
+    this (Date bu, in int sa, in int sk, in Update up)
     {
         built = bu; lixSaved = sa; skillsUsed = sk; updatesUsed = up;
     }
@@ -479,7 +480,8 @@ void load()
 
     case '<': {
         auto fn = rebindable!(const Filename)(new Filename(i.text1));
-        Result result_read = new Result(new Date(i.text2), i.nr1,i.nr2,i.nr3);
+        Result result_read = new Result(new Date(i.text2),
+                             i.nr1, i.nr2, Update(i.nr3));
         Result* result_in_database = (fn in results);
         if (! result_in_database || *result_in_database < result_read) {
             results[fn] = result_read;

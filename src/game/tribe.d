@@ -41,8 +41,8 @@ class Tribe {
         int  spawnint     = 32;
         bool nuke;
 
-        int updatePreviousSpawn = -Level.spawnintMax; // => immediate spawn
-        int updatePreviousSave; // ...within the time limit
+        Update updatePreviousSpawn = Update(-Level.spawnintMax); // => at once
+        Update updatePreviousSave; // ...within the time limit
         int hatchNextSpawn;
 
         int skillsUsed;

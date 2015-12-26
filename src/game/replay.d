@@ -126,7 +126,7 @@ addPlayer(PlNr nr, Style s, string name)
 
 
 private inout(ReplayData)[]
-dataSliceBeforeUpdate(in int upd) inout
+dataSliceBeforeUpdate(in Update upd) inout
 {
     // The binary search algo works also for the cases we're checking in this
     // if. But we add mostly to the end of the data, so check here for speed.
@@ -151,7 +151,7 @@ dataSliceBeforeUpdate(in int upd) inout
 
 
 bool
-equalBefore(in typeof(this) rhs, in int upd) const
+equalBefore(in typeof(this) rhs, in Update upd) const
 {
     // We don't check whether the metadata/general data is the same.
     // We assume the gameplay class only uses for replays of the same level
@@ -166,7 +166,7 @@ equalBefore(in typeof(this) rhs, in int upd) const
 // that skip the first 30 or so updates, to get into the action faster.
 // The first spawn is still at update 60.
 void
-increaseEarlyDataToUpdate(in int upd)
+increaseEarlyDataToUpdate(in Update upd)
 {
     foreach (d; _data) {
         if (d.update < upd)
@@ -179,7 +179,7 @@ increaseEarlyDataToUpdate(in int upd)
 
 
 void
-deleteOnAndAfterUpdate(in int upd)
+deleteOnAndAfterUpdate(in Update upd)
 {
     assert (upd >= 0);
     _data = _data[0 .. dataSliceBeforeUpdate(upd).length];
@@ -189,9 +189,9 @@ deleteOnAndAfterUpdate(in int upd)
 
 
 const(ReplayData)[]
-getDataForUpdate(in int upd) const
+getDataForUpdate(in Update upd) const
 {
-    auto slice = dataSliceBeforeUpdate(upd + 1);
+    auto slice = dataSliceBeforeUpdate(Update(upd + 1));
     int firstGood = slice.len;
     while (firstGood > 0 && slice[firstGood - 1].update == upd)
         --firstGood;
@@ -203,7 +203,7 @@ getDataForUpdate(in int upd) const
 
 
 bool
-getOnUpdateLixClicked(in int upd, in int lix_id, in Ac ac) const
+getOnUpdateLixClicked(in Update upd, in int lix_id, in Ac ac) const
 {
     auto vec = getDataForUpdate(upd);
     foreach (const ref d; vec)
@@ -231,7 +231,7 @@ addWithoutTouching(in ReplayData d)
     // dataSliceBeforeUpdate doesn't do exactly that, it ignores players.
     // DTODO: I believe the C++ version had a bug in the choice of
     // comparison. I have fixed that here. Test to see if it's good now.
-    auto slice = dataSliceBeforeUpdate(d.update + 1);
+    auto slice = dataSliceBeforeUpdate(Update(d.update + 1));
     while (slice.length && slice[$-1] > d)
         slice = slice[0 .. $-1];
 

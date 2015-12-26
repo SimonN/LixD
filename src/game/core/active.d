@@ -294,11 +294,11 @@ assignToPotentialAssignee(
         return;
     }
 
-    effect.addSound(cs.update + 1, tribeID(tribeLocal),
+    effect.addSound(Update(cs.update + 1), tribeID(tribeLocal),
                     potAss.id, Sound.ASSIGN);
 
     assert (replay);
-    if (replay.getOnUpdateLixClicked(cs.update + 1, potAss.id,
+    if (replay.getOnUpdateLixClicked(Update(cs.update + 1), potAss.id,
                                      currentSkill.skill)
         && currentSkill.number != skillInfinity
     ) {

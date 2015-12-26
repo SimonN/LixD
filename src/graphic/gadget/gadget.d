@@ -19,6 +19,7 @@ module graphic.gadget.gadget;
 import std.conv;
 
 import basics.help;
+import basics.nettypes;
 import game.phymap;
 import game.state;
 import graphic.cutbit;
@@ -62,7 +63,7 @@ public:
  *  @property int selboxXl() const;
  *  @property int selboxYl() const;
  *
- *  void animateForUpdate(int update);
+ *  void animateForUpdate(Update update);
  *
  *  final void draw();
  *  final void draw_lookup(Phymap);
@@ -140,7 +141,7 @@ factory(Torbit tb, in ref Pos levelpos)
 
 
 void
-animateForUpdate(in int upd)
+animateForUpdate(in Update upd)
 {
     xf = positiveMod(upd, animationLength);
 }

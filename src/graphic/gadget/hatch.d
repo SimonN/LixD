@@ -4,6 +4,7 @@ import std.algorithm; // min
 
 import basics.help;
 import basics.globals; // hatch arrow graphic
+import basics.nettypes;
 import game.effect;
 import game.state;
 import graphic.cutbit;
@@ -61,9 +62,9 @@ public:
     }
 
     deprecated("use Hatch.animate(EffectManager, int) instead")
-    override void animateForUpdate(in int) { }
+    override void animateForUpdate(in Update) { }
 
-    void animate(EffectManager effect, in int u) // update of the Game
+    void animate(EffectManager effect, in Update u)
     {
         immutable int of = updateOpen - tile.specialX;
         // of == first absolute frame of opening. This is earlier if the sound

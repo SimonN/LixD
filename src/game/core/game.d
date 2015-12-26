@@ -14,7 +14,7 @@ import std.algorithm; // find;
 import basics.alleg5;
 import basics.globals;
 import basics.help; // len;
-import basics.nettypes; // ReplayData
+import basics.nettypes;
 import file.filename;
 import game.core;
 import game.gui.gamewin;

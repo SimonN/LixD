@@ -14,6 +14,7 @@ import std.range;
 import std.algorithm.iteration;
 
 import basics.help; // clone(T[]), a deep copy for arrays
+import basics.nettypes;
 import basics.topology;
 import game.phymap;
 import game.tribe;
@@ -25,7 +26,7 @@ import std.string; // format
 
 class GameState {
 
-    int  update;
+    Update update;
     int  clock;
     bool clockIsRunning;
 

@@ -28,6 +28,7 @@ import enumap;
 import basics.alleg5;
 import basics.cmdargs;
 import basics.help;
+import basics.nettypes;
 import game.phymap;
 import game.mask;
 import game.terchang;
@@ -101,9 +102,9 @@ class PhysicsDrawer {
     // You should know what a lookup map is (class Phymap from game.phymap).
     // _land is the torus bitmap onto which we draw the terrain, but this
     // is never queried for physics -- that's what the lookup map is for.
-    // int upd: Pass current update of the game to this.
+    // in Update upd: Pass current update of the game to this.
     void
-    applyChangesToLand(in int upd)
+    applyChangesToLand(in Update upd)
     in {
         assert (_land);
         enum msg = "I don't believe you should draw to land when you still "
@@ -131,7 +132,7 @@ class PhysicsDrawer {
         while (_delsForLand != null || _addsForLand != null) {
             // Do deletions for the first update, then additions for that,
             // then deletions for the next update, then additions, ...
-            immutable int earliestUpdate
+            immutable Update earliestUpdate
                 = _delsForLand != null && _addsForLand != null
                 ? min(_delsForLand[0].update, _addsForLand[0].update)
                 : _delsForLand != null
@@ -224,7 +225,7 @@ private:
             assert (tc.update == arr[0].update);
     }
 
-    void assertChangesForLand(FlaggedChange[] arr, in int upd)
+    void assertChangesForLand(FlaggedChange[] arr, in Update upd)
     {
         // Functions calling assertChangesForLand need not be called on each
         // update, but only if the land must be drawn like it should appear
@@ -244,7 +245,7 @@ private:
             "considered a logic bug!");
     }
 
-    FlaggedChange[] splitOffFromArray(ref FlaggedChange[] arr, in int upd)
+    FlaggedChange[] splitOffFromArray(ref FlaggedChange[] arr, in Update upd)
     {
         // Split the queue into what needs to be processed during this call,
         // remove these from the caller's queue (arr).
@@ -309,7 +310,7 @@ private:
 
 
     void
-    deletionsToLandForUpdate(in int upd)
+    deletionsToLandForUpdate(in Update upd)
     in {
         assertChangesForLand(_delsForLand, upd);
     }
@@ -405,7 +406,7 @@ private:
 
 
     void
-    additionsToLandForUpdate(in int upd)
+    additionsToLandForUpdate(in Update upd)
     in {
         assertChangesForLand(_addsForLand, upd);
     }

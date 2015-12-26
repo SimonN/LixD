@@ -1,5 +1,6 @@
 module game.terchang;
 
+import basics.nettypes;
 import lix.enums;
 
 struct TerrainChange {
@@ -20,9 +21,9 @@ struct TerrainChange {
         dig
     }
 
-    int   update;
-    Type  type;
-    Style style; // for additions
+    Update update;
+    Type   type;
+    Style  style; // for additions
     int x;
     int y;
     int yl; // for digger swing, cuber slice

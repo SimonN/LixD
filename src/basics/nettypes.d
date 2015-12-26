@@ -71,12 +71,12 @@ enum RepAc : ubyte {
 
 struct ReplayData {
 
-    PlNr  player;
-    RepAc action;
-    Ac    skill; // only meaningful if isSomeAssignment
-    int   update;
-    int   toWhichLix; // assign to which lix, or change rate to how much
-    alias toWhatSpawnint = toWhichLix;
+    PlNr   player;
+    RepAc  action;
+    Ac     skill; // only meaningful if isSomeAssignment
+    Update update;
+    int    toWhichLix; // assign to which lix, or change rate to how much
+    alias  toWhatSpawnint = toWhichLix;
     deprecated("use toWhichLix/toWhatSpawnint") alias what = toWhichLix;
 
     @property bool isSomeAssignment() const
@@ -115,9 +115,9 @@ struct ReplayData {
     {
         assert (pck.data[0] == NETWORK_REPLAY_DATA,
             "don't call ReplayData(p) if p is not replay data");
-        player     = PlNr(pck.data[1]);
-        update     = bigEndianToNative!int(pck.data[4 ..  8]);
-        toWhichLix = bigEndianToNative!int(pck.data[8 .. 12]);
+        player = PlNr(pck.data[1]);
+        update = Update(bigEndianToNative!int(pck.data[4 ..  8]));
+        toWhichLix =    bigEndianToNative!int(pck.data[8 .. 12]);
 
         try               action = pck.data[2].to!RepAc;
         catch (Exception) action = RepAc.NOTHING;

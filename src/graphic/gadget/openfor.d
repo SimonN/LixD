@@ -13,6 +13,7 @@ module graphic.gadget.openfor;
  */
 
 import basics.help;
+import basics.nettypes;
 import game.state;
 import game.tribe;
 import graphic.gadget;
@@ -31,7 +32,7 @@ public alias Flinger   = GadgetAnimsOnFeed; // both FlingPerm and FlingTrig
 
 private class GadgetAnimsOnFeed : GadgetWithTribeList {
 
-    int wasFedDuringUpdate;
+    Update wasFedDuringUpdate;
     const(int) idleAnimLength;
 
     this(in Torbit tb, in ref Pos levelpos)
@@ -59,7 +60,7 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
         return new GadgetAnimsOnFeed(this);
     }
 
-    bool isOpenFor(in int tribeID, in int upd) const
+    bool isOpenFor(in int tribeID, in Update upd) const
     {
         if (wasFedDuringUpdate == upd)
             return ! hasTribe(tribeID);
@@ -67,16 +68,15 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
             return ! isEating(upd);
     }
 
-    void feed(in int tribeID, in int upd)
+    void feed(in int tribeID, in Update upd)
     {
         assert (isOpenFor(tribeID, upd), "don't feed what it's not open for");
         super.addTribe(tribeID);
         wasFedDuringUpdate = upd;
     }
 
-    override void animateForUpdate(in int upd)
+    override void animateForUpdate(in Update upd)
     {
-
         if (isEating(upd)) {
             yf = 0;
             xf = (upd == firstIdlingUpdateAfterEating - 1)
@@ -110,7 +110,7 @@ private:
             return wasFedDuringUpdate + animationLength;
     }
 
-    bool isEating(in int upd) const
+    bool isEating(in Update upd) const
     {
         assert (upd >= wasFedDuringUpdate, "relics from the future");
         return upd < firstIdlingUpdateAfterEating;
@@ -134,9 +134,9 @@ private class PermanentlyOpen : GadgetAnimsOnFeed {
     override PermanentlyOpen clone() const { return new PermanentlyOpen(this);}
     this(in PermanentlyOpen rhs) { super(rhs); }
 
-    override bool isOpenFor(in int tribeID, in int upd) const { return true; }
+    override bool isOpenFor(in int, in Update) const { return true; }
 
-    override void animateForUpdate(in int upd)
+    override void animateForUpdate(in Update upd)
     {
         Gadget.animateForUpdate(upd); // the constantly looping animation
     }
@@ -161,7 +161,7 @@ class Trampoline : GadgetAnimsOnFeed {
     this(in Trampoline rhs) { super(rhs); }
 
     // trampolines are always active, even if they animate only on demand
-    override bool isOpenFor(in int tribeID, in int upd) const { return true; }
+    override bool isOpenFor(in int, in Update) const { return true; }
 
 }
 // end class Trampoline
