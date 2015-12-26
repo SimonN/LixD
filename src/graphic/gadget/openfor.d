@@ -60,7 +60,7 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
         return new GadgetAnimsOnFeed(this);
     }
 
-    bool isOpenFor(in int tribeID, in Update upd) const
+    bool isOpenFor(in Update upd, in int tribeID) const
     {
         if (wasFedDuringUpdate == upd)
             return ! hasTribe(tribeID);
@@ -68,9 +68,15 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
             return ! isEating(upd);
     }
 
-    void feed(in int tribeID, in Update upd)
+    bool isEating(in Update upd) const
     {
-        assert (isOpenFor(tribeID, upd), "don't feed what it's not open for");
+        assert (upd >= wasFedDuringUpdate, "relics from the future");
+        return upd < firstIdlingUpdateAfterEating;
+    }
+
+    void feed(in Update upd, in int tribeID)
+    {
+        assert (isOpenFor(upd, tribeID), "don't feed what it's not open for");
         super.addTribe(tribeID);
         wasFedDuringUpdate = upd;
     }
@@ -97,23 +103,17 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
 
 private:
 
-    int firstIdlingUpdateAfterEating() const
+    Update firstIdlingUpdateAfterEating() const
     {
         if (wasFedDuringUpdate == 0)
             // _wasFedDuringUpdate == 0 is the init value, there shouldn't
             // happen anything on that frame, Game.update isn't even called.
-            return 0;
+            return Update(0);
         else
             // Frame 0 may not be part of the anim, but even under a very dense
             // stream of lix, frame 0 is shown after eating for 1 update.
             // Thus, no -1 here.
-            return wasFedDuringUpdate + animationLength;
-    }
-
-    bool isEating(in Update upd) const
-    {
-        assert (upd >= wasFedDuringUpdate, "relics from the future");
-        return upd < firstIdlingUpdateAfterEating;
+            return Update(wasFedDuringUpdate + animationLength);
     }
 
 }
@@ -134,7 +134,7 @@ private class PermanentlyOpen : GadgetAnimsOnFeed {
     override PermanentlyOpen clone() const { return new PermanentlyOpen(this);}
     this(in PermanentlyOpen rhs) { super(rhs); }
 
-    override bool isOpenFor(in int, in Update) const { return true; }
+    override bool isOpenFor(in Update, in int) const { return true; }
 
     override void animateForUpdate(in Update upd)
     {
@@ -161,7 +161,7 @@ class Trampoline : GadgetAnimsOnFeed {
     this(in Trampoline rhs) { super(rhs); }
 
     // trampolines are always active, even if they animate only on demand
-    override bool isOpenFor(in int, in Update) const { return true; }
+    override bool isOpenFor(in Update, in int) const { return true; }
 
 }
 // end class Trampoline

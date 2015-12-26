@@ -50,9 +50,9 @@ void useNonconstantTraps(Lixxie lixxie) { with (lixxie)
         return;
     foreach (TrapTrig trap; outsideWorld.state.traps)
         if (inTriggerArea(trap)
-            && trap.isOpenFor(outsideWorld.tribeID, outsideWorld.state.update)
+            && trap.isOpenFor(outsideWorld.state.update, outsideWorld.tribeID)
         ) {
-            trap.feed(outsideWorld.tribeID, outsideWorld.state.update);
+            trap.feed(outsideWorld.state.update, outsideWorld.tribeID);
             playSound(trap.tile.sound);
             become(Ac.nothing);
             return;
