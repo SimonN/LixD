@@ -105,7 +105,9 @@ preparePlayers(Game game) { with (game)
     // Make one singleplayer tribe. DTODONETWORK: Query the network to make
     // the correct number of tribes, with the correct masters in each.
     cs.tribes ~= new Tribe();
-    cs.tribes[0].masters ~= Tribe.Master(0, basics.globconf.userName);
+    import basics.nettypes; // PlNr
+    cs.tribes[0].masters ~= Tribe.Master(PlNr(0), basics.globconf.userName);
+
     _indexTribeLocal  = 0;
     _indexMasterLocal = 0;
     effect.tribeLocal = 0;

@@ -394,9 +394,9 @@ loadFromFile(Filename fn)
         if (   i.text1 == replayPlayer
             || i.text1 == replayFriend
         ) {
-            addPlayer(i.nr1 & 0xFF, stringToStyle(i.text2), i.text3);
+            addPlayer(PlNr(i.nr1 & 0xFF), stringToStyle(i.text2), i.text3);
             if (i.text1 == replayPlayer)
-                playerLocal = i.nr1 & 0xFF;
+                playerLocal = PlNr(i.nr1 & 0xFF);
         }
         break;
 

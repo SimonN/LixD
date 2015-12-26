@@ -4,16 +4,18 @@ module basics.nettypes;
  */
 
 import std.bitmanip;
-import std.c.string : memmove;
+import std.c.string; // memmove
 import std.conv;
 import std.random;
 
 import derelict.enet.enet;
 
 import basics.help;
-import lix.enums : Ac;
+import lix.enums; // Ac
 
-alias PlNr = ubyte;
+// make function interfaces more typesafe
+struct PlNr   { ubyte n; alias n this; }
+struct Update { int u;   alias u this; }
 
 enum : int {
     NETWORK_PROTOCOL_VERSION = 2,
@@ -113,7 +115,7 @@ struct ReplayData {
     {
         assert (pck.data[0] == NETWORK_REPLAY_DATA,
             "don't call ReplayData(p) if p is not replay data");
-        player     = pck.data[1];
+        player     = PlNr(pck.data[1]);
         update     = bigEndianToNative!int(pck.data[4 ..  8]);
         toWhichLix = bigEndianToNative!int(pck.data[8 .. 12]);
 
@@ -134,7 +136,7 @@ class Permu {
     this(int newSize)
     {
         foreach (i; 0 .. newSize)
-            p ~= i & 0xFF;
+            p ~= PlNr(i & 0xFF);
         p.randomShuffle;
     }
 
@@ -157,13 +159,13 @@ class Permu {
     // Read in a string that is separated by any non-digit characters
     this(string src)
     {
-        PlNr nextID = 0;
+        PlNr nextID = PlNr(0);
         bool digitHasBeenRead = false;
 
         foreach (char c; src) {
             if (c >= '0' && c <= '9') {
-                nextID *= 10;
-                nextID += c - '0';
+                nextID.n *= 10;
+                nextID.n += c - '0';
                 digitHasBeenRead = true;
             }
             else if (digitHasBeenRead) {
@@ -171,6 +173,15 @@ class Permu {
                 digitHasBeenRead = false;
             }
         }
+        if (digitHasBeenRead)
+            p ~= nextID;
+    }
+
+    unittest {
+        Permu permu = new Permu("0 1 2 3");
+        assert (permu.size == 4);
+        permu = new Permu("this is 2 much 4 me");
+        assert (permu.size == 2);
     }
 
     @property int size() const { return p.len; }
@@ -181,7 +192,7 @@ class Permu {
             return p[id];
         else
             // outside of the permuted range, pad with the identity
-            return id & 0xFF;
+            return PlNr(id & 0xFF);
     }
 
     deprecated("cut off, or erase too high values?") void
