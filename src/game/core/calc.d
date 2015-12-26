@@ -28,7 +28,7 @@ createModalWindow(Game game)
     game.modalWindow =
         // multiplayer && ! replaying ? : ? : ? :
         new WindowDuringOffline();
-    addElder(game.modalWindow);
+    addFocus(game.modalWindow);
 }
 
 private void
@@ -36,7 +36,7 @@ calcModalWindow(Game game) { with (game)
 {
     void killWindow()
     {
-        rmElder(modalWindow);
+        rmFocus(modalWindow);
         modalWindow = null;
         game.setLastUpdateToNow();
     }
