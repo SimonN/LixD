@@ -10,7 +10,7 @@ module game.gui.wduring;
 import game.gui.gamewin;
 import gui;
 
-private enum butXl  = 100;
+private enum butXl  = 150;
 private enum butYsp =  10;
 private enum butYl  =  20;
 
@@ -26,8 +26,8 @@ class WindowDuringOffline : GameWindow {
     this()
     {
         enum numButtons = 4;
-        super(new Geom(0, 0, 140, 60 + (numButtons - 1) * butYsp
-                                     +  numButtons      * butYl, From.CENTER));
+        super(new Geom(0, 0, butXl + 40, 60 + (numButtons - 1) * butYsp
+                        +  numButtons * butYl, From.CENTER));
         int y = 40;
         _resume     = addButton(y);
         _restart    = addButton(y);
@@ -44,11 +44,12 @@ class WindowDuringNetwork : GameWindow {
     this()
     {
         enum numButtons = 4;
-        super(new Geom(0, 0, 140, 60 + (numButtons - 1) * butYsp
-                                     +  numButtons      * butYl, From.CENTER));
+        super(new Geom(0, 0, butXl + 40, 60 + (numButtons - 1) * butYsp
+                        +  numButtons * butYl, From.CENTER));
         int y = 40;
         _resume     = addButton(y);
         _saveReplay = addButton(y);
         _exitGame   = addButton(y);
+        super.captionGameWindowButtons();
     }
 }

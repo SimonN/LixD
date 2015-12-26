@@ -7,16 +7,17 @@ module game.core.game;
  * but everything is package (accessible from files in same directory).
  */
 
-public import basics.cmdargs : Runmode;
+public import basics.cmdargs; // Runmode;
 
-import std.algorithm : find;
+import std.algorithm; // find;
 
 import basics.alleg5;
 import basics.globals;
-import basics.help : len;
-import basics.nettypes : ReplayData;
+import basics.help; // len;
+import basics.nettypes; // ReplayData
 import file.filename;
 import game.core;
+import game.gui.gamewin;
 import graphic.color;
 import graphic.map;
 import gui;
@@ -71,6 +72,8 @@ package:
     // the replay right before the update happens. If the replay is cut off,
     // the undispatched data is not cut off with it.
     ReplayData[] undispatchedAssignments;
+
+    GameWindow modalWindow;
 
     int _profilingGadgetCount;
 

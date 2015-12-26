@@ -102,6 +102,9 @@ kill()
 void
 calc()
 {
+    hardware.mousecur.mouseCursor.xf = 0;
+    hardware.mousecur.mouseCursor.yf = 0;
+
     hardware.display .calc();
     hardware.keyboard.calc();
     hardware.mouse   .calc();

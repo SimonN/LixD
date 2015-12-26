@@ -53,6 +53,8 @@ implGameDestructor(Game game)
 {
     if (game.pan)
         gui.rmElder(game.pan);
+    if (game.modalWindow)
+        gui.rmElder(game.modalWindow);
     if (game.replay)
         game.replay.saveAsAutoReplay(game.level, game.singlePlayerHasWon);
     if (game.physicsDrawer)
