@@ -18,7 +18,7 @@ class TextButton : Button {
 
     enum textXFromLeft = Geom.thickg * 2; // *2 for nice spacing at ends
 
-    this(Geom g)
+    this(Geom g, string caption = "")
     {
         super(g);
         // the text should not be drawn on the 3D part of the button, but only
@@ -37,6 +37,9 @@ class TextButton : Button {
         checkGeom.parent = this.geom;
 
         addChildren(left, leftCheck, center, centerCheck);
+
+        if (caption != "")
+            text = caption;
     }
 
     @property bool alignLeft() const { return _alignLeft;                }

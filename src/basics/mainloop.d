@@ -19,8 +19,9 @@ import game.core;
 import file.log; // logging uncaught Exceptions
 import hardware.display;
 import hardware.keyboard;
-import menu.mainmenu;
 import menu.browsin;
+import menu.mainmenu;
+import menu.options;
 
 static import gui;
 static import hardware.mousecur;
@@ -63,6 +64,7 @@ private:
 
     MainMenu mainMenu;
     BrowserSingle browSin;
+    OptionsMenu optionsMenu;
 
     Game game;
 
@@ -87,6 +89,10 @@ kill()
         destroy(browSin); // DTODO: check what is best here. There is a
                            // Torbit to be destroyed in the browser's preview.
         browSin = null;
+    }
+    if (optionsMenu) {
+        gui.rmElder(optionsMenu);
+        optionsMenu = null;
     }
     if (demo) {
         demo = null;
@@ -129,6 +135,11 @@ calc()
             kill();
             demo = new Demo;
         }
+        else if (mainMenu.gotoOptions) {
+            kill();
+            optionsMenu = new OptionsMenu;
+            gui.addElder(optionsMenu);
+        }
         else if (mainMenu.gotoBench) {
             kill();
             bench = new Benchmark;
@@ -145,6 +156,13 @@ calc()
             game = new Game(Runmode.INTERACTIVE, lv, fn);
         }
         else if (browSin.gotoMainMenu) {
+            kill();
+            mainMenu = new MainMenu;
+            gui.addElder(mainMenu);
+        }
+    }
+    else if (optionsMenu) {
+        if (optionsMenu.gotoMainMenu) {
             kill();
             mainMenu = new MainMenu;
             gui.addElder(mainMenu);
