@@ -152,7 +152,7 @@ calc()
     }
     else if (game) {
         game.calc();
-        if (game.gotoMenu) {
+        if (game.gotoMainMenu) {
             kill();
             browSin = new BrowserSingle;
             gui.addElder(browSin);

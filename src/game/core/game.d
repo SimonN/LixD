@@ -25,7 +25,7 @@ import level.level;
 
 class Game {
 
-    @property bool gotoMenu() { return _gotoMenu; }
+    @property bool gotoMainMenu() { return _gotoMainMenu; }
 
     enum ticksNormalSpeed   = 4;
     enum updatesDuringTurbo = 9;
@@ -45,7 +45,7 @@ class Game {
 
 package:
 
-    bool _gotoMenu;
+    bool _gotoMainMenu;
     immutable Runmode runmode;
 
     Level     level;

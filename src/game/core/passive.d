@@ -12,9 +12,6 @@ import hardware.mousecur;
 package void
 calcPassive(Game game) { with (game)
 {
-    if (keyTapped(ALLEGRO_KEY_ESCAPE))
-        game._gotoMenu = true;
-
     if (pan.zoom.execute)
         map.zoom = (map.zoom < 4) ? (map.zoom * 2) : 1;
 

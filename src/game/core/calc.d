@@ -65,7 +65,7 @@ calcModalWindow(Game game) { with (game)
         killWindow();
     }
     else if (modalWindow.exitGame) {
-        _gotoMenu = true;
+        _gotoMainMenu = true;
         killWindow();
     }
 }}
