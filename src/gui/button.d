@@ -34,26 +34,8 @@ class Button : Element {
     @property bool execute() const              { return _execute; }
     @property void onExecute(void delegate() f) { _onExecute = f;  }
 
-    @property bool down() const { return _down; }
-    @property bool on  () const { return _on;   }
-
-    @property bool down(in bool b)
-    {
-        if (_down != b) {
-            _down = b;
-            reqDraw();
-        }
-        return _down;
-    }
-
-    @property bool on(in bool b)
-    {
-        if (_on != b) {
-            _on = b;
-            reqDraw();
-        }
-        return _on;
-    }
+    mixin (GetSetWithReqDraw!"down");
+    mixin (GetSetWithReqDraw!"on");
 
     AlCol colorText() { return _on && ! _down ? color.guiTextOn
                                               : color.guiText; }

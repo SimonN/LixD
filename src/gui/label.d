@@ -29,9 +29,10 @@ class Label : Element {
         shorten_text();
     }
 
-    @property string    text   () const { return _text;  }
-    @property Geom.From aligned() const { return geom.xFrom; }
-    @property AlCol     color  () const { return _color; }
+    @property const(AlFont) font()    const { return _font; }
+    @property string        text()    const { return _text; }
+    @property Geom.From     aligned() const { return geom.xFrom; }
+    @property AlCol         color()   const { return _color; }
 
     nothrow @property int get_number() const
     {
@@ -91,10 +92,10 @@ body {
             return al_get_text_width(_font, s.toStringz());
         }
 
-        _shortened = (textwidth(text) >= xls);
+        _shortened = (textwidth(text) > xls);
         if (_shortened) {
             while (_textShort.length > 0
-                && textwidth(_textShort ~ abbreviationSuffix) >= xls
+                && textwidth(_textShort ~ abbreviationSuffix) > xls
             ) {
                 _textShort = backspace(_textShort);
             }

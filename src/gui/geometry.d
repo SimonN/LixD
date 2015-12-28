@@ -93,7 +93,7 @@ class Geom {
     private static const _screenYlg = 480f; // others will change, this won't
     private static float _screenXls = 640;
     private static float _screenYls = 480;
-    private static float stretchFactor   = 1.0;
+    private static float _stretchFactor   = 1.0;
     private static int   screenThickness = 2;
 
     @property static int   thickg() { return 2; }
@@ -103,6 +103,7 @@ class Geom {
     @property static float screenYlg() { return _screenYlg; }
     @property static float screenXls() { return _screenXls; }
     @property static float screenYls() { return _screenYls; }
+    @property static float stretchFactor() { return _stretchFactor; }
 
     @property static float
     mapYls()
@@ -126,8 +127,8 @@ class Geom {
         return mapYls;
     }
 
-    @property static float panelYls() { return screenYls - mapYls;       }
-    @property static float panelYlg() { return panelYls / stretchFactor; }
+    @property static float panelYls() { return screenYls - mapYls;        }
+    @property static float panelYlg() { return panelYls / _stretchFactor; }
 
     // this function is called from gui.root, when that is initialized
     static void
@@ -135,12 +136,12 @@ class Geom {
     {
         _screenXls     = _xl;
         _screenYls     = _yl;
-        stretchFactor  = _screenYls / _screenYlg;
-        _screenXlg     = _screenXls / stretchFactor;
+        _stretchFactor = _screenYls / _screenYlg;
+        _screenXlg     = _screenXls / _stretchFactor;
 
-        screenThickness = std.math.floor(2.0 * stretchFactor).to!int;
+        screenThickness = std.math.floor(2.0 * _stretchFactor).to!int;
 
-        graphic.gralib.setScaleFromGui(stretchFactor);
+        graphic.gralib.setScaleFromGui(_stretchFactor);
     }
 
 
@@ -168,10 +169,10 @@ class Geom {
     @property float xlg() const { return xl; }
     @property float ylg() const { return yl; }
 
-    @property float xs()  const { return xg  * stretchFactor; }
-    @property float ys()  const { return yg  * stretchFactor; }
-    @property float xls() const { return xlg * stretchFactor; }
-    @property float yls() const { return ylg * stretchFactor; }
+    @property float xs()  const { return xg  * _stretchFactor; }
+    @property float ys()  const { return yg  * _stretchFactor; }
+    @property float xls() const { return xlg * _stretchFactor; }
+    @property float yls() const { return ylg * _stretchFactor; }
 
 
 

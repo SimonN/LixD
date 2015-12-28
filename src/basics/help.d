@@ -77,6 +77,7 @@ escapeStringForFilename(string unescapedRemainder)
 
 unittest {
     assert (escapeStringForFilename("hallo") == "hallo");
+    assert (escapeStringForFilename("don't/use/dirs") == "dontusedirs");
     assert (escapeStringForFilename("Ä ö Ü ß") == "ÄöÜß");
     assert (escapeStringForFilename(":D ^_^ :-|") == "D_-");
     assert (escapeStringForFilename(".,123") == "123");

@@ -20,4 +20,5 @@ public import gui.listdir;
 public import gui.listfile;
 public import gui.listlev;
 public import gui.root;
+public import gui.texttype;
 public import gui.window;

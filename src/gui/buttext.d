@@ -18,6 +18,11 @@ class TextButton : Button {
 
     enum textXFromLeft = Geom.thickg * 2; // *2 for nice spacing at ends
 
+    static Geom newGeomForLeftAlignedLabelInside(in Geom g)
+    {
+        return new Geom(textXFromLeft, 0, g.xl - 2 * textXFromLeft, 0);
+    }
+
     this(Geom g, string caption = "")
     {
         super(g);
@@ -26,10 +31,9 @@ class TextButton : Button {
         // The checkmark already accounts for this.
         // The checkmark is at the right of the button, for all text aligns.
         alias th  = textXFromLeft;
-        alias lef = Geom.From.LEFT;
         alias ctr = Geom.From.CENTER;
-        left        = new Label(new Geom(th, 0, g.xl - 2*th,     0, lef));
-        leftCheck   = new Label(new Geom(th, 0, g.xl - th-chXlg, 0, lef));
+        left        = new Label(newGeomForLeftAlignedLabelInside(g));
+        leftCheck   = new Label(new Geom(th, 0, g.xl - th-chXlg, 0));
         center      = new Label(new Geom(0,  0, g.xl - 1*th,     0, ctr));
         centerCheck = new Label(new Geom(0,  0, g.xl - 2*chXlg,  0, ctr));
 

@@ -1,6 +1,7 @@
 module gui.element;
 
 import std.algorithm;
+import std.string; // format, for string mixin GetSetWithDrawReq
 
 import basics.alleg5;
 import graphic.color;
@@ -255,3 +256,18 @@ draw3DButton(
 
 }
 // end class
+
+template GetSetWithReqDraw(string s)
+{
+    enum string GetSetWithReqDraw = q{
+        @property typeof(_%s) %s() const { return _%s; }
+        @property typeof(_%s) %s(in typeof(_%s) arg)
+        {
+            if (_%s == arg)
+                return arg;
+            _%s = arg;
+            reqDraw();
+            return arg;
+        }
+    }.format(s, s, s, s, s, s, s, s);
+}
