@@ -12,6 +12,7 @@ import basics.globconf;
 import basics.user;
 import file.language;
 import gui;
+import hardware.mouse; // RMB to OK the window away
 import menu.opthelp;
 
 class OptionsMenu : Window {
@@ -22,25 +23,6 @@ class OptionsMenu : Window {
 private:
 
     bool _gotoMainMenu;
-
-    enum : float {
-        checkX   =  20,
-        checkNx  =  60,
-        otherX   = 300,
-        otherNx  = 460,
-
-        buttonXl = 140,
-        keyXl    =  70,
-        frameY   = 320,
-        frameYl  = 100,
-
-        keyB1    =  20,
-        keyT1    =  40 + keyXl,
-        keyB2    = 220,
-        keyT2    = 240 + keyXl,
-        keyB3    = 420,
-        keyT3    = 440 + keyXl,
-    }
 
     TextButton okay;
     TextButton cancel;
@@ -73,7 +55,7 @@ public this()
 
 public override void calcSelf()
 {
-    if (okay.execute) {
+    if (okay.execute || hardware.mouse.mouseClickRight) {
         foreach (enumVal, group; groups)
             group.each!(option => option.saveValue);
         basics.user    .save();
@@ -94,14 +76,35 @@ private void showGroup(in OptionGroup gr)
     }
 }
 
+int debugging = 5;
+
 private void populateOptionGroups()
 {
-    auto fac = OptionFactory(20, 100, 200, 20);
-    fac.incrementY = 30;
+    enum optionsBeginY  = 100;
+    enum checkboxRowX   =  20;
+    enum longButtonRowX = 280;
 
-    groups[OptionGroup.general] = [
-        fac.factory!CheckboxOption(Lang.optionUserNameAsk.transl, &userNameAsk),
+    auto fac = OptionFactory(checkboxRowX, optionsBeginY,
+                longButtonRowX - checkboxRowX);
+    groups[OptionGroup.general] ~= [
+        fac.factory!BoolOption(Lang.optionUserNameAsk.transl, &userNameAsk),
     ];
+
+    fac = OptionFactory(longButtonRowX, optionsBeginY,
+            this.xlg - longButtonRowX - checkboxRowX);
+    groups[OptionGroup.general] ~= [
+        fac.factory!TextOption(Lang.optionUserName.transl, &userName),
+    ];
+
+    // DTODO: move this to different OptionGroup once tabs are implemented
+    groups[OptionGroup.general] ~= [
+        fac.factory!ResolutionOption(Lang.optionScreenResolution.transl,
+            &screenResolutionX, &screenResolutionY),
+        fac.factory!ResolutionOption(Lang.optionScreenWindowedRes.transl,
+            &screenWindowedX, &screenWindowedY),
+        fac.factory!NumberOption("wurst Test", &debugging),
+    ];
+
 }
 
 }
