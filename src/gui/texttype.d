@@ -148,8 +148,7 @@ private:
 
     bool textTooLong()
     {
-        return ! _allowScrolling && _label.xls < al_get_text_width(
-            cast (AlFont) _label.font, (_text ~ caretChar).toStringz());
+        return ! _allowScrolling && _label.tooLong(_text ~ caretChar);
     }
 
     void pruneDigits()

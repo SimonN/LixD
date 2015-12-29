@@ -5,8 +5,9 @@ module gui.label;
  */
 
 import std.conv;
-import std.string; // toStringz, since shortening strings is not a member of
-                   // basics.help anymore
+import std.range;  // walkLength
+import std.string; // toStringz
+import std.uni;    // .byGrapheme.walkLength, find size of displayed string
 
 import basics.alleg5; // filled rectangle undraw
 import basics.help; // backspace when shortening a string
@@ -16,7 +17,8 @@ import gui;
 
 class Label : Element {
 
-    enum string abbreviationSuffix = ".";
+    enum string abbrevSuffix      = ".";
+    enum int    fixedGeomsPerChar = 10;
 
     this(Geom g, string s = "")
     {
@@ -29,16 +31,11 @@ class Label : Element {
         shorten_text();
     }
 
-    @property const(AlFont) font()    const { return _font; }
-    @property string        text()    const { return _text; }
-    @property Geom.From     aligned() const { return geom.xFrom; }
-    @property AlCol         color()   const { return _color; }
-
-    nothrow @property int get_number() const
-    {
-        try return text.to!int;
-        catch (Exception) return 0;
-    }
+    @property const(AlFont) font()      const { return _font;      }
+    @property string        text()      const { return _text;      }
+    @property Geom.From     aligned()   const { return geom.xFrom; }
+    @property AlCol         color()     const { return _color;     }
+    @property bool          shortened() const { return _shortened; }
 
     @property font  (AlFont f) { _font  = f; shorten_text(); return _font; }
     @property text  (string s) { _text  = s; shorten_text(); return _text; }
@@ -47,6 +44,13 @@ class Label : Element {
     @property fixed (bool   b) { _fixed = b; shorten_text(); return b;     }
 
     override string toString() const { return "Label-`" ~ _text ~ "'"; }
+
+    bool tooLong(string s)
+    {
+        return (! s.len)  ? false
+            :  (! _fixed) ? xls < al_get_text_width(font, s.toStringz)
+            :               xlg < s.byGrapheme.walkLength * fixedGeomsPerChar;
+    }
 
 private:
 
@@ -70,14 +74,10 @@ body {
     _textShort = _text;
     _shortened = false;
 
-    if (! text.length) {
+    if (! text.length)
         return;
-    }
     else if (_fixed) {
-        immutable one_char_geoms = 10;
-        while (_textShort.length > 0
-            && _textShort.length * one_char_geoms > xlg
-        ) {
+        while (tooLong(_textShort)) {
             _shortened = true;
             if (aligned == Geom.From.RIGHT)
                 _textShort = _textShort[1 .. $];
@@ -86,20 +86,11 @@ body {
         }
     }
     else {
-        // variable-width character printing length must be measured by A5
-        int textwidth(in string s)
-        {
-            return al_get_text_width(_font, s.toStringz());
-        }
-
-        _shortened = (textwidth(text) > xls);
+        _shortened = tooLong(_text);
         if (_shortened) {
-            while (_textShort.length > 0
-                && textwidth(_textShort ~ abbreviationSuffix) > xls
-            ) {
+            while (_textShort.length > 0 && tooLong(_textShort ~ abbrevSuffix))
                 _textShort = backspace(_textShort);
-            }
-            _textShort ~= abbreviationSuffix;
+            _textShort ~= abbrevSuffix;
         }
     }
 }
