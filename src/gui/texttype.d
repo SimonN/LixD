@@ -1,5 +1,11 @@
 module gui.texttype;
 
+/* A GUI element to enter numbers or text by typing on the keyboard.
+ * Can be set to accept only digits. There is potential to improve this,
+ * by choosing more carefully where pruneText() and pruneDigits() are called.
+ * Maybe it should be abstract, with subclasses for different allowed chars.
+ */
+
 import std.conv; // filter result to string
 import std.algorithm; // filter
 import std.string; // stringz
@@ -59,7 +65,6 @@ public:
 
     @property nothrow int number() const
     {
-        assert (allowedChars == AllowedChars.digits);
         try               return _text.to!int;
         catch (Exception) return 0;
     }

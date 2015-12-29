@@ -26,6 +26,7 @@ private:
 
     TextButton okay;
     TextButton cancel;
+    Frame explainer;
 
     enum OptionGroup {
         general, graphics, controls, gameKeys, editorKeys, menuKeys
@@ -50,6 +51,9 @@ public this()
     addChildren(okay, cancel);
     okay  .hotkey = basics.user.keyMenuOkay;
     cancel.hotkey = basics.user.keyMenuExit;
+
+    explainer = new Frame(new Geom(0, 60, xlg - 40, 40, From.BOTTOM));
+    addChild(explainer);
 
     void mkGrpButton(OptionGroup grp, Lang cap)
     {
