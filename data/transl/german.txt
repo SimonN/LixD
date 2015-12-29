@@ -284,13 +284,13 @@ $netGameOvertime4Sec       Sekunden!
 
 // Optionsfenster
 $optionTitle                  Optionen
-$optionGroup0                Allgemein
-$optionGroup1                Steuerg.
-$optionGroup2                Hotkeys
-$optionGroup3                Editor
-$optionGroup4                Menü
-$optionGroup5                Grafik
-$optionGroup6                Audio
+$optionGroupGeneral           Allgemein
+$optionGroupGraphics          Grafik
+$optionGroupControls          Steuerung
+$optionGroupGameKeys          Spieltasten
+$optionGroupEditorKeys        Editortasten
+$optionGroupMenuKeys          Menütasten
+$optionGroupSound             Audio
 $optionUserName              Spielername
 $optionUserNameAsk          Namensfrage bei Start
 $optionReplayAutoMax        Max. Auto-Replays

@@ -11,6 +11,7 @@ module menu.browbase;
 
 import std.conv;
 
+import basics.user; // hotkeys
 import file.filename;
 import file.language;
 import gui;
@@ -115,7 +116,10 @@ this(
         this.highlight(null);
 
     buttonPlay.text = Lang.browserPlay.transl;
+    buttonPlay.hotkey = basics.user.keyMenuOkay;
+
     buttonExit.text = Lang.commonBack.transl;
+    buttonExit.hotkey = basics.user.keyMenuExit;
     buttonExit.onExecute = () { _gotoMainMenu = true; };
 
     addChildren(preview, dirList, levList, buttonPlay, buttonExit);

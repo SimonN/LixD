@@ -297,13 +297,13 @@ $netGameOvertime4Sec        seconds will begin!
 // Optionsfenster
 
 $optionTitle                   Options
-$optionGroup0                 General
-$optionGroup1                 Controls
-$optionGroup2                 Hotkeys
-$optionGroup3                 Editor
-$optionGroup4                 Menu
-$optionGroup5                 Graphics
-$optionGroup6                 Sound
+$optionGroupGraphics           Graphics
+$optionGroupGeneral            General
+$optionGroupControls           Controls
+$optionGroupGameKeys           Game keys
+$optionGroupEditorKeys         Editor keys
+$optionGroupMenuKeys           Menu keys
+$optionGroupSound              Sound
 $optionUserName               Player name
 $optionUserNameAsk           Ask for name on startup
 $optionLanguage                Language
@@ -324,7 +324,7 @@ $optionPriorityInvertMiddle          Middle button inverts priority
 $optionPriorityInvertRight           Right button inverts priority
 
 $optionScreenWindowed         Windowed mode*
-$optionScreenResolution       Fullscreen resol.**
+$optionScreenResolution       Fullscreen resolution**
 $optionScreenWindowedRes     Windowed resolution
 $optionScreenVsync            Wait for V-sync
 $optionArrowsReplay           Arrows during replays
