@@ -79,13 +79,13 @@ private:
 public:
 
 this(
-    in string      windowTitle,
+    in string      title,
     in Filename    baseDir,
        Filename    currentFile,
     UseCheckmarks  useCheckmarks = UseCheckmarks.no,
     UseReplayStyle replayStyle   = UseReplayStyle.no
 ) {
-    super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg), windowTitle);
+    super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg), title);
 
     immutable int lxlg = to!int(Geom.screenXlg - 100 - 140 - 4*20);
 
@@ -120,7 +120,7 @@ this(
 
     addChildren(preview, dirList, levList, buttonPlay, buttonExit);
 
-    subtitle = dirList.currentDir.rootless;
+    windowSubtitle = dirList.currentDir.rootless;
 }
 
 
@@ -155,7 +155,7 @@ protected override void
 calcSelf()
 {
     if (dirList.clicked) {
-        subtitle = dirList.currentDir.rootless;
+        windowSubtitle = dirList.currentDir.rootless;
         if (fileRecent &&
             fileRecent.dirRootless == dirList.currentDir.dirRootless)
             highlight(fileRecent);

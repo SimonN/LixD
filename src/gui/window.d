@@ -25,11 +25,11 @@ class Window : Element {
         prepare();
     }
 
-    @property auto torbit()   const   { return guiosd;    }
-    @property auto title()    const   { return _title;    }
-    @property auto subtitle() const   { return _subtitle; }
-    @property void title   (string s) { _title    = s; prepare(); }
-    @property void subtitle(string s) { _subtitle = s; prepare(); }
+    @property torbit()         const   { return guiosd;    }
+    @property windowTitle()    const   { return _title;    }
+    @property windowSubtitle() const   { return _subtitle; }
+    @property windowTitle   (string s) { _title    = s; prepare(); return s; }
+    @property windowSubtitle(string s) { _subtitle = s; prepare(); return s; }
 
     override void hideAllChildren()
     {
@@ -47,7 +47,9 @@ private:
 
     void prepare()
     {
-        labelTitle.text = subtitle.length ? title ~ " - " ~ subtitle : title;
+        labelTitle.text = _subtitle.length
+            ? _title ~ " \u2013 " ~ _subtitle // unicode glyph is the en-dash
+            : _title;
         reqDraw();
     }
 

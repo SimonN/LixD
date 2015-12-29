@@ -1,6 +1,15 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.21
+------
+
+2015-12-29
+
+Implemented goals (exits), triggered traps, and dying outside of the level.
+Implemented the Esc-during-level menu and the end-of-level menu. No browser
+to save/view replays yet. Begun implementing the options menu.
+
 0.1.17
 ------
 

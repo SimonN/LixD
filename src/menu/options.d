@@ -37,9 +37,15 @@ private:
 
 public this()
 {
-    super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg), Lang.optionTitle.transl);
-    okay   = new TextButton(new Geom(-60, 20, 100, 20, From.BOTTOM), Lang.commonOk.transl);
-    cancel = new TextButton(new Geom( 60, 20, 100, 20, From.BOTTOM), Lang.commonCancel.transl);
+    super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg));
+    windowTitle = Lang.optionTitle.transl;
+
+    Geom okayCancelGeom(in int x)
+    {
+        return new Geom(x, 20, 100, 20, From.BOTTOM);
+    }
+    okay   = new TextButton(okayCancelGeom(-60), Lang.commonOk.transl);
+    cancel = new TextButton(okayCancelGeom( 60), Lang.commonCancel.transl);
     addChildren(okay, cancel);
 
     populateOptionGroups();
@@ -76,8 +82,6 @@ private void showGroup(in OptionGroup gr)
     }
 }
 
-int debugging = 5;
-
 private void populateOptionGroups()
 {
     enum optionsBeginY  = 100;
@@ -102,7 +106,6 @@ private void populateOptionGroups()
             &screenResolutionX, &screenResolutionY),
         fac.factory!ResolutionOption(Lang.optionScreenWindowedRes.transl,
             &screenWindowedX, &screenWindowedY),
-        fac.factory!NumberOption("wurst Test", &debugging),
     ];
 
 }
