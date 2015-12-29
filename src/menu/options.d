@@ -119,26 +119,34 @@ private void populateOptionGroups()
     enum checkboxRowX   =  20;
     enum longButtonRowX = 280;
 
-    auto fac = OptionFactory(checkboxRowX, optionsBeginY,
-                longButtonRowX - checkboxRowX);
+    auto facLeft()  { return OptionFactory(checkboxRowX,   optionsBeginY,            longButtonRowX - checkboxRowX); }
+    auto facRight() { return OptionFactory(longButtonRowX, optionsBeginY, this.xlg - longButtonRowX - checkboxRowX); }
+
+    auto fac = facLeft();
     groups[OptionGroup.general] ~= [
         fac.factory!BoolOption(Lang.optionUserNameAsk.transl, &userNameAsk),
     ];
 
-    fac = OptionFactory(longButtonRowX, optionsBeginY,
-            this.xlg - longButtonRowX - checkboxRowX);
+    fac = facRight();
     groups[OptionGroup.general] ~= [
         fac.factory!TextOption(Lang.optionUserName.transl, &userName),
     ];
 
-    // DTODO: move this to different OptionGroup once tabs are implemented
-    groups[OptionGroup.general] ~= [
-        fac.factory!ResolutionOption(Lang.optionScreenResolution.transl,
-            &screenResolutionX, &screenResolutionY),
-        fac.factory!ResolutionOption(Lang.optionScreenWindowedRes.transl,
-            &screenWindowedX, &screenWindowedY),
-    ];
+    auto guiCol = NumPickConfig();
+    guiCol.max    = 240;
+    guiCol.digits = 3;
+    guiCol.hex    = true;
+    guiCol.stepMedium = 0x10;
+    guiCol.stepSmall  = 0x02;
 
+    fac = facRight();
+    groups[OptionGroup.graphics] ~= [
+        fac.factory!ResolutionOption(Lang.optionScreenResolution.transl, &screenResolutionX, &screenResolutionY),
+        fac.factory!ResolutionOption(Lang.optionScreenWindowedRes.transl, &screenWindowedX, &screenWindowedY),
+        fac.factory!NumPickOption(guiCol, Lang.optionGuiColorRed.transl, &guiColorRed),
+        fac.factory!NumPickOption(guiCol, Lang.optionGuiColorGreen.transl, &guiColorGreen),
+        fac.factory!NumPickOption(guiCol, Lang.optionGuiColorBlue.transl, &guiColorBlue),
+    ];
 }
 
 }

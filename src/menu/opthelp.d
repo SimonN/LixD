@@ -51,6 +51,8 @@ struct OptionFactory {
     }
 }
 
+
+
 class BoolOption : Option
 {
     private Checkbox _checkbox;
@@ -68,6 +70,8 @@ class BoolOption : Option
     override void loadValue() { _checkbox.checked = *_target; }
     override void saveValue() { *_target = _checkbox.checked; }
 }
+
+
 
 class TextOption : Option
 {
@@ -91,7 +95,28 @@ class TextOption : Option
 
 
 
-alias NumberOption     = ManyNumbersOption!1;
+class NumPickOption : Option
+{
+    private NumPick _num;
+    private int*    _target;
+
+    this(Geom g, NumPickConfig cfg, string cap, int* t)
+    {
+        assert (t);
+        _num = new NumPick(new Geom(0, 0, mostButtonsXl, 20), cfg);
+        super(g, new Label(new Geom(mostButtonsXl + spaceGuiTextX, 0,
+                            g.xlg - mostButtonsXl + spaceGuiTextX, g.yl),
+                            cap));
+        addChild(_num);
+        _target = t;
+    }
+
+    override void loadValue() { _num.number = *_target; }
+    override void saveValue() { *_target = _num.number; }
+}
+
+
+
 alias ResolutionOption = ManyNumbersOption!2;
 
 class ManyNumbersOption (int fields) : Option

@@ -18,7 +18,8 @@ import gui;
 class Label : Element {
 
     enum string abbrevSuffix      = ".";
-    enum int    fixedGeomsPerChar = 10;
+    enum int    fixedCharXl       = 12; // most chars might occupy this much
+    enum int    fixedCharXSpacing = 10;
 
     this(Geom g, string s = "")
     {
@@ -49,7 +50,7 @@ class Label : Element {
     {
         return (! s.len)  ? false
             :  (! _fixed) ? xls < al_get_text_width(font, s.toStringz)
-            :               xlg < s.byGrapheme.walkLength * fixedGeomsPerChar;
+            :               xlg < s.byGrapheme.walkLength * fixedCharXl;
     }
 
 private:

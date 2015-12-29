@@ -189,8 +189,8 @@ final void draw()
 {
     if (! _hidden) {
         if (drawRequired) {
-            drawRequired = false;
             drawSelf();
+            drawRequired = false;
             drawn = true;
         }
         // In the options menu, all stuff has to be undrawn first, then

@@ -19,6 +19,7 @@ public import gui.label;
 public import gui.listdir;
 public import gui.listfile;
 public import gui.listlev;
+public import gui.numpick;
 public import gui.root;
 public import gui.texttype;
 public import gui.window;

@@ -186,7 +186,7 @@ void initialize()
     // Make GUI elements have the correct colors. We assume the user file
     // to have been loaded already, and therefore the correct GUI colors
     // have been computed.
-    eidrecol(fileImageApi_number);
+    eidrecol(fileImageGuiNumber);
     eidrecol(fileImageEdit_flip);
     eidrecol(fileImageEditHatch);
     eidrecol(fileImageEdit_panel);
