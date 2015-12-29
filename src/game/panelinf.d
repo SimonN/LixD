@@ -98,9 +98,8 @@ protected:
         down = false;
     }
 
-    override void drawSelf()
+    override void drawOntoButton()
     {
-        super.drawSelf();
         formatTargetDesc();
     }
 }

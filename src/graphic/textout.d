@@ -16,8 +16,9 @@ AlFont djvuS; // small font for editor's bitmap browser filenames
 AlFont djvuM; // medium font for most things, like button descriptions
 AlFont djvuL; // large font for number of skills in the game panel
 
-private float _shaOffset;    // x and y offset for printing the text shadow
-
+private float _shaOffset;   // x and y offset for printing the text shadow
+private float _djvuSYls;    // height of the small font in screen pixels,
+                            // used to print text at the bottom of a button
 private float _djvuMOffset; // Gui code should think this has a height of 20
                             // geoms, see gui.geometry. We compute this offset.
                             // This affects the y pos for djvuM. No other
@@ -25,6 +26,7 @@ private float _djvuMOffset; // Gui code should think this has a height of 20
 
 public @property float shaOffset()   { return _shaOffset;   }
 public @property float djvuMOffset() { return _djvuMOffset; }
+public @property float djvuSYls()    { return _djvuSYls;    }
 
 // legacy support: SiegeLord's D bindings don't have this enum flag yet in the
 // latest release. This flag is possible in Allegro 5.0 though. I should
@@ -73,6 +75,8 @@ void initialize()
     // subtracting descent_yls looks better somehow, even though it should
     // have been included in bounds_yls. The main goal is to make it look
     // nice on various screen sizes, not to make it theoretically correct.
+
+    _djvuSYls = al_get_font_line_height(djvuS);
 }
 
 

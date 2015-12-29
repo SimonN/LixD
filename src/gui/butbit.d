@@ -26,9 +26,8 @@ private:
 
 protected:
 
-    override void drawSelf()
+    override void drawOntoButton()
     {
-        super.drawSelf();
         immutable int yf = this.on && ! this.down ? 1 : 0;
 
         // center the image on the button

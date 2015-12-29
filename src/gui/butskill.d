@@ -100,9 +100,8 @@ protected:
         down = false;
     }
 
-    override void drawSelf()
+    override void drawOntoButton()
     {
-        super.drawSelf();
         _icon.x  = this.xs +   this.xls/2 - _icon.xl/2;
         _icon.y  = this.ys + 2*this.yls/3 - _icon.yl/2;
         _icon.yf = _number == 0 ? 1 : 0; // 0 == colorful, 1 == greyed out

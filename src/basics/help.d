@@ -110,17 +110,6 @@ destroyArray(T)(ref T arr)
 
 
 
-@property const(T)[]
-dupConst(T)(in const(T[]) arr)
-{
-    const(T)[] dupped;
-    foreach (ref const(T) element; arr)
-        dupped ~= element;
-    return dupped;
-}
-
-
-
 @property T[]
 clone(T)(in const(T)[] arr)
     if (is (T == class) || is (T == struct))

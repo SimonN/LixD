@@ -7,8 +7,11 @@ module gui.button;
  * b) To register a delegate f to be called back, use onExecute(f).
  */
 
+import std.conv;
+
 import basics.alleg5; // keyboard enum
 import graphic.color;
+import graphic.textout; // drawing the hotkey
 import gui;
 import hardware.keyboard;
 import hardware.mouse;
@@ -51,7 +54,14 @@ private:
 
     void delegate() _onExecute;
 
-
+    void drawHotkey()
+    {
+        string s = hotkeyString();
+        if (s.length)
+            drawTextRight(djvuS, s,
+                xs + xls - Geom.thicks,
+                ys + yls - Geom.thicks - djvuSYls, colorText);
+    }
 
 protected:
 
@@ -88,9 +98,7 @@ calcSelf()
         _onExecute();
 }
 
-
-
-override void
+final override void // override drawOntoButton instead
 drawSelf()
 {
     // select the colors according to the button's state
@@ -99,7 +107,14 @@ drawSelf()
     auto c3 = _down ? color.guiDownL : _on ? color.guiOnL : color.guiD;
 
     draw3DButton(xs, ys, xls, yls, c1, c2, c3);
+
+    drawOntoButton();
+    drawHotkey();
 }
+
+// override these if needed
+void   drawOntoButton() { }
+string hotkeyString()   { return hotkeyNiceShort(hotkey); }
 
 }
 // end class

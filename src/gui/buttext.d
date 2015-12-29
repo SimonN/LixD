@@ -77,10 +77,8 @@ private:
 
 
 protected override void
-drawSelf()
+drawOntoButton()
 {
-    super.drawSelf();
-
     auto labelList = [ center, centerCheck, left, leftCheck ];
     foreach (label; labelList)
         label.text = "";

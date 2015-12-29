@@ -7,6 +7,7 @@ module gui.buttwo;
  * Don't execute continuously on LMB hold after a while.
  */
 
+import basics.alleg5; // hotkeyNiceShort
 import basics.globals; // bitmap file for the spawnint button, doubleclick spd
 import graphic.cutbit;
 import graphic.gralib;
@@ -65,6 +66,13 @@ protected:
     }
     // end calcSelf
 
+    override string hotkeyString()
+    {
+        if (! hotkey && ! hotkeyRight) return null;
+        if (! hotkeyRight)             return hotkeyNiceShort(hotkey);
+        if (! hotkey)                  return hotkeyNiceShort(hotkeyRight);
+        return hotkeyNiceShort(hotkey) ~ "/" ~ hotkeyNiceShort(hotkeyRight);
+    }
 }
 // end class TwoTasksButton
 

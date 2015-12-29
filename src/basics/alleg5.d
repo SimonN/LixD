@@ -1,6 +1,9 @@
 module basics.alleg5;
 
+import std.conv;
 import std.string;
+import std.uni;
+import std.utf;
 
 import hardware.tharsis;
 
@@ -106,8 +109,6 @@ struct DrawingTarget
     }
 }
 
-
-
 struct Blender
 {
     private alias Bo = ALLEGRO_BLEND_OPERATIONS;
@@ -131,8 +132,6 @@ struct Blender
                        ALLEGRO_BLEND_MODE.ALLEGRO_INVERSE_ALPHA);
     }
 }
-
-
 
 struct LockReadWrite
 {
@@ -160,8 +159,6 @@ struct LockReadWrite
 
 }
 
-
-
 struct LockReadOnly
 {
     const(Albit) albit;
@@ -182,4 +179,33 @@ struct LockReadOnly
         if (albit)
             al_unlock_bitmap(cast (Albit) albit);
     }
+}
+
+
+
+// ############################################################################
+
+string hotkeyNiceBrackets(in int hotkey)
+{
+    Zone z = Zone(profiler, "hotkeyNiceBrackets");
+    if (hotkey <= 0 || ! al_is_keyboard_installed())
+        return null;
+    return "[" ~ hotkeyNiceShort(hotkey) ~ "]";
+}
+
+string hotkeyNiceShort(in int hotkey)
+{
+    string s = hotkeyNiceLong(hotkey);
+    return (s.length > 3) ? s[0 .. 3] : s;
+}
+
+string hotkeyNiceLong(in int hotkey)
+{
+    if (hotkey <= 0 || ! al_is_keyboard_installed())
+        return null;
+    string s = al_keycode_to_name(hotkey).to!string;
+    if (! s.length)
+        return null;
+    auto c = std.utf.decodeFront(s); // this cuts it off from s
+    return (std.uni.toUpper(c) ~ s.to!dstring).to!string;
 }
