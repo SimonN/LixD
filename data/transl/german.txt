@@ -209,7 +209,7 @@ $winScrollManual             Anfangs sichtbaren Bereich manuell festlegen
 $winScrollX                  X-Koordinate (0 = links)
 $winScrollY                  Y-Koordinate (0 = oben)
 $winScrollRed                  Hintergrund Rot
-$winScrollGreen                  Hintergrund Gruen
+$winScrollGreen                  Hintergrund Grün
 $winScrollBlue                  Hintergrund Blau
 $winScrollJump               Dorthin scrollen
 $winScrollCurrent            Aktuelle Position
@@ -324,7 +324,7 @@ $optionDebrisType            Truemmer-Aussehen
 $optionDebrisTypeStars      Sterne, Wolken
 $optionDebrisTypePixels     Pixel
 $optionGuiColorRed          Menüfarbe Rot
-$optionGuiColorGreen        Menüfarbe Gruen
+$optionGuiColorGreen        Menüfarbe Grün
 $optionGuiColorBlue         Menüfarbe Blau
 $optionInfo                   *) [Alt] + [Enter] wechselt jederzeit zwischen Fenster- und Vollbildmodus.
 $optionGfxZero               **) Setze beides auf 0, um deine normale Desktop-Aufloesung zu nutzen.

@@ -9,10 +9,23 @@ import basics.user;
 
 public ColorPrivate color;
 
-void initialize()   { if (color) destroy(color); color = new ColorPrivate(); }
+void initialize()
+{
+    computeColors(basics.user.guiColorRed,
+                  basics.user.guiColorGreen,
+                  basics.user.guiColorBlue);
+}
+
 void deinitialize() { destroy(color); color = null; }
 
-void compute_new_userColors() { initialize(); }
+void computeColors(in int r, in int g, in int b)
+{
+    if (color)
+        destroy(color);
+    color = new ColorPrivate(r, g, b);
+}
+
+
 
 private class ColorPrivate {
 
@@ -73,9 +86,16 @@ private class ColorPrivate {
 
 private:
 
+    int _guiColorRed, _guiColorGreen, _guiColorBlue;
+
     AlCol make_sepia(in float li);
 
-    this() {
+    this(in int _r, in int _g, in int _b)
+    {
+        _guiColorRed   = _r;
+        _guiColorGreen = _g;
+        _guiColorBlue  = _b;
+
         //                    red   green blue  alpha
         bad           = AlCol(0.00, 0.00, 0.00, 0.5);
         transp        = AlCol(0.00, 0.00, 0.00, 0  );
@@ -128,9 +148,9 @@ private:
         else if (light >= 1.0) return AlCol(1, 1, 1, 1);
 
         // the user file suggests a base color via integers in 0 .. 255+1
-        alias r = guiColorRed;
-        alias g = guiColorGreen;
-        alias b = guiColorBlue;
+        alias r = _guiColorRed;
+        alias g = _guiColorGreen;
+        alias b = _guiColorBlue;
         r = (r > 0xFF ? 0xFF : r < 0 ? 0 : r);
         g = (g > 0xFF ? 0xFF : g < 0 ? 0 : g);
         b = (b > 0xFF ? 0xFF : b < 0 ? 0 : b);

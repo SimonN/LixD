@@ -100,6 +100,9 @@ class NumPickOption : Option
     private NumPick _num;
     private int*    _target;
 
+    // hack, to enable immediate updates of the GUI menu colors
+    public @property inout(NumPick) num() inout { return _num; }
+
     this(Geom g, NumPickConfig cfg, string cap, int* t)
     {
         assert (t);

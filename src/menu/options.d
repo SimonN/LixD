@@ -12,6 +12,7 @@ import basics.globconf;
 import basics.user;
 import file.language;
 import gui;
+import graphic.color;
 import hardware.mouse; // RMB to OK the window away
 import menu.opthelp;
 
@@ -34,6 +35,9 @@ private:
 
     Enumap!(OptionGroup, TextButton) groupButtons;
     Enumap!(OptionGroup, Option[]) groups;
+
+    // extra references to what's in the groups, to update color immediately
+    NumPick guiRed, guiGreen, guiBlue;
 
 
 
@@ -93,7 +97,14 @@ public override void calcSelf()
         _gotoMainMenu = true;
     }
     else if (cancel.execute) {
+        graphic.color.initialize(); // throw away just-in-time computed colors
         _gotoMainMenu = true;
+    }
+    else if (guiRed.execute || guiGreen.execute || guiBlue.execute) {
+        computeColors(guiRed.number, guiGreen.number, guiBlue.number);
+        reqDraw();
+        guiRed.undrawColor = guiGreen.undrawColor
+                           = guiBlue .undrawColor = color.guiM;
     }
 }
 
@@ -132,21 +143,26 @@ private void populateOptionGroups()
         fac.factory!TextOption(Lang.optionUserName.transl, &userName),
     ];
 
-    auto guiCol = NumPickConfig();
-    guiCol.max    = 240;
-    guiCol.digits = 3;
-    guiCol.hex    = true;
-    guiCol.stepMedium = 0x10;
-    guiCol.stepSmall  = 0x02;
 
     fac = facRight();
     groups[OptionGroup.graphics] ~= [
         fac.factory!ResolutionOption(Lang.optionScreenResolution.transl, &screenResolutionX, &screenResolutionY),
         fac.factory!ResolutionOption(Lang.optionScreenWindowedRes.transl, &screenWindowedX, &screenWindowedY),
+    ];
+    auto guiCol   = NumPickConfig();
+    guiCol.max    = 240;
+    guiCol.digits = 3;
+    guiCol.hex    = true;
+    guiCol.stepMedium = 0x10;
+    guiCol.stepSmall  = 0x02;
+    groups[OptionGroup.graphics] ~= [
         fac.factory!NumPickOption(guiCol, Lang.optionGuiColorRed.transl, &guiColorRed),
         fac.factory!NumPickOption(guiCol, Lang.optionGuiColorGreen.transl, &guiColorGreen),
         fac.factory!NumPickOption(guiCol, Lang.optionGuiColorBlue.transl, &guiColorBlue),
     ];
+    guiRed   = (cast (NumPickOption) groups[OptionGroup.graphics][$-3]).num;
+    guiGreen = (cast (NumPickOption) groups[OptionGroup.graphics][$-2]).num;
+    guiBlue  = (cast (NumPickOption) groups[OptionGroup.graphics][$-1]).num;
 }
 
 }
