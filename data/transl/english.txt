@@ -310,18 +310,18 @@ $optionLanguage                Language
 $optionReplayAutoMax         Max. auto replays
 $optionReplayAutoSingle      Auto replay in Singleplayer
 $optionReplayAutoMulti       Auto replay in Multiplayer
-$optionReplayCancel           Replay ends: normal speed...
-$optionReplayCancelAt        ...1/15 sec before end
-$optionScrollEdge             Scroll at screen border
-$optionScrollRight            Scroll with right click
-$optionScrollMiddle           Scroll with middle click
+$optionReplayCancel           End of replay: turn off >>
+$optionReplayCancelAt         × ¹⁄₁₅ seconds before end
+$optionScrollEdge             Scroll at edge of screen
+$optionScrollRight            Scroll by right mouse button
+$optionScrollMiddle           Scroll by middle mouse button
 $optionMouseSpeed             Mouse speed
-$optionScrollSpeedEdge       Edge scroll speed
-$optionScrollSpeedClick      Right/mid. scroll spd.
-$optionMultipleBuilders       Builders: multiple clicks
-$optionBatterPriority         Avoid Exploder -> Batter
-$optionPriorityInvertMiddle          Middle button inverts priority
-$optionPriorityInvertRight           Right button inverts priority
+$optionScrollSpeedEdge        Edge scroll speed
+$optionScrollSpeedClick       Right/mid. scroll speed
+$optionAvoidBuilderQueuing    Prefer builder → non-builder
+$optionAvoidBatterToExploder  Prefer batter → non-exploder
+$optionPriorityInvertRight    Right button inverts priority
+$optionPriorityInvertMiddle   Middle button inverts priority
 
 $optionScreenWindowed         Windowed mode*
 $optionScreenResolution       Fullscreen resolution**

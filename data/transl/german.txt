@@ -296,18 +296,18 @@ $optionUserNameAsk          Namensfrage bei Start
 $optionReplayAutoMax        Max. Auto-Replays
 $optionReplayAutoSingle     Auto-Replay Einzelspieler
 $optionReplayAutoMulti      Auto-Replay Mehrspieler
-$optionReplayCancel          Replayende: norm. Geschw.
-$optionReplayCancelAt       ...1/15 Sek. vor Ende
+$optionReplayCancel          Replay-Ende: deaktiviere >>
+$optionReplayCancelAt        × ¹⁄₁₅ Sekunden vor Ende
 $optionScrollEdge            Scrollen am Bildrand
-$optionScrollRight           Scrollen bei Rechtsklick
-$optionScrollMiddle          Scrollen bei mittl. Maust.
+$optionScrollRight           Scrollen mit rechter Maustaste
+$optionScrollMiddle          Scrollen mit mittl. Maustaste
 $optionMouseSpeed            Mausgeschwindigkeit
-$optionScrollSpeedEdge      Scrollgeschw. am Rand
-$optionScrollSpeedClick     Scrollgeschw. bei Klick
-$optionMultipleBuilders      Builder mehrm. klickbar
-$optionBatterPriority        Exploder -> Batter vermeiden
-$optionPriorityInvertMiddle         Mittl. Taste invert. Prioritaet
-$optionPriorityInvertRight          Rechte Taste invert. Prioritaet
+$optionScrollSpeedEdge       Scroll-Geschw. am Bildrand
+$optionScrollSpeedClick      Scroll-Geschw. bei Maustaste
+$optionAvoidBuilderQueuing   Builder → Nichtbuilder bevorzugen
+$optionAvoidBatterToExploder Batter → Nichtexploder bevorzugen
+$optionPriorityInvertRight   Rechte Maustaste inv. Priorität
+$optionPriorityInvertMiddle  Mittlere Maustaste inv. Priorität
 
 $optionScreenWindowed        Fenstermodus*
 $optionScreenResolution      Vollbild-Auflösung**

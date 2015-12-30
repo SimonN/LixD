@@ -48,10 +48,10 @@ int  replayCancelAt    = 30;
 int  mouseSpeed        = basics.globals.mouseStandardDivisor;
 int  scrollSpeedEdge   = basics.globals.mouseStandardDivisor;
 int  scrollSpeedClick  = basics.globals.mouseStandardDivisor;
-bool multipleBuilders  = true;
-bool batterPriority    = true;
-bool priorityInvertMiddle = true;
-bool priorityInvertRight  = true;
+bool avoidBuilderQueuing   = true;
+bool avoidBatterToExploder = false;
+bool priorityInvertMiddle  = true;
+bool priorityInvertRight   = true;
 
 int  soundVolume       = 10;
 
@@ -376,8 +376,8 @@ void load()
         else if (i.text1 == userScrollMiddle        ) scrollMiddle         = i.nr1 > 0;
         else if (i.text1 == userReplayCancel        ) replayCancel         = i.nr1 > 0;
         else if (i.text1 == userReplayCancelAt      ) replayCancelAt       = i.nr1;
-        else if (i.text1 == userMultipleBuilders    ) multipleBuilders     = i.nr1 > 0;
-        else if (i.text1 == userBatterPriority      ) batterPriority       = i.nr1 > 0;
+        else if (i.text1 == userAvoidBuilderQueuing ) avoidBuilderQueuing  = i.nr1 > 0;
+        else if (i.text1 == userAvoidBatterToExploder) avoidBatterToExploder = i.nr1 > 0;
         else if (i.text1 == userPriorityInvertMiddle) priorityInvertMiddle = i.nr1 > 0;
         else if (i.text1 == userPriorityInvertRight ) priorityInvertRight  = i.nr1 > 0;
 
@@ -529,8 +529,8 @@ nothrow void save()
         fwr(IoLine.Hash(userScrollMiddle,           scrollMiddle));
         fwr(IoLine.Hash(userReplayCancel,           replayCancel));
         fwr(IoLine.Hash(userReplayCancelAt,         replayCancelAt));
-        fwr(IoLine.Hash(userMultipleBuilders,       multipleBuilders));
-        fwr(IoLine.Hash(userBatterPriority,         batterPriority));
+        fwr(IoLine.Hash(userAvoidBuilderQueuing,    avoidBuilderQueuing));
+        fwr(IoLine.Hash(userAvoidBatterToExploder,  avoidBatterToExploder));
         fwr(IoLine.Hash(userPriorityInvertMiddle,   priorityInvertMiddle));
         fwr(IoLine.Hash(userPriorityInvertRight,    priorityInvertRight));
         f.writeln();

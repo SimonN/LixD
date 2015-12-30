@@ -327,8 +327,8 @@ enum Lang {
     optionMouseSpeed,
     optionScrollSpeedEdge,
     optionScrollSpeedClick,
-    optionMultipleBuilders,
-    optionBatterPriority,
+    optionAvoidBuilderQueuing,
+    optionAvoidBatterToExploder,
     optionPriorityInvertMiddle,
     optionPriorityInvertRight,
 

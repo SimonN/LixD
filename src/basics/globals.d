@@ -141,8 +141,8 @@ immutable userScrollRight            = "SCROLL_RIGHT";
 immutable userScrollMiddle           = "SCROLL_MIDDLE";
 immutable userReplayCancel           = "REPLAY_CANCEL";
 immutable userReplayCancelAt         = "REPLAY_CANCEL_AT";
-immutable userMultipleBuilders       = "MULTIPLE_BUILDERS";
-immutable userBatterPriority         = "BATTER_PRIORITY";
+immutable userAvoidBuilderQueuing    = "AVOID_BUILDER_QUEUING";
+immutable userAvoidBatterToExploder  = "AVOID_BATTER_TO_EXPLODER";
 immutable userPriorityInvertMiddle   = "PRIORITY_INVERT_MIDDLE";
 immutable userPriorityInvertRight    = "PRIORITY_INVERT_RIGHT";
 

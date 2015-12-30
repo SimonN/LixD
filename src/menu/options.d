@@ -124,15 +124,20 @@ private void showGroup(in OptionGroup gr)
     }
 }
 
+
+
 private void populateOptionGroups()
 {
-    enum optionsBeginY  = 100;
-    enum checkboxRowX   =  20;
-    enum longButtonRowX = 280;
+    populateGeneral();
+    populateGraphics();
+    populateControls();
+}
 
-    auto facLeft()  { return OptionFactory(checkboxRowX,   optionsBeginY,            longButtonRowX - checkboxRowX); }
-    auto facRight() { return OptionFactory(longButtonRowX, optionsBeginY, this.xlg - longButtonRowX - checkboxRowX); }
+auto facLeft()  { return OptionFactory( 20, 100,       280 - 20); }
+auto facRight() { return OptionFactory(280, 100, xlg - 280 - 20); }
 
+private void populateGeneral()
+{
     auto fac = facLeft();
     groups[OptionGroup.general] ~= [
         fac.factory!BoolOption(Lang.optionUserNameAsk.transl, &userNameAsk),
@@ -142,9 +147,11 @@ private void populateOptionGroups()
     groups[OptionGroup.general] ~= [
         fac.factory!TextOption(Lang.optionUserName.transl, &userName),
     ];
+}
 
-
-    fac = facRight();
+private void populateGraphics()
+{
+    auto fac = facRight();
     groups[OptionGroup.graphics] ~= [
         fac.factory!ResolutionOption(Lang.optionScreenResolution.transl, &screenResolutionX, &screenResolutionY),
         fac.factory!ResolutionOption(Lang.optionScreenWindowedRes.transl, &screenWindowedX, &screenWindowedY),
@@ -163,6 +170,36 @@ private void populateOptionGroups()
     guiRed   = (cast (NumPickOption) groups[OptionGroup.graphics][$-3]).num;
     guiGreen = (cast (NumPickOption) groups[OptionGroup.graphics][$-2]).num;
     guiBlue  = (cast (NumPickOption) groups[OptionGroup.graphics][$-1]).num;
+}
+
+private void populateControls()
+{
+    auto fac = facLeft();
+    groups[OptionGroup.controls] ~= [
+        fac.factory!BoolOption(Lang.optionScrollEdge.transl, &scrollEdge),
+        fac.factory!BoolOption(Lang.optionScrollRight.transl, &scrollRight),
+        fac.factory!BoolOption(Lang.optionScrollMiddle.transl, &scrollMiddle),
+        fac.factory!BoolOption(Lang.optionReplayCancel.transl, &replayCancel),
+    ];
+    fac.y += fac.incrementY;
+    groups[OptionGroup.controls] ~= [
+        fac.factory!BoolOption(Lang.optionAvoidBuilderQueuing.transl,   &avoidBuilderQueuing),
+        fac.factory!BoolOption(Lang.optionAvoidBatterToExploder.transl, &avoidBatterToExploder),
+        fac.factory!BoolOption(Lang.optionPriorityInvertRight.transl,   &priorityInvertRight),
+        fac.factory!BoolOption(Lang.optionPriorityInvertMiddle.transl,  &priorityInvertMiddle),
+    ];
+    fac = facRight();
+    auto cfg = NumPickConfig();
+    cfg.max = 80;
+    cfg.min =  1;
+    groups[OptionGroup.controls] ~= [
+        fac.factory!NumPickOption(cfg, Lang.optionMouseSpeed.transl, &mouseSpeed),
+        fac.factory!NumPickOption(cfg, Lang.optionScrollSpeedEdge.transl, &scrollSpeedEdge),
+        fac.factory!NumPickOption(cfg, Lang.optionScrollSpeedClick.transl, &scrollSpeedClick),
+    ];
+    cfg.min = 0;
+    groups[OptionGroup.controls]
+        ~=fac.factory!NumPickOption(cfg, Lang.optionReplayCancelAt.transl, &replayCancelAt);
 }
 
 }

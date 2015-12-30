@@ -547,10 +547,12 @@ int priorityForNewAc(
         // even if the user has disabled it for themselves.
         case Ac.builder:
         case Ac.platformer:
-            if (newAc == ac
-             && (! personal || multipleBuilders)) p = 1000;
-            else if (newAc != ac)                 p = 4000;
-            else                                   return 1;
+            if (newAc == ac && (! personal || avoidBuilderQueuing))
+                p = 1000;
+            else if (newAc != ac)
+                p = 4000;
+            else
+                return 1;
             break;
 
         // Usually, anything different from the current activity can be assign.
@@ -559,7 +561,7 @@ int priorityForNewAc(
             else return 1;
 
     }
-    p += (newAc == Ac.batter && batterPriority
+    p += (newAc == Ac.batter && avoidBatterToExploder
           ? (- ploderTimer) : ploderTimer);
     p += 400 * abilityToRun + 200 * abilityToClimb + 100 * abilityToFloat;
     return p;
