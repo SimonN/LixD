@@ -337,23 +337,23 @@ $optionKeyUnassigned         nichts
 $optionKeyForceLeft         Nur links
 $optionKeyForceRight        Nur rechts
 $optionKeyScroll             Scrollen
-$optionKeyPriorityInvert    Priorit. inv.
+$optionKeyPriorityInvert    Priorität invert.
 $optionKeySpawnintSlower    Spawn langs.
 $optionKeySpawnintFaster    Spawn schn.
 $optionKeyPause              Pause
-$optionKeySpeedSlow         Zeitlupe
-$optionKeySpeedFast         Schneller
+$optionKeyFrameBackMany       1 Sek. zurück
+$optionKeyFrameBackOne        1 Bild zurück
+$optionKeyFrameAheadOne       1 Bild vor
+$optionKeyFrameAheadMany      10 Sek. vor
+$optionKeySpeedFast         Schneller Vorl.
 $optionKeySpeedTurbo        Turbo
 $optionKeyRestart            Neustart
 $optionKeyStateLoad         Stand laden
-$optionKeyStateSave         Stand spei.
+$optionKeyStateSave         Stand speichern
 $optionKeyZoom               Zoom
 $optionKeyChat               Chat
-$optionKeySpecTribe         Anderem Team zuschauen
+$optionKeySpecTribe         Team zusehen
 $optionKeyNuke               Atombombe
-$optionKeyInfo1             Ein mehrfach zugewiesener
-$optionKeyInfo2             Hotkey alterniert zwischen
-$optionKeyInfo3             seinen Fähigkeiten.
 
 $optionKeyMenuOkay            Okay/ja
 $optionKeyMenuEdit            Editieren

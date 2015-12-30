@@ -25,6 +25,14 @@ bool keyTappedAllowingRepeats(int alkey)
 @property bool shiftHeld()  { return _shift;       }
 @property bool altHeld  ()  { return _alt;         }
 
+@property int scancodeTapped() // For the hotkey-mapping button
+{
+    foreach (int scancode, bool tapped; _once)
+        if (tapped)
+            return scancode;
+    return 0;
+}
+
 void clearKeyBufferAfterAltTab() { _hold[] = 0; }
 
 

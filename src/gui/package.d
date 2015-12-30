@@ -7,6 +7,7 @@ module gui;
  */
 
 public import gui.butbit;
+public import gui.butkey;
 public import gui.butskill;
 public import gui.button;
 public import gui.buttext;

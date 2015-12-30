@@ -21,6 +21,7 @@ import gui;
 
 enum spaceGuiTextX =  10f;
 enum mostButtonsXl = 120f;
+enum keyButtonXl   =  70f;
 
 abstract class Option : Element
 {
@@ -91,6 +92,27 @@ class TextOption : Option
 
     override void loadValue() { _texttype.text = *_target; }
     override void saveValue() { *_target = _texttype.text.strip; }
+}
+
+
+
+class HotkeyOption : Option
+{
+    private KeyButton _keyb;
+    private int*      _target;
+
+    this(Geom g, string cap, int* t)
+    {
+        assert (t);
+        _keyb = new KeyButton(new Geom(0, 0, keyButtonXl, 20));
+        super(g, new Label(new Geom(keyButtonXl + spaceGuiTextX, 0,
+                            g.xlg - keyButtonXl + spaceGuiTextX, g.yl), cap));
+        addChild(_keyb);
+        _target = t;
+    }
+
+    override void loadValue() { _keyb.scancode = *_target; }
+    override void saveValue() { *_target = _keyb.scancode; }
 }
 
 

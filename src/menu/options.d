@@ -87,7 +87,7 @@ public this()
     catch (Exception) showGroup(OptionGroup.general);
 }
 
-public override void calcSelf()
+protected override void calcSelf()
 {
     if (okay.execute || hardware.mouse.mouseClickRight) {
         foreach (enumVal, group; groups)
@@ -108,7 +108,11 @@ public override void calcSelf()
     }
 }
 
-private void showGroup(in OptionGroup gr)
+
+
+private:
+
+void showGroup(in OptionGroup gr)
 {
     basics.user.optionGroup = gr;
     reqDraw();
@@ -126,17 +130,25 @@ private void showGroup(in OptionGroup gr)
 
 
 
-private void populateOptionGroups()
+void populateOptionGroups()
 {
     populateGeneral();
     populateGraphics();
     populateControls();
+    populateGameKeys();
 }
 
 auto facLeft()  { return OptionFactory( 20, 100,       280 - 20); }
 auto facRight() { return OptionFactory(280, 100, xlg - 280 - 20); }
 
-private void populateGeneral()
+auto facKeys(int column)()
+    if (column >= 0 && column < 3)
+{
+    immutable float xl = (this.xlg - 40f) / 3;
+    return OptionFactory(20 + xl*column, 100, xl, 20, 20);
+}
+
+void populateGeneral()
 {
     auto fac = facLeft();
     groups[OptionGroup.general] ~= [
@@ -149,7 +161,7 @@ private void populateGeneral()
     ];
 }
 
-private void populateGraphics()
+void populateGraphics()
 {
     auto fac = facRight();
     groups[OptionGroup.graphics] ~= [
@@ -172,7 +184,7 @@ private void populateGraphics()
     guiBlue  = (cast (NumPickOption) groups[OptionGroup.graphics][$-1]).num;
 }
 
-private void populateControls()
+void populateControls()
 {
     auto fac = facLeft();
     groups[OptionGroup.controls] ~= [
@@ -200,6 +212,59 @@ private void populateControls()
     cfg.min = 0;
     groups[OptionGroup.controls]
         ~=fac.factory!NumPickOption(cfg, Lang.optionReplayCancelAt.transl, &replayCancelAt);
+}
+
+void populateGameKeys()
+{
+    auto fac = facKeys!0;
+    fac.y += 80;
+    groups[OptionGroup.gameKeys] ~= [
+        fac.factory!HotkeyOption(Lang.optionKeyForceLeft.transl, &keyForceLeft),
+        fac.factory!HotkeyOption(Lang.optionKeyForceRight.transl, &keyForceRight),
+    ];
+    fac.y += fac.incrementY;
+    groups[OptionGroup.gameKeys] ~=
+        fac.factory!HotkeyOption(Lang.optionKeyPause.transl, &keyPause);
+    fac.y += fac.incrementY;
+    groups[OptionGroup.gameKeys] ~= [
+        fac.factory!HotkeyOption(Lang.optionKeyRestart.transl, &keyRestart),
+        fac.factory!HotkeyOption(Lang.optionKeyStateLoad.transl, &keyStateLoad),
+        fac.factory!HotkeyOption(Lang.optionKeyStateSave.transl, &keyStateSave),
+    ];
+
+    fac = facKeys!1;
+    fac.y += 80;
+    groups[OptionGroup.gameKeys] ~= [
+        fac.factory!HotkeyOption(Lang.optionKeySpawnintSlower.transl, &keySpawnintSlower),
+        fac.factory!HotkeyOption(Lang.optionKeySpawnintFaster.transl, &keySpawnintFaster),
+    ];
+    fac.y += fac.incrementY;
+    groups[OptionGroup.gameKeys] ~= [
+        fac.factory!HotkeyOption(Lang.optionKeyFrameBackMany.transl, &keyFrameBackMany),
+        fac.factory!HotkeyOption(Lang.optionKeyFrameBackOne.transl, &keyFrameBackOne),
+        fac.factory!HotkeyOption(Lang.optionKeyFrameAheadOne.transl, &keyFrameAheadOne),
+        fac.factory!HotkeyOption(Lang.optionKeyFrameAheadMany.transl, &keyFrameAheadMany),
+        fac.factory!HotkeyOption(Lang.optionKeySpeedFast.transl, &keySpeedFast),
+        fac.factory!HotkeyOption(Lang.optionKeySpeedTurbo.transl, &keySpeedTurbo),
+    ];
+
+    fac = facKeys!2;
+    fac.y += 80;
+    groups[OptionGroup.gameKeys] ~= [
+        fac.factory!HotkeyOption(Lang.optionKeyNuke.transl, &keyNuke),
+        fac.factory!HotkeyOption(Lang.winGameTitle.transl, &keyGameExit),
+    ];
+    fac.y += fac.incrementY;
+    groups[OptionGroup.gameKeys] ~= [
+        fac.factory!HotkeyOption(Lang.optionKeyZoom.transl, &keyZoom),
+        fac.factory!HotkeyOption(Lang.optionKeyChat.transl, &keyChat),
+        fac.factory!HotkeyOption(Lang.optionKeySpecTribe.transl, &keySpecTribe),
+    ];
+    fac.y += fac.incrementY;
+    groups[OptionGroup.gameKeys] ~= [
+        fac.factory!HotkeyOption(Lang.optionKeyScroll.transl, &keyScroll),
+        fac.factory!HotkeyOption(Lang.optionKeyPriorityInvert.transl, &keyPriorityInvert),
+    ];
 }
 
 }

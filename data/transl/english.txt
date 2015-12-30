@@ -317,7 +317,7 @@ $optionScrollRight            Scroll by right mouse button
 $optionScrollMiddle           Scroll by middle mouse button
 $optionMouseSpeed             Mouse speed
 $optionScrollSpeedEdge        Edge scroll speed
-$optionScrollSpeedClick       Right/mid. scroll speed
+$optionScrollSpeedClick       Right/middle scroll speed
 $optionAvoidBuilderQueuing    Prefer builder → non-builder
 $optionAvoidBatterToExploder  Prefer batter → non-exploder
 $optionPriorityInvertRight    Right button inverts priority
@@ -354,19 +354,19 @@ $optionKeyPriorityInvert      Priority invert
 $optionKeySpawnintSlower      Spawn faster
 $optionKeySpawnintFaster      Spawn slower
 $optionKeyPause               Pause
-$optionKeySpeedSlow          Slow motion
-$optionKeySpeedFast          Fast forw.
+$optionKeyFrameBackMany       Back 1 second
+$optionKeyFrameBackOne        Back 1 frame
+$optionKeyFrameAheadOne       Ahead 1 frame
+$optionKeyFrameAheadMany      Ahead 10 sec.
+$optionKeySpeedFast          Fast forward
 $optionKeySpeedTurbo         Turbo speed
 $optionKeyRestart             Restart
 $optionKeyStateLoad          Load state
 $optionKeyStateSave          Save state
 $optionKeyZoom                Zoom
 $optionKeyChat                Chat
-$optionKeySpecTribe          Cycle spectated teams
+$optionKeySpecTribe          Cycle teams
 $optionKeyNuke                Nuke
-$optionKeyInfo1              A hotkey assigned to
-$optionKeyInfo2              multiple skills will
-$optionKeyInfo3              alternate between them.
 
 $optionKeyMenuOkay             Okay/yes
 $optionKeyMenuEdit             Edit
