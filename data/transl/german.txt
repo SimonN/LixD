@@ -373,9 +373,9 @@ $optionEdDown                Nach unten
 $optionEdCopy                Kopieren
 $optionEdDelete              Loeschen
 $optionEdGrid                Raster
-$optionEdSelAll             Alles ausw.
-$optionEdSelFrame           Rahmen
-$optionEdSelAdd             Mehr ausw.
+$optionEdSelectAll           Alles ausw.
+$optionEdSelectFrame         Rahmen
+$optionEdSelectAdd           Mehr ausw.
 $optionEdForeground          Nach vorn
 $optionEdBackground          Nach hinten
 $optionEdMirror              Spiegeln
@@ -393,7 +393,7 @@ $optionEdAddHatch           Klappe hinzuf.
 $optionEdAddGoal            Ziel hinzuf.
 $optionEdAddDeco            Deko hinzuf.
 $optionEdAddHazard          Gefahr hinzuf.
-$optionEdGridCustom         Benutzerdef. Rastergröße
+$optionEdGridCustom         Benutzerdefinierte Rastergröße
 
 // Neuen Spieler begruessen (Mini-Dialog)
 

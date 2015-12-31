@@ -136,6 +136,8 @@ void populateOptionGroups()
     populateGraphics();
     populateControls();
     populateGameKeys();
+    populateEditorKeys();
+    populateMenuKeys();
 }
 
 auto facLeft()  { return OptionFactory( 20, 100,       280 - 20); }
@@ -266,6 +268,69 @@ void populateGameKeys()
         fac.factory!HotkeyOption(Lang.optionKeyPriorityInvert.transl, &keyPriorityInvert),
     ];
 }
+
+void populateEditorKeys()
+{
+    auto fac = facKeys!0;
+    groups[OptionGroup.editorKeys] ~= [
+        fac.factory!HotkeyOption(Lang.optionEdLeft.transl, &keyEditorLeft),
+        fac.factory!HotkeyOption(Lang.optionEdRight.transl, &keyEditorRight),
+        fac.factory!HotkeyOption(Lang.optionEdUp.transl, &keyEditorUp),
+        fac.factory!HotkeyOption(Lang.optionEdDown.transl, &keyEditorDown),
+    ];
+    fac.y += fac.incrementY;
+    groups[OptionGroup.editorKeys] ~= [
+        fac.factory!HotkeyOption(Lang.optionEdCopy.transl, &keyEditorCopy),
+        fac.factory!HotkeyOption(Lang.optionEdDelete.transl, &keyEditorDelete),
+        fac.factory!HotkeyOption(Lang.optionEdGrid.transl, &keyEditorGrid),
+        fac.factory!HotkeyOption(Lang.optionEdZoom.transl, &keyEditorZoom),
+        fac.factory!HotkeyOption(Lang.optionEdHelp.transl, &keyEditorHelp),
+    ];
+    fac.y += fac.incrementY;
+    fac.xl = this.xlg - 40;
+    auto cfg = NumPickConfig();
+    cfg.max = 96;
+    cfg.min =  1;
+    groups[OptionGroup.editorKeys] ~=
+        fac.factory!NumPickOption(cfg, Lang.optionEdGridCustom.transl, &editorGridCustom);
+
+    fac = facKeys!1;
+    groups[OptionGroup.editorKeys] ~= [
+        fac.factory!HotkeyOption(Lang.optionEdSelectAll.transl, &keyEditorSelectAll),
+        fac.factory!HotkeyOption(Lang.optionEdSelectFrame.transl, &keyEditorSelectFrame),
+        fac.factory!HotkeyOption(Lang.optionEdSelectAdd.transl, &keyEditorSelectAdd),
+    ];
+    fac.y += fac.incrementY;
+    groups[OptionGroup.editorKeys] ~= [
+        fac.factory!HotkeyOption(Lang.optionEdBackground.transl, &keyEditorBackground),
+        fac.factory!HotkeyOption(Lang.optionEdForeground.transl, &keyEditorForeground),
+        fac.factory!HotkeyOption(Lang.optionEdMirror.transl, &keyEditorMirror),
+        fac.factory!HotkeyOption(Lang.optionEdRotate.transl, &keyEditorRotate),
+        fac.factory!HotkeyOption(Lang.optionEdDark.transl, &keyEditorDark),
+        fac.factory!HotkeyOption(Lang.optionEdNoow.transl, &keyEditorNoow),
+    ];
+
+    fac = facKeys!2;
+    groups[OptionGroup.editorKeys] ~= [
+        fac.factory!HotkeyOption(Lang.optionEdMenuSize.transl, &keyEditorMenuSize),
+        fac.factory!HotkeyOption(Lang.optionEdMenuVars.transl, &keyEditorMenuVars),
+        fac.factory!HotkeyOption(Lang.optionEdMenuSkills.transl, &keyEditorMenuSkills),
+    ];
+    fac.y += fac.incrementY;
+    groups[OptionGroup.editorKeys] ~= [
+        fac.factory!HotkeyOption(Lang.optionEdAddTerrain.transl, &keyEditorAddTerrain),
+        fac.factory!HotkeyOption(Lang.optionEdAddSteel.transl, &keyEditorAddSteel),
+        fac.factory!HotkeyOption(Lang.optionEdAddHatch.transl, &keyEditorAddHatch),
+        fac.factory!HotkeyOption(Lang.optionEdAddGoal.transl, &keyEditorAddGoal),
+        fac.factory!HotkeyOption(Lang.optionEdAddDeco.transl, &keyEditorAddDeco),
+        fac.factory!HotkeyOption(Lang.optionEdAddHazard.transl, &keyEditorAddHazard),
+    ];
+    fac.y += fac.incrementY;
+    groups[OptionGroup.editorKeys] ~=
+        fac.factory!HotkeyOption(Lang.commonExit.transl, &keyEditorExit);
+}
+
+void populateMenuKeys() { }
 
 }
 // end class OptionsMenu

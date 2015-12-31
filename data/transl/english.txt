@@ -386,9 +386,9 @@ $optionEdDown                 Move down
 $optionEdCopy                 Copy
 $optionEdDelete               Delete
 $optionEdGrid                 Grid size
-$optionEdSelAll              Select all
-$optionEdSelFrame            Select frame
-$optionEdSelAdd              Add to sel.
+$optionEdSelectAll            Select all
+$optionEdSelectFrame          Select frame
+$optionEdSelectAdd            Add to sel.
 $optionEdForeground           Foreground
 $optionEdBackground           Background
 $optionEdMirror               Mirror
