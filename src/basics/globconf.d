@@ -25,7 +25,6 @@ int    screenResolutionX =   0;
 int    screenResolutionY =   0;
 int    screenWindowedX   = 640;
 int    screenWindowedY   = 480;
-bool   screenVsync       = false;
 
 string ipLastUsed        = "127.0.0.1";
 string ipCentralServer   = "asdfasdf.ethz.ch";
@@ -58,7 +57,6 @@ void load()
     else if (i.text1 == cfgScreenResolutionY) screenResolutionY = i.nr1;
     else if (i.text1 == cfgScreenWindowedX  ) screenWindowedX   = i.nr1;
     else if (i.text1 == cfgScreenWindowedY  ) screenWindowedY   = i.nr1;
-    else if (i.text1 == cfgScreenVsync      ) screenVsync       = i.nr1 > 0;
 
     else if (i.text1 == cfgServerPort      ) serverPort         = i.nr1;
     }
@@ -92,7 +90,6 @@ void save()
         f.writeln(IoLine.Hash(cfgScreenResolutionY,     screenResolutionY));
         f.writeln(IoLine.Hash(cfgScreenWindowedX,       screenWindowedX));
         f.writeln(IoLine.Hash(cfgScreenWindowedY,       screenWindowedY));
-        f.writeln(IoLine.Hash(cfgScreenVsync,           screenVsync));
 
         f.close();
     }

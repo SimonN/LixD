@@ -59,8 +59,6 @@ bool screenWindowed    = false;
 bool arrowsReplay      = true;
 bool arrowsNetwork     = true;
 bool gameplayHelp      = true;
-int  debrisAmount      = 2;
-int  debrisType        = 1;
 
 int  guiColorRed      = 0x70;
 int  guiColorGreen    = 0x80;
@@ -385,8 +383,6 @@ void load()
         else if (i.text1 == userArrowsReplay  ) arrowsReplay   = i.nr1 > 0;
         else if (i.text1 == userArrowsNetwork ) arrowsNetwork  = i.nr1 > 0;
         else if (i.text1 == userGameplayHelp  ) gameplayHelp   = i.nr1 > 0;
-        else if (i.text1 == userDebrisAmount  ) debrisAmount   = i.nr1;
-        else if (i.text1 == userDebrisType    ) debrisType     = i.nr1;
         else if (i.text1 == userGuiColorRed   ) guiColorRed    = i.nr1;
         else if (i.text1 == userGuiColorGreen ) guiColorGreen  = i.nr1;
         else if (i.text1 == userGuiColorBlue  ) guiColorBlue   = i.nr1;
@@ -539,8 +535,6 @@ nothrow void save()
         fwr(IoLine.Hash(userArrowsReplay,           arrowsReplay));
         fwr(IoLine.Hash(userArrowsNetwork,          arrowsNetwork));
         fwr(IoLine.Hash(userGameplayHelp,           gameplayHelp));
-        fwr(IoLine.Hash(userDebrisAmount,           debrisAmount));
-        fwr(IoLine.Hash(userDebrisType,             debrisType));
         fwr(IoLine.Hash(userGuiColorRed,            guiColorRed));
         fwr(IoLine.Hash(userGuiColorGreen,          guiColorGreen));
         fwr(IoLine.Hash(userGuiColorBlue,           guiColorBlue));

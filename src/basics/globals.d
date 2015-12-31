@@ -54,7 +54,6 @@ immutable cfgScreenResolutionX      = "SCREEN_RESOLUTION_X";
 immutable cfgScreenResolutionY      = "SCREEN_RESOLUTION_Y";
 immutable cfgScreenWindowedX         = "SCREEN_WINDOWED_X";
 immutable cfgScreenWindowedY         = "SCREEN_WINDOWED_Y";
-immutable cfgScreenVsync             = "SCREEN_VSYNC";
 
 immutable cfgIPLastUsed             = "IP_LAST_USED";
 immutable cfgIPCentralServer        = "IP_CENTRAL_SERVER";
@@ -150,8 +149,6 @@ immutable userScreenWindowed         = "SCREEN_WINDOWED";
 immutable userArrowsReplay           = "ARROWS_REPLAY";
 immutable userArrowsNetwork          = "ARROWS_NETWORK";
 immutable userGameplayHelp           = "GAMEPLAY_HELP";
-immutable userDebrisAmount           = "DEBRIS_AMOUNT";
-immutable userDebrisType             = "DEBRIS_TYPE";
 immutable userGuiColorRed            = "GUI_COLOR_RED";
 immutable userGuiColorGreen          = "GUI_COLOR_GREEN";
 immutable userGuiColorBlue           = "GUI_COLOR_BLUE";

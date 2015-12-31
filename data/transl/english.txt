@@ -326,17 +326,9 @@ $optionPriorityInvertMiddle   Middle button inverts priority
 $optionScreenWindowed         Windowed mode*
 $optionScreenResolution       Fullscreen resolution**
 $optionScreenWindowedRes     Windowed resolution
-$optionScreenVsync            Wait for V-sync
 $optionArrowsReplay           Arrows during replays
 $optionArrowsNetwork          Arrows in network games
 $optionGameplayHelp           Display game hotkeys
-$optionDebrisAmount           Debris amount
-$optionDebrisAmountNone      None
-$optionDebrisAmountOwn       Own
-$optionDebrisAmountAll       All
-$optionDebrisType             Debris type
-$optionDebrisTypeStars       Stars, clouds
-$optionDebrisTypePixels      Pixels
 $optionGuiColorRed           Menu color red
 $optionGuiColorGreen         Menu color green
 $optionGuiColorBlue          Menu color blue

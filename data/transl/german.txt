@@ -312,17 +312,9 @@ $optionPriorityInvertMiddle  Mittlere Maustaste inv. Priorität
 $optionScreenWindowed        Fenstermodus*
 $optionScreenResolution      Vollbild-Auflösung**
 $optionScreenWindowedRes    Fenster-Auflösung
-$optionScreenVsync           V-Sync abwarten
 $optionArrowsReplay          Pfeile im Replay
 $optionArrowsNetwork         Pfeile im Netzwerkspiel
 $optionGameplayHelp          Spiel-Hotkeys anzeigen
-$optionDebrisAmount          Truemmer-Anzahl
-$optionDebrisAmountNone     Keine
-$optionDebrisAmountOwn      Lokaler Spieler
-$optionDebrisAmountAll      Alle
-$optionDebrisType            Truemmer-Aussehen
-$optionDebrisTypeStars      Sterne, Wolken
-$optionDebrisTypePixels     Pixel
 $optionGuiColorRed          Menüfarbe Rot
 $optionGuiColorGreen        Menüfarbe Grün
 $optionGuiColorBlue         Menüfarbe Blau
