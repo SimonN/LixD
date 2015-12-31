@@ -335,7 +335,32 @@ void populateEditorKeys()
         fac.factory!HotkeyOption(Lang.commonExit.transl, &keyEditorExit);
 }
 
-void populateMenuKeys() { }
+void populateMenuKeys()
+{
+    auto fac = facKeys!0;
+    groups[OptionGroup.menuKeys] ~= [
+        fac.factory!HotkeyOption(Lang.optionKeyMenuOkay.transl, &keyMenuOkay),
+        fac.factory!HotkeyOption(Lang.optionKeyMenuEdit.transl, &keyMenuEdit),
+        fac.factory!HotkeyOption(Lang.optionKeyMenuExport.transl, &keyMenuExport),
+        fac.factory!HotkeyOption(Lang.optionKeyMenuDelete.transl, &keyMenuDelete),
+        fac.factory!HotkeyOption(Lang.optionKeyMenuExit.transl, &keyMenuExit),
+    ];
+    fac = facKeys!1;
+    groups[OptionGroup.menuKeys] ~= [
+        fac.factory!HotkeyOption(Lang.optionKeyMenuUpDir.transl, &keyMenuUpDir),
+        fac.factory!HotkeyOption(Lang.optionKeyMenuUpBy5.transl, &keyMenuUpBy5),
+        fac.factory!HotkeyOption(Lang.optionKeyMenuUpBy1.transl, &keyMenuUpBy1),
+        fac.factory!HotkeyOption(Lang.optionKeyMenuDownBy1.transl, &keyMenuDownBy1),
+        fac.factory!HotkeyOption(Lang.optionKeyMenuDownBy5.transl, &keyMenuDownBy5),
+    ];
+    fac = facKeys!2;
+    groups[OptionGroup.menuKeys] ~= [
+        fac.factory!HotkeyOption(Lang.browserSingleTitle.transl, &keyMenuMainSingle),
+        fac.factory!HotkeyOption(Lang.winLobbyTitle.transl, &keyMenuMainNetwork),
+        fac.factory!HotkeyOption(Lang.browserReplayTitle.transl, &keyMenuMainReplays),
+        fac.factory!HotkeyOption(Lang.optionTitle.transl, &keyMenuMainOptions),
+    ];
+}
 
 }
 // end class OptionsMenu

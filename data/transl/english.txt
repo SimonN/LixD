@@ -368,16 +368,16 @@ $optionKeyChat                Chat
 $optionKeySpecTribe          Cycle teams
 $optionKeyNuke                Nuke
 
-$optionKeyMenuOkay             Okay/yes
-$optionKeyMenuEdit             Edit
-$optionKeyMenuExport           Export
-$optionKeyMenuDelete           Delete/no
+$optionKeyMenuOkay            Okay/yes
+$optionKeyMenuEdit            Edit
+$optionKeyMenuExport          Export
+$optionKeyMenuDelete          Delete/no
 $optionKeyMenuUpDir           Parent dir
-$optionKeyMenuUpBy1             Up by 1
-$optionKeyMenuUpBy5             Up by 5
-$optionKeyMenuDownBy1           Down by 1
-$optionKeyMenuDownBy5           Down by 5
-$optionKeyMenuExit             Back/cancel
+$optionKeyMenuUpBy5           Up by 5
+$optionKeyMenuUpBy1           Up by 1
+$optionKeyMenuDownBy1         Down by 1
+$optionKeyMenuDownBy5         Down by 5
+$optionKeyMenuExit            Back/cancel
 
 $optionEdLeft                 Move left
 $optionEdRight                Move right

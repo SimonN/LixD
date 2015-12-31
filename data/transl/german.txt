@@ -355,16 +355,16 @@ $optionKeyChat               Chat
 $optionKeySpecTribe         Team zusehen
 $optionKeyNuke               Atombombe
 
-$optionKeyMenuOkay            Okay/ja
-$optionKeyMenuEdit            Editieren
-$optionKeyMenuExport          Exportieren
-$optionKeyMenuDelete          Lösch./nein
-$optionKeyMenuUpDir          Ordner ..
-$optionKeyMenuUpBy1            Rauf um 1
-$optionKeyMenuUpBy5            Rauf um 5
-$optionKeyMenuDownBy1          Runter um 1
-$optionKeyMenuDownBy5          Runter um 5
-$optionKeyMenuExit            Zurück/abbr.
+$optionKeyMenuOkay           Okay/ja
+$optionKeyMenuEdit           Editieren
+$optionKeyMenuExport         Exportieren
+$optionKeyMenuDelete         Löschen/nein
+$optionKeyMenuUpDir          Ordner hoch
+$optionKeyMenuUpBy5          Rauf um 5
+$optionKeyMenuUpBy1          Rauf um 1
+$optionKeyMenuDownBy1        Runter um 1
+$optionKeyMenuDownBy5        Runter um 5
+$optionKeyMenuExit           Zurück/abbr.
 
 $optionEdLeft                Nach links
 $optionEdRight               Nach rechts
