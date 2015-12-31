@@ -218,6 +218,11 @@ void populateControls()
 
 void populateGameKeys()
 {
+    immutable float skillXl = (xlg - 40) / skillSort.length;
+    foreach (x, ac; skillSort)
+        groups[OptionGroup.gameKeys] ~= new SkillHotkeyOption(new Geom(
+            20 + x * skillXl, 90, skillXl, 70), ac, &keySkill[ac]);
+
     auto fac = facKeys!0;
     fac.y += 80;
     groups[OptionGroup.gameKeys] ~= [

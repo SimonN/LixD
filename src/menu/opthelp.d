@@ -17,7 +17,9 @@ import std.algorithm;
 import std.conv;
 import std.string; // strip
 
+import graphic.gralib;
 import gui;
+import lix.enums;
 
 enum spaceGuiTextX =  10f;
 enum mostButtonsXl = 120f;
@@ -25,17 +27,17 @@ enum keyButtonXl   =  70f;
 
 abstract class Option : Element
 {
-    private Label _desc;
+    private Label _desc; // may be null
 
     abstract void loadValue();
     abstract void saveValue(); // can't be const
 
-    this(Geom g, Label d)
+    this(Geom g, Label d = null)
     {
-        assert (d);
         super(g);
         _desc = d;
-        addChild(_desc);
+        if (_desc)
+            addChild(_desc);
     }
 }
 
@@ -108,6 +110,28 @@ class HotkeyOption : Option
         super(g, new Label(new Geom(keyButtonXl + spaceGuiTextX, 0,
                             g.xlg - keyButtonXl + spaceGuiTextX, g.yl), cap));
         addChild(_keyb);
+        _target = t;
+    }
+
+    override void loadValue() { _keyb.scancode = *_target; }
+    override void saveValue() { *_target = _keyb.scancode; }
+}
+
+class SkillHotkeyOption : Option
+{
+    private CutbitElement _cb;
+    private KeyButton _keyb;
+    private int* _target;
+
+    this(Geom g, Ac ac, int* t)
+    {
+        super(g);
+        assert (t);
+        _keyb = new KeyButton(new Geom(0, 0, xlg, 20, From.BOTTOM));
+        _cb   = new CutbitElement(new Geom(0, 0, xlg, ylg-20, From.TOP),
+                                  Style.garden.getSkillButtonIcon);
+        _cb.xf = ac;
+        addChildren(_cb, _keyb);
         _target = t;
     }
 

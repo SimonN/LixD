@@ -204,8 +204,10 @@ string hotkeyNiceLong(in int hotkey)
     if (hotkey <= 0 || ! al_is_keyboard_installed())
         return null;
     string s = al_keycode_to_name(hotkey).to!string;
-    if (! s.length)
-        return null;
-    auto c = std.utf.decodeFront(s); // this cuts it off from s
-    return (std.uni.toUpper(c) ~ s.to!dstring).to!string;
+    string ret;
+    foreach (int i, dchar c; s) {
+        if (i == 0) ret ~= std.uni.toUpper(c);
+        else if (c != '_') ret ~= c;
+    }
+    return ret;
 }

@@ -16,11 +16,6 @@ import level.level; // spawnintMax
 
 class Tribe {
 
-    struct Skill {
-        Ac  ac;
-        int nr;
-    }
-
     struct Master {
         PlNr   number;
         string name;
