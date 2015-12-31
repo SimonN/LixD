@@ -165,8 +165,22 @@ void populateGeneral()
 
 void populateGraphics()
 {
-    auto fac = facRight();
-    groups[OptionGroup.graphics] ~= [
+    Option[] grp;
+    scope (exit)
+        groups[OptionGroup.graphics] = grp;
+    auto fac = facLeft();
+    grp ~= [
+        fac.factory!BoolOption(Lang.optionScreenWindowed.transl, &screenWindowed),
+    ];
+    fac.y += fac.incrementY * 2;
+    grp ~= [
+        fac.factory!BoolOption(Lang.optionArrowsReplay.transl, &arrowsReplay),
+        fac.factory!BoolOption(Lang.optionArrowsNetwork.transl, &arrowsNetwork),
+        fac.factory!BoolOption(Lang.optionIngameTooltips.transl, &ingameTooltips),
+        fac.factory!BoolOption(Lang.optionShowButtonHotkeys.transl, &showButtonHotkeys),
+    ];
+    fac = facRight();
+    grp ~= [
         fac.factory!ResolutionOption(Lang.optionScreenResolution.transl, &screenResolutionX, &screenResolutionY),
         fac.factory!ResolutionOption(Lang.optionScreenWindowedRes.transl, &screenWindowedX, &screenWindowedY),
     ];
