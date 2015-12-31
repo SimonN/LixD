@@ -1,6 +1,18 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.22
+------
+
+2015-12-31
+
+Implemented GUI elements: Text entry, number picker, hotkey picker.
+In the options menu, implemented 2/3 hotkey pages, and the graphics page.
+Each hotkeyed button displays its hotkey in the bottom-right-hand corner.
+
+Added 0.5f to the djvuM offset (the main font's vertical position), now
+it looks great on 640x480, 800x600, 1280x1024, and 1400x1050.
+
 0.1.21
 ------
 

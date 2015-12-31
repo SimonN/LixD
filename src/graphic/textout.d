@@ -71,7 +71,7 @@ void initialize()
     int descent_yls = al_get_font_descent(djvuM);
 
     float yls_20_geoms   = al_get_display_height(display) * 24 / 480f;
-    _djvuMOffset = (yls_20_geoms - bounds_yls - descent_yls) / 2f;
+    _djvuMOffset = (yls_20_geoms - bounds_yls - descent_yls - 1f) / 2f;
     // subtracting descent_yls looks better somehow, even though it should
     // have been included in bounds_yls. The main goal is to make it look
     // nice on various screen sizes, not to make it theoretically correct.
