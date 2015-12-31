@@ -12,30 +12,28 @@ class BitmapButton : Button {
     this(Geom g, const(Cutbit) cb)
     {
         super(g);
-        _cutbit = cb;
+        _cbe = new CutbitElement(new Geom(0, 0, xlg, ylg, From.CENTER), cb);
+        addChild(_cbe);
     }
 
-    @property int xf(in int i) { _xf = i; reqDraw(); return _xf; }
-    @property int xf()  const  { return _xf;         }
-    @property int xfs() const  { return _cutbit.xfs; }
+    @property int xf(in int i) { reqDraw(); return _cbe.xf = i; }
+    @property int xf()  const  { return _cbe.xf;  }
+    @property int xfs() const  { return _cbe.xfs; }
 
 private:
 
-    const(Cutbit) _cutbit;
-    int           _xf;
+    CutbitElement _cbe;
 
 protected:
 
     override void drawOntoButton()
     {
-        immutable int yf = this.on && ! this.down ? 1 : 0;
-
-        // center the image on the button
-        int cbX = to!int(xs + xls / 2f - _cutbit.xl / 2f);
-        int cbY = to!int(ys + yls / 2f - _cutbit.yl / 2f);
-        _cutbit.draw(guiosd, cbX, cbY, xf, yf);
+        _cbe.yf = (this.on && ! this.down) ? 1 : 0;
+        // Force drawing _cbe right now, even though it's a child and would be
+        // drawn later otherwise. The graphic must go behind the button hotkey
+        // that is drawn in final super.drawSelf().
+        _cbe.draw();
     }
-
 }
 // end class BitmapButton
 

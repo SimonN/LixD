@@ -11,10 +11,10 @@ class SkillButton : Button {
 
 public:
 
-    this(Geom g)
+    this(Geom g, Style sty = Style.garden)
     {
         super(g);
-        style = Style.garden;
+        style = sty;
         whenToExecute = WhenToExecute.whenMouseHeld;
 
         _labelNumL = new Label(new Geom(0, 2, g.xlg, 30, From.TOP));
@@ -76,7 +76,12 @@ public:
         if (_style == st)
             return st;
         _style = st;
-        _icon = new Graphic(getSkillButtonIcon(_style), gui.guiosd);
+
+        if (_icon !is null)
+            rmChild(_icon);
+        _icon = new CutbitElement(new Geom(0, 0, xlg, ylg*2f/3f, From.BOTTOM),
+                                  getSkillButtonIcon(_style));
+        addChild(_icon);
         reqDraw();
         return st;
     }
@@ -87,10 +92,10 @@ private:
     int _number;
     Ac  _skill;
 
-    Graphic _icon;
-    Label   _labelNumL;
-    Label   _labelNumM;
-    Label   _label_hotkey;
+    CutbitElement _icon;
+    Label _labelNumL;
+    Label _labelNumM;
+    Label _label_hotkey;
 
 protected:
 
@@ -102,11 +107,10 @@ protected:
 
     override void drawOntoButton()
     {
-        _icon.x  = this.xs +   this.xls/2 - _icon.xl/2;
-        _icon.y  = this.ys + 2*this.yls/3 - _icon.yl/2;
+        assert (_icon);
         _icon.yf = _number == 0 ? 1 : 0; // 0 == colorful, 1 == greyed out
         _icon.xf = _skill;
-        _icon.draw(guiosd);
+        _icon.draw(); // see comment in BitmapButton.drawOntoButton()
     }
 
 }
