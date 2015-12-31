@@ -170,20 +170,6 @@ void populateGraphics()
         fac.factory!ResolutionOption(Lang.optionScreenResolution.transl, &screenResolutionX, &screenResolutionY),
         fac.factory!ResolutionOption(Lang.optionScreenWindowedRes.transl, &screenWindowedX, &screenWindowedY),
     ];
-    auto guiCol   = NumPickConfig();
-    guiCol.max    = 240;
-    guiCol.digits = 3;
-    guiCol.hex    = true;
-    guiCol.stepMedium = 0x10;
-    guiCol.stepSmall  = 0x02;
-    groups[OptionGroup.graphics] ~= [
-        fac.factory!NumPickOption(guiCol, Lang.optionGuiColorRed.transl, &guiColorRed),
-        fac.factory!NumPickOption(guiCol, Lang.optionGuiColorGreen.transl, &guiColorGreen),
-        fac.factory!NumPickOption(guiCol, Lang.optionGuiColorBlue.transl, &guiColorBlue),
-    ];
-    guiRed   = (cast (NumPickOption) groups[OptionGroup.graphics][$-3]).num;
-    guiGreen = (cast (NumPickOption) groups[OptionGroup.graphics][$-2]).num;
-    guiBlue  = (cast (NumPickOption) groups[OptionGroup.graphics][$-1]).num;
 }
 
 void populateControls()
@@ -337,8 +323,11 @@ void populateEditorKeys()
 
 void populateMenuKeys()
 {
+    Option[] grp;
+    scope (exit)
+        groups[OptionGroup.menuKeys] = grp;
     auto fac = facKeys!0;
-    groups[OptionGroup.menuKeys] ~= [
+    grp ~= [
         fac.factory!HotkeyOption(Lang.optionKeyMenuOkay.transl, &keyMenuOkay),
         fac.factory!HotkeyOption(Lang.optionKeyMenuEdit.transl, &keyMenuEdit),
         fac.factory!HotkeyOption(Lang.optionKeyMenuExport.transl, &keyMenuExport),
@@ -346,7 +335,7 @@ void populateMenuKeys()
         fac.factory!HotkeyOption(Lang.optionKeyMenuExit.transl, &keyMenuExit),
     ];
     fac = facKeys!1;
-    groups[OptionGroup.menuKeys] ~= [
+    grp ~= [
         fac.factory!HotkeyOption(Lang.optionKeyMenuUpDir.transl, &keyMenuUpDir),
         fac.factory!HotkeyOption(Lang.optionKeyMenuUpBy5.transl, &keyMenuUpBy5),
         fac.factory!HotkeyOption(Lang.optionKeyMenuUpBy1.transl, &keyMenuUpBy1),
@@ -354,12 +343,30 @@ void populateMenuKeys()
         fac.factory!HotkeyOption(Lang.optionKeyMenuDownBy5.transl, &keyMenuDownBy5),
     ];
     fac = facKeys!2;
-    groups[OptionGroup.menuKeys] ~= [
+    grp ~= [
         fac.factory!HotkeyOption(Lang.browserSingleTitle.transl, &keyMenuMainSingle),
         fac.factory!HotkeyOption(Lang.winLobbyTitle.transl, &keyMenuMainNetwork),
         fac.factory!HotkeyOption(Lang.browserReplayTitle.transl, &keyMenuMainReplays),
         fac.factory!HotkeyOption(Lang.optionTitle.transl, &keyMenuMainOptions),
     ];
+
+    auto guiCol   = NumPickConfig();
+    guiCol.max    = 240;
+    guiCol.digits = 3;
+    guiCol.hex    = true;
+    guiCol.stepMedium = 0x10;
+    guiCol.stepSmall  = 0x02;
+    fac = facLeft();
+    fac.xl = this.xlg - 40;
+    fac.y  = 220;
+    grp ~= [
+        fac.factory!NumPickOption(guiCol, Lang.optionGuiColorRed.transl, &guiColorRed),
+        fac.factory!NumPickOption(guiCol, Lang.optionGuiColorGreen.transl, &guiColorGreen),
+        fac.factory!NumPickOption(guiCol, Lang.optionGuiColorBlue.transl, &guiColorBlue),
+    ];
+    guiRed   = (cast (NumPickOption) grp[$-3]).num;
+    guiGreen = (cast (NumPickOption) grp[$-2]).num;
+    guiBlue  = (cast (NumPickOption) grp[$-1]).num;
 }
 
 }
