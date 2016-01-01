@@ -132,12 +132,12 @@ formatVal()
 
 private void formatValDecimal()
 {
-    if (val == 0)
-        foreach (i, la; lab) {
-            la.text  = (i == 0) ? "0" : "";
-            la.color = (i == 0) && cfg.whiteZero ? color.guiTextOn
-                                                 : color.guiText;
-        }
+    if (val == 0 && lab.len > 0) {
+        lab[$-1].text = "0";
+        lab[$-1].color = cfg.whiteZero ? color.guiTextOn : color.guiText;
+        foreach (la; lab[0 .. $-1])
+            la.text = "";
+    }
     else {
         int remainder = val.abs;
         int pos = lab.len - 1;

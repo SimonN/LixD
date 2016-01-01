@@ -1,6 +1,17 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.23
+------
+
+2016-01-01
+
+Options menu complete. Some options don't do anything yet, but are loaded/saved
+correctly nonetheless. Removed fullscreen resolution option. Switching users
+works. Switching Language works.
+
+I found the first bug of 2016 in the D compiler. ^_^
+
 0.1.22
 ------
 

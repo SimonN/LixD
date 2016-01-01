@@ -180,8 +180,16 @@ void populateGeneral()
     grp ~= fac.factory!BoolOption(Lang.optionUserNameAsk.transl, &userNameAsk);
     fac = facRight();
     grp ~= fac.factory!TextOption(Lang.optionUserName.transl, &userName);
+
     fac.yl = 100;
     grp ~= fac.factory!LanguageOption(Lang.optionLanguage.transl);
+
+    fac.yl = 20;
+    fac.y += 100 - 20;
+    auto cfg = NumPickConfig();
+    cfg.max = 20;
+    cfg.min =  0;
+    grp ~= fac.factory!NumPickOption(cfg, Lang.optionSoundVolume.transl, &soundVolume);
 }
 
 void populateGraphics()
