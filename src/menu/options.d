@@ -90,10 +90,7 @@ public this()
 protected override void calcSelf()
 {
     if (okay.execute || hardware.mouse.mouseClickRight) {
-        foreach (enumVal, group; groups)
-            group.each!(option => option.saveValue);
-        basics.user    .save();
-        basics.globconf.save();
+        saveEverything();
         _gotoMainMenu = true;
     }
     else if (cancel.execute) {
@@ -128,7 +125,31 @@ void showGroup(in OptionGroup gr)
     }
 }
 
+void saveEverything()
+{
+    string oldUser = userName;
+    foreach (enumVal, group; groups)
+        group.each!(option => option.saveValue);
 
+    if (oldUser != userName) {
+        basics.user.load();
+        basics.user.optionGroup = OptionGroup.general;
+    }
+    basics.user    .save();
+    basics.globconf.save();
+    // On user switch, why load, then save?
+    // If the user is new:
+    //      Then loading doesn't overwrite any values at all, so the
+    //      values set by the options menu are applied to the new user.
+    //      The previous user isn't affected. In practice, the new user
+    //      takes over the previous user's options as defaults. I don't
+    //      know whether this is best.
+    // If the changed-to user already exists:
+    //      Then everything set in the options is discarded completely,
+    //      even on hitting OK, and is replaced with the changed-to user's
+    //      disk-saved settings. They're written to disk again, which
+    //      shouldn't change the existing file on disk.
+}
 
 void populateOptionGroups()
 {
