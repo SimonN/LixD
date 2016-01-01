@@ -13,7 +13,6 @@ import std.conv;
 import glo = basics.globals;
 import basics.user;
 import file.filename;
-import file.language;
 import file.io;
 import gui;
 import level.metadata;
@@ -108,25 +107,10 @@ newFileButton(int nr_from_top, int total_nr, in Filename fn)
 
     if (_checkmarkStyle) {
         const(Result) result = basics.user.getLevelResult(fn);
-        if (result) {
-            if      (result.built    != lev.built)    t.checkFrame = 3;
-            else if (result.lixSaved == lev.initial)  t.checkFrame = 1;
-            else if (result.lixSaved >= lev.required) t.checkFrame = 2;
-            else                                      t.checkFrame = 4;
-        }
-        else t.checkFrame = 0;
+        t.checkFrame = result is null         ? 0
+            : result.built    != lev.built    ? 3
+            : result.lixSaved >= lev.required ? 2 : 4;
     }
-    return t;
-}
-
-
-
-protected override Button
-newFlipButton()
-{
-    TextButton t = new TextButton(new Geom(0,
-        bottomButton() * 20, xlg, 20)); // both 20 == height of button
-    t.text = Lang.commonDirFlipPage.transl;
     return t;
 }
 

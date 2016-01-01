@@ -162,29 +162,12 @@ on_dir_load()
 
 
 
-private final TextButton makeTextButton(int y, string str)
-{
-    TextButton b = new TextButton(new Geom(0, y, xlg, 20, Geom.From.TOP));
-    b.text = str;
-    return b;
-}
-
-
-
 protected override Button
 newFileButton(int from_top, int total, in Filename fn)
 {
     // the first slot may have been taken by the dirUp button.
     immutable plusY = dirUp ? 20 : 0;
-    return makeTextButton(20 * from_top + plusY, fn.dirInnermost);
-}
-
-
-
-protected override Button
-newFlipButton()
-{
-    return makeTextButton(ylg.to!int - 20, Lang.commonDirFlipPage.transl);
+    return standardTextButton(20 * from_top + plusY, fn.dirInnermost);
 }
 
 

@@ -14,6 +14,7 @@ import basics.user; // custom keys for navigating the file list
 import graphic.color;
 import gui;
 import file.filename;
+import file.language; // '..' for the default pager button
 import file.search;
 import hardware.keyboard;
 
@@ -58,8 +59,8 @@ public:
     @property inout(Filename) currentDir()  inout { return _currentDir;  }
     @property inout(Filename) currentFile() inout { return _currentFile; }
 
-    @property int bottomButton()      { return _bottomButton;     }
-    @property int bottomButton(int i) { return _bottomButton = i; }
+    final @property bottomButton() const   { return _bottomButton;      }
+    final @property bottomButton(in int i) { return _bottomButton = i;  }
 
     @property bool useHotkeys()       { return _useHotkeys;     }
     @property bool useHotkeys(bool b) { return _useHotkeys = b; }
@@ -68,9 +69,25 @@ protected:
 
     @property bool clicked(bool b) { return _clicked = b; }
 
-//  final    void   buttons_clear();
+//  final void buttons_clear();
+
+    // never called by ListFile, it's an offer for derived classes
+    final TextButton standardTextButton(in float y, in string str)
+    {
+        TextButton b = new TextButton(new Geom(0, y, xlg, 20, Geom.From.TOP));
+        b.text = str;
+        return b;
+    }
+
     abstract Button newFileButton(int from_top, int total, in Filename);
-    abstract Button newFlipButton();
+
+    // override this if wanted
+    Button newFlipButton()
+    {
+        return new TextButton(new Geom(0,
+            bottomButton() * 20, xlg, 20), // both 20 == height of button
+            Lang.commonDirFlipPage.transl);
+    }
 
     enum OnDirLoadAction { CONTINUE, RELOAD, ABORT }
 
@@ -202,7 +219,7 @@ highlight_file_number(in int pos)
     if (_bottomButtonFlipsPage) {
         if (pos <  _fileNumberAtTop
          || pos >= _fileNumberAtTop + bottomButton) {
-            _page = pos / bottomButton;
+            _page = (bottomButton > 0) ? pos / bottomButton : 0;
             load_currentDir();
         }
     }
@@ -312,8 +329,15 @@ load_currentDir()
      && nextFromFile < files.length; ++i) {
         add_file_button(i);
     }
-    // Add page-flipping button, unless we're filling the first page exactly
-    if (nextFromFile == files.length - 1 && page == 0) {
+    // Add page-flipping button, unless we're filling the first page exactly,
+    // or if there is no room for buttons anyway otherwise. In that case,
+    // add an extra regular button.
+    if (_bottomButton < 0) {
+        // don't add anything at all
+    }
+    else if (nextFromFile == files.length - 1 && page == 0
+        || _bottomButton == 0
+    ) {
         add_file_button(_bottomButton);
     }
     else if (nextFromFile < files.length || page > 0) {
