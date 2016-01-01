@@ -81,9 +81,15 @@ private:
     bool scrollingStarts;
     bool scrollingContinues;
 
+    @property int divByZoom(int i) const
+    {
+        assert (i >= 0);
+        return (i + _zoom - 1) / _zoom;
+    }
+
     // these two don't crop at the edge yet
-    @property int cameraZoomedXl() const { return (_cameraXl+_zoom-1)/_zoom; }
-    @property int cameraZoomedYl() const { return (_cameraYl+_zoom-1)/_zoom; }
+    @property int cameraZoomedXl() const { return divByZoom(_cameraXl); }
+    @property int cameraZoomedYl() const { return divByZoom(_cameraYl); }
 
     @property int minX() const { return cameraZoomedXl / 2; }
     @property int minY() const { return cameraZoomedYl / 2; }
@@ -298,19 +304,17 @@ void
 drawCamera(Albit target_albit)
 {
     auto drata = DrawingTarget(target_albit);
+    immutable overallMaxX = _cameraXl - borderOneSideXl;
 
-    for (int x = borderOneSideXl;
-             x < _cameraXl - borderOneSideXl;
-             x += xl * _zoom
-    ) {
+    for (int x = borderOneSideXl; x < overallMaxX; x += xl * _zoom) {
         for (int y = borderUpperSideYl; y < _cameraYl; y += yl * _zoom) {
             // maxXl, maxYl describe the size of the image to be drawn
             // in this iteration of the double-for loop. This should always
             // be as much as possible, i.e., the first argument to min().
             // Only in the last iteration of the loop,
             // a smaller rectangle is better.
-            immutable int maxXl = min(xl * _zoom, _cameraXl - x);
-            immutable int maxYl = min(yl * _zoom, _cameraYl - y);
+            immutable int maxXl = min(xl * _zoom, overallMaxX - x);
+            immutable int maxYl = min(yl * _zoom, _cameraYl   - y);
             drawCamera_with_target_corner(x, y, maxXl, maxYl);
             if (borderUpperSideYl != 0) break;
         }
@@ -336,10 +340,23 @@ drawCamera(Albit target_albit)
 
 
 
+
 private static struct Rect { int x, y, xl, yl; }
 
+// This rectangle describes a portion of the source torbit, considering zoom.
 private Rect cameraRectangle()
-{
+out (rect) {
+    // The rectangle never wraps over a torus seam, but instead is cut off.
+    // Callers who what to draw a full screen rectangle must compute the
+    // remainder behind the seam themselves.
+    assert (rect.x >= 0);
+    assert (rect.y >= 0);
+    assert (rect.x + rect.xl >= 0);
+    assert (rect.y + rect.yl >= 0);
+    assert (rect.x + rect.xl <= this.xl);
+    assert (rect.y + rect.yl <= this.yl);
+}
+body {
     Rect rect;
     immutable int x_tmp = _cameraX - cameraZoomedXl / 2;
     immutable int y_tmp = _cameraY - cameraZoomedYl / 2;
@@ -357,22 +374,19 @@ private void
 drawCamera_with_target_corner(
     in int tcx, // x coordinate of target corner
     in int tcy,
-    in int maxTcxl, // draw at most this much, but maybe even less
-    in int maxTcyl
+    in int maxTcxl, // length, away from (tcx, tcy). Draw at most this much
+    in int maxTcyl  // to the target.
 ) {
-    immutable r    = cameraRectangle();
-    immutable drtx = r.xl < cameraZoomedXl && r.xl < maxTcxl && torusX;
-    immutable drty = r.yl < cameraZoomedYl && r.yl < maxTcyl && torusY;
-
-    // size of the non-wrapped portion
-    immutable xl1 = min(r.xl, maxTcxl);
-    immutable yl1 = min(r.yl, maxTcyl);
-
+    immutable r = cameraRectangle();
+    // Source length of the non-wrapped portion. (Target len = this * zoom.)
+    immutable sxl1 = min(r.xl, divByZoom(maxTcxl));
+    immutable syl1 = min(r.yl, divByZoom(maxTcyl));
     // target corner coordinates and size of the wrapped-around torus portion
     immutable tcx2 = tcx + r.xl * _zoom;
     immutable tcy2 = tcy + r.yl * _zoom;
-    immutable xl2  = min(cameraZoomedXl - r.xl, maxTcxl - r.xl);
-    immutable yl2  = min(cameraZoomedYl - r.yl, maxTcyl - r.yl);
+    // source length of the wrapped-around torus portion
+    immutable sxl2 = min(cameraZoomedXl - r.xl, divByZoom(maxTcxl) - sxl1);
+    immutable syl2 = min(cameraZoomedYl - r.yl, divByZoom(maxTcyl) - syl1);
 
     void blitOnce(in int sx,  in int sy,  // source x, y
                   in int sxl, in int syl, // length on the source
@@ -384,10 +398,12 @@ drawCamera_with_target_corner(
             al_draw_scaled_bitmap(albit, sx, sy, sxl,       syl,
                                          tx, ty, _zoom*sxl, _zoom*syl, 0);
     }
-                      blitOnce(r.x, r.y, xl1, yl1, tcx,  tcy);
-    if (drtx        ) blitOnce(0,   r.y, xl2, yl1, tcx2, tcy);
-    if (        drty) blitOnce(r.x, 0,   xl1, yl2, tcx,  tcy2);
-    if (drtx && drty) blitOnce(0,   0,   xl2, yl2, tcx2, tcy2);
+    immutable drtx = torusX && sxl2 > 0;
+    immutable drty = torusY && syl2 > 0;
+                      blitOnce(r.x, r.y, sxl1, syl1, tcx,  tcy);
+    if (drtx        ) blitOnce(0,   r.y, sxl2, syl1, tcx2, tcy);
+    if (        drty) blitOnce(r.x, 0,   sxl1, syl2, tcx,  tcy2);
+    if (drtx && drty) blitOnce(0,   0,   sxl2, syl2, tcx2, tcy2);
 }
 
 
