@@ -10,6 +10,8 @@ module gui.button;
 import std.conv;
 
 import basics.alleg5; // keyboard enum
+import basics.user; // hotkey display option
+
 import graphic.color;
 import graphic.textout; // drawing the hotkey
 import gui;
@@ -109,7 +111,8 @@ drawSelf()
     draw3DButton(xs, ys, xls, yls, c1, c2, c3);
 
     drawOntoButton();
-    drawHotkey();
+    if (basics.user.showButtonHotkeys)
+        drawHotkey();
 }
 
 // override these if needed
