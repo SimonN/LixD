@@ -40,8 +40,8 @@ class Cmdargs {
     bool versionAndExit;
     bool helpAndExit;
 
-    int  wantResolutionX;
-    int  wantResolutionY;
+    int  wantWindowedX;
+    int  wantWindowedY;
 
     private string[] badSwitches;
     Filename[]       verifyFiles;
@@ -99,13 +99,13 @@ class Cmdargs {
             try {
                 string[] numbers = splitter(want_res, 'x').array();
                 if (numbers.length == 2) {
-                    wantResolutionX = numbers[0].to!int;
-                    wantResolutionY = numbers[1].to!int;
+                    wantWindowedX = numbers[0].to!int;
+                    wantWindowedY = numbers[1].to!int;
                 }
             }
             catch (Exception e) { }
 
-            if (wantResolutionX == 0 || wantResolutionY == 0)
+            if (wantWindowedX == 0 || wantWindowedY == 0)
                 badSwitches ~= arg;
             else
                 windowed = true;

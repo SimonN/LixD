@@ -333,7 +333,6 @@ enum Lang {
     optionPriorityInvertRight,
 
     optionScreenWindowed,
-    optionScreenResolution,
     optionScreenWindowedRes,
     optionArrowsReplay,
     optionArrowsNetwork,
@@ -342,11 +341,7 @@ enum Lang {
     optionGuiColorRed,
     optionGuiColorGreen,
     optionGuiColorBlue,
-    optionInfo,
-    optionGfxZero,
-    optionSoundLoadDriver,
     optionSoundVolume,
-    optionInfoSound,
 
     optionKeyUnassigned,
     optionKeyForceLeft,

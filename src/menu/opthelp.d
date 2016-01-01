@@ -17,6 +17,12 @@ import std.algorithm;
 import std.conv;
 import std.string; // strip
 
+static import basics.user;    // for LanguageOption
+static import basics.globals; // for LanguageOption
+import file.filename;  // for LanguageOption
+import file.io;        // for LanguageOption
+import file.language;  // for LanguageOption
+import file.search;    // for LanguageOption
 import graphic.gralib;
 import gui;
 import lix.enums;
@@ -166,6 +172,12 @@ class NumPickOption : Option
 
 
 
+// ############################################################################
+// ############################################################################
+// ############################################################################
+
+
+
 alias ResolutionOption = ManyNumbersOption!2;
 
 class ManyNumbersOption (int fields) : Option
@@ -202,5 +214,65 @@ public:
     {
         foreach (i; 0 .. fields)
             *_target[i] = _texttype[i].number;
+    }
+}
+
+
+
+// ############################################################################
+// ############################################################################
+// ############################################################################
+
+
+
+class ListLanguage : gui.ListFile {
+
+    this(Geom g)
+    {
+        g.yl = min(g.yl, 20 * basics.globals.dirDataTransl
+            .findFiles(basics.globals.filenameExtTransl).length);
+        super(g);
+        currentDir = basics.globals.dirDataTransl;
+    }
+
+    protected override Button
+    newFileButton(int fromTop, int unused, in Filename fn)
+    {
+        string langName;
+        auto lines = fillVectorFromFileNothrow(fn);
+        foreach (i; lines)
+            if (i.text1 == Lang.mainNameOfLanguage.to!string)
+                return standardTextButton(fromTop * 20, i.text2);
+        return standardTextButton(fromTop * 20, fn.file);
+    }
+
+    protected override void onFileHighlight()
+    {
+        buttonLastClicked.on = true; // can't deselect
+    }
+}
+
+class LanguageOption : Option {
+
+    private ListLanguage _lf;
+
+    this(Geom g, string cap)
+    {
+        super(g, new Label(new Geom(mostButtonsXl + spaceGuiTextX, 0,
+                            g.xlg - mostButtonsXl + spaceGuiTextX, 20), cap));
+        _lf = new ListLanguage(new Geom(0, 0, mostButtonsXl, ylg));
+        addChild(_lf);
+    }
+
+    override void loadValue() { _lf.highlight = basics.user.fileLanguage; }
+    override void saveValue()
+    {
+        if (   _lf.currentFile !is null
+            && _lf.currentFile != _lf.currentDir
+            && _lf.currentFile != basics.user.fileLanguage
+        ) {
+            basics.user.fileLanguage = _lf.currentFile;
+            loadUserLanguageAndIfNotExistSetUserOptionToEnglish();
+        }
     }
 }

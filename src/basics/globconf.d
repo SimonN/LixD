@@ -21,11 +21,6 @@ import file.log;
 string userName          = "";
 bool   userNameAsk       = false;
 
-int    screenResolutionX =   0;
-int    screenResolutionY =   0;
-int    screenWindowedX   = 640;
-int    screenWindowedY   = 480;
-
 string ipLastUsed        = "127.0.0.1";
 string ipCentralServer   = "asdfasdf.ethz.ch";
 int    serverPort        = 22934;
@@ -52,12 +47,6 @@ void load()
 
     else if (i.text1 == cfgIPLastUsed       ) ipLastUsed       = i.text2;
     else if (i.text1 == cfgIPCentralServer  ) ipCentralServer  = i.text2;
-
-    else if (i.text1 == cfgScreenResolutionX) screenResolutionX = i.nr1;
-    else if (i.text1 == cfgScreenResolutionY) screenResolutionY = i.nr1;
-    else if (i.text1 == cfgScreenWindowedX  ) screenWindowedX   = i.nr1;
-    else if (i.text1 == cfgScreenWindowedY  ) screenWindowedY   = i.nr1;
-
     else if (i.text1 == cfgServerPort      ) serverPort         = i.nr1;
     }
     // end foreach
@@ -79,18 +68,6 @@ void save()
         f.writeln(IoLine.Dollar(cfgIPLastUsed,            ipLastUsed));
         f.writeln(IoLine.Dollar(cfgIPCentralServer,       ipCentralServer));
         f.writeln(IoLine.Hash  (cfgServerPort,             serverPort));
-        f.writeln("");
-
-        f.writefln("// If you set `%s/Y' both to 0, Lix will use your",
-         cfgScreenResolutionX);
-        f.writeln(
-         "// desktop resolution. To force a different resolution, enter it here.");
-
-        f.writeln(IoLine.Hash(cfgScreenResolutionX,     screenResolutionX));
-        f.writeln(IoLine.Hash(cfgScreenResolutionY,     screenResolutionY));
-        f.writeln(IoLine.Hash(cfgScreenWindowedX,       screenWindowedX));
-        f.writeln(IoLine.Hash(cfgScreenWindowedY,       screenWindowedY));
-
         f.close();
     }
     catch (Exception e) {

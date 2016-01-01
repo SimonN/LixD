@@ -3,10 +3,11 @@ module hardware.display;
 import std.array;
 import std.string;
 
+import basics.cmdargs;
 import basics.help; // positive mod
 import basics.alleg5;
 import basics.globals; // nameOfTheGame
-import basics.globconf;
+import basics.user; // what windowed resolution does the user want
 import graphic.color; // inside displayStartupMessage()
 import graphic.textout; // inside displayStartupMessage()
 import file.log;
@@ -82,54 +83,44 @@ displayYl()
 
 
 // This is like initialize() of other modules.
-// Will use global variables if res == (0, 0).
-// If res == (0, 0) and the global variables are also (0, 0),
-// then query the underlying desktop environment for fullscreen resolution,
-// or, if window mode is desired, fall back to 640 x 480.
-void setScreenMode(bool wantFull, int wantX = 0, int wantY = 0)
+// For fullscreen, query the underlying desktop environment for resolution.
+// For winwoded, use the wanted resolution, or fall back to 640 x 480.
+void setScreenMode(in Cmdargs cmdargs)
 {
     struct TryMode {
         bool full;
         int x, y;
-        this(bool _f, int _x, int _y) {
-            full = _f; x = _x; y = _y;
-            // TryMode shall not use 0, it shall only hold real possibilities.
-            assert (x > 0);
-            assert (y > 0);
-        }
     }
 
     // FIFO queue of screen modes to try
     TryMode[] try_modes;
 
-    // top priority goes to using setScreenMode()'s arguments
-    if (wantX > 0 && wantY > 0) {
-        try_modes ~= TryMode(wantFull, wantX, wantY);
+    // top priority goes to using setScreenMode()'s arguments, if they exist
+    if (cmdargs.windowed) {
+        if (cmdargs.wantWindowedX > 0 && cmdargs.wantWindowedY > 0)
+            try_modes ~= TryMode(false, cmdargs.wantWindowedX,
+                                        cmdargs.wantWindowedY);
+        else try_modes ~= TryMode(false, 640, 480);
     }
 
-    // two more modes for fullscreen, two more modes for windowed,
-    // but choose the order of these additions based on wantFull
     void addFullscreenTryModes() {
-        if (screenResolutionX > 0 && screenResolutionY > 0) {
-            try_modes ~= TryMode(true, screenResolutionX,
-                                       screenResolutionY);
-        }
-        try_modes  ~= TryMode(true, 640, 480);
+        try_modes ~= TryMode(true, 0, 0);
+        try_modes ~= TryMode(true, 640, 480);
     }
     void addWindowedTryModes() {
         if (screenWindowedX > 0 && screenWindowedY > 0) {
             try_modes ~= TryMode(false, screenWindowedX, screenWindowedY);
         }
-        try_modes  ~= TryMode(false, 640, 480);
+        try_modes ~= TryMode(false, 640, 480);
     }
 
-    if (wantFull) {
-        addFullscreenTryModes();
+    if (cmdargs.windowed || basics.user.screenWindowed) {
         addWindowedTryModes();
+        addFullscreenTryModes();
     }
     else {
-        addWindowedTryModes();
         addFullscreenTryModes();
+        addWindowedTryModes();
     }
 
     immutable fullscreen_flag = ALLEGRO_FULLSCREEN_WINDOW;
@@ -147,8 +138,9 @@ void setScreenMode(bool wantFull, int wantX = 0, int wantY = 0)
         deinitialize();
         display = al_create_display(mode.x, mode.y);
 
-        // if successfully created, don't try further modes
-        if (display) break;
+        if (display)
+            // don't try further modes on success
+            break;
     }
 
     // cleaning up after the change, (re)instantiating the event queue
@@ -169,21 +161,6 @@ void setScreenMode(bool wantFull, int wantX = 0, int wantY = 0)
     hardware.mouse.centerMouse();
 
     gui.Geom.setScreenXYls(al_x, al_y);
-
-    // if we didn't get what we wanted, make an entry in the log file
-    if (wantX > 0 && wantY > 0
-     && (wantX    != al_x
-      || wantY    != al_y
-      || wantFull != al_f))
-    {
-        // DTODOLANG
-        logf("Your wanted %s mode at %dx%d cannot be used.",
-            wantFull ? "fullscreen" : "windowed",
-            wantX, wantY);
-        logf("    -> Falling back to %s at %dx%d.",
-            al_f ? "fullscreen" : "windowed",
-            al_x, al_y);
-    }
 }
 
 

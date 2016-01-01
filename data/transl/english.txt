@@ -323,20 +323,16 @@ $optionAvoidBatterToExploder  Prefer batter → non-exploder
 $optionPriorityInvertRight    Right button inverts priority
 $optionPriorityInvertMiddle   Middle button inverts priority
 
-$optionScreenWindowed         Windowed mode*
-$optionScreenResolution       Fullscreen resolution**
-$optionScreenWindowedRes     Windowed resolution
-$optionArrowsReplay           Arrows during replays
-$optionArrowsNetwork          Arrows in network games
-$optionGameplayHelp           Display game hotkeys
-$optionGuiColorRed           Menu color red
-$optionGuiColorGreen         Menu color green
-$optionGuiColorBlue          Menu color blue
-$optionInfo                    *) Hit [Alt] + [Enter] to toggle full screen/windowed mode at any time.
-$optionGfxZero                **) Enter 0 in both fields to use your normal desktop resolution.
-$optionSoundLoadDriver       Load sound driver*
-$optionSoundVolume            Sound volume
-$optionInfoSound              *) This option requires a program restart to take effect.
+$optionScreenWindowed           Windowed mode
+$optionScreenWindowedRes        Windowed resolution
+$optionArrowsReplay             Arrows during replays
+$optionArrowsNetwork            Arrows in network games
+$optionIngameTooltips           Tooltips during game
+$optionShowButtonHotkeys        Show button hotkeys
+$optionGuiColorRed              Menu color red
+$optionGuiColorGreen            Menu color green
+$optionGuiColorBlue             Menu color blue
+$optionSoundVolume              Sound volume
 
 $optionKeyUnassigned          none
 $optionKeyForceLeft          Force left

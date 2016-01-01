@@ -42,8 +42,7 @@ void initialize(in Cmdargs cmdargs)
     basics.user.load();
     loadUserLanguageAndIfNotExistSetUserOptionToEnglish();
 
-    hardware.display.setScreenMode(! cmdargs.windowed,
-        cmdargs.wantResolutionX, cmdargs.wantResolutionY);
+    hardware.display.setScreenMode(cmdargs);
 
     al_init_image_addon();
     al_init_font_addon();

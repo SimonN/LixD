@@ -56,6 +56,9 @@ bool priorityInvertRight   = true;
 int  soundVolume       = 10;
 
 bool screenWindowed    = false;
+int  screenWindowedX   = 640;
+int  screenWindowedY   = 480;
+
 bool arrowsReplay      = true;
 bool arrowsNetwork     = true;
 bool ingameTooltips    = true;
@@ -381,6 +384,8 @@ void load()
         else if (i.text1 == userPriorityInvertRight ) priorityInvertRight  = i.nr1 > 0;
 
         else if (i.text1 == userScreenWindowed) screenWindowed = i.nr1 > 0;
+        else if (i.text1 == userScreenWindowedX) screenWindowedX = i.nr1;
+        else if (i.text1 == userScreenWindowedY) screenWindowedY = i.nr1;
         else if (i.text1 == userArrowsReplay  ) arrowsReplay   = i.nr1 > 0;
         else if (i.text1 == userArrowsNetwork ) arrowsNetwork  = i.nr1 > 0;
         else if (i.text1 == userIngameTooltips) ingameTooltips = i.nr1 > 0;
@@ -534,6 +539,8 @@ nothrow void save()
         f.writeln();
 
         fwr(IoLine.Hash(userScreenWindowed,         screenWindowed));
+        fwr(IoLine.Hash(userScreenWindowedX,        screenWindowedX));
+        fwr(IoLine.Hash(userScreenWindowedY,        screenWindowedY));
         fwr(IoLine.Hash(userArrowsReplay,           arrowsReplay));
         fwr(IoLine.Hash(userArrowsNetwork,          arrowsNetwork));
         fwr(IoLine.Hash(userIngameTooltips,         ingameTooltips));

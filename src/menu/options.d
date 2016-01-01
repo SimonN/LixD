@@ -152,15 +152,15 @@ auto facKeys(int column)()
 
 void populateGeneral()
 {
+    Option[] grp;
+    scope (exit)
+        groups[OptionGroup.general] = grp;
     auto fac = facLeft();
-    groups[OptionGroup.general] ~= [
-        fac.factory!BoolOption(Lang.optionUserNameAsk.transl, &userNameAsk),
-    ];
-
+    grp ~= fac.factory!BoolOption(Lang.optionUserNameAsk.transl, &userNameAsk);
     fac = facRight();
-    groups[OptionGroup.general] ~= [
-        fac.factory!TextOption(Lang.optionUserName.transl, &userName),
-    ];
+    grp ~= fac.factory!TextOption(Lang.optionUserName.transl, &userName);
+    fac.yl = 100;
+    grp ~= fac.factory!LanguageOption(Lang.optionLanguage.transl);
 }
 
 void populateGraphics()
@@ -172,7 +172,7 @@ void populateGraphics()
     grp ~= [
         fac.factory!BoolOption(Lang.optionScreenWindowed.transl, &screenWindowed),
     ];
-    fac.y += fac.incrementY * 2;
+    fac.y += fac.incrementY;
     grp ~= [
         fac.factory!BoolOption(Lang.optionArrowsReplay.transl, &arrowsReplay),
         fac.factory!BoolOption(Lang.optionArrowsNetwork.transl, &arrowsNetwork),
@@ -180,10 +180,8 @@ void populateGraphics()
         fac.factory!BoolOption(Lang.optionShowButtonHotkeys.transl, &showButtonHotkeys),
     ];
     fac = facRight();
-    grp ~= [
-        fac.factory!ResolutionOption(Lang.optionScreenResolution.transl, &screenResolutionX, &screenResolutionY),
-        fac.factory!ResolutionOption(Lang.optionScreenWindowedRes.transl, &screenWindowedX, &screenWindowedY),
-    ];
+    grp ~= fac.factory!ResolutionOption(Lang.optionScreenWindowedRes.transl,
+                                        &screenWindowedX, &screenWindowedY);
 }
 
 void populateControls()

@@ -309,21 +309,17 @@ $optionAvoidBatterToExploder Batter → Nichtexploder bevorzugen
 $optionPriorityInvertRight   Rechte Maustaste inv. Priorität
 $optionPriorityInvertMiddle  Mittlere Maustaste inv. Priorität
 
-$optionScreenWindowed        Fenstermodus*
-$optionScreenResolution      Vollbild-Auflösung**
-$optionScreenWindowedRes    Fenster-Auflösung
-$optionArrowsReplay          Pfeile im Replay
-$optionArrowsNetwork         Pfeile im Netzwerkspiel
-$optionGameplayHelp          Spiel-Hotkeys anzeigen
-$optionGuiColorRed          Menüfarbe Rot
-$optionGuiColorGreen        Menüfarbe Grün
-$optionGuiColorBlue         Menüfarbe Blau
-$optionInfo                   *) [Alt] + [Enter] wechselt jederzeit zwischen Fenster- und Vollbildmodus.
-$optionGfxZero               **) Setze beides auf 0, um deine normale Desktop-Aufloesung zu nutzen.
-$optionSoundLoadDriver      Audiotreiber laden*
-$optionSoundVolume           Klanglautstärke
-$optionLanguage               Sprache/Language
-$optionInfoSound             *) Diese Einstellung gilt erst nach einem Programmneustart.
+$optionScreenWindowed           Fenstermodus
+$optionScreenWindowedRes        Fenster-Auflösung
+$optionArrowsReplay             Pfeile im Replay
+$optionArrowsNetwork            Pfeile im Netzwerkspiel
+$optionIngameTooltips           Tooltips im Spiel
+$optionShowButtonHotkeys        Button-Hotkeys anzeigen
+$optionGuiColorRed              Menüfarbe Rot
+$optionGuiColorGreen            Menüfarbe Grün
+$optionGuiColorBlue             Menüfarbe Blau
+$optionSoundVolume              Klanglautstärke
+$optionLanguage                 Sprache/Language
 
 $optionKeyUnassigned         nichts
 $optionKeyForceLeft         Nur links

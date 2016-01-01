@@ -30,6 +30,7 @@ immutable filenameExtLevelOrig       = ".lvl";
 immutable filenameExtLevelLemmini    = ".ini";
 immutable filenameExtReplay          = ".txt";
 immutable filenameExtConfig          = ".txt";
+immutable filenameExtTransl          = ".txt";
 immutable filenameExtTileDefinitions = ".txt";
 
 immutable fileLevelDirOrder   = "_order.X.txt";
@@ -49,11 +50,6 @@ immutable preExtWater                = 'W';
 // keys for saving/loading the global config file
 immutable cfgUserName                = "USER_NAME";
 immutable cfgUserNameAsk             = "USER_NAME_ASK";
-
-immutable cfgScreenResolutionX      = "SCREEN_RESOLUTION_X";
-immutable cfgScreenResolutionY      = "SCREEN_RESOLUTION_Y";
-immutable cfgScreenWindowedX         = "SCREEN_WINDOWED_X";
-immutable cfgScreenWindowedY         = "SCREEN_WINDOWED_Y";
 
 immutable cfgIPLastUsed             = "IP_LAST_USED";
 immutable cfgIPCentralServer        = "IP_CENTRAL_SERVER";
@@ -146,6 +142,8 @@ immutable userPriorityInvertMiddle   = "PRIORITY_INVERT_MIDDLE";
 immutable userPriorityInvertRight    = "PRIORITY_INVERT_RIGHT";
 
 immutable userScreenWindowed         = "SCREEN_WINDOWED";
+immutable userScreenWindowedX        = "SCREEN_WINDOWED_X";
+immutable userScreenWindowedY        = "SCREEN_WINDOWED_Y";
 immutable userArrowsReplay           = "ARROWS_REPLAY";
 immutable userArrowsNetwork          = "ARROWS_NETWORK";
 immutable userIngameTooltips         = "INGAME_TOOLTIPS";
