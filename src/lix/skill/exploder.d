@@ -1,5 +1,8 @@
 module lix.skill.exploder;
 
+import std.math; // sqrt
+
+import basics.help; // roundInt
 import game.mask;
 import game.terchang;
 import lix;
@@ -59,20 +62,22 @@ abstract class Ploder : PerformedActivity {
 
 protected:
 
-    abstract void changeTerrain();
              void flingOtherLix() { }
     abstract void makeEffect();
 
-    final void defaultTerrainChange(in TerrainChange.Type type)
+private:
+
+    final void changeTerrain()
     {
+        assert (ac == Ac.exploder || ac == Ac.exploder2);
         TerrainChange tc;
         tc.update = lixxie.outsideWorld.state.update;
-        tc.type   = type;
-        tc.x      = - masks[type].offsetX + lixxie.ex;
-        tc.y      = - masks[type].offsetY + lixxie.ey;
+        tc.type   = (ac == Ac.exploder2) ? TerrainChange.Type.explode
+                                         : TerrainChange.Type.implode;
+        tc.x      = - masks[tc.type].offsetX + lixxie.ex;
+        tc.y      = - masks[tc.type].offsetY + lixxie.ey;
         lixxie.outsideWorld.physicsDrawer.add(tc);
     }
-
 }
 
 
@@ -82,11 +87,6 @@ class Imploder : Ploder {
     mixin(CloneByCopyFrom!"Imploder");
 
 protected:
-
-    override void changeTerrain()
-    {
-        defaultTerrainChange(TerrainChange.Type.implode);
-    }
 
     override void makeEffect()
     {
@@ -106,11 +106,6 @@ class Exploder : Ploder {
 
 protected:
 
-    override void changeTerrain()
-    {
-        defaultTerrainChange(TerrainChange.Type.explode);
-    }
-
     override void makeEffect()
     {
         outsideWorld.effect.addExplosion(
@@ -121,39 +116,47 @@ protected:
 
     override void flingOtherLix()
     {
-    // x = ex, y = ey - 6 was the center of the removed disc
-    /+
-    // Knockback
-    // Fuer komische Werte siehe alle Kommentare zum lustigen Hochfliegen.
-    const double range      = radius * 2.5 + 0.5;
-    for (Tribe::It titr = cs.tribes.begin(); titr != cs.tribes.end(); ++titr)
-     for (LixIt i = titr->lixvec.begin(); i != titr->lixvec.end(); ++i) {
-        // Ausnahme:
-        if (i->get_leaving()) continue;
-        // Mehr lustiges Hochfliegen durch die 10 tiefere Explosion!
-        const int dx = map.distance_x(x,      i->get_ex());
-        const int dy = map.distance_y(y + 10, i->get_ey());
-        const double distancesquare = map.hypotsquare(dx, dy, 0, 0);
-        if (distancesquare <= range * range) {
-            const double dist = std::sqrt(distancesquare);
-            int sx = 0;
-            int sy = 0;
-            if (dist > 0) {
-                const double strength_x   = 350;
-                const double strength_y   = 330;
-                const int    center_const =  20;
-                sx = (int) (strength_x * dx / (dist * (dist + center_const)) );
-                sy = (int) (strength_y * dy / (dist * (dist + center_const)) );
+        foreach (tribe; outsideWorld.state.tribes)
+            foreach (target; tribe.lixvec)
+                if (target.healthy)
+                    flingOtherLix(target, tribe is outsideWorld.tribe);
+    }
+
+private:
+
+    // DTODOSKILLS: compare flinging with C++ Lix replays,
+    // once saved-to-disk replays are loadable and playable
+    void flingOtherLix(Lixxie target, in bool targetTribeIsOurTribe)
+    {
+        immutable dx = ground.distanceX(ex,     target.ex);
+        immutable dy = ground.distanceY(ey + 4, target.ey);
+        // +4 moves makes dy positive if target.ey == this.ey,
+        // it's desirable to fling such targets up a little
+
+        immutable double distSquared  = dx*dx + dy*dy;
+        enum      double rangeSquared = (23 * 2.5 + 0.5)^^2;
+        // 23 was the radius in C++ of the flingploder's terrain removal.
+        // Look up the terrain mask in game.mask for further detail.
+
+        if (distSquared <= rangeSquared) {
+            double sx = 0;
+            double sy = 0;
+            if (distSquared > 0) {
+                enum strengthX   = 350;
+                enum strengthY   = 330;
+                enum centerConst =  20;
+                // DTODOSKILLS: Find a formula that doesn't need the square
+                // root and gives a different, but also OK-looking result
+                immutable dist = distSquared.sqrt;
+                sx = strengthX * dx / (dist * (dist + centerConst));
+                sy = strengthY * dy / (dist * (dist + centerConst));
             }
-            const bool same_tribe = (&t == &*titr);
             // the upcoming -5 are for even more jolly flying upwards!
             // don't splat too easily from flinging, degrade this bonus softly
             if      (sy > -10) sy += -5;
             else if (sy > -20) sy += (-20 - sy) / 2;
-            i->add_fling(sx, sy, same_tribe);
+            target.addFling(sx.roundInt, sy.roundInt, targetTribeIsOurTribe);
         }
-    }
-    +/
     }
 
 }
