@@ -91,9 +91,11 @@ bool fileExists(const Filename fn)
 
 
 
+// dirExists(a/b/) checks if b exists.
+// dirExists(a/b/c) checks if b exists, no matter whether the file c is inside.
 bool dirExists(const Filename fn)
 {
-    string noslash = fn.rootful;
+    string noslash = fn.dirRootful;
     while (noslash != null && noslash[$-1] == '/') noslash = noslash[0 .. $-1];
     return std.file.exists(noslash)
      &&    std.file.isDir (noslash);
