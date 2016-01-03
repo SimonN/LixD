@@ -359,9 +359,8 @@ protected:
 
     override void selectFrame()
     {
-        immutable int y   = speedY;
-        immutable int x   = max(2, speedX);
-        immutable int tan = y * 12 / x;
+        assert (speedX >= 0);
+        immutable int tan = speedY * 12 / max(2, speedX);
 
         struct Result { int targetFrame; bool anim; }
         Result res =
@@ -379,7 +378,7 @@ protected:
         // unless we haven't yet selected frame from the midst of motion
         if (frame > 0)
             // ...never go forward through the anim too fast
-            res.targetFrame = min(res.targetFrame, frame + res.anim ? 2 : 1);
+            res.targetFrame = min(res.targetFrame, frame + (res.anim ? 2 : 1));
 
         frame = res.targetFrame
             + ((res.targetFrame == frame && res.anim) ? 1 : 0);

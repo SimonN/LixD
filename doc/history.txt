@@ -1,6 +1,15 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.25
+------
+
+2016-01-03
+
+Fixed bug #19: Tumbler selected only frames 2 or 3. Now, it selects its frame
+by angle of flight now, while not advancing too far in any single frame.
+https://github.com/SimonN/LixD/issues/19
+
 0.1.24
 ------
 
