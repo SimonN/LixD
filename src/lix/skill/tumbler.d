@@ -298,16 +298,23 @@ class Tumbler : BallisticFlyer {
 
     static applyFlingXY(Lixxie lix)
     {
-        assert (lix.outsideWorld);
-        lix.become(Ac.tumbler);
-        if (lix.flingX != 0)
-            lix.dir = lix.flingX;
-        Tumbler tumbling = cast (Tumbler) lix.performedActivity;
-        assert (tumbling);
-        tumbling.speedX = lix.flingX.abs;
-        tumbling.speedY = lix.flingY;
-        tumbling.selectFrame();
+        immutable wantFlingX = lix.flingX;
+        immutable wantFlingY = lix.flingY;
         lix.resetFlingNew();
+
+        assert (lix.outsideWorld);
+        if (lix.flingX != 0)
+            lix.dir = wantFlingX;
+        lix.become(Ac.tumbler);
+        if (lix.ac == Ac.tumbler) {
+            Tumbler tumbling = cast (Tumbler) lix.performedActivity;
+            assert (tumbling);
+            tumbling.speedX = wantFlingX.abs;
+            tumbling.speedY = wantFlingY;
+            tumbling.selectFrame();
+        }
+        else
+            assert (lix.ac == Ac.stunner, "should be the only possibility");
     }
 
     override void onBecome()

@@ -1,6 +1,28 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.26
+------
+
+2016-01-04
+
+Singleplayer browser remembers the most recently played level.
+
+Fixed bug #18: Assigning runner to a walker didn't make her run immediately.
+Fixed bug #20: Assigning exploder to builder crashed the game due to
+inability to return skills.
+
+Fixed climber horizontal alignment with the wall, the alignment was set
+correctly previously, but never reset correctly.
+
+Exploder with flinging is now implemented similar to how it was in C++.
+It should be checked for accuracy, once loading replays from disk is
+implemented.
+
+Fixed a crash on becoming tumbler. There is still an elusive assert fail
+triggerable in the tumbler function. That should be debugged once replays
+can be loaded from disk.
+
 0.1.25
 ------
 
