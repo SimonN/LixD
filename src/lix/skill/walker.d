@@ -199,6 +199,10 @@ class Runner : Walker {
     {
         assert (! abilityToRun);
         abilityToRun = true;
+        if (lixxie.ac == Ac.walker) {
+            become(Ac.runner);
+            lixxie.frame = 2; // looks best, with a foot on the ground behind
+        }
     }
 
     override void onBecome()
