@@ -10,14 +10,14 @@ import lix;
 abstract class Ploder : PerformedActivity {
 
     enum ploderDelay = 75;
-    enum Instantly { no, yes }
 
     override @property bool blockable()                 const { return false; }
     override @property bool callBecomeAfterAssignment() const { return false; }
     override UpdateOrder    updateOrder() const { return UpdateOrder.flinger; }
 
-    static void handlePloderTimer(Lixxie li, Instantly instantly)
+    static void handlePloderTimer(Lixxie li, OutsideWorld* ow)
     {
+        assert (ow);
         assert (li.ac != Ac.exploder);
         assert (li.ac != Ac.exploder2);
 
@@ -25,8 +25,9 @@ abstract class Ploder : PerformedActivity {
             return;
 
         if (li.healthy) {
-            if (instantly == Instantly.yes || li.ploderTimer == ploderDelay)
-                li.become(li.ploderIsExploder ? Ac.exploder2 : Ac.exploder);
+            // multiplayer has ploder countdown, singleplayer is instant
+            if (ow.state.tribes.length <= 1 || li.ploderTimer == ploderDelay)
+                li.becomePloder(ow);
             else
                 ++li.ploderTimer;
                 // 0 -> 1 -> 2 happens in the same frame, therefore don't

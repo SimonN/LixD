@@ -587,6 +587,12 @@ void perform(OutsideWorld* ow)
     performActivityUseGadgets(this); // in lix.perform
 }
 
+void becomePloder(OutsideWorld* ow)
+{
+    mixin(tmpOutsideWorld);
+    become(ploderIsExploder ? Ac.exploder2 : Ac.exploder);
+}
+
 void applyFlingXY(OutsideWorld* ow)
 {
     if (! flingNew || ! healthy)

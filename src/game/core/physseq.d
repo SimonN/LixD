@@ -397,9 +397,10 @@ updateLixxies(Game game) { with (game)
     {
         foreachLix((in int tribeID, in int lixID, Lixxie lixxie) {
             lixxie.setNoEncountersNoBlockerFlags();
-            if (lixxie.ploderTimer != 0)
-                Ploder.handlePloderTimer(lixxie,
-                    multiplayer ? Ploder.Instantly.no : Ploder.Instantly.yes);
+            if (lixxie.ploderTimer != 0) {
+                auto ow = game.makeGypsyWagon(tribeID, lixID);
+                Ploder.handlePloderTimer(lixxie, &ow);
+            }
             if (lixxie.updateOrder == UpdateOrder.flinger) {
                 lixxie.marked = true;
                 anyFlingers = true;
