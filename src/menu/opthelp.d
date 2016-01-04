@@ -230,7 +230,8 @@ class ListLanguage : gui.ListFile {
     this(Geom g)
     {
         g.yl = min(g.yl, 20 * basics.globals.dirDataTransl
-            .findFiles(basics.globals.filenameExtTransl).length);
+            .findRegularFilesNoRecursion(basics.globals.filenameExtTransl)
+            .length);
         super(g);
         currentDir = basics.globals.dirDataTransl;
     }

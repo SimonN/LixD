@@ -68,7 +68,7 @@ void initialize()
     // fill the queue will all files on the disk, but chop off the
     // "images/" prefix before using the path as the tile's name
     immutable string imgdir = glo.dirImages.dirRootless;
-    auto files = file.search.findTree(glo.dirImages);
+    auto files = file.search.findRegularFilesRecursively(glo.dirImages);
     foreach (fn; files) {
         if (! fn.hasImageExtension()) continue;
 

@@ -77,12 +77,9 @@ void initialize()
 {
     nullCutbit = new Cutbit(cast (Cutbit) null);
 
-    // DTODOLANG
     displayStartupMessage("Loading internal bitmaps...");
 
-    // find all internal bitmaps
-    auto files = file.search.findTree(dirDataBitmap);
-
+    auto files = file.search.findRegularFilesRecursively(dirDataBitmap);
     // Since this is unrelated to the terrain name replacements, the internal
     // graphics are saved WITH dir.
 

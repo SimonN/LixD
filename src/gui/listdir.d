@@ -51,7 +51,7 @@ public this(Geom g)
 {
     super(g);
 
-    fileFinder = &(file.search.findDirs);
+    fileFinder = &(file.search.findDirsNoRecursion);
     searchCrit = function bool(in Filename fn) {
         return fn.file != "." && fn.file != "..";
     };

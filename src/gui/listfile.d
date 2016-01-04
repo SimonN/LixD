@@ -144,7 +144,7 @@ this(Geom g)
 public static Filename[]
 default_fileFinder(in Filename where)
 {
-    return file.search.findFiles(where);
+    return file.search.findRegularFilesNoRecursion(where);
 }
 
 
