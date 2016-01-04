@@ -1,6 +1,7 @@
 module lix.skill.tumbler;
 
 import std.algorithm;
+import std.format; // assert errors
 import std.math; // abs
 
 import basics.help;
@@ -210,7 +211,8 @@ private:
 
         // No collisions found at this pixel.
         if (isSolid(0, 1))
-            assert (false, "copy more from tumbler.cpp:213, v2015-09-02");
+            assert (false, "copy more from tumbler.cpp:213, v2015-09-02. "
+                "BallisticFlyer speedX=%d, speedY=%d".format(speedX, speedY));
 
         if (speedY > 0 && (footEncounters & Phybit.trampo))
             // Trampolines stop motion, a bit kludgy

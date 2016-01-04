@@ -1,6 +1,22 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.30
+------
+
+2016-01-15
+
+Replay browser implemented. Loads replays, renders the correct level in the
+preview. Program main loop calls game with the correct level and replay file,
+the game plays back the correct replay. After viewing the replay, the program
+goes back to the singleplayer browser, not to the replay browser.
+
+Framestepping backwards is more performant over long distances, it omits
+unnecessary intermediate savestates that would be discarded anyway. More ideas:
+https://github.com/SimonN/LixD/issues/26
+
+Slightly better text shadow positioning. Removed demo and benchmark code.
+
 0.1.29
 ------
 
