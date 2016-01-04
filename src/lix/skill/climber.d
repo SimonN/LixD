@@ -21,10 +21,8 @@ class Climber : PerformedActivity {
         // The climber should appear snugly close to the wall.
         // Since physically, for a right-facing climber, a wall at ex+2 and
         // ex+3 are the same, move the sprite horizontally to match the wall.
-        if (   (facingRight && ! isSolidSingle(2, -6))
-            || (facingLeft  && ! isSolidSingle(1, -6))
-        )
-            spriteOffsetX = dir;
+        spriteOffsetX = dir * (facingRight && ! isSolidSingle(2, -6)
+                            || facingLeft  && ! isSolidSingle(1, -6));
     }
 
 
