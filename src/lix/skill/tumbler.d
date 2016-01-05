@@ -303,7 +303,7 @@ class Tumbler : BallisticFlyer {
         lix.resetFlingNew();
 
         assert (lix.outsideWorld);
-        if (lix.flingX != 0)
+        if (wantFlingX != 0)
             lix.dir = wantFlingX;
         lix.become(Ac.tumbler);
         if (lix.ac == Ac.tumbler) {
