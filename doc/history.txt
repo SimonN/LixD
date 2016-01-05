@@ -1,6 +1,20 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.2
+-----
+
+2016-01-25
+
+Fix #15: Basher always left relics. The basher mask is 2 pixels wider in D
+Lix. The relics check accounts for that now.
+
+We wanted to start the basher faster by 2 frames in C++ Lix, to make it
+more powerful. Right now, this is implemented in D Lix, because I used as
+many recommendations by geoo as I could. In light of the mask that reaches
+further by 2 pixels, we should discuss that again. The faster-starting
+basher is still OK, probably.
+
 0.2.1
 -----
 

@@ -59,10 +59,10 @@ private:
         // swing, but so far away that they will still be ahead of the lix
         // after a full basher's walk-ahead cycle. These pixels will be
         // checked after that next basher's walk cycle.
-        // Checking everything would be a rectangle of 14, -16, 23, +1.
-        if (countSolid(14 + whereX, -14, 21 + whereX, -3) < 15) {
+        // Checking everything would be a rectangle of 14+2, -16, 23+2, +1.
+        if (countSolid(16 + whereX, -14, 23 + whereX, -3) < 15) {
             // Check for very thin walls
-            for (int x = 14 + whereX; x <= 21 + whereX; x += 2)
+            for (int x = 16 + whereX; x <= 23 + whereX; x += 2)
                 if (isSolid(x, -12))
                     return false;
             // No thin walls, but too few pixels altogether to continue
@@ -74,7 +74,7 @@ private:
     void checkOmitRelics()
     {
         omitRelics
-            = countSolid(14, -16, 15, 1) == 0 // nothing behind the relics
+            = countSolid(16, -16, 17, 1) == 0 // nothing behind the relics
             && nothingMoreToBash(0); // 0, because we'll check to become
                                      // walker from current position, too
     }
