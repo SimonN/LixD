@@ -149,13 +149,13 @@ prepareGadgets(Game game)
         }
     }
 
-    gadgetsFromPos(game.cs.hatches,     TileType.HATCH);
-    gadgetsFromPos(game.cs.goals,       TileType.GOAL);
-    gadgetsFromPos(game.cs.decos,       TileType.DECO);
-    gadgetsFromPos(game.cs.traps,       TileType.TRAP);
-    gadgetsFromPos(game.cs.waters,      TileType.WATER);
-    gadgetsFromPos(game.cs.flingers,    TileType.FLING);
-    gadgetsFromPos(game.cs.trampolines, TileType.TRAMPOLINE);
+    gadgetsFromPos(game.cs.hatches,  TileType.HATCH);
+    gadgetsFromPos(game.cs.goals,    TileType.GOAL);
+    gadgetsFromPos(game.cs.decos,    TileType.DECO);
+    gadgetsFromPos(game.cs.traps,    TileType.TRAP);
+    gadgetsFromPos(game.cs.waters,   TileType.WATER);
+    gadgetsFromPos(game.cs.flingers, TileType.FLING);
+    gadgetsFromPos(game.cs.trampos,  TileType.TRAMPO);
 }
 
 

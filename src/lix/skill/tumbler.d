@@ -36,7 +36,7 @@ abstract class BallisticFlyer : PerformedActivity {
             return;
 
         if      (speedY <= 12) speedY += 2;
-        else if (speedY  < 64) speedY += 1;
+        else if (speedY  < 32) speedY += 1;
 
         selectFrame();
 
@@ -298,6 +298,8 @@ class Tumbler : BallisticFlyer {
 
     static applyFlingXY(Lixxie lix)
     {
+        if (! lix.flingNew)
+            return;
         immutable wantFlingX = lix.flingX;
         immutable wantFlingY = lix.flingY;
         lix.resetFlingNew();

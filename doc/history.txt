@@ -1,6 +1,13 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.27
+------
+
+Miner implemented with geoo's anti-shock C++ code.
+
+Flingers and trampolines are implemented.
+
 0.1.26
 ------
 

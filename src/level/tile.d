@@ -27,7 +27,7 @@ enum TileType {
     TRAP,
     WATER,   // subtype 1 = fire
     FLING,	 // subtype & 1 = always same xdir, subtype & 2 = non-constant
-    TRAMPOLINE,
+    TRAMPO,
     MAX
 }
 
@@ -259,7 +259,7 @@ void read_definitions_file(in Filename filename)
             specialY = i.nr1;
         }
         else if (i.text1 == tileDefTypeTrampoline) {
-            type = TileType.TRAMPOLINE;
+            type = TileType.TRAMPO;
         }
     }
     // end foreach
@@ -277,7 +277,7 @@ TileType perm(in int n)
      :     n == 4 ? TileType.TRAP
      :     n == 5 ? TileType.WATER
      :     n == 6 ? TileType.FLING
-     :     n == 7 ? TileType.TRAMPOLINE
+     :     n == 7 ? TileType.TRAMPO
      :     n == 8 ? TileType.TERRAIN
      :              TileType.EMPTY; // I don't know a proper list
 }

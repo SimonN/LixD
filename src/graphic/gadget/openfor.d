@@ -153,12 +153,12 @@ private class PermanentlyOpen : GadgetAnimsOnFeed {
 
 
 
-class Trampoline : GadgetAnimsOnFeed {
+class Trampo : GadgetAnimsOnFeed {
 
     mixin (StandardGadgetCtor);
 
-    override Trampoline clone() const { return new Trampoline(this);}
-    this(in Trampoline rhs) { super(rhs); }
+    override Trampo clone() const { return new Trampo(this);}
+    this(in Trampo rhs) { super(rhs); }
 
     // trampolines are always active, even if they animate only on demand
     override bool isOpenFor(in Update, in int) const { return true; }

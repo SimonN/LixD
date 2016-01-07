@@ -40,7 +40,7 @@ class GameState {
     Water[] waters;
     TrapTrig[] traps;
     Flinger[] flingers;
-    Trampoline[] trampolines;
+    Trampo[] trampos;
 
     Torbit land;
     Phymap lookup;
@@ -54,7 +54,7 @@ class GameState {
     void foreachGadget(T)(void delegate(T) func)
         if (is(T : const Gadget))
     {
-        chain(hatches, goals, decos, waters, traps, flingers, trampolines)
+        chain(hatches, goals, decos, waters, traps, flingers, trampos)
             .each!func;
     }
 
@@ -74,14 +74,14 @@ class GameState {
         clockIsRunning = rhs.clockIsRunning;
         goalsLocked    = rhs.goalsLocked;
 
-        tribes      = rhs.tribes     .clone;
-        hatches     = rhs.hatches    .clone;
-        goals       = rhs.goals      .clone;
-        decos       = rhs.decos      .clone;
-        waters      = rhs.waters     .clone;
-        traps       = rhs.traps      .clone;
-        flingers    = rhs.flingers   .clone;
-        trampolines = rhs.trampolines.clone;
+        tribes   = rhs.tribes  .clone;
+        hatches  = rhs.hatches .clone;
+        goals    = rhs.goals   .clone;
+        decos    = rhs.decos   .clone;
+        waters   = rhs.waters  .clone;
+        traps    = rhs.traps   .clone;
+        flingers = rhs.flingers.clone;
+        trampos  = rhs.trampos .clone;
     }
 
     this(in GameState rhs)

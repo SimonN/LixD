@@ -122,13 +122,13 @@ factory(Torbit tb, in ref Pos levelpos)
 {
     assert (levelpos.ob);
     final switch (levelpos.ob.type) {
-        case TileType.TERRAIN:    return new Gadget    (tb, levelpos);
-        case TileType.DECO:       return new Gadget    (tb, levelpos);
-        case TileType.HATCH:      return new Hatch     (tb, levelpos);
-        case TileType.GOAL:       return new Goal      (tb, levelpos);
-        case TileType.TRAP:       return new TrapTrig  (tb, levelpos);
-        case TileType.WATER:      return new Water     (tb, levelpos);
-        case TileType.TRAMPOLINE: return new Trampoline(tb, levelpos);
+        case TileType.TERRAIN: return new Gadget  (tb, levelpos);
+        case TileType.DECO:    return new Gadget  (tb, levelpos);
+        case TileType.HATCH:   return new Hatch   (tb, levelpos);
+        case TileType.GOAL:    return new Goal    (tb, levelpos);
+        case TileType.TRAP:    return new TrapTrig(tb, levelpos);
+        case TileType.WATER:   return new Water   (tb, levelpos);
+        case TileType.TRAMPO:  return new Trampo  (tb, levelpos);
         case TileType.FLING:
             if (levelpos.ob.subtype & 2) return new FlingTrig(tb, levelpos);
             else                         return new FlingPerm(tb, levelpos);
@@ -229,7 +229,7 @@ draw(Torbit mutableGround, in GameState state = null) const
          || tile.type == TileType.TRAP
          || tile.type == TileType.WATER
          || tile.type == TileType.FLING
-         || tile.type == TileType.TRAMPOLINE
+         || tile.type == TileType.TRAMPO
         )
             mutableGround.drawRectangle(x + tile.triggerX,
                                         y + tile.triggerY,
@@ -251,13 +251,12 @@ final void drawLookup(Phymap lk) const
         case TileType.DECO:
         case TileType.MAX: return;
 
-        case TileType.GOAL:       phyb = Phybit.goal; break;
-        case TileType.TRAP:       phyb = Phybit.trap; break;
-        case TileType.WATER:      phyb =
-                     tile.subtype == 0 ? Phybit.water
-                                       : Phybit.fire; break;
-        case TileType.FLING:      phyb = Phybit.fling; break;
-        case TileType.TRAMPOLINE: phyb = Phybit.trampo; break;
+        case TileType.GOAL:   phyb = Phybit.goal; break;
+        case TileType.TRAP:   phyb = Phybit.trap; break;
+        case TileType.WATER:  phyb = tile.subtype == 0 ? Phybit.water
+                                                       : Phybit.fire; break;
+        case TileType.FLING:  phyb = Phybit.fling; break;
+        case TileType.TRAMPO: phyb = Phybit.trampo; break;
     }
     lk.rect!(Phymap.add)(x + tile.triggerX, y + tile.triggerY,
                              tile.triggerXl,    tile.triggerYl, phyb);

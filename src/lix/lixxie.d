@@ -595,10 +595,10 @@ void becomePloder(OutsideWorld* ow)
 
 void applyFlingXY(OutsideWorld* ow)
 {
-    if (! flingNew || ! healthy)
+    if (! healthy)
         return;
     mixin(tmpOutsideWorld);
-    Tumbler.applyFlingXY(this);
+    Tumbler.applyFlingXY(this); // this will check if flingNew == true
 }
 
 void become(bool manualAssignment = false)(in Ac newAc)
