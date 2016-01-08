@@ -165,8 +165,7 @@ equalBefore(in typeof(this) rhs, in Update upd) const
 // this function is necessary to keep old replays working in new versions
 // that skip the first 30 or so updates, to get into the action faster.
 // The first spawn is still at update 60.
-void
-increaseEarlyDataToUpdate(in Update upd)
+void increaseEarlyDataToUpdate(in Update upd)
 {
     foreach (d; _data) {
         if (d.update < upd)
@@ -176,7 +175,22 @@ increaseEarlyDataToUpdate(in Update upd)
     // This doesn't call touch().
 }
 
-
+void eraseEarlySingleplayerNukes()
+{
+    enum beforeUpdate = 61; // Not 60, only nuke if it kills at least 1 lix.
+                            // Nukes from replay activate before lix spawn.
+    if (_players.length > 1)
+        return;
+    for (int i = 0; i < _data.length; ++i) {
+        if (_data[i].update >= beforeUpdate)
+            break;
+        else if (_data[i].action == RepAc.NUKE) {
+            _data = _data[0 .. i] ~ _data[i+1 .. $];
+            --i;
+        }
+    }
+    // doesn't call touch(), because it's housekeeping
+}
 
 void
 deleteOnAndAfterUpdate(in Update upd)

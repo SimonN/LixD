@@ -39,8 +39,7 @@ updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
         upd(whatUpdateToLoad - cs.update);
     }
     else if (pan.restart.execute) {
-        assert (stateManager.zeroState, "want to load zero state, but cannot");
-        game.loadStateManually(stateManager.zeroState);
+        game.restartLevel();
     }
     else if (pan.speedAhead.executeLeft) {
         upd();
@@ -75,16 +74,12 @@ loadStateFramestepping(Game game, in GameState state, in int toUpdate)
     }
 }
 
-
-
 package void
 loadStateDuringPhysicsUpdate(Game game, in GameState state)
 {
     if (state)
         loadStateFramestepping(game, state, state.update);
 }
-
-
 
 // package (instead of private), because this is not only called from state
 // save/load buttons, but also from game.core.calc's modalWindow that requests
@@ -98,4 +93,13 @@ loadStateManually(Game game, in GameState state) { with (game)
         game.finalizeUpdateAnimateGadgets();
         game.setLastUpdateToNow();
     }
+}}
+
+package void
+restartLevel(Game game) { with (game)
+{
+    assert (stateManager.zeroState, "want to load zero state, but cannot");
+    game.loadStateManually(stateManager.zeroState);
+    replay.eraseEarlySingleplayerNukes();
+    pan.setSpeedToNormal();
 }}

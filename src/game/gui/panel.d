@@ -198,18 +198,19 @@ handleExecutingSkillButton(SkillButton skill)
 
 
 
+public  void setSpeedToNormal() { setSpeedTo(1); }
+private void setSpeedTo(in int a)
+{
+    assert (a >= 0);
+    assert (a <  4);
+    pause.on     = (a == 0);
+    speedFast.on = (a >= 2);
+    speedFast.xf = (a < 3 ? frameFast : frameTurbo);
+}
+
 protected override void
 calcSelf()
 {
-    void setSpeedTo(in int a)
-    {
-        assert (a >= 0);
-        assert (a <  4);
-        pause.on     = (a == 0);
-        speedFast.on = (a >= 2);
-        speedFast.xf = (a < 3 ? frameFast : frameTurbo);
-    }
-
     if (pause.execute) {
         setSpeedTo(pause.on ? 1 : 0);
     }

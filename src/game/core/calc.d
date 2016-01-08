@@ -61,7 +61,7 @@ calcModalWindow(Game game) { with (game)
         killWindow();
     }
     else if (modalWindow.restart) {
-        game.loadStateManually(stateManager.zeroState);
+        game.restartLevel();
         killWindow();
     }
     else if (modalWindow.exitGame) {
