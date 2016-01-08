@@ -1,4 +1,4 @@
-module game.panelinf;
+module game.gui.panelinf;
 
 import std.string; // format;
 import std.typecons; // Rebindable;

@@ -1,4 +1,4 @@
-module game.panel;
+module game.gui.panel;
 
 /* Panel: A large GUI element that features all the visible buttons
  * during gameplay. Can appear in many different forms, see enum GapaMode
@@ -7,7 +7,7 @@ module game.panel;
 
 import basics.globals;
 import basics.user;
-import game.panelinf;
+import game.gui.panelinf;
 import game.tribe;
 import graphic.gralib;
 import gui;
