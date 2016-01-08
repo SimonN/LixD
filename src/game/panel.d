@@ -132,18 +132,15 @@ setLikeTribe(in Tribe tr)
         b.style  = tr.style;
         b.number = tr.skills[b.skill];
     }
+    nukeSingle.on = tr.nuke;
+    nukeMulti .on = tr.nuke;
 
     /*
     stats.set_tribe_local(tr);
-
     spawnintSlow.set_spawnint(tr->spawnintSlow);
     spawnint_cur .set_spawnint(tr->spawnint);
     rate_fixed   .set_number  (tr->spawnintFast);
-
-    nukeSingle.set_on  (tr->nuke);
-    nukeMulti .set_on  (tr->nuke);
     spec_tribe .set_text(tr->get_name());
-
     set_skill_on(skillLastSetOn);
     */
 
@@ -173,6 +170,15 @@ currentSkill()
         if (b.on && b.skill != Ac.nothing && b.number != 0)
             return b;
     return null;
+}
+
+
+
+bool nukeDoubleclicked() const
+{
+    // DTODO nuke doubleclick
+    return ! nukeSingle.on && nukeSingle.execute
+        || ! nukeMulti.on  && nukeMulti.execute;
 }
 
 

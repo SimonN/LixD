@@ -28,14 +28,11 @@ calcActive(Game game) { with (game)
 {
     game.handleSpawnIntervalButtons();
     game.handleNukeButton();
-    // Selection of skills in the panel aren't checked here anymore.
-    // They aren't replay data, so that check went into gamepl_c.cpp.
 
     if (! pan.isMouseHere) {
         auto potAss = game.findPotentialAssignee();
-        if (potAss.lixxie !is null) {
+        if (potAss.lixxie !is null)
             game.assignToPotentialAssignee(potAss);
-        }
     }
     else {
         pan.stats.targetDescriptionLixxie = null;
@@ -106,23 +103,15 @@ handleSpawnIntervalButtons(Game game) { with (game)
 
 private void handleNukeButton(Game game) { with (game)
 {
-    /+
-    // Atombombe
-    if (pan.get_nuke_doubleclicked()) {
-        // set_on() kommt zwar auch im Update, aber wenn wir das
-        // hier immer machen, sieht es besser aus. Gleiches gilt fuer
-        // den Sound, ist wie beim normalen Anklicken.
-        pan.nuke_single.set_on();
-        pan.nuke_multi .set_on();
-        pan.pause      .set_off();
-        Replay::Data data = new_replay_data();
-        data.action       = Replay::NUKE;
-        replay.add(data);
-        Network::send_replay_data(data);
-        effect.add_sound(cs.update + 1, *trlo, 0, Sound::NUKE);
-        Sound::play_loud(Sound::NUKE);
-    }
-    +/
+    if (! pan.nukeDoubleclicked)
+        return;
+    pan.nukeSingle.on = true;
+    pan.nukeMulti.on  = true;
+    auto data = game.newReplayDataForNextUpdate();
+    data.action = RepAc.NUKE;
+    replay.add(data);
+    // DTODONETWORK: Network::send_replay_data(data);
+    effect.addSound(Update(cs.update + 1), tribeID(tribeLocal), 0, Sound.NUKE);
 }}
 
 

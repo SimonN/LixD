@@ -177,7 +177,7 @@ updateOneData(
             +/
         }
         if (tribe is tribeLocal)
-            effect.addSound(upd, tribeID(tribe), i.toWhichLix, Sound.ASSIGN,
+            effect.addSound(upd, trID, i.toWhichLix, Sound.ASSIGN,
                 (*master is masterLocal) ? Loudness.loud : Loudness.quiet);
     }
     // end of i.isSomeAssignment
@@ -189,18 +189,18 @@ updateOneData(
             if (&t == tribeLocal) pan.spawnint_cur.set_spawnint(t.spawnint);
         }
     }
-    else if (i->action == Replay::NUKE) {
-        if (!t.nuke) {
-            t.lix_hatch = 0;
-            t.nuke      = true;
-            if (&t == tribeLocal) {
-                pan.nuke_single.set_on();
-                pan.nuke_multi .set_on();
-            }
-            effect.add_sound(upd, t, 0, Sound::NUKE);
+    +/
+    else if (i.action == RepAc.NUKE) {
+        if (tribe.nuke)
+            return;
+        tribe.lixHatch = 0;
+        tribe.nuke = true;
+        effect.addSound(upd, trID, 0, Sound.NUKE);
+        if (tribe is tribeLocal) {
+            pan.nukeSingle.on = true;
+            pan.nukeMulti .on = true;
         }
     }
-    +/
 }}
 // end with (game), end updateOneData()
 
@@ -306,39 +306,38 @@ void
 spawnLixxiesFromHatches(Game game) { with (game.cs)
 {
     foreach (int teamNumber, Tribe tribe; tribes) {
-        if (tribe.lixHatch != 0
-            && update >= 60
-            && update >= tribe.updatePreviousSpawn + tribe.spawnint
-        ) {
-            assert (game.replay);
-            assert (game.replay.permu);
-            immutable int position = game.replay.permu[teamNumber];
-            const(Gadget) hatch    = hatches[tribe.hatchNextSpawn];
+        if (tribe.lixHatch == 0
+            || update < 60
+            || update < tribe.updatePreviousSpawn + tribe.spawnint)
+            continue;
+        assert (game.replay);
+        assert (game.replay.permu);
+        immutable int position = game.replay.permu[teamNumber];
+        const(Gadget) hatch    = hatches[tribe.hatchNextSpawn];
 
-            // the only interesting part of OutsideWorld right now is the
-            // lookupmap inside the current state. Everything else will be
-            // passed anew when the lix are updated.
-            auto ow = game.makeGypsyWagon(teamNumber, tribe.lixvec.len);
+        // the only interesting part of OutsideWorld right now is the
+        // lookupmap inside the current state. Everything else will be
+        // passed anew when the lix are updated.
+        auto ow = game.makeGypsyWagon(teamNumber, tribe.lixvec.len);
 
-            Lixxie newLix = new Lixxie(game.map, &ow,
-                hatch.x + hatch.tile.triggerX,
-                hatch.y + hatch.tile.triggerY);
-            tribe.lixvec ~= newLix;
-            --tribe.lixHatch;
-            ++tribe.lixOut;
-            tribe.updatePreviousSpawn = update;
+        Lixxie newLix = new Lixxie(game.map, &ow,
+            hatch.x + hatch.tile.triggerX,
+            hatch.y + hatch.tile.triggerY);
+        tribe.lixvec ~= newLix;
+        --tribe.lixHatch;
+        ++tribe.lixOut;
+        tribe.updatePreviousSpawn = update;
 
-            bool walkLeftInsteadOfRight = hatch.rotation
-                // This extra turning solution here is necessary to make
-                // some L1 and ONML two-player levels playable better.
-                || (hatches.len < tribes.len && (position/hatches.len)%2 == 1);
-            if (walkLeftInsteadOfRight) {
-                newLix.turn();
-                newLix.moveAhead();
-            }
-            tribe.hatchNextSpawn += tribes.len;
-            tribe.hatchNextSpawn %= hatches.len;
+        bool walkLeftInsteadOfRight = hatch.rotation
+            // This extra turning solution here is necessary to make
+            // some L1 and ONML two-player levels playable better.
+            || (hatches.len < tribes.len && (position/hatches.len)%2 == 1);
+        if (walkLeftInsteadOfRight) {
+            newLix.turn();
+            newLix.moveAhead();
         }
+        tribe.hatchNextSpawn += tribes.len;
+        tribe.hatchNextSpawn %= hatches.len;
     }
 }}
 // end spawnLixxiesFromHatches()
@@ -348,31 +347,20 @@ spawnLixxiesFromHatches(Game game) { with (game.cs)
 void
 updateNuke(Game game)
 {
-    /+
-    // Instant nuke should not display a countdown fuse in any frame.
-    for (Tribe::It t = cs.tribes.begin(); t != cs.tribes.end(); ++t) {
-        // Assign exploders in case of nuke
-        if (t->nuke == true)
-         for (LixIt i = t->lixvec.begin(); i != t->lixvec.end(); ++i) {
-            if (i->get_updatesSinceBomb() == 0 && ! i->get_leaving()) {
-                i->inc_updatesSinceBomb();
-                // Which exploder shall be assigned?
-                if (cs.tribes.size() > 1) {
-                    i->set_exploderKnockback();
-                }
-                else for (Level::CSkIt itr =  t->skills.begin();
-                                       itr != t->skills.end(); ++itr
-                ) {
-                    if (itr->first == LixEn::EXPLODER2) {
-                        i->set_exploderKnockback();
-                        break;
-                    }
-                }
-                break;
-            }
+    foreach (tribe; game.cs.tribes) {
+        if (! tribe.nuke)
+            continue;
+        foreach (lix; tribe.lixvec) {
+            if (! lix.healthy || lix.ploderTimer > 0)
+                continue;
+            // Assign flingploders in MP, depends-on-level in 1P.
+            // Idea: Level may set nuke skill.
+            lix.ploderTimer = 1;
+            lix.ploderIsExploder = game.cs.tribes.len > 1
+                                || game.level.skills[Ac.exploder2] > 0;
+            break; // only one lix is hit by the nuke per update
         }
     }
-    +/
 }
 
 
