@@ -5,6 +5,7 @@ module game.gui.panel;
  * in game.panelinf.
  */
 
+import basics.alleg5; // al_get_timer_count for nuke doubleclick
 import basics.globals;
 import basics.user;
 import game.gui.panelinf;
@@ -38,10 +39,13 @@ public:
     enum frameFast  = 4;
     enum frameTurbo = 5;
 
+    bool nukeDoubleclicked() const { return _nukeDoubleclicked; }
+
 private:
 
     private GapaMode _gapamode;
-
+    long _nukeLastExecute;
+    bool _nukeDoubleclicked;
 
 
 
@@ -174,15 +178,6 @@ currentSkill()
 
 
 
-bool nukeDoubleclicked() const
-{
-    // DTODO nuke doubleclick
-    return ! nukeSingle.on && nukeSingle.execute
-        || ! nukeMulti.on  && nukeMulti.execute;
-}
-
-
-
 private void
 handleExecutingSkillButton(SkillButton skill)
 {
@@ -237,6 +232,15 @@ calcSelf()
             handleExecutingSkillButton(skill);
     if (currentSkill !is oldSkill)
         hardware.sound.playLoud(Sound.PANEL);
+
+    _nukeDoubleclicked = false;
+    if (   ! nukeSingle.on && nukeSingle.execute
+        || ! nukeMulti .on && nukeMulti .execute
+    ) {
+        auto now = al_get_timer_count(timer);
+        _nukeDoubleclicked = (now - _nukeLastExecute < ticksForDoubleClick);
+        _nukeLastExecute   = now;
+    }
 }
 
 }
