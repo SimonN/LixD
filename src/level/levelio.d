@@ -118,8 +118,8 @@ private void load_from_vector(Level level, in IoLine[] lines)
             startManual = true;
             startY      = nr1;
         }
-        else if (text1 == glo.levelSizeX       ) sizeX        = nr1;
-        else if (text1 == glo.levelSizeY       ) sizeY        = nr1;
+        else if (text1 == glo.levelSizeX       ) xl           = nr1;
+        else if (text1 == glo.levelSizeY       ) yl           = nr1;
         else if (text1 == glo.levelTorusX      ) torusX       = nr1 > 0;
         else if (text1 == glo.levelTorusY      ) torusY       = nr1 > 0;
         else if (text1 == glo.levelBackgroundRed       ) bgRed        = nr1;
@@ -224,23 +224,19 @@ private void load_level_finalize(Level level)
 {
     with (level) {
         // set some standards, in case we've read in rubbish values
-        if (sizeX   < minXl)             sizeX   = Level.minXl;
-        if (sizeY   < minYl)             sizeY   = Level.minYl;
-        if (sizeX   > maxXl)             sizeX   = Level.maxXl;
-        if (sizeY   > maxYl)             sizeY   = Level.maxYl;
-        if (initial  < 1)                  initial  = 1;
-        if (initial  > 999)                initial  = 999;
-        if (required > initial)            required = initial;
-        if (spawnintFast < spawnintMin)  spawnintFast = Level.spawnintMin;
-        if (spawnintSlow > spawnintMax)  spawnintSlow = Level.spawnintMax;
-        if (spawnintFast > spawnintSlow) spawnintFast = spawnintSlow;
+        xl = clamp(xl, Level.minXl, Level.maxXl);
+        yl = clamp(yl, Level.minYl, Level.maxYl);
+        initial  = clamp(initial,  1, 999);
+        required = clamp(required, 1, initial);
+        spawnintSlow = clamp(spawnintSlow, Level.spawnintMin,
+                                           Level.spawnintMax);
+        spawnintFast = clamp(spawnintFast, Level.spawnintMin, spawnintSlow);
+        bgRed   = clamp(bgRed,   0, 255);
+        bgGreen = clamp(bgGreen, 0, 255);
+        bgBlue  = clamp(bgBlue,  0, 255);
 
-        if (bgRed   < 0) bgRed   = 0; if (bgRed   > 255) bgRed   = 255;
-        if (bgGreen < 0) bgGreen = 0; if (bgGreen > 255) bgGreen = 255;
-        if (bgBlue  < 0) bgBlue  = 0; if (bgBlue  > 255) bgBlue  = 255;
-
-        if (torusX) startX = positiveMod(startX, sizeX);
-        if (torusY) startY = positiveMod(startY, sizeY);
+        if (torusX) startX = positiveMod(startX, xl);
+        if (torusY) startY = positiveMod(startY, yl);
 
         // Set level error. The error for file not found, or the error for
         // missing tile images, have been set already.
@@ -311,8 +307,8 @@ public void saveToFile(const(Level) l, std.stdio.File file)
         file.writeln();
     }
 
-    file.writeln(IoLine.Hash(glo.levelSizeX,  l.sizeX ));
-    file.writeln(IoLine.Hash(glo.levelSizeY,  l.sizeY ));
+    file.writeln(IoLine.Hash(glo.levelSizeX,  l.xl));
+    file.writeln(IoLine.Hash(glo.levelSizeY,  l.yl));
     if (l.torusX || l.torusY) {
         file.writeln(IoLine.Hash(glo.levelTorusX, l.torusX));
         file.writeln(IoLine.Hash(glo.levelTorusY, l.torusY));

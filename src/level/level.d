@@ -79,8 +79,8 @@ public:
     string[] hintsGerman;
     string[] hintsEnglish;
 
-    int  sizeX;
-    int  sizeY;
+    int  xl;
+    int  yl;
     bool torusX;
     bool torusY;
 
@@ -152,8 +152,8 @@ this()
     built   = Date.now();
     _status = LevelStatus.BAD_EMPTY;
 
-    sizeX        = 640; // this comes from the old default res 640 x 480
-    sizeY        = 400; // old panel y height was 80, so sizeY = 480 - 80;
+    xl           = 640; // this comes from the old default res 640 x 480
+    yl           = 400; // old panel y height was 80, so sizeY = 480 - 80;
     initial      =  30;
     required     =  20;
     spawnintSlow =  32;
@@ -204,8 +204,8 @@ opEquals(Object rhs_obj) const
         || this.hintsGerman  != rhs.hintsGerman
         || this.hintsEnglish != rhs.hintsEnglish
 
-        || this.sizeX        != rhs.sizeX
-        || this.sizeY        != rhs.sizeY
+        || this.xl           != rhs.xl
+        || this.yl           != rhs.yl
         || this.torusX       != rhs.torusX
         || this.torusY       != rhs.torusY
         || this.startManual  != rhs.startManual

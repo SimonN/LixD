@@ -13,13 +13,13 @@ import level.tile;
 package void implDrawTerrainTo(in Level level, Torbit tb, Phymap lookup)
 {
     if (! tb) return;
-    assert (tb.xl == level.sizeX);
-    assert (tb.yl == level.sizeY);
+    assert (tb.xl == level.xl);
+    assert (tb.yl == level.yl);
 
     tb.clearToColor(color.transp);
     tb.setTorusXY(level.torusX, level.torusY);
     if (lookup) {
-        lookup.resize    (level.sizeX,  level.sizeY);
+        lookup.resize(level.xl, level.yl);
         lookup.setTorusXY(level.torusX, level.torusY);
     }
     // Durch die Terrain-Liste iterieren, Wichtiges zuletzt blitten (obenauf)
