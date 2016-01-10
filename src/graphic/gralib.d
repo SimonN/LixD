@@ -171,7 +171,7 @@ void initialize()
         auto lock_icons = LockReadWrite(cb_bmp);
         recolor_into_vector(cb_icons, vec, magicnr);
     }
-    q(fileImageGame_icon,   panelInfoIcons,   magicnrPanelInfoIcons);
+    q(fileImageGameIcon,   panelInfoIcons,   magicnrPanelInfoIcons);
 
     // DTODOLANG
     displayStartupMessage("Recoloring skill buttons for multiplayer...");
@@ -184,16 +184,16 @@ void initialize()
     // to have been loaded already, and therefore the correct GUI colors
     // have been computed.
     eidrecol(fileImageGuiNumber);
-    eidrecol(fileImageEdit_flip);
+    eidrecol(fileImageEditFlip);
     eidrecol(fileImageEditHatch);
-    eidrecol(fileImageEdit_panel);
-    eidrecol(fileImageGame_arrow);
-    eidrecol(fileImageGame_icon);
+    eidrecol(fileImageEditPanel);
+    eidrecol(fileImageGameArrow);
+    eidrecol(fileImageGameIcon);
     eidrecol(fileImageGameNuke);
-    eidrecol(fileImageGame_panel);
+    eidrecol(fileImageGamePanel);
     eidrecol(fileImageGamePanel2);
-    eidrecol(fileImageGamePanelhints);
-    eidrecol(fileImageGame_spi_fix);
+    eidrecol(fileImageGamePanelHints);
+    eidrecol(fileImageGameSpawnint);
     eidrecol(fileImageGamePause);
     eidrecol(fileImageLobbySpec);
     eidrecol(fileImageMenuCheckmark);

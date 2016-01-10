@@ -69,8 +69,10 @@ package:
     long altickLastUpdate;
 
     // Assignments for the next update go in here, and are only written into
-    // the replay right before the update happens. If the replay is cut off,
-    // the undispatched data is not cut off with it.
+    // the replay right before the update happens. If the replay is cut off
+    // by skill assignment, the undispatched data is not cut off with it.
+    // If the replay is cut off by explicit cutting (LMB into empty space),
+    // the undispatched data too is emptied.
     ReplayData[] undispatchedAssignments;
 
     GameWindow modalWindow;

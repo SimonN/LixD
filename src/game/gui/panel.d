@@ -75,7 +75,7 @@ this()
         b = new T(new Geom((3 - x) * skillXl,
             y == 0 ?  0.5f * skillYl : 0, skillXl,
             0.5f * skillYl, From.BOTTOM_RIGHT),
-            getInternal(basics.globals.fileImageGame_panel));
+            getInternal(basics.globals.fileImageGamePanel));
         b.xf     = frame;
         b.hotkey = keyLeft;
         static if (is (T == TwoTasksButton))

@@ -444,7 +444,7 @@ override void draw(Torbit tb) const
             */
         }
         // draw the flame
-        auto cb = getInternal(fileImageFuse_flame);
+        auto cb = getInternal(fileImageFuseFlame);
         cb.draw(tb, fuseX + x - cb.xl/2,
                     fuseY + y - cb.yl/2, ploderTimer % cb.xfs, 0);
     }
