@@ -58,8 +58,9 @@ protected:
             return;
 
         _executeLeft  = super.execute;
-        _executeRight = isMouseHere && mouseClickRight()
-                     || hardware.keyboard.keyTapped(_hotkeyRight);
+        _executeRight =
+            isMouseHere && (mouseClickRight() || mouseHeldLongRight())
+            || keyTappedAllowingRepeats(_hotkeyRight);
 
         down = keyHeld(hotkey) || keyHeld(_hotkeyRight)
             || (isMouseHere && (mouseHeldLeft || mouseHeldRight));
