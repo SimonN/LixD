@@ -28,7 +28,8 @@ public:
 
     SkillButton[] skills;
 
-    BitmapButton zoom, restart, pause, nukeSingle, nukeMulti;
+    BitmapButton zoom, restart, pause;
+    BitmapButton stateSave, stateLoad, nukeSingle, nukeMulti;
     TwoTasksButton speedBack, speedAhead, speedFast;
 
     PanelStats stats;
@@ -94,15 +95,26 @@ this()
         new Geom(0, 0, skillXl, skillYl, From.BOTTOM_RIGHT),
         getInternal(basics.globals.fileImageGamePause));
 
+    stateSave = new BitmapButton(
+        new Geom(skillXl, 0, skillXl, 20, From.TOP_RIGHT),
+        getInternal(basics.globals.fileImageGamePanel2));
+    stateLoad = new BitmapButton(
+        new Geom(0, 0, skillXl, 20, From.TOP_RIGHT),
+        getInternal(basics.globals.fileImageGamePanel2));
+
+    stateSave.xf = 2;
+    stateLoad.xf = 3;
+
     nukeMulti = new BitmapButton(
         new Geom(0, 0, 4 * skillXl, this.ylg - skillYl, From.BOTTOM_RIGHT),
         getInternal(basics.globals.fileImageGameNuke));
 
     pause    .hotkey = keyPause;
+    stateSave.hotkey = keyStateSave;
+    stateLoad.hotkey = keyStateLoad;
     nukeMulti.hotkey = keyNuke;
 
-    addChild(pause);
-    addChild(nukeMulti);
+    addChildren(pause, stateSave, stateLoad, nukeMulti);
 
     gapamode = GapaMode.PLAY_SINGLE;
 }

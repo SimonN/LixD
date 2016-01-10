@@ -2,6 +2,7 @@ module game.core.speed;
 
 import basics.alleg5;
 import game.core;
+import hardware.sound;
 
 package void
 setLastUpdateToNow(Game game)
@@ -40,6 +41,24 @@ updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
     }
     else if (pan.restart.execute) {
         game.restartLevel();
+    }
+    else if (pan.stateSave.execute) {
+        stateManager.saveUser(cs, replay);
+        hardware.sound.playLoud(Sound.DISKSAVE);
+    }
+    else if (pan.stateLoad.execute) {
+        auto u = stateManager.userState;
+        auto r = stateManager.userReplay;
+        if (u is null)
+            hardware.sound.playLoud(Sound.PANEL_EMPTY);
+        else {
+            game.loadStateManually(u);
+            if (! r.isSubsetOf(replay)) {
+                if (! replay.isSubsetOf(r))
+                    hardware.sound.playLoud(Sound.SCISSORS);
+                replay = stateManager.userReplay.clone();
+            }
+        }
     }
     else if (pan.speedAhead.executeLeft) {
         upd();

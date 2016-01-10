@@ -1,8 +1,8 @@
 module game.replay;
 
 import std.algorithm; // isSorted
-import std.file : mkdirRecurse;
-import std.c.string : memmove;
+import std.file; // mkdirRecurse;
+import std.c.string; // memmove;
 import std.stdio;
 import std.string;
 
@@ -148,19 +148,14 @@ dataSliceBeforeUpdate(in Update upd) inout
     return _data[0 .. bot];
 }
 
-
-
-bool
-equalBefore(in typeof(this) rhs, in Update upd) const
+// This doesn't check whether the metadata/general data is the same.
+// We assume that Game only calls this on replays of the same level/players.
+bool isSubsetOf(in Replay rhs) const
 {
-    // We don't check whether the metadata/general data is the same.
-    // We assume the gameplay class only uses for replays of the same level
-    // with the same players.
-    return this.dataSliceBeforeUpdate(upd)
-        ==  rhs.dataSliceBeforeUpdate(upd);
+    assert (rhs !is null);
+    return _data.length <= rhs._data.length
+        && _data[]      == rhs._data[0 .. this._data.length];
 }
-
-
 
 // this function is necessary to keep old replays working in new versions
 // that skip the first 30 or so updates, to get into the action faster.

@@ -156,10 +156,12 @@ public:
 
     void saveZero(in GameState s) { _zero = s.clone(); }
 
-    void saveUser(in GameState s, Replay r)
+    void saveUser(in GameState s, in Replay r)
     {
         _userState  = s.clone();
-        _userReplay = r.clone();
+        assert (r);
+        if (_userReplay is null || ! r.isSubsetOf(_userReplay))
+            _userReplay = r.clone();
     }
 
     @property const(GameState) zeroState()  const { return _zero;       }
