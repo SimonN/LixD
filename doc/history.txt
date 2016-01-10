@@ -1,6 +1,16 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.28
+------
+
+Implemented the nuke.
+
+Implemented replay arrows upon skill assignments, which are correctly
+played back during framestepping and after restarting the level.
+
+Explosions, flying pixels, and flying terrain remover equipment isn't in yet.
+
 0.1.27
 ------
 
