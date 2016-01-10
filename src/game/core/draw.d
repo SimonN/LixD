@@ -49,6 +49,9 @@ implGameDraw(Game game) { with (game)
         with (Zone(profiler, "game draws land to map"))
             map.loadCameraRectangle(game.cs.land);
 
+        effect.draw(map);
+        effect.calc(); // --timeToLive, moves. No physics, so OK to calc here.
+
         with (Zone(profiler, "game draws lixes")) {
             void drawAllLixes(Tribe tr)
             {

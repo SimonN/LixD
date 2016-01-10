@@ -283,12 +283,13 @@ assignToPotentialAssignee(
         return;
     }
 
-    effect.addSound(Update(cs.update + 1), tribeID(tribeLocal),
-                    potAss.id, Sound.ASSIGN);
+    auto upd  = Update(cs.update + 1);
+    auto trID = tribeID(tribeLocal);
+    effect.addArrowButDontShow(upd, trID, potAss.id);
+    effect.addSound           (upd, trID, potAss.id, Sound.ASSIGN);
 
     assert (replay);
-    if (replay.getOnUpdateLixClicked(Update(cs.update + 1), potAss.id,
-                                     currentSkill.skill)
+    if (replay.getOnUpdateLixClicked(upd, potAss.id, currentSkill.skill)
         && currentSkill.number != skillInfinity
     ) {
         // Decrease the visible number on the panel. This is mostly eye candy.

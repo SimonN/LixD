@@ -164,18 +164,13 @@ updateOneData(
         OutsideWorld ow = game.makeGypsyWagon(trID, i.toWhichLix);
         lixxie.assignManually(&ow, i.skill);
 
-        // Effects
-        if ((basics.user.arrowsReplay && replaying)
-            || (basics.user.arrowsNetwork
-                && multiplayer && ! replaying && *master !is masterLocal)
-        ) {
-            // DTODOEFFECTS
-            /+
-            Arrow arr(map, t.style, lix.get_ex(), lix.get_ey(),
-                psk->first, upd, i->what);
-            effect.add_arrow(upd, t, i->what, arr);
-            +/
-        }
+        // Non-physical effects
+        immutable onlyOtherMastersArrows = (multiplayer && ! replaying);
+        if (basics.user.arrowsReplay  && ! onlyOtherMastersArrows
+         || basics.user.arrowsNetwork && onlyOtherMastersArrows
+                                      && *master !is masterLocal)
+            effect.addArrow(upd, trID, i.toWhichLix,
+                lixxie.ex, lixxie.ey, tribe.style, i.skill);
         if (tribe is tribeLocal)
             effect.addSound(upd, trID, i.toWhichLix, Sound.ASSIGN,
                 (*master is masterLocal) ? Loudness.loud : Loudness.quiet);

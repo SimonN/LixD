@@ -5,12 +5,17 @@ module game.effect;
  * at the correct position/offset.
  */
 
+import std.algorithm;
 import std.container.rbtree;
 
+import basics.help;
 import basics.nettypes;
+import game.debris;
+import graphic.torbit;
 import hardware.sound;
+import lix.enums;
 
-struct Effect {
+private struct Effect {
 
     Update   update;
     int      tribe; // array slot in game.cs.tribes
@@ -34,6 +39,7 @@ struct Effect {
 class EffectManager {
 
     private RedBlackTree!Effect _tree;
+    private Debris[] _debris;
     public  int tribeLocal;
 
     this()
@@ -43,11 +49,9 @@ class EffectManager {
 
     bool nothingGoingOn() const
     {
-        // DTODO: make lists of the effect graphics flying around, and return
-        // true iff all these lists are empty.
         // _tree is irrelevant for checking whether anything is still flying,
         // because _tree remembers whether the same effect was added before.
-        return true;
+        return _debris.length == 0;
     }
 
     void deleteAfter(in int upd)
@@ -96,11 +100,29 @@ class EffectManager {
             addSound(upd, tribe, lix, sound, loudness);
     }
 
-    void addDigHammer(in Update upd, in int tribe, in int lix,
-        in int ex, in int ey
+    void addArrow(in Update upd, in int tribe, in int lix,
+        in int ex, in int ey, in Style style, in int xf
     ) {
+        Effect e = Effect(upd, tribe, lix);
+        if (e !in _tree) {
+            _tree.insert(e);
+            _debris ~= Debris.newArrow(ex, ey, style, xf);
+        }
+    }
+
+    void addArrowButDontShow(in Update upd, in int tribe, in int lix)
+    {
+        // Only remember the effect, don't draw any debris now.
+        // This is used for assignments by the local tribe master.
+        Effect e = Effect(upd, tribe, lix);
+        if (e !in _tree)
+            _tree.insert(e);
+    }
+
+    void addDigHammer(in Update upd, in int tribe, in int lix, int ex, int ey)
+    {
         Effect e = Effect(upd, tribe, lix,
-            (tribe == tribeLocal ? Sound.STEEL : Sound.NOTHING));
+            tribe == tribeLocal ? Sound.STEEL : Sound.NOTHING, Loudness.loud);
         if (e !in _tree) {
             _tree.insert(e);
             hardware.sound.play(e.sound, e.loudness);
@@ -108,24 +130,41 @@ class EffectManager {
         }
     }
 
-    void addImplosion(in Update upd, in int tribe, in int lix,
-        in int ex, in int ey
-    ) {
-        Effect e = Effect(upd, tribe, lix, Sound.POP);
+    void addImplosion(in Update upd, in int tribe, in int lix, int ex, int ey)
+    {
+        Effect e = Effect(upd, tribe, lix, Sound.POP,
+            tribe == tribeLocal ? Loudness.loud : Loudness.quiet);
         if (e !in _tree) {
             _tree.insert(e);
             hardware.sound.play(e.sound, e.loudness);
+            _debris ~= Debris.newImplosion(ex, ey);
         }
     }
 
-    void addExplosion(in Update upd, in int tribe, in int lix,
-        in int ex, in int ey
-    ) {
-        Effect e = Effect(upd, tribe, lix, Sound.POP);
+    void addExplosion(in Update upd, in int tribe, in int lix, int ex, int ey)
+    {
+        Effect e = Effect(upd, tribe, lix, Sound.POP,
+            tribe == tribeLocal ? Loudness.loud : Loudness.quiet);
         if (e !in _tree) {
             _tree.insert(e);
             hardware.sound.play(e.sound, e.loudness);
+            _debris ~= Debris.newExplosion(ex, ey);
         }
     }
 
+    void calc()
+    {
+        int i = 0;
+        while (i < _debris.len) {
+            if (_debris[i].timeToLive > 0)
+                _debris[i++].calc();
+            else
+                _debris = _debris[0 .. i] ~ _debris[i+1 .. $];
+        }
+    }
+
+    void draw(Torbit target)
+    {
+        _debris.each!(a => a.draw(target));
+    }
 }
