@@ -386,6 +386,28 @@ void drawDarkFrom(
 
 
 
+void drawFromPreservingAspectRatio(in Torbit from)
+{
+    auto drata = DrawingTarget(bitmap);
+    immutable float scaleX = 1.0f * xl / from.xl;
+    immutable float scaleY = 1.0f * yl / from.yl;
+    // draw (from) as large as possible onto (this), which requires that
+    // the strongest restriction is followed, i.e., we scale by the smallest
+    // scaling factor.
+    int destXl = xl, destYl = yl;
+    if (scaleX < scaleY)
+        destYl = (yl * scaleX/scaleY).roundInt;
+    else
+        destXl = (xl * scaleY/scaleX).roundInt;
+    assert (destXl <= xl && destYl == yl
+        ||  destYl <= yl && destXl == xl);
+    al_draw_scaled_bitmap(cast (Albit) from.bitmap,
+        0, 0, from.xl, from.yl,
+        (xl-destXl)/2, (yl-destYl)/2, destXl, destYl, 0);
+}
+
+
+
 void copyToScreen()
 {
     auto drata = DrawingTarget(al_get_backbuffer(display));

@@ -64,19 +64,10 @@ public:
 
     Sound sound;
 
-    // named constructor
-    static Tile takeOverCutbit(Cutbit, TileType = TileType.EMPTY, int = 0);
-
     ~this() {
         if (cb) destroy(cb);
         cb = null;
     }
-
-    void read_definitions_file(in Filename);
-
-    // Reorders TERRAIN = 0, HATCH = 1, ... into the correct display order
-    // for the editor, gameplay, or level image dumper
-    static TileType perm(in int);
 
 private:
 
@@ -265,10 +256,8 @@ void read_definitions_file(in Filename filename)
     // end foreach
 }
 
-
-
-
-TileType perm(in int n)
+// correct display order for editor, game, or level image dumper
+static TileType perm(in int n) pure
 {
     // don't start with 0 because most classes start with TERRAIN, not EMPTY.
     return n == 1 ? TileType.HATCH
@@ -281,7 +270,6 @@ TileType perm(in int n)
      :     n == 8 ? TileType.TERRAIN
      :              TileType.EMPTY; // I don't know a proper list
 }
-
 
 }
 // end class Tile

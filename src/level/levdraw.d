@@ -24,74 +24,103 @@ package void implDrawTerrainTo(in Level level, Torbit tb, Phymap lookup)
     }
     // Durch die Terrain-Liste iterieren, Wichtiges zuletzt blitten (obenauf)
     foreach (ref const(Pos) po; level.pos[TileType.TERRAIN]) {
-        draw_pos(po, tb, lookup);
+        drawPos(po, tb, lookup);
     }
 }
 
 
 
-private void draw_pos(in ref Pos po, Torbit ground, Phymap lookup)
+private void drawPos(in Pos po, Torbit ground, Phymap lookup)
 {
     assert (po.ob);
     assert (po.ob.cb);
-    const(Cutbit) bit = po.ob.cb;
+    if (po.ob.type == TileType.TERRAIN)
+        drawPosTerrain(po, ground, lookup);
+    else
+        drawPosGadget(po, ground);
+}
 
-    bit.draw(ground, po.x, po.y, po.mirr,
-     po.ob.type == TileType.HATCH ? 0 : po.rot, // hatch rot: not for drawing
-       po.noow ? Cutbit.Mode.NOOW
-     : po.dark ? Cutbit.Mode.DARK
-     :           Cutbit.Mode.NORMAL);
+private void drawPosGadget(in Pos po, Torbit ground)
+{
+    po.ob.cb.draw(ground, po.x, po.y,
+        0, 0, // draw top-left frame. DTODO: Still OK for triggered traps?
+        po.mirr,
+        // hatch rotation: not for drawing, only for spawn direction
+        po.ob.type == TileType.HATCH ? 0 : po.rot);
+}
 
-    // draw_pos is not only used for drawing terrain by
-    // implDrawTerrainTo, but also by the implDraw_preview.
-    // However, that one doesn't prepare a lookup map. So, for the lookupmap,
-    // draw_pos is only concerned about drawing terrain and steel lookup.
-    if (! lookup || po.ob.type != TileType.TERRAIN) return;
-
-    // The remaining part of the function draws the terrain object, which
-    // can be steel or normal terrain, to the lookup map.
-
-    // The lookup map can contain additional info about trigger areas,
-    // but draw_pos doesn't draw those onto the lookup map. That's done
+private void drawPosTerrain(in Pos po, Torbit ground, Phymap lookup)
+{
+    const(Cutbit) cb = po.ob.cb;
+    cb.draw(ground, po.x, po.y, po.mirr, po.rot,
+          po.noow ? Cutbit.Mode.NOOW
+        : po.dark ? Cutbit.Mode.DARK
+        :           Cutbit.Mode.NORMAL);
+    if (! lookup)
+        return;
+    // The lookup map could contain additional info about trigger areas,
+    // but drawPos[Terrain] doesn't draw those onto the lookup map. That's done
     // by the game class.
-
-    // We won't draw to ground, it's just to access rotated pixels.
-    Graphic tempgra = new Graphic(bit, ground);
-    scope (exit) destroy(tempgra);
-    const(Albit) underlying_al_bitmap = bit.albit;
-    auto lock = LockReadOnly(underlying_al_bitmap);
+    Graphic tempgra = new Graphic(cb, ground); // won't draw this
+    scope (exit)
+        destroy(tempgra);
     tempgra.rotation = po.rot;
     tempgra.mirror   = po.mirr;
-    for  (int x = po.x; x < po.x + tempgra.xl; ++x)
-     for (int y = po.y; y < po.y + tempgra.yl; ++y)
-     if (tempgra.get_pixel(x - po.x, y - po.y) != color.transp) {
-        if (po.noow) {
-            if (! lookup.get(x, y, Phybit.terrain))
-                lookup.add(x, y, po.ob.subtype == 1 ?
-                Phybit.steel | Phybit.terrain :
-                Phybit.terrain);
+    auto lock = LockReadOnly(cb.albit);
+    foreach (int y; po.y .. (po.y + tempgra.yl))
+        foreach (int x; po.x .. (po.x + tempgra.xl)) {
+            if (tempgra.get_pixel(x - po.x, y - po.y) == color.transp)
+                continue;
+            immutable isSteel  = po.ob.subtype == 1;
+            immutable material = Phybit.terrain | (isSteel * Phybit.steel);
+            if (po.noow) {
+                if (! lookup.get(x, y, Phybit.terrain))
+                    lookup.add(x, y, material);
+            }
+            else if (po.dark)
+                lookup.rm(x, y, Phybit.terrain | Phybit.steel);
+            else {
+                lookup.add(x, y, material);
+                if (! isSteel)
+                    lookup.rm (x, y, Phybit.steel);
+            }
         }
-        else if (po.dark)
-            lookup.rm(x, y, Phybit.terrain | Phybit.steel);
-        else if (po.ob.subtype == 1)
-            lookup.add(x, y, Phybit.terrain | Phybit.steel);
-        else {
-            lookup.add(x, y, Phybit.terrain);
-            lookup.rm (x, y, Phybit.steel);
-        }
-    }
-    // end of single pixel
 }
 
 
 
 package Torbit implCreatePreview(
-    in Level level, in int w, in int h, in AlCol c)
-{
-    assert (w > 0);
-    assert (h > 0);
-    Torbit ret = new Torbit(w, h);
-    ret.clearToColor(color.random); // DTODODRAW: draw the level on it
+    in Level level, in int prevXl, in int prevYl, in AlCol c
+) {
+    assert (prevXl > 0);
+    assert (prevYl > 0);
+    Torbit ret = new Torbit(prevXl, prevYl);
+    ret.clearToColor(c);
+    if (   level.status == LevelStatus.BAD_FILE_NOT_FOUND
+        || level.status == LevelStatus.BAD_EMPTY)
+        return ret;
+
+    Torbit newTb(AlCol tempTorbitCol)
+    {
+        Torbit t = new Torbit(level.xl, level.yl);
+        t.clearToColor(tempTorbitCol);
+        t.setTorusXY(level.torusX, level.torusY);
+        return t;
+    }
+    Torbit tempTer = newTb(color.transp);
+    Torbit tempObj = newTb(color.makecol(level.bgRed,
+                                         level.bgGreen, level.bgBlue));
+    scope (exit) {
+        destroy(tempTer);
+        destroy(tempObj);
+    }
+    for (int type = TileType.TERRAIN; type != TileType.MAX; ++type) {
+        auto perm = Tile.perm(type);
+        foreach (pos; level.pos[perm])
+            drawPos(pos, perm == TileType.TERRAIN ? tempTer : tempObj, null);
+    }
+    ret.drawFromPreservingAspectRatio(tempObj);
+    ret.drawFromPreservingAspectRatio(tempTer);
     return ret;
 }
 
