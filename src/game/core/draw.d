@@ -5,6 +5,7 @@ import std.string; // format
 
 import basics.alleg5;
 import game.core;
+import graphic.color;
 import graphic.gadget;
 import graphic.map;
 import graphic.torbit;
@@ -28,10 +29,8 @@ implGameDraw(Game game) { with (game)
         DrawingTarget drata = DrawingTarget(map.albit);
 
         with (Zone(profiler, "game clear screen to color"))
-            map.clear_screen_rectangle(AlCol(game.level.bgRed,
-                                             game.level.bgGreen,
-                                             game.level.bgBlue, 1.0));
-
+            map.clear_screen_rectangle(color.makecol(
+                level.bgRed, level.bgGreen, level.bgBlue));
         if (_profilingGadgetCount == 0)
             with (Zone(profiler, "game counts gadgets, basic loop")) {
                 cs.foreachGadget((Gadget g) { ++_profilingGadgetCount; } );
