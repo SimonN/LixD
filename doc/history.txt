@@ -1,6 +1,19 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.29
+------
+
+2016-01-12
+
+Level preview renders and scales the level correctly, instead of displaying
+only a colorful rectangle.
+
+User savestating is implemented including saving/loading, but it doesn't
+preserve effects, see issue #23.
+
+Fixed bug #13: Framestepping buttons execute continuously on holding RMB.
+
 0.1.28
 ------
 
