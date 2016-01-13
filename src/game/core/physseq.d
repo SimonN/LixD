@@ -15,43 +15,17 @@ import lix;
 
 static import basics.user; // draw arrows or not
 
-// This should be called on a regular basis to advance physics, while
-// syncing things that must be done immediately before the advancement.
-package void
-syncNetworkThenUpdateOnce(Game game)
+package void updateTo(Game game, in Update targetUpdate)
 {
-    game.putSpawnintChangesIntoReplay();
-    game.putUndispatchedAssignmentsIntoReplay();
-    game.putNetworkDataIntoReplay();
-
-    game.updateOnceWithoutSyncingNetwork();
+    if (game.cs.update >= targetUpdate)
+        return;
+    game.syncNetworkAndDispatch();
+    while (game.cs.update < targetUpdate) {
+        game.updateOnce();
+        game.considerAutoSavestateIfCloseTo(targetUpdate);
+    }
+    game.setLastUpdateToNow();
 }
-
-
-
-// This is the main function that gets executed once per physics update.
-package void
-updateOnceWithoutSyncingNetwork(Game game)
-{
-    assert (game);
-    assert (game.cs);
-
-    Zone zone = Zone(profiler, "PhysSeq updateOnceNoSync");
-
-    ++game.cs.update;
-
-    game.evaluateReplayData();
-    game.updateClock();
-    game.spawnLixxiesFromHatches();
-    game.updateNuke();
-    game.updateLixxies();
-    game.finalizeUpdateAnimateGadgets();
-
-    if (game.runmode == Runmode.INTERACTIVE)
-        game.considerMakingAutoSavestate();
-}
-
-
 
 package void
 finalizeUpdateAnimateGadgets(Game game) {
@@ -75,10 +49,36 @@ finalizeUpdateAnimateGadgets(Game game) {
 
 private:
 
+void syncNetworkAndDispatch(Game game)
+{
+    game.putSpawnintChangesIntoReplay();
+    game.putUndispatchedAssignmentsIntoReplay();
+    game.putNetworkDataIntoReplay();
+}
+
+
+
+// This is the main function that gets executed once per physics update.
+void updateOnce(Game game)
+{
+    assert (game);
+    assert (game.cs);
+
+    Zone zone = Zone(profiler, "PhysSeq updateOnceNoSync");
+
+    ++game.cs.update;
+
+    game.evaluateReplayData();
+    game.updateClock();
+    game.spawnLixxiesFromHatches();
+    game.updateNuke();
+    game.updateLixxies();
+    game.finalizeUpdateAnimateGadgets();
+}
+
 void putSpawnintChangesIntoReplay(Game game) { }
 
-void
-putUndispatchedAssignmentsIntoReplay(Game game) { with (game)
+void putUndispatchedAssignmentsIntoReplay(Game game) { with (game)
 {
     if (undispatchedAssignments == null)
         return;
@@ -106,11 +106,7 @@ putUndispatchedAssignmentsIntoReplay(Game game) { with (game)
 }}
 // end void putUndispatchedAssignmentsIntoReplay()
 
-
-
 void putNetworkDataIntoReplay(Game game) { }
-
-
 
 void
 evaluateReplayData(Game game)
@@ -435,11 +431,13 @@ updateLixxies(Game game) { with (game)
 
 
 
-void considerMakingAutoSavestate(Game game)
+void considerAutoSavestateIfCloseTo(Game game, Update targetUpdate)
 {
-    assert (game.runmode == Runmode.INTERACTIVE);
+    if (game.runmode != Runmode.INTERACTIVE)
+        return;
+
     assert (game.stateManager);
-    if (game.stateManager.wouldAutoSave(game.cs)) {
+    if (game.stateManager.wouldAutoSave(game.cs, targetUpdate)) {
         Zone zone = Zone(profiler, "PhysSeq make auto savestate");
         // It seems dubious to do drawing to bitmaps during calc/update.
         // However, savestates save the land too, and they should
@@ -448,6 +446,6 @@ void considerMakingAutoSavestate(Game game)
         // redraw over and over when loading from this state during
         // framestepping backwards. Instead, let's calculate the land now.
         game.physicsDrawer.applyChangesToLand(game.cs.update);
-        game.stateManager.autoSave(game.cs);
+        game.stateManager.autoSave(game.cs, targetUpdate);
     }
 }

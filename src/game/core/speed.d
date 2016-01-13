@@ -1,6 +1,7 @@
 module game.core.speed;
 
 import basics.alleg5;
+import basics.nettypes; // Update
 import game.core;
 import hardware.sound;
 
@@ -13,13 +14,9 @@ setLastUpdateToNow(Game game)
 package void
 updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
 {
-    void upd(int howmany = 1)
+    void upd(in int howmany = 1)
     {
-        if (howmany-- > 0)
-            game.syncNetworkThenUpdateOnce();
-        while (howmany-- > 0)
-            game.updateOnceWithoutSyncingNetwork();
-        game.setLastUpdateToNow();
+        game.updateTo(Update(cs.update + howmany));
     }
 
     // We don't set/unset pause based on the buttons here. This is done by
@@ -27,17 +24,17 @@ updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
     if (   pan.speedBack.executeLeft
         || pan.speedBack.executeRight
     ) {
-        int whatUpdateToLoad
-            = pan.speedBack.executeLeft  ? cs.update - 1
+        Update whatUpdateToLoad = Update(
+              pan.speedBack.executeLeft  ? cs.update - 1
             : pan.speedBack.executeRight ? cs.update - Game.updatesBackMany
-            : 0;
+            : 0);
         auto state = (whatUpdateToLoad <= 0)
                    ? stateManager.zeroState
                    : stateManager.autoBeforeUpdate(whatUpdateToLoad + 1);
         assert (state, "we should get at laest some state here");
         assert (stateManager.zeroState, "zero state is bad");
         game.loadStateFramestepping(state, whatUpdateToLoad);
-        upd(whatUpdateToLoad - cs.update);
+        game.updateTo(whatUpdateToLoad);
     }
     else if (pan.restart.execute) {
         game.restartLevel();
@@ -72,12 +69,11 @@ updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
             if (updAgo >= ticksNormalSpeed)
                 upd();
         }
-        else {
-            upd(pan.speedFast.xf == Panel.frameTurbo
-                ? updatesDuringTurbo : 1);
-        }
+        else if (pan.speedFast.xf == Panel.frameTurbo)
+            upd(updatesDuringTurbo);
+        else
+            upd();
     }
-
 }}
 // end with (game), end function updatePhysicsAccordingToSpeedButtons
 

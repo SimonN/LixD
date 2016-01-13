@@ -189,16 +189,33 @@ public:
         return ret;
     }
 
-    bool wouldAutoSave(in GameState s) const
+    int updateMultipleForPair(in int pair) const pure
     {
-        return s !is null
-            && s.update != 0
-            && s.update % updatesMostFrequentPair == 0;
+        assert (pair >= 0 && pair < pairsToKeep);
+        int ret = updatesMostFrequentPair;
+        foreach (i; 0 .. pair)
+            ret *= updatesMultiplierNextPairIsSlowerBy;
+        return ret;
     }
 
-    void autoSave(in GameState s)
+    bool wouldAutoSave(in GameState s, in Update ultimatelyTo) const pure
     {
-        if (! wouldAutoSave(s))
+        if (! s || s.update == 0 || s.update % updatesMostFrequentPair != 0)
+            return false;
+        foreach (pair; 0 .. pairsToKeep)
+            // We save 2 states per update multiple. But when we want to update
+            // 100 times, there is no need saving states after 10, 20, 30, ...
+            // updates, we would only keep the states at 90 and 100, anyway.
+            // And the state at 50 and 100, in a higher pair.
+            if (s.update > ultimatelyTo - 2 * updateMultipleForPair(pair)
+                && s.update % updateMultipleForPair(pair) == 0)
+                return true;
+        return false;
+    }
+
+    void autoSave(in GameState s, in Update ultimatelyTo)
+    {
+        if (! wouldAutoSave(s, ultimatelyTo))
             return;
         // Potentially push older auto-saved states down the hierarchy.
         // First, if it's time to copy a frequent state into a less frequent
@@ -208,11 +225,9 @@ public:
         // frequently updated pair. The most frequently updated pair has
         // array indices 0 and 1. The next one has array indices 2 and 3, ...
         for (int pair = pairsToKeep - 1; pair >= 0; --pair) {
-            int updateMultipleForPair = updatesMostFrequentPair;
-            foreach (i; 0 .. pair)
-                updateMultipleForPair *= updatesMultiplierNextPairIsSlowerBy;
-            if (s.update % updateMultipleForPair == 0) {
-                int whichOfPair = (s.update / updateMultipleForPair) % 2;
+            immutable int umfp = updateMultipleForPair(pair);
+            if (s.update % umfp == 0) {
+                int whichOfPair = (s.update / umfp) % 2;
                 if (pair > 0) {
                     // make a shallow copy, because we treat states inside
                     // the save manager like immutable data. If the thing
