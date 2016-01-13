@@ -13,8 +13,6 @@ module basics.mainloop;
 import core.memory;
 
 import basics.alleg5;
-import basics.bench;
-import basics.demo;
 import game.core;
 import file.log; // logging uncaught Exceptions
 import hardware.display;
@@ -68,9 +66,6 @@ private:
 
     Game game;
 
-    Demo demo;
-    Benchmark bench;
-
 
 
 void
@@ -93,12 +88,6 @@ kill()
     if (optionsMenu) {
         gui.rmElder(optionsMenu);
         optionsMenu = null;
-    }
-    if (demo) {
-        demo = null;
-    }
-    if (bench) {
-        bench = null;
     }
     core.memory.GC.collect();
 }
@@ -131,18 +120,12 @@ calc()
             gui.addElder(browSin);
         }
         else if (mainMenu.gotoNetwork) {
-            // DTODO: as long as networking isn't developed, this goes to demo
-            kill();
-            demo = new Demo;
+            // DTODO: link to lobby
         }
         else if (mainMenu.gotoOptions) {
             kill();
             optionsMenu = new OptionsMenu;
             gui.addElder(optionsMenu);
-        }
-        else if (mainMenu.gotoBench) {
-            kill();
-            bench = new Benchmark;
         }
         else if (mainMenu.exitProgram) {
             exit = true;
@@ -176,17 +159,6 @@ calc()
             gui.addElder(browSin);
         }
     }
-    else if (demo) {
-        demo.calc();
-    }
-    else if (bench) {
-        bench.calc();
-        if (bench.exit) {
-            kill();
-            mainMenu = new MainMenu;
-            gui.addElder(mainMenu);
-        }
-    }
     else {
         // program has just started, nothing exists yet
         mainMenu = new MainMenu;
@@ -204,8 +176,6 @@ draw()
     // are therefore supervised by module gui.root.
 
     if (game) game.draw();
-    if (demo) demo.draw();
-    if (bench) bench.draw();
 
     gui              .draw();
     hardware.mousecur.draw();

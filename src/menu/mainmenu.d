@@ -3,8 +3,6 @@ module menu.mainmenu;
 /* This is shown after the game has initialized everything.
  * When the game is run for the first time, the small dialogues asking
  * for language and name are shown first instead, and only then this.
- *
- * DTODO: the button "bench" should be removed at some point.
  */
 
 import basics.alleg5;  // drawing bg to screen
@@ -21,7 +19,6 @@ class MainMenu : Window {
     @property bool gotoNetwork() { return network.execute; }
     @property bool gotoReplays() { return replays.execute; }
     @property bool gotoOptions() { return options.execute; }
-    @property bool gotoBench()   { return bench  .execute; }
     @property bool exitProgram() { return _exit  .execute; }
 
 private:
@@ -30,7 +27,6 @@ private:
     TextButton network;
     TextButton replays;
     TextButton options;
-    TextButton bench;
     TextButton _exit;
 
     Label versioning;
@@ -65,7 +61,7 @@ public this()
     _exit   = buttextHeight(Geom.From.TOP,       3);
 
     single .text = Lang.browserSingleTitle.transl;
-    network.text = "Demo (Shift+ESC to exit)"; // winLobbyTitle.transl DTODO
+    network.text = "(no netplay yet)"; // DTODO Lang.winLobbyTitle.transl;
     replays.text = Lang.browserReplayTitle.transl;
     options.text = Lang.optionTitle.transl;
     _exit  .text = Lang.commonExit.transl;
@@ -85,11 +81,6 @@ public this()
 
     addChildren(single, network, replays, options, _exit,
         versioning, website);
-
-    bench = new TextButton(new Geom(0, -butYlg - butSpg,
-                           560, single.ylg, Geom.From.TOP));
-    bench.text = "Benchmark! Runs for about 2 minutes. Click here!";
-    this.addChild(bench);
 }
 // end this()
 
