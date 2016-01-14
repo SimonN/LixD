@@ -49,8 +49,11 @@ class BrowserBase : Window {
     void previewLevel(Level l) { preview.level = l;    }
     void clearPreview()        { preview.level = null; }
 
-    @property int  infoY() const   { return _infoY; }
-    @property void infoY(in int i) { _infoY = i;    }
+    @property float infoXl() const    { return buttonPlay.xlg; }
+    @property float infoY()  const
+    {
+        return preview.yg + preview.ylg + 20;
+    }
 
     // override these
     void onFileHighlight(Filename) {}
@@ -60,7 +63,7 @@ private:
 
     bool _gotoMainMenu;
 
-    int        _infoY;
+    float      _infoY;
     Filename   fileRecent; // only used for highlighting, not selecting
 
     ListDir    dirList;

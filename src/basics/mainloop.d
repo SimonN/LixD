@@ -17,6 +17,7 @@ import game.core;
 import file.log; // logging uncaught Exceptions
 import hardware.display;
 import hardware.keyboard;
+import menu.browrep;
 import menu.browsin;
 import menu.mainmenu;
 import menu.options;
@@ -62,6 +63,7 @@ private:
 
     MainMenu mainMenu;
     BrowserSingle browSin;
+    BrowserReplay browRep;
     OptionsMenu optionsMenu;
 
     Game game;
@@ -82,8 +84,13 @@ kill()
     if (browSin) {
         gui.rmElder(browSin);
         destroy(browSin); // DTODO: check what is best here. There is a
-                           // Torbit to be destroyed in the browser's preview.
+                          // Torbit to be destroyed in the browser's preview.
         browSin = null;
+    }
+    if (browRep) {
+        gui.rmElder(browRep);
+        destroy(browRep); // see comment for destroy(browSin)
+        browRep = null;
     }
     if (optionsMenu) {
         gui.rmElder(optionsMenu);
@@ -122,6 +129,11 @@ calc()
         else if (mainMenu.gotoNetwork) {
             // DTODO: link to lobby
         }
+        else if (mainMenu.gotoReplays) {
+            kill();
+            browRep = new BrowserReplay;
+            gui.addElder(browRep);
+        }
         else if (mainMenu.gotoOptions) {
             kill();
             optionsMenu = new OptionsMenu;
@@ -146,6 +158,13 @@ calc()
     }
     else if (optionsMenu) {
         if (optionsMenu.gotoMainMenu) {
+            kill();
+            mainMenu = new MainMenu;
+            gui.addElder(mainMenu);
+        }
+    }
+    else if (browRep) {
+        if (browRep.gotoMainMenu) {
             kill();
             mainMenu = new MainMenu;
             gui.addElder(mainMenu);
