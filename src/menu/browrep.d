@@ -6,9 +6,9 @@ import file.language;
 import game.replay;
 import gui;
 import level.level;
-import menu.browbase;
+import menu.browmain;
 
-class BrowserReplay : BrowserBase {
+class BrowserReplay : BrowserCalledFromMainMenu {
 
     this()
     {
@@ -31,10 +31,6 @@ class BrowserReplay : BrowserBase {
         addChildren(_delete, _extract);
     }
 
-    @property bool            gotoGame() const { return _gotoGame;     }
-    @property inout(Replay)   replay()   inout { return _replayRecent; }
-    @property inout(Level)    level()    inout { return _levelRecent;  }
-
 protected:
 
     override void onFileHighlight(Filename fn)
@@ -44,33 +40,29 @@ protected:
         if (fn is null) {
             _delete.hide();
             _extract.hide();
-            _replayRecent = null;
-            _levelRecent  = null;
+            replayRecent = null;
+            levelRecent  = null;
         }
         else {
-            _replayRecent   = new Replay(fn);
-            _levelRecent    = new Level(_replayRecent.levelFilename);
-            _extract.hidden = ! _replayRecent.containsLevel;
+            replayRecent   = new Replay(fn);
+            levelRecent    = new Level(replayRecent.levelFilename);
+            _extract.hidden = ! replayRecent.containsLevel;
             _delete.show();
         }
-        previewLevel(_levelRecent);
+        previewLevel(levelRecent);
     }
 
     override void onFileSelect(Filename fn)
     {
-        assert (_replayRecent !is null);
-        assert (_levelRecent  !is null);
-        if (_levelRecent.good) {
+        assert (replayRecent !is null);
+        assert (levelRecent  !is null);
+        if (levelRecent.good) {
             basics.user.replayLastLevel = super.fileRecent;
-            _gotoGame = true;
+            gotoGame = true;
         }
     }
 
 private:
-
-    bool     _gotoGame;
-    Replay   _replayRecent;
-    Level    _levelRecent;
 
     TextButton _extract;
     TextButton _delete;

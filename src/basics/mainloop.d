@@ -143,14 +143,16 @@ calc()
             exit = true;
         }
     }
-    else if (browSin) {
-        if (browSin.gotoGame) {
-            auto lv = browSin.level;
-            auto fn = browSin.fileRecent;
+    else if (browSin || browRep) {
+        auto brow = (browSin !is null ? browSin : browRep);
+        if (brow.gotoGame) {
+            auto fn = brow.fileRecent;
+            auto lv = brow.levelRecent;
+            auto rp = brow.replayRecent;
             kill();
-            game = new Game(Runmode.INTERACTIVE, lv, fn);
+            game = new Game(Runmode.INTERACTIVE, lv, fn, rp);
         }
-        else if (browSin.gotoMainMenu) {
+        else if (brow.gotoMainMenu) {
             kill();
             mainMenu = new MainMenu;
             gui.addElder(mainMenu);
@@ -158,13 +160,6 @@ calc()
     }
     else if (optionsMenu) {
         if (optionsMenu.gotoMainMenu) {
-            kill();
-            mainMenu = new MainMenu;
-            gui.addElder(mainMenu);
-        }
-    }
-    else if (browRep) {
-        if (browRep.gotoMainMenu) {
             kill();
             mainMenu = new MainMenu;
             gui.addElder(mainMenu);

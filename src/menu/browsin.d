@@ -6,14 +6,11 @@ import file.language;
 import file.filename;
 import gui;
 import level.level;
-import menu.browbase;
+import menu.browmain;
 
-class BrowserSingle : BrowserBase {
+class BrowserSingle : BrowserCalledFromMainMenu {
 
 public:
-
-    @property bool         gotoGame() const { return _gotoGame;    }
-    @property inout(Level) level()    inout { return _levelRecent; }
 
     this()
     {
@@ -29,28 +26,21 @@ protected:
 
     override void onFileHighlight(Filename fn)
     {
-        _fileRecent  = fn;
-        _levelRecent = fn is null ? null : new Level(_fileRecent);
-        previewLevel(_levelRecent);
+        levelRecent = fn is null ? null : new Level(fileRecent);
+        previewLevel(levelRecent);
     }
 
     override void onFileSelect(Filename fn)
     {
-        assert (_fileRecent  !is null);
-        assert (_levelRecent !is null);
+        assert (fileRecent  !is null);
+        assert (levelRecent !is null);
         // the super class guarantees that on_file_select is only called after
         // onFileHighlight has been called with the same fn immediately before
-        if (_levelRecent.good) {
-            basics.user.singleLastLevel = _fileRecent;
-            _gotoGame = true;
+        if (levelRecent.good) {
+            basics.user.singleLastLevel = fileRecent;
+            gotoGame = true;
         }
     }
-
-private:
-
-    bool     _gotoGame;
-    Filename _fileRecent;
-    Level    _levelRecent;
 
 }
 // end class
