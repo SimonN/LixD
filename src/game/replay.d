@@ -73,13 +73,20 @@ public:
         return plna.length ? base ~ "-" ~ plna : base;
     }
 
-
+    // this is stupid and Filename should be alias to
+    // std.typecons.rebindable!(immutable(private file.filename._Filename)).
+    private static const noLevelFilenameSet = new Filename("");
+    @property bool containsLevel()
+    {
+        assert (levelFilename !is null);
+        return levelFilename != noLevelFilenameSet;
+    }
 
 this(Filename loadFrom = null)
 {
     touch();
     levelBuiltRequired = new Date("0");
-    levelFilename      = loadFrom ? loadFrom : new Filename("");
+    levelFilename      = loadFrom ? loadFrom : noLevelFilenameSet.clone();
     _permu             = new Permu(1);
 
     if (loadFrom)

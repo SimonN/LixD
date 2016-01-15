@@ -6,7 +6,7 @@ module menu.browbase;
  *      for every file on which possibly on_file_select could be called later.
  *      Whenever on_file_select is called, onFileHighlight has been called
  *      on the same filename before, and no other onFileHighlight calls have
- *      been made in the meantime. (Impl. by private BrowserBase.fileRecent.)
+ *      been made in the meantime. (Impl. by private BrowserBase._fileRecent.)
  */
 
 import std.conv;
@@ -25,18 +25,13 @@ class BrowserBase : Window {
     void setButtonPlayText(in string s) { buttonPlay.text = s; }
 
     @property bool gotoMainMenu() const { return _gotoMainMenu; }
-
-    @property auto baseDir()     const { return dirList.baseDir;     }
-    @property auto currentFile() const { return levList.currentFile; }
+    @property auto fileRecent()   inout { return _fileRecent;   }
 
     void previewLevel(Level l) { preview.level = l;    }
     void clearPreview()        { preview.level = null; }
 
-    @property float infoXl() const    { return buttonPlay.xlg; }
-    @property float infoY()  const
-    {
-        return preview.yg + preview.ylg + 20;
-    }
+    enum float infoXl = 140;
+    enum float infoY  = 220;
 
 protected:
 
@@ -48,8 +43,7 @@ private:
 
     bool _gotoMainMenu;
 
-    float      _infoY;
-    Filename   fileRecent; // only used for highlighting, not selecting
+    Filename   _fileRecent; // only used for highlighting, not selecting
 
     ListDir    dirList;
     ListLevel  levList;
@@ -81,9 +75,9 @@ this(
     dirList = new ListDir  (new Geom(20,  40, 100,  420));
     levList = new ListLevel(new Geom(140, 40, lxlg, 420),
                             ListLevel.WriteFilenames.no, lcm, rtl);
-    buttonPlay = new TextButton(new Geom(20,  40, 140,  40, From.TOP_RIG));
-    preview    = new Preview   (new Geom(20, 100, 140, 100, From.TOP_RIG));
-    buttonExit = new TextButton(new Geom(20,  20, 140,  40, From.BOT_RIG));
+    buttonPlay = new TextButton(new Geom(20,  40, infoXl,  40, From.TOP_RIG));
+    preview    = new Preview   (new Geom(20, 100, infoXl, 100, From.TOP_RIG));
+    buttonExit = new TextButton(new Geom(20,  20, infoXl,  40, From.BOT_RIG));
 
     // preview_yl = 100 or 93 doesn't fit exactly for the 640x480 resolution,
     // the correct value there would have been 92. But it'll make the image
@@ -131,12 +125,12 @@ highlight(Filename fn)
 {
     if (fn is null) {
         buttonPlay.hide();
-        // keep fileRecent as it is, we might highlight that again later
+        // keep _fileRecent as it is, we might highlight that again later
         onFileHighlight(null);
     }
     else {
         buttonPlay.show();
-        fileRecent = fn;
+        _fileRecent = fn;
         onFileHighlight(fn);
     }
 }
@@ -148,9 +142,9 @@ calcSelf()
 {
     if (dirList.clicked) {
         windowSubtitle = dirList.currentDir.rootless;
-        if (fileRecent &&
-            fileRecent.dirRootless == dirList.currentDir.dirRootless)
-            highlight(fileRecent);
+        if (_fileRecent &&
+            _fileRecent.dirRootless == dirList.currentDir.dirRootless)
+            highlight(_fileRecent);
         else
             highlight(null);
     }
@@ -167,10 +161,10 @@ calcSelf()
         }
     }
     else if (buttonPlay.execute) {
-        if (fileRecent !is null
-         && fileRecent.isChildOf(dirList.currentDir)
-         && fileRecent ==        levList.currentFile)
-            onFileSelect(fileRecent);
+        if (_fileRecent !is null
+         && _fileRecent.isChildOf(dirList.currentDir)
+         && _fileRecent ==        levList.currentFile)
+            onFileSelect(_fileRecent);
     }
 }
 

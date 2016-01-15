@@ -146,7 +146,7 @@ calc()
     else if (browSin) {
         if (browSin.gotoGame) {
             auto lv = browSin.level;
-            auto fn = browSin.filename;
+            auto fn = browSin.fileRecent;
             kill();
             game = new Game(Runmode.INTERACTIVE, lv, fn);
         }
