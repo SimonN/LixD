@@ -163,7 +163,7 @@ on_dir_load()
 
 
 protected override Button
-newFileButton(int from_top, int total, in Filename fn)
+newFileButton(int from_top, int total, Filename fn)
 {
     // the first slot may have been taken by the dirUp button.
     immutable plusY = dirUp ? 20 : 0;

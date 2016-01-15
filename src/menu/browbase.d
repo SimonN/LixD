@@ -20,16 +20,6 @@ import menu.preview;
 
 class BrowserBase : Window {
 
-    enum UseCheckmarks  { yes, no };
-    enum UseReplayStyle { yes, no };
-
-/*  this(string windowTitle,
- *      in Filename baseDir,
- *      in Filename currentFile,
- *      bool useCheckmarks = false,
- *      bool replayStyle   = false); -- see below for implementation
- */
-
     ~this() { if (preview) destroy(preview); preview = null; }
 
     void setButtonPlayText(in string s) { buttonPlay.text = s; }
@@ -39,13 +29,6 @@ class BrowserBase : Window {
     @property auto baseDir()     const { return dirList.baseDir;     }
     @property auto currentFile() const { return levList.currentFile; }
 
-/*  void setCurrentDirToParentDir()
- *
- *  void load_dir(in Filename, bool call_onFileHighlight = true);
- *  void highlight_nothing();
- *
- *  void set_preview_y_and_yl(in int y, in int yl);
- */
     void previewLevel(Level l) { preview.level = l;    }
     void clearPreview()        { preview.level = null; }
 
@@ -54,6 +37,8 @@ class BrowserBase : Window {
     {
         return preview.yg + preview.ylg + 20;
     }
+
+protected:
 
     // override these
     void onFileHighlight(Filename) {}
@@ -86,16 +71,16 @@ this(
     in string      title,
     in Filename    baseDir,
        Filename    currentFile,
-    UseCheckmarks  useCheckmarks = UseCheckmarks.no,
-    UseReplayStyle replayStyle   = UseReplayStyle.no
+    ListLevel.LevelCheckmarks   lcm,
+    ListLevel.ReplayToLevelName rtl
 ) {
     super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg), title);
 
     immutable int lxlg = to!int(Geom.screenXlg - 100 - 140 - 4*20);
 
     dirList = new ListDir  (new Geom(20,  40, 100,  420));
-    levList = new ListLevel(new Geom(140, 40, lxlg, 420));
-
+    levList = new ListLevel(new Geom(140, 40, lxlg, 420),
+                            ListLevel.WriteFilenames.no, lcm, rtl);
     buttonPlay = new TextButton(new Geom(20,  40, 140,  40, From.TOP_RIG));
     preview    = new Preview   (new Geom(20, 100, 140, 100, From.TOP_RIG));
     buttonExit = new TextButton(new Geom(20,  20, 140,  40, From.BOT_RIG));

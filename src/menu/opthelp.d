@@ -237,7 +237,7 @@ class ListLanguage : gui.ListFile {
     }
 
     protected override Button
-    newFileButton(int fromTop, int unused, in Filename fn)
+    newFileButton(int fromTop, int unused, Filename fn)
     {
         string langName;
         auto lines = fillVectorFromFileNothrow(fn);

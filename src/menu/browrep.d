@@ -13,8 +13,8 @@ class BrowserReplay : BrowserBase {
         super(Lang.browserReplayTitle.transl,
             basics.globals.dirReplays,
             basics.user.replayLastLevel,
-            super.UseCheckmarks.no,
-            super.UseReplayStyle.yes);
+            ListLevel.LevelCheckmarks.no,
+            ListLevel.ReplayToLevelName.yes);
         _delete = newInfo!TextButton(infoY);
         _delete.text   = "(delete)";// Lang.browserDelete.transl;
         _delete.hotkey = basics.user.keyMenuDelete;

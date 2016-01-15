@@ -32,8 +32,8 @@ this()
     super(Lang.browserSingleTitle.transl,
         basics.globals.dirLevels,
         basics.user.singleLastLevel,
-        super.UseCheckmarks.yes,
-        super.UseReplayStyle.no
+        ListLevel.LevelCheckmarks.yes,
+        ListLevel.ReplayToLevelName.no
     );
 }
 

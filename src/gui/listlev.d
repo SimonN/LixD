@@ -14,6 +14,7 @@ import glo = basics.globals;
 import basics.user;
 import file.filename;
 import file.io;
+import game.replay; // ReplayToLevelName; possibly to be moved into a subclass
 import gui;
 import level.metadata;
 
@@ -28,9 +29,10 @@ class ListLevel : ListFile {
 
 public:
 
-    void writeFileNames(bool b) { _writeFileNames = b; }
-    void replayStyle    (bool b) { _replayStyle     = b; }
-    void checkmarkStyle (bool b) { _checkmarkStyle  = b; }
+    // DTODO: turn these into polymorphic subclasses maybe
+    enum WriteFilenames    { yes = true, no = false }
+    enum LevelCheckmarks   { yes = true, no = false }
+    enum ReplayToLevelName { yes = true, no = false }
 
     // why public: this isn't invoked by others, but passable as their crit
     static bool searchCrit_level(in Filename fn)
@@ -45,33 +47,39 @@ public:
 
 private:
 
-    bool _writeFileNames; // "dateiname: Levelname" anstatt "Levelname"
-    bool _replayStyle;     // Replay-Infos anfordern statt Levelinfos
-    bool _checkmarkStyle;  // Einzelspieler: Geschaffte Levels abhaken
-
-
+    WriteFilenames    _writeFileNames;
+    LevelCheckmarks   _levelCheckmarks;
+    ReplayToLevelName _replayToLevelName;
 
 public:
 
-this(Geom g)
+this(Geom g,
+    WriteFilenames    wfn = WriteFilenames.no,
+    LevelCheckmarks   lcm = LevelCheckmarks.no,
+    ReplayToLevelName rtl = ReplayToLevelName.no)
 {
     super(g);
     searchCrit = &searchCrit_level;
     fileSorter = delegate void(Filename[] arr) {
         sortFilenamesByOrderTxtThenAlpha(arr, currentDir, false);
     };
+    _writeFileNames = wfn;
+    _levelCheckmarks = lcm;
+    _replayToLevelName = rtl;
 }
 
 
 
 protected override Button
-newFileButton(int nr_from_top, int total_nr, in Filename fn)
+newFileButton(int nr_from_top, int total_nr, Filename fn)
 {
     string buttonText;
     // We're using ' ' to pad spaces before the digits whenever there are
     // numbers with different length to be printed. We should use a space
     // that's the same width as a digit. Maybe look back into this.
-    if (! _writeFileNames && ! _replayStyle) {
+    if (_writeFileNames)
+        buttonText ~= fn.fileNoExtNoPre ~ ": ";
+    else if (_levelCheckmarks) {
         int max = filesTotal;
         int cur = total_nr + 1; // +1 more pleasing for non-programmers
         int      leadingSpaces = 0;
@@ -81,31 +89,23 @@ newFileButton(int nr_from_top, int total_nr, in Filename fn)
                        ' '.repeat(leadingSpaces), total_nr + 1);
         // filename or fetched level name will be written later on.
     }
-    else {
-        buttonText ~= fn.fileNoExtNoPre ~ ": ";
-    }
 
     LevelMetaData lev;
 
-    if (_replayStyle) {
-        assert (false, "replay style not implemented yet");
-        // DTODOREPLAY
-        /*
-        Replay r(f);
+    if (_replayToLevelName) {
+        auto r = new Replay(fn);
         lev = new LevelMetaData(r.levelFilename);
-        buttonText ~= lev.get_name();
-        */
     }
     else {
         lev = new LevelMetaData(fn);
-        buttonText ~= lev.name;
     }
+    buttonText ~= lev.name;
 
     TextButton t = new TextButton(new Geom(0, nr_from_top * 20, xlg, 20));
     t.text = buttonText;
     t.alignLeft = true;
 
-    if (_checkmarkStyle) {
+    if (_levelCheckmarks) {
         const(Result) result = basics.user.getLevelResult(fn);
         t.checkFrame = result is null         ? 0
             : result.built    != lev.built    ? 3

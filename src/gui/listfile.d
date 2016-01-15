@@ -79,7 +79,7 @@ protected:
         return b;
     }
 
-    abstract Button newFileButton(int from_top, int total, in Filename);
+    abstract Button newFileButton(int from_top, int total, Filename);
 
     // override this if wanted
     Button newFlipButton()
