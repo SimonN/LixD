@@ -59,7 +59,7 @@ void initialize()
     assert (djvuM);
     assert (djvuL);
 
-    _shaOffset = magnif;
+    _shaOffset = min(magnif, magnif / 2.0f + 2);
 
     // djvuMOffset should be set such that the font centers nicely on a
     // GUI button/bar having a height of 20 geoms -- equivalent to 1/24th
