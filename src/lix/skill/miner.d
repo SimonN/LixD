@@ -94,9 +94,7 @@ private:
         tc.x = ex - masks[tc.type].offsetX;
         tc.y = ey - masks[tc.type].offsetY;
         outsideWorld.physicsDrawer.add(tc);
-
-        bool steelHit = false; // DTODOSKILLS: implement steel for miner/basher
-        if (steelHit > 0) {
+        if (wouldHitSteel(masks[tc.type])) {
             // DTODOSKILLS: add flying pickaxe
             turn();
             become(Ac.walker);

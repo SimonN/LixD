@@ -6,6 +6,7 @@ import basics.globals; // fuse image
 import basics.help;
 import basics.matrix;
 import basics.user; // multipleBuilders
+import game.mask;
 import game.phymap;
 import graphic.color;
 import graphic.gadget;
@@ -322,14 +323,15 @@ bool getSteel(in int px, in int py) const
     return lookup.getSteel(_ex + px * dir, _ey + py);
 }
 
-
-
 bool isSolid(in int px = 0, in int py = 2) const
 {
     return lookup.getSolidEven(_ex + px * dir, _ey + py);
 }
 
-
+bool wouldHitSteel(in Mask mask) const
+{
+    return lookup.getSteel(_ex, _ey, mask);
+}
 
 bool isSolidSingle(in int px = 0, in int py = 2) const
 {

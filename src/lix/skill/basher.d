@@ -85,7 +85,6 @@ private:
     {
         TerrainChange tc;
         tc.update = outsideWorld.state.update;
-
         if (omitRelics) {
             if (dir > 0) tc.type = TerrainChange.Type.bashNoRelicsRight;
             else         tc.type = TerrainChange.Type.bashNoRelicsLeft;
@@ -97,10 +96,11 @@ private:
         tc.x      = ex - masks[tc.type].offsetX;
         tc.y      = ey - masks[tc.type].offsetY;
         outsideWorld.physicsDrawer.add(tc);
-
-        if (steelWasHit)
+        if (wouldHitSteel(masks[tc.type])) {
             playSound(Sound.STEEL);
+            steelWasHit = true;
             // do not cancel the basher yet, this will happen later
+        }
     }
 
     void continueOrStop()

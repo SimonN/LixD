@@ -14,6 +14,7 @@ import basics.alleg5;
 import basics.help;
 import basics.topology;
 import file.filename;
+import game.mask;
 
 alias Phybitset = short;
 enum  Phybit    : Phybitset {
@@ -96,6 +97,16 @@ class Phymap : Topology {
         }
         else
             return false;
+    }
+
+    bool getSteel(int ex, int ey, in Mask mask) const
+    {
+        foreach (int y; 0 .. mask.yl)
+            foreach (int x; 0 .. mask.xl)
+                if (mask.get(x, y) && getSteel(ex + x - mask.offsetX,
+                                               ey + y - mask.offsetY))
+                    return true;
+        return false;
     }
 
     void rm(int x, int y, Phybitset n)
