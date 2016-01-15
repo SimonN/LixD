@@ -38,16 +38,18 @@ protected:
         assert (_delete);
         assert (_extract);
         if (fn is null) {
-            _delete.hide();
-            _extract.hide();
             replayRecent = null;
             levelRecent  = null;
+            _delete.hide();
+            _extract.hide();
         }
         else {
             replayRecent   = new Replay(fn);
-            levelRecent    = new Level(replayRecent.levelFilename);
-            _extract.hidden = ! replayRecent.containsLevel;
+            levelRecent    = new Level(fn); // open the replay file as level
             _delete.show();
+            _extract.hidden = ! levelRecent.nonempty;
+            if (! levelRecent.nonempty)
+                levelRecent = new Level(replayRecent.levelFilename);
         }
         previewLevel(levelRecent);
     }
