@@ -168,9 +168,16 @@ calc()
     else if (game) {
         game.calc();
         if (game.gotoMainMenu) {
+            bool rep = game.wasInstantiatedWithReplay;
             kill();
-            browSin = new BrowserSingle;
-            gui.addElder(browSin);
+            if (rep) {
+                browRep = new BrowserReplay;
+                gui.addElder(browRep);
+            }
+            else {
+                browSin = new BrowserSingle;
+                gui.addElder(browSin);
+            }
         }
     }
     else {

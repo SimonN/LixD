@@ -26,6 +26,7 @@ implGameConstructor(Game game, Level lv, Filename fn, Replay rp)
     game.level         = lv;
     game.levelFilename = fn;
     game.replay        = rp;
+    game._wasInstantiatedWithReplay = rp !is null;
 
     if (rp is null) {
         game.replay = new Replay();

@@ -25,7 +25,8 @@ import level.level;
 
 class Game {
 
-    @property bool gotoMainMenu() { return _gotoMainMenu; }
+    @property bool gotoMainMenu()         { return _gotoMainMenu; }
+    @property wasInstantiatedWithReplay() { return _wasInstantiatedWithReplay;}
 
     enum ticksNormalSpeed   = 4;
     enum updatesDuringTurbo = 9;
@@ -45,7 +46,6 @@ class Game {
 
 package:
 
-    bool _gotoMainMenu;
     immutable Runmode runmode;
 
     Level     level;
@@ -78,6 +78,9 @@ package:
     GameWindow modalWindow;
 
     int _profilingGadgetCount;
+
+    bool _gotoMainMenu;
+    bool _wasInstantiatedWithReplay;
 
     @property bool replaying() const
     {
