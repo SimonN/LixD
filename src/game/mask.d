@@ -24,8 +24,8 @@ enum Mask[TerrainChange.Type] masks = [
 
 private enum Mask _bashLeft  = _bashRight.mirrored;
 private enum Mask _bashRight = Mask([
-    "XXXXXXXX" "XXXX....", // Top 2 rows can cut through steel without
-    "XXXXXXXX" "XXXXXX..", // cancelling the basher. Other rows would cancel.
+    "NNNNNNNN" "NNNN....", // Top 2 rows can cut through steel without
+    "NNNNNNNN" "NNNNNN..", // cancelling the basher. Other rows would cancel.
     "XXXXXXXX" "XXXXXXX."] ~
     "XXXXXXXX" "XXXXXXXX".repeat(12).array ~ [
     "XXXXXXXX" "XXXXXXX.",
@@ -35,7 +35,8 @@ private enum Mask _bashRight = Mask([
 
 private enum _bashNoRelicsLeft  = _bashNoRelicsRight.mirrored;
 private enum _bashNoRelicsRight = Mask(
-    "XXXXXXXX" "XXXXXXXX".repeat(16).array ~ [
+    "NNNNNNNN" "NNNNNNNN".repeat( 2).array ~ // ignore steel here
+    "XXXXXXXX" "XXXXXXXX".repeat(14).array ~ [
     "#XXXXXXX" "XXXXXXXX", // '#' = effective coordinate
     "XXXXXXXX" "XXXXXXXX",
 ]);
@@ -97,6 +98,7 @@ struct Mask {
 
     enum CharOK : char {
         solid       = 'X',
+        solidIgnore = 'N', // ignore steel here, but remove terrain
         air         = '.',
         solidOffset = '#',
         airOffset   = 'o'
@@ -105,9 +107,15 @@ struct Mask {
     int offsetX;
     int offsetY;
 
-    private Matrix!bool _mat;
-    const(Matrix!bool) aliasThis() const { return _mat; }
-    alias aliasThis this;
+    private Matrix!bool _solid;
+    private Matrix!bool _ignoreSteel;
+    const(Matrix!bool) solid()       const { return _solid; }
+    const(Matrix!bool) ignoreSteel() const { return _ignoreSteel; }
+
+    bool ignoreSteel(in int x, in int y) const
+    {
+        return ! _ignoreSteel || ignoreSteel.get(x, y);
+    }
 
     this(in string[] strs)
     in {
@@ -117,7 +125,7 @@ struct Mask {
             "matrix of chars is not rectangular");
     }
     body {
-        _mat = new Matrix!bool(strs[0].len, strs.len);
+        _solid          = new Matrix!bool(strs[0].len, strs.len);
         bool offsetSet = false;
         foreach     (const int y, const string s; strs)
             foreach (const int x, const char   c; s) {
@@ -127,10 +135,16 @@ struct Mask {
                     assert (false, format(
                         "Bad character in string %d, `%s', "
                         "at position %d: `%c'. "
-                        "Expected `.', `o', `X', or `#'.",
+                        "Expected `.', `o', `X', `N', or `#'.",
                         y, s, x, c).idup);
-                _mat.set(x, y, cc == CharOK.solid
-                            || cc == CharOK.solidOffset);
+                _solid.set(x, y, cc == CharOK.solid
+                             || cc == CharOK.solidIgnore
+                             || cc == CharOK.solidOffset);
+                if (cc == CharOK.solidIgnore) {
+                    if (_ignoreSteel is null)
+                    _ignoreSteel = new Matrix!bool(strs[0].len, strs.len);
+                    _ignoreSteel.set(x, y, true);
+                }
                 if (   cc == CharOK.solidOffset
                     || cc == CharOK.airOffset
                 ) {
@@ -151,17 +165,17 @@ struct Mask {
     {
         // you'd normally want 2*radius + 1, but we're hi-res, so we use + 2
         // instead of + 1 for the central 2x2 block of of pixels.
-        _mat      = new Matrix!bool(2*radius + 2, 2*radius + 2);
-        auto midX = _mat.xl / 2 - 1; // top-left corner of central 2x2 block
-        auto midY = _mat.yl / 2 - 1;
+        _solid     = new Matrix!bool(2*radius + 2, 2*radius + 2);
+        auto midX = _solid.xl / 2 - 1; // top-left corner of central 2x2 block
+        auto midY = _solid.yl / 2 - 1;
         offsetX   = midX;
         offsetY   = midY - offsetFromCenterY;
 
-        foreach (int x; 0 .. _mat.xl)
-            foreach (int y; 0 .. _mat.yl) {
+        foreach (int x; 0 .. _solid.xl)
+            foreach (int y; 0 .. _solid.yl) {
                 immutable int centralX = midX + (x > midX ? 1 : 0);
                 immutable int centralY = midY + (y > midY ? 1 : 0);
-                _mat.set(x, y, (radius + 0.5f)^^2 >=
+                _solid.set(x, y, (radius + 0.5f)^^2 >=
                     (x - centralX)^^2 + (y - centralY)^^2);
             }
     }
@@ -174,18 +188,18 @@ struct Mask {
 
     Mask mirrored() const
     in {
-        assert (xl      % 2 == 0, "can't mirror a matrix with odd xl");
-        assert (offsetX % 2 == 0, "can't mirror a matrix with odd offsetX");
+        assert (_solid.xl % 2 == 0, "can't mirror a matrix with odd xl");
+        assert (offsetX  % 2 == 0, "can't mirror a matrix with odd offsetX");
     }
     body {
         Mask ret;
-        ret._mat = new Matrix!bool(xl, yl);
-        foreach     (const int y; 0 .. ret._mat.yl)
-            foreach (const int x; 0 .. ret._mat.xl)
-                ret._mat.set(x, y, this.get(xl - 1 - x, y));
+        ret._solid = new Matrix!bool(_solid.xl, _solid.yl);
+        foreach     (const int y; 0 .. ret._solid.yl)
+            foreach (const int x; 0 .. ret._solid.xl)
+                ret._solid.set(x, y, this._solid.get(_solid.xl - 1 - x, y));
         // Enforce the offset at an even coordinate, because the physics use
         // 2-pixel-wide chunks everywhere, using the left pixel's coordinates.
-        ret.offsetX = basics.help.even(xl - 1 - offsetX);
+        ret.offsetX = basics.help.even(_solid.xl - 1 - offsetX);
         ret.offsetY = offsetY;
         return ret;
     }

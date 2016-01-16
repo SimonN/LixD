@@ -101,11 +101,14 @@ class Phymap : Topology {
 
     bool getSteel(int ex, int ey, in Mask mask) const
     {
-        foreach (int y; 0 .. mask.yl)
-            foreach (int x; 0 .. mask.xl)
-                if (mask.get(x, y) && getSteel(ex + x - mask.offsetX,
-                                               ey + y - mask.offsetY))
-                    return true;
+        with (mask) {
+            foreach (int y; 0 .. solid.yl)
+                foreach (int x; 0 .. solid.xl)
+                    if (solid.get(x, y)
+                        && (ignoreSteel is null || ! ignoreSteel.get(x, y))
+                        && getSteel(ex + x - offsetX, ey + y - offsetY))
+                        return true;
+        }
         return false;
     }
 
@@ -158,6 +161,25 @@ class Phymap : Topology {
             rmAt(x, y, Phybit.terrain);
             return false;
         }
+    }
+
+    // this is called not with lix's ex, ey, but with the top-left coordinate
+    // of where the mask should be applied. Thus, during this function,
+    // never refer to mask.offsetX/Y.
+    int setAirCountSteel(int topLeftX, int topLeftY, in Mask mask)
+    {
+        assert (mask.solid);
+        int steelHit = 0;
+        foreach (int iy; 0 .. mask.solid.yl) {
+            int y = topLeftY + iy;
+            foreach (int ix; 0 .. mask.solid.xl) {
+                int x = topLeftX + ix;
+                if (mask.solid.get(ix, iy))
+                    steelHit += setAirCountSteel(ix + topLeftX, iy + topLeftY)
+                             && ! mask.ignoreSteel(ix, iy);
+            }
+        }
+        return steelHit;
     }
 
     // for testing

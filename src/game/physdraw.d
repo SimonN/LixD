@@ -172,15 +172,15 @@ private:
     enum remY  = cubeY + Cuber.cubeSize;
  	enum remYl = 32;
     enum ploY  = remY + remYl;
-    enum ploYl = game.mask.masks[TerrainChange.Type.implode].yl;
+    enum ploYl = game.mask.masks[TerrainChange.Type.implode].solid.yl;
 
     enum bashX  = Digger.tunnelWidth + 1;
-    enum bashXl = game.mask.masks[TerrainChange.Type.bashRight].xl + 1;
+    enum bashXl = game.mask.masks[TerrainChange.Type.bashRight].solid.xl + 1;
     enum mineX  = bashX + 4 * bashXl; // 4 basher masks
-    enum mineXl = game.mask.masks[TerrainChange.Type.mineRight].xl + 1;
+    enum mineXl = game.mask.masks[TerrainChange.Type.mineRight].solid.xl + 1;
 
     enum implodeX = 0;
-    enum explodeX = game.mask.masks[TerrainChange.Type.implode].xl + 1;
+    enum explodeX = game.mask.masks[TerrainChange.Type.implode].solid.xl + 1;
 
     static struct FlaggedChange
     {
@@ -292,16 +292,9 @@ private:
                 steelHit += _phymap.rectSum!(Phymap.setAirCountSteel)
                     (tc.x, tc.y, Digger.tunnelWidth, tc.yl);
             }
-            else {
-                game.mask.Mask ma = game.mask.masks[tc.type];
-                assert (ma.aliasThis);
-                foreach (int y; 0 .. ma.yl)
-                    foreach (int x; 0 .. ma.xl)
-                        if (ma.get(x, y))
-                            steelHit += _phymap.setAirCountSteel(tc.x + x,
-                                                                 tc.y + y);
-            }
-
+            else
+                steelHit += _phymap.setAirCountSteel(tc.x, tc.y,
+                                                     masks[tc.type]);
             if (_land)
                 _delsForLand ~= FlaggedChange(tc, steelHit > 0);
         }
@@ -538,14 +531,14 @@ private:
         // basher and miner swings
         void drawSwing(in int startX, in int startY, in Type type)
         {
-            foreach     (int y; 0 .. masks[type].yl)
-                foreach (int x; 0 .. masks[type].xl)
-                    if (masks[type].get(x, y))
+            foreach     (int y; 0 .. masks[type].solid.yl)
+                foreach (int x; 0 .. masks[type].solid.xl)
+                    if (masks[type].solid.get(x, y))
                         drawPixel(startX + x, startY + y, color.white);
 
             assert (_subAlbits[type] is null);
-            _subAlbits[type] = al_create_sub_bitmap(
-                _mask, startX, startY, masks[type].xl, masks[type].yl);
+            _subAlbits[type] = al_create_sub_bitmap(_mask, startX, startY,
+                               masks[type].solid.xl, masks[type].solid.yl);
             assert (_subAlbits[type] !is null);
         }
         drawSwing(bashX,              remY, Type.bashRight);
