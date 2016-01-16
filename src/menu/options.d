@@ -178,6 +178,10 @@ void populateGeneral()
         groups[OptionGroup.general] = grp;
     auto fac = facLeft();
     grp ~= fac.factory!BoolOption(Lang.optionUserNameAsk.transl, &userNameAsk);
+    fac.y = 250;
+    grp ~= fac.factory!BoolOption(Lang.optionReplayAutoSolutions.transl, &replayAutoSolutions);
+    grp ~= fac.factory!BoolOption(Lang.optionReplayAutoMulti.transl, &replayAutoMulti);
+
     fac = facRight();
     grp ~= fac.factory!TextOption(Lang.optionUserName.transl, &userName);
 
@@ -185,7 +189,7 @@ void populateGeneral()
     grp ~= fac.factory!LanguageOption(Lang.optionLanguage.transl);
 
     fac.yl = 20;
-    fac.y += 100 - 20;
+    fac.y  = 250;
     auto cfg = NumPickConfig();
     cfg.max = 20;
     cfg.min =  0;

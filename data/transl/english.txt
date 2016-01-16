@@ -305,11 +305,10 @@ $optionGroupEditorKeys         Editor keys
 $optionGroupMenuKeys           Menu keys
 $optionGroupSound              Sound
 $optionUserName               Player name
-$optionUserNameAsk           Ask for name on startup
-$optionLanguage                Language
-$optionReplayAutoMax         Max. auto replays
-$optionReplayAutoSingle      Auto replay in Singleplayer
-$optionReplayAutoMulti       Auto replay in Multiplayer
+$optionUserNameAsk            Ask for name on startup
+$optionLanguage               Language
+$optionReplayAutoSolutions    Auto-save level solutions
+$optionReplayAutoMulti        Auto-save multiplayer games
 $optionReplayCancel           End of replay: turn off >>
 $optionReplayCancelAt         × ¹⁄₁₅ seconds before end
 $optionScrollEdge             Scroll at edge of screen

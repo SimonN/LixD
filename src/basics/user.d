@@ -72,9 +72,8 @@ bool editorHexLevelSize = false;
 int  editorGridSelected  = 1;
 int  editorGridCustom    = 8;
 
-bool replayAutoSingleSolutions = true;
-bool replayAutoSingleFailures  = false;
-bool replayAutoMulti           = true;
+bool replayAutoSolutions = true;
+bool replayAutoMulti     = true;
 
 Filename singleLastLevel;
 Filename networkLastLevel;
@@ -395,9 +394,8 @@ void load()
         else if (i.text1 == userGuiColorBlue  ) guiColorBlue   = i.nr1;
         else if (i.text1 == userSoundVolume   ) soundVolume    = i.nr1;
 
-        else if (i.text1 == userReplayAutoSingleSolutions) replayAutoSingleSolutions = i.nr1 > 0;
-        else if (i.text1 == userReplayAutoSingleFailures ) replayAutoSingleFailures  = i.nr1 > 0;
-        else if (i.text1 == userReplayAutoMulti          ) replayAutoMulti           = i.nr1 > 0;
+        else if (i.text1 == userReplayAutoSolutions) replayAutoSolutions = i.nr1 > 0;
+        else if (i.text1 == userReplayAutoMulti    ) replayAutoMulti     = i.nr1 > 0;
 
         else if (i.text1 == userEditorHexLevelSize) editorHexLevelSize = i.nr1 > 0;
         else if (i.text1 == userEditorGridSelected) editorGridSelected = i.nr1;
@@ -553,9 +551,8 @@ nothrow void save()
         fwr(IoLine.Hash(userSoundVolume,            soundVolume));
         f.writeln();
 
-        fwr(IoLine.Hash(userReplayAutoSingleSolutions, replayAutoSingleSolutions));
-        fwr(IoLine.Hash(userReplayAutoSingleFailures,  replayAutoSingleFailures));
-        fwr(IoLine.Hash(userReplayAutoMulti,           replayAutoMulti));
+        fwr(IoLine.Hash(userReplayAutoSolutions,    replayAutoSolutions));
+        fwr(IoLine.Hash(userReplayAutoMulti,        replayAutoMulti));
         f.writeln();
 
         fwr(IoLine.Hash(userEditorHexLevelSize,     editorHexLevelSize));
@@ -566,7 +563,7 @@ nothrow void save()
         fwr(IoLine.Dollar(userSingleLastLevel,        singleLastLevel.rootless));
         fwr(IoLine.Dollar(userNetworkLastLevel,       networkLastLevel.rootless));
         fwr(IoLine.Dollar(userReplayLastLevel,        replayLastLevel.rootless));
-        fwr(IoLine.Hash(userNetworkLastStyle,       networkLastStyle));
+        fwr(IoLine.Hash(userNetworkLastStyle,         networkLastStyle));
         f.writeln();
 
         fwr(IoLine.Dollar(userEditorLastDirTerrain, editorLastDirTerrain.rootless));

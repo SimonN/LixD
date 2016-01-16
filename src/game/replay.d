@@ -358,16 +358,11 @@ public void
 saveAsAutoReplay(in Level lev, bool isSolution)
 {
     immutable bool multi = (_players.length > 1);
-    if (     multi &&                 ! basics.user.replayAutoMulti
-        || ! multi && ! isSolution && ! basics.user.replayAutoSingleFailures
-        || ! multi &&   isSolution && ! basics.user.replayAutoSingleSolutions
-    )
+    if (     multi &&               ! basics.user.replayAutoMulti
+        || ! multi && isSolution && ! basics.user.replayAutoSolutions)
         return;
-
-    string outfile
-        = multi      ? basics.globals.dirReplayAutoMulti.rootful
-        : isSolution ? basics.globals.dirReplayAutoSingleSolutions.rootful
-                     : basics.globals.dirReplayAutoSingleFailures.rootful;
+    string outfile = multi ? basics.globals.dirReplayAutoMulti.rootful
+                           : basics.globals.dirReplayAutoSolutions.rootful;
     outfile ~= lev.name.escapeStringForFilename()
         ~ "-" ~ playerLocalName.escapeStringForFilename()
         ~ "-" ~ Date.now().toStringForFilename()

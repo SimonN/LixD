@@ -159,9 +159,8 @@ immutable userNetworkLastLevel = "NETWORK_LAST_LEVEL";
 immutable userReplayLastLevel  = "REPLAY_LAST_LEVEL";
 immutable userNetworkLastStyle = "NETWORK_LAST_STYLE";
 
-immutable userReplayAutoSingleSolutions = "REPLAY_AUTO_SAVE_SINGLE_SOLUTIONS";
-immutable userReplayAutoSingleFailures  = "REPLAY_AUTO_SAVE_SINGLE_FAILURES";
-immutable userReplayAutoMulti           = "REPLAY_AUTO_SAVE_MULTI";
+immutable userReplayAutoSolutions = "REPLAY_AUTO_SAVE_SOLUTIONS";
+immutable userReplayAutoMulti     = "REPLAY_AUTO_SAVE_MULTI";
 
 immutable userEditorLastDirTerrain = "EDITOR_LAST_DIR_TERRAIN";
 immutable userEditorLastDirSteel   = "EDITOR_LAST_DIR_STEEL";
@@ -261,9 +260,8 @@ cF dirImagesOrig      = new cF("images/orig/");
 cF dirImagesOrigL1    = new cF("images/orig/L1/");
 cF dirImagesOrigL2    = new cF("images/orig/L2/");
 
-cF dirReplayAutoSingleSolutions = new cF("replays/auto/solutions/");
-cF dirReplayAutoSingleFailures  = new cF("replays/auto/failures/");
-cF dirReplayAutoMulti           = new cF("replays/auto/network/");
+cF dirReplayAutoSolutions  = new cF("replays/auto/solutions/");
+cF dirReplayAutoMulti      = new cF("replays/auto/network/");
 
 cF fileGlobalConfig        = new cF("data/config.txt");
 cF fileLog                 = new cF("data/log.txt");
