@@ -1,6 +1,20 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.31
+------
+
+2016-01-16
+
+Basher ignores top two rows of his 18 rows for steel.
+
+Partial fix of #22: basher/miner cancels on hitting steel, but still takes
+out some of the graphics. Physics are correct.
+
+After class Game finishes, the correct browser is loaded, either singleplayer
+or replay. Browsers exit on RMB. No option to auto-save singleplayer replays
+that fail the level.
+
 0.1.30
 ------
 

@@ -15,6 +15,7 @@ import basics.user; // hotkeys
 import file.filename;
 import file.language;
 import gui;
+import hardware.mouse;
 import level.level;
 import menu.preview;
 
@@ -166,6 +167,8 @@ calcSelf()
          && _fileRecent ==        levList.currentFile)
             onFileSelect(_fileRecent);
     }
+    else if (hardware.mouse.mouseClickRight)
+        _gotoMainMenu = true;
 }
 
 }
