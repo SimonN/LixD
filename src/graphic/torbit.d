@@ -76,6 +76,9 @@ private:
 
     Albit bitmap;
 
+    // This differs from Phymap.amend! Maybe reword Phymap.amend to
+    // Phymap.amendForReading, and put Torbit.amend as a final method
+    // into Topology?
     final void amend(ref int x, ref int y) const
     {
         if (torusX) x = positiveMod(x, xl);
@@ -188,8 +191,7 @@ void drawFrom(
 
     assert (bit, "can't blit the null bitmap onto Torbit");
 
-    if (torusX) x = positiveMod(x, xl);
-    if (torusY) y = positiveMod(y, yl);
+    amend(x, y);
     rot = std.math.fmod(rot, 4);
 
     void delegate(int, int) drawFrom_at;
@@ -281,9 +283,7 @@ void drawDarkFrom(
     static if (_tharsisProfilingInTorbit)
         auto myZone = Zone(profiler, "torbit-draw-dark-from");
 
-    if (torusX) x = positiveMod(x, xl);
-    if (torusY) y = positiveMod(y, yl);
-
+    amend (x, y);
     immutable int bxl = al_get_bitmap_width (bit);
     immutable int byl = al_get_bitmap_height(bit);
     immutable int txl = ((rot & 1) == 0 ? bxl : byl);
@@ -473,7 +473,9 @@ void setPixel(int x, int y, AlCol col)
     assert(bitmap);
     // Here, don't draw outside of the boundaries, unlike the reading in
     // Torbit.get_pixel. Again, it's slow on video bitmaps.
-    auto drata = DrawingTarget(bitmap);
+    assert (this.bitmap == al_get_target_bitmap(),
+        "Torbit.setPixel is designed for high-speed drawing."
+        "Set the target bitmap manually to the target torbit's bitmap.");
     if (   (torusX || (x >= 0 && x < xl))
         && (torusY || (y >= 0 && y < yl))
     )
@@ -488,9 +490,7 @@ void drawRectangle(int x, int y, int rxl, int ryl, AlCol col)
     static if (_tharsisProfilingInTorbit)
         auto myZone = Zone(profiler, "torbit-draw-rect");
 
-    // DTODO: test whether the mod can be moved into the delegate invoker.
-    if (torusX) x = positiveMod(x, xl);
-    if (torusY) y = positiveMod(y, yl);
+    amend(x, y);
     useDrawingDelegate(delegate void(int x_at, int y_at) {
         al_draw_rectangle(x_at + 0.5, y_at + 0.5,
          x_at + rxl - 0.5, y_at + ryl - 0.5, col, 1);
@@ -501,10 +501,7 @@ void drawRectangle(int x, int y, int rxl, int ryl, AlCol col)
 
 void drawFilledRectangle(int x, int y, int rxl, int ryl, AlCol col)
 {
-    // DTODO: test whether the mod can be moved into the delegate invoker.
-    if (torusX) x = positiveMod(x, xl);
-    if (torusY) y = positiveMod(y, yl);
-
+    amend(x, y);
     auto deg = delegate void(int x_at, int y_at)
     {
         al_draw_filled_rectangle(x_at, y_at, x_at + rxl, y_at + ryl, col);
