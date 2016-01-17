@@ -12,8 +12,11 @@ module game.debris;
  * Stuff moves 2x as fast over the screen if map zoom is 2x.
  */
 
+import std.algorithm;
+
 import basics.globals;
 import file.filename;
+import game.mask; // exploder offset
 import graphic.color;
 import graphic.gralib;
 import graphic.torbit;
@@ -44,18 +47,24 @@ struct Debris {
 
     static auto newArrow(in int ex, in int ey, in Style style, in int xf)
     {
-        auto ret = typeof(this)(Type.arrow);
+        auto ret = typeof(this)(Type.arrow, arrowTimeToLive, ex, ey);
         ret.timeToLive = arrowTimeToLive;
         ret.style = style;
         ret.frame = xf;
-        auto cb = getInternal(fileImageGameArrow);
-        ret.x = ex - cb.xl / 2;
-        ret.y = ey - cb.yl;
         return ret;
     }
 
-    static auto newImplosion(in int ex, in int ey) { return Debris(); }
-    static auto newExplosion(in int ex, in int ey) { return Debris(); }
+    static auto newImplosion(in int ex, in int ey)
+    {
+        auto cb = getInternal(fileImageImplosion);
+        return typeof(this)(Type.implosion, cb.xfs, ex, ey);
+    }
+
+    static auto newExplosion(in int ex, in int ey)
+    {
+        auto cb = getInternal(fileImageExplosion);
+        return typeof(this)(Type.explosion, cb.xfs + 2, ex, ey);
+    }
 
     void calc()
     {
@@ -63,8 +72,8 @@ struct Debris {
         final switch (type) {
             case Type.arrow:      calcArrow();      break;
             case Type.flyingTool: calcFlyingTool(); break;
-            case Type.implosion:  calcPlosion();    break;
-            case Type.explosion:  calcPlosion();    break;
+            case Type.implosion:  break;
+            case Type.explosion:  break;
             case Type.particle:   calcParticle();   break;
         }
     }
@@ -82,11 +91,11 @@ struct Debris {
 
 private:
 
-    void moveThenAccelerateBy(in int accelY)
+    void moveThenAccelerateByGravity()
     {
         x += speedX;
         y += speedY;
-        speedY += accelY;
+        speedY += 3;
     }
 
     void calcArrow()
@@ -101,21 +110,36 @@ private:
             : 0;
     }
 
-    void calcFlyingTool() { }
-    void calcPlosion()    { }
-    void calcParticle()   { }
+    void calcFlyingTool()
+    {
+        moveThenAccelerateByGravity();
+        // and rotate according to speedX
+    }
+
+    void calcParticle()
+    {
+        moveThenAccelerateByGravity();
+    }
 
     void drawArrow(Torbit ground)
     {
         auto cbA = getInternal(fileImageGameArrow);
         auto cbI = getSkillButtonIcon(style);
-        cbA.draw(ground, x, y);
-        cbI.draw(ground, x + cbA.xl/2 - cbI.xl/2,
-                         y + cbA.yl/8 - cbI.yl/8, frame);
+        // x and y are the bottom tip of the arrow
+        cbA.draw(ground, x - cbA.xl/2, y - cbA.yl);
+        cbI.draw(ground, x - cbI.xl/2, y - cbA.yl*15/16, frame);
     }
 
     void drawFlyingTool(Torbit ground) { }
-    void drawPlosion(Torbit ground, in Filename) { }
+
+    void drawPlosion(Torbit ground, in Filename fn)
+    {
+        auto cb = getInternal(fn);
+        cb.draw(ground, x - cb.xl/2,
+                        y - cb.yl/2 + game.mask.explodeMaskOffsetY,
+                        clamp(cb.xfs - timeToLive, 0, cb.xfs - 1));
+    }
+
     void drawParticle(Torbit ground) { }
 }
 // end struct Debris

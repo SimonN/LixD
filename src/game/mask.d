@@ -11,6 +11,8 @@ import basics.help;
 import basics.matrix;
 import game.terchang;
 
+enum explodeMaskOffsetY = -6; // used in game.debris, too
+
 enum Mask[TerrainChange.Type] masks = [
     TerrainChange.Type.bashLeft           : _bashLeft,
     TerrainChange.Type.bashRight          : _bashRight,
@@ -19,7 +21,7 @@ enum Mask[TerrainChange.Type] masks = [
     TerrainChange.Type.mineLeft           : _mineLeft,
     TerrainChange.Type.mineRight          : _mineRight,
     TerrainChange.Type.implode            : _implode,
-    TerrainChange.Type.explode            : Mask(22, -6),
+    TerrainChange.Type.explode            : Mask(22, explodeMaskOffsetY),
 ];
 
 private enum Mask _bashLeft  = _bashRight.mirrored;

@@ -1,6 +1,17 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.32
+------
+
+2016-01-17
+
+Fix #28: Empty skills are now re-selected if replenished after state loading.
+Fix #29: Drawing explosions properly now.
+
+I haven't tested implosions. They should be drawn behind the terrain anyway,
+or get a completely new animation.
+
 0.1.31
 ------
 
