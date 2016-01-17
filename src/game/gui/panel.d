@@ -26,8 +26,6 @@ public:
         return Geom.screenXlg / (skillSort.length + 4);
     }
 
-    SkillButton[] skills;
-
     BitmapButton zoom, restart, pause;
     BitmapButton stateSave, stateLoad, nukeSingle, nukeMulti;
     TwoTasksButton speedBack, speedAhead, speedFast;
@@ -48,7 +46,8 @@ private:
     long _nukeLastExecute;
     bool _nukeDoubleclicked;
 
-
+    SkillButton[] _skills;
+    SkillButton lastOnForRestoringAfterStateLoad;
 
 public:
 
@@ -60,13 +59,13 @@ this()
                            this.ylg - skillYl, From.TOP_LEFT));
     addChild(stats);
 
-    skills.length = basics.user.skillSort.length;
+    _skills.length = basics.user.skillSort.length;
     foreach (int id, ac; basics.user.skillSort) {
-        skills[id] = new SkillButton(new Geom(id * skillXl, 0,
+        _skills[id] = new SkillButton(new Geom(id * skillXl, 0,
                                  skillXl, skillYl, From.BOTTOM_LEFT));
-        skills[id].skill = ac;
-        skills[id].hotkey = basics.user.keySkill[skillSort[id]];
-        addChild(skills[id]);
+        _skills[id].skill = ac;
+        _skills[id].hotkey = basics.user.keySkill[skillSort[id]];
+        addChild(_skills[id]);
     }
 
     void newControlButton(T)(ref T b, int x, int y, int frame,
@@ -144,7 +143,7 @@ setLikeTribe(in Tribe tr)
     if (tr is null)
         return;
 
-    foreach (b; skills) {
+    foreach (b; _skills) {
         b.style  = tr.style;
         b.number = tr.skills[b.skill];
     }
@@ -157,9 +156,14 @@ setLikeTribe(in Tribe tr)
     spawnint_cur .set_spawnint(tr->spawnint);
     rate_fixed   .set_number  (tr->spawnintFast);
     spec_tribe .set_text(tr->get_name());
-    set_skill_on(skillLastSetOn);
     */
-
+    if (lastOnForRestoringAfterStateLoad
+        && lastOnForRestoringAfterStateLoad.number != 0
+    ) {
+        if (currentSkill)
+            currentSkill.on = false;
+        lastOnForRestoringAfterStateLoad.on = true;
+    }
     reqDraw();
 }
 // end function setLikeTribe()
@@ -170,9 +174,10 @@ void
 highlightFirstSkill()
 {
     assert (currentSkill is null);
-    foreach (skill; skills)
+    foreach (skill; _skills)
         if (skill.number != 0) {
             skill.on = true;
+            lastOnForRestoringAfterStateLoad = skill;
             break;
         }
 }
@@ -182,7 +187,7 @@ highlightFirstSkill()
 SkillButton
 currentSkill()
 {
-    foreach (b; skills)
+    foreach (b; _skills)
         if (b.on && b.skill != Ac.nothing && b.number != 0)
             return b;
     return null;
@@ -198,6 +203,7 @@ handleExecutingSkillButton(SkillButton skill)
         if (currentSkill)
             currentSkill.on = false;
         skill.on = true;
+        lastOnForRestoringAfterStateLoad = skill;
     }
     else {
         assert (skill.number == 0);
@@ -240,7 +246,7 @@ calcSelf()
     }
 
     SkillButton oldSkill = currentSkill();
-    foreach (skill; skills)
+    foreach (skill; _skills)
         if (skill.execute)
             handleExecutingSkillButton(skill);
     if (currentSkill !is oldSkill)
