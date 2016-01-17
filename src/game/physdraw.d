@@ -371,18 +371,10 @@ private:
                                        tc.type.to!string));
             immutable spriteXl = al_get_bitmap_width (sprite);
             immutable spriteYl = al_get_bitmap_height(sprite);
-            int debugging = 0;
             foreach (y; 0 .. spriteYl)
                 foreach (x; 0 .. spriteXl)
-                    if (! _phymap.getSteel(tc.x + x, tc.y + y)) {
-                        // No idea how fast this is: draw each pixel by making
-                        // it a temporary sub-bitmap.
-                        auto pix = al_create_sub_bitmap(sprite, x, y, 1, 1);
-                        _land.drawFrom(pix, tc.x + x, tc.y + y);
-                        al_destroy_bitmap(pix);
-                        ++debugging;
-                    }
-            std.stdio.writeln("debugging = ", debugging);
+                    if (! _phymap.getSteel(tc.x + x, tc.y + y))
+                        _land.drawFromPixel(sprite, x, y, tc.x + x,tc.y + y);
         }
     }
 

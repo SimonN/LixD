@@ -76,6 +76,12 @@ private:
 
     Albit bitmap;
 
+    final void amend(ref int x, ref int y) const
+    {
+        if (torusX) x = positiveMod(x, xl);
+        if (torusY) y = positiveMod(y, yl);
+    }
+
 
 
 public:
@@ -404,6 +410,24 @@ void drawFromPreservingAspectRatio(in Torbit from)
     al_draw_scaled_bitmap(cast (Albit) from.bitmap,
         0, 0, from.xl, from.yl,
         (xl-destXl)/2, (yl-destYl)/2, destXl, destYl, 0);
+}
+
+
+
+void drawFromPixel(in Albit from,
+    in int fromX, in int fromY,
+    int x, int y
+) {
+    assert (this.bitmap == al_get_target_bitmap(),
+        "drawFromSinglePixel is designed for high-speed drawing."
+        "Set the target bitmap manually to the target torbit's bitmap.");
+    assert (from);
+    assert (fromX >= 0);
+    assert (fromY >= 0);
+    assert (fromX < al_get_bitmap_width (cast (Albit) from));
+    assert (fromY < al_get_bitmap_height(cast (Albit) from));
+    amend(x, y);
+    al_draw_bitmap_region(cast (Albit) from, fromX, fromY, 1, 1, x, y, 0);
 }
 
 
