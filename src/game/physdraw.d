@@ -338,7 +338,7 @@ private:
     void deletionToLand(in FlaggedChange tc)
     {
         assert (tc.isDeletion);
-        auto zone2 = Zone(profiler, format("PhysDraw land %s",
+        auto zone = Zone(profiler, format("PhysDraw land %s",
             tc.type.to!string));
         Albit sprite;
         switch (tc.type) {
@@ -359,10 +359,30 @@ private:
 
     void spriteToLandAccordingToFlag(in FlaggedChange tc, Albit sprite)
     {
-        if (! tc.mustDrawPerPixel)
+        assert (sprite);
+        assert (_phymap);
+        if (! tc.mustDrawPerPixel) {
+            auto zone = Zone(profiler, format("PhysDraw pix-all %s",
+                                       tc.type.to!string));
             _land.drawFrom(sprite, tc.x, tc.y);
-        else {
-            // magic!
+        }
+        else if (tc.isDeletion) {
+            auto zone = Zone(profiler, format("PhysDraw pix-one %s",
+                                       tc.type.to!string));
+            immutable spriteXl = al_get_bitmap_width (sprite);
+            immutable spriteYl = al_get_bitmap_height(sprite);
+            int debugging = 0;
+            foreach (y; 0 .. spriteYl)
+                foreach (x; 0 .. spriteXl)
+                    if (! _phymap.getSteel(tc.x + x, tc.y + y)) {
+                        // No idea how fast this is: draw each pixel by making
+                        // it a temporary sub-bitmap.
+                        auto pix = al_create_sub_bitmap(sprite, x, y, 1, 1);
+                        _land.drawFrom(pix, tc.x + x, tc.y + y);
+                        al_destroy_bitmap(pix);
+                        ++debugging;
+                    }
+            std.stdio.writeln("debugging = ", debugging);
         }
     }
 
