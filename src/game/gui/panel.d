@@ -157,18 +157,20 @@ setLikeTribe(in Tribe tr)
     rate_fixed   .set_number  (tr->spawnintFast);
     spec_tribe .set_text(tr->get_name());
     */
-    if (lastOnForRestoringAfterStateLoad
-        && lastOnForRestoringAfterStateLoad.number != 0
-    ) {
-        if (currentSkill)
-            currentSkill.on = false;
-        lastOnForRestoringAfterStateLoad.on = true;
-    }
+    highlightIfNonzero(lastOnForRestoringAfterStateLoad);
     reqDraw();
 }
 // end function setLikeTribe()
 
-
+private void highlightIfNonzero(SkillButton skill)
+{
+    if (skill is null || skill.number == 0)
+        return;
+    if (currentSkill)
+        currentSkill.on = false;
+    skill.on = true;
+    lastOnForRestoringAfterStateLoad = skill;
+}
 
 void
 highlightFirstSkill()
@@ -176,13 +178,10 @@ highlightFirstSkill()
     assert (currentSkill is null);
     foreach (skill; _skills)
         if (skill.number != 0) {
-            skill.on = true;
-            lastOnForRestoringAfterStateLoad = skill;
+            highlightIfNonzero(skill);
             break;
         }
 }
-
-
 
 SkillButton
 currentSkill()
@@ -193,19 +192,11 @@ currentSkill()
     return null;
 }
 
-
-
 private void
 handleExecutingSkillButton(SkillButton skill)
 {
-    // We set on/off-ness correctly. The game interprets on-ness only.
-    if (skill.number != 0) {
-        if (currentSkill)
-            currentSkill.on = false;
-        skill.on = true;
-        lastOnForRestoringAfterStateLoad = skill;
-    }
-    else {
+    highlightIfNonzero(skill);
+    if (skill.number == 0) {
         assert (skill.number == 0);
         // The button executes continually when the mouse button is held down
         // over it, but we should only play the warning sound on the click.
