@@ -187,8 +187,8 @@ private:
         TerrainChange terrainChange;
         alias terrainChange this;
 
-        bool needsRedraw; // if there was land under a land addition,
-                          // or steel amidst a land removal
+        bool mustDrawPerPixel; // if there was land under a land addition,
+                               // or steel amidst a land removal
     }
 
     static void
@@ -293,8 +293,8 @@ private:
                     (tc.x, tc.y, Digger.tunnelWidth, tc.yl);
             }
             else
-                steelHit += _phymap.setAirCountSteel(tc.x, tc.y,
-                                                     masks[tc.type]);
+                steelHit += _phymap.setAirCountSteelEvenWhereMaskIgnores(
+                            tc.x, tc.y, masks[tc.type]);
             if (_land)
                 _delsForLand ~= FlaggedChange(tc, steelHit > 0);
         }
@@ -330,35 +330,41 @@ private:
             ALLEGRO_BLEND_MODE.ALLEGRO_ONE, // subtract all of the source...
             ALLEGRO_BLEND_MODE.ALLEGRO_ONE) // ...from the target
         ) {
-            foreach (const tc; processThese) {
-                assert (tc.isDeletion);
-                auto zone2 = Zone(profiler, format("PhysDraw land %s",
-                    tc.type.to!string));
-
-                Albit sprite;
-
-                switch (tc.type) {
-                case TerrainChange.Type.dig:
-                    // digging height is variable length
-                    assert (tc.yl > 0);
-                    sprite = al_create_sub_bitmap(_mask,
-                        0, remY, Digger.tunnelWidth, tc.yl);
-                    _land.drawFrom(sprite, tc.x, tc.y);
-                    al_destroy_bitmap(sprite);
-                    break;
-                default:
-                    sprite = _subAlbits[tc.type];
-                    _land.drawFrom(sprite, tc.x, tc.y);
-                    break;
-                }
-            }
-        }
-        if (processThese.any!(tc => tc.needsRedraw)) {
-            // DTODOVRAM: draw the steel on top of _land?
+            foreach (const tc; processThese)
+                deletionToLand(tc);
         }
     }
 
+    void deletionToLand(in FlaggedChange tc)
+    {
+        assert (tc.isDeletion);
+        auto zone2 = Zone(profiler, format("PhysDraw land %s",
+            tc.type.to!string));
+        Albit sprite;
+        switch (tc.type) {
+        case TerrainChange.Type.dig:
+            // digging height is variable length
+            assert (tc.yl > 0);
+            sprite = al_create_sub_bitmap(_mask,
+                0, remY, Digger.tunnelWidth, tc.yl);
+            spriteToLandAccordingToFlag(tc, sprite);
+            al_destroy_bitmap(sprite);
+            break;
+        default:
+            sprite = _subAlbits[tc.type];
+            spriteToLandAccordingToFlag(tc, sprite);
+            break;
+        }
+    }
 
+    void spriteToLandAccordingToFlag(in FlaggedChange tc, Albit sprite)
+    {
+        if (! tc.mustDrawPerPixel)
+            _land.drawFrom(sprite, tc.x, tc.y);
+        else {
+            // magic!
+        }
+    }
 
 // ############################################################################
 // ############################################################################
@@ -388,8 +394,8 @@ private:
                 // If land exists, remember the changes to be able to draw them
                 // later. No land in noninteractive mode => needn't save this.
                 auto fc = FlaggedChange(tc);
-                fc.needsRedraw = _phymap.rectSum!(Phymap.getSolid)
-                                 (tc.x, tc.y, xl, yl) != 0;
+                fc.mustDrawPerPixel = _phymap.rectSum!(Phymap.getSolid)
+                                        (tc.x, tc.y, xl, yl) != 0;
                 _addsForLand ~= fc;
             }
         }

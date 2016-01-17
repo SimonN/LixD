@@ -99,16 +99,15 @@ class Phymap : Topology {
             return false;
     }
 
-    bool getSteel(int ex, int ey, in Mask mask) const
+    bool getSteelUnlessMaskIgnores(int ex, int ey, in Mask mask) const
     {
-        with (mask) {
+        with (mask)
             foreach (int y; 0 .. solid.yl)
                 foreach (int x; 0 .. solid.xl)
                     if (solid.get(x, y)
                         && (ignoreSteel is null || ! ignoreSteel.get(x, y))
                         && getSteel(ex + x - offsetX, ey + y - offsetY))
                         return true;
-        }
         return false;
     }
 
@@ -166,8 +165,9 @@ class Phymap : Topology {
     // this is called not with lix's ex, ey, but with the top-left coordinate
     // of where the mask should be applied. Thus, during this function,
     // never refer to mask.offsetX/Y.
-    int setAirCountSteel(int topLeftX, int topLeftY, in Mask mask)
-    {
+    int setAirCountSteelEvenWhereMaskIgnores(
+        int topLeftX, int topLeftY, in Mask mask
+    ) {
         assert (mask.solid);
         int steelHit = 0;
         foreach (int iy; 0 .. mask.solid.yl) {
@@ -175,8 +175,7 @@ class Phymap : Topology {
             foreach (int ix; 0 .. mask.solid.xl) {
                 int x = topLeftX + ix;
                 if (mask.solid.get(ix, iy))
-                    steelHit += setAirCountSteel(ix + topLeftX, iy + topLeftY)
-                             && ! mask.ignoreSteel(ix, iy);
+                    steelHit += setAirCountSteel(ix + topLeftX, iy + topLeftY);
             }
         }
         return steelHit;

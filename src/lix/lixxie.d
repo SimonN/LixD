@@ -330,7 +330,7 @@ bool isSolid(in int px = 0, in int py = 2) const
 
 bool wouldHitSteel(in Mask mask) const
 {
-    return lookup.getSteel(_ex, _ey, mask);
+    return lookup.getSteelUnlessMaskIgnores(_ex, _ey, mask);
 }
 
 bool isSolidSingle(in int px = 0, in int py = 2) const
