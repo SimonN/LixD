@@ -2,7 +2,14 @@ module game.effect;
 
 /* Convention: Effects are passed from the working lix by specifying the
  * lix's own ex/ey. The effect manager is responsible for drawing the effects
- * at the correct position/offset.
+ * at the correct position/offset. The effect managager does this by passing
+ * the lix's own ex/ey straight on to the debris, which therefore becomes
+ * reponsible for being drawn at the correct position.
+ *
+ * Because the effect manager accepts the lix's ex/ey directly, and doesn't
+ * ask the lix to pass it already modified, the effect manager's calling
+ * convention differs from game.physdraw.PhysicsDrawer: PhysicsDrawer expects
+ * the lix to pass the top-left coordinate of the shape to be drawn.
  */
 
 import std.algorithm;
