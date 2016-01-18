@@ -24,10 +24,7 @@ public:
         _labelNumM = new Label(new Geom(0, 3, g.xlg, 20, From.TOP));
         _labelNumM.color = color.white;
         _labelNumM.font  = djvuM;
-
-        _label_hotkey = new Label(new Geom(0, 0, g.xlg, 20, From.BOT_RIG));
-        _label_hotkey.font = graphic.textout.djvuS;
-        addChildren(_labelNumL, _labelNumM, _label_hotkey);
+        addChildren(_labelNumL, _labelNumM);
     }
 
     @property Ac skill() const { return _skill; }
@@ -37,15 +34,6 @@ public:
             return a;
         reqDraw();
         return _skill = a;
-    }
-
-    @property string hotkey_label() const { return _label_hotkey.text; }
-    @property string hotkey_label(in string s)
-    {
-        if (s == _label_hotkey.text)
-            return s;
-        reqDraw();
-        return _label_hotkey.text = s;
     }
 
     @property int number() const { return _number; }
@@ -95,9 +83,16 @@ private:
     CutbitElement _icon;
     Label _labelNumL;
     Label _labelNumM;
-    Label _label_hotkey;
 
 protected:
+
+    override string hotkeyString() const
+    {
+        if (_number != 0)
+            return super.hotkeyString();
+        else
+            return null;
+    }
 
     override void calcSelf()
     {

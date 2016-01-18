@@ -67,7 +67,7 @@ protected:
     }
     // end calcSelf
 
-    override string hotkeyString()
+    override string hotkeyString() const
     {
         if (! hotkey && ! hotkeyRight) return null;
         if (! hotkeyRight)             return hotkeyNiceShort(hotkey);

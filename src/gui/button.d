@@ -44,16 +44,12 @@ class Button : Element {
 
     AlCol colorText() { return _on && ! _down ? color.guiTextOn
                                               : color.guiText; }
-
-
 private:
 
     int  _hotkey; // default is 0, which is not a key.
-
     bool _execute;
     bool _down;
     bool _on;
-
     void delegate() _onExecute;
 
     void drawHotkey()
@@ -66,6 +62,10 @@ private:
     }
 
 protected:
+
+    // override these if needed
+    void   drawOntoButton()     { }
+    string hotkeyString() const { return hotkeyNiceShort(hotkey); }
 
 override void
 calcSelf()
@@ -114,10 +114,6 @@ drawSelf()
     if (basics.user.showButtonHotkeys)
         drawHotkey();
 }
-
-// override these if needed
-void   drawOntoButton() { }
-string hotkeyString()   { return hotkeyNiceShort(hotkey); }
 
 }
 // end class
