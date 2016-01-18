@@ -164,21 +164,12 @@ class Walker : PerformedActivity {
                 ++spaceBelow;
             }
 
-            void becomeFallerAndFallPixels(in int fallY)
-            {
-                lixxie.moveDown(fallY);
-                lixxie.become(Ac.faller);
-                Faller perfFaller = cast (Faller) lixxie.performedActivity;
-                assert (perfFaller);
-                perfFaller.pixelsFallen = fallY;
-            }
-
             if (spaceBelow >= spaceBelowForNormalFalling)
-                becomeFallerAndFallPixels(2);
+                Faller.becomeAndFallPixels(lixxie, 2);
             else if (spaceBelow >= spaceBelowForAnyFalling)
                 // Space 7 -> fall 3. Space 8 -> fall 4.
                 // Space >= 9 -> fall 2, but that's handled by the 'if' above.
-                becomeFallerAndFallPixels(spaceBelow - 4);
+                Faller.becomeAndFallPixels(lixxie, spaceBelow - 4);
             else
                 moveDown(spaceBelow);
         }

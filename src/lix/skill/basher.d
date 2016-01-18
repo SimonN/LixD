@@ -10,6 +10,7 @@ import hardware.sound;
 
 class Basher : PerformedActivity {
 
+    enum halfPixelsToFall = 9;
     int  halfPixelsMovedDown; // per pixel down: += 2; per frame passed: -= 1;
     bool omitRelics;
     bool steelWasHit;
@@ -34,7 +35,6 @@ class Basher : PerformedActivity {
     override void performActivity()
     {
         advanceFrame();
-
         switch (frame) {
             case  1: checkOmitRelics(); break;
             case  7: performSwing();    break;
@@ -45,8 +45,6 @@ class Basher : PerformedActivity {
         }
         stopIfMovedDownTooFar();
     }
-
-
 
 private:
 
@@ -93,8 +91,8 @@ private:
             if (dir > 0) tc.type = TerrainChange.Type.bashRight;
             else         tc.type = TerrainChange.Type.bashLeft;
         }
-        tc.x      = ex - masks[tc.type].offsetX;
-        tc.y      = ey - masks[tc.type].offsetY;
+        tc.x = ex - masks[tc.type].offsetX;
+        tc.y = ey - masks[tc.type].offsetY;
         outsideWorld.physicsDrawer.add(tc);
         if (wouldHitSteel(masks[tc.type])) {
             playSound(Sound.STEEL);
@@ -109,48 +107,40 @@ private:
             turn();
             become(Ac.walker);
         }
-        else if (nothingMoreToBash(0)) {
+        else if (nothingMoreToBash(0))
             become(Ac.walker);
-        }
     }
 
     void stopIfMovedDownTooFar()
     {
-        enum fallAt = 9;
-
-        // How many pixels have we descended? 9 pixels or more => fall.
-        // The pixels inside the foot must be air, too. Otherwise, a basher can
-        // fall in the tip of his tunnel, but the walkers following would not.
-        int movedDownByThisFrame = 0;
-        while (! isSolid() && ! isSolid(0, 1) && ! isSolid(0, 0)
-            && halfPixelsMovedDown < fallAt
-        ) {
-            moveDown(1);
-            movedDownByThisFrame += 1;
-            halfPixelsMovedDown  += 2;
-        }
-        // Get up again to counter the Horus bug, but never go up further than
-        // the basher started initially.
-        while (halfPixelsMovedDown > 0 && isSolid() && isSolid(0, 1)) {
-            moveUp(1);
-            movedDownByThisFrame -= 1;
-            halfPixelsMovedDown = max(0, halfPixelsMovedDown - 2);
-        }
-
-        // Lix too high? Then become faller, otherwise set lower movedDownBy.
-        if (halfPixelsMovedDown >= fallAt) {
-            moveUp(1);
-            movedDownByThisFrame -= 1;
-            become(Ac.faller);
-            Faller faller = cast (Faller) performedActivity;
-            if (faller)
-                faller.pixelsFallen = movedDownByThisFrame;
+        immutable stepSize = () {
+            assert (halfPixelsMovedDown < halfPixelsToFall);
+            for (int y; 2*y < halfPixelsToFall - halfPixelsMovedDown; ++y)
+                if (lixxie.isSolid(0, 2 + y))
+                    return y;
+            return -1;
+        }();
+        if (stepSize >= 0) {
+            moveDown(stepSize);
+            halfPixelsMovedDown += 2 * stepSize;
+            assert (halfPixelsMovedDown < halfPixelsToFall);
+            if (halfPixelsMovedDown > 0)
+                --halfPixelsMovedDown;
         }
         else {
-            halfPixelsMovedDown = max(0, halfPixelsMovedDown - 1);
+            // was 3 in C++ Lix, but the walker uses 2, so we do that, too
+            enum fallUpTo = 2;
+            int y = 0;
+            while (! isSolid(0, 2 + y) && y < fallUpTo)
+                ++y;
+            if (isSolid(0, 2 + y)) {
+                moveDown(y);
+                become(Ac.walker);
+            }
+            else
+                Faller.becomeAndFallPixels(lixxie, y);
         }
     }
-    // end stopIfMovedDownTooFar
 
 }
 // end class Basher

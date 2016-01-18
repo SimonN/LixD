@@ -22,6 +22,15 @@ class Faller : PerformedActivity {
         pixelsFallen = rhs.pixelsFallen;
     }
 
+    static void becomeAndFallPixels(Lixxie lixxie, in int fallY)
+    {
+        lixxie.moveDown(fallY);
+        lixxie.become(Ac.faller);
+        Faller perfFaller = cast (Faller) lixxie.performedActivity;
+        assert (perfFaller);
+        perfFaller.pixelsFallen = fallY;
+    }
+
     override void
     performActivity()
     {
