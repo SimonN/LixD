@@ -330,6 +330,9 @@ private:
             ALLEGRO_BLEND_MODE.ALLEGRO_ONE, // subtract all of the source...
             ALLEGRO_BLEND_MODE.ALLEGRO_ONE) // ...from the target
         ) {
+            al_hold_bitmap_drawing(true);
+            scope (exit)
+                al_hold_bitmap_drawing(false);
             foreach (const tc; processThese)
                 deletionToLand(tc);
         }
@@ -337,31 +340,27 @@ private:
 
     void deletionToLand(in FlaggedChange tc)
     {
+        assert (al_is_bitmap_drawing_held());
         assert (tc.isDeletion);
         auto zone = Zone(profiler, format("PhysDraw land %s",
             tc.type.to!string));
-        Albit sprite;
-        switch (tc.type) {
-        case TerrainChange.Type.dig:
+        if (tc.type != TerrainChange.Type.dig)
+            spriteToLandAccordingToFlag(tc, _subAlbits[tc.type]);
+        else {
             // digging height is variable length
             assert (tc.yl > 0);
-            sprite = al_create_sub_bitmap(_mask,
+            Albit sprite = al_create_sub_bitmap(_mask,
                 0, remY, Digger.tunnelWidth, tc.yl);
             spriteToLandAccordingToFlag(tc, sprite);
             al_destroy_bitmap(sprite);
-            break;
-        default:
-            sprite = _subAlbits[tc.type];
-            spriteToLandAccordingToFlag(tc, sprite);
-            break;
         }
     }
 
     void spriteToLandAccordingToFlag(in FlaggedChange tc, Albit sprite)
     {
+        assert (al_is_bitmap_drawing_held());
         assert (sprite);
         assert (_phymap);
-
         if (! tc.mustDrawPerPixel) {
             auto zone = Zone(profiler, format("PhysDraw pix-all %s",
                                        tc.type.to!string));
@@ -437,7 +436,9 @@ private:
         auto processThese = splitOffFromArray(_addsForLand, upd);
         if (processThese == null)
             return;
-
+        al_hold_bitmap_drawing(true);
+        scope (exit)
+            al_hold_bitmap_drawing(false);
         foreach (const tc; processThese) {
             mixin AdditionsDefs;
             Albit sprite = al_create_sub_bitmap(_mask, x, y, xl, yl);
