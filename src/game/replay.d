@@ -358,11 +358,10 @@ public void
 saveAsAutoReplay(in Level lev, bool isSolution) const
 {
     immutable bool multi = (_players.length > 1);
-    if (     multi &&               ! basics.user.replayAutoMulti
-        || ! multi && isSolution && ! basics.user.replayAutoSolutions)
-        return;
-    saveToTree(multi ? basics.globals.dirReplayAutoMulti
-                     : basics.globals.dirReplayAutoSolutions, lev);
+    if (multi && basics.user.replayAutoMulti)
+        saveToTree(basics.globals.dirReplayAutoMulti, lev);
+    if (! multi && isSolution && basics.user.replayAutoSolutions)
+        saveToTree(basics.globals.dirReplayAutoSolutions, lev);
 }
 
 public void

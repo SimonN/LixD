@@ -1,6 +1,15 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.34
+------
+
+2016-01-18
+
+Replays are saved automatically on quitting a solved singleplayer level.
+This still holds for exiting the game with Shift+Esc immediately.
+No replay tree yet; replays are saved as manual/*.txt or solved/*.txt.
+
 0.1.33
 ------
 

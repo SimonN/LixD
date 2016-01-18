@@ -40,20 +40,16 @@ protected:
         oneBut(_saveReplay, Lang.winGameSaveReplay.transl, keyStateSave);
         oneBut(_restart,    Lang.winGameRestart.transl,    keyRestart);
         oneBut(_exitGame,   Lang.winGameMenu.transl,       keyGameExit);
-        if (_saveReplay) {
-            _saveReplayDone = new Label(new Geom(_saveReplay.geom));
-            _saveReplayDone.text = Lang.browserExportImageDone.transl;
-            _saveReplayDone.hide();
-            addChild(_saveReplayDone);
-        }
     }
 
     final void setReplayAndLevel(in Replay r, in Level l)
     {
         assert (_saveReplay, "instantiate _saveReplay before passing replay");
-        assert (_saveReplayDone);
         _replay = r;
         _level  = l;
+        _saveReplayDone = new Label(new Geom(_saveReplay.geom));
+        _saveReplayDone.text = Lang.browserExportImageDone.transl;
+        _saveReplayDone.hide();
         _saveReplay.onExecute = () {
             assert (_replay !is null);
             _replay.saveManually(_level);
@@ -64,6 +60,7 @@ protected:
                 _saveReplayDone.show();
             }
         };
+        addChild(_saveReplayDone);
     }
 
 private:

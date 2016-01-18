@@ -167,10 +167,8 @@ private void assignTribesToGoals(Game game) {
     assert (goals.len,  "can't assign 0 goals to the players");
     assert (tribes.len, "can't assign the goals to 0 players");
     while (goals.len % tribes.len != 0
-        && tribes.len % goals.len != 0
-    )
+        && tribes.len % goals.len != 0)
         goals = goals[0 .. $-1];
-
     assert (goals.len);
     assert (tribes.len);
     if (goals.len >= tribes.len)
