@@ -1,6 +1,6 @@
 module level.level;
 
-public import enumap;
+import enumap;
 
 public import level.levelio : saveToFile;
 

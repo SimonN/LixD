@@ -1,9 +1,9 @@
 module game.replay;
 
 import std.algorithm; // isSorted
-import std.file; // mkdirRecurse;
+import std.file; // mkdirRecurse
 import std.c.string; // memmove;
-import std.stdio;
+import std.stdio; // save file, and needed for unittest
 import std.string;
 
 import basics.help; // array.len of type int
@@ -457,6 +457,18 @@ unittest
     Filename fn1 = new Filename("./replays/unittest-output-1.txt");
     Filename fn2 = new Filename("./replays/unittest-output-2.txt");
     Filename fnl = new Filename("./replays/unittest-output-level.txt");
+
+    try {
+        auto file = std.stdio.File(fn0.rootful, "w");
+        file.write(
+        "! 387 0 ASSIGN=JUMPER 0\n"
+        "! 268 0 ASSIGN=JUMPER 0\n"
+        "! 125 0 ASSIGN=CLIMBER 0\n"
+        "! 506 0 ASSIGN=BLOCKER 0\n"
+        "! 489 0 ASSIGN=BASHER 0\n");
+    }
+    catch (Exception)
+        return;
 
     Level lev = new Level(fn0);
     lev.saveToFile(fnl);

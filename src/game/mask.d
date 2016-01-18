@@ -214,10 +214,10 @@ unittest {
         "..oX..",
         ".XX...",
     ]);
-    assert (  a.get(3, 0));
-    assert (  a.get(3, 1));
-    assert (! a.get(0, 0));
-    assert (! a.get(2, 1));
+    assert (  a.solid.get(3, 0));
+    assert (  a.solid.get(3, 1));
+    assert (! a.solid.get(0, 0));
+    assert (! a.solid.get(2, 1));
     assert (a.offsetX == 2);
     assert (a.offsetY == 1);
 
