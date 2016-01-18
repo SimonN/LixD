@@ -58,7 +58,7 @@ public:
         return (_data.length > 0) ? _data[$-1].update : 0;
     }
 
-    @property string playerLocalName()
+    @property string playerLocalName() const
     {
         foreach (pl; _players)
             if (pl.number == playerLocal)
@@ -66,7 +66,7 @@ public:
         return null;
     }
 
-    @property string canonicalSaveFilename()
+    @property string canonicalSaveFilename() const
     {
         string base = levelFilename.fileNoExtNoPre;
         string plna = this.playerLocalName;
@@ -76,7 +76,7 @@ public:
     // this is stupid and Filename should be alias to
     // std.typecons.rebindable!(immutable(private file.filename._Filename)).
     private static const noLevelFilenameSet = new Filename("");
-    @property bool containsLevel()
+    @property bool containsLevel() const
     {
         assert (levelFilename !is null);
         return levelFilename != noLevelFilenameSet;
@@ -273,7 +273,7 @@ addWithoutTouching(in ReplayData d)
 
 
 public nothrow void
-saveToFile(in Filename fn, in Level lev)
+saveToFile(in Filename fn, in Level lev) const
 {
     try {
         std.file.mkdirRecurse(fn.dirRootful);
@@ -290,7 +290,7 @@ saveToFile(in Filename fn, in Level lev)
 
 
 private string
-mangledLevelFilename()
+mangledLevelFilename() const
 {
     // Write the path to the level, but omit the leading (dir-levels)/
     // DTODOFHS: we chop off a constant length, we shouldn't do that
@@ -303,7 +303,7 @@ mangledLevelFilename()
 
 
 private void
-saveToFile(std.stdio.File file, in Level lev)
+saveToFile(std.stdio.File file, in Level lev) const
 {
     file.writeln(IoLine.Dollar(basics.globals.replayLevelFilename,
         mangledLevelFilename));
@@ -355,15 +355,27 @@ saveToFile(std.stdio.File file, in Level lev)
 
 
 public void
-saveAsAutoReplay(in Level lev, bool isSolution)
+saveAsAutoReplay(in Level lev, bool isSolution) const
 {
     immutable bool multi = (_players.length > 1);
     if (     multi &&               ! basics.user.replayAutoMulti
         || ! multi && isSolution && ! basics.user.replayAutoSolutions)
         return;
-    string outfile = multi ? basics.globals.dirReplayAutoMulti.rootful
-                           : basics.globals.dirReplayAutoSolutions.rootful;
-    outfile ~= lev.name.escapeStringForFilename()
+    saveToTree(multi ? basics.globals.dirReplayAutoMulti
+                     : basics.globals.dirReplayAutoSolutions, lev);
+}
+
+public void
+saveManually(in Level lev) const
+{
+    saveToTree(basics.globals.dirReplayManual, lev);
+}
+
+private void
+saveToTree(in Filename treebase, in Level lev) const
+{
+    string outfile = treebase.rootful
+              ~ lev.name.escapeStringForFilename()
         ~ "-" ~ playerLocalName.escapeStringForFilename()
         ~ "-" ~ Date.now().toStringForFilename()
         ~ basics.globals.filenameExtReplay;

@@ -1,8 +1,14 @@
 module game.gui.gamewin;
 
+import std.typecons; // Rebindable
+
 import basics.user; // hotkeys
 import file.language;
+import game.replay;
+import graphic.color;
 import gui;
+import hardware.sound;
+import level.level;
 
 abstract class GameWindow : Window {
 
@@ -20,7 +26,7 @@ protected:
     TextButton _restart;
     TextButton _exitGame;
 
-    void captionGameWindowButtons()
+    final void captionSuperElements()
     {
         void oneBut(ref TextButton b, in string cap, in int hk)
         {
@@ -28,13 +34,42 @@ protected:
                 return;
             b.text   = cap;
             b.hotkey = hk;
-
             addChild(b);
         }
         oneBut(_resume,     Lang.winGameResume.transl,     keyPause);
         oneBut(_saveReplay, Lang.winGameSaveReplay.transl, keyStateSave);
         oneBut(_restart,    Lang.winGameRestart.transl,    keyRestart);
         oneBut(_exitGame,   Lang.winGameMenu.transl,       keyGameExit);
+        if (_saveReplay) {
+            _saveReplayDone = new Label(new Geom(_saveReplay.geom));
+            _saveReplayDone.text = Lang.browserExportImageDone.transl;
+            _saveReplayDone.hide();
+            addChild(_saveReplayDone);
+        }
     }
+
+    final void setReplayAndLevel(in Replay r, in Level l)
+    {
+        assert (_saveReplay, "instantiate _saveReplay before passing replay");
+        assert (_saveReplayDone);
+        _replay = r;
+        _level  = l;
+        _saveReplay.onExecute = () {
+            assert (_replay !is null);
+            _replay.saveManually(_level);
+            hardware.sound.playLoud(Sound.DISKSAVE);
+            if (_saveReplayDone) {
+                _saveReplay.undrawColor = color.guiM;
+                _saveReplay.hide();
+                _saveReplayDone.show();
+            }
+        };
+    }
+
+private:
+
+    Label _saveReplayDone;
+    Rebindable!(const Replay) _replay;
+    Rebindable!(const Level)  _level;
 
 }

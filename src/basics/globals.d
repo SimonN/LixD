@@ -248,7 +248,6 @@ cF dirLevels          = new cF("levels/");
 cF dirLevelsSingle    = new cF("levels/single/");
 cF dirLevelsNetwork   = new cF("levels/network/");
 cF dirReplays         = new cF("replays/");
-cF dirReplaysAuto     = new cF("replays/auto/");
 cF dirData            = new cF("data/");
 cF dirDataBitmap      = new cF("data/images/");
 cF dirDataBitmapScale = new cF("data/images/scale"); // stub, no /
@@ -260,8 +259,9 @@ cF dirImagesOrig      = new cF("images/orig/");
 cF dirImagesOrigL1    = new cF("images/orig/L1/");
 cF dirImagesOrigL2    = new cF("images/orig/L2/");
 
-cF dirReplayAutoSolutions  = new cF("replays/auto/solutions/");
-cF dirReplayAutoMulti      = new cF("replays/auto/network/");
+cF dirReplayAutoSolutions  = new cF("replays/solved/");
+cF dirReplayAutoMulti      = new cF("replays/network/");
+cF dirReplayManual         = new cF("replays/manual/");
 
 cF fileGlobalConfig        = new cF("data/config.txt");
 cF fileLog                 = new cF("data/log.txt");

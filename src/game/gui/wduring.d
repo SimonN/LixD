@@ -9,6 +9,7 @@ module game.gui.wduring;
 
 import file.language;
 import game.gui.gamewin;
+import game.replay;
 import game.tribe;
 import graphic.color;
 import graphic.textout;
@@ -39,7 +40,7 @@ myGeom(in int numButtons, in int totalXl = butXl + 40, in int plusYl = 0)
 
 class WindowDuringOffline : GameWindow {
 
-    this()
+    this(in Replay replay, in Level level)
     {
         super(myGeom(4));
         int y = 40;
@@ -47,7 +48,8 @@ class WindowDuringOffline : GameWindow {
         _restart    = addButton(y);
         _saveReplay = addButton(y);
         _exitGame   = addButton(y);
-        super.captionGameWindowButtons();
+        super.captionSuperElements();
+        super.setReplayAndLevel(replay, level);
     }
 
 }
@@ -56,14 +58,15 @@ class WindowDuringOffline : GameWindow {
 
 class WindowDuringNetwork : GameWindow {
 
-    this()
+    this(in Replay replay, in Level level)
     {
         super(myGeom(3));
         int y = 40;
         _resume     = addButton(y);
         _saveReplay = addButton(y);
         _exitGame   = addButton(y);
-        super.captionGameWindowButtons();
+        super.captionSuperElements();
+        super.setReplayAndLevel(replay, level);
     }
 
 }
@@ -75,7 +78,7 @@ class WindowEndSingle : GameWindow {
     // DTODO: extend this() with level filename, to allow browsing to the
     // next level/next unsolved level. Maybe subclass again, and show the
     // non-next-level-able window for replays
-    this(in Tribe tribe, in Level level)
+    this(in Tribe tribe, in Replay replay, in Level level)
     {
         assert (tribe);
         assert (level);
@@ -86,7 +89,8 @@ class WindowEndSingle : GameWindow {
         _restart    = addButton(y, xlg - 40);
         _saveReplay = addButton(y, xlg - 40);
         _exitGame   = addButton(y, xlg - 40);
-        super.captionGameWindowButtons();
+        super.captionSuperElements();
+        super.setReplayAndLevel(replay, level);
 
         drawLixSaved(tribe);
         drawSkillsAndTimeUsed(tribe);
