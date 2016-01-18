@@ -361,21 +361,31 @@ private:
     {
         assert (sprite);
         assert (_phymap);
+
         if (! tc.mustDrawPerPixel) {
             auto zone = Zone(profiler, format("PhysDraw pix-all %s",
                                        tc.type.to!string));
             _land.drawFrom(sprite, tc.x, tc.y);
+            return;
         }
-        else if (tc.isDeletion) {
-            auto zone = Zone(profiler, format("PhysDraw pix-one %s",
-                                       tc.type.to!string));
-            immutable spriteXl = al_get_bitmap_width (sprite);
-            immutable spriteYl = al_get_bitmap_height(sprite);
+        // we continue here only if tc.mustDrawPerPixel
+        auto zone = Zone(profiler, format("PhysDraw pix-one %s",
+                                   tc.type.to!string));
+        immutable spriteXl = al_get_bitmap_width (sprite);
+        immutable spriteYl = al_get_bitmap_height(sprite);
+        if (tc.isDeletion) {
             foreach (y; 0 .. spriteYl)
                 foreach (x; 0 .. spriteXl)
                     if (! _phymap.getSteel(tc.x + x, tc.y + y))
                         _land.drawFromPixel(sprite, x, y, tc.x + x,tc.y + y);
         }
+        else
+            foreach (y; 0 .. spriteYl)
+                foreach (x; 0 .. spriteXl)
+                    if (_phymap.getNeedsColoring(tc.x + x, tc.y + y)) {
+                        _phymap.setDoneColoring (tc.x + x, tc.y + y);
+                        _land.drawFromPixel(sprite, x, y, tc.x + x,tc.y + y);
+                    }
     }
 
 // ############################################################################
@@ -399,9 +409,6 @@ private:
             mixin AdditionsDefs;
             assert (yl > 0, format("%s queued with yl <= 0; yl = %d",
                 tc.type.to!string, yl));
-            scope (success)
-                _phymap.rect!(Phymap.setSolid)(tc.x, tc.y, xl, yl);
-
             if (_land) {
                 // If land exists, remember the changes to be able to draw them
                 // later. No land in noninteractive mode => needn't save this.
@@ -410,6 +417,7 @@ private:
                                         (tc.x, tc.y, xl, yl) != 0;
                 _addsForLand ~= fc;
             }
+            _phymap.rect!(Phymap.setSolidNeedsColoring)(tc.x, tc.y, xl, yl);
         }
         _addsForPhymap = null;
     }
@@ -433,14 +441,8 @@ private:
         foreach (const tc; processThese) {
             mixin AdditionsDefs;
             Albit sprite = al_create_sub_bitmap(_mask, x, y, xl, yl);
-            scope (exit)
-                al_destroy_bitmap(sprite);
-            _land.drawFrom(sprite, tc.x, tc.y);
-            // DTODOVRAM: Do something about the bricks overwriting existing
-            // terrain. I've tried it with blenders, I don't think I can
-            // get something useful without changing the target bitmap,
-            // which is too expensive. Look into shaders with Allegro 5.1.
-            // Right now, I'm using Allegro 5.0.11.
+            spriteToLandAccordingToFlag(tc, sprite);
+            al_destroy_bitmap(sprite);
         }
     }
 

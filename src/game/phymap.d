@@ -20,6 +20,8 @@ alias Phybitset = short;
 enum  Phybit    : Phybitset {
     terrain = 0x0001,
     steel   = 0x0002,
+    needCol = 0x0004, // Recently added terrain that need yet to be colored.
+                      // Doesn't affect physics.
     goal    = 0x0010,
     fire    = 0x0040,
     water   = 0x0080,
@@ -99,6 +101,12 @@ class Phymap : Topology {
             return false;
     }
 
+    bool getNeedsColoring(int x, int y) const
+    {
+        amend(x, y);
+        return (getAt(x, y) & Phybit.needCol) != 0;
+    }
+
     bool getSteelUnlessMaskIgnores(int ex, int ey, in Mask mask) const
     {
         with (mask)
@@ -141,10 +149,25 @@ class Phymap : Topology {
         return ret;
     }
 
-    void setSolid(int x, int y)
+    void setSolidAlreadyColored(int x, int y)
     {
         if (! amendIfInside(x, y)) return;
         addAt(x, y, Phybit.terrain);
+    }
+
+    void setSolidNeedsColoring(int x, int y)
+    {
+        if (! amendIfInside(x, y)) return;
+        if (getAt(x, y) & Phybit.terrain) return;
+        addAt(x, y, Phybit.terrain | Phybit.needCol);
+    }
+
+    void setDoneColoring(int x, int y)
+    {
+        if (! amendIfInside(x, y)) return;
+        assert (getAt(x, y) & Phybit.terrain);
+        assert (getAt(x, y) & Phybit.needCol);
+        rmAt(x, y, Phybit.needCol);
     }
 
     bool setAirCountSteel(int x, int y)
