@@ -1,6 +1,34 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.33
+------
+
+2016-01-18
+
+Fix #12: Builders, platformers and cubers won't overwrite existing terrain.
+Fix #22: Terrain removers don't draw over steel pixels.
+
+Neither fix has affected physics. The remover visuals were particularly
+urgent, because they made steel transparent, even though they didn't remove
+the steel.
+
+These fixes are implemented with iteration over the lookup map, then issuing
+many copies of 1x1 rectangles to the graphics card. This is likely slower
+than hardware shaders that examine the existing pixel. It's faster than
+making lots of 1x1 sub-bitmaps on the heap, then destroying these again.
+
+(Miner hits steel on my 9.5-year-old laptop: 30 ms for 1x1 sub-bitmaps, 7 ms
+for 1x1 rectangles. Miner digging only through non-steel earth is much faster,
+about 0.1 ms, and therefore uses the previously existing drawing code.)
+
+The cuber sprite is transparent where it has been drawn to land already.
+Now, the player can guess much better when which pixels are added.
+I've added a few sparky lines to the cuber's last few frames.
+
+I have removed the tumbler assert. See comment on issue #21:
+https://github.com/SimonN/LixD/issues/21
+
 0.1.32
 ------
 
