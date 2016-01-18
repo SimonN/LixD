@@ -1,6 +1,13 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.35
+------
+
+2016-01-18
+
+Hatches marked as rotated in the level format spawn lemmings facing left.
+
 0.1.34
 ------
 

@@ -304,31 +304,28 @@ spawnLixxiesFromHatches(Game game) { with (game.cs)
         assert (game.replay);
         assert (game.replay.permu);
         immutable int position = game.replay.permu[teamNumber];
-        const(Gadget) hatch    = hatches[tribe.hatchNextSpawn];
+        const(Hatch) hatch     = hatches[tribe.hatchNextSpawn];
+
+        bool walkLeftInsteadOfRight = hatch.spawnFacingLeft
+            // This extra turning solution here is necessary to make
+            // some L1 and ONML two-player levels playable better.
+            || (hatches.len < tribes.len && (position/hatches.len)%2 == 1);
 
         // the only interesting part of OutsideWorld right now is the
         // lookupmap inside the current state. Everything else will be
         // passed anew when the lix are updated.
         auto ow = game.makeGypsyWagon(teamNumber, tribe.lixvec.len);
-
         Lixxie newLix = new Lixxie(game.map, &ow,
-            hatch.x + hatch.tile.triggerX,
+            hatch.x + hatch.tile.triggerX - 2 * walkLeftInsteadOfRight,
             hatch.y + hatch.tile.triggerY);
+        if (walkLeftInsteadOfRight)
+            newLix.turn();
         tribe.lixvec ~= newLix;
         --tribe.lixHatch;
         ++tribe.lixOut;
         tribe.updatePreviousSpawn = update;
-
-        bool walkLeftInsteadOfRight = hatch.rotation
-            // This extra turning solution here is necessary to make
-            // some L1 and ONML two-player levels playable better.
-            || (hatches.len < tribes.len && (position/hatches.len)%2 == 1);
-        if (walkLeftInsteadOfRight) {
-            newLix.turn();
-            newLix.moveAhead();
-        }
-        tribe.hatchNextSpawn += tribes.len;
-        tribe.hatchNextSpawn %= hatches.len;
+        tribe.hatchNextSpawn     += tribes.len;
+        tribe.hatchNextSpawn     %= hatches.len;
     }
 }}
 // end spawnLixxiesFromHatches()

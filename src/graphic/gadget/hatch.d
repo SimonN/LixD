@@ -31,7 +31,7 @@ public:
     enum updatesBlinkOn  =  4;
     enum updatesBlinkOff =  2;
 
-    bool  spawnFacingLeft;
+    immutable bool spawnFacingLeft;
     Style blinkStyle = Style.garden; // if left at garden, then don't blink
 
     this(in Torbit tb, in ref Pos levelpos)
