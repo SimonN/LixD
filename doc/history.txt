@@ -1,6 +1,14 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.36
+------
+
+2016-01-19
+
+Faster drawing code, by holding bitmaps. Empty skills don't show their hotkey.
+Fixed an assert fail on framestepping backwards across Phybit.needCol.
+
 0.1.35
 ------
 

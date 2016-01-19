@@ -10,6 +10,8 @@ module game.phymap;
  * of objects of its type.
  */
 
+import std.string; // format assert errors
+
 import basics.alleg5;
 import basics.help;
 import basics.topology;
@@ -164,9 +166,14 @@ class Phymap : Topology {
 
     void setDoneColoring(int x, int y)
     {
+        string assertMsg()
+        {
+            return "x=%d, y=%d, terrain=%d, needCol=%d".format(x, y,
+                getAt(x, y) & Phybit.terrain, getAt(x, y) & Phybit.needCol);
+        }
         if (! amendIfInside(x, y)) return;
-        assert (getAt(x, y) & Phybit.terrain);
-        assert (getAt(x, y) & Phybit.needCol);
+        assert (getAt(x, y) & Phybit.terrain, assertMsg);
+        assert (getAt(x, y) & Phybit.needCol, assertMsg);
         rmAt(x, y, Phybit.needCol);
     }
 
@@ -180,7 +187,7 @@ class Phymap : Topology {
             return true;
         }
         else {
-            rmAt(x, y, Phybit.terrain);
+            rmAt(x, y, Phybit.terrain | Phybit.needCol);
             return false;
         }
     }
