@@ -1,6 +1,6 @@
 module menu.browrep;
 
-static import basics.user;
+import basics.user;
 import file.filename;
 import file.language;
 import game.replay;
@@ -12,17 +12,16 @@ class BrowserReplay : BrowserCalledFromMainMenu {
 
     this()
     {
-        T newInfo(T)(float y)
-            if (is (T : Element))
+        TextButton newInfo(float y, string caption, int hotkey)
         {
-            return new T(new Geom(20, y, infoXl, 20, From.TOP_RIGHT));
+            auto b = new TextButton(new Geom(20, y, infoXl, 20, From.TOP_RIG));
+            b.text = caption;
+            b.hotkey = hotkey;
+            return b;
         }
-        _delete = newInfo!TextButton(infoY);
-        _delete.text   = "(delete)";// Lang.browserDelete.transl;
-        _delete.hotkey = basics.user.keyMenuDelete;
-        _extract = newInfo!TextButton(infoY + 20);
-        _extract.text   = "(extract)"; // Lang.browserExtract.transl;
-        _extract.hotkey = basics.user.keyMenuExport;
+        _delete  = newInfo(infoY, Lang.browserDelete.transl, keyMenuDelete);
+        _extract = newInfo(infoY + 20, "(extract)", // Lang.browserExtract.transl;
+                           keyMenuExport);
         super(Lang.browserReplayTitle.transl,
             basics.globals.dirReplays,
             basics.user.replayLastLevel,
@@ -44,8 +43,8 @@ protected:
             _extract.hide();
         }
         else {
-            replayRecent   = new Replay(fn);
-            levelRecent    = new Level(fn); // open the replay file as level
+            replayRecent = new Replay(fn);
+            levelRecent  = new Level(fn); // open the replay file as level
             _delete.show();
             _extract.hidden = ! levelRecent.nonempty;
             if (! levelRecent.nonempty)
@@ -64,9 +63,24 @@ protected:
         }
     }
 
+    override void calcSelf()
+    {
+        super.calcSelf();
+        calcDeleteMixin();
+    }
+
 private:
 
     TextButton _extract;
-    TextButton _delete;
 
-};
+    mixin DeleteMixin deleteMixin;
+
+    MsgBox newMsgBoxDelete()
+    {
+        auto m = new MsgBox(Lang.browserBoxDeleteReplayTitle.transl);
+        m.addMsg(Lang.browserBoxDeleteReplayQuestion.transl);
+        m.addMsg(Lang.browserBoxDirectory.transl~ " " ~ fileRecent.dirRootful);
+        m.addMsg(Lang.browserBoxFileName.transl ~ " " ~ fileRecent.file);
+        return m;
+    }
+}

@@ -10,12 +10,15 @@ module menu.browbase;
  */
 
 import std.conv;
+static import std.file;
 
 import basics.user; // hotkeys
 import file.filename;
 import file.language;
+import file.log;
 import gui;
 import hardware.mouse;
+import hardware.sound;
 import level.level;
 import menu.preview;
 
@@ -34,11 +37,97 @@ class BrowserBase : Window {
     enum float infoXl = 140;
     enum float infoY  = 220;
 
+    this(
+        in string      title,
+        in Filename    baseDir,
+           Filename    currentFile,
+        ListLevel.LevelCheckmarks   lcm,
+        ListLevel.ReplayToLevelName rtl
+    ) {
+        super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg), title);
+
+        immutable int lxlg = to!int(Geom.screenXlg - 100 - 140 - 4*20);
+
+        dirList = new ListDir  (new Geom(20,  40, 100,  420));
+        levList = new ListLevel(new Geom(140, 40, lxlg, 420),
+                                ListLevel.WriteFilenames.no, lcm, rtl);
+        alias TextBut = TextButton;
+        buttonPlay = new TextBut(new Geom(20,  40, infoXl,  40, From.TOP_RIG));
+        preview    = new Preview(new Geom(20, 100, infoXl, 100, From.TOP_RIG));
+        buttonExit = new TextBut(new Geom(20,  20, infoXl,  40, From.BOT_RIG));
+
+        dirList.baseDir = baseDir;
+        dirList.listFileToControl = levList;
+        dirList.currentDir = currentFile;
+
+        levList.highlight(currentFile);
+        if (levList.currentFile == currentFile
+            && currentFile !is null
+            && currentFile.file != null
+        )
+            this.highlight(currentFile);
+        else
+            this.highlight(null);
+        buttonPlay.text = Lang.browserPlay.transl;
+        buttonPlay.hotkey = basics.user.keyMenuOkay;
+        buttonExit.text = Lang.commonBack.transl;
+        buttonExit.hotkey = basics.user.keyMenuExit;
+        buttonExit.onExecute = () { _gotoMainMenu = true; };
+
+        addChildren(preview, dirList, levList, buttonPlay, buttonExit);
+        windowSubtitle = dirList.currentDir.rootless;
+    }
+
 protected:
 
     // override these
     void onFileHighlight(Filename) {}
     void onFileSelect   (Filename) {}
+
+    final void deleteFileRecentHighlightNeighbor()
+    {
+        assert (fileRecent);
+        try std.file.remove(fileRecent.rootful);
+        catch (Exception e)
+            logf(e.msg);
+        auto number = levList.currentNumber;
+        levList.load_dir(levList.currentDir);
+        levList.highlightNumber(number);
+        highlight(levList.currentFile);
+        playLoud(Sound.SCISSORS);
+    }
+
+    override void calcSelf()
+    {
+        if (dirList.clicked) {
+            windowSubtitle = dirList.currentDir.rootless;
+            if (_fileRecent &&
+                _fileRecent.dirRootless == dirList.currentDir.dirRootless)
+                highlight(_fileRecent);
+            else
+                highlight(null);
+        }
+        else if (levList.clicked) {
+            auto fn = levList.currentFile;
+            auto button = levList.buttonLastClicked;
+            if (fn !is null && button !is null) {
+                if (button.on)
+                    // button executed for the first time
+                    highlight(fn);
+                else
+                    // button execute for the second time
+                    onFileSelect(fn);
+            }
+        }
+        else if (buttonPlay.execute) {
+            if (_fileRecent !is null
+             && _fileRecent.isChildOf(dirList.currentDir)
+             && _fileRecent ==        levList.currentFile)
+                onFileSelect(_fileRecent);
+        }
+        else if (hardware.mouse.mouseClickRight)
+            _gotoMainMenu = true;
+    }
 
 private:
 
@@ -56,109 +145,18 @@ private:
     TextButton buttonExit;
     Preview    preview;
 
-//  void       highlight(Filename);
-
-
-
-public:
-
-this(
-    in string      title,
-    in Filename    baseDir,
-       Filename    currentFile,
-    ListLevel.LevelCheckmarks   lcm,
-    ListLevel.ReplayToLevelName rtl
-) {
-    super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg), title);
-
-    immutable int lxlg = to!int(Geom.screenXlg - 100 - 140 - 4*20);
-
-    dirList = new ListDir  (new Geom(20,  40, 100,  420));
-    levList = new ListLevel(new Geom(140, 40, lxlg, 420),
-                            ListLevel.WriteFilenames.no, lcm, rtl);
-    buttonPlay = new TextButton(new Geom(20,  40, infoXl,  40, From.TOP_RIG));
-    preview    = new Preview   (new Geom(20, 100, infoXl, 100, From.TOP_RIG));
-    buttonExit = new TextButton(new Geom(20,  20, infoXl,  40, From.BOT_RIG));
-
-    // preview_yl = 100 or 93 doesn't fit exactly for the 640x480 resolution,
-    // the correct value there would have been 92. But it'll make the image
-    // longer by 1, without costing quality, and it fits the strange constants
-    // in C++-A4 Lix's level.cpp.
-
-    dirList.baseDir = baseDir;
-    dirList.listFileToControl = levList;
-    dirList.currentDir = currentFile;
-
-    levList.highlight(currentFile);
-    if (levList.currentFile == currentFile
-        && currentFile !is null
-        && currentFile.file != null
-    )
-        this.highlight(currentFile);
-    else
-        this.highlight(null);
-
-    buttonPlay.text = Lang.browserPlay.transl;
-    buttonPlay.hotkey = basics.user.keyMenuOkay;
-
-    buttonExit.text = Lang.commonBack.transl;
-    buttonExit.hotkey = basics.user.keyMenuExit;
-    buttonExit.onExecute = () { _gotoMainMenu = true; };
-
-    addChildren(preview, dirList, levList, buttonPlay, buttonExit);
-
-    windowSubtitle = dirList.currentDir.rootless;
-}
-
-private void
-highlight(Filename fn)
-{
-    if (fn is null) {
-        buttonPlay.hide();
-        // keep _fileRecent as it is, we might highlight that again later
-        onFileHighlight(null);
-    }
-    else {
-        buttonPlay.show();
-        _fileRecent = fn;
-        onFileHighlight(fn);
-    }
-}
-
-
-
-protected override void
-calcSelf()
-{
-    if (dirList.clicked) {
-        windowSubtitle = dirList.currentDir.rootless;
-        if (_fileRecent &&
-            _fileRecent.dirRootless == dirList.currentDir.dirRootless)
-            highlight(_fileRecent);
-        else
-            highlight(null);
-    }
-    else if (levList.clicked) {
-        auto fn = levList.currentFile;
-        auto button = levList.buttonLastClicked;
-        if (fn !is null && button !is null) {
-            if (button.on)
-                // button executed for the first time
-                highlight(fn);
-            else
-                // button execute for the second time
-                onFileSelect(fn);
+    void highlight(Filename fn)
+    {
+        if (fn is null) {
+            buttonPlay.hide();
+            // keep _fileRecent as it is, we might highlight that again later
+            onFileHighlight(null);
+        }
+        else {
+            buttonPlay.show();
+            _fileRecent = fn;
+            onFileHighlight(fn);
         }
     }
-    else if (buttonPlay.execute) {
-        if (_fileRecent !is null
-         && _fileRecent.isChildOf(dirList.currentDir)
-         && _fileRecent ==        levList.currentFile)
-            onFileSelect(_fileRecent);
-    }
-    else if (hardware.mouse.mouseClickRight)
-        _gotoMainMenu = true;
-}
-
 }
 // end class

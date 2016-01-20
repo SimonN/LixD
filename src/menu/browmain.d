@@ -2,7 +2,7 @@ module menu.browmain;
 
 import game.replay;
 import file.filename;
-import gui.listlev;
+import gui;
 import level.level;
 import menu.browbase;
 
@@ -34,4 +34,34 @@ private:
     bool     _gotoGame;
     Replay   _replayRecent;
     Level    _levelRecent;
+}
+
+/* How to use the DeleteMixin:
+ * Mix it into a browser. Implement the following method by filling out
+ * title and msgs, but without adding buttons:
+ *
+ *  MsgBox newMsgBoxDelete();
+ */
+mixin template DeleteMixin()
+{
+    private void calcDeleteMixin()
+    {
+        assert (_delete);
+        if (_delete.execute) {
+            assert (! _boxDelete);
+            assert (fileRecent);
+            _boxDelete = newMsgBoxDelete();
+            _boxDelete.addButton(Lang.commonYes.transl, keyMenuOkay);
+            _boxDelete.addButton(Lang.commonNo.transl,  keyMenuDelete);
+            addFocus(_boxDelete);
+        }
+        else if (_boxDelete && _boxDelete.execute) {
+            assert (fileRecent);
+            if (_boxDelete.execute == 1)
+                deleteFileRecentHighlightNeighbor();
+            _boxDelete = null;
+        }
+    }
+    private Button _delete;
+    private MsgBox _boxDelete;
 }
