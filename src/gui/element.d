@@ -30,10 +30,10 @@ abstract class Element {
     @property AlCol undrawColor() const  { return _undrawColor;     }
     @property AlCol undrawColor(AlCol c) { return _undrawColor = c; }
 
-    @property bool hidden() const {            return _hidden;     }
-    @property bool hidden(bool b) { reqDraw(); return _hidden = b; }
-    @property void hide() { hidden = true;  }
-    @property void show() { hidden = false; }
+    @property bool hidden() const    {            return _hidden;     }
+    @property bool hidden(in bool b) { reqDraw(); return _hidden = b; }
+    final void hide() { hidden = true;  }
+    final void show() { hidden = false; }
 
     void hideAllChildren() { foreach (child; _children) child.hide(); }
 

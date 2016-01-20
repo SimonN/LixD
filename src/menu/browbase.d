@@ -94,6 +94,7 @@ protected:
         levList.load_dir(levList.currentDir);
         levList.highlightNumber(-1);
         levList.highlightNumber(number);
+        _fileRecent = null;
         highlight(levList.currentFile);
         playLoud(Sound.SCISSORS);
     }

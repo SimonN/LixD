@@ -42,6 +42,15 @@ class Button : Element {
     mixin (GetSetWithReqDraw!"down");
     mixin (GetSetWithReqDraw!"on");
 
+    override @property bool hidden() const { return super.hidden; }
+    override @property bool hidden(in bool c)
+    {
+        super.hidden = c;
+        _down    = false;
+        _execute = false;
+        return super.hidden;
+    }
+
     AlCol colorText() { return _on && ! _down ? color.guiTextOn
                                               : color.guiText; }
 private:
@@ -72,11 +81,7 @@ calcSelf()
 {
     immutable bool mouseHere = isMouseHere();
 
-    if (hidden) {
-        _execute = false;
-        _down    = false;
-    }
-    else final switch (whenToExecute) {
+    final switch (whenToExecute) {
     case WhenToExecute.whenMouseRelease:
         down     = mouseHere && mouseHeldLeft;
         _execute = mouseHere && mouseReleaseLeft || _hotkey.keyTapped;
