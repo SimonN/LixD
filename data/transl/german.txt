@@ -51,6 +51,10 @@ $browserInfoSame             passt!
 $browserInfoOld              ist zu alt
 $browserInfoHoldsLevel      enthalten
 
+$browserBoxDirectory         Verzeichnis:
+$browserBoxFileName          Dateiname:
+$browserBoxLevelName         Leveltitel:
+
 $browserBoxDeleteReplayTitle    Replay löschen?
 $browserBoxDeleteReplayQuestion    Soll dieses Replay wirklich gelöscht werden?
 $browserBoxDeleteLevelTitle    Level löschen?
@@ -132,8 +136,6 @@ $editorUnsavedTitle          Änderungen speichern?
 $editorUnsavedTitleNew      Level speichern?
 $editorUnsavedQuestion       Moechtest du die Änderungen an diesem Level speichern?
 $editorUnsavedQuestionNew   Moechtest du diesen neuen Level speichern?
-$editorFileName              Dateiname:
-$editorLevelName             Leveltitel:
 $editorHotkey                 Hotkey:
 $editorHotkeyHold            Hotkey: halte
 $editorBarAt                 an

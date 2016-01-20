@@ -10,6 +10,7 @@ import std.conv;
 import std.string; // formatting assert message
 import std.typecons;
 
+import basics.help;
 import basics.user; // custom keys for navigating the file list
 import graphic.color;
 import gui;
@@ -31,12 +32,9 @@ public:
  *         FileSorter default_fileSorter;
  *
  *  void load_dir(in Filename, const int which_page = 0);
- *
  *      This is the main function, should be called by the browsers often.
  *
- *  void highlight            (in Filename);
- *  void highlight_file_number(int);
- *  void highlight_move       (int);
+ *  void highlightNumber(int);
  */
     @property void       fileFinder(FileFinder ff) { _fileFinder = ff; }
     @property void       searchCrit(SearchCrit sc) { _searchCrit = sc; }
@@ -64,6 +62,21 @@ public:
 
     @property bool useHotkeys()       { return _useHotkeys;     }
     @property bool useHotkeys(bool b) { return _useHotkeys = b; }
+
+    void highlight(in Filename fn)
+    {
+        highlightNumberImpl(files.countUntil(fn).to!int);
+    }
+
+    int currentNumber() const
+    {
+        return files.countUntil(_currentFile).to!int;
+    }
+
+    void highlightNumber(in int pos)
+    {
+        highlightNumberImpl(clamp(pos, -1, files.len - 1));
+    }
 
 protected:
 
@@ -190,22 +203,11 @@ buttons_clear()
     reqDraw();
 }
 
-
-
-public void
-highlight(in Filename fn)
-{
-    highlight_file_number(files.countUntil(fn).to!int);
-}
-
-
-
-public void
-highlight_file_number(in int pos)
+private void highlightNumberImpl(in int pos)
 {
     assert (pos >= -1);
     assert (pos < files.length.to!int,
-        format("%s.highlight_file_number(%d): argument must be < %d",
+        format("%s.highlightNumberImpl(%d): argument must be < %d",
         this, pos, files.length.to!int));
 
     if (pos == -1) {
@@ -274,7 +276,7 @@ public void highlight_move(in int by)
         if (by < 0) pos = last;
         else        pos = 0;
     }
-    highlight_file_number(pos);
+    highlightNumberImpl(pos);
 }
 
 
@@ -377,7 +379,7 @@ calcSelf()
             }
             // otherwise, a normal file button has been clicked
             else {
-                highlight_file_number(_fileNumberAtTop + i);
+                highlightNumberImpl(_fileNumberAtTop + i);
                 _clicked = true;
                 break;
             }

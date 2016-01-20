@@ -110,17 +110,6 @@ this(
     windowSubtitle = dirList.currentDir.rootless;
 }
 
-
-
-public void set_preview_y_and_yl(in int y, in int yl)
-{
-    preview.geom = new Geom(preview.xg, y, preview.xlg, preview.ylg,
-        preview.geom.from);
-    reqDraw();
-}
-
-
-
 private void
 highlight(Filename fn)
 {

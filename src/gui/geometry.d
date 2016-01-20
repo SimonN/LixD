@@ -161,8 +161,6 @@ class Geom {
         this(g.x, g.y, g.xl, g.yl, g.from);
     }
 
-
-
     @property From xFrom() const { return to!From(from & 0x0F | 0x20); }
     @property From yFrom() const { return to!From(from & 0xF0 | 0x02); }
 

@@ -24,14 +24,13 @@ abstract class Element {
     @property float xls() const { return _geom.xls; }
     @property float yls() const { return _geom.yls; }
 
-    // to move an element, assign a new Geom object to it.
-    @property const(Geom) geom() const { return _geom;                 }
-    @property const(Geom) geom(Geom g) { reqDraw(); return _geom = g; }
+    // to edit the geom, use Element.move(x, y) and Element.resize(xl, yl).
+    @property const(Geom) geom() const { return _geom; }
 
     @property AlCol undrawColor() const  { return _undrawColor;     }
     @property AlCol undrawColor(AlCol c) { return _undrawColor = c; }
 
-    @property bool hidden() const {             return _hidden;     }
+    @property bool hidden() const {            return _hidden;     }
     @property bool hidden(bool b) { reqDraw(); return _hidden = b; }
     @property void hide() { hidden = true;  }
     @property void show() { hidden = false; }
@@ -108,8 +107,6 @@ this(Geom g)
     drawRequired = true;
 }
 
-
-
 void addChild(Element e)
 {
     assert (e !is null, "can't add null child");
@@ -120,15 +117,10 @@ void addChild(Element e)
     _children ~= e;
 }
 
-
-
 void addChildren(Element[] elements ...)
 {
-    foreach (e; elements)
-        addChild(e);
+    elements.each!(e => addChild(e));
 }
-
-
 
 bool rmChild(Element e)
 {
@@ -145,24 +137,31 @@ bool rmChild(Element e)
     return true;
 }
 
+void move(in float ax, in float ay)
+{
+    reqDraw();
+    _geom.x = ax;
+    _geom.y = ay;
+}
 
+void resize(in float axl, in float ayl)
+{
+    reqDraw();
+    _geom.xl = axl;
+    _geom.yl = ayl;
+}
 
-void
-reqDraw()
+void reqDraw()
 {
     drawRequired = true;
     foreach (child; _children)
         child.reqDraw();
 }
 
-
-
 bool isMouseHere() const
 {
-    if (! _hidden
-     && mouseX() >= xs && mouseX() < xs + xls
-     && mouseY() >= ys && mouseY() < ys + yls) return true;
-    else return false;
+    return ! _hidden && mouseX() >= xs && mouseX() < xs + xls
+                     && mouseY() >= ys && mouseY() < ys + yls;
 }
 
 

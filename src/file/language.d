@@ -75,6 +75,9 @@ enum Lang {
     browserInfoOld,
     browserInfoHoldsLevel,
 
+    browserBoxDirectory,
+    browserBoxFileName,
+    browserBoxLevelName,
     browserBoxDeleteReplayTitle,
     browserBoxDeleteReplayQuestion,
     browserBoxDeleteLevelTitle,
@@ -152,8 +155,6 @@ enum Lang {
     editorUnsavedTitleNew,
     editorUnsavedQuestion,
     editorUnsavedQuestionNew,
-    editorFileName,
-    editorLevelName,
     editorHotkey,
     editorHotkeyHold,
     editorBarAt,
