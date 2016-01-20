@@ -92,6 +92,7 @@ protected:
             logf(e.msg);
         auto number = levList.currentNumber;
         levList.load_dir(levList.currentDir);
+        levList.highlightNumber(-1);
         levList.highlightNumber(number);
         highlight(levList.currentFile);
         playLoud(Sound.SCISSORS);

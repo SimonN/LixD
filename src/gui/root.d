@@ -111,37 +111,44 @@ rmFocus(Element toRm)
     clearNextDraw = true;
 }
 
-
-void
-calc()
+void calc()
 {
-    if (focus.length > 0) {
-        focus[$-1].calc();
+    calcFocus();
+    if (focus.length == 0)
+        calcElders();
+}
+
+private void calcFocus()
+{
+    // After a MsgBox closes itself, immediately calc the MsgBox-making
+    // browser, to not flicker any of its buttons. The general rule is:
+    // Making a new focus doesn't calc; self-taking-away focus re-calcs.
+    // Thus, "if focus.length == 0" in calc() is correct, and this loop.
+    Element top = null;
+    while (focus.length && top != focus[$-1]) {
+        top = focus[$-1];
+        top.calc();
     }
-    else {
-        foreach (e; elders) e.calc();
-    }
+}
+
+private void calcElders()
+{
+    foreach (e; elders) e.calc();
     foreach (e; elders) e.work();
     foreach (e; focus ) e.work();
 }
 
-
-
-void
-draw()
+void draw()
 {
     assert (guiosd);
-
     if (clearNextDraw) {
         clearNextDraw = false;
         guiosd.clearToColor(color.transp);
         foreach (element; elders) element.reqDraw();
         foreach (element; focus)  element.reqDraw();
     }
-
     auto drata = DrawingTarget(guiosd.albit);
     foreach (element; elders) element.draw();
     foreach (element; focus)  element.draw();
-
     guiosd.copyToScreen();
 }
