@@ -3,6 +3,24 @@ module gui.msgbox;
 /* These boxes pose a question and give a few buttons to click.
  * How to use: Create a box, add some msgs and buttons, and register it
  * as a focus element. The box deactivates itself on any button click.
+ *
+ * To decide what to do after a button press, I had a choice about what
+ * implementation to offer:
+ *
+ * a) Checking the return value of the box in the caller's calc()
+ * b) Allowing callbacks to be registered on button creation
+ * c) Both
+ *
+ * I chose b) only. Reason: a), and therefore c), lead to a flickering problem.
+ * After the msgbox unfocuses itself, it is not drawn, but the calling
+ * browser is not calced immediately. Therefore, a level to be deleted is
+ * yet again drawn for a single frame.
+ *
+ * I could have edited the gui.root source to always calc the next focus/elders
+ * when a focus (the msgbox in our case) unfocuses itself. The problem here
+ * would be: The browser reads the hotkey input again. OK and "start replay"
+ * are on the same hotkey by default. This would delete a level, select a
+ * new one, and play that immediately.
  */
 
 import std.algorithm;
@@ -34,11 +52,15 @@ class MsgBox : Window {
         return this;
     }
 
-    auto addButton(in string caption, in int hotkey = 0)
-    {
+    auto addButton(in string caption,
+        in int hotkey = 0,
+        in void delegate() callback = null
+    ) {
         _buttons ~= new TextButton(new Geom(0, 0, buttonXl, 20, From.BOTTOM));
         _buttons[$-1].text   = caption;
         _buttons[$-1].hotkey = hotkey;
+        if (callback)
+            _buttons[$-1].onExecute = callback;
         addChild(_buttons[$-1]);
         resize(thisXl, appropriateYl);
         foreach (int i, button; _buttons)
@@ -46,19 +68,11 @@ class MsgBox : Window {
         return this;
     }
 
-    @property execute() const
-    {
-        foreach (int i, button; _buttons)
-            if (button.execute)
-                return i+1;
-        return 0;
-    }
-
 protected:
 
     override void calcSelf()
     {
-        if (execute)
+        if (_buttons.any!(b => b.execute))
             rmFocus(this);
     }
 

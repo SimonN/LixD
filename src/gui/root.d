@@ -113,27 +113,10 @@ rmFocus(Element toRm)
 
 void calc()
 {
-    calcFocus();
-    if (focus.length == 0)
-        calcElders();
-}
-
-private void calcFocus()
-{
-    // After a MsgBox closes itself, immediately calc the MsgBox-making
-    // browser, to not flicker any of its buttons. The general rule is:
-    // Making a new focus doesn't calc; self-taking-away focus re-calcs.
-    // Thus, "if focus.length == 0" in calc() is correct, and this loop.
-    Element top = null;
-    while (focus.length && top != focus[$-1]) {
-        top = focus[$-1];
-        top.calc();
-    }
-}
-
-private void calcElders()
-{
-    foreach (e; elders) e.calc();
+    if (focus.length)
+        focus[$-1].calc();
+    else
+        foreach (e; elders) e.calc();
     foreach (e; elders) e.work();
     foreach (e; focus ) e.work();
 }

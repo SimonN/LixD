@@ -51,15 +51,15 @@ mixin template DeleteMixin()
             assert (! _boxDelete);
             assert (fileRecent);
             _boxDelete = newMsgBoxDelete();
-            _boxDelete.addButton(Lang.commonYes.transl, keyMenuOkay);
-            _boxDelete.addButton(Lang.commonNo.transl,  keyMenuDelete);
-            addFocus(_boxDelete);
-        }
-        else if (_boxDelete && _boxDelete.execute) {
-            assert (fileRecent);
-            if (_boxDelete.execute == 1)
+            _boxDelete.addButton(Lang.commonYes.transl, keyMenuOkay, () {
+                assert (fileRecent);
                 deleteFileRecentHighlightNeighbor();
-            _boxDelete = null;
+                _boxDelete = null;
+            });
+            _boxDelete.addButton(Lang.commonNo.transl,  keyMenuDelete, () {
+                _boxDelete = null;
+            });
+            addFocus(_boxDelete);
         }
     }
     private Button _delete;
