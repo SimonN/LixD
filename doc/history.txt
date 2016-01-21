@@ -1,6 +1,17 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.37
+------
+
+2016-01-21
+
+The replay browser can delete replays. It asks for confirmation with a message
+box and moves the highlighting to the next replay.
+
+During the game, the panel's info bar shows colored icons with numbers,
+instead of the previously text-only lix counts.
+
 0.1.36
 ------
 
