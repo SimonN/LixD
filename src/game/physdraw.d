@@ -34,7 +34,7 @@ import game.mask;
 import game.terchang;
 import graphic.color;
 import graphic.torbit;
-import graphic.gralib; // must be initialized first
+import graphic.internal; // must be initialized first
 import hardware.display; // displayStartupMessage
 import hardware.tharsis;
 import lix.enums;

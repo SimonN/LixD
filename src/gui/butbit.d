@@ -4,7 +4,7 @@ import std.conv; // to!int for drawing the cutbit
 
 import basics.globals; // name of checkmark bitmap
 import graphic.cutbit;
-import graphic.gralib;
+import graphic.internal;
 import gui;
 
 class BitmapButton : Button {

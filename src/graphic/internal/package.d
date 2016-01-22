@@ -1,4 +1,4 @@
-module graphic.gralib;
+module graphic.internal;
 
 import std.conv; // scale to
 import std.string; // format
@@ -485,4 +485,3 @@ void recolor_into_vector(
             eidrecol(vector[st], magicnr);
     }
 }
-

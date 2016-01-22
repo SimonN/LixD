@@ -11,7 +11,7 @@ import game.phymap;
 import graphic.color;
 import graphic.gadget;
 import graphic.graphic;
-import graphic.gralib;
+import graphic.internal;
 import graphic.torbit;
 import hardware.sound;
 import lix;
@@ -186,7 +186,7 @@ this(in Lixxie rhs)
     _ey    = rhs._ey;
     _flags = rhs._flags;
 
-    super(graphic.gralib.getLixSpritesheet(_style), rhs.ground,
+    super(graphic.internal.getLixSpritesheet(_style), rhs.ground,
         _ex - exOffset, _ey - eyOffset);
 
     dir = rhs.dir; // important to set super's mirr and rot

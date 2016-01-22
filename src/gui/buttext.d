@@ -12,7 +12,7 @@ import gui;
 import basics.globals;
 import graphic.color;
 import graphic.cutbit;
-import graphic.gralib;
+import graphic.internal;
 
 class TextButton : Button {
 

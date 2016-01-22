@@ -12,7 +12,7 @@ module hardware.mousecur;
 
 import basics.globals;
 import graphic.cutbit;
-import graphic.gralib;
+import graphic.internal;
 import graphic.graphic;
 import hardware.mouse;
 

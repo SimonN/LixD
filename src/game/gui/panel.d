@@ -10,7 +10,7 @@ import basics.globals;
 import basics.user;
 import game.gui.panelinf;
 import game.tribe;
-import graphic.gralib;
+import graphic.internal;
 import gui;
 import hardware.keyboard; // we need a different behavior of skill button
 import hardware.mouse;    // execution and skill button warning sound

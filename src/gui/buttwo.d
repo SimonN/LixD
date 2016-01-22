@@ -10,7 +10,7 @@ module gui.buttwo;
 import basics.alleg5; // hotkeyNiceShort
 import basics.globals; // bitmap file for the spawnint button, doubleclick spd
 import graphic.cutbit;
-import graphic.gralib;
+import graphic.internal;
 import gui;
 import hardware.keyboard;
 import hardware.mouse;

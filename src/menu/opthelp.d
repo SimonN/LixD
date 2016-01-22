@@ -23,7 +23,7 @@ import file.filename;  // for LanguageOption
 import file.io;        // for LanguageOption
 import file.language;  // for LanguageOption
 import file.search;    // for LanguageOption
-import graphic.gralib;
+import graphic.internal;
 import gui;
 import lix.enums;
 

@@ -6,7 +6,7 @@ import std.typecons; // Rebindable;
 import basics.globals; // game panel icons
 import basics.user; // languageIsEnglish
 import game.tribe;
-import graphic.gralib;
+import graphic.internal;
 import gui;
 import lix;
 

@@ -9,7 +9,7 @@ import game.tribe;
 import game.state;
 import graphic.cutbit;
 import graphic.gadget;
-import graphic.gralib;
+import graphic.internal;
 import graphic.torbit;
 import level.level;
 import lix.enums;
@@ -43,7 +43,7 @@ private:
         foreach (const(Tribe) t; tribes(state)) {
             if (t.style == Style.garden)
                 continue;
-            auto c = graphic.gralib.getPanelInfoIcon(t.style);
+            auto c = graphic.internal.getPanelInfoIcon(t.style);
             c.draw(mutableGround,
                 x + tile.triggerX + tile.triggerXl / 2 - c.xl / 2
                   + (20 * offset++) - 10 * (tribesLen - 1),

@@ -9,7 +9,7 @@ import basics.alleg5;  // drawing bg to screen
 import basics.globals; // title bar text
 import basics.versioning;
 import basics.user;
-import graphic.gralib; // menu background
+import graphic.internal; // menu background
 import file.language;
 import gui;
 

@@ -4,7 +4,7 @@ import std.string; // format()
 import std.conv; // to!string;
 
 // This is used for the position of the exploder fuse.
-// graphic.gralib.initialize() sets Matrix countdown upon loading all images.
+// graphic.internal.initialize() sets Matrix countdown upon loading all images.
 
 struct XY {
 

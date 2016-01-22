@@ -2,7 +2,7 @@ module gui.butskill;
 
 import gui;
 import graphic.color;
-import graphic.gralib;
+import graphic.internal;
 import graphic.graphic;
 import graphic.textout; // select small font
 import lix.enums;

@@ -18,7 +18,7 @@ import basics.globals;
 import file.filename;
 import game.mask; // exploder offset
 import graphic.color;
-import graphic.gralib;
+import graphic.internal;
 import graphic.torbit;
 import lix.enums;
 

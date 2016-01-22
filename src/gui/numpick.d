@@ -14,7 +14,7 @@ import basics.globals; // filename of button sticker
 import gui;
 import graphic.color;
 import graphic.cutbit;
-import graphic.gralib;
+import graphic.internal;
 
 struct NumPickConfig {
     int  digits     = 2;
@@ -76,7 +76,7 @@ implConstructor()
     {
         auto b = new BitmapButton(
             new Geom(x - 20 * (! cfg.sixButtons), 0, 20, 20, from),
-            graphic.gralib.getInternal(fileImageGuiNumber));
+            graphic.internal.getInternal(fileImageGuiNumber));
         b.xf = bbGeomCount;
         b.onExecute = () { this.buttonCallback(change); };
 

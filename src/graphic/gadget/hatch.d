@@ -9,7 +9,7 @@ import game.effect;
 import game.state;
 import graphic.cutbit;
 import graphic.gadget;
-import graphic.gralib;
+import graphic.internal;
 import graphic.torbit;
 import hardware.sound;
 import level.level;

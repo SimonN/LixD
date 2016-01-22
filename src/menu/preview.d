@@ -10,7 +10,7 @@ import basics.help; // rounding
 import gui;
 import graphic.color;
 import graphic.graphic;
-import graphic.gralib;
+import graphic.internal;
 import graphic.torbit;
 import level.level;
 
