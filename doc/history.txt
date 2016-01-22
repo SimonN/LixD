@@ -1,6 +1,14 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.39
+------
+
+2016-01-22
+
+Fix #32: With mouse speed different from 20, RMB-scrolling continued to
+move even after the mouse has stopped moving, as long as RMB was kept down.
+
 0.1.38
 ------
 

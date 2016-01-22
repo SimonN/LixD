@@ -233,8 +233,8 @@ calcScrolling()
 
     if (basics.user.scrollEdge) {
         int scrd = basics.user.scrollSpeedEdge;
-        if (! hardware.mouse.mouseHeldRight())
-            scrd /= 4;
+        if (hardware.mouse.mouseHeldRight())
+            scrd *= 4;
         if (_zoom > 1) {
             scrd += _zoom - 1;
             scrd /= _zoom;
@@ -273,9 +273,8 @@ calcScrolling()
             if (   (minus && mouse <= grabbed && mickey < 0)
                 || (plus  && mouse >= grabbed && mickey > 0)
             ) {
-                ret += mickey * basics.user.scrollSpeedClick
-                    / basics.globals.mouseStandardDivisor / _zoom
-                    / 4; // no idea why it's still so fast, with / 4 it's OK
+                ret += mickey * basics.user.scrollSpeedClick / _zoom
+                    / 4; // the factor /4 comes from C++ Lix
                 freeze();
             }
             return ret;

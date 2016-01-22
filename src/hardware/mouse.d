@@ -10,8 +10,8 @@ void deinitialize();
 
 void calc();
 
-@property int  mouseMickeyX() { return _mickeyX;   }
-@property int  mouseMickeyY() { return _mickeyY;   }
+@property int  mouseMickeyX() { return _mickeyX / mouseStandardDivisor; }
+@property int  mouseMickeyY() { return _mickeyY / mouseStandardDivisor; }
 @property int  mouseX()       { return _mouseOwnX; }
 @property int  mouseY()       { return _mouseOwnY; }
 
