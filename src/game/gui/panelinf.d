@@ -111,7 +111,7 @@ private:
             in int x, in int xl, in int xf
         ) {
             cbe = new CutbitElement(new Geom(x, 0, this.ylg, this.ylg,
-                            From.LEFT), getInternal(fileImageGameIcon));
+                            From.LEFT), getPanelInfoIcon(Style.garden));
             cbe.xf = xf;
             lab = new Label(new Geom(x + this.ylg, 0, xl - this.ylg, this.ylg,
                             From.LEFT));

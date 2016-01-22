@@ -155,7 +155,6 @@ void makeGuiElementsHaveCorrectColor()
                     fileImageEditHatch,
                     fileImageEditPanel,
                     fileImageGameArrow,
-                    fileImageGameIcon,
                     fileImageGameNuke,
                     fileImageGamePanel,
                     fileImageGamePanel2,

@@ -1,6 +1,17 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.38
+------
+
+2016-01-22
+
+The panel info bar uses the correctly recolored garden icons. They have the
+correct shadow, according to the user's GUI color settings. (Even though, like
+all GUI parts, they aren't recolored until the next program start.)
+
+graphic.gralib has been refactored into a package for better readability.
+
 0.1.37
 ------
 

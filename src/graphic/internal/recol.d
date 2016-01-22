@@ -44,15 +44,15 @@ void eidrecol(Cutbit cutbit, in int magicnr)
         for (int y = 0; y < bmp_yl; ++y)
             applyToRow(y > cutbit.yl ? dictGuiLight
                                      : dictGuiNormal, bitmap, y);
-    else if (magicnr == magicnrSkillButtonIcons)
-        for (int y = cutbit.yl + 1; y < bmp_yl; ++y) // only row 1 (of 0, 1)
-            dictSkill.applyToRow(bitmap, y);
-    else if (magicnr == magicnrPanelInfoIcons) {
-        // Recolor the API things (except shadow, which will be done in
-        // an upcoming loop) in the second row.
-        for (int y = cutbit.yl + 1; y < 2 * (cutbit.yl + 1); ++y)
-            dictPanInfo.applyToRow(bitmap, y);
+    else if (magicnr == magicnrSkillButtonIcons) {
         recolorAllShadows(bitmap);
+        for (int y = cutbit.yl + 1; y < bmp_yl; ++y) // only row 1 (of 0, 1)
+            dictGuiNormalNoShadow.applyToRow(bitmap, y);
+    }
+    else if (magicnr == magicnrPanelInfoIcons) {
+        recolorAllShadows(bitmap);
+        for (int y = cutbit.yl + 1; y < 2 * (cutbit.yl + 1); ++y)
+            dictGuiNormalNoShadow.applyToRow(bitmap, y);
     }
 }
 
@@ -173,7 +173,7 @@ void recolor_into_vector(
 
 private:
 
-AlCol[AlCol] dictGuiLight, dictGuiNormal, dictSkill, dictPanInfo;
+AlCol[AlCol] dictGuiLight, dictGuiNormal, dictGuiNormalNoShadow;
 
 void makeColorDicts()
 {
@@ -191,15 +191,8 @@ void makeColorDicts()
     dictGuiNormal[color.guiFileD]   = color.guiPicD;
     dictGuiNormal[color.guiFileM]   = color.guiPicM;
     dictGuiNormal[color.guiFileL]   = color.guiPicL;
-    dictSkill[color.black]      = color.transp;
-    dictSkill[color.guiFileSha] = color.guiSha;
-    dictSkill[color.guiFileD]   = color.guiPicD;
-    dictSkill[color.guiFileM]   = color.guiPicM;
-    dictSkill[color.guiFileL]   = color.guiPicL;
-    dictPanInfo[color.black]    = color.transp;
-    dictPanInfo[color.guiFileD] = color.guiPicD;
-    dictPanInfo[color.guiFileM] = color.guiPicM;
-    dictPanInfo[color.guiFileL] = color.guiPicL;
+    dictGuiNormalNoShadow = dictGuiNormal.dup;
+    dictGuiNormalNoShadow.remove(color.guiFileSha);
 }
 
 void applyToAllRows(AlCol[AlCol] dict, Albit bitmap)
