@@ -8,6 +8,7 @@ import basics.user; // languageIsEnglish
 import game.tribe;
 import graphic.internal;
 import gui;
+import hardware.display; // show fps
 import lix;
 
 // "GameplayPanelMode"
@@ -65,6 +66,7 @@ class PanelStats : Button {
         _bHatch.yf = 1;
         _bSaved.yf = lixSaved == 0 ? 1 : lixSaved >= lixRequired ? 2 : 0;
         _bTime.yf  = 1;
+        _fps.text  = "FPS: %d".format(displayFps);
     }}
 
 protected:
@@ -86,7 +88,8 @@ private:
     Rebindable!(const(Tribe))  _tribe;
 
     CutbitElement _bOut, _bHatch, _bSaved, _bTime;
-    Label         _lOut, _lHatch, _lSaved, _lTime, _targetDesc;
+    Label         _lOut, _lHatch, _lSaved, _lTime;
+    Label _targetDesc, _fps;
 
     void formatTargetDesc()
     in {
@@ -121,8 +124,9 @@ private:
         makeElements(_bHatch, _lHatch,  60, 60, 4);
         makeElements(_bSaved, _lSaved, 120, 80, 5);
         makeElements(_bTime,  _lTime,  200, 70, 7);
+        _fps        = new Label(new Geom(270, 0, 70, this.ylg, From.LEFT));
         _targetDesc = new Label(new Geom(
             TextButton.textXFromLeft, 0, this.xlg, this.ylg, From.RIGHT));
-        addChild(_targetDesc);
+        addChildren(_targetDesc, _fps);
     }
 }
