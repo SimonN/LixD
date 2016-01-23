@@ -100,12 +100,24 @@ private:
             format("_targetDescLixxie %s, but _targetDescNumber == %d",
             _targetDescLixxie ? "exists" : "null", _targetDescNumber));
     }
-    body {
-        _targetDesc.text = (! _targetDescLixxie) ? "" : format("%d %s%s",
+    body { with (_targetDescLixxie) {
+        string s = "";
+        scope (exit)
+            _targetDesc.text = s;
+        if (! _targetDescLixxie)
+            return;
+        s = "%d %s%s".format(
             _targetDescNumber,
-            _targetDescLixxie.ac.acToNiceCase,
+            ac.acToNiceCase,
             _targetDescNumber > 1 && languageIsEnglish ? "s" : "");
-    }
+        if (auto bc = cast (const BrickCounter) constPerformedActivity)
+            s ~= " [%d]".format(bc.skillsQueued * bc.bricksAtStart + bc.bricksLeft);
+        if (abilityToRun || abilityToClimb || abilityToFloat)
+            s ~= " (%s%s%s)".format(
+                abilityToRun   ? "R" : "",
+                abilityToClimb ? "C" : "",
+                abilityToFloat ? "F" : "");
+    }}
 
     void implConstructor()
     {

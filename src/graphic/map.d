@@ -300,9 +300,8 @@ calcScrolling()
 
 
 void
-drawCamera(Albit target_albit)
+drawCamera() // ...onto the current drawing target, most likely the screen
 {
-    auto drata = DrawingTarget(target_albit);
     immutable overallMaxX = _cameraXl - borderOneSideXl;
 
     for (int x = borderOneSideXl; x < overallMaxX; x += xl * _zoom) {

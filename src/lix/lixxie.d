@@ -62,6 +62,10 @@ public:
     @property int ey() const { return _ey; }
     // setters for these are below in the main code
 
+    @property const(PerformedActivity) constPerformedActivity() const
+    {
+        return _perfAc;
+    }
     package @property inout(PerformedActivity) performedActivity() inout
     {
         return _perfAc;

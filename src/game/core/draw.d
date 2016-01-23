@@ -34,8 +34,9 @@ implGameDraw(Game game) { with (game)
         game.drawAllLixes();
         pan.stats.showTribe(tribeLocal);
     }
+    DrawingTarget drata = DrawingTarget(al_get_backbuffer(display));
     with (Zone(profiler, "game draws map to screen"))
-        map.drawCamera(al_get_backbuffer(hardware.display.display));
+        map.drawCamera();
 }}
 // end with(game), end implGameDraw()
 
