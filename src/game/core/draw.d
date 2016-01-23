@@ -1,12 +1,17 @@
 module game.core.draw;
 
+import std.conv; // replay sign
+import std.math; // sin, for replay sign
 import std.range : retro;
 import std.string; // format
 
 import basics.alleg5;
+import basics.globals; // replay sign
 import game.core;
 import graphic.color;
+import graphic.cutbit; // replay sign
 import graphic.gadget;
+import graphic.internal;
 import graphic.map;
 import graphic.torbit;
 import hardware.display;
@@ -37,6 +42,7 @@ implGameDraw(Game game) { with (game)
     DrawingTarget drata = DrawingTarget(al_get_backbuffer(display));
     with (Zone(profiler, "game draws map to screen"))
         map.drawCamera();
+    game.drawReplaySign();
 }}
 // end with(game), end implGameDraw()
 
@@ -77,4 +83,14 @@ void drawAllLixes(Game game)
         if (otherTribe !is game.tribeLocal)
             drawAllLixesOfTribe(otherTribe);
     drawAllLixesOfTribe(game.tribeLocal);
+}
+
+void drawReplaySign(Game game)
+{
+    if (! game.replaying)
+        return;
+    const(Cutbit) rep = getInternal(fileImageGameReplay);
+    rep.drawToCurrentTarget(0,
+        (rep.yl/5 * (1 + sin(al_get_timer_count(timer) * 0.08f))).to!int
+    );
 }

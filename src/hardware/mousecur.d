@@ -48,5 +48,5 @@ draw()
     assert (mouseCursor, "call hardware.mousecur.initialize() before drawing");
     mouseCursor.x = hardware.mouse.mouseX - mouseCursor.xl/2 + 1;
     mouseCursor.y = hardware.mouse.mouseY - mouseCursor.yl/2 + 1;
-    mouseCursor.drawDirectlyToScreen();
+    mouseCursor.drawToCurrentTarget();
 }

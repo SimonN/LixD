@@ -65,10 +65,10 @@ class Graphic {
  *      Draw to the torbit, according to mirror and rotation.
  *      Can't be a const method because of mutable this.torbit.
  *
- *  void drawDirectlyToScreen() const
+ *  void drawToCurrentTarget() const
  *
- *      Ignore (Torbit ground) and mirr/rotat; and blit immediately to the
- *      screen. This should only be used to draw the mouse cursor.
+ *      Ignore (Torbit ground) and mirr/rotat; and blit immediately.
+ *      Only used for mouse cursor and replay sign.
  */
 
 private:
@@ -216,9 +216,9 @@ draw(Torbit mutableGround) const
 
 
 void
-drawDirectlyToScreen() const
+drawToCurrentTarget() const
 {
-    cutbit.drawDirectlyToScreen(_x, _y, _xf, _yf);
+    cutbit.drawToCurrentTarget(_x, _y, _xf, _yf);
 }
 
 }

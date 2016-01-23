@@ -425,23 +425,19 @@ void draw(
 
 
 void
-drawDirectlyToScreen(in int x, in int y, in int xf = 0, in int yf = 0) const
+drawToCurrentTarget(in int x, in int y, in int xf = 0, in int yf = 0) const
 {
     assert (display);
     if (xf < 0 || xf >= _xfs
      || yf < 0 || yf >= _yfs) return;
-
-    auto drata = DrawingTarget(al_get_backbuffer(display));
-
     // usually, select only the correct frame. If we'd draw off the screen
     // to the left or top, instead do extra cutting by passing > 0 to the
     // latter two args.
     Albit sprite = create_sub_bitmap_for_frame(xf, yf, max(-x, 0), max(-y, 0));
-    scope (exit) al_destroy_bitmap(sprite);
-
+    scope (exit)
+        al_destroy_bitmap(sprite);
     al_draw_bitmap(sprite, max(0, x), max(0, y), 0);
 }
-// end function drawDirectlyToScreen()
 
 }
 // end class
