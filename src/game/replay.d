@@ -195,10 +195,10 @@ void eraseEarlySingleplayerNukes()
 }
 
 void
-deleteOnAndAfterUpdate(in Update upd)
+deleteAfterUpdate(in Update upd)
 {
     assert (upd >= 0);
-    _data = _data[0 .. dataSliceBeforeUpdate(upd).length];
+    _data = _data[0 .. dataSliceBeforeUpdate(Update(upd + 1)).length];
     touch();
 }
 

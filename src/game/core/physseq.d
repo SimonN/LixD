@@ -80,20 +80,6 @@ void putSpawnintChangesIntoReplay(Game game) { }
 
 void putUndispatchedAssignmentsIntoReplay(Game game) { with (game)
 {
-    if (undispatchedAssignments == null)
-        return;
-
-    if (! multiplayer && cs.update <= replay.latestUpdate) {
-        replay.deleteOnAndAfterUpdate(cs.update);
-
-        // not an effect to be saved by the effect manager
-        // DTODO: Maybe delete/play sound already on generating the data, and
-        // still put the data into the replay only now. The benefit is that
-        // the sound plays faster. Also, there may be other events that
-        // snip the replay, not only this.
-        hardware.sound.playLoud(Sound.SCISSORS);
-    }
-
     foreach (data; undispatchedAssignments) {
         replay.add(data);
         // DTODONETWORK
@@ -104,7 +90,6 @@ void putUndispatchedAssignmentsIntoReplay(Game game) { with (game)
     }
     undispatchedAssignments = null;
 }}
-// end void putUndispatchedAssignmentsIntoReplay()
 
 void putNetworkDataIntoReplay(Game game) { }
 
@@ -122,9 +107,6 @@ evaluateReplayData(Game game)
             if (auto master = tribe.getMasterWithNumber(data.player))
                 game.updateOneData(trID, tribe, master, data);
 }
-
-
-
 
 void
 updateOneData(

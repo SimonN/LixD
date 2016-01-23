@@ -12,17 +12,6 @@ import hardware.mousecur;
 import hardware.sound;
 import lix;
 
-package ReplayData
-newReplayDataForNextUpdate(Game game)
-{
-    ReplayData data;
-    data.player = game.masterLocal.number;
-    data.update = game.cs.update + 1;
-    return data;
-}
-
-
-
 package void
 calcActive(Game game) { with (game)
 {
@@ -30,6 +19,8 @@ calcActive(Game game) { with (game)
     game.handleNukeButton();
 
     if (! pan.isMouseHere) {
+        if (mouseClickLeft)
+            game.cancelReplay();
         auto potAss = game.findPotentialAssignee();
         if (potAss.lixxie !is null)
             game.assignToPotentialAssignee(potAss);
@@ -40,9 +31,28 @@ calcActive(Game game) { with (game)
     }
 }}
 
+package ReplayData
+newReplayDataForNextUpdate(Game game)
+{
+    ReplayData data;
+    data.player = game.masterLocal.number;
+    data.update = game.cs.update + 1;
+    return data;
+}
 
+private:
 
-private struct PotentialAssignee {
+void cancelReplay(Game game) { with (game)
+{
+    if (! replaying)
+        // During a multiplayer game, replaying is false, even if there
+        // are future actions by other masters queued. Perfect, don't cancel.
+        return;
+    replay.deleteAfterUpdate(cs.update);
+    playLoud(Sound.SCISSORS);
+}}
+
+struct PotentialAssignee {
     Rebindable!(const(Lixxie)) lixxie;
     int id;
     int priority;
@@ -70,10 +80,7 @@ private struct PotentialAssignee {
     }
 }
 
-
-
-private void
-handleSpawnIntervalButtons(Game game) { with (game)
+void handleSpawnIntervalButtons(Game game) { with (game)
 {
     if (multiplayer)
         // rulings forbid changing the spawn interval in multiplayer
@@ -99,40 +106,33 @@ handleSpawnIntervalButtons(Game game) { with (game)
     +/
 }}
 
-
-
-private void handleNukeButton(Game game) { with (game)
+void handleNukeButton(Game game) { with (game)
 {
     if (! pan.nukeDoubleclicked)
         return;
     pan.nukeSingle.on = true;
     pan.nukeMulti.on  = true;
+    game.cancelReplay();
     auto data = game.newReplayDataForNextUpdate();
     data.action = RepAc.NUKE;
-    replay.add(data);
+    undispatchedAssignments ~= data;
     // DTODONETWORK: Network::send_replay_data(data);
     effect.addSound(Update(cs.update + 1), tribeID(tribeLocal), 0, Sound.NUKE);
 }}
 
-
-
-private bool forceLeft()
+bool forceLeft()
 {
     return   hardware.keyboard.keyHeld(basics.user.keyForceLeft)
         && ! hardware.keyboard.keyHeld(basics.user.keyForceRight);
 }
 
-private bool forceRight()
+bool forceRight()
 {
     return ! hardware.keyboard.keyHeld(basics.user.keyForceLeft)
         &&   hardware.keyboard.keyHeld(basics.user.keyForceRight);
 }
 
-
-
-
-private PotentialAssignee
-findPotentialAssignee(Game game) { with (game)
+PotentialAssignee findPotentialAssignee(Game game) { with (game)
 {
     assert (tribeLocal);
 
@@ -207,10 +207,7 @@ findPotentialAssignee(Game game) { with (game)
 }}
 // end void findPotentialAssignee()
 
-
-
-private PotentialAssignee
-generatePotentialAssignee(
+PotentialAssignee generatePotentialAssignee(
     Game game,
     in Lixxie lixxie,
     in int id,
@@ -234,10 +231,7 @@ generatePotentialAssignee(
     return potAss;
 }
 
-
-
-private void
-comparePotentialWithBestWorst(
+void comparePotentialWithBestWorst(
     in ref PotentialAssignee potAss,
     ref PotentialAssignee best,
     ref PotentialAssignee worst,
@@ -263,10 +257,7 @@ comparePotentialWithBestWorst(
     }
 }
 
-
-
-private void
-assignToPotentialAssignee(
+void assignToPotentialAssignee(
     Game game,
     in ref PotentialAssignee potAss) { with (game)
 {

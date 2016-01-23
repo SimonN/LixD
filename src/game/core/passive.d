@@ -1,7 +1,11 @@
 module game.core.passive;
 
-/* This was gamepl_c.cpp in old Lix.
- * These calculations are performed even while a replay is running
+/* Stuff that needs to be done each calc() of the game, but that is not
+ * about assignments or nukes at all. Even cancelling the replay upon LMB
+ * is not here, it's in calcActive.
+ *
+ * calcPassive (the stuff in here) runs before calcActive (new assignments)
+ * and game.physseq (updating physics with replayed and new assignments).
  */
 
 import basics.alleg5;
