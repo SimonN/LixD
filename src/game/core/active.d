@@ -74,8 +74,8 @@ struct PotentialAssignee {
             : rhs.lixxie is null ? true
             : priority > rhs.priority ? ! priorityInvert
             : priority < rhs.priority ?   priorityInvert
-            : distanceToCursor > rhs.distanceToCursor ? true
-            : distanceToCursor < rhs.distanceToCursor ? false
+            : distanceToCursor < rhs.distanceToCursor ? true
+            : distanceToCursor > rhs.distanceToCursor ? false
             : id < rhs.id;
     }
 }

@@ -1,6 +1,23 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.1.40
+------
+
+2016-01-23
+
+Top-left corner of map shows the floating 'R' while replaying. The FPS are
+shown on the panel right now, that's intended as a temporary solution only.
+
+Lix target info in the panel shows (RCF) for runners/climbers/floaters, and
+displays the number of bricks left for builders and platformers.
+
+Replays cancel on LMB anywhere, and on activating the nuke.
+
+Fix: With lixes returning equal priority, the closest one to the cursor is
+preferred for an assignment. Previous bug: the farthest one was preferred.
+Inverting priority doesn't invert this check, which is correct.
+
 0.1.39
 ------
 
