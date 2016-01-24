@@ -1,6 +1,22 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.0
+-----
+
+2016-01-24
+
+This is a test release, designed to try singleplayer. Don't replace your
+existing installation of Lix with this D/A5 port yet. Keep it separate.
+
+Minim has designed several scaled-up versions of the internal graphics.
+They're visible whenever the game's resolution is at least 1.5 times as big
+as the old 640x480. Many thanks to Minim for this work!
+
+Levels and terrain graphics have been updated from C++ Lix.
+
+I'm cross-compiling to Windows from Linux now. Let me know of any problems.
+
 0.1.40
 ------
 
