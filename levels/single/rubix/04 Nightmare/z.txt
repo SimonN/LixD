@@ -1,0 +1,170 @@
+$BUILT 2014-06-04 10:40:25
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Sand in your eyes
+
+#SIZE_X 640
+#SIZE_Y 850
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 64
+#BACKGROUND_GREEN 96
+#BACKGROUND_BLUE 255
+
+#SECONDS 195
+#INITIAL 50
+#REQUIRED 50
+#SPAWN_INTERVAL 11
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 1
+#JUMPER 1
+#FLOATER 1
+#BLOCKER 1
+#BUILDER 3
+#BASHER 1
+#MINER 3
+#DIGGER 1
+#BATTER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/beach/decor/sun.D: 554 -21
+
+:matt/beach/Hatch.H: 30 2
+
+:matt/beach/goal.G: 462 760
+:geoo/abstract/goal.G: 112 736
+
+:matt/beach/decor/grass04: 228 63
+:matt/beach/decor/grass04: 43 557
+:matt/beach/decor/grass03: 601 623 f
+:matt/beach/decor/grass03: 540 616 f
+:matt/beach/decor/grass11: 485 184 f
+:matt/beach/decor/grass11: 463 174 f
+:matt/beach/decor/grass11: 500 172 f
+:matt/beach/decor/grass11: 453 179 f
+:matt/beach/decor/grass11: 416 181 f
+:matt/beach/decor/grass03: -10 729 f
+:matt/beach/decor/grass03: 2 552
+:matt/beach/decor/grass11: 128 315 rr
+:matt/beach/decor/grass08: 29 255
+:matt/beach/daytime/03: 480 144
+:matt/beach/daytime/06: -80 96 fr
+:matt/beach/daytime/01: 240 112
+:matt/beach/daytime/06: 128 64
+:matt/beach/daytime/01: 188 112
+:matt/beach/daytime/14: -39 -30
+:matt/beach/decor/grass04: 151 69
+:matt/beach/daytime/06: 0 48
+:matt/steel/32x32.S: 0 96
+:matt/steel/32x32.S: 32 96
+:matt/steel/32x32.S: 64 96
+:matt/steel/32x32.S: 96 96
+:matt/steel/32x32.S: 128 96
+:matt/steel/32x32.S: 160 96
+:matt/steel/32x32.S: 192 96
+:matt/steel/32x32.S: 0 64
+:matt/steel/32x32.S: 0 32
+:matt/steel/32x32.S: 0 0
+:matt/steel/32x32.S: 224 96
+:matt/beach/daytime/03: 416 128
+:matt/beach/decor/grass11: 400 181 f
+:matt/beach/daytime/06: 435 87
+:matt/beach/daytime/15: 432 144
+:matt/beach/daytime/01: 448 144
+:matt/steel/32x32.S: 256 96
+:matt/steel/32x32.S: 288 96
+:matt/steel/32x32.S: 320 96
+:matt/beach/daytime/13: 594 341
+:matt/beach/daytime/06: 514 353
+:matt/beach/decor/shovel: 32 120
+:matt/beach/daytime/06: -26 187
+:matt/beach/daytime/06: -62 554 fr
+:matt/beach/decor/grass03: 35 645 f
+:matt/beach/daytime/06: -58 558
+:matt/beach/decor/grass04: 98 572
+:matt/beach/decor/grass04: 180 585
+:matt/beach/daytime/06: 58 576
+:matt/beach/decor/grass08: 158 645
+:matt/beach/daytime/06: 167 598 f
+:matt/beach/daytime/06: 567 813 fr
+:matt/beach/daytime/13: 590 471
+:matt/beach/daytime/06: 489 348 f
+:matt/beach/daytime/06: 618 344 fr
+:matt/beach/daytime/06: 597 821 f
+:matt/beach/daytime/06: 566 837 fr
+:matt/beach/daytime/06: 402 816 f
+:matt/beach/daytime/04: 321 779
+:matt/beach/daytime/06: 255 760
+:matt/beach/daytime/13: 529 837
+:matt/beach/daytime/04: 597 813
+:matt/beach/daytime/03: 220 760
+:matt/beach/decor/umbrella_blue: -22 506
+:matt/beach/daytime/02: -15 562
+:matt/beach/daytime/13: 262 579
+:matt/beach/daytime/03: 500 814
+:matt/beach/daytime/03: 397 123
+:matt/beach/daytime/05: 619 -41
+:matt/beach/daytime/06: 583 535 f
+:matt/beach/daytime/05: 634 249 f
+:matt/beach/daytime/03: 97 268
+:matt/beach/daytime/06: 546 328
+:matt/beach/daytime/01: 594 132
+:matt/beach/daytime/01: 609 130
+:matt/beach/daytime/15: 307 138
+:matt/beach/daytime/03: 180 138
+:matt/beach/daytime/13: 384 78
+:matt/beach/decor/grass04: 467 85
+:matt/beach/daytime/15: 445 92
+:matt/beach/daytime/15: 371 163
+:matt/beach/daytime/15: 385 147
+:matt/beach/daytime/06: 454 353
+:matt/beach/decor/grass03: 283 696 f
+:matt/beach/daytime/13: 246 591
+:matt/beach/daytime/04: 291 565
+:matt/beach/daytime/02: 610 536 rr
+:matt/beach/daytime/15: 455 550
+:matt/beach/daytime/06: 471 516 frr
+:matt/beach/daytime/06: 466 530
+:matt/beach/daytime/06: 434 505 frr
+:matt/beach/decor/grass11: 101 312 rr
+:matt/beach/decor/grass04: 137 211
+:matt/beach/daytime/06: 9 221 rr
+:matt/steel/32x32.S: 576 144
+:matt/steel/32x32.S: 416 144
+:matt/steel/32x32.S: 496 144
+:matt/beach/decor/pail: 590 312
+:matt/beach/decor/grass11: -2 160
+:matt/beach/decor/grass04: 280 597
+:matt/beach/decor/grass04: 273 752
+:matt/beach/decor/grass04: 260 756
+:matt/beach/decor/grass04: 419 787
+:matt/beach/decor/grass03: 220 632 frr
+:matt/beach/decor/grass06: 505 97
+:matt/beach/decor/grass06: 245 129
+:matt/beach/decor/grass04: 501 389
+:matt/beach/decor/grass10: 148 250
+:matt/beach/decor/grass10: 311 608
+:matt/beach/decor/grass06: 519 569
+:matt/beach/decor/grass06: 595 520
+:matt/beach/decor/grass11: 335 770
+:matt/beach/decor/grass11: 8 574
+:matt/beach/decor/grass10: 575 360
+:matt/beach/decor/grass02: 395 805 frr
+:matt/beach/decor/grass07: 527 522
+:matt/beach/decor/grass07: 120 616
+:matt/beach/decor/grass07: 62 219
+:matt/beach/decor/grass08: 529 358
+:matt/beach/decor/grass06: 69 52
+:geoo/steel/dark_32x16o.S: 112 736
+:geoo/steel/dark_32x16o.S: 112 784
+:geoo/steel/dark_32x16o.S: 96 752 rrr
+:geoo/steel/dark_32x16o.S: 144 752 rrr
+:geoo/steel/dark_16x16o.S: 96 736
+:geoo/steel/dark_16x16o.S: 144 736
+:geoo/steel/dark_16x16o.S: 96 784
+:geoo/steel/dark_16x16o.S: 144 784

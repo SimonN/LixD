@@ -1,0 +1,176 @@
+$BUILT 2015-06-22 13:42:20
+$AUTHOR Pieuw
+$GERMAN 
+$ENGLISH Erbalunga
+
+#SIZE_X 1312
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X -16
+#START_Y -20
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 30
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 0
+#FLOATER 0
+#EXPLODER 0
+#BLOCKER 0
+#BUILDER 2
+#BASHER 3
+#MINER 0
+#DIGGER 3
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/earth/Hatch.H: 752 0
+:matt/earth/Hatch.H: 192 0
+
+:matt/earth/Goal.G: 1064 304
+
+:matt/water.W: 340 80
+:matt/water.W: 372 80
+:matt/water.W: 404 80
+:matt/water.W: 436 80
+:matt/water.W: 1248 368
+:matt/water.W: 1280 368
+:matt/water.W: 404 96
+:matt/water.W: 372 96
+:matt/water.W: 720 144
+:matt/water.W: 752 144
+:matt/water.W: 784 144
+:matt/water.W: 816 144
+:matt/water.W: 720 160
+:matt/water.W: 736 160
+:matt/water.W: 768 160
+:matt/water.W: 800 160
+:matt/water.W: 784 176
+:matt/water.W: 752 176
+:matt/water.W: 720 176
+
+:matt/earth/16: 378 264 rr
+:matt/earth/00: 254 220
+:matt/earth/20: 998 368
+:matt/earth/19: 970 272 r
+:matt/earth/00: 978 248
+:matt/earth/19: -6 260 r
+:matt/earth/15: 752 312
+:matt/earth/00: 592 80
+:matt/earth/10: 418 80
+:matt/earth/10: 480 80
+:geoo/steel/64x64o.S: 0 96
+:geoo/steel/64x64o.S: 64 96
+:matt/earth/10: 128 80
+:matt/earth/10: 184 80
+:matt/earth/10: 248 96
+:matt/earth/10: 216 152
+:matt/earth/13: 252 166
+:matt/earth/10: 88 160
+:matt/earth/10: 320 152
+:matt/earth/10: 56 88
+:geoo/steel/64x64o.S: 0 32
+:geoo/steel/64x64o.S: 0 -32
+:matt/earth/10: 158 240
+:matt/earth/10: 264 240
+:matt/earth/17: 48 136
+:matt/earth/13: 114 176
+:matt/earth/10: 44 212
+:matt/earth/17: 112 254 rr
+:matt/earth/01: 306 86
+:matt/earth/04: 354 114
+:matt/earth/04: 392 152
+:matt/earth/04: 396 104
+:matt/earth/10: 416 144
+:matt/earth/10: 504 144
+:matt/earth/10: 376 208
+:matt/earth/10: 480 208
+:matt/earth/00: 608 80
+:matt/earth/04: 592 144
+:matt/earth/16: 120 288
+:matt/earth/09: 188 76
+:matt/earth/09: 254 76
+:matt/earth/09: 122 84
+:matt/earth/09: 220 74
+:matt/earth/09: 154 78
+:matt/earth/09: 294 84
+:matt/earth/19: 704 95 frr
+:geoo/steel/64x64o.S: 840 96
+:matt/earth/18: 838 148
+:geoo/steel/64x64o.S: 904 96
+:geoo/steel/64x64o.S: 968 96
+:geoo/steel/64x64o.S: 1032 96
+:geoo/steel/64x64o.S: 1160 96
+:geoo/steel/64x64o.S: 1160 32
+:geoo/steel/64x64o.S: 1160 -32
+:matt/earth/01: 584 80
+:matt/earth/00: 656 88
+:matt/earth/00: 552 264
+:matt/earth/04: 592 112 fr
+:matt/earth/10: 584 200
+:matt/earth/10: 576 264 rr
+:matt/earth/10: 416 240 rr
+:matt/earth/14: 808 288
+:matt/earth/11: 744 328
+:matt/earth/11: 760 328
+:matt/earth/11: 792 328
+:matt/earth/11: 752 360
+:matt/earth/11: 768 360
+:matt/earth/11: 800 360
+:matt/earth/11: 696 360
+:matt/earth/11: 712 360
+:matt/earth/11: 744 360
+:matt/earth/01: 734 256 r
+:matt/earth/12: 520 224
+:matt/earth/12: 176 264
+:matt/earth/12: 600 136
+:matt/earth/09: 600 74
+:matt/earth/18: 698 94
+:matt/earth/09: 674 86
+:matt/earth/09: 634 78
+:matt/earth/09: 552 76
+:matt/earth/09: 512 76
+:matt/earth/09: 468 78
+:matt/earth/28: 530 254
+:matt/earth/27: 536 84
+:matt/earth/27: 264 84
+:matt/earth/27: 144 88
+:matt/earth/00: 656 112 rrr
+:matt/earth/28: 478 84
+:matt/earth/28: 862 96
+:matt/earth/00: 1160 96
+:matt/earth/06: 1168 88
+:matt/earth/00: 1128 -24
+:matt/earth/27: 996 96
+:matt/earth/25: 584 332
+:matt/earth/26: 330 340
+:matt/earth/24: 256 334
+:matt/earth/14: 1158 328
+:matt/earth/20: 1094 368
+:matt/earth/16: 1166 296
+:matt/earth/00: 938 240
+:matt/earth/06: 938 236
+:matt/earth/09: 966 238
+:matt/earth/29: 40 32
+:matt/earth/24: 80 312
+:matt/earth/09: 992 244
+:matt/earth/08: 1196 300 f
+:matt/earth/08: 1202 292 f
+:matt/earth/01: 800 166 f
+:matt/earth/29: 718 146
+:matt/earth/23: 680 368
+:geoo/steel/64x64o.S: 1096 96
+:matt/earth/18: 1072 136
+:matt/earth/15: 394 168
+:matt/earth/03: 688 192
+:matt/earth/00: 736 208 rrr
+:matt/earth/29: 770 192
+:matt/earth/18: 784 208

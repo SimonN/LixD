@@ -1,0 +1,90 @@
+$BUILT                                             2012-03-13 01:59:50
+$AUTHOR                                                   Insane Steve
+$GERMAN                                                               
+$ENGLISH                                   I TOLD YOU ABOUT STAIRS BRO
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                             0
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                             0
+#INITIAL                                                            50
+#REQUIRED                                                           50
+#SPAWN_INTERVAL                                                     40
+#SPAWN_INTERVAL_FAST                                                 4
+
+#CLIMBER                                                             1
+#FLOATER                                                             0
+#EXPLODER                                                            0
+#BLOCKER                                                             0
+#BUILDER                                                             4
+#BASHER                                                              2
+#MINER                                                               2
+#DIGGER                                                              0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:matt/bricks/Hatch.H:                         24       216
+
+:matt/marble/Goal.G:                         488        32
+
+:geoo/construction/sawblade.F:                    266        76
+:geoo/construction/sawblade.F:                    290        76
+:geoo/construction/sawblade.F:                    290       104
+:geoo/construction/sawblade.F:                    238        76
+
+:matt/bricks/17:                              64       304
+:matt/bricks/17:                             120       248
+:matt/bricks/03:                             224       336
+:matt/bricks/03:                             288       336
+:matt/bricks/17:                             176       192
+:matt/bricks/17:                             344       192
+:matt/bricks/17:                             328       168
+:matt/bricks/17:                             384       112
+:matt/bricks/17:                             392       144
+:matt/bricks/03:                             512        80
+:matt/bricks/12:                             544       144
+:matt/bricks/12:                             608       144
+:matt/bricks/12:                             608       176
+:matt/bricks/12:                             608       208
+:matt/bricks/12:                             608       240
+:matt/bricks/12:                             608       272
+:matt/bricks/12:                             608       304
+:matt/bricks/12:                             608       336
+:matt/bricks/12:                             608       368
+:matt/bricks/10:                             576       304
+:matt/bricks/03:                             352       336
+:matt/bricks/03:                             416       336
+:matt/bricks/03:                             480       336
+:matt/bricks/03:                             544       336
+:matt/bricks/12:                             544       176
+:matt/bricks/12:                             544       208
+:matt/bricks/12:                             544       240
+:matt/bricks/12:                             544       272
+:matt/bricks/01:                             464       144
+:matt/bricks/01:                             496       144
+:matt/bricks/01:                             528       144
+:matt/bricks/01:                             432       144
+:matt/bricks/17:                             362       280
+:matt/bricks/17:                             418       224
+:matt/bricks/17:                             474       168
+:matt/bricks/03:                             160       336
+:matt/bricks/03:                              96       336
+:matt/bricks/08:                             576       272
+:matt/bricks/17:                             232       136
+:matt/bricks/17:                             328       208
+:matt/bricks/02:                             448       112
+:matt/bricks/10:                             448        80
+:matt/bricks/12:                             480        80
+:matt/bricks/03:                              32       336
+:matt/bricks/03:                             -32       336
+:matt/bricks/12:                               0       272
+:matt/bricks/11:                               0       304

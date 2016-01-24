@@ -1,0 +1,94 @@
+$BUILT 2012-08-28 16:17:54
+$AUTHOR mobius
+$GERMAN 
+$ENGLISH That Pesky Gap
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 30
+#REQUIRED 29
+#SPAWN_INTERVAL 90
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#WALKER 1
+#BATTER 1
+#EXPLODER2 1
+#BLOCKER 1
+#BUILDER 1
+#BASHER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/marble/Hatch.H: 88 176
+
+:geoo/abstract/goal.G: 472 240
+
+:simon/crystal.W: -8 352
+:simon/crystal.W: 40 352
+:simon/crystal.W: 88 352
+:simon/crystal.W: 136 352
+:simon/crystal.W: 328 352
+:simon/crystal.W: 280 352
+:simon/crystal.W: 232 352
+:simon/crystal.W: 184 352
+:simon/crystal.W: 520 352
+:simon/crystal.W: 472 352
+:simon/crystal.W: 424 352
+:simon/crystal.W: 376 352
+:simon/crystal.W: 568 352
+:simon/crystal.W: 616 352
+
+:proxima/tile/cyan3: 104 304
+:proxima/tile/cyan2s: 48 288
+:proxima/tile/cyan2s: 80 288
+:proxima/tile/cyan2s: 112 288
+:proxima/tile/cyan2s: 144 288
+:proxima/tile/cyan2s: 176 288
+:proxima/tile/cyan2s: 208 288
+:proxima/tile/cyan2s: 240 288
+:proxima/tile/cyan2s: 272 288
+:proxima/tile/cyan3a: 104 336
+:proxima/tile/cyan3a: 104 368
+:proxima/tile/cyan3: 280 304
+:proxima/tile/cyan3a: 280 336
+:proxima/tile/cyan3a: 280 368
+:proxima/tile/cyan2s: 304 288
+:proxima/tile/cyan2s: 400 288
+:proxima/tile/cyan2s: 432 288
+:proxima/tile/cyan2s: 464 288
+:proxima/tile/cyan3: 488 304
+:proxima/tile/cyan3a: 488 336
+:proxima/tile/cyan2s: 496 288
+:proxima/tile/cyan2s: 528 288
+:matt/goldmine/02: 88 24
+:matt/goldmine/08: -32 -32 rrr
+:matt/goldmine/07: 32 -32
+:matt/goldmine/07: 128 8
+:matt/goldmine/07: 152 -40
+:matt/goldmine/02: 160 24
+:matt/goldmine/07: 488 -56
+:matt/goldmine/02: 392 8
+:matt/goldmine/07: 280 -40
+:matt/goldmine/02: 328 0
+:matt/goldmine/05: 440 -16
+:matt/goldmine/08: 448 -8 rr
+:matt/goldmine/08: 496 -24 rr
+:matt/goldmine/02: 144 -32
+:matt/goldmine/02: 176 -48
+:proxima/tile/cyan1a: 48 272
+:proxima/tile/cyan1a: 48 256
+:proxima/tile/cyan1a: 48 240
+:proxima/tile/cyan1a: 48 224
+:proxima/tile/cyan1a: 48 208
+:proxima/tile/cyan3a: 488 368

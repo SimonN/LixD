@@ -1,0 +1,72 @@
+$BUILT 2012-05-20 19:32:36
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH You'll Get Over It
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 8
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 10
+#FLOATER 0
+#EXPLODER 10
+#BLOCKER 10
+#BUILDER 5
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/marble/Hatch.H: 56 280
+
+:matt/marble/Goal.G: 512 320
+
+:matt/marble/05a: 0 368
+:matt/marble/05a: 0 336
+:matt/marble/05a: 32 368
+:matt/marble/05a: 64 368
+:matt/marble/05a: 96 368
+:matt/marble/05a: 128 368
+:matt/marble/05a: 160 368
+:matt/marble/05a: 192 368
+:matt/marble/05a: 224 368
+:matt/marble/05b: 608 368
+:matt/marble/05b: 608 336
+:matt/marble/05b: 576 368
+:matt/marble/05b: 544 368
+:matt/marble/05b: 512 368
+:matt/marble/05b: 480 368
+:matt/marble/05b: 448 368
+:matt/marble/05b: 416 368
+:matt/marble/05b: 384 368
+:matt/marble/05a: 256 368
+:matt/marble/05b: 352 368
+:geoo/steel/64x64.S: 288 336
+:geoo/steel/64x64.S: 288 272
+:geoo/steel/64x64.S: 288 208
+:geoo/steel/64x64.S: 288 144
+:matt/marble/06b: 256 304
+:matt/marble/06b: 256 240
+:matt/marble/06b: 256 176
+:matt/marble/06a: 352 304
+:matt/marble/06a: 352 240
+:matt/marble/06a: 352 176
+:matt/marble/05b: 256 144
+:matt/marble/05a: 352 144
+:matt/marble/02a: 384 144
+:matt/marble/02b: 240 144
+:matt/marble/07a: 0 288
+:matt/marble/07b: 592 288

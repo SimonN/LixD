@@ -1,0 +1,119 @@
+$BUILT                                             2012-02-20 18:43:58
+$AUTHOR                                                       Pieuw/mobius
+$GERMAN
+$ENGLISH                                                The Last Laugh
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                           380
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                           120
+#INITIAL                                                             4
+#REQUIRED                                                            3
+#SPAWN_INTERVAL                                                     20
+
+#CLIMBER                                                             4
+#FLOATER                                                             4
+#JUMPER                                                              4
+#EXPLODER                                                            2
+#BUILDER                                                             4
+#BASHER                                                              2
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:matt/bricks/Hatch.H:                        112        32
+
+:matt/bricks/Goal.G:                          16       240
+:matt/bricks/Goal.G:                         496       336
+
+:simon/water.W:                                   512        64
+:simon/water.W:                                   560        64
+:simon/water.W:                                   168       376
+:simon/water.W:                                   216       376
+:simon/water.W:                                    72       376
+:simon/water.W:                                   120       376
+:simon/water.W:                                   -24       376
+:simon/water.W:                                    24       376
+
+:matt/bricks/08:                              64       104
+:matt/bricks/01:                             416         0
+:matt/bricks/01:                             328       384
+:matt/bricks/01:                             296       384
+:matt/bricks/01:                             264       384
+:geoo/steel/dark_64x64o.S:                        344       320
+:geoo/steel/dark_64x64o.S:                        344       384
+:geoo/steel/dark_64x64o.S:                        344       256
+:matt/bricks/02:                             344       224
+:matt/bricks/06:                             408       224
+:matt/bricks/18:                             280       224
+:matt/bricks/20:                             272       152
+:matt/bricks/18:                             280       168
+:matt/bricks/18:                             280       200
+:matt/bricks/20:                             176       152
+:matt/bricks/18:                             184       168
+:matt/bricks/18:                             184       200
+:matt/bricks/01:                             496       384
+:matt/bricks/01:                             528       384
+:matt/bricks/12:                             608        16
+:matt/bricks/12:                             608       112
+:matt/bricks/12:                             608       -16
+:matt/bricks/12:                             608        80
+:matt/bricks/12:                             608        48
+:matt/bricks/12:                             512       112
+:matt/bricks/12:                             544       112
+:matt/bricks/12:                             576       112
+:matt/bricks/12:                             480        16
+:matt/bricks/12:                             480        80
+:matt/bricks/12:                             480        48
+:matt/bricks/12:                             448       -16
+:matt/bricks/12:                             480       112
+:matt/bricks/01:                             160         0
+:matt/bricks/01:                             192         0
+:matt/bricks/01:                             224         0
+:matt/bricks/01:                             256         0
+:matt/bricks/01:                             288         0
+:matt/bricks/01:                             320         0
+:matt/bricks/01:                              72         0
+:matt/bricks/01:                              96         0
+:matt/bricks/01:                             128         0
+:matt/bricks/01:                             352         0
+:matt/bricks/01:                             384         0
+:matt/bricks/20:                              80       152
+:matt/bricks/18:                              88       168
+:matt/bricks/01:                             480         0
+:matt/bricks/01:                             512         0
+:matt/bricks/01:                             544         0
+:matt/bricks/01:                             576         0
+:geoo/steel/32x16o.S:                             208       136
+:geoo/steel/32x16o.S:                             176       136
+:geoo/steel/32x16o.S:                             144       136
+:geoo/steel/32x16o.S:                             112       136
+:geoo/steel/32x16o.S:                              80       136
+:geoo/steel/32x16o.S:                              48       136
+:geoo/steel/32x16o.S:                             240       136
+:geoo/steel/32x16o.S:                             272       136
+:geoo/steel/32x16o.S:                             304       136
+:geoo/steel/16x32o.S:                              48       104
+:geoo/steel/16x32o.S:                              48        72
+:geoo/steel/16x32o.S:                              48        40
+:geoo/steel/16x32o.S:                              48         8
+:matt/bricks/11:                              64        16
+:matt/bricks/01:                              64         0
+:geoo/steel/16x32o.S:                              48       -24
+:matt/bricks/01:                             560       384
+:matt/bricks/01:                             592       384
+:geoo/steel/dark_64x64o.S:                        560       256
+:geoo/steel/dark_64x64o.S:                        496       256
+:geoo/steel/dark_64x64o.S:                        560       320
+:matt/bricks/06:                              48       288
+:matt/bricks/05:                             -16       288

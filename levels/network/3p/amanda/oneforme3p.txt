@@ -1,0 +1,215 @@
+$BUILT 2014-07-04 23:02:25
+$AUTHOR Amanda
+$GERMAN Why is Lix set for German!?
+$ENGLISH One For Me, One For You (3p)
+
+#SIZE_X 672
+#SIZE_Y 440
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 40
+#INITIAL 220
+#REQUIRED 20
+#SPAWN_INTERVAL 6
+#SPAWN_INTERVAL_FAST 4
+
+#BASHER 5
+#MINER -1
+#DIGGER -1
+#BATTER -1
+#BLOCKER 4
+#PLATFORMER 24
+#BUILDER 2
+#CUBER 1
+#WALKER 60
+#JUMPER 20
+#CLIMBER 0
+#FLOATER 2
+
+:matt/marble/Hatch.H: 616 8
+:matt/marble/Hatch.H: 168 8
+:matt/marble/Hatch.H: 392 8
+
+:matt/underworld/Goal.G: 352 360
+:matt/underworld/Goal.G: 576 360
+:matt/underworld/Goal.G: 128 360
+
+:amanda/forest/frog.T: 616 32
+:amanda/forest/frog.T: 616 232
+:amanda/forest/frog_catch.T: 88 232
+:amanda/forest/frog_happy.T: 56 296
+:amanda/forest/frog.T: 168 32
+:amanda/forest/frog.T: 168 232
+:amanda/forest/frog_catch.T: 312 232
+:amanda/forest/frog_happy.T: 280 296
+:amanda/forest/frog.T: 392 32
+:amanda/forest/frog.T: 392 232
+:amanda/forest/frog_catch.T: 536 232
+:amanda/forest/frog_happy.T: 504 296
+
+:matt/marble/05b: 608 112
+:geoo/steel/dark_32x32o.S: 608 80
+:geoo/steel/dark_32x32o.S: 656 80
+:matt/marble/05b: 656 112
+:matt/marble/05b: 632 144
+:matt/marble/05d: 632 176
+:geoo/steel/dark_32x32o.S: 664 176
+:geoo/steel/dark_32x32o.S: 24 176
+:geoo/steel/dark_32x32o.S: 56 176
+:geoo/steel/dark_32x32o.S: 600 176
+:geoo/steel/dark_64x32o.S: 616 280
+:geoo/steel/dark_64x32o.S: 8 280
+:geoo/steel/32x16o.S: 650 208
+:geoo/steel/32x16o.S: 614 208
+:matt/marble/05c: 72 280
+:geoo/steel/32x32o.S: 104 280
+:geoo/steel/32x32o.S: 88 176
+:geoo/steel/32x32o.S: 120 176
+:matt/marble/03d: 72 144
+:matt/marble/03d: 104 144
+:matt/marble/03d: 104 112
+:matt/marble/03d: 72 112
+:matt/marble/03d: 72 80
+:matt/marble/03d: 104 80
+:matt/marble/03d: 72 48
+:matt/marble/03d: 104 48
+:matt/marble/03d: 72 16
+:matt/marble/03d: 104 16
+:geoo/steel/32x16o.S: 608 0
+:geoo/steel/32x16o.S: 640 0
+:geoo/steel/32x16o.S: 0 0
+:geoo/steel/32x16o.S: 32 0
+:geoo/steel/32x16o.S: 64 0
+:geoo/steel/32x16o.S: 96 0
+:geoo/steel/32x16o.S: 128 0
+:geoo/steel/dark_32x16o.S: 72 424
+:geoo/steel/dark_32x16o.S: 104 424
+:geoo/steel/dark_32x16o.S: 136 424
+:geoo/steel/dark_32x16o.S: 616 424
+:geoo/steel/dark_32x16o.S: 648 424
+:geoo/steel/dark_32x16o.S: 8 424
+:geoo/steel/dark_32x16o.S: 40 424
+:matt/beach/decor/palmtree: 42 331
+:geoo/steel/dark_32x32o.S: 656 312
+:geoo/steel/dark_32x32o.S: 656 344
+:geoo/steel/dark_32x32o.S: 656 392
+:geoo/steel/dark_32x16o.S: 656 376
+:matt/marble/05b: 160 112
+:geoo/steel/dark_32x32o.S: 160 80
+:geoo/steel/dark_32x32o.S: 208 80
+:matt/marble/05b: 208 112
+:matt/marble/05b: 184 144
+:geoo/steel/dark_32x32o.S: 216 176
+:geoo/steel/dark_32x32o.S: 248 176
+:geoo/steel/dark_32x32o.S: 280 176
+:geoo/steel/dark_32x32o.S: 152 176
+:geoo/steel/dark_64x32o.S: 168 280
+:geoo/steel/dark_64x32o.S: 232 280
+:geoo/steel/32x16o.S: 202 208
+:geoo/steel/32x16o.S: 166 208
+:matt/marble/05c: 296 280
+:geoo/steel/32x32o.S: 328 280
+:geoo/steel/32x32o.S: 312 176
+:geoo/steel/32x32o.S: 344 176
+:matt/marble/03d: 296 144
+:matt/marble/03d: 328 144
+:matt/marble/03d: 328 112
+:matt/marble/03d: 296 112
+:matt/marble/03d: 296 80
+:matt/marble/03d: 328 80
+:matt/marble/03d: 296 48
+:matt/marble/03d: 328 48
+:matt/marble/03d: 296 16
+:matt/marble/03d: 328 16
+:geoo/steel/32x16o.S: 160 0
+:geoo/steel/32x16o.S: 192 0
+:geoo/steel/32x16o.S: 224 0
+:geoo/steel/32x16o.S: 256 0
+:geoo/steel/32x16o.S: 288 0
+:geoo/steel/32x16o.S: 320 0
+:geoo/steel/32x16o.S: 352 0
+:geoo/steel/32x32o.S: 136 280
+:geoo/steel/dark_32x16o.S: 296 424
+:geoo/steel/dark_32x16o.S: 328 424
+:geoo/steel/dark_32x16o.S: 360 424
+:geoo/steel/dark_32x16o.S: 168 424
+:geoo/steel/dark_32x16o.S: 200 424
+:geoo/steel/dark_32x16o.S: 232 424
+:geoo/steel/dark_32x16o.S: 264 424
+:matt/beach/decor/palmtree: 266 331
+:geoo/steel/dark_32x32o.S: 208 312
+:geoo/steel/dark_32x32o.S: 208 344
+:geoo/steel/dark_32x32o.S: 208 392
+:geoo/steel/dark_32x16o.S: 208 376
+:matt/marble/05b: 384 112
+:geoo/steel/dark_32x32o.S: 384 80
+:geoo/steel/dark_32x32o.S: 432 80
+:matt/marble/05b: 432 112
+:matt/marble/05b: 408 144
+:geoo/steel/dark_32x32o.S: 440 176
+:geoo/steel/dark_32x32o.S: 472 176
+:geoo/steel/dark_32x32o.S: 504 176
+:geoo/steel/dark_32x32o.S: 376 176
+:geoo/steel/dark_64x32o.S: 392 280
+:geoo/steel/dark_64x32o.S: 456 280
+:geoo/steel/32x16o.S: 426 208
+:geoo/steel/32x16o.S: 390 208
+:matt/marble/05c: 520 280
+:geoo/steel/32x32o.S: 552 280
+:geoo/steel/32x32o.S: 536 176
+:geoo/steel/32x32o.S: 568 176
+:matt/marble/03d: 520 144
+:matt/marble/03d: 552 144
+:matt/marble/03d: 552 112
+:matt/marble/03d: 520 112
+:matt/marble/03d: 520 80
+:matt/marble/03d: 552 80
+:matt/marble/03d: 520 48
+:matt/marble/03d: 552 48
+:matt/marble/03d: 520 16
+:matt/marble/03d: 552 16
+:geoo/steel/32x16o.S: 384 0
+:geoo/steel/32x16o.S: 416 0
+:geoo/steel/32x16o.S: 448 0
+:geoo/steel/32x16o.S: 480 0
+:geoo/steel/32x16o.S: 512 0
+:geoo/steel/32x16o.S: 544 0
+:geoo/steel/32x16o.S: 576 0
+:geoo/steel/32x32o.S: 360 280
+:geoo/steel/dark_32x16o.S: 520 424
+:geoo/steel/dark_32x16o.S: 552 424
+:geoo/steel/dark_32x16o.S: 584 424
+:geoo/steel/dark_32x16o.S: 392 424
+:geoo/steel/dark_32x16o.S: 424 424
+:geoo/steel/dark_32x16o.S: 456 424
+:geoo/steel/dark_32x16o.S: 488 424
+:matt/beach/decor/palmtree: 490 331
+:geoo/steel/dark_32x32o.S: 432 312
+:geoo/steel/dark_32x32o.S: 432 344
+:geoo/steel/dark_32x32o.S: 432 392
+:geoo/steel/dark_32x16o.S: 432 376
+:matt/marble/05: 408 176
+:matt/marble/05e: 184 176
+:geoo/steel/16x32o.S: 136 16
+:geoo/steel/16x32o.S: 136 48
+:geoo/steel/16x32o.S: 136 80
+:geoo/steel/16x32o.S: 136 112
+:geoo/steel/16x32o.S: 136 144
+:geoo/steel/16x32o.S: 360 16
+:geoo/steel/16x32o.S: 360 48
+:geoo/steel/16x32o.S: 360 80
+:geoo/steel/16x32o.S: 360 112
+:geoo/steel/16x32o.S: 360 144
+:geoo/steel/16x32o.S: 584 16
+:geoo/steel/16x32o.S: 584 48
+:geoo/steel/16x32o.S: 584 80
+:geoo/steel/16x32o.S: 584 112
+:geoo/steel/16x32o.S: 584 144
+:geoo/steel/32x32o.S: 584 280
+:geoo/nopales/nopal_09: 530 315 d
+:geoo/nopales/nopal_09: 82 315 d
+:geoo/nopales/nopal_09: 306 315 d

@@ -1,0 +1,168 @@
+$BUILT                                             2012-02-04 22:31:18
+$AUTHOR                                                     Nortaneous
+$GERMAN                                                               
+$ENGLISH                                                      Lix Lata
+
+#SIZE_X                                                            784
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                            48
+#START_Y                                                           -56
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                             0
+#INITIAL                                                            80
+#REQUIRED                                                           60
+#SPAWN_INTERVAL                                                     40
+
+#CLIMBER                                                            10
+#FLOATER                                                            10
+#EXPLODER                                                           10
+#BLOCKER                                                            10
+#BUILDER                                                            20
+#BASHER                                                             10
+#MINER                                                              10
+#DIGGER                                                             10
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:geoo/construction/Hatch.H:                       336        16
+:geoo/construction/Hatch.H:                       424        16
+:geoo/construction/Hatch.H:                       512        16
+
+:matt/goldmine/Goal.G:                       32        86
+
+:geoo/construction/squisher.T:                    656       156
+
+:matt/water.W:                                    384       252
+:matt/water.W:                                    416       252
+:matt/water.W:                                    448       252
+:matt/water.W:                                    480       252
+:geoo/construction/sawblade.F:                    272        74
+:matt/water.W:                                    384       368
+:matt/water.W:                                    416       368
+:matt/water.W:                                    452       368
+:matt/water.W:                                    484       368
+:matt/water.W:                                     80       368
+:matt/water.W:                                    112       368
+:matt/water.W:                                    144       368
+:matt/water.W:                                    176       368
+:matt/water.W:                                    -16       368
+:matt/water.W:                                     16       368
+:matt/water.W:                                     48       368
+:matt/water.W:                                    752       368
+
+:matt/goldmine/planksupport:               176       152     rrr
+:matt/goldmine/plank:                       656        60
+:matt/goldmine/planksupport2:             290        92
+:matt/goldmine/plank:                       530        60
+:matt/goldmine/crate64:                     320        92
+:matt/goldmine/crate64:                     320       156
+:matt/goldmine/crate64:                     320       220
+:matt/goldmine/plank:                       320       284
+:matt/goldmine/plank:                       448       284
+:matt/steel/48x48.S:                              520       228
+:matt/goldmine/crate64:                     512       220
+:matt/goldmine/crate32:                     520       228     d
+:matt/goldmine/crate32:                     536       228     d
+:matt/goldmine/crate32:                     520       244     d
+:matt/goldmine/crate32:                     536       244     d
+:geoo/construction/pillar_32:                     576       220     r
+:geoo/construction/pillar_32:                     608       220     r
+:matt/goldmine/crate64:                     496        60     d
+:geoo/construction/pillar_bottom:                 672       220     fr
+:geoo/construction/pillar_32:                     640       220     r
+:matt/goldmine/crate64:                     688        36     d
+:matt/goldmine/crate32:                     560        32
+:matt/goldmine/crate32:                     656        32
+:matt/goldmine/crate32:                     592        32
+:matt/goldmine/crate32:                     624        32
+:matt/goldmine/crate16:                     610        16
+:matt/goldmine/crate16:                     636        16
+:matt/goldmine/crate16:                     656        16
+:matt/goldmine/crate16:                     672        16
+:matt/goldmine/crate16:                     592        16
+:matt/goldmine/crate16:                     570        16
+:matt/goldmine/crate16:                     602         0
+:matt/goldmine/crate16:                     644         0
+:matt/goldmine/crate16:                     682         0
+:geoo/construction/pillar_32:                     544       368     r
+:geoo/construction/pillar_32:                     576       368     r
+:geoo/construction/pillar_32:                     608       368     r
+:geoo/construction/pillar_32:                     512       368     r
+:matt/goldmine/planksupport2:             626        64
+:matt/goldmine/plank:                       688        60
+:matt/goldmine/planksupport2:             654        64
+:geoo/construction/pillar_32:                     656        80
+:geoo/construction/pillar_top:                    656        64
+:matt/marble/00c:                            688        68     d
+:matt/marble/00c:                            648        68     d
+:matt/goldmine/crate32:                     688        32
+:matt/goldmine/crate32:                     720        32
+:matt/goldmine/crate16:                     690        16
+:matt/goldmine/crate16:                     738        16
+:matt/goldmine/crate16:                     726         0
+:matt/goldmine/crate32:                     752        32
+:matt/goldmine/crate16:                     718        16
+:geoo/construction/pillar_32:                     336       368     r
+:matt/goldmine/planksupport:               384       284
+:geoo/construction/pillar_bottom:                 380       368     fr
+:geoo/construction/pillar_top:                    500       368     fr
+:geoo/construction/pillar_bottom:                 736       368     fr
+:geoo/construction/pillar_32:                     704       368     r
+:geoo/construction/pillar_32:                     672       368     r
+:geoo/construction/pillar_32:                     640       368     r
+:geoo/construction/pillar_32:                     304       368     r
+:geoo/construction/pillar_top:                    208       368     fr
+:geoo/construction/pillar_32:                     288       368     r
+:geoo/construction/wall/big_diag_td:              272       304
+:geoo/construction/wall/big_diag_td:              240       272
+:matt/goldmine/crate32:                     272       336
+:matt/goldmine/crate32:                     240       304
+:geoo/construction/wall/big_diag_td:              304       336
+:geoo/construction/wall/big_square:               240       336
+:matt/goldmine/crate32:                     208       336
+:geoo/construction/wall/big_square:               208       304
+:matt/goldmine/crate32:                     208       272
+:geoo/construction/pillar_32:                     256       368     r
+:geoo/construction/pillar_32:                     224       368     r
+:matt/goldmine/crate64:                     240       200     d
+:matt/goldmine/crate64:                     144       270     d
+:matt/goldmine/crate16:                      40        77
+:matt/goldmine/crate16:                      56        77
+:matt/goldmine/crate16:                      72        77
+:matt/goldmine/crate16:                      51        62
+:matt/goldmine/planksupport:                 0       134
+:matt/goldmine/crate16:                     664         0
+:matt/goldmine/explosivecrate:               32       240
+:matt/goldmine/crate64:                      32       304
+:geoo/construction/pillar_32:                      48       368     r
+:geoo/construction/pillar_bottom:                  80       368     fr
+:geoo/construction/pillar_32:                      16       368     r
+:geoo/construction/pillar_top:                      0       368     fr
+:matt/goldmine/crate32:                       0       336
+:matt/goldmine/crate32:                       0       304
+:matt/goldmine/crate32:                       0       272
+:matt/goldmine/crate16:                      76       224
+:matt/goldmine/crate16:                      40       224
+:matt/goldmine/crate16:                      44       208
+:matt/goldmine/crate16:                      16       256
+:matt/goldmine/crate16:                       0       256
+:matt/goldmine/crate16:                      10       240
+:matt/goldmine/crate16:                     766        16
+:geoo/construction/pillar_32:                     352       368     r
+:geoo/construction/pillar_32:                     656       110
+:geoo/construction/pillar_32:                     656       124
+:matt/steel/48x48.S:                              520       228
+:matt/steel/48x48.S:                              184       216
+:matt/goldmine/crate64:                     176       208
+:matt/goldmine/crate32:                     184       216     d
+:matt/goldmine/crate32:                     200       216     d
+:matt/goldmine/crate32:                     184       232     d
+:matt/goldmine/crate32:                     200       232     d
+:matt/steel/48x48.S:                              184       216

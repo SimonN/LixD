@@ -1,0 +1,113 @@
+$BUILT 2014-02-28 15:30:23
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Don't need no thought control...
+
+#SIZE_X 800
+#SIZE_Y 560
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 48
+#BACKGROUND_BLUE 32
+
+#SECONDS 0
+#INITIAL 70
+#REQUIRED 68
+#SPAWN_INTERVAL 28
+#SPAWN_INTERVAL_FAST 4
+
+#FLOATER 1
+#BLOCKER 2
+#EXPLODER 2
+#BUILDER 7
+#DIGGER 1
+#BASHER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/bricks/Hatch.H: 672 48 r
+
+:matt/bricks/Goal.G: 704 448
+
+:matt/bricks/18: 624 144
+:matt/bricks/18: 560 144
+:matt/bricks/03: 320 64
+:matt/bricks/12: 416 32
+:matt/bricks/04: 448 32
+:matt/bricks/03: 448 96
+:matt/bricks/03: 0 240
+:matt/bricks/03: 384 160
+:matt/bricks/03: 512 96
+:matt/bricks/03: 576 96
+:matt/bricks/12: 288 160
+:matt/bricks/04: 320 160
+:matt/bricks/03: 320 224
+:matt/bricks/03: 320 288
+:matt/bricks/03: 256 288
+:matt/bricks/03: 384 224
+:matt/bricks/03: 256 288
+:matt/bricks/04: 192 288
+:matt/bricks/03: 192 352
+:matt/bricks/03: 128 400
+:matt/bricks/03: 128 464
+:matt/bricks/03: 256 352
+:matt/bricks/03: 64 496
+:matt/bricks/03: 0 496
+:matt/bricks/03: 192 496
+:matt/bricks/03: 128 496
+:matt/bricks/03: 320 496
+:matt/bricks/03: 256 496
+:matt/bricks/03: 448 496
+:matt/bricks/03: 384 496
+:matt/bricks/03: 512 496
+:matt/bricks/03: 640 496
+:matt/bricks/03: 576 496
+:matt/bricks/03: 0 432
+:matt/bricks/03: 0 176
+:matt/bricks/03: 0 304
+:matt/bricks/03: 0 368
+:matt/bricks/03: 0 112
+:matt/bricks/03: 0 48
+:matt/bricks/03: 0 -16
+:matt/bricks/03: 64 0
+:matt/bricks/03: 128 0
+:matt/bricks/03: 192 0
+:matt/bricks/03: 256 0
+:matt/bricks/03: 320 0
+:matt/bricks/04: 384 0
+:matt/bricks/03: 128 496
+:matt/bricks/03: 640 96
+:matt/bricks/03: 704 96
+:matt/bricks/03: 768 96
+:matt/bricks/03: 704 496
+:matt/bricks/03: 768 496
+:matt/bricks/03: 192 160
+:matt/bricks/12: 256 160
+:matt/bricks/12: 160 288
+:matt/bricks/03: 64 288
+:matt/bricks/12: 128 288
+:matt/bricks/18: 560 176
+:matt/bricks/18: 560 208
+:matt/bricks/18: 560 240
+:matt/bricks/18: 560 272
+:matt/bricks/18: 560 304
+:matt/bricks/18: 560 336
+:matt/bricks/18: 560 368
+:matt/bricks/18: 560 432
+:matt/bricks/18: 560 464
+:matt/bricks/18: 624 176
+:matt/bricks/18: 624 208
+:matt/bricks/18: 624 240
+:matt/bricks/18: 624 272
+:matt/bricks/18: 624 304
+:matt/bricks/18: 624 336
+:matt/bricks/18: 624 400
+:matt/bricks/18: 624 432
+:matt/bricks/18: 624 464

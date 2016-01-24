@@ -1,0 +1,320 @@
+$BUILT                                             2012-02-13 20:46:00
+$AUTHOR                                                        Michael S. Repton
+$GERMAN                                                               
+$ENGLISH                                           Labyrinth of Persia
+
+#SIZE_X                                                           1280
+#SIZE_Y                                                            768
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                             0
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                             0
+#INITIAL                                                            50
+#REQUIRED                                                           40
+#SPAWN_INTERVAL                                                     50
+
+#CLIMBER                                                             2
+#FLOATER                                                             2
+#EXPLODER                                                            2
+#BLOCKER                                                             2
+#BUILDER                                                            10
+#BASHER                                                             10
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:geoo/construction/Hatch.H:                       144       160
+
+:geoo/construction/Goal2.G:                       288       672
+
+:geoo/construction/squisher.T:                    912       672
+:geoo/construction/squisher.T:                    784       288
+:geoo/construction/squisher.T:                    528        32
+
+:geoo/sandstone/torch.F:                          496       656
+:geoo/sandstone/torch.F:                          464       656
+:geoo/sandstone/torch.F:                          816       656
+:geoo/sandstone/torch.F:                          784       656
+:geoo/sandstone/torch.F:                          304       528
+:geoo/sandstone/torch.F:                          272       528
+:geoo/sandstone/torch.F:                          304       272
+:geoo/sandstone/torch.F:                          272       272
+:geoo/sandstone/torch.F:                          432       400
+:geoo/sandstone/torch.F:                          400       400
+
+:geoo/construction/concrete/032ha:                  0       608
+:geoo/construction/concrete/032ha:                 64       224
+:geoo/construction/concrete/032ha:                128       224
+:geoo/construction/concrete/032hd:                 64        96
+:geoo/construction/concrete/064v:                  64       -32
+:geoo/construction/concrete/032hd:                128       224
+:geoo/construction/concrete/064v:                 192       224
+:geoo/construction/concrete/032ha:                192       224
+:geoo/construction/concrete/032hd:                192       224
+:geoo/construction/concrete/032ha:                192       736
+:geoo/construction/concrete/032hd:                192       736
+:geoo/construction/concrete/032ha:                256       736
+:geoo/construction/concrete/032hd:                256       736
+:geoo/construction/concrete/032ha:                320       736
+:geoo/construction/concrete/032hd:                320       736
+:geoo/construction/concrete/032ha:                384       736
+:geoo/construction/concrete/032hd:                384       736
+:geoo/construction/concrete/032ha:                448       736
+:geoo/construction/concrete/032hd:                448       736
+:geoo/construction/concrete/032ha:                512       736
+:geoo/construction/concrete/032hd:                512       736
+:geoo/construction/concrete/032ha:                576       736
+:geoo/construction/concrete/032hd:                576       736
+:geoo/construction/pillar_32:                     416       608
+:geoo/construction/concrete/032hd:                384       608
+:geoo/construction/concrete/064v:                 192       608
+:geoo/construction/concrete/032ha:                192       608
+:geoo/construction/concrete/032hd:                192       608
+:geoo/construction/concrete/032ha:                256       608
+:geoo/construction/concrete/032hd:                256       608
+:geoo/construction/concrete/032ha:                320       608
+:geoo/construction/concrete/032hd:                320       608
+:geoo/construction/concrete/064v:                 192       480
+:geoo/construction/concrete/064v:                 192       352
+:geoo/construction/pillar_32:                     352       736
+:geoo/construction/pillar_32:                     352       704
+:geoo/construction/pillar_32:                     352       672
+:geoo/construction/pillar_32:                     352       640
+:geoo/construction/pillar_32:                     416       640
+:geoo/construction/pillar_32:                     416       672
+:geoo/construction/pillar_32:                     416       704
+:geoo/construction/concrete/032hd:                256       224
+:geoo/construction/concrete/032ha:                256       224
+:geoo/construction/concrete/032ha:                320       224
+:geoo/construction/concrete/032hd:                320       224
+:geoo/construction/concrete/032ha:                640       736
+:geoo/construction/concrete/032hd:                640       736
+:geoo/construction/concrete/032ha:                704       736
+:geoo/construction/concrete/032hd:                704       736
+:geoo/construction/concrete/032ha:                768       736
+:geoo/construction/concrete/032hd:                768       736
+:geoo/construction/concrete/032ha:                832       736
+:geoo/construction/concrete/032hd:                832       736
+:geoo/construction/concrete/032ha:                896       736
+:geoo/construction/concrete/032hd:                896       736
+:geoo/construction/concrete/032ha:                960       736
+:geoo/construction/concrete/032hd:                960       736
+:geoo/construction/concrete/032ha:               1024       736
+:geoo/construction/concrete/032hd:               1024       736
+:geoo/construction/concrete/032ha:               1088       736
+:geoo/construction/concrete/032hd:               1088       736
+:geoo/construction/concrete/032ha:               1152       608
+:geoo/construction/pillar_32:                    1152       480
+:geoo/construction/concrete/032hd:               1152       480
+:geoo/construction/pillar_32:                    1152       544
+:geoo/construction/pillar_32:                    1152       576
+:geoo/construction/pillar_32:                    1152       608
+:geoo/construction/concrete/032ha:               1152       480
+:geoo/construction/concrete/032ha:               1088       480
+:geoo/construction/concrete/032hd:               1088       352
+:geoo/construction/pillar_32:                    1152       224
+:geoo/construction/concrete/032hd:               1152       224
+:geoo/construction/concrete/032ha:               1152       224
+:geoo/construction/concrete/032ha:               1088       224
+:geoo/construction/concrete/032hd:                960       224
+:geoo/construction/concrete/032ha:                960       224
+:geoo/construction/concrete/064v:                1024       224
+:geoo/construction/concrete/032hd:               1024       224
+:geoo/construction/concrete/032ha:               1024       224
+:geoo/construction/concrete/064v:                1024       352
+:geoo/construction/concrete/064v:                1024       480
+:geoo/construction/pillar_32:                    1056       608
+:geoo/construction/concrete/032hd:               1024       608
+:geoo/construction/pillar_32:                    1152       512
+:geoo/construction/pillar_32:                     512       128
+:geoo/construction/pillar_32:                     512       160
+:geoo/construction/pillar_32:                     512       192
+:geoo/construction/pillar_32:                     992       672
+:geoo/construction/pillar_32:                     992       704
+:geoo/construction/pillar_32:                     992       736
+:geoo/construction/pillar_32:                     992       640
+:geoo/construction/pillar_32:                    1056       640
+:geoo/construction/pillar_32:                    1056       672
+:geoo/construction/pillar_32:                    1056       704
+:geoo/construction/pillar_32:                     912       640
+:geoo/construction/concrete/032hd:                896       224
+:geoo/construction/concrete/032ha:                896       224
+:geoo/construction/concrete/032hd:                832       224
+:geoo/construction/concrete/032ha:                832       224
+:geoo/construction/concrete/032hd:                768       224
+:geoo/construction/concrete/032ha:                768       224
+:geoo/construction/concrete/032ha:                704       224
+:geoo/construction/concrete/032ha:                384       224
+:geoo/construction/concrete/032hd:                384       224
+:geoo/construction/concrete/032ha:                448       224
+:geoo/construction/concrete/032hd:                448       224
+:geoo/construction/pillar_32:                     448       224
+:geoo/construction/concrete/032ha:                512       224
+:geoo/construction/concrete/032hd:                512       224
+:geoo/construction/concrete/032ha:                576       224
+:geoo/construction/concrete/032hd:                576       224
+:geoo/construction/concrete/032hd:                640       224
+:geoo/construction/concrete/032ha:               1024       352
+:geoo/construction/pillar_32:                     864       160
+:geoo/construction/pillar_32:                     864       192
+:geoo/construction/pillar_32:                     864       224
+:geoo/construction/pillar_32:                     864       128
+:geoo/construction/pillar_32:                     928       128
+:geoo/construction/pillar_32:                     928       160
+:geoo/construction/pillar_32:                     928       192
+:geoo/construction/concrete/032ha:                896       480
+:geoo/construction/concrete/032hd:                896       480
+:geoo/construction/concrete/032ha:                832       480
+:geoo/construction/concrete/032hd:                832       480
+:geoo/construction/concrete/032ha:                768       480
+:geoo/construction/concrete/032hd:                768       480
+:geoo/construction/concrete/064v:                 704       480
+:geoo/construction/pillar_32:                     736       608
+:geoo/construction/concrete/032hd:                704       608
+:geoo/construction/concrete/064v:                 768       352
+:geoo/construction/concrete/032ha:                768       352
+:geoo/construction/concrete/032hd:                768       352
+:geoo/construction/concrete/032ha:                704       352
+:geoo/construction/concrete/032hd:                704       352
+:geoo/construction/concrete/032ha:                640       352
+:geoo/construction/concrete/032hd:                640       352
+:geoo/construction/concrete/032ha:                576       352
+:geoo/construction/concrete/032hd:                576       352
+:geoo/construction/concrete/032ha:                512       352
+:geoo/construction/pillar_32:                     544       288
+:geoo/construction/pillar_32:                     544       320
+:geoo/construction/pillar_32:                     544       352
+:geoo/construction/pillar_32:                     544       256
+:geoo/construction/pillar_32:                     608       256
+:geoo/construction/pillar_32:                     608       288
+:geoo/construction/pillar_32:                     608       320
+:geoo/construction/concrete/032hd:                832       352
+:geoo/construction/pillar_32:                     672       672
+:geoo/construction/pillar_32:                     672       704
+:geoo/construction/pillar_32:                     672       736
+:geoo/construction/pillar_32:                     672       640
+:geoo/construction/pillar_32:                     736       640
+:geoo/construction/pillar_32:                     736       672
+:geoo/construction/pillar_32:                     736       704
+:geoo/construction/pillar_32:                     640       640
+:geoo/construction/pillar_32:                     640       672
+:geoo/construction/pillar_32:                     640       704
+:geoo/construction/pillar_32:                     576       672
+:geoo/construction/pillar_32:                     576       704
+:geoo/construction/pillar_32:                     576       736
+:geoo/construction/pillar_32:                     576       640
+:geoo/construction/pillar_32:                     784       256
+:geoo/construction/concrete/032hd:                768        96
+:geoo/construction/concrete/032ha:                768        96
+:geoo/construction/concrete/032ha:                832        96
+:geoo/construction/concrete/032hd:                832        96
+:geoo/construction/concrete/032ha:                896        96
+:geoo/construction/concrete/032hd:                896        96
+:geoo/construction/concrete/032ha:                960        96
+:geoo/construction/concrete/032hd:                960        96
+:geoo/construction/concrete/032ha:               1024        96
+:geoo/construction/concrete/032hd:               1024        96
+:geoo/construction/concrete/032hd:               1088        96
+:geoo/construction/pillar_32:                     992        32
+:geoo/construction/pillar_32:                     992        64
+:geoo/construction/pillar_32:                     992        96
+:geoo/construction/pillar_32:                     992         0
+:geoo/construction/pillar_32:                    1056         0
+:geoo/construction/pillar_32:                    1056        32
+:geoo/construction/pillar_32:                    1056        64
+:geoo/construction/concrete/032hd:                512        96
+:geoo/construction/concrete/032ha:                512        96
+:geoo/construction/concrete/032ha:                576        96
+:geoo/construction/concrete/032hd:                576        96
+:geoo/construction/concrete/032ha:                640        96
+:geoo/construction/concrete/032hd:                640        96
+:geoo/construction/concrete/032ha:                704        96
+:geoo/construction/concrete/032hd:                704        96
+:geoo/construction/concrete/032ha:                448        96
+:geoo/construction/pillar_32:                     544       160
+:geoo/construction/pillar_32:                     544       192
+:geoo/construction/pillar_32:                     544       224
+:geoo/construction/pillar_32:                     544       128
+:geoo/construction/pillar_32:                     608       128
+:geoo/construction/pillar_32:                     608       160
+:geoo/construction/pillar_32:                     608       192
+:geoo/construction/pillar_32:                     448       160
+:geoo/construction/pillar_32:                     448       192
+:geoo/construction/pillar_32:                     448       128
+:geoo/construction/pillar_32:                     528         0
+:geoo/construction/concrete/032ha:                192       320
+:geoo/construction/concrete/032ha:                192       448
+:geoo/construction/concrete/032ha:                192       576
+:geoo/construction/concrete/032ha:                192       704
+:geoo/construction/concrete/032hd:                192       480
+:geoo/construction/concrete/032hd:                192       352
+:geoo/construction/concrete/032ha:                 64        64
+:geoo/construction/concrete/032ha:                704       576
+:geoo/construction/concrete/032ha:               1024       576
+:geoo/construction/concrete/032ha:               1024       448
+:geoo/construction/concrete/032hd:               1024       480
+:geoo/construction/concrete/032ha:                768       448
+:matt/bricks/03b:                              0        64
+:matt/bricks/03b:                              0         0
+:matt/bricks/03b:                             64       320
+:matt/bricks/03b:                             64       256
+:matt/bricks/03b:                            128       320
+:matt/bricks/03b:                            128       256
+:matt/bricks/03b:                            128       448
+:matt/bricks/03b:                            128       384
+:matt/bricks/03b:                             64       448
+:matt/bricks/03b:                             64       384
+:matt/bricks/03b:                             64       576
+:matt/bricks/03b:                             64       512
+:matt/bricks/03b:                            128       576
+:matt/bricks/03b:                            128       512
+:matt/bricks/03b:                            128       704
+:matt/bricks/03b:                            128       640
+:matt/bricks/03b:                             64       704
+:matt/bricks/03b:                             64       640
+:matt/bricks/03b:                              0       704
+:matt/bricks/03b:                              0       640
+:matt/bricks/03b:                            576       576
+:matt/bricks/03b:                            576       512
+:matt/bricks/03b:                            640       576
+:matt/bricks/03b:                            640       512
+:matt/bricks/03b:                            512       448
+:matt/bricks/03b:                            512       384
+:matt/bricks/03b:                            576       448
+:matt/bricks/03b:                            576       384
+:matt/bricks/03b:                            640       448
+:matt/bricks/03b:                            640       384
+:matt/bricks/03b:                            704       448
+:matt/bricks/03b:                            704       384
+:matt/bricks/03b:                            832       576
+:matt/bricks/03b:                            832       512
+:matt/bricks/03b:                            896       576
+:matt/bricks/03b:                            896       512
+:matt/bricks/03b:                            960       576
+:matt/bricks/03b:                            960       512
+:matt/bricks/03b:                            960       320
+:matt/bricks/03b:                            960       256
+:matt/bricks/03b:                            960       448
+:matt/bricks/03b:                            960       384
+:matt/bricks/03b:                           1216        64
+:matt/bricks/03b:                           1216         0
+:matt/bricks/03b:                           1216       192
+:matt/bricks/03b:                           1216       128
+:matt/bricks/03b:                           1152       704
+:matt/bricks/03b:                           1152       640
+:matt/bricks/03b:                           1216       704
+:matt/bricks/03b:                           1216       640
+:matt/bricks/03b:                           1216       576
+:matt/bricks/03b:                           1216       512
+:matt/bricks/03b:                           1216       448
+:matt/bricks/03b:                           1216       384
+:matt/bricks/03b:                           1216       320
+:matt/bricks/03b:                           1216       256

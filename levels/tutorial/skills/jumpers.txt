@@ -1,0 +1,180 @@
+$BUILT 2014-04-09 23:26:17
+$AUTHOR geoo
+$GERMAN Springer
+$ENGLISH Jumpers
+
+$TUTORIAL_GERMAN Nutze Springer, um über die Lücken zu springen.<br>Der Stern beim Springer in der Steuerleiste bedeutet,<br>dass deren Anzahl unbeschränkt ist.<br>Um den Explodierer am Ende auszuwählen,<br>klicke auf den Explodierer in<br>der Steuerleiste unten, oder<br>drücke seinen Hotkey <EXPLODER2>.
+$TUTORIAL_ENGLISH Jumpers make a small leap forward.<br>Try to cross the gaps by jumping over them.<br>The star in the skill panel indicates an infinite amount of jumpers.<br>To use the exploder skill at the end, click the exploder button<br>in the panel at the bottom,<br>or press its hotkey <EXPLODER2>.
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y -20
+#BACKGROUND_RED 8
+#BACKGROUND_GREEN 12
+#BACKGROUND_BLUE 2
+
+#SECONDS 0
+#INITIAL 3
+#REQUIRED 2
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#JUMPER -1
+#NOTHING 0
+#EXPLODER2 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/oriental/Hatch.H: 64 208
+
+:matt/oriental/Goal.G: 516 300
+
+:matt/oriental/asiangate: 32 272
+:matt/oriental/bamboo_leaf2: 466 290 r
+:matt/oriental/bamboo_leaf2: 450 380 r
+:matt/oriental/01: 582 264
+:matt/oriental/bamboo_pole: 443 288 r
+:matt/oriental/bamboo_leaf2: 562 178
+:matt/oriental/bamboo_leaf2: 618 178 frr
+:matt/oriental/branch2: 624 122 rrr
+:matt/oriental/bamboo_leaf1: 614 120 frrr
+:matt/oriental/bamboo_leaf2: 632 152
+:matt/oriental/bamboo_leaf3: 546 124
+:matt/oriental/bamboo_leaf3: 544 160 frr
+:matt/oriental/bamboo_leaf3: 612 148
+:matt/oriental/bamboo_leaf2: 580 116 frr
+:matt/oriental/bamboo_leaf2: 584 142
+:matt/oriental/branch3: 568 120 r
+:matt/oriental/bamboo_leaf2: 553 128 frr
+:matt/oriental/bamboo_leaf1: 568 142 rrr
+:matt/oriental/bamboo_leaf2: 635 137 fr
+:matt/oriental/branch1: 540 -2 rrr
+:matt/oriental/branch3: 554 34 frr
+:matt/oriental/trunk3: 576 32 f
+:matt/oriental/trunk1: 582 82
+:matt/oriental/bamboo_leaf3: 620 130 frr
+:matt/oriental/bamboo_leaf1: 600 120 rr
+:matt/oriental/bamboo_leaf1: 576 110 r
+:matt/oriental/trunk2: 570 42 rr
+:matt/oriental/branch2: 590 18
+:matt/oriental/branch2: 622 18 r
+:matt/oriental/branch1: 620 46 rrr
+:matt/oriental/07: 564 80
+:matt/oriental/bamboo_leaf2: 506 178 frr
+:matt/oriental/bamboo_leaf1: 525 167 rrr
+:matt/oriental/bamboo_leaf1: 534 156 f
+:matt/oriental/leaves5: 550 68 frr
+:matt/oriental/leaves2: 592 36
+:matt/oriental/leaves1: 550 16
+:matt/oriental/leaves5: 612 16
+:matt/oriental/trunk1: 564 -28 rr
+:matt/oriental/leaves3: 532 18 frr
+:matt/oriental/leaves4: 496 -12
+:matt/oriental/leaves2: 604 -4 f
+:matt/oriental/bamboo_leaf2: 520 198
+:matt/oriental/bamboo_leaf2: 536 180
+:matt/oriental/bamboo_leaf2: 422 288 r
+:matt/earth/14: 50 336 rrr
+:matt/oriental/bamboo_leaf1: 4 354
+:matt/earth/14: 8 336
+:matt/oriental/bamboo_leaf1: 90 330 r
+:matt/earth/11: 26 336
+:matt/earth/29: 82 348
+:matt/earth/14: 92 336
+:matt/earth/11: 110 336
+:matt/earth/14: 136 336 frr
+:matt/oriental/bamboo_leaf2: 160 356 f
+:matt/earth/11: 122 356
+:matt/earth/29: 36 360
+:matt/earth/14: 0 356
+:matt/earth/29: 24 374 f
+:matt/earth/12: 30 378
+:matt/earth/28: 126 354
+:matt/earth/08: 116 384 rrr
+:matt/earth/11: 84 336
+:matt/earth/28: 98 370
+:matt/earth/09: 114 356 rrr
+:matt/earth/14: 90 364
+:matt/earth/08: 68 378
+:matt/earth/08: 84 388 rrr
+:matt/oriental/bamboo_leaf1: 84 374 r
+:matt/earth/12: 70 380
+:matt/oriental/bamboo_leaf1: 164 392 r
+:matt/oriental/branch1: 200 292 rrr
+:matt/oriental/branch3: 214 328 frr
+:matt/oriental/trunk3: 236 326 f
+:matt/oriental/trunk2: 230 336 rr
+:matt/oriental/branch2: 250 312
+:matt/oriental/branch2: 282 312 r
+:matt/oriental/branch1: 280 340 rrr
+:matt/oriental/leaves2: 252 330
+:matt/oriental/leaves1: 210 310
+:matt/oriental/leaves5: 272 310
+:matt/oriental/leaves5: 258 264 f
+:matt/oriental/trunk1: 224 266 rr
+:matt/oriental/leaves3: 192 312 frr
+:matt/oriental/leaves4: 156 282
+:matt/oriental/branch2: 294 294 f
+:matt/oriental/branch1: 336 260 rrr
+:matt/oriental/branch4: 354 236
+:matt/oriental/branch1: 400 228 rrr
+:matt/oriental/trunk3: 380 266 f
+:matt/oriental/leaves4: 318 256
+:matt/oriental/trunk3: 374 334
+:matt/oriental/leaves2: 356 386
+:matt/oriental/bamboo_leaf2: 394 380 r
+:matt/oriental/branch4: 358 310
+:matt/oriental/leaves3: 312 292
+:matt/oriental/leaves6: 264 286
+:matt/oriental/leaves7: 218 360
+:matt/oriental/branch3: 404 318
+:matt/oriental/leaves2: 368 324
+:matt/oriental/leaves7: 420 312
+:matt/oriental/leaves7: 341 227
+:matt/oriental/branch4: 384 202
+:matt/oriental/leaves2: 388 218
+:matt/oriental/bamboo_leaf2: 288 182
+:matt/oriental/bamboo_leaf3: 252 156
+:matt/oriental/branch1: 268 154 r
+:matt/oriental/bamboo_leaf2: 278 154
+:matt/oriental/branch4: 270 118 rrr
+:matt/oriental/branch3: 254 110 rrr
+:matt/oriental/01: 260 132
+:matt/oriental/leaves5: 244 106
+:matt/oriental/branch3: 272 96 frr
+:matt/oriental/leaves2: 280 108
+:matt/oriental/leaves7: 266 90
+:matt/oriental/bamboo_pole: 442 378 rrr
+:matt/oriental/bamboo_leaf2: 424 374 r
+:matt/oriental/bamboo_leaf3: 434 360 f
+:matt/oriental/branch4: 610 296 rrr
+:matt/oriental/trunk3: 600 272 f
+:matt/oriental/bamboo_leaf2: 578 290 fr
+:matt/oriental/branch1: 608 336 rrr
+:matt/oriental/leaves3: 584 328
+:matt/oriental/branch4: 604 382 rrr
+:matt/oriental/bamboo_pole: 586 378 rrr
+:matt/oriental/leaves6: 600 372
+:matt/oriental/leaves5: 620 292
+:matt/oriental/branch3: 600 228 rrr
+:matt/oriental/leaves1: 584 254
+:matt/oriental/leaves7: 596 224
+:matt/oriental/bamboo_leaf1: 298 162 frr
+:matt/oriental/leaves8: 364 198
+:matt/oriental/bamboo_leaf1: 308 206 rr
+:matt/oriental/bamboo_segment2: 300 163 frrrd
+:matt/oriental/bamboo_segment2: 305 157 frrrd
+:matt/oriental/bamboo_segment2: 316 204 rrrd
+:matt/oriental/bamboo_segment2: 320 200 rrrd
+:matt/oriental/bamboo_leaf1: 424 366
+:matt/oriental/bamboo_leaf3: 580 380 frr

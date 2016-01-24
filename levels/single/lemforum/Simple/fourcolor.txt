@@ -1,0 +1,137 @@
+$BUILT 2014-07-01 20:40:25
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH Four Color Circus
+
+#SIZE_X 1456
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y -20
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 40
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 20
+#JUMPER 20
+#CLIMBER 20
+#FLOATER 20
+#EXPLODER 20
+#BLOCKER 20
+#BATTER 20
+#BUILDER 20
+#PLATFORMER 20
+#BASHER 20
+#MINER 20
+#DIGGER 20
+
+:matt/marble/Hatch.H: 96 240
+
+:matt/marble/Goal.G: 1392 32
+
+:matt/carnival/24: 0 336
+:matt/carnival/25: 64 336
+:matt/carnival/26: 128 336
+:matt/carnival/27: 192 336
+:matt/carnival/00: 0 304
+:matt/carnival/27: 288 336
+:matt/carnival/31: 240 288
+:matt/carnival/03: 256 264
+:matt/carnival/03: 256 232
+:matt/carnival/03: 256 200
+:matt/carnival/03: 256 168
+:matt/carnival/03: 256 136
+:matt/carnival/03: 224 304
+:matt/carnival/42: 352 296
+:matt/carnival/31: 336 320
+:matt/carnival/27: 384 336
+:matt/carnival/42: 352 264
+:matt/carnival/42: 352 232
+:matt/carnival/42: 352 200
+:matt/carnival/42: 352 168
+:matt/carnival/42: 352 136
+:matt/carnival/27: 480 336
+:matt/carnival/23: 440 288
+:matt/carnival/26: 608 336
+:matt/carnival/26: 544 336
+:matt/carnival/22: 672 272
+:matt/carnival/26: 672 320
+:matt/carnival/26: 752 320
+:matt/carnival/22: 768 272
+:matt/carnival/26: 816 336
+:matt/carnival/26: 880 336
+:matt/carnival/25: 944 336
+:matt/carnival/19: 1008 240
+:matt/carnival/01: 1008 272
+:matt/carnival/19: 976 304
+:matt/carnival/01: 1040 208
+:matt/carnival/19: 1040 176
+:matt/carnival/19: 1072 112
+:matt/carnival/01: 1072 144
+:matt/carnival/01: 1104 80
+:matt/carnival/19: 1104 48
+:matt/carnival/05: 1136 80
+:matt/carnival/05: 1136 144
+:matt/carnival/05: 1136 208
+:matt/carnival/05: 1136 272
+:matt/carnival/25: 1136 336
+:matt/carnival/24: 1200 336
+:matt/carnival/24: 1264 336
+:matt/carnival/24: 1328 336
+:matt/carnival/24: 1392 336
+:matt/carnival/32: 1264 272
+:matt/carnival/45: 1328 304
+:matt/carnival/24: 1360 272
+:matt/carnival/24: 1392 208
+:matt/carnival/24: 1360 144
+:matt/carnival/24: 1392 80
+:matt/carnival/32: 1264 208
+:matt/carnival/13: 1264 248
+:matt/carnival/13: 1264 264
+:matt/carnival/13: 1264 232
+:matt/carnival/45: 1360 240
+:matt/carnival/00: 1200 208
+:matt/carnival/00: 1232 208
+:matt/carnival/00: 1264 144
+:matt/carnival/00: 1296 144
+:matt/carnival/03: 288 304
+:matt/carnival/26: 624 192
+:matt/carnival/26: 800 192
+:matt/carnival/26: 712 192
+:matt/carnival/26: 648 128
+:matt/carnival/26: 776 128
+:matt/carnival/26: 712 128
+:matt/carnival/26: 680 64
+:matt/carnival/26: 744 64
+:matt/carnival/26: 712 0
+:matt/carnival/14: 720 304
+:matt/carnival/14: 752 304
+:matt/carnival/14: 752 272
+:matt/carnival/14: 720 272
+:matt/carnival/14: 656 272
+:matt/carnival/14: 640 272
+:matt/carnival/14: 624 272
+:matt/carnival/14: 608 272
+:matt/carnival/14: 608 288
+:matt/carnival/14: 608 304
+:matt/carnival/14: 608 320
+:matt/carnival/14: 656 320
+:matt/carnival/14: 656 304
+:matt/carnival/14: 656 288
+:matt/carnival/14: 864 272
+:matt/carnival/14: 848 272
+:matt/carnival/14: 832 272
+:matt/carnival/14: 816 272
+:matt/carnival/14: 816 288
+:matt/carnival/14: 816 304
+:matt/carnival/14: 816 320
+:matt/carnival/14: 864 320
+:matt/carnival/14: 864 304
+:matt/carnival/14: 864 288

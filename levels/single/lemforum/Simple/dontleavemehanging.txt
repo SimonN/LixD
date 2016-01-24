@@ -1,0 +1,110 @@
+$BUILT 2014-05-25 03:12:22
+$AUTHOR BulletRide
+$GERMAN 
+$ENGLISH Don't Leave Me Hanging!
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 50
+#SPAWN_INTERVAL 60
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 2
+#FLOATER 0
+#EXPLODER 0
+#BLOCKER 0
+#BUILDER 1
+#BASHER 0
+#MINER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:simon/hatch001.H: 96 264
+
+:geoo/abstract/goal.G: 592 160
+
+:simon/water.W: 16 352
+:simon/water.W: -32 352
+
+:geoo/abstract/pipes/central1: 72 0 rrr
+:geoo/abstract/pipes/central1: 72 32 rrr
+:geoo/abstract/cvblocks/045: 64 360
+:geoo/abstract/cvblocks/045: 128 360
+:geoo/abstract/cvblocks/045: 192 336
+:geoo/abstract/cvblocks/045: 256 336
+:geoo/abstract/cvblocks/045: 192 272
+:geoo/abstract/cvblocks/045: 256 272
+:geoo/abstract/cvblocks/045: 192 208
+:geoo/abstract/cvblocks/045: 256 208
+:geoo/abstract/cvblocks/045: 320 336
+:geoo/abstract/cvblocks/045: 384 336
+:geoo/abstract/cvblocks/045: 384 272
+:geoo/abstract/cvblocks/045: 320 208
+:geoo/abstract/cvblocks/045: 384 208
+:geoo/abstract/cvblocks/045: 192 144
+:geoo/abstract/cvblocks/045: 256 144
+:geoo/abstract/cvblocks/045: 320 144
+:geoo/abstract/cvblocks/045: 384 144
+:geoo/steel/64x64o.S: 512 288
+:geoo/steel/64x64o.S: 512 224
+:geoo/steel/64x64o.S: 576 288
+:geoo/steel/64x64o.S: 576 224
+:geoo/abstract/pipes/central5: 64 32
+:geoo/abstract/pipes/corner5: 56 32
+:geoo/abstract/pipes/central5: 56 0 rrr
+:geoo/abstract/pipes/central5: 128 0 rrr
+:geoo/abstract/pipes/corner5: 128 32 rrr
+:geoo/abstract/pipes/central5: 96 32 rr
+:geoo/abstract/pipes/central1: 40 96
+:geoo/abstract/pipes/corner1: 32 96
+:geoo/abstract/pipes/central1: 32 64 rrr
+:geoo/abstract/pipes/central1: 32 32 rrr
+:geoo/abstract/pipes/central1: 32 0 rrr
+:geoo/abstract/pipes/corner1: 72 96 rrr
+:geoo/abstract/pipes/central1: 72 64 rrr
+:geoo/abstract/pipes/central0: 560 128
+:geoo/abstract/pipes/central0: 592 128
+:geoo/abstract/pipes/corner0: 552 128
+:geoo/abstract/pipes/corner0: 624 128 rrr
+:geoo/abstract/pipes/central0: 552 96 rrr
+:geoo/abstract/pipes/central0: 552 64 rrr
+:geoo/abstract/pipes/central0: 552 32 rrr
+:geoo/abstract/pipes/central0: 552 0 rrr
+:geoo/abstract/pipes/central0: 624 96 rrr
+:geoo/abstract/pipes/central0: 624 64 rrr
+:geoo/abstract/pipes/central0: 624 32 rrr
+:geoo/abstract/pipes/central0: 624 0 rrr
+:geoo/abstract/pipes/central1: 384 16
+:geoo/abstract/pipes/corner1: 376 16
+:geoo/abstract/pipes/central1: 376 -16 rrr
+:geoo/abstract/pipes/corner1: 416 16 rrr
+:geoo/abstract/pipes/central1: 416 -16 rrr
+:geoo/abstract/cvblocks/045: 192 80
+:geoo/abstract/cvblocks/045: 256 80
+:geoo/abstract/cvblocks/045: 320 80
+:geoo/abstract/cvblocks/045: 384 80
+:geoo/abstract/cvblocks/045: 448 224
+:geoo/abstract/cvblocks/045: 320 272
+:geoo/steel/64x64o.S: 512 352
+:geoo/steel/64x64o.S: 576 352
+:geoo/abstract/cvblocks/030: 64 328 fr
+:geoo/abstract/cvblocks/020: 72 312
+:geoo/steel/32x16o.S: 576 208
+:geoo/steel/32x16o.S: 608 208
+:geoo/abstract/cvblocks/035: 192 48
+:geoo/abstract/cvblocks/035: 256 48
+:geoo/abstract/cvblocks/035: 320 48
+:geoo/abstract/cvblocks/035: 384 48

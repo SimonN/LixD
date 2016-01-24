@@ -1,0 +1,165 @@
+$BUILT 2012-06-25 21:24:44
+$AUTHOR TM
+$GERMAN 
+$ENGLISH double-entendre
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 30
+#SPAWN_INTERVAL 30
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 50
+#BLOCKER 20
+#EXPLODER2 20
+#PLATFORMER 5
+#JUMPER 20
+#BATTER 20
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:simon/hatch001.H: 480 288
+:simon/hatch001.H: 96 288 r
+
+:geoo/abstract/goal.G: 224 160
+:geoo/abstract/goal.G: 384 160
+
+:proxima/tile/cyan1: 160 336
+:proxima/tile/cyan1: 224 336
+:proxima/tile/cyan1: 160 272
+:proxima/tile/cyan1: 224 272
+:proxima/tile/cyan1: 288 336
+:proxima/tile/cyan1: 352 336
+:proxima/tile/cyan1: 288 272
+:proxima/tile/cyan1: 352 272
+:proxima/tile/cyan1: 160 208
+:proxima/tile/cyan1: 224 208
+:proxima/tile/cyan1: 160 144
+:proxima/tile/cyan1: 288 208
+:proxima/tile/cyan1: 352 208
+:proxima/tile/cyan1: 288 144
+:proxima/tile/cyan1: 416 336
+:proxima/tile/cyan1: 416 272
+:proxima/tile/cyan1: 416 208
+:proxima/tile/cyan1: 416 144
+:geoo/steel/dark_32x16o.S: 144 128
+:geoo/steel/dark_32x16o.S: 176 128
+:geoo/steel/dark_32x16o.S: 208 128
+:geoo/steel/dark_32x16o.S: 240 128
+:geoo/steel/dark_32x16o.S: 272 128
+:geoo/steel/dark_32x16o.S: 304 128
+:geoo/steel/dark_32x16o.S: 336 128
+:geoo/steel/dark_32x16o.S: 368 128
+:geoo/steel/dark_32x16o.S: 400 128
+:geoo/steel/dark_32x16o.S: 432 128
+:geoo/steel/dark_32x16o.S: 464 128
+:geoo/steel/dark_16x32o.S: 160 144
+:geoo/steel/dark_16x32o.S: 160 176
+:geoo/steel/dark_16x32o.S: 160 208
+:geoo/steel/dark_16x32o.S: 160 240
+:geoo/steel/dark_16x32o.S: 160 272
+:geoo/steel/dark_16x32o.S: 160 304
+:geoo/steel/dark_16x32o.S: 160 336
+:geoo/steel/dark_16x32o.S: 160 368
+:geoo/steel/dark_16x32o.S: 464 144
+:geoo/steel/dark_16x32o.S: 464 176
+:geoo/steel/dark_16x32o.S: 464 208
+:geoo/steel/dark_16x32o.S: 464 240
+:geoo/steel/dark_16x32o.S: 464 272
+:geoo/steel/dark_16x32o.S: 464 304
+:geoo/steel/dark_16x32o.S: 464 336
+:geoo/steel/dark_16x32o.S: 464 368
+:proxima/tile/blue2s: 32 304
+:proxima/tile/blue2s: 32 336
+:proxima/tile/cyan1b: 480 368
+:proxima/tile/cyan1b: 480 384
+:proxima/tile/cyan1b: 512 368
+:proxima/tile/cyan1b: 512 384
+:proxima/tile/cyan1b: 544 368
+:proxima/tile/cyan1b: 544 384
+:proxima/tile/cyan1b: 576 368
+:proxima/tile/cyan1b: 576 384
+:proxima/tile/cyan1b: 608 368
+:proxima/tile/cyan1b: 608 384
+:proxima/tile/cyan1b: 32 368
+:proxima/tile/cyan1b: 32 384
+:proxima/tile/cyan1b: 64 368
+:proxima/tile/cyan1b: 64 384
+:proxima/tile/cyan1b: 96 368
+:proxima/tile/cyan1b: 96 384
+:proxima/tile/cyan1b: 128 368
+:proxima/tile/cyan1b: 128 384
+:proxima/tile/blue2s: 32 272
+:proxima/tile/blue2s: 32 208
+:proxima/tile/blue2s: 32 240
+:proxima/tile/blue2s: 32 176
+:proxima/tile/blue2s: 64 304
+:proxima/tile/blue2s: 64 336
+:proxima/tile/blue2s: 64 272
+:proxima/tile/blue2s: 64 208
+:proxima/tile/blue2s: 64 240
+:proxima/tile/blue2s: 64 176
+:proxima/tile/blue2s: 32 112
+:proxima/tile/blue2s: 32 144
+:proxima/tile/blue2s: 32 80
+:proxima/tile/blue2s: 32 16
+:proxima/tile/blue2s: 32 48
+:proxima/tile/blue2s: 64 112
+:proxima/tile/blue2s: 64 144
+:proxima/tile/blue2s: 64 80
+:proxima/tile/blue2s: 64 16
+:proxima/tile/blue2s: 64 48
+:geoo/steel/dark_32x64o.S: 0 16
+:geoo/steel/dark_32x64o.S: 0 80
+:geoo/steel/dark_32x64o.S: 0 144
+:geoo/steel/dark_32x64o.S: 0 208
+:geoo/steel/dark_32x64o.S: 0 272
+:geoo/steel/dark_32x64o.S: 0 336
+:proxima/tile/blue2s: 544 304
+:proxima/tile/blue2s: 544 336
+:proxima/tile/blue2s: 544 272
+:proxima/tile/blue2s: 544 208
+:proxima/tile/blue2s: 544 240
+:proxima/tile/blue2s: 544 176
+:proxima/tile/blue2s: 576 304
+:proxima/tile/blue2s: 576 336
+:proxima/tile/blue2s: 576 272
+:proxima/tile/blue2s: 576 208
+:proxima/tile/blue2s: 576 240
+:proxima/tile/blue2s: 576 176
+:proxima/tile/blue2s: 544 112
+:proxima/tile/blue2s: 544 144
+:proxima/tile/blue2s: 544 80
+:proxima/tile/blue2s: 544 16
+:proxima/tile/blue2s: 544 48
+:proxima/tile/blue2s: 576 112
+:proxima/tile/blue2s: 576 144
+:proxima/tile/blue2s: 576 80
+:proxima/tile/blue2s: 576 16
+:proxima/tile/blue2s: 576 48
+:geoo/steel/dark_32x64o.S: 608 16
+:geoo/steel/dark_32x64o.S: 608 80
+:geoo/steel/dark_32x64o.S: 608 144
+:geoo/steel/dark_32x64o.S: 608 208
+:geoo/steel/dark_32x64o.S: 608 272
+:geoo/steel/dark_32x64o.S: 608 336
+:geoo/steel/dark_32x64o.S: 352 112 d
+:geoo/steel/dark_32x64o.S: 256 112 d
+:geoo/steel/dark_32x16o.S: 224 208
+:geoo/steel/dark_32x16o.S: 256 208
+:geoo/steel/dark_32x16o.S: 352 208
+:geoo/steel/dark_32x16o.S: 384 208
+:geoo/steel/dark_32x16o.S: 320 208
+:geoo/steel/dark_32x16o.S: 288 208

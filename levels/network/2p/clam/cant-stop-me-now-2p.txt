@@ -1,0 +1,132 @@
+$BUILT                                             2012-01-20 16:40:19
+$AUTHOR                                                   Clam Spammer
+$GERMAN                                                               
+$ENGLISH                                       Can't stop me now! (2P)
+
+#SIZE_X                                                            832
+#SIZE_Y                                                            320
+#TORUS_X                                                             1
+#TORUS_Y                                                             1
+#START_X                                                            32
+#START_Y                                                           300
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            60
+#INITIAL                                                            60
+#REQUIRED                                                           60
+#SPAWN_INTERVAL                                                     28
+
+#NOTHING                                                             0
+#NOTHING                                                             0
+#CLIMBER                                                            25
+#WALKER                                                             25
+#JUMPER                                                             25
+#EXPLODER                                                           25
+#BUILDER                                                            25
+#PLATFORMER                                                         25
+#BASHER                                                             25
+#MINER                                                              25
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:matt/bricks/Hatch.H:                        176       112
+:matt/bricks/Hatch.H:                        592       112     r
+
+:matt/bricks/Goal.G:                         480       112
+:matt/bricks/Goal.G:                         288       112
+
+:geoo/construction/rod_rust/straight_diagd32:     769       300
+:geoo/construction/rod_rust/straight_diagd32:     801        12
+:geoo/construction/rod_rust/straight_diagd32:       1        44
+:geoo/construction/rod_rust/straight_diagd32:      33        76
+:geoo/construction/rod_rust/straight_diagu32:      32       298
+:geoo/construction/rod_rust/straight_diagu32:     768        74
+:geoo/construction/rod_rust/straight_diagu32:       0        10
+:geoo/construction/rod_rust/straight_diagu32:     800        42
+:geoo/construction/rod_steel/straight_diagu32.S:  778        64
+:matt/bricks/03:                             176       160
+:matt/bricks/03a:                            592       160
+:geoo/steel/32x16o.S:                             480       160
+:geoo/steel/32x16o.S:                             512       160
+:geoo/steel/32x16o.S:                             288       160
+:geoo/steel/32x16o.S:                             320       160
+:matt/bricks/04:                             240       160
+:matt/bricks/01b:                            400       120
+:matt/bricks/03:                             304       224
+:geoo/steel/16x32o.S:                             352       144
+:geoo/steel/16x32o.S:                             352       112
+:geoo/steel/16x32o.S:                             352        80
+:geoo/steel/16x32o.S:                             464        80
+:geoo/steel/16x32o.S:                             464       112
+:geoo/steel/16x32o.S:                             464       144
+:matt/bricks/01b:                            368        80
+:matt/bricks/01b:                            368       160
+:matt/bricks/01b:                            432        80
+:matt/bricks/01b:                            432       160
+:matt/bricks/07a:                            528       160
+:matt/bricks/03a:                            464       224
+:matt/bricks/03a:                            464       256
+:matt/bricks/03:                             368       224
+:matt/carnival/04:                           416       224     d
+:matt/bricks/03a:                            400       224     n
+:matt/bricks/03:                             368       256
+:matt/carnival/04:                           416       256     d
+:matt/bricks/03a:                            400       256     n
+:matt/bricks/03a:                            528       224
+:matt/bricks/03a:                            528       256
+:matt/bricks/03a:                            592       224
+:matt/bricks/03a:                            592       256
+:matt/bricks/03:                             304       256
+:matt/bricks/03:                             176       224
+:matt/bricks/03:                             176       256
+:matt/bricks/03:                             240       224
+:matt/bricks/03:                             240       256
+:matt/bricks/03a:                            656       160
+:matt/bricks/03a:                            656       224
+:matt/bricks/03a:                            656       256
+:matt/bricks/03:                             112       160
+:matt/bricks/03:                             112       224
+:matt/bricks/03:                             112       256
+:geoo/construction/rod_steel/straight_diagd32.S:   16        59
+:matt/bricks/03:                              48        96
+:matt/bricks/03a:                            720        96
+:geoo/steel/32x16o.S:                             288        80
+:geoo/steel/32x16o.S:                             320        80
+:geoo/steel/32x16o.S:                             480        80
+:geoo/steel/32x16o.S:                             512        80
+:matt/bricks/03:                              48       160
+:matt/bricks/03:                              48       224
+:geoo/construction/rod_steel/straight_diagu32.S:   16       314
+:matt/bricks/03:                              48       256
+:matt/bricks/03a:                            720       160
+:matt/bricks/03a:                            720       224
+:geoo/construction/rod_steel/straight_diagd32.S:  778       309
+:matt/bricks/03a:                            720       256
+:geoo/steel/32x16o.S:                             224        80
+:geoo/steel/32x16o.S:                             256        80
+:geoo/steel/32x16o.S:                             544        80
+:geoo/steel/32x16o.S:                             576        80
+:geoo/steel/32x16o.S:                             624       160
+:geoo/steel/32x16o.S:                             592       160
+:geoo/steel/32x16o.S:                             176       160
+:geoo/steel/32x16o.S:                             208       160
+:geoo/construction/rod_rust/straight_diagu32:     773        58     d
+:geoo/construction/rod_rust/straight_diagu32:      11       308     d
+:geoo/construction/rod_steel/straight_diagd32.S:  831        42
+:geoo/construction/rod_rust/straight_diagu32:     827        54     fd
+:geoo/construction/rod_rust/straight_diagu32:      11        70     fd
+:geoo/construction/rod_rust/straight_diagu32:     773         0     fd
+:matt/bricks/07a:                            656        96
+:matt/bricks/04:                             112        96
+:geoo/construction/rod_steel/straight_diagu32.S:    0        10
+:geoo/construction/rod_steel/straight_diagd32.S:  794         5
+:geoo/construction/rod_steel/straight_diagu32.S:  800        42
+:geoo/construction/rod_rust/straight_diagu32:     789        42     d
+:geoo/construction/rod_rust/straight_diagu32:     789        16     fd
+:geoo/construction/rod_rust/straight_diagu32:     827         4     d
+:geoo/steel/32x32o.S:                             752       288
+:geoo/steel/32x32o.S:                              48       288
+:geoo/steel/32x32o.S:                             752        96
+:geoo/steel/32x32o.S:                              48        96

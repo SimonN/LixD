@@ -1,0 +1,145 @@
+$BUILT                                             2012-04-02 18:28:39
+$AUTHOR                                                   Insane Steve
+$GERMAN                                                               
+$ENGLISH                                  Trapeze of Weird Blue Blocks
+
+#SIZE_X                                                            992
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                           -20
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                             0
+#INITIAL                                                            40
+#REQUIRED                                                           40
+#SPAWN_INTERVAL                                                     32
+#SPAWN_INTERVAL_FAST                                                 4
+
+#WALKER                                                              1
+#JUMPER                                                             10
+#CLIMBER                                                             2
+#FLOATER                                                             4
+#EXPLODER2                                                           1
+#BLOCKER                                                             2
+#RUNNER                                                              1
+#BUILDER                                                             4
+#PLATFORMER                                                          1
+#BASHER                                                              2
+#MINER                                                               1
+#DIGGER                                                              1
+
+:matt/marble/Hatch.H:                        128        48
+
+:matt/marble/Goal.G:                         752        64
+
+:matt/carnival/24:                           128       112
+:matt/carnival/01:                           192       112
+:matt/carnival/02:                           192       144
+:matt/carnival/27:                           224       112
+:matt/carnival/01:                           256       176
+:matt/carnival/02:                           256       208
+:matt/carnival/01:                           256       240
+:matt/carnival/02:                           256       272
+:matt/carnival/01:                           256       304
+:matt/carnival/24:                           256       336
+:matt/carnival/01:                           320       336
+:matt/carnival/02:                           320       368
+:matt/carnival/27:                           352       336
+:matt/carnival/01:                           128       176
+:matt/carnival/02:                           128       208
+:matt/carnival/01:                           128       240
+:matt/carnival/02:                           128       272
+:matt/carnival/01:                           128       304
+:matt/carnival/24:                             0       336
+:matt/carnival/01:                            64       336
+:matt/carnival/02:                            64       368
+:matt/carnival/27:                            96       336
+:matt/carnival/01:                             0       176
+:matt/carnival/02:                             0       208
+:matt/carnival/01:                             0       240
+:matt/carnival/02:                             0       272
+:matt/carnival/01:                             0       304
+:matt/carnival/01:                             0        48
+:matt/carnival/02:                             0        80
+:matt/carnival/01:                             0       112
+:matt/carnival/02:                             0       144
+:matt/carnival/02:                             0        16
+:matt/carnival/01:                             0       -16
+:matt/carnival/01:                           320       112
+:matt/carnival/01:                           384       112
+:matt/carnival/01:                           448       112
+:matt/carnival/01:                           512       112
+:matt/carnival/01:                           576       112
+:matt/carnival/01:                           640       112
+:matt/carnival/24:                           704       112
+:matt/carnival/02:                           768       144
+:matt/carnival/27:                           800       112
+:matt/carnival/01:                           832       176
+:matt/carnival/02:                           832       208
+:matt/carnival/01:                           832       240
+:matt/carnival/02:                           832       272
+:matt/carnival/01:                           832       304
+:matt/carnival/24:                           832       336
+:matt/carnival/01:                           896       336
+:matt/carnival/02:                           896       368
+:matt/carnival/27:                           928       336
+:matt/carnival/01:                           704       176
+:matt/carnival/02:                           704       208
+:matt/carnival/01:                           704       240
+:matt/carnival/02:                           704       272
+:matt/carnival/01:                           704       304
+:matt/carnival/24:                           576       336
+:matt/carnival/01:                           640       336
+:matt/carnival/02:                           640       368
+:matt/carnival/27:                           672       336
+:matt/carnival/01:                           768       112
+:matt/carnival/24:                           416       336
+:matt/carnival/01:                           480       336
+:matt/carnival/27:                           512       336
+:matt/carnival/02:                           480       368
+:matt/carnival/01:                           960       176
+:matt/carnival/02:                           960       208
+:matt/carnival/01:                           960       240
+:matt/carnival/02:                           960       272
+:matt/carnival/01:                           960       304
+:matt/carnival/01:                           960        48
+:matt/carnival/02:                           960        80
+:matt/carnival/01:                           960       112
+:matt/carnival/02:                           960       144
+:matt/carnival/02:                           960        16
+:matt/carnival/01:                           960       -16
+:matt/carnival/01:                           320       176
+:matt/carnival/01:                           384       176
+:matt/carnival/01:                           448       176
+:matt/carnival/01:                           512       176
+:matt/carnival/01:                           576       176
+:matt/carnival/01:                           640       176
+:matt/carnival/01:                           352       240
+:matt/carnival/01:                           608       240
+:matt/carnival/01:                           320       240
+:matt/carnival/01:                           384       240
+:matt/carnival/01:                           448       240
+:matt/carnival/01:                           512       240
+:matt/carnival/01:                           576       240
+:matt/carnival/01:                           640       240
+:matt/carnival/01:                           544       240
+:matt/carnival/01:                           416       240
+:matt/carnival/01:                           480       176
+:matt/carnival/45:                           928       304
+:matt/carnival/46:                           928       272
+:matt/carnival/02:                           896       208
+:matt/carnival/01:                           896       240
+:matt/carnival/02:                           896       272
+:matt/carnival/45:                           928       240
+:matt/carnival/46:                           928       208
+:matt/carnival/46:                            32       304
+:matt/carnival/45:                            32       272
+:matt/carnival/46:                            32       240
+:matt/carnival/45:                            32       208
+:matt/carnival/02:                            64       208
+:matt/carnival/01:                            64       240
+:matt/carnival/02:                            64       272

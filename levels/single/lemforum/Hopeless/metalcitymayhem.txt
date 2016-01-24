@@ -1,0 +1,132 @@
+$BUILT 2012-06-16 12:50:53
+$AUTHOR Michael S. Repton
+$GERMAN 
+$ENGLISH Metal City Mayhem
+
+#SIZE_X 640
+#SIZE_Y 960
+#TORUS_X 0
+#TORUS_Y 1
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 240
+#INITIAL 64
+#REQUIRED 64
+#SPAWN_INTERVAL 64
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 3
+#FLOATER 4
+#EXPLODER 3
+#BLOCKER 3
+#BUILDER 12
+#BASHER 3
+#MINER 6
+#DIGGER 3
+#JUMPER 3
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/sandstone/Hatch.H: 128 32
+
+:geoo/sandstone/Goal.G: 400 144
+
+:geoo/steel/dark_32x32o.S: 240 304
+:geoo/steel/dark_32x32o.S: 240 336
+:geoo/steel/dark_48x32o.S: 432 448
+:geoo/steel/dark_48x32o.S: 384 448
+:geoo/steel/dark_48x32o.S: 336 448
+:geoo/steel/dark_48x32o.S: 288 448
+:geoo/steel/dark_48x32o.S: 432 368
+:geoo/steel/dark_48x32o.S: 384 368
+:geoo/steel/dark_48x32o.S: 336 368
+:geoo/steel/dark_48x32o.S: 288 368
+:geoo/steel/dark_48x32o.S: 240 368
+:geoo/steel/dark_48x48o.S: 432 240
+:geoo/steel/dark_48x32o.S: 432 528
+:geoo/steel/dark_48x32o.S: 384 528
+:geoo/steel/dark_48x32o.S: 336 528
+:geoo/steel/dark_48x32o.S: 288 528
+:geoo/steel/dark_48x32o.S: 224 208
+:geoo/steel/dark_48x32o.S: 176 208
+:geoo/steel/dark_48x32o.S: 128 208
+:geoo/steel/dark_48x32o.S: 80 208
+:geoo/steel/dark_32x32o.S: 240 240
+:geoo/steel/dark_48x32o.S: 512 208
+:geoo/steel/dark_48x32o.S: 464 208
+:geoo/steel/dark_48x32o.S: 416 208
+:geoo/steel/dark_48x32o.S: 368 208
+:geoo/steel/dark_48x32o.S: 320 208
+:geoo/steel/dark_48x32o.S: 432 288
+:geoo/steel/dark_48x48o.S: 320 160
+:geoo/steel/dark_48x48o.S: 320 80
+:geoo/steel/dark_48x32o.S: 320 128
+:geoo/steel/dark_48x48o.S: 320 0
+:geoo/steel/dark_48x32o.S: 320 48
+:geoo/steel/dark_48x32o.S: 320 928
+:geoo/steel/dark_48x32o.S: 272 928
+:geoo/steel/dark_48x32o.S: 160 928
+:geoo/steel/dark_48x32o.S: 112 928
+:geoo/steel/dark_48x32o.S: 64 928
+:geoo/steel/dark_48x32o.S: 16 928
+:geoo/sandstone/pillar_top_ext: 352 400
+:geoo/sandstone/pillar_top_shaded: 368 416
+:geoo/sandstone/pillar_top_ext: 352 480
+:geoo/sandstone/pillar_top_shaded: 368 496
+:geoo/steel/dark_48x32o.S: 240 448
+:geoo/steel/dark_48x32o.S: 160 448
+:geoo/steel/dark_48x32o.S: 240 528
+:geoo/steel/dark_48x32o.S: 160 528
+:geoo/sandstone/32x16: 208 464
+:geoo/sandstone/32x16: 208 544
+:geoo/steel/dark_48x48o.S: 432 320
+:geoo/sandstone/pillar_top_ext: 352 560
+:geoo/sandstone/pillar_top_shaded: 368 576
+:geoo/sandstone/pillar_top_jaggedl: 368 608 f
+:geoo/steel/dark_48x32o.S: 160 704
+:geoo/steel/dark_48x32o.S: 368 704
+:geoo/steel/dark_48x32o.S: 320 704
+:geoo/steel/dark_48x32o.S: 272 704
+:geoo/steel/dark_64x64o.S: 208 672
+:geoo/sandstone/pillar_top_ext: 208 736
+:geoo/sandstone/pillar_top_shaded: 224 752
+:geoo/steel/dark_48x32o.S: 160 816
+:geoo/steel/dark_48x32o.S: 368 816
+:geoo/steel/dark_48x32o.S: 320 816
+:geoo/steel/dark_48x32o.S: 272 816
+:geoo/steel/dark_64x64o.S: 208 784
+:geoo/sandstone/pillar_top_ext: 208 848
+:geoo/sandstone/pillar_top_shaded: 224 864
+:geoo/steel/dark_64x64o.S: 208 896
+:geoo/steel/dark_48x32o.S: 112 816
+:geoo/steel/dark_48x32o.S: 480 528
+:geoo/steel/dark_48x48o.S: 464 720
+:geoo/steel/dark_48x48o.S: 464 640
+:geoo/steel/dark_48x32o.S: 464 688
+:geoo/steel/dark_48x48o.S: 464 560
+:geoo/steel/dark_48x32o.S: 464 608
+:geoo/steel/dark_48x48o.S: 464 880
+:geoo/steel/dark_48x48o.S: 464 800
+:geoo/steel/dark_48x32o.S: 464 848
+:geoo/steel/dark_48x32o.S: 464 768
+:geoo/steel/dark_48x32o.S: 368 928
+:geoo/steel/dark_48x32o.S: 528 528
+:geoo/steel/dark_48x32o.S: 512 608
+:geoo/steel/dark_48x32o.S: 512 688
+:geoo/steel/dark_48x32o.S: 512 768
+:geoo/steel/dark_48x32o.S: 512 848
+:geoo/steel/dark_48x32o.S: 480 288
+:geoo/steel/dark_48x32o.S: 480 368
+:geoo/steel/dark_48x32o.S: 560 208
+:geoo/steel/dark_48x48o.S: 560 160
+:geoo/steel/dark_48x48o.S: 560 80
+:geoo/steel/dark_48x32o.S: 560 128
+:geoo/steel/dark_48x32o.S: 560 48
+:geoo/steel/dark_48x32o.S: 512 48
+:geoo/steel/dark_48x32o.S: 512 128
+:geoo/steel/dark_32x32o.S: 48 784

@@ -1,0 +1,311 @@
+$BUILT 2015-06-22 11:37:07
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Trading and Cooperating
+
+#SIZE_X 1050
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 11
+#REQUIRED 10
+#SPAWN_INTERVAL 48
+#SPAWN_INTERVAL_FAST 48
+
+#WALKER 0
+#JUMPER 1
+#CLIMBER 1
+#FLOATER 0
+#EXPLODER 1
+#BLOCKER 1
+#BATTER 1
+#BUILDER 1
+#PLATFORMER 1
+#BASHER 2
+#MINER 0
+#DIGGER 4
+
+:geoo/abstract/hatch.H: 368 64
+:geoo/abstract/hatch.H: 312 288 r
+:geoo/abstract/hatch.H: 706 256
+:geoo/abstract/hatch.H: 706 288
+:geoo/abstract/hatch.H: 654 64 r
+:geoo/abstract/hatch.H: 686 64 r
+:geoo/abstract/hatch.H: 336 64
+:geoo/abstract/hatch.H: 312 256 r
+:geoo/abstract/hatch.H: 304 64
+:geoo/abstract/hatch.H: 718 64 r
+:geoo/abstract/hatch.H: 750 64 r
+
+:geoo/abstract/goal.G: 24 288
+:geoo/abstract/goal.G: 994 288
+
+:geoo/construction/sawblade_medium.F: 798 48
+:geoo/construction/sawblade_medium.F: 862 112
+:geoo/construction/sawblade_medium.F: 128 112
+:geoo/construction/sawblade_medium.F: 192 48
+:geoo/construction/sawblade_medium.F: 144 64
+:geoo/construction/sawblade_medium.F: 846 64
+
+:geoo/construction/trampoline.T: 228 96
+:geoo/construction/trampoline.T: 164 160
+:geoo/construction/trampoline.T: 854 160
+:geoo/construction/trampoline.T: 790 96
+
+:matt/carnival/35: 570 80
+:matt/carnival/34: 634 80
+:matt/carnival/35: 634 112
+:matt/carnival/34: 352 80 frr
+:matt/carnival/34: 288 112 frr
+:geoo/construction/platform.S: 400 60
+:geoo/construction/platform.S: 368 60
+:matt/marble/21c: 572 160
+:matt/marble/21c: 682 160
+:matt/marble/21c: 746 176
+:matt/marble/21c: 692 160
+:geoo/steel/dark_64x64.S: 754 336
+:matt/marble/20d: 906 288
+:matt/marble/20d: 922 272
+:matt/marble/20d: 890 272
+:geoo/steel/dark_64x64.S: 882 336
+:geoo/steel/dark_64x64.S: 946 336
+:geoo/construction/platform.S: 336 60
+:geoo/construction/platform.S: 304 60
+:geoo/construction/platform.S: 272 60
+:geoo/construction/platform.S: 264 60
+:matt/marble/21c: 414 160
+:matt/marble/21c: 336 160
+:matt/marble/21c: 176 192
+:matt/marble/21c: 954 240
+:matt/carnival/25: 986 192
+:matt/marble/21c: 32 240
+:matt/marble/21c: 0 224
+:geoo/steel/dark_64x64.S: -24 336
+:matt/marble/20d: 112 288
+:matt/marble/20d: 128 288
+:matt/marble/20d: 144 288
+:geoo/steel/dark_64x64.S: 104 336
+:geoo/steel/dark_64x64.S: 168 336
+:geoo/steel/dark_64x64.S: 296 336
+:geoo/steel/dark_64x64.S: 360 336
+:geoo/steel/dark_64x64.S: 360 272
+:geoo/steel/dark_64x64.S: 626 272
+:matt/marble/21c: 80 208
+:matt/carnival/35: 416 80 frr
+:matt/carnival/35: 352 112 frr
+:matt/carnival/34: 414 128 frr
+:matt/carnival/34: 572 128
+:matt/marble/21c: 698 128
+:matt/marble/21c: 792 128
+:geoo/steel/dark_64x64.S: 818 336
+:geoo/steel/dark_64x64.S: 232 336
+:geoo/steel/dark_64x64.S: 626 336
+:geoo/steel/dark_64x64.S: 690 336
+:geoo/construction/platform.S: 706 60
+:geoo/construction/platform.S: 674 60
+:geoo/construction/platform.S: 642 60
+:geoo/construction/platform.S: 610 60
+:geoo/construction/platform.S: 730 60
+:geoo/construction/platform.S: 396 62
+:geoo/construction/platform.S: 364 62
+:geoo/construction/platform.S: 332 62
+:geoo/construction/platform.S: 300 62
+:geoo/construction/platform.S: 268 62
+:geoo/construction/platform.S: 260 62
+:geoo/construction/platform.S: 702 62
+:geoo/construction/platform.S: 670 62
+:geoo/construction/platform.S: 638 62
+:geoo/construction/platform.S: 606 62
+:geoo/construction/platform.S: 726 62
+:matt/marble/21c: 288 112
+:matt/marble/21c: 698 112
+:matt/marble/21c: 288 128
+:matt/marble/21c: 620 160
+:matt/marble/21c: 350 160
+:matt/carnival/01: 320 112
+:matt/carnival/01: 288 112
+:matt/carnival/01: 698 112
+:matt/carnival/01: 730 112
+:matt/marble/21c: 288 160
+:matt/marble/21c: 698 160
+:matt/marble/21c: 762 176
+:matt/carnival/25: 0 192
+:matt/marble/21c: 826 192
+:matt/marble/21c: 906 208
+:matt/marble/20d: 906 224
+:matt/marble/20d: 922 224
+:matt/marble/20d: 890 224
+:matt/marble/20d: 112 224
+:matt/marble/20d: 128 224
+:matt/marble/20d: 144 224
+:geoo/steel/dark_64x64.S: 1010 336
+:matt/marble/21c: 874 208
+:matt/marble/21c: 112 208
+:geoo/construction/platform_single.S: 148 334
+:geoo/construction/platform_single.S: 132 332
+:geoo/construction/platform_single.S: 116 330
+:geoo/construction/platform_single.S: 116 328 d
+:geoo/construction/platform_single.S: 132 330 d
+:geoo/construction/platform_single.S: 148 332 d
+:geoo/construction/platform_single.S: 104 328
+:geoo/construction/platform_single.S: 104 334
+:geoo/construction/platform_single.S: 104 332
+:geoo/construction/platform_single.S: 104 330
+:geoo/construction/platform_single.S: 96 330
+:geoo/construction/platform_single.S: 96 334
+:geoo/construction/platform_single.S: 96 332
+:geoo/construction/platform_single.S: 88 332
+:geoo/construction/platform_single.S: 88 336
+:geoo/construction/platform_single.S: 88 334
+:geoo/construction/platform_single.S: 80 334
+:geoo/construction/platform_single.S: 80 338
+:geoo/construction/platform_single.S: 80 336
+:geoo/steel/dark_64x64.S: 40 336
+:geoo/construction/platform_single.S: 926 328 d
+:geoo/construction/platform_single.S: 926 330
+:geoo/construction/platform_single.S: 910 330 d
+:geoo/construction/platform_single.S: 910 332
+:geoo/construction/platform_single.S: 894 332 d
+:geoo/construction/platform_single.S: 894 334
+:geoo/construction/platform_single.S: 938 334
+:geoo/construction/platform_single.S: 938 332
+:geoo/construction/platform_single.S: 938 330
+:geoo/construction/platform_single.S: 938 328
+:geoo/construction/platform_single.S: 946 330
+:geoo/construction/platform_single.S: 954 332
+:geoo/construction/platform_single.S: 962 334
+:geoo/construction/platform_single.S: 946 334
+:geoo/construction/platform_single.S: 954 334
+:geoo/construction/platform_single.S: 946 332
+:geoo/steel/32x16o.S: 898 294
+:geoo/steel/32x16o.S: 120 294
+:geoo/construction/platform_single.S: 148 314
+:geoo/construction/platform_single.S: 132 312
+:geoo/construction/platform_single.S: 910 312
+:geoo/construction/platform_single.S: 894 314
+:geoo/steel/16x16o.S: 128 278
+:geoo/steel/32x16o.S: 120 262
+:geoo/steel/32x16o.S: 898 262
+:geoo/steel/16x16o.S: 906 278
+:geoo/construction/platform_single.S: 116 310
+:geoo/construction/platform_single.S: 926 310
+:matt/marble/20d: 194 128
+:matt/marble/20d: 198 128 d
+:matt/marble/20d: 190 128 n
+:matt/marble/20d: 178 128 d
+:matt/marble/21c: 160 192
+:matt/marble/20d: 194 208
+:matt/marble/20d: 198 208 d
+:matt/marble/20d: 190 208 n
+:matt/marble/20d: 178 208 d
+:matt/marble/20d: 194 272
+:matt/marble/20d: 198 272 d
+:matt/marble/20d: 190 272 n
+:matt/marble/20d: 178 272 d
+:matt/marble/20d: 844 144
+:matt/marble/20d: 848 144 d
+:matt/marble/20d: 840 144 n
+:matt/marble/20d: 828 144 d
+:matt/marble/21c: 810 192
+:matt/marble/20d: 844 208
+:matt/marble/20d: 848 208 d
+:matt/marble/20d: 840 208 n
+:matt/marble/20d: 828 208 d
+:matt/marble/20d: 844 272
+:matt/marble/20d: 848 272 d
+:matt/marble/20d: 840 272 n
+:matt/marble/20d: 828 272 d
+:matt/marble/20d: 844 128
+:matt/marble/20d: 848 128 d
+:matt/marble/20d: 840 128 n
+:matt/marble/20d: 828 128 d
+:matt/marble/20d: 780 272
+:matt/marble/20d: 784 272 d
+:matt/marble/20d: 776 272 n
+:matt/marble/20d: 764 272 d
+:matt/marble/20d: 780 208
+:matt/marble/20d: 784 208 d
+:matt/marble/20d: 776 208 n
+:matt/marble/20d: 764 208 d
+:matt/marble/20d: 780 144
+:matt/marble/20d: 784 144 d
+:matt/marble/20d: 776 144 n
+:matt/marble/20d: 764 144 d
+:matt/marble/21c: 746 176 n
+:matt/marble/20d: 780 80
+:matt/marble/20d: 784 80 d
+:matt/marble/20d: 776 80 n
+:matt/marble/21c: 780 128
+:matt/marble/20d: 764 80 d
+:matt/marble/21c: 718 128
+:matt/carnival/53: 698 112
+:matt/marble/20d: 780 60
+:matt/marble/20d: 784 60 d
+:matt/marble/20d: 776 60 n
+:matt/marble/20d: 764 60 d
+:geoo/construction/platform.S: 750 62 n
+:geoo/construction/platform.S: 754 60 n
+:matt/marble/20d: 258 208
+:matt/marble/20d: 262 208 d
+:matt/marble/20d: 254 208 n
+:matt/marble/20d: 242 208 d
+:matt/marble/20d: 258 272
+:matt/marble/20d: 262 272 d
+:matt/marble/20d: 254 272 n
+:matt/marble/20d: 242 272 d
+:matt/marble/20d: 258 80
+:matt/marble/20d: 262 80 d
+:matt/marble/20d: 254 80 n
+:matt/marble/20d: 242 80 d
+:matt/marble/21c: 206 128
+:matt/marble/21c: 248 128
+:matt/carnival/54: 288 112
+:matt/marble/21c: 224 176
+:matt/marble/20d: 258 144
+:matt/marble/20d: 262 144 d
+:matt/marble/20d: 254 144 n
+:matt/marble/20d: 242 144 d
+:matt/marble/21c: 240 176 n
+:matt/marble/20d: 258 60
+:matt/marble/20d: 262 60 d
+:matt/marble/20d: 254 60 n
+:geoo/construction/platform.S: 264 60 n
+:geoo/construction/platform.S: 260 62 n
+:matt/marble/20d: 242 60 d
+:matt/marble/20a: 588 -4
+:matt/marble/20a: 580 -4 d
+:matt/carnival/35: 522 0
+:matt/marble/20a: 592 -4 n
+:matt/marble/20a: 604 -4 d
+:matt/marble/20a: 442 -4
+:matt/marble/20a: 434 -4 d
+:matt/marble/20a: 446 -4 n
+:matt/marble/20a: 458 -4 d
+:matt/carnival/35: 464 0 frr
+:geoo/construction/platform.S: 586 60
+:geoo/construction/platform_single.S: 580 58
+:geoo/construction/platform_single.S: 578 56
+:geoo/construction/platform_single.S: 576 54
+:geoo/construction/platform.S: 590 62
+:geoo/construction/platform_single.S: 574 56 d
+:geoo/construction/platform_single.S: 576 58 d
+:geoo/construction/platform_single.S: 578 60 d
+:geoo/construction/platform_single.S: 570 54 d
+:geoo/construction/platform.S: 432 60
+:geoo/construction/platform_single.S: 462 58
+:geoo/construction/platform.S: 432 60
+:geoo/construction/platform_single.S: 464 56
+:geoo/construction/platform_single.S: 466 54
+:geoo/construction/platform.S: 428 62
+:geoo/construction/platform.S: 428 62
+:geoo/construction/platform_single.S: 468 56 d
+:geoo/construction/platform_single.S: 466 58 d
+:geoo/construction/platform_single.S: 464 60 d
+:geoo/construction/platform_single.S: 472 54 d
+:matt/marble/20a: 590 -48 d
+:matt/marble/20a: 444 -48 d

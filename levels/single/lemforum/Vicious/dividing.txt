@@ -1,0 +1,250 @@
+$BUILT 2014-07-15 21:16:58
+$AUTHOR Michael S. Repton
+$GERMAN 
+$ENGLISH Dividing Three By Two
+
+#SIZE_X 1920
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 380
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 100
+#REQUIRED 100
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 2
+#FLOATER 2
+#EXPLODER 2
+#BLOCKER 2
+#BUILDER 2
+#BASHER 2
+#MINER 2
+#DIGGER 2
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 80 144
+
+:simon/tapir/goal.G: 1736 96
+
+:simon/water.W: 320 352
+:simon/water.W: 368 352
+:simon/water.W: 416 352
+:simon/water.W: 464 352
+:simon/water.W: 512 352
+:simon/water.W: 608 352
+:simon/water.W: 656 352
+:simon/water.W: 704 352
+:simon/water.W: 752 352
+:simon/water.W: 800 352
+:simon/water.W: 896 352
+:simon/water.W: 944 352
+:simon/water.W: 992 352
+:simon/water.W: 1040 352
+:simon/water.W: 1088 352
+:simon/water.W: 1136 352
+:simon/water.W: 848 352
+:simon/water.W: 560 352
+
+:geoo/construction/wall/big_diag_tu: 32 336
+:geoo/construction/wall/big_brick1: 64 336
+:geoo/construction/wall/big_brick2: 128 336
+:geoo/construction/wall/big_brick3: 192 336
+:matt/goldmine/crate64: 64 272
+:matt/goldmine/crate64: 128 272
+:matt/goldmine/explosivecrate: 64 208
+:matt/earth/30: 312 288
+:matt/goldmine/planksupport: 368 288
+:geoo/construction/wall/big_brick2: 256 336
+:matt/earth/30: 496 288 frr
+:matt/earth/30: 600 288
+:geoo/construction/wall/big_brick1: 544 336
+:matt/earth/30: 784 288 frr
+:geoo/construction/wall/big_diag_tu: 0 368
+:geoo/construction/wall/big_brick1: 32 368
+:geoo/construction/wall/big_brick2: 96 368
+:geoo/construction/wall/big_brick3: 160 368
+:geoo/construction/wall/big_brick2: 224 368
+:geoo/construction/wall/big_brick3: 544 368
+:geoo/construction/wall/big_brick3: 832 368
+:matt/goldmine/planksupport: 656 288
+:matt/earth/30: 888 288
+:geoo/construction/wall/big_brick1: 832 336
+:matt/earth/30: 1072 288 frr
+:matt/goldmine/planksupport: 944 288
+:geoo/construction/wall/big_square: 288 368
+:geoo/construction/concrete/064: 368 224
+:geoo/construction/concrete/064: 432 224
+:geoo/construction/concrete/064: 400 128
+:geoo/construction/concrete/032a: 368 128
+:geoo/construction/concrete/032a: 400 96
+:geoo/construction/concrete/032b: 432 96
+:geoo/construction/concrete/032b: 464 128
+:geoo/construction/concrete/032v: 464 160
+:geoo/construction/concrete/032v: 368 160
+:geoo/construction/concrete/032h: 400 192
+:geoo/sandstone/64x64: 656 224
+:geoo/sandstone/64x64: 720 224
+:geoo/sandstone/64x32: 656 192
+:geoo/sandstone/64x32: 688 160
+:geoo/sandstone/64x32: 720 192
+:geoo/sandstone/32x64: 656 128
+:geoo/sandstone/32x64: 752 128
+:geoo/sandstone/64x64: 688 96
+:geoo/sandstone/slopes/32x32rb: 656 96
+:geoo/sandstone/slopes/32x32rb: 688 64
+:geoo/sandstone/slopes/32x32lb: 720 64
+:geoo/sandstone/slopes/32x32lb: 752 96
+:geoo/construction/wall/big_128x128: 944 160
+:geoo/construction/wall/big_brickdiag_tu: 944 128
+:geoo/construction/wall/big_brickdiag_td: 1008 128
+:geoo/construction/wall/big_brickdiag_bd: 944 96 rrr
+:geoo/construction/wall/big_brickdiag_bu: 1040 96 r
+:geoo/construction/wall/big_diag_tu: 944 64
+:geoo/construction/wall/big_diag_tu: 976 32
+:geoo/construction/wall/big_diag_td: 1008 32
+:geoo/construction/wall/big_diag_td: 1040 64
+:geoo/construction/wall/big_brickdiag_bu: 976 64
+:geoo/construction/wall/big_brickdiag_tu: 976 96
+:geoo/construction/wall/big_diag_bu: 976 96
+:geoo/construction/wall/big_diag_tu: 1008 64
+:geoo/construction/wall/big_brick1: 1120 336
+:geoo/construction/wall/big_brick2: 1184 336
+:geoo/construction/wall/big_brick3: 1152 368
+:matt/goldmine/crate64: 1248 336
+:matt/goldmine/crate64: 1408 336
+:geoo/construction/wall/big_square: 1120 368
+:geoo/construction/wall/big_square: 1216 368
+:geoo/construction/wall/big_brick1: 1472 336
+:geoo/construction/wall/big_brick2: 1536 336
+:geoo/construction/wall/big_brick3: 1600 336
+:geoo/construction/wall/big_brick2: 1664 336
+:geoo/construction/wall/big_brick1: 1696 368
+:geoo/construction/wall/big_brick2: 1504 368
+:geoo/construction/wall/big_brick3: 1568 368
+:geoo/construction/wall/big_brick2: 1632 368
+:geoo/construction/wall/big_square: 1472 368
+:geoo/construction/wall/big_brick1: 1728 336
+:geoo/construction/wall/big_brick2: 1792 336
+:geoo/construction/wall/big_brick3: 1856 336
+:geoo/construction/wall/big_brick3: 1760 368
+:geoo/construction/wall/big_brick1: 1824 368
+:geoo/construction/wall/big_square: 1888 368
+:geoo/construction/stairsbrick_ru_32: 1536 304
+:geoo/sandstone/ebony/v16a: 1600 304
+:geoo/sandstone/ebony/v16b: 1712 304
+:geoo/sandstone/ebony/h8a: 1600 296
+:geoo/sandstone/ebony/h8b: 1632 296
+:geoo/sandstone/ebony/h8c: 1664 296
+:geoo/construction/stairsbrick_ru_32: 1648 264
+:geoo/sandstone/ebony/h8b: 1696 296
+:geoo/sandstone/ebony/v16c: 1712 264
+:geoo/sandstone/ebony/h8a: 1712 256
+:geoo/sandstone/ebony/h8b: 1744 256
+:geoo/sandstone/ebony/h8c: 1776 256
+:geoo/sandstone/ebony/h8b: 1808 256
+:geoo/sandstone/ebony/h8a: 1840 256
+:geoo/sandstone/ebony/h8b: 1872 256
+:geoo/sandstone/ebony/v16a: 1808 264
+:geoo/sandstone/ebony/v16c: 1808 304
+:geoo/sandstone/ebony/v16c: 1888 264
+:geoo/sandstone/ebony/v16b: 1888 304
+:geoo/sandstone/ebony/h8a: 1808 296
+:geoo/sandstone/ebony/h8b: 1840 296
+:geoo/sandstone/ebony/h8c: 1872 296
+:geoo/sandstone/ebony/h8b: 1904 296
+:geoo/sandstone/ebony/v16a: 1888 224
+:geoo/construction/stairsbrick_rd_32: 1720 224
+:geoo/sandstone/ebony/v16c: 1600 232
+:geoo/sandstone/ebony/v16b: 1600 192
+:geoo/sandstone/ebony/h8a: 1600 224
+:geoo/sandstone/ebony/h8b: 1632 224
+:geoo/sandstone/ebony/h8c: 1664 224
+:geoo/sandstone/ebony/h8b: 1696 224
+:geoo/sandstone/ebony/h8l: 1712 232
+:geoo/sandstone/ebony/h8r: 1720 232
+:geoo/construction/stairsbrick_ru_32: 1648 192
+:geoo/sandstone/ebony/h8a: 1712 184
+:geoo/sandstone/ebony/h8b: 1744 184
+:geoo/sandstone/ebony/h8c: 1776 184
+:geoo/sandstone/ebony/h8b: 1808 184
+:geoo/sandstone/ebony/h8a: 1840 184
+:geoo/sandstone/ebony/h8b: 1872 184
+:geoo/sandstone/ebony/v16c: 1888 192
+:geoo/sandstone/ebony/v16a: 1600 152
+:geoo/sandstone/ebony/v16b: 1888 152
+:geoo/sandstone/ebony/h8a: 1728 144
+:geoo/sandstone/ebony/h8b: 1760 144
+:geoo/sandstone/ebony/h8c: 1792 144
+:geoo/sandstone/ebony/h8b: 1824 144
+:geoo/sandstone/ebony/h8a: 1856 144
+:geoo/sandstone/ebony/h8b: 1888 144
+:geoo/sandstone/ebony/h8a: 1584 144
+:geoo/sandstone/ebony/h8b: 1616 144
+:geoo/sandstone/ebony/h8c: 1648 144
+:geoo/sandstone/ebony/v16a: 1712 136
+:geoo/sandstone/ebony/h8b: 1680 144
+:geoo/sandstone/ebony/h8l: 1600 184
+:geoo/sandstone/ebony/h8r: 1608 184
+:geoo/construction/stairsbrick_rd_32: 1784 152
+:geoo/construction/concrete/032vc: 0 0
+:geoo/construction/concrete/064: 32 0
+:geoo/construction/concrete/032hc: 32 64
+:geoo/construction/concrete/032hd: 96 64
+:geoo/construction/concrete/064: 96 0
+:geoo/construction/concrete/032vd: 160 0
+:geoo/construction/concrete/032hc: 160 64
+:geoo/construction/concrete/032vc: 224 96
+:geoo/construction/concrete/032vd: 256 96
+:geoo/construction/concrete/032hd: 288 64
+:geoo/construction/concrete/032vc: 320 0
+:geoo/construction/concrete/032vd: 352 0
+:geoo/construction/concrete/032hc: 384 0
+:geoo/construction/concrete/032hd: 448 0
+:geoo/sandstone/slopes/32x64rt: 512 0
+:geoo/sandstone/slopes/32x16rt: 544 64
+:geoo/sandstone/slopes/32x16lt: 576 64
+:geoo/sandstone/slopes/32x32lt: 608 32
+:geoo/sandstone/slopes/32x32lt: 640 0
+:geoo/sandstone/slopes/64x32rt: 672 0
+:geoo/sandstone/slopes/64x32lt: 736 0
+:geoo/sandstone/64x32_blank: 544 32
+:geoo/sandstone/64x32_blank: 576 0
+:geoo/sandstone/32x16: 544 16
+:geoo/sandstone/32x16: 544 0
+:geoo/construction/concrete/032va: 224 0
+:geoo/construction/concrete/032vb: 256 0
+:geoo/sandstone/slopes/32x32rt: 800 0
+:geoo/sandstone/slopes/32x32rt: 832 32
+:geoo/sandstone/slopes/32x32lt: 864 32
+:geoo/sandstone/slopes/32x32lt: 896 0
+:geoo/sandstone/64x32_blank: 832 0
+:geoo/construction/wall/big_diag_bd: 1472 0
+:geoo/construction/wall/big_diag_bd: 1504 32
+:geoo/construction/wall/big_brick1: 1504 0
+:geoo/construction/wall/big_brick2: 1536 32
+:geoo/construction/wall/big_brickdiag_bu: 1568 0
+:geoo/construction/wall/big_brickdiag_bd: 1600 0 r
+:geoo/construction/wall/big_diag_bd: 1600 64
+:geoo/construction/wall/big_brickdiag_bu: 1632 64
+:geoo/construction/wall/big_brickdiag_bu: 1696 32
+:geoo/construction/wall/big_brickdiag_bd: 1632 0
+:geoo/construction/wall/big_brickdiag_bu: 1632 0 rrr
+:geoo/construction/wall/big_square: 1664 32
+:geoo/construction/wall/big_square: 1696 0
+:geoo/construction/wall/big_brickdiag_bu: 1728 0
+:geoo/construction/wall/big_brickdiag_tu: 1760 0
+:geoo/construction/wall/big_brickdiag_bu: 1824 0 r
+:geoo/construction/wall/big_brick3: 1856 32
+:geoo/construction/wall/big_brickdiag_td: 1856 0
+:geoo/construction/wall/big_diag_bd: 1888 0
+:geoo/construction/wall/big_diag_bd: 1888 64

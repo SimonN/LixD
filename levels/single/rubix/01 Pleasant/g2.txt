@@ -1,0 +1,133 @@
+$BUILT 2014-02-27 15:22:01
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH A Soft Landing
+
+#SIZE_X 880
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 112
+#START_Y 380
+#BACKGROUND_RED 111
+#BACKGROUND_GREEN 127
+#BACKGROUND_BLUE 128
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 28
+#SPAWN_INTERVAL 28
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 40
+#FLOATER 12
+#CUBER 12
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 32 0
+
+:geoo/construction/Goal2.G: 816 176
+
+:geoo/construction/Laser_hz_64.F: 384 128
+:geoo/construction/Laser_hz_64.F: 432 128
+:geoo/construction/Laser_hz_64.F: 528 128
+:geoo/construction/Laser_hz_64.F: 576 128
+:geoo/construction/Laser_hz_64.F: 672 128
+:geoo/construction/Laser_hz_64.F: 720 128
+:geoo/construction/Laser_hz_64.F: 240 128
+:geoo/construction/Laser_hz_64.F: 288 128
+:matt/water.W: 592 352
+:matt/water.W: 624 352
+:matt/water.W: 656 352
+:matt/water.W: 688 352
+:matt/water.W: 720 352
+:matt/water.W: 752 352
+:matt/water.W: 784 352
+:matt/water.W: 816 352
+:matt/water.W: 592 368
+:matt/water.W: 624 368
+:matt/water.W: 656 368
+:matt/water.W: 688 368
+:matt/water.W: 720 368
+:matt/water.W: 752 368
+:matt/water.W: 784 368
+:matt/water.W: 816 368
+:matt/water.W: 32 352
+:matt/water.W: 64 352
+:matt/water.W: 96 352
+:matt/water.W: 128 352
+:matt/water.W: 32 368
+:matt/water.W: 64 368
+:matt/water.W: 96 368
+:matt/water.W: 128 368
+:matt/water.W: 0 352
+:matt/water.W: 0 368
+
+:geoo/sandstone/64x32: 224 368
+:geoo/sandstone/64x64: 288 336
+:geoo/sandstone/64x32: 352 368
+:geoo/sandstone/64x32: 416 368
+:geoo/sandstone/64x64: 288 272
+:geoo/sandstone/64x32: 160 368
+:geoo/sandstone/64x64: 288 208
+:geoo/sandstone/64x32: 480 368
+:geoo/sandstone/64x32: 544 368
+:geoo/sandstone/64x32: 160 336
+:geoo/sandstone/64x32: 96 336
+:geoo/sandstone/64x32: 96 304
+:geoo/sandstone/64x32: 32 304
+:geoo/sandstone/64x32: 32 272
+:geoo/sandstone/64x32: 32 208 rrr
+:geoo/sandstone/64x32: 416 336
+:geoo/sandstone/64x32: 480 336
+:geoo/sandstone/64x32: 544 336
+:geoo/sandstone/64x32: 608 336
+:geoo/sandstone/64x32: 496 304
+:geoo/sandstone/64x32: 560 304
+:geoo/sandstone/64x32: 624 304
+:geoo/sandstone/64x32: 688 304
+:geoo/sandstone/64x32: 560 272
+:geoo/sandstone/64x32: 624 272
+:geoo/sandstone/64x32: 688 272
+:geoo/sandstone/64x32: 752 272
+:geoo/sandstone/64x32: 624 240
+:geoo/sandstone/64x32: 688 240
+:geoo/sandstone/64x32: 752 240
+:geoo/sandstone/64x32: 816 240
+:geoo/sandstone/64x64: 816 272
+:geoo/sandstone/64x64: 816 336
+:geoo/sandstone/32x32: 464 0
+:geoo/sandstone/32x32: 448 32
+:geoo/sandstone/32x32: 464 64
+:geoo/sandstone/32x32: 480 96
+:geoo/sandstone/32x32: 496 128
+:geoo/sandstone/32x32: 608 0
+:geoo/sandstone/32x32: 592 32
+:geoo/sandstone/32x32: 608 64
+:geoo/sandstone/32x32: 624 96
+:geoo/sandstone/32x32: 640 128
+:geoo/sandstone/32x32: 752 0
+:geoo/sandstone/32x32: 736 32
+:geoo/sandstone/32x32: 752 64
+:geoo/sandstone/32x32: 768 96
+:geoo/sandstone/32x32: 784 128
+:geoo/sandstone/32x32: 176 0
+:geoo/sandstone/32x32: 160 32
+:geoo/sandstone/32x32: 176 64
+:geoo/sandstone/32x32: 192 96
+:geoo/sandstone/32x32: 208 128
+:geoo/sandstone/32x32: 320 0
+:geoo/sandstone/32x32: 304 32
+:geoo/sandstone/32x32: 320 64
+:geoo/sandstone/32x32: 336 96
+:geoo/sandstone/32x32: 352 128
+:geoo/sandstone/32x64: 32 144
+:geoo/sandstone/32x64: 32 80

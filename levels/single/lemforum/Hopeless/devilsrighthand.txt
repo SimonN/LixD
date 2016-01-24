@@ -1,0 +1,300 @@
+$BUILT 2014-08-03 00:52:05
+$AUTHOR Nepster
+$GERMAN 
+$ENGLISH Devil's Right Hand
+
+#SIZE_X 1086
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 366
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 80
+#REQUIRED 76
+#SPAWN_INTERVAL 53
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 3
+#FLOATER 3
+#EXPLODER 2
+#BLOCKER 2
+#BUILDER 3
+#BASHER 3
+#MINER 0
+#DIGGER 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/underworld/Hatch.H: 768 112
+:matt/underworld/Hatch.H: 128 274
+
+:matt/underworld/Goal.G: 928 304
+
+:proxima/flame.F: 988 320
+
+:matt/underworld/thinplatform128: 576 188
+:matt/underworld/thinplatform128: 640 188
+:matt/underworld/thinplatform128: 600 212
+:matt/underworld/thinplatform128: 616 212
+:matt/underworld/thinplatform64: 656 236
+:matt/underworld/thinplatform64: 624 236
+:matt/underworld/thinplatform16: 648 260
+:matt/underworld/thinplatform16: 664 260
+:matt/underworld/thinplatform16: 680 260
+:matt/underworld/thinplatform128: 600 164
+:matt/underworld/thinplatform128: 616 164
+:matt/underworld/thinplatform64: 656 140
+:matt/underworld/thinplatform64: 624 140
+:matt/underworld/thinplatform16: 664 116
+:matt/underworld/thinplatform16: 680 116
+:matt/underworld/thinplatform16: 648 116
+:matt/underworld/00: 328 368
+:matt/underworld/00: 440 368
+:matt/underworld/00: 128 264
+:matt/underworld/02: 256 352
+:matt/underworld/02: 512 352
+:matt/underworld/thinplatform128: 26 22 rrr
+:matt/underworld/thinplatform64: 26 22 rrr
+:matt/underworld/thinplatform128: 28 32 rrr
+:matt/underworld/thinplatform64: 28 32 rrr
+:matt/underworld/thinplatform128: 30 42 rrr
+:matt/underworld/thinplatform64: 30 42 rrr
+:matt/underworld/thinplatform128: 32 52 rrr
+:matt/underworld/thinplatform64: 32 52 rrr
+:matt/underworld/thinplatform128: 34 62 rrr
+:matt/underworld/thinplatform64: 34 62 rrr
+:matt/underworld/thinplatform16: 36 122 rrr
+:matt/underworld/thinplatform64: 36 72 rrr
+:matt/underworld/thinplatform64: 38 82 rrr
+:matt/underworld/thinplatform64: 40 92 rrr
+:matt/underworld/00: 448 208
+:geoo/steel/dark_64x32o.S: 256 368
+:matt/underworld/00: 320 208
+:matt/underworld/00: 320 208
+:matt/underworld/00: 384 208
+:matt/underworld/thinplatform64: 42 102 rrr
+:matt/underworld/thinplatform16: 44 122 rrr
+:matt/underworld/thinplatform16: 44 112 rrr
+:matt/underworld/thinplatform16: 46 122 rrr
+:matt/underworld/00: 576 368
+:matt/underworld/00: 640 368
+:matt/underworld/00: 704 368
+:matt/underworld/00: 896 368
+:matt/underworld/00: 960 368
+:matt/underworld/00: 832 208
+:matt/underworld/00: 896 208
+:matt/underworld/00: 960 208
+:matt/underworld/02: 1024 288
+:geoo/steel/dark_64x32o.S: 1024 368
+:matt/underworld/02: 1024 224
+:matt/underworld/02: 1024 96
+:matt/underworld/02: 1024 0
+:matt/underworld/02: 256 96
+:matt/underworld/02: 256 0
+:matt/underworld/00: 192 208
+:matt/underworld/00: 128 208
+:matt/underworld/00: 64 208
+:matt/underworld/02: 0 0
+:matt/underworld/00: 64 0
+:matt/underworld/00: 128 0
+:matt/underworld/00: 192 0
+:matt/underworld/00: 960 0
+:matt/underworld/00: 896 0
+:matt/underworld/00: 832 0
+:matt/underworld/00: 460 368 d
+:geoo/steel/dark_64x32o.S: 512 368
+:matt/underworld/00: 448 368 n
+:matt/underworld/00: 320 368
+:matt/underworld/00: 340 368 d
+:matt/underworld/00: 328 368 n
+:matt/underworld/00: 64 368
+:matt/underworld/00: 128 368
+:matt/underworld/00: 192 368
+:matt/underworld/00: 320 0
+:matt/underworld/00: 384 0
+:matt/underworld/00: 448 0
+:matt/underworld/thinplatform128: 768 120 rrr
+:matt/underworld/thinplatform128: 770 128 rrr
+:matt/underworld/thinplatform128: 772 136 rrr
+:matt/underworld/thinplatform64: 774 144 rrr
+:matt/underworld/thinplatform128: 774 144 rrr
+:matt/underworld/thinplatform64: 776 152 rrr
+:matt/underworld/thinplatform128: 776 152 rrr
+:matt/underworld/thinplatform64: 778 160 rrr
+:matt/underworld/thinplatform128: 778 160 rrr
+:matt/underworld/thinplatform64: 780 168 rrr
+:matt/underworld/thinplatform128: 780 168 rrr
+:matt/underworld/thinplatform64: 782 176 rrr
+:matt/underworld/thinplatform128: 782 176 rrr
+:matt/underworld/thinplatform64: 784 184 rrr
+:matt/underworld/thinplatform128: 784 184 rrr
+:matt/underworld/thinplatform64: 786 192 rrr
+:matt/underworld/thinplatform128: 786 192 rrr
+:matt/underworld/thinplatform64: 788 200 rrr
+:matt/underworld/thinplatform128: 788 200 rrr
+:matt/underworld/thinplatform64: 790 208 rrr
+:matt/underworld/thinplatform128: 790 208 rrr
+:matt/underworld/thinplatform128: 792 216 rrr
+:matt/underworld/thinplatform128: 0 120 rrr
+:matt/underworld/thinplatform128: 2 128 rrr
+:matt/underworld/thinplatform128: 4 136 rrr
+:matt/underworld/thinplatform64: 6 144 rrr
+:matt/underworld/thinplatform128: 6 144 rrr
+:matt/underworld/thinplatform64: 8 152 rrr
+:matt/underworld/thinplatform128: 8 152 rrr
+:matt/underworld/thinplatform64: 10 160 rrr
+:matt/underworld/thinplatform128: 10 160 rrr
+:matt/underworld/thinplatform64: 12 168 rrr
+:matt/underworld/thinplatform128: 12 168 rrr
+:matt/underworld/thinplatform64: 14 176 rrr
+:matt/underworld/thinplatform128: 14 176 rrr
+:matt/underworld/thinplatform64: 16 184 rrr
+:matt/underworld/thinplatform128: 16 184 rrr
+:matt/underworld/02: 0 96
+:matt/underworld/thinplatform64: 18 192 rrr
+:matt/underworld/thinplatform128: 18 192 rrr
+:matt/underworld/thinplatform64: 20 200 rrr
+:matt/underworld/thinplatform128: 20 200 rrr
+:matt/underworld/00: 0 192
+:matt/underworld/thinplatform64: 22 208 rrr
+:matt/underworld/thinplatform128: 22 208 rrr
+:matt/underworld/thinplatform128: 24 216 rrr
+:matt/underworld/thinplatform128: 26 224 rrr
+:geoo/steel/dark_64x32o.S: 0 208
+:matt/underworld/thinplatform128: 36 256 rrr
+:matt/underworld/thinplatform128: 38 264 rrr
+:matt/underworld/thinplatform128: 40 272 rrr
+:matt/underworld/thinplatform64: 42 280 rrr
+:matt/underworld/thinplatform128: 42 280 rrr
+:matt/underworld/thinplatform64: 44 288 rrr
+:matt/underworld/thinplatform128: 44 288 rrr
+:matt/underworld/thinplatform64: 46 296 rrr
+:matt/underworld/thinplatform128: 46 296 rrr
+:matt/underworld/thinplatform64: 48 304 rrr
+:matt/underworld/thinplatform128: 48 304 rrr
+:matt/underworld/thinplatform64: 50 312 rrr
+:matt/underworld/thinplatform128: 50 312 rrr
+:matt/underworld/thinplatform64: 52 320 rrr
+:matt/underworld/thinplatform128: 52 320 rrr
+:matt/underworld/thinplatform64: 54 328 rrr
+:matt/underworld/thinplatform128: 54 328 rrr
+:matt/underworld/thinplatform64: 56 336 rrr
+:matt/underworld/thinplatform128: 56 336 rrr
+:matt/underworld/thinplatform64: 58 344 rrr
+:matt/underworld/thinplatform128: 58 344 rrr
+:matt/underworld/thinplatform128: 60 352 rrr
+:matt/underworld/thinplatform128: 62 360 rrr
+:geoo/steel/dark_64x32o.S: 0 368
+:geoo/steel/dark_64x64.S: 768 144 d
+:geoo/steel/dark_64x64.S: 768 112 d
+:geoo/construction/platform_single.S: 538 366
+:geoo/construction/platform_single.S: 504 366
+:geoo/construction/platform_single.S: 320 366
+:geoo/construction/platform_single.S: 286 366
+:geoo/construction/platform.S: 804 320 fr
+:geoo/construction/platform.S: 804 288 fr
+:geoo/construction/platform.S: 804 256 fr
+:geoo/construction/platform_single.S: 546 366 d
+:geoo/construction/platform_single.S: 278 366 d
+:matt/underworld/01: 256 224
+:geoo/steel/dark_64x32o.S: 256 208
+:matt/underworld/01: 512 224
+:geoo/steel/dark_64x32o.S: 512 208
+:geoo/steel/dark_64x32o.S: 1024 208
+:geoo/construction/platform.S: 574 256 fr
+:geoo/construction/platform.S: 574 240 fr
+:geoo/construction/platform.S: 256 256 fr
+:geoo/construction/platform.S: 256 240 fr
+:matt/underworld/09a: 502 294
+:matt/underworld/09b: 542 288 r
+:matt/underworld/09c: 510 270 rrrd
+:geoo/construction/concrete/016ha: 548 297 d
+:matt/underworld/09c: 507 301 frd
+:geoo/construction/concrete/016: 539 312 d
+:geoo/construction/concrete/016: 571 296 d
+:matt/underworld/09b: 507 305 d
+:geoo/construction/concrete/032: 555 313 d
+:geoo/construction/concrete/032: 487 281 d
+:geoo/construction/concrete/032: 495 311 d
+:matt/underworld/02: 512 256 n
+:geoo/construction/platform.S: 574 288 fr
+:geoo/construction/platform.S: 574 320 fr
+:matt/underworld/09a: 264 294 frr
+:matt/underworld/09b: 248 288 fr
+:matt/underworld/09c: 290 270 frrrd
+:geoo/construction/concrete/016ha: 254 297 frrd
+:matt/underworld/09c: 293 301 rd
+:geoo/construction/concrete/016: 279 312 frrd
+:geoo/construction/concrete/016: 247 296 frrd
+:matt/underworld/09b: 285 305 frrd
+:geoo/construction/concrete/032: 247 313 frrd
+:geoo/construction/concrete/032: 315 281 frrd
+:geoo/construction/concrete/032: 307 311 frrd
+:matt/underworld/02: 256 256 n
+:geoo/construction/platform.S: 256 288 fr
+:geoo/construction/platform.S: 256 320 fr
+:matt/underworld/09c: 802 346 fr
+:matt/underworld/00: 817 357 frrd
+:matt/underworld/00: 809 366 frrd
+:matt/underworld/00: 832 368
+:matt/underworld/00: 817 339 frrd
+:geoo/construction/concrete/016ha: 793 346 rrd
+:matt/underworld/thinplatform128: 794 224 rrr
+:geoo/steel/dark_64x32o.S: 768 208
+:matt/underworld/thinplatform128: 804 256 rrrn
+:matt/underworld/thinplatform128: 806 264 rrrn
+:matt/underworld/thinplatform128: 808 272 rrrn
+:matt/underworld/thinplatform128: 810 280 rrrn
+:matt/underworld/thinplatform128: 812 288 rrrn
+:matt/underworld/thinplatform128: 814 296 rrrn
+:matt/underworld/thinplatform128: 816 304 rrrn
+:matt/underworld/thinplatform128: 818 312 rrrn
+:matt/underworld/thinplatform64: 820 320 rrrn
+:matt/underworld/thinplatform128: 820 320 rrrn
+:matt/underworld/thinplatform64: 822 328 rrrn
+:matt/underworld/thinplatform128: 822 328 rrrn
+:matt/underworld/thinplatform64: 824 336 rrrn
+:matt/underworld/thinplatform128: 824 336 rrrn
+:matt/underworld/thinplatform64: 826 344 rrrn
+:matt/underworld/thinplatform128: 826 344 rrrn
+:matt/underworld/thinplatform128: 828 352 rrrn
+:geoo/steel/dark_64x32o.S: 768 368
+:geoo/construction/platform_single.S: 816 366
+:geoo/construction/platform_single.S: 830 366
+:geoo/construction/platform.S: 804 320 fr
+:geoo/construction/platform_single.S: 808 366 d
+:geoo/construction/platform_single.S: 320 364
+:geoo/construction/platform_single.S: 282 364 d
+:geoo/construction/platform_single.S: 290 364
+:geoo/construction/platform_single.S: 504 364
+:geoo/construction/platform_single.S: 534 364
+:geoo/construction/platform_single.S: 542 364 d
+:geoo/construction/platform_single.S: 820 364
+:geoo/construction/platform_single.S: 812 364 d
+:geoo/construction/platform_single.S: 830 364
+:matt/underworld/00: 768 0
+:matt/underworld/00: 704 0
+:matt/underworld/00: 640 0
+:matt/underworld/00: 576 0
+:matt/underworld/00: 512 0
+:matt/underworld/00: 768 102
+:geoo/construction/platform.S: 572 256 fr
+:geoo/construction/platform.S: 572 240 fr
+:geoo/construction/platform.S: 572 320 fr
+:geoo/construction/platform.S: 572 288 fr
+:geoo/construction/platform.S: 258 256 fr
+:geoo/construction/platform.S: 258 240 fr
+:geoo/construction/platform.S: 258 320 fr
+:geoo/construction/platform.S: 258 288 fr
+:geoo/construction/platform.S: 806 264 fr
+:geoo/construction/platform.S: 806 296 fr
+:geoo/construction/platform.S: 806 320 fr
+:matt/underworld/thinplatform8: 804 350 rrr
+:matt/underworld/thinplatform8: 806 350 rrr

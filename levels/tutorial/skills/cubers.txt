@@ -1,0 +1,205 @@
+$BUILT 2012-04-28 15:11:23
+$AUTHOR geoo
+$GERMAN Klumper
+$ENGLISH Cubers
+
+$TUTORIAL_GERMAN Benutze einen Klumper, um eine Lix fuer einen<br>Block Terrain zu opfern. Klumper sind sehr vielfältig:<br>Du kannst sie benutzen, um andere umzudrehen,<br>aus Gruben herauszukommen,<br>tödliche Fälle abzufangen...
+$TUTORIAL_ENGLISH Assign a cuber to sacrifice a lix for a block of terrain.<br>Cubers are very versatile:<br>You can use them to turn others around,<br>get out of pits, stop lethal falls...
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 80
+#REQUIRED 40
+#SPAWN_INTERVAL 29
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#CUBER -1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/marble/Hatch.H: 320 208
+:matt/marble/Hatch.H: 368 64
+
+:matt/marble/Goal.G: 192 224
+
+:geoo/construction/sawblade.F: 596 76
+
+:matt/marble/22e: 384 128
+:matt/marble/05a: 320 288
+:matt/marble/09a: 448 272
+:matt/marble/04e_1: 480 272
+:matt/marble/04e_1: 448 272
+:matt/marble/04e_2: 480 320
+:matt/marble/04e_1: 448 320
+:matt/marble/09a: 512 272
+:matt/marble/04e_2: 544 272
+:matt/marble/04e_2: 512 272
+:matt/marble/04e_2: 544 320
+:matt/marble/04e_1: 512 320
+:matt/marble/09a: 384 272
+:matt/marble/04e_2: 416 272
+:matt/marble/04e_1: 384 272
+:matt/marble/04e_2: 384 320
+:matt/marble/04e_1: 416 320
+:matt/marble/23e: 384 240
+:matt/marble/23e: 416 240
+:matt/marble/23e: 448 240
+:matt/marble/23e: 480 240
+:matt/marble/23e: 512 240
+:matt/marble/23e: 544 240
+:matt/marble/23e: 384 336
+:matt/marble/23e: 416 336
+:matt/marble/23e: 448 336
+:matt/marble/23e: 480 336
+:matt/marble/23e: 512 336
+:matt/marble/23e: 544 336
+:matt/marble/23e: 320 336
+:matt/marble/23e: 352 336
+:matt/marble/23e: 288 336
+:matt/marble/23e: 224 336
+:matt/marble/23e: 256 336
+:matt/marble/23e: 384 208
+:matt/marble/23e: 416 208
+:matt/marble/23e: 448 208
+:matt/marble/23e: 480 208
+:matt/marble/23e: 512 208
+:matt/marble/23e: 544 208
+:matt/marble/23e: 384 176
+:matt/marble/23e: 416 176
+:matt/marble/23e: 448 176
+:matt/marble/23e: 480 176
+:matt/marble/23e: 512 176
+:matt/marble/23e: 544 176
+:matt/marble/23e: 384 368
+:matt/marble/23e: 416 368
+:matt/marble/23e: 448 368
+:matt/marble/23e: 480 368
+:matt/marble/23e: 512 368
+:matt/marble/23e: 544 368
+:matt/marble/23e: 320 368
+:matt/marble/23e: 352 368
+:matt/marble/23e: 288 368
+:matt/marble/23e: 224 368
+:matt/marble/23e: 256 368
+:matt/marble/22e: 416 96
+:matt/marble/09a: 64 272
+:matt/marble/04e_1: 96 272
+:matt/marble/04e_1: 64 272
+:matt/marble/04e_2: 96 320
+:matt/marble/04e_1: 64 320
+:matt/marble/09a: 128 272
+:matt/marble/04e_2: 160 272
+:matt/marble/04e_2: 128 272
+:matt/marble/04e_2: 160 320
+:matt/marble/04e_1: 128 320
+:matt/marble/09a: 0 272
+:matt/marble/04e_2: 32 272
+:matt/marble/04e_1: 0 272
+:matt/marble/04e_2: 0 320
+:matt/marble/04e_1: 32 320
+:matt/marble/09a: 576 272
+:matt/marble/04e_2: 608 272
+:matt/marble/04e_2: 576 272
+:matt/marble/04e_2: 608 320
+:matt/marble/04e_1: 576 320
+:matt/marble/23e: 576 240
+:matt/marble/23e: 608 240
+:matt/marble/23e: 576 336
+:matt/marble/23e: 608 336
+:matt/marble/23e: 576 208
+:matt/marble/23e: 608 208
+:matt/marble/23e: 576 176
+:matt/marble/23e: 608 176
+:matt/marble/23e: 576 368
+:matt/marble/23e: 608 368
+:matt/marble/09a: 192 272
+:matt/marble/04e_2: 192 272
+:matt/marble/04e_2: 224 320
+:matt/marble/04e_1: 192 320
+:matt/marble/09a: 256 272
+:matt/marble/04e_1: 256 320
+:matt/marble/04e_2: 288 320
+:matt/marble/04e_1: 224 272
+:matt/marble/04e_1: 256 272
+:matt/marble/04e_2: 288 272
+:matt/marble/04e_1: 320 320
+:matt/marble/04e_1: 352 320
+:matt/marble/23e: 160 336
+:matt/marble/23e: 192 336
+:matt/marble/23e: 96 336
+:matt/marble/23e: 128 336
+:matt/marble/23e: 64 336
+:matt/marble/23e: 0 336
+:matt/marble/23e: 32 336
+:matt/marble/23e: 160 368
+:matt/marble/23e: 192 368
+:matt/marble/23e: 96 368
+:matt/marble/23e: 128 368
+:matt/marble/23e: 64 368
+:matt/marble/23e: 0 368
+:matt/marble/23e: 32 368
+:matt/marble/03a: 352 288
+:matt/marble/20d: 480 112
+:matt/marble/20d: 512 112
+:matt/marble/20d: 544 112
+:matt/marble/20d: 576 112
+:matt/marble/20d: 608 112
+:matt/marble/04a: 472 96
+:matt/marble/04a: 504 96
+:matt/marble/04a: 536 96
+:matt/marble/04a: 568 96
+:matt/marble/04a: 600 96
+:matt/marble/04a: 632 96
+:matt/marble/02e: 320 272
+:matt/marble/23e: 472 32
+:matt/marble/23e: 504 32
+:matt/marble/23e: 600 32
+:matt/marble/23e: 632 32
+:matt/marble/23e: 472 0
+:matt/marble/23e: 504 0
+:matt/marble/23e: 600 0
+:matt/marble/23e: 632 0
+:matt/marble/23e: 536 32
+:matt/marble/23e: 568 32
+:matt/marble/23e: 536 0
+:matt/marble/23e: 568 0
+:matt/marble/04a: 0 192
+:matt/marble/04a: 32 192
+:matt/marble/20d: 72 160
+:matt/marble/04a: 64 192
+:matt/marble/04a: 96 192
+:matt/marble/04a: 128 192
+:matt/marble/20d: 8 208
+:matt/marble/20d: 40 208
+:matt/marble/20d: 72 208
+:matt/marble/20d: 104 208
+:matt/marble/20d: 136 208
+:matt/marble/10d: 8 176
+:matt/marble/10d: 40 176
+:matt/marble/10d: 104 176
+:matt/marble/10d: 136 176
+:matt/marble/05a: 64 128
+:matt/marble/01d: 96 136
+:matt/marble/01d: 96 144
+:matt/marble/01d: 72 120
+:matt/marble/01d: 48 136
+:matt/marble/01d: 48 144
+:matt/marble/10d: 72 104
+:matt/marble/10d: 32 136
+:matt/marble/11d: 112 136

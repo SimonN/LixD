@@ -1,0 +1,74 @@
+$BUILT 2014-02-27 09:45:58
+$AUTHOR geoo
+$GERMAN
+$ENGLISH The Ob3lisk
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 150
+#REQUIRED 60
+#SPAWN_INTERVAL 24
+#SPAWN_INTERVAL_FAST 1
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#FLOATER 40
+#CUBER 40
+#NOTHING 0
+#WALKER 10
+#PLATFORMER 10
+#BASHER 2
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 304 0
+:geoo/construction/Hatch.H: 336 352
+:geoo/construction/Hatch.H: 336 352
+:geoo/construction/Hatch.H: 336 352
+:geoo/construction/Hatch.H: 336 352
+
+:geoo/abstract/goal.G: 304 96
+
+:geoo/steel/dark_16x32o.S: 288 352
+:geoo/steel/dark_16x32o.S: 288 320
+:geoo/steel/dark_16x32o.S: 288 288
+:geoo/steel/dark_16x32o.S: 336 96
+:geoo/steel/dark_16x32o.S: 336 128
+:geoo/steel/dark_16x32o.S: 336 160
+:geoo/steel/dark_64x64.S: 288 32
+:geoo/steel/dark_64x64o.S: 224 384
+:geoo/steel/dark_64x64o.S: 288 384
+:geoo/steel/dark_64x64o.S: 352 384
+:geoo/sandstone/32x32: 304 336
+:geoo/sandstone/32x16: 304 96
+:geoo/sandstone/16x32: 288 96
+:geoo/sandstone/16x32: 288 128
+:geoo/sandstone/16x32: 336 352
+:geoo/sandstone/16x32: 336 320
+:geoo/sandstone/32x16: 304 368
+:geoo/sandstone/32x64: 304 272
+:geoo/sandstone/32x64: 304 176
+:geoo/sandstone/32x32: 304 240
+:geoo/sandstone/16x32: 288 160
+:geoo/sandstone/16x32: 288 192
+:geoo/sandstone/16x32: 288 224
+:geoo/sandstone/16x32: 288 256
+:geoo/sandstone/16x32: 336 192
+:geoo/sandstone/16x32: 336 224
+:geoo/sandstone/16x32: 336 256
+:geoo/sandstone/16x32: 336 288
+:geoo/sandstone/smaragd: 312 248
+:geoo/sandstone/smaragd: 312 296
+:geoo/sandstone/smaragd: 312 200
+:geoo/sandstone/32x32: 304 144

@@ -1,0 +1,296 @@
+$BUILT 2013-06-21 21:18:56
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Cuber Replacement
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 19
+#SPAWN_INTERVAL 8
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#CLIMBER 1
+#WALKER 2
+#JUMPER 1
+#BLOCKER 2
+#BUILDER 1
+#CUBER 1
+#BASHER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+
+:geoo/abstract/hatch.H: 304 176
+:geoo/abstract/hatch.H: 304 16
+
+:geoo/abstract/goal.G: 304 320
+
+:geoo/sandstone/brazier.F: 64 176
+:geoo/sandstone/brazier.F: 544 176
+
+:geoo/shadow/wall/center: 192 144
+:geoo/shadow/wall/center: 224 144
+:geoo/shadow/wall/center: 256 144
+:geoo/shadow/wall/center: 192 112
+:geoo/shadow/wall/center: 224 112
+:geoo/shadow/wall/center: 256 112
+:geoo/shadow/wall/center: 192 80
+:geoo/shadow/wall/center: 224 80
+:geoo/shadow/wall/center: 256 80
+:geoo/shadow/wall/center: 192 48
+:geoo/shadow/wall/center: 224 48
+:geoo/shadow/wall/center: 256 48
+:geoo/shadow/wall/left: 400 16
+:geoo/shadow/wall/right: 208 16
+:geoo/shadow/wall/right: 176 176
+:geoo/shadow/wall/right: 208 336
+:geoo/shadow/wall/left: 432 176
+:geoo/shadow/wall/left: 400 336
+:geoo/shadow/wall/center: 288 48
+:geoo/shadow/wall/center: 288 80
+:geoo/shadow/wall/center: 288 112
+:geoo/shadow/wall/center: 288 144
+:geoo/shadow/wall/center: 320 144
+:geoo/shadow/wall/center: 352 144
+:geoo/shadow/wall/center: 384 144
+:geoo/shadow/wall/center: 320 112
+:geoo/shadow/wall/center: 352 112
+:geoo/shadow/wall/center: 384 112
+:geoo/shadow/wall/center: 320 80
+:geoo/shadow/wall/center: 352 80
+:geoo/shadow/wall/center: 384 80
+:geoo/shadow/wall/center: 320 48
+:geoo/shadow/wall/center: 352 48
+:geoo/shadow/wall/center: 384 48
+:geoo/shadow/wall/center: 416 48
+:geoo/shadow/wall/center: 416 80
+:geoo/shadow/wall/center: 416 112
+:geoo/shadow/wall/center: 416 144
+:geoo/shadow/wall/center: 448 96
+:geoo/shadow/wall/center: 480 96
+:geoo/shadow/wall/center: 512 96
+:geoo/shadow/wall/center: 448 64
+:geoo/shadow/wall/center: 480 64
+:geoo/shadow/wall/center: 512 64
+:geoo/shadow/wall/center: 448 32
+:geoo/shadow/wall/center: 480 32
+:geoo/shadow/wall/center: 512 32
+:geoo/shadow/wall/center: 448 0
+:geoo/shadow/wall/center: 480 0
+:geoo/shadow/wall/center: 512 0
+:geoo/shadow/wall/center: 544 0
+:geoo/shadow/wall/center: 544 32
+:geoo/shadow/wall/center: 544 64
+:geoo/shadow/wall/center: 544 96
+:geoo/shadow/wall/center: 448 224
+:geoo/shadow/wall/center: 480 224
+:geoo/shadow/wall/center: 512 224
+:geoo/shadow/wall/center: 448 192
+:geoo/shadow/wall/center: 480 192
+:geoo/shadow/wall/center: 512 192
+:geoo/shadow/wall/center: 448 160
+:geoo/shadow/wall/center: 480 160
+:geoo/shadow/wall/center: 512 160
+:geoo/shadow/wall/center: 448 128
+:geoo/shadow/wall/center: 480 128
+:geoo/shadow/wall/center: 512 128
+:geoo/shadow/wall/center: 544 128
+:geoo/shadow/wall/center: 544 144
+:geoo/shadow/wall/center: 544 208
+:geoo/shadow/wall/center: 544 224
+:geoo/shadow/wall/center: 448 352
+:geoo/shadow/wall/center: 480 352
+:geoo/shadow/wall/center: 512 352
+:geoo/shadow/wall/center: 448 320
+:geoo/shadow/wall/center: 480 320
+:geoo/shadow/wall/center: 512 320
+:geoo/shadow/wall/center: 448 288
+:geoo/shadow/wall/center: 480 288
+:geoo/shadow/wall/center: 512 288
+:geoo/shadow/wall/center: 448 256
+:geoo/shadow/wall/center: 480 256
+:geoo/shadow/wall/center: 512 256
+:geoo/shadow/wall/center: 544 256
+:geoo/shadow/wall/center: 544 288
+:geoo/shadow/wall/center: 544 320
+:geoo/shadow/wall/center: 544 352
+:geoo/shadow/wall/center: 576 96
+:geoo/shadow/wall/center: 576 64
+:geoo/shadow/wall/center: 576 32
+:geoo/shadow/wall/center: 576 0
+:geoo/shadow/wall/center: 608 0
+:geoo/shadow/wall/center: 608 32
+:geoo/shadow/wall/center: 608 64
+:geoo/shadow/wall/center: 608 96
+:geoo/shadow/wall/center: 576 224
+:geoo/shadow/wall/center: 576 192
+:geoo/shadow/wall/center: 576 160
+:geoo/shadow/wall/center: 576 128
+:geoo/shadow/wall/center: 608 128
+:geoo/shadow/wall/center: 608 160
+:geoo/shadow/wall/center: 608 192
+:geoo/shadow/wall/center: 608 224
+:geoo/shadow/wall/center: 576 352
+:geoo/shadow/wall/center: 576 320
+:geoo/shadow/wall/center: 576 288
+:geoo/shadow/wall/center: 576 256
+:geoo/shadow/wall/center: 608 256
+:geoo/shadow/wall/center: 608 288
+:geoo/shadow/wall/center: 608 320
+:geoo/shadow/wall/center: 608 352
+:geoo/shadow/wall/center: 448 384
+:geoo/shadow/wall/center: 480 384
+:geoo/shadow/wall/center: 512 384
+:geoo/shadow/wall/center: 544 384
+:geoo/shadow/wall/center: 576 384
+:geoo/shadow/wall/center: 608 384
+:geoo/shadow/wall/left: 416 368
+:geoo/shadow/wall/center: 192 304
+:geoo/shadow/wall/center: 224 304
+:geoo/shadow/wall/center: 256 304
+:geoo/shadow/wall/center: 192 272
+:geoo/shadow/wall/center: 224 272
+:geoo/shadow/wall/center: 256 272
+:geoo/shadow/wall/center: 192 240
+:geoo/shadow/wall/center: 224 240
+:geoo/shadow/wall/center: 256 240
+:geoo/shadow/wall/center: 192 208
+:geoo/shadow/wall/center: 224 208
+:geoo/shadow/wall/center: 256 208
+:geoo/shadow/wall/center: 288 208
+:geoo/shadow/wall/center: 288 240
+:geoo/shadow/wall/center: 288 272
+:geoo/shadow/wall/center: 288 304
+:geoo/shadow/wall/center: 320 304
+:geoo/shadow/wall/center: 352 304
+:geoo/shadow/wall/center: 384 304
+:geoo/shadow/wall/center: 320 272
+:geoo/shadow/wall/center: 352 272
+:geoo/shadow/wall/center: 384 272
+:geoo/shadow/wall/center: 320 240
+:geoo/shadow/wall/center: 352 240
+:geoo/shadow/wall/center: 384 240
+:geoo/shadow/wall/center: 320 208
+:geoo/shadow/wall/center: 352 208
+:geoo/shadow/wall/center: 384 208
+:geoo/shadow/wall/center: 416 208
+:geoo/shadow/wall/center: 416 240
+:geoo/shadow/wall/center: 416 272
+:geoo/shadow/wall/center: 416 304
+:geoo/shadow/wall/center: 0 96
+:geoo/shadow/wall/center: 32 96
+:geoo/shadow/wall/center: 64 96
+:geoo/shadow/wall/center: 0 64
+:geoo/shadow/wall/center: 32 64
+:geoo/shadow/wall/center: 64 64
+:geoo/shadow/wall/center: 0 32
+:geoo/shadow/wall/center: 32 32
+:geoo/shadow/wall/center: 64 32
+:geoo/shadow/wall/center: 0 0
+:geoo/shadow/wall/center: 32 0
+:geoo/shadow/wall/center: 64 0
+:geoo/shadow/wall/center: 96 0
+:geoo/shadow/wall/center: 96 32
+:geoo/shadow/wall/center: 96 64
+:geoo/shadow/wall/center: 96 96
+:geoo/shadow/wall/center: 128 96
+:geoo/shadow/wall/center: 160 96
+:geoo/shadow/wall/center: 128 64
+:geoo/shadow/wall/center: 160 64
+:geoo/shadow/wall/center: 128 32
+:geoo/shadow/wall/center: 160 32
+:geoo/shadow/wall/center: 128 0
+:geoo/shadow/wall/center: 160 0
+:geoo/shadow/wall/center: 0 224
+:geoo/shadow/wall/center: 32 224
+:geoo/shadow/wall/center: 64 224
+:geoo/shadow/wall/center: 0 192
+:geoo/shadow/wall/center: 32 192
+:geoo/shadow/wall/center: 64 208
+:geoo/shadow/wall/center: 0 160
+:geoo/shadow/wall/center: 32 160
+:geoo/shadow/wall/center: 64 144
+:geoo/shadow/wall/center: 0 128
+:geoo/shadow/wall/center: 32 128
+:geoo/shadow/wall/center: 64 128
+:geoo/shadow/wall/center: 96 128
+:geoo/shadow/wall/center: 96 160
+:geoo/shadow/wall/center: 96 192
+:geoo/shadow/wall/center: 96 224
+:geoo/shadow/wall/center: 128 224
+:geoo/shadow/wall/center: 160 224
+:geoo/shadow/wall/center: 128 192
+:geoo/shadow/wall/center: 160 192
+:geoo/shadow/wall/center: 128 160
+:geoo/shadow/wall/center: 160 160
+:geoo/shadow/wall/center: 128 128
+:geoo/shadow/wall/center: 160 128
+:geoo/shadow/wall/center: 0 352
+:geoo/shadow/wall/center: 32 352
+:geoo/shadow/wall/center: 64 352
+:geoo/shadow/wall/center: 0 320
+:geoo/shadow/wall/center: 32 320
+:geoo/shadow/wall/center: 64 320
+:geoo/shadow/wall/center: 0 288
+:geoo/shadow/wall/center: 32 288
+:geoo/shadow/wall/center: 64 288
+:geoo/shadow/wall/center: 0 256
+:geoo/shadow/wall/center: 32 256
+:geoo/shadow/wall/center: 64 256
+:geoo/shadow/wall/center: 96 256
+:geoo/shadow/wall/center: 96 288
+:geoo/shadow/wall/center: 96 320
+:geoo/shadow/wall/center: 96 352
+:geoo/shadow/wall/center: 128 352
+:geoo/shadow/wall/center: 160 352
+:geoo/shadow/wall/center: 128 320
+:geoo/shadow/wall/center: 160 320
+:geoo/shadow/wall/center: 128 288
+:geoo/shadow/wall/center: 160 288
+:geoo/shadow/wall/center: 128 256
+:geoo/shadow/wall/center: 160 256
+:geoo/shadow/wall/center: 0 384
+:geoo/shadow/wall/center: 32 384
+:geoo/shadow/wall/center: 64 384
+:geoo/shadow/wall/center: 96 384
+:geoo/shadow/wall/center: 128 384
+:geoo/shadow/wall/center: 160 384
+:geoo/shadow/wall/center: 192 368
+:geoo/shadow/wall/center: 224 368
+:geoo/shadow/wall/center: 256 368
+:geoo/shadow/wall/center: 288 368
+:geoo/shadow/wall/center: 320 368
+:geoo/shadow/wall/center: 352 368
+:geoo/shadow/wall/left: 384 368
+:geoo/shadow/wall/center: 192 -16
+:geoo/shadow/wall/center: 224 -16
+:geoo/shadow/wall/center: 256 -16
+:geoo/shadow/wall/center: 288 -16
+:geoo/shadow/wall/center: 320 -16
+:geoo/shadow/wall/center: 352 -16
+:geoo/shadow/wall/center: 384 -16
+:geoo/shadow/wall/center: 416 -16
+:geoo/shadow/wall/deco_crags2: 480 64
+:geoo/shadow/wall/deco_crags2: 96 304
+:geoo/shadow/wall/deco_dark: 16 48
+:geoo/shadow/wall/deco_dark: 128 128
+:geoo/shadow/wall/deco_dark: 16 336
+:geoo/shadow/wall/deco_crags: 576 352
+:geoo/shadow/wall/deco_light: 400 288
+:geoo/shadow/wall/deco_dark: 592 240
+:geoo/shadow/wall/center: 432 16
+:geoo/shadow/wall/center: 176 16
+:geoo/shadow/wall/center: 176 336
+:geoo/shadow/wall/center: 432 336

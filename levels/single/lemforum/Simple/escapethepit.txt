@@ -1,0 +1,119 @@
+$BUILT 2014-06-29 01:51:34
+$AUTHOR mobius/Nepster
+$GERMAN 
+$ENGLISH Escape the Pit
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 30
+#REQUIRED 20
+#SPAWN_INTERVAL 52
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER 10
+#BLOCKER 10
+#BUILDER 10
+#PLATFORMER 10
+#DIGGER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/goldmine/GoalTop.D: 578 270
+
+:matt/goldmine/Hatch.H: 281 236
+
+:matt/goldmine/Goal.G: 578 318
+
+:matt/underworld/Lava.W: 210 366
+:matt/underworld/Lava.W: 258 366
+:matt/underworld/Lava.W: 306 366
+:matt/underworld/Lava.W: 354 366
+:matt/underworld/Lava.W: 402 366
+
+:matt/goldmine/08: 125 173 rrr
+:matt/goldmine/02: 423 72 f
+:matt/goldmine/09: 87 367 r
+:matt/goldmine/10: 84 42
+:matt/goldmine/03: 184 -40
+:matt/goldmine/09: 411 245 frrr
+:matt/goldmine/09: 155 49
+:matt/goldmine/02: 165 328 d
+:matt/goldmine/02: 472 154
+:matt/goldmine/03: 488 358
+:matt/goldmine/03: 390 142
+:matt/goldmine/04: 168 128
+:matt/goldmine/08: 182 206
+:matt/goldmine/08: 318 208
+:matt/goldmine/09: 262 210
+:matt/goldmine/08: 424 168
+:matt/goldmine/09: 390 212
+:matt/goldmine/04: -47 290
+:matt/goldmine/04: -72 186 frrr
+:matt/goldmine/08: 2 322 r
+:matt/goldmine/01: 42 224
+:matt/goldmine/02: 11 223
+:matt/goldmine/08: -6 206 r
+:matt/goldmine/04: 360 114
+:matt/goldmine/09: 264 202 rrrd
+:matt/goldmine/09: 264 172 frrrd
+:matt/goldmine/10: 379 251 f
+:matt/goldmine/04: 294 96 fd
+:matt/goldmine/09: 432 86
+:matt/goldmine/04: 572 78 rr
+:matt/goldmine/03: 178 6
+:matt/goldmine/08: 150 198 rr
+:matt/goldmine/08: 105 63
+:matt/goldmine/04: 84 116 rrr
+:matt/goldmine/10: 389 210 n
+:matt/goldmine/04: 84 -58 r
+:matt/goldmine/04: 450 -36 fr
+:matt/goldmine/04: 314 -72 fr
+:matt/goldmine/02: 354 4 frr
+:matt/goldmine/09: 328 -32 f
+:matt/goldmine/08: 238 -76
+:matt/goldmine/08: 538 -34 rrr
+:matt/goldmine/09: 594 18
+:matt/goldmine/08: 6 4 rr
+:matt/goldmine/08: -42 60 rr
+:matt/goldmine/09: -22 -25 rr
+:matt/goldmine/09: 21 -43 r
+:matt/goldmine/09: 389 -26 r
+:matt/goldmine/03: 584 358
+:matt/goldmine/08: 600 212 f
+:geoo/abstract/pipes/cshort0: 263 158 d
+:geoo/abstract/pipes/cshort0: 264 230 d
+:geoo/abstract/pipes/cshort0: 409 119 d
+:matt/goldmine/02: 265 104 frr
+:matt/goldmine/04: 276 -10 rr
+:matt/goldmine/09: 254 32 rr
+:matt/goldmine/08: 242 -12 rrr
+:matt/goldmine/03: 334 -92 frrr
+:matt/goldmine/04: 558 368 frrr
+:matt/goldmine/04: 484 380 frrr
+:geoo/abstract/pipes/cshort0: 430 95 d
+:matt/goldmine/02: 91 320 rd
+:geoo/steel/dark_16x32o.S: 434 344
+:geoo/steel/dark_16x32o.S: 434 376
+:geoo/steel/dark_16x32o.S: 210 376
+:geoo/steel/dark_16x32o.S: 210 344
+:geoo/abstract/pipes/cshort0: 430 102 d
+:geoo/abstract/pipes/cshort0: 429 104 d
+:geoo/abstract/pipes/cshort0: 428 105 d
+:geoo/abstract/pipes/cshort0: 418 110 d
+:matt/goldmine/10: 387 234 f
+:matt/goldmine/02: 329 84 frr
+:matt/goldmine/02: -70 180 frd
+:matt/goldmine/03: -12 44 rrr
+:matt/goldmine/03: 389 146 rrr

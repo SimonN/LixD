@@ -1,0 +1,231 @@
+$BUILT 2014-04-16 21:49:14
+$AUTHOR RubiX
+$GERMAN 
+$ENGLISH Mount Lixmore(2p)
+
+#SIZE_X 1918
+#SIZE_Y 558
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 582
+#START_Y 138
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 40
+#INITIAL 70
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 10
+#FLOATER 10
+#WALKER 50
+#JUMPER 30
+#BLOCKER 3
+#EXPLODER2 5
+#BUILDER 80
+#MINER 30
+#BASHER 25
+#DIGGER 5
+#RUNNER 10
+#BATTER 20
+
+:matt/winter/Hatch.H: -16 240
+:matt/winter/Hatch.H: 1872 240 r
+
+:matt/winter/Goal.G: 1824 368
+:matt/winter/Goal.G: 0 368
+
+:matt/winter/10: 320 336
+:matt/winter/10: 1392 336 frr
+:matt/winter/04: 1104 352 frr
+:matt/winter/10: 504 416
+:matt/winter/10: 616 432
+:matt/winter/10: 520 464
+:matt/winter/10: 648 416
+:matt/winter/10: 712 448
+:matt/winter/10: 616 480
+:matt/winter/10: 744 416
+:matt/winter/10: 808 448
+:matt/winter/10: 808 464
+:matt/winter/10: 760 416
+:matt/winter/10: 360 448
+:matt/winter/10: 728 496
+:matt/winter/10: 856 416
+:matt/winter/10: 920 448
+:matt/winter/10: 824 480
+:matt/winter/10: 952 416
+:matt/winter/10: 1016 464
+:matt/winter/10: 920 496
+:matt/winter/10: 1048 416
+:matt/winter/10: 1112 464
+:matt/winter/10: 1112 480
+:matt/winter/10: 1064 432
+:matt/winter/10: 664 464
+:matt/winter/10: 1032 512
+:matt/winter/10: 1112 416
+:matt/winter/10: 1144 448
+:matt/winter/10: 1048 480
+:matt/winter/10: 1176 416
+:matt/winter/10: 1240 464
+:matt/winter/10: 1144 496
+:matt/winter/10: 1240 416
+:matt/winter/10: 1336 464
+:matt/winter/10: 1336 480
+:matt/winter/10: 1288 432
+:matt/winter/10: 888 464
+:matt/winter/04: 1168 400 frr
+:matt/winter/10: 1256 512
+:matt/winter/10: 1400 416
+:matt/winter/10: 1432 448
+:matt/winter/10: 1336 480
+:matt/winter/10: 1488 416
+:matt/winter/10: 376 464
+:matt/winter/10: 1432 496
+:matt/winter/10: 408 416
+:matt/winter/10: 472 464
+:matt/winter/10: 472 480
+:matt/winter/10: 424 432
+:matt/winter/10: 1176 464
+:matt/winter/10: 392 512
+:matt/winter/10: 200 448
+:matt/winter/10: 216 464
+:matt/winter/10: 272 416
+:matt/winter/10: 312 464
+:matt/winter/10: 312 480
+:matt/winter/10: 264 432
+:matt/winter/10: 232 512
+:matt/winter/10: 576 416
+:matt/winter/04: 760 304
+:matt/winter/04: 1040 304 frr
+:matt/winter/04: 696 352
+:matt/steel/48x48.S: 1872 288
+:matt/steel/48x48.S: 1824 320
+:matt/steel/48x48.S: 1776 320
+:matt/steel/48x48.S: 144 320
+:matt/steel/48x48.S: 96 320
+:matt/steel/48x48.S: 48 320
+:matt/steel/48x48.S: 0 288
+:matt/winter/10: 48 448
+:matt/winter/10: 64 464
+:matt/winter/10: 112 416
+:matt/winter/10: 80 512
+:matt/winter/10: -112 448
+:matt/winter/10: -96 464
+:matt/winter/10: -96 416
+:matt/winter/10: 0 464
+:matt/winter/10: 0 480
+:matt/winter/10: 16 416
+:matt/winter/10: -80 512
+:matt/winter/10: 1552 416
+:matt/winter/10: 1664 464
+:matt/winter/10: 1648 416
+:matt/winter/10: 1760 464
+:matt/winter/10: 1760 480
+:matt/winter/10: 1728 416
+:matt/winter/10: 1680 512
+:matt/winter/10: 1840 416
+:matt/winter/10: 1856 448
+:matt/winter/10: 1760 480
+:matt/winter/10: 1888 416
+:matt/winter/10: 1856 496
+:matt/winter/10: 1600 464
+:matt/winter/06: 192 432 d
+:matt/winter/06: 208 432 d
+:matt/winter/06: 224 432 d
+:matt/winter/06: 240 432 d
+:matt/winter/06: 256 432 d
+:matt/winter/06: 272 432 d
+:matt/winter/06: 288 432 d
+:matt/winter/06: 304 432 d
+:matt/winter/04: 320 352
+:matt/winter/06: 320 432 d
+:matt/winter/06: 192 496 d
+:matt/winter/06: 208 496 d
+:matt/winter/06: 224 496 d
+:matt/winter/06: 240 496 d
+:matt/winter/06: 256 496 d
+:matt/winter/06: 272 496 d
+:matt/winter/06: 288 496 d
+:matt/winter/06: 304 496 d
+:matt/winter/06: 320 496 d
+:matt/winter/06: 192 368 d
+:matt/winter/06: 208 368 d
+:matt/winter/06: 224 368 d
+:matt/winter/06: 240 368 d
+:matt/winter/06: 256 368 d
+:matt/winter/06: 272 368 d
+:matt/winter/06: 288 368 d
+:matt/winter/06: 304 368 d
+:matt/winter/06: 320 368 d
+:matt/winter/06: 1584 432 d
+:matt/winter/06: 1600 432 d
+:matt/winter/06: 1616 432 d
+:matt/winter/06: 1632 432 d
+:matt/winter/06: 1648 432 d
+:matt/winter/06: 1664 432 d
+:matt/winter/06: 1680 432 d
+:matt/winter/06: 1696 432 d
+:matt/winter/06: 1712 432 d
+:matt/winter/06: 1584 496 d
+:matt/winter/06: 1600 496 d
+:matt/winter/06: 1616 496 d
+:matt/winter/06: 1632 496 d
+:matt/winter/06: 1648 496 d
+:matt/winter/06: 1664 496 d
+:matt/winter/06: 1680 496 d
+:matt/winter/06: 1696 496 d
+:matt/winter/06: 1712 496 d
+:matt/winter/06: 1584 368 d
+:matt/winter/06: 1600 368 d
+:matt/winter/06: 1616 368 d
+:matt/winter/06: 1632 368 d
+:matt/winter/06: 1648 368 d
+:matt/winter/06: 1664 368 d
+:matt/winter/06: 1680 368 d
+:matt/winter/06: 1696 368 d
+:matt/winter/06: 1712 368 d
+:matt/winter/04: 640 400
+:matt/winter/04: 800 272
+:matt/winter/04: 1002 272 frr
+:matt/winter/10: 758 382
+:matt/winter/10: 962 388
+:matt/winter/10: 832 256
+:matt/winter/10: 880 256 frr
+:matt/winter/16: 880 176
+:matt/winter/16: 944 176 frr
+:matt/steel/48x48.S: 1728 320
+:matt/winter/10: -48 -16
+:matt/winter/10: 80 -48
+:matt/winter/10: 208 -80
+:matt/winter/10: 1696 -32 frr
+:matt/winter/10: 1568 -64 frr
+:matt/winter/10: 1424 -96 frr
+:matt/winter/10: 1760 -16 frr
+:matt/winter/10: 336 368
+:matt/winter/10: 1312 368 frr
+:matt/winter/10: 384 368
+:matt/winter/16: 896 144
+:matt/winter/16: 928 144 frr
+:matt/steel/32x32.S: 1760 288
+:matt/steel/32x32.S: 128 288
+:matt/steel/64x32.S: 16 432
+:matt/steel/64x32.S: 1840 432
+:matt/winter/06: 1584 336 d
+:matt/winter/06: 320 320 d
+:matt/winter/02: 928 124 rr
+:matt/winter/10: 739 358 r
+:matt/winter/10: 786 440 r
+:matt/winter/10: 800 315 r
+:matt/winter/10: 998 378 frr
+:matt/winter/10: 1022 330 r
+:matt/winter/10: 987 392 r
+:matt/winter/10: 918 434 r
+:matt/winter/10: 859 458 r
+:matt/winter/10: 788 457 r
+:matt/winter/10: 697 395 r
+:matt/winter/10: 785 469 rr
+:matt/winter/10: 863 243 frr
+:matt/winter/10: 840 248

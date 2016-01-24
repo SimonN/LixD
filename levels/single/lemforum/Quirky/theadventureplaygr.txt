@@ -1,0 +1,241 @@
+$BUILT 2012-05-29 20:27:53
+$AUTHOR Michael S. Repton
+$GERMAN 
+$ENGLISH The Adventure Playground
+
+#SIZE_X 640
+#SIZE_Y 1200
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 25
+#REQUIRED 10
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER -1
+#JUMPER -1
+#CLIMBER -1
+#FLOATER -1
+#RUNNER -1
+#BLOCKER -1
+#BATTER -1
+#BUILDER -1
+#PLATFORMER -1
+#BASHER -1
+#MINER -1
+#DIGGER -1
+
+:geoo/construction/Hatch.H: 112 72
+
+:matt/underworld/Goal.G: 320 1104
+
+:matt/10tons.T: 400 576
+:matt/10tons.T: 168 776
+
+:simon/water.W: 272 464
+:simon/water.W: 320 464
+:simon/water.W: 368 464
+:simon/water.W: 224 464
+:matt/underworld/Lava.W: 16 1152
+:matt/underworld/Lava.W: -32 1152
+:proxima/flame.F: 76 1056
+:proxima/flame.F: 206 960
+:proxima/flame.F: 332 800
+:proxima/flame.F: 460 800
+
+:geoo/construction/wall/small_64x32: 256 256
+:geoo/construction/wall/small_64x32: 320 256
+:geoo/construction/pillar_base: 0 240
+:geoo/construction/pillar_32: 16 160
+:geoo/construction/pillar_32: 16 128
+:geoo/construction/pillar_32: 16 96
+:geoo/construction/pillar_32: 16 64
+:geoo/construction/pillar_base: 0 32 f
+:geoo/construction/pillar_base: 576 240
+:geoo/construction/pillar_32: 592 160
+:geoo/construction/pillar_32: 592 128
+:geoo/construction/pillar_32: 592 96
+:geoo/construction/pillar_32: 592 64
+:geoo/construction/pillar_base: 576 32 f
+:geoo/construction/fence_rust_64x64: 464 192
+:geoo/construction/fence_rust_64x64: 528 192
+:geoo/construction/fence_rust_64x64: 528 128
+:geoo/construction/fence_rust_64x64: 464 128
+:geoo/construction/concrete/032h: 0 0
+:geoo/construction/concrete/032h: 576 0
+:geoo/construction/concrete/032h: 512 0
+:geoo/construction/concrete/032h: 448 0
+:geoo/construction/concrete/032h: 384 0
+:geoo/construction/concrete/032h: 320 0
+:geoo/construction/concrete/032h: 256 0
+:geoo/construction/concrete/032h: 192 0
+:geoo/construction/concrete/032h: 128 0
+:geoo/construction/concrete/032h: 64 0
+:geoo/construction/fence_rust_64x64: 528 64
+:geoo/construction/fence_rust_64x64: 464 64
+:geoo/construction/fence_rust_64x64: 400 64
+:geoo/construction/fence_rust_32x32: 432 128
+:geoo/construction/fence_rust_32x32: 368 64
+:geoo/steel/dark_64x32o.S: 128 256
+:geoo/steel/dark_64x32o.S: 192 256
+:geoo/steel/dark_64x32o.S: 384 256
+:geoo/steel/dark_64x32o.S: 448 256
+:geoo/construction/concrete/032hc: 256 32
+:geoo/construction/concrete/032hd: 320 32
+:geoo/construction/wall/small_64x32: 512 256
+:geoo/construction/wall/small_64x32: 576 256
+:geoo/construction/wall/small_64x32: 0 256
+:geoo/construction/wall/small_64x32: 64 256
+:geoo/sandstone/pillar_top_ext: 160 288
+:geoo/sandstone/pillar_32: 176 336
+:geoo/sandstone/pillar_top: 176 304
+:geoo/sandstone/pillar_32: 176 368
+:geoo/sandstone/pillar_32: 176 400
+:geoo/sandstone/pillar_bottom: 176 432
+:geoo/sandstone/pillar_bottom_ext: 160 464
+:geoo/sandstone/pillar_top_ext: 416 288
+:geoo/sandstone/pillar_32: 432 336
+:geoo/sandstone/pillar_top: 432 304
+:geoo/sandstone/pillar_32: 432 368
+:geoo/sandstone/pillar_32: 432 400
+:geoo/sandstone/pillar_32: 432 432
+:geoo/sandstone/pillar_bottom: 432 432
+:geoo/sandstone/pillar_bottom_ext: 416 464
+:matt/earth/03: 368 528
+:matt/earth/00: 160 496
+:matt/earth/10: 224 512 f
+:geoo/steel/dark_64x32o.S: 384 512
+:matt/earth/01: 128 496
+:geoo/steel/dark_64x32o.S: 128 480
+:geoo/steel/dark_64x32o.S: 192 512
+:matt/earth/00: 448 480
+:geoo/steel/dark_64x32o.S: 448 480
+:geoo/steel/dark_64x32o.S: 256 512
+:geoo/steel/dark_64x32o.S: 320 512
+:geoo/steel/dark_32x32o.S: 416 480
+:geoo/steel/dark_32x32o.S: 192 480
+:geoo/sandstone/slopes/64x32lt: 320 368
+:geoo/sandstone/slopes/64x32rt: 256 368
+:geoo/sandstone/slopes/64x32rb: 256 336
+:geoo/sandstone/slopes/64x32lb: 320 336
+:geoo/sandstone/pillar_top_ext: -32 304
+:geoo/sandstone/64x32_blank: 0 288
+:geoo/sandstone/slopes/64x32lt: 64 288
+:geoo/sandstone/pillar_32: -16 352
+:geoo/sandstone/pillar_top: -16 320
+:geoo/sandstone/slopes/64x32lt: 0 320
+:geoo/sandstone/32x64: 608 288
+:geoo/sandstone/32x64: 576 288
+:geoo/sandstone/32x64: 608 352
+:geoo/sandstone/slopes/32x64rt: 544 288
+:geoo/sandstone/slopes/32x64rt: 576 352
+:matt/earth/00: 576 480
+:geoo/sandstone/64x32: 576 480
+:geoo/sandstone/pillar_32: -16 448
+:geoo/sandstone/pillar_bottom: -16 448
+:geoo/sandstone/pillar_bottom_ext: -32 480
+:matt/earth/04: -16 464
+:geoo/sandstone/slopes/64x32rb: 0 448
+:geoo/sandstone/slopes/64x32rb: 64 416
+:geoo/sandstone/slopes/64x32lt: 64 448
+:geoo/sandstone/slopes/64x32lt: 0 480
+:geoo/sandstone/pillar_32: -16 384
+:geoo/sandstone/pillar_32: -16 416
+:matt/earth/27: 144 544
+:matt/earth/28: 192 560
+:matt/earth/29: 216 568
+:matt/earth/28: 240 592
+:matt/earth/29: 264 608
+:matt/earth/27: 272 616
+:matt/earth/26: 272 616
+:matt/earth/28: 336 608
+:matt/earth/29: 360 600
+:matt/earth/28: 376 584
+:matt/earth/27: 448 552
+:matt/earth/28: 400 576
+:matt/earth/29: 432 568
+:matt/earth/16: 576 640 f
+:matt/earth/10: 480 576
+:matt/earth/27: 584 536
+:matt/earth/09: 536 568
+:matt/earth/06: 496 576
+:matt/earth/29: 608 544
+:matt/earth/01: 608 592
+:matt/earth/09: 584 584
+:matt/earth/10: -56 584
+:matt/earth/10: 136 664
+:matt/earth/16: 360 616
+:matt/earth/10: 288 680
+:matt/earth/09: 192 656
+:matt/earth/06: 152 664
+:matt/earth/08: 288 680
+:matt/earth/09: 232 672
+:matt/earth/06: 328 664
+:matt/earth/06: 368 640
+:matt/earth/16: 576 896 f
+:matt/earth/10: 544 800
+:matt/earth/10: 576 736
+:matt/earth/19: 48 816
+:matt/earth/04: -64 688
+:matt/earth/18: -16 944
+:matt/earth/17: -24 840 f
+:matt/earth/10: -160 784
+:matt/underworld/02: 448 848
+:matt/underworld/02: 320 848
+:matt/underworld/02: 320 944
+:matt/underworld/02: 448 944
+:matt/underworld/01: 384 1008
+:matt/underworld/01: 512 1008
+:matt/underworld/01: 256 1008
+:matt/underworld/01: 192 1008
+:matt/underworld/01: 576 1008
+:matt/underworld/02: 192 1104
+:matt/underworld/02: 64 1104
+:matt/underworld/02: 576 1040
+:matt/underworld/02: 448 1104
+:matt/underworld/02: 576 1136
+:matt/underworld/01: 512 1168
+:matt/underworld/01: 256 1168
+:matt/underworld/01: 320 1168
+:matt/underworld/01: 384 1168
+:matt/underworld/01: 128 1168
+:matt/underworld/09a: 256 1048
+:geoo/steel/dark_32x16o.S: 256 1040
+:matt/underworld/09a: 312 1048
+:geoo/steel/dark_32x16o.S: 288 1040
+:geoo/steel/dark_32x16o.S: 320 1040
+:matt/underworld/09a: 368 1048
+:geoo/steel/dark_32x16o.S: 352 1040
+:geoo/steel/dark_32x16o.S: 384 1040
+:geoo/steel/dark_32x16o.S: 416 1040
+:matt/underworld/01: 448 1072
+:geoo/steel/dark_64x32o.S: 448 1040
+:matt/underworld/01: 192 1072
+:geoo/steel/dark_64x32o.S: 192 1040
+:geoo/sandstone/slopes/32x64rt: 608 416
+:geoo/construction/pillar_32: 592 192
+:geoo/construction/pillar_32: 16 192
+:geoo/construction/pillar_top_shaded: 16 48
+:geoo/construction/pillar_top_shaded: 592 48
+:geoo/construction/pillar_bottom: 16 224
+:geoo/construction/pillar_bottom: 592 224
+:geoo/construction/wall/small_brick1: 80 128
+:geoo/construction/wall/big_square: 48 128
+:geoo/construction/wall/small_brick2: 112 128
+:geoo/construction/wall/small_brick3: 144 128
+:geoo/construction/wall/big_square: 176 128
+:geoo/construction/wall/small_brick1: 184 160 fr
+:geoo/construction/wall/big_square: 176 192
+:geoo/construction/wall/small_brick1: 208 192
+:geoo/construction/wall/small_brick2: 240 192
+:geoo/construction/wall/small_brick3: 272 192
+:geoo/construction/wall/big_square: 304 192
+:geoo/construction/wall/small_brick1: 184 224 fr
+:geoo/construction/wall/small_brick1: 312 224 fr

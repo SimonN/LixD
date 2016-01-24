@@ -1,0 +1,129 @@
+$BUILT 2012-04-27 23:36:49
+$AUTHOR Rubix
+$GERMAN Kletterer und Fallschirme
+$ENGLISH Climbers and Floaters
+
+$TUTORIAL_GERMAN Kletterer koennen senkrechte Wände erklimmen.<br>Fallschirmspringer überleben jeden Fall.<br>Diese Fähigkeiten sind permanent, die Lix behält sie bis Levelende.
+$TUTORIAL_ENGLISH Climbers can scale vertical walls. Floaters survive falls from any height.<br>These skills are permanent, the lix will remember them throughout the level.
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 5
+#SPAWN_INTERVAL 28
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#CLIMBER 20
+#FLOATER 20
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/carnival/Hatch.H: 64 256
+
+:matt/carnival/Goal.G: 512 304
+
+:matt/carnival/10: 192 336
+:matt/carnival/11: 224 336
+:matt/carnival/11: 192 368
+:matt/carnival/10: 256 336
+:matt/carnival/11: 288 336
+:matt/carnival/10: 224 368
+:matt/carnival/11: 256 368
+:matt/carnival/10: 288 368
+:matt/carnival/10: 224 304
+:matt/carnival/11: 256 304
+:matt/carnival/10: 288 304
+:matt/carnival/11: 256 240
+:matt/carnival/10: 288 240
+:matt/carnival/10: 256 272
+:matt/carnival/11: 288 272
+:matt/carnival/10: 256 208
+:matt/carnival/11: 288 208
+:matt/carnival/08: 160 368
+:matt/carnival/08: 96 368
+:matt/carnival/08: 0 336 rr
+:matt/carnival/08: 32 368
+:matt/carnival/08: 0 304 frr
+:matt/carnival/08: 0 272 rr
+:matt/carnival/08: 0 240 frr
+:matt/carnival/08: 0 208 rr
+:matt/carnival/08: 0 112 frr
+:matt/carnival/08: 0 80 frrr
+:matt/carnival/45: 224 272
+:matt/carnival/08: 128 368 r
+:matt/carnival/08: 64 368 r
+:matt/carnival/08: 0 368 r
+:matt/carnival/08: 64 80 rr
+:matt/carnival/08: 128 80 rr
+:matt/carnival/08: 32 80 rrr
+:matt/carnival/08: 96 80 rrr
+:matt/carnival/08: 192 80 rr
+:matt/carnival/08: 256 80 rr
+:matt/carnival/08: 160 80 rrr
+:matt/carnival/08: 224 80 rrr
+:matt/carnival/08: 320 80 rr
+:matt/carnival/08: 384 80 rr
+:matt/carnival/08: 288 80 rrr
+:matt/carnival/08: 352 80 rrr
+:matt/carnival/08: 448 80 rr
+:matt/carnival/08: 512 80 rr
+:matt/carnival/08: 416 80 rrr
+:matt/carnival/08: 480 80 rrr
+:matt/carnival/08: 576 80 rr
+:matt/carnival/08: 544 80 rrr
+:matt/carnival/08: 608 80 rrr
+:matt/carnival/08: 608 112
+:matt/carnival/08: 608 208 rrr
+:matt/carnival/08: 608 240 fr
+:matt/carnival/08: 608 272 rrr
+:matt/carnival/08: 608 304 fr
+:matt/carnival/08: 608 336 rrr
+:matt/carnival/08: 608 368
+:matt/carnival/08: 544 368
+:matt/carnival/08: 480 368
+:matt/carnival/08: 576 368 r
+:matt/carnival/08: 512 368 r
+:matt/carnival/08: 448 368 r
+:matt/carnival/10: 384 336
+:matt/carnival/10: 416 304
+:matt/carnival/11: 384 240
+:matt/carnival/10: 416 240
+:matt/carnival/10: 384 272
+:matt/carnival/11: 416 272
+:matt/carnival/10: 384 208
+:matt/carnival/11: 416 208
+:matt/carnival/08: 352 368
+:matt/carnival/08: 320 368 r
+:matt/carnival/11: 384 304
+:matt/carnival/11: 416 336
+:matt/carnival/10: 416 368
+:matt/carnival/11: 384 368
+:matt/carnival/08: 0 176 frr
+:matt/carnival/08: 0 144 rr
+:matt/carnival/08: 608 144 rrr
+:matt/carnival/08: 608 176 fr
+:matt/carnival/11: 256 176
+:matt/carnival/10: 288 176
+:matt/carnival/10: 256 144
+:matt/carnival/11: 288 144
+:matt/carnival/11: 384 176
+:matt/carnival/10: 416 176
+:matt/carnival/11: 416 144
+:matt/carnival/49: 384 144

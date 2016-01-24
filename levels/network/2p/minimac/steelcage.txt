@@ -1,0 +1,63 @@
+$BUILT 2012-08-10 01:51:26
+$AUTHOR minimac
+$GERMAN 
+$ENGLISH Steel Cage
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y -20
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 120
+#INITIAL 30
+#REQUIRED 30
+#SPAWN_INTERVAL 28
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 15
+#FLOATER 30
+#JUMPER 10
+#EXPLODER2 10
+#BLOCKER 10
+#BATTER 10
+#BUILDER 50
+#PLATFORMER 10
+#DIGGER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/beach/decor/moon.D: 536 24
+
+:matt/earth/Hatch.H: 352 296 r
+:matt/earth/Hatch.H: 208 296
+
+:matt/earth/Goal.G: 48 328
+:matt/earth/Goal.G: 512 328
+
+:geoo/steel/dark_48x48o.S: 144 352
+:geoo/steel/dark_48x48o.S: 192 352
+:geoo/steel/dark_48x48o.S: 240 352
+:geoo/steel/dark_48x48o.S: 288 352
+:geoo/steel/dark_48x48o.S: 336 352
+:geoo/steel/dark_48x48o.S: 384 352
+:geoo/steel/dark_48x48o.S: 432 352
+:geoo/steel/dark_48x48o.S: 144 304
+:geoo/steel/dark_48x48o.S: 144 256
+:geoo/steel/dark_48x48o.S: 144 208
+:geoo/steel/dark_48x48o.S: 432 304
+:geoo/steel/dark_48x48o.S: 432 256
+:geoo/steel/dark_48x48o.S: 432 208
+:geoo/steel/dark_48x48o.S: 144 160
+:geoo/steel/32x32o.S: 152 168
+:geoo/steel/dark_48x48o.S: 432 160
+:geoo/steel/32x32o.S: 440 168
+:matt/earth/09: 96 392
+:matt/earth/09: 48 392
+:matt/earth/09: 472 392 frr
+:matt/earth/09: 520 392 frr

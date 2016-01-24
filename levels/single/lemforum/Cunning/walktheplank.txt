@@ -1,0 +1,144 @@
+$BUILT 2014-07-09 11:44:07
+$AUTHOR mobius
+$GERMAN 
+$ENGLISH Walk the Plank
+
+#SIZE_X 1280
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 640
+#START_Y -20
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 150
+#REQUIRED 150
+#SPAWN_INTERVAL 5
+#SPAWN_INTERVAL_FAST 5
+
+#CLIMBER 2
+#NOTHING 0
+#NOTHING 0
+#BUILDER 3
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/sandstone/Hatch.H: 1184 64 r
+
+:geoo/sandstone/Goal.G: 32 288
+
+:matt/water.W: 880 256
+:matt/water.W: 912 256
+:matt/water.W: 944 256
+:matt/water.W: 976 256
+:matt/water.W: 1008 256
+:geoo/construction/sawblade_small.F: 336 336
+:matt/water.W: 1040 256
+:matt/water.W: 1072 256
+:matt/water.W: 1104 256
+:matt/water.W: 1136 256
+:matt/water.W: 40 160
+:matt/water.W: 72 160
+:matt/water.W: 104 160
+:matt/water.W: 136 160
+:matt/water.W: 168 160
+:matt/water.W: 200 160
+:matt/water.W: 200 160
+:geoo/construction/sawblade_small.F: 208 336
+
+:geoo/sandstone/64x16: 768 176
+:geoo/sandstone/64x16: 832 176
+:geoo/sandstone/64x16: 896 176
+:geoo/sandstone/64x16: 960 176
+:geoo/sandstone/64x64: 640 112
+:geoo/sandstone/64x64: 640 176
+:geoo/sandstone/64x64: 576 112
+:geoo/sandstone/64x64: 576 176
+:geoo/sandstone/64x64: 640 240
+:geoo/sandstone/64x64: 640 304
+:geoo/sandstone/64x64: 576 240
+:geoo/sandstone/64x64: 576 304
+:geoo/sandstone/64x64: 512 112
+:geoo/sandstone/64x64: 512 176
+:geoo/sandstone/64x64: 448 112
+:geoo/sandstone/64x64: 448 176
+:geoo/sandstone/64x64: 512 240
+:geoo/sandstone/64x64: 512 304
+:geoo/sandstone/64x64: 448 240
+:geoo/sandstone/64x64: 448 304
+:geoo/sandstone/64x16: 0 352
+:geoo/sandstone/64x16: 64 352
+:geoo/sandstone/64x16: 128 352
+:geoo/sandstone/64x16: 192 352
+:geoo/steel/32x16o.S: 864 288
+:geoo/steel/16x32o.S: 864 256
+:geoo/steel/32x16o.S: 896 288
+:geoo/steel/32x16o.S: 928 288
+:geoo/steel/32x16o.S: 960 288
+:geoo/steel/32x16o.S: 992 288
+:geoo/steel/32x16o.S: 1024 288
+:geoo/steel/16x32o.S: 1168 256
+:geoo/sandstone/64x16: 256 352
+:geoo/sandstone/64x16: 320 352
+:geoo/sandstone/64x16: 1024 176
+:geoo/sandstone/64x16: 1088 176
+:geoo/sandstone/64x16: 384 352
+:geoo/sandstone/64x16: 704 176
+:geoo/sandstone/64x16: 768 176
+:geoo/sandstone/64x16: 832 176
+:geoo/sandstone/64x16: 896 176
+:geoo/sandstone/64x16: 960 176
+:geoo/sandstone/64x16: 1152 176
+:geoo/sandstone/64x16: 1216 176
+:geoo/steel/32x16o.S: 1056 288
+:geoo/steel/32x16o.S: 1088 288
+:geoo/steel/32x16o.S: 1120 288
+:geoo/steel/32x16o.S: 1152 288
+:geoo/steel/32x16o.S: 24 192
+:geoo/steel/16x32o.S: 24 160
+:geoo/steel/32x16o.S: 56 192
+:geoo/steel/32x16o.S: 88 192
+:geoo/steel/32x16o.S: 120 192
+:geoo/steel/32x16o.S: 152 192
+:geoo/steel/32x16o.S: 184 192
+:geoo/steel/16x32o.S: 232 160
+:geoo/steel/32x16o.S: 216 192
+:geoo/steel/64x32o.S: 0 0
+:geoo/steel/64x32o.S: 64 0
+:geoo/steel/64x32o.S: 128 0
+:geoo/steel/64x32o.S: 192 0
+:geoo/steel/64x32o.S: 256 0
+:geoo/steel/64x32o.S: 320 0
+:geoo/steel/64x32o.S: 384 0
+:geoo/steel/64x32o.S: 448 0
+:geoo/steel/64x32o.S: 512 0
+:geoo/steel/64x32o.S: 576 0
+:geoo/steel/64x32o.S: 640 0
+:geoo/steel/64x32o.S: 704 0
+:geoo/steel/64x32o.S: 768 0
+:geoo/steel/64x32o.S: 832 0
+:geoo/steel/64x32o.S: 896 0
+:geoo/steel/64x32o.S: 960 0
+:geoo/steel/64x32o.S: 1024 0
+:geoo/steel/64x32o.S: 1088 0
+:geoo/steel/64x32o.S: 1152 0
+:geoo/steel/64x32o.S: 1216 0
+:geoo/sandstone/64x64: 480 144
+:geoo/sandstone/64x64: 608 144
+:geoo/sandstone/64x64: 480 272
+:geoo/sandstone/64x64: 608 272
+:geoo/sandstone/smaragd: 504 296
+:geoo/sandstone/smaragd: 632 296
+:geoo/sandstone/smaragd: 632 168
+:geoo/sandstone/smaragd: 504 168
+:geoo/sandstone/64x64: 544 208
+:geoo/sandstone/smaragd: 568 232

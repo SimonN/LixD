@@ -1,0 +1,410 @@
+$BUILT 2015-01-26 02:14:24
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Nuisance Descent (2p)
+
+#SIZE_X 416
+#SIZE_Y 848
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 50
+#REQUIRED 1
+#SPAWN_INTERVAL 40
+#SPAWN_INTERVAL_FAST 40
+
+#WALKER -1
+#JUMPER -1
+#CLIMBER 10
+#FLOATER 5
+#BLOCKER 10
+#EXPLODER 20
+#BUILDER 60
+#PLATFORMER 40
+#BASHER 40
+#MINER 30
+#CUBER 10
+#BATTER 20
+
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 80 0
+:simon/hatch001.H: 272 0
+:geoo/abstract/hatch.H: 208 368
+:simon/hatch001.H: 400 368
+:geoo/abstract/hatch.H: 288 64
+:simon/hatch001.H: 64 64
+
+:simon/tapir/goal.G: 64 768
+:geoo/abstract/goal.G: 288 768
+
+:amanda/forest/frog_happy.T: 336 416
+:amanda/forest/frog_happy.T: 128 416
+
+:geoo/construction/sawblade_small.F: 80 352
+:geoo/construction/sawblade_small.F: 288 352
+
+:simon/tapir/016: 400 0
+:geoo/abstract/cvblocks/015: 192 0
+:geoo/abstract/cvblocks/015: 192 80
+:simon/tapir/016: 400 80
+:simon/tapir/032d: 128 272 r
+:geoo/abstract/cvblocks/025: 192 656 frr
+:geoo/abstract/cvblocks/025: 192 688 frr
+:geoo/abstract/cvblocks/025: 192 720 frr
+:simon/tapir/016v: 400 656
+:simon/tapir/016v: 400 688
+:simon/tapir/016v: 400 720
+:simon/tapir/032v: 128 816 rrr
+:simon/tapir/032v: 0 592 rrr
+:geoo/abstract/cvblocks/025: 192 816 frr
+:geoo/abstract/cvblocks/025: 192 784 frr
+:geoo/abstract/cvblocks/025: 192 752 frr
+:simon/tapir/032v: 0 816 rrr
+:geoo/abstract/cvblocks/035: 208 816
+:geoo/abstract/cvblocks/035: 272 816
+:geoo/abstract/cvblocks/035: 336 816
+:simon/tapir/016v: 400 816
+:simon/tapir/016v: 400 784
+:simon/tapir/016v: 400 752
+:geoo/construction/platform.S: 406 784 rrr
+:geoo/construction/platform.S: 408 784 rrr
+:geoo/construction/platform.S: 406 816 rrr
+:geoo/construction/platform.S: 408 816 rrr
+:geoo/construction/platform.S: 406 720 rrr
+:geoo/construction/platform.S: 408 720 rrr
+:geoo/construction/platform.S: 406 752 rrr
+:geoo/construction/platform.S: 408 752 rrr
+:geoo/construction/platform.S: 406 656 rrr
+:geoo/construction/platform.S: 408 656 rrr
+:geoo/construction/platform.S: 406 688 rrr
+:geoo/construction/platform.S: 408 688 rrr
+:geoo/construction/platform.S: 198 784 rrr
+:geoo/construction/platform.S: 200 784 rrr
+:geoo/construction/platform.S: 198 816 rrr
+:geoo/construction/platform.S: 200 816 rrr
+:geoo/construction/platform.S: 198 720 rrr
+:geoo/construction/platform.S: 200 720 rrr
+:geoo/construction/platform.S: 198 752 rrr
+:geoo/construction/platform.S: 200 752 rrr
+:geoo/construction/platform.S: 198 656 rrr
+:geoo/construction/platform.S: 200 656 rrr
+:geoo/construction/platform.S: 198 688 rrr
+:geoo/construction/platform.S: 200 688 rrr
+:simon/tapir/032v: 64 816 rrr
+:geoo/abstract/cvblocks/030: 368 624
+:simon/tapir/032: 0 624
+:simon/tapir/016v: 400 624
+:geoo/abstract/cvblocks/030: 208 624 rr
+:simon/tapir/032: 160 624 frr
+:geoo/abstract/cvblocks/035: 336 592
+:simon/tapir/016v: 400 592
+:geoo/abstract/cvblocks/035: 208 560 rr
+:simon/tapir/032v: 128 592 rrr
+:simon/tapir/016v: 400 560
+:simon/tapir/016v: 0 528
+:geoo/abstract/cvblocks/025: 192 560 frr
+:geoo/abstract/cvblocks/025: 192 528 frr
+:geoo/abstract/cvblocks/025: 192 592 frr
+:geoo/abstract/cvblocks/025: 192 624 frr
+:simon/tapir/032v: 0 560 rrr
+:simon/tapir/032v: 128 560 rrr
+:simon/tapir/032v: 112 528 rrr
+:simon/tapir/032v: 16 528 rrr
+:geoo/abstract/cvblocks/035: 336 560
+:geoo/abstract/cvblocks/035: 208 592 rr
+:geoo/abstract/cvblocks/035: 224 528 rr
+:geoo/abstract/cvblocks/035: 320 528
+:geoo/abstract/cvblocks/025: 192 496 frr
+:simon/tapir/016v: 400 528
+:geoo/abstract/cvblocks/025: 384 528 frr
+:simon/tapir/016v: 176 528
+:simon/tapir/032v: 16 496 rrr
+:simon/tapir/032v: 112 496 rrr
+:geoo/abstract/cvblocks/035: 224 496 rr
+:geoo/abstract/cvblocks/035: 320 496
+:geoo/abstract/cvblocks/025: 208 528 frr
+:geoo/abstract/cvblocks/025: 208 496 frr
+:simon/tapir/016v: 176 496
+:simon/tapir/016v: 0 496
+:simon/tapir/016v: 400 496
+:geoo/abstract/cvblocks/025: 384 496 frr
+:geoo/abstract/cvblocks/025: 192 464 frr
+:geoo/abstract/cvblocks/025: 192 432 frr
+:geoo/abstract/cvblocks/025: 192 400 frr
+:simon/tapir/016v: 400 464
+:simon/tapir/016v: 400 432
+:simon/tapir/016v: 400 400
+:simon/tapir/016v: 400 368
+:simon/tapir/016v: 400 240
+:simon/tapir/016v: 400 208
+:geoo/abstract/cvblocks/025: 192 368 frr
+:geoo/abstract/cvblocks/025: 192 240 frr
+:geoo/abstract/cvblocks/025: 192 208 frr
+:simon/tapir/032d: 0 304
+:simon/tapir/032d: 0 208
+:geoo/abstract/cvblocks/031: 336 176 rrr
+:simon/tapir/032d: 160 304 frr
+:geoo/abstract/cvblocks/031: 240 176 rr
+:geoo/abstract/cvblocks/031: 208 304 rr
+:geoo/abstract/cvblocks/035: 208 144 rrr
+:geoo/abstract/cvblocks/035: 368 144 rrr
+:geoo/abstract/cvblocks/025: 272 176 frr
+:geoo/abstract/cvblocks/025: 320 176 frr
+:geoo/abstract/cvblocks/031: 240 176
+:geoo/abstract/cvblocks/031: 336 176 r
+:geoo/abstract/cvblocks/031: 368 208 rr
+:geoo/abstract/cvblocks/031: 368 208
+:geoo/abstract/cvblocks/031: 208 208 rr
+:geoo/abstract/cvblocks/031: 208 208
+:geoo/abstract/cvblocks/031: 240 272 rr
+:simon/tapir/032d: 0 208 rr
+:simon/tapir/032d: 160 208
+:simon/tapir/032d: 160 208 rr
+:simon/tapir/032d: 32 272
+:simon/tapir/032d: 32 176
+:simon/tapir/032d: 32 176 rr
+:simon/tapir/032d: 128 176
+:simon/tapir/032d: 128 176 rr
+:simon/tapir/016v: 64 176
+:simon/tapir/016v: 112 176
+:simon/tapir/032v: 0 144 rr
+:simon/tapir/032v: 160 144 rr
+:geoo/abstract/cvblocks/025: 192 176 frr
+:geoo/abstract/cvblocks/025: 192 144 frr
+:geoo/abstract/cvblocks/025: 192 112 frr
+:simon/tapir/016v: 400 176
+:simon/tapir/016v: 400 144
+:simon/tapir/016v: 400 112
+:simon/tapir/016v: 0 80 rrr
+:geoo/abstract/cvblocks/025: 208 80 fr
+:geoo/abstract/cvblocks/015: 192 96
+:simon/tapir/016: 400 96
+:geoo/construction/platform.S: 198 112 rrr
+:geoo/construction/platform.S: 200 112 rrr
+:geoo/construction/platform.S: 198 144 rrr
+:geoo/construction/platform.S: 200 144 rrr
+:geoo/construction/platform.S: 198 176 rrr
+:geoo/construction/platform.S: 200 176 rrr
+:geoo/construction/platform.S: 198 208 rrr
+:geoo/construction/platform.S: 200 208 rrr
+:geoo/construction/platform.S: 198 240 rrr
+:geoo/construction/platform.S: 200 240 rrr
+:geoo/construction/platform.S: 406 368 rrr
+:geoo/construction/platform.S: 408 368 rrr
+:geoo/construction/platform.S: 406 400 rrr
+:geoo/construction/platform.S: 408 400 rrr
+:geoo/construction/platform.S: 406 432 rrr
+:geoo/construction/platform.S: 408 432 rrr
+:geoo/construction/platform.S: 406 464 rrr
+:geoo/construction/platform.S: 408 464 rrr
+:geoo/construction/platform.S: 406 496 rrr
+:geoo/construction/platform.S: 408 496 rrr
+:geoo/construction/platform.S: 406 528 rrr
+:geoo/construction/platform.S: 408 528 rrr
+:geoo/construction/platform.S: 406 560 rrr
+:geoo/construction/platform.S: 408 560 rrr
+:geoo/construction/platform.S: 406 592 rrr
+:geoo/construction/platform.S: 408 592 rrr
+:geoo/construction/platform.S: 406 624 rrr
+:geoo/construction/platform.S: 408 624 rrr
+:geoo/construction/platform.S: 198 368 rrr
+:geoo/construction/platform.S: 200 368 rrr
+:geoo/construction/platform.S: 198 400 rrr
+:geoo/construction/platform.S: 200 400 rrr
+:geoo/construction/platform.S: 198 432 rrr
+:geoo/construction/platform.S: 200 432 rrr
+:geoo/construction/platform.S: 198 464 rrr
+:geoo/construction/platform.S: 200 464 rrr
+:geoo/construction/platform.S: 198 496 rrr
+:geoo/construction/platform.S: 200 496 rrr
+:geoo/construction/platform.S: 198 528 rrr
+:geoo/construction/platform.S: 200 528 rrr
+:geoo/construction/platform.S: 198 560 rrr
+:geoo/construction/platform.S: 200 560 rrr
+:geoo/construction/platform.S: 198 592 rrr
+:geoo/construction/platform.S: 200 592 rrr
+:geoo/construction/platform.S: 198 624 rrr
+:geoo/construction/platform.S: 200 624 rrr
+:geoo/construction/platform.S: 406 112 rrr
+:geoo/construction/platform.S: 408 112 rrr
+:geoo/construction/platform.S: 406 144 rrr
+:geoo/construction/platform.S: 408 144 rrr
+:geoo/construction/platform.S: 406 176 rrr
+:geoo/construction/platform.S: 408 176 rrr
+:geoo/construction/platform.S: 406 208 rrr
+:geoo/construction/platform.S: 408 208 rrr
+:geoo/construction/platform.S: 406 240 rrr
+:geoo/construction/platform.S: 408 240 rrr
+:simon/tapir/016v: 16 64 rrr
+:simon/tapir/016v: 160 80 rrr
+:simon/tapir/016v: 144 64 rrr
+:geoo/abstract/cvblocks/025: 224 64 fr
+:geoo/abstract/cvblocks/025: 368 80 fr
+:geoo/abstract/cvblocks/025: 192 336 frr
+:simon/tapir/016v: 400 336
+:simon/tapir/016v: 400 304
+:geoo/abstract/cvblocks/025: 192 304 frr
+:geoo/construction/platform.S: 406 304 rrr
+:geoo/construction/platform.S: 408 304 rrr
+:geoo/construction/platform.S: 406 336 rrr
+:geoo/construction/platform.S: 408 336 rrr
+:geoo/construction/platform.S: 198 304 rrr
+:geoo/construction/platform.S: 200 304 rrr
+:geoo/construction/platform.S: 198 336 rrr
+:geoo/construction/platform.S: 200 336 rrr
+:simon/tapir/016v: 400 272
+:geoo/abstract/cvblocks/025: 192 272 frr
+:geoo/construction/platform.S: 406 272 rrr
+:geoo/construction/platform.S: 408 272 rrr
+:geoo/construction/platform.S: 198 272 rrr
+:geoo/construction/platform.S: 200 272 rrr
+:geoo/abstract/cvblocks/031: 336 272 rrr
+:geoo/abstract/cvblocks/031: 368 304 rrr
+:geoo/construction/platform.S: 48 176
+:geoo/construction/platform.S: 16 176
+:geoo/construction/platform.S: 400 176
+:geoo/construction/platform.S: 368 176
+:geoo/construction/platform.S: 336 176
+:geoo/construction/platform.S: 320 176
+:geoo/construction/platform.S: 256 176
+:geoo/construction/platform.S: 224 176
+:geoo/construction/platform.S: 192 176
+:geoo/construction/platform.S: 160 176
+:geoo/construction/platform.S: 128 176
+:geoo/construction/platform.S: 112 176
+:geoo/abstract/cvblocks/035: 224 464 rr
+:geoo/abstract/cvblocks/035: 320 464 rr
+:geoo/abstract/cvblocks/025: 384 464 frr
+:simon/tapir/032v: 16 464 rrr
+:simon/tapir/032v: 112 464 rrr
+:simon/tapir/016v: 176 464
+:simon/tapir/032: 80 464
+:geoo/abstract/cvblocks/030: 288 464 rr
+:geoo/construction/platform.S: 406 16 rrr
+:geoo/construction/platform.S: 408 16 rrr
+:geoo/construction/platform.S: 406 48 rrr
+:geoo/construction/platform.S: 408 48 rrr
+:geoo/construction/platform.S: 406 -16 rrr
+:geoo/construction/platform.S: 408 -16 rrr
+:geoo/construction/platform.S: 406 80 rrr
+:geoo/construction/platform.S: 408 80 rrr
+:geoo/construction/platform.S: 198 16 rrr
+:geoo/construction/platform.S: 200 16 rrr
+:geoo/construction/platform.S: 198 48 rrr
+:geoo/construction/platform.S: 200 48 rrr
+:geoo/construction/platform.S: 198 -16 rrr
+:geoo/construction/platform.S: 200 -16 rrr
+:geoo/construction/platform.S: 198 80 rrr
+:geoo/construction/platform.S: 200 80 rrr
+:simon/tapir/016v: 32 48 rrr
+:simon/tapir/016v: 160 80 rrr
+:simon/tapir/016v: 128 48 rrr
+:simon/tapir/016v: 64 48 rrr
+:simon/tapir/016v: 96 48 rrr
+:geoo/abstract/cvblocks/025: 240 48 fr
+:geoo/abstract/cvblocks/025: 272 48 fr
+:geoo/abstract/cvblocks/025: 304 48 fr
+:geoo/abstract/cvblocks/025: 336 48 fr
+:geoo/abstract/cvblocks/025: 352 64 fr
+:geoo/abstract/cvblocks/025: 352 64 fr
+:simon/tapir/016v: 0 0 rrr
+:simon/tapir/016v: 160 0 rrr
+:geoo/abstract/cvblocks/025: 208 0 fr
+:geoo/abstract/cvblocks/025: 368 0 fr
+:simon/tapir/016v: 32 0 rrr
+:simon/tapir/016v: 128 0 rrr
+:geoo/abstract/cvblocks/025: 240 0 fr
+:geoo/abstract/cvblocks/025: 336 0 fr
+:simon/tapir/016: 64 0
+:simon/tapir/016: 112 0
+:geoo/abstract/cvblocks/015: 272 0
+:geoo/abstract/cvblocks/015: 320 0
+:geoo/abstract/cvblocks/025: 288 160 fr
+:simon/tapir/016v: 80 160 rrr
+:geoo/abstract/cvblocks/025: 272 208 frr
+:geoo/abstract/cvblocks/025: 272 240 frr
+:geoo/abstract/cvblocks/025: 272 272 frr
+:geoo/abstract/cvblocks/025: 320 208 frr
+:geoo/abstract/cvblocks/025: 320 240 frr
+:geoo/abstract/cvblocks/025: 320 272 frr
+:simon/tapir/016v: 64 208
+:simon/tapir/016v: 64 240
+:simon/tapir/016v: 64 272
+:simon/tapir/016v: 112 208
+:simon/tapir/016v: 112 240
+:simon/tapir/016v: 112 272
+:simon/tapir/032d: 32 208
+:simon/tapir/032d: 32 208 rr
+:simon/tapir/032d: 0 240
+:simon/tapir/032d: 0 240 rr
+:simon/tapir/032d: 32 240
+:simon/tapir/032d: 32 240 rr
+:simon/tapir/032d: 0 272
+:simon/tapir/032d: 0 272 rr
+:simon/tapir/032d: 128 208
+:simon/tapir/032d: 128 208 rr
+:simon/tapir/032d: 128 240
+:simon/tapir/032d: 128 240 rr
+:simon/tapir/032d: 160 240
+:simon/tapir/032d: 160 240 rr
+:simon/tapir/032d: 160 272
+:simon/tapir/032d: 160 272 rr
+:geoo/abstract/cvblocks/031: 336 208 rr
+:geoo/abstract/cvblocks/031: 336 208
+:geoo/abstract/cvblocks/031: 336 240 rr
+:geoo/abstract/cvblocks/031: 336 240
+:geoo/abstract/cvblocks/031: 368 240 rr
+:geoo/abstract/cvblocks/031: 368 240
+:geoo/abstract/cvblocks/031: 368 272 rr
+:geoo/abstract/cvblocks/031: 368 272
+:geoo/abstract/cvblocks/031: 240 208 rr
+:geoo/abstract/cvblocks/031: 240 208
+:geoo/abstract/cvblocks/031: 208 240 rr
+:geoo/abstract/cvblocks/031: 208 240
+:geoo/abstract/cvblocks/031: 240 240 rr
+:geoo/abstract/cvblocks/031: 240 240
+:geoo/abstract/cvblocks/031: 208 272 rr
+:geoo/abstract/cvblocks/031: 208 272
+:simon/tapir/016: 0 480
+:geoo/abstract/cvblocks/015: 208 480

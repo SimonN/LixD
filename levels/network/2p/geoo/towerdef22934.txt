@@ -1,0 +1,139 @@
+$BUILT                                             2012-02-24 02:11:25
+$AUTHOR                                                           geoo
+$GERMAN                                                               
+$ENGLISH                                    Tower Defense (Part 22934)
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            640
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                           220
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                             1
+#INITIAL                                                           160
+#REQUIRED                                                           20
+#SPAWN_INTERVAL                                                      7
+
+#WALKER                                                             -1
+#JUMPER                                                             -1
+#CLIMBER                                                            -1
+#RUNNER                                                             -1
+#EXPLODER2                                                          -1
+#CUBER                                                              -1
+#BATTER                                                             -1
+#BUILDER                                                           100
+#PLATFORMER                                                         60
+#BASHER                                                             40
+#MINER                                                              40
+#DIGGER                                                             20
+
+:geoo/construction/Hatch.H:                       352       560
+:geoo/construction/Hatch.H:                       256       560     r
+:geoo/construction/Hatch.H:                       352       560
+:geoo/construction/Hatch.H:                       256       560     r
+:geoo/construction/Hatch.H:                       352       560
+:geoo/construction/Hatch.H:                       256       560     r
+:geoo/construction/Hatch.H:                       128        32
+:geoo/construction/Hatch.H:                       480        32     r
+
+:geoo/abstract/goal.G:                            416       112
+:geoo/abstract/goal.G:                            192       112
+:geoo/abstract/goal.G:                            448       112
+:geoo/abstract/goal.G:                            160       112
+:geoo/abstract/goal.G:                            480       112
+:geoo/abstract/goal.G:                            128       112
+:geoo/abstract/goal.G:                            512       112
+:geoo/abstract/goal.G:                             96       112
+:geoo/abstract/goal.G:                            544       112
+:geoo/abstract/goal.G:                             64       112
+:geoo/abstract/goal.G:                            576       112
+:geoo/abstract/goal.G:                             32       112
+
+:geoo/construction/sawblade_medium.F:             288       224
+:geoo/construction/sawblade_medium.F:             288       384
+
+:geoo/abstract/cvblocks/047:                      544       416
+:geoo/abstract/cvblocks/047:                      480       480
+:geoo/steel/64x32o.S:                               0       608
+:geoo/steel/64x32o.S:                              64       608
+:geoo/steel/64x32o.S:                             128       608
+:geoo/steel/64x32o.S:                             256       608
+:geoo/steel/64x32o.S:                             192       608
+:geoo/steel/64x32o.S:                             320       608
+:geoo/steel/64x32o.S:                             384       608
+:geoo/steel/64x32o.S:                             448       608
+:geoo/steel/64x32o.S:                             576       608
+:geoo/steel/64x32o.S:                             512       608
+:geoo/abstract/cvblocks/038:                      416       416
+:geoo/abstract/cvblocks/047:                      448       256
+:geoo/abstract/cvblocks/038:                      384       192
+:geoo/steel/64x32o.S:                             448       384
+:geoo/steel/64x32o.S:                             512       384
+:geoo/steel/64x32o.S:                             416       160
+:geoo/steel/64x32o.S:                             480       160
+:geoo/abstract/cvblocks/047:                      512       192
+:geoo/abstract/cvblocks/045:                      448       192
+:geoo/abstract/cvblocks/045:                      480       416
+:geoo/steel/64x32o.S:                             576       384
+:geoo/steel/64x32o.S:                             544       160
+:geoo/steel/64x32o.S:                             416        96
+:geoo/steel/64x32o.S:                             480        96
+:geoo/steel/32x64o.S:                             304         0
+:geoo/steel/32x64o.S:                             304        64
+:geoo/steel/32x64o.S:                             304       128
+:geoo/steel/64x32o.S:                             544        96
+:geoo/steel/32x64o.S:                             608        32
+:geoo/steel/32x32o.S:                             608        96
+:geoo/steel/64x32o.S:                             576         0
+:geoo/abstract/cvblocks/047:                       32       416
+:geoo/abstract/cvblocks/047:                       96       480
+:geoo/abstract/cvblocks/047:                      128       256
+:geoo/steel/64x32o.S:                              64       384
+:geoo/steel/64x32o.S:                             128       384
+:geoo/steel/64x32o.S:                              32       160
+:geoo/steel/64x32o.S:                              96       160
+:geoo/abstract/cvblocks/047:                       64       192
+:geoo/abstract/cvblocks/045:                      128       192
+:geoo/abstract/cvblocks/045:                       96       416
+:geoo/steel/64x32o.S:                               0       384
+:geoo/steel/64x32o.S:                             160       160
+:geoo/steel/64x32o.S:                             160        96
+:geoo/steel/64x32o.S:                              96        96
+:geoo/steel/64x32o.S:                              32        96
+:geoo/steel/32x64o.S:                               0        32
+:geoo/steel/32x32o.S:                               0        96
+:geoo/steel/64x32o.S:                               0         0
+:geoo/abstract/cvblocks/039:                      160       416
+:geoo/abstract/cvblocks/039:                      192       192
+:geoo/steel/32x64o.S:                             304       192
+:geoo/steel/32x64o.S:                             304       480
+:geoo/steel/32x64o.S:                             304       544
+:geoo/steel/32x16o.S:                             416        80
+:geoo/steel/32x16o.S:                             192        80
+:geoo/steel/32x64o.S:                             608       128
+:geoo/steel/32x64o.S:                               0       128
+:geoo/steel/32x64o.S:                             304       416
+:geoo/abstract/cvblocks/021:                      192       176
+:geoo/abstract/cvblocks/022:                      416       176
+:geoo/abstract/cvblocks/021:                      160       400
+:geoo/abstract/cvblocks/022:                      448       400
+:geoo/steel/32x64o.S:                             608       416
+:geoo/steel/32x64o.S:                             608       480
+:geoo/steel/32x64o.S:                               0       416
+:geoo/steel/32x64o.S:                               0       480
+:geoo/abstract/cvblocks/045:                       32       544
+:geoo/abstract/cvblocks/045:                      544       544
+:geoo/steel/32x64o.S:                             608       544
+:geoo/steel/32x64o.S:                               0       544
+:geoo/abstract/cvblocks/045:                       64       320
+:geoo/abstract/cvblocks/045:                      512       320
+:geoo/steel/64x64.S:                              576       320
+:geoo/steel/64x64.S:                              576       256
+:geoo/steel/64x64.S:                              576       192
+:geoo/steel/64x64.S:                                0       320
+:geoo/steel/64x64.S:                                0       256
+:geoo/steel/64x64.S:                                0       192

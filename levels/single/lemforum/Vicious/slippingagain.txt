@@ -1,0 +1,116 @@
+$BUILT                                             2012-03-18 15:39:45
+$AUTHOR                                                   mobius/Nort.
+$GERMAN                                                               
+$ENGLISH                                                Slipping Again
+
+#SIZE_X                                                            848
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                           104
+#START_Y                                                           380
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                   24
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                             0
+#INITIAL                                                            50
+#REQUIRED                                                           50
+#SPAWN_INTERVAL                                                     70
+#SPAWN_INTERVAL_FAST                                                 4
+
+#CLIMBER                                                             1
+#FLOATER                                                             1
+#EXPLODER                                                            0
+#BLOCKER                                                             0
+#BUILDER                                                             7
+#BASHER                                                              2
+#MINER                                                               0
+#DIGGER                                                              2
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:matt/marble/Hatch.H:                        392        -8
+
+:matt/marble/Goal.G:                         168       288
+
+:simon/acid.W:                                    280       352
+:simon/acid.W:                                    232       352
+:simon/acid.W:                                    376       352
+:simon/acid.W:                                    328       352
+:simon/acid.W:                                    472       352
+:simon/acid.W:                                    424       352
+:simon/acid.W:                                    568       352
+:simon/acid.W:                                    520       352
+:geoo/construction/sawblade.F:                    736       320
+:geoo/construction/sawblade.F:                     72       320
+
+:geoo/steel/64x64o.S:                              88         0
+:geoo/steel/64x64o.S:                             696       336
+:geoo/steel/32x64o.S:                              56        64
+:matt/marble/04b:                            328        72
+:matt/marble/04b:                            328        88
+:matt/marble/04b:                            360        72
+:matt/marble/04b:                            360        88
+:matt/marble/04b:                            392        72
+:matt/marble/04b:                            392        88
+:matt/marble/04b:                            424        72
+:matt/marble/04b:                            424        88
+:matt/marble/04b:                            456        72
+:matt/marble/04b:                            456        88
+:matt/marble/04b:                            488        72
+:matt/marble/04b:                            488        88
+:matt/marble/04b:                            296        72
+:matt/marble/04b:                            296        88
+:matt/marble/04b:                            520        72
+:matt/marble/04b:                            520        88
+:matt/marble/04b:                            328       168
+:matt/marble/04b:                            328       184
+:matt/marble/04b:                            360       168
+:matt/marble/04b:                            360       184
+:matt/marble/04b:                            456       168
+:matt/marble/04b:                            456       184
+:matt/marble/04b:                            488       168
+:matt/marble/04b:                            488       184
+:matt/marble/04b:                            296       256
+:matt/marble/04b:                            296       272
+:matt/marble/04b:                            392       256
+:matt/marble/04b:                            392       272
+:matt/marble/04b:                            424       256
+:matt/marble/04b:                            424       272
+:matt/marble/04b:                            520       256
+:matt/marble/04b:                            520       272
+:geoo/steel/64x32o.S:                             392       168
+:geoo/steel/64x32o.S:                             456       256
+:geoo/steel/64x32o.S:                             328       256
+:geoo/steel/32x32o.S:                             296       168
+:geoo/steel/32x32o.S:                             520       168
+:matt/marble/23b:                            600       336
+:matt/marble/23b:                            600       368
+:matt/marble/23b:                            632       336
+:matt/marble/23b:                            632       368
+:matt/marble/23b:                            664       336
+:matt/marble/23b:                            664       368
+:matt/marble/23b:                            152       336
+:matt/marble/23b:                            152       368
+:matt/marble/23b:                            184       336
+:matt/marble/23b:                            184       368
+:matt/marble/23b:                            216       336
+:matt/marble/23b:                            216       368
+:geoo/steel/16x16o.S:                             824       224
+:geoo/steel/16x16o.S:                             824       272
+:geoo/steel/32x32o.S:                             792       240
+:geoo/steel/16x16o.S:                               8       160
+:geoo/steel/16x16o.S:                               8       112
+:geoo/steel/32x32o.S:                              24       128
+:geoo/steel/64x64o.S:                              88       336
+:geoo/steel/16x16o.S:                               8       272
+:geoo/steel/16x16o.S:                               8       224
+:geoo/steel/32x32o.S:                              24       240
+:geoo/steel/64x64o.S:                             696         0
+:geoo/steel/32x64o.S:                             760        64
+:geoo/steel/16x16o.S:                             824       160
+:geoo/steel/16x16o.S:                             824       112
+:geoo/steel/32x32o.S:                             792       128

@@ -1,0 +1,286 @@
+$BUILT 2014-06-06 10:22:10
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Frog Dreaming (7p)
+
+#SIZE_X 448
+#SIZE_Y 1344
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 45
+#INITIAL 80
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 10
+#WALKER 60
+#JUMPER 60
+#NOTHING 0
+#BLOCKER 20
+#NOTHING 0
+#BUILDER 40
+#PLATFORMER 40
+#MINER 70
+#NOTHING 0
+#BATTER 40
+#NOTHING 0
+
+:geoo/abstract/hatch.H: 368 80
+:geoo/abstract/hatch.H: 304 1232
+:geoo/abstract/hatch.H: 240 1040
+:geoo/abstract/hatch.H: 176 848
+:geoo/abstract/hatch.H: 112 656
+:geoo/abstract/hatch.H: 48 464
+:geoo/abstract/hatch.H: 432 272
+
+:geoo/abstract/goal.G: 0 1232
+:geoo/abstract/goal.G: 384 1040
+:geoo/abstract/goal.G: 320 848
+:geoo/abstract/goal.G: 256 656
+:geoo/abstract/goal.G: 192 464
+:geoo/abstract/goal.G: 128 272
+:geoo/abstract/goal.G: 64 80
+
+:geoo/steel/32x16o.S: 176 448
+:geoo/steel/32x16o.S: 304 832
+:geoo/steel/32x16o.S: 240 640
+:geoo/steel/32x16o.S: 368 576
+:geoo/steel/32x16o.S: 432 768
+:geoo/steel/32x16o.S: 48 960
+:geoo/steel/32x16o.S: 368 1024
+:geoo/steel/32x16o.S: 112 1152
+:geoo/steel/32x16o.S: 432 1216
+:geoo/steel/32x16o.S: 176 0
+:geoo/steel/32x16o.S: 48 64
+:geoo/steel/32x16o.S: 304 384
+:geoo/steel/32x16o.S: 240 192
+:geoo/steel/32x16o.S: 112 256
+:geoo/abstract/cvblocks/035: 16 320 rrr
+:geoo/abstract/cvblocks/035: 400 320 rrr
+:geoo/abstract/cvblocks/035: 368 288 rrr
+:geoo/abstract/cvblocks/035: 48 288 rrr
+:geoo/abstract/cvblocks/035: 368 384
+:geoo/abstract/cvblocks/035: 432 384 rrr
+:geoo/abstract/cvblocks/035: 16 384
+:geoo/abstract/cvblocks/035: 400 128 rrr
+:geoo/abstract/cvblocks/035: 336 128 rrr
+:geoo/abstract/cvblocks/035: 304 96 rrr
+:geoo/abstract/cvblocks/035: 432 96 rrr
+:geoo/abstract/cvblocks/035: 304 192
+:geoo/abstract/cvblocks/035: 368 192 rrr
+:geoo/abstract/cvblocks/035: 400 192
+:geoo/abstract/cvblocks/035: 336 1280 rrr
+:geoo/abstract/cvblocks/035: 272 1280 rrr
+:geoo/abstract/cvblocks/035: 240 1248 rrr
+:geoo/abstract/cvblocks/035: 368 1248 rrr
+:geoo/abstract/cvblocks/035: 240 0
+:geoo/abstract/cvblocks/035: 304 0 rrr
+:geoo/abstract/cvblocks/035: 336 0
+:geoo/abstract/cvblocks/035: 272 1088 rrr
+:geoo/abstract/cvblocks/035: 208 1088 rrr
+:geoo/abstract/cvblocks/035: 176 1056 rrr
+:geoo/abstract/cvblocks/035: 304 1056 rrr
+:geoo/abstract/cvblocks/035: 176 1152
+:geoo/abstract/cvblocks/035: 240 1152 rrr
+:geoo/abstract/cvblocks/035: 272 1152
+:geoo/abstract/cvblocks/035: 208 896 rrr
+:geoo/abstract/cvblocks/035: 144 896 rrr
+:geoo/abstract/cvblocks/035: 112 864 rrr
+:geoo/abstract/cvblocks/035: 240 864 rrr
+:geoo/abstract/cvblocks/035: 112 960
+:geoo/abstract/cvblocks/035: 176 960 rrr
+:geoo/abstract/cvblocks/035: 208 960
+:geoo/abstract/cvblocks/035: 144 704 rrr
+:geoo/abstract/cvblocks/035: 80 704 rrr
+:geoo/abstract/cvblocks/035: 48 672 rrr
+:geoo/abstract/cvblocks/035: 176 672 rrr
+:geoo/abstract/cvblocks/035: 48 768
+:geoo/abstract/cvblocks/035: 112 768 rrr
+:geoo/abstract/cvblocks/035: 144 768
+:geoo/abstract/cvblocks/035: 80 512 rrr
+:geoo/abstract/cvblocks/035: 16 512 rrr
+:geoo/abstract/cvblocks/035: 432 480 rrr
+:geoo/abstract/cvblocks/035: 112 480 rrr
+:geoo/abstract/cvblocks/035: 432 576
+:geoo/abstract/cvblocks/035: 48 576 rrr
+:geoo/abstract/cvblocks/035: 80 576
+:geoo/construction/stairs_ru_32.S: 112 224
+:geoo/construction/stairs_ru_32.S: 176 192
+:geoo/construction/stairs_ru_32.S: 48 32
+:geoo/construction/stairs_ru_32.S: 112 0
+:geoo/construction/stairs_ru_32.S: 432 1184
+:geoo/construction/stairs_ru_32.S: 48 1152
+:geoo/construction/stairs_ru_32.S: 368 992
+:geoo/construction/stairs_ru_32.S: 432 960
+:geoo/construction/stairs_ru_32.S: 304 800
+:geoo/construction/stairs_ru_32.S: 368 768
+:geoo/construction/stairs_ru_32.S: 240 608
+:geoo/construction/stairs_ru_32.S: 304 576
+:geoo/construction/stairs_ru_32.S: 176 416
+:geoo/construction/stairs_ru_32.S: 240 384
+:geoo/steel/32x16o.S: 304 208
+:geoo/steel/32x16o.S: 336 208
+:geoo/steel/32x16o.S: 368 224 rrr
+:geoo/steel/32x16o.S: 384 224 rrr
+:geoo/steel/32x16o.S: 400 208
+:geoo/steel/32x16o.S: 432 208
+:geoo/steel/32x16o.S: 304 80 rrr
+:geoo/steel/32x16o.S: 0 80 rrr
+:geoo/steel/32x16o.S: 368 16
+:geoo/steel/32x16o.S: 336 16
+:geoo/steel/32x16o.S: 320 32 rrr
+:geoo/steel/32x16o.S: 304 32 rrr
+:geoo/steel/32x16o.S: 240 16
+:geoo/steel/32x16o.S: 272 16
+:geoo/steel/32x16o.S: 240 1232 rrr
+:geoo/steel/32x16o.S: 384 1232 rrr
+:geoo/steel/32x16o.S: 176 1040 rrr
+:geoo/steel/32x16o.S: 320 1040 rrr
+:geoo/steel/32x16o.S: 240 1184 rrr
+:geoo/steel/32x16o.S: 256 1184 rrr
+:geoo/steel/32x16o.S: 176 1168 rr
+:geoo/steel/32x16o.S: 208 1168 rr
+:geoo/steel/32x16o.S: 272 1168 rr
+:geoo/steel/32x16o.S: 304 1168 rr
+:geoo/steel/32x16o.S: 112 976 rr
+:geoo/steel/32x16o.S: 144 976 rr
+:geoo/steel/32x16o.S: 208 976 rr
+:geoo/steel/32x16o.S: 240 976 rr
+:geoo/steel/32x16o.S: 176 992 rrr
+:geoo/steel/32x16o.S: 192 992 rrr
+:geoo/steel/32x16o.S: 112 848 rrr
+:geoo/steel/32x16o.S: 256 848 rrr
+:geoo/steel/32x16o.S: 368 272 rrr
+:geoo/steel/32x16o.S: 64 272 rrr
+:geoo/steel/32x16o.S: 432 416 rrr
+:geoo/steel/32x16o.S: 0 416 rrr
+:geoo/steel/32x16o.S: 368 400
+:geoo/steel/32x16o.S: 400 400
+:geoo/steel/32x16o.S: 16 400
+:geoo/steel/32x16o.S: 48 400
+:geoo/steel/32x16o.S: 48 608 rrr
+:geoo/steel/32x16o.S: 64 608 rrr
+:geoo/steel/32x16o.S: 432 592
+:geoo/steel/32x16o.S: 16 592
+:geoo/steel/32x16o.S: 80 592
+:geoo/steel/32x16o.S: 112 592
+:geoo/steel/32x16o.S: 432 464 rrr
+:geoo/steel/32x16o.S: 128 464 rrr
+:geoo/steel/32x16o.S: 48 656 rrr
+:geoo/steel/32x16o.S: 192 656 rrr
+:geoo/steel/32x16o.S: 112 800 rrr
+:geoo/steel/32x16o.S: 128 800 rrr
+:geoo/steel/32x16o.S: 48 784
+:geoo/steel/32x16o.S: 80 784
+:geoo/steel/32x16o.S: 144 784
+:geoo/steel/32x16o.S: 176 784
+:geoo/construction/stairs_ru_32.S: 96 1312 frr
+:geoo/construction/stairs_ru_32.S: 32 1280 frr
+:geoo/steel/32x16o.S: 16 1280
+:geoo/steel/32x16o.S: 432 1280
+:geoo/construction/stairs_ru_32.S: 32 1120 frr
+:geoo/construction/stairs_ru_32.S: 416 1088 frr
+:geoo/steel/32x16o.S: 400 1088
+:geoo/steel/32x16o.S: 368 1088
+:geoo/construction/stairs_ru_32.S: 416 928 frr
+:geoo/construction/stairs_ru_32.S: 352 896 frr
+:geoo/steel/32x16o.S: 336 896
+:geoo/steel/32x16o.S: 304 896
+:geoo/construction/stairs_ru_32.S: 352 736 frr
+:geoo/construction/stairs_ru_32.S: 288 704 frr
+:geoo/steel/32x16o.S: 272 704
+:geoo/steel/32x16o.S: 240 704
+:geoo/construction/stairs_ru_32.S: 288 544 frr
+:geoo/construction/stairs_ru_32.S: 224 512 frr
+:geoo/steel/32x16o.S: 208 512
+:geoo/steel/32x16o.S: 176 512
+:geoo/construction/stairs_ru_32.S: 224 352 frr
+:geoo/construction/stairs_ru_32.S: 160 320 frr
+:geoo/steel/32x16o.S: 144 320
+:geoo/steel/32x16o.S: 112 320
+:geoo/construction/stairs_ru_32.S: 160 160 frr
+:geoo/construction/stairs_ru_32.S: 96 128 frr
+:geoo/steel/32x16o.S: 80 128
+:geoo/steel/32x16o.S: 48 128
+:geoo/steel/32x16o.S: 400 320
+:geoo/steel/32x16o.S: 16 320
+:geoo/steel/32x16o.S: 384 288 rrr
+:geoo/steel/32x16o.S: 48 288 rrr
+:geoo/steel/32x16o.S: 336 128
+:geoo/steel/32x16o.S: 400 128
+:geoo/steel/32x16o.S: 272 1280
+:geoo/steel/32x16o.S: 336 1280
+:geoo/steel/32x16o.S: 208 1088
+:geoo/steel/32x16o.S: 272 1088
+:geoo/steel/32x16o.S: 144 896
+:geoo/steel/32x16o.S: 208 896
+:geoo/steel/32x16o.S: 80 704
+:geoo/steel/32x16o.S: 144 704
+:geoo/steel/32x16o.S: 16 512
+:geoo/steel/32x16o.S: 80 512
+:geoo/steel/32x16o.S: 0 480 rrr
+:geoo/steel/32x16o.S: 112 480 rrr
+:geoo/steel/32x16o.S: 320 96 rrr
+:geoo/steel/32x16o.S: 432 96 rrr
+:geoo/steel/32x16o.S: 256 1248 rrr
+:geoo/steel/32x16o.S: 368 1248 rrr
+:geoo/steel/32x16o.S: 192 1056 rrr
+:geoo/steel/32x16o.S: 304 1056 rrr
+:geoo/steel/32x16o.S: 128 864 rrr
+:geoo/steel/32x16o.S: 240 864 rrr
+:geoo/steel/32x16o.S: 64 672 rrr
+:geoo/steel/32x16o.S: 176 672 rrr
+:geoo/abstract/cvblocks/030: 48 512
+:geoo/abstract/cvblocks/030: 112 704
+:geoo/abstract/cvblocks/030: 176 896
+:geoo/abstract/cvblocks/030: 240 1088
+:geoo/abstract/cvblocks/030: 304 1280
+:geoo/abstract/cvblocks/030: 368 128
+:geoo/abstract/cvblocks/030: 432 320
+:geoo/steel/32x16o.S: 208 448
+:geoo/steel/32x16o.S: 240 448
+:geoo/steel/32x16o.S: 272 448
+:geoo/steel/32x16o.S: 304 448
+:geoo/steel/32x16o.S: 336 448
+:geoo/steel/32x16o.S: 144 256
+:geoo/steel/32x16o.S: 176 256
+:geoo/steel/32x16o.S: 208 256
+:geoo/steel/32x16o.S: 240 256
+:geoo/steel/32x16o.S: 272 256
+:geoo/steel/32x16o.S: 80 64
+:geoo/steel/32x16o.S: 112 64
+:geoo/steel/32x16o.S: 144 64
+:geoo/steel/32x16o.S: 176 64
+:geoo/steel/32x16o.S: 208 64
+:geoo/steel/32x16o.S: 16 1216
+:geoo/steel/32x16o.S: 48 1216
+:geoo/steel/32x16o.S: 80 1216
+:geoo/steel/32x16o.S: 112 1216
+:geoo/steel/32x16o.S: 144 1216
+:geoo/steel/32x16o.S: 400 1024
+:geoo/steel/32x16o.S: 432 1024
+:geoo/steel/32x16o.S: 16 1024
+:geoo/steel/32x16o.S: 48 1024
+:geoo/steel/32x16o.S: 80 1024
+:geoo/steel/32x16o.S: 336 832
+:geoo/steel/32x16o.S: 368 832
+:geoo/steel/32x16o.S: 400 832
+:geoo/steel/32x16o.S: 432 832
+:geoo/steel/32x16o.S: 16 832
+:geoo/steel/32x16o.S: 272 640
+:geoo/steel/32x16o.S: 304 640
+:geoo/steel/32x16o.S: 336 640
+:geoo/steel/32x16o.S: 368 640
+:geoo/steel/32x16o.S: 400 640
+:geoo/construction/stairs_ru_32.S: 112 544 frr
+:geoo/construction/stairs_ru_32.S: 176 736 frr
+:geoo/construction/stairs_ru_32.S: 240 928 frr
+:geoo/construction/stairs_ru_32.S: 304 1120 frr
+:geoo/construction/stairs_ru_32.S: 368 1312 frr
+:geoo/construction/stairs_ru_32.S: 432 160 frr
+:geoo/construction/stairs_ru_32.S: 48 352 frr

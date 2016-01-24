@@ -1,0 +1,86 @@
+$BUILT 2014-04-15 21:04:25
+$AUTHOR Amanda
+$GERMAN 
+$ENGLISH Shine On You Crazy Lix (I-IV)
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 40
+#INITIAL 55
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#PLATFORMER 40
+#BUILDER 40
+#BLOCKER 30
+#JUMPER 30
+#BASHER 50
+#CLIMBER 40
+#MINER 20
+#CUBER 20
+#WALKER 80
+#BATTER 20
+#DIGGER 0
+#FLOATER 0
+
+:matt/marble/Hatch.H: 456 168 r
+:matt/marble/Hatch.H: 344 124 r
+:matt/marble/Hatch.H: 231 81
+:matt/marble/Hatch.H: 119 37
+
+:matt/marble/Goal.G: 64 311
+:matt/marble/Goal.G: 176 312
+:matt/marble/Goal.G: 400 312
+:matt/marble/Goal.G: 288 312
+
+:simon/steel/clean_h1.S: 72 359
+:simon/steel/clean_v0.S: 117 359
+:simon/steel/clean_v0.S: 63 359
+:matt/marble/23d: 48 368
+:matt/marble/23d: 80 368
+:simon/desert/coumn_2: 136 232
+:simon/desert/coumn_2: 136 328
+:matt/marble/23d: 112 368
+:simon/steel/clean_h1.S: 184 360
+:simon/steel/clean_v0.S: 175 360
+:matt/marble/23d: 144 368
+:matt/marble/23d: 176 368
+:simon/steel/clean_v0.S: 229 360
+:simon/desert/coumn_2: 248 280
+:matt/marble/23d: 208 368
+:matt/marble/23d: 240 368
+:simon/steel/clean_h1.S: 296 360
+:simon/steel/clean_v0.S: 341 360
+:simon/steel/clean_v0.S: 287 360
+:matt/marble/23d: 272 368
+:matt/marble/23d: 304 368
+:simon/desert/coumn_2: 360 324
+:matt/marble/23d: 336 368
+:simon/steel/clean_v0.S: 399 360
+:matt/marble/23d: 368 368
+:simon/steel/clean_v0.S: 453 360
+:simon/steel/clean_h1.S: 408 360
+:matt/marble/23d: 400 368
+:simon/desert/coumn_2: 432 368
+:matt/marble/23d: 432 368
+:matt/marble/23d: 464 368
+:simon/desert/coumn_2: 472 268
+:matt/marble/23d: 496 368
+:matt/marble/22d: 8 368
+:matt/marble/00d: 528 376
+:matt/marble/02d: 528 384
+:matt/marble/00d: 544 392
+:simon/desert/column_t: 128 116
+:simon/desert/coumn_2: 136 136
+:simon/desert/column_t: 240 160
+:simon/desert/coumn_2: 248 180
+:simon/desert/column_t: 352 204
+:simon/desert/coumn_2: 360 224
+:simon/desert/column_t: 464 248

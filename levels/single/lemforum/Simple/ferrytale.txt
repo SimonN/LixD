@@ -1,0 +1,175 @@
+$BUILT 2012-06-13 01:22:36
+$AUTHOR Simon
+$GERMAN 
+$ENGLISH Ferry Tale
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 5
+#SPAWN_INTERVAL 19
+#SPAWN_INTERVAL_FAST 19
+
+#WALKER 0
+#JUMPER 0
+#CLIMBER 0
+#FLOATER 1
+#EXPLODER2 0
+#BLOCKER 1
+#BATTER 1
+#BUILDER 2
+#PLATFORMER 0
+#BASHER 10
+#MINER 0
+#DIGGER 0
+
+:geoo/construction/Hatch.H: 32 240
+
+:matt/goldmine/Goal.G: 508 296
+
+:simon/water_thin.W: 324 376
+:simon/water_thin.W: 174 376
+:simon/water_thin.W: 224 376
+:simon/water_thin.W: 274 376
+
+:matt/goldmine/crate32: 416 312
+:matt/goldmine/crate64: 448 280
+:matt/goldmine/crate32: 384 312
+:matt/goldmine/crate32: 400 280
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 272 310
+:geoo/construction/squarebrickx12_dedicated_to_ccx: 296 316
+:geoo/construction/stairsbrick_rd_32: 264 320
+:geoo/construction/stairsbrick_rd_32: 272 320
+:geoo/construction/stairsbrick_rd_32: 280 320
+:geoo/construction/stairsbrick_rd_32: 288 320
+:geoo/sandstone/pillar_32: 352 344 r
+:geoo/construction/wall/small_brickdiag_bd: 320 344
+:geoo/construction/wall/small_brickdiag_bd: 336 360
+:geoo/construction/wall/small_brickdiag_bd: 352 376
+:matt/goldmine/crate64: 552 264
+:matt/goldmine/crate32: 552 328
+:geoo/sandstone/pillar_32: 384 376 r
+:geoo/construction/wall/small_brickdiag_bd: 368 392
+:geoo/construction/stairsbrick_rd_32: 608 328
+:geoo/construction/stairsbrick_rd_32: 608 312
+:geoo/construction/stairsbrick_rd_32: 608 296
+:geoo/construction/fence_rust_64x64: 616 296
+:geoo/construction/stairsbrick_rd_32: 608 280
+:geoo/construction/pillar_32: 584 280
+:geoo/construction/wall/small_brickdiag_td: 600 328
+:geoo/construction/wall/small_brickdiag_tu: 568 328
+:geoo/construction/pillar_bottom: 584 312
+:geoo/construction/stairsbrick_rd_32: 608 264
+:geoo/construction/stairsbrick_rd_32: 608 248
+:geoo/construction/pillar_32: 584 248
+:geoo/construction/stairsbrick_rd_32: 608 232
+:geoo/construction/pillar_32: 584 216
+:geoo/construction/pillar_top: 584 208
+:geoo/construction/platformbrick: 616 232
+:geoo/construction/fence_rust_64x64: 616 232
+:geoo/construction/concrete/064h: 72 320
+:geoo/construction/concrete/064h: -56 320
+:geoo/construction/concrete/064h: 8 384
+:geoo/construction/concrete/064: 136 384
+:geoo/construction/concrete/064: -56 384
+:geoo/construction/fence_32x32.S: 144 288
+:geoo/construction/fence_32x32.S: 144 256
+:geoo/construction/fence_32x32.S: 144 240
+:geoo/construction/fence_32x32.S: 144 176
+:geoo/construction/fence_32x32.S: 144 144
+:geoo/construction/fence_rust_32x32: 144 144
+:geoo/construction/fence_rust_32x32: 144 128
+:geoo/construction/concrete/016vd: 64 240
+:geoo/construction/concrete/016vc: 16 240
+:geoo/construction/concrete/016ha: 16 224
+:geoo/construction/concrete/016hb: 48 224
+:geoo/construction/rod_steel/straight32.S: 176 288 rrr
+:geoo/construction/rod_steel/straight32.S: 176 256 rrr
+:geoo/construction/rod_steel/straight32.S: 176 240 rrr
+:geoo/construction/rod_steel/straight32.S: 176 176 rrr
+:geoo/construction/rod_rust/straight32: 176 144 rrr
+:geoo/construction/fence_rust_32x32: 196 68
+:geoo/construction/rod_rust/link_h_du: 184 70
+:geoo/construction/rod_rust/link_h_du: 194 72 rrr
+:geoo/construction/rod_steel/straight32.S: 196 68
+:geoo/construction/rod_steel/straight_diagu8.S: 168 104
+:geoo/construction/rod_rust/straight32: 176 80 rrr
+:geoo/construction/rod_rust/straight32: 176 112 rrr
+:geoo/construction/rod_steel/straight32.S: 136 256 rrr
+:geoo/construction/rod_steel/straight32.S: 136 240 rrr
+:geoo/construction/rod_steel/straight32.S: 136 176 rrr
+:geoo/construction/rod_steel/straight32.S: 136 144 rrr
+:geoo/construction/rod_steel/straight32.S: 136 112 rrr
+:geoo/construction/rod_rust/straight32: 136 288 rrr
+:geoo/construction/rod_rust/link_h_du: 6 298 rrr
+:geoo/construction/rod_rust/link_h_dd: -11 292
+:geoo/construction/rod_steel/straight_diagu8.S: 176 96
+:geoo/construction/rod_steel/straight32.S: 208 92
+:geoo/construction/rod_steel/link_du_h.S: 192 80
+:geoo/construction/fence_32x32.S: 244 68
+:geoo/construction/rod_steel/straight32.S: 244 68
+:geoo/construction/fence_32x32.S: 228 68
+:geoo/construction/rod_steel/straight32.S: 228 68
+:geoo/construction/rod_steel/straight32.S: 244 92
+:geoo/construction/rod_steel/straight32.S: 228 92
+:geoo/construction/fence_32x32.S: 276 68
+:geoo/construction/rod_steel/straight32.S: 276 68
+:geoo/construction/rod_steel/straight32.S: 276 92
+:geoo/sandstone/ebony/v8c: 320 96
+:geoo/construction/fence_32x32.S: 308 68
+:geoo/construction/rod_steel/straight32.S: 308 68
+:geoo/construction/rod_steel/straight32.S: 308 92
+:geoo/construction/fence_32x32.S: 340 68
+:geoo/construction/rod_steel/straight32.S: 340 68
+:geoo/sandstone/ebony/v8c: 368 96
+:geoo/construction/rod_steel/straight32.S: 340 92
+:geoo/construction/fence_rust_32x32: 372 68
+:geoo/construction/rod_rust/straight32: 372 68 frr
+:geoo/construction/rod_steel/straight32.S: 372 92
+:geoo/construction/rod_steel/straight32.S: 136 96 rrr
+:geoo/construction/rod_steel/straight_diagd8.S: 141 74 r
+:geoo/construction/rod_steel/link_h_dd.S: 136 80 rrr
+:geoo/construction/rod_steel/link_h_dd.S: 148 68 frr
+:geoo/construction/rod_rust/edge_rd: 176 72
+:geoo/construction/rod_steel/straight32.S: 168 68
+:geoo/construction/rod_rust/straight32: 404 68 rrr
+:geoo/construction/rod_rust/edge_lu: 404 92
+:geoo/construction/rod_rust/edge_ld: 404 68
+:geoo/construction/rod_rust/straight32: 144 104
+:geoo/construction/fence_rust_32x32: 144 112
+:geoo/construction/fence_32x32.S: 144 208
+:geoo/construction/rod_steel/straight32.S: 176 208 rrr
+:geoo/construction/rod_steel/straight32.S: 136 208 rrr
+:geoo/sandstone/ebony/v8c: 368 128
+:geoo/sandstone/ebony/v8c: 320 128
+:geoo/construction/platformbrick: 316 160
+:geoo/construction/platformbrick: 348 160
+:geoo/construction/platformbrick: 316 162
+:geoo/construction/platformbrick: 348 162
+:geoo/construction/platformbrick: 316 164
+:geoo/construction/platformbrick: 348 164
+:matt/goldmine/crate16: 346 144
+:matt/goldmine/crate16: 334 144
+:matt/goldmine/crate16: 338 128
+:geoo/sandstone/pillar_32: 448 344 r
+:geoo/sandstone/pillar_32: 448 376 r
+:geoo/sandstone/pillar_32: 480 344 r
+:geoo/sandstone/pillar_32: 480 376 r
+:geoo/sandstone/pillar_32: 512 344 r
+:geoo/sandstone/pillar_32: 512 376 r
+:geoo/sandstone/pillar_32: 544 344 r
+:geoo/sandstone/pillar_32: 544 376 r
+:geoo/sandstone/pillar_32: 576 344 r
+:geoo/sandstone/pillar_32: 576 376 r
+:geoo/sandstone/pillar_32: 608 344 r
+:geoo/sandstone/pillar_32: 608 376 r
+:geoo/sandstone/pillar_32: 384 344 r
+:geoo/sandstone/pillar_32: 416 344 r
+:geoo/sandstone/pillar_32: 416 376 r

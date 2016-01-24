@@ -1,0 +1,167 @@
+$BUILT                                             2011-08-21 18:01:14
+$AUTHOR                                                           geoo
+$GERMAN                                                               
+$ENGLISH                                            Fence with Batters
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            512
+#TORUS_X                                                             0
+#TORUS_Y                                                             1
+#START_X                                                             0
+#START_Y                                                             0
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            45
+#INITIAL                                                           120
+#REQUIRED                                                           20
+#RATE                                                               90
+
+#MINER                                                              30
+#NOTHING                                                             0
+#NOTHING                                                             0
+#EXPLODER2                                                          -1
+#BLOCKER                                                            50
+#BATTER                                                             50
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:geoo/construction/Hatch.H:                       464       192     r
+:geoo/construction/Hatch.H:                       144       192
+:geoo/construction/Hatch.H:                       464       448     r
+:geoo/construction/Hatch.H:                       144       448
+
+:geoo/construction/Goal2.G:                       128       128
+:geoo/construction/Goal2.G:                       448       128
+:geoo/construction/Goal2.G:                       128       384
+:geoo/construction/Goal2.G:                       448       384
+
+:geoo/construction/fence_64x64.S:                  64       240
+:geoo/construction/fence_64x64.S:                 128       240
+:geoo/construction/fence_64x64.S:                 192       240
+:geoo/construction/fence_64x64.S:                 256       240
+:geoo/construction/fence_64x64.S:                  64       176
+:geoo/construction/fence_64x64.S:                 128       208
+:geoo/construction/fence_64x64.S:                 192       176
+:geoo/construction/fence_64x64.S:                 256       176
+:geoo/construction/fence_64x64.S:                  64       112
+:geoo/construction/fence_64x64.S:                 192       112
+:geoo/construction/fence_64x64.S:                 256       112
+:geoo/construction/fence_64x64.S:                  64        48
+:geoo/construction/fence_64x64.S:                 128        32
+:geoo/construction/fence_64x64.S:                 192        48
+:geoo/construction/fence_64x64.S:                 256        48
+:geoo/construction/fence_64x64.S:                 320       240
+:geoo/construction/fence_64x64.S:                 384       240
+:geoo/construction/fence_64x64.S:                 448       240
+:geoo/construction/fence_64x64.S:                 512       240
+:geoo/construction/fence_64x64.S:                 320       176
+:geoo/construction/fence_64x64.S:                 384       176
+:geoo/construction/fence_64x64.S:                 448       208
+:geoo/construction/fence_64x64.S:                 512       176
+:geoo/construction/fence_64x64.S:                 320       112
+:geoo/construction/fence_64x64.S:                 384       112
+:geoo/construction/fence_64x64.S:                 512       112
+:geoo/construction/fence_64x64.S:                 320        48
+:geoo/construction/fence_64x64.S:                 384        48
+:geoo/construction/fence_64x64.S:                 448        32
+:geoo/construction/fence_64x64.S:                 512        48
+:geoo/construction/rod_steel/straight32.S:         56        48     fr
+:geoo/construction/rod_steel/straight32.S:         56        80     fr
+:geoo/construction/rod_steel/straight32.S:         56       112     fr
+:geoo/construction/rod_steel/straight32.S:         56       144     fr
+:geoo/construction/rod_steel/straight32.S:         56       176     fr
+:geoo/construction/rod_steel/straight32.S:         56       208     fr
+:geoo/construction/rod_steel/straight32.S:         56       240     fr
+:geoo/construction/rod_steel/straight32.S:         56       272     fr
+:geoo/construction/rod_steel/straight32.S:        576        48     fr
+:geoo/construction/rod_steel/straight32.S:        576        80     fr
+:geoo/construction/rod_steel/straight32.S:        576       112     fr
+:geoo/construction/rod_steel/straight32.S:        576       144     fr
+:geoo/construction/rod_steel/straight32.S:        576       176     fr
+:geoo/construction/rod_steel/straight32.S:        576       208     fr
+:geoo/construction/rod_steel/straight32.S:        576       240     fr
+:geoo/construction/rod_steel/straight32.S:        576       272     fr
+:geoo/construction/fence_64x64.S:                  64       496
+:geoo/construction/fence_64x64.S:                 128       496
+:geoo/construction/fence_64x64.S:                 192       496
+:geoo/construction/fence_64x64.S:                 256       496
+:geoo/construction/fence_64x64.S:                  64       432
+:geoo/construction/fence_64x64.S:                 128       464
+:geoo/construction/fence_64x64.S:                 192       432
+:geoo/construction/fence_64x64.S:                 256       432
+:geoo/construction/fence_64x64.S:                  64       368
+:geoo/construction/fence_64x64.S:                 192       368
+:geoo/construction/fence_64x64.S:                 256       368
+:geoo/construction/fence_64x64.S:                  64       304
+:geoo/construction/fence_64x64.S:                 128       288
+:geoo/construction/fence_64x64.S:                 192       304
+:geoo/construction/fence_64x64.S:                 256       304
+:geoo/construction/fence_64x64.S:                 320       496
+:geoo/construction/fence_64x64.S:                 384       496
+:geoo/construction/fence_64x64.S:                 448       496
+:geoo/construction/fence_64x64.S:                 512       496
+:geoo/construction/fence_64x64.S:                 320       432
+:geoo/construction/fence_64x64.S:                 384       432
+:geoo/construction/fence_64x64.S:                 448       464
+:geoo/construction/fence_64x64.S:                 512       432
+:geoo/construction/fence_64x64.S:                 320       368
+:geoo/construction/fence_64x64.S:                 384       368
+:geoo/construction/fence_64x64.S:                 512       368
+:geoo/construction/fence_64x64.S:                 320       304
+:geoo/construction/fence_64x64.S:                 384       304
+:geoo/construction/fence_64x64.S:                 448       288
+:geoo/construction/fence_64x64.S:                 512       304
+:geoo/construction/rod_steel/straight32.S:         56       304     fr
+:geoo/construction/rod_steel/straight32.S:         56       336     fr
+:geoo/construction/rod_steel/straight32.S:         56       368     fr
+:geoo/construction/rod_steel/straight32.S:         56       400     fr
+:geoo/construction/rod_steel/straight32.S:         56       432     fr
+:geoo/construction/rod_steel/straight32.S:         56       464     fr
+:geoo/construction/rod_steel/straight32.S:         56       496     fr
+:geoo/construction/rod_steel/straight32.S:         56        16     fr
+:geoo/construction/rod_steel/straight32.S:        576       304     fr
+:geoo/construction/rod_steel/straight32.S:        576       336     fr
+:geoo/construction/rod_steel/straight32.S:        576       368     fr
+:geoo/construction/rod_steel/straight32.S:        576       400     fr
+:geoo/construction/rod_steel/straight32.S:        576       432     fr
+:geoo/construction/rod_steel/straight32.S:        576       464     fr
+:geoo/construction/rod_steel/straight32.S:        576       496     fr
+:geoo/construction/rod_steel/straight32.S:        576        16     fr
+:geoo/construction/rod_steel/straight32.S:        128       184
+:geoo/construction/rod_steel/straight32.S:        160       184
+:geoo/construction/rod_steel/straight32.S:        120       152     fr
+:geoo/construction/rod_steel/straight32.S:        192       152     fr
+:geoo/construction/rod_steel/edge_lu.S:           192       184
+:geoo/construction/rod_steel/edge_ru.S:           120       184
+:geoo/construction/rod_steel/end_rect.S:          192       152     fr
+:geoo/construction/rod_steel/end_rect.S:          120       152     fr
+:geoo/construction/rod_steel/straight32.S:        448       184
+:geoo/construction/rod_steel/straight32.S:        480       184
+:geoo/construction/rod_steel/straight32.S:        440       152     fr
+:geoo/construction/rod_steel/straight32.S:        512       152     fr
+:geoo/construction/rod_steel/edge_lu.S:           512       184
+:geoo/construction/rod_steel/edge_ru.S:           440       184
+:geoo/construction/rod_steel/end_rect.S:          512       152     fr
+:geoo/construction/rod_steel/end_rect.S:          440       152     fr
+:geoo/construction/rod_steel/straight32.S:        448       440
+:geoo/construction/rod_steel/straight32.S:        480       440
+:geoo/construction/rod_steel/straight32.S:        440       408     fr
+:geoo/construction/rod_steel/straight32.S:        512       408     fr
+:geoo/construction/rod_steel/edge_lu.S:           512       440
+:geoo/construction/rod_steel/edge_ru.S:           440       440
+:geoo/construction/rod_steel/end_rect.S:          512       408     fr
+:geoo/construction/rod_steel/end_rect.S:          440       408     fr
+:geoo/construction/rod_steel/straight32.S:        128       440
+:geoo/construction/rod_steel/straight32.S:        160       440
+:geoo/construction/rod_steel/straight32.S:        120       408     fr
+:geoo/construction/rod_steel/straight32.S:        192       408     fr
+:geoo/construction/rod_steel/edge_lu.S:           192       440
+:geoo/construction/rod_steel/edge_ru.S:           120       440
+:geoo/construction/rod_steel/end_rect.S:          192       408     fr
+:geoo/construction/rod_steel/end_rect.S:          120       408     fr

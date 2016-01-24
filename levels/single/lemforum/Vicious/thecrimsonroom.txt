@@ -1,0 +1,222 @@
+$BUILT 2014-07-12 19:19:06
+$AUTHOR Michael S. Repton
+$GERMAN 
+$ENGLISH The Crimson Room
+
+#SIZE_X 640
+#SIZE_Y 512
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 40
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#WALKER 1
+#JUMPER 1
+#NOTHING 0
+#BUILDER 7
+#BASHER 7
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/marble/Hatch.H: 112 48
+
+:matt/marble/Goal.G: 112 336
+
+:proxima/flame.F: 224 288
+:proxima/flame.F: 224 304
+:proxima/flame.F: 304 288
+
+:proxima/tile/red1a: 64 0
+:proxima/tile/red1a: 96 0
+:proxima/tile/red1a: 128 0
+:proxima/tile/red1a: 160 0
+:proxima/tile/red1a: 48 16
+:proxima/tile/red1a: 80 16
+:proxima/tile/red1a: 112 16
+:proxima/tile/red1a: 64 32
+:proxima/tile/red1a: 96 32
+:proxima/tile/red1a: 112 32 d
+:proxima/tile/red1a: 48 48
+:proxima/tile/red1a: 80 48
+:proxima/tile/red1a: 96 48 d
+:proxima/tile/red1a: 64 64
+:proxima/tile/red1a: 48 80
+:proxima/tile/red1a: 64 96
+:proxima/tile/red1a: 48 112
+:proxima/tile/red1a: 80 96 d
+:proxima/tile/red3s: 64 240
+:proxima/tile/red3s: 96 224
+:proxima/tile/red3s: 128 240
+:proxima/tile/red3s: 160 224
+:proxima/tile/red3s: 192 240
+:proxima/tile/red3s: 224 224
+:proxima/tile/red3s: 256 192
+:proxima/tile/red3s: 272 208
+:proxima/tile/red3s: 304 240
+:proxima/tile/red3s: 320 208
+:proxima/tile/red3s: 336 176
+:proxima/tile/red1a: 448 0
+:proxima/tile/red1a: 480 0
+:proxima/tile/red1a: 512 0
+:proxima/tile/red1a: 544 0
+:proxima/tile/red1a: 496 16
+:proxima/tile/red1a: 528 16
+:proxima/tile/red1a: 560 16
+:proxima/tile/red1a: 512 32
+:proxima/tile/red1a: 544 32
+:proxima/tile/red1a: 496 32 d
+:proxima/tile/red1a: 528 48
+:proxima/tile/red1a: 560 48
+:proxima/tile/red1a: 512 48 d
+:proxima/tile/red1a: 544 64
+:proxima/tile/red1a: 560 80
+:proxima/tile/red1a: 544 96
+:proxima/tile/red1a: 560 112
+:proxima/tile/red1a: 528 96 d
+:proxima/tile/red3s: 80 176
+:matt/goldmine/plankdiag: 112 144
+:proxima/tile/red3s: 96 144
+:proxima/tile/red3s: 368 240
+:proxima/tile/red3s: 304 144
+:proxima/tile/red3s: 400 272
+:proxima/tile/red3s: 432 240
+:proxima/tile/red3s: 464 224
+:proxima/tile/red3s: 496 240
+:proxima/tile/red3s: 528 208
+:proxima/tile/red3s: 544 160
+:proxima/tile/red3s: 448 192
+:proxima/tile/red3s: 480 160
+:proxima/tile/red3: 416 96
+:proxima/tile/red3s: 384 64
+:proxima/tile/red3s: 352 32
+:proxima/tile/red3s: 288 16
+:proxima/tile/red3s: 240 16
+:proxima/tile/red3s: 240 64
+:proxima/tile/red3s: 272 96
+:proxima/tile/red3s: 288 112
+:proxima/tile/red3s: 256 32
+:proxima/tile/red3s: 192 112
+:proxima/tile/red3s: 224 128
+:proxima/tile/red3s: 208 144
+:matt/goldmine/plankdiag: 144 112
+:matt/goldmine/plankdiag: 176 80
+:proxima/tile/red3s: 192 48
+:proxima/tile/red3s: 560 256
+:proxima/tile/red3s: 544 272
+:proxima/tile/red3s: 528 288
+:proxima/tile/red3s: 512 304
+:proxima/tile/red3s: 496 320
+:proxima/tile/red3s: 480 336
+:proxima/tile/red3s: 464 352
+:proxima/tile/red3s: 448 368
+:proxima/tile/red3s: 480 400
+:proxima/tile/red3s: 512 368
+:proxima/tile/red1a: 448 496
+:proxima/tile/red1a: 480 496
+:proxima/tile/red1a: 512 496
+:proxima/tile/red1a: 544 496
+:proxima/tile/red1a: 496 480
+:proxima/tile/red1a: 528 480
+:proxima/tile/red1a: 560 480
+:proxima/tile/red1a: 512 464
+:proxima/tile/red1a: 544 464
+:proxima/tile/red1a: 496 464 d
+:proxima/tile/red1a: 528 448
+:proxima/tile/red1a: 560 448
+:proxima/tile/red1a: 512 448 d
+:proxima/tile/red1a: 544 432
+:proxima/tile/red1a: 560 416
+:proxima/tile/red1a: 544 400
+:proxima/tile/red1a: 560 384
+:proxima/tile/red1a: 528 400 d
+:proxima/tile/red1a: 64 496
+:proxima/tile/red1a: 96 496
+:proxima/tile/red1a: 128 496
+:proxima/tile/red1a: 160 496
+:proxima/tile/red1a: 48 480
+:proxima/tile/red1a: 80 480
+:proxima/tile/red1a: 112 480
+:proxima/tile/red1a: 64 464
+:proxima/tile/red1a: 96 464
+:proxima/tile/red1a: 112 464 d
+:proxima/tile/red1a: 48 448
+:proxima/tile/red1a: 80 448
+:proxima/tile/red1a: 96 448 d
+:proxima/tile/red1a: 64 432
+:proxima/tile/red1a: 48 416
+:proxima/tile/red1a: 64 400
+:proxima/tile/red1a: 48 384
+:proxima/tile/red1a: 80 400 d
+:proxima/tile/red1a: 80 384
+:proxima/tile/red1a: 112 384
+:proxima/tile/red1a: 144 384
+:proxima/tile/red1a: 176 384
+:proxima/tile/red1a: 160 464
+:proxima/tile/red1a: 144 448
+:proxima/tile/red1a: 160 432
+:proxima/tile/red1a: 128 448 d
+:proxima/tile/red1a: 176 432 d
+:proxima/tile/red1a: 176 464 d
+:proxima/tile/red1a: 192 464
+:proxima/tile/red1a: 224 464
+:proxima/tile/red1a: 256 464
+:proxima/tile/red1a: 288 464
+:proxima/tile/red1a: 208 480
+:proxima/tile/red1a: 240 480
+:proxima/tile/red3s: 448 464
+:proxima/tile/red3s: 400 464
+:proxima/tile/red1a: 400 496
+:proxima/tile/red1a: 288 496
+:proxima/tile/red1a: 192 400
+:proxima/tile/red1a: 208 416
+:proxima/tile/red1a: 224 400
+:proxima/tile/red1a: 240 416
+:proxima/tile/red1a: 256 400
+:proxima/tile/red1a: 272 416
+:proxima/tile/red1a: 288 400
+:proxima/tile/red1a: 320 464
+:proxima/tile/red1a: 336 448
+:proxima/tile/red1a: 352 432
+:proxima/tile/red1a: 368 416
+:proxima/tile/red1a: 224 368
+:proxima/tile/red1a: 208 352
+:proxima/tile/red1a: 240 352
+:proxima/tile/red1a: 256 368
+:proxima/tile/red1a: 272 352
+:proxima/tile/red1a: 304 352
+:proxima/tile/red1a: 288 336
+:proxima/tile/red1a: 320 336
+:proxima/tile/red1a: 336 352
+:proxima/tile/red1a: 352 336
+:proxima/tile/red1a: 368 352
+:matt/goldmine/plank: 400 304 rrr
+:proxima/tile/red2: 0 0
+:proxima/tile/red2: 0 64
+:proxima/tile/red2: 0 128
+:proxima/tile/red2: 0 192
+:proxima/tile/red2: 0 256
+:proxima/tile/red2: 0 320
+:proxima/tile/red2: 0 384
+:proxima/tile/red2: 0 448
+:proxima/tile/red2: 576 0
+:proxima/tile/red2: 576 64
+:proxima/tile/red2: 576 128
+:proxima/tile/red2: 576 192
+:proxima/tile/red2: 576 256
+:proxima/tile/red2: 576 320
+:proxima/tile/red2: 576 384
+:proxima/tile/red2: 576 448

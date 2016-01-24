@@ -1,0 +1,136 @@
+$BUILT 2012-08-11 21:15:54
+$AUTHOR minimac
+$GERMAN Sich im Kreis
+$ENGLISH Going round in circles
+
+#SIZE_X 1216
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 135
+#INITIAL 100
+#REQUIRED 60
+#SPAWN_INTERVAL 24
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 40
+#FLOATER 40
+#RUNNER 40
+#WALKER 40
+#JUMPER 40
+#BUILDER 40
+#DIGGER 40
+#BATTER 1
+#CUBER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/carnival/Hatch.H: 512 254
+:matt/carnival/Hatch.H: 448 254 r
+
+:matt/carnival/Goal.G: 664 112
+:matt/carnival/Goal.G: 296 112
+
+:geoo/construction/Laseremit_hzr_16.F: 784 246
+:geoo/construction/Laseremit_hzl_16.F: 768 246
+:geoo/construction/Laseremit_hzr_16.F: 240 246
+:geoo/construction/Laseremit_hzl_16.F: 224 246
+
+:matt/marble/thinplatform8p: 895 139 rrr
+:matt/beach/nighttime/06: 634 378 frr
+:matt/beach/nighttime/03: 410 180 rr
+:matt/beach/nighttime/15: 550 180
+:matt/beach/nighttime/03: 436 164
+:geoo/steel/64x64.S: 448 336
+:geoo/steel/64x64.S: 576 336
+:geoo/steel/64x64.S: 640 272
+:geoo/steel/64x64.S: 384 272
+:geoo/steel/32x32o.S: 576 224
+:geoo/steel/dark_32x16o.S: 592 208
+:geoo/steel/dark_16x32o.S: 608 224
+:geoo/steel/dark_16x32o.S: 576 192
+:geoo/steel/32x16o.S: 592 192
+:geoo/steel/32x16o.S: 576 176
+:geoo/steel/32x16o.S: 640 176
+:geoo/steel/32x16o.S: 704 176
+:geoo/steel/dark_32x16o.S: 608 176
+:geoo/steel/dark_32x16o.S: 672 176
+:geoo/steel/dark_32x16o.S: 736 176
+:geoo/steel/dark_32x16o.S: 800 176
+:geoo/steel/32x32o.S: 736 192
+:geoo/steel/32x32o.S: 800 192
+:geoo/steel/32x32o.S: 736 256
+:geoo/steel/32x16o.S: 960 176
+:geoo/steel/32x16o.S: 832 176
+:geoo/steel/32x16o.S: 896 176
+:geoo/steel/dark_32x16o.S: 864 176
+:geoo/steel/dark_32x16o.S: 928 176
+:geoo/steel/dark_32x16o.S: 992 176
+:matt/marble/09c: 1024 336
+:matt/marble/09a: 896 336
+:matt/marble/09b: 960 336
+:matt/marble/09c: 1088 272
+:matt/marble/09a: 960 272
+:matt/marble/09b: 1024 272
+:matt/marble/09c: 1152 208
+:matt/marble/09a: 1024 208
+:matt/marble/09: 1152 272
+:matt/marble/09: 1088 336
+:matt/marble/09d: 1152 336
+:geoo/steel/32x32o.S: 800 256
+:geoo/steel/dark_32x32o.S: 800 224
+:geoo/steel/dark_32x32o.S: 736 224
+:geoo/steel/dark_32x32o.S: 768 256
+:matt/marble/15c: 896 112
+:matt/marble/16: 896 144
+:matt/marble/17a: 864 112
+:matt/marble/14b: 864 144
+:geoo/steel/64x64.S: 320 208
+:geoo/steel/32x32o.S: 400 224
+:geoo/steel/dark_32x16o.S: 416 208
+:geoo/steel/dark_16x32o.S: 432 224
+:geoo/steel/dark_16x32o.S: 400 192
+:geoo/steel/32x16o.S: 416 192
+:geoo/steel/32x16o.S: 384 176
+:geoo/steel/dark_32x16o.S: 416 176
+:geoo/steel/32x16o.S: 256 176
+:geoo/steel/32x16o.S: 320 176
+:geoo/steel/32x16o.S: 160 176
+:geoo/steel/dark_32x16o.S: 288 176
+:geoo/steel/dark_32x16o.S: 352 176
+:geoo/steel/dark_32x16o.S: 192 176
+:geoo/steel/32x32o.S: 192 192
+:geoo/steel/32x32o.S: 256 192
+:geoo/steel/32x32o.S: 192 256
+:geoo/steel/32x32o.S: 256 256
+:geoo/steel/dark_32x32o.S: 256 224
+:geoo/steel/dark_32x32o.S: 192 224
+:geoo/steel/dark_32x32o.S: 224 256
+:geoo/steel/dark_32x16o.S: 0 176
+:geoo/steel/32x16o.S: 32 176
+:geoo/steel/32x16o.S: 96 176
+:geoo/steel/dark_32x16o.S: 64 176
+:geoo/steel/dark_32x16o.S: 128 176
+:matt/beach/nighttime/06: 178 378
+:geoo/steel/64x64.S: 320 336
+:geoo/steel/dark_64x64.S: 576 272
+:geoo/steel/dark_64x64.S: 640 208
+:geoo/steel/dark_64x64.S: 640 336
+:geoo/steel/dark_64x64.S: 384 336
+:geoo/steel/dark_64x64.S: 512 336
+:geoo/steel/dark_64x64.S: 320 272
+:matt/marble/09a: 1088 144
+:matt/marble/09b: 1088 208
+:matt/marble/09d: 0 272
+:matt/marble/09a: 0 336
+:matt/marble/09b: 64 336
+:matt/marble/thinplatform8p: 127 139 rrr
+:matt/marble/15c: 128 112
+:matt/marble/16: 128 144
+:matt/marble/17a: 96 112
+:matt/marble/14b: 96 144

@@ -1,0 +1,140 @@
+$BUILT 2014-01-29 15:42:26
+$AUTHOR namida/Michael S. Repton
+$GERMAN 
+$ENGLISH Labyrinth of Despair
+
+#SIZE_X 960
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 100
+#REQUIRED 99
+#SPAWN_INTERVAL 50
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 0
+#JUMPER 3
+#CLIMBER 3
+#FLOATER 3
+#EXPLODER 3
+#BLOCKER 3
+#BATTER 3
+#BUILDER 3
+#PLATFORMER 3
+#BASHER 3
+#MINER 3
+#DIGGER 3
+
+:matt/marble/Hatch.H: 64 256
+:matt/marble/Hatch.H: 464 64
+:matt/marble/Hatch.H: 832 48
+:matt/marble/Hatch.H: 464 64
+
+:proxima/tile/goal.G: 64 48
+
+:proxima/tile/orange2: 0 336
+:proxima/tile/orange2: 0 272
+:proxima/tile/orange2: 0 208
+:proxima/tile/orange2: 0 144
+:proxima/tile/orange2: 0 80
+:proxima/tile/orange2: 0 16
+:proxima/tile/orange2s: 64 16
+:proxima/tile/orange2s: 96 16
+:proxima/tile/orange2s: 64 368
+:proxima/tile/orange2s: 96 368
+:proxima/tile/orange2s: 128 16
+:proxima/tile/orange2s: 160 16
+:proxima/tile/orange2s: 128 368
+:proxima/tile/orange2s: 160 368
+:proxima/tile/orange2: 128 304
+:proxima/tile/orange2: 128 240
+:proxima/tile/orange2: 128 176
+:proxima/tile/orange2: 192 176
+:proxima/tile/orange2s: 64 112
+:proxima/tile/orange2s: 96 112
+:proxima/tile/orange2s: 128 112
+:proxima/tile/orange2s: 160 112
+:proxima/tile/orange2s: 192 16
+:proxima/tile/orange2s: 224 16
+:proxima/tile/orange2s: 192 112
+:proxima/tile/orange2s: 224 112
+:proxima/tile/orange2s: 256 16
+:proxima/tile/orange2s: 288 16
+:proxima/tile/orange2s: 256 112
+:proxima/tile/orange2s: 288 112
+:proxima/tile/orange2s: 192 368
+:proxima/tile/orange2s: 224 368
+:proxima/tile/orange2s: 256 368
+:proxima/tile/orange2s: 288 368
+:proxima/tile/orange2: 256 272
+:proxima/tile/orange2: 320 272
+:proxima/tile/orange2: 320 208
+:proxima/tile/orange2: 320 144
+:proxima/tile/orange2s: 320 16
+:proxima/tile/orange2s: 352 16
+:proxima/tile/orange2s: 384 16
+:proxima/tile/orange2s: 416 16
+:proxima/tile/orange2s: 320 368
+:proxima/tile/orange2s: 352 368
+:proxima/tile/orange2s: 384 368
+:proxima/tile/orange2s: 416 368
+:proxima/tile/orange2: 416 176
+:proxima/tile/orange2: 480 176
+:proxima/tile/orange2: 448 240
+:proxima/tile/orange2: 448 304
+:proxima/tile/orange2s: 448 368
+:proxima/tile/orange2s: 480 368
+:proxima/tile/orange2s: 512 368
+:proxima/tile/orange2s: 544 368
+:proxima/tile/orange2s: 448 16
+:proxima/tile/orange2s: 480 16
+:proxima/tile/orange2s: 512 16
+:proxima/tile/orange2s: 544 16
+:proxima/tile/orange2: 320 80
+:proxima/tile/orange2: 384 80
+:proxima/tile/orange2: 544 176
+:proxima/tile/orange2: 544 112
+:proxima/tile/orange2: 608 112
+:proxima/tile/orange2: 672 112
+:proxima/tile/orange2s: 576 16
+:proxima/tile/orange2s: 608 16
+:proxima/tile/orange2s: 640 16
+:proxima/tile/orange2s: 672 16
+:proxima/tile/orange2s: 704 16
+:proxima/tile/orange2s: 576 368
+:proxima/tile/orange2s: 608 368
+:proxima/tile/orange2s: 640 368
+:proxima/tile/orange2s: 672 368
+:proxima/tile/orange2s: 704 368
+:proxima/tile/orange2: 768 48
+:proxima/tile/orange2: 768 112
+:proxima/tile/orange2: 768 176
+:proxima/tile/orange2: 768 240
+:proxima/tile/orange2: 704 240
+:proxima/tile/orange2: 640 240
+:proxima/tile/orange2: 896 48
+:proxima/tile/orange2: 896 112
+:proxima/tile/orange2: 896 176
+:proxima/tile/orange2: 896 240
+:proxima/tile/orange2: 896 304
+:proxima/tile/orange2s: 736 16
+:proxima/tile/orange2s: 768 16
+:proxima/tile/orange2s: 800 16
+:proxima/tile/orange2s: 832 16
+:proxima/tile/orange2s: 864 16
+:proxima/tile/orange2s: 896 16
+:proxima/tile/orange2s: 928 16
+:proxima/tile/orange2s: 736 368
+:proxima/tile/orange2s: 768 368
+:proxima/tile/orange2s: 800 368
+:proxima/tile/orange2s: 832 368
+:proxima/tile/orange2s: 864 368
+:proxima/tile/orange2s: 896 368
+:proxima/tile/orange2s: 928 368

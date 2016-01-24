@@ -1,0 +1,73 @@
+$BUILT 2012-06-05 16:18:58
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH Flugtag
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 80
+#REQUIRED 80
+#SPAWN_INTERVAL 16
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/abstract/hatch.H: 312 24
+
+:simon/tapir/goal.G: 544 288
+
+:simon/tapir/032h: 320 80
+:simon/tapir/032h: 384 80
+:simon/tapir/032h: 352 112
+:simon/tapir/032: 448 80
+:simon/tapir/032h: 416 112
+:simon/tapir/032h: 288 112
+:simon/tapir/032: 288 80
+:simon/tapir/032va: 256 80
+:simon/tapir/032va: 224 144
+:simon/tapir/032vc: 256 336
+:simon/tapir/032vc: 224 272
+:simon/tapir/032vd: 256 144
+:simon/tapir/032vb: 256 272
+:simon/tapir/032h: 96 208
+:simon/tapir/032h: 160 208
+:simon/tapir/032h: 128 240
+:simon/tapir/032: 224 208
+:simon/tapir/032h: 192 240
+:simon/tapir/032h: 64 240
+:simon/tapir/032: 64 208
+:simon/tapir/032h: 320 336
+:simon/tapir/032h: 384 336
+:simon/tapir/032h: 352 368
+:simon/tapir/032: 576 336
+:simon/tapir/032h: 416 368
+:simon/tapir/032h: 288 368
+:simon/tapir/032: 288 336
+:simon/tapir/032h: 448 336
+:simon/tapir/032h: 480 368
+:simon/tapir/032h: 512 336
+:simon/tapir/032h: 544 368
+:simon/tapir/032v: 32 208
+:simon/tapir/032v: 32 272
+:simon/tapir/032v: 32 336
+:simon/tapir/032v: 32 144
+:simon/tapir/032v: 32 80
+:simon/tapir/032v: 32 16

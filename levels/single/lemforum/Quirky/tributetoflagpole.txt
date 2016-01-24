@@ -1,0 +1,56 @@
+$BUILT                                             2012-03-27 17:06:40
+$AUTHOR                                                   Insane Steve
+$GERMAN                                                               
+$ENGLISH                                   Tribute to Flagpole Sitting
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                             0
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                             0
+#INITIAL                                                            80
+#REQUIRED                                                           70
+#SPAWN_INTERVAL                                                     32
+#SPAWN_INTERVAL_FAST                                                 4
+
+#CLIMBER                                                            30
+#FLOATER                                                            30
+#EXPLODER                                                           30
+#BLOCKER                                                            30
+#BUILDER                                                            30
+#BASHER                                                             30
+#MINER                                                              30
+#DIGGER                                                             30
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:geoo/abstract/hatch.H:                           180       112
+
+:geoo/abstract/goal.G:                            428       128
+
+:geoo/abstract/pipes/central0:                    192       368     rrr
+:geoo/abstract/pipes/central0:                    192       336     rrr
+:geoo/abstract/pipes/central0:                    192       304     rrr
+:geoo/abstract/pipes/central0:                    192       272     rrr
+:geoo/abstract/pipes/central0:                    192       240     rrr
+:geoo/abstract/pipes/central0:                    192       208     rrr
+:geoo/abstract/pipes/central0:                    192       176     rrr
+:geoo/abstract/pipes/central0:                    440       368     rrr
+:geoo/abstract/pipes/central0:                    440       336     rrr
+:geoo/abstract/pipes/central0:                    440       304     rrr
+:geoo/abstract/pipes/central0:                    440       272     rrr
+:geoo/abstract/pipes/central0:                    440       240     rrr
+:geoo/abstract/pipes/central0:                    440       208     rrr
+:geoo/abstract/pipes/central0:                    440       176     rrr
+:geoo/steel/32x64o.S:                             304         0
+:geoo/steel/32x64o.S:                             304        64
+:geoo/steel/32x64o.S:                             304       128
+:geoo/steel/32x64o.S:                             304       192

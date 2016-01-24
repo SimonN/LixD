@@ -1,0 +1,215 @@
+$BUILT 2012-06-19 01:47:55
+$AUTHOR Simon
+$GERMAN 
+$ENGLISH Lots of Factories
+
+#SIZE_X 768
+#SIZE_Y 560
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 20
+#INITIAL 90
+#REQUIRED 20
+#SPAWN_INTERVAL 12
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 50
+#JUMPER 50
+#CLIMBER 20
+#FLOATER 20
+#EXPLODER2 20
+#CUBER 20
+#BATTER 20
+#BUILDER 50
+#PLATFORMER 50
+#BASHER 50
+#MINER 50
+#DIGGER 50
+
+:geoo/construction/Hatch.H: 352 0
+:geoo/construction/Hatch.H: 608 0
+:geoo/construction/Hatch.H: 96 0
+:geoo/construction/Hatch.H: 256 0 r
+:geoo/construction/Hatch.H: 512 0 r
+:geoo/construction/Hatch.H: 0 0 r
+
+:matt/goldmine/Goal.G: 608 480
+:matt/goldmine/Goal.G: 96 480
+:matt/goldmine/Goal.G: 352 480
+
+:geoo/construction/factory.T: 208 128
+:geoo/construction/factory.T: 256 128
+:geoo/construction/factory.T: 304 128
+:geoo/construction/factory.T: 352 128
+:geoo/construction/factory.T: 400 128
+:geoo/construction/factory.T: 464 128
+:geoo/construction/factory.T: 512 128
+:geoo/construction/factory.T: 560 128
+:geoo/construction/factory.T: 608 128
+:geoo/construction/factory.T: 656 128
+:geoo/construction/factory.T: 720 128
+:geoo/construction/factory.T: 0 128
+:geoo/construction/factory.T: 48 128
+:geoo/construction/factory.T: 96 128
+:geoo/construction/factory.T: 144 128
+:geoo/construction/factory.T: 192 336
+:geoo/construction/factory.T: 208 336
+:geoo/construction/factory.T: 224 336
+:geoo/construction/factory.T: 240 336
+:geoo/construction/factory.T: 256 336
+:geoo/construction/factory.T: 272 336
+:geoo/construction/factory.T: 288 336
+:geoo/construction/factory.T: 304 336
+:geoo/construction/factory.T: 320 336
+:geoo/construction/factory.T: 336 336
+:geoo/construction/factory.T: 352 336
+:geoo/construction/factory.T: 368 336
+:geoo/construction/factory.T: 384 336
+:geoo/construction/factory.T: 400 336
+:geoo/construction/factory.T: 416 336
+:geoo/construction/factory.T: 432 336
+:geoo/construction/factory.T: 448 336
+:geoo/construction/factory.T: 464 336
+:geoo/construction/factory.T: 480 336
+:geoo/construction/factory.T: 496 336
+:geoo/construction/factory.T: 512 336
+:geoo/construction/factory.T: 528 336
+:geoo/construction/factory.T: 544 336
+:geoo/construction/factory.T: 560 336
+:geoo/construction/factory.T: 576 336
+:geoo/construction/factory.T: 592 336
+:geoo/construction/factory.T: 608 336
+:geoo/construction/factory.T: 624 336
+:geoo/construction/factory.T: 640 336
+:geoo/construction/factory.T: 656 336
+:geoo/construction/factory.T: 672 336
+:geoo/construction/factory.T: 688 336
+:geoo/construction/factory.T: 704 336
+:geoo/construction/factory.T: 720 336
+:geoo/construction/factory.T: 736 336
+:geoo/construction/factory.T: 752 336
+:geoo/construction/factory.T: 0 336
+:geoo/construction/factory.T: 16 336
+:geoo/construction/factory.T: 32 336
+:geoo/construction/factory.T: 48 336
+:geoo/construction/factory.T: 64 336
+:geoo/construction/factory.T: 80 336
+:geoo/construction/factory.T: 96 336
+:geoo/construction/factory.T: 112 336
+:geoo/construction/factory.T: 128 336
+:geoo/construction/factory.T: 144 336
+:geoo/construction/factory.T: 160 336
+:geoo/construction/factory.T: 176 336
+:geoo/construction/factory.T: 304 464
+:geoo/construction/factory.T: 448 464
+:geoo/construction/factory.T: 560 464
+:geoo/construction/factory.T: 704 464
+:geoo/construction/factory.T: 48 464
+:geoo/construction/factory.T: 192 464
+:geoo/construction/factory.T: 280 240
+:geoo/construction/factory.T: 536 240
+:geoo/construction/factory.T: 24 240
+:geoo/construction/factory.T: 440 0
+:geoo/construction/factory.T: 696 0
+:geoo/construction/factory.T: 184 0
+
+:matt/carnival/26: 128 192
+:matt/carnival/26: 192 192
+:matt/carnival/26: 256 192
+:matt/carnival/26: 320 192
+:matt/carnival/26: 384 192
+:matt/carnival/26: 448 192
+:matt/carnival/26: 512 192
+:matt/carnival/26: 576 192
+:matt/carnival/26: 640 192
+:matt/carnival/26: 704 192
+:matt/carnival/26: 128 64
+:matt/carnival/26: 192 64
+:matt/carnival/26: 256 64
+:matt/carnival/26: 320 64
+:matt/carnival/26: 384 64
+:matt/carnival/26: 448 64
+:matt/carnival/26: 512 64
+:matt/carnival/26: 576 64
+:matt/carnival/26: 640 64
+:matt/carnival/26: 704 64
+:matt/carnival/26: 128 256
+:matt/carnival/26: 192 256
+:matt/carnival/26: 320 256
+:matt/carnival/26: 384 256
+:matt/carnival/26: 448 256
+:matt/carnival/26: 576 256
+:matt/carnival/26: 640 256
+:matt/carnival/26: 704 256
+:matt/carnival/26: 0 192
+:matt/carnival/26: 64 192
+:matt/carnival/26: 0 64
+:matt/carnival/26: 64 64
+:matt/carnival/26: 64 256
+:matt/carnival/19: 288 80
+:matt/carnival/19: 544 80
+:matt/carnival/19: 416 208
+:matt/carnival/19: 672 208
+:matt/carnival/19: 352 272
+:matt/carnival/19: 608 272
+:matt/carnival/30: 64 320 f
+:matt/carnival/30: 128 320 f
+:matt/carnival/30: 192 320 f
+:matt/carnival/30: 320 320 f
+:matt/carnival/30: 384 320 f
+:matt/carnival/30: 448 320 f
+:matt/carnival/30: 576 320 f
+:matt/carnival/30: 640 320 f
+:matt/carnival/30: 704 320 f
+:matt/carnival/26: 128 400
+:matt/carnival/26: 192 400
+:matt/carnival/26: 256 400
+:matt/carnival/26: 320 400
+:matt/carnival/26: 384 400
+:matt/carnival/26: 448 400
+:matt/carnival/26: 512 400
+:matt/carnival/26: 576 400
+:matt/carnival/26: 640 400
+:matt/carnival/26: 704 400
+:matt/carnival/26: 0 400
+:matt/carnival/26: 64 400
+:matt/carnival/19: 480 416
+:matt/carnival/19: -32 416
+:matt/carnival/26: 224 464
+:matt/carnival/26: 480 464
+:matt/carnival/26: 736 464
+:geoo/steel/dark_64x64o.S: 704 528
+:geoo/steel/dark_64x64o.S: 0 528
+:geoo/steel/dark_64x64o.S: 64 528
+:geoo/steel/dark_64x64o.S: 128 528
+:geoo/steel/dark_64x64o.S: 192 528
+:geoo/steel/dark_64x64o.S: 256 528
+:geoo/steel/dark_64x64o.S: 320 528
+:geoo/steel/dark_64x64o.S: 384 528
+:geoo/steel/dark_64x64o.S: 448 528
+:geoo/steel/dark_64x64o.S: 512 528
+:geoo/steel/dark_64x64o.S: 576 528
+:geoo/steel/dark_64x64o.S: 640 528
+:matt/carnival/26: 32 0
+:matt/carnival/26: 288 0
+:geoo/steel/dark_32x64o.S: 304 64
+:matt/carnival/26: 544 0
+:geoo/steel/dark_32x16o.S: 256 304
+:geoo/steel/dark_32x16o.S: 288 304
+:geoo/steel/dark_32x16o.S: 512 304
+:geoo/steel/dark_32x16o.S: 544 304
+:geoo/steel/dark_32x16o.S: 0 304
+:geoo/steel/dark_32x16o.S: 32 304
+:matt/carnival/18: 32 80
+:matt/carnival/18: 160 208
+:matt/carnival/18: 224 416
+:matt/carnival/18: 96 272
+:geoo/steel/dark_32x64o.S: 304 0
+:geoo/steel/dark_32x64o.S: 560 0
+:geoo/steel/dark_32x64o.S: 560 64
+:geoo/steel/dark_32x64o.S: 48 0
+:geoo/steel/dark_32x64o.S: 48 64

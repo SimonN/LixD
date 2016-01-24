@@ -1,0 +1,7 @@
+Mundane/
+Humane/
+Arcane/
+Insane/
+Flingsane/
+Outtakes/
+TameLix/

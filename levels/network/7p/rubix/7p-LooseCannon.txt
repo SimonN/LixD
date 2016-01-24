@@ -1,0 +1,378 @@
+$BUILT 2014-06-06 10:21:28
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Loose Cannon (7p)
+
+#SIZE_X 448
+#SIZE_Y 1344
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 80
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 15
+#FLOATER 15
+#WALKER 99
+#JUMPER 60
+#NOTHING 0
+#EXPLODER2 30
+#BASHER 60
+#NOTHING 0
+#PLATFORMER 60
+#BUILDER 50
+#CUBER 20
+#BATTER 20
+
+:matt/carnival/Hatch.H: 256 1312 r
+:matt/carnival/Hatch.H: 224 1088 r
+:matt/carnival/Hatch.H: 128 928 r
+:matt/carnival/Hatch.H: 64 736 r
+:matt/carnival/Hatch.H: 0 544 r
+:matt/carnival/Hatch.H: 384 352 r
+:matt/carnival/Hatch.H: 320 160 r
+
+:matt/carnival/Goal.G: 112 352
+:matt/carnival/Goal.G: 48 160
+:matt/carnival/Goal.G: 432 1312
+:matt/carnival/Goal.G: 368 1120
+:matt/carnival/Goal.G: 304 928
+:matt/carnival/Goal.G: 240 736
+:matt/carnival/Goal.G: 176 544
+
+:geoo/steel/32x16o.S: 176 448
+:geoo/steel/32x16o.S: 48 512
+:geoo/steel/32x16o.S: 304 832
+:geoo/steel/32x16o.S: 240 640
+:geoo/steel/32x16o.S: 368 576
+:geoo/steel/32x16o.S: 112 704
+:geoo/steel/32x16o.S: 432 768
+:geoo/steel/32x16o.S: 176 896
+:geoo/steel/32x16o.S: 48 960
+:geoo/steel/32x16o.S: 304 1280
+:geoo/steel/32x16o.S: 240 1088
+:geoo/steel/32x16o.S: 368 1024
+:geoo/steel/32x16o.S: 112 1152
+:geoo/steel/32x16o.S: 432 1216
+:geoo/steel/32x16o.S: 176 0
+:geoo/steel/32x16o.S: 304 384
+:geoo/steel/32x16o.S: 240 192
+:geoo/steel/32x16o.S: 368 128
+:geoo/steel/32x16o.S: 112 256
+:geoo/steel/32x16o.S: 432 320
+:geoo/steel/dark_16x32o.S: 352 128
+:geoo/steel/32x16o.S: 336 160
+:geoo/steel/dark_16x32o.S: 320 160
+:geoo/steel/32x16o.S: 304 192
+:geoo/steel/32x16o.S: 272 192
+:geoo/steel/dark_16x32o.S: 224 192
+:geoo/steel/32x16o.S: 208 224
+:geoo/steel/dark_16x32o.S: 192 224
+:geoo/steel/32x16o.S: 176 256
+:geoo/steel/32x16o.S: 144 256
+:geoo/steel/32x16o.S: 48 320
+:geoo/steel/32x16o.S: 16 320
+:geoo/steel/dark_16x32o.S: 416 320
+:geoo/steel/32x16o.S: 400 352
+:geoo/steel/dark_16x32o.S: 384 352
+:geoo/steel/32x16o.S: 368 384
+:geoo/steel/32x16o.S: 336 384
+:geoo/steel/dark_16x32o.S: 288 384
+:geoo/steel/32x16o.S: 272 416
+:geoo/steel/dark_16x32o.S: 256 416
+:geoo/steel/32x16o.S: 240 448
+:geoo/steel/32x16o.S: 208 448
+:geoo/steel/32x16o.S: 112 512
+:geoo/steel/32x16o.S: 80 512
+:geoo/steel/dark_16x32o.S: 32 512
+:geoo/steel/32x16o.S: 16 544
+:geoo/steel/dark_16x32o.S: 0 544
+:geoo/steel/32x16o.S: 432 576
+:geoo/steel/32x16o.S: 400 576
+:geoo/steel/dark_16x32o.S: 352 576
+:geoo/steel/32x16o.S: 336 608
+:geoo/steel/dark_16x32o.S: 320 608
+:geoo/steel/32x16o.S: 304 640
+:geoo/steel/32x16o.S: 272 640
+:geoo/steel/32x16o.S: 176 704
+:geoo/steel/32x16o.S: 144 704
+:geoo/steel/dark_16x32o.S: 96 704
+:geoo/steel/32x16o.S: 80 736
+:geoo/steel/dark_16x32o.S: 64 736
+:geoo/steel/32x16o.S: 48 768
+:geoo/steel/32x16o.S: 16 768
+:geoo/steel/dark_16x32o.S: 416 768
+:geoo/steel/32x16o.S: 400 800
+:geoo/steel/dark_16x32o.S: 384 800
+:geoo/steel/32x16o.S: 368 832
+:geoo/steel/32x16o.S: 336 832
+:geoo/steel/32x16o.S: 240 896
+:geoo/steel/32x16o.S: 208 896
+:geoo/steel/dark_16x32o.S: 160 896
+:geoo/steel/32x16o.S: 144 928
+:geoo/steel/dark_16x32o.S: 128 928
+:geoo/steel/32x16o.S: 112 960
+:geoo/steel/32x16o.S: 80 960
+:geoo/steel/dark_16x32o.S: 32 960
+:geoo/steel/32x16o.S: 16 992
+:geoo/steel/dark_16x32o.S: 0 992
+:geoo/steel/32x16o.S: 432 1024
+:geoo/steel/32x16o.S: 400 1024
+:geoo/steel/32x16o.S: 304 1088
+:geoo/steel/32x16o.S: 272 1088
+:geoo/steel/dark_16x32o.S: 224 1088
+:geoo/steel/32x16o.S: 208 1120
+:geoo/steel/dark_16x32o.S: 192 1120
+:geoo/steel/32x16o.S: 176 1152
+:geoo/steel/32x16o.S: 144 1152
+:geoo/steel/dark_16x32o.S: 96 1152
+:geoo/steel/32x16o.S: 80 1184
+:geoo/steel/dark_16x32o.S: 64 1184
+:geoo/steel/32x16o.S: 48 1216
+:geoo/steel/32x16o.S: 16 1216
+:geoo/steel/32x16o.S: 368 1280
+:geoo/steel/32x16o.S: 336 1280
+:geoo/steel/dark_16x32o.S: 288 1280
+:geoo/steel/32x16o.S: 272 1312
+:geoo/steel/dark_16x32o.S: 256 1312
+:geoo/steel/32x16o.S: 240 0
+:geoo/steel/32x16o.S: 208 0
+:geoo/steel/dark_16x32o.S: 160 0
+:geoo/steel/32x16o.S: 144 32
+:geoo/steel/dark_16x32o.S: 128 32
+:geoo/steel/32x16o.S: 112 64
+:geoo/steel/32x16o.S: 432 128
+:geoo/steel/32x16o.S: 400 128
+:matt/carnival/02: 48 80
+:matt/carnival/02: 80 80
+:matt/carnival/02: 80 112
+:matt/carnival/02: 112 112
+:matt/carnival/02: 16 112
+:matt/carnival/02: 48 112
+:matt/carnival/00: 432 144
+:matt/carnival/00: 16 144
+:matt/carnival/00: 112 144
+:matt/carnival/00: 144 144
+:matt/carnival/02: 16 176 rr
+:matt/carnival/02: 112 176 rr
+:matt/carnival/02: 112 272
+:matt/carnival/02: 144 272
+:matt/carnival/02: 144 304
+:matt/carnival/02: 176 304
+:matt/carnival/02: 112 304
+:matt/carnival/00: 176 336
+:matt/carnival/02: 176 368 rr
+:matt/carnival/02: 176 464
+:matt/carnival/02: 208 464
+:matt/carnival/02: 208 496
+:matt/carnival/02: 240 496
+:matt/carnival/02: 176 496
+:matt/carnival/00: 240 528
+:matt/carnival/02: 240 560 rr
+:matt/carnival/02: 240 656
+:matt/carnival/02: 272 656
+:matt/carnival/02: 272 688
+:matt/carnival/02: 304 688
+:matt/carnival/02: 240 688
+:matt/carnival/00: 304 720
+:matt/carnival/02: 304 752 rr
+:matt/carnival/02: 304 848
+:matt/carnival/02: 336 848
+:matt/carnival/02: 336 880
+:matt/carnival/02: 368 880
+:matt/carnival/02: 304 880
+:matt/carnival/00: 368 912
+:matt/carnival/02: 368 944 rr
+:matt/carnival/02: 368 1040
+:matt/carnival/02: 400 1040
+:matt/carnival/02: 400 1072
+:matt/carnival/02: 432 1072
+:matt/carnival/02: 368 1072
+:matt/carnival/00: 432 1104
+:matt/carnival/02: 432 1136 rr
+:matt/carnival/02: 432 1232
+:matt/carnival/02: 16 1232
+:matt/carnival/02: 16 1264
+:matt/carnival/02: 48 1264
+:matt/carnival/02: 432 1264
+:matt/carnival/00: 48 1296
+:matt/carnival/02: 48 1328 rr
+:matt/carnival/02: 80 304
+:matt/carnival/00: 80 336
+:matt/carnival/02: 80 368 rr
+:matt/carnival/02: 144 496
+:matt/carnival/00: 144 528
+:matt/carnival/02: 144 560 rr
+:matt/carnival/02: 208 688
+:matt/carnival/00: 208 720
+:matt/carnival/02: 208 752 rr
+:matt/carnival/02: 272 880
+:matt/carnival/00: 272 912
+:matt/carnival/02: 272 944 rr
+:matt/carnival/02: 336 1072
+:matt/carnival/00: 336 1104
+:matt/carnival/02: 336 1136 rr
+:matt/carnival/02: 400 1264
+:matt/carnival/00: 400 1296
+:matt/carnival/02: 400 1328 rr
+:matt/carnival/00: 368 1296
+:matt/carnival/00: 48 336
+:matt/carnival/00: 112 528
+:matt/carnival/00: 176 720
+:matt/carnival/00: 240 912
+:matt/carnival/00: 304 1104
+:matt/carnival/00: 16 1104
+:matt/carnival/00: 80 1296
+:matt/carnival/00: 208 336
+:matt/carnival/00: 272 528
+:matt/carnival/00: 336 720
+:matt/carnival/00: 400 912
+:geoo/steel/32x16o.S: 48 64
+:geoo/steel/32x16o.S: 80 64
+:geoo/steel/dark_16x16o.S: 0 112
+:geoo/steel/dark_16x16o.S: 384 1264
+:geoo/steel/dark_16x16o.S: 320 1072
+:geoo/steel/dark_16x16o.S: 256 880
+:geoo/steel/dark_16x16o.S: 192 688
+:geoo/steel/dark_16x16o.S: 128 496
+:geoo/steel/dark_16x16o.S: 64 304
+:matt/carnival/01: 432 432
+:matt/carnival/01: 400 432
+:matt/carnival/01: 368 432
+:matt/carnival/01: 336 432
+:matt/carnival/34: 272 432 frr
+:matt/carnival/01: 48 592
+:matt/carnival/01: 48 624
+:matt/carnival/01: 16 624
+:matt/carnival/01: 432 624
+:matt/carnival/01: 400 624
+:matt/carnival/34: 336 624 frr
+:matt/carnival/01: 80 816
+:matt/carnival/01: 48 816
+:matt/carnival/01: 16 816
+:matt/carnival/34: 400 816 frr
+:matt/carnival/01: 144 1008
+:matt/carnival/01: 112 1008
+:matt/carnival/01: 80 1008
+:matt/carnival/34: 16 1008 frr
+:matt/carnival/01: 208 1200
+:matt/carnival/01: 176 1200
+:matt/carnival/01: 144 1200
+:matt/carnival/34: 80 1200 frr
+:matt/carnival/01: 272 48
+:matt/carnival/01: 240 48
+:matt/carnival/01: 208 48
+:matt/carnival/34: 144 48 frr
+:matt/carnival/01: 336 240
+:matt/carnival/01: 304 240
+:matt/carnival/01: 272 240
+:matt/carnival/34: 208 240 frr
+:matt/carnival/01: 368 208
+:matt/carnival/01: 368 240
+:matt/carnival/01: 304 48
+:matt/carnival/01: 240 1200
+:matt/carnival/01: 176 1008
+:matt/carnival/01: 112 784
+:matt/carnival/01: 112 816
+:geoo/steel/32x16o.S: 240 800
+:geoo/steel/32x16o.S: 272 800
+:geoo/steel/dark_16x16o.S: 240 784
+:geoo/steel/dark_16x16o.S: 288 784
+:geoo/steel/dark_16x16o.S: 304 976
+:geoo/steel/dark_16x16o.S: 352 976
+:geoo/steel/32x16o.S: 368 1184
+:geoo/steel/32x16o.S: 304 992
+:geoo/steel/32x16o.S: 336 992
+:geoo/steel/32x16o.S: 400 1184
+:geoo/steel/32x16o.S: 432 32
+:geoo/steel/32x16o.S: 16 32
+:geoo/steel/32x16o.S: 48 224
+:geoo/steel/32x16o.S: 80 224
+:geoo/steel/32x16o.S: 112 416
+:geoo/steel/32x16o.S: 144 416
+:geoo/steel/32x16o.S: 176 608
+:geoo/steel/32x16o.S: 208 608
+:geoo/steel/dark_16x16o.S: 432 16
+:geoo/steel/dark_16x16o.S: 32 16
+:geoo/steel/dark_16x16o.S: 48 208
+:geoo/steel/dark_16x16o.S: 96 208
+:geoo/steel/dark_16x16o.S: 112 400
+:geoo/steel/dark_16x16o.S: 160 400
+:geoo/steel/dark_16x16o.S: 224 592
+:geoo/steel/dark_16x16o.S: 416 1168
+:geoo/steel/dark_16x16o.S: 176 592
+:geoo/steel/dark_16x16o.S: 368 1168
+:geoo/steel/32x16o.S: 144 592
+:geoo/steel/32x16o.S: 240 592
+:geoo/steel/32x16o.S: 208 784
+:geoo/steel/32x16o.S: 304 784
+:geoo/steel/32x16o.S: 272 976
+:geoo/steel/32x16o.S: 368 976
+:geoo/steel/32x16o.S: 336 1168
+:geoo/steel/32x16o.S: 432 1168
+:geoo/steel/32x16o.S: 400 16
+:geoo/steel/32x16o.S: 48 16
+:geoo/steel/32x16o.S: 16 208
+:geoo/steel/32x16o.S: 112 208
+:geoo/steel/32x16o.S: 80 400
+:geoo/steel/32x16o.S: 176 400
+:matt/carnival/01: 144 816
+:matt/carnival/34: 144 784
+:matt/carnival/34: 80 592
+:matt/carnival/34: 400 208
+:matt/carnival/01: 304 16
+:matt/carnival/34: 336 16
+:matt/carnival/01: 240 1168
+:matt/carnival/34: 272 1168
+:matt/carnival/01: 176 976
+:matt/carnival/34: 208 976
+:matt/carnival/01: 432 400
+:matt/carnival/34: 16 400
+:geoo/steel/dark_16x32o.S: 144 144 rrr
+:geoo/steel/dark_16x32o.S: 112 112 rrr
+:geoo/steel/dark_16x32o.S: 176 304 rrr
+:geoo/steel/dark_16x32o.S: 208 336 rrr
+:geoo/steel/dark_16x32o.S: 240 496 rrr
+:geoo/steel/dark_16x32o.S: 272 528 rrr
+:geoo/steel/dark_16x32o.S: 304 688 rrr
+:geoo/steel/dark_16x32o.S: 336 720 rrr
+:geoo/steel/dark_16x32o.S: 368 880 rrr
+:geoo/steel/dark_16x32o.S: 400 912 rrr
+:geoo/steel/dark_16x32o.S: 432 1072 rrr
+:geoo/steel/dark_16x32o.S: 16 1104 rrr
+:geoo/steel/dark_16x32o.S: 48 1264 rrr
+:geoo/steel/dark_16x32o.S: 80 1296 rrr
+:geoo/steel/dark_16x32o.S: 272 240 rrr
+:geoo/steel/dark_16x32o.S: 304 240 rrr
+:geoo/steel/dark_16x32o.S: 336 240 rrr
+:geoo/steel/dark_16x32o.S: 208 48 rrr
+:geoo/steel/dark_16x32o.S: 240 48 rrr
+:geoo/steel/dark_16x32o.S: 272 48 rrr
+:geoo/steel/dark_16x32o.S: 144 1200 rrr
+:geoo/steel/dark_16x32o.S: 176 1200 rrr
+:geoo/steel/dark_16x32o.S: 208 1200 rrr
+:geoo/steel/dark_16x32o.S: 80 1008 rrr
+:geoo/steel/dark_16x32o.S: 112 1008 rrr
+:geoo/steel/dark_16x32o.S: 144 1008 rrr
+:geoo/steel/dark_16x32o.S: 16 816 rrr
+:geoo/steel/dark_16x32o.S: 48 816 rrr
+:geoo/steel/dark_16x32o.S: 80 816 rrr
+:geoo/steel/dark_16x32o.S: 400 624 rrr
+:geoo/steel/dark_16x32o.S: 432 624 rrr
+:geoo/steel/dark_16x32o.S: 16 624 rrr
+:geoo/steel/dark_16x32o.S: 336 432 rrr
+:geoo/steel/dark_16x32o.S: 368 432 rrr
+:geoo/steel/dark_16x32o.S: 400 432 rrr
+:geoo/steel/dark_16x32o.S: 112 1296 rrr
+:geoo/steel/dark_16x32o.S: 176 144 rrr
+:geoo/steel/dark_16x32o.S: 240 336 rrr
+:geoo/steel/dark_16x32o.S: 304 528 rrr
+:geoo/steel/dark_16x32o.S: 368 720 rrr
+:geoo/steel/dark_16x32o.S: 432 912 rrr
+:geoo/steel/dark_16x32o.S: 48 1104 rrr

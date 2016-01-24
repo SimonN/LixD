@@ -1,0 +1,72 @@
+$BUILT 2015-08-21 15:06:27
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Platform Panic
+$HINT_ENGLISH I cant feel my toes, I was hoping we were done with this cold..
+
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 48
+#BACKGROUND_GREEN 32
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 99
+#REQUIRED 99
+#SPAWN_INTERVAL 15
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 6
+#RUNNER 1
+#BUILDER 1
+#PLATFORMER 2
+#DIGGER 1
+#JUMPER 6
+
+:matt/winter/Hatch.H: 432 -16
+
+:matt/winter/Goal.G: 368 320
+
+:matt/winter/10: 608 144 r
+:matt/winter/06: 320 128 r
+:matt/winter/06: 256 128 r
+:matt/winter/06: 384 128 r
+:matt/winter/06: 448 160 r
+:matt/winter/06: 384 160 r
+:matt/winter/06: 512 160 r
+:matt/winter/06: 288 192 r
+:matt/winter/06: 224 192 r
+:matt/winter/06: 352 192 r
+:matt/winter/06: 384 240 r
+:matt/winter/06: 320 240 r
+:matt/winter/06: 448 240 r
+:matt/winter/06: 272 272 r
+:matt/winter/06: 144 96 r
+:matt/winter/06: 80 96 r
+:matt/winter/06: 256 64 r
+:matt/winter/06: 192 64 r
+:matt/winter/06: 320 64 r
+:matt/winter/06: 416 32 r
+:matt/winter/06: 352 32 r
+:matt/winter/06: 480 32 r
+:matt/winter/06: 432 288 r
+:matt/winter/06: 496 288 r
+:matt/winter/04: 0 -112
+:matt/winter/04: -64 -32
+:matt/winter/02: -16 96
+:matt/winter/10: 592 240 r
+:matt/winter/04: 608 64
+:matt/winter/06: 400 320 r
+:matt/winter/06: 176 352 r
+:matt/winter/06: 240 352 r
+:matt/winter/06: 336 384 r
+:matt/winter/06: 272 384 r
+:matt/winter/06: 400 384 r
+:matt/winter/06: 176 224 r
+:matt/winter/06: 112 224 r
+:matt/winter/06: 208 272 r

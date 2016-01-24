@@ -1,0 +1,97 @@
+$BUILT 2015-06-22 13:52:24
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Buy One Get One Free (Part 2)
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 38
+#SPAWN_INTERVAL 4
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#CLIMBER 1
+#JUMPER 0
+#EXPLODER 1
+#PLATFORMER 1
+#BUILDER 1
+#CUBER 1
+#MINER 1
+#NOTHING 0
+#BASHER 1
+#NOTHING 0
+
+:geoo/abstract/hatch.H: 144 208
+:geoo/abstract/hatch.H: 224 80
+
+:geoo/abstract/goal.G: 308 108
+:geoo/abstract/goal.G: 300 108
+:geoo/abstract/goal.G: 306 106
+:geoo/abstract/goal.G: 48 104
+:geoo/abstract/goal.G: 560 104
+:geoo/abstract/goal.G: 302 106
+:geoo/abstract/goal.G: 304 104
+
+:matt/carnival/25: 224 224
+:matt/carnival/25: 288 224
+:matt/carnival/25: 224 160
+:matt/carnival/25: 288 160
+:geoo/abstract/pipes/central5: 160 288
+:geoo/abstract/pipes/central5: 192 288
+:geoo/abstract/pipes/central5: 224 288
+:geoo/abstract/pipes/central5: 256 288
+:geoo/abstract/pipes/central5: 352 288
+:geoo/abstract/pipes/central5: 384 288
+:geoo/abstract/pipes/central5: 32 288
+:geoo/abstract/pipes/central5: 64 288
+:geoo/abstract/pipes/ends5: 408 288 rr
+:geoo/abstract/pipes/ends5: 32 288
+:geoo/abstract/pipes/central5: 512 288
+:geoo/abstract/pipes/central5: 544 288
+:geoo/abstract/pipes/central5: 576 288
+:geoo/abstract/pipes/central5: 480 288
+:geoo/abstract/pipes/ends5: 480 288
+:geoo/abstract/pipes/ends5: 600 288 rr
+:matt/carnival/25: 480 224
+:matt/carnival/25: 544 224
+:matt/carnival/25: 480 160
+:matt/carnival/25: 544 160
+:matt/carnival/25: 32 224
+:geoo/abstract/pipes/central5: 96 288
+:geoo/abstract/pipes/central5: 128 288
+:geoo/abstract/pipes/central5: 288 288
+:geoo/abstract/pipes/central5: 320 288
+:matt/carnival/25: 352 160
+:matt/carnival/25: 352 224
+:geoo/abstract/pipes/central5: 352 152
+:geoo/abstract/pipes/central5: 384 152
+:geoo/abstract/pipes/central5: 416 152
+:geoo/abstract/pipes/central5: 448 152
+:geoo/abstract/pipes/central5: 544 152
+:geoo/abstract/pipes/central5: 576 152
+:geoo/abstract/pipes/central5: 224 152
+:geoo/abstract/pipes/central5: 256 152
+:geoo/abstract/pipes/ends5: 600 152 rr
+:geoo/abstract/pipes/central5: 288 152
+:geoo/abstract/pipes/central5: 320 152
+:geoo/abstract/pipes/central5: 480 152
+:geoo/abstract/pipes/central5: 512 152
+:geoo/abstract/pipes/central5: 64 152
+:geoo/abstract/pipes/central5: 96 152
+:geoo/abstract/pipes/central5: 128 152
+:geoo/abstract/pipes/central5: 32 152
+:geoo/abstract/pipes/ends5: 32 152
+:matt/carnival/25: 32 160
+:geoo/abstract/pipes/central5: 160 152
+:geoo/abstract/pipes/central5: 192 152

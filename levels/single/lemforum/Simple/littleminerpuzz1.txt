@@ -1,0 +1,337 @@
+$BUILT 2014-06-30 13:57:27
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Little Miner Puzzle (Part 1)
+
+#SIZE_X 640
+#SIZE_Y 640
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 40
+#SPAWN_INTERVAL 16
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#MINER 5
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 384 64
+
+:geoo/construction/Goal2.G: 368 552
+
+:geoo/shadow/wall/center: 152 64
+:geoo/shadow/wall/left: 120 64
+:geoo/shadow/wall/right: 168 64
+:geoo/shadow/wall/center: 152 96
+:geoo/shadow/wall/left: 120 96
+:geoo/shadow/wall/right: 168 96
+:geoo/shadow/wall/center: 152 128
+:geoo/shadow/wall/left: 120 128
+:geoo/shadow/wall/right: 168 128
+:geoo/shadow/wall/center: 152 160
+:geoo/shadow/wall/left: 120 160
+:geoo/shadow/wall/right: 168 160
+:geoo/shadow/wall/center: 152 192
+:geoo/shadow/wall/left: 120 192
+:geoo/shadow/wall/right: 168 192
+:geoo/shadow/wall/center: 152 224
+:geoo/shadow/wall/left: 120 224
+:geoo/shadow/wall/right: 168 224
+:geoo/shadow/wall/center: 152 256
+:geoo/shadow/wall/left: 120 256
+:geoo/shadow/wall/right: 168 256
+:geoo/shadow/wall/center: 152 288
+:geoo/shadow/wall/left: 120 288
+:geoo/shadow/wall/right: 168 288
+:geoo/shadow/wall/center: 312 32
+:geoo/shadow/wall/left: 280 32
+:geoo/shadow/wall/right: 328 32
+:geoo/shadow/wall/center: 312 64
+:geoo/shadow/wall/left: 280 64
+:geoo/shadow/wall/right: 328 64
+:geoo/shadow/wall/center: 312 96
+:geoo/shadow/wall/left: 280 96
+:geoo/shadow/wall/right: 328 96
+:geoo/shadow/wall/center: 312 128
+:geoo/shadow/wall/left: 280 128
+:geoo/shadow/wall/right: 328 128
+:geoo/shadow/wall/center: 312 160
+:geoo/shadow/wall/left: 280 160
+:geoo/shadow/wall/right: 328 160
+:geoo/shadow/wall/center: 312 192
+:geoo/shadow/wall/left: 280 192
+:geoo/shadow/wall/right: 328 192
+:geoo/shadow/wall/center: 312 224
+:geoo/shadow/wall/left: 280 224
+:geoo/shadow/wall/right: 328 224
+:geoo/shadow/wall/center: 312 256
+:geoo/shadow/wall/left: 280 256
+:geoo/shadow/wall/right: 328 256
+:geoo/shadow/wall/center: 472 176
+:geoo/shadow/wall/left: 440 176
+:geoo/shadow/wall/right: 488 176
+:geoo/shadow/wall/center: 472 208
+:geoo/shadow/wall/left: 440 208
+:geoo/shadow/wall/right: 488 208
+:geoo/shadow/wall/center: 472 240
+:geoo/shadow/wall/left: 440 240
+:geoo/shadow/wall/right: 488 240
+:geoo/shadow/wall/center: 472 272
+:geoo/shadow/wall/left: 440 272
+:geoo/shadow/wall/right: 488 272
+:geoo/shadow/wall/center: 472 304
+:geoo/shadow/wall/left: 440 304
+:geoo/shadow/wall/right: 488 304
+:geoo/shadow/wall/center: 472 336
+:geoo/shadow/wall/left: 440 336
+:geoo/shadow/wall/right: 488 336
+:geoo/shadow/wall/center: 472 368
+:geoo/shadow/wall/left: 440 368
+:geoo/shadow/wall/right: 488 368
+:geoo/shadow/wall/center: 472 400
+:geoo/shadow/wall/left: 440 400
+:geoo/shadow/wall/right: 488 400
+:geoo/shadow/pillar_hztl_32: 360 112
+:geoo/shadow/pillar_hztl_32: 392 112
+:geoo/shadow/pillar_hztl_32: 408 112
+:geoo/shadow/pillar_hztl_32: 520 288
+:geoo/shadow/pillar_hztl_32: 552 288
+:geoo/shadow/pillar_hztl_32: 568 288
+:geoo/shadow/wall/center: 632 112
+:geoo/shadow/wall/left: 600 112
+:geoo/shadow/wall/center: 632 144
+:geoo/shadow/wall/left: 600 144
+:geoo/shadow/wall/center: 632 176
+:geoo/shadow/wall/left: 600 176
+:geoo/shadow/wall/center: 632 208
+:geoo/shadow/wall/left: 600 208
+:geoo/shadow/wall/center: 632 240
+:geoo/shadow/wall/left: 600 240
+:geoo/shadow/wall/center: 632 272
+:geoo/shadow/wall/left: 600 272
+:geoo/shadow/wall/center: 632 304
+:geoo/shadow/wall/left: 600 304
+:geoo/shadow/wall/center: 632 336
+:geoo/shadow/wall/left: 600 336
+:geoo/shadow/pillar_hztl_32: 200 432
+:geoo/shadow/pillar_hztl_32: 232 432
+:geoo/shadow/pillar_hztl_32: 248 432
+:geoo/shadow/wall/center: 152 320
+:geoo/shadow/wall/left: 120 320
+:geoo/shadow/wall/right: 168 320
+:geoo/shadow/wall/center: 152 352
+:geoo/shadow/wall/left: 120 352
+:geoo/shadow/wall/right: 168 352
+:geoo/shadow/wall/center: 152 384
+:geoo/shadow/wall/left: 120 384
+:geoo/shadow/wall/right: 168 384
+:geoo/shadow/wall/center: 152 416
+:geoo/shadow/wall/left: 120 416
+:geoo/shadow/wall/right: 168 416
+:geoo/shadow/wall/center: 152 448
+:geoo/shadow/wall/left: 120 448
+:geoo/shadow/wall/right: 168 448
+:geoo/shadow/wall/center: 312 288
+:geoo/shadow/wall/left: 280 288
+:geoo/shadow/wall/right: 328 288
+:geoo/shadow/wall/center: 312 320
+:geoo/shadow/wall/left: 280 320
+:geoo/shadow/wall/right: 328 320
+:geoo/shadow/wall/center: 312 352
+:geoo/shadow/wall/left: 280 352
+:geoo/shadow/wall/right: 328 352
+:geoo/shadow/pillar_hztl_32: 360 352
+:geoo/shadow/pillar_hztl_32: 392 352
+:geoo/shadow/pillar_hztl_32: 408 352
+:geoo/shadow/pillar_hztl_32: 200 560
+:geoo/shadow/pillar_hztl_32: 232 560
+:geoo/shadow/pillar_hztl_32: 248 560
+:geoo/shadow/wall/center: 312 384
+:geoo/shadow/wall/left: 280 384
+:geoo/shadow/wall/right: 328 384
+:geoo/shadow/wall/center: 312 416
+:geoo/shadow/wall/left: 280 416
+:geoo/shadow/wall/right: 328 416
+:geoo/shadow/pillar_hztl_32: 40 432
+:geoo/shadow/pillar_hztl_32: 72 432
+:geoo/shadow/pillar_hztl_32: 88 432
+:geoo/shadow/pillar_hztl_32: 360 616
+:geoo/shadow/pillar_hztl_32: 392 616
+:geoo/shadow/pillar_hztl_32: 408 616
+:geoo/shadow/wall/center: 152 480
+:geoo/shadow/wall/left: 120 480
+:geoo/shadow/wall/right: 168 480
+:geoo/shadow/wall/center: 152 512
+:geoo/shadow/wall/left: 120 512
+:geoo/shadow/wall/right: 168 512
+:geoo/shadow/wall/center: 312 448
+:geoo/shadow/wall/left: 280 448
+:geoo/shadow/wall/right: 328 448
+:geoo/shadow/wall/center: 312 480
+:geoo/shadow/wall/left: 280 480
+:geoo/shadow/wall/right: 328 480
+:geoo/shadow/wall/center: 472 432
+:geoo/shadow/wall/left: 440 432
+:geoo/shadow/wall/right: 488 432
+:geoo/shadow/wall/center: 472 464
+:geoo/shadow/wall/left: 440 464
+:geoo/shadow/wall/right: 488 464
+:geoo/shadow/wall/center: 472 496
+:geoo/shadow/wall/left: 440 496
+:geoo/shadow/wall/right: 488 496
+:geoo/shadow/wall/center: 472 528
+:geoo/shadow/wall/left: 440 528
+:geoo/shadow/wall/right: 488 528
+:geoo/shadow/wall/center: 632 368
+:geoo/shadow/wall/left: 600 368
+:geoo/shadow/wall/center: 632 400
+:geoo/shadow/wall/left: 600 400
+:geoo/shadow/wall/center: 632 432
+:geoo/shadow/wall/left: 600 432
+:geoo/shadow/wall/center: 632 464
+:geoo/shadow/wall/left: 600 464
+:geoo/shadow/wall/center: 632 496
+:geoo/shadow/wall/left: 600 496
+:geoo/shadow/pillar_hztl_32: 520 320
+:geoo/shadow/pillar_hztl_32: 552 320
+:geoo/shadow/pillar_hztl_32: 568 320
+:geoo/shadow/wall/center: 312 512
+:geoo/shadow/wall/left: 280 512
+:geoo/shadow/wall/right: 328 512
+:geoo/shadow/wall/center: 152 544
+:geoo/shadow/wall/left: 120 544
+:geoo/shadow/wall/right: 168 544
+:geoo/shadow/wall/center: 152 576
+:geoo/shadow/wall/left: 120 576
+:geoo/shadow/wall/right: 168 576
+:geoo/shadow/wall/center: 152 608
+:geoo/shadow/wall/left: 120 608
+:geoo/shadow/wall/right: 168 608
+:geoo/shadow/wall/center: 312 544
+:geoo/shadow/wall/left: 280 544
+:geoo/shadow/wall/right: 328 544
+:geoo/shadow/wall/center: 312 576
+:geoo/shadow/wall/left: 280 576
+:geoo/shadow/wall/right: 328 576
+:geoo/shadow/wall/center: 312 608
+:geoo/shadow/wall/left: 280 608
+:geoo/shadow/wall/right: 328 608
+:geoo/shadow/wall/center: 472 560
+:geoo/shadow/wall/left: 440 560
+:geoo/shadow/wall/right: 488 560
+:geoo/shadow/wall/center: 472 592
+:geoo/shadow/wall/left: 440 592
+:geoo/shadow/wall/right: 488 592
+:geoo/shadow/wall/center: 472 624
+:geoo/shadow/wall/left: 440 624
+:geoo/shadow/wall/right: 488 624
+:geoo/shadow/wall/center: 632 528
+:geoo/shadow/wall/left: 600 528
+:geoo/shadow/wall/center: 632 560
+:geoo/shadow/wall/left: 600 560
+:geoo/shadow/wall/center: 632 592
+:geoo/shadow/wall/left: 600 592
+:geoo/shadow/wall/center: 632 624
+:geoo/shadow/wall/left: 600 624
+:geoo/shadow/wall/center: -8 0
+:geoo/shadow/wall/right: 8 0
+:geoo/shadow/wall/center: -8 32
+:geoo/shadow/wall/right: 8 32
+:geoo/shadow/wall/center: -8 64
+:geoo/shadow/wall/right: 8 64
+:geoo/shadow/wall/center: -8 96
+:geoo/shadow/wall/right: 8 96
+:geoo/shadow/wall/center: -8 128
+:geoo/shadow/wall/right: 8 128
+:geoo/shadow/wall/center: -8 160
+:geoo/shadow/wall/right: 8 160
+:geoo/shadow/wall/center: -8 192
+:geoo/shadow/wall/right: 8 192
+:geoo/shadow/wall/center: -8 224
+:geoo/shadow/wall/right: 8 224
+:geoo/shadow/wall/center: -8 256
+:geoo/shadow/wall/right: 8 256
+:geoo/shadow/wall/center: -8 288
+:geoo/shadow/wall/right: 8 288
+:geoo/shadow/wall/center: -8 320
+:geoo/shadow/wall/right: 8 320
+:geoo/shadow/wall/center: -8 352
+:geoo/shadow/wall/right: 8 352
+:geoo/shadow/wall/center: -8 384
+:geoo/shadow/wall/right: 8 384
+:geoo/shadow/wall/center: -8 416
+:geoo/shadow/wall/right: 8 416
+:geoo/shadow/wall/center: -8 448
+:geoo/shadow/wall/right: 8 448
+:geoo/shadow/wall/center: -8 480
+:geoo/shadow/wall/right: 8 480
+:geoo/shadow/wall/center: -8 512
+:geoo/shadow/wall/right: 8 512
+:geoo/shadow/wall/center: -8 544
+:geoo/shadow/wall/right: 8 544
+:geoo/shadow/wall/center: -8 576
+:geoo/shadow/wall/right: 8 576
+:geoo/shadow/wall/center: -8 608
+:geoo/shadow/wall/right: 8 608
+:geoo/shadow/pillar_hztl_32: 40 144
+:geoo/shadow/pillar_hztl_32: 72 144
+:geoo/shadow/pillar_hztl_32: 88 144
+:geoo/shadow/pillar_hztl_32: 200 160
+:geoo/shadow/pillar_hztl_32: 232 160
+:geoo/shadow/pillar_hztl_32: 248 160
+:geoo/shadow/wall/center: 472 48
+:geoo/shadow/wall/left: 440 48
+:geoo/shadow/wall/right: 488 48
+:geoo/shadow/wall/center: 472 80
+:geoo/shadow/wall/left: 440 80
+:geoo/shadow/wall/right: 488 80
+:geoo/shadow/wall/center: 472 112
+:geoo/shadow/wall/left: 440 112
+:geoo/shadow/wall/right: 488 112
+:geoo/shadow/wall/center: 472 144
+:geoo/shadow/wall/left: 440 144
+:geoo/shadow/wall/right: 488 144
+:geoo/shadow/pillar_hztl_32: 360 224
+:geoo/shadow/pillar_hztl_32: 392 224
+:geoo/shadow/pillar_hztl_32: 408 224
+:geoo/shadow/pillar_hztl_32: 200 208
+:geoo/shadow/pillar_hztl_32: 232 208
+:geoo/shadow/pillar_hztl_32: 248 208
+:geoo/shadow/pillar_hztl_32: 360 272
+:geoo/shadow/pillar_hztl_32: 392 272
+:geoo/shadow/pillar_hztl_32: 408 272
+:geoo/shadow/pillar_hztl_32: 200 304
+:geoo/shadow/pillar_hztl_32: 232 304
+:geoo/shadow/pillar_hztl_32: 248 304
+:geoo/shadow/pillar_hztl_32: 360 512
+:geoo/shadow/pillar_hztl_32: 392 512
+:geoo/shadow/pillar_hztl_32: 408 512
+:geoo/shadow/pillar_hztl_32: 40 576
+:geoo/shadow/pillar_hztl_32: 72 576
+:geoo/shadow/pillar_hztl_32: 88 576
+:geoo/shadow/pillar_hztl_32: 520 416
+:geoo/shadow/pillar_hztl_32: 552 416
+:geoo/shadow/pillar_hztl_32: 568 416
+:geoo/shadow/pillar_hztl_32: 520 176
+:geoo/shadow/pillar_hztl_32: 552 176
+:geoo/shadow/pillar_hztl_32: 568 176
+:geoo/shadow/pillar_hztl_32: 520 576
+:geoo/shadow/pillar_hztl_32: 552 576
+:geoo/shadow/pillar_hztl_32: 568 576

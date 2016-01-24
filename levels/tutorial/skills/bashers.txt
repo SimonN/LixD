@@ -1,0 +1,166 @@
+$BUILT 2015-04-13 02:37:47
+$AUTHOR Simon
+$GERMAN Horizontalbohrer
+$ENGLISH Bashers
+
+$TUTORIAL_GERMAN Horizontalbohrer durchdringen Wände von beliebiger Dicke.<br>Wenn du einen Bohrer zuweist, achte darauf, dass die Lix auch etwas zu bohren<br>direkt vor ihr hat. Sonst tut sie gar nichts und du hast eine Fähigkeit vergeudet.
+$TUTORIAL_ENGLISH Bashers create horizontal tunnels through walls of any thickness.<br>When assigning basher, make sure they have something to bash in front of them,<br>or they will stop immediately and you've wasted a skill.
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 5
+#REQUIRED 5
+#SPAWN_INTERVAL 42
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#BASHER 30
+#NOTHING 0
+#NOTHING 0
+
+:geoo/sandstone/Hatch.H: 8 184
+
+:geoo/sandstone/Goal.G: 488 280
+
+:matt/beach/daytime/15: 408 334
+:geoo/sandstone/64x64: 424 344
+:matt/goldmine/crate64: 280 288
+:matt/goldmine/crate32: 272 312
+:matt/beach/daytime/02: 326 334 rr
+:matt/beach/daytime/06: 264 336
+:matt/beach/daytime/06: 160 336 frr
+:matt/beach/daytime/14: 48 320
+:matt/beach/daytime/03: -78 304 f
+:matt/beach/daytime/15: 60 314
+:matt/beach/daytime/03: -44 368
+:matt/beach/daytime/03: 112 328
+:geoo/sandstone/pillar_bottom_ext: 168 328
+:geoo/sandstone/pillar_bottom_ext: 296 328
+:matt/beach/daytime/03: 216 340
+:geoo/sandstone/pillar_bottom: 184 296
+:geoo/sandstone/pillar_bottom: 312 296
+:geoo/sandstone/pillar_top_shaded: 184 280
+:geoo/sandstone/pillar_top_shaded: 312 280
+:geoo/sandstone/pillar_top_ext: 168 264
+:geoo/sandstone/pillar_top_ext: 296 264
+:matt/beach/daytime/03: 312 334
+:matt/beach/daytime/01: 320 338 rr
+:geoo/sandstone/pillar_bottom_ext: 424 328
+:matt/beach/daytime/04: 360 338 rr
+:matt/beach/daytime/00: 416 350
+:geoo/sandstone/pillar_bottom: 440 296
+:geoo/sandstone/pillar_top_shaded: 440 280
+:geoo/sandstone/pillar_top_ext: 424 264
+:geoo/sandstone/ribbon_end: 248 240
+:geoo/sandstone/arc_small: 216 232
+:geoo/sandstone/ribbon_end: 376 264
+:geoo/sandstone/ribbon_main: 376 232
+:geoo/sandstone/arc_small: 344 232
+:matt/carnival/13: 320 240
+:matt/carnival/12: 320 240
+:geoo/sandstone/32x32: 312 232
+:geoo/sandstone/32x32: 440 232
+:geoo/sandstone/32x32: 184 232
+:geoo/sandstone/smaragd: 192 240
+:geoo/sandstone/smaragd: 320 240
+:geoo/sandstone/smaragd: 448 240
+:matt/beach/daytime/01: 596 330 f
+:geoo/sandstone/pillar_bottom_ext: 552 328
+:geoo/sandstone/pillar_bottom: 568 296
+:geoo/sandstone/pillar_top_shaded: 568 280
+:geoo/sandstone/pillar_top_ext: 552 264
+:geoo/sandstone/ribbon_end: 504 240
+:geoo/sandstone/arc_small: 472 232
+:geoo/sandstone/32x32: 568 232
+:geoo/sandstone/smaragd: 576 240
+:geoo/sandstone/64x16: 232 216
+:geoo/sandstone/64x16: 488 216
+:geoo/sandstone/pillar_bottom: 248 184
+:geoo/sandstone/pillar_bottom_ext: 232 200
+:geoo/sandstone/pillar_bottom: 504 184
+:geoo/sandstone/pillar_bottom_ext: 488 200
+:geoo/sandstone/pillar_top_shaded: 248 152
+:geoo/sandstone/pillar_top_shaded: 504 152
+:geoo/sandstone/pillar_top_ext: 232 136
+:geoo/sandstone/pillar_top_ext: 488 136
+:geoo/sandstone/arc_small: 280 104
+:geoo/sandstone/arc_small: 408 104
+:geoo/sandstone/pillar_top_ext: 360 136
+:geoo/sandstone/32x32: 248 104
+:geoo/sandstone/32x32: 376 104
+:geoo/sandstone/32x32: 504 104
+:geoo/sandstone/smaragd: 256 112
+:geoo/sandstone/smaragd: 384 112
+:geoo/sandstone/smaragd: 512 112
+:geoo/sandstone/pillar_top_shaded: 376 152
+:geoo/sandstone/pillar_bottom: 376 184
+:geoo/sandstone/pillar_bottom_ext: 360 216
+:geoo/sandstone/ebony/h16b: 344 156
+:geoo/sandstone/ebony/h16b: 280 156
+:geoo/sandstone/ebony/h16c: 312 156
+:geoo/sandstone/ebony/h16b: 440 156
+:geoo/sandstone/ebony/h16b: 472 156
+:geoo/sandstone/ebony/h16c: 408 156
+:geoo/sandstone/slopes/32x16lb: 296 216
+:geoo/sandstone/slopes/32x16rb: 456 216
+:geoo/sandstone/slopes/32x16rb: 184 216
+:geoo/sandstone/slopes/32x16lb: 568 216
+:geoo/sandstone/slopes/16x32rb: 168 232
+:geoo/sandstone/slopes/16x32rb: 232 104
+:geoo/sandstone/slopes/16x32lb: 536 104
+:geoo/sandstone/slopes/16x32lb: 600 232
+:geoo/sandstone/slopes/32x16rb: 248 88
+:geoo/sandstone/slopes/32x16lb: 344 88
+:geoo/sandstone/64x16: 280 88
+:geoo/sandstone/slopes/32x16rb: 408 88
+:geoo/sandstone/64x16: 440 88
+:geoo/sandstone/slopes/32x16lb: 504 88
+:geoo/sandstone/ribbon_start_sq: 312 156
+:geoo/sandstone/ribbon_start_sq: 440 156
+:geoo/sandstone/ribbon_end: 312 188
+:geoo/sandstone/ribbon_end: 440 188
+:geoo/sandstone/64x64: 488 344
+:geoo/sandstone/64x64: 552 344
+:geoo/sandstone/pillar_bottom_ext: 24 312
+:matt/beach/daytime/15: 10 314
+:matt/beach/daytime/02: 88 328
+:matt/beach/daytime/03: -26 318
+:geoo/steel/dark_32x64o.S: -16 272
+:matt/beach/daytime/02: 224 336
+:matt/beach/daytime/01: 588 336 f
+:matt/beach/daytime/03: 464 352
+:matt/beach/daytime/01: 556 344 f
+:matt/beach/daytime/03: 440 376
+:matt/beach/daytime/01: 440 360
+:matt/beach/daytime/04: 304 352
+:matt/beach/daytime/15: 232 336
+:matt/beach/daytime/01: 128 352 rr
+:matt/beach/daytime/03: 100 336
+:matt/beach/daytime/01: 168 352 rr
+:matt/beach/daytime/15: 208 336
+:geoo/sandstone/pillar_bottom: 40 280
+:geoo/sandstone/pillar_top_jaggedr: 40 256
+:geoo/sandstone/16x16: 216 216
+:geoo/sandstone/16x16: 552 216
+:matt/beach/daytime/01: 572 372 f
+:matt/beach/daytime/01: 608 372 f
+:matt/beach/daytime/03: 0 344
+:geoo/steel/dark_32x64o.S: -16 336
+:matt/beach/daytime/01: 12 320 rr
+:matt/beach/daytime/01: 4 342 rr
+:matt/beach/daytime/01: -2 364 rr

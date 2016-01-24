@@ -1,0 +1,105 @@
+$BUILT 2014-02-27 21:54:49
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH World 2-30
+$HINT_ENGLISH Yes, its like you are playing a mario brothers game.
+#SIZE_X 640
+#SIZE_Y 560
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 95
+#BACKGROUND_GREEN 48
+#BACKGROUND_BLUE 143
+
+#SECONDS 0
+#INITIAL 75
+#REQUIRED 74
+#SPAWN_INTERVAL 33
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#FLOATER 1
+#WALKER 2
+#BLOCKER 1
+#BUILDER 2
+#PLATFORMER 3
+#MINER 1
+#BASHER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/bricks/Hatch.H: 0 448
+
+:matt/bricks/Goal.G: 576 80
+
+:matt/bricks/02b: 320 464 r
+:matt/bricks/02b: 192 464 r
+:matt/bricks/03b: 0 0
+:matt/bricks/03b: 64 0
+:matt/bricks/03b: 128 0
+:matt/bricks/03b: 192 0
+:matt/bricks/03b: 256 0
+:matt/bricks/03b: 320 0
+:matt/bricks/03b: 384 0
+:matt/bricks/03b: 448 0
+:matt/bricks/03b: 512 0
+:matt/bricks/03b: 576 0
+:matt/bricks/03b: 0 368
+:matt/bricks/03b: 80 256
+:matt/bricks/03b: 128 256
+:matt/bricks/03b: 192 256
+:matt/bricks/03b: 256 256
+:matt/bricks/03b: 320 256
+:matt/bricks/03b: 384 256
+:matt/bricks/03b: 448 256
+:matt/bricks/03b: 512 256
+:matt/bricks/03b: 576 368
+:matt/bricks/03b: 0 80
+:matt/bricks/03b: 0 128
+:matt/bricks/03b: 0 192
+:matt/bricks/03b: 0 256
+:matt/bricks/03b: 0 320
+:matt/bricks/03b: 576 128
+:matt/bricks/03b: 576 192
+:matt/bricks/03b: 576 256
+:matt/bricks/03b: 576 320
+:matt/bricks/03b: 64 496
+:matt/bricks/03b: 128 496
+:matt/bricks/03b: 192 496
+:matt/bricks/03b: 256 496
+:matt/bricks/03b: 320 496
+:matt/bricks/03b: 384 496
+:matt/bricks/03b: 448 496
+:matt/bricks/03b: 512 496
+:matt/bricks/03b: 0 496
+:matt/bricks/03b: 576 432
+:matt/bricks/03b: 576 496
+:matt/bricks/03b: 512 384
+:matt/bricks/07b: 448 384
+:matt/bricks/07b: 400 432
+:matt/bricks/03b: 464 432
+:matt/bricks/03b: 512 432
+:matt/bricks/02b: 128 432 r
+:matt/bricks/02b: 128 368 r
+:matt/bricks/02b: 192 400 r
+:matt/bricks/02b: 256 432 r
+:matt/bricks/17: 446 334 frr
+:matt/bricks/07b: 512 128
+:matt/bricks/07b: 448 192
+:matt/bricks/03b: 512 192
+:matt/bricks/12b: 320 224
+:matt/bricks/06b: 320 64
+:matt/bricks/03b: 256 64
+:matt/bricks/02b: 256 128
+:matt/bricks/03b: 256 160
+:matt/bricks/05b: 192 160
+:matt/bricks/03b: 192 64
+:matt/bricks/02b: 192 128
+:matt/bricks/05b: 128 96
+:matt/bricks/03b: 128 32
+:matt/bricks/05b: 64 32
+:matt/bricks/08b: 320 192

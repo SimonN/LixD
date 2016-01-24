@@ -1,0 +1,106 @@
+$BUILT 2014-06-26 14:52:52
+$AUTHOR I.S./geoo
+$GERMAN 
+$ENGLISH Empty Space is Hardly a Waste
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 16
+#REQUIRED 14
+#SPAWN_INTERVAL 12
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#CLIMBER 7
+#FLOATER 7
+#BUILDER 5
+#EXPLODER 2
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/abstract/hatch.H: 232 88
+
+:geoo/abstract/goal.G: 16 288
+
+:geoo/construction/factory.T: 584 272
+
+:geoo/abstract/pipes/central3: 240 144 rr
+:geoo/abstract/pipes/central3: 288 144 rr
+:geoo/abstract/pipes/central3: 352 144 rr
+:geoo/abstract/pipes/central3: 368 144 rr
+:geoo/abstract/pipes/central3: 400 144 rrr
+:geoo/abstract/pipes/central3: 400 176 rrr
+:geoo/abstract/pipes/central3: 400 208 rrr
+:geoo/abstract/pipes/central3: 400 240 rrr
+:geoo/abstract/pipes/central3: 232 144 rrr
+:geoo/abstract/pipes/central3: 232 176 rrr
+:geoo/abstract/pipes/central3: 232 208 rrr
+:geoo/abstract/pipes/central3: 232 240 rrr
+:geoo/abstract/pipes/central3: 352 328 rr
+:geoo/abstract/pipes/central3: 368 328 rr
+:geoo/abstract/pipes/central3: 232 272 rrr
+:geoo/abstract/pipes/central3: 232 304 rrr
+:geoo/abstract/pipes/central3: 400 272 rrr
+:geoo/abstract/pipes/central3: 400 304 rrr
+:geoo/abstract/pipes/central3: 240 328 rr
+:geoo/abstract/pipes/corner3: 232 328
+:geoo/abstract/pipes/corner3: 400 328 rrr
+:geoo/abstract/pipes/corner3: 232 144 r
+:geoo/steel/64x64.S: 192 336
+:geoo/steel/64x64.S: 256 336
+:geoo/steel/64x64.S: 320 336
+:geoo/steel/64x64.S: 384 336
+:geoo/abstract/pipes/central3: 328 144 rr
+:geoo/abstract/pipes/central3: 328 328 rr
+:geoo/abstract/pipes/central3: 256 144 rr
+:geoo/abstract/pipes/central3: 256 328 rr
+:geoo/steel/64x64.S: 0 336
+:geoo/steel/64x64.S: 576 336
+:geoo/abstract/pipes/junct3: 400 144 rrr
+:geoo/abstract/pipes/central3: 400 112 rrr
+:geoo/abstract/pipes/central3: 400 80 rrr
+:geoo/abstract/pipes/central3: 400 48 rrr
+:geoo/abstract/pipes/central3: 400 16 rrr
+:geoo/abstract/pipes/central3: 400 -16 rrr
+:geoo/abstract/pipes/central3: 288 328 rr
+:geoo/abstract/pipes/central2: 316 296 rrr
+:geoo/abstract/pipes/central2: 322 296 rrrd
+:geoo/abstract/pipes/central2: 310 296 rrrd
+:geoo/abstract/pipes/central3: 296 144 rr
+:geoo/abstract/pipes/central3: 320 328 rr
+:geoo/abstract/pipes/central2: 316 152 rrr
+:geoo/abstract/pipes/central2: 322 152 rrrd
+:geoo/abstract/pipes/central2: 310 152 rrrd
+:geoo/abstract/pipes/central2: 316 184 rrr
+:geoo/abstract/pipes/central2: 322 184 rrrd
+:geoo/abstract/pipes/central2: 310 184 rrrd
+:geoo/abstract/pipes/central2: 316 216 rrr
+:geoo/abstract/pipes/central2: 322 216 rrrd
+:geoo/abstract/pipes/central2: 310 216 rrrd
+:geoo/abstract/pipes/central2: 316 248 rrr
+:geoo/abstract/pipes/central2: 322 248 rrrd
+:geoo/abstract/pipes/central2: 310 248 rrrd
+:geoo/abstract/pipes/central2: 316 280 rrr
+:geoo/abstract/pipes/central2: 322 280 rrrd
+:geoo/abstract/pipes/central2: 310 280 rrrd
+:geoo/abstract/pipes/central2: 322 236 rr
+:geoo/abstract/pipes/central2: 322 230 rrd
+:geoo/abstract/pipes/central2: 322 242 rrd
+:geoo/abstract/pipes/central2: 354 236 rr
+:geoo/abstract/pipes/central2: 354 230 rrd
+:geoo/abstract/pipes/central2: 354 242 rrd
+:geoo/abstract/pipes/central2: 368 236 rr
+:geoo/abstract/pipes/central2: 368 230 rrd
+:geoo/abstract/pipes/central2: 368 242 rrd

@@ -1,0 +1,250 @@
+$BUILT 2012-04-24 20:42:17
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Organ Symphony
+
+#SIZE_X 384
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 40
+#INITIAL 900
+#REQUIRED 20
+#SPAWN_INTERVAL 1
+#SPAWN_INTERVAL_FAST 1
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#EXPLODER2 -1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: 320 48
+:matt/winter/Hatch.H: 64 48
+:matt/winter/Hatch.H: 192 48
+:matt/winter/Hatch.H: 64 48
+:matt/winter/Hatch.H: 192 48
+:matt/winter/Hatch.H: 320 48
+:matt/winter/Hatch.H: 192 48
+:matt/winter/Hatch.H: 320 48
+:matt/winter/Hatch.H: 64 48
+:matt/winter/Hatch.H: 320 48 r
+:matt/winter/Hatch.H: 64 48 r
+:matt/winter/Hatch.H: 192 48 r
+:matt/winter/Hatch.H: 64 48 r
+:matt/winter/Hatch.H: 192 48 r
+:matt/winter/Hatch.H: 320 48 r
+:matt/winter/Hatch.H: 192 48 r
+:matt/winter/Hatch.H: 320 48 r
+:matt/winter/Hatch.H: 64 48 r
+
+:matt/winter/Goal.G: 368 304
+:matt/winter/Goal.G: 112 304
+:matt/winter/Goal.G: 240 304
+
+:matt/winter/08: 160 104
+:matt/winter/06: 160 112
+:matt/winter/08: 176 104
+:matt/winter/06: 176 112
+:matt/winter/08: 192 104
+:matt/winter/06: 192 112
+:matt/winter/08: 208 104
+:matt/winter/06: 208 112
+:matt/winter/08: 224 104
+:matt/winter/06: 224 112
+:matt/winter/08: 240 104
+:matt/winter/06: 240 112
+:matt/winter/08: 256 104
+:matt/winter/06: 256 112
+:matt/winter/08: 272 104
+:matt/winter/06: 272 112
+:matt/winter/08: 288 104
+:matt/winter/06: 288 112
+:matt/winter/08: 304 104
+:matt/winter/06: 304 112
+:matt/winter/08: 320 104
+:matt/winter/06: 320 112
+:matt/winter/08: 336 104
+:matt/winter/06: 336 112
+:matt/winter/08: 352 104
+:matt/winter/06: 352 112
+:matt/winter/08: 368 104
+:matt/winter/06: 368 112
+:matt/winter/08: 0 104
+:matt/winter/06: 0 112
+:matt/winter/08: 16 104
+:matt/winter/06: 16 112
+:matt/winter/08: 32 104
+:matt/winter/06: 32 112
+:matt/winter/08: 48 104
+:matt/winter/06: 48 112
+:matt/winter/08: 64 104
+:matt/winter/06: 64 112
+:matt/winter/08: 80 104
+:matt/winter/06: 80 112
+:matt/winter/08: 96 104
+:matt/winter/06: 96 112
+:matt/winter/08: 112 104
+:matt/winter/06: 112 112
+:matt/winter/08: 128 104
+:matt/winter/06: 128 112
+:matt/winter/08: 144 104
+:matt/winter/06: 144 112
+:matt/winter/08: 160 104
+:matt/winter/06: 160 112
+:matt/winter/08: 176 104
+:matt/winter/06: 176 112
+:matt/winter/08: 192 104
+:matt/winter/06: 192 112
+:matt/winter/08: 208 104
+:matt/winter/06: 208 112
+:matt/winter/08: 224 104
+:matt/winter/06: 224 112
+:matt/winter/08: 240 104
+:matt/winter/06: 240 112
+:matt/winter/08: 256 104
+:matt/winter/06: 256 112
+:matt/winter/08: 272 104
+:matt/winter/06: 272 112
+:matt/winter/08: 288 104
+:matt/winter/06: 288 112
+:matt/winter/08: 304 104
+:matt/winter/06: 304 112
+:matt/winter/08: 320 104
+:matt/winter/06: 320 112
+:matt/winter/08: 336 104
+:matt/winter/06: 336 112
+:matt/winter/06: 160 176
+:matt/winter/06: 176 176
+:matt/winter/06: 192 176
+:matt/winter/06: 208 176
+:matt/winter/06: 224 176
+:matt/winter/06: 240 176
+:matt/winter/06: 256 176
+:matt/winter/06: 272 176
+:matt/winter/06: 288 176
+:matt/winter/06: 304 176
+:matt/winter/06: 320 176
+:matt/winter/06: 336 176
+:matt/winter/06: 352 176
+:matt/winter/06: 368 176
+:matt/winter/06: 0 176
+:matt/winter/06: 16 176
+:matt/winter/06: 32 176
+:matt/winter/06: 48 176
+:matt/winter/06: 64 176
+:matt/winter/06: 80 176
+:matt/winter/06: 96 176
+:matt/winter/06: 112 176
+:matt/winter/06: 128 176
+:matt/winter/06: 144 176
+:matt/winter/06: 160 176
+:matt/winter/06: 176 176
+:matt/winter/06: 192 176
+:matt/winter/06: 208 176
+:matt/winter/06: 224 176
+:matt/winter/06: 240 176
+:matt/winter/06: 256 176
+:matt/winter/06: 272 176
+:matt/winter/06: 288 176
+:matt/winter/06: 304 176
+:matt/winter/06: 320 176
+:matt/winter/06: 336 176
+:matt/winter/06: 160 240
+:matt/winter/06: 176 240
+:matt/winter/06: 192 240
+:matt/winter/06: 208 240
+:matt/winter/06: 224 240
+:matt/winter/06: 240 240
+:matt/winter/06: 256 240
+:matt/winter/06: 272 240
+:matt/winter/06: 288 240
+:matt/winter/06: 304 240
+:matt/winter/06: 320 240
+:matt/winter/06: 336 240
+:matt/winter/06: 352 240
+:matt/winter/06: 368 240
+:matt/winter/06: 0 240
+:matt/winter/06: 16 240
+:matt/winter/06: 32 240
+:matt/winter/06: 48 240
+:matt/winter/06: 64 240
+:matt/winter/06: 80 240
+:matt/winter/06: 96 240
+:matt/winter/06: 112 240
+:matt/winter/06: 128 240
+:matt/winter/06: 144 240
+:matt/winter/06: 160 240
+:matt/winter/06: 176 240
+:matt/winter/06: 192 240
+:matt/winter/06: 208 240
+:matt/winter/06: 224 240
+:matt/winter/06: 240 240
+:matt/winter/06: 256 240
+:matt/winter/06: 272 240
+:matt/winter/06: 288 240
+:matt/winter/06: 304 240
+:matt/winter/06: 320 240
+:matt/winter/06: 336 240
+:matt/winter/06: 192 304
+:matt/winter/06: 208 304
+:matt/winter/06: 224 304
+:matt/winter/06: 240 304
+:matt/winter/06: 320 304
+:matt/winter/06: 336 304
+:matt/winter/06: 352 304
+:matt/winter/06: 368 304
+:matt/winter/06: 80 368
+:matt/winter/06: 64 368
+:matt/winter/06: 96 368
+:matt/winter/06: 112 368
+:matt/winter/06: 64 304
+:matt/winter/06: 80 304
+:matt/winter/06: 96 304
+:matt/winter/06: 112 304
+:matt/winter/06: 192 368
+:matt/winter/06: 208 368
+:matt/winter/06: 224 368
+:matt/winter/06: 240 368
+:matt/winter/06: 192 304
+:matt/winter/06: 208 304
+:matt/winter/06: 224 304
+:matt/winter/06: 240 304
+:matt/winter/06: 320 368
+:matt/winter/06: 336 368
+:matt/winter/06: 352 368
+:matt/winter/06: 368 368
+:matt/winter/06: 320 304
+:matt/winter/06: 336 304
+:geoo/steel/64x32o.S: 0 368
+:geoo/steel/64x32o.S: 128 368
+:geoo/steel/64x32o.S: 256 368
+:matt/winter/08: 0 302 f
+:matt/winter/08: 16 302 f
+:matt/winter/08: 32 302 f
+:matt/winter/08: 48 302 f
+:matt/winter/08: 128 302 f
+:matt/winter/08: 144 302 f
+:matt/winter/08: 160 302 f
+:matt/winter/08: 176 302 f
+:matt/winter/08: 256 302 f
+:matt/winter/08: 272 302 f
+:matt/winter/08: 288 302 f
+:matt/winter/08: 304 302 f
+:geoo/steel/64x32o.S: 320 368
+:geoo/steel/64x32o.S: 64 368
+:geoo/steel/64x32o.S: 192 368
+:geoo/steel/32x32o.S: 208 336
+:geoo/steel/32x32o.S: 336 336
+:geoo/steel/32x32o.S: 80 336

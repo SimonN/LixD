@@ -1,0 +1,73 @@
+$BUILT 2014-06-24 12:59:11
+$AUTHOR Amanda
+$GERMAN 
+$ENGLISH Therapy (2p)
+
+#SIZE_X 512
+#SIZE_Y 384
+#TORUS_X 0
+#TORUS_Y 1
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 20
+#INITIAL 24
+#REQUIRED 24
+#SPAWN_INTERVAL 45
+#SPAWN_INTERVAL_FAST 45
+
+#WALKER 2
+#JUMPER 2
+#CLIMBER 2
+#FLOATER 2
+#EXPLODER2 2
+#BLOCKER 2
+#BATTER 2
+#BUILDER 2
+#PLATFORMER 2
+#BASHER 2
+#MINER 2
+#DIGGER 2
+
+:geoo/abstract/hatch.H: 112 48 r
+:geoo/abstract/hatch.H: 368 48
+
+:geoo/abstract/goal.G: 368 304
+:geoo/abstract/goal.G: 112 304
+
+:geoo/abstract/cvblocks/047: 0 128
+:geoo/abstract/cvblocks/047: 0 256
+:geoo/abstract/cvblocks/047: 192 128
+:geoo/abstract/cvblocks/047: 192 256
+:geoo/abstract/cvblocks/047: 0 0
+:geoo/abstract/cvblocks/047: 192 0
+:geoo/abstract/cvblocks/037: 64 96
+:geoo/abstract/cvblocks/036: 128 96
+:geoo/construction/concrete/064v: 256 256
+:geoo/construction/concrete/064v: 256 0
+:geoo/construction/concrete/064v: 256 128
+:geoo/construction/concrete/064v: 448 256
+:geoo/construction/concrete/064v: 448 0
+:geoo/construction/concrete/064v: 448 128
+:geoo/construction/concrete/032hb: 320 96
+:geoo/construction/concrete/032ha: 384 96
+:geoo/construction/concrete/064h: 320 352
+:geoo/abstract/cvblocks/046: 64 352
+:geoo/steel/32x16o.S: 112 352
+:geoo/steel/dark_32x16o.S: 368 352
+:geoo/abstract/cvblocks/038: 128 128
+:geoo/abstract/cvblocks/039: 64 128
+:geoo/construction/concrete/032hc: 384 128
+:geoo/construction/concrete/032hd: 320 128
+:geoo/construction/concrete/032hb: 320 224
+:geoo/construction/concrete/032ha: 384 224
+:geoo/construction/concrete/032hc: 384 256
+:geoo/construction/concrete/032hd: 320 256
+:geoo/abstract/cvblocks/037: 64 224
+:geoo/abstract/cvblocks/036: 128 224
+:geoo/abstract/cvblocks/038: 128 256
+:geoo/abstract/cvblocks/039: 64 256
+:geoo/steel/dark_64x64.S: 224 48

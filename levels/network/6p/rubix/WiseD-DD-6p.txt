@@ -1,0 +1,566 @@
+$BUILT 2014-04-11 21:28:31
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Wise Decisions DoubleTrouble (6p)
+
+#SIZE_X 1344
+#SIZE_Y 688
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 55
+#INITIAL 90
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 25
+#FLOATER 20
+#WALKER 70
+#JUMPER 70
+#EXPLODER2 30
+#PLATFORMER 60
+#BUILDER 35
+#BATTER 25
+#BLOCKER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 272 48
+:geoo/construction/Hatch.H: 496 48
+:geoo/construction/Hatch.H: 720 48
+:geoo/construction/Hatch.H: 944 48
+:geoo/construction/Hatch.H: 1168 48
+:geoo/construction/Hatch.H: 48 48
+:geoo/construction/Hatch.H: 384 336
+:geoo/construction/Hatch.H: 608 336
+:geoo/construction/Hatch.H: 832 336
+:geoo/construction/Hatch.H: 1056 336
+:geoo/construction/Hatch.H: 1280 336
+:geoo/construction/Hatch.H: 160 336
+
+:geoo/construction/Goal2.G: 608 608
+:geoo/construction/Goal2.G: 832 608
+:geoo/construction/Goal2.G: 1056 608
+:geoo/construction/Goal2.G: 1280 608
+:geoo/construction/Goal2.G: 160 608
+:geoo/construction/Goal2.G: 384 608
+
+:proxima/tile/cyan3: 672 240 f
+:proxima/tile/cyan3: 448 240 f
+:geoo/steel/16x32o.S: 416 336 frrr
+:geoo/steel/16x32o.S: 400 320 frrr
+:geoo/steel/16x32o.S: 368 320 frrr
+:geoo/steel/16x32o.S: 480 336 frr
+:geoo/steel/16x32o.S: 480 368 frr
+:geoo/steel/16x32o.S: 480 400 frr
+:geoo/steel/16x32o.S: 480 432 frr
+:geoo/steel/16x32o.S: 272 352 frrr
+:geoo/steel/16x32o.S: 384 448 frrr
+:geoo/steel/16x32o.S: 432 448 frrr
+:geoo/steel/16x32o.S: 368 336 frr
+:geoo/steel/16x32o.S: 368 368 frr
+:geoo/steel/16x32o.S: 368 400 frr
+:geoo/steel/16x32o.S: 368 432 frr
+:geoo/steel/16x32o.S: 192 336 frrr
+:geoo/steel/16x32o.S: 176 320 frrr
+:geoo/steel/16x32o.S: 144 320 frrr
+:geoo/steel/16x32o.S: 256 336 frr
+:geoo/steel/16x32o.S: 256 368 frr
+:geoo/steel/16x32o.S: 256 400 frr
+:geoo/steel/16x32o.S: 256 432 frr
+:geoo/steel/16x32o.S: 160 448 frrr
+:geoo/steel/16x32o.S: 208 448 frrr
+:geoo/steel/16x32o.S: 144 336 frr
+:geoo/steel/16x32o.S: 144 368 frr
+:geoo/steel/16x32o.S: 144 400 frr
+:geoo/steel/16x32o.S: 144 432 frr
+:geoo/steel/16x32o.S: 304 400 frrr
+:geoo/steel/16x32o.S: 496 352 frrr
+:geoo/steel/16x32o.S: 528 400 frrr
+:geoo/steel/16x32o.S: 560 448 frrr
+:geoo/steel/16x32o.S: 640 336 frrr
+:geoo/steel/16x32o.S: 624 320 frrr
+:geoo/steel/16x32o.S: 592 320 frrr
+:geoo/steel/16x32o.S: 32 336 frr
+:geoo/steel/16x32o.S: 32 368 frr
+:geoo/steel/16x32o.S: 32 400 frr
+:geoo/steel/16x32o.S: 32 432 frr
+:geoo/steel/16x32o.S: 608 448 frrr
+:geoo/steel/16x32o.S: 656 448 frrr
+:geoo/steel/16x32o.S: 592 336 frr
+:geoo/steel/16x32o.S: 592 368 frr
+:geoo/steel/16x32o.S: 592 400 frr
+:geoo/steel/16x32o.S: 592 432 frr
+:geoo/steel/16x32o.S: 48 352 frrr
+:geoo/steel/16x32o.S: 112 448 frrr
+:proxima/tile/cyan2s: 64 576
+:proxima/tile/cyan2s: 96 576
+:proxima/tile/cyan2s: 128 576
+:proxima/tile/cyan2s: 160 576
+:proxima/tile/cyan2s: 192 576
+:proxima/tile/cyan2s: 288 576
+:proxima/tile/cyan2s: 320 576
+:proxima/tile/cyan2s: 352 576
+:proxima/tile/cyan2s: 384 576
+:proxima/tile/cyan2s: 416 576
+:proxima/tile/cyan2s: 544 576
+:proxima/tile/cyan2s: 576 576
+:proxima/tile/cyan2s: 608 576
+:proxima/tile/cyan2s: 640 576
+:proxima/tile/cyan2s: 512 576
+:geoo/steel/16x32o.S: 80 400 fr
+:geoo/steel/16x16o.S: 416 448
+:geoo/steel/16x16o.S: 192 448
+:geoo/steel/16x16o.S: 640 448
+:geoo/steel/dark_32x16o.S: 112 672
+:geoo/steel/dark_32x16o.S: 144 672
+:geoo/steel/dark_32x16o.S: 528 672
+:geoo/steel/dark_32x16o.S: 560 672
+:geoo/steel/dark_32x16o.S: 48 656
+:geoo/steel/dark_32x16o.S: 80 672
+:geoo/steel/dark_32x16o.S: 624 672
+:geoo/steel/dark_32x16o.S: 656 672
+:geoo/steel/dark_32x16o.S: 176 672
+:geoo/steel/dark_32x16o.S: 592 672
+:geoo/steel/dark_32x16o.S: 432 672
+:geoo/steel/dark_32x16o.S: 464 672
+:geoo/steel/dark_32x16o.S: 368 672
+:geoo/steel/dark_32x16o.S: 400 672
+:geoo/steel/dark_32x16o.S: 496 656
+:geoo/steel/dark_32x16o.S: 272 656
+:geoo/steel/dark_32x16o.S: 304 672
+:geoo/steel/dark_32x16o.S: 208 672
+:geoo/steel/dark_32x16o.S: 240 672
+:geoo/steel/dark_32x16o.S: 336 672
+:geoo/steel/dark_32x16o.S: 16 672
+:geoo/steel/dark_32x16o.S: 496 672
+:geoo/steel/dark_32x16o.S: 48 672
+:geoo/steel/dark_32x16o.S: 272 672
+:geoo/steel/16x32o.S: 336 448 frrr
+:proxima/tile/cyan2s: 64 544
+:proxima/tile/cyan2s: 96 544
+:proxima/tile/cyan2s: 64 528
+:proxima/tile/cyan2s: 96 528
+:proxima/tile/cyan2s: 0 576
+:proxima/tile/cyan2s: 32 576
+:proxima/tile/cyan2s: 448 576
+:proxima/tile/cyan2s: 480 576
+:proxima/tile/cyan2s: 560 496 rrr
+:proxima/tile/cyan2s: 560 464 rrr
+:proxima/tile/cyan2s: 112 496 rrr
+:proxima/tile/cyan2s: 112 464 rrr
+:proxima/tile/cyan2s: 336 496 rrr
+:proxima/tile/cyan2s: 336 464 rrr
+:proxima/tile/cyan3: 112 464
+:proxima/tile/cyan3a: 112 496
+:proxima/tile/cyan3: 112 528 f
+:proxima/tile/cyan3: 336 464
+:proxima/tile/cyan3a: 336 496
+:proxima/tile/cyan3: 336 528 f
+:proxima/tile/cyan3: 560 464
+:proxima/tile/cyan3a: 560 496
+:proxima/tile/cyan3: 560 528 f
+:proxima/tile/cyan3: 64 528 rrr
+:proxima/tile/cyan3: 128 528 frrr
+:proxima/tile/cyan3a: 96 528 rrr
+:proxima/tile/cyan2s: 288 544
+:proxima/tile/cyan2s: 320 544
+:proxima/tile/cyan2s: 288 528
+:proxima/tile/cyan2s: 320 528
+:proxima/tile/cyan3: 336 528 f
+:proxima/tile/cyan3: 288 528 rrr
+:proxima/tile/cyan3: 352 528 frrr
+:proxima/tile/cyan3a: 320 528 rrr
+:proxima/tile/cyan2s: 512 544
+:proxima/tile/cyan2s: 544 544
+:proxima/tile/cyan2s: 512 528
+:proxima/tile/cyan2s: 544 528
+:proxima/tile/cyan3: 560 528 f
+:proxima/tile/cyan3: 512 528 rrr
+:proxima/tile/cyan3: 576 528 frrr
+:proxima/tile/cyan3a: 544 528 rrr
+:proxima/tile/cyan2s: 224 576
+:proxima/tile/cyan2s: 256 576
+:proxima/tile/orange2s: 288 544 d
+:proxima/tile/orange2s: 64 544 d
+:proxima/tile/orange2s: 512 544 d
+:proxima/tile/cyan2s: 48 288
+:proxima/tile/cyan2s: 80 288
+:proxima/tile/cyan2s: 112 288
+:proxima/tile/cyan2s: 144 288
+:proxima/tile/cyan2s: 176 288
+:proxima/tile/cyan2s: 272 288
+:proxima/tile/cyan2s: 304 288
+:proxima/tile/cyan2s: 336 288
+:proxima/tile/cyan2s: 368 288
+:proxima/tile/cyan2s: 400 288
+:proxima/tile/cyan2s: 528 288
+:proxima/tile/cyan2s: 496 288
+:proxima/tile/cyan2s: 624 256
+:proxima/tile/cyan2s: 656 256
+:proxima/tile/cyan2s: 624 240
+:proxima/tile/cyan2s: 656 240
+:proxima/tile/cyan2s: 432 288
+:proxima/tile/cyan2s: 464 288
+:proxima/tile/cyan2s: 448 208 rrr
+:proxima/tile/cyan2s: 448 176 rrr
+:proxima/tile/cyan2s: 0 208 rrr
+:proxima/tile/cyan2s: 0 176 rrr
+:proxima/tile/cyan2s: 224 208 rrr
+:proxima/tile/cyan2s: 224 176 rrr
+:proxima/tile/cyan3: 0 176
+:proxima/tile/cyan3a: 0 208
+:proxima/tile/cyan3: 0 240 f
+:proxima/tile/cyan3: 224 176
+:proxima/tile/cyan3a: 224 208
+:proxima/tile/cyan3: 224 240 f
+:proxima/tile/cyan3: 448 176
+:proxima/tile/cyan3a: 448 208
+:proxima/tile/cyan3: 448 240 f
+:proxima/tile/cyan3: 624 240 rrr
+:proxima/tile/cyan3: 16 240 frrr
+:proxima/tile/cyan3a: 656 240 rrr
+:proxima/tile/cyan2s: 176 256
+:proxima/tile/cyan2s: 208 256
+:proxima/tile/cyan2s: 176 240
+:proxima/tile/cyan2s: 208 240
+:proxima/tile/cyan3: 224 240 f
+:proxima/tile/cyan3: 176 240 rrr
+:proxima/tile/cyan3: 240 240 frrr
+:proxima/tile/cyan3a: 208 240 rrr
+:proxima/tile/cyan2s: 400 256
+:proxima/tile/cyan2s: 432 256
+:proxima/tile/cyan2s: 400 240
+:proxima/tile/cyan2s: 432 240
+:proxima/tile/cyan3: 400 240 rrr
+:proxima/tile/cyan2s: 208 288
+:proxima/tile/cyan2s: 240 288
+:proxima/tile/orange2s: 176 256 d
+:proxima/tile/orange2s: 624 256 d
+:proxima/tile/orange2s: 400 256 d
+:proxima/tile/cyan2s: 656 288
+:proxima/tile/cyan2s: 624 288
+:proxima/tile/cyan2s: 560 288
+:proxima/tile/cyan2s: 592 288
+:proxima/tile/cyan2s: 16 288
+:geoo/steel/16x32o.S: 304 48 frrr
+:geoo/steel/16x32o.S: 288 32 frrr
+:geoo/steel/16x32o.S: 256 32 frrr
+:geoo/steel/16x32o.S: 368 48 frr
+:geoo/steel/16x32o.S: 368 80 frr
+:geoo/steel/16x32o.S: 368 112 frr
+:geoo/steel/16x32o.S: 368 144 frr
+:geoo/steel/16x32o.S: 160 64 frrr
+:geoo/steel/16x32o.S: 272 160 frrr
+:geoo/steel/16x32o.S: 320 160 frrr
+:geoo/steel/16x32o.S: 256 48 frr
+:geoo/steel/16x32o.S: 256 80 frr
+:geoo/steel/16x32o.S: 256 112 frr
+:geoo/steel/16x32o.S: 256 144 frr
+:geoo/steel/16x32o.S: 80 48 frrr
+:geoo/steel/16x32o.S: 64 32 frrr
+:geoo/steel/16x32o.S: 32 32 frrr
+:geoo/steel/16x32o.S: 144 48 frr
+:geoo/steel/16x32o.S: 144 80 frr
+:geoo/steel/16x32o.S: 144 112 frr
+:geoo/steel/16x32o.S: 144 144 frr
+:geoo/steel/16x32o.S: 48 160 frrr
+:geoo/steel/16x32o.S: 96 160 frrr
+:geoo/steel/16x32o.S: 32 48 frr
+:geoo/steel/16x32o.S: 32 80 frr
+:geoo/steel/16x32o.S: 32 112 frr
+:geoo/steel/16x32o.S: 32 144 frr
+:geoo/steel/16x32o.S: 192 112 frrr
+:geoo/steel/16x32o.S: 384 64 frrr
+:geoo/steel/16x32o.S: 416 112 frrr
+:geoo/steel/16x32o.S: 448 160 frrr
+:geoo/steel/16x32o.S: 528 48 frrr
+:geoo/steel/16x32o.S: 512 32 frrr
+:geoo/steel/16x32o.S: 480 32 frrr
+:geoo/steel/16x32o.S: 592 48 frr
+:geoo/steel/16x32o.S: 592 80 frr
+:geoo/steel/16x32o.S: 592 112 frr
+:geoo/steel/16x32o.S: 592 144 frr
+:geoo/steel/16x32o.S: 496 160 frrr
+:geoo/steel/16x32o.S: 544 160 frrr
+:geoo/steel/16x32o.S: 480 48 frr
+:geoo/steel/16x32o.S: 480 80 frr
+:geoo/steel/16x32o.S: 480 112 frr
+:geoo/steel/16x32o.S: 480 144 frr
+:geoo/steel/16x32o.S: 608 64 frrr
+:geoo/steel/16x32o.S: 0 160 frrr
+:geoo/steel/16x32o.S: 640 112 fr
+:geoo/steel/16x16o.S: 304 160
+:geoo/steel/16x16o.S: 80 160
+:geoo/steel/16x16o.S: 528 160
+:geoo/steel/16x32o.S: 224 160 frrr
+:proxima/tile/cyan3a: 432 240 rrr
+:proxima/tile/cyan3a: 464 240 rrr
+:proxima/tile/cyan3: 464 240 frrr
+:geoo/steel/16x16o.S: 0 432
+:geoo/steel/16x16o.S: 448 432
+:geoo/steel/16x32o.S: 224 368 frrr
+:geoo/steel/16x32o.S: 0 368 frrr
+:geoo/steel/16x32o.S: 448 368 frrr
+:geoo/steel/16x16o.S: 224 432
+:proxima/tile/cyan3: 1120 240 f
+:geoo/steel/16x32o.S: 1088 336 frrr
+:geoo/steel/16x32o.S: 1072 320 frrr
+:geoo/steel/16x32o.S: 1040 320 frrr
+:geoo/steel/16x32o.S: 1152 336 frr
+:geoo/steel/16x32o.S: 1152 368 frr
+:geoo/steel/16x32o.S: 1152 400 frr
+:geoo/steel/16x32o.S: 1152 432 frr
+:geoo/steel/16x32o.S: 944 352 frrr
+:geoo/steel/16x32o.S: 1056 448 frrr
+:geoo/steel/16x32o.S: 1104 448 frrr
+:geoo/steel/16x32o.S: 1040 336 frr
+:geoo/steel/16x32o.S: 1040 368 frr
+:geoo/steel/16x32o.S: 1040 400 frr
+:geoo/steel/16x32o.S: 1040 432 frr
+:geoo/steel/16x32o.S: 864 336 frrr
+:geoo/steel/16x32o.S: 848 320 frrr
+:geoo/steel/16x32o.S: 816 320 frrr
+:geoo/steel/16x32o.S: 928 336 frr
+:geoo/steel/16x32o.S: 928 368 frr
+:geoo/steel/16x32o.S: 928 400 frr
+:geoo/steel/16x32o.S: 928 432 frr
+:geoo/steel/16x32o.S: 832 448 frrr
+:geoo/steel/16x32o.S: 880 448 frrr
+:geoo/steel/16x32o.S: 816 336 frr
+:geoo/steel/16x32o.S: 816 368 frr
+:geoo/steel/16x32o.S: 816 400 frr
+:geoo/steel/16x32o.S: 816 432 frr
+:geoo/steel/16x32o.S: 976 400 frrr
+:geoo/steel/16x32o.S: 1168 352 frrr
+:geoo/steel/16x32o.S: 1200 400 frrr
+:geoo/steel/16x32o.S: 1232 448 frrr
+:geoo/steel/16x32o.S: 1312 336 frrr
+:geoo/steel/16x32o.S: 1296 320 frrr
+:geoo/steel/16x32o.S: 1264 320 frrr
+:geoo/steel/16x32o.S: 704 336 frr
+:geoo/steel/16x32o.S: 704 368 frr
+:geoo/steel/16x32o.S: 704 400 frr
+:geoo/steel/16x32o.S: 704 432 frr
+:geoo/steel/16x32o.S: 1280 448 frrr
+:geoo/steel/16x32o.S: 1328 448 frrr
+:geoo/steel/16x32o.S: 1264 336 frr
+:geoo/steel/16x32o.S: 1264 368 frr
+:geoo/steel/16x32o.S: 1264 400 frr
+:geoo/steel/16x32o.S: 1264 432 frr
+:geoo/steel/16x32o.S: 720 352 frrr
+:geoo/steel/16x32o.S: 784 448 frrr
+:proxima/tile/cyan2s: 736 576
+:proxima/tile/cyan2s: 768 576
+:proxima/tile/cyan2s: 800 576
+:proxima/tile/cyan2s: 832 576
+:proxima/tile/cyan2s: 864 576
+:proxima/tile/cyan2s: 960 576
+:proxima/tile/cyan2s: 992 576
+:proxima/tile/cyan2s: 1024 576
+:proxima/tile/cyan2s: 1056 576
+:proxima/tile/cyan2s: 1088 576
+:proxima/tile/cyan2s: 1216 576
+:proxima/tile/cyan2s: 1248 576
+:proxima/tile/cyan2s: 1280 576
+:proxima/tile/cyan2s: 1312 576
+:proxima/tile/cyan2s: 1184 576
+:geoo/steel/16x32o.S: 752 400 fr
+:geoo/steel/16x16o.S: 1088 448
+:geoo/steel/16x16o.S: 864 448
+:geoo/steel/16x16o.S: 1312 448
+:geoo/steel/dark_32x16o.S: 784 672
+:geoo/steel/dark_32x16o.S: 816 672
+:geoo/steel/dark_32x16o.S: 1200 672
+:geoo/steel/dark_32x16o.S: 1232 672
+:geoo/steel/dark_32x16o.S: 720 656
+:geoo/steel/dark_32x16o.S: 752 672
+:geoo/steel/dark_32x16o.S: 1296 672
+:geoo/steel/dark_32x16o.S: 1328 672
+:geoo/steel/dark_32x16o.S: 848 672
+:geoo/steel/dark_32x16o.S: 1264 672
+:geoo/steel/dark_32x16o.S: 1104 672
+:geoo/steel/dark_32x16o.S: 1136 672
+:geoo/steel/dark_32x16o.S: 1040 672
+:geoo/steel/dark_32x16o.S: 1072 672
+:geoo/steel/dark_32x16o.S: 1168 656
+:geoo/steel/dark_32x16o.S: 944 656
+:geoo/steel/dark_32x16o.S: 976 672
+:geoo/steel/dark_32x16o.S: 880 672
+:geoo/steel/dark_32x16o.S: 912 672
+:geoo/steel/dark_32x16o.S: 1008 672
+:geoo/steel/dark_32x16o.S: 688 672
+:geoo/steel/dark_32x16o.S: 1168 672
+:geoo/steel/dark_32x16o.S: 720 672
+:geoo/steel/dark_32x16o.S: 944 672
+:geoo/steel/16x32o.S: 1008 448 frrr
+:proxima/tile/cyan2s: 736 544
+:proxima/tile/cyan2s: 768 544
+:proxima/tile/cyan2s: 736 528
+:proxima/tile/cyan2s: 768 528
+:proxima/tile/cyan2s: 672 576
+:proxima/tile/cyan2s: 704 576
+:proxima/tile/cyan2s: 1120 576
+:proxima/tile/cyan2s: 1152 576
+:proxima/tile/cyan2s: 1232 496 rrr
+:proxima/tile/cyan2s: 1232 464 rrr
+:proxima/tile/cyan2s: 784 496 rrr
+:proxima/tile/cyan2s: 784 464 rrr
+:proxima/tile/cyan2s: 1008 496 rrr
+:proxima/tile/cyan2s: 1008 464 rrr
+:proxima/tile/cyan3: 784 464
+:proxima/tile/cyan3a: 784 496
+:proxima/tile/cyan3: 784 528 f
+:proxima/tile/cyan3: 1008 464
+:proxima/tile/cyan3a: 1008 496
+:proxima/tile/cyan3: 1008 528 f
+:proxima/tile/cyan3: 1232 464
+:proxima/tile/cyan3a: 1232 496
+:proxima/tile/cyan3: 1232 528 f
+:proxima/tile/cyan3: 736 528 rrr
+:proxima/tile/cyan3: 800 528 frrr
+:proxima/tile/cyan3a: 768 528 rrr
+:proxima/tile/cyan2s: 960 544
+:proxima/tile/cyan2s: 992 544
+:proxima/tile/cyan2s: 960 528
+:proxima/tile/cyan2s: 992 528
+:proxima/tile/cyan3: 1008 528 f
+:proxima/tile/cyan3: 960 528 rrr
+:proxima/tile/cyan3: 1024 528 frrr
+:proxima/tile/cyan3a: 992 528 rrr
+:proxima/tile/cyan2s: 1184 544
+:proxima/tile/cyan2s: 1216 544
+:proxima/tile/cyan2s: 1184 528
+:proxima/tile/cyan2s: 1216 528
+:proxima/tile/cyan3: 1232 528 f
+:proxima/tile/cyan3: 1184 528 rrr
+:proxima/tile/cyan3: 1248 528 frrr
+:proxima/tile/cyan3a: 1216 528 rrr
+:proxima/tile/cyan2s: 896 576
+:proxima/tile/cyan2s: 928 576
+:proxima/tile/orange2s: 960 544 d
+:proxima/tile/orange2s: 736 544 d
+:proxima/tile/orange2s: 1184 544 d
+:proxima/tile/cyan2s: 720 288
+:proxima/tile/cyan2s: 752 288
+:proxima/tile/cyan2s: 784 288
+:proxima/tile/cyan2s: 816 288
+:proxima/tile/cyan2s: 848 288
+:proxima/tile/cyan2s: 944 288
+:proxima/tile/cyan2s: 976 288
+:proxima/tile/cyan2s: 1008 288
+:proxima/tile/cyan2s: 1040 288
+:proxima/tile/cyan2s: 1072 288
+:proxima/tile/cyan2s: 1200 288
+:proxima/tile/cyan2s: 1168 288
+:proxima/tile/cyan2s: 1296 256
+:proxima/tile/cyan2s: 1328 256
+:proxima/tile/cyan2s: 1296 240
+:proxima/tile/cyan2s: 1328 240
+:proxima/tile/cyan2s: 1104 288
+:proxima/tile/cyan2s: 1136 288
+:proxima/tile/cyan2s: 1120 208 rrr
+:proxima/tile/cyan2s: 1120 176 rrr
+:proxima/tile/cyan2s: 672 208 rrr
+:proxima/tile/cyan2s: 672 176 rrr
+:proxima/tile/cyan2s: 896 208 rrr
+:proxima/tile/cyan2s: 896 176 rrr
+:proxima/tile/cyan3: 672 176
+:proxima/tile/cyan3a: 672 208
+:proxima/tile/cyan3: 896 176
+:proxima/tile/cyan3a: 896 208
+:proxima/tile/cyan3: 896 240 f
+:proxima/tile/cyan3: 1120 176
+:proxima/tile/cyan3a: 1120 208
+:proxima/tile/cyan3: 1120 240 f
+:proxima/tile/cyan3: 1296 240 rrr
+:proxima/tile/cyan3: 688 240 frrr
+:proxima/tile/cyan3a: 1328 240 rrr
+:proxima/tile/cyan2s: 848 256
+:proxima/tile/cyan2s: 880 256
+:proxima/tile/cyan2s: 848 240
+:proxima/tile/cyan2s: 880 240
+:proxima/tile/cyan3: 896 240 f
+:proxima/tile/cyan3: 848 240 rrr
+:proxima/tile/cyan3: 912 240 frrr
+:proxima/tile/cyan3a: 880 240 rrr
+:proxima/tile/cyan2s: 1072 256
+:proxima/tile/cyan2s: 1104 256
+:proxima/tile/cyan2s: 1072 240
+:proxima/tile/cyan2s: 1104 240
+:proxima/tile/cyan3: 1072 240 rrr
+:proxima/tile/cyan2s: 880 288
+:proxima/tile/cyan2s: 912 288
+:proxima/tile/orange2s: 848 256 d
+:proxima/tile/orange2s: 1296 256 d
+:proxima/tile/orange2s: 1072 256 d
+:proxima/tile/cyan2s: 1328 288
+:proxima/tile/cyan2s: 1296 288
+:proxima/tile/cyan2s: 1232 288
+:proxima/tile/cyan2s: 1264 288
+:proxima/tile/cyan2s: 688 288
+:geoo/steel/16x32o.S: 976 48 frrr
+:geoo/steel/16x32o.S: 960 32 frrr
+:geoo/steel/16x32o.S: 928 32 frrr
+:geoo/steel/16x32o.S: 1040 48 frr
+:geoo/steel/16x32o.S: 1040 80 frr
+:geoo/steel/16x32o.S: 1040 112 frr
+:geoo/steel/16x32o.S: 1040 144 frr
+:geoo/steel/16x32o.S: 832 64 frrr
+:geoo/steel/16x32o.S: 944 160 frrr
+:geoo/steel/16x32o.S: 992 160 frrr
+:geoo/steel/16x32o.S: 928 48 frr
+:geoo/steel/16x32o.S: 928 80 frr
+:geoo/steel/16x32o.S: 928 112 frr
+:geoo/steel/16x32o.S: 928 144 frr
+:geoo/steel/16x32o.S: 752 48 frrr
+:geoo/steel/16x32o.S: 736 32 frrr
+:geoo/steel/16x32o.S: 704 32 frrr
+:geoo/steel/16x32o.S: 816 48 frr
+:geoo/steel/16x32o.S: 816 80 frr
+:geoo/steel/16x32o.S: 816 112 frr
+:geoo/steel/16x32o.S: 816 144 frr
+:geoo/steel/16x32o.S: 720 160 frrr
+:geoo/steel/16x32o.S: 768 160 frrr
+:geoo/steel/16x32o.S: 704 48 frr
+:geoo/steel/16x32o.S: 704 80 frr
+:geoo/steel/16x32o.S: 704 112 frr
+:geoo/steel/16x32o.S: 704 144 frr
+:geoo/steel/16x32o.S: 864 112 frrr
+:geoo/steel/16x32o.S: 1056 64 frrr
+:geoo/steel/16x32o.S: 1088 112 frrr
+:geoo/steel/16x32o.S: 1120 160 frrr
+:geoo/steel/16x32o.S: 1200 48 frrr
+:geoo/steel/16x32o.S: 1184 32 frrr
+:geoo/steel/16x32o.S: 1152 32 frrr
+:geoo/steel/16x32o.S: 1264 48 frr
+:geoo/steel/16x32o.S: 1264 80 frr
+:geoo/steel/16x32o.S: 1264 112 frr
+:geoo/steel/16x32o.S: 1264 144 frr
+:geoo/steel/16x32o.S: 1168 160 frrr
+:geoo/steel/16x32o.S: 1216 160 frrr
+:geoo/steel/16x32o.S: 1152 48 frr
+:geoo/steel/16x32o.S: 1152 80 frr
+:geoo/steel/16x32o.S: 1152 112 frr
+:geoo/steel/16x32o.S: 1152 144 frr
+:geoo/steel/16x32o.S: 1280 64 frrr
+:geoo/steel/16x32o.S: 672 160 frrr
+:geoo/steel/16x32o.S: 1312 112 fr
+:geoo/steel/16x16o.S: 976 160
+:geoo/steel/16x16o.S: 752 160
+:geoo/steel/16x16o.S: 1200 160
+:geoo/steel/16x32o.S: 896 160 frrr
+:proxima/tile/cyan3a: 1104 240 rrr
+:proxima/tile/cyan3a: 1136 240 rrr
+:proxima/tile/cyan3: 1136 240 frrr
+:geoo/steel/16x16o.S: 672 432
+:geoo/steel/16x16o.S: 1120 432
+:geoo/steel/16x32o.S: 896 368 frrr
+:geoo/steel/16x32o.S: 672 368 frrr
+:geoo/steel/16x32o.S: 1120 368 frrr
+:geoo/steel/16x16o.S: 896 432

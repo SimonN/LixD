@@ -1,0 +1,655 @@
+$BUILT 2014-04-16 21:17:37
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Access Denied (4p)
+
+#SIZE_X 1600
+#SIZE_Y 720
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 45
+#INITIAL 75
+#REQUIRED 75
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 75
+#WALKER 99
+#JUMPER 99
+#EXPLODER2 45
+#BLOCKER 10
+#PLATFORMER 50
+#BATTER 35
+#DIGGER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/bricks/Hatch.H: 232 336 r
+:matt/bricks/Hatch.H: 504 336
+:matt/bricks/Hatch.H: 1032 336 r
+:matt/bricks/Hatch.H: 1304 336
+
+:matt/bricks/Goal.G: 608 96
+:matt/bricks/Goal.G: 128 96
+:matt/bricks/Goal.G: 1408 96
+:matt/bricks/Goal.G: 928 96
+
+:geoo/construction/sawblade_small.F: 144 448
+:geoo/construction/sawblade_small.F: 624 448
+:geoo/construction/Laser_vr_64.F: 358 338
+:geoo/construction/Laser_vr_64.F: 358 402
+:geoo/construction/Laser_vr_64.F: 426 402
+:geoo/construction/Laser_vr_64.F: 426 338
+:geoo/construction/Laser_vr_64.F: 426 624
+:geoo/construction/Laser_vr_64.F: 426 560
+:geoo/construction/Laser_vr_64.F: 358 624
+:geoo/construction/Laser_vr_64.F: 358 560
+:geoo/construction/Laser_vr_64.F: 426 520
+:geoo/construction/Laser_vr_64.F: 358 520
+:geoo/construction/Laser_hz_64.F: 304 472
+:geoo/construction/Laser_hz_64.F: 304 494
+:geoo/construction/Laser_hz_64.F: 432 494
+:geoo/construction/Laser_hz_64.F: 432 472
+:geoo/construction/Laser_vr_64.F: 426 418
+:geoo/construction/Laser_vr_64.F: 358 418
+:geoo/construction/Laser_vr_64.F: 358 504
+:geoo/construction/Laser_vr_64.F: 426 504
+:geoo/construction/Laser_vr_64.F: 426 258
+:geoo/construction/Laser_vr_64.F: 426 210
+:geoo/construction/Laser_vr_64.F: 426 274
+:geoo/construction/Laser_vr_64.F: 358 258
+:geoo/construction/Laser_vr_64.F: 358 210
+:geoo/construction/Laser_vr_64.F: 358 274
+:geoo/construction/Laser_vr_64.F: 426 162
+:geoo/construction/Laser_vr_64.F: 426 178
+:geoo/construction/Laser_vr_64.F: 358 162
+:geoo/construction/Laser_vr_64.F: 358 178
+:geoo/construction/sawblade.F: 220 124
+:geoo/construction/sawblade.F: 542 124
+:geoo/construction/sawblade_small.F: 204 128
+:geoo/construction/sawblade_small.F: 244 128
+:geoo/construction/sawblade_small.F: 526 128
+:geoo/construction/sawblade_small.F: 564 128
+:geoo/construction/Laser_vr_64.F: 392 0
+:geoo/construction/Laser_vr_64.F: 392 42
+:geoo/construction/Laser_vr_64.F: 392 40
+:geoo/construction/sawblade_small.F: 944 448
+:geoo/construction/sawblade_small.F: 1424 448
+:geoo/construction/Laser_vr_64.F: 1158 336
+:geoo/construction/Laser_vr_64.F: 1158 400
+:geoo/construction/Laser_vr_64.F: 1232 400
+:geoo/construction/Laser_vr_64.F: 1232 336
+:geoo/construction/Laser_vr_64.F: 1234 624
+:geoo/construction/Laser_vr_64.F: 1234 560
+:geoo/construction/Laser_vr_64.F: 1158 624
+:geoo/construction/Laser_vr_64.F: 1158 560
+:geoo/construction/Laser_vr_64.F: 1234 528
+:geoo/construction/Laser_vr_64.F: 1158 528
+:geoo/construction/Laser_hz_64.F: 1104 474
+:geoo/construction/Laser_hz_64.F: 1104 496
+:geoo/construction/Laser_hz_64.F: 1232 496
+:geoo/construction/Laser_hz_64.F: 1232 474
+:geoo/construction/Laser_vr_64.F: 1232 416
+:geoo/construction/Laser_vr_64.F: 1158 416
+:geoo/construction/Laser_vr_64.F: 1158 506
+:geoo/construction/Laser_vr_64.F: 1234 506
+:geoo/construction/Laser_vr_64.F: 1232 256
+:geoo/construction/Laser_vr_64.F: 1232 208
+:geoo/construction/Laser_vr_64.F: 1232 272
+:geoo/construction/Laser_vr_64.F: 1158 256
+:geoo/construction/Laser_vr_64.F: 1158 208
+:geoo/construction/Laser_vr_64.F: 1158 272
+:geoo/construction/Laser_vr_64.F: 1232 160
+:geoo/construction/Laser_vr_64.F: 1232 176
+:geoo/construction/Laser_vr_64.F: 1158 160
+:geoo/construction/Laser_vr_64.F: 1158 176
+:geoo/construction/sawblade.F: 1020 124
+:geoo/construction/sawblade.F: 1340 122
+:geoo/construction/sawblade_small.F: 1006 128
+:geoo/construction/sawblade_small.F: 1044 128
+:geoo/construction/sawblade_small.F: 1324 128
+:geoo/construction/sawblade_small.F: 1364 128
+:geoo/construction/Laser_vr_64.F: 1194 0
+:geoo/construction/Laser_vr_64.F: 1194 48
+:geoo/construction/Laser_vr_64.F: 1194 48
+
+:geoo/construction/rod_steel/straight32.S: 424 546 rrr
+:geoo/construction/rod_steel/straight32.S: 424 330 rrr
+:geoo/construction/rod_steel/straight32.S: 424 338 rrr
+:geoo/construction/rod_steel/straight32.S: 424 370 rrr
+:geoo/construction/rod_steel/straight32.S: 424 402 rrr
+:geoo/construction/rod_steel/straight32.S: 424 434 rrr
+:geoo/construction/rod_steel/straight32.S: 424 462 rrr
+:geoo/construction/rod_steel/straight32.S: 424 500 rrr
+:geoo/construction/rod_steel/straight32.S: 424 514 rrr
+:geoo/steel/32x16o.S: 128 704
+:geoo/steel/32x16o.S: 160 704
+:geoo/steel/32x16o.S: 192 704
+:geoo/steel/32x16o.S: 256 704
+:geoo/steel/32x16o.S: 288 704
+:geoo/steel/32x16o.S: 320 704
+:geoo/steel/32x16o.S: 480 704
+:geoo/steel/32x16o.S: 512 704
+:geoo/steel/32x16o.S: 576 704
+:geoo/steel/32x16o.S: 608 704
+:geoo/steel/32x16o.S: 640 704
+:geoo/steel/32x16o.S: 672 704
+:geoo/steel/32x32o.S: 688 672
+:geoo/steel/32x32o.S: 720 672
+:matt/bricks/03a: 688 512
+:matt/bricks/03a: 688 448
+:geoo/steel/16x16o.S: 672 688
+:geoo/steel/32x32o.S: 160 448
+:geoo/steel/32x32o.S: 192 448
+:matt/bricks/02b: 608 144
+:geoo/steel/32x32o.S: 224 448
+:geoo/steel/32x32o.S: 256 448
+:geoo/steel/32x32o.S: 144 528
+:geoo/steel/32x32o.S: 176 528
+:geoo/steel/32x32o.S: 128 608
+:geoo/steel/32x32o.S: 160 608
+:geoo/steel/32x32o.S: 256 480
+:geoo/steel/32x32o.S: 256 512
+:geoo/steel/32x32o.S: 256 544
+:geoo/steel/32x32o.S: 192 608
+:geoo/steel/32x32o.S: 512 544 rrr
+:geoo/steel/32x32o.S: 512 512 rrr
+:geoo/steel/32x32o.S: 512 480 rrr
+:geoo/steel/32x32o.S: 512 448 rrr
+:geoo/steel/32x32o.S: 624 528 rr
+:geoo/steel/32x32o.S: 592 528 rr
+:geoo/steel/32x32o.S: 640 608 rr
+:geoo/steel/32x32o.S: 608 608 rr
+:geoo/steel/32x32o.S: 544 448 rrr
+:geoo/steel/32x32o.S: 576 448 rrr
+:geoo/steel/32x32o.S: 608 448 rrr
+:geoo/steel/32x32o.S: 576 608 rr
+:geoo/construction/rod_steel/straight32.S: 368 626 rrr
+:geoo/construction/rod_steel/straight32.S: 424 642 rrr
+:geoo/construction/rod_steel/straight32.S: 368 594 rrr
+:geoo/construction/rod_steel/straight32.S: 424 610 rrr
+:geoo/construction/rod_steel/straight32.S: 368 562 rrr
+:geoo/construction/rod_steel/straight32.S: 424 578 rrr
+:geoo/construction/rod_steel/straight32.S: 368 514 rrr
+:geoo/construction/rod_steel/straight32.S: 368 500 rrr
+:geoo/construction/rod_steel/straight32.S: 368 462 rrr
+:geoo/construction/rod_steel/straight32.S: 368 434 rrr
+:geoo/construction/rod_steel/straight32.S: 368 402 rrr
+:geoo/construction/rod_steel/straight32.S: 368 370 rrr
+:geoo/construction/rod_steel/straight32.S: 368 338 rrr
+:geoo/construction/rod_steel/straight32.S: 424 656 rrr
+:geoo/construction/rod_steel/straight32.S: 368 656 rrr
+:geoo/construction/rod_steel/straight32.S: 368 546 rrr
+:geoo/construction/rod_steel/straight32.S: 368 330 rrr
+:geoo/steel/32x16o.S: 448 704
+:geoo/steel/32x16o.S: 352 704
+:geoo/construction/rod_steel/straight32.S: 396 472 rrr
+:geoo/construction/rod_steel/straight32.S: 396 440 rrr
+:geoo/construction/rod_steel/straight32.S: 396 408 rrr
+:geoo/construction/rod_steel/straight32.S: 396 376 rrr
+:geoo/construction/rod_steel/straight32.S: 396 344 rrr
+:geoo/construction/rod_steel/straight32.S: 396 330 rrr
+:matt/bricks/02b: 688 576
+:geoo/construction/rod_steel/straight32.S: 376 462 rrr
+:geoo/construction/rod_steel/straight32.S: 376 434 rrr
+:geoo/construction/rod_steel/straight32.S: 376 402 rrr
+:geoo/construction/rod_steel/straight32.S: 376 370 rrr
+:geoo/construction/rod_steel/straight32.S: 376 338 rrr
+:geoo/construction/rod_steel/straight32.S: 376 330 rrr
+:geoo/construction/rod_steel/straight32.S: 376 626 rrr
+:geoo/construction/rod_steel/straight32.S: 376 594 rrr
+:geoo/construction/rod_steel/straight32.S: 376 562 rrr
+:geoo/construction/rod_steel/straight32.S: 376 514 rrr
+:geoo/construction/rod_steel/straight32.S: 376 500 rrr
+:geoo/construction/rod_steel/straight32.S: 376 656 rrr
+:geoo/construction/rod_steel/straight32.S: 376 546 rrr
+:geoo/construction/rod_steel/straight32.S: 416 546 rrr
+:geoo/construction/rod_steel/straight32.S: 416 500 rrr
+:geoo/construction/rod_steel/straight32.S: 416 514 rrr
+:geoo/construction/rod_steel/straight32.S: 416 642 rrr
+:geoo/construction/rod_steel/straight32.S: 416 610 rrr
+:geoo/construction/rod_steel/straight32.S: 416 578 rrr
+:geoo/construction/rod_steel/straight32.S: 416 656 rrr
+:geoo/construction/rod_steel/straight32.S: 416 330 rrr
+:geoo/construction/rod_steel/straight32.S: 416 338 rrr
+:geoo/construction/rod_steel/straight32.S: 416 370 rrr
+:geoo/construction/rod_steel/straight32.S: 416 402 rrr
+:geoo/construction/rod_steel/straight32.S: 416 434 rrr
+:geoo/construction/rod_steel/straight32.S: 416 462 rrr
+:geoo/steel/32x16o.S: 416 704
+:matt/bricks/02b: 688 608
+:matt/bricks/02b: 128 144
+:matt/bricks/03a: 48 512
+:matt/bricks/03a: 48 448
+:matt/bricks/02b: 48 576
+:matt/bricks/02b: 48 608
+:geoo/steel/32x16o.S: 96 704
+:geoo/steel/32x32o.S: 48 672
+:geoo/steel/32x32o.S: 80 672
+:geoo/steel/16x16o.S: 0 688
+:geoo/steel/16x16o.S: 112 688
+:geoo/steel/32x32o.S: 256 576
+:geoo/steel/32x32o.S: 256 608
+:geoo/steel/32x32o.S: 256 640
+:geoo/steel/32x32o.S: 512 576
+:geoo/steel/32x32o.S: 512 608
+:geoo/steel/32x32o.S: 512 640
+:geoo/steel/32x16o.S: 512 672
+:geoo/steel/32x16o.S: 256 672
+:geoo/steel/32x16o.S: 96 560 rrr
+:geoo/steel/32x16o.S: 96 528 rrr
+:geoo/steel/32x16o.S: 96 496 rrr
+:geoo/steel/32x16o.S: 96 464 rrr
+:geoo/steel/32x16o.S: 688 464 rrr
+:geoo/steel/32x16o.S: 688 496 rrr
+:geoo/steel/32x16o.S: 688 528 rrr
+:geoo/steel/32x16o.S: 688 560 rrr
+:geoo/steel/32x16o.S: 688 592 rrr
+:geoo/construction/rod_steel/straight32.S: 424 270 rrr
+:geoo/construction/rod_steel/straight32.S: 424 298 rrr
+:geoo/construction/rod_steel/straight32.S: 368 298 rrr
+:geoo/construction/rod_steel/straight32.S: 368 270 rrr
+:geoo/construction/rod_steel/straight32.S: 376 298 rrr
+:geoo/construction/rod_steel/straight32.S: 376 270 rrr
+:geoo/construction/rod_steel/straight32.S: 416 270 rrr
+:geoo/construction/rod_steel/straight32.S: 416 298 rrr
+:geoo/construction/rod_steel/straight32.S: 424 210 rrr
+:geoo/construction/rod_steel/straight32.S: 424 238 rrr
+:geoo/construction/rod_steel/straight32.S: 368 238 rrr
+:geoo/construction/rod_steel/straight32.S: 368 210 rrr
+:geoo/construction/rod_steel/straight32.S: 396 504 rrr
+:matt/bricks/03a: 688 384
+:geoo/steel/32x16o.S: 688 384
+:geoo/steel/32x16o.S: 720 384
+:geoo/steel/32x16o.S: 688 400 rrr
+:geoo/steel/32x16o.S: 688 432 rrr
+:geoo/steel/16x16o.S: 688 624
+:matt/bricks/03a: 48 384
+:geoo/steel/32x16o.S: 96 400 rrr
+:geoo/steel/32x16o.S: 96 432 rrr
+:geoo/steel/32x16o.S: 96 592 rrr
+:geoo/steel/16x16o.S: 96 624
+:matt/bricks/02b: 544 144
+:matt/bricks/02b: 192 144
+:geoo/construction/rod_steel/straight32.S: 424 150 rrr
+:geoo/construction/rod_steel/straight32.S: 424 178 rrr
+:geoo/construction/rod_steel/straight32.S: 368 178 rrr
+:geoo/construction/rod_steel/straight32.S: 368 150 rrr
+:geoo/construction/rod_steel/straight32.S: 424 114 rrr
+:geoo/construction/rod_steel/straight32.S: 424 142 rrr
+:geoo/construction/rod_steel/straight32.S: 368 142 rrr
+:geoo/construction/rod_steel/straight32.S: 368 114 rrr
+:geoo/steel/32x16o.S: 144 144
+:geoo/steel/32x16o.S: 624 144
+:geoo/steel/32x32o.S: 16 672
+:geoo/steel/16x16o.S: 0 672
+:geoo/steel/16x16o.S: 0 656
+:geoo/steel/16x16o.S: 0 640
+:geoo/steel/16x16o.S: 0 624
+:geoo/steel/16x16o.S: 0 608
+:geoo/steel/16x16o.S: 16 608
+:geoo/steel/16x16o.S: 784 656
+:geoo/steel/16x16o.S: 784 640
+:geoo/steel/16x16o.S: 784 624
+:geoo/steel/16x16o.S: 784 608
+:geoo/steel/16x16o.S: 768 608
+:geoo/steel/16x16o.S: 784 672
+:geoo/steel/32x32o.S: 752 672
+:geoo/steel/16x16o.S: 784 688
+:matt/bricks/02b: 608 176
+:matt/bricks/02b: 544 176
+:matt/bricks/02b: 128 176
+:matt/bricks/02b: 192 176
+:geoo/construction/rod_steel/straight32.S: 424 82 rrr
+:geoo/construction/rod_steel/straight32.S: 368 82 rrr
+:matt/bricks/02b: 256 144
+:matt/bricks/02b: 256 176
+:matt/bricks/02b: 480 144
+:matt/bricks/02b: 480 176
+:matt/bricks/01: 544 704
+:geoo/steel/32x16o.S: 384 704
+:matt/bricks/01: 224 704
+:matt/bricks/02b: 304 144
+:matt/bricks/02b: 432 144
+:geoo/steel/32x16o.S: 336 80
+:geoo/steel/32x16o.S: 432 80
+:geoo/steel/32x16o.S: 304 80
+:geoo/steel/32x16o.S: 304 64
+:geoo/steel/32x16o.S: 464 80
+:geoo/steel/32x16o.S: 464 64
+:geoo/steel/16x16o.S: 48 640
+:geoo/steel/16x16o.S: 64 640
+:geoo/steel/16x16o.S: 80 640
+:geoo/steel/16x16o.S: 96 640
+:geoo/steel/16x16o.S: 688 640
+:geoo/steel/16x16o.S: 704 640
+:geoo/steel/16x16o.S: 720 640
+:geoo/steel/16x16o.S: 736 640
+:geoo/steel/16x16o.S: 96 384
+:geoo/steel/16x16o.S: 80 384
+:geoo/steel/16x16o.S: 64 384
+:geoo/steel/16x16o.S: 48 384
+:geoo/steel/32x16o.S: 48 400 rrr
+:geoo/steel/32x16o.S: 48 432 rrr
+:geoo/steel/32x16o.S: 48 464 rrr
+:geoo/steel/32x16o.S: 48 496 rrr
+:geoo/steel/32x16o.S: 48 528 rrr
+:geoo/steel/32x16o.S: 48 560 rrr
+:geoo/steel/32x16o.S: 48 592 rrr
+:geoo/steel/16x16o.S: 48 624
+:geoo/steel/32x16o.S: 736 592 rrr
+:geoo/steel/32x16o.S: 736 560 rrr
+:geoo/steel/32x16o.S: 736 528 rrr
+:geoo/steel/32x16o.S: 736 496 rrr
+:geoo/steel/32x16o.S: 736 464 rrr
+:geoo/steel/32x16o.S: 736 432 rrr
+:geoo/steel/32x16o.S: 736 400 rrr
+:geoo/steel/16x16o.S: 736 624
+:geoo/steel/32x32o.S: 256 416
+:geoo/steel/32x32o.S: 256 384
+:geoo/steel/32x16o.S: 240 416 rrr
+:geoo/steel/32x16o.S: 240 384 rrr
+:geoo/steel/32x32o.S: 512 416
+:geoo/steel/32x32o.S: 512 384
+:geoo/steel/32x16o.S: 544 416 rrr
+:geoo/steel/32x16o.S: 544 384 rrr
+:geoo/construction/rod_steel/straight32.S: 376 238 rrr
+:geoo/construction/rod_steel/straight32.S: 376 210 rrr
+:geoo/construction/rod_steel/straight32.S: 416 210 rrr
+:geoo/construction/rod_steel/straight32.S: 416 238 rrr
+:geoo/construction/rod_steel/straight32.S: 376 178 rrr
+:geoo/construction/rod_steel/straight32.S: 376 150 rrr
+:geoo/construction/rod_steel/straight32.S: 416 150 rrr
+:geoo/construction/rod_steel/straight32.S: 416 178 rrr
+:geoo/construction/rod_steel/straight32.S: 1232 544 rrr
+:geoo/construction/rod_steel/straight32.S: 1232 336 rrr
+:geoo/construction/rod_steel/straight32.S: 1232 336 rrr
+:geoo/construction/rod_steel/straight32.S: 1232 368 rrr
+:geoo/construction/rod_steel/straight32.S: 1232 400 rrr
+:geoo/construction/rod_steel/straight32.S: 1232 432 rrr
+:geoo/construction/rod_steel/straight32.S: 1232 464 rrr
+:geoo/construction/rod_steel/straight32.S: 1232 502 rrr
+:geoo/construction/rod_steel/straight32.S: 1232 512 rrr
+:geoo/steel/32x16o.S: 928 704
+:geoo/steel/32x16o.S: 960 704
+:geoo/steel/32x16o.S: 992 704
+:geoo/steel/32x16o.S: 1056 704
+:geoo/steel/32x16o.S: 1088 704
+:geoo/steel/32x16o.S: 1120 704
+:geoo/steel/32x16o.S: 1280 704
+:geoo/steel/32x16o.S: 1312 704
+:geoo/steel/32x16o.S: 1376 704
+:geoo/steel/32x16o.S: 1408 704
+:geoo/steel/32x16o.S: 1440 704
+:geoo/steel/32x16o.S: 1472 704
+:geoo/steel/32x32o.S: 1488 672
+:geoo/steel/32x32o.S: 1520 672
+:matt/bricks/03a: 1488 512
+:matt/bricks/03a: 1488 448
+:geoo/steel/16x16o.S: 1472 688
+:geoo/steel/32x32o.S: 960 448
+:geoo/steel/32x32o.S: 992 448
+:matt/bricks/02b: 1408 144
+:geoo/steel/32x32o.S: 1024 448
+:geoo/steel/32x32o.S: 1056 448
+:geoo/steel/32x32o.S: 944 528
+:geoo/steel/32x32o.S: 976 528
+:geoo/steel/32x32o.S: 928 608
+:geoo/steel/32x32o.S: 960 608
+:geoo/steel/32x32o.S: 1056 480
+:geoo/steel/32x32o.S: 1056 512
+:geoo/steel/32x32o.S: 1056 544
+:geoo/steel/32x32o.S: 992 608
+:geoo/steel/32x32o.S: 1312 544 rrr
+:geoo/steel/32x32o.S: 1312 512 rrr
+:geoo/steel/32x32o.S: 1312 480 rrr
+:geoo/steel/32x32o.S: 1312 448 rrr
+:geoo/steel/32x32o.S: 1424 528 rr
+:geoo/steel/32x32o.S: 1392 528 rr
+:geoo/steel/32x32o.S: 1440 608 rr
+:geoo/steel/32x32o.S: 1408 608 rr
+:geoo/steel/32x32o.S: 1344 448 rrr
+:geoo/steel/32x32o.S: 1376 448 rrr
+:geoo/steel/32x32o.S: 1408 448 rrr
+:geoo/steel/32x32o.S: 1376 608 rr
+:geoo/construction/rod_steel/straight32.S: 1168 624 rrr
+:geoo/construction/rod_steel/straight32.S: 1232 640 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 592 rrr
+:geoo/construction/rod_steel/straight32.S: 1232 608 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 560 rrr
+:geoo/construction/rod_steel/straight32.S: 1232 576 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 512 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 502 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 464 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 432 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 400 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 368 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 336 rrr
+:geoo/construction/rod_steel/straight32.S: 1232 656 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 656 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 544 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 336 rrr
+:geoo/steel/32x16o.S: 1248 704
+:geoo/steel/32x16o.S: 1152 704
+:geoo/construction/rod_steel/straight32.S: 1200 480 rrr
+:geoo/construction/rod_steel/straight32.S: 1200 448 rrr
+:geoo/construction/rod_steel/straight32.S: 1200 416 rrr
+:geoo/construction/rod_steel/straight32.S: 1200 384 rrr
+:geoo/construction/rod_steel/straight32.S: 1200 352 rrr
+:geoo/construction/rod_steel/straight32.S: 1200 336 rrr
+:matt/bricks/02b: 1488 576
+:geoo/construction/rod_steel/straight32.S: 1176 464 rrr
+:geoo/construction/rod_steel/straight32.S: 1176 432 rrr
+:geoo/construction/rod_steel/straight32.S: 1176 400 rrr
+:geoo/construction/rod_steel/straight32.S: 1176 368 rrr
+:geoo/construction/rod_steel/straight32.S: 1176 336 rrr
+:geoo/construction/rod_steel/straight32.S: 1176 336 rrr
+:geoo/construction/rod_steel/straight32.S: 1176 624 rrr
+:geoo/construction/rod_steel/straight32.S: 1176 592 rrr
+:geoo/construction/rod_steel/straight32.S: 1176 560 rrr
+:geoo/construction/rod_steel/straight32.S: 1176 512 rrr
+:geoo/construction/rod_steel/straight32.S: 1176 502 rrr
+:geoo/construction/rod_steel/straight32.S: 1176 656 rrr
+:geoo/construction/rod_steel/straight32.S: 1176 544 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 544 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 502 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 512 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 640 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 608 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 576 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 656 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 336 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 336 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 368 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 400 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 432 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 464 rrr
+:geoo/steel/32x16o.S: 1216 704
+:matt/bricks/02b: 1488 608
+:matt/bricks/02b: 928 144
+:matt/bricks/03a: 848 512
+:matt/bricks/03a: 848 448
+:matt/bricks/02b: 848 576
+:matt/bricks/02b: 848 608
+:geoo/steel/32x16o.S: 896 704
+:geoo/steel/32x32o.S: 848 672
+:geoo/steel/32x32o.S: 880 672
+:geoo/steel/16x16o.S: 800 688
+:geoo/steel/16x16o.S: 912 688
+:geoo/steel/32x32o.S: 1056 576
+:geoo/steel/32x32o.S: 1056 608
+:geoo/steel/32x32o.S: 1056 640
+:geoo/steel/32x32o.S: 1312 576
+:geoo/steel/32x32o.S: 1312 608
+:geoo/steel/32x32o.S: 1312 640
+:geoo/steel/32x16o.S: 1312 672
+:geoo/steel/32x16o.S: 1056 672
+:geoo/steel/32x16o.S: 896 560 rrr
+:geoo/steel/32x16o.S: 896 528 rrr
+:geoo/steel/32x16o.S: 896 496 rrr
+:geoo/steel/32x16o.S: 896 464 rrr
+:geoo/steel/32x16o.S: 1488 464 rrr
+:geoo/steel/32x16o.S: 1488 496 rrr
+:geoo/steel/32x16o.S: 1488 528 rrr
+:geoo/steel/32x16o.S: 1488 560 rrr
+:geoo/steel/32x16o.S: 1488 592 rrr
+:geoo/construction/rod_steel/straight32.S: 1232 272 rrr
+:geoo/construction/rod_steel/straight32.S: 1232 304 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 304 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 272 rrr
+:geoo/construction/rod_steel/straight32.S: 1176 304 rrr
+:geoo/construction/rod_steel/straight32.S: 1176 272 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 272 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 304 rrr
+:geoo/construction/rod_steel/straight32.S: 1232 208 rrr
+:geoo/construction/rod_steel/straight32.S: 1232 240 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 240 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 208 rrr
+:geoo/construction/rod_steel/straight32.S: 1200 512 rrr
+:matt/bricks/03a: 1488 384
+:geoo/steel/32x16o.S: 1488 384
+:geoo/steel/32x16o.S: 1520 384
+:geoo/steel/32x16o.S: 1488 400 rrr
+:geoo/steel/32x16o.S: 1488 432 rrr
+:geoo/steel/16x16o.S: 1488 624
+:matt/bricks/03a: 848 384
+:geoo/steel/32x16o.S: 896 400 rrr
+:geoo/steel/32x16o.S: 896 432 rrr
+:geoo/steel/32x16o.S: 896 592 rrr
+:geoo/steel/16x16o.S: 896 624
+:matt/bricks/02b: 1344 144
+:matt/bricks/02b: 992 144
+:geoo/construction/rod_steel/straight32.S: 1232 144 rrr
+:geoo/construction/rod_steel/straight32.S: 1232 176 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 176 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 144 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 112 rrr
+:geoo/construction/rod_steel/straight32.S: 1232 144 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 144 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 112 rrr
+:geoo/steel/32x16o.S: 944 144
+:geoo/steel/32x16o.S: 1424 144
+:geoo/steel/32x32o.S: 816 672
+:geoo/steel/16x16o.S: 800 672
+:geoo/steel/16x16o.S: 800 656
+:geoo/steel/16x16o.S: 800 640
+:geoo/steel/16x16o.S: 800 624
+:geoo/steel/16x16o.S: 800 608
+:geoo/steel/16x16o.S: 816 608
+:geoo/steel/16x16o.S: 1584 656
+:geoo/steel/16x16o.S: 1584 640
+:geoo/steel/16x16o.S: 1584 624
+:geoo/steel/16x16o.S: 1584 608
+:geoo/steel/16x16o.S: 1568 608
+:geoo/steel/16x16o.S: 1584 672
+:geoo/steel/32x32o.S: 1552 672
+:geoo/steel/16x16o.S: 1584 688
+:matt/bricks/02b: 1408 176
+:matt/bricks/02b: 1344 176
+:matt/bricks/02b: 928 176
+:matt/bricks/02b: 992 176
+:geoo/construction/rod_steel/straight32.S: 1224 80 rrr
+:geoo/construction/rod_steel/straight32.S: 1168 80 rrr
+:matt/bricks/02b: 1056 144
+:matt/bricks/02b: 1056 176
+:matt/bricks/02b: 1280 144
+:matt/bricks/02b: 1280 176
+:matt/bricks/01: 1344 704
+:geoo/steel/32x16o.S: 1184 704
+:matt/bricks/01: 1024 704
+:matt/bricks/02b: 1104 144
+:matt/bricks/02b: 1232 144
+:geoo/steel/32x16o.S: 1136 80
+:geoo/steel/32x16o.S: 1232 80
+:geoo/steel/32x16o.S: 1104 80
+:geoo/steel/32x16o.S: 1104 64
+:geoo/steel/32x16o.S: 1264 80
+:geoo/steel/32x16o.S: 1264 64
+:geoo/steel/16x16o.S: 848 640
+:geoo/steel/16x16o.S: 864 640
+:geoo/steel/16x16o.S: 880 640
+:geoo/steel/16x16o.S: 896 640
+:geoo/steel/16x16o.S: 1488 640
+:geoo/steel/16x16o.S: 1504 640
+:geoo/steel/16x16o.S: 1520 640
+:geoo/steel/16x16o.S: 1536 640
+:geoo/steel/16x16o.S: 896 384
+:geoo/steel/16x16o.S: 880 384
+:geoo/steel/16x16o.S: 864 384
+:geoo/steel/16x16o.S: 848 384
+:geoo/steel/32x16o.S: 848 400 rrr
+:geoo/steel/32x16o.S: 848 432 rrr
+:geoo/steel/32x16o.S: 848 464 rrr
+:geoo/steel/32x16o.S: 848 496 rrr
+:geoo/steel/32x16o.S: 848 528 rrr
+:geoo/steel/32x16o.S: 848 560 rrr
+:geoo/steel/32x16o.S: 848 592 rrr
+:geoo/steel/16x16o.S: 848 624
+:geoo/steel/32x16o.S: 1536 592 rrr
+:geoo/steel/32x16o.S: 1536 560 rrr
+:geoo/steel/32x16o.S: 1536 528 rrr
+:geoo/steel/32x16o.S: 1536 496 rrr
+:geoo/steel/32x16o.S: 1536 464 rrr
+:geoo/steel/32x16o.S: 1536 432 rrr
+:geoo/steel/32x16o.S: 1536 400 rrr
+:geoo/steel/16x16o.S: 1536 624
+:geoo/steel/32x32o.S: 1056 416
+:geoo/steel/32x32o.S: 1056 384
+:geoo/steel/32x16o.S: 1040 416 rrr
+:geoo/steel/32x16o.S: 1040 384 rrr
+:geoo/steel/32x32o.S: 1312 416
+:geoo/steel/32x32o.S: 1312 384
+:geoo/steel/32x16o.S: 1344 416 rrr
+:geoo/steel/32x16o.S: 1344 384 rrr
+:geoo/construction/rod_steel/straight32.S: 1176 240 rrr
+:geoo/construction/rod_steel/straight32.S: 1176 208 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 208 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 240 rrr
+:geoo/construction/rod_steel/straight32.S: 1176 176 rrr
+:geoo/construction/rod_steel/straight32.S: 1176 144 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 144 rrr
+:geoo/construction/rod_steel/straight32.S: 1224 176 rrr
+:geoo/steel/32x16o.S: 688 320 rrr
+:geoo/steel/32x16o.S: 896 320 rrr
+:geoo/steel/32x16o.S: 640 304
+:geoo/steel/32x16o.S: 896 304
+:geoo/steel/32x16o.S: 1488 352 rrr
+:geoo/steel/32x16o.S: 96 352 rrr
+:geoo/steel/32x16o.S: 1472 304
+:geoo/steel/32x16o.S: 96 304
+:geoo/steel/32x16o.S: 672 304
+:geoo/steel/32x16o.S: 608 304
+:geoo/steel/32x16o.S: 928 304
+:geoo/steel/32x16o.S: 960 304
+:geoo/steel/32x16o.S: 1408 304
+:geoo/steel/32x16o.S: 1440 304
+:geoo/steel/32x16o.S: 128 304
+:geoo/steel/32x16o.S: 160 304
+:geoo/steel/32x16o.S: 1488 320 rrr
+:geoo/steel/32x16o.S: 96 320 rrr
+:geoo/steel/32x16o.S: 688 352 rrr
+:geoo/steel/32x16o.S: 896 352 rrr
+:geoo/steel/32x16o.S: 576 304
+:geoo/steel/32x16o.S: 544 304
+:geoo/steel/32x16o.S: 1024 304
+:geoo/steel/32x16o.S: 992 304
+:geoo/steel/32x16o.S: 1376 304
+:geoo/steel/32x16o.S: 1344 304
+:geoo/steel/32x16o.S: 224 304
+:geoo/steel/32x16o.S: 192 304
+:geoo/steel/32x16o.S: 784 384
+:geoo/steel/32x16o.S: 1584 384
+:geoo/construction/platformbrick_single: 372 578
+:geoo/construction/platformbrick_single: 420 578
+:geoo/construction/platformbrick_single: 373 407
+:geoo/construction/platformbrick_single: 419 407
+:geoo/construction/platformbrick_single: 1172 575
+:geoo/construction/platformbrick_single: 1228 574
+:geoo/construction/platformbrick_single: 1173 410
+:geoo/construction/platformbrick_single: 1227 410

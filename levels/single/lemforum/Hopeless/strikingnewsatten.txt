@@ -1,0 +1,175 @@
+$BUILT 2014-06-03 21:20:22
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Striking News at Ten
+
+#SIZE_X 1152
+#SIZE_Y 736
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 85
+#REQUIRED 81
+#SPAWN_INTERVAL 6
+#SPAWN_INTERVAL_FAST 6
+
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/abstract/hatch.H: 1064 56
+
+:geoo/abstract/goal.G: 376 680
+
+:geoo/construction/sawblade_small.F: 208 624
+:simon/water.W: 0 704
+
+:geoo/construction/steam_right.T: 210 498
+:geoo/construction/steam_right.T: 210 498
+
+:matt/beach/daytime/00: 466 246 rr
+:matt/beach/daytime/02: 686 64 frr
+:geoo/construction/concrete/064h: 32 672
+:matt/beach/daytime/04: 158 688 rrrn
+:geoo/construction/concrete/064h: 72 672 d
+:matt/beach/daytime/05: 416 704 rrr
+:matt/beach/daytime/14: 719 84
+:matt/beach/daytime/15: 524 177 r
+:geoo/nopales/nopal_06: 490 672 frr
+:matt/beach/daytime/14: 445 220
+:geoo/nopales/nopal_03: 602 316
+:matt/beach/daytime/06: 562 216 rrd
+:matt/beach/daytime/13: 622 274
+:matt/beach/daytime/05: 522 171 rrr
+:geoo/nopales/nopal_10: 558 662 frr
+:geoo/nopales/nopal_04: 530 678
+:geoo/nopales/nopal_12: 508 660
+:geoo/nopales/nopal_08: 592 636 frr
+:geoo/nopales/nopal_00: 598 654 frr
+:geoo/nopales/nopal_05: 582 294 frr
+:geoo/nopales/nopal_10: 546 276
+:geoo/nopales/nopal_09: 604 272
+:geoo/nopales/nopal_08: 624 246
+:geoo/nopales/nopal_12: 638 258 frr
+:matt/beach/daytime/00: 636 188
+:geoo/construction/pillar_32: 192 560
+:geoo/construction/pillar_top: 192 484
+:geoo/construction/pillar_32: 192 592
+:geoo/construction/pillar_32: 192 624
+:geoo/construction/pillar_32: 192 656
+:geoo/construction/pillar_32: 192 672
+:geoo/construction/pillar_32: 192 704
+:geoo/construction/concrete/064h: 64 672 n
+:geoo/construction/squarebrick_small: 96 688
+:geoo/construction/squarebrick_small: 112 688
+:geoo/construction/squarebrick_small: 96 704
+:geoo/construction/squarebrick_small: 112 704
+:geoo/construction/squarebrick_large: 144 688
+:geoo/construction/squarebrick_large: 144 712 d
+:geoo/construction/squarebrick_large: 144 704 n
+:matt/beach/daytime/05: 754 74 r
+:matt/beach/daytime/05: 256 712 rrr
+:geoo/nopales/nopal_07: 416 682
+:geoo/nopales/nopal_08: 482 648
+:geoo/nopales/nopal_12: 424 664 frr
+:geoo/nopales/nopal_09: 388 658 frr
+:geoo/nopales/nopal_08: 450 656 rrr
+:geoo/nopales/nopal_08: 458 640 fr
+:geoo/nopales/nopal_08: 440 638
+:geoo/nopales/fruit_03: 441 632
+:geoo/nopales/nopal_07: 352 658 rrr
+:geoo/nopales/nopal_10: 368 620 fr
+:geoo/nopales/fruit_01: 435 634
+:geoo/nopales/fruit_01: 350 661
+:geoo/nopales/fruit_00: 346 666
+:geoo/nopales/fruit_05: 350 679 fr
+:geoo/nopales/fruit_03: 347 674 fr
+:geoo/nopales/fruit_03: 597 630
+:geoo/nopales/fruit_06: 602 633
+:geoo/nopales/fruit_06: 630 649
+:geoo/nopales/fruit_03: 632 656 r
+:geoo/nopales/fruit_05: 631 662 r
+:matt/beach/daytime/03: 228 264
+:matt/beach/daytime/05: 626 113 rrr
+:matt/beach/daytime/05: 574 139 rrr
+:matt/beach/daytime/05: 833 74 r
+:matt/beach/daytime/00: 413 233 frd
+:matt/beach/daytime/00: 455 297 rrd
+:matt/beach/daytime/15: 462 290 rd
+:geoo/nopales/nopal_09: 432 220
+:matt/beach/daytime/15: 438 304 rd
+:matt/beach/daytime/00: 414 259 fr
+:geoo/nopales/nopal_04: 409 242
+:geoo/nopales/nopal_06: 282 162 fr
+:geoo/nopales/nopal_11: 260 168 frr
+:geoo/nopales/nopal_08: 276 140
+:matt/beach/daytime/15: 210 356 r
+:geoo/construction/pillar_32: 192 560
+:matt/beach/daytime/05: 873 74 r
+:geoo/construction/pillar_32: 192 528
+:geoo/construction/pillar_32: 192 500
+:matt/beach/daytime/13: 496 704 rr
+:geoo/construction/squarebrick_small: 48 688
+:geoo/construction/squarebrick_small: 64 688
+:geoo/construction/squarebrick_small: 48 704
+:geoo/construction/squarebrick_small: 64 704
+:matt/marble/18b: 210 482 d
+:matt/beach/daytime/06: 720 88
+:matt/beach/daytime/06: 662 152
+:matt/beach/daytime/13: 814 108 rr
+:matt/beach/daytime/03: 134 194
+:geoo/nopales/fruit_03: 278 134
+:geoo/nopales/fruit_01: 272 136
+:geoo/nopales/fruit_01: 363 618
+:geoo/nopales/fruit_03: 367 614
+:matt/beach/daytime/06: 658 310 fr
+:matt/beach/daytime/05: 750 450
+:matt/beach/daytime/06: 710 368 rrr
+:matt/beach/daytime/05: 752 564 rr
+:matt/beach/daytime/06: 790 580 rrr
+:matt/beach/daytime/06: 788 438 rrr
+:matt/beach/daytime/06: 760 328 rrr
+:matt/beach/daytime/06: 832 406 r
+:matt/beach/daytime/00: 625 335
+:matt/beach/daytime/06: 715 328 rr
+:matt/beach/daytime/06: 848 544 r
+:matt/beach/daytime/06: 880 608 r
+:matt/beach/daytime/06: 896 496 r
+:matt/beach/daytime/06: 944 624 r
+:matt/beach/daytime/06: 960 480 rrr
+:matt/beach/daytime/06: 880 320 rrr
+:matt/beach/daytime/06: 944 368 rrr
+:matt/beach/daytime/06: 1024 464 rrr
+:matt/beach/daytime/06: 1072 560 rrr
+:matt/beach/daytime/06: 1024 608 rrr
+:matt/beach/daytime/06: 1008 320 r
+:matt/beach/daytime/06: 928 320
+:matt/beach/daytime/06: 872 296
+:matt/beach/daytime/00: 704 274 d
+:matt/beach/daytime/06: 1076 370 rrr
+:geoo/nopales/fruit_06: 283 137
+:geoo/nopales/nopal_10: 372 222
+:geoo/nopales/nopal_12: 346 226 f
+:geoo/nopales/nopal_09: 338 198 frr
+:geoo/nopales/nopal_07: 302 198 rrr
+:geoo/nopales/fruit_03: 297 214 fr
+:geoo/nopales/fruit_05: 300 219 fr
+:geoo/nopales/fruit_01: 300 201
+:geoo/nopales/fruit_00: 296 206
+:geoo/nopales/nopal_10: 316 160 fr
+:matt/beach/daytime/00: 363 273 frd
+:matt/beach/daytime/03: 264 272
+:matt/beach/daytime/00: 383 329 frd

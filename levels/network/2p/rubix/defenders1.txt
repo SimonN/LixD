@@ -1,0 +1,145 @@
+$BUILT 2014-04-16 21:42:57
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Containment Problems (2p)
+
+#SIZE_X 832
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 96
+#START_Y -20
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 45
+#INITIAL 80
+#REQUIRED 1
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 20
+#FLOATER 20
+#WALKER 70
+#JUMPER 70
+#EXPLODER2 10
+#BUILDER 80
+#PLATFORMER 40
+#BASHER 40
+#MINER 40
+#DIGGER 40
+#BATTER 25
+#CUBER 5
+
+:geoo/construction/Hatch.H: 672 0 r
+:geoo/construction/Hatch.H: 128 0
+
+:geoo/construction/Goal2.G: 144 240
+:geoo/construction/Goal2.G: 624 240
+
+:geoo/construction/Laser_hz_64.F: 32 288
+:geoo/construction/Laser_hz_64.F: 736 288
+:geoo/construction/Laseremit_hzr_16.F: 784 288
+:geoo/construction/Laseremit_hzl_16.F: 736 288
+:geoo/construction/Laseremit_hzr_16.F: 80 288
+:geoo/construction/Laseremit_hzl_16.F: 32 288
+:geoo/construction/sawblade.F: 32 336
+:geoo/construction/sawblade.F: 48 352
+:geoo/construction/sawblade.F: 16 320
+:geoo/construction/sawblade.F: 784 320
+:geoo/construction/sawblade.F: 768 336
+:geoo/construction/sawblade.F: 752 352
+:geoo/construction/sawblade.F: 736 352
+:geoo/construction/sawblade.F: 64 352
+:geoo/construction/sawblade.F: 80 352
+:geoo/construction/sawblade.F: 720 352
+:geoo/construction/sawblade.F: 704 352
+:geoo/construction/sawblade.F: 96 352
+
+:geoo/steel/32x64o.S: 512 336
+:geoo/steel/32x16o.S: 544 384
+:geoo/steel/32x16o.S: 576 384
+:geoo/steel/32x16o.S: 640 384
+:geoo/steel/32x64o.S: 704 272
+:geoo/steel/32x64o.S: 704 144
+:geoo/steel/32x64o.S: 704 16
+:geoo/steel/32x64o.S: 704 -48
+:geoo/steel/32x64o.S: 96 272
+:geoo/steel/32x16o.S: 160 384
+:geoo/steel/32x16o.S: 224 384
+:geoo/steel/32x16o.S: 256 384
+:geoo/steel/32x64o.S: 0 240
+:geoo/steel/32x64o.S: 96 144
+:geoo/steel/32x64o.S: 0 176
+:geoo/steel/32x64o.S: 96 -48
+:geoo/construction/concrete/032v: 320 368 rrr
+:geoo/construction/concrete/032v: 448 368 r
+:geoo/steel/32x64o.S: 288 336
+:geoo/steel/32x64o.S: 128 144
+:geoo/steel/32x64o.S: 160 144
+:geoo/steel/32x64o.S: 160 80
+:geoo/steel/32x64o.S: 192 80
+:geoo/steel/32x64o.S: 608 80
+:geoo/steel/32x64o.S: 640 144
+:geoo/steel/32x64o.S: 640 80
+:geoo/steel/32x64o.S: 672 144
+:geoo/steel/32x64o.S: 448 144
+:geoo/steel/32x64o.S: 544 192
+:geoo/steel/32x64o.S: 544 112
+:geoo/steel/32x64o.S: 576 192
+:geoo/steel/32x64o.S: 576 112
+:geoo/steel/32x64o.S: 224 192
+:geoo/steel/32x64o.S: 224 112
+:geoo/steel/32x64o.S: 256 192
+:geoo/steel/32x64o.S: 256 112
+:geoo/steel/32x64o.S: 320 208
+:geoo/steel/32x64o.S: 352 208
+:geoo/steel/32x64o.S: 352 144
+:geoo/steel/32x64o.S: 480 208
+:geoo/steel/32x64o.S: 480 144
+:geoo/steel/32x64o.S: 448 208
+:geoo/steel/32x64o.S: 320 144
+:geoo/construction/pillar_bottom: 160 304
+:geoo/construction/pillar_bottom: 192 304
+:geoo/construction/pillar_bottom: 608 304
+:geoo/construction/pillar_bottom: 640 304
+:geoo/construction/pillar_bottom: 128 304
+:geoo/construction/pillar_bottom: 672 304
+:geoo/construction/concrete/032ha: 448 336
+:geoo/construction/concrete/032hb: 320 336
+:geoo/construction/concrete/032v: 160 320
+:geoo/construction/concrete/032v: 640 320
+:geoo/construction/concrete/016v: 512 192 rrr
+:geoo/construction/concrete/016v: 512 144 rrr
+:geoo/construction/concrete/016v: 288 192 rrr
+:geoo/construction/concrete/016v: 288 144 rrr
+:geoo/construction/concrete/016v: 432 368
+:geoo/construction/concrete/016v: 384 368
+:geoo/steel/32x64o.S: -16 112
+:geoo/steel/32x64o.S: 0 48
+:geoo/steel/32x64o.S: 800 240
+:geoo/steel/32x64o.S: 800 176
+:geoo/steel/32x64o.S: 816 112
+:geoo/steel/32x64o.S: 800 48
+:geoo/construction/concrete/032v: 672 80
+:geoo/construction/concrete/032v: 704 80
+:geoo/steel/32x64o.S: 96 16
+:geoo/construction/concrete/032v: 128 80
+:geoo/construction/concrete/032v: 96 80
+:geoo/steel/64x64.S: 288 16
+:geoo/steel/64x64.S: 480 16
+:geoo/construction/concrete/032: 288 208
+:geoo/construction/concrete/032: 288 240
+:geoo/construction/concrete/032: 512 208
+:geoo/construction/concrete/032: 512 240
+:geoo/construction/concrete/016v: 256 256 rrr
+:geoo/construction/concrete/016v: 544 256 rrr
+:geoo/construction/concrete/016hd: 576 256
+:geoo/construction/concrete/016hc: 224 256
+:geoo/steel/32x16o.S: 160 304
+:geoo/steel/32x16o.S: 640 304
+:geoo/steel/32x32o.S: 352 48
+:geoo/steel/32x32o.S: 448 48
+:geoo/steel/32x16o.S: 496 0
+:geoo/steel/32x16o.S: 304 0

@@ -1,0 +1,149 @@
+$BUILT 2015-06-22 11:35:40
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH We're In This One Together
+
+#SIZE_X 1248
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 320
+#START_Y -20
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 120
+#REQUIRED 60
+#SPAWN_INTERVAL 50
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 2
+#FLOATER 9
+#EXPLODER 3
+#BLOCKER 0
+#BUILDER 2
+#BASHER 4
+#MINER 0
+#DIGGER 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: 608 -16
+
+:matt/winter/Goal.G: 1136 272
+
+:geoo/construction/squisher.T: 384 208
+:geoo/construction/squisher.T: 736 320
+
+:matt/winter/06: 922 303 rr
+:matt/winter/06: 928 320
+:matt/winter/05: 672 -112 f
+:matt/winter/05: 672 16 f
+:matt/winter/06: 720 208 rr
+:matt/winter/06: 720 160 rr
+:matt/winter/06: 720 96 rr
+:matt/winter/06: 720 32 rr
+:matt/winter/06: 736 32 rr
+:matt/winter/06: 736 96 rr
+:matt/winter/06: 736 160 rr
+:matt/winter/06: 736 208 rr
+:matt/winter/06: 688 272 rrr
+:matt/winter/17: 592 352
+:matt/winter/06: 720 384 rrr
+:geoo/steel/32x16o.S: 720 384
+:matt/winter/02: 632 352 rrr
+:geoo/steel/32x16o.S: 752 384
+:matt/earth/13: 768 372 frd
+:matt/winter/06: 768 384 rrrn
+:matt/winter/06: 752 272 rrr
+:matt/winter/05: 656 -112 f
+:matt/winter/06: 736 16 rr
+:matt/winter/06: 720 16 rr
+:matt/winter/06: 832 384 rrr
+:matt/winter/15: 704 240
+:matt/winter/15: 688 208
+:matt/winter/15: 736 240
+:matt/winter/15: 736 256
+:matt/winter/15: 704 224
+:matt/winter/10: 672 222
+:matt/winter/15: 688 224
+:matt/winter/02: 682 144 rr
+:matt/winter/15: 704 224
+:matt/winter/06: 864 384 rrr
+:matt/winter/09a: 912 368
+:matt/winter/14: 928 338 rr
+:matt/winter/11: 928 304
+:matt/winter/01: 928 352
+:matt/winter/16: 928 304
+:matt/winter/06: 1072 240
+:matt/winter/10: 1008 336
+:matt/winter/10: 1104 336
+:matt/winter/06: 1088 240
+:matt/winter/10: 992 288
+:matt/winter/10: 1152 320
+:matt/winter/06: 1072 192
+:matt/winter/06: 1072 176
+:matt/winter/06: 1088 176
+:matt/winter/09b: 1072 160
+:matt/winter/17: 352 112 rr
+:matt/winter/17: 384 32 rr
+:matt/winter/17: 352 16 rr
+:matt/winter/17: 320 0 rr
+:matt/winter/17: 400 -16 rr
+:matt/winter/17: 315 -47 fr
+:matt/winter/17: 352 16 rr
+:matt/winter/17: 352 32 rr
+:matt/winter/06: 292 266 rrr
+:matt/winter/06: 292 256 rrrd
+:matt/winter/06: 302 208
+:matt/winter/06: 302 160
+:matt/winter/06: 302 144
+:matt/winter/09b: 286 128
+:matt/winter/11: 256 272
+:matt/winter/06: 324 266 rrr
+:matt/winter/06: 340 266 rrr
+:matt/winter/06: 324 278 rrrd
+:matt/winter/06: 324 256 rrrd
+:matt/winter/06: 340 278 rrrd
+:matt/winter/17: 288 272
+:matt/winter/16: 208 304
+:matt/winter/16: 288 320
+:matt/winter/00: 208 320
+:matt/winter/00: 144 352
+:matt/winter/00: 112 384
+:matt/winter/06: 468 266 rrr
+:matt/winter/06: 468 256 rrrd
+:matt/winter/06: 468 278 rrrd
+:matt/winter/02: 530 234
+:matt/winter/11: 524 262 d
+:matt/winter/15: 525 254
+:matt/winter/05: 549 209 fr
+:matt/winter/11: 531 216
+:matt/winter/11: 528 290 d
+:matt/winter/05: 542 190 rrr
+:matt/winter/13: 747 204
+:matt/winter/06: 404 266 rrr
+:matt/winter/06: 404 278 rrrd
+:matt/winter/06: 404 256 rrrd
+:matt/winter/06: 340 256 rrrd
+:matt/winter/18: 553 276 d
+:matt/winter/00: 542 270 d
+:matt/winter/00: 556 269 d
+:matt/winter/18: 506 216 d
+:matt/winter/18: 635 269 d
+:matt/winter/18: 625 270 d
+:matt/winter/18: 615 271 d
+:matt/winter/14: 928 302 rr
+:matt/winter/04: 486 68 rrd
+:matt/winter/06: 912 303 rrd
+:matt/winter/06: 928 240 rrd
+:matt/winter/06: 720 0 rr
+:matt/winter/06: 736 0 rr
+:matt/winter/09a: 1056 144
+:matt/winter/06: 286 144
+:matt/winter/06: 286 208
+:matt/winter/09a: 270 100

@@ -1,0 +1,84 @@
+$BUILT 2014-02-27 14:45:40
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Tricks of the trade
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 38
+#BACKGROUND_GREEN 48
+#BACKGROUND_BLUE 32
+
+#SECONDS 120
+#INITIAL 30
+#REQUIRED 28
+#SPAWN_INTERVAL 28
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 2
+#JUMPER 2
+#EXPLODER 2
+#BASHER 2
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/carnival/Hatch.H: -16 80
+:matt/carnival/Hatch.H: 592 80 r
+
+:matt/carnival/Goal.G: -16 304
+:matt/carnival/Goal.G: 592 304
+
+:matt/carnival/15: 64 217
+:matt/carnival/14: 80 217
+:matt/carnival/15: 544 216
+:matt/carnival/14: 560 216
+:matt/carnival/26: 0 160
+:matt/carnival/27: 96 160
+:matt/carnival/24: 48 224
+:matt/carnival/26: 480 160
+:matt/carnival/27: 576 160
+:matt/carnival/24: 528 224
+:matt/carnival/56: 48 288
+:matt/carnival/56: 336 288
+:matt/carnival/34: 176 256
+:matt/carnival/36: 112 224
+:matt/carnival/34: 400 256 frr
+:matt/carnival/36: 464 224 frr
+:matt/carnival/57: -48 368
+:matt/carnival/58: 208 368
+:matt/carnival/57: 464 368
+:matt/steel/32x32.S: 96 192
+:matt/steel/32x32.S: 128 192
+:matt/steel/32x32.S: 480 192
+:matt/steel/32x32.S: 512 192
+:matt/carnival/20: 0 0 rr
+:matt/carnival/21: 32 48
+:matt/carnival/20: 64 0 rr
+:matt/carnival/21: 96 48
+:matt/carnival/20: 128 0 rr
+:matt/carnival/21: 160 48
+:matt/carnival/20: 192 0 rr
+:matt/carnival/21: 224 48
+:matt/carnival/20: 256 0 rr
+:matt/carnival/21: 288 48
+:matt/carnival/20: 320 0 rr
+:matt/carnival/21: 352 48
+:matt/carnival/20: 384 0 rr
+:matt/carnival/21: 416 48
+:matt/carnival/20: 448 0 rr
+:matt/carnival/21: 480 48
+:matt/carnival/20: 512 0 rr
+:matt/carnival/21: 544 48
+:matt/carnival/20: 576 0 rr
+:matt/carnival/21: 608 48
+:matt/carnival/21: -32 48

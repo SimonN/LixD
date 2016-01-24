@@ -1,0 +1,208 @@
+$BUILT 2014-04-16 21:51:02
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Deep Cell Classic (4p)
+
+#SIZE_X 768
+#SIZE_Y 896
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 70
+#INITIAL 80
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 10
+#FLOATER 15
+#WALKER 50
+#JUMPER 50
+#RUNNER 5
+#EXPLODER2 5
+#BLOCKER 5
+#BUILDER 75
+#BASHER 50
+#MINER 40
+#DIGGER 20
+#BATTER 25
+
+:matt/bricks/Hatch.H: 160 800
+:matt/bricks/Hatch.H: 544 800
+:matt/bricks/Hatch.H: 160 352
+:matt/bricks/Hatch.H: 544 352
+
+:matt/bricks/Goal.G: 544 176
+:matt/bricks/Goal.G: 160 176
+:matt/bricks/Goal.G: 544 624
+:matt/bricks/Goal.G: 160 624
+
+:matt/bricks/02a: 0 496
+:matt/bricks/02a: 0 528
+:matt/bricks/02a: 0 560
+:matt/bricks/02a: 0 592
+:matt/bricks/02a: 0 624
+:matt/bricks/02a: 0 656
+:matt/bricks/02a: 0 688
+:matt/bricks/02a: 0 720
+:matt/bricks/02a: 320 496
+:matt/bricks/02a: 320 528
+:matt/bricks/02a: 320 560
+:matt/bricks/02a: 320 592
+:matt/bricks/02a: 320 624
+:matt/bricks/02a: 320 656
+:matt/bricks/02a: 320 688
+:matt/bricks/02a: 320 720
+:matt/bricks/02a: 0 752
+:matt/bricks/02a: 0 784
+:matt/bricks/02a: 0 816
+:matt/bricks/02a: 0 848
+:matt/bricks/02a: 320 752
+:matt/bricks/02a: 320 784
+:matt/bricks/02a: 320 816
+:matt/bricks/02a: 320 848
+:matt/bricks/02a: 256 848
+:matt/bricks/02a: 192 848
+:matt/bricks/02a: 128 848
+:matt/bricks/02a: 64 848
+:matt/bricks/02a: 0 880
+:matt/bricks/02a: 320 880
+:matt/bricks/02a: 256 880
+:matt/bricks/02a: 192 880
+:matt/bricks/02a: 128 880
+:matt/bricks/02a: 64 880
+:matt/bricks/02a: 0 464
+:matt/bricks/02a: 320 464
+:matt/bricks/02b: 384 880
+:matt/bricks/02b: 384 464
+:matt/bricks/02b: 384 496
+:matt/bricks/02b: 384 528
+:matt/bricks/02b: 384 560
+:matt/bricks/02b: 384 592
+:matt/bricks/02b: 384 624
+:matt/bricks/02b: 384 656
+:matt/bricks/02b: 384 688
+:matt/bricks/02b: 384 720
+:matt/bricks/02b: 384 752
+:matt/bricks/02b: 384 784
+:matt/bricks/02b: 384 784
+:matt/bricks/02b: 384 816
+:matt/bricks/02b: 384 848
+:matt/bricks/02b: 448 848
+:matt/bricks/02b: 512 848
+:matt/bricks/02b: 576 848
+:matt/bricks/02b: 640 848
+:matt/bricks/02b: 704 848
+:matt/bricks/02b: 704 816
+:matt/bricks/02b: 704 752
+:matt/bricks/02b: 704 720
+:matt/bricks/02b: 704 784
+:matt/bricks/02b: 704 528
+:matt/bricks/02b: 704 560
+:matt/bricks/02b: 704 592
+:matt/bricks/02b: 704 624
+:matt/bricks/02b: 704 656
+:matt/bricks/02b: 704 688
+:matt/bricks/02b: 704 880
+:matt/bricks/02b: 704 464
+:matt/bricks/02b: 704 496
+:matt/bricks/02b: 448 880
+:matt/bricks/02b: 512 880
+:matt/bricks/02b: 576 880
+:matt/bricks/02b: 640 880
+:matt/bricks/01a: 544 672
+:matt/bricks/01a: 576 672
+:matt/bricks/01b: 160 672
+:matt/bricks/01b: 192 672
+:geoo/steel/dark_32x16o.S: 560 672
+:geoo/steel/dark_32x16o.S: 176 672
+:geoo/steel/dark_32x16o.S: 160 848
+:geoo/steel/dark_32x16o.S: 192 848
+:geoo/steel/dark_32x16o.S: 544 848
+:geoo/steel/dark_32x16o.S: 576 848
+:matt/bricks/02b: 0 432
+:matt/bricks/02b: 0 16
+:matt/bricks/02b: 0 48
+:matt/bricks/02b: 0 80
+:matt/bricks/02b: 0 112
+:matt/bricks/02b: 0 144
+:matt/bricks/02b: 0 176
+:matt/bricks/02b: 0 208
+:matt/bricks/02b: 0 240
+:matt/bricks/02b: 0 272
+:matt/bricks/02b: 0 304
+:matt/bricks/02b: 0 336
+:matt/bricks/02b: 0 336
+:matt/bricks/02b: 0 368
+:matt/bricks/02b: 0 400
+:matt/bricks/02b: 64 400
+:matt/bricks/02b: 128 400
+:matt/bricks/02b: 192 400
+:matt/bricks/02b: 256 400
+:matt/bricks/02b: 320 400
+:matt/bricks/02b: 320 368
+:matt/bricks/02b: 320 304
+:matt/bricks/02b: 320 272
+:matt/bricks/02b: 320 336
+:matt/bricks/02b: 320 80
+:matt/bricks/02b: 320 112
+:matt/bricks/02b: 320 144
+:matt/bricks/02b: 320 176
+:matt/bricks/02b: 320 208
+:matt/bricks/02b: 320 240
+:matt/bricks/02b: 320 432
+:matt/bricks/02b: 320 16
+:matt/bricks/02b: 320 48
+:matt/bricks/02b: 64 432
+:matt/bricks/02b: 128 432
+:matt/bricks/02b: 192 432
+:matt/bricks/02b: 256 432
+:matt/bricks/01a: 160 224
+:matt/bricks/01a: 192 224
+:geoo/steel/dark_32x16o.S: 176 224
+:geoo/steel/dark_32x16o.S: 160 400
+:geoo/steel/dark_32x16o.S: 192 400
+:matt/bricks/02a: 384 48
+:matt/bricks/02a: 384 80
+:matt/bricks/02a: 384 112
+:matt/bricks/02a: 384 144
+:matt/bricks/02a: 384 176
+:matt/bricks/02a: 384 208
+:matt/bricks/02a: 384 240
+:matt/bricks/02a: 384 272
+:matt/bricks/02a: 704 48
+:matt/bricks/02a: 704 80
+:matt/bricks/02a: 704 112
+:matt/bricks/02a: 704 144
+:matt/bricks/02a: 704 176
+:matt/bricks/02a: 704 208
+:matt/bricks/02a: 704 240
+:matt/bricks/02a: 704 272
+:matt/bricks/02a: 384 304
+:matt/bricks/02a: 384 336
+:matt/bricks/02a: 384 368
+:matt/bricks/02a: 384 400
+:matt/bricks/02a: 704 304
+:matt/bricks/02a: 704 336
+:matt/bricks/02a: 704 368
+:matt/bricks/02a: 704 400
+:matt/bricks/02a: 640 400
+:matt/bricks/02a: 576 400
+:matt/bricks/02a: 512 400
+:matt/bricks/02a: 448 400
+:matt/bricks/02a: 384 432
+:matt/bricks/02a: 704 432
+:matt/bricks/02a: 640 432
+:matt/bricks/02a: 576 432
+:matt/bricks/02a: 512 432
+:matt/bricks/02a: 448 432
+:matt/bricks/02a: 384 16
+:matt/bricks/02a: 704 16
+:matt/bricks/01b: 544 224
+:matt/bricks/01b: 576 224
+:geoo/steel/dark_32x16o.S: 560 224
+:geoo/steel/dark_32x16o.S: 544 400
+:geoo/steel/dark_32x16o.S: 576 400

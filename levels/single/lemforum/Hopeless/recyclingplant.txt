@@ -1,0 +1,227 @@
+$BUILT 2014-07-16 23:54:38
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Recycling Plant
+
+#SIZE_X 976
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 336
+#START_Y -20
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 120
+#REQUIRED 118
+#SPAWN_INTERVAL 8
+#SPAWN_INTERVAL_FAST 8
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#RUNNER 1
+#BLOCKER 1
+#BUILDER 7
+#MINER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/oriental/Hatch.H: 620 108
+
+:matt/oriental/Goal.G: 48 192
+
+:amanda/forest/frog.T: 415 111
+
+:geoo/construction/spring.T: 296 240
+:geoo/construction/spring.T: 216 240
+
+:matt/oriental/bamboo_leaf2: 928 92
+:matt/oriental/bamboo_leaf2: 936 152 frr
+:matt/oriental/bamboo_leaf2: 928 132
+:matt/oriental/bamboo_leaf3: 900 54
+:matt/oriental/bamboo_pole: 922 0
+:geoo/steel/dark_64x64.S: 896 -12 d
+:matt/oriental/bamboo_leaf3: 940 -2
+:matt/oriental/bamboo_leaf2: 936 112 frr
+:matt/oriental/bamboo_leaf2: 928 52
+:matt/oriental/bamboo_leaf2: 936 72 frr
+:matt/oriental/bamboo_leaf2: 928 172
+:matt/oriental/bamboo_leaf2: 936 192 frr
+:matt/oriental/bamboo_pole: 962 0
+:matt/oriental/bamboo_leaf2: 928 212
+:matt/oriental/bamboo_leaf2: 936 232 frr
+:matt/oriental/bamboo_pole: 772 168 rrr
+:matt/oriental/bamboo_pole: 962 137
+:matt/earth/08: 136 372 rrr
+:matt/earth/14: 84 336 rrr
+:matt/earth/14: 48 336 rrr
+:matt/earth/13: 26 336 fr
+:matt/earth/13: 126 338
+:matt/oriental/asiangate: 16 272
+:matt/oriental/bamboo_pole: 772 49 rrr
+:matt/oriental/bamboo_leaf2: 928 252
+:matt/oriental/bamboo_leaf2: 936 272 frr
+:matt/oriental/bamboo_leaf1: 908 174 f
+:matt/oriental/bamboo_pole: 922 176
+:geoo/steel/dark_64x64.S: 866 256 d
+:matt/oriental/trunk3: 925 304
+:matt/oriental/branch1: 863 332 rrr
+:geoo/steel/dark_64x64.S: 867 270 d
+:matt/oriental/bamboo_leaf2: 936 24 frr
+:matt/oriental/branch3: 454 44
+:matt/oriental/bonsaitree: 296 -2 frr
+:matt/oriental/08: 454 94 d
+:matt/oriental/bamboo_pole: 583 168 rrr
+:matt/oriental/bamboo_pole: 583 49 rrr
+:matt/oriental/bamboo_leaf1: 571 21 rrr
+:matt/oriental/bamboo_pole: 582 20
+:matt/oriental/bamboo_leaf2: 580 -4
+:matt/oriental/bamboo_leaf2: 564 -16
+:matt/oriental/bamboo_pole: 582 -137
+:matt/oriental/leaves4: 882 288
+:matt/oriental/leaves5: 855 329
+:matt/oriental/trunk3: 723 295
+:matt/oriental/trunk3: 715 365
+:matt/oriental/branch3: 649 282
+:matt/oriental/trunk2: 576 358 f
+:matt/oriental/trunk3: 613 311 frr
+:matt/oriental/bonsaitree: 583 302
+:matt/oriental/branch2: 788 286 r
+:matt/oriental/trunk2: 927 372
+:matt/oriental/bonsaitree: 712 244
+:geoo/steel/dark_64x64.S: 816 224 d
+:geoo/steel/dark_64x64.S: 776 232 d
+:matt/oriental/leaves2: 772 282
+:matt/oriental/leaves3: 909 355
+:matt/oriental/leaves5: 829 268 rrrd
+:matt/oriental/leaves3: 587 289
+:matt/oriental/leaves4: 673 278
+:matt/oriental/leaves1: 957 327
+:matt/oriental/leaves5: 580 355 frr
+:matt/oriental/08: 352 94 d
+:matt/oriental/08: 290 96 d
+:matt/oriental/08: 408 138 d
+:matt/oriental/bamboo_leaf1: 463 207 frrr
+:matt/oriental/bamboo_leaf2: 416 176 frr
+:matt/oriental/trunk2: 424 174
+:matt/oriental/08: 408 100
+:matt/oriental/bonsaitree: 364 318
+:matt/oriental/bamboo_leaf3: 438 174 frr
+:matt/oriental/asiangate: 208 272
+:matt/oriental/bamboo_leaf2: 174 178
+:matt/oriental/bamboo_leaf2: 230 178 frr
+:matt/oriental/branch2: 236 122 rrr
+:matt/oriental/bamboo_leaf1: 226 120 frrr
+:matt/oriental/bamboo_leaf2: 244 152
+:matt/oriental/bamboo_leaf3: 158 124
+:matt/oriental/bamboo_leaf3: 156 160 frr
+:matt/oriental/bamboo_leaf3: 224 148
+:matt/oriental/bamboo_leaf2: 192 116 frr
+:matt/oriental/bamboo_leaf2: 196 142
+:matt/oriental/branch3: 180 120 r
+:matt/oriental/bamboo_leaf2: 165 128 frr
+:matt/oriental/bamboo_leaf1: 180 142 rrr
+:matt/oriental/bamboo_leaf2: 247 137 fr
+:matt/oriental/branch1: 152 -2 rrr
+:matt/oriental/branch3: 166 34 frr
+:matt/oriental/trunk3: 188 32 f
+:matt/oriental/trunk1: 194 82
+:matt/oriental/bamboo_leaf3: 232 130 frr
+:matt/oriental/bamboo_leaf1: 212 120 rr
+:matt/oriental/bamboo_leaf1: 188 110 r
+:matt/oriental/trunk2: 182 42 rr
+:matt/oriental/branch2: 202 18
+:matt/oriental/branch2: 234 18 r
+:matt/oriental/branch1: 232 46 rrr
+:matt/oriental/07: 176 80
+:matt/oriental/bamboo_leaf2: 118 178 frr
+:matt/oriental/bamboo_leaf1: 137 167 rrr
+:matt/oriental/bamboo_leaf1: 146 156 f
+:matt/oriental/leaves5: 162 68 frr
+:matt/oriental/leaves2: 204 36
+:matt/oriental/leaves1: 162 16
+:matt/oriental/leaves5: 224 16
+:matt/oriental/trunk1: 176 -28 rr
+:matt/oriental/leaves3: 144 18 frr
+:matt/oriental/leaves4: 108 -12
+:matt/oriental/leaves2: 216 -4 f
+:matt/oriental/leaves2: 460 34
+:matt/oriental/bamboo_leaf2: 132 198
+:matt/oriental/bamboo_leaf2: 148 180
+:matt/oriental/bamboo_leaf2: 168 208 frr
+:matt/oriental/bamboo_leaf3: 124 220
+:matt/oriental/bamboo_leaf1: 122 232 rrr
+:matt/oriental/bamboo_leaf1: 566 20 f
+:matt/oriental/bamboo_leaf2: 582 40
+:matt/oriental/bamboo_leaf3: 560 38
+:matt/oriental/bamboo_leaf1: 10 184 rr
+:matt/oriental/branch3: 4 168 r
+:matt/oriental/bamboo_leaf2: -6 164 frr
+:matt/oriental/bamboo_leaf3: -16 160 frr
+:matt/oriental/trunk3: 10 54
+:matt/oriental/branch1: 48 16 rrr
+:matt/oriental/trunk1: 16 -46
+:matt/oriental/branch3: 14 132 r
+:matt/oriental/bonsaitree: -158 -68 frr
+:matt/oriental/bamboo_leaf2: 14 122
+:matt/oriental/06: -32 112
+:matt/oriental/leaves4: -60 76
+:matt/oriental/leaves5: 50 12 f
+:matt/oriental/leaves3: -48 44 f
+:matt/oriental/leaves3: -60 56
+:matt/earth/14: 226 336 rrr
+:matt/oriental/bamboo_leaf1: 180 354
+:matt/earth/14: 184 336
+:matt/oriental/bamboo_leaf1: 266 330 r
+:matt/earth/11: 202 336
+:matt/earth/14: -6 336
+:matt/earth/28: 2 336 rr
+:matt/earth/08: 46 332 rrr
+:matt/earth/11: 12 336
+:matt/earth/11: 50 336
+:matt/earth/29: 34 364
+:matt/earth/11: -16 362
+:matt/earth/29: 76 334 fr
+:matt/earth/15: 72 336
+:matt/earth/08: 88 356
+:matt/oriental/bamboo_leaf3: 54 350
+:matt/earth/11: 40 354
+:matt/earth/29: 258 348
+:matt/earth/14: 268 336
+:matt/earth/11: 286 336
+:matt/earth/14: 312 336 frr
+:matt/earth/28: 124 358
+:matt/oriental/bamboo_leaf1: 111 347 r
+:matt/earth/11: 88 356
+:matt/oriental/bamboo_leaf2: 336 356 f
+:matt/earth/11: 298 356
+:matt/earth/29: 212 360
+:matt/earth/14: 176 356
+:matt/earth/29: 200 374 f
+:matt/earth/12: 206 378
+:matt/earth/28: 302 354
+:matt/earth/08: 292 384 rrr
+:matt/earth/11: 260 336
+:matt/earth/28: 274 370
+:matt/earth/09: 290 356 rrr
+:matt/earth/14: 266 364
+:matt/earth/28: 56 378 f
+:matt/earth/12: 66 382
+:matt/earth/08: 244 378
+:matt/earth/08: 260 388 rrr
+:matt/oriental/bamboo_leaf1: 260 374 r
+:matt/earth/12: 246 380
+:matt/earth/29: 86 378
+:matt/earth/29: 130 380 fr
+:matt/earth/15: 92 382
+:matt/earth/27: -44 382 f
+:matt/oriental/bamboo_leaf3: 156 388 rr
+:matt/oriental/bamboo_leaf1: 33 391 r
+:matt/oriental/bamboo_leaf1: 340 392 r
+:matt/earth/08: 114 396

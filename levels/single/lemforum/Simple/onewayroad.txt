@@ -1,0 +1,83 @@
+$BUILT                                             2012-01-13 20:18:06
+$AUTHOR                                                           geoo
+$GERMAN                                                               
+$ENGLISH                                               One Way Road
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                             0
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                             0
+#INITIAL                                                            60
+#REQUIRED                                                           60
+#SPAWN_INTERVAL                                                     12
+
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#CLIMBER                                                             1
+#FLOATER                                                             1
+#BUILDER                                                             1
+#PLATFORMER                                                          1
+#BASHER                                                              1
+#DIGGER                                                              1
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:matt/goldmine/GoalTop.D:                    48       208
+
+:matt/goldmine/Hatch.H:                     368        80
+:matt/goldmine/Hatch.H:                     440        80
+:matt/goldmine/Hatch.H:                     512        80
+
+:matt/goldmine/Goal.G:                       48       256
+
+:geoo/sandstone/torch.F:                           16       128
+:geoo/sandstone/torch.F:                          112       128
+
+:matt/goldmine/01:                          192       208     rrr
+:matt/goldmine/06:                          208       150     rrr
+:matt/goldmine/planksupport:               404       226
+:matt/goldmine/07:                          446       312
+:matt/goldmine/06:                          618       278
+:matt/goldmine/07:                          570       294
+:matt/goldmine/crate32:                     336        96
+:matt/goldmine/plank:                       336       128
+:matt/goldmine/06:                          524       316
+:matt/goldmine/00:                          438       350
+:matt/goldmine/06:                          572       382
+:matt/goldmine/planksupport:               576       128
+:matt/goldmine/00:                          616       236
+:matt/goldmine/01:                          618       280
+:matt/goldmine/plank:                       452       128
+:matt/goldmine/01:                          282       342
+:matt/goldmine/00:                          326       314
+:matt/goldmine/crate64:                     576        64
+:matt/goldmine/07:                          176       276
+:matt/goldmine/00:                          314       348
+:matt/goldmine/07:                          126       338
+:matt/goldmine/01:                          218       260
+:matt/goldmine/00:                          176       224
+:matt/goldmine/01:                          144       256     frr
+:matt/steel/64x64.S:                               48       304
+:matt/goldmine/07:                           64       272     frr
+:matt/goldmine/07:                          -96       288
+:matt/goldmine/07:                          -16       352
+:matt/goldmine/06:                           96       352
+:matt/goldmine/07:                           78       -34     rr
+:matt/goldmine/07:                          240       -48     frr
+:matt/goldmine/07:                          352       -48
+:matt/goldmine/06:                          544        -8
+:matt/goldmine/06:                          208       102     rrr
+:matt/goldmine/00:                          160        32
+:matt/goldmine/01:                          186        68     fr
+:matt/goldmine/07:                           16       -28     frr
+:matt/goldmine/07:                          -96       -48     frr
+:matt/goldmine/00:                          170        36

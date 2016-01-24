@@ -1,0 +1,347 @@
+$BUILT 2012-08-11 17:23:02
+$AUTHOR Clam Spammer
+$GERMAN 
+$ENGLISH Perilous Descent (3P)
+
+#SIZE_X 864
+#SIZE_Y 488
+#TORUS_X 1
+#TORUS_Y 1
+#START_X 296
+#START_Y 10
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 60
+#REQUIRED 60
+#SPAWN_INTERVAL 28
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 30
+#FLOATER 20
+#EXPLODER2 20
+#BLOCKER 10
+#BUILDER 50
+#JUMPER 30
+#MINER 20
+#DIGGER 20
+#BATTER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/bricks/Hatch.H: 432 24
+:matt/bricks/Hatch.H: 720 24
+:matt/bricks/Hatch.H: 144 24
+
+:matt/bricks/Goal.G: 0 332
+:matt/bricks/Goal.G: 288 332
+:matt/bricks/Goal.G: 576 332
+
+:matt/bricks/03: 288 136
+:matt/bricks/03: 224 136
+:geoo/steel/dark_48x48o.S: 272 136
+:matt/bricks/03: 352 136
+:matt/bricks/02: 224 200
+:matt/bricks/02: 288 200
+:matt/bricks/02: 352 200
+:matt/bricks/03: 800 136
+:matt/bricks/03: 512 136
+:geoo/steel/dark_48x48o.S: 560 136
+:matt/bricks/03: 640 136
+:matt/bricks/02: 544 200
+:matt/bricks/02: 608 200
+:matt/bricks/02: 32 200
+:matt/bricks/01: 96 184
+:matt/bricks/01: 128 184
+:matt/bricks/01: 160 184
+:matt/bricks/01: 192 184
+:matt/bricks/02: 96 200
+:matt/bricks/02: 160 200
+:matt/bricks/01: 416 184
+:matt/bricks/01: 448 184
+:matt/bricks/01: 480 184
+:matt/bricks/01: 576 184
+:matt/bricks/02: 416 200
+:matt/bricks/02: 480 200
+:matt/marble/05a: 216 248
+:matt/marble/05a: 248 248
+:matt/marble/05a: 216 280
+:matt/marble/04a: 216 232
+:matt/marble/05a: 248 280
+:matt/marble/04a: 248 232
+:matt/earth/22: 220 236 d
+:matt/earth/22: 252 236 d
+:matt/earth/22: 220 268 d
+:matt/earth/22: 252 268 d
+:matt/earth/22: 220 300 d
+:matt/marble/01a: 232 312
+:matt/marble/01a: 216 312
+:matt/earth/22: 252 300 d
+:matt/marble/01a: 264 312
+:matt/marble/01a: 248 312
+:matt/marble/05a: 360 248
+:matt/marble/05a: 392 248
+:matt/marble/05a: 360 280
+:matt/marble/04a: 360 232
+:matt/marble/05a: 392 280
+:matt/marble/04a: 392 232
+:matt/earth/22: 364 236 d
+:matt/earth/22: 396 236 d
+:matt/earth/22: 364 268 d
+:matt/earth/22: 396 268 d
+:matt/earth/22: 364 300 d
+:matt/marble/01a: 376 312
+:matt/marble/01a: 360 312
+:matt/earth/22: 396 300 d
+:matt/marble/01a: 392 312
+:matt/marble/01a: 408 312
+:matt/marble/05a: 504 248
+:matt/marble/05a: 536 248
+:matt/marble/05a: 504 280
+:matt/marble/04a: 504 232
+:matt/marble/05a: 536 280
+:matt/marble/04a: 536 232
+:matt/earth/22: 508 236 d
+:matt/earth/22: 540 236 d
+:matt/earth/22: 508 268 d
+:matt/earth/22: 540 268 d
+:matt/earth/22: 508 300 d
+:matt/marble/01a: 520 312
+:matt/marble/01a: 504 312
+:matt/earth/22: 540 300 d
+:matt/marble/01a: 536 312
+:matt/marble/01a: 552 312
+:matt/marble/05a: 72 248
+:matt/marble/05a: 104 248
+:matt/marble/05a: 72 280
+:matt/marble/04a: 72 232
+:matt/marble/05a: 104 280
+:matt/marble/04a: 104 232
+:matt/earth/22: 76 236 d
+:matt/earth/22: 108 236 d
+:matt/earth/22: 76 268 d
+:matt/earth/22: 108 268 d
+:matt/earth/22: 76 300 d
+:matt/marble/01a: 88 312
+:matt/marble/01a: 72 312
+:matt/earth/22: 108 300 d
+:matt/marble/01a: 104 312
+:matt/marble/01a: 120 312
+:geoo/steel/dark_48x48o.S: 560 380
+:geoo/steel/dark_48x48o.S: 32 380
+:geoo/steel/dark_48x48o.S: 224 380
+:geoo/steel/dark_48x48o.S: 272 380
+:geoo/steel/dark_48x48o.S: 320 380
+:geoo/steel/dark_48x48o.S: 368 380
+:matt/bricks/03: 96 380
+:geoo/steel/dark_48x48o.S: 80 380
+:matt/bricks/03: 160 380
+:matt/bricks/03: 416 380
+:matt/bricks/03: 480 380
+:geoo/steel/dark_48x48o.S: 512 380
+:matt/bricks/01: 224 428
+:matt/bricks/01: 256 428
+:matt/bricks/01: 288 428
+:matt/bricks/01: 320 428
+:matt/bricks/01: 352 428
+:matt/bricks/01: 384 428
+:matt/bricks/01: 544 428
+:matt/bricks/01: 576 428
+:matt/bricks/01: 608 428
+:matt/bricks/01: 0 428
+:matt/bricks/01: 32 428
+:matt/bricks/01: 64 428
+:matt/bricks/02: 544 444
+:matt/bricks/02: 608 444
+:matt/bricks/02: 32 444
+:matt/bricks/02: 96 444
+:matt/bricks/02: 160 444
+:matt/bricks/02: 224 444
+:matt/bricks/02: 288 444
+:matt/bricks/02: 352 444
+:matt/bricks/02: 416 444
+:matt/bricks/02: 480 444
+:matt/marble/05a: 240 4
+:matt/marble/05a: 272 4
+:matt/marble/05a: 240 36
+:matt/marble/04a: 240 476
+:matt/marble/05a: 272 36
+:matt/marble/04a: 272 476
+:matt/earth/22: 244 480 d
+:matt/earth/22: 276 480 d
+:matt/earth/22: 244 24 d
+:matt/earth/22: 276 24 d
+:matt/earth/22: 244 56 d
+:matt/marble/01a: 256 68
+:matt/marble/01a: 240 68
+:matt/earth/22: 276 56 d
+:matt/marble/01a: 272 68
+:matt/marble/01a: 288 68
+:matt/marble/05a: 336 4
+:matt/marble/05a: 368 4
+:matt/marble/05a: 336 36
+:matt/marble/04a: 336 476
+:matt/marble/05a: 368 36
+:matt/marble/04a: 368 476
+:matt/earth/22: 340 480 d
+:matt/earth/22: 372 480 d
+:matt/earth/22: 340 24 d
+:matt/earth/22: 372 24 d
+:matt/earth/22: 340 56 d
+:matt/marble/01a: 352 68
+:matt/marble/01a: 336 68
+:matt/earth/22: 372 56 d
+:matt/marble/01a: 368 68
+:matt/marble/01a: 384 68
+:matt/marble/05a: 528 4
+:matt/marble/05a: 560 4
+:matt/marble/05a: 528 36
+:matt/marble/04a: 528 476
+:matt/marble/05a: 560 36
+:matt/marble/04a: 560 476
+:matt/earth/22: 532 480 d
+:matt/earth/22: 564 480 d
+:matt/earth/22: 532 24 d
+:matt/earth/22: 564 24 d
+:matt/earth/22: 532 56 d
+:matt/marble/01a: 544 68
+:matt/marble/01a: 528 68
+:matt/earth/22: 564 56 d
+:matt/marble/01a: 560 68
+:matt/marble/01a: 576 68
+:matt/marble/05a: 624 4
+:matt/marble/05a: 656 4
+:matt/marble/05a: 624 36
+:matt/marble/04a: 624 476
+:matt/marble/05a: 656 36
+:matt/marble/04a: 656 476
+:matt/earth/22: 628 480 d
+:matt/earth/22: 660 480 d
+:matt/earth/22: 628 24 d
+:matt/earth/22: 660 24 d
+:matt/earth/22: 628 56 d
+:matt/marble/01a: 640 68
+:matt/marble/01a: 624 68
+:matt/earth/22: 660 56 d
+:matt/marble/01a: 656 68
+:matt/marble/01a: 672 68
+:matt/marble/001a: 604 476
+:matt/marble/001a: 604 4
+:matt/marble/001a: 604 20
+:matt/marble/001a: 604 36
+:matt/marble/001a: 604 52
+:matt/winter/09c: 600 64
+:matt/marble/001a: 316 476
+:matt/marble/001a: 316 4
+:matt/marble/001a: 316 20
+:matt/marble/001a: 316 36
+:matt/marble/001a: 316 52
+:matt/winter/09c: 312 64
+:geoo/steel/dark_48x48o.S: 656 380
+:geoo/steel/dark_48x48o.S: 608 380
+:matt/bricks/03: 768 380
+:geoo/steel/dark_48x48o.S: 800 380
+:geoo/steel/dark_48x48o.S: 848 380
+:matt/bricks/03: 704 380
+:matt/bricks/01: 640 428
+:matt/bricks/01: 672 428
+:matt/bricks/01: 832 428
+:matt/bricks/02: 672 444
+:matt/bricks/02: 736 444
+:matt/bricks/02: 800 444
+:matt/bricks/02: 0 444
+:matt/marble/05a: 648 248
+:matt/marble/05a: 680 248
+:matt/marble/05a: 648 280
+:matt/marble/04a: 648 232
+:matt/marble/05a: 680 280
+:matt/marble/04a: 680 232
+:matt/earth/22: 652 236 d
+:matt/earth/22: 684 236 d
+:matt/earth/22: 652 268 d
+:matt/earth/22: 684 268 d
+:matt/earth/22: 652 300 d
+:matt/marble/01a: 664 312
+:matt/marble/01a: 648 312
+:matt/earth/22: 684 300 d
+:matt/marble/01a: 680 312
+:matt/marble/01a: 696 312
+:matt/marble/05a: 792 248
+:matt/marble/05a: 824 248
+:matt/marble/05a: 792 280
+:matt/marble/04a: 792 232
+:matt/marble/05a: 824 280
+:matt/marble/04a: 824 232
+:matt/earth/22: 796 236 d
+:matt/earth/22: 828 236 d
+:matt/earth/22: 796 268 d
+:matt/earth/22: 828 268 d
+:matt/earth/22: 796 300 d
+:matt/marble/01a: 808 312
+:matt/marble/01a: 792 312
+:matt/earth/22: 828 300 d
+:matt/marble/01a: 824 312
+:matt/marble/01a: 840 312
+:geoo/steel/dark_48x48o.S: 320 136
+:geoo/steel/dark_48x48o.S: 608 136
+:matt/bricks/02: 736 200
+:matt/bricks/02: 800 200
+:matt/bricks/02: 672 200
+:matt/bricks/02: 0 200
+:matt/bricks/03: 64 136
+:matt/bricks/03: 0 136
+:geoo/steel/dark_48x48o.S: 704 136
+:matt/bricks/01: 736 184
+:matt/bricks/01: 768 184
+:matt/bricks/01: 800 184
+:matt/bricks/01: 704 184
+:geoo/steel/dark_48x48o.S: 752 136
+:geoo/steel/dark_48x48o.S: 416 136
+:geoo/steel/dark_48x48o.S: 464 136
+:matt/bricks/01: 608 184
+:matt/bricks/01: 640 184
+:geoo/steel/dark_48x48o.S: 176 136
+:geoo/steel/dark_48x48o.S: 128 136
+:geoo/steel/dark_48x48o.S: 848 136
+:geoo/steel/dark_48x48o.S: 32 136
+:matt/marble/05a: 816 4
+:matt/marble/05a: 848 4
+:matt/marble/05a: 816 36
+:matt/marble/04a: 816 476
+:matt/marble/05a: 848 36
+:matt/marble/04a: 848 476
+:matt/earth/22: 820 480 d
+:matt/earth/22: 852 480 d
+:matt/earth/22: 820 24 d
+:matt/earth/22: 852 24 d
+:matt/earth/22: 820 56 d
+:matt/marble/01a: 832 68
+:matt/marble/01a: 816 68
+:matt/earth/22: 852 56 d
+:matt/marble/01a: 848 68
+:matt/marble/01a: 0 68
+:matt/marble/05a: 48 4
+:matt/marble/05a: 80 4
+:matt/marble/05a: 48 36
+:matt/marble/04a: 48 476
+:matt/marble/05a: 80 36
+:matt/marble/04a: 80 476
+:matt/earth/22: 52 480 d
+:matt/earth/22: 84 480 d
+:matt/earth/22: 52 24 d
+:matt/earth/22: 84 24 d
+:matt/earth/22: 52 56 d
+:matt/marble/01a: 64 68
+:matt/marble/01a: 48 68
+:matt/earth/22: 84 56 d
+:matt/marble/01a: 80 68
+:matt/marble/01a: 96 68
+:matt/marble/001a: 28 476
+:matt/marble/001a: 28 4
+:matt/marble/001a: 28 20
+:matt/marble/001a: 28 36
+:matt/marble/001a: 28 52
+:matt/winter/09c: 24 64

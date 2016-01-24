@@ -1,0 +1,134 @@
+$BUILT 2012-08-27 17:09:51
+$AUTHOR mobius/Michael S. Repton
+$GERMAN 
+$ENGLISH Tinker Tailor Soldier Lix
+
+#SIZE_X 800
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 190
+#INITIAL 50
+#REQUIRED 50
+#SPAWN_INTERVAL 50
+#SPAWN_INTERVAL_FAST 30
+
+#CLIMBER 1
+#NOTHING 0
+#BUILDER 3
+#NOTHING 0
+#MINER 3
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/marble/Hatch.H: 48 128
+
+:matt/marble/Goal.G: 680 288
+
+:matt/marble/23c: 584 304
+:matt/marble/23c: 584 272
+:matt/marble/23c: 584 240
+:matt/marble/23c: 584 208
+:matt/marble/05: 336 368
+:matt/marble/09: 48 336
+:matt/marble/09: 112 336
+:matt/marble/09: 360 336
+:matt/marble/23c: 360 208
+:matt/marble/09: 48 272
+:matt/marble/09: 112 272
+:matt/marble/09: 48 208
+:matt/marble/09: 424 336
+:matt/marble/09: 488 336
+:matt/marble/09: 552 336
+:matt/marble/09: 616 336
+:matt/marble/09: 680 336
+:matt/marble/23c: 392 208
+:matt/marble/23c: 360 240
+:matt/marble/23c: 392 240
+:matt/marble/23c: 360 272
+:matt/marble/23c: 392 272
+:matt/marble/23c: 360 304
+:matt/marble/23c: 392 304
+:matt/marble/05b: 312 192
+:matt/marble/05b: 344 192
+:matt/marble/05b: 376 192
+:matt/marble/23c: 424 208
+:matt/marble/23c: 456 208
+:matt/marble/23c: 424 240
+:matt/marble/23c: 456 240
+:matt/marble/23c: 424 272
+:matt/marble/23c: 456 272
+:matt/marble/23c: 424 304
+:matt/marble/23c: 456 304
+:matt/marble/23c: 488 208
+:matt/marble/23c: 520 208
+:matt/marble/23c: 488 240
+:matt/marble/23c: 520 240
+:matt/marble/23c: 488 272
+:matt/marble/23c: 520 272
+:matt/marble/23c: 488 304
+:matt/marble/23c: 520 304
+:matt/marble/23c: 552 208
+:matt/marble/23c: 552 240
+:matt/marble/23c: 552 272
+:matt/marble/23c: 552 304
+:matt/marble/05b: 408 192
+:matt/marble/05b: 440 192
+:matt/marble/05b: 472 192
+:matt/marble/05b: 504 192
+:matt/marble/05b: 536 192
+:matt/marble/05b: 376 160
+:matt/marble/05b: 408 160
+:matt/marble/05b: 440 160
+:matt/marble/05b: 472 160
+:matt/marble/05b: 504 160
+:matt/marble/05b: 536 160
+:matt/marble/05b: 568 160
+:matt/marble/01b: 344 184
+:matt/marble/01b: 344 176
+:matt/marble/01b: 328 184
+:matt/marble/01b: 360 184
+:matt/marble/01b: 360 176
+:matt/marble/01b: 344 184
+:matt/marble/01b: 360 176
+:matt/marble/01b: 360 168
+:matt/marble/01b: 344 176
+:matt/marble/05: 176 368
+:matt/marble/05: 208 368
+:matt/marble/05: 240 368
+:matt/marble/05: 272 368
+:matt/marble/05: 272 368
+:matt/marble/05: 304 368
+:matt/marble/16b: 744 368
+:matt/marble/14b: 16 368
+:matt/marble/08d: 48 0
+:matt/marble/08d: 112 0
+:matt/marble/08d: 176 0
+:matt/marble/08d: 240 0
+:matt/marble/08d: 304 0
+:matt/marble/08d: 368 0
+:matt/marble/08d: 432 0
+:matt/marble/08d: 496 0
+:matt/marble/08d: 560 0
+:matt/marble/08d: 624 0
+:matt/marble/08d: 688 0
+:matt/marble/06d: 80 32
+:matt/marble/23c: 112 48
+:matt/marble/06d: 144 32
+:matt/marble/06d: 624 32
+:matt/marble/23c: 656 48
+:matt/marble/06d: 688 32
+:matt/marble/05b: 568 192
+:matt/marble/05b: 600 160
+:matt/marble/05b: 600 192
+:matt/marble/09: 600 224 d
+:matt/marble/09: 600 272 d

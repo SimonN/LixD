@@ -1,0 +1,86 @@
+$BUILT 2015-04-25 20:32:38
+$AUTHOR Michael S. Repton
+$GERMAN 
+$ENGLISH The Lion, Lix and the Wardrobe
+
+#SIZE_X 1280
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 400
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 60
+#REQUIRED 30
+#SPAWN_INTERVAL 50
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER 5
+#BLOCKER 5
+#BUILDER 5
+#PLATFORMER 5
+#BASHER 5
+#MINER 5
+#DIGGER 5
+#WALKER 5
+#JUMPER 5
+#BATTER 5
+
+:matt/winter/Hatch.H: 704 16
+
+:matt/winter/Goal.G: 864 320
+
+:matt/winter/17: 24 80
+:matt/winter/17: 56 184
+:matt/winter/17: 88 288
+:matt/winter/16: -16 168
+:matt/winter/16: 24 288
+:matt/winter/04: -32 248 rr
+:matt/winter/04: -48 72 rr
+:matt/winter/06: 224 272
+:matt/winter/06: 280 288
+:matt/winter/10: 152 328
+:matt/winter/06: 464 120
+:matt/winter/10: 352 344
+:matt/winter/05: 192 224 r
+:matt/winter/10: 528 304 frr
+:matt/winter/05: 496 344 fr
+:matt/winter/10: 704 320
+:matt/winter/05: 880 352 fr
+:matt/winter/02: 336 256 r
+:matt/winter/02: 432 272 rrr
+:matt/winter/05: 352 176 fr
+:matt/winter/05: 128 48 fr
+:matt/winter/05: 320 64 r
+:matt/winter/11: 656 160
+:matt/winter/05: 1072 352 r
+:matt/winter/16: 1088 272
+:matt/winter/05: 896 240 r
+:matt/winter/17: 1216 208
+:matt/winter/17: 1232 272
+:matt/winter/17: 1184 256 frr
+:matt/winter/05: 976 160 r
+:matt/winter/11: 784 240
+:matt/winter/17: 1008 64
+:matt/winter/16: 944 96
+:matt/winter/02: 1120 168 rrr
+:matt/winter/07: 1152 32 rr
+:matt/winter/07: 1184 48 rr
+:matt/winter/10: 1088 -48 rr
+:matt/winter/16: 1216 32 f
+:matt/winter/00: 800 96
+:matt/winter/02: 816 80 r
+:matt/winter/00: 864 80
+:matt/winter/01: 608 176
+:matt/winter/01: 624 144 frr
+:matt/winter/16: 832 176
+:matt/winter/03: 816 272
+:matt/winter/02: 864 128
+:matt/winter/16: 552 288
+:matt/winter/11: 944 128 rr

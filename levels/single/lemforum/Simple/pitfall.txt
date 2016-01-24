@@ -1,0 +1,76 @@
+$BUILT 2012-05-20 19:54:38
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH Pitfall
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 39
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/abstract/hatch.H: 96 80
+
+:geoo/construction/Goal2.G: 560 272
+
+:geoo/steel/64x64.S: 0 336
+:geoo/steel/64x64.S: 0 272
+:geoo/steel/64x64.S: 0 208
+:geoo/steel/64x64.S: 0 144
+:geoo/steel/64x64.S: 64 144
+:geoo/steel/64x64.S: 64 208
+:geoo/steel/64x64.S: 64 272
+:geoo/steel/64x64.S: 64 336
+:geoo/steel/64x64.S: 128 144
+:geoo/steel/64x64.S: 128 208
+:geoo/steel/64x64.S: 128 272
+:geoo/steel/64x64.S: 128 336
+:geoo/steel/64x64.S: 192 144
+:geoo/steel/64x64.S: 192 208
+:geoo/steel/64x64.S: 192 272
+:geoo/steel/64x64.S: 192 336
+:geoo/steel/32x32o.S: 256 368
+:geoo/steel/32x32o.S: 288 368
+:geoo/steel/32x32o.S: 288 336
+:geoo/steel/32x32o.S: 288 304
+:geoo/steel/32x32o.S: 288 272
+:geoo/steel/64x64.S: 320 336
+:geoo/steel/64x64.S: 384 336
+:geoo/steel/64x64.S: 448 336
+:geoo/steel/64x64.S: 512 336
+:geoo/steel/64x64.S: 576 336
+:geoo/construction/squarebrick_large: 320 272
+:geoo/construction/squarebrick_large: 320 304
+:geoo/construction/squarebrick_large: 352 272
+:geoo/construction/squarebrick_large: 352 304
+:geoo/construction/squarebrick_large: 384 272
+:geoo/construction/squarebrick_large: 384 304
+:geoo/construction/squarebrick_large: 416 272
+:geoo/construction/squarebrick_large: 416 304
+:geoo/construction/squarebrick_large: 448 272
+:geoo/construction/squarebrick_large: 448 304
+:geoo/construction/squarebrick_large: 480 272
+:geoo/construction/squarebrick_large: 480 304
+:geoo/construction/squarebrick_large: 512 304
+:geoo/steel/64x64.S: 0 80

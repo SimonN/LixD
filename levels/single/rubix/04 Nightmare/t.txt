@@ -1,0 +1,103 @@
+$BUILT 2014-02-28 15:36:59
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Tribute to M.C Hammer
+
+#SIZE_X 690
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 30
+#START_Y 380
+#BACKGROUND_RED 80
+#BACKGROUND_GREEN 16
+#BACKGROUND_BLUE 208
+
+#SECONDS 0
+#INITIAL 60
+#REQUIRED 60
+#SPAWN_INTERVAL 4
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#FLOATER 1
+#JUMPER 1
+#WALKER 1
+#BUILDER 2
+#PLATFORMER 1
+#MINER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/goldmine/GoalTop.D: 560 256
+
+:matt/goldmine/Hatch.H: 64 304
+
+:matt/goldmine/Goal.G: 560 304
+
+:matt/goldmine/crate16: 348 216
+:matt/goldmine/crate16: 316 200
+:matt/goldmine/crate16: 316 216
+:matt/goldmine/crate16: 188 216
+:matt/goldmine/crate16: 220 216
+:matt/goldmine/plank: 36 224 r
+:matt/goldmine/plank: 644 224 r
+:matt/goldmine/plank: 644 96 r
+:matt/goldmine/plank: 516 96
+:matt/goldmine/plank: 388 96
+:matt/goldmine/plank: 260 96
+:matt/goldmine/plank: 132 96
+:matt/goldmine/plank: 36 96
+:matt/goldmine/plank: 36 96 r
+:matt/steel/48x48.S: 176 352
+:matt/steel/48x48.S: 224 352
+:matt/steel/48x48.S: 272 352
+:matt/steel/48x48.S: 320 352
+:matt/steel/48x48.S: 368 352
+:matt/steel/48x48.S: 416 352
+:matt/steel/48x48.S: 464 352
+:matt/steel/48x48.S: 512 352
+:matt/steel/48x48.S: 560 352
+:matt/steel/48x48.S: 608 352
+:matt/steel/48x48.S: 32 352
+:matt/steel/48x48.S: 80 352
+:matt/steel/48x48.S: 128 352
+:matt/goldmine/planksupport: 584 96
+:matt/goldmine/planksupport: -22 96
+:matt/goldmine/crate64: 652 96 d
+:matt/goldmine/crate64: 180 288
+:matt/goldmine/crate64: 308 288
+:matt/goldmine/crate64: 244 288
+:matt/goldmine/crate64: 180 224
+:matt/goldmine/crate64: 244 224
+:matt/goldmine/crate64: 308 224
+:matt/goldmine/crate16: 204 208
+:matt/goldmine/crate16: 220 200
+:matt/goldmine/crate16: 236 208
+:matt/goldmine/crate16: 236 192
+:matt/goldmine/crate16: 252 208
+:matt/goldmine/crate16: 252 192
+:matt/goldmine/crate16: 268 208
+:matt/goldmine/crate16: 268 192
+:matt/goldmine/crate16: 284 208
+:matt/goldmine/crate16: 284 192
+:matt/goldmine/crate16: 300 208
+:matt/goldmine/crate16: 300 192
+:matt/goldmine/crate16: 332 208
+:matt/underworld/02: -26 94 d
+:matt/underworld/02: -26 182 d
+:matt/underworld/02: -26 256 d
+:matt/goldmine/plank: 38 224 r
+:matt/goldmine/plank: 180 184
+:matt/goldmine/plank: 244 184
+:matt/steel/48x48.S: 608 352
+:matt/goldmine/plank: 148 176
+:matt/goldmine/plank: 276 176
+:matt/goldmine/crate32: 148 144
+:matt/goldmine/crate32: 372 144
+:matt/goldmine/crate32: 128 112
+:matt/goldmine/crate32: 384 112
+:matt/goldmine/plank: 214 168

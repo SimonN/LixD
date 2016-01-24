@@ -1,0 +1,147 @@
+$BUILT 2012-04-25 07:58:53
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Ground control to...
+
+#SIZE_X 640
+#SIZE_Y 560
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 90
+#REQUIRED 85
+#SPAWN_INTERVAL 28
+#SPAWN_INTERVAL_FAST 4
+
+#FLOATER 1
+#BLOCKER 2
+#EXPLODER 2
+#BUILDER 15
+#BASHER 3
+#MINER 5
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/underworld/Hatch.H: 224 128 r
+:matt/underworld/Hatch.H: 352 128
+:matt/underworld/Hatch.H: 288 0
+
+:matt/underworld/Goal.G: 288 448
+
+:matt/underworld/Lava.W: 256 544
+:matt/underworld/Lava.W: 352 544
+:matt/underworld/Lava.W: 304 528
+
+:matt/underworld/09a: 28 426 r
+:matt/underworld/09a: 122 108
+:matt/underworld/09a: 488 188
+:matt/underworld/09a: 31 189
+:matt/underworld/09a: 97 188
+:matt/underworld/09a: 224 188
+:matt/underworld/09a: 158 189
+:matt/underworld/09a: 424 189
+:matt/underworld/09a: 477 109
+:matt/underworld/09a: 610 357 frrr
+:matt/underworld/09b: 270 232
+:matt/underworld/09a: 272 253 fr
+:matt/underworld/09a: 221 304
+:matt/underworld/09a: 302 243 frr
+:matt/underworld/09a: 153 117
+:matt/underworld/09a: 477 248 frr
+:matt/underworld/09a: 13 1
+:matt/underworld/09a: 61 1
+:matt/underworld/09a: 556 -9 f
+:matt/underworld/09a: 493 4
+:matt/underworld/09a: 393 539
+:matt/underworld/09a: 183 535
+:matt/underworld/09a: 450 528
+:matt/underworld/09c: 131 487
+:matt/underworld/09c: 153 508
+:matt/underworld/09b: 575 442
+:matt/underworld/09a: 526 512
+:matt/underworld/09a: 26 481
+:matt/underworld/02: 624 352
+:matt/underworld/02: -48 336
+:matt/underworld/01: 224 192
+:matt/underworld/02: 288 160
+:matt/underworld/01: 352 192
+:matt/underworld/01: 352 224
+:matt/underworld/01: 224 224
+:matt/underworld/01: 352 256
+:matt/underworld/01: 224 256
+:matt/underworld/01: 416 192
+:matt/underworld/01: 416 224
+:matt/underworld/01: 416 256
+:matt/underworld/01: 160 224
+:matt/underworld/01: 160 192
+:matt/underworld/01: 160 256
+:matt/underworld/01: 352 64
+:matt/underworld/01: 224 64
+:matt/underworld/01: 352 96
+:matt/underworld/01: 224 96
+:matt/underworld/01: 416 64
+:matt/underworld/01: 416 96
+:matt/underworld/01: 160 64
+:matt/underworld/01: 160 96
+:matt/underworld/00: -16 544
+:matt/underworld/00: 48 544
+:matt/underworld/00: 112 544
+:matt/underworld/00: 192 544
+:matt/underworld/00: 96 0
+:matt/underworld/00: 384 544
+:matt/underworld/00: 432 544
+:matt/underworld/00: 496 544
+:matt/underworld/00: 560 544
+:matt/underworld/01: 352 0
+:matt/underworld/01: 224 0
+:matt/underworld/01: 352 32
+:matt/underworld/01: 224 32
+:matt/underworld/01: 416 0
+:matt/underworld/01: 416 32
+:matt/underworld/01: 160 0
+:matt/underworld/01: 160 32
+:matt/underworld/01: 352 288
+:matt/underworld/01: 224 288
+:matt/underworld/01: 416 288
+:matt/underworld/01: 160 288
+:matt/underworld/02: 288 64
+:matt/underworld/06: -6 485
+:matt/underworld/08: -61 392
+:matt/underworld/08: 555 466
+:matt/underworld/08: 585 418
+:matt/underworld/05: 480 512
+:matt/underworld/05: 400 528
+:matt/underworld/05: 32 528
+:matt/underworld/08: 48 480
+:matt/underworld/00: 32 0
+:matt/underworld/00: -32 0
+:matt/underworld/00: 608 0
+:matt/underworld/00: 544 0
+:matt/underworld/00: 480 0
+:matt/underworld/00: 288 544
+:matt/underworld/05: 46 520
+:matt/underworld/00: 240 528
+:matt/underworld/00: 336 528
+:matt/underworld/00: 288 512
+:matt/underworld/01: 480 192
+:matt/underworld/01: 96 192
+:matt/underworld/01: 96 224
+:matt/underworld/01: 480 224
+:matt/underworld/01: 544 192
+:matt/underworld/01: 32 192
+:matt/underworld/01: 96 112
+:matt/underworld/01: 480 112
+:matt/underworld/00: 288 -11
+:matt/underworld/09a: 625 348 frr
+:matt/underworld/09a: -51 333
+:matt/underworld/09a: 360 190

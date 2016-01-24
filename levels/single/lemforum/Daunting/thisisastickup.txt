@@ -1,0 +1,133 @@
+$BUILT                                             2012-02-23 01:02:24
+$AUTHOR                                                     Nortaneous
+$GERMAN                                                               
+$ENGLISH                                             This is a Stickup
+
+#SIZE_X                                                           1280
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                           320
+#START_Y                                                           -20
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                             0
+#INITIAL                                                            32
+#REQUIRED                                                           20
+#SPAWN_INTERVAL                                                     32
+
+#FLOATER                                                             1
+#BLOCKER                                                             1
+#EXPLODER                                                            3
+#BUILDER                                                             5
+#PLATFORMER                                                          2
+#MINER                                                               1
+#DIGGER                                                              3
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:matt/goldmine/Hatch.H:                     458        96     r
+:matt/goldmine/Hatch.H:                     756        96
+
+:matt/goldmine/Goal.G:                      608       320
+
+:geoo/construction/sawblade_small.F:              152       304
+:geoo/construction/sawblade.F:                   1124       360
+:geoo/construction/Laser_hz_64.F:                 688       146
+:geoo/construction/Laser_hz_64.F:                 752       146
+:geoo/construction/Laser_hz_64.F:                 852       106
+:geoo/construction/Laser_hz_64.F:                 528       146
+:geoo/construction/Laser_hz_64.F:                 464       146
+:geoo/construction/Laser_hz_64.F:                 364       106
+
+:matt/goldmine/00:                          712       352
+:matt/goldmine/planksupport:               576         2
+:matt/goldmine/04:                         1016       352
+:matt/goldmine/01:                         1158       294
+:geoo/steel/16x16o.S:                            1212       320
+:geoo/steel/16x16o.S:                            1232       368
+:geoo/steel/16x16o.S:                            1238       352
+:geoo/steel/16x16o.S:                            1224       336
+:geoo/steel/16x16o.S:                            1206       336
+:geoo/steel/16x16o.S:                            1220       352
+:matt/goldmine/01:                         1158       302
+:matt/goldmine/03:                         1036       384
+:matt/goldmine/plank:                       636       178     rrr
+:matt/goldmine/plank:                       636        50     rrr
+:geoo/steel/dark_32x16o.S:                        336       112
+:geoo/steel/dark_32x16o.S:                        368       112
+:geoo/steel/dark_32x16o.S:                        336       128
+:geoo/steel/dark_32x16o.S:                        880       112
+:geoo/steel/dark_32x16o.S:                        912       112
+:geoo/steel/dark_32x16o.S:                        912       128
+:matt/goldmine/04:                           24        88
+:matt/goldmine/09:                           32         8
+:matt/goldmine/08:                          -16       -72
+:matt/goldmine/09:                          -16        32
+:matt/goldmine/01:                           -8       128
+:matt/goldmine/09:                           -8       144
+:matt/goldmine/05:                          -16       240
+:matt/goldmine/07:                           16       312
+:matt/goldmine/00:                           24       272
+:matt/goldmine/09:                          136       320
+:matt/goldmine/03:                          216       376
+:matt/goldmine/02:                           16       288
+:matt/goldmine/02:                            0       312
+:matt/goldmine/08:                          -56       280
+:matt/goldmine/07:                          336       344
+:matt/goldmine/03:                          752       334
+:matt/goldmine/09:                          752       352
+:matt/goldmine/09:                          784       352
+:matt/goldmine/08:                          704       336
+:matt/goldmine/03:                         1004       372
+:matt/goldmine/06:                         1184       296
+:matt/goldmine/06:                         1232       312
+:matt/goldmine/00:                         1214       278
+:matt/goldmine/06:                         1136       384
+:matt/goldmine/plank:                      1168       384
+:matt/goldmine/09:                         1240       304
+:matt/goldmine/06:                         1208       384
+:matt/goldmine/08:                         1196       242     rrrd
+:geoo/steel/16x16o.S:                            1194       368
+:geoo/steel/16x16o.S:                            1214       368
+:geoo/steel/16x16o.S:                            1198       352
+:matt/goldmine/07:                          128       336
+:matt/goldmine/04:                           56       208
+:matt/goldmine/09:                           40       184
+:matt/goldmine/06:                         1008       304
+:matt/goldmine/10:                          992       312
+:matt/goldmine/06:                          958       306
+:matt/goldmine/10:                          946       316     d
+:matt/goldmine/10:                          960       320     d
+:matt/goldmine/07:                          826       326
+:matt/goldmine/plank:                       636       370     rrr
+:matt/goldmine/03:                          688       376
+:matt/goldmine/03:                         1044       298
+:matt/goldmine/01:                         1136       300
+:matt/goldmine/planksupport:               402        86
+:matt/goldmine/explosivecrate:              392        40     d
+:matt/goldmine/plank:                       336       104
+:matt/goldmine/explosivecrate:              440        48     d
+:matt/goldmine/explosivecrate:              472        40     d
+:matt/carnival/44:                           436       116     d
+:matt/goldmine/explosivecrate:              463        80     d
+:matt/carnival/44:                           418        98     d
+:matt/goldmine/explosivecrate:              448       152     d
+:matt/goldmine/plank:                       464       144
+:matt/goldmine/planksupport:               746        88
+:matt/goldmine/explosivecrate:              792       152     d
+:matt/goldmine/explosivecrate:              816        40     d
+:matt/goldmine/explosivecrate:              825        38     d
+:matt/goldmine/plank:                       816       104
+:matt/goldmine/plank:                       688       144
+:matt/carnival/43:                           815       112     d
+:matt/carnival/43:                           829        98     d
+:matt/goldmine/explosivecrate:              752        80     d
+:matt/goldmine/explosivecrate:              742        56     d
+:matt/goldmine/explosivecrate:              772        54     d
+:matt/goldmine/explosivecrate:              458        53     d

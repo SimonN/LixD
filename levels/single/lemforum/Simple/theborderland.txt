@@ -1,0 +1,304 @@
+$BUILT 2014-07-02 23:44:16
+$AUTHOR Michael S. Repton
+$GERMAN 
+$ENGLISH The Borderland
+
+#SIZE_X 1600
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 60
+#REQUIRED 30
+#SPAWN_INTERVAL 24
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER2 5
+#BLOCKER 5
+#WALKER 10
+#BUILDER 10
+#PLATFORMER 10
+#BASHER 5
+#MINER 5
+#DIGGER 5
+#JUMPER 5
+#BATTER 5
+
+:matt/marble/Hatch.H: 64 192
+:matt/marble/Hatch.H: 1440 80
+
+:proxima/tile/goal.G: 640 72
+
+:simon/water.W: 0 352
+:simon/water.W: 48 352
+:simon/water.W: 96 352
+:simon/water.W: 144 352
+:simon/water.W: 192 352
+:simon/water.W: 240 352
+:simon/water.W: 480 352
+:simon/water.W: 528 352
+:simon/water.W: 576 352
+:simon/water.W: 624 352
+:simon/water.W: 928 352
+:simon/water.W: 976 352
+:simon/water.W: 1024 352
+:simon/water.W: 1072 352
+:simon/water.W: 1184 352
+:simon/water.W: 1504 352
+:simon/water.W: 1552 352
+:simon/water.W: 1296 352
+:simon/water.W: 1344 352
+:simon/water.W: 1392 352
+
+:proxima/tile/pink1a: 304 200
+:proxima/tile/pink5: 288 208
+:proxima/tile/pink1a: 256 208
+:proxima/tile/pink1a: 240 216
+:proxima/tile/pink1a: 224 224
+:proxima/tile/pink1a: 208 232
+:proxima/tile/pink1a: 192 240
+:proxima/tile/pink1a: 176 248
+:proxima/tile/pink1a: 160 256
+:proxima/tile/pink1a: 144 264
+:proxima/tile/pink1a: 128 272
+:proxima/tile/pink6s: 288 272
+:proxima/tile/pink6s: 320 272
+:proxima/tile/pink6s: 288 304
+:proxima/tile/pink6s: 320 304
+:proxima/tile/pink5: 288 336
+:proxima/tile/pink6s: 352 208
+:proxima/tile/pink6s: 384 208
+:proxima/tile/pink6s: 352 240
+:proxima/tile/pink6s: 384 240
+:proxima/tile/pink6s: 416 272
+:proxima/tile/pink6s: 448 272
+:proxima/tile/pink6s: 416 304
+:proxima/tile/pink6s: 448 304
+:proxima/tile/pink6s: 352 336
+:proxima/tile/pink6s: 384 336
+:proxima/tile/pink6s: 352 368
+:proxima/tile/pink6s: 384 368
+:proxima/tile/pink1a: 432 200
+:proxima/tile/pink5: 416 208
+:proxima/tile/pink5: 416 336
+:proxima/tile/64.S: 352 272
+:proxima/tile/pink4: 0 0
+:proxima/tile/pink1a: 112 48
+:proxima/tile/pink4: 64 0
+:proxima/tile/pink4: 0 64
+:proxima/tile/pink4: 64 64
+:proxima/tile/pink1a: 16 144
+:proxima/tile/pink5s: 0 128
+:proxima/tile/pink1a: -16 176
+:proxima/tile/pink1a: 0 160
+:proxima/tile/pink1a: 32 128
+:proxima/tile/pink1a: 144 16
+:proxima/tile/pink5s: 128 0
+:proxima/tile/pink1a: 128 32
+:proxima/tile/pink1a: 160 0
+:proxima/tile/pink1a: 312 168 fr
+:proxima/tile/pink1a: 312 136 fr
+:proxima/tile/pink1a: 312 104 fr
+:proxima/tile/pink1a: 312 72 fr
+:proxima/tile/pink1a: 312 40 fr
+:proxima/tile/pink5: 64 336
+:proxima/tile/pink1a: 256 0
+:proxima/tile/pink1a: 272 8
+:proxima/tile/pink1a: 288 16
+:proxima/tile/pink1a: 304 24
+:proxima/tile/64.S: 64 272
+:proxima/tile/pink1a: 544 384
+:proxima/tile/pink1a: 552 352 fr
+:proxima/tile/pink1a: 552 320 fr
+:proxima/tile/pink1a: 552 288 fr
+:proxima/tile/pink1a: 552 256 fr
+:proxima/tile/pink1a: 552 224 fr
+:proxima/tile/pink1a: 544 208
+:proxima/tile/pink1a: 440 168 fr
+:proxima/tile/pink1a: 440 136 fr
+:proxima/tile/pink1a: 440 104 fr
+:proxima/tile/pink1a: 440 72 fr
+:proxima/tile/pink1a: 440 40 fr
+:proxima/tile/pink1a: 480 0
+:proxima/tile/pink1a: 464 8
+:proxima/tile/pink1a: 448 16
+:proxima/tile/pink1a: 432 24
+:proxima/tile/pink1a: 320 32
+:proxima/tile/pink1a: 336 40
+:proxima/tile/pink1a: 352 48
+:proxima/tile/pink1a: 416 32
+:proxima/tile/pink1a: 400 40
+:proxima/tile/pink1a: 384 48
+:proxima/tile/pink1a: 368 56
+:proxima/tile/pink5: 672 208
+:proxima/tile/pink1a: 576 384
+:proxima/tile/pink1a: 584 352 fr
+:proxima/tile/pink1a: 584 320 fr
+:proxima/tile/pink1a: 584 288 fr
+:proxima/tile/pink1a: 584 256 fr
+:proxima/tile/pink1a: 584 224 fr
+:proxima/tile/pink1a: 576 208
+:proxima/tile/pink6s: 672 272
+:proxima/tile/pink6s: 704 272
+:proxima/tile/pink6s: 672 304
+:proxima/tile/pink6s: 704 304
+:proxima/tile/pink5: 672 336
+:proxima/tile/pink1a: 496 8
+:proxima/tile/pink1a: 512 16
+:proxima/tile/pink1a: 528 24
+:proxima/tile/pink1a: 704 0
+:proxima/tile/pink1a: 688 8
+:proxima/tile/pink1a: 672 16
+:proxima/tile/pink1a: 656 24
+:proxima/tile/pink1a: 544 32
+:proxima/tile/pink1a: 560 40
+:proxima/tile/pink1a: 576 48
+:proxima/tile/pink1a: 640 32
+:proxima/tile/pink1a: 624 40
+:proxima/tile/pink1a: 608 48
+:proxima/tile/pink1a: 592 56
+:proxima/tile/pink1a: 600 104 fr
+:proxima/tile/pink1a: 600 72 fr
+:proxima/tile/pink1a: 592 136
+:proxima/tile/pink1a: 624 136
+:proxima/tile/pink1a: 656 136
+:proxima/tile/pink1a: 688 136
+:proxima/tile/pink1a: 736 208
+:proxima/tile/pink1a: 768 208
+:proxima/tile/pink1a: 800 208
+:proxima/tile/pink1a: 832 208
+:proxima/tile/pink1a: 864 208
+:proxima/tile/pink1a: 896 208
+:proxima/tile/pink1a: 824 72 fr
+:proxima/tile/pink1a: 816 88
+:proxima/tile/64.S: 800 96
+:proxima/tile/pink1a: 824 40 fr
+:proxima/tile/pink1a: 824 8 fr
+:proxima/tile/pink1a: 816 -8
+:proxima/tile/pink1a: 944 40
+:proxima/tile/pink3s: 928 48
+:proxima/tile/pink3s: 928 80
+:proxima/tile/pink3s: 960 48
+:proxima/tile/pink3s: 960 80
+:proxima/tile/pink5: 928 208
+:proxima/tile/pink6s: 960 272
+:proxima/tile/pink6s: 960 304
+:proxima/tile/pink5: 928 336
+:proxima/tile/pink6s: 928 272
+:proxima/tile/pink6s: 928 304
+:proxima/tile/pink1a: 752 224
+:proxima/tile/pink1a: 784 224
+:proxima/tile/pink1a: 816 224
+:proxima/tile/pink1a: 848 224
+:proxima/tile/pink1a: 880 224
+:proxima/tile/pink1a: 768 240
+:proxima/tile/pink1a: 800 240
+:proxima/tile/pink1a: 832 240
+:proxima/tile/pink1a: 864 240
+:proxima/tile/pink1a: 784 256
+:proxima/tile/pink1a: 816 256
+:proxima/tile/pink1a: 848 256
+:proxima/tile/pink1a: 800 272
+:proxima/tile/pink1a: 832 272
+:proxima/tile/pink1a: 816 288
+:proxima/tile/pink1a: 816 304
+:proxima/tile/pink1a: 800 320
+:proxima/tile/pink1a: 832 320
+:proxima/tile/pink1a: 784 336
+:proxima/tile/pink1a: 816 336
+:proxima/tile/pink1a: 848 336
+:proxima/tile/pink1a: 768 352
+:proxima/tile/pink1a: 800 352
+:proxima/tile/pink1a: 832 352
+:proxima/tile/pink1a: 864 352
+:proxima/tile/pink1a: 752 368
+:proxima/tile/pink1a: 784 368
+:proxima/tile/pink1a: 816 368
+:proxima/tile/pink1a: 848 368
+:proxima/tile/pink1a: 880 368
+:proxima/tile/pink1a: 736 384
+:proxima/tile/pink1a: 768 384
+:proxima/tile/pink1a: 800 384
+:proxima/tile/pink1a: 832 384
+:proxima/tile/pink1a: 864 384
+:proxima/tile/pink1a: 896 384
+:proxima/tile/pink1a: 944 -8
+:proxima/tile/pink1a: 1008 40
+:proxima/tile/64.S: 1056 48
+:proxima/tile/pink1a: 1008 -8
+:proxima/tile/pink1a: 1016 8 fr
+:proxima/tile/pink1a: 952 8 fr
+:proxima/tile/pink3s: 992 48
+:proxima/tile/pink3s: 992 80
+:proxima/tile/pink3s: 1024 48
+:proxima/tile/pink3s: 1024 80
+:proxima/tile/64.S: 1120 336
+:proxima/tile/pink1a: 1144 224 fr
+:proxima/tile/pink1a: 1144 192 fr
+:proxima/tile/pink1a: 1136 176
+:proxima/tile/pink1a: 1144 256 fr
+:proxima/tile/pink1a: 1136 320
+:proxima/tile/pink1a: 1144 288 fr
+:proxima/tile/pink1a: 1248 112
+:proxima/tile/pink1a: 1256 128 fr
+:proxima/tile/pink1a: 1264 120
+:proxima/tile/pink1a: 1280 128
+:proxima/tile/pink1a: 1296 136
+:proxima/tile/pink1a: 1312 144
+:proxima/tile/pink1a: 1320 160 fr
+:proxima/tile/pink1a: 1328 152
+:proxima/tile/pink1a: 1344 160
+:proxima/tile/pink1a: 1360 168
+:proxima/tile/pink1a: 1376 176
+:proxima/tile/pink1a: 1256 192 fr
+:proxima/tile/pink1a: 1256 160 fr
+:proxima/tile/pink1a: 1256 224 fr
+:proxima/tile/pink1a: 1256 256 fr
+:proxima/tile/pink1a: 1320 224 fr
+:proxima/tile/pink1a: 1320 192 fr
+:proxima/tile/pink1a: 1320 256 fr
+:proxima/tile/pink1a: 1384 224 fr
+:proxima/tile/64.S: 1056 112
+:proxima/tile/pink5: 1120 48
+:proxima/tile/pink5: 1184 48
+:proxima/tile/pink5: 1120 112
+:proxima/tile/pink5: 1184 112
+:proxima/tile/pink1a: 1256 288 fr
+:proxima/tile/pink1a: 1376 256
+:proxima/tile/pink1a: 1360 264
+:proxima/tile/pink1a: 1344 272
+:proxima/tile/pink1a: 1328 280
+:proxima/tile/pink1a: 1312 288
+:proxima/tile/pink1a: 1296 296
+:proxima/tile/pink1a: 1280 304
+:proxima/tile/pink1a: 1264 312
+:proxima/tile/pink1a: 1248 320
+:proxima/tile/pink1a: 1384 192 fr
+:proxima/tile/64.S: 1232 336
+:proxima/tile/pink3: 1408 176
+:proxima/tile/pink1a: 1456 272
+:proxima/tile/pink3: 1472 208
+:proxima/tile/pink3s: 1472 176
+:proxima/tile/pink3s: 1504 176
+:proxima/tile/pink3s: 1408 240
+:proxima/tile/pink3s: 1440 240
+:proxima/tile/64.S: 1440 336
+:proxima/tile/pink1a: 1464 288 fr
+:proxima/tile/pink1a: 1456 320
+:proxima/tile/pink1a: 1520 0
+:proxima/tile/pink1a: 1520 32
+:proxima/tile/64.S: 1536 0
+:proxima/tile/pink1a: 1488 0
+:proxima/tile/pink1a: 1504 16
+:proxima/tile/pink1a: 1584 64
+:proxima/tile/pink1a: 1552 64
+:proxima/tile/pink1a: 1568 80
+:proxima/tile/pink1a: 1584 96

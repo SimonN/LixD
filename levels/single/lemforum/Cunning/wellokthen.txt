@@ -1,0 +1,70 @@
+$BUILT                                             2012-01-19 08:14:54
+$AUTHOR                                                   Insane Steve
+$GERMAN                                                               
+$ENGLISH                                                  Well OK Then
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                             0
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                             0
+#INITIAL                                                           100
+#REQUIRED                                                           94
+#SPAWN_INTERVAL                                                     32
+
+#WALKER                                                             10
+#JUMPER                                                             10
+#CLIMBER                                                            10
+#FLOATER                                                            10
+#EXPLODER2                                                           0
+#BLOCKER                                                             0
+#CUBER                                                              10
+#BUILDER                                                             0
+#PLATFORMER                                                          0
+#BASHER                                                              0
+#MINER                                                               0
+#DIGGER                                                              0
+
+:geoo/construction/Hatch.H:                       160       192
+
+:geoo/construction/Goal2.G:                       144       304
+
+:geoo/construction/wall/small_64x32:              130       272
+:geoo/construction/wall/small_64x32:              194       272
+:geoo/construction/wall/small_64x32:              258       272
+:geoo/construction/wall/small_64x32:              322       272
+:geoo/construction/wall/small_64x32:              130       368
+:geoo/construction/wall/small_64x32:              194       368
+:geoo/construction/wall/small_64x32:              258       368
+:geoo/construction/wall/small_64x32:              322       368
+:geoo/steel/16x16o.S:                             366       240
+:geoo/steel/16x16o.S:                             350       240
+:geoo/steel/16x16o.S:                             334       240
+:geoo/steel/16x16o.S:                             318       240
+:geoo/steel/16x16o.S:                             302       240
+:geoo/steel/16x16o.S:                             286       240
+:geoo/steel/16x16o.S:                             270       240
+:geoo/steel/16x16o.S:                             270       224
+:geoo/steel/16x16o.S:                             270       208
+:geoo/steel/16x16o.S:                             270       192
+:geoo/steel/16x16o.S:                             270       176
+:geoo/steel/16x16o.S:                             270       160
+:geoo/steel/16x16o.S:                             270       144
+:geoo/steel/16x16o.S:                             270       128
+:geoo/steel/16x16o.S:                             270       112
+:geoo/steel/16x16o.S:                             270        96
+:geoo/steel/16x16o.S:                             270        80
+:geoo/steel/16x16o.S:                             270        64
+:geoo/steel/16x16o.S:                             270        48
+:geoo/steel/16x16o.S:                             270        32
+:geoo/steel/16x16o.S:                             270        16
+:geoo/steel/16x16o.S:                             270         0
+:geoo/steel/16x16o.S:                             432       272
+:geoo/steel/16x16o.S:                             496       272
+:geoo/steel/16x16o.S:                             560       272

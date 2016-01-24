@@ -1,0 +1,124 @@
+$BUILT                                             2011-09-11 17:04:13
+$AUTHOR                                                          Simon
+$GERMAN                                                               
+$ENGLISH                                   A good first 2-player level
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                             0
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            45
+#INITIAL                                                            60
+#REQUIRED                                                           20
+#RATE                                                               70
+
+#WALKER                                                             20
+#JUMPER                                                             20
+#CLIMBER                                                            20
+#FLOATER                                                            20
+#EXPLODER2                                                          20
+#BLOCKER                                                             1
+#NOTHING                                                             0
+#BUILDER                                                            40
+#PLATFORMER                                                         20
+#BASHER                                                             20
+#MINER                                                              20
+#DIGGER                                                             20
+
+:matt/earth/Hatch.H:                         104        68
+:matt/earth/Hatch.H:                         472        68     r
+
+:matt/goldmine/Goal.G:                      544       272
+:matt/goldmine/Goal.G:                       32       272
+
+:matt/water.W:                                    288       368
+:matt/water.W:                                    320       368
+
+:matt/earth/09:                              442       114     rr
+:matt/earth/18:                              506       116
+:matt/steel/32x16.S:                              494       116
+:matt/earth/02:                              434       112     fr
+:matt/earth/03:                              418       120     r
+:matt/earth/09:                              272       288
+:matt/earth/09:                              304       288
+:matt/earth/09:                              312       280
+:matt/earth/09:                              344       288
+:matt/earth/12:                              378       286
+:matt/earth/05:                              390       200     f
+:matt/earth/09:                              344       280
+:matt/earth/05:                              392       192
+:matt/earth/18:                              400       184
+:matt/earth/01:                              416       216
+:matt/earth/09:                              136       114     rr
+:matt/earth/18:                               98       116
+:matt/steel/32x16.S:                              114       116
+:matt/earth/02:                               96       112     r
+:matt/earth/03:                              184       120     fr
+:matt/earth/18:                              218       188
+:matt/earth/19:                              222       184     frr
+:matt/earth/01:                              368       184
+:matt/earth/02:                              352       336     fr
+:matt/earth/04:                              382       232
+:matt/earth/19:                              224       182
+:matt/earth/18:                              208       186
+:matt/steel/64x32.S:                               32       320
+:matt/earth/10:                               -6       314     frr
+:matt/goldmine/crate64:                     -32       280
+:matt/earth/09:                              248       288
+:matt/earth/16:                              160       200
+:matt/earth/18:                              180       214
+:matt/earth/05:                              226       328
+:matt/earth/11:                              224       288
+:matt/earth/00:                              590       348
+:matt/steel/64x32.S:                              544       320
+:matt/goldmine/crate64:                     608       280
+:matt/earth/01:                              584       318
+:matt/earth/14:                              354       290     r
+:matt/earth/09:                              288       280
+:matt/earth/09:                              248       280
+:matt/earth/10:                              374       296
+:matt/earth/01:                              352       316
+:matt/earth/18:                              184       296
+:matt/earth/17:                              200       296
+:matt/earth/01:                              152       312
+:matt/earth/02:                              128       292     rr
+:matt/earth/00:                              136       344
+:matt/earth/01:                              428       264
+:matt/earth/10:                              440       316
+:matt/earth/10:                              362       328
+:matt/earth/06:                              156       250
+:matt/earth/06:                              200       178
+:matt/earth/09:                              384       180
+:matt/earth/07:                              416       184
+:matt/earth/07:                              444       254
+:matt/earth/00:                              588       320
+:matt/earth/08:                              172       202     r
+:matt/earth/08:                              444       212
+:matt/steel/16x32.S:                              272       376
+:matt/steel/16x32.S:                              352       376
+:matt/earth/26:                              280         0
+:matt/earth/07:                              224        56
+:matt/earth/08:                              232        88     fr
+:matt/earth/28:                              232       104
+:matt/earth/10:                              192       -88     r
+:matt/earth/24:                              346        26     r
+:matt/earth/28:                              376       104     frr
+:matt/earth/06:                              376        72
+:matt/earth/29:                              360        64
+:matt/earth/10:                              336       -88     fr
+:matt/earth/09:                              108       118     f
+:matt/earth/09:                              152       110
+:matt/earth/09:                              442       110
+:matt/earth/09:                              476       118     rr
+:matt/earth/09:                              178       164     fr
+:matt/earth/09:                              448       162     frrr
+:matt/earth/08:                              430       182
+:matt/goldmine/crate64:                     -40       216
+:matt/goldmine/crate64:                     616       216
+:matt/earth/10:                             -116       320     frr

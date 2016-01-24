@@ -1,0 +1,74 @@
+$BUILT                                             2012-03-01 16:00:09
+$AUTHOR                                                   Insane Steve
+$GERMAN                                                               
+$ENGLISH                                                      Snowjump
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                             0
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                             0
+#INITIAL                                                            30
+#REQUIRED                                                           20
+#SPAWN_INTERVAL                                                     50
+
+#WALKER                                                              0
+#JUMPER                                                              0
+#CLIMBER                                                             0
+#FLOATER                                                             0
+#EXPLODER2                                                           0
+#BLOCKER                                                             0
+#CUBER                                                               2
+#BUILDER                                                             0
+#PLATFORMER                                                          2
+#BASHER                                                              0
+#MINER                                                               0
+#DIGGER                                                              1
+
+:matt/winter/Hatch.H:                         72       168
+
+:matt/winter/Goal.G:                         522       240
+
+:matt/winter/18:                             552       300
+:matt/winter/17:                             402       320
+:matt/winter/00:                             394       290
+:matt/winter/10:                               6       290
+:matt/winter/10:                               0       292
+:matt/winter/14:                             288       352
+:matt/winter/03:                             168       336
+:matt/winter/00:                             232       344
+:matt/winter/00:                             168       360
+:matt/winter/11:                             128       328
+:matt/winter/11:                             136       352
+:matt/winter/17:                              24       296
+:matt/winter/17:                              72       296
+:matt/winter/16:                             -40       288
+:matt/winter/16:                              -8       288
+:matt/winter/13:                             104       288
+:matt/winter/13:                              88       272
+:matt/winter/13:                              64       272
+:matt/winter/11:                              24       256
+:matt/winter/00:                             -32       272
+:matt/winter/00:                             -24       216
+:matt/winter/00:                             -16       192
+:matt/winter/06:                             268       352     rrr
+:matt/winter/06:                             210       352     rrr
+:matt/winter/06:                             162       352     rrr
+:matt/winter/06:                             112       352     rrr
+:matt/winter/06:                              56       352     rrr
+:matt/winter/06:                               6       352     rrr
+:matt/winter/06:                             -18       352     rrr
+:matt/winter/06:                             268       336     rrrd
+:matt/winter/03:                             198       310     rrd
+:matt/winter/06:                             392       322
+:matt/winter/06:                             392       346
+:matt/winter/06:                             316       368
+:matt/winter/16:                             422       284
+:matt/winter/17:                             498       288
+:matt/winter/16:                             534       290

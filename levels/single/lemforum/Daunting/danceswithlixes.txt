@@ -1,0 +1,188 @@
+$BUILT 2014-06-28 23:28:40
+$AUTHOR mobius/geoo
+$GERMAN 
+$ENGLISH Dances With Lixes
+
+#SIZE_X 880
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 240
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 47
+#SPAWN_INTERVAL 20
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 4
+#FLOATER 1
+#EXPLODER 3
+#BLOCKER 0
+#BUILDER 11
+#BASHER 0
+#MINER 1
+#DIGGER 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:simon/hatch001.H: 784 304
+
+:matt/marble/Goal.G: 560 144
+
+:geoo/construction/sawblade.F: 238 -2
+:geoo/construction/sawblade_medium.F: 784 224
+:geoo/construction/sawblade_medium.F: 336 128
+:geoo/construction/sawblade_medium.F: 336 80
+
+:matt/marble/09b: 448 336
+:matt/marble/09b: 384 336
+:matt/marble/22c: 128 -8
+:matt/marble/23d: 104 80
+:matt/marble/23d: 72 80
+:matt/marble/23d: 104 48
+:matt/marble/23d: 72 48
+:matt/marble/22: 274 8 rrr
+:matt/marble/21b: 256 0
+:matt/marble/21b: 272 0
+:matt/beach/daytime/06: 488 -48 rr
+:matt/marble/22c: 784 32
+:matt/beach/daytime/00: 800 -16
+:geoo/steel/64x32o.S: 784 368
+:matt/marble/06b: 848 352
+:matt/marble/06b: 848 288
+:matt/marble/06b: 848 160
+:matt/marble/23e: 576 288
+:matt/marble/23e: 576 320
+:matt/marble/23e: 576 352
+:matt/marble/23e: 560 368
+:matt/marble/23e: 592 272
+:matt/marble/23e: 624 272
+:matt/marble/23e: 592 304
+:matt/marble/23e: 624 304
+:matt/marble/23e: 592 336
+:matt/marble/23e: 624 336
+:matt/marble/23e: 592 368
+:matt/marble/23e: 624 368
+:matt/marble/23e: 656 272
+:matt/marble/23e: 688 272
+:matt/marble/23e: 656 304
+:matt/marble/23e: 688 304
+:matt/marble/23e: 656 336
+:matt/marble/23e: 688 336
+:matt/marble/23e: 656 368
+:matt/marble/23e: 688 368
+:matt/marble/23e: 720 272
+:matt/marble/23e: 720 304
+:matt/marble/23e: 720 336
+:matt/marble/23e: 720 368
+:matt/marble/23e: 752 368
+:matt/beach/decor/grass07: 672 328
+:matt/beach/daytime/06: 544 336
+:matt/marble/09b: 512 336
+:matt/marble/23e: 624 240
+:matt/marble/23e: 656 208
+:matt/marble/23e: 688 208
+:matt/marble/23e: 656 240
+:matt/marble/23e: 688 240
+:matt/marble/23e: 720 208
+:matt/marble/23e: 752 208
+:matt/marble/23e: 720 240
+:matt/marble/23e: 752 240
+:matt/marble/16: 768 32
+:matt/marble/16: 800 64
+:matt/marble/05: 768 64
+:matt/marble/06b: 848 96
+:matt/marble/06b: 848 32
+:matt/marble/06b: 848 -32
+:matt/marble/21b: 464 0
+:matt/marble/21b: 528 0
+:matt/marble/22: 370 8
+:matt/marble/21b: 336 0
+:matt/marble/21b: 400 0
+:matt/marble/21b: 720 0
+:matt/marble/21b: 784 0
+:matt/marble/21b: 592 0
+:matt/marble/21b: 656 0
+:geoo/steel/32x64o.S: 752 224
+:geoo/steel/32x64o.S: 752 262 d
+:matt/marble/23e: 736 320
+:geoo/steel/32x64o.S: 752 256 n
+:geoo/steel/64x64o.S: 368 192
+:geoo/steel/64x64o.S: 368 256
+:geoo/steel/64x32o.S: 432 192
+:geoo/steel/64x32o.S: 496 192
+:geoo/steel/64x32o.S: 560 192
+:geoo/steel/64x32o.S: 624 192
+:geoo/steel/64x32o.S: 688 192
+:matt/marble/09b: 256 336
+:geoo/nopales/nopal_01: 48 312
+:matt/beach/daytime/13: -24 336
+:matt/marble/03: 472 16
+:matt/marble/02e: 496 16
+:matt/marble/02e: 432 16
+:geoo/steel/64x32o.S: 752 192
+:matt/beach/daytime/14: 40 344
+:matt/marble/09b: 192 16
+:matt/beach/daytime/06: 80 -72 rr
+:matt/marble/09b: 320 336
+:matt/marble/09b: 192 336
+:matt/marble/09b: 192 272
+:matt/marble/22c: 16 0 rrr
+:matt/marble/18a: 40 80
+:matt/marble/18a: 104 16
+:matt/marble/18a: 104 80 rrr
+:matt/marble/18a: 40 16 rrr
+:matt/beach/daytime/03: 0 -24 rr
+:matt/marble/03: 496 32
+:geoo/steel/64x64o.S: 576 336
+:geoo/steel/dark_32x48o.S: 560 288
+:matt/marble/23e: 752 336
+:matt/marble/23e: 768 320
+:matt/marble/23e: 784 320 d
+:matt/marble/01e_1: 584 272
+:matt/marble/01e_2: 576 280
+:matt/marble/001e: 608 264
+:matt/marble/001e_2: 648 224
+:matt/marble/01e_2: 592 264
+:matt/marble/01e_2: 600 256
+:matt/marble/01e_2: 624 232
+:matt/marble/01e_1: 608 248
+:matt/marble/01e_1: 616 240
+:matt/marble/01e_1: 632 224
+:matt/marble/001e: 640 232
+:matt/marble/001e_2: 616 256
+:matt/marble/00e_1: 544 240
+:matt/marble/00e_2: 560 224
+:matt/marble/00e_1: 528 256
+:matt/marble/00e_2: 536 248
+:matt/marble/00e_1: 520 264
+:matt/marble/00e_2: 552 232
+:matt/marble/00e_1: 504 280
+:matt/marble/00e_2: 512 272
+:matt/marble/00e_1: 496 288
+:matt/marble/00e_2: 488 296
+:matt/marble/00e_1: 472 312
+:matt/marble/00e_2: 480 304
+:matt/marble/00e_1: 456 328
+:matt/marble/00e_2: 464 320
+:geoo/nopales/nopal_02: 66 282
+:geoo/nopales/nopal_07: 36 280
+:geoo/nopales/nopal_11: 10 250
+:geoo/nopales/nopal_10: 94 244 r
+:geoo/nopales/nopal_00: 44 248 r
+:geoo/nopales/fruit_03: 52 242
+:geoo/nopales/fruit_02: 46 244
+:geoo/nopales/fruit_06: 56 244
+:geoo/nopales/nopal_08: 74 258
+:matt/marble/09b: 192 208
+:matt/marble/09b: 192 144
+:matt/marble/09b: 192 80
+:matt/beach/daytime/14: 302 -26 rr
+:geoo/steel/32x64o.S: 848 224

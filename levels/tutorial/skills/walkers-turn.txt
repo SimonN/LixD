@@ -1,0 +1,126 @@
+$BUILT 2016-01-11 06:52:10
+$AUTHOR Wuzzy
+$GERMAN Benutze Geher zum Umdrehen
+$ENGLISH Use walkers to turn around
+
+$TUTORIAL_GERMAN Lass sie nicht den tiefen Abgrund hinunterfallen! Benutze die Geher-Fähigkeit auf einen Geher oder Renner, um ihn umzudrehen.
+$TUTORIAL_ENGLISH Don't let them fall down the deep abyss! Use the walker ability on a walker or runner to turn her around.
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y -20
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 50
+
+#SECONDS 0
+#INITIAL 3
+#REQUIRED 3
+#SPAWN_INTERVAL 66
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER -1
+
+:geoo/abstract/hatch.H: 160 64
+
+:geoo/abstract/goal.G: 144 240
+
+:geoo/shadow/wall/center: 224 288
+:geoo/shadow/wall/center: 256 288
+:geoo/shadow/wall/center: 288 288
+:geoo/shadow/wall/center: 160 128
+:geoo/shadow/wall/center: 320 128
+:geoo/shadow/wall/center: 224 128
+:geoo/shadow/wall/center: 352 128
+:geoo/shadow/wall/center: 192 128
+:geoo/shadow/wall/center: 256 128
+:geoo/shadow/wall/center: 288 128
+:geoo/shadow/wall/center: 160 288
+:geoo/shadow/wall/center: 192 288
+:geoo/shadow/wall/center: 384 128
+:geoo/shadow/wall/center: 416 128
+:geoo/shadow/wall/center: 448 128
+:geoo/shadow/wall/center: 480 128
+:geoo/shadow/wall/center: 512 128
+:geoo/shadow/wall/center: 544 128
+:geoo/shadow/wall/center: 96 208
+:geoo/shadow/wall/center: 128 208
+:geoo/shadow/wall/center: 160 208
+:geoo/shadow/wall/center: 192 208
+:geoo/shadow/wall/center: 224 208
+:geoo/shadow/wall/center: 416 160
+:geoo/shadow/wall/center: 448 192
+:geoo/shadow/wall/center: 480 192
+:geoo/shadow/wall/center: 416 224
+:geoo/shadow/wall/center: 448 224
+:geoo/shadow/wall/center: 480 224
+:geoo/shadow/wall/center: 512 224
+:geoo/shadow/wall/center: 416 288
+:geoo/shadow/wall/center: 448 256
+:geoo/shadow/wall/center: 480 256
+:geoo/shadow/wall/center: 544 288
+:geoo/shadow/wall/center: 448 288
+:geoo/shadow/wall/center: 480 288
+:geoo/shadow/wall/center: 512 256
+:geoo/shadow/wall/center: 416 320
+:geoo/shadow/wall/center: 448 320
+:geoo/shadow/wall/center: 480 320
+:geoo/shadow/wall/center: 512 320
+:geoo/shadow/wall/center: 448 352
+:geoo/shadow/wall/center: 480 352
+:geoo/shadow/wall/center: 448 384
+:geoo/shadow/wall/center: 512 384
+:geoo/shadow/wall/center: 448 160
+:geoo/shadow/wall/center: 480 160
+:geoo/shadow/wall/center: 512 160
+:geoo/shadow/wall/deco_crags2: 128 128
+:geoo/shadow/wall/deco_light: 576 128
+:geoo/shadow/wall/deco_light: 480 240
+:geoo/shadow/wall/deco_dark: 448 192
+:geoo/shadow/door: 416 352
+:geoo/shadow/window: 416 272
+:geoo/shadow/window_broken: 512 352
+:geoo/shadow/wall/deco_crags: 128 208
+:geoo/shadow/wall/deco_crags: 480 384
+:geoo/shadow/wall/deco_light: 272 128
+:geoo/shadow/wall/deco_light: 272 288
+:geoo/shadow/wall/deco_dark: 416 256
+:geoo/shadow/wall/deco_dark: 320 288
+:geoo/shadow/wall/deco_dark: 176 144
+:geoo/shadow/wall/deco_light: 32 208
+:geoo/shadow/wall/left: 384 192
+:geoo/shadow/wall/left: 384 160
+:geoo/shadow/wall/left: 384 224
+:geoo/shadow/wall/left: 384 288
+:geoo/shadow/wall/left: 384 256
+:geoo/shadow/wall/left: 384 320
+:geoo/shadow/wall/left: 384 384
+:geoo/shadow/wall/left: 384 352
+:geoo/shadow/wall/right: 544 192
+:geoo/shadow/wall/right: 544 160
+:geoo/shadow/wall/deco_crags: 464 128
+:geoo/shadow/wall/right: 544 224
+:geoo/shadow/wall/right: 512 288
+:geoo/shadow/wall/right: 544 256
+:geoo/shadow/wall/right: 544 320
+:geoo/shadow/wall/right: 544 384
+:geoo/shadow/wall/right: 544 352
+:geoo/shadow/window: 416 192
+:geoo/shadow/window: 512 192
+:geoo/shadow/window_broken: 512 272 rrr
+:geoo/shadow/wall/left: 64 208
+:geoo/shadow/wall/deco_light: 96 288
+:geoo/shadow/wall/deco_light: 256 208
+:geoo/shadow/rope1: 320 160
+:geoo/shadow/sock: 352 172
+:geoo/shadow/sock: 328 170 frr
+:geoo/shadow/pillar_verti_32: 144 320
+:geoo/shadow/pillar_verti_32: 144 352
+:geoo/shadow/pillar_verti: 144 384
+:geoo/shadow/pillar_verti_32: 288 320
+:geoo/shadow/pillar_verti_32: 288 352
+:geoo/shadow/pillar_verti: 288 384
+:geoo/shadow/wall/center: 128 288

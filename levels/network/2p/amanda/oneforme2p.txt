@@ -1,0 +1,155 @@
+$BUILT 2014-07-05 18:13:46
+$AUTHOR Amanda
+$GERMAN Why is Lix set for German!?
+$ENGLISH One For Me, One For You (2p)
+
+#SIZE_X 448
+#SIZE_Y 440
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 30
+#INITIAL 220
+#REQUIRED 20
+#SPAWN_INTERVAL 6
+#SPAWN_INTERVAL_FAST 4
+
+#BASHER 5
+#MINER -1
+#DIGGER -1
+#BATTER -1
+#BLOCKER 4
+#PLATFORMER 24
+#BUILDER 2
+#CUBER 1
+#WALKER 60
+#JUMPER 20
+#CLIMBER 0
+#FLOATER 2
+
+:matt/marble/Hatch.H: 8 8
+:matt/marble/Hatch.H: 232 8
+
+:matt/underworld/Goal.G: 432 360
+:matt/underworld/Goal.G: 192 360
+
+:amanda/forest/frog.T: 8 32
+:amanda/forest/frog.T: 8 232
+:amanda/forest/frog_catch.T: 152 232
+:amanda/forest/frog_happy.T: 120 296
+:amanda/forest/frog.T: 232 32
+:amanda/forest/frog.T: 232 232
+:amanda/forest/frog_catch.T: 376 232
+:amanda/forest/frog_happy.T: 344 296
+
+:matt/marble/05b: 0 112
+:geoo/steel/dark_32x32o.S: 0 80
+:geoo/steel/dark_32x32o.S: 48 80
+:matt/marble/05b: 48 112
+:matt/marble/05b: 24 144
+:geoo/steel/dark_32x32o.S: 56 176
+:geoo/steel/dark_32x32o.S: 88 176
+:geoo/steel/dark_32x32o.S: 120 176
+:geoo/steel/dark_32x32o.S: 440 176
+:geoo/steel/dark_64x32o.S: 8 280
+:geoo/steel/dark_64x32o.S: 72 280
+:geoo/steel/32x16o.S: 42 208
+:geoo/steel/32x16o.S: 6 208
+:matt/marble/05c: 136 280
+:geoo/steel/32x32o.S: 168 280
+:geoo/steel/32x32o.S: 152 176
+:geoo/steel/32x32o.S: 184 176
+:matt/marble/03d: 136 144
+:matt/marble/03d: 168 144
+:matt/marble/03d: 168 112
+:matt/marble/03d: 136 112
+:matt/marble/03d: 136 80
+:matt/marble/03d: 168 80
+:matt/marble/03d: 136 48
+:matt/marble/03d: 168 48
+:matt/marble/03d: 136 16
+:matt/marble/03d: 168 16
+:geoo/steel/32x16o.S: 0 0
+:geoo/steel/32x16o.S: 32 0
+:geoo/steel/32x16o.S: 64 0
+:geoo/steel/32x16o.S: 96 0
+:geoo/steel/32x16o.S: 128 0
+:geoo/steel/32x16o.S: 160 0
+:geoo/steel/32x16o.S: 192 0
+:geoo/steel/dark_32x16o.S: 136 424
+:geoo/steel/dark_32x16o.S: 168 424
+:geoo/steel/dark_32x16o.S: 200 424
+:geoo/steel/dark_32x16o.S: 8 424
+:geoo/steel/dark_32x16o.S: 40 424
+:geoo/steel/dark_32x16o.S: 72 424
+:geoo/steel/dark_32x16o.S: 104 424
+:matt/beach/decor/palmtree: 106 331
+:geoo/steel/dark_32x32o.S: 48 312
+:geoo/steel/dark_32x32o.S: 48 344
+:geoo/steel/dark_32x32o.S: 48 392
+:geoo/steel/dark_32x16o.S: 48 376
+:matt/marble/05b: 224 112
+:geoo/steel/dark_32x32o.S: 224 80
+:geoo/steel/dark_32x32o.S: 272 80
+:matt/marble/05b: 272 112
+:matt/marble/05b: 248 144
+:geoo/steel/dark_32x32o.S: 280 176
+:geoo/steel/dark_32x32o.S: 312 176
+:geoo/steel/dark_32x32o.S: 344 176
+:geoo/steel/dark_32x32o.S: 216 176
+:geoo/steel/dark_64x32o.S: 232 280
+:geoo/steel/dark_64x32o.S: 296 280
+:geoo/steel/32x16o.S: 266 208
+:geoo/steel/32x16o.S: 230 208
+:matt/marble/05c: 360 280
+:geoo/steel/32x32o.S: 392 280
+:geoo/steel/32x32o.S: 376 176
+:geoo/steel/32x32o.S: 408 176
+:matt/marble/03d: 360 144
+:matt/marble/03d: 392 144
+:matt/marble/03d: 392 112
+:matt/marble/03d: 360 112
+:matt/marble/03d: 360 80
+:matt/marble/03d: 392 80
+:matt/marble/03d: 360 48
+:matt/marble/03d: 392 48
+:matt/marble/03d: 360 16
+:matt/marble/03d: 392 16
+:geoo/steel/32x16o.S: 224 0
+:geoo/steel/32x16o.S: 256 0
+:geoo/steel/32x16o.S: 288 0
+:geoo/steel/32x16o.S: 320 0
+:geoo/steel/32x16o.S: 352 0
+:geoo/steel/32x16o.S: 384 0
+:geoo/steel/32x16o.S: 416 0
+:geoo/steel/32x32o.S: 200 280
+:geoo/steel/dark_32x16o.S: 360 424
+:geoo/steel/dark_32x16o.S: 392 424
+:geoo/steel/dark_32x16o.S: 424 424
+:geoo/steel/dark_32x16o.S: 232 424
+:geoo/steel/dark_32x16o.S: 264 424
+:geoo/steel/dark_32x16o.S: 296 424
+:geoo/steel/dark_32x16o.S: 328 424
+:matt/beach/decor/palmtree: 330 331
+:geoo/steel/dark_32x32o.S: 272 312
+:geoo/steel/dark_32x32o.S: 272 344
+:geoo/steel/dark_32x32o.S: 272 392
+:geoo/steel/dark_32x16o.S: 272 376
+:geoo/steel/16x32o.S: 200 16
+:geoo/steel/16x32o.S: 200 48
+:geoo/steel/16x32o.S: 200 80
+:geoo/steel/16x32o.S: 200 112
+:geoo/steel/16x32o.S: 200 144
+:geoo/steel/16x32o.S: 424 16
+:geoo/steel/16x32o.S: 424 48
+:geoo/steel/16x32o.S: 424 80
+:geoo/steel/16x32o.S: 424 112
+:geoo/steel/16x32o.S: 424 144
+:geoo/nopales/nopal_09: 370 315 d
+:geoo/nopales/nopal_09: 146 315 d
+:geoo/steel/32x32o.S: 424 280
+:matt/marble/05d: 24 176
+:matt/marble/05d: 248 176

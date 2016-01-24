@@ -1,0 +1,182 @@
+$BUILT 2012-04-17 23:53:35
+$AUTHOR Simon
+$GERMAN 
+$ENGLISH Last Man Standing
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 61
+#INITIAL 50
+#REQUIRED 20
+#SPAWN_INTERVAL 8
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 80
+#RUNNER 40
+#JUMPER 40
+#NOTHING 0
+#BLOCKER 20
+#BATTER -1
+#NOTHING 0
+#PLATFORMER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:simon/hatch001.H: 192 160
+:simon/hatch001.H: 384 160 r
+:simon/hatch001.H: 320 160 r
+:simon/hatch001.H: 256 160
+
+:matt/marble/Goal.G: 568 224
+:matt/marble/Goal.G: 8 224
+
+:geoo/construction/Laser_vr_64.F: 168 40
+:geoo/construction/Laser_hz_16.F: 176 32
+:geoo/construction/Laser_hz_16.F: 176 64
+:geoo/construction/Laser_hz_16.F: 192 64
+:geoo/construction/Laser_hz_16.F: 192 32
+:geoo/construction/Laser_vr_64.F: 232 40
+:geoo/construction/Laser_hz_16.F: 232 32
+:geoo/construction/Laser_hz_16.F: 232 96
+:geoo/construction/Laser_hz_16.F: 168 96
+:geoo/construction/Laser_vr_16.F: 200 32
+:geoo/construction/Laser_vr_16.F: 200 64
+:geoo/construction/Laser_vr_64.F: 272 40
+:geoo/construction/Laser_hz_16.F: 280 96
+:geoo/construction/Laser_hz_16.F: 296 96
+:geoo/construction/Laser_hz_16.F: 296 64
+:geoo/construction/Laser_vr_16.F: 304 72
+:geoo/construction/Laser_vr_16.F: 304 88
+:geoo/construction/Laser_hz_16.F: 280 32
+:geoo/construction/Laser_hz_16.F: 296 32
+:geoo/construction/Laser_vr_16.F: 304 32
+:geoo/construction/Laser_vr_16.F: 288 64
+:geoo/construction/Laser_vr_64.F: 336 40
+:geoo/construction/Laser_hz_16.F: 336 32
+:geoo/construction/Laser_hz_16.F: 336 96
+:geoo/construction/Laser_vr_64.F: 368 40
+:geoo/construction/Laser_hz_16.F: 368 32
+:geoo/construction/Laser_hz_16.F: 368 96
+:geoo/construction/Laser_hz_16.F: 344 64
+:geoo/construction/Laser_hz_16.F: 360 64
+:geoo/construction/Laser_vr_64.F: 416 40
+:geoo/construction/Laser_hz_16.F: 424 32
+:geoo/construction/Laser_hz_16.F: 416 96
+:geoo/construction/Laser_hz_16.F: 408 32
+:geoo/construction/Laser_vr_16.F: 400 32
+:geoo/construction/Laser_vr_16.F: 432 32
+:geoo/construction/Laser_hz_16.F: 464 26
+:geoo/construction/Laser_hz_16.F: 464 96
+:geoo/construction/Laser_hz_16.F: 464 80
+:geoo/construction/Laser_vr_16.F: 456 50
+:geoo/construction/Laser_vr_16.F: 456 64
+:geoo/construction/Laser_vr_16.F: 472 50
+:geoo/construction/Laser_vr_16.F: 472 64
+:geoo/construction/Laser_hz_16.F: 464 72
+:geoo/construction/Laser_vr_16.F: 456 34
+:geoo/construction/Laser_vr_16.F: 472 34
+:geoo/construction/Laser_vr_16.F: 460 50
+:geoo/construction/Laser_vr_16.F: 460 64
+:geoo/construction/Laser_vr_16.F: 460 34
+:geoo/construction/Laser_vr_16.F: 464 50
+:geoo/construction/Laser_vr_16.F: 464 64
+:geoo/construction/Laser_vr_16.F: 464 34
+:geoo/construction/Laser_vr_16.F: 468 50
+:geoo/construction/Laser_vr_16.F: 468 64
+:geoo/construction/Laser_vr_16.F: 468 34
+:geoo/construction/Laser_vr_16.F: 456 88
+:geoo/construction/Laser_vr_16.F: 472 88
+:geoo/construction/Laser_vr_16.F: 460 88
+:geoo/construction/Laser_vr_16.F: 464 88
+:geoo/construction/Laser_vr_16.F: 468 88
+:geoo/construction/sawblade_small.F: 120 188
+:geoo/construction/sawblade_small.F: 104 188
+:geoo/construction/sawblade_small.F: 88 188
+:geoo/construction/sawblade_small.F: 72 188
+:geoo/construction/sawblade_small.F: 56 188
+:geoo/construction/sawblade_small.F: 40 188
+:geoo/construction/sawblade_small.F: 24 188
+:geoo/construction/sawblade_small.F: 8 188
+:geoo/construction/sawblade_small.F: -8 188
+:geoo/construction/sawblade_small.F: 136 188
+:geoo/construction/sawblade_small.F: 152 188
+:geoo/construction/sawblade_small.F: 584 188
+:geoo/construction/sawblade_small.F: 568 188
+:geoo/construction/sawblade_small.F: 552 188
+:geoo/construction/sawblade_small.F: 536 188
+:geoo/construction/sawblade_small.F: 520 188
+:geoo/construction/sawblade_small.F: 504 188
+:geoo/construction/sawblade_small.F: 488 188
+:geoo/construction/sawblade_small.F: 472 188
+:geoo/construction/sawblade_small.F: 456 188
+:geoo/construction/sawblade_small.F: 600 188
+:geoo/construction/sawblade_small.F: 616 188
+
+:matt/marble/23e: 192 264
+:matt/marble/23e: 224 264
+:geoo/steel/dark_64x32o.S: 192 232
+:matt/marble/23e: 256 264
+:matt/marble/23e: 288 264
+:geoo/steel/dark_64x32o.S: 256 232
+:matt/marble/23e: 320 264
+:matt/marble/23e: 352 264
+:geoo/steel/dark_64x32o.S: 320 232
+:matt/marble/23e: 384 264
+:matt/marble/23e: 416 264
+:geoo/steel/dark_64x32o.S: 384 232
+:matt/marble/23e: 192 296
+:matt/marble/23e: 224 296
+:matt/marble/23e: 256 296
+:matt/marble/23e: 288 296
+:matt/marble/23e: 320 296
+:matt/marble/23e: 352 296
+:matt/marble/23e: 384 296
+:matt/marble/23e: 416 296
+:geoo/steel/dark_32x64o.S: 160 232
+:geoo/steel/dark_32x64o.S: 160 296
+:geoo/steel/dark_32x64o.S: 448 232
+:geoo/steel/dark_32x64o.S: 448 296
+:matt/marble/23e: 192 328
+:matt/marble/23e: 224 328
+:matt/marble/23e: 256 328
+:matt/marble/23e: 288 328
+:matt/marble/23e: 320 328
+:matt/marble/23e: 352 328
+:matt/marble/23e: 384 328
+:matt/marble/23e: 416 328
+:matt/marble/23e: 192 360
+:matt/marble/23e: 224 360
+:matt/marble/23e: 256 360
+:matt/marble/23e: 288 360
+:matt/marble/23e: 320 360
+:matt/marble/23e: 352 360
+:matt/marble/23e: 384 360
+:matt/marble/23e: 416 360
+:simon/tapir/064h: 600 336
+:simon/tapir/064h: 568 272
+:simon/tapir/064h: -88 336
+:simon/tapir/064h: -56 272
+:simon/tapir/032vc: 536 272
+:simon/tapir/032vc: 568 336
+:simon/tapir/032vd: 72 272
+:simon/tapir/032vd: 40 336
+:matt/marble/23e: 192 392
+:matt/marble/23e: 224 392
+:matt/marble/23e: 256 392
+:matt/marble/23e: 288 392
+:matt/marble/23e: 320 392
+:matt/marble/23e: 352 392
+:matt/marble/23e: 384 392
+:matt/marble/23e: 416 392
+:geoo/steel/dark_32x64o.S: 416 336
+:geoo/steel/dark_32x64o.S: 192 336

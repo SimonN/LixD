@@ -1,0 +1,172 @@
+$BUILT 2013-06-28 14:17:43
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Temple Grounds (3p)
+
+#SIZE_X 672
+#SIZE_Y 720
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 55
+#INITIAL 70
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 15
+#FLOATER 10
+#WALKER 50
+#JUMPER 50
+#EXPLODER2 5
+#MINER 30
+#PLATFORMER 40
+#BUILDER 15
+#BATTER 15
+#CUBER 15
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 384 0
+:geoo/construction/Hatch.H: 608 0
+:geoo/construction/Hatch.H: 160 0
+
+:geoo/construction/Goal2.G: 608 640
+:geoo/construction/Goal2.G: 160 640
+:geoo/construction/Goal2.G: 384 640
+
+:geoo/steel/dark_32x16o.S: 112 704
+:geoo/steel/dark_32x16o.S: 144 704
+:geoo/steel/dark_32x16o.S: 560 704
+:geoo/steel/dark_32x16o.S: 48 688
+:geoo/steel/dark_32x16o.S: 624 704
+:geoo/steel/dark_32x16o.S: 656 704
+:geoo/steel/dark_32x16o.S: 176 704
+:geoo/steel/dark_32x16o.S: 592 704
+:geoo/steel/dark_32x16o.S: 432 704
+:geoo/steel/dark_32x16o.S: 464 704
+:geoo/steel/dark_32x16o.S: 368 704
+:geoo/steel/dark_32x16o.S: 400 704
+:geoo/steel/dark_32x16o.S: 496 688
+:geoo/steel/dark_32x16o.S: 272 688
+:geoo/steel/dark_32x16o.S: 208 704
+:geoo/steel/dark_32x16o.S: 240 704
+:geoo/steel/dark_32x16o.S: 336 704
+:geoo/steel/dark_32x16o.S: 16 704
+:geoo/steel/dark_32x16o.S: 496 704
+:geoo/steel/dark_32x16o.S: 48 704
+:geoo/steel/dark_32x16o.S: 272 704
+:geoo/sandstone/64x32_blank: 64 64
+:geoo/sandstone/64x32_blank: 160 64
+:geoo/sandstone/64x32_blank: 224 64
+:geoo/sandstone/64x32_blank: 288 64
+:geoo/sandstone/64x32_blank: 448 64
+:geoo/sandstone/64x32_blank: 384 64
+:geoo/sandstone/64x32_blank: 512 64
+:geoo/sandstone/64x32_blank: 608 64
+:geoo/sandstone/64x32_blank: 0 64
+:geoo/sandstone/64x64: 192 336
+:geoo/sandstone/64x64: 256 336
+:geoo/sandstone/64x64: 352 336
+:geoo/sandstone/64x64: 416 336
+:geoo/sandstone/64x64: 480 336
+:geoo/sandstone/64x64: 640 336
+:geoo/sandstone/64x64: 32 336
+:geoo/sandstone/64x64: 128 336
+:geoo/sandstone/64x64: 576 336
+:geoo/sandstone/16x8: 352 64
+:geoo/sandstone/16x8: 368 64
+:geoo/sandstone/16x8: 128 64
+:geoo/sandstone/16x8: 144 64
+:geoo/sandstone/64x64: 224 400
+:geoo/sandstone/64x64: 288 400
+:geoo/sandstone/64x64: 384 400
+:geoo/sandstone/64x64: 448 400
+:geoo/sandstone/64x64: 512 400
+:geoo/sandstone/64x64: 0 400
+:geoo/sandstone/64x64: 64 400
+:geoo/sandstone/64x64: 160 400
+:geoo/sandstone/64x64: 608 400
+:geoo/sandstone/64x64: 256 464
+:geoo/sandstone/64x64: 320 464
+:geoo/sandstone/64x64: 416 464
+:geoo/sandstone/64x64: 480 464
+:geoo/sandstone/64x64: 544 464
+:geoo/sandstone/64x64: 32 464
+:geoo/sandstone/64x64: 96 464
+:geoo/sandstone/64x64: 192 464
+:geoo/sandstone/64x64: 640 464
+:geoo/sandstone/arc_big: 352 528
+:geoo/sandstone/arc_big: 576 528
+:geoo/sandstone/arc_big: 128 528
+:geoo/sandstone/arc_small: 256 544
+:geoo/sandstone/arc_small: 480 544
+:geoo/sandstone/arc_small: 32 544
+:geoo/sandstone/arc_small: 256 576 rr
+:geoo/sandstone/arc_small: 480 576 rr
+:geoo/sandstone/arc_small: 32 576 rr
+:geoo/sandstone/16x8: 560 96
+:geoo/sandstone/16x8: 608 96
+:geoo/sandstone/16x8: 112 96
+:geoo/sandstone/16x8: 160 96
+:geoo/sandstone/16x8: 336 96
+:geoo/sandstone/16x8: 384 96
+:geoo/sandstone/16x8: 576 64
+:geoo/sandstone/16x8: 592 64
+:geoo/sandstone/16x8: 400 96
+:geoo/sandstone/16x8: 416 96
+:geoo/sandstone/16x8: 432 96
+:geoo/sandstone/16x8: 448 96
+:geoo/sandstone/16x8: 464 96
+:geoo/sandstone/16x8: 480 96
+:geoo/sandstone/16x8: 496 96
+:geoo/sandstone/16x8: 512 96
+:geoo/sandstone/16x8: 528 96
+:geoo/sandstone/16x8: 544 96
+:geoo/sandstone/16x8: 96 96
+:geoo/sandstone/16x8: 624 96
+:geoo/sandstone/16x8: 640 96
+:geoo/sandstone/16x8: 656 96
+:geoo/sandstone/16x8: 0 96
+:geoo/sandstone/16x8: 16 96
+:geoo/sandstone/16x8: 32 96
+:geoo/sandstone/16x8: 48 96
+:geoo/sandstone/16x8: 64 96
+:geoo/sandstone/16x8: 80 96
+:geoo/sandstone/16x8: 320 96
+:geoo/sandstone/16x8: 176 96
+:geoo/sandstone/16x8: 192 96
+:geoo/sandstone/16x8: 208 96
+:geoo/sandstone/16x8: 224 96
+:geoo/sandstone/16x8: 240 96
+:geoo/sandstone/16x8: 256 96
+:geoo/sandstone/16x8: 272 96
+:geoo/sandstone/16x8: 288 96
+:geoo/sandstone/16x8: 304 96
+:geoo/sandstone/pillar_32: 48 256
+:geoo/sandstone/pillar_bottom_ext: 32 320
+:geoo/sandstone/pillar_32: 48 288
+:geoo/sandstone/pillar_32: 496 256
+:geoo/sandstone/pillar_bottom_ext: 480 320
+:geoo/sandstone/pillar_32: 496 288
+:geoo/sandstone/pillar_32: 272 256
+:geoo/sandstone/pillar_bottom_ext: 256 320
+:geoo/sandstone/pillar_32: 272 288
+:geoo/steel/dark_32x16o.S: 480 672
+:geoo/steel/dark_32x16o.S: 512 672
+:geoo/steel/dark_32x16o.S: 32 672
+:geoo/steel/dark_32x16o.S: 64 672
+:geoo/steel/dark_32x16o.S: 256 672
+:geoo/steel/dark_32x16o.S: 288 672
+:geoo/sandstone/16x8: 128 96
+:geoo/sandstone/16x8: 144 96
+:geoo/sandstone/16x8: 576 96
+:geoo/sandstone/16x8: 592 96
+:geoo/sandstone/16x8: 352 96
+:geoo/sandstone/16x8: 368 96
+:geoo/sandstone/pillar_top_ext: 32 240
+:geoo/sandstone/pillar_top_ext: 480 240
+:geoo/sandstone/pillar_top_ext: 256 240

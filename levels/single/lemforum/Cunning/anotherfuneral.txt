@@ -1,0 +1,123 @@
+$BUILT 2014-07-15 22:07:33
+$AUTHOR mobius
+$GERMAN 
+$ENGLISH Another Funeral
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 4
+#REQUIRED 3
+#SPAWN_INTERVAL 20
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 4
+#FLOATER 1
+#JUMPER 1
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 3
+#BASHER 2
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: 256 240
+:matt/winter/Hatch.H: 256 120
+:matt/winter/Hatch.H: 256 240
+:matt/winter/Hatch.H: 256 240
+
+:matt/winter/Goal.G: 236 36
+
+:simon/crystal.W: 0 352
+:simon/crystal.W: 48 352
+:simon/crystal.W: 96 352
+:simon/crystal.W: 144 352
+:simon/crystal.W: 192 352
+:simon/crystal.W: 240 352
+:simon/crystal.W: 528 274
+:simon/crystal.W: 480 274
+:geoo/sandstone/torch.F: 188 160
+
+:matt/winter/10: 488 336
+:matt/winter/06: 420 304
+:matt/winter/06: 436 304
+:matt/winter/06: 452 304
+:matt/winter/06: 468 304
+:matt/winter/10: 344 336
+:matt/winter/04: 560 224
+:matt/winter/06: 420 112
+:matt/winter/06: 436 112
+:matt/winter/06: 452 112
+:matt/winter/06: 468 112
+:matt/winter/06: 420 176
+:matt/winter/06: 436 176
+:matt/winter/06: 452 176
+:matt/winter/06: 468 176
+:matt/winter/06: 420 240
+:matt/winter/06: 436 240
+:matt/winter/06: 452 240
+:matt/winter/06: 468 240
+:matt/winter/10: 238 336
+:matt/winter/03: 208 193
+:matt/winter/15: 296 200
+:matt/winter/15: 216 200
+:matt/winter/15: 248 178 d
+:geoo/steel/32x16o.S: 240 224
+:geoo/steel/32x16o.S: 272 224
+:geoo/steel/32x16o.S: 304 224
+:geoo/steel/32x16o.S: 336 224
+:geoo/steel/16x32o.S: 368 208
+:geoo/steel/16x32o.S: 368 144
+:matt/winter/15: 192 96 frr
+:geoo/steel/16x32o.S: 368 112
+:matt/winter/03: 232 96
+:matt/winter/15: 296 112
+:matt/winter/15: 200 112
+:matt/winter/15: 232 96
+:matt/winter/06: 420 64
+:matt/winter/06: 436 64
+:matt/winter/06: 452 64
+:matt/winter/06: 468 64
+:matt/winter/10: 424 304
+:matt/winter/07: 122 242 rr
+:matt/winter/07: 80 268 rr
+:matt/winter/07: 32 274 rr
+:matt/winter/13: 171 176 d
+:matt/winter/10: -40 206 f
+:matt/winter/04: -32 96 frr
+:matt/winter/07: 88 24 rr
+:matt/winter/04: -16 -16 f
+:matt/winter/16: -16 -48 rr
+:matt/winter/08: 420 56
+:matt/winter/08: 436 56
+:matt/winter/08: 452 56
+:matt/winter/08: 468 56
+:geoo/steel/64x32o.S: 420 48
+:matt/winter/07: 400 0 rr
+:matt/winter/07: 344 -16 rr
+:matt/winter/07: 200 -8 rr
+:matt/winter/07: 128 -16 rr
+:matt/winter/07: 508 168 rr
+:geoo/steel/dark_48x48o.S: 484 160
+:matt/winter/15: 297 178 d
+:geoo/steel/16x32o.S: 368 176
+:matt/winter/01: -40 280
+:matt/winter/18: 208 187 rrr
+:matt/winter/15: 160 96
+:geoo/steel/32x16o.S: 208 224
+:geoo/construction/wall/small_square: 352 140 d
+:geoo/construction/wall/small_square: 246 187 d
+:matt/winter/13: 203 154 frrrd
+:matt/winter/13: 182 164 rd
+:matt/winter/13: 208 154 frrrd
+:matt/winter/00: 206 318 rrrd
+:matt/winter/00: 198 352 frd

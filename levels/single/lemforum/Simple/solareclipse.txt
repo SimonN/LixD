@@ -1,0 +1,146 @@
+$BUILT 2014-06-22 20:12:24
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Solar Eclipse
+
+#SIZE_X 768
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 64
+#START_Y 64
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 11
+#REQUIRED 9
+#SPAWN_INTERVAL 1
+#SPAWN_INTERVAL_FAST 1
+
+#NOTHING 0
+#CLIMBER 1
+#JUMPER 1
+#BUILDER 1
+#PLATFORMER 1
+#BLOCKER 1
+#EXPLODER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 656 336 r
+:geoo/construction/Hatch.H: 528 208
+:geoo/construction/Hatch.H: 432 112 r
+:geoo/construction/Hatch.H: 272 144
+:geoo/construction/Hatch.H: 432 208 r
+:geoo/construction/Hatch.H: 176 240
+:geoo/construction/Hatch.H: 272 240
+:geoo/construction/Hatch.H: 432 304 r
+:geoo/construction/Hatch.H: 80 336
+
+:geoo/sandstone/Goal.G: 352 32
+:geoo/sandstone/Goal.G: 352 288
+:geoo/sandstone/Goal.G: 352 160
+:geoo/sandstone/Goal.G: 512 288
+:geoo/sandstone/Goal.G: 160 320
+
+:geoo/sandstone/slopes/32x32rb: 352 0
+:geoo/sandstone/slopes/32x32lb: 384 0
+:geoo/sandstone/slopes/32x32rb: 320 32
+:geoo/sandstone/slopes/32x32rb: 288 64
+:geoo/sandstone/slopes/32x32rb: 256 96
+:geoo/sandstone/slopes/32x32rb: 224 128
+:geoo/sandstone/slopes/32x32rb: 192 160
+:geoo/sandstone/slopes/32x32rb: 160 192
+:geoo/sandstone/slopes/32x32rb: 128 224
+:geoo/sandstone/slopes/32x32rb: 96 256
+:geoo/sandstone/slopes/32x32rb: 64 288
+:geoo/sandstone/slopes/32x32lb: 416 32
+:geoo/sandstone/slopes/32x32lb: 448 64
+:geoo/sandstone/slopes/32x32lb: 480 96
+:geoo/sandstone/slopes/32x32lb: 512 128
+:geoo/sandstone/slopes/32x32lb: 608 224
+:geoo/sandstone/slopes/32x32lb: 640 256
+:geoo/sandstone/slopes/32x32lb: 672 288
+:geoo/sandstone/slopes/32x32lb: 704 320
+:geoo/sandstone/slopes/32x32rb: 32 320
+:geoo/sandstone/slopes/32x32rb: 0 352
+:geoo/sandstone/slopes/32x32lb: 736 352
+:proxima/tile/spheres/gold: 80 16
+:proxima/tile/spheres/gold: 88 20 d
+:geoo/steel/dark_64x32o.S: 192 192
+:geoo/steel/dark_32x64o.S: 320 192
+:geoo/steel/dark_64x32o.S: 288 384
+:geoo/sandstone/32x32: 320 160
+:geoo/steel/dark_64x32o.S: 416 160
+:geoo/steel/dark_32x64o.S: 480 160
+:geoo/sandstone/smaragd: 328 168
+:geoo/steel/dark_64x32o.S: 256 192
+:geoo/steel/dark_64x32o.S: 352 384
+:geoo/steel/dark_64x64o.S: 352 96
+:geoo/steel/dark_32x64o.S: 320 96
+:geoo/sandstone/64x32: 256 320
+:geoo/sandstone/smaragd: 264 328
+:geoo/sandstone/smaragd: 280 328
+:geoo/sandstone/smaragd: 296 328
+:geoo/steel/dark_64x32o.S: 416 384
+:geoo/steel/dark_64x32o.S: 480 384
+:geoo/steel/dark_32x64o.S: 480 320
+:geoo/steel/dark_32x32o.S: 480 224
+:geoo/steel/dark_64x32o.S: 352 352
+:geoo/steel/dark_32x64o.S: 480 256
+:geoo/sandstone/64x16: 512 256
+:geoo/sandstone/smaragd: 512 256
+:geoo/sandstone/smaragd: 528 256
+:geoo/sandstone/smaragd: 544 256
+:geoo/sandstone/smaragd: 560 256
+:geoo/steel/dark_64x32o.S: 544 384
+:geoo/steel/dark_64x32o.S: 608 384
+:geoo/steel/dark_64x32o.S: 672 384
+:geoo/steel/dark_64x32o.S: 736 384
+:geoo/steel/dark_64x32o.S: -32 384
+:geoo/steel/dark_64x32o.S: 32 384
+:geoo/steel/dark_64x32o.S: 96 384
+:geoo/steel/dark_64x32o.S: 160 384
+:geoo/steel/dark_64x32o.S: 224 384
+:geoo/sandstone/32x32: 704 352
+:geoo/sandstone/32x32: 256 288
+:geoo/sandstone/smaragd: 264 296
+:geoo/steel/dark_64x64o.S: 352 224
+:geoo/sandstone/64x32: 160 288
+:geoo/sandstone/smaragd: 168 296
+:geoo/sandstone/smaragd: 184 296
+:geoo/sandstone/smaragd: 200 296
+:geoo/sandstone/slopes/32x32lb: 544 160
+:geoo/sandstone/slopes/32x32lb: 576 192
+:geoo/sandstone/slopes/32x32rb: 448 320
+:geoo/sandstone/slopes/32x32rb: 416 352
+:geoo/sandstone/32x32: 448 352
+:geoo/sandstone/32x16: 128 368
+:geoo/steel/dark_32x32o.S: 128 256
+:geoo/sandstone/32x32: 32 352
+:geoo/steel/dark_64x32o.S: 96 288
+:geoo/steel/dark_32x32o.S: 224 160
+:geoo/steel/dark_32x32o.S: 288 96
+:geoo/steel/dark_32x32o.S: 320 64
+:geoo/steel/dark_32x32o.S: 480 128
+:geoo/steel/dark_32x64o.S: 224 224
+:geoo/steel/dark_32x32o.S: 224 288
+:geoo/steel/dark_32x64o.S: 320 256
+:geoo/steel/dark_32x64o.S: 320 320
+:geoo/steel/dark_64x32o.S: 256 352
+:geoo/steel/dark_64x32o.S: 416 256
+:geoo/steel/dark_32x64o.S: 576 224
+:geoo/steel/dark_32x32o.S: 608 256
+:geoo/sandstone/slopes/32x32rb: 608 336
+:geoo/sandstone/slopes/32x32lb: 592 320
+:geoo/steel/dark_16x32o.S: 576 352
+:geoo/steel/dark_64x32o.S: 512 352
+:geoo/steel/dark_32x32o.S: 512 160
+:geoo/sandstone/slopes/32x32lb: 592 352
+:geoo/steel/dark_32x32o.S: 640 288
+:geoo/steel/dark_32x16o.S: 128 368

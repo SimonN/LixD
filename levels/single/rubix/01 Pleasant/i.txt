@@ -1,0 +1,120 @@
+$BUILT 2014-02-27 15:32:59
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Undercutting the competition
+$HINT_ENGLISH What is this portal about?  Maybe I'll find out later...
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 32
+#BACKGROUND_GREEN 64
+#BACKGROUND_BLUE 192
+
+#SECONDS 0
+#INITIAL 70
+#REQUIRED 70
+#SPAWN_INTERVAL 33
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#FLOATER 1
+#BASHER 3
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/carnival/Hatch.H: 480 -6 r
+
+:matt/carnival/Goal.G: 64 240
+:geoo/abstract/goal.G: 64 64
+
+:matt/water.W: 64 352
+:matt/water.W: 96 352
+:matt/water.W: 128 352
+:matt/water.W: 160 352
+:matt/water.W: 192 352
+:matt/water.W: 224 352
+:matt/water.W: 64 368
+:matt/water.W: 96 368
+:matt/water.W: 128 368
+:matt/water.W: 160 368
+:matt/water.W: 192 368
+:matt/water.W: 224 368
+:matt/water.W: 256 352
+:matt/water.W: 288 352
+:matt/water.W: 320 352
+:matt/water.W: 352 352
+:matt/water.W: 384 352
+:matt/water.W: 416 352
+:matt/water.W: 256 368
+:matt/water.W: 288 368
+:matt/water.W: 320 368
+:matt/water.W: 352 368
+:matt/water.W: 384 368
+:matt/water.W: 416 368
+:matt/water.W: 448 352
+:matt/water.W: 480 352
+:matt/water.W: 512 352
+:matt/water.W: 544 352
+:matt/water.W: 576 352
+:matt/water.W: 608 352
+:matt/water.W: 448 368
+:matt/water.W: 480 368
+:matt/water.W: 512 368
+:matt/water.W: 544 368
+:matt/water.W: 576 368
+:matt/water.W: 608 368
+:matt/water.W: 0 352
+:matt/water.W: 0 368
+
+:matt/carnival/26: 480 227
+:matt/carnival/26: 544 227
+:matt/carnival/26: 528 26
+:matt/carnival/26: 304 104
+:matt/carnival/26: 432 104
+:matt/carnival/04: 496 88
+:matt/carnival/27: 368 104
+:matt/carnival/27: 240 104
+:matt/carnival/04: 608 227
+:matt/carnival/27: 528 104
+:matt/carnival/27: 432 26
+:matt/carnival/04: 608 163
+:matt/carnival/04: 608 99
+:matt/carnival/04: 608 35
+:matt/carnival/26: 416 227
+:matt/carnival/26: 192 305
+:matt/carnival/26: 320 305
+:matt/carnival/04: 384 289
+:matt/carnival/27: 256 305
+:matt/carnival/27: 128 305
+:matt/carnival/27: 416 305
+:matt/carnival/27: 320 227
+:matt/carnival/26: 240 40
+:matt/carnival/26: 128 241
+:matt/steel/32x64.S: 272 40
+:matt/carnival/04: 479 355
+:matt/carnival/04: 479 291
+:matt/carnival/07: 256 8 r
+:matt/carnival/06: 64 304 r
+:matt/carnival/07: 142 210 r
+:matt/steel/32x64.S: 352 227
+:matt/carnival/07: 599 3 r
+:matt/carnival/04: 32 357
+:matt/carnival/04: 32 293
+:geoo/steel/dark_32x16o.S: 64 64
+:geoo/steel/dark_32x16o.S: 64 112
+:geoo/steel/dark_32x16o.S: 96 80 rrr
+:geoo/steel/dark_32x16o.S: 48 80 rrr
+:geoo/steel/dark_16x16o.S: 96 64
+:geoo/steel/dark_16x16o.S: 96 112
+:geoo/steel/dark_16x16o.S: 48 112
+:geoo/steel/dark_16x16o.S: 48 64

@@ -1,0 +1,82 @@
+$BUILT 2012-06-26 05:31:32
+$AUTHOR TM
+$GERMAN 
+$ENGLISH Fast Food Kitchen
+
+#SIZE_X 1264
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 100
+#REQUIRED 50
+#SPAWN_INTERVAL 42
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 20
+#WALKER 40
+#JUMPER 40
+#EXPLODER2 20
+#BLOCKER 20
+#BUILDER 80
+#BASHER 40
+#MINER 40
+#DIGGER 40
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/underworld/Hatch.H: 72 184
+:matt/underworld/Hatch.H: 1128 184 r
+
+:matt/underworld/Goal.G: 720 144
+:matt/underworld/Goal.G: 480 144
+
+:proxima/flame.F: 536 352
+:proxima/flame.F: 568 352
+:proxima/flame.F: 656 352
+:proxima/flame.F: 688 352
+:matt/underworld/Lava.W: 96 352
+:matt/underworld/Lava.W: 144 352
+:matt/underworld/Lava.W: 192 352
+:matt/underworld/Lava.W: 240 352
+:matt/underworld/Lava.W: 288 352
+:matt/underworld/Lava.W: 336 352
+:matt/underworld/Lava.W: 384 352
+:matt/underworld/Lava.W: 432 352
+:matt/underworld/Lava.W: 0 352
+:matt/underworld/Lava.W: 48 352
+:matt/underworld/Lava.W: 928 352
+:matt/underworld/Lava.W: 976 352
+:matt/underworld/Lava.W: 1024 352
+:matt/underworld/Lava.W: 1072 352
+:matt/underworld/Lava.W: 1120 352
+:matt/underworld/Lava.W: 1168 352
+:matt/underworld/Lava.W: 1216 352
+:matt/underworld/Lava.W: 784 352
+:matt/underworld/Lava.W: 832 352
+:matt/underworld/Lava.W: 880 352
+
+:matt/underworld/08: 968 176
+:matt/underworld/02: 480 304
+:matt/underworld/02: 600 304
+:matt/underworld/02: 600 208
+:matt/underworld/01: 600 176
+:matt/underworld/02: 720 304
+:matt/underworld/02: 720 208
+:matt/underworld/05: 856 264
+:matt/underworld/05: 1056 264
+:matt/underworld/05: 944 272
+:matt/underworld/05: 1000 264
+:matt/underworld/02: 480 208 frr
+:matt/underworld/08: 172 176 frr
+:matt/underworld/05: 232 264 frr
+:matt/underworld/05: 32 264 frr
+:matt/underworld/05: 144 272 frr
+:matt/underworld/05: 88 264 frr
+:geoo/steel/16x16o.S: 504 208
+:geoo/steel/16x16o.S: 744 208

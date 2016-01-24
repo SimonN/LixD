@@ -1,0 +1,162 @@
+$BUILT 2015-01-15 04:01:26
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Living The Vertigo Life (3p)
+
+#SIZE_X 640
+#SIZE_Y 384
+#TORUS_X 1
+#TORUS_Y 1
+#START_X 0
+#START_Y 364
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 40
+#INITIAL 60
+#REQUIRED 20
+#SPAWN_INTERVAL 24
+#SPAWN_INTERVAL_FAST 4
+
+#JUMPER 80
+#RUNNER 3
+#PLATFORMER 80
+#NOTHING 0
+#EXPLODER2 10
+#NOTHING 0
+#BASHER 40
+#MINER 30
+#NOTHING 0
+#BATTER 30
+#CUBER 10
+#NOTHING 0
+
+:matt/marble/Hatch.H: 368 16
+:matt/marble/Hatch.H: 368 144
+:matt/marble/Hatch.H: 368 272
+
+:matt/marble/Goal.G: 320 320
+:matt/marble/Goal.G: 320 64
+:matt/marble/Goal.G: 320 192
+
+:geoo/steel/dark_32x32o.S: 384 240
+:geoo/steel/dark_32x32o.S: 352 240
+:geoo/steel/dark_32x32o.S: 320 240
+:geoo/steel/dark_32x32o.S: 384 368
+:geoo/steel/dark_32x32o.S: 352 368
+:geoo/steel/dark_32x32o.S: 320 368
+:geoo/steel/dark_32x32o.S: 384 112
+:geoo/steel/dark_32x32o.S: 352 112
+:geoo/steel/dark_32x32o.S: 320 112
+:geoo/construction/stairs_rd_32.S: 240 336
+:geoo/construction/stairs_rd_32.S: 144 288
+:geoo/construction/stairs_rd_32.S: 112 272
+:geoo/construction/stairs_rd_32.S: 48 240
+:geoo/construction/stairs_rd_32.S: 624 208
+:geoo/construction/stairs_rd_32.S: 560 176
+:geoo/construction/stairs_rd_32.S: 496 144
+:geoo/construction/stairs_rd_32.S: 240 208
+:geoo/construction/stairs_rd_32.S: 144 160
+:geoo/construction/stairs_rd_32.S: 112 144
+:geoo/construction/stairs_rd_32.S: 48 112
+:geoo/construction/stairs_rd_32.S: 624 80
+:geoo/construction/stairs_rd_32.S: 560 48
+:geoo/construction/stairs_rd_32.S: 496 16
+:geoo/construction/stairs_rd_32.S: 240 80
+:geoo/construction/stairs_rd_32.S: 144 32
+:geoo/construction/stairs_rd_32.S: 112 16
+:geoo/construction/stairs_rd_32.S: 48 368
+:geoo/construction/stairs_rd_32.S: 624 336
+:geoo/construction/stairs_rd_32.S: 560 304
+:geoo/construction/stairs_rd_32.S: 496 272
+:geoo/construction/stairs_rd_32.S: 592 256 frr
+:geoo/construction/stairs_rd_32.S: 592 128 frr
+:geoo/construction/stairs_rd_32.S: 592 0 frr
+:geoo/construction/platform.S: 480 144
+:geoo/construction/platform.S: 480 272
+:geoo/construction/platform.S: 480 16
+:geoo/construction/platform.S: 464 208
+:geoo/construction/platform.S: 464 80
+:geoo/construction/platform.S: 464 336
+:geoo/construction/platform.S: 464 80 rrr
+:geoo/construction/platform.S: 464 208 rrr
+:geoo/construction/platform.S: 464 336 rrr
+:geoo/construction/stairs_rd_32.S: 240 112 frr
+:geoo/construction/stairs_rd_32.S: 240 240 frr
+:geoo/construction/stairs_rd_32.S: 240 368 frr
+:geoo/construction/stairs_rd_32.S: 96 96 frr
+:geoo/construction/stairs_rd_32.S: 96 352 frr
+:geoo/construction/stairs_rd_32.S: 96 224 frr
+:matt/marble/05: 16 128
+:matt/marble/05: 16 160
+:matt/marble/05: 16 256
+:matt/marble/05: 16 288
+:matt/marble/05: 16 0
+:matt/marble/05: 16 32
+:matt/marble/04b: 48 176
+:matt/marble/04b: 48 48
+:matt/marble/04b: 48 304
+:geoo/construction/platform.S: 208 144
+:geoo/construction/platform.S: 208 272
+:geoo/construction/platform.S: 208 16
+:geoo/construction/platform.S: 432 112 rrr
+:geoo/construction/platform.S: 432 128 rrr
+:geoo/construction/platform.S: 432 240 rrr
+:geoo/construction/platform.S: 432 256 rrr
+:geoo/construction/platform.S: 432 368 rrr
+:geoo/construction/platform.S: 432 0 rrr
+:geoo/construction/platform.S: 160 96
+:geoo/construction/platform.S: 160 352
+:geoo/construction/platform.S: 160 224
+:geoo/construction/platform.S: 240 368 rrr
+:geoo/construction/platform.S: 240 240 rrr
+:geoo/construction/platform.S: 240 112 rrr
+:matt/marble/04b: 448 96 d
+:matt/marble/04b: 448 224 d
+:matt/marble/04b: 448 352 d
+:geoo/construction/platform.S: 400 288
+:geoo/construction/platform.S: 400 160
+:geoo/construction/platform.S: 400 32
+:matt/marble/02: 416 240
+:matt/marble/02: 416 112
+:matt/marble/02: 416 368
+:matt/marble/04: 192 272 rrr
+:matt/marble/04: 192 144 rrr
+:matt/marble/04: 192 16 rrr
+:geoo/steel/dark_16x16o.S: 320 96
+:geoo/steel/dark_16x16o.S: 320 224
+:geoo/steel/dark_16x16o.S: 320 352
+:geoo/steel/dark_16x16o.S: 320 16
+:geoo/steel/dark_16x16o.S: 320 272
+:geoo/steel/dark_16x16o.S: 320 144
+:geoo/construction/platform.S: 240 80
+:geoo/construction/platform.S: 240 336
+:geoo/construction/platform.S: 240 208
+:geoo/steel/dark_16x16o.S: 320 80
+:geoo/steel/dark_16x16o.S: 320 336
+:geoo/steel/dark_16x16o.S: 320 208
+:geoo/construction/platform.S: 368 32
+:geoo/construction/platform.S: 320 48
+:geoo/construction/platform.S: 368 160
+:geoo/construction/platform.S: 320 176
+:geoo/construction/platform.S: 320 304
+:geoo/construction/platform.S: 368 288
+:matt/marble/02: 368 224
+:matt/marble/02: 368 96
+:matt/marble/02: 368 352
+:geoo/steel/dark_16x32o.S: 176 176
+:geoo/steel/dark_16x32o.S: 176 304
+:geoo/steel/dark_16x32o.S: 176 48
+:geoo/construction/platform.S: 352 160
+:geoo/construction/platform.S: 352 32
+:geoo/construction/platform.S: 352 288
+:matt/marble/02a: 320 320
+:matt/marble/02a: 320 192
+:matt/marble/02a: 320 64
+:geoo/construction/platform.S: 352 304
+:geoo/construction/platform.S: 352 176
+:geoo/construction/platform.S: 352 48
+:geoo/construction/stairs_ru_8.S: 304 304
+:geoo/construction/stairs_ru_8.S: 304 176
+:geoo/construction/stairs_ru_8.S: 304 48

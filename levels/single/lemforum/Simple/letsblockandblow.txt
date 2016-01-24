@@ -1,0 +1,129 @@
+$BUILT 2013-05-09 19:40:20
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Let's Block and Blow?
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 30
+#REQUIRED 29
+#SPAWN_INTERVAL 12
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#EXPLODER 1
+#BLOCKER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 200 96
+
+:geoo/abstract/goal.G: 280 208
+
+:simon/acid.W: 400 136
+:simon/acid.W: 448 136
+:simon/acid.W: 496 136
+:simon/acid.W: 0 360
+:simon/acid.W: 48 360
+:simon/acid.W: 96 360
+:simon/acid.W: 144 360
+:simon/acid.W: 192 360
+:simon/acid.W: 240 360
+:simon/acid.W: 288 360
+:simon/acid.W: 336 360
+:simon/acid.W: 384 360
+:simon/acid.W: 432 360
+:simon/acid.W: 480 360
+:simon/acid.W: 528 360
+:simon/acid.W: 576 360
+:simon/acid.W: 624 360
+
+:geoo/abstract/pipes/central3: 168 144
+:geoo/abstract/pipes/central3: 200 144
+:geoo/abstract/pipes/central3: 232 144
+:geoo/abstract/pipes/central3: 264 144
+:geoo/abstract/pipes/central3: 296 144
+:geoo/abstract/pipes/central3: 328 144
+:geoo/abstract/pipes/central3: 360 144
+:geoo/abstract/pipes/central3: 392 152 rrr
+:geoo/abstract/pipes/corner3: 392 144 rr
+:geoo/abstract/pipes/junct3: 392 168 rrr
+:geoo/abstract/pipes/central3: 360 168
+:geoo/abstract/pipes/central3: 168 168
+:geoo/abstract/pipes/central3: 200 168
+:geoo/abstract/pipes/central3: 232 168
+:geoo/abstract/pipes/central3: 264 168
+:geoo/abstract/pipes/central3: 296 168
+:geoo/abstract/pipes/central3: 328 168
+:geoo/abstract/pipes/central3: 400 184
+:geoo/abstract/pipes/central3: 432 184
+:geoo/abstract/pipes/central3: 464 184
+:geoo/abstract/pipes/central3: 496 184
+:geoo/abstract/pipes/central3: 136 168
+:geoo/abstract/pipes/central3: 544 160 rrr
+:geoo/abstract/pipes/central3: 520 184
+:geoo/abstract/pipes/central3: 520 256
+:geoo/abstract/pipes/central3: 544 0 rrr
+:geoo/abstract/pipes/central3: 544 32 rrr
+:geoo/abstract/pipes/central3: 544 64 rrr
+:geoo/abstract/pipes/central3: 544 96 rrr
+:geoo/abstract/pipes/central3: 544 128 rrr
+:geoo/abstract/pipes/ends3: 160 144
+:geoo/abstract/pipes/junct3: 392 184 r
+:geoo/abstract/pipes/central3: 392 192 rrr
+:geoo/abstract/pipes/central3: 392 224 rrr
+:geoo/abstract/pipes/central3: 360 256
+:geoo/abstract/pipes/central3: 168 256
+:geoo/abstract/pipes/central3: 200 256
+:geoo/abstract/pipes/central3: 232 256
+:geoo/abstract/pipes/central3: 264 256
+:geoo/abstract/pipes/central3: 296 256
+:geoo/abstract/pipes/central3: 328 256
+:geoo/abstract/pipes/central3: 136 256
+:geoo/abstract/pipes/junct3: 392 256
+:geoo/abstract/pipes/central3: 400 256
+:geoo/abstract/pipes/central3: 432 256
+:geoo/abstract/pipes/central3: 464 256
+:geoo/abstract/pipes/central3: 496 256
+:geoo/abstract/pipes/junct3: 544 184 rrr
+:geoo/abstract/pipes/central3: 544 192 rrr
+:geoo/abstract/pipes/central3: 544 224 rrr
+:geoo/abstract/pipes/central3: 104 168
+:geoo/abstract/pipes/central3: 96 168 rrr
+:geoo/abstract/pipes/junct3: 96 168 r
+:geoo/abstract/pipes/central3: 104 256
+:geoo/abstract/pipes/central3: 96 232 rrr
+:geoo/abstract/pipes/central3: 96 200 rrr
+:geoo/abstract/pipes/central3: 96 104 rrr
+:geoo/abstract/pipes/central3: 96 136 rrr
+:geoo/abstract/pipes/central3: 96 72 rrr
+:geoo/abstract/pipes/central3: 96 40 rrr
+:geoo/abstract/pipes/central3: 96 8 rrr
+:geoo/abstract/pipes/central3: 96 -24 rrr
+:geoo/abstract/cvblocks/046: 408 192
+:geoo/abstract/pipes/central3: 544 256 rrr
+:geoo/abstract/pipes/central3: 544 288 rrr
+:geoo/abstract/pipes/central3: 544 320 rrr
+:geoo/abstract/pipes/central3: 544 352 rrr
+:geoo/abstract/pipes/central3: 544 384 rrr
+:geoo/abstract/pipes/central3: 96 264 rrr
+:geoo/abstract/pipes/central3: 96 296 rrr
+:geoo/abstract/pipes/central3: 96 328 rrr
+:geoo/abstract/pipes/central3: 96 360 rrr
+:geoo/abstract/pipes/central3: 96 392 rrr
+:geoo/abstract/pipes/junct3: 96 256 r
+:geoo/abstract/pipes/junct3: 544 256 rrr

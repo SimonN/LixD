@@ -1,0 +1,82 @@
+$BUILT 2015-06-22 19:53:17
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Bulldozer
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 120
+#REQUIRED 100
+#SPAWN_INTERVAL 3
+#SPAWN_INTERVAL_FAST 3
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#CLIMBER 20
+#MINER 20
+#NOTHING 0
+#CUBER 2
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 544 208 r
+
+:geoo/construction/Goal2.G: 32 144
+
+:geoo/sandstone/brazier.F: 584 104
+:geoo/sandstone/brazier.F: 24 104
+
+:geoo/construction/wall/big_128x128: 384 272
+:geoo/construction/wall/big_128x128: 512 272
+:geoo/construction/wall/big_128x128: 256 272
+:geoo/construction/wall/big_128x128: 128 272
+:geoo/construction/wall/big_128x128: 0 272
+:geoo/construction/pillar_bottom: 608 256
+:geoo/construction/pillar_32: 608 224
+:geoo/construction/pillar_32: 608 160
+:geoo/construction/concrete/016hc: 592 128
+:geoo/construction/pillar_32: 608 128
+:geoo/construction/pillar_32: 608 96
+:geoo/construction/pillar_32: 608 80
+:geoo/construction/pillar_top_shaded: 608 64
+:geoo/construction/wall/big_128x128: 512 -64
+:geoo/construction/wall/big_128x128: 384 -64
+:geoo/construction/wall/big_128x128: 256 -64
+:geoo/construction/wall/big_128x128: 128 -64
+:geoo/construction/pillar_32: 608 80
+:geoo/construction/wall/big_128x128: 0 -64
+:geoo/construction/pillar_bottom: 0 192
+:geoo/construction/pillar_top_shaded: 0 64
+:geoo/construction/pillar_32: 0 128
+:geoo/construction/concrete/016hd: 16 128
+:geoo/construction/pillar_32: 0 112
+:geoo/construction/pillar_32: 0 80
+:geoo/construction/pillar_32: 608 192
+:geoo/construction/pillar_32: 0 160
+:geoo/construction/pillar_32: 0 80
+:geoo/construction/wall/small_64x64: 0 208
+:geoo/construction/wall/small_64x64: 64 208
+:geoo/construction/wall/small_64x64: 128 208
+:geoo/construction/wall/small_64x64: 192 208
+:geoo/construction/wall/small_64x64: 256 208
+:geoo/construction/wall/small_64x64: 320 208
+:geoo/construction/wall/small_64x64: 384 208
+:geoo/construction/wall/small_brick2: 484 224
+:geoo/construction/wall/small_64x32: 448 208
+:geoo/construction/wall/small_brick2: 486 256
+:geoo/construction/wall/small_64x32: 448 240
+:geoo/construction/wall/small_brick2: 484 208 d
+:geoo/construction/wall/small_brick2: 476 208 n

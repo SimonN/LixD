@@ -1,0 +1,80 @@
+$BUILT 2014-06-06 10:02:45
+$AUTHOR rubix
+$GERMAN 
+$ENGLISH Set In Concrete (2p)
+
+#SIZE_X 1342
+#SIZE_Y 432
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 176
+#START_Y 12
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 40
+#INITIAL 70
+#REQUIRED 40
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 50
+#JUMPER 50
+#RUNNER 7
+#NOTHING 0
+#EXPLODER2 10
+#PLATFORMER 70
+#BUILDER 10
+#MINER 70
+#BATTER 18
+#CUBER 3
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 16 32
+:geoo/construction/Hatch.H: 1296 32 r
+
+:geoo/construction/Goal2.G: 1248 304
+:geoo/construction/Goal2.G: 32 304
+
+:geoo/construction/concrete/128: 128 304
+:geoo/construction/concrete/128: 128 176
+:geoo/construction/concrete/032hc: 64 0
+:geoo/construction/concrete/128: 128 48
+:geoo/construction/concrete/064h: 128 -16
+:geoo/construction/concrete/064h: 0 368
+:geoo/construction/concrete/064h: 0 112
+:geoo/construction/concrete/064h: 256 176
+:geoo/construction/concrete/064h: 256 320
+:geoo/construction/concrete/032hc: 256 0 frr
+:geoo/construction/concrete/128: 544 176
+:geoo/construction/concrete/128: 544 48
+:geoo/construction/concrete/128: 544 304
+:geoo/construction/concrete/032hc: 480 0
+:geoo/construction/concrete/064h: 544 -16
+:geoo/construction/concrete/podium_32: 512 176 rrr
+:geoo/construction/concrete/podium_32: 512 304 rrr
+:geoo/steel/64x64.S: 0 112
+:geoo/construction/concrete/032h: 64 272
+:geoo/construction/concrete/128: 1088 304 frr
+:geoo/construction/concrete/128: 1088 176 frr
+:geoo/construction/concrete/032hc: 1216 0 frr
+:geoo/construction/concrete/128: 1088 48 frr
+:geoo/construction/concrete/064h: 1088 -16 frr
+:geoo/construction/concrete/064h: 1216 368 frr
+:geoo/construction/concrete/064h: 1216 112 frr
+:geoo/construction/concrete/064h: 960 176 frr
+:geoo/construction/concrete/064h: 960 320 frr
+:geoo/construction/concrete/032hc: 1024 0
+:geoo/construction/concrete/128: 672 176 frr
+:geoo/construction/concrete/128: 672 48 frr
+:geoo/construction/concrete/128: 672 304 frr
+:geoo/construction/concrete/032hc: 800 0 frr
+:geoo/construction/concrete/064h: 672 -16 frr
+:geoo/construction/concrete/podium_32: 800 176 frrr
+:geoo/construction/concrete/podium_32: 800 304 frrr
+:geoo/steel/64x64.S: 1280 112 frr
+:geoo/construction/concrete/032h: 1216 272 frr
+:geoo/steel/64x32o.S: 1248 368 frr
+:geoo/steel/64x32o.S: 32 368

@@ -1,0 +1,505 @@
+$BUILT 2014-04-17 10:35:46
+$AUTHOR RubiX
+$GERMAN 
+$ENGLISH Mythical lands(2p)
+
+#SIZE_X 2968
+#SIZE_Y 398
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 1214
+#START_Y 376
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 40
+#INITIAL 65
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 80
+#JUMPER 80
+#EXPLODER2 8
+#BLOCKER 4
+#BUILDER 99
+#PLATFORMER 30
+#MINER 50
+#BASHER 40
+#DIGGER 20
+#RUNNER 15
+#BATTER 20
+#NOTHING 0
+
+:matt/earth/Hatch.H: 0 64
+:matt/earth/Hatch.H: 2912 64 r
+
+:matt/earth/Goal.G: 2386 116
+:matt/earth/Goal.G: 496 114
+
+:matt/water.W: 400 352
+:matt/water.W: 432 352
+:matt/water.W: 464 352
+:matt/water.W: 496 352
+:matt/water.W: 528 352
+:matt/water.W: 560 352
+:matt/water.W: 592 352
+:matt/water.W: 624 352
+:matt/water.W: 400 368
+:matt/water.W: 432 368
+:matt/water.W: 464 368
+:matt/water.W: 496 368
+:matt/water.W: 528 368
+:matt/water.W: 560 368
+:matt/water.W: 592 368
+:matt/water.W: 624 368
+:matt/water.W: 1360 352
+:matt/water.W: 1392 352
+:matt/water.W: 1424 352
+:matt/water.W: 1456 352
+:matt/water.W: 1488 352
+:matt/water.W: 1520 352
+:matt/water.W: 1552 352
+:matt/water.W: 1584 352
+:matt/water.W: 1360 368
+:matt/water.W: 1392 368
+:matt/water.W: 1424 368
+:matt/water.W: 1456 368
+:matt/water.W: 1488 368
+:matt/water.W: 1520 368
+:matt/water.W: 1552 368
+:matt/water.W: 1584 368
+:matt/water.W: 1840 352
+:matt/water.W: 1872 352
+:matt/water.W: 1904 352
+:matt/water.W: 1936 352
+:matt/water.W: 1968 352
+:matt/water.W: 2000 352
+:matt/water.W: 2032 352
+:matt/water.W: 2064 352
+:matt/water.W: 1840 368
+:matt/water.W: 1872 368
+:matt/water.W: 1904 368
+:matt/water.W: 1936 368
+:matt/water.W: 1968 368
+:matt/water.W: 2000 368
+:matt/water.W: 2032 368
+:matt/water.W: 2064 368
+:matt/water.W: 2288 352
+:matt/water.W: 2320 352
+:matt/water.W: 2352 352
+:matt/water.W: 2384 352
+:matt/water.W: 2416 352
+:matt/water.W: 2448 352
+:matt/water.W: 2480 352
+:matt/water.W: 2512 352
+:matt/water.W: 2288 368
+:matt/water.W: 2320 368
+:matt/water.W: 2352 368
+:matt/water.W: 2384 368
+:matt/water.W: 2416 368
+:matt/water.W: 2448 368
+:matt/water.W: 2480 368
+:matt/water.W: 2512 368
+:matt/water.W: 880 352
+:matt/water.W: 912 352
+:matt/water.W: 944 352
+:matt/water.W: 976 352
+:matt/water.W: 1008 352
+:matt/water.W: 1040 352
+:matt/water.W: 1072 352
+:matt/water.W: 1104 352
+:matt/water.W: 880 368
+:matt/water.W: 912 368
+:matt/water.W: 944 368
+:matt/water.W: 976 368
+:matt/water.W: 1008 368
+:matt/water.W: 1040 368
+:matt/water.W: 1072 368
+:matt/water.W: 1104 368
+:matt/water.W: 2768 352
+:matt/water.W: 2800 352
+:matt/water.W: 2832 352
+:matt/water.W: 2864 352
+:matt/water.W: 2768 368
+:matt/water.W: 2800 368
+:matt/water.W: 2832 368
+:matt/water.W: 2864 368
+:matt/water.W: 64 352
+:matt/water.W: 96 352
+:matt/water.W: 128 352
+:matt/water.W: 160 352
+:matt/water.W: 64 368
+:matt/water.W: 96 368
+:matt/water.W: 128 368
+:matt/water.W: 160 368
+
+:matt/earth/06: 2896 108
+:matt/earth/09: 2908 108 frr
+:matt/earth/09: 2928 108
+:matt/earth/09: 2892 142 fr
+:matt/earth/06: 2892 298
+:matt/earth/06: 2878 232
+:matt/earth/06: 2894 200
+:matt/earth/06: 34 109 r
+:matt/earth/09: 66 143 r
+:matt/earth/07: 27 181
+:matt/earth/07: 41 287
+:matt/earth/07: 37 206
+:matt/earth/09: -3 107
+:matt/earth/13: 2880 320 r
+:matt/earth/07: 1533 127 fr
+:matt/earth/06: 1376 68 r
+:matt/earth/06: 1842 223 r
+:matt/earth/09: 1706 170
+:matt/earth/07: 1819 206
+:matt/earth/07: 1789 193
+:matt/earth/07: 1752 173
+:matt/earth/07: 1211 139 f
+:matt/earth/06: 1102 208
+:matt/earth/06: 1126 198
+:matt/earth/06: 1154 185
+:matt/earth/06: 1171 175
+:matt/earth/09: 1081 232
+:matt/earth/08: 1706 148
+:matt/earth/07: 1584 60
+:matt/earth/07: 1662 110
+:matt/earth/09: 1492 172
+:matt/earth/09: 1398 174
+:matt/earth/06: 1328 64
+:matt/earth/06: 1312 84
+:matt/earth/06: 1252 118
+:matt/earth/10: 1536 64 r
+:matt/earth/18: 1424 256
+:matt/earth/02: 1472 176
+:matt/earth/10: 1472 176
+:matt/earth/10: 1312 64 fr
+:matt/earth/10: 1264 176 frr
+:matt/earth/10: 1136 160 frr
+:matt/earth/10: 1616 160
+:matt/earth/02: 1408 176 frr
+:matt/earth/10: 1280 112 fr
+:matt/earth/10: 1568 112 r
+:matt/earth/18: 1360 288
+:matt/earth/10: 1248 96 fr
+:matt/earth/10: 1200 208 frr
+:matt/earth/10: 1072 192 frr
+:matt/earth/02: 1360 208 frr
+:matt/earth/10: 1216 144 fr
+:matt/earth/10: 1600 96 r
+:matt/earth/02: 1536 208
+:matt/earth/10: 1536 208
+:matt/earth/10: 1680 192
+:matt/earth/10: 1632 144 r
+:matt/earth/04: 1072 240 rr
+:matt/earth/04: 1088 240 rr
+:matt/earth/04: 1104 240 rr
+:matt/earth/04: 1120 240 rr
+:matt/earth/04: 1136 240 rr
+:matt/earth/04: 1152 240 rr
+:matt/earth/04: 1168 240 rr
+:matt/earth/04: 1184 240 rr
+:matt/earth/04: 1200 240 rr
+:matt/earth/04: 1216 240 rr
+:matt/earth/04: 1232 240 rr
+:matt/earth/04: 1248 240 rr
+:matt/earth/04: 1264 240 rr
+:matt/earth/04: 1280 240 rr
+:matt/earth/04: 1296 240 rr
+:matt/earth/04: 1293 120
+:matt/earth/04: 1312 240 rr
+:matt/earth/04: 1520 240 f
+:matt/earth/04: 1536 240 f
+:matt/earth/04: 1552 240 f
+:matt/earth/04: 1568 240 f
+:matt/earth/04: 1584 240 f
+:matt/earth/04: 1600 240 f
+:matt/earth/04: 1616 240 f
+:matt/earth/04: 1632 240 f
+:matt/earth/04: 1648 240 f
+:matt/earth/04: 1664 240 f
+:matt/earth/04: 1680 240 f
+:matt/earth/04: 1696 240 f
+:matt/earth/04: 1712 240 f
+:matt/earth/04: 1728 240 f
+:matt/earth/04: 1744 240 f
+:matt/earth/04: 1760 240 f
+:matt/earth/07: 592 128 fr
+:matt/earth/06: 428 64 r
+:matt/earth/06: 896 224 r
+:matt/earth/09: 768 176
+:matt/earth/07: 880 208
+:matt/earth/07: 848 192
+:matt/earth/07: 816 176
+:matt/earth/07: 274 132 f
+:matt/earth/06: 160 208
+:matt/earth/06: 176 200
+:matt/earth/06: 208 192
+:matt/earth/06: 224 176
+:matt/earth/09: 144 240
+:matt/earth/08: 764 148
+:matt/earth/07: 640 64
+:matt/earth/07: 720 112
+:matt/earth/09: 544 176
+:matt/earth/09: 448 176
+:matt/earth/06: 384 64
+:matt/earth/06: 368 80
+:matt/earth/06: 314 112
+:matt/earth/10: 592 64 r
+:matt/earth/18: 480 256
+:matt/earth/02: 528 176
+:matt/earth/10: 528 176
+:matt/earth/10: 368 64 fr
+:matt/earth/10: 320 176 frr
+:matt/earth/10: 192 160 frr
+:matt/earth/10: 672 160
+:matt/earth/02: 464 176 frr
+:matt/earth/10: 336 112 fr
+:matt/earth/10: 624 112 r
+:matt/earth/18: 416 288
+:matt/earth/10: 304 96 fr
+:matt/earth/10: 256 208 frr
+:matt/earth/10: 128 192 frr
+:matt/earth/02: 416 208 frr
+:matt/earth/10: 285 159 fr
+:matt/earth/10: 656 96 r
+:matt/earth/02: 592 208
+:matt/earth/10: 592 208
+:matt/earth/10: 736 192
+:matt/earth/10: 688 144 r
+:matt/earth/04: 128 240 rr
+:matt/earth/04: 144 240 rr
+:matt/earth/04: 160 240 rr
+:matt/earth/04: 176 240 rr
+:matt/earth/04: 192 240 rr
+:matt/earth/04: 208 240 rr
+:matt/earth/04: 224 240 rr
+:matt/earth/04: 174 220
+:matt/earth/04: 240 240 rr
+:matt/earth/04: 256 240 rr
+:matt/earth/04: 272 240 rr
+:matt/earth/04: 226 272
+:matt/earth/04: 288 240 rr
+:matt/earth/04: 304 240 rr
+:matt/earth/05: 158 334 r
+:matt/earth/04: 320 240 rr
+:matt/earth/05: 144 243 r
+:matt/earth/04: 336 240 rr
+:matt/earth/04: 320 94 f
+:matt/earth/04: 287 196
+:matt/earth/04: 308 257
+:matt/earth/04: 267 167
+:matt/earth/04: 300 211 f
+:matt/earth/04: 352 240 rr
+:matt/earth/04: 310 269 rrr
+:matt/earth/04: 368 240 rr
+:matt/earth/04: 576 240 f
+:matt/earth/04: 592 240 f
+:matt/earth/04: 608 240 f
+:matt/earth/04: 624 240 f
+:matt/earth/04: 593 115
+:matt/earth/04: 640 240 f
+:matt/earth/04: 656 240 f
+:matt/earth/04: 672 240 f
+:matt/earth/04: 688 240 f
+:matt/earth/04: 704 240 f
+:matt/earth/04: 720 240 f
+:matt/earth/04: 736 240 f
+:matt/earth/04: 752 240 f
+:matt/earth/04: 768 240 f
+:matt/earth/04: 784 240 f
+:matt/earth/05: 696 221 r
+:matt/earth/04: 800 240 f
+:matt/earth/05: 681 316 r
+:matt/earth/04: 816 240 f
+:matt/earth/07: 2480 128 fr
+:matt/earth/06: 2320 64 r
+:matt/earth/06: 2784 224 r
+:matt/earth/09: 2656 176
+:matt/earth/07: 2768 208
+:matt/earth/07: 2736 192
+:matt/earth/07: 2704 176
+:matt/earth/07: 2159 134 f
+:matt/earth/06: 2048 208
+:matt/earth/06: 2074 198
+:matt/earth/06: 2096 192
+:matt/earth/06: 2112 176
+:matt/earth/09: 2032 240
+:matt/earth/08: 2650 146
+:matt/earth/07: 2528 64
+:matt/earth/07: 2608 112
+:matt/earth/09: 2432 176
+:matt/earth/09: 2336 176
+:matt/earth/06: 2272 64
+:matt/earth/06: 2256 80
+:matt/earth/06: 2198 116
+:matt/earth/10: 2480 64 r
+:matt/earth/18: 2368 256
+:matt/earth/02: 2416 176
+:matt/earth/10: 2416 176
+:matt/earth/10: 2256 64 fr
+:matt/earth/10: 2208 176 frr
+:matt/earth/10: 2080 160 frr
+:matt/earth/10: 2560 160
+:matt/earth/02: 2352 176 frr
+:matt/earth/10: 2224 112 fr
+:matt/earth/10: 2512 112 r
+:matt/earth/18: 2304 288
+:matt/earth/10: 2192 96 fr
+:matt/earth/10: 2144 208 frr
+:matt/earth/10: 2016 192 frr
+:matt/earth/02: 2304 208 frr
+:matt/earth/10: 2160 144 fr
+:matt/earth/10: 2544 96 r
+:matt/earth/10: 2480 208
+:matt/earth/02: 2480 208
+:matt/earth/10: 2624 192
+:matt/earth/10: 2576 144 r
+:matt/earth/04: 2016 240 rr
+:matt/earth/04: 2032 240 rr
+:matt/earth/04: 2048 240 rr
+:matt/earth/04: 2064 240 rr
+:matt/earth/04: 2080 240 rr
+:matt/earth/04: 2096 240 rr
+:matt/earth/04: 2112 240 rr
+:matt/earth/04: 2128 240 rr
+:matt/earth/04: 2144 240 rr
+:matt/earth/04: 2160 240 rr
+:matt/earth/04: 2176 240 rr
+:matt/earth/04: 2192 240 rr
+:matt/earth/04: 2208 240 rr
+:matt/earth/04: 2224 240 rr
+:matt/earth/04: 2240 240 rr
+:matt/earth/04: 2249 127
+:matt/earth/05: 2153 194 fr
+:matt/earth/04: 2256 240 rr
+:matt/earth/04: 2464 240 f
+:matt/earth/04: 2480 240 f
+:matt/earth/04: 2496 240 f
+:matt/earth/04: 2512 240 f
+:matt/earth/04: 2528 240 f
+:matt/earth/04: 2544 240 f
+:matt/earth/04: 2560 240 f
+:matt/earth/04: 2576 240 f
+:matt/earth/04: 2592 240 f
+:matt/earth/04: 2608 240 f
+:matt/earth/04: 2624 240 f
+:matt/earth/04: 2640 240 f
+:matt/earth/04: 2656 240 f
+:matt/earth/04: 2672 240 f
+:matt/earth/04: 2688 240 f
+:matt/earth/04: 2704 240 f
+:matt/earth/11: -16 112
+:matt/earth/11: 0 112
+:matt/earth/11: 16 112
+:matt/earth/11: 16 112
+:matt/earth/11: -16 144
+:matt/earth/11: 0 144
+:matt/earth/11: 16 144
+:matt/earth/11: -16 176
+:matt/earth/11: 13 118 rr
+:matt/earth/12: 1 145
+:matt/earth/11: 0 176
+:matt/earth/11: -16 208
+:matt/earth/11: 0 208
+:matt/earth/11: 16 208
+:matt/earth/11: -16 240
+:matt/earth/11: 0 240
+:matt/earth/11: 16 240
+:matt/earth/13: 19 192
+:matt/earth/11: -12 198
+:matt/earth/11: 32 240
+:matt/earth/11: -16 272
+:matt/earth/11: 0 272
+:matt/earth/11: 16 272
+:matt/earth/14: 32 304 r
+:matt/earth/11: -16 304
+:matt/earth/11: 0 304
+:matt/earth/11: 16 304
+:matt/earth/11: -16 336
+:matt/earth/11: 0 336
+:matt/earth/15: -1 368 r
+:matt/earth/11: 16 336
+:matt/earth/15: -5 313
+:matt/earth/11: -19 306
+:matt/earth/11: 32 336
+:matt/earth/11: 2896 112
+:matt/earth/11: 2912 112
+:matt/earth/11: 2928 112
+:matt/earth/11: 2896 144
+:matt/earth/11: 2896 128
+:matt/earth/14: 2920 130 r
+:matt/earth/11: 2928 144
+:matt/earth/12: 2902 160
+:matt/earth/11: 2912 176
+:matt/earth/11: 2928 176
+:matt/earth/11: 2918 160 f
+:matt/earth/11: 2896 208
+:matt/earth/11: 2912 208
+:matt/earth/11: 2928 208
+:matt/earth/11: 2880 240
+:matt/earth/11: 2896 240
+:matt/earth/11: 2912 240
+:matt/earth/11: 2928 240
+:matt/earth/11: 2896 208
+:matt/earth/11: 2912 272
+:matt/earth/15: 2890 266
+:matt/earth/11: 2928 272
+:matt/earth/14: 2928 304 r
+:matt/earth/11: 2896 304
+:matt/earth/11: 2928 304
+:matt/earth/11: 2880 336
+:matt/earth/11: 2896 336
+:matt/earth/11: 2912 336
+:matt/earth/12: 2898 352 r
+:matt/earth/11: 2918 300 r
+:matt/earth/11: 2928 336
+:matt/earth/11: 2948 170 fr
+:matt/earth/12: 2882 376
+:matt/earth/12: 2924 372
+:matt/steel/32x32.S: 2400 182
+:matt/steel/32x32.S: 512 181
+:matt/steel/64x32.S: 0 112
+:matt/steel/64x32.S: 2912 112
+:matt/earth/10: 598 277
+:matt/earth/05: 589 266 r
+:matt/earth/05: 672 341 frrr
+:matt/earth/05: 686 321 rr
+:matt/earth/05: 1197 236 fr
+:matt/earth/10: 1249 212 r
+:matt/earth/10: 1081 213
+:matt/earth/05: 1091 231 r
+:matt/earth/04: 1539 114
+:matt/earth/05: 1530 268 r
+:matt/earth/05: 1587 330 r
+:matt/earth/05: 1146 283 r
+:matt/earth/05: 1110 325 r
+:matt/earth/05: 1135 337 fr
+:matt/earth/05: 1565 245 frrr
+:matt/earth/05: 1550 83
+:matt/earth/10: 1537 190
+:matt/earth/04: 1600 196
+:matt/earth/05: 1555 311 frrr
+:matt/earth/05: 1621 352 fr
+:matt/earth/05: 1629 231 frrr
+:matt/earth/17: 338 227 r
+:matt/earth/05: 2031 235 r
+:matt/earth/05: 2044 288 r
+:matt/earth/02: 2132 236
+:matt/earth/05: 2118 273 fr
+:matt/earth/05: 2048 324 r
+:matt/earth/05: 2082 365 fr
+:matt/earth/05: 2574 233 fr
+:matt/earth/04: 2535 207
+:matt/earth/05: 2516 316 r
+:matt/earth/05: 2475 259 r
+:matt/earth/16: 2550 297
+:matt/earth/05: 2556 361 fr
+:matt/earth/02: 2499 105
+:matt/earth/04: 2498 113
+:matt/earth/01: 2570 251
+:matt/earth/02: 2526 143 f
+:matt/earth/16: 2503 251 f
+:matt/earth/05: 2537 284 f
+:matt/earth/17: 2516 136

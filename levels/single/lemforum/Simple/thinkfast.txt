@@ -1,0 +1,141 @@
+$BUILT                                             2012-03-26 19:15:06
+$AUTHOR                                                   Insane Steve
+$GERMAN                                                               
+$ENGLISH                                                   Think Fast!
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                             0
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                             0
+#INITIAL                                                            40
+#REQUIRED                                                           38
+#SPAWN_INTERVAL                                                     32
+#SPAWN_INTERVAL_FAST                                                 4
+
+#CLIMBER                                                            20
+#FLOATER                                                            20
+#EXPLODER                                                           20
+#BLOCKER                                                            20
+#BUILDER                                                            20
+#BASHER                                                             20
+#MINER                                                              20
+#DIGGER                                                             20
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:geoo/construction/Hatch.H:                       456       104
+
+:geoo/construction/Goal2.G:                        16        48
+
+:geoo/construction/squarebrick_large:              96       304
+:geoo/construction/squarebrick_large:              64       304
+:geoo/construction/squarebrick_large:              32       304
+:geoo/construction/squarebrick_large:               0       304
+:geoo/construction/squarebrick_large:             -16       272
+:geoo/construction/squarebrick_large:              16       272
+:geoo/construction/squarebrick_large:              48       272
+:geoo/construction/squarebrick_large:              80       272
+:geoo/construction/squarebrick_large:              96       240
+:geoo/construction/squarebrick_large:              64       240
+:geoo/construction/squarebrick_large:              32       240
+:geoo/construction/squarebrick_large:               0       240
+:geoo/construction/squarebrick_large:             -16       208
+:geoo/construction/squarebrick_large:              16       208
+:geoo/construction/squarebrick_large:              48       208
+:geoo/construction/squarebrick_large:              80       208
+:geoo/construction/squarebrick_large:              96       176
+:geoo/construction/squarebrick_large:              64       176
+:geoo/construction/squarebrick_large:              32       176
+:geoo/construction/squarebrick_large:               0       176
+:geoo/construction/squarebrick_large:               0       112
+:geoo/construction/squarebrick_large:              32       112
+:geoo/construction/squarebrick_large:              64       112
+:geoo/construction/squarebrick_large:              96       112
+:geoo/construction/squarebrick_large:               0       368
+:geoo/construction/squarebrick_large:              32       368
+:geoo/construction/squarebrick_large:              16       336
+:geoo/construction/squarebrick_large:              48       336
+:geoo/construction/squarebrick_large:              64       368
+:geoo/construction/squarebrick_large:              80       336
+:geoo/construction/squarebrick_large:              96       368
+:geoo/construction/squarebrick_large:             112       336
+:geoo/construction/squarebrick_large:             -16       336
+:geoo/construction/squarebrick_large:             128       368
+:geoo/construction/squarebrick_large:             160       368
+:geoo/construction/squarebrick_large:             144       336
+:geoo/construction/squarebrick_large:             176       336
+:geoo/construction/squarebrick_large:             192       368
+:geoo/construction/squarebrick_large:             208       336
+:geoo/construction/squarebrick_large:             224       368
+:geoo/construction/squarebrick_large:             240       336
+:geoo/construction/squarebrick_large:             256       368
+:geoo/construction/squarebrick_large:             288       368
+:geoo/construction/squarebrick_large:             272       336
+:geoo/construction/squarebrick_large:             304       336
+:geoo/construction/squarebrick_large:             320       368
+:geoo/construction/squarebrick_large:             336       336
+:geoo/construction/squarebrick_large:             352       368
+:geoo/construction/squarebrick_large:             368       336
+:geoo/construction/squarebrick_large:             384       368
+:geoo/construction/squarebrick_large:             416       368
+:geoo/construction/squarebrick_large:             400       336
+:geoo/construction/squarebrick_large:             432       336
+:geoo/construction/squarebrick_large:             448       368
+:geoo/construction/squarebrick_large:             464       336
+:geoo/construction/squarebrick_large:             480       368
+:geoo/construction/squarebrick_large:             496       336
+:geoo/construction/squarebrick_large:             512       368
+:geoo/construction/squarebrick_large:             544       368
+:geoo/construction/squarebrick_large:             576       368
+:geoo/construction/squarebrick_large:             608       368
+:geoo/construction/squarebrick_large:             528       336
+:geoo/construction/squarebrick_large:             560       336
+:geoo/construction/squarebrick_large:             592       336
+:geoo/construction/squarebrick_large:             624       336
+:geoo/construction/stairsbrick_ru_32:             216       304
+:geoo/construction/stairsbrick_ru_32:             280       272
+:geoo/construction/stairsbrick_ru_32:             344       240
+:geoo/construction/stairsbrick_ru_32:             408       208
+:geoo/construction/stairsbrick_ru_32:             536       144
+:geoo/construction/pillar_32:                     608       144
+:geoo/construction/pillar_32:                     608       176
+:geoo/construction/pillar_32:                     608       208
+:geoo/construction/pillar_32:                     608       240
+:geoo/construction/pillar_32:                     608       272
+:geoo/construction/pillar_32:                     608       304
+:geoo/construction/squarebrick_large:             392       304
+:geoo/construction/squarebrick_large:             520       304
+:geoo/construction/squarebrick_large:             520       272
+:geoo/construction/stairsbrick_rd_32:             136       304
+:geoo/construction/stairsbrick_ru_32:             144       272
+:geoo/construction/stairsbrick_rd_32:             208       272
+:geoo/construction/stairsbrick_ru_32:             216       240
+:geoo/construction/stairsbrick_rd_32:             136       240
+:geoo/construction/stairsbrick_ru_32:             144       208
+:geoo/construction/stairsbrick_rd_32:             208       208
+:geoo/construction/stairsbrick_ru_32:             216       176
+:geoo/construction/stairsbrick_rd_32:             136       176
+:geoo/construction/stairsbrick_ru_32:             144       144
+:geoo/construction/stairsbrick_rd_32:             208       144
+:geoo/construction/pillar_32:                     112       304
+:geoo/construction/pillar_top_shaded:             608       144
+:geoo/construction/pillar_32:                     112       272
+:geoo/construction/pillar_32:                     112       240
+:geoo/construction/pillar_32:                     112       208
+:geoo/construction/pillar_32:                     112       176
+:geoo/construction/pillar_32:                     112       144
+:geoo/construction/pillar_top_shaded:             112       112
+:geoo/construction/squarebrick_large:              80       144
+:geoo/construction/squarebrick_large:              48       144
+:geoo/construction/squarebrick_large:              16       144
+:geoo/construction/squarebrick_large:             -16       144
+:geoo/construction/pillar_32:                     112       128

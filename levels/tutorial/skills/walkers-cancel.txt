@@ -1,0 +1,183 @@
+$BUILT 2016-01-11 07:13:41
+$AUTHOR Wuzzy
+$GERMAN Geher gehen
+$ENGLISH Walkers walk
+
+$TUTORIAL_GERMAN Mit der Geher-Fähigkeit kannst du eine Lix dazu veranlassen, eine bestimmte Tätigkeit (z.B. blockieren) abzubrechen und weiterzugehen. Bau zuerst eine Brücke und stoppe die anderen Lix mit einem Blockierer. Wenn die Brücke fertig ist, lass den Blockierer wieder laufen.
+$TUTORIAL_ENGLISH Use the walker ability to make a Lix stop its current task (e.g. blocking) and start walking. First build a bridge and stop the other Lix with a blocker. When the bridge is finished, let the blocker walk again.
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 50
+
+#SECONDS 0
+#INITIAL 15
+#REQUIRED 15
+#SPAWN_INTERVAL 36
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 1
+#BLOCKER 1
+#BUILDER 1
+
+:geoo/abstract/hatch.H: 32 112
+
+:geoo/abstract/goal.G: 496 176
+
+:geoo/shadow/tile1: 320 224
+:geoo/shadow/tile2: 352 224
+:geoo/shadow/tile1: 320 256
+:geoo/shadow/tile2: 352 256
+:geoo/shadow/tile1: 384 224
+:geoo/shadow/tile2: 416 224
+:geoo/shadow/tile1: 384 256
+:geoo/shadow/tile2: 416 256
+:geoo/shadow/tile1: 320 288
+:geoo/shadow/tile2: 352 288
+:geoo/shadow/tile1: 320 320
+:geoo/shadow/tile2: 352 320
+:geoo/shadow/tile1: 384 288
+:geoo/shadow/tile2: 416 288
+:geoo/shadow/tile1: 384 320
+:geoo/shadow/tile2: 416 320
+:geoo/shadow/tile1: 16 176
+:geoo/shadow/tile2: 48 176
+:geoo/shadow/tile1: 16 208
+:geoo/shadow/tile2: 48 208
+:geoo/shadow/tile1: 416 352
+:geoo/shadow/tile1: 80 208
+:geoo/shadow/tile2: 112 304
+:geoo/shadow/tile1: 16 240
+:geoo/shadow/tile2: 48 240
+:geoo/shadow/tile1: 16 272
+:geoo/shadow/tile2: 48 272
+:geoo/shadow/tile1: 80 240
+:geoo/shadow/tile2: 112 240
+:geoo/shadow/tile1: 80 272
+:geoo/shadow/tile2: 112 272
+:geoo/shadow/tile1: 144 240
+:geoo/shadow/tile1: 176 240
+:geoo/shadow/tile1: 144 272
+:geoo/shadow/tile1: 176 272
+:geoo/shadow/tile1: 208 240
+:geoo/shadow/tile1: 240 240
+:geoo/shadow/tile1: 208 272
+:geoo/shadow/tile1: 240 272
+:geoo/shadow/tile1: 144 304
+:geoo/shadow/tile1: 176 304
+:geoo/shadow/tile1: 144 336
+:geoo/shadow/tile1: 176 336
+:geoo/shadow/tile1: 208 304
+:geoo/shadow/tile1: 240 304
+:geoo/shadow/tile1: 208 336
+:geoo/shadow/tile1: 240 336
+:geoo/shadow/tile1: 448 224
+:geoo/shadow/tile2: 480 224
+:geoo/shadow/tile1: 448 256
+:geoo/shadow/tile2: 480 256
+:geoo/shadow/tile1: 512 224
+:geoo/shadow/tile2: 544 224
+:geoo/shadow/tile1: 512 256
+:geoo/shadow/tile2: 544 256
+:geoo/shadow/tile1: 448 288
+:geoo/shadow/tile2: 480 288
+:geoo/shadow/tile1: 448 320
+:geoo/shadow/tile2: 480 320
+:geoo/shadow/tile1: 512 288
+:geoo/shadow/tile2: 544 288
+:geoo/shadow/tile1: 512 320
+:geoo/shadow/tile2: 544 320
+:geoo/shadow/wall/center: 224 48
+:geoo/shadow/wall/center: 256 48
+:geoo/shadow/wall/center: 192 48
+:geoo/shadow/wall/center: 192 16
+:geoo/shadow/wall/center: 224 16
+:geoo/shadow/wall/center: 256 16
+:geoo/shadow/wall/center: 0 16
+:geoo/shadow/wall/center: 32 16
+:geoo/shadow/wall/center: 64 16
+:geoo/shadow/wall/center: 96 16
+:geoo/shadow/wall/center: 128 16
+:geoo/shadow/wall/center: 160 16
+:geoo/shadow/wall/center: 32 48
+:geoo/shadow/wall/center: 64 48
+:geoo/shadow/wall/center: 0 48
+:geoo/shadow/wall/center: 128 48
+:geoo/shadow/wall/center: 160 48
+:geoo/shadow/wall/center: 96 48
+:geoo/shadow/wall/center: 320 48
+:geoo/shadow/wall/center: 352 48
+:geoo/shadow/wall/center: 288 48
+:geoo/shadow/wall/center: 288 16
+:geoo/shadow/wall/center: 320 16
+:geoo/shadow/wall/center: 352 16
+:geoo/shadow/wall/center: 416 48
+:geoo/shadow/wall/center: 448 48
+:geoo/shadow/wall/center: 384 48
+:geoo/shadow/wall/center: 384 16
+:geoo/shadow/wall/center: 416 16
+:geoo/shadow/wall/center: 448 16
+:geoo/shadow/wall/center: 512 48
+:geoo/shadow/wall/center: 544 48
+:geoo/shadow/wall/center: 480 48
+:geoo/shadow/wall/center: 480 16
+:geoo/shadow/wall/center: 512 16
+:geoo/shadow/wall/center: 544 16
+:geoo/shadow/wall/center: 608 48
+:geoo/shadow/wall/center: 576 48
+:geoo/shadow/wall/center: 576 16
+:geoo/shadow/wall/center: 608 16
+:geoo/shadow/wall/center: 192 -16
+:geoo/shadow/wall/center: 224 -16
+:geoo/shadow/wall/center: 256 -16
+:geoo/shadow/wall/center: 0 -16
+:geoo/shadow/wall/center: 32 -16
+:geoo/shadow/wall/center: 64 -16
+:geoo/shadow/wall/center: 96 -16
+:geoo/shadow/wall/center: 128 -16
+:geoo/shadow/wall/center: 160 -16
+:geoo/shadow/wall/center: 288 -16
+:geoo/shadow/wall/center: 320 -16
+:geoo/shadow/wall/center: 352 -16
+:geoo/shadow/wall/center: 384 -16
+:geoo/shadow/wall/center: 416 -16
+:geoo/shadow/wall/center: 448 -16
+:geoo/shadow/wall/center: 480 -16
+:geoo/shadow/wall/center: 512 -16
+:geoo/shadow/wall/center: 544 -16
+:geoo/shadow/wall/center: 576 -16
+:geoo/shadow/wall/center: 608 -16
+:geoo/shadow/wall/left: 176 80
+:geoo/shadow/wall/left: 176 112
+:geoo/shadow/wall/left: 176 144
+:geoo/shadow/wall/left: 176 176
+:geoo/shadow/wall/right: 208 80
+:geoo/shadow/wall/right: 208 112
+:geoo/shadow/wall/right: 208 144
+:geoo/shadow/wall/right: 208 176
+:geoo/shadow/tile2: 448 352
+:geoo/shadow/window: 576 16
+:geoo/shadow/pillar_verti_32: 32 304
+:geoo/shadow/pillar_verti_32: 240 368
+:geoo/shadow/pillar_verti_32: 336 384
+:geoo/shadow/pillar_verti_32: 336 352
+:geoo/shadow/pillar_verti_32: 544 352
+:geoo/shadow/pillar_verti_32: 544 384
+:geoo/shadow/pillar_verti_32: 32 336
+:geoo/shadow/pillar_verti_32: 32 368
+:geoo/shadow/wall/deco_dark: 192 80
+:geoo/shadow/wall/deco_dark: 512 48
+:geoo/shadow/wall/deco_dark: 208 16
+:geoo/shadow/wall/deco_dark: 192 192
+:geoo/shadow/wall/deco_light: 368 64
+:geoo/shadow/wall/deco_light: 64 48
+:geoo/shadow/wall/deco_light: 0 16
+:geoo/shadow/wall/deco_light: 592 48
+:geoo/shadow/wall/deco_crags2: 592 0
+:geoo/shadow/wall/deco_crags: 192 128
+:geoo/shadow/wall/deco_crags: 112 64
+:geoo/shadow/wall/deco_crags: 336 0

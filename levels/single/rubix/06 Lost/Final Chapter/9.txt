@@ -1,0 +1,133 @@
+$BUILT 2015-08-31 09:52:37
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Tumbleweed
+
+$HINT_ENGLISH Oh look, one of their bridges function here :]
+
+#SIZE_X 1000
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 380
+#BACKGROUND_RED 64
+#BACKGROUND_GREEN 64
+#BACKGROUND_BLUE 255
+
+#SECONDS 70
+#INITIAL 50
+#REQUIRED 48
+#SPAWN_INTERVAL 1
+#SPAWN_INTERVAL_FAST 1
+
+#RUNNER 1
+#CLIMBER 1
+#EXPLODER 1
+#BLOCKER 1
+#PLATFORMER 2
+#DIGGER 2
+#JUMPER 3
+
+:matt/carnival/Hatch.H: -16 48
+
+:matt/carnival/Goal.G: 928 272
+
+:matt/water.W: 160 352
+:matt/water.W: 192 352
+:matt/water.W: 224 352
+:matt/water.W: 64 352
+:matt/water.W: 96 352
+:matt/water.W: 128 352
+:matt/water.W: 160 368
+:matt/water.W: 192 368
+:matt/water.W: 224 368
+:matt/water.W: 64 368
+:matt/water.W: 96 368
+:matt/water.W: 128 368
+:matt/water.W: 416 352
+:matt/water.W: 448 352
+:matt/water.W: 480 352
+:matt/water.W: 320 352
+:matt/water.W: 352 352
+:matt/water.W: 384 352
+:matt/water.W: 416 368
+:matt/water.W: 448 368
+:matt/water.W: 480 368
+:matt/water.W: 320 368
+:matt/water.W: 352 368
+:matt/water.W: 384 368
+:matt/water.W: 656 352
+:matt/water.W: 688 352
+:matt/water.W: 720 352
+:matt/water.W: 560 352
+:matt/water.W: 592 352
+:matt/water.W: 624 352
+:matt/water.W: 656 368
+:matt/water.W: 688 368
+:matt/water.W: 720 368
+:matt/water.W: 560 368
+:matt/water.W: 592 368
+:matt/water.W: 624 368
+
+:matt/carnival/31: 400 96 fr
+:matt/carnival/31: 176 128
+:matt/carnival/00: 96 144
+:matt/carnival/02: 128 144
+:matt/carnival/01: 64 144
+:matt/carnival/03: 160 144
+:matt/carnival/00: 288 144
+:matt/carnival/02: 256 144
+:matt/carnival/01: 320 144
+:matt/carnival/03: 224 144
+:matt/carnival/24: 0 208
+:matt/carnival/26: 0 272
+:matt/carnival/25: 256 176
+:matt/carnival/25: 0 144
+:matt/carnival/25: 800 208
+:matt/carnival/25: 736 254
+:matt/carnival/03: 384 144
+:matt/carnival/24: 256 240
+:matt/carnival/26: 256 304
+:matt/carnival/25: 0 336
+:matt/carnival/25: 256 368
+:matt/carnival/00: 352 144
+:matt/carnival/25: 512 176
+:matt/carnival/24: 512 240
+:matt/carnival/26: 512 304
+:matt/carnival/25: 512 368
+:matt/carnival/31: 624 96 fr
+:matt/carnival/00: 512 144
+:matt/carnival/02: 480 144
+:matt/carnival/01: 544 144
+:matt/carnival/03: 448 144
+:matt/carnival/03: 608 144
+:matt/carnival/00: 576 144
+:matt/carnival/00: 736 144
+:matt/carnival/02: 704 144
+:matt/carnival/01: 768 144
+:matt/carnival/03: 672 144
+:matt/carnival/24: 736 208
+:matt/carnival/26: 736 272
+:matt/carnival/25: 736 144
+:matt/carnival/25: 736 336
+:matt/carnival/26: 800 272
+:matt/carnival/25: 800 336
+:matt/carnival/25: 864 336
+:matt/carnival/25: 928 336
+:matt/carnival/05: 864 208 r
+:matt/carnival/05: 928 208 r
+:matt/carnival/25: 864 272
+:matt/carnival/03: 0 112
+:matt/carnival/58: -16 0
+:matt/carnival/58: 240 32
+:matt/carnival/58: 496 0
+:matt/carnival/58: 752 32
+:matt/carnival/57: 752 0
+:matt/carnival/57: 496 32
+:matt/carnival/57: 240 0
+:matt/carnival/57: -16 32
+:matt/carnival/06: 414 94 d
+:matt/carnival/06: 638 80 d
+:matt/carnival/06: 414 158 d
+:matt/carnival/06: 638 144 d

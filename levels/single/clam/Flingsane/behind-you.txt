@@ -1,0 +1,67 @@
+$BUILT 2014-06-08 16:20:30
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH BEHIND YOU
+
+#SIZE_X 640
+#SIZE_Y 320
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 220
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 10
+#SPAWN_INTERVAL 18
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#EXPLODER2 20
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/marble/Hatch.H: 96 64
+
+:matt/marble/Goal.G: 48 160
+
+:matt/marble/08c: 16 208
+:matt/marble/08c: 80 208
+:matt/marble/08c: 144 208
+:matt/marble/08c: 208 208
+:matt/marble/08c: 272 208
+:matt/marble/08c: 336 208
+:matt/marble/08c: 400 208
+:matt/marble/08c: 464 208
+:matt/marble/08c: 560 208
+:matt/marble/05c: 592 176
+:matt/marble/11c: 48 96
+:matt/marble/10c: 0 48
+:matt/marble/12c: 48 48
+:matt/marble/13c: 0 96
+:matt/marble/04c: 16 48
+:matt/marble/04c: 16 96
+:matt/marble/08c: 0 64
+:matt/marble/20c: 16 -16
+:matt/marble/20c: 32 -16
+:matt/marble/06c: 160 0
+:matt/marble/08c: 96 0
+:matt/marble/06c: 192 -16
+:matt/marble/08c: 224 -16
+:matt/marble/08c: 288 0
+:matt/marble/06c: 352 -16
+:matt/marble/08c: 384 0
+:matt/marble/06c: 448 -48
+:matt/marble/06c: 512 -48
+:matt/marble/08c: 576 -16

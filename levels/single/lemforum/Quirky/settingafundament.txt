@@ -1,0 +1,168 @@
+$BUILT 2012-05-30 19:43:15
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Setting a Fundament
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 100
+#REQUIRED 51
+#SPAWN_INTERVAL 16
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#CUBER 20
+#PLATFORMER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 208 128
+:geoo/construction/Hatch.H: 400 128 r
+:geoo/construction/Hatch.H: 304 80
+:geoo/construction/Hatch.H: 304 48 r
+
+:geoo/construction/Goal2.G: 80 112
+:geoo/construction/Goal2.G: 496 112
+
+:geoo/construction/sawblade_small.F: 288 176
+:geoo/construction/sawblade_small.F: 304 176
+:geoo/construction/sawblade_small.F: 320 176
+:simon/crystal.W: 64 352
+:simon/crystal.W: 112 352
+:simon/crystal.W: 160 352
+:simon/crystal.W: 528 352
+:simon/crystal.W: 480 352
+:simon/crystal.W: 432 352
+
+:matt/marble/09a: 192 336
+:matt/marble/09d: 128 176
+:matt/marble/05e: 240 192
+:matt/marble/05d: 304 200
+:matt/marble/20d: 208 256
+:matt/marble/02e_2: 288 192
+:matt/marble/02e: 336 224
+:matt/marble/02e: 176 352
+:matt/marble/05e: 368 208
+:matt/marble/09d: 448 176
+:matt/marble/07a: 400 192
+:matt/marble/07a: 192 192
+:matt/marble/04a: 256 224
+:matt/marble/04a: 352 192
+:matt/marble/01e_1: 304 192
+:matt/marble/01e_1: 320 232
+:matt/marble/01e_2: 320 192
+:matt/marble/01e_2: 304 232
+:matt/marble/03d: 272 192
+:matt/marble/03d: 352 208
+:matt/marble/02d: 384 192
+:matt/marble/02d: 240 224
+:matt/marble/03a: 336 192
+:matt/marble/03a: 288 208
+:matt/marble/09d: 512 176
+:matt/marble/09d: 64 176
+:matt/marble/23e: 576 32
+:matt/marble/22e: 56 -8
+:matt/marble/23e: 608 32
+:matt/marble/23e: 576 0
+:matt/marble/23e: 608 0
+:matt/marble/00e_1: 192 240
+:matt/marble/04e_1: 200 240
+:matt/marble/00e_2: 232 240
+:matt/marble/04e_2: 408 240
+:matt/marble/00e_1: 440 240
+:matt/marble/00e_2: 400 240
+:matt/marble/20d: 416 256
+:matt/marble/20d: 304 256
+:matt/marble/20d: 320 256
+:matt/marble/04e_1: 288 240
+:matt/marble/04e_2: 320 240
+:matt/marble/01e_1: 272 240
+:matt/marble/01e_2: 352 240
+:matt/marble/00e_1: 192 328
+:matt/marble/04e_1: 200 320
+:matt/marble/00e_2: 232 328
+:matt/marble/04e_2: 408 320
+:matt/marble/00e_1: 440 328
+:matt/marble/00e_2: 400 328
+:matt/marble/04e_1: 288 320
+:matt/marble/04e_2: 320 320
+:matt/marble/01e_1: 272 328
+:matt/marble/01e_2: 352 328
+:matt/marble/09a: 256 336
+:matt/marble/09a: 320 336
+:matt/marble/09a: 384 336
+:matt/marble/23e: 576 96
+:matt/marble/23e: 608 96
+:matt/marble/23e: 576 64
+:matt/marble/23e: 608 64
+:matt/marble/23e: 576 160
+:matt/marble/23e: 608 160
+:matt/marble/23e: 576 128
+:matt/marble/23e: 608 128
+:matt/marble/23e: 576 224
+:matt/marble/23e: 608 224
+:matt/marble/23e: 576 192
+:matt/marble/23e: 608 192
+:matt/marble/23e: 576 288
+:matt/marble/23e: 608 288
+:matt/marble/23e: 576 256
+:matt/marble/23e: 608 256
+:matt/marble/23e: 576 352
+:matt/marble/23e: 608 352
+:matt/marble/23e: 576 320
+:matt/marble/23e: 608 320
+:matt/marble/23e: 576 384
+:matt/marble/23e: 608 384
+:matt/marble/23e: 0 32
+:matt/marble/23e: 32 32
+:matt/marble/23e: 0 0
+:matt/marble/23e: 32 0
+:matt/marble/23e: 0 96
+:matt/marble/23e: 32 96
+:matt/marble/23e: 0 64
+:matt/marble/23e: 32 64
+:matt/marble/23e: 0 160
+:matt/marble/23e: 32 160
+:matt/marble/23e: 0 128
+:matt/marble/23e: 32 128
+:matt/marble/23e: 0 224
+:matt/marble/23e: 32 224
+:matt/marble/23e: 0 192
+:matt/marble/23e: 32 192
+:matt/marble/23e: 0 288
+:matt/marble/23e: 32 288
+:matt/marble/23e: 0 256
+:matt/marble/23e: 32 256
+:matt/marble/23e: 0 352
+:matt/marble/23e: 32 352
+:matt/marble/23e: 0 320
+:matt/marble/23e: 32 320
+:matt/marble/23e: 0 384
+:matt/marble/23e: 32 384
+:matt/marble/02e: 448 352
+:matt/marble/09d: 0 176
+:matt/marble/09d: 576 176
+:matt/marble/03a: 448 368
+:matt/marble/03a: 176 368
+:matt/marble/02e: 544 8
+:matt/marble/02e: 560 24
+:matt/marble/00e_1: 552 24
+:matt/marble/02e_2: 528 -8
+:matt/marble/00e_1: 544 0
+:matt/marble/00e_2: 536 8
+:matt/marble/00e_2: 560 16
+:matt/marble/00e_2: 568 40

@@ -1,0 +1,169 @@
+$BUILT 2014-09-19 21:36:56
+$AUTHOR Akseli
+$GERMAN
+$ENGLISH Feel the Pressure
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 71
+#INITIAL 50
+#REQUIRED 48
+#SPAWN_INTERVAL 64
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/bricks/Hatch.H: 370 226
+:matt/bricks/Hatch.H: 282 70
+
+:matt/bricks/Goal.G: 194 226
+
+:matt/10tons.T: 312 234
+:matt/10tons.T: 266 234
+
+:matt/water.W: 440 368
+:matt/water.W: 408 368
+:matt/water.W: 280 368
+:matt/water.W: 312 368
+:matt/water.W: 344 368
+:matt/water.W: 376 368
+:matt/water.W: 504 368
+:matt/water.W: 472 368
+:matt/water.W: 216 368
+:matt/water.W: 248 368
+:matt/water.W: 184 368
+:matt/water.W: 152 368
+:matt/water.W: 88 368
+:matt/water.W: 120 368
+:matt/water.W: 534 368
+:matt/water.W: 566 368
+:matt/water.W: 598 368
+:matt/water.W: 56 368
+
+:matt/bricks/01: 226 274
+:matt/steel/48x48.S: 242 290
+:matt/bricks/01: 258 274
+:matt/steel/48x48.S: 266 274
+:matt/bricks/01: 370 274
+:matt/steel/48x48.S: 338 290
+:matt/bricks/01: 338 274
+:matt/steel/48x48.S: 314 274
+:matt/bricks/01: 226 338
+:matt/bricks/01: 258 338
+:matt/steel/48x48.S: 266 306
+:matt/bricks/01: 370 338
+:matt/bricks/01: 338 338
+:matt/steel/48x48.S: 314 306
+:matt/steel/48x48.S: 386 290
+:matt/bricks/11: 466 322
+:matt/bricks/08: 466 274
+:matt/steel/48x48.S: 434 290
+:matt/steel/48x48.S: 194 290
+:matt/bricks/09: 130 322
+:matt/bricks/10: 130 274
+:matt/steel/48x48.S: 146 290
+:matt/steel/48x48.S: 290 290
+:matt/bricks/02: 202 118
+:matt/bricks/02: 362 118
+:matt/bricks/01: 162 338
+:matt/bricks/01: 402 274
+:matt/bricks/01: 434 274
+:matt/bricks/01: 194 274
+:matt/steel/32x32.S: 266 214
+:matt/bricks/01: 194 338
+:matt/bricks/01: 402 338
+:matt/bricks/01: 434 338
+:matt/bricks/01: 162 274
+:matt/steel/32x32.S: 298 214
+:matt/steel/32x32.S: 330 214
+:matt/steel/32x32.S: 266 118
+:matt/steel/32x32.S: 298 118
+:matt/steel/32x32.S: 330 118
+:matt/bricks/12: 426 118
+:matt/bricks/12: 170 118
+:matt/bricks/03: 482 290 d
+:matt/bricks/03: 82 290 d
+:matt/bricks/04: 66 274
+:matt/bricks/04: 66 146
+:matt/bricks/04: 66 18
+:matt/bricks/18: 82 66
+:matt/bricks/06: 66 82
+:matt/bricks/06: 66 -46
+:matt/bricks/07: 2 338
+:matt/bricks/07: 2 210
+:matt/bricks/07: 2 82
+:matt/bricks/07: 2 -46
+:matt/bricks/18: 34 258
+:matt/bricks/05: 2 274
+:matt/bricks/18: 34 130
+:matt/bricks/05: 2 146
+:matt/bricks/18: 34 2
+:matt/bricks/05: 2 18
+:matt/bricks/17: 34 18 frr
+:matt/bricks/18: 82 322
+:matt/bricks/06: 66 338
+:matt/bricks/17: 34 274 frr
+:matt/bricks/18: 82 194
+:matt/bricks/06: 66 210
+:matt/bricks/17: 34 210
+:matt/bricks/18: 34 386
+:matt/bricks/17: 34 338
+:matt/bricks/17: 34 82
+:matt/bricks/17: 34 -46
+:matt/bricks/17: 34 146 frr
+:matt/bricks/19: 494 384
+:matt/bricks/19: 606 384
+:matt/bricks/19: 534 208
+:matt/bricks/19: 566 208
+:matt/bricks/18: 542 48
+:matt/bricks/18: 574 48
+:matt/bricks/18: 614 352
+:matt/bricks/18: 574 -16
+:matt/bricks/18: 574 16
+:matt/bricks/18: 574 144
+:matt/bricks/18: 502 256
+:matt/bricks/18: 574 176
+:matt/bricks/18: 614 256
+:matt/bricks/18: 542 16
+:matt/bricks/18: 574 112
+:matt/bricks/18: 542 -16
+:matt/bricks/18: 542 176
+:matt/bricks/18: 542 144
+:matt/bricks/18: 542 112
+:matt/bricks/18: 542 80
+:matt/bricks/18: 574 80
+:matt/bricks/10: 502 224
+:matt/bricks/08: 598 224
+:matt/bricks/02: 534 224
+:matt/bricks/18: 614 320
+:matt/bricks/18: 502 352
+:matt/bricks/18: 502 320
+:matt/bricks/18: 502 288
+:matt/bricks/18: 614 288
+:matt/bricks/18: 520 256
+:matt/bricks/18: 520 288
+:matt/bricks/18: 520 320
+:matt/bricks/18: 520 352
+:matt/bricks/18: 596 256
+:matt/bricks/18: 596 288
+:matt/bricks/18: 596 320
+:matt/bricks/18: 596 352
+:matt/bricks/19: 512 384
+:matt/bricks/19: 588 384

@@ -1,0 +1,88 @@
+$BUILT 2015-08-23 11:31:57
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Its the race against riches
+
+#SIZE_X 1160
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 40
+#START_Y 380
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 38
+#SPAWN_INTERVAL 11
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 1
+#CLIMBER 1
+#MINER 3
+#BATTER 1
+
+:matt/goldmine/GoalTop.D: 1088 64
+
+:matt/goldmine/Hatch.H: 8 276
+
+:matt/goldmine/Goal.G: 1088 112
+
+:matt/goldmine/08: 460 376 r
+:matt/goldmine/09: 924 56
+:matt/goldmine/07: 304 112 r
+:matt/goldmine/08: 256 144
+:matt/goldmine/crate64: 384 160
+:matt/goldmine/crate64: 384 352
+:matt/goldmine/planksupport: 490 160
+:matt/goldmine/planksupport: 746 160
+:matt/goldmine/plank: 618 160
+:matt/goldmine/plank: 874 160
+:matt/goldmine/plank: 550 288 rrr
+:matt/goldmine/plank: 860 288 rrr
+:matt/goldmine/07: 572 324
+:matt/goldmine/09: 710 286
+:matt/goldmine/07: 728 260
+:matt/goldmine/07: 772 294 r
+:matt/goldmine/07: 866 312 r
+:matt/goldmine/04: 662 294
+:matt/goldmine/04: 506 358
+:matt/goldmine/04: 908 112
+:matt/goldmine/07: 876 220 fr
+:matt/goldmine/07: 938 132 fr
+:matt/goldmine/04: 638 274
+:matt/goldmine/07: 716 206 fr
+:matt/goldmine/planksupport: 1002 160
+:matt/goldmine/plank: 874 160
+:matt/goldmine/plank: 1130 160
+:matt/goldmine/plank: 1062 288 rrr
+:matt/goldmine/07: 884 306
+:matt/goldmine/04: 994 346
+:matt/goldmine/04: 1056 296
+:matt/goldmine/07: 110 338 rr
+:matt/goldmine/08: 194 222
+:matt/goldmine/04: 188 252
+:matt/goldmine/08: 130 304
+:matt/goldmine/02: 204 102
+:matt/goldmine/08: 210 -10
+:matt/goldmine/07: 246 -10
+:matt/goldmine/04: 340 -102
+:matt/goldmine/07: 406 -58
+:matt/goldmine/08: 398 366
+:matt/goldmine/07: -48 320
+:matt/goldmine/04: -80 192
+:matt/goldmine/07: 308 220 frrrd
+:matt/goldmine/crate64: 384 224
+:matt/goldmine/crate64: 384 288
+:matt/goldmine/07: 252 326
+:matt/goldmine/07: 202 292 frrrd
+:matt/goldmine/07: 298 224 frrrd
+:matt/goldmine/07: 898 78 fr
+:matt/goldmine/07: 268 312 frrrd
+:matt/goldmine/07: 224 328 frrrd
+:matt/goldmine/07: 324 318 frrrd
+:matt/goldmine/07: 170 330 frrrd
+:matt/goldmine/07: 146 372 frrrd
+:matt/goldmine/07: 236 222 rrrd

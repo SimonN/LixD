@@ -1,0 +1,198 @@
+$BUILT                                             2011-08-20 11:39:11
+$AUTHOR                                                          RubiX
+$GERMAN                                                               
+$ENGLISH                                 Lifes a box of chocolates(3p)
+
+#SIZE_X                                                            958
+#SIZE_Y                                                            558
+#TORUS_X                                                             1
+#TORUS_Y                                                             0
+#START_X                                                           318
+#START_Y                                                           138
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            50
+#INITIAL                                                            99
+#REQUIRED                                                           20
+#RATE                                                               40
+
+#CLIMBER                                                            99
+#WALKER                                                             50
+#JUMPER                                                             50
+#EXPLODER                                                            5
+#PLATFORMER                                                         60
+#MINER                                                              50
+#BASHER                                                             50
+#CUBER                                                              60
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:geoo/construction/Hatch.H:                       784       448     r
+:geoo/construction/Hatch.H:                       144       448     r
+:geoo/construction/Hatch.H:                       464       448     r
+
+:geoo/construction/Goal2.G:                       128       128
+:geoo/construction/Goal2.G:                       448       128
+:geoo/construction/Goal2.G:                       768       128
+
+:matt/water.W:                                     64       512
+:matt/water.W:                                     96       512
+:matt/water.W:                                    128       512
+:matt/water.W:                                    160       512
+:matt/water.W:                                    192       512
+:matt/water.W:                                    224       512
+:matt/water.W:                                    256       512
+:matt/water.W:                                    288       512
+:matt/water.W:                                    304       528
+:matt/water.W:                                     32       512
+:matt/water.W:                                    624       528
+:matt/water.W:                                    944       528
+:matt/water.W:                                    352       512
+:matt/water.W:                                    384       512
+:matt/water.W:                                    416       512
+:matt/water.W:                                    448       512
+:matt/water.W:                                    480       512
+:matt/water.W:                                    512       512
+:matt/water.W:                                    544       512
+:matt/water.W:                                    576       512
+:matt/water.W:                                    320       512
+:matt/water.W:                                    352       528
+:matt/water.W:                                    384       528
+:matt/water.W:                                    416       528
+:matt/water.W:                                    448       528
+:matt/water.W:                                    480       528
+:matt/water.W:                                    512       528
+:matt/water.W:                                    544       528
+:matt/water.W:                                    576       528
+:matt/water.W:                                    320       528
+:matt/water.W:                                     64       528
+:matt/water.W:                                     96       528
+:matt/water.W:                                    128       528
+:matt/water.W:                                    160       528
+:matt/water.W:                                    192       528
+:matt/water.W:                                    224       528
+:matt/water.W:                                    256       528
+:matt/water.W:                                    288       528
+:matt/water.W:                                     32       528
+:matt/water.W:                                    688       512
+:matt/water.W:                                    720       512
+:matt/water.W:                                    752       512
+:matt/water.W:                                    784       512
+:matt/water.W:                                    816       512
+:matt/water.W:                                    848       512
+:matt/water.W:                                    880       512
+:matt/water.W:                                    912       512
+:matt/water.W:                                    656       512
+:matt/water.W:                                    688       528
+:matt/water.W:                                    720       528
+:matt/water.W:                                    752       528
+:matt/water.W:                                    784       528
+:matt/water.W:                                    816       528
+:matt/water.W:                                    848       528
+:matt/water.W:                                    880       528
+:matt/water.W:                                    912       528
+:matt/water.W:                                    656       528
+
+:geoo/steel/dark_64x32o.S:                        128       512
+:geoo/steel/dark_64x32o.S:                        128       192
+:geoo/steel/dark_64x32o.S:                        448       192
+:geoo/steel/dark_16x32o.S:                        752       496
+:geoo/steel/dark_16x32o.S:                        832       496
+:geoo/steel/dark_16x32o.S:                        112       496
+:geoo/steel/dark_16x32o.S:                        192       496
+:geoo/steel/64x64.S:                              288       496
+:geoo/steel/32x64o.S:                             288       400     rrr
+:geoo/steel/32x64o.S:                             304       432
+:geoo/construction/pillar_32:                     304        32
+:geoo/construction/pillar_32:                     304       128
+:geoo/construction/pillar_top_shaded:             304       192     f
+:geoo/construction/fence_rust_64x64:              240        48
+:geoo/construction/fence_rust_64x64:              176        48
+:geoo/construction/fence_rust_64x64:              112        48
+:geoo/construction/fence_rust_64x64:              400        48
+:geoo/construction/fence_rust_64x64:              336        48
+:geoo/construction/fence_rust_64x64:              240       -16
+:geoo/construction/fence_rust_64x64:              176       -16
+:geoo/construction/fence_rust_64x64:              112       -16
+:geoo/construction/fence_rust_64x64:               48       -16
+:geoo/construction/fence_rust_64x64:              464         0
+:geoo/construction/fence_rust_64x64:              336       -16
+:geoo/construction/pillar_32:                     304         0
+:geoo/construction/pillar_32:                     304        64
+:geoo/construction/fence_rust_32x32:               80       112
+:geoo/construction/fence_rust_32x32:              208       112
+:geoo/construction/pillar_32:                     304        96
+:geoo/steel/dark_64x32o.S:                        448       512
+:geoo/steel/dark_16x32o.S:                        432       496
+:geoo/steel/dark_16x32o.S:                        512       496
+:geoo/steel/64x64.S:                              608       496
+:geoo/steel/32x64o.S:                             608       400     rrr
+:geoo/steel/32x64o.S:                             624       432
+:geoo/steel/64x64.S:                              928       496
+:geoo/steel/32x64o.S:                             928       400     rrr
+:geoo/steel/32x64o.S:                             942       432
+:geoo/steel/dark_64x32o.S:                        768       512
+:geoo/construction/pillar_32:                     624        32
+:geoo/construction/pillar_32:                     624       128
+:geoo/construction/pillar_top_shaded:             624       192     f
+:geoo/construction/pillar_32:                     624         0
+:geoo/construction/pillar_32:                     624        64
+:geoo/construction/pillar_32:                     624        96
+:geoo/construction/pillar_32:                     942        32
+:geoo/construction/pillar_32:                     942       128
+:geoo/construction/pillar_top_shaded:             942       192     f
+:geoo/construction/pillar_32:                     942         0
+:geoo/construction/pillar_32:                     942        64
+:geoo/construction/pillar_32:                     942        96
+:geoo/steel/dark_64x32o.S:                        768       192
+:geoo/construction/fence_rust_64x64:              528       -16
+:geoo/construction/fence_rust_64x64:              400         0
+:geoo/construction/fence_rust_64x64:              464        48
+:geoo/construction/fence_rust_64x64:              528        48
+:geoo/construction/fence_rust_64x64:              560         0
+:geoo/construction/fence_rust_64x64:              560        48
+:geoo/construction/fence_rust_64x64:               48        48
+:geoo/construction/fence_rust_64x64:               16       -16
+:geoo/construction/fence_rust_32x32:               16        48
+:geoo/construction/fence_rust_32x32:               16        80
+:geoo/construction/fence_rust_64x64:              656         0
+:geoo/construction/fence_rust_64x64:              720         0
+:geoo/construction/fence_rust_64x64:              784         0
+:geoo/construction/fence_rust_64x64:              848         0
+:geoo/construction/fence_rust_64x64:              656        48
+:geoo/construction/fence_rust_64x64:              720        48
+:geoo/construction/fence_rust_64x64:              784        48
+:geoo/construction/fence_rust_64x64:              848        48
+:geoo/construction/fence_rust_32x32:              912        32
+:geoo/construction/fence_rust_32x32:              912         0
+:geoo/construction/fence_rust_32x32:              912        96
+:geoo/construction/fence_rust_32x32:              912        64
+:geoo/construction/fence_rust_32x32:              848       112
+:geoo/construction/fence_rust_32x32:              720       112
+:geoo/construction/fence_rust_32x32:              528       112
+:geoo/construction/fence_rust_32x32:              400       112
+:geoo/construction/fence_rust_64x64:               16       112
+:geoo/construction/fence_rust_64x64:              880       112
+:geoo/construction/fence_rust_64x64:              240       112
+:geoo/construction/fence_rust_64x64:              336       112
+:geoo/construction/fence_rust_64x64:              560       112
+:geoo/construction/fence_rust_64x64:              656       112
+:geoo/steel/dark_16x32o.S:                        304       320
+:geoo/steel/dark_16x32o.S:                        320       320
+:geoo/steel/dark_16x32o.S:                        304       288
+:geoo/steel/dark_16x32o.S:                        320       288
+:geoo/steel/dark_16x32o.S:                        624       320
+:geoo/steel/dark_16x32o.S:                        640       320
+:geoo/steel/dark_16x32o.S:                        624       288
+:geoo/steel/dark_16x32o.S:                        640       288
+:geoo/steel/dark_16x32o.S:                        944       320
+:geoo/steel/dark_16x32o.S:                          0       320
+:geoo/steel/dark_16x32o.S:                        944       288
+:geoo/steel/dark_16x32o.S:                          0       288
+:geoo/construction/pillar_32:                     624       160
+:geoo/construction/pillar_32:                     304       160
+:geoo/construction/pillar_32:                     942       160

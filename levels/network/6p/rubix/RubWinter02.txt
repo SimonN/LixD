@@ -1,0 +1,276 @@
+$BUILT 2014-04-17 10:28:40
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Come on down(6p)
+
+#SIZE_X 640
+#SIZE_Y 768
+#TORUS_X 1
+#TORUS_Y 1
+#START_X 0
+#START_Y 748
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 55
+#INITIAL 75
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 3
+#WALKER 40
+#JUMPER 30
+#EXPLODER2 8
+#BLOCKER 1
+#BUILDER 80
+#PLATFORMER 20
+#BASHER 50
+#MINER 40
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: 304 576 r
+:matt/winter/Hatch.H: 304 704 r
+:matt/winter/Hatch.H: 304 448 r
+:matt/winter/Hatch.H: 304 194 r
+:matt/winter/Hatch.H: 304 322 r
+:matt/winter/Hatch.H: 304 66 r
+
+:matt/winter/Goal.G: 352 50
+:matt/winter/Goal.G: 352 178
+:matt/winter/Goal.G: 352 688
+:matt/winter/Goal.G: 352 432
+:matt/winter/Goal.G: 352 560
+:matt/winter/Goal.G: 352 306
+
+:matt/winter/06: 288 0 r
+:matt/winter/06: 352 0 r
+:matt/winter/04: 80 576
+:matt/winter/04: 496 400 rrr
+:matt/winter/06: 288 752 r
+:matt/winter/06: 288 624 r
+:matt/winter/06: 288 496 r
+:matt/winter/06: 352 752 r
+:matt/winter/06: 352 624 r
+:matt/winter/06: 352 496 r
+:matt/winter/06: 288 384 r
+:matt/winter/06: 288 640 r
+:matt/winter/06: 288 512 r
+:matt/winter/06: 352 384 r
+:matt/winter/06: 352 640 r
+:matt/winter/06: 352 512 r
+:matt/winter/06: 432 560
+:matt/winter/06: 432 688
+:matt/winter/06: 432 432
+:matt/steel/32x32.S: 288 496
+:matt/steel/32x32.S: 320 496
+:matt/steel/32x32.S: 352 496
+:matt/steel/32x32.S: 384 496
+:matt/steel/32x32.S: 288 624
+:matt/steel/32x32.S: 320 624
+:matt/steel/32x32.S: 352 624
+:matt/steel/32x32.S: 384 624
+:matt/steel/32x32.S: 288 752
+:matt/steel/32x32.S: 320 752
+:matt/steel/32x32.S: 352 752
+:matt/steel/32x32.S: 384 752
+:matt/winter/10: -16 754
+:matt/winter/10: -16 386
+:matt/winter/10: -16 402
+:matt/winter/10: -16 418
+:matt/winter/10: -14 434
+:matt/winter/10: -16 450
+:matt/winter/10: -16 466
+:matt/winter/10: -16 482
+:matt/winter/10: -16 498
+:matt/winter/10: -16 514
+:matt/winter/10: -16 530
+:matt/winter/10: -16 546
+:matt/winter/10: -16 562
+:matt/winter/10: -16 578
+:matt/winter/10: -16 594
+:matt/winter/10: -16 626
+:matt/winter/10: -16 642
+:matt/winter/10: -16 608 r
+:matt/winter/10: -16 658
+:matt/winter/10: -16 674
+:matt/winter/10: -14 736
+:matt/winter/10: -16 690
+:matt/winter/10: -16 706
+:matt/winter/10: -16 722
+:matt/winter/10: 496 384
+:matt/winter/10: 496 400
+:matt/winter/10: 496 416
+:matt/winter/10: 496 432
+:matt/winter/10: 496 448
+:matt/winter/10: 496 464
+:matt/winter/10: 496 480
+:matt/winter/10: 496 496
+:matt/winter/10: 496 512
+:matt/winter/10: 496 528
+:matt/winter/10: 496 544
+:matt/winter/10: 496 560
+:matt/winter/10: 496 576
+:matt/winter/10: 496 592
+:matt/winter/10: 496 608
+:matt/winter/10: 496 624
+:matt/winter/10: 496 640
+:matt/winter/10: 496 656
+:matt/winter/10: 496 672
+:matt/winter/10: 496 688
+:matt/winter/10: 496 704
+:matt/winter/10: 496 720
+:matt/winter/10: 496 736
+:matt/winter/10: 496 688
+:matt/winter/06: 192 578
+:matt/winter/04: 80 384
+:matt/winter/06: 192 450
+:matt/winter/06: 192 514
+:matt/steel/32x32.S: 256 496
+:matt/steel/32x32.S: 256 624
+:matt/steel/32x32.S: 256 752
+:matt/steel/32x32.S: 416 752
+:matt/steel/32x32.S: 416 624
+:matt/steel/32x32.S: 416 496
+:matt/winter/04: -16 528
+:matt/winter/04: 74 623
+:matt/winter/04: 80 544
+:matt/winter/10: -4 670 r
+:matt/winter/10: 20 680 r
+:matt/winter/04: 28 730
+:matt/winter/10: 66 442 r
+:matt/winter/04: -32 384
+:matt/winter/04: 496 528
+:matt/winter/10: 534 742 r
+:matt/winter/04: 528 640
+:matt/winter/04: 576 528
+:matt/winter/04: 592 400
+:matt/winter/10: 532 440 r
+:matt/winter/04: 496 448
+:matt/winter/10: 512 608 r
+:matt/winter/10: 614 662 r
+:matt/winter/04: 496 640 fr
+:matt/winter/06: 192 642
+:matt/winter/06: 496 656
+:matt/winter/06: 496 722
+:matt/winter/06: 496 592
+:matt/winter/06: 496 528
+:matt/winter/06: 496 464
+:matt/winter/04: 80 194
+:matt/winter/04: 496 18 rrr
+:matt/winter/06: 288 370 r
+:matt/winter/06: 288 242 r
+:matt/winter/06: 288 114 r
+:matt/winter/06: 352 370 r
+:matt/winter/06: 352 242 r
+:matt/winter/06: 352 114 r
+:matt/winter/06: 288 258 r
+:matt/winter/06: 288 130 r
+:matt/winter/06: 352 258 r
+:matt/winter/06: 352 130 r
+:matt/winter/06: 432 178
+:matt/winter/06: 432 306
+:matt/winter/06: 432 50
+:matt/steel/32x32.S: 288 114
+:matt/steel/32x32.S: 320 114
+:matt/steel/32x32.S: 352 114
+:matt/steel/32x32.S: 384 114
+:matt/steel/32x32.S: 288 242
+:matt/steel/32x32.S: 320 242
+:matt/steel/32x32.S: 352 242
+:matt/steel/32x32.S: 384 242
+:matt/steel/32x32.S: 288 370
+:matt/steel/32x32.S: 320 370
+:matt/steel/32x32.S: 352 370
+:matt/steel/32x32.S: 384 370
+:matt/winter/10: -16 370
+:matt/winter/10: -16 2
+:matt/winter/10: -16 18
+:matt/winter/10: -16 34
+:matt/winter/10: -16 66
+:matt/winter/10: -16 82
+:matt/winter/10: -16 98
+:matt/winter/10: -16 114
+:matt/winter/10: -16 130
+:matt/winter/10: -16 146
+:matt/winter/10: -16 162
+:matt/winter/10: -16 178
+:matt/winter/10: -16 194
+:matt/winter/10: -16 210
+:matt/winter/10: -16 242
+:matt/winter/10: -16 258
+:matt/winter/10: -16 226 r
+:matt/winter/10: -16 274
+:matt/winter/10: -16 290
+:matt/winter/10: -16 354
+:matt/winter/10: -16 306
+:matt/winter/10: -16 322
+:matt/winter/10: -16 308 r
+:matt/winter/10: 496 2
+:matt/winter/10: 496 18
+:matt/winter/10: 496 34
+:matt/winter/10: 496 50
+:matt/winter/10: 496 66
+:matt/winter/10: 496 82
+:matt/winter/10: 496 98
+:matt/winter/10: 496 114
+:matt/winter/10: 496 130
+:matt/winter/10: 496 146
+:matt/winter/10: 496 162
+:matt/winter/10: 496 178
+:matt/winter/10: 496 194
+:matt/winter/10: 496 210
+:matt/winter/10: 496 226
+:matt/winter/10: 496 242
+:matt/winter/10: 496 258
+:matt/winter/10: 496 274
+:matt/winter/10: 497 311 r
+:matt/winter/10: 496 290
+:matt/winter/06: 496 400
+:matt/winter/10: 496 306
+:matt/winter/10: 530 431
+:matt/winter/10: 530 354
+:matt/winter/10: 496 306
+:matt/winter/06: 192 194
+:matt/winter/06: 192 2
+:matt/winter/04: 80 2
+:matt/winter/06: 192 130
+:matt/winter/06: 496 18
+:matt/steel/32x32.S: 256 114
+:matt/steel/32x32.S: 256 242
+:matt/steel/32x32.S: 256 370
+:matt/steel/32x32.S: 416 370
+:matt/steel/32x32.S: 416 242
+:matt/steel/32x32.S: 416 114
+:matt/winter/04: -16 146
+:matt/winter/10: 82 320 r
+:matt/winter/04: 80 162
+:matt/winter/04: 48 210
+:matt/winter/10: 81 36 r
+:matt/winter/04: 496 146
+:matt/winter/10: 528 354 r
+:matt/winter/04: 528 258
+:matt/winter/04: 576 146
+:matt/winter/04: 592 18
+:matt/winter/10: 528 50 r
+:matt/winter/10: 521 7 r
+:matt/winter/04: 496 66
+:matt/winter/10: 512 226 r
+:matt/winter/10: 608 274 r
+:matt/winter/04: 496 258 fr
+:matt/winter/06: 192 258
+:matt/winter/06: 496 274
+:matt/winter/06: 496 338
+:matt/winter/06: 496 210
+:matt/winter/06: 496 146
+:matt/winter/06: 496 82
+:matt/winter/06: 496 716
+:matt/winter/06: 192 386
+:matt/winter/10: -39 764 r
+:matt/winter/10: 42 107 r
+:matt/winter/06: 192 706
+:matt/winter/06: 192 66
+:matt/winter/06: 192 322

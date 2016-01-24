@@ -1,0 +1,94 @@
+$BUILT 2012-05-29 20:30:04
+$AUTHOR Michael S. Repton
+$GERMAN
+$ENGLISH LIX
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 309
+#INITIAL 59
+#REQUIRED 35
+#SPAWN_INTERVAL 59
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 5
+#FLOATER 9
+#EXPLODER 5
+#BLOCKER 9
+#BUILDER 5
+#BASHER 9
+#MINER 5
+#DIGGER 9
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 96 240
+
+:geoo/construction/Goal2.G: 560 48
+
+:geoo/construction/wall/big_brick1: 256 304
+:geoo/construction/wall/small_64x32: 16 304 frrn
+:geoo/construction/wall/small_64x32: 80 304 frrn
+:geoo/construction/pillar_base: 16 288
+:geoo/construction/pillar_32: 32 208
+:geoo/construction/pillar_32: 32 176
+:geoo/construction/pillar_32: 32 144
+:geoo/construction/pillar_32: 32 112
+:geoo/construction/pillar_base: 16 80 f
+:geoo/construction/wall/small_64x32: 144 304
+:geoo/construction/wall/big_square: 176 272
+:geoo/construction/wall/big_diag_tu: 224 304
+:geoo/construction/wall/big_diag_td: 320 304
+:geoo/construction/pillar_base: 240 288
+:geoo/construction/pillar_32: 256 208
+:geoo/construction/pillar_32: 256 176
+:geoo/construction/pillar_32: 256 144
+:geoo/construction/pillar_32: 256 112
+:geoo/construction/pillar_base: 240 80 f
+:geoo/construction/pillar_base: 272 288
+:geoo/construction/pillar_32: 288 208
+:geoo/construction/pillar_32: 288 176
+:geoo/construction/pillar_32: 288 144
+:geoo/construction/pillar_32: 288 112
+:geoo/construction/pillar_base: 272 80 f
+:geoo/construction/wall/big_brickdiag_bd: 368 112
+:geoo/construction/wall/big_brickdiag_bd: 400 144
+:geoo/construction/wall/big_brickdiag_bd: 432 176
+:geoo/construction/wall/big_brickdiag_bu: 560 112
+:geoo/construction/wall/big_brickdiag_bu: 528 144
+:geoo/construction/wall/big_brickdiag_bu: 496 176
+:geoo/construction/wall/big_brickdiag_tu: 368 272
+:geoo/construction/wall/big_brickdiag_tu: 400 240
+:geoo/construction/wall/big_brickdiag_td: 560 272
+:geoo/construction/wall/big_brickdiag_td: 528 240
+:geoo/construction/wall/big_square: 368 80
+:geoo/construction/wall/big_square: 368 304
+:geoo/construction/wall/big_square: 592 304
+:geoo/construction/wall/big_brickdiag_tu: 432 208
+:geoo/construction/wall/big_brickdiag_td: 496 208
+:geoo/construction/wall/big_square: 400 80
+:geoo/construction/wall/big_square: 400 304
+:geoo/construction/wall/big_square: 560 304
+:geoo/construction/wall/big_diag_tu: 608 368
+:geoo/construction/wall/big_diag_td: 0 368
+:geoo/construction/wall/big_diag_bu: 0 0
+:geoo/construction/wall/big_diag_bd: 608 0
+:geoo/construction/pillar_32: 32 240
+:geoo/construction/pillar_32: 256 240
+:geoo/construction/pillar_32: 288 240
+:geoo/construction/pillar_top_shaded: 32 96
+:geoo/construction/pillar_top_shaded: 256 96
+:geoo/construction/pillar_top_shaded: 288 96
+:geoo/construction/pillar_bottom: 32 272
+:geoo/construction/pillar_bottom: 256 272
+:geoo/construction/pillar_bottom: 288 272

@@ -1,0 +1,266 @@
+$BUILT 2012-06-24 14:07:26
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Just a minute... (part three)
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 99
+#REQUIRED 99
+#SPAWN_INTERVAL 16
+#SPAWN_INTERVAL_FAST 4
+
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/goldmine/GoalTop.D: 592 256
+
+:matt/goldmine/Hatch.H: -16 64
+
+:matt/goldmine/Goal.G: 592 304
+
+:matt/steel/48x48.S: 66 256
+:matt/steel/48x48.S: 114 256
+:matt/steel/48x48.S: 162 256
+:matt/steel/48x48.S: 210 256
+:matt/steel/48x48.S: 258 256
+:matt/steel/48x48.S: 306 256
+:matt/steel/48x48.S: 354 256
+:matt/steel/48x48.S: 402 256
+:matt/steel/48x48.S: 402 304
+:matt/steel/48x48.S: 402 352
+:matt/steel/48x48.S: -30 256
+:matt/steel/48x48.S: 18 256
+:matt/goldmine/crate16: 594 368
+:matt/goldmine/crate16: 594 352
+:matt/goldmine/crate16: 594 384
+:matt/goldmine/crate16: 434 128
+:matt/goldmine/crate16: 434 112
+:matt/goldmine/crate16: 434 144
+:matt/goldmine/crate16: 434 176
+:matt/goldmine/crate16: 434 160
+:matt/goldmine/crate16: 434 192
+:matt/goldmine/crate16: 434 224
+:matt/goldmine/crate16: 434 208
+:matt/goldmine/crate16: 434 240
+:matt/goldmine/crate16: 578 368
+:matt/goldmine/crate16: 578 352
+:matt/goldmine/crate16: 578 384
+:matt/goldmine/crate16: 562 368
+:matt/goldmine/crate16: 562 352
+:matt/goldmine/crate16: 562 384
+:matt/goldmine/crate16: 546 368
+:matt/goldmine/crate16: 546 352
+:matt/goldmine/crate16: 546 384
+:matt/goldmine/crate16: 530 368
+:matt/goldmine/crate16: 530 352
+:matt/goldmine/crate16: 530 384
+:matt/goldmine/crate16: 514 368
+:matt/goldmine/crate16: 514 352
+:matt/goldmine/crate16: 514 384
+:matt/goldmine/crate16: 498 368
+:matt/goldmine/crate16: 498 352
+:matt/goldmine/crate16: 498 384
+:matt/goldmine/crate16: 482 368
+:matt/goldmine/crate16: 482 352
+:matt/goldmine/crate16: 482 384
+:matt/goldmine/crate16: 466 368
+:matt/goldmine/crate16: 466 352
+:matt/goldmine/crate16: 466 384
+:matt/goldmine/crate16: 450 368
+:matt/goldmine/crate16: 450 352
+:matt/goldmine/crate16: 450 384
+:matt/goldmine/crate16: 610 368
+:matt/goldmine/crate16: 610 352
+:matt/goldmine/crate16: 610 384
+:matt/goldmine/crate16: 562 112
+:matt/goldmine/crate16: 578 128
+:matt/goldmine/crate16: 578 112
+:matt/goldmine/crate16: 578 144
+:matt/goldmine/crate16: 578 176
+:matt/goldmine/crate16: 578 160
+:matt/goldmine/crate16: 578 192
+:matt/goldmine/crate16: 578 224
+:matt/goldmine/crate16: 578 208
+:matt/goldmine/crate16: 578 240
+:matt/goldmine/crate16: 578 272
+:matt/goldmine/crate16: 578 256
+:matt/goldmine/crate16: 578 288
+:matt/goldmine/crate16: 578 320
+:matt/goldmine/crate16: 578 304
+:matt/goldmine/crate16: 578 336
+:matt/goldmine/crate16: 530 112
+:matt/goldmine/crate16: 546 112
+:matt/goldmine/crate16: 514 112
+:matt/goldmine/crate16: 498 112
+:matt/goldmine/crate16: 482 112
+:matt/goldmine/crate16: 466 112
+:matt/goldmine/crate16: 450 112
+:matt/goldmine/crate64: 450 128
+:matt/goldmine/crate64: 450 208
+:matt/goldmine/crate64: 450 288
+:matt/goldmine/crate16: 498 192
+:matt/goldmine/crate16: 482 192
+:matt/goldmine/crate16: 466 192
+:matt/goldmine/crate16: 450 192
+:matt/goldmine/crate16: 498 272
+:matt/goldmine/crate16: 482 272
+:matt/goldmine/crate16: 466 272
+:matt/goldmine/crate16: 450 272
+:matt/goldmine/crate16: 562 272
+:matt/goldmine/crate16: 546 272
+:matt/goldmine/crate16: 530 272
+:matt/goldmine/crate16: 514 272
+:matt/goldmine/crate16: 562 192
+:matt/goldmine/crate16: 546 192
+:matt/goldmine/crate16: 530 192
+:matt/goldmine/crate16: 514 192
+:matt/goldmine/crate64: 514 208
+:matt/goldmine/crate64: 514 288
+:matt/goldmine/crate64: 514 128
+:matt/goldmine/crate16: 274 112
+:matt/goldmine/crate16: 402 112
+:matt/goldmine/crate16: 418 112
+:matt/goldmine/crate16: 370 112
+:matt/goldmine/crate16: 386 112
+:matt/goldmine/crate16: 354 112
+:matt/goldmine/crate16: 338 112
+:matt/goldmine/crate16: 322 112
+:matt/goldmine/crate16: 306 112
+:matt/goldmine/crate16: 290 112
+:matt/goldmine/crate16: 114 112
+:matt/goldmine/crate16: 242 112
+:matt/goldmine/crate16: 258 112
+:matt/goldmine/crate16: 210 112
+:matt/goldmine/crate16: 226 112
+:matt/goldmine/crate16: 194 112
+:matt/goldmine/crate16: 178 112
+:matt/goldmine/crate16: 162 112
+:matt/goldmine/crate16: 146 112
+:matt/goldmine/crate16: 130 112
+:matt/goldmine/crate16: 82 112
+:matt/goldmine/crate16: 98 112
+:matt/goldmine/crate16: 50 112
+:matt/goldmine/crate16: 66 112
+:matt/goldmine/crate16: 34 112
+:matt/goldmine/crate16: 18 112
+:matt/goldmine/crate16: 2 112
+:matt/goldmine/crate16: -14 112
+:matt/goldmine/crate16: 274 128
+:matt/goldmine/crate16: 274 144
+:matt/goldmine/crate16: 274 176
+:matt/goldmine/crate16: 274 160
+:matt/goldmine/crate16: 274 192
+:matt/goldmine/crate16: 418 128
+:matt/goldmine/crate16: 418 144
+:matt/goldmine/crate16: 418 176
+:matt/goldmine/crate16: 418 160
+:matt/goldmine/crate16: 418 192
+:matt/goldmine/crate64: 290 128
+:matt/goldmine/crate16: 338 192
+:matt/goldmine/crate16: 322 192
+:matt/goldmine/crate16: 306 192
+:matt/goldmine/crate16: 290 192
+:matt/goldmine/crate16: 402 192
+:matt/goldmine/crate16: 386 192
+:matt/goldmine/crate16: 370 192
+:matt/goldmine/crate16: 354 192
+:matt/goldmine/crate64: 354 128
+:matt/goldmine/crate16: 114 128
+:matt/goldmine/crate16: 114 144
+:matt/goldmine/crate16: 114 176
+:matt/goldmine/crate16: 114 160
+:matt/goldmine/crate16: 114 192
+:matt/goldmine/crate16: 258 128
+:matt/goldmine/crate16: 258 144
+:matt/goldmine/crate16: 258 176
+:matt/goldmine/crate16: 258 160
+:matt/goldmine/crate16: 258 192
+:matt/goldmine/crate64: 130 128
+:matt/goldmine/crate16: 178 192
+:matt/goldmine/crate16: 162 192
+:matt/goldmine/crate16: 146 192
+:matt/goldmine/crate16: 130 192
+:matt/goldmine/crate16: 242 192
+:matt/goldmine/crate16: 226 192
+:matt/goldmine/crate16: 210 192
+:matt/goldmine/crate16: 194 192
+:matt/goldmine/crate64: 194 128
+:matt/goldmine/crate16: 98 128
+:matt/goldmine/crate16: 98 144
+:matt/goldmine/crate16: 98 176
+:matt/goldmine/crate16: 98 160
+:matt/goldmine/crate16: 98 192
+:matt/goldmine/crate64: -30 128
+:matt/goldmine/crate16: 18 192
+:matt/goldmine/crate16: 2 192
+:matt/goldmine/crate16: -14 192
+:matt/goldmine/crate16: 82 192
+:matt/goldmine/crate16: 66 192
+:matt/goldmine/crate16: 50 192
+:matt/goldmine/crate16: 34 192
+:matt/goldmine/crate64: 34 128
+:matt/goldmine/crate64: 130 192
+:matt/goldmine/crate64: 194 192
+:matt/goldmine/crate64: 290 192
+:matt/goldmine/crate64: 354 192
+:matt/goldmine/crate64: -30 192
+:matt/goldmine/crate64: 34 192
+:matt/goldmine/crate16: 114 224
+:matt/goldmine/crate16: 114 208
+:matt/goldmine/crate16: 114 240
+:matt/goldmine/crate16: 98 224
+:matt/goldmine/crate16: 98 208
+:matt/goldmine/crate16: 98 240
+:matt/goldmine/crate16: 274 224
+:matt/goldmine/crate16: 274 208
+:matt/goldmine/crate16: 274 240
+:matt/goldmine/crate16: 258 224
+:matt/goldmine/crate16: 258 208
+:matt/goldmine/crate16: 258 240
+:matt/goldmine/crate16: 418 224
+:matt/goldmine/crate16: 418 208
+:matt/goldmine/crate16: 418 240
+:matt/goldmine/07: 480 -78
+:matt/goldmine/07: 346 -22
+:matt/goldmine/04: 274 -80
+:matt/goldmine/07: 208 -114 fr
+:matt/goldmine/09: -18 -48 r
+:matt/goldmine/07: 84 -56
+:matt/goldmine/planksupport: 18 376
+:matt/goldmine/planksupport: 274 376
+:matt/goldmine/plank: 146 376
+:matt/goldmine/plank: -110 376
+:matt/goldmine/04: 196 352 r
+:matt/goldmine/07: 272 352
+:matt/goldmine/crate16: 624 368
+:matt/goldmine/crate16: 624 352
+:matt/goldmine/crate16: 624 384
+:matt/steel/32x32.S: 560 112
+:matt/steel/32x32.S: 528 144
+:matt/steel/32x32.S: 496 112
+:matt/steel/32x32.S: 320 112
+:matt/steel/32x32.S: 288 144
+:matt/steel/32x32.S: 256 112
+:matt/steel/32x32.S: 64 112
+:matt/steel/32x32.S: 32 144
+:matt/steel/32x32.S: 0 112

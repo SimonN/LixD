@@ -1,0 +1,85 @@
+$BUILT 2014-05-25 00:11:33
+$AUTHOR M.Z./mobius
+$GERMAN 
+$ENGLISH The Final Sacrifice
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 100
+#REQUIRED 99
+#SPAWN_INTERVAL 30
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#FLOATER 1
+#JUMPER 1
+#BUILDER 4
+#BASHER 2
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/underworld/Hatch.H: 80 32
+
+:matt/underworld/Goal.G: 568 144
+
+:matt/underworld/Lava.W: 248 320
+:matt/underworld/Lava.W: 296 320
+:matt/underworld/Lava.W: 344 320
+:geoo/sandstone/torch.F: 432 72
+:geoo/sandstone/torch.F: 552 72
+
+:matt/underworld/02: 512 272
+:matt/underworld/02: -8 320
+:matt/underworld/02: 576 272
+:matt/underworld/02: 448 272
+:matt/underworld/02: 384 272
+:geoo/steel/dark_64x64o.S: 472 360
+:matt/underworld/02: 128 320
+:matt/underworld/02: 128 224
+:matt/underworld/02: 192 320
+:matt/underworld/02: 192 224
+:matt/underworld/02: 0 128
+:matt/underworld/02: 64 128
+:matt/underworld/02: 128 128
+:matt/underworld/02: 192 128
+:matt/underworld/05: 152 344
+:matt/underworld/07: 128 312
+:matt/underworld/05: 232 368 rr
+:matt/underworld/05: 320 344 rr
+:matt/underworld/05: 400 376 rr
+:matt/underworld/08: 568 360
+:matt/underworld/05: 592 376 rr
+:geoo/steel/dark_64x64o.S: 384 208
+:geoo/steel/dark_64x64o.S: 448 208
+:geoo/steel/dark_64x64o.S: 512 208
+:geoo/steel/dark_64x64o.S: 576 208
+:matt/underworld/02: 160 32
+:matt/underworld/02: 0 32
+:matt/underworld/02: 480 112
+:matt/underworld/08: 384 -80
+:matt/underworld/05: 480 -16 rr
+:matt/underworld/05: 256 -40
+:matt/underworld/05: 336 -16
+:matt/underworld/07: 456 -48
+:matt/underworld/08: 512 320
+:matt/underworld/07: 456 312
+:matt/underworld/05: -8 368
+:matt/underworld/02: 0 224
+:matt/underworld/02: 64 224
+:matt/underworld/08: -16 304
+:matt/underworld/06: 72 296
+:matt/underworld/08: 48 264
+:matt/underworld/07: 8 272
+:matt/underworld/05: 368 360 rr

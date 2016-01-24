@@ -1,0 +1,103 @@
+$BUILT 2014-07-01 20:18:17
+$AUTHOR mobius
+$GERMAN 
+$ENGLISH Climb to Freedom!
+
+#SIZE_X 1280
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 480
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 20
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 10
+#FLOATER 0
+#EXPLODER 0
+#BLOCKER 0
+#BUILDER 1
+#BASHER 0
+#MINER 0
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: 504 40
+:matt/winter/Hatch.H: 1000 224
+
+:matt/winter/Goal.G: 200 88
+
+:simon/water.W: -8 352
+:simon/water.W: 1192 352
+:simon/water.W: 1240 352
+
+:matt/winter/07: 768 184 f
+:matt/winter/07: 720 192 rr
+:matt/winter/07: 304 -16 rr
+:matt/winter/07: 568 -16 rr
+:matt/winter/07: 416 -8 rr
+:matt/winter/07: 480 0 rr
+:matt/winter/06: 248 152 rrr
+:matt/winter/06: 208 152 rrr
+:matt/winter/10: 88 320
+:matt/winter/16: 8 288
+:matt/winter/16: 72 184
+:matt/winter/10: 80 256
+:matt/winter/10: 128 152
+:matt/winter/10: 168 224
+:matt/winter/10: 216 296
+:matt/winter/10: 256 144
+:matt/winter/10: 288 208
+:matt/winter/04: 288 280
+:matt/winter/04: 368 224
+:matt/winter/04: 360 296
+:matt/winter/04: 416 272
+:matt/winter/11: 440 200
+:matt/winter/10: 400 152
+:matt/winter/02: 352 -16
+:matt/winter/00: 232 152
+:matt/winter/15: 280 -8
+:matt/winter/15: 344 -8
+:matt/winter/15: 416 -8
+:matt/winter/15: 480 -8
+:matt/winter/15: 544 -8
+:matt/winter/15: 616 -8
+:matt/winter/15: 680 -8
+:matt/winter/10: 488 144
+:matt/winter/00: 640 136
+:matt/winter/00: 680 152
+:matt/winter/04: 672 32
+:matt/winter/02: 664 -8
+:matt/winter/02: 688 0
+:matt/winter/02: 728 -16
+:matt/winter/02: 712 -32
+:matt/winter/00: 712 152
+:matt/winter/10: 584 136
+:matt/winter/10: 400 224
+:matt/winter/10: 456 288
+:matt/winter/10: 600 336
+:matt/winter/10: 488 344
+:matt/winter/04: 584 232
+:matt/winter/04: 528 208
+:matt/winter/00: 576 224
+:matt/winter/02: 648 200
+:matt/winter/10: 760 344
+:matt/winter/10: 904 336
+:matt/winter/04: 1088 272
+:matt/winter/02: 624 -56
+:matt/winter/07: 800 -16 rr
+:matt/winter/07: 856 16 rr
+:matt/winter/02: 952 -24
+:matt/winter/15: 768 -8
+:matt/winter/15: 832 -8
+:matt/winter/15: 904 -8

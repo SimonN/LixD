@@ -1,0 +1,86 @@
+$BUILT 2014-06-08 16:23:50
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Two bridges, too far
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y -20
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 25
+#REQUIRED 23
+#SPAWN_INTERVAL 16
+#SPAWN_INTERVAL_FAST 16
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#EXPLODER2 2
+#BLOCKER 1
+#PLATFORMER 2
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/earth/Hatch.H: 32 156
+
+:matt/earth/Goal.G: 456 176
+
+:matt/water.W: 64 368
+:matt/water.W: 96 368
+:matt/water.W: 128 368
+:matt/water.W: 160 368
+:matt/water.W: 192 368
+:matt/water.W: 400 368
+:matt/water.W: 432 368
+:matt/water.W: 464 368
+:matt/water.W: 496 368
+:matt/water.W: 528 368
+:geoo/construction/sawblade_small.F: 256 268
+
+:matt/earth/00: -48 136
+:matt/earth/20: 16 200
+:matt/earth/17: -20 312
+:matt/earth/17: -6 252
+:matt/earth/05: 16 322
+:matt/earth/04: -64 152
+:matt/earth/10: 208 368
+:matt/earth/17: 272 304 frrr
+:matt/earth/18: 242 234 rrr
+:matt/earth/16: 222 282 frr
+:matt/earth/18: 238 199 rrr
+:matt/earth/20: 160 200
+:matt/earth/18: 242 212 rrr
+:matt/earth/18: 242 220 rrr
+:matt/earth/18: 242 199 rrr
+:matt/earth/05: 216 200
+:matt/earth/20: 112 200
+:matt/earth/16: 304 288
+:matt/earth/20: 368 240
+:matt/earth/05: 349 246
+:geoo/steel/32x32o.S: 384 160
+:matt/earth/14: 272 222 rrd
+:matt/earth/14: 272 236 rrd
+:geoo/steel/16x32o.S: 256 192
+:geoo/construction/rod_steel/straight32.S: 544 172
+:matt/earth/17: 556 152 frr
+:matt/earth/18: 529 243 rrrd
+:matt/earth/20: 464 240
+:matt/earth/10: 567 207 rrr
+:matt/earth/05: 540 239
+:matt/earth/10: 579 121
+:geoo/construction/rod_steel/straight32.S: 416 172
+:geoo/construction/rod_steel/straight32.S: 448 172
+:geoo/construction/rod_steel/straight32.S: 480 172
+:geoo/construction/rod_steel/straight32.S: 512 172
+:geoo/steel/16x32o.S: 256 224

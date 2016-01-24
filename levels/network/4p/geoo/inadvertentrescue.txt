@@ -1,0 +1,160 @@
+$BUILT                                             2011-09-06 11:54:11
+$AUTHOR                                                           geoo
+$GERMAN                                                               
+$ENGLISH                                            Inadvertent Rescue
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            448
+#TORUS_X                                                             0
+#TORUS_Y                                                             1
+#START_X                                                             0
+#START_Y                                                            64
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            60
+#INITIAL                                                           150
+#REQUIRED                                                           20
+#RATE                                                               80
+
+#CLIMBER                                                            20
+#WALKER                                                             40
+#JUMPER                                                             40
+#RUNNER                                                             10
+#BATTER                                                             10
+#PLATFORMER                                                         60
+#BUILDER                                                            60
+#CUBER                                                              20
+#EXPLODER2                                                          10
+#BASHER                                                             40
+#MINER                                                              40
+#DIGGER                                                              8
+
+:geoo/construction/Hatch.H:                        16       112
+:geoo/construction/Hatch.H:                       592       112     r
+:geoo/construction/Hatch.H:                        16       336
+:geoo/construction/Hatch.H:                       592       336     r
+:geoo/construction/Hatch.H:                       160       368
+:geoo/construction/Hatch.H:                       448       368     r
+:geoo/construction/Hatch.H:                       160       144
+:geoo/construction/Hatch.H:                       448       144     r
+
+:geoo/construction/Goal2.G:                       560       240
+:geoo/construction/Goal2.G:                        16       240
+:geoo/construction/Goal2.G:                       560        16
+:geoo/construction/Goal2.G:                        16        16
+
+:geoo/construction/sawblade_medium.F:             288         0
+:geoo/construction/sawblade_medium.F:             288       224
+:geoo/construction/sawblade_small.F:              160        64
+:geoo/construction/sawblade_small.F:              448        64
+:geoo/construction/sawblade_small.F:              448       288
+:geoo/construction/sawblade_small.F:              160       288
+
+:geoo/steel/32x32o.S:                             128       400
+:geoo/construction/wall/big_128x128:              192       304
+:geoo/steel/64x64.S:                              160       304
+:geoo/construction/wall/big_square:               288       336
+:geoo/construction/wall/big_square:               224       304
+:geoo/steel/64x64.S:                               96       304
+:geoo/construction/wall/big_brick1:                96       368
+:geoo/construction/wall/big_square:                96       400
+:geoo/construction/wall/big_square:               192       400
+:geoo/steel/32x32o.S:                             480       400
+:geoo/construction/wall/big_128x128:              320       304
+:geoo/steel/64x64.S:                              416       304
+:geoo/construction/wall/big_square:               320       336     frr
+:geoo/construction/wall/big_square:               384       304
+:geoo/steel/64x64.S:                              480       304
+:geoo/construction/wall/big_brick1:               480       368
+:geoo/construction/wall/big_square:               416       400
+:geoo/steel/64x64.S:                              288       304
+:geoo/construction/wall/big_square:               256       304
+:geoo/construction/wall/big_square:               352       304
+:geoo/steel/32x32o.S:                             128       176
+:geoo/construction/wall/big_128x128:              192        80
+:geoo/steel/64x64.S:                              160        80
+:geoo/construction/wall/big_square:               288       112
+:geoo/construction/wall/big_square:               224        80
+:geoo/steel/64x64.S:                               96        80
+:geoo/construction/wall/big_brick1:                96       144
+:geoo/construction/wall/big_square:                96       176
+:geoo/construction/wall/big_square:               192       176
+:geoo/steel/32x32o.S:                             480       176
+:geoo/construction/wall/big_128x128:              320        80
+:geoo/steel/64x64.S:                              416        80
+:geoo/construction/wall/big_square:               320       112     frr
+:geoo/construction/wall/big_square:               384        80
+:geoo/steel/64x64.S:                              480        80
+:geoo/construction/wall/big_brick1:               480       144
+:geoo/construction/wall/big_square:               416       176
+:geoo/construction/wall/big_square:               512       176
+:geoo/construction/wall/big_square:               512       400
+:geoo/steel/16x32o.S:                               0       112
+:geoo/steel/16x32o.S:                               0       144
+:geoo/steel/64x32o.S:                               0       176
+:geoo/construction/concrete/032:                   16       144
+:geoo/construction/concrete/016v:                  48       144
+:geoo/construction/concrete/016:                   48       128
+:geoo/steel/32x16o.S:                              16       304
+:geoo/steel/32x16o.S:                              48       304
+:geoo/steel/16x32o.S:                               0       336
+:geoo/steel/16x32o.S:                               0       368
+:geoo/steel/64x32o.S:                               0       400
+:geoo/construction/concrete/032:                   16       368
+:geoo/construction/concrete/016v:                  48       368
+:geoo/construction/concrete/016:                   48       352
+:geoo/steel/16x32o.S:                               0       304
+:geoo/steel/16x32o.S:                               0       272
+:geoo/steel/16x32o.S:                               0       240
+:geoo/steel/16x32o.S:                               0       208
+:geoo/steel/32x16o.S:                              16        80
+:geoo/steel/32x16o.S:                              48        80
+:geoo/steel/16x32o.S:                               0        80
+:geoo/steel/16x32o.S:                               0        48
+:geoo/steel/16x32o.S:                               0        16
+:geoo/steel/16x32o.S:                               0       432
+:geoo/steel/64x32o.S:                             576       176     frr
+:geoo/steel/32x16o.S:                             592       304     frr
+:geoo/steel/32x16o.S:                             560       304     frr
+:geoo/steel/16x32o.S:                             624       336     frr
+:geoo/steel/16x32o.S:                             624       368     frr
+:geoo/construction/concrete/032:                  592       368     frr
+:geoo/construction/concrete/016v:                 576       368     frr
+:geoo/construction/concrete/016:                  576       352     frr
+:geoo/steel/16x32o.S:                             624       304     frr
+:geoo/steel/16x32o.S:                             624       272     frr
+:geoo/steel/16x32o.S:                             624       240     frr
+:geoo/steel/16x32o.S:                             624       208     frr
+:geoo/steel/64x32o.S:                             576       400     frr
+:geoo/steel/32x16o.S:                             592        80     frr
+:geoo/steel/32x16o.S:                             560        80     frr
+:geoo/steel/16x32o.S:                             624       112     frr
+:geoo/steel/16x32o.S:                             624       144     frr
+:geoo/construction/concrete/032:                  592       144     frr
+:geoo/construction/concrete/016v:                 576       144     frr
+:geoo/construction/concrete/016:                  576       128     frr
+:geoo/steel/16x32o.S:                             624        80     frr
+:geoo/steel/16x32o.S:                             624        48     frr
+:geoo/steel/16x32o.S:                             624        16     frr
+:geoo/steel/16x32o.S:                             624       432     frr
+:geoo/construction/wall/big_square:               256        80
+:geoo/construction/wall/big_square:               352        80
+:geoo/steel/64x64.S:                              288        80
+:geoo/construction/pillar_32:                     352         0
+:geoo/construction/pillar_32:                     256         0
+:geoo/construction/pillar_top_shaded:             256       432
+:geoo/construction/pillar_top_shaded:             352       432
+:geoo/construction/pillar_32:                     256        32
+:geoo/construction/pillar_32:                     352        32
+:geoo/construction/pillar_bottom:                 256        64
+:geoo/construction/pillar_bottom:                 352        64
+:geoo/construction/pillar_32:                     352       224
+:geoo/construction/pillar_32:                     256       224
+:geoo/construction/pillar_top_shaded:             256       208
+:geoo/construction/pillar_top_shaded:             352       208
+:geoo/construction/pillar_32:                     256       256
+:geoo/construction/pillar_32:                     352       256
+:geoo/construction/pillar_bottom:                 256       288
+:geoo/construction/pillar_bottom:                 352       288

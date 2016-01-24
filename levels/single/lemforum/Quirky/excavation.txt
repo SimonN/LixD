@@ -1,0 +1,147 @@
+$BUILT 2014-07-15 22:42:10
+$AUTHOR Nortaneous
+$GERMAN 
+$ENGLISH Excavation
+
+#SIZE_X 960
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y -20
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 30
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 3
+#FLOATER 5
+#BLOCKER 2
+#BASHER 1
+#DIGGER 5
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/beach/Hatch.H: 176 200
+:matt/beach/Hatch.H: 336 200
+
+:matt/beach/goal.G: 553 307
+
+:simon/water.W: 672 360
+:simon/water.W: 720 360
+:simon/water.W: 768 360
+:simon/water.W: 816 360
+:simon/water.W: 864 360
+:simon/water.W: 912 360
+
+:matt/beach/nighttime/15: 799 255
+:matt/beach/nighttime/15: 787 287
+:matt/beach/nighttime/15: 781 270
+:matt/beach/nighttime/15: 781 282
+:matt/beach/nighttime/15: 774 297
+:matt/beach/nighttime/05: 663 130
+:matt/beach/nighttime/01: 663 266
+:matt/beach/nighttime/15: 768 296
+:matt/beach/decor/umbrella_red: 849 154
+:matt/beach/nighttime/15: 762 293
+:matt/beach/nighttime/15: 744 296
+:matt/beach/nighttime/01: 744 248
+:matt/beach/nighttime/15: 774 283
+:matt/beach/nighttime/03: 551 370
+:matt/beach/nighttime/04: 617 229
+:matt/beach/nighttime/15: 324 270
+:matt/beach/decor/shovel: 290 240
+:matt/beach/nighttime/00: -20 354
+:matt/beach/nighttime/06: -16 268
+:matt/beach/nighttime/13: 38 302
+:matt/beach/nighttime/14: 184 294
+:matt/beach/nighttime/03: 172 276
+:matt/beach/nighttime/04: 216 278
+:matt/beach/nighttime/04: 302 274
+:matt/beach/nighttime/13: 370 294
+:matt/beach/nighttime/00: 76 272
+:matt/beach/nighttime/13: 352 278
+:matt/beach/nighttime/02: 442 306
+:matt/beach/nighttime/13: 466 312
+:matt/beach/nighttime/04: 532 270
+:matt/beach/nighttime/03: 432 308
+:matt/beach/nighttime/03: 428 278
+:matt/beach/nighttime/05: 598 260
+:matt/beach/nighttime/00: -28 270
+:matt/beach/nighttime/13: 108 292
+:matt/beach/nighttime/03: 102 274
+:matt/beach/nighttime/00: 280 278
+:matt/beach/nighttime/06: 328 274
+:matt/beach/nighttime/15: 278 274
+:matt/beach/nighttime/03: 430 270
+:geoo/steel/dark_64x32o.S: 10 336
+:geoo/steel/dark_64x64o.S: 94 292
+:geoo/steel/dark_64x32o.S: 276 286
+:geoo/steel/dark_32x32o.S: 178 356
+:geoo/steel/dark_32x16o.S: 208 312
+:geoo/steel/dark_32x32o.S: 436 274
+:geoo/steel/dark_64x64o.S: 450 328
+:geoo/steel/dark_32x64o.S: 326 356
+:geoo/steel/dark_16x32o.S: 96 376
+:geoo/steel/dark_16x16o.S: 18 288
+:geoo/steel/dark_16x16o.S: 284 338
+:geoo/steel/dark_16x32o.S: 248 362
+:geoo/steel/dark_32x16o.S: 370 366
+:geoo/steel/dark_32x32o.S: 370 318
+:geoo/steel/dark_16x16o.S: 420 344
+:geoo/steel/dark_32x16o.S: 50 268
+:geoo/steel/dark_32x16o.S: -20 388
+:matt/beach/nighttime/14: 689 198
+:matt/beach/nighttime/00: 679 264
+:matt/beach/nighttime/06: 691 182
+:matt/beach/nighttime/14: 720 186
+:matt/beach/nighttime/03: 624 326 d
+:matt/beach/nighttime/03: 536 326 d
+:matt/beach/nighttime/03: 528 298 d
+:matt/beach/nighttime/03: 614 300 d
+:matt/beach/nighttime/03: 624 302 d
+:matt/beach/nighttime/15: 752 296
+:matt/beach/nighttime/15: 727 288
+:matt/beach/nighttime/15: 712 280
+:matt/beach/nighttime/15: 761 298
+:matt/beach/nighttime/15: 787 255
+:matt/beach/nighttime/15: 734 295
+:matt/beach/nighttime/15: 708 290
+:matt/beach/nighttime/15: 717 294
+:matt/beach/nighttime/03: 630 266
+:matt/beach/nighttime/01: 683 274
+:matt/beach/nighttime/15: 690 147
+:matt/beach/nighttime/15: 683 162
+:matt/beach/nighttime/00: 691 146 d
+:matt/beach/nighttime/15: 657 133 d
+:matt/beach/nighttime/15: 657 135 d
+:matt/beach/nighttime/15: 782 298
+:matt/beach/nighttime/15: 791 272
+:geoo/steel/dark_32x16o.S: 528 272
+:geoo/steel/dark_32x16o.S: 560 272
+:geoo/steel/dark_32x16o.S: 592 272
+:geoo/steel/dark_32x16o.S: 624 272
+:geoo/steel/dark_32x16o.S: 656 272
+:geoo/steel/dark_32x16o.S: 688 272
+:geoo/steel/dark_32x16o.S: 720 272
+:geoo/steel/dark_32x16o.S: 752 272
+:geoo/steel/dark_16x32o.S: 528 288
+:geoo/steel/dark_16x32o.S: 528 320
+:geoo/steel/dark_16x32o.S: 528 352
+:geoo/steel/dark_16x32o.S: 528 384
+:geoo/steel/dark_32x16o.S: 544 288
+:geoo/steel/dark_32x16o.S: 576 288
+:geoo/steel/dark_16x32o.S: 544 304
+:geoo/steel/dark_16x32o.S: 544 336
+:geoo/steel/dark_32x16o.S: 608 288
+:geoo/steel/dark_32x32o.S: 560 304

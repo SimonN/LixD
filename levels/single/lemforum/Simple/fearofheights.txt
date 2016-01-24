@@ -1,0 +1,84 @@
+$BUILT 2014-07-04 21:58:33
+$AUTHOR mobius
+$GERMAN 
+$ENGLISH Fear of Heights
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 60
+#REQUIRED 60
+#SPAWN_INTERVAL 50
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 0
+#FLOATER 1
+#EXPLODER 0
+#BLOCKER 0
+#BUILDER 2
+#BASHER 0
+#MINER 0
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/bricks/Hatch.H: 136 24
+
+:matt/bricks/Goal.G: 488 256
+
+:simon/water.W: 96 352
+:simon/water.W: 144 352
+:simon/water.W: 192 352
+:simon/water.W: 240 352
+:simon/water.W: 288 352
+:simon/water.W: 336 352
+:simon/water.W: 384 352
+:simon/water.W: 432 352
+:simon/water.W: 480 352
+
+:matt/bricks/02: 24 304
+:matt/bricks/02: 88 304
+:matt/bricks/02: 152 304
+:matt/bricks/02: 216 304
+:matt/bricks/02: 280 304
+:matt/bricks/02: 344 304
+:matt/bricks/02: 472 304
+:matt/bricks/02: 536 304
+:matt/bricks/20: 520 336
+:matt/bricks/18: 528 352
+:matt/bricks/18: 528 376
+:matt/bricks/20: 72 336
+:matt/bricks/18: 80 352
+:matt/bricks/18: 80 376
+:matt/bricks/01a: 32 288
+:matt/bricks/01a: 40 272
+:matt/bricks/01a: 24 256
+:matt/bricks/01a: 552 288
+:matt/bricks/01a: 568 272
+:matt/bricks/03: 64 120
+:matt/bricks/03: 128 120
+:matt/bricks/03: 256 120
+:matt/bricks/03: 320 120
+:matt/bricks/03: 384 120
+:matt/bricks/03: 448 120
+:matt/bricks/03: 448 56
+:matt/bricks/03: 64 56
+:matt/bricks/03: 64 -8
+:matt/bricks/03: 448 -8
+:matt/bricks/02: 128 -8
+:matt/bricks/02: 256 -8
+:matt/bricks/02: 320 -8
+:matt/bricks/02: 384 -8
+:matt/bricks/02: 408 304
+:matt/bricks/03: 192 120
+:matt/bricks/02: 192 -8
+:matt/bricks/06: 512 -8
+:matt/bricks/05: 0 -8

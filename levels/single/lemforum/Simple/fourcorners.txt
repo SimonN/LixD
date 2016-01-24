@@ -1,0 +1,117 @@
+$BUILT 2014-07-01 20:40:54
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH Four Corners
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 80
+#REQUIRED 76
+#SPAWN_INTERVAL 20
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 10
+#JUMPER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER 10
+#BLOCKER 10
+#CUBER 10
+#BUILDER 10
+#PLATFORMER 10
+#BASHER 10
+#MINER 10
+#DIGGER 10
+
+:geoo/construction/Hatch.H: 32 32
+:geoo/construction/Hatch.H: 576 32
+:geoo/construction/Hatch.H: 32 336
+:geoo/construction/Hatch.H: 576 336
+
+:matt/marble/Goal.G: 288 208
+
+:matt/marble/08: 0 368
+:matt/marble/08a: 576 368
+:matt/marble/08b: 0 0
+:matt/marble/08c: 576 0
+:matt/marble/08c: 512 0
+:matt/marble/08c: 448 0
+:matt/marble/08c: 384 0
+:matt/marble/08b: 64 0
+:matt/marble/08b: 128 0
+:matt/marble/08b: 192 0
+:matt/marble/08b: 256 0
+:matt/marble/08c: 320 0
+:matt/marble/08: 64 368
+:matt/marble/08: 128 368
+:matt/marble/08: 192 368
+:matt/marble/08: 256 368
+:matt/marble/08a: 512 368
+:matt/marble/08a: 448 368
+:matt/marble/08a: 384 368
+:matt/marble/08a: 320 368
+:matt/marble/05: 0 336
+:matt/marble/05a: 608 336
+:matt/marble/05b: 0 32
+:matt/marble/05c: 608 32
+:matt/marble/08c: 576 64
+:matt/marble/08c: 544 96
+:matt/marble/08c: 480 96
+:matt/marble/08c: 448 64
+:matt/marble/05b: 0 64
+:matt/marble/08b: 0 96
+:matt/marble/08b: 64 96
+:matt/marble/05b: 96 64
+:matt/marble/05b: 160 64
+:matt/marble/08b: 160 96
+:matt/marble/05: 96 336
+:matt/marble/05: 128 304
+:matt/marble/05: 160 272
+:matt/marble/05: 160 336
+:matt/marble/05: 192 304
+:matt/marble/05: 224 336
+:matt/marble/03: 304 336
+:matt/marble/03: 304 304
+:matt/marble/03: 304 272
+:matt/marble/03a: 320 272
+:matt/marble/03a: 320 304
+:matt/marble/03a: 320 336
+:matt/marble/04a: 320 256
+:matt/marble/04: 288 256
+:matt/marble/16: 256 336
+:matt/marble/16: 224 304
+:matt/marble/16: 192 272
+:matt/marble/05: 96 304
+:matt/marble/05: 96 272
+:matt/marble/05: 64 272
+:matt/marble/05a: 336 272
+:matt/marble/05a: 576 304
+:matt/marble/05a: 384 304
+:geoo/steel/32x32o.S: 304 336
+:geoo/steel/32x32o.S: 304 304
+:geoo/steel/32x32o.S: 304 272
+:matt/marble/14a: 512 304
+:matt/marble/05a: 448 304
+:matt/marble/05a: 432 272
+:matt/marble/05a: 464 272
+:matt/marble/08b: 64 160
+:matt/marble/08b: 160 160
+:matt/marble/05b: 160 192
+:matt/marble/05b: 96 192
+:matt/marble/05b: 256 160
+:matt/marble/05b: 256 96
+:matt/marble/05c: 416 96
+:matt/marble/05c: 352 64
+:matt/marble/05c: 352 160
+:matt/marble/16c: 352 128
+:matt/marble/15c: 352 96
+:matt/marble/02a: 496 272

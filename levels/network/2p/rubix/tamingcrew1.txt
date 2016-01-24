@@ -1,0 +1,141 @@
+$BUILT 2014-01-19 16:39:17
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH The Timing Of The Crew(2p)
+
+#SIZE_X 960
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 10
+#INITIAL 30
+#REQUIRED 10
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 16
+
+#CLIMBER 30
+#FLOATER 15
+#RUNNER 15
+#NOTHING 0
+#BASHER 50
+#NOTHING 0
+#CUBER 15
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/carnival/Hatch.H: 64 144
+:matt/carnival/Hatch.H: 64 176
+:matt/carnival/Hatch.H: 112 24
+:matt/carnival/Hatch.H: 112 0
+
+:matt/marble/Goal.G: 912 224
+
+:matt/water.W: 0 368
+:matt/water.W: 32 368
+:matt/water.W: 96 368
+:matt/water.W: 64 368
+:matt/water.W: 176 368
+:matt/water.W: 208 368
+:matt/water.W: 272 368
+:matt/water.W: 240 368
+:matt/water.W: 128 368
+:matt/water.W: 320 368
+:matt/water.W: 384 368
+:matt/water.W: 352 368
+:matt/water.W: 416 368
+:matt/water.W: 448 368
+:matt/water.W: 512 368
+:matt/water.W: 480 368
+:matt/water.W: 544 368
+:matt/water.W: 576 368
+:matt/water.W: 640 368
+:matt/water.W: 608 368
+:matt/water.W: 704 368
+:matt/water.W: 672 368
+:matt/water.W: 736 368
+:matt/water.W: 768 368
+:matt/water.W: 832 368
+:matt/water.W: 800 368
+:matt/water.W: 864 368
+:matt/water.W: 928 368
+:matt/water.W: 896 368
+:matt/water.W: 304 368
+:matt/water.W: 160 368
+
+:proxima/tile/cyan2: 608 256
+:proxima/tile/cyan2: 640 256
+:proxima/tile/cyan2: 704 256
+:proxima/tile/cyan2: 160 256
+:proxima/tile/cyan2: 384 256
+:proxima/tile/cyan2: 320 256
+:proxima/tile/cyan2: 192 256
+:proxima/tile/cyan2: 256 256
+:proxima/tile/cyan2: 768 256
+:proxima/tile/cyan2: 448 256
+:proxima/tile/cyan2: 512 256
+:proxima/tile/64.S: 320 272
+:proxima/tile/64.S: 384 272
+:proxima/tile/64.S: 448 272
+:proxima/tile/64.S: 512 272
+:proxima/tile/64.S: 576 272
+:proxima/tile/64.S: 640 272
+:proxima/tile/64.S: 704 272
+:proxima/tile/64.S: 768 272
+:proxima/tile/64.S: 832 272
+:proxima/tile/64.S: 896 272
+:proxima/tile/32.S: 576 240
+:proxima/tile/32.S: 832 240
+:matt/steel/16x16.S: 560 224
+:matt/steel/16x16.S: 832 224
+:matt/steel/16x16.S: 848 224
+:matt/steel/16x16.S: 576 224
+:matt/steel/16x16.S: 592 224
+:proxima/tile/64.S: 64 272
+:proxima/tile/64.S: 128 272
+:proxima/tile/64.S: 192 272
+:proxima/tile/64.S: 256 272
+:proxima/tile/64.S: 0 272
+:proxima/tile/64.S: 0 208
+:proxima/tile/64.S: 0 144
+:proxima/tile/64.S: 0 16
+:proxima/tile/64.S: 128 80
+:proxima/tile/64.S: 192 80
+:proxima/tile/64.S: 256 80
+:proxima/tile/64.S: 16 80
+:matt/steel/16x16.S: 608 224
+:proxima/tile/64.S: 320 112
+:proxima/tile/64.S: 384 112
+:proxima/tile/64.S: 448 144
+:proxima/tile/64.S: 512 144
+:proxima/tile/64.S: 672 160
+:proxima/tile/64.S: 736 160
+:proxima/tile/64.S: 608 144
+:proxima/tile/64.S: 592 80
+:proxima/tile/64.S: 864 144
+:proxima/tile/64.S: 928 112
+:matt/steel/16x16.S: 352 256
+:proxima/tile/blue2: 672 -32
+:proxima/tile/blue2: 736 -32
+:proxima/tile/blue2: 544 -32
+:proxima/tile/blue2: 608 -32
+:proxima/tile/blue2: 224 -32
+:proxima/tile/blue2: 288 -32
+:proxima/tile/blue2: 96 -32
+:proxima/tile/blue2: 160 -32
+:proxima/tile/blue2: 480 -32
+:proxima/tile/blue2: 800 -32
+:proxima/tile/blue2: 352 -32
+:proxima/tile/blue2: 416 -32
+:proxima/tile/blue2: 864 -32
+:proxima/tile/blue2: 928 -32
+:matt/steel/16x16.S: 816 224
+:proxima/tile/32.S: 560 96
+:proxima/tile/32.S: 528 96
+:proxima/tile/32.S: 496 96

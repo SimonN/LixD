@@ -1,0 +1,211 @@
+$BUILT 2012-05-22 11:43:44
+$AUTHOR I.S./geoo
+$GERMAN 
+$ENGLISH Alternative Methods Required
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 48
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 1
+#JUMPER 1
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER2 1
+#BLOCKER 1
+#CUBER 1
+#BUILDER 1
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+
+:matt/marble/Hatch.H: 160 16
+
+:matt/marble/Goal.G: 512 288
+
+:matt/marble/thinplatform64p: 64 80
+:geoo/steel/64x64.S: 0 80
+:matt/marble/thinplatform64p: 128 80
+:matt/marble/thinplatform64p: 192 80
+:matt/marble/thinplatform64p: 256 80
+:matt/marble/thinplatform64p: 64 92
+:matt/marble/thinplatform64p: 128 92
+:matt/marble/thinplatform64p: 192 92
+:matt/marble/thinplatform64p: 256 92
+:matt/marble/thinplatform64p: 64 86
+:matt/marble/thinplatform64p: 128 86
+:matt/marble/thinplatform64p: 192 86
+:matt/marble/thinplatform64p: 256 86
+:matt/marble/thinplatform64p: 64 98
+:matt/marble/thinplatform64p: 128 98
+:matt/marble/thinplatform64p: 192 98
+:matt/marble/thinplatform64p: 256 98
+:matt/marble/thinplatform64p: 64 104
+:matt/marble/thinplatform64p: 128 104
+:matt/marble/thinplatform64p: 192 104
+:matt/marble/thinplatform64p: 256 104
+:matt/marble/thinplatform64p: 64 110
+:matt/marble/thinplatform64p: 128 110
+:matt/marble/thinplatform64p: 192 110
+:matt/marble/thinplatform64p: 256 110
+:matt/marble/thinplatform64p: 64 116
+:matt/marble/thinplatform64p: 128 116
+:matt/marble/thinplatform64p: 192 116
+:matt/marble/thinplatform64p: 256 116
+:matt/marble/thinplatform64p: 64 122
+:matt/marble/thinplatform64p: 128 122
+:matt/marble/thinplatform64p: 192 122
+:matt/marble/thinplatform64p: 256 122
+:matt/marble/thinplatform64p: 64 128
+:matt/marble/thinplatform64p: 128 128
+:matt/marble/thinplatform64p: 192 128
+:matt/marble/thinplatform64p: 256 128
+:matt/marble/thinplatform64p: 64 134
+:matt/marble/thinplatform64p: 128 134
+:matt/marble/thinplatform64p: 192 134
+:matt/marble/thinplatform64p: 256 134
+:matt/marble/thinplatform64p: 64 140
+:matt/marble/thinplatform64p: 128 140
+:matt/marble/thinplatform64p: 192 140
+:matt/marble/thinplatform64p: 256 140
+:matt/marble/thinplatform64p: 64 146
+:matt/marble/thinplatform64p: 128 146
+:matt/marble/thinplatform64p: 192 146
+:matt/marble/thinplatform64p: 256 146
+:matt/marble/thinplatform64p: 64 152
+:matt/marble/thinplatform64p: 128 152
+:matt/marble/thinplatform64p: 192 152
+:matt/marble/thinplatform64p: 256 152
+:matt/marble/thinplatform64p: 64 158
+:matt/marble/thinplatform64p: 128 158
+:matt/marble/thinplatform64p: 192 158
+:matt/marble/thinplatform64p: 256 158
+:matt/marble/thinplatform64p: 0 144
+:matt/marble/thinplatform64p: 320 144
+:geoo/steel/64x64.S: 320 80
+:matt/marble/20a: 0 16
+:matt/marble/20a: 0 0
+:matt/marble/20a: 368 16
+:matt/marble/20a: 368 0
+:matt/marble/05a: 32 144
+:matt/marble/05a: 320 144
+:matt/marble/05a: 224 176
+:matt/marble/05a: 128 176
+:matt/marble/05a: 96 208
+:matt/marble/05a: 256 208
+:matt/marble/thinplatform64p: 128 238
+:matt/marble/thinplatform64p: 192 238
+:matt/marble/thinplatform64p: 128 238
+:matt/marble/thinplatform64p: 192 238
+:matt/marble/thinplatform64p: 128 230
+:matt/marble/thinplatform64p: 192 230
+:matt/marble/thinplatform64p: 128 230
+:matt/marble/thinplatform64p: 192 230
+:matt/marble/thinplatform64p: 128 234
+:matt/marble/thinplatform64p: 192 234
+:matt/marble/thinplatform64p: 128 234
+:matt/marble/thinplatform64p: 192 234
+:matt/marble/thinplatform64p: 128 226
+:matt/marble/thinplatform64p: 192 226
+:matt/marble/thinplatform64p: 128 226
+:matt/marble/thinplatform64p: 192 226
+:matt/marble/thinplatform64p: 128 222
+:matt/marble/thinplatform64p: 192 222
+:matt/marble/thinplatform64p: 128 222
+:matt/marble/thinplatform64p: 192 222
+:matt/marble/thinplatform64p: 128 218
+:matt/marble/thinplatform64p: 192 218
+:matt/marble/thinplatform64p: 128 218
+:matt/marble/thinplatform64p: 192 218
+:matt/marble/thinplatform64p: 128 214
+:matt/marble/thinplatform64p: 192 214
+:matt/marble/thinplatform64p: 128 214
+:matt/marble/thinplatform64p: 192 214
+:matt/marble/thinplatform64p: 128 210
+:matt/marble/thinplatform64p: 192 210
+:matt/marble/thinplatform64p: 128 210
+:matt/marble/thinplatform64p: 192 210
+:matt/marble/14a: 96 176
+:matt/marble/16a: 256 176
+:matt/marble/17a: 96 240
+:matt/marble/15a: 256 240
+:matt/marble/05a: 128 240
+:matt/marble/05a: 224 240
+:matt/marble/05a: 0 176
+:matt/marble/05a: 0 208
+:matt/marble/05a: 0 240
+:matt/marble/05a: 32 272
+:matt/marble/05a: 352 176
+:matt/marble/05a: 352 208
+:matt/marble/05a: 352 240
+:matt/marble/05a: 320 272
+:matt/marble/14a: 320 240
+:matt/marble/16a: 32 240
+:matt/marble/17a: 320 176
+:matt/marble/15a: 32 176
+:matt/marble/thinplatform64p: 64 288
+:matt/marble/thinplatform64p: 128 288
+:matt/marble/thinplatform64p: 192 288
+:matt/marble/thinplatform64p: 256 288
+:matt/marble/thinplatform64p: 64 294
+:matt/marble/thinplatform64p: 128 294
+:matt/marble/thinplatform64p: 192 294
+:matt/marble/thinplatform64p: 256 294
+:matt/marble/thinplatform64p: 64 300
+:matt/marble/thinplatform64p: 128 300
+:matt/marble/thinplatform64p: 192 300
+:matt/marble/thinplatform64p: 256 300
+:matt/marble/06: 608 80
+:matt/marble/06: 608 144
+:matt/marble/06: 608 208
+:matt/marble/06: 608 272
+:matt/marble/06: 608 336
+:matt/marble/08: 544 368
+:matt/marble/08: 480 368
+:matt/marble/08: 416 368
+:matt/marble/08: 352 368
+:matt/marble/08: 288 368
+:matt/marble/08: 224 368
+:matt/marble/08: 160 368
+:matt/marble/08: 96 368
+:matt/marble/08: 32 368
+:matt/marble/08: -32 368
+:matt/marble/06: 448 304
+:matt/marble/08: 512 336
+:matt/marble/05: 384 336
+:matt/marble/05: 320 336
+:matt/marble/05: 256 336
+:matt/marble/05: 192 336
+:matt/marble/05: 128 336
+:matt/marble/05: 64 336
+:matt/marble/05: 0 336
+:matt/marble/05: 512 144
+:matt/marble/thinplatform64p: 64 164
+:matt/marble/thinplatform64p: 128 164
+:matt/marble/thinplatform64p: 192 164
+:matt/marble/thinplatform64p: 256 164
+:matt/marble/thinplatform64p: 64 170
+:matt/marble/thinplatform64p: 128 170
+:matt/marble/thinplatform64p: 192 170
+:matt/marble/thinplatform64p: 256 170
+:matt/marble/thinplatform64p: 64 282
+:matt/marble/thinplatform64p: 128 282
+:matt/marble/thinplatform64p: 192 282
+:matt/marble/thinplatform64p: 256 282
+:matt/marble/thinplatform64p: 64 276
+:matt/marble/thinplatform64p: 128 276
+:matt/marble/thinplatform64p: 192 276
+:matt/marble/thinplatform64p: 256 276

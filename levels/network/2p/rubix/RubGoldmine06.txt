@@ -1,0 +1,118 @@
+$BUILT 2014-04-17 10:35:54
+$AUTHOR RubiX
+$GERMAN 
+$ENGLISH Goldfinger (2p)
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 30
+#INITIAL 70
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 40
+#JUMPER 40
+#FLOATER 15
+#EXPLODER 5
+#BLOCKER 2
+#BUILDER 45
+#PLATFORMER 35
+#BASHER 50
+#MINER 30
+#DIGGER 15
+#CUBER 10
+#NOTHING 0
+
+:matt/goldmine/GoalTop.D: 576 240
+:matt/goldmine/GoalTop.D: 0 240
+
+:matt/goldmine/Hatch.H: -16 -16
+:matt/goldmine/Hatch.H: 592 -16 r
+
+:matt/goldmine/Goal.G: 576 288
+:matt/goldmine/Goal.G: 0 288
+
+:matt/goldmine/crate32: 400 16
+:matt/goldmine/crate32: 208 16
+:matt/goldmine/plank: 416 160 rr
+:matt/goldmine/plank: 162 160 rr
+:matt/goldmine/plank: 192 112 r
+:matt/goldmine/plank: 438 112 r
+:matt/goldmine/08: 284 334 frr
+:matt/goldmine/08: 254 332
+:matt/goldmine/04: 80 224
+:matt/goldmine/04: 440 224 frr
+:matt/goldmine/03: 602 326 rr
+:matt/goldmine/03: -86 336
+:matt/goldmine/crate64: 48 48
+:matt/goldmine/crate64: 112 64
+:matt/goldmine/crate64: -16 32
+:matt/goldmine/crate64: 48 144
+:matt/goldmine/crate64: 112 160
+:matt/goldmine/crate64: -16 128
+:matt/goldmine/crate64: 256 64
+:matt/goldmine/crate64: 320 64
+:matt/goldmine/crate64: 192 48
+:matt/goldmine/crate64: 256 160
+:matt/goldmine/crate64: 320 160
+:matt/goldmine/crate64: 192 144
+:matt/goldmine/crate64: 384 48
+:matt/goldmine/crate64: 384 144
+:matt/goldmine/crate64: 464 64
+:matt/goldmine/crate64: 464 160
+:matt/goldmine/crate64: 528 48
+:matt/goldmine/crate64: 528 144
+:matt/goldmine/crate64: 592 32
+:matt/goldmine/crate64: 592 128
+:matt/goldmine/crate64: 256 256
+:matt/goldmine/crate64: 320 256
+:matt/goldmine/crate64: 192 240
+:matt/goldmine/crate64: 384 240
+:matt/steel/32x32.S: 592 32
+:matt/steel/32x32.S: 272 288
+:matt/steel/32x32.S: 16 32
+:matt/steel/32x32.S: 304 288
+:matt/steel/32x32.S: 304 192
+:matt/steel/32x32.S: 304 96
+:matt/goldmine/07: 480 336 frr
+:matt/goldmine/07: -48 336
+:matt/goldmine/07: 400 336
+:matt/goldmine/07: 32 336 frr
+:matt/steel/32x32.S: 272 192
+:matt/steel/32x32.S: 336 192
+:matt/steel/32x32.S: 336 288
+:matt/steel/32x32.S: 272 96
+:matt/steel/32x32.S: 336 96
+:matt/steel/32x32.S: 608 336
+:matt/steel/32x32.S: 576 336
+:matt/steel/32x32.S: 0 336
+:matt/steel/32x32.S: 32 336
+:matt/steel/32x32.S: -16 32
+:matt/steel/32x32.S: 624 32
+:matt/goldmine/07: -38 160
+:matt/goldmine/07: 464 160 frr
+:matt/goldmine/02: -34 252
+:matt/goldmine/02: 610 252 frr
+:matt/goldmine/02: 512 224
+:matt/goldmine/02: 64 224 frr
+:matt/goldmine/crate32: 288 368
+:matt/goldmine/crate32: 320 368
+:matt/steel/64x32.S: 288 368
+:matt/goldmine/04: 294 -70 r
+:matt/goldmine/04: 182 -70 fr
+:matt/goldmine/03: 256 -22
+:matt/goldmine/10: 156 -16
+:matt/goldmine/10: 452 -18
+:matt/steel/32x32.S: 544 352
+:matt/steel/32x32.S: 512 368
+:matt/steel/32x32.S: 64 352
+:matt/steel/32x32.S: 96 368

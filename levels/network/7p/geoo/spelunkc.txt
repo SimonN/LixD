@@ -1,0 +1,105 @@
+$BUILT 2012-04-30 01:39:33
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Clustered Spelunking
+
+#SIZE_X 448
+#SIZE_Y 448
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 80
+#REQUIRED 20
+#SPAWN_INTERVAL 1
+#SPAWN_INTERVAL_FAST 1
+
+#JUMPER 40
+#WALKER 60
+#NOTHING 0
+#EXPLODER2 20
+#NOTHING 0
+#PLATFORMER 60
+#BUILDER 60
+#CUBER 10
+#NOTHING 0
+#BASHER 50
+#MINER 30
+#NOTHING 0
+
+:matt/winter/Hatch.H: 288 352
+:matt/winter/Hatch.H: 160 416
+:matt/winter/Hatch.H: 32 32
+:matt/winter/Hatch.H: 352 96
+:matt/winter/Hatch.H: 224 160
+:matt/winter/Hatch.H: 96 224
+:matt/winter/Hatch.H: 416 288
+
+:matt/winter/Goal.G: 80 192
+:matt/winter/Goal.G: 400 256
+:matt/winter/Goal.G: 272 320
+:matt/winter/Goal.G: 144 384
+:matt/winter/Goal.G: 16 0
+:matt/winter/Goal.G: 336 64
+:matt/winter/Goal.G: 208 128
+
+:matt/winter/10: 380 100
+:matt/winter/10: 428 152
+:matt/winter/10: 318 160
+:matt/winter/10: 376 176
+:matt/winter/10: 424 228
+:matt/winter/10: 314 252
+:matt/winter/10: 176 192
+:matt/winter/10: 176 256
+:matt/winter/10: 78 244
+:matt/winter/10: 150 82
+:matt/winter/10: 198 118
+:matt/winter/10: 88 158
+:matt/winter/10: 446 14
+:matt/winter/10: 46 66
+:matt/winter/10: 384 90
+:matt/winter/10: 334 20
+:matt/winter/10: 382 72
+:matt/winter/10: 272 96
+:matt/winter/10: 188 388
+:matt/winter/10: 236 0
+:matt/winter/10: 126 32
+:matt/winter/10: 4 348
+:matt/winter/10: 52 400
+:matt/winter/10: 390 424
+:matt/winter/10: 404 304
+:matt/winter/10: 4 356
+:matt/winter/10: 304 368
+:matt/winter/10: 240 304
+:matt/winter/10: 84 330
+:matt/winter/09a: 30 26 d
+:matt/winter/09a: 94 218 d
+:matt/winter/09a: 158 410 d
+:matt/winter/09a: 222 154 d
+:matt/winter/09a: 350 90 d
+:matt/winter/09a: 414 284 d
+:matt/winter/09a: 286 348 d
+:geoo/construction/platform.S: 286 384
+:geoo/construction/platform.S: 318 384
+:geoo/construction/platform.S: 158 0
+:geoo/construction/platform.S: 190 0
+:geoo/construction/platform.S: 30 64
+:geoo/construction/platform.S: 62 64
+:geoo/construction/platform.S: 350 128
+:geoo/construction/platform.S: 382 128
+:geoo/construction/platform.S: 222 192
+:geoo/construction/platform.S: 254 192
+:geoo/construction/platform.S: 94 256
+:geoo/construction/platform.S: 126 256
+:geoo/construction/platform.S: 414 320
+:geoo/construction/platform.S: 446 320
+:matt/winter/06: 414 322 rrrd
+:matt/winter/06: 286 386 rrrd
+:matt/winter/06: 158 2 rrrd
+:matt/winter/06: 30 66 rrrd
+:matt/winter/06: 350 130 rrrd
+:matt/winter/06: 222 194 rrrd
+:matt/winter/06: 94 258 rrrd

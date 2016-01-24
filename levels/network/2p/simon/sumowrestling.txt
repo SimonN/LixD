@@ -1,0 +1,128 @@
+$BUILT 2014-07-09 03:00:38
+$AUTHOR Simon
+$GERMAN 
+$ENGLISH Sumo Wrestling
+
+#SIZE_X 272
+#SIZE_Y 176
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 10
+#INITIAL 70
+#REQUIRED 20
+#SPAWN_INTERVAL 3
+#SPAWN_INTERVAL_FAST 3
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#WALKER 10
+#JUMPER 10
+#BLOCKER 5
+#BATTER 15
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/oriental/Hatch.H: 66 56
+:matt/oriental/Hatch.H: 142 56 r
+
+:matt/oriental/Goal.G: 0 92
+:matt/oriental/Goal.G: 208 92
+:matt/oriental/Goal.G: 208 8
+:matt/oriental/Goal.G: 0 8
+
+:geoo/abstract/tbeam_left.T: 32 76
+:geoo/abstract/tbeam_right.T: -6 76
+:geoo/abstract/tbeam_left.T: 246 76
+:geoo/abstract/tbeam_right.T: 208 76
+
+:matt/oriental/11: 32 88 rr
+:matt/oriental/09: 0 88 f
+:matt/oriental/11: 32 100 rr
+:matt/oriental/03: 0 88
+:matt/oriental/09: 208 88 rr
+:matt/oriental/03: 226 88 frr
+:geoo/sandstone/8x16: 0 136
+:geoo/sandstone/8x16: 0 152
+:geoo/sandstone/8x16: 0 24
+:geoo/sandstone/8x16: 0 40
+:geoo/sandstone/8x16: 0 56
+:geoo/sandstone/8x16: 0 72
+:geoo/sandstone/8x16: 264 24
+:geoo/sandstone/8x16: 264 40
+:geoo/sandstone/8x16: 264 56
+:geoo/sandstone/8x16: 264 72
+:geoo/sandstone/8x16: 264 136
+:geoo/sandstone/8x16: 264 152
+:geoo/sandstone/16x8: 0 168
+:geoo/sandstone/16x8: 16 168
+:geoo/sandstone/16x8: 32 168
+:geoo/sandstone/16x8: 48 168
+:geoo/sandstone/16x8: 64 168
+:geoo/sandstone/16x8: 80 168
+:geoo/sandstone/16x8: 96 168
+:matt/oriental/bamboo_segment1: 136 160 r
+:matt/oriental/bamboo_segment1: 112 160 fr
+:geoo/sandstone/16x8: 112 168
+:geoo/sandstone/16x8: 128 168
+:geoo/sandstone/16x8: 144 168
+:geoo/sandstone/16x8: 160 168
+:geoo/sandstone/16x8: 176 168
+:geoo/sandstone/16x8: 192 168
+:geoo/sandstone/16x8: 208 168
+:geoo/sandstone/16x8: 224 168
+:geoo/sandstone/16x8: 240 168
+:geoo/sandstone/16x8: 256 168
+:geoo/sandstone/16x8: 0 0
+:geoo/sandstone/16x8: 16 0
+:geoo/sandstone/16x8: 32 0
+:geoo/sandstone/16x8: 48 0
+:geoo/sandstone/16x8: 64 0
+:geoo/sandstone/16x8: 80 0
+:geoo/sandstone/16x8: 96 0
+:geoo/sandstone/16x8: 112 0
+:geoo/sandstone/16x8: 128 0
+:geoo/sandstone/16x8: 144 0
+:geoo/sandstone/16x8: 160 0
+:geoo/sandstone/16x8: 176 0
+:geoo/sandstone/16x8: 192 0
+:geoo/sandstone/16x8: 208 0
+:geoo/sandstone/16x8: 224 0
+:geoo/sandstone/16x8: 240 0
+:geoo/sandstone/16x8: 256 0
+:geoo/sandstone/8x16: 0 8
+:geoo/sandstone/8x16: 264 8
+:simon/tapir/016a: 128 16
+:simon/tapir/016b: 128 16
+:simon/tapir/032: 120 32
+:simon/tapir/032a: 104 16
+:simon/tapir/032b: 136 16
+:geoo/sandstone/8x16: 0 88
+:geoo/sandstone/8x16: 264 88
+:matt/oriental/09: 144 120 rr
+:matt/oriental/09: 144 136 frr
+:matt/oriental/07: 132 120 frr
+:matt/oriental/09: 64 120 f
+:matt/oriental/09: 64 136
+:matt/oriental/07: 64 120
+:matt/oriental/03: 18 88
+:simon/tapir/016ha: 0 108 d
+:geoo/sandstone/8x16: 0 104
+:geoo/sandstone/8x16: 0 120
+:matt/oriental/11: 208 88 f
+:matt/oriental/11: 208 100 f
+:matt/oriental/03: 208 88 frr
+:simon/tapir/016hb: 240 108 d
+:geoo/sandstone/8x16: 264 104
+:geoo/sandstone/8x16: 264 120
+:simon/tapir/016hb: 32 108 d
+:simon/tapir/016ha: 208 108 d
+:geoo/construction/concrete/008: 124 52
+:geoo/construction/concrete/008: 140 52

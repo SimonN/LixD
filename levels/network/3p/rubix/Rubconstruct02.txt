@@ -1,0 +1,146 @@
+$BUILT                                             2011-09-04 23:02:45
+$AUTHOR                                                          RubiX
+$GERMAN                                                               
+$ENGLISH                                    The box office [high] (3p)
+
+#SIZE_X                                                            768
+#SIZE_Y                                                            686
+#TORUS_X                                                             1
+#TORUS_Y                                                             0
+#START_X                                                           320
+#START_Y                                                           266
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            50
+#INITIAL                                                            99
+#REQUIRED                                                           20
+#RATE                                                               40
+
+#FLOATER                                                            35
+#WALKER                                                             50
+#JUMPER                                                             60
+#EXPLODER2                                                           6
+#BASHER                                                             40
+#MINER                                                              40
+#PLATFORMER                                                         70
+#DIGGER                                                             20
+#CUBER                                                              55
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:geoo/construction/Hatch.H:                       272        32
+:geoo/construction/Hatch.H:                       528        32
+:geoo/construction/Hatch.H:                        16        32
+
+:geoo/construction/Goal2.G:                       576       560
+:geoo/construction/Goal2.G:                        64       560
+:geoo/construction/Goal2.G:                       320       560
+
+:geoo/sandstone/64x32:                             64       160
+:geoo/sandstone/64x32:                            256       160
+:geoo/sandstone/64x32:                              0       160
+:geoo/sandstone/64x64:                            128       496
+:geoo/sandstone/64x64:                             64       496
+:geoo/sandstone/64x64:                            256       496
+:geoo/sandstone/64x64:                            192       496
+:geoo/sandstone/64x64:                            384       496
+:geoo/sandstone/64x64:                            320       496
+:geoo/sandstone/64x64:                            512       496
+:geoo/sandstone/64x64:                            448       496
+:geoo/sandstone/64x64:                            640       496
+:geoo/sandstone/64x64:                            576       496
+:geoo/sandstone/64x64:                              0       496
+:geoo/sandstone/64x64:                            704       496
+:geoo/sandstone/64x32:                            448       144
+:geoo/sandstone/64x32:                            544       464
+:geoo/sandstone/64x32:                            608       464
+:geoo/sandstone/64x32:                             32       464
+:geoo/sandstone/64x32:                             96       464
+:geoo/sandstone/64x32:                            288       464
+:geoo/sandstone/64x32:                            352       464
+:geoo/sandstone/64x32:                            448       432
+:geoo/sandstone/64x32:                            512       432
+:geoo/sandstone/64x32:                              0       432
+:geoo/sandstone/64x32:                            128       432
+:geoo/sandstone/64x32:                            192       432
+:geoo/sandstone/64x32:                            256       432
+:geoo/sandstone/64x32:                            384       432
+:geoo/sandstone/64x32:                            640       432
+:geoo/sandstone/64x32:                            704       432
+:geoo/sandstone/64x32:                            480       400
+:geoo/sandstone/64x32:                            544       400
+:geoo/sandstone/64x32:                            608       400
+:geoo/sandstone/64x32:                             32       400
+:geoo/sandstone/64x32:                             96       400
+:geoo/sandstone/64x32:                            672       400
+:geoo/sandstone/64x32:                            736       400
+:geoo/sandstone/64x32:                            288       400
+:geoo/sandstone/64x32:                            352       400
+:geoo/sandstone/64x32:                            160       400
+:geoo/sandstone/64x32:                            224       400
+:geoo/sandstone/64x32:                            416       400
+:geoo/steel/dark_64x64.S:                          64       624
+:geoo/steel/dark_64x64.S:                         320       624
+:geoo/steel/dark_64x64.S:                         576       624
+:geoo/sandstone/64x32:                            192       144
+:geoo/sandstone/64x32:                            704       144
+:geoo/steel/64x32o.S:                             320       128
+:geoo/steel/64x32o.S:                             576       128
+:geoo/steel/64x32o.S:                              64       128
+:geoo/steel/64x32o.S:                             192        80
+:geoo/steel/64x32o.S:                             448        80
+:geoo/steel/64x32o.S:                             704        80
+:geoo/steel/64x32o.S:                             448       112
+:geoo/steel/64x32o.S:                             704       112
+:geoo/steel/64x32o.S:                             192       112
+:geoo/steel/dark_64x32o.S:                        512       640
+:geoo/steel/dark_64x32o.S:                        384       640
+:geoo/steel/dark_64x32o.S:                          0       640
+:geoo/steel/dark_64x32o.S:                        640       640
+:geoo/steel/dark_64x32o.S:                        256       640
+:geoo/steel/dark_64x32o.S:                        128       640
+:geoo/steel/dark_16x32o.S:                        192       656
+:geoo/steel/dark_16x32o.S:                        240       656
+:geoo/steel/dark_16x32o.S:                        448       656
+:geoo/steel/dark_16x32o.S:                        496       656
+:geoo/steel/dark_16x32o.S:                        704       656
+:geoo/steel/dark_16x32o.S:                        752       656
+:geoo/steel/64x32o.S:                               0       128
+:geoo/steel/64x32o.S:                             256       128
+:geoo/steel/64x32o.S:                             512       128
+:geoo/sandstone/64x32:                            320       160
+:geoo/sandstone/64x32:                            512       160
+:geoo/sandstone/64x32:                            576       160
+:geoo/steel/32x16o.S:                             560       112
+:geoo/steel/32x16o.S:                             528       112
+:geoo/steel/32x16o.S:                             528        96
+:geoo/steel/16x32o.S:                             512        96
+:geoo/steel/32x16o.S:                             304       112
+:geoo/steel/32x16o.S:                             272       112
+:geoo/steel/32x16o.S:                             272        96
+:geoo/steel/16x32o.S:                             256        96
+:geoo/steel/32x16o.S:                              48       112
+:geoo/steel/32x16o.S:                              16       112
+:geoo/steel/32x16o.S:                              16        96
+:geoo/steel/16x32o.S:                               0        96
+:geoo/sandstone/64x32:                             32       192
+:geoo/sandstone/64x32:                            288       192
+:geoo/sandstone/64x32:                            544       192
+:geoo/sandstone/32x16:                            208        64
+:geoo/sandstone/32x16:                            208        48
+:geoo/sandstone/32x16:                            208        32
+:geoo/sandstone/32x16:                            208        16
+:geoo/sandstone/32x16:                            720        64
+:geoo/sandstone/32x16:                            720        48
+:geoo/sandstone/32x16:                            720        32
+:geoo/sandstone/32x16:                            720        16
+:geoo/sandstone/32x16:                            464        64
+:geoo/sandstone/32x16:                            464        48
+:geoo/sandstone/32x16:                            464        32
+:geoo/sandstone/32x16:                            464        16
+:geoo/sandstone/32x16:                            208         0
+:geoo/sandstone/32x16:                            464         0
+:geoo/sandstone/32x16:                            720         0

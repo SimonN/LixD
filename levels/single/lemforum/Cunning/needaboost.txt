@@ -1,0 +1,142 @@
+$BUILT 2012-06-03 22:39:35
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH Need a Boost?
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 30
+#REQUIRED 30
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 5
+#JUMPER 5
+#CLIMBER 4
+#FLOATER 4
+#EXPLODER2 3
+#BLOCKER 3
+#BATTER 3
+#BUILDER 3
+#PLATFORMER 3
+#BASHER 0
+#MINER 0
+#DIGGER 5
+
+:matt/bricks/Hatch.H: 312 320
+
+:matt/marble/Goal.G: 512 144
+
+:matt/bricks/03a: 312 248
+:matt/bricks/04: 96 304
+:matt/bricks/02: 32 368
+:matt/bricks/02: 96 368
+:matt/bricks/03: 32 304
+:matt/bricks/03: 32 240
+:matt/bricks/03: 32 176
+:matt/bricks/12: 0 368
+:matt/bricks/12: 0 336
+:matt/bricks/12: 0 304
+:matt/bricks/12: 0 272
+:matt/bricks/12: 0 240
+:matt/bricks/12: 0 208
+:matt/bricks/12: 0 176
+:matt/bricks/12: 0 144
+:matt/bricks/12: 64 112
+:matt/bricks/12: 0 112
+:matt/bricks/08: 32 144
+:matt/bricks/10: 32 112
+:matt/bricks/12: 0 80
+:matt/bricks/12: 0 48
+:matt/bricks/12: 32 48
+:matt/bricks/12: 64 48
+:matt/bricks/12: 96 112
+:matt/bricks/12: 96 48
+:matt/bricks/12: 128 112
+:matt/bricks/12: 128 48
+:matt/bricks/12: 160 112
+:matt/bricks/12: 160 48
+:matt/bricks/12: 192 112
+:matt/bricks/12: 192 48
+:matt/bricks/12: 224 112
+:matt/bricks/12: 224 48
+:matt/bricks/12: 256 112
+:matt/bricks/12: 256 48
+:matt/bricks/12: 288 112
+:matt/bricks/12: 288 48
+:matt/bricks/12: 320 112
+:matt/bricks/12: 320 48
+:matt/bricks/12: 352 112
+:matt/bricks/12: 352 48
+:matt/bricks/12: 384 112
+:matt/bricks/12: 384 48
+:matt/bricks/12: 416 112
+:matt/bricks/12: 416 48
+:matt/bricks/12: 448 112
+:matt/bricks/12: 480 112
+:matt/bricks/12: 512 112
+:matt/bricks/12: 512 48
+:matt/bricks/12: 544 112
+:matt/bricks/12: 544 48
+:matt/bricks/12: 576 112
+:matt/bricks/12: 576 48
+:matt/bricks/12: 608 112
+:matt/bricks/12: 608 48
+:matt/bricks/12: 0 16
+:matt/bricks/12: 480 16
+:matt/bricks/12: 512 16
+:matt/bricks/12: 544 16
+:matt/bricks/12: 576 16
+:matt/bricks/12: 608 16
+:matt/bricks/12: 0 -16
+:matt/bricks/12: 32 -16
+:matt/bricks/12: 64 -16
+:matt/bricks/12: 96 -16
+:matt/bricks/12: 128 -16
+:matt/bricks/12: 160 -16
+:matt/bricks/12: 192 -16
+:matt/bricks/12: 224 -16
+:matt/bricks/12: 256 -16
+:matt/bricks/12: 288 -16
+:matt/bricks/12: 320 -16
+:matt/bricks/12: 352 -16
+:matt/bricks/12: 384 -16
+:matt/bricks/12: 416 -16
+:matt/bricks/12: 448 -16
+:matt/bricks/12: 480 -16
+:matt/bricks/12: 512 -16
+:matt/bricks/12: 544 -16
+:matt/bricks/12: 576 -16
+:matt/bricks/12: 608 -16
+:matt/bricks/02: 160 368
+:matt/bricks/02: 224 368
+:matt/bricks/03a: 160 176
+:matt/bricks/03a: 512 192
+:matt/bricks/12: 448 80
+:matt/bricks/12: 608 80
+:matt/bricks/09: 416 80
+:matt/bricks/12: 608 144
+:matt/bricks/12: 608 176
+:matt/bricks/12: 608 208
+:matt/bricks/12: 608 240
+:matt/bricks/12: 608 272
+:matt/bricks/12: 608 304
+:matt/bricks/12: 608 336
+:matt/bricks/12: 608 368
+:matt/bricks/02: 288 368
+:matt/bricks/02: 352 368
+:matt/bricks/02: 416 368
+:matt/bricks/02: 480 368
+:matt/bricks/02: 544 368
+:matt/bricks/10: 576 336
+:matt/bricks/08: 480 80
+:matt/bricks/09: 480 48
+:matt/bricks/08: 448 48
+:matt/bricks/09: 448 16

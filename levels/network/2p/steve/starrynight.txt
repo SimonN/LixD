@@ -1,0 +1,769 @@
+$BUILT 2012-08-11 13:26:25
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH Starry Night
+
+#SIZE_X 640
+#SIZE_Y 420
+#TORUS_X 1
+#TORUS_Y 1
+#START_X 250
+#START_Y 260
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 75
+#INITIAL 80
+#REQUIRED 20
+#SPAWN_INTERVAL 13
+#SPAWN_INTERVAL_FAST 4
+
+#JUMPER 50
+#FLOATER 20
+#EXPLODER2 10
+#BLOCKER 20
+#BUILDER 80
+#PLATFORMER 80
+#BASHER 50
+#DIGGER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/marble/Hatch.H: 536 376
+
+:matt/marble/Goal.G: 408 312
+:matt/marble/Goal.G: 24 312
+
+:matt/marble/thinplatform64p: 472 360
+:matt/marble/thinplatform64p: 536 360
+:matt/marble/thinplatform64p: 600 360
+:geoo/steel/dark_64x32o.S: 408 360
+:geoo/steel/dark_64x32o.S: 24 360
+:matt/marble/thinplatform16p: 479 353 rrr
+:matt/marble/thinplatform16p: 495 353 rrr
+:matt/marble/thinplatform16p: 511 353 rrr
+:matt/marble/thinplatform16p: 527 353 rrr
+:matt/marble/thinplatform16p: 543 353 rrr
+:matt/marble/thinplatform16p: 559 353 rrr
+:matt/marble/thinplatform16p: 575 353 rrr
+:matt/marble/thinplatform16p: 591 353 rrr
+:matt/marble/thinplatform16p: 607 353 rrr
+:matt/marble/thinplatform16p: 623 353 rrr
+:matt/marble/thinplatform16p: 639 353 rrr
+:matt/marble/thinplatform16p: 15 353 rrr
+:geoo/steel/dark_32x32o.S: 552 44
+:matt/marble/thinplatform16p: 580 96
+:matt/marble/thinplatform16p: 584 96
+:matt/marble/thinplatform16p: 589 91 rrr
+:matt/marble/thinplatform16p: 589 87 rrr
+:matt/marble/thinplatform16p: 616 96
+:matt/marble/thinplatform16p: 620 96
+:matt/marble/thinplatform16p: 625 91 rrr
+:matt/marble/thinplatform16p: 625 87 rrr
+:matt/marble/thinplatform16p: 12 96
+:matt/marble/thinplatform16p: 16 96
+:matt/marble/thinplatform16p: 21 91 rrr
+:matt/marble/thinplatform16p: 21 87 rrr
+:matt/marble/thinplatform16p: 48 96
+:matt/marble/thinplatform16p: 52 96
+:matt/marble/thinplatform16p: 57 91 rrr
+:matt/marble/thinplatform16p: 57 87 rrr
+:matt/marble/thinplatform16p: 80 96
+:matt/marble/thinplatform16p: 84 96
+:matt/marble/thinplatform16p: 89 91 rrr
+:matt/marble/thinplatform16p: 89 87 rrr
+:matt/marble/thinplatform16p: 116 96
+:matt/marble/thinplatform16p: 120 96
+:matt/marble/thinplatform16p: 125 91 rrr
+:matt/marble/thinplatform16p: 125 87 rrr
+:matt/marble/thinplatform16p: 152 96
+:matt/marble/thinplatform16p: 156 96
+:matt/marble/thinplatform16p: 161 91 rrr
+:matt/marble/thinplatform16p: 161 87 rrr
+:matt/marble/thinplatform16p: 188 96
+:matt/marble/thinplatform16p: 192 96
+:matt/marble/thinplatform16p: 197 91 rrr
+:matt/marble/thinplatform16p: 197 87 rrr
+:matt/marble/thinplatform16p: 220 96
+:matt/marble/thinplatform16p: 224 96
+:matt/marble/thinplatform16p: 229 91 rrr
+:matt/marble/thinplatform16p: 229 87 rrr
+:matt/marble/thinplatform16p: 256 96
+:matt/marble/thinplatform16p: 260 96
+:matt/marble/thinplatform16p: 265 91 rrr
+:matt/marble/thinplatform16p: 265 87 rrr
+:matt/marble/thinplatform16p: 292 96
+:matt/marble/thinplatform16p: 296 96
+:matt/marble/thinplatform16p: 301 91 rrr
+:matt/marble/thinplatform16p: 301 87 rrr
+:matt/marble/thinplatform16p: 328 96
+:matt/marble/thinplatform16p: 332 96
+:matt/marble/thinplatform16p: 337 91 rrr
+:matt/marble/thinplatform16p: 337 87 rrr
+:matt/marble/thinplatform16p: 360 96
+:matt/marble/thinplatform16p: 364 96
+:matt/marble/thinplatform16p: 369 91 rrr
+:matt/marble/thinplatform16p: 369 87 rrr
+:matt/marble/thinplatform16p: 396 96
+:matt/marble/thinplatform16p: 400 96
+:matt/marble/thinplatform16p: 405 91 rrr
+:matt/marble/thinplatform16p: 405 87 rrr
+:matt/marble/thinplatform16p: 432 96
+:matt/marble/thinplatform16p: 436 96
+:matt/marble/thinplatform16p: 441 91 rrr
+:matt/marble/thinplatform16p: 441 87 rrr
+:matt/marble/thinplatform16p: 468 96
+:matt/marble/thinplatform16p: 472 96
+:matt/marble/thinplatform16p: 477 91 rrr
+:matt/marble/thinplatform16p: 477 87 rrr
+:matt/marble/thinplatform16p: 500 96
+:matt/marble/thinplatform16p: 504 96
+:matt/marble/thinplatform16p: 509 91 rrr
+:matt/marble/thinplatform16p: 509 87 rrr
+:matt/marble/thinplatform16p: 536 96
+:matt/marble/thinplatform16p: 540 96
+:matt/marble/thinplatform16p: 545 91 rrr
+:matt/marble/thinplatform16p: 545 87 rrr
+:matt/marble/thinplatform16p: 580 168
+:matt/marble/thinplatform16p: 584 168
+:matt/marble/thinplatform16p: 589 163 rrr
+:matt/marble/thinplatform16p: 589 159 rrr
+:matt/marble/thinplatform16p: 616 168
+:matt/marble/thinplatform16p: 620 168
+:matt/marble/thinplatform16p: 625 163 rrr
+:matt/marble/thinplatform16p: 625 159 rrr
+:matt/marble/thinplatform16p: 12 168
+:matt/marble/thinplatform16p: 16 168
+:matt/marble/thinplatform16p: 21 163 rrr
+:matt/marble/thinplatform16p: 21 159 rrr
+:matt/marble/thinplatform16p: 48 168
+:matt/marble/thinplatform16p: 52 168
+:matt/marble/thinplatform16p: 57 163 rrr
+:matt/marble/thinplatform16p: 57 159 rrr
+:matt/marble/thinplatform16p: 80 168
+:matt/marble/thinplatform16p: 84 168
+:matt/marble/thinplatform16p: 89 163 rrr
+:matt/marble/thinplatform16p: 89 159 rrr
+:matt/marble/thinplatform16p: 116 168
+:matt/marble/thinplatform16p: 120 168
+:matt/marble/thinplatform16p: 125 163 rrr
+:matt/marble/thinplatform16p: 125 159 rrr
+:matt/marble/thinplatform16p: 152 168
+:matt/marble/thinplatform16p: 156 168
+:matt/marble/thinplatform16p: 161 163 rrr
+:matt/marble/thinplatform16p: 161 159 rrr
+:matt/marble/thinplatform16p: 188 168
+:matt/marble/thinplatform16p: 192 168
+:matt/marble/thinplatform16p: 197 163 rrr
+:matt/marble/thinplatform16p: 197 159 rrr
+:matt/marble/thinplatform16p: 220 168
+:matt/marble/thinplatform16p: 224 168
+:matt/marble/thinplatform16p: 229 163 rrr
+:matt/marble/thinplatform16p: 229 159 rrr
+:matt/marble/thinplatform16p: 256 168
+:matt/marble/thinplatform16p: 260 168
+:matt/marble/thinplatform16p: 265 163 rrr
+:matt/marble/thinplatform16p: 265 159 rrr
+:matt/marble/thinplatform16p: 292 168
+:matt/marble/thinplatform16p: 296 168
+:matt/marble/thinplatform16p: 301 163 rrr
+:matt/marble/thinplatform16p: 301 159 rrr
+:matt/marble/thinplatform16p: 328 168
+:matt/marble/thinplatform16p: 332 168
+:matt/marble/thinplatform16p: 337 163 rrr
+:matt/marble/thinplatform16p: 337 159 rrr
+:matt/marble/thinplatform16p: 360 168
+:matt/marble/thinplatform16p: 364 168
+:matt/marble/thinplatform16p: 369 163 rrr
+:matt/marble/thinplatform16p: 369 159 rrr
+:matt/marble/thinplatform16p: 396 168
+:matt/marble/thinplatform16p: 400 168
+:matt/marble/thinplatform16p: 405 163 rrr
+:matt/marble/thinplatform16p: 405 159 rrr
+:matt/marble/thinplatform16p: 432 168
+:matt/marble/thinplatform16p: 436 168
+:matt/marble/thinplatform16p: 441 163 rrr
+:matt/marble/thinplatform16p: 441 159 rrr
+:matt/marble/thinplatform16p: 468 168
+:matt/marble/thinplatform16p: 472 168
+:matt/marble/thinplatform16p: 477 163 rrr
+:matt/marble/thinplatform16p: 477 159 rrr
+:matt/marble/thinplatform16p: 500 168
+:matt/marble/thinplatform16p: 504 168
+:matt/marble/thinplatform16p: 509 163 rrr
+:matt/marble/thinplatform16p: 509 159 rrr
+:matt/marble/thinplatform16p: 536 168
+:matt/marble/thinplatform16p: 540 168
+:matt/marble/thinplatform16p: 545 163 rrr
+:matt/marble/thinplatform16p: 545 159 rrr
+:matt/marble/thinplatform16p: 596 132
+:matt/marble/thinplatform16p: 600 132
+:matt/marble/thinplatform16p: 605 127 rrr
+:matt/marble/thinplatform16p: 605 123 rrr
+:matt/marble/thinplatform16p: 632 132
+:matt/marble/thinplatform16p: 636 132
+:matt/marble/thinplatform16p: 1 127 rrr
+:matt/marble/thinplatform16p: 1 123 rrr
+:matt/marble/thinplatform16p: 28 132
+:matt/marble/thinplatform16p: 32 132
+:matt/marble/thinplatform16p: 37 127 rrr
+:matt/marble/thinplatform16p: 37 123 rrr
+:matt/marble/thinplatform16p: 64 132
+:matt/marble/thinplatform16p: 68 132
+:matt/marble/thinplatform16p: 73 127 rrr
+:matt/marble/thinplatform16p: 73 123 rrr
+:matt/marble/thinplatform16p: 96 132
+:matt/marble/thinplatform16p: 100 132
+:matt/marble/thinplatform16p: 105 127 rrr
+:matt/marble/thinplatform16p: 105 123 rrr
+:matt/marble/thinplatform16p: 132 132
+:matt/marble/thinplatform16p: 136 132
+:matt/marble/thinplatform16p: 141 127 rrr
+:matt/marble/thinplatform16p: 141 123 rrr
+:matt/marble/thinplatform16p: 168 132
+:matt/marble/thinplatform16p: 172 132
+:matt/marble/thinplatform16p: 177 127 rrr
+:matt/marble/thinplatform16p: 177 123 rrr
+:matt/marble/thinplatform16p: 204 132
+:matt/marble/thinplatform16p: 208 132
+:matt/marble/thinplatform16p: 213 127 rrr
+:matt/marble/thinplatform16p: 213 123 rrr
+:matt/marble/thinplatform16p: 236 132
+:matt/marble/thinplatform16p: 240 132
+:matt/marble/thinplatform16p: 245 127 rrr
+:matt/marble/thinplatform16p: 245 123 rrr
+:matt/marble/thinplatform16p: 272 132
+:matt/marble/thinplatform16p: 276 132
+:matt/marble/thinplatform16p: 281 127 rrr
+:matt/marble/thinplatform16p: 281 123 rrr
+:matt/marble/thinplatform16p: 308 132
+:matt/marble/thinplatform16p: 312 132
+:matt/marble/thinplatform16p: 317 127 rrr
+:matt/marble/thinplatform16p: 317 123 rrr
+:matt/marble/thinplatform16p: 344 132
+:matt/marble/thinplatform16p: 348 132
+:matt/marble/thinplatform16p: 353 127 rrr
+:matt/marble/thinplatform16p: 353 123 rrr
+:matt/marble/thinplatform16p: 376 132
+:matt/marble/thinplatform16p: 380 132
+:matt/marble/thinplatform16p: 385 127 rrr
+:matt/marble/thinplatform16p: 385 123 rrr
+:matt/marble/thinplatform16p: 412 132
+:matt/marble/thinplatform16p: 416 132
+:matt/marble/thinplatform16p: 421 127 rrr
+:matt/marble/thinplatform16p: 421 123 rrr
+:matt/marble/thinplatform16p: 448 132
+:matt/marble/thinplatform16p: 452 132
+:matt/marble/thinplatform16p: 457 127 rrr
+:matt/marble/thinplatform16p: 457 123 rrr
+:matt/marble/thinplatform16p: 484 132
+:matt/marble/thinplatform16p: 488 132
+:matt/marble/thinplatform16p: 493 127 rrr
+:matt/marble/thinplatform16p: 493 123 rrr
+:matt/marble/thinplatform16p: 520 132
+:matt/marble/thinplatform16p: 524 132
+:matt/marble/thinplatform16p: 529 127 rrr
+:matt/marble/thinplatform16p: 529 123 rrr
+:matt/marble/thinplatform16p: 560 132
+:matt/marble/thinplatform16p: 564 132
+:matt/marble/thinplatform16p: 569 127 rrr
+:matt/marble/thinplatform16p: 569 123 rrr
+:matt/marble/thinplatform16p: 596 204
+:matt/marble/thinplatform16p: 600 204
+:matt/marble/thinplatform16p: 605 199 rrr
+:matt/marble/thinplatform16p: 605 195 rrr
+:matt/marble/thinplatform16p: 632 204
+:matt/marble/thinplatform16p: 636 204
+:matt/marble/thinplatform16p: 1 199 rrr
+:matt/marble/thinplatform16p: 1 195 rrr
+:matt/marble/thinplatform16p: 28 204
+:matt/marble/thinplatform16p: 32 204
+:matt/marble/thinplatform16p: 37 199 rrr
+:matt/marble/thinplatform16p: 37 195 rrr
+:matt/marble/thinplatform16p: 64 204
+:matt/marble/thinplatform16p: 68 204
+:matt/marble/thinplatform16p: 73 199 rrr
+:matt/marble/thinplatform16p: 73 195 rrr
+:matt/marble/thinplatform16p: 96 204
+:matt/marble/thinplatform16p: 100 204
+:matt/marble/thinplatform16p: 105 199 rrr
+:matt/marble/thinplatform16p: 105 195 rrr
+:matt/marble/thinplatform16p: 132 204
+:matt/marble/thinplatform16p: 136 204
+:matt/marble/thinplatform16p: 141 199 rrr
+:matt/marble/thinplatform16p: 141 195 rrr
+:matt/marble/thinplatform16p: 168 204
+:matt/marble/thinplatform16p: 172 204
+:matt/marble/thinplatform16p: 177 199 rrr
+:matt/marble/thinplatform16p: 177 195 rrr
+:matt/marble/thinplatform16p: 204 204
+:matt/marble/thinplatform16p: 208 204
+:matt/marble/thinplatform16p: 213 199 rrr
+:matt/marble/thinplatform16p: 213 195 rrr
+:matt/marble/thinplatform16p: 272 204
+:matt/marble/thinplatform16p: 276 204
+:matt/marble/thinplatform16p: 281 199 rrr
+:matt/marble/thinplatform16p: 281 195 rrr
+:matt/marble/thinplatform16p: 308 204
+:matt/marble/thinplatform16p: 312 204
+:matt/marble/thinplatform16p: 317 199 rrr
+:matt/marble/thinplatform16p: 317 195 rrr
+:matt/marble/thinplatform16p: 344 204
+:matt/marble/thinplatform16p: 348 204
+:matt/marble/thinplatform16p: 353 199 rrr
+:matt/marble/thinplatform16p: 353 195 rrr
+:matt/marble/thinplatform16p: 376 204
+:matt/marble/thinplatform16p: 380 204
+:matt/marble/thinplatform16p: 385 199 rrr
+:matt/marble/thinplatform16p: 385 195 rrr
+:matt/marble/thinplatform16p: 412 204
+:matt/marble/thinplatform16p: 416 204
+:matt/marble/thinplatform16p: 421 199 rrr
+:matt/marble/thinplatform16p: 421 195 rrr
+:matt/marble/thinplatform16p: 448 204
+:matt/marble/thinplatform16p: 452 204
+:matt/marble/thinplatform16p: 457 199 rrr
+:matt/marble/thinplatform16p: 457 195 rrr
+:matt/marble/thinplatform16p: 484 204
+:matt/marble/thinplatform16p: 488 204
+:matt/marble/thinplatform16p: 493 199 rrr
+:matt/marble/thinplatform16p: 493 195 rrr
+:matt/marble/thinplatform16p: 520 204
+:matt/marble/thinplatform16p: 524 204
+:matt/marble/thinplatform16p: 529 199 rrr
+:matt/marble/thinplatform16p: 529 195 rrr
+:matt/marble/thinplatform16p: 560 204
+:matt/marble/thinplatform16p: 564 204
+:matt/marble/thinplatform16p: 569 199 rrr
+:matt/marble/thinplatform16p: 569 195 rrr
+:matt/marble/thinplatform16p: 236 204
+:matt/marble/thinplatform16p: 240 204
+:matt/marble/thinplatform16p: 245 199 rrr
+:matt/marble/thinplatform16p: 245 195 rrr
+:matt/marble/thinplatform16p: 580 240
+:matt/marble/thinplatform16p: 584 240
+:matt/marble/thinplatform16p: 589 235 rrr
+:matt/marble/thinplatform16p: 589 231 rrr
+:matt/marble/thinplatform16p: 616 240
+:matt/marble/thinplatform16p: 620 240
+:matt/marble/thinplatform16p: 625 235 rrr
+:matt/marble/thinplatform16p: 625 231 rrr
+:matt/marble/thinplatform16p: 12 240
+:matt/marble/thinplatform16p: 16 240
+:matt/marble/thinplatform16p: 21 235 rrr
+:matt/marble/thinplatform16p: 21 231 rrr
+:matt/marble/thinplatform16p: 48 240
+:matt/marble/thinplatform16p: 52 240
+:matt/marble/thinplatform16p: 57 235 rrr
+:matt/marble/thinplatform16p: 57 231 rrr
+:matt/marble/thinplatform16p: 80 240
+:matt/marble/thinplatform16p: 84 240
+:matt/marble/thinplatform16p: 89 235 rrr
+:matt/marble/thinplatform16p: 89 231 rrr
+:matt/marble/thinplatform16p: 116 240
+:matt/marble/thinplatform16p: 120 240
+:matt/marble/thinplatform16p: 125 235 rrr
+:matt/marble/thinplatform16p: 125 231 rrr
+:matt/marble/thinplatform16p: 152 240
+:matt/marble/thinplatform16p: 156 240
+:matt/marble/thinplatform16p: 161 235 rrr
+:matt/marble/thinplatform16p: 161 231 rrr
+:matt/marble/thinplatform16p: 188 240
+:matt/marble/thinplatform16p: 192 240
+:matt/marble/thinplatform16p: 197 235 rrr
+:matt/marble/thinplatform16p: 197 231 rrr
+:matt/marble/thinplatform16p: 220 240
+:matt/marble/thinplatform16p: 224 240
+:matt/marble/thinplatform16p: 229 235 rrr
+:matt/marble/thinplatform16p: 229 231 rrr
+:matt/marble/thinplatform16p: 256 240
+:matt/marble/thinplatform16p: 260 240
+:matt/marble/thinplatform16p: 265 235 rrr
+:matt/marble/thinplatform16p: 265 231 rrr
+:matt/marble/thinplatform16p: 292 240
+:matt/marble/thinplatform16p: 296 240
+:matt/marble/thinplatform16p: 301 235 rrr
+:matt/marble/thinplatform16p: 301 231 rrr
+:matt/marble/thinplatform16p: 328 240
+:matt/marble/thinplatform16p: 332 240
+:matt/marble/thinplatform16p: 337 235 rrr
+:matt/marble/thinplatform16p: 337 231 rrr
+:matt/marble/thinplatform16p: 360 240
+:matt/marble/thinplatform16p: 364 240
+:matt/marble/thinplatform16p: 369 235 rrr
+:matt/marble/thinplatform16p: 369 231 rrr
+:matt/marble/thinplatform16p: 396 240
+:matt/marble/thinplatform16p: 400 240
+:matt/marble/thinplatform16p: 405 235 rrr
+:matt/marble/thinplatform16p: 405 231 rrr
+:matt/marble/thinplatform16p: 468 240
+:matt/marble/thinplatform16p: 472 240
+:matt/marble/thinplatform16p: 477 235 rrr
+:matt/marble/thinplatform16p: 477 231 rrr
+:matt/marble/thinplatform16p: 500 240
+:matt/marble/thinplatform16p: 504 240
+:matt/marble/thinplatform16p: 509 235 rrr
+:matt/marble/thinplatform16p: 509 231 rrr
+:matt/marble/thinplatform16p: 536 240
+:matt/marble/thinplatform16p: 540 240
+:matt/marble/thinplatform16p: 545 235 rrr
+:matt/marble/thinplatform16p: 545 231 rrr
+:matt/marble/thinplatform16p: 432 240
+:matt/marble/thinplatform16p: 436 240
+:matt/marble/thinplatform16p: 441 235 rrr
+:matt/marble/thinplatform16p: 441 231 rrr
+:matt/marble/thinplatform16p: 596 280
+:matt/marble/thinplatform16p: 600 280
+:matt/marble/thinplatform16p: 605 275 rrr
+:matt/marble/thinplatform16p: 605 271 rrr
+:matt/marble/thinplatform16p: 632 280
+:matt/marble/thinplatform16p: 636 280
+:matt/marble/thinplatform16p: 1 275 rrr
+:matt/marble/thinplatform16p: 1 271 rrr
+:matt/marble/thinplatform16p: 28 280
+:matt/marble/thinplatform16p: 32 280
+:matt/marble/thinplatform16p: 37 275 rrr
+:matt/marble/thinplatform16p: 37 271 rrr
+:matt/marble/thinplatform16p: 64 280
+:matt/marble/thinplatform16p: 68 280
+:matt/marble/thinplatform16p: 73 275 rrr
+:matt/marble/thinplatform16p: 73 271 rrr
+:matt/marble/thinplatform16p: 96 280
+:matt/marble/thinplatform16p: 100 280
+:matt/marble/thinplatform16p: 105 275 rrr
+:matt/marble/thinplatform16p: 105 271 rrr
+:matt/marble/thinplatform16p: 132 280
+:matt/marble/thinplatform16p: 136 280
+:matt/marble/thinplatform16p: 141 275 rrr
+:matt/marble/thinplatform16p: 141 271 rrr
+:matt/marble/thinplatform16p: 168 280
+:matt/marble/thinplatform16p: 172 280
+:matt/marble/thinplatform16p: 177 275 rrr
+:matt/marble/thinplatform16p: 177 271 rrr
+:matt/marble/thinplatform16p: 204 280
+:matt/marble/thinplatform16p: 208 280
+:matt/marble/thinplatform16p: 213 275 rrr
+:matt/marble/thinplatform16p: 213 271 rrr
+:matt/marble/thinplatform16p: 272 280
+:matt/marble/thinplatform16p: 276 280
+:matt/marble/thinplatform16p: 281 275 rrr
+:matt/marble/thinplatform16p: 281 271 rrr
+:matt/marble/thinplatform16p: 308 280
+:matt/marble/thinplatform16p: 312 280
+:matt/marble/thinplatform16p: 317 275 rrr
+:matt/marble/thinplatform16p: 317 271 rrr
+:matt/marble/thinplatform16p: 344 280
+:matt/marble/thinplatform16p: 348 280
+:matt/marble/thinplatform16p: 353 275 rrr
+:matt/marble/thinplatform16p: 353 271 rrr
+:matt/marble/thinplatform16p: 376 280
+:matt/marble/thinplatform16p: 380 280
+:matt/marble/thinplatform16p: 385 275 rrr
+:matt/marble/thinplatform16p: 385 271 rrr
+:matt/marble/thinplatform16p: 412 280
+:matt/marble/thinplatform16p: 416 280
+:matt/marble/thinplatform16p: 421 275 rrr
+:matt/marble/thinplatform16p: 421 271 rrr
+:matt/marble/thinplatform16p: 448 280
+:matt/marble/thinplatform16p: 452 280
+:matt/marble/thinplatform16p: 457 275 rrr
+:matt/marble/thinplatform16p: 457 271 rrr
+:matt/marble/thinplatform16p: 484 280
+:matt/marble/thinplatform16p: 488 280
+:matt/marble/thinplatform16p: 493 275 rrr
+:matt/marble/thinplatform16p: 493 271 rrr
+:matt/marble/thinplatform16p: 520 280
+:matt/marble/thinplatform16p: 524 280
+:matt/marble/thinplatform16p: 529 275 rrr
+:matt/marble/thinplatform16p: 529 271 rrr
+:matt/marble/thinplatform16p: 560 280
+:matt/marble/thinplatform16p: 564 280
+:matt/marble/thinplatform16p: 569 275 rrr
+:matt/marble/thinplatform16p: 569 271 rrr
+:matt/marble/thinplatform16p: 236 280
+:matt/marble/thinplatform16p: 240 280
+:matt/marble/thinplatform16p: 245 275 rrr
+:matt/marble/thinplatform16p: 245 271 rrr
+:matt/marble/thinplatform16p: 580 296
+:matt/marble/thinplatform16p: 584 296
+:matt/marble/thinplatform16p: 589 291 rrr
+:matt/marble/thinplatform16p: 589 287 rrr
+:matt/marble/thinplatform16p: 616 296
+:matt/marble/thinplatform16p: 620 296
+:matt/marble/thinplatform16p: 625 291 rrr
+:matt/marble/thinplatform16p: 625 287 rrr
+:matt/marble/thinplatform16p: 12 296
+:matt/marble/thinplatform16p: 16 296
+:matt/marble/thinplatform16p: 21 291 rrr
+:matt/marble/thinplatform16p: 21 287 rrr
+:matt/marble/thinplatform16p: 48 296
+:matt/marble/thinplatform16p: 52 296
+:matt/marble/thinplatform16p: 57 291 rrr
+:matt/marble/thinplatform16p: 57 287 rrr
+:matt/marble/thinplatform16p: 80 296
+:matt/marble/thinplatform16p: 84 296
+:matt/marble/thinplatform16p: 89 291 rrr
+:matt/marble/thinplatform16p: 89 287 rrr
+:matt/marble/thinplatform16p: 116 296
+:matt/marble/thinplatform16p: 120 296
+:matt/marble/thinplatform16p: 125 291 rrr
+:matt/marble/thinplatform16p: 125 287 rrr
+:matt/marble/thinplatform16p: 152 296
+:matt/marble/thinplatform16p: 156 296
+:matt/marble/thinplatform16p: 161 291 rrr
+:matt/marble/thinplatform16p: 161 287 rrr
+:matt/marble/thinplatform16p: 188 296
+:matt/marble/thinplatform16p: 192 296
+:matt/marble/thinplatform16p: 197 291 rrr
+:matt/marble/thinplatform16p: 197 287 rrr
+:matt/marble/thinplatform16p: 220 296
+:matt/marble/thinplatform16p: 224 296
+:matt/marble/thinplatform16p: 229 291 rrr
+:matt/marble/thinplatform16p: 229 287 rrr
+:matt/marble/thinplatform16p: 256 296
+:matt/marble/thinplatform16p: 260 296
+:matt/marble/thinplatform16p: 265 291 rrr
+:matt/marble/thinplatform16p: 265 287 rrr
+:matt/marble/thinplatform16p: 292 296
+:matt/marble/thinplatform16p: 296 296
+:matt/marble/thinplatform16p: 301 291 rrr
+:matt/marble/thinplatform16p: 301 287 rrr
+:matt/marble/thinplatform16p: 328 296
+:matt/marble/thinplatform16p: 332 296
+:matt/marble/thinplatform16p: 337 291 rrr
+:matt/marble/thinplatform16p: 337 287 rrr
+:matt/marble/thinplatform16p: 360 296
+:matt/marble/thinplatform16p: 364 296
+:matt/marble/thinplatform16p: 369 291 rrr
+:matt/marble/thinplatform16p: 369 287 rrr
+:matt/marble/thinplatform16p: 468 296
+:matt/marble/thinplatform16p: 472 296
+:matt/marble/thinplatform16p: 477 291 rrr
+:matt/marble/thinplatform16p: 477 287 rrr
+:matt/marble/thinplatform16p: 500 296
+:matt/marble/thinplatform16p: 504 296
+:matt/marble/thinplatform16p: 509 291 rrr
+:matt/marble/thinplatform16p: 509 287 rrr
+:matt/marble/thinplatform16p: 536 296
+:matt/marble/thinplatform16p: 540 296
+:matt/marble/thinplatform16p: 545 291 rrr
+:matt/marble/thinplatform16p: 545 287 rrr
+:matt/marble/thinplatform16p: 432 296
+:matt/marble/thinplatform16p: 436 296
+:matt/marble/thinplatform16p: 441 291 rrr
+:matt/marble/thinplatform16p: 441 287 rrr
+:matt/marble/thinplatform16p: 396 296
+:matt/marble/thinplatform16p: 400 296
+:matt/marble/thinplatform16p: 405 291 rrr
+:matt/marble/thinplatform16p: 405 287 rrr
+:matt/marble/thinplatform16p: 596 60
+:matt/marble/thinplatform16p: 600 60
+:matt/marble/thinplatform16p: 605 55 rrr
+:matt/marble/thinplatform16p: 605 51 rrr
+:matt/marble/thinplatform16p: 632 60
+:matt/marble/thinplatform16p: 636 60
+:matt/marble/thinplatform16p: 1 55 rrr
+:matt/marble/thinplatform16p: 1 51 rrr
+:matt/marble/thinplatform16p: 28 60
+:matt/marble/thinplatform16p: 32 60
+:matt/marble/thinplatform16p: 37 55 rrr
+:matt/marble/thinplatform16p: 37 51 rrr
+:matt/marble/thinplatform16p: 64 60
+:matt/marble/thinplatform16p: 68 60
+:matt/marble/thinplatform16p: 73 55 rrr
+:matt/marble/thinplatform16p: 73 51 rrr
+:matt/marble/thinplatform16p: 96 60
+:matt/marble/thinplatform16p: 100 60
+:matt/marble/thinplatform16p: 105 55 rrr
+:matt/marble/thinplatform16p: 105 51 rrr
+:matt/marble/thinplatform16p: 132 60
+:matt/marble/thinplatform16p: 136 60
+:matt/marble/thinplatform16p: 141 55 rrr
+:matt/marble/thinplatform16p: 141 51 rrr
+:matt/marble/thinplatform16p: 168 60
+:matt/marble/thinplatform16p: 172 60
+:matt/marble/thinplatform16p: 177 55 rrr
+:matt/marble/thinplatform16p: 177 51 rrr
+:matt/marble/thinplatform16p: 204 60
+:matt/marble/thinplatform16p: 208 60
+:matt/marble/thinplatform16p: 213 55 rrr
+:matt/marble/thinplatform16p: 213 51 rrr
+:matt/marble/thinplatform16p: 236 60
+:matt/marble/thinplatform16p: 240 60
+:matt/marble/thinplatform16p: 245 55 rrr
+:matt/marble/thinplatform16p: 245 51 rrr
+:matt/marble/thinplatform16p: 272 60
+:matt/marble/thinplatform16p: 276 60
+:matt/marble/thinplatform16p: 281 55 rrr
+:matt/marble/thinplatform16p: 281 51 rrr
+:matt/marble/thinplatform16p: 308 60
+:matt/marble/thinplatform16p: 312 60
+:matt/marble/thinplatform16p: 317 55 rrr
+:matt/marble/thinplatform16p: 317 51 rrr
+:matt/marble/thinplatform16p: 344 60
+:matt/marble/thinplatform16p: 348 60
+:matt/marble/thinplatform16p: 353 55 rrr
+:matt/marble/thinplatform16p: 353 51 rrr
+:matt/marble/thinplatform16p: 376 60
+:matt/marble/thinplatform16p: 380 60
+:matt/marble/thinplatform16p: 385 55 rrr
+:matt/marble/thinplatform16p: 385 51 rrr
+:matt/marble/thinplatform16p: 412 60
+:matt/marble/thinplatform16p: 416 60
+:matt/marble/thinplatform16p: 421 55 rrr
+:matt/marble/thinplatform16p: 421 51 rrr
+:matt/marble/thinplatform16p: 448 60
+:matt/marble/thinplatform16p: 452 60
+:matt/marble/thinplatform16p: 457 55 rrr
+:matt/marble/thinplatform16p: 457 51 rrr
+:matt/marble/thinplatform16p: 484 60
+:matt/marble/thinplatform16p: 488 60
+:matt/marble/thinplatform16p: 493 55 rrr
+:matt/marble/thinplatform16p: 493 51 rrr
+:matt/marble/thinplatform16p: 520 60
+:matt/marble/thinplatform16p: 524 60
+:matt/marble/thinplatform16p: 529 55 rrr
+:matt/marble/thinplatform16p: 529 51 rrr
+:matt/marble/thinplatform16p: 580 20
+:matt/marble/thinplatform16p: 584 20
+:matt/marble/thinplatform16p: 589 15 rrr
+:matt/marble/thinplatform16p: 589 11 rrr
+:matt/marble/thinplatform16p: 616 20
+:matt/marble/thinplatform16p: 620 20
+:matt/marble/thinplatform16p: 625 15 rrr
+:matt/marble/thinplatform16p: 625 11 rrr
+:matt/marble/thinplatform16p: 12 20
+:matt/marble/thinplatform16p: 16 20
+:matt/marble/thinplatform16p: 21 15 rrr
+:matt/marble/thinplatform16p: 21 11 rrr
+:matt/marble/thinplatform16p: 48 20
+:matt/marble/thinplatform16p: 52 20
+:matt/marble/thinplatform16p: 57 15 rrr
+:matt/marble/thinplatform16p: 57 11 rrr
+:matt/marble/thinplatform16p: 80 20
+:matt/marble/thinplatform16p: 84 20
+:matt/marble/thinplatform16p: 89 15 rrr
+:matt/marble/thinplatform16p: 89 11 rrr
+:matt/marble/thinplatform16p: 116 20
+:matt/marble/thinplatform16p: 120 20
+:matt/marble/thinplatform16p: 125 15 rrr
+:matt/marble/thinplatform16p: 125 11 rrr
+:matt/marble/thinplatform16p: 152 20
+:matt/marble/thinplatform16p: 156 20
+:matt/marble/thinplatform16p: 161 15 rrr
+:matt/marble/thinplatform16p: 161 11 rrr
+:matt/marble/thinplatform16p: 188 20
+:matt/marble/thinplatform16p: 192 20
+:matt/marble/thinplatform16p: 197 15 rrr
+:matt/marble/thinplatform16p: 197 11 rrr
+:matt/marble/thinplatform16p: 220 20
+:matt/marble/thinplatform16p: 224 20
+:matt/marble/thinplatform16p: 229 15 rrr
+:matt/marble/thinplatform16p: 229 11 rrr
+:matt/marble/thinplatform16p: 256 20
+:matt/marble/thinplatform16p: 260 20
+:matt/marble/thinplatform16p: 265 15 rrr
+:matt/marble/thinplatform16p: 265 11 rrr
+:matt/marble/thinplatform16p: 292 20
+:matt/marble/thinplatform16p: 296 20
+:matt/marble/thinplatform16p: 301 15 rrr
+:matt/marble/thinplatform16p: 301 11 rrr
+:matt/marble/thinplatform16p: 328 20
+:matt/marble/thinplatform16p: 332 20
+:matt/marble/thinplatform16p: 337 15 rrr
+:matt/marble/thinplatform16p: 337 11 rrr
+:matt/marble/thinplatform16p: 360 20
+:matt/marble/thinplatform16p: 364 20
+:matt/marble/thinplatform16p: 369 15 rrr
+:matt/marble/thinplatform16p: 369 11 rrr
+:matt/marble/thinplatform16p: 396 20
+:matt/marble/thinplatform16p: 400 20
+:matt/marble/thinplatform16p: 405 15 rrr
+:matt/marble/thinplatform16p: 405 11 rrr
+:matt/marble/thinplatform16p: 432 20
+:matt/marble/thinplatform16p: 436 20
+:matt/marble/thinplatform16p: 441 15 rrr
+:matt/marble/thinplatform16p: 441 11 rrr
+:matt/marble/thinplatform16p: 468 20
+:matt/marble/thinplatform16p: 472 20
+:matt/marble/thinplatform16p: 477 15 rrr
+:matt/marble/thinplatform16p: 477 11 rrr
+:matt/marble/thinplatform16p: 500 20
+:matt/marble/thinplatform16p: 504 20
+:matt/marble/thinplatform16p: 509 15 rrr
+:matt/marble/thinplatform16p: 509 11 rrr
+:matt/marble/thinplatform16p: 536 20
+:matt/marble/thinplatform16p: 540 20
+:matt/marble/thinplatform16p: 545 15 rrr
+:matt/marble/thinplatform16p: 545 11 rrr
+:matt/marble/thinplatform16p: 596 404
+:matt/marble/thinplatform16p: 600 404
+:matt/marble/thinplatform16p: 605 399 rrr
+:matt/marble/thinplatform16p: 605 395 rrr
+:matt/marble/thinplatform16p: 632 404
+:matt/marble/thinplatform16p: 636 404
+:matt/marble/thinplatform16p: 1 399 rrr
+:matt/marble/thinplatform16p: 1 395 rrr
+:matt/marble/thinplatform16p: 28 404
+:matt/marble/thinplatform16p: 32 404
+:matt/marble/thinplatform16p: 37 399 rrr
+:matt/marble/thinplatform16p: 37 395 rrr
+:matt/marble/thinplatform16p: 64 404
+:matt/marble/thinplatform16p: 68 404
+:matt/marble/thinplatform16p: 73 399 rrr
+:matt/marble/thinplatform16p: 73 395 rrr
+:matt/marble/thinplatform16p: 96 404
+:matt/marble/thinplatform16p: 100 404
+:matt/marble/thinplatform16p: 105 399 rrr
+:matt/marble/thinplatform16p: 105 395 rrr
+:matt/marble/thinplatform16p: 132 404
+:matt/marble/thinplatform16p: 136 404
+:matt/marble/thinplatform16p: 141 399 rrr
+:matt/marble/thinplatform16p: 141 395 rrr
+:matt/marble/thinplatform16p: 168 404
+:matt/marble/thinplatform16p: 172 404
+:matt/marble/thinplatform16p: 177 399 rrr
+:matt/marble/thinplatform16p: 177 395 rrr
+:matt/marble/thinplatform16p: 204 404
+:matt/marble/thinplatform16p: 208 404
+:matt/marble/thinplatform16p: 213 399 rrr
+:matt/marble/thinplatform16p: 213 395 rrr
+:matt/marble/thinplatform16p: 236 404
+:matt/marble/thinplatform16p: 240 404
+:matt/marble/thinplatform16p: 245 399 rrr
+:matt/marble/thinplatform16p: 245 395 rrr
+:matt/marble/thinplatform16p: 272 404
+:matt/marble/thinplatform16p: 276 404
+:matt/marble/thinplatform16p: 281 399 rrr
+:matt/marble/thinplatform16p: 281 395 rrr
+:matt/marble/thinplatform16p: 308 404
+:matt/marble/thinplatform16p: 312 404
+:matt/marble/thinplatform16p: 317 399 rrr
+:matt/marble/thinplatform16p: 317 395 rrr
+:matt/marble/thinplatform16p: 344 404
+:matt/marble/thinplatform16p: 348 404
+:matt/marble/thinplatform16p: 353 399 rrr
+:matt/marble/thinplatform16p: 353 395 rrr
+:matt/marble/thinplatform16p: 376 404
+:matt/marble/thinplatform16p: 380 404
+:matt/marble/thinplatform16p: 385 399 rrr
+:matt/marble/thinplatform16p: 385 395 rrr
+:matt/marble/thinplatform16p: 412 404
+:matt/marble/thinplatform16p: 416 404
+:matt/marble/thinplatform16p: 421 399 rrr
+:matt/marble/thinplatform16p: 421 395 rrr
+:matt/marble/thinplatform16p: 448 404
+:matt/marble/thinplatform16p: 452 404
+:matt/marble/thinplatform16p: 457 399 rrr
+:matt/marble/thinplatform16p: 457 395 rrr
+:matt/marble/thinplatform16p: 484 404
+:matt/marble/thinplatform16p: 488 404
+:matt/marble/thinplatform16p: 493 399 rrr
+:matt/marble/thinplatform16p: 493 395 rrr
+:matt/marble/thinplatform16p: 520 404
+:matt/marble/thinplatform16p: 524 404
+:matt/marble/thinplatform16p: 529 399 rrr
+:matt/marble/thinplatform16p: 529 395 rrr

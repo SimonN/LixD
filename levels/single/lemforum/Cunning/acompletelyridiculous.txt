@@ -1,0 +1,156 @@
+$BUILT 2014-07-16 23:57:04
+$AUTHOR Nortaneous
+$GERMAN 
+$ENGLISH A Completely Ridiculous Level
+
+#SIZE_X 696
+#SIZE_Y 640
+#TORUS_X 1
+#TORUS_Y 0
+#START_X 28
+#START_Y -80
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 250
+#REQUIRED 169
+#SPAWN_INTERVAL 28
+#SPAWN_INTERVAL_FAST 4
+
+#FLOATER 1
+#BLOCKER 1
+#BUILDER 5
+#PLATFORMER 1
+#BASHER 1
+#DIGGER 1
+#JUMPER 3
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/oriental/Hatch.H: 326 -10
+
+:matt/oriental/Goal.G: 520 532
+
+:amanda/forest/frog_happy.T: 148 562
+
+:matt/oriental/leaves2: 250 404
+:matt/oriental/leaves1: 360 46
+:matt/oriental/leaves4: 348 50
+:matt/oriental/leaves4: 284 50
+:matt/oriental/leaves3: 282 58
+:matt/oriental/leaves3: 370 62
+:matt/oriental/leaves2: 400 72 rrr
+:matt/oriental/leaves4: 292 68
+:matt/oriental/leaves4: 292 78
+:matt/oriental/leaves1: 286 92
+:matt/oriental/leaves3: 368 104
+:matt/oriental/leaves2: 374 114
+:matt/oriental/leaves3: 280 104
+:matt/oriental/leaves1: 346 126
+:matt/oriental/leaves3: 288 124
+:matt/oriental/trunk3: 284 571 r
+:matt/oriental/trunk3: 383 561 rrr
+:matt/oriental/branch3: 375 545 rrr
+:matt/oriental/trunk1: 358 558
+:matt/oriental/branch3: 309 530 rr
+:matt/oriental/trunk1: 288 548
+:matt/oriental/trunk2: 319 524
+:matt/oriental/trunk3: 336 491 rr
+:matt/oriental/branch2: 345 511 r
+:matt/oriental/branch2: 349 510 r
+:matt/oriental/trunk3: 349 375 rr
+:matt/oriental/trunk3: 349 372 rr
+:matt/oriental/branch1: 343 408 rrr
+:matt/oriental/branch3: 347 531
+:matt/oriental/trunk2: 326 416 rr
+:matt/oriental/trunk3: 460 168 rrr
+:matt/oriental/trunk3: 186 162 r
+:matt/oriental/trunk3: 260 104
+:matt/oriental/branch1: 300 138
+:matt/oriental/branch3: 380 132
+:matt/oriental/trunk3: 424 88
+:matt/oriental/08: 236 120
+:matt/oriental/07: 316 136
+:matt/oriental/08: 400 120
+:matt/oriental/05: 252 36
+:matt/oriental/05: 412 40
+:matt/oriental/branch3: 516 168
+:matt/oriental/branch1: 168 164 rr
+:matt/oriental/leaves1: 124 160
+:matt/oriental/leaves3: 536 162
+:matt/oriental/leaves1: 246 404
+:matt/oriental/leaves3: 278 392
+:matt/oriental/leaves4: 278 406
+:matt/oriental/leaves1: 332 400
+:matt/oriental/leaves4: 334 394
+:matt/oriental/leaves3: 372 402
+:matt/oriental/leaves1: 394 400
+:matt/oriental/leaves1: 314 386
+:matt/oriental/leaves1: 332 388
+:matt/oriental/trunk3: 344 464
+:matt/oriental/08: 308 540
+:matt/oriental/branch2: 314 510
+:matt/oriental/branch1: 290 442 rr
+:matt/oriental/11: 314 450 rrrd
+:matt/oriental/11: 313 450 rrrd
+:matt/oriental/branch3: 352 507
+:matt/oriental/branch3: 349 539 r
+:matt/oriental/leaves5: 368 503
+:matt/oriental/leaves4: 332 366 d
+:matt/oriental/leaves4: 342 367 d
+:matt/oriental/leaves5: 295 512 rr
+:matt/oriental/leaves2: 369 447
+:matt/oriental/leaves1: 244 433
+:matt/oriental/branch3: 320 538 rr
+:matt/oriental/branch2: 345 462 r
+:matt/oriental/branch2: 348 458 r
+:matt/oriental/branch1: 352 472 rrr
+:matt/oriental/branch1: 350 488 rrr
+:matt/oriental/branch1: 350 507 rrr
+:matt/oriental/branch1: 352 510 rrr
+:matt/oriental/branch3: 345 440 rrr
+:matt/oriental/trunk2: 327 527
+:matt/oriental/branch3: 435 563
+:matt/oriental/branch2: 258 572
+:matt/oriental/branch2: 257 576
+:matt/oriental/branch1: 230 577 rr
+:matt/oriental/branch2: 244 573
+:matt/oriental/07: 444 608
+:matt/oriental/07: 172 608
+:matt/oriental/07: 108 608
+:matt/oriental/07: 508 608
+:matt/oriental/leaves1: 322 114
+:matt/oriental/leaves3: 328 96
+:matt/oriental/leaves3: 344 86
+:matt/oriental/leaves5: 384 82
+:matt/oriental/leaves5: 384 76
+:matt/oriental/leaves3: 320 60
+:matt/oriental/leaves2: 306 44
+:matt/oriental/leaves3: 408 396
+:matt/oriental/leaves4: 404 400
+:matt/oriental/leaves3: 248 388
+:matt/oriental/leaves1: 226 392
+:matt/oriental/leaves4: 198 392
+:matt/oriental/leaves2: 230 406
+:matt/oriental/01: 500 456
+:matt/oriental/01: 508 512
+:matt/oriental/leaves5: 492 408
+:matt/oriental/01: 102 422 f
+:geoo/steel/16x16o.S: 252 136
+:geoo/steel/16x16o.S: 284 136
+:geoo/steel/16x16o.S: 284 168
+:geoo/steel/16x16o.S: 252 168
+:geoo/steel/16x16o.S: 268 152
+:geoo/steel/16x16o.S: 416 136
+:geoo/steel/16x16o.S: 448 136
+:geoo/steel/16x16o.S: 448 168
+:geoo/steel/16x16o.S: 416 168
+:geoo/steel/16x16o.S: 432 152
+:matt/oriental/01: 86 484 f
+:matt/oriental/01: 158 418 f
+:matt/oriental/01: 446 456

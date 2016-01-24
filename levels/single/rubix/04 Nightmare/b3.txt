@@ -1,0 +1,83 @@
+$BUILT 2014-02-27 15:46:35
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Just another winter's tale.
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 96
+#BACKGROUND_BLUE 128
+
+#SECONDS 0
+#INITIAL 99
+#REQUIRED 99
+#SPAWN_INTERVAL 53
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 1
+#JUMPER 1
+#BLOCKER 1
+#BUILDER 2
+#PLATFORMER 3
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: 56 50
+:matt/winter/Hatch.H: 170 158
+:matt/winter/Hatch.H: 404 158 r
+:matt/winter/Hatch.H: 516 52 r
+
+:matt/winter/Goal.G: -38 258
+
+:matt/winter/18: 522 98
+:matt/winter/18: 78 96
+:matt/winter/05: 482 -30 frrr
+:matt/winter/05: 280 -29 fr
+:matt/winter/05: 285 -12 rr
+:matt/winter/05: 112 -30 frrr
+:matt/winter/05: -90 -29 fr
+:matt/winter/18: 606 236
+:matt/winter/00: -30 187 rrr
+:matt/winter/02: 400 304 frr
+:matt/winter/02: 176 304
+:matt/winter/10: 176 192 r
+:matt/winter/10: 352 192 fr
+:matt/winter/06: 176 320
+:matt/winter/06: 176 256
+:matt/winter/06: 176 192
+:matt/winter/06: 176 172
+:matt/winter/06: 448 174
+:matt/winter/06: 448 192
+:matt/winter/06: 448 256
+:matt/winter/06: 448 320
+:matt/winter/09a: 289 160
+:matt/winter/06: 176 384 r
+:matt/winter/06: 400 384 r
+:matt/winter/02: 576 160 frr
+:matt/winter/10: 528 64 fr
+:matt/winter/06: 624 0
+:matt/winter/06: 624 64
+:matt/winter/06: 624 128
+:matt/winter/06: 624 192
+:matt/winter/06: 576 256 r
+:matt/winter/02: 0 160
+:matt/winter/10: 0 64 r
+:matt/winter/06: 0 192
+:matt/winter/06: 0 128
+:matt/winter/06: 0 64
+:matt/winter/06: 0 0
+:matt/winter/06: 0 256 r
+:matt/winter/05: -134 314 r
+:matt/winter/05: -159 320 fr
+:matt/winter/04: 199 -99
+:matt/winter/04: 330 -97 frr

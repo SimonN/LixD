@@ -1,0 +1,239 @@
+$BUILT 2014-03-25 20:26:35
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Deadly NightShade (2p)
+
+#SIZE_X 704
+#SIZE_Y 608
+#TORUS_X 0
+#TORUS_Y 1
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 70
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 10
+#FLOATER 5
+#RUNNER 5
+#WALKER 60
+#JUMPER 80
+#PLATFORMER 80
+#BASHER 60
+#DIGGER 30
+#BATTER 20
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/abstract/hatch.H: 624 16 r
+:geoo/abstract/hatch.H: 48 16
+
+:matt/marble/Goal.G: 512 480
+:matt/marble/Goal.G: 128 480
+
+:geoo/shadow/pillar_verti_32: 560 368
+:geoo/shadow/pillar_verti_32: 560 336
+:geoo/shadow/pillar_verti_32: 544 368
+:geoo/shadow/pillar_verti_32: 544 336
+:geoo/shadow/pillar_verti_32: 560 304
+:geoo/shadow/pillar_verti_32: 560 272
+:geoo/shadow/pillar_verti_32: 560 240
+:geoo/shadow/pillar_verti_32: 560 208
+:geoo/shadow/pillar_verti_32: 544 304
+:geoo/shadow/pillar_verti_32: 544 272
+:geoo/shadow/pillar_verti_32: 544 240
+:geoo/shadow/pillar_verti_32: 544 208
+:geoo/shadow/pillar_verti_32: 560 432
+:geoo/shadow/pillar_verti_32: 560 400
+:geoo/shadow/pillar_verti_32: 544 432
+:geoo/shadow/pillar_verti_32: 544 400
+:geoo/shadow/wall/center: 16 96
+:geoo/shadow/wall/center: 656 96
+:geoo/shadow/wall/left: 560 128
+:geoo/shadow/pillar_verti_32: 528 16
+:geoo/shadow/pillar_verti_32: 528 48
+:geoo/shadow/pillar_verti_32: 528 80
+:geoo/shadow/pillar_verti_32: 528 112
+:geoo/shadow/pillar_verti_32: 544 16
+:geoo/shadow/pillar_verti_32: 544 48
+:geoo/shadow/pillar_verti_32: 544 80
+:geoo/shadow/pillar_verti_32: 544 112
+:geoo/shadow/pillar_verti_32: 144 16
+:geoo/shadow/pillar_verti_32: 144 48
+:geoo/shadow/pillar_verti_32: 144 80
+:geoo/shadow/pillar_verti_32: 144 112
+:geoo/shadow/pillar_verti_32: 160 16
+:geoo/shadow/pillar_verti_32: 160 48
+:geoo/shadow/pillar_verti_32: 160 80
+:geoo/shadow/pillar_verti_32: 160 112
+:geoo/shadow/pillar_verti_32: 144 144
+:geoo/shadow/pillar_verti_32: 160 144
+:geoo/shadow/pillar_verti_32: 512 400
+:geoo/shadow/pillar_verti_32: 512 432
+:geoo/shadow/pillar_verti_32: 528 400
+:geoo/shadow/pillar_verti_32: 528 432
+:geoo/shadow/pillar_verti_32: 528 144
+:geoo/shadow/pillar_verti_32: 528 176
+:geoo/shadow/pillar_verti_32: 544 144
+:geoo/shadow/pillar_verti_32: 544 176
+:geoo/shadow/pillar_verti_32: 512 208
+:geoo/shadow/pillar_verti_32: 512 240
+:geoo/shadow/pillar_verti_32: 512 272
+:geoo/shadow/pillar_verti_32: 512 304
+:geoo/shadow/pillar_verti_32: 528 208
+:geoo/shadow/pillar_verti_32: 528 240
+:geoo/shadow/pillar_verti_32: 528 272
+:geoo/shadow/pillar_verti_32: 528 304
+:geoo/shadow/pillar_verti_32: 512 336
+:geoo/shadow/pillar_verti_32: 512 368
+:geoo/shadow/pillar_verti_32: 528 336
+:geoo/shadow/pillar_verti_32: 528 368
+:geoo/shadow/wall/center: 560 96
+:geoo/shadow/wall/center: 592 96
+:geoo/shadow/wall/center: 624 96
+:geoo/shadow/wall/center: 48 96
+:geoo/shadow/wall/center: 80 96
+:geoo/shadow/wall/center: 112 96
+:geoo/shadow/wall/center: 176 96
+:geoo/shadow/wall/center: 208 96
+:geoo/shadow/wall/center: 240 96
+:geoo/shadow/wall/center: 272 96
+:geoo/shadow/wall/center: 400 96
+:geoo/shadow/wall/center: 432 96
+:geoo/shadow/wall/center: 464 96
+:geoo/shadow/wall/center: 496 96
+:geoo/shadow/wall/left: 176 128
+:geoo/shadow/wall/left: 112 128
+:geoo/shadow/wall/left: 496 128
+:geoo/shadow/wall/left: 544 160
+:geoo/shadow/wall/left: 512 160
+:geoo/shadow/wall/left: 528 192
+:geoo/shadow/wall/center: 208 528
+:geoo/shadow/wall/center: 48 512
+:geoo/shadow/wall/center: 80 528
+:geoo/steel/dark_48x32o.S: 112 528
+:geoo/steel/dark_48x32o.S: 160 528
+:geoo/steel/dark_48x32o.S: 496 528
+:geoo/steel/dark_48x32o.S: 544 528
+:geoo/shadow/wall/center: 240 512
+:geoo/shadow/wall/center: 592 528
+:geoo/shadow/wall/center: 624 512
+:geoo/shadow/wall/center: 432 512
+:geoo/shadow/wall/center: 464 528
+:geoo/steel/32x32o.S: 400 496
+:geoo/steel/32x32o.S: 272 496
+:geoo/steel/32x32o.S: 16 496
+:geoo/steel/32x32o.S: 656 496
+:geoo/shadow/wall/center: 432 544
+:geoo/shadow/wall/center: 464 560
+:geoo/shadow/wall/center: 624 544
+:geoo/shadow/wall/center: 592 560
+:geoo/shadow/wall/center: 48 544
+:geoo/shadow/wall/center: 80 560
+:geoo/shadow/wall/center: 240 544
+:geoo/shadow/wall/center: 208 560
+:geoo/shadow/pillar_hztl_32: 256 0
+:geoo/shadow/pillar_hztl_32: 288 0
+:geoo/shadow/pillar_hztl_32: 320 0
+:geoo/shadow/pillar_hztl_32: 352 0
+:geoo/shadow/pillar_hztl_32: 224 0
+:geoo/shadow/pillar_hztl_32: 192 0
+:geoo/steel/32x32o.S: 400 80
+:geoo/steel/32x32o.S: 272 80
+:geoo/steel/32x32o.S: 656 80
+:geoo/steel/32x32o.S: 16 80
+:geoo/shadow/pillar_hztl_32: 176 160
+:geoo/shadow/pillar_hztl_32: 112 160
+:geoo/shadow/pillar_hztl_32: 144 160
+:geoo/shadow/pillar_hztl_32: 560 160
+:geoo/shadow/pillar_hztl_32: 496 160
+:geoo/shadow/pillar_hztl_32: 528 160
+:geoo/shadow/pillar_verti_32: 536 176
+:geoo/shadow/pillar_verti_32: 536 192
+:geoo/shadow/wall/center: 272 528
+:geoo/shadow/wall/center: 400 528
+:geoo/shadow/wall/center: 656 528
+:geoo/shadow/wall/center: 16 528
+:geoo/steel/32x16o.S: 272 112
+:geoo/steel/32x16o.S: 240 112
+:geoo/steel/32x16o.S: 16 112
+:geoo/steel/32x16o.S: 48 112
+:geoo/steel/32x16o.S: 656 112
+:geoo/steel/32x16o.S: 624 112
+:geoo/steel/32x16o.S: 400 112
+:geoo/steel/32x16o.S: 432 112
+:geoo/shadow/pillar_verti_32: 512 176
+:geoo/shadow/pillar_verti_32: 560 176
+:geoo/shadow/pillar_verti_32: 176 368
+:geoo/shadow/pillar_verti_32: 176 336
+:geoo/shadow/pillar_verti_32: 160 368
+:geoo/shadow/pillar_verti_32: 160 336
+:geoo/shadow/pillar_verti_32: 176 304
+:geoo/shadow/pillar_verti_32: 176 272
+:geoo/shadow/pillar_verti_32: 176 240
+:geoo/shadow/pillar_verti_32: 160 304
+:geoo/shadow/pillar_verti_32: 160 272
+:geoo/shadow/pillar_verti_32: 160 240
+:geoo/shadow/pillar_verti_32: 176 432
+:geoo/shadow/pillar_verti_32: 176 400
+:geoo/shadow/pillar_verti_32: 160 432
+:geoo/shadow/pillar_verti_32: 160 400
+:geoo/shadow/pillar_verti_32: 128 400
+:geoo/shadow/pillar_verti_32: 128 432
+:geoo/shadow/pillar_verti_32: 144 400
+:geoo/shadow/pillar_verti_32: 144 432
+:geoo/shadow/pillar_verti_32: 128 240
+:geoo/shadow/pillar_verti_32: 128 272
+:geoo/shadow/pillar_verti_32: 128 304
+:geoo/shadow/pillar_verti_32: 144 240
+:geoo/shadow/pillar_verti_32: 144 272
+:geoo/shadow/pillar_verti_32: 144 304
+:geoo/shadow/pillar_verti_32: 128 336
+:geoo/shadow/pillar_verti_32: 128 368
+:geoo/shadow/pillar_verti_32: 144 336
+:geoo/shadow/pillar_verti_32: 144 368
+:geoo/shadow/pillar_verti_32: 176 208
+:geoo/shadow/pillar_verti_32: 160 208
+:geoo/shadow/pillar_verti_32: 144 176
+:geoo/shadow/pillar_verti_32: 160 176
+:geoo/shadow/pillar_verti_32: 128 208
+:geoo/shadow/pillar_verti_32: 144 208
+:geoo/shadow/pillar_verti_32: 160 176
+:geoo/shadow/pillar_verti_32: 160 192
+:geoo/shadow/pillar_verti_32: 128 176
+:geoo/shadow/pillar_verti_32: 176 176
+:geoo/shadow/wall/left: 144 176
+:geoo/shadow/wall/left: 144 192
+:geoo/shadow/pillar_verti_32: 152 176
+:geoo/shadow/pillar_verti_32: 152 192
+:geoo/shadow/pillar_verti_32: 592 128
+:geoo/shadow/pillar_verti_32: 592 144
+:geoo/shadow/pillar_verti_32: 480 128
+:geoo/shadow/pillar_verti_32: 480 144
+:geoo/shadow/pillar_verti_32: 208 128
+:geoo/shadow/pillar_verti_32: 208 144
+:geoo/shadow/pillar_verti_32: 96 128
+:geoo/shadow/pillar_verti_32: 96 144
+:geoo/shadow/pillar_hztl_32: 144 224
+:geoo/shadow/pillar_hztl_32: 528 224
+:geoo/shadow/pillar_hztl_32: 448 0
+:geoo/shadow/pillar_hztl_32: 480 0
+:geoo/shadow/pillar_hztl_32: 512 0
+:geoo/shadow/pillar_hztl_32: 544 0
+:geoo/shadow/pillar_hztl_32: 32 0
+:geoo/shadow/pillar_hztl_32: 64 0
+:geoo/shadow/pillar_hztl_32: 96 0
+:geoo/shadow/pillar_hztl_32: 128 0
+:geoo/shadow/pillar_hztl_32: 416 0
+:geoo/shadow/pillar_hztl_32: 160 0
+:geoo/shadow/pillar_hztl_32: 384 0
+:geoo/shadow/pillar_hztl_32: 0 0
+:geoo/shadow/pillar_hztl_32: 576 0
+:geoo/shadow/pillar_hztl_32: 608 0
+:geoo/shadow/pillar_hztl_32: 640 0
+:geoo/shadow/pillar_hztl_32: 672 0

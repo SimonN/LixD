@@ -1,0 +1,212 @@
+$BUILT 2015-04-13 02:27:37
+$AUTHOR Simon
+$GERMAN Blocker gegen Gefahren
+$ENGLISH Blockers against hazards
+
+$TUTORIAL_GERMAN Klicke auf die Pause-Taste (Pfoten), um dies in Ruhe zu lesen.<br>Benutze Blocker, um andere Lix daran zu hindern, in die Säure zu fallen.<br>Du musst nicht alle Lix retten, sondern nur die geforderte Anzahl (5 von 30).<br>Wenn du genug gerettet hast oder irgendwo stecken bleibst,<br>klicke doppelt auf den Atompilz unten rechts.
+$TUTORIAL_ENGLISH Press the pause button (paws) to read this without hurries.<br>Use the blocker skill to prevent other lixes from falling into the acid.<br>You don't have to save all lix, but only the required amount (5 out of 30).<br>If you have saved enough or got stuck, double-click the nuke button.
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 30
+#REQUIRED 5
+#SPAWN_INTERVAL 55
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#BLOCKER 10
+#NOTHING 0
+#BUILDER 20
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 96 320
+
+:matt/earth/Goal.G: 456 258
+
+:amanda/tar.W: 528 336
+:amanda/tar.W: 560 352
+:simon/acid.W: 336 368
+:simon/acid.W: 64 200
+:amanda/tar.W: 544 368
+
+:matt/beach/nighttime/01: 544 338 rrr
+:matt/beach/nighttime/01: 526 322 rr
+:matt/earth/12: 560 320
+:matt/beach/nighttime/01: 502 344
+:matt/earth/07: 418 190
+:matt/earth/26: 386 194 r
+:matt/earth/25: 402 214 r
+:matt/earth/23: 412 248 frrr
+:matt/earth/07b: 482 242
+:matt/earth/23: 506 240 rrr
+:matt/earth/29: 504 236
+:matt/earth/26: 464 234 rrr
+:matt/earth/09: 468 234
+:matt/earth/09: 414 230
+:matt/earth/23: 424 270
+:matt/earth/06: 424 244
+:matt/earth/25: 446 234 fr
+:matt/earth/07b: 408 188
+:matt/earth/19: 420 202 r
+:geoo/construction/wall/small_square: 352 288
+:geoo/construction/wall/small_square: 352 320
+:geoo/construction/wall/small_64x64: 0 336
+:geoo/construction/rod_steel/straight32.S: 48 280
+:geoo/construction/wall/small_64x64: 0 272
+:geoo/construction/wall/small_64x64: 0 208
+:geoo/construction/wall/small_64x64: 0 144
+:geoo/construction/wall/small_square: 48 160
+:geoo/construction/wall/small_square: 48 192
+:geoo/construction/wall/small_square: 48 224
+:geoo/construction/wall/small_square: 48 256
+:geoo/construction/wall/small_square: 48 288
+:geoo/construction/wall/small_square: 48 352
+:geoo/construction/wall/small_square: 48 320
+:geoo/construction/wall/small_square: 48 384
+:geoo/construction/wall/small_square: 0 160
+:geoo/construction/wall/small_square: 0 192
+:geoo/construction/wall/small_square: 0 224
+:geoo/construction/wall/small_square: 0 256
+:geoo/construction/wall/small_square: 0 288
+:geoo/construction/wall/small_square: 0 352
+:geoo/construction/wall/small_square: 0 320
+:geoo/construction/wall/small_square: 0 384
+:geoo/construction/wall/small_brickdiag_tu: 0 112
+:geoo/construction/wall/small_brickdiag_td: 384 112
+:matt/beach/nighttime/01: 506 330
+:matt/earth/07: 424 182
+:matt/earth/06: 410 186
+:geoo/construction/wall/small_64x64: 352 144
+:geoo/construction/wall/small_square: 400 192
+:geoo/construction/wall/small_square: 352 192
+:geoo/construction/wall/small_square: 400 160
+:geoo/construction/wall/small_square: 352 160
+:matt/earth/07b: 420 228
+:geoo/construction/concrete/064h: 96 384
+:geoo/construction/concrete/032b: 64 352
+:geoo/construction/concrete/032: 64 384
+:geoo/construction/concrete/032a: 64 320
+:geoo/construction/concrete/016ha: 176 288
+:geoo/construction/concrete/032a: 320 240
+:geoo/construction/concrete/032b: 320 208
+:geoo/construction/concrete/032h: 256 208
+:geoo/construction/concrete/016ha: 288 368
+:geoo/construction/concrete/016h: 288 384
+:geoo/construction/concrete/016ha: 96 304
+:geoo/construction/rod_steel/straight8.S: 380 360
+:geoo/construction/wall/small_64x64: 384 336
+:geoo/construction/concrete/032h: 128 208
+:geoo/construction/rod_steel/straight_diagu32.S: 96 246
+:geoo/construction/concrete/016h: 80 256
+:geoo/construction/rod_steel/straight32.S: 160 240
+:geoo/construction/concrete/016hd: 144 240
+:geoo/construction/concrete/016: 128 240
+:geoo/construction/concrete/016ha: 320 128
+:geoo/construction/concrete/016ha: 288 144
+:geoo/construction/concrete/016ha: 256 160
+:geoo/construction/concrete/016hd: 320 144
+:geoo/construction/concrete/016hd: 288 160
+:geoo/construction/concrete/016hd: 256 176
+:geoo/construction/concrete/016ha: 224 176
+:geoo/construction/concrete/008h: 240 184
+:geoo/construction/concrete/016: 224 176 d
+:geoo/construction/wall/small_64x64: 352 272
+:geoo/construction/wall/small_square: 400 320
+:geoo/construction/wall/small_square: 400 288
+:geoo/construction/wall/small_64x64: 352 208
+:geoo/construction/wall/small_square: 400 256
+:geoo/construction/wall/small_square: 352 256
+:geoo/construction/wall/small_square: 352 224
+:geoo/construction/wall/small_square: 400 224
+:geoo/construction/wall/small_square: 352 320
+:geoo/construction/wall/small_square: 352 288
+:geoo/construction/rod_steel/straight32.S: 72 168 rrr
+:geoo/construction/rod_steel/edge_ld.S: 72 160
+:geoo/construction/rod_steel/straight8.S: 64 160
+:geoo/construction/rod_steel/edge_rd.S: 372 360
+:geoo/construction/rod_steel/end_rect.S: 372 368 rrr
+:geoo/construction/rod_steel/end_rect.S: 72 192 rrr
+:geoo/construction/rod_steel/link_h_du.S: 80 278
+:geoo/construction/rod_steel/straight32.S: 192 240
+:geoo/construction/rod_steel/straight32.S: 224 240
+:geoo/construction/rod_steel/link_h_du.S: 244 238
+:geoo/construction/rod_steel/link_h_du.S: 259 223 fr
+:geoo/construction/concrete/016: 240 208
+:geoo/construction/rod_steel/link_h_dd.S: 243 211
+:geoo/construction/rod_steel/link_dd_h.S: 253 216 fr
+:geoo/construction/rod_steel/end_rect.S: 239 211
+:geoo/construction/concrete/016h: 192 224
+:geoo/construction/concrete/016h: 224 224
+:geoo/construction/concrete/016: 192 208
+:geoo/steel/32x16o.S: 208 208
+:geoo/construction/wall/small_brickdiag_td: 32 112
+:geoo/construction/wall/small_brick3: 368 128
+:geoo/construction/wall/small_brick3: 16 128
+:geoo/construction/wall/small_square: 0 128
+:geoo/construction/wall/small_square: 48 128
+:geoo/construction/wall/small_square: 352 128
+:geoo/construction/wall/small_square: 400 128
+:geoo/construction/wall/small_brickdiag_tu: 352 112
+:geoo/steel/16x32o.S: 112 208
+:geoo/steel/16x32o.S: 320 368
+:geoo/steel/32x16o.S: 64 240
+:geoo/steel/32x16o.S: 96 240
+:geoo/construction/concrete/016hd: 112 256
+:geoo/construction/concrete/016: 64 256
+:geoo/construction/concrete/016h: 224 304
+:geoo/construction/concrete/016hb: 240 288
+:geoo/construction/concrete/016h: 288 304
+:geoo/construction/concrete/016vd: 128 320
+:geoo/construction/concrete/016b: 128 304
+:geoo/construction/concrete/016c: 176 304
+:geoo/construction/concrete/016h: 192 304
+:geoo/construction/concrete/016h: 256 304
+:geoo/construction/concrete/016h: 208 288
+:geoo/construction/concrete/032h: 224 384
+:geoo/construction/concrete/032: 320 272
+:geoo/construction/concrete/016hc: 320 320
+:geoo/construction/concrete/016h: 320 304
+:geoo/construction/wall/small_brickdiag_bd: 352 336
+:matt/beach/nighttime/01: 528 368
+:matt/beach/nighttime/03: 414 320
+:matt/earth/13: 446 318
+:matt/beach/nighttime/04: 412 332
+:matt/beach/nighttime/15: 418 340
+:geoo/construction/wall/small_brick3: 384 336
+:matt/earth/09: 416 202
+:matt/earth/18: 508 210 d
+:proxima/tile/spheres/goldsmall: 499 79
+:geoo/steel/32x32o.S: 482 62 d
+:geoo/steel/32x32o.S: 516 62 d
+:geoo/steel/32x32o.S: 482 96 d
+:geoo/steel/32x32o.S: 516 96 d
+:proxima/tile/spheres/goldsmall: 581 103
+:geoo/steel/32x32o.S: 564 86 d
+:geoo/steel/32x32o.S: 598 86 d
+:geoo/steel/32x32o.S: 564 120 d
+:geoo/steel/32x32o.S: 598 120 d
+:proxima/tile/spheres/goldsmall: 593 191
+:geoo/steel/32x32o.S: 576 174 d
+:geoo/steel/32x32o.S: 610 174 d
+:geoo/steel/32x32o.S: 576 208 d
+:geoo/steel/32x32o.S: 610 208 d
+:proxima/tile/spheres/goldsmall: 525 141
+:geoo/steel/32x32o.S: 508 124 d
+:geoo/steel/32x32o.S: 542 124 d
+:geoo/steel/32x32o.S: 508 158 d
+:geoo/steel/32x32o.S: 542 158 d
+:matt/earth/07b: 456 224

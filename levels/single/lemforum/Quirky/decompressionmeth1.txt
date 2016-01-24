@@ -1,0 +1,136 @@
+$BUILT 2012-06-03 21:41:02
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Decompression Method 1
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 1
+#SPAWN_INTERVAL_FAST 1
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#CLIMBER 1
+#WALKER 1
+#BLOCKER 10
+#MINER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/abstract/hatch.H: 192 160
+:geoo/abstract/hatch.H: 194 160
+:geoo/abstract/hatch.H: 196 160
+:geoo/abstract/hatch.H: 198 160
+:geoo/abstract/hatch.H: 200 160
+:geoo/abstract/hatch.H: 202 160
+:geoo/abstract/hatch.H: 204 160
+:geoo/abstract/hatch.H: 206 160
+:geoo/abstract/hatch.H: 208 160
+:geoo/abstract/hatch.H: 210 160
+
+:geoo/abstract/goal.G: 16 24
+
+:geoo/construction/spring.T: 416 112
+:geoo/construction/steam_left.T: 480 96
+
+:geoo/construction/trampoline.T: 208 96
+
+:matt/carnival/38: 256 176 frr
+:matt/carnival/38: 320 144 frr
+:matt/carnival/07: 320 176 r
+:matt/carnival/07: 384 144 r
+:matt/carnival/07: 384 176 r
+:matt/carnival/07: 512 112 r
+:matt/carnival/07: 576 112 r
+:matt/carnival/07: 512 176 r
+:matt/carnival/07: 576 176 r
+:matt/carnival/07: 512 144 r
+:matt/carnival/07: 576 144 r
+:matt/carnival/07: 0 112 r
+:matt/carnival/07: 0 176 r
+:matt/carnival/07: 0 144 r
+:matt/carnival/07: 192 128 r
+:matt/carnival/06: 0 208 r
+:matt/carnival/06: 0 240 r
+:matt/carnival/06: 0 272 r
+:matt/carnival/06: 192 208 r
+:matt/carnival/06: 192 240 r
+:matt/carnival/06: 192 272 r
+:matt/carnival/06: 256 208 r
+:matt/carnival/06: 256 240 r
+:matt/carnival/06: 256 272 r
+:matt/carnival/06: 320 208 r
+:matt/carnival/06: 320 240 r
+:matt/carnival/06: 320 272 r
+:matt/carnival/06: 384 208 r
+:matt/carnival/06: 384 240 r
+:matt/carnival/06: 384 272 r
+:matt/carnival/06: 512 208 r
+:matt/carnival/06: 512 240 r
+:matt/carnival/06: 512 272 r
+:matt/carnival/06: 576 208 r
+:matt/carnival/06: 576 240 r
+:matt/carnival/06: 576 272 r
+:matt/carnival/05: 0 304 fr
+:matt/carnival/05: 0 336 fr
+:matt/carnival/05: 0 368 fr
+:matt/carnival/05: 64 304 fr
+:matt/carnival/05: 64 336 fr
+:matt/carnival/05: 64 368 fr
+:matt/carnival/05: 128 304 fr
+:matt/carnival/05: 128 336 fr
+:matt/carnival/05: 128 368 fr
+:matt/carnival/05: 192 304 fr
+:matt/carnival/05: 192 336 fr
+:matt/carnival/05: 192 368 fr
+:matt/carnival/05: 256 304 fr
+:matt/carnival/05: 256 336 fr
+:matt/carnival/05: 256 368 fr
+:matt/carnival/05: 320 304 fr
+:matt/carnival/05: 320 336 fr
+:matt/carnival/05: 320 368 fr
+:matt/carnival/05: 384 304 fr
+:matt/carnival/05: 384 336 fr
+:matt/carnival/05: 384 368 fr
+:matt/carnival/05: 512 304 fr
+:matt/carnival/05: 512 336 fr
+:matt/carnival/05: 512 368 fr
+:matt/carnival/05: 576 304 fr
+:matt/carnival/05: 576 336 fr
+:matt/carnival/05: 576 368 fr
+:matt/carnival/28: 0 64
+:matt/carnival/04: 0 80 fr
+:matt/carnival/04: 512 0 fr
+:matt/carnival/04: 576 0 fr
+:matt/carnival/04: 512 32 fr
+:matt/carnival/04: 576 32 fr
+:matt/carnival/04: 512 64 fr
+:matt/carnival/04: 576 64 fr
+:geoo/construction/rod_steel/straight32.S: 512 96
+:geoo/construction/rod_steel/straight32.S: 544 96
+:geoo/construction/rod_steel/straight32.S: 576 96
+:geoo/construction/rod_steel/straight32.S: 608 96
+:geoo/construction/rod_steel/straight32.S: 512 104
+:geoo/construction/rod_steel/straight32.S: 544 104
+:geoo/construction/rod_steel/straight32.S: 576 104
+:geoo/construction/rod_steel/straight32.S: 608 104
+:geoo/construction/rod_steel/end_rect.S: 512 96
+:geoo/construction/rod_steel/end_rect.S: 512 104
+:geoo/construction/rod_steel/straight32.S: 512 100
+:geoo/construction/rod_steel/straight32.S: 544 100
+:geoo/construction/rod_steel/straight32.S: 576 100
+:geoo/construction/rod_steel/straight32.S: 608 100
+:geoo/construction/rod_steel/end_rect.S: 512 100

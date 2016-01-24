@@ -1,0 +1,245 @@
+$BUILT 2014-05-19 17:42:53
+$AUTHOR Nepster
+$GERMAN 
+$ENGLISH Bashing & Building
+
+#SIZE_X 704
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 30
+#REQUIRED 29
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#CLIMBER 1
+#NOTHING 0
+#BUILDER 7
+#NOTHING 0
+#BASHER 7
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/marble/Hatch.H: 560 214
+
+:matt/marble/Goal.G: 640 96
+
+:proxima/tile/blue1: 640 336
+:proxima/tile/blue1: 640 272
+:proxima/tile/blue1: 640 208
+:proxima/tile/blue1: 640 144
+:proxima/tile/blue1s: 608 360
+:proxima/tile/blue1s: 576 360
+:proxima/tile/blue1s: 544 360
+:proxima/tile/spheres/blue: 416 304
+:proxima/tile/blue1: 416 336
+:proxima/tile/blue1s: 592 328
+:proxima/tile/spheres/blue: 320 238
+:proxima/tile/blue1: 320 272
+:proxima/tile/blue1: 320 336
+:proxima/tile/spheres/blue: 224 176
+:proxima/tile/blue1: 224 210
+:proxima/tile/blue1: 224 274
+:proxima/tile/blue1: 224 338
+:proxima/tile/blue1: 128 210
+:proxima/tile/blue1: 128 274
+:proxima/tile/blue1: 128 338
+:proxima/tile/blue1: 64 210
+:proxima/tile/blue1: 64 274
+:proxima/tile/blue1: 64 338
+:proxima/tile/blue1: 0 146
+:proxima/tile/blue1: 0 210
+:proxima/tile/blue1: 0 274
+:proxima/tile/blue1: 0 338
+:proxima/tile/blue1: 0 82
+:proxima/tile/blue1s: 512 360
+:proxima/tile/blue1s: 560 328
+:proxima/tile/blue1s: 576 296
+:proxima/tile/blue1: 128 146
+:proxima/tile/blue1: 64 146
+:proxima/tile/blue1: 64 82
+:proxima/tile/blue1s: 608 392
+:proxima/tile/blue1s: 576 392
+:proxima/tile/blue1s: 544 392
+:proxima/tile/blue1s: 512 392
+:proxima/tile/blue1: 128 82
+:proxima/tile/blue1a: 128 74 d
+:proxima/tile/blue1s: 160 82 rn
+:proxima/tile/blue1bs: 165 80 rrrd
+:proxima/tile/blue1bs: 162 77 rd
+:proxima/tile/blue1bs: 130 76 rrd
+:proxima/tile/blue1bs: 165 111 rrd
+:proxima/tile/blue1s: 189 54 rrn
+:proxima/tile/blue1s: 189 50 d
+:proxima/tile/blue1s: 219 54 rrr
+:proxima/tile/blue1s: 219 50 d
+:proxima/tile/blue1s: 247 54 rrr
+:proxima/tile/blue1s: 247 50 d
+:proxima/tile/blue1s: 275 54 rrr
+:proxima/tile/blue1s: 275 50 d
+:proxima/tile/blue1s: 303 54 rrr
+:proxima/tile/blue1s: 303 50 d
+:proxima/tile/blue1s: 331 54 rrr
+:proxima/tile/blue1s: 331 50 d
+:proxima/tile/blue1s: 359 54 rrr
+:proxima/tile/blue1s: 359 50 d
+:proxima/tile/blue1s: 387 54 rrr
+:proxima/tile/blue1s: 387 50 d
+:proxima/tile/blue1s: 415 54 rrr
+:proxima/tile/blue1s: 415 50 d
+:proxima/tile/blue1s: 443 54 rrr
+:proxima/tile/blue1s: 443 50 d
+:proxima/tile/blue1s: 471 54 rrr
+:proxima/tile/blue1s: 471 50 d
+:proxima/tile/blue1s: 499 54 rrr
+:proxima/tile/blue1s: 499 50 d
+:proxima/tile/blue1s: 527 54 rrr
+:proxima/tile/blue1s: 527 50 d
+:proxima/tile/blue1s: 555 54 rrr
+:proxima/tile/blue1s: 555 50 d
+:proxima/tile/blue1s: 583 54 rrr
+:proxima/tile/blue1s: 583 50 d
+:proxima/tile/blue1s: 611 54 rrr
+:proxima/tile/blue1s: 611 50 d
+:proxima/tile/blue1s: 637 54 rrr
+:proxima/tile/blue1s: 637 50 d
+:proxima/tile/blue1s: 653 58 d
+:proxima/tile/spheres/bluesmall: 205 -20
+:proxima/tile/spheres/bluesmall: 205 -15
+:proxima/tile/spheres/bluesmall: 205 -9
+:proxima/tile/spheres/bluesmall: 206 -4
+:proxima/tile/spheres/bluesmall: 207 2
+:proxima/tile/spheres/bluesmall: 208 7
+:proxima/tile/spheres/bluesmall: 209 13
+:proxima/tile/spheres/bluesmall: 211 18
+:proxima/tile/spheres/bluesmall: 213 23
+:proxima/tile/spheres/bluesmall: 215 28
+:proxima/tile/spheres/bluesmall: 217 33
+:proxima/tile/spheres/bluesmall: 219 38
+:proxima/tile/spheres/bluesmall: 222 43
+:proxima/tile/spheres/bluesmall: 225 47
+:proxima/tile/spheres/bluesmall: 228 52
+:proxima/tile/spheres/bluesmall: 231 56
+:proxima/tile/spheres/bluesmall: 234 61
+:proxima/tile/spheres/bluesmall: 237 65
+:proxima/tile/spheres/bluesmall: 240 69
+:proxima/tile/spheres/bluesmall: 244 73
+:proxima/tile/spheres/bluesmall: 248 77
+:proxima/tile/spheres/bluesmall: 251 80
+:proxima/tile/spheres/bluesmall: 255 84
+:proxima/tile/spheres/bluesmall: 259 87
+:proxima/tile/spheres/bluesmall: 263 90
+:proxima/tile/spheres/bluesmall: 267 94
+:proxima/tile/spheres/bluesmall: 271 97
+:proxima/tile/spheres/bluesmall: 275 99
+:proxima/tile/spheres/bluesmall: 279 102
+:proxima/tile/spheres/bluesmall: 284 105
+:proxima/tile/spheres/bluesmall: 288 107
+:proxima/tile/spheres/bluesmall: 292 110
+:proxima/tile/spheres/bluesmall: 296 112
+:proxima/tile/spheres/bluesmall: 300 114
+:proxima/tile/spheres/bluesmall: 305 116
+:proxima/tile/spheres/bluesmall: 309 118
+:proxima/tile/spheres/bluesmall: 313 120
+:proxima/tile/spheres/bluesmall: 318 122
+:proxima/tile/spheres/bluesmall: 322 123
+:proxima/tile/spheres/bluesmall: 326 125
+:proxima/tile/spheres/bluesmall: 330 126
+:proxima/tile/spheres/bluesmall: 335 128
+:proxima/tile/spheres/bluesmall: 339 129
+:proxima/tile/spheres/bluesmall: 343 130
+:proxima/tile/spheres/bluesmall: 348 132
+:proxima/tile/spheres/bluesmall: 352 133
+:proxima/tile/spheres/bluesmall: 356 134
+:proxima/tile/spheres/bluesmall: 360 134
+:proxima/tile/spheres/bluesmall: 365 135
+:proxima/tile/spheres/bluesmall: 369 136
+:proxima/tile/spheres/bluesmall: 373 137
+:proxima/tile/spheres/bluesmall: 377 137
+:proxima/tile/spheres/bluesmall: 381 138
+:proxima/tile/spheres/bluesmall: 386 138
+:proxima/tile/spheres/bluesmall: 390 139
+:proxima/tile/spheres/bluesmall: 394 139
+:proxima/tile/spheres/bluesmall: 398 139
+:proxima/tile/spheres/bluesmall: 402 140
+:proxima/tile/spheres/bluesmall: 407 140
+:proxima/tile/spheres/bluesmall: 411 140
+:proxima/tile/spheres/bluesmall: 415 140
+:proxima/tile/spheres/bluesmall: 419 140
+:proxima/tile/spheres/bluesmall: 423 140
+:proxima/tile/spheres/bluesmall: 428 140
+:proxima/tile/spheres/bluesmall: 432 139
+:proxima/tile/spheres/bluesmall: 436 139
+:proxima/tile/spheres/bluesmall: 440 139
+:proxima/tile/spheres/bluesmall: 444 138
+:proxima/tile/spheres/bluesmall: 449 138
+:proxima/tile/spheres/bluesmall: 453 137
+:proxima/tile/spheres/bluesmall: 457 137
+:proxima/tile/spheres/bluesmall: 461 136
+:proxima/tile/spheres/bluesmall: 465 135
+:proxima/tile/spheres/bluesmall: 470 134
+:proxima/tile/spheres/bluesmall: 474 134
+:proxima/tile/spheres/bluesmall: 478 133
+:proxima/tile/spheres/bluesmall: 482 132
+:proxima/tile/spheres/bluesmall: 487 130
+:proxima/tile/spheres/bluesmall: 491 129
+:proxima/tile/spheres/bluesmall: 495 128
+:proxima/tile/spheres/bluesmall: 500 126
+:proxima/tile/spheres/bluesmall: 504 125
+:proxima/tile/spheres/bluesmall: 508 123
+:proxima/tile/spheres/bluesmall: 512 122
+:proxima/tile/spheres/bluesmall: 517 120
+:proxima/tile/spheres/bluesmall: 521 118
+:proxima/tile/spheres/bluesmall: 525 116
+:proxima/tile/spheres/bluesmall: 530 114
+:proxima/tile/spheres/bluesmall: 534 112
+:proxima/tile/spheres/bluesmall: 538 110
+:proxima/tile/spheres/bluesmall: 542 107
+:proxima/tile/spheres/bluesmall: 546 105
+:proxima/tile/spheres/bluesmall: 551 102
+:proxima/tile/spheres/bluesmall: 555 99
+:proxima/tile/spheres/bluesmall: 559 97
+:proxima/tile/spheres/bluesmall: 563 94
+:proxima/tile/spheres/bluesmall: 567 90
+:proxima/tile/spheres/bluesmall: 571 87
+:proxima/tile/spheres/bluesmall: 575 84
+:proxima/tile/spheres/bluesmall: 579 80
+:proxima/tile/spheres/bluesmall: 582 77
+:proxima/tile/spheres/bluesmall: 586 73
+:proxima/tile/spheres/bluesmall: 590 69
+:proxima/tile/spheres/bluesmall: 593 65
+:proxima/tile/spheres/bluesmall: 596 61
+:proxima/tile/spheres/bluesmall: 599 56
+:proxima/tile/spheres/bluesmall: 602 52
+:proxima/tile/spheres/bluesmall: 605 47
+:proxima/tile/spheres/bluesmall: 608 43
+:proxima/tile/spheres/bluesmall: 611 38
+:proxima/tile/spheres/bluesmall: 613 33
+:proxima/tile/spheres/bluesmall: 615 28
+:proxima/tile/spheres/bluesmall: 617 23
+:proxima/tile/spheres/bluesmall: 619 18
+:proxima/tile/spheres/bluesmall: 621 13
+:proxima/tile/spheres/bluesmall: 622 7
+:proxima/tile/spheres/bluesmall: 623 2
+:proxima/tile/spheres/bluesmall: 624 -4
+:proxima/tile/spheres/bluesmall: 625 -9
+:proxima/tile/spheres/bluesmall: 625 -15
+:proxima/tile/spheres/bluesmall: 625 -20
+:proxima/tile/blue2s: 415 50
+:proxima/tile/spheres/redsmall: 328 2
+:proxima/tile/spheres/redsmall: 502 2
+:proxima/tile/blue1s: 564 194 rrr
+:proxima/tile/blue1s: 564 190 d
+:proxima/tile/blue1s: 592 194 rrr
+:proxima/tile/blue1s: 592 190 d
+:geoo/abstract/pipes/cshort7: 620 220 d

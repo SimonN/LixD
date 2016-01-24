@@ -1,0 +1,98 @@
+$BUILT 2014-04-15 23:21:43
+$AUTHOR Amanda
+$GERMAN 
+$ENGLISH The Great Lix in the Sky (3-5p)
+
+#SIZE_X 960
+#SIZE_Y 720
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 64
+#BACKGROUND_GREEN 96
+#BACKGROUND_BLUE 192
+
+#SECONDS 30
+#INITIAL 50
+#REQUIRED 20
+#SPAWN_INTERVAL 42
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 50
+#CLIMBER 20
+#FLOATER 10
+#EXPLODER2 30
+#JUMPER 10
+#BATTER 10
+#BLOCKER 10
+#BUILDER 50
+#PLATFORMER 30
+#MINER 30
+#NOTHING 0
+#NOTHING 0
+
+:geoo/abstract/hatch.H: 233 273 r
+:geoo/abstract/hatch.H: 258 497 r
+:geoo/abstract/hatch.H: 686 249 r
+:geoo/abstract/hatch.H: 641 526
+:geoo/abstract/hatch.H: 467 58 r
+
+:proxima/tile/goal.G: 733 333
+:proxima/tile/goal.G: 482 329
+:proxima/tile/goal.G: 330 312
+:proxima/tile/goal.G: 333 535
+:proxima/tile/goal.G: 441 480
+
+:matt/10tons.T: 616 312
+
+:matt/earth/11: 281 542
+:matt/earth/03: 256 578
+:matt/earth/19: 384 530
+:matt/earth/17: 288 514 fr
+:matt/earth/18: 288 562 frr
+:matt/earth/23: 265 623
+:matt/earth/18: 256 594
+:matt/earth/18: 224 354
+:matt/earth/18: 464 242
+:matt/earth/02: 452 159
+:geoo/steel/dark_32x16o.S: 461 566
+:matt/earth/27: 463 535
+:matt/earth/24: 514 585
+:matt/earth/04: 480 498 fr
+:matt/earth/18: 640 594
+:matt/earth/04: 320 391
+:matt/earth/07: 325 406 frr
+:matt/earth/02: 240 358
+:matt/earth/01: 500 463
+:matt/earth/05: 445 253
+:matt/earth/10: 486 364
+:matt/earth/18: 688 338
+:geoo/steel/32x16o.S: 749 390
+:matt/earth/20: 715 392 rr
+:matt/earth/17: 602 352 fr
+:matt/earth/09: 546 358
+:matt/earth/27: 601 451
+:matt/earth/28: 687 430
+:matt/earth/26: 316 609
+:matt/earth/12: 531 418
+:matt/earth/13: 636 369
+:matt/earth/10: 281 275
+:matt/earth/01: 271 355
+:matt/earth/06: 272 294
+:matt/earth/29: 445 537
+:matt/earth/02: 332 263 d
+:matt/earth/06: 367 274
+:matt/earth/14: 351 472
+:matt/earth/00: 313 524 d
+:matt/earth/27: 727 392
+:matt/earth/18: 623 285
+:matt/earth/28: 626 287
+:matt/earth/29: 795 390
+:matt/earth/28: 335 522
+:matt/earth/06: 568 488
+:matt/earth/07b: 558 506
+:geoo/steel/dark_32x16o.S: 348 592
+:geoo/steel/dark_16x16o.S: 354 368
+:matt/earth/15: 387 324
+:matt/earth/29: 263 639
+:matt/earth/07b: 254 633 d
+:matt/earth/07b: 804 381 d

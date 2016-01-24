@@ -1,0 +1,253 @@
+$BUILT 2015-08-04 06:34:32
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Skyline Skydiving
+
+#SIZE_X 640
+#SIZE_Y 2000
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 25
+#INITIAL 10
+#REQUIRED 6
+#SPAWN_INTERVAL 4
+#SPAWN_INTERVAL_FAST 4
+
+#FLOATER 10
+#EXPLODER2 10
+
+:matt/bricks/Hatch.H: 160 32
+
+:matt/bricks/Goal.G: 320 1920
+
+:geoo/abstract/tbeam_down.T: 352 1888
+:geoo/abstract/tbeam_down.T: 384 1888
+:geoo/abstract/tbeam_down.T: 416 1888
+:geoo/abstract/tbeam_down.T: 352 1856
+:geoo/abstract/tbeam_down.T: 384 1856
+:geoo/abstract/tbeam_down.T: 416 1856
+:geoo/abstract/tbeam_down.T: 256 1888
+:geoo/abstract/tbeam_down.T: 288 1888
+:geoo/abstract/tbeam_down.T: 320 1888
+:geoo/abstract/tbeam_down.T: 256 1856
+:geoo/abstract/tbeam_down.T: 288 1856
+:geoo/abstract/tbeam_down.T: 320 1856
+
+:matt/bricks/03: 192 80
+:matt/bricks/03: 128 80
+:matt/bricks/03: 192 592
+:matt/bricks/03: 128 592
+:matt/bricks/03: 192 656
+:matt/bricks/03: 128 656
+:matt/bricks/03: 192 720
+:matt/bricks/03: 128 720
+:matt/bricks/03: 192 784
+:matt/bricks/03: 128 784
+:matt/bricks/03: 192 848
+:matt/bricks/03: 128 848
+:matt/bricks/03: 192 912
+:matt/bricks/03: 128 912
+:matt/bricks/03: 192 976
+:matt/bricks/03: 128 976
+:matt/bricks/03: 192 1040
+:matt/bricks/03: 128 1040
+:matt/bricks/03: 192 1104
+:matt/bricks/03: 128 1104
+:matt/bricks/03: 192 1168
+:matt/bricks/03: 128 1168
+:matt/bricks/03: 192 1232
+:matt/bricks/03: 128 1232
+:matt/bricks/03: 192 1296
+:matt/bricks/03: 128 1296
+:matt/bricks/03: 192 1360
+:matt/bricks/03: 128 1360
+:matt/bricks/03: 192 1424
+:matt/bricks/03: 128 1424
+:matt/bricks/03: 192 1488
+:matt/bricks/03: 128 1488
+:matt/bricks/03: 192 1552
+:matt/bricks/03: 128 1552
+:matt/bricks/03: 192 1616
+:matt/bricks/03: 128 1616
+:matt/bricks/03: 192 1680
+:matt/bricks/03: 128 1680
+:matt/bricks/03: 192 1744
+:matt/bricks/03: 128 1744
+:matt/bricks/03: 192 1808
+:matt/bricks/03: 128 1808
+:matt/bricks/03: 192 1872
+:matt/bricks/03: 128 1872
+:matt/bricks/03: 192 1936
+:matt/bricks/03: 128 1936
+:matt/bricks/03a: 256 1968
+:matt/bricks/03a: 320 1968
+:matt/bricks/18: 168 608
+:matt/bricks/18: 200 608
+:matt/bricks/18: 168 784
+:matt/bricks/18: 200 784
+:matt/bricks/18: 168 960
+:matt/bricks/18: 200 960
+:matt/bricks/18: 168 1136
+:matt/bricks/18: 200 1136
+:matt/bricks/18: 168 1312
+:matt/bricks/18: 200 1312
+:matt/bricks/18: 168 1488
+:matt/bricks/18: 200 1488
+:matt/bricks/18: 168 1664
+:matt/bricks/18: 200 1664
+:matt/bricks/18: 168 1840
+:matt/bricks/18: 200 1840
+:matt/bricks/03b: 448 1936
+:matt/bricks/03b: 512 1936
+:matt/bricks/03b: 544 1936
+:matt/bricks/03b: 448 1872
+:matt/bricks/03b: 512 1872
+:matt/bricks/03b: 544 1872
+:matt/bricks/03b: 448 1808
+:matt/bricks/03b: 512 1808
+:matt/bricks/03b: 544 1808
+:matt/bricks/03b: 448 1744
+:matt/bricks/03b: 512 1744
+:matt/bricks/03b: 544 1744
+:matt/bricks/03b: 448 1680
+:matt/bricks/03b: 512 1680
+:matt/bricks/03b: 544 1680
+:matt/bricks/03b: 448 1616
+:matt/bricks/03b: 512 1616
+:matt/bricks/03b: 544 1616
+:matt/bricks/03b: 448 1552
+:matt/bricks/03b: 512 1552
+:matt/bricks/03b: 544 1552
+:matt/bricks/03b: 448 1488
+:matt/bricks/03b: 512 1488
+:matt/bricks/03b: 544 1488
+:matt/bricks/03b: 448 1424
+:matt/bricks/03b: 512 1424
+:matt/bricks/03b: 544 1424
+:matt/bricks/03b: 448 1360
+:matt/bricks/03b: 512 1360
+:matt/bricks/03b: 544 1360
+:matt/bricks/03a: 0 1936
+:matt/bricks/03a: 0 1872
+:matt/bricks/03a: 0 1808
+:matt/bricks/18: 520 1312
+:matt/bricks/19: 512 1344
+:matt/bricks/20: 512 1288
+:matt/bricks/18: 520 1304
+:matt/bricks/17: 448 1304
+:matt/bricks/17: 456 1296
+:matt/bricks/17: 544 1304 f
+:matt/bricks/17: 536 1296 f
+:matt/bricks/05: 64 80
+:matt/bricks/06: 256 80
+:matt/beach/decor/umbrella_red: 0 1726
+:matt/winter/09b: 512 1256
+:matt/bricks/18: 184 1828 d
+:matt/bricks/18: 184 1836 d
+:matt/bricks/18: 184 1660 d
+:matt/bricks/18: 184 1652 d
+:matt/bricks/18: 184 1484 d
+:matt/bricks/18: 184 1476 d
+:matt/bricks/18: 184 1308 d
+:matt/bricks/18: 184 1300 d
+:matt/bricks/18: 184 1132 d
+:matt/bricks/18: 184 1124 d
+:matt/bricks/18: 184 956 d
+:matt/bricks/18: 184 948 d
+:matt/bricks/18: 184 780 d
+:matt/bricks/18: 184 772 d
+:matt/bricks/18: 184 604 d
+:matt/bricks/18: 184 596 d
+:matt/bricks/20: 160 592
+:matt/bricks/20: 192 592
+:matt/bricks/19: 192 624
+:matt/bricks/19: 160 624
+:matt/bricks/20: 160 768
+:matt/bricks/20: 192 768
+:matt/bricks/19: 192 800
+:matt/bricks/19: 160 800
+:matt/bricks/20: 160 944
+:matt/bricks/20: 192 944
+:matt/bricks/19: 192 976
+:matt/bricks/19: 160 976
+:matt/bricks/20: 160 1120
+:matt/bricks/20: 192 1120
+:matt/bricks/19: 192 1152
+:matt/bricks/19: 160 1152
+:matt/bricks/20: 160 1296
+:matt/bricks/20: 192 1296
+:matt/bricks/19: 192 1328
+:matt/bricks/19: 160 1328
+:matt/bricks/20: 160 1472
+:matt/bricks/20: 192 1472
+:matt/bricks/19: 192 1504
+:matt/bricks/19: 160 1504
+:matt/bricks/20: 160 1824
+:matt/bricks/20: 192 1824
+:matt/bricks/19: 192 1856
+:matt/bricks/19: 160 1856
+:matt/bricks/19: 160 1680
+:matt/bricks/19: 192 1680
+:matt/bricks/20: 192 1648
+:matt/bricks/20: 160 1648
+:matt/bricks/18: 504 1888
+:matt/bricks/18: 536 1888
+:matt/bricks/18: 520 1876 d
+:matt/bricks/18: 520 1884 d
+:matt/bricks/20: 496 1872
+:matt/bricks/20: 528 1872
+:matt/bricks/19: 528 1904
+:matt/bricks/19: 496 1904
+:matt/bricks/18: 504 1712
+:matt/bricks/18: 536 1712
+:matt/bricks/18: 520 1700 d
+:matt/bricks/18: 520 1708 d
+:matt/bricks/20: 496 1696
+:matt/bricks/20: 528 1696
+:matt/bricks/19: 528 1728
+:matt/bricks/19: 496 1728
+:matt/bricks/18: 504 1536
+:matt/bricks/18: 536 1536
+:matt/bricks/18: 520 1524 d
+:matt/bricks/18: 520 1532 d
+:matt/bricks/20: 496 1520
+:matt/bricks/20: 528 1520
+:matt/bricks/19: 528 1552
+:matt/bricks/19: 496 1552
+:matt/bricks/03: 128 528
+:matt/bricks/03: 192 528
+:matt/bricks/03: 128 464
+:matt/bricks/03: 192 464
+:matt/bricks/03: 128 400
+:matt/bricks/03: 192 400
+:matt/bricks/03: 128 336
+:matt/bricks/03: 192 336
+:matt/bricks/03: 128 272
+:matt/bricks/03: 192 272
+:matt/bricks/03: 128 208
+:matt/bricks/03: 192 208
+:matt/bricks/03: 128 144
+:matt/bricks/03: 192 144
+:matt/bricks/18: 168 432
+:matt/bricks/18: 200 432
+:matt/bricks/18: 184 428 d
+:matt/bricks/18: 184 420 d
+:matt/bricks/20: 160 416
+:matt/bricks/20: 192 416
+:matt/bricks/19: 192 448
+:matt/bricks/19: 160 448
+:matt/bricks/18: 168 256
+:matt/bricks/18: 200 256
+:matt/bricks/18: 184 252 d
+:matt/bricks/18: 184 244 d
+:matt/bricks/20: 160 240
+:matt/bricks/20: 192 240
+:matt/bricks/19: 192 272
+:matt/bricks/19: 160 272
+:matt/bricks/03a: 384 1968

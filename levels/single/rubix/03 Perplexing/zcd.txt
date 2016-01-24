@@ -1,0 +1,83 @@
+$BUILT 2014-02-27 19:11:35
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Dolly Dimple far from simple.
+
+#SIZE_X 624
+#SIZE_Y 320
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 608
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 99
+#REQUIRED 99
+#SPAWN_INTERVAL 16
+#SPAWN_INTERVAL_FAST 4
+
+#BUILDER 2
+#PLATFORMER 1
+#MINER 3
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: 272 0
+:matt/winter/Hatch.H: 464 0
+
+:matt/winter/Goal.G: -4 226
+
+:matt/winter/06: 288 296 r
+:matt/winter/06: 224 296 r
+:matt/winter/06: 160 296 r
+:matt/winter/06: 96 296 r
+:matt/winter/06: 592 48
+:matt/winter/06: 192 48
+:matt/winter/06: 208 96 r
+:matt/winter/06: 272 96 r
+:matt/winter/06: 336 96 r
+:matt/winter/06: 400 96 r
+:matt/winter/06: 464 96 r
+:matt/winter/06: 208 84 rd
+:matt/winter/06: 272 84 rd
+:matt/winter/06: 336 84 rd
+:matt/winter/06: 400 84 rd
+:matt/winter/06: 464 84 rd
+:matt/winter/06: 528 96 r
+:matt/winter/06: 528 84 rd
+:matt/winter/07: 224 288
+:matt/winter/07: 240 288
+:matt/winter/07: 256 288
+:matt/winter/07: 272 288
+:matt/winter/07: 288 288
+:matt/winter/07: 304 288
+:matt/winter/07: 320 288
+:matt/winter/07: 336 288
+:matt/winter/07: 96 288
+:matt/winter/07: 112 288
+:matt/winter/07: 128 288
+:matt/winter/07: 144 288
+:matt/winter/07: 160 288
+:matt/winter/07: 176 288
+:matt/winter/07: 192 288
+:matt/winter/07: 208 288
+:matt/winter/06: 96 304 r
+:matt/winter/06: 160 304 r
+:matt/winter/06: 224 304 r
+:matt/winter/06: 288 304 r
+:matt/winter/10: -12 286
+:matt/winter/04: -72 254 rr
+:matt/winter/06: 384 152 r
+:matt/winter/06: 384 140 rd
+:matt/winter/06: 424 156 rd
+:matt/winter/06: 192 112

@@ -1,0 +1,177 @@
+$BUILT 2012-08-09 22:15:26
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH 5 For All
+
+#SIZE_X 1440
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 1
+#START_X 950
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 105
+#INITIAL 80
+#REQUIRED 20
+#SPAWN_INTERVAL 18
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER -1
+#JUMPER -1
+#FLOATER 40
+#EXPLODER2 20
+#PLATFORMER 50
+#BUILDER 50
+#MINER 20
+#DIGGER 20
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/underworld/Hatch.H: 1432 128
+:matt/underworld/Hatch.H: 280 128
+:matt/underworld/Hatch.H: 568 128
+:matt/underworld/Hatch.H: 856 128
+:matt/underworld/Hatch.H: 1144 128
+:matt/underworld/Hatch.H: 1432 128 r
+:matt/underworld/Hatch.H: 280 128 r
+:matt/underworld/Hatch.H: 568 128 r
+:matt/underworld/Hatch.H: 856 128 r
+:matt/underworld/Hatch.H: 1144 128 r
+
+:matt/underworld/Goal.G: 712 128
+:matt/underworld/Goal.G: 1000 128
+:matt/underworld/Goal.G: 1288 128
+:matt/underworld/Goal.G: 136 128
+:matt/underworld/Goal.G: 424 128
+
+:matt/underworld/01: 688 192
+:geoo/steel/dark_48x32o.S: 720 192
+:matt/underworld/01: 768 192
+:matt/underworld/01: 832 192
+:geoo/steel/dark_48x32o.S: 864 192
+:matt/underworld/01: 912 192
+:matt/underworld/01: 976 192
+:geoo/steel/dark_48x32o.S: 1008 192
+:matt/underworld/01: 1056 192
+:matt/underworld/01: 1120 192
+:geoo/steel/dark_48x32o.S: 1152 192
+:matt/underworld/01: 1200 192
+:matt/underworld/01: 1264 192
+:geoo/steel/dark_48x32o.S: 1296 192
+:matt/underworld/01: 1344 192
+:matt/underworld/01: 1408 192
+:matt/underworld/01: 48 192
+:matt/underworld/01: 112 192
+:geoo/steel/dark_48x32o.S: 144 192
+:matt/underworld/01: 192 192
+:matt/underworld/01: 256 192
+:geoo/steel/dark_48x32o.S: 288 192
+:matt/underworld/01: 336 192
+:matt/underworld/01: 400 192
+:geoo/steel/dark_48x32o.S: 432 192
+:matt/underworld/01: 480 192
+:matt/underworld/01: 544 192
+:geoo/steel/dark_48x32o.S: 576 192
+:matt/underworld/01: 624 192
+:matt/underworld/01: 912 264
+:matt/underworld/01: 912 344
+:matt/underworld/01: 912 8
+:matt/underworld/01: 912 88
+:geoo/steel/dark_48x32o.S: 0 192
+:matt/underworld/01: 976 264
+:matt/underworld/01: 976 344
+:matt/underworld/01: 976 8
+:matt/underworld/01: 976 88
+:matt/underworld/01: 1040 264
+:matt/underworld/01: 1040 344
+:matt/underworld/01: 1040 8
+:matt/underworld/01: 1040 88
+:matt/underworld/01: 1104 264
+:matt/underworld/01: 1104 344
+:matt/underworld/01: 1104 8
+:matt/underworld/01: 1104 88
+:matt/underworld/01: 1168 264
+:matt/underworld/01: 1168 344
+:matt/underworld/01: 1168 8
+:matt/underworld/01: 1168 88
+:matt/underworld/01: 1232 264
+:matt/underworld/01: 1232 344
+:matt/underworld/01: 1232 8
+:matt/underworld/01: 1232 88
+:matt/underworld/01: 1296 264
+:matt/underworld/01: 1296 344
+:matt/underworld/01: 1296 8
+:matt/underworld/01: 1296 88
+:matt/underworld/01: 1360 264
+:matt/underworld/01: 1360 344
+:matt/underworld/01: 1360 8
+:matt/underworld/01: 1360 88
+:matt/underworld/01: 1424 264
+:matt/underworld/01: 1424 344
+:matt/underworld/01: 1424 8
+:matt/underworld/01: 1424 88
+:matt/underworld/01: 48 264
+:matt/underworld/01: 48 344
+:matt/underworld/01: 48 8
+:matt/underworld/01: 48 88
+:matt/underworld/01: 112 264
+:matt/underworld/01: 112 344
+:matt/underworld/01: 112 8
+:matt/underworld/01: 112 88
+:matt/underworld/01: 176 264
+:matt/underworld/01: 176 344
+:matt/underworld/01: 176 8
+:matt/underworld/01: 176 88
+:matt/underworld/01: 240 264
+:matt/underworld/01: 240 344
+:matt/underworld/01: 240 8
+:matt/underworld/01: 240 88
+:matt/underworld/01: 304 264
+:matt/underworld/01: 304 344
+:matt/underworld/01: 304 8
+:matt/underworld/01: 304 88
+:matt/underworld/01: 368 264
+:matt/underworld/01: 368 344
+:matt/underworld/01: 368 8
+:matt/underworld/01: 368 88
+:matt/underworld/01: 432 264
+:matt/underworld/01: 432 344
+:matt/underworld/01: 432 8
+:matt/underworld/01: 432 88
+:matt/underworld/01: 496 264
+:matt/underworld/01: 496 344
+:matt/underworld/01: 496 8
+:matt/underworld/01: 496 88
+:matt/underworld/01: 560 264
+:matt/underworld/01: 560 344
+:matt/underworld/01: 560 8
+:matt/underworld/01: 560 88
+:matt/underworld/01: 624 264
+:matt/underworld/01: 624 344
+:matt/underworld/01: 624 8
+:matt/underworld/01: 624 88
+:matt/underworld/01: 688 264
+:matt/underworld/01: 688 344
+:matt/underworld/01: 688 8
+:matt/underworld/01: 688 88
+:matt/underworld/01: 752 264
+:matt/underworld/01: 752 344
+:matt/underworld/01: 752 8
+:matt/underworld/01: 752 88
+:matt/underworld/01: 816 264
+:matt/underworld/01: 816 344
+:matt/underworld/01: 816 8
+:matt/underworld/01: 816 88
+:matt/underworld/00: 848 280
+:matt/underworld/00: 848 360
+:matt/underworld/00: 848 24
+:matt/underworld/00: 848 104
+:matt/underworld/00: 880 264
+:matt/underworld/00: 880 344
+:matt/underworld/00: 880 8
+:matt/underworld/00: 880 88

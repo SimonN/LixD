@@ -1,0 +1,68 @@
+$BUILT 2012-06-12 23:02:36
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH Impetus
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 38
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 0
+#JUMPER 2
+#CLIMBER 3
+#FLOATER 0
+#EXPLODER2 0
+#BLOCKER 0
+#CUBER 2
+#BUILDER 0
+#PLATFORMER 2
+#BASHER 0
+#MINER 2
+#DIGGER 0
+
+:matt/underworld/Hatch.H: 80 224
+
+:matt/underworld/Goal.G: 568 240
+
+:matt/underworld/02: 96 304
+:matt/underworld/00: 160 304
+:matt/underworld/00: 128 320
+:matt/underworld/00: 224 304
+:matt/underworld/02: 288 304
+:matt/underworld/00: 64 320
+:matt/underworld/00: 32 304
+:matt/underworld/02: 480 304
+:matt/underworld/00: 544 304
+:matt/underworld/00: 512 320
+:matt/underworld/00: 448 320
+:matt/underworld/00: 416 304
+:matt/underworld/00: 352 304
+:matt/underworld/02: 160 208
+:matt/underworld/02: 224 208
+:matt/underworld/02: 160 112
+:matt/underworld/00: 288 208
+:matt/underworld/02: 384 176
+:matt/underworld/00: 384 208
+:matt/underworld/01: 384 240
+:matt/underworld/00: 320 272
+:matt/underworld/00: 384 272
+:matt/underworld/01: 480 256
+:matt/underworld/00: 608 304
+:matt/underworld/01: 480 224
+:matt/underworld/01: 480 192
+:matt/underworld/00: 544 192
+:matt/underworld/00: 608 192
+:matt/underworld/00: -32 304
+:matt/underworld/02: 0 208
+:matt/underworld/00: -32 192
+:matt/underworld/02: 32 112

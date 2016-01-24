@@ -1,0 +1,317 @@
+$BUILT                                             2011-09-04 23:00:45
+$AUTHOR                                                          RubiX
+$GERMAN                                                               
+$ENGLISH                                          10 degrees below(3p)
+
+#SIZE_X                                                            768
+#SIZE_Y                                                            718
+#TORUS_X                                                             1
+#TORUS_Y                                                             0
+#START_X                                                           128
+#START_Y                                                           298
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            35
+#INITIAL                                                            70
+#REQUIRED                                                           20
+#RATE                                                               30
+
+#CLIMBER                                                             5
+#FLOATER                                                             5
+#WALKER                                                             50
+#JUMPER                                                             20
+#EXPLODER                                                            2
+#BLOCKER                                                             2
+#BUILDER                                                            15
+#PLATFORMER                                                         45
+#MINER                                                              35
+#BASHER                                                             15
+#DIGGER                                                              5
+#RUNNER                                                             10
+
+:matt/winter/Hatch.H:                        320        32
+:matt/winter/Hatch.H:                        576        32
+:matt/winter/Hatch.H:                         64        32
+
+:matt/winter/Goal.G:                         736       636
+:matt/winter/Goal.G:                         226       636
+:matt/winter/Goal.G:                         482       638
+
+:matt/winter/04:                             352       624     fr
+:matt/winter/04:                              96       624     fr
+:matt/winter/04:                             608       624     fr
+:matt/winter/10:                             720       320
+:matt/winter/10:                             464       320
+:matt/winter/10:                             208       320
+:matt/winter/06:                             352       528     r
+:matt/winter/06:                             288       528     r
+:matt/winter/06:                             240       528     r
+:matt/winter/06:                             176       528     r
+:matt/winter/02:                             320       384
+:matt/winter/02:                              64       384
+:matt/winter/02:                             576       384
+:matt/steel/32x32.S:                              320        80
+:matt/steel/32x32.S:                              576        80
+:matt/steel/32x32.S:                               64        80
+:matt/steel/32x32.S:                              352        80
+:matt/steel/32x32.S:                              608        80
+:matt/steel/32x32.S:                               96        80
+:matt/winter/06:                              64       272
+:matt/winter/06:                              80       272
+:matt/winter/06:                              96       272
+:matt/winter/06:                             112       272
+:matt/winter/06:                             128       272
+:matt/winter/06:                             144       272
+:matt/winter/06:                             160       272
+:matt/winter/06:                             176       272
+:matt/winter/06:                             192       272
+:matt/winter/06:                             208       272
+:matt/winter/06:                             224       272
+:matt/winter/06:                             240       272
+:matt/winter/06:                             256       272
+:matt/winter/06:                             272       272
+:matt/winter/06:                             288       272
+:matt/winter/06:                             304       272
+:matt/winter/06:                             320       272
+:matt/winter/06:                             336       272
+:matt/winter/06:                             352       272
+:matt/winter/06:                             368       272
+:matt/winter/06:                             384       272
+:matt/winter/06:                             400       272
+:matt/winter/06:                             416       272
+:matt/winter/06:                             432       272
+:matt/winter/06:                             448       272
+:matt/winter/06:                             464       272
+:matt/winter/06:                             480       272
+:matt/winter/06:                             496       272
+:matt/winter/06:                             512       272
+:matt/winter/06:                             528       272
+:matt/winter/06:                             544       272
+:matt/winter/06:                             560       272
+:matt/winter/06:                             576       272
+:matt/winter/06:                             592       272
+:matt/winter/06:                             608       272
+:matt/winter/06:                             624       272
+:matt/winter/06:                             640       272
+:matt/winter/06:                             656       272
+:matt/winter/06:                             656       272
+:matt/winter/06:                             672       272
+:matt/winter/06:                             688       272
+:matt/winter/06:                             704       272
+:matt/winter/06:                             720       272
+:matt/winter/06:                             736       272
+:matt/winter/06:                             752       272
+:matt/winter/06:                              48       272
+:matt/winter/06:                              48       336
+:matt/winter/06:                              64       336
+:matt/winter/06:                              80       336
+:matt/winter/06:                              96       336
+:matt/winter/06:                             112       336
+:matt/winter/06:                             128       336
+:matt/winter/06:                             144       336
+:matt/winter/06:                             160       336
+:matt/winter/06:                             256       336
+:matt/winter/06:                             272       336
+:matt/winter/06:                             288       336
+:matt/winter/06:                             304       336
+:matt/winter/06:                             320       336
+:matt/winter/06:                             336       336
+:matt/winter/06:                             352       336
+:matt/winter/06:                             368       336
+:matt/winter/06:                             384       336
+:matt/winter/06:                             400       336
+:matt/winter/06:                             416       336
+:matt/winter/06:                             512       336
+:matt/winter/06:                             528       336
+:matt/winter/06:                             544       336
+:matt/winter/06:                             560       336
+:matt/winter/06:                             576       336
+:matt/winter/06:                             592       336
+:matt/winter/06:                             608       336
+:matt/winter/06:                             624       336
+:matt/winter/06:                              32       336
+:matt/winter/06:                             656       336
+:matt/winter/06:                             672       336
+:matt/winter/06:                               0       336
+:matt/winter/06:                              16       336
+:matt/winter/06:                             640       336
+:matt/winter/04:                              16       592
+:matt/winter/04:                             528       592
+:matt/winter/04:                             272       592
+:matt/winter/10:                             112       672
+:matt/winter/10:                             368       672
+:matt/winter/10:                             624       672
+:matt/winter/06:                              64       112
+:matt/winter/06:                              80       112
+:matt/winter/06:                              96       112
+:matt/winter/06:                             112       112
+:matt/winter/06:                             128       112
+:matt/winter/06:                             144       112
+:matt/winter/06:                             160       112
+:matt/winter/06:                             176       112
+:matt/winter/06:                             192        80
+:matt/winter/06:                             208        80
+:matt/winter/06:                             224        80
+:matt/winter/06:                             240        80
+:matt/winter/06:                             256       112
+:matt/winter/06:                             272       112
+:matt/winter/06:                             288       112
+:matt/winter/06:                             304       112
+:matt/winter/06:                             320       112
+:matt/winter/06:                             336       112
+:matt/winter/06:                             352       112
+:matt/winter/06:                             368       112
+:matt/winter/06:                             384       112
+:matt/winter/06:                             400       112
+:matt/winter/06:                             416       112
+:matt/winter/06:                             432       112
+:matt/winter/06:                             448        80
+:matt/winter/06:                             464        80
+:matt/winter/06:                             480        80
+:matt/winter/06:                             496        80
+:matt/winter/06:                             512       112
+:matt/winter/06:                             528       112
+:matt/winter/06:                             544       112
+:matt/winter/06:                             560       112
+:matt/winter/06:                             576       112
+:matt/winter/06:                             592       112
+:matt/winter/06:                             608       112
+:matt/winter/06:                             624       112
+:matt/winter/06:                             640       112
+:matt/winter/06:                             656       112
+:matt/winter/06:                             656       112
+:matt/winter/06:                             672       112
+:matt/winter/06:                             688       112
+:matt/winter/06:                               0       112
+:matt/winter/06:                              16       112
+:matt/winter/06:                              32       112
+:matt/winter/06:                              48       112
+:matt/winter/06:                              48       176
+:matt/winter/06:                              64       176
+:matt/winter/06:                              80       176
+:matt/winter/06:                              96       176
+:matt/winter/06:                             112       176
+:matt/winter/06:                             128       176
+:matt/winter/06:                             144       176
+:matt/winter/06:                             160       176
+:matt/winter/06:                             176       176
+:matt/winter/06:                             192       208
+:matt/winter/06:                             208       208
+:matt/winter/06:                             224       208
+:matt/winter/06:                             240       208
+:matt/winter/06:                             256       176
+:matt/winter/06:                             272       176
+:matt/winter/06:                             288       176
+:matt/winter/06:                             304       176
+:matt/winter/06:                             320       176
+:matt/winter/06:                             336       176
+:matt/winter/06:                             352       176
+:matt/winter/06:                             368       176
+:matt/winter/06:                             384       176
+:matt/winter/06:                             400       176
+:matt/winter/06:                             416       176
+:matt/winter/06:                             432       176
+:matt/winter/06:                             448       208
+:matt/winter/06:                             464       208
+:matt/winter/06:                             480       208
+:matt/winter/06:                             496       208
+:matt/winter/06:                             512       176
+:matt/winter/06:                             528       176
+:matt/winter/06:                             544       176
+:matt/winter/06:                             560       176
+:matt/winter/06:                             576       176
+:matt/winter/06:                             592       176
+:matt/winter/06:                             608       176
+:matt/winter/06:                             624       176
+:matt/winter/06:                              32       176
+:matt/winter/06:                             656       176
+:matt/winter/06:                             672       176
+:matt/winter/06:                             688       176
+:matt/winter/06:                               0       176
+:matt/winter/06:                              16       176
+:matt/winter/06:                             640       176
+:matt/winter/06:                             704       208
+:matt/winter/06:                             720       208
+:matt/winter/06:                             736       208
+:matt/winter/06:                             752       208
+:matt/winter/06:                             704        80
+:matt/winter/06:                             720        80
+:matt/winter/06:                             736        80
+:matt/winter/06:                             752        80
+:matt/steel/32x32.S:                              704       208
+:matt/steel/32x32.S:                              736       208
+:matt/steel/32x32.S:                              448       208
+:matt/steel/32x32.S:                              480       208
+:matt/steel/32x32.S:                              192       208
+:matt/steel/32x32.S:                              224       208
+:matt/winter/06:                             704       544     r
+:matt/winter/06:                               0       544     r
+:matt/winter/06:                              64       544     r
+:matt/winter/06:                             128       544     r
+:matt/winter/06:                             224       544     r
+:matt/winter/06:                             288       544     r
+:matt/winter/06:                             352       544     r
+:matt/winter/06:                             416       544     r
+:matt/winter/06:                             480       544     r
+:matt/winter/06:                             544       544     r
+:matt/winter/06:                             592       544     r
+:matt/winter/06:                             656       544     r
+:matt/winter/06:                             480       528     r
+:matt/winter/06:                             544       528     r
+:matt/winter/06:                             592       528     r
+:matt/winter/06:                             656       528     r
+:matt/winter/06:                             720       528     r
+:matt/winter/06:                              16       528     r
+:matt/winter/06:                              64       528     r
+:matt/winter/06:                             128       528     r
+:matt/winter/05:                             176       384     rr
+:matt/winter/06:                             176       336
+:matt/winter/06:                             192       336
+:matt/winter/06:                             208       336
+:matt/winter/06:                             224       336
+:matt/winter/06:                             240       336
+:matt/winter/05:                             688       384     rr
+:matt/winter/06:                             416       528     r
+:matt/winter/05:                             432       384     rr
+:matt/winter/06:                             432       336
+:matt/winter/06:                             448       336
+:matt/winter/06:                             464       336
+:matt/winter/06:                             480       336
+:matt/winter/06:                             496       336
+:matt/winter/06:                             688       336
+:matt/winter/06:                             704       336
+:matt/winter/06:                             720       336
+:matt/winter/06:                             736       336
+:matt/winter/06:                             752       336
+:matt/steel/32x32.S:                              256       528
+:matt/steel/32x32.S:                              400       528
+:matt/steel/32x32.S:                              512       528
+:matt/steel/32x32.S:                              656       528
+:matt/steel/32x32.S:                                0       528
+:matt/steel/32x32.S:                              144       528
+:matt/steel/64x32.S:                              494       700
+:matt/steel/64x32.S:                              752       698
+:matt/steel/64x32.S:                              240       698
+:matt/winter/06:                              16       272
+:matt/winter/06:                              32       272
+:matt/winter/06:                               0       272
+:matt/steel/32x32.S:                               80       272
+:matt/steel/32x32.S:                               80       304
+:matt/steel/32x32.S:                              336       272
+:matt/steel/32x32.S:                              336       304
+:matt/steel/32x32.S:                              592       272
+:matt/steel/32x32.S:                              592       304
+:matt/steel/32x32.S:                              688       672
+:matt/steel/32x32.S:                               80       672
+:matt/steel/32x32.S:                              720       688
+:matt/steel/32x32.S:                               48       688
+:matt/steel/32x32.S:                              208       688
+:matt/steel/32x32.S:                              176       672
+:matt/steel/32x32.S:                              336       672
+:matt/steel/32x32.S:                              304       688
+:matt/steel/32x32.S:                              432       672
+:matt/steel/32x32.S:                              464       688
+:matt/steel/32x32.S:                              558       688
+:matt/steel/32x32.S:                              590       672

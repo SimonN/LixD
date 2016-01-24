@@ -1,0 +1,313 @@
+$BUILT 2014-06-06 11:03:22
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Bitter Lix (2p)
+
+#SIZE_X 2064
+#SIZE_Y 320
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 16
+#BACKGROUND_GREEN 16
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 99
+#REQUIRED 19
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 90
+#JUMPER 90
+#CLIMBER 10
+#FLOATER 20
+#RUNNER 6
+#BUILDER 70
+#PLATFORMER 40
+#BASHER 50
+#MINER 70
+#DIGGER 20
+#BATTER 20
+#CUBER 5
+
+:matt/marble/Hatch.H: 192 0
+:matt/marble/Hatch.H: 1792 0 r
+
+:matt/marble/Goal.G: 1792 240
+:matt/marble/Goal.G: 192 240
+
+:matt/goldmine/09: 1854 232 frr
+:matt/goldmine/04: 864 80 rrr
+:matt/goldmine/04: 1024 80 frrr
+:matt/goldmine/05: 788 194
+:matt/goldmine/10: 702 296
+:matt/goldmine/00: 736 276
+:matt/goldmine/05: 744 226
+:matt/goldmine/06: 166 182 rrr
+:matt/goldmine/09: 940 276 frrr
+:matt/goldmine/10: 880 136
+:matt/goldmine/09: 126 198
+:matt/goldmine/04: 62 124 frrn
+:matt/goldmine/04: 40 194 frr
+:matt/goldmine/08: -8 278 fr
+:matt/goldmine/09: 102 220
+:matt/goldmine/07: 6 -126 frrr
+:matt/goldmine/03: 22 -16
+:matt/goldmine/03: 276 -18 frr
+:matt/goldmine/03: 402 -16 frr
+:matt/goldmine/03: 478 -24 frr
+:matt/goldmine/03: 592 -22
+:matt/goldmine/01: 840 106
+:matt/goldmine/02: 812 22
+:matt/goldmine/07: 704 -60 rr
+:matt/goldmine/07: 884 -56 f
+:matt/goldmine/04: 826 36 rrr
+:matt/goldmine/05: 878 18
+:matt/goldmine/05: 846 20
+:matt/goldmine/05: 882 100 frr
+:matt/goldmine/07: 236 290 f
+:matt/goldmine/07: 264 290 frr
+:matt/marble/23c: 272 64
+:matt/marble/23c: 304 64
+:matt/marble/23c: 336 64
+:matt/marble/23c: 368 64
+:matt/marble/23c: 400 64
+:matt/marble/23c: 432 64
+:matt/marble/23c: 272 96
+:matt/marble/23c: 304 96
+:matt/marble/23c: 336 96
+:matt/marble/23c: 368 96
+:matt/marble/23c: 272 128
+:matt/marble/23c: 304 128
+:matt/marble/23c: 336 128
+:matt/marble/23c: 368 128
+:matt/marble/23c: 272 160
+:matt/marble/23c: 304 160
+:matt/marble/23c: 336 160
+:matt/marble/23c: 368 160
+:matt/marble/23c: 272 192
+:matt/marble/23c: 304 192
+:matt/marble/23c: 336 192
+:matt/marble/23c: 368 192
+:matt/marble/23c: 272 224
+:matt/marble/23c: 304 224
+:matt/marble/23c: 336 224
+:matt/marble/23c: 368 224
+:matt/marble/23c: 464 64
+:matt/marble/23c: 496 64
+:matt/marble/23c: 528 64
+:matt/marble/23c: 560 64
+:matt/marble/23c: 464 96
+:matt/marble/23c: 496 96
+:matt/marble/23c: 528 96
+:matt/marble/23c: 560 96
+:matt/marble/23c: 464 128
+:matt/marble/23c: 496 128
+:matt/marble/23c: 528 128
+:matt/marble/23c: 560 128
+:matt/marble/23c: 464 160
+:matt/marble/23c: 496 160
+:matt/marble/23c: 528 160
+:matt/marble/23c: 560 160
+:matt/marble/23c: 432 96
+:matt/marble/23c: 432 128
+:matt/marble/23c: 432 160
+:matt/marble/23c: 592 64
+:matt/marble/23c: 592 96
+:matt/marble/23c: 592 128
+:matt/marble/23c: 624 64
+:matt/marble/23c: 624 96
+:matt/marble/23c: 624 128
+:matt/marble/23c: 592 160
+:matt/marble/23c: 624 160
+:matt/marble/05c: 240 64
+:matt/marble/05c: 240 96
+:matt/marble/05c: 240 128
+:matt/marble/05c: 240 160
+:matt/marble/05c: 240 192
+:matt/marble/05c: 240 224
+:matt/marble/05c: 240 256
+:matt/marble/05c: 240 288
+:matt/marble/05c: 208 288
+:matt/marble/05c: 176 288
+:matt/marble/05c: 176 256
+:matt/marble/05c: 176 224
+:matt/marble/05c: 176 192
+:matt/marble/05c: 176 160
+:matt/marble/05c: 176 128
+:matt/marble/05c: 176 96
+:matt/marble/05c: 176 64
+:matt/marble/05c: 208 160
+:matt/marble/01c: 440 228
+:matt/marble/01c: 520 228
+:matt/marble/01c: 552 244
+:matt/marble/01c: 632 244
+:matt/marble/04c: 456 228
+:matt/marble/04c: 488 228
+:matt/marble/04c: 568 244
+:matt/marble/04c: 600 244
+:matt/marble/06c: 584 260
+:matt/marble/06c: 472 244
+:matt/goldmine/05: 450 292 frr
+:matt/goldmine/03: 586 298
+:matt/goldmine/04: 460 290 r
+:matt/goldmine/04: 390 292 frn
+:matt/marble/01c: 694 224
+:matt/marble/01c: 774 224
+:matt/marble/04c: 710 224
+:matt/marble/04c: 742 224
+:matt/marble/06c: 726 240
+:matt/marble/06c: 726 302
+:matt/goldmine/08: 808 182 frr
+:matt/goldmine/01: 884 256
+:matt/goldmine/00: 906 282
+:matt/goldmine/00: 760 246
+:matt/goldmine/00: 846 282
+:matt/goldmine/00: 808 290
+:matt/goldmine/08: 834 186 r
+:matt/goldmine/05: 914 214 frr
+:matt/goldmine/01: 948 250
+:matt/goldmine/01: 984 280
+:matt/goldmine/01: 954 282
+:matt/goldmine/06: 906 258
+:matt/goldmine/09: 956 292 frrr
+:matt/marble/12b: 176 48 rrr
+:matt/marble/001c: 192 48
+:matt/goldmine/05: 1200 192 frr
+:matt/goldmine/10: 1312 304 frr
+:matt/goldmine/00: 1232 272 frr
+:matt/goldmine/05: 1232 224 frr
+:matt/goldmine/06: 1872 176 frrr
+:matt/goldmine/09: 992 272 rrr
+:matt/goldmine/10: 1136 144 frr
+:matt/goldmine/09: 1840 192 frr
+:matt/goldmine/04: 1872 128 n
+:matt/goldmine/04: 1888 192
+:matt/goldmine/08: 1936 272 r
+:matt/goldmine/09: 1872 224 frr
+:matt/goldmine/07: 1936 -128 rrr
+:matt/goldmine/03: 1888 -16 frr
+:matt/goldmine/03: 1632 -16
+:matt/goldmine/03: 1504 -16
+:matt/goldmine/03: 1424 -16
+:matt/goldmine/03: 1312 -16 frr
+:matt/goldmine/01: 1136 112 frr
+:matt/goldmine/02: 1168 16 frr
+:matt/goldmine/07: 1136 -64 f
+:matt/goldmine/07: 960 -48 rr
+:matt/goldmine/04: 1056 32 frrr
+:matt/goldmine/05: 1104 16 frr
+:matt/goldmine/05: 1136 16 frr
+:matt/goldmine/05: 1104 96
+:matt/goldmine/07: 1600 288 rr
+:matt/goldmine/07: 1568 288
+:matt/marble/23c: 1744 64 frr
+:matt/marble/23c: 1712 64 frr
+:matt/marble/23c: 1680 64 frr
+:matt/marble/23c: 1648 64 frr
+:matt/marble/23c: 1616 64 frr
+:matt/marble/23c: 1584 64 frr
+:matt/marble/23c: 1744 96 frr
+:matt/marble/23c: 1712 96 frr
+:matt/marble/23c: 1680 96 frr
+:matt/marble/23c: 1648 96 frr
+:matt/marble/23c: 1744 128 frr
+:matt/marble/23c: 1712 128 frr
+:matt/marble/23c: 1680 128 frr
+:matt/marble/23c: 1648 128 frr
+:matt/marble/23c: 1744 160 frr
+:matt/marble/23c: 1712 160 frr
+:matt/marble/23c: 1680 160 frr
+:matt/marble/23c: 1648 160 frr
+:matt/marble/23c: 1744 192 frr
+:matt/marble/23c: 1712 192 frr
+:matt/marble/23c: 1680 192 frr
+:matt/marble/23c: 1648 192 frr
+:matt/marble/23c: 1744 224 frr
+:matt/marble/23c: 1712 224 frr
+:matt/marble/23c: 1680 224 frr
+:matt/marble/23c: 1648 224 frr
+:matt/marble/23c: 1552 64 frr
+:matt/marble/23c: 1520 64 frr
+:matt/marble/23c: 1488 64 frr
+:matt/marble/23c: 1456 64 frr
+:matt/marble/23c: 1552 96 frr
+:matt/marble/23c: 1520 96 frr
+:matt/marble/23c: 1488 96 frr
+:matt/marble/23c: 1456 96 frr
+:matt/marble/23c: 1552 128 frr
+:matt/marble/23c: 1520 128 frr
+:matt/marble/23c: 1488 128 frr
+:matt/marble/23c: 1456 128 frr
+:matt/marble/23c: 1552 160 frr
+:matt/marble/23c: 1520 160 frr
+:matt/marble/23c: 1488 160 frr
+:matt/marble/23c: 1456 160 frr
+:matt/marble/23c: 1584 96 frr
+:matt/marble/23c: 1584 128 frr
+:matt/marble/23c: 1584 160 frr
+:matt/marble/23c: 1424 64 frr
+:matt/marble/23c: 1424 96 frr
+:matt/marble/23c: 1424 128 frr
+:matt/marble/23c: 1392 64 frr
+:matt/marble/23c: 1392 96 frr
+:matt/marble/23c: 1392 128 frr
+:matt/marble/23c: 1424 160 frr
+:matt/marble/23c: 1392 160 frr
+:matt/marble/05c: 1776 64 frr
+:matt/marble/05c: 1776 96 frr
+:matt/marble/05c: 1776 128 frr
+:matt/marble/05c: 1776 160 frr
+:matt/marble/05c: 1776 192 frr
+:matt/marble/05c: 1776 224 frr
+:matt/marble/05c: 1776 256 frr
+:matt/marble/05c: 1776 288 frr
+:matt/marble/05c: 1808 288 frr
+:matt/marble/05c: 1840 288 frr
+:matt/marble/05c: 1840 256 frr
+:matt/marble/05c: 1840 224 frr
+:matt/marble/05c: 1840 192 frr
+:matt/marble/05c: 1840 160 frr
+:matt/marble/05c: 1840 128 frr
+:matt/marble/05c: 1840 96 frr
+:matt/marble/05c: 1840 64 frr
+:matt/marble/05c: 1808 160 frr
+:matt/marble/01c: 1584 224 frr
+:matt/marble/01c: 1504 224 frr
+:matt/marble/01c: 1472 240 frr
+:matt/marble/01c: 1392 240 frr
+:matt/marble/04c: 1552 224 frr
+:matt/marble/04c: 1520 224 frr
+:matt/marble/04c: 1440 240 frr
+:matt/marble/04c: 1408 240 frr
+:matt/marble/06c: 1424 256 frr
+:matt/marble/06c: 1536 240 frr
+:matt/goldmine/05: 1536 288
+:matt/goldmine/03: 1312 304 frr
+:matt/goldmine/04: 1424 288 fr
+:matt/goldmine/04: 1504 288 rn
+:matt/marble/01c: 1344 224 frr
+:matt/marble/01c: 1264 224 frr
+:matt/marble/04c: 1312 224 frr
+:matt/marble/04c: 1280 224 frr
+:matt/marble/06c: 1296 240 frr
+:matt/marble/06c: 1296 304 frr
+:matt/goldmine/08: 1136 176
+:matt/goldmine/01: 1104 256 frr
+:matt/goldmine/00: 1056 288 frr
+:matt/goldmine/00: 1200 240 frr
+:matt/goldmine/00: 1120 288 frr
+:matt/goldmine/00: 1152 288 frr
+:matt/goldmine/08: 1104 192 fr
+:matt/goldmine/05: 1072 208
+:matt/goldmine/01: 1040 256 frr
+:matt/goldmine/01: 992 288 frr
+:matt/goldmine/01: 1024 288 frr
+:matt/goldmine/06: 1056 256 frr
+:matt/goldmine/09: 976 288 rrr
+:matt/marble/10b: 1856 48 frr
+:matt/marble/001c: 1848 48 frr
+:geoo/steel/32x32o.S: 1808 288
+:geoo/steel/32x32o.S: 1808 160
+:geoo/steel/32x32o.S: 208 160
+:geoo/steel/32x32o.S: 208 288

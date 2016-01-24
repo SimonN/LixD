@@ -1,0 +1,15 @@
+Tutorial-Levels
+
+Versuche, diese Levels der Reihe nach
+durchzuspielen. Falls du einmal nicht
+weiter kommst, überspringe den
+Level und spiele den nächsten.
+
+Wir planen auch ein paar Levels,
+die den Mehrspieler-Modus erklären.
+
+Beginne im Ordner "skills".
+
+Wenn du das Tutorial durchgespielt
+hast, dann klicke auf "..",
+um den Ordner zu verlassen.

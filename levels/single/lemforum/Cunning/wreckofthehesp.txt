@@ -1,0 +1,167 @@
+$BUILT                                             2012-03-11 19:43:23
+$AUTHOR                                                     Nortaneous
+$GERMAN                                                               
+$ENGLISH                                         Wreck of the Hesperus
+
+#SIZE_X                                                            960
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                           320
+#START_Y                                                           -20
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                             0
+#INITIAL                                                            60
+#REQUIRED                                                           58
+#SPAWN_INTERVAL                                                     16
+#SPAWN_INTERVAL_FAST                                                 4
+
+#WALKER                                                              3
+#JUMPER                                                              3
+#CLIMBER                                                             3
+#FLOATER                                                             3
+#EXPLODER                                                            3
+#BLOCKER                                                             3
+#CUBER                                                               3
+#BUILDER                                                             3
+#PLATFORMER                                                          3
+#BASHER                                                              1
+#MINER                                                               1
+#DIGGER                                                              1
+
+:geoo/abstract/hatch.H:                           740        92
+
+:matt/goldmine/Goal.G:                       40       256
+
+:simon/water.W:                                   320       312
+:simon/water.W:                                   368       312
+:simon/water.W:                                   416       312
+:simon/water.W:                                   464       312
+:simon/water.W:                                   512       312
+:simon/water.W:                                   560       312
+:simon/water.W:                                   608       312
+:simon/water.W:                                   656       312
+:simon/water.W:                                   704       312
+:simon/water.W:                                   752       312
+:simon/water.W:                                   800       312
+:simon/water.W:                                   848       312
+:simon/water.W:                                   896       312
+:simon/water.W:                                   944       312
+:simon/water_main.W:                              320       360
+:simon/water_main.W:                              320       376
+:simon/water_main.W:                              320       384
+:simon/water_main.W:                              368       360
+:simon/water_main.W:                              368       376
+:simon/water_main.W:                              368       384
+:simon/water_main.W:                              416       360
+:simon/water_main.W:                              416       376
+:simon/water_main.W:                              416       384
+:simon/water_main.W:                              464       360
+:simon/water_main.W:                              464       376
+:simon/water_main.W:                              464       384
+:simon/water_main.W:                              512       360
+:simon/water_main.W:                              512       376
+:simon/water_main.W:                              512       384
+:simon/water_main.W:                              560       360
+:simon/water_main.W:                              560       376
+:simon/water_main.W:                              560       384
+:simon/water_main.W:                              608       360
+:simon/water_main.W:                              608       376
+:simon/water_main.W:                              608       384
+:simon/water_main.W:                              656       360
+:simon/water_main.W:                              656       376
+:simon/water_main.W:                              656       384
+:simon/water_main.W:                              704       360
+:simon/water_main.W:                              704       376
+:simon/water_main.W:                              704       384
+:simon/water_main.W:                              752       360
+:simon/water_main.W:                              752       376
+:simon/water_main.W:                              752       384
+:simon/water_main.W:                              800       360
+:simon/water_main.W:                              800       376
+:simon/water_main.W:                              800       384
+:simon/water_main.W:                              848       360
+:simon/water_main.W:                              848       376
+:simon/water_main.W:                              848       384
+:simon/water_main.W:                              872       360
+:simon/water_main.W:                              872       376
+:simon/water_main.W:                              872       384
+:simon/water_main.W:                              920       360
+:simon/water_main.W:                              920       376
+:simon/water_main.W:                              920       384
+:simon/water.W:                                   176       312
+:simon/water.W:                                   224       312
+:simon/water.W:                                   272       312
+:simon/water_main.W:                              176       360
+:simon/water_main.W:                              176       376
+:simon/water_main.W:                              176       384
+:simon/water_main.W:                              224       360
+:simon/water_main.W:                              224       376
+:simon/water_main.W:                              224       384
+:simon/water_main.W:                              272       360
+:simon/water_main.W:                              272       376
+:simon/water_main.W:                              272       384
+:simon/water.W:                                    32       312
+:simon/water.W:                                    80       312
+:simon/water.W:                                   128       312
+:simon/water_main.W:                               32       360
+:simon/water_main.W:                               32       376
+:simon/water_main.W:                               32       384
+:simon/water_main.W:                               80       360
+:simon/water_main.W:                               80       376
+:simon/water_main.W:                               80       384
+:simon/water_main.W:                              128       360
+:simon/water_main.W:                              128       376
+:simon/water_main.W:                              128       384
+:simon/water.W:                                   -16       312
+:simon/water_main.W:                              -16       360
+:simon/water_main.W:                              -16       376
+:simon/water_main.W:                              -16       384
+
+:geoo/construction/concrete/128:                  446       192
+:matt/goldmine/plank:                       696       160     fr
+:matt/goldmine/plank:                       696        72     fr
+:geoo/construction/concrete/128:                  566        72
+:geoo/construction/concrete/128:                  566       192
+:geoo/construction/concrete/032d:                 446       288     d
+:geoo/construction/concrete/032d:                 478       256     d
+:geoo/construction/concrete/032d:                 510       224     d
+:geoo/construction/concrete/032d:                 542       192     d
+:geoo/construction/concrete/032d:                 574       160     d
+:geoo/construction/concrete/032d:                 606       128     d
+:geoo/construction/concrete/032d:                 638        96     d
+:geoo/construction/concrete/032d:                 670        64     d
+:geoo/construction/concrete/064v:                 414       160     d
+:geoo/construction/concrete/032v:                 478       192     d
+:geoo/construction/concrete/032v:                 510       160     d
+:geoo/construction/concrete/064v:                 542        32     d
+:geoo/construction/concrete/032v:                 542       128     d
+:geoo/construction/concrete/032v:                 606        64     d
+:geoo/construction/concrete/032v:                 638        32     d
+:geoo/construction/concrete/128:                  834       192     frr
+:geoo/construction/concrete/128:                  706        72     frr
+:geoo/construction/concrete/128:                  706       192     frr
+:geoo/construction/concrete/032d:                 866       288     frrd
+:geoo/construction/concrete/032d:                 834       256     frrd
+:geoo/construction/concrete/032d:                 802       224     frrd
+:geoo/construction/concrete/032d:                 770       192     frrd
+:geoo/construction/concrete/032d:                 738       160     frrd
+:geoo/construction/concrete/032d:                 706       128     frrd
+:geoo/construction/concrete/064v:                 706         0     frrd
+:geoo/construction/concrete/064v:                 738        32     frrd
+:geoo/construction/concrete/064v:                 770        64     frrd
+:geoo/construction/concrete/064v:                 802        96     frrd
+:geoo/construction/concrete/064v:                 834       128     frrd
+:geoo/construction/concrete/064v:                 866       160     frrd
+:geoo/construction/concrete/064v:                 898       192     frrd
+:geoo/construction/concrete/016v:                 826        64     d
+:matt/goldmine/plank:                       696       200     fr
+:matt/goldmine/crate32:                     360       312
+:matt/goldmine/crate16:                     272       320
+:matt/goldmine/crate16:                     232       312
+:matt/goldmine/crate64:                      40       304
+:matt/underworld/03:                          58        28
+:matt/underworld/03:                          64        34     d

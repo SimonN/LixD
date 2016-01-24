@@ -1,0 +1,274 @@
+$BUILT 2014-06-06 10:26:33
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Glare(8p)
+
+#SIZE_X 2560
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+#START_X 0
+#START_Y 380
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 80
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 70
+#JUMPER 70
+#EXPLODER2 10
+#BLOCKER 1
+#BUILDER 50
+#PLATFORMER 30
+#BASHER 55
+#MINER 55
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/beach/Hatch.H: 34 -16
+:matt/beach/Hatch.H: 554 -18 r
+:matt/beach/Hatch.H: 680 -14
+:matt/beach/Hatch.H: 1192 -16 r
+:matt/beach/Hatch.H: 1312 -16
+:matt/beach/Hatch.H: 1828 -16 r
+:matt/beach/Hatch.H: 1962 -16
+:matt/beach/Hatch.H: 2466 -16 r
+
+:matt/beach/goal.G: 460 324
+:matt/beach/goal.G: 78 324
+:matt/beach/goal.G: 1108 324
+:matt/beach/goal.G: 724 326
+:matt/beach/goal.G: 1738 324
+:matt/beach/goal.G: 1358 324
+:matt/beach/goal.G: 2386 324
+:matt/beach/goal.G: 2000 326
+
+:matt/beach/daytime/15: 112 50
+:matt/beach/daytime/03: -24 32
+:matt/beach/daytime/15: 496 48
+:matt/beach/daytime/04: -16 32 rn
+:matt/beach/daytime/04: 112 32 rn
+:matt/beach/daytime/04: 240 32 rn
+:matt/beach/daytime/04: 368 32 rn
+:matt/beach/daytime/04: 496 32 rn
+:matt/beach/daytime/04: -80 192 rn
+:matt/beach/daytime/04: 48 176 rn
+:matt/beach/daytime/04: 176 192 rn
+:matt/beach/daytime/04: 304 192 rn
+:matt/beach/daytime/04: 432 176 rn
+:matt/beach/daytime/04: -16 368 rn
+:matt/beach/daytime/04: 112 368 rn
+:matt/beach/daytime/04: 240 368 rn
+:matt/beach/daytime/04: 368 368 rn
+:matt/beach/daytime/04: 496 368 rn
+:matt/beach/daytime/04: 560 192 rn
+:matt/beach/daytime/05: -48 -48
+:matt/beach/daytime/05: -48 96
+:matt/beach/daytime/05: -48 272
+:matt/beach/daytime/05: 614 -104 f
+:matt/beach/daytime/05: 608 48 f
+:matt/beach/daytime/05: 622 240 f
+:matt/steel/32x32.S: 94 392
+:matt/steel/32x32.S: 126 392
+:matt/steel/32x32.S: 478 392
+:matt/steel/32x32.S: 510 392
+:matt/beach/daytime/03: -52 30
+:matt/beach/daytime/03: 512 32
+:matt/steel/32x32.S: 624 0
+:matt/steel/32x32.S: 624 32
+:matt/beach/daytime/04: 192 336
+:matt/beach/daytime/04: 320 336
+:matt/beach/daytime/03: 256 336
+:matt/beach/daytime/03: 240 336 f
+:matt/beach/daytime/01: 592 256
+:matt/beach/daytime/01: 620 268
+:matt/beach/daytime/14: 606 298
+:matt/beach/daytime/02: 620 242
+:matt/beach/decor/grass08: 292 364
+:matt/beach/decor/grass11: 124 54
+:matt/beach/decor/grass11: 226 198
+:matt/beach/decor/grass11: 424 232
+:matt/beach/decor/grass11: 478 60
+:matt/beach/daytime/15: 752 48
+:matt/beach/daytime/03: 624 32
+:matt/beach/daytime/15: 1136 48
+:matt/beach/daytime/04: 624 32 rn
+:matt/beach/daytime/04: 752 32 rn
+:matt/beach/daytime/04: 880 32 rn
+:matt/beach/daytime/04: 1008 32 rn
+:matt/beach/daytime/04: 1136 32 rn
+:matt/beach/daytime/04: 555 179 rn
+:matt/beach/daytime/04: 688 176 rn
+:matt/beach/daytime/04: 816 192 rn
+:matt/beach/daytime/04: 944 192 rn
+:matt/beach/daytime/04: 1072 176 rn
+:matt/beach/daytime/04: 624 368 rn
+:matt/beach/daytime/04: 752 368 rn
+:matt/beach/daytime/04: 880 368 rn
+:matt/beach/daytime/04: 1008 368 rn
+:matt/beach/daytime/04: 1136 368 rn
+:matt/beach/daytime/04: 1200 192 rn
+:matt/beach/daytime/05: 592 -48
+:matt/beach/daytime/05: 592 96
+:matt/beach/decor/pail: 589 192
+:matt/beach/daytime/05: 592 272
+:matt/beach/daytime/05: 1248 -96 f
+:matt/beach/daytime/05: 1248 48 f
+:matt/beach/daytime/05: 1264 240 f
+:matt/beach/daytime/03: 592 32
+:matt/beach/daytime/03: 1152 32
+:matt/steel/32x32.S: 1264 0
+:matt/steel/32x32.S: 1264 32
+:matt/beach/daytime/04: 832 336
+:matt/beach/daytime/04: 960 336
+:matt/beach/daytime/03: 896 336
+:matt/beach/daytime/03: 880 336 f
+:matt/beach/decor/pail: 1232 208
+:matt/beach/daytime/01: 1232 256
+:matt/beach/daytime/01: 1264 272
+:matt/beach/daytime/14: 1248 304
+:matt/beach/daytime/02: 1264 240
+:matt/beach/decor/grass08: 928 368
+:matt/beach/decor/grass11: 768 48
+:matt/beach/decor/grass11: 864 192
+:matt/beach/decor/grass11: 1072 240
+:matt/beach/decor/grass11: 1120 64
+:matt/beach/daytime/02: 610 243
+:matt/beach/daytime/01: 581 247
+:matt/beach/daytime/01: 625 246
+:matt/steel/32x32.S: 624 0
+:matt/steel/32x32.S: 624 32
+:matt/steel/32x32.S: 1124 392
+:matt/steel/32x32.S: 1156 392
+:matt/steel/32x32.S: 742 392
+:matt/steel/32x32.S: 772 392
+:matt/beach/daytime/15: 1389 51
+:matt/beach/daytime/03: 1253 33
+:matt/beach/daytime/15: 1773 49
+:matt/beach/daytime/04: 1261 33 rn
+:matt/beach/daytime/04: 1389 33 rn
+:matt/beach/daytime/04: 1517 33 rn
+:matt/beach/daytime/04: 1645 33 rn
+:matt/beach/daytime/04: 1773 33 rn
+:matt/beach/daytime/04: 1197 193 rn
+:matt/beach/daytime/04: 1325 177 rn
+:matt/beach/daytime/04: 1453 193 rn
+:matt/beach/daytime/04: 1581 193 rn
+:matt/beach/daytime/04: 1709 177 rn
+:matt/beach/daytime/04: 1261 369 rn
+:matt/beach/daytime/04: 1389 369 rn
+:matt/beach/daytime/04: 1517 369 rn
+:matt/beach/daytime/04: 1645 369 rn
+:matt/beach/daytime/04: 1773 369 rn
+:matt/beach/daytime/04: 1837 193 rn
+:matt/beach/daytime/05: 1229 -47
+:matt/beach/daytime/05: 1229 97
+:matt/beach/daytime/05: 1229 273
+:matt/beach/daytime/05: 1891 -103 f
+:matt/beach/daytime/05: 1885 49 f
+:matt/beach/daytime/05: 1899 241 f
+:matt/steel/32x32.S: 1374 392
+:matt/steel/32x32.S: 1404 392
+:matt/steel/32x32.S: 1756 392
+:matt/steel/32x32.S: 1788 392
+:matt/beach/daytime/03: 1225 31
+:matt/beach/daytime/03: 1789 33
+:matt/steel/32x32.S: 1901 1
+:matt/steel/32x32.S: 1901 33
+:matt/beach/daytime/04: 1469 337
+:matt/beach/daytime/04: 1597 337
+:matt/beach/daytime/03: 1533 337
+:matt/beach/daytime/03: 1517 337 f
+:matt/beach/daytime/01: 1869 257
+:matt/beach/daytime/01: 1897 269
+:matt/beach/daytime/14: 1883 299
+:matt/beach/daytime/02: 1897 243
+:matt/beach/decor/grass08: 1569 365
+:matt/beach/decor/grass11: 1401 55
+:matt/beach/decor/grass11: 1503 199
+:matt/beach/decor/grass11: 1701 233
+:matt/beach/decor/grass11: 1755 61
+:matt/beach/daytime/15: 2029 49
+:matt/beach/daytime/03: 1901 33
+:matt/beach/daytime/15: 2413 49
+:matt/beach/daytime/04: 1901 33 rn
+:matt/beach/daytime/04: 2029 33 rn
+:matt/beach/daytime/04: 2157 33 rn
+:matt/beach/daytime/04: 2285 33 rn
+:matt/beach/daytime/04: 2413 33 rn
+:matt/beach/daytime/04: 1832 180 rn
+:matt/beach/daytime/04: 1965 177 rn
+:matt/beach/daytime/04: 2093 193 rn
+:matt/beach/daytime/04: 2221 193 rn
+:matt/beach/daytime/04: 2349 177 rn
+:matt/beach/daytime/04: 1901 369 rn
+:matt/beach/daytime/04: 2029 369 rn
+:matt/beach/daytime/04: 2157 369 rn
+:matt/beach/daytime/04: 2285 369 rn
+:matt/beach/daytime/04: 2413 369 rn
+:matt/beach/daytime/04: 2477 193 rn
+:matt/beach/daytime/05: 1869 -47
+:matt/beach/daytime/05: 1869 97
+:matt/beach/decor/pail: 1866 193
+:matt/beach/daytime/05: 1869 273
+:matt/beach/daytime/05: 2525 -95 f
+:matt/beach/daytime/05: 2525 49 f
+:matt/beach/daytime/05: 2541 241 f
+:matt/beach/daytime/03: 1869 33
+:matt/beach/daytime/03: 2429 33
+:matt/steel/32x32.S: 2544 0
+:matt/beach/daytime/04: 2109 337
+:matt/beach/daytime/04: 2237 337
+:matt/beach/daytime/03: 2173 337
+:matt/beach/daytime/03: 2157 337 f
+:matt/beach/decor/pail: 2509 209
+:matt/beach/daytime/01: 2509 257
+:matt/beach/daytime/01: 2541 273
+:matt/beach/daytime/14: 2525 305
+:matt/beach/daytime/02: 2541 241
+:matt/beach/decor/grass08: 2205 369
+:matt/beach/decor/grass11: 2045 49
+:matt/beach/decor/grass11: 2141 193
+:matt/beach/decor/grass11: 2349 241
+:matt/beach/decor/grass11: 2397 65
+:matt/beach/daytime/02: 1887 244
+:matt/beach/daytime/01: 1858 248
+:matt/beach/daytime/01: 1902 247
+:matt/steel/32x32.S: 1904 0
+:matt/steel/32x32.S: 1904 32
+:matt/steel/32x32.S: 2402 392
+:matt/steel/32x32.S: 2432 392
+:matt/steel/32x32.S: 2019 393
+:matt/steel/32x32.S: 2049 393
+:matt/beach/decor/pail: 1233 202
+:matt/beach/daytime/00: 1242 247
+:matt/beach/daytime/00: 1215 240
+:matt/beach/daytime/02: 1249 236
+:matt/steel/32x32.S: 1264 0
+:matt/steel/32x32.S: 1264 32
+:matt/steel/32x32.S: 2480 32
+:matt/steel/32x32.S: 2512 32
+:matt/steel/32x32.S: 2544 32
+:matt/steel/32x32.S: 16 32
+:matt/steel/32x32.S: 48 32
+:matt/steel/32x32.S: 560 32
+:matt/steel/32x32.S: 592 32
+:matt/steel/32x32.S: 624 32
+:matt/steel/32x32.S: 656 32
+:matt/steel/32x32.S: 688 32
+:matt/steel/32x32.S: 1200 32
+:matt/steel/32x32.S: 1232 32
+:matt/steel/32x32.S: 1264 32
+:matt/steel/32x32.S: 1296 32
+:matt/steel/32x32.S: 1328 32
+:matt/steel/32x32.S: 1840 32
+:matt/steel/32x32.S: 1872 32
+:matt/steel/32x32.S: 1936 32
+:matt/steel/32x32.S: 1968 32

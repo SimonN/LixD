@@ -1,0 +1,102 @@
+$BUILT 2014-07-01 20:40:34
+$AUTHOR Michael S. Repton
+$GERMAN 
+$ENGLISH Put Your Lix on Ice
+
+#SIZE_X 1280
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 30
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 5
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 1
+#PLATFORMER 5
+#MINER 5
+#JUMPER 5
+#BATTER 5
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: 272 240
+
+:matt/winter/Goal.G: 1040 208
+
+:simon/crystal.W: 640 352
+:simon/crystal.W: 688 352
+
+:matt/winter/15: 81 188
+:matt/winter/17: 64 80
+:matt/winter/04: 64 176
+:matt/winter/17: 32 160 frr
+:matt/winter/05: 16 208
+:matt/winter/16: 128 288 frr
+:matt/winter/04: 48 272 frr
+:matt/winter/10: 176 320
+:matt/winter/10: 320 288
+:matt/winter/10: 384 336 frr
+:matt/winter/15: 192 224
+:matt/winter/00: 304 176
+:matt/winter/16: 464 224
+:matt/winter/17: 528 96 frr
+:geoo/steel/dark_64x64o.S: 608 208
+:matt/winter/17: 560 192
+:matt/winter/05: 512 144
+:matt/winter/04: 544 272
+:geoo/steel/dark_64x64o.S: 672 208
+:matt/winter/01: 400 160
+:matt/winter/01: 432 176 frr
+:matt/winter/01: 432 144
+:matt/winter/07: 176 16 rr
+:matt/winter/07: 192 32 rr
+:matt/winter/07: 208 16 rr
+:matt/winter/07: 256 32 rr
+:matt/winter/07: 272 48 rr
+:matt/winter/07: 144 -16 rr
+:matt/winter/10: 128 -48 rr
+:matt/winter/07: 304 32 rr
+:matt/winter/07: 320 16 rr
+:matt/winter/07: 352 48 rr
+:matt/winter/07: 368 32 rr
+:matt/winter/07: 384 48 rr
+:matt/winter/07: 448 32 rr
+:matt/winter/07: 464 32 rr
+:matt/winter/10: 272 -32 frr
+:matt/winter/07: 496 0 rr
+:matt/winter/07: 512 16 rr
+:matt/winter/07: 528 0 rr
+:matt/winter/07: 576 -32 rr
+:matt/winter/10: 400 -64 f
+:matt/winter/16: 720 160 frr
+:matt/winter/10: 736 240
+:matt/winter/05: 704 224
+:matt/winter/10: 832 208 frr
+:matt/winter/05: 944 96
+:matt/winter/10: 944 256
+:matt/winter/16: 1120 272 frr
+:matt/winter/01: 1072 272
+:matt/winter/01: 1104 256
+:matt/winter/03: 1008 272
+:matt/winter/10: 1024 336
+:matt/winter/10: 752 304
+:matt/winter/10: 944 336
+:matt/winter/04: 864 272 frr
+:matt/winter/07: 592 0 rr
+:matt/winter/07: 640 0 rr
+:matt/winter/07: 656 16 rr
+:matt/winter/07: 672 0 rr
+:matt/winter/07: 720 0 rr
+:matt/winter/07: 736 -16 rr
+:matt/winter/10: 576 -64 f

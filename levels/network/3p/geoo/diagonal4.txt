@@ -1,0 +1,106 @@
+$BUILT 2012-04-24 15:16:27
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Diagonal (Part 4)
+
+#SIZE_X 384
+#SIZE_Y 384
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 80
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 50
+#JUMPER 50
+#NOTHING 0
+#BATTER 10
+#EXPLODER2 20
+#CUBER 5
+#BUILDER 100
+#PLATFORMER 60
+#NOTHING 0
+#BASHER 60
+#MINER 40
+#NOTHING 0
+
+:geoo/abstract/hatch.H: 264 176
+:geoo/abstract/hatch.H: 136 304
+:geoo/abstract/hatch.H: 8 48
+
+:geoo/abstract/goal.G: 8 368
+:geoo/abstract/goal.G: 264 112
+:geoo/abstract/goal.G: 136 240
+
+:matt/marble/22e: 368 80
+:matt/marble/22e: 320 128
+:matt/marble/22e: 272 176
+:matt/marble/18a: 292 308
+:matt/marble/18a: 252 268
+:matt/marble/22e: 224 224
+:matt/marble/22e: 176 272
+:matt/marble/22e: 128 320
+:matt/marble/22e: 80 368
+:matt/marble/22e: 32 32
+:matt/marble/18a: 36 180
+:matt/marble/18a: 380 140
+:matt/marble/22e: 376 96
+:matt/marble/22e: 328 144
+:matt/marble/22e: 280 192
+:matt/marble/22e: 232 240
+:matt/marble/22e: 184 288
+:matt/marble/22e: 136 336
+:matt/marble/22e: 88 0
+:matt/marble/22e: 40 48
+:matt/marble/22e: 0 112
+:matt/marble/22e: 336 160
+:matt/marble/22e: 288 208
+:matt/marble/22e: 240 256
+:matt/marble/22e: 192 304
+:matt/marble/18a: 124 12
+:matt/marble/22e: 144 352
+:matt/marble/22e: 96 16
+:matt/marble/22e: 48 64
+:matt/marble/22e: 8 248
+:matt/marble/22e: 344 296
+:matt/marble/22e: 296 344
+:matt/marble/22e: 248 8
+:matt/marble/22e: 200 56
+:matt/marble/22e: 152 104
+:matt/marble/22e: 104 152
+:matt/marble/22e: 56 200
+:matt/marble/22e: 16 264
+:matt/marble/22e: 352 312
+:matt/marble/22e: 304 360
+:matt/marble/22e: 256 24
+:matt/marble/18a: 164 52
+:matt/marble/22e: 208 72
+:matt/marble/21a: 200 160
+:matt/marble/22e: 160 120
+:matt/marble/22e: 112 168
+:matt/marble/22e: 64 216
+:matt/marble/21a: 72 288
+:matt/marble/22e: 24 280
+:matt/marble/22e: 360 328
+:matt/marble/21a: 328 32
+:matt/marble/22e: 312 376
+:matt/marble/22e: 264 40
+:matt/marble/22e: 216 88
+:matt/marble/22e: 168 136
+:matt/marble/22e: 120 184
+:matt/marble/22e: 72 232
+:matt/marble/09d: 240 320
+:matt/marble/09d: 176 0
+:geoo/steel/32x16o.S: 8 32
+:matt/marble/09d: 304 256
+:matt/marble/09d: 368 192
+:matt/marble/09d: 48 128
+:matt/marble/09d: 112 64
+:geoo/steel/32x16o.S: 264 160
+:geoo/steel/32x16o.S: 136 288

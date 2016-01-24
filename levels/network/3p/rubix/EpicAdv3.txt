@@ -1,0 +1,137 @@
+$BUILT 2014-04-16 21:47:00
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Fast money miner (3p)
+
+#SIZE_X 2000
+#SIZE_Y 800
+#TORUS_X 1
+#TORUS_Y 0
+#START_X 0
+#START_Y 380
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 65
+#INITIAL 85
+#REQUIRED 85
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 80
+#JUMPER 80
+#NOTHING 0
+#RUNNER 15
+#NOTHING 0
+#PLATFORMER 99
+#MINER -1
+#NOTHING 0
+#CUBER 20
+#BATTER 15
+#NOTHING 0
+#NOTHING 0
+
+:matt/goldmine/GoalTop.D: 272 694
+:matt/goldmine/minecart.D: 504 690
+:matt/goldmine/GoalTop.D: 938 696
+:matt/goldmine/minecart.D: 1168 690
+:matt/goldmine/GoalTop.D: 1614 696
+:matt/goldmine/minecart.D: 1842 690
+
+:matt/goldmine/Hatch.H: 1274 26
+:matt/goldmine/Hatch.H: 1944 20
+:matt/goldmine/Hatch.H: 608 28
+
+:matt/goldmine/Goal.G: 272 742
+:matt/goldmine/Goal.G: 938 744
+:matt/goldmine/Goal.G: 1614 744
+
+:matt/goldmine/07: 560 240 rrr
+:matt/goldmine/07: 624 240 frrr
+:matt/goldmine/07: 1280 240 frrr
+:matt/goldmine/07: 1216 240 rrr
+:matt/goldmine/07: 1952 240 frrr
+:matt/goldmine/07: 1888 240 rrr
+:matt/goldmine/09: 346 632
+:matt/goldmine/09: 356 510
+:matt/goldmine/09: 184 520
+:matt/goldmine/09: 190 664
+:matt/goldmine/09: 1692 416
+:matt/goldmine/09: 1012 432
+:matt/goldmine/09: 848 652
+:matt/goldmine/09: 1010 626
+:matt/goldmine/03: 1244 78
+:matt/goldmine/07: 436 390 frr
+:matt/goldmine/07: 636 390
+:matt/goldmine/07: 1772 36 frr
+:matt/goldmine/07: 1968 38
+:matt/goldmine/07: 1974 388
+:matt/goldmine/07: 1774 388 frr
+:matt/goldmine/07: 1304 388
+:matt/goldmine/07: 1104 388 frr
+:matt/goldmine/07: 1298 40
+:matt/goldmine/07: 1102 42 frr
+:matt/goldmine/07: 630 42
+:matt/goldmine/07: 434 42 frr
+:matt/goldmine/07: 1232 756
+:matt/goldmine/04: 304 704 r
+:matt/goldmine/04: 144 704 fr
+:matt/goldmine/04: 304 608 rrr
+:matt/goldmine/04: 144 608 frrr
+:matt/goldmine/04: 304 544 r
+:matt/goldmine/04: 144 544 fr
+:matt/goldmine/04: 304 448 rrr
+:matt/goldmine/04: 144 448 frrr
+:matt/goldmine/04: 304 368 r
+:matt/goldmine/04: 144 368 fr
+:matt/goldmine/04: 304 272 rrr
+:matt/goldmine/04: 144 272 frrr
+:matt/goldmine/04: 304 192 r
+:matt/goldmine/04: 144 192 fr
+:matt/goldmine/04: 304 96 rrr
+:matt/goldmine/04: 144 96 frrr
+:matt/goldmine/07: -32 720
+:matt/goldmine/07: 432 720 frr
+:matt/goldmine/04: 968 704 r
+:matt/goldmine/04: 808 704 fr
+:matt/goldmine/04: 968 608 rrr
+:matt/goldmine/04: 808 608 frrr
+:matt/goldmine/04: 968 544 r
+:matt/goldmine/04: 808 544 fr
+:matt/goldmine/04: 968 448 rrr
+:matt/goldmine/04: 808 448 frrr
+:matt/goldmine/04: 960 368 r
+:matt/goldmine/04: 800 368 fr
+:matt/goldmine/04: 960 272 rrr
+:matt/goldmine/04: 800 272 frrr
+:matt/goldmine/04: 960 192 r
+:matt/goldmine/04: 800 192 fr
+:matt/goldmine/04: 960 96 rrr
+:matt/goldmine/04: 800 96 frrr
+:matt/goldmine/07: 632 720
+:matt/goldmine/07: 1096 720 frr
+:matt/goldmine/04: 1642 704 r
+:matt/goldmine/04: 1482 704 fr
+:matt/goldmine/04: 1642 608 rrr
+:matt/goldmine/04: 1482 608 frrr
+:matt/goldmine/04: 1642 544 r
+:matt/goldmine/04: 1482 544 fr
+:matt/goldmine/04: 1642 448 rrr
+:matt/goldmine/04: 1482 448 frrr
+:matt/goldmine/04: 1632 368 r
+:matt/goldmine/04: 1472 368 fr
+:matt/goldmine/04: 1632 272 rrr
+:matt/goldmine/04: 1472 272 frrr
+:matt/goldmine/04: 1632 192 r
+:matt/goldmine/04: 1472 192 fr
+:matt/goldmine/04: 1632 96 rrr
+:matt/goldmine/04: 1472 96 frrr
+:matt/goldmine/07: 1306 720
+:matt/goldmine/07: 1770 720 frr
+:geoo/steel/dark_32x16o.S: 288 790
+:geoo/steel/dark_32x16o.S: 954 792
+:geoo/steel/dark_32x16o.S: 1628 792
+:geoo/steel/dark_32x16o.S: 1958 68
+:geoo/steel/dark_32x16o.S: 626 76
+:geoo/steel/dark_32x16o.S: 1290 76

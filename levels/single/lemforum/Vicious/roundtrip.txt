@@ -1,0 +1,143 @@
+$BUILT 2012-05-28 15:24:27
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH Round Trip
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 240
+#INITIAL 80
+#REQUIRED 76
+#SPAWN_INTERVAL 18
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 4
+#FLOATER 1
+#EXPLODER 3
+#BLOCKER 1
+#BUILDER 2
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 64 240
+:geoo/construction/Hatch.H: 464 240
+
+:geoo/construction/Goal2.G: 552 80
+
+:geoo/construction/factory.T: 552 240
+
+:simon/acid.W: 160 352
+:simon/acid.W: 208 352
+:simon/acid.W: 256 352
+:simon/acid.W: 304 352
+:simon/acid.W: 352 352
+:simon/acid.W: 400 352
+:simon/acid.W: 448 352
+:simon/acid.W: 496 352
+
+:geoo/steel/dark_32x32o.S: 0 304
+:geoo/steel/dark_32x32o.S: 32 304
+:geoo/steel/dark_32x32o.S: 64 304
+:geoo/steel/dark_32x32o.S: 96 304
+:geoo/steel/dark_32x32o.S: 128 304
+:geoo/steel/dark_32x32o.S: 128 336
+:geoo/steel/dark_32x32o.S: 128 368
+:geoo/construction/concrete/032h: 160 304
+:geoo/construction/concrete/032h: 224 304
+:geoo/construction/concrete/032h: 288 304
+:geoo/construction/concrete/032h: 352 304
+:geoo/construction/concrete/032h: 416 304
+:geoo/construction/concrete/032h: 480 304
+:geoo/steel/dark_32x32o.S: 0 240
+:geoo/steel/dark_32x32o.S: 0 272
+:geoo/steel/dark_32x32o.S: 0 176
+:geoo/steel/dark_32x32o.S: 0 208
+:geoo/steel/dark_32x32o.S: 0 112
+:geoo/steel/dark_32x32o.S: 0 144
+:geoo/steel/dark_32x32o.S: 0 48
+:geoo/steel/dark_32x32o.S: 0 80
+:geoo/abstract/cvblocks/030: 320 272
+:geoo/abstract/cvblocks/030: 320 240
+:geoo/abstract/cvblocks/030: 320 208
+:geoo/abstract/cvblocks/030: 320 176
+:geoo/abstract/cvblocks/030: 320 144
+:geoo/abstract/cvblocks/030: 352 144
+:geoo/abstract/cvblocks/030: 384 144
+:geoo/abstract/cvblocks/030: 416 144
+:geoo/steel/dark_32x32o.S: 0 16
+:geoo/construction/concrete/016: 128 48
+:geoo/construction/concrete/016: 144 48
+:geoo/construction/concrete/016: 160 48
+:geoo/construction/concrete/016: 176 48
+:geoo/construction/concrete/016: 192 48
+:geoo/construction/concrete/016: 208 48
+:geoo/construction/concrete/016: 224 48
+:geoo/construction/concrete/016: 240 48
+:geoo/construction/concrete/016: 256 48
+:geoo/construction/concrete/016: 272 48
+:geoo/construction/concrete/016: 288 48
+:geoo/construction/concrete/016: 304 48
+:geoo/construction/concrete/016: 320 48
+:geoo/construction/concrete/016: 320 64
+:geoo/construction/concrete/016: 320 80
+:geoo/construction/concrete/016: 320 96
+:geoo/construction/concrete/016: 320 112
+:geoo/steel/dark_32x32o.S: 0 -16
+:geoo/construction/concrete/032h: 32 48
+:geoo/abstract/cvblocks/046: 0 336
+:geoo/construction/pillar_top_shaded: 128 64
+:geoo/construction/pillar_32: 128 80
+:geoo/construction/pillar_32: 128 112
+:geoo/construction/pillar_32: 128 144
+:geoo/construction/pillar_32: 128 176
+:geoo/construction/pillar_32: 128 208
+:geoo/construction/pillar_32: 128 240
+:geoo/construction/pillar_32: 128 272
+:geoo/abstract/cvblocks/047: 544 304
+:geoo/construction/concrete/016h: 488 144
+:geoo/construction/concrete/032h: 552 144
+:geoo/construction/concrete/016: 352 256
+:geoo/construction/concrete/016: 360 248
+:geoo/construction/concrete/016: 368 240
+:geoo/construction/concrete/016: 376 232
+:geoo/construction/concrete/016: 384 224
+:geoo/construction/concrete/016: 392 216
+:geoo/construction/concrete/016: 400 208
+:geoo/construction/concrete/016: 408 200
+:geoo/construction/concrete/016: 416 192
+:geoo/construction/concrete/016: 424 184
+:geoo/construction/concrete/016: 432 176
+:geoo/construction/pillar_base: 32 32
+:geoo/construction/concrete/016v: 512 16
+:geoo/construction/concrete/016v: 512 48
+:geoo/construction/concrete/016v: 512 80
+:geoo/construction/concrete/016v: 512 112
+:geoo/construction/pillar_base: 488 0
+:geoo/construction/concrete/016v: 56 0
+:geoo/construction/concrete/016v: 624 176
+:geoo/construction/concrete/016v: 624 208
+:geoo/construction/concrete/016v: 624 240
+:geoo/construction/concrete/016v: 624 272
+:geoo/construction/concrete/016v: 624 304
+:geoo/construction/concrete/016v: 624 336
+:geoo/construction/concrete/016v: 624 368
+:geoo/construction/concrete/016v: 248 336
+:geoo/construction/concrete/016v: 248 368
+:geoo/construction/concrete/016v: 344 336
+:geoo/construction/concrete/016v: 344 368
+:geoo/construction/concrete/016v: 440 336
+:geoo/construction/concrete/016v: 440 368
+:geoo/construction/concrete/016: 320 128
+:geoo/construction/concrete/016h: 520 144
+:geoo/construction/concrete/032: 616 144

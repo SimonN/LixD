@@ -1,0 +1,91 @@
+$BUILT 2013-07-21 15:52:10
+$AUTHOR mobius
+$GERMAN 
+$ENGLISH Cold Irons Bound
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 50
+#SPAWN_INTERVAL 50
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#FLOATER 10
+#BLOCKER 1
+#BUILDER 1
+#BASHER 1
+#MINER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: 544 108 r
+
+:matt/winter/Goal.G: 150 106
+:matt/winter/Goal.G: 96 296
+
+:simon/crystal.W: 592 352
+:simon/crystal.W: 448 352
+:simon/crystal.W: 496 352
+:simon/crystal.W: 544 352
+:simon/crystal.W: 400 352
+:simon/crystal.W: 256 352
+:simon/crystal.W: 304 352
+:simon/crystal.W: 352 352
+:simon/crystal.W: 208 352
+:simon/crystal.W: 64 352
+:simon/crystal.W: 112 352
+:simon/crystal.W: 160 352
+:simon/crystal.W: -32 352
+:simon/crystal.W: 16 352
+
+:matt/winter/15: 212 204
+:matt/winter/07: 349 259 f
+:matt/winter/15: 326 262
+:matt/winter/07: 442 262 f
+:matt/winter/10: 232 186
+:matt/winter/14: 214 210 f
+:matt/winter/06: 136 170 r
+:matt/winter/06: 200 170 r
+:matt/winter/08: 262 170 r
+:matt/winter/08: 128 170 fr
+:matt/winter/15: 318 194
+:matt/winter/03: 406 186
+:matt/winter/07: 584 236 f
+:matt/winter/15: 518 230
+:matt/winter/03: 446 202
+:matt/winter/02: 502 202 r
+:matt/winter/10: 334 178
+:matt/winter/07: 280 110 f
+:matt/winter/06: 280 46
+:matt/winter/07: 211 39 f
+:matt/winter/10: 118 -30
+:matt/winter/07: 352 40 f
+:matt/winter/10: 278 -54
+:matt/winter/07: 456 88 f
+:matt/winter/10: 374 -14
+:matt/winter/07: 610 61 f
+:matt/winter/10: 510 -6
+:matt/winter/00: 502 -22
+:matt/winter/10: 614 -30
+:matt/winter/06: 80 360 r
+:matt/winter/06: 144 360 r
+:matt/winter/08: 206 360 r
+:matt/winter/08: 72 360 fr
+:geoo/steel/dark_48x32o.S: 224 240
+:geoo/steel/dark_64x32o.S: 256 272
+:geoo/steel/dark_16x16o.S: 216 224
+:matt/winter/15: 470 -10
+:matt/winter/15: 584 -10
+:matt/winter/16: 55 -82 f

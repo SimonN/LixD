@@ -1,0 +1,74 @@
+$BUILT 2014-05-29 01:57:35
+$AUTHOR mobius
+$GERMAN 
+$ENGLISH Over My Head
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 35
+#REQUIRED 35
+#SPAWN_INTERVAL 50
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#CLIMBER 1
+#FLOATER 1
+#BUILDER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/bricks/Hatch.H: 80 8
+
+:matt/bricks/Goal.G: 544 320
+
+:matt/bricks/03: -32 272
+:matt/bricks/03: -32 336
+:matt/bricks/03: -32 208
+:matt/bricks/03: 32 272
+:matt/bricks/03: 32 336
+:matt/bricks/03: 32 208
+:matt/bricks/03: 160 272
+:matt/bricks/02: 224 368
+:matt/bricks/03: 160 336
+:matt/bricks/03: 96 336
+:matt/bricks/02: 352 368
+:matt/bricks/02: 416 368
+:matt/bricks/02: 480 368
+:matt/bricks/02: 544 368
+:geoo/steel/dark_64x64o.S: 160 224
+:geoo/steel/dark_64x64o.S: 160 336
+:matt/bricks/03: 96 272
+:matt/bricks/03: 96 208
+:matt/marble/21c: -8 208 d
+:matt/marble/21c: 56 208 d
+:matt/marble/21c: 112 208 d
+:matt/bricks/03: 352 160
+:matt/bricks/03: 416 160
+:matt/bricks/03: 288 96
+:matt/bricks/03: 96 96
+:matt/bricks/03: 160 96
+:matt/bricks/03: 224 96
+:matt/bricks/03: 32 96
+:matt/bricks/03: 480 160
+:geoo/steel/dark_64x64o.S: 96 336
+:matt/bricks/02: 288 368
+:matt/bricks/03: 288 160
+:matt/bricks/03: 320 96 d
+:matt/bricks/02: 608 368
+:geoo/steel/dark_64x64o.S: 576 0
+:geoo/steel/dark_64x64o.S: 512 0
+:geoo/steel/dark_64x64o.S: 448 0
+:matt/bricks/03: 0 96 d

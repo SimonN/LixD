@@ -1,0 +1,125 @@
+$BUILT 2014-06-08 15:48:57
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Catch your Death
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 28
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#CLIMBER 10
+#FLOATER 5
+#JUMPER 4
+#PLATFORMER 1
+#BASHER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: 48 158
+:matt/winter/Hatch.H: 48 4
+
+:matt/winter/Goal.G: 400 200
+
+:matt/water.W: 256 368
+:matt/water.W: 352 368
+:matt/water.W: 384 368
+:matt/water.W: 480 368
+:matt/water.W: 512 368
+
+:matt/winter/06: 368 264 r
+:matt/winter/06: 432 264 r
+:matt/winter/15: 440 264
+:matt/winter/11: 298 364
+:matt/winter/11: 418 364
+:matt/winter/15: 32 203
+:matt/winter/05: -32 112
+:matt/winter/14: 206 176
+:matt/winter/03: 68 200
+:matt/winter/10: -44 208
+:matt/winter/10: 122 202 r
+:matt/winter/10: 0 320
+:matt/winter/10: -112 304
+:matt/winter/10: 20 268
+:matt/winter/05: 188 208
+:matt/winter/13: 298 214
+:matt/winter/18: 296 192
+:matt/winter/13: 306 192
+:matt/winter/13: 320 224
+:matt/winter/03: 352 268
+:matt/winter/03: 290 260
+:matt/winter/11: 410 364
+:matt/winter/06: 244 304
+:matt/winter/11: 290 364
+:matt/winter/03: 160 44
+:matt/winter/03: 100 44
+:matt/winter/03: 40 44
+:matt/winter/06: 244 234
+:matt/winter/06: 244 296
+:geoo/steel/16x32o.S: 286 368
+:matt/winter/06: 286 32 d
+:matt/winter/06: 290 190
+:matt/winter/06: 290 126
+:matt/winter/06: 290 62
+:matt/winter/06: 290 -2
+:matt/winter/06: 270 48
+:matt/winter/06: 306 32 d
+:matt/winter/06: 242 176
+:matt/winter/06: 242 240
+:matt/winter/06: 242 304
+:geoo/steel/16x32o.S: 344 368
+:geoo/steel/16x32o.S: 464 368
+:geoo/steel/16x32o.S: 408 368
+:matt/winter/16: 528 288
+:geoo/steel/16x32o.S: 528 368
+:matt/winter/15: 290 274 n
+:matt/winter/06: 290 240
+:matt/winter/06: 270 112
+:matt/winter/06: 270 152
+:geoo/steel/16x32o.S: 290 208
+:geoo/steel/16x32o.S: 290 272
+:geoo/steel/16x32o.S: 290 240
+:geoo/steel/32x32o.S: 228 368
+:matt/winter/06: 288 352 rd
+:matt/winter/06: 416 352 rd
+:matt/winter/17: -24 168
+:matt/winter/05: 598 -16
+:matt/winter/05: 592 192
+:matt/winter/05: 578 96
+:matt/winter/03: -40 48 f
+:matt/winter/03: -54 44
+:matt/winter/13: 496 264
+:matt/winter/15: 432 280
+:matt/winter/07: 308 0 f
+:matt/winter/07: 326 0 f
+:matt/winter/07: 344 0 f
+:matt/winter/07: 362 0 f
+:matt/winter/07: 380 0 f
+:matt/winter/07: 398 0 f
+:matt/winter/07: 416 0 f
+:matt/winter/07: 434 0 f
+:matt/winter/07: 452 0 f
+:matt/winter/07: 470 0 f
+:matt/winter/07: 488 0 f
+:matt/winter/07: 506 0 f
+:matt/winter/07: 524 0 f
+:matt/winter/07: 542 0 f
+:matt/winter/07: 560 0 f
+:matt/winter/07: 578 0 f
+:matt/winter/07: 596 0 f

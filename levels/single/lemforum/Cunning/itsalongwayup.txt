@@ -1,0 +1,131 @@
+$BUILT                                             2012-01-21 06:11:50
+$AUTHOR                                                         finlay
+$GERMAN                                                               
+$ENGLISH                                            It's a Long Way Up
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                             0
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                             0
+#INITIAL                                                            80
+#REQUIRED                                                           77
+#SPAWN_INTERVAL                                                     48
+
+#NOTHING                                                             0
+#NOTHING                                                             0
+#CLIMBER                                                             3
+#FLOATER                                                             0
+#EXPLODER                                                            1
+#BLOCKER                                                             2
+#BUILDER                                                             0
+#BASHER                                                              2
+#MINER                                                               0
+#DIGGER                                                              0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:matt/marble/Hatch.H:                        240       144
+
+:matt/marble/Goal.G:                         576       336
+
+:geoo/construction/sawblade_medium.F:             560       272
+:matt/water.W:                                    368       368
+:matt/water.W:                                    336       368
+:matt/water.W:                                    304       368
+:matt/water.W:                                    272       368
+:matt/water.W:                                    240       368
+:matt/water.W:                                    208       368
+:matt/water.W:                                    176       368
+:matt/water.W:                                    144       368
+:matt/water.W:                                    384       368
+
+:geoo/steel/32x64o.S:                             304       160
+:geoo/steel/32x64o.S:                             304       224
+:geoo/steel/32x64o.S:                             504       160
+:geoo/steel/32x64o.S:                             504       224
+:matt/marble/23:                             608       304
+:matt/marble/23d:                            608       320     d
+:matt/marble/23:                             576       272
+:matt/marble/23d:                            576       288     d
+:matt/marble/21:                             472       304
+:matt/marble/08d:                            272       288
+:matt/marble/08d:                            208       288
+:geoo/steel/32x16o.S:                             304       144
+:geoo/steel/32x16o.S:                             208       272
+:matt/marble/08d:                            144       288
+:matt/marble/12d:                            240       272
+:geoo/steel/32x32o.S:                             160       232
+:matt/marble/01d:                            128       306
+:matt/marble/01d:                            112       306
+:matt/marble/20d:                             96       272
+:geoo/steel/32x32o.S:                             416       368
+:geoo/steel/32x32o.S:                             112       368
+:matt/marble/20d:                             96       336
+:matt/marble/01d:                            160       264
+:matt/marble/01d:                            176       264
+:matt/marble/01d:                            160       272
+:matt/marble/01d:                            176       272
+:matt/marble/01d:                            192       272
+:matt/marble/01d:                            160       280
+:matt/marble/01d:                            176       280
+:matt/marble/01d:                            192       280
+:matt/marble/20d:                             48       320
+:matt/marble/04d:                             48       384
+:matt/marble/01d:                             80       392
+:matt/marble/04d:                             16       384
+:matt/marble/20d:                             32       320
+:matt/marble/20d:                             48       256
+:matt/marble/20d:                             32       256
+:matt/marble/20d:                             48       192
+:matt/marble/20d:                             32       192
+:matt/marble/20d:                             48       160
+:matt/marble/20d:                             32       160
+:matt/marble/04d:                             16       144
+:matt/marble/04d:                             48       144
+:matt/marble/01d:                             80       144
+:matt/marble/01d:                              0       392
+:matt/marble/01d:                              0       144
+:matt/marble/01:                             392       256
+:matt/marble/01:                             384       264
+:matt/marble/01:                             376       272
+:matt/marble/01:                             368       280
+:matt/marble/01:                             360       288
+:matt/marble/01:                             352       296
+:matt/marble/01:                             344       304
+:matt/marble/01:                             336       312
+:matt/marble/23:                             576        48
+:matt/marble/23:                             608        48
+:matt/marble/23:                             576        80
+:matt/marble/23:                             608        80
+:matt/marble/23:                             576       112
+:matt/marble/23:                             608       112
+:matt/marble/23:                             576       144
+:matt/marble/23:                             608       144
+:matt/marble/23:                             576       176
+:matt/marble/23:                             608       176
+:matt/marble/21:                             552       224
+:matt/marble/23:                             576       208
+:matt/marble/23:                             608       208
+:matt/marble/23:                             576       240
+:matt/marble/23:                             608       240
+:matt/marble/23:                             608       272
+:matt/marble/21:                             448       384
+:matt/marble/21:                             512       384
+:matt/marble/21:                             576       384
+:matt/marble/08:                             408       288
+:matt/marble/21:                             512       304
+:matt/marble/21:                             336       144
+:matt/marble/21:                             400       144
+:matt/marble/21:                             464       144
+:matt/marble/21:                             488       144
+:matt/marble/01:                             472       288
+:matt/marble/01:                             488       288
+:matt/marble/01:                             504       288
+:matt/marble/01:                             520       288

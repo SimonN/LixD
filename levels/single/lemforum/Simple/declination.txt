@@ -1,0 +1,84 @@
+$BUILT                                             2012-03-26 15:52:41
+$AUTHOR                                                   Insane Steve
+$GERMAN                                                               
+$ENGLISH                                Declination Innovation Station
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                             0
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                             0
+#INITIAL                                                            40
+#REQUIRED                                                           39
+#SPAWN_INTERVAL                                                     32
+#SPAWN_INTERVAL_FAST                                                 4
+
+#CLIMBER                                                            20
+#FLOATER                                                             1
+#EXPLODER                                                           20
+#BLOCKER                                                            20
+#BUILDER                                                            20
+#BASHER                                                             20
+#MINER                                                              20
+#DIGGER                                                             20
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:geoo/abstract/hatch.H:                            64        64
+
+:matt/marble/Goal.G:                          48       288
+
+:matt/bricks/12:                              32        64
+:matt/bricks/12:                              32        96
+:matt/bricks/12:                              64        96
+:matt/bricks/12:                              96        96
+:matt/bricks/12:                             128        96
+:matt/bricks/12:                             160        96
+:matt/bricks/12:                             192        96
+:matt/bricks/12:                             224        96
+:matt/bricks/12:                             256        96
+:matt/bricks/12:                             256        64
+:matt/bricks/12:                             352        64
+:matt/bricks/12:                             576        96
+:matt/bricks/12:                             352        96
+:matt/bricks/12:                             384        96
+:matt/bricks/12:                             416        96
+:matt/bricks/12:                             448        96
+:matt/bricks/12:                             480        96
+:matt/bricks/12:                             512        96
+:matt/bricks/12:                             544        96
+:matt/bricks/12:                             576        64
+:matt/bricks/12:                              32       336
+:matt/bricks/12:                              64       336
+:matt/bricks/12:                              96       336
+:matt/bricks/12:                             128       336
+:matt/bricks/12:                             160       336
+:matt/bricks/12:                             192       336
+:matt/bricks/12:                             224       336
+:matt/bricks/12:                             256       336
+:matt/bricks/12:                             352       336
+:matt/bricks/12:                             384       336
+:matt/bricks/12:                             416       336
+:matt/bricks/12:                             448       336
+:matt/bricks/12:                             480       336
+:matt/bricks/12:                             512       336
+:matt/bricks/12:                             544       336
+:matt/bricks/12:                             576       336
+:matt/bricks/12:                              64       368
+:matt/bricks/12:                             224       368
+:matt/bricks/12:                             384       368
+:matt/bricks/12:                             544       368
+:matt/bricks/09:                              32       368
+:matt/bricks/09:                             352       368
+:matt/bricks/11:                             256       368
+:matt/bricks/11:                             576       368
+:matt/bricks/12:                             576       176
+:matt/bricks/12:                             352       256

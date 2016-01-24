@@ -1,0 +1,223 @@
+$BUILT 2014-04-17 10:36:13
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Give me a break (2p)
+
+#SIZE_X 1610
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 656
+#START_Y 380
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 45
+#INITIAL 70
+#REQUIRED 50
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 80
+#JUMPER 50
+#FLOATER 20
+#EXPLODER 6
+#BLOCKER 2
+#BUILDER 80
+#PLATFORMER 40
+#BASHER 40
+#MINER 45
+#DIGGER 25
+#BATTER 20
+#NOTHING 0
+
+:matt/oriental/Hatch.H: 1440 -16 r
+:matt/oriental/Hatch.H: 112 -16
+
+:matt/oriental/Goal.G: 678 274
+:matt/oriental/Goal.G: 870 276
+
+:matt/water.W: 1024 368
+:matt/water.W: 1056 368
+:matt/water.W: 1088 368
+:matt/water.W: 1120 368
+:matt/water.W: 1152 368
+:matt/water.W: 1184 368
+:matt/water.W: 1216 368
+:matt/water.W: 1248 368
+:matt/water.W: 1280 368
+:matt/water.W: 1312 368
+:matt/water.W: 1344 368
+:matt/water.W: 1376 368
+:matt/water.W: 1408 368
+:matt/water.W: 1440 368
+:matt/water.W: 1472 368
+:matt/water.W: 1504 368
+:matt/water.W: 1024 384
+:matt/water.W: 1056 384
+:matt/water.W: 1088 384
+:matt/water.W: 1120 384
+:matt/water.W: 1152 384
+:matt/water.W: 1184 384
+:matt/water.W: 1216 384
+:matt/water.W: 1248 384
+:matt/water.W: 1280 384
+:matt/water.W: 1312 384
+:matt/water.W: 1344 384
+:matt/water.W: 1376 384
+:matt/water.W: 1408 384
+:matt/water.W: 1440 384
+:matt/water.W: 1472 384
+:matt/water.W: 1504 384
+:matt/water.W: 80 368
+:matt/water.W: 112 368
+:matt/water.W: 144 368
+:matt/water.W: 176 368
+:matt/water.W: 208 368
+:matt/water.W: 240 368
+:matt/water.W: 272 368
+:matt/water.W: 304 368
+:matt/water.W: 336 368
+:matt/water.W: 368 368
+:matt/water.W: 400 368
+:matt/water.W: 432 368
+:matt/water.W: 464 368
+:matt/water.W: 496 368
+:matt/water.W: 528 368
+:matt/water.W: 560 368
+:matt/water.W: 80 384
+:matt/water.W: 112 384
+:matt/water.W: 144 384
+:matt/water.W: 176 384
+:matt/water.W: 208 384
+:matt/water.W: 240 384
+:matt/water.W: 272 384
+:matt/water.W: 304 384
+:matt/water.W: 336 384
+:matt/water.W: 368 384
+:matt/water.W: 400 384
+:matt/water.W: 432 384
+:matt/water.W: 464 384
+:matt/water.W: 496 384
+:matt/water.W: 528 384
+:matt/water.W: 560 384
+:matt/water.W: 592 368
+:matt/water.W: 624 368
+:matt/water.W: 656 368
+:matt/water.W: 688 368
+:matt/water.W: 720 368
+:matt/water.W: 752 368
+:matt/water.W: 784 368
+:matt/water.W: 816 368
+:matt/water.W: 848 368
+:matt/water.W: 880 368
+:matt/water.W: 912 368
+:matt/water.W: 944 368
+:matt/water.W: 592 384
+:matt/water.W: 624 384
+:matt/water.W: 656 384
+:matt/water.W: 688 384
+:matt/water.W: 720 384
+:matt/water.W: 752 384
+:matt/water.W: 784 384
+:matt/water.W: 816 384
+:matt/water.W: 848 384
+:matt/water.W: 880 384
+:matt/water.W: 912 384
+:matt/water.W: 944 384
+
+:matt/oriental/leaves3: 1430 38
+:matt/oriental/leaves3: 120 38 frr
+:matt/oriental/07: 1312 374
+:matt/oriental/02: -16 336
+:matt/oriental/02: 1596 336
+:matt/oriental/bonsaitree: 1380 38
+:matt/oriental/bonsaitree: 4 38 frr
+:matt/oriental/04: 1568 374
+:matt/oriental/04: 2 374
+:matt/oriental/asiantemple: 142 6
+:matt/oriental/asiantemple: 1302 6
+:matt/oriental/04: 160 170
+:matt/oriental/04: 186 170
+:matt/oriental/04: 218 170
+:matt/oriental/04: 250 170
+:matt/oriental/04: 282 170
+:matt/oriental/04: 314 170
+:matt/oriental/04: 346 170
+:matt/oriental/04: 378 170
+:matt/oriental/04: 410 170
+:matt/oriental/04: 442 170
+:matt/oriental/04: 474 170
+:matt/oriental/04: 506 170
+:matt/oriental/04: 538 170
+:matt/oriental/04: 570 170
+:matt/oriental/04: 602 170
+:matt/oriental/04: 962 170
+:matt/oriental/04: 994 170
+:matt/oriental/04: 1026 170
+:matt/oriental/04: 1058 170
+:matt/oriental/04: 1090 170
+:matt/oriental/04: 1122 170
+:matt/oriental/04: 1154 170
+:matt/oriental/04: 1186 170
+:matt/oriental/04: 1218 170
+:matt/oriental/04: 1250 170
+:matt/oriental/04: 1282 170
+:matt/oriental/04: 1314 170
+:matt/oriental/04: 1346 170
+:matt/oriental/04: 1378 170
+:matt/oriental/bridge_angle: 646 110
+:matt/oriental/bridge_straight: 752 110
+:matt/oriental/bridge_angle: 856 110 f
+:matt/oriental/06: 962 214
+:matt/oriental/06: 1010 214
+:matt/oriental/06: 1058 214
+:matt/oriental/06: 1106 214
+:matt/oriental/06: 1154 214
+:matt/oriental/06: 1202 214
+:matt/oriental/06: 1250 214
+:matt/oriental/06: 1298 214
+:matt/oriental/06: 1346 214
+:matt/oriental/06: 1394 214
+:matt/oriental/04: 1410 170
+:matt/oriental/06: 158 214
+:matt/oriental/06: 206 214
+:matt/oriental/06: 254 214
+:matt/oriental/06: 302 214
+:matt/oriental/06: 350 214
+:matt/oriental/06: 398 214
+:matt/oriental/06: 446 214
+:matt/oriental/06: 494 214
+:matt/oriental/06: 542 214
+:matt/oriental/06: 590 214
+:matt/oriental/06: 1440 214
+:matt/oriental/06: 112 214
+:matt/steel/32x32.S: 582 354
+:matt/steel/32x32.S: 614 354
+:matt/steel/32x32.S: 678 354
+:matt/steel/32x32.S: 710 354
+:matt/steel/32x32.S: 774 354
+:matt/steel/32x32.S: 806 354
+:matt/steel/32x32.S: 870 354
+:matt/steel/32x32.S: 902 354
+:matt/steel/32x32.S: 966 354
+:matt/steel/32x32.S: 998 354
+:matt/steel/32x32.S: 48 368
+:matt/steel/48x48.S: 0 374
+:matt/steel/32x32.S: 1536 368
+:matt/steel/48x48.S: 1568 374
+:matt/oriental/asiangate: 368 346
+:matt/oriental/asiangate: 1104 348 frr
+:matt/oriental/07: 212 374
+:matt/steel/64x32.S: 678 384
+:matt/steel/64x32.S: 582 384
+:matt/steel/64x32.S: 774 384
+:matt/steel/64x32.S: 870 384
+:matt/steel/64x32.S: 966 386
+:matt/oriental/06: 112 272
+:matt/oriental/06: 112 320
+:matt/oriental/06: 112 368
+:matt/oriental/06: 1440 272
+:matt/oriental/06: 1440 320
+:matt/oriental/06: 1440 368

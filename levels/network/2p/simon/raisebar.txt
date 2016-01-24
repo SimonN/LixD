@@ -1,0 +1,176 @@
+$BUILT 2013-01-06 14:37:32
+$AUTHOR Simon
+$GERMAN 
+$ENGLISH Raise the Bar
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 45
+#INITIAL 120
+#REQUIRED 20
+#SPAWN_INTERVAL 13
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 40
+#JUMPER 40
+#EXPLODER2 40
+#PLATFORMER 40
+#BUILDER 40
+#BASHER 20
+#MINER 40
+#DIGGER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 432 16 r
+:geoo/construction/Hatch.H: 176 16
+:geoo/construction/Hatch.H: 276 136 r
+:geoo/construction/Hatch.H: 332 136
+
+:geoo/sandstone/Goal.G: 0 224
+:geoo/sandstone/Goal.G: 576 224
+:geoo/sandstone/Goal.G: 0 212
+:geoo/sandstone/Goal.G: 576 212
+:geoo/sandstone/Goal.G: 0 200
+:geoo/sandstone/Goal.G: 576 200
+:geoo/sandstone/Goal.G: 0 188
+:geoo/sandstone/Goal.G: 576 188
+:geoo/sandstone/Goal.G: 0 176
+:geoo/sandstone/Goal.G: 576 176
+:geoo/sandstone/Goal.G: 0 164
+:geoo/sandstone/Goal.G: 576 164
+:geoo/sandstone/Goal.G: 0 152
+:geoo/sandstone/Goal.G: 576 152
+
+:geoo/construction/steam_up.T: 284 380
+:geoo/construction/steam_up.T: 340 380
+
+:geoo/sandstone/pillar_32: 592 120
+:proxima/tile/spheres/green: 288 -24
+:proxima/tile/spheres/cyan: 256 -32
+:proxima/tile/spheres/cyan: 320 -32
+:geoo/sandstone/ebony/h16a: 192 112
+:geoo/sandstone/ebony/h16b: 224 112
+:geoo/sandstone/ebony/h16c: 256 112
+:geoo/sandstone/ebony/h16l: 176 112
+:geoo/sandstone/ebony/h16r: 448 112
+:geoo/sandstone/ebony/h16b: 288 112
+:geoo/sandstone/ebony/h16a: 320 112
+:geoo/sandstone/ebony/h16b: 352 112
+:geoo/sandstone/ebony/h16c: 384 112
+:geoo/sandstone/ebony/h16a: 416 112
+:geoo/sandstone/ebony/h16r: 224 288
+:geoo/sandstone/ebony/h16a: 192 288
+:geoo/sandstone/ebony/h16c: 160 288
+:geoo/sandstone/ebony/h16b: 128 288
+:geoo/sandstone/ebony/h16a: 96 288
+:geoo/sandstone/ebony/h16b: 64 288
+:geoo/sandstone/ebony/h16l: 400 288
+:geoo/sandstone/ebony/h16a: 416 288
+:geoo/sandstone/ebony/h16b: 448 288
+:geoo/sandstone/ebony/h16c: 480 288
+:geoo/sandstone/ebony/h16b: 512 288
+:geoo/sandstone/ebony/h16a: 544 288
+:geoo/sandstone/ebony/h16l: 110 192
+:geoo/sandstone/ebony/h16a: 126 192
+:geoo/sandstone/ebony/h16b: 158 192
+:geoo/sandstone/ebony/h16r: 178 192
+:geoo/sandstone/ebony/h16l: 446 192
+:geoo/sandstone/ebony/h16a: 462 192
+:geoo/sandstone/ebony/h16b: 494 192
+:geoo/sandstone/ebony/h16r: 514 192
+:geoo/sandstone/ebony/h16r: 178 232
+:geoo/sandstone/ebony/h16l: 446 232
+:geoo/sandstone/ebony/h16l: 174 232
+:geoo/sandstone/ebony/h16r: 450 232
+:geoo/steel/dark_32x32o.S: 0 288
+:geoo/sandstone/16x8: 64 308
+:geoo/sandstone/ribbon_end: 48 288
+:geoo/steel/dark_32x32o.S: 32 288
+:geoo/sandstone/16x8: 560 308
+:geoo/sandstone/ribbon_end: 560 288
+:geoo/steel/dark_32x32o.S: 576 288
+:geoo/steel/dark_32x32o.S: 608 288
+:geoo/sandstone/64x32: 64 0
+:geoo/sandstone/64x32: 128 0
+:geoo/sandstone/64x32: 192 0
+:geoo/sandstone/64x32: 384 0
+:geoo/sandstone/64x32: 448 0
+:geoo/sandstone/64x32: 512 0
+:geoo/sandstone/64x32: 576 0
+:geoo/sandstone/64x32: 0 0
+:geoo/sandstone/slopes/32x32lt: 256 0
+:geoo/sandstone/slopes/32x32rt: 352 0
+:geoo/sandstone/smaragd: 232 8
+:geoo/sandstone/smaragd: 200 8
+:geoo/sandstone/smaragd: 392 8
+:geoo/sandstone/smaragd: 424 8
+:geoo/sandstone/16x8: 176 308
+:geoo/sandstone/16x8: 192 308
+:geoo/sandstone/ribbon_end: 176 288
+:matt/carnival/29: 260 128 f
+:matt/carnival/29: 316 128 f
+:proxima/tile/spheres/pink: -24 312
+:proxima/tile/spheres/pink: 8 336
+:proxima/tile/spheres/pink: -24 352
+:proxima/tile/spheres/pink: 24 368
+:proxima/tile/spheres/pink: 600 312
+:proxima/tile/spheres/pink: 576 336
+:proxima/tile/spheres/pink: 600 352
+:proxima/tile/spheres/pink: 560 368
+:geoo/construction/rod_rust/straight32: 128 216
+:geoo/construction/rod_rust/edge_lu: 156 216
+:geoo/construction/rod_rust/edge_ru: 126 216
+:geoo/construction/rod_rust/straight8: 126 208 rrr
+:geoo/construction/rod_rust/straight8: 156 208 rrr
+:geoo/construction/rod_rust/straight32: 478 216
+:geoo/construction/rod_rust/edge_lu: 506 216
+:geoo/construction/rod_rust/edge_ru: 476 216
+:geoo/construction/rod_rust/straight8: 476 208 rrr
+:geoo/construction/rod_rust/straight8: 506 208 rrr
+:geoo/sandstone/16x8: 112 308
+:geoo/sandstone/16x8: 128 308
+:geoo/sandstone/ribbon_end: 112 288
+:geoo/sandstone/16x8: 144 308
+:geoo/sandstone/16x8: 160 308
+:geoo/sandstone/16x8: 80 308
+:geoo/sandstone/16x8: 96 308
+:geoo/sandstone/8x8: 208 308
+:geoo/sandstone/16x8: 448 308
+:geoo/sandstone/16x8: 432 308
+:geoo/sandstone/ribbon_end: 432 288
+:geoo/sandstone/16x8: 496 308
+:geoo/sandstone/16x8: 512 308
+:geoo/sandstone/ribbon_end: 496 288
+:geoo/sandstone/16x8: 528 308
+:geoo/sandstone/16x8: 544 308
+:geoo/sandstone/16x8: 464 308
+:geoo/sandstone/16x8: 480 308
+:geoo/sandstone/8x8: 424 308
+:geoo/sandstone/arc_small: 608 32
+:geoo/sandstone/slopes/32x32rt: 560 32
+:geoo/sandstone/pillar_top_shaded: 592 64
+:geoo/sandstone/pillar_32: 592 96
+:geoo/sandstone/pillar_top_shaded: 16 64
+:geoo/sandstone/pillar_32: 16 96
+:geoo/sandstone/pillar_32: 16 120
+:geoo/sandstone/arc_small: -64 32
+:geoo/sandstone/slopes/32x32lt: 48 32
+:geoo/sandstone/16x32: 32 32
+:geoo/sandstone/16x32: 592 32
+:geoo/sandstone/smaragd: 592 40
+:geoo/sandstone/smaragd: 32 40
+:geoo/sandstone/smaragd: 16 40
+:geoo/sandstone/smaragd: 608 40
+:geoo/sandstone/pillar_bottom: 592 120
+:geoo/sandstone/pillar_bottom: 16 120

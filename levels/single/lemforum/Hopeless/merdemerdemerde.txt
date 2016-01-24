@@ -1,0 +1,88 @@
+$BUILT 2012-06-18 21:03:32
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH MERDEMERDEMERDEMERDEMERDE
+
+#SIZE_X 960
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 200
+#REQUIRED 185
+#SPAWN_INTERVAL 48
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 20
+#JUMPER 10
+#CLIMBER 5
+#FLOATER 1
+#EXPLODER2 5
+#BLOCKER 5
+#RUNNER 3
+#BUILDER 5
+#PLATFORMER 10
+#BASHER 5
+#MINER 5
+#DIGGER 5
+
+:geoo/abstract/hatch.H: 32 0
+:geoo/abstract/hatch.H: 304 0
+:geoo/abstract/hatch.H: 544 128
+:geoo/abstract/hatch.H: 768 336
+
+:geoo/abstract/goal.G: 880 192
+
+:geoo/steel/32x64o.S: 0 0
+:geoo/steel/32x64o.S: 0 64
+:geoo/steel/32x64o.S: 0 128
+:geoo/steel/32x64o.S: 0 192
+:geoo/steel/32x64o.S: 0 256
+:geoo/steel/32x64o.S: 0 320
+:geoo/abstract/cvblocks/020: 0 384
+:geoo/abstract/cvblocks/020: 32 384
+:geoo/abstract/cvblocks/020: 64 384
+:geoo/abstract/cvblocks/020: 96 384
+:geoo/abstract/cvblocks/047: 64 0
+:geoo/abstract/cvblocks/030: 96 128
+:geoo/abstract/cvblocks/047: 96 160
+:geoo/abstract/cvblocks/020: 128 384
+:geoo/abstract/cvblocks/020: 160 384
+:geoo/abstract/cvblocks/020: 192 384
+:geoo/abstract/cvblocks/015: 192 272
+:geoo/abstract/cvblocks/015: 176 272
+:geoo/abstract/cvblocks/047: 224 272
+:geoo/abstract/cvblocks/047: 352 272
+:geoo/abstract/cvblocks/015: 448 272
+:geoo/abstract/cvblocks/015: 432 272
+:geoo/abstract/cvblocks/047: 480 160
+:geoo/abstract/cvblocks/030: 512 128
+:geoo/abstract/cvblocks/035: 512 96
+:geoo/abstract/cvblocks/035: 576 96
+:geoo/abstract/cvblocks/035: 640 272
+:geoo/abstract/cvblocks/035: 672 240
+:geoo/abstract/cvblocks/035: 704 272
+:geoo/abstract/cvblocks/035: 672 304
+:geoo/abstract/cvblocks/035: 736 304
+:geoo/abstract/cvblocks/035: 704 336
+:geoo/abstract/cvblocks/035: 640 336
+:geoo/abstract/cvblocks/035: 672 368
+:geoo/abstract/cvblocks/035: 864 240
+:geoo/abstract/cvblocks/035: 800 240
+:geoo/abstract/cvblocks/035: 768 96
+:geoo/abstract/cvblocks/035: 704 96
+:geoo/abstract/cvblocks/030: 800 144
+:geoo/abstract/cvblocks/030: 800 176
+:geoo/abstract/cvblocks/030: 800 208
+:geoo/abstract/cvblocks/020: 800 128
+:geoo/abstract/cvblocks/030: 928 240
+:geoo/abstract/cvblocks/030: 176 160
+:geoo/abstract/cvblocks/030: 240 160
+:geoo/abstract/cvblocks/030: 368 160
+:geoo/abstract/cvblocks/030: 432 160
+:geoo/abstract/cvblocks/015: 288 160
+:geoo/abstract/cvblocks/015: 336 160

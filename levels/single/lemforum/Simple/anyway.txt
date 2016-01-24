@@ -1,0 +1,504 @@
+$BUILT 2014-07-01 20:35:18
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH Any Way You Want
+
+$HINT_ENGLISH You can do this with one blocker, builder, <br>basher, miner, or digger, in some way. 
+$HINT_ENGLISH Or just floaters or climbers. 
+$HINT_ENGLISH Or even bombers, but that's the hard way. <br>If your first inclination was to use bombers, <br>I'd recommend psychiatric help. 
+$HINT_ENGLISH If you're still stuck, I can't really tell <br>you anything else but to go back to the tutorials <br>and study how each task works. <br>They don't get easier than this >_<
+
+#SIZE_X 3200
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 1264
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 10
+#SPAWN_INTERVAL 90
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 20
+#JUMPER 20
+#CLIMBER 20
+#FLOATER 20
+#EXPLODER 20
+#BLOCKER 20
+#CUBER 20
+#BUILDER 20
+#PLATFORMER 20
+#BASHER 20
+#MINER 20
+#DIGGER 20
+
+:matt/marble/Hatch.H: 1520 48
+
+:matt/marble/Goal.G: 1280 320
+
+:geoo/construction/squisher.T: 1144 272
+:geoo/construction/squisher.T: 1096 272
+
+:simon/water.W: 1216 360
+:simon/water.W: 1168 360
+:simon/water.W: 1120 360
+:simon/water.W: 1072 360
+:simon/water.W: 1024 360
+:simon/water.W: 976 360
+:simon/water.W: 928 360
+:simon/water.W: 880 360
+:proxima/flame.F: 1276 120
+:proxima/flame.F: 736 32
+:proxima/flame.F: 2000 128
+:proxima/flame.F: 2120 128
+:proxima/flame.F: 2480 128
+:proxima/flame.F: 2600 128
+:simon/acid.W: 2768 352
+:simon/acid.W: 2816 352
+:simon/acid.W: 2864 352
+:simon/acid.W: 2912 352
+:simon/acid.W: 2960 352
+:simon/acid.W: 3008 352
+:simon/acid.W: 3056 352
+:simon/acid.W: 3104 352
+:simon/acid.W: 3152 352
+
+:matt/bricks/01: 1720 200
+:matt/bricks/02: 1264 368
+:matt/bricks/02: 1328 368
+:matt/bricks/02: 1392 368
+:matt/bricks/03: 1432 112
+:matt/bricks/02: 1496 112
+:matt/bricks/02: 1624 144
+:matt/bricks/02: 1688 208
+:matt/bricks/02: 1624 208
+:matt/bricks/03: 1752 176
+:matt/bricks/02: 1456 368
+:matt/bricks/02: 1520 368
+:matt/bricks/02: 1584 368
+:matt/bricks/02: 1648 368
+:matt/bricks/02: 1712 368
+:matt/bricks/02: 1776 368
+:matt/bricks/02: 1840 368
+:matt/bricks/12: 1872 336
+:matt/bricks/12: 1872 304
+:matt/bricks/12: 1872 272
+:matt/bricks/09: 1840 272
+:matt/bricks/12: 1872 240
+:matt/bricks/12: 1872 208
+:matt/bricks/12: 1872 176
+:matt/bricks/09: 1840 176
+:matt/bricks/08: 1816 176
+:matt/bricks/10: 1400 112
+:matt/bricks/12: 1400 144
+:matt/bricks/12: 1400 176
+:matt/bricks/12: 1400 208
+:matt/bricks/10: 1368 208
+:matt/bricks/12: 1368 240
+:matt/bricks/12: 1400 240
+:matt/bricks/10: 1336 240
+:matt/bricks/12: 1336 272
+:matt/bricks/12: 1368 272
+:matt/bricks/12: 1400 272
+:matt/bricks/02: 1560 112
+:matt/bricks/12: 1624 112
+:matt/bricks/08: 1656 112
+:matt/bricks/02: 1528 208
+:matt/bricks/12: 1496 240
+:matt/bricks/10: 1496 208
+:matt/bricks/10: 1464 272
+:matt/bricks/12: 1496 272
+:matt/bricks/11: 1528 240
+:matt/bricks/11: 1496 144
+:matt/bricks/09: 1592 144
+:matt/bricks/02: 1624 272
+:matt/bricks/02: 1688 272
+:matt/bricks/02: 1752 272
+:matt/bricks/11: 1432 176
+:matt/bricks/11: 1904 176
+:matt/bricks/11: 1904 272
+:matt/bricks/12: 1872 128
+:matt/bricks/10: 1840 128
+:matt/bricks/08: 1904 128
+:matt/bricks/12: 1872 96
+:matt/bricks/12: 1872 64
+:matt/bricks/12: 1872 32
+:matt/bricks/12: 1872 0
+:matt/bricks/09: 1840 0
+:matt/bricks/11: 1904 0
+:matt/bricks/09: 1392 0
+:matt/bricks/02: 1424 0
+:matt/bricks/02: 1488 0
+:matt/bricks/02: 1552 0
+:matt/bricks/02: 1616 0
+:matt/bricks/02: 1680 0
+:matt/bricks/11: 1744 0
+:matt/bricks/11: 1712 32
+:matt/bricks/09: 1680 32
+:matt/goldmine/plank: 832 224 rrr
+:matt/goldmine/plankdiag: 824 256
+:matt/goldmine/plank: 824 224 rrr
+:matt/goldmine/08: 800 336 r
+:matt/goldmine/08: 736 352
+:matt/goldmine/planksupport2: 992 336
+:matt/goldmine/planksupport2: 1136 336
+:matt/goldmine/tracks: 968 328
+:matt/goldmine/tracks: 1088 328
+:matt/goldmine/explosivecrate: 1072 208
+:matt/goldmine/crate64: 1136 208
+:matt/goldmine/plankdiag2: 1040 176
+:matt/goldmine/plankdiag2: 1008 144
+:matt/goldmine/plankdiag2: 1152 176
+:matt/goldmine/plankdiag2: 1120 144
+:matt/goldmine/plankdiag2: 976 112
+:matt/goldmine/plankdiag2: 944 80
+:matt/goldmine/plankdiag2: 1088 112
+:matt/goldmine/plankdiag2: 1056 80
+:matt/goldmine/plankdiag: 1040 144
+:matt/goldmine/plankdiag: 1072 112
+:matt/goldmine/plankdiag: 1072 176
+:matt/goldmine/plankdiag: 1104 144
+:matt/goldmine/plankdiag: 1136 112
+:matt/goldmine/plankdiag: 1168 80
+:matt/goldmine/plankdiag: 1168 160
+:matt/goldmine/plankdiag: 1200 128
+:matt/goldmine/plankdiag: 1232 96
+:matt/goldmine/plankdiag: 1264 64
+:matt/goldmine/plankdiag2: 1216 80
+:matt/goldmine/plankdiag2: 1184 48
+:matt/goldmine/plankdiag2: 1152 16
+:matt/goldmine/plankdiag2: 1264 32
+:matt/goldmine/plankdiag2: 1232 0
+:matt/goldmine/plankdiag2: 1136 80
+:matt/goldmine/plankdiag2: 1104 48
+:matt/goldmine/plankdiag: 1056 48
+:matt/goldmine/plankdiag: 1088 16
+:matt/goldmine/plankdiag2: 1072 16
+:matt/goldmine/plankdiag: 1184 0
+:matt/goldmine/plankdiag: 1152 32
+:matt/goldmine/plankdiag: 1136 48
+:matt/goldmine/03: 1040 -16
+:matt/goldmine/plankdiag: 976 16
+:matt/goldmine/03: 896 -16 frr
+:matt/goldmine/plankdiag: 944 48
+:matt/goldmine/plank: 944 80
+:matt/goldmine/plankdiag: 1184 64
+:matt/goldmine/plankdiag2: 1200 48 d
+:matt/goldmine/plankdiag2: 1088 96 d
+:matt/goldmine/crate64: 880 80
+:matt/goldmine/crate32: 848 80
+:matt/goldmine/explosivecrate: 784 80
+:matt/goldmine/crate32: 752 80
+:matt/goldmine/crate32: 800 144
+:matt/goldmine/crate32: 896 144
+:matt/goldmine/crate16: 816 176
+:matt/goldmine/crate16: 896 176
+:matt/goldmine/crate32: 816 192
+:matt/goldmine/crate32: 880 192
+:matt/goldmine/crate32: 848 176
+:matt/goldmine/plankdiag: 856 224
+:matt/goldmine/plank: 1296 64
+:matt/goldmine/plank: 1360 64 d
+:matt/goldmine/crate16: 736 80
+:matt/goldmine/explosivecrate: 1264 160
+:matt/bricks/01: 1280 152 d
+:matt/earth/04: 608 272
+:matt/earth/10: 472 336 frr
+:matt/earth/09: 576 328
+:matt/earth/08: 624 336
+:matt/earth/06: 512 336
+:matt/earth/06: 536 328
+:matt/earth/08: 632 280 frr
+:matt/earth/08: 648 264 frr
+:matt/earth/10: 144 112
+:matt/earth/04: 280 168
+:matt/earth/17: 376 288
+:matt/earth/04: 72 160
+:matt/earth/10: 160 176
+:matt/earth/10: 72 240 frr
+:matt/earth/16: 8 288
+:matt/earth/04: 216 264
+:matt/earth/02: 296 288
+:matt/earth/16: 288 296
+:matt/earth/10: 104 336
+:matt/earth/04: 72 288
+:matt/earth/09: 160 328
+:matt/earth/08: 208 336
+:matt/earth/08: 264 352
+:matt/earth/09: 216 344
+:matt/earth/08: 112 288 frr
+:matt/earth/08: 88 304 frr
+:matt/earth/08: 256 256 frr
+:matt/earth/08: 224 288 frr
+:matt/earth/09: 288 256
+:matt/earth/08: 256 168
+:matt/earth/09: 208 168
+:matt/earth/08: 184 168 frr
+:matt/earth/08: 152 192 frr
+:matt/earth/08: 40 288 frr
+:matt/earth/08: 16 328 frr
+:matt/earth/08: 376 288 frr
+:matt/earth/08: 120 144 frr
+:matt/earth/08: 88 176 frr
+:matt/earth/06: 160 112
+:matt/earth/09: 200 104
+:matt/earth/08: 248 104
+:matt/earth/08: 280 120
+:matt/earth/08: 312 144
+:matt/earth/07: 328 152
+:matt/earth/08: 320 296 frr
+:matt/earth/08: 296 328 frr
+:matt/earth/08: 152 232 frr
+:matt/earth/09: 184 232
+:matt/earth/26: 224 56 rr
+:matt/earth/19: 544 168 rrr
+:matt/earth/11: 528 96
+:matt/earth/14: 496 112
+:matt/earth/13: 576 112
+:matt/earth/15: 512 152
+:matt/earth/26: 568 224 rrr
+:matt/earth/23: 528 208 r
+:matt/earth/23: 528 272 r
+:matt/earth/26: 368 208 rrr
+:geoo/sandstone/pillar_top_ext: 2000 176
+:geoo/sandstone/pillar_top_ext: 2096 176
+:geoo/sandstone/pillar_top_shaded: 2016 192
+:geoo/sandstone/pillar_top_shaded: 2112 192
+:geoo/sandstone/pillar_32: 2016 224
+:geoo/sandstone/arc_small: 1984 240
+:geoo/sandstone/pillar_32: 2112 224
+:geoo/sandstone/arc_small: 2080 240
+:geoo/sandstone/pillar_top_ext: 1952 272
+:geoo/sandstone/pillar_top_ext: 2048 272
+:geoo/sandstone/pillar_top_shaded: 1968 288
+:geoo/sandstone/pillar_top_shaded: 2064 288
+:geoo/sandstone/pillar_top_ext: 2144 272
+:geoo/sandstone/pillar_top_shaded: 2160 288
+:geoo/sandstone/pillar_32: 1968 320
+:geoo/sandstone/pillar_32: 2064 320
+:geoo/sandstone/pillar_32: 2160 320
+:geoo/sandstone/pillar_bottom: 1968 352
+:geoo/sandstone/pillar_bottom: 2064 352
+:geoo/sandstone/pillar_bottom: 2160 352
+:geoo/sandstone/pillar_bottom_ext: 1952 384
+:geoo/sandstone/pillar_bottom_ext: 2048 384
+:geoo/sandstone/pillar_bottom_ext: 2144 384
+:geoo/sandstone/slopes/64x32rb: 1936 128
+:geoo/sandstone/slopes/32x64lb: 2032 96
+:geoo/sandstone/slopes/32x64rb: 2096 96
+:geoo/sandstone/slopes/64x32lb: 2160 128
+:geoo/sandstone/32x32: 2000 96
+:geoo/sandstone/32x32: 2128 96
+:geoo/sandstone/slopes/64x32rb: 2000 64
+:geoo/sandstone/slopes/64x32lb: 2096 64
+:geoo/sandstone/32x32: 2064 48
+:geoo/sandstone/32x32: 2064 16
+:geoo/sandstone/slopes/64x32rt: 2000 0
+:geoo/sandstone/slopes/64x32lt: 2096 0
+:geoo/sandstone/slopes/32x64rb: 2288 192
+:geoo/sandstone/slopes/32x64lb: 2320 192
+:geoo/sandstone/slopes/64x32lb: 2256 160
+:geoo/sandstone/slopes/64x32rb: 2320 160
+:geoo/sandstone/slopes/32x64rb: 2224 160
+:geoo/sandstone/slopes/32x64lb: 2384 160
+:geoo/sandstone/slopes/32x64rt: 2240 224
+:geoo/sandstone/slopes/32x64lt: 2368 224
+:geoo/sandstone/slopes/64x32rt: 2256 288
+:geoo/sandstone/slopes/64x32lt: 2320 288
+:geoo/sandstone/slopes/64x32rb: 2224 128
+:geoo/sandstone/slopes/64x32lb: 2352 128
+:geoo/sandstone/slopes/64x32rb: 2256 96
+:geoo/sandstone/slopes/64x32lb: 2320 96
+:geoo/sandstone/slopes/32x32rb: 2288 336
+:geoo/sandstone/slopes/32x32rb: 2256 368
+:geoo/sandstone/slopes/32x32lb: 2320 336
+:geoo/sandstone/slopes/32x32lb: 2352 368
+:geoo/sandstone/64x32: 2288 368
+:geoo/sandstone/slopes/64x32rb: 2224 64
+:geoo/sandstone/slopes/32x16rb: 2288 48
+:geoo/sandstone/slopes/32x16lb: 2320 48
+:geoo/sandstone/slopes/64x32lb: 2352 64
+:geoo/sandstone/64x32: 2288 64
+:geoo/sandstone/pillar_top_ext: 2480 176
+:geoo/sandstone/pillar_top_ext: 2576 176
+:geoo/sandstone/pillar_top_shaded: 2496 192
+:geoo/sandstone/pillar_top_shaded: 2592 192
+:geoo/sandstone/pillar_32: 2496 224
+:geoo/sandstone/arc_small: 2464 240
+:geoo/sandstone/pillar_32: 2592 224
+:geoo/sandstone/arc_small: 2560 240
+:geoo/sandstone/pillar_top_ext: 2432 272
+:geoo/sandstone/pillar_top_ext: 2528 272
+:geoo/sandstone/pillar_top_shaded: 2448 288
+:geoo/sandstone/pillar_top_shaded: 2544 288
+:geoo/sandstone/pillar_top_ext: 2624 272
+:geoo/sandstone/pillar_top_shaded: 2640 288
+:geoo/sandstone/pillar_32: 2448 320
+:geoo/sandstone/pillar_32: 2544 320
+:geoo/sandstone/pillar_32: 2640 320
+:geoo/sandstone/pillar_bottom: 2448 352
+:geoo/sandstone/pillar_bottom: 2544 352
+:geoo/sandstone/pillar_bottom: 2640 352
+:geoo/sandstone/pillar_bottom_ext: 2432 384
+:geoo/sandstone/pillar_bottom_ext: 2528 384
+:geoo/sandstone/pillar_bottom_ext: 2624 384
+:geoo/sandstone/slopes/64x32rb: 2416 128
+:geoo/sandstone/slopes/32x64lb: 2512 96
+:geoo/sandstone/slopes/32x64rb: 2576 96
+:geoo/sandstone/slopes/64x32lb: 2640 128
+:geoo/sandstone/32x32: 2480 96
+:geoo/sandstone/32x32: 2608 96
+:geoo/sandstone/slopes/64x32rb: 2480 64
+:geoo/sandstone/slopes/64x32lb: 2576 64
+:geoo/sandstone/32x32: 2544 48
+:geoo/sandstone/32x32: 2544 16
+:geoo/sandstone/slopes/64x32rt: 2480 0
+:geoo/sandstone/slopes/64x32lt: 2576 0
+:matt/marble/04a: 2720 160
+:matt/marble/04a: 2752 160
+:matt/marble/04a: 2784 160
+:matt/marble/04a: 2816 160
+:matt/marble/06a: 2768 208
+:matt/marble/01a: 2792 288
+:matt/marble/06a: 2768 272
+:matt/marble/06a: 2768 336
+:matt/marble/05a: 2752 176
+:matt/marble/05a: 2784 176
+:matt/marble/02a: 2816 176
+:matt/marble/02a: 2736 176
+:matt/marble/01a: 2848 160
+:matt/marble/01a: 2864 160
+:matt/marble/01a: 2872 168
+:matt/marble/01a: 2880 176
+:matt/marble/01a: 2888 184
+:matt/marble/01a: 2896 192
+:matt/marble/01a: 2912 192
+:matt/marble/01a: 2920 200
+:matt/marble/01a: 2936 200
+:matt/marble/01a: 2952 200
+:matt/marble/01a: 2968 200
+:matt/marble/01a: 2976 192
+:matt/marble/01a: 2992 192
+:matt/marble/01a: 3000 184
+:matt/marble/01a: 3008 176
+:matt/marble/01a: 3016 168
+:matt/marble/01a: 3024 160
+:matt/marble/01a: 3040 160
+:matt/marble/04a: 3056 160
+:matt/marble/04a: 3088 160
+:matt/marble/04a: 3120 160
+:matt/marble/04a: 3152 160
+:matt/marble/06a: 3104 208
+:matt/marble/01a: 3096 288
+:matt/marble/06a: 3104 272
+:matt/marble/06a: 3104 336
+:matt/marble/05a: 3088 176
+:matt/marble/05a: 3120 176
+:matt/marble/02a: 3152 176
+:matt/marble/02a: 3072 176
+:matt/marble/01a: 2704 160
+:matt/marble/01a: 3184 160
+:matt/marble/04a: 2808 288
+:matt/marble/04a: 2840 288
+:matt/marble/04a: 2872 288
+:matt/marble/04a: 2904 288
+:matt/marble/02a: 2888 304
+:matt/marble/02a: 2840 304
+:matt/marble/01a: 2936 288
+:matt/marble/04a: 2968 288
+:matt/marble/04a: 3000 288
+:matt/marble/04a: 3032 288
+:matt/marble/04a: 3064 288
+:matt/marble/02a: 3048 304
+:matt/marble/02a: 3000 304
+:matt/marble/01a: 2952 288
+:matt/marble/06a: 2856 320
+:matt/marble/06a: 3016 320
+:matt/marble/14a: 2872 256
+:matt/marble/14a: 2904 224
+:matt/marble/16a: 2968 224
+:matt/marble/16a: 3000 256
+:matt/marble/10a: 2936 208
+:matt/marble/12a: 2952 208
+:matt/marble/14a: 2704 128
+:matt/marble/14a: 2736 96
+:matt/marble/16a: 2800 96
+:matt/marble/16a: 2832 128
+:matt/marble/10a: 2768 80
+:matt/marble/12a: 2784 80
+:matt/marble/14a: 3040 128
+:matt/marble/14a: 3072 96
+:matt/marble/16a: 3136 96
+:matt/marble/16a: 3168 128
+:matt/marble/10a: 3104 80
+:matt/marble/12a: 3120 80
+:matt/marble/13a: 2768 64
+:matt/marble/13a: 3104 64
+:matt/marble/11a: 2784 64
+:matt/marble/11a: 3120 64
+:matt/marble/17a: 2736 32
+:matt/marble/17a: 2704 0
+:matt/marble/15a: 2800 32
+:matt/marble/15a: 2832 0
+:matt/marble/17a: 3072 32
+:matt/marble/17a: 3040 0
+:matt/marble/15a: 3136 32
+:matt/marble/15a: 3168 0
+:matt/marble/01a: 2864 0
+:matt/marble/01a: 2872 8
+:matt/marble/01a: 2880 16
+:matt/marble/01a: 2888 24
+:matt/marble/01a: 2896 32
+:matt/marble/01a: 2912 32
+:matt/marble/01a: 2920 40
+:matt/marble/01a: 2936 40
+:matt/marble/01a: 2952 40
+:matt/marble/01a: 2968 40
+:matt/marble/01a: 2976 32
+:matt/marble/01a: 2992 32
+:matt/marble/01a: 3000 24
+:matt/marble/01a: 3008 16
+:matt/marble/01a: 3016 8
+:matt/marble/01a: 3024 0
+:matt/marble/01a: 2872 152
+:matt/marble/01a: 2880 144
+:matt/marble/01a: 2888 136
+:matt/marble/01a: 2896 128
+:matt/marble/01a: 2912 128
+:matt/marble/01a: 2976 128
+:matt/marble/01a: 2992 128
+:matt/marble/01a: 2920 120
+:matt/marble/01a: 2936 120
+:matt/marble/01a: 2952 120
+:matt/marble/01a: 2968 120
+:matt/marble/01a: 3000 136
+:matt/marble/01a: 3008 144
+:matt/marble/01a: 3016 152
+:matt/marble/20a: 2944 136
+:matt/marble/01a: 2944 128
+:matt/marble/10a: 2936 272
+:matt/marble/12a: 2952 272
+:matt/marble/10a: 2768 144
+:matt/marble/12a: 2784 144
+:matt/marble/10a: 3104 144
+:matt/marble/12a: 3120 144
+:matt/marble/13a: 2768 0
+:matt/marble/11a: 2784 0
+:matt/marble/13a: 2936 0
+:matt/marble/11a: 2952 0
+:matt/marble/13a: 3104 0
+:matt/marble/11a: 3120 0
+:geoo/steel/dark_64x64o.S: 2704 336
+:matt/marble/04a: 2856 304
+:matt/marble/04a: 3016 304
+:matt/marble/02a: 2888 384
+:matt/marble/02a: 2840 384
+:matt/marble/02a: 3048 384
+:matt/marble/02a: 3000 384
+:matt/marble/04a: 2856 384
+:matt/marble/04a: 3016 384

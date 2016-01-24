@@ -1,0 +1,212 @@
+$BUILT 2014-06-24 16:50:20
+$AUTHOR Amanda
+$GERMAN 
+$ENGLISH Group Therapy (4p)
+
+#SIZE_X 1024
+#SIZE_Y 384
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 30
+#INITIAL 50
+#REQUIRED 20
+#SPAWN_INTERVAL 45
+#SPAWN_INTERVAL_FAST 45
+
+#WALKER 2
+#JUMPER 2
+#CLIMBER 2
+#FLOATER 2
+#EXPLODER2 3
+#BLOCKER 3
+#BATTER 2
+#BUILDER 2
+#PLATFORMER 2
+#BASHER 2
+#MINER 2
+#DIGGER 2
+
+:geoo/abstract/hatch.H: 112 48 r
+:geoo/abstract/hatch.H: 368 48
+:geoo/abstract/hatch.H: 624 48 r
+:geoo/abstract/hatch.H: 880 48
+
+:geoo/abstract/goal.G: 624 304
+:geoo/abstract/goal.G: 880 304
+:geoo/abstract/goal.G: 112 304
+:geoo/abstract/goal.G: 368 304
+
+:matt/beach/daytime/05: 792 144
+:matt/beach/daytime/05: 840 160
+:matt/beach/daytime/06: 816 104
+:matt/beach/daytime/06: 944 96 fr
+:matt/beach/daytime/14: 880 176 fr
+:matt/beach/daytime/06: 856 216
+:matt/beach/daytime/06: 864 24
+:geoo/abstract/cvblocks/047: 0 128
+:matt/beach/daytime/04: 928 288
+:matt/beach/daytime/05: 896 224
+:simon/desert/leaf_s2: 929 324 frr
+:simon/desert/leaf_s3: 980 326 f
+:geoo/abstract/cvblocks/047: 0 256
+:geoo/abstract/cvblocks/047: 192 128
+:geoo/abstract/cvblocks/047: 192 256
+:geoo/abstract/cvblocks/047: 0 0
+:geoo/abstract/cvblocks/047: 192 0
+:geoo/abstract/cvblocks/037: 64 96
+:geoo/abstract/cvblocks/036: 128 96
+:geoo/construction/concrete/064v: 256 256
+:geoo/construction/concrete/064v: 256 0
+:geoo/construction/concrete/064v: 256 128
+:geoo/construction/concrete/064v: 448 256
+:geoo/construction/concrete/064v: 448 0
+:geoo/construction/concrete/064v: 448 128
+:geoo/construction/concrete/032hb: 320 96
+:geoo/construction/concrete/032ha: 384 96
+:geoo/construction/concrete/064h: 320 352
+:geoo/abstract/cvblocks/046: 64 352
+:geoo/steel/32x16o.S: 112 352
+:geoo/steel/dark_32x16o.S: 368 352
+:geoo/abstract/cvblocks/038: 128 128
+:geoo/abstract/cvblocks/039: 64 128
+:geoo/construction/concrete/032hc: 384 128
+:geoo/construction/concrete/032hd: 320 128
+:geoo/construction/concrete/032hb: 320 224
+:geoo/construction/concrete/032ha: 384 224
+:geoo/construction/concrete/032hc: 384 256
+:geoo/construction/concrete/032hd: 320 256
+:geoo/abstract/cvblocks/037: 64 224
+:geoo/abstract/cvblocks/036: 128 224
+:geoo/abstract/cvblocks/038: 128 256
+:geoo/abstract/cvblocks/039: 64 256
+:geoo/steel/dark_64x64.S: 224 48
+:matt/marble/05a: 512 32
+:matt/marble/05a: 544 64
+:matt/marble/05a: 512 96
+:matt/marble/05a: 544 128
+:matt/marble/05b: 512 128
+:matt/marble/05a: 512 160
+:matt/marble/05b: 544 160
+:matt/marble/05a: 544 192
+:matt/marble/05b: 512 192
+:matt/marble/05a: 512 224
+:matt/marble/05b: 544 224
+:matt/marble/05a: 544 256
+:matt/marble/05b: 512 256
+:matt/marble/05a: 512 288
+:matt/marble/05b: 544 288
+:matt/marble/05a: 544 320
+:matt/marble/05b: 512 320
+:matt/marble/05a: 512 352
+:matt/marble/05b: 544 352
+:matt/marble/05a: 544 0
+:matt/marble/05b: 512 0
+:matt/marble/05b: 544 32
+:matt/marble/05b: 512 64
+:matt/marble/05b: 544 96
+:matt/marble/05a: 704 32
+:matt/beach/daytime/02: 736 168
+:matt/beach/daytime/05: 760 32
+:matt/marble/05a: 736 64
+:matt/marble/05a: 704 96
+:matt/marble/05b: 704 128
+:matt/marble/05a: 704 160
+:matt/marble/05a: 736 192
+:matt/marble/05b: 704 192
+:matt/marble/05a: 704 224
+:matt/marble/05b: 736 224
+:matt/beach/daytime/00: 752 264
+:matt/marble/05a: 736 256
+:matt/marble/05b: 704 256
+:matt/marble/05a: 704 288
+:matt/marble/05b: 736 288
+:matt/beach/daytime/01: 808 128
+:matt/beach/daytime/14: 792 144
+:matt/beach/daytime/14: 824 32
+:matt/beach/daytime/06: 776 344
+:matt/beach/daytime/03: 776 328
+:matt/beach/daytime/01: 800 296
+:matt/beach/daytime/02: 752 344
+:matt/beach/daytime/01: 752 312
+:matt/marble/05a: 736 320
+:matt/marble/05b: 704 320
+:matt/marble/05a: 704 352
+:matt/marble/05b: 736 352
+:matt/marble/05a: 736 0
+:matt/marble/05b: 704 0
+:matt/marble/05b: 736 32
+:matt/marble/05b: 704 64
+:matt/marble/05b: 736 96
+:matt/marble/05b: 576 256
+:matt/marble/05b: 608 224
+:matt/marble/05b: 640 256
+:matt/marble/05b: 672 224
+:matt/marble/05a: 672 256
+:matt/marble/05a: 640 224
+:matt/marble/05a: 608 256
+:matt/marble/05a: 576 224
+:geoo/construction/concrete/032hd: 640 223 d
+:geoo/construction/concrete/032hd: 576 223 frrd
+:geoo/construction/concrete/032hd: 640 257 fd
+:geoo/construction/concrete/032hd: 576 257 rrd
+:matt/marble/05b: 576 128
+:matt/marble/05b: 608 96
+:matt/marble/05b: 640 128
+:matt/marble/05b: 672 96
+:matt/marble/05a: 672 128
+:matt/marble/05a: 640 96
+:matt/marble/05a: 608 128
+:matt/marble/05a: 576 96
+:matt/marble/05b: 576 0
+:matt/marble/05b: 608 352
+:matt/marble/05b: 640 0
+:matt/marble/05b: 672 352
+:matt/marble/05a: 672 0
+:matt/marble/05a: 640 352
+:matt/marble/05a: 608 0
+:matt/marble/05a: 576 352
+:geoo/construction/concrete/032hd: 576 95 frrd
+:geoo/construction/concrete/032hd: 640 95 d
+:geoo/construction/concrete/032hd: 640 129 fd
+:geoo/construction/concrete/032hd: 576 129 rrd
+:geoo/steel/32x16o.S: 624 352
+:geoo/steel/dark_64x64.S: 480 48
+:matt/beach/daytime/15: 784 56
+:geoo/steel/dark_64x64.S: 736 48
+:geoo/steel/dark_64x64.S: 992 48
+:matt/beach/daytime/15: 864 224
+:matt/beach/decor/pail: 768 208
+:geoo/construction/concrete/032hd: 896 223 d
+:geoo/construction/concrete/032hd: 832 223 frrd
+:matt/beach/decor/umbrella_red: 776 136
+:matt/bricks/03b: 832 160 d
+:matt/marble/05a: 736 128
+:matt/marble/05b: 736 160
+:matt/beach/decor/grass11: 928 128
+:simon/desert/palm_4: 937 344
+:matt/bricks/03b: 896 160 d
+:geoo/construction/concrete/032hd: 896 129 fd
+:geoo/construction/concrete/032hd: 832 129 rrd
+:geoo/construction/concrete/032hd: 832 95 frrd
+:geoo/construction/concrete/032hd: 896 95 d
+:matt/bricks/03b: 896 32 d
+:matt/bricks/03b: 832 288 d
+:matt/beach/decor/umbrella_yellow: 772 340 frr
+:matt/beach/decor/grass08: 828 352
+:matt/bricks/03b: 896 288 d
+:geoo/construction/concrete/032hd: 832 257 rrd
+:geoo/construction/concrete/032hd: 896 257 fd
+:matt/beach/decor/grass11: 860 380
+:matt/beach/decor/grass10: 922 370
+:matt/beach/decor/grass02: 886 374
+:matt/beach/decor/grass09: 945 376
+:matt/beach/decor/grass06: 991 377
+:matt/beach/decor/grass11: 793 1
+:matt/bricks/03b: 832 32 d
+:simon/desert/leaf_b2: 973 336
+:matt/beach/decor/grass06: 975 377
+:geoo/steel/dark_32x16o.S: 880 352

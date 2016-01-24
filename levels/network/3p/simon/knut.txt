@@ -1,0 +1,194 @@
+$BUILT                                             2011-10-03 11:26:57
+$AUTHOR                                                          Simon
+$GERMAN                                                               
+$ENGLISH                                               Knut the viking
+
+#SIZE_X                                                           1248
+#SIZE_Y                                                            384
+#TORUS_X                                                             1
+#TORUS_Y                                                             1
+#START_X                                                           608
+#START_Y                                                           348
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            60
+#INITIAL                                                           120
+#REQUIRED                                                           20
+#RATE                                                               80
+
+#WALKER                                                             20
+#RUNNER                                                             20
+#JUMPER                                                             20
+#CLIMBER                                                            20
+#EXPLODER2                                                          10
+#BATTER                                                             20
+#CUBER                                                              10
+#BUILDER                                                            40
+#PLATFORMER                                                         40
+#BASHER                                                             20
+#MINER                                                              20
+#DIGGER                                                             10
+
+:geoo/construction/Hatch.H:                        32       128     r
+:geoo/construction/Hatch.H:                       448         0     r
+:geoo/construction/Hatch.H:                       864       256     r
+:geoo/construction/Hatch.H:                      1136        32
+:geoo/construction/Hatch.H:                       304       288
+:geoo/construction/Hatch.H:                       720       160
+
+:simon/tapir/goal.G:                              704        80
+:simon/tapir/goal.G:                             1120       336
+:simon/tapir/goal.G:                              288       208
+
+:geoo/construction/fence_rust_32x32:              448       192
+:geoo/construction/fence_rust_32x32:              448       160
+:geoo/construction/fence_rust_32x32:              448       128
+:geoo/construction/fence_rust_32x32:              448        96
+:geoo/construction/fence_rust_32x32:              448        64
+:geoo/construction/fence_rust_32x32:              448        32
+:geoo/construction/pillar_32:                     416         0
+:geoo/construction/pillar_32:                     416        32
+:geoo/construction/pillar_32:                     416        64
+:geoo/construction/pillar_32:                     416        96
+:geoo/construction/pillar_32:                     416       128
+:geoo/construction/pillar_32:                     416       160
+:geoo/construction/pillar_32:                     416       192
+:geoo/construction/pillar_32:                     416       224
+:geoo/construction/fence_rust_32x32:              448       224
+:geoo/construction/fence_rust_32x32:              448       288
+:geoo/construction/fence_rust_32x32:              448       256
+:geoo/construction/pillar_32:                     416       256
+:geoo/construction/pillar_32:                     416       288
+:geoo/construction/pillar_32:                     416       320
+:geoo/construction/pillar_32:                     480         0
+:geoo/construction/pillar_32:                     480        32
+:geoo/construction/pillar_32:                     480        64
+:geoo/construction/pillar_32:                     480        96
+:geoo/construction/pillar_32:                     480       128
+:geoo/construction/pillar_32:                     480       160
+:geoo/construction/pillar_32:                     480       192
+:geoo/construction/pillar_32:                     480       224
+:geoo/construction/pillar_32:                     480       256
+:geoo/construction/pillar_32:                     480       288
+:geoo/construction/pillar_32:                     480       320
+:geoo/construction/wall/small_64x64:              576         0
+:geoo/construction/wall/small_64x64:              576        64
+:geoo/construction/wall/small_64x64:              576       128
+:geoo/construction/wall/small_64x64:              576       192
+:geoo/construction/wall/small_64x64:              576       320
+:geoo/steel/dark_32x32o.S:                        480       352
+:geoo/steel/dark_32x32o.S:                        448       352
+:geoo/steel/dark_32x32o.S:                        416       352
+:simon/tapir/064:                                 704         0
+:geoo/construction/wall/small_64x64:              576       256
+:simon/tapir/064:                                 704       320
+:simon/tapir/064:                                 704       256
+:geoo/steel/dark_64x32o.S:                        704       128
+:geoo/construction/fence_rust_32x32:              864        64
+:geoo/construction/fence_rust_32x32:              864        32
+:geoo/construction/fence_rust_32x32:              864         0
+:geoo/construction/fence_rust_32x32:              864       352
+:geoo/construction/fence_rust_32x32:              864       320
+:geoo/construction/fence_rust_32x32:              864       288
+:geoo/construction/pillar_32:                     832       256
+:geoo/construction/pillar_32:                     832       288
+:geoo/construction/pillar_32:                     832       320
+:geoo/construction/pillar_32:                     832       352
+:geoo/construction/pillar_32:                     832         0
+:geoo/construction/pillar_32:                     832        32
+:geoo/construction/pillar_32:                     832        64
+:geoo/construction/pillar_32:                     832        96
+:geoo/construction/fence_rust_32x32:              864        96
+:geoo/construction/fence_rust_32x32:              864       160
+:geoo/construction/fence_rust_32x32:              864       128
+:geoo/construction/pillar_32:                     832       128
+:geoo/construction/pillar_32:                     832       160
+:geoo/construction/pillar_32:                     832       192
+:geoo/construction/pillar_32:                     896       256
+:geoo/construction/pillar_32:                     896       288
+:geoo/construction/pillar_32:                     896       320
+:geoo/construction/pillar_32:                     896       352
+:geoo/construction/pillar_32:                     896         0
+:geoo/construction/pillar_32:                     896        32
+:geoo/construction/pillar_32:                     896        64
+:geoo/construction/pillar_32:                     896        96
+:geoo/construction/pillar_32:                     896       128
+:geoo/construction/pillar_32:                     896       160
+:geoo/construction/pillar_32:                     896       192
+:geoo/construction/wall/small_64x64:              992         0
+:geoo/construction/wall/small_64x64:              992        64
+:geoo/construction/wall/small_64x64:              992       128
+:geoo/construction/wall/small_64x64:              992       192
+:geoo/construction/wall/small_64x64:              992       320
+:geoo/steel/dark_32x32o.S:                        896       224
+:geoo/steel/dark_32x32o.S:                        864       224
+:geoo/steel/dark_32x32o.S:                        832       224
+:geoo/construction/wall/small_64x64:              992       256
+:simon/tapir/064:                                1120       256
+:simon/tapir/064:                                1120       192
+:simon/tapir/064:                                1120       128
+:simon/tapir/064:                                1120        64
+:geoo/steel/dark_64x32o.S:                       1120         0
+:geoo/construction/fence_rust_32x32:               32       192
+:geoo/construction/fence_rust_32x32:               32       160
+:geoo/construction/fence_rust_32x32:               32       352
+:geoo/construction/fence_rust_32x32:               32         0
+:geoo/construction/pillar_32:                       0         0
+:geoo/construction/pillar_32:                       0        32
+:geoo/construction/pillar_32:                       0        64
+:geoo/construction/pillar_32:                       0       352
+:geoo/construction/pillar_32:                       0       192
+:geoo/construction/pillar_32:                       0       224
+:geoo/construction/fence_rust_32x32:               32       224
+:geoo/construction/fence_rust_32x32:               32       288
+:geoo/construction/fence_rust_32x32:               32       256
+:geoo/construction/pillar_32:                       0       256
+:geoo/construction/pillar_32:                       0       288
+:geoo/construction/pillar_32:                       0       320
+:geoo/construction/fence_rust_32x32:               32       320
+:geoo/construction/pillar_32:                      64         0
+:geoo/construction/pillar_32:                      64       352
+:geoo/construction/pillar_32:                      64       128
+:geoo/construction/pillar_32:                      64       160
+:geoo/construction/pillar_32:                      64       192
+:geoo/construction/pillar_32:                      64       224
+:geoo/construction/pillar_32:                      64       256
+:geoo/construction/pillar_32:                      64       288
+:geoo/construction/pillar_32:                      64       320
+:geoo/construction/wall/small_64x64:              160         0
+:geoo/construction/wall/small_64x64:              160        64
+:geoo/construction/wall/small_64x64:              160       128
+:geoo/construction/wall/small_64x64:              160       192
+:geoo/construction/wall/small_64x64:              160       320
+:geoo/steel/dark_32x32o.S:                         64        96
+:geoo/steel/dark_32x32o.S:                         32        96
+:geoo/steel/dark_32x32o.S:                          0        96
+:simon/tapir/064:                                 288       320
+:geoo/construction/wall/small_64x64:              160       256
+:simon/tapir/064:                                 288       128
+:simon/tapir/064:                                 288        64
+:simon/tapir/064:                                 288         0
+:geoo/steel/dark_64x32o.S:                        288       256
+:simon/tapir/032vd:                               288       192
+:simon/tapir/032vc:                               320       192
+:simon/tapir/032vd:                               704        64
+:simon/tapir/032vc:                               736        64
+:simon/tapir/032vd:                              1120       320
+:simon/tapir/032vc:                              1152       320
+:geoo/construction/pillar_32:                       0       160
+:geoo/construction/pillar_32:                       0       128
+:geoo/construction/pillar_32:                      64        32
+:geoo/construction/pillar_32:                      64        64
+:geoo/construction/fence_rust_32x32:               32        32
+:simon/tapir/016v:                                288       288
+:simon/tapir/016v:                                336       288
+:simon/tapir/016v:                                704       160
+:simon/tapir/016v:                                752       160
+:simon/tapir/016v:                               1120        32
+:simon/tapir/016v:                               1168        32
+:simon/tapir/064:                                 704       192
+:geoo/construction/fence_rust_32x32:              448       320
+:geoo/construction/fence_rust_32x32:              864       192
+:geoo/construction/fence_rust_32x32:               32        64

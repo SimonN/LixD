@@ -1,0 +1,214 @@
+$BUILT 2014-06-24 19:44:18
+$AUTHOR Amanda
+$GERMAN 
+$ENGLISH House of the Rising Lix (2p)
+
+#SIZE_X 1024
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 192
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 13
+#INITIAL 32
+#REQUIRED 20
+#SPAWN_INTERVAL 48
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 3
+#JUMPER 2
+#CLIMBER 3
+#RUNNER 3
+#EXPLODER2 3
+#BLOCKER 2
+#BATTER 2
+#BUILDER 3
+#PLATFORMER 2
+#BASHER 3
+#MINER 2
+#DIGGER 2
+
+:geoo/abstract/hatch.H: 800 16
+:geoo/abstract/hatch.H: 192 16 r
+
+:geoo/abstract/goal.G: 48 144
+:geoo/abstract/goal.G: 944 144
+
+:matt/marble/14d: 592 272
+:matt/marble/14d: 624 240
+:matt/marble/14d: 720 144
+:matt/marble/14d: 688 176
+:matt/marble/14d: 656 208
+:matt/marble/14d: 752 112
+:geoo/steel/64x32o.S: 752 80
+:matt/marble/14d: 784 80
+:matt/marble/09c: 720 176
+:matt/marble/05c: 752 144
+:matt/marble/05c: 688 208
+:matt/marble/05c: 624 272
+:matt/marble/09c: 656 240
+:matt/marble/05c: 720 240
+:matt/marble/05c: 784 176
+:matt/marble/09c: 784 112
+:matt/marble/08d: 816 80
+:matt/marble/05d: 880 80
+:matt/marble/05d: 976 80
+:matt/marble/08d: 912 80
+:matt/marble/05c: 848 112
+:matt/marble/09c: 880 112
+:matt/marble/09c: 816 176
+:matt/marble/09c: 752 240
+:matt/marble/05c: 720 272
+:matt/marble/05c: 784 208
+:matt/marble/05c: 848 144
+:matt/marble/05c: 816 240
+:matt/marble/05c: 880 176
+:matt/marble/15d: 912 176
+:matt/marble/05c: 944 112
+:matt/marble/15d: 944 144
+:matt/marble/15d: 976 112
+:matt/marble/15d: 880 208
+:matt/marble/15d: 848 240
+:matt/marble/15d: 816 272
+:matt/marble/05d: 528 368
+:matt/marble/15d: 720 368
+:matt/marble/08d: 560 368
+:matt/marble/05d: 624 368
+:matt/marble/08d: 656 368
+:matt/marble/14d: 528 336
+:matt/marble/14d: 560 304
+:matt/marble/05c: 560 336
+:matt/marble/09c: 592 304
+:matt/marble/05c: 656 304
+:matt/marble/09c: 688 304
+:matt/marble/05c: 656 336
+:matt/marble/05c: 752 304
+:matt/marble/15d: 784 304
+:matt/marble/15d: 752 336
+:matt/marble/14d: 400 272 frr
+:matt/marble/14d: 368 240 frr
+:matt/marble/14d: 272 144 frr
+:matt/marble/14d: 304 176 frr
+:matt/marble/14d: 336 208 frr
+:matt/marble/14d: 240 112 frr
+:geoo/steel/64x32o.S: 208 80
+:matt/marble/14d: 208 80 frr
+:matt/marble/09c: 240 176
+:matt/marble/05c: 240 144
+:matt/marble/05c: 304 208
+:matt/marble/05c: 368 272
+:matt/marble/09c: 304 240
+:matt/marble/05c: 272 240
+:matt/marble/05c: 208 176
+:matt/marble/09c: 176 112
+:matt/marble/08d: 144 80 frr
+:matt/marble/05d: 112 80 frr
+:matt/marble/05d: 16 80 frr
+:matt/marble/08d: 48 80 frr
+:matt/marble/05c: 144 112
+:matt/marble/09c: 80 112
+:matt/marble/09c: 144 176
+:matt/marble/09c: 208 240
+:matt/marble/05c: 272 272
+:matt/marble/05c: 208 208
+:matt/marble/05c: 144 144
+:matt/marble/05c: 176 240
+:matt/marble/05c: 112 176
+:matt/marble/15d: 80 176 frr
+:matt/marble/05c: 48 112
+:matt/marble/15d: 48 144 frr
+:matt/marble/15d: 16 112 frr
+:matt/marble/15d: 112 208 frr
+:matt/marble/15d: 144 240 frr
+:matt/marble/15d: 176 272 frr
+:matt/marble/05d: 464 368 frr
+:matt/marble/15d: 272 368 frr
+:matt/marble/08d: 400 368 frr
+:matt/marble/05d: 368 368 frr
+:matt/marble/08d: 304 368 frr
+:matt/marble/14d: 464 336 frr
+:matt/marble/14d: 432 304 frr
+:matt/marble/05c: 432 336
+:matt/marble/09c: 368 304
+:matt/marble/05c: 336 304
+:matt/marble/09c: 272 304
+:matt/marble/05c: 336 336
+:matt/marble/05c: 240 304
+:matt/marble/15d: 208 304 frr
+:matt/marble/15d: 240 336 frr
+:matt/marble/17a: 480 240
+:matt/marble/17a: 448 208
+:matt/marble/17a: 416 176
+:matt/marble/17a: 384 144
+:matt/marble/17a: 352 112
+:geoo/steel/64x32o.S: 304 80
+:matt/marble/17a: 288 48
+:matt/marble/15a: 512 240
+:matt/marble/15a: 544 208
+:matt/marble/15a: 576 176
+:matt/marble/15a: 608 144
+:matt/marble/15a: 640 112
+:geoo/steel/64x32o.S: 656 80
+:matt/marble/15a: 704 48
+:matt/marble/09c: 480 176
+:matt/marble/09c: 544 112
+:matt/marble/09c: 608 48
+:matt/marble/09c: 416 112
+:matt/marble/09c: 352 48
+:matt/marble/05c: 544 176
+:matt/marble/05c: 448 176
+:matt/marble/05c: 384 112
+:matt/marble/05c: 320 48
+:matt/marble/09c: 480 80
+:matt/marble/05c: 416 80
+:matt/marble/05c: 448 80
+:matt/marble/05c: 480 144
+:matt/marble/05c: 512 144
+:matt/marble/05c: 544 80
+:matt/marble/05c: 576 80
+:matt/marble/05c: 608 112
+:matt/marble/05c: 672 48
+:matt/marble/08c: 416 48
+:matt/marble/08c: 544 48
+:geoo/steel/32x32o.S: 720 80
+:geoo/steel/32x32o.S: 272 80
+:geoo/steel/32x32o.S: 288 16
+:geoo/steel/32x32o.S: 704 16
+:geoo/steel/16x16o.S: 456 56
+:geoo/steel/16x16o.S: 552 56
+:geoo/steel/32x32o.S: 16 160
+:geoo/steel/32x32o.S: 976 160
+:geoo/steel/32x32o.S: 48 192
+:geoo/steel/32x32o.S: 944 192
+:matt/marble/15a: 976 192
+:matt/marble/17a: 16 192
+:matt/marble/17a: 48 224
+:geoo/steel/32x32o.S: 80 224
+:matt/marble/17a: 80 256
+:geoo/steel/32x32o.S: 112 256
+:matt/marble/17a: 112 288
+:geoo/steel/32x32o.S: 144 288
+:matt/marble/17a: 144 320
+:geoo/steel/32x32o.S: 176 320
+:matt/marble/17a: 176 352
+:geoo/steel/32x32o.S: 208 352
+:matt/marble/17a: 208 384
+:geoo/steel/32x32o.S: 240 384
+:geoo/steel/32x32o.S: 912 224
+:matt/marble/15a: 944 224
+:geoo/steel/32x32o.S: 880 256
+:matt/marble/15a: 912 256
+:geoo/steel/32x32o.S: 848 288
+:matt/marble/15a: 880 288
+:geoo/steel/32x32o.S: 816 320
+:matt/marble/15a: 848 320
+:geoo/steel/32x32o.S: 784 352
+:matt/marble/15a: 816 352
+:geoo/steel/32x32o.S: 752 384
+:matt/marble/15a: 784 384
+:matt/marble/01a: 8 152 fr
+:matt/marble/01a: 1008 152 fr

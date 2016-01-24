@@ -1,0 +1,98 @@
+$BUILT 2014-02-27 19:16:40
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH "Hate leads to suffering"
+
+#SIZE_X 640
+#SIZE_Y 432
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 12
+#BACKGROUND_RED 32
+#BACKGROUND_GREEN 31
+#BACKGROUND_BLUE 80
+
+#SECONDS 155
+#INITIAL 99
+#REQUIRED 94
+#SPAWN_INTERVAL 41
+#SPAWN_INTERVAL_FAST 4
+
+#JUMPER 1
+#EXPLODER 4
+#BLOCKER 1
+#PLATFORMER 6
+#BUILDER 1
+#DIGGER 3
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/marble/Hatch.H: 64 6
+:matt/marble/Hatch.H: 176 6
+:matt/marble/Hatch.H: 288 6
+:matt/marble/Hatch.H: 398 6
+:matt/marble/Hatch.H: 512 6
+
+:matt/marble/Goal.G: 288 352
+
+:matt/marble/06a: 64 192
+:matt/marble/06a: 96 192
+:matt/marble/06a: 64 320
+:matt/marble/06a: 96 320
+:matt/marble/06: 176 192
+:matt/marble/06: 208 192
+:matt/marble/06: 176 320
+:matt/marble/06: 208 320
+:matt/marble/06b: 288 192
+:matt/marble/06b: 320 192
+:matt/marble/06c: 400 192
+:matt/marble/06c: 432 192
+:matt/marble/06d: 512 192
+:matt/marble/06d: 544 192
+:matt/marble/06c: 400 320
+:matt/marble/06c: 432 320
+:matt/marble/06d: 512 320
+:matt/marble/06d: 544 320
+:matt/marble/23e: 0 400
+:matt/marble/23e: 32 400
+:matt/marble/23e: 64 400
+:matt/marble/23e: 96 400
+:matt/marble/23e: 128 400
+:matt/marble/23e: 160 400
+:matt/marble/23e: 192 400
+:matt/marble/23e: 416 400
+:matt/marble/23e: 448 400
+:matt/marble/23e: 480 400
+:matt/marble/23e: 512 400
+:matt/marble/23e: 544 400
+:matt/marble/23e: 576 400
+:matt/marble/23e: 608 400
+:matt/marble/06a: 64 64
+:matt/marble/06a: 96 64
+:matt/marble/06: 176 64
+:matt/marble/06: 208 64
+:matt/marble/06b: 288 64
+:matt/marble/06b: 320 64
+:matt/marble/06c: 400 64
+:matt/marble/06c: 432 64
+:matt/marble/06d: 512 64
+:matt/marble/06d: 544 64
+:matt/marble/06d: 512 128
+:matt/marble/06d: 544 128
+:matt/marble/06d: 512 256
+:matt/marble/06d: 544 256
+:matt/marble/06b: 288 128
+:matt/marble/06b: 320 128
+:matt/marble/06b: 288 256
+:matt/marble/06b: 320 256
+:matt/marble/06a: 64 128
+:matt/marble/06a: 96 128
+:matt/marble/06a: 64 256
+:matt/marble/06a: 96 256
+:matt/marble/23e: 224 400
+:matt/marble/23e: 384 400

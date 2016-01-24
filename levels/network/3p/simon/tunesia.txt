@@ -1,0 +1,292 @@
+$BUILT                                             2012-03-06 04:18:44
+$AUTHOR                                                          Simon
+$GERMAN                                                               
+$ENGLISH                                                       Tunesia
+
+#SIZE_X                                                            960
+#SIZE_Y                                                            896
+#TORUS_X                                                             1
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                             0
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            60
+#INITIAL                                                           120
+#REQUIRED                                                           20
+#SPAWN_INTERVAL                                                     17
+#SPAWN_INTERVAL_FAST                                                 4
+
+#WALKER                                                             40
+#JUMPER                                                             40
+#CLIMBER                                                            20
+#FLOATER                                                            20
+#EXPLODER2                                                          20
+#CUBER                                                              20
+#BATTER                                                             20
+#BUILDER                                                            60
+#PLATFORMER                                                         20
+#BASHER                                                             20
+#MINER                                                              20
+#DIGGER                                                             20
+
+:geoo/sandstone/Hatch.H:                          408       244
+:geoo/sandstone/Hatch.H:                          728       244
+:geoo/sandstone/Hatch.H:                           88       244
+:geoo/sandstone/Hatch.H:                          112        64
+:geoo/sandstone/Hatch.H:                          432        64
+:geoo/sandstone/Hatch.H:                          752        64
+
+:geoo/sandstone/Goal.G:                           768       720
+:geoo/sandstone/Goal.G:                           128       720
+:geoo/sandstone/Goal.G:                           448       720
+
+:matt/beach/nighttime/02:          48       320
+:geoo/sandstone/pillar_top_jaggedl:               952       280
+:matt/beach/nighttime/03:         800       320
+:geoo/sandstone/pillar_top_jaggedl:               880       312
+:geoo/sandstone/pillar_bottom:                    880       336
+:geoo/sandstone/pillar_bottom:                    952       304
+:matt/beach/nighttime/06:         864       320
+:geoo/sandstone/pillar_top_jaggedl:                80       304
+:geoo/sandstone/64x16:                            864         0
+:geoo/sandstone/64x16:                             32         0
+:geoo/sandstone/64x16:                             96         0
+:geoo/sandstone/64x16:                            160         0
+:geoo/sandstone/pillar_top_ext:                   896        16
+:geoo/sandstone/pillar_top_ext:                     0        16
+:geoo/sandstone/pillar_top_shaded:                912        32
+:geoo/sandstone/pillar_32:                        912        64
+:geoo/sandstone/pillar_bottom_ext:                896       128
+:geoo/sandstone/pillar_bottom_ext:                  0       128
+:geoo/sandstone/pillar_bottom:                    912        96
+:geoo/sandstone/64x32:                            864       144
+:geoo/sandstone/64x32:                             32       144
+:geoo/sandstone/64x32:                             96       144
+:geoo/sandstone/64x32:                            160       144
+:geoo/sandstone/pillar_top_shaded:                 16        32
+:geoo/sandstone/pillar_32:                         16        64
+:geoo/steel/dark_32x64o.S:                        944        16
+:geoo/sandstone/pillar_bottom:                     16        96
+:geoo/steel/dark_32x64o.S:                        944        80
+:geoo/steel/dark_64x32o.S:                        928       144
+:geoo/steel/dark_32x16o.S:                        928         0
+:geoo/steel/dark_32x16o.S:                          0         0
+:geoo/sandstone/64x16:                            224         0
+:geoo/sandstone/64x16:                            352         0
+:geoo/sandstone/64x16:                            416         0
+:geoo/sandstone/64x16:                            480         0
+:geoo/sandstone/pillar_top_ext:                   256        16
+:geoo/sandstone/pillar_top_ext:                   320        16
+:geoo/sandstone/pillar_top_shaded:                272        32
+:geoo/sandstone/pillar_32:                        272        64
+:geoo/sandstone/pillar_bottom_ext:                256       128
+:geoo/sandstone/pillar_bottom_ext:                320       128
+:geoo/sandstone/pillar_bottom:                    272        96
+:geoo/sandstone/64x32:                            224       144
+:geoo/sandstone/64x32:                            352       144
+:geoo/sandstone/64x32:                            416       144
+:geoo/sandstone/64x32:                            480       144
+:geoo/sandstone/pillar_top_shaded:                336        32
+:geoo/sandstone/pillar_32:                        336        64
+:geoo/steel/dark_32x64o.S:                        304        16
+:geoo/sandstone/pillar_bottom:                    336        96
+:geoo/steel/dark_32x64o.S:                        304        80
+:geoo/steel/dark_64x32o.S:                        288       144
+:geoo/steel/dark_32x16o.S:                        288         0
+:geoo/steel/dark_32x16o.S:                        320         0
+:geoo/sandstone/64x16:                            544         0
+:geoo/sandstone/64x16:                            672         0
+:geoo/sandstone/64x16:                            736         0
+:geoo/sandstone/64x16:                            800         0
+:geoo/sandstone/pillar_top_ext:                   576        16
+:geoo/sandstone/pillar_top_ext:                   640        16
+:geoo/sandstone/pillar_top_shaded:                592        32
+:geoo/sandstone/pillar_32:                        592        64
+:geoo/sandstone/pillar_bottom_ext:                576       128
+:geoo/sandstone/pillar_bottom_ext:                640       128
+:geoo/sandstone/pillar_bottom:                    592        96
+:geoo/sandstone/64x32:                            544       144
+:geoo/sandstone/64x32:                            672       144
+:geoo/sandstone/64x32:                            736       144
+:geoo/sandstone/64x32:                            800       144
+:geoo/sandstone/pillar_top_shaded:                656        32
+:geoo/sandstone/pillar_32:                        656        64
+:geoo/steel/dark_32x64o.S:                        624        16
+:geoo/sandstone/pillar_bottom:                    656        96
+:geoo/steel/dark_32x64o.S:                        624        80
+:geoo/steel/dark_64x32o.S:                        608       144
+:geoo/steel/dark_32x16o.S:                        608         0
+:geoo/steel/dark_32x16o.S:                        640         0
+:matt/beach/nighttime/02:         368       320
+:geoo/sandstone/pillar_top_jaggedl:               400       304
+:matt/beach/nighttime/03:         160       320
+:matt/beach/nighttime/06:         928       320
+:geoo/sandstone/pillar_top_jaggedl:               240       312
+:geoo/sandstone/pillar_bottom:                    240       336
+:geoo/steel/16x16o.S:                             128       312
+:matt/beach/nighttime/06:          48       320
+:matt/beach/nighttime/06:          96       320
+:geoo/sandstone/pillar_top_jaggedl:               312       280
+:geoo/sandstone/pillar_bottom:                    312       304
+:matt/beach/nighttime/06:         224       320
+:matt/beach/nighttime/03:         480       320
+:geoo/sandstone/pillar_top_jaggedl:               560       312
+:geoo/steel/16x16o.S:                             448       312
+:matt/beach/nighttime/06:         288       320
+:geoo/sandstone/pillar_bottom:                    560       336
+:matt/beach/nighttime/06:         368       320
+:matt/beach/nighttime/06:         416       320
+:matt/beach/nighttime/02:         688       320
+:geoo/sandstone/pillar_top_jaggedl:               720       304
+:geoo/sandstone/pillar_top_jaggedl:               632       280
+:geoo/sandstone/pillar_bottom:                    632       304
+:matt/beach/nighttime/06:         544       320
+:geoo/steel/16x16o.S:                             768       312
+:matt/beach/nighttime/06:         608       320
+:matt/beach/decor/grass10:        656       336
+:matt/beach/nighttime/06:         688       320
+:matt/beach/nighttime/06:         736       320
+:matt/beach/decor/grass04:        936       384
+:geoo/sandstone/64x64:                            864       480
+:geoo/sandstone/64x64:                            928       480
+:geoo/sandstone/64x64:                             32       480
+:geoo/sandstone/64x64:                            800       480
+:geoo/sandstone/64x64:                            736       480
+:matt/beach/nighttime/06:         784       400
+:geoo/sandstone/64x64:                             96       480
+:geoo/sandstone/64x64:                            160       480
+:geoo/sandstone/64x64:                            224       480
+:geoo/sandstone/64x64:                            288       480
+:geoo/sandstone/64x64:                            352       480
+:matt/beach/decor/grass03:        160       376
+:matt/beach/nighttime/06:         144       400
+:geoo/sandstone/64x64:                            480       480
+:geoo/sandstone/64x64:                            416       480
+:geoo/sandstone/64x64:                            544       480
+:geoo/sandstone/64x64:                            608       480
+:geoo/sandstone/64x64:                            672       480
+:matt/beach/decor/grass02:        464       368
+:matt/beach/nighttime/06:         464       400
+:matt/beach/nighttime/06:         224       400     frr
+:matt/beach/nighttime/06:         544       400     frr
+:matt/beach/nighttime/04:         384       352
+:matt/beach/nighttime/04:          64       352
+:matt/beach/nighttime/06:         864       400     frr
+:matt/beach/decor/grass08:         88       392
+:matt/beach/nighttime/04:         704       352
+:geoo/sandstone/64x64:                            896       544
+:geoo/sandstone/64x64:                              0       544
+:geoo/sandstone/64x64:                             64       544
+:geoo/sandstone/64x64:                            128       544
+:geoo/sandstone/64x64:                            192       544
+:geoo/sandstone/64x64:                            256       544
+:geoo/sandstone/64x64:                            320       544
+:geoo/sandstone/64x64:                            384       544
+:geoo/sandstone/64x64:                            448       544
+:geoo/sandstone/64x64:                            512       544
+:geoo/sandstone/64x64:                            576       544
+:geoo/sandstone/64x64:                            640       544
+:geoo/sandstone/64x64:                            704       544
+:geoo/sandstone/64x64:                            768       544
+:geoo/sandstone/64x64:                            832       544
+:geoo/sandstone/pillar_top_ext:                   928       688
+:geoo/sandstone/pillar_bottom_ext:                928       672
+:geoo/sandstone/pillar_top_ext:                   288       688
+:geoo/sandstone/pillar_bottom_ext:                288       672
+:geoo/sandstone/pillar_top_shaded:                944       704
+:geoo/sandstone/pillar_top_shaded:                304       704
+:geoo/sandstone/pillar_bottom:                    944       736
+:geoo/sandstone/pillar_bottom:                    304       736
+:geoo/sandstone/16x8:                             152       680
+:geoo/sandstone/8x16:                             144       688
+:geoo/sandstone/8x16:                             168       688
+:geoo/sandstone/16x8:                             152       704
+:geoo/steel/16x16o.S:                             152       688
+:geoo/sandstone/pillar_bottom_ext:                928       768
+:geoo/sandstone/pillar_bottom_ext:                288       768
+:matt/beach/nighttime/06:         448       832
+:matt/beach/nighttime/06:         288       832
+:matt/beach/nighttime/06:         128       832
+:matt/beach/nighttime/06:         928       832
+:matt/beach/nighttime/06:         768       832
+:matt/beach/nighttime/06:         624       832
+:matt/beach/nighttime/06:         816       784
+:matt/beach/nighttime/06:         688       784
+:matt/beach/nighttime/06:         576       784
+:matt/beach/nighttime/06:         480       784
+:matt/beach/nighttime/06:         352       784
+:matt/beach/nighttime/06:         224       784
+:matt/beach/nighttime/06:          96       784
+:matt/beach/nighttime/06:         928       784
+:geoo/steel/64x32o.S:                             128       784
+:geoo/steel/64x32o.S:                             928       784
+:geoo/steel/64x32o.S:                             288       784
+:geoo/sandstone/pillar_32:                         64       784     r
+:geoo/sandstone/pillar_top_shaded:                 32       784     fr
+:geoo/sandstone/slopes/32x32rt:                    32       784     d
+:geoo/sandstone/pillar_32:                         32       784     rn
+:geoo/sandstone/pillar_bottom:                     96       784     fr
+:geoo/sandstone/pillar_32:                        224       784     r
+:geoo/sandstone/pillar_top_shaded:                192       784     fr
+:geoo/sandstone/slopes/32x32rt:                   192       784     d
+:geoo/sandstone/pillar_32:                        192       784     rn
+:geoo/sandstone/pillar_bottom:                    256       784     fr
+:geoo/sandstone/16x8:                             472       680
+:geoo/sandstone/8x16:                             464       688
+:geoo/sandstone/8x16:                             488       688
+:geoo/sandstone/16x8:                             472       704
+:geoo/steel/16x16o.S:                             472       688
+:geoo/steel/64x32o.S:                             448       784
+:geoo/sandstone/pillar_32:                        384       784     r
+:geoo/sandstone/pillar_top_shaded:                352       784     fr
+:geoo/sandstone/slopes/32x32rt:                   352       784     d
+:geoo/sandstone/pillar_32:                        352       784     rn
+:geoo/sandstone/pillar_bottom:                    416       784     fr
+:geoo/sandstone/pillar_32:                        544       784     r
+:geoo/sandstone/pillar_top_shaded:                512       784     fr
+:geoo/sandstone/slopes/32x32rt:                   512       784     d
+:geoo/sandstone/pillar_32:                        512       784     rn
+:geoo/sandstone/pillar_bottom:                    576       784     fr
+:geoo/sandstone/pillar_top_ext:                   608       688
+:geoo/sandstone/pillar_bottom_ext:                608       672
+:geoo/sandstone/pillar_top_shaded:                624       704
+:geoo/sandstone/pillar_bottom:                    624       736
+:geoo/sandstone/pillar_bottom_ext:                608       768
+:geoo/steel/64x32o.S:                             608       784
+:geoo/sandstone/16x8:                             792       680
+:geoo/sandstone/8x16:                             784       688
+:geoo/sandstone/8x16:                             808       688
+:geoo/sandstone/16x8:                             792       704
+:geoo/steel/16x16o.S:                             792       688
+:geoo/steel/64x32o.S:                             768       784
+:geoo/sandstone/pillar_32:                        704       784     r
+:geoo/sandstone/pillar_top_shaded:                672       784     fr
+:geoo/sandstone/slopes/32x32rt:                   672       784     d
+:geoo/sandstone/pillar_32:                        672       784     rn
+:geoo/sandstone/pillar_bottom:                    736       784     fr
+:geoo/sandstone/pillar_32:                        864       784     r
+:geoo/sandstone/pillar_top_shaded:                832       784     fr
+:geoo/sandstone/slopes/32x32rt:                   832       784     d
+:geoo/sandstone/pillar_32:                        832       784     rn
+:geoo/sandstone/pillar_bottom:                    896       784     fr
+:matt/beach/decor/grass11:         72       424
+:matt/beach/decor/grass06:          0       304
+:matt/beach/decor/grass09:        552       336
+:matt/beach/decor/grass02:         48       864
+:matt/beach/decor/grass02:        368       864     frr
+:matt/beach/decor/grass08:        544       832
+:matt/beach/decor/grass08:        576       848
+:matt/beach/decor/grass08:        544       864     f
+:matt/beach/decor/grass08:        512       864
+:matt/beach/decor/grass07:        784       864
+:matt/beach/decor/grass10:        816       864
+:matt/beach/decor/grass10:        800       848
+:matt/beach/decor/grass09:        808       872     frr
+:matt/beach/decor/grass04:        856       880
+:matt/beach/decor/grass08:        144       848
+:matt/beach/decor/grass06:        160       824
+:matt/beach/decor/grass05:        744       864
+:matt/beach/decor/grass05:        712       880     frr

@@ -1,0 +1,135 @@
+$BUILT 2014-04-18 19:00:02
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Constraint (2p)
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 35
+#INITIAL 80
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 40
+#JUMPER 40
+#NOTHING 0
+#EXPLODER2 15
+#PLATFORMER 65
+#MINER 50
+#NOTHING 0
+#BATTER 30
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 376 14 r
+:geoo/construction/Hatch.H: 344 126
+
+:geoo/construction/Goal2.G: 472 334
+:geoo/sandstone/Goal.G: 72 142
+
+:geoo/sandstone/32x64: 152 238 rrr
+:geoo/sandstone/64x64: 472 62
+:geoo/construction/concrete/128: 216 254
+:geoo/sandstone/64x64: 344 62
+:geoo/sandstone/64x64: 408 398
+:geoo/construction/concrete/064: 88 270
+:geoo/construction/concrete/064: 88 206
+:geoo/sandstone/64x64: 280 62
+:geoo/sandstone/64x64: 280 126
+:geoo/steel/dark_32x48o.S: 312 206
+:geoo/steel/dark_32x48o.S: 312 158
+:geoo/steel/dark_32x32o.S: 312 126
+:geoo/steel/dark_48x32o.S: 296 254
+:geoo/steel/dark_48x32o.S: 248 254
+:geoo/steel/dark_48x32o.S: 216 254 rrr
+:geoo/construction/concrete/032h: 504 398 rr
+:geoo/sandstone/64x64: 472 398
+:geoo/steel/32x16o.S: 504 398
+:geoo/steel/32x16o.S: 120 254
+:geoo/construction/concrete/064: 88 398
+:geoo/steel/32x16o.S: 88 206
+:geoo/steel/32x16o.S: 472 398
+:geoo/construction/concrete/032h: 536 94 r
+:geoo/construction/concrete/032h: 536 30 r
+:geoo/steel/32x16o.S: 568 126 rrr
+:geoo/steel/32x16o.S: 568 94 rrr
+:geoo/steel/32x16o.S: 568 62 rrr
+:geoo/construction/concrete/064: 152 270
+:geoo/sandstone/64x64: 408 62
+:geoo/construction/concrete/064: 344 190
+:geoo/construction/concrete/064: 344 254
+:geoo/construction/concrete/064: 408 238
+:geoo/construction/concrete/064: 408 302
+:geoo/sandstone/64x64: 472 190
+:geoo/construction/concrete/064: 24 222
+:geoo/steel/32x16o.S: 568 30 rrr
+:geoo/steel/32x16o.S: 568 398 rrr
+:geoo/steel/32x16o.S: 520 190 rrr
+:geoo/construction/concrete/016h: 248 382
+:geoo/construction/concrete/016h: 280 382
+:geoo/construction/concrete/032hd: 280 398
+:geoo/construction/concrete/016h: 312 382
+:geoo/steel/32x16o.S: 88 14 rrr
+:geoo/sandstone/64x64: 344 318
+:geoo/steel/32x16o.S: 312 110 rr
+:geoo/steel/32x16o.S: 344 110 rr
+:geoo/steel/32x16o.S: 376 110 rr
+:geoo/steel/32x16o.S: 408 94 rrr
+:geoo/steel/32x16o.S: 408 62 rrr
+:geoo/steel/32x16o.S: 408 30 rrr
+:geoo/steel/32x16o.S: 408 398 rrr
+:geoo/steel/32x16o.S: 56 206
+:geoo/steel/32x16o.S: 520 222 rrr
+:geoo/steel/32x16o.S: 504 254 rr
+:geoo/steel/32x16o.S: 536 142 rr
+:geoo/steel/32x16o.S: 520 158 rrr
+:geoo/steel/32x16o.S: 472 254 rr
+:geoo/steel/16x16o.S: 520 142
+:geoo/steel/32x16o.S: 56 398 rr
+:geoo/steel/dark_48x32o.S: 120 206 fr
+:geoo/steel/dark_48x32o.S: 104 270 f
+:geoo/steel/dark_48x32o.S: 168 398 f
+:geoo/steel/dark_48x32o.S: 248 14 fr
+:geoo/steel/32x16o.S: 248 398
+:geoo/steel/32x16o.S: 280 382
+:geoo/steel/32x16o.S: 312 382
+:geoo/steel/32x16o.S: 248 382
+:geoo/steel/32x16o.S: 88 46 rr
+:geoo/steel/16x16o.S: 88 398
+:geoo/sandstone/32x64: 248 62
+:geoo/sandstone/32x64: 248 126
+:geoo/construction/concrete/032h: 344 382
+:geoo/steel/32x16o.S: 376 398
+:geoo/steel/dark_48x32o.S: 424 94 f
+:geoo/construction/concrete/032h: 152 30
+:geoo/steel/32x16o.S: 120 62 rr
+:geoo/steel/dark_48x32o.S: 216 382 fr
+:geoo/sandstone/32x16: 152 398 rrr
+:geoo/sandstone/32x64: 216 30
+:geoo/sandstone/32x16: 216 94
+:geoo/sandstone/64x64: 248 190
+:geoo/sandstone/32x32: 216 350 d
+:geoo/sandstone/32x32: 248 350 d
+:geoo/sandstone/32x32: 392 222 d
+:geoo/sandstone/32x32: 392 190 d
+:geoo/sandstone/32x32: 424 222 d
+:geoo/sandstone/32x32: 440 222 d
+:geoo/steel/32x16o.S: 88 62 rr
+:geoo/steel/32x16o.S: 152 62 rr
+:geoo/steel/32x16o.S: 184 62 r
+:geoo/sandstone/32x16: 200 62 rrr
+:geoo/steel/dark_48x32o.S: 152 238 fr
+:geoo/construction/concrete/064: 24 286
+:geoo/steel/32x16o.S: 456 254 rrr
+:geoo/steel/32x16o.S: 456 286 rrr
+:geoo/steel/32x16o.S: 344 382
+:geoo/steel/32x16o.S: 344 398

@@ -1,0 +1,95 @@
+$BUILT 2014-06-08 16:17:45
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Builders' Cracks
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 380
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 53
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#FLOATER 1
+#RUNNER 1
+#BUILDER 9
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 64 112
+
+:geoo/construction/Goal2.G: 368 272
+
+:matt/water.W: 304 368
+:matt/water.W: -16 368
+:matt/water.W: 624 368
+
+:geoo/construction/concrete/podium_32: 208 176
+:geoo/construction/concrete/032h: 80 144
+:geoo/construction/wall/big_128x64: 16 304
+:geoo/construction/concrete/032h: 80 304
+:geoo/construction/pillar_32: 96 208
+:geoo/construction/pillar_base: 80 176
+:geoo/construction/pillar_base: 80 288
+:geoo/construction/pillar_top_shaded: 96 192
+:geoo/construction/pillar_bottom: 96 272
+:geoo/construction/concrete/032h: 176 272
+:geoo/construction/concrete/032h: 240 272
+:geoo/construction/concrete/032v: 176 144
+:geoo/construction/concrete/032v: 272 144
+:geoo/construction/concrete/032v: 176 208
+:geoo/construction/concrete/032v: 272 208
+:geoo/construction/pillar_32: 96 240
+:geoo/construction/wall/big_128x64: 496 304
+:geoo/construction/concrete/032h: 496 304
+:geoo/construction/pillar_base: 496 288
+:geoo/construction/pillar_bottom: 512 272
+:geoo/construction/pillar_32: 512 240
+:geoo/construction/pillar_base: 496 176
+:geoo/construction/pillar_top_shaded: 512 192
+:geoo/construction/pillar_32: 512 208
+:geoo/construction/concrete/032h: 496 144
+:geoo/construction/wall/big_128x64: 48 336
+:geoo/construction/wall/big_128x64: 176 336
+:geoo/construction/wall/big_128x64: 336 336
+:geoo/construction/wall/big_128x64: 464 336
+:geoo/construction/wall/big_128x64: 0 0
+:geoo/construction/wall/big_128x64: 128 0
+:geoo/construction/wall/big_128x64: 256 0
+:geoo/construction/wall/big_128x64: 384 0
+:geoo/construction/wall/big_128x64: 512 0
+:geoo/construction/concrete/064: 208 208 frrr
+:geoo/construction/concrete/032h: 560 304
+:geoo/construction/pillar_base: 560 288
+:geoo/construction/pillar_bottom: 576 272
+:geoo/construction/pillar_32: 576 240
+:geoo/construction/pillar_base: 560 176
+:geoo/construction/pillar_top_shaded: 576 192
+:geoo/construction/pillar_32: 576 208
+:geoo/construction/concrete/032h: 560 144
+:geoo/construction/concrete/032h: 16 144
+:geoo/construction/concrete/032h: 16 304
+:geoo/construction/pillar_32: 32 208
+:geoo/construction/pillar_base: 16 176
+:geoo/construction/pillar_base: 16 288
+:geoo/construction/pillar_top_shaded: 32 192
+:geoo/construction/pillar_bottom: 32 272
+:geoo/construction/pillar_32: 32 240
+:geoo/construction/wall/big_128x64: 16 368
+:geoo/construction/wall/big_128x64: 496 368

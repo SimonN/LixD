@@ -1,0 +1,116 @@
+$BUILT 2014-07-15 19:54:32
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH Tribute to Benny Hill
+
+#SIZE_X 800
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y -20
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 3600
+#INITIAL 6
+#REQUIRED 5
+#SPAWN_INTERVAL 1
+#SPAWN_INTERVAL_FAST 1
+
+#CLIMBER 1
+#FLOATER 5
+#EXPLODER 3
+#BLOCKER 0
+#BUILDER 3
+#BASHER 0
+#MINER 1
+#DIGGER 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 16 256
+:geoo/construction/Hatch.H: 48 256
+:geoo/construction/Hatch.H: 80 256
+:geoo/construction/Hatch.H: 112 256
+:geoo/construction/Hatch.H: 144 256
+:geoo/construction/Hatch.H: 608 112
+
+:simon/tapir/goal.G: 48 128
+
+:geoo/construction/squisher.T: 176 112
+
+:simon/tapir/064: 256 336
+:simon/tapir/064: 192 336
+:simon/tapir/064: 128 336
+:simon/tapir/064: 64 336
+:simon/tapir/064: 0 336
+:simon/tapir/016h: 48 352
+:simon/tapir/016h: 112 368
+:simon/tapir/016h: 176 352
+:simon/tapir/016h: 240 368
+:simon/tapir/032a: 288 304
+:simon/tapir/032a: 320 272
+:simon/tapir/032a: 352 240
+:simon/tapir/032a: 384 208
+:simon/tapir/016hb: 384 192
+:simon/tapir/016h: 352 192
+:simon/tapir/016hb: 352 176
+:simon/tapir/032d: 384 240
+:simon/tapir/032d: 352 272
+:simon/tapir/032d: 320 304
+:matt/steel/32x32.S: 320 176
+:matt/steel/32x32.S: 288 176
+:matt/steel/32x32.S: 256 176
+:matt/steel/32x32.S: 224 176
+:matt/steel/32x32.S: 192 176
+:matt/steel/32x32.S: 160 176
+:matt/steel/32x32.S: 128 176
+:matt/steel/32x32.S: 96 176
+:matt/steel/32x32.S: 64 176
+:matt/steel/32x32.S: 32 176
+:matt/steel/32x32.S: 416 208
+:matt/steel/32x32.S: 448 208
+:matt/steel/32x32.S: 480 208
+:matt/steel/32x32.S: 512 208
+:matt/steel/32x32.S: 544 208
+:matt/steel/32x32.S: 576 208
+:matt/steel/32x32.S: 608 208
+:matt/steel/32x32.S: 640 208
+:matt/steel/32x32.S: 672 208
+:matt/steel/32x32.S: 704 208
+:matt/steel/32x32.S: 736 208
+:matt/steel/32x32.S: 736 176
+:matt/steel/32x32.S: 736 144
+:matt/steel/32x32.S: 736 112
+:matt/steel/32x32.S: 736 80
+:matt/steel/32x32.S: 736 48
+:matt/steel/32x32.S: 736 16
+:matt/steel/32x32.S: 736 -16
+:simon/tapir/032vc: 704 32
+:simon/tapir/032: 704 0
+:matt/steel/32x32.S: 480 160
+:matt/steel/32x32.S: 480 128
+:matt/steel/32x32.S: 480 96
+:matt/steel/32x32.S: 480 64
+:matt/steel/32x32.S: 480 32
+:matt/steel/32x32.S: 480 0
+:matt/steel/32x32.S: 192 142
+:matt/steel/32x32.S: 192 110
+:matt/steel/32x32.S: 192 78
+:matt/steel/32x32.S: 192 46
+:matt/steel/32x32.S: 192 14
+:matt/steel/32x32.S: 192 -18
+:matt/steel/32x32.S: 160 142
+:matt/steel/32x32.S: 160 110
+:matt/steel/32x32.S: 160 78
+:matt/steel/32x32.S: 160 46
+:matt/steel/32x32.S: 160 14
+:matt/steel/32x32.S: 160 -18
+:simon/tapir/016vc: 688 0
+:simon/tapir/016vd: 544 0
+:simon/tapir/032: 512 0
+:simon/tapir/032vd: 512 32

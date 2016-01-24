@@ -1,0 +1,157 @@
+$BUILT                                             2011-08-21 15:15:15
+$AUTHOR                                                          Aidan
+$GERMAN                                                               
+$ENGLISH                                         The Grate Bridge (2p)
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                             0
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            30
+#INITIAL                                                           200
+#REQUIRED                                                           20
+#RATE                                                               99
+
+#WALKER                                                             40
+#JUMPER                                                             40
+#BATTER                                                             -1
+#RUNNER                                                             40
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:geoo/construction/Hatch.H:                        48       304
+:geoo/construction/Hatch.H:                       560       304     r
+
+:geoo/construction/Goal2.G:                       592       304
+:geoo/construction/Goal2.G:                       -16       304
+:geoo/construction/Goal2.G:                        80         0
+:geoo/construction/Goal2.G:                       496         0
+
+:matt/water.W:                                     96       368
+:matt/water.W:                                    128       368
+:matt/water.W:                                    160       368
+:matt/water.W:                                    192       368
+:matt/water.W:                                    224       368
+:matt/water.W:                                    256       368
+:matt/water.W:                                    288       368
+:matt/water.W:                                    320       368
+:matt/water.W:                                    352       368
+:matt/water.W:                                    384       368
+:matt/water.W:                                    416       368
+:matt/water.W:                                    448       368
+:matt/water.W:                                    480       368
+:matt/water.W:                                    512       368
+
+:geoo/construction/squarebrick_large:               0       368
+:geoo/construction/squarebrick_large:              32       368
+:geoo/construction/squarebrick_large:             576       368
+:geoo/construction/squarebrick_large:             608       368
+:geoo/construction/stairsbrick_rd_32:             136       304     f
+:geoo/construction/stairsbrick_rd_32:             416       304
+:geoo/construction/stairsbrick_rd_32:             480       336
+:geoo/construction/stairsbrick_rd_32:              72       336     f
+:geoo/construction/squarebrick_large:             544       368
+:geoo/construction/squarebrick_large:              64       368
+:geoo/construction/stairsbrick_rd_32:             356       274
+:geoo/construction/stairsbrick_rd_32:             196       274     f
+:geoo/construction/fence_rust_64x64:              192        16
+:geoo/construction/fence_rust_64x64:              128        16
+:geoo/construction/fence_rust_64x64:              256        16
+:geoo/construction/fence_rust_64x64:              320        16
+:geoo/construction/fence_rust_64x64:              448        16
+:geoo/construction/fence_rust_64x64:              384        16
+:geoo/construction/fence_rust_64x64:               64        64
+:geoo/construction/fence_rust_64x64:              128        64
+:geoo/construction/fence_rust_64x64:              448        64
+:geoo/construction/fence_rust_64x64:              512        64
+:geoo/construction/fence_rust_64x64:               32       128
+:geoo/construction/fence_rust_64x64:               64       128
+:geoo/construction/fence_rust_64x64:              128       128
+:geoo/construction/fence_rust_64x64:              448       128
+:geoo/construction/fence_rust_64x64:              528       128
+:geoo/construction/fence_rust_64x64:              512       128
+:geoo/construction/pillar_32:                     608       192
+:geoo/construction/pillar_32:                     608       224
+:geoo/construction/pillar_32:                     608       256
+:geoo/construction/pillar_32:                       0       192
+:geoo/construction/pillar_32:                       0       224
+:geoo/construction/pillar_32:                       0       256
+:geoo/construction/squarebrick_small:             240       288
+:geoo/construction/squarebrick_small:             240       304
+:geoo/construction/squarebrick_small:             240       320
+:geoo/construction/squarebrick_small:             240       336
+:geoo/construction/squarebrick_small:             240       352
+:geoo/construction/squarebrick_small:             240       368
+:geoo/construction/squarebrick_small:             240       384
+:geoo/construction/squarebrick_small:             384       288
+:geoo/construction/squarebrick_small:             384       304
+:geoo/construction/squarebrick_small:             384       320
+:geoo/construction/squarebrick_small:             384       336
+:geoo/construction/squarebrick_small:             384       352
+:geoo/construction/squarebrick_small:             384       368
+:geoo/construction/squarebrick_small:             384       384
+:geoo/construction/squarebrick_small:             480       352
+:geoo/construction/squarebrick_small:             480       368
+:geoo/construction/squarebrick_small:             480       384
+:geoo/construction/squarebrick_small:             144       352
+:geoo/construction/squarebrick_small:             144       368
+:geoo/construction/squarebrick_small:             144       384
+:geoo/construction/squarebrick_small:             480       336
+:geoo/construction/squarebrick_small:             144       336
+:geoo/construction/fence_rust_32x32:              176       128
+:geoo/construction/pillar_32:                       0         0
+:geoo/construction/pillar_32:                       0        32
+:geoo/construction/pillar_32:                       0        64
+:geoo/construction/pillar_32:                       0        96
+:geoo/construction/pillar_32:                       0       128
+:geoo/construction/pillar_32:                       0       160
+:geoo/construction/pillar_32:                     608       160
+:geoo/construction/pillar_32:                     608        64
+:geoo/construction/pillar_32:                     608        96
+:geoo/construction/pillar_32:                     608       128
+:geoo/construction/pillar_32:                     608         0
+:geoo/construction/pillar_32:                     608        32
+:geoo/construction/fence_rust_64x64:              144        64
+:geoo/construction/rod_rust/straight_diagu32:     498       204
+:geoo/construction/rod_rust/straight_diagu32:     514       188
+:geoo/construction/rod_rust/straight_diagu32:     106       206     frr
+:geoo/construction/rod_rust/straight_diagu32:      90       190     frr
+:geoo/construction/fence_rust_32x32:              176       160
+:geoo/construction/fence_rust_64x64:              432        64
+:geoo/construction/fence_rust_64x64:              432       128
+:geoo/construction/fence_rust_32x32:              208        64
+:geoo/construction/fence_rust_32x32:              240        64
+:geoo/construction/fence_rust_32x32:              368        64
+:geoo/construction/fence_rust_32x32:              400        64
+:geoo/construction/fence_rust_32x32:              400        96
+:geoo/construction/fence_rust_32x32:              208        96
+:geoo/construction/fence_rust_64x64:              544       128
+:geoo/construction/rod_rust/straight_diagu32:     138       238     frr
+:geoo/construction/rod_rust/straight_diagu32:     466       236     fr
+:geoo/construction/pillar_bottom:                 608       288
+:geoo/construction/pillar_base:                   592       288
+:geoo/construction/pillar_base:                   592         0
+:geoo/construction/pillar_32:                       0       192
+:geoo/construction/pillar_32:                       0       224
+:geoo/construction/pillar_32:                       0       256
+:geoo/construction/pillar_32:                       0       160
+:geoo/construction/pillar_32:                       0        64
+:geoo/construction/pillar_32:                       0        96
+:geoo/construction/pillar_32:                       0       128
+:geoo/construction/pillar_32:                       0         0
+:geoo/construction/pillar_32:                       0        32
+:geoo/construction/pillar_bottom:                   0       288
+:geoo/construction/pillar_base:                   -16       288
+:geoo/construction/pillar_base:                   -16         0

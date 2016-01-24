@@ -1,0 +1,275 @@
+$BUILT 2014-01-19 18:00:28
+$AUTHOR Michael S. Repton
+$GERMAN 
+$ENGLISH Finale
+
+#SIZE_X 640
+#SIZE_Y 800
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 382
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 180
+#INITIAL 40
+#REQUIRED 36
+#SPAWN_INTERVAL 12
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER 0
+#BLOCKER 5
+#BUILDER 5
+#BASHER 1
+#WALKER 1
+#JUMPER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 96 80
+:geoo/construction/Hatch.H: 96 464
+
+:matt/marble/Goal.G: 432 688
+
+:geoo/construction/sawblade.F: 448 240
+:geoo/construction/sawblade.F: 472 240
+:geoo/construction/sawblade.F: 120 392
+:geoo/construction/sawblade.F: 144 392
+:geoo/construction/sawblade.F: 168 392
+:geoo/construction/sawblade.F: 496 448
+:geoo/construction/sawblade.F: 48 112
+
+:geoo/steel/dark_64x64.S: 64 128
+:geoo/steel/dark_64x64.S: 128 128
+:geoo/sandstone/slopes/32x32rb: 64 192
+:geoo/sandstone/slopes/32x32lb: 96 192
+:geoo/sandstone/slopes/32x32rt: 64 224
+:geoo/sandstone/slopes/32x32lt: 96 224
+:geoo/sandstone/slopes/32x32rb: 64 256
+:geoo/sandstone/slopes/32x32lb: 96 256
+:geoo/sandstone/slopes/32x32rt: 64 288
+:geoo/sandstone/slopes/32x32lt: 96 288
+:geoo/construction/concrete/032a: 192 224
+:geoo/construction/concrete/032c: 192 288
+:geoo/construction/concrete/032: 352 256
+:geoo/construction/concrete/032b: 416 224
+:geoo/construction/concrete/032d: 416 288
+:geoo/construction/concrete/032c: 352 192
+:geoo/construction/concrete/032a: 352 128
+:geoo/construction/concrete/032: 384 128
+:geoo/construction/concrete/032b: 416 128
+:geoo/construction/concrete/032d: 416 192
+:geoo/construction/concrete/032: 352 160
+:geoo/construction/concrete/032: 416 160
+:geoo/construction/concrete/032a: 256 384
+:geoo/construction/concrete/032c: 256 480
+:geoo/construction/concrete/032b: 352 384
+:geoo/construction/concrete/032d: 352 480
+:geoo/steel/dark_64x64o.S: 64 384
+:geoo/construction/concrete/032a: 64 512
+:geoo/construction/concrete/032c: 64 576
+:geoo/construction/concrete/032: 128 544
+:geoo/construction/concrete/032b: 192 512
+:geoo/construction/concrete/032d: 192 576
+:geoo/construction/concrete/032: 256 256
+:geoo/construction/concrete/032: 304 224
+:geoo/construction/concrete/032: 304 288
+:geoo/sandstone/slopes/32x32rb: 448 128
+:geoo/sandstone/slopes/32x32lb: 480 128
+:geoo/sandstone/slopes/32x32rt: 448 160
+:geoo/sandstone/slopes/32x32lt: 480 160
+:geoo/construction/concrete/032h: 240 224
+:geoo/construction/concrete/032h: 336 224
+:geoo/construction/concrete/032h: 240 288
+:geoo/construction/concrete/032h: 336 288
+:geoo/construction/concrete/032: 384 192
+:geoo/construction/concrete/016v: 224 224
+:geoo/construction/concrete/016v: 224 288
+:geoo/construction/concrete/016v: 400 224
+:geoo/construction/concrete/016v: 400 288
+:geoo/construction/concrete/032h: 192 256
+:geoo/construction/concrete/032h: 384 256
+:geoo/construction/concrete/032h: 288 256
+:geoo/construction/concrete/032h: 288 384
+:geoo/construction/concrete/032h: 288 480
+:geoo/construction/concrete/032h: 112 512
+:geoo/construction/concrete/016v: 96 512
+:geoo/construction/concrete/032h: 112 576
+:geoo/construction/concrete/016v: 96 576
+:geoo/construction/concrete/016v: 176 512
+:geoo/construction/concrete/016v: 176 576
+:geoo/construction/concrete/032h: 64 544
+:geoo/construction/concrete/032h: 160 544
+:geoo/construction/fence_rust_64x64: 0 0
+:geoo/construction/fence_rust_64x64: 64 0
+:geoo/construction/fence_rust_64x64: 128 0
+:geoo/construction/fence_rust_64x64: 192 0
+:geoo/construction/fence_rust_64x64: 256 0
+:geoo/construction/fence_rust_64x64: 320 0
+:geoo/construction/fence_rust_64x64: 384 0
+:geoo/construction/fence_rust_64x64: 448 0
+:geoo/construction/fence_rust_64x64: 512 0
+:geoo/construction/fence_rust_64x64: 576 0
+:geoo/construction/fence_rust_64x64: 0 64
+:geoo/construction/fence_rust_64x64: 0 128
+:geoo/construction/fence_rust_64x64: 0 192
+:geoo/construction/fence_rust_64x64: 0 256
+:geoo/construction/fence_rust_64x64: 0 320
+:geoo/construction/fence_rust_64x64: 576 64
+:geoo/construction/fence_rust_64x64: 576 128
+:geoo/construction/fence_rust_64x64: 576 192
+:geoo/construction/fence_rust_64x64: 576 256
+:geoo/construction/fence_rust_64x64: 576 320
+:geoo/construction/fence_rust_64x64: 0 384
+:geoo/construction/fence_rust_64x64: 0 448
+:geoo/construction/fence_rust_64x64: 0 512
+:geoo/construction/fence_rust_64x64: 0 576
+:geoo/construction/fence_rust_64x64: 0 640
+:geoo/construction/fence_rust_64x64: 576 384
+:geoo/construction/fence_rust_64x64: 576 448
+:geoo/construction/fence_rust_64x64: 576 512
+:geoo/construction/fence_rust_64x64: 576 576
+:geoo/construction/fence_rust_64x64: 576 640
+:geoo/construction/fence_rust_64x64: 0 736
+:geoo/construction/fence_rust_64x64: 576 736
+:geoo/construction/fence_rust_32x32: 0 704
+:geoo/construction/fence_rust_32x32: 32 704
+:geoo/construction/fence_rust_32x32: 576 704
+:geoo/construction/fence_rust_32x32: 608 704
+:geoo/construction/fence_rust_64x64: 64 736
+:geoo/construction/fence_rust_64x64: 128 736
+:geoo/construction/fence_rust_64x64: 192 736
+:geoo/construction/fence_rust_64x64: 256 736
+:geoo/construction/fence_rust_64x64: 320 736
+:geoo/construction/fence_rust_64x64: 384 736
+:geoo/construction/fence_rust_64x64: 448 736
+:geoo/construction/fence_rust_64x64: 512 736
+:matt/marble/04e_1: 64 48
+:matt/marble/04e_2: 96 48
+:matt/marble/04e_2: 160 48
+:matt/marble/04e_1: 128 48
+:matt/marble/04e_1: 256 48
+:matt/marble/04e_1: 192 48
+:matt/marble/04e_2: 224 48
+:matt/marble/04e_2: 288 48
+:matt/marble/04e_1: 384 48
+:matt/marble/04e_1: 320 48
+:matt/marble/04e_2: 352 48
+:matt/marble/04e_2: 416 48
+:matt/marble/04e_1: 512 48
+:matt/marble/04e_1: 448 48
+:matt/marble/04e_2: 480 48
+:matt/marble/04e_2: 544 48
+:matt/marble/02e: 48 48
+:matt/marble/02e_2: 576 48
+:matt/marble/03e_1: 48 64
+:matt/marble/03e_2: 48 96
+:matt/marble/03e_1: 48 128
+:matt/marble/03e_2: 48 160
+:matt/marble/03e_1: 48 192
+:matt/marble/03e_2: 48 224
+:matt/marble/03e_2: 48 416
+:matt/marble/03e_1: 48 384
+:matt/marble/03e_2: 48 352
+:matt/marble/03e_1: 48 320
+:matt/marble/03e_2: 48 288
+:matt/marble/03e_1: 48 256
+:matt/marble/03e_2: 48 608
+:matt/marble/03e_1: 48 576
+:matt/marble/03e_2: 48 544
+:matt/marble/03e_1: 48 512
+:matt/marble/03e_2: 48 480
+:matt/marble/03e_1: 48 448
+:matt/marble/03e_1: 48 640
+:matt/marble/03e_2: 48 672
+:matt/marble/03e_1: 48 704
+:matt/marble/02e: 48 736
+:matt/marble/04e_1: 64 736
+:matt/marble/04e_2: 96 736
+:matt/marble/04e_1: 128 736
+:matt/marble/04e_2: 160 736
+:matt/marble/04e_1: 192 736
+:matt/marble/04e_2: 224 736
+:matt/marble/04e_1: 256 736
+:matt/marble/04e_2: 288 736
+:matt/marble/04e_1: 320 736
+:matt/marble/04e_2: 352 736
+:matt/marble/04e_1: 384 736
+:matt/marble/04e_2: 416 736
+:matt/marble/04e_1: 448 736
+:matt/marble/04e_2: 480 736
+:matt/marble/04e_1: 512 736
+:matt/marble/04e_2: 544 736
+:matt/marble/02e_2: 576 736
+:matt/marble/03e_1: 576 704
+:matt/marble/03e_2: 576 672
+:matt/marble/03e_1: 576 640
+:matt/marble/03e_2: 576 608
+:matt/marble/03e_1: 576 576
+:matt/marble/03e_2: 576 544
+:matt/marble/03e_1: 576 512
+:matt/marble/03e_2: 576 480
+:matt/marble/03e_1: 576 448
+:matt/marble/03e_2: 576 416
+:matt/marble/03e_1: 576 384
+:matt/marble/03e_2: 576 352
+:matt/marble/03e_1: 576 320
+:matt/marble/03e_2: 576 288
+:matt/marble/03e_1: 576 256
+:matt/marble/03e_2: 576 224
+:matt/marble/03e_1: 576 192
+:matt/marble/03e_2: 576 160
+:matt/marble/03e_1: 576 128
+:matt/marble/03e_2: 576 96
+:matt/marble/03e_1: 576 64
+:geoo/construction/concrete/032a: 384 512
+:geoo/construction/concrete/032c: 384 576
+:geoo/construction/concrete/032: 448 544
+:geoo/construction/concrete/032b: 512 512
+:geoo/construction/concrete/032d: 512 576
+:geoo/construction/concrete/032h: 432 512
+:geoo/construction/concrete/016v: 416 512
+:geoo/construction/concrete/032h: 432 576
+:geoo/construction/concrete/016v: 416 576
+:geoo/construction/concrete/016v: 496 512
+:geoo/construction/concrete/016v: 496 576
+:geoo/construction/concrete/032h: 384 544
+:geoo/construction/concrete/032h: 480 544
+:geoo/steel/dark_64x64o.S: 128 672
+:geoo/sandstone/slopes/32x32rb: 128 608
+:geoo/sandstone/slopes/32x32lb: 160 608
+:geoo/sandstone/slopes/32x32rt: 128 640
+:geoo/sandstone/slopes/32x32lt: 160 640
+:geoo/sandstone/slopes/32x32rb: 192 672
+:geoo/sandstone/slopes/32x32lb: 224 672
+:geoo/sandstone/slopes/32x32rt: 192 704
+:geoo/sandstone/slopes/32x32lt: 224 704
+:geoo/sandstone/slopes/32x32rb: 320 608
+:geoo/sandstone/slopes/32x32lb: 352 608
+:geoo/sandstone/slopes/32x32rt: 320 640
+:geoo/sandstone/slopes/32x32lt: 352 640
+:geoo/sandstone/slopes/32x32rb: 256 544
+:geoo/sandstone/slopes/32x32lb: 288 544
+:geoo/sandstone/slopes/32x32rt: 256 576
+:geoo/sandstone/slopes/32x32lt: 288 576
+:geoo/steel/dark_64x64o.S: 320 544
+:geoo/construction/concrete/032a: 384 384
+:geoo/construction/concrete/032b: 480 384
+:geoo/construction/concrete/032h: 416 384
+:geoo/sandstone/slopes/32x32rb: 320 320
+:geoo/sandstone/slopes/32x32lb: 352 320
+:geoo/sandstone/slopes/32x32rt: 320 352
+:geoo/sandstone/slopes/32x32lt: 352 352
+:geoo/steel/dark_64x64o.S: 448 256
+:geoo/construction/concrete/032d: 288 416
+:geoo/construction/concrete/032a: 320 448
+:geoo/construction/concrete/032c: 320 416
+:geoo/construction/concrete/032b: 288 448
+:geoo/construction/concrete/032v: 256 416
+:geoo/construction/concrete/032v: 352 416

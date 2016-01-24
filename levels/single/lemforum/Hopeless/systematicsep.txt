@@ -1,0 +1,155 @@
+$BUILT 2013-07-23 00:31:55
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Systematic Separation
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y -20
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 30
+#REQUIRED 28
+#SPAWN_INTERVAL 96
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 2
+#JUMPER 1
+#BLOCKER 2
+#BASHER 4
+#MINER 3
+#BUILDER 3
+#PLATFORMER 1
+#CUBER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/carnival/Hatch.H: -16 80
+:matt/carnival/Hatch.H: 576 80 r
+
+:matt/carnival/Goal.G: 304 32
+
+:geoo/construction/Laseremit_hzl_16.F: 160 352
+:geoo/construction/Laseremit_hzl_16.F: 336 352
+:geoo/construction/Laseremit_hzl_16.F: 512 352
+:geoo/construction/Laser_hz_64.F: 176 352
+:geoo/construction/Laser_hz_64.F: 352 352
+:geoo/construction/Laser_hz_64.F: 544 352
+:geoo/construction/Laser_hz_64.F: 208 352
+:geoo/construction/Laser_hz_64.F: 384 352
+:geoo/construction/Laser_hz_64.F: 528 352
+:geoo/construction/Laseremit_hzr_16.F: 272 352
+:geoo/construction/Laseremit_hzr_16.F: 608 352
+:geoo/construction/Laseremit_hzr_16.F: 448 352
+:geoo/construction/Laser_hz_64.F: 32 352
+:geoo/construction/Laseremit_hzr_16.F: 96 352
+:geoo/construction/Laseremit_hzl_16.F: 160 16
+:geoo/construction/Laseremit_hzr_16.F: 448 16
+:geoo/construction/Laser_hz_64.F: 176 16
+:geoo/construction/Laser_hz_64.F: 240 16
+:geoo/construction/Laser_hz_64.F: 320 16
+:geoo/construction/Laser_hz_64.F: 384 16
+:geoo/construction/Laser_hz_64.F: 288 16
+:geoo/construction/Laseremit_hzr_16.F: 96 16
+:geoo/construction/Laseremit_hzl_16.F: 16 352
+:geoo/construction/Laser_hz_64.F: 528 16
+:geoo/construction/Laser_hz_64.F: 32 16
+:geoo/construction/Laseremit_hzl_16.F: 512 16
+:geoo/construction/Laseremit_hzl_16.F: 48 16
+:geoo/construction/Laseremit_hzr_16.F: 560 16
+:geoo/construction/sawblade.F: 0 256
+:geoo/construction/sawblade.F: 16 272
+:geoo/construction/sawblade.F: 576 304
+:geoo/construction/sawblade.F: 592 288
+
+:geoo/construction/steam_right.T: 160 304
+:geoo/construction/steam_right.T: 80 304
+:geoo/construction/steam_right.T: 512 304
+:geoo/construction/steam_right.T: 432 304
+
+:matt/carnival/30: 256 160
+:matt/carnival/30: 320 160
+:matt/carnival/21: 288 208
+:matt/carnival/22: 464 224 f
+:matt/carnival/22: 288 256 rr
+:matt/carnival/21: 464 176
+:matt/carnival/21: 288 304
+:matt/carnival/22: 464 128 f
+:matt/carnival/22: 288 352 rr
+:matt/carnival/21: 464 80
+:matt/carnival/22: 464 320 f
+:matt/carnival/22: 288 160 rr
+:matt/carnival/21: 464 272
+:matt/carnival/21: 464 368
+:matt/carnival/22: 464 32 f
+:matt/carnival/21: 112 240
+:matt/carnival/22: 112 288 rr
+:matt/carnival/21: 112 336
+:matt/carnival/22: 112 384 rr
+:matt/carnival/21: 112 144
+:matt/carnival/22: 112 192 rr
+:matt/carnival/22: 112 96 rr
+:matt/carnival/21: 112 32
+:matt/carnival/21: 464 -16
+:matt/carnival/22: 112 -16 rr
+:matt/carnival/27: 224 288
+:matt/carnival/27: 336 224
+:matt/carnival/27: 400 192
+:matt/carnival/27: -16 208
+:matt/carnival/27: 48 208
+:matt/carnival/27: 512 208
+:matt/carnival/27: 576 240
+:matt/carnival/27: 160 96
+:matt/carnival/27: 160 160
+:matt/carnival/27: 176 224
+:matt/carnival/30: 448 272 rrr
+:matt/carnival/28: 512 272 r
+:matt/carnival/30: 160 272 r
+:matt/carnival/28: 96 272 rrr
+:matt/carnival/08: 336 128
+:matt/carnival/08: 336 96 f
+:matt/carnival/08: 304 128 r
+:matt/carnival/08: 304 96 frrr
+:matt/carnival/08: 272 112
+:matt/carnival/08: 272 80 f
+:matt/carnival/08: 240 112 r
+:matt/carnival/08: 240 80 frrr
+:matt/carnival/08: 400 96
+:matt/carnival/08: 400 64 f
+:matt/carnival/08: 368 96 r
+:matt/carnival/08: 368 64 frrr
+:matt/carnival/15: 400 256
+:matt/carnival/15: 384 208
+:matt/carnival/15: 240 272
+:matt/carnival/15: 416 256
+:matt/carnival/15: 384 192
+:matt/carnival/15: 240 256
+:geoo/steel/16x32o.S: 624 240
+:geoo/steel/16x32o.S: 624 272
+:geoo/steel/16x32o.S: 0 208
+:geoo/steel/16x32o.S: 0 240
+:geoo/steel/16x32o.S: 0 272
+:geoo/steel/16x32o.S: 0 304
+:geoo/steel/16x32o.S: 0 336
+:geoo/steel/16x32o.S: 0 368
+:geoo/steel/16x32o.S: 624 304
+:geoo/steel/16x32o.S: 624 336
+:geoo/steel/16x32o.S: 624 368
+:geoo/steel/16x32o.S: 16 64
+:geoo/steel/16x32o.S: 16 32
+:geoo/steel/16x32o.S: 32 96
+:geoo/steel/16x32o.S: 32 0
+:geoo/steel/16x32o.S: 592 64
+:geoo/steel/16x32o.S: 592 32
+:geoo/steel/16x32o.S: 576 96
+:geoo/steel/16x32o.S: 576 0
+:geoo/steel/dark_32x64o.S: 32 32
+:geoo/steel/dark_32x64o.S: 560 32

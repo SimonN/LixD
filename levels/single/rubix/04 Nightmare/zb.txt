@@ -1,0 +1,136 @@
+$BUILT 2014-06-04 10:41:02
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Hello darkness my old friend.
+
+#SIZE_X 1120
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 380
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 48
+#SPAWN_INTERVAL 28
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#WALKER 1
+#JUMPER 5
+#EXPLODER2 1
+#BUILDER 2
+#PLATFORMER 4
+#MINER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/beach/decor/bonfire.D: 144 122
+:matt/beach/decor/bonfire.D: 902 114
+:matt/beach/decor/moon.D: 84 -21
+
+:matt/beach/Hatch.H: 1028 -8 r
+
+:matt/beach/goal.G: 222 60
+
+:matt/beach/decor/grass02: 1095 231 fr
+:matt/beach/decor/grass08: 363 -8
+:matt/beach/decor/grass03: 921 335
+:matt/beach/decor/grass02: 1028 340
+:matt/beach/decor/grass02: 675 379
+:matt/beach/decor/grass08: 747 178
+:matt/beach/decor/beach ball: 244 310
+:matt/beach/decor/beach ball: 871 132
+:matt/beach/nighttime/04: -23 189
+:matt/beach/nighttime/03: 718 51
+:matt/beach/nighttime/04: 778 170 r
+:matt/beach/nighttime/13: 129 155 r
+:matt/beach/decor/grass11: 485 95 rr
+:matt/beach/nighttime/01: 510 65
+:matt/beach/nighttime/03: 463 3 rr
+:matt/beach/nighttime/06: 159 121
+:matt/beach/nighttime/13: 176 320 fr
+:matt/beach/nighttime/04: 463 -59
+:matt/beach/nighttime/06: 272 240 r
+:matt/beach/nighttime/06: 464 224 rr
+:matt/beach/decor/pail: 537 230
+:matt/beach/nighttime/13: 416 256
+:matt/beach/nighttime/13: 384 304
+:matt/beach/decor/shovel: 516 230
+:matt/beach/nighttime/06: 480 272 rr
+:matt/beach/nighttime/06: 432 320 rr
+:matt/beach/decor/grass08: 467 324
+:matt/beach/nighttime/15: 576 352
+:matt/beach/nighttime/01: 752 64
+:matt/beach/nighttime/04: 756 73
+:matt/beach/nighttime/14: 784 160
+:matt/beach/nighttime/04: 431 -123
+:matt/beach/nighttime/06: 891 345
+:matt/beach/decor/umbrella_red: 1058 301
+:matt/beach/nighttime/01: 1040 352
+:matt/beach/nighttime/06: 954 278 r
+:matt/beach/nighttime/13: 986 278 f
+:matt/beach/nighttime/04: 790 138
+:matt/beach/nighttime/13: 73 317
+:matt/beach/nighttime/04: 32 368
+:matt/beach/nighttime/06: 305 -4 r
+:matt/beach/nighttime/13: 1012 36 rr
+:matt/beach/nighttime/13: 944 32 rr
+:matt/beach/decor/grass08: 918 43
+:matt/beach/nighttime/04: 976 64
+:matt/beach/nighttime/04: 257 101 r
+:matt/beach/nighttime/06: 1090 135 fr
+:matt/beach/nighttime/03: 899 30
+:matt/beach/nighttime/03: 802 42
+:matt/beach/nighttime/03: 889 145
+:matt/beach/nighttime/03: 801 154
+:matt/beach/nighttime/02: 714 385
+:matt/beach/nighttime/02: 820 354
+:matt/beach/nighttime/06: 621 330 r
+:matt/beach/nighttime/15: 649 283
+:matt/beach/nighttime/01: 1112 129
+:matt/beach/nighttime/13: -66 23 fr
+:matt/beach/nighttime/13: -61 78 fr
+:matt/beach/nighttime/05: 8 -54 r
+:matt/beach/decor/grass04: 10 12
+:matt/beach/nighttime/06: -172 -56
+:matt/beach/nighttime/06: -78 232
+:matt/beach/nighttime/04: -34 160
+:matt/beach/nighttime/06: -148 269
+:matt/beach/nighttime/02: 274 -35 r
+:matt/beach/nighttime/15: 67 257
+:matt/beach/nighttime/15: 29 132 r
+:matt/beach/nighttime/15: 29 132 r
+:matt/beach/nighttime/05: -6 53 rr
+:matt/beach/nighttime/15: 26 62 r
+:matt/beach/nighttime/15: 26 55 r
+:matt/beach/nighttime/05: 674 -141
+:matt/beach/nighttime/04: 722 7
+:matt/beach/nighttime/04: 701 61 frr
+:matt/beach/nighttime/13: 767 192 rrr
+:matt/beach/decor/grass06: 1022 111
+:matt/beach/decor/grass06: 770 56
+:matt/beach/decor/grass06: 836 176
+:matt/beach/decor/grass06: 659 336
+:matt/beach/decor/grass06: 335 45
+:matt/beach/decor/grass06: 232 148
+:matt/beach/decor/grass06: 340 50
+:matt/beach/decor/grass06: 10 52
+:matt/beach/decor/grass11: 31 265
+:matt/beach/decor/grass11: 1026 343
+:matt/beach/decor/grass11: 505 10
+:matt/beach/decor/grass04: 140 163
+:matt/beach/decor/grass04: 299 340
+:matt/beach/decor/grass04: 125 351
+:matt/beach/decor/grass04: 318 269
+:matt/beach/decor/grass04: 402 373
+:matt/beach/decor/grass10: 974 290
+:matt/beach/decor/grass10: 325 146
+:matt/beach/decor/grass02: 921 365

@@ -1,0 +1,402 @@
+$BUILT 2012-08-11 15:55:28
+$AUTHOR Clam Spammer
+$GERMAN 
+$ENGLISH Freezing Works (6P)
+
+#SIZE_X 640
+#SIZE_Y 1152
+#TORUS_X 0
+#TORUS_Y 1
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 40
+#INITIAL 50
+#REQUIRED 50
+#SPAWN_INTERVAL 24
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 20
+#FLOATER 20
+#EXPLODER2 20
+#WALKER 50
+#PLATFORMER 50
+#BASHER 20
+#JUMPER 30
+#DIGGER 30
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: 288 24
+:matt/winter/Hatch.H: 288 216
+:matt/winter/Hatch.H: 288 408
+:matt/winter/Hatch.H: 288 600
+:matt/winter/Hatch.H: 288 792
+:matt/winter/Hatch.H: 288 984
+
+:matt/winter/Goal.G: 272 1088
+:matt/winter/Goal.G: 272 128
+:matt/winter/Goal.G: 272 320
+:matt/winter/Goal.G: 272 512
+:matt/winter/Goal.G: 272 704
+:matt/winter/Goal.G: 272 896
+
+:matt/winter/07: 272 64
+:geoo/steel/dark_48x32o.S: 272 96
+:matt/winter/07: 352 64
+:geoo/steel/dark_48x32o.S: 320 96
+:geoo/steel/dark_48x32o.S: 248 192
+:geoo/steel/dark_48x32o.S: 296 192
+:geoo/steel/dark_48x32o.S: 344 192
+:matt/winter/07: 272 256
+:geoo/steel/dark_48x32o.S: 272 288
+:matt/winter/07: 352 256
+:geoo/steel/dark_48x32o.S: 320 288
+:geoo/steel/dark_48x32o.S: 248 0
+:geoo/steel/dark_48x32o.S: 296 0
+:geoo/steel/dark_48x32o.S: 344 0
+:matt/winter/07: 384 8
+:matt/winter/07: 416 72 f
+:geoo/steel/dark_48x32o.S: 392 48
+:matt/winter/07: 504 72 f
+:geoo/steel/dark_48x32o.S: 488 48
+:matt/winter/07: 120 72 f
+:geoo/steel/dark_48x32o.S: 104 48
+:matt/winter/07: 240 8
+:matt/winter/07: 208 72 f
+:geoo/steel/dark_48x32o.S: 200 48
+:geoo/steel/dark_48x32o.S: 56 96
+:matt/winter/07: 168 120 f
+:geoo/steel/dark_48x32o.S: 152 96
+:matt/winter/07: 120 168 f
+:geoo/steel/dark_48x32o.S: 104 144
+:geoo/steel/dark_32x32o.S: 200 144
+:geoo/steel/dark_32x32o.S: 408 144
+:matt/winter/07: 456 120 f
+:geoo/steel/dark_48x32o.S: 440 96
+:geoo/steel/dark_48x32o.S: 536 96
+:matt/winter/07: 504 168 f
+:geoo/steel/dark_48x32o.S: 488 144
+:geoo/steel/dark_48x32o.S: 56 192
+:matt/winter/07: 168 216 f
+:geoo/steel/dark_48x32o.S: 152 192
+:matt/winter/07: 120 264 f
+:geoo/steel/dark_48x32o.S: 104 240
+:matt/winter/07: 240 200
+:matt/winter/07: 208 264 f
+:geoo/steel/dark_48x32o.S: 200 240
+:matt/winter/07: 456 216 f
+:geoo/steel/dark_48x32o.S: 440 192
+:geoo/steel/dark_48x32o.S: 536 192
+:matt/winter/07: 384 200
+:matt/winter/07: 416 264 f
+:geoo/steel/dark_48x32o.S: 392 240
+:matt/winter/07: 504 264 f
+:geoo/steel/dark_48x32o.S: 488 240
+:geoo/steel/dark_48x32o.S: 56 288
+:matt/winter/07: 168 312 f
+:geoo/steel/dark_48x32o.S: 152 288
+:matt/winter/07: 120 360 f
+:geoo/steel/dark_48x32o.S: 104 336
+:geoo/steel/dark_32x32o.S: 200 336
+:geoo/steel/dark_48x32o.S: 56 0
+:matt/winter/07: 168 24 f
+:geoo/steel/dark_48x32o.S: 152 0
+:matt/winter/07: 456 312 f
+:geoo/steel/dark_48x32o.S: 440 288
+:geoo/steel/dark_48x32o.S: 536 288
+:geoo/steel/dark_32x32o.S: 408 336
+:matt/winter/07: 504 360 f
+:geoo/steel/dark_48x32o.S: 488 336
+:matt/winter/07: 456 24 f
+:geoo/steel/dark_48x32o.S: 440 0
+:geoo/steel/dark_48x32o.S: 536 0
+:matt/winter/07: 72 32
+:matt/winter/07: 72 128
+:matt/winter/07: 72 224
+:matt/winter/07: 72 320
+:matt/winter/07: 552 32
+:matt/winter/07: 552 128
+:matt/winter/07: 552 224
+:matt/winter/07: 552 320
+:matt/winter/06: 32 64
+:matt/winter/06: 40 64
+:geoo/steel/dark_32x48o.S: 0 80
+:geoo/steel/dark_32x48o.S: 0 128
+:geoo/steel/dark_32x48o.S: 0 176
+:geoo/steel/dark_32x48o.S: 0 224
+:geoo/steel/dark_32x48o.S: 0 272
+:geoo/steel/dark_32x48o.S: 0 320
+:geoo/steel/dark_32x48o.S: 0 368
+:geoo/steel/dark_32x48o.S: 0 32
+:matt/winter/06: 32 128
+:matt/winter/06: 40 128
+:matt/winter/06: 32 192
+:matt/winter/06: 40 192
+:matt/winter/06: 32 256
+:matt/winter/06: 40 256
+:matt/winter/06: 32 320
+:matt/winter/06: 40 320
+:matt/winter/06: 32 0
+:matt/winter/06: 40 0
+:matt/winter/06: 584 64
+:matt/winter/06: 592 64
+:matt/winter/06: 584 128
+:matt/winter/06: 592 128
+:matt/winter/06: 584 192
+:matt/winter/06: 592 192
+:matt/winter/06: 584 256
+:matt/winter/06: 592 256
+:matt/winter/06: 584 320
+:matt/winter/06: 592 320
+:matt/winter/06: 584 0
+:matt/winter/06: 592 0
+:geoo/steel/dark_32x48o.S: 608 80
+:geoo/steel/dark_32x48o.S: 608 128
+:geoo/steel/dark_32x48o.S: 608 176
+:geoo/steel/dark_32x48o.S: 608 224
+:geoo/steel/dark_32x48o.S: 608 272
+:geoo/steel/dark_32x48o.S: 608 320
+:geoo/steel/dark_32x48o.S: 608 368
+:geoo/steel/dark_32x48o.S: 608 32
+:geoo/steel/dark_48x32o.S: 248 384
+:geoo/steel/dark_48x32o.S: 296 384
+:geoo/steel/dark_48x32o.S: 344 384
+:matt/winter/07: 272 448
+:geoo/steel/dark_48x32o.S: 272 480
+:matt/winter/07: 352 448
+:geoo/steel/dark_48x32o.S: 320 480
+:geoo/steel/dark_48x32o.S: 56 384
+:matt/winter/07: 168 408 f
+:geoo/steel/dark_48x32o.S: 152 384
+:matt/winter/07: 120 456 f
+:geoo/steel/dark_48x32o.S: 104 432
+:matt/winter/07: 240 392
+:matt/winter/07: 208 456 f
+:geoo/steel/dark_48x32o.S: 200 432
+:matt/winter/07: 456 408 f
+:geoo/steel/dark_48x32o.S: 440 384
+:geoo/steel/dark_48x32o.S: 536 384
+:matt/winter/07: 384 392
+:matt/winter/07: 416 456 f
+:geoo/steel/dark_48x32o.S: 392 432
+:matt/winter/07: 504 456 f
+:geoo/steel/dark_48x32o.S: 488 432
+:geoo/steel/dark_48x32o.S: 56 480
+:matt/winter/07: 168 504 f
+:geoo/steel/dark_48x32o.S: 152 480
+:matt/winter/07: 120 552 f
+:geoo/steel/dark_48x32o.S: 104 528
+:geoo/steel/dark_32x32o.S: 200 528
+:matt/winter/07: 456 504 f
+:geoo/steel/dark_48x32o.S: 440 480
+:geoo/steel/dark_48x32o.S: 536 480
+:geoo/steel/dark_32x32o.S: 408 528
+:matt/winter/07: 504 552 f
+:geoo/steel/dark_48x32o.S: 488 528
+:matt/winter/07: 72 416
+:matt/winter/07: 72 512
+:matt/winter/07: 552 416
+:matt/winter/07: 552 512
+:geoo/steel/dark_32x48o.S: 0 416
+:geoo/steel/dark_32x48o.S: 0 464
+:geoo/steel/dark_32x48o.S: 0 512
+:geoo/steel/dark_32x48o.S: 0 560
+:matt/winter/06: 32 384
+:matt/winter/06: 40 384
+:matt/winter/06: 32 448
+:matt/winter/06: 40 448
+:matt/winter/06: 32 512
+:matt/winter/06: 40 512
+:matt/winter/06: 584 384
+:matt/winter/06: 592 384
+:matt/winter/06: 584 448
+:matt/winter/06: 592 448
+:matt/winter/06: 584 512
+:matt/winter/06: 592 512
+:geoo/steel/dark_32x48o.S: 608 416
+:geoo/steel/dark_32x48o.S: 608 464
+:geoo/steel/dark_32x48o.S: 608 512
+:geoo/steel/dark_32x48o.S: 608 560
+:matt/winter/07: 272 640
+:geoo/steel/dark_48x32o.S: 272 672
+:matt/winter/07: 352 640
+:geoo/steel/dark_48x32o.S: 320 672
+:matt/winter/07: 168 600 f
+:matt/winter/07: 120 648 f
+:geoo/steel/dark_48x32o.S: 104 624
+:geoo/steel/dark_48x32o.S: 248 576
+:matt/winter/07: 240 584
+:matt/winter/07: 208 648 f
+:geoo/steel/dark_48x32o.S: 200 624
+:matt/winter/07: 456 600 f
+:geoo/steel/dark_48x32o.S: 344 576
+:matt/winter/07: 384 584
+:matt/winter/07: 416 648 f
+:geoo/steel/dark_48x32o.S: 392 624
+:matt/winter/07: 504 648 f
+:geoo/steel/dark_48x32o.S: 488 624
+:geoo/steel/dark_48x32o.S: 56 672
+:matt/winter/07: 168 696 f
+:geoo/steel/dark_48x32o.S: 152 672
+:matt/winter/07: 120 744 f
+:geoo/steel/dark_48x32o.S: 104 720
+:geoo/steel/dark_32x32o.S: 200 720
+:matt/winter/07: 456 696 f
+:geoo/steel/dark_48x32o.S: 440 672
+:geoo/steel/dark_48x32o.S: 536 672
+:geoo/steel/dark_32x32o.S: 408 720
+:matt/winter/07: 504 744 f
+:geoo/steel/dark_48x32o.S: 488 720
+:matt/winter/07: 72 608
+:matt/winter/07: 72 704
+:matt/winter/07: 552 608
+:matt/winter/07: 552 704
+:geoo/steel/dark_32x48o.S: 0 608
+:geoo/steel/dark_32x48o.S: 0 656
+:geoo/steel/dark_32x48o.S: 0 704
+:geoo/steel/dark_32x48o.S: 0 752
+:matt/winter/06: 32 576
+:matt/winter/06: 40 576
+:matt/winter/06: 32 640
+:matt/winter/06: 40 640
+:matt/winter/06: 32 704
+:matt/winter/06: 40 704
+:matt/winter/06: 584 576
+:matt/winter/06: 592 576
+:matt/winter/06: 584 640
+:matt/winter/06: 592 640
+:matt/winter/06: 584 704
+:matt/winter/06: 592 704
+:geoo/steel/dark_32x48o.S: 608 608
+:geoo/steel/dark_32x48o.S: 608 656
+:geoo/steel/dark_32x48o.S: 608 704
+:geoo/steel/dark_32x48o.S: 608 752
+:geoo/steel/dark_48x32o.S: 296 576
+:geoo/steel/dark_48x32o.S: 56 576
+:geoo/steel/dark_48x32o.S: 536 576
+:matt/winter/07: 272 832
+:geoo/steel/dark_48x32o.S: 272 864
+:matt/winter/07: 352 832
+:geoo/steel/dark_48x32o.S: 320 864
+:matt/winter/07: 168 792 f
+:matt/winter/07: 120 840 f
+:geoo/steel/dark_48x32o.S: 104 816
+:geoo/steel/dark_48x32o.S: 248 768
+:matt/winter/07: 240 776
+:matt/winter/07: 208 840 f
+:geoo/steel/dark_48x32o.S: 200 816
+:matt/winter/07: 456 792 f
+:geoo/steel/dark_48x32o.S: 344 768
+:matt/winter/07: 384 776
+:matt/winter/07: 416 840 f
+:geoo/steel/dark_48x32o.S: 392 816
+:matt/winter/07: 504 840 f
+:geoo/steel/dark_48x32o.S: 488 816
+:geoo/steel/dark_48x32o.S: 56 864
+:matt/winter/07: 168 888 f
+:geoo/steel/dark_48x32o.S: 152 864
+:matt/winter/07: 120 936 f
+:geoo/steel/dark_48x32o.S: 104 912
+:geoo/steel/dark_32x32o.S: 200 912
+:matt/winter/07: 456 888 f
+:geoo/steel/dark_48x32o.S: 440 864
+:geoo/steel/dark_48x32o.S: 536 864
+:geoo/steel/dark_32x32o.S: 408 912
+:matt/winter/07: 504 936 f
+:geoo/steel/dark_48x32o.S: 488 912
+:matt/winter/07: 72 800
+:matt/winter/07: 72 896
+:matt/winter/07: 552 800
+:matt/winter/07: 552 896
+:geoo/steel/dark_32x48o.S: 0 800
+:geoo/steel/dark_32x48o.S: 0 848
+:geoo/steel/dark_32x48o.S: 0 896
+:geoo/steel/dark_32x48o.S: 0 944
+:matt/winter/06: 32 768
+:matt/winter/06: 40 768
+:matt/winter/06: 32 832
+:matt/winter/06: 40 832
+:matt/winter/06: 32 896
+:matt/winter/06: 40 896
+:matt/winter/06: 584 768
+:matt/winter/06: 592 768
+:matt/winter/06: 584 832
+:matt/winter/06: 592 832
+:matt/winter/06: 584 896
+:matt/winter/06: 592 896
+:geoo/steel/dark_32x48o.S: 608 800
+:geoo/steel/dark_32x48o.S: 608 848
+:geoo/steel/dark_32x48o.S: 608 896
+:geoo/steel/dark_32x48o.S: 608 944
+:geoo/steel/dark_48x32o.S: 56 768
+:geoo/steel/dark_48x32o.S: 296 768
+:geoo/steel/dark_48x32o.S: 536 768
+:geoo/steel/dark_48x32o.S: 152 768
+:geoo/steel/dark_48x32o.S: 440 768
+:matt/winter/07: 272 1024
+:geoo/steel/dark_48x32o.S: 272 1056
+:matt/winter/07: 352 1024
+:geoo/steel/dark_48x32o.S: 320 1056
+:matt/winter/07: 168 984 f
+:matt/winter/07: 120 1032 f
+:geoo/steel/dark_48x32o.S: 104 1008
+:geoo/steel/dark_48x32o.S: 248 960
+:matt/winter/07: 240 968
+:matt/winter/07: 208 1032 f
+:geoo/steel/dark_48x32o.S: 200 1008
+:matt/winter/07: 456 984 f
+:geoo/steel/dark_48x32o.S: 344 960
+:matt/winter/07: 384 968
+:matt/winter/07: 416 1032 f
+:geoo/steel/dark_48x32o.S: 392 1008
+:matt/winter/07: 504 1032 f
+:geoo/steel/dark_48x32o.S: 488 1008
+:geoo/steel/dark_48x32o.S: 56 1056
+:matt/winter/07: 168 1080 f
+:geoo/steel/dark_48x32o.S: 152 1056
+:matt/winter/07: 120 1128 f
+:geoo/steel/dark_48x32o.S: 104 1104
+:geoo/steel/dark_32x32o.S: 200 1104
+:matt/winter/07: 456 1080 f
+:geoo/steel/dark_48x32o.S: 440 1056
+:geoo/steel/dark_48x32o.S: 536 1056
+:geoo/steel/dark_32x32o.S: 408 1104
+:matt/winter/07: 504 1128 f
+:geoo/steel/dark_48x32o.S: 488 1104
+:matt/winter/07: 72 992
+:matt/winter/07: 72 1088
+:matt/winter/07: 552 992
+:matt/winter/07: 552 1088
+:geoo/steel/dark_32x48o.S: 0 992
+:geoo/steel/dark_32x48o.S: 0 1040
+:geoo/steel/dark_32x48o.S: 0 1088
+:geoo/steel/dark_32x48o.S: 0 1136
+:matt/winter/06: 32 960
+:matt/winter/06: 40 960
+:matt/winter/06: 32 1024
+:matt/winter/06: 40 1024
+:matt/winter/06: 32 1088
+:matt/winter/06: 40 1088
+:matt/winter/06: 584 960
+:matt/winter/06: 592 960
+:matt/winter/06: 584 1024
+:matt/winter/06: 592 1024
+:matt/winter/06: 584 1088
+:matt/winter/06: 592 1088
+:geoo/steel/dark_32x48o.S: 608 992
+:geoo/steel/dark_32x48o.S: 608 1040
+:geoo/steel/dark_32x48o.S: 608 1088
+:geoo/steel/dark_32x48o.S: 608 1136
+:geoo/steel/dark_48x32o.S: 56 960
+:geoo/steel/dark_48x32o.S: 296 960
+:geoo/steel/dark_48x32o.S: 536 960
+:geoo/steel/dark_48x32o.S: 152 960
+:geoo/steel/dark_48x32o.S: 440 960
+:geoo/steel/dark_48x32o.S: 152 576
+:geoo/steel/dark_48x32o.S: 440 576

@@ -1,0 +1,11 @@
+builders.txt
+diggers.txt
+exploders.txt
+jumpers.txt
+blockers.txt
+bashers.txt
+climbers-floaters.txt
+runners.txt
+cubers.txt
+miners-platformers.txt
+batters.txt

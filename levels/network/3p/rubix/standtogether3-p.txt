@@ -1,0 +1,144 @@
+$BUILT 2015-01-26 02:09:53
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH We All Stand Together (3p)
+
+#SIZE_X 640
+#SIZE_Y 480
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 40
+#INITIAL 70
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 50
+#NOTHING 0
+#WALKER 70
+#JUMPER 70
+#NOTHING 0
+#BASHER 50
+#MINER 12
+#PLATFORMER 70
+#NOTHING 0
+#CUBER 35
+#BATTER 20
+#NOTHING 0
+
+:amanda/occult/hatch_tentacle.H: 352 192 r
+:amanda/occult/hatch_tentacle.H: 352 336 r
+:amanda/occult/hatch_tentacle.H: 352 16 r
+
+:amanda/occult/occult_goal_skull.G: 32 464
+:amanda/occult/occult_goal_skull.G: 32 144
+:amanda/occult/occult_goal_skull.G: 32 304
+
+:amanda/forest/frog_happy.T: 464 96
+:amanda/forest/frog_happy.T: 192 128
+:amanda/forest/frog_happy.T: 192 288
+:amanda/forest/frog_happy.T: 192 448
+:amanda/forest/frog_happy.T: 416 96
+:amanda/forest/frog_happy.T: 464 416
+:amanda/forest/frog_happy.T: 464 256
+:amanda/forest/frog_happy.T: 512 96
+:amanda/forest/frog_happy.T: 512 256
+:amanda/forest/frog_happy.T: 512 416
+:amanda/forest/frog_happy.T: 416 256
+:amanda/forest/frog_happy.T: 416 416
+
+:geoo/steel/dark_32x16o.S: 480 464
+:geoo/steel/dark_32x16o.S: 480 304
+:geoo/steel/dark_32x16o.S: 480 144
+:geoo/steel/dark_32x16o.S: 208 16
+:geoo/steel/dark_32x16o.S: 208 336
+:amanda/occult/occult_wax64x48: 464 32
+:amanda/occult/occult_wax64x48: 80 64
+:amanda/occult/occult_wax64x48: 144 64
+:amanda/occult/occult_wax64x48: 208 64
+:amanda/occult/occult_wax64x48: 272 64
+:amanda/occult/occult_wax64x48: 272 144
+:amanda/occult/occult_wax64x48: 336 144
+:amanda/occult/occult_wax64x48: 400 144
+:amanda/occult/occult_wax64x48: 464 144
+:amanda/occult/occult_wax64x48: 80 224
+:amanda/occult/occult_wax64x48: 144 224
+:amanda/occult/occult_wax64x48: 208 224
+:amanda/occult/occult_wax64x48: 272 224
+:amanda/occult/occult_wax64x48: 272 304
+:amanda/occult/occult_wax64x48: 336 304
+:amanda/occult/occult_wax64x48: 400 304
+:amanda/occult/occult_wax64x48: 464 304
+:amanda/occult/occult_wax64x48: 80 384
+:amanda/occult/occult_wax64x48: 144 384
+:amanda/occult/occult_wax64x48: 208 384
+:amanda/occult/occult_wax64x48: 272 384
+:amanda/occult/occult_wax64x48: 272 464
+:amanda/occult/occult_wax64x48: 336 464
+:amanda/occult/occult_wax64x48: 400 464
+:amanda/occult/occult_wax64x48: 464 464
+:geoo/steel/silhouette_32x32.S: 384 464
+:geoo/steel/silhouette_32x32.S: 96 224
+:geoo/steel/silhouette_32x32.S: 96 64
+:amanda/occult/occult_wax32x48_cap_right_sheer: 592 464
+:amanda/occult/occult_wax64x48: 528 464
+:amanda/occult/occult_wax64x48: 528 144
+:amanda/occult/occult_wax64x48: 528 304
+:amanda/occult/occult_wax32x48_cap_right_sheer: 592 304
+:amanda/occult/occult_wax32x48_cap_right_sheer: 592 144
+:amanda/occult/occult_wax32x48_cap_left_sheer: 48 224
+:amanda/occult/occult_wax32x48_cap_left_sheer: 48 384
+:amanda/occult/occult_wax32x48_cap_left_sheer: 48 64
+:amanda/occult/occult_wax32x48_cap_right_sheer: 336 64
+:amanda/occult/occult_wax32x48_cap_right_sheer: 336 224
+:amanda/occult/occult_wax32x48_cap_right_sheer: 336 384
+:amanda/occult/occult_wax32x16_b: 240 16
+:amanda/occult/occult_wax32x16_b: 240 176
+:amanda/occult/occult_wax32x16_b: 240 336
+:amanda/occult/occult_wax32x16_b: 208 16
+:amanda/occult/occult_wax32x16_b: 208 336
+:geoo/steel/dark_32x16o.S: 208 176
+:amanda/occult/occult_wax32x16_b: 208 176
+:amanda/occult/occult_wax32x16_cap_left: 176 16
+:amanda/occult/occult_wax32x16_cap_left: 176 176
+:amanda/occult/occult_wax32x16_cap_left: 176 336
+:amanda/occult/occult_wax32x48_cap_left_soft: 240 304
+:amanda/occult/occult_wax32x48_cap_left_soft: 240 464
+:amanda/occult/occult_wax32x48_cap_left_soft: 432 32
+:amanda/occult/occult_wax32x48_cap_left_soft: 240 144
+:geoo/steel/silhouette_32x32.S: 96 384
+:geoo/steel/silhouette_32x32.S: 64 384
+:geoo/steel/silhouette_32x32.S: 64 224
+:geoo/steel/silhouette_32x32.S: 64 64
+:amanda/occult/overlays/occult_steel_overlay32x32_d.S: 64 64
+:amanda/occult/overlays/occult_steel_overlay32x32_d.S: 96 64
+:amanda/occult/overlays/occult_steel_overlay32x32_d.S: 96 224
+:amanda/occult/overlays/occult_steel_overlay32x32_d.S: 64 224
+:amanda/occult/overlays/occult_steel_overlay32x32_d.S: 64 384
+:amanda/occult/overlays/occult_steel_overlay32x32_d.S: 96 384
+:amanda/occult/occult_skulls32x32: 272 64
+:amanda/occult/occult_skulls32x32: 384 304
+:amanda/occult/occult_skulls32x32: 448 464
+:amanda/occult/occult_skulls32x32: 560 144
+:amanda/occult/occult_wax32x48_cap_right_sheer: 528 32
+:amanda/occult/occult_wax64x48: 464 192
+:amanda/occult/occult_wax32x48_cap_left_soft: 432 192
+:amanda/occult/occult_wax32x48_cap_right_sheer: 528 192
+:amanda/occult/occult_wax64x48: 464 352
+:amanda/occult/occult_wax32x48_cap_left_soft: 432 352
+:amanda/occult/occult_wax32x48_cap_right_sheer: 528 352
+:amanda/occult/occult_skulls32x32: 448 160
+:amanda/occult/occult_skulls32x32: 192 224
+:amanda/occult/occult_skulls32x32: 304 384
+:geoo/steel/silhouette_32x32.S: 384 144
+:geoo/steel/silhouette_32x32.S: 384 304
+:amanda/occult/overlays/occult_steel_overlay32x32_d.S: 384 144
+:amanda/occult/overlays/occult_steel_overlay32x32_d.S: 384 464
+:amanda/occult/overlays/occult_steel_overlay32x32_d.S: 384 304
+:amanda/occult/occult_cube: 400 448
+:amanda/occult/occult_cube: 400 128
+:amanda/occult/occult_cube: 400 288

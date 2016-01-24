@@ -1,0 +1,651 @@
+$BUILT 2013-05-15 16:41:32
+$AUTHOR RubiX
+$GERMAN 
+$ENGLISH The Rescue: A Collapsed mine(3p)
+
+#SIZE_X 2304
+#SIZE_Y 678
+#TORUS_X 1
+#TORUS_Y 0
+#START_X 768
+#START_Y 98
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 70
+#INITIAL 50
+#REQUIRED 21
+#SPAWN_INTERVAL 4
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 60
+#JUMPER 30
+#BLOCKER 2
+#EXPLODER2 6
+#BUILDER 50
+#PLATFORMER 20
+#BASHER 35
+#MINER 20
+#RUNNER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/goldmine/minecart.D: 1433 243
+:matt/goldmine/minecart.D: 1960 243
+:matt/goldmine/minecart.D: 384 243
+:matt/goldmine/pickaxe.D: 1548 105
+:matt/goldmine/pickaxe.D: 1433 241
+:matt/goldmine/pickaxe.D: 398 237
+:matt/goldmine/shovel.D: 1881 63
+:matt/goldmine/shovel.D: 1991 232
+:matt/goldmine/shovel.D: 432 243
+:matt/goldmine/GoalTop.D: 1312 176
+:matt/goldmine/GoalTop.D: 544 176
+:matt/goldmine/GoalTop.D: 2080 176
+
+:matt/goldmine/Hatch.H: 158 244
+:matt/goldmine/Hatch.H: 912 244
+:matt/goldmine/Hatch.H: 1696 244
+:matt/goldmine/Hatch.H: 234 576
+:matt/goldmine/Hatch.H: 282 576
+:matt/goldmine/Hatch.H: 332 576
+:matt/goldmine/Hatch.H: 1002 576
+:matt/goldmine/Hatch.H: 1050 576
+:matt/goldmine/Hatch.H: 1100 576
+:matt/goldmine/Hatch.H: 1772 576
+:matt/goldmine/Hatch.H: 1820 576
+:matt/goldmine/Hatch.H: 1870 576
+:matt/goldmine/Hatch.H: 1772 576
+:matt/goldmine/Hatch.H: 1820 576
+:matt/goldmine/Hatch.H: 1870 576
+:matt/goldmine/Hatch.H: 234 576
+:matt/goldmine/Hatch.H: 282 576
+:matt/goldmine/Hatch.H: 332 576
+:matt/goldmine/Hatch.H: 1002 576
+:matt/goldmine/Hatch.H: 1050 576
+:matt/goldmine/Hatch.H: 1100 576
+:matt/goldmine/Hatch.H: 1772 576
+:matt/goldmine/Hatch.H: 1820 576
+:matt/goldmine/Hatch.H: 1870 576
+:matt/goldmine/Hatch.H: 234 576
+:matt/goldmine/Hatch.H: 282 576
+:matt/goldmine/Hatch.H: 332 576
+:matt/goldmine/Hatch.H: 1002 576
+:matt/goldmine/Hatch.H: 1050 576
+:matt/goldmine/Hatch.H: 1100 576
+:matt/goldmine/Hatch.H: 112 576
+:matt/goldmine/Hatch.H: 880 576
+:matt/goldmine/Hatch.H: 1648 576
+:matt/goldmine/Hatch.H: 112 576
+:matt/goldmine/Hatch.H: 880 576
+:matt/goldmine/Hatch.H: 1648 576
+:matt/goldmine/Hatch.H: 112 576
+:matt/goldmine/Hatch.H: 880 576
+:matt/goldmine/Hatch.H: 1648 576
+:matt/goldmine/Hatch.H: 112 576
+:matt/goldmine/Hatch.H: 880 576
+:matt/goldmine/Hatch.H: 1648 576
+:matt/goldmine/Hatch.H: 112 576
+:matt/goldmine/Hatch.H: 880 576
+:matt/goldmine/Hatch.H: 1648 576
+:matt/goldmine/Hatch.H: 112 576
+:matt/goldmine/Hatch.H: 880 576
+:matt/goldmine/Hatch.H: 1648 576
+:matt/goldmine/Hatch.H: 112 576
+:matt/goldmine/Hatch.H: 880 576
+:matt/goldmine/Hatch.H: 1648 576
+:matt/goldmine/Hatch.H: 112 576
+:matt/goldmine/Hatch.H: 880 576
+:matt/goldmine/Hatch.H: 1648 576
+:matt/goldmine/Hatch.H: 112 576
+:matt/goldmine/Hatch.H: 880 576
+:matt/goldmine/Hatch.H: 1648 576
+:matt/goldmine/Hatch.H: 112 576
+:matt/goldmine/Hatch.H: 880 576
+:matt/goldmine/Hatch.H: 1648 576
+:matt/goldmine/Hatch.H: 1002 576
+:matt/goldmine/Hatch.H: 1050 576
+:matt/goldmine/Hatch.H: 1100 576
+:matt/goldmine/Hatch.H: 1002 576
+:matt/goldmine/Hatch.H: 1050 576
+:matt/goldmine/Hatch.H: 1100 576
+:matt/goldmine/Hatch.H: 1002 576
+:matt/goldmine/Hatch.H: 1050 576
+:matt/goldmine/Hatch.H: 1100 576
+:matt/goldmine/Hatch.H: 1772 576
+:matt/goldmine/Hatch.H: 1820 576
+:matt/goldmine/Hatch.H: 1870 576
+:matt/goldmine/Hatch.H: 1772 576
+:matt/goldmine/Hatch.H: 1820 576
+:matt/goldmine/Hatch.H: 1870 576
+:matt/goldmine/Hatch.H: 1772 576
+:matt/goldmine/Hatch.H: 1820 576
+:matt/goldmine/Hatch.H: 1870 576
+:matt/goldmine/Hatch.H: 234 576
+:matt/goldmine/Hatch.H: 282 576
+:matt/goldmine/Hatch.H: 332 576
+:matt/goldmine/Hatch.H: 234 576
+:matt/goldmine/Hatch.H: 282 576
+:matt/goldmine/Hatch.H: 332 576
+:matt/goldmine/Hatch.H: 234 576
+:matt/goldmine/Hatch.H: 282 576
+:matt/goldmine/Hatch.H: 332 576
+
+:matt/goldmine/Goal.G: 544 224
+:matt/goldmine/Goal.G: 1312 224
+:matt/goldmine/Goal.G: 2080 224
+
+:matt/goldmine/02: 1520 576
+:matt/goldmine/02: 2288 576
+:matt/goldmine/02: 752 576
+:matt/goldmine/03: 448 608
+:matt/goldmine/03: 1984 608
+:matt/goldmine/03: 1200 608
+:matt/goldmine/10: 1200 608
+:matt/goldmine/10: 432 608
+:matt/goldmine/08: 2080 464
+:matt/goldmine/08: 2160 464
+:matt/goldmine/crate64: 2112 624
+:matt/goldmine/crate64: 2176 624
+:matt/goldmine/07: 2064 560
+:matt/goldmine/08: 1312 464
+:matt/goldmine/08: 1344 464
+:matt/goldmine/08: 480 464
+:matt/goldmine/07: 510 458
+:matt/goldmine/08: 624 464
+:matt/goldmine/08: 560 464
+:matt/goldmine/08: 1232 464
+:matt/steel/48x48.S: 816 592
+:matt/goldmine/crate32: 1296 272
+:matt/goldmine/crate32: 1328 272
+:matt/goldmine/crate32: 1360 272
+:matt/goldmine/crate32: 2064 272
+:matt/goldmine/crate32: 2096 272
+:matt/goldmine/crate32: 2128 272
+:matt/goldmine/crate32: 592 272
+:matt/goldmine/crate32: 560 272
+:matt/goldmine/crate32: 528 272
+:matt/steel/48x48.S: 960 592
+:matt/steel/48x48.S: 1632 624
+:matt/steel/48x48.S: 1680 624
+:matt/steel/48x48.S: 1584 592
+:matt/steel/48x48.S: 1728 592
+:matt/steel/48x48.S: 192 592
+:matt/steel/48x48.S: 48 592
+:matt/steel/48x48.S: 96 624
+:matt/steel/48x48.S: 144 624
+:matt/goldmine/planksupport: 1904 176
+:matt/goldmine/planksupport: 368 176
+:matt/goldmine/planksupport: 1136 176
+:matt/goldmine/plank: 2240 176 r
+:matt/goldmine/plank: 704 176 r
+:matt/goldmine/plank: 1296 180
+:matt/goldmine/plank: 1664 292
+:matt/goldmine/plank: 256 292
+:matt/goldmine/plank: 1024 292
+:matt/goldmine/plank: 1232 180
+:matt/goldmine/crate64: 960 -12
+:matt/goldmine/crate64: 1088 -12
+:matt/goldmine/crate64: 1024 -12
+:matt/goldmine/crate64: 1152 -12
+:matt/goldmine/crate64: 1216 -12
+:matt/goldmine/crate64: 1344 -12
+:matt/goldmine/crate64: 1280 -12
+:matt/goldmine/crate64: 1472 -12
+:matt/goldmine/crate64: 1600 -12
+:matt/goldmine/crate64: 1536 -12
+:matt/goldmine/crate64: 1664 -12
+:matt/goldmine/crate64: 1408 -12
+:matt/goldmine/crate64: 1728 -12
+:matt/goldmine/crate64: 1856 -12
+:matt/goldmine/crate64: 1792 -12
+:matt/goldmine/crate64: 1920 -12
+:matt/goldmine/crate64: 1984 -12
+:matt/goldmine/crate64: 2112 -12
+:matt/goldmine/crate64: 2048 -12
+:matt/goldmine/crate64: 2176 -12
+:matt/goldmine/crate64: 2240 -12
+:matt/goldmine/crate64: 64 -12
+:matt/goldmine/crate64: 0 -12
+:matt/goldmine/crate64: 128 -12
+:matt/goldmine/crate64: 192 -12
+:matt/goldmine/crate64: 320 -12
+:matt/goldmine/crate64: 256 -12
+:matt/goldmine/crate64: 384 -12
+:matt/goldmine/crate64: 448 -12
+:matt/goldmine/crate64: 576 -12
+:matt/goldmine/crate64: 512 -12
+:matt/goldmine/crate64: 640 -12
+:matt/goldmine/crate64: 704 -12
+:matt/goldmine/crate64: 832 -12
+:matt/goldmine/crate64: 768 -12
+:matt/goldmine/crate64: 896 -12
+:matt/goldmine/09: 2240 4
+:matt/goldmine/09: 2272 4
+:matt/goldmine/09: 16 4
+:matt/goldmine/09: 64 4
+:matt/goldmine/09: 112 4
+:matt/goldmine/09: 144 4
+:matt/goldmine/09: 176 4
+:matt/goldmine/09: 224 4
+:matt/goldmine/09: 272 4
+:matt/goldmine/09: 320 4
+:matt/goldmine/09: 352 4
+:matt/goldmine/09: 384 4
+:matt/goldmine/09: 432 4
+:matt/goldmine/09: 480 4
+:matt/goldmine/09: 528 4
+:matt/goldmine/09: 560 4
+:matt/goldmine/09: 592 4
+:matt/goldmine/09: 640 4
+:matt/goldmine/09: 688 4
+:matt/goldmine/09: 736 4
+:matt/goldmine/09: 768 4
+:matt/goldmine/09: 800 4
+:matt/goldmine/09: 765 -4
+:matt/goldmine/09: 896 4
+:matt/goldmine/09: 944 4
+:matt/goldmine/09: 992 4
+:matt/goldmine/09: 1024 4
+:matt/goldmine/09: 1072 4
+:matt/goldmine/09: 1120 4
+:matt/goldmine/09: 1168 4
+:matt/goldmine/09: 1200 4
+:matt/goldmine/09: 1232 4
+:matt/goldmine/09: 1280 4
+:matt/goldmine/09: 1328 4
+:matt/goldmine/09: 1376 4
+:matt/goldmine/09: 1424 4
+:matt/goldmine/09: 1456 4
+:matt/goldmine/09: 1504 4
+:matt/goldmine/09: 1552 4
+:matt/goldmine/09: 1600 4
+:matt/goldmine/09: 1648 4
+:matt/goldmine/09: 1680 4
+:matt/goldmine/09: 1728 4
+:matt/goldmine/09: 1776 4
+:matt/goldmine/09: 1824 4
+:matt/goldmine/09: 1856 4
+:matt/goldmine/09: 1888 4
+:matt/goldmine/09: 1936 4
+:matt/goldmine/09: 1984 4
+:matt/goldmine/09: 2032 4
+:matt/goldmine/09: 2048 4
+:matt/goldmine/09: 2080 4
+:matt/goldmine/09: 2128 4
+:matt/goldmine/09: 2176 4
+:matt/goldmine/09: 2224 4
+:matt/goldmine/05: 1184 116
+:matt/goldmine/05: 1232 116
+:matt/goldmine/04: 1248 20
+:matt/goldmine/06: 1344 132
+:matt/goldmine/07: 1296 36
+:matt/goldmine/07: 1104 36
+:matt/goldmine/05: 1392 116
+:matt/goldmine/05: 1440 116
+:matt/goldmine/04: 1456 20
+:matt/goldmine/06: 1552 132
+:matt/goldmine/07: 1504 36
+:matt/goldmine/07: 1312 36
+:matt/goldmine/05: 1664 116
+:matt/goldmine/05: 1712 104
+:matt/goldmine/plank: 1728 180
+:matt/goldmine/04: 1728 32
+:matt/goldmine/06: 1824 132
+:matt/goldmine/07: 1775 34
+:matt/goldmine/07: 1584 36
+:matt/goldmine/05: 1952 132
+:matt/goldmine/05: 2000 132
+:matt/goldmine/04: 2016 36
+:matt/goldmine/06: 2112 148
+:matt/goldmine/07: 2064 52
+:matt/goldmine/07: 1872 52
+:matt/goldmine/05: 2224 132
+:matt/goldmine/05: 2272 132
+:matt/goldmine/04: 2288 36
+:matt/goldmine/06: 80 148
+:matt/goldmine/07: 32 52
+:matt/goldmine/07: 2144 52
+:matt/goldmine/05: 176 114
+:matt/goldmine/05: 220 108
+:matt/goldmine/04: 240 22
+:matt/goldmine/06: 336 148
+:matt/goldmine/07: 288 52
+:matt/goldmine/07: 96 52
+:matt/goldmine/05: 352 132
+:matt/goldmine/05: 400 132
+:matt/goldmine/04: 184 32
+:matt/goldmine/06: 512 148
+:matt/goldmine/07: 464 52
+:matt/goldmine/07: 272 52
+:matt/goldmine/05: 672 116
+:matt/goldmine/05: 672 100
+:matt/goldmine/04: 656 20
+:matt/goldmine/06: 752 148
+:matt/goldmine/07: 638 66
+:matt/goldmine/07: 608 84
+:matt/goldmine/07: 676 49
+:matt/goldmine/05: 880 116
+:matt/goldmine/05: 928 100
+:matt/goldmine/04: 944 36
+:matt/goldmine/06: 1040 148
+:matt/goldmine/07: 992 52
+:matt/goldmine/07: 876 70
+:matt/goldmine/plank: 2112 180
+:matt/goldmine/plank: 1984 180
+:matt/goldmine/plank: 1856 180
+:matt/goldmine/plank: 1488 180
+:matt/goldmine/plank: 1792 308
+:matt/goldmine/plank: 1424 292
+:matt/goldmine/plank: 768 308
+:matt/goldmine/plank: 704 180
+:matt/goldmine/plank: 480 292
+:matt/goldmine/plank: 320 180
+:matt/goldmine/plank: 192 180
+:matt/goldmine/09: 992 292 rr
+:matt/goldmine/09: 1040 292 rr
+:matt/goldmine/09: 1088 292 rr
+:matt/goldmine/09: 1136 292 rr
+:matt/goldmine/09: 1200 292 rr
+:matt/goldmine/plank: 1184 292
+:matt/goldmine/09: 1248 292 rr
+:matt/goldmine/09: 1296 292 rr
+:matt/goldmine/09: 1344 292 rr
+:matt/goldmine/09: 1392 292 rr
+:matt/goldmine/09: 1424 308 rr
+:matt/goldmine/09: 1472 292 rr
+:matt/goldmine/plank: 1456 292
+:matt/goldmine/09: 1522 295 rr
+:matt/goldmine/09: 1584 292 rr
+:matt/goldmine/09: 1632 292 rr
+:matt/goldmine/09: 1680 292 rr
+:matt/goldmine/09: 1744 292 rr
+:matt/goldmine/09: 1792 292 rr
+:matt/goldmine/09: 1840 292 rr
+:matt/goldmine/09: 1904 292 rr
+:matt/goldmine/09: 1952 292 rr
+:matt/goldmine/plank: 1920 292 f
+:matt/goldmine/09: 2000 292 rr
+:matt/goldmine/09: 2064 292 rr
+:matt/goldmine/09: 2112 292 rr
+:matt/goldmine/09: 2160 292 rr
+:matt/goldmine/09: 2192 292 rr
+:matt/goldmine/09: 2240 292 rr
+:matt/goldmine/plank: 2176 292
+:matt/goldmine/09: 2288 292 rr
+:matt/goldmine/09: 32 292 rr
+:matt/goldmine/09: 80 292 rr
+:matt/goldmine/09: 128 292 rr
+:matt/goldmine/plank: 128 292
+:matt/goldmine/09: 192 292 rr
+:matt/goldmine/09: 240 292 rr
+:matt/goldmine/09: 288 292 rr
+:matt/goldmine/09: 336 292 rr
+:matt/goldmine/09: 384 292 rr
+:matt/goldmine/09: 432 292 rr
+:matt/goldmine/plank: 385 291
+:matt/goldmine/09: 464 292 rr
+:matt/goldmine/09: 512 292 rr
+:matt/goldmine/09: 560 308 rr
+:matt/goldmine/plank: 512 292
+:matt/goldmine/09: 592 292 rr
+:matt/goldmine/09: 640 292 rr
+:matt/goldmine/09: 688 292 rr
+:matt/goldmine/plank: 640 292
+:matt/goldmine/09: 704 292 rr
+:matt/goldmine/09: 752 292 rr
+:matt/goldmine/09: 800 292 rr
+:matt/goldmine/09: 832 292 rr
+:matt/goldmine/plank: 896 292
+:matt/goldmine/09: 880 292 rr
+:matt/goldmine/09: 928 292 rr
+:matt/goldmine/plank: 624 180
+:matt/goldmine/plank: 448 180
+:matt/goldmine/plank: 544 180
+:matt/goldmine/07: 444 82
+:matt/goldmine/07: 532 74
+:matt/goldmine/plank: 2240 180
+:matt/goldmine/plank: 1104 180
+:matt/goldmine/plank: 976 180
+:matt/goldmine/plank: 848 180
+:matt/goldmine/plank: 1344 292
+:matt/goldmine/plank: 1312 292
+:matt/goldmine/plank: 1040 292
+:matt/goldmine/plank: 768 292
+:matt/goldmine/plank: 0 292
+:matt/goldmine/plank: 1584 292
+:matt/goldmine/plank: 1792 292
+:matt/goldmine/07: 112 76
+:matt/goldmine/07: 214 78
+:matt/goldmine/07: 770 73
+:matt/goldmine/07: 789 21
+:matt/goldmine/plank: 832 180
+:matt/goldmine/07: 841 79
+:matt/goldmine/07: 943 72
+:matt/goldmine/04: 1240 36
+:matt/goldmine/07: 1072 84
+:matt/goldmine/07: 1212 84
+:matt/goldmine/plank: 1392 180
+:matt/goldmine/07: 1340 78
+:matt/goldmine/07: 1472 84
+:matt/goldmine/07: 1654 86
+:matt/goldmine/07: 1824 84
+:matt/goldmine/07: 2016 84
+:matt/goldmine/07: 2128 84
+:matt/goldmine/plank: 64 180
+:matt/goldmine/07: 68 84
+:matt/goldmine/plank: 2048 292
+:matt/goldmine/05: 971 32
+:matt/goldmine/07: 605 362
+:matt/goldmine/07: 724 384
+:matt/goldmine/07: 841 364
+:matt/goldmine/07: 919 371
+:matt/goldmine/07: 1031 344
+:matt/goldmine/07: 1150 366
+:matt/goldmine/07: 1267 346
+:matt/goldmine/07: 968 404
+:matt/goldmine/07: 1087 426
+:matt/goldmine/07: 1204 406
+:matt/goldmine/07: 568 390
+:matt/goldmine/07: 763 377
+:matt/goldmine/07: 812 410
+:matt/goldmine/07: 931 432
+:matt/goldmine/07: 1096 368
+:matt/goldmine/07: 1289 355
+:matt/goldmine/07: 1338 388
+:matt/goldmine/07: 1457 410
+:matt/goldmine/07: 1313 349
+:matt/goldmine/07: 1508 336
+:matt/goldmine/07: 1557 369
+:matt/goldmine/07: 1676 391
+:matt/goldmine/07: 1504 351
+:matt/goldmine/07: 1699 338
+:matt/goldmine/07: 1748 371
+:matt/goldmine/07: 1867 393
+:matt/goldmine/07: 1806 352
+:matt/goldmine/07: 2001 339
+:matt/goldmine/07: 2050 372
+:matt/goldmine/07: 2169 394
+:matt/goldmine/07: 2239 365
+:matt/goldmine/07: 130 352
+:matt/goldmine/07: 179 385
+:matt/goldmine/07: 298 407
+:matt/goldmine/07: 98 346
+:matt/goldmine/07: 293 333
+:matt/goldmine/07: 342 366
+:matt/goldmine/07: 461 388
+:matt/goldmine/07: 2157 423
+:matt/goldmine/07: 48 410
+:matt/goldmine/07: 97 439
+:matt/goldmine/07: 216 465
+:matt/goldmine/07: 16 404
+:matt/goldmine/07: 211 391
+:matt/goldmine/07: 260 424
+:matt/goldmine/07: 147 416
+:matt/goldmine/07: 342 403
+:matt/goldmine/07: 391 436
+:matt/goldmine/07: 310 397
+:matt/goldmine/07: 505 384
+:matt/goldmine/07: 554 417
+:matt/goldmine/07: 426 408
+:matt/goldmine/07: 621 395
+:matt/goldmine/07: 670 428
+:matt/goldmine/07: 780 438
+:matt/goldmine/07: 589 389
+:matt/goldmine/07: 784 376
+:matt/goldmine/07: 833 409
+:matt/goldmine/07: 1182 447
+:matt/goldmine/07: 1377 434
+:matt/goldmine/07: 1424 448
+:matt/goldmine/07: 1542 440
+:matt/goldmine/07: 1345 428
+:matt/goldmine/07: 1540 415
+:matt/goldmine/07: 1584 432
+:matt/goldmine/07: 1760 464
+:matt/goldmine/07: 1829 413
+:matt/goldmine/07: 1948 435
+:matt/goldmine/07: 2053 419
+:matt/goldmine/07: 2125 399
+:matt/goldmine/07: 2244 421
+:matt/goldmine/07: 1242 301
+:matt/goldmine/07: 1451 313
+:matt/goldmine/07: 1595 302
+:matt/goldmine/07: 1769 304
+:matt/goldmine/07: 1947 298
+:matt/goldmine/07: 2102 299
+:matt/goldmine/07: 2262 305
+:matt/goldmine/07: 102 304
+:matt/goldmine/07: 270 294
+:matt/goldmine/07: 482 304
+:matt/goldmine/07: 620 303
+:matt/goldmine/07: 790 297
+:matt/goldmine/07: 966 293
+:matt/goldmine/07: 1123 293
+:matt/goldmine/04: 476 36
+:matt/goldmine/plank: 1472 176 r
+:matt/goldmine/plank: 1600 180
+:matt/goldmine/07: 1566 84
+:matt/goldmine/07: 1744 76
+:matt/goldmine/crate64: 2240 624
+:matt/goldmine/crate64: 0 624
+:matt/goldmine/crate64: 64 640
+:matt/goldmine/crate64: 128 640
+:matt/goldmine/crate64: 192 624
+:matt/goldmine/crate64: 256 624
+:matt/goldmine/crate64: 320 624
+:matt/goldmine/crate64: 384 624
+:matt/goldmine/crate64: 448 624
+:matt/goldmine/crate64: 576 624
+:matt/goldmine/crate64: 640 624
+:matt/goldmine/07: 528 560
+:matt/goldmine/crate64: 512 624
+:matt/goldmine/crate64: 704 624
+:matt/goldmine/crate64: 960 624
+:matt/goldmine/crate64: 1024 624
+:matt/goldmine/crate64: 1088 624
+:matt/goldmine/crate64: 1152 624
+:matt/goldmine/crate64: 1216 624
+:matt/goldmine/crate64: 1344 624
+:matt/goldmine/crate64: 1408 624
+:matt/goldmine/07: 1296 560
+:matt/goldmine/crate64: 1280 624
+:matt/goldmine/crate64: 1472 624
+:matt/goldmine/crate64: 1536 624
+:matt/goldmine/crate64: 1600 640
+:matt/goldmine/crate64: 1664 640
+:matt/goldmine/crate64: 1728 624
+:matt/goldmine/crate64: 1792 624
+:matt/goldmine/crate64: 1856 624
+:matt/goldmine/10: 1968 608
+:matt/goldmine/crate64: 1920 624
+:matt/goldmine/crate64: 1984 624
+:matt/goldmine/crate64: 2048 624
+:matt/goldmine/06: 1744 528
+:matt/goldmine/08: 1584 432
+:matt/goldmine/08: 1664 432
+:matt/goldmine/08: 1760 464
+:matt/goldmine/08: 1808 464
+:matt/goldmine/08: 1872 464
+:matt/goldmine/08: 1952 464
+:matt/goldmine/08: 2000 464
+:matt/goldmine/08: 2240 464
+:matt/goldmine/08: 2256 464
+:matt/goldmine/08: 32 432
+:matt/goldmine/08: 128 432
+:matt/goldmine/08: 224 464
+:matt/goldmine/08: 272 464
+:matt/goldmine/08: 352 464
+:matt/goldmine/08: 400 464
+:matt/goldmine/08: 688 464
+:matt/goldmine/08: 720 464
+:matt/goldmine/08: 832 432
+:matt/goldmine/08: 912 432
+:matt/goldmine/08: 992 464
+:matt/goldmine/08: 1040 464
+:matt/goldmine/08: 1088 464
+:matt/goldmine/08: 1168 464
+:matt/goldmine/08: 1424 464
+:matt/goldmine/08: 1456 464
+:matt/goldmine/08: 1488 464
+:matt/steel/48x48.S: 912 624
+:matt/steel/48x48.S: 864 624
+:matt/steel/64x32.S: 914 292
+:matt/steel/64x32.S: 1698 292
+:matt/steel/64x32.S: 160 292
+:matt/steel/32x16.S: 528 272
+:matt/steel/32x16.S: 560 272
+:matt/steel/32x16.S: 592 272
+:matt/steel/32x16.S: 2064 272
+:matt/steel/32x16.S: 2096 272
+:matt/steel/32x16.S: 2128 272
+:matt/steel/32x16.S: 1296 272
+:matt/steel/32x16.S: 1328 272
+:matt/steel/32x16.S: 1360 272
+:matt/goldmine/crate64: 768 624
+:matt/goldmine/crate64: 832 640
+:matt/goldmine/crate64: 896 640
+:matt/steel/32x32.S: 320 624
+:matt/steel/32x32.S: 352 640
+:matt/steel/32x32.S: 384 624
+:matt/steel/32x32.S: 672 624
+:matt/steel/32x32.S: 704 640
+:matt/steel/32x32.S: 736 624
+:matt/steel/32x32.S: 496 624
+:matt/steel/32x32.S: 528 640
+:matt/steel/32x32.S: 560 624
+:matt/steel/32x32.S: 1264 624
+:matt/steel/32x32.S: 1296 640
+:matt/steel/32x32.S: 1328 624
+:matt/steel/32x32.S: 2032 624
+:matt/steel/32x32.S: 2064 640
+:matt/steel/32x32.S: 2096 624
+:matt/steel/32x32.S: 1088 624
+:matt/steel/32x32.S: 1120 640
+:matt/steel/32x32.S: 1152 624
+:matt/steel/32x32.S: 1440 624
+:matt/steel/32x32.S: 1472 640
+:matt/steel/32x32.S: 1504 624
+:matt/steel/32x32.S: 1856 624
+:matt/steel/32x32.S: 1888 640
+:matt/steel/32x32.S: 1920 624
+:matt/steel/32x32.S: 2208 624
+:matt/steel/32x32.S: 2240 640
+:matt/steel/32x32.S: 2272 624
+:matt/goldmine/tracks: 364 291
+:matt/goldmine/tracks: 1363 290
+:matt/goldmine/tracks: 1967 291
+:matt/goldmine/tracks: 1848 291
+:matt/goldmine/tracks: 1479 290
+:matt/goldmine/tracks: 246 291
+:matt/goldmine/07: 144 432
+:matt/goldmine/07: 352 464
+:matt/goldmine/07: 768 432
+:matt/goldmine/07: 1024 464
+:matt/goldmine/07: 1488 432
+:matt/goldmine/07: 1776 464
+:matt/goldmine/07: 2224 432
+:matt/goldmine/07: 240 464
+:matt/goldmine/07: 1184 448
+:matt/goldmine/07: 608 464

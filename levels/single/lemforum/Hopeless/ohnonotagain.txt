@@ -1,0 +1,118 @@
+$BUILT 2015-06-24 21:20:41
+$AUTHOR tseug
+$GERMAN 
+$ENGLISH Oh No, Not Again!
+
+#SIZE_X 992
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 352
+#START_Y -20
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 150
+#INITIAL 50
+#REQUIRED 50
+#SPAWN_INTERVAL 20
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#FLOATER 1
+#NOTHING 0
+#BUILDER 3
+#NOTHING 0
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/earth/Hatch.H: 722 100
+
+:matt/earth/Goal.G: 834 312
+
+:geoo/steel/32x64o.S: 960 80
+:geoo/steel/32x64o.S: 960 144
+:geoo/steel/32x64o.S: 960 208
+:geoo/steel/32x64o.S: 960 272
+:geoo/steel/32x64o.S: 960 336
+:geoo/steel/32x64o.S: 0 80
+:geoo/steel/32x64o.S: 0 144
+:geoo/steel/32x64o.S: 0 208
+:geoo/steel/32x64o.S: 0 272
+:geoo/steel/32x64o.S: 0 336
+:geoo/steel/32x64o.S: 0 16
+:geoo/steel/32x64o.S: 960 16
+:matt/earth/03: 172 142 frr
+:matt/earth/03: 200 176 frr
+:matt/earth/05: 32 136 r
+:geoo/steel/32x64o.S: 64 80
+:geoo/steel/32x64o.S: 64 144
+:geoo/steel/32x64o.S: 64 208
+:geoo/steel/32x64o.S: 64 272
+:geoo/steel/32x64o.S: 64 336
+:matt/earth/10: 672 144
+:matt/earth/10: 656 192 d
+:matt/earth/01: 768 216
+:matt/earth/03: 768 208
+:matt/earth/03: 800 180
+:geoo/steel/32x64o.S: 896 80
+:matt/earth/09: 838 268
+:matt/earth/09: 854 266
+:geoo/steel/32x64o.S: 896 272
+:matt/earth/15: 824 376
+:geoo/steel/32x64o.S: 896 336
+:geoo/steel/32x64o.S: 928 176 d
+:matt/earth/03: 592 148
+:matt/earth/10: 444 340
+:matt/earth/03: 436 338
+:matt/earth/09: 514 334
+:matt/earth/03: 558 340
+:matt/earth/05: 638 336 rr
+:matt/earth/01: 332 340
+:matt/earth/02: 322 342
+:matt/earth/00: 556 340
+:matt/earth/09: 562 334
+:matt/earth/09: 610 334
+:matt/earth/09: 658 334
+:matt/earth/09: 466 336
+:matt/earth/09: 322 334
+:matt/earth/04: 572 356
+:matt/earth/17: 400 136 fr
+:matt/earth/05: 224 136 fr
+:matt/earth/05: 264 154 fr
+:matt/earth/00: 480 144
+:matt/earth/09: -16 8
+:matt/earth/09: 952 8
+:matt/earth/05: 480 136 r
+:matt/earth/17: 700 165 fr
+:matt/earth/05: 496 156 fr
+:matt/earth/00: 832 192
+:geoo/steel/32x64o.S: 896 144
+:geoo/steel/32x64o.S: 896 208
+:matt/earth/23: 232 320
+:matt/earth/26: 240 296
+:matt/earth/01: 224 288
+:matt/earth/23: 136 288
+:matt/earth/26: 144 264
+:matt/earth/01: 128 256
+:matt/earth/03: 324 338
+:matt/earth/10: 348 340
+:matt/earth/09: 370 334
+:matt/earth/09: 418 334
+:matt/earth/15: 672 272
+:matt/earth/05: 432 152 r
+:geoo/steel/64x64.S: 832 224
+:matt/earth/03: 670 201 frr
+:geoo/steel/64x64.S: 768 224
+:geoo/steel/32x64o.S: 928 336
+:geoo/steel/32x64o.S: 32 336
+:geoo/steel/32x64o.S: 32 128 d
+:geoo/steel/32x64o.S: 32 192 d
+:matt/earth/03: 745 113 rrd
+:matt/earth/18: 731 115 d

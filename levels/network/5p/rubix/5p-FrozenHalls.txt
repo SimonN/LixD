@@ -1,0 +1,211 @@
+$BUILT 2014-04-16 20:42:42
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH The Frozen Halls (5p)
+
+#SIZE_X 640
+#SIZE_Y 1520
+#TORUS_X 1
+#TORUS_Y 1
+#START_X 0
+#START_Y 80
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 45
+#INITIAL 75
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#FLOATER 10
+#WALKER 60
+#JUMPER 50
+#NOTHING 0
+#EXPLODER2 5
+#NOTHING 0
+#BUILDER 90
+#MINER 90
+#NOTHING 0
+#BATTER 15
+#CUBER 10
+#NOTHING 0
+
+:matt/winter/Hatch.H: 410 1302
+:matt/winter/Hatch.H: 410 86
+:matt/winter/Hatch.H: 410 390
+:matt/winter/Hatch.H: 410 694
+:matt/winter/Hatch.H: 410 998
+:matt/winter/Hatch.H: 90 1270
+:matt/winter/Hatch.H: 90 54
+:matt/winter/Hatch.H: 90 358
+:matt/winter/Hatch.H: 90 662
+:matt/winter/Hatch.H: 90 966
+
+:matt/winter/Goal.G: 74 262
+:matt/winter/Goal.G: 74 566
+:matt/winter/Goal.G: 74 870
+:matt/winter/Goal.G: 74 1174
+:matt/winter/Goal.G: 74 1478
+
+:matt/winter/06: 114 742
+:matt/winter/06: 114 786
+:matt/winter/06: 114 438
+:matt/winter/06: 114 482
+:matt/winter/06: 114 134
+:matt/winter/06: 114 178
+:matt/winter/06: 114 1350
+:matt/winter/06: 114 1394
+:matt/winter/06: 114 1090
+:matt/winter/06: 434 16
+:matt/winter/06: 434 1474
+:matt/winter/06: 434 1234
+:matt/winter/06: 434 1172
+:matt/winter/06: 434 928
+:matt/winter/06: 434 866
+:matt/winter/06: 434 622
+:matt/winter/06: 434 560
+:matt/winter/06: 434 260
+:matt/winter/06: 434 322
+:matt/winter/10: 126 292
+:matt/winter/10: 126 372 rr
+:matt/winter/10: 270 340
+:matt/winter/10: 270 420 rr
+:matt/winter/10: 558 292 frr
+:matt/winter/10: 558 372 f
+:matt/winter/10: 414 340 frr
+:matt/winter/10: 414 420 f
+:matt/winter/10: 126 596
+:matt/winter/10: 126 676 rr
+:matt/winter/10: 270 644
+:matt/winter/10: 266 726 rr
+:matt/winter/10: 558 596 frr
+:matt/winter/10: 554 678 f
+:matt/winter/10: 414 644 frr
+:matt/winter/10: 414 724 f
+:matt/winter/10: 126 902
+:matt/winter/10: 126 982 rr
+:matt/winter/10: 270 950
+:matt/winter/10: 270 1030 rr
+:matt/winter/10: 558 902 frr
+:matt/winter/10: 558 982 f
+:matt/winter/10: 414 950 frr
+:matt/winter/10: 414 1030 f
+:matt/winter/10: 126 1206
+:matt/winter/10: 126 1286 rr
+:matt/winter/10: 270 1254
+:matt/winter/10: 270 1334 rr
+:matt/winter/10: 558 1206 frr
+:matt/winter/10: 558 1286 f
+:matt/winter/10: 414 1254 frr
+:matt/winter/10: 426 1334 f
+:matt/winter/10: 126 1510
+:matt/winter/10: 126 70 rr
+:matt/winter/10: 270 38
+:matt/winter/10: 270 118 rr
+:matt/winter/10: 558 1510 frr
+:matt/winter/10: 558 70 f
+:matt/winter/10: 414 38 frr
+:matt/winter/10: 414 118 f
+:geoo/steel/32x16o.S: 90 326
+:geoo/steel/32x16o.S: 138 326
+:geoo/steel/16x16o.S: 122 326
+:geoo/steel/16x16o.S: 122 22
+:geoo/steel/32x16o.S: 90 22
+:geoo/steel/32x16o.S: 138 22
+:geoo/steel/16x16o.S: 122 1238
+:geoo/steel/32x16o.S: 90 1238
+:geoo/steel/32x16o.S: 138 1238
+:geoo/steel/16x16o.S: 122 934
+:geoo/steel/32x16o.S: 90 934
+:geoo/steel/32x16o.S: 138 934
+:geoo/steel/16x16o.S: 122 630
+:geoo/steel/32x16o.S: 90 630
+:geoo/steel/32x16o.S: 138 630
+:matt/winter/09a: 410 694 d
+:matt/winter/09a: 90 358 d
+:matt/winter/09a: 90 662 d
+:matt/winter/09a: 410 998 d
+:matt/winter/09a: 410 390 d
+:matt/winter/09a: 410 86 d
+:matt/winter/09a: 410 1302 d
+:matt/winter/09a: 90 966 d
+:matt/winter/09a: 90 1270 d
+:matt/winter/09a: 90 54 d
+:geoo/steel/32x16o.S: 426 454
+:geoo/steel/32x16o.S: 90 422
+:geoo/steel/32x16o.S: 122 422
+:geoo/steel/32x16o.S: 90 726
+:geoo/steel/32x16o.S: 122 726
+:geoo/steel/32x16o.S: 426 758
+:geoo/steel/32x16o.S: 90 1030
+:geoo/steel/32x16o.S: 122 1030
+:geoo/steel/32x16o.S: 426 1062
+:geoo/steel/32x16o.S: 90 1334
+:geoo/steel/32x16o.S: 122 1334
+:geoo/steel/32x16o.S: 426 1366
+:geoo/steel/32x16o.S: 90 118
+:geoo/steel/32x16o.S: 122 118
+:geoo/steel/32x16o.S: 426 150
+:matt/winter/06: 378 230 rrr
+:matt/winter/06: 442 230 rrr
+:matt/winter/06: 506 230 rrr
+:matt/winter/06: 570 230 rrr
+:matt/winter/06: 634 230 rrr
+:matt/winter/06: 58 230 rrr
+:matt/winter/06: 122 230 rrr
+:matt/winter/06: 186 230 rrr
+:matt/winter/06: 346 534 rrr
+:matt/winter/06: 410 534 rrr
+:matt/winter/06: 474 534 rrr
+:matt/winter/06: 538 534 rrr
+:matt/winter/06: 602 534 rrr
+:matt/winter/06: 26 534 rrr
+:matt/winter/06: 90 534 rrr
+:matt/winter/06: 154 534 rrr
+:matt/winter/06: 314 838 rrr
+:matt/winter/06: 378 838 rrr
+:matt/winter/06: 442 838 rrr
+:matt/winter/06: 506 838 rrr
+:matt/winter/06: 570 838 rrr
+:matt/winter/06: 634 838 rrr
+:matt/winter/06: 58 838 rrr
+:matt/winter/06: 122 838 rrr
+:matt/winter/06: 346 1142 rrr
+:matt/winter/06: 410 1142 rrr
+:matt/winter/06: 474 1142 rrr
+:matt/winter/06: 538 1142 rrr
+:matt/winter/06: 602 1142 rrr
+:matt/winter/06: 26 1142 rrr
+:matt/winter/06: 90 1142 rrr
+:matt/winter/06: 154 1142 rrr
+:matt/winter/06: 346 1446 rrr
+:matt/winter/06: 410 1446 rrr
+:matt/winter/06: 474 1446 rrr
+:matt/winter/06: 538 1446 rrr
+:matt/winter/06: 602 1446 rrr
+:matt/winter/06: 26 1446 rrr
+:matt/winter/06: 90 1446 rrr
+:matt/winter/06: 154 1446 rrr
+:matt/winter/06: 250 230 rrr
+:matt/winter/06: 314 230 rrr
+:matt/winter/06: 218 1446 rrr
+:matt/winter/06: 282 1446 rrr
+:matt/winter/06: 218 1142 rrr
+:matt/winter/06: 282 1142 rrr
+:matt/winter/06: 186 838 rrr
+:matt/winter/06: 250 838 rrr
+:matt/winter/06: 218 534 rrr
+:matt/winter/06: 282 534 rrr
+:matt/winter/09a: 410 198
+:matt/winter/09a: 410 502
+:matt/winter/09a: 410 806
+:matt/winter/09a: 410 1110
+:matt/winter/09a: 410 1414
+:matt/winter/06: 114 1046
+:matt/winter/09a: 90 502
+:matt/winter/09a: 90 806
+:matt/winter/09a: 90 1110
+:matt/winter/09a: 90 1414
+:matt/winter/09a: 90 198

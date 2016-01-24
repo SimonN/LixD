@@ -1,0 +1,269 @@
+$BUILT                                             2011-08-21 10:16:21
+$AUTHOR                                                          Rubix
+$GERMAN                                                               
+$ENGLISH                                         Wack for pleasure(2p)
+
+#SIZE_X                                                           1536
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                           126
+#START_Y                                                           380
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            40
+#INITIAL                                                            50
+#REQUIRED                                                           20
+#RATE                                                               75
+
+#WALKER                                                             80
+#JUMPER                                                             50
+#RUNNER                                                             15
+#BATTER                                                             -1
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:geoo/construction/Hatch.H:                       330        46
+:geoo/construction/Hatch.H:                      1170        48     r
+
+:geoo/construction/Goal2.G:                      1440       144
+:geoo/construction/Goal2.G:                        32       144
+
+:matt/water.W:                                   1024       352
+:matt/water.W:                                   1056       352
+:matt/water.W:                                   1088       352
+:matt/water.W:                                   1120       352
+:matt/water.W:                                   1152       352
+:matt/water.W:                                   1184       352
+:matt/water.W:                                   1216       352
+:matt/water.W:                                   1248       352
+:matt/water.W:                                   1280       352
+:matt/water.W:                                   1312       352
+:matt/water.W:                                   1344       352
+:matt/water.W:                                   1376       352
+:matt/water.W:                                   1408       352
+:matt/water.W:                                   1440       352
+:matt/water.W:                                   1472       352
+:matt/water.W:                                   1504       352
+:matt/water.W:                                   1024       368
+:matt/water.W:                                   1056       368
+:matt/water.W:                                   1088       368
+:matt/water.W:                                   1120       368
+:matt/water.W:                                   1152       368
+:matt/water.W:                                   1184       368
+:matt/water.W:                                   1216       368
+:matt/water.W:                                   1248       368
+:matt/water.W:                                   1280       368
+:matt/water.W:                                   1312       368
+:matt/water.W:                                   1344       368
+:matt/water.W:                                   1376       368
+:matt/water.W:                                   1408       368
+:matt/water.W:                                   1440       368
+:matt/water.W:                                   1472       368
+:matt/water.W:                                   1504       368
+:matt/water.W:                                    512       352
+:matt/water.W:                                    544       352
+:matt/water.W:                                    576       352
+:matt/water.W:                                    608       352
+:matt/water.W:                                    640       352
+:matt/water.W:                                    672       352
+:matt/water.W:                                    704       352
+:matt/water.W:                                    736       352
+:matt/water.W:                                    768       352
+:matt/water.W:                                    800       352
+:matt/water.W:                                    832       352
+:matt/water.W:                                    864       352
+:matt/water.W:                                    896       352
+:matt/water.W:                                    928       352
+:matt/water.W:                                    960       352
+:matt/water.W:                                    992       352
+:matt/water.W:                                    512       368
+:matt/water.W:                                    544       368
+:matt/water.W:                                    576       368
+:matt/water.W:                                    608       368
+:matt/water.W:                                    640       368
+:matt/water.W:                                    672       368
+:matt/water.W:                                    704       368
+:matt/water.W:                                    736       368
+:matt/water.W:                                    768       368
+:matt/water.W:                                    800       368
+:matt/water.W:                                    832       368
+:matt/water.W:                                    864       368
+:matt/water.W:                                    896       368
+:matt/water.W:                                    928       368
+:matt/water.W:                                    960       368
+:matt/water.W:                                    992       368
+:matt/water.W:                                      0       352
+:matt/water.W:                                     32       352
+:matt/water.W:                                     64       352
+:matt/water.W:                                     96       352
+:matt/water.W:                                    128       352
+:matt/water.W:                                    160       352
+:matt/water.W:                                    192       352
+:matt/water.W:                                    224       352
+:matt/water.W:                                    256       352
+:matt/water.W:                                    288       352
+:matt/water.W:                                    320       352
+:matt/water.W:                                    352       352
+:matt/water.W:                                    384       352
+:matt/water.W:                                    416       352
+:matt/water.W:                                    448       352
+:matt/water.W:                                    480       352
+:matt/water.W:                                      0       368
+:matt/water.W:                                     32       368
+:matt/water.W:                                     64       368
+:matt/water.W:                                     96       368
+:matt/water.W:                                    128       368
+:matt/water.W:                                    160       368
+:matt/water.W:                                    192       368
+:matt/water.W:                                    224       368
+:matt/water.W:                                    256       368
+:matt/water.W:                                    288       368
+:matt/water.W:                                    320       368
+:matt/water.W:                                    352       368
+:matt/water.W:                                    384       368
+:matt/water.W:                                    416       368
+:matt/water.W:                                    448       368
+:matt/water.W:                                    480       368
+
+:geoo/construction/concrete/032a:                 656       192
+:geoo/construction/concrete/016:                  672       240
+:geoo/construction/concrete/016:                  848       240
+:geoo/construction/concrete/016:                  672       224
+:geoo/construction/concrete/032b:                1328       176
+:geoo/construction/concrete/032a:                1296       176
+:geoo/construction/concrete/032a:                 176       176
+:geoo/construction/concrete/032b:                 208       176
+:geoo/construction/concrete/032va:                800       256     rrr
+:geoo/construction/concrete/032vb:                672       256     r
+:geoo/construction/concrete/podium_32:            992       288     f
+:geoo/construction/concrete/064:                 1056       192
+:geoo/construction/concrete/podium_32:           1056       160
+:geoo/steel/dark_64x32o.S:                         32       208
+:geoo/steel/dark_64x32o.S:                       1440       208
+:geoo/construction/concrete/064:                 1120       224
+:geoo/construction/concrete/064:                 1184       192
+:geoo/construction/concrete/064:                 1248       224
+:geoo/construction/concrete/064:                  864       224
+:geoo/construction/concrete/064:                  928       192
+:geoo/construction/concrete/064:                  992       224
+:geoo/construction/concrete/064:                  544       192
+:geoo/construction/concrete/064:                  608       224
+:geoo/construction/concrete/064:                  288       192
+:geoo/construction/concrete/064:                  352       224
+:geoo/construction/concrete/064:                  416       192
+:geoo/construction/concrete/064:                  480       224
+:geoo/construction/concrete/064:                  224       224
+:geoo/construction/concrete/podium_32:            480       288     f
+:geoo/construction/concrete/podium_32:            352       288     f
+:geoo/construction/concrete/podium_32:           1120       288     f
+:geoo/construction/concrete/podium_32:            928       160
+:geoo/construction/concrete/podium_32:           1184       160
+:geoo/construction/concrete/podium_32:            544       160
+:geoo/construction/concrete/podium_32:            416       160
+:geoo/construction/concrete/podium_32:            288       160
+:geoo/steel/dark_32x64o.S:                          0       208
+:geoo/steel/dark_32x64o.S:                          0       144
+:geoo/steel/dark_32x64o.S:                       1504       208
+:geoo/steel/dark_32x64o.S:                       1504       144
+:geoo/construction/concrete/032a:                 256       192
+:geoo/construction/concrete/032a:                 384       192
+:geoo/construction/concrete/032a:                 512       192
+:geoo/construction/concrete/032b:                1248       192
+:geoo/construction/concrete/032b:                1120       192
+:geoo/construction/concrete/032b:                 992       192
+:geoo/construction/concrete/016:                  848       224
+:geoo/construction/concrete/032a:                 880       192
+:geoo/construction/concrete/032a:                1024       192
+:geoo/construction/concrete/032a:                1152       192
+:geoo/construction/concrete/032a:                1280       192
+:geoo/construction/concrete/032b:                 592       160
+:geoo/construction/concrete/032b:                 480       192
+:geoo/construction/concrete/032b:                 224       192
+:geoo/steel/dark_32x64o.S:                         96       160
+:geoo/steel/dark_32x64o.S:                       1408       224
+:geoo/steel/dark_32x64o.S:                       1408       160
+:geoo/steel/dark_32x64o.S:                         96       224
+:geoo/steel/dark_32x64o.S:                          0       272
+:geoo/steel/dark_32x64o.S:                        112       288
+:geoo/steel/dark_32x64o.S:                          0       336
+:geoo/steel/dark_32x64o.S:                        128       352
+:geoo/steel/dark_32x64o.S:                       1504       272
+:geoo/steel/dark_32x64o.S:                       1392       288
+:geoo/steel/dark_32x64o.S:                       1504       336
+:geoo/steel/dark_32x64o.S:                       1376       352
+:geoo/steel/dark_32x64o.S:                       1520        80
+:geoo/steel/dark_32x64o.S:                        -16        80
+:geoo/construction/concrete/064:                  864       288
+:geoo/construction/concrete/064:                  864       352
+:geoo/construction/concrete/064:                  608       288
+:geoo/construction/concrete/064:                  608       352
+:geoo/construction/concrete/064:                  224       288
+:geoo/construction/concrete/064:                  224       352
+:geoo/construction/concrete/064:                 1248       288
+:geoo/construction/concrete/064:                 1248       352
+:geoo/construction/concrete/032h:                1328       192     rrr
+:geoo/construction/concrete/032h:                 176       192     rrr
+:geoo/steel/dark_32x32o.S:                          0        48
+:geoo/steel/dark_32x32o.S:                       1504        48
+:geoo/construction/concrete/032b:                 352       192
+:geoo/construction/concrete/016:                  176       176
+:geoo/construction/concrete/016:                 1344       176
+:geoo/construction/concrete/016:                  720       256
+:geoo/construction/concrete/016:                  800       256
+:geoo/construction/concrete/032v:                 688       192
+:geoo/construction/concrete/032v:                 816       192
+:geoo/construction/concrete/032b:                 848       192
+:geoo/construction/concrete/016:                  720       272
+:geoo/construction/concrete/016:                  800       272
+:geoo/construction/concrete/016:                  800       288
+:geoo/construction/concrete/016:                  720       288
+:geoo/construction/concrete/016:                  704       176
+:geoo/construction/concrete/016:                  816       176
+:geoo/construction/concrete/032b:                 624       192
+:geoo/construction/concrete/032a:                 912       160
+:geoo/construction/concrete/016:                  608       192
+:geoo/construction/concrete/016:                  608       208
+:geoo/construction/concrete/016:                  912       192
+:geoo/construction/concrete/016:                  912       208
+:geoo/construction/concrete/podium_16:            560       144
+:geoo/construction/concrete/podium_16:            944       144
+:geoo/construction/concrete/032va:                784       176
+:geoo/construction/concrete/032vb:                720       176
+:geoo/construction/concrete/016:                  704       288
+:geoo/construction/concrete/016:                  816       288
+:geoo/construction/concrete/016:                  720       192
+:geoo/construction/concrete/016:                  800       192
+:geoo/construction/concrete/008h:                 752       112
+:geoo/construction/concrete/008h:                 736       112
+:geoo/construction/concrete/008h:                 720       112
+:geoo/construction/concrete/008h:                 704       112
+:geoo/construction/concrete/008h:                 688       112
+:geoo/construction/concrete/008h:                 672       112
+:geoo/construction/concrete/008h:                 656       112
+:geoo/construction/concrete/008h:                 864       112
+:geoo/construction/concrete/008h:                 848       112
+:geoo/construction/concrete/008h:                 832       112
+:geoo/construction/concrete/008h:                 816       112
+:geoo/construction/concrete/008h:                 800       112
+:geoo/construction/concrete/008h:                 784       112
+:geoo/construction/concrete/008h:                 768       112
+:geoo/construction/fence_rust_64x64:              688        48
+:geoo/construction/fence_rust_64x64:              784        48
+:geoo/construction/fence_rust_64x64:              736        16
+:geoo/construction/fence_rust_32x32:              752        48
+:geoo/construction/fence_rust_32x32:              752        80
+:geoo/construction/fence_rust_32x32:              720        32
+:geoo/construction/fence_rust_32x32:              784        32
+:geoo/construction/fence_rust_32x32:              832        80
+:geoo/construction/fence_rust_32x32:              672        80
+:geoo/construction/concrete/008h:                 640       112
+:geoo/construction/concrete/008h:                 880       112

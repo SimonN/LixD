@@ -1,0 +1,52 @@
+$BUILT 2013-07-21 15:18:45
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Minimalism (Part 3)
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 16
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#WALKER 1
+#JUMPER 1
+#BLOCKER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/abstract/hatch.H: 304 136
+
+:geoo/abstract/goal.G: 160 176
+
+:geoo/abstract/pipes/central0: 128 224
+:geoo/abstract/pipes/central0: 160 224
+:geoo/abstract/pipes/central0: 192 224
+:geoo/abstract/pipes/central0: 224 224
+:geoo/abstract/pipes/central0: 256 224
+:geoo/abstract/pipes/central0: 288 224
+:geoo/abstract/pipes/central0: 320 224
+:geoo/abstract/pipes/central0: 352 224
+:geoo/abstract/pipes/central0: 384 224
+:geoo/abstract/pipes/central0: 416 224
+:geoo/abstract/pipes/central0: 448 224
+:geoo/abstract/pipes/central0: 480 224
+:geoo/abstract/pipes/endr0: 512 224
+:geoo/abstract/pipes/endr0: 120 224 rr

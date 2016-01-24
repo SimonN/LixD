@@ -1,0 +1,423 @@
+$BUILT                                             2011-07-15 08:06:44
+$AUTHOR                                                           phil
+$GERMAN                                                               
+$ENGLISH                                       Race to the depths (3P)
+
+#SIZE_X                                                           2192
+#SIZE_Y                                                           1040
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                             0
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                             1
+#INITIAL                                                             1
+#REQUIRED                                                            1
+#RATE                                                                1
+
+#WALKER                                                             30
+#JUMPER                                                             30
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#BUILDER                                                            30
+#PLATFORMER                                                         30
+#NOTHING                                                             0
+#BASHER                                                             20
+#MINER                                                              20
+#DIGGER                                                             20
+#NOTHING                                                             0
+
+:matt/goldmine/shovel.D:                485       295
+:matt/goldmine/minecart.D:             569       141
+:matt/goldmine/minecart.D:             120       572
+:matt/goldmine/shovel.D:               1205       295
+:matt/goldmine/minecart.D:            1289       141
+:matt/goldmine/minecart.D:             840       572
+:matt/goldmine/shovel.D:               1925       295
+:matt/goldmine/minecart.D:            2009       141
+:matt/goldmine/minecart.D:            1560       572
+
+:matt/goldmine/Hatch.H:                  42       134
+:matt/goldmine/Hatch.H:                 762       134
+:matt/goldmine/Hatch.H:                1482       134
+
+:matt/goldmine/Goal.G:                  604       798
+:matt/goldmine/Goal.G:                 1324       798
+:matt/goldmine/Goal.G:                 2044       798
+
+:matt/goldmine/03:                       89       220
+:matt/goldmine/04:                      290       154
+:matt/goldmine/06:                      330       308     n
+:matt/steel/32x64.S:                               208       236
+:matt/steel/64x32.S:                               144       240
+:matt/steel/64x32.S:                                80       240
+:matt/goldmine/01:                      136       294
+:matt/steel/64x32.S:                               310       260
+:matt/goldmine/01:                      376       280     n
+:matt/goldmine/03:                      372       300     n
+:matt/steel/16x32.S:                               186       192
+:matt/goldmine/02:                       40       182     n
+:matt/goldmine/05:                       48       190     n
+:matt/goldmine/03:                       38       238     n
+:matt/goldmine/01:                      172       234     n
+:matt/goldmine/02:                      150       312
+:matt/goldmine/02:                      338       320
+:matt/steel/64x32.S:                               330       318
+:matt/steel/64x32.S:                               394       318
+:matt/steel/64x32.S:                               458       318
+:matt/steel/32x64.S:                               164       358
+:matt/steel/16x16.S:                               204       444
+:matt/steel/16x16.S:                               268       444
+:matt/steel/16x16.S:                               330       444
+:matt/goldmine/02:                      380       421     rr
+:matt/steel/32x16.S:                               381       370
+:matt/steel/32x16.S:                               413       370
+:matt/steel/32x16.S:                               445       370
+:matt/steel/16x8.S:                                414       356
+:matt/steel/16x8.S:                                430       356
+:matt/steel/16x8.S:                                446       356
+:matt/steel/16x8.S:                                462       356
+:matt/steel/16x8.S:                                478       356
+:matt/steel/16x8.S:                                494       356
+:matt/steel/16x8.S:                                510       356
+:matt/steel/16x8.S:                                526       356
+:matt/steel/64x32.S:                               522       318
+:matt/steel/64x32.S:                               586       318
+:matt/goldmine/03:                      495       310     n
+:matt/steel/32x64.S:                               510       371
+:matt/steel/16x8.S:                                526       363
+:matt/goldmine/02:                      501       420     n
+:matt/steel/32x64.S:                               510       435
+:matt/steel/32x64.S:                               510       499
+:matt/steel/32x64.S:                               401       485
+:matt/steel/32x64.S:                               401       549
+:matt/goldmine/planksupport:           548       190
+:matt/goldmine/planksupport:            58       312     rrrn
+:matt/goldmine/01:                      522       452     n
+:matt/goldmine/00:                      583       584
+:matt/goldmine/01:                      500       684
+:matt/goldmine/crate64:                 370       711
+:matt/steel/32x16.S:                               401       613
+:matt/steel/32x64.S:                               274       663
+:matt/steel/32x64.S:                               274       733
+:matt/steel/32x64.S:                               151       756
+:matt/steel/32x64.S:                               151       687
+:matt/steel/32x64.S:                               151       825
+:matt/steel/8x8.S:                                 266       771
+:matt/steel/32x64.S:                               274       797
+:matt/steel/32x64.S:                               274       861
+:matt/goldmine/planksupport:            32       731     rrrn
+:matt/goldmine/02:                       91       602     rrr
+:matt/goldmine/04:                      -29       578     rn
+:matt/goldmine/06:                      513       645
+:matt/goldmine/02:                      510       547
+:matt/goldmine/06:                      538       676
+:matt/goldmine/10:                      514       628     n
+:matt/goldmine/02:                      597       613     n
+:matt/steel/32x32.S:                               542       509
+:matt/steel/64x64.S:                               370       775
+:matt/goldmine/10:                      252       894     n
+:matt/goldmine/06:                      319       990
+:matt/steel/32x16.S:                               151       889
+:matt/steel/32x32.S:                               151       911
+:matt/goldmine/plank:                   274      1000     n
+:matt/goldmine/07:                      326       990
+:matt/goldmine/02:                       83       994     rr
+:matt/goldmine/06:                      409       218
+:matt/goldmine/02:                      444       164
+:matt/goldmine/04:                      413       943
+:matt/goldmine/08:                      530       839
+:matt/goldmine/07:                      452       935
+:matt/goldmine/02:                      591       833
+:matt/goldmine/09:                      623       833
+:matt/goldmine/07:                      535       956
+:matt/steel/64x32.S:                               500       707
+:matt/steel/64x32.S:                               564       707
+:matt/steel/64x32.S:                               628       707
+:matt/goldmine/crate16:                  40       775
+:matt/goldmine/crate16:                  61       775
+:matt/goldmine/crate16:                  48       759
+:matt/goldmine/02:                       28       592     n
+:matt/goldmine/02:                       98       622     n
+:matt/steel/32x64.S:                               720         0
+:matt/steel/32x64.S:                               720        64
+:matt/steel/32x64.S:                               720       128
+:matt/steel/32x64.S:                               720       192
+:matt/steel/32x64.S:                               720       256
+:matt/steel/32x64.S:                               720       320
+:matt/steel/32x64.S:                               720       384
+:matt/steel/32x64.S:                               720       448
+:matt/steel/32x64.S:                               720       512
+:matt/steel/32x64.S:                               720       576
+:matt/steel/32x64.S:                               720       640
+:matt/steel/32x64.S:                               720       704
+:matt/steel/32x64.S:                               720       768
+:matt/steel/32x64.S:                               720       832
+:matt/steel/32x64.S:                               720       896
+:matt/steel/32x64.S:                               720       960
+:matt/steel/32x64.S:                               720      1024
+:matt/goldmine/01:                       88      1004
+:matt/goldmine/07:                      537       905     n
+:matt/steel/32x64.S:                                 0       794
+:matt/steel/8x8.S:                                 225       750
+:matt/steel/8x8.S:                                 200       750
+:matt/steel/32x64.S:                                 0       730
+:matt/steel/32x64.S:                                 0       858
+:matt/steel/32x64.S:                                 0       922
+:matt/steel/32x64.S:                                 0       986
+:matt/steel/32x64.S:                                 0       474
+:matt/steel/32x64.S:                                 0       410
+:matt/steel/32x64.S:                                 0       538
+:matt/steel/32x64.S:                                 0       602
+:matt/steel/32x64.S:                                 0       666
+:matt/steel/32x64.S:                                 0       282
+:matt/steel/32x64.S:                                 0       218
+:matt/steel/32x64.S:                                 0       346
+:matt/steel/32x64.S:                                 0        90
+:matt/steel/32x64.S:                                 0        26
+:matt/steel/32x64.S:                                 0       154
+:matt/steel/32x64.S:                                 0       -38
+:matt/steel/32x32.S:                                48       240
+:matt/steel/16x32.S:                                32       240
+:matt/goldmine/03:                      809       220
+:matt/goldmine/04:                     1010       154
+:matt/goldmine/06:                     1050       308     n
+:matt/steel/32x64.S:                               928       236
+:matt/steel/64x32.S:                               864       240
+:matt/steel/64x32.S:                               800       240
+:matt/goldmine/01:                      856       294
+:matt/steel/64x32.S:                              1030       260
+:matt/goldmine/01:                     1096       280     n
+:matt/goldmine/03:                     1092       300     n
+:matt/steel/16x32.S:                               906       192
+:matt/goldmine/02:                      760       182     n
+:matt/goldmine/05:                      768       190     n
+:matt/goldmine/03:                      758       238     n
+:matt/goldmine/01:                      892       234     n
+:matt/goldmine/02:                      870       312
+:matt/goldmine/02:                     1058       320
+:matt/steel/64x32.S:                              1050       318
+:matt/steel/64x32.S:                              1114       318
+:matt/steel/64x32.S:                              1178       318
+:matt/steel/32x64.S:                               884       358
+:matt/steel/16x16.S:                               924       444
+:matt/steel/16x16.S:                               988       444
+:matt/steel/16x16.S:                              1050       444
+:matt/goldmine/02:                     1100       421     rr
+:matt/steel/32x16.S:                              1101       370
+:matt/steel/32x16.S:                              1133       370
+:matt/steel/32x16.S:                              1165       370
+:matt/steel/16x8.S:                               1134       356
+:matt/steel/16x8.S:                               1150       356
+:matt/steel/16x8.S:                               1166       356
+:matt/steel/16x8.S:                               1182       356
+:matt/steel/16x8.S:                               1198       356
+:matt/steel/16x8.S:                               1214       356
+:matt/steel/16x8.S:                               1230       356
+:matt/steel/16x8.S:                               1246       356
+:matt/steel/64x32.S:                              1242       318
+:matt/steel/64x32.S:                              1306       318
+:matt/goldmine/03:                     1215       310     n
+:matt/steel/32x64.S:                              1230       371
+:matt/steel/16x8.S:                               1246       363
+:matt/goldmine/02:                     1221       420     n
+:matt/steel/32x64.S:                              1230       435
+:matt/steel/32x64.S:                              1230       499
+:matt/steel/32x64.S:                              1121       485
+:matt/steel/32x64.S:                              1121       549
+:matt/goldmine/planksupport:          1268       190
+:matt/goldmine/planksupport:           778       312     rrrn
+:matt/goldmine/01:                     1242       452     n
+:matt/goldmine/00:                     1303       584
+:matt/goldmine/01:                     1220       684
+:matt/goldmine/crate64:                1090       711
+:matt/steel/32x16.S:                              1121       613
+:matt/steel/32x64.S:                               994       663
+:matt/steel/32x64.S:                               994       733
+:matt/steel/32x64.S:                               871       756
+:matt/steel/32x64.S:                               871       687
+:matt/steel/32x64.S:                               871       825
+:matt/steel/8x8.S:                                 986       771
+:matt/steel/32x64.S:                               994       797
+:matt/steel/32x64.S:                               994       861
+:matt/goldmine/planksupport:           752       731     rrrn
+:matt/goldmine/02:                      811       602     rrr
+:matt/goldmine/04:                      691       578     rn
+:matt/goldmine/06:                     1233       645
+:matt/goldmine/02:                     1230       547
+:matt/goldmine/06:                     1258       676
+:matt/goldmine/10:                     1234       628     n
+:matt/goldmine/02:                     1317       613     n
+:matt/steel/32x32.S:                              1262       509
+:matt/steel/64x64.S:                              1090       775
+:matt/goldmine/10:                      972       894     n
+:matt/goldmine/06:                     1039       990
+:matt/steel/32x16.S:                               871       889
+:matt/steel/32x32.S:                               871       911
+:matt/goldmine/plank:                   994      1000     n
+:matt/goldmine/07:                     1046       990
+:matt/goldmine/02:                      803       994     rr
+:matt/goldmine/06:                     1129       218
+:matt/goldmine/02:                     1164       164
+:matt/goldmine/04:                     1133       943
+:matt/goldmine/08:                     1250       839
+:matt/goldmine/07:                     1172       935
+:matt/goldmine/02:                     1311       833
+:matt/goldmine/09:                     1343       833
+:matt/goldmine/07:                     1255       956
+:matt/steel/64x32.S:                              1220       707
+:matt/steel/64x32.S:                              1284       707
+:matt/steel/64x32.S:                              1348       707
+:matt/goldmine/crate16:                 760       775
+:matt/goldmine/crate16:                 781       775
+:matt/goldmine/crate16:                 768       759
+:matt/goldmine/02:                      748       592     n
+:matt/goldmine/02:                      818       622     n
+:matt/steel/32x64.S:                              1440         0
+:matt/steel/32x64.S:                              1440        64
+:matt/steel/32x64.S:                              1440       128
+:matt/steel/32x64.S:                              1440       192
+:matt/steel/32x64.S:                              1440       256
+:matt/steel/32x64.S:                              1440       320
+:matt/steel/32x64.S:                              1440       384
+:matt/steel/32x64.S:                              1440       448
+:matt/steel/32x64.S:                              1440       512
+:matt/steel/32x64.S:                              1440       576
+:matt/steel/32x64.S:                              1440       640
+:matt/steel/32x64.S:                              1440       704
+:matt/steel/32x64.S:                              1440       768
+:matt/steel/32x64.S:                              1440       832
+:matt/steel/32x64.S:                              1440       896
+:matt/steel/32x64.S:                              1440       960
+:matt/steel/32x64.S:                              1440      1024
+:matt/goldmine/01:                      808      1004
+:matt/goldmine/07:                     1257       905     n
+:matt/steel/8x8.S:                                 945       750
+:matt/steel/8x8.S:                                 920       750
+:matt/steel/32x32.S:                               768       240
+:matt/steel/16x32.S:                               752       240
+:matt/goldmine/crate32:                 688       640     d
+:matt/goldmine/crate32:                 688       672     d
+:matt/goldmine/03:                     1529       220
+:matt/goldmine/04:                     1730       154
+:matt/goldmine/06:                     1770       308     n
+:matt/steel/32x64.S:                              1648       236
+:matt/steel/64x32.S:                              1584       240
+:matt/steel/64x32.S:                              1520       240
+:matt/goldmine/01:                     1576       294
+:matt/steel/64x32.S:                              1750       260
+:matt/goldmine/01:                     1816       280     n
+:matt/goldmine/03:                     1812       300     n
+:matt/steel/16x32.S:                              1626       192
+:matt/goldmine/02:                     1480       182     n
+:matt/goldmine/05:                     1488       190     n
+:matt/goldmine/03:                     1478       238     n
+:matt/goldmine/01:                     1612       234     n
+:matt/goldmine/02:                     1590       312
+:matt/goldmine/02:                     1778       320
+:matt/steel/64x32.S:                              1770       318
+:matt/steel/64x32.S:                              1834       318
+:matt/steel/64x32.S:                              1898       318
+:matt/steel/32x64.S:                              1604       358
+:matt/steel/16x16.S:                              1644       444
+:matt/steel/16x16.S:                              1708       444
+:matt/steel/16x16.S:                              1770       444
+:matt/goldmine/02:                     1820       421     rr
+:matt/steel/32x16.S:                              1821       370
+:matt/steel/32x16.S:                              1853       370
+:matt/steel/32x16.S:                              1885       370
+:matt/steel/16x8.S:                               1854       356
+:matt/steel/16x8.S:                               1870       356
+:matt/steel/16x8.S:                               1886       356
+:matt/steel/16x8.S:                               1902       356
+:matt/steel/16x8.S:                               1918       356
+:matt/steel/16x8.S:                               1934       356
+:matt/steel/16x8.S:                               1950       356
+:matt/steel/16x8.S:                               1966       356
+:matt/steel/64x32.S:                              1962       318
+:matt/steel/64x32.S:                              2026       318
+:matt/goldmine/03:                     1935       310     n
+:matt/steel/32x64.S:                              1950       371
+:matt/steel/16x8.S:                               1966       363
+:matt/goldmine/02:                     1941       420     n
+:matt/steel/32x64.S:                              1950       435
+:matt/steel/32x64.S:                              1950       499
+:matt/steel/32x64.S:                              1841       485
+:matt/steel/32x64.S:                              1841       549
+:matt/goldmine/planksupport:          1988       190
+:matt/goldmine/planksupport:          1498       312     rrrn
+:matt/goldmine/01:                     1962       452     n
+:matt/goldmine/00:                     2023       584
+:matt/goldmine/01:                     1940       684
+:matt/goldmine/crate64:                1810       711
+:matt/steel/32x16.S:                              1841       613
+:matt/steel/32x64.S:                              1714       663
+:matt/steel/32x64.S:                              1714       733
+:matt/steel/32x64.S:                              1591       756
+:matt/steel/32x64.S:                              1591       687
+:matt/steel/32x64.S:                              1591       825
+:matt/steel/8x8.S:                                1706       771
+:matt/steel/32x64.S:                              1714       797
+:matt/steel/32x64.S:                              1714       861
+:matt/goldmine/planksupport:          1472       731     rrrn
+:matt/goldmine/02:                     1531       602     rrr
+:matt/goldmine/04:                     1411       578     rn
+:matt/goldmine/06:                     1953       645
+:matt/goldmine/02:                     1950       547
+:matt/goldmine/06:                     1978       676
+:matt/goldmine/10:                     1954       628     n
+:matt/goldmine/02:                     2037       613     n
+:matt/steel/32x32.S:                              1982       509
+:matt/steel/64x64.S:                              1810       775
+:matt/goldmine/10:                     1692       894     n
+:matt/goldmine/06:                     1759       990
+:matt/steel/32x16.S:                              1591       889
+:matt/steel/32x32.S:                              1591       911
+:matt/goldmine/plank:                  1714      1000     n
+:matt/goldmine/07:                     1766       990
+:matt/goldmine/02:                     1523       994     rr
+:matt/goldmine/06:                     1849       218
+:matt/goldmine/02:                     1884       164
+:matt/goldmine/04:                     1853       943
+:matt/goldmine/08:                     1970       839
+:matt/goldmine/07:                     1892       935
+:matt/goldmine/02:                     2031       833
+:matt/goldmine/09:                     2063       833
+:matt/goldmine/07:                     1975       956
+:matt/steel/64x32.S:                              1940       707
+:matt/steel/64x32.S:                              2004       707
+:matt/steel/64x32.S:                              2068       707
+:matt/goldmine/crate16:                1480       775
+:matt/goldmine/crate16:                1501       775
+:matt/goldmine/crate16:                1488       759
+:matt/goldmine/02:                     1468       592     n
+:matt/goldmine/02:                     1538       622     n
+:matt/steel/32x64.S:                              2160         0
+:matt/steel/32x64.S:                              2160        64
+:matt/steel/32x64.S:                              2160       128
+:matt/steel/32x64.S:                              2160       192
+:matt/steel/32x64.S:                              2160       256
+:matt/steel/32x64.S:                              2160       320
+:matt/steel/32x64.S:                              2160       384
+:matt/steel/32x64.S:                              2160       448
+:matt/steel/32x64.S:                              2160       512
+:matt/steel/32x64.S:                              2160       576
+:matt/steel/32x64.S:                              2160       640
+:matt/steel/32x64.S:                              2160       704
+:matt/steel/32x64.S:                              2160       768
+:matt/steel/32x64.S:                              2160       832
+:matt/steel/32x64.S:                              2160       896
+:matt/steel/32x64.S:                              2160       960
+:matt/steel/32x64.S:                              2160      1024
+:matt/goldmine/01:                     1528      1004
+:matt/goldmine/07:                     1977       905     n
+:matt/steel/8x8.S:                                1665       750
+:matt/steel/8x8.S:                                1640       750
+:matt/steel/32x32.S:                              1488       240
+:matt/steel/16x32.S:                              1472       240
+:matt/goldmine/crate32:                1408       640     d
+:matt/goldmine/crate32:                1408       672     d

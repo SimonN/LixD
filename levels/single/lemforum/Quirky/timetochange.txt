@@ -1,0 +1,95 @@
+$BUILT                                             2012-04-08 11:48:43
+$AUTHOR                                                           geoo
+$GERMAN                                                               
+$ENGLISH                                       Time to Change the Road
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                           -48
+#START_Y                                                           -48
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            59
+#INITIAL                                                            26
+#REQUIRED                                                           23
+#SPAWN_INTERVAL                                                     24
+#SPAWN_INTERVAL_FAST                                                24
+
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#CUBER                                                               3
+#DIGGER                                                              1
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:geoo/construction/Hatch.H:                       128        32
+:geoo/construction/Hatch.H:                       480       192     r
+
+:geoo/construction/Goal2.G:                        96       192
+
+:geoo/shadow/wall/center:                         128        96
+:geoo/shadow/wall/center:                         160        96
+:geoo/shadow/wall/center:                         192        96
+:geoo/shadow/wall/center:                         224        96
+:geoo/shadow/wall/center:                         256        96
+:geoo/shadow/wall/center:                         352        96
+:geoo/shadow/wall/center:                         384        96
+:geoo/shadow/wall/center:                         416        96
+:geoo/shadow/wall/center:                         448        96
+:geoo/shadow/wall/center:                         480        96
+:geoo/shadow/wall/center:                         128       128
+:geoo/shadow/wall/center:                         160       128
+:geoo/shadow/wall/center:                         192       128
+:geoo/shadow/wall/center:                         224       128
+:geoo/shadow/wall/center:                         256       128
+:geoo/shadow/wall/center:                         352       128
+:geoo/shadow/wall/center:                         384       128
+:geoo/shadow/wall/center:                         416       128
+:geoo/shadow/wall/center:                         448       128
+:geoo/shadow/wall/center:                         480       128
+:geoo/shadow/wall/left:                            96        96
+:geoo/shadow/wall/left:                            96       128
+:geoo/shadow/wall/right:                          512        96
+:geoo/shadow/wall/right:                          512       128
+:geoo/shadow/wall/center:                         128       256
+:geoo/shadow/wall/center:                         160       256
+:geoo/shadow/wall/center:                         192       256
+:geoo/shadow/wall/center:                         224       256
+:geoo/shadow/wall/center:                         256       256
+:geoo/shadow/wall/center:                         352       256
+:geoo/shadow/wall/center:                         384       256
+:geoo/shadow/wall/center:                         416       256
+:geoo/shadow/wall/center:                         448       256
+:geoo/shadow/wall/center:                         480       256
+:geoo/shadow/wall/center:                         128       288
+:geoo/shadow/wall/center:                         160       288
+:geoo/shadow/wall/center:                         192       288
+:geoo/shadow/wall/center:                         224       288
+:geoo/shadow/wall/center:                         256       288
+:geoo/shadow/wall/center:                         352       288
+:geoo/shadow/wall/center:                         384       288
+:geoo/shadow/wall/center:                         416       288
+:geoo/shadow/wall/center:                         448       288
+:geoo/shadow/wall/center:                         480       288
+:geoo/shadow/wall/left:                            96       256
+:geoo/shadow/wall/left:                            96       288
+:geoo/shadow/wall/right:                          512       256
+:geoo/shadow/wall/right:                          512       288
+:geoo/shadow/wall/center:                         288        96
+:geoo/shadow/wall/center:                         320        96
+:geoo/shadow/wall/center:                         288       128
+:geoo/shadow/wall/center:                         320       128
+:geoo/shadow/wall/center:                         288       256
+:geoo/shadow/wall/center:                         320       256
+:geoo/shadow/wall/center:                         288       288
+:geoo/shadow/wall/center:                         320       288

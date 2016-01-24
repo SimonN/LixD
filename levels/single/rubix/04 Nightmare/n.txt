@@ -1,0 +1,160 @@
+$BUILT 2014-02-26 16:19:50
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH The Torture Chamber
+
+#SIZE_X 1280
+#SIZE_Y 432
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 320
+#START_Y 12
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 120
+#INITIAL 99
+#REQUIRED 99
+#SPAWN_INTERVAL 53
+#SPAWN_INTERVAL_FAST 4
+
+#JUMPER 2
+#EXPLODER2 2
+#BLOCKER 2
+#PLATFORMER 2
+#DIGGER 4
+#MINER 2
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/underworld/Hatch.H: 256 0
+:matt/underworld/Hatch.H: 960 0 r
+:matt/underworld/Hatch.H: 16 0
+:matt/underworld/Hatch.H: 1200 0 r
+
+:matt/underworld/Goal.G: 321 350
+:matt/underworld/Goal.G: 896 350
+
+:matt/underworld/Lava.W: 256 416
+:matt/underworld/Lava.W: 272 416
+:matt/underworld/Lava.W: 960 416
+:matt/underworld/Lava.W: 976 416
+:geoo/construction/sawblade.F: 608 100
+:geoo/construction/sawblade.F: 634 100
+:geoo/construction/sawblade.F: 608 206
+:geoo/construction/sawblade.F: 632 206
+
+:matt/underworld/00: 634 266 r
+:matt/underworld/00: 634 204 r
+:matt/underworld/09a: 1024 332
+:matt/underworld/09a: 1087 237
+:matt/underworld/09a: 162 237
+:matt/underworld/09a: 1052 330
+:matt/underworld/09a: 1149 408
+:matt/underworld/09a: 1207 412
+:matt/underworld/09a: 72 409
+:matt/underworld/09a: 16 413
+:matt/underworld/00: 608 176 rr
+:matt/underworld/02: 512 384
+:matt/underworld/02: 384 64
+:matt/underworld/02: 384 160
+:matt/underworld/02: 512 96
+:matt/underworld/02: 512 192
+:matt/underworld/02: 512 288
+:matt/underworld/02: 832 64
+:matt/underworld/02: 832 160
+:matt/underworld/02: 704 96
+:matt/underworld/02: 704 192
+:matt/underworld/02: 704 288
+:matt/underworld/00: 320 416
+:matt/underworld/00: 384 416
+:matt/underworld/00: 448 416
+:matt/underworld/00: 512 416
+:matt/underworld/00: 576 416
+:matt/underworld/00: 640 416
+:matt/underworld/00: 704 416
+:matt/underworld/00: 768 416
+:matt/underworld/00: 832 416
+:matt/underworld/00: 896 416
+:matt/underworld/00: 320 64
+:matt/underworld/00: 384 64
+:matt/underworld/00: 896 64
+:matt/underworld/00: 832 64
+:matt/underworld/00: 560 96
+:matt/underworld/00: 656 96
+:matt/underworld/02: 352 80 d
+:matt/underworld/02: 352 176 d
+:matt/underworld/02: 352 272 d
+:matt/underworld/02: 864 80 d
+:matt/underworld/02: 864 176 d
+:matt/underworld/02: 864 272 d
+:matt/underworld/00: 960 64
+:matt/underworld/00: 256 64
+:matt/underworld/00: 192 64
+:matt/underworld/00: 128 64
+:matt/underworld/00: 64 64
+:matt/underworld/00: 0 64
+:matt/underworld/00: 1216 64
+:matt/underworld/00: 1152 64
+:matt/underworld/00: 1088 64
+:matt/underworld/00: 1024 64
+:matt/underworld/00: 0 80 r
+:matt/underworld/00: 0 144 r
+:matt/underworld/00: 0 208 r
+:matt/underworld/00: 0 272 r
+:matt/underworld/00: 0 336 r
+:matt/underworld/00: 0 400 r
+:matt/underworld/00: 1264 80 r
+:matt/underworld/00: 1264 144 r
+:matt/underworld/00: 1264 208 r
+:matt/underworld/00: 1264 272 r
+:matt/underworld/00: 1264 336 r
+:matt/underworld/00: 1264 400 r
+:matt/underworld/00: 0 0 r
+:matt/underworld/00: 1264 0 r
+:matt/underworld/02: 540 112 d
+:matt/underworld/02: 540 208 d
+:matt/underworld/02: 160 240
+:matt/underworld/09a: 128 331 frr
+:matt/underworld/02: 128 336
+:matt/underworld/02: 1088 240
+:matt/underworld/02: 1088 336
+:matt/underworld/00: 1216 416
+:matt/underworld/00: 1152 416
+:matt/underworld/00: 0 416
+:matt/underworld/00: 64 416
+:matt/underworld/02: 192 336
+:matt/underworld/02: 1024 336
+:matt/underworld/02: 540 288 d
+:matt/underworld/02: 704 384
+:matt/underworld/02: 992 240
+:matt/underworld/02: 224 144
+:matt/underworld/02: 224 240
+:matt/underworld/02: 992 144
+:matt/underworld/00: 634 180 r
+:matt/underworld/03: 620 310
+:matt/underworld/00: 608 112 r
+:matt/underworld/00: 656 112 r
+:matt/underworld/00: 608 256 rr
+:matt/underworld/00: 608 192 r
+:matt/underworld/00: 656 192 r
+:matt/underworld/00: 634 134 r
+:matt/underworld/02: 358 80 d
+:matt/underworld/02: 358 168 d
+:matt/underworld/02: 858 80 d
+:matt/underworld/02: 858 172 d
+:matt/underworld/02: 540 320 d
+:matt/underworld/02: 678 112 d
+:matt/underworld/02: 678 208 d
+:matt/underworld/02: 678 304 d
+:matt/underworld/02: 678 320 d
+:matt/underworld/09a: 221 142
+:matt/underworld/09a: 991 143
+:matt/underworld/09a: 1086 332 frr
+:matt/underworld/09a: 191 333 frr
+:matt/underworld/00: 634 82 r

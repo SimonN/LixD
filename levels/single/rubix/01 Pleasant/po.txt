@@ -1,0 +1,99 @@
+$BUILT 2015-08-22 09:21:44
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Lost underground
+
+#SIZE_X 800
+#SIZE_Y 720
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 80
+#REQUIRED 78
+#SPAWN_INTERVAL 48
+#SPAWN_INTERVAL_FAST 4
+
+#EXPLODER 1
+#BLOCKER 1
+#MINER 3
+
+:matt/goldmine/GoalTop.D: 736 608
+:matt/goldmine/minecart.D: 480 0
+:matt/goldmine/shovel.D: 557 64
+:matt/goldmine/shovel.D: 559 295
+:matt/goldmine/minecart.D: 442 525
+
+:matt/goldmine/Hatch.H: 286 16
+:matt/goldmine/Hatch.H: 24 140
+:matt/goldmine/Hatch.H: 640 16
+
+:matt/goldmine/Goal.G: 736 656
+
+:matt/goldmine/04: 58 244 r
+:matt/goldmine/02: -32 216
+:matt/goldmine/crate64: 656 128
+:matt/goldmine/07: 480 144
+:matt/goldmine/crate64: 656 64
+:matt/goldmine/07: 464 96
+:matt/goldmine/crate32: 560 224
+:matt/goldmine/04: -54 13 r
+:matt/goldmine/04: 58 77 r
+:matt/goldmine/04: 239 50 r
+:matt/goldmine/04: 183 151 r
+:matt/goldmine/04: 302 222 r
+:matt/goldmine/07: 101 233
+:matt/goldmine/07: -184 113
+:matt/goldmine/07: 179 269
+:matt/goldmine/07: -67 318 r
+:matt/goldmine/07: -108 159
+:matt/goldmine/crate64: 592 224
+:matt/goldmine/07: 452 235
+:matt/goldmine/07: 354 271
+:matt/goldmine/crate64: 592 160
+:matt/goldmine/crate64: 592 96
+:matt/goldmine/04: 16 -80 r
+:matt/goldmine/04: 128 -16 r
+:matt/goldmine/04: 348 117 r
+:matt/goldmine/crate64: 592 32
+:matt/goldmine/crate64: 592 -32
+:matt/goldmine/04: 320 -32 r
+:matt/goldmine/04: 434 33 r
+:matt/goldmine/planksupport: 0 480
+:matt/goldmine/planksupport: 256 480
+:matt/goldmine/plank: 128 480
+:matt/goldmine/plank: 384 480
+:matt/goldmine/08: 586 517
+:matt/goldmine/planksupport: 512 480
+:matt/goldmine/07: 208 592
+:matt/goldmine/07: 96 592
+:matt/goldmine/07: -48 608
+:matt/goldmine/07: 0 544
+:matt/goldmine/10: 293 573
+:matt/goldmine/07: 320 544
+:matt/goldmine/07: 560 672
+:matt/goldmine/07: 400 592
+:matt/goldmine/07: 440 558
+:matt/goldmine/07: 755 673
+:matt/goldmine/07: 480 624
+:matt/goldmine/07: -15 394 fr
+:matt/goldmine/07: 592 160
+:matt/goldmine/07: 688 208
+:matt/goldmine/07: 560 224
+:matt/goldmine/07: 288 656
+:matt/goldmine/07: -80 640
+:matt/goldmine/07: 560 656
+:matt/goldmine/07: 416 608
+:matt/goldmine/07: 112 640
+:matt/goldmine/plank: 640 481
+:matt/goldmine/planksupport: 768 481
+:matt/goldmine/02: -25 86
+:matt/goldmine/07: 625 574 r
+:matt/goldmine/07: 7 175
+:matt/goldmine/07: -53 465 frr
+:matt/goldmine/07: -31 492 fr

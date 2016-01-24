@@ -1,0 +1,76 @@
+$BUILT 2012-04-26 14:04:32
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH Low Clearance
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 40
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER 5
+#BLOCKER 5
+#BUILDER 5
+#BASHER 5
+#MINER 5
+#DIGGER 5
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: 128 120
+
+:matt/winter/Goal.G: 496 192
+
+:matt/winter/01: 104 240
+:matt/winter/01: 80 240
+:matt/winter/10: 136 192
+:geoo/steel/64x32o.S: 96 216
+:geoo/steel/64x32o.S: 160 216
+:geoo/steel/64x32o.S: 224 216
+:geoo/steel/64x32o.S: 288 216
+:geoo/steel/64x32o.S: 224 184 d
+:geoo/steel/64x32o.S: 160 184 d
+:matt/winter/10: 136 248 rr
+:matt/winter/05: 312 248
+:geoo/steel/dark_32x64o.S: 352 248 d
+:geoo/steel/dark_32x64o.S: 352 312 d
+:geoo/steel/dark_32x64o.S: 352 344 d
+:matt/winter/17: 264 312
+:geoo/steel/64x32o.S: 288 160
+:geoo/steel/64x32o.S: 224 160
+:geoo/steel/64x32o.S: 352 160
+:geoo/steel/64x32o.S: 416 256
+:geoo/steel/64x32o.S: 416 160
+:matt/winter/06: 416 288
+:matt/winter/06: 416 352
+:matt/winter/06: 592 288
+:geoo/steel/64x32o.S: 480 256
+:geoo/steel/64x32o.S: 544 256
+:matt/winter/06: 592 352
+:matt/winter/10: 56 248
+:matt/winter/10: 96 304 rr
+:matt/winter/06: 224 96
+:matt/winter/06: 224 32
+:matt/winter/06: 224 -32
+:matt/winter/06: 464 96
+:matt/winter/06: 464 32
+:matt/winter/06: 464 -32
+:matt/winter/06: 344 96
+:matt/winter/06: 344 32
+:matt/winter/06: 344 -16
+:geoo/steel/32x32o.S: 224 128
+:geoo/steel/32x32o.S: 448 128
+:geoo/steel/32x32o.S: 448 192

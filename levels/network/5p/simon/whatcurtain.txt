@@ -1,0 +1,340 @@
+$BUILT 2014-07-06 06:42:40
+$AUTHOR Simon
+$GERMAN 
+$ENGLISH What's behind the curtain?
+
+#SIZE_X 1280
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 25
+#INITIAL 200
+#REQUIRED 20
+#SPAWN_INTERVAL 7
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 20
+#JUMPER 20
+#NOTHING 0
+#NOTHING 0
+#EXPLODER2 3
+#CUBER 20
+#BATTER 20
+#BUILDER 20
+#PLATFORMER 10
+#BASHER 20
+#MINER 40
+#DIGGER 1
+
+:geoo/sandstone/Hatch.H: 16 8
+:geoo/sandstone/Hatch.H: 272 8
+:geoo/sandstone/Hatch.H: 528 8
+:geoo/sandstone/Hatch.H: 784 8
+:geoo/sandstone/Hatch.H: 1040 8
+:geoo/sandstone/Hatch.H: 144 -8 r
+:geoo/sandstone/Hatch.H: 400 -8 r
+:geoo/sandstone/Hatch.H: 656 -8 r
+:geoo/sandstone/Hatch.H: 912 -8 r
+:geoo/sandstone/Hatch.H: 1168 -8 r
+
+:geoo/sandstone/Goal.G: 416 328
+:geoo/sandstone/Goal.G: 672 328
+:geoo/sandstone/Goal.G: 928 328
+:geoo/sandstone/Goal.G: 1184 328
+:geoo/sandstone/Goal.G: 160 328
+:geoo/sandstone/Goal.G: 1056 328
+:geoo/sandstone/Goal.G: 32 328
+:geoo/sandstone/Goal.G: 288 328
+:geoo/sandstone/Goal.G: 544 328
+:geoo/sandstone/Goal.G: 800 328
+
+:amanda/forest/frog.T: 32 64
+:amanda/forest/frog.T: 288 64
+:amanda/forest/frog.T: 544 64
+:amanda/forest/frog.T: 800 64
+:amanda/forest/frog.T: 224 128
+:amanda/forest/frog.T: 480 128
+:amanda/forest/frog.T: 736 128
+:amanda/forest/frog.T: 992 128
+:amanda/forest/frog.T: 48 192
+:amanda/forest/frog.T: 176 192
+:amanda/forest/frog.T: 304 192
+:amanda/forest/frog.T: 432 192
+:amanda/forest/frog.T: 560 192
+:amanda/forest/frog.T: 688 192
+:amanda/forest/frog.T: 816 192
+:amanda/forest/frog.T: 944 192
+:amanda/forest/frog.T: 0 256
+:amanda/forest/frog.T: 128 256
+:amanda/forest/frog.T: 256 256
+:amanda/forest/frog.T: 384 256
+:amanda/forest/frog.T: 512 256
+:amanda/forest/frog.T: 640 256
+:amanda/forest/frog.T: 768 256
+:amanda/forest/frog.T: 896 256
+:amanda/forest/frog.T: 160 64
+:amanda/forest/frog.T: 416 64
+:amanda/forest/frog.T: 672 64
+:amanda/forest/frog.T: 928 64
+:amanda/forest/frog.T: 1248 128
+:amanda/forest/frog.T: 1072 192
+:amanda/forest/frog.T: 1200 192
+:amanda/forest/frog.T: 1024 256
+:amanda/forest/frog.T: 1152 256
+:amanda/forest/frog.T: 1056 64
+:amanda/forest/frog.T: 1184 64
+:amanda/forest/frog.T: 96 128
+:amanda/forest/frog.T: 352 128
+:amanda/forest/frog.T: 608 128
+:amanda/forest/frog.T: 864 128
+:amanda/forest/frog.T: 1120 128
+
+:geoo/sandstone/ribbon_end: 112 120
+:geoo/sandstone/ribbon_main: 80 144
+:geoo/sandstone/ribbon_main: 144 144
+:geoo/sandstone/arc_big: 64 112
+:geoo/sandstone/ribbon_main: 16 80
+:geoo/sandstone/ribbon_main: 80 80
+:geoo/sandstone/ribbon_main: 48 80
+:geoo/sandstone/arc_big: 0 48
+:geoo/sandstone/arc_big: 128 304
+:geoo/sandstone/arc_big: 256 304
+:geoo/sandstone/arc_big: 384 304
+:geoo/sandstone/arc_big: 512 304
+:geoo/sandstone/arc_big: 0 304
+:geoo/sandstone/arc_big: 768 304
+:geoo/sandstone/arc_big: 896 304
+:geoo/sandstone/arc_big: 640 304
+:geoo/steel/dark_64x32o.S: 32 392
+:geoo/steel/dark_64x32o.S: 160 392
+:geoo/steel/dark_64x32o.S: 288 392
+:geoo/steel/dark_64x32o.S: 416 392
+:geoo/steel/dark_64x32o.S: 544 392
+:geoo/steel/dark_64x32o.S: 672 392
+:geoo/steel/dark_64x32o.S: 800 392
+:geoo/steel/dark_64x32o.S: 928 392
+:geoo/steel/64x32o.S: 96 368
+:geoo/steel/64x32o.S: 224 368
+:geoo/steel/64x32o.S: 352 368
+:geoo/steel/64x32o.S: 480 368
+:geoo/steel/64x32o.S: 608 368
+:geoo/steel/64x32o.S: 736 368
+:geoo/steel/64x32o.S: 864 368
+:geoo/steel/64x32o.S: 992 368
+:geoo/sandstone/ribbon_end: 200 48
+:geoo/sandstone/ribbon_end: 152 48
+:geoo/sandstone/ribbon_main: 272 80
+:geoo/sandstone/ribbon_main: 336 80
+:geoo/sandstone/ribbon_main: 304 80
+:geoo/sandstone/arc_big: 256 48
+:geoo/sandstone/ribbon_main: 528 80
+:geoo/sandstone/ribbon_main: 592 80
+:geoo/sandstone/ribbon_main: 560 80
+:geoo/sandstone/arc_big: 512 48
+:geoo/sandstone/ribbon_main: 784 80
+:geoo/sandstone/ribbon_main: 848 80
+:geoo/sandstone/ribbon_main: 816 80
+:geoo/sandstone/arc_big: 768 48
+:geoo/sandstone/ribbon_main: 208 144
+:geoo/sandstone/ribbon_main: 272 144
+:geoo/sandstone/ribbon_main: 240 144
+:geoo/sandstone/arc_big: 192 112
+:geoo/sandstone/ribbon_main: 464 144
+:geoo/sandstone/ribbon_main: 528 144
+:geoo/sandstone/ribbon_main: 496 144
+:geoo/sandstone/arc_big: 448 112
+:geoo/sandstone/ribbon_main: 720 144
+:geoo/sandstone/ribbon_main: 784 144
+:geoo/sandstone/ribbon_main: 752 144
+:geoo/sandstone/arc_big: 704 112
+:geoo/sandstone/ribbon_main: 976 144
+:geoo/sandstone/ribbon_main: 1040 144
+:geoo/sandstone/ribbon_main: 1008 144
+:geoo/sandstone/arc_big: 960 112
+:geoo/sandstone/ribbon_end: 368 120
+:geoo/sandstone/ribbon_main: 336 144
+:geoo/sandstone/ribbon_main: 400 144
+:geoo/sandstone/arc_big: 320 112
+:geoo/sandstone/ribbon_end: 624 120
+:geoo/sandstone/ribbon_main: 592 144
+:geoo/sandstone/ribbon_main: 656 144
+:geoo/sandstone/arc_big: 576 112
+:geoo/sandstone/ribbon_end: 880 120
+:geoo/sandstone/ribbon_main: 848 144
+:geoo/sandstone/ribbon_main: 912 144
+:geoo/sandstone/arc_big: 832 112
+:geoo/sandstone/ribbon_main: 32 208
+:geoo/sandstone/ribbon_main: 96 208
+:geoo/sandstone/ribbon_main: 64 208
+:geoo/sandstone/arc_big: 16 176
+:geoo/sandstone/ribbon_main: 160 208
+:geoo/sandstone/ribbon_main: 224 208
+:geoo/sandstone/ribbon_main: 192 208
+:geoo/sandstone/arc_big: 144 176
+:geoo/sandstone/ribbon_main: 288 208
+:geoo/sandstone/ribbon_main: 352 208
+:geoo/sandstone/ribbon_main: 320 208
+:geoo/sandstone/arc_big: 272 176
+:geoo/sandstone/ribbon_main: 416 208
+:geoo/sandstone/ribbon_main: 480 208
+:geoo/sandstone/ribbon_main: 448 208
+:geoo/sandstone/arc_big: 400 176
+:geoo/sandstone/ribbon_main: 544 208
+:geoo/sandstone/ribbon_main: 608 208
+:geoo/sandstone/ribbon_main: 576 208
+:geoo/sandstone/arc_big: 528 176
+:geoo/sandstone/ribbon_main: 672 208
+:geoo/sandstone/ribbon_main: 736 208
+:geoo/sandstone/ribbon_main: 704 208
+:geoo/sandstone/arc_big: 656 176
+:geoo/sandstone/ribbon_main: 800 208
+:geoo/sandstone/ribbon_main: 864 208
+:geoo/sandstone/ribbon_main: 832 208
+:geoo/sandstone/arc_big: 784 176
+:geoo/sandstone/ribbon_main: 928 208
+:geoo/sandstone/ribbon_main: 992 208
+:geoo/sandstone/ribbon_main: 960 208
+:geoo/sandstone/arc_big: 912 176
+:geoo/sandstone/ribbon_main: -16 272
+:geoo/sandstone/ribbon_main: 48 272
+:geoo/sandstone/ribbon_main: 16 272
+:geoo/sandstone/arc_big: -32 240
+:geoo/sandstone/ribbon_main: 112 272
+:geoo/sandstone/ribbon_main: 176 272
+:geoo/sandstone/ribbon_main: 144 272
+:geoo/sandstone/arc_big: 96 240
+:geoo/sandstone/ribbon_main: 240 272
+:geoo/sandstone/ribbon_main: 304 272
+:geoo/sandstone/ribbon_main: 272 272
+:geoo/sandstone/arc_big: 224 240
+:geoo/sandstone/ribbon_main: 368 272
+:geoo/sandstone/ribbon_main: 432 272
+:geoo/sandstone/ribbon_main: 400 272
+:geoo/sandstone/arc_big: 352 240
+:geoo/sandstone/ribbon_main: 496 272
+:geoo/sandstone/ribbon_main: 560 272
+:geoo/sandstone/ribbon_main: 528 272
+:geoo/sandstone/arc_big: 480 240
+:geoo/sandstone/ribbon_main: 624 272
+:geoo/sandstone/ribbon_main: 688 272
+:geoo/sandstone/ribbon_main: 656 272
+:geoo/sandstone/arc_big: 608 240
+:geoo/sandstone/ribbon_main: 752 272
+:geoo/sandstone/ribbon_main: 816 272
+:geoo/sandstone/ribbon_main: 784 272
+:geoo/sandstone/arc_big: 736 240
+:geoo/sandstone/ribbon_main: 880 272
+:geoo/sandstone/ribbon_main: 944 272
+:geoo/sandstone/ribbon_main: 912 272
+:geoo/sandstone/arc_big: 864 240
+:geoo/sandstone/pillar_bottom: 128 80
+:geoo/sandstone/ribbon_main: 152 16
+:geoo/sandstone/ribbon_main: 200 16
+:geoo/sandstone/ribbon_main: 152 -16
+:geoo/sandstone/arc_big: 0 -16
+:geoo/sandstone/pillar_top_ext: 112 0
+:geoo/sandstone/ribbon_main: 200 -16
+:geoo/sandstone/arc_big: 256 -16
+:geoo/sandstone/pillar_top_ext: 208 0
+:geoo/sandstone/pillar_bottom: 224 80
+:geoo/sandstone/pillar_32: 128 48
+:geoo/sandstone/pillar_32: 224 48
+:geoo/sandstone/pillar_top_shaded: 128 16
+:geoo/sandstone/pillar_top_shaded: 224 16
+:geoo/sandstone/ribbon_end: 456 48
+:geoo/sandstone/ribbon_end: 408 48
+:geoo/sandstone/pillar_bottom: 384 80
+:geoo/sandstone/ribbon_main: 408 16
+:geoo/sandstone/ribbon_main: 456 16
+:geoo/sandstone/ribbon_main: 408 -16
+:geoo/sandstone/pillar_top_ext: 368 0
+:geoo/sandstone/ribbon_main: 456 -16
+:geoo/sandstone/arc_big: 512 -16
+:geoo/sandstone/pillar_top_ext: 464 0
+:geoo/sandstone/pillar_bottom: 480 80
+:geoo/sandstone/pillar_32: 384 48
+:geoo/sandstone/pillar_32: 480 48
+:geoo/sandstone/pillar_top_shaded: 384 16
+:geoo/sandstone/pillar_top_shaded: 480 16
+:geoo/sandstone/ribbon_end: 712 48
+:geoo/sandstone/ribbon_end: 664 48
+:geoo/sandstone/pillar_bottom: 640 80
+:geoo/sandstone/ribbon_main: 664 16
+:geoo/sandstone/ribbon_main: 712 16
+:geoo/sandstone/ribbon_main: 664 -16
+:geoo/sandstone/pillar_top_ext: 624 0
+:geoo/sandstone/ribbon_main: 712 -16
+:geoo/sandstone/arc_big: 768 -16
+:geoo/sandstone/pillar_top_ext: 720 0
+:geoo/sandstone/pillar_bottom: 736 80
+:geoo/sandstone/pillar_32: 640 48
+:geoo/sandstone/pillar_32: 736 48
+:geoo/sandstone/pillar_top_shaded: 640 16
+:geoo/sandstone/pillar_top_shaded: 736 16
+:geoo/sandstone/ribbon_end: 968 48
+:geoo/sandstone/ribbon_end: 920 48
+:geoo/sandstone/pillar_bottom: 896 80
+:geoo/sandstone/ribbon_main: 920 16
+:geoo/sandstone/ribbon_main: 968 16
+:geoo/sandstone/ribbon_main: 920 -16
+:geoo/sandstone/pillar_top_ext: 880 0
+:geoo/sandstone/ribbon_main: 968 -16
+:geoo/sandstone/arc_big: 1024 -16
+:geoo/sandstone/pillar_top_ext: 976 0
+:geoo/sandstone/pillar_bottom: 992 80
+:geoo/sandstone/pillar_32: 896 48
+:geoo/sandstone/pillar_32: 992 48
+:geoo/sandstone/pillar_top_shaded: 896 16
+:geoo/sandstone/pillar_top_shaded: 992 16
+:geoo/sandstone/ribbon_main: 1232 144
+:geoo/sandstone/ribbon_main: 16 144
+:geoo/sandstone/ribbon_main: 1264 144
+:geoo/sandstone/arc_big: 1216 112
+:geoo/sandstone/ribbon_end: 1136 120
+:geoo/sandstone/ribbon_main: 1104 144
+:geoo/sandstone/ribbon_main: 1168 144
+:geoo/sandstone/arc_big: 1088 112
+:geoo/sandstone/ribbon_main: 1056 208
+:geoo/sandstone/ribbon_main: 1120 208
+:geoo/sandstone/ribbon_main: 1088 208
+:geoo/sandstone/arc_big: 1040 176
+:geoo/sandstone/ribbon_main: 1184 208
+:geoo/sandstone/ribbon_main: 1248 208
+:geoo/sandstone/ribbon_main: 1216 208
+:geoo/sandstone/arc_big: 1168 176
+:geoo/sandstone/ribbon_main: 1008 272
+:geoo/sandstone/ribbon_main: 1072 272
+:geoo/sandstone/ribbon_main: 1040 272
+:geoo/sandstone/arc_big: 992 240
+:geoo/sandstone/ribbon_main: 1136 272
+:geoo/sandstone/ribbon_main: 1200 272
+:geoo/sandstone/ribbon_main: 1168 272
+:geoo/sandstone/arc_big: 1120 240
+:geoo/sandstone/arc_big: 1152 304
+:geoo/sandstone/arc_big: 1024 304
+:geoo/steel/dark_64x32o.S: 1056 392
+:geoo/steel/64x32o.S: 1120 368
+:geoo/steel/dark_64x32o.S: 1184 392
+:geoo/steel/64x32o.S: 1248 368
+:geoo/sandstone/ribbon_main: 1040 80
+:geoo/sandstone/ribbon_main: 1104 80
+:geoo/sandstone/ribbon_main: 1072 80
+:geoo/sandstone/arc_big: 1024 48
+:geoo/sandstone/ribbon_end: 1224 48
+:geoo/sandstone/ribbon_end: 1176 48
+:geoo/sandstone/pillar_bottom: 1152 80
+:geoo/sandstone/ribbon_main: 1176 -16
+:geoo/sandstone/ribbon_main: 1176 16
+:geoo/sandstone/ribbon_main: 1224 16
+:geoo/sandstone/pillar_bottom: 1248 80
+:geoo/sandstone/pillar_32: 1152 48
+:geoo/sandstone/pillar_32: 1248 48
+:geoo/sandstone/pillar_top_shaded: 1152 16
+:geoo/sandstone/pillar_top_shaded: 1248 16
+:geoo/sandstone/ribbon_main: 1224 -16
+:geoo/sandstone/pillar_top_ext: 1232 0
+:geoo/sandstone/pillar_top_ext: 1136 0

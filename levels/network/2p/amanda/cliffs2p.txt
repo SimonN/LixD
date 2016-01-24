@@ -1,0 +1,172 @@
+$BUILT 2014-07-03 13:52:31
+$AUTHOR Amanda
+$GERMAN 
+$ENGLISH The Cliffs of Insanity (2p)
+
+#SIZE_X 992
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 20
+#INITIAL 80
+#REQUIRED 20
+#SPAWN_INTERVAL 22
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 200
+#EXPLODER2 -1
+#BLOCKER -1
+#BATTER 80
+#RUNNER 10
+#JUMPER 50
+#CUBER 20
+#FLOATER 30
+#PLATFORMER 50
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/earth/Hatch.H: 720 293
+:matt/earth/Hatch.H: 224 293
+
+:matt/earth/Goal.G: 576 288
+:matt/earth/Goal.G: 80 288
+
+:matt/goldmine/crate64: 647 222
+:matt/goldmine/explosivecrate: 669 286
+:matt/goldmine/planksupport: 508 73
+:matt/goldmine/tracks: 525 182 d
+:matt/earth/10: 460 175 fr
+:matt/earth/05: 622 159
+:matt/steel/48x48.S: 673 174
+:matt/earth/18: 742 342
+:matt/earth/10: 634 339
+:matt/earth/01: 489 359
+:matt/earth/17: 537 253
+:matt/earth/02: 583 273
+:matt/earth/04: 520 318 fr
+:matt/goldmine/planksupport: 12 73
+:matt/goldmine/tracks: 29 182 d
+:matt/earth/10: 956 175 fr
+:matt/earth/13: 946 266
+:matt/earth/26: 883 340
+:matt/earth/30: 874 303
+:matt/earth/22: 910 301
+:matt/earth/14: 923 272
+:matt/earth/11: 949 316
+:matt/earth/15: 921 375
+:matt/earth/30: 842 333
+:matt/earth/22: 837 374
+:matt/earth/22: 856 356
+:matt/earth/22: 874 337
+:matt/earth/22: 892 319
+:matt/earth/11: 909 322
+:matt/earth/06: 951 199
+:matt/earth/09: 501 171
+:matt/earth/06: 970 170
+:matt/earth/08: 535 170
+:matt/earth/04: 551 155
+:matt/earth/10: 944 0
+:matt/earth/17: 512 -32 fr
+:matt/earth/17: 608 -16
+:matt/earth/30: 726 54
+:matt/earth/30: 738 54
+:matt/earth/30: 714 54
+:matt/earth/05: 656 1 fr
+:matt/earth/04: 634 -58 fr
+:matt/earth/18: 752 -16
+:matt/earth/00: 784 -32
+:matt/earth/17: 816 -16 fr
+:matt/earth/01: 912 16
+:matt/earth/16: 912 -64
+:matt/earth/19: 594 192 frd
+:matt/earth/07b: 625 192
+:matt/earth/29: 623 196
+:matt/steel/16x32.S: 594 346 fr
+:matt/earth/18: 714 85
+:matt/earth/28: 751 63
+:matt/earth/29: 727 82
+:matt/earth/11: 671 32
+:matt/steel/32x64.S: 642 285
+:matt/steel/32x64.S: 642 221
+:matt/steel/64x64.S: 626 349
+:matt/earth/29: 886 359
+:matt/earth/08: 781 352
+:matt/earth/07b: 772 352
+:matt/earth/07b: 821 376
+:matt/earth/07b: 812 374 frr
+:matt/earth/09: 722 337
+:matt/earth/08: 763 338
+:matt/earth/28: 592 191
+:matt/earth/30: 949 211 d
+:matt/earth/12: 714 51
+:matt/earth/24: 530 204
+:matt/goldmine/crate64: 151 222
+:matt/goldmine/explosivecrate: 173 286
+:matt/earth/05: 126 159
+:matt/steel/48x48.S: 177 174
+:matt/earth/18: 246 342
+:matt/earth/10: 138 339
+:matt/earth/01: 985 359
+:matt/earth/17: 41 253
+:matt/earth/02: 87 273
+:matt/earth/04: 24 318 fr
+:matt/earth/13: 450 266
+:matt/earth/26: 387 340
+:matt/earth/30: 378 303
+:matt/earth/22: 414 301
+:matt/earth/14: 427 272
+:matt/earth/11: 453 316
+:matt/earth/15: 425 375
+:matt/earth/30: 346 333
+:matt/earth/22: 341 374
+:matt/earth/22: 360 356
+:matt/earth/22: 378 337
+:matt/earth/22: 396 319
+:matt/earth/11: 413 322
+:matt/earth/06: 455 199
+:matt/earth/09: 5 171
+:matt/earth/06: 474 170
+:matt/earth/08: 39 170
+:matt/earth/04: 55 155
+:matt/earth/10: 448 0
+:matt/earth/17: 16 -32 fr
+:matt/earth/17: 112 -16
+:matt/earth/30: 230 54
+:matt/earth/30: 242 54
+:matt/earth/30: 218 54
+:matt/earth/05: 160 1 fr
+:matt/earth/04: 138 -58 fr
+:matt/earth/18: 256 -16
+:matt/earth/00: 288 -32
+:matt/earth/17: 320 -16 fr
+:matt/earth/01: 416 16
+:matt/earth/16: 416 -64
+:matt/earth/19: 98 192 frd
+:matt/earth/07b: 129 192
+:matt/earth/29: 127 196
+:matt/steel/16x32.S: 98 346 fr
+:matt/earth/18: 218 85
+:matt/earth/28: 255 63
+:matt/earth/29: 231 82
+:matt/earth/11: 175 32
+:matt/steel/32x64.S: 146 285
+:matt/steel/32x64.S: 146 221
+:matt/steel/64x64.S: 130 349
+:matt/earth/29: 390 359
+:matt/earth/08: 285 352
+:matt/earth/07b: 276 352
+:matt/earth/07b: 325 376
+:matt/earth/07b: 316 374 frr
+:matt/earth/09: 226 337
+:matt/earth/08: 267 338
+:matt/earth/28: 96 191
+:matt/earth/30: 453 211 d
+:matt/earth/30: 496 168 d
+:matt/earth/30: 0 168 d
+:matt/earth/12: 218 51
+:matt/earth/24: 34 204

@@ -1,0 +1,266 @@
+$BUILT 2014-04-17 10:33:02
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Still Just a Rat in a Cage (8p)
+
+#SIZE_X 640
+#SIZE_Y 416
+#TORUS_X 1
+#TORUS_Y 1
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 45
+#INITIAL 65
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 50
+#JUMPER 50
+#BUILDER 50
+#PLATFORMER 40
+#BASHER 40
+#MINER 40
+#EXPLODER2 15
+#CUBER 15
+#BATTER 15
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/goldmine/Hatch.H: 16 80
+:matt/goldmine/Hatch.H: 176 80
+:matt/goldmine/Hatch.H: 336 80
+:matt/goldmine/Hatch.H: 496 80
+:matt/goldmine/Hatch.H: 16 288
+:matt/goldmine/Hatch.H: 176 288
+:matt/goldmine/Hatch.H: 336 288
+:matt/goldmine/Hatch.H: 496 288
+
+:geoo/abstract/goal.G: 304 80
+:geoo/abstract/goal.G: 464 80
+:geoo/abstract/goal.G: 624 80
+:geoo/abstract/goal.G: 144 80
+:geoo/abstract/goal.G: 304 288
+:geoo/abstract/goal.G: 464 288
+:geoo/abstract/goal.G: 624 288
+:geoo/abstract/goal.G: 144 288
+
+:matt/goldmine/crate32: 0 64
+:matt/goldmine/crate32: 128 64
+:matt/goldmine/crate32: 0 32
+:matt/goldmine/crate32: 32 32
+:matt/goldmine/crate32: 64 32
+:matt/goldmine/crate32: 128 32
+:matt/goldmine/crate32: 128 128
+:matt/goldmine/crate32: 64 128
+:matt/goldmine/crate32: 32 128
+:matt/goldmine/crate32: 0 128
+:matt/goldmine/crate32: 96 32
+:matt/goldmine/crate32: 160 64
+:matt/goldmine/crate32: 288 64
+:matt/goldmine/crate32: 160 32
+:matt/goldmine/crate32: 192 32
+:matt/goldmine/crate32: 224 32
+:matt/goldmine/crate32: 288 32
+:matt/goldmine/crate32: 288 128
+:matt/goldmine/crate32: 224 128
+:matt/goldmine/crate32: 192 128
+:matt/goldmine/crate32: 160 128
+:matt/goldmine/crate32: 256 32
+:matt/goldmine/crate32: 320 64
+:matt/goldmine/crate32: 448 64
+:matt/goldmine/crate32: 320 32
+:matt/goldmine/crate32: 352 32
+:matt/goldmine/crate32: 384 32
+:matt/goldmine/crate32: 448 32
+:matt/goldmine/crate32: 448 128
+:matt/goldmine/crate32: 384 128
+:matt/goldmine/crate32: 352 128
+:matt/goldmine/crate32: 320 128
+:matt/goldmine/crate32: 416 32
+:matt/goldmine/crate32: 416 128
+:matt/goldmine/crate32: 480 64
+:matt/goldmine/crate32: 608 64
+:matt/goldmine/crate32: 480 32
+:matt/goldmine/crate32: 512 32
+:matt/goldmine/crate32: 544 32
+:matt/goldmine/crate32: 608 32
+:matt/goldmine/crate32: 608 128
+:matt/goldmine/crate32: 544 128
+:matt/goldmine/crate32: 512 128
+:matt/goldmine/crate32: 480 128
+:matt/goldmine/crate32: 576 32
+:matt/goldmine/crate32: 576 128
+:matt/goldmine/crate32: 0 272
+:matt/goldmine/crate32: 128 272
+:matt/goldmine/crate32: 0 240
+:matt/goldmine/crate32: 32 240
+:matt/goldmine/crate32: 64 240
+:matt/goldmine/crate32: 128 240
+:matt/goldmine/crate32: 128 336
+:matt/goldmine/crate32: 64 336
+:matt/goldmine/crate32: 32 336
+:matt/goldmine/crate32: 0 336
+:matt/goldmine/crate32: 96 240
+:matt/goldmine/crate32: 96 336
+:matt/goldmine/crate32: 160 272
+:matt/goldmine/crate32: 288 272
+:matt/goldmine/crate32: 160 240
+:matt/goldmine/crate32: 192 240
+:matt/goldmine/crate32: 224 240
+:matt/goldmine/crate32: 288 240
+:matt/goldmine/crate32: 288 336
+:matt/goldmine/crate32: 224 336
+:matt/goldmine/crate32: 192 336
+:matt/goldmine/crate32: 160 336
+:matt/goldmine/crate32: 256 240
+:matt/goldmine/crate32: 256 336
+:matt/goldmine/crate32: 320 272
+:matt/goldmine/crate32: 448 272
+:matt/goldmine/crate32: 320 240
+:matt/goldmine/crate32: 352 240
+:matt/goldmine/crate32: 384 240
+:matt/goldmine/crate32: 448 240
+:matt/goldmine/crate32: 448 336
+:matt/goldmine/crate32: 384 336
+:matt/goldmine/crate32: 352 336
+:matt/goldmine/crate32: 320 336
+:matt/goldmine/crate32: 416 240
+:matt/goldmine/crate32: 416 336
+:matt/goldmine/crate32: 480 272
+:matt/goldmine/crate32: 608 272
+:matt/goldmine/crate32: 480 240
+:matt/goldmine/crate32: 512 240
+:matt/goldmine/crate32: 544 240
+:matt/goldmine/crate32: 608 240
+:matt/goldmine/crate32: 608 336
+:matt/goldmine/crate32: 544 336
+:matt/goldmine/crate32: 512 336
+:matt/goldmine/crate32: 480 336
+:matt/goldmine/crate32: 576 240
+:matt/goldmine/crate32: 576 336
+:matt/goldmine/explosivecrate: 448 384
+:geoo/steel/dark_16x32o.S: 176 336
+:geoo/steel/dark_16x32o.S: 176 304
+:geoo/steel/dark_16x32o.S: 176 272
+:geoo/steel/dark_16x32o.S: 288 336
+:geoo/steel/dark_16x32o.S: 288 304
+:geoo/steel/dark_16x32o.S: 496 336
+:geoo/steel/dark_16x32o.S: 336 336
+:geoo/steel/dark_16x32o.S: 336 304
+:geoo/steel/dark_16x32o.S: 496 272
+:geoo/steel/dark_16x32o.S: 496 304
+:geoo/steel/dark_16x32o.S: 336 272
+:geoo/steel/dark_16x32o.S: 448 304
+:geoo/steel/dark_16x32o.S: 448 336
+:geoo/steel/dark_16x32o.S: 608 304
+:geoo/steel/dark_16x32o.S: 608 336
+:geoo/steel/dark_16x32o.S: 128 304
+:geoo/steel/dark_16x32o.S: 128 336
+:geoo/steel/dark_16x32o.S: 16 336
+:geoo/steel/dark_16x32o.S: 16 304
+:geoo/steel/dark_16x32o.S: 16 272
+:geoo/steel/dark_16x32o.S: 16 64
+:geoo/steel/dark_16x32o.S: 16 96
+:geoo/steel/dark_16x32o.S: 16 128
+:geoo/steel/dark_16x32o.S: 128 128
+:geoo/steel/dark_16x32o.S: 128 96
+:geoo/steel/dark_16x32o.S: 176 64
+:geoo/steel/dark_16x32o.S: 176 96
+:geoo/steel/dark_16x32o.S: 176 128
+:geoo/steel/dark_16x32o.S: 288 128
+:geoo/steel/dark_16x32o.S: 288 96
+:geoo/steel/dark_16x32o.S: 336 64
+:geoo/steel/dark_16x32o.S: 336 96
+:geoo/steel/dark_16x32o.S: 336 128
+:geoo/steel/dark_16x32o.S: 448 128
+:geoo/steel/dark_16x32o.S: 448 96
+:geoo/steel/dark_16x32o.S: 496 64
+:geoo/steel/dark_16x32o.S: 496 96
+:geoo/steel/dark_16x32o.S: 496 128
+:geoo/steel/dark_16x32o.S: 608 128
+:geoo/steel/dark_16x32o.S: 608 96
+:matt/goldmine/explosivecrate: 288 384
+:matt/goldmine/explosivecrate: 128 384
+:matt/goldmine/explosivecrate: 608 384
+:matt/goldmine/explosivecrate: 448 176
+:matt/goldmine/explosivecrate: 288 176
+:matt/goldmine/explosivecrate: 128 176
+:matt/goldmine/explosivecrate: 608 176
+:matt/goldmine/plankdiag: 64 0
+:matt/goldmine/plankdiag: 96 384
+:matt/goldmine/plankdiag: 224 0
+:matt/goldmine/plankdiag: 256 384
+:matt/goldmine/plankdiag: 384 0
+:matt/goldmine/plankdiag: 416 384
+:matt/goldmine/plankdiag: 544 0
+:matt/goldmine/plankdiag: 576 384
+:matt/goldmine/plankdiag: 544 208
+:matt/goldmine/plankdiag: 576 176
+:matt/goldmine/plankdiag: 64 208
+:matt/goldmine/plankdiag: 96 176
+:matt/goldmine/plankdiag: 224 208
+:matt/goldmine/plankdiag: 256 176
+:matt/goldmine/plankdiag: 384 208
+:matt/goldmine/plankdiag: 416 176
+:matt/goldmine/crate32: 304 48 d
+:matt/goldmine/crate32: 304 64 d
+:matt/goldmine/crate32: 256 128
+:matt/goldmine/crate32: 96 128
+:matt/goldmine/crate16: 304 144 d
+:matt/goldmine/crate16: 320 144 d
+:matt/goldmine/crate16: 144 144 d
+:matt/goldmine/crate16: 160 144 d
+:matt/goldmine/crate16: 624 144 d
+:matt/goldmine/crate16: 0 144 d
+:matt/goldmine/crate16: 464 144 d
+:matt/goldmine/crate16: 480 144 d
+:matt/goldmine/crate16: 464 352 d
+:matt/goldmine/crate16: 480 352 d
+:matt/goldmine/crate16: 304 352 d
+:matt/goldmine/crate16: 320 352 d
+:matt/goldmine/crate16: 144 352 d
+:matt/goldmine/crate16: 160 352 d
+:matt/goldmine/crate16: 624 352 d
+:matt/goldmine/crate16: 0 352 d
+:geoo/steel/dark_16x16o.S: 304 128
+:geoo/steel/dark_16x16o.S: 144 128
+:geoo/steel/dark_16x16o.S: 464 128
+:geoo/steel/dark_16x16o.S: 624 128
+:geoo/steel/dark_16x16o.S: 464 336
+:geoo/steel/dark_16x16o.S: 624 336
+:geoo/steel/dark_16x16o.S: 144 336
+:geoo/steel/dark_16x16o.S: 304 336
+:matt/goldmine/crate32: 464 64 d
+:matt/goldmine/crate32: 464 48 d
+:matt/goldmine/crate32: 624 64 d
+:matt/goldmine/crate32: 624 48 d
+:matt/goldmine/crate32: 144 64 d
+:matt/goldmine/crate32: 144 48 d
+:matt/goldmine/crate32: 144 272 d
+:matt/goldmine/crate32: 144 256 d
+:matt/goldmine/crate32: 624 272 d
+:matt/goldmine/crate32: 624 256 d
+:matt/goldmine/crate32: 464 272 d
+:matt/goldmine/crate32: 464 256 d
+:matt/goldmine/crate32: 304 272 d
+:matt/goldmine/crate32: 304 256 d
+:geoo/steel/dark_16x16o.S: 512 144
+:geoo/steel/dark_16x16o.S: 528 144
+:geoo/steel/dark_16x16o.S: 48 144
+:geoo/steel/dark_16x16o.S: 32 144
+:geoo/steel/dark_16x16o.S: 192 144
+:geoo/steel/dark_16x16o.S: 208 144
+:geoo/steel/dark_16x16o.S: 352 144
+:geoo/steel/dark_16x16o.S: 368 144
+:geoo/steel/dark_16x16o.S: 352 352
+:geoo/steel/dark_16x16o.S: 368 352
+:geoo/steel/dark_16x16o.S: 512 352
+:geoo/steel/dark_16x16o.S: 528 352
+:geoo/steel/dark_16x16o.S: 32 352
+:geoo/steel/dark_16x16o.S: 48 352
+:geoo/steel/dark_16x16o.S: 192 352
+:geoo/steel/dark_16x16o.S: 208 352

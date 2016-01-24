@@ -1,0 +1,473 @@
+$BUILT 2014-05-08 13:51:15
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH NaOH's Arc (Attack&Defense) Team
+
+#SIZE_X 3200
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 120
+#INITIAL 16
+#REQUIRED 1
+#SPAWN_INTERVAL 40
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 16
+#FLOATER 8
+#WALKER -1
+#JUMPER -1
+#RUNNER 2
+#BUILDER 90
+#PLATFORMER 90
+#BASHER 85
+#MINER 85
+#DIGGER 30
+#NOTHING 0
+#BATTER 80
+
+:geoo/abstract/hatch.H: 112 256
+:geoo/abstract/hatch.H: 3056 256 r
+:geoo/abstract/hatch.H: 2032 0
+:geoo/abstract/hatch.H: 1136 0 r
+
+:matt/earth/Goal.G: 1524 206
+:matt/earth/Goal.G: 1612 206
+
+:simon/water.W: 752 368
+:simon/water.W: 800 368
+:simon/water.W: 848 368
+:simon/water.W: 896 368
+:simon/water.W: 944 368
+:simon/water.W: 992 368
+:simon/water.W: 1040 368
+:simon/water.W: 1088 368
+:simon/water.W: 464 368
+:simon/water.W: 512 368
+:simon/water.W: 560 368
+:simon/water.W: 608 368
+:simon/water.W: 656 368
+:simon/water.W: 704 368
+:simon/water.W: 1136 368
+:simon/water.W: 1184 368
+:simon/water.W: 1232 368
+:simon/water.W: 1280 368
+:geoo/construction/sawblade_small.F: 672 112
+:geoo/construction/sawblade_small.F: 1008 112
+:simon/water.W: 1328 368
+:simon/water.W: 1376 368
+:simon/water.W: 1424 368
+:simon/water.W: 2398 368
+:simon/water.W: 2350 368
+:simon/water.W: 2302 368
+:simon/water.W: 2254 368
+:simon/water.W: 2206 368
+:simon/water.W: 2158 368
+:simon/water.W: 2110 368
+:simon/water.W: 2062 368
+:simon/water.W: 2686 368
+:simon/water.W: 2638 368
+:simon/water.W: 2590 368
+:simon/water.W: 2542 368
+:simon/water.W: 2494 368
+:simon/water.W: 2446 368
+:simon/water.W: 2014 368
+:simon/water.W: 1966 368
+:simon/water.W: 1918 368
+:simon/water.W: 1870 368
+:geoo/construction/sawblade_small.F: 2496 112
+:geoo/construction/sawblade_small.F: 2160 112
+:simon/water.W: 1822 368
+:simon/water.W: 1774 368
+:simon/water.W: 1726 368
+
+:matt/earth/07: 32 224
+:matt/earth/06: 3136 208
+:matt/earth/30: 2086 144 fr
+:matt/earth/10: 3152 112 fr
+:matt/earth/10: -64 112 r
+:matt/earth/18: 80 320
+:matt/earth/07: 44 280
+:matt/earth/13: 182 302 f
+:matt/earth/06: 200 290
+:matt/earth/15: 376 344
+:matt/earth/08: 394 338
+:matt/earth/07: 364 328
+:matt/earth/08: 1424 336 rrr
+:matt/earth/08: 1488 304 rrr
+:matt/earth/30: 688 192
+:matt/earth/30: 768 112
+:matt/earth/30: 1024 112 r
+:matt/earth/30: 912 64 rr
+:simon/wood/wood_h1: 1040 176 rrr
+:matt/earth/30: 816 240 rr
+:matt/earth/30: 768 288 rr
+:matt/earth/30: 1120 160 rr
+:matt/earth/30: 1040 240 rr
+:matt/earth/30: 1088 192 rr
+:matt/earth/30: 976 304 rrr
+:matt/earth/20: 368 288
+:matt/earth/13: 432 304 frr
+:matt/earth/20: 272 288
+:simon/wood/wood_h1: 1040 192 rrr
+:simon/wood/wood_h1: 1040 240 rrr
+:simon/wood/wood_h1: 1104 288
+:simon/wood/wood_h1: 1056 288
+:simon/wood/wood_h1: 912 288
+:simon/wood/wood_h1: 864 288
+:simon/wood/wood_h1: 1152 192
+:simon/wood/wood_h1: 864 320 frrr
+:simon/tapir/032h: 736 352
+:simon/tapir/032h: 800 352
+:simon/tapir/032hb: 736 320
+:simon/tapir/032b: 704 288
+:simon/tapir/032h: 704 320 rrr
+:simon/tapir/032h: 672 288 rrr
+:simon/tapir/032: 672 352
+:simon/tapir/032b: 672 256
+:simon/tapir/032h: 640 320 rrr
+:simon/tapir/032: 640 288
+:simon/tapir/032h: 640 224 rrr
+:simon/tapir/032h: 1056 352 frr
+:simon/tapir/032h: 992 352 frr
+:simon/tapir/032h: 928 352 frr
+:simon/tapir/032h: 864 352 frr
+:simon/tapir/032hb: 1056 320 frr
+:simon/tapir/032b: 1120 288 frr
+:simon/tapir/032h: 1120 320 frrr
+:simon/tapir/032h: 1152 288 frrr
+:simon/tapir/032: 1152 352 frr
+:simon/tapir/032h: 1184 320 frrr
+:simon/tapir/032: 1184 288 frr
+:simon/wood/wood_h1: 672 240
+:simon/wood/wood_h1: 720 240
+:simon/wood/wood_h1: 768 240
+:simon/wood/wood_h1: 864 240 rrr
+:simon/wood/wood_h1: 864 288 rrr
+:simon/wood/wood_h1: 912 192
+:simon/wood/wood_h1: 960 192
+:simon/wood/wood_h1: 1008 192
+:simon/wood/wood_h1: 1024 192
+:simon/wood/wood_h1: 1072 192
+:simon/wood/wood_h1: 1200 192 rrr
+:simon/wood/wood_h1: 1008 288
+:simon/tapir/032h: 1184 160 frrr
+:simon/tapir/032h: 1184 224 frrr
+:simon/tapir/032h: 1152 192 frrr
+:simon/tapir/032h: 1152 128 frrr
+:simon/tapir/032h: 1184 96 frrr
+:simon/tapir/032: 1152 256
+:geoo/steel/32x16o.S: 640 368
+:geoo/steel/32x16o.S: 672 368
+:geoo/steel/32x16o.S: 704 368
+:geoo/steel/32x16o.S: 768 368
+:geoo/steel/32x16o.S: 800 368
+:geoo/steel/32x16o.S: 832 368
+:geoo/steel/32x16o.S: 864 368
+:geoo/steel/32x16o.S: 928 368
+:geoo/steel/32x16o.S: 960 368
+:geoo/steel/32x16o.S: 992 368
+:geoo/steel/32x16o.S: 1024 368
+:geoo/steel/32x16o.S: 1056 368
+:geoo/steel/32x16o.S: 1088 368
+:geoo/steel/32x16o.S: 1120 368
+:geoo/steel/32x16o.S: 1184 368
+:geoo/steel/32x64o.S: 640 304
+:geoo/steel/32x64o.S: 1184 304
+:geoo/steel/32x64o.S: 1184 240
+:matt/earth/10: 288 336
+:matt/earth/10: 176 288
+:matt/earth/06: 308 342
+:matt/earth/10: 208 352 frr
+:matt/earth/07: 432 332 rrr
+:matt/earth/13: 432 336
+:matt/earth/13: 448 336 frr
+:matt/earth/30: 864 192 rrr
+:matt/earth/30: 912 240 rrr
+:matt/earth/30: 960 288 rrr
+:simon/wood/wood_h1: 800 240
+:simon/wood/wood_h1: 896 192
+:simon/wood/wood_h1: 864 192 rrr
+:geoo/steel/dark_16x16o.S: 640 368
+:simon/tapir/032h: 656 112 rrr
+:simon/tapir/032h: 1152 64 frrr
+:simon/tapir/032h: 1184 32 frrr
+:simon/wood/wood_h1: 1072 64 rrr
+:simon/wood/wood_h1: 976 64
+:simon/wood/wood_h1: 1024 64
+:simon/wood/wood_h1: 1072 64
+:simon/wood/wood_h1: 1088 64
+:simon/wood/wood_h1: 1136 64
+:simon/wood/wood_h1: 960 64
+:simon/wood/wood_h1: 1040 112 rrr
+:simon/wood/wood_h1: 912 112
+:simon/wood/wood_h1: 960 112
+:simon/wood/wood_h1: 1008 112
+:simon/wood/wood_h1: 1024 112
+:simon/wood/wood_h1: 1072 112
+:simon/wood/wood_h1: 896 112
+:simon/wood/wood_h1: 816 112 rrr
+:simon/wood/wood_h1: 688 112
+:simon/wood/wood_h1: 736 112
+:simon/wood/wood_h1: 784 112
+:simon/wood/wood_h1: 800 112
+:simon/wood/wood_h1: 848 112
+:simon/wood/wood_h1: 656 112
+:simon/wood/wood_h1: 656 112 rrr
+:simon/wood/wood_h1: 816 160 rrr
+:simon/wood/wood_h1: 816 176 rrr
+:simon/wood/wood_h1: 816 192 rrr
+:simon/wood/wood_h1: 1040 160 rrr
+:matt/earth/30: 1056 144 r
+:matt/earth/30: 720 160
+:geoo/steel/32x64o.S: 640 240
+:matt/earth/07: 220 364
+:matt/earth/10: 160 288 frr
+:matt/earth/07: 182 346
+:matt/earth/10: 64 320
+:geoo/steel/32x16o.S: 1184 32
+:matt/earth/10: 1456 336
+:matt/earth/10: 1488 288
+:matt/earth/10: 1488 272 rr
+:geoo/steel/32x64o.S: 1184 176
+:matt/earth/10: 1568 304 rrr
+:matt/earth/10: 1456 304 r
+:geoo/steel/16x32o.S: 1024 112
+:geoo/steel/16x32o.S: 1024 144
+:geoo/steel/16x32o.S: 1008 176 rrr
+:geoo/steel/16x32o.S: 1040 192 rrr
+:geoo/steel/16x32o.S: 1008 192 rrr
+:geoo/steel/16x32o.S: 864 288 rrr
+:geoo/steel/16x32o.S: 896 288 rrr
+:geoo/steel/16x32o.S: 928 288 rrr
+:geoo/steel/16x32o.S: 864 304 rr
+:geoo/steel/16x32o.S: 864 336 rr
+:geoo/steel/16x32o.S: 640 96 rrr
+:geoo/steel/32x64o.S: 656 112 rr
+:geoo/construction/stairs_rd_32.S: 816 128
+:geoo/construction/stairs_rd_32.S: 880 160
+:geoo/steel/32x64o.S: 1216 176 rrr
+:geoo/steel/32x16o.S: 1216 32
+:geoo/steel/32x16o.S: 1248 32
+:geoo/steel/32x16o.S: 1248 48
+:geoo/steel/32x16o.S: 1248 64
+:geoo/steel/32x16o.S: 136 322
+:geoo/steel/32x16o.S: 104 322
+:matt/earth/13: 464 370 frr
+:geoo/steel/dark_16x16o.S: 1200 368
+:matt/earth/10: 1424 336 r
+:matt/earth/05: 1392 368 frr
+:matt/earth/10: 1424 352 r
+:geoo/steel/32x64o.S: 1184 112
+:geoo/steel/32x32o.S: 1568 32
+:geoo/steel/32x32o.S: 1568 0
+:geoo/steel/32x32o.S: 1536 0
+:matt/earth/10: 0 240 rrr
+:matt/earth/10: -32 208 r
+:matt/earth/18: 3084 320 frr
+:matt/earth/07: 3104 280 frr
+:matt/earth/13: 2972 302 rr
+:matt/earth/06: 2958 290 frr
+:matt/earth/15: 2742 344 frr
+:matt/earth/08: 2770 338 frr
+:matt/earth/07: 2784 328 frr
+:matt/earth/08: 1742 336 frrr
+:matt/earth/08: 1678 304 frrr
+:matt/earth/30: 2454 192 frr
+:matt/earth/30: 2374 112 frr
+:matt/earth/30: 2118 112 fr
+:matt/earth/30: 2230 64 f
+:simon/wood/wood_h1: 2150 176 frrr
+:matt/earth/30: 2326 240 f
+:matt/earth/30: 2374 288 f
+:matt/earth/30: 2022 160 f
+:matt/earth/30: 2102 240 f
+:matt/earth/30: 2054 192 f
+:matt/earth/30: 2166 304 frrr
+:matt/earth/20: 2734 288 frr
+:matt/earth/13: 2722 304
+:matt/earth/20: 2830 288 frr
+:simon/wood/wood_h1: 2150 192 frrr
+:simon/wood/wood_h1: 2150 240 frrr
+:simon/wood/wood_h1: 2046 288 frr
+:simon/wood/wood_h1: 2094 288 frr
+:simon/wood/wood_h1: 2238 288 frr
+:simon/wood/wood_h1: 2286 288 frr
+:simon/wood/wood_h1: 1998 192 frr
+:simon/wood/wood_h1: 2326 320 rrr
+:simon/tapir/032h: 2400 352 frr
+:simon/tapir/032h: 2336 352 frr
+:simon/tapir/032hb: 2400 320 frr
+:simon/tapir/032b: 2464 288 frr
+:simon/tapir/032h: 2464 320 frrr
+:simon/tapir/032h: 2496 288 frrr
+:simon/tapir/032: 2496 352 frr
+:simon/tapir/032b: 2496 256 frr
+:simon/tapir/032h: 2528 320 frrr
+:simon/tapir/032: 2528 288 frr
+:simon/tapir/032h: 2528 224 frrr
+:simon/tapir/032h: 2080 352
+:simon/tapir/032h: 2144 352
+:simon/tapir/032h: 2208 352
+:simon/tapir/032h: 2272 352
+:simon/tapir/032hb: 2080 320
+:simon/tapir/032b: 2048 288
+:simon/tapir/032h: 2048 320 rrr
+:simon/tapir/032h: 2016 288 rrr
+:simon/tapir/032: 2016 352
+:simon/tapir/032h: 1984 320 rrr
+:simon/tapir/032: 1984 288
+:simon/wood/wood_h1: 2478 240 frr
+:simon/wood/wood_h1: 2430 240 frr
+:simon/wood/wood_h1: 2382 240 frr
+:simon/wood/wood_h1: 2326 240 frrr
+:simon/wood/wood_h1: 2326 288 frrr
+:simon/wood/wood_h1: 2238 192 frr
+:simon/wood/wood_h1: 2190 192 frr
+:simon/wood/wood_h1: 2142 192 frr
+:simon/wood/wood_h1: 2126 192 frr
+:simon/wood/wood_h1: 2078 192 frr
+:simon/wood/wood_h1: 1990 192 frrr
+:simon/wood/wood_h1: 2142 288 frr
+:simon/tapir/032h: 1984 160 rrr
+:simon/tapir/032h: 1984 224 rrr
+:simon/tapir/032h: 2016 192 rrr
+:simon/tapir/032h: 2016 128 rrr
+:simon/tapir/032h: 1984 96 rrr
+:simon/tapir/032: 2016 256 frr
+:geoo/steel/32x16o.S: 2528 368 frr
+:geoo/steel/32x16o.S: 2496 368 frr
+:geoo/steel/32x16o.S: 2464 368 frr
+:geoo/steel/32x16o.S: 2400 368 frr
+:geoo/steel/32x16o.S: 2368 368 frr
+:geoo/steel/32x16o.S: 2336 368 frr
+:geoo/steel/32x16o.S: 2304 368 frr
+:geoo/steel/32x16o.S: 2240 368 frr
+:geoo/steel/32x16o.S: 2208 368 frr
+:geoo/steel/32x16o.S: 2176 368 frr
+:geoo/steel/32x16o.S: 2144 368 frr
+:geoo/steel/32x16o.S: 2112 368 frr
+:geoo/steel/32x16o.S: 2080 368 frr
+:geoo/steel/32x16o.S: 2048 368 frr
+:geoo/steel/32x16o.S: 1984 368 frr
+:geoo/steel/32x64o.S: 2528 304 frr
+:geoo/steel/32x64o.S: 1984 304 frr
+:geoo/steel/32x64o.S: 1984 240 frr
+:matt/earth/10: 2698 336 frr
+:matt/earth/10: 2810 288 frr
+:matt/earth/06: 2850 342 frr
+:matt/earth/10: 2778 352
+:matt/earth/07: 2718 332 frrr
+:matt/earth/13: 2722 336 frr
+:matt/earth/13: 2706 336
+:matt/earth/30: 2278 192 frrr
+:matt/earth/30: 2230 240 frrr
+:matt/earth/30: 2182 288 frrr
+:simon/wood/wood_h1: 2350 240 frr
+:simon/wood/wood_h1: 2254 192 frr
+:simon/wood/wood_h1: 2326 192 frrr
+:geoo/steel/dark_16x16o.S: 2544 368 frr
+:simon/tapir/032h: 2512 112 frrr
+:simon/tapir/032h: 2016 64 rrr
+:simon/tapir/032h: 1984 32 rrr
+:simon/wood/wood_h1: 2118 64 frrr
+:simon/wood/wood_h1: 2174 64 frr
+:simon/wood/wood_h1: 2126 64 frr
+:simon/wood/wood_h1: 2078 64 frr
+:simon/wood/wood_h1: 2062 64 frr
+:simon/wood/wood_h1: 2014 64 frr
+:simon/wood/wood_h1: 2190 64 frr
+:simon/wood/wood_h1: 2150 112 frrr
+:simon/wood/wood_h1: 2238 112 frr
+:simon/wood/wood_h1: 2190 112 frr
+:simon/wood/wood_h1: 2142 112 frr
+:simon/wood/wood_h1: 2126 112 frr
+:simon/wood/wood_h1: 2078 112 frr
+:simon/wood/wood_h1: 2254 112 frr
+:simon/wood/wood_h1: 2374 112 frrr
+:simon/wood/wood_h1: 2462 112 frr
+:simon/wood/wood_h1: 2414 112 frr
+:simon/wood/wood_h1: 2366 112 frr
+:simon/wood/wood_h1: 2350 112 frr
+:simon/wood/wood_h1: 2302 112 frr
+:simon/wood/wood_h1: 2494 112 frr
+:simon/wood/wood_h1: 2534 112 frrr
+:simon/wood/wood_h1: 2374 160 frrr
+:simon/wood/wood_h1: 2374 176 frrr
+:simon/wood/wood_h1: 2374 192 frrr
+:simon/wood/wood_h1: 2150 160 frrr
+:matt/earth/30: 2422 160 frr
+:geoo/steel/32x64o.S: 2528 240 frr
+:matt/earth/07: 2928 364 frr
+:matt/earth/10: 2826 288
+:matt/earth/07: 2966 346 frr
+:matt/earth/10: 2922 320 frr
+:geoo/steel/32x16o.S: 1984 32 frr
+:matt/earth/10: 1530 336 frr
+:matt/earth/10: 1498 288 frr
+:matt/earth/10: 1498 272 f
+:geoo/steel/32x64o.S: 1984 176 frr
+:matt/earth/10: 1520 304 frrr
+:matt/earth/10: 1632 304 fr
+:geoo/steel/16x32o.S: 2160 112 frr
+:geoo/steel/16x32o.S: 2160 144 frr
+:geoo/steel/16x32o.S: 2160 176 frrr
+:geoo/steel/16x32o.S: 2128 192 frrr
+:geoo/steel/16x32o.S: 2160 192 frrr
+:geoo/steel/16x32o.S: 2304 288 frrr
+:geoo/steel/16x32o.S: 2272 288 frrr
+:geoo/steel/16x32o.S: 2240 288 frrr
+:geoo/steel/16x32o.S: 2320 304 f
+:geoo/steel/16x32o.S: 2320 336 f
+:geoo/steel/16x32o.S: 2528 96 frrr
+:geoo/steel/32x64o.S: 2512 112 f
+:geoo/construction/stairs_rd_32.S: 2304 128 frr
+:geoo/construction/stairs_rd_32.S: 2240 160 frr
+:geoo/steel/32x64o.S: 1920 176 frrr
+:geoo/steel/32x16o.S: 1952 32 frr
+:geoo/steel/32x16o.S: 1920 32 frr
+:geoo/steel/32x16o.S: 1920 48 frr
+:geoo/steel/32x16o.S: 1920 64 frr
+:geoo/steel/32x16o.S: 3032 322 frr
+:geoo/steel/32x16o.S: 3064 322 frr
+:matt/earth/13: 2690 370
+:geoo/steel/dark_16x16o.S: 1984 368 frr
+:matt/earth/10: 1664 336 fr
+:matt/earth/05: 1734 368
+:matt/earth/10: 1664 352 fr
+:geoo/steel/32x64o.S: 1984 112 frr
+:geoo/steel/32x32o.S: 1600 32 frr
+:geoo/steel/32x32o.S: 1600 0 frr
+:geoo/steel/32x32o.S: 1632 0 frr
+:matt/earth/10: 3088 240 frrr
+:matt/earth/10: 3120 208 fr
+:matt/earth/15: 1520 270 frr
+:matt/earth/15: 1598 270
+:geoo/steel/32x16o.S: 1536 272 frr
+:geoo/steel/32x16o.S: 1568 272 frr
+:geoo/steel/32x16o.S: 1600 272 frr
+:geoo/steel/32x16o.S: 1632 272 frr
+:geoo/steel/32x16o.S: 1600 64 fr
+:geoo/steel/32x16o.S: 1584 64 fr
+:geoo/steel/32x16o.S: 1600 96 fr
+:geoo/steel/32x16o.S: 1584 96 fr
+:geoo/steel/32x16o.S: 1600 128 fr
+:geoo/steel/32x16o.S: 1584 128 fr
+:geoo/steel/32x16o.S: 1600 160 fr
+:geoo/steel/32x16o.S: 1584 160 fr
+:geoo/steel/32x16o.S: 1600 192 fr
+:geoo/steel/32x16o.S: 1584 192 fr
+:geoo/steel/32x16o.S: 1600 224 fr
+:geoo/steel/32x16o.S: 1584 224 fr
+:geoo/steel/32x16o.S: 1584 256 frr
+:geoo/steel/32x16o.S: 1600 288 fr
+:geoo/steel/32x16o.S: 1584 288 fr
+:geoo/steel/32x16o.S: 1600 320 fr
+:geoo/steel/32x16o.S: 1584 320 fr
+:geoo/steel/32x16o.S: 1600 352 fr
+:geoo/steel/32x16o.S: 1584 352 fr
+:geoo/steel/32x16o.S: 1584 384 frr

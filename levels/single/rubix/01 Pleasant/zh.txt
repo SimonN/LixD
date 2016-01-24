@@ -1,0 +1,101 @@
+$BUILT 2014-02-28 15:26:06
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Looping
+$HINT_ENGLISH The area under the hatch is actually the key to success of the level.
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 16
+#BACKGROUND_GREEN 143
+#BACKGROUND_BLUE 223
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 55
+#SPAWN_INTERVAL_FAST 4
+
+#FLOATER 20
+#BASHER 1
+#BUILDER 1
+#PLATFORMER 1
+#BLOCKER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/bricks/Hatch.H: 288 0
+
+:matt/bricks/Goal.G: 368 64
+
+:matt/water.W: 480 368
+:matt/water.W: 512 368
+:matt/water.W: 544 368
+:matt/water.W: 576 368
+:matt/water.W: 32 368
+:matt/water.W: 64 368
+:matt/water.W: 96 368
+:matt/water.W: 128 368
+:matt/water.W: 256 368
+:matt/water.W: 288 368
+:matt/water.W: 320 368
+:matt/water.W: 352 368
+
+:matt/bricks/03a: 208 336
+:matt/bricks/03a: 368 336
+:matt/bricks/03a: 208 240
+:matt/bricks/03a: 368 240
+:matt/bricks/03a: 208 176
+:matt/bricks/03a: 368 176
+:matt/bricks/03a: 208 112
+:matt/bricks/03a: 368 112
+:matt/bricks/04: 144 304
+:matt/bricks/04: 432 304 frr
+:matt/bricks/02: 144 368
+:matt/bricks/02: 432 368
+:matt/bricks/02a: 272 352
+:matt/bricks/02a: 304 352
+:matt/bricks/04: 80 240
+:matt/bricks/04: 16 176
+:matt/bricks/07: 496 240
+:matt/bricks/07: 496 240
+:matt/bricks/07: 80 176
+:matt/bricks/07: 144 112
+:matt/bricks/04: 432 112
+:matt/bricks/03: -32 0
+:matt/bricks/03: -32 128
+:matt/bricks/03: -32 192
+:matt/bricks/03: -32 256
+:matt/bricks/03: -32 320
+:matt/bricks/03: -32 384
+:matt/bricks/03: 608 0
+:matt/bricks/03: 608 64
+:matt/bricks/03: 608 256
+:matt/bricks/03: 608 320
+:matt/bricks/03: 608 384
+:matt/bricks/02a: 288 368
+:matt/bricks/03: 144 176
+:matt/bricks/03: 432 176
+:matt/bricks/07: 544 192
+:matt/bricks/04: 48 208
+:matt/bricks/03: 80 304
+:matt/bricks/03: 496 304
+:matt/bricks/03: 608 192
+:matt/bricks/04: 448 128
+:matt/bricks/03: 448 192
+:matt/bricks/03: 432 192
+:matt/bricks/12: 256 0
+:matt/bricks/12: 352 0
+:matt/bricks/12: 352 16
+:matt/bricks/12: 256 32
+:matt/bricks/01: 272 48
+:matt/bricks/01: 336 48
+:matt/bricks/01: 352 48

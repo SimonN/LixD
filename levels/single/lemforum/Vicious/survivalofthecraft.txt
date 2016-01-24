@@ -1,0 +1,129 @@
+$BUILT 2012-09-08 23:19:17
+$AUTHOR Michael S. Repton
+$GERMAN 
+$ENGLISH Survival of the Craftiest
+
+#SIZE_X 1120
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 80
+#REQUIRED 80
+#SPAWN_INTERVAL 36
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 2
+#JUMPER 2
+#CLIMBER 2
+#FLOATER 2
+#EXPLODER2 2
+#BLOCKER 2
+#BATTER 2
+#BUILDER 5
+#PLATFORMER 2
+#BASHER 2
+#MINER 2
+#DIGGER 2
+
+:matt/bricks/Hatch.H: 336 176
+
+:proxima/tile/goal.G: 960 272
+
+:simon/crystal.W: 640 352
+:simon/crystal.W: 688 352
+:simon/crystal.W: 864 352
+:simon/crystal.W: 912 352
+:proxima/flame.F: 592 288
+
+:proxima/tile/orange1: 0 112
+:proxima/tile/orange1: 0 176
+:proxima/tile/orange1: 0 240
+:proxima/tile/orange1: 0 304
+:proxima/tile/orange1: 0 368
+:proxima/tile/orange1: 192 112
+:proxima/tile/orange1: 192 176
+:proxima/tile/orange1: 192 240
+:proxima/tile/orange2s: 128 368
+:proxima/tile/orange2s: 160 368
+:proxima/tile/orange2s: 192 368
+:proxima/tile/orange2s: 224 368
+:proxima/tile/orange2s: 320 368
+:proxima/tile/orange2s: 352 368
+:proxima/tile/orange2s: 384 368
+:proxima/tile/orange2s: 416 368
+:proxima/tile/orange2s: 320 272
+:proxima/tile/orange2s: 352 272
+:proxima/tile/orange2s: 384 272
+:proxima/tile/orange2s: 320 112
+:proxima/tile/orange2s: 352 112
+:proxima/tile/orange2s: 384 112
+:proxima/tile/orange2s: 416 112
+:proxima/tile/64.S: 480 112
+:proxima/tile/64.S: 480 208
+:proxima/tile/64.S: 480 272
+:proxima/tile/64.S: 480 336
+:proxima/tile/orange1: 384 48
+:proxima/tile/orange1: 448 48
+:proxima/tile/64.S: 576 112
+:proxima/tile/32.S: 480 176
+:proxima/tile/32.S: 512 176
+:proxima/tile/orange1: 64 112
+:proxima/tile/orange1: 64 176
+:proxima/tile/orange1: 64 240
+:proxima/tile/orange1: 64 304
+:proxima/tile/orange1: 64 368
+:proxima/tile/orange1: 256 112
+:proxima/tile/orange1: 256 176
+:proxima/tile/orange1: 256 240
+:proxima/tile/orange2s: 256 368
+:proxima/tile/orange2s: 288 368
+:proxima/tile/orange2s: 448 112
+:proxima/tile/orange2s: 448 368
+:proxima/tile/orange1: 512 48
+:proxima/tile/orange1: 384 -16
+:proxima/tile/orange1: 448 -16
+:proxima/tile/orange1: 512 -16
+:proxima/tile/64.S: 640 112
+:proxima/tile/64.S: 576 336
+:proxima/tile/64.S: 704 112
+:proxima/tile/64.S: 736 336
+:proxima/tile/64.S: 736 272
+:proxima/tile/64.S: 832 112
+:proxima/tile/64.S: 896 112
+:proxima/tile/64.S: 960 112
+:proxima/tile/64.S: 1056 112
+:proxima/tile/64.S: 1056 208
+:proxima/tile/64.S: 1056 272
+:proxima/tile/64.S: 1056 336
+:proxima/tile/32.S: 1056 176
+:proxima/tile/32.S: 1088 176
+:proxima/tile/64.S: 960 336
+:proxima/tile/64.S: 800 336
+:proxima/tile/64.S: 800 272
+:proxima/tile/orange2s: 0 0
+:proxima/tile/orange2s: 32 0
+:proxima/tile/orange2s: 64 0
+:proxima/tile/orange2s: 96 0
+:proxima/tile/orange2s: 192 0
+:proxima/tile/orange2s: 224 0
+:proxima/tile/orange2s: 256 0
+:proxima/tile/orange2s: 288 0
+:proxima/tile/orange2s: 128 0
+:proxima/tile/orange2s: 160 0
+:proxima/tile/orange2s: 320 0
+:proxima/tile/orange2s: 352 0
+:proxima/tile/32.S: 544 112
+:proxima/tile/32.S: 544 144
+:proxima/tile/32.S: 1024 112
+:proxima/tile/32.S: 1024 144
+:proxima/tile/orange1: 1024 48
+:proxima/tile/orange1: 1088 48
+:proxima/tile/orange1: 1024 -16
+:proxima/tile/orange1: 1088 -16

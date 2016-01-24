@@ -1,0 +1,69 @@
+$BUILT 2012-06-04 18:23:59
+$AUTHOR minimac
+$GERMAN
+$ENGLISH Blocked by a Snowball
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 50
+#SPAWN_INTERVAL 50
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 1
+#JUMPER 2
+#CLIMBER 3
+#FLOATER 4
+#RUNNER 5
+#BLOCKER 6
+#BATTER 7
+#BUILDER 8
+#PLATFORMER 9
+#BASHER 10
+#MINER 11
+#DIGGER 12
+
+:matt/winter/Hatch.H: 162 210
+
+:matt/winter/Goal.G: 216 86
+
+:matt/water.W: 64 368
+:matt/water.W: 0 368
+:matt/water.W: 32 368
+
+:matt/winter/09b: 352 120 frr
+:matt/winter/00: 216 287
+:matt/winter/01: 188 324
+:matt/winter/04: 130 336
+:matt/winter/10: 240 254
+:matt/winter/11: 408 304
+:matt/winter/14: 450 354 rrr
+:matt/winter/11: 498 336
+:matt/winter/15: 342 338
+:matt/winter/14: 216 354
+:matt/winter/05: 546 -20
+:matt/winter/02: 544 180
+:matt/winter/05: 540 216
+:matt/winter/05: 564 190
+:matt/winter/05: 224 334 rrr
+:matt/winter/05: 318 354 rrr
+:matt/winter/05: 94 362 rrr
+:matt/winter/09a: 278 208 n
+:matt/winter/07: 94 290
+:matt/winter/06: 94 354
+:matt/winter/03: 236 136 rr
+:matt/winter/01: 360 148
+:matt/winter/01: 398 180 rr
+:matt/winter/18: 436 296
+:matt/winter/03: 110 130 rr
+:matt/winter/05: 106 -64 frr
+:matt/winter/01: 80 -28

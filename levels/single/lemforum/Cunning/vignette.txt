@@ -1,0 +1,177 @@
+$BUILT                                             2012-02-04 11:42:40
+$AUTHOR                                                        Michael S. Repton
+$GERMAN                                                               
+$ENGLISH                                                      Vignette
+
+#SIZE_X                                                           1280
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                           -20
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                             0
+#INITIAL                                                           100
+#REQUIRED                                                          100
+#SPAWN_INTERVAL                                                      8
+
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#BLOCKER                                                             2
+#BUILDER                                                             5
+#NOTHING                                                             0
+#NOTHING                                                             0
+#DIGGER                                                              2
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:matt/winter/Hatch.H:                        384        96
+
+:matt/winter/Goal.G:                         840        72
+
+:simon/water.W:                                   864       352
+:simon/water.W:                                   912       352
+:simon/water.W:                                   816       352
+:simon/water.W:                                   768       352
+:simon/water.W:                                   720       352
+:simon/water.W:                                   672       352
+:simon/water.W:                                   624       352
+:simon/water.W:                                   576       352
+:simon/water.W:                                   528       352
+:simon/water.W:                                   480       352
+:simon/water.W:                                   432       352
+:simon/water.W:                                   384       352
+:simon/water.W:                                   336       352
+:simon/water.W:                                   288       352
+
+:matt/winter/10:                              16       352
+:matt/winter/04:                             208       352     frr
+:matt/winter/06:                             240       288
+:matt/winter/17:                             144       336     fr
+:matt/winter/03:                             384       176
+:matt/winter/00:                             336       176
+:matt/winter/15:                             272       192
+:matt/earth/10:                              192       208     frr
+:matt/earth/10:                              320       240
+:matt/earth/10:                              384       192     rr
+:matt/winter/06:                             640       304
+:matt/winter/11:                             592       208
+:matt/earth/10:                              480       224
+:matt/winter/06:                             368       352
+:matt/winter/06:                             528       336
+:matt/winter/06:                             640       368
+:matt/winter/14:                             208       208
+:matt/winter/01:                             224       192     frr
+:matt/winter/15:                             496       176
+:matt/winter/01:                             560       192
+:matt/winter/13:                             640       240     fr
+:matt/winter/01:                             624       224
+:matt/winter/15:                             744       152     f
+:matt/winter/06:                             856       216
+:matt/winter/03:                             808       136
+:matt/winter/05:                             784       120     rrr
+:matt/earth/10:                              744       136
+:matt/winter/03:                             760       136     frr
+:matt/winter/10:                             904       104
+:matt/winter/16:                             992        32
+:matt/earth/10:                              904       120
+:matt/winter/17:                            1032        48
+:matt/earth/04:                             1000        72
+:matt/winter/06:                            1200       248
+:matt/winter/06:                            1160       240
+:matt/winter/06:                            1240       280
+:matt/winter/10:                            1064       256
+:matt/earth/04:                             1032       168
+:matt/earth/10:                             1048       296
+:matt/winter/17:                            1232       312
+:matt/earth/10:                             1096       344     frr
+:matt/earth/10:                              920       168
+:matt/earth/04:                              968       232
+:matt/earth/04:                             1032       264
+:matt/earth/10:                              888       336
+:matt/winter/06:                             792       248
+:matt/winter/06:                             792       312
+:matt/winter/06:                             856       280
+:matt/winter/06:                             856       344
+:matt/winter/06:                             792       376
+:matt/winter/00:                            1016        64
+:matt/winter/14:                             248       336     frr
+:matt/winter/16:                             736       312
+:matt/winter/04:                             696       344
+:matt/winter/07:                              56         8     f
+:matt/winter/07:                              72        32     f
+:matt/winter/07:                              80        16     f
+:matt/winter/07:                             112        48     f
+:matt/winter/07:                             128        56     f
+:matt/winter/07:                             144        24     f
+:matt/winter/07:                             152        40     f
+:matt/winter/07:                             168        24     f
+:matt/winter/07:                              32        -8     f
+:matt/winter/07:                             192        32     f
+:matt/winter/07:                             208         8     f
+:matt/winter/10:                              16       -48     rr
+:matt/winter/07:                             216        24     f
+:matt/winter/07:                             232         8     f
+:matt/winter/07:                             264         8     f
+:matt/winter/07:                             272        24     f
+:matt/winter/07:                             280        32     f
+:matt/winter/07:                             296         8     f
+:matt/winter/07:                             320        16     f
+:matt/winter/07:                             328         0     f
+:matt/winter/07:                             352        24     f
+:matt/winter/10:                             184       -64
+:matt/winter/07:                             368         8     f
+:matt/winter/07:                             392         8     f
+:matt/winter/07:                             400        24     f
+:matt/winter/07:                             416         8     f
+:matt/winter/07:                             440        24     f
+:matt/winter/07:                             456        40     f
+:matt/winter/07:                             472        24     f
+:matt/winter/07:                             480        32     f
+:matt/winter/07:                             496        16     f
+:matt/winter/07:                             520        40     f
+:matt/winter/07:                             536        32     f
+:matt/winter/05:                             360       -16     rrr
+:matt/winter/07:                             568        40     f
+:matt/winter/04:                             568       -64
+:matt/winter/07:                             736        56     f
+:matt/winter/07:                             752        32     f
+:matt/winter/07:                             784        16     f
+:matt/winter/07:                             800        32     f
+:matt/winter/07:                             832        24     f
+:matt/winter/07:                             808        40     f
+:matt/winter/10:                             648       -40
+:matt/winter/07:                             856         0     f
+:matt/winter/07:                             880       -16     f
+:matt/winter/07:                             888        -8     f
+:matt/winter/07:                             912         8     f
+:matt/winter/07:                             928        24     f
+:matt/winter/07:                             960        16     f
+:matt/winter/07:                             936        16     f
+:matt/winter/07:                             968         8     f
+:matt/winter/07:                             984        24     f
+:matt/winter/07:                            1000        -8     f
+:matt/winter/10:                             808       -64     frr
+:matt/winter/07:                             552        64     f
+:matt/winter/07:                             592        64     f
+:matt/winter/07:                             608        72     f
+:matt/winter/07:                             616        72     f
+:matt/winter/07:                             632        96     f
+:matt/winter/07:                             648        80     f
+:matt/winter/07:                             672        80     f
+:matt/winter/07:                             696        72     f
+:matt/winter/07:                             712        80     f
+:matt/winter/10:                             536         8     rr
+:matt/winter/06:                            1200       120
+:matt/winter/09a:                           1176        64
+:matt/winter/06:                            1200       184
+:matt/winter/06:                            1160       176
+:matt/winter/09b:                           1152       152
+:matt/winter/06:                            1240       216
+:matt/winter/09b:                           1232       192

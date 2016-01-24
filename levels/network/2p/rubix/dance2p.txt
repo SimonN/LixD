@@ -1,0 +1,106 @@
+$BUILT 2014-06-06 10:14:12
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH The Safety Dance(2p)
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 40
+#INITIAL 85
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 10
+#FLOATER 10
+#WALKER 40
+#JUMPER 40
+#RUNNER 10
+#BLOCKER 5
+#PLATFORMER 50
+#MINER 40
+#BATTER 25
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/carnival/Hatch.H: 16 0
+:matt/carnival/Hatch.H: 560 0 r
+
+:matt/carnival/Goal.G: 48 304
+:matt/carnival/Goal.G: 528 304
+
+:matt/carnival/08: 0 368
+:matt/carnival/08: 48 368
+:matt/carnival/08: 80 368
+:matt/carnival/08: 128 368
+:matt/carnival/08: 16 336
+:matt/carnival/08: 112 336
+:matt/carnival/08: 480 368
+:matt/carnival/08: 528 368
+:matt/carnival/08: 560 368
+:matt/carnival/08: 608 368
+:matt/carnival/08: 496 336
+:matt/carnival/08: 592 336
+:matt/carnival/17: 176 176
+:matt/carnival/17: 400 176
+:matt/carnival/17: 176 208
+:matt/carnival/17: 400 208
+:matt/carnival/17: 176 272
+:matt/carnival/17: 400 272
+:matt/carnival/17: 176 304
+:matt/carnival/17: 400 304
+:geoo/steel/dark_48x32o.S: 208 48
+:geoo/steel/dark_48x32o.S: 160 48
+:geoo/steel/dark_48x32o.S: 384 48
+:geoo/steel/dark_48x32o.S: 432 48
+:geoo/steel/dark_32x32o.S: 480 48
+:geoo/steel/dark_32x32o.S: 128 48
+:geoo/steel/dark_48x32o.S: 32 368
+:geoo/steel/dark_48x32o.S: 80 368
+:geoo/steel/dark_48x32o.S: 512 368
+:geoo/steel/dark_48x32o.S: 560 368
+:geoo/steel/dark_32x32o.S: 592 336
+:geoo/steel/dark_32x32o.S: 496 336
+:geoo/steel/dark_32x32o.S: 112 336
+:geoo/steel/dark_32x32o.S: 16 336
+:matt/carnival/08: 0 80
+:matt/carnival/08: 48 80
+:matt/carnival/08: 80 80
+:matt/carnival/08: 0 48
+:matt/carnival/08: 96 48
+:geoo/steel/dark_48x32o.S: 32 80
+:geoo/steel/dark_48x32o.S: 80 80
+:geoo/steel/dark_32x32o.S: 96 48
+:geoo/steel/dark_32x32o.S: 0 48
+:matt/carnival/08: 528 80
+:matt/carnival/08: 560 80
+:matt/carnival/08: 608 80
+:matt/carnival/08: 512 48
+:matt/carnival/08: 608 48
+:geoo/steel/dark_48x32o.S: 512 80
+:geoo/steel/dark_48x32o.S: 560 80
+:geoo/steel/dark_32x32o.S: 608 48
+:geoo/steel/dark_32x32o.S: 512 48
+:matt/carnival/08: 32 112
+:matt/carnival/08: 64 112
+:matt/carnival/08: 96 112
+:matt/carnival/08: 512 112
+:matt/carnival/08: 544 112
+:matt/carnival/08: 576 112
+:matt/carnival/08: 0 112
+:matt/carnival/08: 608 112
+:matt/carnival/19: 176 240
+:matt/carnival/19: 400 240
+:matt/carnival/08: 400 368
+:matt/carnival/08: 208 368
+:matt/carnival/12: 448 304 d
+:matt/carnival/12: 416 320 d
+:matt/carnival/12: 176 304 d
+:matt/carnival/12: 208 320 d

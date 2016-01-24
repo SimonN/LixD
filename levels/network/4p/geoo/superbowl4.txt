@@ -1,0 +1,321 @@
+$BUILT                                             2011-09-02 11:19:08
+$AUTHOR                                                           geoo
+$GERMAN                                                               
+$ENGLISH                                                     Superbowl
+
+#SIZE_X                                                           1024
+#SIZE_Y                                                            400
+#TORUS_X                                                             1
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                           380
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            20
+#INITIAL                                                            30
+#REQUIRED                                                           20
+#RATE                                                               50
+
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#BATTER                                                             80
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:geoo/construction/Hatch.H:                       200       240     r
+:geoo/construction/Hatch.H:                       456       240     r
+:geoo/construction/Hatch.H:                       712       240     r
+:geoo/construction/Hatch.H:                       968       240     r
+:geoo/construction/Hatch.H:                       488       240
+:geoo/construction/Hatch.H:                       744       240
+:geoo/construction/Hatch.H:                      1000       240
+:geoo/construction/Hatch.H:                       232       240
+
+:geoo/construction/Goal2.G:                       840       192
+:geoo/construction/Goal2.G:                        72       192
+:geoo/construction/Goal2.G:                       328       192
+:geoo/construction/Goal2.G:                       584       192
+
+:geoo/construction/Laser_hz_16.F:                 846        86
+:geoo/construction/Laser_hz_16.F:                 862        86
+:geoo/construction/Laser_vr_16.F:                 840        80
+:geoo/construction/Laser_vr_16.F:                 872        80
+:geoo/construction/Laser_vr_16.F:                 840        64
+:geoo/construction/Laser_vr_16.F:                 872        64
+:geoo/construction/Laser_vr_16.F:                 840        48
+:geoo/construction/Laser_vr_16.F:                 872        48
+:geoo/construction/Laser_hz_16.F:                 846        42
+:geoo/construction/Laser_hz_16.F:                 862        42
+:geoo/construction/Laser_hz_16.F:                 894        86
+:geoo/construction/Laser_vr_16.F:                 560        64
+:geoo/construction/Laser_vr_16.F:                 560        48
+:geoo/construction/Laser_vr_16.F:                 888        80
+:geoo/construction/Laser_vr_16.F:                 888        64
+:geoo/construction/Laseremit_vrt_16.F:            888        48
+:geoo/construction/Laser_hz_16.F:                 910        86
+:geoo/construction/Laser_vr_16.F:                 904        80
+:geoo/construction/Laser_vr_16.F:                 904        64
+:geoo/construction/Laseremit_vrt_16.F:            904        48
+:geoo/construction/Laser_vr_16.F:                 920        80
+:geoo/construction/Laser_vr_16.F:                 920        64
+:geoo/construction/Laseremit_vrt_16.F:            920        48
+:geoo/construction/Laseremit_hzr_16.F:            570        42
+:geoo/construction/Laseremit_hzl_16.F:            550        42
+:geoo/construction/Laseremit_vrb_16.F:            560        80
+:geoo/construction/Laser_hz_16.F:                 118        86
+:geoo/construction/Laser_vr_16.F:                 160        64
+:geoo/construction/Laser_vr_16.F:                 192        64
+:geoo/construction/Laser_vr_16.F:                 160        48
+:geoo/construction/Laser_vr_16.F:                 192        48
+:geoo/construction/Laser_hz_16.F:                 166        42
+:geoo/construction/Laser_hz_16.F:                 182        42
+:geoo/construction/Laser_vr_16.F:                 112        80
+:geoo/construction/Laser_vr_16.F:                 112        64
+:geoo/construction/Laseremit_vrt_16.F:            112        48
+:geoo/construction/Laseremit_hzr_16.F:            134        86
+:geoo/construction/Laser_hz_16.F:                 166        62
+:geoo/construction/Laser_hz_16.F:                 182        62
+:geoo/construction/Laseremit_vrb_16.F:            160        80
+:geoo/construction/Laseremit_vrb_16.F:            192        80
+:geoo/construction/Laser_vr_16.F:                 216        48
+:geoo/construction/Laser_vr_16.F:                 216        64
+:geoo/construction/Laser_hz_16.F:                 222        42
+:geoo/construction/Laseremit_hzr_16.F:            234        42
+:geoo/construction/Laser_vr_16.F:                 216        80
+:geoo/construction/Laser_hz_16.F:                 222        86
+:geoo/construction/Laseremit_hzr_16.F:            234        86
+:geoo/construction/Laser_vr_16.F:                  64        64
+:geoo/construction/Laser_vr_16.F:                  96        56
+:geoo/construction/Laser_vr_16.F:                  64        48
+:geoo/construction/Laser_vr_16.F:                  96        48
+:geoo/construction/Laser_hz_16.F:                  70        42
+:geoo/construction/Laser_hz_16.F:                  86        42
+:geoo/construction/Laser_hz_16.F:                  70        62
+:geoo/construction/Laser_hz_16.F:                  86        62
+:geoo/construction/Laseremit_vrb_16.F:             64        80
+:geoo/construction/Laser_vr_16.F:                 448        48
+:geoo/construction/Laser_hz_16.F:                 454        62
+:geoo/construction/Laser_vr_16.F:                 448        64
+:geoo/construction/Laser_hz_16.F:                 454        42
+:geoo/construction/Laser_vr_16.F:                 448        80
+:geoo/construction/Laser_hz_16.F:                 454        86
+:geoo/construction/Laser_hz_16.F:                 470        62
+:geoo/construction/Laser_hz_16.F:                 462        42
+:geoo/construction/Laser_hz_16.F:                 470        86
+:geoo/construction/Laser_vr_16.F:                 472        48
+:geoo/construction/Laser_vr_16.F:                 480        68
+:geoo/construction/Laser_vr_16.F:                 480        80
+:geoo/construction/Laser_vr_16.F:                 472        52
+:geoo/construction/Laser_vr_16.F:                 496        64
+:geoo/construction/Laser_vr_16.F:                 528        64
+:geoo/construction/Laser_vr_16.F:                 496        48
+:geoo/construction/Laser_vr_16.F:                 528        48
+:geoo/construction/Laser_hz_16.F:                 502        42
+:geoo/construction/Laser_hz_16.F:                 518        42
+:geoo/construction/Laser_hz_16.F:                 502        62
+:geoo/construction/Laser_hz_16.F:                 518        62
+:geoo/construction/Laseremit_vrb_16.F:            496        80
+:geoo/construction/Laseremit_vrb_16.F:            528        80
+:geoo/construction/Laser_vr_16.F:                 592        48
+:geoo/construction/Laser_hz_16.F:                 598        62
+:geoo/construction/Laser_vr_16.F:                 592        56
+:geoo/construction/Laser_hz_16.F:                 598        42
+:geoo/construction/Laser_hz_16.F:                 614        62
+:geoo/construction/Laser_hz_16.F:                 606        42
+:geoo/construction/Laser_hz_16.F:                 614        86
+:geoo/construction/Laser_vr_16.F:                 624        80
+:geoo/construction/Laser_vr_16.F:                 624        68
+:geoo/construction/Laseremit_hzr_16.F:            618        42
+:geoo/construction/Laseremit_hzl_16.F:            598        86
+:geoo/construction/Laser_vr_16.F:                 264        48
+:geoo/construction/Laser_vr_16.F:                 264        64
+:geoo/construction/Laser_hz_16.F:                 270        42
+:geoo/construction/Laseremit_hzr_16.F:            282        42
+:geoo/construction/Laser_vr_16.F:                 264        80
+:geoo/construction/Laser_hz_16.F:                 270        86
+:geoo/construction/Laseremit_hzr_16.F:            282        86
+:geoo/construction/Laser_hz_16.F:                 270        62
+:geoo/construction/Laseremit_hzr_16.F:            282        62
+:geoo/construction/Laser_hz_16.F:                 798        42
+:geoo/construction/Laser_vr_16.F:                 792        64
+:geoo/construction/Laser_hz_16.F:                 814        42
+:geoo/construction/Laser_vr_16.F:                 824        64
+:geoo/construction/Laser_vr_16.F:                 824        48
+:geoo/construction/Laser_vr_16.F:                 792        48
+:geoo/construction/Laseremit_vrb_16.F:            792        80
+:geoo/construction/Laseremit_vrb_16.F:            824        80
+
+:geoo/construction/wall/big_128x128:              160       272
+:geoo/construction/wall/big_128x128:              672       272
+:geoo/construction/wall/big_128x128:              800       272
+:geoo/construction/wall/big_128x128:              928       272
+:geoo/construction/wall/big_128x128:               32       272
+:geoo/construction/rod_steel/straight32.S:        840       256
+:geoo/construction/rod_steel/edge_ru.S:           832       256
+:geoo/construction/rod_steel/straight32.S:        872       256
+:geoo/construction/rod_steel/end_rect.S:          832       240     fr
+:geoo/construction/rod_steel/straight8.S:         832       248     rrr
+:geoo/construction/rod_steel/end_rect.S:          904       240     fr
+:geoo/construction/rod_steel/straight8.S:         904       248     rrr
+:geoo/construction/rod_steel/edge_lu.S:           904       256
+:geoo/construction/rod_steel/straight32.S:        808       104
+:geoo/construction/rod_steel/edge_ru.S:           768       104
+:geoo/construction/rod_steel/straight32.S:        840       104
+:geoo/construction/rod_steel/edge_lu.S:           952       104
+:geoo/construction/rod_steel/straight32.S:        776       104
+:geoo/construction/rod_steel/straight32.S:        872       104
+:geoo/construction/rod_steel/straight32.S:        904       104
+:geoo/construction/rod_steel/straight32.S:        952        72     rrr
+:geoo/construction/rod_steel/straight32.S:        952        40     rrr
+:geoo/construction/rod_steel/straight32.S:        768        72     rrr
+:geoo/construction/rod_steel/straight32.S:        768        40     rrr
+:geoo/construction/rod_steel/edge_rd.S:           768        32
+:geoo/construction/rod_steel/edge_ld.S:           952        32
+:geoo/construction/rod_steel/straight32.S:        808        32
+:geoo/construction/rod_steel/straight32.S:        840        32
+:geoo/construction/rod_steel/straight32.S:        776        32
+:geoo/construction/rod_steel/straight32.S:        872        32
+:geoo/construction/rod_steel/straight32.S:        904        32
+:geoo/construction/rod_steel/straight32.S:        920        32
+:geoo/construction/rod_steel/straight32.S:        920       104
+:geoo/construction/wall/small_64x64:              656        64
+:geoo/construction/wall/small_64x32:              752         0
+:geoo/construction/wall/small_64x32:              816         0
+:geoo/construction/wall/small_64x32:              880         0
+:geoo/construction/wall/small_brick1:             736       112
+:geoo/construction/wall/small_brick1:             768       112
+:geoo/construction/wall/small_brick1:             832       112
+:geoo/construction/wall/small_brick1:             864       112
+:geoo/construction/wall/small_brick1:             928       112
+:geoo/construction/wall/small_brick2:             800       112
+:geoo/construction/wall/small_brick2:             896       112
+:geoo/construction/wall/big_128x128:              416       272
+:geoo/construction/wall/big_128x128:              544       272
+:geoo/construction/rod_steel/straight32.S:         72       256
+:geoo/construction/rod_steel/edge_ru.S:            64       256
+:geoo/construction/rod_steel/straight32.S:        104       256
+:geoo/construction/rod_steel/end_rect.S:           64       240     fr
+:geoo/construction/rod_steel/straight8.S:          64       248     rrr
+:geoo/construction/rod_steel/end_rect.S:          136       240     fr
+:geoo/construction/rod_steel/straight8.S:         136       248     rrr
+:geoo/construction/rod_steel/edge_lu.S:           136       256
+:geoo/construction/rod_steel/straight32.S:        584       256
+:geoo/construction/rod_steel/edge_ru.S:           576       256
+:geoo/construction/rod_steel/straight32.S:        616       256
+:geoo/construction/rod_steel/end_rect.S:          576       240     fr
+:geoo/construction/rod_steel/straight8.S:         576       248     rrr
+:geoo/construction/rod_steel/end_rect.S:          648       240     fr
+:geoo/construction/rod_steel/straight8.S:         648       248     rrr
+:geoo/construction/rod_steel/edge_lu.S:           648       256
+:geoo/construction/rod_steel/straight32.S:        472       104
+:geoo/construction/rod_steel/edge_ru.S:           432       104
+:geoo/construction/rod_steel/straight32.S:        504       104
+:geoo/construction/rod_steel/edge_lu.S:           648       104
+:geoo/construction/rod_steel/straight32.S:        440       104
+:geoo/construction/rod_steel/straight32.S:        536       104
+:geoo/construction/rod_steel/straight32.S:        568       104
+:geoo/construction/rod_steel/straight32.S:        648        72     rrr
+:geoo/construction/rod_steel/straight32.S:        648        40     rrr
+:geoo/construction/rod_steel/straight32.S:        432        72     rrr
+:geoo/construction/rod_steel/straight32.S:        432        40     rrr
+:geoo/construction/rod_steel/edge_rd.S:           432        32
+:geoo/construction/rod_steel/edge_ld.S:           648        32
+:geoo/construction/rod_steel/straight32.S:        472        32
+:geoo/construction/rod_steel/straight32.S:        504        32
+:geoo/construction/rod_steel/straight32.S:        440        32
+:geoo/construction/rod_steel/straight32.S:        536        32
+:geoo/construction/rod_steel/straight32.S:        568        32
+:geoo/construction/rod_steel/straight32.S:        584        32
+:geoo/construction/rod_steel/straight32.S:        584       104
+:geoo/construction/wall/big_128x128:              288       272
+:geoo/construction/rod_steel/straight32.S:        328       256
+:geoo/construction/rod_steel/edge_ru.S:           320       256
+:geoo/construction/rod_steel/straight32.S:        360       256
+:geoo/construction/rod_steel/end_rect.S:          320       240     fr
+:geoo/construction/rod_steel/straight8.S:         320       248     rrr
+:geoo/construction/rod_steel/end_rect.S:          392       240     fr
+:geoo/construction/rod_steel/straight8.S:         392       248     rrr
+:geoo/construction/rod_steel/edge_lu.S:           392       256
+:geoo/construction/rod_steel/straight32.S:        120       104
+:geoo/construction/rod_steel/edge_ru.S:            48       104
+:geoo/construction/rod_steel/straight32.S:        152       104
+:geoo/construction/rod_steel/edge_lu.S:           312       104
+:geoo/construction/rod_steel/straight32.S:         88       104
+:geoo/construction/rod_steel/straight32.S:        184       104
+:geoo/construction/rod_steel/straight32.S:        216       104
+:geoo/construction/rod_steel/straight32.S:        312        72     rrr
+:geoo/construction/rod_steel/straight32.S:        312        40     rrr
+:geoo/construction/rod_steel/straight32.S:         48        72     rrr
+:geoo/construction/rod_steel/straight32.S:         48        40     rrr
+:geoo/construction/rod_steel/edge_rd.S:            48        32
+:geoo/construction/rod_steel/edge_ld.S:           312        32
+:geoo/construction/rod_steel/straight32.S:        120        32
+:geoo/construction/rod_steel/straight32.S:        152        32
+:geoo/construction/rod_steel/straight32.S:         88        32
+:geoo/construction/rod_steel/straight32.S:        184        32
+:geoo/construction/rod_steel/straight32.S:        216        32
+:geoo/construction/rod_steel/straight32.S:        232        32
+:geoo/construction/rod_steel/straight32.S:        232       104
+:geoo/construction/rod_steel/straight32.S:         56        32
+:geoo/construction/rod_steel/straight32.S:         56       104
+:geoo/construction/rod_steel/straight32.S:        264        32
+:geoo/construction/rod_steel/straight32.S:        280        32
+:geoo/construction/rod_steel/straight32.S:        264       104
+:geoo/construction/rod_steel/straight32.S:        280       104
+:geoo/construction/rod_steel/straight32.S:        616       104
+:geoo/construction/rod_steel/straight32.S:        616        32
+:geoo/construction/wall/small_64x64:              704        48
+:geoo/construction/wall/small_brick1:             672       112
+:geoo/construction/wall/small_64x64:              704       -16
+:geoo/construction/wall/small_brick1:             640       112
+:geoo/construction/wall/small_64x32:               48         0
+:geoo/construction/wall/small_64x32:              112         0
+:geoo/construction/wall/small_64x32:              176         0
+:geoo/construction/wall/small_64x64:             1008         0
+:geoo/construction/wall/small_64x64:              960       -16
+:geoo/construction/wall/small_64x64:              960        48
+:geoo/construction/wall/small_brick1:              32       112
+:geoo/construction/wall/small_64x64:              992        48
+:geoo/construction/wall/small_64x64:             1008        64
+:geoo/construction/wall/small_brick1:             992       112
+:geoo/construction/wall/small_brick1:             960       112
+:geoo/construction/wall/small_brick1:              64       112
+:geoo/construction/wall/small_brick1:             128       112
+:geoo/construction/wall/small_brick1:             160       112
+:geoo/construction/wall/small_brick1:             224       112
+:geoo/construction/wall/small_brick2:              96       112
+:geoo/construction/wall/small_brick2:             192       112
+:geoo/construction/wall/small_64x32:              432         0
+:geoo/construction/wall/small_64x32:              496         0
+:geoo/construction/wall/small_64x32:              560         0
+:geoo/construction/wall/small_64x64:              368         0
+:geoo/construction/wall/small_64x64:              320       -16
+:geoo/construction/wall/small_64x64:              320        48
+:geoo/construction/wall/small_brick1:             416       112
+:geoo/construction/wall/small_64x64:              352        48
+:geoo/construction/wall/small_64x64:              368        64
+:geoo/construction/wall/small_brick1:             352       112
+:geoo/construction/wall/small_brick1:             320       112
+:geoo/construction/wall/small_brick1:             448       112
+:geoo/construction/wall/small_brick1:             512       112
+:geoo/construction/wall/small_brick1:             544       112
+:geoo/construction/wall/small_brick1:             608       112
+:geoo/construction/wall/small_brick2:             480       112
+:geoo/construction/wall/small_brick2:             576       112
+:geoo/construction/wall/small_64x32:              624         0
+:geoo/construction/wall/small_64x32:              240         0
+:geoo/construction/wall/small_brick1:             256       112
+:geoo/construction/wall/small_brick1:             288       112
+:geoo/construction/wall/small_64x32:              272         0
+:geoo/construction/wall/small_64x64:              656         0
+:geoo/construction/wall/small_brick1:             704       112
+:geoo/construction/wall/small_64x32:              912         0

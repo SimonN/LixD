@@ -1,0 +1,79 @@
+$BUILT 2014-03-20 23:13:05
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Trololo
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 30
+#INITIAL 100
+#REQUIRED 27
+#SPAWN_INTERVAL 20
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 33
+#FLOATER 33
+#RUNNER 33
+#WALKER 333
+#JUMPER 333
+#PLATFORMER 333
+#CUBER 7
+#BLOCKER 7
+#EXPLODER2 7
+#BATTER 77
+#MINER 77
+#DIGGER 77
+
+:geoo/construction/Hatch.H: 160 80
+:geoo/construction/Hatch.H: 448 80 r
+
+:geoo/construction/Goal2.G: 0 304
+:geoo/construction/Goal2.G: 576 304
+
+:geoo/sandstone/brazier.F: 80 336
+:geoo/sandstone/brazier.F: 112 336
+:geoo/sandstone/brazier.F: 496 336
+:geoo/sandstone/brazier.F: 528 336
+:matt/water.W: 272 320
+:matt/water.W: 272 336
+:matt/water.W: 304 320
+:matt/water.W: 304 336
+:matt/water.W: 336 320
+:matt/water.W: 336 336
+
+:geoo/steel/dark_64x64o.S: 368 80
+:geoo/steel/dark_64x64o.S: 496 80
+:geoo/steel/dark_64x32o.S: 432 112
+:geoo/steel/dark_64x64o.S: 80 80
+:geoo/steel/dark_64x64o.S: 208 80
+:geoo/steel/dark_64x32o.S: 144 112
+:geoo/steel/dark_64x64o.S: 0 208
+:geoo/steel/dark_64x64o.S: 208 144
+:geoo/steel/dark_64x64o.S: 208 304
+:geoo/steel/dark_64x64o.S: 144 304
+:geoo/steel/dark_64x64o.S: 208 208
+:geoo/steel/dark_64x32o.S: 0 368
+:geoo/steel/dark_64x32o.S: 64 368
+:geoo/steel/dark_64x32o.S: 128 368
+:geoo/steel/dark_64x32o.S: 192 368
+:geoo/steel/dark_64x32o.S: 208 272
+:geoo/steel/dark_64x64o.S: 368 144
+:geoo/steel/dark_64x64o.S: 368 208
+:geoo/steel/dark_64x32o.S: 368 272
+:geoo/steel/dark_64x64o.S: 432 304
+:geoo/steel/dark_64x64o.S: 368 304
+:geoo/steel/dark_64x32o.S: 384 368
+:geoo/steel/dark_64x32o.S: 448 368
+:geoo/steel/dark_64x32o.S: 512 368
+:geoo/steel/dark_64x32o.S: 576 368
+:geoo/steel/dark_64x64o.S: 576 208
+:geoo/steel/dark_64x32o.S: 256 368
+:geoo/steel/dark_64x32o.S: 320 368

@@ -1,0 +1,282 @@
+$BUILT                                             2012-01-20 16:22:04
+$AUTHOR                                                   Clam Spammer
+$GERMAN                                                               
+$ENGLISH                                         Tapirmid Blunder (4P)
+
+#SIZE_X                                                           1536
+#SIZE_Y                                                            384
+#TORUS_X                                                             1
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                           348
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                    64
+
+#SECONDS                                                            60
+#INITIAL                                                            80
+#REQUIRED                                                           80
+#SPAWN_INTERVAL                                                     20
+
+#NOTHING                                                             0
+#FLOATER                                                            10
+#RUNNER                                                             10
+#WALKER                                                             40
+#JUMPER                                                             30
+#BATTER                                                             20
+#EXPLODER2                                                          20
+#BLOCKER                                                            10
+#BUILDER                                                            40
+#PLATFORMER                                                          5
+#BASHER                                                             40
+#NOTHING                                                             0
+
+:matt/marble/Hatch.H:                        256       -12
+:matt/marble/Hatch.H:                        960       -12     r
+:matt/marble/Hatch.H:                        192       -12     r
+:matt/marble/Hatch.H:                       1024       -12
+
+:simon/tapir/goal.G:                             1028       304
+:simon/tapir/goal.G:                              188       304
+:simon/tapir/goal.G:                              956       304
+:simon/tapir/goal.G:                              260       304
+
+:matt/water.W:                                    576       352
+:matt/water.W:                                    608       352
+:matt/water.W:                                    640       352
+:matt/water.W:                                    672       352
+:matt/water.W:                                   1344       352
+:matt/water.W:                                   1376       352
+:matt/water.W:                                   1408       352
+:matt/water.W:                                   1440       352
+
+:simon/tapir/032b:                                288        96
+:simon/tapir/032b:                                320       128
+:simon/tapir/032b:                                352       160
+:simon/tapir/032b:                                384       192
+:simon/tapir/032b:                                416       224
+:simon/tapir/032b:                                448       256
+:simon/tapir/032b:                                480       288
+:simon/tapir/032b:                                512       320
+:geoo/steel/dark_64x32o.S:                          0       352
+:geoo/steel/dark_64x32o.S:                         64       352
+:geoo/steel/dark_64x32o.S:                        128       352
+:geoo/steel/dark_64x32o.S:                        192       352
+:geoo/steel/dark_64x32o.S:                        256       352
+:geoo/steel/dark_64x32o.S:                        320       352
+:geoo/steel/dark_64x32o.S:                        384       352
+:geoo/steel/dark_64x32o.S:                        448       352
+:geoo/steel/dark_64x32o.S:                        512       352
+:simon/tapir/032a:                                192        96
+:simon/tapir/032a:                                160       128
+:simon/tapir/032a:                                128       160
+:simon/tapir/032a:                                 96       192
+:simon/tapir/032a:                                 64       224
+:simon/tapir/032a:                                 32       256
+:simon/tapir/032a:                                  0       288
+:simon/tapir/032a:                               1504       320
+:simon/tapir/064:                                 384       288
+:simon/tapir/064:                                 320       224
+:simon/tapir/064:                                 192       160
+:simon/tapir/064:                                 128       224
+:simon/tapir/064:                                  64       288
+:simon/tapir/032h:                                  0       320
+:simon/tapir/032h:                                 64       256
+:simon/tapir/032h:                                128       192
+:simon/tapir/032h:                                320       192
+:simon/tapir/032h:                                192       224
+:simon/tapir/032h:                                384       256
+:simon/tapir/032h:                                448       320
+:simon/tapir/032h:                                128       288
+:simon/tapir/032h:                                320       288
+:simon/tapir/032:                                 160       160
+:simon/tapir/032:                                  96       224
+:simon/tapir/032:                                  32       288
+:simon/tapir/032:                                 128       320
+:simon/tapir/032:                                 192       256
+:simon/tapir/032:                                 288       256
+:simon/tapir/032:                                 352       320
+:simon/tapir/032:                                 320       160
+:simon/tapir/032:                                 384       224
+:simon/tapir/032:                                 448       288
+:geoo/steel/dark_64x32o.S:                        192       128
+:simon/tapir/032b:                               1056        96
+:simon/tapir/032b:                               1088       128
+:simon/tapir/032b:                               1120       160
+:simon/tapir/032b:                               1152       192
+:simon/tapir/032b:                               1184       224
+:simon/tapir/032b:                               1216       256
+:simon/tapir/032b:                               1248       288
+:simon/tapir/032b:                               1280       320
+:geoo/steel/dark_64x32o.S:                        704       352
+:geoo/steel/dark_64x32o.S:                        768       352
+:geoo/steel/dark_64x32o.S:                        832       352
+:geoo/steel/dark_64x32o.S:                        896       352
+:geoo/steel/dark_64x32o.S:                        960       352
+:geoo/steel/dark_64x32o.S:                       1024       352
+:geoo/steel/dark_64x32o.S:                       1088       352
+:geoo/steel/dark_64x32o.S:                       1152       352
+:geoo/steel/dark_64x32o.S:                       1216       352
+:simon/tapir/032a:                                960        96
+:simon/tapir/032a:                                928       128
+:simon/tapir/032a:                                896       160
+:simon/tapir/032a:                                864       192
+:simon/tapir/032a:                                832       224
+:simon/tapir/032a:                                800       256
+:simon/tapir/032a:                                768       288
+:simon/tapir/032a:                                736       320
+:simon/tapir/064:                                1152       288
+:simon/tapir/064:                                1088       224
+:simon/tapir/064:                                1024       160
+:simon/tapir/064:                                 896       224
+:simon/tapir/064:                                 832       288
+:simon/tapir/032h:                                768       320
+:simon/tapir/032h:                                832       256
+:simon/tapir/032h:                                896       192
+:simon/tapir/032h:                               1088       192
+:simon/tapir/032h:                               1024       224
+:simon/tapir/032h:                               1152       256
+:simon/tapir/032h:                               1216       320
+:simon/tapir/032h:                                896       288
+:simon/tapir/032h:                               1088       288
+:simon/tapir/032:                                 928       160
+:simon/tapir/032:                                 864       224
+:simon/tapir/032:                                 800       288
+:simon/tapir/032:                                 896       320
+:simon/tapir/032:                                 960       256
+:simon/tapir/032:                                1056       256
+:simon/tapir/032:                                1120       320
+:simon/tapir/032:                                1088       160
+:simon/tapir/032:                                1152       224
+:simon/tapir/032:                                1216       288
+:geoo/steel/dark_64x32o.S:                       1024       128
+:simon/tapir/032d:                                736       256
+:simon/tapir/032v:                                736       192
+:simon/tapir/032h:                                768       160
+:simon/tapir/032d:                                832       160
+:simon/tapir/032b:                                832       128
+:simon/tapir/032h:                                672       256
+:simon/tapir/032h:                                608       256
+:simon/tapir/032h:                                544       256
+:simon/tapir/032c:                                512       256
+:simon/tapir/032v:                                512       192
+:simon/tapir/032h:                                448       160
+:simon/tapir/032c:                                416       160
+:simon/tapir/032a:                                416       128
+:simon/tapir/032h:                                448       128
+:simon/tapir/032h:                                768       128
+:simon/tapir/032v:                                736       128
+:simon/tapir/032v:                                512       128
+:simon/tapir/032h:                                544       160
+:simon/tapir/032h:                                544       128
+:simon/tapir/032h:                                608       160
+:simon/tapir/032h:                                608       128
+:simon/tapir/032h:                                672       160
+:simon/tapir/032h:                                672       128
+:simon/tapir/032v:                                512        64
+:simon/tapir/032v:                                736        64
+:simon/tapir/032v:                                512         0
+:simon/tapir/032v:                                736         0
+:simon/tapir/032b:                                576        96
+:simon/tapir/032a:                                544        96
+:simon/tapir/032a:                                608        96
+:simon/tapir/032d:                                576        64
+:simon/tapir/032c:                                544        64
+:simon/tapir/032c:                                608        64
+:simon/tapir/032b:                                640        96
+:simon/tapir/032a:                                672        96
+:simon/tapir/032d:                                640        64
+:simon/tapir/032c:                                672        64
+:simon/tapir/032b:                                704        96
+:simon/tapir/032d:                                704        64
+:simon/tapir/032b:                                576        32
+:simon/tapir/032a:                                544        32
+:simon/tapir/032a:                                608        32
+:simon/tapir/032d:                                576         0
+:simon/tapir/032c:                                544         0
+:simon/tapir/032c:                                608         0
+:simon/tapir/032b:                                640        32
+:simon/tapir/032a:                                672        32
+:simon/tapir/032d:                                640         0
+:simon/tapir/032c:                                672         0
+:simon/tapir/032b:                                704        32
+:simon/tapir/032d:                                704         0
+:simon/tapir/032h:                                960       224
+:simon/tapir/032h:                                992       256
+:simon/tapir/064:                                 960       160
+:geoo/steel/dark_64x32o.S:                        960       128
+:simon/tapir/032h:                                992        96
+:geoo/steel/dark_64x32o.S:                       1280       352
+:geoo/steel/dark_64x32o.S:                       1472       352
+:simon/tapir/064:                                 256       160
+:simon/tapir/032h:                                256       224
+:simon/tapir/032h:                                224       256
+:geoo/steel/dark_64x32o.S:                        256       128
+:simon/tapir/032h:                                224        96
+:simon/tapir/032b:                                256        64
+:simon/tapir/032a:                                224        64
+:simon/tapir/032b:                               1024        64
+:simon/tapir/032a:                                992        64
+:simon/tapir/032h:                                  0       160
+:simon/tapir/032d:                                 64       160
+:simon/tapir/032b:                                 64       128
+:simon/tapir/032h:                               1216       160
+:simon/tapir/032c:                               1184       160
+:simon/tapir/032a:                               1184       128
+:simon/tapir/032h:                               1216       128
+:simon/tapir/032h:                                  0       128
+:simon/tapir/032v:                               1504       128
+:simon/tapir/032v:                               1280       128
+:simon/tapir/032h:                               1312       160
+:simon/tapir/032h:                               1312       128
+:simon/tapir/032h:                               1376       160
+:simon/tapir/032h:                               1376       128
+:simon/tapir/032h:                               1440       160
+:simon/tapir/032h:                               1440       128
+:simon/tapir/032v:                               1280        64
+:simon/tapir/032v:                               1504        64
+:simon/tapir/032v:                               1280         0
+:simon/tapir/032v:                               1504         0
+:simon/tapir/032b:                               1344        96
+:simon/tapir/032a:                               1312        96
+:simon/tapir/032a:                               1376        96
+:simon/tapir/032d:                               1344        64
+:simon/tapir/032c:                               1312        64
+:simon/tapir/032c:                               1376        64
+:simon/tapir/032b:                               1408        96
+:simon/tapir/032a:                               1440        96
+:simon/tapir/032d:                               1408        64
+:simon/tapir/032c:                               1440        64
+:simon/tapir/032b:                               1472        96
+:simon/tapir/032d:                               1472        64
+:simon/tapir/032b:                               1344        32
+:simon/tapir/032a:                               1312        32
+:simon/tapir/032a:                               1376        32
+:simon/tapir/032d:                               1344         0
+:simon/tapir/032c:                               1312         0
+:simon/tapir/032c:                               1376         0
+:simon/tapir/032b:                               1408        32
+:simon/tapir/032a:                               1440        32
+:simon/tapir/032d:                               1408         0
+:simon/tapir/032c:                               1440         0
+:simon/tapir/032b:                               1472        32
+:simon/tapir/032d:                               1472         0
+:simon/tapir/032d:                               1504       256
+:simon/tapir/032v:                               1504       192
+:simon/tapir/032h:                               1440       256
+:simon/tapir/032h:                               1376       256
+:simon/tapir/032h:                               1312       256
+:simon/tapir/032c:                               1280       256
+:simon/tapir/032v:                               1280       192
+:simon/tapir/032v:                                624       192
+:simon/tapir/032v:                                624       288
+:simon/tapir/032v:                               1392       288
+:simon/tapir/032v:                               1392       192
+:geoo/steel/dark_16x32o.S:                        248       288
+:geoo/steel/dark_16x32o.S:                        248       320
+:geoo/steel/dark_16x32o.S:                       1016       320
+:geoo/steel/dark_16x32o.S:                       1016       288
+:simon/tapir/032:                                 928       320
+:simon/tapir/032:                                1088       320
+:simon/tapir/032:                                 160       320
+:simon/tapir/032:                                 320       320

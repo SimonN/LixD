@@ -1,0 +1,300 @@
+$BUILT 2014-04-16 21:45:29
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Out Into The Gap (3p)
+
+#SIZE_X 640
+#SIZE_Y 912
+#TORUS_X 0
+#TORUS_Y 1
+#START_X 0
+#START_Y 752
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 40
+#INITIAL 80
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 20
+#FLOATER 10
+#WALKER 60
+#JUMPER 60
+#EXPLODER2 12
+#BUILDER 80
+#MINER 70
+#DIGGER 35
+#NOTHING 0
+#RUNNER 10
+#BATTER 20
+#CUBER 10
+
+:simon/hatch001.H: 32 480
+:simon/hatch001.H: 32 784
+:simon/hatch001.H: 32 176
+
+:simon/tapir/goal.G: 528 560
+:simon/tapir/goal.G: 528 864
+:simon/tapir/goal.G: 528 256
+
+:geoo/steel/dark_48x32o.S: 0 0
+:geoo/steel/dark_48x32o.S: 96 0
+:geoo/steel/dark_48x32o.S: 0 304
+:geoo/steel/dark_48x32o.S: 96 304
+:geoo/steel/dark_48x32o.S: 0 608
+:geoo/steel/dark_48x32o.S: 96 608
+:geoo/steel/dark_48x32o.S: 496 0
+:geoo/steel/dark_48x32o.S: 544 0
+:geoo/steel/dark_48x32o.S: 592 0
+:geoo/steel/dark_48x32o.S: 496 304
+:geoo/steel/dark_48x32o.S: 544 304
+:geoo/steel/dark_48x32o.S: 592 304
+:geoo/steel/dark_48x32o.S: 496 608
+:geoo/steel/dark_48x32o.S: 544 608
+:geoo/steel/dark_48x32o.S: 592 608
+:simon/tapir/032h: 96 880
+:simon/tapir/032h: 128 848
+:simon/tapir/032h: 160 816
+:simon/tapir/032h: 192 784
+:simon/tapir/032h: 224 752
+:simon/tapir/032h: 256 720
+:simon/tapir/032h: 256 784
+:simon/tapir/032h: 224 816
+:simon/tapir/032h: 160 880
+:simon/tapir/032h: 192 848
+:simon/tapir/032h: 224 880
+:simon/tapir/032h: 256 848
+:simon/tapir/032h: 288 752
+:simon/tapir/032h: 288 816
+:simon/tapir/032h: 288 880
+:simon/tapir/032h: 96 576
+:simon/tapir/032h: 128 544
+:simon/tapir/032h: 160 512
+:simon/tapir/032h: 192 480
+:simon/tapir/032h: 224 448
+:simon/tapir/032h: 256 416
+:simon/tapir/032h: 256 480
+:simon/tapir/032h: 224 512
+:simon/tapir/032h: 160 576
+:simon/tapir/032h: 192 544
+:simon/tapir/032h: 224 576
+:simon/tapir/032h: 256 544
+:simon/tapir/032h: 288 448
+:simon/tapir/032h: 288 512
+:simon/tapir/032h: 288 576
+:simon/tapir/032h: 96 272
+:simon/tapir/032h: 128 240
+:simon/tapir/032h: 160 208
+:simon/tapir/032h: 192 176
+:simon/tapir/032h: 224 144
+:simon/tapir/032h: 256 112
+:simon/tapir/032h: 256 176
+:simon/tapir/032h: 224 208
+:simon/tapir/032h: 160 272
+:simon/tapir/032h: 192 240
+:simon/tapir/032h: 224 272
+:simon/tapir/032h: 256 240
+:simon/tapir/032h: 288 144
+:simon/tapir/032h: 288 208
+:simon/tapir/032h: 288 272
+:geoo/steel/dark_48x32o.S: 144 0
+:geoo/steel/dark_48x32o.S: 192 0
+:geoo/steel/dark_48x32o.S: 144 304
+:geoo/steel/dark_48x32o.S: 192 304
+:geoo/steel/dark_48x32o.S: 144 608
+:geoo/steel/dark_48x32o.S: 192 608
+:simon/tapir/032v: 0 544
+:simon/tapir/032v: 0 480
+:simon/tapir/032v: 0 416
+:simon/tapir/032v: 0 352
+:simon/tapir/032v: 0 848
+:simon/tapir/032v: 0 784
+:simon/tapir/032v: 0 720
+:simon/tapir/032v: 0 656
+:simon/tapir/032v: 0 240
+:simon/tapir/032v: 0 176
+:simon/tapir/032v: 0 112
+:simon/tapir/032v: 0 48
+:simon/tapir/032h: 288 80
+:simon/tapir/032h: 320 112
+:simon/tapir/032h: 320 176
+:simon/tapir/032h: 320 240
+:simon/tapir/032h: 288 688
+:simon/tapir/032h: 320 720
+:simon/tapir/032h: 320 784
+:simon/tapir/032h: 320 848
+:simon/tapir/032h: 288 384
+:simon/tapir/032h: 320 416
+:simon/tapir/032h: 320 480
+:simon/tapir/032h: 320 544
+:simon/tapir/032: 608 144
+:simon/tapir/032: 608 112
+:simon/tapir/032: 608 80
+:simon/tapir/032: 608 48
+:simon/tapir/032: 576 80
+:simon/tapir/032: 576 48
+:simon/tapir/032: 544 80
+:simon/tapir/032: 480 80
+:simon/tapir/032: 512 80
+:simon/tapir/032: 544 48
+:simon/tapir/032: 576 144
+:simon/tapir/032: 512 48
+:simon/tapir/032: 576 112
+:simon/tapir/032: 544 112
+:simon/tapir/032: 608 448
+:simon/tapir/032: 608 416
+:simon/tapir/032: 608 384
+:simon/tapir/032: 608 352
+:simon/tapir/032: 576 384
+:simon/tapir/032: 576 352
+:simon/tapir/032: 576 416
+:simon/tapir/032: 608 752
+:simon/tapir/032: 608 720
+:simon/tapir/032: 608 688
+:simon/tapir/032: 608 656
+:simon/tapir/032: 576 688
+:simon/tapir/032: 576 656
+:simon/tapir/032: 576 720
+:simon/tapir/032: 608 240
+:simon/tapir/032: 608 208
+:simon/tapir/032: 608 176
+:simon/tapir/032: 608 544
+:simon/tapir/032: 608 512
+:simon/tapir/032: 608 480
+:simon/tapir/032: 608 848
+:simon/tapir/032: 608 816
+:simon/tapir/032: 608 784
+:simon/tapir/032: 608 272
+:simon/tapir/032: 608 576
+:simon/tapir/032: 608 880
+:simon/tapir/032h: 32 352
+:simon/tapir/032h: 32 384
+:simon/tapir/032h: 32 48
+:simon/tapir/032h: 32 80
+:simon/tapir/032h: 32 656
+:simon/tapir/032h: 32 688
+:simon/tapir/032: 576 240
+:simon/tapir/032: 576 208
+:simon/tapir/032: 576 176
+:simon/tapir/032: 576 272
+:simon/tapir/032: 576 448
+:simon/tapir/032: 576 544
+:simon/tapir/032: 576 512
+:simon/tapir/032: 576 480
+:simon/tapir/032: 576 576
+:simon/tapir/032: 576 752
+:simon/tapir/032: 576 848
+:simon/tapir/032: 576 816
+:simon/tapir/032: 576 784
+:simon/tapir/032: 576 880
+:geoo/steel/dark_32x16o.S: 608 336
+:geoo/steel/dark_32x16o.S: 576 336
+:geoo/steel/dark_32x16o.S: 0 336
+:geoo/steel/dark_32x16o.S: 0 32
+:geoo/steel/dark_32x16o.S: 608 32
+:geoo/steel/dark_32x16o.S: 576 32
+:geoo/steel/dark_32x16o.S: 0 640
+:geoo/steel/dark_32x16o.S: 608 640
+:geoo/steel/dark_32x16o.S: 576 640
+:simon/tapir/032a: 160 784
+:simon/tapir/032a: 192 752
+:simon/tapir/032a: 224 720
+:simon/tapir/032a: 256 688
+:simon/tapir/032a: 160 480
+:simon/tapir/032a: 192 448
+:simon/tapir/032a: 224 416
+:simon/tapir/032a: 256 384
+:simon/tapir/032a: 160 176
+:simon/tapir/032a: 192 144
+:simon/tapir/032a: 224 112
+:simon/tapir/032a: 256 80
+:geoo/abstract/cvblocks/035: 288 816
+:geoo/abstract/cvblocks/035: 288 880
+:geoo/abstract/cvblocks/035: 288 752
+:geoo/abstract/cvblocks/035: 288 688
+:geoo/abstract/cvblocks/035: 288 576
+:geoo/abstract/cvblocks/035: 288 512
+:geoo/abstract/cvblocks/035: 288 448
+:geoo/abstract/cvblocks/035: 288 384
+:geoo/abstract/cvblocks/035: 288 272
+:geoo/abstract/cvblocks/035: 288 208
+:geoo/abstract/cvblocks/035: 288 144
+:geoo/abstract/cvblocks/035: 288 80
+:geoo/abstract/cvblocks/039: 144 656 f
+:geoo/abstract/cvblocks/039: 144 352 f
+:geoo/abstract/cvblocks/039: 144 48 f
+:geoo/steel/dark_16x16o.S: 32 32
+:geoo/steel/dark_16x16o.S: 32 336
+:geoo/steel/dark_16x16o.S: 32 640
+:geoo/steel/dark_32x32o.S: 64 0
+:geoo/steel/dark_32x32o.S: 64 304
+:geoo/steel/dark_32x32o.S: 64 608
+:amanda/steel/steel8x16.S: 48 0
+:amanda/steel/steel8x16.S: 48 16
+:amanda/steel/steel8x16.S: 48 32
+:amanda/steel/steel8x16.S: 48 304
+:amanda/steel/steel8x16.S: 48 320
+:amanda/steel/steel8x16.S: 48 336
+:amanda/steel/steel8x16.S: 48 608
+:amanda/steel/steel8x16.S: 48 624
+:amanda/steel/steel8x16.S: 48 640
+:geoo/steel/dark_48x32o.S: 0 48
+:geoo/steel/dark_48x32o.S: 48 48
+:geoo/steel/dark_48x32o.S: 0 352
+:geoo/steel/dark_48x32o.S: 48 352
+:geoo/steel/dark_48x32o.S: 0 656
+:geoo/steel/dark_48x32o.S: 48 656
+:geoo/steel/dark_48x32o.S: 96 48
+:geoo/steel/dark_48x32o.S: 96 656
+:geoo/steel/dark_48x32o.S: 96 352
+:geoo/abstract/cvblocks/035: 96 272
+:geoo/abstract/cvblocks/035: 160 208
+:geoo/abstract/cvblocks/035: 96 880
+:geoo/abstract/cvblocks/035: 160 816
+:geoo/abstract/cvblocks/035: 96 576
+:geoo/abstract/cvblocks/035: 160 512
+:geoo/abstract/cvblocks/045: 576 240
+:geoo/abstract/cvblocks/045: 576 144
+:geoo/abstract/cvblocks/045: 576 48
+:geoo/abstract/cvblocks/045: 576 848
+:geoo/abstract/cvblocks/045: 576 752
+:geoo/abstract/cvblocks/045: 576 656
+:geoo/abstract/cvblocks/045: 576 544
+:geoo/abstract/cvblocks/045: 576 448
+:geoo/abstract/cvblocks/045: 576 352
+:geoo/abstract/cvblocks/035: 0 784 rrr
+:geoo/abstract/cvblocks/035: 0 720 rrr
+:geoo/abstract/cvblocks/035: 0 480 rrr
+:geoo/abstract/cvblocks/035: 0 416 rrr
+:geoo/abstract/cvblocks/035: 0 176 rrr
+:geoo/abstract/cvblocks/035: 0 112 rrr
+:geoo/abstract/cvblocks/031: 480 48
+:simon/tapir/032: 544 688
+:simon/tapir/032: 480 688
+:simon/tapir/032: 512 688
+:simon/tapir/032: 544 656
+:simon/tapir/032: 512 656
+:simon/tapir/032: 544 720
+:geoo/abstract/cvblocks/031: 480 656
+:simon/tapir/032: 544 384
+:simon/tapir/032: 480 384
+:simon/tapir/032: 512 384
+:simon/tapir/032: 544 352
+:simon/tapir/032: 512 352
+:simon/tapir/032: 544 416
+:geoo/abstract/cvblocks/031: 480 352
+:geoo/steel/dark_48x32o.S: 496 112
+:geoo/steel/dark_48x32o.S: 528 144
+:geoo/steel/dark_48x32o.S: 496 416
+:geoo/steel/dark_48x32o.S: 528 448
+:geoo/steel/dark_48x32o.S: 496 720
+:geoo/steel/dark_48x32o.S: 528 752
+:geoo/abstract/cvblocks/035: 96 688
+:geoo/abstract/cvblocks/035: 96 384
+:geoo/abstract/cvblocks/035: 96 80
+:geoo/steel/dark_32x32o.S: 0 272
+:geoo/steel/dark_32x32o.S: 0 880
+:geoo/steel/dark_32x32o.S: 0 576

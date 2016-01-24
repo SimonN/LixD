@@ -1,0 +1,320 @@
+$BUILT 2014-02-28 22:48:02
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Quote: "That`s a nasty level"
+
+#SIZE_X 856
+#SIZE_Y 420
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 154
+#START_Y 0
+#BACKGROUND_RED 16
+#BACKGROUND_GREEN 64
+#BACKGROUND_BLUE 207
+
+#SECONDS 120
+#INITIAL 50
+#REQUIRED 49
+#SPAWN_INTERVAL 41
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#FLOATER 1
+#WALKER 3
+#JUMPER 2
+#RUNNER 1
+#BLOCKER 1
+#PLATFORMER 1
+#BUILDER 2
+#DIGGER 1
+#CUBER 1
+#BASHER 2
+#NOTHING 0
+
+:matt/carnival/Hatch.H: 256 272
+
+:matt/carnival/Goal.G: 464 274
+
+:matt/water.W: 16 384
+:matt/water.W: 48 384
+:matt/water.W: 80 384
+:matt/water.W: 112 384
+:matt/water.W: 144 384
+:matt/water.W: 176 384
+:matt/water.W: 208 384
+:matt/water.W: 240 384
+:matt/water.W: 272 384
+:matt/water.W: 304 384
+:matt/water.W: 336 384
+:matt/water.W: 368 384
+:matt/water.W: 16 400
+:matt/water.W: 48 400
+:matt/water.W: 80 400
+:matt/water.W: 112 400
+:matt/water.W: 144 400
+:matt/water.W: 176 400
+:matt/water.W: 208 400
+:matt/water.W: 240 400
+:matt/water.W: 272 400
+:matt/water.W: 304 400
+:matt/water.W: 336 400
+:matt/water.W: 368 400
+:matt/water.W: 672 384
+:matt/water.W: 704 384
+:matt/water.W: 736 384
+:matt/water.W: 768 384
+:matt/water.W: 800 384
+:matt/water.W: 832 384
+:matt/water.W: 672 400
+:matt/water.W: 704 400
+:matt/water.W: 736 400
+:matt/water.W: 768 400
+:matt/water.W: 800 400
+:matt/water.W: 832 400
+
+:matt/carnival/13: 208 192
+:matt/carnival/13: 272 176
+:matt/carnival/04: 388 400
+:matt/carnival/04: 388 338
+:matt/carnival/13: 560 238
+:matt/carnival/13: 544 238
+:matt/carnival/13: 528 238
+:matt/carnival/13: 512 238
+:matt/carnival/13: 496 238
+:matt/carnival/13: 480 238
+:matt/carnival/13: 480 232 d
+:matt/carnival/13: 464 238
+:matt/carnival/13: 464 232 d
+:matt/carnival/13: 448 238
+:matt/carnival/13: 432 238
+:matt/carnival/13: 416 238
+:matt/carnival/13: 400 238
+:matt/carnival/13: 416 232 d
+:matt/carnival/13: 432 232 d
+:matt/carnival/13: 448 232 d
+:matt/carnival/13: 496 232 d
+:matt/carnival/13: 512 232 d
+:matt/carnival/13: 528 232 d
+:matt/carnival/13: 544 232 d
+:matt/carnival/13: 560 232 d
+:matt/carnival/13: 400 232 d
+:matt/carnival/13: 510 170
+:matt/carnival/13: 478 170
+:matt/carnival/13: 480 164 d
+:matt/carnival/13: 464 164 d
+:matt/carnival/13: 494 180
+:matt/carnival/13: 462 180
+:matt/carnival/13: 400 170
+:matt/carnival/13: 416 164 d
+:matt/carnival/13: 432 164 d
+:matt/carnival/13: 448 164 d
+:matt/carnival/13: 496 164 d
+:matt/carnival/13: 512 164 d
+:matt/carnival/13: 528 164 d
+:matt/carnival/13: 544 164 d
+:matt/carnival/13: 560 164 d
+:matt/carnival/13: 400 164 d
+:matt/carnival/13: 560 192
+:matt/carnival/13: 544 192
+:matt/carnival/13: 528 192
+:matt/carnival/13: 512 192
+:matt/carnival/13: 496 192
+:matt/carnival/13: 480 192
+:matt/carnival/13: 480 186 d
+:matt/carnival/13: 464 192
+:matt/carnival/13: 464 186 d
+:matt/carnival/13: 448 192
+:matt/carnival/13: 432 192
+:matt/carnival/13: 416 192
+:matt/carnival/13: 400 192
+:matt/carnival/13: 416 186 d
+:matt/carnival/13: 432 186 d
+:matt/carnival/13: 448 186 d
+:matt/carnival/13: 496 186 d
+:matt/carnival/13: 512 186 d
+:matt/carnival/13: 528 186 d
+:matt/carnival/13: 544 186 d
+:matt/carnival/13: 560 186 d
+:matt/carnival/13: 400 186 d
+:matt/carnival/13: 560 214
+:matt/carnival/13: 544 214
+:matt/carnival/13: 528 214
+:matt/carnival/13: 512 214
+:matt/carnival/13: 496 214
+:matt/carnival/13: 480 214
+:matt/carnival/13: 480 208 d
+:matt/carnival/13: 464 214
+:matt/carnival/13: 464 208 d
+:matt/carnival/13: 448 214
+:matt/carnival/13: 432 214
+:matt/carnival/13: 416 214
+:matt/carnival/13: 400 214
+:matt/carnival/13: 416 208 d
+:matt/carnival/13: 432 208 d
+:matt/carnival/13: 448 208 d
+:matt/carnival/13: 496 208 d
+:matt/carnival/13: 512 208 d
+:matt/carnival/13: 528 208 d
+:matt/carnival/13: 544 208 d
+:matt/carnival/13: 560 208 d
+:matt/carnival/13: 400 208 d
+:matt/carnival/13: 576 238
+:matt/carnival/13: 576 232 d
+:matt/carnival/13: 576 170
+:matt/carnival/13: 576 164 d
+:matt/carnival/13: 576 192
+:matt/carnival/13: 576 186 d
+:matt/carnival/13: 576 214
+:matt/carnival/13: 576 208 d
+:matt/carnival/04: 366 146
+:matt/carnival/04: 356 146 d
+:matt/carnival/04: 366 210
+:matt/steel/16x32.S: 388 242
+:matt/carnival/04: 356 210 d
+:matt/carnival/04: 356 274 d
+:matt/carnival/04: 368 146 rd
+:matt/carnival/04: 592 274
+:matt/carnival/04: 602 274 d
+:matt/carnival/04: 592 210
+:matt/carnival/04: 602 210 d
+:matt/carnival/04: 592 146
+:matt/carnival/04: 602 146 d
+:matt/carnival/04: 570 146 rd
+:matt/carnival/13: 272 132
+:matt/carnival/13: 272 180
+:matt/carnival/13: 208 132
+:matt/carnival/13: 208 148
+:matt/carnival/13: 208 196
+:matt/carnival/28: 248 196 f
+:matt/carnival/13: 264 204
+:matt/carnival/13: 280 204
+:matt/carnival/28: 184 250 f
+:matt/carnival/13: 200 258
+:matt/carnival/13: 216 258
+:matt/carnival/13: 184 236
+:matt/carnival/13: 200 236
+:matt/carnival/13: 216 236
+:matt/carnival/13: 232 236
+:matt/carnival/28: 184 220
+:matt/carnival/13: 200 212
+:matt/carnival/13: 216 212
+:matt/carnival/13: 656 130
+:matt/carnival/13: 656 146
+:matt/carnival/13: 656 162
+:matt/carnival/13: 648 178
+:matt/carnival/13: 664 178
+:matt/carnival/13: 720 132
+:matt/carnival/13: 720 148
+:matt/carnival/13: 720 164
+:matt/carnival/13: 720 180
+:matt/carnival/13: 720 196
+:matt/carnival/13: 720 212
+:matt/carnival/13: 720 228
+:matt/carnival/21: 688 238 f
+:matt/carnival/21: 720 238 f
+:matt/carnival/13: 720 286
+:matt/carnival/13: 720 302
+:matt/carnival/21: 668 286 f
+:matt/carnival/21: 740 286 f
+:matt/carnival/13: 668 334
+:matt/carnival/13: 668 350
+:matt/carnival/13: 668 366
+:matt/carnival/13: 668 382
+:matt/carnival/13: 668 398
+:matt/carnival/13: 668 414
+:matt/carnival/13: 772 334
+:matt/carnival/13: 772 350
+:matt/carnival/13: 772 366
+:matt/carnival/13: 772 382
+:matt/carnival/13: 772 398
+:matt/carnival/13: 772 414
+:matt/carnival/21: 688 334 f
+:matt/carnival/21: 720 334 f
+:matt/carnival/13: 720 382
+:matt/carnival/13: 720 398
+:matt/carnival/13: 720 414
+:matt/carnival/13: 324 334
+:matt/carnival/13: 308 334
+:matt/carnival/13: 308 324 d
+:matt/carnival/13: 292 334
+:matt/carnival/13: 292 324 d
+:matt/carnival/13: 276 334
+:matt/carnival/13: 260 334
+:matt/carnival/13: 260 324 d
+:matt/carnival/13: 276 324 d
+:matt/carnival/13: 324 324 d
+:matt/carnival/13: 340 324 d
+:matt/carnival/13: 356 324 d
+:matt/carnival/13: 372 324 d
+:matt/carnival/24: 400 338
+:matt/carnival/24: 464 338
+:matt/carnival/24: 528 338
+:matt/carnival/04: 592 338
+:matt/carnival/04: 602 338 d
+:matt/carnival/04: 366 274
+:matt/carnival/04: 356 274 d
+:matt/carnival/24: 464 402
+:matt/carnival/24: 528 402
+:matt/carnival/24: 400 402
+:matt/carnival/04: 592 402
+:matt/carnival/04: 602 402 d
+:matt/steel/48x48.S: 388 372
+:matt/steel/48x48.S: 0 372
+:matt/carnival/21: 176 84 f
+:matt/carnival/21: 208 84 f
+:matt/carnival/21: 240 84 f
+:matt/carnival/21: 272 84 f
+:matt/carnival/21: 304 84 f
+:matt/carnival/21: 336 84 f
+:matt/carnival/21: 368 84 f
+:matt/carnival/21: 400 84 f
+:matt/carnival/21: 432 84 f
+:matt/carnival/21: 464 84 f
+:matt/carnival/21: 496 84 f
+:matt/carnival/21: 560 84 f
+:matt/carnival/21: 528 84 f
+:matt/carnival/21: 592 84 f
+:matt/carnival/21: 624 84 f
+:matt/carnival/21: 656 84 f
+:matt/carnival/21: 688 84 f
+:matt/carnival/21: 720 84 f
+:matt/carnival/21: 752 84 f
+:matt/carnival/21: 784 84 f
+:matt/carnival/21: 816 84 f
+:matt/carnival/13: 396 238
+:matt/carnival/13: 396 232 d
+:matt/carnival/13: 396 170
+:matt/carnival/13: 396 164 d
+:matt/carnival/13: 396 192
+:matt/carnival/13: 396 186 d
+:matt/carnival/13: 396 214
+:matt/carnival/13: 396 208 d
+:matt/steel/16x32.S: 388 178
+:matt/steel/32x16.S: 388 356
+:matt/steel/16x32.S: 388 274
+:matt/steel/16x32.S: 388 306
+:matt/steel/48x48.S: 554 372
+:matt/steel/32x16.S: 570 356
+:matt/carnival/13: 340 344 d
+:matt/carnival/13: 324 344 d
+:matt/carnival/13: 292 344 d
+:matt/carnival/13: 308 344 d
+:matt/carnival/13: 356 344 d
+:matt/carnival/13: 372 344 d
+:matt/carnival/13: 292 344 d
+:matt/carnival/13: 260 344 d
+:matt/carnival/13: 276 344 d
+:matt/carnival/13: 580 254 d
+:matt/carnival/13: 580 208 d
+:matt/steel/32x32.S: 570 222
+:matt/steel/16x32.S: 586 178
+:matt/carnival/13: 394 210 d
+:matt/steel/32x32.S: 388 222
+:matt/carnival/13: 582 292 d
+:matt/steel/16x32.S: 586 264
+:matt/steel/16x32.S: 586 306
+:matt/carnival/13: 208 160
+:matt/carnival/13: 208 176
+:matt/carnival/13: 272 144
+:matt/carnival/13: 272 160

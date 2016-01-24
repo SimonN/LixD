@@ -1,0 +1,106 @@
+$BUILT 2014-06-30 13:52:41
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Every Lix for Herself!
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 20
+#SPAWN_INTERVAL 12
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#JUMPER 10
+#WALKER 10
+#CLIMBER 10
+#FLOATER 10
+#BATTER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/oriental/Hatch.H: 280 36
+:matt/oriental/Hatch.H: 128 10 r
+:matt/oriental/Hatch.H: 518 34
+
+:matt/oriental/Goal.G: 16 216
+:matt/oriental/Goal.G: 560 216
+
+:matt/oriental/bamboo_pole: 264 96 rrr
+:matt/oriental/bamboo_pole: 216 144 rrr
+:matt/oriental/bamboo_pole: 264 192 rrr
+:matt/oriental/bamboo_pole: 216 240 rrr
+:matt/oriental/01: 216 220
+:matt/oriental/01: 216 124
+:matt/oriental/01: 394 172
+:matt/oriental/01: 394 76
+:matt/oriental/branch4: 358 320 frr
+:geoo/construction/concrete/128: 416 296
+:matt/oriental/leaves1: 376 314
+:matt/oriental/branch3: 294 320 frr
+:matt/oriental/trunk2: 310 340 rr
+:matt/oriental/leaves2: 358 374
+:matt/oriental/leaves3: 310 330
+:geoo/construction/concrete/128: 96 296
+:matt/oriental/branch4: 230 332
+:matt/oriental/leaves4: 206 314
+:matt/oriental/leaves5: 278 374
+:matt/oriental/trunk3: 244 366
+:matt/oriental/leaves6: 236 352
+:matt/oriental/branch4: 216 386
+:matt/oriental/leaves7: 206 380
+:matt/oriental/branch4: 266 382 rrr
+:matt/oriental/bamboo_leaf2: 416 112 frrr
+:matt/earth/25: 442 164
+:matt/oriental/bamboo_leaf1: 464 124 frr
+:matt/earth/12: 440 128 rrr
+:matt/oriental/bamboo_leaf2: 190 144 rrr
+:matt/oriental/bamboo_leaf3: 168 160 rr
+:matt/oriental/bamboo_leaf1: 450 220 r
+:matt/oriental/bamboo_leaf3: 124 174 f
+:matt/oriental/branch4: 118 196 frr
+:matt/earth/24: 142 196
+:matt/oriental/bamboo_leaf1: 134 160
+:matt/earth/12: 140 174
+:matt/oriental/bamboo_leaf3: 418 208 f
+:matt/oriental/bamboo_leaf3: 466 218 rr
+:matt/earth/26: 442 230 n
+:matt/earth/23: 462 246 n
+:matt/earth/15: 426 230 frr
+:matt/earth/13: 494 200 rrrd
+:matt/earth/12: 502 234 d
+:matt/oriental/bamboo_leaf2: 487 223 fn
+:geoo/construction/concrete/128: 544 296
+:geoo/construction/concrete/128: -32 296
+:matt/oriental/bamboo_pole: -6 138 rr
+:matt/oriental/bamboo_leaf3: 18 -6 frr
+:matt/oriental/bamboo_segment1: -5 31
+:matt/oriental/bamboo_leaf2: 0 -2
+:matt/oriental/bamboo_segment1: -5 38
+:matt/oriental/bamboo_pole: -6 -18 rr
+:matt/oriental/bamboo_pole: 634 138 rr
+:matt/oriental/bamboo_leaf1: 620 28
+:matt/oriental/bamboo_pole: 634 -18 rr
+:matt/oriental/bamboo_pole: -2 -4 rrr
+:matt/oriental/bamboo_pole: 154 -4 rrr
+:matt/oriental/bamboo_pole: 310 -4 rrr
+:matt/oriental/bamboo_leaf2: 586 0 frr
+:matt/oriental/bamboo_pole: 466 -4 rrr
+:matt/oriental/bamboo_pole: 622 -4 rrr
+:matt/oriental/bamboo_leaf2: 584 18 frr
+:matt/oriental/bamboo_leaf3: 604 2 rrr
+:matt/oriental/bamboo_pole: 28 70 rrr
+:matt/oriental/bamboo_segment1: 499 74
+:matt/oriental/bamboo_pole: 482 94 rrr
+:matt/oriental/01: 478 74

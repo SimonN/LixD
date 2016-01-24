@@ -1,0 +1,178 @@
+$BUILT 2014-05-25 02:21:15
+$AUTHOR mobius
+$GERMAN 
+$ENGLISH Absolute Zero
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 32
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 9
+#SPAWN_INTERVAL 20
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 10
+#EXPLODER 1
+#BUILDER 3
+#BASHER 3
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: 520 184 r
+
+:matt/winter/Goal.G: 48 176
+
+:geoo/construction/sawblade_medium.F: 248 112
+:geoo/construction/sawblade_medium.F: 288 112
+:geoo/construction/sawblade_medium.F: 328 112
+:simon/crystal.W: 176 288
+:simon/crystal.W: 224 288
+:simon/crystal.W: 272 288
+:simon/crystal.W: 320 288
+:simon/crystal.W: 368 288
+:simon/crystal.W: 128 288
+
+:geoo/construction/spring_fast.T: 304 208
+
+:matt/winter/07: 396 220 rr
+:matt/winter/06: 408 208
+:matt/winter/06: 424 208
+:matt/winter/06: 408 144
+:matt/winter/06: 424 144
+:matt/winter/05: 501 317 fr
+:matt/winter/06: 480 272
+:matt/winter/06: 496 272
+:matt/winter/18: 478 329
+:geoo/steel/32x32o.S: 480 272
+:geoo/steel/32x32o.S: 408 272
+:matt/winter/06: 480 208
+:matt/winter/06: 496 208
+:matt/winter/06: 480 144
+:matt/winter/06: 496 144
+:matt/winter/08: 480 136
+:matt/winter/08: 496 136
+:matt/winter/07: 240 128 rr
+:matt/winter/07: 196 210 rr
+:matt/winter/07: 188 226 rr
+:matt/winter/07: 160 204 rr
+:matt/winter/06: 152 240 r
+:matt/winter/07: 168 214 rr
+:matt/carnival/36: 158 216 frd
+:matt/winter/07: 218 218 rr
+:matt/winter/07: 234 214 rr
+:matt/winter/18: 272 230 rrr
+:matt/winter/06: 216 240 r
+:matt/winter/07: 278 220 rr
+:matt/winter/07: 336 216 rr
+:matt/winter/07: 312 220 rr
+:matt/winter/07: 304 202 rr
+:matt/winter/06: 280 240 r
+:matt/winter/07: 344 232 rr
+:matt/winter/07: 366 220 rr
+:matt/winter/18: 350 234
+:matt/winter/06: 344 240 r
+:matt/winter/07: 350 204 rr
+:matt/winter/18: 350 218
+:geoo/steel/64x64o.S: 96 272
+:geoo/steel/64x32o.S: 96 240
+:matt/winter/04: -16 272
+:geoo/steel/64x64o.S: 32 272
+:geoo/steel/64x32o.S: 32 240
+:matt/winter/03: 409 333 f
+:matt/winter/04: -17 343 rrr
+:matt/winter/05: -16 320 r
+:matt/winter/07: 218 104 rr
+:matt/winter/18: 202 122
+:matt/winter/07: 204 110 rr
+:geoo/steel/dark_64x64.S: 184 80
+:matt/winter/07: 250 100 rr
+:matt/winter/07: 288 108 rr
+:matt/winter/07: 296 102 rr
+:geoo/steel/dark_64x64.S: 248 80
+:matt/winter/07: 330 118 rr
+:matt/winter/07: 372 104 rr
+:matt/winter/18: 332 120 rrr
+:geoo/steel/dark_64x64.S: 312 80
+:matt/winter/10: 476 356
+:matt/winter/07: 386 124 rr
+:geoo/steel/dark_64x64.S: 376 80
+:geoo/steel/32x32o.S: 408 304
+:matt/winter/05: 424 334 r
+:geoo/steel/32x32o.S: 480 304
+:matt/winter/04: 243 351 frrr
+:matt/winter/05: 224 329 fr
+:matt/winter/03: 96 372
+:matt/winter/05: 144 320 rrr
+:matt/winter/11: 335 337 r
+:matt/winter/13: 226 378 r
+:matt/winter/15: 576 378
+:matt/winter/07: 576 96 rr
+:matt/winter/07: 584 88 rr
+:matt/winter/18: 584 114
+:matt/winter/07: 592 112 rr
+:matt/winter/07: 628 176 rr
+:matt/winter/07: 616 152 rr
+:matt/winter/07: 608 160 rr
+:geoo/steel/dark_32x32o.S: 608 160
+:matt/winter/07: 608 122 rr
+:geoo/steel/dark_32x32o.S: 608 128
+:matt/winter/07: 620 112 rr
+:matt/winter/18: 558 42
+:geoo/steel/dark_64x64.S: 576 64
+:matt/winter/07: 552 40 rr
+:matt/winter/07: 544 24 rr
+:matt/winter/18: 514 12
+:geoo/steel/dark_32x32o.S: 544 32
+:matt/winter/07: 558 12 rr
+:geoo/steel/dark_32x32o.S: 544 0
+:matt/winter/07: 520 16 rr
+:geoo/steel/dark_32x32o.S: 512 0
+:matt/winter/07: 610 20 rr
+:matt/winter/07: 586 38 rr
+:matt/winter/07: 592 56 rr
+:matt/winter/18: 608 42 rrr
+:matt/winter/07: 632 46 rr
+:geoo/steel/dark_64x64.S: 576 0
+:matt/winter/07: 616 -14 rr
+:matt/winter/07: 546 -6 rr
+:matt/winter/07: 500 -42 rr
+:matt/winter/07: 596 8 rr
+:matt/winter/06: 596 -56 frr
+:matt/winter/07: 226 200 rr
+:matt/winter/18: 225 221 rr
+:matt/winter/07: 266 212 rr
+:matt/winter/07: 372 212 rr
+:geoo/steel/dark_64x48o.S: 344 192 d
+:geoo/steel/dark_64x48o.S: 280 192 d
+:geoo/steel/dark_64x48o.S: 216 192 d
+:geoo/steel/dark_64x48o.S: 152 192 d
+:matt/winter/07: 96 8 rr
+:matt/winter/07: 80 24 rr
+:matt/winter/18: 72 26
+:matt/winter/07: 72 0 rr
+:matt/winter/07: 16 64 rr
+:matt/winter/07: 32 48 rr
+:matt/winter/07: 38 56 rr
+:matt/winter/07: 56 66 rr
+:matt/winter/04: -48 -64
+:matt/winter/07: 0 40 rr
+:matt/winter/07: 136 -8 rr
+:matt/winter/04: 0 -64 frrr
+:matt/winter/07: 112 8 rr
+:matt/winter/07: 36 16 rr
+:matt/winter/03: -8 -8
+:matt/winter/01: -40 -4
+:matt/winter/07: 58 -18 rr
+:matt/winter/07: 8 -36 rr

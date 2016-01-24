@@ -1,0 +1,147 @@
+$BUILT 2014-05-08 14:14:58
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Let's play Poker
+
+#SIZE_X 640
+#SIZE_Y 480
+#TORUS_X 0
+#TORUS_Y 1
+#START_X 0
+#START_Y 400
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 5
+#REQUIRED 5
+#SPAWN_INTERVAL 16
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#BUILDER 3
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 512 80 r
+:geoo/construction/Hatch.H: 96 80
+:geoo/construction/Hatch.H: 512 176 r
+:geoo/construction/Hatch.H: 96 176
+:geoo/construction/Hatch.H: 512 272 r
+:geoo/construction/Hatch.H: 96 272
+:geoo/construction/Hatch.H: 512 368 r
+:geoo/construction/Hatch.H: 96 368
+:geoo/construction/Hatch.H: 512 464 r
+:geoo/construction/Hatch.H: 96 464
+
+:geoo/abstract/goal.G: 32 0
+:geoo/abstract/goal.G: 576 0
+:geoo/abstract/goal.G: 32 96
+:geoo/abstract/goal.G: 576 96
+:geoo/abstract/goal.G: 32 192
+:geoo/abstract/goal.G: 576 192
+:geoo/abstract/goal.G: 32 288
+:geoo/abstract/goal.G: 576 288
+:geoo/abstract/goal.G: 32 384
+:geoo/abstract/goal.G: 576 384
+
+:geoo/construction/sawblade_small.F: 352 48
+:geoo/construction/sawblade_small.F: 256 48
+:geoo/construction/sawblade_small.F: 352 144
+:geoo/construction/sawblade_small.F: 256 144
+:geoo/construction/sawblade_small.F: 352 240
+:geoo/construction/sawblade_small.F: 256 240
+:geoo/construction/sawblade_small.F: 352 336
+:geoo/construction/sawblade_small.F: 256 336
+:geoo/construction/sawblade_small.F: 352 432
+:geoo/construction/sawblade_small.F: 256 432
+
+:matt/carnival/00: 144 48
+:matt/carnival/01: 240 48
+:matt/carnival/02: 208 48
+:matt/carnival/03: 176 48
+:matt/carnival/00: 16 48
+:matt/carnival/01: 112 48
+:matt/carnival/02: 80 48
+:matt/carnival/03: 48 48
+:matt/carnival/01: 368 48
+:matt/carnival/02: 400 48
+:matt/carnival/03: 432 48
+:matt/carnival/00: 464 48
+:matt/carnival/01: 496 48
+:matt/carnival/02: 528 48
+:matt/carnival/03: 560 48
+:matt/carnival/00: 592 48
+:matt/carnival/00: 144 144
+:matt/carnival/01: 240 144
+:matt/carnival/02: 208 144
+:matt/carnival/03: 176 144
+:matt/carnival/00: 16 144
+:matt/carnival/01: 112 144
+:matt/carnival/02: 80 144
+:matt/carnival/03: 48 144
+:matt/carnival/01: 368 144
+:matt/carnival/02: 400 144
+:matt/carnival/03: 432 144
+:matt/carnival/00: 464 144
+:matt/carnival/01: 496 144
+:matt/carnival/02: 528 144
+:matt/carnival/03: 560 144
+:matt/carnival/00: 592 144
+:matt/carnival/00: 144 240
+:matt/carnival/01: 240 240
+:matt/carnival/02: 208 240
+:matt/carnival/03: 176 240
+:matt/carnival/00: 16 240
+:matt/carnival/01: 112 240
+:matt/carnival/02: 80 240
+:matt/carnival/03: 48 240
+:matt/carnival/01: 368 240
+:matt/carnival/02: 400 240
+:matt/carnival/03: 432 240
+:matt/carnival/00: 464 240
+:matt/carnival/01: 496 240
+:matt/carnival/02: 528 240
+:matt/carnival/03: 560 240
+:matt/carnival/00: 592 240
+:matt/carnival/00: 144 336
+:matt/carnival/01: 240 336
+:matt/carnival/02: 208 336
+:matt/carnival/03: 176 336
+:matt/carnival/00: 16 336
+:matt/carnival/01: 112 336
+:matt/carnival/02: 80 336
+:matt/carnival/03: 48 336
+:matt/carnival/01: 368 336
+:matt/carnival/02: 400 336
+:matt/carnival/03: 432 336
+:matt/carnival/00: 464 336
+:matt/carnival/01: 496 336
+:matt/carnival/02: 528 336
+:matt/carnival/03: 560 336
+:matt/carnival/00: 592 336
+:matt/carnival/00: 144 432
+:matt/carnival/01: 240 432
+:matt/carnival/02: 208 432
+:matt/carnival/03: 176 432
+:matt/carnival/00: 16 432
+:matt/carnival/01: 112 432
+:matt/carnival/02: 80 432
+:matt/carnival/03: 48 432
+:matt/carnival/01: 368 432
+:matt/carnival/02: 400 432
+:matt/carnival/03: 432 432
+:matt/carnival/00: 464 432
+:matt/carnival/01: 496 432
+:matt/carnival/02: 528 432
+:matt/carnival/03: 560 432
+:matt/carnival/00: 592 432

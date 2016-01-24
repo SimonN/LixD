@@ -1,0 +1,148 @@
+$BUILT 2013-05-18 13:23:42
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Wise Decisions (2p)
+
+#SIZE_X 576
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 35
+#INITIAL 70
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 15
+#FLOATER 10
+#WALKER 50
+#JUMPER 50
+#EXPLODER2 20
+#PLATFORMER 40
+#BUILDER 15
+#BATTER 15
+#BLOCKER 5
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 544 48
+:geoo/construction/Hatch.H: 256 48
+
+:geoo/construction/Goal2.G: 256 320
+:geoo/construction/Goal2.G: 544 320
+
+:geoo/steel/16x32o.S: 288 48 frrr
+:geoo/steel/16x32o.S: 272 32 frrr
+:geoo/steel/16x32o.S: 240 32 frrr
+:geoo/steel/16x32o.S: 352 48 frr
+:geoo/steel/16x32o.S: 352 80 frr
+:geoo/steel/16x32o.S: 352 112 frr
+:geoo/steel/16x32o.S: 352 144 frr
+:geoo/steel/16x32o.S: 256 160 frrr
+:geoo/steel/16x32o.S: 304 160 frrr
+:geoo/steel/16x32o.S: 240 48 frr
+:geoo/steel/16x32o.S: 240 80 frr
+:geoo/steel/16x32o.S: 240 112 frr
+:geoo/steel/16x32o.S: 240 144 frr
+:geoo/steel/16x32o.S: 464 112 frrr
+:geoo/steel/16x32o.S: 496 160 frrr
+:geoo/steel/16x32o.S: 560 32 frrr
+:geoo/steel/16x32o.S: 528 32 frrr
+:geoo/steel/16x32o.S: 64 48 frr
+:geoo/steel/16x32o.S: 64 80 frr
+:geoo/steel/16x32o.S: 64 112 frr
+:geoo/steel/16x32o.S: 64 144 frr
+:geoo/steel/16x32o.S: 544 160 frrr
+:geoo/steel/16x32o.S: 528 48 frr
+:geoo/steel/16x32o.S: 528 80 frr
+:geoo/steel/16x32o.S: 528 112 frr
+:geoo/steel/16x32o.S: 528 144 frr
+:geoo/steel/16x32o.S: 144 64 frrr
+:geoo/steel/16x32o.S: 208 160 frrr
+:proxima/tile/cyan2s: 160 288
+:proxima/tile/cyan2s: 192 288
+:proxima/tile/cyan2s: 224 288
+:proxima/tile/cyan2s: 256 288
+:proxima/tile/cyan2s: 288 288
+:proxima/tile/cyan2s: 416 288
+:proxima/tile/cyan2s: 448 288
+:proxima/tile/cyan2s: 480 288
+:proxima/tile/cyan2s: 384 288
+:geoo/steel/16x32o.S: 176 112 fr
+:geoo/steel/16x16o.S: 288 160
+:geoo/steel/dark_32x16o.S: 208 384
+:geoo/steel/dark_32x16o.S: 240 384
+:geoo/steel/dark_32x16o.S: 144 368
+:geoo/steel/dark_32x16o.S: 176 384
+:geoo/steel/dark_32x16o.S: 272 384
+:geoo/steel/dark_32x16o.S: 432 368
+:geoo/steel/dark_32x16o.S: 304 384
+:geoo/steel/dark_32x16o.S: 336 384
+:geoo/steel/dark_32x16o.S: 144 384
+:proxima/tile/cyan2s: 192 256
+:proxima/tile/cyan2s: 192 240
+:proxima/tile/cyan2s: 480 288
+:proxima/tile/cyan2s: 480 288
+:proxima/tile/cyan2s: 496 208 rrr
+:proxima/tile/cyan2s: 496 176 rrr
+:proxima/tile/cyan2s: 208 208 rrr
+:proxima/tile/cyan2s: 208 176 rrr
+:proxima/tile/cyan3: 208 176
+:proxima/tile/cyan3a: 208 208
+:proxima/tile/cyan3: 208 240 f
+:proxima/tile/cyan3: 496 176
+:proxima/tile/cyan3a: 496 208
+:proxima/tile/cyan3: 96 240 rrr
+:proxima/tile/cyan3: 224 240 frrr
+:proxima/tile/cyan3a: 192 240 rrr
+:proxima/tile/cyan2s: 320 288
+:proxima/tile/cyan2s: 352 288
+:geoo/steel/16x32o.S: 112 64 frrr
+:geoo/steel/16x32o.S: 80 64 frrr
+:geoo/steel/16x32o.S: 432 64 frrr
+:geoo/steel/16x32o.S: 400 64 frrr
+:geoo/steel/16x32o.S: 368 64 frrr
+:geoo/steel/16x16o.S: 0 160
+:proxima/tile/cyan2s: 544 288
+:proxima/tile/cyan2s: 0 288
+:proxima/tile/cyan2s: 32 288
+:proxima/tile/cyan2s: 512 288
+:proxima/tile/cyan2s: 32 288
+:proxima/tile/cyan2s: 32 288
+:proxima/tile/cyan2s: 64 288
+:proxima/tile/cyan2s: 96 288
+:proxima/tile/cyan2s: 128 288
+:proxima/tile/cyan2s: 128 288
+:proxima/tile/cyan2s: 128 288
+:geoo/steel/dark_32x16o.S: 368 384
+:geoo/steel/dark_32x16o.S: 400 384
+:geoo/steel/dark_32x16o.S: 432 384
+:geoo/steel/dark_32x16o.S: 432 384
+:geoo/steel/dark_32x16o.S: 464 384
+:geoo/steel/dark_32x16o.S: 496 384
+:geoo/steel/dark_32x16o.S: 528 384
+:geoo/steel/dark_32x16o.S: 560 384
+:geoo/steel/dark_32x16o.S: 16 384
+:geoo/steel/dark_32x16o.S: 16 384
+:geoo/steel/dark_32x16o.S: 48 384
+:geoo/steel/dark_32x16o.S: 80 384
+:geoo/steel/dark_32x16o.S: 112 384
+:geoo/steel/dark_32x16o.S: 112 384
+:proxima/tile/cyan3a: 160 240 rrr
+:proxima/tile/cyan3a: 128 240 rrr
+:proxima/tile/cyan2s: 480 256
+:proxima/tile/cyan3: 496 240 f
+:proxima/tile/cyan3: 384 240 rrr
+:proxima/tile/cyan3: 512 240 frrr
+:proxima/tile/cyan3a: 480 240 rrr
+:proxima/tile/cyan3a: 448 240 rrr
+:proxima/tile/cyan3a: 416 240 rrr
+:geoo/steel/16x32o.S: 0 48 frrr
+:geoo/steel/16x32o.S: 16 160 frrr
+:proxima/tile/orange2s: 96 256 d
+:proxima/tile/orange2s: 384 256 d

@@ -1,0 +1,101 @@
+$BUILT 2014-05-20 21:14:40
+$AUTHOR I.S./geoo
+$GERMAN 
+$ENGLISH Derailed Level
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 30
+#REQUIRED 28
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 1
+#JUMPER 1
+#CLIMBER 2
+#FLOATER 1
+#EXPLODER2 2
+#BLOCKER 0
+#CUBER 1
+#BUILDER 1
+#PLATFORMER 4
+#BASHER 1
+#MINER 1
+#DIGGER 3
+
+:matt/goldmine/GoalTop.D: 568 176
+
+:matt/goldmine/Hatch.H: 32 224
+
+:matt/goldmine/Goal.G: 568 224
+
+:matt/goldmine/crate32: 452 208
+:matt/goldmine/crate16: 252 176
+:matt/goldmine/crate16: 284 176
+:matt/goldmine/crate16: 276 192
+:matt/goldmine/crate16: 260 192
+:matt/goldmine/crate16: 292 192
+:matt/goldmine/crate16: 244 192
+:matt/goldmine/crate32: 460 240
+:matt/goldmine/crate32: 388 112
+:matt/goldmine/crate32: 364 80
+:matt/goldmine/crate32: 332 80
+:matt/goldmine/crate16: 228 224
+:matt/goldmine/crate16: 212 224
+:matt/goldmine/crate32: 412 240
+:matt/goldmine/crate16: 388 192
+:matt/goldmine/crate16: 388 176
+:geoo/steel/32x32o.S: 380 240
+:geoo/steel/32x32o.S: 388 208
+:geoo/steel/32x32o.S: 388 144
+:geoo/steel/32x32o.S: 348 112
+:geoo/steel/32x32o.S: 348 144
+:matt/goldmine/crate32: 348 176
+:geoo/steel/32x32o.S: 348 240
+:geoo/steel/32x32o.S: 348 208
+:geoo/steel/32x32o.S: 308 144
+:matt/goldmine/crate32: 292 48
+:matt/goldmine/crate32: 260 48
+:matt/goldmine/crate32: 292 80
+:matt/goldmine/crate32: 308 112
+:matt/goldmine/crate32: 276 112
+:matt/goldmine/crate32: 308 176
+:geoo/steel/32x32o.S: 308 240
+:matt/goldmine/crate32: 196 48
+:matt/goldmine/crate32: 228 48
+:matt/goldmine/crate32: 244 80
+:matt/goldmine/crate32: 212 80
+:matt/goldmine/crate32: 244 112
+:matt/goldmine/crate32: 260 144
+:matt/goldmine/crate32: 196 112
+:matt/goldmine/crate32: 180 80
+:matt/goldmine/crate32: 164 112
+:matt/goldmine/crate32: 180 144
+:geoo/steel/32x32o.S: 308 208
+:geoo/steel/32x32o.S: 164 176
+:matt/goldmine/crate32: 148 144
+:matt/goldmine/explosivecrate: 244 208
+:matt/goldmine/crate64: 148 208
+:geoo/steel/32x32o.S: 212 240
+:matt/goldmine/planksupport: 0 272
+:matt/goldmine/planksupport: 512 272
+:matt/goldmine/tracks: 80 264
+:matt/goldmine/tracks: 200 264
+:matt/goldmine/tracks: 320 264
+:matt/goldmine/tracks: 440 264
+:matt/goldmine/plankdiag: 0 240
+:matt/goldmine/crate16: 268 176
+:matt/goldmine/crate16: 148 192
+:matt/goldmine/crate32: 468 176
+:matt/goldmine/crate32: 460 144
+:matt/goldmine/crate16: 480 128
+:geoo/steel/32x32o.S: 308 112

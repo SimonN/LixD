@@ -1,0 +1,213 @@
+$BUILT 2014-01-26 15:42:18
+$AUTHOR Michael S. Repton
+$GERMAN 
+$ENGLISH Rhapsody in Blue
+
+#SIZE_X 1440
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 320
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 80
+#REQUIRED 78
+#SPAWN_INTERVAL 18
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 2
+#FLOATER 2
+#EXPLODER 2
+#BLOCKER 2
+#BUILDER 2
+#BASHER 2
+#MINER 2
+#DIGGER 2
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 544 144
+
+:proxima/tile/goal.G: 1120 176
+
+:matt/10tons.T: 616 200
+:matt/10tons.T: 648 200
+:matt/10tons.T: 680 200
+:matt/10tons.T: 712 200
+:matt/10tons.T: 744 200
+:matt/10tons.T: 776 200
+:matt/10tons.T: 808 200
+
+:simon/crystal.W: 0 352
+:simon/crystal.W: 48 352
+:simon/crystal.W: 1312 352
+:simon/crystal.W: 1360 352
+:simon/crystal.W: 1408 352
+:geoo/construction/sawblade_small.F: 1200 32
+:geoo/construction/sawblade_small.F: 1200 224
+
+:proxima/tile/cyan2: 128 240
+:proxima/tile/cyan2: 192 240
+:proxima/tile/cyan2: 256 240
+:proxima/tile/cyan1: 288 272
+:proxima/tile/cyan1: 352 272
+:proxima/tile/cyan2: 320 240
+:proxima/tile/64.S: 352 240
+:proxima/tile/32.S: 416 240
+:proxima/tile/32.S: 448 240
+:proxima/tile/32.S: 480 240
+:proxima/tile/32.S: 512 240
+:proxima/tile/cyan3: 368 88
+:proxima/tile/cyan3: 464 88
+:proxima/tile/cyan3a: 368 112
+:proxima/tile/cyan3a: 368 144
+:proxima/tile/cyan3a: 368 176
+:proxima/tile/cyan3a: 368 208
+:proxima/tile/cyan3a: 464 112
+:proxima/tile/cyan3a: 464 144
+:proxima/tile/cyan3a: 464 176
+:proxima/tile/cyan3a: 464 208
+:proxima/tile/blue2s: 368 56
+:proxima/tile/blue2s: 400 56
+:proxima/tile/blue2s: 432 56
+:proxima/tile/blue2s: 464 56
+:proxima/tile/cyan1: 160 272
+:proxima/tile/cyan1: 160 336
+:proxima/tile/cyan1: 224 272
+:proxima/tile/cyan1: 224 336
+:proxima/tile/cyan1: 288 336
+:proxima/tile/cyan1: 352 336
+:proxima/tile/cyan1: 416 272
+:proxima/tile/cyan1: 416 336
+:proxima/tile/cyan1: 480 272
+:proxima/tile/cyan1: 480 336
+:proxima/tile/blue2a: 0 64
+:proxima/tile/blue2: 0 0
+:proxima/tile/blue2a: 64 0
+:proxima/tile/32.S: 544 240
+:proxima/tile/32.S: 576 240
+:proxima/tile/32.S: 608 240
+:proxima/tile/32.S: 640 240
+:proxima/tile/cyan1: 544 272
+:proxima/tile/cyan1: 608 272
+:proxima/tile/32.S: 672 240
+:proxima/tile/32.S: 704 240
+:proxima/tile/32.S: 736 240
+:proxima/tile/32.S: 768 240
+:proxima/tile/cyan1: 672 272
+:proxima/tile/cyan1: 672 336
+:proxima/tile/cyan1: 736 272
+:proxima/tile/cyan1: 736 336
+:proxima/tile/blue1a: 128 0
+:proxima/tile/blue1: 192 0
+:proxima/tile/cyan2s: 576 48
+:proxima/tile/spheres/blue: 528 24
+:proxima/tile/cyan2s: 608 48
+:proxima/tile/cyan2s: 640 48
+:proxima/tile/cyan2s: 672 48
+:proxima/tile/cyan2s: 704 48
+:proxima/tile/cyan2s: 736 48
+:proxima/tile/cyan2s: 768 48
+:proxima/tile/cyan2s: 800 48
+:proxima/tile/cyan1: 800 272
+:proxima/tile/64.S: 800 240
+:proxima/tile/cyan1: 800 336
+:proxima/tile/spheres/bluesmall: 624 168
+:proxima/tile/spheres/bluesmall: 656 168
+:proxima/tile/spheres/bluesmall: 688 168
+:proxima/tile/spheres/bluesmall: 720 168
+:proxima/tile/spheres/bluesmall: 752 168
+:proxima/tile/spheres/bluesmall: 784 168
+:proxima/tile/spheres/bluesmall: 816 168
+:geoo/abstract/pipes/central4: 732 138 rrr
+:geoo/abstract/pipes/central4: 636 138 rrr
+:geoo/abstract/pipes/central4: 668 138 rrr
+:geoo/abstract/pipes/central4: 700 138 rrr
+:geoo/abstract/pipes/central4: 764 138 rrr
+:geoo/abstract/pipes/central4: 796 138 rrr
+:geoo/abstract/pipes/central4: 828 138 rrr
+:geoo/abstract/pipes/corner4: 636 146 r
+:geoo/abstract/pipes/corner4: 828 146 fr
+:geoo/abstract/pipes/central4: 644 146
+:geoo/abstract/pipes/central4: 796 146
+:geoo/abstract/pipes/central4: 732 122 rrr
+:geoo/abstract/pipes/central4: 668 122 rrr
+:geoo/abstract/pipes/central4: 700 122 rrr
+:geoo/abstract/pipes/central4: 764 122 rrr
+:geoo/abstract/pipes/central4: 796 122 rrr
+:geoo/abstract/pipes/corner4: 668 114 r
+:geoo/abstract/pipes/central4: 676 114
+:geoo/abstract/pipes/corner4: 796 114 fr
+:geoo/abstract/pipes/central4: 764 114
+:geoo/abstract/pipes/central4: 732 90 rrr
+:geoo/abstract/pipes/central4: 700 90 rrr
+:geoo/abstract/pipes/central4: 764 90 rrr
+:geoo/abstract/pipes/corner4: 764 82 fr
+:geoo/abstract/pipes/central4: 732 82
+:geoo/abstract/pipes/corner4: 700 82 r
+:geoo/abstract/pipes/central4: 708 82
+:geoo/abstract/pipes/central4: 732 64 rrr
+:geoo/abstract/pipes/corner4: 636 138 rd
+:geoo/abstract/pipes/corner4: 828 138 rd
+:proxima/tile/blue2b: 480 336
+:proxima/tile/blue2: 544 336
+:proxima/tile/blue1b: 672 336
+:proxima/tile/blue2b: 544 272
+:proxima/tile/blue1b: 608 272
+:proxima/tile/cyan2: 864 240
+:proxima/tile/cyan2: 928 240
+:proxima/tile/cyan2: 992 240
+:proxima/tile/cyan1: 864 272
+:proxima/tile/cyan1: 928 272
+:proxima/tile/cyan1: 928 336
+:proxima/tile/cyan1: 992 272
+:proxima/tile/cyan1: 992 336
+:proxima/tile/cyan1: 864 336
+:proxima/tile/32.S: 1056 240
+:proxima/tile/32.S: 1088 240
+:proxima/tile/32.S: 1120 240
+:proxima/tile/32.S: 1152 240
+:proxima/tile/32.S: 1184 240
+:proxima/tile/32.S: 1216 240
+:proxima/tile/cyan1: 1056 272
+:proxima/tile/cyan1: 1120 272
+:proxima/tile/cyan1: 1120 336
+:proxima/tile/cyan1: 1184 272
+:proxima/tile/cyan1: 1056 336
+:proxima/tile/64.S: 1248 336
+:proxima/tile/64.S: 1248 272
+:proxima/tile/64.S: 1248 208
+:proxima/tile/64.S: 1248 144
+:proxima/tile/64.S: 1248 80
+:proxima/tile/cyan2s: 832 48
+:proxima/tile/cyan2s: 864 48
+:proxima/tile/cyan2s: 896 48
+:proxima/tile/cyan2s: 928 48
+:proxima/tile/cyan2s: 960 48
+:proxima/tile/cyan2s: 992 48
+:proxima/tile/cyan2s: 1024 48
+:proxima/tile/cyan2s: 1056 48
+:proxima/tile/cyan2s: 1088 48
+:proxima/tile/cyan2s: 1120 48
+:proxima/tile/cyan2s: 1152 48
+:proxima/tile/cyan2s: 1184 48
+:proxima/tile/cyan2s: 1216 48
+:proxima/tile/32.S: 1248 48
+:proxima/tile/32.S: 1280 48
+:proxima/tile/blue1a: 1312 0
+:proxima/tile/blue1a: 1376 64
+:proxima/tile/blue1: 1376 0
+:proxima/tile/blue2a: 256 0
+:proxima/tile/blue2b: 1184 272
+:proxima/tile/blue2b: 1120 336
+:proxima/tile/blue2: 1184 336
+:proxima/tile/blue1: 608 336
+:proxima/tile/blue1s: 96 240
+:proxima/tile/blue1: 96 272
+:proxima/tile/blue1: 96 336

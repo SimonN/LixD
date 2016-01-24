@@ -1,0 +1,155 @@
+$BUILT 2014-06-27 01:34:27
+$AUTHOR Prob Lem
+$GERMAN 
+$ENGLISH Hrududu
+
+#SIZE_X 1024
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 30
+#REQUIRED 29
+#SPAWN_INTERVAL 40
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 0
+#FLOATER 0
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 10
+#BASHER 3
+#MINER 0
+#DIGGER 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 1 252
+
+:geoo/abstract/goal.G: 761 144
+
+:proxima/flame.F: 141 336
+:proxima/flame.F: 173 336
+:proxima/flame.F: 250 336
+:proxima/flame.F: 378 336
+:proxima/flame.F: 450 336
+:proxima/flame.F: 482 336
+:proxima/flame.F: 528 336
+:proxima/flame.F: 560 336
+:proxima/flame.F: 664 336
+:proxima/flame.F: 848 336
+:proxima/flame.F: 952 336
+:proxima/flame.F: 984 336
+
+:geoo/construction/pillar_base: -12 384
+:geoo/construction/pillar_base: 28 384
+:geoo/construction/pillar_base: 68 384
+:geoo/construction/pillar_base: 108 384
+:geoo/construction/pillar_base: 148 384
+:geoo/construction/pillar_base: 188 384
+:geoo/construction/pillar_base: 228 384
+:geoo/construction/pillar_base: 268 384
+:geoo/construction/pillar_base: 308 384
+:geoo/construction/pillar_base: 348 384
+:geoo/construction/pillar_base: 388 384
+:geoo/construction/pillar_base: 428 384
+:geoo/construction/pillar_base: 468 384
+:geoo/construction/pillar_base: 508 384
+:geoo/construction/pillar_base: 548 384
+:geoo/construction/pillar_base: 588 384
+:geoo/construction/pillar_top_shaded: 0 368
+:geoo/construction/pillar_top_shaded: 32 368
+:geoo/construction/pillar_top_shaded: 64 368
+:geoo/construction/pillar_top_shaded: 96 368
+:amanda/steel/steel24x16.S: 218 360 rrr
+:amanda/steel/steel24x16.S: 218 336 rrr
+:amanda/steel/steel24x16.S: 234 360 rrr
+:amanda/steel/steel24x16.S: 234 336 rrr
+:simon/steel/clean_h3.S: 234 286
+:simon/steel/clean_h3.S: 334 286
+:geoo/abstract/pipes/central4: 255 254 rrr
+:geoo/abstract/pipes/central4: 405 254 rrr
+:geoo/abstract/pipes/ends4: 255 246 r
+:geoo/abstract/pipes/ends4: 405 246 r
+:simon/steel/clean_s1.S: 255 221
+:simon/steel/clean_s1.S: 280 221
+:simon/steel/clean_s1.S: 363 221
+:simon/steel/clean_s1.S: 388 221
+:geoo/abstract/pipes/central4: 305 221
+:geoo/abstract/pipes/central4: 331 221
+:geoo/abstract/pipes/central4: 305 229
+:geoo/abstract/pipes/central4: 331 229
+:geoo/abstract/pipes/central4: 305 237
+:geoo/abstract/pipes/central4: 331 237
+:amanda/steel/steel24x16.S: 418 360 rrr
+:amanda/steel/steel24x16.S: 418 336 rrr
+:amanda/steel/steel24x16.S: 434 360 rrr
+:amanda/steel/steel24x16.S: 434 336 rrr
+:geoo/construction/pillar_base: 628 384
+:geoo/construction/pillar_base: 668 384
+:geoo/construction/pillar_base: 708 384
+:geoo/construction/pillar_base: 748 384
+:amanda/steel/steel32x32.S: 600 352
+:amanda/steel/steel32x32.S: 600 320
+:amanda/steel/steel32x32.S: 600 288
+:amanda/steel/steel32x32.S: 632 352
+:amanda/steel/steel32x32.S: 632 320
+:amanda/steel/steel32x32.S: 632 288
+:geoo/construction/pillar_base: 788 384
+:geoo/construction/pillar_base: 828 384
+:geoo/construction/pillar_base: 868 384
+:geoo/construction/pillar_base: 908 384
+:matt/steel/48x48.S: 632 240
+:matt/steel/48x48.S: 632 192
+:matt/steel/48x48.S: 680 240
+:matt/steel/48x48.S: 680 192
+:matt/steel/48x48.S: 728 240
+:matt/steel/48x48.S: 728 192
+:matt/steel/48x48.S: 776 240
+:matt/steel/48x48.S: 776 192
+:matt/steel/48x48.S: 824 240
+:matt/steel/48x48.S: 824 192
+:matt/steel/48x48.S: 872 240
+:matt/steel/48x48.S: 872 192
+:amanda/steel/steel32x32.S: 888 352
+:amanda/steel/steel32x32.S: 888 320
+:amanda/steel/steel32x32.S: 888 288
+:amanda/steel/steel32x32.S: 920 352
+:amanda/steel/steel32x32.S: 920 320
+:amanda/steel/steel32x32.S: 920 288
+:amanda/steel/steel24x8.S: 608 216
+:amanda/steel/steel24x8.S: 920 216
+:amanda/steel/steel_flange_left24x16.S: 596 200
+:amanda/steel/steel_flange_right24x16.S: 932 200
+:geoo/abstract/pipes/central4: 680 160 rrr
+:geoo/abstract/pipes/central4: 688 160 rrr
+:geoo/abstract/pipes/central4: 680 128 rrr
+:geoo/abstract/pipes/central4: 688 128 rrr
+:geoo/abstract/pipes/ends4: 680 120 r
+:geoo/abstract/pipes/ends4: 688 120 r
+:geoo/abstract/pipes/central4: 855 160 rrr
+:geoo/abstract/pipes/central4: 863 160 rrr
+:geoo/abstract/pipes/central4: 855 128 rrr
+:geoo/abstract/pipes/central4: 863 128 rrr
+:geoo/abstract/pipes/ends4: 855 120 r
+:geoo/abstract/pipes/ends4: 863 120 r
+:matt/steel/32x32.S: 676 88
+:matt/steel/32x32.S: 842 88
+:matt/steel/32x32.S: 708 88
+:matt/steel/32x32.S: 811 88
+:simon/steel/clean_h2.S: 726 63
+:geoo/construction/pillar_base: 948 384
+:geoo/construction/pillar_base: 988 384
+:matt/beach/daytime/15: 664 226
+:matt/beach/daytime/15: 854 226
+:matt/earth/22: 272 300
+:matt/earth/22: 372 300
+:simon/desert/stone_h: 750 270
+:simon/desert/stone_h: 309 320
+:simon/brick/vert2: 0 308

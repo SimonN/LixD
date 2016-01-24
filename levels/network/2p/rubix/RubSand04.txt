@@ -1,0 +1,188 @@
+$BUILT 2014-06-06 10:07:35
+$AUTHOR RubiX
+$GERMAN 
+$ENGLISH Game on! Choose new tactics(2p)
+
+#SIZE_X 1578
+#SIZE_Y 402
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 402
+#START_Y 384
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 35
+#INITIAL 60
+#REQUIRED 20
+#SPAWN_INTERVAL 48
+#SPAWN_INTERVAL_FAST 4
+
+#FLOATER 10
+#WALKER 50
+#JUMPER 40
+#BLOCKER 2
+#EXPLODER2 5
+#BUILDER 40
+#PLATFORMER 30
+#MINER 55
+#BASHER 25
+#DIGGER 5
+#BATTER 10
+#NOTHING 0
+
+:matt/beach/Hatch.H: 446 30
+:matt/beach/Hatch.H: 1084 20 r
+
+:matt/beach/goal.G: 1374 304
+:matt/beach/goal.G: 112 304
+
+:matt/beach/daytime/03: 1354 179
+:matt/beach/daytime/03: 113 178
+:matt/beach/daytime/03: 17 174
+:matt/beach/daytime/03: 1422 174
+:matt/beach/daytime/03: 1280 179
+:matt/beach/decor/shovel: 1552 288
+:matt/beach/decor/shovel: 0 288
+:matt/beach/decor/pail: 1447 32
+:matt/beach/decor/pail: 37 33
+:matt/beach/daytime/13: 720 72
+:matt/beach/daytime/13: 752 72 frr
+:matt/beach/daytime/13: 848 72
+:matt/beach/daytime/13: 880 72 frr
+:matt/beach/daytime/13: 976 72
+:matt/beach/daytime/13: 1008 72 frr
+:matt/beach/daytime/13: 336 72
+:matt/beach/daytime/13: 368 72 frr
+:matt/beach/daytime/13: 464 72
+:matt/beach/daytime/13: 496 72 frr
+:matt/beach/daytime/13: 592 72
+:matt/beach/daytime/13: 624 72 frr
+:matt/beach/daytime/13: 1104 72
+:matt/beach/daytime/13: 1136 72 frr
+:matt/beach/daytime/13: 1232 72
+:matt/beach/daytime/13: 1264 72 frr
+:matt/beach/daytime/13: 1360 72
+:matt/beach/daytime/13: 1392 72 frr
+:matt/beach/daytime/13: 208 72
+:matt/beach/daytime/13: 240 72 frr
+:matt/beach/daytime/13: 80 72
+:matt/beach/daytime/13: 112 72 frr
+:matt/beach/daytime/13: 272 88
+:matt/beach/daytime/13: 304 88 frr
+:matt/beach/daytime/13: 400 88
+:matt/beach/daytime/13: 432 88 frr
+:matt/beach/daytime/13: 528 88
+:matt/beach/daytime/13: 560 88 frr
+:matt/beach/daytime/13: 144 88
+:matt/beach/daytime/13: 176 88 frr
+:matt/beach/daytime/13: 16 88
+:matt/beach/daytime/13: 48 88 frr
+:matt/beach/daytime/13: 912 88
+:matt/beach/daytime/13: 944 88 frr
+:matt/beach/daytime/13: 1040 88
+:matt/beach/daytime/13: 1072 88 frr
+:matt/beach/daytime/13: 1168 88
+:matt/beach/daytime/13: 1200 88 frr
+:matt/beach/daytime/13: 784 88
+:matt/beach/daytime/13: 816 88 frr
+:matt/beach/daytime/13: 656 88
+:matt/beach/daytime/13: 688 88 frr
+:matt/beach/daytime/13: 1296 88
+:matt/beach/daytime/13: 1328 88 frr
+:matt/beach/daytime/13: 1438 88
+:matt/beach/daytime/13: 1468 86 frr
+:matt/beach/daytime/13: 272 184 f
+:matt/beach/daytime/13: 304 184 rr
+:matt/beach/daytime/13: 400 184 f
+:matt/beach/daytime/13: 432 184 rr
+:matt/beach/daytime/13: 528 184 f
+:matt/beach/daytime/13: 560 184 rr
+:matt/beach/daytime/13: 656 184 f
+:matt/beach/daytime/13: 688 184 rr
+:matt/beach/daytime/13: 784 184 f
+:matt/beach/daytime/13: 816 184 rr
+:matt/beach/daytime/04: 842 101 r
+:matt/beach/daytime/13: 912 184 f
+:matt/beach/daytime/13: 944 184 rr
+:matt/beach/daytime/13: 1040 184 f
+:matt/beach/daytime/13: 1072 184 rr
+:matt/beach/daytime/13: 1168 184 f
+:matt/beach/daytime/13: 1200 184 rr
+:matt/beach/daytime/13: 240 168 rr
+:matt/beach/daytime/13: 336 168 f
+:matt/beach/daytime/04: 260 111 r
+:matt/beach/daytime/13: 368 168 rr
+:matt/beach/daytime/13: 464 168 f
+:matt/beach/daytime/13: 496 168 rr
+:matt/beach/daytime/04: 558 103 r
+:matt/beach/daytime/13: 592 168 f
+:matt/beach/daytime/04: 464 151 r
+:matt/beach/daytime/13: 624 168 rr
+:matt/beach/daytime/13: 720 168 f
+:matt/beach/daytime/04: 740 156 r
+:matt/beach/daytime/13: 752 168 rr
+:matt/beach/daytime/13: 846 168 f
+:matt/beach/daytime/13: 880 168 rr
+:matt/beach/daytime/13: 976 168 f
+:matt/beach/daytime/13: 1008 168 rr
+:matt/beach/daytime/13: 1104 168 f
+:matt/beach/daytime/13: 1136 168 rr
+:matt/beach/daytime/13: 1232 168 f
+:matt/beach/daytime/06: -80 368
+:matt/beach/daytime/06: -16 368
+:matt/beach/daytime/06: 48 368
+:matt/beach/daytime/06: 112 368
+:matt/beach/daytime/06: 176 368
+:matt/beach/daytime/06: 240 368
+:matt/beach/daytime/06: 304 368
+:matt/beach/daytime/06: 368 368
+:matt/beach/daytime/06: 432 368
+:matt/beach/daytime/06: 496 368
+:matt/beach/daytime/06: 560 368
+:matt/beach/daytime/06: 624 368
+:matt/beach/daytime/06: 688 368
+:matt/beach/daytime/06: 752 368
+:matt/beach/daytime/06: 816 368
+:matt/beach/daytime/06: 880 368
+:matt/beach/daytime/06: 944 368
+:matt/beach/daytime/06: 1008 368
+:matt/beach/daytime/06: 1072 368
+:matt/beach/daytime/06: 1136 368
+:matt/beach/daytime/06: 1216 368
+:matt/beach/daytime/06: 1280 368
+:matt/beach/daytime/06: 1344 368
+:matt/beach/daytime/06: 1408 368
+:matt/beach/daytime/06: 1472 368
+:matt/steel/32x32.S: 1392 368
+:matt/steel/32x32.S: 1424 368
+:matt/steel/32x32.S: 1456 368
+:matt/steel/32x32.S: 1360 368
+:matt/steel/32x32.S: 96 368
+:matt/steel/32x32.S: 128 368
+:matt/steel/32x32.S: 160 368
+:matt/steel/32x32.S: 192 368
+:matt/steel/32x32.S: 448 112
+:matt/steel/32x32.S: 480 112
+:matt/steel/32x32.S: 512 112
+:matt/steel/32x32.S: 1024 112
+:matt/beach/daytime/04: 1026 139 r
+:matt/steel/32x32.S: 1056 112
+:matt/steel/32x32.S: 1088 112
+:matt/beach/decor/grass11: 631 120
+:matt/beach/decor/grass11: 1085 211
+:matt/beach/decor/grass11: 1478 145
+:matt/beach/decor/grass11: 63 139
+:matt/beach/decor/grass10: 281 127
+:matt/beach/decor/grass10: 472 197
+:matt/beach/decor/grass10: 735 190
+:matt/beach/decor/grass10: 964 131
+:matt/beach/decor/grass09: 200 156
+:matt/beach/decor/grass09: 310 112
+:matt/beach/decor/grass09: 667 119
+:matt/beach/decor/grass09: 760 205
+:matt/beach/daytime/04: 1213 103 r
+:matt/beach/decor/grass03: 1265 110
+:matt/beach/decor/grass07: 1273 220
+:matt/beach/daytime/04: 284 150 r

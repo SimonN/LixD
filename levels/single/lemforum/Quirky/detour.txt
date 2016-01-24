@@ -1,0 +1,65 @@
+$BUILT 2012-05-20 20:10:00
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH Detour
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 50
+#SPAWN_INTERVAL 16
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 0
+#FLOATER 1
+#EXPLODER 0
+#BLOCKER 0
+#BUILDER 4
+#BASHER 3
+#MINER 2
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/sandstone/Hatch.H: 104 88
+
+:geoo/sandstone/Goal.G: 512 224
+
+:geoo/sandstone/64x16: 184 192
+:geoo/sandstone/64x16: 248 192
+:geoo/sandstone/8x8: 312 180
+:geoo/sandstone/64x16: 120 192
+:geoo/sandstone/8x8: 312 188
+:geoo/sandstone/8x8: 312 196
+:geoo/sandstone/8x8: 312 204
+:geoo/sandstone/8x8: 312 212
+:geoo/sandstone/64x16: 96 240
+:geoo/sandstone/64x16: 64 288
+:geoo/sandstone/8x8: 56 276
+:geoo/sandstone/8x8: 56 284
+:geoo/sandstone/8x8: 56 292
+:geoo/sandstone/8x8: 56 300
+:geoo/sandstone/8x8: 56 308
+:geoo/sandstone/64x16: 128 288
+:geoo/sandstone/64x16: 256 288
+:geoo/sandstone/64x16: 192 288
+:geoo/sandstone/64x16: 320 288
+:geoo/sandstone/64x16: 448 288
+:geoo/sandstone/64x16: 512 288
+:geoo/sandstone/smaragd: 144 192
+:geoo/sandstone/smaragd: 272 192
+:geoo/sandstone/smaragd: 216 288
+:geoo/sandstone/smaragd: 344 288
+:geoo/sandstone/smaragd: 88 288
+:geoo/sandstone/64x16: 160 240
+:geoo/sandstone/64x16: 224 240
+:geoo/sandstone/smaragd: 184 240

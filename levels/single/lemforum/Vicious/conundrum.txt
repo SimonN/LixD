@@ -1,0 +1,75 @@
+$BUILT 2012-08-17 15:07:17
+$AUTHOR mobius
+$GERMAN 
+$ENGLISH Conundrum
+
+#SIZE_X 1184
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y -20
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 60
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 10
+#FLOATER 1
+#EXPLODER 0
+#BLOCKER 1
+#BUILDER 3
+#BASHER 2
+#MINER 0
+#DIGGER 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/underworld/Hatch.H: 104 256
+
+:matt/underworld/Goal.G: 1024 288
+
+:matt/underworld/Lava.W: 752 352
+:matt/underworld/Lava.W: 800 352
+:geoo/sandstone/torch.F: 30 352
+:geoo/sandstone/torch.F: 1074 352
+
+:matt/underworld/00: 888 320 rrr
+:matt/underworld/00: 952 320 rrr
+:matt/underworld/01: 48 352
+:matt/underworld/01: 112 352
+:matt/underworld/01: 176 352
+:matt/underworld/01: 240 352
+:matt/underworld/02: 336 304
+:matt/underworld/02: 336 208
+:matt/underworld/02: 400 304
+:matt/underworld/02: 464 304
+:matt/underworld/02: 528 304
+:matt/underworld/02: 336 112
+:matt/underworld/02: 344 112 d
+:matt/underworld/01: 560 352
+:matt/underworld/01: 624 352
+:matt/underworld/01: 688 352
+:matt/underworld/01: 832 352
+:matt/underworld/01: 896 352
+:matt/underworld/01: 960 352
+:matt/underworld/01: 688 384
+:matt/underworld/01: 832 384
+:matt/underworld/01: 1024 352
+:matt/underworld/01: 336 384 d
+:matt/underworld/01: 400 384 d
+:matt/underworld/01: 464 384 d
+:matt/underworld/01: 528 384 d
+:matt/underworld/02: 464 208
+:matt/underworld/02: 472 208 d
+:matt/underworld/02: 448 136 d
+:matt/underworld/02: 520 208
+:matt/underworld/02: 528 208 d
+:matt/underworld/01: 304 352

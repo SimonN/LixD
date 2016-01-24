@@ -1,0 +1,195 @@
+$BUILT                                             2012-04-13 11:35:56
+$AUTHOR                                                   Pieuw/mobius
+$GERMAN                                                               
+$ENGLISH                                             Division of Labor
+
+#SIZE_X                                                           1616
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                           210
+#INITIAL                                                             2
+#REQUIRED                                                            2
+#SPAWN_INTERVAL                                                     30
+#SPAWN_INTERVAL_FAST                                                30
+
+#CLIMBER                                                             0
+#FLOATER                                                             1
+#EXPLODER                                                            0
+#BLOCKER                                                             1
+#BUILDER                                                             8
+#BASHER                                                              2
+#MINER                                                               1
+#DIGGER                                                              1
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:bitmap/geoo/sandstone/Hatch.H:                            0        64
+
+:bitmap/geoo/sandstone/Goal.G:                          1416       216
+
+:bitmap/geoo/sandstone/ebony/v16a:                       304        56
+:bitmap/geoo/sandstone/ebony/h8a:                       1111       210     f
+:bitmap/geoo/sandstone/ebony/h8a:                       1143       210     f
+:bitmap/geoo/sandstone/64x32:                            112       240
+:bitmap/geoo/sandstone/64x32:                            176       240
+:bitmap/geoo/sandstone/64x32:                            144       272
+:bitmap/geoo/sandstone/64x32:                            304       240
+:bitmap/geoo/sandstone/arc_small:                       1392        64     f
+:bitmap/geoo/sandstone/pillar_32:                         16       192
+:bitmap/geoo/sandstone/pillar_32:                         16       224
+:bitmap/geoo/sandstone/pillar_top_jaggedl:                48       160
+:bitmap/geoo/sandstone/pillar_32:                         48       192
+:bitmap/geoo/sandstone/pillar_32:                         48       224
+:bitmap/geoo/sandstone/pillar_32:                         16       256
+:bitmap/geoo/sandstone/pillar_32:                         16       288
+:bitmap/geoo/sandstone/pillar_32:                         48       256
+:bitmap/geoo/sandstone/pillar_32:                         48       288
+:bitmap/geoo/sandstone/pillar_32:                         16       320
+:bitmap/geoo/sandstone/pillar_32:                         48       320
+:bitmap/geoo/sandstone/pillar_32:                         16       352
+:bitmap/geoo/sandstone/pillar_32:                         16       384
+:bitmap/geoo/sandstone/pillar_32:                         48       352
+:bitmap/geoo/sandstone/pillar_32:                         48       384
+:bitmap/geoo/sandstone/64x32:                            208        80
+:bitmap/geoo/sandstone/64x32:                            208       112
+:bitmap/geoo/sandstone/64x32:                            208        48
+:bitmap/geoo/steel/dark_64x64o.S:                        208       -16
+:bitmap/geoo/steel/dark_64x64o.S:                        144         0
+:bitmap/geoo/steel/dark_64x64o.S:                        272         0
+:bitmap/geoo/sandstone/arc_big:                          336         0     f
+:bitmap/geoo/steel/dark_64x32o.S:                        208       304
+:bitmap/geoo/steel/dark_64x32o.S:                        208       368
+:bitmap/geoo/steel/dark_64x32o.S:                        248       336
+:bitmap/geoo/sandstone/64x32:                            432       240
+:bitmap/geoo/sandstone/64x32:                            208       176
+:bitmap/geoo/sandstone/64x32:                            208       208
+:bitmap/geoo/sandstone/64x32:                            208       144
+:bitmap/geoo/steel/dark_32x32o.S:                        224        64
+:bitmap/geoo/steel/dark_32x32o.S:                        224       128
+:bitmap/geoo/steel/dark_32x32o.S:                        224       200
+:bitmap/geoo/sandstone/arc_big:                          592         0     f
+:bitmap/geoo/sandstone/pillar_top_jaggedr:                16       160
+:bitmap/geoo/sandstone/64x32:                            592       368
+:bitmap/geoo/sandstone/ebony/h8a:                       1168       228     f
+:bitmap/geoo/sandstone/ebony/h8a:                       1080       210     f
+:bitmap/geoo/sandstone/ebony/h8a:                       1048       210     f
+:bitmap/geoo/sandstone/32x32:                           1336       312
+:bitmap/geoo/sandstone/32x32:                           1368       312
+:bitmap/geoo/sandstone/32x32:                           1400       312
+:bitmap/geoo/sandstone/32x32:                           1432       312
+:bitmap/geoo/sandstone/32x32:                           1464       312
+:bitmap/geoo/sandstone/32x32:                           1496       312
+:bitmap/geoo/sandstone/32x32:                           1392        96
+:bitmap/geoo/sandstone/32x32:                           1424        96
+:bitmap/geoo/sandstone/32x32:                           1456        96
+:bitmap/geoo/steel/dark_64x64o.S:                       1328        64
+:bitmap/geoo/sandstone/pillar_top_jaggedl:              1368       360     f
+:bitmap/geoo/sandstone/pillar_top_ext:                  1352       344
+:bitmap/geoo/sandstone/32x32:                            112         0
+:bitmap/geoo/sandstone/slopes/32x32lt:                   112       240
+:bitmap/geoo/sandstone/slopes/32x32rt:                   144       240
+:bitmap/geoo/sandstone/64x32:                           1328         0
+:bitmap/geoo/sandstone/64x32:                           1264         0
+:bitmap/geoo/sandstone/64x32:                           1328        32
+:bitmap/geoo/sandstone/ebony/v8a:                       1192       208     f
+:bitmap/geoo/sandstone/ebony/v8a:                       1192       192     f
+:bitmap/geoo/sandstone/slopes/64x32lb:                  1456        32
+:bitmap/geoo/sandstone/pillar_top_jaggedl:              1496       360     f
+:bitmap/geoo/sandstone/pillar_top_ext:                  1480       344
+:bitmap/geoo/sandstone/arc_small:                       1400       280
+:bitmap/geoo/sandstone/slopes/64x32rb:                  1336       280
+:bitmap/geoo/sandstone/slopes/64x32lb:                  1496       280
+:bitmap/geoo/sandstone/32x32:                           1528       312
+:bitmap/geoo/steel/dark_64x64o.S:                       1344       128
+:bitmap/geoo/sandstone/64x32:                           1392        32
+:bitmap/geoo/sandstone/slopes/64x32lb:                  1392         0
+:bitmap/geoo/sandstone/64x32:                            240       240
+:bitmap/geoo/sandstone/slopes/32x32lt:                   240       240
+:bitmap/geoo/sandstone/slopes/32x32rt:                   272       240
+:bitmap/geoo/sandstone/64x32:                            368       240
+:bitmap/geoo/sandstone/slopes/32x32lt:                   368       240
+:bitmap/geoo/sandstone/slopes/32x32rt:                   400       240
+:bitmap/geoo/sandstone/ebony/v16a:                       152        64
+:bitmap/geoo/sandstone/ebony/h16l:                       192       144
+:bitmap/geoo/sandstone/ebony/h16l:                       272       120
+:bitmap/geoo/sandstone/64x32:                            560       240
+:bitmap/geoo/sandstone/64x32:                            688       240
+:bitmap/geoo/sandstone/64x32:                            496       240
+:bitmap/geoo/sandstone/slopes/32x32rt:                   528       240
+:bitmap/geoo/sandstone/64x32:                            624       240
+:bitmap/geoo/sandstone/slopes/32x32lt:                   624       240
+:bitmap/geoo/sandstone/slopes/32x32rt:                   656       240
+:bitmap/geoo/sandstone/slopes/32x32lt:                   496       240
+:bitmap/geoo/sandstone/64x32:                            816       240
+:bitmap/geoo/sandstone/64x32:                            944       240
+:bitmap/geoo/sandstone/64x32:                            752       240
+:bitmap/geoo/sandstone/slopes/32x32rt:                   784       240
+:bitmap/geoo/sandstone/64x32:                            880       240
+:bitmap/geoo/sandstone/slopes/32x32lt:                   880       240
+:bitmap/geoo/sandstone/slopes/32x32rt:                   912       240
+:bitmap/geoo/sandstone/slopes/32x32lt:                   752       240
+:bitmap/geoo/sandstone/64x32:                            528       368
+:bitmap/geoo/steel/dark_64x32o.S:                        168       336
+:bitmap/geoo/steel/dark_64x64o.S:                        464         0
+:bitmap/geoo/steel/dark_64x64o.S:                        528         0
+:bitmap/geoo/steel/dark_64x64o.S:                        720         0
+:bitmap/geoo/steel/dark_64x64o.S:                        784         0
+:bitmap/geoo/steel/dark_64x64o.S:                        992         0
+:bitmap/geoo/steel/dark_64x64o.S:                        992        64
+:bitmap/geoo/sandstone/ebony/h8a:                       1264        80     f
+:bitmap/geoo/sandstone/ebony/h8a:                       1296        80     f
+:bitmap/geoo/sandstone/ebony/h8a:                       1232        80     f
+:bitmap/geoo/sandstone/ebony/h8a:                       1200        80     f
+:bitmap/geoo/sandstone/ebony/h8a:                       1120       104     f
+:bitmap/geoo/sandstone/ebony/h8a:                       1152       104     f
+:bitmap/geoo/sandstone/ebony/h8a:                       1088       104     f
+:bitmap/geoo/sandstone/ebony/h8a:                       1056       104     f
+:bitmap/geoo/sandstone/ebony/h8a:                       1216        80     f
+:bitmap/geoo/sandstone/ebony/h8a:                       1248        80     f
+:bitmap/geoo/sandstone/ebony/h8a:                       1184        80     f
+:bitmap/geoo/sandstone/ebony/h8a:                       1152        80     f
+:bitmap/geoo/sandstone/64x32:                            336       144
+:bitmap/geoo/sandstone/64x32:                            272       144
+:bitmap/geoo/sandstone/slopes/32x32lt:                   272       144
+:bitmap/geoo/sandstone/slopes/32x32rt:                   304       144
+:bitmap/geoo/sandstone/64x32:                            464       144
+:bitmap/geoo/sandstone/64x32:                            592       144
+:bitmap/geoo/sandstone/64x32:                            400       144
+:bitmap/geoo/sandstone/slopes/32x32rt:                   432       144
+:bitmap/geoo/sandstone/64x32:                            528       144
+:bitmap/geoo/sandstone/slopes/32x32lt:                   528       144
+:bitmap/geoo/sandstone/slopes/32x32rt:                   560       144
+:bitmap/geoo/sandstone/slopes/32x32lt:                   400       144
+:bitmap/geoo/sandstone/64x32:                            656       144
+:bitmap/geoo/sandstone/slopes/32x32rt:                   688       144
+:bitmap/geoo/sandstone/slopes/32x32lt:                   656       144
+:bitmap/geoo/sandstone/32x32:                           1120       368
+:bitmap/geoo/sandstone/32x32:                           1152       368
+:bitmap/geoo/sandstone/32x32:                           1184       368
+:bitmap/geoo/sandstone/32x32:                           1216       368
+:bitmap/geoo/steel/dark_16x32o.S:                       1192       192
+:bitmap/geoo/steel/dark_16x32o.S:                       1192       224
+:bitmap/geoo/sandstone/slopes/64x32rt:                  1264        32
+:bitmap/geoo/sandstone/slopes/64x32rt:                  1200         0
+:bitmap/geoo/sandstone/64x32:                            656       368
+:bitmap/geoo/sandstone/64x32:                            864       272
+:bitmap/geoo/sandstone/64x32:                            800       272
+:bitmap/geoo/sandstone/slopes/32x32rt:                   832       272
+:bitmap/geoo/sandstone/64x32:                            928       272
+:bitmap/geoo/sandstone/slopes/32x32lt:                   928       272
+:bitmap/geoo/sandstone/slopes/32x32rt:                   960       272
+:bitmap/geoo/sandstone/slopes/32x32lt:                   800       272
+:bitmap/geoo/sandstone/64x32:                            272       272
+:bitmap/geoo/sandstone/64x32:                            208       272
+:bitmap/geoo/sandstone/slopes/32x32rt:                   240       272
+:bitmap/geoo/sandstone/64x32:                            336       272
+:bitmap/geoo/sandstone/slopes/32x32lt:                   336       272
+:bitmap/geoo/sandstone/slopes/32x32rt:                   368       272
+:bitmap/geoo/sandstone/slopes/32x32lt:                   208       272

@@ -1,0 +1,71 @@
+$BUILT                                             2011-09-11 09:04:28
+$AUTHOR                                                   Clam Spammer
+$GERMAN                                                               
+$ENGLISH                                        Attack of the 50ft Lix
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                           380
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            30
+#INITIAL                                                            50
+#REQUIRED                                                           40
+#RATE                                                               20
+
+#NOTHING                                                             0
+#NOTHING                                                             0
+#CLIMBER                                                            20
+#WALKER                                                             20
+#JUMPER                                                             20
+#BATTER                                                             20
+#BUILDER                                                            20
+#PLATFORMER                                                         20
+#CUBER                                                              20
+#BASHER                                                             20
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:matt/carnival/Hatch.H:                      176       264     r
+:matt/carnival/Hatch.H:                      400       264
+
+:matt/carnival/Goal.G:                       370       144
+:matt/carnival/Goal.G:                       208       144
+
+:matt/earth/17:                              256       124     frr
+:matt/earth/17:                              304       124
+:matt/winter/18:                             302       186     f
+:matt/earth/00:                              278       110
+:matt/carnival/05:                           336       304
+:matt/carnival/05:                           272       304
+:matt/carnival/04:                           304       240
+:matt/carnival/04:                           368       208     fr
+:matt/carnival/04:                           208       208     fr
+:matt/winter/14:                             424       184
+:matt/winter/14:                             172       184     frr
+:matt/carnival/00:                           272       272
+:matt/carnival/00:                           336       272
+:matt/winter/14:                             334       358     r
+:matt/winter/14:                             250       358     fr
+:matt/winter/11:                             284       146
+:matt/winter/11:                             294       146     frr
+:matt/winter/09c:                            296       158     d
+:matt/winter/09c:                            328       158     d
+:matt/steel/64x32.S:                              400       368
+:matt/steel/64x32.S:                              176       368     f
+:matt/carnival/00:                           304       208
+:matt/carnival/04:                           272       208
+:matt/carnival/04:                           336       208
+:matt/steel/32x64.S:                              368       304
+:matt/steel/32x64.S:                              368       240
+:matt/steel/64x32.S:                              240       240     r
+:matt/steel/64x32.S:                              240       304     r
+:matt/steel/16x8.S:                               224       208
+:matt/steel/16x8.S:                               240       208
+:matt/steel/16x8.S:                               384       208
+:matt/steel/16x8.S:                               400       208

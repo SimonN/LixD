@@ -1,0 +1,95 @@
+$BUILT 2015-08-22 10:51:34
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Burning for you
+$HINT_ENGLISH 2 climbers and 1 bat, need I say more?
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 30
+#REQUIRED 29
+#SPAWN_INTERVAL 33
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 2
+#BUILDER 1
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#BATTER 1
+
+:matt/underworld/Hatch.H: 0 32
+
+:matt/underworld/Goal.G: 560 240
+
+:matt/underworld/Lava.W: 240 384
+:matt/underworld/Lava.W: 272 384
+
+:matt/underworld/07: 488 290 frr
+:matt/underworld/09a: 514 302
+:matt/underworld/09a: 512 300
+:matt/underworld/09a: 368 204
+:matt/underworld/09b: 360 204
+:matt/underworld/09c: 132 238
+:matt/underworld/09c: 22 170
+:matt/underworld/09a: 230 224 r
+:matt/underworld/09a: 604 300
+:matt/underworld/09a: 518 302
+:matt/underworld/09a: 566 8
+:matt/underworld/09a: 610 6 fr
+:matt/underworld/09c: 202 -14
+:matt/underworld/09b: 240 36 r
+:matt/underworld/09b: 212 4 r
+:matt/underworld/09c: 158 264
+:matt/underworld/09b: 38 198
+:matt/underworld/09c: 94 10
+:matt/underworld/09c: 441 213
+:matt/underworld/09a: 532 302
+:matt/underworld/09b: 332 244
+:matt/underworld/09b: 354 225
+:matt/underworld/02: 528 336
+:matt/underworld/01: 480 304
+:matt/underworld/02: 192 224
+:matt/underworld/09a: 192 218
+:matt/underworld/02: 192 320
+:matt/underworld/07: -50 164
+:matt/underworld/07: 32 201
+:matt/underworld/07: 60 232
+:matt/underworld/07: 103 278
+:matt/underworld/07: -45 220
+:matt/underworld/07: -2 266
+:matt/underworld/07: -45 291
+:matt/underworld/07: -2 337
+:matt/underworld/07: 72 315
+:matt/underworld/07: 115 361
+:matt/underworld/08: 356 204
+:matt/underworld/08: 343 237
+:matt/underworld/08: 423 306
+:matt/underworld/04: 440 282
+:matt/underworld/05: 300 370
+:matt/underworld/01: 544 304
+:matt/underworld/01: 608 304
+:matt/underworld/05: -32 -32
+:matt/underworld/08: 96 -48
+:matt/underworld/07: 141 -4
+:matt/underworld/07: 176 32
+:matt/underworld/07: 400 -16
+:matt/underworld/07: 480 -48
+:matt/underworld/05: 608 -32 r
+:matt/underworld/04: 576 -32
+:matt/underworld/02: 592 336
+:matt/underworld/09b: 404 -14
+:matt/underworld/09a: 562 302
+:matt/underworld/08: 349 318
+:matt/underworld/05: 281 373 r
+:matt/underworld/04: 361 204
+:matt/underworld/08: -54 -80
+:matt/underworld/07: 329 237

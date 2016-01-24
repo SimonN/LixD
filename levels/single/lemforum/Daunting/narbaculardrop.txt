@@ -1,0 +1,140 @@
+$BUILT 2015-06-22 12:14:11
+$AUTHOR mobius
+$GERMAN 
+$ENGLISH Narbacular Drop
+
+#SIZE_X 1280
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 400
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 15
+#REQUIRED 15
+#SPAWN_INTERVAL 12
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#FLOATER 1
+#NOTHING 0
+#NOTHING 0
+#BUILDER 1
+#BASHER 1
+#MINER 2
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/earth/Hatch.H: 514 32
+
+:matt/earth/Goal.G: 1152 272
+
+:simon/water.W: 600 368
+:simon/water.W: 648 368
+:simon/water.W: 808 368
+:simon/water.W: 856 368
+
+:matt/earth/16: 552 120
+:matt/earth/01: 512 136
+:matt/earth/10: 496 136
+:matt/earth/24: 872 240
+:matt/earth/16: 776 216 rr
+:matt/earth/10: 744 160
+:matt/earth/10: 538 122
+:matt/earth/04: 656 168
+:matt/earth/04: 652 342
+:matt/earth/04: 656 220 rr
+:matt/earth/02: 656 184
+:matt/earth/10: 728 168 r
+:matt/earth/10: 728 256 rrr
+:matt/earth/04: 636 300
+:matt/earth/10: 400 320
+:geoo/steel/64x64o.S: 480 136 d
+:geoo/steel/64x64o.S: 480 184 d
+:matt/earth/03: 120 288
+:matt/earth/10: 8 272
+:matt/earth/10: 264 280
+:matt/earth/01: 400 288
+:matt/earth/10: 288 336
+:matt/earth/10: 128 312
+:matt/earth/10: 184 288
+:geoo/steel/dark_64x64o.S: 0 272
+:matt/earth/10: 0 336
+:geoo/steel/dark_64x64o.S: 0 336
+:matt/earth/10: 56 392
+:matt/earth/02: 658 75 fd
+:geoo/steel/dark_64x64o.S: 608 120
+:matt/earth/03: 700 140 d
+:matt/earth/30: 672 120 rrr
+:matt/earth/10: 664 168
+:geoo/steel/dark_64x64o.S: 608 184
+:matt/earth/10: 872 336
+:matt/earth/20: 1008 184 frr
+:matt/earth/13: 720 256
+:geoo/steel/dark_64x64o.S: 872 32
+:matt/earth/03: 800 160
+:matt/earth/23: 1008 208
+:matt/earth/29: 996 180 rr
+:matt/earth/07b: 984 171 rr
+:matt/earth/07b: 994 167 rrd
+:matt/earth/10: 816 136
+:geoo/steel/dark_64x64o.S: 872 96
+:matt/earth/26: 1152 136 f
+:matt/earth/29: 1119 200
+:matt/earth/20: 1104 184 frr
+:geoo/steel/dark_32x16o.S: 856 160
+:matt/earth/29: 832 168
+:geoo/steel/dark_32x16o.S: 824 168
+:geoo/steel/dark_32x16o.S: 792 176
+:geoo/steel/dark_32x16o.S: 672 192
+:geoo/steel/dark_32x16o.S: 704 192
+:geoo/steel/dark_32x16o.S: 736 192
+:geoo/steel/dark_32x16o.S: 768 192
+:matt/earth/10: 968 344
+:matt/earth/10: 1104 336
+:matt/earth/03: 1040 336
+:matt/earth/12: 448 352
+:matt/earth/12: 112 304
+:matt/earth/12: 864 208
+:matt/earth/14: 1072 368
+:matt/earth/14: 256 320
+:matt/earth/11: 752 352
+:matt/earth/24: 368 16
+:matt/earth/02: 320 -16
+:matt/earth/26: 320 136
+:matt/earth/02: 304 48
+:matt/earth/02: 288 80
+:matt/earth/04: 240 -48
+:matt/earth/02: 256 48
+:matt/earth/02: 216 -16
+:matt/earth/10: 240 -64
+:matt/earth/25: 184 48
+:matt/earth/10: 96 -48
+:matt/earth/28: 280 128
+:matt/earth/28: 232 72
+:matt/earth/29: 344 96
+:matt/earth/10: 240 -64
+:matt/earth/29: 400 24
+:matt/earth/29: 144 56
+:matt/earth/29: 624 184
+:matt/earth/29: 760 208
+:matt/earth/28: 880 96
+:matt/earth/27: 872 32
+:matt/earth/27: 680 208
+:matt/earth/28: 652 122
+:matt/earth/00: 491 81 frrd
+:matt/earth/00: 491 232 rrd
+:geoo/steel/64x64o.S: 480 92 d
+:geoo/steel/64x64o.S: 481 79 d
+:matt/earth/00: 603 300 rrrd
+:matt/earth/00: 588 336 rd
+:matt/earth/00: 592 358 rd
+:matt/earth/00: 552 365 rrr
+:matt/earth/18: 539 246 frd

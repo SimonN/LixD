@@ -1,0 +1,211 @@
+$BUILT 2012-08-18 14:32:26
+$AUTHOR mobius
+$GERMAN 
+$ENGLISH Jacob's Ladder
+
+#SIZE_X 1024
+#SIZE_Y 702
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 50
+#SPAWN_INTERVAL_FAST 20
+
+#CLIMBER 20
+#FLOATER 10
+#BUILDER 5
+#BASHER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/carnival/Hatch.H: 352 512
+
+:matt/carnival/Goal.G: 992 448
+
+:geoo/construction/Laser_vr_64.F: 570 396
+:geoo/construction/Laser_vr_64.F: 570 448
+:geoo/construction/Laser_vr_64.F: 570 512
+:geoo/construction/Laser_vr_64.F: 570 564
+:geoo/construction/Laseremit_vrt_16.F: 570 384
+:geoo/construction/Laseremit_vrb_16.F: 570 624
+:geoo/construction/sawblade.F: 528 392
+:geoo/construction/sawblade.F: 528 456
+:geoo/construction/sawblade.F: 528 520
+:geoo/construction/sawblade.F: 528 592
+:geoo/construction/sawblade.F: 464 520
+:geoo/construction/sawblade.F: 464 592
+:geoo/construction/sawblade.F: 528 248
+:geoo/construction/sawblade.F: 648 136
+:geoo/construction/sawblade.F: 416 384
+:geoo/construction/sawblade_small.F: 600 464
+:geoo/construction/sawblade_small.F: 632 464
+:geoo/construction/sawblade_small.F: 664 464
+:geoo/construction/sawblade_small.F: 696 464
+:geoo/construction/sawblade_small.F: 728 464
+:geoo/construction/sawblade_small.F: 760 464
+:geoo/construction/sawblade_small.F: 792 464
+:geoo/construction/sawblade_small.F: 824 464
+:geoo/construction/sawblade_small.F: 856 464
+:geoo/construction/sawblade_small.F: 888 464
+:geoo/construction/sawblade_small.F: 920 464
+:geoo/construction/sawblade_small.F: 600 584
+:geoo/construction/sawblade_small.F: 632 584
+:geoo/construction/sawblade_small.F: 664 584
+:geoo/construction/sawblade_small.F: 696 584
+:geoo/construction/sawblade_small.F: 728 584
+:geoo/construction/sawblade_small.F: 760 584
+:geoo/construction/sawblade_small.F: 792 584
+:geoo/construction/sawblade_small.F: 824 584
+:geoo/construction/sawblade_small.F: 856 584
+:geoo/construction/sawblade_small.F: 888 584
+:geoo/construction/sawblade_small.F: 920 584
+
+:matt/carnival/25: 928 640
+:matt/carnival/57: 336 -32 r
+:matt/carnival/57: 224 -128 r
+:matt/carnival/25: 800 640
+:matt/carnival/25: 480 640
+:matt/carnival/25: 416 640
+:matt/carnival/25: 352 640
+:matt/carnival/25: 736 640
+:matt/carnival/25: 672 640
+:matt/carnival/10: 64 576
+:matt/carnival/11: 96 608 rrr
+:matt/carnival/10: 96 640 rr
+:matt/carnival/11: 96 672 rrr
+:matt/carnival/10: 96 576 rr
+:matt/carnival/11: 64 608 r
+:matt/carnival/10: 64 640
+:matt/carnival/11: 64 672 r
+:matt/carnival/57: 592 -32 r
+:matt/carnival/57: 704 -128 r
+:matt/carnival/54: 536 352
+:matt/carnival/54: 568 320
+:matt/carnival/54: 600 288
+:matt/carnival/54: 632 256
+:matt/carnival/54: 664 224
+:matt/carnival/54: 696 192
+:matt/carnival/54: 728 160
+:matt/carnival/54: 760 128
+:matt/carnival/54: 792 96
+:geoo/steel/dark_64x64o.S: 960 192
+:geoo/steel/dark_64x64o.S: 960 256
+:geoo/steel/dark_64x64o.S: 960 320
+:geoo/steel/dark_64x64o.S: 960 384
+:geoo/steel/dark_64x64o.S: 960 576
+:geoo/steel/dark_64x64o.S: 960 640
+:geoo/steel/dark_64x64o.S: 960 128
+:geoo/steel/dark_64x64o.S: 832 0 fr
+:geoo/steel/dark_64x64o.S: 768 0 fr
+:geoo/steel/dark_64x64o.S: 896 0 fr
+:geoo/steel/dark_64x64o.S: 0 128 fr
+:geoo/steel/dark_64x64o.S: 0 640
+:geoo/steel/dark_64x64o.S: 0 576
+:geoo/steel/dark_64x64o.S: 0 384
+:geoo/steel/dark_64x64o.S: 0 320
+:geoo/steel/dark_64x64o.S: 0 256
+:geoo/steel/dark_64x64o.S: 0 192
+:geoo/steel/dark_32x32o.S: 128 240
+:geoo/steel/dark_32x32o.S: 160 240
+:matt/carnival/00: 160 272
+:geoo/steel/dark_32x32o.S: 128 272
+:geoo/steel/dark_32x32o.S: 128 304
+:geoo/steel/dark_32x32o.S: 160 304
+:geoo/steel/dark_32x32o.S: 192 240
+:geoo/steel/dark_32x32o.S: 224 240
+:matt/carnival/00: 224 272
+:geoo/steel/dark_32x32o.S: 192 272
+:geoo/steel/dark_32x32o.S: 192 304
+:geoo/steel/dark_32x32o.S: 224 304
+:geoo/steel/dark_32x32o.S: 256 240
+:geoo/steel/dark_32x32o.S: 288 240
+:matt/carnival/00: 288 272
+:geoo/steel/dark_32x32o.S: 256 272
+:geoo/steel/dark_32x32o.S: 256 304
+:geoo/steel/dark_32x32o.S: 288 304
+:geoo/steel/dark_32x32o.S: 320 240
+:geoo/steel/dark_32x32o.S: 320 272
+:geoo/steel/dark_32x32o.S: 320 304
+:matt/carnival/00: 160 336
+:geoo/steel/dark_32x32o.S: 128 336
+:geoo/steel/dark_32x32o.S: 128 368
+:geoo/steel/dark_32x32o.S: 160 368
+:matt/carnival/00: 224 336
+:geoo/steel/dark_32x32o.S: 192 336
+:geoo/steel/dark_32x32o.S: 192 368
+:geoo/steel/dark_32x32o.S: 224 368
+:matt/carnival/00: 288 336
+:geoo/steel/dark_32x32o.S: 256 336
+:geoo/steel/dark_32x32o.S: 256 368
+:geoo/steel/dark_32x32o.S: 288 368
+:geoo/steel/dark_32x32o.S: 320 336
+:geoo/steel/dark_32x32o.S: 320 368
+:matt/carnival/00: 160 400
+:geoo/steel/dark_32x32o.S: 128 400
+:geoo/steel/dark_32x32o.S: 128 432
+:geoo/steel/dark_32x32o.S: 160 432
+:matt/carnival/00: 224 400
+:geoo/steel/dark_32x32o.S: 192 400
+:geoo/steel/dark_32x32o.S: 192 432
+:geoo/steel/dark_32x32o.S: 224 432
+:matt/carnival/00: 288 400
+:geoo/steel/dark_32x32o.S: 256 400
+:geoo/steel/dark_32x32o.S: 256 432
+:geoo/steel/dark_32x32o.S: 288 432
+:geoo/steel/dark_32x32o.S: 320 400
+:geoo/steel/dark_32x32o.S: 320 432
+:matt/carnival/57: 464 64 r
+:matt/carnival/25: 544 640
+:matt/carnival/25: 608 640
+:matt/carnival/25: 864 640
+:geoo/steel/dark_64x64o.S: 960 64 fr
+:geoo/steel/dark_64x64o.S: 640 0 fr
+:geoo/steel/dark_64x64o.S: 576 0 fr
+:geoo/steel/dark_64x64o.S: 704 0 fr
+:geoo/steel/dark_64x64o.S: 448 0 fr
+:geoo/steel/dark_64x64o.S: 384 0 fr
+:geoo/steel/dark_64x64o.S: 512 0 fr
+:geoo/steel/dark_64x64o.S: 256 0 fr
+:geoo/steel/dark_64x64o.S: 192 0 fr
+:geoo/steel/dark_64x64o.S: 320 0 fr
+:geoo/steel/dark_64x64o.S: 64 0 fr
+:geoo/steel/dark_64x64o.S: 0 64 fr
+:geoo/steel/dark_64x64o.S: 128 0 fr
+:geoo/steel/dark_64x64o.S: 0 0 fr
+:geoo/steel/dark_64x64o.S: 960 0 fr
+:matt/carnival/01: 480 480
+:matt/carnival/12: 432 624
+:matt/carnival/19: 448 608
+:matt/carnival/19: 448 576
+:matt/carnival/19: 512 416
+:matt/carnival/19: 512 384
+:matt/carnival/18: 512 576 rrr
+:matt/carnival/18: 544 576 rrr
+:matt/carnival/18: 544 448 rrr
+:matt/carnival/18: 512 448 rrr
+:matt/carnival/19: 536 512 rrr
+:matt/carnival/18: 464 544
+:matt/carnival/18: 464 512
+:matt/carnival/50: 96 544
+:matt/carnival/11: 64 544 r
+:matt/carnival/00: 32 544
+:matt/carnival/00: 0 544
+:matt/carnival/00: 992 544
+:matt/carnival/00: 960 544
+:matt/carnival/50: 64 512
+:matt/carnival/01: 32 512
+:matt/carnival/01: 0 512
+:matt/carnival/01: 992 512
+:matt/carnival/01: 960 512

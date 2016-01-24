@@ -1,0 +1,143 @@
+$BUILT 2014-03-01 00:25:07
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH I'm blue.....dabadee
+
+#SIZE_X 960
+#SIZE_Y 660
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 180
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 16
+#BACKGROUND_BLUE 144
+
+#SECONDS 95
+#INITIAL 60
+#REQUIRED 60
+#SPAWN_INTERVAL 53
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 1
+#JUMPER 4
+#FLOATER 1
+#PLATFORMER 2
+#BUILDER 2
+#MINER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/carnival/Hatch.H: -16 32
+
+:matt/carnival/Goal.G: 208 576
+
+:matt/carnival/57: 592 544
+:matt/carnival/01: 96 368
+:matt/carnival/01: 368 384
+:matt/carnival/01: 336 384
+:matt/carnival/01: 432 384
+:matt/carnival/01: 400 384
+:matt/carnival/01: 304 640
+:matt/carnival/01: 272 640
+:matt/carnival/01: 556 370
+:matt/carnival/01: 524 370
+:matt/carnival/01: 560 576
+:matt/carnival/01: 528 576
+:matt/carnival/01: 620 370
+:matt/carnival/01: 588 370
+:matt/carnival/01: -16 384
+:matt/carnival/01: 0 400
+:matt/carnival/01: 32 400
+:matt/carnival/01: 128 368
+:matt/carnival/01: 64 368
+:matt/carnival/49: 32 368
+:matt/carnival/01: 192 368
+:matt/carnival/01: 224 368
+:matt/carnival/01: 160 368
+:matt/carnival/01: 256 368
+:matt/carnival/57: 64 96 r
+:matt/carnival/57: 128 96 r
+:matt/carnival/57: 192 96 r
+:matt/carnival/57: 256 32 r
+:matt/carnival/57: -16 128 r
+:matt/carnival/57: 0 0
+:matt/carnival/01: 256 32
+:matt/carnival/01: 16 240
+:matt/carnival/01: -16 96
+:matt/carnival/01: 32 176
+:matt/carnival/01: 16 96
+:matt/carnival/01: 224 320
+:matt/carnival/01: 256 320
+:matt/carnival/01: 160 320
+:matt/carnival/01: 96 320
+:matt/carnival/01: 256 0
+:matt/carnival/01: 652 370
+:matt/carnival/01: 624 576
+:matt/carnival/01: 592 576
+:matt/carnival/01: 720 576
+:matt/carnival/01: 656 576
+:matt/carnival/57: 688 0
+:matt/carnival/57: 944 224 r
+:matt/carnival/57: 944 -32 r
+:matt/carnival/57: 432 0
+:matt/carnival/25: 880 32
+:matt/carnival/34: 912 96 fr
+:matt/carnival/35: 816 32
+:matt/carnival/48: 400 0
+:matt/carnival/50: 288 0
+:matt/carnival/01: 688 576
+:matt/steel/32x32.S: 64 320
+:matt/steel/32x32.S: 128 320
+:matt/steel/32x32.S: 192 320
+:matt/steel/32x32.S: 256 320
+:matt/steel/32x32.S: 224 368
+:matt/steel/32x32.S: 160 368
+:matt/steel/32x32.S: 96 368
+:matt/steel/32x32.S: 96 320
+:matt/steel/32x32.S: 160 320
+:matt/steel/32x32.S: 224 320
+:matt/steel/32x32.S: 64 368
+:matt/steel/32x32.S: 128 368
+:matt/steel/32x32.S: 192 368
+:matt/steel/32x32.S: 256 368
+:matt/carnival/01: 32 304
+:matt/carnival/57: 944 480 r
+:matt/carnival/25: 816 544
+:matt/carnival/01: 752 576
+:matt/carnival/01: 784 576
+:matt/carnival/01: 880 576
+:matt/carnival/01: 912 576
+:matt/carnival/01: 716 370
+:matt/carnival/01: 684 370
+:matt/carnival/01: 748 370
+:matt/carnival/01: 464 384
+:matt/carnival/01: 240 640
+:matt/carnival/01: 208 640
+:matt/carnival/25: 400 608
+:matt/carnival/01: 336 640
+:matt/carnival/01: 368 640
+:matt/carnival/34: 336 608 frr
+:matt/carnival/34: 400 576 frr
+:matt/carnival/25: 464 576
+:matt/carnival/01: 464 640
+:matt/carnival/01: 496 640
+:matt/carnival/57: 528 608
+:matt/carnival/57: 528 640
+:matt/carnival/57: 688 608
+:matt/carnival/57: 688 640
+:matt/carnival/34: 528 544 frr
+:matt/carnival/57: 315 181
+:matt/carnival/25: 780 338
+:matt/carnival/34: 780 306 frr
+:matt/carnival/25: 844 306
+:matt/carnival/01: 844 370
+:matt/carnival/01: 876 370
+:matt/carnival/34: 716 338 frr
+:matt/carnival/01: 880 544
+:matt/carnival/01: 912 544
+:matt/carnival/57: 592 96

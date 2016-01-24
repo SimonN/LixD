@@ -1,0 +1,180 @@
+$BUILT 2012-08-10 01:20:05
+$AUTHOR minimac
+$GERMAN 
+$ENGLISH Across the Gap (8P)
+
+#SIZE_X 640
+#SIZE_Y 512
+#TORUS_X 0
+#TORUS_Y 1
+#START_X 0
+#START_Y 420
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 100
+#REQUIRED 16
+#SPAWN_INTERVAL 24
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 3
+#FLOATER 16
+#BATTER 3
+#EXPLODER2 16
+#BLOCKER 3
+#PLATFORMER 16
+#BUILDER 3
+#BASHER 16
+#MINER 3
+#DIGGER 16
+#NOTHING 0
+#NOTHING 0
+
+:matt/bricks/Hatch.H: 112 224
+:matt/bricks/Hatch.H: 448 224 r
+:matt/bricks/Hatch.H: 112 480
+:matt/bricks/Hatch.H: 448 480 r
+:matt/bricks/Hatch.H: 112 96
+:matt/bricks/Hatch.H: 448 96 r
+:matt/bricks/Hatch.H: 112 352
+:matt/bricks/Hatch.H: 448 352 r
+
+:matt/bricks/Goal.G: 552 248
+:matt/bricks/Goal.G: 8 248
+:matt/bricks/Goal.G: 552 504
+:matt/bricks/Goal.G: 8 504
+:matt/bricks/Goal.G: 552 120
+:matt/bricks/Goal.G: 8 120
+:matt/bricks/Goal.G: 552 376
+:matt/bricks/Goal.G: 8 376
+
+:geoo/steel/dark_32x16o.S: 8 296
+:geoo/steel/dark_32x16o.S: 40 296
+:geoo/steel/dark_32x16o.S: 72 296
+:geoo/steel/dark_32x16o.S: 104 296
+:geoo/steel/dark_32x16o.S: 136 296
+:geoo/steel/dark_32x16o.S: 168 296
+:geoo/steel/dark_32x16o.S: 424 296
+:geoo/steel/dark_32x16o.S: 456 296
+:geoo/steel/dark_32x16o.S: 488 296
+:geoo/steel/dark_32x16o.S: 520 296
+:geoo/steel/dark_32x16o.S: 552 296
+:geoo/steel/dark_32x16o.S: 584 296
+:geoo/steel/dark_32x16o.S: 8 40
+:geoo/steel/dark_32x16o.S: 40 40
+:geoo/steel/dark_32x16o.S: 72 40
+:geoo/steel/dark_32x16o.S: 104 40
+:geoo/steel/dark_32x16o.S: 136 40
+:geoo/steel/dark_32x16o.S: 168 40
+:geoo/steel/dark_32x16o.S: 424 40
+:geoo/steel/dark_32x16o.S: 456 40
+:geoo/steel/dark_32x16o.S: 488 40
+:geoo/steel/dark_32x16o.S: 520 40
+:geoo/steel/dark_32x16o.S: 552 40
+:geoo/steel/dark_32x16o.S: 584 40
+:geoo/steel/dark_32x16o.S: 8 424
+:geoo/steel/dark_32x16o.S: 40 424
+:geoo/steel/dark_32x16o.S: 72 424
+:geoo/steel/dark_32x16o.S: 104 424
+:geoo/steel/dark_32x16o.S: 136 424
+:geoo/steel/dark_32x16o.S: 168 424
+:geoo/steel/dark_32x16o.S: 8 168
+:geoo/steel/dark_32x16o.S: 40 168
+:geoo/steel/dark_32x16o.S: 72 168
+:geoo/steel/dark_32x16o.S: 104 168
+:geoo/steel/dark_32x16o.S: 136 168
+:geoo/steel/dark_32x16o.S: 168 168
+:geoo/steel/dark_32x16o.S: 424 424
+:geoo/steel/dark_32x16o.S: 456 424
+:geoo/steel/dark_32x16o.S: 488 424
+:geoo/steel/dark_32x16o.S: 520 424
+:geoo/steel/dark_32x16o.S: 552 424
+:geoo/steel/dark_32x16o.S: 584 424
+:geoo/steel/dark_32x16o.S: 424 168
+:geoo/steel/dark_32x16o.S: 456 168
+:geoo/steel/dark_32x16o.S: 488 168
+:geoo/steel/dark_32x16o.S: 520 168
+:geoo/steel/dark_32x16o.S: 552 168
+:geoo/steel/dark_32x16o.S: 584 168
+:proxima/tile/green2s: 200 288
+:proxima/tile/green2s: 232 288
+:proxima/tile/green2s: 264 288
+:proxima/tile/green2s: 200 320
+:proxima/tile/green2s: 264 320
+:proxima/tile/green2s: 200 352
+:proxima/tile/green2s: 232 352
+:proxima/tile/green2s: 264 352
+:proxima/tile/green2s: 200 384
+:proxima/tile/green2s: 264 384
+:proxima/tile/green2s: 200 416
+:proxima/tile/green2s: 232 416
+:proxima/tile/green2s: 264 416
+:proxima/tile/green2s: 200 448
+:proxima/tile/green2s: 264 448
+:proxima/tile/green2s: 200 480
+:proxima/tile/green2s: 232 480
+:proxima/tile/green2s: 264 480
+:proxima/tile/green2s: 200 0
+:proxima/tile/green2s: 264 0
+:proxima/tile/green2s: 200 32
+:proxima/tile/green2s: 232 32
+:proxima/tile/green2s: 264 32
+:proxima/tile/green2s: 200 64
+:proxima/tile/green2s: 264 64
+:proxima/tile/green2s: 200 96
+:proxima/tile/green2s: 232 96
+:proxima/tile/green2s: 264 96
+:proxima/tile/green2s: 200 128
+:proxima/tile/green2s: 264 128
+:proxima/tile/green2s: 200 160
+:proxima/tile/green2s: 232 160
+:proxima/tile/green2s: 264 160
+:proxima/tile/green2s: 200 192
+:proxima/tile/green2s: 264 192
+:proxima/tile/green2s: 200 224
+:proxima/tile/green2s: 232 224
+:proxima/tile/green2s: 264 224
+:proxima/tile/green2s: 200 256
+:proxima/tile/green2s: 264 256
+:proxima/tile/green2s: 328 288
+:proxima/tile/green2s: 360 288
+:proxima/tile/green2s: 392 288
+:proxima/tile/green2s: 328 320
+:proxima/tile/green2s: 392 320
+:proxima/tile/green2s: 328 352
+:proxima/tile/green2s: 360 352
+:proxima/tile/green2s: 392 352
+:proxima/tile/green2s: 328 384
+:proxima/tile/green2s: 392 384
+:proxima/tile/green2s: 328 416
+:proxima/tile/green2s: 360 416
+:proxima/tile/green2s: 392 416
+:proxima/tile/green2s: 328 448
+:proxima/tile/green2s: 392 448
+:proxima/tile/green2s: 328 480
+:proxima/tile/green2s: 360 480
+:proxima/tile/green2s: 392 480
+:proxima/tile/green2s: 328 0
+:proxima/tile/green2s: 392 0
+:proxima/tile/green2s: 328 32
+:proxima/tile/green2s: 360 32
+:proxima/tile/green2s: 392 32
+:proxima/tile/green2s: 328 64
+:proxima/tile/green2s: 392 64
+:proxima/tile/green2s: 328 96
+:proxima/tile/green2s: 360 96
+:proxima/tile/green2s: 392 96
+:proxima/tile/green2s: 328 128
+:proxima/tile/green2s: 392 128
+:proxima/tile/green2s: 328 160
+:proxima/tile/green2s: 360 160
+:proxima/tile/green2s: 392 160
+:proxima/tile/green2s: 328 192
+:proxima/tile/green2s: 392 192
+:proxima/tile/green2s: 328 224
+:proxima/tile/green2s: 360 224
+:proxima/tile/green2s: 392 224
+:proxima/tile/green2s: 328 256
+:proxima/tile/green2s: 392 256

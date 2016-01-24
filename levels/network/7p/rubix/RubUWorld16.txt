@@ -1,0 +1,483 @@
+$BUILT                                             2011-09-04 23:46:09
+$AUTHOR                                                          RubiX
+$GERMAN                                                               
+$ENGLISH                                    Infernal towers [Low] (7p)
+
+#SIZE_X                                                           2576
+#SIZE_Y                                                            898
+#TORUS_X                                                             1
+#TORUS_Y                                                             0
+#START_X                                                            48
+#START_Y                                                           856
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            60
+#INITIAL                                                            99
+#REQUIRED                                                           20
+#RATE                                                               25
+
+#CLIMBER                                                            10
+#FLOATER                                                            20
+#WALKER                                                             50
+#JUMPER                                                             20
+#EXPLODER                                                            9
+#BUILDER                                                            20
+#PLATFORMER                                                         80
+#BASHER                                                             40
+#MINER                                                              40
+#DIGGER                                                             30
+#CUBER                                                              20
+#RUNNER                                                             10
+
+:matt/underworld/Hatch.H:                    464        96
+:matt/underworld/Hatch.H:                    832        96
+:matt/underworld/Hatch.H:                   1200        96
+:matt/underworld/Hatch.H:                   1568        96
+:matt/underworld/Hatch.H:                   1936        96
+:matt/underworld/Hatch.H:                   2304        96
+:matt/underworld/Hatch.H:                     96        96
+
+:matt/underworld/Goal.G:                     784       800
+:matt/underworld/Goal.G:                    1152       800
+:matt/underworld/Goal.G:                    1520       800
+:matt/underworld/Goal.G:                    1888       800
+:matt/underworld/Goal.G:                    2256       800
+:matt/underworld/Goal.G:                      48       800
+:matt/underworld/Goal.G:                     416       800
+
+:matt/underworld/Lava.W:                       0       864
+:matt/underworld/Lava.W:                     368       864
+:matt/underworld/Lava.W:                     368       864
+:matt/underworld/Lava.W:                     736       864
+:matt/underworld/Lava.W:                    1104       864
+:matt/underworld/Lava.W:                    1472       864
+:matt/underworld/Lava.W:                    1840       864
+:matt/underworld/Lava.W:                    2208       864
+
+:matt/underworld/09a:                        646       194     r
+:matt/underworld/09a:                        476       194     fr
+:matt/underworld/09a:                        108       192     fr
+:matt/underworld/09a:                        278       192     r
+:matt/underworld/09a:                        544       208
+:matt/underworld/09a:                        176       208
+:matt/underworld/09a:                        278       768     r
+:matt/underworld/02:                         112       192
+:matt/underworld/02:                         240       192
+:matt/underworld/09a:                        646       768     r
+:matt/underworld/02:                         112       336
+:matt/underworld/02:                         176       336
+:matt/underworld/02:                         240       336
+:matt/underworld/02:                         112       480
+:matt/underworld/02:                         176       480
+:matt/underworld/02:                         240       480
+:matt/underworld/02:                         112       624
+:matt/underworld/02:                         176       624
+:matt/underworld/02:                         240       624
+:matt/underworld/02:                         112       768
+:matt/underworld/02:                         176       768
+:matt/underworld/02:                         240       768
+:matt/underworld/01:                          48       864
+:matt/underworld/01:                         112       864
+:matt/underworld/01:                         176       864
+:matt/underworld/01:                         240       864
+:matt/underworld/01:                         304       864
+:matt/underworld/00:                         112       272     r
+:matt/underworld/00:                         288       272     r
+:matt/underworld/00:                         112       416     r
+:matt/underworld/00:                         288       416     r
+:matt/underworld/00:                         112       560     r
+:matt/underworld/00:                         288       560     r
+:matt/underworld/00:                         112       704     r
+:matt/underworld/00:                         288       704     r
+:matt/steel/32x32.S:                               96       192
+:matt/steel/32x32.S:                              128       192
+:matt/steel/32x32.S:                              272       224
+:matt/steel/32x32.S:                              112       224
+:matt/steel/32x32.S:                              256       192
+:matt/steel/32x32.S:                              288       192
+:matt/steel/16x32.S:                              112       256
+:matt/steel/16x32.S:                              288       256
+:matt/underworld/09a:                        174       328
+:matt/underworld/09a:                        112       330
+:matt/underworld/09a:                        166       476
+:matt/underworld/09a:                        236       328
+:matt/underworld/09a:                        112       476
+:matt/underworld/09a:                        228       476
+:matt/underworld/09a:                        238       476
+:matt/underworld/09a:                        166       766
+:matt/underworld/09a:                        112       766
+:matt/underworld/09a:                        228       766
+:matt/underworld/09a:                        238       766
+:matt/underworld/09a:                        166       620
+:matt/underworld/09a:                        114       620
+:matt/underworld/09a:                        228       620
+:matt/underworld/09a:                        238       620
+:matt/underworld/00:                         176       192
+:matt/underworld/00:                         176       272
+:matt/underworld/00:                         176       256
+:matt/underworld/00:                         176       208
+:matt/underworld/09a:                        640       768     r
+:matt/underworld/09a:                        480       336     fr
+:matt/underworld/02:                         480       192
+:matt/underworld/02:                         608       192
+:matt/underworld/02:                         480       336
+:matt/underworld/02:                         544       336
+:matt/underworld/02:                         608       336
+:matt/underworld/02:                         480       480
+:matt/underworld/02:                         544       480
+:matt/underworld/02:                         608       480
+:matt/underworld/02:                         480       624
+:matt/underworld/02:                         544       624
+:matt/underworld/02:                         608       624
+:matt/underworld/02:                         480       768
+:matt/underworld/02:                         544       768
+:matt/underworld/02:                         608       768
+:matt/underworld/01:                         416       864
+:matt/underworld/01:                         480       864
+:matt/underworld/01:                         544       864
+:matt/underworld/01:                         608       864
+:matt/underworld/01:                         672       864
+:matt/underworld/00:                         480       272     r
+:matt/underworld/00:                         656       272     r
+:matt/underworld/00:                         480       416     r
+:matt/underworld/00:                         656       416     r
+:matt/underworld/00:                         480       560     r
+:matt/underworld/00:                         656       560     r
+:matt/underworld/00:                         480       704     r
+:matt/underworld/00:                         656       704     r
+:matt/steel/32x32.S:                              464       192
+:matt/steel/32x32.S:                              496       192
+:matt/steel/32x32.S:                              640       224
+:matt/steel/32x32.S:                              480       224
+:matt/steel/32x32.S:                              624       192
+:matt/steel/32x32.S:                              656       192
+:matt/steel/16x32.S:                              480       256
+:matt/steel/16x32.S:                              656       256
+:matt/underworld/09a:                        544       336
+:matt/underworld/09a:                        480       336
+:matt/underworld/09a:                        528       480
+:matt/underworld/09a:                        604       336
+:matt/underworld/09a:                        480       480
+:matt/underworld/09a:                        592       480
+:matt/underworld/09a:                        604       480
+:matt/underworld/09a:                        528       768
+:matt/underworld/09a:                        480       768
+:matt/underworld/09a:                        592       768
+:matt/underworld/09a:                        608       768
+:matt/underworld/09a:                        528       624
+:matt/underworld/09a:                        480       624
+:matt/underworld/09a:                        592       624
+:matt/underworld/09a:                        604       624
+:matt/underworld/00:                         544       192
+:matt/underworld/00:                         544       272
+:matt/underworld/00:                         544       256
+:matt/underworld/00:                         544       208
+:matt/underworld/09a:                       1008       192     r
+:matt/underworld/09a:                        848       192     fr
+:matt/underworld/09a:                        912       208
+:matt/underworld/09a:                       1008       768     r
+:matt/underworld/09a:                       1008       768     r
+:matt/underworld/09a:                        848       336     fr
+:matt/underworld/02:                         848       192
+:matt/underworld/02:                         976       192
+:matt/underworld/02:                         848       336
+:matt/underworld/02:                         912       336
+:matt/underworld/02:                         976       336
+:matt/underworld/02:                         848       480
+:matt/underworld/02:                         912       480
+:matt/underworld/02:                         976       480
+:matt/underworld/02:                         848       624
+:matt/underworld/02:                         912       624
+:matt/underworld/02:                         976       624
+:matt/underworld/02:                         848       768
+:matt/underworld/02:                         912       768
+:matt/underworld/02:                         976       768
+:matt/underworld/01:                         784       864
+:matt/underworld/01:                         848       864
+:matt/underworld/01:                         912       864
+:matt/underworld/01:                         976       864
+:matt/underworld/01:                        1040       864
+:matt/underworld/00:                         848       272     r
+:matt/underworld/00:                        1024       272     r
+:matt/underworld/00:                         848       416     r
+:matt/underworld/00:                        1024       416     r
+:matt/underworld/00:                         848       560     r
+:matt/underworld/00:                        1024       560     r
+:matt/underworld/00:                         848       704     r
+:matt/underworld/00:                        1024       704     r
+:matt/steel/32x32.S:                              832       192
+:matt/steel/32x32.S:                              864       192
+:matt/steel/32x32.S:                             1008       224
+:matt/steel/32x32.S:                              848       224
+:matt/steel/32x32.S:                              992       192
+:matt/steel/32x32.S:                             1024       192
+:matt/steel/16x32.S:                              848       256
+:matt/steel/16x32.S:                             1024       256
+:matt/underworld/09a:                        912       336
+:matt/underworld/09a:                        848       336
+:matt/underworld/09a:                        896       480
+:matt/underworld/09a:                        976       336
+:matt/underworld/09a:                        848       480
+:matt/underworld/09a:                        960       480
+:matt/underworld/09a:                        976       480
+:matt/underworld/09a:                        896       768
+:matt/underworld/09a:                        848       768
+:matt/underworld/09a:                        960       768
+:matt/underworld/09a:                        976       768
+:matt/underworld/09a:                        896       624
+:matt/underworld/09a:                        848       624
+:matt/underworld/09a:                        960       624
+:matt/underworld/09a:                        976       624
+:matt/underworld/00:                         912       192
+:matt/underworld/00:                         912       272
+:matt/underworld/00:                         912       256
+:matt/underworld/00:                         912       208
+:matt/underworld/09a:                       1376       192     r
+:matt/underworld/09a:                       1216       192     fr
+:matt/underworld/09a:                       1280       208
+:matt/underworld/09a:                       1376       768     r
+:matt/underworld/09a:                       1376       768     r
+:matt/underworld/09a:                       1216       336     fr
+:matt/underworld/02:                        1216       192
+:matt/underworld/02:                        1344       192
+:matt/underworld/02:                        1216       336
+:matt/underworld/02:                        1280       336
+:matt/underworld/02:                        1344       336
+:matt/underworld/02:                        1216       480
+:matt/underworld/02:                        1280       480
+:matt/underworld/02:                        1344       480
+:matt/underworld/02:                        1216       624
+:matt/underworld/02:                        1280       624
+:matt/underworld/02:                        1344       624
+:matt/underworld/02:                        1216       768
+:matt/underworld/02:                        1280       768
+:matt/underworld/02:                        1344       768
+:matt/underworld/01:                        1152       864
+:matt/underworld/01:                        1216       864
+:matt/underworld/01:                        1280       864
+:matt/underworld/01:                        1344       864
+:matt/underworld/01:                        1408       864
+:matt/underworld/00:                        1216       272     r
+:matt/underworld/00:                        1392       272     r
+:matt/underworld/00:                        1216       416     r
+:matt/underworld/00:                        1392       416     r
+:matt/underworld/00:                        1216       560     r
+:matt/underworld/00:                        1392       560     r
+:matt/underworld/00:                        1216       704     r
+:matt/underworld/00:                        1392       704     r
+:matt/steel/32x32.S:                             1200       192
+:matt/steel/32x32.S:                             1232       192
+:matt/steel/32x32.S:                             1376       224
+:matt/steel/32x32.S:                             1216       224
+:matt/steel/32x32.S:                             1360       192
+:matt/steel/32x32.S:                             1392       192
+:matt/steel/16x32.S:                             1216       256
+:matt/steel/16x32.S:                             1392       256
+:matt/underworld/09a:                       1280       336
+:matt/underworld/09a:                       1216       336
+:matt/underworld/09a:                       1264       480
+:matt/underworld/09a:                       1344       336
+:matt/underworld/09a:                       1216       480
+:matt/underworld/09a:                       1328       480
+:matt/underworld/09a:                       1344       480
+:matt/underworld/09a:                       1264       768
+:matt/underworld/09a:                       1216       768
+:matt/underworld/09a:                       1328       768
+:matt/underworld/09a:                       1344       768
+:matt/underworld/09a:                       1264       624
+:matt/underworld/09a:                       1216       624
+:matt/underworld/09a:                       1328       624
+:matt/underworld/09a:                       1344       624
+:matt/underworld/00:                        1280       192
+:matt/underworld/00:                        1280       272
+:matt/underworld/00:                        1280       256
+:matt/underworld/00:                        1280       208
+:matt/underworld/09a:                       1744       194     r
+:matt/underworld/09a:                       1584       194     fr
+:matt/underworld/09a:                       1648       210
+:matt/underworld/09a:                       1744       768     r
+:matt/underworld/09a:                       1744       768     r
+:matt/underworld/09a:                       1584       336     fr
+:matt/underworld/02:                        1584       194
+:matt/underworld/02:                        1712       194
+:matt/underworld/02:                        1584       336
+:matt/underworld/02:                        1648       336
+:matt/underworld/02:                        1712       336
+:matt/underworld/02:                        1584       480
+:matt/underworld/02:                        1648       480
+:matt/underworld/02:                        1712       480
+:matt/underworld/02:                        1584       624
+:matt/underworld/02:                        1648       624
+:matt/underworld/02:                        1712       624
+:matt/underworld/02:                        1584       768
+:matt/underworld/02:                        1648       768
+:matt/underworld/02:                        1712       768
+:matt/underworld/01:                        1520       864
+:matt/underworld/01:                        1584       864
+:matt/underworld/01:                        1648       864
+:matt/underworld/01:                        1712       864
+:matt/underworld/01:                        1776       864
+:matt/underworld/00:                        1584       274     r
+:matt/underworld/00:                        1760       274     r
+:matt/underworld/00:                        1584       416     r
+:matt/underworld/00:                        1760       416     r
+:matt/underworld/00:                        1584       560     r
+:matt/underworld/00:                        1760       560     r
+:matt/underworld/00:                        1584       704     r
+:matt/underworld/00:                        1760       704     r
+:matt/steel/32x32.S:                             1568       194
+:matt/steel/32x32.S:                             1600       194
+:matt/steel/32x32.S:                             1744       226
+:matt/steel/32x32.S:                             1584       226
+:matt/steel/32x32.S:                             1728       194
+:matt/steel/32x32.S:                             1760       194
+:matt/steel/16x32.S:                             1584       258
+:matt/steel/16x32.S:                             1760       258
+:matt/underworld/09a:                       1648       336
+:matt/underworld/09a:                       1584       336
+:matt/underworld/09a:                       1632       480
+:matt/underworld/09a:                       1712       336
+:matt/underworld/09a:                       1584       480
+:matt/underworld/09a:                       1696       480
+:matt/underworld/09a:                       1712       480
+:matt/underworld/09a:                       1632       768
+:matt/underworld/09a:                       1584       768
+:matt/underworld/09a:                       1696       768
+:matt/underworld/09a:                       1712       768
+:matt/underworld/09a:                       1632       624
+:matt/underworld/09a:                       1584       624
+:matt/underworld/09a:                       1696       624
+:matt/underworld/09a:                       1712       624
+:matt/underworld/00:                        1648       194
+:matt/underworld/00:                        1648       274
+:matt/underworld/00:                        1648       258
+:matt/underworld/00:                        1648       210
+:matt/underworld/09a:                       2112       194     r
+:matt/underworld/09a:                       1952       194     fr
+:matt/underworld/09a:                       2016       210
+:matt/underworld/09a:                       2112       768     r
+:matt/underworld/09a:                       2112       768     r
+:matt/underworld/09a:                       1952       336     fr
+:matt/underworld/02:                        1952       194
+:matt/underworld/02:                        2080       194
+:matt/underworld/02:                        1952       336
+:matt/underworld/02:                        2016       336
+:matt/underworld/02:                        2080       336
+:matt/underworld/02:                        1952       480
+:matt/underworld/02:                        2016       480
+:matt/underworld/02:                        2080       480
+:matt/underworld/02:                        1952       624
+:matt/underworld/02:                        2016       624
+:matt/underworld/02:                        2080       624
+:matt/underworld/02:                        1952       768
+:matt/underworld/02:                        2016       768
+:matt/underworld/02:                        2080       768
+:matt/underworld/01:                        1888       864
+:matt/underworld/01:                        1952       864
+:matt/underworld/01:                        2016       864
+:matt/underworld/01:                        2080       864
+:matt/underworld/01:                        2144       864
+:matt/underworld/00:                        1952       274     r
+:matt/underworld/00:                        2128       274     r
+:matt/underworld/00:                        1952       416     r
+:matt/underworld/00:                        2128       416     r
+:matt/underworld/00:                        1952       560     r
+:matt/underworld/00:                        2128       560     r
+:matt/underworld/00:                        1952       704     r
+:matt/underworld/00:                        2128       704     r
+:matt/steel/32x32.S:                             1936       194
+:matt/steel/32x32.S:                             1968       194
+:matt/steel/32x32.S:                             2112       226
+:matt/steel/32x32.S:                             1952       226
+:matt/steel/32x32.S:                             2096       194
+:matt/steel/32x32.S:                             2128       194
+:matt/steel/16x32.S:                             1952       258
+:matt/steel/16x32.S:                             2128       258
+:matt/underworld/09a:                       2016       336
+:matt/underworld/09a:                       1952       336
+:matt/underworld/09a:                       2000       480
+:matt/underworld/09a:                       2080       336
+:matt/underworld/09a:                       1952       480
+:matt/underworld/09a:                       2064       480
+:matt/underworld/09a:                       2080       480
+:matt/underworld/09a:                       2000       768
+:matt/underworld/09a:                       1952       768
+:matt/underworld/09a:                       2064       768
+:matt/underworld/09a:                       2080       768
+:matt/underworld/09a:                       2000       624
+:matt/underworld/09a:                       1952       624
+:matt/underworld/09a:                       2064       624
+:matt/underworld/09a:                       2080       624
+:matt/underworld/00:                        2016       194
+:matt/underworld/00:                        2016       274
+:matt/underworld/00:                        2016       258
+:matt/underworld/00:                        2016       210
+:matt/underworld/09a:                       2480       192     r
+:matt/underworld/09a:                       2320       192     fr
+:matt/underworld/09a:                       2384       208
+:matt/underworld/09a:                       2480       768     r
+:matt/underworld/09a:                       2480       768     r
+:matt/underworld/09a:                       2320       336     fr
+:matt/underworld/02:                        2320       192
+:matt/underworld/02:                        2448       192
+:matt/underworld/02:                        2320       336
+:matt/underworld/02:                        2384       336
+:matt/underworld/02:                        2448       336
+:matt/underworld/02:                        2320       480
+:matt/underworld/02:                        2384       480
+:matt/underworld/02:                        2448       480
+:matt/underworld/02:                        2320       624
+:matt/underworld/02:                        2384       624
+:matt/underworld/02:                        2448       624
+:matt/underworld/02:                        2320       768
+:matt/underworld/02:                        2384       768
+:matt/underworld/02:                        2448       768
+:matt/underworld/01:                        2256       864
+:matt/underworld/01:                        2320       864
+:matt/underworld/01:                        2384       864
+:matt/underworld/01:                        2448       864
+:matt/underworld/01:                        2512       864
+:matt/underworld/00:                        2320       272     r
+:matt/underworld/00:                        2496       272     r
+:matt/underworld/00:                        2320       416     r
+:matt/underworld/00:                        2496       416     r
+:matt/underworld/00:                        2320       560     r
+:matt/underworld/00:                        2496       560     r
+:matt/underworld/00:                        2320       704     r
+:matt/underworld/00:                        2496       704     r
+:matt/steel/32x32.S:                             2304       192
+:matt/steel/32x32.S:                             2336       192
+:matt/steel/32x32.S:                             2480       224
+:matt/steel/32x32.S:                             2320       224
+:matt/steel/32x32.S:                             2464       192
+:matt/steel/32x32.S:                             2496       192
+:matt/steel/16x32.S:                             2320       256
+:matt/steel/16x32.S:                             2496       256
+:matt/underworld/09a:                       2384       336
+:matt/underworld/09a:                       2320       336
+:matt/underworld/09a:                       2368       480
+:matt/underworld/09a:                       2448       336
+:matt/underworld/09a:                       2320       480
+:matt/underworld/09a:                       2432       480
+:matt/underworld/09a:                       2448       480
+:matt/underworld/09a:                       2368       768
+:matt/underworld/09a:                       2320       768
+:matt/underworld/09a:                       2432       768
+:matt/underworld/09a:                       2448       768
+:matt/underworld/09a:                       2368       624
+:matt/underworld/09a:                       2320       624
+:matt/underworld/09a:                       2432       624
+:matt/underworld/09a:                       2448       624
+:matt/underworld/00:                        2384       192
+:matt/underworld/00:                        2384       272
+:matt/underworld/00:                        2384       256
+:matt/underworld/00:                        2384       208
+:matt/steel/64x32.S:                              416       864
+:matt/steel/64x32.S:                              784       864
+:matt/steel/64x32.S:                             1152       864
+:matt/steel/64x32.S:                             1520       864
+:matt/steel/64x32.S:                             1888       864
+:matt/steel/64x32.S:                             2256       864
+:matt/steel/64x32.S:                               48       864

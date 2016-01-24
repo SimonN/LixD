@@ -1,0 +1,174 @@
+$BUILT 2015-08-22 09:32:27
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH I'm holding out for a hero...
+$HINT_ENGLISH It only takes one to save the rest ;)
+#SIZE_X 1120
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 480
+#START_Y 380
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 50
+#SPAWN_INTERVAL 38
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 1
+#RUNNER 1
+#BUILDER 1
+#BASHER 2
+#MINER 1
+#DIGGER 1
+#JUMPER 6
+
+:matt/beach/decor/bonfire.D: 1093 348
+:matt/beach/decor/bonfire.D: 214 334
+:matt/beach/decor/moon.D: 512 -16
+
+:matt/beach/Hatch.H: 1024 0 r
+:matt/beach/Hatch.H: 16 144
+
+:matt/beach/goal.G: 1008 332
+:matt/beach/goal.G: 104 314
+
+:matt/water.W: 256 384
+:matt/water.W: 288 384
+:matt/water.W: 320 384
+:matt/water.W: 688 384
+:matt/water.W: 720 384
+:matt/water.W: 784 368
+:matt/water.W: 752 384
+:matt/water.W: 784 384
+
+:matt/beach/decor/grass08: 1052 84
+:matt/beach/decor/grass08: 957 296
+:matt/beach/decor/grass08: 862 210
+:matt/beach/decor/grass08: 885 181
+:matt/beach/decor/umbrella_red: 171 32
+:matt/beach/nighttime/03: 66 96
+:matt/beach/nighttime/06: 256 160 f
+:matt/beach/nighttime/14: 400 224
+:matt/beach/nighttime/13: 144 160
+:matt/beach/nighttime/13: 112 160
+:matt/beach/nighttime/06: 84 96
+:matt/beach/decor/grass08: 223 200
+:matt/beach/nighttime/06: 207 128
+:matt/beach/nighttime/06: 80 112
+:matt/beach/nighttime/13: 1053 41
+:matt/beach/nighttime/06: 863 351
+:matt/beach/nighttime/06: 977 192
+:matt/beach/nighttime/06: 1005 137
+:matt/beach/nighttime/06: 781 306 fr
+:matt/beach/nighttime/06: 496 336
+:matt/beach/decor/grass11: 513 305
+:matt/beach/nighttime/06: 400 304
+:matt/beach/nighttime/13: 896 224
+:matt/beach/nighttime/13: 882 169
+:matt/beach/nighttime/13: 958 178
+:matt/beach/nighttime/13: 927 330
+:matt/beach/nighttime/13: 880 288
+:matt/beach/nighttime/13: 775 339
+:matt/beach/nighttime/13: 896 256
+:matt/beach/nighttime/13: 816 256
+:matt/beach/nighttime/13: 800 304
+:matt/beach/nighttime/13: 821 218
+:matt/beach/nighttime/13: 864 165
+:matt/beach/decor/shovel: 886 255
+:matt/beach/nighttime/01: 859 312
+:matt/steel/32x32.S: 832 176
+:matt/steel/32x32.S: 1024 240
+:matt/steel/32x32.S: 1024 208
+:matt/steel/32x32.S: 1024 176
+:matt/steel/32x32.S: 1024 144
+:matt/steel/32x32.S: 1024 112
+:matt/steel/32x32.S: 1024 80
+:matt/steel/32x32.S: 1024 48
+:matt/steel/32x32.S: 1056 48
+:matt/steel/32x32.S: 1088 48
+:matt/steel/32x32.S: 928 112
+:matt/steel/32x32.S: 928 144
+:matt/steel/32x32.S: 928 176
+:matt/steel/32x32.S: 928 208
+:matt/steel/32x32.S: 928 240
+:matt/steel/32x32.S: 928 272
+:matt/steel/32x32.S: 928 368
+:matt/steel/32x32.S: 928 304
+:matt/steel/32x32.S: 928 336
+:matt/steel/32x32.S: 832 208
+:matt/steel/32x32.S: 832 240
+:matt/steel/32x32.S: 832 272
+:matt/steel/32x32.S: 832 368
+:matt/steel/32x32.S: 832 304
+:matt/steel/32x32.S: 832 336
+:matt/steel/32x32.S: 736 240
+:matt/steel/32x32.S: 736 272
+:matt/steel/32x32.S: 736 304
+:matt/steel/32x32.S: 736 336
+:matt/steel/32x32.S: 736 368
+:matt/steel/32x32.S: 640 304
+:matt/steel/32x32.S: 640 336
+:matt/steel/32x32.S: 640 368
+:matt/beach/nighttime/03: 1047 385
+:matt/beach/nighttime/06: 312 352
+:matt/beach/nighttime/13: 80 96
+:matt/beach/nighttime/06: -46 335
+:matt/beach/nighttime/06: 64 144
+:matt/beach/decor/beach ball: 297 153
+:matt/beach/nighttime/06: 103 113
+:matt/beach/nighttime/13: 32 160
+:matt/beach/nighttime/13: 18 314
+:matt/steel/32x32.S: 128 128
+:matt/steel/32x32.S: 64 192
+:matt/steel/32x32.S: 96 192
+:matt/steel/32x32.S: 128 192
+:matt/steel/32x32.S: 128 96
+:matt/steel/32x32.S: 128 64
+:matt/steel/32x32.S: 64 32
+:matt/steel/32x32.S: 96 32
+:matt/steel/32x32.S: 128 32
+:matt/beach/nighttime/03: 132 370
+:matt/steel/32x32.S: 160 192
+:matt/steel/32x32.S: 192 192
+:matt/steel/32x32.S: 243 161
+:matt/steel/32x32.S: 224 192
+:matt/beach/nighttime/13: -16 256
+:matt/steel/32x32.S: 32 192
+:matt/steel/32x32.S: 0 64
+:matt/steel/32x32.S: 0 32
+:matt/steel/32x32.S: 32 32
+:matt/steel/32x32.S: 0 96
+:matt/steel/32x32.S: 0 128
+:matt/steel/32x32.S: 0 160
+:matt/steel/32x32.S: 0 192
+:matt/steel/32x32.S: 271 129
+:matt/steel/32x32.S: 0 256
+:matt/steel/32x32.S: 0 224
+:matt/steel/32x32.S: 0 288
+:matt/steel/32x32.S: 0 320
+:matt/beach/decor/grass08: -14 361
+:matt/steel/32x32.S: 0 352
+:matt/steel/32x32.S: 0 384
+:matt/beach/nighttime/06: 400 208 fr
+:matt/steel/32x32.S: 544 272
+:matt/steel/32x32.S: 544 304
+:matt/steel/32x32.S: 544 336
+:matt/steel/32x32.S: 544 368
+:matt/beach/nighttime/06: 415 228 fr
+:matt/beach/decor/pail: 416 298
+:matt/beach/nighttime/04: 423 344
+:matt/beach/decor/grass11: 319 145
+:matt/beach/decor/grass11: 669 369
+:matt/beach/decor/grass03: 398 196
+:matt/beach/decor/grass03: 46 330
+:matt/beach/decor/grass03: 1064 149
+:matt/beach/decor/grass10: 874 340
+:matt/beach/decor/grass10: 493 349
+:matt/beach/decor/grass10: 182 123
+:matt/beach/decor/grass04: 994 218
+:matt/beach/decor/grass09: 965 240

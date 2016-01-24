@@ -1,0 +1,123 @@
+$BUILT 2014-06-28 22:38:51
+$AUTHOR mobius
+$GERMAN 
+$ENGLISH The Lix Who Japed
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 2
+#REQUIRED 2
+#SPAWN_INTERVAL 40
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER 0
+#BLOCKER 0
+#BUILDER 5
+#BASHER 2
+#MINER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/sandstone/Hatch.H: 16 0
+
+:geoo/sandstone/Goal.G: 496 80
+
+:geoo/construction/sawblade.F: 152 48
+:geoo/construction/sawblade.F: 152 0
+:geoo/construction/sawblade.F: 392 48
+:geoo/construction/sawblade.F: 392 0
+
+:geoo/sandstone/64x32: 8 96
+:geoo/sandstone/64x32: 8 128
+:geoo/sandstone/64x32: 8 160
+:geoo/sandstone/64x32: 8 192
+:geoo/sandstone/64x32: 8 224
+:geoo/sandstone/64x32: 72 96
+:geoo/sandstone/64x32: 72 128
+:geoo/sandstone/64x32: 72 160
+:geoo/sandstone/64x32: 72 192
+:geoo/sandstone/64x32: 72 224
+:geoo/sandstone/64x32: 8 256
+:geoo/sandstone/64x32: 8 288
+:geoo/sandstone/64x32: 72 256
+:geoo/sandstone/64x32: 72 288
+:geoo/sandstone/arc_small: 256 368
+:geoo/sandstone/arc_small: 352 368
+:geoo/sandstone/arc_small: 448 368
+:geoo/sandstone/arc_small: 544 368
+:geoo/sandstone/64x32: 512 144
+:geoo/sandstone/64x32: 512 176
+:geoo/sandstone/64x32: 512 208
+:geoo/sandstone/64x32: 512 240
+:geoo/sandstone/64x32: 512 272
+:geoo/sandstone/64x32: 576 144
+:geoo/sandstone/64x32: 576 176
+:geoo/sandstone/64x32: 576 208
+:geoo/sandstone/64x32: 576 240
+:geoo/sandstone/64x32: 576 272
+:geoo/sandstone/64x32: 512 304
+:geoo/sandstone/64x32: 512 336
+:geoo/sandstone/64x32: 576 304
+:geoo/sandstone/64x32: 576 336
+:geoo/sandstone/64x32: 448 144
+:geoo/sandstone/64x32: 448 176
+:geoo/sandstone/64x32: 448 208
+:geoo/sandstone/64x32: 448 240
+:geoo/sandstone/64x32: 448 272
+:geoo/sandstone/64x32: 448 304
+:geoo/sandstone/64x32: 448 336
+:geoo/sandstone/arc_small: 160 368
+:geoo/steel/16x32o.S: 464 112
+:geoo/steel/16x32o.S: 464 48
+:geoo/steel/16x32o.S: 464 80
+:geoo/sandstone/slopes/64x32lt: 480 48
+:geoo/steel/16x32o.S: 624 112
+:geoo/steel/16x32o.S: 624 48
+:geoo/steel/16x32o.S: 624 80
+:geoo/steel/16x32o.S: 624 16
+:geoo/steel/16x32o.S: 624 -16
+:geoo/steel/16x32o.S: 608 0
+:geoo/steel/16x32o.S: 608 32
+:geoo/sandstone/64x64: 232 160
+:geoo/sandstone/64x64: 296 160
+:geoo/sandstone/64x64: 296 224
+:geoo/sandstone/64x64: 232 224 n
+:geoo/sandstone/slopes/32x32rb: 320 160 frrrd
+:geoo/sandstone/slopes/32x32rb: 296 184 frrrd
+:geoo/sandstone/slopes/32x32rb: 288 192 frrrd
+:geoo/sandstone/32x64: 288 128 d
+:geoo/sandstone/16x32: 272 192 d
+:geoo/sandstone/16x32: 272 160 d
+:geoo/sandstone/32x32: 496 160
+:geoo/sandstone/smaragd: 504 168
+:geoo/sandstone/32x32: 560 160
+:geoo/sandstone/smaragd: 568 168
+:geoo/sandstone/32x32: 560 240
+:geoo/sandstone/smaragd: 568 248
+:geoo/sandstone/32x32: 496 240
+:geoo/sandstone/smaragd: 504 248
+:geoo/sandstone/32x32: 496 320
+:geoo/sandstone/smaragd: 504 328
+:geoo/sandstone/32x32: 560 320
+:geoo/sandstone/smaragd: 568 328
+:geoo/sandstone/32x32: 56 272
+:geoo/sandstone/smaragd: 64 280
+:geoo/sandstone/32x32: 56 192
+:geoo/sandstone/smaragd: 64 200
+:geoo/sandstone/32x32: 56 112
+:geoo/sandstone/smaragd: 64 120
+:geoo/steel/64x64o.S: 232 0
+:geoo/steel/64x64o.S: 296 0
+:geoo/steel/16x16o.S: 464 144

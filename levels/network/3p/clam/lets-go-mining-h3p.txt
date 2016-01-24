@@ -1,0 +1,102 @@
+$BUILT                                             2012-01-21 10:38:52
+$AUTHOR                                                   Clam Spammer
+$GERMAN                                                               
+$ENGLISH                                       Let's go mining (h, 3P)
+
+#SIZE_X                                                            960
+#SIZE_Y                                                            400
+#TORUS_X                                                             1
+#TORUS_Y                                                             1
+#START_X                                                             0
+#START_Y                                                             0
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            45
+#INITIAL                                                            80
+#REQUIRED                                                           80
+#SPAWN_INTERVAL                                                     22
+
+#CLIMBER                                                            20
+#RUNNER                                                             20
+#WALKER                                                             40
+#JUMPER                                                             40
+#BATTER                                                             20
+#EXPLODER2                                                          20
+#CUBER                                                              10
+#BLOCKER                                                            10
+#BUILDER                                                            40
+#BASHER                                                             -1
+#MINER                                                              -1
+#DIGGER                                                             -1
+
+:matt/goldmine/Hatch.H:                     128        96
+:matt/goldmine/Hatch.H:                     448        96
+:matt/goldmine/Hatch.H:                     768        96
+
+:matt/goldmine/Goal.G:                      608       296
+:matt/goldmine/Goal.G:                      928       296
+:matt/goldmine/Goal.G:                      288       296
+
+:matt/goldmine/07:                          -48       -16
+:matt/goldmine/07:                           48       -32
+:matt/goldmine/07:                          176       -32
+:matt/goldmine/07:                          320       -32
+:matt/goldmine/07:                          480       -48
+:matt/goldmine/07:                          528        32
+:matt/goldmine/07:                          416        16
+:matt/goldmine/07:                          -64        80
+:matt/goldmine/07:                          304        16
+:matt/goldmine/07:                           32        48
+:matt/goldmine/07:                          144        32
+:matt/goldmine/07:                          -48       144
+:matt/goldmine/07:                          480        96
+:matt/goldmine/07:                          368        64
+:matt/goldmine/07:                          352       128
+:matt/goldmine/07:                          272        80
+:matt/goldmine/07:                          144        96
+:matt/goldmine/07:                           64       144
+:matt/goldmine/07:                          208       144
+:matt/goldmine/07:                          -32       176
+:matt/goldmine/07:                           64       160
+:matt/goldmine/07:                          192       160
+:matt/goldmine/07:                          336       160
+:matt/goldmine/07:                          496       144
+:matt/goldmine/07:                          544       224
+:matt/goldmine/07:                          432       208
+:matt/goldmine/07:                          -48       272
+:matt/goldmine/07:                          320       208
+:matt/goldmine/07:                           48       240
+:matt/goldmine/07:                          160       224
+:matt/goldmine/07:                          -32       336
+:matt/goldmine/07:                          496       288
+:matt/goldmine/07:                          384       256
+:matt/goldmine/07:                          368       320
+:matt/goldmine/07:                          288       272
+:matt/goldmine/07:                          160       288
+:matt/goldmine/07:                           80       336
+:matt/goldmine/07:                          224       336
+:matt/goldmine/07:                          512       352
+:matt/winter/09a:                            128        80     d
+:matt/winter/09a:                            448        80     d
+:matt/goldmine/07:                          800       352
+:matt/goldmine/07:                          848        32
+:matt/goldmine/07:                          736        16
+:matt/goldmine/07:                          800        96
+:matt/goldmine/07:                          816       144
+:matt/goldmine/07:                          864       224
+:matt/goldmine/07:                          752       208
+:matt/goldmine/07:                          816       288
+:matt/goldmine/07:                          704       256
+:matt/goldmine/07:                          832       352
+:matt/goldmine/07:                          704       304
+:matt/winter/09a:                            928       280     d
+:matt/goldmine/07:                          656       176
+:matt/goldmine/07:                          624       256
+:matt/goldmine/07:                          640        48
+:matt/goldmine/07:                          640       352
+:matt/goldmine/07:                          656       112
+:matt/winter/09a:                            768        80     d
+:matt/winter/09a:                            288       280     d
+:matt/winter/09a:                            608       280     d

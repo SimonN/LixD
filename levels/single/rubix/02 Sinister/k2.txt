@@ -1,0 +1,155 @@
+$BUILT 2014-02-27 19:09:53
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH The center of attention
+$HINT_ENGLISH Its staring you right in the face what needs to happen here.
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 43
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#WALKER 1
+#BUILDER 4
+#BASHER 1
+#DIGGER 2
+#MINER 1
+#RUNNER 1
+#JUMPER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/carnival/Hatch.H: 112 288
+
+:matt/carnival/Goal.G: 464 304
+
+:geoo/construction/sawblade.F: 348 144
+:geoo/construction/sawblade.F: 252 368
+
+:geoo/construction/steam_left.T: 160 240
+:geoo/construction/steam_left.T: 144 288
+:geoo/construction/steam_left.T: 96 240
+:geoo/construction/steam_left.T: 112 288
+
+:geoo/construction/trampoline.T: 240 112
+
+:matt/carnival/38: 336 0 rr
+:matt/carnival/38: 240 0 f
+:matt/carnival/37: 383 0
+:matt/carnival/38: 576 32
+:matt/carnival/36: 576 32 rr
+:matt/carnival/04: 368 272
+:matt/carnival/04: 368 144
+:matt/carnival/05: 400 144
+:matt/carnival/05: 368 208
+:matt/carnival/05: 400 272
+:matt/carnival/04: 464 208
+:matt/carnival/04: 432 144
+:matt/carnival/05: 464 144
+:matt/carnival/04: 496 144
+:matt/carnival/05: 528 144
+:matt/carnival/05: 496 208
+:matt/carnival/04: 560 272
+:matt/carnival/04: 592 208
+:matt/carnival/04: 560 144
+:matt/carnival/05: 592 144
+:matt/carnival/05: 592 272
+:matt/steel/32x32.S: 368 368
+:matt/steel/32x32.S: 368 336
+:matt/steel/32x32.S: 592 368
+:matt/steel/32x32.S: 592 336
+:matt/carnival/11: 400 368
+:matt/carnival/11: 432 368 r
+:matt/carnival/11: 464 368
+:matt/carnival/11: 496 368 r
+:matt/carnival/11: 528 368
+:matt/carnival/11: 560 368 r
+:matt/carnival/04: 16 272
+:matt/carnival/04: 16 144
+:matt/carnival/05: 48 144
+:matt/carnival/05: 32 208
+:matt/carnival/05: 48 272
+:matt/carnival/04: 112 208
+:matt/carnival/04: 80 144
+:matt/carnival/05: 112 144
+:matt/carnival/04: 144 144
+:matt/carnival/05: 176 144
+:matt/carnival/05: 144 208
+:matt/carnival/04: 208 272
+:matt/carnival/04: 224 208
+:matt/carnival/04: 208 144
+:matt/carnival/05: 240 144
+:matt/carnival/05: 240 272
+:matt/steel/32x32.S: 16 368
+:matt/steel/32x32.S: 16 336
+:matt/steel/32x32.S: 240 368
+:matt/steel/32x32.S: 240 336
+:matt/carnival/11: 48 368
+:matt/carnival/11: 80 368 r
+:matt/carnival/11: 112 368
+:matt/carnival/11: 144 368 r
+:matt/carnival/11: 176 368
+:matt/carnival/11: 208 368 r
+:matt/carnival/04: 316 336
+:matt/carnival/04: 316 208
+:matt/carnival/05: 316 272
+:matt/carnival/04: 316 80
+:matt/carnival/05: 316 144
+:matt/carnival/04: 324 336 d
+:matt/carnival/04: 324 208 d
+:matt/carnival/05: 324 272 d
+:matt/carnival/04: 324 80 d
+:matt/carnival/05: 324 144 d
+:matt/carnival/11: 400 336
+:matt/carnival/11: 560 336 r
+:matt/carnival/11: 48 336
+:matt/carnival/11: 128 272
+:matt/carnival/11: 480 272 r
+:matt/carnival/05: 316 16
+:matt/carnival/04: 324 16 d
+:matt/carnival/36: 448 0
+:matt/carnival/38: 448 0 rr
+:matt/carnival/36: 512 0
+:matt/carnival/38: 512 0 rr
+:matt/carnival/36: 576 0
+:matt/carnival/38: 576 0 rr
+:matt/carnival/36: 0 0
+:matt/carnival/38: 0 0 rr
+:matt/carnival/36: 64 0
+:matt/carnival/38: 64 0 rr
+:matt/carnival/36: 128 0
+:matt/carnival/38: 128 0 rr
+:matt/carnival/36: 192 0
+:matt/carnival/38: 192 0 rr
+:matt/carnival/36: 384 0
+:matt/carnival/38: 384 0 rr
+:matt/carnival/36: 0 32 rr
+:matt/carnival/38: 0 32
+:matt/carnival/38: 512 32
+:matt/carnival/36: 512 32 rr
+:matt/carnival/38: 448 32
+:matt/carnival/36: 448 32 rr
+:matt/carnival/38: 384 32
+:matt/carnival/36: 384 32 rr
+:matt/carnival/36: 64 32 rr
+:matt/carnival/38: 64 32
+:matt/carnival/36: 128 32 rr
+:matt/carnival/38: 128 32
+:matt/carnival/36: 192 32 rr
+:matt/carnival/38: 192 32
+:matt/carnival/38: 0 64 rr
+:matt/carnival/38: 576 64 f
+:matt/carnival/04: 400 208

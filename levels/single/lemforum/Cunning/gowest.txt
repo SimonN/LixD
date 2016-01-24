@@ -1,0 +1,207 @@
+$BUILT 2014-05-31 17:49:53
+$AUTHOR Michael S. Repton
+$GERMAN 
+$ENGLISH Go West!
+
+#SIZE_X 1600
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 16
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#BASHER 10
+#DIGGER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/beach/decor/sun.D: 80 48
+
+:matt/marble/Hatch.H: 480 112
+
+:matt/marble/Goal.G: 384 144
+
+:simon/crystal.W: 448 368
+:simon/crystal.W: 496 368
+:proxima/flame.F: 1152 288
+:proxima/flame.F: 1200 288
+:proxima/flame.F: 1360 272
+:proxima/flame.F: 1296 272
+:proxima/flame.F: 1424 256
+
+:matt/beach/daytime/06: 32 336 frr
+:matt/beach/daytime/06: 192 288
+:matt/beach/daytime/06: 240 336 frr
+:matt/beach/decor/beach ball: 128 320
+:matt/beach/decor/shovel: 160 256
+:matt/beach/daytime/04: 528 288
+:matt/marble/23c: 384 192
+:matt/marble/23c: 384 224
+:matt/marble/23c: 416 192
+:matt/marble/23c: 416 224
+:matt/marble/23c: 448 192
+:matt/marble/23c: 448 224
+:matt/marble/23c: 480 192
+:matt/marble/23c: 480 224
+:matt/marble/23c: 512 192
+:matt/marble/23c: 512 224
+:matt/marble/23c: 544 192
+:matt/marble/23c: 544 224
+:matt/marble/23c: 576 192
+:matt/marble/23c: 576 224
+:matt/marble/23c: 608 192
+:matt/marble/23c: 608 224
+:matt/marble/04c: 400 256
+:matt/marble/04c: 576 256
+:matt/marble/001c: 592 272
+:matt/marble/001c: 408 272
+:matt/marble/001c: 408 288
+:matt/marble/001c: 408 304
+:matt/marble/001c: 408 320
+:matt/marble/001c: 408 336
+:matt/marble/001c: 416 280
+:matt/marble/001c: 416 296
+:matt/marble/001c: 416 312
+:matt/marble/001c: 416 328
+:matt/marble/001c: 416 344
+:matt/marble/00c: 416 272
+:matt/marble/00c: 584 272
+:matt/marble/00c: 584 280
+:matt/marble/23b: 640 192
+:matt/marble/23b: 640 224
+:matt/marble/23b: 672 192
+:matt/marble/23b: 672 224
+:matt/marble/23b: 704 192
+:matt/marble/23b: 704 224
+:matt/marble/23b: 736 192
+:matt/marble/23b: 736 224
+:matt/marble/23b: 768 192
+:matt/marble/23b: 768 224
+:matt/marble/23b: 800 192
+:matt/marble/23b: 800 224
+:matt/marble/23b: 832 192
+:matt/marble/23b: 832 224
+:matt/marble/23b: 864 192
+:matt/marble/23b: 864 224
+:matt/marble/23b: 896 192
+:matt/marble/23b: 896 224
+:matt/marble/23b: 928 192
+:matt/marble/23b: 928 224
+:matt/marble/23b: 960 192
+:matt/marble/23b: 960 224
+:matt/marble/23b: 992 192
+:matt/marble/23b: 992 224
+:matt/marble/23b: 1024 192
+:matt/marble/23b: 1024 224
+:matt/marble/23b: 1056 192
+:matt/marble/23b: 1056 224
+:matt/marble/23b: 1088 192
+:matt/marble/23b: 1088 224
+:matt/marble/23b: 1120 192
+:matt/marble/23b: 1120 224
+:matt/earth/10: 624 312
+:matt/earth/10: 800 328 frr
+:matt/marble/00b: 1064 288
+:matt/marble/00b: 1072 296
+:matt/marble/001b: 1072 280
+:matt/marble/001b: 1064 272
+:matt/earth/16: 992 280
+:matt/earth/04: 1056 272
+:matt/earth/09: 896 328
+:matt/earth/09: 864 344
+:matt/earth/06: 832 344
+:matt/earth/07: 944 328
+:matt/earth/09: 672 312
+:matt/marble/001b: 720 312
+:matt/earth/08: 720 320
+:matt/earth/09: 736 336
+:matt/earth/07: 768 336
+:matt/earth/02: 720 -32
+:matt/earth/23: 672 0
+:matt/earth/10: 880 -48 rr
+:matt/marble/23: 1152 192
+:matt/marble/23: 1152 224
+:matt/marble/23: 1184 192
+:matt/marble/23: 1184 224
+:matt/marble/23: 1216 192
+:matt/marble/23: 1216 224
+:matt/marble/23: 1248 192
+:matt/marble/23: 1248 224
+:matt/marble/23: 1280 192
+:matt/marble/23: 1280 224
+:matt/marble/23: 1312 192
+:matt/marble/23: 1312 224
+:matt/marble/23: 1344 192
+:matt/marble/23: 1344 224
+:matt/marble/23: 1376 192
+:matt/marble/23: 1376 224
+:matt/underworld/06: 1136 320
+:matt/underworld/07: 1312 304
+:matt/underworld/08: 1216 288
+:matt/underworld/08: 1376 288
+:matt/underworld/08: 1456 240
+:matt/underworld/08: 1456 304
+:matt/underworld/07: 1472 160
+:matt/underworld/06: 1456 80
+:matt/underworld/09a: 1488 96
+:matt/underworld/08: 1440 -16
+:matt/underworld/09c: 1376 64
+:matt/underworld/09a: 1424 112
+:matt/underworld/06: 1392 16 rr
+:matt/underworld/09a: 1344 48
+:matt/underworld/06: 1360 -32
+:matt/underworld/08: 1120 -48
+:matt/earth/04: 1040 -64
+:matt/underworld/09a: 1232 48
+:matt/underworld/07: 1216 -48
+:matt/underworld/06: 1296 -48
+:matt/underworld/09a: 1168 64
+:matt/underworld/09c: 1312 32
+:matt/earth/23: 912 16
+:matt/earth/25: 1056 64
+:matt/earth/26: 928 32
+:matt/earth/24: 992 48
+:matt/earth/23: 1136 96
+:matt/earth/01: 784 -32
+:matt/earth/23: 816 16
+:matt/marble/04b: 704 256
+:matt/marble/04b: 896 256
+:matt/marble/04b: 1056 256
+:matt/marble/001b: 712 272
+:matt/marble/001b: 720 280
+:matt/marble/001b: 712 288
+:matt/marble/001b: 720 296
+:matt/marble/001b: 712 304
+:matt/marble/001b: 904 272
+:matt/marble/001b: 912 280
+:matt/marble/001b: 904 288
+:matt/marble/001b: 912 296
+:matt/marble/001b: 904 304
+:matt/marble/001b: 912 312
+:matt/marble/001b: 904 320
+:matt/marble/00b: 720 272
+:matt/marble/00b: 912 272
+:matt/marble/00b: 912 328
+:matt/marble/00b: 1072 272
+:matt/marble/04: 1248 256
+:matt/marble/001: 1264 272
+:matt/marble/00: 1256 272
+:matt/marble/00: 1256 280
+:matt/beach/decor/umbrella_green: 240 208

@@ -1,0 +1,114 @@
+$BUILT                                             2011-09-11 17:29:33
+$AUTHOR                                                          RubiX
+$GERMAN                                                               
+$ENGLISH                                         Intuitive Control(3p)
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            400
+#TORUS_X                                                             1
+#TORUS_Y                                                             1
+#START_X                                                             0
+#START_Y                                                           380
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            40
+#INITIAL                                                            50
+#REQUIRED                                                           20
+#RATE                                                               25
+
+#JUMPER                                                             30
+#WALKER                                                             40
+#FLOATER                                                             5
+#PLATFORMER                                                         60
+#MINER                                                              50
+#BATTER                                                             10
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+#NOTHING                                                             0
+
+:matt/earth/Hatch.H:                         502         8
+:matt/earth/Hatch.H:                          72         8
+:matt/earth/Hatch.H:                         288         8
+
+:matt/earth/Goal.G:                           16       304
+:matt/earth/Goal.G:                          224       304
+:matt/earth/Goal.G:                          440       304
+
+:matt/earth/08:                                4       123
+:matt/earth/13:                              407       161
+:matt/earth/13:                              189       160
+:matt/earth/13:                              620       165
+:matt/earth/27:                              332       217     r
+:matt/earth/27:                              118       213     r
+:matt/earth/27:                              543       216     r
+:matt/earth/09:                              560        52
+:matt/earth/09:                              452        52
+:matt/earth/09:                              342        52
+:matt/earth/09:                              236        51
+:matt/earth/28:                              618       194
+:matt/earth/14:                              262       316
+:matt/earth/14:                              476       314
+:matt/earth/14:                               52       316
+:matt/earth/05:                               68       178
+:matt/earth/05:                              494       180
+:matt/earth/05:                              280       180
+:matt/earth/20:                              394       370
+:matt/earth/20:                              354       370
+:matt/earth/20:                              608       370
+:matt/earth/20:                              568       370
+:matt/earth/20:                              180       370
+:matt/earth/20:                              140       370
+:matt/earth/28:                              188       194
+:matt/earth/08:                              215       122
+:matt/earth/05:                              172        -8     f
+:matt/earth/28:                              406       192
+:matt/earth/08:                              431       121
+:matt/earth/05:                              390        -6     f
+:matt/earth/05:                              602        -4     f
+:matt/earth/04:                              448       176
+:matt/earth/04:                               22       178
+:matt/earth/04:                              228       182
+:matt/earth/15:                              236        56
+:matt/earth/15:                              303        55
+:matt/earth/15:                              352        56
+:matt/earth/15:                              420        56
+:matt/earth/15:                              473        57
+:matt/earth/15:                              528        57
+:matt/earth/15:                              588        56
+:matt/earth/09:                               25        52
+:matt/earth/15:                                4        56
+:matt/earth/15:                               54        56
+:matt/earth/15:                              120        56
+:matt/earth/09:                              129        53
+:matt/earth/15:                              111        56
+:matt/earth/15:                              184        56
+:matt/earth/15:                              232        56
+:matt/earth/06:                              487       170
+:matt/earth/06:                               62       174
+:matt/earth/06:                              273       175
+:matt/earth/06:                              242       204
+:matt/earth/06:                               36       202
+:matt/earth/06:                              462       200
+:matt/earth/30:                              142       314     r
+:matt/earth/30:                              350       314     r
+:matt/earth/30:                              568       314     r
+:matt/earth/09:                              180       384
+:matt/earth/09:                              398       386
+:matt/earth/09:                              610       388
+:matt/steel/16x16.S:                              221       370
+:matt/steel/16x16.S:                              237       370
+:matt/steel/16x16.S:                              253       370
+:matt/steel/16x16.S:                               12       370
+:matt/steel/16x16.S:                               28       370
+:matt/steel/16x16.S:                               43       370
+:matt/steel/16x16.S:                              439       369
+:matt/steel/16x16.S:                              454       369
+:matt/steel/16x16.S:                              470       369
+:matt/steel/64x32.S:                              501        56
+:matt/steel/64x32.S:                              285        56
+:matt/steel/64x32.S:                               70        56

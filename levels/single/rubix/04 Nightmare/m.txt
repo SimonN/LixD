@@ -1,0 +1,145 @@
+$BUILT 2014-02-25 09:02:21
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Quarantine
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 42
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 60
+#REQUIRED 60
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#WALKER 1
+#JUMPER 1
+#BLOCKER 1
+#BUILDER 3
+#PLATFORMER 1
+#BASHER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/abstract/hatch.H: 48 32
+:geoo/abstract/hatch.H: 0 192
+:geoo/abstract/hatch.H: 560 32 r
+
+:geoo/abstract/goal.G: 576 304
+
+:simon/acid.W: 80 352
+:simon/acid.W: 128 352
+:simon/acid.W: 176 352
+:simon/acid.W: 224 352
+:simon/acid.W: 272 352
+:simon/acid.W: 320 352
+:simon/acid.W: 368 352
+:simon/acid.W: 416 352
+:simon/acid.W: 464 352
+:simon/acid.W: 512 352
+:simon/acid.W: 528 352
+:simon/acid.W: 576 368
+:simon/acid.W: 592 368
+:simon/acid.W: 32 112
+:simon/acid.W: 48 112
+:simon/acid.W: 96 112
+:simon/acid.W: 144 112
+:simon/acid.W: 192 112
+:simon/acid.W: 400 112
+:simon/acid.W: 448 112
+:simon/acid.W: 496 112
+:simon/acid.W: 544 112
+:simon/acid.W: 560 112
+:simon/acid.W: 32 352
+:simon/acid.W: -16 368
+:simon/acid.W: 592 112
+:simon/acid.W: 0 112
+
+:geoo/abstract/cvblocks/036: 80 288
+:geoo/abstract/cvblocks/035: 208 288 rrr
+:geoo/abstract/cvblocks/035: 400 288 rrr
+:geoo/abstract/cvblocks/035: 432 320
+:geoo/abstract/cvblocks/035: 144 320
+:geoo/abstract/cvblocks/035: 80 352
+:geoo/abstract/cvblocks/035: 496 352
+:geoo/abstract/cvblocks/035: 0 96
+:geoo/abstract/cvblocks/035: 64 96
+:geoo/abstract/cvblocks/035: 128 96
+:geoo/abstract/cvblocks/035: 192 96
+:geoo/abstract/cvblocks/035: 288 64
+:geoo/abstract/cvblocks/035: 288 192
+:geoo/abstract/cvblocks/035: 384 96
+:geoo/abstract/cvblocks/035: 448 96
+:geoo/abstract/cvblocks/035: 512 96
+:geoo/abstract/cvblocks/035: 576 96
+:geoo/abstract/cvblocks/035: 0 160
+:geoo/abstract/cvblocks/035: 64 160
+:geoo/abstract/cvblocks/035: 128 160
+:geoo/abstract/cvblocks/035: 192 160
+:geoo/abstract/cvblocks/035: 256 160 rrr
+:geoo/abstract/cvblocks/035: 352 160 rrr
+:geoo/abstract/cvblocks/035: 384 160
+:geoo/abstract/cvblocks/035: 448 160
+:geoo/abstract/cvblocks/035: 512 160
+:geoo/abstract/cvblocks/035: 576 160
+:geoo/abstract/cvblocks/035: 560 352
+:geoo/abstract/cvblocks/035: 256 64 rrr
+:geoo/abstract/cvblocks/035: 352 64 rrr
+:geoo/abstract/cvblocks/035: 16 320 rr
+:geoo/abstract/cvblocks/035: 16 352 rr
+:geoo/abstract/cvblocks/035: 0 320 r
+:geoo/abstract/cvblocks/035: 0 256 r
+:geoo/abstract/cvblocks/037: 432 256
+:geoo/abstract/cvblocks/035: 0 32 r
+:geoo/steel/dark_32x32o.S: 208 256
+:geoo/steel/dark_32x32o.S: 400 256
+:geoo/abstract/cvblocks/035: 608 32 r
+:geoo/abstract/cvblocks/035: 608 320 r
+:geoo/abstract/cvblocks/020: 128 0
+:geoo/abstract/cvblocks/020: 160 0
+:geoo/abstract/cvblocks/020: 192 0
+:geoo/abstract/cvblocks/020: 32 0
+:geoo/abstract/cvblocks/020: 64 0
+:geoo/abstract/cvblocks/020: 96 0
+:geoo/abstract/cvblocks/020: 320 0
+:geoo/abstract/cvblocks/020: 352 0
+:geoo/abstract/cvblocks/020: 384 0
+:geoo/abstract/cvblocks/020: 224 0
+:geoo/abstract/cvblocks/020: 256 0
+:geoo/abstract/cvblocks/020: 288 0
+:geoo/abstract/cvblocks/020: 512 0
+:geoo/abstract/cvblocks/020: 544 0
+:geoo/abstract/cvblocks/020: 576 0
+:geoo/abstract/cvblocks/020: 416 0
+:geoo/abstract/cvblocks/020: 448 0
+:geoo/abstract/cvblocks/020: 480 0
+:geoo/abstract/cvblocks/020: 608 0
+:geoo/abstract/cvblocks/020: 0 0
+:geoo/abstract/cvblocks/035: 608 256 r
+:geoo/abstract/cvblocks/020: 400 352 rrr
+:geoo/abstract/cvblocks/020: 224 352 rrr
+:geoo/abstract/cvblocks/020: 128 384 rrr
+:geoo/abstract/cvblocks/020: 496 384 rrr
+:geoo/abstract/cvblocks/030: 240 128
+:geoo/abstract/cvblocks/030: 368 128
+:geoo/abstract/cvblocks/036: 144 256
+:geoo/abstract/cvblocks/037: 496 288
+:geoo/abstract/cvblocks/020: 224 384 rrr
+:geoo/abstract/cvblocks/020: 400 384 rrr
+:geoo/abstract/cvblocks/035: 80 320 rr
+:geoo/abstract/cvblocks/035: 144 288 rr
+:geoo/abstract/cvblocks/035: 496 320
+:geoo/abstract/cvblocks/035: 432 288
+:geoo/abstract/cvblocks/030: 272 128
+:geoo/abstract/cvblocks/030: 336 128
+:geoo/steel/dark_32x32o.S: 208 288
+:geoo/steel/dark_32x32o.S: 400 288

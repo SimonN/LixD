@@ -1,0 +1,486 @@
+$BUILT 2014-07-08 22:15:27
+$AUTHOR Amanda
+$GERMAN 
+$ENGLISH Pro Boxing (2p)
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 11
+#REQUIRED 5
+#SPAWN_INTERVAL 96
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#BATTER 12
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:guideline/platform.D: 213 261
+:guideline/platform.D: 287 261
+:guideline/platform.D: 349 261
+:guideline/maxfall.D: 215 256
+:guideline/platform.D: 217 266
+:guideline/platform.D: 291 266
+:guideline/platform.D: 353 266
+:guideline/maxfall.D: 213 256
+:guideline/maxfall.D: 211 256
+:guideline/maxfall.D: 423 256
+:guideline/maxfall.D: 425 256
+:guideline/maxfall.D: 427 256
+:guideline/cube.D: 176 176
+:guideline/cube.D: 176 192
+:guideline/cube.D: 192 192
+:guideline/cube.D: 192 176
+:guideline/cube.D: 384 176
+:guideline/cube.D: 384 192
+:guideline/cube.D: 368 192
+:guideline/cube.D: 368 176
+:guideline/cube.D: 240 176
+:guideline/cube.D: 240 192
+:guideline/cube.D: 256 176
+:guideline/cube.D: 256 192
+:guideline/cube.D: 304 176
+:guideline/cube.D: 304 192
+:guideline/cube.D: 320 176
+:guideline/cube.D: 320 192
+:simon/rabbit.D: 57 248
+:guideline/cube.D: 432 176
+:guideline/cube.D: 448 192
+:guideline/cube.D: 432 192
+:guideline/cube.D: 448 176
+
+:geoo/abstract/hatch.H: 240 176
+:geoo/abstract/hatch.H: 368 176 r
+
+:matt/carnival/Goal.G: 444 240
+:matt/carnival/Goal.G: 132 240
+
+:amanda/forest/frog_happy.T: 568 282
+
+:geoo/steel/silhouette_32x32.S: 147 303
+:proxima/tile/cyan2: 192 304
+:proxima/tile/cyan2: 256 304
+:proxima/tile/cyan2: 320 304
+:proxima/tile/cyan3a: 368 272 r
+:proxima/tile/cyan3a: 336 272 r
+:proxima/tile/cyan3a: 304 272 r
+:proxima/tile/cyan3a: 272 272 r
+:proxima/tile/cyan3a: 240 272 r
+:proxima/tile/cyan3: 400 272 r
+:proxima/tile/cyan3: 208 272 fr
+:proxima/tile/cyan2: 384 304
+:geoo/steel/silhouette_32x32.S: 460 303
+:proxima/tile/cyan2: 128 304
+:proxima/tile/cyan2: 448 304
+:proxima/tile/cyan1: 128 336
+:proxima/tile/cyan1: 192 336
+:proxima/tile/cyan1: 256 336
+:proxima/tile/cyan1: 320 336
+:proxima/tile/cyan1: 384 336
+:proxima/tile/cyan1: 448 336
+:geoo/shadow/pillar_hztl_32: 240 168
+:amanda/occult/occult_cube: 208 192
+:amanda/occult/occult_cube: 224 192
+:geoo/shadow/pillar_hztl_32: 304 168
+:amanda/occult/occult_cube: 272 192
+:amanda/occult/occult_cube: 288 192
+:geoo/shadow/pillar_hztl_32: 368 168
+:amanda/occult/occult_cube: 336 192
+:amanda/occult/occult_cube: 352 192
+:geoo/shadow/pillar_hztl_32: 432 168
+:amanda/occult/occult_cube: 400 192
+:amanda/occult/occult_cube: 416 192
+:geoo/shadow/pillar_hztl_32: 176 168
+:geoo/shadow/rope1: 112 184
+:geoo/shadow/rope1: 112 168
+:geoo/shadow/rope1: 464 184 frr
+:geoo/shadow/rope1: 464 168 frr
+:geoo/shadow/pillar_hztl_32: 208 168
+:amanda/occult/occult_cube: 224 176
+:amanda/occult/occult_cube: 208 176
+:geoo/shadow/pillar_hztl_32: 336 168
+:amanda/occult/occult_cube: 352 176
+:amanda/occult/occult_cube: 336 176
+:geoo/shadow/pillar_hztl_32: 272 168
+:amanda/occult/occult_cube: 272 176
+:amanda/occult/occult_cube: 288 176
+:geoo/shadow/pillar_hztl_32: 400 168
+:amanda/occult/occult_cube: 416 176
+:amanda/occult/occult_cube: 400 176
+:geoo/shadow/pillar_hztl_32: 368 176 d
+:geoo/shadow/pillar_hztl_32: 240 176 d
+:geoo/shadow/pillar_hztl_32: 304 176 d
+:geoo/shadow/pillar_hztl_32: 432 176 d
+:geoo/shadow/window_broken: 176 136
+:geoo/shadow/window_broken: 144 120
+:geoo/shadow/pillar_verti_32: 312 120
+:geoo/shadow/window_broken: 304 136
+:geoo/shadow/window_broken: 464 120
+:geoo/shadow/window: 368 136
+:geoo/shadow/window: 336 120
+:geoo/shadow/window: 240 136
+:geoo/shadow/window: 208 120
+:geoo/shadow/window: 272 120
+:geoo/shadow/window: 400 120
+:geoo/shadow/window: 432 136
+:geoo/shadow/window: 112 104
+:geoo/shadow/window: 496 104
+:geoo/construction/rod_steel/straight32.S: 392 112 rr
+:geoo/construction/rod_steel/straight32.S: 392 110 rr
+:geoo/shadow/pillar_verti_32: 408 88
+:geoo/shadow/pillar_verti_32: 408 56
+:geoo/shadow/pillar_verti_32: 408 24
+:geoo/shadow/pillar_verti_32: 408 -8
+:geoo/shadow/pillar_verti_32: 216 88
+:geoo/shadow/pillar_verti_32: 216 56
+:geoo/shadow/pillar_verti_32: 216 24
+:geoo/shadow/pillar_verti_32: 216 -8
+:geoo/construction/rod_steel/straight32.S: 344 36
+:geoo/construction/rod_steel/straight32.S: 344 30 rr
+:geoo/construction/rod_steel/straight32.S: 376 36
+:geoo/construction/rod_steel/straight32.S: 376 30 rr
+:geoo/abstract/pipes/central0: 376 24
+:geoo/construction/rod_steel/straight32.S: 312 36
+:geoo/construction/rod_steel/straight32.S: 312 52
+:geoo/construction/rod_steel/straight32.S: 312 46 rr
+:geoo/abstract/pipes/central0: 312 40
+:geoo/construction/rod_steel/straight32.S: 376 52
+:geoo/construction/rod_steel/straight32.S: 344 52
+:geoo/construction/rod_steel/straight32.S: 376 46 rr
+:geoo/construction/rod_steel/straight32.S: 344 46 rr
+:geoo/construction/rod_steel/straight32.S: 312 68
+:geoo/construction/rod_steel/straight32.S: 312 62 rr
+:geoo/abstract/pipes/central0: 312 56
+:geoo/construction/rod_steel/straight32.S: 376 68
+:geoo/construction/rod_steel/straight32.S: 344 68
+:geoo/construction/rod_steel/straight32.S: 344 62 rr
+:geoo/construction/rod_steel/straight32.S: 376 62 rr
+:geoo/abstract/pipes/central0: 344 56
+:geoo/abstract/pipes/central0: 376 56
+:geoo/construction/rod_steel/straight32.S: 312 84
+:geoo/construction/rod_steel/straight32.S: 312 78 rr
+:geoo/abstract/pipes/central0: 312 72
+:geoo/construction/rod_steel/straight32.S: 376 84
+:geoo/construction/rod_steel/straight32.S: 344 84
+:geoo/construction/rod_steel/straight32.S: 344 78 rr
+:geoo/construction/rod_steel/straight32.S: 376 78 rr
+:geoo/abstract/pipes/central0: 344 72
+:geoo/abstract/pipes/central0: 376 72
+:geoo/abstract/pipes/central0: 344 40
+:geoo/abstract/pipes/central0: 376 40
+:geoo/abstract/pipes/central0: 344 24
+:geoo/construction/rod_steel/straight32.S: 312 30 rr
+:geoo/abstract/pipes/central0: 312 24
+:geoo/construction/rod_steel/straight32.S: 264 84
+:geoo/construction/rod_steel/straight32.S: 264 78 rr
+:geoo/abstract/pipes/central0: 264 72
+:geoo/construction/rod_steel/straight32.S: 232 84
+:geoo/construction/rod_steel/straight32.S: 232 78 rr
+:geoo/abstract/pipes/central0: 232 72
+:geoo/abstract/pipes/central5: 264 24
+:geoo/abstract/pipes/central5: 232 24
+:geoo/abstract/pipes/central5: 264 32
+:geoo/abstract/pipes/central5: 232 32
+:geoo/abstract/pipes/central5: 264 40
+:geoo/abstract/pipes/central5: 232 40
+:geoo/abstract/pipes/central5: 264 48
+:geoo/abstract/pipes/central5: 232 48
+:geoo/abstract/pipes/central5: 264 56
+:geoo/abstract/pipes/central5: 232 56
+:geoo/abstract/pipes/central5: 264 64
+:geoo/abstract/pipes/central5: 232 64
+:geoo/construction/rod_steel/straight32.S: 312 96 rr
+:geoo/construction/rod_steel/straight32.S: 336 96 rr
+:geoo/construction/rod_steel/straight32.S: 312 94 rr
+:geoo/construction/rod_steel/straight32.S: 336 94 rr
+:geoo/abstract/pipes/central0: 312 88
+:geoo/construction/rod_steel/straight32.S: 376 96 rr
+:geoo/construction/rod_steel/straight32.S: 376 94 rr
+:geoo/construction/rod_steel/straight32.S: 368 96 rr
+:geoo/construction/rod_steel/straight32.S: 368 94 rr
+:geoo/abstract/pipes/central0: 344 88
+:geoo/abstract/pipes/central0: 376 88
+:geoo/construction/rod_steel/straight32.S: 232 96 rr
+:geoo/construction/rod_steel/straight32.S: 264 96 rr
+:geoo/construction/rod_steel/straight32.S: 232 94 rr
+:geoo/abstract/pipes/central0: 232 88
+:geoo/construction/rod_steel/straight32.S: 264 94 rr
+:geoo/abstract/pipes/central0: 264 88
+:geoo/shadow/pillar_verti_32: 312 -8
+:geoo/construction/rod_steel/straight32.S: 280 84
+:geoo/construction/rod_steel/straight32.S: 280 78 rr
+:geoo/abstract/pipes/central0: 280 72
+:geoo/abstract/pipes/central5: 280 24
+:geoo/abstract/pipes/central5: 280 32
+:geoo/abstract/pipes/central5: 280 40
+:geoo/abstract/pipes/central5: 280 48
+:geoo/abstract/pipes/central5: 280 56
+:geoo/abstract/pipes/central5: 280 64
+:geoo/construction/rod_steel/straight32.S: 280 96 rr
+:geoo/construction/rod_steel/straight32.S: 280 94 rr
+:geoo/abstract/pipes/central0: 280 88
+:geoo/construction/rod_steel/straight32.S: 232 112 rr
+:geoo/construction/rod_steel/straight32.S: 264 112 rr
+:geoo/construction/rod_steel/straight32.S: 232 110 rr
+:geoo/abstract/pipes/central0: 232 104
+:geoo/construction/rod_steel/straight32.S: 264 110 rr
+:geoo/abstract/pipes/central0: 264 104
+:geoo/construction/rod_steel/straight32.S: 280 112 rr
+:geoo/construction/rod_steel/straight32.S: 280 110 rr
+:geoo/abstract/pipes/central0: 280 104
+:geoo/construction/rod_steel/straight32.S: 312 112 rr
+:geoo/construction/rod_steel/straight32.S: 336 112 rr
+:geoo/construction/rod_steel/straight32.S: 312 110 rr
+:geoo/construction/rod_steel/straight32.S: 336 110 rr
+:geoo/abstract/pipes/central0: 312 104
+:geoo/construction/rod_steel/straight32.S: 368 112 rr
+:geoo/construction/rod_steel/straight32.S: 368 110 rr
+:geoo/abstract/pipes/central0: 344 104
+:geoo/abstract/pipes/central0: 376 104
+:geoo/construction/platform_single.S: 236 28
+:geoo/construction/platform_single.S: 236 29
+:geoo/construction/platform_single.S: 236 30
+:geoo/construction/platform_single.S: 236 31
+:geoo/construction/platform_single.S: 236 32
+:geoo/construction/platform_single.S: 236 33
+:geoo/construction/platform_single.S: 236 34
+:geoo/construction/platform_single.S: 244 36
+:geoo/construction/platform_single.S: 244 37
+:geoo/construction/platform_single.S: 244 38
+:geoo/construction/platform_single.S: 244 39
+:geoo/construction/platform_single.S: 244 40
+:geoo/construction/platform_single.S: 244 41
+:geoo/construction/platform_single.S: 244 42
+:geoo/construction/platform_single.S: 252 44
+:geoo/construction/platform_single.S: 252 45
+:geoo/construction/platform_single.S: 252 46
+:geoo/construction/platform_single.S: 252 47
+:geoo/construction/platform_single.S: 252 48
+:geoo/construction/platform_single.S: 252 49
+:geoo/construction/platform_single.S: 252 50
+:geoo/construction/platform_single.S: 260 52
+:geoo/construction/platform_single.S: 260 53
+:geoo/construction/platform_single.S: 260 54
+:geoo/construction/platform_single.S: 260 55
+:geoo/construction/platform_single.S: 260 56
+:geoo/construction/platform_single.S: 260 57
+:geoo/construction/platform_single.S: 260 58
+:geoo/construction/platform_single.S: 268 60
+:geoo/construction/platform_single.S: 268 61
+:geoo/construction/platform_single.S: 268 62
+:geoo/construction/platform_single.S: 268 63
+:geoo/construction/platform_single.S: 268 64
+:geoo/construction/platform_single.S: 268 65
+:geoo/construction/platform_single.S: 268 66
+:geoo/construction/platform_single.S: 236 44
+:geoo/construction/platform_single.S: 236 45
+:geoo/construction/platform_single.S: 236 46
+:geoo/construction/platform_single.S: 236 47
+:geoo/construction/platform_single.S: 236 48
+:geoo/construction/platform_single.S: 236 49
+:geoo/construction/platform_single.S: 236 50
+:geoo/construction/platform_single.S: 244 52
+:geoo/construction/platform_single.S: 244 53
+:geoo/construction/platform_single.S: 244 54
+:geoo/construction/platform_single.S: 244 55
+:geoo/construction/platform_single.S: 244 56
+:geoo/construction/platform_single.S: 244 57
+:geoo/construction/platform_single.S: 244 58
+:geoo/construction/platform_single.S: 252 60
+:geoo/construction/platform_single.S: 252 61
+:geoo/construction/platform_single.S: 252 62
+:geoo/construction/platform_single.S: 252 63
+:geoo/construction/platform_single.S: 252 64
+:geoo/construction/platform_single.S: 252 65
+:geoo/construction/platform_single.S: 252 66
+:geoo/construction/platform_single.S: 236 60
+:geoo/construction/platform_single.S: 236 61
+:geoo/construction/platform_single.S: 236 62
+:geoo/construction/platform_single.S: 236 63
+:geoo/construction/platform_single.S: 236 64
+:geoo/construction/platform_single.S: 236 65
+:geoo/construction/platform_single.S: 236 66
+:geoo/construction/platform_single.S: 252 28
+:geoo/construction/platform_single.S: 252 29
+:geoo/construction/platform_single.S: 252 30
+:geoo/construction/platform_single.S: 252 31
+:geoo/construction/platform_single.S: 252 32
+:geoo/construction/platform_single.S: 252 33
+:geoo/construction/platform_single.S: 252 34
+:geoo/construction/platform_single.S: 260 36
+:geoo/construction/platform_single.S: 260 37
+:geoo/construction/platform_single.S: 260 38
+:geoo/construction/platform_single.S: 260 39
+:geoo/construction/platform_single.S: 260 40
+:geoo/construction/platform_single.S: 260 41
+:geoo/construction/platform_single.S: 260 42
+:geoo/construction/platform_single.S: 268 44
+:geoo/construction/platform_single.S: 268 45
+:geoo/construction/platform_single.S: 268 46
+:geoo/construction/platform_single.S: 268 47
+:geoo/construction/platform_single.S: 268 48
+:geoo/construction/platform_single.S: 268 49
+:geoo/construction/platform_single.S: 268 50
+:geoo/construction/platform_single.S: 276 52
+:geoo/construction/platform_single.S: 276 53
+:geoo/construction/platform_single.S: 276 54
+:geoo/construction/platform_single.S: 276 55
+:geoo/construction/platform_single.S: 276 56
+:geoo/construction/platform_single.S: 276 57
+:geoo/construction/platform_single.S: 276 58
+:geoo/construction/platform_single.S: 284 60
+:geoo/construction/platform_single.S: 284 61
+:geoo/construction/platform_single.S: 284 62
+:geoo/construction/platform_single.S: 284 63
+:geoo/construction/platform_single.S: 284 64
+:geoo/construction/platform_single.S: 284 65
+:geoo/construction/platform_single.S: 284 66
+:geoo/construction/platform_single.S: 268 28
+:geoo/construction/platform_single.S: 268 29
+:geoo/construction/platform_single.S: 268 30
+:geoo/construction/platform_single.S: 268 31
+:geoo/construction/platform_single.S: 268 32
+:geoo/construction/platform_single.S: 268 33
+:geoo/construction/platform_single.S: 268 34
+:geoo/construction/platform_single.S: 276 36
+:geoo/construction/platform_single.S: 276 37
+:geoo/construction/platform_single.S: 276 38
+:geoo/construction/platform_single.S: 276 39
+:geoo/construction/platform_single.S: 276 40
+:geoo/construction/platform_single.S: 276 41
+:geoo/construction/platform_single.S: 276 42
+:geoo/construction/platform_single.S: 284 44
+:geoo/construction/platform_single.S: 284 45
+:geoo/construction/platform_single.S: 284 46
+:geoo/construction/platform_single.S: 284 47
+:geoo/construction/platform_single.S: 284 48
+:geoo/construction/platform_single.S: 284 49
+:geoo/construction/platform_single.S: 284 50
+:geoo/construction/platform_single.S: 292 52
+:geoo/construction/platform_single.S: 292 53
+:geoo/construction/platform_single.S: 292 54
+:geoo/construction/platform_single.S: 292 55
+:geoo/construction/platform_single.S: 292 56
+:geoo/construction/platform_single.S: 292 57
+:geoo/construction/platform_single.S: 292 58
+:geoo/construction/platform_single.S: 300 60
+:geoo/construction/platform_single.S: 300 61
+:geoo/construction/platform_single.S: 300 62
+:geoo/construction/platform_single.S: 300 63
+:geoo/construction/platform_single.S: 300 64
+:geoo/construction/platform_single.S: 300 65
+:geoo/construction/platform_single.S: 300 66
+:geoo/construction/platform_single.S: 284 28
+:geoo/construction/platform_single.S: 284 29
+:geoo/construction/platform_single.S: 284 30
+:geoo/construction/platform_single.S: 284 31
+:geoo/construction/platform_single.S: 284 32
+:geoo/construction/platform_single.S: 284 33
+:geoo/construction/platform_single.S: 284 34
+:geoo/construction/platform_single.S: 292 36
+:geoo/construction/platform_single.S: 292 37
+:geoo/construction/platform_single.S: 292 38
+:geoo/construction/platform_single.S: 292 39
+:geoo/construction/platform_single.S: 292 40
+:geoo/construction/platform_single.S: 292 41
+:geoo/construction/platform_single.S: 292 42
+:geoo/construction/platform_single.S: 300 44
+:geoo/construction/platform_single.S: 300 45
+:geoo/construction/platform_single.S: 300 46
+:geoo/construction/platform_single.S: 300 47
+:geoo/construction/platform_single.S: 300 48
+:geoo/construction/platform_single.S: 300 49
+:geoo/construction/platform_single.S: 300 50
+:geoo/construction/platform_single.S: 300 28
+:geoo/construction/platform_single.S: 300 29
+:geoo/construction/platform_single.S: 300 30
+:geoo/construction/platform_single.S: 300 31
+:geoo/construction/platform_single.S: 300 32
+:geoo/construction/platform_single.S: 300 33
+:geoo/construction/platform_single.S: 300 34
+:matt/bricks/17: 512 264
+:proxima/tile/cyan1: 512 336
+:proxima/tile/cyan2: 576 304
+:proxima/tile/cyan1: 576 336
+:proxima/tile/cyan1: 64 336
+:proxima/tile/cyan2: 0 304
+:proxima/tile/cyan1: 0 336
+:geoo/shadow/pillar_verti_32: 528 160
+:geoo/shadow/pillar_verti_32: 528 128
+:geoo/shadow/pillar_verti_32: 528 96
+:geoo/shadow/pillar_verti_32: 528 64
+:geoo/shadow/pillar_verti_32: 528 32
+:geoo/shadow/pillar_verti_32: 528 0
+:geoo/shadow/pillar_verti_32: 96 160
+:geoo/shadow/pillar_verti_32: 96 128
+:geoo/shadow/pillar_verti_32: 96 96
+:geoo/shadow/pillar_verti_32: 96 64
+:geoo/shadow/pillar_verti_32: 96 32
+:geoo/shadow/pillar_verti_32: 96 0
+:geoo/shadow/rope1: 32 160
+:geoo/shadow/rope1: 32 144
+:geoo/shadow/pillar_verti_32: 16 144
+:geoo/shadow/pillar_verti_32: 16 112
+:geoo/shadow/pillar_verti_32: 16 80
+:geoo/shadow/pillar_verti_32: 16 48
+:geoo/shadow/pillar_verti_32: 16 16
+:geoo/shadow/pillar_verti_32: 16 -16
+:geoo/shadow/pillar_verti_32: 608 144
+:geoo/shadow/pillar_verti_32: 608 112
+:geoo/shadow/pillar_verti_32: 608 80
+:geoo/shadow/pillar_verti_32: 608 48
+:geoo/shadow/pillar_verti_32: 608 16
+:geoo/shadow/pillar_verti_32: 608 -16
+:geoo/shadow/rope1: 544 160 frr
+:geoo/shadow/rope1: 544 144 frr
+:geoo/shadow/rope1: 32 80
+:geoo/shadow/rope1: 32 64
+:geoo/shadow/rope1: 544 80 frr
+:geoo/shadow/rope1: 544 64 frr
+:matt/bricks/17: 560 232
+:geoo/shadow/pillar_verti_32: 560 280 d
+:matt/bricks/17: 624 184
+:matt/bricks/18: 608 216 rrrd
+:geoo/shadow/pillar_verti_32: 616 240
+:geoo/shadow/pillar_verti_32: 616 272
+:geoo/shadow/pillar_verti_32: 568 272 d
+:geoo/shadow/pillar_verti_32: 568 272
+:matt/bricks/17: 64 264 frr
+:matt/bricks/17: 16 232 frr
+:geoo/shadow/pillar_verti_32: 64 280 frrd
+:proxima/tile/cyan2: 512 304
+:proxima/tile/cyan2: 64 304
+:matt/bricks/17: -48 184 frr
+:matt/bricks/18: 0 216 frrrd
+:geoo/shadow/pillar_verti_32: 8 240 frr
+:geoo/shadow/pillar_verti_32: 8 272 frr
+:geoo/shadow/pillar_verti_32: 56 272 frrd
+:geoo/shadow/pillar_verti_32: 56 272 frr
+:proxima/tile/cyan1a: 576 360
+:proxima/tile/cyan1a: 512 360
+:proxima/tile/cyan1a: 448 360
+:proxima/tile/cyan1a: 384 360
+:proxima/tile/cyan1a: 320 360
+:proxima/tile/cyan1a: 288 360
+:proxima/tile/cyan1a: 224 360
+:proxima/tile/cyan1a: 32 360
+:proxima/tile/cyan1a: 96 360
+:proxima/tile/cyan1a: 160 360
+:geoo/shadow/pillar_hztl_32: 176 176 d
+:guideline/bomb: -41 207 rrr
+:guideline/bomb: 637 207 r

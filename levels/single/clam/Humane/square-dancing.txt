@@ -1,0 +1,50 @@
+$BUILT 2015-06-01 10:25:31
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Square Dancing
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 16
+#REQUIRED 13
+#SPAWN_INTERVAL 64
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#CLIMBER 4
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 4
+#BASHER 1
+#MINER 4
+#DIGGER 4
+#NOTHING 0
+#NOTHING 0
+
+:matt/carnival/Hatch.H: 80 16
+
+:matt/carnival/Goal.G: 512 80
+
+:matt/carnival/24: 80 112
+:matt/carnival/25: 512 144
+:matt/carnival/26: 208 176
+:matt/carnival/27: 144 256
+:matt/carnival/25: 304 216
+:matt/carnival/24: 320 80
+:matt/carnival/27: 416 176
+:matt/carnival/26: 480 272
+:matt/carnival/26: 576 0
+:matt/carnival/25: 0 336
+:matt/carnival/24: 576 336
+:matt/carnival/27: 0 0

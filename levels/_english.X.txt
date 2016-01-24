@@ -1,0 +1,13 @@
+Welcome to Lix!
+
+Are you playing for the first time?
+Click on the directory "tutorial"
+to see how this game works.
+
+Lix comes with a variety of
+single-player puzzle levels,
+ranging from easy to very hard.
+If you've mastered the tutorials,
+select the directory "single".
+
+Have fun!

@@ -1,0 +1,192 @@
+$BUILT 2014-04-16 21:40:24
+$AUTHOR RubiX
+$GERMAN 
+$ENGLISH Carnage(2p)
+
+#SIZE_X 1024
+#SIZE_Y 558
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 254
+#START_Y 138
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 30
+#INITIAL 65
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 40
+#FLOATER 20
+#JUMPER 30
+#EXPLODER2 10
+#BLOCKER 3
+#BUILDER 65
+#PLATFORMER 35
+#BASHER 40
+#MINER 30
+#DIGGER 20
+#CUBER 20
+#NOTHING 0
+
+:matt/goldmine/GoalTop.D: 0 400
+:matt/goldmine/GoalTop.D: 960 400
+:matt/goldmine/pickaxe.D: 330 330
+:matt/goldmine/shovel.D: 680 336
+
+:matt/goldmine/Hatch.H: -16 64
+:matt/goldmine/Hatch.H: 976 64 r
+
+:matt/goldmine/Goal.G: 960 448
+:matt/goldmine/Goal.G: 0 448
+
+:matt/goldmine/plank: 658 432 r
+:matt/goldmine/plank: 658 304 r
+:matt/goldmine/plank: 371 443 r
+:matt/goldmine/plank: 371 315 r
+:matt/goldmine/tracks: 344 161
+:matt/goldmine/tracks: 581 161
+:matt/goldmine/planksupport: 598 167
+:matt/goldmine/planksupport: 311 167
+:matt/goldmine/plank: 244 168
+:matt/goldmine/plank: 624 168
+:matt/goldmine/plank: 544 168
+:matt/goldmine/plank: 360 168
+:matt/goldmine/07: 960 304
+:matt/goldmine/05: 720 176
+:matt/goldmine/05: 240 176
+:matt/goldmine/04: 649 164 frr
+:matt/goldmine/04: 266 162
+:matt/goldmine/07: -64 112
+:matt/goldmine/07: -32 112
+:matt/goldmine/07: 0 112
+:matt/goldmine/06: 96 96
+:matt/goldmine/07: 32 112
+:matt/goldmine/08: 48 96 r
+:matt/goldmine/07: 48 112
+:matt/goldmine/07: 80 112
+:matt/goldmine/05: 152 96
+:matt/goldmine/04: 176 102 r
+:matt/goldmine/07: 112 112
+:matt/goldmine/plank: 238 168
+:matt/goldmine/07: 144 112
+:matt/goldmine/05: 184 148
+:matt/goldmine/07: -64 208
+:matt/goldmine/07: -32 208
+:matt/goldmine/08: -4 164 r
+:matt/goldmine/07: 0 208
+:matt/goldmine/07: 32 208
+:matt/goldmine/07: 48 208
+:matt/goldmine/07: 80 208
+:matt/goldmine/07: 112 208
+:matt/goldmine/07: 144 208
+:matt/goldmine/07: -48 304
+:matt/goldmine/07: -16 304
+:matt/goldmine/05: 160 132
+:matt/goldmine/04: 98 158
+:matt/goldmine/07: 16 304
+:matt/goldmine/07: 48 304
+:matt/goldmine/08: 48 352 frrr
+:matt/goldmine/06: 56 144
+:matt/goldmine/07: 74 166 r
+:matt/goldmine/07: 64 304
+:matt/goldmine/07: 96 304
+:matt/goldmine/05: 112 384
+:matt/goldmine/09: 176 350 r
+:matt/goldmine/07: 128 304
+:matt/goldmine/07: 160 304
+:matt/goldmine/07: -48 496
+:matt/goldmine/07: -16 496
+:matt/goldmine/07: 16 496
+:matt/goldmine/07: 48 496
+:matt/goldmine/07: 64 496
+:matt/goldmine/07: 96 496
+:matt/goldmine/07: 128 496
+:matt/goldmine/07: 160 496
+:matt/goldmine/06: 848 96
+:matt/goldmine/07: 752 112
+:matt/goldmine/07: 784 112
+:matt/goldmine/07: 816 112
+:matt/goldmine/07: 848 112
+:matt/goldmine/07: 864 112
+:matt/goldmine/04: 699 99 fr
+:matt/goldmine/08: 848 96 fr
+:matt/goldmine/07: 896 112
+:matt/goldmine/07: 928 112
+:matt/goldmine/05: 800 96
+:matt/goldmine/07: 676 115 frr
+:matt/goldmine/07: 752 208
+:matt/goldmine/07: 784 208
+:matt/goldmine/07: 816 208
+:matt/goldmine/07: 848 208
+:matt/goldmine/07: 864 208
+:matt/goldmine/07: 968 170 r
+:matt/goldmine/07: 896 208
+:matt/goldmine/07: 928 208
+:matt/goldmine/05: 806 198
+:matt/goldmine/02: 776 150
+:matt/goldmine/07: 672 208 frr
+:matt/goldmine/07: 752 304
+:matt/goldmine/07: 784 304
+:matt/goldmine/07: 816 304
+:matt/goldmine/07: 848 304
+:matt/goldmine/07: 864 304
+:matt/goldmine/07: 854 124 r
+:matt/goldmine/07: 896 304
+:matt/goldmine/07: 836 256
+:matt/goldmine/07: 928 304
+:matt/goldmine/08: 848 352 fr
+:matt/goldmine/05: 904 352
+:matt/goldmine/09: 720 352 fr
+:matt/goldmine/05: 816 374
+:matt/goldmine/09: 780 280
+:matt/goldmine/05: 736 346
+:matt/goldmine/06: 758 378
+:matt/goldmine/07: 664 304 frr
+:matt/goldmine/07: 752 496
+:matt/goldmine/07: 784 496
+:matt/goldmine/07: 816 496
+:matt/goldmine/07: 848 496
+:matt/goldmine/07: 864 496
+:matt/goldmine/07: 896 496
+:matt/goldmine/07: 928 496
+:matt/goldmine/07: 665 496 frr
+:matt/steel/48x48.S: 0 112
+:matt/steel/48x48.S: 976 112
+:matt/goldmine/crate64: 378 494
+:matt/goldmine/crate64: 594 496
+:matt/goldmine/crate64: 442 494
+:matt/goldmine/crate64: 530 496
+:matt/goldmine/crate64: 486 368
+:matt/goldmine/crate64: 442 430
+:matt/goldmine/crate64: 530 432
+:matt/goldmine/04: 492 432
+:matt/goldmine/05: 460 482
+:matt/goldmine/09: 390 496
+:matt/goldmine/02: 416 498
+:matt/goldmine/05: 432 516
+:matt/steel/32x32.S: 992 496
+:matt/steel/32x32.S: 960 496
+:matt/steel/32x32.S: 0 496
+:matt/steel/32x32.S: 32 496
+:matt/goldmine/tracks: 461 161
+:matt/goldmine/plank: 453 168
+:matt/goldmine/06: 841 369
+:matt/goldmine/01: -24 308
+:matt/goldmine/05: 24 254
+:matt/goldmine/05: 76 320
+:matt/goldmine/01: 132 302
+:matt/goldmine/02: 132 296
+:matt/goldmine/08: 188 294 r
+:matt/goldmine/00: 166 316
+:matt/goldmine/10: 210 340
+:matt/goldmine/07: 792 490
+:matt/goldmine/05: 774 490
+:matt/goldmine/05: 792 508
+:matt/goldmine/07: 68 488
+:matt/goldmine/01: 176 492
+:matt/goldmine/05: 486 456
+:matt/goldmine/05: 452 442 f

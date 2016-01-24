@@ -1,0 +1,126 @@
+$BUILT 2015-06-22 11:14:26
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Alien Invasion
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 120
+#REQUIRED 118
+#SPAWN_INTERVAL 3
+#SPAWN_INTERVAL_FAST 3
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#CLIMBER 1
+#BASHER 1
+#BUILDER 3
+#CUBER 2
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 272 128 r
+:geoo/construction/Hatch.H: 80 128
+:geoo/construction/Hatch.H: 208 128
+:geoo/construction/Hatch.H: 144 128 r
+:geoo/construction/Hatch.H: 304 160
+
+:matt/earth/Goal.G: 496 188
+
+:matt/water.W: 0 368
+:geoo/sandstone/brazier.F: 168 38
+:geoo/sandstone/brazier.F: 184 38
+:geoo/sandstone/torch.F: 168 40
+:geoo/sandstone/torch.F: 184 40
+:geoo/sandstone/brazier.F: 232 38
+:geoo/sandstone/brazier.F: 248 38
+:geoo/sandstone/torch.F: 232 40
+:geoo/sandstone/torch.F: 248 40
+:geoo/sandstone/brazier.F: 104 38
+:geoo/sandstone/brazier.F: 120 38
+:geoo/sandstone/torch.F: 104 40
+:geoo/sandstone/torch.F: 120 40
+:matt/water.W: 384 368
+:matt/water.W: 416 368
+:matt/water.W: 352 368
+:matt/water.W: 32 368
+:matt/water.W: 64 368
+:matt/water.W: 96 368
+
+:matt/earth/18: 329 360
+:matt/earth/10: 426 308
+:matt/earth/03: 403 253
+:matt/earth/03: 407 268 rd
+:matt/earth/18: 395 248 d
+:matt/earth/02: 404 249 r
+:matt/earth/02: 214 390
+:matt/earth/04: 225 360 fr
+:matt/earth/06: 475 241 frr
+:matt/earth/05: 483 254 r
+:matt/earth/10: 435 258
+:matt/earth/16: 512 298
+:matt/earth/16: 99 328
+:matt/earth/16: 612 -96
+:matt/earth/10: 448 -38
+:matt/earth/03: 382 20 fr
+:matt/earth/02: 392 122
+:matt/earth/16: 390 -56
+:matt/earth/27: 496 112
+:matt/earth/28: 466 126
+:matt/earth/29: 574 106
+:matt/earth/29: 446 130
+:matt/earth/10: 384 26
+:matt/earth/17: 592 298
+:matt/earth/17: 592 202
+:matt/earth/05: 592 26
+:matt/earth/04: 512 -22
+:matt/earth/09: 488 250
+:matt/earth/09: 415 257 frr
+:matt/earth/09: 538 248 rr
+:matt/carnival/54: 160 192
+:geoo/steel/64x32o.S: 32 192
+:geoo/steel/64x32o.S: 96 192
+:geoo/steel/64x32o.S: 224 192
+:geoo/steel/64x32o.S: 288 192
+:matt/carnival/25: 288 128
+:matt/carnival/25: 32 128
+:matt/carnival/46: 320 96
+:matt/carnival/46: 288 64
+:matt/carnival/45: 32 96
+:matt/carnival/45: 64 64
+:matt/carnival/08: 64 96
+:matt/carnival/09: 288 96
+:matt/carnival/43: 96 96
+:matt/carnival/44: 256 96
+:matt/carnival/51: 96 64
+:matt/carnival/51: 160 64
+:matt/carnival/51: 224 64
+:matt/carnival/29: 160 48
+:matt/carnival/29: 224 48
+:matt/carnival/29: 96 48
+:matt/earth/15: 152 264
+:matt/earth/04: 131 348 frr
+:matt/earth/05: 317 326
+:matt/earth/07b: 534 250 rrr
+:matt/earth/00: 380 289 d
+:matt/earth/07b: 465 243 rrr
+:matt/earth/07b: 456 249 rr
+:matt/bricks/01: 383 286 d
+:matt/earth/18: 379 249 d
+:matt/earth/18: 372 259 d
+:matt/earth/18: 351 304 rrrd
+:matt/earth/00: 359 299 frrrd
+:matt/earth/18: 263 341 d

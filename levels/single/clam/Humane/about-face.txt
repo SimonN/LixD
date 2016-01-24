@@ -1,0 +1,104 @@
+$BUILT 2015-08-08 17:36:15
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH About Face!
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 50
+#SPAWN_INTERVAL_FAST 4
+
+#BASHER 18
+
+:matt/oriental/Hatch.H: 388 34
+
+:matt/oriental/Goal.G: 256 246
+
+:matt/oriental/trunk3: 388 270 rr
+:matt/oriental/07: 261 -2
+:matt/oriental/branch1: 400 210
+:matt/oriental/bonsaitree: 0 134
+:matt/oriental/trunk3: 400 170
+:matt/oriental/trunk2: 382 224
+:matt/oriental/branch2: 408 112 fr
+:matt/oriental/trunk3: 403 112 rr
+:matt/oriental/leaves1: 388 94
+:matt/oriental/branch2: 372 152
+:matt/oriental/leaves2: 340 150 rr
+:matt/oriental/leaves3: 436 244 frr
+:matt/oriental/08: 248 324
+:matt/oriental/08: 316 324
+:matt/oriental/08: 384 324
+:matt/oriental/08: -26 324
+:matt/oriental/08: 42 324
+:matt/oriental/08: 110 324
+:matt/oriental/08: 180 324
+:matt/oriental/07: 329 -2
+:matt/oriental/07: 397 -2
+:matt/oriental/07: 465 -2
+:matt/oriental/07: 533 -2
+:matt/oriental/07: 601 -2
+:matt/oriental/07: -11 -2
+:matt/oriental/07: 57 -2
+:matt/oriental/07: 125 -2
+:matt/oriental/07: 193 -2
+:matt/oriental/leaves2: 356 234
+:matt/oriental/leaves5: 412 214 frr
+:matt/oriental/leaves5: 416 209 frr
+:matt/oriental/leaves5: 370 236 f
+:matt/oriental/leaves5: 368 240 f
+:matt/oriental/leaves5: 363 242
+:matt/oriental/leaves5: 368 242
+:matt/oriental/08: 452 324
+:matt/oriental/08: 520 324
+:matt/oriental/08: 588 324
+:matt/oriental/branch1: 406 90 d
+:matt/oriental/branch2: 388 112 rrd
+:matt/oriental/leaves2: 302 150 f
+:matt/oriental/leaves3: 482 244 frr
+:matt/oriental/leaves1: 436 96 rr
+:geoo/construction/rod_steel/straight32.S: 450 82
+:geoo/construction/rod_steel/straight32.S: 482 82
+:geoo/construction/rod_steel/straight32.S: 352 136
+:geoo/construction/rod_steel/straight32.S: 320 136
+:geoo/construction/rod_steel/straight32.S: 288 136
+:geoo/construction/rod_steel/straight32.S: 450 230
+:geoo/construction/rod_steel/straight32.S: 482 230
+:geoo/construction/rod_steel/straight32.S: 514 230
+:geoo/construction/rod_steel/edge_lu.S: 532 82
+:geoo/construction/rod_steel/straight32.S: 500 82
+:geoo/construction/rod_steel/straight32.S: 532 50 rrr
+:geoo/construction/rod_steel/straight32.S: 532 18 rrr
+:geoo/construction/rod_steel/straight32.S: 532 0 rrr
+:geoo/construction/rod_steel/end_rect.S: 450 82
+:geoo/construction/rod_steel/end_rect.S: 376 136 frr
+:geoo/construction/rod_steel/edge_ru.S: 260 136
+:geoo/construction/rod_steel/straight32.S: 268 136
+:geoo/construction/rod_steel/straight32.S: 260 104 rrr
+:geoo/construction/rod_steel/straight32.S: 260 72 rrr
+:geoo/construction/rod_steel/straight32.S: 260 40 rrr
+:geoo/construction/rod_steel/straight32.S: 260 8 rrr
+:geoo/construction/rod_steel/straight32.S: 260 0 rrr
+:geoo/construction/rod_steel/end_rect.S: 450 230
+:geoo/construction/rod_steel/edge_lu.S: 600 230
+:geoo/construction/rod_steel/straight32.S: 568 230
+:geoo/construction/rod_steel/straight32.S: 600 198 rrr
+:geoo/construction/rod_steel/straight32.S: 536 230
+:geoo/construction/rod_steel/straight32.S: 600 0 rrr
+:geoo/construction/rod_steel/straight32.S: 600 32 rrr
+:geoo/construction/rod_steel/straight32.S: 600 64 rrr
+:geoo/construction/rod_steel/straight32.S: 600 96 rrr
+:geoo/construction/rod_steel/straight32.S: 600 128 rrr
+:geoo/construction/rod_steel/straight32.S: 600 160 rrr
+:geoo/construction/rod_steel/straight32.S: 600 192 rrr

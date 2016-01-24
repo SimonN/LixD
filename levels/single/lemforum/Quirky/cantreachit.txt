@@ -1,0 +1,84 @@
+$BUILT 2014-07-04 22:01:46
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Can't Reach it - Don't Need it
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 40
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#CLIMBER 1
+#WALKER 1
+#BUILDER 1
+#MINER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/underworld/Hatch.H: 224 32
+:matt/underworld/Hatch.H: 448 240
+
+:matt/underworld/Goal.G: 96 128
+:matt/underworld/Goal.G: 96 320
+
+:matt/underworld/Lava.W: 384 320
+:matt/underworld/Lava.W: 384 368
+:geoo/sandstone/brazier.F: 64 130
+:geoo/sandstone/torch.F: 344 96
+:geoo/sandstone/brazier.F: 160 130
+:geoo/sandstone/torch.F: 456 96
+:geoo/sandstone/torch.F: 400 96
+:geoo/sandstone/brazier.F: 64 322
+:geoo/sandstone/brazier.F: 160 322
+
+:matt/underworld/00: 352 176
+:matt/underworld/02: 256 192
+:matt/underworld/02: 320 192
+:matt/underworld/00: 416 176
+:matt/underworld/02: 512 96
+:matt/underworld/00: 480 176
+:matt/underworld/00: 288 176
+:matt/underworld/02: 256 96
+:matt/underworld/02: 192 192
+:matt/underworld/02: 192 96
+:matt/underworld/02: 128 192
+:geoo/steel/dark_64x64.S: 320 284
+:matt/underworld/02: 64 192
+:matt/underworld/02: 0 192
+:matt/underworld/02: 576 96
+:matt/underworld/02: 0 96
+:matt/underworld/02: 0 0
+:matt/underworld/02: 512 0
+:matt/underworld/02: 576 0
+:matt/underworld/02: 576 192
+:matt/underworld/02: 608 304
+:matt/underworld/02: 544 304
+:matt/underworld/02: 480 304
+:geoo/steel/dark_64x64.S: 416 304
+:geoo/steel/dark_64x64.S: 320 348
+:geoo/steel/dark_64x64.S: 416 368
+:matt/underworld/00: 576 288
+:matt/underworld/00: 448 208
+:matt/underworld/00: 256 384
+:matt/underworld/00: 192 384
+:matt/underworld/00: 128 384
+:matt/underworld/00: 64 384
+:matt/underworld/02: 0 288
+:matt/underworld/00: 0 384
+:matt/underworld/02: 256 288
+:matt/underworld/02: 192 288

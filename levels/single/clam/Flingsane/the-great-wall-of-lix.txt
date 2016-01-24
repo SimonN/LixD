@@ -1,0 +1,126 @@
+$BUILT 2014-06-08 16:22:36
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH The Great Wall of Lix
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y -20
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 28
+#REQUIRED 19
+#SPAWN_INTERVAL 7
+#SPAWN_INTERVAL_FAST 7
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#WALKER 1
+#EXPLODER2 1
+#BLOCKER 8
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/oriental/Hatch.H: 448 24 r
+:matt/oriental/Hatch.H: 512 24 r
+:matt/oriental/Hatch.H: 576 24 r
+:matt/oriental/Hatch.H: 148 22
+
+:matt/oriental/Goal.G: 512 272
+
+:geoo/abstract/tbeam_right.T: 336 352
+:geoo/abstract/tbeam_right.T: 368 352
+:geoo/abstract/tbeam_right.T: 400 352
+:geoo/abstract/tbeam_right.T: 432 352
+:geoo/abstract/tbeam_right.T: 336 320
+:geoo/abstract/tbeam_right.T: 368 320
+:geoo/abstract/tbeam_right.T: 400 320
+:geoo/abstract/tbeam_right.T: 432 320
+
+:matt/oriental/bamboo_pole: 177 90
+:matt/oriental/bamboo_pole: 268 124 f
+:matt/oriental/bamboo_pole: 269 124 f
+:matt/carnival/13: 269 124 d
+:matt/carnival/13: 268 125 d
+:matt/carnival/13: 271 141 d
+:matt/carnival/13: 268 142 d
+:matt/carnival/13: 254 140 d
+:matt/carnival/13: 273 158 d
+:matt/carnival/13: 256 158 d
+:matt/carnival/13: 257 159 d
+:matt/carnival/13: 258 174 d
+:matt/carnival/13: 275 174 d
+:matt/carnival/13: 259 175 d
+:matt/carnival/13: 260 190 d
+:matt/carnival/13: 276 191 d
+:matt/oriental/bamboo_pole: 109 84 fr
+:matt/oriental/08: 29 324
+:matt/oriental/08: -39 324
+:matt/oriental/08: -39 256
+:matt/oriental/08: 166 324
+:matt/oriental/08: 97 324
+:matt/oriental/08: 29 256
+:matt/oriental/08: 97 256
+:matt/oriental/08: 165 256
+:matt/earth/15: 260 204 rd
+:matt/oriental/08: -39 188
+:matt/oriental/08: 29 188
+:matt/oriental/08: 97 188
+:matt/oriental/08: 165 188
+:matt/oriental/01: 167 166
+:matt/oriental/01: 99 166
+:matt/oriental/01: 31 166
+:geoo/steel/16x32o.S: 624 368
+:geoo/steel/16x32o.S: 624 336
+:geoo/steel/16x32o.S: 624 304
+:geoo/steel/16x32o.S: 624 272
+:geoo/steel/16x32o.S: 624 208
+:geoo/steel/16x32o.S: 624 176
+:geoo/construction/rod_steel/end_rect.S: 336 136
+:geoo/construction/rod_steel/straight32.S: 344 136
+:geoo/construction/rod_steel/straight32.S: 376 136
+:geoo/construction/rod_steel/straight32.S: 408 136
+:geoo/construction/rod_steel/straight32.S: 440 136
+:geoo/construction/rod_steel/straight32.S: 472 136
+:geoo/construction/rod_steel/straight32.S: 504 136
+:geoo/construction/rod_steel/straight32.S: 536 136
+:geoo/construction/rod_steel/straight32.S: 568 136
+:geoo/construction/rod_steel/straight32.S: 600 136
+:geoo/steel/64x32o.S: 576 88
+:geoo/steel/64x32o.S: 512 88
+:geoo/steel/32x16o.S: 480 120
+:geoo/steel/32x16o.S: 512 120
+:geoo/steel/32x16o.S: 544 120
+:geoo/steel/16x32o.S: 624 144
+:geoo/steel/32x16o.S: 336 384
+:geoo/steel/32x16o.S: 368 384
+:geoo/steel/32x16o.S: 400 384
+:geoo/steel/32x16o.S: 432 384
+:geoo/steel/32x16o.S: 464 384
+:geoo/steel/32x16o.S: 496 384
+:geoo/steel/32x16o.S: 528 384
+:geoo/steel/32x16o.S: 560 384
+:geoo/steel/32x16o.S: 576 120
+:geoo/steel/64x32o.S: 448 88
+:geoo/steel/32x16o.S: 608 120
+:geoo/steel/32x16o.S: 592 384
+:geoo/construction/rod_steel/straight32.S: 608 136
+:geoo/steel/16x32o.S: 624 240
+:matt/oriental/10: 576 352
+:matt/oriental/10: 544 352 frr
+:matt/oriental/10: 544 352 f
+:matt/oriental/10: 480 352 frr
+:matt/oriental/10: 512 352
+:matt/oriental/10: 512 352 rr
+:matt/oriental/bamboo_pole: 93 84 fr

@@ -1,0 +1,83 @@
+$BUILT                                             2011-09-27 09:37:28
+$AUTHOR                                                           geoo
+$GERMAN                                                               
+$ENGLISH                                                   Twin Towers
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            768
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                             0
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                            50
+#INITIAL                                                           180
+#REQUIRED                                                           20
+#RATE                                                               80
+
+#CLIMBER                                                            40
+#FLOATER                                                            40
+#WALKER                                                             80
+#JUMPER                                                             80
+#RUNNER                                                             20
+#BATTER                                                             50
+#NOTHING                                                             0
+#PLATFORMER                                                         25
+#EXPLODER2                                                          40
+#BASHER                                                             40
+#MINER                                                              60
+#DIGGER                                                             40
+
+:matt/goldmine/GoalTop.D:                   144       608
+:matt/goldmine/GoalTop.D:                   432       608
+
+:geoo/construction/Hatch.H:                       144        16
+:geoo/construction/Hatch.H:                       464        16     r
+
+:matt/goldmine/Goal.G:                      144       656
+:matt/goldmine/Goal.G:                      432       656
+
+:matt/water.W:                                    240       736
+:matt/water.W:                                    272       736
+:matt/water.W:                                    304       736
+:matt/water.W:                                    336       736
+:matt/water.W:                                    368       736
+
+:matt/underworld/02:                         112        48
+:matt/underworld/02:                         176        48
+:matt/underworld/02:                         400        48
+:matt/underworld/02:                         464        48
+:matt/underworld/02:                         112       144
+:matt/underworld/02:                         176       144
+:matt/underworld/02:                         400       144
+:matt/underworld/02:                         464       144
+:matt/underworld/02:                         112       240
+:matt/underworld/02:                         176       240
+:matt/underworld/02:                         400       240
+:matt/underworld/02:                         464       240
+:matt/underworld/02:                         112       336
+:matt/underworld/02:                         176       336
+:matt/underworld/02:                         400       336
+:matt/underworld/02:                         464       336
+:matt/underworld/02:                         112       432
+:matt/underworld/02:                         176       432
+:matt/underworld/02:                         400       432
+:matt/underworld/02:                         464       432
+:matt/underworld/02:                         112       528
+:matt/underworld/02:                         176       528
+:matt/underworld/02:                         400       528
+:matt/underworld/02:                         464       528
+:matt/underworld/02:                         112       624
+:matt/underworld/02:                         176       624
+:matt/underworld/02:                         400       624
+:matt/underworld/02:                         464       624
+:geoo/steel/64x64.S:                              112       704
+:geoo/steel/64x64.S:                              176       704
+:geoo/steel/64x64.S:                              400       704
+:geoo/steel/64x64.S:                              464       704
+:matt/carnival/24:                           144       640     d
+:matt/carnival/24:                           432       640     d
+:geoo/steel/64x64.S:                              288         0

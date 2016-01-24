@@ -1,0 +1,94 @@
+$BUILT 2014-06-08 16:21:46
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Fire up the bomb squad
+
+#SIZE_X 640
+#SIZE_Y 384
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 348
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 10
+#SPAWN_INTERVAL 28
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#CLIMBER 10
+#EXPLODER2 10
+#BLOCKER 10
+#BUILDER 3
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/sandstone/Hatch.H: 192 224
+
+:geoo/sandstone/Goal.G: 216 128
+
+:geoo/sandstone/64x64: 0 320
+:geoo/sandstone/64x64: 64 320
+:geoo/sandstone/64x64: 128 320
+:geoo/sandstone/64x64: 192 320
+:geoo/sandstone/64x64: 256 320
+:geoo/sandstone/64x64: 320 320
+:geoo/sandstone/64x64: 384 320
+:geoo/sandstone/64x64: 448 320
+:geoo/sandstone/64x64: 512 320
+:geoo/sandstone/64x64: 576 320
+:geoo/sandstone/64x64: 512 224
+:geoo/sandstone/64x64: 512 128
+:geoo/sandstone/64x64: 512 64
+:geoo/sandstone/64x64: 576 0
+:geoo/sandstone/64x64: 0 224
+:geoo/sandstone/64x64: 0 128
+:geoo/sandstone/64x64: 0 64
+:geoo/sandstone/64x64: 0 0
+:geoo/sandstone/64x64: 64 0
+:geoo/sandstone/64x64: 128 0
+:geoo/sandstone/64x64: 192 0
+:geoo/sandstone/64x64: 256 0
+:geoo/sandstone/64x64: 320 0
+:geoo/sandstone/64x64: 384 0
+:geoo/sandstone/64x64: 448 0
+:geoo/sandstone/64x64: 512 0
+:geoo/sandstone/64x32: 216 192
+:geoo/sandstone/64x32: 280 192
+:geoo/sandstone/64x32: 344 192
+:geoo/sandstone/64x32: 408 192
+:geoo/sandstone/64x64: 128 64
+:geoo/sandstone/64x64: 128 128
+:geoo/sandstone/64x64: 128 224
+:geoo/sandstone/64x64: 576 224
+:geoo/sandstone/64x64: 576 128
+:geoo/sandstone/64x64: 576 64
+:geoo/sandstone/64x64: 64 224
+:geoo/sandstone/64x64: 64 128
+:geoo/sandstone/64x64: 64 64
+:geoo/sandstone/64x32: 192 288
+:geoo/sandstone/64x32: 256 288
+:geoo/sandstone/64x32: 320 288
+:geoo/sandstone/64x32: 384 288
+:geoo/sandstone/64x32: 448 288
+:geoo/sandstone/64x32: 0 288
+:geoo/sandstone/64x32: 64 288
+:geoo/sandstone/64x32: 128 288
+:geoo/sandstone/64x32: 152 192
+:geoo/sandstone/64x32: 88 192
+:geoo/sandstone/64x32: 24 192
+:geoo/sandstone/64x32: -40 192
+:geoo/sandstone/64x32: 512 288
+:geoo/sandstone/64x32: 576 288
+:geoo/sandstone/64x32: 512 192
+:geoo/sandstone/64x32: 576 192
+:geoo/steel/32x64o.S: 472 176

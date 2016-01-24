@@ -1,0 +1,162 @@
+$BUILT 2013-06-28 18:39:09
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Low Profile
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 38
+#SPAWN_INTERVAL 34
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#FLOATER 1
+#BLOCKER 4
+#EXPLODER2 4
+#BUILDER 4
+#PLATFORMER 2
+#DIGGER 1
+#BATTER 4
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 80 64
+
+:geoo/abstract/goal.G: 624 336
+
+:simon/acid.W: 0 384
+:simon/acid.W: 48 384
+:simon/acid.W: 96 384
+:simon/acid.W: 144 384
+:simon/acid.W: 192 384
+:simon/acid.W: 240 384
+:simon/acid.W: 288 384
+:simon/acid.W: 336 384
+:simon/acid.W: 384 384
+:simon/acid.W: 432 384
+:simon/acid.W: 480 384
+:simon/acid.W: 528 384
+:simon/acid.W: 576 384
+:simon/acid.W: 608 384
+:geoo/construction/sawblade.F: 304 128
+:geoo/construction/sawblade.F: 336 144
+:geoo/construction/sawblade.F: 368 160
+:geoo/construction/sawblade.F: 400 176
+:geoo/construction/sawblade.F: 432 192
+:geoo/construction/sawblade.F: 464 208
+:geoo/construction/sawblade.F: 496 224
+:geoo/construction/sawblade.F: 496 128
+:geoo/construction/sawblade.F: 512 160
+:geoo/construction/sawblade.F: 512 96
+:geoo/construction/sawblade.F: 496 64
+:geoo/construction/sawblade.F: 512 32
+:geoo/construction/Laser_hz_64.F: 176 122
+:geoo/construction/Laser_hz_64.F: 224 122
+:geoo/construction/sawblade.F: 496 0
+
+:geoo/shadow/pillar_hztl_32: 128 128
+:geoo/shadow/pillar_hztl_32: 288 128
+:geoo/shadow/pillar_hztl_32: 112 160
+:geoo/shadow/pillar_hztl_32: 112 160
+:geoo/shadow/pillar_hztl_32: 96 128
+:geoo/shadow/pillar_hztl_32: 64 128
+:geoo/shadow/pillar_hztl_32: 48 112 rrr
+:geoo/shadow/pillar_hztl_32: 160 128 rrr
+:geoo/shadow/pillar_hztl_32: 144 160
+:geoo/shadow/pillar_hztl_32: 512 224
+:geoo/shadow/pillar_hztl_32: 48 80 rrr
+:geoo/shadow/pillar_hztl_32: 96 192 rrr
+:geoo/shadow/pillar_hztl_32: 96 160 rrr
+:geoo/shadow/pillar_hztl_32: 96 256 rrr
+:geoo/shadow/pillar_hztl_32: 96 224 rrr
+:geoo/shadow/pillar_hztl_32: 96 288
+:geoo/shadow/pillar_hztl_32: 96 288
+:geoo/shadow/pillar_hztl_32: 112 288
+:geoo/shadow/pillar_hztl_32: 144 288 rrr
+:geoo/shadow/pillar_hztl_32: 144 320 rrr
+:geoo/shadow/pillar_hztl_32: 96 352
+:geoo/shadow/pillar_hztl_32: 96 352
+:geoo/shadow/pillar_hztl_32: 128 352
+:geoo/shadow/pillar_hztl_32: 32 352
+:geoo/shadow/pillar_hztl_32: 32 352
+:geoo/shadow/pillar_hztl_32: 64 352
+:geoo/shadow/pillar_hztl_32: 32 368 rrr
+:geoo/shadow/pillar_hztl_32: 96 368 rrr
+:geoo/shadow/pillar_hztl_32: 544 224
+:geoo/shadow/pillar_hztl_32: 576 192 rrr
+:geoo/shadow/pillar_hztl_32: 576 160 rrr
+:geoo/shadow/pillar_hztl_32: 576 256 rrr
+:geoo/shadow/pillar_hztl_32: 576 224 rrr
+:geoo/shadow/pillar_hztl_32: 608 320 rrr
+:geoo/shadow/pillar_hztl_32: 608 288 rrr
+:geoo/shadow/pillar_hztl_32: 624 16 rrr
+:geoo/shadow/pillar_hztl_32: 608 352 rrr
+:geoo/shadow/pillar_hztl_32: 576 288
+:geoo/shadow/pillar_hztl_32: 576 288
+:geoo/shadow/pillar_hztl_32: 576 96 rrr
+:geoo/shadow/pillar_hztl_32: 576 64 rrr
+:geoo/shadow/pillar_hztl_32: 576 128 rrr
+:geoo/shadow/pillar_hztl_32: 576 0 rr
+:geoo/shadow/pillar_hztl_32: 592 64
+:geoo/shadow/pillar_hztl_32: 624 64
+:geoo/shadow/pillar_hztl_32: 608 384
+:geoo/shadow/pillar_hztl_32: 608 0 rr
+:geoo/shadow/pillar_hztl_32: 544 0 rr
+:geoo/shadow/pillar_hztl_32: 624 32 rrr
+:geoo/steel/16x16o.S: 160 128
+:geoo/steel/16x16o.S: 144 128
+:geoo/steel/16x16o.S: 128 128
+:geoo/steel/16x16o.S: 112 128
+:geoo/steel/16x16o.S: 96 128
+:geoo/shadow/pillar_hztl_32: 48 48 rrr
+:geoo/shadow/pillar_hztl_32: 48 16 rrr
+:geoo/shadow/pillar_hztl_32: 64 16 rr
+:geoo/shadow/pillar_hztl_32: 96 16 rr
+:geoo/shadow/pillar_hztl_32: 128 0 rrr
+:geoo/steel/dark_32x48o.S: 528 0
+:geoo/steel/dark_32x48o.S: 528 48
+:geoo/steel/dark_32x48o.S: 528 96
+:geoo/steel/dark_32x48o.S: 528 144
+:geoo/shadow/pillar_hztl_32: 560 -16 r
+:geoo/shadow/pillar_hztl_32: 288 128 rrr
+:geoo/shadow/pillar_hztl: 288 160
+:geoo/shadow/pillar_hztl: 304 160
+:geoo/shadow/pillar_hztl: 320 160
+:geoo/shadow/pillar_hztl: 320 176
+:geoo/shadow/pillar_hztl: 336 176
+:geoo/shadow/pillar_hztl: 352 176
+:geoo/shadow/pillar_hztl: 352 192
+:geoo/shadow/pillar_hztl: 368 192
+:geoo/shadow/pillar_hztl: 384 208
+:geoo/shadow/pillar_hztl: 384 192
+:geoo/shadow/pillar_hztl: 400 208
+:geoo/shadow/pillar_hztl: 416 208
+:geoo/shadow/pillar_hztl: 416 224
+:geoo/shadow/pillar_hztl: 432 224
+:geoo/shadow/pillar_hztl: 448 224
+:geoo/shadow/pillar_hztl: 448 240
+:geoo/shadow/pillar_hztl: 464 240
+:geoo/shadow/pillar_hztl: 480 240
+:geoo/shadow/pillar_hztl: 480 256
+:geoo/shadow/pillar_hztl: 496 256
+:geoo/shadow/pillar_hztl: 512 256 rrr
+:geoo/shadow/pillar_hztl: 512 240 rrr
+:geoo/shadow/pillar_hztl_32: 160 352
+:geoo/shadow/pillar_hztl_32: 160 352
+:geoo/shadow/pillar_hztl_32: 192 352
+:geoo/shadow/pillar_hztl_32: 224 352
+:geoo/shadow/pillar_hztl_32: 224 352
+:geoo/shadow/pillar_hztl_32: 256 352
+:geoo/shadow/pillar_hztl_32: 288 352 rrr
+:geoo/shadow/pillar_hztl_32: 288 384 rrr
+:geoo/shadow/pillar_hztl_32: 80 160

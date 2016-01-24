@@ -1,0 +1,155 @@
+$BUILT 2014-07-02 23:44:32
+$AUTHOR weirdybeardy
+$GERMAN 
+$ENGLISH Death or Glory
+
+#SIZE_X 1280
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 640
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 120
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 50
+#SPAWN_INTERVAL_FAST 50
+
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER 0
+#BLOCKER 0
+#BUILDER 1
+#BASHER 2
+#MINER 0
+#DIGGER 2
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/bricks/Hatch.H: 832 48
+
+:matt/bricks/Goal.G: 272 208
+
+:geoo/construction/factory.T: 1152 80
+
+:simon/crystal.W: 208 352
+:simon/crystal.W: 160 352
+:simon/crystal.W: 112 352
+:simon/crystal.W: 480 352
+:simon/crystal.W: 432 352
+:simon/crystal.W: 384 352
+
+:matt/bricks/04: 640 320
+:matt/bricks/07: 640 256
+:matt/bricks/04: 640 192
+:matt/bricks/03: 576 192
+:matt/bricks/03: 576 256
+:matt/bricks/03: 576 320
+:matt/bricks/03: 512 256
+:matt/bricks/03: 512 320
+:matt/bricks/07: 512 192
+:matt/bricks/03: 704 160
+:matt/bricks/03: 704 224
+:matt/bricks/03: 704 288
+:matt/bricks/03: 704 64
+:matt/bricks/03: 640 64
+:matt/bricks/03: 704 0
+:matt/bricks/03: 640 0
+:matt/bricks/03: 576 64
+:matt/bricks/03: 576 0
+:matt/bricks/03: 512 0
+:matt/bricks/05: 448 0
+:matt/bricks/05: 512 64
+:matt/bricks/01: 704 160 d
+:matt/bricks/01: 736 160 d
+:proxima/tile/red3s: 480 256
+:proxima/tile/red3s: 448 256
+:proxima/tile/red3s: 416 256
+:proxima/tile/red3s: 384 256
+:proxima/tile/red3s: 352 256
+:proxima/tile/red3s: 320 256
+:proxima/tile/red3s: 288 256
+:proxima/tile/red3s: 256 256
+:matt/bricks/03: 320 288
+:matt/bricks/03: 320 352
+:matt/bricks/03: 256 288
+:matt/bricks/03: 256 352
+:proxima/tile/blue1s: 544 272
+:proxima/tile/blue1s: 576 272
+:proxima/tile/blue1s: 544 304
+:proxima/tile/blue1s: 576 304
+:proxima/tile/blue1s: 672 32
+:proxima/tile/blue1s: 704 32
+:proxima/tile/blue1s: 672 64
+:proxima/tile/blue1s: 704 64
+:matt/bricks/07: 48 288
+:matt/bricks/03: 48 352
+:matt/bricks/07: -16 352
+:matt/bricks/01: 688 384
+:matt/bricks/01: 720 384
+:matt/bricks/01: 752 384
+:matt/bricks/01: 784 384
+:matt/bricks/03: 640 384
+:matt/bricks/03: 576 384
+:matt/bricks/03: 512 384
+:matt/goldmine/planksupport2: 48 0 rr
+:matt/goldmine/planksupport2: 240 0 rr
+:matt/goldmine/tracks: 16 64
+:matt/goldmine/tracks: 112 64
+:matt/goldmine/planksupport: 112 0 rr
+:matt/goldmine/tracks: 208 64
+:matt/goldmine/crate32: 176 128
+:matt/goldmine/explosivecrate: 112 128
+:matt/bricks/01: 752 0
+:matt/bricks/01: 784 0
+:matt/bricks/01: 816 0
+:matt/bricks/01: 848 0
+:matt/bricks/01: 880 0
+:matt/bricks/01: 912 0
+:matt/bricks/01: 944 0
+:matt/bricks/01: 976 0
+:matt/bricks/01: 1008 0
+:matt/bricks/01: 1040 0
+:matt/bricks/01: 1072 0
+:matt/bricks/01: 1104 0
+:matt/bricks/03: 944 144
+:matt/bricks/03: 880 144
+:matt/bricks/03: 816 144
+:matt/bricks/03: 1136 144
+:matt/bricks/03: 1072 144
+:matt/bricks/03: 1008 144
+:proxima/tile/blue1s: 1136 16
+:proxima/tile/blue1s: 1168 16
+:proxima/tile/blue1s: 1136 48
+:proxima/tile/blue1s: 1168 48
+:matt/bricks/01: 1136 0
+:matt/bricks/01: 1168 0
+:matt/bricks/03: 1216 0
+:matt/bricks/03: 1216 64
+:matt/bricks/03: 1216 128
+:matt/bricks/01: 1200 0
+:matt/bricks/01: 1232 0
+:matt/bricks/03: 1216 192
+:matt/bricks/03: 1216 256
+:matt/bricks/03: 1216 320
+:matt/bricks/01: 816 384
+:matt/bricks/01: 848 384
+:matt/bricks/01: 880 384
+:matt/bricks/01: 912 384
+:matt/bricks/01: 944 384
+:matt/bricks/01: 976 384
+:matt/bricks/01: 1008 384
+:matt/bricks/01: 1040 384
+:matt/bricks/01: 1072 384
+:matt/bricks/01: 1104 384
+:matt/bricks/01: 1136 384
+:matt/bricks/01: 1168 384
+:matt/bricks/01: 1200 384
+:matt/bricks/01: 1232 384
+:matt/bricks/01: 1264 384

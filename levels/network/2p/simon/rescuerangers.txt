@@ -1,0 +1,144 @@
+$BUILT 2012-12-12 04:02:53
+$AUTHOR Simon
+$GERMAN 
+$ENGLISH Rescue Rangers
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 120
+#REQUIRED 20
+#SPAWN_INTERVAL 11
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 30
+#JUMPER 30
+#RUNNER 20
+#CLIMBER 20
+#EXPLODER 20
+#CUBER 30
+#BATTER 30
+#BUILDER 60
+#PLATFORMER 20
+#BASHER 0
+#MINER 30
+#DIGGER 20
+
+:matt/marble/Hatch.H: 48 224
+:matt/marble/Hatch.H: 528 224 r
+:matt/marble/Hatch.H: 512 -16 r
+:matt/marble/Hatch.H: 64 -16
+
+:matt/marble/Goal.G: 288 224
+
+:geoo/sandstone/brazier.F: 12 136
+:geoo/sandstone/brazier.F: -4 104
+:geoo/sandstone/brazier.F: 612 104
+:geoo/sandstone/brazier.F: 596 136
+:geoo/sandstone/brazier.F: 288 344
+:geoo/sandstone/brazier.F: 320 344
+:geoo/sandstone/brazier.F: 64 320
+:geoo/sandstone/brazier.F: 544 320
+:geoo/sandstone/brazier.F: 240 40
+:geoo/sandstone/brazier.F: 240 24
+:geoo/sandstone/brazier.F: 240 8
+:geoo/sandstone/brazier.F: 368 8
+:geoo/sandstone/brazier.F: 368 24
+:geoo/sandstone/brazier.F: 240 -8
+:geoo/sandstone/brazier.F: 368 -8
+:geoo/sandstone/brazier.F: 368 40
+:geoo/sandstone/brazier.F: -16 72
+:geoo/sandstone/brazier.F: 624 72
+
+:matt/marble/09b: 192 256
+:matt/marble/21b: 64 304
+:matt/marble/09a: 128 256
+:matt/marble/09a: 192 192
+:matt/marble/09b: 128 192
+:matt/marble/09b: 448 256
+:matt/marble/09a: 384 256
+:matt/marble/09a: 448 192
+:matt/marble/09b: 384 192
+:matt/marble/21b: 0 304
+:geoo/steel/dark_32x64o.S: 0 288
+:geoo/steel/dark_32x64o.S: 0 224
+:geoo/steel/dark_32x64o.S: 0 160
+:geoo/steel/dark_32x64o.S: 608 288
+:geoo/steel/dark_32x64o.S: 608 224
+:geoo/steel/dark_32x64o.S: 608 160
+:geoo/steel/dark_16x32o.S: 256 192
+:geoo/steel/dark_16x32o.S: 368 192
+:geoo/steel/dark_32x32o.S: 256 224
+:geoo/steel/dark_32x32o.S: 352 224
+:geoo/steel/dark_32x64o.S: 256 256
+:geoo/steel/dark_32x64o.S: 352 256
+:geoo/steel/dark_64x64o.S: 288 272
+:geoo/steel/dark_64x64o.S: 288 368
+:geoo/steel/dark_32x64o.S: 256 320
+:geoo/steel/dark_32x64o.S: 352 320
+:geoo/steel/dark_32x32o.S: 256 384
+:geoo/steel/dark_32x32o.S: 352 384
+:matt/marble/21a: 512 304
+:matt/marble/21a: 544 304
+:geoo/steel/dark_32x64o.S: 0 352
+:geoo/steel/dark_32x64o.S: 608 352
+:geoo/steel/dark_16x32o.S: 0 128
+:geoo/steel/dark_16x32o.S: 624 128
+:matt/marble/09b: 128 320
+:matt/marble/09b: 384 320
+:matt/marble/09a: 192 320
+:matt/marble/09a: 448 320
+:matt/marble/09a: 128 384
+:matt/marble/09a: 384 384
+:matt/marble/09b: 192 384
+:matt/marble/09b: 448 384
+:matt/marble/20b: 496 -16
+:matt/marble/20b: 576 -16
+:matt/marble/20a: 48 -16
+:matt/marble/20a: 128 -16
+:geoo/steel/32x16o.S: 48 48
+:geoo/steel/32x16o.S: 80 48
+:geoo/steel/32x16o.S: 112 48
+:geoo/steel/32x16o.S: 496 48
+:geoo/steel/32x16o.S: 528 48
+:geoo/steel/32x16o.S: 560 48
+:matt/marble/20b: 256 128
+:matt/marble/13b: 252 64
+:matt/marble/20b: 256 64
+:matt/marble/13b: 252 48
+:matt/marble/13b: 252 32
+:matt/marble/13b: 252 16
+:matt/marble/20b: 256 0
+:matt/marble/20b: 272 160
+:matt/marble/20b: 272 96
+:matt/marble/20b: 272 32
+:matt/marble/20b: 272 -32
+:matt/marble/20a: 352 160
+:matt/marble/20a: 368 128
+:matt/marble/20a: 352 96
+:matt/marble/11a: 372 64
+:matt/marble/20a: 368 64
+:matt/marble/20a: 352 32
+:matt/marble/11a: 372 32
+:matt/marble/11a: 372 48
+:matt/marble/11a: 372 16
+:matt/marble/20a: 368 0
+:matt/marble/20a: 352 -32
+:matt/marble/20b: 552 344
+:matt/marble/20a: 72 344
+:matt/marble/14a: 80 338 rrrd
+:matt/marble/14a: 48 338 rrd
+:matt/marble/14a: 528 338 rrd
+:matt/marble/14a: 560 338 rrrd
+:matt/marble/02a: 240 176
+:matt/marble/02b: 384 176
+:matt/marble/12b: 400 176
+:matt/marble/10a: 224 176
+:geoo/steel/dark_16x32o.S: -12 96
+:geoo/steel/dark_16x32o.S: 636 96

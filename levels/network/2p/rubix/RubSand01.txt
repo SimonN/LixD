@@ -1,0 +1,91 @@
+$BUILT 2014-06-06 10:06:23
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Glare(2p)
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+#START_X 0
+#START_Y 380
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 35
+#INITIAL 70
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 50
+#JUMPER 40
+#EXPLODER2 10
+#BLOCKER 1
+#BUILDER 50
+#PLATFORMER 20
+#BASHER 45
+#MINER 45
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/beach/Hatch.H: 40 -18
+:matt/beach/Hatch.H: 556 -16 r
+
+:matt/beach/goal.G: 464 328
+:matt/beach/goal.G: 78 328
+
+:matt/beach/daytime/15: 112 50
+:matt/beach/daytime/03: -24 32
+:matt/beach/daytime/15: 496 48
+:matt/beach/daytime/04: -16 32 rn
+:matt/beach/daytime/04: 112 32 rn
+:matt/beach/daytime/04: 240 32 rn
+:matt/beach/daytime/04: 368 32 rn
+:matt/beach/daytime/04: 496 32 rn
+:matt/beach/daytime/04: -80 192 rn
+:matt/beach/daytime/04: 48 176 rn
+:matt/beach/daytime/04: 176 192 rn
+:matt/beach/daytime/04: 304 192 rn
+:matt/beach/daytime/04: 432 176 rn
+:matt/beach/daytime/04: -16 368 rn
+:matt/beach/daytime/04: 112 368 rn
+:matt/beach/daytime/04: 240 368 rn
+:matt/beach/daytime/04: 368 368 rn
+:matt/beach/daytime/04: 496 368 rn
+:matt/beach/daytime/04: 560 192 rn
+:matt/beach/daytime/05: -48 -48
+:matt/beach/daytime/05: -48 96
+:matt/beach/daytime/05: -48 272
+:matt/beach/daytime/05: 614 -102 f
+:matt/beach/daytime/05: 608 48 f
+:matt/beach/daytime/05: 622 240 f
+:matt/steel/32x32.S: 94 394
+:matt/steel/32x32.S: 126 394
+:matt/steel/32x32.S: 478 394
+:matt/steel/32x32.S: 510 394
+:matt/beach/daytime/03: -52 30
+:matt/beach/daytime/03: 512 32
+:matt/steel/32x32.S: 624 0
+:matt/steel/32x32.S: 624 32
+:matt/beach/daytime/04: 192 336
+:matt/beach/daytime/04: 320 336
+:matt/beach/daytime/03: 256 336
+:matt/beach/daytime/03: 240 336 f
+:matt/beach/decor/pail: 594 208
+:matt/beach/daytime/01: 592 256
+:matt/beach/daytime/01: 620 268
+:matt/beach/daytime/14: 606 298
+:matt/beach/daytime/02: 620 242
+:matt/beach/decor/grass08: 292 364
+:matt/beach/decor/grass11: 124 54
+:matt/beach/decor/grass11: 226 198
+:matt/beach/decor/grass11: 424 232
+:matt/beach/decor/grass11: 478 60
+:matt/steel/32x32.S: 16 32
+:matt/steel/32x32.S: 48 32
+:matt/steel/32x32.S: 592 32
+:matt/steel/32x32.S: 560 32

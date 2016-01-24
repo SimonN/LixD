@@ -1,0 +1,162 @@
+$BUILT 2014-02-27 14:41:03
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Scared of heights
+$HINT_ENGLISH Why so many walkers?
+$HINT_ENGLISH A Quote from the movie Labyrinth. "Turn back Sarah.  Turn back before its too late"
+
+#SIZE_X 740
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 380
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 111
+#BACKGROUND_BLUE 191
+
+#SECONDS 0
+#INITIAL 15
+#REQUIRED 12
+#SPAWN_INTERVAL 65
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 60
+#BUILDER 6
+#PLATFORMER 1
+#BASHER 3
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/marble/Hatch.H: 16 272
+
+:matt/marble/Goal.G: 0 0
+
+:matt/marble/06c: 720 0 rr
+:matt/marble/22b: 656 0 fr
+:matt/marble/15d: 96 144 r
+:matt/marble/20a: 80 128
+:matt/marble/20a: 80 320
+:matt/marble/20c: 304 336
+:matt/marble/20: 160 304
+:matt/marble/20b: 0 336
+:matt/marble/20a: 80 192
+:matt/marble/20: 160 176
+:matt/marble/23c: 96 48
+:matt/marble/23b: 64 48
+:matt/marble/23a: 32 48
+:matt/marble/23: 0 48
+:matt/marble/23e: 128 80
+:matt/marble/23e: 96 112
+:matt/marble/23d: 96 80
+:matt/marble/23d: 64 112
+:matt/marble/23c: 64 80
+:matt/marble/23c: 32 112
+:matt/marble/23b: 32 80
+:matt/marble/23a: 0 80
+:matt/marble/23b: 0 112
+:matt/marble/23c: 224 112
+:matt/marble/23b: 192 112
+:matt/marble/23a: 160 112
+:matt/marble/23: 128 112
+:matt/marble/23e: 256 144
+:matt/marble/23e: 224 176
+:matt/marble/23d: 224 144
+:matt/marble/23d: 192 176
+:matt/marble/23c: 192 144
+:matt/marble/23c: 160 176
+:matt/marble/23b: 160 144
+:matt/marble/23a: 128 144
+:matt/marble/23a: 288 176
+:matt/marble/23: 256 176
+:matt/marble/06d: 672 336
+:matt/marble/06d: 672 272
+:matt/marble/06d: 704 336
+:matt/marble/06d: 704 272
+:matt/marble/06d: 704 208
+:matt/marble/08d: 608 368
+:matt/marble/08d: 544 368
+:matt/marble/08d: 480 368
+:matt/marble/08d: 416 368
+:matt/marble/08d: 352 368
+:matt/marble/08d: 288 368
+:matt/marble/08d: 224 368
+:matt/marble/08d: 160 368
+:matt/marble/08d: 96 368
+:matt/marble/08d: 32 368
+:matt/marble/08d: -32 368
+:matt/marble/20b: 0 144
+:matt/marble/20b: 0 208
+:matt/marble/20c: 304 208
+:matt/marble/05a: 512 336
+:matt/marble/05a: 576 336
+:matt/marble/05a: 544 304
+:matt/marble/05a: 576 272
+:matt/marble/05a: 640 336
+:matt/marble/05a: 608 304
+:matt/marble/05a: 640 272
+:matt/marble/15d: 672 208 r
+:matt/marble/14a: 544 272
+:matt/marble/14a: 512 304
+:matt/marble/14a: 480 336
+:matt/marble/15d: 256 112 rrr
+:matt/marble/15d: 288 144 rrr
+:matt/marble/15d: 160 80 rrr
+:matt/marble/15d: 128 48 rrr
+:matt/marble/20a: 80 256
+:matt/marble/20: 160 240
+:matt/marble/20b: 0 272
+:matt/marble/20c: 304 272
+:matt/marble/15d: 272 208 r
+:matt/marble/15d: 128 176 r
+:matt/marble/06c: 640 0 r
+:matt/marble/06c: 576 -16 r
+:matt/marble/22b: 672 16 fr
+:matt/marble/22b: 672 0 fr
+:matt/marble/23b: 704 0
+:matt/marble/08c: 544 0 r
+:matt/marble/06c: 480 -16 r
+:matt/marble/08c: 448 0 r
+:matt/marble/06c: 384 -16 r
+:matt/marble/08c: 352 0 r
+:matt/marble/06c: 288 -16 r
+:matt/marble/15c: 256 -16 frr
+:matt/marble/09c: 384 48
+:matt/marble/09c: 480 48
+:matt/marble/15c: 432 144 r
+:matt/marble/15c: 464 144 fr
+:matt/marble/08c: 448 80 r
+:matt/marble/06c: 720 64 rr
+:matt/marble/15c: 720 128 r
+:matt/marble/04e_1: 384 96
+:matt/marble/04e_1: 400 48
+:matt/marble/04e_1: 496 48
+:matt/marble/04e_1: 480 96
+:matt/marble/04e_2: 384 64 r
+:matt/marble/04e_2: 432 64 r
+:matt/marble/04e_2: 480 64 r
+:matt/marble/04e_2: 528 64 r
+:matt/marble/04e_2: 368 48
+:matt/marble/04e_2: 432 48
+:matt/marble/04e_2: 464 48
+:matt/marble/04e_2: 528 48
+:matt/marble/04e_2: 352 32 r
+:matt/marble/04e_2: 560 32 r
+:matt/marble/04e_2: 448 80 r
+:matt/marble/04e_2: 464 80 r
+:matt/marble/04e_1: 416 96
+:matt/marble/04e_1: 512 96
+:matt/marble/04e_2: 448 112 r
+:matt/marble/04e_2: 464 112 r
+:matt/marble/04e_2: 448 16 r
+:matt/marble/04e_2: 464 16 r
+:matt/marble/04e_2: 352 0 r
+:matt/marble/04e_2: 368 16 r
+:matt/marble/04e_2: 544 16 r
+:matt/marble/04e_2: 560 0 r

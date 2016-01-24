@@ -1,0 +1,101 @@
+$BUILT 2012-05-20 19:50:08
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH Waste Not, Want Not
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 40
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 2
+#FLOATER 2
+#EXPLODER 2
+#BLOCKER 2
+#BUILDER 1
+#BASHER 2
+#MINER 2
+#DIGGER 2
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/abstract/hatch.H: 32 272
+
+:matt/marble/Goal.G: 384 224
+
+:matt/bricks/03b: 32 336
+:matt/bricks/02b: 96 336
+:matt/bricks/03b: 160 336
+:matt/bricks/02b: 224 336
+:matt/bricks/03b: 288 336
+:matt/bricks/02b: 352 336
+:matt/bricks/02b: 480 336
+:matt/bricks/03b: 544 336
+:matt/bricks/10b: 544 304
+:matt/bricks/08b: 544 272
+:matt/bricks/12b: 576 304
+:matt/bricks/12b: 576 272
+:matt/bricks/12b: 576 240
+:matt/bricks/12b: 576 208
+:matt/bricks/12b: 512 272
+:matt/bricks/12b: 512 240
+:matt/bricks/10b: 544 240
+:matt/bricks/08b: 544 208
+:matt/bricks/12b: 512 208
+:matt/bricks/12b: 576 176
+:matt/bricks/12b: 576 144
+:matt/bricks/12b: 512 176
+:matt/bricks/10b: 544 176
+:matt/bricks/08b: 544 144
+:matt/bricks/12b: 512 144
+:matt/bricks/12b: 576 112
+:matt/bricks/12b: 576 80
+:matt/bricks/12b: 512 112
+:matt/bricks/10b: 544 112
+:matt/bricks/08b: 544 80
+:matt/bricks/12b: 512 80
+:matt/bricks/02b: 448 80
+:matt/bricks/02b: 384 80
+:matt/bricks/02b: 320 80
+:matt/bricks/02b: 256 80
+:matt/bricks/02b: 128 80
+:matt/bricks/02b: 192 80
+:matt/bricks/02b: 384 272
+:matt/bricks/12b: 352 272
+:matt/bricks/12b: 128 112
+:matt/bricks/12b: 128 144
+:matt/bricks/12b: 128 176
+:matt/bricks/02b: 32 80
+:matt/bricks/12b: 64 112
+:matt/bricks/12b: 64 144
+:matt/bricks/12b: 64 176
+:matt/bricks/12b: 64 208
+:matt/bricks/12b: 64 240
+:matt/bricks/12b: 64 272
+:matt/bricks/02b: 96 272
+:matt/bricks/02b: 160 272
+:matt/bricks/12b: 192 304
+:matt/bricks/12b: 352 304
+:matt/bricks/12b: 128 208
+:matt/bricks/12b: 192 240
+:matt/bricks/12b: 352 240
+:matt/bricks/02b: 224 240
+:matt/bricks/02b: 288 240
+:matt/bricks/12b: 128 48
+:matt/bricks/12b: 192 48
+:matt/bricks/12b: 256 48
+:matt/bricks/12b: 320 48
+:matt/bricks/02b: 416 368
+:matt/bricks/08b: 416 336
+:matt/bricks/10b: 448 336

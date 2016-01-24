@@ -1,0 +1,50 @@
+$BUILT 2012-05-05 17:00:26
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH Don't Look Back
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 25
+#INITIAL 3
+#REQUIRED 3
+#SPAWN_INTERVAL 4
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 0
+#JUMPER 1
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER2 1
+#BLOCKER 1
+#RUNNER 1
+#BUILDER 1
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+
+:geoo/abstract/hatch.H: 32 152
+
+:geoo/abstract/goal.G: 560 208
+
+:geoo/abstract/cvblocks/035: 32 240
+:geoo/abstract/cvblocks/035: 96 240
+:geoo/abstract/cvblocks/035: 160 240
+:geoo/abstract/cvblocks/035: 224 240
+:geoo/abstract/cvblocks/035: 288 240
+:geoo/abstract/cvblocks/035: 352 240
+:geoo/abstract/cvblocks/035: 416 240
+:geoo/abstract/cvblocks/035: 480 240
+:geoo/abstract/cvblocks/010: 152 224
+:geoo/abstract/cvblocks/010: 280 224
+:geoo/abstract/cvblocks/010: 408 224
+:geoo/abstract/cvblocks/010: 536 224
+:geoo/abstract/cvblocks/020: 544 256
+:geoo/abstract/cvblocks/020: 576 256

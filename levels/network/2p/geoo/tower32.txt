@@ -1,0 +1,300 @@
+$BUILT                                             2011-10-15 20:13:47
+$AUTHOR                                                           geoo
+$GERMAN                                                               
+$ENGLISH                                        Tower Defense (Part 3)
+
+#SIZE_X                                                            640
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                           380
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                           140
+#INITIAL                                                           140
+#REQUIRED                                                           20
+#RATE                                                               80
+
+#CLIMBER                                                            40
+#FLOATER                                                            40
+#WALKER                                                             80
+#JUMPER                                                             80
+#EXPLODER2                                                          40
+#NOTHING                                                             0
+#BUILDER                                                            80
+#PLATFORMER                                                         80
+#BASHER                                                             40
+#MINER                                                              40
+#DIGGER                                                             40
+#NOTHING                                                             0
+
+:geoo/construction/Hatch.H:                       512        64     r
+:geoo/construction/Hatch.H:                        96        64
+
+:geoo/construction/Goal2.G:                       536       320
+:geoo/construction/Goal2.G:                        40       320
+
+:geoo/construction/sawblade.F:                    442       364
+:geoo/construction/sawblade.F:                    468       364
+:geoo/construction/sawblade.F:                    494       364
+:geoo/construction/sawblade.F:                    348        62
+:geoo/construction/sawblade.F:                    252        62
+:geoo/construction/sawblade.F:                    252       158
+:geoo/construction/sawblade.F:                    348       158
+:geoo/construction/sawblade.F:                    190       -10
+:geoo/construction/sawblade.F:                    190         6
+:geoo/construction/sawblade.F:                    410       -10
+:geoo/construction/sawblade.F:                    410         6
+:geoo/construction/sawblade.F:                    300       158
+:geoo/construction/sawblade_small.F:              378         8
+:geoo/construction/sawblade_small.F:              230         8
+:geoo/construction/sawblade_small.F:              480       124
+:geoo/construction/sawblade_small.F:              496       124
+:geoo/construction/sawblade_small.F:              512       124
+:geoo/construction/sawblade_small.F:              528       124
+:geoo/construction/sawblade_small.F:              544       124
+:geoo/construction/sawblade_small.F:              560       124
+:geoo/construction/sawblade_small.F:              576       124
+:geoo/construction/sawblade_small.F:              464       124
+:geoo/construction/sawblade_small.F:              592       124
+:geoo/construction/sawblade_small.F:               32       124
+:geoo/construction/sawblade_small.F:               48       124
+:geoo/construction/sawblade_small.F:               64       124
+:geoo/construction/sawblade_small.F:               80       124
+:geoo/construction/sawblade_small.F:               96       124
+:geoo/construction/sawblade_small.F:              112       124
+:geoo/construction/sawblade_small.F:              128       124
+:geoo/construction/sawblade_small.F:               16       124
+:geoo/construction/sawblade_small.F:              144       124
+:geoo/construction/sawblade_small.F:               64       172
+:geoo/construction/sawblade_small.F:               80       172
+:geoo/construction/sawblade_small.F:               96       172
+:geoo/construction/sawblade_small.F:              112       172
+:geoo/construction/sawblade_small.F:              128       172
+:geoo/construction/sawblade_small.F:              144       172
+:geoo/construction/sawblade_small.F:              160       172
+:geoo/construction/sawblade_small.F:               48       172
+:geoo/construction/sawblade_small.F:              176       172
+:geoo/construction/sawblade_small.F:               32       220
+:geoo/construction/sawblade_small.F:               48       220
+:geoo/construction/sawblade_small.F:               64       220
+:geoo/construction/sawblade_small.F:               80       220
+:geoo/construction/sawblade_small.F:               96       220
+:geoo/construction/sawblade_small.F:              112       220
+:geoo/construction/sawblade_small.F:              128       220
+:geoo/construction/sawblade_small.F:               16       220
+:geoo/construction/sawblade_small.F:              144       220
+:geoo/construction/sawblade_small.F:               64       268
+:geoo/construction/sawblade_small.F:               80       268
+:geoo/construction/sawblade_small.F:               96       268
+:geoo/construction/sawblade_small.F:              112       268
+:geoo/construction/sawblade_small.F:              128       268
+:geoo/construction/sawblade_small.F:              144       268
+:geoo/construction/sawblade_small.F:              160       268
+:geoo/construction/sawblade_small.F:               48       268
+:geoo/construction/sawblade_small.F:              176       268
+:geoo/construction/sawblade_small.F:               32       316
+:geoo/construction/sawblade_small.F:               48       316
+:geoo/construction/sawblade_small.F:               64       316
+:geoo/construction/sawblade_small.F:               80       316
+:geoo/construction/sawblade_small.F:               96       316
+:geoo/construction/sawblade_small.F:              112       316
+:geoo/construction/sawblade_small.F:              128       316
+:geoo/construction/sawblade_small.F:               16       316
+:geoo/construction/sawblade_small.F:              144       316
+:geoo/construction/sawblade.F:                    106       364
+:geoo/construction/sawblade.F:                    134       364
+:geoo/construction/sawblade.F:                    162       364
+:geoo/construction/sawblade_small.F:              448       172
+:geoo/construction/sawblade_small.F:              464       172
+:geoo/construction/sawblade_small.F:              480       172
+:geoo/construction/sawblade_small.F:              496       172
+:geoo/construction/sawblade_small.F:              512       172
+:geoo/construction/sawblade_small.F:              528       172
+:geoo/construction/sawblade_small.F:              544       172
+:geoo/construction/sawblade_small.F:              432       172
+:geoo/construction/sawblade_small.F:              560       172
+:geoo/construction/sawblade_small.F:              480       220
+:geoo/construction/sawblade_small.F:              496       220
+:geoo/construction/sawblade_small.F:              512       220
+:geoo/construction/sawblade_small.F:              528       220
+:geoo/construction/sawblade_small.F:              544       220
+:geoo/construction/sawblade_small.F:              560       220
+:geoo/construction/sawblade_small.F:              576       220
+:geoo/construction/sawblade_small.F:              464       220
+:geoo/construction/sawblade_small.F:              592       220
+:geoo/construction/sawblade_small.F:              448       268
+:geoo/construction/sawblade_small.F:              464       268
+:geoo/construction/sawblade_small.F:              480       268
+:geoo/construction/sawblade_small.F:              496       268
+:geoo/construction/sawblade_small.F:              512       268
+:geoo/construction/sawblade_small.F:              528       268
+:geoo/construction/sawblade_small.F:              544       268
+:geoo/construction/sawblade_small.F:              432       268
+:geoo/construction/sawblade_small.F:              560       268
+:geoo/construction/sawblade_small.F:              480       316
+:geoo/construction/sawblade_small.F:              496       316
+:geoo/construction/sawblade_small.F:              512       316
+:geoo/construction/sawblade_small.F:              528       316
+:geoo/construction/sawblade_small.F:              544       316
+:geoo/construction/sawblade_small.F:              560       316
+:geoo/construction/sawblade_small.F:              576       316
+:geoo/construction/sawblade_small.F:              464       316
+:geoo/construction/sawblade_small.F:              592       316
+:geoo/construction/sawblade_small.F:              272        80
+:geoo/construction/sawblade_small.F:              336        80
+:geoo/construction/sawblade_medium.F:             288         6
+
+:geoo/construction/rod_steel/link.S:              438       348
+:geoo/steel/32x64o.S:                             416       336
+:geoo/steel/32x64o.S:                             416       272
+:geoo/construction/rod_rust/end_rect:             592       264     fr
+:geoo/construction/rod_steel/edge_ru.S:           592       320
+:geoo/construction/rod_rust/straight32:           592       288     fr
+:geoo/construction/rod_steel/edge_lu.S:           456       368
+:geoo/construction/rod_steel/straight8.S:         448       368
+:geoo/steel/32x16o.S:                             448       384
+:geoo/steel/32x16o.S:                             480       384
+:geoo/construction/rod_rust/end_rect:             456       312     fr
+:geoo/construction/rod_rust/straight8:            592       272     fr
+:geoo/construction/rod_rust/straight8:            592       280     fr
+:geoo/construction/rod_rust/straight8:            456       320     fr
+:geoo/construction/rod_rust/straight32:           456       336     fr
+:geoo/construction/rod_rust/straight8:            456       328     fr
+:geoo/construction/rod_steel/link.S:              598       320
+:geoo/construction/rod_steel/straight32.S:        528       360     fr
+:geoo/construction/rod_steel/end_rect.S:          528       360     fr
+:geoo/steel/32x64o.S:                             608       336
+:geoo/steel/32x16o.S:                             512       384
+:geoo/steel/32x16o.S:                             544       384
+:geoo/steel/32x16o.S:                             576       384
+:geoo/construction/rod_steel/link.S:              602       300     frr
+:geoo/steel/32x64o.S:                             608       272
+:geoo/construction/rod_rust/end_rect:             592       168     fr
+:geoo/construction/rod_steel/edge_ru.S:           592       224
+:geoo/construction/rod_rust/straight32:           592       192     fr
+:geoo/construction/rod_steel/edge_lu.S:           456       272
+:geoo/construction/rod_steel/straight8.S:         448       272
+:geoo/construction/rod_rust/end_rect:             456       216     fr
+:geoo/construction/rod_rust/straight8:            592       176     fr
+:geoo/construction/rod_rust/straight8:            592       184     fr
+:geoo/construction/rod_rust/straight8:            456       224     fr
+:geoo/construction/rod_rust/straight32:           456       240     fr
+:geoo/construction/rod_rust/straight8:            456       232     fr
+:geoo/construction/rod_steel/link.S:              598       224
+:geoo/construction/rod_steel/link.S:              602       204     frr
+:geoo/steel/32x64o.S:                             608       208
+:geoo/construction/rod_steel/link.S:              438       252
+:geoo/steel/32x64o.S:                             416       208
+:geoo/construction/rod_steel/link.S:              438       156
+:geoo/steel/32x64o.S:                             416       144
+:geoo/steel/32x64o.S:                             608       144
+:geoo/construction/rod_steel/edge_ru.S:           592       130
+:geoo/construction/rod_rust/straight32:           592        98     fr
+:geoo/construction/rod_steel/edge_lu.S:           456       176
+:geoo/construction/rod_steel/straight8.S:         448       176
+:geoo/construction/rod_rust/end_rect:             456       120     fr
+:geoo/construction/rod_rust/straight8:            456       128     fr
+:geoo/construction/rod_rust/straight32:           456       144     fr
+:geoo/construction/rod_rust/straight8:            456       136     fr
+:geoo/construction/rod_steel/link.S:              598       130
+:geoo/construction/rod_steel/link.S:              602       108     frr
+:geoo/steel/32x64o.S:                             608        80
+:geoo/steel/32x16o.S:                             448        96
+:geoo/steel/32x16o.S:                             480        96
+:geoo/steel/32x16o.S:                             512        96
+:geoo/steel/32x16o.S:                             544        96
+:geoo/steel/16x16o.S:                             576        96
+:geoo/construction/rod_steel/link.S:              602        44     frr
+:geoo/steel/32x64o.S:                             608        16
+:geoo/construction/rod_rust/end_rect:             592        82     fr
+:geoo/steel/32x64o.S:                             608       -48
+:geoo/steel/32x64o.S:                               0       336
+:geoo/construction/rod_steel/link.S:               22       300
+:geoo/steel/32x64o.S:                               0       272
+:geoo/construction/rod_rust/end_rect:             176       216     r
+:geoo/construction/rod_steel/edge_ru.S:           176       272
+:geoo/construction/rod_rust/straight32:           176       240     fr
+:geoo/construction/rod_steel/edge_lu.S:            40       320
+:geoo/construction/rod_steel/straight8.S:          32       320
+:geoo/steel/32x16o.S:                              32       384
+:geoo/steel/32x16o.S:                              64       384
+:geoo/construction/rod_rust/end_rect:              40       264     r
+:geoo/construction/rod_rust/straight8:            176       224     fr
+:geoo/construction/rod_rust/straight8:            176       232     fr
+:geoo/construction/rod_rust/straight8:             40       272     fr
+:geoo/construction/rod_rust/straight32:            40       288     fr
+:geoo/construction/rod_rust/straight8:             40       280     fr
+:geoo/construction/rod_steel/link.S:              182       272
+:geoo/construction/rod_steel/straight32.S:        104       360     fr
+:geoo/construction/rod_steel/end_rect.S:          104       360     fr
+:geoo/construction/rod_steel/link.S:              182       368
+:geoo/construction/rod_steel/link.S:              186       348     frr
+:geoo/steel/32x64o.S:                             192       336
+:geoo/steel/32x16o.S:                              96       384
+:geoo/steel/32x16o.S:                             128       384
+:geoo/steel/32x16o.S:                             160       384
+:geoo/steel/32x64o.S:                             192       272
+:geoo/construction/rod_rust/end_rect:             176       120     r
+:geoo/construction/rod_steel/edge_ru.S:           176       176
+:geoo/construction/rod_rust/straight32:           176       144     fr
+:geoo/construction/rod_steel/edge_lu.S:            40       224
+:geoo/construction/rod_steel/straight8.S:          32       224
+:geoo/construction/rod_rust/end_rect:              40       168     r
+:geoo/construction/rod_rust/straight8:            176       128     fr
+:geoo/construction/rod_rust/straight8:            176       136     fr
+:geoo/construction/rod_rust/straight8:             40       176     fr
+:geoo/construction/rod_rust/straight32:            40       192     fr
+:geoo/construction/rod_rust/straight8:             40       184     fr
+:geoo/construction/rod_steel/link.S:              182       176
+:geoo/construction/rod_steel/link.S:              186       252     frr
+:geoo/steel/32x64o.S:                             192       208
+:geoo/construction/rod_steel/link.S:               22       204
+:geoo/steel/32x64o.S:                               0       208
+:geoo/steel/32x64o.S:                               0       144
+:geoo/construction/rod_steel/link.S:              186       156     frr
+:geoo/steel/32x64o.S:                             192       144
+:geoo/construction/rod_steel/edge_ru.S:           176       368
+:geoo/construction/rod_steel/edge_lu.S:            40       130
+:geoo/construction/rod_steel/straight8.S:          32       130
+:geoo/construction/rod_rust/end_rect:              40        82     r
+:geoo/construction/rod_rust/straight32:            40        98     fr
+:geoo/steel/32x64o.S:                             192        80
+:geoo/construction/rod_steel/link.S:               22       108
+:geoo/steel/32x64o.S:                               0        80
+:geoo/steel/32x16o.S:                              64        96
+:geoo/steel/32x16o.S:                              96        96
+:geoo/steel/32x16o.S:                             128        96
+:geoo/steel/32x16o.S:                             160        96
+:geoo/steel/16x16o.S:                              48        96
+:geoo/construction/rod_steel/link.S:               22        44
+:geoo/steel/32x64o.S:                               0        16
+:geoo/steel/32x64o.S:                               0       -48
+:geoo/construction/rod_rust/end_rect:             176       312     r
+:geoo/construction/rod_rust/straight32:           176       336     fr
+:geoo/construction/rod_rust/straight8:            176       320     fr
+:geoo/construction/rod_rust/straight8:            176       328     fr
+:geoo/construction/rod_rust/straight8:            592        90     fr
+:geoo/construction/rod_rust/straight8:             40        90     fr
+:geoo/steel/32x64o.S:                             416        80
+:geoo/construction/concrete/032v:                 224       272
+:geoo/construction/concrete/032v:                 384       272
+:geoo/construction/concrete/032d:                 256       304
+:geoo/construction/concrete/032c:                 352       304
+:geoo/construction/concrete/032v:                 224       336
+:geoo/construction/concrete/032v:                 384       336
+:geoo/construction/concrete/032:                  224       240
+:geoo/construction/concrete/032:                  384       240
+:geoo/construction/concrete/032b:                 224       192
+:geoo/construction/concrete/032a:                 384       192
+:geoo/construction/concrete/016h:                 304       136
+:geoo/construction/rod_steel/link.S:              413       108     d
+:geoo/construction/rod_steel/link.S:              211       108     rrd
+:geoo/construction/concrete/008h:                 232       160
+:geoo/construction/concrete/008h:                 392       160
+:geoo/steel/32x64o.S:                             304       176
+:geoo/construction/concrete/016h:                 224       224
+:geoo/construction/concrete/016h:                 384       224

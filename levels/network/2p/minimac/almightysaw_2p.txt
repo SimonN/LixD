@@ -1,0 +1,155 @@
+$BUILT 2012-08-11 21:16:42
+$AUTHOR minimac
+$GERMAN 
+$ENGLISH The Almighty Sawblade (2P)
+
+#SIZE_X 952
+#SIZE_Y 416
+#TORUS_X 0
+#TORUS_Y 1
+#START_X 150
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 120
+#INITIAL 100
+#REQUIRED 80
+#SPAWN_INTERVAL 15
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 20
+#FLOATER 20
+#RUNNER 20
+#EXPLODER 20
+#BUILDER 20
+#CUBER 20
+#JUMPER 20
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/marble/Hatch.H: 216 188 r
+:matt/marble/Hatch.H: 672 188
+
+:matt/marble/Goal.G: 844 6
+:matt/marble/Goal.G: 40 6
+
+:geoo/construction/squisher.T: 412 184
+:geoo/construction/squisher.T: 508 184
+
+:geoo/construction/sawblade.F: 456 352
+:matt/water.W: 348 88
+:matt/water.W: 380 88
+:matt/water.W: 412 88
+:matt/water.W: 444 88
+:matt/water.W: 476 88
+:matt/water.W: 508 88
+:matt/water.W: 540 88
+:matt/water.W: 572 88
+
+:matt/marble/01e_2: 480 368
+:matt/marble/01e_2: 496 368
+:matt/marble/01e_2: 512 368
+:matt/marble/01e_2: 528 368
+:matt/marble/01e_2: 456 368
+:matt/marble/01e_2: 440 368
+:matt/marble/01e_2: 424 368
+:matt/marble/01e_2: 408 368
+:matt/marble/01e_2: 392 368
+:matt/marble/01e_2: 544 368
+:matt/marble/01e_2: 560 368
+:matt/marble/01e_2: 576 368
+:matt/marble/01e_2: 360 368
+:matt/marble/01e_2: 376 368
+:geoo/steel/16x16o.S: 576 352
+:geoo/steel/16x16o.S: 576 320
+:geoo/steel/16x16o.S: 576 288
+:geoo/steel/16x16o.S: 576 256
+:geoo/steel/16x16o.S: 360 352
+:geoo/steel/16x16o.S: 360 320
+:geoo/steel/16x16o.S: 360 288
+:geoo/steel/16x16o.S: 360 256
+:geoo/steel/dark_16x16o.S: 360 272
+:geoo/steel/dark_16x16o.S: 360 304
+:geoo/steel/dark_16x16o.S: 360 336
+:geoo/steel/dark_16x16o.S: 576 272
+:geoo/steel/dark_16x16o.S: 576 304
+:geoo/steel/dark_16x16o.S: 576 336
+:matt/marble/22c: 304 256
+:matt/marble/04a: 736 304
+:matt/marble/04a: 216 304
+:matt/marble/04a: 672 304
+:matt/marble/04a: 280 304
+:matt/marble/04c: 704 304
+:matt/marble/04c: 248 304
+:matt/marble/04c: 640 304
+:matt/marble/04c: 184 304
+:geoo/steel/dark_64x32o.S: 380 248
+:geoo/steel/dark_64x32o.S: 508 248
+:geoo/steel/dark_64x64.S: 444 184
+:geoo/steel/32x32o.S: 184 272
+:geoo/steel/dark_32x32o.S: 736 272
+:matt/marble/21: 284 168
+:matt/marble/21: 348 168
+:matt/marble/21: 412 168
+:matt/marble/21: 220 168
+:matt/marble/21: 156 168
+:matt/marble/21: 604 168
+:matt/marble/21: 668 168
+:matt/marble/21: 732 168
+:matt/marble/21: 540 168
+:matt/marble/21: 476 168
+:matt/marble/20b: 796 120
+:matt/marble/20b: 796 56
+:matt/marble/20b: 140 120
+:matt/marble/20b: 140 56
+:matt/marble/02a: 592 256
+:matt/marble/02a: 608 272
+:matt/marble/02a: 624 288
+:matt/marble/00a: 608 264
+:matt/marble/00a: 624 280
+:matt/marble/00a: 616 288
+:matt/marble/00a: 600 272
+:matt/marble/00a: 632 304
+:matt/marble/00a: 640 296
+:matt/marble/02c: 796 168
+:matt/marble/02c: 140 168
+:matt/marble/08: 572 120
+:matt/marble/08: 636 88
+:matt/marble/08: 700 120
+:matt/marble/08: 444 120
+:matt/marble/08: 316 120
+:matt/marble/08: 252 88
+:matt/marble/08: 188 120
+:matt/marble/08b: 700 88
+:matt/marble/08b: 636 120
+:matt/marble/08b: 188 88
+:matt/marble/08b: 252 120
+:matt/marble/05b: 316 88
+:matt/marble/05b: 604 88
+:matt/marble/thinplatform128p: 640 320
+:matt/marble/thinplatform128p: 592 320
+:matt/marble/thinplatform128p: 184 320
+:matt/marble/thinplatform128p: 232 320
+:matt/marble/08d: 508 120
+:matt/marble/08d: 380 120
+:matt/marble/thinplatform128p: 794 54
+:matt/marble/thinplatform128p: 30 54
+:matt/marble/20d: 904 56
+:matt/marble/20d: 904 120
+:matt/marble/20d: 32 56
+:matt/marble/20d: 32 120
+:matt/marble/02a: 904 184
+:matt/marble/02a: 32 184
+:matt/marble/12a: 48 184
+:matt/marble/12a: 920 184
+:matt/marble/10a: 888 184
+:matt/marble/10a: 16 184
+:geoo/steel/64x32o.S: 444 248
+:geoo/steel/32x16o.S: 492 168
+:geoo/steel/32x16o.S: 428 168
+:geoo/steel/32x16o.S: 460 168

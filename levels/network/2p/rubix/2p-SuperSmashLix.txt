@@ -1,0 +1,341 @@
+$BUILT 2015-09-01 11:45:00
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH SuperSmashLix
+
+#SIZE_X 640
+#SIZE_Y 720
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 60
+#INITIAL 12
+#REQUIRED 12
+#SPAWN_INTERVAL 96
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER -1
+#CLIMBER 12
+#PLATFORMER -1
+#MINER -1
+#JUMPER -1
+#BATTER -1
+
+:geoo/sandstone/Hatch.H: 16 16
+:geoo/sandstone/Hatch.H: 528 16 r
+:geoo/sandstone/Hatch.H: 560 288 r
+:geoo/sandstone/Hatch.H: -16 288
+
+:geoo/sandstone/Goal.G: 592 608
+:geoo/sandstone/Goal.G: -16 608
+
+:geoo/construction/sawblade_small.F: 560 96
+:geoo/construction/sawblade_small.F: 48 96
+:geoo/construction/sawblade_small.F: -16 160
+:geoo/construction/sawblade_small.F: 624 160
+:geoo/construction/sawblade_small.F: 80 288
+:geoo/construction/sawblade_small.F: 272 336
+:geoo/construction/sawblade.F: 300 24
+:geoo/construction/sawblade_small.F: 336 336
+:geoo/construction/sawblade_small.F: 48 336
+:geoo/construction/sawblade_small.F: 560 336
+:geoo/construction/sawblade_small.F: -16 480
+:geoo/construction/sawblade_small.F: 624 480
+:geoo/construction/sawblade_small.F: 32 672
+:geoo/construction/sawblade_small.F: 576 672
+:geoo/construction/sawblade_small.F: 304 608
+:geoo/construction/sawblade_small.F: 16 416
+:geoo/construction/sawblade_small.F: 592 416
+:geoo/construction/sawblade_small.F: 528 288
+:geoo/construction/sawblade_small.F: 176 560
+:geoo/construction/sawblade_small.F: 432 560
+
+:geoo/construction/platform.S: 320 10 rrr
+:geoo/construction/platformbrick: 96 80
+:geoo/construction/platformbrick: 128 80
+:geoo/construction/platformbrick: 160 80
+:geoo/construction/platformbrick: 64 144
+:geoo/construction/platformbrick: 96 144
+:geoo/construction/platformbrick: 128 144
+:geoo/construction/platformbrick: 160 144
+:geoo/construction/platformbrick: 64 208
+:geoo/construction/platformbrick: 96 208
+:geoo/construction/platformbrick: 128 208
+:geoo/construction/platformbrick: 160 208
+:geoo/construction/platformbrick: 128 272
+:geoo/construction/platformbrick: 160 272
+:geoo/construction/platformbrick: 64 336
+:geoo/construction/platformbrick: 96 336
+:geoo/construction/platformbrick: 128 336
+:geoo/construction/platformbrick: 160 336
+:geoo/construction/platformbrick: 192 80
+:geoo/construction/platformbrick: 224 80
+:geoo/construction/platformbrick: 192 144
+:geoo/construction/platformbrick: 224 144
+:geoo/construction/platformbrick: 192 208
+:geoo/construction/platformbrick: 224 208
+:geoo/construction/platformbrick: 192 272
+:geoo/construction/platformbrick: 224 272
+:geoo/construction/platformbrick: 192 336
+:geoo/construction/platformbrick: 224 336
+:geoo/construction/platformbrick: 384 80
+:geoo/construction/platformbrick: 416 80
+:geoo/construction/platformbrick: 448 80
+:geoo/construction/platformbrick: 480 80
+:geoo/construction/platformbrick: 384 144
+:geoo/construction/platformbrick: 416 144
+:geoo/construction/platformbrick: 448 144
+:geoo/construction/platformbrick: 480 144
+:geoo/construction/platformbrick: 384 208
+:geoo/construction/platformbrick: 416 208
+:geoo/construction/platformbrick: 448 208
+:geoo/construction/platformbrick: 480 208
+:geoo/construction/platformbrick: 384 272
+:geoo/construction/platformbrick: 416 272
+:geoo/construction/platformbrick: 448 272
+:geoo/construction/platformbrick: 480 272
+:geoo/construction/platformbrick: 384 336
+:geoo/construction/platformbrick: 416 336
+:geoo/construction/platformbrick: 448 336
+:geoo/construction/platformbrick: 480 336
+:geoo/construction/platformbrick: 512 80
+:geoo/construction/platformbrick: 512 144
+:geoo/construction/platformbrick: 544 144
+:geoo/construction/platformbrick: 512 208
+:geoo/construction/platformbrick: 544 208
+:geoo/construction/platformbrick: 512 336
+:geoo/construction/platformbrick: 544 336
+:geoo/construction/platformbrick: 256 144
+:geoo/construction/platformbrick: 256 208
+:geoo/construction/platformbrick: 256 272
+:geoo/construction/platformbrick: 256 336
+:geoo/construction/platformbrick: 352 144
+:geoo/construction/platformbrick: 352 208
+:geoo/construction/platformbrick: 352 272
+:geoo/construction/platformbrick: 352 336
+:geoo/construction/platformbrick: 272 144
+:geoo/construction/platformbrick: 272 208
+:geoo/construction/platformbrick: 272 272
+:geoo/construction/platformbrick: 336 144
+:geoo/construction/platformbrick: 336 208
+:geoo/construction/platformbrick: 336 272
+:geoo/steel/16x32o.S: 624 64
+:geoo/steel/16x32o.S: 0 64
+:geoo/steel/32x16o.S: 608 672
+:geoo/steel/16x32o.S: 48 336
+:geoo/steel/16x32o.S: 0 320
+:geoo/steel/16x32o.S: 0 352
+:geoo/steel/16x32o.S: 48 368
+:geoo/steel/64x32o.S: 0 688
+:geoo/steel/64x32o.S: 64 688
+:geoo/steel/64x32o.S: 256 688
+:geoo/steel/64x32o.S: 320 688
+:geoo/steel/64x32o.S: 512 688
+:geoo/steel/64x32o.S: 576 688
+:geoo/steel/16x32o.S: 576 336
+:geoo/steel/16x32o.S: 624 320
+:geoo/steel/16x32o.S: 624 352
+:geoo/steel/16x32o.S: 576 368
+:geoo/steel/32x16o.S: 0 672
+:geoo/construction/platformbrick: 64 400
+:geoo/construction/platformbrick: 96 400
+:geoo/construction/platformbrick: 128 400
+:geoo/construction/platformbrick: 160 400
+:geoo/construction/platformbrick: 192 400
+:geoo/construction/platformbrick: 224 400
+:geoo/construction/platformbrick: 384 400
+:geoo/construction/platformbrick: 416 400
+:geoo/construction/platformbrick: 448 400
+:geoo/construction/platformbrick: 480 400
+:geoo/construction/platformbrick: 512 400
+:geoo/construction/platformbrick: 544 400
+:geoo/construction/platformbrick: 256 400
+:geoo/construction/platformbrick: 352 400
+:geoo/construction/platformbrick: 272 400
+:geoo/construction/platformbrick: 336 400
+:geoo/steel/dark_32x16o.S: 64 96
+:geoo/steel/dark_32x16o.S: 96 80
+:geoo/steel/dark_32x16o.S: 128 80
+:geoo/steel/dark_32x16o.S: 480 80
+:geoo/steel/dark_32x16o.S: 512 80
+:geoo/steel/dark_32x16o.S: 544 96
+:geoo/steel/dark_32x16o.S: 384 80
+:geoo/steel/dark_32x16o.S: 416 80
+:geoo/steel/dark_32x16o.S: 448 80
+:geoo/steel/dark_32x16o.S: 160 80
+:geoo/steel/dark_32x16o.S: 192 80
+:geoo/steel/dark_32x16o.S: 224 80
+:geoo/steel/32x16o.S: 576 400
+:geoo/steel/32x16o.S: 608 400
+:geoo/construction/platformbrick: 64 464
+:geoo/construction/platformbrick: 96 464
+:geoo/construction/platformbrick: 128 464
+:geoo/construction/platformbrick: 160 464
+:geoo/construction/platformbrick: 192 464
+:geoo/construction/platformbrick: 224 464
+:geoo/construction/platformbrick: 256 464
+:geoo/construction/platformbrick: 272 464
+:geoo/construction/platformbrick: 128 528
+:geoo/construction/platformbrick: 160 528
+:geoo/construction/platformbrick: 192 528
+:geoo/construction/platformbrick: 224 528
+:geoo/construction/platformbrick: 256 528
+:geoo/construction/platformbrick: 272 528
+:geoo/construction/platformbrick: 336 464
+:geoo/construction/platformbrick: 368 464
+:geoo/construction/platformbrick: 400 464
+:geoo/construction/platformbrick: 432 464
+:geoo/construction/platformbrick: 464 464
+:geoo/construction/platformbrick: 496 464
+:geoo/construction/platformbrick: 528 464
+:geoo/construction/platformbrick: 544 464
+:geoo/construction/platformbrick: 336 528
+:geoo/construction/platformbrick: 368 528
+:geoo/construction/platformbrick: 400 528
+:geoo/construction/platformbrick: 432 528
+:geoo/construction/platformbrick: 464 528
+:geoo/construction/platformbrick: 496 528
+:geoo/steel/dark_32x16o.S: 64 336
+:geoo/steel/dark_32x16o.S: 96 336
+:geoo/steel/dark_32x16o.S: 128 336
+:geoo/steel/dark_32x16o.S: 160 336
+:geoo/steel/dark_32x16o.S: 192 336
+:geoo/steel/dark_32x16o.S: 224 336
+:geoo/steel/dark_32x16o.S: 256 336
+:geoo/steel/dark_32x16o.S: 352 336
+:geoo/steel/dark_32x16o.S: 384 336
+:geoo/steel/dark_32x16o.S: 416 336
+:geoo/steel/dark_32x16o.S: 448 336
+:geoo/steel/dark_32x16o.S: 480 336
+:geoo/steel/dark_32x16o.S: 512 336
+:geoo/steel/dark_32x16o.S: 544 336
+:geoo/sandstone/pillar_bottom_ext: 576 416 f
+:geoo/steel/16x32o.S: 0 288
+:geoo/steel/16x32o.S: 624 288
+:geoo/steel/dark_32x16o.S: 288 336 rrr
+:geoo/steel/dark_32x16o.S: 336 336 rrr
+:geoo/steel/32x16o.S: 0 400
+:geoo/steel/32x16o.S: 32 400
+:geoo/steel/16x16o.S: 0 384
+:geoo/steel/16x16o.S: 624 384
+:geoo/steel/dark_32x16o.S: 96 96
+:geoo/steel/dark_32x16o.S: 512 96
+:geoo/steel/16x32o.S: 0 32
+:geoo/steel/16x32o.S: 624 32
+:geoo/steel/16x32o.S: 0 272 rrr
+:geoo/steel/16x32o.S: 608 272 rrr
+:geoo/steel/16x32o.S: 32 272 rrr
+:geoo/steel/16x32o.S: 576 272 rrr
+:geoo/steel/16x32o.S: 0 16 rrr
+:geoo/steel/16x32o.S: 32 16 rrr
+:geoo/steel/16x32o.S: 608 16 rrr
+:geoo/steel/16x32o.S: 576 16 rrr
+:geoo/steel/16x32o.S: 0 0 rrr
+:geoo/steel/16x32o.S: 32 0 rrr
+:geoo/steel/16x32o.S: 64 0 rrr
+:geoo/steel/16x32o.S: 608 0 rrr
+:geoo/steel/16x32o.S: 576 0 rrr
+:geoo/steel/16x32o.S: 544 0 rrr
+:geoo/sandstone/pillar_bottom_ext: 0 416 f
+:geoo/steel/dark_32x16o.S: 272 320
+:geoo/steel/dark_32x16o.S: 336 320
+:geoo/construction/platformbrick: 304 400
+:geoo/construction/platformbrick: 304 272
+:geoo/construction/platformbrick: 304 208
+:geoo/construction/platformbrick: 304 144
+:geoo/construction/platformbrick: 304 464
+:geoo/construction/platformbrick: 304 528
+:geoo/construction/platformbrick: 64 272
+:geoo/construction/platformbrick: 96 272
+:geoo/construction/platformbrick: 512 272
+:geoo/construction/platformbrick: 544 272
+:geoo/construction/platformbrick: 0 208
+:geoo/construction/platformbrick: 32 208
+:geoo/construction/platformbrick: 576 208
+:geoo/construction/platformbrick: 608 208
+:geoo/construction/platformbrick: 0 464
+:geoo/construction/platformbrick: 32 464
+:geoo/construction/platformbrick: 576 464
+:geoo/construction/platformbrick: 608 464
+:geoo/construction/platformbrick: 528 528
+:geoo/construction/platformbrick: 560 528
+:geoo/construction/platformbrick: 592 528
+:geoo/construction/platformbrick: 624 528
+:geoo/construction/platformbrick: 64 528
+:geoo/construction/platformbrick: 96 528
+:geoo/construction/platformbrick: 0 528
+:geoo/construction/platformbrick: 32 528
+:geoo/construction/platform.S: 272 96
+:geoo/steel/dark_32x16o.S: 32 96
+:geoo/steel/dark_32x16o.S: 0 96
+:geoo/steel/dark_32x16o.S: 576 96
+:geoo/steel/dark_32x16o.S: 608 96
+:geoo/construction/platformbrick: 0 144
+:geoo/construction/platformbrick: 32 144
+:geoo/construction/platformbrick: 576 144
+:geoo/construction/platformbrick: 608 144
+:geoo/construction/platform.S: 304 160
+:geoo/construction/platform.S: 304 224
+:geoo/construction/platform.S: 304 416
+:geoo/construction/platform.S: 304 480
+:geoo/steel/16x32o.S: 512 0 rrr
+:geoo/steel/16x32o.S: 480 0 rrr
+:geoo/steel/16x32o.S: 448 0 rrr
+:geoo/steel/16x32o.S: 416 0 rrr
+:geoo/steel/16x32o.S: 96 0 rrr
+:geoo/steel/16x32o.S: 128 0 rrr
+:geoo/steel/16x32o.S: 160 0 rrr
+:geoo/steel/16x32o.S: 192 0 rrr
+:geoo/steel/16x32o.S: 384 0 rrr
+:geoo/steel/16x32o.S: 224 0 rrr
+:geoo/steel/16x32o.S: 256 0 rrr
+:geoo/steel/16x32o.S: 288 0 rrr
+:geoo/steel/16x32o.S: 352 0 rrr
+:geoo/steel/16x32o.S: 320 0 rrr
+:geoo/construction/platform.S: 336 96
+:geoo/construction/platform.S: 176 560
+:geoo/construction/platform.S: 432 560
+:geoo/construction/platform.S: 96 464
+:geoo/construction/platform.S: 512 464
+:geoo/construction/platform.S: 448 400
+:geoo/construction/platform.S: 160 400
+:geoo/construction/platform.S: 432 144
+:geoo/construction/platform.S: 176 144
+:geoo/construction/platform.S: 192 272
+:geoo/construction/platform.S: 416 272
+:geoo/construction/platform.S: 304 608
+:geoo/steel/16x16o.S: 304 608
+:geoo/steel/16x16o.S: 320 608
+:geoo/steel/dark_32x16o.S: 80 288 r
+:geoo/steel/dark_32x16o.S: 48 288
+:geoo/steel/dark_32x16o.S: 560 288
+:geoo/steel/dark_32x16o.S: 544 288 rrr
+:geoo/steel/16x16o.S: 192 560
+:geoo/steel/16x16o.S: 176 560
+:geoo/steel/16x16o.S: 432 560
+:geoo/steel/16x16o.S: 448 560
+:geoo/steel/16x16o.S: 32 672
+:geoo/steel/16x16o.S: 592 672
+:amanda/steel/steel_flange_right24x16.S: 48 320
+:amanda/steel/steel8x16.S: 56 312 r
+:amanda/steel/steel8x16.S: 48 304
+:amanda/steel/steel_flange_left24x16.S: 568 320
+:amanda/steel/steel24x8.S: 568 312
+:amanda/steel/steel8x16.S: 584 304
+:amanda/steel/steel_flange_right24x16.S: 176 64
+:amanda/steel/steel_flange_right24x16.S: 192 48
+:amanda/steel/steel_flange_right24x16.S: 208 32
+:amanda/steel/steel8x16.S: 206 24 rrr
+:amanda/steel/steel8x16.S: 206 16 rrr
+:amanda/steel/steel_flange_right24x16.S: 432 64 frr
+:amanda/steel/steel_flange_right24x16.S: 416 48 frr
+:amanda/steel/steel_flange_right24x16.S: 400 32 frr
+:amanda/steel/steel8x16.S: 410 24 frrr
+:amanda/steel/steel8x16.S: 410 16 frrr
+:geoo/steel/dark_32x16o.S: 384 96 rr
+:geoo/steel/dark_32x16o.S: 224 96 rr
+:geoo/steel/dark_32x16o.S: 272 368
+:geoo/steel/dark_32x16o.S: 336 368

@@ -1,0 +1,96 @@
+$BUILT 2012-04-22 18:36:15
+$AUTHOR mobius
+$GERMAN 
+$ENGLISH When the Levee Breaks
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 80
+#REQUIRED 55
+#SPAWN_INTERVAL 40
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#PLATFORMER 5
+#BUILDER 4
+#EXPLODER2 3
+#BLOCKER 3
+#BASHER 2
+#RUNNER 1
+#FLOATER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:simon/hatch001.H: 80 48
+:simon/hatch001.H: 192 48
+:simon/hatch001.H: 304 48
+:simon/hatch001.H: 416 48
+
+:simon/tapir/goal.G: 560 264
+
+:simon/acid.W: 64 352
+:simon/acid.W: 112 352
+:simon/acid.W: 160 352
+:simon/acid.W: 208 352
+:simon/acid.W: 256 352
+:simon/acid.W: 304 352
+:simon/acid.W: 352 352
+:simon/acid.W: 400 352
+:simon/acid.W: 448 352
+:simon/acid.W: 544 352
+:simon/acid.W: 496 352
+:simon/acid.W: 592 352
+
+:simon/tapir/064v: 0 272
+:simon/tapir/032hd: 64 240
+:simon/tapir/032hd: 0 272
+:simon/tapir/032hd: 128 208
+:simon/tapir/032h: 64 208
+:simon/tapir/032h: 0 208
+:simon/tapir/032h: 0 240
+:simon/tapir/032v: 160 208 d
+:simon/tapir/032hd: 576 344 frr
+:simon/tapir/032hd: 512 312 frr
+:simon/tapir/032h: 576 312 frr
+:geoo/steel/32x16o.S: 0 0
+:geoo/steel/32x16o.S: 32 0
+:geoo/steel/32x16o.S: 64 0
+:geoo/steel/32x16o.S: 96 0
+:geoo/steel/32x16o.S: 128 0
+:geoo/steel/32x16o.S: 160 0
+:geoo/steel/32x16o.S: 192 0
+:geoo/steel/32x16o.S: 224 0
+:geoo/steel/32x16o.S: 256 0
+:geoo/steel/32x16o.S: 288 0
+:geoo/steel/32x16o.S: 320 0
+:geoo/steel/32x16o.S: 352 0
+:geoo/steel/32x16o.S: 384 0
+:geoo/steel/32x16o.S: 416 0
+:geoo/steel/32x16o.S: 448 0
+:geoo/steel/32x16o.S: 480 0
+:geoo/steel/32x16o.S: 512 0
+:geoo/steel/32x16o.S: 544 0
+:geoo/steel/32x16o.S: 576 0
+:geoo/steel/32x16o.S: 608 0
+:geoo/steel/16x16o.S: 144 16
+:geoo/steel/16x16o.S: 48 16
+:geoo/steel/16x32o.S: 272 16
+:geoo/steel/16x32o.S: 64 16
+:geoo/steel/16x32o.S: 592 16
+:geoo/steel/32x32o.S: 400 16
+:geoo/steel/16x16o.S: 192 16
+:geoo/steel/16x16o.S: 0 16
+:geoo/steel/16x16o.S: 352 16
+:geoo/steel/16x16o.S: 512 16
+:geoo/steel/16x16o.S: 496 16
+:geoo/steel/16x16o.S: 432 16
+:geoo/steel/16x16o.S: 576 16

@@ -1,0 +1,161 @@
+$BUILT 2014-07-04 02:05:47
+$AUTHOR namida
+$GERMAN 
+$ENGLISH Variety Day
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 18
+#SPAWN_INTERVAL 30
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/marble/Hatch.H: 256 0
+
+:matt/marble/Goal.G: 512 320
+
+:simon/acid.W: 32 336
+:simon/acid.W: 80 336
+:proxima/flame.F: 576 120
+
+:geoo/steel/dark_32x32o.S: 224 80
+:geoo/steel/dark_32x64o.S: 192 48
+:geoo/steel/dark_32x32o.S: 320 80
+:geoo/steel/dark_32x64o.S: 352 48
+:matt/marble/001: 192 112
+:matt/marble/001: 200 112
+:matt/marble/001: 208 112
+:matt/marble/001: 216 112
+:matt/marble/001: 224 112
+:matt/marble/001: 232 112
+:matt/marble/001: 240 112
+:matt/marble/001: 248 112
+:matt/marble/001: 256 112
+:matt/marble/001: 264 112
+:matt/marble/001: 272 112
+:matt/marble/001: 280 112
+:matt/marble/001: 288 112
+:matt/marble/001: 296 112
+:matt/marble/001: 304 112
+:matt/marble/001: 312 112
+:matt/marble/001: 320 112
+:matt/marble/001: 328 112
+:matt/marble/001: 336 112
+:matt/marble/001: 344 112
+:matt/marble/001: 352 112
+:matt/marble/001: 360 112
+:matt/marble/001: 368 112
+:matt/marble/001: 376 112
+:matt/marble/06a: 160 64
+:matt/marble/06a: 160 0
+:matt/marble/06a: 128 64
+:matt/marble/06a: 128 0
+:matt/marble/06a: 96 64
+:matt/marble/06a: 96 0
+:matt/marble/06a: 64 64
+:matt/marble/06a: 64 0
+:matt/marble/06a: 32 64
+:matt/marble/06a: 32 0
+:matt/marble/01a: 32 128
+:matt/marble/01a: 48 128
+:matt/marble/01a: 64 128
+:matt/marble/01a: 80 128
+:matt/marble/01a: 96 128
+:matt/marble/01a: 112 128
+:matt/marble/01a: 128 128
+:matt/marble/01a: 144 128
+:matt/marble/01a: 160 128
+:matt/marble/01a: 176 128
+:matt/marble/01a: 192 128
+:matt/marble/01a: 208 128
+:matt/marble/01a: 224 128
+:matt/marble/01a: 240 128
+:matt/marble/01a: 256 128
+:matt/marble/01a: 272 128
+:matt/marble/01a: 288 128
+:matt/marble/01a: 304 128
+:matt/marble/01a: 320 128
+:matt/marble/01a: 336 128
+:matt/marble/01a: 352 128
+:matt/marble/01a: 368 128
+:matt/marble/01a: 384 128
+:matt/marble/01a: 400 128
+:geoo/steel/dark_32x32o.S: 288 136
+:geoo/steel/dark_64x64o.S: 320 136
+:geoo/steel/dark_64x64o.S: 384 136
+:geoo/steel/dark_64x64o.S: 448 136
+:matt/marble/01a: 512 128
+:matt/marble/18: 512 96
+:matt/marble/18: 552 136
+:geoo/steel/dark_64x64o.S: 512 136
+:matt/marble/06: 608 208
+:matt/marble/18: 592 176
+:geoo/steel/dark_32x32o.S: 576 168
+:matt/marble/18: 472 56
+:matt/marble/18: 432 16
+:matt/marble/18: 392 -24
+:matt/marble/06: 0 0
+:matt/marble/06: 0 64
+:matt/marble/06: 0 128
+:matt/marble/06: 0 192
+:matt/marble/06: 0 256
+:matt/marble/06: 0 320
+:matt/marble/06a: 288 208
+:matt/marble/06: 320 208
+:matt/marble/21a: 272 320
+:matt/marble/06: 320 272
+:matt/marble/06: 320 336
+:matt/marble/06: 128 208
+:matt/marble/21a: 144 320
+:matt/marble/06: 128 272
+:matt/marble/06: 128 336
+:matt/marble/21: 0 384
+:matt/marble/21: 64 384
+:matt/marble/21: 64 208
+:matt/marble/21: 160 352
+:matt/marble/21: 224 352
+:matt/marble/21: 256 352
+:matt/marble/06a: 160 208
+:matt/marble/06a: 160 272
+:matt/marble/06a: 288 272
+:matt/marble/21: 352 208
+:matt/marble/21: 416 208
+:matt/marble/21: 416 256
+:matt/marble/21: 480 256
+:matt/marble/21: 544 256
+:matt/marble/01a: 416 128
+:matt/marble/01a: 432 128
+:matt/marble/01a: 448 128
+:matt/marble/01a: 464 128
+:matt/marble/01a: 480 128
+:matt/marble/01a: 496 128
+:matt/marble/08a: 352 320
+:matt/marble/08a: 480 368
+:matt/marble/08a: 544 368
+:matt/marble/08a: 352 352
+:matt/marble/08a: 416 320
+:matt/marble/08a: 416 352
+:matt/marble/21: 352 384
+:matt/marble/21: 416 384
+:matt/marble/06: 608 272
+:matt/marble/06: 608 336

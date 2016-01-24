@@ -1,0 +1,186 @@
+$BUILT 2015-02-08 21:01:50
+$AUTHOR RubiX
+$GERMAN 
+$ENGLISH The first to finish!(2p race)
+
+#SIZE_X 1360
+#SIZE_Y 990
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 680
+#START_Y 570
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 1
+#INITIAL 1
+#REQUIRED 1
+#SPAWN_INTERVAL 53
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 30
+#JUMPER 30
+#BUILDER 30
+#PLATFORMER 30
+#BASHER 30
+#MINER 30
+#DIGGER 30
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/carnival/Hatch.H: 96 44
+:matt/carnival/Hatch.H: 96 416
+
+:matt/carnival/Goal.G: 1290 272
+:matt/carnival/Goal.G: 1290 644
+
+:matt/carnival/09: 112 108
+:matt/carnival/10: 144 108 r
+:matt/carnival/09: 240 108
+:matt/carnival/10: 208 108 r
+:matt/carnival/09: 112 480
+:matt/carnival/10: 144 480 r
+:matt/carnival/09: 240 480
+:matt/carnival/10: 208 480 r
+:matt/carnival/25: 48 448
+:matt/carnival/25: 48 384
+:matt/carnival/24: 48 76
+:matt/carnival/24: 48 12
+:matt/carnival/06: 336 108
+:matt/carnival/06: 336 236
+:matt/carnival/05: 336 172
+:matt/carnival/09: 368 300
+:matt/carnival/10: 656 256 r
+:matt/carnival/09: 400 300
+:matt/carnival/10: 944 256
+:matt/carnival/56: 688 256
+:matt/carnival/09: 496 300
+:matt/carnival/09: 592 300
+:matt/carnival/09: 720 384
+:matt/carnival/15: 336 316
+:matt/carnival/14: 336 300
+:matt/carnival/13: 352 300
+:matt/carnival/12: 352 316
+:matt/steel/32x64.S: 752 224
+:matt/steel/32x64.S: 832 192
+:matt/steel/16x32.S: 832 256 r
+:matt/steel/16x32.S: 720 240 r
+:matt/carnival/07: 1152 384
+:matt/carnival/05: 1152 448
+:matt/steel/32x32.S: 1200 528
+:matt/steel/32x32.S: 1200 496
+:matt/steel/32x32.S: 1200 464
+:matt/steel/32x32.S: 1200 432
+:matt/steel/32x32.S: 1200 400
+:matt/steel/32x32.S: 1200 368
+:matt/steel/32x32.S: 1200 336
+:matt/steel/32x32.S: 1200 304
+:matt/steel/32x32.S: 1200 272
+:matt/steel/32x32.S: 1200 240
+:matt/steel/32x32.S: 1296 240
+:matt/steel/32x32.S: 1264 240
+:matt/steel/48x48.S: 1296 384
+:matt/steel/48x48.S: 1296 432
+:matt/steel/48x48.S: 1296 480
+:matt/steel/48x48.S: 1296 528
+:matt/steel/64x32.S: 1232 576
+:matt/steel/64x32.S: 1168 576
+:matt/steel/16x32.S: 1152 576
+:matt/carnival/34: 1232 544 frr
+:matt/steel/32x32.S: 1328 240
+:matt/carnival/36: 1232 512
+:matt/carnival/34: 1232 480 frr
+:matt/carnival/36: 1232 448
+:matt/carnival/34: 1232 416 frr
+:matt/carnival/06: 336 480
+:matt/carnival/06: 336 608
+:matt/carnival/05: 336 544
+:matt/carnival/09: 368 672
+:matt/carnival/09: 400 672
+:matt/carnival/09: 496 672
+:matt/carnival/09: 592 672
+:matt/carnival/15: 336 688
+:matt/carnival/14: 336 672
+:matt/carnival/13: 352 672
+:matt/carnival/12: 352 688
+:matt/carnival/10: 656 628 r
+:matt/carnival/10: 944 628
+:matt/carnival/56: 688 628
+:matt/carnival/09: 720 756
+:matt/steel/32x64.S: 752 596
+:matt/steel/48x48.S: 784 660
+:matt/steel/32x64.S: 832 564
+:matt/steel/16x32.S: 832 628 r
+:matt/steel/16x32.S: 720 612 r
+:matt/steel/32x32.S: 1296 576
+:matt/steel/32x32.S: 1328 576
+:matt/carnival/07: 1152 756
+:matt/carnival/05: 1152 820
+:matt/steel/32x32.S: 1200 900
+:matt/steel/32x32.S: 1200 868
+:matt/steel/32x32.S: 1200 836
+:matt/steel/32x32.S: 1200 804
+:matt/steel/32x32.S: 1200 772
+:matt/steel/32x32.S: 1200 740
+:matt/steel/32x32.S: 1200 708
+:matt/steel/32x32.S: 1200 676
+:matt/steel/32x32.S: 1200 612
+:matt/steel/32x32.S: 1232 612
+:matt/steel/32x32.S: 1296 612
+:matt/steel/32x32.S: 1264 612
+:matt/steel/48x48.S: 1296 756
+:matt/steel/48x48.S: 1296 804
+:matt/steel/48x48.S: 1296 852
+:matt/steel/48x48.S: 1296 900
+:matt/steel/64x32.S: 1232 948
+:matt/steel/64x32.S: 1168 948
+:matt/steel/16x32.S: 1152 948
+:matt/carnival/34: 1232 916 frr
+:matt/steel/32x32.S: 1328 612
+:matt/carnival/36: 1232 884
+:matt/carnival/34: 1232 852 frr
+:matt/carnival/36: 1232 820
+:matt/carnival/34: 1232 788 frr
+:matt/steel/32x32.S: 1296 948
+:matt/steel/32x32.S: 1328 948
+:matt/steel/32x32.S: 1232 240
+:matt/steel/32x32.S: 1200 644
+:matt/carnival/36: 1232 756
+:matt/carnival/36: 1232 384
+:matt/steel/48x48.S: 1296 708
+:matt/steel/48x48.S: 1296 336
+:matt/carnival/07: 1152 628
+:matt/carnival/05: 1152 692
+:matt/carnival/07: 1152 256
+:matt/carnival/05: 1152 320
+:matt/carnival/25: 784 708
+:matt/steel/48x48.S: 784 288
+:matt/carnival/25: 784 336
+:matt/carnival/10: 288 480 r
+:matt/carnival/10: 288 108 r
+:matt/steel/48x48.S: 784 240
+:matt/steel/48x48.S: 784 612
+:matt/steel/32x64.S: 1152 884
+:matt/steel/32x64.S: 1152 512
+:matt/carnival/26: 912 608 d
+:matt/carnival/26: 912 240 d
+:matt/carnival/24: 848 708
+:matt/carnival/09: 896 692
+:matt/carnival/24: 848 336
+:matt/carnival/09: 896 320
+:matt/carnival/08: 864 596 rr
+:matt/carnival/08: 864 224 rr
+:matt/carnival/15: 896 224
+:matt/carnival/15: 912 224
+:matt/carnival/15: 896 596
+:matt/carnival/15: 912 596
+:matt/steel/64x32.S: 1232 204
+:matt/steel/64x32.S: 1168 204
+:matt/steel/16x32.S: 1152 204
+:matt/steel/32x32.S: 1296 204
+:matt/steel/32x64.S: 1152 140
+:matt/steel/32x32.S: 1328 204

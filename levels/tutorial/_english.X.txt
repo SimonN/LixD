@@ -1,0 +1,14 @@
+Tutorial Levels
+
+Try playing through these levels
+in the given order. If you get
+stuck, you should skip a level and
+simply play the next one.
+
+We also want to make a few levels
+which teach the multiplayer mode.
+
+Start in the directory "skills".
+
+If you've mastered the tutorials,
+click ".." to leave the directory.

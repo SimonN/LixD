@@ -1,0 +1,146 @@
+$BUILT 2014-07-01 19:53:29
+$AUTHOR Nortaneous
+$GERMAN 
+$ENGLISH The Ring of Fnargl
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 80
+#REQUIRED 10
+#SPAWN_INTERVAL 50
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#FLOATER 30
+#CUBER 3
+#EXPLODER2 1
+#PLATFORMER 5
+#MINER 1
+#DIGGER 2
+#RUNNER 1
+#BLOCKER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 304 72
+
+:geoo/construction/Goal2.G: 288 -16
+
+:matt/underworld/Lava.W: 208 368
+:matt/underworld/Lava.W: 16 368
+:matt/underworld/Lava.W: 64 368
+:matt/underworld/Lava.W: 112 368
+:matt/underworld/Lava.W: 160 368
+:matt/underworld/Lava.W: -32 368
+:matt/underworld/Lava.W: 384 368
+:matt/underworld/Lava.W: 480 320
+:matt/underworld/Lava.W: 528 320
+:matt/underworld/Lava.W: 576 320
+:matt/underworld/Lava.W: 624 320
+:matt/underworld/Lava.W: -32 320
+:matt/underworld/Lava.W: 16 320
+:matt/underworld/Lava.W: 64 320
+:matt/underworld/Lava.W: 112 320
+:matt/underworld/Lava.W: 160 320
+:matt/underworld/Lava.W: 432 320
+:matt/underworld/Lava.W: 432 368
+:matt/underworld/Lava.W: 480 368
+:matt/underworld/Lava.W: 528 368
+:matt/underworld/Lava.W: 576 368
+:matt/underworld/Lava.W: 624 368
+:matt/underworld/Lava.W: 16 272
+:matt/underworld/Lava.W: 64 272
+:matt/underworld/Lava.W: 112 272
+:matt/underworld/Lava.W: -32 272
+:matt/underworld/Lava.W: 96 224
+:matt/underworld/Lava.W: 48 224
+:matt/underworld/Lava.W: 0 224
+:matt/underworld/Lava.W: 480 272
+:matt/underworld/Lava.W: 528 272
+:matt/underworld/Lava.W: 576 272
+:matt/underworld/Lava.W: 624 272
+:matt/underworld/Lava.W: 512 224
+:matt/underworld/Lava.W: 560 224
+:matt/underworld/Lava.W: 608 224
+:matt/underworld/Lava.W: 80 176
+:matt/underworld/Lava.W: 32 176
+:matt/underworld/Lava.W: -16 176
+:matt/underworld/Lava.W: 496 176
+:matt/underworld/Lava.W: 544 176
+:matt/underworld/Lava.W: 592 176
+
+:geoo/steel/16x16o.S: 192 336
+:geoo/steel/16x16o.S: 464 256
+:geoo/steel/16x16o.S: 240 80
+:geoo/steel/16x16o.S: 416 112
+:geoo/steel/32x32o.S: 144 272
+:geoo/steel/16x16o.S: 160 304
+:geoo/steel/32x32o.S: 176 304
+:geoo/steel/32x32o.S: 208 336
+:geoo/steel/64x32o.S: 256 368
+:geoo/steel/64x32o.S: 320 368
+:geoo/steel/16x16o.S: 208 320
+:geoo/steel/16x16o.S: 176 288
+:geoo/steel/16x32o.S: 144 240
+:geoo/steel/16x32o.S: 144 208
+:geoo/steel/16x32o.S: 384 352
+:geoo/steel/32x32o.S: 400 336
+:geoo/steel/16x16o.S: 160 256
+:geoo/steel/16x32o.S: 240 352
+:geoo/steel/16x16o.S: 256 352
+:geoo/steel/16x16o.S: 368 352
+:geoo/steel/32x32o.S: 432 304
+:geoo/steel/32x32o.S: 464 272
+:geoo/steel/16x16o.S: 448 288
+:geoo/steel/16x16o.S: 464 304
+:geoo/steel/16x16o.S: 416 320
+:geoo/steel/16x32o.S: 480 240
+:geoo/steel/16x32o.S: 480 208
+:geoo/steel/16x32o.S: 480 176
+:geoo/steel/32x32o.S: 432 112
+:geoo/steel/32x32o.S: 400 80
+:geoo/steel/32x32o.S: 112 176
+:geoo/steel/16x16o.S: 80 176
+:geoo/steel/16x16o.S: 432 336
+:geoo/steel/16x16o.S: 432 96
+:geoo/steel/32x16o.S: 368 64
+:geoo/steel/16x16o.S: 384 80
+:geoo/steel/16x32o.S: 144 176
+:geoo/steel/32x16o.S: 240 64
+:geoo/steel/32x32o.S: 208 80
+:geoo/steel/16x16o.S: 192 96
+:geoo/steel/16x16o.S: 208 112
+:geoo/steel/32x32o.S: 176 112
+:geoo/steel/16x16o.S: 192 144
+:geoo/steel/16x32o.S: 176 144
+:geoo/steel/16x32o.S: 176 176
+:geoo/steel/32x32o.S: 464 144
+:geoo/steel/16x16o.S: 464 128
+:geoo/steel/16x16o.S: 448 144
+:geoo/steel/16x16o.S: 464 176
+:geoo/abstract/cvblocks/030: 272 80
+:geoo/abstract/cvblocks/030: 336 80
+:geoo/abstract/cvblocks/025: 256 80
+:geoo/abstract/cvblocks/025: 368 80
+:geoo/abstract/cvblocks/015: 384 96
+:geoo/abstract/cvblocks/015: 240 96
+:geoo/abstract/cvblocks/020: 272 64
+:geoo/abstract/cvblocks/020: 336 64
+:geoo/steel/16x32o.S: 96 176
+:geoo/steel/32x16o.S: 112 208
+:geoo/steel/16x32o.S: 128 224
+:geoo/abstract/cvblocks/044: 496 240
+:geoo/abstract/cvblocks/044: 528 176
+:geoo/abstract/cvblocks/040: 496 176
+:geoo/abstract/cvblocks/016: 288 48
+:geoo/abstract/cvblocks/017: 336 48

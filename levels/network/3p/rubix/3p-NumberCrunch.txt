@@ -1,0 +1,1046 @@
+$BUILT 2014-04-19 11:00:40
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Number Crunch (3p)
+
+#SIZE_X 1280
+#SIZE_Y 720
+#TORUS_X 0
+#TORUS_Y 1
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 50
+#INITIAL 80
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 60
+#JUMPER 60
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 5
+#BUILDER 40
+#PLATFORMER 50
+#BASHER 50
+#MINER 50
+#DIGGER 45
+#NOTHING 0
+#BATTER 10
+
+:amanda/occult/hatch_tentacle.H: 32 656
+:amanda/occult/hatch_tentacle.H: 32 176
+:amanda/occult/hatch_tentacle.H: 32 416
+
+:amanda/occult/occult_goal_skull.G: 960 672
+:amanda/occult/occult_goal_skull.G: 960 192
+:amanda/occult/occult_goal_skull.G: 960 432
+:amanda/occult/occult_goal_skull.G: 960 576
+:amanda/occult/occult_goal_skull.G: 960 96
+:amanda/occult/occult_goal_skull.G: 960 336
+
+:geoo/construction/squisher.T: 556 304
+:geoo/construction/squisher.T: 556 296
+:geoo/construction/squisher.T: 556 288
+:geoo/construction/squisher.T: 556 280
+:geoo/construction/squisher.T: 556 272
+:geoo/construction/squisher.T: 524 304
+:geoo/construction/squisher.T: 524 296
+:geoo/construction/squisher.T: 524 288
+:geoo/construction/squisher.T: 524 280
+:geoo/construction/squisher.T: 524 272
+:geoo/construction/squisher.T: 492 304
+:geoo/construction/squisher.T: 492 296
+:geoo/construction/squisher.T: 492 288
+:geoo/construction/squisher.T: 492 280
+:geoo/construction/squisher.T: 492 272
+:geoo/construction/squisher.T: 556 64
+:geoo/construction/squisher.T: 556 56
+:geoo/construction/squisher.T: 556 48
+:geoo/construction/squisher.T: 556 40
+:geoo/construction/squisher.T: 556 32
+:geoo/construction/squisher.T: 524 64
+:geoo/construction/squisher.T: 524 56
+:geoo/construction/squisher.T: 524 48
+:geoo/construction/squisher.T: 524 40
+:geoo/construction/squisher.T: 524 32
+:geoo/construction/squisher.T: 492 64
+:geoo/construction/squisher.T: 492 56
+:geoo/construction/squisher.T: 492 48
+:geoo/construction/squisher.T: 492 40
+:geoo/construction/squisher.T: 492 32
+:geoo/construction/squisher.T: 556 544
+:geoo/construction/squisher.T: 556 536
+:geoo/construction/squisher.T: 556 528
+:geoo/construction/squisher.T: 556 520
+:geoo/construction/squisher.T: 556 512
+:geoo/construction/squisher.T: 524 544
+:geoo/construction/squisher.T: 524 536
+:geoo/construction/squisher.T: 524 528
+:geoo/construction/squisher.T: 524 520
+:geoo/construction/squisher.T: 524 512
+:geoo/construction/squisher.T: 492 544
+:geoo/construction/squisher.T: 492 536
+:geoo/construction/squisher.T: 492 528
+:geoo/construction/squisher.T: 492 520
+:geoo/construction/squisher.T: 492 512
+:geoo/construction/squisher.T: 960 544
+:geoo/construction/squisher.T: 960 536
+:geoo/construction/squisher.T: 960 528
+:geoo/construction/squisher.T: 960 520
+:geoo/construction/squisher.T: 960 512
+:geoo/construction/squisher.T: 992 544
+:geoo/construction/squisher.T: 992 536
+:geoo/construction/squisher.T: 992 528
+:geoo/construction/squisher.T: 992 520
+:geoo/construction/squisher.T: 992 512
+:geoo/construction/squisher.T: 1024 544
+:geoo/construction/squisher.T: 1024 536
+:geoo/construction/squisher.T: 1024 528
+:geoo/construction/squisher.T: 1024 520
+:geoo/construction/squisher.T: 1024 512
+:geoo/construction/squisher.T: 1056 544
+:geoo/construction/squisher.T: 1056 536
+:geoo/construction/squisher.T: 1056 528
+:geoo/construction/squisher.T: 1056 520
+:geoo/construction/squisher.T: 1056 512
+:geoo/construction/squisher.T: 960 64
+:geoo/construction/squisher.T: 960 56
+:geoo/construction/squisher.T: 960 48
+:geoo/construction/squisher.T: 960 40
+:geoo/construction/squisher.T: 960 32
+:geoo/construction/squisher.T: 992 64
+:geoo/construction/squisher.T: 992 56
+:geoo/construction/squisher.T: 992 48
+:geoo/construction/squisher.T: 992 40
+:geoo/construction/squisher.T: 992 32
+:geoo/construction/squisher.T: 1024 64
+:geoo/construction/squisher.T: 1024 56
+:geoo/construction/squisher.T: 1024 48
+:geoo/construction/squisher.T: 1024 40
+:geoo/construction/squisher.T: 1024 32
+:geoo/construction/squisher.T: 1056 64
+:geoo/construction/squisher.T: 1056 56
+:geoo/construction/squisher.T: 1056 48
+:geoo/construction/squisher.T: 1056 40
+:geoo/construction/squisher.T: 1056 32
+:geoo/construction/squisher.T: 960 304
+:geoo/construction/squisher.T: 960 296
+:geoo/construction/squisher.T: 960 288
+:geoo/construction/squisher.T: 960 280
+:geoo/construction/squisher.T: 960 272
+:geoo/construction/squisher.T: 992 304
+:geoo/construction/squisher.T: 992 296
+:geoo/construction/squisher.T: 992 288
+:geoo/construction/squisher.T: 992 280
+:geoo/construction/squisher.T: 992 272
+:geoo/construction/squisher.T: 1024 304
+:geoo/construction/squisher.T: 1024 296
+:geoo/construction/squisher.T: 1024 288
+:geoo/construction/squisher.T: 1024 280
+:geoo/construction/squisher.T: 1024 272
+:geoo/construction/squisher.T: 1056 304
+:geoo/construction/squisher.T: 1056 296
+:geoo/construction/squisher.T: 1056 288
+:geoo/construction/squisher.T: 1056 280
+:geoo/construction/squisher.T: 1056 272
+
+:geoo/construction/sawblade_small.F: 464 640
+:geoo/construction/sawblade_small.F: 560 640
+:geoo/construction/sawblade_small.F: 464 160
+:geoo/construction/sawblade_small.F: 560 160
+:geoo/construction/sawblade_small.F: 464 400
+:geoo/construction/sawblade_small.F: 560 400
+
+:amanda/steel/steel_flange_left24x16.S: 1184 32 rrr
+:amanda/steel/steel_flange_left24x16.S: 1184 512 rrr
+:amanda/steel/steel_flange_left24x16.S: 1184 272 rrr
+:amanda/occult/occult_wax32x16_cap_left: 536 192 frrr
+:amanda/occult/occult_wax32x16_cap_left: 496 192 rrr
+:amanda/occult/occult_wax32x16_cap_left: 536 672 frrr
+:amanda/occult/occult_wax32x16_cap_left: 496 672 rrr
+:amanda/occult/occult_wax32x16_cap_left: 536 432 frrr
+:amanda/occult/occult_wax32x16_cap_left: 592 448 frrr
+:amanda/occult/occult_wax32x16_cap_left: 592 688 frrr
+:amanda/occult/occult_wax32x16_cap_left: 592 208 frrr
+:amanda/occult/occult_wax32x48_cap_left_sheer: 384 80 frrr
+:amanda/occult/occult_wax64x64: 384 16 r
+:amanda/occult/occult_wax32x48_cap_left_sheer: 384 320 frrr
+:amanda/occult/occult_wax64x64: 384 256 r
+:amanda/occult/occult_wax64x64: 384 496 r
+:amanda/occult/occult_wax32x48_cap_left_sheer: 144 320 rrr
+:amanda/occult/occult_wax64x64: 128 256 rrr
+:amanda/occult/occult_wax32x16_cap_left: 928 544 rrr
+:amanda/occult/occult_wax32x16_cap_left: 928 64 rrr
+:amanda/occult/occult_wax32x16_cap_left: 928 304 rrr
+:amanda/occult/occult_wax32x16_cap_left: 496 432 rrr
+:amanda/occult/occult_wax32x16_cap_left: 576 672 frrr
+:amanda/occult/occult_wax32x16_cap_left: 576 192 frrr
+:amanda/occult/occult_wax32x16_cap_left: 576 432 frrr
+:amanda/occult/occult_wax32x16_cap_left: 448 544 rrr
+:amanda/occult/occult_wax32x16_cap_left: 448 304 rrr
+:amanda/occult/occult_wax32x16_cap_left: 448 64 rrr
+:amanda/occult/occult_wax32x16_cap_left: 464 320 rrr
+:amanda/occult/occult_wax32x16_cap_left: 464 80 rrr
+:amanda/occult/occult_wax_details_sunken_cube: 64 576 frr
+:amanda/occult/occult_wax_details_sunken_cube: 48 576 frr
+:amanda/occult/occult_wax_details_sunken_cube: 64 336 frr
+:amanda/occult/occult_wax_details_sunken_cube: 48 336 frr
+:amanda/occult/occult_wax_details_sunken_cube: 64 96 frr
+:amanda/occult/occult_wax_details_sunken_cube: 32 336 frr
+:amanda/occult/occult_wax_details_sunken_lix_b: 432 592
+:amanda/occult/occult_wax_details_sunken_lix_b: 432 352
+:amanda/occult/occult_wax_details_sunken_lix_b: 432 112
+:amanda/occult/occult_wax_details_sunken_lix_b: 144 592
+:amanda/occult/occult_wax_details_sunken_lix_b: 144 352
+:amanda/occult/occult_wax_details_sunken_lix_b: 144 112
+:amanda/occult/occult_wax_details_sunken_cube: 160 592
+:amanda/occult/occult_wax_details_sunken_cube: 160 352
+:amanda/occult/occult_wax_details_sunken_cube: 160 112
+:amanda/occult/occult_wax_details_drip: 592 704
+:amanda/occult/occult_wax_details_drip: 592 464
+:amanda/occult/occult_wax_details_drip: 592 224
+:amanda/occult/occult_wax32x48_cap_right_sheer: 912 528
+:amanda/occult/occult_wax32x48_cap_right_sheer: 912 288
+:amanda/occult/occult_wax32x48_cap_right_sheer: 912 48
+:amanda/occult/occult_wax32x48_cap_left_sheer: 592 432
+:amanda/occult/occult_wax32x48_cap_left_sheer: 592 192
+:amanda/occult/occult_wax32x48_cap_left_sheer: 592 672
+:amanda/occult/occult_wax32x48_cap_left_sheer: 592 608
+:amanda/occult/occult_wax32x48_cap_left_sheer: 592 128
+:amanda/occult/occult_wax32x48_cap_left_sheer: 592 368
+:amanda/occult/occult_wax32x48_cap_left_sheer: 592 384
+:amanda/occult/occult_wax32x48_cap_left_sheer: 592 144
+:amanda/occult/occult_wax32x48_cap_left_sheer: 592 624
+:amanda/steel/steel32x32.S: 448 224
+:amanda/occult/occult_wax32x48: 192 448
+:amanda/occult/occult_wax32x48: 224 448
+:amanda/occult/occult_wax32x48: 288 448
+:amanda/occult/occult_wax32x48: 256 448
+:amanda/occult/occult_wax32x48: 352 448
+:amanda/occult/occult_wax32x48: 320 448
+:amanda/occult/occult_wax32x48: 416 448
+:amanda/occult/occult_wax32x48: 384 448
+:amanda/occult/occult_wax32x48: 192 688
+:amanda/occult/occult_wax32x48: 224 688
+:amanda/occult/occult_wax32x48: 288 688
+:amanda/occult/occult_wax32x48: 256 688
+:amanda/occult/occult_wax32x48: 352 688
+:amanda/occult/occult_wax32x48: 320 688
+:amanda/occult/occult_wax32x48: 416 688
+:amanda/occult/occult_wax32x48: 384 688
+:amanda/occult/occult_wax32x48: 384 208
+:amanda/occult/occult_wax32x48: 416 208
+:amanda/occult/occult_wax32x48: 320 208
+:amanda/occult/occult_wax32x48: 352 208
+:amanda/occult/occult_wax32x48: 256 208
+:amanda/occult/occult_wax32x48: 288 208
+:amanda/occult/occult_wax32x48: 224 208
+:amanda/occult/occult_wax32x48: 192 208
+:amanda/occult/occult_wax64x48: 320 112 rr
+:amanda/occult/occult_wax64x48: 256 112 rr
+:amanda/occult/occult_wax64x48: 192 112 rr
+:amanda/occult/occult_wax64x48: 192 0
+:amanda/occult/occult_wax64x48: 256 0
+:amanda/occult/occult_wax64x48: 320 0
+:amanda/occult/occult_wax64x48: 320 160 rr
+:amanda/occult/occult_wax64x48: 256 160 rr
+:amanda/occult/occult_wax64x48: 192 160 rr
+:amanda/steel/steel32x32.S: 448 128
+:amanda/steel/steel32x32.S: 480 128
+:amanda/steel/steel32x32.S: 512 128
+:amanda/steel/steel32x32.S: 544 128
+:amanda/occult/occult_wax64x48: 320 352 rr
+:amanda/occult/occult_wax64x48: 256 352 rr
+:amanda/occult/occult_wax64x48: 192 352 rr
+:amanda/occult/occult_wax64x48: 192 240
+:amanda/occult/occult_wax64x48: 256 240
+:amanda/occult/occult_wax64x48: 320 240
+:amanda/occult/occult_wax64x48: 320 400 rr
+:amanda/occult/occult_wax64x48: 256 400 rr
+:amanda/occult/occult_wax64x48: 192 400 rr
+:amanda/steel/steel32x32.S: 448 368
+:amanda/steel/steel32x32.S: 480 368
+:amanda/steel/steel32x32.S: 512 368
+:amanda/steel/steel32x32.S: 544 368
+:amanda/occult/occult_wax64x48: 320 592 rr
+:amanda/occult/occult_wax64x48: 256 592 rr
+:amanda/occult/occult_wax64x48: 192 592 rr
+:amanda/occult/occult_wax64x48: 192 480
+:amanda/occult/occult_wax64x48: 256 480
+:amanda/occult/occult_wax64x48: 320 480
+:amanda/occult/occult_wax64x48: 320 640 rr
+:amanda/occult/occult_wax64x48: 256 640 rr
+:amanda/occult/occult_wax64x48: 192 640 rr
+:amanda/steel/steel32x32.S: 448 608
+:amanda/steel/steel32x32.S: 480 608
+:amanda/steel/steel32x32.S: 512 608
+:amanda/steel/steel32x32.S: 544 608
+:amanda/occult/occult_wax64x48: 384 112 rr
+:amanda/occult/occult_wax64x48: 384 0
+:amanda/occult/occult_wax64x48: 384 160 rr
+:amanda/occult/occult_wax64x48: 384 352 rr
+:amanda/occult/occult_wax64x48: 384 240
+:amanda/occult/occult_wax64x48: 384 400 rr
+:amanda/occult/occult_wax64x48: 384 592 rr
+:amanda/occult/occult_wax64x48: 384 480
+:amanda/occult/occult_wax64x48: 384 640 rr
+:amanda/steel/steel32x32.S: 448 640
+:amanda/steel/steel32x32.S: 448 672
+:amanda/steel/steel32x32.S: 448 400
+:amanda/steel/steel32x32.S: 448 432
+:amanda/steel/steel32x32.S: 448 160
+:amanda/steel/steel32x32.S: 448 192
+:amanda/steel/steel32x32.S: 576 368
+:amanda/steel/steel32x32.S: 576 608
+:amanda/steel/steel32x32.S: 576 640
+:amanda/steel/steel32x32.S: 576 400
+:amanda/steel/steel32x32.S: 576 128
+:amanda/steel/steel32x32.S: 576 160
+:amanda/occult/occult_wax64x64: 128 608 rrr
+:amanda/occult/occult_wax64x64: 128 672 rrr
+:amanda/occult/occult_wax64x64: 128 16 rrr
+:amanda/occult/occult_wax64x64: 128 128 rrr
+:amanda/occult/occult_wax64x64: 128 192 rrr
+:amanda/occult/occult_wax64x64: 128 368 rrr
+:amanda/occult/occult_wax64x64: 128 432 rrr
+:amanda/occult/occult_wax64x64: 128 496 rrr
+:amanda/occult/occult_wax32x48_cap_left_sheer: 144 80 rrr
+:amanda/occult/occult_wax32x48_cap_left_sheer: 144 560 rrr
+:amanda/occult/occult_skulls32x32: 32 304
+:amanda/occult/occult_skulls32x32: 48 304
+:amanda/occult/occult_skulls32x32: 80 304
+:amanda/occult/occult_skulls32x32: -16 256
+:amanda/occult/occult_skulls32x32: -16 240
+:amanda/occult/occult_skulls32x32: -16 208
+:amanda/occult/occult_skulls32x32: -16 176
+:amanda/occult/occult_skulls32x32: -16 144
+:amanda/occult/occult_skulls32x32: 16 144
+:amanda/occult/occult_skulls32x32: 48 144
+:amanda/occult/occult_skulls32x32: 80 144
+:amanda/occult/occult_skulls32x32: 112 144
+:amanda/occult/occult_skulls32x32: 96 304
+:amanda/occult/occult_skulls32x32: 112 288
+:amanda/occult/occult_wax_details_sunken_cube: 32 576 frr
+:amanda/occult/occult_skulls32x32: 32 544
+:amanda/occult/occult_skulls32x32: 48 544
+:amanda/occult/occult_skulls32x32: 80 544
+:amanda/occult/occult_skulls32x32: -16 496
+:amanda/occult/occult_skulls32x32: -16 480
+:amanda/occult/occult_skulls32x32: -16 448
+:amanda/occult/occult_skulls32x32: -16 416
+:amanda/occult/occult_skulls32x32: -16 384
+:amanda/occult/occult_skulls32x32: 16 384
+:amanda/occult/occult_skulls32x32: 48 384
+:amanda/occult/occult_skulls32x32: 80 384
+:amanda/occult/occult_skulls32x32: 112 384
+:amanda/occult/occult_skulls32x32: 96 544
+:amanda/occult/occult_skulls32x32: 112 528
+:amanda/occult/occult_wax_details_sunken_cube: 48 96 frr
+:amanda/occult/occult_wax_details_sunken_cube: 32 96 frr
+:amanda/occult/occult_skulls32x32: 32 64
+:amanda/occult/occult_skulls32x32: 48 64
+:amanda/occult/occult_skulls32x32: 80 64
+:amanda/occult/occult_skulls32x32: -16 16
+:amanda/occult/occult_skulls32x32: -16 0
+:amanda/occult/occult_skulls32x32: -16 688
+:amanda/occult/occult_skulls32x32: -16 656
+:amanda/occult/occult_skulls32x32: -16 624
+:amanda/occult/occult_skulls32x32: 16 624
+:amanda/occult/occult_skulls32x32: 48 624
+:amanda/occult/occult_skulls32x32: 80 624
+:amanda/occult/occult_skulls32x32: 112 624
+:amanda/occult/occult_skulls32x32: 96 64
+:amanda/occult/occult_skulls32x32: 112 48
+:amanda/steel/steel32x32.S: 448 704
+:amanda/steel/steel32x32.S: 448 464
+:amanda/steel/steel16x16.S: 448 528
+:amanda/steel/steel16x16.S: 464 528
+:amanda/steel/steel16x16.S: 448 48
+:amanda/steel/steel16x16.S: 464 48
+:amanda/steel/steel16x16.S: 448 288
+:amanda/steel/steel16x16.S: 464 288
+:amanda/steel/steel16x16.S: 480 288
+:amanda/steel/steel16x16.S: 496 288
+:amanda/steel/steel16x16.S: 512 288
+:amanda/steel/steel16x16.S: 528 288
+:amanda/steel/steel16x16.S: 544 288
+:amanda/steel/steel16x16.S: 560 288
+:amanda/steel/steel16x16.S: 576 288
+:amanda/steel/steel16x16.S: 480 528
+:amanda/steel/steel16x16.S: 496 528
+:amanda/steel/steel16x16.S: 512 528
+:amanda/steel/steel16x16.S: 528 528
+:amanda/steel/steel16x16.S: 544 528
+:amanda/steel/steel16x16.S: 560 528
+:amanda/steel/steel16x16.S: 576 528
+:amanda/steel/steel16x16.S: 480 48
+:amanda/steel/steel16x16.S: 496 48
+:amanda/steel/steel16x16.S: 512 48
+:amanda/steel/steel16x16.S: 528 48
+:amanda/steel/steel16x16.S: 544 48
+:amanda/steel/steel16x16.S: 560 48
+:amanda/steel/steel16x16.S: 576 48
+:amanda/steel/steel16x16.S: 112 128
+:amanda/steel/steel16x16.S: 96 128
+:amanda/steel/steel16x16.S: 80 128
+:amanda/steel/steel16x16.S: 64 128
+:amanda/steel/steel16x16.S: 48 128
+:amanda/steel/steel16x16.S: 32 128
+:amanda/steel/steel16x16.S: 16 128
+:amanda/steel/steel16x16.S: 0 128
+:amanda/steel/steel16x16.S: 112 368
+:amanda/steel/steel16x16.S: 96 368
+:amanda/steel/steel16x16.S: 80 368
+:amanda/steel/steel16x16.S: 64 368
+:amanda/steel/steel16x16.S: 48 368
+:amanda/steel/steel16x16.S: 32 368
+:amanda/steel/steel16x16.S: 16 368
+:amanda/steel/steel16x16.S: 0 368
+:amanda/steel/steel16x16.S: 112 608
+:amanda/steel/steel16x16.S: 96 608
+:amanda/steel/steel16x16.S: 80 608
+:amanda/steel/steel16x16.S: 64 608
+:amanda/steel/steel16x16.S: 48 608
+:amanda/steel/steel16x16.S: 32 608
+:amanda/steel/steel16x16.S: 16 608
+:amanda/steel/steel16x16.S: 0 608
+:amanda/steel/steel16x16.S: 0 112
+:amanda/steel/steel16x16.S: 0 96
+:amanda/steel/steel16x16.S: 0 80
+:amanda/steel/steel16x16.S: 0 64
+:amanda/steel/steel16x16.S: 0 352
+:amanda/steel/steel16x16.S: 0 336
+:amanda/steel/steel16x16.S: 0 320
+:amanda/steel/steel16x16.S: 0 304
+:amanda/steel/steel16x16.S: 0 592
+:amanda/steel/steel16x16.S: 0 576
+:amanda/steel/steel16x16.S: 0 560
+:amanda/steel/steel16x16.S: 0 544
+:amanda/occult/occult_skulls32x32: 112 368
+:amanda/occult/occult_skulls32x32: 112 128
+:amanda/steel/steel16x16.S: 128 128
+:amanda/occult/occult_skulls32x32: 112 608
+:amanda/steel/steel16x16.S: 0 48
+:amanda/steel/steel16x16.S: 0 32
+:amanda/steel/steel16x16.S: 0 528
+:amanda/steel/steel16x16.S: 0 512
+:amanda/steel/steel16x16.S: 0 288
+:amanda/steel/steel16x16.S: 0 272
+:amanda/occult/occult_skulls32x32: 64 32
+:amanda/occult/occult_skulls32x32: 64 512
+:amanda/occult/occult_skulls32x32: 64 272
+:amanda/occult/occult_wax32x48: 864 208
+:amanda/occult/occult_wax32x48: 896 208
+:amanda/occult/occult_wax32x48: 800 208
+:amanda/occult/occult_wax32x48: 832 208
+:amanda/occult/occult_wax32x48: 736 208
+:amanda/occult/occult_wax32x48: 768 208
+:amanda/occult/occult_wax32x48: 704 208
+:amanda/occult/occult_wax32x48: 672 208
+:amanda/occult/occult_wax64x48: 800 112 rr
+:amanda/occult/occult_wax64x48: 736 112 rr
+:amanda/occult/occult_wax64x48: 672 112 rr
+:amanda/occult/occult_wax64x48: 800 160 rr
+:amanda/occult/occult_wax64x48: 736 160 rr
+:amanda/occult/occult_wax64x48: 672 160 rr
+:amanda/occult/occult_wax64x48: 672 240
+:amanda/occult/occult_wax64x48: 736 240
+:amanda/occult/occult_wax64x48: 800 240
+:amanda/occult/occult_wax64x48: 864 112 rr
+:amanda/occult/occult_wax64x48: 864 160 rr
+:amanda/occult/occult_wax64x48: 864 240
+:amanda/occult/occult_wax64x64: 608 128 rrr
+:amanda/occult/occult_wax64x64: 608 192 rrr
+:amanda/occult/occult_wax32x48_cap_left_sheer: 608 320 rrr
+:amanda/occult/occult_wax32x48: 864 448
+:amanda/occult/occult_wax32x48: 896 448
+:amanda/occult/occult_wax32x48: 800 448
+:amanda/occult/occult_wax32x48: 832 448
+:amanda/occult/occult_wax32x48: 736 448
+:amanda/occult/occult_wax32x48: 768 448
+:amanda/occult/occult_wax32x48: 704 448
+:amanda/occult/occult_wax32x48: 672 448
+:amanda/occult/occult_wax64x48: 800 352 rr
+:amanda/occult/occult_wax64x48: 736 352 rr
+:amanda/occult/occult_wax64x48: 672 352 rr
+:amanda/occult/occult_wax64x48: 800 400 rr
+:amanda/occult/occult_wax64x48: 736 400 rr
+:amanda/occult/occult_wax64x48: 672 400 rr
+:amanda/occult/occult_wax32x48_cap_left_sheer: 608 560 rrr
+:amanda/occult/occult_wax32x48_cap_left_sheer: 624 560 rrr
+:amanda/occult/occult_wax64x48: 672 480
+:amanda/occult/occult_wax64x48: 736 480
+:amanda/occult/occult_wax64x48: 800 480
+:amanda/occult/occult_wax64x48: 864 352 rr
+:amanda/occult/occult_wax64x48: 864 400 rr
+:amanda/occult/occult_wax64x48: 864 480
+:amanda/occult/occult_wax64x64: 608 368 rrr
+:amanda/occult/occult_wax64x64: 608 432 rrr
+:amanda/occult/occult_wax64x64: 608 496 rrr
+:amanda/occult/occult_wax32x48: 864 688
+:amanda/occult/occult_wax32x48: 896 688
+:amanda/occult/occult_wax32x48: 800 688
+:amanda/occult/occult_wax32x48: 832 688
+:amanda/occult/occult_wax32x48: 736 688
+:amanda/occult/occult_wax32x48: 768 688
+:amanda/occult/occult_wax32x48: 704 688
+:amanda/occult/occult_wax32x48: 672 688
+:amanda/occult/occult_wax64x48: 800 592 rr
+:amanda/occult/occult_wax64x48: 736 592 rr
+:amanda/occult/occult_wax64x48: 672 592 rr
+:amanda/occult/occult_wax64x48: 800 640 rr
+:amanda/occult/occult_wax64x48: 736 640 rr
+:amanda/occult/occult_wax64x48: 672 640 rr
+:amanda/occult/occult_wax32x48_cap_left_sheer: 608 80 rrr
+:amanda/occult/occult_wax32x48_cap_left_sheer: 624 80 rrr
+:amanda/occult/occult_wax64x48: 672 0
+:amanda/occult/occult_wax64x48: 736 0
+:amanda/occult/occult_wax64x48: 800 0
+:amanda/occult/occult_wax64x48: 864 592 rr
+:amanda/occult/occult_wax64x48: 864 640 rr
+:amanda/occult/occult_wax64x48: 864 0
+:amanda/occult/occult_wax64x64: 608 608 rrr
+:amanda/occult/occult_wax64x64: 608 672 rrr
+:amanda/occult/occult_wax64x64: 608 16 rrr
+:amanda/steel/steel32x32.S: 928 224
+:amanda/steel/steel32x32.S: 928 128
+:amanda/steel/steel32x32.S: 960 128
+:amanda/steel/steel32x32.S: 992 128
+:amanda/steel/steel32x32.S: 1024 128
+:amanda/steel/steel32x32.S: 928 608
+:amanda/steel/steel32x32.S: 960 608
+:amanda/steel/steel32x32.S: 992 608
+:amanda/steel/steel32x32.S: 1024 608
+:amanda/steel/steel32x32.S: 928 640
+:amanda/steel/steel32x32.S: 928 672
+:amanda/steel/steel32x32.S: 928 160
+:amanda/steel/steel32x32.S: 928 192
+:amanda/steel/steel32x32.S: 1056 608
+:amanda/steel/steel32x32.S: 1120 528
+:amanda/steel/steel32x32.S: 1056 128
+:amanda/steel/steel32x32.S: 928 704
+:amanda/steel/steel32x32.S: 928 16
+:amanda/steel/steel16x16.S: 928 48
+:amanda/steel/steel16x16.S: 944 48
+:amanda/steel/steel16x16.S: 960 48
+:amanda/steel/steel16x16.S: 976 48
+:amanda/steel/steel16x16.S: 992 48
+:amanda/steel/steel16x16.S: 1008 48
+:amanda/steel/steel16x16.S: 1024 48
+:amanda/steel/steel16x16.S: 1040 48
+:amanda/steel/steel16x16.S: 1056 48
+:amanda/steel/steel16x16.S: 1072 48
+:amanda/steel/steel32x32.S: 928 256
+:amanda/steel/steel16x16.S: 928 288
+:amanda/steel/steel16x16.S: 944 288
+:amanda/steel/steel16x16.S: 960 288
+:amanda/steel/steel16x16.S: 976 288
+:amanda/steel/steel16x16.S: 992 288
+:amanda/steel/steel16x16.S: 1008 288
+:amanda/steel/steel16x16.S: 1024 288
+:amanda/steel/steel16x16.S: 1040 288
+:amanda/steel/steel16x16.S: 1056 288
+:amanda/steel/steel16x16.S: 1072 288
+:amanda/steel/steel32x32.S: 960 368
+:amanda/steel/steel32x32.S: 992 368
+:amanda/steel/steel32x32.S: 1024 368
+:amanda/steel/steel32x32.S: 1056 368
+:amanda/steel/steel32x32.S: 928 368
+:amanda/steel/steel32x32.S: 928 400
+:amanda/steel/steel32x32.S: 928 432
+:amanda/steel/steel32x32.S: 928 464
+:amanda/steel/steel32x32.S: 928 496
+:amanda/steel/steel16x16.S: 928 528
+:amanda/steel/steel16x16.S: 944 528
+:amanda/steel/steel16x16.S: 960 528
+:amanda/steel/steel16x16.S: 976 528
+:amanda/steel/steel16x16.S: 992 528
+:amanda/steel/steel16x16.S: 1008 528
+:amanda/steel/steel16x16.S: 1024 528
+:amanda/steel/steel16x16.S: 1040 528
+:amanda/steel/steel16x16.S: 1056 528
+:amanda/steel/steel16x16.S: 1072 528
+:amanda/steel/steel32x32.S: 1088 528
+:amanda/steel/steel32x32.S: 1088 48
+:amanda/steel/steel32x32.S: 1120 48
+:amanda/steel/steel32x32.S: 1088 288
+:amanda/steel/steel32x32.S: 1120 288
+:amanda/steel/steel32x32.S: 1152 288
+:amanda/steel/steel32x32.S: 1184 288
+:amanda/steel/steel32x32.S: 1152 48
+:amanda/steel/steel32x32.S: 1184 48
+:amanda/steel/steel32x32.S: 1184 528
+:amanda/steel/steel32x32.S: 1152 528
+:amanda/steel/steel32x32.S: 1216 48
+:amanda/steel/steel32x32.S: 1216 528
+:amanda/steel/steel32x32.S: 1216 288
+:amanda/steel/steel32x32.S: 1216 16
+:amanda/steel/steel32x32.S: 1200 704
+:amanda/steel/steel32x32.S: 1216 672
+:amanda/steel/steel32x32.S: 1216 496
+:amanda/steel/steel32x32.S: 1200 464
+:amanda/steel/steel32x32.S: 1216 432
+:amanda/steel/steel32x32.S: 1232 400
+:amanda/steel/steel32x32.S: 1088 160
+:amanda/steel/steel32x32.S: 1088 192
+:amanda/steel/steel32x32.S: 1120 192
+:amanda/steel/steel32x32.S: 1120 224
+:amanda/steel/steel32x32.S: 1152 224
+:amanda/steel/steel32x32.S: 1216 256
+:amanda/steel/steel32x32.S: 1200 224
+:amanda/steel/steel32x32.S: 1248 192
+:amanda/steel/steel32x32.S: 1232 160
+:amanda/steel/steel16x16.S: 128 288
+:amanda/steel/steel16x16.S: 128 272
+:amanda/steel/steel16x16.S: 128 256
+:amanda/steel/steel16x16.S: 128 240
+:amanda/steel/steel16x16.S: 128 224
+:amanda/steel/steel16x16.S: 128 208
+:amanda/steel/steel16x16.S: 128 192
+:amanda/steel/steel16x16.S: 128 176
+:amanda/steel/steel16x16.S: 128 160
+:amanda/steel/steel16x16.S: 128 144
+:amanda/steel/steel16x16.S: 128 384
+:amanda/steel/steel16x16.S: 128 368
+:amanda/steel/steel16x16.S: 128 400
+:amanda/steel/steel16x16.S: 128 416
+:amanda/steel/steel16x16.S: 128 432
+:amanda/steel/steel16x16.S: 128 448
+:amanda/steel/steel16x16.S: 128 464
+:amanda/steel/steel16x16.S: 128 480
+:amanda/steel/steel16x16.S: 128 496
+:amanda/steel/steel16x16.S: 128 512
+:amanda/steel/steel16x16.S: 128 528
+:amanda/steel/steel16x16.S: 128 624
+:amanda/steel/steel16x16.S: 128 608
+:amanda/steel/steel16x16.S: 128 640
+:amanda/steel/steel16x16.S: 128 656
+:amanda/steel/steel16x16.S: 128 672
+:amanda/steel/steel16x16.S: 128 688
+:amanda/steel/steel16x16.S: 128 704
+:amanda/steel/steel16x16.S: 128 0
+:amanda/steel/steel16x16.S: 128 16
+:amanda/steel/steel16x16.S: 128 32
+:amanda/steel/steel16x16.S: 128 48
+:amanda/occult/occult_skulls32x32: 128 176
+:amanda/occult/occult_skulls32x32: 128 656
+:amanda/occult/occult_skulls32x32: 128 416
+:amanda/occult/occult_skulls32x32: 144 432
+:amanda/occult/occult_skulls32x32: 144 192
+:amanda/occult/occult_skulls32x32: 144 672
+:amanda/occult/occult_skulls32x32: 128 688
+:amanda/occult/occult_skulls32x32: 128 208
+:amanda/occult/occult_skulls32x32: 128 448
+:amanda/steel/steel16x16.S: 960 512
+:amanda/steel/steel16x16.S: 976 512
+:amanda/steel/steel16x16.S: 992 512
+:amanda/steel/steel16x16.S: 1008 512
+:amanda/steel/steel16x16.S: 1024 512
+:amanda/steel/steel16x16.S: 1040 512
+:amanda/steel/steel16x16.S: 1056 512
+:amanda/steel/steel16x16.S: 1072 512
+:amanda/steel/steel16x16.S: 960 32
+:amanda/steel/steel16x16.S: 976 32
+:amanda/steel/steel16x16.S: 992 32
+:amanda/steel/steel16x16.S: 1008 32
+:amanda/steel/steel16x16.S: 1024 32
+:amanda/steel/steel16x16.S: 1040 32
+:amanda/steel/steel16x16.S: 1056 32
+:amanda/steel/steel16x16.S: 1072 32
+:amanda/steel/steel16x16.S: 960 272
+:amanda/steel/steel16x16.S: 976 272
+:amanda/steel/steel16x16.S: 992 272
+:amanda/steel/steel16x16.S: 1008 272
+:amanda/steel/steel16x16.S: 1024 272
+:amanda/steel/steel16x16.S: 1040 272
+:amanda/steel/steel16x16.S: 1056 272
+:amanda/steel/steel16x16.S: 1072 272
+:amanda/steel/steel32x32.S: 512 256
+:amanda/steel/steel32x32.S: 512 16
+:amanda/steel/steel32x32.S: 512 496
+:amanda/steel/steel32x32.S: 496 656
+:amanda/steel/steel32x32.S: 528 656
+:amanda/steel/steel32x32.S: 496 176
+:amanda/steel/steel32x32.S: 528 176
+:amanda/steel/steel32x32.S: 496 416
+:amanda/steel/steel32x32.S: 528 416
+:amanda/steel/steel16x16.S: 512 640
+:amanda/steel/steel16x16.S: 528 640
+:amanda/steel/steel16x16.S: 544 640
+:amanda/steel/steel16x16.S: 496 640
+:amanda/steel/steel16x16.S: 512 160
+:amanda/steel/steel16x16.S: 528 160
+:amanda/steel/steel16x16.S: 544 160
+:amanda/steel/steel16x16.S: 496 160
+:amanda/steel/steel16x16.S: 512 400
+:amanda/steel/steel16x16.S: 528 400
+:amanda/steel/steel16x16.S: 544 400
+:amanda/steel/steel16x16.S: 496 400
+:amanda/steel/steel32x32.S: 464 304
+:amanda/occult/occult_wax32x16_cap_left: 464 560 rrr
+:amanda/steel/steel32x32.S: 464 544
+:amanda/steel/steel32x32.S: 464 64
+:amanda/steel/steel16x16.S: 944 304
+:amanda/steel/steel16x16.S: 944 320
+:amanda/steel/steel16x16.S: 944 544
+:amanda/steel/steel16x16.S: 944 560
+:amanda/steel/steel16x16.S: 944 64
+:amanda/steel/steel16x16.S: 944 80
+:amanda/steel/steel16x16.S: 1088 80
+:amanda/steel/steel16x16.S: 1088 560
+:amanda/steel/steel16x16.S: 1088 320
+:amanda/steel/steel_flange_left24x16.S: 1088 512
+:amanda/steel/steel_flange_left24x16.S: 1088 32
+:amanda/steel/steel_flange_left24x16.S: 1088 272
+:amanda/steel/steel32x32.S: 1248 288
+:amanda/steel/steel32x32.S: 1248 48
+:amanda/steel/steel32x32.S: 1248 528
+:amanda/steel/steel16x16.S: 1264 80
+:amanda/steel/steel16x16.S: 1264 96
+:amanda/steel/steel16x16.S: 1264 112
+:amanda/steel/steel16x16.S: 1264 128
+:amanda/steel/steel16x16.S: 1264 144
+:amanda/steel/steel16x16.S: 1248 320
+:amanda/steel/steel16x16.S: 1264 336
+:amanda/steel/steel16x16.S: 1264 352
+:amanda/steel/steel16x16.S: 1264 368
+:amanda/steel/steel16x16.S: 1264 416
+:amanda/steel/steel16x16.S: 1264 384
+:amanda/steel/steel16x16.S: 1264 400
+:amanda/steel/steel16x16.S: 1264 560
+:amanda/steel/steel16x16.S: 1264 576
+:amanda/steel/steel16x16.S: 1264 592
+:amanda/steel/steel16x16.S: 1264 608
+:amanda/steel/steel16x16.S: 1264 656
+:amanda/steel/steel16x16.S: 1264 624
+:amanda/steel/steel16x16.S: 1264 640
+:amanda/steel/steel32x32.S: 1232 640
+:amanda/steel/steel32x32.S: 496 304
+:amanda/steel/steel32x32.S: 528 304
+:amanda/steel/steel32x32.S: 560 304
+:amanda/steel/steel32x32.S: 496 544
+:amanda/steel/steel32x32.S: 528 544
+:amanda/steel/steel32x32.S: 560 544
+:amanda/steel/steel32x32.S: 496 64
+:amanda/steel/steel32x32.S: 528 64
+:amanda/steel/steel32x32.S: 560 64
+:amanda/steel/steel32x32.S: 960 64
+:amanda/steel/steel32x32.S: 992 64
+:amanda/steel/steel32x32.S: 1024 64
+:amanda/steel/steel32x32.S: 1056 64
+:amanda/steel/steel32x32.S: 960 544
+:amanda/steel/steel32x32.S: 992 544
+:amanda/steel/steel32x32.S: 1024 544
+:amanda/steel/steel32x32.S: 1056 544
+:amanda/steel/steel32x32.S: 960 304
+:amanda/steel/steel32x32.S: 992 304
+:amanda/steel/steel32x32.S: 1024 304
+:amanda/steel/steel32x32.S: 1056 304
+:amanda/steel/steel_flange_left24x16.S: 1136 160
+:amanda/steel/steel16x16.S: 1152 192
+:amanda/steel/steel16x16.S: 1120 176
+:amanda/steel/steel16x16.S: 1088 144
+:amanda/steel/steel16x16.S: 1264 320
+:amanda/steel/steel16x16.S: 1248 80
+:amanda/steel/steel16x16.S: 1248 560
+:amanda/steel/steel_flange_right24x16.S: 1248 576 rrr
+:amanda/steel/steel_flange_right24x16.S: 1248 336 rrr
+:amanda/steel/steel_flange_right24x16.S: 1248 96 rrr
+:amanda/steel/steel_flange_left24x16.S: 1104 320 f
+:amanda/steel/steel_flange_left24x16.S: 1104 560 f
+:amanda/steel/steel_flange_left24x16.S: 1104 80 f
+:amanda/steel/steel16x16.S: 1264 160
+:amanda/steel/steel16x16.S: 1264 176
+:amanda/steel/steel16x16.S: 144 288
+:amanda/steel/steel16x16.S: 144 48
+:amanda/steel/steel16x16.S: 144 528
+:amanda/steel/steel16x16.S: 160 48
+:amanda/steel/steel16x16.S: 160 288
+:amanda/steel/steel16x16.S: 160 528
+:amanda/steel/steel16x16.S: 144 512
+:amanda/steel/steel16x16.S: 144 32
+:amanda/occult/occult_skulls32x32: 896 288
+:amanda/occult/occult_skulls32x32: 880 256
+:amanda/occult/occult_skulls32x32: 896 224
+:amanda/occult/occult_skulls32x32: 896 528
+:amanda/occult/occult_skulls32x32: 880 496
+:amanda/occult/occult_skulls32x32: 896 464
+:amanda/occult/occult_skulls32x32: 896 48
+:amanda/occult/occult_skulls32x32: 880 16
+:amanda/occult/occult_skulls32x32: 896 704
+:amanda/occult/occult_skulls32x32: 880 704
+:amanda/occult/occult_skulls32x32: 880 464
+:amanda/occult/occult_skulls32x32: 880 224
+:amanda/occult/occult_skulls32x32: 864 48
+:amanda/occult/occult_skulls32x32: 864 288
+:amanda/occult/occult_skulls32x32: 864 528
+:amanda/occult/occult_skulls32x32: 896 448
+:amanda/occult/occult_skulls32x32: 896 208
+:amanda/occult/occult_skulls32x32: 896 688
+:amanda/occult/occult_skulls32x32: 848 544
+:amanda/occult/occult_skulls32x32: 848 304
+:amanda/occult/occult_skulls32x32: 848 64
+:amanda/steel/steel16x16.S: 288 368
+:amanda/steel/steel16x16.S: 288 128
+:amanda/steel/steel16x16.S: 304 128
+:amanda/steel/steel16x16.S: 320 128
+:amanda/steel/steel16x16.S: 288 608
+:amanda/steel/steel16x16.S: 304 608
+:amanda/steel/steel16x16.S: 320 608
+:amanda/steel/steel16x16.S: 304 368
+:amanda/steel/steel16x16.S: 320 368
+:amanda/occult/occult_wax64x64: 608 256 rrr
+:amanda/occult/occult_wax32x48_cap_left_sheer: 624 320 rrr
+:amanda/steel/steel16x16.S: 784 608
+:amanda/steel/steel16x16.S: 800 608
+:amanda/steel/steel16x16.S: 816 128
+:amanda/steel/steel16x16.S: 784 128
+:amanda/steel/steel16x16.S: 800 128
+:amanda/steel/steel16x16.S: 816 368
+:amanda/steel/steel16x16.S: 784 368
+:amanda/steel/steel16x16.S: 800 368
+:amanda/occult/occult_wax32x48_cap_left_sheer: 384 560 frrr
+:amanda/steel/steel32x32.S: 1088 224
+:amanda/steel/steel16x16.S: 1088 128
+:amanda/steel/steel16x16.S: 1120 160
+:amanda/steel/steel16x16.S: 1136 176
+:amanda/steel/steel32x32.S: 1056 192
+:amanda/steel/steel32x32.S: 1056 160
+:amanda/steel/steel_flange_left24x16.S: 1152 176
+:amanda/steel/steel_flange_left24x16.S: 1168 192
+:amanda/steel/steel16x16.S: 1152 208
+:amanda/steel/steel16x16.S: 1168 208
+:amanda/steel/steel32x32.S: 1056 368
+:amanda/steel/steel32x32.S: 1088 400
+:amanda/steel/steel32x32.S: 1088 432
+:amanda/steel/steel32x32.S: 1120 432
+:amanda/steel/steel32x32.S: 1120 464
+:amanda/steel/steel32x32.S: 1152 464
+:amanda/steel/steel_flange_left24x16.S: 1136 400
+:amanda/steel/steel16x16.S: 1152 432
+:amanda/steel/steel16x16.S: 1120 416
+:amanda/steel/steel16x16.S: 1088 384
+:amanda/steel/steel32x32.S: 1088 464
+:amanda/steel/steel16x16.S: 1088 368
+:amanda/steel/steel16x16.S: 1120 400
+:amanda/steel/steel16x16.S: 1136 416
+:amanda/steel/steel32x32.S: 1056 432
+:amanda/steel/steel32x32.S: 1056 400
+:amanda/steel/steel_flange_left24x16.S: 1152 416
+:amanda/steel/steel_flange_left24x16.S: 1168 432
+:amanda/steel/steel16x16.S: 1152 448
+:amanda/steel/steel16x16.S: 1168 448
+:amanda/steel/steel32x32.S: 1056 608
+:amanda/steel/steel32x32.S: 1088 640
+:amanda/steel/steel32x32.S: 1088 672
+:amanda/steel/steel32x32.S: 1120 672
+:amanda/steel/steel32x32.S: 1120 704
+:amanda/steel/steel32x32.S: 1152 704
+:amanda/steel/steel_flange_left24x16.S: 1136 640
+:amanda/steel/steel16x16.S: 1152 672
+:amanda/steel/steel16x16.S: 1120 656
+:amanda/steel/steel16x16.S: 1088 624
+:amanda/steel/steel32x32.S: 1088 704
+:amanda/steel/steel16x16.S: 1088 608
+:amanda/steel/steel16x16.S: 1120 640
+:amanda/steel/steel16x16.S: 1136 656
+:amanda/steel/steel32x32.S: 1056 672
+:amanda/steel/steel32x32.S: 1056 640
+:amanda/steel/steel_flange_left24x16.S: 1152 656
+:amanda/steel/steel_flange_left24x16.S: 1168 672
+:amanda/steel/steel16x16.S: 1152 688
+:amanda/steel/steel16x16.S: 1168 688
+:amanda/steel/steel32x32.S: 960 160
+:amanda/steel/steel32x32.S: 992 160
+:amanda/steel/steel32x32.S: 1024 160
+:amanda/steel/steel32x32.S: 960 640
+:amanda/steel/steel32x32.S: 992 640
+:amanda/steel/steel32x32.S: 1024 640
+:amanda/steel/steel32x32.S: 960 400
+:amanda/steel/steel32x32.S: 992 400
+:amanda/steel/steel32x32.S: 1024 400
+:amanda/steel/steel16x16.S: 480 640
+:amanda/steel/steel16x16.S: 560 640
+:amanda/steel/steel16x16.S: 480 160
+:amanda/steel/steel16x16.S: 560 160
+:amanda/steel/steel16x16.S: 480 400
+:amanda/steel/steel16x16.S: 560 400
+:amanda/steel/steel16x16.S: 576 32
+:amanda/steel/steel16x16.S: 576 512
+:amanda/steel/steel16x16.S: 576 272
+:amanda/steel/steel16x16.S: 576 256
+:amanda/steel/steel16x16.S: 576 496
+:amanda/steel/steel16x16.S: 576 16
+:amanda/steel/steel16x16.S: 144 272
+:amanda/steel/steel_flange_right24x16.S: 580 112
+:amanda/steel/steel_flange_right24x16.S: 580 352
+:amanda/steel/steel_flange_right24x16.S: 580 592
+:amanda/steel/steel16x16.S: 496 272
+:amanda/steel/steel16x16.S: 480 272
+:amanda/steel/steel16x16.S: 496 256
+:amanda/steel/steel16x16.S: 480 512
+:amanda/steel/steel16x16.S: 496 512
+:amanda/steel/steel16x16.S: 496 496
+:amanda/steel/steel16x16.S: 496 32
+:amanda/steel/steel16x16.S: 496 16
+:amanda/steel/steel16x16.S: 480 32
+:amanda/steel/steel16x16.S: 608 256
+:amanda/steel/steel16x16.S: 608 272
+:amanda/steel/steel16x16.S: 624 272
+:amanda/steel/steel16x16.S: 624 288
+:amanda/steel/steel16x16.S: 624 304
+:amanda/steel/steel16x16.S: 624 320
+:amanda/steel/steel16x16.S: 624 336
+:amanda/steel/steel16x16.S: 608 496
+:amanda/steel/steel16x16.S: 608 512
+:amanda/steel/steel16x16.S: 624 512
+:amanda/steel/steel16x16.S: 624 528
+:amanda/steel/steel16x16.S: 624 544
+:amanda/steel/steel16x16.S: 624 560
+:amanda/steel/steel16x16.S: 624 576
+:amanda/steel/steel16x16.S: 608 16
+:amanda/steel/steel16x16.S: 608 32
+:amanda/steel/steel16x16.S: 624 32
+:amanda/steel/steel16x16.S: 624 48
+:amanda/steel/steel16x16.S: 624 64
+:amanda/steel/steel16x16.S: 624 80
+:amanda/steel/steel16x16.S: 624 96
+:amanda/steel/steel32x32.S: 448 256
+:amanda/steel/steel32x32.S: 448 16
+:amanda/steel/steel32x32.S: 448 496
+:amanda/steel/steel16x16.S: 480 496
+:amanda/steel/steel16x16.S: 480 256
+:amanda/steel/steel16x16.S: 480 16
+:amanda/steel/steel16x16.S: 592 304
+:amanda/steel/steel16x16.S: 592 320
+:amanda/steel/steel16x16.S: 592 64
+:amanda/steel/steel16x16.S: 592 80
+:amanda/steel/steel16x16.S: 592 544
+:amanda/steel/steel16x16.S: 592 560
+:amanda/steel/steel16x16.S: 560 512
+:amanda/steel/steel16x16.S: 544 512
+:amanda/steel/steel16x16.S: 560 496
+:amanda/steel/steel16x16.S: 544 496
+:amanda/steel/steel16x16.S: 560 32
+:amanda/steel/steel16x16.S: 544 32
+:amanda/steel/steel16x16.S: 560 16
+:amanda/steel/steel16x16.S: 544 16
+:amanda/steel/steel16x16.S: 560 272
+:amanda/steel/steel16x16.S: 544 272
+:amanda/steel/steel16x16.S: 560 256
+:amanda/steel/steel16x16.S: 544 256
+:amanda/steel/steel16x16.S: 608 608
+:amanda/steel/steel16x16.S: 624 608
+:amanda/steel/steel16x16.S: 608 368
+:amanda/steel/steel16x16.S: 624 368
+:amanda/steel/steel16x16.S: 608 128
+:amanda/steel/steel16x16.S: 624 128
+:amanda/steel/steel16x16.S: 640 128
+:amanda/steel/steel16x16.S: 640 368
+:amanda/steel/steel16x16.S: 640 336
+:amanda/steel/steel16x16.S: 640 96
+:amanda/steel/steel16x16.S: 640 576
+:amanda/steel/steel16x16.S: 640 608
+:amanda/steel/steel16x16.S: 608 240
+:amanda/steel/steel16x16.S: 608 480
+:amanda/steel/steel16x16.S: 608 0
+:amanda/steel/steel16x16.S: 608 704
+:amanda/steel/steel16x16.S: 608 464
+:amanda/steel/steel16x16.S: 608 224
+:amanda/occult/occult_skulls32x32: -16 128
+:amanda/occult/occult_skulls32x32: 16 128
+:amanda/occult/occult_skulls32x32: 48 128
+:amanda/occult/occult_skulls32x32: 80 128
+:amanda/occult/occult_skulls32x32: -16 608
+:amanda/occult/occult_skulls32x32: 16 608
+:amanda/occult/occult_skulls32x32: 48 608
+:amanda/occult/occult_skulls32x32: 80 608
+:amanda/occult/occult_skulls32x32: -16 368
+:amanda/occult/occult_skulls32x32: 16 368
+:amanda/occult/occult_skulls32x32: 48 368
+:amanda/occult/occult_skulls32x32: 80 368
+:amanda/steel/steel_flange_right24x16.S: 784 592
+:amanda/steel/steel_flange_right24x16.S: 784 352
+:amanda/steel/steel_flange_right24x16.S: 784 112
+:amanda/steel/steel_flange_right24x16.S: 800 576
+:amanda/steel/steel16x16.S: 816 608
+:amanda/steel/steel16x16.S: 832 608
+:amanda/steel/steel16x16.S: 848 608
+:amanda/steel/steel16x16.S: 864 608
+:amanda/steel/steel16x16.S: 880 608
+:amanda/steel/steel16x16.S: 896 608
+:amanda/steel/steel16x16.S: 912 608
+:amanda/steel/steel16x16.S: 832 368
+:amanda/steel/steel16x16.S: 848 368
+:amanda/steel/steel16x16.S: 864 368
+:amanda/steel/steel16x16.S: 880 368
+:amanda/steel/steel16x16.S: 896 368
+:amanda/steel/steel16x16.S: 912 368
+:amanda/steel/steel_flange_right24x16.S: 800 336
+:amanda/steel/steel16x16.S: 832 128
+:amanda/steel/steel16x16.S: 848 128
+:amanda/steel/steel16x16.S: 864 128
+:amanda/steel/steel16x16.S: 880 128
+:amanda/steel/steel16x16.S: 896 128
+:amanda/steel/steel16x16.S: 912 128
+:amanda/steel/steel_flange_right24x16.S: 800 96
+:amanda/occult/occult_cube: 816 112 d
+:amanda/occult/occult_cube: 816 592 d
+:amanda/occult/occult_cube: 816 352 d
+:amanda/steel/steel_flange_right24x16.S: 816 320
+:amanda/steel/steel_flange_right24x16.S: 816 560
+:amanda/steel/steel_flange_right24x16.S: 816 80
+:amanda/steel/steel16x16.S: 816 336
+:amanda/steel/steel16x16.S: 800 352
+:amanda/steel/steel16x16.S: 816 96
+:amanda/steel/steel16x16.S: 800 112
+:amanda/steel/steel16x16.S: 816 576
+:amanda/steel/steel16x16.S: 800 592
+:amanda/steel/steel32x32.S: 1232 224
+:amanda/steel/steel32x32.S: 1248 256
+:amanda/steel/steel32x32.S: 1232 464
+:amanda/steel/steel32x32.S: 1248 496
+:amanda/steel/steel32x32.S: 1232 704
+:amanda/steel/steel32x32.S: 1248 16
+:amanda/steel/steel32x32.S: 1248 672
+:amanda/steel/steel32x32.S: 1264 704
+:amanda/steel/steel32x32.S: 1264 464
+:amanda/steel/steel32x32.S: 1248 432
+:amanda/steel/steel32x32.S: 1216 192
+:amanda/steel/steel32x32.S: 1264 224
+:amanda/steel/steel16x16.S: 1200 256
+:amanda/steel/steel16x16.S: 1200 272
+:amanda/steel/steel16x16.S: 1200 496
+:amanda/steel/steel16x16.S: 1200 512
+:amanda/steel/steel16x16.S: 1200 16
+:amanda/steel/steel16x16.S: 1200 32
+:amanda/steel/steel32x32.S: 896 624
+:amanda/steel/steel32x32.S: 896 384
+:amanda/steel/steel32x32.S: 896 144
+:amanda/occult/occult_cube: 624 656 d
+:amanda/occult/occult_cube: 624 672 d
+:amanda/occult/occult_cube: 608 672 d
+:amanda/occult/occult_cube: 608 688 d
+:amanda/occult/occult_cube: 592 688 d
+:amanda/occult/occult_cube: 624 176 d
+:amanda/occult/occult_cube: 624 192 d
+:amanda/occult/occult_cube: 608 192 d
+:amanda/occult/occult_cube: 608 208 d
+:amanda/occult/occult_cube: 592 208 d
+:amanda/occult/occult_cube: 624 416 d
+:amanda/occult/occult_cube: 624 432 d
+:amanda/occult/occult_cube: 608 432 d
+:amanda/occult/occult_cube: 608 448 d
+:amanda/occult/occult_cube: 592 448 d
+:matt/marble/11: 592 560
+:matt/marble/11: 592 544 rrr
+:matt/marble/04: 560 552
+:matt/marble/11: 592 320
+:matt/marble/11: 592 304 rrr
+:matt/marble/04: 560 312
+:matt/marble/11: 592 80
+:matt/marble/11: 592 64 rrr
+:matt/marble/04: 560 72

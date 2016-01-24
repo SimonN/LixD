@@ -1,0 +1,251 @@
+$BUILT 2012-08-13 15:10:32
+$AUTHOR minimac
+$GERMAN 
+$ENGLISH Safe in the centre? (2P)
+
+#SIZE_X 1040
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 400
+#START_Y -20
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 90
+#INITIAL 50
+#REQUIRED 30
+#SPAWN_INTERVAL 28
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 20
+#JUMPER 20
+#EXPLODER2 5
+#BLOCKER 5
+#BUILDER 20
+#PLATFORMER 20
+#BATTER 10
+#BASHER 10
+#DIGGER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/marble/Hatch.H: 912 80
+:matt/marble/Hatch.H: 48 80 r
+
+:matt/marble/Goal.G: 480 176
+
+:geoo/construction/squisher.T: 208 128
+:geoo/construction/squisher.T: 784 128
+:geoo/sandstone/chopper.T: 352 176
+:geoo/sandstone/chopper.T: 640 176
+
+:matt/marble/01d: 32 176
+:matt/marble/01d: 112 176
+:matt/marble/06d: 64 192
+:matt/marble/06d: 64 272
+:matt/marble/04d: 48 336
+:matt/marble/04d: 80 336
+:matt/marble/01d: 32 344
+:matt/marble/01d: 112 344
+:matt/marble/04d: 32 384
+:matt/marble/04d: 64 384
+:matt/marble/04d: 96 384
+:matt/marble/04a: 192 192
+:matt/marble/04a: 224 192
+:matt/marble/01a: 176 192
+:matt/marble/01a: 256 192
+:matt/marble/06a: 208 208
+:matt/marble/06a: 208 288
+:matt/marble/04a: 192 352
+:matt/marble/04a: 224 352
+:matt/marble/01a: 176 360
+:matt/marble/01a: 256 360
+:matt/marble/04d: 336 208
+:matt/marble/04d: 368 208
+:matt/marble/01d: 320 208
+:matt/marble/01d: 400 208
+:matt/marble/04d: 336 368
+:matt/marble/04d: 368 368
+:matt/marble/01d: 320 376
+:matt/marble/01d: 400 376
+:matt/marble/05d: 176 368
+:matt/marble/05d: 208 368
+:matt/marble/05d: 240 368
+:matt/marble/05a: 32 352
+:matt/marble/05a: 64 352
+:matt/marble/05a: 96 352
+:matt/marble/04a: 64 256
+:matt/marble/01a: 464 224
+:matt/marble/01a: 544 224
+:matt/marble/04d: 624 208
+:matt/marble/04d: 656 208
+:matt/marble/01d: 608 208
+:matt/marble/01d: 688 208
+:matt/marble/04a: 768 192
+:matt/marble/04a: 800 192
+:matt/marble/01a: 752 192
+:matt/marble/01a: 832 192
+:matt/marble/01d: 896 176
+:matt/marble/01d: 976 176
+:matt/marble/06d: 928 192
+:matt/marble/06d: 928 272
+:matt/marble/04d: 912 336
+:matt/marble/04d: 944 336
+:matt/marble/01d: 896 344
+:matt/marble/01d: 976 344
+:matt/marble/04d: 896 384
+:matt/marble/04d: 928 384
+:matt/marble/04d: 960 384
+:matt/marble/05a: 896 352
+:matt/marble/05a: 928 352
+:matt/marble/05a: 960 352
+:matt/marble/04a: 928 256
+:matt/marble/04a: 208 112
+:matt/marble/04a: 240 112
+:matt/marble/04a: 272 112
+:matt/marble/04a: 304 112
+:matt/marble/04a: 336 112
+:matt/marble/04a: 368 112
+:matt/marble/04a: 400 112
+:matt/marble/04a: 432 112
+:matt/marble/04a: 464 112
+:matt/marble/04a: 496 112
+:matt/marble/04a: 528 112
+:matt/marble/04a: 560 112
+:matt/marble/04a: 592 112
+:matt/marble/04a: 624 112
+:matt/marble/04a: 656 112
+:matt/marble/04a: 688 112
+:matt/marble/04a: 720 112
+:matt/marble/04a: 752 112
+:matt/marble/04a: 784 112
+:matt/marble/08d: 176 80
+:matt/marble/03d: 224 80 d
+:matt/marble/08d: 208 80 n
+:matt/marble/08d: 176 48
+:matt/marble/03d: 224 48 d
+:matt/marble/08d: 208 48 n
+:matt/marble/08d: 176 16
+:matt/marble/03d: 224 16 d
+:matt/marble/08d: 208 16 n
+:matt/marble/04d: 208 272
+:matt/marble/04a: 320 384
+:matt/marble/04a: 352 384
+:matt/marble/04a: 384 384
+:matt/marble/06d: 352 224
+:matt/marble/06d: 352 304
+:matt/marble/04a: 352 288
+:matt/marble/06a: 496 240
+:matt/marble/06a: 496 320
+:matt/marble/04a: 480 384
+:matt/marble/04a: 512 384
+:matt/marble/01a: 464 392
+:matt/marble/01a: 544 392
+:matt/marble/04d: 496 304
+:matt/marble/04d: 624 368
+:matt/marble/04d: 656 368
+:matt/marble/01d: 608 376
+:matt/marble/01d: 688 376
+:matt/marble/04a: 608 384
+:matt/marble/04a: 640 384
+:matt/marble/04a: 672 384
+:matt/marble/06d: 640 224
+:matt/marble/06d: 640 304
+:matt/marble/04a: 640 288
+:matt/marble/06a: 784 208
+:matt/marble/06a: 784 288
+:matt/marble/04a: 768 352
+:matt/marble/04a: 800 352
+:matt/marble/01a: 752 360
+:matt/marble/01a: 832 360
+:matt/marble/05d: 752 368
+:matt/marble/05d: 784 368
+:matt/marble/05d: 816 368
+:matt/marble/04d: 784 272
+:matt/marble/08d: 176 -16
+:matt/marble/03d: 224 -16 d
+:matt/marble/08d: 208 -16 n
+:matt/marble/08d: 272 -16
+:matt/marble/03d: 320 -16 d
+:matt/marble/08d: 304 -16 n
+:matt/marble/06a: 272 16
+:matt/marble/04a: 272 64 d
+:matt/marble/06a: 272 48 n
+:matt/marble/06a: 304 16
+:matt/marble/04a: 304 64 d
+:matt/marble/06a: 304 48 n
+:matt/marble/06a: 336 16
+:matt/marble/04a: 336 64 d
+:matt/marble/06a: 336 48 n
+:matt/marble/08d: 368 80
+:matt/marble/03d: 416 80 d
+:matt/marble/08d: 400 80 n
+:matt/marble/08d: 368 48
+:matt/marble/03d: 416 48 d
+:matt/marble/08d: 400 48 n
+:matt/marble/08d: 368 16
+:matt/marble/03d: 416 16 d
+:matt/marble/08d: 400 16 n
+:matt/marble/08d: 368 -16
+:matt/marble/03d: 416 -16 d
+:matt/marble/08d: 400 -16 n
+:matt/marble/08d: 464 80
+:matt/marble/03d: 512 80 d
+:matt/marble/08d: 496 80 n
+:matt/marble/06a: 464 -16
+:matt/marble/04a: 464 32 d
+:matt/marble/06a: 464 16 n
+:matt/marble/06a: 496 -16
+:matt/marble/04a: 496 32 d
+:matt/marble/06a: 496 16 n
+:matt/marble/06a: 528 -16
+:matt/marble/04a: 528 32 d
+:matt/marble/06a: 528 16 n
+:matt/marble/08d: 560 80
+:matt/marble/03d: 608 80 d
+:matt/marble/08d: 592 80 n
+:matt/marble/08d: 560 48
+:matt/marble/03d: 608 48 d
+:matt/marble/08d: 592 48 n
+:matt/marble/08d: 560 16
+:matt/marble/03d: 608 16 d
+:matt/marble/08d: 592 16 n
+:matt/marble/08d: 560 -16
+:matt/marble/03d: 608 -16 d
+:matt/marble/08d: 592 -16 n
+:matt/marble/08d: 656 -16
+:matt/marble/03d: 704 -16 d
+:matt/marble/08d: 688 -16 n
+:matt/marble/06a: 656 16
+:matt/marble/04a: 656 64 d
+:matt/marble/06a: 656 48 n
+:matt/marble/06a: 688 16
+:matt/marble/04a: 688 64 d
+:matt/marble/06a: 688 48 n
+:matt/marble/06a: 720 16
+:matt/marble/04a: 720 64 d
+:matt/marble/06a: 720 48 n
+:matt/marble/08d: 752 80
+:matt/marble/03d: 800 80 d
+:matt/marble/08d: 784 80 n
+:matt/marble/08d: 752 48
+:matt/marble/03d: 800 48 d
+:matt/marble/08d: 784 48 n
+:matt/marble/08d: 752 16
+:matt/marble/03d: 800 16 d
+:matt/marble/08d: 784 16 n
+:matt/marble/08d: 752 -16
+:matt/marble/03d: 800 -16 d
+:matt/marble/08d: 784 -16 n
+:matt/marble/02d: 48 176
+:matt/marble/02d: 96 176
+:matt/marble/02a: 480 224
+:matt/marble/02a: 528 224
+:geoo/steel/dark_32x16o.S: 64 176
+:geoo/steel/dark_32x16o.S: 496 224
+:matt/marble/02d: 912 176
+:matt/marble/02d: 960 176
+:geoo/steel/dark_32x16o.S: 928 176

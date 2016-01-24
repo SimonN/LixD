@@ -1,0 +1,153 @@
+$BUILT 2012-06-15 22:50:44
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH The Runaround
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 17
+#REQUIRED 17
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 32
+
+#WALKER 1
+#JUMPER 1
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER2 1
+#CUBER 1
+#RUNNER 1
+#BUILDER 0
+#PLATFORMER 0
+#BASHER 0
+#MINER 0
+#DIGGER 3
+
+:geoo/abstract/hatch.H: 104 312
+
+:geoo/abstract/goal.G: 8 336
+
+:geoo/abstract/cvblocks/022: 64 384
+:geoo/abstract/cvblocks/023: 88 384
+:geoo/steel/32x16o.S: 120 384
+:geoo/steel/32x16o.S: 0 384
+:geoo/steel/32x16o.S: 32 384
+:geoo/abstract/cvblocks/022: 152 384
+:geoo/abstract/cvblocks/023: 176 384
+:geoo/steel/32x16o.S: 208 384
+:geoo/abstract/cvblocks/022: 240 384
+:geoo/abstract/cvblocks/023: 264 384
+:geoo/steel/32x16o.S: 296 384
+:geoo/abstract/cvblocks/022: 328 384
+:geoo/abstract/cvblocks/023: 352 384
+:geoo/steel/32x16o.S: 384 384
+:geoo/abstract/cvblocks/022: 416 384
+:geoo/abstract/cvblocks/023: 440 384
+:geoo/steel/32x16o.S: 472 384
+:geoo/abstract/cvblocks/022: 504 384
+:geoo/abstract/cvblocks/023: 528 384
+:geoo/steel/32x16o.S: 560 384
+:geoo/steel/32x16o.S: 592 384
+:geoo/steel/32x16o.S: 624 384
+:geoo/abstract/cvblocks/000: 216 368
+:geoo/abstract/cvblocks/000: 224 368
+:geoo/abstract/cvblocks/000: 232 368
+:geoo/abstract/cvblocks/000: 240 368
+:geoo/abstract/cvblocks/000: 248 368
+:geoo/abstract/cvblocks/000: 256 368
+:geoo/abstract/cvblocks/000: 264 368
+:geoo/abstract/cvblocks/000: 272 368
+:geoo/abstract/cvblocks/000: 280 368
+:geoo/abstract/cvblocks/000: 288 368
+:geoo/abstract/cvblocks/000: 296 368
+:geoo/abstract/cvblocks/000: 304 368
+:geoo/abstract/cvblocks/000: 312 368
+:geoo/abstract/cvblocks/000: 320 368
+:geoo/abstract/cvblocks/000: 328 368
+:geoo/abstract/cvblocks/000: 336 368
+:geoo/abstract/cvblocks/000: 344 368
+:geoo/abstract/cvblocks/000: 352 368
+:geoo/abstract/cvblocks/000: 360 368
+:geoo/abstract/cvblocks/000: 368 368
+:geoo/abstract/cvblocks/000: 376 368
+:geoo/abstract/cvblocks/000: 384 368
+:geoo/abstract/cvblocks/000: 392 368
+:geoo/abstract/cvblocks/000: 400 368
+:geoo/abstract/cvblocks/000: 408 368
+:geoo/abstract/cvblocks/000: 416 368
+:geoo/abstract/cvblocks/000: 424 368
+:geoo/abstract/cvblocks/000: 432 368
+:geoo/abstract/cvblocks/000: 440 368
+:geoo/abstract/cvblocks/000: 448 368
+:geoo/abstract/cvblocks/000: 456 368
+:geoo/abstract/cvblocks/000: 464 368
+:geoo/abstract/cvblocks/000: 472 368
+:geoo/abstract/cvblocks/000: 480 368
+:geoo/abstract/cvblocks/000: 488 368
+:geoo/abstract/cvblocks/000: 496 368
+:geoo/abstract/cvblocks/000: 504 368
+:geoo/abstract/cvblocks/000: 512 368
+:geoo/abstract/cvblocks/000: 520 368
+:geoo/abstract/cvblocks/000: 528 368
+:geoo/abstract/cvblocks/000: 536 368
+:geoo/abstract/cvblocks/000: 544 368
+:geoo/abstract/cvblocks/000: 552 368
+:geoo/steel/32x64o.S: 56 296
+:geoo/steel/16x16o.S: 184 360
+:geoo/steel/16x16o.S: 168 360
+:geoo/steel/16x16o.S: 152 360
+:geoo/steel/16x16o.S: 136 360
+:geoo/steel/16x16o.S: 120 360
+:geoo/steel/16x16o.S: 104 360
+:geoo/steel/16x16o.S: 88 360
+:geoo/steel/16x16o.S: 72 360
+:geoo/steel/16x16o.S: 56 360
+:geoo/steel/32x64o.S: 608 320
+:geoo/construction/rod_steel/end_rect.S: 288 368
+:geoo/construction/rod_steel/end_rect.S: 296 368 frr
+:geoo/construction/rod_steel/end_rect.S: 376 368
+:geoo/construction/rod_steel/end_rect.S: 384 368 frr
+:geoo/construction/rod_steel/end_rect.S: 464 368
+:geoo/construction/rod_steel/end_rect.S: 472 368 frr
+:geoo/construction/platformbrick_single: 208 376
+:geoo/construction/platformbrick_single: 208 378
+:geoo/construction/platformbrick_single: 216 376
+:geoo/construction/platformbrick_single: 216 378
+:geoo/construction/platformbrick_single: 224 380
+:geoo/construction/platformbrick_single: 224 382
+:geoo/construction/platformbrick_single: 232 380
+:geoo/construction/platformbrick_single: 232 382
+:geoo/construction/platformbrick_single: 296 376
+:geoo/construction/platformbrick_single: 296 378
+:geoo/construction/platformbrick_single: 304 376
+:geoo/construction/platformbrick_single: 304 378
+:geoo/construction/platformbrick_single: 312 380
+:geoo/construction/platformbrick_single: 312 382
+:geoo/construction/platformbrick_single: 320 380
+:geoo/construction/platformbrick_single: 320 382
+:geoo/construction/platformbrick_single: 384 376
+:geoo/construction/platformbrick_single: 384 378
+:geoo/construction/platformbrick_single: 392 376
+:geoo/construction/platformbrick_single: 392 378
+:geoo/construction/platformbrick_single: 400 380
+:geoo/construction/platformbrick_single: 400 382
+:geoo/construction/platformbrick_single: 408 380
+:geoo/construction/platformbrick_single: 408 382
+:geoo/construction/platformbrick_single: 472 376
+:geoo/construction/platformbrick_single: 472 378
+:geoo/construction/platformbrick_single: 480 376
+:geoo/construction/platformbrick_single: 480 378
+:geoo/construction/platformbrick_single: 488 380
+:geoo/construction/platformbrick_single: 488 382
+:geoo/construction/platformbrick_single: 496 380
+:geoo/construction/platformbrick_single: 496 382
+:geoo/steel/16x16o.S: 200 360

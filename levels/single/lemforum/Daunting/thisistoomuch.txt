@@ -1,0 +1,92 @@
+$BUILT 2012-05-30 21:04:07
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH This is Too Much Stepping Stones
+
+#SIZE_X 960
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 40
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER 5
+#BLOCKER 5
+#BUILDER 5
+#BASHER 5
+#MINER 5
+#DIGGER 5
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/marble/Hatch.H: 128 128
+
+:matt/marble/Goal.G: 768 144
+
+:matt/marble/09a: 0 320
+:matt/marble/09a: 0 256
+:matt/marble/09a: 0 64
+:matt/marble/09a: 0 192
+:matt/marble/09a: 0 128
+:matt/marble/09a: 0 0
+:matt/marble/09a: 0 384
+:matt/marble/09a: 64 0
+:matt/marble/09a: 128 0
+:matt/marble/09a: 192 0
+:matt/marble/09a: 256 0
+:matt/marble/09a: 320 0
+:matt/marble/09a: 384 0
+:matt/marble/09a: 448 0
+:matt/marble/09a: 64 192
+:matt/marble/09a: 512 0
+:matt/marble/09a: 576 0
+:matt/marble/09a: 640 0
+:matt/marble/09a: 704 0
+:matt/marble/09a: 768 0
+:matt/marble/09a: 832 0
+:matt/marble/09a: 896 0
+:matt/marble/09a: 896 192
+:matt/marble/09a: 896 128
+:matt/marble/09a: 896 64
+:matt/marble/09a: 896 256
+:matt/marble/09a: 896 320
+:matt/marble/09a: 896 384
+:matt/marble/09a: 832 192
+:matt/marble/09a: 768 192
+:matt/marble/09a: 64 128
+:matt/marble/09a: 128 192
+:matt/marble/09a: 64 384
+:matt/marble/09a: 128 384
+:matt/marble/09a: 832 384
+:matt/marble/09a: 768 384
+:matt/marble/09a: 832 128
+:matt/marble/09a: 704 384
+:matt/marble/09a: 640 384
+:matt/marble/09a: 192 384
+:matt/marble/09a: 256 384
+:matt/marble/09a: 320 384
+:matt/marble/09a: 384 384
+:matt/marble/09a: 448 384
+:matt/marble/09a: 512 384
+:matt/marble/09a: 576 384
+:matt/marble/09a: 64 64
+:matt/marble/09a: 832 64
+:matt/marble/01a: 316 192 rrr
+:matt/marble/01a: 380 192 rrr
+:matt/marble/01a: 444 192 rrr
+:matt/marble/01a: 508 192 rrr
+:matt/marble/01a: 572 192 rrr
+:matt/marble/01a: 636 192 rrr
+:matt/marble/09a: 192 192
+:matt/marble/09a: 704 192

@@ -1,0 +1,178 @@
+$BUILT 2014-06-29 02:17:56
+$AUTHOR minimac
+$GERMAN 
+$ENGLISH All Over the Place
+
+#SIZE_X 1424
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 304
+#START_Y 0
+#BACKGROUND_RED 16
+#BACKGROUND_GREEN 48
+#BACKGROUND_BLUE 111
+
+#SECONDS 240
+#INITIAL 80
+#REQUIRED 80
+#SPAWN_INTERVAL 40
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#CLIMBER 1
+#FLOATER 2
+#BUILDER 4
+#BASHER 4
+#MINER 2
+#RUNNER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/marble/Hatch.H: 384 244
+
+:matt/bricks/Goal.G: 1316 240
+
+:matt/beach/daytime/06: 560 44 frr
+:geoo/steel/32x16o.S: 864 384
+:geoo/steel/32x16o.S: 896 384
+:geoo/steel/32x16o.S: 928 384
+:geoo/steel/dark_16x16o.S: 1264 288
+:geoo/steel/dark_16x16o.S: 1280 304
+:geoo/steel/dark_16x16o.S: 1296 320
+:geoo/steel/dark_16x16o.S: 1312 336
+:geoo/steel/dark_16x16o.S: 1328 352
+:geoo/steel/dark_16x16o.S: 1344 368
+:geoo/steel/dark_16x16o.S: 1360 384
+:geoo/steel/dark_16x16o.S: 1264 320
+:geoo/steel/dark_16x16o.S: 1280 336
+:geoo/steel/dark_16x16o.S: 1296 352
+:geoo/steel/dark_16x16o.S: 1312 368
+:geoo/steel/dark_16x16o.S: 1328 384
+:geoo/steel/dark_16x16o.S: 1264 352
+:geoo/steel/dark_16x16o.S: 1280 368
+:geoo/steel/dark_16x16o.S: 1296 384
+:geoo/steel/dark_16x16o.S: 1264 384
+:geoo/steel/dark_16x16o.S: 1296 288
+:geoo/steel/dark_16x16o.S: 1312 304
+:geoo/steel/dark_16x16o.S: 1328 320
+:geoo/steel/dark_16x16o.S: 1344 336
+:geoo/steel/dark_16x16o.S: 1328 288
+:geoo/steel/dark_16x16o.S: 1344 304
+:geoo/steel/dark_16x16o.S: 1360 320
+:geoo/steel/dark_16x16o.S: 1360 352
+:geoo/steel/dark_16x16o.S: 1360 288
+:matt/marble/02: 1248 288
+:matt/marble/02: 1248 304
+:matt/marble/02: 1248 320
+:matt/marble/02: 1248 336
+:matt/marble/02: 1248 352
+:matt/marble/02: 1248 368
+:matt/marble/02: 1248 384
+:geoo/steel/16x16o.S: 1280 288
+:geoo/steel/16x16o.S: 1296 304
+:geoo/steel/16x16o.S: 1312 320
+:geoo/steel/16x16o.S: 1328 336
+:geoo/steel/16x16o.S: 1344 352
+:geoo/steel/16x16o.S: 1312 288
+:geoo/steel/16x16o.S: 1328 304
+:geoo/steel/16x16o.S: 1344 320
+:geoo/steel/16x16o.S: 1360 336
+:geoo/steel/16x16o.S: 1344 288
+:geoo/steel/16x16o.S: 1360 304
+:geoo/steel/16x16o.S: 1360 368
+:geoo/steel/16x16o.S: 1264 304
+:geoo/steel/16x16o.S: 1280 320
+:geoo/steel/16x16o.S: 1296 336
+:geoo/steel/16x16o.S: 1312 352
+:geoo/steel/16x16o.S: 1328 368
+:geoo/steel/16x16o.S: 1264 336
+:geoo/steel/16x16o.S: 1280 352
+:geoo/steel/16x16o.S: 1296 368
+:geoo/steel/16x16o.S: 1264 368
+:geoo/steel/16x16o.S: 1280 384
+:geoo/steel/16x16o.S: 1312 384
+:geoo/steel/16x16o.S: 1344 384
+:matt/earth/11: 1050 240
+:matt/earth/12: 1100 244
+:matt/earth/13: 1128 238
+:matt/earth/14: 1176 332
+:geoo/steel/32x16o.S: 1216 384
+:geoo/steel/32x32o.S: 1216 352
+:matt/earth/15: 982 250
+:geoo/steel/64x32o.S: 1056 224
+:geoo/steel/64x32o.S: 992 224
+:matt/earth/11: 1148 238
+:matt/earth/11: 1180 242
+:geoo/steel/64x32o.S: 1184 224
+:geoo/steel/64x32o.S: 1120 224
+:matt/earth/11: 1162 282
+:geoo/steel/32x32o.S: 1216 320
+:geoo/steel/32x32o.S: 1216 288
+:matt/earth/11: 966 332
+:geoo/steel/32x16o.S: 960 384
+:matt/earth/11: 978 264
+:geoo/steel/32x64o.S: 960 224
+:matt/earth/11: 1022 270 frr
+:matt/earth/11: 1078 266 frr
+:matt/earth/11: 1122 288 frr
+:matt/earth/11: 1138 328 frr
+:geoo/steel/32x16o.S: 1152 384
+:geoo/steel/32x16o.S: 1184 384
+:matt/earth/11: 1090 330 frr
+:geoo/steel/32x16o.S: 1120 384
+:matt/earth/15: 982 316
+:geoo/steel/32x64o.S: 960 288
+:matt/earth/11: 1012 330 frr
+:geoo/steel/32x16o.S: 992 384
+:matt/earth/11: 1052 332 frr
+:geoo/steel/32x16o.S: 1024 384
+:geoo/steel/32x16o.S: 1056 384
+:geoo/steel/32x16o.S: 1088 384
+:matt/earth/15: 1052 316
+:matt/earth/30: 1242 172
+:matt/earth/30: 1292 122
+:matt/earth/30: 1316 148 rr
+:matt/earth/30: 1366 98 rr
+:matt/marble/20d: 1408 92
+:matt/marble/20d: 1408 156
+:matt/marble/20d: 1408 220
+:matt/marble/20d: 1408 284
+:matt/marble/20d: 1408 348
+:matt/marble/20d: 1408 28
+:matt/marble/20d: 1408 -36
+:matt/beach/daytime/06: 630 310 frr
+:matt/beach/daytime/06: 430 298 frr
+:matt/beach/daytime/06: 338 344 frr
+:geoo/steel/dark_64x64.S: 528 336
+:geoo/steel/dark_64x32o.S: 528 304
+:matt/beach/daytime/02: 606 340
+:matt/winter/06: 554 240
+:matt/winter/06: 554 176
+:matt/winter/06: 554 112
+:matt/winter/08: 554 104
+:matt/beach/daytime/06: 574 -32
+:matt/beach/daytime/06: 408 -64
+:matt/beach/daytime/03: 794 150
+:matt/beach/daytime/03: 714 138 frr
+:matt/beach/daytime/06: 688 54 frr
+:matt/beach/daytime/06: 614 -28 frr
+:matt/beach/daytime/06: 828 -102 rrr
+:matt/beach/daytime/06: 760 -142 rrr
+:matt/beach/daytime/06: 192 314 r
+:matt/beach/daytime/06: 116 346 r
+:matt/beach/daytime/06: 134 264 r
+:matt/beach/daytime/06: 28 302 r
+:matt/beach/daytime/13: 34 152 frr
+:matt/beach/daytime/06: -78 208 frr
+:matt/beach/daytime/06: -36 262 r
+:matt/beach/daytime/04: 48 120 rrrd
+:geoo/steel/dark_64x32o.S: 30 178 d
+:matt/beach/daytime/03: 646 254 rrrd
+:matt/beach/daytime/03: 656 348 rrrd
+:geoo/steel/32x64o.S: 652 362 d
+:matt/marble/10d: 1392 64
+:matt/marble/13d: 1392 80

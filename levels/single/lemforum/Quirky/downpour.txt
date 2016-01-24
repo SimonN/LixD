@@ -1,0 +1,96 @@
+$BUILT 2014-06-24 02:04:14
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Downpour
+
+#SIZE_X 640
+#SIZE_Y 256
+#TORUS_X 0
+#TORUS_Y 1
+#START_X 0
+#START_Y 92
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 140
+#REQUIRED 25
+#SPAWN_INTERVAL 1
+#SPAWN_INTERVAL_FAST 1
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#JUMPER -1
+#EXPLODER2 -1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 256 32
+:geoo/construction/Hatch.H: 320 32
+:geoo/construction/Hatch.H: 384 32
+:geoo/construction/Hatch.H: 256 32
+:geoo/construction/Hatch.H: 320 32
+:geoo/construction/Hatch.H: 384 32
+:geoo/construction/Hatch.H: 16 0
+
+:geoo/abstract/goal.G: 544 80
+:geoo/abstract/goal.G: 544 208
+
+:geoo/abstract/tbeam_down.T: 448 0
+:geoo/abstract/tbeam_down.T: 448 32
+:geoo/abstract/tbeam_down.T: 448 64
+:geoo/abstract/tbeam_down.T: 448 128
+:geoo/abstract/tbeam_down.T: 448 160
+:geoo/abstract/tbeam_down.T: 448 192
+:geoo/abstract/tbeam_right.T: 448 192
+:geoo/abstract/tbeam_right.T: 448 160
+:geoo/abstract/tbeam_right.T: 448 128
+:geoo/abstract/tbeam_right.T: 448 64
+:geoo/abstract/tbeam_right.T: 448 32
+:geoo/abstract/tbeam_right.T: 448 0
+:geoo/abstract/tbeam_up.T: 448 224
+:geoo/abstract/tbeam_right.T: 448 224
+:geoo/abstract/tbeam_up.T: 448 96
+:geoo/abstract/tbeam_right.T: 448 96
+:geoo/abstract/tbeam_left.T: 48 0
+:geoo/abstract/tbeam_left.T: 80 0
+:geoo/abstract/tbeam_left.T: 112 0
+:geoo/abstract/tbeam_left.T: 144 0
+:geoo/abstract/tbeam_left.T: 176 0
+
+:geoo/abstract/pipes/central5: 0 80
+:geoo/abstract/pipes/central5: 32 80
+:geoo/abstract/pipes/central5: 64 80
+:geoo/abstract/pipes/central5: 96 80
+:geoo/abstract/pipes/central5: 160 80
+:geoo/abstract/pipes/endr5: 192 80
+:geoo/abstract/pipes/central5: 488 128
+:geoo/abstract/pipes/central5: 520 128
+:geoo/abstract/pipes/central5: 552 128
+:geoo/abstract/pipes/endr5: 480 128 frr
+:geoo/abstract/pipes/central5: 584 128
+:geoo/abstract/pipes/central5: 616 128
+:geoo/abstract/pipes/central5: 488 0
+:geoo/abstract/pipes/central5: 520 0
+:geoo/abstract/pipes/central5: 552 0
+:geoo/abstract/pipes/endr5: 480 0 frr
+:geoo/abstract/pipes/central5: 584 0
+:geoo/abstract/pipes/central5: 616 0
+:geoo/abstract/pipes/central5: 128 80
+:geoo/abstract/pipes/endr5: 204 0 rrr
+:geoo/abstract/pipes/endr5: 204 24 r
+:geoo/abstract/pipes/cshort5: 204 8 rrr
+:geoo/abstract/pipes/cshort5: 204 16 rrr
+:geoo/abstract/pipes/cshort5: 0 72 rrr
+:geoo/abstract/pipes/ends5: 0 64 r
+:geoo/abstract/pipes/cshort5: 56 72 rrr
+:geoo/abstract/pipes/ends5: 56 64 r
+:geoo/abstract/pipes/junct5: 56 80
+:geoo/abstract/pipes/corner5: 0 80

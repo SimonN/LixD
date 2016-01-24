@@ -1,0 +1,102 @@
+$BUILT                                             2012-03-26 16:06:23
+$AUTHOR                                                   Insane Steve
+$GERMAN                                                               
+$ENGLISH                                                   Snow Really
+
+#SIZE_X                                                            960
+#SIZE_Y                                                            400
+#TORUS_X                                                             0
+#TORUS_Y                                                             0
+#START_X                                                             0
+#START_Y                                                           -20
+#BACKGROUND_RED                                                      0
+#BACKGROUND_GREEN                                                    0
+#BACKGROUND_BLUE                                                     0
+
+#SECONDS                                                             0
+#INITIAL                                                            40
+#REQUIRED                                                           35
+#SPAWN_INTERVAL                                                     32
+#SPAWN_INTERVAL_FAST                                                 4
+
+#WALKER                                                              5
+#JUMPER                                                              5
+#CLIMBER                                                             5
+#FLOATER                                                             5
+#EXPLODER2                                                           5
+#BLOCKER                                                             5
+#CUBER                                                               5
+#BUILDER                                                             5
+#PLATFORMER                                                          5
+#BASHER                                                              5
+#MINER                                                               5
+#DIGGER                                                              5
+
+:matt/winter/Hatch.H:                         40       216
+
+:matt/winter/Goal.G:                         600        40
+
+:matt/winter/07:                             936        96
+:matt/winter/09c:                            936        88
+:matt/winter/11:                             704       112
+:matt/winter/02:                             544       112
+:matt/winter/04:                             472       120
+:matt/winter/02:                             384       112
+:matt/winter/06:                             560       104     rrr
+:matt/winter/06:                             208       104     rrr
+:matt/winter/06:                             200       280
+:matt/winter/07:                               0       280
+:matt/winter/01:                               0       336
+:matt/winter/01:                              48       336
+:matt/winter/01:                              32       368
+:matt/winter/01:                               0       368
+:matt/winter/01:                             -16       336
+:matt/winter/01:                             -16       368
+:matt/winter/10:                              56       312
+:matt/winter/06:                             200       224
+:matt/winter/06:                             200       168
+:matt/winter/06:                             200       112
+:matt/winter/09c:                            200       104
+:matt/winter/06:                             264       104     rrr
+:matt/winter/06:                             328       104     rrr
+:matt/winter/11:                             200       112
+:matt/winter/11:                             232       104
+:matt/winter/11:                             248       144
+:matt/winter/11:                             208       152
+:matt/winter/12:                             208       200
+:matt/winter/12:                             256       200
+:matt/winter/17:                             208       208
+:matt/winter/18:                             208       312
+:matt/winter/18:                             216       328
+:matt/winter/14:                             224       304
+:matt/winter/14:                             232       352
+:matt/winter/14:                             256       312
+:matt/winter/10:                             224       336
+:matt/winter/02:                             256       224
+:matt/winter/18:                             288       208
+:matt/winter/18:                             288       192
+:matt/winter/09a:                            392        80
+:matt/winter/09a:                            504        80
+:matt/winter/09c:                              0       272
+:matt/winter/06:                             616       104     rrr
+:matt/winter/06:                             672       104     rrr
+:matt/winter/02:                             720       120
+:matt/winter/09a:                            728        80
+:matt/winter/12:                             576       256
+:matt/winter/03:                             584       256
+:matt/winter/03:                             800       224
+:matt/winter/04:                             864       152
+:matt/winter/03:                             240       248
+:matt/winter/13:                             288       288
+:matt/winter/11:                             296       264
+:matt/winter/13:                             328       312
+:matt/winter/18:                             344       264
+:matt/winter/18:                             336       280
+:matt/winter/04:                             872       248
+:matt/winter/11:                             832       240
+:matt/winter/11:                             848       272
+:matt/winter/11:                             872       264
+:matt/winter/14:                             848       320
+:matt/winter/04:                             832       280
+:matt/winter/04:                             872       304
+:matt/winter/05:                             688       264
