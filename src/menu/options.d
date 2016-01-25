@@ -5,6 +5,7 @@ module menu.options;
  */
 
 import std.algorithm;
+import std.string;
 
 import enumap;
 
@@ -36,8 +37,10 @@ private:
     Enumap!(OptionGroup, TextButton) groupButtons;
     Enumap!(OptionGroup, Option[]) groups;
 
-    // extra references to what's in the groups, to update color immediately
+    // extra references to what's in the groups, to update color immediately,
+    // and to check user name to not be empty
     NumPick guiRed, guiGreen, guiBlue;
+    Texttype _userName;
 
 
 
@@ -89,6 +92,9 @@ public this()
 
 protected override void calcSelf()
 {
+    if (_userName.on == false && _userName.text.strip.length == 0) {
+        _userName.text = basics.globconf.userName;
+    }
     if (okay.execute || hardware.mouse.mouseClickRight) {
         saveEverything();
         _gotoMainMenu = true;
@@ -183,6 +189,7 @@ void populateGeneral()
 
     fac = facRight();
     grp ~= fac.factory!TextOption(Lang.optionUserName.transl, &userName);
+    _userName = (cast (TextOption) grp[$-1]).texttype;
 
     fac.yl = 100;
     grp ~= fac.factory!LanguageOption(Lang.optionLanguage.transl);

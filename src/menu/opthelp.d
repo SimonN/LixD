@@ -87,6 +87,9 @@ class TextOption : Option
     private Texttype _texttype;
     private string*  _target;
 
+    // hack, to enable immediate check of nonempty
+    public @property inout(Texttype) texttype() inout { return _texttype; }
+
     this(Geom g, string cap, string* t)
     {
         assert (t);

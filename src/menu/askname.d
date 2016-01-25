@@ -1,5 +1,7 @@
 module menu.askname;
 
+import std.string;
+
 static import basics.globconf;
 static import basics.user;
 import file.language;
@@ -22,9 +24,9 @@ class MenuAskName : MenuWithBackground {
 
         _tt = new Texttype(new Geom(0, 100, this.xlg-40, 20, From.TOP));
         _tt.onEnter = () {
-            if (_tt.text.length > 0) {
+            if (_tt.text.strip.length > 0) {
                 _done = true;
-                basics.globconf.userName = _tt.text;
+                basics.globconf.userName = _tt.text.strip;
                 basics.user.load();
             }
         };
