@@ -1,7 +1,6 @@
 module menu.options;
 
 /* OptionsMenu: Menu with several tabs to set user options and global options.
- * It's OK to exceed 80 chars in this file.
  */
 
 import std.algorithm;
@@ -13,6 +12,7 @@ import enumap;
 import basics.globconf;
 import basics.user;
 import file.language;
+import file.useropt; // only to name the type for addNumPick
 import gui;
 import graphic.color;
 import hardware.mouse; // RMB to OK the window away
@@ -79,9 +79,10 @@ public this()
             option.loadValue();
         }
     }
-
-    try               showGroup(basics.user.optionGroup.to!OptionGroup);
-    catch (Exception) showGroup(OptionGroup.general);
+    try
+        showGroup(basics.user.optionGroup.value.to!OptionGroup);
+    catch (Exception)
+        showGroup(OptionGroup.general);
 }
 
 protected override void calcSelf()
@@ -178,8 +179,8 @@ void populateGeneral()
         groups[OptionGroup.general] = grp;
     auto fac = facLeft();
     fac.y = 250;
-    grp ~= fac.factory!BoolOption(Lang.optionReplayAutoSolutions.transl, &replayAutoSolutions);
-    grp ~= fac.factory!BoolOption(Lang.optionReplayAutoMulti.transl, &replayAutoMulti);
+    grp ~= fac.factory!BoolOption(replayAutoSolutions);
+    grp ~= fac.factory!BoolOption(replayAutoMulti);
 
     fac = facRight();
     grp ~= fac.factory!TextOption(Lang.optionUserName.transl, &userName);
@@ -193,7 +194,7 @@ void populateGeneral()
     auto cfg = NumPickConfig();
     cfg.max = 20;
     cfg.min =  0;
-    grp ~= fac.factory!NumPickOption(cfg, Lang.optionSoundVolume.transl, &soundVolume);
+    grp ~= fac.factory!NumPickOption(cfg, soundVolume);
 }
 
 void populateGraphics()
@@ -203,19 +204,18 @@ void populateGraphics()
         groups[OptionGroup.graphics] = grp;
     auto fac = facLeft();
     grp ~= [
-        fac.factory!BoolOption(Lang.optionScreenWindowed.transl, &screenWindowed),
+        fac.factory!BoolOption(screenWindowed),
     ];
     fac.y += fac.incrementY;
     grp ~= [
-        fac.factory!BoolOption(Lang.optionArrowsReplay.transl, &arrowsReplay),
-        fac.factory!BoolOption(Lang.optionArrowsNetwork.transl, &arrowsNetwork),
-        fac.factory!BoolOption(Lang.optionPaintTorusSeams.transl, &paintTorusSeams),
-        fac.factory!BoolOption(Lang.optionIngameTooltips.transl, &ingameTooltips),
-        fac.factory!BoolOption(Lang.optionShowButtonHotkeys.transl, &showButtonHotkeys),
+        fac.factory!BoolOption(paintTorusSeams),
+        fac.factory!BoolOption(ingameTooltips),
+        fac.factory!BoolOption(showButtonHotkeys),
+        fac.factory!BoolOption(showFPS),
     ];
     fac = facRight();
     grp ~= fac.factory!ResolutionOption(Lang.optionScreenWindowedRes.transl,
-                                        &screenWindowedX, &screenWindowedY);
+        screenWindowedX.valuePtr, screenWindowedY.valuePtr);
 }
 
 void populateControls()
@@ -223,26 +223,24 @@ void populateControls()
     auto fac = facLeft();
     fac.y += fac.incrementY * 2;
     groups[OptionGroup.controls] ~= [
-        fac.factory!HotkeyOption(Lang.optionKeyScroll.transl, &keyScroll),
-        fac.factory!BoolOption(Lang.optionReplayCancel.transl, &replayCancel),
+        fac.factory!HotkeyOption(keyScroll),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.controls] ~= [
-        fac.factory!BoolOption(Lang.optionAvoidBuilderQueuing.transl,   &avoidBuilderQueuing),
-        fac.factory!BoolOption(Lang.optionAvoidBatterToExploder.transl, &avoidBatterToExploder),
+        fac.factory!BoolOption(avoidBuilderQueuing),
+        fac.factory!BoolOption(avoidBatterToExploder),
     ];
     fac = facRight();
-    void addNumPick(in string cap, int* p, in int minVal)
+    void addNumPick(UserOption!int uo, in int minVal)
     {
         auto cfg = NumPickConfig();
         cfg.max = 80;
         cfg.min = minVal;
-        groups[OptionGroup.controls] ~= fac.factory!NumPickOption(cfg, cap, p);
+        groups[OptionGroup.controls] ~= fac.factory!NumPickOption(cfg, uo);
     }
-    addNumPick(Lang.optionMouseSpeed.transl,       &mouseSpeed,       1);
-    addNumPick(Lang.optionScrollSpeedEdge.transl,  &scrollSpeedEdge,  0);
-    addNumPick(Lang.optionScrollSpeedClick.transl, &scrollSpeedClick, 1);
-    addNumPick(Lang.optionReplayCancelAt.transl,   &replayCancelAt,   0);
+    addNumPick(mouseSpeed, 1);
+    addNumPick(scrollSpeedEdge, 0);
+    addNumPick(scrollSpeedClick, 1);
 }
 
 void populateGameKeys()
@@ -250,55 +248,55 @@ void populateGameKeys()
     immutable float skillXl = (xlg - 40) / skillSort.length;
     foreach (x, ac; skillSort)
         groups[OptionGroup.gameKeys] ~= new SkillHotkeyOption(new Geom(
-            20 + x * skillXl, 90, skillXl, 70), ac, &keySkill[ac]);
+            20 + x * skillXl, 90, skillXl, 70), ac, keySkill[ac]);
 
     auto fac = facKeys!0;
     fac.y += 80;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(Lang.optionKeyForceLeft.transl, &keyForceLeft),
-        fac.factory!HotkeyOption(Lang.optionKeyForceRight.transl, &keyForceRight),
+        fac.factory!HotkeyOption(keyForceLeft),
+        fac.factory!HotkeyOption(keyForceRight),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(Lang.optionKeyPriorityInvert.transl, &keyPriorityInvert),
+        fac.factory!HotkeyOption(keyPriorityInvert),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.gameKeys] ~=
-        fac.factory!HotkeyOption(Lang.optionKeyRestart.transl, &keyRestart);
+        fac.factory!HotkeyOption(keyRestart);
     fac.y += fac.incrementY;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(Lang.optionKeyStateLoad.transl, &keyStateLoad),
-        fac.factory!HotkeyOption(Lang.optionKeyStateSave.transl, &keyStateSave),
+        fac.factory!HotkeyOption(keyStateLoad),
+        fac.factory!HotkeyOption(keyStateSave),
     ];
 
     fac = facKeys!1;
     fac.y += 80;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(Lang.optionKeyPause.transl, &keyPause1),
-        fac.factory!HotkeyOption(Lang.optionKeyPause.transl, &keyPause2),
+        fac.factory!HotkeyOption(keyPause1),
+        fac.factory!HotkeyOption(keyPause2),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(Lang.optionKeyFrameBackMany.transl, &keyFrameBackMany),
-        fac.factory!HotkeyOption(Lang.optionKeyFrameBackOne.transl, &keyFrameBackOne),
-        fac.factory!HotkeyOption(Lang.optionKeyFrameAheadOne.transl, &keyFrameAheadOne),
-        fac.factory!HotkeyOption(Lang.optionKeyFrameAheadMany.transl, &keyFrameAheadMany),
-        fac.factory!HotkeyOption(Lang.optionKeySpeedFast.transl, &keySpeedFast),
-        fac.factory!HotkeyOption(Lang.optionKeySpeedTurbo.transl, &keySpeedTurbo),
+        fac.factory!HotkeyOption(keyFrameBackMany),
+        fac.factory!HotkeyOption(keyFrameBackOne),
+        fac.factory!HotkeyOption(keyFrameAheadOne),
+        fac.factory!HotkeyOption(keyFrameAheadMany),
+        fac.factory!HotkeyOption(keySpeedFast),
+        fac.factory!HotkeyOption(keySpeedTurbo),
     ];
 
     fac = facKeys!2;
     fac.y += 80;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(Lang.optionKeyNuke.transl, &keyNuke),
-        fac.factory!HotkeyOption(Lang.winGameTitle.transl, &keyGameExit),
+        fac.factory!HotkeyOption(keyNuke),
+        fac.factory!HotkeyOption(keyGameExit),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(Lang.optionKeyZoomIn.transl,  &keyZoomIn),
-        fac.factory!HotkeyOption(Lang.optionKeyZoomOut.transl, &keyZoomOut),
-        fac.factory!HotkeyOption(Lang.optionKeyChat.transl, &keyChat),
-        fac.factory!HotkeyOption(Lang.optionKeySpecTribe.transl, &keySpecTribe),
+        fac.factory!HotkeyOption(keyZoomIn),
+        fac.factory!HotkeyOption(keyZoomOut),
+        fac.factory!HotkeyOption(keyChat),
+        fac.factory!HotkeyOption(keySpecTribe),
     ];
 }
 
@@ -306,16 +304,16 @@ void populateEditorKeys()
 {
     auto fac = facKeys!0;
     groups[OptionGroup.editorKeys] ~= [
-        fac.factory!HotkeyOption(Lang.optionEdLeft.transl, &keyEditorLeft),
-        fac.factory!HotkeyOption(Lang.optionEdRight.transl, &keyEditorRight),
-        fac.factory!HotkeyOption(Lang.optionEdUp.transl, &keyEditorUp),
-        fac.factory!HotkeyOption(Lang.optionEdDown.transl, &keyEditorDown),
+        fac.factory!HotkeyOption(keyEditorLeft),
+        fac.factory!HotkeyOption(keyEditorRight),
+        fac.factory!HotkeyOption(keyEditorUp),
+        fac.factory!HotkeyOption(keyEditorDown),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.editorKeys] ~= [
-        fac.factory!HotkeyOption(Lang.optionEdCopy.transl, &keyEditorCopy),
-        fac.factory!HotkeyOption(Lang.optionEdDelete.transl, &keyEditorDelete),
-        fac.factory!HotkeyOption(Lang.optionEdGrid.transl, &keyEditorGrid),
+        fac.factory!HotkeyOption(keyEditorCopy),
+        fac.factory!HotkeyOption(keyEditorDelete),
+        fac.factory!HotkeyOption(keyEditorGrid),
     ];
     fac.y += fac.incrementY * 3;
     fac.xl = this.xlg - 40;
@@ -323,42 +321,42 @@ void populateEditorKeys()
     cfg.max = 96;
     cfg.min =  1;
     groups[OptionGroup.editorKeys] ~=
-        fac.factory!NumPickOption(cfg, Lang.optionEdGridCustom.transl, &editorGridCustom);
+        fac.factory!NumPickOption(cfg, editorGridCustom);
 
     fac = facKeys!1;
     groups[OptionGroup.editorKeys] ~= [
-        fac.factory!HotkeyOption(Lang.optionEdSelectAll.transl, &keyEditorSelectAll),
-        fac.factory!HotkeyOption(Lang.optionEdSelectFrame.transl, &keyEditorSelectFrame),
-        fac.factory!HotkeyOption(Lang.optionEdSelectAdd.transl, &keyEditorSelectAdd),
+        fac.factory!HotkeyOption(keyEditorSelectAll),
+        fac.factory!HotkeyOption(keyEditorSelectFrame),
+        fac.factory!HotkeyOption(keyEditorSelectAdd),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.editorKeys] ~= [
-        fac.factory!HotkeyOption(Lang.optionEdBackground.transl, &keyEditorBackground),
-        fac.factory!HotkeyOption(Lang.optionEdForeground.transl, &keyEditorForeground),
-        fac.factory!HotkeyOption(Lang.optionEdMirror.transl, &keyEditorMirror),
-        fac.factory!HotkeyOption(Lang.optionEdRotate.transl, &keyEditorRotate),
-        fac.factory!HotkeyOption(Lang.optionEdDark.transl, &keyEditorDark),
+        fac.factory!HotkeyOption(keyEditorBackground),
+        fac.factory!HotkeyOption(keyEditorForeground),
+        fac.factory!HotkeyOption(keyEditorMirror),
+        fac.factory!HotkeyOption(keyEditorRotate),
+        fac.factory!HotkeyOption(keyEditorDark),
     ];
 
     fac = facKeys!2;
     groups[OptionGroup.editorKeys] ~= [
-        fac.factory!HotkeyOption(Lang.optionEdAddTerrain.transl, &keyEditorAddTerrain),
-        fac.factory!HotkeyOption(Lang.optionEdAddSteel.transl, &keyEditorAddSteel),
-        fac.factory!HotkeyOption(Lang.optionEdAddHatch.transl, &keyEditorAddHatch),
-        fac.factory!HotkeyOption(Lang.optionEdAddGoal.transl, &keyEditorAddGoal),
-        fac.factory!HotkeyOption(Lang.optionEdAddDeco.transl, &keyEditorAddDeco),
-        fac.factory!HotkeyOption(Lang.optionEdAddHazard.transl, &keyEditorAddHazard),
+        fac.factory!HotkeyOption(keyEditorAddTerrain),
+        fac.factory!HotkeyOption(keyEditorAddSteel),
+        fac.factory!HotkeyOption(keyEditorAddHatch),
+        fac.factory!HotkeyOption(keyEditorAddGoal),
+        fac.factory!HotkeyOption(keyEditorAddDeco),
+        fac.factory!HotkeyOption(keyEditorAddHazard),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.editorKeys] ~= [
-        fac.factory!HotkeyOption(Lang.winConstantsTitle.transl, &keyEditorMenuConstants),
-        fac.factory!HotkeyOption(Lang.winTopologyTitle.transl, &keyEditorMenuTopology),
-        fac.factory!HotkeyOption(Lang.winLooksTitle.transl, &keyEditorMenuLooks),
-        fac.factory!HotkeyOption(Lang.winSkillsTitle.transl, &keyEditorMenuSkills),
+        fac.factory!HotkeyOption(keyEditorMenuConstants),
+        fac.factory!HotkeyOption(keyEditorMenuTopology),
+        fac.factory!HotkeyOption(keyEditorMenuLooks),
+        fac.factory!HotkeyOption(keyEditorMenuSkills),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.editorKeys] ~=
-        fac.factory!HotkeyOption(Lang.commonExit.transl, &keyEditorExit);
+        fac.factory!HotkeyOption(keyEditorExit);
 }
 
 void populateMenuKeys()
@@ -368,26 +366,26 @@ void populateMenuKeys()
         groups[OptionGroup.menuKeys] = grp;
     auto fac = facKeys!0;
     grp ~= [
-        fac.factory!HotkeyOption(Lang.optionKeyMenuOkay.transl, &keyMenuOkay),
-        fac.factory!HotkeyOption(Lang.optionKeyMenuEdit.transl, &keyMenuEdit),
-        fac.factory!HotkeyOption(Lang.optionKeyMenuExport.transl, &keyMenuExport),
-        fac.factory!HotkeyOption(Lang.optionKeyMenuDelete.transl, &keyMenuDelete),
-        fac.factory!HotkeyOption(Lang.optionKeyMenuExit.transl, &keyMenuExit),
+        fac.factory!HotkeyOption(keyMenuOkay),
+        fac.factory!HotkeyOption(keyMenuEdit),
+        fac.factory!HotkeyOption(keyMenuExport),
+        fac.factory!HotkeyOption(keyMenuDelete),
+        fac.factory!HotkeyOption(keyMenuExit),
     ];
     fac = facKeys!1;
     grp ~= [
-        fac.factory!HotkeyOption(Lang.optionKeyMenuUpDir.transl, &keyMenuUpDir),
-        fac.factory!HotkeyOption(Lang.optionKeyMenuUpBy5.transl, &keyMenuUpBy5),
-        fac.factory!HotkeyOption(Lang.optionKeyMenuUpBy1.transl, &keyMenuUpBy1),
-        fac.factory!HotkeyOption(Lang.optionKeyMenuDownBy1.transl, &keyMenuDownBy1),
-        fac.factory!HotkeyOption(Lang.optionKeyMenuDownBy5.transl, &keyMenuDownBy5),
+        fac.factory!HotkeyOption(keyMenuUpDir),
+        fac.factory!HotkeyOption(keyMenuUpBy5),
+        fac.factory!HotkeyOption(keyMenuUpBy1),
+        fac.factory!HotkeyOption(keyMenuDownBy1),
+        fac.factory!HotkeyOption(keyMenuDownBy5),
     ];
     fac = facKeys!2;
     grp ~= [
-        fac.factory!HotkeyOption(Lang.browserSingleTitle.transl, &keyMenuMainSingle),
-        fac.factory!HotkeyOption(Lang.winLobbyTitle.transl, &keyMenuMainNetwork),
-        fac.factory!HotkeyOption(Lang.browserReplayTitle.transl, &keyMenuMainReplays),
-        fac.factory!HotkeyOption(Lang.optionTitle.transl, &keyMenuMainOptions),
+        fac.factory!HotkeyOption(keyMenuMainSingle),
+        fac.factory!HotkeyOption(keyMenuMainNetwork),
+        fac.factory!HotkeyOption(keyMenuMainReplays),
+        fac.factory!HotkeyOption(keyMenuMainOptions),
     ];
 
     auto guiCol   = NumPickConfig();
@@ -400,9 +398,9 @@ void populateMenuKeys()
     fac.xl = this.xlg - 40;
     fac.y  = 220;
     grp ~= [
-        fac.factory!NumPickOption(guiCol, Lang.optionGuiColorRed.transl, &guiColorRed),
-        fac.factory!NumPickOption(guiCol, Lang.optionGuiColorGreen.transl, &guiColorGreen),
-        fac.factory!NumPickOption(guiCol, Lang.optionGuiColorBlue.transl, &guiColorBlue),
+        fac.factory!NumPickOption(guiCol, guiColorRed),
+        fac.factory!NumPickOption(guiCol, guiColorGreen),
+        fac.factory!NumPickOption(guiCol, guiColorBlue),
     ];
     guiRed   = (cast (NumPickOption) grp[$-3]).num;
     guiGreen = (cast (NumPickOption) grp[$-2]).num;

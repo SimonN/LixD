@@ -3,6 +3,7 @@ module editor.gui.browter;
 import basics.globals;
 import basics.user;
 import file.language;
+import file.useropt;
 import gui;
 import gui.picker;
 import hardware.mouse;
@@ -11,15 +12,15 @@ class TerrainBrowser : Window {
 private:
     Picker _picker;
     TextButton _cancel;
-    MutFilename* _currentDirUserCfg;
+    UserOptionFilename _curDir;
 
 public:
-    this(string allowedPreExts, MutFilename* currentDirUserCfg)
+    this(string allowedPreExts, UserOptionFilename curDir)
     {
+        assert (curDir !is null);
+        _curDir = curDir;
         super(new Geom(0, 0, Geom.screenXlg, Geom.mapYlg, From.TOP),
-            Lang.addTerrain.transl);
-        assert (currentDirUserCfg !is null);
-        _currentDirUserCfg = currentDirUserCfg;
+            _curDir.descShort);
 
         auto cfg  = PickerConfig!ImageTiler();
         cfg.all   = new Geom(20, 40, xlg-40, ylg-60);
@@ -28,7 +29,7 @@ public:
         cfg.ls    = new ImageLs(allowedPreExts);
         _picker = new Picker(cfg);
         _picker.basedir = dirImages;
-        _picker.currentDir = *_currentDirUserCfg;
+        _picker.currentDir = _curDir;
         _cancel = new TextButton(new Geom(
             20, 40, 80, 30, From.TOP_RIGHT), Lang.commonCancel.transl);
         _cancel.hotkey = keyMenuExit;
@@ -50,6 +51,6 @@ public:
     void saveDirOfChosenTileToUserCfg()
     {
         assert (chosenTile !is null);
-        *_currentDirUserCfg = chosenTile.guaranteedDirOnly();
+        _curDir.value = chosenTile.guaranteedDirOnly();
     }
 }

@@ -53,7 +53,7 @@ void selectGrid(Editor editor)
     int g = editorGridSelected;
     scope (exit)
         editorGridSelected = g;
-    g = (g == 1 || g == 2 || g == 16 || g == editorGridCustom) ? g : 1;
+    g = (g == 1 || g == 2 || g == 16 || g == editorGridCustom.value) ? g : 1;
     assert (editor._panel.button(Lang.editorButtonGrid2));
     if (keyEditorGrid.keyTapped)
         g = () { switch (g) {
@@ -80,7 +80,7 @@ void selectGrid(Editor editor)
 void moveTiles(Editor editor) {
     with (editor)
 {
-    immutable grid = editorGridSelected;
+    immutable grid = editorGridSelected.value;
     immutable movedByKeyboard
         = Point(-grid, 0) * keyEditorLeft .keyTappedAllowingRepeats
         + Point(+grid, 0) * keyEditorRight.keyTappedAllowingRepeats

@@ -110,13 +110,13 @@ void setScreenMode(in Cmdargs cmdargs)
         try_modes ~= TryMode(true, 640, 480);
     }
     void addWindowedTryModes() {
-        if (screenWindowedX > 0 && screenWindowedY > 0) {
+        if (screenWindowedX.value > 0 && screenWindowedY.value > 0) {
             try_modes ~= TryMode(false, screenWindowedX, screenWindowedY);
         }
         try_modes ~= TryMode(false, 640, 480);
     }
     if (! cmdargs.forceSoftwareFullscreen
-        && (cmdargs.forceWindowed || basics.user.screenWindowed)
+        && (cmdargs.forceWindowed || basics.user.screenWindowed.value)
     ) {
         addWindowedTryModes();
         addFullscreenTryModes();

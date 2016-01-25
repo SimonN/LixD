@@ -233,7 +233,7 @@ calcScrolling()
         return;
     }
 
-    if (basics.user.scrollSpeedEdge > 0) {
+    if (basics.user.scrollSpeedEdge.value > 0) {
         int scrd = basics.user.scrollSpeedEdge;
         if (hardware.mouse.mouseHeldRight())
             scrd *= 4;
@@ -410,7 +410,7 @@ loadCameraRect(in Torbit src)
     immutable bool drty = torusY && r.yl < cameraZoomedYl;
 
     auto drata = DrawingTarget(this.albit);
-    if (basics.user.paintTorusSeams)
+    if (basics.user.paintTorusSeams.value)
         drawTorusSeams();
 
     void drawHere(int ax, int ay, int axl, int ayl)

@@ -24,6 +24,7 @@ static import basics.globals; // for LanguageOption
 import file.filename;  // for LanguageOption
 import file.io;        // for LanguageOption
 import file.language;  // for LanguageOption
+import file.useropt;
 import file.search;    // for LanguageOption
 import graphic.internal;
 import gui;
@@ -75,6 +76,7 @@ private:
     bool     _execute;
 
 public:
+    this(Geom g, UserOption!bool opt) { this(g, opt.descShort, opt.valuePtr); }
     this(Geom g, string cap, bool* t)
     {
         // t may be null, you may not call load/saveValue then
@@ -123,6 +125,7 @@ private:
     string*  _target;
 
 public:
+    this(Geom g, UserOption!string uo) { this(g, uo.descShort, uo.valuePtr); }
     this(Geom g, string cap, string* t)
     {
         assert (t);
@@ -149,6 +152,7 @@ private:
     KeySet*   _target;
 
 public:
+    this(Geom g, UserOption!KeySet uo) { this(g, uo.descShort, uo.valuePtr); }
     this(Geom g, string cap, KeySet* t)
     {
         assert (t);
@@ -169,6 +173,7 @@ class SkillHotkeyOption : Option
     private KeyButton _keyb;
     private KeySet* _target;
 
+    this(Geom g, Ac ac, UserOption!KeySet uo) { this(g, ac, uo.valuePtr); }
     this(Geom g, Ac ac, KeySet* t)
     {
         super(g);
@@ -194,6 +199,11 @@ class NumPickOption : Option
 
     // hack, to enable immediate updates of the GUI menu colors
     public @property inout(NumPick) num() inout { return _num; }
+
+    this(Geom g, NumPickConfig cfg, UserOption!int uo)
+    {
+        this(g, cfg, uo.descShort, uo.valuePtr);
+    }
 
     this(Geom g, NumPickConfig cfg, string cap, int* t)
     {
@@ -301,7 +311,9 @@ public:
 
     override void saveValue()
     {
-        if (_lastChosen !is null && _lastChosen != basics.user.fileLanguage) {
+        if (_lastChosen !is null
+            && _lastChosen != MutFilename(basics.user.fileLanguage)
+        ) {
             basics.user.fileLanguage = _lastChosen;
             loadUserLanguageAndIfNotExistSetUserOptionToEnglish();
         }

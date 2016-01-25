@@ -101,7 +101,7 @@ void makePanel(Editor editor)
             editor._selection.each!(sel => sel.toggleDark());
         });
         template mkSubwin(string forWhat) {
-            enum string mkSubwin = "
+            enum string mkSubwin = q{
                 onExecuteText(Lang.editorButtonMenu%s, Lang.win%sTitle,
                     keyEditorMenu%s, () {
                         if (! editor.noWindowsOpen)
@@ -112,14 +112,14 @@ void makePanel(Editor editor)
                         addFocus(editor._okCancelWindow);
                         button(Lang.editorButtonMenu%s).on = true;
                     });
-                ".format(forWhat, forWhat, forWhat, forWhat, forWhat);
+                }.format(forWhat, forWhat, forWhat, forWhat, forWhat);
         }
         mixin (mkSubwin!"Constants");
         mixin (mkSubwin!"Topology");
         mixin (mkSubwin!"Looks");
         mixin (mkSubwin!"Skills");
-        template mkBrowser(string name, string exts, string curDirPtr) {
-            enum string mkBrowser = "
+        template mkBrowser(string name, string exts, string curDirOpt) {
+            enum string mkBrowser = q{
                     onExecute(Lang.editorButtonAdd%s, keyEditorAdd%s, () {
                         if (! editor.noWindowsOpen)
                             return;
@@ -129,14 +129,14 @@ void makePanel(Editor editor)
                         addFocus(editor._terrainBrowser);
                         button(Lang.editorButtonAdd%s).on = true;
                     });
-                ".format(name, name, exts, curDirPtr, name);
+                }.format(name, name, exts, curDirOpt, name);
         }
-        mixin (mkBrowser!("Terrain", "[0]",          "&editorLastDirTerrain"));
-        mixin (mkBrowser!("Steel", "[preExtSteel]",  "&editorLastDirSteel"));
-        mixin (mkBrowser!("Hatch", "[preExtHatch]",  "&editorLastDirHatch"));
-        mixin (mkBrowser!("Goal", "[preExtGoal]",    "&editorLastDirGoal"));
-        mixin (mkBrowser!("Deco", "[preExtDeco]",    "&editorLastDirDeco"));
-        mixin (mkBrowser!("Hazard", "['W','T','F']", "&editorLastDirHazard"));
+        mixin (mkBrowser!("Terrain", "[0]",          "editorLastDirTerrain"));
+        mixin (mkBrowser!("Steel", "[preExtSteel]",  "editorLastDirSteel"));
+        mixin (mkBrowser!("Hatch", "[preExtHatch]",  "editorLastDirHatch"));
+        mixin (mkBrowser!("Goal", "[preExtGoal]",    "editorLastDirGoal"));
+        mixin (mkBrowser!("Deco", "[preExtDeco]",    "editorLastDirDeco"));
+        mixin (mkBrowser!("Hazard", "['W','T','F']", "editorLastDirHazard"));
     }
 }
 

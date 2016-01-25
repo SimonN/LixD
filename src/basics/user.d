@@ -21,7 +21,9 @@ import basics.nettypes;
 import file.filename;
 import file.date;
 import file.io;
+import file.language;
 import file.log; // when writing to disk fails
+import file.useropt;
 import lix.enums;
 import hardware.keynames;
 import hardware.keyset;
@@ -35,58 +37,135 @@ import hardware.keyset;
 
 private Result[Filename] results;
 
-MutFilename fileLanguage;
-int optionGroup = 0;
+// These is only for iteration during option saving/loading.
+// Outside of this module, refer to options by their static variable name.
+private AbstractUserOption[string] _optvecLoad;
+private AbstractUserOption[] _optvecSave;
+
+private auto newOpt(T)(string fileKey, Lang lang, T defaultVal)
+{
+    assert (fileKey !in _optvecLoad);
+    static if (is (T == Filename))
+        auto ret = new UserOptionFilename(fileKey, lang, defaultVal);
+    else
+        auto ret = new UserOption!T(fileKey, lang, defaultVal);
+    _optvecLoad[fileKey] = ret;
+    _optvecSave ~= ret;
+    return ret;
+}
+private auto newOpt(T)(string fileKey, T defaultVal)
+{
+    return newOpt(fileKey, Lang.min, defaultVal);
+}
 
 @property bool languageIsEnglish()
 {
-    Filename fn = fileLanguage;
-    return fn == basics.globals.fileLanguageEnglish;
+    return fileLanguage.value == basics.globals.fileLanguageEnglish;
 }
 
-bool replayCancel      = true;
-int  replayCancelAt    = 30;
-int  mouseSpeed        = basics.globals.mouseStandardDivisor;
-int  scrollSpeedEdge   = basics.globals.mouseStandardDivisor / 2;
-int  scrollSpeedClick  = basics.globals.mouseStandardDivisor / 2;
-bool avoidBuilderQueuing   = true;
-bool avoidBatterToExploder = false;
+UserOptionFilename fileLanguage;
+UserOption!int optionGroup;
 
-int  soundVolume       = 10;
+UserOption!int mouseSpeed;
+UserOption!int scrollSpeedEdge;
+UserOption!int scrollSpeedClick;
+UserOption!bool avoidBuilderQueuing;
+UserOption!bool avoidBatterToExploder;
 
-bool screenWindowed    = false;
-int  screenWindowedX   = 640;
-int  screenWindowedY   = 480;
+UserOption!bool screenWindowed;
+UserOption!int screenWindowedX;
+UserOption!int screenWindowedY;
+UserOption!bool paintTorusSeams;
+UserOption!bool ingameTooltips;
+UserOption!bool showButtonHotkeys;
+UserOption!bool showFPS;
+UserOption!int guiColorRed;
+UserOption!int guiColorGreen;
+UserOption!int guiColorBlue;
+UserOption!int soundVolume;
 
-bool arrowsReplay      = true;
-bool arrowsNetwork     = true;
-bool paintTorusSeams   = true;
-bool ingameTooltips    = true;
-bool showButtonHotkeys = true;
+UserOptionFilename singleLastLevel;
+UserOptionFilename networkLastLevel;
+UserOptionFilename replayLastLevel;
+UserOption!int networkLastStyle;
+UserOption!bool replayAutoSolutions;
+UserOption!bool replayAutoMulti;
 
-int  guiColorRed      = 0x60;
-int  guiColorGreen    = 0x80;
-int  guiColorBlue     = 0xB0;
+UserOption!int  editorGridSelected;
+UserOption!int  editorGridCustom;
+UserOptionFilename editorLastDirTerrain;
+UserOptionFilename editorLastDirSteel;
+UserOptionFilename editorLastDirHatch;
+UserOptionFilename editorLastDirGoal;
+UserOptionFilename editorLastDirDeco;
+UserOptionFilename editorLastDirHazard;
 
-bool editorHexLevelSize  = false;
-int  editorGridSelected  = 1;
-int  editorGridCustom    = 8;
+UserOption!KeySet
+    keyForceLeft,
+    keyForceRight,
+    keyScroll,
+    keyPriorityInvert,
+    keyPause1,
+    keyPause2,
+    keyFrameBackMany,
+    keyFrameBackOne,
+    keyFrameAheadOne,
+    keyFrameAheadMany,
+    keySpeedFast,
+    keySpeedTurbo,
+    keyRestart,
+    keyStateLoad,
+    keyStateSave,
+    keyZoomIn,
+    keyZoomOut,
+    keyNuke,
+    keySpecTribe,
+    keyChat,
+    keyGameExit,
 
-bool replayAutoSolutions = true;
-bool replayAutoMulti     = true;
+    keyMenuOkay,
+    keyMenuEdit,
+    keyMenuExport,
+    keyMenuDelete,
+    keyMenuUpDir,
+    keyMenuUpBy1,
+    keyMenuUpBy5,
+    keyMenuDownBy1,
+    keyMenuDownBy5,
+    keyMenuExit,
+    keyMenuMainSingle,
+    keyMenuMainNetwork,
+    keyMenuMainReplays,
+    keyMenuMainOptions,
 
-MutFilename singleLastLevel;
-MutFilename networkLastLevel;
-MutFilename replayLastLevel;
+    keyEditorLeft,
+    keyEditorRight,
+    keyEditorUp,
+    keyEditorDown,
+    keyEditorCopy,
+    keyEditorDelete,
+    keyEditorGrid,
+    keyEditorSelectAll,
+    keyEditorSelectFrame,
+    keyEditorSelectAdd,
+    keyEditorBackground,
+    keyEditorForeground,
+    keyEditorMirror,
+    keyEditorRotate,
+    keyEditorDark,
+    keyEditorAddTerrain,
+    keyEditorAddSteel,
+    keyEditorAddHatch,
+    keyEditorAddGoal,
+    keyEditorAddDeco,
+    keyEditorAddHazard,
+    keyEditorExit,
+    keyEditorMenuConstants,
+    keyEditorMenuTopology,
+    keyEditorMenuLooks,
+    keyEditorMenuSkills;
 
-Style    networkLastStyle = Style.red;
-
-MutFilename editorLastDirTerrain;
-MutFilename editorLastDirSteel;
-MutFilename editorLastDirHatch;
-MutFilename editorLastDirGoal;
-MutFilename editorLastDirDeco;
-MutFilename editorLastDirHazard;
+Enumap!(Ac, UserOption!KeySet) keySkill;
 
 @property const(Ac[14]) skillSort() { return _skillSort; }
 
@@ -107,102 +186,137 @@ private Ac[14] _skillSort = [
     Ac.digger
 ];
 
-KeySet keyForceLeft       = KeySet(ALLEGRO_KEY_S);
-KeySet keyForceRight      = KeySet(ALLEGRO_KEY_F);
-KeySet keyScroll          = KeySet(hardware.keynames.keyRMB);
-KeySet keyPriorityInvert  = KeySet(hardware.keynames.keyRMB);
-KeySet keyPause1          = KeySet(ALLEGRO_KEY_SPACE);
-KeySet keyPause2          = KeySet(hardware.keynames.keyMMB);
-KeySet keyFrameBackMany   = KeySet(ALLEGRO_KEY_1);
-KeySet keyFrameBackOne    = KeySet(ALLEGRO_KEY_2);
-KeySet keyFrameAheadOne   = KeySet(ALLEGRO_KEY_3);
-KeySet keyFrameAheadMany  = KeySet(ALLEGRO_KEY_6);
-KeySet keySpeedFast       = KeySet(ALLEGRO_KEY_4);
-KeySet keySpeedTurbo      = KeySet(ALLEGRO_KEY_5);
-KeySet keyRestart         = KeySet(ALLEGRO_KEY_F1);
-KeySet keyStateLoad       = KeySet(ALLEGRO_KEY_F2);
-KeySet keyStateSave       = KeySet(ALLEGRO_KEY_F3);
-KeySet keyZoomIn          = KeySet(hardware.keynames.keyWheelUp);
-KeySet keyZoomOut         = KeySet(hardware.keynames.keyWheelDown);
-KeySet keyNuke            = KeySet(ALLEGRO_KEY_F12);
-KeySet keySpecTribe       = KeySet(ALLEGRO_KEY_TAB);
-KeySet keyChat            = KeySet(ALLEGRO_KEY_ENTER);
-KeySet keyGameExit        = KeySet(ALLEGRO_KEY_ESCAPE);
-
-KeySet keyMenuOkay        = KeySet(ALLEGRO_KEY_SPACE);
-KeySet keyMenuEdit        = KeySet(ALLEGRO_KEY_F);
-KeySet keyMenuExport      = KeySet(ALLEGRO_KEY_R);
-KeySet keyMenuDelete      = KeySet(ALLEGRO_KEY_G);
-KeySet keyMenuUpDir       = KeySet(ALLEGRO_KEY_A);
-KeySet keyMenuUpBy1       = KeySet(ALLEGRO_KEY_S);
-KeySet keyMenuUpBy5       = KeySet(ALLEGRO_KEY_W);
-KeySet keyMenuDownBy1     = KeySet(ALLEGRO_KEY_D);
-KeySet keyMenuDownBy5     = KeySet(ALLEGRO_KEY_E);
-KeySet keyMenuExit        = KeySet(ALLEGRO_KEY_ESCAPE);
-KeySet keyMenuMainSingle  = KeySet(ALLEGRO_KEY_F);
-KeySet keyMenuMainNetwork = KeySet(ALLEGRO_KEY_D);
-KeySet keyMenuMainReplays = KeySet(ALLEGRO_KEY_S);
-KeySet keyMenuMainOptions = KeySet(ALLEGRO_KEY_A);
-
-KeySet keyEditorLeft        = KeySet(ALLEGRO_KEY_S);
-KeySet keyEditorRight       = KeySet(ALLEGRO_KEY_F);
-KeySet keyEditorUp          = KeySet(ALLEGRO_KEY_E);
-KeySet keyEditorDown        = KeySet(ALLEGRO_KEY_D);
-KeySet keyEditorCopy        = KeySet(ALLEGRO_KEY_A);
-KeySet keyEditorDelete      = KeySet(ALLEGRO_KEY_G);
-KeySet keyEditorGrid        = KeySet(ALLEGRO_KEY_C);
-KeySet keyEditorSelectAll   = KeySet(ALLEGRO_KEY_ALT);
-KeySet keyEditorSelectFrame = KeySet(ALLEGRO_KEY_LSHIFT);
-KeySet keyEditorSelectAdd   = KeySet(ALLEGRO_KEY_V);
-KeySet keyEditorBackground  = KeySet(ALLEGRO_KEY_T);
-KeySet keyEditorForeground  = KeySet(ALLEGRO_KEY_B);
-KeySet keyEditorMirror      = KeySet(ALLEGRO_KEY_W);
-KeySet keyEditorRotate      = KeySet(ALLEGRO_KEY_R);
-KeySet keyEditorDark        = KeySet(ALLEGRO_KEY_N);
-KeySet keyEditorAddTerrain  = KeySet(ALLEGRO_KEY_SPACE);
-KeySet keyEditorAddSteel    = KeySet(ALLEGRO_KEY_TAB);
-KeySet keyEditorAddHatch    = KeySet(ALLEGRO_KEY_1);
-KeySet keyEditorAddGoal     = KeySet(ALLEGRO_KEY_2);
-KeySet keyEditorAddDeco     = KeySet(ALLEGRO_KEY_3);
-KeySet keyEditorAddHazard   = KeySet(ALLEGRO_KEY_4);
-KeySet keyEditorExit        = KeySet(ALLEGRO_KEY_ESCAPE);
-KeySet keyEditorMenuConstants = KeySet(ALLEGRO_KEY_Q);
-KeySet keyEditorMenuTopology  = KeySet(ALLEGRO_KEY_5);
-KeySet keyEditorMenuLooks     = KeySet();
-KeySet keyEditorMenuSkills    = KeySet(ALLEGRO_KEY_X);
-
-Enumap!(Ac, KeySet) keySkill;
-
 static this()
 {
-    fileLanguage            = fileLanguageEnglish;
+    fileLanguage = newOpt("LANGUAGE", Lang.optionLanguage, fileLanguageEnglish);
+    optionGroup = newOpt("OPTION_GROUP", 0);
 
-    keySkill[Ac.walker]     = KeySet(ALLEGRO_KEY_D);
-    keySkill[Ac.runner]     = KeySet(ALLEGRO_KEY_LSHIFT);
-    keySkill[Ac.basher]     = KeySet(ALLEGRO_KEY_E);
-    keySkill[Ac.builder]    = KeySet(ALLEGRO_KEY_A);
-    keySkill[Ac.platformer] = KeySet(ALLEGRO_KEY_T);
-    keySkill[Ac.digger]     = KeySet(ALLEGRO_KEY_W);
-    keySkill[Ac.miner]      = KeySet(ALLEGRO_KEY_G);
-    keySkill[Ac.blocker]    = KeySet(ALLEGRO_KEY_X);
-    keySkill[Ac.cuber]      = KeySet(ALLEGRO_KEY_X);
-    keySkill[Ac.exploder]   = KeySet(ALLEGRO_KEY_V);
+    mouseSpeed = newOpt("MOUSE_SPEED", Lang.optionMouseSpeed, mouseStandardDivisor);
+    scrollSpeedEdge = newOpt("SCROLL_SPEED_EDGE", Lang.optionScrollSpeedEdge, mouseStandardDivisor / 2);
+    scrollSpeedClick = newOpt("SCROLL_SPEED_CLICK", Lang.optionScrollSpeedClick, mouseStandardDivisor / 2);
+    avoidBuilderQueuing = newOpt("AVOID_BUILDER_QUEUING", Lang.optionAvoidBuilderQueuing, true);
+    avoidBatterToExploder = newOpt("AVOID_BATTER_TO_EXPLODER", Lang.optionAvoidBatterToExploder, false);
 
-    keySkill[Ac.climber]    = KeySet(ALLEGRO_KEY_B);
-    keySkill[Ac.floater]    = KeySet(ALLEGRO_KEY_Q);
-    keySkill[Ac.jumper]     = KeySet(ALLEGRO_KEY_R);
-    keySkill[Ac.batter]     = KeySet(ALLEGRO_KEY_C);
+    screenWindowed = newOpt("SCREEN_WINDOWED", Lang.optionScreenWindowed, false);
+    screenWindowedX = newOpt("SCREEN_WINDOWED_X", 640);
+    screenWindowedY = newOpt("SCREEN_WINDOWED_Y", 480);
+    paintTorusSeams = newOpt("PAINT_TORUS_SEAMS", Lang.optionPaintTorusSeams, true);
+    ingameTooltips = newOpt("INGAME_TOOLTIPS", Lang.optionIngameTooltips, true);
+    showButtonHotkeys = newOpt("SHOW_BUTTON_HOTKEYS", Lang.optionShowButtonHotkeys, true);
+    showFPS = newOpt("SHOW_FPS", Lang.optionShowFPS, true);
+    guiColorRed = newOpt("GUI_COLOR_RED", Lang.optionGuiColorRed, 0x60);
+    guiColorGreen = newOpt("GUI_COLOR_GREEN", Lang.optionGuiColorGreen, 0x80);
+    guiColorBlue = newOpt("GUI_COLOR_BLUE", Lang.optionGuiColorBlue, 0xB0);
+    soundVolume = newOpt("SOUND_VOLUME", Lang.optionSoundVolume, 10);
 
-    singleLastLevel  = dirLevelsSingle;
-    networkLastLevel = dirLevelsNetwork;
-    replayLastLevel  = dirReplays;
+    singleLastLevel = newOpt("SINGLE_LAST_LEVEL", dirLevelsSingle);
+    networkLastLevel = newOpt("NETWORK_LAST_LEVEL", dirLevelsNetwork);
+    replayLastLevel = newOpt("REPLAY_LAST_LEVEL", dirReplays);
+    networkLastStyle = newOpt("NETWORK_LAST_STYLE", Style.red.to!int);
 
-    editorLastDirTerrain = dirImages;
-    editorLastDirSteel   = dirImages;
-    editorLastDirHatch   = dirImages;
-    editorLastDirGoal    = dirImages;
-    editorLastDirDeco    = dirImages;
-    editorLastDirHazard  = dirImages;
+    replayAutoSolutions = newOpt("REPLAY_AUTO_SAVE_SOLUTIONS", Lang.optionReplayAutoSolutions, true);
+    replayAutoMulti = newOpt("REPLAY_AUTO_SAVE_MULTI", Lang.optionReplayAutoMulti, true);
+
+    editorLastDirTerrain = newOpt("EDITOR_LAST_DIR_TERRAIN", Lang.addTerrain, dirImages);
+    editorLastDirSteel = newOpt("EDITOR_LAST_DIR_STEEL", Lang.addSteel, dirImages);
+    editorLastDirHatch = newOpt("EDITOR_LAST_DIR_HATCH", Lang.addHatch, dirImages);
+    editorLastDirGoal = newOpt("EDITOR_LAST_DIR_GOAL", Lang.addGoal, dirImages);
+    editorLastDirDeco = newOpt("EDITOR_LAST_DIR_DECO", Lang.addDeco, dirImages);
+    editorLastDirHazard = newOpt("EDITOR_LAST_DIR_HAZARD", Lang.addHazard, dirImages);
+
+    editorGridSelected = newOpt("EDITOR_GRID_SELECTED", 1);
+    editorGridCustom = newOpt("EDITOR_GRID_CUSTOM", Lang.optionEdGridCustom, 8);
+
+    void newSkillKey(Ac ac, int singleKey)
+    {
+        keySkill[ac] = newOpt(ac.acToString, KeySet(singleKey));
+    }
+    newSkillKey(Ac.walker, ALLEGRO_KEY_D);
+    newSkillKey(Ac.jumper, ALLEGRO_KEY_R);
+    newSkillKey(Ac.runner, ALLEGRO_KEY_LSHIFT);
+    newSkillKey(Ac.climber, ALLEGRO_KEY_B);
+    newSkillKey(Ac.floater, ALLEGRO_KEY_Q);
+    newSkillKey(Ac.batter, ALLEGRO_KEY_C);
+    newSkillKey(Ac.exploder, ALLEGRO_KEY_V);
+    newSkillKey(Ac.blocker, ALLEGRO_KEY_X);
+    newSkillKey(Ac.cuber, ALLEGRO_KEY_X);
+    newSkillKey(Ac.builder, ALLEGRO_KEY_A);
+    newSkillKey(Ac.platformer, ALLEGRO_KEY_T);
+    newSkillKey(Ac.basher, ALLEGRO_KEY_E);
+    newSkillKey(Ac.miner, ALLEGRO_KEY_G);
+    newSkillKey(Ac.digger, ALLEGRO_KEY_W);
+
+    auto newKey(string str, Lang lang, int key)
+    {
+        return newOpt(str, lang, KeySet(key));
+    }
+    auto newKey2(string str, Lang lang, int key1, int key2)
+    {
+        return newOpt(str, lang, KeySet(KeySet(key1), KeySet(key2)));
+    }
+    keyForceLeft = newKey("KEY_FORCE_LEFT", Lang.optionKeyForceLeft, ALLEGRO_KEY_S);
+    keyForceRight = newKey("KEY_FORCE_RIGHT", Lang.optionKeyForceRight, ALLEGRO_KEY_F);
+    keyScroll = newKey("KEY_HOLD_TO_SCROLL", Lang.optionKeyScroll, hardware.keynames.keyRMB);
+    keyPriorityInvert = newKey("KEY_PRIORITY_INVERT", Lang.optionKeyPriorityInvert, hardware.keynames.keyRMB);
+    keyPause1 = newKey("KEY_PAUSE", Lang.optionKeyPause, ALLEGRO_KEY_SPACE);
+    keyPause2 = newKey("KEY_PAUSE2", Lang.optionKeyPause, hardware.keynames.keyMMB);
+    keyFrameBackMany = newKey("KEY_SPEED_BACK_MANY", Lang.optionKeyFrameBackMany, ALLEGRO_KEY_1);
+    keyFrameBackOne = newKey("KEY_SPEED_BACK_ONE", Lang.optionKeyFrameBackOne, ALLEGRO_KEY_2);
+    keyFrameAheadOne = newKey("KEY_SPEED_AHEAD_ONE", Lang.optionKeyFrameAheadOne, ALLEGRO_KEY_3);
+    keyFrameAheadMany = newKey("KEY_SPEED_AHEAD_MANY", Lang.optionKeyFrameAheadMany, ALLEGRO_KEY_6);
+    keySpeedFast = newKey("KEY_SPEED_FAST", Lang.optionKeySpeedFast, ALLEGRO_KEY_4);
+    keySpeedTurbo = newKey("KEY_SPEED_TURBO", Lang.optionKeySpeedTurbo, ALLEGRO_KEY_5);
+    keyRestart = newKey("KEY_RESTART", Lang.optionKeyRestart, ALLEGRO_KEY_F1);
+    keyStateLoad = newKey("KEY_STATE_LOAD", Lang.optionKeyStateLoad, ALLEGRO_KEY_F2);
+    keyStateSave = newKey("KEY_STATE_SAVE", Lang.optionKeyStateSave, ALLEGRO_KEY_F3);
+    keyZoomIn = newKey("KEY_ZOOM_IN", Lang.optionKeyZoomIn, hardware.keynames.keyWheelUp);
+    keyZoomOut = newKey("KEY_ZOOM_OUT", Lang.optionKeyZoomOut, hardware.keynames.keyWheelDown);
+    keyNuke = newKey("KEY_NUKE", Lang.optionKeyNuke, ALLEGRO_KEY_F12);
+    keySpecTribe = newKey("KEY_SPECTATE_NEXT_PLAYER", Lang.optionKeySpecTribe, ALLEGRO_KEY_TAB);
+    keyChat = newKey("KEY_CHAT", Lang.optionKeyChat, ALLEGRO_KEY_ENTER);
+    keyGameExit = newKey("KEY_GAME_EXIT", Lang.winGameTitle, ALLEGRO_KEY_ESCAPE);
+
+    keyMenuOkay = newKey("KEY_MENU_OKAY", Lang.optionKeyMenuOkay, ALLEGRO_KEY_SPACE);
+    keyMenuEdit = newKey("KEY_MENU_EDIT", Lang.optionKeyMenuEdit, ALLEGRO_KEY_F);
+    keyMenuExport = newKey("KEY_MENU_EXPORT", Lang.optionKeyMenuExport, ALLEGRO_KEY_R);
+    keyMenuDelete = newKey("KEY_MENU_DELETE", Lang.optionKeyMenuDelete, ALLEGRO_KEY_G);
+    keyMenuUpDir = newKey("KEY_MENU_UP_DIR", Lang.optionKeyMenuUpDir, ALLEGRO_KEY_A);
+    keyMenuUpBy1 = newKey("KEY_MENU_UP_1", Lang.optionKeyMenuUpBy1, ALLEGRO_KEY_S);
+    keyMenuUpBy5 = newKey("KEY_MENU_UP_5", Lang.optionKeyMenuUpBy5, ALLEGRO_KEY_W);
+    keyMenuDownBy1 = newKey("KEY_MENU_DOWN_1", Lang.optionKeyMenuDownBy1, ALLEGRO_KEY_D);
+    keyMenuDownBy5 = newKey("KEY_MENU_DOWN_5", Lang.optionKeyMenuDownBy5, ALLEGRO_KEY_E);
+    keyMenuExit = newKey("KEY_MENU_EXIT", Lang.optionKeyMenuExit, ALLEGRO_KEY_ESCAPE);
+    keyMenuMainSingle = newKey("KEY_MENU_MAIN_SINGLE", Lang.browserSingleTitle, ALLEGRO_KEY_F);
+    keyMenuMainNetwork = newKey("KEY_MENU_MAIN_NETWORK", Lang.winLobbyTitle, ALLEGRO_KEY_D);
+    keyMenuMainReplays = newKey("KEY_MENU_MAIN_REPLAY", Lang.browserReplayTitle, ALLEGRO_KEY_S);
+    keyMenuMainOptions = newKey("KEY_MENU_MAIN_OPTIONS", Lang.optionTitle, ALLEGRO_KEY_A);
+
+    keyEditorLeft = newKey("KEY_EDITOR_LEFT", Lang.optionEdLeft, ALLEGRO_KEY_S);
+    keyEditorRight = newKey("KEY_EDITOR_RIGHT", Lang.optionEdRight, ALLEGRO_KEY_F);
+    keyEditorUp = newKey("KEY_EDITOR_UP", Lang.optionEdUp, ALLEGRO_KEY_E);
+    keyEditorDown = newKey("KEY_EDITOR_DOWN", Lang.optionEdDown, ALLEGRO_KEY_D);
+    keyEditorCopy = newKey("KEY_EDITOR_COPY", Lang.optionEdCopy, ALLEGRO_KEY_A);
+    keyEditorDelete = newKey("KEY_EDITOR_DELETE", Lang.optionEdDelete, ALLEGRO_KEY_G);
+    keyEditorGrid = newKey("KEY_EDITOR_GRID", Lang.optionEdGrid, ALLEGRO_KEY_C);
+    keyEditorSelectAll = newKey("KEY_EDITOR_SELECT_ALL", Lang.optionEdSelectAll, ALLEGRO_KEY_ALT);
+    keyEditorSelectFrame = newKey("KEY_EDITOR_SELECT_FRAME", Lang.optionEdSelectFrame, ALLEGRO_KEY_LSHIFT);
+    keyEditorSelectAdd = newKey("KEY_EDITOR_SELECT_ADD", Lang.optionEdSelectAdd, ALLEGRO_KEY_V);
+    keyEditorForeground = newKey("KEY_EDITOR_FOREGROUND", Lang.optionEdForeground, ALLEGRO_KEY_T);
+    keyEditorBackground = newKey("KEY_EDITOR_BACKGROUND", Lang.optionEdBackground, ALLEGRO_KEY_B);
+    keyEditorMirror = newKey("KEY_EDITOR_MIRROR", Lang.optionEdMirror, ALLEGRO_KEY_W);
+    keyEditorRotate = newKey("KEY_EDITOR_ROTATE", Lang.optionEdRotate, ALLEGRO_KEY_R);
+    keyEditorDark = newKey("KEY_EDITOR_DARK", Lang.optionEdDark, ALLEGRO_KEY_X);
+    keyEditorAddTerrain = newKey("KEY_EDITOR_ADD_TERRAIN", Lang.optionEdAddTerrain, ALLEGRO_KEY_SPACE);
+    keyEditorAddSteel = newKey("KEY_EDITOR_ADD_STEEL", Lang.optionEdAddSteel, ALLEGRO_KEY_TAB);
+    keyEditorAddHatch = newKey("KEY_EDITOR_ADD_HATCH", Lang.optionEdAddHatch, ALLEGRO_KEY_1);
+    keyEditorAddGoal = newKey("KEY_EDITOR_ADD_GOAL", Lang.optionEdAddGoal, ALLEGRO_KEY_2);
+    keyEditorAddDeco = newKey("KEY_EDITOR_ADD_DECO", Lang.optionEdAddDeco, ALLEGRO_KEY_3);
+    keyEditorAddHazard = newKey("KEY_EDITOR_ADD_HAZARD", Lang.optionEdAddHazard, ALLEGRO_KEY_4);
+    keyEditorMenuConstants = newKey("KEY_EDITOR_MENU_CONSTANTS", Lang.winConstantsTitle, ALLEGRO_KEY_5);
+    keyEditorMenuTopology = newKey("KEY_EDITOR_MENU_TOPOLOGY", Lang.winTopologyTitle, ALLEGRO_KEY_6);
+    keyEditorMenuLooks = newKey("KEY_EDITOR_MENU_LOOKS", Lang.winLooksTitle, ALLEGRO_KEY_7);
+    keyEditorMenuSkills = newKey("KEY_EDITOR_MENU_SKILLS", Lang.winSkillsTitle, ALLEGRO_KEY_8);
+    keyEditorExit = newKey("KEY_EDITOR_EXIT", Lang.commonExit, ALLEGRO_KEY_ESCAPE);
 }
 
 // ############################################################################
@@ -282,7 +396,6 @@ private Filename userFileName()
      ~ filenameExtConfig);
 }
 
-
 void load()
 {
     if (userName == null) {
@@ -315,151 +428,23 @@ void load()
             lines = null;
         }
     }
-
     results = null;
 
-    foreach (i; lines) switch (i.type) {
-
-    case '$':
-        if      (i.text1 == userLanguage            ) fileLanguage     = new Filename(i.text2);
-
-        else if (i.text1 == userSingleLastLevel     ) singleLastLevel  = new Filename(i.text2);
-        else if (i.text1 == userNetworkLastLevel    ) networkLastLevel = new Filename(i.text2);
-        else if (i.text1 == userReplayLastLevel     ) replayLastLevel  = new Filename(i.text2);
-
-        else if (i.text1 == userEditorLastDirTerrain) editorLastDirTerrain = new Filename(i.text2);
-        else if (i.text1 == userEditorLastDirSteel  ) editorLastDirSteel   = new Filename(i.text2);
-        else if (i.text1 == userEditorLastDirHatch  ) editorLastDirHatch   = new Filename(i.text2);
-        else if (i.text1 == userEditorLastDirGoal   ) editorLastDirGoal    = new Filename(i.text2);
-        else if (i.text1 == userEditorLastDirDeco   ) editorLastDirDeco    = new Filename(i.text2);
-        else if (i.text1 == userEditorLastDirHazard ) editorLastDirHazard  = new Filename(i.text2);
-        break;
-
-    case '#':
-        if      (i.text1 == userOptionGroup         ) optionGroup          = i.nr1;
-
-        else if (i.text1 == userMouseSpeed          ) mouseSpeed           = i.nr1;
-        else if (i.text1 == userScrollSpeedEdge     ) scrollSpeedEdge      = i.nr1;
-        else if (i.text1 == userScrollSpeedClick    ) scrollSpeedClick     = i.nr1;
-        else if (i.text1 == userReplayCancel        ) replayCancel         = i.nr1 > 0;
-        else if (i.text1 == userReplayCancelAt      ) replayCancelAt       = i.nr1;
-        else if (i.text1 == userAvoidBuilderQueuing ) avoidBuilderQueuing  = i.nr1 > 0;
-        else if (i.text1 == userAvoidBatterToExploder) avoidBatterToExploder = i.nr1 > 0;
-
-        else if (i.text1 == userScreenWindowed) screenWindowed = i.nr1 > 0;
-        else if (i.text1 == userScreenWindowedX) screenWindowedX = i.nr1;
-        else if (i.text1 == userScreenWindowedY) screenWindowedY = i.nr1;
-        else if (i.text1 == userArrowsReplay  ) arrowsReplay   = i.nr1 > 0;
-        else if (i.text1 == userArrowsNetwork ) arrowsNetwork  = i.nr1 > 0;
-        else if (i.text1 == userPaintTorusSeams ) paintTorusSeams = i.nr1 > 0;
-        else if (i.text1 == userIngameTooltips) ingameTooltips = i.nr1 > 0;
-        else if (i.text1 == userShowButtonHotkeys) showButtonHotkeys = i.nr1 > 0;
-        else if (i.text1 == userGuiColorRed   ) guiColorRed    = i.nr1;
-        else if (i.text1 == userGuiColorGreen ) guiColorGreen  = i.nr1;
-        else if (i.text1 == userGuiColorBlue  ) guiColorBlue   = i.nr1;
-        else if (i.text1 == userSoundVolume   ) soundVolume    = i.nr1;
-
-        else if (i.text1 == userReplayAutoSolutions) replayAutoSolutions = i.nr1 > 0;
-        else if (i.text1 == userReplayAutoMulti    ) replayAutoMulti     = i.nr1 > 0;
-
-        else if (i.text1 == userEditorHexLevelSize) editorHexLevelSize = i.nr1 > 0;
-        else if (i.text1 == userEditorGridSelected) editorGridSelected = i.nr1;
-        else if (i.text1 == userEditorGridCustom  ) editorGridCustom   = i.nr1;
-
-        else if (i.text1 == userNetworkLastStyle) {
-            try networkLastStyle = to!Style(i.nr1);
-            catch (ConvException e)           networkLastStyle = Style.red;
-            if (networkLastStyle < Style.red) networkLastStyle = Style.red;
+    foreach (i; lines) {
+        if (i.type == '<') {
+            auto fn = rebindable!(const Filename)(new Filename(i.text1));
+            Result read = new Result(new Date(i.text2));
+            read.lixSaved    = i.nr1;
+            read.skillsUsed  = i.nr2;
+            read.updatesUsed = Update(i.nr3);
+            Result* old = (fn in results);
+            if (! old || *old < read)
+                results[fn] = read;
         }
-
-        else if (i.text1 == userKeyForceLeft     ) keyForceLeft      = KeySet(i.nr1);
-        else if (i.text1 == userKeyForceRight    ) keyForceRight     = KeySet(i.nr1);
-        else if (i.text1 == userKeyScroll        ) keyScroll         = KeySet(i.nr1);
-        else if (i.text1 == userKeyPriorityInvert) keyPriorityInvert = KeySet(i.nr1);
-        else if (i.text1 == userKeyPause1        ) keyPause1         = KeySet(i.nr1);
-        else if (i.text1 == userKeyPause2        ) keyPause2         = KeySet(i.nr1);
-        else if (i.text1 == userKeyFrameBackMany ) keyFrameBackMany  = KeySet(i.nr1);
-        else if (i.text1 == userKeyFrameBackOne  ) keyFrameBackOne   = KeySet(i.nr1);
-        else if (i.text1 == userKeyFrameAheadOne ) keyFrameAheadOne  = KeySet(i.nr1);
-        else if (i.text1 == userKeyFrameAheadMany) keyFrameAheadMany = KeySet(i.nr1);
-        else if (i.text1 == userKeySpeedFast     ) keySpeedFast      = KeySet(i.nr1);
-        else if (i.text1 == userKeySpeedTurbo    ) keySpeedTurbo     = KeySet(i.nr1);
-        else if (i.text1 == userKeyRestart       ) keyRestart        = KeySet(i.nr1);
-        else if (i.text1 == userKeyStateLoad     ) keyStateLoad      = KeySet(i.nr1);
-        else if (i.text1 == userKeyStateSave     ) keyStateSave      = KeySet(i.nr1);
-        else if (i.text1 == userKeyZoomIn        ) keyZoomIn         = KeySet(i.nr1);
-        else if (i.text1 == userKeyZoomOut       ) keyZoomOut        = KeySet(i.nr1);
-        else if (i.text1 == userKeyNuke          ) keyNuke           = KeySet(i.nr1);
-        else if (i.text1 == userKeySpecTribe     ) keySpecTribe      = KeySet(i.nr1);
-        else if (i.text1 == userKeyChat          ) keyChat           = KeySet(i.nr1);
-        else if (i.text1 == userKeyGameExit      ) keyGameExit       = KeySet(i.nr1);
-
-        else if (i.text1 == userKeyMenuOkay       ) keyMenuOkay        = KeySet(i.nr1);
-        else if (i.text1 == userKeyMenuEdit       ) keyMenuEdit        = KeySet(i.nr1);
-        else if (i.text1 == userKeyMenuExport     ) keyMenuExport      = KeySet(i.nr1);
-        else if (i.text1 == userKeyMenuDelete     ) keyMenuDelete      = KeySet(i.nr1);
-        else if (i.text1 == userKeyMenuUpDir      ) keyMenuUpDir       = KeySet(i.nr1);
-        else if (i.text1 == userKeyMenuUpBy1      ) keyMenuUpBy1       = KeySet(i.nr1);
-        else if (i.text1 == userKeyMenuUpBy5      ) keyMenuUpBy5       = KeySet(i.nr1);
-        else if (i.text1 == userKeyMenuDownBy1    ) keyMenuDownBy1     = KeySet(i.nr1);
-        else if (i.text1 == userKeyMenuDownBy5    ) keyMenuDownBy5     = KeySet(i.nr1);
-        else if (i.text1 == userKeyMenuExit       ) keyMenuExit        = KeySet(i.nr1);
-        else if (i.text1 == userKeyMenuMainSingle ) keyMenuMainSingle  = KeySet(i.nr1);
-        else if (i.text1 == userKeyMenuMainNetwork) keyMenuMainNetwork = KeySet(i.nr1);
-        else if (i.text1 == userKeyMenuMainReplays) keyMenuMainReplays = KeySet(i.nr1);
-        else if (i.text1 == userKeyMenuMainOptions) keyMenuMainOptions = KeySet(i.nr1);
-
-        else if (i.text1 == userKeyEditorLeft       ) keyEditorLeft        = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorRight      ) keyEditorRight       = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorUp         ) keyEditorUp          = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorDown       ) keyEditorDown        = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorCopy       ) keyEditorCopy        = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorDelete     ) keyEditorDelete      = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorGrid       ) keyEditorGrid        = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorSelectAll  ) keyEditorSelectAll   = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorSelectFrame) keyEditorSelectFrame = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorSelectAdd  ) keyEditorSelectAdd   = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorBackground ) keyEditorBackground  = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorForeground ) keyEditorForeground  = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorMirror     ) keyEditorMirror      = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorRotate     ) keyEditorRotate      = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorDark       ) keyEditorDark        = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorAddTerrain ) keyEditorAddTerrain  = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorAddSteel   ) keyEditorAddSteel    = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorAddHatch   ) keyEditorAddHatch    = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorAddGoal    ) keyEditorAddGoal     = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorAddDeco    ) keyEditorAddDeco     = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorAddHazard  ) keyEditorAddHazard   = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorMenuConstants) keyEditorMenuConstants = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorMenuTopology ) keyEditorMenuTopology  = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorMenuLooks    ) keyEditorMenuLooks     = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorMenuSkills   ) keyEditorMenuSkills    = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorExit         ) keyEditorExit          = KeySet(i.nr1);
-
-        else {
-            Ac ac = stringToAc(i.text1);
-            if (ac != Ac.max) keySkill[ac] = KeySet(i.nr1);
-        }
-        break;
-
-    case '<': {
-        auto fn = rebindable!(const Filename)(new Filename(i.text1));
-        Result read = new Result(new Date(i.text2));
-        read.lixSaved    = i.nr1;
-        read.skillsUsed  = i.nr2;
-        read.updatesUsed = Update(i.nr3);
-        Result* old = (fn in results);
-        if (! old || *old < read)
-            results[fn] = read;
-        break; }
-
-    default:
-        break;
-
+        else if (auto opt = i.text1 in _optvecLoad)
+            opt.set(i);
     }
 }
-
-
 
 nothrow void save()
 {
@@ -476,142 +461,11 @@ nothrow void save()
         mkdirRecurse(ufn.dirRootful);
         std.stdio.File f = File(ufn.rootful, "w");
 
-        void fwr(in IoLine line)
-        {
-            f.writeln(line);
-            f.flush();
-        }
-
-        void fwrKey(in string name, in KeySet set)
-        {
-            fwr(IoLine.Hash(name, set.kludgeFirstEntry));
-        }
-
-        fwr(IoLine.Dollar(userLanguage, fileLanguage.rootless));
-        fwr(IoLine.Hash(userOptionGroup, optionGroup));
-        f.writeln();
-
-        fwr(IoLine.Hash(userMouseSpeed,             mouseSpeed));
-        fwr(IoLine.Hash(userScrollSpeedEdge,        scrollSpeedEdge));
-        fwr(IoLine.Hash(userScrollSpeedClick,       scrollSpeedClick));
-        fwr(IoLine.Hash(userReplayCancel,           replayCancel));
-        fwr(IoLine.Hash(userReplayCancelAt,         replayCancelAt));
-        fwr(IoLine.Hash(userAvoidBuilderQueuing,    avoidBuilderQueuing));
-        fwr(IoLine.Hash(userAvoidBatterToExploder,  avoidBatterToExploder));
-        f.writeln();
-
-        fwr(IoLine.Hash(userScreenWindowed,         screenWindowed));
-        fwr(IoLine.Hash(userScreenWindowedX,        screenWindowedX));
-        fwr(IoLine.Hash(userScreenWindowedY,        screenWindowedY));
-        fwr(IoLine.Hash(userArrowsReplay,           arrowsReplay));
-        fwr(IoLine.Hash(userArrowsNetwork,          arrowsNetwork));
-        fwr(IoLine.Hash(userPaintTorusSeams,        paintTorusSeams));
-        fwr(IoLine.Hash(userIngameTooltips,         ingameTooltips));
-        fwr(IoLine.Hash(userShowButtonHotkeys,      showButtonHotkeys));
-        fwr(IoLine.Hash(userGuiColorRed,            guiColorRed));
-        fwr(IoLine.Hash(userGuiColorGreen,          guiColorGreen));
-        fwr(IoLine.Hash(userGuiColorBlue,           guiColorBlue));
-        f.writeln();
-
-        fwr(IoLine.Hash(userSoundVolume,            soundVolume));
-        f.writeln();
-
-        fwr(IoLine.Hash(userReplayAutoSolutions,    replayAutoSolutions));
-        fwr(IoLine.Hash(userReplayAutoMulti,        replayAutoMulti));
-        f.writeln();
-
-        fwr(IoLine.Hash(userEditorHexLevelSize,     editorHexLevelSize));
-        fwr(IoLine.Hash(userEditorGridSelected,     editorGridSelected));
-        fwr(IoLine.Hash(userEditorGridCustom,       editorGridCustom));
-        f.writeln();
-
-        fwr(IoLine.Dollar(userSingleLastLevel,        singleLastLevel.rootless));
-        fwr(IoLine.Dollar(userNetworkLastLevel,       networkLastLevel.rootless));
-        fwr(IoLine.Dollar(userReplayLastLevel,        replayLastLevel.rootless));
-        fwr(IoLine.Hash(userNetworkLastStyle,         networkLastStyle));
-        f.writeln();
-
-        fwr(IoLine.Dollar(userEditorLastDirTerrain, editorLastDirTerrain.rootless));
-        fwr(IoLine.Dollar(userEditorLastDirSteel,   editorLastDirSteel.rootless));
-        fwr(IoLine.Dollar(userEditorLastDirHatch,   editorLastDirHatch.rootless));
-        fwr(IoLine.Dollar(userEditorLastDirGoal,    editorLastDirGoal.rootless));
-        fwr(IoLine.Dollar(userEditorLastDirDeco,    editorLastDirDeco.rootless));
-        fwr(IoLine.Dollar(userEditorLastDirHazard,  editorLastDirHazard.rootless));
-        f.writeln();
-
-        fwrKey(userKeyForceLeft,      keyForceLeft);
-        fwrKey(userKeyForceRight,     keyForceRight);
-        fwrKey(userKeyScroll,         keyScroll);
-        fwrKey(userKeyPriorityInvert, keyPriorityInvert);
-        fwrKey(userKeyPause1,         keyPause1);
-        fwrKey(userKeyPause2,         keyPause2);
-        fwrKey(userKeyFrameBackMany,  keyFrameBackMany);
-        fwrKey(userKeyFrameBackOne,   keyFrameBackOne);
-        fwrKey(userKeyFrameAheadOne,  keyFrameAheadOne);
-        fwrKey(userKeyFrameAheadMany, keyFrameAheadMany);
-        fwrKey(userKeySpeedFast,      keySpeedFast);
-        fwrKey(userKeySpeedTurbo,     keySpeedTurbo);
-        fwrKey(userKeyRestart,        keyRestart);
-        fwrKey(userKeyStateLoad,      keyStateLoad);
-        fwrKey(userKeyStateSave,      keyStateSave);
-        fwrKey(userKeyZoomIn,         keyZoomIn);
-        fwrKey(userKeyZoomOut,        keyZoomOut);
-        fwrKey(userKeyNuke,           keyNuke);
-        fwrKey(userKeySpecTribe,      keySpecTribe);
-        fwrKey(userKeyChat,           keyChat);
-        fwrKey(userKeyGameExit,       keyGameExit);
-
-        foreach (Ac ac, KeySet mappedKey; keySkill)
-            if (! mappedKey.empty)
-                fwrKey(acToString(ac), mappedKey);
-        f.writeln();
-
-        fwrKey(userKeyMenuOkay,          keyMenuOkay);
-        fwrKey(userKeyMenuEdit,          keyMenuEdit);
-        fwrKey(userKeyMenuExport,        keyMenuExport);
-        fwrKey(userKeyMenuDelete,        keyMenuDelete);
-        fwrKey(userKeyMenuUpDir,         keyMenuUpDir);
-        fwrKey(userKeyMenuUpBy1,         keyMenuUpBy1);
-        fwrKey(userKeyMenuUpBy5,         keyMenuUpBy5);
-        fwrKey(userKeyMenuDownBy1,       keyMenuDownBy1);
-        fwrKey(userKeyMenuDownBy5,       keyMenuDownBy5);
-        fwrKey(userKeyMenuExit,          keyMenuExit);
-        fwrKey(userKeyMenuMainSingle,    keyMenuMainSingle);
-        fwrKey(userKeyMenuMainNetwork,   keyMenuMainNetwork);
-        fwrKey(userKeyMenuMainReplays,   keyMenuMainReplays);
-        fwrKey(userKeyMenuMainOptions,   keyMenuMainOptions);
-        f.writeln();
-
-        fwrKey(userKeyEditorLeft,        keyEditorLeft);
-        fwrKey(userKeyEditorRight,       keyEditorRight);
-        fwrKey(userKeyEditorUp,          keyEditorUp);
-        fwrKey(userKeyEditorDown,        keyEditorDown);
-        fwrKey(userKeyEditorCopy,        keyEditorCopy);
-        fwrKey(userKeyEditorDelete,      keyEditorDelete);
-        fwrKey(userKeyEditorGrid,        keyEditorGrid);
-        fwrKey(userKeyEditorSelectAll,   keyEditorSelectAll);
-        fwrKey(userKeyEditorSelectFrame, keyEditorSelectFrame);
-        fwrKey(userKeyEditorSelectAdd,   keyEditorSelectAdd);
-        fwrKey(userKeyEditorBackground,  keyEditorBackground);
-        fwrKey(userKeyEditorForeground,  keyEditorForeground);
-        fwrKey(userKeyEditorMirror,      keyEditorMirror);
-        fwrKey(userKeyEditorRotate,      keyEditorRotate);
-        fwrKey(userKeyEditorDark,        keyEditorDark);
-        fwrKey(userKeyEditorAddTerrain,  keyEditorAddTerrain);
-        fwrKey(userKeyEditorAddSteel,    keyEditorAddSteel);
-        fwrKey(userKeyEditorAddHatch,    keyEditorAddHatch);
-        fwrKey(userKeyEditorAddGoal,     keyEditorAddGoal);
-        fwrKey(userKeyEditorAddDeco,     keyEditorAddDeco);
-        fwrKey(userKeyEditorAddHazard,   keyEditorAddHazard);
-        fwrKey(userKeyEditorMenuConstants, keyEditorMenuConstants);
-        fwrKey(userKeyEditorMenuTopology,  keyEditorMenuTopology);
-        fwrKey(userKeyEditorMenuLooks,     keyEditorMenuLooks);
-        fwrKey(userKeyEditorMenuSkills,    keyEditorMenuSkills);
-        fwrKey(userKeyEditorExit,          keyEditorExit);
-
+        foreach (opt; _optvecSave)
+            f.writeln(opt.ioLine);
         f.writeln();
         foreach (key, r; results)
-            fwr(IoLine.Angle(key.rootless,
+            f.writeln(IoLine.Angle(key.rootless,
                 r.lixSaved, r.skillsUsed, r.updatesUsed, r.built.toString));
     }
     catch (Exception e) {

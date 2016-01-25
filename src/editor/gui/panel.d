@@ -6,10 +6,12 @@ import std.range;
 import std.string;
 
 import basics.globals;
+import basics.user; // FPS
 import file.filename; // currentFilename
 import file.language;
 import graphic.internal;
 import gui;
+import hardware.display; // FPS
 import hardware.keyset;
 
 class EditorPanel : Element {
@@ -113,9 +115,8 @@ protected:
                                    .to!Lang.transl;
                 catch (ConvException) { }
             }
-        import hardware.display;
-        import std.string;
-        _fps.text = "FPS: %d".format(displayFps);
+        if (basics.user.showFPS.value)
+            _fps.text = "FPS: %d".format(displayFps);
     }
 
 private:

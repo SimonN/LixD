@@ -21,9 +21,9 @@ private:
     immutable(int)[] _keys;
 
 public:
-    this(int singleKey) { _keys = [ singleKey ]; }
+    this(int singleKey) pure { _keys = [ singleKey ]; }
 
-    this(const typeof(this)[] sets...)
+    this(const typeof(this)[] sets...) pure
     {
         if (sets.length == 0)
             return;
@@ -42,8 +42,8 @@ public:
         }
     }
 
-    @property bool empty() const { return _keys.empty; }
-    @property int  len()   const { return _keys.length & 0x7FFF_FFFFu; }
+    @property bool empty() const pure { return _keys.empty; }
+    @property int  len()   const pure { return _keys.length & 0x7FFF_FFFFu; }
 
     @property keyTapped()   const { return _keys.any!(k => k.keyTapped);   }
     @property keyHeld()     const { return _keys.any!(k => k.keyHeld);     }
@@ -59,6 +59,7 @@ public:
         _keys = _keys.filter!(k => k != keyToRm).array;
     }
 
+    @property immutable(int)[] keysAsInts() const { return _keys; }
     @property int kludgeFirstEntry() const
     {
         return _keys.empty ? 0 : _keys[0];

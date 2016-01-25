@@ -43,9 +43,9 @@ void implSaveAsAutoReplay(
     bool solves
 ) {
     immutable bool multi = (replay._players.length > 1);
-    if (multi && basics.user.replayAutoMulti)
+    if (multi && basics.user.replayAutoMulti.value)
         replay.saveToTree(basics.globals.dirReplayAutoMulti, levelFn, lev);
-    if (! multi && solves && basics.user.replayAutoSolutions)
+    if (! multi && solves && basics.user.replayAutoSolutions.value)
         replay.saveToTree(basics.globals.dirReplayAutoSolutions, levelFn, lev);
 }
 

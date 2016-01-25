@@ -89,7 +89,8 @@ public:
         _bTime.yf  = 1;
         // DTODO: spawnint: cull entirely, or make an icon
         _spawnint.text = "SI: %d".format(spawnint);
-        _fps.text  = "FPS: %d".format(displayFps);
+        if (basics.user.showFPS.value)
+            _fps.text  = "FPS: %d".format(displayFps);
     }}
 
 protected:

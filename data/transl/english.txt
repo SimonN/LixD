@@ -311,8 +311,6 @@ $optionUserName               Player name
 $optionLanguage               Language
 $optionReplayAutoSolutions    Auto-save level solutions
 $optionReplayAutoMulti        Auto-save multiplayer games
-$optionReplayCancel           End of replay: turn off >>
-$optionReplayCancelAt         × ¹⁄₁₅ seconds before end
 $optionMouseSpeed             Mouse speed
 $optionScrollSpeedEdge        Scroll speed at screen edge
 $optionScrollSpeedClick       Scroll speed with that key
@@ -321,11 +319,10 @@ $optionAvoidBatterToExploder  Prefer batter → non-exploder
 
 $optionScreenWindowed           Windowed mode
 $optionScreenWindowedRes        Windowed resolution
-$optionArrowsReplay             Arrows during replays
-$optionArrowsNetwork            Arrows in network games
 $optionPaintTorusSeams          Paint torus seams
 $optionIngameTooltips           Tooltips during game
 $optionShowButtonHotkeys        Show button hotkeys
+$optionShowFPS                  Show framerate (FPS)
 $optionGuiColorRed              Menu color red
 $optionGuiColorGreen            Menu color green
 $optionGuiColorBlue             Menu color blue

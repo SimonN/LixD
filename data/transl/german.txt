@@ -188,12 +188,12 @@ $saveBoxNoDiscard                Verwerfen
 $saveBoxNoCancel                 Abbrechen
 
 // BitmapBrowser
-$addTerrain                   Terrain hinzufuegen
-$addSteel                     Stahl hinzufuegen
-$addHatch                     Klappe hinzufuegen
-$addGoal                      Ziel hinzufuegen
-$addDeco                      Dekoration hinzufuegen
-$addHazard                    Gefahr hinzufuegen
+$addTerrain                   Terrain hinzufügen
+$addSteel                     Stahl hinzufügen
+$addHatch                     Klappe hinzufügen
+$addGoal                      Ziel hinzufügen
+$addDeco                      Dekoration hinzufügen
+$addHazard                    Gefahr hinzufügen
 
 // Kartengroesse
 $winTopologyTitle                Topologie
@@ -295,10 +295,9 @@ $optionGroupEditorKeys        Editortasten
 $optionGroupMenuKeys          Menütasten
 $optionGroupSound             Audio
 $optionUserName              Spielername
+$optionLanguage              Sprache/Language
 $optionReplayAutoSolutions   Level-Lösungen auto-speichern
 $optionReplayAutoMulti       Im Mehrspieler auto-speichern
-$optionReplayCancel          Replay-Ende: deaktiviere >>
-$optionReplayCancelAt        × ¹⁄₁₅ Sekunden vor Ende
 $optionMouseSpeed            Mausgeschwindigkeit
 $optionScrollSpeedEdge       Scroll-Geschw. am Bildrand
 $optionScrollSpeedClick      Scroll-Geschw. mit dieser Taste
@@ -307,16 +306,14 @@ $optionAvoidBatterToExploder Batter → Nichtexploder bevorzugen
 
 $optionScreenWindowed           Fenstermodus
 $optionScreenWindowedRes        Fenster-Auflösung
-$optionArrowsReplay             Pfeile im Replay
-$optionArrowsNetwork            Pfeile im Netzwerkspiel
 $optionPaintTorusSeams          Torus-Nahtstellen anmalen
 $optionIngameTooltips           Tooltips im Spiel
 $optionShowButtonHotkeys        Button-Hotkeys anzeigen
+$optionShowFPS                  Framerate (FPS) anzeigen
 $optionGuiColorRed              Menüfarbe Rot
 $optionGuiColorGreen            Menüfarbe Grün
 $optionGuiColorBlue             Menüfarbe Blau
 $optionSoundVolume              Klanglautstärke
-$optionLanguage                 Sprache/Language
 
 $optionKeyUnassigned         nichts
 $optionKeyForceLeft         Nur links
