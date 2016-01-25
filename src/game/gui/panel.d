@@ -55,7 +55,7 @@ this()
 {
     super(new Geom(0, 0, Geom.screenXlg, Geom.panelYlg, From.BOTTOM));
 
-    stats = new PanelStats(new Geom(0, 0, this.xlg - 4 * skillXl,
+    stats = new PanelStats(new Geom(0, 0, this.xlg - 2 * skillXl,
                            this.ylg - skillYl, From.TOP_LEFT));
     addChild(stats);
 

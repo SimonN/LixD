@@ -1,6 +1,16 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.1
+-----
+
+2016-01-25
+
+Implemented ask-for-username menu when no name is given. This prevents having
+no name set, and therefore being unable to save options.
+
+Covered the empty space for the spawnint buttons with the info bar for now.
+
 0.2.0
 -----
 
