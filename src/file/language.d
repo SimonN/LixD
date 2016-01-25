@@ -406,9 +406,9 @@ enum Lang {
     optionEdGridCustom,
 
     // mini-dialogue to greet a new player
-    optionNewPlayerTitle,
-    optionNewPlayerFirst,
-    optionNewPlayerSecond,
+    windowAskNameTitle,
+    windowAskNameFirst,
+    windowAskNameSecond,
 
     // This should never be output or read in. Arrays should be created
     // with this as the size, and shouldn't have this as an index.

@@ -385,7 +385,6 @@ $optionEdAddHazard          Gefahr hinzuf.
 $optionEdGridCustom         Benutzerdefinierte Rastergröße
 
 // Neuen Spieler begruessen (Mini-Dialog)
-
-$optionNewPlayerTitle       Lix
-$optionNewPlayerFirst       Hallo und Willkommen!
-$optionNewPlayerSecond      Bitte gib deinen Namen ein:
+$windowAskNameTitle          Lix
+$windowAskNameFirst          Hallo und Willkommen!
+$windowAskNameSecond         Wie heißt du?

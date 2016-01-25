@@ -398,7 +398,6 @@ $optionEdAddHazard           Add hazard
 $optionEdGridCustom          Custom grid size
 
 // mini-dialogue to greet a new player
-
-$optionNewPlayerTitle        Lix
-$optionNewPlayerFirst        Hello and Welcome!
-$optionNewPlayerSecond       Please enter your name:
+$windowAskNameTitle          Lix
+$windowAskNameFirst          Hello and Welcome!
+$windowAskNameSecond         What's your name?

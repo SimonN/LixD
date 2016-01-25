@@ -64,9 +64,9 @@ bool arrowsNetwork     = true;
 bool ingameTooltips    = true;
 bool showButtonHotkeys = true;
 
-int  guiColorRed      = 0x70;
+int  guiColorRed      = 0x60;
 int  guiColorGreen    = 0x80;
-int  guiColorBlue     = 0xA0;
+int  guiColorBlue     = 0xB0;
 
 bool editorHexLevelSize = false;
 int  editorGridSelected  = 1;

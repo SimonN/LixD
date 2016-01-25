@@ -17,6 +17,7 @@ import game.core;
 import file.log; // logging uncaught Exceptions
 import hardware.display;
 import hardware.keyboard;
+import menu.askname;
 import menu.browrep;
 import menu.browsin;
 import menu.mainmenu;
@@ -65,6 +66,7 @@ private:
     BrowserSingle browSin;
     BrowserReplay browRep;
     OptionsMenu optionsMenu;
+    MenuAskName askName;
 
     Game game;
 
@@ -95,6 +97,10 @@ kill()
     if (optionsMenu) {
         gui.rmElder(optionsMenu);
         optionsMenu = null;
+    }
+    if (askName) {
+        gui.rmElder(askName);
+        askName = null;
     }
     core.memory.GC.collect();
 }
@@ -165,6 +171,13 @@ calc()
             gui.addElder(mainMenu);
         }
     }
+    else if (askName) {
+        if (askName.done) {
+            kill();
+            mainMenu = new MainMenu;
+            gui.addElder(mainMenu);
+        }
+    }
     else if (game) {
         game.calc();
         if (game.gotoMainMenu) {
@@ -182,8 +195,14 @@ calc()
     }
     else {
         // program has just started, nothing exists yet
-        mainMenu = new MainMenu;
-        gui.addElder(mainMenu);
+        if (basics.globconf.userName.length) {
+            mainMenu = new MainMenu;
+            gui.addElder(mainMenu);
+        }
+        else {
+            askName = new MenuAskName;
+            gui.addElder(askName);
+        }
     }
 
 }
@@ -195,13 +214,12 @@ draw()
 {
     // mainMenu etc. are GUI Windows. Those have been added as elders and
     // are therefore supervised by module gui.root.
-
-    if (game) game.draw();
-
-    gui              .draw();
-    hardware.mousecur.draw();
-    hardware.sound   .draw();
-
+    if (game)
+        game.draw();
+    gui.draw();
+    if (! askName)
+        hardware.mousecur.draw();
+    hardware.sound.draw();
     flip_display();
 }
 

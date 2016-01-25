@@ -68,9 +68,9 @@ abstract class Element {
 protected:
 
     // override these
-    void calcSelf()   { } // do computations when GUI element has focus
-    void work_self()   { } // do computations always, even when not in focus
-    void drawSelf()   { } // draw to the screen, this calls geom.get_xs() etc.
+    void calcSelf() { } // do computations when GUI element has focus
+    void workSelf() { } // do computations always, even when not in focus
+    void drawSelf() { } // draw to the screen, this calls geom.get_xs() etc.
 
 /*  void undrawSelf();    // Called if appropriate before drawing. This
  *                            is implemented, you can override, don't have to.
@@ -169,7 +169,7 @@ bool isMouseHere() const
 final void calc()
 {
     if (_hidden) return;
-    foreach (child; _children) child.calc();
+    _children.each!(c => c.calc);
     calcSelf();
 }
 
@@ -178,8 +178,8 @@ final void calc()
 final void work()
 {
     if (_hidden) return;
-    foreach (child; _children) child.work();
-    work_self();
+    _children.each!(c => c.work);
+    workSelf();
 }
 
 
