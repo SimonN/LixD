@@ -315,7 +315,6 @@ enum Lang {
     optionGroupMenuKeys,
     optionGroupSound,
     optionUserName,
-    optionUserNameAsk,
     optionLanguage,
     optionReplayAutoSolutions,
     optionReplayAutoMulti,

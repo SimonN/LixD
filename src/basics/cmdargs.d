@@ -24,7 +24,6 @@ enum Runmode {
 
 private string _helpAndExitOutput =
     "-h or -? or --help      print this help and exit\n"
-    "-n                      ask for player's name on startup\n"
     "-v or --version         print version and exit\n"
     "-w                      run in windowed mode at 640x480\n"
     "--resol=800x600         run in windowed mode at the given resolution\n"
@@ -35,7 +34,6 @@ private string _helpAndExitOutput =
 
 class Cmdargs {
 
-    bool usernameAsk;
     bool windowed;
     bool versionAndExit;
     bool helpAndExit;
@@ -68,7 +66,6 @@ class Cmdargs {
                 // allow arguments chained like -nw
                 foreach (c; arg[1 .. $]) switch (c) {
                     case 'h': helpAndExit    = true; break;
-                    case 'n': usernameAsk    = true; break;
                     case 'v': versionAndExit = true; break;
                     case 'w': windowed       = true; break;
                     case '?': helpAndExit    = true; break;

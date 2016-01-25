@@ -177,7 +177,6 @@ void populateGeneral()
     scope (exit)
         groups[OptionGroup.general] = grp;
     auto fac = facLeft();
-    grp ~= fac.factory!BoolOption(Lang.optionUserNameAsk.transl, &userNameAsk);
     fac.y = 250;
     grp ~= fac.factory!BoolOption(Lang.optionReplayAutoSolutions.transl, &replayAutoSolutions);
     grp ~= fac.factory!BoolOption(Lang.optionReplayAutoMulti.transl, &replayAutoMulti);

@@ -307,7 +307,6 @@ $optionGroupEditorKeys         Editor keys
 $optionGroupMenuKeys           Menu keys
 $optionGroupSound              Sound
 $optionUserName               Player name
-$optionUserNameAsk            Ask for name on startup
 $optionLanguage               Language
 $optionReplayAutoSolutions    Auto-save level solutions
 $optionReplayAutoMulti        Auto-save multiplayer games

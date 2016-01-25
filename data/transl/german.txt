@@ -294,7 +294,6 @@ $optionGroupEditorKeys        Editortasten
 $optionGroupMenuKeys          Menütasten
 $optionGroupSound             Audio
 $optionUserName              Spielername
-$optionUserNameAsk           Namensfrage bei Start
 $optionReplayAutoSolutions   Level-Lösungen auto-speichern
 $optionReplayAutoMulti       Im Mehrspieler auto-speichern
 $optionReplayCancel          Replay-Ende: deaktiviere >>
