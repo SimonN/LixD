@@ -81,14 +81,16 @@ void deinitialize()
 
     hardware.mousecur.deinitialize();
 
-    core.memory.GC.collect();
+    version (assert)
+        core.memory.GC.collect();
 
     game.physdraw.deinitialize();
     graphic.internal.deinitialize();
     graphic.textout.deinitialize();
     graphic.color.deinitialize();
 
-    core.memory.GC.collect();
+    version (assert)
+        core.memory.GC.collect();
 
     hardware.sound.deinitialize();
     hardware.mouse.deinitialize();
