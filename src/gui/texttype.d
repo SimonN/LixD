@@ -58,7 +58,6 @@ public:
             return s;
         _text = s;
         pruneText();
-        _label.text = _text;
         reqDraw();
         return s;
     }
@@ -97,10 +96,14 @@ protected:
         else {
             reqDraw(); // for the blinking cursor
             handleOnAndTyping();
-            _label.text = ! on || (al_get_timer_count(basics.alleg5.timer)
-                % ticksForDoubleClick < ticksForDoubleClick/2)
-                ? _text : _text ~ caretChar;
         }
+    }
+
+    override void drawOntoButton()
+    {
+        _label.text = ! on || (al_get_timer_count(basics.alleg5.timer)
+            % ticksForDoubleClick < ticksForDoubleClick/2)
+            ? _text : _text ~ caretChar;
     }
 
 private:
