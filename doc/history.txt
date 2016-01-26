@@ -1,6 +1,20 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.3
+-----
+
+2016-01-26
+
+Command-line argument `--fullscreen' forces fullscreen, no matter what the
+user settings are.
+
+The menu-OK hotkey always performs the most sensible action in the window
+during a singleplayer game: resume if it's not at the end, exit if won,
+restart if failed.
+
+Editor button in the singleplayer browser, but it doesn't do anything yet.
+
 0.2.2
 -----
 

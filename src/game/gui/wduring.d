@@ -21,9 +21,14 @@ private enum butYsp =  10;
 private enum butYl  =  20;
 
 private auto
-addButton(ref int y, in float xl = butXl)
-{
-    auto b = new TextButton(new Geom(0, y, xl, butYl, From.TOP));
+addButton(
+    ref int y,
+    in float xl = butXl,
+    in bool onKeyMenuOkay = false
+) {
+    auto g = new Geom(0, y, xl, butYl, From.TOP);
+    TextButton b = onKeyMenuOkay ? new TextButtonMenuOkayIsSecondHotkey(g)
+                                 : new TextButton(g);
     y += butYl + butYsp;
     return b;
 }
@@ -86,9 +91,10 @@ class WindowEndSingle : GameWindow {
         enum extraYl = 95;
         super(myGeom(3, 300, extraYl), level.name);
         int y = 40 + extraYl;
-        _restart    = addButton(y, xlg - 40);
+        immutable bool won = tribe.lixSaved >= tribe.lixRequired;
+        _restart    = addButton(y, xlg - 40, ! won);
         _saveReplay = addButton(y, xlg - 40);
-        _exitGame   = addButton(y, xlg - 40);
+        _exitGame   = addButton(y, xlg - 40, won);
         super.captionSuperElements();
         super.setReplayAndLevel(replay, level);
 

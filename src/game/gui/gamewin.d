@@ -1,14 +1,30 @@
 module game.gui.gamewin;
 
 import std.typecons; // Rebindable
+import std.string; // package class
 
+import basics.alleg5; // package class, hotkeyNiceShort
 import basics.user; // hotkeys
 import file.language;
 import game.replay;
 import graphic.color;
 import gui;
+import hardware.keyboard; // package class
 import hardware.sound;
 import level.level;
+
+// This is a bit of a hackjob. Maybe button hotkeys should be implemented
+// with the decorator pattern. Then this becomes two decorators stacked.
+package class TextButtonMenuOkayIsSecondHotkey : TextButton {
+    this(Geom g, string caption = "") { super(g, caption); }
+    override @property bool execute() const {
+        return super.execute || keyMenuOkay.keyTapped;
+    }
+    protected override string hotkeyString() const {
+        return "%s/%s".format(hotkeyNiceShort(keyMenuOkay),
+                              hotkeyNiceShort(super.hotkey));
+    }
+}
 
 abstract class GameWindow : Window {
 
@@ -68,5 +84,4 @@ private:
     Label _saveReplayDone;
     Rebindable!(const Replay) _replay;
     Rebindable!(const Level)  _level;
-
 }
