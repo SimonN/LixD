@@ -96,13 +96,12 @@ void setScreenMode(in Cmdargs cmdargs)
     TryMode[] try_modes;
 
     // top priority goes to using setScreenMode()'s arguments, if they exist
-    if (cmdargs.windowed) {
+    if (cmdargs.forceWindowed) {
         if (cmdargs.wantWindowedX > 0 && cmdargs.wantWindowedY > 0)
             try_modes ~= TryMode(false, cmdargs.wantWindowedX,
                                         cmdargs.wantWindowedY);
         else try_modes ~= TryMode(false, 640, 480);
     }
-
     void addFullscreenTryModes() {
         try_modes ~= TryMode(true, 0, 0);
         try_modes ~= TryMode(true, 640, 480);
@@ -113,8 +112,9 @@ void setScreenMode(in Cmdargs cmdargs)
         }
         try_modes ~= TryMode(false, 640, 480);
     }
-
-    if (cmdargs.windowed || basics.user.screenWindowed) {
+    if (! cmdargs.forceFullscreen
+        && (cmdargs.forceWindowed || basics.user.screenWindowed)
+    ) {
         addWindowedTryModes();
         addFullscreenTryModes();
     }

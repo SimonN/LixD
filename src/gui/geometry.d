@@ -112,13 +112,9 @@ class Geom {
         assert (result <= screenYls);
     }
     body {
-        // 1 / (return value) is the ratio of vertical space occupied by the
+        // 1 / panelYlgDivisor is the ratio of vertical space occupied by the
         // game/editor panels. Higher values mean less y-space for panels.
-        int panelYlgDivisor()
-        {
-            return _screenXlg > 700 ? 5  // widescreen
-                                    : 6; // 4:3 screen or taller
-        }
+        enum panelYlgDivisor = 6;
         // The remaining pixels (for the map above the panel) should be a
         // multiple of the max zoom level, to make the zoom look nice.
         enum int multipleForZoom = 4;

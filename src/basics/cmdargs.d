@@ -27,6 +27,7 @@ private string _helpAndExitOutput =
     "-v or --version         print version and exit\n"
     "-w                      run in windowed mode at 640x480\n"
     "--resol=800x600         run in windowed mode at the given resolution\n"
+    "--fullscreen            run in fullscreen mode\n"
     "--verify=dir/file.txt   verify the replay file `dir/file.txt'\n"
     "--verify=mydir          verify all replays in directory `mydir'";
 
@@ -34,7 +35,8 @@ private string _helpAndExitOutput =
 
 class Cmdargs {
 
-    bool windowed;
+    bool forceWindowed;
+    bool forceFullscreen;
     bool versionAndExit;
     bool helpAndExit;
 
@@ -67,7 +69,7 @@ class Cmdargs {
                 foreach (c; arg[1 .. $]) switch (c) {
                     case 'h': helpAndExit    = true; break;
                     case 'v': versionAndExit = true; break;
-                    case 'w': windowed       = true; break;
+                    case 'w': forceWindowed  = true; break;
                     case '?': helpAndExit    = true; break;
                     default : badSwitches ~= "-" ~ c; break;
                 }
@@ -87,6 +89,9 @@ class Cmdargs {
         else if (arg == "--help") {
             helpAndExit = true;
         }
+        else if (arg == "--fullscreen") {
+            forceFullscreen = true;
+        }
         else if (arg.startsWith(vrf)) {
             verifyFiles ~= new Filename(arg[vrf.length .. $]);
         }
@@ -105,7 +110,7 @@ class Cmdargs {
             if (wantWindowedX == 0 || wantWindowedY == 0)
                 badSwitches ~= arg;
             else
-                windowed = true;
+                forceWindowed = true;
         }
         else {
             badSwitches ~= arg;
