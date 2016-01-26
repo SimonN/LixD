@@ -34,8 +34,12 @@ class BrowserBase : Window {
     void previewLevel(Level l) { preview.level = l;    }
     void clearPreview()        { preview.level = null; }
 
-    enum float infoXl = 140;
-    enum float infoY  = 220;
+    enum  float infoXl = 140;
+    final float infoY() const
+    {
+        assert (preview);
+        return preview.yg + preview.ylg + 20;
+    }
 
     // after calling this(), it's a good idea to call
     // highlight(file) with whatever is deemed the correct current file
@@ -93,6 +97,12 @@ protected:
         _fileRecent = null;
         highlight(levList.currentFile);
         playLoud(Sound.SCISSORS);
+    }
+
+    final void movePreviewDown(float plusY)
+    {
+        assert (preview);
+        preview.move(preview.geom.x, preview.geom.y + plusY);
     }
 
     override void calcSelf()

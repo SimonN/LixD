@@ -12,6 +12,8 @@ class BrowserSingle : BrowserCalledFromMainMenu {
 
 public:
 
+    @property bool gotoEditor() const { return _gotoEditor; }
+
     this()
     {
         super(Lang.browserSingleTitle.transl,
@@ -19,14 +21,26 @@ public:
             ListLevel.LevelCheckmarks.yes,
             ListLevel.ReplayToLevelName.no
         );
-        super.highlight(basics.user.singleLastLevel);
+        super.movePreviewDown(40);
+        scope (success)
+            super.highlight(basics.user.singleLastLevel);
+        _edit = new TextButton(new Geom(20, 80, infoXl, 40, From.TOP_RIGHT));
+        _edit.text   = Lang.browserEdit.transl;
+        _edit.hotkey = basics.user.keyMenuEdit;
+        _edit.onExecute = () {
+            assert (fileRecent !is null);
+            _gotoEditor = true;
+        };
+        addChild(_edit);
     }
 
 protected:
 
     override void onFileHighlight(Filename fn)
     {
-        levelRecent = fn is null ? null : new Level(fileRecent);
+        assert (_edit);
+        levelRecent  = fn is null ? null : new Level(fileRecent);
+        _edit.hidden = fn is null;
         previewLevel(levelRecent);
     }
 
@@ -42,5 +56,9 @@ protected:
         }
     }
 
+private:
+
+    bool _gotoEditor;
+    TextButton _edit;
 }
 // end class
