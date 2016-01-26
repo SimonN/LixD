@@ -37,17 +37,16 @@ class BrowserBase : Window {
     enum float infoXl = 140;
     enum float infoY  = 220;
 
+    // after calling this(), it's a good idea to call
+    // highlight(file) with whatever is deemed the correct current file
     this(
-        in string      title,
-        in Filename    baseDir,
-           Filename    currentFile,
+        in string   title,
+        in Filename baseDir,
         ListLevel.LevelCheckmarks   lcm,
         ListLevel.ReplayToLevelName rtl
     ) {
         super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg), title);
-
         immutable int lxlg = to!int(Geom.screenXlg - 100 - 140 - 4*20);
-
         dirList = new ListDir  (new Geom(20,  40, 100,  420));
         levList = new ListLevel(new Geom(140, 40, lxlg, 420),
                                 ListLevel.WriteFilenames.no, lcm, rtl);
@@ -55,27 +54,24 @@ class BrowserBase : Window {
         buttonPlay = new TextBut(new Geom(20,  40, infoXl,  40, From.TOP_RIG));
         preview    = new Preview(new Geom(20, 100, infoXl, 100, From.TOP_RIG));
         buttonExit = new TextBut(new Geom(20,  20, infoXl,  40, From.BOT_RIG));
-
-        dirList.baseDir = baseDir;
         dirList.listFileToControl = levList;
-        dirList.currentDir = currentFile;
-
-        levList.highlight(currentFile);
-        if (levList.currentFile == currentFile
-            && currentFile !is null
-            && currentFile.file != null
-        )
-            this.highlight(currentFile);
-        else
-            this.highlight(null);
+        dirList.baseDir    = baseDir;
+        dirList.currentDir = baseDir;
         buttonPlay.text = Lang.browserPlay.transl;
-        buttonPlay.hotkey = basics.user.keyMenuOkay;
         buttonExit.text = Lang.commonBack.transl;
+        buttonPlay.hotkey = basics.user.keyMenuOkay;
         buttonExit.hotkey = basics.user.keyMenuExit;
         buttonExit.onExecute = () { _gotoMainMenu = true; };
-
         addChildren(preview, dirList, levList, buttonPlay, buttonExit);
         windowSubtitle = dirList.currentDir.rootless;
+    }
+
+    final void highlight(Filename fn)
+    {
+        if (fn !is null && fn.file != null)
+            dirList.currentDir = fn;
+        levList.highlight(fn);
+        dispatchHighlightToBrowserSubclass(fn);
     }
 
 protected:
@@ -115,10 +111,12 @@ protected:
             if (fn !is null && button !is null) {
                 if (button.on)
                     // button executed for the first time
-                    highlight(fn);
-                else
+                    dispatchHighlightToBrowserSubclass(fn);
+                else {
                     // button execute for the second time
+                    assert (fn == _fileRecent);
                     onFileSelect(fn);
+                }
             }
         }
         else if (buttonPlay.execute) {
@@ -147,17 +145,17 @@ private:
     TextButton buttonExit;
     Preview    preview;
 
-    void highlight(Filename fn)
+    void dispatchHighlightToBrowserSubclass(Filename fn)
     {
-        if (fn is null) {
-            buttonPlay.hide();
-            // keep _fileRecent as it is, we might highlight that again later
-            onFileHighlight(null);
-        }
-        else {
+        if (levList.currentFile == fn && fn !is null && fn.file != null) {
             buttonPlay.show();
             _fileRecent = fn;
             onFileHighlight(fn);
+        }
+        else {
+            buttonPlay.hide();
+            // keep _fileRecent as it is, we might highlight that again later
+            onFileHighlight(null);
         }
     }
 }

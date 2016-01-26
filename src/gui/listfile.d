@@ -228,9 +228,9 @@ private:
         }
         _currentFile = files[pos];
         Button but = buttons[pos - _fileNumberAtTop];
-        if (_buttonLastClicked == but)
+        if (_buttonLastClicked is but)
             but.on = ! but.on;
-        else if (_buttonLastClicked) {
+        else if (_buttonLastClicked !is null) {
             _buttonLastClicked.on = false;
             but.on = true;
         }

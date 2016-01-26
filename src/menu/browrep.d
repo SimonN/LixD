@@ -13,6 +13,12 @@ class BrowserReplay : BrowserCalledFromMainMenu {
 
     this()
     {
+        super(Lang.browserReplayTitle.transl,
+            basics.globals.dirReplays,
+            ListLevel.LevelCheckmarks.no,
+            ListLevel.ReplayToLevelName.yes);
+        scope (success)
+            super.highlight(basics.user.replayLastLevel);
         TextButton newInfo(float y, string caption, int hotkey)
         {
             auto b = new TextButton(new Geom(20, y, infoXl, 20, From.TOP_RIG));
@@ -24,11 +30,6 @@ class BrowserReplay : BrowserCalledFromMainMenu {
         _delete  = newInfo(infoY, Lang.browserDelete.transl, keyMenuDelete);
         _extract = newInfo(infoY + 20, "(extract)", // Lang.browserExtract.transl;
                            keyMenuExport);
-        super(Lang.browserReplayTitle.transl,
-            basics.globals.dirReplays,
-            basics.user.replayLastLevel,
-            ListLevel.LevelCheckmarks.no,
-            ListLevel.ReplayToLevelName.yes);
         addChildren(_delete, _extract);
     }
 

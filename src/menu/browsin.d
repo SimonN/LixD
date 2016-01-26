@@ -16,10 +16,10 @@ public:
     {
         super(Lang.browserSingleTitle.transl,
             basics.globals.dirLevels,
-            basics.user.singleLastLevel,
             ListLevel.LevelCheckmarks.yes,
             ListLevel.ReplayToLevelName.no
         );
+        super.highlight(basics.user.singleLastLevel);
     }
 
 protected:

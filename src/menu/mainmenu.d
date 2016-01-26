@@ -33,7 +33,6 @@ class MainMenu : MenuWithBackground {
                 height == 2 ? butSpg : 0,        heightg,
                 height == 2 ? butSlg : butXlg,   butYlg, from));
         }
-
         super(new Geom(0, 0,
             butXlg     + butSpg * 2,                  // 80 = labels and space
             butYlg * 4 + butSpg * 4 + Window.titleYlg + 80, Geom.From.CENTER),
