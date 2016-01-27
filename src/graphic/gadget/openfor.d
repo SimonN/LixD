@@ -14,6 +14,7 @@ module graphic.gadget.openfor;
 
 import basics.help;
 import basics.nettypes;
+import basics.topology;
 import game.state;
 import game.tribe;
 import graphic.gadget;
@@ -35,9 +36,9 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
     Update wasFedDuringUpdate;
     const(int) idleAnimLength;
 
-    this(in Torbit tb, in ref Pos levelpos)
+    this(const(Topology) top, in ref Pos levelpos)
     {
-        super(tb, levelpos);
+        super(top, levelpos);
         idleAnimLength = delegate() {
             if (! tile || ! tile.cb)
                 return 0;

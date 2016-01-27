@@ -5,6 +5,7 @@ import std.algorithm; // max
 import basics.help;
 import basics.globals; // fileImageMouse
 import basics.help; // len
+import basics.topology;
 import game.tribe;
 import game.state;
 import graphic.cutbit;
@@ -20,8 +21,8 @@ import lix.enums;
 
 class Goal : GadgetWithTribeList {
 
-    this(in Torbit tb, in ref Pos levelpos) { super(tb, levelpos); }
-    this(in Goal rhs)                       { super(rhs); }
+    this(const(Topology) top, in ref Pos levelpos) { super(top, levelpos); }
+    this(in Goal rhs) { super(rhs); }
 
     override Goal clone() const { return new Goal(this); }
 

@@ -14,6 +14,7 @@ import std.algorithm; // find;
 import basics.alleg5;
 import basics.globals;
 import basics.help; // len;
+import basics.user; // Result
 import basics.nettypes;
 import file.filename;
 import game.core;
@@ -39,10 +40,21 @@ class Game {
         implGameConstructor(this, lv, fn, rp);
     }
 
-    ~this()     { implGameDestructor(this); }
+    ~this() { implGameDestructor(this); }
 
-    void calc() { implGameCalc(this); }
-    void draw() { implGameDraw(this); }
+    Result evaluateReplay() { return implEvaluateReplay(this); }
+
+    void calc()
+    {
+        assert (runmode == Runmode.INTERACTIVE);
+        implGameCalc(this);
+    }
+
+    void draw()
+    {
+        assert (runmode == Runmode.INTERACTIVE);
+        implGameDraw(this);
+    }
 
 package:
 

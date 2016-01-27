@@ -9,6 +9,7 @@ module graphic.gadget.tribelis;
 import std.algorithm;
 
 import basics.help;
+import basics.topology;
 import game.state;
 import game.tribe;
 import graphic.gadget;
@@ -17,11 +18,7 @@ import level.level;
 
 class GadgetWithTribeList : Gadget {
 
-    this(in Torbit tb, in ref Pos levelpos)
-    {
-        super(tb, levelpos);
-    }
-
+    mixin (StandardGadgetCtor);
     this(in This rhs)
     {
         super(rhs);

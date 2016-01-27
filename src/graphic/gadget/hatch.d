@@ -5,6 +5,7 @@ import std.algorithm; // min
 import basics.help;
 import basics.globals; // hatch arrow graphic
 import basics.nettypes;
+import basics.topology;
 import game.effect;
 import game.state;
 import graphic.cutbit;
@@ -34,9 +35,9 @@ public:
     immutable bool spawnFacingLeft;
     Style blinkStyle = Style.garden; // if left at garden, then don't blink
 
-    this(in Torbit tb, in ref Pos levelpos)
+    this(const(Topology) top, in ref Pos levelpos)
     {
-        super(tb, levelpos);
+        super(top, levelpos);
         spawnFacingLeft = levelpos.rot != 0;
         while (this.frameExists(_xFramesOpen, 0))
             ++_xFramesOpen;

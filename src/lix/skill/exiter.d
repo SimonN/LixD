@@ -30,7 +30,7 @@ class Exiter : Leaver {
 
     void determineSidewaysMotion(in Goal goal)
     {
-        xOffsetFromGoal = ground.distanceX(
+        xOffsetFromGoal = env.distanceX(
             goal.x + goal.tile.triggerX + goal.tile.triggerXl / 2, lixxie.ex);
         if (xOffsetFromGoal % 2 == 0)
             // From C++ Lix: The +1 is necessary because this counts

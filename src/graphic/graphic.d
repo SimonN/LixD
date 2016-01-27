@@ -11,18 +11,19 @@ import std.string : format; // for assert error only
 
 import basics.alleg5;
 import basics.help; // rounding float to a good int
+import basics.topology;
 import graphic.cutbit;
 import graphic.torbit;
 
 class Graphic {
 
-/*  this(const Cutbit, const Torbit, int = 0, int = 0);
+/*  this(const Cutbit, const Topology, int = 0, int = 0);
  *  this(Graphic)
  */
     Graphic clone() const { return new Graphic(this); }
 
     const(Cutbit) cutbit;
-    const(Torbit) ground;
+    const(Topology) env;
 
     @property const(Albit)  albit()  const { return cutbit.albit; }
 
@@ -59,15 +60,9 @@ class Graphic {
  *  AlCol get_pixel   (int, int) const -- remember to lock target!
  *
  *  bool isLastFrame() const
- *
- *  void draw()
- *
- *      Draw to the torbit, according to mirror and rotation.
- *      Can't be a const method because of mutable this.torbit.
- *
+ *  void draw(Torbit) const
  *  void drawToCurrentTarget() const
- *
- *      Ignore (Torbit ground) and mirr/rotat; and blit immediately.
+ *      Ignore (Topology env) and mirr/rotat; and blit immediately.
  *      Only used for mouse cursor and replay sign.
  */
 
@@ -88,12 +83,12 @@ public:
 
 this(
     const(Cutbit) cb,
-    const(Torbit) gr,
+    const(Topology) to,
     in int new_x = 0,
     in int new_y = 0
 ) {
     cutbit = cb;
-    ground = gr;
+    env    = to;
     _x     = new_x;
     _y     = new_y;
     _rot   = 0.0;
@@ -106,7 +101,7 @@ this(in Graphic rhs)
 {
     assert (rhs);
     cutbit  = rhs.cutbit;
-    ground  = rhs.ground;
+    env     = rhs.env;
     _x      = rhs._x;
     _y      = rhs._y;
     _mirror = rhs._mirror;
@@ -122,8 +117,8 @@ this(in Graphic rhs)
 x(in int i)
 {
     _x = i;
-    if (ground && ground.torusX)
-        _x = positiveMod(_x, ground.xl);
+    if (env && env.torusX)
+        _x = positiveMod(_x, env.xl);
     return _x;
 }
 
@@ -131,8 +126,8 @@ x(in int i)
 y(in int i)
 {
     _y = i;
-    if (ground && ground.torusY)
-        _y = positiveMod(_y, ground.yl);
+    if (env && env.torusY)
+        _y = positiveMod(_y, env.yl);
     return _y;
 }
 
@@ -195,15 +190,11 @@ get_pixel(in int gx, in int gy) const
     return cutbit.get_pixel(_xf, _yf, useX, useY);
 }
 
-
-
-// Must supply the ground again as target, because we only know where to
-// draw, we aren't allowed to draw on the const Torbit.
-void
-draw(Torbit mutableGround) const
+void draw(Torbit mutableGround) const
 {
-    assert (ground is mutableGround, format("drawing target must be (ground)."
-        " ground=%x, mutable=%x", &ground, &mutableGround));
+    assert (env, "can't draw, no target environment specified");
+    assert (env == mutableGround, format("drawing target must be == env."
+        " env=%x, mutable=%x", &env, &mutableGround));
 
     if (mode == Cutbit.Mode.NORMAL)
         // This calls the virtual xf(), yf() instead of using _xf, _yf.
@@ -213,10 +204,7 @@ draw(Torbit mutableGround) const
         cutbit.draw(mutableGround, _x, _y, _mirror, to!int(_rot), _mode);
 }
 
-
-
-void
-drawToCurrentTarget() const
+void drawToCurrentTarget() const
 {
     cutbit.drawToCurrentTarget(_x, _y, _xf, _yf);
 }

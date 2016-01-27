@@ -63,10 +63,6 @@ implGameDestructor(Game game)
 private void
 prepareLand(Game game) { with (game)
 {
-    assert (pan is null);
-    pan = new Panel;
-    gui.addElder(pan);
-
     cs = new GameState();
     with (level) {
         cs.land   = new Torbit(xl, yl, torusX, torusY);
@@ -76,8 +72,13 @@ prepareLand(Game game) { with (game)
 
     physicsDrawer = new PhysicsDrawer(cs.land, cs.lookup);
 
-    map = new Map(cs.land, Geom.screenXls.to!int,
-                          (Geom.screenYls - Geom.panelYls).to!int);
+    assert (pan is null);
+    if (runmode == Runmode.INTERACTIVE) {
+        pan = new Panel;
+        gui.addElder(pan);
+        map = new Map(cs.land, Geom.screenXls.to!int,
+                              (Geom.screenYls - Geom.panelYls).to!int);
+    }
 }}
 
 private void
@@ -115,25 +116,24 @@ preparePlayers(Game game) { with (game)
             // DTODONETWORK: Findout what numbers to put in here. ma.number?
             replay.addPlayer(ma.number, tr.style, ma.name);
 
-    assert (pan);
-    pan.setLikeTribe(tribeLocal);
-    pan.highlightFirstSkill();
+    if (pan) {
+        pan.setLikeTribe(tribeLocal);
+        pan.highlightFirstSkill();
+    }
 }}
 
 private void
 prepareGadgets(Game game)
 {
-    assert (game.map);
     assert (game.cs.lookup);
     void gadgetsFromPos(T)(ref T[] gadgetVec, TileType tileType)
     {
         foreach (ref pos; game.level.pos[tileType]) {
-            gadgetVec ~= cast (T) Gadget.factory(game.map, pos);
+            gadgetVec ~= cast (T) Gadget.factory(game.cs.lookup, pos);
             assert (gadgetVec[$-1], pos.toIoLine.toString);
             // don't draw to the lookup map yet, we may remove some goals first
         }
     }
-
     gadgetsFromPos(game.cs.hatches,  TileType.HATCH);
     gadgetsFromPos(game.cs.goals,    TileType.GOAL);
     gadgetsFromPos(game.cs.decos,    TileType.DECO);

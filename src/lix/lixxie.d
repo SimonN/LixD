@@ -5,6 +5,7 @@ import std.algorithm; // swap
 import basics.globals; // fuse image
 import basics.help;
 import basics.matrix;
+import basics.topology;
 import basics.user; // multipleBuilders
 import game.mask;
 import game.phymap;
@@ -161,22 +162,19 @@ public:
 public:
 
 this(
-    in Torbit     groundMap,
+    const(Topology) env,
     OutsideWorld* ow,
-    int   new_ex,
-    int   new_ey
+    int new_ex,
+    int new_ey
 ) {
     mixin (tmpOutsideWorld);
-
     _style = outsideWorld.tribe.style;
-
-    super(getLixSpritesheet(_style), groundMap,
-          even(new_ex) - exOffset, new_ey - eyOffset);
-
-    _job = Job.factory(this, Ac.faller);
-    frame   = 4;
-    ex      = new_ex.even;
-    ey      = new_ey;
+    super(getLixSpritesheet(_style), env, even(new_ex) - exOffset,
+                                               new_ey  - eyOffset);
+    _job  = Job.factory(this, Ac.faller);
+    frame = 4;
+    ex    = new_ex.even;
+    ey    = new_ey;
 }
 
 
@@ -184,26 +182,20 @@ this(
 this(in Lixxie rhs)
 {
     assert (rhs !is null);
-
     _style = rhs._style;
     _ex    = rhs._ex;
     _ey    = rhs._ey;
     _flags = rhs._flags;
-
-    super(graphic.internal.getLixSpritesheet(_style), rhs.ground,
+    super(graphic.internal.getLixSpritesheet(_style), rhs.env,
         _ex - exOffset, _ey - eyOffset);
 
     dir = rhs.dir; // important to set super's mirr and rot
-
     _flingX = rhs._flingX;
     _flingY = rhs._flingY;
     _encBody = rhs._encBody;
     _encFoot = rhs._encFoot;
-
     ploderTimer = rhs.ploderTimer;
-
     _job = rhs._job.cloneAndBindToLix(this);
-
     _outsideWorld = null; // Must be passed anew by the next update.
                           // Can't copy this from const lix, keep it at .init.
 }
@@ -242,8 +234,8 @@ void addEncountersFromHere()
 ex(in int n)
 {
     _ex = basics.help.even(n);
-    if (ground.torusX)
-        _ex = positiveMod(_ex, ground.xl);
+    if (env.torusX)
+        _ex = positiveMod(_ex, env.xl);
     addEncountersFromHere();
     return _ex;
 }
@@ -254,8 +246,8 @@ ex(in int n)
 ey(in int n)
 {
     _ey = n;
-    if (ground.torusY)
-        _ey = positiveMod(_ey, ground.yl);
+    if (env.torusY)
+        _ey = positiveMod(_ey, env.yl);
     addEncountersFromHere();
     return _ey;
 }
@@ -293,7 +285,7 @@ void moveUp(in int minusY = 2)
 
 bool inTriggerArea(in Gadget g) const
 {
-    return ground.isPointInRectangle(ex, ey,
+    return env.isPointInRectangle(ex, ey,
         g.x + g.tile.triggerX(), g.y + g.tile.triggerY(),
               g.tile.triggerXl,        g.tile.triggerYl);
 }

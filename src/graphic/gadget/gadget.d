@@ -20,6 +20,7 @@ import std.conv;
 
 import basics.help;
 import basics.nettypes;
+import basics.topology;
 import game.phymap;
 import game.state;
 import graphic.cutbit;
@@ -32,7 +33,7 @@ import level.tile;
 import hardware.sound;
 
 package immutable string StandardGadgetCtor =
-    "this(in Torbit tb, in ref Pos levelpos) { super(tb, levelpos); }";
+    "this(const(Topology) top, in ref Pos levelpos) { super(top, levelpos); }";
 
 
 
@@ -70,13 +71,13 @@ public:
  */
 
 // protected: use the factory to generate gadgets of the correct subclass
-protected this(in Torbit tb, in ref Pos levelpos)
+protected this(const(Topology) top, in ref Pos levelpos)
 in {
     assert (levelpos.ob, "we shouldn't make gadgets from missing tiles");
     assert (levelpos.ob.cb, "we shouldn't make gadgets from bad tiles");
 }
 body {
-    super(levelpos.ob.cb, tb, levelpos.x, levelpos.y);
+    super(levelpos.ob.cb, top, levelpos.x, levelpos.y);
     tile = levelpos.ob;
     animationLength = delegate() {
         if (levelpos.ob.cb is null)
@@ -118,20 +119,20 @@ invariant()
 
 
 static Gadget
-factory(Torbit tb, in ref Pos levelpos)
+factory(const(Topology) top, in ref Pos levelpos)
 {
     assert (levelpos.ob);
     final switch (levelpos.ob.type) {
-        case TileType.TERRAIN: return new Gadget  (tb, levelpos);
-        case TileType.DECO:    return new Gadget  (tb, levelpos);
-        case TileType.HATCH:   return new Hatch   (tb, levelpos);
-        case TileType.GOAL:    return new Goal    (tb, levelpos);
-        case TileType.TRAP:    return new TrapTrig(tb, levelpos);
-        case TileType.WATER:   return new Water   (tb, levelpos);
-        case TileType.TRAMPO:  return new Trampo  (tb, levelpos);
+        case TileType.TERRAIN: return new Gadget  (top, levelpos);
+        case TileType.DECO:    return new Gadget  (top, levelpos);
+        case TileType.HATCH:   return new Hatch   (top, levelpos);
+        case TileType.GOAL:    return new Goal    (top, levelpos);
+        case TileType.TRAP:    return new TrapTrig(top, levelpos);
+        case TileType.WATER:   return new Water   (top, levelpos);
+        case TileType.TRAMPO:  return new Trampo  (top, levelpos);
         case TileType.FLING:
-            if (levelpos.ob.subtype & 2) return new FlingTrig(tb, levelpos);
-            else                         return new FlingPerm(tb, levelpos);
+            if (levelpos.ob.subtype & 2) return new FlingTrig(top, levelpos);
+            else                         return new FlingPerm(top, levelpos);
         case TileType.EMPTY:
         case TileType.MAX:
             assert (false, "TileType isn't supported by Gadget.factory");

@@ -129,8 +129,8 @@ private:
     // once saved-to-disk replays are loadable and playable
     void flingOtherLix(Lixxie target, in bool targetTribeIsOurTribe)
     {
-        immutable dx = ground.distanceX(ex,     target.ex);
-        immutable dy = ground.distanceY(ey + 4, target.ey);
+        immutable dx = env.distanceX(ex,     target.ex);
+        immutable dy = env.distanceY(ey + 4, target.ey);
         // +4 moves makes dy positive if target.ey == this.ey,
         // it's desirable to fling such targets up a little
 

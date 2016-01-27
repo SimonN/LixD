@@ -48,8 +48,8 @@ class Blocker : Job {
 
     private final void blockSingleLix(Lixxie li)
     {
-        immutable int dx = ground.distanceX(li.ex, this.ex);
-        immutable int dy = ground.distanceY(li.ey, this.ey);
+        immutable int dx = env.distanceX(li.ex, this.ex);
+        immutable int dy = env.distanceY(li.ey, this.ey);
 
         // li is inside the rectangular blocker force field?
         if (abs(dx) < forceFieldXlEachSide

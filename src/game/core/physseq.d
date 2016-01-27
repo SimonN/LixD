@@ -17,6 +17,7 @@ static import basics.user; // draw arrows or not
 
 package void updateTo(Game game, in Update targetUpdate)
 {
+    assert (game.runmode == Runmode.INTERACTIVE);
     if (game.cs.update >= targetUpdate)
         return;
     game.syncNetworkAndDispatch();
@@ -41,9 +42,17 @@ finalizeUpdateAnimateGadgets(Game game) {
     foreachGadget((Gadget g) {
         g.animateForUpdate(update);
     });
-    game.pan.setLikeTribe(game.tribeLocal);
+    if (pan)
+        pan.setLikeTribe(tribeLocal);
 }}
 // end with (game.cs), end update_once()
+
+package void
+updateOnceNoninteractively(Game game)
+{
+    assert (game.runmode == Runmode.VERIFY);
+    game.updateOnce;
+}
 
 
 
@@ -59,7 +68,7 @@ void syncNetworkAndDispatch(Game game)
 
 
 // This is the main function that gets executed once per physics update.
-void updateOnce(Game game)
+private void updateOnce(Game game)
 {
     assert (game);
     assert (game.cs);
@@ -297,7 +306,7 @@ spawnLixxiesFromHatches(Game game) { with (game.cs)
         // lookupmap inside the current state. Everything else will be
         // passed anew when the lix are updated.
         auto ow = game.makeGypsyWagon(teamNumber, tribe.lixvec.len);
-        Lixxie newLix = new Lixxie(game.map, &ow,
+        Lixxie newLix = new Lixxie(game.cs.lookup, &ow,
             hatch.x + hatch.tile.triggerX - 2 * walkLeftInsteadOfRight,
             hatch.y + hatch.tile.triggerY);
         if (walkLeftInsteadOfRight)
@@ -412,9 +421,6 @@ updateLixxies(Game game) { with (game)
 
 void considerAutoSavestateIfCloseTo(Game game, Update targetUpdate)
 {
-    if (game.runmode != Runmode.INTERACTIVE)
-        return;
-
     assert (game.stateManager);
     if (game.stateManager.wouldAutoSave(game.cs, targetUpdate)) {
         Zone zone = Zone(profiler, "PhysSeq make auto savestate");

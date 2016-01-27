@@ -81,8 +81,8 @@ class Batter : Job {
 
         immutable bool blo = (target.ac == Ac.blocker);
         immutable int ch = (blo ? cx + extraXRangeForBlockers * dir : cx);
-        immutable int dx = ground.distanceX(ch, target.ex).abs;
-        immutable int dy = ground.distanceY(cy, target.ey).abs;
+        immutable int dx = env.distanceX(ch, target.ex).abs;
+        immutable int dy = env.distanceY(cy, target.ey).abs;
         immutable bool fling
             = (dx <= rectHalfXl + (blo ? extraXRangeForBlockers : 0)
             && dy <= rectHalfYl
