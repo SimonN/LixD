@@ -68,10 +68,12 @@ void initialize()
 
 void deinitialize()
 {
-    al_unregister_event_source(_queue, al_get_keyboard_event_source());
-    al_destroy_event_queue(_queue);
-    _queue = null;
-    al_uninstall_keyboard();
+    if (_queue) {
+        al_unregister_event_source(_queue, al_get_keyboard_event_source());
+        al_destroy_event_queue(_queue);
+        _queue = null;
+        al_uninstall_keyboard();
+    }
 }
 
 

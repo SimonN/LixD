@@ -34,12 +34,12 @@ public:
     void mainLoop()
     {
         try while (true) {
-            immutable last_tick = al_get_timer_count(basics.alleg5.timer);
+            immutable lastTick = timerTicks;
             calc();
             if (exit) break;
             draw();
 
-            while (last_tick == al_get_timer_count(basics.alleg5.timer))
+            while (lastTick == timerTicks)
                 al_rest(0.001);
         }
         catch (Throwable firstThr) {

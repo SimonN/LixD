@@ -30,43 +30,34 @@ static import file.log;
 
 void initialize(in Cmdargs cmdargs)
 {
-    al_init();
+    immutable ia = cmdargs.mode == Runmode.INTERACTIVE;
+    if (ia) basics.alleg5.initializeInteractive();
+    else    basics.alleg5.initializeVerify();
 
-    // set the timer to 60 Hz
-    timer = al_create_timer(1.0 / basics.globals.ticksPerSecond);
-    al_start_timer(timer);
-    assert (timer);
+            file.log.initialize();
+    if (ia) basics.globconf.load();
+    if (ia) basics.user.load();
+    if (ia) loadUserLanguageAndIfNotExistSetUserOptionToEnglish();
+    if (ia) hardware.display.setScreenMode(cmdargs);
 
-    file.log.initialize();
-    basics.globconf.load();
-    basics.user.load();
-    loadUserLanguageAndIfNotExistSetUserOptionToEnglish();
+            al_init_image_addon();
+            al_init_font_addon();
+            al_init_ttf_addon();
+            al_init_primitives_addon();
+            hardware.tharsis.initialize();
+    if (ia) hardware.keyboard.initialize();
+    if (ia) hardware.mouse.initialize();
+    if (ia) hardware.sound.initialize();
 
-    hardware.display.setScreenMode(cmdargs);
+            graphic.color.initialize();
+    if (ia) graphic.textout.initialize();
+            graphic.internal.initialize();
 
-    al_init_image_addon();
-    al_init_font_addon();
-    al_init_ttf_addon();
-    al_init_primitives_addon();
+            game.physdraw.initialize(cmdargs.mode);
 
-    defaultNewBitmapFlags = al_get_new_bitmap_flags();
-
-    hardware.tharsis.initialize();
-    hardware.keyboard.initialize();
-    hardware.mouse.initialize();
-    hardware.sound.initialize();
-
-    graphic.color.initialize();
-    graphic.textout.initialize();
-    graphic.internal.initialize();
-    game.physdraw.initialize(cmdargs.mode);
-
-    hardware.mousecur.initialize();
-
-    gui.initialize();
-
-    level.tilelib.initialize();
-
+    if (ia) hardware.mousecur.initialize();
+    if (ia) gui.initialize();
+            level.tilelib.initialize();
     // comment this back in once we've built enet dynamically
     // DerelictENet.load();
 }
@@ -108,9 +99,5 @@ void deinitialize()
     basics.globconf.save();
     file.log.deinitialize();
 
-    al_stop_timer(timer);
-    al_destroy_timer(timer);
-    timer = null;
-
-    al_uninstall_system();
+    basics.alleg5.deinitialize();
 }

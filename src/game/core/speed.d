@@ -8,7 +8,7 @@ import hardware.sound;
 package void
 setLastUpdateToNow(Game game)
 {
-    game.altickLastUpdate = al_get_timer_count(basics.alleg5.timer);
+    game.altickLastUpdate = timerTicks;
 }
 
 package void
@@ -64,7 +64,7 @@ updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
         upd(updatesAheadMany);
     }
     else if (! pan.pause.on) {
-        long updAgo = al_get_timer_count(timer) - game.altickLastUpdate;
+        long updAgo = timerTicks - game.altickLastUpdate;
         if (! pan.speedFast.on) {
             if (updAgo >= ticksNormalSpeed)
                 upd();

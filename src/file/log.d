@@ -3,7 +3,6 @@ module file.log;
 import std.file : mkdirRecurse;
 import std.stdio;
 import std.string;
-public import std.string : format;
 
 import basics.alleg5;
 import basics.globals;
@@ -82,8 +81,7 @@ logHeaderIfNecessary()
 private nothrow static string
 formatAlTicks()
 {
-    try return format("%9.2f", al_get_timer_count(basics.alleg5.timer) * 1.0
-                      / basics.globals.ticksPerSecond);
+    try return format("%9.2f", timerTicks * 1.0 / ticksPerSecond);
     catch (Exception) {
         return "bad time!";
     }

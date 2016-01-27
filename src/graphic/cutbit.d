@@ -1,6 +1,7 @@
 module graphic.cutbit;
 
 import std.algorithm; // max(-x, 0) in drawDirectlyToScreen()
+import std.string; // format
 
 import basics.alleg5;
 import basics.help; // positiveMod

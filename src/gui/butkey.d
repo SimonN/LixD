@@ -45,7 +45,7 @@ private:
     void formatScancode()
     {
         reqDraw();
-        text = (on && al_get_timer_count(basics.alleg5.timer) % 30 < 15)
+        text = (on && timerTicks % 30 < 15)
             ? "\ufffd" // replacement char, question mark in a box
             : hotkeyNiceLong(_scancode);
     }

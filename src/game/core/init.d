@@ -21,8 +21,7 @@ implGameConstructor(Game game, Level lv, Filename fn, Replay rp)
     assert (lv.good);
 
     scope (exit)
-        game.altickLastUpdate = al_get_timer_count(basics.alleg5.timer);
-
+        game.altickLastUpdate = timerTicks;
     game.level         = lv;
     game.levelFilename = fn;
     game.replay        = rp;
@@ -32,9 +31,7 @@ implGameConstructor(Game game, Level lv, Filename fn, Replay rp)
         game.replay = new Replay();
         game.replay.levelFilename = fn;
     }
-
     game.stateManager = new StateManager();
-
     game.prepareLand();
     game.preparePlayers();
     game.prepareGadgets();
@@ -43,11 +40,8 @@ implGameConstructor(Game game, Level lv, Filename fn, Replay rp)
     game.cs.foreachGadget((in Gadget g) {
         g.drawLookup(game.cs.lookup);
     });
-
     game.stateManager.saveZero(game.cs);
 }
-
-
 
 package void
 implGameDestructor(Game game)
@@ -64,13 +58,7 @@ implGameDestructor(Game game)
         destroy(game.physicsDrawer);
 }
 
-
-
 // ############################################################################
-// ############################################################################
-// ############################################################################
-
-
 
 private void
 prepareLand(Game game) { with (game)
@@ -91,8 +79,6 @@ prepareLand(Game game) { with (game)
     map = new Map(cs.land, Geom.screenXls.to!int,
                           (Geom.screenYls - Geom.panelYls).to!int);
 }}
-
-
 
 private void
 preparePlayers(Game game) { with (game)
@@ -134,8 +120,6 @@ preparePlayers(Game game) { with (game)
     pan.highlightFirstSkill();
 }}
 
-
-
 private void
 prepareGadgets(Game game)
 {
@@ -158,8 +142,6 @@ prepareGadgets(Game game)
     gadgetsFromPos(game.cs.flingers, TileType.FLING);
     gadgetsFromPos(game.cs.trampos,  TileType.TRAMPO);
 }
-
-
 
 private void assignTribesToGoals(Game game) {
     with (game.cs)

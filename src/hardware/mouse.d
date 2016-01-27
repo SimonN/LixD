@@ -84,9 +84,11 @@ void initialize()
 
 void deinitialize()
 {
-    assert (_queue);
-    if (_queue) al_destroy_event_queue(_queue);
-    _queue = null;
+    if (_queue) {
+        al_destroy_event_queue(_queue);
+        _queue = null;
+        al_uninstall_mouse();
+    }
 }
 
 

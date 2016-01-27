@@ -5,6 +5,7 @@ import std.string;
 import std.uni;
 import std.utf;
 
+import basics.globals;
 import hardware.tharsis;
 
 public import allegro5.allegro;
@@ -20,68 +21,57 @@ alias ALLEGRO_BITMAP* Albit;
 alias ALLEGRO_COLOR   AlCol;
 alias ALLEGRO_FONT*   AlFont;
 
-ALLEGRO_TIMER*        timer;
-
-int defaultNewBitmapFlags;
-
-
-
-private @property int flags_vram()
+void initializeInteractive()
 {
-    return (defaultNewBitmapFlags & ~ ALLEGRO_MEMORY_BITMAP)
-        | ALLEGRO_VIDEO_BITMAP;
+    al_init();
+    _defaultNewBitmapFlags = al_get_new_bitmap_flags()
+        & ~ ALLEGRO_MEMORY_BITMAP
+        |   ALLEGRO_VIDEO_BITMAP;
+    _timer = al_create_timer(1.0 / basics.globals.ticksPerSecond);
+    assert (_timer);
+    al_start_timer(_timer);
 }
 
-private @property int flags_memory()
+void initializeVerify()
 {
-    return (defaultNewBitmapFlags & ~ ALLEGRO_VIDEO_BITMAP)
-        | ALLEGRO_MEMORY_BITMAP;
+    al_init();
+    _defaultNewBitmapFlags = al_get_new_bitmap_flags()
+        & ~ ALLEGRO_VIDEO_BITMAP
+        |   ALLEGRO_MEMORY_BITMAP;
+}
+
+void deinitialize()
+{
+    if (_timer) {
+        al_stop_timer(_timer);
+        al_destroy_timer(_timer);
+        _timer = null;
+    }
+    al_uninstall_system();
+}
+
+// ############################################################################
+
+@property long timerTicks()
+{
+    return _timer ? al_get_timer_count(_timer) : 0;
 }
 
 Albit albitCreate(in int xl, in int yl)
 {
     auto zone = Zone(profiler, "alleg5: create VRAM bitmap");
-    return albitCreateWithFlags(xl, yl, flags_vram);
+    return albitCreateWithFlags(xl, yl, _defaultNewBitmapFlags);
 }
 
 Albit albitMemoryCreate(in int xl, in int yl)
 {
-    return albitCreateWithFlags(xl, yl, flags_memory);
+    return albitCreateWithFlags(xl, yl,
+        _defaultNewBitmapFlags
+        & ~ ALLEGRO_VIDEO_BITMAP
+        |   ALLEGRO_MEMORY_BITMAP);
 }
-
-private Albit albitCreateWithFlags(in int xl, in int yl, in int flags)
-{
-    al_set_new_bitmap_flags(flags);
-    scope (exit) al_set_new_bitmap_flags(defaultNewBitmapFlags);
-
-    Albit ret = al_create_bitmap(xl, yl);
-    assert (ret);
-    assert (al_get_bitmap_width (ret) == xl);
-    assert (al_get_bitmap_height(ret) == yl);
-
-    return ret;
-}
-
-Albit albitLoadFromFile(string fn)
-{
-    al_set_new_bitmap_flags(flags_vram);
-    scope (exit)
-        al_set_new_bitmap_flags(defaultNewBitmapFlags);
-    return al_load_bitmap(fn.toStringz());
-}
-
-Albit albitMemoryLoadFromFile(string fn)
-{
-    al_set_new_bitmap_flags(flags_memory);
-    scope (exit)
-        al_set_new_bitmap_flags(defaultNewBitmapFlags);
-    return al_load_bitmap(fn.toStringz());
-}
-
-
 
 // The following structs implement RAII.
-
 struct DrawingTarget
 {
     Albit oldTarget;
@@ -181,8 +171,6 @@ struct LockReadOnly
     }
 }
 
-
-
 // ############################################################################
 
 string hotkeyNiceBrackets(in int hotkey)
@@ -209,5 +197,24 @@ string hotkeyNiceLong(in int hotkey)
         if (i == 0) ret ~= std.uni.toUpper(c);
         else if (c != '_') ret ~= c;
     }
+    return ret;
+}
+
+// ############################################################################
+
+ALLEGRO_TIMER* _timer = null;
+private int _defaultNewBitmapFlags;
+
+private Albit albitCreateWithFlags(in int xl, in int yl, in int flags)
+{
+    al_set_new_bitmap_flags(flags);
+    scope (exit)
+        al_set_new_bitmap_flags(_defaultNewBitmapFlags);
+
+    Albit ret = al_create_bitmap(xl, yl);
+    assert (ret);
+    assert (al_get_bitmap_width (ret) == xl);
+    assert (al_get_bitmap_height(ret) == yl);
+
     return ret;
 }

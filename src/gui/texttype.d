@@ -101,8 +101,8 @@ protected:
 
     override void drawOntoButton()
     {
-        _label.text = ! on || (al_get_timer_count(basics.alleg5.timer)
-            % ticksForDoubleClick < ticksForDoubleClick/2)
+        _label.text = ! on || timerTicks % ticksForDoubleClick
+                              < ticksForDoubleClick/2
             ? _text : _text ~ caretChar;
     }
 

@@ -49,7 +49,7 @@ flip_display() {
     al_flip_display();
 
     // compute FPS, query result with displayFps()
-    _fpsArr ~= al_get_timer_count(timer);
+    _fpsArr ~= timerTicks;
     while (_fpsArr != null && _fpsArr[0] <= _fpsArr[$-1] - ticksPerSecond)
         _fpsArr = _fpsArr[1 .. $];
 }
@@ -203,11 +203,12 @@ void calc()
 
 void displayStartupMessage(string str)
 {
+    if (! display)
+        return;
     static string[] msgs;
     msgs ~= str;
 
     auto drata = DrawingTarget(al_get_backbuffer(display));
-
     al_clear_to_color(color.black);
     int y = 0;
     foreach (msg; msgs) {

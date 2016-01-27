@@ -247,7 +247,7 @@ calcSelf()
     if (   ! nukeSingle.on && nukeSingle.execute
         || ! nukeMulti .on && nukeMulti .execute
     ) {
-        auto now = al_get_timer_count(timer);
+        auto now = timerTicks;
         _nukeDoubleclicked = (now - _nukeLastExecute < ticksForDoubleClick);
         _nukeLastExecute   = now;
     }

@@ -31,7 +31,7 @@ void main(string[] args)
             destroy(ml);
         }
         else if (cmdargs.mode == Runmode.VERIFY) {
-            // DTODO: implement replay verification
+            basics.verify.verifyFiles(cmdargs.verifyFiles);
         }
         else {
             assert (false);
