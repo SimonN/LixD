@@ -3,7 +3,7 @@ module lix.skill.climber;
 import hardware.sound;
 import lix;
 
-class Climber : PerformedActivity {
+class Climber : Job {
 
     mixin(CloneByCopyFrom!"Climber");
 
@@ -29,7 +29,7 @@ class Climber : PerformedActivity {
 
     override void onBecome()
     {
-        if (cast (Jumper) lixxie.performedActivity)
+        if (cast (Jumper) lixxie.job)
             playSound(Sound.CLIMBER);
         else
             frame = 3;
@@ -84,7 +84,7 @@ class Climber : PerformedActivity {
     private enum ceilingY        = -17;
     private enum hoistableLedgeY = ceilingY + 1;
 
-    override void performActivity()
+    override void perform()
     {
         if (isLastFrame) frame = 4;
         else             advanceFrame();
@@ -109,13 +109,13 @@ class Climber : PerformedActivity {
                 moveUp(1);
         }
 
-        assert (this is lixxie.performedActivity);
+        assert (this is lixxie.job);
         if (ascendHoistableLedge)
             return;
         else
             stickSpriteToWall();
     }
-    // end performActivity
+    // end perform
 
 
 

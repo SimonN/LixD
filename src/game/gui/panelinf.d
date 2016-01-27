@@ -110,7 +110,7 @@ private:
             _targetDescNumber,
             ac.acToNiceCase,
             _targetDescNumber > 1 && languageIsEnglish ? "s" : "");
-        if (auto bc = cast (const BrickCounter) constPerformedActivity)
+        if (auto bc = cast (const BrickCounter) constJob)
             s ~= " [%d]".format(bc.skillsQueued * bc.bricksAtStart + bc.bricksLeft);
         if (abilityToRun || abilityToClimb || abilityToFloat)
             s ~= " (%s%s%s)".format(

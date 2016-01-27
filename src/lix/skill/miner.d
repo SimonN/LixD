@@ -8,7 +8,7 @@ import game.terchang;
 import hardware.sound;
 import lix;
 
-class Miner : PerformedActivity {
+class Miner : Job {
 
     enum maxGapDepth = 3;
 
@@ -38,7 +38,7 @@ class Miner : PerformedActivity {
 
     override UpdateOrder updateOrder() const { return UpdateOrder.remover; }
 
-    override void performActivity()
+    override void perform()
     {
         advanceFrame();
         if (frame == 1) {
@@ -143,9 +143,9 @@ private:
 
     void becomeFallerWithAlreadyFallenPixels(int downThisFrame)
     {
-        assert (this is lixxie.performedActivity, "don't become Faller twice");
+        assert (this is lixxie.job, "don't become Faller twice");
         become(Ac.faller);
-        Faller faller = cast (Faller) lixxie.performedActivity;
+        Faller faller = cast (Faller) lixxie.job;
         assert (faller);
         faller.pixelsFallen = downThisFrame;
     }

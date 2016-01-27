@@ -20,7 +20,7 @@ class Cuber : Leaver {
         }
     }
 
-    override void performActivity()
+    override void perform()
     {
         if (frame >= 2) {
             TerrainChange tc;

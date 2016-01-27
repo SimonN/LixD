@@ -4,7 +4,7 @@ import game.physdraw;
 import game.terchang;
 import lix;
 
-class Digger : PerformedActivity {
+class Digger : Job {
 
     enum tunnelWidth = 18;
 
@@ -51,7 +51,7 @@ class Digger : PerformedActivity {
 
 
 
-    override void performActivity()
+    override void perform()
     {
         advanceFrame();
 

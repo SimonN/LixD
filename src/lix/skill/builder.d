@@ -6,7 +6,7 @@ import game.terchang;
 import hardware.sound;
 
 // base class for Builder and Platformer
-abstract class BrickCounter : PerformedActivity {
+abstract class BrickCounter : Job {
 
     int skillsQueued;
     int bricksLeft;
@@ -34,9 +34,9 @@ abstract class BrickCounter : PerformedActivity {
     override void onManualAssignment()
     {
         if (lixxie.ac == this.ac) {
-            // skillsQueued = ... would be a mistake. The new perfAc (this) is
-            // discarded. We want to give the extra skills to the old perfAc.
-            BrickCounter oldAc = cast (BrickCounter) lixxie.performedActivity;
+            // skillsQueued = ... would be a mistake. The new job (this) is
+            // discarded. We want to give the extra skills to the old job.
+            BrickCounter oldAc = cast (BrickCounter) lixxie.job;
             assert (oldAc);
             oldAc.skillsQueued = oldAc.skillsQueued + 1;
         }
@@ -111,7 +111,7 @@ class Builder : BrickCounter {
 
 
 
-    override void performActivity()
+    override void perform()
     {
         advanceFrame();
 
@@ -224,7 +224,7 @@ class Platformer : BrickCounter {
 
 
 
-    override void performActivity()
+    override void perform()
     {
         enum loopBackToFrame = 10;
         bool loopCompleted = false;
@@ -269,8 +269,8 @@ class Platformer : BrickCounter {
     void abortAndStandUp()
     {
         become(Ac.shrugger2);
-        assert (lixxie.performedActivity.ac == Ac.shrugger2);
-        lixxie.performedActivity.frame = standingUpFrame;
+        assert (lixxie.job.ac == Ac.shrugger2);
+        lixxie.job.frame = standingUpFrame;
     }
 
 
@@ -318,7 +318,7 @@ class Platformer : BrickCounter {
 
     private void moveUpAndCollide()
     {
-        immutable airAbove = ! isSolid(0, cPlusPlusPhysicsBugs ? -2 : -1);
+        immutable airAbove = ! isSolid(0, -1);
         if (airAbove)
             moveUp();
         else
@@ -335,7 +335,7 @@ class Platformer : BrickCounter {
 
     private void planNextBrickSubsequentCycles()
     {
-        assert (this is lixxie.performedActivity);
+        assert (this is lixxie.job);
         if (   platformerTreatsAsSolid(2, 1)
             && platformerTreatsAsSolid(4, 1)
             && platformerTreatsAsSolid(6, 1)
@@ -347,9 +347,9 @@ class Platformer : BrickCounter {
 
 
 
-class Shrugger : PerformedActivity {
+class Shrugger : Job {
     mixin(CloneByCopyFrom!"Shrugger");
-    override void performActivity()
+    override void perform()
     {
         if (isLastFrame) become(Ac.walker);
         else             advanceFrame();

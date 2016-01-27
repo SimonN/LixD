@@ -6,7 +6,7 @@ import hardware.sound;
 import game.tribe;
 import lix;
 
-class Batter : PerformedActivity {
+class Batter : Job {
 
     enum flingAfterFrame = 2;
 
@@ -29,7 +29,7 @@ class Batter : PerformedActivity {
 
 
 
-    override void performActivity()
+    override void perform()
     {
         // be consistent with the update order in game.core.physlix
         immutable bool batNow = (updateOrder == UpdateOrder.flinger);

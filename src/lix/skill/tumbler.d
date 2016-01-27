@@ -8,7 +8,7 @@ import basics.help;
 import game.phymap; // trampoline phybit
 import lix;
 
-abstract class BallisticFlyer : PerformedActivity {
+abstract class BallisticFlyer : Job {
 
     enum speedYToSplat = 19;
     enum speedYToFloat = 15;
@@ -25,7 +25,7 @@ abstract class BallisticFlyer : PerformedActivity {
         speedY = rhs.speedY;
     }
 
-    final override void performActivity()
+    final override void perform()
     {
         assert (speedX >= 0, "Lix should only fly forwards. Turn first.");
         if (speedX % 2 != 0)
@@ -33,7 +33,7 @@ abstract class BallisticFlyer : PerformedActivity {
 
         moveSeveralTimes();
 
-        if (this !is lixxie.performedActivity)
+        if (this !is lixxie.job)
             return;
 
         if      (speedY <= 12) speedY += 2;
@@ -196,7 +196,7 @@ private:
             if (ac != Ac.tumbler)
                 become(Ac.tumbler);
 
-            auto tumbling = cast (BallisticFlyer) lixxie.performedActivity;
+            auto tumbling = cast (BallisticFlyer) lixxie.job;
             assert (tumbling);
             tumbling.speedY = 4;
             tumbling.speedX = this.speedX / 2;
@@ -305,7 +305,7 @@ class Tumbler : BallisticFlyer {
             lix.dir = wantFlingX;
         lix.become(Ac.tumbler);
         if (lix.ac == Ac.tumbler) {
-            Tumbler tumbling = cast (Tumbler) lix.performedActivity;
+            Tumbler tumbling = cast (Tumbler) lix.job;
             assert (tumbling);
             tumbling.speedX = wantFlingX.abs;
             tumbling.speedY = wantFlingY;
@@ -334,7 +334,7 @@ class Tumbler : BallisticFlyer {
             become(Ac.stunner);
         }
         else if (lixxie.ac == Ac.jumper) {
-            Jumper jumping = cast (Jumper) lixxie.performedActivity;
+            Jumper jumping = cast (Jumper) lixxie.job;
             assert (jumping);
             this.speedX = jumping.speedX;
             this.speedY = jumping.speedY;

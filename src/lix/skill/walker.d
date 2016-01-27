@@ -3,10 +3,10 @@ module lix.skill.walker;
 import lix;
 
 private void
-setFrameAfterShortFallTo(PerformedActivity newAc, int targetFrame)
+setFrameAfterShortFallTo(Job newAc, int targetFrame)
 {
     if (newAc.lixxie.ac == Ac.faller) {
-        auto oldAc = cast (const(Faller)) newAc.lixxie.performedActivity;
+        auto oldAc = cast (const(Faller)) newAc.lixxie.job;
         assert (oldAc);
         if (   oldAc.pixelsFallen <= 9 && oldAc.frame < 1
             || oldAc.pixelsFallen == 0
@@ -21,7 +21,7 @@ setFrameAfterShortFallTo(PerformedActivity newAc, int targetFrame)
 
 
 
-class Walker : PerformedActivity {
+class Walker : Job {
 
     enum highestStepUp = 12;
 
@@ -54,7 +54,7 @@ class Walker : PerformedActivity {
         else if (lixxie.ac == Ac.platformer && lixxie.frame > 5) {
             // Don't become walker immediately, instead go through the nice
             // animation of standing up from kneeling.
-            auto platf = cast (Platformer) lixxie.performedActivity;
+            auto platf = cast (Platformer) lixxie.job;
             assert (platf !is null);
             platf.abortAndStandUp();
             // See also the next else-if.
@@ -81,7 +81,7 @@ class Walker : PerformedActivity {
 
 
 
-    override void performActivity()
+    override void perform()
     {
         if (isLastFrame)
             frame = 3;
@@ -101,7 +101,7 @@ class Walker : PerformedActivity {
         immutable oldEncBody = bodyEncounters;
 
         // The first frame is a short break taken after standing up or
-        // falling onto this position. performActivity has already advanced
+        // falling onto this position. perform has already advanced
         // the frame, so we have to check frame 0, not frame -1.
         if (frame != 0)
             moveAhead();
@@ -202,7 +202,7 @@ class Runner : Walker {
         this.setFrameAfterShortFallTo(6);
     }
 
-    override void performActivity()
+    override void perform()
     {
         if (isLastFrame)
             frame = 1;

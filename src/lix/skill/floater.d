@@ -5,7 +5,7 @@ import std.algorithm;
 import basics.help;
 import lix;
 
-class Floater : PerformedActivity {
+class Floater : Job {
 
     int speedX = 0;
     int speedY = 0;
@@ -31,12 +31,12 @@ class Floater : PerformedActivity {
     override void onBecome()
     {
         if (lixxie.ac == Ac.faller) {
-            auto fa = cast (const Faller) performedActivity;
+            auto fa = cast (const Faller) job;
             assert (fa);
             speedY = fa.ySpeed;
         }
         else if (lixxie.ac == Ac.jumper || lixxie.ac == Ac.tumbler) {
-            auto bf = cast (const BallisticFlyer) performedActivity;
+            auto bf = cast (const BallisticFlyer) job;
             assert (bf);
             speedX = bf.speedX;
             speedY = bf.speedY;
@@ -45,7 +45,7 @@ class Floater : PerformedActivity {
 
 
 
-    override void performActivity()
+    override void perform()
     {
         if (isLastFrame) frame = 9;
         else             advanceFrame();
@@ -82,9 +82,9 @@ class Floater : PerformedActivity {
                 speedX = 0;
             }
         }
-        assert (this is lixxie.performedActivity);
+        assert (this is lixxie.job);
         moveAhead(speedX);
         moveDown (speedY - wallHitMovedDownY);
     }
-    // end performActivity()
+    // end perform()
 }

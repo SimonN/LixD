@@ -7,7 +7,7 @@ import game.mask;
 import game.terchang;
 import lix;
 
-abstract class Ploder : PerformedActivity {
+abstract class Ploder : Job {
 
     enum ploderDelay = 75;
 
@@ -48,12 +48,12 @@ abstract class Ploder : PerformedActivity {
         lixxie.ploderIsExploder = (ac == Ac.exploder2);
     }
 
-    // onBecome(): Do nothing, instead wait until we do performActivity(),
+    // onBecome(): Do nothing, instead wait until we do perform(),
     // which is called immediately after this in the game loop.
     // During onBecome(), we lack outsideWorld; Ploders are special herefore.
     final override void onBecome() { }
 
-    final override void performActivity()
+    final override void perform()
     {
         changeTerrain();
         flingOtherLix();

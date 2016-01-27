@@ -3,7 +3,7 @@ module lix.skill.leaver;
 import lix;
 import hardware.sound;
 
-class RemovedLix : PerformedActivity {
+class RemovedLix : Job {
 
     mixin(CloneByCopyFrom!"RemovedLix");
 
@@ -15,7 +15,7 @@ class RemovedLix : PerformedActivity {
         assert (lixxie.outsideWorld.tribe.lixLeaving >= 0);
     }
     body {
-        assert (lixxie.performedActivity.ac != Ac.nothing,
+        assert (lixxie.job.ac != Ac.nothing,
             "Lix can't be killed twice, that would miscount them.");
         if (healthy) --outsideWorld.tribe.lixOut;
         else         --outsideWorld.tribe.lixLeaving;
@@ -25,7 +25,7 @@ class RemovedLix : PerformedActivity {
 
 
 
-abstract class Leaver : PerformedActivity {
+abstract class Leaver : Job {
 
     override @property bool blockable() const { return false; }
 
@@ -38,7 +38,7 @@ abstract class Leaver : PerformedActivity {
 
     void onBecomeLeaver() { } // override this instead of onBecome
 
-    override void performActivity() { advanceFrameAndLeave(); }
+    override void perform() { advanceFrameAndLeave(); }
 
     final void advanceFrameAndLeave()
     {

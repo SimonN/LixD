@@ -3,7 +3,7 @@ module lix.skill.stunner;
 import hardware.sound;
 import lix;
 
-class Stunner : PerformedActivity {
+class Stunner : Job {
 
     int stayedInFrame8;
 
@@ -16,13 +16,13 @@ class Stunner : PerformedActivity {
 
     override void onBecome()
     {
-        if (cast (BallisticFlyer) lixxie.performedActivity)
+        if (cast (BallisticFlyer) lixxie.job)
             playSound(Sound.OUCH);
     }
 
 
 
-    override void performActivity()
+    override void perform()
     {
         // remain in frame 8 for several frames, to match L2 stunner duration
         bool considerBecomingWalker = false;
@@ -47,7 +47,7 @@ class Stunner : PerformedActivity {
         if (moveDownBy == maxDown && hollowBelow(moveDownBy)) {
             moveDown(1);
             become(Ac.tumbler);
-            Tumbler tumbling = cast (Tumbler) lixxie.performedActivity;
+            Tumbler tumbling = cast (Tumbler) lixxie.job;
             assert (tumbling !is null);
             tumbling.speedX = 0;
             tumbling.speedY = 2;
@@ -56,7 +56,7 @@ class Stunner : PerformedActivity {
             moveDown(moveDownBy);
         }
 
-        if (this is lixxie.performedActivity && considerBecomingWalker)
+        if (this is lixxie.job && considerBecomingWalker)
             become(Ac.walker);
     }
 

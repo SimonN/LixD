@@ -5,7 +5,7 @@ import std.math; // abs
 import lix;
 import game.tribe;
 
-class Blocker : PerformedActivity {
+class Blocker : Job {
 
     enum forceFieldXlEachSide = 14;
     enum forceFieldYlAbove    = 16;
@@ -16,9 +16,7 @@ class Blocker : PerformedActivity {
     override @property bool blockable()   const { return false; }
     override UpdateOrder    updateOrder() const { return UpdateOrder.blocker; }
 
-
-
-    override void performActivity()
+    override void perform()
     {
         if (! isSolid()) {
             become(Ac.faller);
@@ -36,18 +34,15 @@ class Blocker : PerformedActivity {
         else {
             advanceFrame();
         }
-
         assert (lixxie.ac == Ac.blocker);
         blockOtherLix();
     }
-
-
 
     private final void blockOtherLix()
     {
         foreach (Tribe tribe; outsideWorld.state.tribes)
             foreach (Lixxie li; tribe.lixvec)
-                if (li.performedActivity.blockable)
+                if (li.job.blockable)
                     blockSingleLix(li);
     }
 
@@ -75,6 +70,5 @@ class Blocker : PerformedActivity {
                 li.inBlockerFieldRight = true;
         }
     }
-
 }
 // end class Blocker

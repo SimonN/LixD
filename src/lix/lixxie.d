@@ -34,7 +34,7 @@ private:
 
     Style _style;
 
-    PerformedActivity _perfAc;
+    Job _job;
 
     OutsideWorld* _outsideWorld; // set whenever physics and tight coupling
                                  // are needed, nulled again at end of those
@@ -62,25 +62,25 @@ public:
     @property int ey() const { return _ey; }
     // setters for these are below in the main code
 
-    @property const(PerformedActivity) constPerformedActivity() const
+    @property const(Job) constJob() const
     {
-        return _perfAc;
+        return _job;
     }
-    package @property inout(PerformedActivity) performedActivity() inout
+    package @property inout(Job) job() inout
     {
-        return _perfAc;
+        return _job;
     }
 
     @property Ac ac() const
     {
-        assert (_perfAc);
-        return _perfAc.ac;
+        assert (_job);
+        return _job.ac;
     }
 
     @property UpdateOrder updateOrder() const
     {
-        assert (_perfAc);
-        return _perfAc.updateOrder;
+        assert (_job);
+        return _job.updateOrder;
     }
 
     package @property inout(OutsideWorld*) outsideWorld() inout
@@ -92,8 +92,8 @@ public:
     @property int  flingX()   const { return _flingX;   }
     @property int  flingY()   const { return _flingY;   }
 
-    @property int frame() const   { return _perfAc.frame;     }
-    @property int frame(in int i) { return _perfAc.frame = i; }
+    @property int frame() const   { return _job.frame;     }
+    @property int frame(in int i) { return _job.frame = i; }
 
     // (super == Graphic) shall use frame and ac to draw itself
                override @property int xf() const   { return this.frame; }
@@ -173,7 +173,7 @@ this(
     super(getLixSpritesheet(_style), groundMap,
           even(new_ex) - exOffset, new_ey - eyOffset);
 
-    _perfAc = PerformedActivity.factory(this, Ac.faller);
+    _job = Job.factory(this, Ac.faller);
     frame   = 4;
     ex      = new_ex.even;
     ey      = new_ey;
@@ -202,7 +202,7 @@ this(in Lixxie rhs)
 
     ploderTimer = rhs.ploderTimer;
 
-    _perfAc = rhs._perfAc.cloneAndBindToLix(this);
+    _job = rhs._job.cloneAndBindToLix(this);
 
     _outsideWorld = null; // Must be passed anew by the next update.
                           // Can't copy this from const lix, keep it at .init.
@@ -420,8 +420,8 @@ void advanceFrame()
 
 void prepareDraw()
 {
-    assert (_perfAc);
-    super.x = _ex - exOffset + _perfAc.spriteOffsetX;
+    assert (_job);
+    super.x = _ex - exOffset + _job.spriteOffsetX;
     super.y = _ey - eyOffset;
 }
 
@@ -468,7 +468,7 @@ override void draw(Torbit tb) const
 
 bool healthy() const
 {
-    return ac != Ac.nothing && ! cast (Leaver) this.performedActivity;
+    return ac != Ac.nothing && ! cast (Leaver) this.job;
 }
 
 bool cursorShouldOpenOverMe() const
@@ -590,7 +590,7 @@ void assignManually(OutsideWorld* ow, in Ac newAc)
 void perform(OutsideWorld* ow)
 {
     mixin(tmpOutsideWorld);
-    performActivityUseGadgets(this); // in lix.perform
+    performUseGadgets(this); // in lix.perform
 }
 
 void becomePloder(OutsideWorld* ow)
@@ -609,24 +609,24 @@ void applyFlingXY(OutsideWorld* ow)
 
 void become(bool manualAssignment = false)(in Ac newAc)
 {
-    assert (_perfAc);
-    auto oldPerf = _perfAc;
-    auto newPerf = PerformedActivity.factory(this, newAc);
+    assert (_job);
+    auto oldJob = _job;
+    auto newJob = Job.factory(this, newAc);
 
-    if (ac != newPerf.ac)
-        _perfAc.onBecomingSomethingElse();
+    if (ac != newJob.ac)
+        _job.onBecomingSomethingElse();
 
     static if (manualAssignment)
         // while Lix still has old performed ac
-        newPerf.onManualAssignment();
+        newJob.onManualAssignment();
 
-    if (newPerf.callBecomeAfterAssignment || ! manualAssignment) {
-        newPerf.onBecome();
+    if (newJob.callBecomeAfterAssignment || ! manualAssignment) {
+        newJob.onBecome();
 
-        if (_perfAc is oldPerf) {
+        if (_job is oldJob) {
             // if onBecome() calls become() again, only let the last change
-            // through into Lixxie's data. Ignore the intermediate _perfAc.
-            _perfAc = newPerf;
+            // through into Lixxie's data. Ignore the intermediate _job.
+            _job = newJob;
             static if (manualAssignment)
                 // can go to -1, then after the update, frame 0 is displayed
                 frame = frame - 1;

@@ -4,7 +4,7 @@ import std.algorithm;
 
 import lix;
 
-class Ascender : PerformedActivity {
+class Ascender : Job {
 
     mixin(CloneByCopyFrom!"Ascender");
 
@@ -34,22 +34,12 @@ class Ascender : PerformedActivity {
         // Available frames are 0, 1, 2, 3, 4, 5.
         // If swh is >= 0 and < 4, use frame 5. Late frames == low height.
         frame = std.algorithm.clamp(6 - (swh / 2), 0, 5);
-
         immutable int swhLeftToAscendDuringPerform = 10 - frame * 2;
         assert (swh >= swhLeftToAscendDuringPerform);
-
-        static if (cPlusPlusPhysicsBugs) {
-            moveUp(swh);
-            moveDown(swhLeftToAscendDuringPerform);
-        }
-        else {
-            moveUp(swh - swhLeftToAscendDuringPerform);
-        }
+        moveUp(swh - swhLeftToAscendDuringPerform);
     }
 
-
-
-    override void performActivity()
+    override void perform()
     {
         if (frame != 5)
             moveUp();
@@ -59,5 +49,4 @@ class Ascender : PerformedActivity {
         else
             advanceFrame();
     }
-
 }

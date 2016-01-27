@@ -2,13 +2,13 @@ module lix.skill.lander;
 
 import lix;
 
-class Lander : PerformedActivity {
+class Lander : Job {
 
     mixin(CloneByCopyFrom!"Lander");
 
     override void onBecome() {
         if (lixxie.ac == Ac.faller) {
-            auto oldAc = cast (const(Faller)) lixxie.performedActivity;
+            auto oldAc = cast (const(Faller)) lixxie.job;
             assert (oldAc);
             if (oldAc.frame < 3)
                 frame = 1;
@@ -16,7 +16,7 @@ class Lander : PerformedActivity {
         }
     }
 
-    override void performActivity()
+    override void perform()
     {
         if (isLastFrame)
             become(Ac.walker);

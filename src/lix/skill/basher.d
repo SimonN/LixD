@@ -8,7 +8,7 @@ import game.physdraw;
 import game.terchang;
 import hardware.sound;
 
-class Basher : PerformedActivity {
+class Basher : Job {
 
     enum halfPixelsToFall = 9;
     int  halfPixelsMovedDown; // per pixel down: += 2; per frame passed: -= 1;
@@ -32,7 +32,7 @@ class Basher : PerformedActivity {
         frame = 2;
     }
 
-    override void performActivity()
+    override void perform()
     {
         advanceFrame();
         switch (frame) {

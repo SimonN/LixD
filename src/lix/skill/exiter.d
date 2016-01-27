@@ -47,7 +47,7 @@ class Exiter : Leaver {
             playSoundIfTribeLocal(Sound.GOAL_BAD);
     }
 
-    override void performActivity()
+    override void perform()
     {
         int change = (xOffsetFromGoal < 0 ? 1 : xOffsetFromGoal > 0 ? -1 : 0);
         spriteOffsetX = spriteOffsetX + change;

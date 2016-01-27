@@ -15,19 +15,15 @@ import lix.skill.faller;
 import lix.skill.tumbler;
 
 // called from Lixxie.perform(OutsideWorld*)
-package void performActivityUseGadgets(Lixxie l)
+package void performUseGadgets(Lixxie l)
 {
     l.addEncountersFromHere();
-
-    l.performedActivity.performActivity();
-
+    l.job.perform();
     l.killOutOfBounds();
     l.useWater();
     l.useNonconstantTraps();
     l.useFlingers();
     l.useTrampos();
-
-
     l.useGoals();
 }
 
@@ -98,7 +94,7 @@ void useTrampos(Lixxie lixxie) { with (lixxie)
         tp.feed(outsideWorld.state.update, outsideWorld.tribeID);
         enum minAccelY = -6;
         if (ac == Ac.faller) {
-            Faller faller = cast (Faller) performedActivity;
+            Faller faller = cast (Faller) job;
             assert (faller);
             addFling(4 * dir, min(minAccelY, bounceBackY(faller.pixelsFallen)),
                 false); // false == not from same tribe
@@ -106,7 +102,7 @@ void useTrampos(Lixxie lixxie) { with (lixxie)
         }
         else {
             assert (ac == Ac.jumper || ac == Ac.tumbler);
-            BallisticFlyer bf = cast (BallisticFlyer) performedActivity;
+            BallisticFlyer bf = cast (BallisticFlyer) job;
             assert (bf);
             if (bf.speedY <= 0)
                 continue;
@@ -148,7 +144,7 @@ void useGoal(Lixxie li, in Goal goal, ref const(Tribe)[] alreadyScoredFor) {
     if (ac != Ac.exiter)
         become(Ac.exiter);
 
-    Exiter exiter = cast (Exiter) performedActivity;
+    Exiter exiter = cast (Exiter) job;
     assert (exiter, "exiters shouldn't become anything else upon becoming");
 
     exiter.determineSidewaysMotion(goal);

@@ -5,7 +5,7 @@ import std.algorithm; // min
 import lix;
 import game.phymap;
 
-class Faller : PerformedActivity {
+class Faller : Job {
 
     int ySpeed = 4;
     int pixelsFallen = 0;
@@ -26,13 +26,13 @@ class Faller : PerformedActivity {
     {
         lixxie.moveDown(fallY);
         lixxie.become(Ac.faller);
-        Faller perfFaller = cast (Faller) lixxie.performedActivity;
-        assert (perfFaller);
-        perfFaller.pixelsFallen = fallY;
+        Faller fa = cast (Faller) lixxie.job;
+        assert (fa);
+        fa.pixelsFallen = fallY;
     }
 
     override void
-    performActivity()
+    perform()
     {
         int ySpeedThisFrame = 0;
 
@@ -53,7 +53,6 @@ class Faller : PerformedActivity {
                         || pixelsFallen == 0
                         || this.frame   <  2; // on frame < 2, walker will
                 }                             // select a different frame
-
                 if (pixelsFallen > pixelsSafeToFall && ! abilityToFloat)
                     become(Ac.splatter);
                 else if (hasFallenVeryLittle)
@@ -63,18 +62,14 @@ class Faller : PerformedActivity {
                 return;
             }
         }
-
         // On hitting ground, the above loop has already returned from
         // the function. If we continue here, we're in the air as a faller,
         // and we have not moved yet. We can move down by the entire ySpeed
         // and still be in the air.
-        static if (cPlusPlusPhysicsBugs)
-            // Doing it like in C++ might interfere with the trampoline kludge
-            ySpeedThisFrame = ySpeed;
-        else
-            // Because of the loop condition, ySpeedThisFrame will be
-            // 1 greater than ySpeed in the non-trampoline cases. Remedy that.
-            ySpeedThisFrame = min(ySpeedThisFrame, ySpeed);
+
+        // Because of the loop condition, ySpeedThisFrame will be
+        // 1 greater than ySpeed in the non-trampoline cases. Remedy that.
+        ySpeedThisFrame = min(ySpeedThisFrame, ySpeed);
 
         moveDown(ySpeedThisFrame);
         pixelsFallen += ySpeedThisFrame;
@@ -91,6 +86,6 @@ class Faller : PerformedActivity {
             // it's important we have incremented ySpeed correctly for this
             become(Ac.floater);
     }
-    // end void performActivity()
+    // end void perform()
 }
 // end class
