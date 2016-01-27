@@ -1,6 +1,23 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.4
+-----
+
+2016-01-27
+
+Noninteractive Replay verification implemented.
+Run it from the command line, as in C++ Lix:
+bin/lix --verify=replays/solutions
+bin/lix --verify=replays/manual/myreplay.txt
+
+Fix: Don't save every possible replay into replays/network/.
+
+Refactoring: Renamed PerformedActivity to Job. Made graphic objects, lixes,
+and gadgets take a Topology on construction instead of a Torbit. This makes
+the design much more lightweight, we don't even have to generate a Map for the
+noninteractive Game.
+
 0.2.3
 -----
 

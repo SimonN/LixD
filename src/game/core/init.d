@@ -44,19 +44,19 @@ implGameConstructor(Game game, Level lv, Filename fn, Replay rp)
 }
 
 package void
-implGameDestructor(Game game)
+implGameDestructor(Game game) { with (game)
 {
-    if (game.pan)
-        gui.rmElder(game.pan);
-    if (game.modalWindow)
-        gui.rmFocus(game.modalWindow);
-    if (game.replay)
-        game.replay.saveAsAutoReplay(game.level, game.singlePlayerHasWon);
-    if (game.physicsDrawer)
+    if (pan)
+        gui.rmElder(pan);
+    if (modalWindow)
+        gui.rmFocus(modalWindow);
+    if (replay && ! wasInstantiatedWithReplay)
+        replay.saveAsAutoReplay(level, singlePlayerHasWon);
+    if (physicsDrawer)
         // DTODO: find out whether we can call destroy here, or should merely
         // zero the Albit/Torbit references in physicsDrawer
-        destroy(game.physicsDrawer);
-}
+        destroy(physicsDrawer);
+}}
 
 // ############################################################################
 
