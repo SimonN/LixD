@@ -42,9 +42,15 @@ private class VerifyCounter {
     {
         if (std.file.isDir(fn.rootful))
             fn.findRegularFilesRecursively(filenameExtReplay)
-                .each!(foundFile => verify(foundFile));
+                .each!(foundFile => verifyAndGC(foundFile));
         else
-            verify(fn);
+            verifyAndGC(fn);
+    }
+
+    void verifyAndGC(Filename fn)
+    {
+        verify(fn);
+        core.memory.GC.collect();
     }
 
     void verify(Filename fn)
@@ -58,7 +64,7 @@ private class VerifyCounter {
             writeResult(new Result(), fn, rep, lev);
             return;
         }
-        Game  game = new Game(Runmode.VERIFY, lev, rep.levelFilename, rep);
+        Game game = new Game(Runmode.VERIFY, lev, rep.levelFilename, rep);
         writeResult(game.evaluateReplay(), fn, rep, lev);
         destroy(game);
     }
@@ -87,19 +93,19 @@ private class VerifyCounter {
         writeln();
         writeln("Total results from ", total, " replays:");
         if (noPtr)
-            writeln(noPtr, "x (NO-PTR): replay ignored, "
-                           "it doesn't name a level file.");
+            writefln("%4dx (NO-PTR): replay ignored, "
+                     "it doesn't name a level file.", noPtr);
         if (noLev)
-            writeln(noLev, "x (NO-LEV): replay ignored, "
-                           "it names a level file that doens't exist.");
+            writefln("%4dx (NO-LEV): replay ignored, "
+                     "it names a level file that doens't exist.", noLev);
         if (badLev)
-            writeln(badLev, "x (BADLEV): replay ignored, "
-                            "it names a level file with a bad level.");
+            writefln("%4dx (BADLEV): replay ignored, "
+                     "it names a level file with a bad level.", badLev);
         if (fail)
-            writeln(fail, "x (FAIL): replay names "
-                          "an existing level file, but doesn't solve it.");
+            writefln("%4dx (FAIL): replay names "
+                     "an existing level file, but doesn't solve it.", fail);
         if (ok)
-            writeln(ok, "x (OK): replay names "
-                        "an existing level file and solves that level.");
+            writefln("%4dx (OK): replay names "
+                     "an existing level file and solves that level.", ok);
     }
 }
