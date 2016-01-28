@@ -178,7 +178,7 @@ updateOneData(
         tribe.lixHatch = 0;
         tribe.nuke = true;
         effect.addSound(upd, trID, 0, Sound.NUKE);
-        if (tribe is tribeLocal) {
+        if (pan && tribe is tribeLocal) {
             pan.nukeSingle.on = true;
             pan.nukeMulti .on = true;
         }

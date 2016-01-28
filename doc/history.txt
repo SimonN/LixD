@@ -1,6 +1,13 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.6
+-----
+
+2016-01-28
+
+Fixed crash during replay verification upon nuking.
+
 0.2.5
 -----
 
