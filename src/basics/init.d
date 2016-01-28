@@ -48,11 +48,10 @@ void initialize(in Cmdargs cmdargs)
     if (ia) hardware.mouse.initialize();
     if (ia) hardware.sound.initialize();
 
-            graphic.color.initialize();
-    if (ia) graphic.textout.initialize();
-            graphic.internal.initialize();
-
-            game.physdraw.initialize(cmdargs.mode);
+            graphic.color   .initialize();
+    if (ia) graphic.textout .initialize();
+            graphic.internal.initialize(cmdargs.mode);
+            game   .physdraw.initialize(cmdargs.mode);
 
     if (ia) hardware.mousecur.initialize();
     if (ia) gui.initialize();

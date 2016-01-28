@@ -1,6 +1,19 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.5
+-----
+
+2016-01-28
+
+Making shutdown much faster by not freeing any RAM or VRAM.
+This is standard for RAM, I have to read up on VRAM practises.
+
+Loading way less internal data for replay verification, speeding up the
+startup in that mode massively. We have to decide whether the spritesheet
+should affect physics. Right now, existence of frames and eye positions
+are meaningful for the physics.
+
 0.2.4
 -----
 

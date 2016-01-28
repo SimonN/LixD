@@ -23,7 +23,7 @@ package:
 // can be lazy and load other sprite colors only when they become necessary
 // for displaying replays, or when connecting to a game server. (They must
 // be ready without delay when a multiplayer game starts!)
-void implInitialize()
+void implInitializeInteractive()
 {
     nullCutbit = new Cutbit(cast (Cutbit) null);
 
@@ -53,6 +53,16 @@ void implInitialize()
     assert (toAssert.valid);
 }
 
+void implInitializeVerify()
+{
+    nullCutbit = new Cutbit(cast (Cutbit) null);
+    // Load only the Lix spritesheet, because physics depend on it.
+    // Is this a design bug? Discuss with the IRCies eventually.
+    loadInternalsOnlySprites();
+    auto lock = LockReadWrite(getLixRawSprites.albit);
+    createEyeCoordinateMatrix();
+}
+
 void implDeinitialize()
 {
     destroyArray(skillButtonIcons);
@@ -71,29 +81,34 @@ void loadInternalsFromFiles()
     // Since this is unrelated to the terrain name replacements, the internal
     // graphics are array-keyed WITH dir, WITH pre-ext, WITHOUT image file ext.
     auto files = file.search.findRegularFilesRecursively(dirDataBitmap);
-    foreach (fn; files) {
-        if (! fn.hasImageExtension())
-            continue;
-        Cutbit cb = new Cutbit(fn);
-        assert (cb, "error loading internal cutbit: " ~ fn.rootful);
-        al_convert_mask_to_alpha(cb.albit, color.pink);
-        internal[fn.rootlessNoExt] = cb;
-        assert (getInternalMutable(fn).valid,
-            "can't retrieve from array: " ~ fn.rootful);
-    }
+    files.filter!(fn => fn.hasImageExtension)
+        .each!   (fn => loadInternalFile(fn));
 }
 
-Cutbit getLixRawSprites()
+// copy-pasted from loadInternalsFromSprites
+void loadInternalsOnlySprites()
 {
-    // Each frame of the Lix spritesheet has the eyes in some position.
-    // The exploder fuse shall start at that position, let's calculate it.
-    Cutbit* cb_ptr = (fileImageSpritesheet.rootlessNoExt in internal);
-    assert (cb_ptr, "missing image: the main Lix spritesheet");
-    return *cb_ptr;
+    auto files = file.search.findRegularFilesRecursively(dirDataBitmap);
+    files.filter!(fn => fn.hasImageExtension)
+        .filter! (fn => fn.rootlessNoExt == fileImageSpritesheet.rootlessNoExt)
+        .each!   (fn => loadInternalFile(fn));
+}
+
+void loadInternalFile(Filename fn)
+{
+    Cutbit cb = new Cutbit(fn);
+    assert (cb, "error loading internal cutbit: " ~ fn.rootful);
+    al_convert_mask_to_alpha(cb.albit, color.pink);
+    internal[fn.rootlessNoExt] = cb;
+    assert (getInternalMutable(fn).valid,
+        "can't retrieve from array: " ~ fn.rootful);
 }
 
 void createEyeCoordinateMatrix()
 {
+    // Each frame of the Lix spritesheet has the eyes in some position.
+    // The exploder fuse shall start at that position, let's calculate it.
+    // It's also important for physics, eyes touching fire will kill.
     Cutbit cb = getLixRawSprites();
     Albit b = cb.albit;
     assert (b, "apparently your gfx card can't store the Lix spritesheet");

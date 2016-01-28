@@ -1,11 +1,19 @@
 module graphic.internal.getters;
 
+import basics.globals;
 import file.filename;
 import graphic.cutbit;
 import graphic.internal.vars;
 import lix.enums;
 
 package:
+
+Cutbit getLixRawSprites()
+{
+    Cutbit* cb_ptr = (fileImageSpritesheet.rootlessNoExt in internal);
+    assert (cb_ptr, "missing image: the main Lix spritesheet");
+    return *cb_ptr;
+}
 
 Cutbit getInternalMutable(in Filename fn)
 {
@@ -30,7 +38,7 @@ const(Cutbit) implGetLixSprites(in Style st)
     if (auto ret = st in spritesheets)
         return *ret;
     else
-        return nullCutbit;
+        return getLixRawSprites;
 }
 
 const(Cutbit) implGetPanelInfoIcon(in Style st)

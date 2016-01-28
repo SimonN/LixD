@@ -5,6 +5,7 @@ module graphic.internal;
  * sets. All of those are handled by the tile library.
  */
 
+import basics.cmdargs;
 import file.filename;
 import graphic.cutbit;
 import graphic.internal.getters;
@@ -13,9 +14,17 @@ import graphic.internal.init;
 import graphic.internal.vars;
 import lix.enums;
 
-void initialize()   { implInitialize();   }
-void deinitialize() { implDeinitialize(); }
-void setScaleFromGui(in float scale) { implSetScale(scale); }
+void initialize(Runmode runmode)
+{
+    switch (runmode) {
+        case Runmode.INTERACTIVE: implInitializeInteractive(); break;
+        case Runmode.VERIFY:      implInitializeVerify();      break;
+        default: assert (false);
+    }
+}
+
+void deinitialize()                  { implDeinitialize();      }
+void setScaleFromGui(in float scale) { implSetScale(scale);     }
 
 const(Cutbit) getInternal(in Filename fn)  { return getInternalMutable  (fn); }
 const(Cutbit) getLixSpritesheet (Style st) { return implGetLixSprites   (st); }
