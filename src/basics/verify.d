@@ -30,8 +30,6 @@ public void verifyFiles(Cmdargs cmdargs)
     vc.writeCSVHeader();
     cmdargs.verifyFiles.each!(fn => vc.verifyDirOrFile(fn));
     vc.writeStatistics();
-
-    basics.init.deinitialize();
 }
 
 private class VerifyCounter {

@@ -22,7 +22,6 @@ static import file.log;
 
 /*  void initialize(cmdargs);
  *  void deinitialize();
- *
  *      Routines to initialize and deinitialize most things before/after
  *      the main loop runs. Some have module constructors (static this()),
  *      but modules using Allegro need to be initialized from here.
@@ -62,42 +61,8 @@ void initialize(in Cmdargs cmdargs)
     // DerelictENet.load();
 }
 
-
-
 void deinitialize()
 {
-    level.tilelib.deinitialize();
-
-    gui.deinitialize();
-
-    hardware.mousecur.deinitialize();
-
-    version (assert)
-        core.memory.GC.collect();
-
-    game.physdraw.deinitialize();
-    graphic.internal.deinitialize();
-    graphic.textout.deinitialize();
-    graphic.color.deinitialize();
-
-    version (assert)
-        core.memory.GC.collect();
-
-    hardware.sound.deinitialize();
-    hardware.mouse.deinitialize();
-    hardware.keyboard.deinitialize();
-    hardware.tharsis.deinitialize();
-
-    al_shutdown_primitives_addon();
-    al_shutdown_ttf_addon();
-    al_shutdown_font_addon();
-    al_shutdown_image_addon();
-
-    hardware.display.deinitialize();
-
     basics.user.save();
     basics.globconf.save();
-    file.log.deinitialize();
-
-    basics.alleg5.deinitialize();
 }
