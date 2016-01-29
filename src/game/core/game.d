@@ -17,8 +17,19 @@ import basics.help; // len;
 import basics.user; // Result
 import basics.nettypes;
 import file.filename;
-import game.core;
+
+import game.core.init;
+import game.core.calc;
+import game.core.draw;
 import game.gui.gamewin;
+import game.model.state;
+import game.model.model;
+import game.gui.panel;
+import game.effect;
+import game.physdraw;
+import game.tribe;
+import game.replay;
+
 import graphic.color;
 import graphic.map;
 import gui;
@@ -69,7 +80,7 @@ package:
              // of that land, blits gadgets and lixes on it, and blits the
              // result to the screen. It is both a renderer and a camera.
 
-    GameState cs; // current state
+    GameModel cs; // current state
     StateManager stateManager;
     PhysicsDrawer physicsDrawer;
     EffectManager effect;
@@ -117,7 +128,7 @@ package:
     {
         assert (cs, "null cs, shouldn't ever be null");
         assert (cs.tribes.length > _indexTribeLocal, "badly cloned cs");
-        return cs.tribes[_indexTribeLocal];
+        return cs.cs.tribes[_indexTribeLocal];
     }
 
     @property int tribeID(const Tribe tr) const
@@ -135,7 +146,7 @@ package:
         assert (cs, "null cs, shouldn't ever be null");
         assert (cs.tribes.len > _indexTribeLocal, "badly cloned cs");
         assert (cs.tribes[_indexTribeLocal].masters.len > _indexMasterLocal);
-        return cs.tribes[_indexTribeLocal].masters[_indexMasterLocal];
+        return cs.cs.tribes[_indexTribeLocal].masters[_indexMasterLocal];
     }
 
     @property bool singlePlayerHasWon() const

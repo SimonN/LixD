@@ -10,7 +10,7 @@ import basics.init;
 import basics.user; // Result
 import file.filename;
 import file.search;
-import game.core;
+import game.core.game;
 import game.replay;
 import level.level;
 

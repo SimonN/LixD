@@ -4,8 +4,12 @@ import std.algorithm; // all
 
 import basics.user;
 import basics.cmdargs;
-import game.core;
+import game.core.game;
 import game.gui.wduring;
+import game.core.active;
+import game.core.passive;
+import game.core.speed;
+import game.core.physseq;
 import gui;
 import hardware.keyboard;
 

@@ -15,7 +15,7 @@ module graphic.gadget.openfor;
 import basics.help;
 import basics.nettypes;
 import basics.topology;
-import game.state;
+import game.model.state;
 import game.tribe;
 import graphic.gadget;
 import graphic.torbit;

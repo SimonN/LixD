@@ -9,7 +9,7 @@ module game.core.passive;
  */
 
 import basics.alleg5;
-import game.core;
+import game.core.game;
 import hardware.keyboard;
 import hardware.mousecur;
 

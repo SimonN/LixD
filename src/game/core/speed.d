@@ -2,7 +2,10 @@ module game.core.speed;
 
 import basics.alleg5;
 import basics.nettypes; // Update
-import game.core;
+import game.core.game;
+import game.core.physseq;
+import game.gui.panel;
+import game.model.state;
 import hardware.sound;
 
 package void

@@ -1,7 +1,7 @@
 module lix.fields;
 
 import basics.matrix;
-import game.state;
+import game.model.state;
 import game.effect;
 import game.tribe;
 import game.physdraw;

@@ -10,7 +10,7 @@ import std.algorithm;
 
 import basics.help;
 import basics.topology;
-import game.state;
+import game.model.state;
 import game.tribe;
 import graphic.gadget;
 import graphic.torbit;

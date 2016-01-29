@@ -4,9 +4,20 @@ import std.conv;
 
 import basics.alleg5;
 import basics.globconf;
+import basics.help;
 import file.filename;
 import level.level;
-import game.core;
+
+import game.core.game;
+import game.gui.panel;
+import game.model.model;
+import game.model.state;
+import game.replay;
+import game.effect;
+import game.phymap;
+import game.physdraw;
+import game.tribe;
+
 import graphic.map;
 import graphic.gadget;
 import graphic.torbit;
@@ -63,7 +74,7 @@ implGameDestructor(Game game) { with (game)
 private void
 prepareLand(Game game) { with (game)
 {
-    cs = new GameState();
+    cs = new GameModel();
     with (level) {
         cs.land   = new Torbit(xl, yl, torusX, torusY);
         cs.lookup = new Phymap(xl, yl, torusX, torusY);

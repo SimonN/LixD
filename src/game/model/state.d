@@ -1,4 +1,4 @@
-module game.state;
+module game.model.state;
 
 /* A gamestate. It saves everything about the current position, but not
  * how we got here. The class Replay saves everything about the history,

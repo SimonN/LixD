@@ -22,7 +22,7 @@ import basics.help;
 import basics.nettypes;
 import basics.topology;
 import game.phymap;
-import game.state;
+import game.model.state;
 import graphic.cutbit;
 import graphic.color;
 import graphic.graphic;

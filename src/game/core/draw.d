@@ -7,7 +7,8 @@ import std.string; // format
 
 import basics.alleg5;
 import basics.globals; // replay sign
-import game.core;
+import game.core.game;
+import game.tribe;
 import graphic.color;
 import graphic.cutbit; // replay sign
 import graphic.gadget;

@@ -13,7 +13,7 @@ module basics.mainloop;
 import core.memory;
 
 import basics.alleg5;
-import game.core;
+import game.core.game;
 import file.log; // logging uncaught Exceptions
 import hardware.display;
 import hardware.keyboard;

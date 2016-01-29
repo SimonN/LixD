@@ -7,7 +7,7 @@ import basics.globals; // hatch arrow graphic
 import basics.nettypes;
 import basics.topology;
 import game.effect;
-import game.state;
+import game.model.state;
 import graphic.cutbit;
 import graphic.gadget;
 import graphic.internal;

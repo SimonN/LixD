@@ -7,7 +7,7 @@ import basics.globals; // fileImageMouse
 import basics.help; // len
 import basics.topology;
 import game.tribe;
-import game.state;
+import game.model.state;
 import graphic.cutbit;
 import graphic.gadget;
 import graphic.internal;

@@ -4,7 +4,7 @@ import std.typecons : Rebindable;
 
 import basics.nettypes;
 import basics.user; // hotkeys
-import game.core;
+import game.core.game;
 import gui : SkillButton;
 import hardware.keyboard;
 import hardware.mouse;
