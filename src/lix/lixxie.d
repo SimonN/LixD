@@ -173,8 +173,9 @@ this(
                                                new_ey  - eyOffset);
     _job  = Job.factory(this, Ac.faller);
     frame = 4;
-    ex    = new_ex.even;
-    ey    = new_ey;
+    _ex   = new_ex.even;
+    _ey   = new_ey;
+    addEncountersFromHere();
 }
 
 
@@ -212,6 +213,7 @@ private XY getFuseXY() const
     XY ret = countdown.get(max(0, frame), ac);
     if (facingLeft)
         ret.x = this.cutbit.xl - ret.x;
+    assert (super.y == _ey - eyOffset); // for encounters
     ret.x += super.x;
     ret.y += super.y;
     return ret;
@@ -221,11 +223,10 @@ private XY getFuseXY() const
 
 void addEncountersFromHere()
 {
-    immutable XY fuseXy = getFuseXY();
     _encFoot |= lookup.get(_ex, _ey);
     _encBody |= _encFoot
              |  lookup.get(_ex, _ey - 4)
-             |  lookup.get(fuseXy.x, fuseXy.y);
+             |  lookup.get(_ex, getFuseXY().y);
 }
 
 
@@ -236,6 +237,8 @@ ex(in int n)
     _ex = basics.help.even(n);
     if (env.torusX)
         _ex = positiveMod(_ex, env.xl);
+    assert (_job);
+    super.x = _ex - exOffset + _job.spriteOffsetX;
     addEncountersFromHere();
     return _ex;
 }
@@ -248,6 +251,7 @@ ey(in int n)
     _ey = n;
     if (env.torusY)
         _ey = positiveMod(_ey, env.yl);
+    super.y = _ey - eyOffset;
     addEncountersFromHere();
     return _ey;
 }
@@ -406,15 +410,6 @@ override bool isLastFrame() const
 void advanceFrame()
 {
     frame = (isLastFrame() ? 0 : frame + 1);
-}
-
-
-
-void prepareDraw()
-{
-    assert (_job);
-    super.x = _ex - exOffset + _job.spriteOffsetX;
-    super.y = _ey - eyOffset;
 }
 
 override void draw(Torbit tb) const

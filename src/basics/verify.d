@@ -24,7 +24,7 @@ public void verifyFiles(Cmdargs cmdargs)
     std.stdio.write("Initializing game...");
     stdout.flush;
     basics.init.initialize(cmdargs);
-    writeln(" done.");
+    writeln(" done. Я твой слуга.");
 
     auto vc = new VerifyCounter;
     vc.writeCSVHeader();

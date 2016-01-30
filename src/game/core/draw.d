@@ -71,15 +71,11 @@ void drawAllLixes(Game game)
     void drawTribe(Tribe tr)
     {
         foreach (lix; tr.lixvec.retro)
-            if (! lix.marked) {
-                lix.prepareDraw();
+            if (! lix.marked)
                 lix.draw(game.map);
-            }
         foreach (lix; tr.lixvec.retro)
-            if (lix.marked) {
-                lix.prepareDraw();
+            if (lix.marked)
                 lix.draw(game.map);
-            }
     }
     with (game) {
         foreach (otherTribe; nurse.mutableStateForDrawingOnly.tribes)
