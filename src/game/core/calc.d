@@ -9,7 +9,6 @@ import game.gui.wduring;
 import game.core.active;
 import game.core.passive;
 import game.core.speed;
-import game.core.physseq;
 import gui;
 import hardware.keyboard;
 
@@ -32,37 +31,14 @@ implGameCalc(Game game)
     }
 }
 
-package Result
-implEvaluateReplay(Game game) { with (game)
-{
-    assert (runmode == Runmode.VERIFY);
-    assert (cs);
-    assert (replay);
-    bool isRunningForever()
-    {
-        // allow 5 minutes after the last replay data before cancelling
-        return cs.update > replay.latestUpdate + 5 * (60 * 15);
-    }
-    while (! game.isFinished && ! isRunningForever)
-        game.updateOnceNoninteractively;
-    assert (tribeLocal);
-    auto result = new Result();
-    result.lixSaved = tribeLocal.lixSaved;
-    result.skillsUsed = tribeLocal.skillsUsed;
-    result.updatesUsed = tribeLocal.updatePreviousSave;
-    return result;
-}}
-
 private bool
 isFinished(const(Game) game) { with (game)
 {
-    assert (cs);
+    assert (nurse);
     if (runmode == Runmode.VERIFY)
-        return cs.tribes.all!(a => ! a.stillPlaying);
+        return ! nurse.stillPlaying();
     else
-        return cs.tribes.all!(a => ! a.stillPlaying)
-            && cs.traps .all!(a => ! a.isEating(cs.update))
-            && effect.nothingGoingOn;
+        return ! nurse.stillPlaying() && effect.nothingGoingOn;
 }}
 
 private void
@@ -71,8 +47,8 @@ createModalWindow(Game game)
     game.modalWindow =
         // multiplayer && ! replaying ? : ? : ? :
         game.isFinished
-        ? new WindowEndSingle(game.tribeLocal, game.replay, game.level)
-        : new WindowDuringOffline(game.replay, game.level);
+        ? new WindowEndSingle(game.tribeLocal, game.nurse.replay, game.level)
+        : new WindowDuringOffline(game.nurse.replay, game.level);
     addFocus(game.modalWindow);
 }
 
@@ -90,7 +66,8 @@ calcModalWindow(Game game) { with (game)
         killWindow();
     }
     else if (modalWindow.restart) {
-        game.restartLevel();
+        game.nurse.restartLevel();
+        game.setLastUpdateToNow();
         killWindow();
     }
     else if (modalWindow.exitGame) {

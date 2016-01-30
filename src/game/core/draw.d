@@ -22,7 +22,7 @@ package void
 implGameDraw(Game game) { with (game)
 {
     auto zo = Zone(profiler, "game entire implGameDraw()");
-    physicsDrawer.applyChangesToLand(cs.update);
+    nurse.applyChangesToLand();
 
     with (Zone(profiler, "game entire drawing to map"))
     {
@@ -52,22 +52,23 @@ private:
 void drawGadgets(Game game)
 {
     auto zone = Zone(profiler, "game draws gadgets");
-    game.cs.foreachGadget((Gadget g) {
+    auto muSt = game.nurse.mutableStateForDrawingOnly;
+    muSt.foreachConstGadget((const(Gadget) g) {
         with (Zone(profiler, "game draws one gadget"))
-            g.draw(game.map, game.cs);
+            g.draw(game.map, muSt);
     });
 }
 
 void drawLand(Game game)
 {
     auto zone = Zone(profiler, "game draws land to map");
-    game.map.loadCameraRectangle(game.cs.land);
+    game.map.loadCameraRectangle(game.nurse.land);
 }
 
 void drawAllLixes(Game game)
 {
     auto zone = Zone(profiler, "game draws lixes");
-    void drawAllLixesOfTribe(Tribe tr)
+    void drawTribe(Tribe tr)
     {
         foreach (lix; tr.lixvec.retro)
             if (! lix.marked) {
@@ -80,10 +81,12 @@ void drawAllLixes(Game game)
                 lix.draw(game.map);
             }
     }
-    foreach (otherTribe; game.cs.tribes)
-        if (otherTribe !is game.tribeLocal)
-            drawAllLixesOfTribe(otherTribe);
-    drawAllLixesOfTribe(game.tribeLocal);
+    with (game) {
+        foreach (otherTribe; nurse.mutableStateForDrawingOnly.tribes)
+            if (otherTribe !is game.tribeLocal)
+                drawTribe(otherTribe);
+        drawTribe(nurse.mutableStateForDrawingOnly.tribes[_indexTribeLocal]);
+    }
 }
 
 void drawReplaySign(Game game)

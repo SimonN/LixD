@@ -407,7 +407,7 @@ drawCamera_with_target_corner(
 
 
 void
-loadCameraRectangle(Torbit src)
+loadCameraRectangle(in Torbit src)
 {
     assert (src.albit);
     assert (this.xl == src.xl);
@@ -425,7 +425,8 @@ loadCameraRectangle(Torbit src)
 
     void drawHere(int ax, int ay, int axl, int ayl)
     {
-        al_draw_bitmap_region(src.albit, ax, ay, axl, ayl, ax, ay, 0);
+        al_draw_bitmap_region(cast (Albit) (src.albit),
+            ax, ay, axl, ayl, ax, ay, 0);
     }
     if (true        ) drawHere(r.x, r.y, r.xl, r.yl);
     if (drtx        ) drawHere(0,   r.y, cameraZoomedXl - r.xl, r.yl);

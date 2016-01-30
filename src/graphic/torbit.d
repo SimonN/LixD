@@ -20,7 +20,7 @@ class Torbit : Topology {
 //  this(xl, yl, torusX, torusY);
 //  this(const Torbit rhs);
 
-    @property Albit albit() { return bitmap; }
+    @property inout(Albit) albit() inout { return bitmap; }
 
     // DTODODRAW: import is only here while the next is unimpl
     import file.log;
@@ -126,7 +126,8 @@ void copyFrom(in Torbit rhs)
 
 
 
-~this()
+~this() { dispose(); }
+void dispose()
 {
     if (bitmap) {
         al_destroy_bitmap(bitmap);

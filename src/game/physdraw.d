@@ -55,6 +55,14 @@ class PhysicsDrawer {
         assert (_phymap, "_land may be null, but not _phymap");
     }
 
+    void dispose()
+    {
+        if (_land)
+            _land.dispose();
+        _land   = null;
+        _phymap = null;
+    }
+
     void
     add(in TerrainChange tc)
     {

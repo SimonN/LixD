@@ -15,9 +15,7 @@ import lix;
 package void
 calcActive(Game game) { with (game)
 {
-    game.handleSpawnIntervalButtons();
     game.handleNukeButton();
-
     if (! pan.isMouseHere) {
         if (mouseClickLeft)
             game.cancelReplay();
@@ -36,7 +34,7 @@ newReplayDataForNextUpdate(Game game)
 {
     ReplayData data;
     data.player = game.masterLocal.number;
-    data.update = game.cs.update + 1;
+    data.update = game.nurse.upd + 1;
     return data;
 }
 
@@ -48,7 +46,7 @@ void cancelReplay(Game game) { with (game)
         // During a multiplayer game, replaying is false, even if there
         // are future actions by other masters queued. Perfect, don't cancel.
         return;
-    replay.deleteAfterUpdate(cs.update);
+    nurse.cutReplay();
     playLoud(Sound.SCISSORS);
 }}
 
@@ -80,32 +78,6 @@ struct PotentialAssignee {
     }
 }
 
-void handleSpawnIntervalButtons(Game game) { with (game)
-{
-    if (multiplayer)
-        // rulings forbid changing the spawn interval in multiplayer
-        return;
-
-    // uncomment and implement after putting spawnint buttons into panel
-    /+
-    immutable int cur = pan.spawnintCur.get_spawnint();
-
-    if (cur != tribe.spawnint_slow) {
-        if (pan.spawnint_slow.get_execute_right())
-            pan.spawnint_cur.set_spawnint(tribe.spawnint_slow);
-        else if (pan.spawnint_slow.get_execute_left())
-            pan.spawnint_cur.set_spawnint(cur + 1);
-    }
-
-    if (cur != tribe.spawnint_fast) {
-        if (pan.spawnint_cur .get_execute_right())
-            pan.spawnint_cur.set_spawnint(tribe.spawnint_fast);
-        else if (pan.spawnint_cur.get_execute_left())
-            pan.spawnint_cur.set_spawnint(cur - 1);
-    }
-    +/
-}}
-
 void handleNukeButton(Game game) { with (game)
 {
     if (! pan.nukeDoubleclicked)
@@ -117,7 +89,7 @@ void handleNukeButton(Game game) { with (game)
     data.action = RepAc.NUKE;
     undispatchedAssignments ~= data;
     // DTODONETWORK: Network::send_replay_data(data);
-    effect.addSound(Update(cs.update + 1), tribeID(tribeLocal), 0, Sound.NUKE);
+    effect.addSound(Update(nurse.upd + 1), tribeID(tribeLocal), 0, Sound.NUKE);
 }}
 
 bool forceLeft()
@@ -274,20 +246,16 @@ void assignToPotentialAssignee(
         return;
     }
 
-    auto upd  = Update(cs.update + 1);
-    auto trID = tribeID(tribeLocal);
-    effect.addArrowButDontShow(upd, trID, potAss.id);
-    effect.addSound           (upd, trID, potAss.id, Sound.ASSIGN);
+    auto uNext = Update(nurse.upd + 1);
+    auto trID  = tribeID(tribeLocal);
+    effect.addArrowButDontShow(uNext, trID, potAss.id);
+    effect.addSound           (uNext, trID, potAss.id, Sound.ASSIGN);
 
-    assert (replay);
-    if (replay.getOnUpdateLixClicked(upd, potAss.id, currentSkill.skill)
-        && currentSkill.number != skillInfinity
-    ) {
+    if (currentSkill.number != skillInfinity)
         // Decrease the visible number on the panel. This is mostly eye candy.
         // It doesn't affect physics, including judging what's coming in over
         // the network, but it affects the assignment user interface.
         currentSkill.number = currentSkill.number - 1;
-    }
 
     ReplayData data = game.newReplayDataForNextUpdate();
     data.action     = forceLeft  ? RepAc.ASSIGN_LEFT

@@ -51,20 +51,34 @@ class GameState {
  */
     GameState clone() const { return new GameState(this); }
 
-    void foreachGadget(T)(void delegate(T) func)
-        if (is(T : const Gadget))
+    void foreachGadget(void delegate(Gadget) func)
     {
         chain(hatches, goals, decos, waters, traps, flingers, trampos)
             .each!func;
     }
+    // It's sad that I need the duplication of this function, but inout
+    // didn't work with delegates. No idea if it's me or D.
+    void foreachConstGadget(void delegate(const Gadget) func) const
+    {
+        foreach (g; hatches) func(g);
+        foreach (g; goals) func(g);
+        foreach (g; decos) func(g);
+        foreach (g; waters) func(g);
+        foreach (g; traps) func(g);
+        foreach (g; flingers) func(g);
+        foreach (g; trampos) func(g);
+    }
 
+    @property bool multiplayer() const
+    {
+        assert (tribes.length > 0);
+        return (tribes.length > 1);
+    }
 
-
-// ############################################################################
-// ############################################################################
-// ############################################################################
-
-
+    @property bool singlePlayerHasWon() const
+    {
+        return ! multiplayer && tribes[0].lixSaved >= tribes[0].lixRequired;
+    }
 
     private void
     copyValuesArraysFrom(in GameState rhs)

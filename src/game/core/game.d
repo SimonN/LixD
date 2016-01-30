@@ -10,6 +10,7 @@ module game.core.game;
 public import basics.cmdargs; // Runmode;
 
 import std.algorithm; // find;
+import std.conv; // float to int in prepare nurse
 
 import basics.alleg5;
 import basics.globals;
@@ -18,12 +19,10 @@ import basics.user; // Result
 import basics.nettypes;
 import file.filename;
 
-import game.core.init;
 import game.core.calc;
 import game.core.draw;
 import game.gui.gamewin;
-import game.model.state;
-import game.model.model;
+import game.model.nurse;
 import game.gui.panel;
 import game.effect;
 import game.physdraw;
@@ -48,12 +47,29 @@ class Game {
     this(Runmode rm, Level lv, Filename fn = null, Replay rp = null)
     {
         this.runmode = rm;
-        implGameConstructor(this, lv, fn, rp);
+        assert (lv);
+        assert (lv.good);
+
+        scope (exit)
+            this.setLastUpdateToNow();
+        level         = lv;
+        levelFilename = fn;
+        prepareNurse(rp, fn);
     }
 
-    ~this() { implGameDestructor(this); }
+    ~this()
+    {
+        if (pan)
+            gui.rmElder(pan);
+        if (modalWindow)
+            gui.rmFocus(modalWindow);
+        if (nurse && nurse.replay && ! wasInstantiatedWithReplay)
+            nurse.replay.saveAsAutoReplay(level, cs.singlePlayerHasWon);
+        if (nurse)
+            nurse.dispose();
+    }
 
-    Result evaluateReplay() { return implEvaluateReplay(this); }
+    Result evaluateReplay() { return nurse.evaluateReplay(); }
 
     void calc()
     {
@@ -73,18 +89,13 @@ package:
 
     Level     level;
     Filename  levelFilename;
-    Replay    replay;
 
     Map map; // The map does not hold the referential level image, that's
              // in cs.land and cs.lookup. Instead, the map loads a piece
              // of that land, blits gadgets and lixes on it, and blits the
              // result to the screen. It is both a renderer and a camera.
-
-    GameModel cs; // current state
-    StateManager stateManager;
-    PhysicsDrawer physicsDrawer;
+    Nurse nurse;
     EffectManager effect;
-    Panel pan;
 
     int _indexTribeLocal;
     int _indexMasterLocal;
@@ -97,8 +108,8 @@ package:
     // If the replay is cut off by explicit cutting (LMB into empty space),
     // the undispatched data too is emptied.
     ReplayData[] undispatchedAssignments;
-
     GameWindow modalWindow;
+    Panel pan;
 
     int _profilingGadgetCount;
 
@@ -107,28 +118,20 @@ package:
 
     @property bool replaying() const
     {
-        assert (replay, "need to instantiate replay before isReplaying()");
-        assert (cs, "need non-null cs to query during isReplaying()");
+        assert (nurse);
         // Replay data for update n means: this will be used when updating
         // from update n-1 to n. If there is still unapplied replay data,
         // then we are replaying.
         // DTODONETWORKING: Add a check that we are never replaying while
         // we're connected with other players.
-        return replay.latestUpdate > cs.update;
+        return nurse.replay.latestUpdate > nurse.upd;
     }
 
-    @property bool multiplayer() const
-    {
-        assert (cs, "query for multiplayer after making the current state");
-        assert (cs.tribes.length > 0, "query for multiplayer after making cs");
-        return (cs.tribes.length > 1);
-    }
-
-    @property inout(Tribe) tribeLocal() inout
+    @property const(Tribe) tribeLocal() const
     {
         assert (cs, "null cs, shouldn't ever be null");
         assert (cs.tribes.length > _indexTribeLocal, "badly cloned cs");
-        return cs.cs.tribes[_indexTribeLocal];
+        return cs.tribes[_indexTribeLocal];
     }
 
     @property int tribeID(const Tribe tr) const
@@ -141,19 +144,61 @@ package:
         return cs.tribes.len - cs.tribes.find!"a is b"(tr).len;
     }
 
-    @property ref inout(Tribe.Master) masterLocal() inout
+    @property ref const(Tribe.Master) masterLocal() const
     {
         assert (cs, "null cs, shouldn't ever be null");
         assert (cs.tribes.len > _indexTribeLocal, "badly cloned cs");
         assert (cs.tribes[_indexTribeLocal].masters.len > _indexMasterLocal);
-        return cs.cs.tribes[_indexTribeLocal].masters[_indexMasterLocal];
+        return cs.tribes[_indexTribeLocal].masters[_indexMasterLocal];
     }
 
-    @property bool singlePlayerHasWon() const
+    void setLastUpdateToNow()
     {
-        // doesn't assert, might get called in the destructor on an .init game
-        return cs !is null && ! multiplayer
-            && cs.tribes[0].lixSaved >= cs.tribes[0].lixRequired;
+        altickLastUpdate = timerTicks;
+        effect.deleteAfter(nurse.upd);
+        if (pan)
+            pan.setLikeTribe(tribeLocal);
     }
 
+private:
+
+    @property cs() inout
+    {
+        assert (nurse);
+        assert (nurse.stateOnlyPrivatelyForGame);
+        return nurse.stateOnlyPrivatelyForGame;
+    }
+
+    private void prepareNurse(Replay rp, Filename fn)
+    {
+        assert (! effect);
+        assert (! nurse);
+        _wasInstantiatedWithReplay = rp !is null;
+        if (! rp) {
+            rp = new Replay();
+            rp.levelFilename = fn;
+
+            // DTODONETWORK: what to add?
+            import lix.enums;
+            rp.addPlayer(PlNr(0), Style.garden, basics.globconf.userName);
+        }
+        effect = new EffectManager;
+        nurse  = new Nurse(level, rp, effect);
+
+        // DTODONETWORKING: initialize to something different, and pass the
+        // nurse the number of players
+        _indexTribeLocal  = 0;
+        _indexMasterLocal = 0;
+        effect.tribeLocal = 0;
+
+        assert (pan is null);
+        if (runmode == Runmode.INTERACTIVE) {
+            map = new Map(cs.land, Geom.screenXls.to!int,
+                                  (Geom.screenYls - Geom.panelYls).to!int);
+            pan = new Panel;
+            gui.addElder(pan);
+            pan.setLikeTribe(tribeLocal);
+            pan.highlightFirstSkill();
+        }
+    }
 }

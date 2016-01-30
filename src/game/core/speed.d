@@ -3,23 +3,19 @@ module game.core.speed;
 import basics.alleg5;
 import basics.nettypes; // Update
 import game.core.game;
-import game.core.physseq;
 import game.gui.panel;
-import game.model.state;
 import hardware.sound;
 
-package void
-setLastUpdateToNow(Game game)
-{
-    game.altickLastUpdate = timerTicks;
-}
+package:
 
-package void
-updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
+void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
 {
     void upd(in int howmany = 1)
     {
-        game.updateTo(Update(cs.update + howmany));
+        game.putUndispatchedAssignmentsIntoReplay();
+        game.putNetworkDataIntoReplay();
+        nurse.updateTo(Update(nurse.upd + howmany));
+        game.setLastUpdateToNow();
     }
 
     // We don't set/unset pause based on the buttons here. This is done by
@@ -27,37 +23,25 @@ updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
     if (   pan.speedBack.executeLeft
         || pan.speedBack.executeRight
     ) {
-        Update whatUpdateToLoad = Update(
-              pan.speedBack.executeLeft  ? cs.update - 1
-            : pan.speedBack.executeRight ? cs.update - Game.updatesBackMany
-            : 0);
-        auto state = (whatUpdateToLoad <= 0)
-                   ? stateManager.zeroState
-                   : stateManager.autoBeforeUpdate(whatUpdateToLoad + 1);
-        assert (state, "we should get at laest some state here");
-        assert (stateManager.zeroState, "zero state is bad");
-        game.loadStateFramestepping(state, whatUpdateToLoad);
-        game.updateTo(whatUpdateToLoad);
+        nurse.framestepBackBy(
+              pan.speedBack.executeLeft  ? 1
+            : pan.speedBack.executeRight ? Game.updatesBackMany : 0);
     }
     else if (pan.restart.execute) {
-        game.restartLevel();
+        nurse.restartLevel();
+        game.setLastUpdateToNow();
     }
     else if (pan.stateSave.execute) {
-        stateManager.saveUser(cs, replay);
+        nurse.saveUserState();
         hardware.sound.playLoud(Sound.DISKSAVE);
     }
     else if (pan.stateLoad.execute) {
-        auto u = stateManager.userState;
-        auto r = stateManager.userReplay;
-        if (u is null)
+        if (! nurse.userStateExists)
             hardware.sound.playLoud(Sound.PANEL_EMPTY);
         else {
-            game.loadStateManually(u);
-            if (! r.isSubsetOf(replay)) {
-                if (! replay.isSubsetOf(r))
-                    hardware.sound.playLoud(Sound.SCISSORS);
-                replay = stateManager.userReplay.clone();
-            }
+            if (nurse.loadUserStateDoesItMismatch)
+                hardware.sound.playLoud(Sound.SCISSORS);
+            game.setLastUpdateToNow();
         }
     }
     else if (pan.speedAhead.executeLeft) {
@@ -80,44 +64,19 @@ updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
 }}
 // end with (game), end function updatePhysicsAccordingToSpeedButtons
 
+private:
 
-
-private void
-loadStateFramestepping(Game game, in GameState state, in int toUpdate)
+void putUndispatchedAssignmentsIntoReplay(Game game) { with (game)
 {
-    if (state) {
-        game.cs = state.clone();
-        game.physicsDrawer.rebind(game.cs.land, game.cs.lookup);
-        game.effect.deleteAfter(toUpdate);
+    foreach (data; undispatchedAssignments) {
+        nurse.addReplayData(data);
+        // DTODONETWORK
+        // Network::send_replay_data(data);
+        // or even better: network-send this data as soon as it is
+        // generated in game.gameacti, not only when the update happens,
+        // to combat lag wherever possible
     }
-}
-
-package void
-loadStateDuringPhysicsUpdate(Game game, in GameState state)
-{
-    if (state)
-        loadStateFramestepping(game, state, state.update);
-}
-
-// package (instead of private), because this is not only called from state
-// save/load buttons, but also from game.core.calc's modalWindow that requests
-// restarting.
-// DTODO: maybe use this even for the speed buttons for framestepping? Test!
-package void
-loadStateManually(Game game, in GameState state) { with (game)
-{
-    if (state) {
-        game.loadStateDuringPhysicsUpdate(state);
-        game.finalizeUpdateAnimateGadgets();
-        game.setLastUpdateToNow();
-    }
+    undispatchedAssignments = null;
 }}
 
-package void
-restartLevel(Game game) { with (game)
-{
-    assert (stateManager.zeroState, "want to load zero state, but cannot");
-    game.loadStateManually(stateManager.zeroState);
-    replay.eraseEarlySingleplayerNukes();
-    pan.setSpeedToNormal();
-}}
+void putNetworkDataIntoReplay(Game game) { }
