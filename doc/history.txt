@@ -1,6 +1,21 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.7
+-----
+
+2016-01-30
+
+Fix #35: Omitting drawing allowed bypassing traps.
+
+The lix eye coordinate is used to determine where trigger areas affect the
+lix. Before this fix, the eye coordinate was only updated on drawing the
+lix, becasue the fuse should be positioned there. This allowed to bypass
+traps with the head.
+
+Also refactored over 1,000 lines of game code, for a slightly better separation
+of physics model and controlling/drawing code.
+
 0.2.6
 -----
 

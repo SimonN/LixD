@@ -51,11 +51,11 @@ private:
 
 void drawGadgets(Game game)
 {
-    auto zone = Zone(profiler, "game draws gadgets");
-    auto muSt = game.nurse.mutableStateForDrawingOnly;
-    muSt.foreachConstGadget((const(Gadget) g) {
+    auto zone  = Zone(profiler, "game draws gadgets");
+    auto state = game.nurse.constStateForDrawingOnly;
+    state.foreachConstGadget((const(Gadget) g) {
         with (Zone(profiler, "game draws one gadget"))
-            g.draw(game.map, muSt);
+            g.draw(game.map, state);
     });
 }
 
@@ -68,7 +68,7 @@ void drawLand(Game game)
 void drawAllLixes(Game game)
 {
     auto zone = Zone(profiler, "game draws lixes");
-    void drawTribe(Tribe tr)
+    void drawTribe(in Tribe tr)
     {
         foreach (lix; tr.lixvec.retro)
             if (! lix.marked)
@@ -78,10 +78,10 @@ void drawAllLixes(Game game)
                 lix.draw(game.map);
     }
     with (game) {
-        foreach (otherTribe; nurse.mutableStateForDrawingOnly.tribes)
+        foreach (otherTribe; nurse.constStateForDrawingOnly.tribes)
             if (otherTribe !is game.tribeLocal)
                 drawTribe(otherTribe);
-        drawTribe(nurse.mutableStateForDrawingOnly.tribes[_indexTribeLocal]);
+        drawTribe(nurse.constStateForDrawingOnly.tribes[_indexTribeLocal]);
     }
 }
 

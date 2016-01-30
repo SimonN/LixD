@@ -27,7 +27,7 @@ class Nurse {
     @property               land()   const { return _model.cs.land;   }
 
     // this is bad, DTODO: refactor
-    @property mutableStateForDrawingOnly()      { return _model.cs; }
+    @property constStateForDrawingOnly()  const { return _model.cs; }
     @property stateOnlyPrivatelyForGame() const { return _model.cs; }
 
     this(in Level lev, Replay rp, EffectManager ef)
