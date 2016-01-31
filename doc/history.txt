@@ -1,6 +1,13 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.8
+-----
+
+2016-01-31
+
+Implement #34: The game mimicks the level tree when saving replays.
+
 0.2.7
 -----
 

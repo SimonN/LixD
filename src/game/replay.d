@@ -379,7 +379,7 @@ saveToTree(
     string outfile = "%s%s%s-%s-%s%s".format(
         treebase.rootful,
         mimickLevelPath(levelFn),
-        lev.name.escapeStringForFilename(),
+        levelFn.fileNoExtNoPre,
         playerLocalName.escapeStringForFilename(),
         Date.now().toStringForFilename(),
         basics.globals.filenameExtReplay);
