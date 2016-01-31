@@ -41,8 +41,6 @@ private struct Effect {
     }
 }
 
-
-
 class EffectManager {
 
     private RedBlackTree!Effect _tree;
@@ -67,20 +65,10 @@ class EffectManager {
             assert (e.update <= upd);
     }
     body {
+        // throw away what has update (upd + 1) or more
         _tree.remove(_tree.upperBound(Effect(Update(upd + 1),
                                       -1 , 0, Sound.NOTHING)));
     }
-
-    override string toString() const
-    {
-        int[] arr;
-        foreach (e; _tree)
-            arr ~= e.update;
-        import std.conv;
-        return arr.to!string();
-    }
-
-
 
     void addSoundGeneral(in Update upd,
         in Sound sound, in Loudness loudness = Loudness.loud

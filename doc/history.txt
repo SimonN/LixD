@@ -1,6 +1,15 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.9
+-----
+
+2016-01-31
+
+Fixed 3 little bugs: Effects are correctly deleted after framestepping back.
+On deleting a replay, the browser highlights the next one correctly again.
+The file browser title bar shows the correct subdirectory on browser startup.
+
 0.2.8
 -----
 

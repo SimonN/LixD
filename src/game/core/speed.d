@@ -26,6 +26,7 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
         nurse.framestepBackBy(
               pan.speedBack.executeLeft  ? 1
             : pan.speedBack.executeRight ? Game.updatesBackMany : 0);
+        game.setLastUpdateToNow();
     }
     else if (pan.restart.execute) {
         nurse.restartLevel();
