@@ -74,8 +74,9 @@ class BrowserBase : Window {
     {
         if (fn !is null && fn.file != null)
             dirList.currentDir = fn;
+        if (fn != levList.currentFile)
+            levList.highlight(fn);
         updateWindowSubtitle();
-        levList.highlight(fn);
         dispatchHighlightToBrowserSubclass(fn);
     }
 
