@@ -89,18 +89,26 @@ newFileButton(int nr_from_top, int total_nr, Filename fn)
                        ' '.repeat(leadingSpaces), total_nr + 1);
         // filename or fetched level name will be written later on.
     }
-
     LevelMetaData lev;
-
     if (_replayToLevelName) {
         auto r = new Replay(fn);
-        lev = new LevelMetaData(r.levelFilename);
+        lev = new LevelMetaData(r.levelFilename); // use pointed-to level
+        if (! lev.fileExists)
+        lev = new LevelMetaData(fn); // use included level
+        // DTODO: There is a bug remaining here.
+        // If the file exists on disk, LevelMetaData.fileExists is true.
+        // But we aren't interested in whether the file exists, but whether
+        // the level is nonempty. We'd normally test the included level first.
+        // But that test (LevelMetaData(fn).fileExists) would always return
+        // true right now, even when only a replay is inside, and no level.
+        // Therefore, as a workaround, we test the pointed-to level first,
+        // even though that's not preferred when playing back the replay.
+        buttonText ~= format("%s (%s)", lev.name, r.playerLocalName);
     }
     else {
         lev = new LevelMetaData(fn);
+        buttonText ~= lev.name;
     }
-    buttonText ~= lev.name;
-
     TextButton t = new TextButton(new Geom(0, nr_from_top * 20, xlg, 20));
     t.text = buttonText;
     t.alignLeft = true;

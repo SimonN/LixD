@@ -1,6 +1,18 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.10
+------
+
+2016-01-31
+
+Disabled the extra console on Windows by linking with -L/subsystem:windows.
+
+Panel offers imploders.
+
+Listing the included level's name in the replay browser when the pointed-to
+level is not there. There's a bug left over for now anyway, see commit message.
+
 0.2.9
 -----
 
