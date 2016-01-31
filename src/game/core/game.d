@@ -64,7 +64,8 @@ class Game {
         if (modalWindow)
             gui.rmFocus(modalWindow);
         if (nurse && nurse.replay && ! wasInstantiatedWithReplay)
-            nurse.replay.saveAsAutoReplay(level, cs.singlePlayerHasWon);
+            nurse.replay.saveAsAutoReplay(levelFilename, level,
+                                          cs.singlePlayerHasWon);
         if (nurse)
             nurse.dispose();
     }

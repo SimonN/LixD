@@ -355,33 +355,56 @@ saveToFile(std.stdio.File file, in Level lev) const
 
 
 public void
-saveAsAutoReplay(in Level lev, bool isSolution) const
+saveAsAutoReplay(in Filename levelFn, in Level lev, bool solves) const
 {
     immutable bool multi = (_players.length > 1);
     if (multi && basics.user.replayAutoMulti)
-        saveToTree(basics.globals.dirReplayAutoMulti, lev);
-    if (! multi && isSolution && basics.user.replayAutoSolutions)
-        saveToTree(basics.globals.dirReplayAutoSolutions, lev);
+        saveToTree(basics.globals.dirReplayAutoMulti, levelFn, lev);
+    if (! multi && solves && basics.user.replayAutoSolutions)
+        saveToTree(basics.globals.dirReplayAutoSolutions, levelFn, lev);
 }
 
 public void
-saveManually(in Level lev) const
+saveManually(in Filename levelFn, in Level lev) const
 {
-    saveToTree(basics.globals.dirReplayManual, lev);
+    saveToTree(basics.globals.dirReplayManual, levelFn, lev);
 }
 
 private void
-saveToTree(in Filename treebase, in Level lev) const
+saveToTree(
+    in Filename treebase,
+    in Filename levelFn,
+    in Level lev) const
 {
-    string outfile = treebase.rootful
-              ~ lev.name.escapeStringForFilename()
-        ~ "-" ~ playerLocalName.escapeStringForFilename()
-        ~ "-" ~ Date.now().toStringForFilename()
-        ~ basics.globals.filenameExtReplay;
+    string outfile = "%s%s%s-%s-%s%s".format(
+        treebase.rootful,
+        mimickLevelPath(levelFn),
+        lev.name.escapeStringForFilename(),
+        playerLocalName.escapeStringForFilename(),
+        Date.now().toStringForFilename(),
+        basics.globals.filenameExtReplay);
     saveToFile(new Filename(outfile), lev);
 }
 
-
+private static string
+mimickLevelPath(in Filename levelFn)
+out (result) {
+    assert (result == "" || result[0]   != '/');
+    assert (result == "" || result[$-1] == '/');
+}
+body {
+    // DTODOFHS: Is this still good? See comment in mangledLevelFilename, too.
+    void cutFront(ref string str, in string front)
+    {
+        if (str.length >= front.length && str[0 .. front.length] == front)
+            str = str[front.length .. $];
+    }
+    string path = levelFn.dirRootless;
+    [   dirLevelsSingle, dirLevelsNetwork, dirLevels,
+        dirReplayAutoSolutions, dirReplayAutoMulti, dirReplayManual, dirReplays
+        ].each!(dir => cutFront(path, dir.dirRootless));
+    return path;
+}
 
 private void
 loadFromFile(Filename fn)
@@ -459,8 +482,6 @@ loadFromFile(Filename fn)
 
 }
 // end class Replay
-
-
 
 unittest
 {

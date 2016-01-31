@@ -5,6 +5,7 @@ import std.string; // package class
 
 import basics.alleg5; // package class, hotkeyNiceShort
 import basics.user; // hotkeys
+import file.filename;
 import file.language;
 import game.replay;
 import graphic.color;
@@ -58,17 +59,21 @@ protected:
         oneBut(_exitGame,   Lang.winGameMenu.transl,       keyGameExit);
     }
 
-    final void setReplayAndLevel(in Replay r, in Level l)
-    {
+    final void setReplayAndLevel(
+        const(Replay)   rep,
+        const(Filename) levFn,
+        const(Level)    lev,
+    ) {
         assert (_saveReplay, "instantiate _saveReplay before passing replay");
-        _replay = r;
-        _level  = l;
+        _replay = rep;
+        _level  = lev;
+        _levelFilename = levFn,
         _saveReplayDone = new Label(new Geom(_saveReplay.geom));
         _saveReplayDone.text = Lang.browserExportImageDone.transl;
         _saveReplayDone.hide();
         _saveReplay.onExecute = () {
             assert (_replay !is null);
-            _replay.saveManually(_level);
+            _replay.saveManually(_levelFilename, _level);
             hardware.sound.playLoud(Sound.DISKSAVE);
             if (_saveReplayDone) {
                 _saveReplay.undrawColor = color.guiM;
@@ -82,6 +87,7 @@ protected:
 private:
 
     Label _saveReplayDone;
-    Rebindable!(const Replay) _replay;
-    Rebindable!(const Level)  _level;
+    Rebindable!(const Replay)   _replay;
+    Rebindable!(const Level)    _level;
+    Rebindable!(const Filename) _levelFilename;
 }
