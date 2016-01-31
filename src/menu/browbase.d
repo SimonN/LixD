@@ -67,13 +67,14 @@ class BrowserBase : Window {
         buttonExit.hotkey = basics.user.keyMenuExit;
         buttonExit.onExecute = () { _gotoMainMenu = true; };
         addChildren(preview, dirList, levList, buttonPlay, buttonExit);
-        windowSubtitle = dirList.currentDir.rootless;
+        updateWindowSubtitle();
     }
 
     final void highlight(Filename fn)
     {
         if (fn !is null && fn.file != null)
             dirList.currentDir = fn;
+        updateWindowSubtitle();
         levList.highlight(fn);
         dispatchHighlightToBrowserSubclass(fn);
     }
@@ -167,6 +168,14 @@ private:
             // keep _fileRecent as it is, we might highlight that again later
             onFileHighlight(null);
         }
+    }
+
+    void updateWindowSubtitle()
+    {
+        assert (dirList.baseDir   .rootless.length
+            <=  dirList.currentDir.rootless.length);
+        windowSubtitle = dirList.currentDir.rootless[
+                         dirList.baseDir   .rootless.length .. $];
     }
 }
 // end class
