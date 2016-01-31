@@ -238,6 +238,10 @@ private void load_level_finalize(Level level)
         if (torusX) startX = positiveMod(startX, xl);
         if (torusY) startY = positiveMod(startY, yl);
 
+        // Only allow one type of im/exploder.
+        if (skills[Ac.exploder2] != 0)
+            skills[Ac.exploder] = 0;
+
         // Set level error. The error for file not found, or the error for
         // missing tile images, have been set already.
         if (_status == LevelStatus.GOOD) {
