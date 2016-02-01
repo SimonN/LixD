@@ -1,6 +1,13 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.11
+------
+
+2016-02-01
+
+Fixed left-facing bashers, they now ignore steel in the top 2 hi-res pixels.
+
 0.2.10
 ------
 

@@ -196,9 +196,15 @@ struct Mask {
     body {
         Mask ret;
         ret._solid = new Matrix!bool(_solid.xl, _solid.yl);
+        if (_ignoreSteel !is null)
+            ret._ignoreSteel = new Matrix!bool(_solid.xl, _solid.yl);
         foreach     (const int y; 0 .. ret._solid.yl)
-            foreach (const int x; 0 .. ret._solid.xl)
-                ret._solid.set(x, y, this._solid.get(_solid.xl - 1 - x, y));
+            foreach (const int x; 0 .. ret._solid.xl) {
+                immutable mirrX = _solid.xl - 1 - x;
+                ret._solid.set(x, y, this._solid.get(mirrX, y));
+                if (ret._ignoreSteel)
+                    ret._ignoreSteel.set(x, y, this._ignoreSteel.get(mirrX,y));
+            }
         // Enforce the offset at an even coordinate, because the physics use
         // 2-pixel-wide chunks everywhere, using the left pixel's coordinates.
         ret.offsetX = basics.help.even(_solid.xl - 1 - offsetX);
@@ -228,6 +234,18 @@ unittest {
     ]);
     assert (b.offsetX == 2);
     assert (b == a.mirrored());
+
+    Mask topOfBasher = Mask([
+        "NNNNNNNN" "NNNN....",
+        "NNNNNNNN" "NNNNNN..",
+        "#XXXXXXX" "XXXXXXX.",
+        "XXXXXXXX" "XXXXXXXX"]);
+    Mask topOfBasherLeft = Mask([
+        "....NNNN" "NNNNNNNN",
+        "..NNNNNN" "NNNNNNNN",
+        ".XXXXXXX" "XXXXXX#X",
+        "XXXXXXXX" "XXXXXXXX"]);
+    assert (topOfBasherLeft == topOfBasher.mirrored());
 
     assert (masks[TerrainChange.Type.implode].mirrored
         !=  masks[TerrainChange.Type.implode]);
