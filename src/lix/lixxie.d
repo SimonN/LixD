@@ -599,17 +599,17 @@ void become(bool manualAssignment = false)(in Ac newAc)
     assert (_job);
     auto oldJob = _job;
     auto newJob = Job.factory(this, newAc);
-
-    if (ac != newJob.ac)
+    immutable yesBecome = newJob.callBecomeAfterAssignment
+                          || ! manualAssignment;
+    if (ac != newJob.ac && yesBecome) {
         _job.onBecomingSomethingElse();
-
-    static if (manualAssignment)
+    }
+    static if (manualAssignment) {
         // while Lix still has old performed ac
         newJob.onManualAssignment();
-
-    if (newJob.callBecomeAfterAssignment || ! manualAssignment) {
+    }
+    if (yesBecome) {
         newJob.onBecome();
-
         if (_job is oldJob) {
             // if onBecome() calls become() again, only let the last change
             // through into Lixxie's data. Ignore the intermediate _job.
