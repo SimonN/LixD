@@ -7,7 +7,8 @@ struct TerrainChange {
 
     enum Type {
         build,
-        platform,
+        platformLong,
+        platformShort,
         cube,
 
         implode,

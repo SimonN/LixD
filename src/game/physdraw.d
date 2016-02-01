@@ -176,7 +176,7 @@ private:
     FlaggedChange[] _addsForLand;
 
     enum buiY  = 0;
-    enum cubeY = 2 * lix.enums.brickYl;
+    enum cubeY = 3 * lix.enums.brickYl;
     enum remY  = cubeY + Cuber.cubeSize;
  	enum remYl = 32;
     enum ploY  = remY + remYl;
@@ -215,15 +215,18 @@ private:
 
     mixin template AdditionsDefs() {
         immutable build = (tc.type == TerrainChange.Type.build);
-        immutable platf = (tc.type == TerrainChange.Type.platform);
-        immutable yl    = (build || platf) ? lix.enums.brickYl : tc.yl;
-        immutable y     = build ? 0
-                        : platf ? lix.enums.brickYl
-                        :         cubeY + Cuber.cubeSize - yl;
-        immutable xl    = build ? lix.enums.builderBrickXl
-                        : platf ? lix.enums.platformerBrickXl
-                        :         Cuber.cubeSize;
-        immutable x     = xl * tc.style;
+        immutable plaLo = (tc.type == TerrainChange.Type.platformLong);
+        immutable plaSh = (tc.type == TerrainChange.Type.platformShort);
+        immutable yl = (build || plaLo || plaSh) ? lix.enums.brickYl : tc.yl;
+        immutable y  = build ? 0
+                     : plaLo ? 1 * lix.enums.brickYl
+                     : plaSh ? 2 * lix.enums.brickYl
+                     : cubeY + Cuber.cubeSize - yl;
+        immutable xl = build ? lix.enums.builderBrickXl
+                     : plaLo ? lix.enums.platformLongXl
+                     : plaSh ? lix.enums.platformShortXl
+                     :         Cuber.cubeSize;
+        immutable x  = xl * tc.style;
     }
 
     void assertCalledEachUpdate(TerrainChange[] arr)
@@ -479,7 +482,8 @@ private:
         // Otherwise, create the mask to blit nice sprites on the land
         displayStartupMessage("Creating physics mask...");
 
-        assert (builderBrickXl >= platformerBrickXl);
+        assert (builderBrickXl >= platformLongXl);
+        assert (builderBrickXl >= platformShortXl);
         _mask = albitCreate(0x100, 0x80);
         assert (_mask, "couldn't create mask bitmap");
 
@@ -537,7 +541,11 @@ private:
                 al_get_pixel(recol, recolXl - 3, y),
                 al_get_pixel(recol, recolXl - 2, y),
                 al_get_pixel(recol, recolXl - 1, y));
-            drawBrick(i * platformerBrickXl, brickYl, platformerBrickXl,
+            drawBrick(i * platformLongXl, brickYl, platformLongXl,
+                al_get_pixel(recol, recolXl - 3, y),
+                al_get_pixel(recol, recolXl - 2, y),
+                al_get_pixel(recol, recolXl - 1, y));
+            drawBrick(i * platformShortXl, 2 * brickYl, platformShortXl,
                 al_get_pixel(recol, recolXl - 3, y),
                 al_get_pixel(recol, recolXl - 2, y),
                 al_get_pixel(recol, recolXl - 1, y));
@@ -580,6 +588,8 @@ private:
         // imploder, exploder
         drawSwing(implodeX, ploY, Type.implode);
         drawSwing(explodeX, ploY, Type.explode);
+
+        al_save_bitmap("a.png", _mask);
     }
 
 }

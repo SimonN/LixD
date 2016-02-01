@@ -1,12 +1,22 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.12
+------
+
+2016-02-02
+
+Platformer should behave as in C++ Lix now: The first brick is 8 pixels long,
+all bricks while kneeling are 6 pixels long.
+
 0.2.11
 ------
 
 2016-02-01
 
 Fixed left-facing bashers, they now ignore steel in the top 2 hi-res pixels.
+
+Floater assignments don't cancel the builder queue anymore.
 
 0.2.10
 ------

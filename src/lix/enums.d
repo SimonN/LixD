@@ -11,9 +11,10 @@ enum int eyOffset = 26; // sprite from the top left corner
 enum int skillInfinity  = -1;
 enum int skillNumberMax = 999;
 
-enum int builderBrickXl    = 12;
-enum int platformerBrickXl = 8;
-enum int brickYl           = 2;
+enum int builderBrickXl  = 12;
+enum int platformLongXl  = 8; // first brick
+enum int platformShortXl = 6; // all bricks laid down while kneeling
+enum int brickYl         = 2;
 
 enum UpdateOrder {
     peaceful, // Least priority -- cannot affect other lix. Updated last.

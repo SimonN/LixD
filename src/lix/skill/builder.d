@@ -281,11 +281,12 @@ class Platformer : BrickCounter {
 
         TerrainChange tc;
         tc.update = outsideWorld.state.update;
-        tc.type   = TerrainChange.Type.platform;
+        tc.type   = firstCycle ? TerrainChange.Type.platformLong
+                               : TerrainChange.Type.platformShort;
         tc.style  = style;
         tc.y      = firstCycle ? ey : ey + 2;
-        tc.x      = firstCycle ? (facingRight ? ex     : ex -  6)
-                               : (facingRight ? ex + 4 : ex - 10);
+        tc.x      = firstCycle ? (facingRight ? ex     : ex - 6)
+                               : (facingRight ? ex + 4 : ex - 8);
         outsideWorld.physicsDrawer.add(tc);
     }
 
