@@ -13,6 +13,7 @@ module basics.mainloop;
 import core.memory;
 
 import basics.alleg5;
+import editor.editor;
 import game.core.game;
 import file.log; // logging uncaught Exceptions
 import hardware.display;
@@ -68,7 +69,8 @@ private:
     OptionsMenu optionsMenu;
     MenuAskName askName;
 
-    Game game;
+    Game   game;
+    Editor editor;
 
 
 
@@ -78,6 +80,10 @@ kill()
     if (game) {
         destroy(game);
         game = null;
+    }
+    if (editor) {
+        destroy(editor);
+        editor = null;
     }
     if (mainMenu) {
         gui.rmElder(mainMenu);
@@ -158,6 +164,11 @@ calc()
             kill();
             game = new Game(Runmode.INTERACTIVE, lv, fn, rp);
         }
+        else if (browSin && browSin.gotoEditor) {
+            auto fn = browSin.fileRecent;
+            kill();
+            editor = new Editor(fn);
+        }
         else if (brow.gotoMainMenu) {
             kill();
             mainMenu = new MainMenu;
@@ -193,6 +204,14 @@ calc()
             }
         }
     }
+    else if (editor) {
+        editor.calc();
+        if (editor.gotoMainMenu) {
+            kill();
+            browSin = new BrowserSingle();
+            gui.addElder(browSin);
+        }
+    }
     else {
         // program has just started, nothing exists yet
         if (basics.globconf.userName.length) {
@@ -216,6 +235,8 @@ draw()
     // are therefore supervised by module gui.root.
     if (game)
         game.draw();
+    if (editor)
+        editor.draw();
     gui.draw();
     if (! askName)
         hardware.mousecur.draw();
