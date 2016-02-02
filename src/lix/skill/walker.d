@@ -31,21 +31,29 @@ class Walker : Job {
 
     override void onManualAssignment()
     {
+        // In general: Since we have callBecomeAfterAssignment == false,
+        // if we decide to become walker after all, we have to set our frame
+        // manually.
         if (lixxie.ac == Ac.walker
          || lixxie.ac == Ac.runner
          || lixxie.ac == Ac.lander) {
             turn();
-            // frame should be set to -1 by the implementation
+            lixxie.frame = -1;
         }
         else if (lixxie.ac == Ac.stunner
               || lixxie.ac == Ac.ascender) {
             // priority allows to get here only when the frame is high enough
             become(Ac.walker);
             turn();
+            lixxie.frame =-1;
         }
         else if (lixxie.ac == Ac.blocker) {
             if (lixxie.frame < 20)
-                lixxie.frame = 20; // not 21 since ! callBecomeAfterAssignment
+                // Setting the frame to 21 copies a bug from C++ Lix. There
+                // is a frame in the spritesheet (1st of blocker->walker anim)
+                // that is not shown at all. The fast resolution of the blocker
+                // isn't problematic though. We'll keep it as in C++ for now.
+                lixxie.frame = 21;
             else
                 // during the blocker->walker transistion, allow turning
                 // by a second walker assignment
@@ -63,9 +71,11 @@ class Walker : Job {
         else if (lixxie.ac == Ac.shrugger || lixxie.ac == Ac.shrugger2) {
             become(Ac.walker);
             turn();
+            lixxie.frame = -1;
         }
         else {
             become(Ac.walker);
+            lixxie.frame = -1;
         }
     }
 

@@ -1,6 +1,18 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.13
+------
+
+2016-02-02
+
+Blocker -> walker: removed 1 frame of the anim, to mimick C++ behavior.
+There is an entire unused frame now in the blocker->walker anim now.
+
+Most things -> walker: Added a stand-still walker frame.
+
+Floater y speed should match C++ floater.
+
 0.2.12
 ------
 
