@@ -588,8 +588,6 @@ private:
         // imploder, exploder
         drawSwing(implodeX, ploY, Type.implode);
         drawSwing(explodeX, ploY, Type.explode);
-
-        al_save_bitmap("a.png", _mask);
     }
 
 }
