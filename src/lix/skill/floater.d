@@ -26,8 +26,6 @@ class Floater : Job {
         abilityToFloat = true;
     }
 
-
-
     override void onBecome()
     {
         if (lixxie.ac == Ac.faller) {
@@ -43,21 +41,41 @@ class Floater : Job {
         }
     }
 
-
-
     override void perform()
     {
-        if (isLastFrame) frame = 9;
-        else             advanceFrame();
+        adjustFrame();
+        adjustSpeed();
+        move();
+    }
 
-        enum int[] spd = [16, 10, 6, 2, 0, 0, 2, 4];
-        speedY = (frame < 2)       ? min(speedY, spd[frame])
-               : (frame < spd.len) ? spd[frame]
-               : speedY;
+private:
 
+    void adjustFrame()
+    {
+        if (isLastFrame)
+            frame = 9;
+        else
+            advanceFrame();
+    }
+
+    void adjustSpeed()
+    {
+        switch (frame) {
+            case 0: break;
+            case 1: speedY = speedY > 10 ? 10 : 6; break;
+            case 2: speedY = 6; break;
+            case 3: speedY = 2; break;
+            case 4:
+            case 5: speedY = 0; break;
+            case 6: speedY = 2; break;
+            default: speedY = 4; break;
+        }
         if (speedX > 0 && frame > 1)
             speedX = even(speedX - 2);
+    }
 
+    void move()
+    {
         // The following code is a little like BallisticFlyer.collision().
         // I don't dare to use that code for floaters too. It's already very
         // complicated and many of its corner cases don't apply to floaters.
@@ -86,5 +104,4 @@ class Floater : Job {
         moveAhead(speedX);
         moveDown (speedY - wallHitMovedDownY);
     }
-    // end perform()
 }
