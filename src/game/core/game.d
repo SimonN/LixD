@@ -21,6 +21,7 @@ import file.filename;
 
 import game.core.calc;
 import game.core.draw;
+import game.core.scrstart;
 import game.gui.gamewin;
 import game.model.nurse;
 import game.gui.panel;
@@ -196,6 +197,7 @@ private:
         if (runmode == Runmode.INTERACTIVE) {
             map = new Map(cs.land, Geom.screenXls.to!int,
                                   (Geom.screenYls - Geom.panelYls).to!int);
+            this.centerCameraOnHatchAverage();
             pan = new Panel;
             gui.addElder(pan);
             pan.setLikeTribe(tribeLocal);

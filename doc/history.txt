@@ -1,6 +1,15 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.14
+------
+
+2016-02-03
+
+Culled the per-level option to set a custom screen starting position.
+The game centers on the average position of all hatches. This accounts
+for arbitrary distributions of hatches on tori.
+
 0.2.13
 ------
 
