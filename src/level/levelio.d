@@ -110,31 +110,18 @@ private void load_from_vector(Level level, in IoLine[] lines)
 
     // set an integer
     case '#':
-        if      (text1 == glo.levelStartX ) {
-            startManual = true;
-            startX      = nr1;
-        }
-        else if (text1 == glo.levelStartY ) {
-            startManual = true;
-            startY      = nr1;
-        }
-        else if (text1 == glo.levelSizeX       ) xl           = nr1;
+        if      (text1 == glo.levelSizeX       ) xl           = nr1;
         else if (text1 == glo.levelSizeY       ) yl           = nr1;
         else if (text1 == glo.levelTorusX      ) torusX       = nr1 > 0;
         else if (text1 == glo.levelTorusY      ) torusY       = nr1 > 0;
-        else if (text1 == glo.levelBackgroundRed       ) bgRed        = nr1;
-        else if (text1 == glo.levelBackgroundGreen     ) bgGreen      = nr1;
-        else if (text1 == glo.levelBackgroundBlue      ) bgBlue       = nr1;
-        else if (text1 == glo.levelSeconds      ) seconds       = nr1;
-        else if (text1 == glo.levelInitial      ) initial       = nr1;
-        else if (text1 == glo.levelRequired     ) required      = nr1;
+        else if (text1 == glo.levelBackgroundRed  ) bgRed     = nr1;
+        else if (text1 == glo.levelBackgroundGreen) bgGreen   = nr1;
+        else if (text1 == glo.levelBackgroundBlue ) bgBlue    = nr1;
+        else if (text1 == glo.levelSeconds      ) seconds     = nr1;
+        else if (text1 == glo.levelInitial      ) initial     = nr1;
+        else if (text1 == glo.levelRequired     ) required    = nr1;
         else if (text1 == glo.levelSpawnintSlow) spawnintSlow = nr1;
         else if (text1 == glo.levelSpawnintFast) spawnintFast = nr1;
-
-        else if (text1 == glo.levelCountNeutralsOnly)
-                                             countNeutralsOnly = nr1 > 0;
-        else if (text1 == glo.levelTransferSkills)
-                                             transferSkills     = nr1 > 0;
 
         // legacy support
         else if (text1 == glo.levelInitialLegacy) initial      = nr1;
@@ -235,9 +222,6 @@ private void load_level_finalize(Level level)
         bgGreen = clamp(bgGreen, 0, 255);
         bgBlue  = clamp(bgBlue,  0, 255);
 
-        if (torusX) startX = positiveMod(startX, xl);
-        if (torusY) startY = positiveMod(startY, yl);
-
         // Only allow one type of im/exploder.
         if (skills[Ac.exploder2] != 0)
             skills[Ac.exploder] = 0;
@@ -311,15 +295,11 @@ public void saveToFile(const(Level) l, std.stdio.File file)
         file.writeln();
     }
 
-    file.writeln(IoLine.Hash(glo.levelSizeX,  l.xl));
-    file.writeln(IoLine.Hash(glo.levelSizeY,  l.yl));
+    file.writeln(IoLine.Hash(glo.levelSizeX, l.xl));
+    file.writeln(IoLine.Hash(glo.levelSizeY, l.yl));
     if (l.torusX || l.torusY) {
         file.writeln(IoLine.Hash(glo.levelTorusX, l.torusX));
         file.writeln(IoLine.Hash(glo.levelTorusY, l.torusY));
-    }
-    if (l.startManual) {
-        file.writeln(IoLine.Hash(glo.levelStartX, l.startX));
-        file.writeln(IoLine.Hash(glo.levelStartY, l.startY));
     }
     if (l.bgRed != 0 || l.bgGreen != 0 || l.bgBlue != 0) {
         file.writeln(IoLine.Hash(glo.levelBackgroundRed,   l.bgRed  ));
@@ -333,8 +313,6 @@ public void saveToFile(const(Level) l, std.stdio.File file)
     file.writeln(IoLine.Hash(glo.levelRequired,      l.required));
     file.writeln(IoLine.Hash(glo.levelSpawnintSlow, l.spawnintSlow));
     file.writeln(IoLine.Hash(glo.levelSpawnintFast, l.spawnintFast));
-//  file.writeln(IoLine.Hash(glo.levelCountNeutralsOnly, l.countNeutralsOnly));
-//  file.writeln(IoLine.Hash(glo.levelTransferSkills,     l.transferSkills));
 
     bool atLeastOneSkillWritten = false;
     foreach (Ac sk, const int nr; l.skills.byKeyValue) {

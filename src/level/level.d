@@ -84,9 +84,6 @@ public:
     bool torusX;
     bool torusY;
 
-    bool startManual; // if not set, ignore startX and startY.
-    int  startX;      // startManual is set in the level file by providing
-    int  startY;      // at least either startX or startY in the file.
     int  bgRed;
     int  bgGreen;
     int  bgBlue;
@@ -99,9 +96,6 @@ public:
 
     bool nukeDelayed; // true == nuke button triggers overtime if any
     Ac   nukeSkill;   // NOTHING == use most appropriate exploder
-
-    bool countNeutralsOnly;
-    bool transferSkills;
 
     Enumap!(Ac, int) skills;
 
@@ -208,9 +202,6 @@ opEquals(Object rhs_obj) const
         || this.yl           != rhs.yl
         || this.torusX       != rhs.torusX
         || this.torusY       != rhs.torusY
-        || this.startManual  != rhs.startManual
-        || ( this.startX     != rhs.startX && rhs.startManual)
-        || ( this.startY     != rhs.startY && rhs.startManual)
         || this.bgRed        != rhs.bgRed
         || this.bgGreen      != rhs.bgGreen
         || this.bgBlue       != rhs.bgBlue
@@ -223,9 +214,6 @@ opEquals(Object rhs_obj) const
 
         || this.nukeDelayed  != rhs.nukeDelayed
         || this.nukeSkill    != rhs.nukeSkill
-
-        || this.countNeutralsOnly != rhs.countNeutralsOnly
-        || this.transferSkills    != rhs.transferSkills
     ) {
         return false;
     }

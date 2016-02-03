@@ -58,8 +58,8 @@ immutable cfgServerPort              = "SERVER_PORT";
 // keys for saving/loading level files
 immutable levelBuilt                  = "BUILT";
 immutable levelAuthor                 = "AUTHOR";
-immutable levelNameGerman            = "GERMAN";
-immutable levelNameEnglish           = "ENGLISH";
+immutable levelNameGerman             = "GERMAN";
+immutable levelNameEnglish            = "ENGLISH";
 immutable levelTutorialGerman         = "TUTORIAL_GERMAN";
 immutable levelTutorialEnglish        = "TUTORIAL_ENGLISH";
 immutable levelHintGerman             = "HINT_GERMAN";
@@ -68,8 +68,6 @@ immutable levelSizeX                  = "SIZE_X";
 immutable levelSizeY                  = "SIZE_Y";
 immutable levelTorusX                 = "TORUS_X";
 immutable levelTorusY                 = "TORUS_Y";
-immutable levelStartX                 = "START_X";
-immutable levelStartY                 = "START_Y";
 immutable levelBackgroundRed          = "BACKGROUND_RED";
 immutable levelBackgroundGreen        = "BACKGROUND_GREEN";
 immutable levelBackgroundBlue         = "BACKGROUND_BLUE";
@@ -80,8 +78,6 @@ immutable levelRequired               = "REQUIRED";
 immutable levelSpawnintSlow           = "SPAWN_INTERVAL";
 immutable levelSpawnintFast           = "SPAWN_INTERVAL_FAST";
 immutable levelRateLegacy             = "RATE"; // backwards compatibility
-immutable levelCountNeutralsOnly      = "COUNT_NEUTRALS_ONLY";
-immutable levelTransferSkills         = "TRANSFER_SKILLS";
 
 // keys for loading objdef files, customization of interactive objects
 immutable tileDefType                 = "TYPE";
