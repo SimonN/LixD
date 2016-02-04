@@ -1,6 +1,14 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.15
+------
+
+2016-02-04
+
+Slightly simplified the keyboard code. I don't believe this fixes Nepster's
+stuck keys, but it might be worthwhile to ask Nepster nonetheless about it.
+
 0.2.14
 ------
 

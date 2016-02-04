@@ -97,7 +97,7 @@ void calc()
         }
         else if (event.type == ALLEGRO_EVENT_KEY_CHAR) {
             immutable int c = event.keyboard.unichar;
-            if (c >= 0x20    // ignore nonprintable ASCII
+            if (c >= 0x20    // ignore nonprintable ASCII control chars < 0x20
              && c != 0x7F) { // ignore the delete character
                 char[] buf;
                 std.utf.encode(buf, event.keyboard.unichar);
@@ -111,9 +111,9 @@ void calc()
     }
     for (int i = 0; i < _hold.length; ++i) {
         // when the key is still held from last time, hold[i] > 0 right now
-        if      (_hold[i] > 0 && _rlsd[i]) _hold[i] = 0;
-        else if (_once[i])                 _hold[i] = 1;
-        else if (_hold[i] > 0)             _hold[i] += 1;
+        if      (_rlsd[i])     _hold[i] = 0;
+        else if (_once[i])     _hold[i] = 1;
+        else if (_hold[i] > 0) _hold[i] += 1;
     }
     _ctrl  = _hold[ALLEGRO_KEY_LCTRL]  || _hold[ALLEGRO_KEY_RCTRL];
     _shift = _hold[ALLEGRO_KEY_LSHIFT] || _hold[ALLEGRO_KEY_RSHIFT];
