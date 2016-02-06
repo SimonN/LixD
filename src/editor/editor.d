@@ -8,6 +8,7 @@ import editor.calc;
 import editor.draw;
 import editor.io;
 import file.filename;
+import graphic.map;
 import level.level;
 
 class Editor {
@@ -25,5 +26,6 @@ package:
 
     Filename _loadedFrom;
     Level    _level;
+    Map      _map;
 
 }

@@ -12,7 +12,11 @@ class BrowserSingle : BrowserCalledFromMainMenu {
 
 public:
 
-    @property bool gotoEditor() const { return _gotoEditor; }
+    @property bool gotoEditor() const
+    {
+        assert (fileRecent !is null);
+        return _gotoEditor;
+    }
 
     this()
     {

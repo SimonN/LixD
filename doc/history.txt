@@ -1,6 +1,14 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.16
+------
+
+2016-02-06
+
+Started the editor. It displays terrain and can be exited.
+There is much to do still with terrain handling, dark, and no-overwrite.
+
 0.2.15
 ------
 

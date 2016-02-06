@@ -103,19 +103,25 @@ private:
 
 public:
 
-this(in Torbit like_this, in int a_cameraXl, in int a_cameraYl)
+this(in int  a_xl, in int  a_yl,
+     in bool a_tx, in bool a_ty,
+     in int a_cameraXl, in int a_cameraYl)
 {
-    assert (like_this);
     assert (a_cameraXl > 0);
     assert (a_cameraYl > 0);
-
-    super(like_this.xl, like_this.yl, like_this.torusX, like_this.torusY);
+    super(a_xl, a_yl, a_tx, a_ty);
     _cameraXl = a_cameraXl;
     _cameraYl = a_cameraYl;
     _zoom = 1;
-
     cameraX  = _cameraXl / 2;
     cameraY  = _cameraYl / 2;
+}
+
+this(in Torbit like_this, in int a_cameraXl, in int a_cameraYl)
+{
+    assert (like_this);
+    this(like_this.xl, like_this.yl, like_this.torusX, like_this.torusY,
+        a_cameraXl, a_cameraYl);
 }
 
 
