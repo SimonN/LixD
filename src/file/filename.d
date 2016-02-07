@@ -54,7 +54,7 @@ private:
     immutable string _dirRootless;
     immutable string _dirInnermost;
 
-    immutable char _preExtension;
+    immutable char _preExtension = 0;
 
 
 

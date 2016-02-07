@@ -18,8 +18,8 @@ import game.model.state;
 import game.tribe;
 import graphic.gadget;
 import graphic.torbit;
-import level.level;
-import level.tile;
+import tile.pos;
+import tile.gadtile;
 import hardware.sound;
 
 public alias Water     = PermanentlyOpen;
@@ -35,7 +35,7 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
     Update wasFedDuringUpdate;
     const(int) idleAnimLength;
 
-    this(const(Topology) top, in ref Pos levelpos)
+    this(const(Topology) top, in ref GadPos levelpos)
     {
         super(top, levelpos);
         idleAnimLength = delegate() {
@@ -119,14 +119,6 @@ private:
 }
 // end class GadgetAnimsOnFeed
 
-
-
-// ############################################################################
-// ############################################################################
-// ############################################################################
-
-
-
 private class PermanentlyOpen : GadgetAnimsOnFeed {
 
     mixin (StandardGadgetCtor);
@@ -143,7 +135,7 @@ private class PermanentlyOpen : GadgetAnimsOnFeed {
 
     override @property Sound sound()
     {
-        return tile.type != TileType.WATER ? Sound.NOTHING // perm. flinger
+        return tile.type != GadType.WATER ? Sound.NOTHING // perm. flinger
              : tile.subtype == 0           ? Sound.WATER
              :                               Sound.FIRE;
     }

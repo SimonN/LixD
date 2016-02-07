@@ -16,7 +16,7 @@ import std.algorithm.iteration;
 import basics.help; // clone(T[]), a deep copy for arrays
 import basics.nettypes;
 import basics.topology;
-import game.phymap;
+import tile.phymap;
 import game.tribe;
 import game.replay;
 import graphic.torbit;

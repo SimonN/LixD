@@ -12,7 +12,7 @@ import graphic.cutbit;
 import graphic.gadget;
 import graphic.internal;
 import graphic.torbit;
-import level.level;
+import tile.pos;
 import lix.enums;
 
 /* owners are always drawn onto the goal, unless the owner is GARDEN.
@@ -21,7 +21,7 @@ import lix.enums;
 
 class Goal : GadgetWithTribeList {
 
-    this(const(Topology) top, in ref Pos levelpos) { super(top, levelpos); }
+    this(const(Topology) top, in ref GadPos levelpos) { super(top, levelpos); }
     this(in Goal rhs) { super(rhs); }
 
     override Goal clone() const { return new Goal(this); }

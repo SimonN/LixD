@@ -5,8 +5,9 @@ module level.levelio;
  * are in separate files of this package.
  */
 
-import std.stdio;
 import std.algorithm;
+import std.stdio;
+import std.string;
 
 static import glo = basics.globals;
 
@@ -17,9 +18,11 @@ import file.io;
 import file.log;
 import file.search; // test if file exists
 import level.level;
-import level.tile;
-import level.tilelib;
 import lix.enums;
+import tile.pos;
+import tile.gadtile;
+import tile.terrain;
+import tile.tilelib;
 
 // private FileFormat get_file_format(in Filename);
 
@@ -89,9 +92,7 @@ private void hint(ref string[] into, in string what)
 
 
 
-private void load_from_vector(Level level, in IoLine[] lines)
-{
-    with (level)
+private void load_from_vector(Level level, in IoLine[] lines) { with (level)
 {
     foreach (line; lines) with (line) switch (type) {
     // set a string
@@ -156,20 +157,15 @@ private void load_from_vector(Level level, in IoLine[] lines)
     auto zero_date = new Date("0");
     if (built != zero_date && built < new Date("2009-08-23 00:00:00")) {
         // DTODOCOMPILERUPDATE
-        // pos[TileType.TERRAIN].reverse();
+        // pos[GadType.TERRAIN].reverse();
     }
     if (built != zero_date && built < new Date("2011-01-08 00:00:00"))
         foreach (Ac ac, ref int nr; skills.byKeyValue)
             if (nr == 100)
                 nr = lix.enums.skillInfinity;
-}
-// end with
+}}
 
-}
-// end function load_from_vector
-
-
-
+// this gets called with the raw data, it's a factory
 private void add_object_from_ascii_line(
     Level     level,
     in string text1,
@@ -177,28 +173,32 @@ private void add_object_from_ascii_line(
     in int    nr2,
     in string text2
 ) {
-    const(Tile) ob = get_tile(text1);
-    if (ob && ob.cb) {
-        Pos newpos = Pos(ob);
+    const(TerrainTile) ter = get_terrain(text1);
+    const(GadgetTile)  gad = ter is null ? get_gadget (text1) : null;
+    if (ter && ter.cb) {
+        TerPos newpos = TerPos(ter);
         newpos.x  = nr1;
         newpos.y  = nr2;
-        if (ob.type == TileType.TERRAIN)
-         foreach (char c; text2) switch (c) {
+        foreach (char c; text2) switch (c) {
             case 'f': newpos.mirr = ! newpos.mirr;         break;
             case 'r': newpos.rot  =  (newpos.rot + 1) % 4; break;
             case 'd': newpos.dark = ! newpos.dark;         break;
             case 'n': newpos.noow = ! newpos.noow;         break;
             default: break;
         }
-        else if (ob.type == TileType.HATCH)
-         foreach (char c; text2) switch (c) {
-            case 'r': newpos.rot  = !newpos.rot; break;
-            default: break;
-        }
-        level.pos[ob.type] ~= newpos;
+        level.terrain ~= newpos;
     }
-    // image doesn't exist
-    // record a missing image in the logfile
+    else if (gad && gad.cb) {
+        GadPos newpos = GadPos(gad);
+        newpos.x  = nr1;
+        newpos.y  = nr2;
+        if (gad.type == GadType.HATCH)
+            foreach (char c; text2) switch (c) {
+                case 'r': newpos.hatchRot = ! newpos.hatchRot; break;
+                default: break;
+            }
+        level.pos[gad.type] ~= newpos;
+    }
     else {
         level._status = LevelStatus.BAD_IMAGE;
         logf("Missing image `%s'", text1);
@@ -236,9 +236,9 @@ private void load_level_finalize(Level level)
                 count += nr;
             if (count == 0)
                 _status = LevelStatus.BAD_EMPTY;
-            else if (pos[TileType.HATCH] == null)
+            else if (pos[GadType.HATCH] == null)
                 _status = LevelStatus.BAD_HATCH;
-            else if (pos[TileType.GOAL ] == null)
+            else if (pos[GadType.GOAL ] == null)
                 _status = LevelStatus.BAD_GOAL;
         }
     }
@@ -325,21 +325,15 @@ public void saveToFile(const(Level) l, std.stdio.File file)
         file.writeln(IoLine.Hash(acToString(sk), nr));
     }
 
-    void saveOneTileVector(in Pos[] vec)
+    void saveOneTileVector(T)(in T[] vec)
     {
         if (vec != null)
             file.writeln();
-        foreach (ref const(Pos) pos; vec)
+        foreach (ref const(T) pos; vec)
             if (auto ioLine = pos.toIoLine())
                 if (ioLine.text1 != null)
                     file.writeln(ioLine);
     }
-
-    // print all special objects, then print all terrain.
-    foreach (ref const(Pos[]) vec; l.pos) {
-        if (vec is l.pos[TileType.TERRAIN]) continue;
-        saveOneTileVector(vec);
-    }
-    saveOneTileVector(l.pos[TileType.TERRAIN]);
-
+    l.pos.each!(posvec => saveOneTileVector!GadPos(posvec));
+    saveOneTileVector!TerPos(l.terrain);
 }

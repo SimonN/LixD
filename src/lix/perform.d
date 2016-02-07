@@ -4,7 +4,7 @@ import std.algorithm; // find
 import std.conv;
 import std.math; // sqrt
 
-import game.phymap;
+import tile.phymap;
 import game.tribe;
 import graphic.gadget;
 import hardware.sound;

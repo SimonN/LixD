@@ -12,7 +12,7 @@ module graphic.gadget.gadget;
  * The editor will use Gadgets for all Tiles, and not call upon the more
  * sophisticated animation functions which the gameplay uses.
  *
- * DTODO: We're introducing a ton of special cases for TileType.HATCH here.
+ * DTODO: We're introducing a ton of special cases for GadType.HATCH here.
  * Consider making a subclass for that.
  */
 
@@ -21,19 +21,22 @@ import std.conv;
 import basics.help;
 import basics.nettypes;
 import basics.topology;
-import game.phymap;
 import game.model.state;
 import graphic.cutbit;
 import graphic.color;
 import graphic.graphic;
 import graphic.gadget;
 import graphic.torbit;
-import level.level;
-import level.tile;
+import tile.phymap;
+import tile.pos;
+import tile.gadtile;
 import hardware.sound;
 
 package immutable string StandardGadgetCtor =
-    "this(const(Topology) top, in ref Pos levelpos) { super(top, levelpos); }";
+    "this(const(Topology) top, in ref GadPos levelpos)
+    {
+        super(top, levelpos);
+    }";
 
 
 
@@ -41,37 +44,21 @@ class Gadget : Graphic {
 
 public:
 
-    const(Tile) tile;
-    const(int)  animationLength;
-
-    bool        drawWithEditorInfo;
+    const(GadgetTile) tile;
+    const(int) animationLength;
+    bool       drawWithEditorInfo;
 
     // override these if necessary
     protected void drawGameExtras(Torbit, in GameState) const { }
     protected void drawEditorInfo(Torbit) const { }
 
     // hatch should override this
-    Pos toPos() const { return Pos(tile, x, y); }
+    GadPos toPos() const { return GadPos(tile, x, y); }
 
     @property Sound sound() { return Sound.NOTHING; }
 
-/*  static Gadget factory(in Torbit, in ref level.level.Pos);
- *  static Gadget this(in Gadget);
- */
-
-/*  @property int selboxX()  const;
- *  @property int selboxY()  const;
- *  @property int selboxXl() const;
- *  @property int selboxYl() const;
- *
- *  void animateForUpdate(Update update);
- *
- *  final void draw();
- *  final void draw_lookup(Phymap);
- */
-
 // protected: use the factory to generate gadgets of the correct subclass
-protected this(const(Topology) top, in ref Pos levelpos)
+protected this(const(Topology) top, in ref GadPos levelpos)
 in {
     assert (levelpos.ob, "we shouldn't make gadgets from missing tiles");
     assert (levelpos.ob.cb, "we shouldn't make gadgets from bad tiles");
@@ -119,22 +106,20 @@ invariant()
 
 
 static Gadget
-factory(const(Topology) top, in ref Pos levelpos)
+factory(const(Topology) top, in ref GadPos levelpos)
 {
     assert (levelpos.ob);
     final switch (levelpos.ob.type) {
-        case TileType.TERRAIN: return new Gadget  (top, levelpos);
-        case TileType.DECO:    return new Gadget  (top, levelpos);
-        case TileType.HATCH:   return new Hatch   (top, levelpos);
-        case TileType.GOAL:    return new Goal    (top, levelpos);
-        case TileType.TRAP:    return new TrapTrig(top, levelpos);
-        case TileType.WATER:   return new Water   (top, levelpos);
-        case TileType.FLING:
+        case GadType.DECO:    return new Gadget  (top, levelpos);
+        case GadType.HATCH:   return new Hatch   (top, levelpos);
+        case GadType.GOAL:    return new Goal    (top, levelpos);
+        case GadType.TRAP:    return new TrapTrig(top, levelpos);
+        case GadType.WATER:   return new Water   (top, levelpos);
+        case GadType.FLING:
             if (levelpos.ob.subtype & 2) return new FlingTrig(top, levelpos);
             else                         return new FlingPerm(top, levelpos);
-        case TileType.EMPTY:
-        case TileType.MAX:
-            assert (false, "TileType isn't supported by Gadget.factory");
+        case GadType.MAX:
+            assert (false, "GadType isn't supported by Gadget.factory");
     }
 }
 
@@ -156,9 +141,8 @@ selboxX() const
         edge = (edge == 1 ? 3 : edge == 3 ? 1 : edge);
 
     // Most gadgets can't be rotated or mirrored. Even hatches have a separate
-    // field for that now. However, editor terrain is still realized with a
-    // base Gadget instantiation.
-    assert (tile.type != TileType.TERRAIN || edge == 0,
+    // field for that now.
+    assert (edge == 0,
         "only editor terrain may be rotated and mirrored, not ingame gadgets");
 
     switch (edge) {
@@ -178,7 +162,7 @@ selboxY() const
     int edge = rotation.to!int;
     if (mirror)
         edge = (edge == 0 ? 2 : edge == 2 ? 0 : edge);
-    assert (tile.type != TileType.TERRAIN || edge == 0,
+    assert (edge == 0,
         "only editor terrain may be rotated and mirrored, not ingame gadgets");
     switch (edge) {
         case 0: return tile.selboxY;
@@ -224,11 +208,11 @@ draw(Torbit mutableGround, in GameState state = null) const
         drawEditorInfo(mutableGround);
 
         // now draw trigger area on top
-        if (tile.type == TileType.GOAL
-         || tile.type == TileType.HATCH
-         || tile.type == TileType.TRAP
-         || tile.type == TileType.WATER
-         || tile.type == TileType.FLING
+        if (tile.type == GadType.GOAL
+         || tile.type == GadType.HATCH
+         || tile.type == GadType.TRAP
+         || tile.type == GadType.WATER
+         || tile.type == GadType.FLING
         )
             mutableGround.drawRectangle(x + tile.triggerX,
                                         y + tile.triggerY,
@@ -244,17 +228,15 @@ final void drawLookup(Phymap lk) const
     assert (tile);
     Phybitset phyb = 0;
     final switch (tile.type) {
-        case TileType.EMPTY:
-        case TileType.TERRAIN:
-        case TileType.HATCH:
-        case TileType.DECO:
-        case TileType.MAX: return;
+        case GadType.HATCH:
+        case GadType.DECO:
+        case GadType.MAX: return;
 
-        case TileType.GOAL:   phyb = Phybit.goal; break;
-        case TileType.TRAP:   phyb = Phybit.trap; break;
-        case TileType.WATER:  phyb = tile.subtype == 0 ? Phybit.water
+        case GadType.GOAL:   phyb = Phybit.goal; break;
+        case GadType.TRAP:   phyb = Phybit.trap; break;
+        case GadType.WATER:  phyb = tile.subtype == 0 ? Phybit.water
                                                        : Phybit.fire; break;
-        case TileType.FLING:  phyb = Phybit.fling; break;
+        case GadType.FLING:  phyb = Phybit.fling; break;
     }
     lk.rect!(Phymap.add)(x + tile.triggerX, y + tile.triggerY,
                              tile.triggerXl,    tile.triggerYl, phyb);

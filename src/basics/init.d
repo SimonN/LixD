@@ -15,7 +15,7 @@ import graphic.internal;
 import gui;
 import hardware.display;
 import hardware.mouse;
-import level.tilelib;
+import tile.tilelib;
 import lix;
 
 static import file.log;
@@ -55,7 +55,7 @@ void initialize(in Cmdargs cmdargs)
 
     if (ia) hardware.mousecur.initialize();
     if (ia) gui.initialize();
-            level.tilelib.initialize();
+            tile.tilelib.initialize();
     // comment this back in once we've built enet dynamically
     // DerelictENet.load();
 }

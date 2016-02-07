@@ -113,8 +113,6 @@ this(Cutbit cb)
 
 }
 
-
-
 this(Albit bit, const bool cut = true)
 {
     bitmap = bit;
@@ -132,8 +130,6 @@ this(Albit bit, const bool cut = true)
     }
 }
 
-
-
 this(const Filename fn, const bool cut = true)
 {
     // Try loading the file. If not found, don't crash, but make a log entry.
@@ -143,16 +139,14 @@ this(const Filename fn, const bool cut = true)
     this(bitmap, cut);
 }
 
-
-
 this(Albit[] manybits)
 {
     assert (false, "this(Albit[] many bitmaps) not yet implemented");
 }
 
+~this() { dispose(); }
 
-
-~this()
+void dispose()
 {
     if (bitmap) {
         al_destroy_bitmap(bitmap);
@@ -160,32 +154,10 @@ this(Albit[] manybits)
     }
 }
 
-
-
-invariant()
-{
-    if (bitmap) {
-        assert (al_get_bitmap_width (cast (Albit) bitmap) >= _xl);
-        assert (al_get_bitmap_height(cast (Albit) bitmap) >= _yl);
-        assert (_existingFrames !is null);
-    }
-    else {
-        assert (_xl == 0);
-        assert (_yl == 0);
-        assert (_xfs == 0);
-        assert (_yfs == 0);
-        assert (_existingFrames is null);
-    }
-}
-
-
-
 bool opEquals(const Cutbit rhs) const
 {
     return bitmap == rhs.bitmap;
 }
-
-
 
 private void cutBitmap()
 {

@@ -29,7 +29,7 @@ import basics.alleg5;
 import basics.cmdargs;
 import basics.help;
 import basics.nettypes;
-import game.phymap;
+import tile.phymap;
 import game.mask;
 import game.terchang;
 import graphic.color;
@@ -107,7 +107,7 @@ class PhysicsDrawer {
 
     // The single public function for any drawing to the land.
     // Should be understandable from the many asserts, otherwise ask me.
-    // You should know what a lookup map is (class Phymap from game.phymap).
+    // You should know what a lookup map is (class Phymap from tile.phymap).
     // _land is the torus bitmap onto which we draw the terrain, but this
     // is never queried for physics -- that's what the lookup map is for.
     // in Update upd: Pass current update of the game to this.

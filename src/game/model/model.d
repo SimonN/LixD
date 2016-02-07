@@ -14,7 +14,7 @@ import basics.nettypes;
 import hardware.tharsis;
 import game.effect;
 import game.physdraw;
-import game.phymap;
+import tile.phymap;
 import game.replay;
 import game.tribe;
 import game.model.state;

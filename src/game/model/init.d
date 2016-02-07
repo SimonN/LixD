@@ -11,10 +11,10 @@ import game.core.game;
 import game.model.state;
 import game.replay;
 import game.effect;
-import game.phymap;
+import tile.phymap;
 import game.tribe;
 import level.level;
-import level.tile;
+import tile.gadtile;
 import lix;
 
 package:
@@ -65,7 +65,7 @@ void preparePlayers(GameState state, in Level level)
 void prepareGadgets(GameState state, in Level level)
 {
     assert (state.lookup);
-    void gadgetsFromPos(T)(ref T[] gadgetVec, TileType tileType)
+    void gadgetsFromPos(T)(ref T[] gadgetVec, GadType tileType)
     {
         foreach (ref pos; level.pos[tileType]) {
             gadgetVec ~= cast (T) Gadget.factory(state.lookup, pos);
@@ -73,12 +73,12 @@ void prepareGadgets(GameState state, in Level level)
             // don't draw to the lookup map yet, we may remove some goals first
         }
     }
-    gadgetsFromPos(state.hatches,  TileType.HATCH);
-    gadgetsFromPos(state.goals,    TileType.GOAL);
-    gadgetsFromPos(state.decos,    TileType.DECO);
-    gadgetsFromPos(state.traps,    TileType.TRAP);
-    gadgetsFromPos(state.waters,   TileType.WATER);
-    gadgetsFromPos(state.flingers, TileType.FLING);
+    gadgetsFromPos(state.hatches,  GadType.HATCH);
+    gadgetsFromPos(state.goals,    GadType.GOAL);
+    gadgetsFromPos(state.decos,    GadType.DECO);
+    gadgetsFromPos(state.traps,    GadType.TRAP);
+    gadgetsFromPos(state.waters,   GadType.WATER);
+    gadgetsFromPos(state.flingers, GadType.FLING);
 }
 
 void assignTribesToGoals(GameState state) { with (state)

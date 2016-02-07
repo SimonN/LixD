@@ -8,7 +8,7 @@ import basics.matrix;
 import basics.topology;
 import basics.user; // multipleBuilders
 import game.mask;
-import game.phymap;
+import tile.phymap;
 import graphic.color;
 import graphic.gadget;
 import graphic.graphic;

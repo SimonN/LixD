@@ -13,8 +13,8 @@ import graphic.gadget;
 import graphic.internal;
 import graphic.torbit;
 import hardware.sound;
-import level.level;
-import level.tile;
+import tile.gadtile;
+import tile.pos;
 import lix.enums;
 
 class Hatch : Gadget {
@@ -35,10 +35,10 @@ public:
     immutable bool spawnFacingLeft;
     Style blinkStyle = Style.garden; // if left at garden, then don't blink
 
-    this(const(Topology) top, in ref Pos levelpos)
+    this(const(Topology) top, in ref GadPos levelpos)
     {
         super(top, levelpos);
-        spawnFacingLeft = levelpos.rot != 0;
+        spawnFacingLeft = levelpos.hatchRot;
         while (this.frameExists(_xFramesOpen, 0))
             ++_xFramesOpen;
     }
@@ -55,10 +55,10 @@ public:
 
     override Hatch clone() const { return new Hatch(this); }
 
-    override Pos toPos() const
+    override GadPos toPos() const
     {
-        Pos levelpos = super.toPos();
-        levelpos.rot = spawnFacingLeft;
+        GadPos levelpos = super.toPos();
+        levelpos.hatchRot = spawnFacingLeft;
         return levelpos;
     }
 

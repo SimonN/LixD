@@ -8,13 +8,14 @@ import file.date;
 import file.io; // IoLine for Pos; all other I/O is in module level.levelio
 import file.filename;
 import file.language;
-import game.phymap;
+import tile.phymap;
 import graphic.color;
 import graphic.torbit;
 import level.levelio;
 import level.levdraw;
-import level.tile;
-import level.tilelib : get_filename;
+import tile.pos;
+import tile.gadtile;
+import tile.tilelib : get_filename;
 import lix.enums;
 
 enum LevelStatus {
@@ -32,31 +33,6 @@ enum FileFormat {
     BINARY,
     LEMMINI
 }
-
-// Pos is a single instance of a Tile in the level. A Tile can thus appear
-// many times in a level, differently rotated.
-struct Pos {
-    const(Tile) ob;
-    int  x;
-    int  y;
-    bool mirr; // mirror vertically
-    int  rot;  // rotate tile? 0 = normal, 1, 2, 3 = turned counter-clockwise
-    bool dark; // Terrain loeschen anstatt neues malen
-    bool noow; // Nicht ueberzeichnen?
-
-    IoLine toIoLine() const
-    {
-        string filename = ob ? get_filename(ob) : null;
-        string modifiers;
-        if (mirr) modifiers ~= 'f';
-        foreach (r; 0 .. rot) modifiers ~= 'r';
-        if (dark) modifiers ~= 'd';
-        if (noow) modifiers ~= 'n';
-        return IoLine.Colon(filename, x, y, modifiers);
-    }
-}
-
-
 
 class Level {
 
@@ -99,8 +75,9 @@ public:
 
     Enumap!(Ac, int) skills;
 
-    Pos[][TileType.MAX] pos; // one array Pos[] for each TileType,
-                             // indexed by integers, not by TileType enum vals
+    TerPos[] terrain;
+    GadPos[][GadType.MAX] pos; // one array GadPos[] for each GadType,
+                               // indexed by integers, not by GadType enum vals
 /*  this();
  *  this(in Filename);
  *

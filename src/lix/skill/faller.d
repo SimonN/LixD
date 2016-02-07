@@ -3,7 +3,7 @@ module lix.skill.faller;
 import std.algorithm; // min
 
 import lix;
-import game.phymap;
+import tile.phymap;
 
 class Faller : Job {
 

@@ -1,7 +1,15 @@
-module game.phymap;
+module tile.phymap;
 
 /* A lookup table for quick land/steel detection and backwards correspondence
  * of playfield positions to interactive objects.
+ *
+ * Two uses of this class:
+ *  a) game uses it to look up physics.
+ *  b) terrain/steel uses a small one, from which a) is generated.
+ *
+ * But watchout: Water/fire/flingers/exits/hatches etc. don't use a physicsmap
+ * to specify their trigger areas! The map in a) is composed from the tile
+ * definitions, not from the physicsmap in the tile.
  *
  * Right now, this doesn't store pointers to objects. Thus, it can be checked
  * whether there is fire or water or steel at a given position, but it cannot

@@ -4,7 +4,7 @@ import basics.alleg5;
 import editor.editor;
 import graphic.color;
 import hardware.display;
-import level.tile;
+import tile.gadtile;
 
 package:
 
@@ -22,11 +22,6 @@ void drawToMap(Editor editor) {
 {
     _map.clear_screen_rectangle(color.makecol(
         _level.bgRed, _level.bgGreen, _level.bgBlue));
-    foreach (pos; _level.pos[TileType.TERRAIN]) {
-        import graphic.gadget; // move this to where the model is held
-        Gadget g = Gadget.factory(_map, pos);
-        g.draw(_map, null);
-    }
 }}
 
 void drawToScreen(Editor editor) {
