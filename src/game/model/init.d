@@ -79,7 +79,6 @@ void prepareGadgets(GameState state, in Level level)
     gadgetsFromPos(state.traps,    TileType.TRAP);
     gadgetsFromPos(state.waters,   TileType.WATER);
     gadgetsFromPos(state.flingers, TileType.FLING);
-    gadgetsFromPos(state.trampos,  TileType.TRAMPO);
 }
 
 void assignTribesToGoals(GameState state) { with (state)

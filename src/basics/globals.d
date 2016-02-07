@@ -103,7 +103,6 @@ immutable tileDefTypeTrap             = "TRAP";
 immutable tileDefTypeWater            = "WATER";
 immutable tileDefTypeFire             = "FIRE";
 immutable tileDefTypeFling            = "FLING";
-immutable tileDefTypeTrampoline       = "TRAMPOLINE";
 
 // keys for saving/loading replays
 immutable replayGameVersionRequired   = "GAME_VERSION_REQUIRED";

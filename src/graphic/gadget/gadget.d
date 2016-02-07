@@ -129,7 +129,6 @@ factory(const(Topology) top, in ref Pos levelpos)
         case TileType.GOAL:    return new Goal    (top, levelpos);
         case TileType.TRAP:    return new TrapTrig(top, levelpos);
         case TileType.WATER:   return new Water   (top, levelpos);
-        case TileType.TRAMPO:  return new Trampo  (top, levelpos);
         case TileType.FLING:
             if (levelpos.ob.subtype & 2) return new FlingTrig(top, levelpos);
             else                         return new FlingPerm(top, levelpos);
@@ -230,7 +229,6 @@ draw(Torbit mutableGround, in GameState state = null) const
          || tile.type == TileType.TRAP
          || tile.type == TileType.WATER
          || tile.type == TileType.FLING
-         || tile.type == TileType.TRAMPO
         )
             mutableGround.drawRectangle(x + tile.triggerX,
                                         y + tile.triggerY,
@@ -257,7 +255,6 @@ final void drawLookup(Phymap lk) const
         case TileType.WATER:  phyb = tile.subtype == 0 ? Phybit.water
                                                        : Phybit.fire; break;
         case TileType.FLING:  phyb = Phybit.fling; break;
-        case TileType.TRAMPO: phyb = Phybit.trampo; break;
     }
     lk.rect!(Phymap.add)(x + tile.triggerX, y + tile.triggerY,
                              tile.triggerXl,    tile.triggerYl, phyb);

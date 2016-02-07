@@ -5,7 +5,6 @@ import std.format; // assert errors
 import std.math; // abs
 
 import basics.help;
-import game.phymap; // trampoline phybit
 import lix;
 
 abstract class BallisticFlyer : Job {
@@ -178,7 +177,6 @@ private:
             landOnFloor();
             return Collision.resetEncounters;
         }
-
         // Stepping up a step we jumped onto
         if (lowest_floor != -999
             && ac == Ac.jumper
@@ -188,7 +186,6 @@ private:
             become(Ac.ascender);
             return Collision.resetEncounters;
         }
-
         // bump head into ceilings
         if ((behind_count > 0 && speedY < 2)
             || (wall(-12) && ! wall_count_t && speedY < 0)
@@ -204,18 +201,12 @@ private:
             if (isSolid(0, 1)) return Collision.resetPosition;
             else               return Collision.stopMovement;
         }
-
         // Jumping against a wall
         if (wall_count_t)
             return onHittingWall();
-
-        if (speedY > 0 && (footEncounters & Phybit.trampo))
-            // Trampolines stop motion, a bit kludgy
-            return Collision.stopMovement;
         return Collision.nothing;
     }
     // end collision()
-
 }
 
 

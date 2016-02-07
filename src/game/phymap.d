@@ -29,7 +29,6 @@ enum  Phybit    : Phybitset {
     water   = 0x0080,
     trap    = 0x0100,
     fling   = 0x0200,
-    trampo  = 0x0400,
     all     = 0x7FFF,
 }
 
@@ -223,7 +222,7 @@ class Phymap : Topology {
             immutable int red   = get(x, y, Phybit.terrain);
             immutable int green = get(x, y, Phybit.steel);
             immutable int blue  = get(x, y, Phybit.goal | Phybit.fire
-                | Phybit.water | Phybit.trap | Phybit.fling | Phybit.trampo);
+                           | Phybit.water | Phybit.trap | Phybit.fling);
             al_put_pixel(x, y, AlCol(red, blue, green, 1));
         }
         al_save_bitmap(fn.rootfulZ, outputBitmap);

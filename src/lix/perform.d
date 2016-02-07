@@ -23,7 +23,6 @@ package void performUseGadgets(Lixxie l)
     l.useWater();
     l.useNonconstantTraps();
     l.useFlingers();
-    l.useTrampos();
     l.useGoals();
 }
 
@@ -73,54 +72,6 @@ void useFlingers(Lixxie lixxie) { with (lixxie)
     // call this function once more; it may have been called by the game's
     // update-all-lixes function, but we don't want to wait until next turn
     Tumbler.applyFlingXY(lixxie);
-}}
-
-void useTrampos(Lixxie lixxie) { with (lixxie)
-{
-    int bounceBackY(in float pixelsFallen)
-    {
-        return (-0.5f - 2 * sqrt(1.0f + pixelsFallen)).floor.to!int;
-    }
-
-    if (! (bodyEncounters & Phybit.trampo)
-        || ! healthy
-        || ac != Ac.faller && ac != Ac.jumper && ac != Ac.tumbler
-        // in particular, floaters pass through trampos unhindered
-    )
-        return;
-    foreach (Trampo tp; outsideWorld.state.trampos) {
-        if (! inTriggerArea(tp))
-            continue;
-        tp.feed(outsideWorld.state.update, outsideWorld.tribeID);
-        enum minAccelY = -6;
-        if (ac == Ac.faller) {
-            Faller faller = cast (Faller) job;
-            assert (faller);
-            addFling(4 * dir, min(minAccelY, bounceBackY(faller.pixelsFallen)),
-                false); // false == not from same tribe
-            Tumbler.applyFlingXY(lixxie);
-        }
-        else {
-            assert (ac == Ac.jumper || ac == Ac.tumbler);
-            BallisticFlyer bf = cast (BallisticFlyer) job;
-            assert (bf);
-            if (bf.speedY <= 0)
-                continue;
-            bf.speedX = max(bf.speedX, 4);
-            if (bf.speedY <= 12)
-                bf.speedY = min(minAccelY, - bf.speedY - 1);
-            else {
-                int approxFallenDistance
-                    // at more than speedY == 12, we accelerate slower
-                    = ((bf.speedY-2) * (bf.speedY-1) - 37) / 2;
-                assert (approxFallenDistance > 0);
-                bf.speedY = bounceBackY(approxFallenDistance);
-                assert (bf.speedY < minAccelY);
-            }
-            // DTODOSKILLS: choose frame, but not like so, that ignored runner:
-            // if (l.get_ac() == LixEn::JUMPER) l.set_frame(5);
-        }
-    }
 }}
 
 

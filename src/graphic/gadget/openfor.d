@@ -3,7 +3,6 @@ module graphic.gadget.openfor;
 /* GadgetAnimsOnFeed : Gadget      has the method isOpenFor(Tribe).
  * Water       : GadgetAnimsOnFeed is a permanent trap, water or fire.
  * Triggerable : GadgetAnimsOnFeed is a cooldown trap or cooldown flinger.
- * Trampoline  : GadgetAnimsOnFeed is permanently active, anims on trigger.
  *
  * GadgetAnimsOnFeed allows for two different rows of animation: The first row
  * is played back once whenever a lix enters the gadget. The second row is
@@ -151,18 +150,3 @@ private class PermanentlyOpen : GadgetAnimsOnFeed {
 
 }
 // end class PermanentAnim
-
-
-
-class Trampo : GadgetAnimsOnFeed {
-
-    mixin (StandardGadgetCtor);
-
-    override Trampo clone() const { return new Trampo(this);}
-    this(in Trampo rhs) { super(rhs); }
-
-    // trampolines are always active, even if they animate only on demand
-    override bool isOpenFor(in Update, in int) const { return true; }
-
-}
-// end class Trampoline

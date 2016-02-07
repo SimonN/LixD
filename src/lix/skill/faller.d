@@ -35,15 +35,8 @@ class Faller : Job {
     perform()
     {
         int ySpeedThisFrame = 0;
-
         for ( ; ySpeedThisFrame <= ySpeed; ++ySpeedThisFrame) {
-            if (footEncounters & Phybit.trampo) {
-                // Stop falling, so the trampoline can be used.
-                // It's a bit kludgy, we can't do such a thing for gadgets
-                // that fling, since the gadget might be nonconstant.
-                break;
-            }
-            else if (isSolid(0, ySpeedThisFrame + 2)) {
+            if (isSolid(0, ySpeedThisFrame + 2)) {
                 moveDown(ySpeedThisFrame);
                 pixelsFallen += ySpeedThisFrame;
 
@@ -68,7 +61,7 @@ class Faller : Job {
         // and still be in the air.
 
         // Because of the loop condition, ySpeedThisFrame will be
-        // 1 greater than ySpeed in the non-trampoline cases. Remedy that.
+        // 1 greater than ySpeed. Remedy that.
         ySpeedThisFrame = min(ySpeedThisFrame, ySpeed);
 
         moveDown(ySpeedThisFrame);

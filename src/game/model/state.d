@@ -40,7 +40,6 @@ class GameState {
     Water[] waters;
     TrapTrig[] traps;
     Flinger[] flingers;
-    Trampo[] trampos;
 
     Torbit land;
     Phymap lookup;
@@ -53,7 +52,7 @@ class GameState {
 
     void foreachGadget(void delegate(Gadget) func)
     {
-        chain(hatches, goals, decos, waters, traps, flingers, trampos)
+        chain(hatches, goals, decos, waters, traps, flingers)
             .each!func;
     }
     // It's sad that I need the duplication of this function, but inout
@@ -66,7 +65,6 @@ class GameState {
         foreach (g; waters) func(g);
         foreach (g; traps) func(g);
         foreach (g; flingers) func(g);
-        foreach (g; trampos) func(g);
     }
 
     @property bool multiplayer() const
@@ -95,7 +93,6 @@ class GameState {
         waters   = rhs.waters  .clone;
         traps    = rhs.traps   .clone;
         flingers = rhs.flingers.clone;
-        trampos  = rhs.trampos .clone;
     }
 
     this(in GameState rhs)
