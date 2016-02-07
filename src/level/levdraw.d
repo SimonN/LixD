@@ -38,7 +38,9 @@ private void drawPosGadget(in GadPos po, Torbit ground)
 
 private void drawPosTerrain(in TerPos po, Torbit ground, Phymap lookup)
 {
+    assert (po.ob);
     const(Cutbit) cb = po.ob.cb;
+    assert (cb);
     cb.draw(ground, po.x, po.y, po.mirr, po.rot,
           po.noow ? Cutbit.Mode.NOOW
         : po.dark ? Cutbit.Mode.DARK
@@ -46,29 +48,26 @@ private void drawPosTerrain(in TerPos po, Torbit ground, Phymap lookup)
     if (! lookup)
         return;
     // The lookup map could contain additional info about trigger areas,
-    // but drawPos[Terrain] doesn't draw those onto the lookup map. That's done
+    // but drawPosGadget doesn't draw those onto the lookup map. That's done
     // by the game class.
-    Graphic tempgra = new Graphic(cb, ground); // won't draw this
-    scope (exit)
-        destroy(tempgra);
-    tempgra.rotation = po.rot;
-    tempgra.mirror   = po.mirr;
-    auto lock = LockReadOnly(cb.albit);
-    foreach (int y; po.y .. (po.y + tempgra.yl))
-        foreach (int x; po.x .. (po.x + tempgra.xl)) {
-            if (tempgra.get_pixel(x - po.x, y - po.y) == color.transp)
+    immutable xl = (po.rot & 1) ? po.ob.cb.yl : po.ob.cb.xl;
+    immutable yl = (po.rot & 1) ? po.ob.cb.xl : po.ob.cb.yl;
+    foreach (int y; po.y .. (po.y + yl))
+        foreach (int x; po.x .. (po.x + xl)) {
+            immutable bits = po.ob.getPhybitsXYRotMirr(
+                x - po.x, y - po.y, po.rot, po.mirr);
+            if (! bits)
                 continue;
-            immutable material = Phybit.terrain | (po.ob.steel * Phybit.steel);
             if (po.noow) {
                 if (! lookup.get(x, y, Phybit.terrain))
-                    lookup.add(x, y, material);
+                    lookup.add(x, y, bits);
             }
             else if (po.dark)
                 lookup.rm(x, y, Phybit.terrain | Phybit.steel);
             else {
-                lookup.add(x, y, material);
+                lookup.add(x, y, bits);
                 if (! po.ob.steel)
-                    lookup.rm (x, y, Phybit.steel);
+                    lookup.rm(x, y, Phybit.steel);
             }
         }
 }
