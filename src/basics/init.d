@@ -62,6 +62,7 @@ void initialize(in Cmdargs cmdargs)
 
 void deinitialize()
 {
+    hardware.tharsis.deinitialize();
     basics.user.save();
     basics.globconf.save();
 }
