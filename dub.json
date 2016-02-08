@@ -28,18 +28,15 @@
     ],
 
     "lflags-windows": ["-L/subsystem:windows"],
-
     "buildRequirements": ["disallowDeprecations"],
-
     "buildTypes": {
         "debug": {
             "buildOptions": ["debugMode", "debugInfo"],
             "versions": ["tharsisprofiling"],
         },
         "profile": {
-            "buildOptions": ["profile", "optimize", "inline", "debugInfo"],
+            "buildOptions": ["optimize", "inline", "releaseMode"],
             "versions": ["tharsisprofiling"],
         },
     },
-
 }

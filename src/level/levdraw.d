@@ -1,11 +1,15 @@
 module level.levdraw;
 
+import std.conv;
+import std.string; // format tharsis zone name
+
 import basics.alleg5;
 import file.filename;
 import graphic.color;
 import graphic.cutbit;
 import graphic.graphic;
 import graphic.torbit;
+import hardware.tharsis;
 import level.level;
 import tile.gadtile;
 import tile.phymap;
@@ -41,35 +45,39 @@ private void drawPosTerrain(in TerPos po, Torbit ground, Phymap lookup)
     assert (po.ob);
     const(Cutbit) cb = po.ob.cb;
     assert (cb);
-    cb.draw(ground, po.x, po.y, po.mirr, po.rot,
-          po.noow ? Cutbit.Mode.NOOW
-        : po.dark ? Cutbit.Mode.DARK
-        :           Cutbit.Mode.NORMAL);
+    Cutbit.Mode mode = po.noow ? Cutbit.Mode.NOOW
+                     : po.dark ? Cutbit.Mode.DARK
+                     :           Cutbit.Mode.NORMAL;
+    with (Zone(profiler, "Level.drawPos to VRAM " ~ mode.to!string)) {
+        cb.draw(ground, po.x, po.y, po.mirr, po.rot, mode);
+    }
     if (! lookup)
         return;
-    // The lookup map could contain additional info about trigger areas,
-    // but drawPosGadget doesn't draw those onto the lookup map. That's done
-    // by the game class.
-    immutable xl = (po.rot & 1) ? po.ob.cb.yl : po.ob.cb.xl;
-    immutable yl = (po.rot & 1) ? po.ob.cb.xl : po.ob.cb.yl;
-    foreach (int y; po.y .. (po.y + yl))
-        foreach (int x; po.x .. (po.x + xl)) {
-            immutable bits = po.ob.getPhybitsXYRotMirr(
-                x - po.x, y - po.y, po.rot, po.mirr);
-            if (! bits)
-                continue;
-            if (po.noow) {
-                if (! lookup.get(x, y, Phybit.terrain))
+    with (Zone(profiler, "Level.drawPos to RAM " ~ mode.to!string)) {
+        // The lookup map could contain additional info about trigger areas,
+        // but drawPosGadget doesn't draw those onto the lookup map.
+        // That's done by the game class.
+        immutable xl = (po.rot & 1) ? po.ob.cb.yl : po.ob.cb.xl;
+        immutable yl = (po.rot & 1) ? po.ob.cb.xl : po.ob.cb.yl;
+        foreach (int y; po.y .. (po.y + yl))
+            foreach (int x; po.x .. (po.x + xl)) {
+                immutable bits = po.ob.getPhybitsXYRotMirr(
+                    x - po.x, y - po.y, po.rot, po.mirr);
+                if (! bits)
+                    continue;
+                if (po.noow) {
+                    if (! lookup.get(x, y, Phybit.terrain))
+                        lookup.add(x, y, bits);
+                }
+                else if (po.dark)
+                    lookup.rm(x, y, Phybit.terrain | Phybit.steel);
+                else {
                     lookup.add(x, y, bits);
+                    if (! po.ob.steel)
+                        lookup.rm(x, y, Phybit.steel);
+                }
             }
-            else if (po.dark)
-                lookup.rm(x, y, Phybit.terrain | Phybit.steel);
-            else {
-                lookup.add(x, y, bits);
-                if (! po.ob.steel)
-                    lookup.rm(x, y, Phybit.steel);
-            }
-        }
+    }
 }
 
 
