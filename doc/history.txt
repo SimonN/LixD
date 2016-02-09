@@ -1,6 +1,24 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.17
+------
+
+2016-02-09
+
+Tiles are loaded differently, depending on whether they're terrain or gadgets.
+Terrain tiles are loaded with an extra physics map, and a white copy of
+themselves for fast dark-drawing.
+
+I don't think this speeds up the creation of the physics mask, I'm still pretty
+slow with that. This vastly speeds up the creation of the level preview image
+and the VRAM level bitmap. There is profiling by RAM/VRAM and by drawing mode
+of the tiles.
+
+Fixed an assert fail in the file listings used by the browser.
+
+Culled the trampolines.
+
 0.2.16
 ------
 
