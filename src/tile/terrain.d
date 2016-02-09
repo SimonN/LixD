@@ -10,6 +10,7 @@ module tile.terrain;
 import basics.alleg5;
 import graphic.cutbit;
 import graphic.color;
+import hardware.tharsis;
 import tile.phymap;
 import tile.platonic;
 
@@ -17,14 +18,16 @@ class TerrainTile : Platonic {
 private:
     Phymap _phymap;
     bool   _steel;
+    Cutbit _dark; // same transparent pixels, but all nontransp are full white
 
 public:
-    @property bool steel() const { return _steel; }
-
     static typeof(this) takeOverCutbit(Cutbit aCb, bool aSteel = false)
     {
         return new typeof(this)(aCb, aSteel);
     }
+
+    @property bool          steel() const { return _steel; }
+    @property const(Cutbit) dark()  const { return _dark; }
 
     // Input: Where you want to draw on the map, in relation to tile's 0, 0.
     // Output: The solid/nonsolid bits there of the rotated/mirrored tile
@@ -55,6 +58,7 @@ protected:
         super(aCb);
         _steel = aSteel;
         makePhymapFindSelbox();
+        makeDarkVersion();
     }
 
 private:
@@ -62,6 +66,7 @@ private:
     {
         assert (! _phymap);
         assert (cb);
+        auto zone = Zone(profiler, "Terrain.makePhymapFindSelbox");
         _phymap = new Phymap(cb.xl, cb.yl);
         immutable Phybitset bits = Phybit.terrain | (steel ? Phybit.steel : 0);
         with (LockReadOnly(cb.albit)) {
@@ -71,5 +76,20 @@ private:
                     if (cb.get_pixel(x, y) != color.transp)
                         _phymap.add(x, y, bits);
         }
+    }
+
+    void makeDarkVersion()
+    {
+        assert (! _dark);
+        assert (cb);
+        assert (_phymap);
+        auto zone = Zone(profiler, "Terrain.makeDarkVersion");
+        _dark = new Cutbit(albitCreate(_phymap.xl, _phymap.yl), false);
+        with (LockWriteOnly(_dark.albit))
+            with (DrawingTarget(_dark.albit))
+                foreach (y; 0 .. _phymap.yl)
+                    foreach (x; 0 .. _phymap.xl)
+                        al_put_pixel(x, y, _phymap.get(x,y)
+                            ? color.white : color.transp);
     }
 }

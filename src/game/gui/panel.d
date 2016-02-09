@@ -222,6 +222,7 @@ private void setSpeedTo(in int a)
 protected override void
 calcSelf()
 {
+    assert (!!pause && !!speedBack && !!speedAhead && !!speedFast);
     if (pause.execute) {
         setSpeedTo(pause.on ? 1 : 0);
     }

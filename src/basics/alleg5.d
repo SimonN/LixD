@@ -140,7 +140,11 @@ Blender BlenderMinus()
         ALLEGRO_BLEND_MODE.ALLEGRO_ONE); // ...from the target
 }
 
-struct LockReadWrite
+alias LockReadWrite = LockTemplate!(ALLEGRO_LOCK_READWRITE);
+alias LockReadOnly  = LockTemplate!(ALLEGRO_LOCK_READONLY);
+alias LockWriteOnly = LockTemplate!(ALLEGRO_LOCK_WRITEONLY);
+
+struct LockTemplate(alias flags)
 {
     Albit albit;
     ALLEGRO_LOCKED_REGION* region;
@@ -148,44 +152,16 @@ struct LockReadWrite
     this(Albit b)
     {
         assert (b !is null, "can't lock a null bitmap");
-        with (Zone(profiler, "al_lock_bitmap() readwrite")) {
-            albit = b;
-            region = al_lock_bitmap(albit,
-                ALLEGRO_PIXEL_FORMAT.ALLEGRO_PIXEL_FORMAT_ANY,
-                ALLEGRO_LOCK_READWRITE);
-            assert (region, "error locking a bitmap, even though not null");
-        }
-    }
-
-    ~this()
-    {
-        if (albit)
-            with (Zone(profiler, "al_unlock_bitmap() readwrite"))
-                al_unlock_bitmap(albit);
-    }
-    @disable this();
-    @disable this(this);
-}
-
-struct LockReadOnly
-{
-    const(Albit) albit;
-    ALLEGRO_LOCKED_REGION* region;
-
-    this(const(Albit) b)
-    {
-        assert (b !is null, "can't lock a null bitmap");
         albit = b;
-        region = al_lock_bitmap(cast (Albit) albit,
-            ALLEGRO_PIXEL_FORMAT.ALLEGRO_PIXEL_FORMAT_ANY,
-            ALLEGRO_LOCK_READONLY);
-        assert (region, "error locking const(Albit), even though not null");
+        region = al_lock_bitmap(albit,
+            ALLEGRO_PIXEL_FORMAT.ALLEGRO_PIXEL_FORMAT_ANY, flags);
+        assert (region, "error locking a bitmap, even though not null");
     }
 
     ~this()
     {
         if (albit)
-            al_unlock_bitmap(cast (Albit) albit);
+            al_unlock_bitmap(albit);
     }
     @disable this();
     @disable this(this);

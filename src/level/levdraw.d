@@ -43,7 +43,7 @@ private void drawPosGadget(in GadPos po, Torbit ground)
 private void drawPosTerrain(in TerPos po, Torbit ground, Phymap lookup)
 {
     assert (po.ob);
-    const(Cutbit) cb = po.ob.cb;
+    const(Cutbit) cb = po.dark ? po.ob.dark : po.ob.cb;
     assert (cb);
     Cutbit.Mode mode = po.noow ? Cutbit.Mode.NOOW
                      : po.dark ? Cutbit.Mode.DARK
