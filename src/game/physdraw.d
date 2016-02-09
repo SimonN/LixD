@@ -330,17 +330,7 @@ private:
         auto zone = Zone(profiler, format("PhysDraw del land %dx",
             processThese.len));
 
-        // Terrain-removing masks are drawn with an opaque white pixel
-        // (alpha = 1.0) where a deletion should occur on the land, and
-        // transparent (alpha = 0.0) where no deletion should happen.
-        // Therefore, choose a nonstandard blender that does:
-        // target is opaque => deduct source alpha
-        // target is transp => leave as-is, can't deduct any more alpha anyway
-        with (Blender(
-            ALLEGRO_BLEND_OPERATIONS.ALLEGRO_DEST_MINUS_SRC,
-            ALLEGRO_BLEND_MODE.ALLEGRO_ONE, // subtract all of the source...
-            ALLEGRO_BLEND_MODE.ALLEGRO_ONE) // ...from the target
-        ) {
+        with (BlenderMinus) {
             al_hold_bitmap_drawing(true);
             scope (exit)
                 al_hold_bitmap_drawing(false);

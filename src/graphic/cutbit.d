@@ -360,10 +360,10 @@ void draw(
 
     case Mode.DARK:
     case Mode.DARK_EDITOR:
-        // the Torbit will know what to lock for best speed, so we have
-        // moved the implementation there. Here, we only choose the color.
-        targetTorbit.drawDarkFrom(cast (Albit) bitmap, x, y, mirr, rot,
-            mode == Mode.DARK ? color.transp : color.guiSha);
+        with (BlenderMinus) {
+            // Can't choose a color right now. Unimplemented for drawing speed.
+            targetTorbit.drawFrom(cast (Albit) bitmap, x, y, mirr, rot);
+        }
         break;
 
     case Mode.NOOW: {

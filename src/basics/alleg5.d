@@ -97,10 +97,14 @@ struct DrawingTarget
         if (oldTarget)
             al_set_target_bitmap(oldTarget);
     }
+    @disable this();
+    @disable this(this);
 }
 
 struct Blender
 {
+    @disable this();
+    @disable this(this);
     private alias Bo = ALLEGRO_BLEND_OPERATIONS;
     private alias Bm = ALLEGRO_BLEND_MODE;
 
@@ -121,6 +125,19 @@ struct Blender
                        ALLEGRO_BLEND_MODE.ALLEGRO_ONE,
                        ALLEGRO_BLEND_MODE.ALLEGRO_INVERSE_ALPHA);
     }
+}
+
+Blender BlenderMinus()
+{
+    // Basher/miner/digger masks are realized with opaque white
+    // (alpha = 1.0) where a deletion should occur on the land, and
+    // transparent (alpha = 0.0) where no deletion should happen.
+    // Therefore, choose a nonstandard blender that does:
+    // target is opaque => deduct source alpha
+    // target is transp => leave as-is, can't deduct any more alpha anyway
+    return Blender(ALLEGRO_BLEND_OPERATIONS.ALLEGRO_DEST_MINUS_SRC,
+        ALLEGRO_BLEND_MODE.ALLEGRO_ONE, // subtract all of the source...
+        ALLEGRO_BLEND_MODE.ALLEGRO_ONE); // ...from the target
 }
 
 struct LockReadWrite
@@ -146,7 +163,8 @@ struct LockReadWrite
             with (Zone(profiler, "al_unlock_bitmap() readwrite"))
                 al_unlock_bitmap(albit);
     }
-
+    @disable this();
+    @disable this(this);
 }
 
 struct LockReadOnly
@@ -169,6 +187,8 @@ struct LockReadOnly
         if (albit)
             al_unlock_bitmap(cast (Albit) albit);
     }
+    @disable this();
+    @disable this(this);
 }
 
 // ############################################################################
