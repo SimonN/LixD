@@ -57,8 +57,11 @@ class ListFile : Frame {
     @property inout(Filename) currentDir()  inout { return _currentDir;  }
     @property inout(Filename) currentFile() inout
     out (ret) {
-        assert (ret is null || ret.isChildOf(_currentDir));
-        assert (ret != _currentDir);
+        assert (ret is null || ret.isChildOf(_currentDir),
+            "`%s' not child of `%s'".format(ret.rootful, _currentDir.rootful));
+        assert (ret != _currentDir,
+            "When no file is selected, currentFile should return null. "
+            "Under no circumstances, currentFile should be the current dir.");
     }
     body {
         return _currentFile;
@@ -329,6 +332,8 @@ private:
                         _buttonLastClicked = buttons[i];
                         _buttonLastClicked.on = true;
                     }
+        if (! _buttonLastClicked)
+            _currentFile = null;
     }
     // end method loadCurrentDir
 }
