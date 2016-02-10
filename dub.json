@@ -17,7 +17,6 @@
     },
 
     "libs": [
-        "allegro",
         "allegro_acodec",
         "allegro_audio",
         "allegro_font",
