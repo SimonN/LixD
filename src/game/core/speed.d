@@ -10,11 +10,14 @@ package:
 
 void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
 {
-    void upd(in int howmany = 1)
+    void upd(bool duringTurbo = false)(in int howmany = 1)
     {
         game.putUndispatchedAssignmentsIntoReplay();
         game.putNetworkDataIntoReplay();
-        nurse.updateTo(Update(nurse.upd + howmany));
+        static if (duringTurbo)
+            nurse.updateToDuringTurbo(Update(nurse.upd + howmany));
+        else
+            nurse.updateTo(Update(nurse.upd + howmany));
         game.setLastUpdateToNow();
     }
 
@@ -58,7 +61,7 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
                 upd();
         }
         else if (pan.speedFast.xf == Panel.frameTurbo)
-            upd(updatesDuringTurbo);
+            upd!true(updatesDuringTurbo);
         else
             upd();
     }

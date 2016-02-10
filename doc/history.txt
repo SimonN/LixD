@@ -1,6 +1,14 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.18
+------
+
+2016-02-10
+
+Sped up turbo-fast-forward: I auto-savestate only every 50 frames instead of
+every 10 frames during turbo-fast-forward.
+
 0.2.17
 ------
 
@@ -16,6 +24,9 @@ and the VRAM level bitmap. There is profiling by RAM/VRAM and by drawing mode
 of the tiles.
 
 Fixed an assert fail in the file listings used by the browser.
+
+Fixed #40: Misaligned image/physics for dark piece.
+I want to ask Clam before I close this issue.
 
 Culled the trampolines.
 

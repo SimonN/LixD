@@ -88,18 +88,8 @@ class Nurse {
         _replay.deleteAfterUpdate(upd);
     }
 
-    // DTODO: Refactor into SaveStatingNurse : Nurse for the interactive
-    // mode, and the regular nurse otherwise
-    void updateTo(in Update targetUpdate)
-    {
-        // assert (game.runmode == Runmode.INTERACTIVE);
-        if (_model.cs.update >= targetUpdate)
-            return;
-        while (_model.cs.update < targetUpdate) {
-            updateOnce();
-            considerAutoSavestateIfCloseTo(targetUpdate);
-        }
-    }
+    alias updateToDuringTurbo = updateToTpl!true;
+    alias updateTo            = updateToTpl!false;
 
     // Only noninteractive mode should call this directly,
     // interactive mode should call updateTo.
@@ -163,10 +153,27 @@ private:
                     _model.applyReplayData(trID, master, data);
     }
 
-    void considerAutoSavestateIfCloseTo(Update targetUpdate)
+    // DTODO: Refactor into SaveStatingNurse : Nurse for the interactive
+    // mode, and the regular nurse otherwise
+    void updateToTpl(bool duringTurbo)(in Update targetUpdate)
+    {
+        // assert (game.runmode == Runmode.INTERACTIVE);
+        if (_model.cs.update >= targetUpdate)
+            return;
+        while (_model.cs.update < targetUpdate) {
+            updateOnce();
+            considerAutoSavestateIfCloseTo!duringTurbo(targetUpdate);
+        }
+    }
+
+    void considerAutoSavestateIfCloseTo(bool duringTurbo)(Update target)
     {
         assert (_states);
-        if (_states.wouldAutoSave(_model.cs, targetUpdate)) {
+        static if (duringTurbo)
+            bool saveNow = _states.wouldAutoSaveDuringTurbo(_model.cs, target);
+        else
+            bool saveNow = _states.wouldAutoSave(_model.cs, target);
+        if (saveNow) {
             Zone zone = Zone(profiler, "Nurse makes auto-savestate");
             // It seems dubious to do drawing to bitmaps during calc/update.
             // However, savestates save the land too, and they should
@@ -175,7 +182,7 @@ private:
             // redraw over and over when loading from this state during
             // framestepping backwards. Instead, let's calculate the land now.
             _model.applyChangesToLand();
-            _states.autoSave(_model.cs, targetUpdate);
+            _states.autoSave(_model.cs, target);
         }
     }
 

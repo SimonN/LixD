@@ -156,13 +156,6 @@ private:
     // differing replay.
     Replay _userReplay;
 
-    invariant()
-    {
-        if (_zero)
-            assert(_zero.update == 0,
-                format("_zero.update is %d instead of 0", _zero.update));
-    }
-
 public:
 
     void saveZero(in GameState s) { _zero = s.clone(); }
@@ -209,20 +202,8 @@ public:
         return ret;
     }
 
-    bool wouldAutoSave(in GameState s, in Update ultimatelyTo) const pure
-    {
-        if (! s || s.update == 0 || s.update % updatesMostFrequentPair != 0)
-            return false;
-        foreach (pair; 0 .. pairsToKeep)
-            // We save 2 states per update multiple. But when we want to update
-            // 100 times, there is no need saving states after 10, 20, 30, ...
-            // updates, we would only keep the states at 90 and 100, anyway.
-            // And the state at 50 and 100, in a higher pair.
-            if (s.update > ultimatelyTo - 2 * updateMultipleForPair(pair)
-                && s.update % updateMultipleForPair(pair) == 0)
-                return true;
-        return false;
-    }
+    alias wouldAutoSave            = wouldAutoSaveTpl!0;
+    alias wouldAutoSaveDuringTurbo = wouldAutoSaveTpl!1;
 
     void autoSave(in GameState s, in Update ultimatelyTo)
     {
@@ -260,5 +241,23 @@ public:
         }
     }
     // end function calcSaveAuto
+
+private:
+    bool wouldAutoSaveTpl(int pair)(in GameState s, in Update updTo) const pure
+        if (pair >= 0 && pair < pairsToKeep)
+    {
+        if (! s || s.update == 0
+                || s.update % updateMultipleForPair(pair) != 0)
+            return false;
+        foreach (possible; pair .. pairsToKeep)
+            // We save 2 states per update multiple. But when we want to update
+            // 100 times, there is no need saving states after 10, 20, 30, ...
+            // updates, we would only keep the states at 90 and 100, anyway.
+            // And the state at 50 and 100, in a higher pair.
+            if (s.update > updTo - 2 * updateMultipleForPair(possible)
+                && s.update % updateMultipleForPair(possible) == 0)
+                return true;
+        return false;
+    }
 }
 // end class StateManager
