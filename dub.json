@@ -26,8 +26,10 @@
         "allegro_primitives",
     ],
 
+    "libs-windows": ["allegro"],
     "lflags-windows": ["-L/subsystem:windows"],
     "buildRequirements": ["disallowDeprecations"],
+    "versions": ["ALLEGRO_NO_PRAGMA_LIB"],
     "buildTypes": {
         "debug": {
             "buildOptions": ["debugMode", "debugInfo"],
