@@ -14,7 +14,8 @@ public:
 
     @property bool gotoEditor() const
     {
-        assert (fileRecent !is null);
+        if (_gotoEditor)
+            assert (fileRecent !is null);
         return _gotoEditor;
     }
 
