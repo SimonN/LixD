@@ -95,13 +95,21 @@ void setScreenMode(in Cmdargs cmdargs)
     // FIFO queue of screen modes to try
     TryMode[] try_modes;
 
-    // top priority goes to using setScreenMode()'s arguments, if they exist
+    // first priority goes to using setScreenMode()'s arguments, if they exist
+    if (cmdargs.forceHardwareFullscreen) {
+        if (cmdargs.wantResolutionX > 0 && cmdargs.wantResolutionY > 0)
+            try_modes ~= TryMode(true, cmdargs.wantResolutionX,
+                                       cmdargs.wantResolutionY);
+        else try_modes ~= TryMode(true, 640, 480);
+    }
     if (cmdargs.forceWindowed) {
-        if (cmdargs.wantWindowedX > 0 && cmdargs.wantWindowedY > 0)
-            try_modes ~= TryMode(false, cmdargs.wantWindowedX,
-                                        cmdargs.wantWindowedY);
+        if (cmdargs.wantResolutionX > 0 && cmdargs.wantResolutionY > 0)
+            try_modes ~= TryMode(false, cmdargs.wantResolutionX,
+                                        cmdargs.wantResolutionY);
         else try_modes ~= TryMode(false, 640, 480);
     }
+
+    // second priority goes to the normal fullscreen/windowed modes
     void addFullscreenTryModes() {
         try_modes ~= TryMode(true, 0, 0);
         try_modes ~= TryMode(true, 640, 480);
@@ -112,7 +120,7 @@ void setScreenMode(in Cmdargs cmdargs)
         }
         try_modes ~= TryMode(false, 640, 480);
     }
-    if (! cmdargs.forceFullscreen
+    if (! cmdargs.forceSoftwareFullscreen
         && (cmdargs.forceWindowed || basics.user.screenWindowed)
     ) {
         addWindowedTryModes();
@@ -123,7 +131,8 @@ void setScreenMode(in Cmdargs cmdargs)
         addWindowedTryModes();
     }
 
-    immutable fullscreen_flag = ALLEGRO_FULLSCREEN_WINDOW;
+    immutable fullscreen_flag = cmdargs.forceHardwareFullscreen
+        ? ALLEGRO_FULLSCREEN : ALLEGRO_FULLSCREEN_WINDOW;
 
     // now try the modes in the desired order
     foreach (ref mode; try_modes) {

@@ -1,6 +1,19 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.19
+------
+
+2016-02-11
+
+Fixed an assert fail for new users upon entering the singleplayer browser.
+
+Added a command-line switch to force true fullscreen an arbitrary resolution.
+This makes the game run for Ramond. If you have problems getting Lix to run,
+try the following, replacing 1600x900 with your possibly different resolution:
+
+    lix --hardfull=1600x900
+
 0.2.18
 ------
 

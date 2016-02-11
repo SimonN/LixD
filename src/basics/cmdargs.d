@@ -25,9 +25,10 @@ enum Runmode {
 private string _helpAndExitOutput =
     "-h or -? or --help      print this help and exit\n"
     "-v or --version         print version and exit\n"
-    "-w                      run in windowed mode at 640x480\n"
-    "--resol=800x600         run in windowed mode at the given resolution\n"
-    "--fullscreen            run in fullscreen mode\n"
+    "-w                      run windowed at 640x480\n"
+    "--resol=800x600         run windowed at the given resolution\n"
+    "--fullscreen            use software fullscreen mode (good Alt+Tab)\n"
+    "--hardfull=1600x900     use hardware fullscreen at given resolution\n"
     "--verify=dir/file.txt   verify the replay file `dir/file.txt'\n"
     "--verify=mydir          verify all replays in directory `mydir'";
 
@@ -36,12 +37,13 @@ private string _helpAndExitOutput =
 class Cmdargs {
 
     bool forceWindowed;
-    bool forceFullscreen;
+    bool forceSoftwareFullscreen;
+    bool forceHardwareFullscreen;
     bool versionAndExit;
     bool helpAndExit;
 
-    int  wantWindowedX;
-    int  wantWindowedY;
+    int  wantResolutionX;
+    int  wantResolutionY;
 
     private string[] badSwitches;
     Filename[]       verifyFiles;
@@ -55,8 +57,6 @@ class Cmdargs {
         else
             return Runmode.INTERACTIVE;
     }
-
-
 
     this(string[] args)
     {
@@ -76,48 +76,6 @@ class Cmdargs {
             else badSwitches ~= arg;
         }
     }
-
-
-    void parseDashDashArgument(string arg)
-    {
-        immutable vrf   = "--verify=";
-        immutable resol = "--resol=";
-
-        if (arg == "--version") {
-            versionAndExit = true;
-        }
-        else if (arg == "--help") {
-            helpAndExit = true;
-        }
-        else if (arg == "--fullscreen") {
-            forceFullscreen = true;
-        }
-        else if (arg.startsWith(vrf)) {
-            verifyFiles ~= new Filename(arg[vrf.length .. $]);
-        }
-        else if (arg.startsWith(resol)) {
-            // this string is expected to be of the form "1234x567"
-            string want_res = arg[resol.length .. $];
-            try {
-                string[] numbers = splitter(want_res, 'x').array();
-                if (numbers.length == 2) {
-                    wantWindowedX = numbers[0].to!int;
-                    wantWindowedY = numbers[1].to!int;
-                }
-            }
-            catch (Exception e) { }
-
-            if (wantWindowedX == 0 || wantWindowedY == 0)
-                badSwitches ~= arg;
-            else
-                forceWindowed = true;
-        }
-        else {
-            badSwitches ~= arg;
-        }
-    }
-
-
 
     void printNoninteractiveOutput()
     {
@@ -139,6 +97,54 @@ class Cmdargs {
             writeln(_helpAndExitOutput);
     }
 
+private:
+    void parseDashDashArgument(string arg)
+    {
+        immutable vrf   = "--verify=";
+        immutable resol = "--resol=";
+        immutable hardf = "--hardfull=";
+
+        if (arg == "--version") {
+            versionAndExit = true;
+        }
+        else if (arg == "--help") {
+            helpAndExit = true;
+        }
+        else if (arg == "--fullscreen") {
+            forceSoftwareFullscreen = true;
+        }
+        else if (arg.startsWith(vrf)) {
+            verifyFiles ~= new Filename(arg[vrf.length .. $]);
+        }
+        else if (arg.startsWith(resol)) {
+            parseWantResolution(arg, resol);
+            forceWindowed = true;
+        }
+        else if (arg.startsWith(hardf)) {
+            parseWantResolution(arg, hardf);
+            forceHardwareFullscreen = true;
+        }
+        else {
+            badSwitches ~= arg;
+        }
+    }
+
+    void parseWantResolution(string arg, string stripFromBeginning)
+    {
+        // this string is expected to be of the form "1234x567"
+        string want_res = arg[stripFromBeginning.length .. $];
+        try {
+            string[] numbers = splitter(want_res, 'x').array();
+            if (numbers.length == 2) {
+                wantResolutionX = numbers[0].to!int;
+                wantResolutionY = numbers[1].to!int;
+            }
+        }
+        catch (Exception e) { }
+
+        if (wantResolutionX == 0 || wantResolutionY == 0)
+            badSwitches ~= arg;
+    }
 }
 // end class
 
