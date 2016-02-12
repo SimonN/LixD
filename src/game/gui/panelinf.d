@@ -4,6 +4,7 @@ import std.string; // format;
 import std.typecons; // Rebindable;
 
 import basics.globals; // game panel icons
+import basics.nettypes; // Update
 import basics.user; // languageIsEnglish
 import game.tribe;
 import graphic.internal;
@@ -32,21 +33,25 @@ class PanelStats : Button {
     @property int
     targetDescriptionNumber(in int a)
     {
-        if (_targetDescNumber != a) {
-            _targetDescNumber = a;
-            // reqDraw();
-        }
+        _targetDescNumber = a;
         return a;
     }
 
     @property const(Lixxie)
     targetDescriptionLixxie(in Lixxie l)
     {
-        if (_targetDescLixxie !is l) {
-            _targetDescLixxie = l;
-            // reqDraw();
-        }
+        _targetDescLixxie = l;
         return l;
+    }
+
+    @property Update updatesSinceZero(in Update u)
+    {
+        assert (_lTime);
+        _lTime.text = "%d:%02d".format(
+            u / (60 * updatesPerSecond),
+            u % (60 * updatesPerSecond) / updatesPerSecond);
+        reqDraw();
+        return u;
     }
 
     void suggestTooltipForceDirection() { }
@@ -61,7 +66,6 @@ class PanelStats : Button {
         _lOut  .number = lixHatch + lixOut;
         _lHatch.number = lixHatch;
         _lSaved.text   = "%d/%d".format(lixSaved, lixRequired);
-        _lTime .text   = "(---)";
         _bOut.yf   = lixHatch + lixOut > 0 ? 0 : 1;
         _bHatch.yf = 1;
         _bSaved.yf = lixSaved == 0 ? 1 : lixSaved >= lixRequired ? 2 : 0;
@@ -136,7 +140,7 @@ private:
         makeElements(_bHatch, _lHatch,  60, 60, 4);
         makeElements(_bSaved, _lSaved, 120, 80, 5);
         makeElements(_bTime,  _lTime,  200, 70, 7);
-        _fps        = new Label(new Geom(270, 0, 70, this.ylg, From.LEFT));
+        _fps        = new Label(new Geom(280, 0, 70, this.ylg, From.LEFT));
         _targetDesc = new Label(new Geom(
             TextButton.textXFromLeft, 0, this.xlg, this.ylg, From.RIGHT));
         addChildren(_targetDesc, _fps);

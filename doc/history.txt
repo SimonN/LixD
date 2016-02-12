@@ -1,6 +1,16 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.20
+------
+
+2016-02-12
+
+The panel displays elapsed minutes and seconds since level start.
+
+Time limits or overtime haven't been introduced yet. I'm considering to
+cull singleplayer time limits from the game altogether.
+
 0.2.19
 ------
 

@@ -38,6 +38,7 @@ implGameDraw(Game game) { with (game)
         effect.draw(map);
         effect.calc(); // --timeToLive, moves. No physics, so OK to calc here.
         game.drawAllLixes();
+        pan.stats.updatesSinceZero(nurse.updatesSinceZero);
         pan.stats.showTribe(tribeLocal);
     }
     DrawingTarget drata = DrawingTarget(al_get_backbuffer(display));

@@ -40,7 +40,7 @@ class Game {
     @property bool gotoMainMenu()         { return _gotoMainMenu; }
     @property wasInstantiatedWithReplay() { return _wasInstantiatedWithReplay;}
 
-    enum ticksNormalSpeed   = 4;
+    enum ticksNormalSpeed   = ticksPerSecond / updatesPerSecond;
     enum updatesDuringTurbo = 9;
     enum updatesBackMany    = ticksPerSecond / ticksNormalSpeed * 1;
     enum updatesAheadMany   = ticksPerSecond / ticksNormalSpeed * 10;

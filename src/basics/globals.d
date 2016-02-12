@@ -11,6 +11,7 @@ immutable nameOfTheGame = "Lix";
 immutable homepageURL   = "asdfasdf.ethz.ch/~simon";
 
 enum int ticksPerSecond       = 60;
+enum int updatesPerSecond     = 15; // logic/physics updates of the game
 enum int ticksForDoubleClick  = 20; // 1/3 of a second at 60 ticks/sec
 
 enum int playerNameMaxLength  = 30;

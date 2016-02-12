@@ -54,6 +54,14 @@ class Nurse {
             || _model.cs.traps .any!(a => a.isEating(upd));
     }
 
+    Update updatesSinceZero() const
+    out (result) { assert (result >= 0); }
+    body {
+        assert (_states.zeroState);
+        assert (_model.cs);
+        return Update(_model.cs.update - _states.zeroState.update);
+    }
+
     void restartLevel()
     {
         _model.takeOwnershipOf(_states.zeroState.clone());
