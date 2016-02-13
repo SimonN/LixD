@@ -4,7 +4,11 @@ import hardware.sound;
 import lix;
 
 class Climber : Job {
+private:
+    enum ceilingY        = -17;
+    enum hoistableLedgeY = ceilingY + 1;
 
+public:
     mixin(CloneByCopyFrom!"Climber");
 
     override @property bool callBecomeAfterAssignment() const { return false; }
@@ -16,7 +20,42 @@ class Climber : Job {
         abilityToClimb = true;
     }
 
-    private void stickSpriteToWall()
+    override void onBecome()
+    {
+        if (cast (Jumper) lixxie.job)
+            playSound(Sound.CLIMBER);
+        else
+            frame = 3;
+        stickSpriteToWall();
+        maybeBecomeAscenderImmediatelyOnBecome();
+    }
+
+    override void perform()
+    {
+        if (isLastFrame)
+            frame = 4;
+        else
+            advanceFrame();
+        foreach (unused; 0 .. upwardsMovementThisFrame) {
+            if (isSolid(0, ceilingY)) {
+                turn();
+                become(Ac.faller);
+                return;
+            }
+            else if (ascendHoistableLedge)
+                return;
+            else
+                moveUp(1);
+        }
+        assert (this is lixxie.job);
+        if (ascendHoistableLedge)
+            return;
+        else
+            stickSpriteToWall();
+    }
+
+private:
+    void stickSpriteToWall()
     {
         // The climber should appear snugly close to the wall.
         // Since physically, for a right-facing climber, a wall at ex+2 and
@@ -25,18 +64,8 @@ class Climber : Job {
                             || facingLeft  && ! isSolidSingle(1, -6));
     }
 
-
-
-    override void onBecome()
+    void maybeBecomeAscenderImmediatelyOnBecome()
     {
-        if (cast (Jumper) lixxie.job)
-            playSound(Sound.CLIMBER);
-        else
-            frame = 3;
-
-        stickSpriteToWall();
-
-        // become ascender immediately?
         for (int i = 8; i < 18; ++i) {
             if (isSolid(0, -i)) {
                 stopAndBecomeWalker();
@@ -55,71 +84,19 @@ class Climber : Job {
                 break;
             }
         }
-        // end for
-    }
-    // end onBecome()
-
-
-
-    private void stopAndBecomeWalker()
-    {
-        turn();
-        if (isSolid()) {
-            // This method can be called during become, then lixxie.ac might
-            // still be walker or runner from before.
-            immutable int oldWalkerFrame =
-                (lixxie.ac == Ac.walker || lixxie.ac == Ac.runner)
-                ? lixxie.frame : -999;
-            become(Ac.walker);
-            if (oldWalkerFrame >= 0)
-                lixxie.frame = oldWalkerFrame;
-        }
-        else {
-            become(Ac.faller);
-        }
     }
 
-
-
-    private enum ceilingY        = -17;
-    private enum hoistableLedgeY = ceilingY + 1;
-
-    override void perform()
+    int upwardsMovementThisFrame() const
     {
-        if (isLastFrame) frame = 4;
-        else             advanceFrame();
-
-        int upBy = 0;
         switch ((frame - 4) % 8) {
-            case 5: upBy = 2; break;
-            case 6: upBy = 4; break;
-            case 7: upBy = 2; break;
-            default:          break;
+            case 5:  return 2;
+            case 6:  return 4;
+            case 7:  return 2;
+            default: return 0;
         }
-
-        foreach (unused; 0 .. upBy) {
-            if (isSolid(0, ceilingY)) {
-                turn();
-                become(Ac.faller);
-                return;
-            }
-            else if (ascendHoistableLedge)
-                return;
-            else
-                moveUp(1);
-        }
-
-        assert (this is lixxie.job);
-        if (ascendHoistableLedge)
-            return;
-        else
-            stickSpriteToWall();
     }
-    // end perform
 
-
-
-    private bool ascendHoistableLedge()
+    bool ascendHoistableLedge()
     {
         if (! isSolid(2, hoistableLedgeY)) {
             moveAhead();
@@ -130,6 +107,23 @@ class Climber : Job {
             return false;
     }
 
-
+    void stopAndBecomeWalker()
+    {
+        turn();
+        if (isSolid()) {
+            // This method can be called during become, then lixxie.ac might
+            // still be walker or runner from before.
+            // My OO model shows its weaknesses here. I should call a special
+            // 'become' method to get a new walker; I shouldn't call a generic
+            // walker method and then hack the new walker manually here.
+            immutable int oldWalkerFrame =
+                (lixxie.ac == Ac.walker || lixxie.ac == Ac.runner)
+                ? lixxie.frame : -999;
+            become(Ac.walker);
+            if (oldWalkerFrame >= 0)
+                lixxie.frame = oldWalkerFrame;
+        }
+        else
+            become(Ac.faller);
+    }
 }
-// end class Climber
