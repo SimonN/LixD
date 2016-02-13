@@ -49,7 +49,7 @@ mixin template DeleteMixin()
             assert (! _boxDelete);
             assert (fileRecent);
             _boxDelete = newMsgBoxDelete();
-            _boxDelete.addButton(Lang.commonYes.transl, keyMenuOkay, () {
+            _boxDelete.addButton(Lang.browserDelete.transl, keyMenuOkay, () {
                 assert (fileRecent);
                 deleteFileRecentHighlightNeighbor();
                 _boxDelete = null;
