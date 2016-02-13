@@ -26,8 +26,7 @@ private:
 
 public:
 
-    enum updateLetsGo    = 35;
-    enum updateOpen      = 50;
+    enum updateOpen      = 55;
     enum updateBlinkStop = 48;
     enum updatesBlinkOn  =  4;
     enum updatesBlinkOff =  2;
@@ -85,9 +84,6 @@ public:
             _blinkNow
             = (u % (updatesBlinkOn + updatesBlinkOff) < updatesBlinkOn);
         }
-
-        if (u == updateLetsGo)
-            effect.addSoundGeneral(u, Sound.LETS_GO);
         if (u == updateOpen)
             effect.addSoundGeneral(u, Sound.HATCH_OPEN);
     }

@@ -1,6 +1,18 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.21
+------
+
+2016-02-14
+
+In singleplayer, lix start spawning 1 second after level start, not 4 seconds
+after start. The nan-nan sound is played when you start the game, or whenever
+you revert to the starting position.
+
+Fixed #48: Assertion failure of climber on torus maps.
+Fixed sprite positioning of the climber.
+
 0.2.20
 ------
 

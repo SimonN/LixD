@@ -50,7 +50,7 @@ void preparePlayers(GameState state, in Level level)
     state.tribes ~= new Tribe();
     import basics.nettypes; // PlNr
     state.tribes[0].masters ~= Tribe.Master(PlNr(0), basics.globconf.userName);
-
+    state.update = state.tribes.length == 1 ? 45 : 0; // start quickly in 1-pl
     foreach (tr; state.tribes) {
         tr.lixInitial   = level.initial;
         tr.lixRequired  = level.required;

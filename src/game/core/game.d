@@ -33,10 +33,43 @@ import game.replay;
 import graphic.color;
 import graphic.map;
 import gui;
+import hardware.sound;
 import level.level;
 
 class Game {
+package:
+    immutable Runmode runmode;
 
+    Level     level;
+    Filename  levelFilename;
+    Map map; // The map does not hold the referential level image, that's
+             // in cs.land and cs.lookup. Instead, the map loads a piece
+             // of that land, blits gadgets and lixes on it, and blits the
+             // result to the screen. It is both a renderer and a camera.
+    Nurse nurse;
+    EffectManager effect;
+
+    int _indexTribeLocal;
+    int _indexMasterLocal;
+    long altickLastUpdate;
+
+    // Assignments for the next update go in here, and are only written into
+    // the replay right before the update happens. If the replay is cut off
+    // by skill assignment, the undispatched data is not cut off with it.
+    // If the replay is cut off by explicit cutting (LMB into empty space),
+    // the undispatched data too is emptied.
+    ReplayData[] undispatchedAssignments;
+
+    GameWindow modalWindow;
+    Panel pan;
+    int _profilingGadgetCount;
+    bool _gotoMainMenu;
+    bool _wasInstantiatedWithReplay;
+
+private:
+    Update _setLastUpdateToNowLastCalled = Update(-1);
+
+public:
     @property bool gotoMainMenu()         { return _gotoMainMenu; }
     @property wasInstantiatedWithReplay() { return _wasInstantiatedWithReplay;}
 
@@ -56,6 +89,7 @@ class Game {
         level         = lv;
         levelFilename = fn;
         prepareNurse(rp, fn);
+        setLastUpdateToNow();
     }
 
     ~this()
@@ -86,38 +120,6 @@ class Game {
     }
 
 package:
-
-    immutable Runmode runmode;
-
-    Level     level;
-    Filename  levelFilename;
-
-    Map map; // The map does not hold the referential level image, that's
-             // in cs.land and cs.lookup. Instead, the map loads a piece
-             // of that land, blits gadgets and lixes on it, and blits the
-             // result to the screen. It is both a renderer and a camera.
-    Nurse nurse;
-    EffectManager effect;
-
-    int _indexTribeLocal;
-    int _indexMasterLocal;
-
-    long altickLastUpdate;
-
-    // Assignments for the next update go in here, and are only written into
-    // the replay right before the update happens. If the replay is cut off
-    // by skill assignment, the undispatched data is not cut off with it.
-    // If the replay is cut off by explicit cutting (LMB into empty space),
-    // the undispatched data too is emptied.
-    ReplayData[] undispatchedAssignments;
-    GameWindow modalWindow;
-    Panel pan;
-
-    int _profilingGadgetCount;
-
-    bool _gotoMainMenu;
-    bool _wasInstantiatedWithReplay;
-
     @property bool replaying() const
     {
         assert (nurse);
@@ -156,14 +158,19 @@ package:
 
     void setLastUpdateToNow()
     {
-        altickLastUpdate = timerTicks;
         effect.deleteAfter(nurse.upd);
         if (pan)
             pan.setLikeTribe(tribeLocal);
+        if (nurse.updatesSinceZero == 0
+            && _setLastUpdateToNowLastCalled != 0
+        ) {
+            hardware.sound.playLoud(Sound.LETS_GO);
+        }
+        _setLastUpdateToNowLastCalled = nurse.updatesSinceZero;
+        altickLastUpdate = timerTicks;
     }
 
 private:
-
     @property cs() inout
     {
         assert (nurse);
