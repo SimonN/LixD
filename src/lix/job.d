@@ -20,9 +20,15 @@ template CloneByCopyFrom(string derivedClass) {
 }
 
 abstract class Job {
+package:
+    Lixxie lixxie;
+
+private:
+    Ac  _ac;
+    int _frame;
+    int _spriteOffsetX;
 
 public:
-
     @property final Ac  ac()            const { return _ac;            }
     @property final int frame()         const { return _frame;         }
     @property final int spriteOffsetX() const { return _spriteOffsetX; }
@@ -34,7 +40,7 @@ public:
 
     void onManualAssignment()      { } // while Lix has old performed ac!
     void onBecome()                { } // initialization, still while old
-    void perform()         { } // the main method to override
+    void perform()                 { } // the main method to override
     void onBecomingSomethingElse() { } // tribe to, e.g., return builders
 
     abstract Job cloneAndBindToLix(Lixxie) const;
@@ -82,7 +88,6 @@ public:
     }
 
 protected:
-
     void copyFromAndBindToLix(in Job rhs, Lixxie bindTo)
     {
         lixxie         = bindTo;
@@ -92,16 +97,11 @@ protected:
     }
 
 package:
-
-    @property int spriteOffsetX(in int a) { return _spriteOffsetX = a; }
-    @property int frame        (in int a) { return _frame = a;         }
-
-    Lixxie lixxie;
-
-private:
-
-    Ac  _ac;
-    int _frame;
-    int _spriteOffsetX;
-
+    @property int frame        (in int a) { return _frame = a; }
+    @property int spriteOffsetX(in int a)
+    {
+        _spriteOffsetX = a;
+        lixxie.repositionSprite();
+        return a;
+    }
 }

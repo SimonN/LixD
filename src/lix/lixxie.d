@@ -230,7 +230,11 @@ void addEncountersFromHere()
              |  lookup.get(_ex, getFuseXY().y);
 }
 
-
+package void repositionSprite()
+{
+    super.x = _ex - exOffset + _job.spriteOffsetX;
+    super.y = _ey - eyOffset;
+}
 
 @property int
 ex(in int n)
@@ -239,7 +243,7 @@ ex(in int n)
     if (env.torusX)
         _ex = positiveMod(_ex, env.xl);
     assert (_job);
-    super.x = _ex - exOffset + _job.spriteOffsetX;
+    repositionSprite();
     addEncountersFromHere();
     return _ex;
 }
@@ -252,7 +256,7 @@ ey(in int n)
     _ey = n;
     if (env.torusY)
         _ey = positiveMod(_ey, env.yl);
-    super.y = _ey - eyOffset;
+    repositionSprite();
     addEncountersFromHere();
     return _ey;
 }
@@ -618,6 +622,7 @@ void become(bool manualAssignment = false)(in Ac newAc)
             static if (manualAssignment)
                 // can go to -1, then after the update, frame 0 is displayed
                 frame = frame - 1;
+            repositionSprite(); // consider new job's spriteOffsetX
         }
     }
 }
