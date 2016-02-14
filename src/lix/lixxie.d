@@ -213,7 +213,8 @@ private XY getFuseXY() const
     XY ret = countdown.get(max(0, frame), ac);
     if (facingLeft)
         ret.x = this.cutbit.xl - ret.x;
-    assert (super.y == _ey - eyOffset); // for encounters
+    assert (positiveMod(super.y,        lookup.yl)
+        ==  positiveMod(_ey - eyOffset, lookup.yl)); // for encounters
     ret.x += super.x;
     ret.y += super.y;
     return ret;
