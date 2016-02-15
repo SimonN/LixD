@@ -1,6 +1,13 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.22
+------
+
+2016-02-15
+
+Fixed #44: We sort dirs and levels according to the listing _order.X.txt.
+
 0.2.21
 ------
 

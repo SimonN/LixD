@@ -152,7 +152,7 @@ sortFilenamesByOrderTxtThenAlpha(
             // sort the "go up one dir" button always to slot 1
             orders = ".." ~ orders;
             // dirs can be named as "somedir" or "somedir/", both shall work
-            foreach (itr; orders)
+            foreach (ref itr; orders)
                 if (itr.length && itr[$-1] != '/')
                     itr ~= '/';
         }

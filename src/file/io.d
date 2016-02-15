@@ -240,8 +240,6 @@ private void munch(ref string s) {
     s = s[1 .. $];
 }
 
-
-
 nothrow IoLine[]
 fillVectorFromFileNothrow(in Filename fn)
 {
@@ -256,8 +254,6 @@ fillVectorFromFileNothrow(in Filename fn)
     }
 }
 
-
-
 IoLine[]
 fillVectorFromFile(in Filename fn)
 {
@@ -268,26 +264,18 @@ fillVectorFromFile(in Filename fn)
     return fillVectorFromStream(file);
 }
 
-
-
 // return true on no error
 IoLine[]
 fillVectorFromStream(File file)
 {
     IoLine[] ret;
     foreach (string line; lines(file)) {
-        // prune trailing LFs, CRs, and spaces
-        while (! line.empty) {
-            immutable char c = line[$-1];
-            if (c == ' ' || c == '\n' || c == '\r') line = line[0 .. $-1];
-            else break;
-        }
-        if (! line.empty) ret ~= new IoLine(line);
+        line = line.stripRight;
+        if (! line.empty)
+            ret ~= new IoLine(line);
     }
     return ret;
 }
-
-
 
 // this cares about empty lines, doesn't throw them away
 // throws on file 404
@@ -299,6 +287,6 @@ fillVectorFromFileRaw(in Filename fn)
     scope (exit) file.close();
 
     foreach (string line; lines(file))
-        ret ~= line;
+        ret ~= line.stripRight;
     return ret;
 }
