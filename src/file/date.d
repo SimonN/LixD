@@ -1,7 +1,7 @@
 module file.date;
 
+import core.stdc.time;
 import std.string;
-import std.c.time;
 
 import basics.help;
 

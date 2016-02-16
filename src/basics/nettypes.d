@@ -3,8 +3,8 @@ module basics.nettypes;
 /* ReplayData, Permu
  */
 
+import core.stdc.string; // memmove
 import std.bitmanip;
-import std.c.string; // memmove
 import std.conv;
 import std.random;
 

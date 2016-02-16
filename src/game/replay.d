@@ -1,8 +1,8 @@
 module game.replay;
 
+import core.stdc.string; // memmove
 import std.algorithm; // isSorted
 import std.file; // mkdirRecurse
-import std.c.string; // memmove;
 import std.stdio; // save file, and needed for unittest
 import std.string;
 
