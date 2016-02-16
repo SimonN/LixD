@@ -7,25 +7,26 @@ module editor.editor;
 import editor.calc;
 import editor.draw;
 import editor.io;
+import editor.panel;
 import file.filename;
 import graphic.map;
 import level.level;
 
 class Editor {
+package:
+    Map      _map;
+    Level    _level;
+    Filename _loadedFrom;
 
+    bool _gotoMainMenu;
+    EditorPanel _panel;
+
+public:
     this(Filename fn) { this.implConstructor(fn); }
+    ~this()           { this.implDestructor();    }
 
     bool gotoMainMenu() const { return _gotoMainMenu; }
 
     void calc() { this.implEditorCalc(); }
     void draw() { this.implEditorDraw(); }
-
-package:
-
-    bool _gotoMainMenu;
-
-    Filename _loadedFrom;
-    Level    _level;
-    Map      _map;
-
 }

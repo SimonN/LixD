@@ -74,8 +74,4 @@ void drawToScreen(Editor editor) {
     with (_level)
         al_clear_to_color(color.makecol(bgRed, bgGreen, bgBlue));
     _map.drawCamera();
-    import graphic.textout;
-    import basics.user;
-    drawText(djvuM, "To exit the editor, press "
-        ~ keyEditorExit.hotkeyNiceBrackets ~ ".", 10, 10, color.white);
 }}

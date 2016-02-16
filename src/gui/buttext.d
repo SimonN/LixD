@@ -47,8 +47,7 @@ class TextButton : Button {
     }
 
     @property bool alignLeft() const { return _alignLeft;                }
-    @property bool alignLeft(bool b) { _alignLeft = b; reqDraw();
-                                        return _alignLeft;               }
+    @property bool alignLeft(bool b) { reqDraw(); return _alignLeft = b; }
 
     @property string text() const      { return _text;                   }
     @property string text(in string s) { _text = s; reqDraw(); return s; }
