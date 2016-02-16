@@ -1,6 +1,7 @@
 module graphic.map;
 
-import std.algorithm; // min
+import std.algorithm;
+import std.range;
 
 import basics.alleg5;
 import basics.help;
@@ -163,7 +164,18 @@ cameraY(in int a)
     return cameraSetter(_cameraY, a, torusY, yl, minY, maxY);
 }
 
+void centerOn(in int cx, in int cy)
+{
+    cameraX = cx;
+    cameraY = cy;
+}
 
+void centerOnAverage(Rx, Ry)(Rx rangeX, Ry rangeY)
+    if (isInputRange!Rx && isInputRange!Ry)
+{
+    cameraX = super.torusAverageX(rangeX);
+    cameraY = super.torusAverageY(rangeY);
+}
 
 // By how much is the camera larger than the map?
 // These are 0 on torus maps, only > 0 for small non-torus maps.

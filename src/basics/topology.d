@@ -6,6 +6,8 @@ module basics.topology;
  * If size/topology is changed, protected overridables are called.
  */
 
+import std.range; // iseputRange
+
 import std.algorithm;
 import std.conv;
 import std.math;
@@ -14,9 +16,11 @@ import std.string;
 import basics.help; // positiveMod
 
 abstract class Topology {
+private:
+    int  _xl, _yl; // x- and y-length of our rectangular area
+    bool _tx, _ty; // torus property in either direction, making edges loop
 
 public:
-
     this(in int nxl, in int nyl, in bool ntx = false, in bool nty = false)
     in {
         assert (nxl > 0 && nyl > 0,
@@ -127,14 +131,47 @@ public:
             && (py >= ry && py < ry + ryl);
     }
 
-protected:
+    int torusAverageX(Range)(Range range) const if (isInputRange!Range)
+    {
+        return torusAverage(xl, torusX, (a, b) => distanceX(a, b), range);
+    }
 
+    int torusAverageY(Range)(Range range) const if (isInputRange!Range)
+    {
+        return torusAverage(yl, torusY, (a, b) => distanceY(a, b), range);
+    }
+
+protected:
     void onResize()    { }
     void onAnyChange() { }
 
 private:
-
-    int  _xl, _yl; // x- and y-length of our rectangular area
-    bool _tx, _ty; // torus property in either direction, making edges loop
-
+    // dmd 2.070 has a 6-year old bug: This template is public, even though
+    // it's marked private. Please take care not to call it. :-]
+    // Call torusAverageX/Y instead, those are public methods.
+    int torusAverage(Range)(
+        in int  screenLen,
+        in bool torus,
+        int delegate(int, int) dist,
+        Range hatchPoints
+    ) const
+        if (isInputRange!Range)
+    {
+        immutable int len = hatchPoints.walkLength.to!int;
+        immutable int avg = hatchPoints.sum / len;
+        if (! torus)
+            return avg;
+        auto distToAllHatches(in int point)
+        {
+            return hatchPoints.map!(h => dist(point, h).abs).sum;
+        }
+        int closestPoint(in int a, in int b)
+        {
+            return distToAllHatches(a) <= distToAllHatches(b) ? a : b;
+        }
+        auto possiblePointsOnTorus = sequence!((unused, n) =>
+            (avg + n.to!int * screenLen/len) % screenLen).takeExactly(len);
+        static assert (is (typeof(possiblePointsOnTorus[0]) == int));
+        return possiblePointsOnTorus.reduce!closestPoint;
+    }
 }
