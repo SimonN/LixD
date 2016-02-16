@@ -1,6 +1,14 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.23
+------
+
+2016-02-16
+
+Editor renders terrain and gadgets. It uses the same scroll starting position
+as the game. I want to reintroduce the manual scroll starting position.
+
 0.2.22
 ------
 

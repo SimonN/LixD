@@ -15,15 +15,13 @@ package:
 void centerCameraOnHatchAverage(Game game)
 {
     assert (game.map);
-    game.map.centerOnAverage(
-        game.ourHatches().map!(h => h.x + h.tile.triggerX
-                                        + (h.spawnFacingLeft ? -64 : 64)),
-        game.ourHatches().map!(h => h.y + h.tile.triggerY + 32));
+    game.map.centerOnAverage(game.ourHatches().map!(h => h.centerOnX),
+                             game.ourHatches().map!(h => h.centerOnY));
 }
 
 private:
 
-const(Hatch)[] ourHatches(Game game) { with (game)
+const(Hatch)[] ourHatches(const(Game) game) { with (game)
 {
     assert (tribeLocal);
     auto st = nurse.stateOnlyPrivatelyForGame;

@@ -61,6 +61,9 @@ public:
         return levelpos;
     }
 
+    @property int centerOnX() const { return toPos.centerOnX; }
+    @property int centerOnY() const { return toPos.centerOnY; }
+
     deprecated("use Hatch.animate(EffectManager, int) instead")
     override void animateForUpdate(in Update) { }
 

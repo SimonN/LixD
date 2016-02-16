@@ -19,6 +19,24 @@ import tile.platonic;
 alias GadType = GadgetTile.Type;
 
 class GadgetTile : Platonic {
+private:
+    Type _type;
+
+    int  _triggerX;  // raw data, can be center or left
+    int  _triggerY;  // raw data, can be center or top
+    bool _triggerXc; // center around triggerX instead of going right from it
+    bool _triggerYc; // center around triggerY instead of going down from it
+
+public:
+    int  subtype;
+    int  triggerXl;
+    int  triggerYl;
+
+    // these are not used for everything
+    int  specialX; // FLING: x-direction, HATCH: start of opening anim
+    int  specialY; // FLING: y-direction
+
+    Sound sound;
 
     enum Type {
         HATCH,
@@ -30,39 +48,8 @@ class GadgetTile : Platonic {
         MAX
     }
 
-    @property type() const { return _type; }
-
-    int  subtype;
-
-    @property int triggerX() const
-    {
-        return _triggerX - _triggerXc * triggerXl/2;
-    }
-
-    @property int triggerY() const
-    {
-        return _triggerY - _triggerYc * triggerYl/2;
-    }
-
-    int  triggerXl;
-    int  triggerYl;
-
-    // these are not used for everything
-    int  specialX; // FLING: x-direction, HATCH: start of opening anim
-    int  specialY; // FLING: y-direction
-
-    Sound sound;
-
-private:
-
-    Type _type;
-
-    int  _triggerX;  // raw data, can be center or left
-    int  _triggerY;  // raw data, can be center or top
-    bool _triggerXc; // center around triggerX instead of going right from it
-    bool _triggerYc; // center around triggerY instead of going down from it
-
-    protected this(
+protected:
+    this(
         Cutbit aCb,
         Type   aType,
         int    aSubtype,
@@ -77,6 +64,17 @@ private:
     }
 
 public:
+    @property type() const { return _type; }
+
+    @property int triggerX() const
+    {
+        return _triggerX - _triggerXc * triggerXl/2;
+    }
+
+    @property int triggerY() const
+    {
+        return _triggerY - _triggerYc * triggerYl/2;
+    }
 
     static typeof(this) takeOverCutbit(
         Cutbit aCb,
@@ -86,48 +84,6 @@ public:
         if (! aCb)
             return null;
         return new typeof(this)(aCb, aType, aSubtype);
-    }
-
-    private void set_nice_defaults_based_on_type()
-    {
-        assert (cb);
-        switch (type) {
-        case Type.HATCH:
-            _triggerX = cb.xl / 2;
-            _triggerY = std.algorithm.max(20, cb.yl - 24);
-            specialX  = 1;
-            break;
-        case Type.GOAL:
-            _triggerX = cb.xl / 2;
-            _triggerY = cb.yl - 2;
-            triggerXl = 12;
-            triggerYl = 12;
-            _triggerXc = true;
-            _triggerYc = true;
-            break;
-        case Type.TRAP:
-            _triggerX = cb.xl / 2;
-            _triggerY = cb.yl * 4 / 5;
-            triggerXl = 4; // _xl was 6 before July 2014, but 6 isn't symmetric
-            triggerYl = 6; // on a piece with width 16 and (lix-xl % 2 == 0)
-            _triggerXc = true;
-            _triggerYc = true;
-            sound      = Sound.SPLAT;
-            break;
-        case Type.WATER:
-            _triggerX = 0;
-            _triggerY = 20;
-            triggerXl = cb.xl;
-            triggerYl = cb.yl - 20;
-            if (subtype) {
-                // then it's fire, not water
-                _triggerY = 0;
-                triggerYl = cb.yl;
-            }
-            break;
-        default:
-            break;
-        }
     }
 
     void read_definitions_file(in Filename filename)
@@ -188,5 +144,48 @@ public:
         }
     }
     // end read_definitions_file
+
+private:
+    void set_nice_defaults_based_on_type()
+    {
+        assert (cb);
+        switch (type) {
+        case Type.HATCH:
+            _triggerX = cb.xl / 2;
+            _triggerY = std.algorithm.max(20, cb.yl - 24);
+            specialX  = 1;
+            break;
+        case Type.GOAL:
+            _triggerX = cb.xl / 2;
+            _triggerY = cb.yl - 2;
+            triggerXl = 12;
+            triggerYl = 12;
+            _triggerXc = true;
+            _triggerYc = true;
+            break;
+        case Type.TRAP:
+            _triggerX = cb.xl / 2;
+            _triggerY = cb.yl * 4 / 5;
+            triggerXl = 4; // _xl was 6 before July 2014, but 6 isn't symmetric
+            triggerYl = 6; // on a piece with width 16 and (lix-xl % 2 == 0)
+            _triggerXc = true;
+            _triggerYc = true;
+            sound      = Sound.SPLAT;
+            break;
+        case Type.WATER:
+            _triggerX = 0;
+            _triggerY = 20;
+            triggerXl = cb.xl;
+            triggerYl = cb.yl - 20;
+            if (subtype) {
+                // then it's fire, not water
+                _triggerY = 0;
+                triggerYl = cb.yl;
+            }
+            break;
+        default:
+            break;
+        }
+    }
 }
 // end class GadgetTile

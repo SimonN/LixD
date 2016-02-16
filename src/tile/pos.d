@@ -24,6 +24,19 @@ struct GadPos {
         return IoLine.Colon(ob ? get_filename(ob) : null,
                 x, y, hatchRot ? "r" : null);
     }
+
+    // only for hatches
+    @property int centerOnX() const
+    {
+        assert (ob);
+        return x + ob.triggerX + (hatchRot ? -64 : 64);
+    }
+
+    @property int centerOnY() const
+    {
+        assert (ob);
+        return y + ob.triggerY + 32;
+    }
 }
 
 struct TerPos {
