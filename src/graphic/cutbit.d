@@ -20,7 +20,6 @@ class Cutbit {
         NORMAL,
         NOOW, // no-overwrite, draw only the pixels falling on transparent bg
         DARK, // instead of drawing a pixel, erase a pixel from the bg
-        NOOW_EDITOR, // Like NOOW, but treats the editor's NOOW color as transp
         DARK_EDITOR, // like DARK, but draw a dark color, not transparent
     }
 
@@ -360,10 +359,8 @@ void draw(
 
     case Mode.DARK:
     case Mode.DARK_EDITOR:
-        with (BlenderMinus) {
-            // Can't choose a color right now. Unimplemented for drawing speed.
+        with (BlenderMinus)
             targetTorbit.drawFrom(cast (Albit) bitmap, x, y, mirr, rot);
-        }
         break;
 
     case Mode.NOOW: {
@@ -376,19 +373,6 @@ void draw(
         targetTorbit.drawTo  (excerpt.albit, x, y);
         targetTorbit.drawFrom(excerpt.albit, x, y);
         break; }
-
-    case Mode.NOOW_EDITOR:
-        assert (false, "DTODO: implement more drawing modes");
-        /*
-        else if (mode == NOOW_EDITOR) {
-        for  (int ix = 0; ix < size; ++ix)
-         for (int iy = 0; iy < size; ++iy) {
-            const int c = targetTorbit.get_pixel(x + ix, y + iy);
-            const int e = excerpt      .get_pixel(    ix,     iy);
-            if ((c == BLACK || c == PINK || c == GREY)
-             &&  e != BLACK && e != PINK)
-             targetTorbit.setPixel(x + ix, y + iy, e);
-        */
     }
     // we don't have to draw the missing-frame error here; there could have
     // only been the missing-image error, and we've checked for that already.
