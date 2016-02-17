@@ -15,27 +15,35 @@ package:
 void implEditorDraw(Editor editor)
 {
     auto zone = Zone(profiler, "Editor.implEditorDraw");
-    editor.drawToMap();
+    editor.drawTerrainToSeparateMap();
+    editor.drawMainMap();
     editor.drawToScreen();
 }
 
 private:
 
-void drawToMap(Editor editor) {
-    with (Zone(profiler, "Editor.drawToMap"))
-    with (DrawingTarget(editor._map.albit))
+void drawTerrainToSeparateMap(Editor editor) {
+    with (Zone(profiler, "Editor.drawMapTerrain"))
+    with (DrawingTarget(editor._mapTerrain.albit))
 {
-    editor.clearScreenRectangle();
+    editor._mapTerrain.clearScreenRect(color.transp);
+    foreach (t; editor._level.terrain)
+        if (auto cb = t.dark ? t.ob.dark : t.ob.cb)
+            cb.draw(editor._mapTerrain, t.x, t.y, t.mirr, t.rot,
+                    t.dark ? Cutbit.Mode.DARK_EDITOR : Cutbit.Mode.NORMAL);
+}}
+
+void drawMainMap(Editor editor) {
+    with (Zone(profiler, "Editor.drawMapMain"))
+    with (DrawingTarget(editor._map.albit))
+    with (editor._level)
+{
+    editor._map.clearScreenRect(color.makecol(bgRed, bgGreen, bgBlue));
     editor.drawGadgets();
-    editor.drawTerrain();
+    editor._map.loadCameraRect(editor._mapTerrain);
     editor.drawHover();
     editor.drawSelection();
 }}
-
-void clearScreenRectangle(Editor editor)
-{
-    editor._map.clear_screen_rectangle(color.transp);
-}
 
 void drawGadgets(Editor editor)
 {
@@ -45,22 +53,6 @@ void drawGadgets(Editor editor)
             assert (g.ob && g.ob.cb);
             g.ob.cb.draw(editor._map, g.x, g.y);
         }
-}
-
-// Bug: If we draw the terrain right on the map, where the gadgets have
-// already been drawn to, dark pieces overwrite gadgets. This makes the
-// gadgets only visible where no piece is at all. Correct: The gadget
-// is visible where no piece is at all, and where dark pieces have cut
-// a hole into the terrain.
-void drawTerrain(Editor editor)
-{
-    auto zone = Zone(profiler, "Editor.drawTerrain");
-    foreach (t; editor._level.terrain) {
-        assert (t.ob);
-        if (auto cb = t.dark ? t.ob.dark : t.ob.cb)
-            cb.draw(editor._map, t.x, t.y, t.mirr, t.rot,
-                    t.dark ? Cutbit.Mode.DARK_EDITOR : Cutbit.Mode.NORMAL);
-    }
 }
 
 void drawHover(Editor editor)
@@ -78,7 +70,5 @@ void drawToScreen(Editor editor) {
     with (Zone(profiler, "Editor.drawToScreen"))
     with (DrawingTarget(display.al_get_backbuffer))
 {
-    with (_level)
-        al_clear_to_color(color.makecol(bgRed, bgGreen, bgBlue));
     _map.drawCamera();
 }}

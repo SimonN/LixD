@@ -18,7 +18,8 @@ import tile.gadtile;
 
 class Editor {
 package:
-    Map      _map;
+    Map      _map; // level background color, and gadgets
+    Map      _mapTerrain; // transp, for rendering terrain, later blit to _map
     Level    _level;
     Filename _loadedFrom;
 

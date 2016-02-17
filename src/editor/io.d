@@ -19,8 +19,11 @@ void implConstructor(Editor editor, Filename fn) { with (editor)
 {
     _loadedFrom = fn;
     _level = new Level(fn);
-    _map   = new Map(_level.xl, _level.yl, _level.torusX, _level.torusY,
-        Geom.screenXls.to!int, (Geom.screenYls - Geom.panelYls).to!int);
+
+    Map newMap() { with (_level) return new Map(xl, yl, torusX, torusY,
+        Geom.screenXls.to!int, (Geom.screenYls - Geom.panelYls).to!int); }
+    _map        = newMap();
+    _mapTerrain = newMap();
     _map.centerOnAverage(_level.pos[GadType.HATCH].map!(h => h.centerOnX),
                          _level.pos[GadType.HATCH].map!(h => h.centerOnY));
     editor.makePanel();

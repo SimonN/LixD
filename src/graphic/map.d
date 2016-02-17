@@ -425,7 +425,7 @@ drawCamera_with_target_corner(
 
 
 void
-loadCameraRectangle(in Torbit src)
+loadCameraRect(in Torbit src)
 {
     assert (src.albit);
     assert (this.xl == src.xl);
@@ -456,7 +456,7 @@ loadCameraRectangle(in Torbit src)
 
 
 void
-clear_screen_rectangle(AlCol col)
+clearScreenRect(AlCol col)
 {
     Rect r = cameraRectangle();
     this.drawFilledRectangle(r.x, r.y, cameraZoomedXl, cameraZoomedYl, col);

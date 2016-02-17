@@ -1,4 +1,4 @@
-module game.core.draw;
+    module game.core.draw;
 
 import std.conv; // replay sign
 import std.math; // sin, for replay sign
@@ -31,8 +31,8 @@ implGameDraw(Game game) { with (game)
         // nothing except comparing two pointers there if we've set stuff here.
         DrawingTarget drata = DrawingTarget(map.albit);
 
-        map.clear_screen_rectangle(color.makecol(
-            level.bgRed, level.bgGreen, level.bgBlue));
+        with (level)
+            map.clearScreenRect(color.makecol(bgRed, bgGreen, bgBlue));
         game.drawGadgets();
         game.drawLand();
         effect.draw(map);
@@ -63,7 +63,7 @@ void drawGadgets(Game game)
 void drawLand(Game game)
 {
     auto zone = Zone(profiler, "game draws land to map");
-    game.map.loadCameraRectangle(game.nurse.land);
+    game.map.loadCameraRect(game.nurse.land);
 }
 
 void drawAllLixes(Game game)
