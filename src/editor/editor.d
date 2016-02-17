@@ -4,6 +4,8 @@ module editor.editor;
  * The Editor is Controller and View.
  */
 
+import enumap;
+
 import editor.calc;
 import editor.draw;
 import editor.io;
@@ -12,6 +14,7 @@ import file.filename;
 import graphic.map;
 import level.level;
 import tile.pos;
+import tile.gadtile;
 
 class Editor {
 package:
@@ -22,8 +25,9 @@ package:
     bool _gotoMainMenu;
     EditorPanel _panel;
 
-    TerPos*[] _hoverTerrain;
-    GadPos*[] _hoverGadgets;
+    // Array indices of hovered tiles.
+    int[] _hoverTerrain;
+    Enumap!(GadType, int[]) _hoverGadgets;
 
 public:
     this(Filename fn) { this.implConstructor(fn); }

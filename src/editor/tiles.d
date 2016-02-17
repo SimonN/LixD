@@ -6,32 +6,25 @@ import std.algorithm;
 
 import editor.editor;
 import tile.pos;
+import tile.gadtile;
 
 void hoverTiles(Editor editor)
 {
     editor._hoverTerrain = [];
-    editor._hoverGadgets = [];
-    foreach (ref pos; editor._level.terrain)
-        editor.maybeAdd(editor._hoverTerrain, pos);
-    foreach (ref list; editor._level.pos)
-        foreach (ref pos; list)
-            editor.maybeAdd(editor._hoverGadgets, pos);
+    foreach (int i, pos; editor._level.terrain)
+        editor.maybeAdd(editor._hoverTerrain, i, pos);
+
+    foreach (GadType type, list; editor._level.pos) {
+        editor._hoverGadgets[type] = [];
+        foreach (int i, pos; list)
+            editor.maybeAdd(editor._hoverGadgets[type], i, pos);
+    }
 }
 
-void maybeAdd(Pos)(Editor editor, ref Pos*[] hover, ref Pos pos)
-    if (isSomePos!Pos)
+void maybeAdd(Pos)(Editor editor, ref int[] hover, int i, Pos pos)
+    if (is (Pos : AbstractPos))
 {
-    if (editor.isMouseHere(pos))
-        hover ~= &pos;
+    with (editor._map)
+        if (isPointInRectangle(mouseOnLandX, mouseOnLandY, pos.selbox))
+            hover ~= i;
 }
-
-bool isMouseHere(T)(in Editor editor, in T pos)
-    if (isSomePos!T) {
-    with (editor)
-    with (pos.ob)
-{
-    assert (pos.ob);
-    return _map.isPointInRectangle(
-        _map.mouseOnLandX, _map.mouseOnLandY,
-        pos.x + selboxX, pos.y + selboxY, selboxXl, selboxYl);
-}}

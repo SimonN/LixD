@@ -8,7 +8,8 @@ import std.algorithm;
 
 import basics.help; // len
 import game.core.game;
-import graphic.gadget.hatch;
+import tile.gadtile;
+import tile.pos;
 
 package:
 
@@ -21,18 +22,18 @@ void centerCameraOnHatchAverage(Game game)
 
 private:
 
-const(Hatch)[] ourHatches(const(Game) game) { with (game)
+const(GadPos)[] ourHatches(const(Game) game) { with (game)
 {
     assert (tribeLocal);
     auto st = nurse.stateOnlyPrivatelyForGame;
     assert (st.hatches.length > 0);
     assert (tribeLocal.hatchNextSpawn < st.hatches.length);
-    const(Hatch)[] ret;
+    const(GadPos)[] ret;
     for (int next = tribeLocal.hatchNextSpawn;
             next != tribeLocal.hatchNextSpawn || ret.length == 0;
             next  = (next + st.tribes.len) % st.hatches.len
     ) {
-        ret ~= st.hatches[next];
+        ret ~= level.pos[GadType.HATCH][next];
     }
     return ret;
 }}

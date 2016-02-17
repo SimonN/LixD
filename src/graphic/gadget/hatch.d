@@ -54,16 +54,6 @@ public:
 
     override Hatch clone() const { return new Hatch(this); }
 
-    override GadPos toPos() const
-    {
-        GadPos levelpos = super.toPos();
-        levelpos.hatchRot = spawnFacingLeft;
-        return levelpos;
-    }
-
-    @property int centerOnX() const { return toPos.centerOnX; }
-    @property int centerOnY() const { return toPos.centerOnY; }
-
     deprecated("use Hatch.animate(EffectManager, int) instead")
     override void animateForUpdate(in Update) { }
 

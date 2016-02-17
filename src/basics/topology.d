@@ -15,6 +15,8 @@ import std.string;
 
 import basics.help; // positiveMod
 
+struct Rect { int x; int y; int xl; int yl; }
+
 abstract class Topology {
 private:
     int  _xl, _yl; // x- and y-length of our rectangular area
@@ -112,23 +114,20 @@ public:
         return (dx * dx + dy * dy);
     }
 
-    bool isPointInRectangle(
-        // given point  // given rectangle by position and length
-        int px, int py, int rx, int ry, in int rxl, in int ryl) const
+    bool isPointInRectangle(int px, int py, Rect rect) const
     {
         if (_tx) {
-            px = positiveMod(px, _xl);
-            rx = positiveMod(rx, _xl);
-            // the following (if) omits the need for a 4-subrectangle-check
-            if (px < rx) px += _xl;
+            px     = positiveMod(px, _xl);
+            rect.x = positiveMod(rect.x, _xl);
+            if (px < rect.x) px += _xl;
         }
         if (_ty) {
-            py = positiveMod(py, _yl);
-            ry = positiveMod(ry, _yl);
-            if (py < ry) py += _yl;
+            py     = positiveMod(py,     _yl);
+            rect.y = positiveMod(rect.y, _yl);
+            if (py < rect.y) py += _yl;
         }
-        return (px >= rx && px < rx + rxl)
-            && (py >= ry && py < ry + ryl);
+        return (px >= rect.x && px < rect.x + rect.xl)
+            && (py >= rect.y && py < rect.y + rect.yl);
     }
 
     int torusAverageX(Range)(Range range) const if (isInputRange!Range)

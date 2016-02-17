@@ -65,18 +65,12 @@ void drawTerrain(Editor editor)
 
 void drawHover(Editor editor)
 {
-    editor._hoverTerrain.each!(t => editor._map.drawRectangle(
-        t.x + t.ob.selboxX, t.y + t.ob.selboxY, t.ob.selboxXl, t.ob.selboxYl,
-        hoverColor));
+    editor._hoverTerrain.each!(id => editor._map.drawRectangle(
+        editor._level.terrain[id].selbox, color.white));
 }
 
 void drawSelection(Editor)
 {
-}
-
-AlCol hoverColor()
-{
-    return color.white;
 }
 
 void drawToScreen(Editor editor) {

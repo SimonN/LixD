@@ -52,9 +52,6 @@ public:
     protected void drawGameExtras(Torbit, in GameState) const { }
     protected void drawEditorInfo(Torbit) const { }
 
-    // hatch should override this
-    GadPos toPos() const { return GadPos(tile, x, y); }
-
     @property Sound sound() { return Sound.NOTHING; }
 
 // protected: use the factory to generate gadgets of the correct subclass
@@ -94,16 +91,12 @@ body {
     drawWithEditorInfo = rhs.drawWithEditorInfo;
 }
 
-
-
 invariant()
 {
     assert (tile, "Gadget.tile should not be null");
     assert (tile.cb, "Gadget.tile.cb (the cutbit) shouldn't be null");
     assert (animationLength > 0, "Cutbit should have xfs > 0 unless null");
 }
-
-
 
 static Gadget
 factory(const(Topology) top, in ref GadPos levelpos)
@@ -123,75 +116,11 @@ factory(const(Topology) top, in ref GadPos levelpos)
     }
 }
 
-
-
 void
 animateForUpdate(in Update upd)
 {
     xf = positiveMod(upd, animationLength);
 }
-
-
-
-@property int
-selboxX() const
-{
-    int edge = rotation.to!int;
-    if (mirror)
-        edge = (edge == 1 ? 3 : edge == 3 ? 1 : edge);
-
-    // Most gadgets can't be rotated or mirrored. Even hatches have a separate
-    // field for that now.
-    assert (edge == 0,
-        "only editor terrain may be rotated and mirrored, not ingame gadgets");
-
-    switch (edge) {
-        case 0: return tile.selboxX; // rotation is clockwise
-        case 1: return tile.cb.yl - tile.selboxY - tile.selboxYl;
-        case 2: return tile.cb.xl - tile.selboxX - tile.selboxXl;
-        case 3: return tile.selboxY;
-        default: assert (false);
-    }
-}
-
-
-
-@property int
-selboxY() const
-{
-    int edge = rotation.to!int;
-    if (mirror)
-        edge = (edge == 0 ? 2 : edge == 2 ? 0 : edge);
-    assert (edge == 0,
-        "only editor terrain may be rotated and mirrored, not ingame gadgets");
-    switch (edge) {
-        case 0: return tile.selboxY;
-        case 1: return tile.selboxX;
-        case 2: return tile.cb.yl - tile.selboxY - tile.selboxYl;
-        case 3: return tile.cb.xl - tile.selboxX - tile.selboxXl;
-        default: assert (false);
-    }
-}
-
-
-
-@property int
-selboxXl() const
-{
-    if (rotation.to!int % 2 == 1) return tile.selboxYl;
-    else                          return tile.selboxXl;
-}
-
-
-
-@property int
-get_selboxYl() const
-{
-    if (rotation.to!int % 2 == 1) return tile.selboxXl;
-    else                          return tile.selboxYl;
-}
-
-
 
 deprecated("Gadgets should be drawn with const GameState") final override void
 draw(Torbit mutableGround) const { super.draw(mutableGround); }
@@ -200,28 +129,8 @@ final void
 draw(Torbit mutableGround, in GameState state = null) const
 {
     super.draw(mutableGround);
-
     drawGameExtras(mutableGround, state);
-
-    if (drawWithEditorInfo) {
-        assert (state is null, "are we in the editor or the game?");
-        drawEditorInfo(mutableGround);
-
-        // now draw trigger area on top
-        if (tile.type == GadType.GOAL
-         || tile.type == GadType.HATCH
-         || tile.type == GadType.TRAP
-         || tile.type == GadType.WATER
-         || tile.type == GadType.FLING
-        )
-            mutableGround.drawRectangle(x + tile.triggerX,
-                                        y + tile.triggerY,
-                                        tile.triggerXl, tile.triggerYl,
-                                        color.makecol(0x40, 0xFF, 0xFF));
-    }
 }
-
-
 
 final void drawLookup(Phymap lk) const
 {

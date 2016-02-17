@@ -69,16 +69,13 @@ public:
         al_clear_to_color(col);
     }
 
-    void drawRectangle(int x, int y, int rxl, int ryl, AlCol col)
+    void drawRectangle(Rect rect, in AlCol col)
     {
-        static if (_tharsisProfilingInTorbit)
-            auto myZone = Zone(profiler, "torbit-draw-rect");
-
-        amend(x, y);
+        amend(rect.x, rect.y);
         useDrawingDelegate(delegate void(int x_at, int y_at) {
             al_draw_rectangle(x_at + 0.5, y_at + 0.5,
-             x_at + rxl - 0.5, y_at + ryl - 0.5, col, 1);
-        }, x, y);
+             x_at + rect.xl - 0.5, y_at + rect.yl - 0.5, col, 1);
+        }, rect.x, rect.y);
     }
 
     void drawFilledRectangle(int x, int y, int rxl, int ryl, AlCol col)

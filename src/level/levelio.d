@@ -176,7 +176,7 @@ private void add_object_from_ascii_line(
     const(TerrainTile) ter = get_terrain(text1);
     const(GadgetTile)  gad = ter is null ? get_gadget (text1) : null;
     if (ter && ter.cb) {
-        TerPos newpos = TerPos(ter);
+        TerPos newpos = new TerPos(ter);
         newpos.x  = nr1;
         newpos.y  = nr2;
         foreach (char c; text2) switch (c) {
@@ -189,7 +189,7 @@ private void add_object_from_ascii_line(
         level.terrain ~= newpos;
     }
     else if (gad && gad.cb) {
-        GadPos newpos = GadPos(gad);
+        GadPos newpos = new GadPos(gad);
         newpos.x  = nr1;
         newpos.y  = nr2;
         if (gad.type == GadType.HATCH)

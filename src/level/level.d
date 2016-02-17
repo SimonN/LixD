@@ -77,7 +77,7 @@ public:
 
     TerPos[] terrain;
     GadPos[][GadType.MAX] pos; // one array GadPos[] for each GadType,
-                               // indexed by integers, not by GadType enum vals
+                                // indexed by ints, not by GadType enum vals
 /*  this();
  *  this(in Filename);
  *

@@ -27,7 +27,7 @@ package void implDrawTerrainTo(in Level level, Torbit tb, Phymap lookup)
         lookup.resize(level.xl, level.yl);
         lookup.setTorusXY(level.torusX, level.torusY);
     }
-    foreach (ref const(TerPos) po; level.terrain)
+    foreach (po; level.terrain)
         drawPosTerrain(po, tb, lookup);
 }
 
