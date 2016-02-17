@@ -63,8 +63,21 @@ void drawTerrain(Editor editor)
     }
 }
 
-void drawHover(Editor) { }
-void drawSelection(Editor) { }
+void drawHover(Editor editor)
+{
+    editor._hoverTerrain.each!(t => editor._map.drawRectangle(
+        t.x + t.ob.selboxX, t.y + t.ob.selboxY, t.ob.selboxXl, t.ob.selboxYl,
+        hoverColor));
+}
+
+void drawSelection(Editor)
+{
+}
+
+AlCol hoverColor()
+{
+    return color.white;
+}
 
 void drawToScreen(Editor editor) {
     with (editor)

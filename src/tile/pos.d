@@ -13,6 +13,10 @@ import tile.terrain;
 import tile.platonic;
 import tile.gadtile;
 
+template isSomePos(T) {
+    enum bool isSomePos = is (T == GadPos) || is (T == TerPos);
+}
+
 struct GadPos {
     const(GadgetTile) ob;
     int  x;

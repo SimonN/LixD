@@ -11,6 +11,7 @@ import editor.panel;
 import file.filename;
 import graphic.map;
 import level.level;
+import tile.pos;
 
 class Editor {
 package:
@@ -20,6 +21,9 @@ package:
 
     bool _gotoMainMenu;
     EditorPanel _panel;
+
+    TerPos*[] _hoverTerrain;
+    GadPos*[] _hoverGadgets;
 
 public:
     this(Filename fn) { this.implConstructor(fn); }
