@@ -1,6 +1,16 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.24
+------
+
+2016-02-17
+
+The editor draws white rectangles around all mouse-hovered terrain pieces.
+Refactored TerPos and GadPos to be subclasses of AbstractPos, not structs.
+
+Fix: Editor dark terrain doesn't overwrite gadgets anymore.
+
 0.2.23
 ------
 

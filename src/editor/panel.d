@@ -11,6 +11,7 @@ class EditorPanel : Element {
 private:
     TextButton     _info;
     BitmapButton[] _buttons;
+    Label          _fps;
 
 public:
     this()
@@ -42,17 +43,18 @@ protected:
                 try _info.text = (id+Lang.editorButtonFileNew).to!Lang.transl;
                 catch (ConvException) { }
             }
+        import hardware.display;
+        import std.string;
+        _fps.text = "FPS: %d".format(displayFps);
     }
 
 private:
     void makeInfo()
     {
         _info = new TextButton(new Geom(0, 0, xlg, 20));
-        import basics.alleg5;
         _info.alignLeft = true;
-        _info.text = basics.user.keyEditorExit.hotkeyNiceBrackets
-            ~ "exits the editor.";
-        addChild(_info);
+        _fps  = new Label(new Geom(4, 0, 100, 20, From.TOP_RIGHT));
+        addChildren(_info, _fps);
     }
 
     void makeButtons()
