@@ -13,7 +13,7 @@ module game.effect;
  */
 
 import std.algorithm;
-import std.container.rbtree;
+import std.container;
 
 import basics.help;
 import basics.nettypes;

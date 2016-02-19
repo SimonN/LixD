@@ -11,7 +11,7 @@ module game.model.state;
  */
 
 import std.range;
-import std.algorithm.iteration;
+import std.algorithm;
 
 import basics.help; // clone(T[]), a deep copy for arrays
 import basics.nettypes;

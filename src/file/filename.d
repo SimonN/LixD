@@ -54,7 +54,7 @@ private:
     immutable string _dirRootless;
     immutable string _dirInnermost;
 
-    immutable char _preExtension = 0;
+    immutable char _preExtension;
 
 
 
@@ -63,9 +63,6 @@ public:
 pure this(in string s)
 {
     assert (s.length < int.max);
-
-    // All strings start empty, preExtension is '\0'
-
     // Possible root dirs are "./" and "../". We erase everything from the
     // start of the filename that is '.' or '/' and call that rootless.
     int sos = 0; // start_of_rootless
@@ -96,8 +93,12 @@ pure this(in string s)
     // Determine the pre-extension or leave it at '\0'.
     if (lastDot >= 2 && _rootless[lastDot - 2] == '.'
         && (_rootless[lastDot - 1] >= 'A'
-        &&  _rootless[lastDot - 1] <= 'Z'))
+        &&  _rootless[lastDot - 1] <= 'Z')
+    ) {
         _preExtension = _rootless[lastDot - 1];
+    }
+    else
+        _preExtension = 0;
 
     // Determine the file. This is done similar as finding the extension.
     int lastSlash = _rootless.len - 1;
@@ -149,7 +150,7 @@ pure this(in Filename fn)
     _dirRootless   = fn._dirRootless;
     _dirInnermost  = fn._dirInnermost;
 
-    _preExtension   = fn._preExtension;
+    _preExtension  = fn._preExtension;
 }
 
 
