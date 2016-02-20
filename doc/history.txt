@@ -1,6 +1,14 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.25
+------
+
+2016-02-20
+
+The singleplayer browser shows checkmarks next to solved levels. However,
+the game doesn't save any new checkmarks on winning yet.
+
 0.2.24
 ------
 

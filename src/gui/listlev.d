@@ -117,7 +117,9 @@ newFileButton(int nr_from_top, int total_nr, Filename fn)
         const(Result) result = basics.user.getLevelResult(fn);
         t.checkFrame = result is null         ? 0
             : result.built    != lev.built    ? 3
-            : result.lixSaved >= lev.required ? 2 : 4;
+            : result.lixSaved >= lev.required ? 2
+            : 0; // 0, and not 4, here. We don't want to display the little
+                 // ring for looked-at-but-didn't-solve. It makes people sad!
     }
     return t;
 }
