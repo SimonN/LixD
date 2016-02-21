@@ -6,6 +6,16 @@ import game.core.game;
 import game.gui.panel;
 import hardware.sound;
 
+/* For anything that can set back a state from singleplayer-has-won to
+ * singleplayer hasn't yet won, e.g., lodaing an old state:
+ *  1.  Begin by calling game.saveResult().
+ *      --  This prevents lost progress. I don't save an autoreplay, because
+ *      --  that would generate loads of clutter.
+ *  2.  Do your action.
+ *  3.  End by game.setLastUpdateToNow().
+ * We could refactor this keep-in-mind-list into a RAII struct.
+ */
+
 package:
 
 void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
@@ -26,14 +36,14 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
     if (   pan.speedBack.executeLeft
         || pan.speedBack.executeRight
     ) {
+        game.saveResult();
         nurse.framestepBackBy(
               pan.speedBack.executeLeft  ? 1
             : pan.speedBack.executeRight ? Game.updatesBackMany : 0);
         game.setLastUpdateToNow();
     }
     else if (pan.restart.execute) {
-        nurse.restartLevel();
-        game.setLastUpdateToNow();
+        game.restartLevel();
     }
     else if (pan.stateSave.execute) {
         nurse.saveUserState();
@@ -43,6 +53,7 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
         if (! nurse.userStateExists)
             hardware.sound.playLoud(Sound.PANEL_EMPTY);
         else {
+            game.saveResult();
             if (nurse.loadUserStateDoesItMismatch)
                 hardware.sound.playLoud(Sound.SCISSORS);
             game.setLastUpdateToNow();
@@ -67,6 +78,13 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
     }
 }}
 // end with (game), end function updatePhysicsAccordingToSpeedButtons
+
+void restartLevel(Game game)
+{
+    game.saveResult();
+    game.nurse.restartLevel();
+    game.setLastUpdateToNow();
+}
 
 private:
 

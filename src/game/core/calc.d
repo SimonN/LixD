@@ -68,8 +68,7 @@ calcModalWindow(Game game) { with (game)
         killWindow();
     }
     else if (modalWindow.restart) {
-        game.nurse.restartLevel();
-        game.setLastUpdateToNow();
+        game.restartLevel();
         killWindow();
     }
     else if (modalWindow.exitGame) {

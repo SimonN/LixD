@@ -170,6 +170,14 @@ package:
         altickLastUpdate = timerTicks;
     }
 
+    void saveResult()
+    {
+        if (nurse && cs.singlePlayerHasWon
+                  && masterLocal.name == basics.globconf.userName)
+            setLevelResult(levelFilename,
+                           nurse.resultForTribe(_indexTribeLocal));
+    }
+
 private:
     @property cs() inout
     {
@@ -217,13 +225,5 @@ private:
         if (nurse && nurse.replay && ! wasInstantiatedWithReplay)
             nurse.replay.saveAsAutoReplay(levelFilename, level,
                                           cs.singlePlayerHasWon);
-    }
-
-    void saveResult()
-    {
-        if (nurse && cs.singlePlayerHasWon
-                  && masterLocal.name == basics.globconf.userName)
-            setLevelResult(levelFilename,
-                           nurse.resultForTribe(_indexTribeLocal));
     }
 }

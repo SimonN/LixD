@@ -1,6 +1,15 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.26
+------
+
+2016-02-21
+
+Game saves level result on leaving play, or on loading an old state.
+Autoreplays are only saved on leaving the game. Should they be saved on
+reaching the end-of-game dialog already?
+
 0.2.25
 ------
 
