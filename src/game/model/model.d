@@ -32,6 +32,7 @@ class GameModel {
         _effect = ef;
         _cs     = game.model.init.newZeroState(level);
         _physicsDrawer = new PhysicsDrawer(_cs.land, _cs.lookup);
+        finalizeUpdateAnimateGadgets();
     }
 
     void takeOwnershipOf(GameState s)

@@ -1,6 +1,12 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.27:
+
+2016-02-21
+
+Fix #49: Animate gadgets (most importantly, water and fire) on level start.
+
 0.2.26
 ------
 
