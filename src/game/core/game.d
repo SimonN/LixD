@@ -14,6 +14,7 @@ import std.conv; // float to int in prepare nurse
 
 import basics.alleg5;
 import basics.globals;
+import basics.globconf; // username, to determine whether to save result
 import basics.help; // len;
 import basics.user; // Result
 import basics.nettypes;
@@ -98,9 +99,8 @@ public:
             gui.rmElder(pan);
         if (modalWindow)
             gui.rmFocus(modalWindow);
-        if (nurse && nurse.replay && ! wasInstantiatedWithReplay)
-            nurse.replay.saveAsAutoReplay(levelFilename, level,
-                                          cs.singlePlayerHasWon);
+        saveResult();
+        saveAutoReplay();
         if (nurse)
             nurse.dispose();
     }
@@ -210,5 +210,20 @@ private:
             pan.setLikeTribe(tribeLocal);
             pan.highlightFirstSkill();
         }
+    }
+
+    void saveAutoReplay()
+    {
+        if (nurse && nurse.replay && ! wasInstantiatedWithReplay)
+            nurse.replay.saveAsAutoReplay(levelFilename, level,
+                                          cs.singlePlayerHasWon);
+    }
+
+    void saveResult()
+    {
+        if (nurse && cs.singlePlayerHasWon
+                  && masterLocal.name == basics.globconf.userName)
+            setLevelResult(levelFilename,
+                           nurse.resultForTribe(_indexTribeLocal));
     }
 }

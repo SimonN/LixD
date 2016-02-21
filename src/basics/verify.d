@@ -59,7 +59,7 @@ private class VerifyCounter {
         // We never look at the included level
         if (fn == rep.levelFilename || ! lev.good) {
             // give a result with all zeroes to pad the fields
-            writeResult(new Result(), fn, rep, lev);
+            writeResult(new Result(lev.built), fn, rep, lev);
             return;
         }
         Game game = new Game(Runmode.VERIFY, lev, rep.levelFilename, rep);

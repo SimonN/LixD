@@ -12,6 +12,7 @@ import std.algorithm;
 
 import basics.nettypes; // update
 import basics.user; // Result
+import file.date;
 import game.effect;
 import game.replay;
 import game.model.model;
@@ -21,7 +22,13 @@ import hardware.tharsis;
 import level.level;
 
 class Nurse {
+private:
+    Replay _replay;
+    GameModel _model;
+    StateManager _states;
+    const(Date) _levelBuilt; // to write it into to results generated later
 
+public:
     @property const(Replay) replay() const { return _replay; }
     @property Update        upd()    const { return _model.cs.update; }
     @property               land()   const { return _model.cs.land;   }
@@ -35,6 +42,7 @@ class Nurse {
         _replay = rp;
         _model  = new GameModel(lev, ef);
         _states = new StateManager();
+        _levelBuilt = lev.built;
         assert (_replay);
         _states.saveZero(_model.cs);
     }
@@ -111,20 +119,6 @@ class Nurse {
         _model.advance(_replay.permu);
     }
 
-    // again, only noninteractive mode should call this
-    Result evaluateReplay()
-    {
-        assert (_model);
-        assert (_replay);
-        while (_model.cs.tribes.any!(tr => tr.stillPlaying)
-                // allow 5 minutes after the last replay data before cancelling
-                && upd < _replay.latestUpdate + 5 * (60 * 15))
-            updateOnce();
-
-        assert (_model.cs.tribes.length == 1);
-        return resultOf(_model.cs.tribes[0]);
-    }
-
     void framestepBackBy(int backBy)
     {
         immutable whatUpdateToLoad = Update(_model.cs.update - backBy);
@@ -141,12 +135,29 @@ class Nurse {
         _model.applyChangesToLand();
     }
 
+    // again, only noninteractive mode should call this
+    Result evaluateReplay()
+    {
+        assert (_model);
+        assert (_replay);
+        while (_model.cs.tribes.any!(tr => tr.stillPlaying)
+                // allow 5 minutes after the last replay data before cancelling
+                && upd < _replay.latestUpdate + 5 * (60 * 15))
+            updateOnce();
+        // DTODONETWORKING: Should query the replay about tribe-local index.
+        // It's well possible to check networking replays, even if that won't
+        // give informative results in the replay checker. Don't assert here.
+        assert (_model.cs.tribes.length == 1);
+        return resultOf(_model.cs.tribes[0]);
+    }
+
+    Result resultForTribe(in int arrIndex) const
+    {
+        assert (arrIndex >= 0 && arrIndex < _model.cs.tribes.length);
+        return resultOf(_model.cs.tribes[arrIndex]);
+    }
+
 private:
-
-    Replay _replay;
-    GameModel _model;
-    StateManager _states;
-
     void applyReplayDataToModel()
     {
         assert (_replay);
@@ -194,9 +205,9 @@ private:
         }
     }
 
-    Result resultOf(in Tribe tr)
+    Result resultOf(in Tribe tr) const
     {
-        auto result = new Result();
+        auto result = new Result(_levelBuilt);
         result.lixSaved    = tr.lixSaved;
         result.skillsUsed  = tr.skillsUsed;
         result.updatesUsed = tr.updatePreviousSave;

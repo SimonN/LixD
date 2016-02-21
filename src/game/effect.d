@@ -23,7 +23,6 @@ import hardware.sound;
 import lix.enums;
 
 private struct Effect {
-
     Update   update;
     int      tribe; // array slot in game.cs.tribes
     int      lix;   // if not necessary, set to 0

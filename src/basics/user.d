@@ -208,29 +208,17 @@ static this()
     editorLastDirHazard  = new Filename(dirImages);
 }
 
-
-
 // ############################################################################
-// ############################################################## struct Result
-// ############################################################################
-
-
 
 class Result {
-    Date   built;
+    const(Date) built;
     int    lixSaved;
     int    skillsUsed;
     Update updatesUsed;
 
-    this ()
+    this (const(Date) bu)
     {
-        built = Date.now();
-        // all other fields are initialized to zero
-    }
-
-    this (Date bu, in int sa, in int sk, in Update up)
-    {
-        built = bu; lixSaved = sa; skillsUsed = sk; updatesUsed = up;
+        built = bu;
     }
 
     int opEquals(in Result rhs) const
@@ -256,9 +244,6 @@ class Result {
     }
 
 }
-// end class Result
-
-
 
 const(Result) getLevelResult(in Filename fn)
 {
@@ -266,45 +251,19 @@ const(Result) getLevelResult(in Filename fn)
     return ret ? (*ret) : null;
 }
 
-
-
-void setLevelResultCarefully(
+void setLevelResult(
     in Filename _fn,
     Result r,
-    in int required
 ) {
     auto fn = rebindable!(const Filename)(_fn);
     auto savedResult = (fn in results);
-
-    if (savedResult is null) {
+    if (savedResult is null
+        || savedResult.built != r.built
+        || *savedResult < r)
         results[fn] = r;
-    }
-    else if (savedResult.built == r.built) {
-        // carefully means: if the level build times are the same, use the
-        // better result of these two
-        if (*savedResult < r) results[fn] = r;
-    }
-    else {
-        // carefully also means: when the bulid times differ, a non-solving
-        // result of a new version is worse than a solving result of the old
-        // version. Otherwise, the new version is always preferred.
-        // required should be supplied by Gameplay, it's the required count
-        // for the new Result r
-        if (savedResult.lixSaved >= required && r.lixSaved < required) {
-            // do nothing, keep the old result
-        }
-        else results[fn] = r;
-    }
 }
 
-
-
 // ############################################################################
-// ############################################### saving/loading the user file
-// ############################################################################
-
-
-
 
 private Filename userFileName()
 {
@@ -481,12 +440,13 @@ void load()
 
     case '<': {
         auto fn = rebindable!(const Filename)(new Filename(i.text1));
-        Result result_read = new Result(new Date(i.text2),
-                             i.nr1, i.nr2, Update(i.nr3));
-        Result* result_in_database = (fn in results);
-        if (! result_in_database || *result_in_database < result_read) {
-            results[fn] = result_read;
-        }
+        Result read = new Result(new Date(i.text2));
+        read.lixSaved    = i.nr1;
+        read.skillsUsed  = i.nr2;
+        read.updatesUsed = Update(i.nr3);
+        Result* old = (fn in results);
+        if (! old || *old < read)
+            results[fn] = read;
         break; }
 
     default:
