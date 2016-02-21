@@ -21,10 +21,11 @@ class LevelMetaData {
 this(in Filename fn)
 {
     format = level.levelio.get_file_format(fn);
-
-    if      (format == FileFormat.LIX)     read_metadata_lix    (fn);
-    else if (format == FileFormat.BINARY)  read_metadata_binary (fn);
-    else if (format == FileFormat.LEMMINI) read_metadata_lemmini(fn);
+    MutableDate tmp;
+    if      (format == FileFormat.LIX)     read_metadata_lix    (fn, tmp);
+    else if (format == FileFormat.BINARY)  read_metadata_binary (fn, tmp);
+    else if (format == FileFormat.LEMMINI) read_metadata_lemmini(fn, tmp);
+    built = tmp;
 }
 
 
@@ -47,15 +48,15 @@ fileExists() const
 
 
 private void
-read_metadata_lix(in Filename fn)
+read_metadata_lix(in Filename fn, out MutableDate builtTemp)
 {
     IoLine[] lines = fillVectorFromFileNothrow(fn);
     foreach (i; lines) {
-        if (i.text1 == levelBuilt)        built        = new Date(i.text2);
+        if (i.text1 == levelBuilt)       builtTemp   = new Date(i.text2);
         if (i.text1 == levelNameGerman)  nameGerman  = i.text2;
         if (i.text1 == levelNameEnglish) nameEnglish = i.text2;
-        if (i.text1 == levelInitial)      initial      = i.nr1;
-        if (i.text1 == levelRequired)     required     = i.nr1;
+        if (i.text1 == levelInitial)     initial     = i.nr1;
+        if (i.text1 == levelRequired)    required    = i.nr1;
     }
 }
 
@@ -64,7 +65,7 @@ read_metadata_lix(in Filename fn)
 // these functions are defined in levelBi.cpp
 // std::string read_levelName_bytes (std::ifstream&);
 // int         read_two_bytes_levelbi(std::ifstream&);
-private void read_metadata_binary(in Filename fn)
+private void read_metadata_binary(in Filename fn, out MutableDate builtTemp)
 {
     import file.log;
     log("DTODO: reading binary metadata not impl");
@@ -83,7 +84,7 @@ private void read_metadata_binary(in Filename fn)
 
 
 private void
-read_metadata_lemmini(in Filename fn)
+read_metadata_lemmini(in Filename fn, out MutableDate builtTemp)
 {
     import file.log;
     log("DTODO: reading Lemmini metadata not impl");

@@ -47,7 +47,7 @@ public:
 
     // DTODO: implement players_intended;
 
-    Date   built;
+    MutableDate built;
     string author;
     string nameGerman;
     string nameEnglish;

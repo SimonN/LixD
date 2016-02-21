@@ -85,12 +85,16 @@ public:
 this(Filename loadFrom = null)
 {
     touch();
-    levelBuiltRequired = new Date("0");
     levelFilename      = loadFrom ? loadFrom : noLevelFilenameSet.clone();
     _permu             = new Permu(1);
 
+    // This is a hack, expecting only one immutable member in (this).
+    // That's why we can set it via return value.
+    // Once I make more members proprely immutable, I need to improve this.
     if (loadFrom)
-        this.loadFromFile(loadFrom);
+        levelBuiltRequired = this.loadFromFile(loadFrom);
+    else
+        levelBuiltRequired = new Date("0");
 }
 
 
@@ -105,7 +109,7 @@ pure this(in Replay rhs)
     _fileNotFound        = rhs._fileNotFound;
     _gameVersionRequired = rhs._gameVersionRequired;
 
-    levelBuiltRequired   = rhs.levelBuiltRequired.clone();
+    levelBuiltRequired   = rhs.levelBuiltRequired;
     levelFilename        = rhs.levelFilename.clone();
     playerLocal          = rhs.playerLocal;
 
@@ -406,7 +410,7 @@ body {
     return path;
 }
 
-private void
+private Date
 loadFromFile(Filename fn)
 {
     IoLine[] lines;
@@ -416,13 +420,15 @@ loadFromFile(Filename fn)
     catch (Exception e) {
         log(e.msg);
         _fileNotFound = true;
-        return;
+        return new immutable Date("0");
     }
+    import std.typecons;
+    Rebindable!(Date) levelBuiltRequiredTemp;
 
     foreach (i; lines) switch (i.type) {
     case '$':
         if (i.text1 == replayLevelBuiltRequired) {
-            levelBuiltRequired = new Date(i.text2);
+            levelBuiltRequiredTemp = new Date(i.text2);
         }
         else if (i.text1 == replayPermu) {
             _permu = new Permu(i.text2);
@@ -478,6 +484,7 @@ loadFromFile(Filename fn)
         break;
     }
     // end switch and foreach
+    return levelBuiltRequiredTemp;
 }
 
 }

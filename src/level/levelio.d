@@ -154,7 +154,7 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
     // time of 0. In early 2011, the maximal number of skills was raised.
     // Prior to that, infinity was 100, and finite skill counts had to be
     // <= 99. Afterwards, infinity was -1, and the maximum skill count was 999.
-    auto zero_date = new Date("0");
+    MutableDate zero_date = new Date("0");
     if (built != zero_date && built < new Date("2009-08-23 00:00:00")) {
         // DTODOCOMPILERUPDATE
         // pos[GadType.TERRAIN].reverse();
