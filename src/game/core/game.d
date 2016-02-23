@@ -89,7 +89,7 @@ public:
             this.setLastUpdateToNow();
         level         = lv;
         levelFilename = fn;
-        prepareNurse(rp, fn);
+        prepareNurse(rp);
         setLastUpdateToNow();
     }
 
@@ -186,14 +186,13 @@ private:
         return nurse.stateOnlyPrivatelyForGame;
     }
 
-    private void prepareNurse(Replay rp, Filename fn)
+    private void prepareNurse(Replay rp)
     {
         assert (! effect);
         assert (! nurse);
         _wasInstantiatedWithReplay = rp !is null;
         if (! rp) {
-            rp = new Replay();
-            rp.levelFilename = fn;
+            rp = Replay.newForLevel(levelFilename, level.built);
 
             // DTODONETWORK: what to add?
             import lix.enums;

@@ -7,10 +7,12 @@ import std.conv; // to!long for string length
 
 import basics.help;
 
+static Filename nullFilename;
+static this() { nullFilename = new Filename(""); }
+
 class Filename {
 private:
     static string root = "./";
-
     // We don't have the variables rootful and dirRootful anymore.
     // Module basics.globals instatiates Filename objects before main() runs,
     // which will produce an error when compiling the non-static constructor

@@ -52,7 +52,7 @@ void implSaveManually(in Replay replay, in Filename levelFn, in Level lev)
     replay.saveToTree(basics.globals.dirReplayManual, levelFn, lev);
 }
 
-Date loadFromFile(Replay replay, Filename fn) { with (replay)
+Date implLoadFromFile(Replay replay, Filename fn) { with (replay)
 {
     IoLine[] lines;
     try {

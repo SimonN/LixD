@@ -54,7 +54,7 @@ private class VerifyCounter {
     void verify(Filename fn)
     {
         ++total;
-        Replay rep = new Replay(fn);
+        Replay rep = Replay.loadFromFile(fn);
         Level  lev = new Level(rep.levelFilename);
         // We never look at the included level
         if (fn == rep.levelFilename || ! lev.good) {

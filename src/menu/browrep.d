@@ -46,7 +46,7 @@ protected:
             _extract.hide();
         }
         else {
-            replayRecent = new Replay(fn);
+            replayRecent = Replay.loadFromFile(fn);
             levelRecent  = new Level(fn); // open the replay file as level
             _delete.show();
             _extract.hidden = ! levelRecent.nonempty;

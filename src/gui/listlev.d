@@ -91,7 +91,7 @@ newFileButton(int nr_from_top, int total_nr, Filename fn)
     }
     LevelMetaData lev;
     if (_replayToLevelName) {
-        auto r = new Replay(fn);
+        auto r = Replay.loadFromFile(fn);
         lev = new LevelMetaData(r.levelFilename); // use pointed-to level
         if (! lev.fileExists)
         lev = new LevelMetaData(fn); // use included level

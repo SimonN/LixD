@@ -34,29 +34,24 @@ public:
     Filename levelFilename;
     PlNr     playerLocal;
 
-    this(Filename loadFrom = null)
+    static newForLevel(Filename levFn, Date levBuilt)
     {
-        touch();
-        levelFilename      = loadFrom ? loadFrom : noLevelFilenameSet.clone();
-        _permu             = new Permu(1);
-
-        // This is a hack, expecting only one immutable member in (this).
-        // That's why we can set it via return value.
-        // Once I make more members proprely immutable, I need to improve this.
-        if (loadFrom)
-            levelBuiltRequired = this.loadFromFile(loadFrom);
-        else
-            levelBuiltRequired = new Date("0");
+        return new this(levFn, levBuilt, null);
     }
 
-    pure Replay clone() const { return new Replay(this); }
-    pure this(in Replay rhs)
+    static loadFromFile(Filename loadFrom)
+    {
+        return new this(null, null, loadFrom);
+    }
+
+    auto clone() const { return new Replay(this); }
+    this(in typeof(this) rhs)
     {
         _fileNotFound        = rhs._fileNotFound;
         _gameVersionRequired = rhs._gameVersionRequired;
 
         levelBuiltRequired   = rhs.levelBuiltRequired;
-        levelFilename        = rhs.levelFilename.clone();
+        levelFilename        = rhs.levelFilename ? rhs.levelFilename.clone() : null; // DTODO: make filename immutable
         playerLocal          = rhs.playerLocal;
 
         _players             = rhs._players.dup;
@@ -64,6 +59,23 @@ public:
         _data                = rhs._data.dup;
     }
 
+private:
+    this(Filename levFn, Date levBuilt, Filename loadFrom)
+    {
+        touch();
+        levelFilename = levFn ? levFn : nullFilename;
+        _permu        = new Permu(1);
+
+        // This is a hack, expecting only one immutable member in (this).
+        // That's why we can set it via return value.
+        // Once I make more members proprely immutable, I need to improve this.
+        if (loadFrom)
+            levelBuiltRequired = this.implLoadFromFile(loadFrom);
+        else
+            levelBuiltRequired = levBuilt;
+    }
+
+public:
     @property fileNotFound() const        { return _fileNotFound;        }
     @property gameVersionRequired() const { return _gameVersionRequired; }
 
@@ -82,22 +94,6 @@ public:
             if (pl.number == playerLocal)
                 return pl.name;
         return null;
-    }
-
-    @property string canonicalSaveFilename() const
-    {
-        string base = levelFilename.fileNoExtNoPre;
-        string plna = this.playerLocalName;
-        return plna.length ? base ~ "-" ~ plna : base;
-    }
-
-    // DTODO: this is stupid and Filename should be alias to
-    // std.typecons.rebindable!(immutable(private file.filename._Filename)).
-    private static const noLevelFilenameSet = new Filename("");
-    @property bool containsLevel() const
-    {
-        assert (levelFilename !is null);
-        return levelFilename != noLevelFilenameSet;
     }
 
     void touch()
