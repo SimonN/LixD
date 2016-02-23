@@ -20,10 +20,30 @@ import file.search;
 import hardware.keyboard;
 
 class ListFile : Frame {
+private:
+    int  _page;
+    int  _bottomButton;
+    int  _fileNumberAtTop;
+    bool _bottomButtonFlipsPage;
 
-    alias FileFinder = Filename[] function(in Filename);
-    alias SearchCrit = bool function(in Filename);
-    alias FileSorter = void delegate(Filename[]);
+    bool _useHotkeys;
+    bool _clicked;
+
+    MutableFilename[] files;
+    Button[] buttons;
+    Button   _buttonLastClicked;
+
+    MutableFilename _currentDir;
+    MutableFilename _currentFile; // need not be in currentDir
+
+    FileFinder _fileFinder;
+    SearchCrit _searchCrit;
+    FileSorter _fileSorter;
+
+public:
+    alias FileFinder = MutableFilename[] function(Filename);
+    alias SearchCrit = bool function(Filename);
+    alias FileSorter = void delegate(MutableFilename[]);
 
     this(Geom g)
     {
@@ -50,16 +70,14 @@ class ListFile : Frame {
     @property inout(Button) buttonLastClicked() inout {
         return _buttonLastClicked; }
 
-    deprecated("Do we still need this in the browser?")
-    const(Filename) get_file(int i) { return files[i]; }
-
-    @property void            currentDir(in Filename fn) { load_dir(fn);  }
-    @property inout(Filename) currentDir()  inout { return _currentDir;  }
-    @property inout(Filename) currentFile() inout
+    @property void     currentDir(Filename fn) { load_dir(fn);  }
+    @property Filename currentDir()  const { return _currentDir;  }
+    @property Filename currentFile() const
     out (ret) {
         assert (ret is null || ret.isChildOf(_currentDir),
             "`%s' not child of `%s'".format(ret.rootful, _currentDir.rootful));
-        assert (ret != _currentDir,
+        MutableFilename mutRet = ret;
+        assert (mutRet != _currentDir,
             "When no file is selected, currentFile should return null. "
             "Under no circumstances, currentFile should be the current dir.");
     }
@@ -73,9 +91,9 @@ class ListFile : Frame {
     @property bool useHotkeys()       { return _useHotkeys;     }
     @property bool useHotkeys(bool b) { return _useHotkeys = b; }
 
-    void highlight(in Filename fn)
+    void highlight(Filename fn)
     {
-        highlightNumberImpl(files.countUntil(fn).to!int);
+        highlightNumberImpl(files.countUntil(MutableFilename(fn)).to!int);
     }
 
     int currentNumber() const
@@ -88,13 +106,13 @@ class ListFile : Frame {
         highlightNumberImpl(clamp(pos, -1, files.len - 1));
     }
 
-    static Filename[] default_fileFinder(in Filename where)
+    static MutableFilename[] default_fileFinder(in Filename where)
     {
         return file.search.findRegularFilesNoRecursion(where);
     }
 
     static bool default_searchCrit(in Filename fn) { return true; } // all
-    void default_fileSorter(Filename[] arr) { arr.sort(); }
+    void default_fileSorter(MutableFilename[] arr) { arr.sort(); }
 
     void load_dir(in Filename to_load, in int which_page = 0)
     {
@@ -119,7 +137,7 @@ protected:
 
     OnDirLoadAction on_dir_load() { return OnDirLoadAction.CONTINUE; }
     void onFileHighlight() { }
-    void put_to_file_list(Filename s) { files ~= s; }
+    void put_to_file_list(Filename s) { files ~= MutableFilename(s); }
 
     enum OnDirLoadAction { CONTINUE, RELOAD, ABORT }
 
@@ -141,10 +159,6 @@ protected:
         b.text = str;
         return b;
     }
-
-    // retrieve the raw list of files. Useful when overriding on_dir_load()
-    // to sort the files before buttons are drawn.
-    final @property inout(Filename[]) file_list() inout { return files; }
 
     override void calcSelf()
     {
@@ -187,27 +201,7 @@ protected:
     }
 
 private:
-
-    int  _page;
-    int  _bottomButton;
-    int  _fileNumberAtTop;
-    bool _bottomButtonFlipsPage;
-
-    bool _useHotkeys;
-    bool _clicked;
-
-    Filename[] files;
-    Button[]   buttons;
-    Button     _buttonLastClicked;
-
-    Filename   _currentDir;
-    Filename   _currentFile; // need not be in currentDir
-
-    FileFinder _fileFinder;
-    SearchCrit _searchCrit;
-    FileSorter _fileSorter;
-
-    private void highlightNumberImpl(in int pos)
+    void highlightNumberImpl(in int pos)
     {
         assert (pos >= -1);
         assert (pos < files.length.to!int,

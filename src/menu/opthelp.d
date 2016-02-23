@@ -273,7 +273,7 @@ class LanguageOption : Option {
     {
         if (   _lf.currentFile !is null
             && _lf.currentFile != _lf.currentDir
-            && _lf.currentFile != basics.user.fileLanguage
+            && MutableFilename(_lf.currentFile) != basics.user.fileLanguage
         ) {
             basics.user.fileLanguage = _lf.currentFile;
             loadUserLanguageAndIfNotExistSetUserOptionToEnglish();

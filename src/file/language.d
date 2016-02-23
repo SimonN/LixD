@@ -438,7 +438,7 @@ loadUserLanguageAndIfNotExistSetUserOptionToEnglish()
         log(e.msg);
         if (! languageIsEnglish) {
             log("Falling back to English.");
-            fileLanguage = new Filename(fileLanguageEnglish);
+            fileLanguage = fileLanguageEnglish;
             loadUserLanguageAndIfNotExistSetUserOptionToEnglish();
             return;
         }

@@ -49,11 +49,9 @@ public:
     {
         _fileNotFound        = rhs._fileNotFound;
         _gameVersionRequired = rhs._gameVersionRequired;
-
         levelBuiltRequired   = rhs.levelBuiltRequired;
-        levelFilename        = rhs.levelFilename ? rhs.levelFilename.clone() : null; // DTODO: make filename immutable
+        levelFilename        = rhs.levelFilename;
         playerLocal          = rhs.playerLocal;
-
         _players             = rhs._players.dup;
         _permu               = rhs._permu.clone();
         _data                = rhs._data.dup;
@@ -63,22 +61,21 @@ private:
     this(Filename levFn, Date levBuilt, Filename loadFrom)
     {
         touch();
-        levelFilename = levFn ? levFn : nullFilename;
-        _permu        = new Permu(1);
-
-        // This is a hack, expecting only one immutable member in (this).
-        // That's why we can set it via return value.
-        // Once I make more members proprely immutable, I need to improve this.
-        if (loadFrom)
-            levelBuiltRequired = this.implLoadFromFile(loadFrom);
-        else
+        _permu = new Permu(1);
+        if (loadFrom) {
+            auto loaded = this.implLoadFromFile(loadFrom);
+            levelFilename      = loaded.levelFilename;
+            levelBuiltRequired = loaded.levelBuiltRequired;
+        }
+        else {
+            levelFilename      = levFn;
             levelBuiltRequired = levBuilt;
+        }
     }
 
 public:
     @property fileNotFound() const        { return _fileNotFound;        }
     @property gameVersionRequired() const { return _gameVersionRequired; }
-
     @property const(Player)[] players() const  { return _players;      }
     @property const(Permu)    permu()   const  { return _permu;        }
     @property       Permu     permu(Permu p)   { _permu = p; return p; }

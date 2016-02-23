@@ -15,11 +15,9 @@ import tile.gadtile;
 
 package:
 
-void implConstructor(Editor editor, Filename fn) { with (editor)
+void implConstructor(Editor editor) { with (editor)
 {
-    _loadedFrom = fn;
-    _level = new Level(fn);
-
+    _level = new Level(_loadedFrom);
     Map newMap() { with (_level) return new Map(xl, yl, torusX, torusY,
         Geom.screenXls.to!int, (Geom.screenYls - Geom.panelYls).to!int); }
     _map        = newMap();

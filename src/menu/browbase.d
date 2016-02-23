@@ -23,17 +23,21 @@ import level.level;
 import menu.preview;
 
 class BrowserBase : Window {
+private:
+    bool _gotoMainMenu;
+    MutableFilename _fileRecent; // only used for highlighting, not selecting
 
-    ~this() { if (preview) destroy(preview); preview = null; }
+    ListDir    dirList;
+    ListLevel  levList;
 
-    void setButtonPlayText(in string s) { buttonPlay.text = s; }
+    Frame      _coverFrame; // looks like the levList's outer frame
+    Label[]    _coverDesc;  // the cover text in file-empty dirs
 
-    @property bool gotoMainMenu() const { return _gotoMainMenu; }
-    @property auto fileRecent()   inout { return _fileRecent;   }
+    TextButton buttonPlay;
+    TextButton buttonExit;
+    Preview    preview;
 
-    void previewLevel(Level l) { preview.level = l;    }
-    void clearPreview()        { preview.level = null; }
-
+public:
     enum  float infoXl = 140;
     final float infoY() const
     {
@@ -44,14 +48,14 @@ class BrowserBase : Window {
     // after calling this(), it's a good idea to call
     // highlight(file) with whatever is deemed the correct current file
     this(
-        in string   title,
-        in Filename baseDir,
+        in string title,
+        Filename  baseDir,
         ListLevel.LevelCheckmarks   lcm,
         ListLevel.ReplayToLevelName rtl
     ) {
         super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg), title);
         immutable int lxlg = to!int(Geom.screenXlg - 100 - 140 - 4*20);
-        dirList = new ListDir  (new Geom(20,  40, 100,  420));
+        dirList = new ListDir  (new Geom(20,  40, 100,  420), baseDir);
         levList = new ListLevel(new Geom(140, 40, lxlg, 420),
                                 ListLevel.WriteFilenames.no, lcm, rtl);
         alias TextBut = TextButton;
@@ -59,7 +63,6 @@ class BrowserBase : Window {
         preview    = new Preview(new Geom(20, 100, infoXl, 100, From.TOP_RIG));
         buttonExit = new TextBut(new Geom(20,  20, infoXl,  40, From.BOT_RIG));
         dirList.listFileToControl = levList;
-        dirList.baseDir    = baseDir;
         dirList.currentDir = baseDir;
         buttonPlay.text = Lang.browserPlay.transl;
         buttonExit.text = Lang.commonBack.transl;
@@ -69,6 +72,16 @@ class BrowserBase : Window {
         addChildren(preview, dirList, levList, buttonPlay, buttonExit);
         updateWindowSubtitle();
     }
+
+    ~this() { if (preview) destroy(preview); preview = null; }
+
+    void setButtonPlayText(in string s) { buttonPlay.text = s; }
+
+    @property bool gotoMainMenu() const { return _gotoMainMenu; }
+    @property auto fileRecent()   inout { return _fileRecent;   }
+
+    void previewLevel(Level l) { preview.level = l;    }
+    void clearPreview()        { preview.level = null; }
 
     final void highlight(Filename fn)
     {
@@ -118,23 +131,23 @@ protected:
                 highlight(null);
         }
         else if (levList.clicked) {
-            auto fn = levList.currentFile;
+            MutableFilename cur = levList.currentFile;
             auto button = levList.buttonLastClicked;
-            if (fn !is null && button !is null) {
+            if (cur !is null && button !is null) {
                 if (button.on)
                     // button executed for the first time
-                    dispatchHighlightToBrowserSubclass(fn);
+                    dispatchHighlightToBrowserSubclass(cur);
                 else {
                     // button execute for the second time
-                    assert (fn == _fileRecent);
-                    onFileSelect(fn);
+                    assert (cur == _fileRecent);
+                    onFileSelect(cur);
                 }
             }
         }
         else if (buttonPlay.execute) {
             if (_fileRecent !is null
              && _fileRecent.isChildOf(dirList.currentDir)
-             && _fileRecent ==        levList.currentFile)
+             && _fileRecent == MutableFilename(levList.currentFile))
                 onFileSelect(_fileRecent);
         }
         else if (hardware.mouse.mouseClickRight)
@@ -142,21 +155,6 @@ protected:
     }
 
 private:
-
-    bool _gotoMainMenu;
-
-    Filename   _fileRecent; // only used for highlighting, not selecting
-
-    ListDir    dirList;
-    ListLevel  levList;
-
-    Frame      _coverFrame; // looks like the levList's outer frame
-    Label[]    _coverDesc;  // the cover text in file-empty dirs
-
-    TextButton buttonPlay;
-    TextButton buttonExit;
-    Preview    preview;
-
     void dispatchHighlightToBrowserSubclass(Filename fn)
     {
         if (levList.currentFile == fn && fn !is null && fn.file != null) {

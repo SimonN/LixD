@@ -31,8 +31,13 @@ package:
     Enumap!(GadType, int[]) _hoverGadgets;
 
 public:
-    this(Filename fn) { this.implConstructor(fn); }
-    ~this()           { this.implDestructor();    }
+    this(Filename fn)
+    {
+        _loadedFrom = fn;
+        this.implConstructor();
+    }
+
+    ~this() { this.implDestructor(); }
 
     bool gotoMainMenu() const { return _gotoMainMenu; }
 

@@ -1,16 +1,20 @@
 module file.filename;
 
 import std.algorithm;
-import std.string;
 import std.array; // property empty
 import std.conv; // to!long for string length
+import std.string;
+import std.typecons;
 
 import basics.help;
 
 static Filename nullFilename;
 static this() { nullFilename = new Filename(""); }
 
-class Filename {
+alias Filename = immutable(_Filename);
+alias MutableFilename = Rebindable!Filename;
+
+private class _Filename {
 private:
     static string root = "./";
     // We don't have the variables rootful and dirRootful anymore.
@@ -32,22 +36,22 @@ private:
 public:
     static void setRootDir(string str) { if (! root) root = str.idup; }
 
-    @property string rootful()        const { return root ~ _rootless;    }
-    @property string rootless()       const { return _rootless;           }
-    @property string extension()      const { return _extension;          }
-    @property string rootlessNoExt()  const { return _rootlessNoExt;      }
-    @property string file()           const { return _file;               }
-    @property string fileNoExtNoPre() const { return _fileNoExts;         }
-    @property string dirRootful()     const { return root ~ _dirRootless; }
-    @property string dirRootless()    const { return _dirRootless;        }
-    @property string dirInnermost()   const { return _dirInnermost;       }
-    @property char   preExtension()   const { return _preExtension;       }
+    @property string rootful()        immutable { return root ~ _rootless;    }
+    @property string rootless()       immutable { return _rootless;           }
+    @property string extension()      immutable { return _extension;          }
+    @property string rootlessNoExt()  immutable { return _rootlessNoExt;      }
+    @property string file()           immutable { return _file;               }
+    @property string fileNoExtNoPre() immutable { return _fileNoExts;         }
+    @property string dirRootful()     immutable { return root ~ _dirRootless; }
+    @property string dirRootless()    immutable { return _dirRootless;        }
+    @property string dirInnermost()   immutable { return _dirInnermost;       }
+    @property char   preExtension()   immutable { return _preExtension;       }
 
     // null-terminated strings are for Allegro 5's C functions
-    @property rootfulZ()    const { return rootful.toStringz;    }
-    @property dirRootfulZ() const { return dirRootful.toStringz; }
+    @property rootfulZ()    immutable { return rootful.toStringz;    }
+    @property dirRootfulZ() immutable { return dirRootful.toStringz; }
 
-    pure this(in string s)
+    pure this(in string s) immutable
     {
         assert (s.length < int.max);
         // Possible root dirs are "./" and "../". We erase everything from the
@@ -120,28 +124,10 @@ public:
         _fileNoExts = _file[0 .. firstDot];
     }
 
-    pure Filename clone() const
-    {
-        return new Filename(this);
-    }
-
-    pure this(in Filename fn)
-    {
-        _rootless      = fn._rootless;
-        _extension     = fn._extension;
-        _rootlessNoExt = fn._rootlessNoExt;
-        _file          = fn._file;
-        _fileNoExts    = fn._fileNoExts;
-        _dirRootless   = fn._dirRootless;
-        _dirInnermost  = fn._dirInnermost;
-
-        _preExtension  = fn._preExtension;
-    }
-
     override bool
     opEquals(Object rhs_obj) const
     {
-        const(Filename) rhs = cast (const Filename) rhs_obj;
+        auto rhs = cast (const typeof(this)) rhs_obj;
         return rhs && this._rootless == rhs._rootless;
     }
 
@@ -150,7 +136,7 @@ public:
         return typeid(_rootless).getHash(&_rootless);
     }
 
-    int opCmp(in Filename rhs) const
+    int opCmp(immutable typeof(this) rhs) immutable
     {
         // I roll my own here instead of using std::string::operator <, since
         // I use the convention throughout the program that file-less directory
@@ -175,14 +161,14 @@ public:
              : la < lb ? -1 : 0;
     }
 
-    bool isChildOf(in Filename parent) const
+    bool isChildOf(immutable typeof(this) parent) immutable
     {
         return parent._file.empty
             && parent._rootless.length <= _rootless.length
             && parent._rootless == _rootless[0 .. parent._rootless.length];
     }
 
-    bool hasImageExtension() const
+    bool hasImageExtension() immutable
     {
         return [ ".png", ".bmp", ".tga", ".pcx",
                  ".PNG", ".BMP", ".TGA", ".PCX" ].find(_extension) != null;

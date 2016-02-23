@@ -26,16 +26,34 @@ import level.metadata;
  */
 
 class ListLevel : ListFile {
+private:
+    WriteFilenames    _writeFileNames;
+    LevelCheckmarks   _levelCheckmarks;
+    ReplayToLevelName _replayToLevelName;
 
 public:
-
     // DTODO: turn these into polymorphic subclasses maybe
     enum WriteFilenames    { yes = true, no = false }
     enum LevelCheckmarks   { yes = true, no = false }
     enum ReplayToLevelName { yes = true, no = false }
 
+    this(Geom g,
+        WriteFilenames    wfn = WriteFilenames.no,
+        LevelCheckmarks   lcm = LevelCheckmarks.no,
+        ReplayToLevelName rtl = ReplayToLevelName.no
+    ) {
+        super(g);
+        searchCrit = &searchCrit_level;
+        fileSorter = delegate void(MutableFilename[] arr) {
+            sortFilenamesByOrderTxtThenAlpha(arr, currentDir, false);
+        };
+        _writeFileNames = wfn;
+        _levelCheckmarks = lcm;
+        _replayToLevelName = rtl;
+    }
+
     // why public: this isn't invoked by others, but passable as their crit
-    static bool searchCrit_level(in Filename fn)
+    static bool searchCrit_level(Filename fn)
     {
         return fn.file      != glo.fileLevelDirOrder
          &&    fn.file      != glo.fileLevelDirEnglish
@@ -45,95 +63,67 @@ public:
          ||    fn.extension == glo.filenameExtLevelLemmini);
     }
 
-private:
+protected:
+    override Button newFileButton(int nr_from_top, int total_nr, Filename fn)
+    {
+        string buttonText;
+        // We're using ' ' to pad spaces before the digits whenever there are
+        // numbers with different length to be printed. We should use a space
+        // that's the same width as a digit. Maybe look back into this.
+        if (_writeFileNames)
+            buttonText ~= fn.fileNoExtNoPre ~ ": ";
+        else if (_levelCheckmarks) {
+            int max = filesTotal;
+            int cur = total_nr + 1; // +1 more pleasing for non-programmers
+            int      leadingSpaces = 0;
+            while (max /= 10) ++leadingSpaces;
+            while (cur /= 10) --leadingSpaces;
+            buttonText ~= format("%s%d. ",
+                           ' '.repeat(leadingSpaces), total_nr + 1);
+            // filename or fetched level name will be written later on.
+        }
+        LevelMetaData lev;
+        if (_replayToLevelName) {
+            auto r = Replay.loadFromFile(fn);
+            lev = new LevelMetaData(r.levelFilename); // use pointed-to level
+            if (! lev.fileExists)
+                lev = new LevelMetaData(fn); // use included level
+            // DTODO: There is a bug remaining here.
+            // If the file exists on disk, LevelMetaData.fileExists is true.
+            // But we aren't interested in whether the file exists, but whether
+            // the level is nonempty. We want to test the included level first.
+            // But that test (LevelMetaData(fn).fileExists) would always return
+            // true right now, even when only a replay is inside, and no level.
+            // Therefore, as a workaround, we test the pointed-to level first,
+            // even though that's not preferred when playing back the replay.
+            buttonText ~= format("%s (%s)", lev.name, r.playerLocalName);
+        }
+        else {
+            lev = new LevelMetaData(fn);
+            buttonText ~= lev.name;
+        }
+        TextButton t = new TextButton(new Geom(0, nr_from_top * 20, xlg, 20));
+        t.text = buttonText;
+        t.alignLeft = true;
 
-    WriteFilenames    _writeFileNames;
-    LevelCheckmarks   _levelCheckmarks;
-    ReplayToLevelName _replayToLevelName;
-
-public:
-
-this(Geom g,
-    WriteFilenames    wfn = WriteFilenames.no,
-    LevelCheckmarks   lcm = LevelCheckmarks.no,
-    ReplayToLevelName rtl = ReplayToLevelName.no)
-{
-    super(g);
-    searchCrit = &searchCrit_level;
-    fileSorter = delegate void(Filename[] arr) {
-        sortFilenamesByOrderTxtThenAlpha(arr, currentDir, false);
-    };
-    _writeFileNames = wfn;
-    _levelCheckmarks = lcm;
-    _replayToLevelName = rtl;
+        if (_levelCheckmarks) {
+            const(Result) result = basics.user.getLevelResult(fn);
+            t.checkFrame = result is null         ? 0
+                : result.built    != lev.built    ? 3
+                : result.lixSaved >= lev.required ? 2
+                : 0; // 0, and not 4, here.
+            // We don't want to display the little
+            // ring for looked-at-but-didn't-solve. It makes people sad!
+        }
+        return t;
+    }
 }
 
+package:
 
-
-protected override Button
-newFileButton(int nr_from_top, int total_nr, Filename fn)
-{
-    string buttonText;
-    // We're using ' ' to pad spaces before the digits whenever there are
-    // numbers with different length to be printed. We should use a space
-    // that's the same width as a digit. Maybe look back into this.
-    if (_writeFileNames)
-        buttonText ~= fn.fileNoExtNoPre ~ ": ";
-    else if (_levelCheckmarks) {
-        int max = filesTotal;
-        int cur = total_nr + 1; // +1 more pleasing for non-programmers
-        int      leadingSpaces = 0;
-        while (max /= 10) ++leadingSpaces;
-        while (cur /= 10) --leadingSpaces;
-        buttonText ~= format("%s%d. ",
-                       ' '.repeat(leadingSpaces), total_nr + 1);
-        // filename or fetched level name will be written later on.
-    }
-    LevelMetaData lev;
-    if (_replayToLevelName) {
-        auto r = Replay.loadFromFile(fn);
-        lev = new LevelMetaData(r.levelFilename); // use pointed-to level
-        if (! lev.fileExists)
-        lev = new LevelMetaData(fn); // use included level
-        // DTODO: There is a bug remaining here.
-        // If the file exists on disk, LevelMetaData.fileExists is true.
-        // But we aren't interested in whether the file exists, but whether
-        // the level is nonempty. We'd normally test the included level first.
-        // But that test (LevelMetaData(fn).fileExists) would always return
-        // true right now, even when only a replay is inside, and no level.
-        // Therefore, as a workaround, we test the pointed-to level first,
-        // even though that's not preferred when playing back the replay.
-        buttonText ~= format("%s (%s)", lev.name, r.playerLocalName);
-    }
-    else {
-        lev = new LevelMetaData(fn);
-        buttonText ~= lev.name;
-    }
-    TextButton t = new TextButton(new Geom(0, nr_from_top * 20, xlg, 20));
-    t.text = buttonText;
-    t.alignLeft = true;
-
-    if (_levelCheckmarks) {
-        const(Result) result = basics.user.getLevelResult(fn);
-        t.checkFrame = result is null         ? 0
-            : result.built    != lev.built    ? 3
-            : result.lixSaved >= lev.required ? 2
-            : 0; // 0, and not 4, here. We don't want to display the little
-                 // ring for looked-at-but-didn't-solve. It makes people sad!
-    }
-    return t;
-}
-
-}
-// end class ListLevel
-
-
-
-// module scope, not member of class
-package void
-sortFilenamesByOrderTxtThenAlpha(
-    Filename[]  files,
-    in Filename dir_with_order_file,
+void sortFilenamesByOrderTxtThenAlpha(
+    MutableFilename[] files,
+    Filename dir_with_order_file,
     bool we_sort_dirs // this is a little kludge, we add slashes to the
                       // entries in the order file to work with Filename::==
 ) {
@@ -147,7 +137,7 @@ sortFilenamesByOrderTxtThenAlpha(
         // do nothing, missing ordering file is not an error at all
     }
 
-    Filename[] unsorted_slice = files;
+    MutableFilename[] unsorted_slice = files;
 
     if (orders.length) {
         if (we_sort_dirs) {
@@ -163,7 +153,7 @@ sortFilenamesByOrderTxtThenAlpha(
         // very beginning.
         foreach (orit; orders) {
             Filename fn = new Filename(dir_with_order_file.dirRootful ~ orit);
-            Filename[] found = unsorted_slice.find(fn);
+            MutableFilename[] found = unsorted_slice.find(MutableFilename(fn));
             if (found.length) {
                 swap(found[0], unsorted_slice[0]);
                 unsorted_slice = unsorted_slice[1 .. $];

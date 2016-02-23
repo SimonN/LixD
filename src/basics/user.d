@@ -30,14 +30,15 @@ import lix.enums;
  *  void          setLevelResultCarefully(Filename, Result, in int);
  */
 
-private Result[Rebindable!(const Filename)] results;
+private Result[Filename] results;
 
-Filename fileLanguage;
-int      optionGroup = 0;
+MutableFilename fileLanguage;
+int optionGroup = 0;
 
 @property bool languageIsEnglish()
 {
-    return fileLanguage == basics.globals.fileLanguageEnglish;
+    Filename fn = fileLanguage;
+    return fn == basics.globals.fileLanguageEnglish;
 }
 
 bool scrollEdge        = true;
@@ -75,18 +76,18 @@ int  editorGridCustom    = 8;
 bool replayAutoSolutions = true;
 bool replayAutoMulti     = true;
 
-Filename singleLastLevel;
-Filename networkLastLevel;
-Filename replayLastLevel;
+MutableFilename singleLastLevel;
+MutableFilename networkLastLevel;
+MutableFilename replayLastLevel;
 
 Style    networkLastStyle = Style.red;
 
-Filename editorLastDirTerrain;
-Filename editorLastDirSteel;
-Filename editorLastDirHatch;
-Filename editorLastDirGoal;
-Filename editorLastDirDeco;
-Filename editorLastDirHazard;
+MutableFilename editorLastDirTerrain;
+MutableFilename editorLastDirSteel;
+MutableFilename editorLastDirHatch;
+MutableFilename editorLastDirGoal;
+MutableFilename editorLastDirDeco;
+MutableFilename editorLastDirHazard;
 
 @property const(Ac[]) skillSort() { return _skillSort; }
 
@@ -177,7 +178,7 @@ Enumap!(Ac, int) keySkill;
 
 static this()
 {
-    fileLanguage            = new Filename(fileLanguageEnglish);
+    fileLanguage            = fileLanguageEnglish;
 
     keySkill[Ac.walker]     = ALLEGRO_KEY_D;
     keySkill[Ac.runner]     = ALLEGRO_KEY_LSHIFT;
@@ -196,16 +197,16 @@ static this()
     keySkill[Ac.jumper]     = ALLEGRO_KEY_R;
     keySkill[Ac.batter]     = ALLEGRO_KEY_C;
 
-    singleLastLevel  = new Filename(dirLevelsSingle);
-    networkLastLevel = new Filename(dirLevelsNetwork);
-    replayLastLevel  = new Filename(dirReplays);
+    singleLastLevel  = dirLevelsSingle;
+    networkLastLevel = dirLevelsNetwork;
+    replayLastLevel  = dirReplays;
 
-    editorLastDirTerrain = new Filename(dirImages);
-    editorLastDirSteel   = new Filename(dirImages);
-    editorLastDirHatch   = new Filename(dirImages);
-    editorLastDirGoal    = new Filename(dirImages);
-    editorLastDirDeco    = new Filename(dirImages);
-    editorLastDirHazard  = new Filename(dirImages);
+    editorLastDirTerrain = dirImages;
+    editorLastDirSteel   = dirImages;
+    editorLastDirHatch   = dirImages;
+    editorLastDirGoal    = dirImages;
+    editorLastDirDeco    = dirImages;
+    editorLastDirHazard  = dirImages;
 }
 
 // ############################################################################
@@ -606,26 +607,10 @@ nothrow void save()
         fwr(IoLine.Hash(userKeyEditorAddHazard,   keyEditorAddHazard));
         fwr(IoLine.Hash(userKeyEditorExit,        keyEditorExit));
 
-        // output all results, sorting the hash-based associative array first
-        bool wroteNewline = false;
-        auto sortedKeys = results.keys.sort();
-        foreach (fn; sortedKeys) {
-            if (! wroteNewline) {
-                f.writeln();
-                wroteNewline = true;
-                // The sane implementation of this newline before the first
-                // element, of course, is to check for array emptiness before
-                // the loop. However, this drove up release compile time from
-                // 9 seconds to 40 seconds! Compiler bug in dmd v2.065?
-                // It's still 23 seconds with dmd v2.067.
-            }
-            Result r = results[fn];
-            fwr(IoLine.Angle(fn.rootless,
-                r.lixSaved, r.skillsUsed, r.updatesUsed, r.built.toString()));
-        }
-
-        f.close();
-
+        f.writeln();
+        foreach (key, r; results)
+            fwr(IoLine.Angle(key.rootless,
+                r.lixSaved, r.skillsUsed, r.updatesUsed, r.built.toString));
     }
     catch (Exception e) {
         log("Can't save user configuration for `" ~ userName ~ "':");

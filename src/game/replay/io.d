@@ -47,13 +47,19 @@ void implSaveAsAutoReplay(
         replay.saveToTree(basics.globals.dirReplayAutoSolutions, levelFn, lev);
 }
 
-void implSaveManually(in Replay replay, in Filename levelFn, in Level lev)
+void implSaveManually(in Replay replay, Filename levelFn, in Level lev)
 {
     replay.saveToTree(basics.globals.dirReplayManual, levelFn, lev);
 }
 
-Date implLoadFromFile(Replay replay, Filename fn) { with (replay)
+auto implLoadFromFile(Replay replay, Filename fn) { with (replay)
 {
+    struct Return {
+        MutableFilename levelFilename;
+        MutableDate levelBuiltRequired;
+    }
+    auto ret = Return(MutableFilename(nullFilename),
+                      MutableDate(new Date("0")));
     IoLine[] lines;
     try {
         lines = fillVectorFromFile(fn);
@@ -61,37 +67,26 @@ Date implLoadFromFile(Replay replay, Filename fn) { with (replay)
     catch (Exception e) {
         log(e.msg);
         _fileNotFound = true;
-        return new immutable Date("0");
+        return ret;
     }
-    import std.typecons;
-    Rebindable!(Date) levelBuiltRequiredTemp;
-
     foreach (i; lines) switch (i.type) {
     case '$':
-        if (i.text1 == replayLevelBuiltRequired) {
-            levelBuiltRequiredTemp = new Date(i.text2);
-        }
-        else if (i.text1 == replayPermu) {
+        if (i.text1 == replayLevelBuiltRequired)
+            ret.levelBuiltRequired = new Date(i.text2);
+        else if (i.text1 == replayPermu)
             _permu = new Permu(i.text2);
-        }
-        else if (i.text1 == replayGameVersionRequired) {
+        else if (i.text1 == replayGameVersionRequired)
             _gameVersionRequired = Version(i.text2);
-        }
-        else if (i.text1 == replayLevelFilename) {
-            levelFilename = new Filename(dirLevels.dirRootless ~ i.text2);
-        }
+        else if (i.text1 == replayLevelFilename)
+            ret.levelFilename = new Filename(dirLevels.dirRootless ~ i.text2);
         break;
-
     case '+':
-        if (   i.text1 == replayPlayer
-            || i.text1 == replayFriend
-        ) {
+        if (i.text1 == replayPlayer || i.text1 == replayFriend) {
             addPlayer(PlNr(i.nr1 & 0xFF), stringToStyle(i.text2), i.text3);
             if (i.text1 == replayPlayer)
                 playerLocal = PlNr(i.nr1 & 0xFF);
         }
         break;
-
     case '!': {
         // replays contain ASSIGN=BASHER or ASSIGN_RIGHT=BUILDER.
         // cut these strings into a left and right part, none contains '='.
@@ -119,12 +114,10 @@ Date implLoadFromFile(Replay replay, Filename fn) { with (replay)
         if (d.action != RepAc.NOTHING)
             addWithoutTouching(d);
         break; }
-
     default:
         break;
     }
-    // end switch and foreach
-    return levelBuiltRequiredTemp;
+    return ret;
 }}
 
 // ############################################################################
