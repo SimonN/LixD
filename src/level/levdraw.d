@@ -61,8 +61,7 @@ private void drawPosTerrain(in TerPos po, Torbit ground, Phymap lookup)
         immutable yl = (po.rot & 1) ? po.ob.cb.xl : po.ob.cb.yl;
         foreach (int y; po.y .. (po.y + yl))
             foreach (int x; po.x .. (po.x + xl)) {
-                immutable bits = po.ob.getPhybitsXYRotMirr(
-                    x - po.x, y - po.y, po.rot, po.mirr);
+                immutable bits = po.phybitsAtMapPosition(x, y);
                 if (! bits)
                     continue;
                 if (po.noow) {

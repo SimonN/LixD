@@ -58,11 +58,19 @@ void drawGadgets(Editor editor)
 void drawHover(Editor editor)
 {
     editor._hoverTerrain.each!(id => editor._map.drawRectangle(
-        editor._level.terrain[id].selbox, color.white));
+        editor._level.terrain[id].selbox, hoverColor!false));
 }
 
 void drawSelection(Editor)
 {
+}
+
+AlCol hoverColor(bool light)()
+{
+    immutable int time  = timerTicks & 0x1F;
+    immutable int subtr = time < 0x10 ? time : 0x20 - time;
+    immutable int val   = (light ? 255 : 180) - 4 * subtr;
+    return color.makecol(val, val, val);
 }
 
 void drawToScreen(Editor editor) {

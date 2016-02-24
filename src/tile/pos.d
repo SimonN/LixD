@@ -101,6 +101,12 @@ class TerPos : AbstractPos {
         return IoLine.Colon(filename, x, y, modifiers);
     }
 
+    auto phybitsAtMapPosition(in int mapX, in int mapY) const
+    {
+        assert (_ob);
+        return _ob.getPhybitsXYRotMirr(mapX - x, mapY - y, rot, mirr);
+    }
+
 protected:
     // Return selbox of terrain tile, but affected by rotation and mirroring.
     // Mirroring occurs first, then rotation. The selbox (selection box)

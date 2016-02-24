@@ -31,6 +31,7 @@ public:
 
     // Input: Where you want to draw on the map, in relation to tile's 0, 0.
     // Output: The solid/nonsolid bits there of the rotated/mirrored tile
+    // It is illegal to call this such that result is outside of tile.
     Phybitset getPhybitsXYRotMirr(
         in int gx, in int gy, in int rot, in bool mirr) const
     {
