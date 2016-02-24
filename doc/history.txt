@@ -1,7 +1,20 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.28:
+-------
+
+2016-02-24
+
+Fix: Replays were saved with a null $BUILT instead of the level's $BUILT.
+
+Editor mouse hovering: Solid pixels are more important than the selection box.
+Holding priority invert inverts the entire sequence of terrain and gadgets.
+
+Refactored the code, Filename and Date are immutable by default.
+
 0.2.27:
+-------
 
 2016-02-21
 

@@ -6,9 +6,9 @@ import basics.nettypes;
 import basics.user; // hotkeys
 import game.core.game;
 import gui : SkillButton;
-import hardware.keyboard;
 import hardware.mouse;
 import hardware.mousecur;
+import hardware.semantic;
 import hardware.sound;
 import lix;
 
@@ -63,11 +63,7 @@ struct PotentialAssignee {
     // Holding the priority inversion key, or right mouse button (configurable
     // in the options) inverts the sorting of (1.), but not of the others.
     bool isBetterThan(in ref PotentialAssignee rhs) const {
-        immutable bool priorityInvert = (
-               (mouseHeldRight  && basics.user.priorityInvertRight)
-            || (mouseHeldMiddle && basics.user.priorityInvertMiddle)
-            || (hardware.keyboard.keyHeld(basics.user.keyPriorityInvert))
-        );
+        immutable bool priorityInvert = hardware.semantic.priorityInvertHeld();
         return lixxie    is null ? false
             : rhs.lixxie is null ? true
             : priority > rhs.priority ? ! priorityInvert
@@ -91,18 +87,6 @@ void handleNukeButton(Game game) { with (game)
     // DTODONETWORK: Network::send_replay_data(data);
     effect.addSound(Update(nurse.upd + 1), tribeID(tribeLocal), 0, Sound.NUKE);
 }}
-
-bool forceLeft()
-{
-    return   hardware.keyboard.keyHeld(basics.user.keyForceLeft)
-        && ! hardware.keyboard.keyHeld(basics.user.keyForceRight);
-}
-
-bool forceRight()
-{
-    return ! hardware.keyboard.keyHeld(basics.user.keyForceLeft)
-        &&   hardware.keyboard.keyHeld(basics.user.keyForceRight);
-}
 
 PotentialAssignee findPotentialAssignee(Game game) { with (game)
 {
@@ -158,7 +142,7 @@ PotentialAssignee findPotentialAssignee(Game game) { with (game)
     if (leftFound && rightFound)
         pan.stats.suggestTooltipForceDirection();
 
-    mouseCursor.xf = (forceLeft ? 1 : forceRight ? 2 : mouseCursor.xf);
+    mouseCursor.xf = (forcingLeft ? 1 : forcingRight ? 2 : mouseCursor.xf);
     mouseCursor.yf = (lixesUnderCursor > 0);
 
     pan.stats.targetDescriptionNumber = lixesUnderCursor;
@@ -218,8 +202,8 @@ void comparePotentialWithBestWorst(
         return;
 
     immutable bool eligibleAccordingToDirSelect =
-           ! (potAss.lixxie.facingLeft  && forceRight)
-        && ! (potAss.lixxie.facingRight && forceLeft);
+           ! (potAss.lixxie.facingLeft  && forcingRight)
+        && ! (potAss.lixxie.facingRight && forcingLeft);
 
     if (eligibleAccordingToDirSelect) {
         if (potAss.isBetterThan(best))
@@ -258,9 +242,9 @@ void assignToPotentialAssignee(
         currentSkill.number = currentSkill.number - 1;
 
     ReplayData data = game.newReplayDataForNextUpdate();
-    data.action     = forceLeft  ? RepAc.ASSIGN_LEFT
-                    : forceRight ? RepAc.ASSIGN_RIGHT
-                    :              RepAc.ASSIGN;
+    data.action     = forcingLeft  ? RepAc.ASSIGN_LEFT
+                    : forcingRight ? RepAc.ASSIGN_RIGHT
+                    :                RepAc.ASSIGN;
     data.skill      = currentSkill.skill;
     data.toWhichLix = potAss.id;
 
