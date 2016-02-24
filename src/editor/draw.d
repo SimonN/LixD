@@ -57,8 +57,8 @@ void drawGadgets(Editor editor)
 
 void drawHover(Editor editor)
 {
-    editor._hoverTerrain.each!(id => editor._map.drawRectangle(
-        editor._level.terrain[id].selbox, hoverColor!false));
+    editor._hoverTerrain.each!(a => editor._map.drawRectangle(
+        editor._level.terrain[a.arrayID].selbox, hoverColor!false));
 }
 
 void drawSelection(Editor)

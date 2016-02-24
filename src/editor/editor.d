@@ -26,9 +26,8 @@ package:
     bool _gotoMainMenu;
     EditorPanel _panel;
 
-    // Array indices of hovered tiles.
-    int[] _hoverTerrain;
-    Enumap!(GadType, int[]) _hoverGadgets;
+    Hover[] _hoverTerrain;
+    Enumap!(GadType, Hover[]) _hoverGadgets;
 
 public:
     this(Filename fn)
@@ -43,4 +42,12 @@ public:
 
     void calc() { this.implEditorCalc(); }
     void draw() { this.implEditorDraw(); }
+}
+
+package:
+
+struct Hover {
+    enum Reason { none, mouseInSelbox, mouseOnSolidPixel }
+    int arrayID;
+    Reason reason;
 }
