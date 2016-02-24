@@ -25,6 +25,23 @@ void maybeAdd(Pos)(Editor editor, ref int[] hover, int i, Pos pos)
     if (is (Pos : AbstractPos))
 {
     with (editor._map)
-        if (isPointInRectangle(mouseOnLandX, mouseOnLandY, pos.selbox))
+        if (! isPointInRectangle(mouseOnLandX, mouseOnLandY, pos.selbox))
+            return;
+    static if (is (Pos == TerPos)) {
+        if (editor.mouseOnSolidPixel(pos))
             hover ~= i;
+    }
+    else
+        hover ~= i;
 }
+
+bool mouseOnSolidPixel(Editor editor, TerPos pos) { with (editor._map)
+{
+    int x = mouseOnLandX;
+    int y = mouseOnLandY;
+    while (x < pos.x)
+        x += xl;
+    while (y < pos.y)
+        y += yl;
+    return 0 != pos.phybitsAtMapPosition(x, y);
+}}
