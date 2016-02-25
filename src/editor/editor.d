@@ -27,7 +27,9 @@ package:
     EditorPanel _panel;
 
     Hover[] _hoverTerrain;
+    Hover[] _selectTerrain;
     Enumap!(GadType, Hover[]) _hoverGadgets;
+    Enumap!(GadType, Hover[]) _selectGadgets;
 
 public:
     this(Filename fn)

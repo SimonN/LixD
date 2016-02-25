@@ -64,15 +64,20 @@ void drawHover(Editor editor) { with (editor)
         _level.terrain[a.arrayID].selbox, hoverColor(0, false)));
 }}
 
-void drawSelection(Editor)
+void drawSelection(Editor editor) { with (editor)
 {
-}
+    foreach (GadType type, list; _selectGadgets)
+        list.each!(a => editor._map.drawRectangle(
+            _level.pos[type][a.arrayID].selbox, hoverColor(1, true)));
+    _selectTerrain.each!(a => _map.drawRectangle(
+        _level.terrain[a.arrayID].selbox, hoverColor(0, true)));
+}}
 
 AlCol hoverColor(in int hue, in bool light)
 {
     immutable int time  = timerTicks & 0x0F;
     immutable int subtr = time < 0x08 ? time : 0x10 - time;
-    immutable int val   = (light ? 255 : 180) - 8 * subtr;
+    immutable int val   = (light ? 0xFF : 0xA0) - (light ? 5 : 10) * subtr;
     if (hue == 0)
         return color.makecol(val, val, val);
     else

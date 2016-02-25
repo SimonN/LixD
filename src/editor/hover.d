@@ -1,4 +1,4 @@
-module editor.tiles;
+module editor.hover;
 
 // Moving and manipulating tile instances (TerPos, GadPos).
 
