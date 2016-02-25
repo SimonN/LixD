@@ -55,22 +55,28 @@ void drawGadgets(Editor editor)
         }
 }
 
-void drawHover(Editor editor)
+void drawHover(Editor editor) { with (editor)
 {
-    editor._hoverTerrain.each!(a => editor._map.drawRectangle(
-        editor._level.terrain[a.arrayID].selbox, hoverColor!false));
-}
+    foreach (GadType type, list; _hoverGadgets)
+        list.each!(a => editor._map.drawRectangle(
+            _level.pos[type][a.arrayID].selbox, hoverColor(1, false)));
+    _hoverTerrain.each!(a => _map.drawRectangle(
+        _level.terrain[a.arrayID].selbox, hoverColor(0, false)));
+}}
 
 void drawSelection(Editor)
 {
 }
 
-AlCol hoverColor(bool light)()
+AlCol hoverColor(in int hue, in bool light)
 {
-    immutable int time  = timerTicks & 0x1F;
-    immutable int subtr = time < 0x10 ? time : 0x20 - time;
-    immutable int val   = (light ? 255 : 180) - 4 * subtr;
-    return color.makecol(val, val, val);
+    immutable int time  = timerTicks & 0x0F;
+    immutable int subtr = time < 0x08 ? time : 0x10 - time;
+    immutable int val   = (light ? 255 : 180) - 8 * subtr;
+    if (hue == 0)
+        return color.makecol(val, val, val);
+    else
+        return color.makecol(val, val, val/2);
 }
 
 void drawToScreen(Editor editor) {

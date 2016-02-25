@@ -32,22 +32,21 @@ void hoverTilesNormally(Editor editor) { with (editor)
         editor.maybeAdd(_hoverTerrain, i, pos);
     if (_hoverTerrain != null)
         return;
-    foreach (GadType type, const list; _level.pos)
-        foreach (i, pos; list) {
-            auto hovers = _hoverGadgets[type];
-            editor.maybeAdd(hovers, i, pos);
-            if (hovers != null)
+
+    foreach (GadType type, ref list; _level.pos)
+        foreach (i, const pos; list) {
+            editor.maybeAdd(_hoverGadgets[type], i, pos);
+            if (_hoverGadgets[type] != null)
                 return;
         }
 }}
 
 void hoverTilesReversed(Editor editor) { with (editor)
 {
-    foreach (GadType type, const list; _level.pos)
-        foreach (i, pos; list.retro.enumerate) {
-            auto hovers = _hoverGadgets[type];
-            editor.maybeAdd(hovers, list.length - i - 1, pos);
-            if (hovers != null)
+    foreach (GadType type, ref list; _level.pos)
+        foreach (i, const pos; list.retro.enumerate) {
+            editor.maybeAdd(_hoverGadgets[type], list.length - i - 1, pos);
+            if (_hoverGadgets[type] != null)
                 return;
         }
     foreach (i, pos; _level.terrain.retro.enumerate)
