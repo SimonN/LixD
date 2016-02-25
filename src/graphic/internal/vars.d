@@ -6,6 +6,8 @@ import lix.enums;
 
 package:
 
+bool noninteractiveMode;
+
 Cutbit[string] internal;
 Cutbit[Style]  spritesheets;
 Cutbit[Style]  panelInfoIcons;

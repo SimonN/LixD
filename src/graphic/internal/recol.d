@@ -7,6 +7,7 @@ import basics.globals; // fileImageStyleRecol
 import file.filename;
 import graphic.color;
 import graphic.cutbit;
+import graphic.internal.getters;
 import graphic.internal.vars;
 import hardware.display; // print startup progress info; maybe make it lazy
 import hardware.tharsis;
@@ -66,10 +67,10 @@ void recolor_into_vector(
     // extremely slowly.
 
     assert (cutbit.valid);
-    Cutbit* rclPtr = (fileImageStyleRecol.rootlessNoExt in internal);
-    assert (rclPtr && rclPtr.valid, "can't recolor, missing map image");
+    Cutbit rclCb = getInternalMutable(fileImageStyleRecol);
+    assert (rclCb !is nullCutbit, "can't recolor, missing map image");
 
-    Albit recol = rclPtr.albit;
+    Albit recol = rclCb.albit;
     Albit lix   = cutbit.albit;
     if (!recol || !lix) return;
 

@@ -27,9 +27,6 @@ void implInitializeInteractive()
 {
     nullCutbit = new Cutbit(cast (Cutbit) null);
 
-    displayStartupMessage("Loading internal bitmaps...");
-    loadInternalsFromFiles();
-
     displayStartupMessage("Examining Lix spritesheet for eye positions...");
     auto lock = LockReadWrite(getLixRawSprites.albit);
     createEyeCoordinateMatrix();
@@ -44,9 +41,6 @@ void implInitializeInteractive()
     recolorGuiAccordingToPlayerColors(
         fileImageSkillIcons, skillButtonIcons, magicnrSkillButtonIcons);
 
-    displayStartupMessage("Recoloring GUI elements...");
-    makeGuiElementsHaveCorrectColor();
-
     // DTODO: move load_all_file_replacements(); into obj_lib
     auto toAssert = implGetSkillButton(Style.garden);
     assert (toAssert);
@@ -56,9 +50,9 @@ void implInitializeInteractive()
 void implInitializeVerify()
 {
     nullCutbit = new Cutbit(cast (Cutbit) null);
+    noninteractiveMode = true;
     // Load only the Lix spritesheet, because physics depend on it.
     // Is this a design bug? Discuss with the IRCies eventually.
-    loadInternalsOnlySprites();
     auto lock = LockReadWrite(getLixRawSprites.albit);
     createEyeCoordinateMatrix();
 }
@@ -75,34 +69,6 @@ void implDeinitialize()
 }
 
 private:
-
-void loadInternalsFromFiles()
-{
-    // Since this is unrelated to the terrain name replacements, the internal
-    // graphics are array-keyed WITH dir, WITH pre-ext, WITHOUT image file ext.
-    auto files = file.search.findRegularFilesRecursively(dirDataBitmap);
-    files.filter!(fn => fn.hasImageExtension)
-        .each!   (fn => loadInternalFile(fn));
-}
-
-// copy-pasted from loadInternalsFromSprites
-void loadInternalsOnlySprites()
-{
-    auto files = file.search.findRegularFilesRecursively(dirDataBitmap);
-    files.filter!(fn => fn.hasImageExtension)
-        .filter! (fn => fn.rootlessNoExt == fileImageSpritesheet.rootlessNoExt)
-        .each!   (fn => loadInternalFile(fn));
-}
-
-void loadInternalFile(Filename fn)
-{
-    Cutbit cb = new Cutbit(fn);
-    assert (cb, "error loading internal cutbit: " ~ fn.rootful);
-    al_convert_mask_to_alpha(cb.albit, color.pink);
-    internal[fn.rootlessNoExt] = cb;
-    assert (getInternalMutable(fn).valid,
-        "can't retrieve from array: " ~ fn.rootful);
-}
 
 void createEyeCoordinateMatrix()
 {
@@ -159,25 +125,4 @@ void recolorGuiAccordingToPlayerColors(
     Albit  cb_bmp   = cb_icons.albit;
     auto lock_icons = LockReadWrite(cb_bmp);
     recolor_into_vector(cb_icons, vec, magicnr);
-}
-
-void makeGuiElementsHaveCorrectColor()
-{
-    // We assume the user file to have been loaded already,
-    // and therefore the correct GUI colors have been computed.
-    enum files = [  fileImageGuiNumber,
-                    fileImageEditFlip,
-                    fileImageEditHatch,
-                    fileImageEditPanel,
-                    fileImageGameArrow,
-                    fileImageGameNuke,
-                    fileImageGamePanel,
-                    fileImageGamePanel2,
-                    fileImageGamePanelHints,
-                    fileImageGameSpawnint,
-                    fileImageGamePause,
-                    fileImageLobbySpec,
-                    fileImageMenuCheckmark,
-                    fileImagePreviewIcon ];
-    files.each!(fn => fn.getInternalMutable.eidrecol(0));
 }

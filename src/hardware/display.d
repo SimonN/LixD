@@ -158,17 +158,13 @@ void setScreenMode(in Cmdargs cmdargs)
     immutable int al_x = al_get_display_width (display);
     immutable int al_y = al_get_display_height(display);
     immutable int al_f = al_get_display_flags (display) & fullscreen_flag;
-
     assert (al_x > 0);
     assert (al_y > 0);
 
     al_set_window_title(display, nameOfTheGame.toStringz);
-
     queue = al_create_event_queue();
     al_register_event_source(queue, al_get_display_event_source(display));
-
     hardware.mouse.centerMouse();
-
     gui.Geom.setScreenXYls(al_x, al_y);
 }
 
