@@ -86,11 +86,12 @@ public:
 
     @trusted override size_t toHash() pure nothrow
     {
-        return year * 1_00_00_00_00_00
-            +  month *   1_00_00_00_00
-            +  day    *     1_00_00_00
-            +  hour    *       1_00_00
-            +  minute   *         1_00 + second;
+        return second
+            + 60 * minute
+            + 60 * 60 * hour
+            + 60 * 60 * 24 * day
+            + 60 * 60 * 24 * 31 * month
+            + 60 * 60 * 24 * 31 * 12 * (year & 0x3F);
     }
 
     int opCmp(immutable typeof(this) rhs) immutable
