@@ -1,8 +1,20 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
-0.2.28:
--------
+0.2.29
+------
+
+2016-02-25
+
+Editor selects pieces on mouse click. No moving yet.
+
+Game starts slightly faster, because I'm not searching through all internal
+graphics of all resolutions. Most internal graphics are loaded lazily.
+Spritesheet/player-dependent GUI elements are still eagerly loaded, so there
+is opportunity for optimization here.
+
+0.2.28
+------
 
 2016-02-24
 
@@ -13,8 +25,8 @@ Holding priority invert inverts the entire sequence of terrain and gadgets.
 
 Refactored the code, Filename and Date are immutable by default.
 
-0.2.27:
--------
+0.2.27
+------
 
 2016-02-21
 

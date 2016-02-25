@@ -36,13 +36,14 @@ void drawTerrainToSeparateMap(Editor editor) {
 void drawMainMap(Editor editor) {
     with (Zone(profiler, "Editor.drawMapMain"))
     with (DrawingTarget(editor._map.albit))
+    with (editor)
     with (editor._level)
 {
     editor._map.clearScreenRect(color.makecol(bgRed, bgGreen, bgBlue));
     editor.drawGadgets();
     editor._map.loadCameraRect(editor._mapTerrain);
-    editor.drawHover();
-    editor.drawSelection();
+    editor.drawHover(_hoverTerrain,  _hoverGadgets,  false);
+    editor.drawHover(_selectTerrain, _selectGadgets, true);
 }}
 
 void drawGadgets(Editor editor)
@@ -55,22 +56,18 @@ void drawGadgets(Editor editor)
         }
 }
 
-void drawHover(Editor editor) { with (editor)
+void drawHover(Editor editor,
+    const(Hover[]) hovTer,
+    typeof(Editor._hoverGadgets) hovGad,
+    in bool light
+) { with (editor._level)
+    with (editor._map)
 {
-    foreach (GadType type, list; _hoverGadgets)
-        list.each!(a => editor._map.drawRectangle(
-            _level.pos[type][a.arrayID].selbox, hoverColor(1, false)));
-    _hoverTerrain.each!(a => _map.drawRectangle(
-        _level.terrain[a.arrayID].selbox, hoverColor(0, false)));
-}}
-
-void drawSelection(Editor editor) { with (editor)
-{
-    foreach (GadType type, list; _selectGadgets)
-        list.each!(a => editor._map.drawRectangle(
-            _level.pos[type][a.arrayID].selbox, hoverColor(1, true)));
-    _selectTerrain.each!(a => _map.drawRectangle(
-        _level.terrain[a.arrayID].selbox, hoverColor(0, true)));
+    immutable colTer = hoverColor(0, light);
+    immutable colGad = hoverColor(1, light);
+    foreach (GadType type, list; hovGad)
+        list.each!(a => drawRectangle(pos[type][a.arrayID].selbox, colGad));
+    hovTer  .each!(a => drawRectangle(terrain  [a.arrayID].selbox, colTer));
 }}
 
 AlCol hoverColor(in int hue, in bool light)
