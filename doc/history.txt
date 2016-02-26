@@ -1,6 +1,14 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.30
+------
+
+2016-02-27
+
+Fix #52: Mose over a transparent terrain tile, gadget behind it:
+This selects the gadget now. Before, it selected the terrain tile.
+
 0.2.29
 ------
 

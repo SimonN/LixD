@@ -15,9 +15,7 @@ package:
 
 void hoverTiles(Editor editor)
 {
-    editor._hoverTerrain = [];
-    foreach (GadType type, unused; editor._level.pos)
-        editor._hoverGadgets[type] = [];
+    editor._hover = [];
     if (! priorityInvertHeld)
         editor.hoverTilesNormally();
     else
@@ -28,50 +26,52 @@ private:
 
 void hoverTilesNormally(Editor editor) { with (editor)
 {
-    foreach (i, pos; _level.terrain)
-        editor.maybeAdd(_hoverTerrain, i, pos);
-    if (_hoverTerrain != null)
-        return;
-
+    // The tiles at the end of each list are in the foreground.
+    // Later tiles will throw out earlier tiles in the hover, unless the
+    // earlier tiles have a strictly better reason than the later tiles.
     foreach (GadType type, ref list; _level.pos)
-        foreach (i, const pos; list) {
-            editor.maybeAdd(_hoverGadgets[type], i, pos);
-            if (_hoverGadgets[type] != null)
-                return;
-        }
+        foreach (i, const pos; list)
+            editor.maybeAdd(&list, i, pos);
+    foreach (i, pos; _level.terrain)
+        editor.maybeAdd(&_level.terrain, i, pos);
 }}
 
 void hoverTilesReversed(Editor editor) { with (editor)
 {
-    foreach (GadType type, ref list; _level.pos)
-        foreach (i, const pos; list.retro.enumerate) {
-            editor.maybeAdd(_hoverGadgets[type], list.length - i - 1, pos);
-            if (_hoverGadgets[type] != null)
-                return;
-        }
     foreach (i, pos; _level.terrain.retro.enumerate)
-        editor.maybeAdd(_hoverTerrain, _level.terrain.length - i - 1, pos);
+        editor.maybeAdd(&_level.terrain, _level.terrain.length - i - 1, pos);
+    foreach (GadType type, ref list; _level.pos)
+        foreach (i, const pos; list.retro.enumerate)
+            editor.maybeAdd(&list, list.length - i - 1, pos);
 }}
 
 void maybeAdd(Pos)(
     Editor editor,
-    ref Hover[] hovers,
+    Pos[]* list,
     in size_t arrayID,
-    in Pos pos)
-    if (is (Pos : AbstractPos))
-{
+    const(Pos) pos
+)   if (is (Pos : AbstractPos))
+{   with (editor)
     with (editor._map)
-        if (! isPointInRectangle(mouseOnLandX, mouseOnLandY, pos.selbox))
-            return;
+{
+    if (! isPointInRectangle(mouseOnLandX, mouseOnLandY, pos.selbox))
+        return;
     static if (is (Pos == TerPos))
         immutable Hover.Reason reason = editor.mouseOnSolidPixel(pos)
             ? Hover.Reason.mouseOnSolidPixel
             : Hover.Reason.mouseInSelbox;
     else
-        enum Hover.Reason reason = Hover.Reason.mouseInSelbox;
-    if (hovers == null || reason >= hovers[0].reason)
-        hovers = [ Hover(arrayID.to!int, reason) ];
-}
+        // this is a hack, to get the strongest possible reason,
+        // even though all we know is mouse inside selbox.
+        enum Hover.Reason reason = Hover.Reason.mouseOnSolidPixel;
+    with (editor)
+        if (_hover == null || reason >= _hover[0].reason) {
+            static if (is (Pos == TerPos))
+                _hover = [ Hover(list, null, arrayID.to!int, reason) ];
+            else
+                _hover = [ Hover(null, list, arrayID.to!int, reason) ];
+        }
+}}
 
 bool mouseOnSolidPixel(Editor editor, in TerPos pos) { with (editor._map)
 {

@@ -42,8 +42,8 @@ void drawMainMap(Editor editor) {
     editor._map.clearScreenRect(color.makecol(bgRed, bgGreen, bgBlue));
     editor.drawGadgets();
     editor._map.loadCameraRect(editor._mapTerrain);
-    editor.drawHover(_hoverTerrain,  _hoverGadgets,  false);
-    editor.drawHover(_selectTerrain, _selectGadgets, true);
+    editor.drawHover(_hover,    false);
+    editor.drawHover(_selection, true);
 }}
 
 void drawGadgets(Editor editor)
@@ -57,17 +57,17 @@ void drawGadgets(Editor editor)
 }
 
 void drawHover(Editor editor,
-    const(Hover[]) hovTer,
-    typeof(Editor._hoverGadgets) hovGad,
+    const(Hover[]) hover,
     in bool light
 ) { with (editor._level)
     with (editor._map)
 {
-    immutable colTer = hoverColor(0, light);
-    immutable colGad = hoverColor(1, light);
-    foreach (GadType type, list; hovGad)
-        list.each!(a => drawRectangle(pos[type][a.arrayID].selbox, colGad));
-    hovTer  .each!(a => drawRectangle(terrain  [a.arrayID].selbox, colTer));
+    immutable terCol = hoverColor(0, light);
+    immutable gadCol = hoverColor(1, light);
+    foreach (a; hover) {
+        if (a.terList) drawRectangle((*a.terList)[a.arrayID].selbox, terCol);
+        if (a.gadList) drawRectangle((*a.gadList)[a.arrayID].selbox, gadCol);
+    }
 }}
 
 AlCol hoverColor(in int hue, in bool light)

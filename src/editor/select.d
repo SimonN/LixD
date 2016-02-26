@@ -9,7 +9,6 @@ import hardware.mouse;
 void selectTiles(Editor editor) { with (editor)
 {
     if (mouseClickLeft) {
-        _selectTerrain = _hoverTerrain;
-        _selectGadgets = _hoverGadgets;
+        _selection =_hover;
     }
 }}

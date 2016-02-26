@@ -26,10 +26,8 @@ package:
     bool _gotoMainMenu;
     EditorPanel _panel;
 
-    Hover[] _hoverTerrain;
-    Hover[] _selectTerrain;
-    Enumap!(GadType, Hover[]) _hoverGadgets;
-    Enumap!(GadType, Hover[]) _selectGadgets;
+    Hover[] _hover;
+    Hover[] _selection;
 
 public:
     this(Filename fn)
@@ -50,6 +48,9 @@ package:
 
 struct Hover {
     enum Reason { none, mouseInSelbox, mouseOnSolidPixel }
+    TerPos[]* terList;
+    GadPos[]* gadList;
     int arrayID;
     Reason reason;
+    invariant() { assert (terList is null || gadList is null); }
 }
