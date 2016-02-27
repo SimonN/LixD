@@ -8,6 +8,7 @@ import enumap;
 
 import editor.calc;
 import editor.draw;
+import editor.hoveri;
 import editor.io;
 import editor.panel;
 import file.filename;
@@ -42,15 +43,4 @@ public:
 
     void calc() { this.implEditorCalc(); }
     void draw() { this.implEditorDraw(); }
-}
-
-package:
-
-struct Hover {
-    enum Reason { none, mouseInSelbox, mouseOnSolidPixel }
-    TerPos[]* terList;
-    GadPos[]* gadList;
-    int arrayID;
-    Reason reason;
-    invariant() { assert (terList is null || gadList is null); }
 }

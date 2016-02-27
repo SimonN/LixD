@@ -1,13 +1,15 @@
 module editor.hover;
 
-// Moving and manipulating tile instances (TerPos, GadPos).
+// creating the Hover objects for what's under the mouse cursor
 
 import std.algorithm;
 import std.range;
 import std.conv;
 
 import editor.editor;
+import editor.hoveri;
 import hardware.semantic;
+import hardware.mouse;
 import tile.pos;
 import tile.gadtile;
 
@@ -22,6 +24,13 @@ void hoverTiles(Editor editor)
         editor.hoverTilesReversed();
 }
 
+void selectTiles(Editor editor) { with (editor)
+{
+    if (mouseClickLeft && ! _panel.isMouseHere) {
+        _selection = _hover;
+    }
+}}
+
 private:
 
 void hoverTilesNormally(Editor editor) { with (editor)
@@ -30,7 +39,7 @@ void hoverTilesNormally(Editor editor) { with (editor)
     // Later tiles will throw out earlier tiles in the hover, unless the
     // earlier tiles have a strictly better reason than the later tiles.
     foreach (GadType type, ref list; _level.pos)
-        foreach (i, const pos; list)
+        foreach (i, pos; list)
             editor.maybeAdd(&list, i, pos);
     foreach (i, pos; _level.terrain)
         editor.maybeAdd(&_level.terrain, i, pos);
@@ -41,7 +50,7 @@ void hoverTilesReversed(Editor editor) { with (editor)
     foreach (i, pos; _level.terrain.retro.enumerate)
         editor.maybeAdd(&_level.terrain, _level.terrain.length - i - 1, pos);
     foreach (GadType type, ref list; _level.pos)
-        foreach (i, const pos; list.retro.enumerate)
+        foreach (i, pos; list.retro.enumerate)
             editor.maybeAdd(&list, list.length - i - 1, pos);
 }}
 
@@ -49,7 +58,7 @@ void maybeAdd(Pos)(
     Editor editor,
     Pos[]* list,
     in size_t arrayID,
-    const(Pos) pos
+    Pos pos
 )   if (is (Pos : AbstractPos))
 {   with (editor)
     with (editor._map)
@@ -64,13 +73,12 @@ void maybeAdd(Pos)(
         // this is a hack, to get the strongest possible reason,
         // even though all we know is mouse inside selbox.
         enum Hover.Reason reason = Hover.Reason.mouseOnSolidPixel;
-    with (editor)
-        if (_hover == null || reason >= _hover[0].reason) {
-            static if (is (Pos == TerPos))
-                _hover = [ Hover(list, null, arrayID.to!int, reason) ];
-            else
-                _hover = [ Hover(null, list, arrayID.to!int, reason) ];
-        }
+    if (editor._hover == null || reason >= editor._hover[0].reason) {
+        static if (is (Pos == TerPos))
+            _hover = [ new TerrainHover(editor._level, pos, reason) ];
+        else
+            _hover = [ new GadgetHover( editor._level, pos, reason) ];
+    }
 }}
 
 bool mouseOnSolidPixel(Editor editor, in TerPos pos) { with (editor._map)

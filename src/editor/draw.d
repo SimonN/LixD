@@ -4,6 +4,7 @@ import std.algorithm;
 
 import basics.alleg5;
 import editor.editor;
+import editor.hoveri;
 import graphic.color;
 import graphic.cutbit;
 import hardware.display;
@@ -42,8 +43,8 @@ void drawMainMap(Editor editor) {
     editor._map.clearScreenRect(color.makecol(bgRed, bgGreen, bgBlue));
     editor.drawGadgets();
     editor._map.loadCameraRect(editor._mapTerrain);
-    editor.drawHover(_hover,    false);
-    editor.drawHover(_selection, true);
+    editor.drawHovers(_hover, false);
+    editor.drawHovers(_selection, true);
 }}
 
 void drawGadgets(Editor editor)
@@ -56,29 +57,13 @@ void drawGadgets(Editor editor)
         }
 }
 
-void drawHover(Editor editor,
-    const(Hover[]) hover,
-    in bool light
-) { with (editor._level)
-    with (editor._map)
-{
-    immutable terCol = hoverColor(0, light);
-    immutable gadCol = hoverColor(1, light);
-    foreach (a; hover) {
-        if (a.terList) drawRectangle((*a.terList)[a.arrayID].selbox, terCol);
-        if (a.gadList) drawRectangle((*a.gadList)[a.arrayID].selbox, gadCol);
-    }
-}}
-
-AlCol hoverColor(in int hue, in bool light)
+void drawHovers(Editor editor, const(Hover[]) list, in bool light)
 {
     immutable int time  = timerTicks & 0x0F;
     immutable int subtr = time < 0x08 ? time : 0x10 - time;
     immutable int val   = (light ? 0xFF : 0xA0) - (light ? 5 : 10) * subtr;
-    if (hue == 0)
-        return color.makecol(val, val, val);
-    else
-        return color.makecol(val, val, val/2);
+    foreach (ho; list)
+        editor._map.drawRectangle(ho.pos.selbox, ho.hoverColor(val));
 }
 
 void drawToScreen(Editor editor) {
