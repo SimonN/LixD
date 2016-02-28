@@ -1,93 +1,93 @@
 module editor.hover;
 
-// creating the Hover objects for what's under the mouse cursor
+// Moving and manipulating tile instances (TerPos, GadPos).
+// The Hover class hierarchy mimics the hierarchy of Pos and Tile.
+
+// Opportunity for refactoring: Move the hover rectangle drawing all into
+// here, so we accept a map. Or accept a visitor from editor.draw.
 
 import std.algorithm;
-import std.range;
-import std.conv;
 
-import editor.editor;
-import editor.hoveri;
-import hardware.semantic;
-import hardware.mouse;
+import basics.alleg5; // timer ticks for the hover
+import graphic.color;
+import level.level;
 import tile.pos;
 import tile.gadtile;
 
-package:
+abstract class Hover {
+    Level  level;
+    Reason reason;
 
-void hoverTiles(Editor editor)
-{
-    editor._hover = [];
-    if (! priorityInvertHeld)
-        editor.hoverTilesNormally();
-    else
-        editor.hoverTilesReversed();
+    enum Reason { none, mouseInSelbox, mouseOnSolidPixel }
+
+    this(Level l, Reason r)
+    in   { assert (l); }
+    body { level = l; reason = r; }
+
+    abstract inout(AbstractPos) pos() inout;
+    abstract void removeFromLevel();
+    abstract AlCol hoverColor(int val) const;
 }
 
-void selectTiles(Editor editor) { with (editor)
-{
-    if (mouseClickLeft && ! _panel.isMouseHere) {
-        _selection = _hover;
+class TerrainHover : Hover {
+private:
+    TerPos _pos;
+
+public:
+    this(Level l, TerPos p, Hover.Reason r)
+    {
+        super(l, r);
+        _pos = p;
     }
-}}
+
+    override inout(TerPos) pos() inout { return _pos; }
+
+    override void removeFromLevel()
+    {
+        removeFromList(level.terrain, _pos);
+        _pos = null;
+    }
+
+    override AlCol hoverColor(int val) const
+    {
+        return color.makecol(val, val, val);
+    }
+}
+
+class GadgetHover : Hover {
+private:
+    GadPos _pos;
+
+public:
+    this(Level l, GadPos p, Hover.Reason r)
+    {
+        super(l, r);
+        _pos = p;
+    }
+
+    override inout(GadPos) pos() inout { return _pos; }
+
+    override void removeFromLevel()
+    {
+        assert (_pos);
+        assert (_pos.ob);
+        removeFromList(level.pos[_pos.ob.type], _pos);
+        _pos = null;
+    }
+
+    override AlCol hoverColor(int val) const
+    {
+        return color.makecol(val, val, val/2);
+    }
+}
 
 private:
 
-void hoverTilesNormally(Editor editor) { with (editor)
+void removeFromList(P)(ref P[] list, P pos)
+    if (is (P : AbstractPos))
 {
-    // The tiles at the end of each list are in the foreground.
-    // Later tiles will throw out earlier tiles in the hover, unless the
-    // earlier tiles have a strictly better reason than the later tiles.
-    foreach (GadType type, ref list; _level.pos)
-        foreach (i, pos; list)
-            editor.maybeAdd(&list, i, pos);
-    foreach (i, pos; _level.terrain)
-        editor.maybeAdd(&_level.terrain, i, pos);
-}}
-
-void hoverTilesReversed(Editor editor) { with (editor)
-{
-    foreach (i, pos; _level.terrain.retro.enumerate)
-        editor.maybeAdd(&_level.terrain, _level.terrain.length - i - 1, pos);
-    foreach (GadType type, ref list; _level.pos)
-        foreach (i, pos; list.retro.enumerate)
-            editor.maybeAdd(&list, list.length - i - 1, pos);
-}}
-
-void maybeAdd(Pos)(
-    Editor editor,
-    Pos[]* list,
-    in size_t arrayID,
-    Pos pos
-)   if (is (Pos : AbstractPos))
-{   with (editor)
-    with (editor._map)
-{
-    if (! isPointInRectangle(mouseOnLandX, mouseOnLandY, pos.selbox))
-        return;
-    static if (is (Pos == TerPos))
-        immutable Hover.Reason reason = editor.mouseOnSolidPixel(pos)
-            ? Hover.Reason.mouseOnSolidPixel
-            : Hover.Reason.mouseInSelbox;
-    else
-        // this is a hack, to get the strongest possible reason,
-        // even though all we know is mouse inside selbox.
-        enum Hover.Reason reason = Hover.Reason.mouseOnSolidPixel;
-    if (editor._hover == null || reason >= editor._hover[0].reason) {
-        static if (is (Pos == TerPos))
-            _hover = [ new TerrainHover(editor._level, pos, reason) ];
-        else
-            _hover = [ new GadgetHover( editor._level, pos, reason) ];
-    }
-}}
-
-bool mouseOnSolidPixel(Editor editor, in TerPos pos) { with (editor._map)
-{
-    int x = mouseOnLandX;
-    int y = mouseOnLandY;
-    while (x < pos.x)
-        x += xl;
-    while (y < pos.y)
-        y += yl;
-    return 0 != pos.phybitsAtMapPosition(x, y);
-}}
+    assert (pos);
+    auto found = list.find!"a is b"(pos);
+    assert (found.length > 0);
+    list = list[0 .. $ - found.length] ~ found[1 .. $];
+}

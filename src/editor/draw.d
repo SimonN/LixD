@@ -4,7 +4,7 @@ import std.algorithm;
 
 import basics.alleg5;
 import editor.editor;
-import editor.hoveri;
+import editor.hover;
 import graphic.color;
 import graphic.cutbit;
 import hardware.display;

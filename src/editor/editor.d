@@ -8,7 +8,7 @@ import enumap;
 
 import editor.calc;
 import editor.draw;
-import editor.hoveri;
+import editor.hover;
 import editor.io;
 import editor.panel;
 import file.filename;

@@ -1,7 +1,6 @@
 module editor.calc;
 
 import editor.editor;
-import editor.hover;
 import editor.select;
 import hardware.mousecur;
 
