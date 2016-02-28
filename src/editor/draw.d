@@ -27,7 +27,7 @@ void drawTerrainToSeparateMap(Editor editor) {
     with (Zone(profiler, "Editor.drawMapTerrain"))
     with (DrawingTarget(editor._mapTerrain.albit))
 {
-    editor._mapTerrain.clearScreenRect(color.transp);
+    editor._mapTerrain.clearToColor(color.transp);
     foreach (t; editor._level.terrain)
         if (auto cb = t.dark ? t.ob.dark : t.ob.cb)
             cb.draw(editor._mapTerrain, t.x, t.y, t.mirr, t.rot,

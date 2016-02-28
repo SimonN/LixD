@@ -1,6 +1,13 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.31
+------
+
+2016-02-28
+
+Implemented editor delete button.
+
 0.2.30
 ------
 
