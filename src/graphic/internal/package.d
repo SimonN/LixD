@@ -23,10 +23,10 @@ void initialize(Runmode runmode)
     }
 }
 
-void deinitialize()                  { implDeinitialize();      }
-void setScaleFromGui(in float scale) { implSetScale(scale);     }
+void deinitialize()               { implDeinitialize();  }
+void setScaleFromGui(float scale) { implSetScale(scale); }
 
-const(Cutbit) getInternal(in Filename fn)  { return getInternalMutable  (fn); }
+const(Cutbit) getInternal    (Filename fn) { return getInternalMutable  (fn); }
 const(Cutbit) getLixSpritesheet (Style st) { return implGetLixSprites   (st); }
 const(Cutbit) getPanelInfoIcon  (Style st) { return implGetPanelInfoIcon(st); }
 const(Cutbit) getSkillButtonIcon(Style st) { return implGetSkillButton  (st); }

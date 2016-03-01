@@ -56,31 +56,31 @@ Cutbit getInternalMutable(in Filename fn)
 }
 
 const(Cutbit) implGetLixSprites(in Style st)
-{
+out (ret) { assert(ret); }
+body {
     if (noninteractiveMode)
         return getLixRawSprites();
-    if (auto ret = st in spritesheets)
-        return *ret;
-    else
-        return getLixRawSprites;
+    if (spritesheets[st] is null)
+        makeLixSprites(st);
+    return spritesheets[st];
 }
 
 const(Cutbit) implGetPanelInfoIcon(in Style st)
-{
+out (ret) { assert(ret); }
+body {
     if (noninteractiveMode)
         return nullCutbit;
-    if (auto ret = st in panelInfoIcons)
-        return *ret;
-    else
-        return nullCutbit;
+    if (panelInfoIcons[st] is null)
+        makePanelInfoIcon(st);
+    return panelInfoIcons[st];
 }
 
 const(Cutbit) implGetSkillButton(in Style st)
-{
+out (ret) { assert(ret); }
+body {
     if (noninteractiveMode)
         return nullCutbit;
-    if (auto ret = st in skillButtonIcons)
-        return *ret;
-    else
-        return nullCutbit;
+    if (skillButtonIcons[st] is null)
+        makeSkillButtonIcon(st);
+    return skillButtonIcons[st];
 }

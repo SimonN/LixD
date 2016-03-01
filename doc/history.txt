@@ -1,6 +1,14 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.32
+------
+
+2016-03-01
+
+Application starts much faster. All bitmap-loading and recoloring is lazy.
+Only eye matrix generation is eagerly done at application start.
+
 0.2.31
 ------
 

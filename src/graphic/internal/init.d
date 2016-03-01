@@ -10,41 +10,20 @@ import basics.matrix;
 import file.filename;
 import graphic.color;
 import graphic.cutbit;
-import graphic.internal.getters; // for asserting stuff got there
+import graphic.internal.getters;
 import graphic.internal.vars;
-import graphic.internal.recol;
 import hardware.display; // show progress during startup, maybe make this lazy
 import lix.enums;
 import lix.fields;
 
 package:
 
-// DTODOLAZY: Right now, we do everything at program start. Maybe we
-// can be lazy and load other sprite colors only when they become necessary
-// for displaying replays, or when connecting to a game server. (They must
-// be ready without delay when a multiplayer game starts!)
 void implInitializeInteractive()
 {
     nullCutbit = new Cutbit(cast (Cutbit) null);
-
     displayStartupMessage("Examining Lix spritesheet for eye positions...");
-    auto lock = LockReadWrite(getLixRawSprites.albit);
     createEyeCoordinateMatrix();
-    displayStartupMessage("Recoloring Lix sprites for multiplayer...");
-    recolor_into_vector(getLixRawSprites(), spritesheets, magicnrSpritesheets);
-
-    displayStartupMessage("Recoloring panel info icons for multiplayer...");
-    recolorGuiAccordingToPlayerColors(
-        fileImageGameIcon, panelInfoIcons, magicnrPanelInfoIcons);
-
-    displayStartupMessage("Recoloring skill buttons for multiplayer...");
-    recolorGuiAccordingToPlayerColors(
-        fileImageSkillIcons, skillButtonIcons, magicnrSkillButtonIcons);
-
-    // DTODO: move load_all_file_replacements(); into obj_lib
-    auto toAssert = implGetSkillButton(Style.garden);
-    assert (toAssert);
-    assert (toAssert.valid);
+    displayStartupMessage("...done eye positions.");
 }
 
 void implInitializeVerify()
@@ -53,7 +32,6 @@ void implInitializeVerify()
     noninteractiveMode = true;
     // Load only the Lix spritesheet, because physics depend on it.
     // Is this a design bug? Discuss with the IRCies eventually.
-    auto lock = LockReadWrite(getLixRawSprites.albit);
     createEyeCoordinateMatrix();
 }
 
@@ -63,7 +41,6 @@ void implDeinitialize()
     destroyArray(panelInfoIcons);
     destroyArray(spritesheets);
     destroyArray(internal);
-
     destroy(nullCutbit);
     nullCutbit = null;
 }
@@ -77,6 +54,7 @@ void createEyeCoordinateMatrix()
     // It's also important for physics, eyes touching fire will kill.
     Cutbit cb = getLixRawSprites();
     Albit b = cb.albit;
+    auto lock = LockReadOnly(b);
     assert (b, "apparently your gfx card can't store the Lix spritesheet");
 
     lix.fields.countdown = new Matrix!XY(cb.xfs, cb.yfs);
@@ -110,19 +88,4 @@ void createEyeCoordinateMatrix()
         }
     }
     // All pixels of the entire spritesheet have been examined.
-}
-
-void recolorGuiAccordingToPlayerColors(
-    in Filename fn,
-    ref Cutbit[Style] vec,
-    in int magicnr
-) {
-    Cutbit cb_icons = getInternalMutable(fn);
-    assert (cb_icons && cb_icons.valid,
-        format("can't get bitmap for magicnr %d", magicnr));
-    if (! cb_icons || ! cb_icons.valid)
-        return;
-    Albit  cb_bmp   = cb_icons.albit;
-    auto lock_icons = LockReadWrite(cb_bmp);
-    recolor_into_vector(cb_icons, vec, magicnr);
 }

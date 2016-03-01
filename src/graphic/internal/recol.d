@@ -57,62 +57,39 @@ void eidrecol(Cutbit cutbit, in int magicnr)
     }
 }
 
-void recolor_into_vector(
-    Cutbit            cutbit,
-    ref Cutbit[Style] vector,
-    int               magicnr
+Cutbit lockThenRecolor(
+    Cutbit sourceCutbit,
+    in int magicnr,
+    in Style st
 ) {
-    // We assume the bitmap to be locked already. If you write code calling
-    // this function, make sure it's locked. Otherwise, everything will work
-    // extremely slowly.
+    // We assume sourceCutbit to be unlocked, and are going to lock it
+    // in this function.
+    if (! sourceCutbit || ! sourceCutbit.valid)
+        return nullCutbit;
+    Albit lix = sourceCutbit.albit;
+    assert (lix);
 
-    assert (cutbit.valid);
-    Cutbit rclCb = getInternalMutable(fileImageStyleRecol);
-    assert (rclCb !is nullCutbit, "can't recolor, missing map image");
-
-    Albit recol = rclCb.albit;
-    Albit lix   = cutbit.albit;
-    if (!recol || !lix) return;
-
-    immutable int   recolXl  = al_get_bitmap_width (recol);
-    immutable int   recolYl  = al_get_bitmap_height(recol);
     immutable int   lixXl    = al_get_bitmap_width (lix);
     immutable int   lixYl    = al_get_bitmap_height(lix);
     immutable AlCol colBreak = al_get_pixel(lix, lixXl - 1, 0);
 
-    auto lock = LockReadWrite(recol);
-
-
-
-    void recolorOneBitmap(Albit target, in int style_id)
+    void recolorTargetForStyle()
     {
-        assert(target);
-        assert(style_id < recolYl - 1);
         auto zone = Zone(profiler, format("recolor-one-bitmap-%d", magicnr));
-
-        // Build the recolor array for this particular style
-        AlCol[AlCol] recolArray;
-        for (int conv = 0; conv < recolXl; ++conv) {
-            recolArray[al_get_pixel(recol, conv, 0)] =
-                       al_get_pixel(recol, conv, style_id + 1);
-        }
-
-        auto drata = DrawingTarget(target);
-
-        // The first row (y == 0) contains the source pixels. The first style
-        // (garden) is at y == 1. Thus the recol->h - 1 is correct as we count
-        // styles starting at 0.
+        AlCol[AlCol] recolArray = generateRecolArray(st);
         Y_LOOP: for (int y = 0; y < lixYl; y++) {
             X_LOOP: for (int x = 0; x < lixXl; x++) {
                 // The skill button icons have two rows: the first has the
                 // skills in player colors, the second has them greyed out.
                 // Ignore the second row here.
-                if (y >= cutbit.yl + 1 && magicnr == magicnrSkillButtonIcons) {
+                if (y >= sourceCutbit.yl + 1
+                    && magicnr == magicnrSkillButtonIcons
+                ) {
                     break Y_LOOP;
                 }
                 else if (magicnr == magicnrPanelInfoIcons
-                     && y >= cutbit.yl + 1
-                     && y <  2 * (cutbit.yl + 1)
+                     && y >= sourceCutbit.yl + 1
+                     && y <  2 * (sourceCutbit.yl + 1)
                 ) {
                     // skip all x pixels in the second row in this
                     continue;
@@ -127,49 +104,38 @@ void recolor_into_vector(
                         // good: immediately begin next frame. We have already
                         //       advanced into the frame by 1 pixel, as we have
                         //       seen two
-                        x += cutbit.xl;
+                        x += sourceCutbit.xl;
 
                 // No exceptions for speed encountered so far.
-                if (AlCol* colPtr = (col in recolArray)) {
+                if (AlCol* colPtr = (col in recolArray))
                     al_put_pixel(x, y, *colPtr);
-                }
-                // end of single-pixel color replacement
             }
         }
-        // end of for-all-pixels in source bitmap
     }
-    // end of function recolorOneBitmap
+    // end function recolorForStyle
 
+    // now invoke the above code on the single wanted Lix style
+    Cutbit targetCb = new Cutbit(sourceCutbit);
+    auto zone  = Zone(profiler, format("recolor-one-foreach-%d", magicnr));
+    auto lock  = LockReadOnly(lix);
+    auto lock2 = LockReadWrite(targetCb.albit); // see [1] at end of function
+    auto drata = DrawingTarget(targetCb.albit);
+    recolorTargetForStyle();
 
-    // now invoke the above code on each Lix style
-    foreach (int i; 0 .. Style.max) {
-        Style st = cast (Style) i;
-        vector[st] = new Cutbit(cutbit);
+    // eidrecol invoked with magicnr != 0 expects already-locked bitmap
+    if (magicnr != magicnrSpritesheets)
+        eidrecol(targetCb, magicnr);
+    return targetCb;
 
-        static if (true)
-            // Speed up loading to debug the game easier. This is not honte.
-            // Recoloring different styles should not be done at program start.
-            if (st >= Style.yellow)
-                continue;
-
-        auto zone = Zone(profiler, format("recolor-one-foreach-%d", magicnr));
-
-        Albit target = vector[st].albit;
-        assert (target);
-
-        // DTODOLANG
-        if (magicnr == magicnrSpritesheets)
-            displayStartupMessage(styleToString(st));
-
-        auto lockTarget = LockReadWrite(target);
-        recolorOneBitmap(target, i);
-
-        // Invoke eidrecol on the bitmap. Whenever eidrecol is invoked
-        // with a magicnr != 0, it does not lock/unlock the bitmaps itself,
-        // but assumes they are locked.
-        if (magicnr != magicnrSpritesheets)
-            eidrecol(vector[st], magicnr);
-    }
+    /* [1]: Why do we lock targetCb.albit at all?
+     * I have no idea why we are doing this (2016-03). recolorTargetForStyle
+     * runs extremely slowly if we don't lock targetCb.albit, even though we
+     * only write to it. Speculation: al_put_pixel is slow when not writing
+     * to VRAM bitmaps.
+     *
+     * We would have to lock targetCb.albit as read-write when going into
+     * the eidrecol function. So we don't lose anything by locking it earlier.
+     */
 }
 
 private:
@@ -220,4 +186,20 @@ void recolorAllShadows(Albit bitmap)
             if (c == color.guiFileSha)
                 al_put_pixel(x, y, color.guiSha);
         }
+}
+
+AlCol[AlCol] generateRecolArray(in Style st)
+{
+    Cutbit rclCb = getInternalMutable(fileImageStyleRecol);
+    assert (rclCb !is nullCutbit, "can't recolor, missing map image");
+    Albit recol = rclCb.albit;
+    auto lock = LockReadOnly(recol);
+    AlCol[AlCol] recolArray;
+    assert(st < al_get_bitmap_height(recol) - 1, "recolor map yl too low");
+    foreach (x; 0 .. al_get_bitmap_width(recol))
+        // The first row (y == 0) contains the source pixels. The first style
+        // (garden) is at y == 1. Thus, target colors are at y == st + 1.
+        recolArray[al_get_pixel(recol, x, 0)] =
+                   al_get_pixel(recol, x, st + 1);
+    return recolArray;
 }

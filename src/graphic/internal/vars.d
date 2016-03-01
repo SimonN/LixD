@@ -8,10 +8,10 @@ package:
 
 bool noninteractiveMode;
 
-Cutbit[string] internal;
-Cutbit[Style]  spritesheets;
-Cutbit[Style]  panelInfoIcons;
-Cutbit[Style]  skillButtonIcons;
+Cutbit[string]    internal;
+Cutbit[Style.max] spritesheets;
+Cutbit[Style.max] panelInfoIcons;
+Cutbit[Style.max] skillButtonIcons;
 
 Cutbit nullCutbit; // invalid bitmap to return instead of null pointer
 
