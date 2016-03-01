@@ -244,11 +244,11 @@ unittest
     Level lev = new Level(fn0);
     lev.saveToFile(fnl);
 
-    Replay r = new Replay(fn0);
+    Replay r = Replay.loadFromFile(fn0);
     const int data_len = r._data.len;
 
     implSaveToFile(r, fn1, lev);
-    r = new Replay(fn1);
+    r = Replay.loadFromFile(fn1);
     assert (data_len == r._data.len);
 
     implSaveToFile(r, fn2, lev);
