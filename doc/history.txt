@@ -1,6 +1,17 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.33
+------
+
+2016-03-01
+
+I run D's garbage collection whenever there are obsolete game states during
+play. Profiling result: My 9-year-old laptop takes 3 ms per collection.
+At 16.6 ms per frame, this slows down the back-by-1-second command.
+My goal is to attack this bug: https://github.com/SimonN/LixD/issues/38
+Let's see whether anybody experiences this bug #38 still, then think again.
+
 0.2.32
 ------
 

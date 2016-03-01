@@ -12,6 +12,7 @@ module game.model.state;
 
 import std.range;
 import std.algorithm;
+import core.memory; // GC.collect();
 
 import basics.help; // clone(T[]), a deep copy for arrays
 import basics.nettypes;
@@ -21,6 +22,7 @@ import game.tribe;
 import game.replay;
 import graphic.torbit;
 import graphic.gadget;
+import hardware.tharsis;
 
 import std.string; // format
 
@@ -189,7 +191,8 @@ public:
                 // DTODO: find out whether we should manually destroy the
                 // torbit and lookup matrix here, and then garbage-collect
                 possibleGarbage = null;
-
+        auto zone = Zone(profiler, "GC in autoBeforeUpdate");
+        core.memory.GC.collect();
         return ret;
     }
 
@@ -209,6 +212,10 @@ public:
     {
         if (! wouldAutoSave(s, ultimatelyTo))
             return;
+        scope (success) {
+            auto zone = Zone(profiler, "GC in autoSave");
+            core.memory.GC.collect();
+        }
         // Potentially push older auto-saved states down the hierarchy.
         // First, if it's time to copy a frequent state into a less frequent
         // state, make these copies. Start with least frequent copying the
