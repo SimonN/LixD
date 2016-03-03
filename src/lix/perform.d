@@ -127,6 +127,7 @@ void killOutOfBounds(Lixxie lixxie) {
     const phymap = outsideWorld.state.lookup;
     if (   ey >= phymap.yl + 23
         || ey >= phymap.yl + 15 && ac != Ac.floater
+        || ey <= -2 // top edge kills unconditionally, it did not in C++
         || ex >= phymap.xl +  4
         || ex <= -4
     ) {

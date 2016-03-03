@@ -1,6 +1,15 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.34
+------
+
+2016-03-03
+
+Top edge kills unconditionally.
+
+The editor counts and annotates hatches and exits.
+
 0.2.33
 ------
 
