@@ -7,6 +7,7 @@ module editor.editor;
 import enumap;
 
 import editor.calc;
+import editor.dragger;
 import editor.draw;
 import editor.hover;
 import editor.io;
@@ -26,6 +27,7 @@ package:
 
     bool _gotoMainMenu;
     EditorPanel _panel;
+    MouseDragger _dragger;
 
     Hover[] _hover;
     Hover[] _selection;

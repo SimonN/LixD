@@ -28,6 +28,13 @@ void selectTiles(Editor editor) { with (editor)
 {
     if (mouseClickLeft && ! _panel.isMouseHere) {
         _selection = _hover;
+        if (_selection.empty)
+            _dragger.startFrame(_map);
+        else
+            _dragger.startMove(_map);
+    }
+    else if (! mouseHeldLeft) {
+        _dragger.stop();
     }
 }}
 

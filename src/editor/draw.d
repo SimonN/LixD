@@ -44,10 +44,11 @@ void drawMainMap(Editor editor) {
 {
     editor._map.clearScreenRect(color.makecol(bgRed, bgGreen, bgBlue));
     editor.drawGadgets();
-    editor._map.loadCameraRect(editor._mapTerrain);
+    editor._map.loadCameraRect(_mapTerrain);
     editor.drawGadgetAnnotations();
     editor.drawHovers(_hover, false);
     editor.drawHovers(_selection, true);
+    editor.drawDraggedFrame();
 }}
 
 void drawGadgets(Editor editor)
@@ -75,14 +76,28 @@ void drawGadgetAnnotations(Editor editor)
     annotate(editor._level.pos[GadType.GOAL]);
 }
 
-void drawHovers(Editor editor, const(Hover[]) list, in bool light)
+// Returns value in 0 .. 256
+int hoverColorVal(bool light)
 {
     immutable int time  = timerTicks & 0x0F;
     immutable int subtr = time < 0x08 ? time : 0x10 - time;
-    immutable int val   = (light ? 0xFF : 0xA0) - (light ? 5 : 10) * subtr;
+    return (light ? 0xFF : 0xA0) - (light ? 5 : 10) * subtr;
+}
+
+void drawHovers(Editor editor, const(Hover[]) list, in bool light)
+{
+    immutable val = hoverColorVal(light);
     foreach (ho; list)
         editor._map.drawRectangle(ho.pos.selbox, ho.hoverColor(val));
 }
+
+void drawDraggedFrame(Editor editor) { with (editor)
+{
+    if (! _dragger.framing)
+        return;
+    immutable val = hoverColorVal(false);
+    _map.drawRectangle(_dragger.frame(_map), color.makecol(val/2, val, val));
+}}
 
 void drawToScreen(Editor editor) {
     with (editor)

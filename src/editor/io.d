@@ -3,6 +3,7 @@ module editor.io;
 import std.algorithm;
 import std.conv;
 
+import editor.dragger;
 import editor.editor;
 import editor.panel;
 import editor.paninit;
@@ -23,6 +24,7 @@ void implConstructor(Editor editor) { with (editor)
     _mapTerrain = newMap();
     _map.centerOnAverage(_level.pos[GadType.HATCH].map!(h => h.centerOnX),
                          _level.pos[GadType.HATCH].map!(h => h.centerOnY));
+    _dragger = new MouseDragger();
     editor.makePanel();
 }}
 
