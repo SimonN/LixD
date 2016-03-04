@@ -43,8 +43,8 @@ public:
         assert (framing);
         return Rect(min(_fromMapX, map.mouseOnLandX),
                     min(_fromMapY, map.mouseOnLandY),
-                    abs(_fromMapX - map.mouseOnLandX),
-                    abs(_fromMapY - map.mouseOnLandY));
+                    abs(_fromMapX - map.mouseOnLandX) + 1,
+                    abs(_fromMapY - map.mouseOnLandY) + 1);
     }
 
     void startMove(const(Map) map)

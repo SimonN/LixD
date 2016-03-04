@@ -81,7 +81,7 @@ int hoverColorVal(bool light)
 {
     immutable int time  = timerTicks & 0x0F;
     immutable int subtr = time < 0x08 ? time : 0x10 - time;
-    return (light ? 0xFF : 0xA0) - (light ? 5 : 10) * subtr;
+    return (light ? 0xFF : 0xB0) - (light ? 4 : 12) * subtr;
 }
 
 void drawHovers(Editor editor, const(Hover[]) list, in bool light)
@@ -96,7 +96,9 @@ void drawDraggedFrame(Editor editor) { with (editor)
     if (! _dragger.framing)
         return;
     immutable val = hoverColorVal(false);
-    _map.drawRectangle(_dragger.frame(_map), color.makecol(val/2, val, val));
+    assert (val >= 0x40 && val < 0xC0); // because we'll be varying by 0x40
+    immutable col = color.makecol(val + 0x40, val, val - 0x40);
+    _map.drawRectangle(_dragger.frame(_map), col);
 }}
 
 void drawToScreen(Editor editor) {
