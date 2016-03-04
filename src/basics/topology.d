@@ -114,6 +114,16 @@ public:
         return (dx * dx + dy * dy);
     }
 
+    int torusAverageX(Range)(Range range) const if (isInputRange!Range)
+    {
+        return torusAverage(xl, torusX, (a, b) => distanceX(a, b), range);
+    }
+
+    int torusAverageY(Range)(Range range) const if (isInputRange!Range)
+    {
+        return torusAverage(yl, torusY, (a, b) => distanceY(a, b), range);
+    }
+
     bool isPointInRectangle(int px, int py, Rect rect) const
     {
         if (_tx) {
@@ -130,14 +140,10 @@ public:
             && (py >= rect.y && py < rect.y + rect.yl);
     }
 
-    int torusAverageX(Range)(Range range) const if (isInputRange!Range)
+    bool rectIntersectsRect(Rect a, Rect b) const
     {
-        return torusAverage(xl, torusX, (a, b) => distanceX(a, b), range);
-    }
-
-    int torusAverageY(Range)(Range range) const if (isInputRange!Range)
-    {
-        return torusAverage(yl, torusY, (a, b) => distanceY(a, b), range);
+        return lineIntersectsLine(a.x, a.xl, b.x, b.xl, _xl, _tx)
+            && lineIntersectsLine(a.y, a.yl, b.y, b.yl, _yl, _ty);
     }
 
 protected:
@@ -173,4 +179,17 @@ private:
         static assert (is (typeof(possiblePointsOnTorus[0]) == int));
         return possiblePointsOnTorus.reduce!closestPoint;
     }
+}
+
+private:
+
+bool lineIntersectsLine(
+    in int a, in int al, // first line's start and length
+    in int b, in int bl, // second line's start and length
+    in int len, in bool torus // underlying one-dimensional topology
+) pure
+{
+    // DTODO: Bug! This works only on non-torus!
+    return ! (b >= a + al)
+        && ! (a >= b + bl);
 }

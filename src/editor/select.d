@@ -6,6 +6,7 @@ import std.algorithm;
 import std.range;
 import std.conv;
 
+import basics.topology; // Rect
 import editor.editor;
 import editor.hover;
 import hardware.semantic;
@@ -15,14 +16,16 @@ import tile.gadtile;
 
 package:
 
-void hoverTiles(Editor editor)
+void hoverTiles(Editor editor) { with (editor)
 {
-    editor._hover = [];
-    if (! priorityInvertHeld)
+    _hover = [];
+    if (_dragger.framing)
+        editor.hoverTilesInRect(_dragger.frame(_map));
+    else if (! priorityInvertHeld)
         editor.hoverTilesNormally();
     else
         editor.hoverTilesReversed();
-}
+}}
 
 void selectTiles(Editor editor) { with (editor)
 {
@@ -34,11 +37,24 @@ void selectTiles(Editor editor) { with (editor)
             _dragger.startMove(_map);
     }
     else if (! mouseHeldLeft) {
+        if (_dragger.framing)
+            _selection = _hover;
         _dragger.stop();
     }
 }}
 
 private:
+
+void hoverTilesInRect(Editor editor, Rect rect) { with (editor)
+{
+    foreach (GadType type, ref list; _level.pos)
+        foreach (pos; list)
+            if (_map.rectIntersectsRect(rect, pos.selbox))
+                _hover ~= new GadgetHover(_level, pos, Hover.Reason.none);
+    foreach (pos; _level.terrain)
+        if (_map.rectIntersectsRect(rect, pos.selbox))
+            _hover ~= new TerrainHover(_level, pos, Hover.Reason.none);
+}}
 
 void hoverTilesNormally(Editor editor) { with (editor)
 {
@@ -46,25 +62,24 @@ void hoverTilesNormally(Editor editor) { with (editor)
     // Later tiles will throw out earlier tiles in the hover, unless the
     // earlier tiles have a strictly better reason than the later tiles.
     foreach (GadType type, ref list; _level.pos)
-        foreach (i, pos; list)
-            editor.maybeAdd(&list, i, pos);
+        foreach (pos; list)
+            editor.maybeAdd(&list, pos);
     foreach (i, pos; _level.terrain)
-        editor.maybeAdd(&_level.terrain, i, pos);
+        editor.maybeAdd(&_level.terrain, pos);
 }}
 
 void hoverTilesReversed(Editor editor) { with (editor)
 {
-    foreach (i, pos; _level.terrain.retro.enumerate)
-        editor.maybeAdd(&_level.terrain, _level.terrain.length - i - 1, pos);
+    foreach (pos; _level.terrain.retro)
+        editor.maybeAdd(&_level.terrain, pos);
     foreach (GadType type, ref list; _level.pos)
-        foreach (i, pos; list.retro.enumerate)
-            editor.maybeAdd(&list, list.length - i - 1, pos);
+        foreach (pos; list.retro)
+            editor.maybeAdd(&list, pos);
 }}
 
 void maybeAdd(Pos)(
     Editor editor,
     Pos[]* list,
-    in size_t arrayID,
     Pos pos
 )   if (is (Pos : AbstractPos))
 {   with (editor)
