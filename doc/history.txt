@@ -1,6 +1,14 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.35
+------
+
+Editor frame dragging implemented. It selects the correct pieces on a torus.
+
+Bug: It doesn't yet span the frame in the correct direction. Right now,
+it always spans so that the torus seam is not included.
+
 0.2.34
 ------
 

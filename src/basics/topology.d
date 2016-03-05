@@ -17,7 +17,7 @@ import basics.help; // positiveMod
 
 struct Rect { int x; int y; int xl; int yl; }
 
-abstract class Topology {
+class Topology {
 private:
     int  _xl, _yl; // x- and y-length of our rectangular area
     bool _tx, _ty; // torus property in either direction, making edges loop
@@ -84,7 +84,7 @@ public:
 
     // This computes distances similar to (1st_arg - 2nd_arg), but it
     // check for shortcuts around the cylinder/torus if appropriate.
-    int distanceX(in int x1, in int x2) const
+    final int distanceX(in int x1, in int x2) const
     {
         if (! _tx) return x2 - x1;
         else {
@@ -93,7 +93,7 @@ public:
         }
     }
 
-    int distanceY(in int y1, in int y2) const
+    final int distanceY(in int y1, in int y2) const
     {
         if (! _ty) return y2 - y1;
         else {
@@ -102,45 +102,34 @@ public:
         }
     }
 
-    float hypot(in int x1, in int y1, in int x2, in int y2) const
+    final float hypot(in int x1, in int y1, in int x2, in int y2) const
     {
         return std.math.sqrt(hypotSquared(x1, y1, x2, y2).to!float);
     }
 
-    int hypotSquared(in int x1, in int y1, in int x2, in int y2) const
+    final int hypotSquared(in int x1, in int y1, in int x2, in int y2) const
     {
         immutable int dx = distanceX(x2, x1);
         immutable int dy = distanceY(y2, y1);
         return (dx * dx + dy * dy);
     }
 
-    int torusAverageX(Range)(Range range) const if (isInputRange!Range)
+    final int torusAverageX(Range)(Range range) const if (isInputRange!Range)
     {
         return torusAverage(xl, torusX, (a, b) => distanceX(a, b), range);
     }
 
-    int torusAverageY(Range)(Range range) const if (isInputRange!Range)
+    final int torusAverageY(Range)(Range range) const if (isInputRange!Range)
     {
         return torusAverage(yl, torusY, (a, b) => distanceY(a, b), range);
     }
 
-    bool isPointInRectangle(int px, int py, Rect rect) const
+    final bool isPointInRectangle(int px, int py, Rect rect) const
     {
-        if (_tx) {
-            px     = positiveMod(px, _xl);
-            rect.x = positiveMod(rect.x, _xl);
-            if (px < rect.x) px += _xl;
-        }
-        if (_ty) {
-            py     = positiveMod(py,     _yl);
-            rect.y = positiveMod(rect.y, _yl);
-            if (py < rect.y) py += _yl;
-        }
-        return (px >= rect.x && px < rect.x + rect.xl)
-            && (py >= rect.y && py < rect.y + rect.yl);
+        return rectIntersectsRect(Rect(px, py, 1, 1), rect);
     }
 
-    bool rectIntersectsRect(Rect a, Rect b) const
+    final bool rectIntersectsRect(Rect a, Rect b) const
     {
         return lineIntersectsLine(a.x, a.xl, b.x, b.xl, _xl, _tx)
             && lineIntersectsLine(a.y, a.yl, b.y, b.yl, _yl, _ty);
@@ -149,47 +138,69 @@ public:
 protected:
     void onResize()    { }
     void onAnyChange() { }
-
-private:
-    // dmd 2.070 has a 6-year old bug: This template is public, even though
-    // it's marked private. Please take care not to call it. :-]
-    // Call torusAverageX/Y instead, those are public methods.
-    int torusAverage(Range)(
-        in int  screenLen,
-        in bool torus,
-        int delegate(int, int) dist,
-        Range hatchPoints
-    ) const
-        if (isInputRange!Range)
-    {
-        immutable int len = hatchPoints.walkLength.to!int;
-        immutable int avg = hatchPoints.sum / len;
-        if (! torus)
-            return avg;
-        auto distToAllHatches(in int point)
-        {
-            return hatchPoints.map!(h => dist(point, h).abs).sum;
-        }
-        int closestPoint(in int a, in int b)
-        {
-            return distToAllHatches(a) <= distToAllHatches(b) ? a : b;
-        }
-        auto possiblePointsOnTorus = sequence!((unused, n) =>
-            (avg + n.to!int * screenLen/len) % screenLen).takeExactly(len);
-        static assert (is (typeof(possiblePointsOnTorus[0]) == int));
-        return possiblePointsOnTorus.reduce!closestPoint;
-    }
 }
 
 private:
 
+int torusAverage(Range)(
+    in int  screenLen,
+    in bool torus,
+    int delegate(int, int) dist,
+    Range hatchPoints
+) if (isInputRange!Range)
+{
+    immutable int len = hatchPoints.walkLength.to!int;
+    immutable int avg = hatchPoints.sum / len;
+    if (! torus)
+        return avg;
+    auto distToAllHatches(in int point)
+    {
+        return hatchPoints.map!(h => dist(point, h).abs).sum;
+    }
+    int closestPoint(in int a, in int b)
+    {
+        return distToAllHatches(a) <= distToAllHatches(b) ? a : b;
+    }
+    auto possiblePointsOnTorus = sequence!((unused, n) =>
+        (avg + n.to!int * screenLen/len) % screenLen).takeExactly(len);
+    static assert (is (typeof(possiblePointsOnTorus[0]) == int));
+    return possiblePointsOnTorus.reduce!closestPoint;
+}
+
 bool lineIntersectsLine(
-    in int a, in int al, // first line's start and length
-    in int b, in int bl, // second line's start and length
+    int a, in int al, // first  line's start and length
+    int b, in int bl, // second line's start and length
     in int len, in bool torus // underlying one-dimensional topology
 ) pure
 {
-    // DTODO: Bug! This works only on non-torus!
-    return ! (b >= a + al)
-        && ! (a >= b + bl);
+    bool intersects() {
+        return ! (b >= a + al)  // not lying alongside like so: --a--  ---b---
+            && ! (a >= b + bl); // not lying alongside like so: ---b---  --a--
+    }
+    if (! torus)
+        return intersects;
+    a = positiveMod(a, len);
+    b = positiveMod(b, len);
+    if (intersects)
+        return true;
+    a += len; // try with (line a) around the torus
+    if (intersects)
+        return true;
+    a -= 2 * len; // try around the torus in the other direction
+    return intersects;
+}
+
+unittest {
+    // Our topology has a length of 100 in x-direction, 200 in y-direction,
+    // and both wrappings. It's a torus.
+    auto topol = new Topology(100, 200, true, true);
+    bool rir(Rect a, Rect b) { return topol.rectIntersectsRect(a, b); }
+    // Rectangles are specified as follows:
+    // Rect(x of top-left corner,  y of top-left-corner,
+    //      length in x-direction, length in y-direction).
+    assert (  rir(Rect( 20, 30, 10, 15), Rect(  25,  40, 10, 15)));
+    assert (! rir(Rect( 20, 30, 10, 15), Rect(  25, 340, 10, 15)));
+    assert (  rir(Rect(120, 30, 10, 15), Rect(-175, 440, 10, 15)));
+    assert (! rir(Rect( 90, 90, 20, 20), Rect(  10,  10, 20, 20)));
+    assert (  rir(Rect( 90, 90, 21, 21), Rect(  10, 110, 10, 10)));
 }
