@@ -32,6 +32,12 @@ public:
         _buttons[id].onExecute = deg;
     }
 
+    // Some buttons have special handling that doesn't match the button's
+    // hotkey handling. These buttons are managed by hand in the editor class.
+    @property buttonFraming() inout {
+        return buttonByID(Lang.editorButtonSelectFrame);
+    }
+
 protected:
     override void calcSelf()
     {
@@ -55,6 +61,11 @@ private:
         _info.alignLeft = true;
         _fps  = new Label(new Geom(4, 0, 100, 20, From.TOP_RIGHT));
         addChildren(_info, _fps);
+    }
+
+    auto buttonByID(Lang id) inout
+    {
+        return _buttons[id - Lang.editorButtonFileNew];
     }
 
     void makeButtons()

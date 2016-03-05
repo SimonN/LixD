@@ -30,15 +30,20 @@ void hoverTiles(Editor editor) { with (editor)
 void selectTiles(Editor editor) { with (editor)
 {
     if (mouseClickLeft && ! _panel.isMouseHere) {
-        _selection = _hover;
-        if (_selection.empty)
+        if (_hover.empty || _panel.buttonFraming.on) {
             _dragger.startFrame(_map);
-        else
+            _panel.buttonFraming.on = true;
+        }
+        else {
+            _selection = _hover;
             _dragger.startMove(_map);
+        }
     }
     else if (! mouseHeldLeft) {
-        if (_dragger.framing)
+        if (_dragger.framing) {
             _selection = _hover;
+            _panel.buttonFraming.on = false;
+        }
         _dragger.stop();
     }
 }}

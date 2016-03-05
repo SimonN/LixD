@@ -142,9 +142,9 @@ $editorUnsavedQuestionNew    Would you like to save this new level?
 $editorHotkey                  Hotkey:
 $editorHotkeyHold             Hotkey: hold
 $editorBarAt                  at
-$editorBarHover               objects about to be selected.
-$editorBarSelection           objects selected.
-$editorBarMoveWithKeysLong       Drag objects or move them with [
+$editorBarHover               tiles about to be selected.
+$editorBarSelection           tiles selected.
+$editorBarMoveWithKeysLong       Drag tiles or move them with [
 $editorBarMoveWithKeysShort      Move with [
 $editorBarMoveWithKeysMid        ], [
 $editorBarMoveWithKeysEnd        ].
@@ -155,33 +155,33 @@ $editorButtonFileNew         New: Deletes everything on screen and starts a new 
 $editorButtonFileExit        Quit: Exits the editor and asks about saving changed data.
 $editorButtonFileSave        Save: Saves the current level under its current file name.
 $editorButtonFileSaveAs     Save As: Saves the current level under a new file name.
-$editorButtonGrid2           Grid 2: Rounds object coordinates to multiples of 2.
+$editorButtonGrid2           Grid 2: Rounds tiles' coordinates to multiples of 2.
 $editorButtonGridCustom      Custom grid: This grid size is settable in the options.
-$editorButtonGrid16          Grid 16: Rounds object coordinates to multiples of 16.
-$editorButtonSelectAll       Everything: Selects all objects in the level.
-$editorButtonSelectFrame     Frame: Selects multiple objects by dragging a frame.
-$editorButtonSelectAdd       Add: Selects new objects, keeping old ones in the selection.
-$editorButtonSelectCopy      Copy: Clones the selected objects for placing them elsewhere.
-$editorButtonSelectDelete    Delete: Removes the selected objects.
-$editorButtonSelectMinus     Back: Puts the selected objects behind some others.
-$editorButtonSelectPlus      Forth: Puts the selected objects in front of some others.
-$editorButtonSelectBack      Background: Puts the selected objects into the background.
-$editorButtonSelectFront     Foreground: Puts the selected objects into the foreground.
+$editorButtonGrid16          Grid 16: Rounds tiles' coordinates to multiples of 16.
+$editorButtonSelectAll       Everything: Selects all tiles in the level.
+$editorButtonSelectFrame     Frame: Drag a frame with the mouse to select tiles.
+$editorButtonSelectAdd       Add: Keep tiles selected when selecting additional tiles.
+$editorButtonSelectCopy      Copy: Clones the selected tiles for placing them elsewhere.
+$editorButtonSelectDelete    Delete: Removes the selected tiles from the level.
+$editorButtonSelectMinus     Back: Puts the selected tiles behind some others.
+$editorButtonSelectPlus      Forth: Puts the selected tiles in front of some others.
+$editorButtonSelectBack      Background: Puts the selected tiles into the background.
+$editorButtonSelectFront     Foreground: Puts the selected tiles into the foreground.
 $editorButtonSelectFlip      Flip: Mirrors the selected terrain horizontally.
 $editorButtonSelectRotate    Rotate: Performs a quarter turn on the selected terrain.
-$editorButtonSelectDark      Dark: Paints the selected terrain in black inside the game.
-$editorButtonSelectNoow      No overwrite: Selected terrain overwrites only dark objects.
-$editorButtonViewZoom        Zoom: Activate or deactivate the map zoom.
+$editorButtonSelectDark      Dark: Selected terrain erases normal terrain.
+$editorButtonSelectNoow      No overwrite: Selected terrain overwrites only dark tiles.
+$editorButtonViewZoom        Zoom: Toggles editor map zoom. Doesn't affect the level.
 $editorButtonHelp             (this doesn't do anything right now)
 $editorButtonMenuSize        Measures: Set the size and the topology for the level.
 $editorButtonMenuScroll      Visuals: Set the scrolling position and background color.
 $editorButtonMenuVars        Variables: Set the fundamental level variables.
-$editorButtonMenuSkill       Skills: Set the usable lix skills.
-$editorButtonAddTerrain      Terrain: Add a terrain object that can be dug through.
-$editorButtonAddSteel        Steel: Add a steel object that cannot be dug through.
+$editorButtonMenuSkill       Skills: Decide which lix skills the players can assign.
+$editorButtonAddTerrain      Terrain: Add a terrain tile.
+$editorButtonAddSteel        Steel: Add a steel tile that cannot be dug through.
 $editorButtonAddHatch        Hatch: Add a lix entrance hatch.
-$editorButtonAddGoal         Goal: Add a goal, i.e. an exit for the lix.
-$editorButtonAddDeco         Decoration: Add a non-interactive decoration object.
+$editorButtonAddGoal         Goal: Add a goal, i.e., an exit, for the lix.
+$editorButtonAddDeco         Decoration: Add a non-interactive decoration tile.
 $editorButtonAddHazard       Hazard: Add a trap, water or fire.
 
 // save browser
