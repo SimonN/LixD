@@ -25,6 +25,10 @@ void makePanel(Editor editor)
                 sel.removeFromLevel();
             editor._selection = null;
         });
+        onExecute(Lang.editorButtonViewZoom, keyEditorZoom, () {
+            editor._map.zoom = editor._map.zoom >= 4 ? 1 :
+                               editor._map.zoom * 2;
+        });
     }
 }
     /+
@@ -46,7 +50,6 @@ void makePanel(Editor editor)
     editorButtonSelectRotate,
     editorButtonSelectDark,
     editorButtonSelectNoow,
-    editorButtonViewZoom,
     editorButtonHelp,
     editorButtonMenuSize,
     editorButtonMenuScroll,
@@ -74,7 +77,6 @@ void makePanel(Editor editor)
     int keyEditorRotate      = ALLEGRO_KEY_R;
     int keyEditorDark        = ALLEGRO_KEY_N;
     int keyEditorNoow        = ALLEGRO_KEY_M;
-    int keyEditorZoom        = ALLEGRO_KEY_Y;
     int keyEditorHelp        = ALLEGRO_KEY_H;
     int keyEditorMenuSize    = ALLEGRO_KEY_5;
     int keyEditorMenuVars    = ALLEGRO_KEY_Q;

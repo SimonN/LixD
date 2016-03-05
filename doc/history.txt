@@ -1,8 +1,25 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.36
+------
+
+2016-03-05
+
+Fixed the bug described in 0.2.35: Frame-spanning goes across or not across
+the torus seam, according to mouse position on the screen. I like the results
+in many cases so far. Anything more would require tracking the map scrolling.
+
+Editor has a button for frame-dragging. The button's on-ness and its hotkey
+are handled in a nonstandard way, which we want.
+
+Editor has a zoom button toggling between 1x, 2x, 4x zoom, like the game.
+We should brainstorm about the zoom UI, and about default zoom.
+
 0.2.35
 ------
+
+2016-03-05
 
 Editor frame dragging implemented. It selects the correct pieces on a torus.
 
