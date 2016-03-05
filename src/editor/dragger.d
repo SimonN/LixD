@@ -38,13 +38,16 @@ public:
     }
 
     // Returns the frame rectangle on the map, not on the screen.
+    // Nonetheless, this function depends on mouse coordinates on the screen:
+    // framePart() needs them to determine frame spanning direction on tori.
     Rect frame(const(Map) map) const
     {
         assert (framing);
-        return Rect(min(_fromMapX, map.mouseOnLandX),
-                    min(_fromMapY, map.mouseOnLandY),
-                    abs(_fromMapX - map.mouseOnLandX) + 1,
-                    abs(_fromMapY - map.mouseOnLandY) + 1);
+        auto xPart = framePart(_fromMapX, map.mouseOnLandX, _fromScreenX,
+                               hardware.mouse.mouseX, map.xl, map.torusX);
+        auto yPart = framePart(_fromMapY, map.mouseOnLandY, _fromScreenY,
+                               hardware.mouse.mouseY, map.yl, map.torusY);
+        return Rect(xPart.start, yPart.start, xPart.len + 1, yPart.len + 1);
     }
 
     void startMove(const(Map) map)
@@ -70,4 +73,26 @@ private:
         _fromScreenX = hardware.mouse.mouseX;
         _fromScreenY = hardware.mouse.mouseY;
     }
+}
+
+private:
+
+// Returns start and length without +1 along one dimension due to
+// (mouse position when we started framing) and (mouse position now)
+auto framePart(
+    in int oldMap,    in int newMap,
+    in int oldScreen, in int newScreen,
+    in int mapLen,    in bool torus
+) pure
+{
+    bool frameGoesOverTorusSeam() {
+        if (! torus)
+            return false;
+        return newMap <= oldMap && newScreen > oldScreen
+            || newMap >= oldMap && newScreen < oldScreen;
+    }
+    struct OneDim { int start, len; }
+    return frameGoesOverTorusSeam()
+        ? OneDim(max(oldMap, newMap), mapLen - abs(newMap - oldMap))
+        : OneDim(min(oldMap, newMap),          abs(newMap - oldMap));
 }
