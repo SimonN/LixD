@@ -17,8 +17,14 @@ void makePanel(Editor editor)
         onExecute(Lang.editorButtonFileExit, keyEditorExit, () {
             editor._gotoMainMenu = true;
         });
+        onExecute(Lang.editorButtonSelectAll, keyEditorSelectAll, () {
+            editor.selectAll();
+        });
         onExecute(Lang.editorButtonSelectFrame, keyEditorSelectFrame, () {
             buttonFraming.on = ! buttonFraming.on;
+        });
+        onExecute(Lang.editorButtonSelectAdd, keyEditorSelectAdd, () {
+            buttonSelectAdd.on = ! buttonSelectAdd.on;
         });
         onExecute(Lang.editorButtonSelectDelete, keyEditorDelete, () {
             foreach (sel; editor._selection)
@@ -39,8 +45,6 @@ void makePanel(Editor editor)
     editorButtonGrid2,
     editorButtonGridCustom,
     editorButtonGrid16,
-    editorButtonSelectAll,
-    editorButtonSelectAdd,
     editorButtonSelectCopy,
     editorButtonSelectMinus,
     editorButtonSelectPlus,
@@ -69,8 +73,6 @@ void makePanel(Editor editor)
     int keyEditorCopy        = ALLEGRO_KEY_A;
     int keyEditorDelete      = ALLEGRO_KEY_G;
     int keyEditorGrid        = ALLEGRO_KEY_C;
-    int keyEditorSelectAll   = ALLEGRO_KEY_ALT;
-    int keyEditorSelectAdd   = ALLEGRO_KEY_V;
     int keyEditorBackground  = ALLEGRO_KEY_T;
     int keyEditorForeground  = ALLEGRO_KEY_B;
     int keyEditorMirror      = ALLEGRO_KEY_W;

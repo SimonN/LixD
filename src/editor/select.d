@@ -49,6 +49,17 @@ void selectTiles(Editor editor) { with (editor)
     }
 }}
 
+// This is called from editor.paninit
+void selectAll(Editor editor) { with (editor)
+{
+    _selection = [];
+    foreach (GadType type, ref list; _level.pos)
+        foreach (pos; list)
+            _selection ~= new GadgetHover(_level, pos, Hover.Reason.none);
+    foreach (pos; _level.terrain)
+        _selection ~= new TerrainHover(_level, pos, Hover.Reason.none);
+}}
+
 private:
 
 void hoverTilesInRect(Editor editor, Rect rect) { with (editor)

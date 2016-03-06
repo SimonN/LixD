@@ -37,6 +37,9 @@ public:
     @property buttonFraming() inout {
         return buttonByID(Lang.editorButtonSelectFrame);
     }
+    @property buttonSelectAdd() inout {
+        return buttonByID(Lang.editorButtonSelectAdd);
+    }
 
 protected:
     override void calcSelf()
