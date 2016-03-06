@@ -22,6 +22,8 @@ void hoverTiles(Editor editor) { with (editor)
     _hover = [];
     if (_dragger.framing)
         editor.hoverTilesInRect(_dragger.frame(_map));
+    else if (_panel.isMouseHere)
+        { }
     else if (! priorityInvertHeld)
         editor.hoverTilesNormally();
     else
@@ -30,19 +32,29 @@ void hoverTiles(Editor editor) { with (editor)
 
 void selectTiles(Editor editor) { with (editor)
 {
+    void selectHover()
+    {
+        _selection = ! _panel.buttonSelectAdd.on
+            ? _hover
+            : (_selection ~ _hover).sort().uniq.array;
+        _panel.buttonSelectAdd.on = _panel.buttonSelectAdd.hotkey.keyHeld;
+    }
     if (mouseClickLeft && ! _panel.isMouseHere) {
         if (_hover.empty || _panel.buttonFraming.on) {
             _dragger.startFrame(_map);
             _panel.buttonFraming.on = true;
         }
+        else if (_selection.find!"a == b"(_hover[0]) != []) {
+            _selection = _selection.filter!(ho => ho != _hover[0]).array;
+        }
         else {
-            _selection = _hover;
+            selectHover();
             _dragger.startMove(_map);
         }
     }
     else if (! mouseHeldLeft) {
         if (_dragger.framing) {
-            _selection = _hover;
+            selectHover();
             _panel.buttonFraming.on = _panel.buttonFraming.hotkey.keyHeld;
         }
         _dragger.stop();
@@ -55,9 +67,9 @@ void selectAll(Editor editor) { with (editor)
     _selection = [];
     foreach (GadType type, ref list; _level.pos)
         foreach (pos; list)
-            _selection ~= new GadgetHover(_level, pos, Hover.Reason.none);
+            _selection ~= new GadgetHover(_level, pos);
     foreach (pos; _level.terrain)
-        _selection ~= new TerrainHover(_level, pos, Hover.Reason.none);
+        _selection ~= new TerrainHover(_level, pos);
 }}
 
 private:
@@ -67,10 +79,10 @@ void hoverTilesInRect(Editor editor, Rect rect) { with (editor)
     foreach (GadType type, ref list; _level.pos)
         foreach (pos; list)
             if (_map.rectIntersectsRect(rect, pos.selbox))
-                _hover ~= new GadgetHover(_level, pos, Hover.Reason.none);
+                _hover ~= new GadgetHover(_level, pos);
     foreach (pos; _level.terrain)
         if (_map.rectIntersectsRect(rect, pos.selbox))
-            _hover ~= new TerrainHover(_level, pos, Hover.Reason.none);
+            _hover ~= new TerrainHover(_level, pos);
 }}
 
 void hoverTilesNormally(Editor editor) { with (editor)

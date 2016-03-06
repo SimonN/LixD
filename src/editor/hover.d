@@ -1,6 +1,7 @@
 module editor.hover;
 
-// Moving and manipulating tile instances (TerPos, GadPos).
+// Hovers appear when you have the mouse over a tile in the editor.
+// They point to a Pos in the level, and offer moving, manipulating, deleting.
 // The Hover class hierarchy mimics the hierarchy of Pos and Tile.
 
 // Opportunity for refactoring: Move the hover rectangle drawing all into
@@ -24,6 +25,18 @@ abstract class Hover {
     in   { assert (l); }
     body { level = l; reason = r; }
 
+    final override bool opEquals(Object rhsObj) const
+    {
+        auto rhs = cast (typeof(this)) rhsObj;
+        return rhs && pos is rhs.pos;
+    }
+
+    final override int opCmp(Object rhsObj) const
+    {
+        auto rhs = cast (typeof(this)) rhsObj;
+        return cast (void*) pos < cast (void*) rhs.pos;
+    }
+
     abstract inout(AbstractPos) pos() inout;
     abstract void removeFromLevel();
     abstract AlCol hoverColor(int val) const;
@@ -34,7 +47,7 @@ private:
     TerPos _pos;
 
 public:
-    this(Level l, TerPos p, Hover.Reason r)
+    this(Level l, TerPos p, Hover.Reason r = Hover.Reason.none)
     {
         super(l, r);
         _pos = p;
@@ -59,7 +72,7 @@ private:
     GadPos _pos;
 
 public:
-    this(Level l, GadPos p, Hover.Reason r)
+    this(Level l, GadPos p, Hover.Reason r = Hover.Reason.none)
     {
         super(l, r);
         _pos = p;

@@ -21,9 +21,10 @@ private:
 
 void handleNonstandardPanelButtons(Editor editor) { with (editor)
 {
-    auto fra = _panel.buttonFraming;
-    if (_dragger.framing || fra.hotkey.keyHeld)
-        fra.on = true;
-    else if (fra.hotkey.keyReleased)
-        fra.on = false;
+    with (_panel.buttonFraming)
+        on = hotkey.keyHeld || _dragger.framing ? true
+           : hotkey.keyReleased ? false : on;
+    with (_panel.buttonSelectAdd)
+        on = hotkey.keyHeld     ? true
+           : hotkey.keyReleased ? false : on;
 }}

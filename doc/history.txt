@@ -1,6 +1,15 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.37
+------
+
+2016-03-06
+
+Editor can select all tiles.
+
+Editor can add and remove tiles to/from the existing selection.
+
 0.2.36
 ------
 
