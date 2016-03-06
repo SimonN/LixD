@@ -9,8 +9,9 @@ import std.conv;
 import basics.topology; // Rect
 import editor.editor;
 import editor.hover;
-import hardware.semantic;
+import hardware.keyboard;
 import hardware.mouse;
+import hardware.semantic;
 import tile.pos;
 import tile.gadtile;
 
@@ -42,7 +43,7 @@ void selectTiles(Editor editor) { with (editor)
     else if (! mouseHeldLeft) {
         if (_dragger.framing) {
             _selection = _hover;
-            _panel.buttonFraming.on = false;
+            _panel.buttonFraming.on = _panel.buttonFraming.hotkey.keyHeld;
         }
         _dragger.stop();
     }
