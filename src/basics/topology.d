@@ -4,9 +4,12 @@ module basics.topology;
  * sides wrapping around. Can compute distances.
  *
  * If size/topology is changed, protected overridables are called.
+ *
+ * Torbit (in module graphic.torbit) is the most important class inheriting
+ * from Topology. Torbits are Allegro 5 bitmaps that support torus drawing.
  */
 
-import std.range; // iseputRange
+import std.range;
 
 import std.algorithm;
 import std.conv;
@@ -14,8 +17,7 @@ import std.math;
 import std.string;
 
 import basics.help; // positiveMod
-
-struct Rect { int x; int y; int xl; int yl; }
+public import basics.rect;
 
 class Topology {
 private:
@@ -124,9 +126,9 @@ public:
         return torusAverage(yl, torusY, (a, b) => distanceY(a, b), range);
     }
 
-    final bool isPointInRectangle(int px, int py, Rect rect) const
+    final bool isPointInRectangle(in Point p, Rect rect) const
     {
-        return rectIntersectsRect(Rect(px, py, 1, 1), rect);
+        return rectIntersectsRect(Rect(p.x, p.y, 1, 1), rect);
     }
 
     final bool rectIntersectsRect(Rect a, Rect b) const

@@ -351,28 +351,18 @@ void draw(
     assert (rot >= 0 || rot < 4);
 
     final switch (mode) {
-
     case Mode.NORMAL:
         // this is very much like the other draw function
         targetTorbit.drawFrom(cast (Albit) bitmap, x, y, mirr, rot * 1.0f);
         break;
-
     case Mode.DARK:
     case Mode.DARK_EDITOR:
         with (BlenderMinus)
             targetTorbit.drawFrom(cast (Albit) bitmap, x, y, mirr, rot);
         break;
-
-    case Mode.NOOW: {
-        immutable invertLengths = (rot % 2 == 1);
-        Torbit excerpt = new Torbit(
-            invertLengths ? _yl : _xl,
-            invertLengths ? _xl : _yl);
-        excerpt.clearToColor(color.transp);
-        excerpt.drawFrom(cast (Albit) bitmap, 0, 0, mirr, rot);
-        targetTorbit.drawTo  (excerpt.albit, x, y);
-        targetTorbit.drawFrom(excerpt.albit, x, y);
-        break; }
+    case Mode.NOOW:
+        // DTODO: implement NOOW drawing
+        goto case Mode.NORMAL;
     }
     // we don't have to draw the missing-frame error here; there could have
     // only been the missing-image error, and we've checked for that already.

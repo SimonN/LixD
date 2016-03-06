@@ -9,9 +9,8 @@ import basics.topology;
 import graphic.color; // drawing dark, to analyze transparency
 import file.filename;
 import hardware.display;
-import hardware.tharsis;
 
-private immutable bool _tharsisProfilingInTorbit = false;
+public import basics.rect;
 
 class Torbit : Topology {
 private:
@@ -93,17 +92,6 @@ public:
         al_save_bitmap(fn.rootfulZ, bitmap);
     }
 
-    void drawTo(Torbit, int x = 0, int y = 0) const
-    {
-        import file.log;
-        log("DTODODRAW: Torbit.drawTo(Torbit) not implemented");
-    }
-    void drawTo(Albit, int x = 0, int y = 0, int rxl = 0, int ryl = 0) const
-    {
-        import file.log;
-        log("DTODODRAW: Torbit.drawTo(Albit) not implemented");
-    }
-
     // Draw the entire Albit onto (Torbit this). Can take non-integer quarter
     // turns as (double rot).
     void drawFrom(
@@ -114,8 +102,6 @@ public:
         double rot = 0,
         double scal = 0
     ) {
-        static if (_tharsisProfilingInTorbit)
-            auto myZone = Zone(profiler, "torbit-draw-from");
         assert (bit, "can't blit the null bitmap onto Torbit");
         amend(x, y);
         rot = std.math.fmod(rot, 4);
@@ -290,15 +276,10 @@ private:
         assert (bitmap);
         assert (drawing_delegate != null);
 
-        static if (_tharsisProfilingInTorbit)
-            auto zone1 = Zone(profiler, "torbit-deleg-func");
-
         // We don't lock the bitmap; drawing with high-level primitives
         // and blitting other VRAM bitmaps is best without locking
         auto drata = DrawingTarget(bitmap);
         {
-            static if (_tharsisProfilingInTorbit)
-                auto zone2 = Zone(profiler, "torbit-deleg-once");
             drawing_delegate(x, y);
         }
         if (torusX          ) drawing_delegate(x - xl, y     );

@@ -3,6 +3,7 @@ module game.core.active;
 import std.typecons : Rebindable;
 
 import basics.nettypes;
+import basics.rect;
 import basics.user; // hotkeys
 import game.core.game;
 import gui : SkillButton;
@@ -109,23 +110,20 @@ PotentialAssignee findPotentialAssignee(Game game) { with (game)
     immutable int mmldX = cursorThicknessOnLand +  2; // + lix thickness
     immutable int mmldU = cursorThicknessOnLand + 15; // + lix height
     immutable int mmldD = cursorThicknessOnLand +  0;
-
-    immutable int mx = map.mouseOnLandX;
-    immutable int my = map.mouseOnLandY;
+    immutable     mol   = map.mouseOnLand;
 
     // DTODO: Find out why we were traversing the lixvec backwards in C++
     // for (LixIt i =  --trlo->lixvec.end(); i != --trlo->lixvec.begin(); --i)
     foreach (int id, const(Lixxie) lixxie; tribeLocal.lixvec) {
-        immutable int distX = map.distanceX(lixxie.ex, mx);
-        immutable int distY = map.distanceY(lixxie.ey, my);
-
+        immutable int distX = map.distanceX(lixxie.ex, mol.x);
+        immutable int distY = map.distanceY(lixxie.ey, mol.y);
         if (   distX <= mmldX && distX >= -mmldX
             && distY <= mmldD && distY >= -mmldU
             && lixxie.cursorShouldOpenOverMe
         ) {
             ++lixesUnderCursor;
             PotentialAssignee potAss = game.generatePotentialAssignee(
-                lixxie, id, mx, my, mmldD - mmldU, currentSkill);
+                lixxie, id, mol, mmldD - mmldU, currentSkill);
             if (potAss.isBetterThan(described)) {
                 described = potAss;
             }
@@ -167,16 +165,15 @@ PotentialAssignee generatePotentialAssignee(
     Game game,
     in Lixxie lixxie,
     in int id,
-    in int mx,
-    in int my,
+    in Point mouseOnLand,
     in int dMinusU,
     in SkillButton currentSkill
 ) {
     PotentialAssignee potAss;
     potAss.lixxie = lixxie;
     potAss.id = id;
-    potAss.distanceToCursor = game.map.hypotSquared(mx, my, lixxie.ex,
-                                                    lixxie.ey + dMinusU/2);
+    potAss.distanceToCursor = game.map.hypotSquared(
+        mouseOnLand.x, mouseOnLand.y, lixxie.ex, lixxie.ey + dMinusU/2);
     if (currentSkill !is null)
         // true = consider personal settings like multiple builders
         potAss.priority = lixxie.priorityForNewAc(currentSkill.skill, true);

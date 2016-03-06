@@ -6,39 +6,14 @@ import std.conv; // to!string;
 // This is used for the position of the exploder fuse.
 // graphic.internal.initialize() sets Matrix countdown upon loading all images.
 
-struct XY {
-
-    int x;
-    int y;
-
-    this(in int _x, in int _y)
-    {
-        x = _x;
-        y = _y;
-    }
-
-    string toString()
-    {
-        return format("(%d,%d)", x, y);
-    }
-
-}
-
-
-
 class Matrix(T) {
-
 private:
-
     int _xl;
     int _yl;
 
     T[] data;
 
-
-
 public:
-
     @property int xl() const { return _xl; }
     @property int yl() const { return _yl; }
 
@@ -56,9 +31,7 @@ public:
         data = new T[_xl * _yl];
     }
 
-
-
-    this(Matrix!T rhs)
+    this(const(Matrix!T) rhs)
     out {
         assert (data !is null);
         assert (data.length == _xl * _yl);
@@ -69,8 +42,6 @@ public:
         _yl = rhs.yl;
         data = rhs.data.dup;
     }
-
-
 
     inout(T) get(in int x, in int y) inout
     in {
@@ -83,8 +54,6 @@ public:
         return data[y * _xl + x];
     }
 
-
-
     void set(in int x, in int y, T value)
     in {
         assert (x >= 0);
@@ -96,8 +65,6 @@ public:
         data[y * _xl + x] = value;
     }
 
-
-
     override bool opEquals(Object rhsObj) const
     {
         typeof(this) rhs = cast (typeof(this)) rhsObj;
@@ -106,8 +73,6 @@ public:
             && _yl == rhs._yl
             && data == rhs.data;
     }
-
-
 
     override string toString() const
     {
@@ -122,6 +87,4 @@ public:
         }
         return s;
     }
-
 }
-// end class Matrix(T)

@@ -7,6 +7,7 @@ import basics.alleg5;
 import basics.globals;
 import basics.help;
 import basics.matrix;
+import basics.rect;
 import file.filename;
 import graphic.color;
 import graphic.cutbit;
@@ -57,7 +58,7 @@ void createEyeCoordinateMatrix()
     auto lock = LockReadOnly(b);
     assert (b, "apparently your gfx card can't store the Lix spritesheet");
 
-    lix.fields.countdown = new Matrix!XY(cb.xfs, cb.yfs);
+    lix.fields.countdown = new Matrix!Point(cb.xfs, cb.yfs);
     // fx, fy = which x- respective y-frame
     // x,  y  = which pixel inside this frame, offset from frame's top left
     for  (int fy = 0; fy < cb.yfs; ++fy)
@@ -68,21 +69,21 @@ void createEyeCoordinateMatrix()
             const int real_x = 1 + fx * (cb.xl + 1) + x;
             const int real_y = 1 + fy * (cb.yl + 1) + y;
             if (al_get_pixel(b, real_x, real_y) == color.lixFileEye) {
-                countdown.set(fx, fy, XY(x, y-1));
+                countdown.set(fx, fy, Point(x, y-1));
                 goto GOTO_NEXTFRAME;
             }
             // If not yet gone to GOTO_NEXTFRAME:
-            // Use the XY of the frame left to the current one if there was
+            // Use the Point of the frame left to the current one if there was
             // nothing found, and a default value for the leftmost frames.
             // Frames (0, y) and (1, y) are the skill button images.
             if (y == cb.yl - 1 && x == cb.xl - 1) {
-                if (fx < 3) countdown.set(fx, fy, XY(cb.xl / 2 - 1, 12));
+                if (fx < 3) countdown.set(fx, fy, Point(cb.xl / 2 - 1, 12));
                 else        countdown.set(fx, fy, countdown.get(fx - 1, fy));
             }
         }
         GOTO_NEXTFRAME:
         if (fy == Ac.blocker) {
-            XY blockerEyes = countdown.get(fx, fy);
+            Point blockerEyes = countdown.get(fx, fy);
             blockerEyes.x = lix.enums.exOffset;
             countdown.set(fx, fy, blockerEyes);
         }

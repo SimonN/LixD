@@ -2,6 +2,7 @@ module hardware.mouse;
 
 import basics.alleg5;
 import basics.globals;
+import basics.rect;
 import basics.user;
 import hardware.display;
 
@@ -10,10 +11,11 @@ void deinitialize();
 
 void calc();
 
-@property int  mouseMickeyX() { return _mickeyX / mouseStandardDivisor; }
-@property int  mouseMickeyY() { return _mickeyY / mouseStandardDivisor; }
-@property int  mouseX()       { return _mouseOwnX; }
-@property int  mouseY()       { return _mouseOwnY; }
+@property int   mouseMickeyX()  { return _mickeyX / mouseStandardDivisor; }
+@property int   mouseMickeyY()  { return _mickeyY / mouseStandardDivisor; }
+@property int   mouseX()        { return _mouseOwnX; }
+@property int   mouseY()        { return _mouseOwnY; }
+@property Point mouseOnScreen() { return Point(_mouseOwnX, _mouseOwnY); }
 
 @property bool mouseClickLeft()         { return _mouseClick  [0]; }
 @property bool mouseClickRight()        { return _mouseClick  [1]; }

@@ -6,7 +6,7 @@ import std.algorithm;
 import std.range;
 import std.conv;
 
-import basics.topology; // Rect
+import basics.rect;
 import editor.editor;
 import editor.hover;
 import hardware.keyboard;
@@ -114,7 +114,7 @@ void maybeAdd(Pos)(
 {   with (editor)
     with (editor._map)
 {
-    if (! isPointInRectangle(mouseOnLandX, mouseOnLandY, pos.selbox))
+    if (! isPointInRectangle(mouseOnLand, pos.selbox))
         return;
     static if (is (Pos == TerPos))
         immutable Hover.Reason reason = editor.mouseOnSolidPixel(pos)
@@ -134,11 +134,10 @@ void maybeAdd(Pos)(
 
 bool mouseOnSolidPixel(Editor editor, in TerPos pos) { with (editor._map)
 {
-    int x = mouseOnLandX;
-    int y = mouseOnLandY;
-    while (x < pos.x)
-        x += xl;
-    while (y < pos.y)
-        y += yl;
-    return 0 != pos.phybitsAtMapPosition(x, y);
+    auto mol = mouseOnLand;
+    while (mol.x < pos.x)
+        mol.x += xl;
+    while (mol.y < pos.y)
+        mol.y += yl;
+    return 0 != pos.phybitsOnMap(mol);
 }}

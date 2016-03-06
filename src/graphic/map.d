@@ -1,10 +1,16 @@
 module graphic.map;
 
+/* (class Map : Torbit) has a camera pointing somewhere inside the entire
+ * torbit. The camera specifies the center of a rectangle. This rectangle
+ * has an immutable size cameraXl and cameraYl.
+ */
+
 import std.algorithm;
 import std.range;
 
 import basics.alleg5;
 import basics.help;
+import basics.rect;
 import graphic.color;
 import graphic.torbit;
 
@@ -13,19 +19,12 @@ static import hardware.display;
 static import hardware.keyboard;
 static import hardware.mouse;
 
-/* (class Map : Torbit) has a camera pointing somewhere inside the entire
- * torbit. The camera specifies the center of a rectangle. This rectangle
- * has an immutable size cameraXl and cameraYl.
- */
-
 class Map : Torbit {
 
 /*  this(in int xl, int yl, int srceen_xl, int screen_yl)
  *
  *      Deduct from the real screen xl/yl the GUI elements' yl, then pass the
  *      remainder to this constructor.
- *
- *  void resize(int, int);
  */
     @property bool scrollableUp()   const { return _cameraY > minY || torusY; }
     @property bool scrollableRight()const { return _cameraX < maxX || torusX; }
@@ -49,22 +48,9 @@ class Map : Torbit {
  */
     @property int  cameraX() const { return _cameraX; }
     @property int  cameraY() const { return _cameraY; }
-//  @property int  cameraX(int);
-//  @property int  cameraY(int);
     void set_cameraXY(in int x, in int y) { cameraX = x; cameraY = y; }
 
     @property int zoom() const { return _zoom; }
-//  @property int zoom(in int)
-
-/*  @property int mouseOnLandX();
- *  @property int mouseOnLandY();
- *  void calcScrolling();
- *
- *  void draw(Torbit&);
- *
- *  void load_masked_screen_rectangle(Torbit&);
- *  void clear_screen_rectangle(AlCol);
- */
 
 private:
 
@@ -164,12 +150,6 @@ cameraY(in int a)
     return cameraSetter(_cameraY, a, torusY, yl, minY, maxY);
 }
 
-void centerOn(in int cx, in int cy)
-{
-    cameraX = cx;
-    cameraY = cy;
-}
-
 void centerOnAverage(Rx, Ry)(Rx rangeX, Ry rangeY)
     if (isInputRange!Rx && isInputRange!Ry)
 {
@@ -195,38 +175,27 @@ private @property int borderUpperSideYl() const
     return _cameraYl - yl * _zoom;
 }
 
-
-
-private int mouseOnLand(
-    ref const(int) camera, in int torbitL, in int torus,
-    in int borderL,
-    in int min, in int mousePos) const
+@property Point
+mouseOnLand() const
 {
-    immutable int firstDrawnPixel   = (borderL > 0) ? 0 : (camera - min);
-    immutable int mouseOffsetOnLand = (mousePos - borderL) / _zoom;
-    immutable int ret               = firstDrawnPixel + mouseOffsetOnLand;
-    if (torus) {
-        assert (borderL == 0);
-        return basics.help.positiveMod(ret, torbitL);
+    pure int f(
+        ref const(int) camera, in int torbitL, in int torus,
+        in int borderL,
+        in int min, in int mousePos
+    ) {
+        immutable int firstDrawnPixel   = (borderL > 0) ? 0 : (camera - min);
+        immutable int mouseOffsetOnLand = (mousePos - borderL) / _zoom;
+        immutable int ret               = firstDrawnPixel + mouseOffsetOnLand;
+        if (torus) {
+            assert (borderL == 0);
+            return basics.help.positiveMod(ret, torbitL);
+        }
+        return ret;
     }
-    return ret;
+    return Point(
+        f(_cameraX, xl, torusX, borderOneSideXl, minX, hardware.mouse.mouseX),
+        f(_cameraY, yl, torusY, borderUpperSideYl,minY,hardware.mouse.mouseY));
 }
-
-@property int
-mouseOnLandX() const
-{
-    return mouseOnLand(_cameraX, xl, torusX, borderOneSideXl, minX,
-                       hardware.mouse.mouseX);
-}
-
-@property int
-mouseOnLandY() const
-{
-    return mouseOnLand(_cameraY, yl, torusY, borderUpperSideYl, minY,
-                       hardware.mouse.mouseY);
-}
-
-
 
 @property int
 zoom(in int z)

@@ -7,7 +7,7 @@ module tile.pos;
  * Moving and drawing on torus maps might be done differently than normal.
  */
 
-import basics.topology; // Rect
+import basics.rect;
 import file.io;
 import tile.tilelib;
 import tile.terrain;
@@ -101,10 +101,10 @@ class TerPos : AbstractPos {
         return IoLine.Colon(filename, x, y, modifiers);
     }
 
-    auto phybitsAtMapPosition(in int mapX, in int mapY) const
+    auto phybitsOnMap(in Point p) const
     {
         assert (_ob);
-        return _ob.getPhybitsXYRotMirr(mapX - x, mapY - y, rot, mirr);
+        return _ob.getPhybitsXYRotMirr(p.x - x, p.y - y, rot, mirr);
     }
 
 protected:

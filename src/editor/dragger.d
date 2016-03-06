@@ -8,18 +8,16 @@ module editor.dragger;
 import std.algorithm;
 import std.math;
 
-import basics.topology; // Rect
+import basics.rect;
 import graphic.map;
 static import hardware.mouse; // only for position, not for clicks
 
 class MouseDragger {
 private:
     DragMode _mode;
-    int _fromMapX;
-    int _fromMapY;
-    int _fromScreenX; // Used to determine the frame direction on torus maps.
-    int _fromScreenY; // We must select one of the 4 meaningful rectangles.
-
+    Point _fromMap;
+    Point _fromScreen; // Used to determine the frame direction on torus maps.
+                       // We must select one of the 4 meaningful rectangles.
     enum DragMode { none, frame, move }
 
 public:
@@ -43,9 +41,10 @@ public:
     Rect frame(const(Map) map) const
     {
         assert (framing);
-        auto xPart = framePart(_fromMapX, map.mouseOnLandX, _fromScreenX,
+        auto mol = map.mouseOnLand;
+        auto xPart = framePart(_fromMap.x, mol.x, _fromScreen.x,
                                hardware.mouse.mouseX, map.xl, map.torusX);
-        auto yPart = framePart(_fromMapY, map.mouseOnLandY, _fromScreenY,
+        auto yPart = framePart(_fromMap.y, mol.y, _fromScreen.y,
                                hardware.mouse.mouseY, map.yl, map.torusY);
         return Rect(xPart.start, yPart.start, xPart.len + 1, yPart.len + 1);
     }
@@ -56,22 +55,19 @@ public:
         saveFroms(map);
     }
 
-    void movedSince(const(Map) map, int* dx, int* dy)
+    Point movedSince(const(Map) map)
     {
         assert (moving);
-        assert (dx != null && dy != null);
-        *dx = map.mouseOnLandX - _fromMapX;
-        *dy = map.mouseOnLandY - _fromMapY;
+        auto ret = map.mouseOnLand - _fromMap;
         saveFroms(map);
+        return ret;
     }
 
 private:
     void saveFroms(const(Map) map)
     {
-        _fromMapX = map.mouseOnLandX;
-        _fromMapY = map.mouseOnLandY;
-        _fromScreenX = hardware.mouse.mouseX;
-        _fromScreenY = hardware.mouse.mouseY;
+        _fromMap    = map.mouseOnLand;
+        _fromScreen = hardware.mouse.mouseOnScreen;
     }
 }
 

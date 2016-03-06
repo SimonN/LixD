@@ -205,12 +205,12 @@ override Lixxie clone() const { return new Lixxie(this); }
 
 
 
-private XY getFuseXY() const
+private Point getFuse() const
 {
     // Some skills -- BallisticFlyer -- move before changing their frame,
     // and then choose a frame based on the result. So, they might move while
     // frame == -1. Query frame 0 for eye position in this situation.
-    XY ret = countdown.get(max(0, frame), ac);
+    Point ret = countdown.get(max(0, frame), ac);
     if (facingLeft)
         ret.x = this.cutbit.xl - ret.x;
     assert (positiveMod(super.y,        lookup.yl)
@@ -227,7 +227,7 @@ void addEncountersFromHere()
     _encFoot |= lookup.get(_ex, _ey);
     _encBody |= _encFoot
              |  lookup.get(_ex, _ey - 4)
-             |  lookup.get(_ex, getFuseXY().y);
+             |  lookup.get(_ex, getFuse().y);
 }
 
 package void repositionSprite()
@@ -298,7 +298,7 @@ bool inTriggerArea(in Gadget g) const
     // on the GadPos it's instantiated with. AbstractPos has Rect selbox()
     // const, therefore GadPos should naturally get Rect triggerArea() const.
     // Then Gadget should defer to GadPos.
-    return env.isPointInRectangle(ex, ey,
+    return env.isPointInRectangle(Point(ex, ey),
         Rect(g.x + g.tile.triggerX(), g.y + g.tile.triggerY(),
              g.tile.triggerXl,        g.tile.triggerYl));
 }
@@ -428,9 +428,9 @@ override void draw(Torbit tb) const
 
     // draw the fuse if necessary
     if (ploderTimer > 0) {
-        immutable XY fuseXy = getFuseXY();
-        immutable int fuseX = fuseXy.x;
-        immutable int fuseY = fuseXy.y;
+        immutable fuseXy = getFuse();
+        immutable fuseX  = fuseXy.x;
+        immutable fuseY  = fuseXy.y;
 
         int x = 0;
         int y = 0;
