@@ -34,6 +34,14 @@ abstract class AbstractPos {
         return Rect(x + selboxX, y + selboxY, selboxXl, selboxYl);
     }
 
+    final @property Point point() const { return Point(x, y); }
+    final @property Point point(in Point p)
+    {
+        x = p.x;
+        y = p.y;
+        return this.point();
+    }
+
 protected:
     @property int selboxX()  const { assert (ob); return ob.selboxX;  }
     @property int selboxY()  const { assert (ob); return ob.selboxY;  }

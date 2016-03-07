@@ -1,5 +1,7 @@
 module editor.calc;
 
+import std.algorithm;
+
 import editor.editor;
 import editor.select;
 import hardware.keyboard;
@@ -15,6 +17,7 @@ void implEditorCalc(Editor editor) { with (editor)
     editor.handleNonstandardPanelButtons();
     editor.hoverTiles();
     editor.selectTiles();
+    editor.moveTiles();
 }}
 
 private:
@@ -27,4 +30,12 @@ void handleNonstandardPanelButtons(Editor editor) { with (editor)
     with (_panel.buttonSelectAdd)
         on = hotkey.keyHeld     ? true
            : hotkey.keyReleased ? false : on;
+}}
+
+void moveTiles(Editor editor) { with (editor)
+{
+    if (! _dragger.moving)
+        return;
+    auto movedBy = _dragger.movedSinceLastCall(_map);
+    _selection.each!(tile => tile.moveBy(movedBy));
 }}

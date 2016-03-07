@@ -10,6 +10,8 @@ module editor.hover;
 import std.algorithm;
 
 import basics.alleg5; // timer ticks for the hover
+import basics.help;
+import basics.rect;
 import graphic.color;
 import level.level;
 import tile.pos;
@@ -35,6 +37,14 @@ abstract class Hover {
     {
         auto rhs = cast (typeof(this)) rhsObj;
         return cast (void*) pos < cast (void*) rhs.pos;
+    }
+
+    final void moveBy(Point p)
+    {
+        assert (pos);
+        pos.point = pos.point + p;
+        if (level.torusX) pos.x = positiveMod(pos.x, level.xl);
+        if (level.torusY) pos.y = positiveMod(pos.y, level.yl);
     }
 
     abstract inout(AbstractPos) pos() inout;

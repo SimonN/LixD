@@ -55,7 +55,7 @@ public:
         saveFroms(map);
     }
 
-    Point movedSince(const(Map) map)
+    Point movedSinceLastCall(const(Map) map)
     {
         assert (moving);
         auto ret = map.mouseOnLand - _fromMap;
