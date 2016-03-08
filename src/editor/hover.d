@@ -21,7 +21,13 @@ abstract class Hover {
     Level  level;
     Reason reason;
 
-    enum Reason { none, mouseInSelbox, mouseOnSolidPixel }
+    enum Reason {
+        none,
+        selectAll,
+        frameSpanning,
+        mouseInSelbox,
+        mouseOnSolidPixel
+    }
 
     this(Level l, Reason r)
     in   { assert (l); }
@@ -58,7 +64,7 @@ private:
     TerPos _pos;
 
 public:
-    this(Level l, TerPos p, Hover.Reason r = Hover.Reason.none)
+    this(Level l, TerPos p, Hover.Reason r)
     {
         super(l, r);
         _pos = p;
@@ -83,7 +89,7 @@ private:
     GadPos _pos;
 
 public:
-    this(Level l, GadPos p, Hover.Reason r = Hover.Reason.none)
+    this(Level l, GadPos p, Hover.Reason r)
     {
         super(l, r);
         _pos = p;

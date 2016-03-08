@@ -50,6 +50,7 @@ void selectTiles(Editor editor) { with (editor)
                 _dragger.startMove(_map);
         }
         else {
+            assert (_hover.length == 1);
             selectHover();
             _dragger.startMove(_map);
         }
@@ -66,25 +67,24 @@ void selectTiles(Editor editor) { with (editor)
 // This is called from editor.paninit
 void selectAll(Editor editor) { with (editor)
 {
-    _selection = [];
-    foreach (GadType type, ref list; _level.pos)
-        foreach (pos; list)
-            _selection ~= new GadgetHover(_level, pos);
-    foreach (pos; _level.terrain)
-        _selection ~= new TerrainHover(_level, pos);
+    immutable reason = Hover.Reason.selectAll;
+    _selection = _level.pos[].joiner
+        .map!(pos => cast (Hover) new GadgetHover(_level, pos, reason)).array
+        ~ _level.terrain
+        .map!(pos => cast (Hover) new TerrainHover(_level, pos, reason)).array;
 }}
 
 private:
 
 void hoverTilesInRect(Editor editor, Rect rect) { with (editor)
 {
-    foreach (GadType type, ref list; _level.pos)
-        foreach (pos; list)
-            if (_map.rectIntersectsRect(rect, pos.selbox))
-                _hover ~= new GadgetHover(_level, pos);
-    foreach (pos; _level.terrain)
-        if (_map.rectIntersectsRect(rect, pos.selbox))
-            _hover ~= new TerrainHover(_level, pos);
+    immutable reason = Hover.Reason.frameSpanning;
+    _hover = _level.pos[].joiner
+        .filter!(pos => _map.rectIntersectsRect(rect, pos.selbox))
+        .map!(pos => cast (Hover) new GadgetHover(_level, pos, reason)).array
+        ~ _level.terrain
+        .filter!(pos => _map.rectIntersectsRect(rect, pos.selbox))
+        .map!(pos => cast (Hover) new TerrainHover(_level, pos, reason)).array;
 }}
 
 void hoverTilesNormally(Editor editor) { with (editor)
@@ -92,27 +92,20 @@ void hoverTilesNormally(Editor editor) { with (editor)
     // The tiles at the end of each list are in the foreground.
     // Later tiles will throw out earlier tiles in the hover, unless the
     // earlier tiles have a strictly better reason than the later tiles.
-    foreach (GadType type, ref list; _level.pos)
-        foreach (pos; list)
-            editor.maybeAdd(&list, pos);
-    foreach (i, pos; _level.terrain)
-        editor.maybeAdd(&_level.terrain, pos);
+    _level.pos[].joiner.each!(pos => editor.maybeAdd(pos));
+    _level.terrain     .each!(pos => editor.maybeAdd(pos));
 }}
 
 void hoverTilesReversed(Editor editor) { with (editor)
 {
-    foreach (pos; _level.terrain.retro)
-        editor.maybeAdd(&_level.terrain, pos);
-    foreach (GadType type, ref list; _level.pos)
-        foreach (pos; list.retro)
-            editor.maybeAdd(&list, pos);
+    _level.terrain.retro     .each!(pos => editor.maybeAdd(pos));
+    _level.pos[].retro.joiner.each!(pos => editor.maybeAdd(pos));
 }}
 
 void maybeAdd(Pos)(
     Editor editor,
-    Pos[]* list,
     Pos pos
-)   if (is (Pos : AbstractPos))
+)   if (is (Pos : AbstractPos) && ! is (Pos == AbstractPos))
 {   with (editor)
     with (editor._map)
 {

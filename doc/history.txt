@@ -1,6 +1,11 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.38
+------
+
+Editor moves tiles by dragging with the mouse. No keyboard movement yet.
+
 0.2.37
 ------
 
