@@ -4,7 +4,6 @@ module editor.select;
 
 import std.algorithm;
 import std.range;
-import std.conv;
 
 import basics.rect;
 import editor.editor;
@@ -44,8 +43,11 @@ void selectTiles(Editor editor) { with (editor)
             _dragger.startFrame(_map);
             _panel.buttonFraming.on = true;
         }
-        else if (_selection.find!"a == b"(_hover[0]) != []) {
-            _selection = _selection.filter!(ho => ho != _hover[0]).array;
+        else if (_selection.canFind(_hover[0])) {
+            if (_panel.buttonSelectAdd.on)
+                _selection = _selection.filter!(ho => ho != _hover[0]).array;
+            else
+                _dragger.startMove(_map);
         }
         else {
             selectHover();
