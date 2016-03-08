@@ -35,8 +35,9 @@ abstract class Hover {
 
     final override int opCmp(Object rhsObj) const
     {
-        auto rhs = cast (typeof(this)) rhsObj;
-        return cast (void*) pos < cast (void*) rhs.pos;
+        const rhs = cast (typeof(this)) rhsObj;
+        const cmp = cast (void*) pos - cast (void*) rhs.pos;
+        return cmp < 0 ? -1 : cmp > 0 ? 1 : 0;
     }
 
     final void moveBy(Point p)
