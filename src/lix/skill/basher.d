@@ -12,7 +12,6 @@ class Basher : Job {
 
     enum halfPixelsToFall = 9;
     int  halfPixelsMovedDown; // per pixel down: += 2; per frame passed: -= 1;
-    bool omitRelics;
     bool steelWasHit;
 
     mixin(CloneByCopyFrom!"Basher");
@@ -20,7 +19,6 @@ class Basher : Job {
     {
         super.copyFromAndBindToLix(rhs, lixToBindTo);
         halfPixelsMovedDown = rhs.halfPixelsMovedDown;
-        omitRelics  = rhs.omitRelics;
         steelWasHit = rhs.steelWasHit;
     }
 
@@ -36,11 +34,10 @@ class Basher : Job {
     {
         advanceFrame();
         switch (frame) {
-            case  1: checkOmitRelics(); break;
-            case  7: performSwing();    break;
-            case 10: continueOrStop();  break;
+            case  7: performSwing();   break;
+            case 10: continueOrStop(); break;
             case 11: ..
-            case 15: moveAhead();       break; // "..15" is inclusive! 5 cases!
+            case 15: moveAhead();      break; // "..15" is inclusive! 5 cases!
             default: break;
         }
         stopIfMovedDownTooFar();
@@ -48,39 +45,33 @@ class Basher : Job {
 
 private:
 
-    bool nothingMoreToBash(in int whereX)
+    bool nothingMoreToBash()
     {
-        // whereX: use 0 if you want the normal check.
-        // Use 10 if you want to check whether there will be nothing to bash
-        // after going ahead by 10 pixels.
-        assert (whereX == 0 || whereX == 10);
-
         // We don't check the pixels that would be in the upcoming basher
         // swing, but so far away that they will still be ahead of the lix
         // after a full basher's walk-ahead cycle. These pixels will be
         // checked after that next basher's walk cycle.
-        // Checking everything would be a rectangle of 14+2, -16, 23+2, +1.
-        if (countSolid(16 + whereX, -14, 23 + whereX, -3) < 15) {
-            // Check for very thin walls
-            for (int x = 16 + whereX; x <= 23 + whereX; x += 2)
+        // Checking everything would be a rectangle of 14+2, -16, 23+2, +1
+        // instead of what we do,                      14+2, -14, 21+2, -3.
+        // The +2 are changes from C++ Lix to account for the longer D mask.
+        immutable earth = countSolid(16, -14, 23, -3);
+        if (earth < 15) {
+            for (int x = 16; x <= 23; x += 2)
                 if (isSolid(x, -12))
-                    return false;
-            // No thin walls, but too few pixels altogether to continue
-            return true;
+                    return false; // Thin wall found. Keep bashing.
+            return true; // No thin walls, too few pixels to continue bashing.
         }
         return false;
     }
 
-    void checkOmitRelics()
-    {
-        omitRelics
-            = countSolid(16, -16, 17, 1) == 0 // nothing behind the relics
-            && nothingMoreToBash(0); // 0, because we'll check to become
-                                     // walker from current position, too
-    }
-
     void performSwing()
     {
+        bool omitRelics()
+        {
+            immutable earthAfter = lixxie.countSolid(16, -16, 17, 1);
+            immutable pathClear  = nothingMoreToBash();
+            return earthAfter == 0 && pathClear;
+        }
         TerrainChange tc;
         tc.update = outsideWorld.state.update;
         if (omitRelics) {
@@ -107,7 +98,7 @@ private:
             turn();
             become(Ac.walker);
         }
-        else if (nothingMoreToBash(0))
+        else if (nothingMoreToBash)
             become(Ac.walker);
     }
 

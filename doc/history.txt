@@ -1,6 +1,11 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.39
+------
+
+Fixed bug #51: Basher always left relics after his first swing.
+
 0.2.38
 ------
 
