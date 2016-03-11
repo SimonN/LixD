@@ -4,12 +4,29 @@ import std.algorithm;
 
 import editor.editor;
 import editor.select;
+import gui.root;
 import hardware.keyboard;
 import hardware.mousecur;
 
 package:
 
 void implEditorCalc(Editor editor) { with (editor)
+{
+    if (_terrainBrowser) {
+        _terrainBrowser.calc();
+        if (_terrainBrowser.done) {
+            rmFocus(_terrainBrowser);
+            _terrainBrowser = null;
+            _panel.allButtonsOff();
+        }
+    }
+    else
+        editor.noWindowsOpenCalc();
+}}
+
+private:
+
+void noWindowsOpenCalc(Editor editor) { with (editor)
 {
     _map.calcScrolling();
     if (_map.scrollingNow)
@@ -19,8 +36,6 @@ void implEditorCalc(Editor editor) { with (editor)
     editor.selectTiles();
     editor.moveTiles();
 }}
-
-private:
 
 void handleNonstandardPanelButtons(Editor editor) { with (editor)
 {

@@ -2,6 +2,7 @@ module editor.paninit;
 
 import basics.user;
 import editor.editor;
+import editor.gui.browter;
 import editor.panel;
 import editor.select;
 import file.language;
@@ -35,6 +36,12 @@ void makePanel(Editor editor)
             editor._map.zoom = editor._map.zoom >= 4 ? 1 :
                                editor._map.zoom * 2;
         });
+        onExecute(Lang.editorButtonAddTerrain, keyEditorAddTerrain, () {
+            assert (! editor._terrainBrowser);
+            editor._terrainBrowser = new TerrainBrowser();
+            addFocus(editor._terrainBrowser);
+            button(Lang.editorButtonAddTerrain).on = true;
+        });
     }
 }
     /+
@@ -59,7 +66,6 @@ void makePanel(Editor editor)
     editorButtonMenuScroll,
     editorButtonMenuVars,
     editorButtonMenuSkill,
-    editorButtonAddTerrain,
     editorButtonAddSteel,
     editorButtonAddHatch,
     editorButtonAddGoal,
@@ -83,7 +89,6 @@ void makePanel(Editor editor)
     int keyEditorMenuSize    = ALLEGRO_KEY_5;
     int keyEditorMenuVars    = ALLEGRO_KEY_Q;
     int keyEditorMenuSkills  = ALLEGRO_KEY_X;
-    int keyEditorAddTerrain  = ALLEGRO_KEY_SPACE;
     int keyEditorAddSteel    = ALLEGRO_KEY_TAB;
     int keyEditorAddHatch    = ALLEGRO_KEY_1;
     int keyEditorAddGoal     = ALLEGRO_KEY_2;

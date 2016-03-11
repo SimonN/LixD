@@ -125,6 +125,7 @@ class Geom {
 
     @property static float panelYls() { return screenYls - mapYls;        }
     @property static float panelYlg() { return panelYls / _stretchFactor; }
+    @property static float mapYlg()   { return mapYls   / _stretchFactor; }
 
     // this function is called from gui.root, when that is initialized
     static void
