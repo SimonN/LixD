@@ -32,7 +32,7 @@ import lix.enums;
 
 private Result[Filename] results;
 
-MutableFilename fileLanguage;
+MutFilename fileLanguage;
 int optionGroup = 0;
 
 @property bool languageIsEnglish()
@@ -76,18 +76,18 @@ int  editorGridCustom    = 8;
 bool replayAutoSolutions = true;
 bool replayAutoMulti     = true;
 
-MutableFilename singleLastLevel;
-MutableFilename networkLastLevel;
-MutableFilename replayLastLevel;
+MutFilename singleLastLevel;
+MutFilename networkLastLevel;
+MutFilename replayLastLevel;
 
 Style    networkLastStyle = Style.red;
 
-MutableFilename editorLastDirTerrain;
-MutableFilename editorLastDirSteel;
-MutableFilename editorLastDirHatch;
-MutableFilename editorLastDirGoal;
-MutableFilename editorLastDirDeco;
-MutableFilename editorLastDirHazard;
+MutFilename editorLastDirTerrain;
+MutFilename editorLastDirSteel;
+MutFilename editorLastDirHatch;
+MutFilename editorLastDirGoal;
+MutFilename editorLastDirDeco;
+MutFilename editorLastDirHazard;
 
 @property const(Ac[]) skillSort() { return _skillSort; }
 

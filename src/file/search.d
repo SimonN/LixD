@@ -32,42 +32,42 @@ bool dirExists(Filename fn)
 
 // Whenever what == "", every possible file is retrieved because
 // hasCorrectEnding("") will always be true; see that function for details.
-MutableFilename[] findRegularFilesNoRecursion(
+MutFilename[] findRegularFilesNoRecursion(
     Filename  fnWhere,
     in string what = "",
 ) {
-    MutableFilename[] ret;
+    MutFilename[] ret;
     // shallow = don't recurse through subdirs, true = follow symlinks
     foreach (string s; std.file.dirEntries(fnWhere.rootful,
                                            SpanMode.shallow, true))
         if (! std.file.isDir(s) && s.hasCorrectEnding(what))
-            ret ~= MutableFilename(new Filename(s.tr("\\", "/")));
+            ret ~= MutFilename(new Filename(s.tr("\\", "/")));
     return ret;
 }
 
-MutableFilename[] findDirsNoRecursion(
+MutFilename[] findDirsNoRecursion(
     Filename fnWhere
 ) {
-    MutableFilename[] ret;
+    MutFilename[] ret;
     foreach (string s; std.file.dirEntries(fnWhere.rootful,
                                            SpanMode.shallow, true))
         if (std.file.isDir(s))
             // convention: dirs have a trailing slash, and dirEntries
             // doesn't add one at the end
-            ret ~= MutableFilename(new Filename(s.tr("\\", "/") ~ "/"));
+            ret ~= MutFilename(new Filename(s.tr("\\", "/") ~ "/"));
     return ret;
 }
 
-MutableFilename[] findRegularFilesRecursively(
+MutFilename[] findRegularFilesRecursively(
     Filename  fnWhere,
     in string what = "",
 ) {
-    MutableFilename[] ret;
+    MutFilename[] ret;
     // breadth-first search through the entire given tree
     foreach (string s; std.file.dirEntries(fnWhere.rootful,
                                            SpanMode.breadth, true))
         if (! std.file.isDir(s) && s.hasCorrectEnding(what))
-            ret ~= MutableFilename(new Filename(s.tr("\\", "/")));
+            ret ~= MutFilename(new Filename(s.tr("\\", "/")));
     return ret;
 }
 

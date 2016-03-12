@@ -25,7 +25,7 @@ import menu.preview;
 class BrowserBase : Window {
 private:
     bool _gotoMainMenu;
-    MutableFilename _fileRecent; // only used for highlighting, not selecting
+    MutFilename _fileRecent; // only used for highlighting, not selecting
 
     ListDir    dirList;
     ListLevel  levList;
@@ -131,7 +131,7 @@ protected:
                 highlight(null);
         }
         else if (levList.clicked) {
-            MutableFilename cur = levList.currentFile;
+            MutFilename cur = levList.currentFile;
             auto button = levList.buttonLastClicked;
             if (cur !is null && button !is null) {
                 if (button.on)
@@ -147,7 +147,7 @@ protected:
         else if (buttonPlay.execute) {
             if (_fileRecent !is null
              && _fileRecent.isChildOf(dirList.currentDir)
-             && _fileRecent == MutableFilename(levList.currentFile))
+             && _fileRecent == MutFilename(levList.currentFile))
                 onFileSelect(_fileRecent);
         }
         else if (hardware.mouse.mouseClickRight)

@@ -55,10 +55,10 @@ void implSaveManually(in Replay replay, Filename levelFn, in Level lev)
 auto implLoadFromFile(Replay replay, Filename fn) { with (replay)
 {
     struct Return {
-        MutableFilename levelFilename;
+        MutFilename levelFilename;
         MutableDate levelBuiltRequired;
     }
-    auto ret = Return(MutableFilename(nullFilename),
+    auto ret = Return(MutFilename(nullFilename),
                       MutableDate(new Date("0")));
     IoLine[] lines;
     try {

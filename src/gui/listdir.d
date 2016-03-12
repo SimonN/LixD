@@ -35,7 +35,7 @@ public:
         searchCrit = function bool(Filename fn) {
             return fn.file != "." && fn.file != "..";
         };
-        fileSorter = delegate void(MutableFilename[] arr) {
+        fileSorter = delegate void(MutFilename[] arr) {
             sortFilenamesByOrderTxtThenAlpha(arr, currentDir, true);
         };
         super.useHotkeys = false;

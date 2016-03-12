@@ -29,21 +29,21 @@ private:
     bool _useHotkeys;
     bool _clicked;
 
-    MutableFilename[] files;
+    MutFilename[] files;
     Button[] buttons;
     Button   _buttonLastClicked;
 
-    MutableFilename _currentDir;
-    MutableFilename _currentFile; // need not be in currentDir
+    MutFilename _currentDir;
+    MutFilename _currentFile; // need not be in currentDir
 
     FileFinder _fileFinder;
     SearchCrit _searchCrit;
     FileSorter _fileSorter;
 
 public:
-    alias FileFinder = MutableFilename[] function(Filename);
+    alias FileFinder = MutFilename[] function(Filename);
     alias SearchCrit = bool function(Filename);
-    alias FileSorter = void delegate(MutableFilename[]);
+    alias FileSorter = void delegate(MutFilename[]);
 
     this(Geom g)
     {
@@ -76,7 +76,7 @@ public:
     out (ret) {
         assert (ret is null || ret.isChildOf(_currentDir),
             "`%s' not child of `%s'".format(ret.rootful, _currentDir.rootful));
-        MutableFilename mutRet = ret;
+        MutFilename mutRet = ret;
         assert (mutRet != _currentDir,
             "When no file is selected, currentFile should return null. "
             "Under no circumstances, currentFile should be the current dir.");
@@ -93,7 +93,7 @@ public:
 
     void highlight(Filename fn)
     {
-        highlightNumberImpl(files.countUntil(MutableFilename(fn)).to!int);
+        highlightNumberImpl(files.countUntil(MutFilename(fn)).to!int);
     }
 
     int currentNumber() const
@@ -106,13 +106,13 @@ public:
         highlightNumberImpl(clamp(pos, -1, files.len - 1));
     }
 
-    static MutableFilename[] default_fileFinder(in Filename where)
+    static MutFilename[] default_fileFinder(in Filename where)
     {
         return file.search.findRegularFilesNoRecursion(where);
     }
 
     static bool default_searchCrit(in Filename fn) { return true; } // all
-    void default_fileSorter(MutableFilename[] arr) { arr.sort(); }
+    void default_fileSorter(MutFilename[] arr) { arr.sort(); }
 
     void load_dir(in Filename to_load, in int which_page = 0)
     {
@@ -137,7 +137,7 @@ protected:
 
     OnDirLoadAction on_dir_load() { return OnDirLoadAction.CONTINUE; }
     void onFileHighlight() { }
-    void put_to_file_list(Filename s) { files ~= MutableFilename(s); }
+    void put_to_file_list(Filename s) { files ~= MutFilename(s); }
 
     enum OnDirLoadAction { CONTINUE, RELOAD, ABORT }
 

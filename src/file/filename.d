@@ -12,7 +12,7 @@ static Filename nullFilename;
 static this() { nullFilename = new Filename(""); }
 
 alias Filename = immutable(_Filename);
-alias MutableFilename = Rebindable!Filename;
+alias MutFilename = Rebindable!Filename;
 
 private class _Filename {
 private:

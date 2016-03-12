@@ -44,7 +44,7 @@ public:
     ) {
         super(g);
         searchCrit = &searchCrit_level;
-        fileSorter = delegate void(MutableFilename[] arr) {
+        fileSorter = delegate void(MutFilename[] arr) {
             sortFilenamesByOrderTxtThenAlpha(arr, currentDir, false);
         };
         _writeFileNames = wfn;
@@ -122,7 +122,7 @@ protected:
 package:
 
 void sortFilenamesByOrderTxtThenAlpha(
-    MutableFilename[] files,
+    MutFilename[] files,
     Filename dir_with_order_file,
     bool we_sort_dirs // this is a little kludge, we add slashes to the
                       // entries in the order file to work with Filename::==
@@ -137,7 +137,7 @@ void sortFilenamesByOrderTxtThenAlpha(
         // do nothing, missing ordering file is not an error at all
     }
 
-    MutableFilename[] unsorted_slice = files;
+    MutFilename[] unsorted_slice = files;
 
     if (orders.length) {
         if (we_sort_dirs) {
@@ -153,7 +153,7 @@ void sortFilenamesByOrderTxtThenAlpha(
         // very beginning.
         foreach (orit; orders) {
             Filename fn = new Filename(dir_with_order_file.dirRootful ~ orit);
-            MutableFilename[] found = unsorted_slice.find(MutableFilename(fn));
+            MutFilename[] found = unsorted_slice.find(MutFilename(fn));
             if (found.length) {
                 swap(found[0], unsorted_slice[0]);
                 unsorted_slice = unsorted_slice[1 .. $];
