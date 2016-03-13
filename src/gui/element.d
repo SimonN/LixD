@@ -137,6 +137,12 @@ bool rmChild(Element e)
     return true;
 }
 
+void rmAllChildren()
+{
+    while (_children.length)
+        rmChild(_children[0]);
+}
+
 void move(in float ax, in float ay)
 {
     reqDraw();

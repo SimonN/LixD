@@ -9,8 +9,8 @@ import file.search;
 class Ls {
 private:
     MutFilename _currentDir;
-    MutFilename[] _dirs;
-    MutFilename[] _files;
+    Filename[] _dirs;
+    Filename[] _files;
 
 public:
     final @property          dirs()       const { return _dirs; }
@@ -24,11 +24,15 @@ public:
         _currentDir = newDir;
         if (! currentDir)
             return currentDir;
-        _dirs  = findDirsNoRecursion(currentDir);
-        _files = findRegularFilesNoRecursion(currentDir)
+        auto tempD = findDirsNoRecursion(currentDir);
+        auto tempF = findRegularFilesNoRecursion(currentDir)
             .filter!(f => searchCriterion(f)).array;
-        sortDirs (_dirs);
-        sortFiles(_files);
+        sortDirs (tempD);
+        sortFiles(tempF);
+
+        Filename deMut(in MutFilename a) { return a; }
+        _dirs  = tempD.map!deMut.array;
+        _files = tempF.map!deMut.array;
         return currentDir;
     }
 

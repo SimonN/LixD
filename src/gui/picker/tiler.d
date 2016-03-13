@@ -36,12 +36,14 @@ public:
 
     final void loadDirsFiles(Filename[] newDirs, Filename[] newFiles)
     {
+        rmAllChildren();
         _dirs  = newDirs.map!(t => newDirButton(t)).array;
         _files = newFiles.enumerate!int
             .map!(pair => newFileButton(pair[1], pair[0]))
             .array;
+        chain(_dirs, _files).each!(b => addChild(b));
         top = 0;
-        reqDraw();
+        moveButtonsAccordingToTop();
     }
 
     final @property int top() const { return _top; }
@@ -77,6 +79,7 @@ protected:
 private:
     void moveButtonsAccordingToTop()
     {
+        reqDraw();
         auto range = chain(_dirs, _files).enumerate!int;
         foreach (int unshifted, Button b; range) {
             immutable int shifted = shiftedID(unshifted);

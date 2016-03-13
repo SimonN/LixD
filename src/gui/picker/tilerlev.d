@@ -22,7 +22,7 @@ protected:
     {
         assert (fn);
         return new TextButton(new Geom(0, 0, xlg,
-            dirSizeMultiplier * buttonYlg), fn.file);
+            dirSizeMultiplier * buttonYlg), fn.dirInnermost);
     }
 
     override Button newFileButton(Filename fn, in int fileID)

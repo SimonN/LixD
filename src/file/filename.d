@@ -163,7 +163,7 @@ public:
 
     bool isChildOf(immutable typeof(this) parent) immutable
     {
-        return parent._file.empty
+        return parent._file.empty // parent names a directory
             && parent._rootless.length <= _rootless.length
             && parent._rootless == _rootless[0 .. parent._rootless.length];
     }
