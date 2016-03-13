@@ -1,6 +1,15 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.40
+------
+
+2016-03-13
+
+Editor has a terrain browser that can only exit. No browsing for terrain yet.
+There's a scrollbar in that terrain browser. The buttons at its end can be
+clicked and move the car. The car doesn't do anything when dragged or pulled.
+
 0.2.39
 ------
 

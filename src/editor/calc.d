@@ -13,7 +13,6 @@ package:
 void implEditorCalc(Editor editor) { with (editor)
 {
     if (_terrainBrowser) {
-        _terrainBrowser.calc();
         if (_terrainBrowser.done) {
             rmFocus(_terrainBrowser);
             _terrainBrowser = null;
