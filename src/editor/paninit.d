@@ -1,5 +1,8 @@
 module editor.paninit;
 
+import std.string;
+
+import basics.globals;
 import basics.user;
 import editor.editor;
 import editor.gui.browter;
@@ -36,12 +39,21 @@ void makePanel(Editor editor)
             editor._map.zoom = editor._map.zoom >= 4 ? 1 :
                                editor._map.zoom * 2;
         });
-        onExecute(Lang.editorButtonAddTerrain, keyEditorAddTerrain, () {
-            assert (! editor._terrainBrowser);
-            editor._terrainBrowser = new TerrainBrowser();
-            addFocus(editor._terrainBrowser);
-            button(Lang.editorButtonAddTerrain).on = true;
-        });
+        template OnExecuteBrowser(string name, string exts) {
+            enum string OnExecuteBrowser = "
+                    onExecute(Lang.editorButtonAdd%s, keyEditorAdd%s, () {
+                        editor._terrainBrowser = new TerrainBrowser(%s);
+                        addFocus(editor._terrainBrowser);
+                        button(Lang.editorButtonAdd%s).on = true;
+                    });
+                ".format(name, name, exts, name);
+        }
+        mixin (OnExecuteBrowser!("Terrain", "[0]"));
+        mixin (OnExecuteBrowser!("Steel", "[preExtSteel]"));
+        mixin (OnExecuteBrowser!("Hatch", "[preExtHatch]"));
+        mixin (OnExecuteBrowser!("Goal", "[preExtGoal]"));
+        mixin (OnExecuteBrowser!("Deco", "[preExtDeco]"));
+        mixin (OnExecuteBrowser!("Hazard", "['W', 'T', 'F']"));
     }
 }
     /+
