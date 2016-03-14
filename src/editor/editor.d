@@ -12,7 +12,7 @@ import editor.draw;
 import editor.gui.browter;
 import editor.hover;
 import editor.io;
-import editor.panel;
+import editor.gui.panel;
 import file.filename;
 import graphic.map;
 import level.level;

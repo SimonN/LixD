@@ -5,7 +5,7 @@ import std.conv;
 
 import editor.dragger;
 import editor.editor;
-import editor.panel;
+import editor.gui.panel;
 import editor.paninit;
 import file.filename;
 import graphic.map;

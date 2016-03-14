@@ -3,7 +3,7 @@ module editor.paninit;
 import basics.user;
 import editor.editor;
 import editor.gui.browter;
-import editor.panel;
+import editor.gui.panel;
 import editor.select;
 import file.language;
 import gui;

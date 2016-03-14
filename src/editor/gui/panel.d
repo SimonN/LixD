@@ -1,4 +1,4 @@
-module editor.panel;
+module editor.gui.panel;
 
 import std.algorithm;
 import std.conv;
