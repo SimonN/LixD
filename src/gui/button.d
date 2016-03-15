@@ -43,11 +43,13 @@ class Button : Element {
     mixin (GetSetWithReqDraw!"on");
 
     override @property bool hidden() const { return super.hidden; }
-    override @property bool hidden(in bool c)
+    override @property bool hidden(in bool b)
     {
-        super.hidden = c;
-        _down    = false;
-        _execute = false;
+        if (super.hidden != b) {
+            super.hidden = b;
+            _down    = false;
+            _execute = false;
+        }
         return super.hidden;
     }
 

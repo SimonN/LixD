@@ -32,3 +32,4 @@ public import gui.picker.scrollb;
 public import gui.picker.tiler;
 public import gui.picker.tilerimg;
 public import gui.picker.tilerlev;
+public import gui.picker.uponedir;

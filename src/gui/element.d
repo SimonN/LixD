@@ -30,12 +30,19 @@ abstract class Element {
     @property AlCol undrawColor() const  { return _undrawColor;     }
     @property AlCol undrawColor(AlCol c) { return _undrawColor = c; }
 
-    @property bool hidden() const    {            return _hidden;     }
-    @property bool hidden(in bool b) { reqDraw(); return _hidden = b; }
     final void hide() { hidden = true;  }
     final void show() { hidden = false; }
+    @property bool hidden() const { return _hidden; }
+    @property bool hidden(in bool b) // virtual, b/c Button overrides this :-[
+    {
+        if (b != _hidden) {
+            reqDraw();
+            _hidden = b;
+        }
+        return _hidden;
+    }
 
-    void hideAllChildren() { foreach (child; _children) child.hide(); }
+    void hideAllChildren() { _children.each!(e => e.hide()); }
 
     @property inout(Element[]) children() inout { return _children; }
 
