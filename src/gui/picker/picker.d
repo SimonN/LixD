@@ -25,21 +25,15 @@ public:
     @property Filename basedir(Filename fn)
     {
         assert (fn);
-        assert (_ls);
         _basedir = fn;
         if (! _ls.currentDir || ! _ls.currentDir.isChildOf(_basedir))
             currentDir = _basedir;
         return basedir;
     }
 
-    @property Filename currentDir() const {
-        assert (_ls);
-        return _ls.currentDir;
-    }
-
+    @property Filename currentDir() const { return _ls.currentDir; }
     @property Filename currentDir(Filename fn)
     {
-        assert (_ls);
         if (! fn) {
             if (basedir)
                 currentDir = basedir;
@@ -51,6 +45,12 @@ public:
                         ? basedir : fn;
         _tiler.loadDirsFiles(_ls.dirs, _ls.files);
         return currentDir;
+    }
+
+    override void calcSelf()
+    {
+        if (_tiler.executeDir)
+            currentDir = _ls.dirs[_tiler.executeDirID];
     }
 
 private:

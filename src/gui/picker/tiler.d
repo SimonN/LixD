@@ -22,10 +22,12 @@ private:
 public:
     this(Geom g) { super(g); }
 
-    final int len() const
-    {
-        return _dirs.len * dirSizeMultiplier + _files.len;
-    }
+    @property bool executeDir()    const { return _executeDir;    }
+    @property bool executeFile()   const { return _executeFile;   }
+    @property int  executeDirID()  const { return _executeDirID;  }
+    @property int  executeFileID() const { return _executeFileID; }
+
+    final len() const { return _dirs.len * dirSizeMultiplier + _files.len; }
 
     final T shiftedID(T)(in T id) const
     {

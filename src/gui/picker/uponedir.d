@@ -3,6 +3,9 @@ module gui.picker.uponedir;
 /* This is not part of Picker. Yet it controls a picker.
  * When you use a picker, you should make a separate UpOneDirButton
  * and link it to the Picker. Reason: It's not inside the Picker's geom.
+ *
+ * This doesn't feel right. Without a mediator for both the Picker and the
+ * UpOneDirButton, the button must unhide itself, thus override work().
  */
 
 import basics.user;
