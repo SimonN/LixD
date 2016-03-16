@@ -5,7 +5,7 @@ import std.algorithm;
 import file.filename;
 import gui.picker.ls;
 
-class ImageLs : Ls {
+class ImageLs : AlphabeticalLs {
 private:
     const(string) _allowedPreExts;
 
