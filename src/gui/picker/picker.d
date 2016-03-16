@@ -44,6 +44,8 @@ public:
         _ls.currentDir = (basedir && ! fn.isChildOf(basedir))
                         ? basedir : fn;
         _tiler.loadDirsFiles(_ls.dirs, _ls.files);
+        _scrollbar.totalLen = _tiler.totalLen;
+        _scrollbar.pos = 0;
         return currentDir;
     }
 
@@ -51,6 +53,8 @@ public:
     {
         if (_tiler.executeDir)
             currentDir = _ls.dirs[_tiler.executeDirID];
+        else if (_scrollbar.execute)
+            _tiler.top = _scrollbar.pos;
     }
 
 private:
@@ -60,6 +64,7 @@ private:
         _ls        = ls;
         _tiler     = tiler;
         _scrollbar = new Scrollbar(new Geom(0, 0, 20, g.yl, From.RIGHT));
+        _scrollbar.pageLen = _tiler.pageLen;
         addChildren(_tiler, _scrollbar);
     }
 }

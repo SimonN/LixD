@@ -1,9 +1,11 @@
 module editor.gui.browter;
 
 import basics.globals;
+import basics.user;
 import file.language;
 import gui;
 import gui.picker;
+import hardware.mouse;
 
 class TerrainBrowser : Window {
 private:
@@ -25,9 +27,12 @@ public:
             20, 80, 80, 40, From.BOTTOM_RIGHT), _picker);
         _cancel = new TextButton(new Geom(
             20, 20, 80, 40, From.BOTTOM_RIGHT), Lang.commonCancel.transl);
+        _cancel.hotkey = keyMenuExit;
         addChildren(_picker, _upOneDir, _cancel);
     }
 
-    bool   done()       const { return chosenTile != null || _cancel.execute; }
+    bool done() const {
+        return chosenTile != null || _cancel.execute || mouseClickRight;
+    }
     string chosenTile() const { return null; }
 }

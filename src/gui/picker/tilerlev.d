@@ -12,12 +12,12 @@ public:
     enum buttonYlg = 20;
     this(Geom g) { super(g); }
 
-protected:
     override @property int pageLen() const
     {
         return this.ylg.to!int / buttonYlg;
     }
 
+protected:
     override TextButton newDirButton(Filename fn)
     {
         assert (fn);

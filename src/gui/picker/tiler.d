@@ -27,7 +27,11 @@ public:
     @property int  executeDirID()  const { return _executeDirID;  }
     @property int  executeFileID() const { return _executeFileID; }
 
-    final len() const { return _dirs.len * dirSizeMultiplier + _files.len; }
+    abstract @property int pageLen() const;
+
+    final int totalLen() const {
+        return _dirs.len * dirSizeMultiplier + _files.len;
+    }
 
     final T shiftedID(T)(in T id) const
     {
@@ -51,7 +55,7 @@ public:
     final @property int top() const { return _top; }
     final @property int top(int newTop)
     {
-        newTop = min(newTop, len - pageLen);
+        newTop = min(newTop, totalLen - pageLen);
         newTop = max(newTop, 0);
         if (newTop < _dirs.len * dirSizeMultiplier)
             newTop -= newTop % dirSizeMultiplier;
@@ -66,7 +70,6 @@ protected:
     // dir buttons are larger than file buttons by dirSizeMultiplier
     @property int dirSizeMultiplier() const { return 2; }
 
-    abstract @property int pageLen() const;
     abstract Button newDirButton (Filename data);
     abstract Button newFileButton(Filename data, in int fileID);
     abstract float buttonXg(in int shiftedIDOnPage) const;

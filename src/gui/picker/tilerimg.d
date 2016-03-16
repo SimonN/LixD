@@ -19,12 +19,12 @@ public:
     enum buttonsPerPageY = 6;
     this(Geom g) { super(g); }
 
-protected:
     override @property int pageLen() const
     {
         return buttonsPerPageX * buttonsPerPageY;
     }
 
+protected:
     override TextButton newDirButton(Filename fn)
     {
         assert (fn);
