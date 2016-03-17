@@ -81,6 +81,12 @@ protected:
         calcExecute(_files, _executeFile, _executeFileID);
     }
 
+    override void drawSelf()
+    {
+        super.undrawSelf(); // remove all old buttons
+        super.drawSelf();
+    }
+
 private:
     void moveButtonsAccordingToTop()
     {
