@@ -31,6 +31,8 @@ public:
         _down = new BitmapButton(new Geom(0, 0, xlg, xlg, From.BOTTOM), cb);
         _up.xf = 8;
         _down.xf = 11;
+        _up.whenToExecute = _down.whenToExecute
+            = Button.WhenToExecute.whenMouseClickAllowingRepeats;
         _car = new Button(new Geom(0, xlg, xlg, ylg - 2 * xlg));
         undrawColor        = color.guiM;
         _track.undrawColor = color.guiM;
@@ -64,9 +66,10 @@ public:
 
     @property int pos(in int i)
     {
-        if (_pos == i)
+        immutable potentialPos = max(0, min(i, _totalLen - _pageLen));
+        if (_pos == potentialPos)
             return _pos;
-        _pos = clamp(i, 0, _totalLen - _pageLen);
+        _pos = potentialPos;
         updateCar();
         return _pos;
     }
