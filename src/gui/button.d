@@ -19,6 +19,15 @@ import hardware.keyboard;
 import hardware.mouse;
 
 class Button : Element {
+private:
+    int  _hotkey; // default is 0, which is not a key.
+    bool _execute;
+    bool _down;
+    bool _on;
+    void delegate() _onExecute;
+
+public:
+    WhenToExecute whenToExecute;
 
     enum WhenToExecute {
         whenMouseRelease, // cold, normal menu buttons
@@ -31,8 +40,6 @@ class Button : Element {
 
     @property int hotkey() const { return _hotkey;     }
     @property int hotkey(int i)  { return _hotkey = i; }
-
-    WhenToExecute whenToExecute;
 
     // execute is read-only. Derived classes should make their own bool
     // and then override execute().
@@ -55,14 +62,53 @@ class Button : Element {
 
     AlCol colorText() { return _on && ! _down ? color.guiTextOn
                                               : color.guiText; }
+protected:
+    // override these if needed
+    void   drawOntoButton()     { }
+    string hotkeyString() const { return hotkeyNiceShort(hotkey); }
+
+    override void
+    calcSelf()
+    {
+        immutable mouseHere = isMouseHere();
+        final switch (whenToExecute) {
+        case WhenToExecute.whenMouseRelease:
+            down     = mouseHere && mouseHeldLeft;
+            _execute = mouseHere && mouseReleaseLeft || _hotkey.keyTapped;
+            break;
+        case WhenToExecute.whenMouseClick:
+            down     = mouseHere && mouseHeldLeft;
+            _execute = mouseHere && mouseClickLeft || _hotkey.keyTapped;
+            break;
+        case WhenToExecute.whenMouseHeld:
+            down     = false;
+            _execute = mouseHere && mouseHeldLeft || _hotkey.keyTapped;
+            break;
+        case WhenToExecute.whenMouseClickAllowingRepeats:
+            down     = mouseHere && mouseHeldLeft;
+            _execute = mouseHere && mouseClickLeft
+                    || mouseHere && mouseHeldLongLeft
+                    || _hotkey.keyTappedAllowingRepeats;
+            break;
+        }
+        if (_onExecute !is null && _execute)
+            _onExecute();
+    }
+
+    final override void // override drawOntoButton instead
+    drawSelf()
+    {
+        // select the colors according to the button's state
+        auto c1 = _down ? color.guiDownD : _on ? color.guiOnD : color.guiL;
+        auto c2 = _down ? color.guiDownM : _on ? color.guiOnM : color.guiM;
+        auto c3 = _down ? color.guiDownL : _on ? color.guiOnL : color.guiD;
+        draw3DButton(xs, ys, xls, yls, c1, c2, c3);
+        drawOntoButton();
+        if (basics.user.showButtonHotkeys)
+            drawHotkey();
+    }
+
 private:
-
-    int  _hotkey; // default is 0, which is not a key.
-    bool _execute;
-    bool _down;
-    bool _on;
-    void delegate() _onExecute;
-
     void drawHotkey()
     {
         string s = hotkeyString();
@@ -71,56 +117,4 @@ private:
                 xs + xls - Geom.thicks,
                 ys + yls - Geom.thicks - djvuSYls, colorText);
     }
-
-protected:
-
-    // override these if needed
-    void   drawOntoButton()     { }
-    string hotkeyString() const { return hotkeyNiceShort(hotkey); }
-
-override void
-calcSelf()
-{
-    immutable bool mouseHere = isMouseHere();
-
-    final switch (whenToExecute) {
-    case WhenToExecute.whenMouseRelease:
-        down     = mouseHere && mouseHeldLeft;
-        _execute = mouseHere && mouseReleaseLeft || _hotkey.keyTapped;
-        break;
-    case WhenToExecute.whenMouseClick:
-        down     = mouseHere && mouseHeldLeft;
-        _execute = mouseHere && mouseClickLeft || _hotkey.keyTapped;
-        break;
-    case WhenToExecute.whenMouseHeld:
-        down     = false;
-        _execute = mouseHere && mouseHeldLeft || _hotkey.keyTapped;
-        break;
-    case WhenToExecute.whenMouseClickAllowingRepeats:
-        down     = mouseHere && mouseHeldLeft;
-        _execute = mouseHere && mouseClickLeft
-                || mouseHere && mouseHeldLongLeft
-                || _hotkey.keyTappedAllowingRepeats;
-        break;
-    }
-    if (_onExecute !is null && _execute)
-        _onExecute();
 }
-
-final override void // override drawOntoButton instead
-drawSelf()
-{
-    // select the colors according to the button's state
-    auto c1 = _down ? color.guiDownD : _on ? color.guiOnD : color.guiL;
-    auto c2 = _down ? color.guiDownM : _on ? color.guiOnM : color.guiM;
-    auto c3 = _down ? color.guiDownL : _on ? color.guiOnL : color.guiD;
-
-    draw3DButton(xs, ys, xls, yls, c1, c2, c3);
-
-    drawOntoButton();
-    if (basics.user.showButtonHotkeys)
-        drawHotkey();
-}
-
-}
-// end class
