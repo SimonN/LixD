@@ -49,6 +49,14 @@ public:
         return currentDir;
     }
 
+    @property bool executeDir()    const { return _tiler.executeDir;    }
+    @property bool executeFile()   const { return _tiler.executeFile;   }
+    @property int  executeDirID()  const { return _tiler.executeDirID;  }
+    @property int  executeFileID() const { return _tiler.executeFileID; }
+              void highlightFile(int i)  { _tiler.highlightFile(i);     }
+              void highlightNothing()    { _tiler.highlightNothing();   }
+
+protected:
     override void calcSelf()
     {
         if (_tiler.executeDir)

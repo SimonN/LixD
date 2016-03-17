@@ -66,6 +66,14 @@ public:
         return _top;
     }
 
+    final void highlightNothing() { _files.each!(b => b.on = false); }
+    final void highlightFile(in int i)
+    {
+        highlightNothing();
+        _files[i].on = true;
+    }
+
+
 protected:
     // dir buttons are larger than file buttons by dirSizeMultiplier
     @property int dirSizeMultiplier() const { return 2; }
