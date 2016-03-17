@@ -8,7 +8,6 @@ import basics.alleg5;
 import basics.globals;
 import basics.help; // rounding
 import gui;
-import graphic.color;
 import graphic.graphic;
 import graphic.internal;
 import graphic.torbit;
@@ -25,7 +24,6 @@ public:
         auto cb = getInternal(fileImagePreviewIcon);
         iconStatus = new Graphic(cb, guiosd);
         iconTorus  = new Graphic(cb, guiosd);
-        undrawColor  = color.guiM;
         iconTorus.yf = 1;
     }
 
@@ -60,7 +58,7 @@ level(in Level level)
     if (level !is null) {
         torbit  = level.create_preview(
             (xs + xls).roundInt - xs.roundInt,
-            (ys + yls).roundInt - ys.roundInt, color.guiM);
+            (ys + yls).roundInt - ys.roundInt, undrawColor);
         _status = level.status;
         iconStatus.xf = status;
         iconTorus .xf = level.torusX + 2 * level.torusY;

@@ -4,7 +4,6 @@ import std.algorithm;
 
 import basics.globals;
 import graphic.internal;
-import graphic.color;
 import gui;
 
 class Scrollbar : Element {
@@ -34,8 +33,6 @@ public:
         _up.whenToExecute = _down.whenToExecute
             = Button.WhenToExecute.whenMouseClickAllowingRepeats;
         _car = new Button(new Geom(0, xlg, xlg, ylg - 2 * xlg));
-        undrawColor        = color.guiM;
-        _track.undrawColor = color.guiM;
         addChildren(_track, _up, _down, _car);
     }
 

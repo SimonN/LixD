@@ -69,8 +69,6 @@ private:
 private void
 implConstructor()
 {
-    undrawColor = color.guiM;
-
     int bbGeomCount = 0;
     BitmapButton bbGeom(in int x, From from, in int change)
     {

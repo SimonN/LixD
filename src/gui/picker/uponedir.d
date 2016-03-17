@@ -11,7 +11,6 @@ module gui.picker.uponedir;
 import basics.user;
 import file.filename;
 import file.language;
-import graphic.color;
 import gui;
 import gui.picker.picker;
 
@@ -27,7 +26,6 @@ public:
         _picker = pi;
         text    = Lang.commonDirParent.transl;
         hotkey  = basics.user.keyMenuUpDir;
-        undrawColor = color.guiM;
         hideOrShow();
     }
 

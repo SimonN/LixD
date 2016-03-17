@@ -8,7 +8,6 @@ import basics.user; // hotkeys
 import file.filename;
 import file.language;
 import game.replay;
-import graphic.color;
 import gui;
 import hardware.keyboard; // package class
 import hardware.sound;
@@ -76,7 +75,6 @@ protected:
             _replay.saveManually(_levelFilename, _level);
             hardware.sound.playLoud(Sound.DISKSAVE);
             if (_saveReplayDone) {
-                _saveReplay.undrawColor = color.guiM;
                 _saveReplay.hide();
                 _saveReplayDone.show();
             }

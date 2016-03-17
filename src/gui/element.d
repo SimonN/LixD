@@ -21,7 +21,7 @@ public:
     this(Geom g)
     {
         _geom        = g;
-        _undrawColor = color.transp;
+        _undrawColor = color.guiM;
         drawRequired = true;
     }
 

@@ -4,7 +4,6 @@ import basics.user;
 import file.filename;
 import file.language;
 import game.replay;
-import graphic.color;
 import gui;
 import level.level;
 import menu.browmain;
@@ -24,7 +23,6 @@ class BrowserReplay : BrowserCalledFromMainMenu {
             auto b = new TextButton(new Geom(20, y, infoXl, 20, From.TOP_RIG));
             b.text = caption;
             b.hotkey = hotkey;
-            b.undrawColor = color.guiM;
             return b;
         }
         _delete  = newInfo(infoY, Lang.browserDelete.transl, keyMenuDelete);
