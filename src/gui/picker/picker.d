@@ -1,5 +1,7 @@
 module gui.picker.picker;
 
+import std.algorithm;
+
 import gui;
 import gui.picker;
 
@@ -25,7 +27,7 @@ public:
     @property Filename basedir(Filename fn)
     {
         assert (fn);
-        _basedir = fn;
+        _basedir = fn.guaranteedDirOnly();
         if (! _ls.currentDir || ! _ls.currentDir.isChildOf(_basedir))
             currentDir = _basedir;
         return basedir;
@@ -39,10 +41,10 @@ public:
                 currentDir = basedir;
             return currentDir;
         }
-        if (currentDir == fn)
+        if (currentDir && currentDir.dirRootless == fn.dirRootless)
             return currentDir;
         _ls.currentDir = (basedir && ! fn.isChildOf(basedir))
-                        ? basedir : fn;
+                        ? basedir : fn.guaranteedDirOnly();
         _tiler.loadDirsFiles(_ls.dirs, _ls.files);
         _scrollbar.totalLen = _tiler.totalLen;
         _scrollbar.pos = 0;
@@ -55,6 +57,21 @@ public:
     @property int  executeFileID() const { return _tiler.executeFileID; }
               void highlightFile(int i)  { _tiler.highlightFile(i);     }
               void highlightNothing()    { _tiler.highlightNothing();   }
+
+    Filename executeFileFilename() const
+    {
+        assert (executeFile, "call this only when executeFile == true");
+        return _ls.files[executeFileID];
+    }
+
+    void highlightFile(Filename fn)
+    {
+        currentDir = fn;
+        if (int id = _ls.files.countUntil(fn) == -1)
+            _tiler.highlightFile(id);
+        else
+            _tiler.highlightNothing();
+    }
 
 protected:
     override void calcSelf()

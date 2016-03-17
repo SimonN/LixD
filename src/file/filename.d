@@ -161,6 +161,12 @@ public:
              : la < lb ? -1 : 0;
     }
 
+    Filename guaranteedDirOnly() immutable
+    {
+        assert (dirRootless.empty || dirRootless[$-1] == '/');
+        return file.empty ? this : new Filename(dirRootless);
+    }
+
     bool isChildOf(immutable typeof(this) parent) immutable
     {
         return parent._file.empty // parent names a directory

@@ -8,7 +8,7 @@ import std.string;
 
 import gui;
 import gui.picker.tiler;
-import level.level;
+import level.metadata;
 
 abstract class LevelOrReplayTiler : Tiler {
 public:
@@ -43,9 +43,9 @@ protected:
     final override Button newFileButton(Filename fn, in int fileID)
     {
         assert (fn);
-        Level level = new Level(fn);
+        auto levelData = new LevelMetaData(fn);
         return new TextButton(new Geom(0, 0, xlg, buttonYlg),
-            "%d. %s".format(fileID, level.name));
+            "%d. %s".format(fileID, levelData.name));
     }
 }
 

@@ -17,6 +17,7 @@ import file.filename;
 import file.language;
 import file.log;
 import gui;
+import gui.picker;
 import hardware.mouse;
 import hardware.sound;
 import level.level;
@@ -27,11 +28,7 @@ private:
     bool _gotoMainMenu;
     MutFilename _fileRecent; // only used for highlighting, not selecting
 
-    ListDir    dirList;
-    ListLevel  levList;
-
-    Frame      _coverFrame; // looks like the levList's outer frame
-    Label[]    _coverDesc;  // the cover text in file-empty dirs
+    Picker _picker;
 
     TextButton buttonPlay;
     TextButton buttonExit;
@@ -54,22 +51,20 @@ public:
         ListLevel.ReplayToLevelName rtl
     ) {
         super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg), title);
-        immutable int lxlg = to!int(Geom.screenXlg - 100 - 140 - 4*20);
-        dirList = new ListDir  (new Geom(20,  40, 100,  420), baseDir);
-        levList = new ListLevel(new Geom(140, 40, lxlg, 420),
-                                ListLevel.WriteFilenames.no, lcm, rtl);
+        _picker = Picker.newPicker!LevelTiler(
+            new Geom(20,  40, 280, 420),
+            new OrderFileLs);
+        _picker.basedir = baseDir;
         alias TextBut = TextButton;
         buttonPlay = new TextBut(new Geom(20,  40, infoXl,  40, From.TOP_RIG));
         preview    = new Preview(new Geom(20, 100, infoXl, 100, From.TOP_RIG));
         buttonExit = new TextBut(new Geom(20,  20, infoXl,  40, From.BOT_RIG));
-        dirList.listFileToControl = levList;
-        dirList.currentDir = baseDir;
         buttonPlay.text = Lang.browserPlay.transl;
         buttonExit.text = Lang.commonBack.transl;
         buttonPlay.hotkey = basics.user.keyMenuOkay;
         buttonExit.hotkey = basics.user.keyMenuExit;
         buttonExit.onExecute = () { _gotoMainMenu = true; };
-        addChildren(preview, dirList, levList, buttonPlay, buttonExit);
+        addChildren(preview, _picker, buttonPlay, buttonExit);
         updateWindowSubtitle();
     }
 
@@ -85,22 +80,19 @@ public:
 
     final void highlight(Filename fn)
     {
-        if (fn !is null && fn.file != null)
-            dirList.currentDir = fn;
-        if (fn != levList.currentFile)
-            levList.highlight(fn);
+        _picker.highlightFile(fn);
         updateWindowSubtitle();
         dispatchHighlightToBrowserSubclass(fn);
     }
 
 protected:
-
     // override these
     void onFileHighlight(Filename) {}
     void onFileSelect   (Filename) {}
 
     final void deleteFileRecentHighlightNeighbor()
     {
+        /+
         assert (fileRecent);
         try std.file.remove(fileRecent.rootful);
         catch (Exception e)
@@ -111,6 +103,7 @@ protected:
         levList.highlightNumber(number);
         _fileRecent = null;
         highlight(levList.currentFile);
+        +/
         playLoud(Sound.SCISSORS);
     }
 
@@ -122,33 +115,19 @@ protected:
 
     override void calcSelf()
     {
-        if (dirList.clicked) {
-            windowSubtitle = dirList.currentDir.rootless;
-            if (_fileRecent &&
-                _fileRecent.dirRootless == dirList.currentDir.dirRootless)
-                highlight(_fileRecent);
+        if (_picker.executeDir)
+            updateWindowSubtitle();
+        if (_picker.executeFile) {
+            assert (_picker.executeFileFilename !is null);
+            if (_fileRecent != MutFilename(_picker.executeFileFilename))
+                dispatchHighlightToBrowserSubclass(_fileRecent);
             else
-                highlight(null);
-        }
-        else if (levList.clicked) {
-            MutFilename cur = levList.currentFile;
-            auto button = levList.buttonLastClicked;
-            if (cur !is null && button !is null) {
-                if (button.on)
-                    // button executed for the first time
-                    dispatchHighlightToBrowserSubclass(cur);
-                else {
-                    // button execute for the second time
-                    assert (cur == _fileRecent);
-                    onFileSelect(cur);
-                }
-            }
+                onFileSelect(_fileRecent);
         }
         else if (buttonPlay.execute) {
-            if (_fileRecent !is null
-             && _fileRecent.isChildOf(dirList.currentDir)
-             && _fileRecent == MutFilename(levList.currentFile))
-                onFileSelect(_fileRecent);
+            assert (_fileRecent !is null);
+            assert (_fileRecent.dirRootless == _picker.currentDir.dirRootless);
+            onFileSelect(_fileRecent);
         }
         else if (hardware.mouse.mouseClickRight)
             _gotoMainMenu = true;
@@ -157,7 +136,7 @@ protected:
 private:
     void dispatchHighlightToBrowserSubclass(Filename fn)
     {
-        if (levList.currentFile == fn && fn !is null && fn.file != null) {
+        if (fn !is null && fn.file != null) {
             buttonPlay.show();
             _fileRecent = fn;
             onFileHighlight(fn);
@@ -171,10 +150,9 @@ private:
 
     void updateWindowSubtitle()
     {
-        assert (dirList.baseDir   .rootless.length
-            <=  dirList.currentDir.rootless.length);
-        windowSubtitle = dirList.currentDir.rootless[
-                         dirList.baseDir   .rootless.length .. $];
+        assert (_picker.basedir   .rootless.length
+            <=  _picker.currentDir.rootless.length);
+        windowSubtitle = _picker.currentDir.rootless[
+                         _picker.basedir   .rootless.length .. $];
     }
 }
-// end class
