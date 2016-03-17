@@ -125,6 +125,7 @@ public:
             };
         }
         else {
+            // Comment (C1)
             // We don't expect non-square things to be rotated by non-integer
             // amounts of quarter turns. Squares will have xdr = ydr = 0 in
             // this scope, see the variable definitions below.
@@ -141,18 +142,19 @@ public:
             immutable int xsl = al_get_bitmap_width (bit);
             immutable int ysl = al_get_bitmap_height(bit);
 
+            // Comment (C2)
             // We don't want to rotate around the center point of the source
             // bitmap. That would only be the case if the source is a square.
             // We wish to have the top-left corner of the rotated shape at x/y
             // whenever we perform a multiple of a quarter turn.
             // DTODO: Test this on Linux and Windows, whether it generates the
             // same terrain.
-            float xdr = b ? ysl/2.0 : xsl/2.0;
-            float ydr = b ? xsl/2.0 : ysl/2.0;
+            float xdr = b ? ysl/2f : xsl/2f;
+            float ydr = b ? xsl/2f : ysl/2f;
 
             if (! scal) drawFrom_at = delegate void(int x_at, int y_at)
             {
-                al_draw_rotated_bitmap(bit, xsl/2.0, ysl/2.0,
+                al_draw_rotated_bitmap(bit, xsl/2f, ysl/2f,
                     xdr + x_at, ydr + y_at,
                     rot * ALLEGRO_PI / 2,
                     mirr ? ALLEGRO_FLIP_VERTICAL : 0
@@ -160,9 +162,18 @@ public:
             };
             else drawFrom_at = delegate void(int x_at, int y_at)
             {
-                al_draw_scaled_rotated_bitmap(bit, xsl/2.0, ysl/2.0,
-                    xdr + x_at, ydr + y_at,
-                    scal, scal,
+                // Let's recap for rot == 0:
+                // (xsl, ysl) are the x- and y-length of the unscaled source.
+                // (xdr, ydr) are half of that.
+                // I multiply xdr, ydr in line (L3) below with scal, because
+                // according to comment (C2), the drawn shape's top-left corner
+                // for rot == 0 should end up at drawFrom's arguments x and y.
+                al_draw_scaled_rotated_bitmap(bit,
+                    xsl/2f, // (A): this point of the unscaled source bitmap
+                    ysl/2f, //      is drawn to...
+                    xdr * scal + x_at, // (L3) ...to this target pos...
+                    ydr * scal + y_at,
+                    scal, scal, // ...and then it's scaled relative to there
                     rot * ALLEGRO_PI / 2,
                     mirr ? ALLEGRO_FLIP_VERTICAL : 0
                 );

@@ -66,7 +66,11 @@ public:
         if (! tile)
             tile = get_gadget(fn.rootlessNoExt);
         if (tile) {
-            _cbe = new CutbitElement(new Geom(0, 0, xlg, ylg - 10), tile.cb);
+            // Adding Geom.thickg much of padding around the cutbit element.
+            // Reason: We shall not draw on the button's 3D edge.
+            _cbe = new CutbitElement(new Geom(0, Geom.thickg,
+                xlg - 2*Geom.thickg, ylg - 13, From.TOP), tile.cb);
+            _cbe.shrink = true;
             addChild(_cbe);
         }
         _text = new Label(new Geom(0, 0, xlg, 13, From.BOTTOM),
