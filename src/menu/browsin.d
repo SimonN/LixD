@@ -9,23 +9,15 @@ import level.level;
 import menu.browmain;
 
 class BrowserSingle : BrowserCalledFromMainMenu {
+private:
+    bool _gotoEditor;
+    TextButton _edit;
 
 public:
-
-    @property bool gotoEditor() const
-    {
-        if (_gotoEditor)
-            assert (fileRecent !is null);
-        return _gotoEditor;
-    }
-
     this()
     {
         super(Lang.browserSingleTitle.transl,
-            basics.globals.dirLevels,
-            ListLevel.LevelCheckmarks.yes,
-            ListLevel.ReplayToLevelName.no
-        );
+            basics.globals.dirLevels);
         super.movePreviewDown(40);
         scope (success)
             super.highlight(basics.user.singleLastLevel);
@@ -39,8 +31,14 @@ public:
         addChild(_edit);
     }
 
-protected:
+    @property bool gotoEditor() const
+    {
+        if (_gotoEditor)
+            assert (fileRecent !is null);
+        return _gotoEditor;
+    }
 
+protected:
     override void onFileHighlight(Filename fn)
     {
         assert (_edit);
@@ -60,10 +58,4 @@ protected:
             gotoGame = true;
         }
     }
-
-private:
-
-    bool _gotoEditor;
-    TextButton _edit;
 }
-// end class

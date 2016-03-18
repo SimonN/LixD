@@ -46,9 +46,7 @@ public:
     // highlight(file) with whatever is deemed the correct current file
     this(
         in string title,
-        Filename  baseDir,
-        ListLevel.LevelCheckmarks   lcm,
-        ListLevel.ReplayToLevelName rtl
+        Filename  baseDir
     ) {
         super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg), title);
         _picker = Picker.newPicker!LevelTiler(

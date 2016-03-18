@@ -13,9 +13,7 @@ class BrowserReplay : BrowserCalledFromMainMenu {
     this()
     {
         super(Lang.browserReplayTitle.transl,
-            basics.globals.dirReplays,
-            ListLevel.LevelCheckmarks.no,
-            ListLevel.ReplayToLevelName.yes);
+            basics.globals.dirReplays);
         scope (success)
             super.highlight(basics.user.replayLastLevel);
         TextButton newInfo(float y, string caption, int hotkey)

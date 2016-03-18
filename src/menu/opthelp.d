@@ -228,49 +228,23 @@ public:
 
 
 
-class ListLanguage : gui.ListFile {
-
-    this(Geom g)
-    {
-        g.yl = min(g.yl, 20 * basics.globals.dirDataTransl
-            .findRegularFilesNoRecursion(basics.globals.filenameExtTransl)
-            .length);
-        super(g);
-        currentDir = basics.globals.dirDataTransl;
-    }
-
-    protected override Button
-    newFileButton(int fromTop, int unused, Filename fn)
-    {
-        string langName;
-        auto lines = fillVectorFromFileNothrow(fn);
-        foreach (i; lines)
-            if (i.text1 == Lang.mainNameOfLanguage.to!string)
-                return standardTextButton(fromTop * 20, i.text2);
-        return standardTextButton(fromTop * 20, fn.file);
-    }
-
-    protected override void onFileHighlight()
-    {
-        buttonLastClicked.on = true; // can't deselect
-    }
-}
-
+// DTODO: re-implement what's commented out below
 class LanguageOption : Option {
 
-    private ListLanguage _lf;
+    // private ListLanguage _lf;
 
     this(Geom g, string cap)
     {
         super(g, new Label(new Geom(mostButtonsXl + spaceGuiTextX, 0,
                             g.xlg - mostButtonsXl + spaceGuiTextX, 20), cap));
-        _lf = new ListLanguage(new Geom(0, 0, mostButtonsXl, ylg));
-        addChild(_lf);
+        //_lf = new ListLanguage(new Geom(0, 0, mostButtonsXl, ylg));
+        //addChild(_lf);
     }
 
-    override void loadValue() { _lf.highlight = basics.user.fileLanguage; }
+    override void loadValue() { } //_lf.highlight = basics.user.fileLanguage; }
     override void saveValue()
     {
+        /+
         if (   _lf.currentFile !is null
             && _lf.currentFile != _lf.currentDir
             && MutFilename(_lf.currentFile) != basics.user.fileLanguage
@@ -278,5 +252,6 @@ class LanguageOption : Option {
             basics.user.fileLanguage = _lf.currentFile;
             loadUserLanguageAndIfNotExistSetUserOptionToEnglish();
         }
+        +/
     }
 }

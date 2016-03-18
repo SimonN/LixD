@@ -11,11 +11,9 @@ class BrowserCalledFromMainMenu : BrowserBase {
     // forward constructor :E
     this(
         in string   title,
-        in Filename baseDir,
-        ListLevel.LevelCheckmarks   lcm,
-        ListLevel.ReplayToLevelName rtl
+        in Filename baseDir
     ) {
-        super(title, baseDir, lcm, rtl);
+        super(title, baseDir);
     }
     @property bool          gotoGame()     const { return _gotoGame;     }
     @property inout(Replay) replayRecent() inout { return _replayRecent; }
