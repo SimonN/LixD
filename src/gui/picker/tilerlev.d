@@ -9,6 +9,7 @@ import std.string;
 import gui;
 import gui.picker.tiler;
 import level.metadata;
+import game.replay;
 
 abstract class LevelOrReplayTiler : Tiler {
 public:
@@ -40,12 +41,20 @@ public:
     this(Geom g) { super(g); }
 
 protected:
-    final override Button newFileButton(Filename fn, in int fileID)
+    final override TextButton newFileButton(Filename fn, in int fileID)
     {
         assert (fn);
-        auto levelData = new LevelMetaData(fn);
-        return new TextButton(new Geom(0, 0, xlg, buttonYlg),
-            "%d. %s".format(fileID, levelData.name));
+        const result = basics.user.getLevelResult(fn);
+        const dat = new LevelMetaData(fn);
+        auto  ret = new TextButton(new Geom(0, 0, xlg, buttonYlg),
+            "%s%d. %s".format(fileID < 9 ? "  " : null, fileID + 1, dat.name));
+        ret.alignLeft  = true;
+        ret.checkFrame = result is null       ? 0
+            : result.built    != dat.built    ? 3
+            : result.lixSaved >= dat.required ? 2 : 0;
+            // Never display the little ring for looked-at-but-didn't-solve.
+            // It makes people sad!
+        return ret;
     }
 }
 
@@ -54,9 +63,15 @@ public:
     this(Geom g) { super(g); }
 
 protected:
-    final override Button newFileButton(Filename fn, in int fileID)
+    final override TextButton newFileButton(Filename fn, in int fileID)
     {
-        // DTODO: placeholder method. Copy the relevant code here.
-        return new TextButton(new Geom(0, 0, xlg, buttonYlg), fn.file);
+        const replay = Replay.loadFromFile(fn);
+        auto  level  = new LevelMetaData(fn); // included level
+        if (level.empty)
+            level = new LevelMetaData(replay.levelFilename); // pointed-to lvl
+        auto ret = new TextButton(new Geom(0, 0, xlg, buttonYlg),
+            "%s (%s)".format(level.name, replay.playerLocalName));
+        ret.alignLeft = true;
+        return ret;
     }
 }

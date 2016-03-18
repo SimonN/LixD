@@ -50,7 +50,7 @@ public:
     ) {
         super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg), title);
         _picker = Picker.newPicker!LevelTiler(
-            new Geom(20,  40, 280, 420),
+            new Geom(20,  40, 320, 420),
             new OrderFileLs);
         _picker.basedir = baseDir;
         alias TextBut = TextButton;
