@@ -7,29 +7,23 @@ import level.level;
 import menu.browbase;
 
 class BrowserCalledFromMainMenu : BrowserBase {
+private:
+    bool     _gotoGame;
+    Replay   _replayRecent;
+    Level    _levelRecent;
 
+public:
     // forward constructor :E
-    this(
-        in string   title,
-        in Filename baseDir
-    ) {
-        super(title, baseDir);
-    }
+    this(string title, Filename baseDir) { super(title, baseDir); }
+
     @property bool          gotoGame()     const { return _gotoGame;     }
     @property inout(Replay) replayRecent() inout { return _replayRecent; }
     @property inout(Level)  levelRecent()  inout { return _levelRecent;  }
 
 protected:
-
     @property bool   gotoGame(bool b)       { return _gotoGame     = b; }
     @property Replay replayRecent(Replay r) { return _replayRecent = r; }
     @property Level  levelRecent (Level l)  { return _levelRecent  = l; }
-
-private:
-
-    bool     _gotoGame;
-    Replay   _replayRecent;
-    Level    _levelRecent;
 }
 
 /* How to use the DeleteMixin:
@@ -40,6 +34,9 @@ private:
  */
 mixin template DeleteMixin()
 {
+    private Button _delete;
+    private MsgBox _boxDelete;
+
     private void calcDeleteMixin()
     {
         assert (_delete);
@@ -58,6 +55,4 @@ mixin template DeleteMixin()
             addFocus(_boxDelete);
         }
     }
-    private Button _delete;
-    private MsgBox _boxDelete;
 }

@@ -18,11 +18,10 @@ public:
     {
         super(Lang.browserSingleTitle.transl,
             basics.globals.dirLevels);
-        super.movePreviewDown(40);
         scope (success)
             super.highlight(basics.user.singleLastLevel);
-        _edit = new TextButton(new Geom(20, 80, infoXl, 40, From.TOP_RIGHT));
-        _edit.text   = Lang.browserEdit.transl;
+        _edit = new TextButton(new Geom(infoX + infoXl/3, 80,
+            infoXl/3, 40, From.BOTTOM_LEFT), Lang.browserEdit.transl);
         _edit.hotkey = basics.user.keyMenuEdit;
         _edit.onExecute = () {
             assert (fileRecent !is null);

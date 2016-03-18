@@ -29,18 +29,16 @@ private:
     MutFilename _fileRecent; // only used for highlighting, not selecting
 
     Picker _picker;
+    UpOneDirButton _upOneDir;
 
     TextButton buttonPlay;
     TextButton buttonExit;
     Preview    preview;
 
 public:
-    enum  float infoXl = 140;
-    final float infoY() const
-    {
-        assert (preview);
-        return preview.yg + preview.ylg + 20;
-    }
+    enum  float pickerXl = 320;
+    final float infoX()  const { return pickerXl + 40;       }
+    final float infoXl() const { return xlg - pickerXl - 60; }
 
     // after calling this(), it's a good idea to call
     // highlight(file) with whatever is deemed the correct current file
@@ -50,19 +48,20 @@ public:
     ) {
         super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg), title);
         _picker = Picker.newPicker!LevelTiler(
-            new Geom(20,  40, 320, 420),
+            new Geom(20,  40, pickerXl, 420),
             new OrderFileLs);
         _picker.basedir = baseDir;
-        alias TextBut = TextButton;
-        buttonPlay = new TextBut(new Geom(20,  40, infoXl,  40, From.TOP_RIG));
-        preview    = new Preview(new Geom(20, 100, infoXl, 100, From.TOP_RIG));
-        buttonExit = new TextBut(new Geom(20,  20, infoXl,  40, From.BOT_RIG));
-        buttonPlay.text = Lang.browserPlay.transl;
-        buttonExit.text = Lang.commonBack.transl;
+        _upOneDir = new UpOneDirButton(new Geom(infoX, 20,
+            infoXl/2, 40, From.BOTTOM_LEFT), _picker);
+        buttonExit = new TextButton(new Geom(infoX + infoXl/2, 20,
+            infoXl/2, 40, From.BOTTOM_LEFT), Lang.commonBack.transl);
+        buttonPlay = new TextButton(new Geom(infoX, 80,
+            infoXl/3, 40, From.BOTTOM_LEFT), Lang.browserPlay.transl);
+        preview    = new Preview(new Geom(20, 60, infoXl, 160, From.TOP_RIG));
         buttonPlay.hotkey = basics.user.keyMenuOkay;
         buttonExit.hotkey = basics.user.keyMenuExit;
         buttonExit.onExecute = () { _gotoMainMenu = true; };
-        addChildren(preview, _picker, buttonPlay, buttonExit);
+        addChildren(preview, _picker, _upOneDir, buttonPlay, buttonExit);
         updateWindowSubtitle();
     }
 
@@ -78,9 +77,17 @@ public:
 
     final void highlight(Filename fn)
     {
-        _picker.highlightFile(fn);
+        if (fn && _picker.highlightFile(fn)) {
+            buttonPlay.show();
+            _fileRecent = fn;
+            onFileHighlight(fn);
+        }
+        else {
+            buttonPlay.hide();
+            // keep _fileRecent as it is, we might highlight that again later
+            onFileHighlight(null);
+        }
         updateWindowSubtitle();
-        dispatchHighlightToBrowserSubclass(fn);
     }
 
 protected:
@@ -105,26 +112,23 @@ protected:
         playLoud(Sound.SCISSORS);
     }
 
-    final void movePreviewDown(float plusY)
-    {
-        assert (preview);
-        preview.move(preview.geom.x, preview.geom.y + plusY);
-    }
-
     override void calcSelf()
     {
-        if (_picker.executeDir)
-            updateWindowSubtitle();
         if (_picker.executeFile) {
-            assert (_picker.executeFileFilename !is null);
-            if (_fileRecent != MutFilename(_picker.executeFileFilename))
-                dispatchHighlightToBrowserSubclass(_fileRecent);
+            MutFilename clicked = _picker.executeFileFilename;
+            assert (clicked !is null);
+            if (clicked != _fileRecent)
+                highlight(clicked);
             else
                 onFileSelect(_fileRecent);
         }
+        else if (_picker.executeDir || _upOneDir.execute)
+            // A better design of the picker would get rid of checking
+            // _upOneDir here. See header comment in gui.picker.uponedir.
+            highlight(currentDirContainsFileRecent ? _fileRecent : null);
         else if (buttonPlay.execute) {
             assert (_fileRecent !is null);
-            assert (_fileRecent.dirRootless == _picker.currentDir.dirRootless);
+            assert (currentDirContainsFileRecent);
             onFileSelect(_fileRecent);
         }
         else if (hardware.mouse.mouseClickRight)
@@ -132,25 +136,17 @@ protected:
     }
 
 private:
-    void dispatchHighlightToBrowserSubclass(Filename fn)
-    {
-        if (fn !is null && fn.file != null) {
-            buttonPlay.show();
-            _fileRecent = fn;
-            onFileHighlight(fn);
-        }
-        else {
-            buttonPlay.hide();
-            // keep _fileRecent as it is, we might highlight that again later
-            onFileHighlight(null);
-        }
-    }
-
     void updateWindowSubtitle()
     {
         assert (_picker.basedir   .rootless.length
             <=  _picker.currentDir.rootless.length);
         windowSubtitle = _picker.currentDir.rootless[
                          _picker.basedir   .rootless.length .. $];
+    }
+
+    @property bool currentDirContainsFileRecent() const
+    {
+        return _fileRecent
+            && _fileRecent.dirRootless == _picker.currentDir.dirRootless;
     }
 }

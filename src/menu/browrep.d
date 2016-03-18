@@ -16,15 +16,16 @@ class BrowserReplay : BrowserCalledFromMainMenu {
             basics.globals.dirReplays);
         scope (success)
             super.highlight(basics.user.replayLastLevel);
-        TextButton newInfo(float y, string caption, int hotkey)
+        TextButton newInfo(float x, string caption, int hotkey)
         {
-            auto b = new TextButton(new Geom(20, y, infoXl, 20, From.TOP_RIG));
+            auto b = new TextButton(new Geom(infoX + x*infoXl/3, 80,
+                infoXl/3, 40, From.BOTTOM_LEFT));
             b.text = caption;
             b.hotkey = hotkey;
             return b;
         }
-        _delete  = newInfo(infoY, Lang.browserDelete.transl, keyMenuDelete);
-        _extract = newInfo(infoY + 20, "(extract)", // Lang.browserExtract.transl;
+        _delete  = newInfo(1, Lang.browserDelete.transl, keyMenuDelete);
+        _extract = newInfo(2,"(extract)", // Lang.browserExtract.transl;
                            keyMenuExport);
         addChildren(_delete, _extract);
     }

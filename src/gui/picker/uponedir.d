@@ -6,6 +6,12 @@ module gui.picker.uponedir;
  *
  * This doesn't feel right. Without a mediator for both the Picker and the
  * UpOneDirButton, the button must unhide itself, thus override work().
+ *
+ * Another problem: The picker doesn't know about the UpOneDirButton,
+ * thus needs a bool variable to store that its dir has been changed this.
+ * Reason: The picker's public interface allows querying whether its dir
+ * has been changed this tick. That public function should return
+ * UpOneDir.execute instead.
  */
 
 import basics.user;

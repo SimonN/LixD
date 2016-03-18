@@ -1,6 +1,7 @@
 module gui.picker.picker;
 
 import std.algorithm;
+import std.conv;
 
 import gui;
 import gui.picker;
@@ -64,13 +65,20 @@ public:
         return _ls.files[executeFileID];
     }
 
-    void highlightFile(Filename fn)
+    bool highlightFile(Filename fn)
     {
+        if (! fn)
+            highlightNothing();
         currentDir = fn;
-        if (int id = _ls.files.countUntil(fn) == -1)
-            _tiler.highlightFile(id);
-        else
-            _tiler.highlightNothing();
+        immutable int id = _ls.files.countUntil(fn).to!int;
+        if (id >= 0) {
+            highlightFile(id);
+            return true;
+        }
+        else {
+            highlightNothing();
+            return false;
+        }
     }
 
 protected:
