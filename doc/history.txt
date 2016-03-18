@@ -1,6 +1,22 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.41
+------
+
+2016-03-18
+
+Singleplayer browser, replay browser, and editor terrain browser all use
+the new file picker.
+
+Bugs:
+*   Keyboard controls for file up/down are missing. Regression due to rewrite.
+*   Scrollbar doesn't react to mouse wheel, or to clicks on the track or car.
+*   Replay browser formats the button like the level browser. There is a
+    child class for replay button formatting, which I am not using yet.
+
+Misdesign: Picker should control UpOneDirButton. See comment in uponedir.d.
+
 0.2.40
 ------
 
