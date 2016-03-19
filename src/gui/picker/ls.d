@@ -43,8 +43,8 @@ public:
 protected:
     bool searchCriterion(Filename) const { return true; }
     void beforeSortingForCurrentDir() { }
-    void sortDirs (MutFilename[]) { }
-    void sortFiles(MutFilename[]) { }
+    void sortDirs (MutFilename[]) const { }
+    void sortFiles(MutFilename[]) const { }
 }
 
 class AlphabeticalLs : Ls {
@@ -59,6 +59,11 @@ private:
     string[] _order;
 
 protected:
+    override bool searchCriterion(Filename fn) const
+    {
+        return fn.preExtension != basics.globals.preExtHiddenFile;
+    }
+
     final override void beforeSortingForCurrentDir()
     {
         try _order = fillVectorFromFileRaw(new Filename(

@@ -47,13 +47,14 @@ immutable preExtGoal                 = 'G';
 immutable preExtTrap                 = 'T';
 immutable preExtFire                 = 'F';
 immutable preExtWater                = 'W';
+immutable preExtHiddenFile           = 'X';
 
 // keys for saving/loading the global config file
 immutable cfgUserName                = "USER_NAME";
 immutable cfgUserNameAsk             = "USER_NAME_ASK";
 
-immutable cfgIPLastUsed             = "IP_LAST_USED";
-immutable cfgIPCentralServer        = "IP_CENTRAL_SERVER";
+immutable cfgIPLastUsed              = "IP_LAST_USED";
+immutable cfgIPCentralServer         = "IP_CENTRAL_SERVER";
 immutable cfgServerPort              = "SERVER_PORT";
 
 // keys for saving/loading level files
