@@ -157,37 +157,36 @@ class Builder : BrickCounter {
         //   XX - the effective coordinate of the checking Lixxie. She has
         //        already moved up from inside the brick, but not yet
         //        walked forward.
-        //   11 - numbers denote the checks in the corresp. code line below
+        //   WW - checked for wallNearFoot
+        //   TT - checked for insideThinHorizontalBeam
+        //   WT - checked for both wallNearFoot and insideThinHorizontalBeam
         //
-        //
-        //                   33  22  11
+        //                   WW  WW
         //
         //               XX
-        //           44  44  34  24  11
+        //           TT  TT  WT  WT
         //           ()()()()()()()()()()()()
         //           ()()()()()()()()()()()()
         //   [][][][][][][][][][][][]
         //   [][][][][][][][][][][][]
 
-        // 1, 2, 3 in the image above: don't build through walls
-        // +6|-1 is the coordinate above the brick, not +6|-2, because:
+        // For wallNearFoot, we check at height +1 and too at height -2.
+        // Why also at height -2? We want to allow building staircases on
+        // top of existing staircases.
+        // Why then at height +1 at all? We want to build up and connect to
+        // a thin horizontal beam. To stop at that beam, we have do check
+        // separately for insideThinHorizontalBeam.
+        immutable bool wallNearFoot
+            =  (isSolid(4, 1) && isSolid(4, -2))
+            || (isSolid(2, 1) && isSolid(2, -2));
+        // Height +1 is the coordinate above the brick, not height 0, because:
         // In rare cases, e.g. lix inside thin horizontal beam, the lix
         // wouldn't build up high enough to make the staircase
         // connect with the beam.
-        // The three isSolid on the right-hand side enable building
-        // staircases on top of other staircases. At least that's how
-        // I explained it in 2006. I haven't checked it thoroughly in 2015.
-        immutable bool wallNearFoot
-            =  (isSolid(6, 1) && isSolid(6, -2))
-            || (isSolid(4, 1) && isSolid(4, -2))
-            || (isSolid(2, 1) && isSolid(2, -2));
-
-        // 4 in the image above check for being inside a thin horiz. beam
         immutable bool insideThinHorizontalBeam = isSolid(4, 1)
-            && isSolid(2, 1) && isSolid(0,  1) && isSolid(-2, 1);
-
-        immutable bool hitHead = isSolid(6, -16) || isSolid(4, -16);
-
+            && isSolid(2, 1) && isSolid(0, 1) && isSolid(-2, 1);
+        // The check for hitHead is not shown in the ASCII art comment above.
+        immutable bool hitHead = isSolid(4, -16);
         if (wallNearFoot || insideThinHorizontalBeam || hitHead) {
             turn();
             if (fullyInsideTerrain)
