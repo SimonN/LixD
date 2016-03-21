@@ -31,8 +31,15 @@ public:
         addChildren(_picker, _upOneDir, _cancel);
     }
 
-    bool done() const {
-        return chosenTile != null || _cancel.execute || mouseClickRight;
+    bool done() const
+    {
+        return chosenTile !is null || _cancel.execute || mouseClickRight;
     }
-    string chosenTile() const { return null; }
+
+    Filename chosenTile() const
+    {
+        if (_picker.executeFile)
+            return _picker.executeFileFilename;
+        return null;
+    }
 }

@@ -5,12 +5,12 @@ import enumap;
 public import level.levelio : saveToFile;
 
 import file.date;
-import file.io; // IoLine for Pos; all other I/O is in module level.levelio
 import file.filename;
 import file.language;
 import tile.phymap;
 import graphic.color;
 import graphic.torbit;
+import level.addtile;
 import level.levelio;
 import level.levdraw;
 import tile.pos;
@@ -93,6 +93,9 @@ public:
         return _status != LevelStatus.BAD_FILE_NOT_FOUND
             && _status != LevelStatus.BAD_EMPTY;
     }
+
+    // called from the Editor
+    void addTileWithCenterAt(Filename fn, Point p) { implCenter(this, fn, p); }
 
     void drawTerrainTo(Torbit tb, Phymap lo = null) const
     {

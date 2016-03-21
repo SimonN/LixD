@@ -7,7 +7,8 @@ module tile.pos;
  * Moving and drawing on torus maps might be done differently than normal.
  */
 
-import basics.rect;
+public import basics.rect;
+
 import file.io;
 import tile.tilelib;
 import tile.terrain;

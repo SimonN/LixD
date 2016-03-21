@@ -17,12 +17,10 @@ import file.filename;
 import file.io;
 import file.log;
 import file.search; // test if file exists
+import level.addtile;
 import level.level;
 import lix.enums;
-import tile.pos;
 import tile.gadtile;
-import tile.terrain;
-import tile.tilelib;
 
 // private FileFormat get_file_format(in Filename);
 
@@ -165,46 +163,6 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
                 nr = lix.enums.skillInfinity;
 }}
 
-// this gets called with the raw data, it's a factory
-private void add_object_from_ascii_line(
-    Level     level,
-    in string text1,
-    in int    nr1,
-    in int    nr2,
-    in string text2
-) {
-    const(TerrainTile) ter = get_terrain(text1);
-    const(GadgetTile)  gad = ter is null ? get_gadget (text1) : null;
-    if (ter && ter.cb) {
-        TerPos newpos = new TerPos(ter);
-        newpos.x  = nr1;
-        newpos.y  = nr2;
-        foreach (char c; text2) switch (c) {
-            case 'f': newpos.mirr = ! newpos.mirr;         break;
-            case 'r': newpos.rot  =  (newpos.rot + 1) % 4; break;
-            case 'd': newpos.dark = ! newpos.dark;         break;
-            case 'n': newpos.noow = ! newpos.noow;         break;
-            default: break;
-        }
-        level.terrain ~= newpos;
-    }
-    else if (gad && gad.cb) {
-        GadPos newpos = new GadPos(gad);
-        newpos.x  = nr1;
-        newpos.y  = nr2;
-        if (gad.type == GadType.HATCH)
-            foreach (char c; text2) switch (c) {
-                case 'r': newpos.hatchRot = ! newpos.hatchRot; break;
-                default: break;
-            }
-        level.pos[gad.type] ~= newpos;
-    }
-    else {
-        level._status = LevelStatus.BAD_IMAGE;
-        logf("Missing image `%s'", text1);
-    }
-}
-
 
 
 private void load_level_finalize(Level level)
@@ -334,6 +292,6 @@ public void saveToFile(const(Level) l, std.stdio.File file)
                 if (ioLine.text1 != null)
                     file.writeln(ioLine);
     }
-    l.pos.each!(posvec => saveOneTileVector!GadPos(posvec));
-    saveOneTileVector!TerPos(l.terrain);
+    l.pos.each!(posvec => saveOneTileVector(posvec));
+    saveOneTileVector(l.terrain);
 }

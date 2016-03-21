@@ -14,6 +14,8 @@ void implEditorCalc(Editor editor) { with (editor)
 {
     if (_terrainBrowser) {
         if (_terrainBrowser.done) {
+            _level.addTileWithCenterAt(_terrainBrowser.chosenTile,
+                                       _map.mouseOnLand);
             rmFocus(_terrainBrowser);
             _terrainBrowser = null;
             _panel.allButtonsOff();
