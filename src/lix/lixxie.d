@@ -169,8 +169,8 @@ this(
 ) {
     mixin (tmpOutsideWorld);
     _style = outsideWorld.tribe.style;
-    super(getLixSpritesheet(_style), env, even(new_ex) - exOffset,
-                                               new_ey  - eyOffset);
+    super(getLixSpritesheet(_style), env, Point(even(new_ex) - exOffset,
+                                                     new_ey  - eyOffset));
     _job  = Job.factory(this, Ac.faller);
     frame = 4;
     _ex   = new_ex.even;
@@ -188,7 +188,7 @@ this(in Lixxie rhs)
     _ey    = rhs._ey;
     _flags = rhs._flags;
     super(graphic.internal.getLixSpritesheet(_style), rhs.env,
-        _ex - exOffset, _ey - eyOffset);
+        Point(_ex - exOffset, _ey - eyOffset));
 
     dir = rhs.dir; // important to set super's mirr and rot
     _flingX = rhs._flingX;
@@ -232,8 +232,7 @@ void addEncountersFromHere()
 
 package void repositionSprite()
 {
-    super.x = _ex - exOffset + _job.spriteOffsetX;
-    super.y = _ey - eyOffset;
+    super.loc = Point(_ex - exOffset + _job.spriteOffsetX, _ey - eyOffset);
 }
 
 @property int

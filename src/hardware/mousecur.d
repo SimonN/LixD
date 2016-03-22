@@ -11,6 +11,7 @@ module hardware.mousecur;
  */
 
 import basics.globals;
+import basics.rect;
 import graphic.cutbit;
 import graphic.internal;
 import graphic.graphic;
@@ -46,7 +47,7 @@ void
 draw()
 {
     assert (mouseCursor, "call hardware.mousecur.initialize() before drawing");
-    mouseCursor.x = hardware.mouse.mouseX - mouseCursor.xl/2 + 1;
-    mouseCursor.y = hardware.mouse.mouseY - mouseCursor.yl/2 + 1;
+    mouseCursor.loc = Point(hardware.mouse.mouseX - mouseCursor.xl/2 + 1,
+                            hardware.mouse.mouseY - mouseCursor.yl/2 + 1);
     mouseCursor.drawToCurrentTarget();
 }

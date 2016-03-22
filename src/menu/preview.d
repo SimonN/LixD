@@ -4,6 +4,8 @@ module menu.preview;
  * Part of package menu, not gui, because only the large menus use it.
  */
 
+import std.conv; // float to int for cutbit drawing
+
 import basics.alleg5;
 import basics.globals;
 import basics.help; // rounding
@@ -81,12 +83,17 @@ drawSelf()
         // target is guiosd already, because we're in an Element's draw
         al_draw_filled_rectangle(xs, ys, xs + xls, ys + yls, undrawColor);
 
-    iconStatus.set_xy(xs, ys);               iconStatus.draw(guiosd);
-    iconStatus.y = ys + yls - iconStatus.yl; iconStatus.draw(guiosd);
-    iconStatus.x = xs + xls - iconStatus.xl; iconStatus.draw(guiosd);
-    iconStatus.y = ys;                       iconStatus.draw(guiosd);
+    void stampAt(in float x, in float y)
+    {
+        iconStatus.loc = Point(x.to!int, y.to!int);
+        iconStatus.draw(guiosd);
+    }
+    stampAt(xs,                       ys);
+    stampAt(xs,                       ys + yls - iconStatus.yl);
+    stampAt(xs + xls - iconStatus.xl, ys);
+    stampAt(xs + xls - iconStatus.xl, ys + yls - iconStatus.yl);
 
-    iconTorus.set_xy(xs, ys);
+    iconTorus.loc = Point(xs.to!int, ys.to!int);
     iconTorus.draw(guiosd);
 }
 
