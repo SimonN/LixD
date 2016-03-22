@@ -444,10 +444,8 @@ override void draw(Torbit tb) const
             tb.setPixel(fuseX + x  , fuseY + y  , color[COL_GREY_FUSE_D]);
             */
         }
-        // draw the flame
         auto cb = getInternal(fileImageFuseFlame);
-        cb.draw(tb, fuseX + x - cb.xl/2,
-                    fuseY + y - cb.yl/2, ploderTimer % cb.xfs, 0);
+        cb.draw(tb, fuseXy + Point(x, y) - cb.len/2, ploderTimer % cb.xfs, 0);
     }
     // end of drawing the fuse
 

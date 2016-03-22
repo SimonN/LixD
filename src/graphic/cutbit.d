@@ -3,6 +3,8 @@ module graphic.cutbit;
 import std.algorithm; // max(-x, 0) in drawDirectlyToScreen()
 import std.string; // format
 
+public import basics.rect;
+
 import basics.alleg5;
 import basics.help; // positiveMod
 import basics.matrix; // which frames exist?
@@ -182,8 +184,7 @@ bool frameExists(in int fx, in int fy) const
 
 void draw(
     Torbit       targetTorbit,
-    const int    x = 0,
-    const int    y = 0,
+    const Point  targetCorner,
     const int    xf = 0,
     const int    yf = 0,
     const bool   mirr = false,
@@ -196,27 +197,26 @@ void draw(
     if (bitmap && xf >= 0 && yf >= 0 && xf < _xfs && yf < _yfs) {
         Albit sprite = create_sub_bitmap_for_frame(xf, yf);
         scope (exit) al_destroy_bitmap(sprite);
-        targetTorbit.drawFrom(sprite, x, y, mirr, rot, scal);
+        targetTorbit.drawFrom(sprite, targetCorner, mirr, rot, scal);
     }
     // no frame inside the cutbit has been specified, or the cutbit
     // has a null bitmap
     else {
-        drawMissingFrameError(targetTorbit, x, y, xf, yf);
+        drawMissingFrameError(targetTorbit, targetCorner, xf, yf);
     }
 }
 
 void draw(
-    Torbit    targetTorbit,
-    in int    x,
-    in int    y,
-    in bool   mirr,
-    int       rot,
-    in Mode   mode) const
+    Torbit   targetTorbit,
+    in Point targetCorner,
+    in bool  mirr,
+    int      rot,
+    in Mode  mode) const
 {
     assert (targetTorbit, "trying to draw onto null torbit");
 
     if (! bitmap) {
-        drawMissingFrameError(targetTorbit, x, y, 0, 0);
+        drawMissingFrameError(targetTorbit, targetCorner, 0, 0);
         return;
     }
     // only one frame allowed, so we don't have to make sub-bitmaps
@@ -229,12 +229,12 @@ void draw(
     final switch (mode) {
     case Mode.NORMAL:
         // this is very much like the other draw function
-        targetTorbit.drawFrom(cast (Albit) bitmap, x, y, mirr, rot * 1.0f);
+        targetTorbit.drawFrom(bitmap, targetCorner, mirr, rot * 1.0f);
         break;
     case Mode.DARK:
     case Mode.DARK_EDITOR:
         with (BlenderMinus)
-            targetTorbit.drawFrom(cast (Albit) bitmap, x, y, mirr, rot);
+            targetTorbit.drawFrom(bitmap, targetCorner, mirr, rot);
         break;
     case Mode.NOOW:
         // DTODO: implement NOOW drawing
@@ -246,7 +246,7 @@ void draw(
 // end function draw with mode
 
 void
-drawToCurrentTarget(in int x, in int y, in int xf = 0, in int yf = 0) const
+drawToCurrentTarget(in Point targetCorner, in int xf = 0, in int yf = 0) const
 {
     assert (display);
     if (xf < 0 || xf >= _xfs
@@ -254,15 +254,16 @@ drawToCurrentTarget(in int x, in int y, in int xf = 0, in int yf = 0) const
     // usually, select only the correct frame. If we'd draw off the screen
     // to the left or top, instead do extra cutting by passing > 0 to the
     // latter two args.
-    Albit sprite = create_sub_bitmap_for_frame(xf, yf, max(-x, 0), max(-y, 0));
+    Albit sprite = create_sub_bitmap_for_frame(xf, yf,
+        max(-targetCorner.x, 0), max(-targetCorner.y, 0));
     scope (exit)
         al_destroy_bitmap(sprite);
-    al_draw_bitmap(sprite, max(0, x), max(0, y), 0);
+    al_draw_bitmap(sprite, max(0, targetCorner.x), max(0, targetCorner.y), 0);
 }
 
 private:
     void drawMissingFrameError(
-        Torbit torbit, in int x, in int y, in int fx, in int fy) const
+        Torbit torbit, in Point targetCorner, in int fx, in int fy) const
     {
         string str = "File N/A";
         AlCol  col = color.cbBadBitmap;
@@ -271,7 +272,7 @@ private:
             col = color.cbBadFrame;
         }
         auto drata = DrawingTarget(torbit.albit);
-        drawText(djvuS, str, x, y, col);
+        drawText(djvuS, str, targetCorner.x, targetCorner.y, col);
     }
 
     // this is used by the first draw(), and by drawDirectlyToScreen()

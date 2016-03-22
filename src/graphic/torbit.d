@@ -98,12 +98,22 @@ public:
     // Draw the entire Albit onto (Torbit this). Can take non-integer quarter
     // turns as (double rot).
     void drawFrom(
-        Albit bit,
+        const(Albit) source,
+        in Point targetCorner,
+        bool mirr = false,
+        double rot = 0,
+        double scal = 0
+    ) {
+        drawFrom(source, targetCorner.x, targetCorner.y, mirr, rot, scal);
+    }
+    void drawFrom(
+        const(Albit) source,
         in int x, in int y,
         bool mirr = false,
         double rot = 0,
         double scal = 0
     ) {
+        Albit bit = cast (Albit) source; // A5 is not typesafe
         assert (bit, "can't blit the null bitmap onto Torbit");
         rot = std.math.fmod(rot, 4);
 

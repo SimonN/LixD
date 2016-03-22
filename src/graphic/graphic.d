@@ -109,16 +109,15 @@ public:
         if (mode == Cutbit.Mode.NORMAL)
             // This calls the virtual xf(), yf() instead of using _xf, _yf.
             // We want to allow Lixxie to override that with frame and ac.
-            cutbit.draw(mutableGround, _loc.x, _loc.y, xf, yf, _mirror, _rot);
+            cutbit.draw(mutableGround, _loc, xf, yf, _mirror, _rot);
         else
-            cutbit.draw(mutableGround, _loc.x, _loc.y,
-                                       _mirror, to!int(_rot), _mode);
+            cutbit.draw(mutableGround, _loc, _mirror, to!int(_rot), _mode);
     }
 
     // Ignore (Topology env) and mirr/rotat; and blit immediately.
     // Only used for mouse cursor and replay sign.
     void drawToCurrentTarget() const
     {
-        cutbit.drawToCurrentTarget(_loc.x, _loc.y, _xf, _yf);
+        cutbit.drawToCurrentTarget(_loc, _xf, _yf);
     }
 }

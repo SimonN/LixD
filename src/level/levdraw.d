@@ -27,7 +27,7 @@ package void implDrawTerrainTo(in Level level, Torbit tb, Phymap lookup)
 
 private void drawPosGadget(in GadPos po, Torbit ground)
 {
-    po.ob.cb.draw(ground, po.point.x, po.point.y,
+    po.ob.cb.draw(ground, po.point,
         0, 0, // draw top-left frame. DTODO: Still OK for triggered traps?
         0, // mirroring
         // hatch rotation: not for drawing, only for spawn direction
@@ -43,7 +43,7 @@ private void drawPosTerrain(in TerPos po, Torbit ground, Phymap lookup)
                      : po.dark ? Cutbit.Mode.DARK
                      :           Cutbit.Mode.NORMAL;
     with (Zone(profiler, "Level.drawPos to VRAM " ~ mode.to!string)) {
-        cb.draw(ground, po.point.x, po.point.y, po.mirr, po.rot, mode);
+        cb.draw(ground, po.point, po.mirr, po.rot, mode);
     }
     if (! lookup)
         return;

@@ -24,6 +24,15 @@ import lix.enums;
 
 // not a class, I'd like to avoid GC for many flying pixels
 struct Debris {
+    const(Type) type;
+    int timeToLive;
+    int x, y;
+    int speedX, speedY;
+    int frame; // yf for flying tools, xf for the Ac on arrows
+    union {
+        Style style; // for arrows
+        AlCol col;   // for particles
+    }
 
     enum Type {
         arrow,
@@ -34,16 +43,6 @@ struct Debris {
     }
 
     enum arrowTimeToLive = 50;
-
-    const(Type) type;
-    int timeToLive;
-    int x, y;
-    int speedX, speedY;
-    int frame; // yf for flying tools, xf for the Ac on arrows
-    union {
-        Style style; // for arrows
-        AlCol col;   // for particles
-    }
 
     static auto newArrow(in int ex, in int ey, in Style style, in int xf)
     {
@@ -126,8 +125,8 @@ private:
         auto cbA = getInternal(fileImageGameArrow);
         auto cbI = getSkillButtonIcon(style);
         // x and y are the bottom tip of the arrow
-        cbA.draw(ground, x - cbA.xl/2, y - cbA.yl);
-        cbI.draw(ground, x - cbI.xl/2, y - cbA.yl*15/16, frame);
+        cbA.draw(ground, Point(x - cbA.xl/2, y - cbA.yl));
+        cbI.draw(ground, Point(x - cbI.xl/2, y - cbA.yl*15/16), frame);
     }
 
     void drawFlyingTool(Torbit ground) { }
@@ -135,9 +134,9 @@ private:
     void drawPlosion(Torbit ground, in Filename fn)
     {
         auto cb = getInternal(fn);
-        cb.draw(ground, x - cb.xl/2,
-                        y - cb.yl/2 + game.mask.explodeMaskOffsetY,
-                        clamp(cb.xfs - timeToLive, 0, cb.xfs - 1));
+        cb.draw(ground, Point(x - cb.xl/2,
+                              y - cb.yl/2 + game.mask.explodeMaskOffsetY),
+                clamp(cb.xfs - timeToLive, 0, cb.xfs - 1));
     }
 
     void drawParticle(Torbit ground) { }

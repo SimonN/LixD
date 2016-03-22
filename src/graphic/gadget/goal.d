@@ -46,9 +46,9 @@ private:
                 continue;
             auto c = graphic.internal.getPanelInfoIcon(t.style);
             c.draw(mutableGround,
-                x + tile.triggerX + tile.triggerXl / 2 - c.xl / 2
+                Point(x + tile.triggerX + tile.triggerXl / 2 - c.xl / 2
                   + (20 * offset++) - 10 * (tribesLen - 1),
-                max(y, y + yl - 70),
+                max(y, y + yl - 70)),
                 Ac.walker, 0);
         }
     }
@@ -58,9 +58,9 @@ private:
         if (! state.goalsLocked)
             return;
         const(Cutbit) c = getInternal(fileImageMouse);
-        c.draw(mutableGround,
+        c.draw(mutableGround, Point(
             x + tile.triggerX + tile.triggerXl / 2 - c.xl / 2,
-            y + tile.triggerY + tile.triggerYl / 2 - c.yl,
+            y + tile.triggerY + tile.triggerYl / 2 - c.yl),
             2, 2); // (2,2) are the (xf,yf) of the international "no" sign
     }
 

@@ -39,14 +39,15 @@ protected:
             // what this.geom.from says. Cutbits must be drawn to scale,
             // they look ugly if scaled up. GUI elements are loaded in an
             // appropriate size from disk.
-            cutbit.draw(guiosd, cbX.to!int, cbY.to!int, _xf, _yf);
+            cutbit.draw(guiosd, Point(cbX.to!int, cbY.to!int), _xf, _yf);
         else {
             // The cutbit is too large. Shrink, preserving the aspect ratio.
             immutable scal = min(xls / cutbit.xl, yls / cutbit.yl);
             static assert (is (typeof(scal) == immutable(float)));
             cbX = xs + (xls - cutbit.xl * scal) / 2f;
             cbY = ys + (yls - cutbit.yl * scal) / 2f;
-            cutbit.draw(guiosd, cbX.to!int, cbY.to!int, _xf, _yf, 0, 0, scal);
+            cutbit.draw(guiosd, Point(cbX.to!int, cbY.to!int),
+                _xf, _yf, 0, 0, scal);
         }
     }
 }

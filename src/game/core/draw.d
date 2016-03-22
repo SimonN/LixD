@@ -91,7 +91,6 @@ void drawReplaySign(Game game)
     if (! game.replaying)
         return;
     const(Cutbit) rep = getInternal(fileImageGameReplay);
-    rep.drawToCurrentTarget(0,
-        (rep.yl/5 * (1 + sin(timerTicks * 0.08f))).to!int
-    );
+    rep.drawToCurrentTarget(Point(0,
+        (rep.yl/5 * (1 + sin(timerTicks * 0.08f))).to!int));
 }

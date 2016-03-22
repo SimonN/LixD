@@ -32,7 +32,7 @@ void drawTerrainToSeparateMap(Editor editor) {
     editor._mapTerrain.clearToColor(color.transp);
     foreach (t; editor._level.terrain)
         if (auto cb = t.dark ? t.ob.dark : t.ob.cb)
-            cb.draw(editor._mapTerrain, t.point.x, t.point.y, t.mirr, t.rot,
+            cb.draw(editor._mapTerrain, t.point, t.mirr, t.rot,
                     t.dark ? Cutbit.Mode.DARK_EDITOR : Cutbit.Mode.NORMAL);
 }}
 
@@ -57,7 +57,7 @@ void drawGadgets(Editor editor)
     foreach (gadgetList; editor._level.pos)
         foreach (g; gadgetList) {
             assert (g.ob && g.ob.cb);
-            g.ob.cb.draw(editor._map, g.point.x, g.point.y);
+            g.ob.cb.draw(editor._map, g.point);
         }
 }
 

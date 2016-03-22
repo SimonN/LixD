@@ -87,9 +87,7 @@ protected:
     {
         if (_blinkNow && blinkStyle != Style.garden) {
             const(Cutbit) c = getPanelInfoIcon(blinkStyle);
-            c.draw(mutableGround, x + tile.triggerX - c.xl / 2,
-                                  y + tile.triggerY - c.yl / 2,
-                                  Ac.walker, 0);
+            c.draw(mutableGround, loc + tile.trigger - c.len/2, Ac.walker, 0);
         }
     }
 
@@ -97,9 +95,9 @@ protected:
     {
         // draw arrow pointing into the hatch's direction
         const(Cutbit) cb = getInternal(fileImageEditHatch);
-        cb.draw(mutableGround, x + yl/2 - cb.xl/2,
-                               y + 20, // DTODO: +20 was text_height in A4/C++.
-                               spawnFacingLeft ? 1 : 0, 0);
+        cb.draw(mutableGround, Point(x + yl/2 - cb.xl/2,
+            y + 20), // DTODO: +20 was text_height in A4/C++.
+            spawnFacingLeft ? 1 : 0, 0);
     }
 
 }
