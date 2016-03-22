@@ -312,11 +312,6 @@ drawCamera() // ...onto the current drawing target, most likely the screen
                                         borderUpperSideYl);
 }
 
-
-
-
-private static struct Rect { int x, y, xl, yl; }
-
 // This rectangle describes a portion of the source torbit, considering zoom.
 private Rect cameraRectangle()
 out (rect) {
@@ -341,8 +336,6 @@ body {
     rect.yl = min(cameraZoomedYl, this.yl - rect.y);
     return rect;
 }
-
-
 
 private void
 drawCamera_with_target_corner(
@@ -380,8 +373,6 @@ drawCamera_with_target_corner(
     if (drtx && drty) blitOnce(0,   0,   sxl2, syl2, tcx2, tcy2);
 }
 
-
-
 void
 loadCameraRect(in Torbit src)
 {
@@ -411,13 +402,13 @@ loadCameraRect(in Torbit src)
                                          cameraZoomedYl - r.yl);
 }
 
-
-
 void
 clearScreenRect(AlCol col)
 {
     Rect r = cameraRectangle();
-    this.drawFilledRectangle(r.x, r.y, cameraZoomedXl, cameraZoomedYl, col);
+    r.xl = cameraZoomedXl;
+    r.yl = cameraZoomedYl;
+    this.drawFilledRectangle(r, col);
 }
 
 }

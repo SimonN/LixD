@@ -73,21 +73,19 @@ public:
         al_clear_to_color(col);
     }
 
-    void drawRectangle(Rect rect, in AlCol col)
+    void drawRectangle(in Rect rect, in AlCol col)
     {
-        useDrawingDelegate(delegate void(int x_at, int y_at) {
-            al_draw_rectangle(x_at + 0.5, y_at + 0.5,
-             x_at + rect.xl - 0.5, y_at + rect.yl - 0.5, col, 1);
-        }, wrap(Point(rect.x, rect.y)));
+        useDrawingDelegate(delegate void(int x, int y) {
+            al_draw_rectangle(x + 0.5f,           y + 0.5f,
+                              x + rect.xl - 0.5f, y + rect.yl - 0.5f, col, 1);
+        }, wrap(rect.topLeft));
     }
 
-    void drawFilledRectangle(int x, int y, int rxl, int ryl, AlCol col)
+    void drawFilledRectangle(Rect rect, AlCol col)
     {
-        auto deg = delegate void(int x_at, int y_at)
-        {
-            al_draw_filled_rectangle(x_at, y_at, x_at + rxl, y_at + ryl, col);
-        };
-        useDrawingDelegate(deg, wrap(Point(x, y)));
+        useDrawingDelegate(delegate void(int x, int y) {
+            al_draw_filled_rectangle(x, y, x + rect.xl, y + rect.yl, col);
+        }, wrap(rect.topLeft));
     }
 
     void saveToFile(in Filename fn)
@@ -97,18 +95,9 @@ public:
 
     // Draw the entire Albit onto (Torbit this). Can take non-integer quarter
     // turns as (double rot).
-    void drawFrom(
+    final void drawFrom(
         const(Albit) source,
         in Point targetCorner,
-        bool mirr = false,
-        double rot = 0,
-        double scal = 0
-    ) {
-        drawFrom(source, targetCorner.x, targetCorner.y, mirr, rot, scal);
-    }
-    void drawFrom(
-        const(Albit) source,
-        in int x, in int y,
         bool mirr = false,
         double rot = 0,
         double scal = 0
@@ -190,7 +179,7 @@ public:
                 );
             };
         }
-        useDrawingDelegate(drawFrom_at, wrap(Point(x, y)));
+        useDrawingDelegate(drawFrom_at, wrap(targetCorner));
     }
 
     void drawFromPreservingAspectRatio(in Torbit from)
@@ -213,7 +202,7 @@ public:
             (xl-destXl)/2, (yl-destYl)/2, destXl, destYl, 0);
     }
 
-    void drawFromPixel(in Albit from, in Point fromPoint, Point toPoint)
+    final void drawFromPixel(in Albit from, in Point fromPoint, Point toPoint)
     {
         assert (this.bitmap == al_get_target_bitmap(),
             "drawFromSinglePixel is designed for high-speed drawing."
@@ -232,26 +221,15 @@ public:
     // You should lock (Torbit.albit) before calling these functions,
     // they do not lock the bitmap themselves.
     // Even then, minimize accessing individual pixels, it's slow.
-    AlCol getPixel(int x, int y) const
+    final AlCol getPixel(in Point p) const
     {
         assert(bitmap);
-        // when checking for pixels behind the border, we're repeating the last
-        // pixel inside the bitmap at the border. If it's a torus, of course we
-        // don't do this and loop normally.
-
-        // From the Allegro docs: this is slow on video bitmaps,
-        // consider locking manually in the class calling this method.
-        return al_get_pixel(cast (Albit) bitmap,
-            torusX  ? positiveMod(x, xl) :
-            x < 0   ? 0                  :
-            x >= xl ? xl - 1             : x,
-            torusY  ? positiveMod(y, yl) :
-            y < 0   ? 0                  :
-            y >= yl ? yl - 1             : y);
+        immutable here = clamp(p);
+        return al_get_pixel(cast (Albit) bitmap, here.x, here.y);
     }
 
     // See comment for getPixel.
-    void setPixel(int x, int y, AlCol col)
+    final void setPixel(in Point p, AlCol col)
     {
         assert(bitmap);
         // Here, don't draw outside of the boundaries, unlike the reading in
@@ -259,11 +237,11 @@ public:
         assert (this.bitmap == al_get_target_bitmap(),
             "Torbit.setPixel is designed for high-speed drawing."
             "Set the target bitmap manually to the target torbit's bitmap.");
-        if (   (torusX || (x >= 0 && x < xl))
-            && (torusY || (y >= 0 && y < yl))
+        if (   (torusX || (p.x >= 0 && p.x < xl))
+            && (torusY || (p.y >= 0 && p.y < yl))
         )
-            al_put_pixel(torusX ? positiveMod(x, xl) : x,
-                         torusY ? positiveMod(y, yl) : y, col);
+            al_put_pixel(torusX ? positiveMod(p.x, xl) : p.x,
+                         torusY ? positiveMod(p.y, yl) : p.y, col);
     }
 
 protected:

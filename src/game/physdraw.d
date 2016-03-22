@@ -365,7 +365,7 @@ private:
         if (! tc.mustDrawPerPixel) {
             auto zone = Zone(profiler, format("PhysDraw pix-all %s",
                                        tc.type.to!string));
-            _land.drawFrom(sprite, tc.x, tc.y);
+            _land.drawFrom(sprite, tc.loc);
             return;
         }
         // we continue here only if tc.mustDrawPerPixel
