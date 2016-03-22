@@ -376,16 +376,22 @@ private:
         if (tc.isDeletion) {
             foreach (y; 0 .. spriteYl)
                 foreach (x; 0 .. spriteXl)
-                    if (! _phymap.getSteel(tc.x + x, tc.y + y))
-                        _land.drawFromPixel(sprite, x, y, tc.x + x,tc.y + y);
+                    if (! _phymap.getSteel(tc.x + x, tc.y + y)) {
+                        immutable fromPoint = Point(x, y);
+                        immutable toPoint   = Point(tc.x + x, tc.y + y);
+                        _land.drawFromPixel(sprite, fromPoint, toPoint);
+                    }
         }
         else
             foreach (y; 0 .. spriteYl)
-                foreach (x; 0 .. spriteXl)
+                foreach (x; 0 .. spriteXl) {
                     if (_phymap.getNeedsColoring(tc.x + x, tc.y + y)) {
                         _phymap.setDoneColoring (tc.x + x, tc.y + y);
-                        _land.drawFromPixel(sprite, x, y, tc.x + x,tc.y + y);
+                        immutable fromPoint = Point(x, y);
+                        immutable toPoint   = Point(tc.x + x, tc.y + y);
+                        _land.drawFromPixel(sprite, fromPoint, toPoint);
                     }
+                }
     }
 
 // ############################################################################

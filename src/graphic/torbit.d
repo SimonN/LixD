@@ -75,21 +75,19 @@ public:
 
     void drawRectangle(Rect rect, in AlCol col)
     {
-        amend(rect.x, rect.y);
         useDrawingDelegate(delegate void(int x_at, int y_at) {
             al_draw_rectangle(x_at + 0.5, y_at + 0.5,
              x_at + rect.xl - 0.5, y_at + rect.yl - 0.5, col, 1);
-        }, rect.x, rect.y);
+        }, wrap(Point(rect.x, rect.y)));
     }
 
     void drawFilledRectangle(int x, int y, int rxl, int ryl, AlCol col)
     {
-        amend(x, y);
         auto deg = delegate void(int x_at, int y_at)
         {
             al_draw_filled_rectangle(x_at, y_at, x_at + rxl, y_at + ryl, col);
         };
-        useDrawingDelegate(deg, x, y);
+        useDrawingDelegate(deg, wrap(Point(x, y)));
     }
 
     void saveToFile(in Filename fn)
@@ -101,14 +99,12 @@ public:
     // turns as (double rot).
     void drawFrom(
         Albit bit,
-        int x = 0,
-        int y = 0,
+        in int x, in int y,
         bool mirr = false,
         double rot = 0,
         double scal = 0
     ) {
         assert (bit, "can't blit the null bitmap onto Torbit");
-        amend(x, y);
         rot = std.math.fmod(rot, 4);
 
         void delegate(int, int) drawFrom_at;
@@ -184,7 +180,7 @@ public:
                 );
             };
         }
-        useDrawingDelegate(drawFrom_at, x, y);
+        useDrawingDelegate(drawFrom_at, wrap(Point(x, y)));
     }
 
     void drawFromPreservingAspectRatio(in Torbit from)
@@ -207,20 +203,19 @@ public:
             (xl-destXl)/2, (yl-destYl)/2, destXl, destYl, 0);
     }
 
-    void drawFromPixel(in Albit from,
-        in int fromX, in int fromY,
-        int x, int y
-    ) {
+    void drawFromPixel(in Albit from, in Point fromPoint, Point toPoint)
+    {
         assert (this.bitmap == al_get_target_bitmap(),
             "drawFromSinglePixel is designed for high-speed drawing."
             "Set the target bitmap manually to the target torbit's bitmap.");
         assert (from);
-        assert (fromX >= 0);
-        assert (fromY >= 0);
-        assert (fromX < al_get_bitmap_width (cast (Albit) from));
-        assert (fromY < al_get_bitmap_height(cast (Albit) from));
-        amend(x, y);
-        al_draw_bitmap_region(cast (Albit) from, fromX, fromY, 1, 1, x, y, 0);
+        assert (fromPoint.x >= 0);
+        assert (fromPoint.y >= 0);
+        assert (fromPoint.x < al_get_bitmap_width (cast (Albit) from));
+        assert (fromPoint.y < al_get_bitmap_height(cast (Albit) from));
+        toPoint = wrap(toPoint);
+        al_draw_bitmap_region(cast (Albit) from,
+            fromPoint.x, fromPoint.y, 1, 1, toPoint.x, toPoint.y, 0);
     }
 
     // These methods (getPixel, setPixel) are very slow on VRAM bitmaps.
@@ -275,32 +270,23 @@ protected:
     }
 
 private:
-    // This differs from Phymap.amend! Maybe reword Phymap.amend to
-    // Phymap.amendForReading, and put Torbit.amend as a final method
-    // into Topology?
-    void amend(ref int x, ref int y) const
-    {
-        if (torusX) x = positiveMod(x, xl);
-        if (torusY) y = positiveMod(y, yl);
-    }
-
     void useDrawingDelegate(
         void delegate(int, int) drawing_delegate,
-        int x,
-        int y
+        Point targetCorner
     ) {
         assert (bitmap);
         assert (drawing_delegate != null);
+        assert (targetCorner == wrap(targetCorner));
 
         // We don't lock the bitmap; drawing with high-level primitives
         // and blitting other VRAM bitmaps is best without locking
         auto drata = DrawingTarget(bitmap);
-        {
-            drawing_delegate(x, y);
+        with (targetCorner) {
+                                  drawing_delegate(x,      y     );
+            if (torusX          ) drawing_delegate(x - xl, y     );
+            if (          torusY) drawing_delegate(x,      y - yl);
+            if (torusX && torusY) drawing_delegate(x - xl, y - yl);
         }
-        if (torusX          ) drawing_delegate(x - xl, y     );
-        if (          torusY) drawing_delegate(x,      y - yl);
-        if (torusX && torusY) drawing_delegate(x - xl, y - yl);
     }
 }
 // end class Torbit
