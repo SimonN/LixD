@@ -2,7 +2,6 @@ module level.addtile;
 
 import std.typecons;
 
-import basics.help;
 import file.filename;
 import file.log;
 import level.level;
@@ -14,8 +13,8 @@ import tile.tilelib;
 
 package:
 
-// add tile to level such that its center point ends up at p
-void implCenter(Level level, Filename fn, Point p)
+// add tile to level such that its center point ends up at the argument point
+void implCenter(Level level, Filename fn, Point center)
 {
     if (! fn)
         return;
@@ -29,29 +28,21 @@ void implCenter(Level level, Filename fn, Point p)
         tile = get_gadget(str);
     if (! tile)
         return;
-    int x = p.x - tile.cb.xl / 2;
-    int y = p.y - tile.cb.yl / 2;
-    if (level.torusX)
-        x = positiveMod(x, level.xl);
-    if (level.torusY)
-        y = positiveMod(y, level.yl);
-    add_object_from_ascii_line(level, str, x, y, "");
+    add_object_from_ascii_line(level, str, center - tile.cb.len / 2, "");
 }
 
 // this gets called with the raw data, it's a factory
 void add_object_from_ascii_line(
     Level     level,
     in string text1,
-    in int    nr1,
-    in int    nr2,
+    in Point  cornerAt,
     in string text2
 ) {
     const(TerrainTile) ter = get_terrain(text1);
     const(GadgetTile)  gad = ter is null ? get_gadget (text1) : null;
     if (ter && ter.cb) {
         TerPos newpos = new TerPos(ter);
-        newpos.x  = nr1;
-        newpos.y  = nr2;
+        newpos.point  = level.topology.wrap(cornerAt);
         foreach (char c; text2) switch (c) {
             case 'f': newpos.mirr = ! newpos.mirr;         break;
             case 'r': newpos.rot  =  (newpos.rot + 1) % 4; break;
@@ -63,8 +54,7 @@ void add_object_from_ascii_line(
     }
     else if (gad && gad.cb) {
         GadPos newpos = new GadPos(gad);
-        newpos.x  = nr1;
-        newpos.y  = nr2;
+        newpos.point  = level.topology.wrap(cornerAt);
         if (gad.type == GadType.HATCH)
             foreach (char c; text2) switch (c) {
                 case 'r': newpos.hatchRot = ! newpos.hatchRot; break;

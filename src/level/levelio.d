@@ -11,7 +11,7 @@ import std.string;
 
 static import glo = basics.globals;
 
-import basics.help; // positiveMod
+import basics.rect;
 import file.date;
 import file.filename;
 import file.io;
@@ -89,6 +89,11 @@ private void hint(ref string[] into, in string what)
 }
 
 
+private void resize(Level level, in int x, in int y)
+{
+    level.topology.resize(clamp(x, Level.minXl, Level.maxXl),
+                          clamp(y, Level.minYl, Level.maxYl));
+}
 
 private void load_from_vector(Level level, in IoLine[] lines) { with (level)
 {
@@ -109,10 +114,10 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
 
     // set an integer
     case '#':
-        if      (text1 == glo.levelSizeX       ) xl           = nr1;
-        else if (text1 == glo.levelSizeY       ) yl           = nr1;
-        else if (text1 == glo.levelTorusX      ) torusX       = nr1 > 0;
-        else if (text1 == glo.levelTorusY      ) torusY       = nr1 > 0;
+        if      (text1 == glo.levelSizeX) level.resize(nr1, topology.yl);
+        else if (text1 == glo.levelSizeY) level.resize(topology.xl, nr1);
+        else if (text1 == glo.levelTorusX) topology.setTorusXY(nr1 > 0, topology.torusY);
+        else if (text1 == glo.levelTorusY) topology.setTorusXY(topology.torusX, nr1 > 0);
         else if (text1 == glo.levelBackgroundRed  ) bgRed     = nr1;
         else if (text1 == glo.levelBackgroundGreen) bgGreen   = nr1;
         else if (text1 == glo.levelBackgroundBlue ) bgBlue    = nr1;
@@ -140,7 +145,7 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
 
     // new tile for the level
     case ':':
-        add_object_from_ascii_line(level, text1, nr1, nr2, text2);
+        add_object_from_ascii_line(level, text1, Point(nr1, nr2), text2);
         break;
 
     default:
@@ -169,8 +174,7 @@ private void load_level_finalize(Level level)
 {
     with (level) {
         // set some standards, in case we've read in rubbish values
-        xl = clamp(xl, Level.minXl, Level.maxXl);
-        yl = clamp(yl, Level.minYl, Level.maxYl);
+        level.resize(topology.xl, topology.yl);
         initial  = clamp(initial,  1, 999);
         required = clamp(required, 1, initial);
         spawnintSlow = clamp(spawnintSlow, Level.spawnintMin,
@@ -253,11 +257,11 @@ public void saveToFile(const(Level) l, std.stdio.File file)
         file.writeln();
     }
 
-    file.writeln(IoLine.Hash(glo.levelSizeX, l.xl));
-    file.writeln(IoLine.Hash(glo.levelSizeY, l.yl));
-    if (l.torusX || l.torusY) {
-        file.writeln(IoLine.Hash(glo.levelTorusX, l.torusX));
-        file.writeln(IoLine.Hash(glo.levelTorusY, l.torusY));
+    file.writeln(IoLine.Hash(glo.levelSizeX, l.topology.xl));
+    file.writeln(IoLine.Hash(glo.levelSizeY, l.topology.yl));
+    if (l.topology.torusX || l.topology.torusY) {
+        file.writeln(IoLine.Hash(glo.levelTorusX, l.topology.torusX));
+        file.writeln(IoLine.Hash(glo.levelTorusY, l.topology.torusY));
     }
     if (l.bgRed != 0 || l.bgGreen != 0 || l.bgBlue != 0) {
         file.writeln(IoLine.Hash(glo.levelBackgroundRed,   l.bgRed  ));

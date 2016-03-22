@@ -23,8 +23,8 @@ GameState newZeroState(in Level level)
 {
     GameState s = new GameState();
     with (level) {
-        s.land   = new Torbit(xl, yl, torusX, torusY);
-        s.lookup = new Phymap(xl, yl, torusX, torusY);
+        s.land   = new Torbit(level.topology);
+        s.lookup = new Phymap(level.topology);
         drawTerrainTo(s.land, s.lookup);
     }
 

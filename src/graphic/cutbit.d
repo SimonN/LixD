@@ -35,10 +35,11 @@ class Cutbit {
     @property Albit albit() const { return cast (Albit) bitmap; }
 
     // get size of a single frame, not necessarily size of entire bitmap
-    @property int xl()  const { return _xl;  }
-    @property int yl()  const { return _yl;  }
-    @property int xfs() const { return _xfs; }
-    @property int yfs() const { return _yfs; }
+    @property int   xl()  const { return _xl;  }
+    @property int   yl()  const { return _yl;  }
+    @property Point len() const { return Point(_xl, _yl); }
+    @property int   xfs() const { return _xfs; }
+    @property int   yfs() const { return _yfs; }
 
     // these two are slow, consider frameExists() instead
     // or lock the Cutbit's underlying Allegro bitmap yourself

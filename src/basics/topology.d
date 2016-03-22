@@ -37,8 +37,10 @@ public:
         _ty = nty;
     }
 
+    Topology clone() const { return new Topology(this); }
     this(in Topology rhs)
     {
+        assert (rhs);
         _xl = rhs._xl;
         _yl = rhs._yl;
         _tx = rhs._tx;
@@ -82,6 +84,12 @@ public:
         _tx = x;
         _ty = y;
         onAnyChange();
+    }
+
+    final Point wrap(in Point p) const
+    {
+        return Point(_tx ? positiveMod(p.x, _xl) : p.x,
+                     _ty ? positiveMod(p.y, _yl) : p.y);
     }
 
     // This computes distances similar to (1st_arg - 2nd_arg), but it

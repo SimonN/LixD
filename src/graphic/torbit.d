@@ -23,7 +23,12 @@ public:
     {
         super(_xl, _yl, _tx, _ty);
         bitmap = albitCreate(_xl, _yl);
-        assert (bitmap);
+    }
+
+    this(const(Topology) topol)
+    {
+        super(topol);
+        bitmap = albitCreate(topol.xl, topol.yl);
     }
 
     this(const Torbit rhs)

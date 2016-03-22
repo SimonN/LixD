@@ -22,6 +22,15 @@ struct Point {
         return ret;
     }
 
+    Point opBinary(string s)(in int scalar) const
+        if (s == "*" || s == "/")
+    {
+        Point ret;
+        mixin("ret.x = this.x " ~ s ~ " scalar;");
+        mixin("ret.y = this.y " ~ s ~ " scalar;");
+        return ret;
+    }
+
     ref Point opOpAssign(string s)(in Point rhs)
     {
         mixin("x " ~ s ~ "= rhs.x;");

@@ -18,7 +18,7 @@ package:
 void implConstructor(Editor editor) { with (editor)
 {
     _level = new Level(_loadedFrom);
-    Map newMap() { with (_level) return new Map(xl, yl, torusX, torusY,
+    Map newMap() { with (_level) return new Map(topology,
         Geom.screenXls.to!int, (Geom.screenYls - Geom.panelYls).to!int); }
     _map        = newMap();
     _mapTerrain = newMap();

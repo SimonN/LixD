@@ -44,21 +44,24 @@ enum  Phybit    : Phybitset {
 
 class Phymap : Topology {
 
-    this(
-        in int xl, in int yl, in bool _tx = false, in bool _ty = false
-    ) {
+    this(in int xl, in int yl, in bool _tx = false, in bool _ty = false) {
         super(xl, yl, _tx, _ty);
         lt = new Phybitset[xl * yl];
     }
 
+    this(in Topology topology)
+    {
+        super(topology);
+        lt = new Phybitset[topology.xl * topology.yl];
+    }
+
+    override Phymap clone() const { return new Phymap(this); }
     this(in typeof(this) rhs)
     {
         assert (rhs !is null);
         super(rhs);
         lt = rhs.lt.dup;
     }
-
-    Phymap clone() const { return new Phymap(this); }
 
     void copyFrom(in typeof(this) rhs)
     {

@@ -49,9 +49,7 @@ abstract class Hover {
     final void moveBy(Point p)
     {
         assert (pos);
-        pos.point = pos.point + p;
-        if (level.torusX) pos.x = positiveMod(pos.x, level.xl);
-        if (level.torusY) pos.y = positiveMod(pos.y, level.yl);
+        pos.point = level.topology.wrap(pos.point + p);
     }
 
     abstract inout(AbstractPos) pos() inout;

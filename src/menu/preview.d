@@ -61,7 +61,7 @@ level(in Level level)
             (ys + yls).roundInt - ys.roundInt, undrawColor);
         _status = level.status;
         iconStatus.xf = status;
-        iconTorus .xf = level.torusX + 2 * level.torusY;
+        iconTorus .xf = level.topology.torusX + 2 * level.topology.torusY;
         if (_status == LevelStatus.BAD_EMPTY)
             iconStatus.xf = 0;
     }

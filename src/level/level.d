@@ -4,6 +4,7 @@ import enumap;
 
 public import level.levelio : saveToFile;
 
+import basics.topology;
 import file.date;
 import file.filename;
 import file.language;
@@ -35,9 +36,7 @@ enum FileFormat {
 }
 
 class Level {
-
 public:
-
     static immutable int minXl = 160;
     static immutable int minYl = 160;
     static immutable int maxXl = 3200;
@@ -46,7 +45,6 @@ public:
     static immutable int spawnintMax = 96;
 
     // DTODO: implement players_intended;
-
     MutableDate built;
     string author;
     string nameGerman;
@@ -55,11 +53,7 @@ public:
     string[] hintsGerman;
     string[] hintsEnglish;
 
-    int  xl;
-    int  yl;
-    bool torusX;
-    bool torusY;
-
+    Topology topology;
     int  bgRed;
     int  bgGreen;
     int  bgBlue;
@@ -77,14 +71,46 @@ public:
 
     TerPos[] terrain;
     GadPos[][GadType.MAX] pos; // one array GadPos[] for each GadType,
-                                // indexed by ints, not by GadType enum vals
-/*  this();
- *  this(in Filename);
- *
- *  override bool opEquals(Object) const
- *  @property string      name()   const;
- *  @property string[]    hints()  inout;
- */
+                               // indexed by ints, not by GadType enum vals
+package:
+    LevelStatus _status;
+
+public:
+    this()
+    {
+        built   = Date.now();
+        _status = LevelStatus.BAD_EMPTY;
+        topology = new Topology(640, 400); // one screen in C++ Lix
+        initial      =  30;
+        required     =  20;
+        spawnintSlow =  32;
+        spawnintFast =   4;
+    }
+
+    this(in Filename fn)
+    {
+        this();
+        level.levelio.loadFromFile(this, fn);
+    }
+
+    @property string
+    name() const
+    {
+        // DTODOLANG
+        // if (Lang.get_current() == Language.GERMAN)
+        //      return nameGerman  == null ? nameEnglish : nameGerman;
+        return nameEnglish == null ? nameGerman  : nameEnglish;
+    }
+
+    @property inout(string[])
+    hints() inout
+    {
+        // DTODOLANG
+        // if (Lang.get_current() == Language.GERMAN)
+        //      return hintsGerman  == null ? hintsEnglish : hintsGerman;
+        return hintsEnglish == null ? hintsGerman  : hintsEnglish;
+    }
+
     @property LevelStatus status() const { return _status; }
     @property bool        good()   const { return _status == LevelStatus.GOOD;}
 
@@ -113,97 +139,39 @@ public:
     // to save a level into a replay, call with existing File descriptor:
     // mylevel.saveToFile(std.stdio.File existing_handle)
 
-package:
+    override bool
+    opEquals(Object rhs_obj) const
+    {
+        const(Level) rhs = cast (const Level) rhs_obj;
+        if (rhs_obj is null) return false;
+        if (   this.author       != rhs.author
+            || this.nameGerman   != rhs.nameGerman
+            || this.nameEnglish  != rhs.nameEnglish
+            || this.hintsGerman  != rhs.hintsGerman
+            || this.hintsEnglish != rhs.hintsEnglish
 
-    LevelStatus _status;
+            || this.topology     != rhs.topology
+            || this.bgRed        != rhs.bgRed
+            || this.bgGreen      != rhs.bgGreen
+            || this.bgBlue       != rhs.bgBlue
 
+            || this.seconds      != rhs.seconds
+            || this.initial      != rhs.initial
+            || this.required     != rhs.required
+            || this.spawnintSlow != rhs.spawnintSlow
+            || this.spawnintFast != rhs.spawnintFast
 
-
-public:
-
-this()
-{
-    built   = Date.now();
-    _status = LevelStatus.BAD_EMPTY;
-
-    xl           = 640; // this comes from the old default res 640 x 480
-    yl           = 400; // old panel y height was 80, so sizeY = 480 - 80;
-    initial      =  30;
-    required     =  20;
-    spawnintSlow =  32;
-    spawnintFast =   4;
-}
-
-
-
-this(in Filename fn)
-{
-    this();
-    level.levelio.loadFromFile(this, fn);
-}
-
-
-
-@property string
-name() const
-{
-    // DTODOLANG
-    // if (Lang.get_current() == Language.GERMAN)
-    //      return nameGerman  == null ? nameEnglish : nameGerman;
-    return nameEnglish == null ? nameGerman  : nameEnglish;
-}
-
-
-
-@property inout(string[])
-hints() inout
-{
-    // DTODOLANG
-    // if (Lang.get_current() == Language.GERMAN)
-    //      return hintsGerman  == null ? hintsEnglish : hintsGerman;
-    return hintsEnglish == null ? hintsGerman  : hintsEnglish;
-}
-
-
-
-override bool
-opEquals(Object rhs_obj) const
-{
-    const(Level) rhs = cast (const Level) rhs_obj;
-    if (rhs_obj is null) return false;
-
-    if (   this.author       != rhs.author
-        || this.nameGerman   != rhs.nameGerman
-        || this.nameEnglish  != rhs.nameEnglish
-        || this.hintsGerman  != rhs.hintsGerman
-        || this.hintsEnglish != rhs.hintsEnglish
-
-        || this.xl           != rhs.xl
-        || this.yl           != rhs.yl
-        || this.torusX       != rhs.torusX
-        || this.torusY       != rhs.torusY
-        || this.bgRed        != rhs.bgRed
-        || this.bgGreen      != rhs.bgGreen
-        || this.bgBlue       != rhs.bgBlue
-
-        || this.seconds      != rhs.seconds
-        || this.initial      != rhs.initial
-        || this.required     != rhs.required
-        || this.spawnintSlow != rhs.spawnintSlow
-        || this.spawnintFast != rhs.spawnintFast
-
-        || this.nukeDelayed  != rhs.nukeDelayed
-        || this.nukeSkill    != rhs.nukeSkill
-    ) {
-        return false;
+            || this.nukeDelayed  != rhs.nukeDelayed
+            || this.nukeSkill    != rhs.nukeSkill
+        ) {
+            return false;
+        }
+        // compare all tiles in one go
+        if (this.pos    != rhs.pos   ) return false;
+        if (this.skills != rhs.skills) return false;
+        return true;
     }
 
-    // compare all tiles in one go
-    if (this.pos    != rhs.pos   ) return false;
-    if (this.skills != rhs.skills) return false;
-
-    return true;
-}
 
 }
 // end class Level

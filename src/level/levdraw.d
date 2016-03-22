@@ -18,15 +18,9 @@ import tile.pos;
 package void implDrawTerrainTo(in Level level, Torbit tb, Phymap lookup)
 {
     if (! tb) return;
-    assert (tb.xl == level.xl);
-    assert (tb.yl == level.yl);
-
+    assert (tb == level.topology);
+    assert (! lookup || lookup == level.topology);
     tb.clearToColor(color.transp);
-    tb.setTorusXY(level.torusX, level.torusY);
-    if (lookup) {
-        lookup.resize(level.xl, level.yl);
-        lookup.setTorusXY(level.torusX, level.torusY);
-    }
     foreach (po; level.terrain)
         drawPosTerrain(po, tb, lookup);
 }
@@ -94,9 +88,8 @@ package Torbit implCreatePreview(
 
     Torbit newTb(AlCol tempTorbitCol)
     {
-        Torbit t = new Torbit(level.xl, level.yl);
+        Torbit t = new Torbit(level.topology);
         t.clearToColor(tempTorbitCol);
-        t.setTorusXY(level.torusX, level.torusY);
         return t;
     }
     Torbit tempTer = newTb(color.transp);
