@@ -10,6 +10,7 @@ module tile.gadtile;
 
 import basics.alleg5; // bitmap locking
 import basics.globals;
+import basics.rect;
 import file.filename;
 import file.io;
 import graphic.cutbit;
@@ -66,14 +67,14 @@ protected:
 public:
     @property type() const { return _type; }
 
-    @property int triggerX() const
-    {
-        return _triggerX - _triggerXc * triggerXl/2;
-    }
+    // phase out these two eventually, replace by Rect/Point below
+    @property int triggerX() const { return _triggerX - _triggerXc * triggerXl/2; }
+    @property int triggerY() const { return _triggerY - _triggerYc * triggerYl/2; }
 
-    @property int triggerY() const
+    @property Point trigger()     const { return Point(triggerX, triggerY); }
+    @property Rect  triggerArea() const
     {
-        return _triggerY - _triggerYc * triggerYl/2;
+        return Rect(triggerX, triggerY, triggerXl, triggerYl);
     }
 
     static typeof(this) takeOverCutbit(

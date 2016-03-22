@@ -80,10 +80,10 @@ void hoverTilesInRect(Editor editor, Rect rect) { with (editor)
 {
     immutable reason = Hover.Reason.frameSpanning;
     _hover = _level.pos[].joiner
-        .filter!(pos => _map.rectIntersectsRect(rect, pos.selbox))
+        .filter!(pos => _map.rectIntersectsRect(rect, pos.selboxOnMap))
         .map!(pos => cast (Hover) new GadgetHover(_level, pos, reason)).array
         ~ _level.terrain
-        .filter!(pos => _map.rectIntersectsRect(rect, pos.selbox))
+        .filter!(pos => _map.rectIntersectsRect(rect, pos.selboxOnMap))
         .map!(pos => cast (Hover) new TerrainHover(_level, pos, reason)).array;
 }}
 
@@ -109,7 +109,7 @@ void maybeAdd(Pos)(
 {   with (editor)
     with (editor._map)
 {
-    if (! isPointInRectangle(mouseOnLand, pos.selbox))
+    if (! isPointInRectangle(mouseOnLand, pos.selboxOnMap))
         return;
     static if (is (Pos == TerPos))
         immutable Hover.Reason reason = editor.mouseOnSolidPixel(pos)
@@ -130,9 +130,9 @@ void maybeAdd(Pos)(
 bool mouseOnSolidPixel(Editor editor, in TerPos pos) { with (editor._map)
 {
     auto mol = mouseOnLand;
-    while (mol.x < pos.x)
+    while (mol.x < pos.point.x)
         mol.x += xl;
-    while (mol.y < pos.y)
+    while (mol.y < pos.point.y)
         mol.y += yl;
     return 0 != pos.phybitsOnMap(mol);
 }}

@@ -27,7 +27,7 @@ package void implDrawTerrainTo(in Level level, Torbit tb, Phymap lookup)
 
 private void drawPosGadget(in GadPos po, Torbit ground)
 {
-    po.ob.cb.draw(ground, po.x, po.y,
+    po.ob.cb.draw(ground, po.point.x, po.point.y,
         0, 0, // draw top-left frame. DTODO: Still OK for triggered traps?
         0, // mirroring
         // hatch rotation: not for drawing, only for spawn direction
@@ -43,7 +43,7 @@ private void drawPosTerrain(in TerPos po, Torbit ground, Phymap lookup)
                      : po.dark ? Cutbit.Mode.DARK
                      :           Cutbit.Mode.NORMAL;
     with (Zone(profiler, "Level.drawPos to VRAM " ~ mode.to!string)) {
-        cb.draw(ground, po.x, po.y, po.mirr, po.rot, mode);
+        cb.draw(ground, po.point.x, po.point.y, po.mirr, po.rot, mode);
     }
     if (! lookup)
         return;
@@ -53,8 +53,8 @@ private void drawPosTerrain(in TerPos po, Torbit ground, Phymap lookup)
         // That's done by the game class.
         immutable xl = (po.rot & 1) ? po.ob.cb.yl : po.ob.cb.xl;
         immutable yl = (po.rot & 1) ? po.ob.cb.xl : po.ob.cb.yl;
-        foreach (int y; po.y .. (po.y + yl))
-            foreach (int x; po.x .. (po.x + xl)) {
+        foreach (int y; po.point.y .. (po.point.y + yl))
+            foreach (int x; po.point.x .. (po.point.x + xl)) {
                 immutable bits = po.phybitsOnMap(Point(x, y));
                 if (! bits)
                     continue;

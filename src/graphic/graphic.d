@@ -16,6 +16,11 @@ import graphic.cutbit;
 import graphic.torbit;
 
 class Graphic {
+public:
+    this(const(Cutbit) cb, const(Topology) to, Point newLoc)
+    {
+        this(cb, to, newLoc.x, newLoc.y);
+    }
 
 /*  this(const Cutbit, const Topology, int = 0, int = 0);
  *  this(Graphic)
@@ -94,8 +99,6 @@ this(
     _rot   = 0.0;
     _mode  = Cutbit.Mode.NORMAL;
 }
-
-
 
 this(in Graphic rhs)
 {

@@ -22,8 +22,9 @@ void implConstructor(Editor editor) { with (editor)
         Geom.screenXls.to!int, (Geom.screenYls - Geom.panelYls).to!int); }
     _map        = newMap();
     _mapTerrain = newMap();
-    _map.centerOnAverage(_level.pos[GadType.HATCH].map!(h => h.centerOnX),
-                         _level.pos[GadType.HATCH].map!(h => h.centerOnY));
+    _map.centerOnAverage(
+        _level.pos[GadType.HATCH].map!(h => h.screenCenter.x),
+        _level.pos[GadType.HATCH].map!(h => h.screenCenter.y));
     _dragger = new MouseDragger();
     editor.makePanel();
 }}

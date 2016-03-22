@@ -8,6 +8,7 @@ module tile.terrain;
  */
 
 import basics.alleg5;
+import basics.rect;
 import graphic.cutbit;
 import graphic.color;
 import hardware.tharsis;
@@ -32,8 +33,7 @@ public:
     // Input: Where you want to draw on the map, in relation to tile's 0, 0.
     // Output: The solid/nonsolid bits there of the rotated/mirrored tile
     // It is illegal to call this such that result is outside of tile.
-    Phybitset getPhybitsXYRotMirr(
-        in int gx, in int gy, in int rot, in bool mirr) const
+    Phybitset getPhybitsXYRotMirr(in Point g, in int rot, in bool mirr) const
     {
         assert (_phymap);
         // The algorithm for rotation and mirroring is:
@@ -42,10 +42,10 @@ public:
         // Here's some code copy-pasted from graphic.graphic.get_pixel.
         int useX = void, useY = void;
         with (_phymap) switch (rot & 3) {
-            case 0: useX = gx;      useY = ! mirr ? gy      : yl-gy-1; break;
-            case 1: useX = gy;      useY = ! mirr ? yl-gx-1 : gx;      break;
-            case 2: useX = xl-gx-1; useY = ! mirr ? yl-gy-1 : gy;      break;
-            case 3: useX = xl-gy-1; useY = ! mirr ? gx      : yl-gx-1; break;
+            case 0: useX = g.x;      useY = !mirr ? g.y      : yl-g.y-1; break;
+            case 1: useX = g.y;      useY = !mirr ? yl-g.x-1 : g.x;      break;
+            case 2: useX = xl-g.x-1; useY = !mirr ? yl-g.y-1 : g.y;      break;
+            case 3: useX = xl-g.y-1; useY = !mirr ? g.x      : yl-g.x-1; break;
             default: assert(false);
         }
         assert (0 <= useX && useX < _phymap.xl);

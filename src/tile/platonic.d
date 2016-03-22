@@ -10,23 +10,19 @@ module tile.platonic;
 
 import std.algorithm;
 
+import basics.rect;
 import graphic.color;
 import graphic.cutbit;
 
 class Platonic {
 private:
     Cutbit _cb;
-    int _selboxX;  // These coordinates locate the smallest rectangle inside
-    int _selboxY;  // the object's cutbit's frame (0, 0) that still holds all
-    int _selboxXl; // nontransparent pixels. This refines the selection
-    int _selboxYl; // with a pulled selection rectangle in the Editor.
+    Rect _selbox; // Smallest rectangle, relative to the cutbit's (0, 0),
+                  // that still contains all nontransparent pixels.
 
 public:
-    @property const(Cutbit) cb() const { return _cb; }
-    final @property selboxX()    const { return _selboxX;  }
-    final @property selboxY()    const { return _selboxY;  }
-    final @property selboxXl()   const { return _selboxXl; }
-    final @property selboxYl()   const { return _selboxYl; }
+          @property const(Cutbit) cb() const { return _cb;     }
+    final @property Rect      selbox() const { return _selbox; }
 
 protected:
     this(Cutbit aCb)
@@ -41,8 +37,8 @@ protected:
     void findSelboxAssumeLocked()
     {
         assert (cb);
-        _selboxX = cb.xl; // Initializing the selbox with the smallest
-        _selboxY = cb.yl; // selbox possible, starting at the wrong ends
+        _selbox.x = cb.xl; // Initializing the selbox with the smallest
+        _selbox.y = cb.yl; // selbox possible, starting at the wrong ends
         for (int xf = 0; xf < cb.xfs; ++xf)
             for (int yf = 0; yf < cb.yfs; ++yf) {
                 int  xMin = -1;
@@ -74,10 +70,10 @@ protected:
                         if (cb.get_pixel(xf, yf, x, yMin) != color.transp)
                             break WHILE_Y_MIN;
                 }
-                _selboxX  = min(_selboxX,  xMin);
-                _selboxY  = min(_selboxY,  yMin);
-                _selboxXl = max(_selboxXl, xMax - xMin + 1);
-                _selboxYl = max(_selboxYl, yMax - yMin + 1);
+                _selbox.x  = min(_selbox.x,  xMin);
+                _selbox.y  = min(_selbox.y,  yMin);
+                _selbox.xl = max(_selbox.xl, xMax - xMin + 1);
+                _selbox.yl = max(_selbox.yl, yMax - yMin + 1);
             }
     }
 }

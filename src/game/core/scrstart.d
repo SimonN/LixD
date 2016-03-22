@@ -16,8 +16,8 @@ package:
 void centerCameraOnHatchAverage(Game game)
 {
     assert (game.map);
-    game.map.centerOnAverage(game.ourHatches().map!(h => h.centerOnX),
-                             game.ourHatches().map!(h => h.centerOnY));
+    game.map.centerOnAverage(game.ourHatches().map!(h => h.screenCenter.x),
+                             game.ourHatches().map!(h => h.screenCenter.y));
 }
 
 private:
