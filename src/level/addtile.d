@@ -28,7 +28,8 @@ void implCenter(Level level, Filename fn, Point center)
         tile = get_gadget(str);
     if (! tile)
         return;
-    add_object_from_ascii_line(level, str, center - tile.cb.len / 2, "");
+    add_object_from_ascii_line(level, str,
+        level.topology.clamp(center) - tile.cb.len / 2, "");
 }
 
 // this gets called with the raw data, it's a factory

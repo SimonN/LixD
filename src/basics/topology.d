@@ -9,11 +9,10 @@ module basics.topology;
  * from Topology. Torbits are Allegro 5 bitmaps that support torus drawing.
  */
 
-import std.range;
-
 import std.algorithm;
 import std.conv;
 import std.math;
+import std.range;
 import std.string;
 
 import basics.help; // positiveMod
@@ -90,6 +89,13 @@ public:
     {
         return Point(_tx ? positiveMod(p.x, _xl) : p.x,
                      _ty ? positiveMod(p.y, _yl) : p.y);
+    }
+
+    // If the point is off the torus, return what's closest to that.
+    final Point clamp(in Point p) const
+    {
+        return wrap(Point(.clamp(p.x, 0, xl - 1),
+                          .clamp(p.y, 0, yl - 1)));
     }
 
     // This computes distances similar to (1st_arg - 2nd_arg), but it
