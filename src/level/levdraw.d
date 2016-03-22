@@ -55,19 +55,20 @@ private void drawPosTerrain(in TerPos po, Torbit ground, Phymap lookup)
         immutable yl = (po.rot & 1) ? po.ob.cb.xl : po.ob.cb.yl;
         foreach (int y; po.point.y .. (po.point.y + yl))
             foreach (int x; po.point.x .. (po.point.x + xl)) {
-                immutable bits = po.phybitsOnMap(Point(x, y));
+                immutable p = Point(x, y);
+                immutable bits = po.phybitsOnMap(p);
                 if (! bits)
                     continue;
                 if (po.noow) {
-                    if (! lookup.get(x, y, Phybit.terrain))
-                        lookup.add(x, y, bits);
+                    if (! lookup.get(p, Phybit.terrain))
+                        lookup.add(p, bits);
                 }
                 else if (po.dark)
-                    lookup.rm(x, y, Phybit.terrain | Phybit.steel);
+                    lookup.rm(p, Phybit.terrain | Phybit.steel);
                 else {
-                    lookup.add(x, y, bits);
+                    lookup.add(p, bits);
                     if (! po.ob.steel)
-                        lookup.rm(x, y, Phybit.steel);
+                        lookup.rm(p, Phybit.steel);
                 }
             }
     }

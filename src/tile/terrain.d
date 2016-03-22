@@ -40,17 +40,17 @@ public:
         // First mirror vertically, if the mirr flag is true.
         // The resulting thing, turn it by rot * 90 degrees ccw.
         // Here's some code copy-pasted from graphic.graphic.get_pixel.
-        int useX = void, useY = void;
+        Point u; // use this point for lookup
         with (_phymap) switch (rot & 3) {
-            case 0: useX = g.x;      useY = !mirr ? g.y      : yl-g.y-1; break;
-            case 1: useX = g.y;      useY = !mirr ? yl-g.x-1 : g.x;      break;
-            case 2: useX = xl-g.x-1; useY = !mirr ? yl-g.y-1 : g.y;      break;
-            case 3: useX = xl-g.y-1; useY = !mirr ? g.x      : yl-g.x-1; break;
+            case 0: u.x = g.x;      u.y = !mirr ? g.y      : yl-g.y-1; break;
+            case 1: u.x = g.y;      u.y = !mirr ? yl-g.x-1 : g.x;      break;
+            case 2: u.x = xl-g.x-1; u.y = !mirr ? yl-g.y-1 : g.y;      break;
+            case 3: u.x = xl-g.y-1; u.y = !mirr ? g.x      : yl-g.x-1; break;
             default: assert(false);
         }
-        assert (0 <= useX && useX < _phymap.xl);
-        assert (0 <= useY && useY < _phymap.yl);
-        return _phymap.get(useX, useY);
+        assert (0 <= u.x && u.x < _phymap.xl);
+        assert (0 <= u.x && u.y < _phymap.yl);
+        return _phymap.get(u);
     }
 
 protected:
@@ -73,9 +73,11 @@ private:
         with (LockReadOnly(cb.albit)) {
             super.findSelboxAssumeLocked();
             foreach (y; 0 .. _phymap.yl)
-                foreach (x; 0 .. _phymap.xl)
+                foreach (x; 0 .. _phymap.xl) {
+                    immutable p = Point(x, y);
                     if (cb.get_pixel(x, y) != color.transp)
-                        _phymap.add(x, y, bits);
+                        _phymap.add(p, bits);
+                }
         }
     }
 
@@ -90,7 +92,7 @@ private:
             with (DrawingTarget(_dark.albit))
                 foreach (y; 0 .. _phymap.yl)
                     foreach (x; 0 .. _phymap.xl)
-                        al_put_pixel(x, y, _phymap.get(x,y)
+                        al_put_pixel(x, y, _phymap.get(Point(x,y))
                             ? color.white : color.transp);
     }
 }

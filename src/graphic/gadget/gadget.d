@@ -147,8 +147,7 @@ final void drawLookup(Phymap lk) const
                                                        : Phybit.fire; break;
         case GadType.FLING:  phyb = Phybit.fling; break;
     }
-    lk.rect!(Phymap.add)(x + tile.triggerX, y + tile.triggerY,
-                             tile.triggerXl,    tile.triggerYl, phyb);
+    lk.rect!(Phymap.add)(tile.triggerArea + this.loc, phyb);
 }
 
 }

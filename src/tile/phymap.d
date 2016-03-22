@@ -77,127 +77,109 @@ class Phymap : Topology {
         lt = new Phybitset[xl * yl];
     }
 
-    Phybitset get(int x, int y) const
-    {
-        amend(x, y);
-        return getAt(x, y);
-    }
+    Phybitset get(in Point p)              const { return getAt(clamp(p));   }
+    bool      get(in Point p, Phybitset n) const { return (get(p) & n) != 0; }
 
-    bool get(int x, int y, Phybitset n) const
-    {
-        return (get(x, y) & n) != 0;
-    }
-
-    bool getSolid(int x, int y) const
-    {
-        return get(x, y, Phybit.terrain);
-    }
-
-    bool getSolidEven(int x, int y) const
+    bool getSolid    (in Point p) const { return get(p, Phybit.terrain); }
+    bool getSolidEven(in Point p) const
     {
         assert (xl % 2 == 0, "can't call getSolidEven on an odd-xl Phymap");
-        amend(x, y);
         // x & ~1 makes numbers even by zeroing the last bit
         // x |  1 makes numbers odd
-        return ((getAt(x &~ 1, y)
-               | getAt(x |  1, y)) & Phybit.terrain) != 0;
+        return ((getAt(clamp(Point(p.x & ~1, p.y)))
+               | getAt(clamp(Point(p.x |  1, p.y)))) & Phybit.terrain) != 0;
     }
 
-    bool getSteel(int x, int y) const
+    bool getSteel(in Point p) const
+    out (ret) { if (ret) assert (getSolid(p)); }
+    body      { return get(p, Phybit.steel);   }
+
+    bool getNeedsColoring(in Point p) const
     {
-        if (get(x, y, Phybit.steel)) {
-            assert (getSolid(x, y));
-            return true;
-        }
-        else
-            return false;
+        return (getAt(clamp(p)) & Phybit.needCol) != 0;
     }
 
-    bool getNeedsColoring(int x, int y) const
+    bool getSteelUnlessMaskIgnores(in Point eff, in Mask mask) const
     {
-        amend(x, y);
-        return (getAt(x, y) & Phybit.needCol) != 0;
-    }
-
-    bool getSteelUnlessMaskIgnores(int ex, int ey, in Mask mask) const
-    {
-        with (mask)
+        with (mask) {
+            immutable offset = Point(offsetX, offsetY);
             foreach (int y; 0 .. solid.yl)
-                foreach (int x; 0 .. solid.xl)
+                foreach (int x; 0 .. solid.xl) {
+                    immutable p = Point(x, y);
                     if (solid.get(x, y)
                         && (ignoreSteel is null || ! ignoreSteel.get(x, y))
-                        && getSteel(ex + x - offsetX, ey + y - offsetY))
+                        && getSteel(eff + p + offset))
                         return true;
+                }
+        }
         return false;
     }
 
-    void rm(int x, int y, Phybitset n)
+    void rm(in Point p, Phybitset n)
     {
-        if (! amendIfInside(x, y)) return;
-        rmAt(x, y, n);
+        if (inside(p))
+            rmAt(wrap(p), n);
     }
 
-    void add(int x, int y, Phybitset n)
+    void add(in Point p, Phybitset n)
     {
-        if (! amendIfInside(x, y)) return;
-        addAt(x, y, n);
+        if (inside(p))
+            addAt(wrap(p), n);
     }
 
-    void rect(alias func, Args...)(
-        int x, int y, int xr, int yr, Args args
-    ) {
-        for     (int ix = 0; ix < xr; ++ix)
-            for (int iy = 0; iy < yr; ++iy)
-                func(x + ix, y + iy, args);
+    void rect(alias func, Args...)(Rect re, Args args)
+    {
+        for     (int ix = 0; ix < re.xl; ++ix)
+            for (int iy = 0; iy < re.yl; ++iy)
+                func(Point(re.x + ix, re.y + iy), args);
     }
 
-    int rectSum(alias func, Args...)(
-        int x, int y, int xr, int yr, Args args)
+    int rectSum(alias func, Args...)(Rect re, Args args)
     {
         int ret = 0;
-        for     (int ix = 0; ix < xr; ++ix)
-            for (int iy = 0; iy < yr; ++iy)
-                ret += ! ! func(x + ix, y + iy, args);
+        for     (int ix = 0; ix < re.xl; ++ix)
+            for (int iy = 0; iy < re.yl; ++iy)
+                ret += ! ! func(Point(re.x + ix, re.y + iy), args);
         return ret;
     }
 
-    void setSolidAlreadyColored(int x, int y)
+    void setSolidAlreadyColored(in Point p)
     {
-        if (! amendIfInside(x, y)) return;
-        addAt(x, y, Phybit.terrain);
+        if (inside(p))
+            addAt(wrap(p), Phybit.terrain);
     }
 
-    void setSolidNeedsColoring(int x, int y)
+    void setSolidNeedsColoring(in Point p)
     {
-        if (! amendIfInside(x, y)) return;
-        if (getAt(x, y) & Phybit.terrain) return;
-        addAt(x, y, Phybit.terrain | Phybit.needCol);
+        if (! inside(p))
+            return;
+        immutable wrapped = wrap(p);
+        if (getAt(wrapped) & Phybit.terrain)
+            return;
+        addAt(wrapped, Phybit.terrain | Phybit.needCol);
     }
 
-    void setDoneColoring(int x, int y)
+    void setDoneColoring(in Point p)
     {
-        string assertMsg()
-        {
-            return "x=%d, y=%d, terrain=%d, needCol=%d".format(x, y,
-                getAt(x, y) & Phybit.terrain, getAt(x, y) & Phybit.needCol);
-        }
-        if (! amendIfInside(x, y)) return;
-        assert (getAt(x, y) & Phybit.terrain, assertMsg);
-        assert (getAt(x, y) & Phybit.needCol, assertMsg);
-        rmAt(x, y, Phybit.needCol);
+        if (! inside(p))
+            return;
+        immutable wrapped = wrap(p);
+        assert (getAt(wrapped) & Phybit.terrain);
+        assert (getAt(wrapped) & Phybit.needCol);
+        rmAt(wrapped, Phybit.needCol);
     }
 
-    bool setAirCountSteel(int x, int y)
+    bool setAirCountSteel(in Point p)
     {
-        if (! amendIfInside(x, y)) {
-            return getSteel(x, y);
-        }
-        else if (getAt(x, y) & Phybit.steel) {
-            assert (getAt(x, y) & Phybit.terrain);
+        immutable wrapped = wrap(p);
+        if (! inside(p))
+            return getSteel(p);
+        else if    (getAt(wrapped) & Phybit.steel) {
+            assert (getAt(wrapped) & Phybit.terrain);
             return true;
         }
         else {
-            rmAt(x, y, Phybit.terrain | Phybit.needCol);
+            rmAt(wrapped, Phybit.terrain | Phybit.needCol);
             return false;
         }
     }
@@ -205,24 +187,23 @@ class Phymap : Topology {
     // this is called not with lix's ex, ey, but with the top-left coordinate
     // of where the mask should be applied. Thus, during this function,
     // never refer to mask.offsetX/Y.
-    int setAirCountSteelEvenWhereMaskIgnores(
-        int topLeftX, int topLeftY, in Mask mask
-    ) {
+    int setAirCountSteelEvenWhereMaskIgnores(in Point topLeft, in Mask mask)
+    {
         assert (mask.solid);
         int steelHit = 0;
         foreach (int iy; 0 .. mask.solid.yl) {
-            int y = topLeftY + iy;
+            Point p = Point(0, topLeft.y + iy);
             foreach (int ix; 0 .. mask.solid.xl) {
-                int x = topLeftX + ix;
+                p.x = topLeft.x + ix;
                 if (mask.solid.get(ix, iy))
-                    steelHit += setAirCountSteel(ix + topLeftX, iy + topLeftY);
+                    steelHit += setAirCountSteel(p);
             }
         }
         return steelHit;
     }
 
     // for testing
-    public void saveToFile(in Filename fn) const
+    void saveToFile(in Filename fn) const
     {
         Albit outputBitmap = albitMemoryCreate(xl, yl);
         scope (exit)
@@ -230,46 +211,30 @@ class Phymap : Topology {
         auto drata = DrawingTarget(outputBitmap);
 
         foreach (y; 0 .. yl) foreach (x; 0 .. xl) {
-            immutable int red   = get(x, y, Phybit.terrain);
-            immutable int green = get(x, y, Phybit.steel);
-            immutable int blue  = get(x, y, Phybit.goal | Phybit.fire
-                           | Phybit.water | Phybit.trap | Phybit.fling);
+            immutable Point p = Point(x, y);
+            immutable int red   = get(p, Phybit.terrain);
+            immutable int green = get(p, Phybit.steel);
+            immutable int blue  = get(p, Phybit.goal | Phybit.fire
+                        | Phybit.water | Phybit.trap | Phybit.fling);
             al_put_pixel(x, y, AlCol(red, blue, green, 1));
         }
         al_save_bitmap(fn.rootfulZ, outputBitmap);
     }
 
-
-
 private:
-
     // "lt" == "lookup table", aligned as row, row, row, row, ...
     // I don't use the matrix class here, the code was already
     // written in C++ without it and works well
     Phybitset[] lt;
 
-    Phybitset getAt(int x, int y) const    { return lt[y * xl + x]; }
-    void  addAt(int x, int y, Phybitset n) { lt[y * xl + x] |= n;   }
-    void  rmAt (int x, int y, Phybitset n) { lt[y * xl + x] &= ~n;  }
+    Phybitset getAt(in Point p) const    { return lt[p.y * xl + p.x]; }
+    void  addAt(in Point p, Phybitset n) { lt[p.y * xl + p.x] |= n;   }
+    void  rmAt (in Point p, Phybitset n) { lt[p.y * xl + p.x] &= ~n;  }
 
-    void amend(ref int x, ref int y) const
+    bool inside(in Point p) const
     {
-        x = torusX ? positiveMod(x, xl)
-          : x >= xl ? xl - 1
-          : x <  0  ? 0 : x;
-        y = torusY ? positiveMod(y, yl)
-          : y >= yl ? yl - 1
-          : y <  0  ? 0 : y;
-    }
-
-    // Is the given point on the map?
-    bool amendIfInside(ref int x, ref int y) const
-    {
-        if (! torusX && (x < 0 || x >= xl)) return false;
-        if (! torusY && (y < 0 || y >= yl)) return false;
-        amend(x, y);
+        if (! torusX && (p.x < 0 || p.x >= xl)) return false;
+        if (! torusY && (p.y < 0 || p.y >= yl)) return false;
         return true;
     }
-
 }
-// end class Phymap

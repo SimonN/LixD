@@ -7,7 +7,31 @@ module basics.rect;
 import std.string;
 import basics.help;
 
-struct Rect { int x, y, xl, yl; }
+struct Rect {
+    int x, y, xl, yl;
+
+    this(in int ax, in int ay, in int axl, in int ayl)
+    {
+        x  = ax;
+        y  = ay;
+        xl = axl;
+        yl = ayl;
+    }
+
+    this(in Point p, in int axl, in int ayl)
+    {
+        this(p.x, p.y, axl, ayl);
+    }
+
+    @property Point topLeft() const { return Point(x, y);   }
+    @property Point len()     const { return Point(xl, yl); }
+
+    // Translate the rectangle, keeping its length
+    Rect opBinary(string s)(in Point p) const
+    {
+        mixin("return Rect(x " ~ s ~ " p.x, y " ~ s ~ " p.y, xl, yl);");
+    }
+}
 
 struct Point {
     int x;

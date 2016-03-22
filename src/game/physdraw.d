@@ -301,11 +301,11 @@ private:
             if (tc.type == Type.dig) {
                 assert (tc.yl > 0);
                 steelHit += _phymap.rectSum!(Phymap.setAirCountSteel)
-                    (tc.x, tc.y, Digger.tunnelWidth, tc.yl);
+                    (Rect(tc.loc, Digger.tunnelWidth, tc.yl));
             }
             else
                 steelHit += _phymap.setAirCountSteelEvenWhereMaskIgnores(
-                            tc.x, tc.y, masks[tc.type]);
+                                tc.loc, masks[tc.type]);
             if (_land)
                 _delsForLand ~= FlaggedChange(tc, steelHit > 0);
         }
@@ -375,20 +375,20 @@ private:
         immutable spriteYl = al_get_bitmap_height(sprite);
         if (tc.isDeletion) {
             foreach (y; 0 .. spriteYl)
-                foreach (x; 0 .. spriteXl)
-                    if (! _phymap.getSteel(tc.x + x, tc.y + y)) {
-                        immutable fromPoint = Point(x, y);
-                        immutable toPoint   = Point(tc.x + x, tc.y + y);
+                foreach (x; 0 .. spriteXl) {
+                    immutable fromPoint = Point(x, y);
+                    immutable toPoint   = tc.loc + fromPoint;
+                    if (! _phymap.getSteel(toPoint))
                         _land.drawFromPixel(sprite, fromPoint, toPoint);
-                    }
+                }
         }
         else
             foreach (y; 0 .. spriteYl)
                 foreach (x; 0 .. spriteXl) {
-                    if (_phymap.getNeedsColoring(tc.x + x, tc.y + y)) {
-                        _phymap.setDoneColoring (tc.x + x, tc.y + y);
-                        immutable fromPoint = Point(x, y);
-                        immutable toPoint   = Point(tc.x + x, tc.y + y);
+                    immutable fromPoint = Point(x, y);
+                    immutable toPoint   = tc.loc + fromPoint;
+                    if (_phymap.getNeedsColoring(toPoint)) {
+                        _phymap.setDoneColoring (toPoint);
                         _land.drawFromPixel(sprite, fromPoint, toPoint);
                     }
                 }
@@ -419,11 +419,11 @@ private:
                 // If land exists, remember the changes to be able to draw them
                 // later. No land in noninteractive mode => needn't save this.
                 auto fc = FlaggedChange(tc);
-                fc.mustDrawPerPixel = _phymap.rectSum!(Phymap.getSolid)
-                                        (tc.x, tc.y, xl, yl) != 0;
+                fc.mustDrawPerPixel = 0 !=
+                    _phymap.rectSum!(Phymap.getSolid)(Rect(tc.loc, xl, yl));
                 _addsForLand ~= fc;
             }
-            _phymap.rect!(Phymap.setSolidNeedsColoring)(tc.x, tc.y, xl, yl);
+            _phymap.rect!(Phymap.setSolidNeedsColoring)(Rect(tc.loc, xl, yl));
         }
         _addsForPhymap = null;
     }

@@ -224,10 +224,10 @@ private Point getFuse() const
 
 void addEncountersFromHere()
 {
-    _encFoot |= lookup.get(_ex, _ey);
+    _encFoot |= lookup.get(Point(_ex, _ey));
     _encBody |= _encFoot
-             |  lookup.get(_ex, _ey - 4)
-             |  lookup.get(_ex, getFuse().y);
+             |  lookup.get(Point(_ex, _ey - 4))
+             |  lookup.get(Point(_ex, getFuse().y));
 }
 
 package void repositionSprite()
@@ -328,22 +328,22 @@ void resetFlingNew()
 
 bool getSteel(in int px, in int py) const
 {
-    return lookup.getSteel(_ex + px * dir, _ey + py);
+    return lookup.getSteel(Point(_ex + px * dir, _ey + py));
 }
 
 bool isSolid(in int px = 0, in int py = 2) const
 {
-    return lookup.getSolidEven(_ex + px * dir, _ey + py);
+    return lookup.getSolidEven(Point(_ex + px * dir, _ey + py));
 }
 
 bool wouldHitSteel(in Mask mask) const
 {
-    return lookup.getSteelUnlessMaskIgnores(_ex, _ey, mask);
+    return lookup.getSteelUnlessMaskIgnores(Point(_ex, _ey), mask);
 }
 
 bool isSolidSingle(in int px = 0, in int py = 2) const
 {
-    return lookup.getSolid(_ex + px * dir, _ey + py);
+    return lookup.getSolid(Point(_ex + px * dir, _ey + py));
 }
 
 

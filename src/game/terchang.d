@@ -1,6 +1,7 @@
 module game.terchang;
 
 import basics.nettypes;
+import basics.rect;
 import lix.enums;
 
 struct TerrainChange {
@@ -31,4 +32,7 @@ struct TerrainChange {
 
     @property bool isAddition() const { return type < Type.implode; }
     @property bool isDeletion() const { return ! isAddition; }
+
+    @property Point loc()       const { return Point(x, y); }
+    @property Point loc(in Point p)   { x = p.x; y = p.y; return loc(); }
 }
