@@ -2,6 +2,8 @@ module editor.calc;
 
 import std.algorithm;
 
+import basics.rect;
+import basics.user; // hotkeys for movement
 import editor.editor;
 import editor.hover;
 import editor.select;
@@ -44,10 +46,19 @@ void handleNonstandardPanelButtons(Editor editor) { with (editor)
 
 void moveTiles(Editor editor) { with (editor)
 {
-    if (! _dragger.moving)
-        return;
-    auto movedBy = _dragger.movedSinceLastCall(_map);
-    _selection.each!(tile => tile.moveBy(movedBy));
+    // DTODO: When we move by mouse dragging, snap the entire selection to
+    // the grid, according to one of its pieces. Look into the C++ source
+    // for how exactly to snap. Don't snap each piece individually.
+    immutable movedByMouse
+        = _dragger.moving ? _dragger.movedSinceLastCall(_map) : Point(0, 0);
+    immutable movedByKeyboard
+        = Point(-_grid, 0) * keyEditorLeft .keyTappedAllowingRepeats
+        + Point(+_grid, 0) * keyEditorRight.keyTappedAllowingRepeats
+        + Point(0, -_grid) * keyEditorUp   .keyTappedAllowingRepeats
+        + Point(0, +_grid) * keyEditorDown .keyTappedAllowingRepeats;
+    immutable total = movedByMouse + movedByKeyboard;
+    if (total != Point(0, 0))
+        _selection.each!(tile => tile.moveBy(total));
 }}
 
 // ############################################################################

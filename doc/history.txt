@@ -1,6 +1,22 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.42
+------
+
+2016-03-23
+
+Editor adds pieces selected from the tile browser. Editor moves tiles by
+keyboard and mouse. No snapping to grid yet.
+
+Fixed #57: The builder gets closer to a vertical wall before stopping.
+Fixed #60: The editor selects newly-added tiles immediately.
+Fix: Editor-added tiles are clamped to the map, they don't spawn off-bounds.
+Fix: The file listing ignores files with pre-extension X, like _order.X.txt.
+
+Rewrote many functions everywhere to take one Point instead of 2 ints.
+I have to test for performance regressions.
+
 0.2.41
 ------
 

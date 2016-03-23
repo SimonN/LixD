@@ -29,6 +29,7 @@ package:
     bool _gotoMainMenu;
     EditorPanel _panel;
     MouseDragger _dragger;
+    int _grid = 16;
 
     Hover[] _hover;
     Hover[] _selection;
