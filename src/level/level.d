@@ -120,8 +120,12 @@ public:
             && _status != LevelStatus.BAD_EMPTY;
     }
 
-    // called from the Editor
-    void addTileWithCenterAt(Filename fn, Point p) { implCenter(this, fn, p); }
+    // Called from the Editor. Adds to the correct array of this level,
+    // then returns, in addition, a reference to the added piece.
+    AbstractPos addTileWithCenterAt(Filename fn, Point p)
+    {
+        return implCenter(this, fn, p);
+    }
 
     void drawTerrainTo(Torbit tb, Phymap lo = null) const
     {

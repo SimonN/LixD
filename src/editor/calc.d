@@ -3,6 +3,7 @@ module editor.calc;
 import std.algorithm;
 
 import editor.editor;
+import editor.hover;
 import editor.select;
 import gui.root;
 import hardware.keyboard;
@@ -10,20 +11,13 @@ import hardware.mousecur;
 
 package:
 
-void implEditorCalc(Editor editor) { with (editor)
+void implEditorCalc(Editor editor)
 {
-    if (_terrainBrowser) {
-        if (_terrainBrowser.done) {
-            _level.addTileWithCenterAt(_terrainBrowser.chosenTile,
-                                       _map.mouseOnLand);
-            rmFocus(_terrainBrowser);
-            _terrainBrowser = null;
-            _panel.allButtonsOff();
-        }
-    }
+    if (editor._terrainBrowser)
+        editor.calcTerrainBrowser();
     else
         editor.noWindowsOpenCalc();
-}}
+}
 
 private:
 
@@ -54,4 +48,19 @@ void moveTiles(Editor editor) { with (editor)
         return;
     auto movedBy = _dragger.movedSinceLastCall(_map);
     _selection.each!(tile => tile.moveBy(movedBy));
+}}
+
+// ############################################################################
+
+void calcTerrainBrowser(Editor editor) { with (editor)
+{
+    if (_terrainBrowser.done) {
+        auto pos = _level.addTileWithCenterAt(_terrainBrowser.chosenTile,
+                                              _map.mouseOnLand);
+        rmFocus(_terrainBrowser);
+        _terrainBrowser = null;
+        _panel.allButtonsOff();
+        if (pos)
+            _selection = [ Hover.newViaEvilDynamicCast(_level, pos) ];
+    }
 }}

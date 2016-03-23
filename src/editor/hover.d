@@ -25,6 +25,7 @@ abstract class Hover {
         none,
         selectAll,
         frameSpanning,
+        addedFromBrowser,
         mouseInSelbox,
         mouseOnSolidPixel
     }
@@ -55,6 +56,16 @@ abstract class Hover {
     abstract inout(AbstractPos) pos() inout;
     abstract void removeFromLevel();
     abstract AlCol hoverColor(int val) const;
+
+    static Hover newViaEvilDynamicCast(Level l, AbstractPos forThis)
+    {
+        assert (forThis);
+        if (auto h = cast (TerPos) forThis)
+            return new TerrainHover(l, h, Reason.addedFromBrowser);
+        else if (auto h = cast (GadPos) forThis)
+            return new GadgetHover(l, h, Reason.addedFromBrowser);
+        assert (false);
+    }
 }
 
 class TerrainHover : Hover {

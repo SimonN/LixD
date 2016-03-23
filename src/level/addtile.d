@@ -14,26 +14,21 @@ import tile.tilelib;
 package:
 
 // add tile to level such that its center point ends up at the argument point
-void implCenter(Level level, Filename fn, Point center)
+AbstractPos implCenter(Level level, Filename fn, Point center)
 {
     if (! fn)
-        return;
-    const str = fn.rootlessNoExt;
-    // There is a compiler bug in dmd 2.070: Assume classes B : A and C : A.
-    // The common type of B and C is A, correct. But the common type of
-    // const(B) and const(C) is not const(A), but void, which is a bug.
-    // We can't use operator ?:, but have to roll our own disambiguation.
-    Rebindable!(const(Platonic)) tile = get_terrain(str);
-    if (! tile)
-        tile = get_gadget(str);
-    if (! tile)
-        return;
-    add_object_from_ascii_line(level, str,
-        level.topology.clamp(center) - tile.cb.len / 2, "");
+        return null;
+    auto pos = add_object_from_ascii_line(level, fn.rootlessNoExt, center, "");
+    if (! pos)
+        return null;
+    assert (pos.ob, "added tile, image doesn't exist?");
+    pos.point = level.topology.clamp(center) - pos.ob.cb.len / 2;
+    return pos;
 }
 
-// this gets called with the raw data, it's a factory
-void add_object_from_ascii_line(
+// This gets called with the raw data, it's a factory.
+// This adds to the correct array and, in addition, returns a reference.
+AbstractPos add_object_from_ascii_line(
     Level     level,
     in string text1,
     in Point  cornerAt,
@@ -52,6 +47,7 @@ void add_object_from_ascii_line(
             default: break;
         }
         level.terrain ~= newpos;
+        return newpos;
     }
     else if (gad && gad.cb) {
         GadPos newpos = new GadPos(gad);
@@ -62,9 +58,11 @@ void add_object_from_ascii_line(
                 default: break;
             }
         level.pos[gad.type] ~= newpos;
+        return newpos;
     }
     else {
         level._status = LevelStatus.BAD_IMAGE;
         logf("Missing image `%s'", text1);
+        return null;
     }
 }
