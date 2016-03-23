@@ -48,26 +48,26 @@ protected:
 
                 WHILE_X_MAX: while (xMax >= 0) {
                     xMax -= 1;
-                    for (int y = 0; y < cb.yl; y += 1)
-                        if (cb.get_pixel(xf, yf, xMax, y) != color.transp)
+                    for (Point p = Point(xMax, 0); p.y < cb.yl; p.y += 1)
+                        if (cb.get_pixel(xf, yf, p) != color.transp)
                             break WHILE_X_MAX;
                 }
                 WHILE_X_MIN: while (xMin < xMax) {
                     xMin += 1;
-                    for (int y = 0; y < cb.yl; y += 1)
-                        if (cb.get_pixel(xf, yf, xMin, y) != color.transp)
+                    for (Point p = Point(xMin, 0); p.y < cb.yl; p.y += 1)
+                        if (cb.get_pixel(xf, yf, p) != color.transp)
                             break WHILE_X_MIN;
                 }
                 WHILE_Y_MAX: while (yMax >= 0) {
                     yMax -= 1;
-                    for (int x = 0; x < cb.xl; x += 1)
-                        if (cb.get_pixel(xf, yf, x, yMax) != color.transp)
+                    for (Point p = Point(0, yMax); p.x < cb.xl; p.x += 1)
+                        if (cb.get_pixel(xf, yf, p) != color.transp)
                             break WHILE_Y_MAX;
                 }
                 WHILE_Y_MIN: while (yMin < yMax) {
                     yMin += 1;
-                    for (int x = 0; x < cb.xl; x += 1)
-                        if (cb.get_pixel(xf, yf, x, yMin) != color.transp)
+                    for (Point p = Point(0, yMin); p.x < cb.xl; p.x += 1)
+                        if (cb.get_pixel(xf, yf, p) != color.transp)
                             break WHILE_Y_MIN;
                 }
                 _selbox.x  = min(_selbox.x,  xMin);

@@ -72,12 +72,11 @@ private:
         immutable Phybitset bits = Phybit.terrain | (steel ? Phybit.steel : 0);
         with (LockReadOnly(cb.albit)) {
             super.findSelboxAssumeLocked();
-            foreach (y; 0 .. _phymap.yl)
-                foreach (x; 0 .. _phymap.xl) {
-                    immutable p = Point(x, y);
-                    if (cb.get_pixel(x, y) != color.transp)
+            Point p = Point();
+            for (    p.y = 0; p.y < _phymap.yl; ++p.y)
+                for (p.x = 0; p.x < _phymap.xl; ++p.x)
+                    if (cb.get_pixel(p) != color.transp)
                         _phymap.add(p, bits);
-                }
         }
     }
 
@@ -88,11 +87,12 @@ private:
         assert (_phymap);
         auto zone = Zone(profiler, "Terrain.makeDarkVersion");
         _dark = new Cutbit(albitCreate(_phymap.xl, _phymap.yl), false);
+        Point p = Point();
         with (LockWriteOnly(_dark.albit))
             with (DrawingTarget(_dark.albit))
-                foreach (y; 0 .. _phymap.yl)
-                    foreach (x; 0 .. _phymap.xl)
-                        al_put_pixel(x, y, _phymap.get(Point(x,y))
+                for (    p.y = 0; p.y < _phymap.yl; ++p.y)
+                    for (p.x = 0; p.x < _phymap.xl; ++p.x)
+                        al_put_pixel(p.x, p.y, _phymap.get(p)
                             ? color.white : color.transp);
     }
 }
