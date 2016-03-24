@@ -1,7 +1,8 @@
 module level.levdraw;
 
 import std.conv;
-import std.string; // format tharsis zone name
+import std.range; // for zone format
+import std.string; // for zone format
 
 import basics.alleg5;
 import file.filename;
@@ -20,6 +21,8 @@ package void implDrawTerrainTo(in Level level, Torbit tb, Phymap lookup)
     if (! tb) return;
     assert (tb == level.topology);
     assert (! lookup || lookup == level.topology);
+    auto zone = Zone(profiler, "Level.%s %s".format(
+                lookup ? "drawLT" : "drawT", level.name.take(15)));
     tb.clearToColor(color.transp);
     foreach (po; level.terrain)
         drawPosTerrain(po, tb, lookup);
