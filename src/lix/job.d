@@ -66,8 +66,8 @@ public:
             case Ac.climber:    newJob = new Climber();    break;
             case Ac.ascender:   newJob = new Ascender();   break;
             case Ac.floater:    newJob = new Floater();    break;
-            case Ac.exploder:   newJob = new Imploder();   break;
-            case Ac.exploder2:  newJob = new Exploder();   break;
+            case Ac.imploder:   newJob = new Imploder();   break;
+            case Ac.exploder:  newJob = new Exploder();   break;
             case Ac.blocker:    newJob = new Blocker();    break;
             case Ac.builder:    newJob = new Builder();    break;
             case Ac.shrugger:   newJob = new Shrugger();   break;

@@ -145,8 +145,8 @@ setLikeTribe(in Tribe tr)
 
     foreach (b; _skills) {
         b.style  = tr.style;
-        if (b.skill == Ac.exploder2 && tr.skills[Ac.exploder] != 0)
-            b.skill = Ac.exploder;
+        if (b.skill == Ac.exploder && tr.skills[Ac.imploder] != 0)
+            b.skill = Ac.imploder;
         b.number = tr.skills[b.skill];
     }
     nukeSingle.on = tr.nuke;

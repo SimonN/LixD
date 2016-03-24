@@ -485,8 +485,8 @@ int priorityForNewAc(
     if (! cursorShouldOpenOverMe) return 0;
 
     // Permanent skills
-    if ((newAc == Ac.exploder  && ploderTimer > 0)
-     || (newAc == Ac.exploder2 && ploderTimer > 0)
+    if ((newAc == Ac.imploder  && ploderTimer > 0)
+     || (newAc == Ac.exploder && ploderTimer > 0)
      || (newAc == Ac.runner    && abilityToRun)
      || (newAc == Ac.climber   && abilityToClimb)
      || (newAc == Ac.floater   && abilityToFloat) ) return 1;
@@ -496,8 +496,8 @@ int priorityForNewAc(
         // high priority, more than anything else on the field.
         case Ac.blocker:
             if (newAc == Ac.walker
-             || newAc == Ac.exploder
-             || newAc == Ac.exploder2) p = 5000;
+             || newAc == Ac.imploder
+             || newAc == Ac.exploder) p = 5000;
             else return 1;
             break;
 
@@ -528,8 +528,8 @@ int priorityForNewAc(
             if (newAc == Ac.runner
              || newAc == Ac.climber
              || newAc == Ac.floater
-             || newAc == Ac.exploder
-             || newAc == Ac.exploder2) p = 2000;
+             || newAc == Ac.imploder
+             || newAc == Ac.exploder) p = 2000;
             else return 1;
             break;
 
@@ -589,7 +589,7 @@ void perform(OutsideWorld* ow)
 void becomePloder(OutsideWorld* ow)
 {
     mixin(tmpOutsideWorld);
-    become(ploderIsExploder ? Ac.exploder2 : Ac.exploder);
+    become(ploderIsExploder ? Ac.exploder : Ac.imploder);
 }
 
 void applyFlingXY(OutsideWorld* ow)

@@ -98,7 +98,7 @@ private Ac[14] _skillSort = [
     Ac.climber,
     Ac.floater,
     Ac.batter,
-    Ac.exploder2,
+    Ac.exploder,
     Ac.blocker,
     Ac.cuber,
     Ac.builder,
@@ -189,8 +189,8 @@ static this()
     keySkill[Ac.miner]      = ALLEGRO_KEY_G;
     keySkill[Ac.blocker]    = ALLEGRO_KEY_X;
     keySkill[Ac.cuber]      = ALLEGRO_KEY_X;
-    keySkill[Ac.exploder]   = ALLEGRO_KEY_V;
-    keySkill[Ac.exploder2]  = ALLEGRO_KEY_V;
+    keySkill[Ac.imploder]   = ALLEGRO_KEY_V;
+    keySkill[Ac.exploder]  = ALLEGRO_KEY_V;
 
     keySkill[Ac.climber]    = ALLEGRO_KEY_B;
     keySkill[Ac.floater]    = ALLEGRO_KEY_Q;

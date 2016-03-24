@@ -18,8 +18,8 @@ abstract class Ploder : Job {
     static void handlePloderTimer(Lixxie li, OutsideWorld* ow)
     {
         assert (ow);
+        assert (li.ac != Ac.imploder);
         assert (li.ac != Ac.exploder);
-        assert (li.ac != Ac.exploder2);
 
         if (li.ploderTimer == 0)
             return;
@@ -45,7 +45,7 @@ abstract class Ploder : Job {
     {
         assert (lixxie.ploderTimer == 0);
         ++lixxie.ploderTimer;
-        lixxie.ploderIsExploder = (ac == Ac.exploder2);
+        lixxie.ploderIsExploder = (ac == Ac.exploder);
     }
 
     // onBecome(): Do nothing, instead wait until we do perform(),
@@ -70,10 +70,10 @@ private:
 
     final void changeTerrain()
     {
-        assert (ac == Ac.exploder || ac == Ac.exploder2);
+        assert (ac == Ac.imploder || ac == Ac.exploder);
         TerrainChange tc;
         tc.update = lixxie.outsideWorld.state.update;
-        tc.type   = (ac == Ac.exploder2) ? TerrainChange.Type.explode
+        tc.type   = (ac == Ac.exploder) ? TerrainChange.Type.explode
                                          : TerrainChange.Type.implode;
         tc.x      = - masks[tc.type].offsetX + lixxie.ex;
         tc.y      = - masks[tc.type].offsetY + lixxie.ey;

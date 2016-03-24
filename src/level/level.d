@@ -64,8 +64,12 @@ public:
     int  spawnintSlow;
     int  spawnintFast;
 
-    bool nukeDelayed; // true == nuke button triggers overtime if any
-    Ac   nukeSkill;   // NOTHING == use most appropriate exploder
+    /* ploder: either Ac.exploder or Ac.imploder.
+     * This is never written to the level file. Instead, 0 exploders or 0
+     * imploders should always be written to file. If both are missing,
+     * this should offer flingploder.
+     */
+    bool offerFlingploder;
 
     Enumap!(Ac, int) skills;
 
@@ -85,6 +89,7 @@ public:
         required     =  20;
         spawnintSlow =  32;
         spawnintFast =   4;
+        offerFlingploder = true;
     }
 
     this(in Filename fn)
@@ -164,9 +169,7 @@ public:
             || this.required     != rhs.required
             || this.spawnintSlow != rhs.spawnintSlow
             || this.spawnintFast != rhs.spawnintFast
-
-            || this.nukeDelayed  != rhs.nukeDelayed
-            || this.nukeSkill    != rhs.nukeSkill
+            || this.offerFlingploder != rhs.offerFlingploder
         ) {
             return false;
         }

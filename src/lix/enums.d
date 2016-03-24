@@ -24,23 +24,32 @@ enum UpdateOrder {
     flinger,  // Affects lixes directly by flinging. Updated first.
 }
 
+nothrow bool isPloder(in Ac ac) pure
+{
+    return ac == Ac.imploder || ac == Ac.exploder;
+}
+
 nothrow Ac stringToAc(in string str)
 {
-    try
-        return str.toLower.to!Ac;
+    try {
+        string lower = str.toLower;
+        return lower == "exploder"  ? Ac.imploder
+            :  lower == "exploder2" ? Ac.exploder : lower.to!Ac;
+    }
     catch (Exception)
         return Ac.max;
 }
 
 string acToString(in Ac ac)
 {
-    return ac.to!string.toUpper;
+    return ac == Ac.exploder ? "EXPLODER2"
+        :  ac == Ac.imploder ? "EXPLODER" : ac.to!string.toUpper;
 }
 
 auto acToNiceCase(in Ac ac)
 {
     string s = ac.to!string;
-    if (s[$-1] == '2')
+    if (s[$-1] == '2') // shrugger2
         s = s[0 .. $-1];
     return s.asCapitalized;
 }
@@ -61,11 +70,16 @@ string styleToString(in Style sty)
 unittest {
     assert (acToString(Ac.faller) == "FALLER");
     assert (stringToAc("builDER") == Ac.builder);
+    assert (stringToAc("expLoder") == Ac.imploder);
+    assert (stringToAc("eXploDer2") == Ac.exploder);
+    assert (acToString(Ac.imploder) == "EXPLODER");
+    assert (acToString(Ac.exploder) == "EXPLODER2");
     assert (styleToString(Style.yellow) == "Yellow");
     assert (stringToStyle("ORAnge") == Style.orange);
     assert (stringToStyle("Not in there") == Style.garden);
     assert (acToNiceCase(Ac.faller).equal("Faller"));
     assert (acToNiceCase(Ac.shrugger2).equal("Shrugger"));
+    assert (acToNiceCase(Ac.imploder).equal("Imploder"));
 }
 
 enum Ac : ubyte {
@@ -84,8 +98,8 @@ enum Ac : ubyte {
     climber,
     ascender,
     floater,
+    imploder,
     exploder,
-    exploder2,
     blocker,
     builder,
     shrugger,
