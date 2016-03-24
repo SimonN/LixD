@@ -69,7 +69,7 @@ public:
      * imploders should always be written to file. If both are missing,
      * this should offer flingploder.
      */
-    bool offerFlingploder;
+    Ac ploder;
 
     Enumap!(Ac, int) skills;
 
@@ -89,7 +89,7 @@ public:
         required     =  20;
         spawnintSlow =  32;
         spawnintFast =   4;
-        offerFlingploder = true;
+        ploder       = Ac.exploder;
     }
 
     this(in Filename fn)
@@ -169,7 +169,7 @@ public:
             || this.required     != rhs.required
             || this.spawnintSlow != rhs.spawnintSlow
             || this.spawnintFast != rhs.spawnintFast
-            || this.offerFlingploder != rhs.offerFlingploder
+            || this.ploder       != rhs.ploder
         ) {
             return false;
         }

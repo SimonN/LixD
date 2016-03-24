@@ -138,8 +138,8 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
         // If we've read in only rubbish, we don't add the skill.
         else {
             Ac ac = lix.enums.stringToAc(text1);
-            if (ac == Ac.imploder || ac == Ac.exploder)
-                offerFlingploder =  (ac == Ac.exploder);
+            if (ac.isPloder)
+                ploder = ac;
             if (ac != Ac.max)
                 skills[ac] = nr1;
         }
@@ -187,7 +187,7 @@ private void load_level_finalize(Level level)
         bgBlue  = clamp(bgBlue,  0, 255);
 
         // Only allow one type of im/exploder.
-        if (offerFlingploder)
+        if (ploder == Ac.exploder)
             skills[Ac.imploder] = 0;
         else
             skills[Ac.exploder] = 0;
@@ -283,10 +283,9 @@ public void saveToFile(const(Level) l, std.stdio.File file)
     foreach (Ac sk, const int nr; l.skills.byKeyValue)
         if (nr != 0)
             file.writeln(IoLine.Hash(acToString(sk), nr));
-    // Always write at least ex- or imploder, to determine offerFlingploder.
+    // Always write at least ex- or imploder, to determine ploder in panel.
     if (l.skills[Ac.imploder] == 0 && l.skills[Ac.exploder] == 0)
-        file.writeln(IoLine.Hash(acToString(
-            l.offerFlingploder ? Ac.exploder : Ac.imploder), 0));
+        file.writeln(IoLine.Hash(l.ploder.acToString, 0));
 
     void saveOneTileVector(T)(in T[] vec)
     {
