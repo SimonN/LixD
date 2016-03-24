@@ -89,9 +89,9 @@ MutFilename editorLastDirGoal;
 MutFilename editorLastDirDeco;
 MutFilename editorLastDirHazard;
 
-@property const(Ac[]) skillSort() { return _skillSort; }
+@property const(Ac[14]) skillSort() { return _skillSort; }
 
-private Ac[] _skillSort = [
+private Ac[14] _skillSort = [
     Ac.walker,
     Ac.jumper,
     Ac.runner,
