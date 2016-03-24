@@ -193,16 +193,14 @@ private:
 
     void updateNuke()
     {
-        foreach (tribe; _cs.tribes) {
-            if (! tribe.nuke)
+        foreach (int tribeID, tribe; _cs.tribes) {
+            if (! tribe.nuke || tribe.nukeSkill == Ac.nothing)
                 continue;
-            foreach (lix; tribe.lixvec) {
+            foreach (int lixID, lix; tribe.lixvec) {
                 if (! lix.healthy || lix.ploderTimer > 0)
                     continue;
-                // Assign flingploders in MP, depends-on-level in 1P.
-                // Idea: Level may set nuke skill.
-                lix.ploderTimer = 1;
-                lix.ploderIsExploder = true;
+                auto ow = makeGypsyWagon(tribeID, lixID);
+                lix.assignManually(&ow, tribe.nukeSkill);
                 break; // only one lix is hit by the nuke per update
             }
         }

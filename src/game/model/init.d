@@ -59,6 +59,7 @@ void preparePlayers(GameState state, in Level level)
         tr.spawnintFast = level.spawnintFast;
         tr.spawnint     = level.spawnintSlow;
         tr.skills       = level.skills;
+        tr.nukeSkill    = level.ploder;
     }
 }
 
