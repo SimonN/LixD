@@ -7,6 +7,7 @@ import basics.user;
 import editor.editor;
 import editor.gui.browter;
 import editor.gui.panel;
+import editor.gui.skillset;
 import editor.select;
 import file.language;
 import gui;
@@ -39,6 +40,11 @@ void makePanel(Editor editor)
             editor._map.zoom = editor._map.zoom >= 4 ? 1 :
                                editor._map.zoom * 2;
         });
+        onExecute(Lang.editorButtonMenuSkill, keyEditorMenuSkills, () {
+            editor._skillsetWindow = new SkillsetWindow(editor._level);
+            addFocus(editor._skillsetWindow);
+            button(Lang.editorButtonMenuSkill).on = true;
+        });
         template OnExecuteBrowser(string name, string exts) {
             enum string OnExecuteBrowser = "
                     onExecute(Lang.editorButtonAdd%s, keyEditorAdd%s, () {
@@ -58,7 +64,6 @@ void makePanel(Editor editor)
 }
     /+
     editorButtonFileNew,
-    editorButtonFileExit,
     editorButtonFileSave,
     editorButtonFileSaveAs,
     editorButtonGrid2,
@@ -77,12 +82,6 @@ void makePanel(Editor editor)
     editorButtonMenuSize,
     editorButtonMenuScroll,
     editorButtonMenuVars,
-    editorButtonMenuSkill,
-    editorButtonAddSteel,
-    editorButtonAddHatch,
-    editorButtonAddGoal,
-    editorButtonAddDeco,
-    editorButtonAddHazard,
 
     int keyEditorLeft        = ALLEGRO_KEY_S;
     int keyEditorRight       = ALLEGRO_KEY_F;
@@ -100,11 +99,4 @@ void makePanel(Editor editor)
     int keyEditorHelp        = ALLEGRO_KEY_H;
     int keyEditorMenuSize    = ALLEGRO_KEY_5;
     int keyEditorMenuVars    = ALLEGRO_KEY_Q;
-    int keyEditorMenuSkills  = ALLEGRO_KEY_X;
-    int keyEditorAddSteel    = ALLEGRO_KEY_TAB;
-    int keyEditorAddHatch    = ALLEGRO_KEY_1;
-    int keyEditorAddGoal     = ALLEGRO_KEY_2;
-    int keyEditorAddDeco     = ALLEGRO_KEY_3;
-    int keyEditorAddHazard   = ALLEGRO_KEY_4;
-    int keyEditorExit        = ALLEGRO_KEY_ESCAPE;
     +/

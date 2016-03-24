@@ -15,15 +15,15 @@ package:
 
 void implEditorCalc(Editor editor)
 {
-    if (editor._terrainBrowser)
-        editor.calcTerrainBrowser();
-    else
-        editor.noWindowsOpenCalc();
+    if      (editor._terrainBrowser) editor.calcTerrainBrowser();
+    else if (editor._skillsetWindow) editor.calcSkillsetWindow();
+    else                             editor.calcNoWindows();
 }
 
 private:
 
-void noWindowsOpenCalc(Editor editor) { with (editor)
+void calcNoWindows(Editor editor) {
+    with (editor)
 {
     _map.calcScrolling();
     if (_map.scrollingNow)
@@ -63,7 +63,8 @@ void moveTiles(Editor editor) { with (editor)
 
 // ############################################################################
 
-void calcTerrainBrowser(Editor editor) { with (editor)
+void calcTerrainBrowser(Editor editor) {
+    with (editor)
 {
     if (_terrainBrowser.done) {
         auto pos = _level.addTileWithCenterAt(_terrainBrowser.chosenTile,
@@ -73,5 +74,16 @@ void calcTerrainBrowser(Editor editor) { with (editor)
         _panel.allButtonsOff();
         if (pos)
             _selection = [ Hover.newViaEvilDynamicCast(_level, pos) ];
+    }
+}}
+
+void calcSkillsetWindow(Editor editor) {
+    with (editor)
+{
+    if (_skillsetWindow.done) {
+        _skillsetWindow.writeChangesTo(_level);
+        rmFocus(_skillsetWindow);
+        _skillsetWindow = null;
+        _panel.allButtonsOff();
     }
 }}
