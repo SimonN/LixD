@@ -16,6 +16,8 @@ private:
     TextButton _okay;
     TextButton _cancel;
     SkillSetter[skillSort.length] _skillSetters;
+    Checkbox   _useExploder;
+    TextButton _allToZero;
 
     enum skillXl = 40f;
 
@@ -28,7 +30,12 @@ public:
         _cancel = new TextButton(new Geom(20, 20, 100, 20, From.BOT_RIG));
         _okay.text = Lang.commonOk.transl;
         _cancel.text = Lang.commonCancel.transl;
-        addChildren(_okay, _cancel);
+        _useExploder = new Checkbox(new Geom(20, 50, 20, 20, From.BOT_LEF));
+        addChild(new Label(new Geom(50, 50, 150, 20, From.BOT_LEF),
+            Lang.winSkillUseExploder.transl));
+        _allToZero = new TextButton(new Geom(20, 20, 180, 20, From.BOT_LEF),
+            Lang.winSkillClear.transl);
+        addChildren(_okay, _cancel, _useExploder, _allToZero);
         initializeFromLevel(level);
     }
 
@@ -42,17 +49,37 @@ public:
         if (! _okay.execute && ! mouseClickRight)
             return;
         assert (level);
-        foreach (setter; _skillSetters)
+        foreach (Ac ac, ref int sk; level.skills)
+            sk = 0;
+        foreach (setter; _skillSetters) {
+            if (setter.skill.isPloder)
+                level.ploder = setter.skill;
             level.skills[setter.skill] = setter.number;
+        }
+    }
+
+protected:
+    override void calcSelf()
+    {
+        if (_useExploder.execute)
+            foreach (b; _skillSetters[])
+                if (b.skill.isPloder)
+                    b.skill = _useExploder.checked ? Ac.exploder : Ac.imploder;
+        if (_allToZero.execute)
+            foreach (b; _skillSetters[])
+                b.number = 0;
     }
 
 private:
     void initializeFromLevel(Level level)
     {
+        _useExploder.checked = (level.ploder == Ac.exploder);
         foreach (int i; 0 .. skillSort.length) {
+            Ac ac = skillSort[i].isPloder ? level.ploder : skillSort[i];
             _skillSetters[i] = new SkillSetter(new Geom(
-                20 + i * skillXl, 40, skillXl, 120), skillSort[i]);
-            _skillSetters[i].number = level.skills[skillSort[i]];
+                20 + i * skillXl, 40, skillXl, 120));
+            _skillSetters[i].skill  = ac;
+            _skillSetters[i].number = level.skills[ac];
             addChild(_skillSetters[i]);
         }
     }
@@ -64,11 +91,10 @@ private:
     BitmapButton[6] _small;
 
 public:
-    this(Geom g, Ac ac)
+    this(Geom g)
     {
         super(g);
         _main = new SkillButton(new Geom(0, 0, xlg, ylg/2, From.BOTTOM));
-        _main.skill = ac;
         addChild(_main);
         foreach (int i; 0 .. _small.length) {
             immutable a = this.xlg / 2;
@@ -80,6 +106,7 @@ public:
     }
 
     @property Ac  skill()  const { return _main.skill;      }
+    @property Ac  skill(Ac ac)   { return _main.skill = ac; }
     @property int number() const { return _main.number;     }
     @property int number(int i)  { return _main.number = i; }
 

@@ -239,8 +239,9 @@ $winVarClock                  Time/overtime
 
 // editor window to set skills
 
-$winSkillTitle                Skill Settings
-$winSkillClear                Clear all
+$winSkillTitle               Skill Settings
+$winSkillUseExploder         Knockback exploder
+$winSkillClear               Clear all
 $winSkillClassic8            Classic 8
 $winSkillClassic12           Modern 12
 $winSkillAllTo               Adjust all:

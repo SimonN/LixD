@@ -251,6 +251,7 @@ enum Lang {
 
     // editor window to set skills
     winSkillTitle,
+    winSkillUseExploder,
     winSkillClear,
     winSkillClassic8,
     winSkillClassic12,

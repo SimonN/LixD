@@ -228,8 +228,9 @@ $winVarSpawnintFast         Fall-I. schnell
 $winVarClock                 Zeit/Nachspielz.
 
 // Faehigkeits-Fenster
-$winSkillTitle               Fähigkeits-Einstellungen
-$winSkillClear               Alle loeschen
+$winSkillTitle              Fähigkeits-Einstellungen
+$winSkillUseExploder        Rückstoß-Exploder
+$winSkillClear              Alle loeschen
 $winSkillClassic8           Alte 8
 $winSkillClassic12          Moderne 12
 $winSkillAllTo              Alle ändern:
