@@ -49,15 +49,9 @@ public this()
     super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg));
     windowTitle = Lang.optionTitle.transl;
 
-    Geom okayCancelGeom(in int x)
-    {
-        return new Geom(x, 20, 100, 20, From.BOTTOM);
-    }
-    okay   = new TextButton(okayCancelGeom(-60), Lang.commonOk.transl);
-    cancel = new TextButton(okayCancelGeom( 60), Lang.commonCancel.transl);
+    okay   = newOkay  (new Geom(-60, 20, 100, 20, From.BOTTOM));
+    cancel = newCancel(new Geom( 60, 20, 100, 20, From.BOTTOM));
     addChildren(okay, cancel);
-    okay  .hotkey = basics.user.keyMenuOkay;
-    cancel.hotkey = basics.user.keyMenuExit;
 
     explainer = new Frame(new Geom(0, 60, xlg - 40, 40, From.BOTTOM));
     addChild(explainer);

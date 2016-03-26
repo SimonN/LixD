@@ -15,7 +15,21 @@ import graphic.cutbit;
 import graphic.internal;
 
 class TextButton : Button {
+private:
+    string _text;
+    bool   _alignLeft;
+    int    _checkFrame; // frame 0 is empty, then don't draw anything and
+                         // don't shorten the text maximal length
+    Label left;
+    Label leftCheck;
+    Label center;
+    Label centerCheck;
 
+    Geom  checkGeom;
+
+    static immutable chXlg = 20; // size in geoms of checkbox
+
+public:
     enum textXFromLeft = Geom.thickg * 2; // *2 for nice spacing at ends
 
     static Geom newGeomForLeftAlignedLabelInside(in Geom g)
@@ -58,45 +72,27 @@ class TextButton : Button {
 
     override string toString() const { return "But-`" ~  _text ~ "'";   }
 
-private:
+protected:
+    override void drawOntoButton()
+    {
+        auto labelList = [ center, centerCheck, left, leftCheck ];
+        foreach (label; labelList)
+            label.text = "";
+        with (labelList[_alignLeft * 2 + (_checkFrame != 0)]) {
+            text  = this._text;
+            color = this.colorText();
+        }
 
-    string _text;
-    bool   _alignLeft;
-    int    _checkFrame; // frame 0 is empty, then don't draw anything and
-                         // don't shorten the text maximal length
-    Label left;
-    Label leftCheck;
-    Label center;
-    Label centerCheck;
-
-    Geom  checkGeom;
-
-    static immutable chXlg = 20; // size in geoms of checkbox
-
-
-
-protected override void
-drawOntoButton()
-{
-    auto labelList = [ center, centerCheck, left, leftCheck ];
-    foreach (label; labelList)
-        label.text = "";
-    with (labelList[_alignLeft * 2 + (_checkFrame != 0)]) {
-        text  = this._text;
-        color = this.colorText();
-    }
-
-    // Draw the checkmark, which doesn't overlap with the children.
-    // There's a (chXlg) x (chXlg) area reserved for the cutbit on the right.
-    // Draw to the center of this square.
-    if (_checkFrame != 0) {
-        auto cb = getInternal(fileImageMenuCheckmark);
-        cb.draw(guiosd, Point(
-            to!int(checkGeom.xs + checkGeom.xls/2 - cb.xl/2),
-            to!int(checkGeom.ys + checkGeom.yls/2 - cb.yl/2)),
-            _checkFrame, 2 * (on && ! down)
-        );
+        // Draw the checkmark, which doesn't overlap with the children.
+        // There's a (chXlg)x(chXlg) area reserved for the cutbit on the right.
+        // Draw to the center of this square.
+        if (_checkFrame != 0) {
+            auto cb = getInternal(fileImageMenuCheckmark);
+            cb.draw(guiosd, Point(
+                to!int(checkGeom.xs + checkGeom.xls/2 - cb.xl/2),
+                to!int(checkGeom.ys + checkGeom.yls/2 - cb.yl/2)),
+                _checkFrame, 2 * (on && ! down)
+            );
+        }
     }
 }
-
-}; // Klassenende

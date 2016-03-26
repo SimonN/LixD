@@ -1,6 +1,20 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.43
+------
+
+2016-03-26
+
+Editor offers the window to set skills.
+
+The chosen ploder is loaded and offered during play. Levels remember the
+chosen ploder, even if 0 ploders are available. The ploder shown on the
+panel is the nuke skill.
+
+Bug #4 (game ignores tiles that don't fit into VRAM) doesn't crash anymore,
+but ignores the tile instead. The game shows the missing-image error.
+
 0.2.42
 ------
 

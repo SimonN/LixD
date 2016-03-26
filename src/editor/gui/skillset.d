@@ -29,10 +29,8 @@ public:
     {
         super(new Geom(0, 0, 2*20 + skillSort.length * skillXl,
             240, From.CENTER), Lang.winSkillTitle.transl);
-        _okay   = new TextButton(new Geom(20, 50, 100, 20, From.BOT_RIG));
-        _cancel = new TextButton(new Geom(20, 20, 100, 20, From.BOT_RIG));
-        _okay.text = Lang.commonOk.transl;
-        _cancel.text = Lang.commonCancel.transl;
+        _okay   = newOkay  (new Geom(20, 50, 100, 20, From.BOT_RIG));
+        _cancel = newCancel(new Geom(20, 20, 100, 20, From.BOT_RIG));
         _useExploder = new Checkbox(new Geom(20, 50, 20, 20, From.BOT_LEF));
         addChild(new Label(new Geom(50, 50, 150, 20, From.BOT_LEF),
             Lang.winSkillUseExploder.transl));
