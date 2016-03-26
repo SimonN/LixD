@@ -1,4 +1,4 @@
-module gui.button;
+module gui.button.button;
 
 /* A clickable button, can have a hotkey.
  *

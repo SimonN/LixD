@@ -1,4 +1,4 @@
-module gui.butbit;
+module gui.button.bitmap;
 
 import std.conv; // to!int for drawing the cutbit
 

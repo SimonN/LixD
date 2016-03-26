@@ -1,4 +1,4 @@
-module gui.buttwo;
+module gui.button.twotask;
 
 /* class TwoTasksButton : BitmapButton
  * class SpawnIntButton : TwoTasksButton

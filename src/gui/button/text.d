@@ -1,4 +1,4 @@
-module gui.buttext;
+module gui.button.text;
 
 /* A button with text printed on it.
  *

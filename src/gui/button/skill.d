@@ -1,4 +1,4 @@
-module gui.butskill;
+module gui.button.skill;
 
 import gui;
 import graphic.color;

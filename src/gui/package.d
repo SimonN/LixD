@@ -6,14 +6,7 @@ module gui;
  *  import gui;
  */
 
-public import gui.butbit;
-public import gui.butkey;
-public import gui.butokay;
-public import gui.butskill;
 public import gui.button;
-public import gui.buttext;
-public import gui.buttwo;
-
 public import gui.cutbitel;
 public import gui.geometry;
 public import gui.element;

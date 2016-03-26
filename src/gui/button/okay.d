@@ -1,4 +1,4 @@
-module gui.butokay;
+module gui.button.okay;
 
 import basics.user;
 import file.language;

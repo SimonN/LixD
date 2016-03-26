@@ -1,11 +1,8 @@
-module gui.butkey;
+module gui.button.key;
 
 import basics.alleg5; // hotkeyNiceLong
 import basics.globals; // ticksForDoubleClick
-import gui.buttext;
-import gui.element;
-import gui.geometry;
-import gui.root;
+import gui;
 import hardware.keyboard;
 import hardware.mouse;
 

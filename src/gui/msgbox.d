@@ -28,11 +28,7 @@ import std.range;
 
 import basics.help; // .len
 import file.language;
-import gui.buttext;
-import gui.geometry;
-import gui.label;
-import gui.root;
-import gui.window;
+import gui;
 
 class MsgBox : Window {
 
