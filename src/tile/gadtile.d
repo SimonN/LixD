@@ -82,12 +82,12 @@ public:
         Type   aType = Type.DECO,
         int    aSubtype = 0
     ) {
-        if (! aCb)
+        if (! aCb || ! aCb.valid)
             return null;
         return new typeof(this)(aCb, aType, aSubtype);
     }
 
-    void read_definitions_file(in Filename filename)
+    void readDefinitionsFile(in Filename filename)
     {
         // We assume that the object's xl, yl, type, and subtype
         // have been correctly set by the constructor.

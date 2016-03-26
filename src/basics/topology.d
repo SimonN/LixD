@@ -166,6 +166,8 @@ int torusAverage(Range)(
 ) if (isInputRange!Range)
 {
     immutable int len = hatchPoints.walkLength.to!int;
+    if (len == 0)
+        return screenLen / 2;
     immutable int avg = hatchPoints.sum / len;
     if (! torus)
         return avg;

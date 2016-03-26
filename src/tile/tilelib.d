@@ -30,6 +30,8 @@ void initialize()
 {
     static import hardware.display;
     hardware.display.displayStartupMessage("indexing all files in images/");
+    scope (success)
+        hardware.display.displayStartupMessage("    -> done");
 
     // fill the queue will all files on the disk, but chop off the
     // "images/" prefix before using the path as the tile's name
@@ -123,41 +125,40 @@ void loadGadgetFromDisk(in string strNoExt, in char pe, in Filename fn)
     }
 
     Cutbit cb = new Cutbit(fn, true); // true == cut into frames
-    cb.logIfInvalid(fn);
+    if (! cb.valid) {
+        cb.logBecauseInvalid(fn);
+        return;
+    }
     gadgets[strNoExt] = GadgetTile.takeOverCutbit(cb, type, subtype);
-
+    auto tile = (strNoExt in gadgets);
+    assert (tile && *tile);
     // Load overriding definitions from a possibly accompanying text file.
     // That file must have the same name, only its extension must be replaced.
-    auto tile_ptr = (strNoExt in gadgets);
-    if (tile_ptr) {
-        Filename defs = new Filename(fn.rootlessNoExt
-                                   ~ glo.filenameExtTileDefinitions);
-        // We test for existence here, because trying to load the file
-        // will generate a log message for nonexisting file otherwise.
-        // It's normal to have no definitions file, so don't log that.
-        if (fileExists(defs))
-            tile_ptr.read_definitions_file(defs);
-    }
+    Filename defs = new Filename(fn.rootlessNoExt
+                               ~ glo.filenameExtTileDefinitions);
+    // We test for existence here, because trying to load the file
+    // will generate a log message for nonexisting file otherwise.
+    // It's normal to have no definitions file, so don't log that.
+    if (fileExists(defs))
+        tile.readDefinitionsFile(defs);
 }
 
 void loadTerrainFromDisk(in string strNoExt, in bool steel, in Filename fn)
 {
     Cutbit cb = new Cutbit(fn, false); // false == don't cut into frames
-    cb.logIfInvalid(fn);
+    if (! cb.valid) {
+        cb.logBecauseInvalid(fn);
+        return;
+    }
     terrain[strNoExt] = TerrainTile.takeOverCutbit(cb, steel);
 }
 
-void logIfInvalid(const(Cutbit) cb, in Filename fn)
+void logBecauseInvalid(const(Cutbit) cb, in Filename fn)
 {
-    if (cb.valid)
-        return;
+    assert (! cb.valid);
     logf("Image has too large proportions: `%s'", fn.rootful);
     log ("    -> See bug report: https://github.com/SimonN/LixD/issues/4");
-    return;
 }
-
-
-
 
 private string[string] replace_exact;
 private string[string] replace_substring;

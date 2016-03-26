@@ -24,6 +24,8 @@ private:
 public:
     static typeof(this) takeOverCutbit(Cutbit aCb, bool aSteel = false)
     {
+        if (! aCb || ! aCb.valid)
+            return null;
         return new typeof(this)(aCb, aSteel);
     }
 
