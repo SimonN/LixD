@@ -18,8 +18,11 @@ private:
     SkillSetter[skillSort.length] _skillSetters;
     Checkbox   _useExploder;
     TextButton _allToZero;
+    NumPick    _numPick;
+    TextButton _allToNum;
+    TextButton _eightToNum;
 
-    enum skillXl = 40f;
+    enum skillXl = 35f;
 
 public:
     this(Level level)
@@ -35,7 +38,16 @@ public:
             Lang.winSkillUseExploder.transl));
         _allToZero = new TextButton(new Geom(20, 20, 180, 20, From.BOT_LEF),
             Lang.winSkillClear.transl);
-        addChildren(_okay, _cancel, _useExploder, _allToZero);
+
+        immutable pickXl = this.xlg - 180 - 100 - 2*2*20;
+        _numPick    = new NumPick   (new Geom(220, 20, pickXl,   20,
+            From.BOT_LEF), this.numPickConfig);
+        _allToNum   = new TextButton(new Geom(220, 50, pickXl/2, 20,
+            From.BOT_LEF), Lang.winSkillAllTo.transl);
+        _eightToNum = new TextButton(new Geom(220 + pickXl/2, 50, pickXl/2, 20,
+            From.BOT_LEF), Lang.winSkillEightTo.transl);
+        addChildren(_okay, _cancel, _useExploder, _allToZero,
+                    _numPick, _allToNum, _eightToNum);
         initializeFromLevel(level);
     }
 
@@ -51,29 +63,31 @@ public:
         assert (level);
         foreach (Ac ac, ref int sk; level.skills)
             sk = 0;
-        foreach (setter; _skillSetters) {
-            if (setter.skill.isPloder)
-                level.ploder = setter.skill;
-            level.skills[setter.skill] = setter.number;
-        }
+        level.ploder = _useExploder.checked ? Ac.exploder : Ac.imploder;
+        _skillSetters[].each!(b => level.skills[b.skill] = b.number);
     }
 
 protected:
     override void calcSelf()
     {
         if (_useExploder.execute)
-            foreach (b; _skillSetters[])
-                if (b.skill.isPloder)
-                    b.skill = _useExploder.checked ? Ac.exploder : Ac.imploder;
+            setUseExploder(_useExploder.checked);
         if (_allToZero.execute)
-            foreach (b; _skillSetters[])
-                b.number = 0;
+            _skillSetters.each!(b => b.number = 0);
+        if (_allToNum.execute)
+            _skillSetters.each!(b => b.number = _numPick.number);
+        if (_eightToNum.execute) {
+            setUseExploder(false);
+            immutable classic8 = [ Ac.climber, Ac.floater, Ac.imploder,
+                Ac.blocker, Ac.builder, Ac.basher, Ac.miner, Ac.digger ];
+            _skillSetters.each!(b => b.number =
+                classic8.canFind(b.skill) ? _numPick.number : 0);
+        }
     }
 
 private:
     void initializeFromLevel(Level level)
     {
-        _useExploder.checked = (level.ploder == Ac.exploder);
         foreach (int i; 0 .. skillSort.length) {
             Ac ac = skillSort[i].isPloder ? level.ploder : skillSort[i];
             _skillSetters[i] = new SkillSetter(new Geom(
@@ -82,6 +96,25 @@ private:
             _skillSetters[i].number = level.skills[ac];
             addChild(_skillSetters[i]);
         }
+        setUseExploder(level.ploder == Ac.exploder);
+    }
+
+    void setUseExploder(in bool b)
+    {
+        _useExploder.checked = b;
+        _skillSetters[].filter!(s => s.skill.isPloder)
+                       .each!(s => s.skill = (b ? Ac.exploder : Ac.imploder));
+    }
+
+    NumPickConfig numPickConfig() const
+    {
+        NumPickConfig ret;
+        ret.digits = 3;
+        ret.sixButtons = true;
+        ret.min = -1;
+        ret.max = 999;
+        ret.minusOneChar = '*';
+        return ret;
     }
 }
 
@@ -97,9 +130,8 @@ public:
         _main = new SkillButton(new Geom(0, 0, xlg, ylg/2, From.BOTTOM));
         addChild(_main);
         foreach (int i; 0 .. _small.length) {
-            immutable a = this.xlg / 2;
-            _small[i] = new BitmapButton(new Geom(
-                i/3 * a, i%3 * a, a, a), getInternal(fileImageGuiNumber));
+            _small[i] = new BitmapButton(new Geom( i/3 * xlg/2, i%3 * ylg/6,
+                xlg/2, ylg/6), getInternal(fileImageGuiNumber));
             _small[i].xf = 6 + i;
             addChild(_small[i]);
         }

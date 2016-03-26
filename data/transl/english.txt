@@ -241,10 +241,9 @@ $winVarClock                  Time/overtime
 
 $winSkillTitle               Skill Settings
 $winSkillUseExploder         Knockback exploder
-$winSkillClear               Clear all
-$winSkillClassic8            Classic 8
-$winSkillClassic12           Modern 12
-$winSkillAllTo               Adjust all:
+$winSkillClear               All to zero
+$winSkillEightTo             Old 8 to:
+$winSkillAllTo               All to:
 
 // exporting a level into a file
 

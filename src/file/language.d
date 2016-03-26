@@ -253,9 +253,8 @@ enum Lang {
     winSkillTitle,
     winSkillUseExploder,
     winSkillClear,
-    winSkillClassic8,
-    winSkillClassic12,
     winSkillAllTo,
+    winSkillEightTo,
 
     // exporting a level into a file
     exportSingleLix,
