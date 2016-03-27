@@ -6,55 +6,65 @@ import std.conv;
 import gui;
 import gui.picker;
 
-class Picker : Frame {
+struct PickerConfig(T)
+    if (is (T : Tiler)
+) {
+    Geom all;
+    Geom bread;
+    Geom files; // Tiler including scrollbar
+    Ls ls;
+}
+
+class Picker : Element {
 private:
+    Breadcrumb _bread;
     Ls _ls;
+    Frame _frame;
     Tiler _tiler;
     Scrollbar _scrollbar;
 
-    MutFilename _basedir;
-
 public:
-    // Create both arguments separately, then give them to this class.
-    static typeof(this) newPicker(T)(Geom g, Ls ls)
-        if (is (T : Tiler))
-    {
-        assert (g.xl >= 20);
-        assert (ls);
-        return new typeof(this)(g, ls, new T(new Geom(0, 0, g.xl - 20, g.yl)));
+    // Create all class objects in cfg, then give them to this constructor.
+    this(T)(PickerConfig!T cfg)
+    out {
+        assert (_ls);
+    }
+    body {
+        super(cfg.all);
+        import graphic.color;
+        undrawColor = color.transp; // Hack. Picker should not be a drawable
+                                    // element, but rather only have children.
+        _frame     = new Frame(cfg.files);
+        _bread     = new Breadcrumb(cfg.bread);
+        _ls        = cfg.ls;
+        _tiler     = new T        (cfg.files.newGeomTiler);
+        _scrollbar = new Scrollbar(cfg.files.newGeomScrollbar);
+        _scrollbar.pageLen = _tiler.pageLen;
+        addChildren(_bread, _frame, _tiler, _scrollbar);
     }
 
-    @property Filename basedir() const { return _basedir; }
+    @property Filename basedir() const { return _bread.basedir; }
     @property Filename basedir(Filename fn)
     {
-        assert (fn);
-        _basedir = fn.guaranteedDirOnly();
-        if (! _ls.currentDir || ! _ls.currentDir.isChildOf(_basedir))
-            currentDir = _basedir;
+        _bread.basedir = fn; // this resets currentDir if no longer child
+        currentDir = currentDir; // update Ls to possible reset of currentDir
         return basedir;
     }
 
-    @property Filename currentDir() const { return _ls.currentDir; }
+    @property Filename currentDir() const { return _bread.currentDir; }
     @property Filename currentDir(Filename fn)
     {
-        if (! fn) {
-            if (basedir)
-                currentDir = basedir;
-            return currentDir;
-        }
-        if (currentDir && currentDir.dirRootless == fn.dirRootless)
-            return currentDir;
-        _ls.currentDir = (basedir && ! fn.isChildOf(basedir))
-                        ? basedir : fn.guaranteedDirOnly();
-        _tiler.loadDirsFiles(_ls.dirs, _ls.files);
-        _scrollbar.totalLen = _tiler.totalLen;
-        _scrollbar.pos = 0;
+        _bread.currentDir = fn;
+        updateAccordingToBreadCurrentDir();
         return currentDir;
     }
 
-    @property bool executeDir()    const { return _tiler.executeDir;    }
+    @property bool executeDir() const
+    {
+        return _tiler.executeDir || _bread.execute;
+    }
+
     @property bool executeFile()   const { return _tiler.executeFile;   }
-    @property int  executeDirID()  const { return _tiler.executeDirID;  }
     @property int  executeFileID() const { return _tiler.executeFileID; }
               void highlightFile(int i)  { _tiler.highlightFile(i);     }
               void highlightNothing()    { _tiler.highlightNothing();   }
@@ -84,20 +94,33 @@ public:
 protected:
     override void calcSelf()
     {
-        if (_tiler.executeDir)
+        if (_bread.execute)
+            updateAccordingToBreadCurrentDir();
+        else if (_tiler.executeDir)
             currentDir = _ls.dirs[_tiler.executeDirID];
         else if (_scrollbar.execute)
             _tiler.top = _scrollbar.pos;
     }
 
 private:
-    this(Geom g, Ls ls, Tiler tiler)
+    void updateAccordingToBreadCurrentDir()
     {
-        super(g);
-        _ls        = ls;
-        _tiler     = tiler;
-        _scrollbar = new Scrollbar(new Geom(0, 0, 20, g.yl, From.RIGHT));
-        _scrollbar.pageLen = _tiler.pageLen;
-        addChildren(_tiler, _scrollbar);
+        _ls.currentDir = currentDir;
+        _tiler.loadDirsFiles(_ls.dirs, _ls.files);
+        _scrollbar.totalLen = _tiler.totalLen;
+        _scrollbar.pos = 0;
     }
 }
+
+private:
+
+Geom newGeomScrollbar(Geom files) pure
+{
+    return new Geom(files.x + files.xl - 20, files.y, 20, files.yl);
+}
+
+Geom newGeomTiler(Geom files) pure
+{
+    return new Geom(files.x, files.y, files.xl - 20, files.yl);
+}
+

@@ -27,9 +27,7 @@ class BrowserBase : Window {
 private:
     bool _gotoMainMenu;
     MutFilename _fileRecent; // only used for highlighting, not selecting
-
     Picker _picker;
-    UpOneDirButton _upOneDir;
 
     TextButton buttonPlay;
     TextButton buttonExit;
@@ -47,21 +45,22 @@ public:
         Filename  baseDir
     ) {
         super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg), title);
-        _picker = Picker.newPicker!LevelTiler(
-            new Geom(20,  40, pickerXl, 420),
-            new OrderFileLs);
+        auto cfg  = PickerConfig!LevelTiler();
+        cfg.all   = new Geom(20, 40, xlg-40, ylg-60);
+        cfg.bread = new Geom(0, 0, cfg.all.xl, 30);
+        cfg.files = new Geom(0, 40, pickerXl, cfg.all.yl - 40);
+        cfg.ls    = new OrderFileLs;
+        _picker   = new Picker(cfg);
         _picker.basedir = baseDir;
-        _upOneDir = new UpOneDirButton(new Geom(infoX, 20,
-            infoXl/2, 40, From.BOTTOM_LEFT), _picker);
         buttonExit = new TextButton(new Geom(infoX + infoXl/2, 20,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.commonBack.transl);
         buttonPlay = new TextButton(new Geom(infoX, 80,
             infoXl/3, 40, From.BOTTOM_LEFT), Lang.browserPlay.transl);
-        preview    = new Preview(new Geom(20, 60, infoXl, 160, From.TOP_RIG));
+        preview    = new Preview(new Geom(20, 80, infoXl, 160, From.TOP_RIG));
         buttonPlay.hotkey = basics.user.keyMenuOkay;
         buttonExit.hotkey = basics.user.keyMenuExit;
         buttonExit.onExecute = () { _gotoMainMenu = true; };
-        addChildren(preview, _picker, _upOneDir, buttonPlay, buttonExit);
+        addChildren(preview, _picker, buttonPlay, buttonExit);
         updateWindowSubtitle();
     }
 
@@ -122,9 +121,7 @@ protected:
             else
                 onFileSelect(_fileRecent);
         }
-        else if (_picker.executeDir || _upOneDir.execute)
-            // A better design of the picker would get rid of checking
-            // _upOneDir here. See header comment in gui.picker.uponedir.
+        else if (_picker.executeDir)
             highlight(currentDirContainsFileRecent ? _fileRecent : null);
         else if (buttonPlay.execute) {
             assert (_fileRecent !is null);

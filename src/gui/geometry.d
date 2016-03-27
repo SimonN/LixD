@@ -146,14 +146,14 @@ class Geom {
     this(
         in float _x  =  0, in float _y  =  0,
         in float _xl = 20, in float _yl = 20, in From _from = From.TOP_LEFT
-    ) {
+    ) pure {
         parent = null;
         from   = _from;
         x = _x; xl = _xl;
         y = _y; yl = _yl;
     }
 
-    this(in Geom g)
+    this(in Geom g) pure
     {
         this(g.x, g.y, g.xl, g.yl, g.from);
     }

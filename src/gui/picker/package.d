@@ -25,6 +25,7 @@ class Panda : Element;
     other's actions. Knows how to interpret hotkeys (up/down by 1 or 5).
 */
 
+public import gui.picker.bread;
 public import gui.picker.ls;
 public import gui.picker.lsimg;
 public import gui.picker.picker;
@@ -32,4 +33,3 @@ public import gui.picker.scrollb;
 public import gui.picker.tiler;
 public import gui.picker.tilerimg;
 public import gui.picker.tilerlev;
-public import gui.picker.uponedir;
