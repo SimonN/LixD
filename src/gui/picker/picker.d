@@ -54,8 +54,10 @@ public:
     @property Filename currentDir() const { return _bread.currentDir; }
     @property Filename currentDir(Filename fn)
     {
-        _bread.currentDir = fn;
-        updateAccordingToBreadCurrentDir();
+        if (fn && fn.dirRootless != currentDir.dirRootless) {
+            _bread.currentDir = fn;
+            updateAccordingToBreadCurrentDir();
+        }
         return currentDir;
     }
 

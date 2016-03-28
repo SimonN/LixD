@@ -93,9 +93,7 @@ private:
     void updateCar()
     {
         reqDraw();
-        if (disabled)
-            return;
-        _car.resize(xlg,         _track.ylg * pageLen / totalLen);
-        _car.move  (0, _up.ylg + _track.ylg * pos     / totalLen);
+        _car.resize(xlg, _track.ylg * (disabled ? 1 : 1f*pageLen / totalLen));
+        _car.move(0, _up.ylg + (disabled ? 0 : _track.ylg * pos / totalLen));
     }
 }
