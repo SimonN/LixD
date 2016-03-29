@@ -1,6 +1,6 @@
 module file.log;
 
-import std.file : mkdirRecurse;
+import std.file;
 import std.stdio;
 import std.string;
 

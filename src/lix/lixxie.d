@@ -1,6 +1,7 @@
 module lix.lixxie;
 
 import std.algorithm; // swap
+import std.string; // format, for codegen
 
 import basics.globals; // fuse image
 import basics.help;

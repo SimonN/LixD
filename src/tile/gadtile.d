@@ -8,6 +8,8 @@ module tile.gadtile;
  * is also destroyed.
  */
 
+import std.algorithm;
+
 import basics.alleg5; // bitmap locking
 import basics.globals;
 import basics.rect;
@@ -153,7 +155,7 @@ private:
         switch (type) {
         case Type.HATCH:
             _triggerX = cb.xl / 2;
-            _triggerY = std.algorithm.max(20, cb.yl - 24);
+            _triggerY = max(20, cb.yl - 24);
             specialX  = 1;
             break;
         case Type.GOAL:

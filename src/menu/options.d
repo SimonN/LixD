@@ -6,6 +6,7 @@ module menu.options;
 
 import std.algorithm;
 import std.string;
+import std.conv;
 
 import enumap;
 

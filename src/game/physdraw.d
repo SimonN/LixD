@@ -27,6 +27,7 @@ import enumap;
 
 import basics.alleg5;
 import basics.cmdargs;
+import basics.globals;
 import basics.help;
 import basics.nettypes;
 import tile.phymap;

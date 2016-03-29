@@ -3,6 +3,7 @@ module basics.verify;
 import std.algorithm;
 import std.file;
 import std.stdio;
+import core.memory;
 
 import basics.cmdargs;
 import basics.globals;

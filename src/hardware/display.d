@@ -12,7 +12,9 @@ import graphic.color; // inside displayStartupMessage()
 import graphic.textout; // inside displayStartupMessage()
 import file.log;
 import gui;
-import hardware.mouse; // center mouse after changing resolution
+
+static import hardware.keyboard; // clear after changing resolution
+static import hardware.mouse; // center mouse after changing resolution
 
 /* A module for setting a screen resolution.
  * Right now, if you switch the screen resolution after having created all

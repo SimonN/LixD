@@ -8,6 +8,7 @@ module basics.user;
 import std.typecons; // rebindable
 import std.algorithm; // sort filenames before outputting them
 import std.conv;
+import std.file; // mkdirRecurse
 import std.stdio;
 
 import enumap;

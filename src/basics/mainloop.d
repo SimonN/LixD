@@ -13,6 +13,7 @@ module basics.mainloop;
 import core.memory;
 
 import basics.alleg5;
+import basics.globconf;
 import editor.editor;
 import game.core.game;
 import file.log; // logging uncaught Exceptions
@@ -25,6 +26,8 @@ import menu.mainmenu;
 import menu.options;
 
 static import gui;
+static import hardware.keyboard;
+static import hardware.mouse;
 static import hardware.mousecur;
 static import hardware.sound;
 

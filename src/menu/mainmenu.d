@@ -11,6 +11,8 @@ import file.language;
 import gui;
 import menu.menubg;
 
+static import basics.globals;
+
 class MainMenu : MenuWithBackground {
 
     @property bool gotoSingle()  { return single .execute; }

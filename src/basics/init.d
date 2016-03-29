@@ -10,11 +10,17 @@ import basics.globals;
 import basics.globconf;
 import basics.user;
 import file.language;
+import game.physdraw;
 import graphic.color;
 import graphic.internal;
+import graphic.textout;
 import gui;
 import hardware.display;
+import hardware.keyboard;
 import hardware.mouse;
+import hardware.mousecur;
+import hardware.sound;
+import hardware.tharsis;
 import tile.tilelib;
 import lix;
 

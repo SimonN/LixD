@@ -11,6 +11,8 @@ import gui.picker.tiler;
 import level.metadata;
 import game.replay;
 
+static import basics.user;
+
 abstract class LevelOrReplayTiler : Tiler {
 public:
     enum buttonYlg = 20;

@@ -3,8 +3,9 @@ module hardware.keyboard;
 import std.array;
 import std.utf;
 
-import basics.globals : ticksPerSecond;
 import basics.alleg5;
+
+static import basics.globals;
 
 string utf8Input() { return _bufferUTF8; }
 

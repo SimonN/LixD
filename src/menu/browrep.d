@@ -8,6 +8,8 @@ import gui;
 import level.level;
 import menu.browmain;
 
+static import basics.globals;
+
 class BrowserReplay : BrowserCalledFromMainMenu {
 
     this()

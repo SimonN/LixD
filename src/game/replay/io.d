@@ -17,6 +17,8 @@ import game.replay.replay;
 import level.level;
 import lix.enums;
 
+static import basics.user;
+
 package:
 
 nothrow void implSaveToFile(
