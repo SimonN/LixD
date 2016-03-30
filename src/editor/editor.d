@@ -10,7 +10,7 @@ import editor.calc;
 import editor.dragger;
 import editor.draw;
 import editor.gui.browter;
-import editor.gui.skillset;
+import editor.gui.okcancel;
 import editor.hover;
 import editor.io;
 import editor.gui.panel;
@@ -36,7 +36,7 @@ package:
     Hover[] _selection;
 
     TerrainBrowser _terrainBrowser;
-    SkillsetWindow _skillsetWindow;
+    OkCancelWindow _okCancelWindow;
 
 public:
     this(Filename fn)

@@ -8,6 +8,7 @@ import editor.editor;
 import editor.gui.browter;
 import editor.gui.panel;
 import editor.gui.skillset;
+import editor.gui.visuals;
 import editor.select;
 import file.language;
 import gui;
@@ -40,9 +41,14 @@ void makePanel(Editor editor)
             editor._map.zoom = editor._map.zoom >= 4 ? 1 :
                                editor._map.zoom * 2;
         });
+        onExecute(Lang.editorButtonMenuScroll, 0, () {
+            editor._okCancelWindow = new VisualsWindow(editor._level);
+            addFocus(editor._okCancelWindow);
+            button(Lang.editorButtonMenuScroll).on = true;
+        });
         onExecute(Lang.editorButtonMenuSkill, keyEditorMenuSkills, () {
-            editor._skillsetWindow = new SkillsetWindow(editor._level);
-            addFocus(editor._skillsetWindow);
+            editor._okCancelWindow = new SkillsetWindow(editor._level);
+            addFocus(editor._okCancelWindow);
             button(Lang.editorButtonMenuSkill).on = true;
         });
         template OnExecuteBrowser(string name, string exts) {

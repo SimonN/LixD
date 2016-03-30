@@ -16,7 +16,7 @@ package:
 void implEditorCalc(Editor editor)
 {
     if      (editor._terrainBrowser) editor.calcTerrainBrowser();
-    else if (editor._skillsetWindow) editor.calcSkillsetWindow();
+    else if (editor._okCancelWindow) editor.calcOkCancelWindow();
     else                             editor.calcNoWindows();
 }
 
@@ -77,13 +77,13 @@ void calcTerrainBrowser(Editor editor) {
     }
 }}
 
-void calcSkillsetWindow(Editor editor) {
+void calcOkCancelWindow(Editor editor) {
     with (editor)
 {
-    if (_skillsetWindow.done) {
-        _skillsetWindow.writeChangesTo(_level);
-        rmFocus(_skillsetWindow);
-        _skillsetWindow = null;
+    if (_okCancelWindow.done) {
+        _okCancelWindow.writeChangesTo(_level);
+        rmFocus(_okCancelWindow);
+        _okCancelWindow = null;
         _panel.allButtonsOff();
     }
 }}

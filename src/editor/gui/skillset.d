@@ -4,17 +4,15 @@ import std.algorithm;
 
 import basics.user; // length of sorted skill array
 import basics.globals;
+import editor.gui.okcancel;
 import file.language;
 import graphic.internal;
 import gui;
-import hardware.mouse;
 import level.level;
 import lix.enums;
 
-class SkillsetWindow : Window {
+class SkillsetWindow : OkCancelWindow {
 private:
-    TextButton _okay;
-    TextButton _cancel;
     SkillSetter[skillSort.length] _skillSetters;
     Checkbox   _useExploder;
     TextButton _allToZero;
@@ -29,8 +27,6 @@ public:
     {
         super(new Geom(0, 0, 2*20 + skillSort.length * skillXl,
             240, From.CENTER), Lang.winSkillTitle.transl);
-        _okay   = newOkay  (new Geom(20, 50, 100, 20, From.BOT_RIG));
-        _cancel = newCancel(new Geom(20, 20, 100, 20, From.BOT_RIG));
         _useExploder = new Checkbox(new Geom(20, 50, 20, 20, From.BOT_LEF));
         addChild(new Label(new Geom(50, 50, 150, 20, From.BOT_LEF),
             Lang.winSkillUseExploder.transl));
@@ -44,28 +40,20 @@ public:
             From.BOT_LEF), Lang.winSkillAllTo.transl);
         _eightToNum = new TextButton(new Geom(220 + pickXl/2, 50, pickXl/2, 20,
             From.BOT_LEF), Lang.winSkillEightTo.transl);
-        addChildren(_okay, _cancel, _useExploder, _allToZero,
+        addChildren(_useExploder, _allToZero,
                     _numPick, _allToNum, _eightToNum);
         initializeFromLevel(level);
     }
 
-    @property bool done() const
+protected:
+    override void selfWriteChangesTo(Level level) const
     {
-        return _okay.execute || mouseClickRight || _cancel.execute;
-    }
-
-    void writeChangesTo(Level level) const
-    {
-        if (! _okay.execute && ! mouseClickRight)
-            return;
-        assert (level);
         foreach (Ac ac, ref int sk; level.skills)
             sk = 0;
         level.ploder = _useExploder.checked ? Ac.exploder : Ac.imploder;
         _skillSetters[].each!(b => level.skills[b.skill] = b.number);
     }
 
-protected:
     override void calcSelf()
     {
         if (_useExploder.execute)

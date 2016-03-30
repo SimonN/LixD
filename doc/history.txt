@@ -1,6 +1,17 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.44
+------
+
+2016-03-30
+
+Browsers offer breadcrumb navigation to pick directories.
+We're missing some central features in these browsers now:
+https://github.com/SimonN/LixD/issues/63
+
+Fixed imports for dmd 2.071.
+
 0.2.43
 ------
 
