@@ -38,14 +38,12 @@ public:
 
     this(Geom g) { super(g); }
 
-    @property int hotkey() const { return _hotkey;     }
-    @property int hotkey(int i)  { return _hotkey = i; }
-
     // execute is read-only. Derived classes should make their own bool
     // and then override execute().
     @property bool execute() const              { return _execute; }
     @property void onExecute(void delegate() f) { _onExecute = f;  }
 
+    mixin (GetSetWithReqDraw!"hotkey");
     mixin (GetSetWithReqDraw!"down");
     mixin (GetSetWithReqDraw!"on");
 

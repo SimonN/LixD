@@ -23,6 +23,11 @@ void makePanel(Editor editor)
         onExecute(Lang.editorButtonFileExit, keyEditorExit, () {
             editor._gotoMainMenu = true;
         });
+        // Changing the grid is done manually in Editor.calc, not with a
+        // delegate passed to these buttons.
+        onExecute(Lang.editorButtonGrid2,      keyEditorGrid, null);
+        onExecute(Lang.editorButtonGridCustom, keyEditorGrid, null);
+        onExecute(Lang.editorButtonGrid16,     keyEditorGrid, null);
         onExecute(Lang.editorButtonSelectAll, keyEditorSelectAll, () {
             editor.selectAll();
         });
@@ -72,9 +77,6 @@ void makePanel(Editor editor)
     editorButtonFileNew,
     editorButtonFileSave,
     editorButtonFileSaveAs,
-    editorButtonGrid2,
-    editorButtonGridCustom,
-    editorButtonGrid16,
     editorButtonSelectCopy,
     editorButtonSelectMinus,
     editorButtonSelectPlus,
@@ -95,7 +97,6 @@ void makePanel(Editor editor)
     int keyEditorDown        = ALLEGRO_KEY_D;
     int keyEditorCopy        = ALLEGRO_KEY_A;
     int keyEditorDelete      = ALLEGRO_KEY_G;
-    int keyEditorGrid        = ALLEGRO_KEY_C;
     int keyEditorBackground  = ALLEGRO_KEY_T;
     int keyEditorForeground  = ALLEGRO_KEY_B;
     int keyEditorMirror      = ALLEGRO_KEY_W;
