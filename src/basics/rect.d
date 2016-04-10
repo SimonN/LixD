@@ -28,6 +28,7 @@ struct Rect {
 
     // Translate the rectangle, keeping its length
     Rect opBinary(string s)(in Point p) const
+        if (s == "+" || s == "-")
     {
         mixin("return Rect(x " ~ s ~ " p.x, y " ~ s ~ " p.y, xl, yl);");
     }
@@ -67,10 +68,28 @@ struct Point {
         return Point(basics.help.positiveMod(x, rhs.x),
                      basics.help.positiveMod(y, rhs.y));
     }
+
+    // When rounding to multiples of 8,
+    // we round -12, -11, ..., -5          all to -8.
+    // we round -4, -3, -2, -1, 0, 1, 2, 3 all to  0.
+    // We round +4, +5, ..., +11           all to +8.
+    Point roundTo(int grid) const
+    {
+        if (grid == 1)
+            return this;
+        assert (grid > 1);
+        return Point(x + grid/2 - basics.help.positiveMod(x + grid/2, grid),
+                     y + grid/2 - basics.help.positiveMod(y + grid/2, grid));
+    }
 }
 
 unittest {
     assert (Point(3, 4) + Point(10, 10) == Point(13, 14));
     assert (Point(    ) - Point( 4,  5) == Point(-4, -5));
     assert (Point(11, 12).positiveMod(Point(5, 5)) == Point(1, 2));
+
+    assert (Point(0, 0).roundTo(2) == Point(0, 0));
+    assert (Point(1, 3).roundTo(2) == Point(2, 4));
+    assert (Point(-5, 5).roundTo(10) == Point(0, 10));
+    assert (Point(-6, 4).roundTo(10) == Point(-10, 0));
 }

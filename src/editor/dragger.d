@@ -7,8 +7,10 @@ module editor.dragger;
 
 import std.algorithm;
 import std.math;
+import std.typecons;
 
 import basics.rect;
+import editor.hover;
 import graphic.map;
 static import hardware.mouse; // only for position, not for clicks
 
@@ -18,6 +20,16 @@ private:
     Point _fromMap;
     Point _fromScreen; // Used to determine the frame direction on torus maps.
                        // We must select one of the 4 meaningful rectangles.
+
+    // _snapper: Non-null exactly while moving (see invariant).
+    // Movement of tiles is governed by the grid, and by which tile the
+    // snapper is. The snapper snaps to grid when it's moved by the mouse.
+    // Other tiles in the selection should move by the same distance as the
+    // snapper has moved, even if they don't end up snapped to grid.
+    // The editor should pick the clicked-to-move tile and make that the
+    // snapper. We don't move the snapper ourselves, or anything else.
+    Rebindable!(const(Hover)) _snapper;
+
     enum DragMode { none, frame, move }
 
 public:
@@ -27,6 +39,7 @@ public:
     void stop()
     {
         _mode = DragMode.none;
+        _snapper = null;
     }
 
     void startFrame(const(Map) map)
@@ -49,21 +62,29 @@ public:
         return Rect(xPart.start, yPart.start, xPart.len + 1, yPart.len + 1);
     }
 
-    void startMove(const(Map) map)
+    void startMove(const(Map) map, Hover snapper)
     {
         _mode = DragMode.move;
+        _snapper = snapper;
         saveFroms(map);
     }
 
-    Point movedSinceLastCall(const(Map) map)
+    Point snapperShouldMoveBy(const(Map) map, in int grid)
     {
-        assert (moving);
-        auto ret = map.mouseOnLand - _fromMap;
-        saveFroms(map);
-        return ret;
+        if (! moving)
+            return Point(0, 0);
+        immutable draggedOnGrid = (map.mouseOnLand - _fromMap).roundTo(grid);
+        if (draggedOnGrid == Point(0, 0))
+            return Point(0, 0);
+        _fromMap += draggedOnGrid;
+        assert (_snapper);
+        return (_snapper.pos.point + draggedOnGrid).roundTo(grid)
+              - _snapper.pos.point;
     }
 
 private:
+    invariant() { assert ((_snapper !is null) == (_mode == DragMode.move)); }
+
     void saveFroms(const(Map) map)
     {
         _fromMap    = map.mouseOnLand;

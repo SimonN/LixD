@@ -47,12 +47,12 @@ void selectTiles(Editor editor) { with (editor)
             if (_panel.buttonSelectAdd.on)
                 _selection = _selection.filter!(ho => ho != _hover[0]).array;
             else
-                _dragger.startMove(_map);
+                _dragger.startMove(_map, _hover[0]);
         }
         else {
             assert (_hover.length == 1);
             selectHover();
-            _dragger.startMove(_map);
+            _dragger.startMove(_map, _hover[0]);
         }
     }
     else if (! mouseHeldLeft) {
