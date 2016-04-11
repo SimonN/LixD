@@ -1,6 +1,20 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.45
+------
+
+2016-03-11
+
+Editor UI allows to set the grid by mouse and hotkeys, as in C++/A4 Lix.
+
+Editor moves tiles according to the grid. The clicked-and-dragged tile snaps
+to the grid. All other selected tiles move along with it, without snapping to
+grid themselves. When moving by keyboard, nothing snaps to grid. The behavior
+in this paragraph is identical to C++/A4 Lix.
+
+Editor saves on exiting to ./levels/editor-test.txt.
+
 0.2.44
 ------
 
