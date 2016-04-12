@@ -47,7 +47,7 @@ public:
     @property Filename basedir(Filename fn)
     {
         _bread.basedir = fn; // this resets currentDir if no longer child
-        currentDir = currentDir; // update Ls to possible reset of currentDir
+        updateAccordingToBreadCurrentDir();
         return basedir;
     }
 
