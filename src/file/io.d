@@ -1,9 +1,11 @@
 module file.io;
 
+import std.algorithm;
 import std.array;
 import std.file;
 import std.stdio;
 import std.string;
+import std.utf;
 
 import file.date;
 import file.filename;
@@ -258,7 +260,7 @@ IoLine[]
 fillVectorFromFile(in Filename fn)
 {
     // this can throw on file 404, it's intended
-    File file = File(fn.rootful);
+    File file = File(fn.rootful, "r");
     scope (exit) file.close();
 
     return fillVectorFromStream(file);
@@ -270,6 +272,8 @@ fillVectorFromStream(File file)
 {
     IoLine[] ret;
     foreach (string line; lines(file)) {
+        if (! line.all!(d => d.isValidDchar))
+            throw new UTFException("file doesn't contain UTF8");
         line = line.stripRight;
         if (! line.empty)
             ret ~= new IoLine(line);

@@ -15,6 +15,7 @@ module menu.opthelp;
 
 import std.algorithm;
 import std.conv;
+import std.range; // takeOne
 import std.string; // strip
 
 static import basics.user;    // for LanguageOption
@@ -285,7 +286,7 @@ protected:
             immutable key = Lang.mainNameOfLanguage.to!string;
             fillVectorFromFileNothrow(fn)
                 .filter!(ioLine => ioLine.text1 == key)
-                .each  !(ioLine => ret.text = ioLine.text2);
+                .takeOne.each!(ioLine => ret.text = ioLine.text2);
             return ret;
         }
     }
