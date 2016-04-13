@@ -7,6 +7,7 @@ import std.range;
 public import file.filename;
 import basics.help;
 import gui;
+import hardware.tharsis;
 
 abstract class Tiler : Element {
 private:
@@ -42,6 +43,9 @@ public:
 
     final void loadDirsFiles(Filename[] newDirs, Filename[] newFiles)
     {
+        version (tharsisprofiling)
+            auto zone = Zone(profiler, newFiles.length
+                ? "ls " ~ newFiles[0].dirRootless : "ls empty dir");
         rmAllChildren();
         _dirs  = newDirs.map!(t => newDirButton(t)).array;
         _files = newFiles.enumerate!int

@@ -21,16 +21,16 @@ import hardware.tharsis;
 package void
 implGameDraw(Game game) { with (game)
 {
-    auto zo = Zone(profiler, "game entire implGameDraw()");
+    version (tharsisprofiling)
+        auto zo = Zone(profiler, "game entire implGameDraw()");
     nurse.applyChangesToLand();
-
-    with (Zone(profiler, "game entire drawing to map"))
     {
+        version (tharsisprofiling)
+            auto zo2 = Zone(profiler, "game entire drawing to map");
         // speeding up drawing by setting the drawing target now.
         // This RAII struct is used in each innermost loop, too, but it does
         // nothing except comparing two pointers there if we've set stuff here.
         DrawingTarget drata = DrawingTarget(map.albit);
-
         with (level)
             map.clearScreenRect(color.makecol(bgRed, bgGreen, bgBlue));
         game.drawGadgets();
@@ -42,8 +42,11 @@ implGameDraw(Game game) { with (game)
         pan.stats.showTribe(tribeLocal);
     }
     DrawingTarget drata = DrawingTarget(al_get_backbuffer(display));
-    with (Zone(profiler, "game draws map to screen"))
+    {
+        version (tharsisprofiling)
+            auto zo2 = Zone(profiler, "game draws map to screen");
         map.drawCamera();
+    }
     game.drawReplaySign();
 }}
 // end with(game), end implGameDraw()
@@ -52,23 +55,27 @@ private:
 
 void drawGadgets(Game game)
 {
-    auto zone  = Zone(profiler, "game draws gadgets");
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "game draws gadgets");
     auto state = game.nurse.constStateForDrawingOnly;
     state.foreachConstGadget((const(Gadget) g) {
-        with (Zone(profiler, "game draws one gadget"))
-            g.draw(game.map, state);
+        version (tharsisprofiling)
+            auto zo2 = Zone(profiler, "game draws one gadget");
+        g.draw(game.map, state);
     });
 }
 
 void drawLand(Game game)
 {
-    auto zone = Zone(profiler, "game draws land to map");
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "game draws land to map");
     game.map.loadCameraRect(game.nurse.land);
 }
 
 void drawAllLixes(Game game)
 {
-    auto zone = Zone(profiler, "game draws lixes");
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "game draws lixes");
     void drawTribe(in Tribe tr)
     {
         foreach (lix; tr.lixvec.retro)

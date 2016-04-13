@@ -112,7 +112,8 @@ public:
     // DTODO: make this obvious by a Nurse subclass.
     void updateOnce()
     {
-        Zone zone = Zone(profiler, "PhysSeq updateOnceNoSync");
+        version (tharsisprofiling)
+            Zone zone = Zone(profiler, "PhysSeq updateOnceNoSync");
         _model.incrementUpdate;
         applyReplayDataToModel();
         assert (_replay);
@@ -193,7 +194,8 @@ private:
         else
             bool saveNow = _states.wouldAutoSave(_model.cs, target);
         if (saveNow) {
-            Zone zone = Zone(profiler, "Nurse makes auto-savestate");
+            version (tharsisprofiling)
+                Zone zone = Zone(profiler, "Nurse makes auto-savestate");
             // It seems dubious to do drawing to bitmaps during calc/update.
             // However, savestates save the land too, and they should
             // hold the correctly updated land. We could save an instance

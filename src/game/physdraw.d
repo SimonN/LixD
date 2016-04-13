@@ -135,7 +135,8 @@ class PhysicsDrawer {
         if (! anyChangesToLand)
             return;
 
-        auto zone   = Zone(profiler, "applyChangesToLand >= 1");
+        version (tharsisprofiling)
+            auto zone = Zone(profiler, "applyChangesToLand >= 1");
         auto target = DrawingTarget(_land.albit);
 
         while (_delsForLand != null || _addsForLand != null) {
@@ -286,19 +287,20 @@ private:
         assert (_delsForPhymap == null);
     }
     body {
-        auto zone = Zone(profiler, format("PhysDraw del lookup %dx",
-            _delsForPhymap.len));
+        version (tharsisprofiling)
+            auto zone = Zone(profiler, format("PhysDraw del lookup %dx",
+                _delsForPhymap.len));
         scope (exit)
             _delsForPhymap = null;
 
         foreach (const tc; _delsForPhymap) {
             assert (tc.isDeletion);
-            auto zone2 = Zone(profiler, format("PhysDraw lookup %s",
-                tc.type.to!string));
+            version (tharsisprofiling)
+                auto zone2 = Zone(profiler, format("PhysDraw lookup %s",
+                    tc.type.to!string));
 
             int steelHit = 0;
             alias Type = TerrainChange.Type;
-
             if (tc.type == Type.dig) {
                 assert (tc.yl > 0);
                 steelHit += _phymap.rectSum!(Phymap.setAirCountSteel)
@@ -327,10 +329,9 @@ private:
         auto processThese = splitOffFromArray(_delsForLand, upd);
         if (processThese == null)
             return;
-
-        auto zone = Zone(profiler, format("PhysDraw del land %dx",
-            processThese.len));
-
+        version (tharsisprofiling)
+            auto zone = Zone(profiler, format("PhysDraw del land %dx",
+                processThese.len));
         with (BlenderMinus) {
             al_hold_bitmap_drawing(true);
             scope (exit)
@@ -344,8 +345,9 @@ private:
     {
         assert (al_is_bitmap_drawing_held());
         assert (tc.isDeletion);
-        auto zone = Zone(profiler, format("PhysDraw land %s",
-            tc.type.to!string));
+        version (tharsisprofiling)
+            auto zone = Zone(profiler, format("PhysDraw land %s",
+                tc.type.to!string));
         if (tc.type != TerrainChange.Type.dig)
             spriteToLandAccordingToFlag(tc, _subAlbits[tc.type]);
         else {
@@ -364,14 +366,16 @@ private:
         assert (sprite);
         assert (_phymap);
         if (! tc.mustDrawPerPixel) {
-            auto zone = Zone(profiler, format("PhysDraw pix-all %s",
-                                       tc.type.to!string));
+            version (tharsisprofiling)
+                auto zone = Zone(profiler, format("PhysDraw pix-all %s",
+                                                  tc.type.to!string));
             _land.drawFrom(sprite, tc.loc);
             return;
         }
         // we continue here only if tc.mustDrawPerPixel
-        auto zone = Zone(profiler, format("PhysDraw pix-one %s",
-                                   tc.type.to!string));
+        version (tharsisprofiling)
+            auto zone = Zone(profiler, format("PhysDraw pix-one %s",
+                                              tc.type.to!string));
         immutable spriteXl = al_get_bitmap_width (sprite);
         immutable spriteYl = al_get_bitmap_height(sprite);
         if (tc.isDeletion) {
@@ -411,8 +415,9 @@ private:
     }
     body {
         foreach (const tc; _addsForPhymap) {
-            auto zone = Zone(profiler, "PhysDraw lookupmap "
-                                       ~ tc.type.to!string);
+            version (tharsisprofiling)
+                auto zone = Zone(profiler, "PhysDraw lookupmap "
+                                           ~ tc.type.to!string);
             mixin AdditionsDefs;
             assert (yl > 0, format("%s queued with yl <= 0; yl = %d",
                 tc.type.to!string, yl));
@@ -466,8 +471,8 @@ private:
     static void
     initialize(Runmode mode)
     {
-        auto zoneInitialize = Zone(profiler, "physDraw initialize");
-
+        version (tharsisprofiling)
+            auto zoneInitialize = Zone(profiler, "physDraw initialize");
         assert (! _mask);
         assert (mode == Runmode.INTERACTIVE || mode == Runmode.VERIFY);
         if (mode == Runmode.VERIFY)

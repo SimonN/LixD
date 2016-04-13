@@ -24,7 +24,8 @@ void eidrecol(Cutbit cutbit, in int magicnr)
         return;
     makeColorDicts();
 
-    auto zone = Zone(profiler, "eidrecol magicnr = %d".format(magicnr));
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "eidrecol magicnr = %d".format(magicnr));
     Albit bitmap = cutbit.albit;
     assert (bitmap);
     if (! bitmap) return;
@@ -75,7 +76,8 @@ Cutbit lockThenRecolor(
 
     void recolorTargetForStyle()
     {
-        auto zone = Zone(profiler, format("recolor-one-bitmap-%d", magicnr));
+        version (tharsisprofiling)
+            auto zone = Zone(profiler, format("recolor-one-bmp-%d", magicnr));
         AlCol[AlCol] recolArray = generateRecolArray(st);
         Y_LOOP: for (int y = 0; y < lixYl; y++) {
             X_LOOP: for (int x = 0; x < lixXl; x++) {
@@ -116,7 +118,8 @@ Cutbit lockThenRecolor(
 
     // now invoke the above code on the single wanted Lix style
     Cutbit targetCb = new Cutbit(sourceCutbit);
-    auto zone  = Zone(profiler, format("recolor-one-foreach-%d", magicnr));
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, format("recolor-one-foreach-%d", magicnr));
     auto lock  = LockReadOnly(lix);
     auto lock2 = LockReadWrite(targetCb.albit); // see [1] at end of function
     auto drata = DrawingTarget(targetCb.albit);

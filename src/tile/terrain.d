@@ -69,7 +69,8 @@ private:
     {
         assert (! _phymap);
         assert (cb);
-        auto zone = Zone(profiler, "Terrain.makePhymapFindSelbox");
+        version (tharsisprofiling)
+            auto zone = Zone(profiler, "Terrain.makePhymapFindSelbox");
         _phymap = new Phymap(cb.xl, cb.yl);
         immutable Phybitset bits = Phybit.terrain | (steel ? Phybit.steel : 0);
         with (LockReadOnly(cb.albit)) {
@@ -87,7 +88,8 @@ private:
         assert (! _dark);
         assert (cb);
         assert (_phymap);
-        auto zone = Zone(profiler, "Terrain.makeDarkVersion");
+        version (tharsisprofiling)
+            auto zone = Zone(profiler, "Terrain.makeDarkVersion");
         _dark = new Cutbit(albitCreate(_phymap.xl, _phymap.yl), false);
         Point p = Point();
         with (LockWriteOnly(_dark.albit))

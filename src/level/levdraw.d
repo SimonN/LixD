@@ -21,8 +21,9 @@ package void implDrawTerrainTo(in Level level, Torbit tb, Phymap lookup)
     if (! tb) return;
     assert (tb == level.topology);
     assert (! lookup || lookup == level.topology);
-    auto zone = Zone(profiler, "Level.%s %s".format(
-                lookup ? "drawLT" : "drawT", level.name.take(15)));
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "Level.%s %s".format(
+                    lookup ? "drawLT" : "drawT", level.name.take(15)));
     tb.clearToColor(color.transp);
     foreach (po; level.terrain)
         drawPosTerrain(po, tb, lookup);
@@ -45,39 +46,39 @@ private void drawPosTerrain(in TerPos po, Torbit ground, Phymap lookup)
     Cutbit.Mode mode = po.noow ? Cutbit.Mode.NOOW
                      : po.dark ? Cutbit.Mode.DARK
                      :           Cutbit.Mode.NORMAL;
-    with (Zone(profiler, "Level.drawPos to VRAM " ~ mode.to!string)) {
+    {
+        version (tharsisprofiling)
+            auto zone = Zone(profiler, "Level.drawPos VRAM " ~ mode.to!string);
         cb.draw(ground, po.point, po.mirr, po.rot, mode);
     }
     if (! lookup)
         return;
-    with (Zone(profiler, "Level.drawPos to RAM " ~ mode.to!string)) {
-        // The lookup map could contain additional info about trigger areas,
-        // but drawPosGadget doesn't draw those onto the lookup map.
-        // That's done by the game class.
-        immutable xl = (po.rot & 1) ? po.ob.cb.yl : po.ob.cb.xl;
-        immutable yl = (po.rot & 1) ? po.ob.cb.xl : po.ob.cb.yl;
-        foreach (int y; po.point.y .. (po.point.y + yl))
-            foreach (int x; po.point.x .. (po.point.x + xl)) {
-                immutable p = Point(x, y);
-                immutable bits = po.phybitsOnMap(p);
-                if (! bits)
-                    continue;
-                if (po.noow) {
-                    if (! lookup.get(p, Phybit.terrain))
-                        lookup.add(p, bits);
-                }
-                else if (po.dark)
-                    lookup.rm(p, Phybit.terrain | Phybit.steel);
-                else {
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "Level.drawPos RAM " ~ mode.to!string);
+    // The lookup map could contain additional info about trigger areas,
+    // but drawPosGadget doesn't draw those onto the lookup map.
+    // That's done by the game class.
+    immutable xl = (po.rot & 1) ? po.ob.cb.yl : po.ob.cb.xl;
+    immutable yl = (po.rot & 1) ? po.ob.cb.xl : po.ob.cb.yl;
+    foreach (int y; po.point.y .. (po.point.y + yl))
+        foreach (int x; po.point.x .. (po.point.x + xl)) {
+            immutable p = Point(x, y);
+            immutable bits = po.phybitsOnMap(p);
+            if (! bits)
+                continue;
+            if (po.noow) {
+                if (! lookup.get(p, Phybit.terrain))
                     lookup.add(p, bits);
-                    if (! po.ob.steel)
-                        lookup.rm(p, Phybit.steel);
-                }
             }
-    }
+            else if (po.dark)
+                lookup.rm(p, Phybit.terrain | Phybit.steel);
+            else {
+                lookup.add(p, bits);
+                if (! po.ob.steel)
+                    lookup.rm(p, Phybit.steel);
+            }
+        }
 }
-
-
 
 package Torbit implCreatePreview(
     in Level level, in int prevXl, in int prevYl, in AlCol c
@@ -112,8 +113,6 @@ package Torbit implCreatePreview(
     ret.drawFromPreservingAspectRatio(tempTer);
     return ret;
 }
-
-
 
 void implExportImage(in Level level, in Filename fn)
 {

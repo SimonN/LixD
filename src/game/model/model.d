@@ -208,7 +208,8 @@ private:
 
     void updateLixxies()
     {
-        Zone zone = Zone(profiler, "PhysSeq updateLixxies()");
+        version (tharsisprofiling)
+            Zone zone = Zone(profiler, "PhysSeq updateLixxies()");
         immutable bool wonBeforeUpdate = singlePlayerHasWon;
                   bool anyFlingers     = false;
 

@@ -59,7 +59,8 @@ void deinitialize()
 
 Albit albitCreate(in int xl, in int yl)
 {
-    auto zone = Zone(profiler, "alleg5: create VRAM bitmap");
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "alleg5: create VRAM bitmap");
     return albitCreateWithFlags(xl, yl, _defaultNewBitmapFlags);
 }
 
@@ -88,8 +89,7 @@ struct DrawingTarget
             return;
         }
         else
-            with (Zone(profiler, "DrawingTarget.al_set_target_bitmap()"))
-                al_set_target_bitmap(b);
+            al_set_target_bitmap(b);
     }
 
     ~this()
@@ -171,7 +171,6 @@ struct LockTemplate(alias flags)
 
 string hotkeyNiceBrackets(in int hotkey)
 {
-    Zone z = Zone(profiler, "hotkeyNiceBrackets");
     if (hotkey <= 0 || ! al_is_keyboard_installed())
         return null;
     return "[" ~ hotkeyNiceShort(hotkey) ~ "]";

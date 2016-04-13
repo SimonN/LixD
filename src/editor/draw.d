@@ -17,7 +17,8 @@ package:
 
 void implEditorDraw(Editor editor)
 {
-    auto zone = Zone(profiler, "Editor.implEditorDraw");
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "Editor.implEditorDraw");
     editor.drawTerrainToSeparateMap();
     editor.drawMainMap();
     editor.drawToScreen();
@@ -25,35 +26,40 @@ void implEditorDraw(Editor editor)
 
 private:
 
-void drawTerrainToSeparateMap(Editor editor) {
-    with (Zone(profiler, "Editor.drawMapTerrain"))
-    with (DrawingTarget(editor._mapTerrain.albit))
+void drawTerrainToSeparateMap(Editor editor)
 {
-    editor._mapTerrain.clearToColor(color.transp);
-    foreach (t; editor._level.terrain)
-        if (auto cb = t.dark ? t.ob.dark : t.ob.cb)
-            cb.draw(editor._mapTerrain, t.point, t.mirr, t.rot,
-                    t.dark ? Cutbit.Mode.DARK_EDITOR : Cutbit.Mode.NORMAL);
-}}
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "Editor.drawMapTerrain");
+    with (DrawingTarget(editor._mapTerrain.albit)) {
+        editor._mapTerrain.clearToColor(color.transp);
+        foreach (t; editor._level.terrain)
+            if (auto cb = t.dark ? t.ob.dark : t.ob.cb)
+                cb.draw(editor._mapTerrain, t.point, t.mirr, t.rot,
+                        t.dark ? Cutbit.Mode.DARK_EDITOR : Cutbit.Mode.NORMAL);
+    }
+}
 
-void drawMainMap(Editor editor) {
-    with (Zone(profiler, "Editor.drawMapMain"))
+void drawMainMap(Editor editor)
+{
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "Editor.drawMapMain");
     with (DrawingTarget(editor._map.albit))
     with (editor)
-    with (editor._level)
-{
-    editor._map.clearScreenRect(color.makecol(bgRed, bgGreen, bgBlue));
-    editor.drawGadgets();
-    editor._map.loadCameraRect(_mapTerrain);
-    editor.drawGadgetAnnotations();
-    editor.drawHovers(_hover, false);
-    editor.drawHovers(_selection, true);
-    editor.drawDraggedFrame();
-}}
+    with (editor._level) {
+        editor._map.clearScreenRect(color.makecol(bgRed, bgGreen, bgBlue));
+        editor.drawGadgets();
+        editor._map.loadCameraRect(_mapTerrain);
+        editor.drawGadgetAnnotations();
+        editor.drawHovers(_hover, false);
+        editor.drawHovers(_selection, true);
+        editor.drawDraggedFrame();
+    }
+}
 
 void drawGadgets(Editor editor)
 {
-    auto zone = Zone(profiler, "Editor.drawGadgets");
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "Editor.drawGadgets");
     foreach (gadgetList; editor._level.pos)
         foreach (g; gadgetList) {
             assert (g.ob && g.ob.cb);
@@ -63,7 +69,8 @@ void drawGadgets(Editor editor)
 
 void drawGadgetAnnotations(Editor editor)
 {
-    auto zone = Zone(profiler, "Editor.drawGadgetAnnotations");
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "Editor.drawGadgetAnnotations");
     void annotate(const(typeof(editor._level.pos[0])) list)
     {
         foreach (int i, g; list) {
@@ -102,10 +109,10 @@ void drawDraggedFrame(Editor editor) { with (editor)
     _map.drawRectangle(_dragger.frame(_map), col);
 }}
 
-void drawToScreen(Editor editor) {
-    with (editor)
-    with (Zone(profiler, "Editor.drawToScreen"))
-    with (DrawingTarget(display.al_get_backbuffer))
+void drawToScreen(Editor editor)
 {
-    _map.drawCamera();
-}}
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "Editor.drawToScreen");
+    with (DrawingTarget(display.al_get_backbuffer))
+        editor._map.drawCamera();
+}

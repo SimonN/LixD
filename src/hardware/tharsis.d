@@ -14,10 +14,7 @@ module hardware.tharsis;
 
 import basics.versioning;
 
-Profiler profiler;
-
-version (tharsisprofiling)
-{
+version (tharsisprofiling) {
     import std.algorithm;
     import std.range;
     import std.stdio;
@@ -32,14 +29,14 @@ version (tharsisprofiling)
     pragma (msg, "(To optimize for speed, "
                  "use `dub build -b release-nobounds')");
 
+    Profiler profiler;
+
     void initialize()
     {
         // Get 20 MB more than the minimum (maxEventBytes)
         ubyte[] storage = new ubyte[Profiler.maxEventBytes + 1024 * 1024 * 20];
         profiler        = new Profiler(storage);
     }
-
-
 
     void deinitialize()
     {
@@ -107,15 +104,9 @@ version (tharsisprofiling)
         destroy(profiler);
     }
 }
-
-else
-{
+else {
     pragma (msg, "Compiling Lix "
         ~ gameVersion().toString() ~ " release build...");
-
-    // empty stubs which the compiler should optimize away fully
-    class Profiler { }
-    struct Zone { this(Profiler, string) { } }
     void initialize() { }
     void deinitialize() { }
 }

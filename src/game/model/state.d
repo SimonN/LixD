@@ -191,7 +191,8 @@ public:
                 // DTODO: find out whether we should manually destroy the
                 // torbit and lookup matrix here, and then garbage-collect
                 possibleGarbage = null;
-        auto zone = Zone(profiler, "GC in autoBeforeUpdate");
+        version (tharsisprofiling)
+            auto zone = Zone(profiler, "GC in autoBeforeUpdate");
         core.memory.GC.collect();
         return ret;
     }
@@ -213,7 +214,8 @@ public:
         if (! wouldAutoSave(s, ultimatelyTo))
             return;
         scope (success) {
-            auto zone = Zone(profiler, "GC in autoSave");
+            version (tharsisprofiling)
+                auto zone = Zone(profiler, "GC in autoSave");
             core.memory.GC.collect();
         }
         // Potentially push older auto-saved states down the hierarchy.
