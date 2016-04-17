@@ -99,8 +99,7 @@ void calcTerrainBrowser(Editor editor) {
         auto pos = _level.addTileWithCenterAt(_terrainBrowser.chosenTile,
                                               _map.mouseOnLand);
         rmFocus(_terrainBrowser);
-        _terrainBrowser = null;
-        _panel.allButtonsOff();
+        editor.closeWindows();
         if (pos)
             _selection = [ Hover.newViaEvilDynamicCast(_level, pos) ];
     }
@@ -112,7 +111,15 @@ void calcOkCancelWindow(Editor editor) {
     if (_okCancelWindow.done) {
         _okCancelWindow.writeChangesTo(_level);
         rmFocus(_okCancelWindow);
-        _okCancelWindow = null;
-        _panel.allButtonsOff();
+        editor.closeWindows();
     }
+}}
+
+void closeWindows(Editor editor) {
+    with (editor)
+{
+    _terrainBrowser = null;
+    _okCancelWindow = null;
+    _panel.allButtonsOff();
+    editor.selectGrid(); // grid button flickers otherwise
 }}
