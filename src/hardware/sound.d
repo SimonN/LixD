@@ -6,20 +6,7 @@ import basics.user;
 import file.filename;
 import file.log;
 import file.search; // file exists
-
-/*  void initialize();
- *  void deinitialize();
- *
- *  void play       (in Sound, in Loudness);
- *  void playLoud   (in Sound);
- *  void playQuiet  (in Sound);
- *  void playLoudIf(in Sound, in bool);
- *
- *  void draw();
- *
- *      Draws all scheduled sounds. Drawing a sound == play it with the
- *      library function.
- */
+import hardware.tharsis;
 
 enum Loudness { loud, quiet }
 
@@ -63,79 +50,70 @@ enum Sound {
     MAX          // no sound, only the total number of sounds
 };
 
-
-
 void initialize()
 {
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "sound initialization");
     // assumes Allegro has been initialized, but audio hasn't been initialized
-    if (! al_install_audio()) {
+    if (! al_install_audio())
         log("Allegro 5 can't install audio");
-    }
-    if (! al_init_acodec_addon()) {
+    if (! al_init_acodec_addon())
         log("Allegro 5 can't install codecs");
-    }
-    if (! al_reserve_samples(8)) {
+    if (! al_reserve_samples(8))
         log("Allegro 5 can't reserve 8 samples.");
-    }
 
-    Sample load(in string str)
+    Sample loadLazily(in string str)
     {
         return new Sample(new Filename(dirDataSound.rootful ~ str));
     }
 
-    samples[Sound.DISKSAVE]    = load("disksave.ogg");
-    samples[Sound.JOIN]        = load("join.ogg");
+    samples[Sound.DISKSAVE]    = loadLazily("disksave.ogg");
+    samples[Sound.JOIN]        = loadLazily("join.ogg");
 
-    samples[Sound.PANEL]       = load("panel.ogg");
-    samples[Sound.PANEL_EMPTY] = load("panel_em.ogg");
-    samples[Sound.ASSIGN]      = load("assign.ogg");
-    samples[Sound.CLOCK]       = load("clock.ogg");
+    samples[Sound.PANEL]       = loadLazily("panel.ogg");
+    samples[Sound.PANEL_EMPTY] = loadLazily("panel_em.ogg");
+    samples[Sound.ASSIGN]      = loadLazily("assign.ogg");
+    samples[Sound.CLOCK]       = loadLazily("clock.ogg");
 
-    samples[Sound.LETS_GO]     = load("lets_go.ogg");
-    samples[Sound.HATCH_OPEN]  = load("hatch.ogg");
-    samples[Sound.HATCH_CLOSE] = load("hatch.ogg");
-    samples[Sound.OBLIVION]    = load("oblivion.ogg");
-    samples[Sound.FIRE]        = load("fire.ogg");
-    samples[Sound.WATER]       = load("water.ogg");
-    samples[Sound.GOAL]        = load("goal.ogg");
-    samples[Sound.GOAL_BAD]    = load("goal_bad.ogg");
-    samples[Sound.YIPPIE]      = load("yippie.ogg");
-    samples[Sound.NUKE]        = load("nuke.ogg");
-    samples[Sound.OVERTIME]    = load("overtime.ogg");
-    samples[Sound.SCISSORS]    = load("scissors.ogg");
+    samples[Sound.LETS_GO]     = loadLazily("lets_go.ogg");
+    samples[Sound.HATCH_OPEN]  = loadLazily("hatch.ogg");
+    samples[Sound.HATCH_CLOSE] = loadLazily("hatch.ogg");
+    samples[Sound.OBLIVION]    = loadLazily("oblivion.ogg");
+    samples[Sound.FIRE]        = loadLazily("fire.ogg");
+    samples[Sound.WATER]       = loadLazily("water.ogg");
+    samples[Sound.GOAL]        = loadLazily("goal.ogg");
+    samples[Sound.GOAL_BAD]    = loadLazily("goal_bad.ogg");
+    samples[Sound.YIPPIE]      = loadLazily("yippie.ogg");
+    samples[Sound.NUKE]        = loadLazily("nuke.ogg");
+    samples[Sound.OVERTIME]    = loadLazily("overtime.ogg");
+    samples[Sound.SCISSORS]    = loadLazily("scissors.ogg");
 
-    samples[Sound.OUCH]        = load("ouch.ogg");
-    samples[Sound.SPLAT]       = load("splat.ogg");
-    samples[Sound.POP]         = load("pop.ogg");
-    samples[Sound.BRICK]       = load("brick.ogg");
-    samples[Sound.STEEL]       = load("steel.ogg");
-    samples[Sound.CLIMBER]     = load("climber.ogg");
-    samples[Sound.BATTER_MISS] = load("bat_miss.ogg");
-    samples[Sound.BATTER_HIT]  = load("bat_hit.ogg");
+    samples[Sound.OUCH]        = loadLazily("ouch.ogg");
+    samples[Sound.SPLAT]       = loadLazily("splat.ogg");
+    samples[Sound.POP]         = loadLazily("pop.ogg");
+    samples[Sound.BRICK]       = loadLazily("brick.ogg");
+    samples[Sound.STEEL]       = loadLazily("steel.ogg");
+    samples[Sound.CLIMBER]     = loadLazily("climber.ogg");
+    samples[Sound.BATTER_MISS] = loadLazily("bat_miss.ogg");
+    samples[Sound.BATTER_HIT]  = loadLazily("bat_hit.ogg");
 
-    samples[Sound.AWARD_1]     = load("award_1.ogg");
-    samples[Sound.AWARD_2]     = load("award_2.ogg");
-    samples[Sound.AWARD_3]     = load("award_3.ogg");
-    samples[Sound.AWARD_4]     = load("award_4.ogg");
+    samples[Sound.AWARD_1]     = loadLazily("award_1.ogg");
+    samples[Sound.AWARD_2]     = loadLazily("award_2.ogg");
+    samples[Sound.AWARD_3]     = loadLazily("award_3.ogg");
+    samples[Sound.AWARD_4]     = loadLazily("award_4.ogg");
 }
-
-
 
 void deinitialize()
 {
     al_stop_samples();
-
     foreach (ref Sample sample; samples) {
         if (sample is null) continue;
         sample.stop();
         destroy(sample);
         sample = null;
     }
-
     al_uninstall_audio();
 }
-
-
 
 void play(in Sound id, in Loudness loudness)
 {
@@ -145,23 +123,8 @@ void play(in Sound id, in Loudness loudness)
     }
 }
 
-
-
-void playLoud(in Sound id)
-{
-    if (samples[id] !is null)
-        samples[id].scheduleLoud();
-}
-
-
-
-void playQuiet(in Sound id)
-{
-    if (samples[id] !is null)
-        samples[id].scheduleQuiet();
-}
-
-
+void playLoud (in Sound id) { if (samples[id]) samples[id].scheduleLoud();  }
+void playQuiet(in Sound id) { if (samples[id]) samples[id].scheduleQuiet(); }
 
 void playLoudIf(in Sound id, in bool loud)
 {
@@ -169,137 +132,93 @@ void playLoudIf(in Sound id, in bool loud)
     else      samples[id].scheduleQuiet();
 }
 
-
-
+// Call this once per main loop, after scheduling sounds with playLoud et al.
 void draw()
 {
-    foreach (ref sample; samples)
-        if (sample !is null)
+    foreach (sample; samples)
+        if (sample)
             sample.draw();
 }
-
-
 
 private Sample[Sound.MAX] samples;
 
 private class Sample {
-
-/*  this();
- *  this(in Filename);
- *  ~this();
- *
- *  void draw();
- *  void stop();
- */
-    const(Filename) filename() const { return _filename; }
-    @property bool unique() const    { return _unique;     }
-    @property bool unique(in bool b) { return _unique = b; }
-    void scheduleLoud (in bool b = true) { _loud  = b; }
-    void scheduleQuiet(in bool b = true) { _quiet = b; }
-
 private:
-
     alias ALLEGRO_SAMPLE*   AlSamp;
     alias ALLEGRO_SAMPLE_ID PlayId;
 
-    const(Filename) _filename;
-    AlSamp _sample;
+    Filename _filename;
+    AlSamp _sample; // may be null if file was missing or bad file
     PlayId _playID;
-    bool   _unique;        // if true, kill old sound before playing again
-    bool   _loud;          // if true, scheduled to be played normally
-    bool   _quiet;         // if true, scheduled to be played quietly
+    bool   _loud; // if true, scheduled to be played normally
+    bool   _quiet; // if true, scheduled to be played quietly
     bool   _lastWasLoud;
-
-
+    bool   _loadedFromDisk;
 
 public:
+    const(Filename) filename() const { return _filename; }
+    void scheduleLoud (in bool b = true) { _loud  = b; }
+    void scheduleQuiet(in bool b = true) { _quiet = b; }
 
-this()
-{
-    _filename = null;
-    _unique = true;
-}
+    this(in Filename fn) { _filename = fn; }
 
+    ~this()
+    {
+        if (_sample)
+            al_destroy_sample(_sample);
+        _sample = null;
+        _loadedFromDisk = false;
+    }
 
-
-this(in Filename fn)
-{
-    _filename = fn;
-    _unique = true;
-    _sample = al_load_sample(fn.rootfulZ);
-    if (! _sample) {
-        if (! fn.fileExists()) {
-            logf("Missing sound file `%s'", fn.rootful);
+    // draw plays each sample if it was scheduled by setting (loud) or (quiet)
+    void draw()
+    {
+        if (_loud || (_quiet && !_lastWasLoud))
+            stop();
+        if (_loud || _quiet) {
+            _lastWasLoud = _loud;
+            loadFromDisk();
+            if (! _sample)
+                return;
+            al_play_sample(_sample,
+                // The user setting allows sound volumes between 0 and 20.
+                // Setting 10 corresponds to Allegro 5's default volume of 1.0.
+                // Allegro 5 can work with higher settings than 1.0.
+                (_loud ? 0.1f : 0.025f) * soundVolume,
+                ALLEGRO_AUDIO_PAN_NONE, 1.0f, // speed factor
+                ALLEGRO_PLAYMODE.ALLEGRO_PLAYMODE_ONCE, &_playID);
         }
-        else {
-            logf("Can't decode sound file `%s'.", fn.rootful);
-            logOggErrorIfNecessary();
-        }
+        // reset the scheduling variables
+        _loud  = false;
+        _quiet = false;
     }
-}
 
-
-
-private void
-logOggErrorIfNecessary()
-{
-    static bool wasLogged = false;
-    if (! wasLogged) {
-        wasLogged = true;
-        log("    -> Make sure this is really an .ogg file. If it is,");
-        log("    -> check if Allegro 5 has been compiled with .ogg support.");
+    void stop()
+    {
+        static PlayId _nullID;
+        if (_playID != _nullID)
+            al_stop_sample(&_playID);
     }
-}
 
-
-
-~this()
-{
-    if (_sample) al_destroy_sample(_sample);
-    _sample = null;
-}
-
-
-
-// draw plays each sample if it was scheduled by setting (loud) or (quiet)
-void draw()
-{
-    if (! _sample)
-        return;
-
-    // the user setting allows sound volumes between 0 and 20.
-    // The setting 10 corresponds to Allegro 5's default volume of 1.0.
-    // Allegro 5 can work with higher settings than 1.0.
-    float ourVolume() { return 1.0f * soundVolume / 10; }
-
-    if (_unique && (_loud || (_quiet && !_lastWasLoud))) {
-        stop();
-    }
-    if (_loud) {
-        _lastWasLoud = true;
-        auto b = al_play_sample(_sample, ourVolume(),
-         ALLEGRO_AUDIO_PAN_NONE,
-         1.0f, // speed factor
-         ALLEGRO_PLAYMODE.ALLEGRO_PLAYMODE_ONCE, &_playID);
-    }
-    else if (_quiet) {
-        _lastWasLoud = false;
-        al_play_sample(_sample, 0.25f * ourVolume(),
-         ALLEGRO_AUDIO_PAN_NONE,
-         1.0f, ALLEGRO_PLAYMODE.ALLEGRO_PLAYMODE_ONCE, &_playID);
-    }
-    // reset the scheduling variables
-    _loud  = false;
-    _quiet = false;
-}
-
-
-
-void stop()
-{
-    static PlayId _nullID;
-    if (_playID != _nullID) al_stop_sample(&_playID);
-}
-
+private:
+    void loadFromDisk()
+    {
+        if (_loadedFromDisk)
+            return;
+        _loadedFromDisk = true;
+        assert (! _sample);
+        _sample = al_load_sample(_filename.rootfulZ);
+        if (! _sample) {
+            if (! _filename.fileExists()) {
+                logf("Missing sound file `%s'", _filename.rootful);
+            }
+            else {
+                logf("Can't decode sound file `%s'.", _filename.rootful);
+                static bool oggErrorLogged = false;
+                if (! oggErrorLogged) {
+                    oggErrorLogged = true;
+                    log("    -> Make sure this is really an .ogg file. If it is,");
+                    log("    -> check if Allegro 5 has been compiled with .ogg support.");
+    }   }   }   }
 }
 // end class Sample
