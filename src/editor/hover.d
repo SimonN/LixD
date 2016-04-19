@@ -34,6 +34,16 @@ abstract class Hover {
     in   { assert (l); }
     body { level = l; reason = r; }
 
+    static Hover newViaEvilDynamicCast(Level l, AbstractPos forThis)
+    {
+        assert (forThis);
+        if (auto h = cast (TerPos) forThis)
+            return new TerrainHover(l, h, Reason.addedFromBrowser);
+        else if (auto h = cast (GadPos) forThis)
+            return new GadgetHover(l, h, Reason.addedFromBrowser);
+        assert (false);
+    }
+
     final override bool opEquals(Object rhsObj) const
     {
         auto rhs = cast (typeof(this)) rhsObj;
@@ -47,7 +57,7 @@ abstract class Hover {
         return cmp < 0 ? -1 : cmp > 0 ? 1 : 0;
     }
 
-    final void moveBy(Point p)
+    final void moveBy(in Point p)
     {
         assert (pos);
         pos.point = level.topology.wrap(pos.point + p);
@@ -55,17 +65,8 @@ abstract class Hover {
 
     abstract inout(AbstractPos) pos() inout;
     abstract void removeFromLevel();
+    abstract void cloneThenPointToClone();
     abstract AlCol hoverColor(int val) const;
-
-    static Hover newViaEvilDynamicCast(Level l, AbstractPos forThis)
-    {
-        assert (forThis);
-        if (auto h = cast (TerPos) forThis)
-            return new TerrainHover(l, h, Reason.addedFromBrowser);
-        else if (auto h = cast (GadPos) forThis)
-            return new GadgetHover(l, h, Reason.addedFromBrowser);
-        assert (false);
-    }
 }
 
 class TerrainHover : Hover {
@@ -85,6 +86,11 @@ public:
     {
         removeFromList(level.terrain, _pos);
         _pos = null;
+    }
+
+    override void cloneThenPointToClone()
+    {
+        _pos = cloneInListReturnsClone(level.terrain, _pos);
     }
 
     override AlCol hoverColor(int val) const
@@ -114,6 +120,11 @@ public:
         _pos = null;
     }
 
+    override void cloneThenPointToClone()
+    {
+        _pos = cloneInListReturnsClone(level.pos[_pos.ob.type], _pos);
+    }
+
     override AlCol hoverColor(int val) const
     {
         return color.makecol(val, val, val/2);
@@ -129,4 +140,14 @@ void removeFromList(P)(ref P[] list, P pos)
     auto found = list.find!"a is b"(pos);
     assert (found.length > 0);
     list = list[0 .. $ - found.length] ~ found[1 .. $];
+}
+
+P cloneInListReturnsClone(P)(ref P[] list, P pos)
+    if (is (P : AbstractPos))
+{
+    assert (pos);
+    auto found = list.find!"a is b"(pos);
+    assert (found.length > 0);
+    list ~= found[0].clone();
+    return list[$-1];
 }

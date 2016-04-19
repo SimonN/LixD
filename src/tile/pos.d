@@ -19,6 +19,10 @@ abstract class AbstractPos {
 public:
     Point point;
 
+    abstract AbstractPos clone() const
+    out (ret) { assert (ret); }
+    body { return null; }
+
     abstract const(Platonic) ob() const;
     abstract IoLine    toIoLine() const;
 
@@ -46,6 +50,15 @@ public:
     bool hatchRot;
 
     this(const(GadgetTile) tile) { _ob = tile; }
+
+    override GadPos clone() const
+    {
+        auto ret     = new GadPos(ob);
+        ret.point    = point;
+        ret.hatchRot = hatchRot;
+        return ret;
+    }
+
     override const(GadgetTile) ob() const { return _ob; }
     override bool opEquals(Object rhsObj)
     {
@@ -75,6 +88,18 @@ class TerPos : AbstractPos {
     bool noow; // Nicht ueberzeichnen?
 
     this(const(TerrainTile) tile) { _ob = tile; }
+
+    override TerPos clone() const
+    {
+        auto ret  = new TerPos(ob);
+        ret.point = point;
+        ret.mirr  = mirr;
+        ret.rot   = rot;
+        ret.dark  = dark;
+        ret.noow  = noow;
+        return ret;
+    }
+
     override const(TerrainTile) ob() const { return _ob; }
     override bool opEquals(Object rhsObj)
     {

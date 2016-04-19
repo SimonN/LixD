@@ -40,6 +40,13 @@ void makePanel(Editor editor)
         onExecute(Lang.editorButtonSelectAdd, keyEditorSelectAdd, () {
             buttonSelectAdd.on = ! buttonSelectAdd.on;
         });
+        onExecute(Lang.editorButtonSelectCopy, keyEditorCopy, () {
+            foreach (sel; editor._selection) {
+                sel.cloneThenPointToClone();
+                sel.moveBy(editor._dragger.clonedShouldMoveBy);
+            }
+            // editor._dragger.startRecordingCopyMove();
+        });
         onExecute(Lang.editorButtonSelectDelete, keyEditorDelete, () {
             foreach (sel; editor._selection)
                 sel.removeFromLevel();
@@ -80,7 +87,6 @@ void makePanel(Editor editor)
     editorButtonFileNew,
     editorButtonFileSave,
     editorButtonFileSaveAs,
-    editorButtonSelectCopy,
     editorButtonSelectMinus,
     editorButtonSelectPlus,
     editorButtonSelectBack,
@@ -98,7 +104,6 @@ void makePanel(Editor editor)
     int keyEditorRight       = ALLEGRO_KEY_F;
     int keyEditorUp          = ALLEGRO_KEY_E;
     int keyEditorDown        = ALLEGRO_KEY_D;
-    int keyEditorCopy        = ALLEGRO_KEY_A;
     int keyEditorDelete      = ALLEGRO_KEY_G;
     int keyEditorBackground  = ALLEGRO_KEY_T;
     int keyEditorForeground  = ALLEGRO_KEY_B;

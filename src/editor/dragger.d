@@ -69,6 +69,7 @@ public:
         saveFroms(map);
     }
 
+    // Side effect: calling this makes it return 0 if called again immediately
     Point snapperShouldMoveBy(const(Map) map, in int grid)
     {
         if (! moving)
@@ -80,6 +81,14 @@ public:
         assert (_snapper);
         return (_snapper.pos.point + draggedOnGrid).roundTo(grid)
               - _snapper.pos.point;
+    }
+
+    Point clonedShouldMoveBy() const
+    {
+        // DTODO: Implement something smart instead of returning the constant
+        // offset. Remember how far we have moved the last copied piece,
+        // then move by that amount.
+        return Point(16, 16);
     }
 
 private:
