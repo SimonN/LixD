@@ -161,12 +161,12 @@ $editorButtonGrid16          Grid 16: Rounds tiles' coordinates to multiples of 
 $editorButtonSelectAll       Everything: Selects all tiles in the level.
 $editorButtonSelectFrame     Frame: Drag a frame with the mouse to select tiles.
 $editorButtonSelectAdd       Add: Keep tiles selected when selecting additional tiles.
+$editorButtonUndo            Undo: Reverts your latest changes to the level in order.
+$editorButtonRedo            Redo: Re-applies undone changes.
 $editorButtonSelectCopy      Copy: Clones the selected tiles for placing them elsewhere.
 $editorButtonSelectDelete    Delete: Removes the selected tiles from the level.
-$editorButtonSelectMinus     Back: Puts the selected tiles behind some others.
-$editorButtonSelectPlus      Forth: Puts the selected tiles in front of some others.
-$editorButtonSelectBack      Background: Puts the selected tiles into the background.
-$editorButtonSelectFront     Foreground: Puts the selected tiles into the foreground.
+$editorButtonBackground      Background: Puts the selected tiles behind some others.
+$editorButtonForeground      Foreground: Puts the selected tiles in front of some others.
 $editorButtonSelectFlip      Flip: Mirrors the selected terrain horizontally.
 $editorButtonSelectRotate    Rotate: Performs a quarter turn on the selected terrain.
 $editorButtonSelectDark      Dark: Selected terrain erases normal terrain.
@@ -371,12 +371,14 @@ $optionEdLeft                 Move left
 $optionEdRight                Move right
 $optionEdUp                   Move up
 $optionEdDown                 Move down
-$optionEdCopy                 Copy
-$optionEdDelete               Delete
 $optionEdGrid                 Grid size
 $optionEdSelectAll            Select all
 $optionEdSelectFrame          Select frame
 $optionEdSelectAdd            Add to sel.
+$optionEdUndo                 Undo
+$optionEdRedo                 Redo
+$optionEdCopy                 Copy
+$optionEdDelete               Delete
 $optionEdForeground           Foreground
 $optionEdBackground           Background
 $optionEdMirror               Mirror

@@ -52,6 +52,8 @@ void makePanel(Editor editor)
                 sel.removeFromLevel();
             editor._selection = null;
         });
+        onExecute(Lang.editorButtonBackground, keyEditorBackground, null);
+        onExecute(Lang.editorButtonForeground, keyEditorForeground, null);
         onExecute(Lang.editorButtonViewZoom, keyEditorZoom, () {
             editor._map.zoom = editor._map.zoom >= 4 ? 1 :
                                editor._map.zoom * 2;
@@ -87,10 +89,8 @@ void makePanel(Editor editor)
     editorButtonFileNew,
     editorButtonFileSave,
     editorButtonFileSaveAs,
-    editorButtonSelectMinus,
-    editorButtonSelectPlus,
-    editorButtonSelectBack,
-    editorButtonSelectFront,
+    editorButtonUndo,
+    editorButtonRedo,
     editorButtonSelectFlip,
     editorButtonSelectRotate,
     editorButtonSelectDark,
@@ -105,8 +105,6 @@ void makePanel(Editor editor)
     int keyEditorUp          = ALLEGRO_KEY_E;
     int keyEditorDown        = ALLEGRO_KEY_D;
     int keyEditorDelete      = ALLEGRO_KEY_G;
-    int keyEditorBackground  = ALLEGRO_KEY_T;
-    int keyEditorForeground  = ALLEGRO_KEY_B;
     int keyEditorMirror      = ALLEGRO_KEY_W;
     int keyEditorRotate      = ALLEGRO_KEY_R;
     int keyEditorDark        = ALLEGRO_KEY_N;

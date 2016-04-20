@@ -149,19 +149,19 @@ $editorBarMoveWithKeysEnd       ].
 $editorButtonFileNew        Neu: Karte leeren und einen ganz neuen Level bauen.
 $editorButtonFileExit       Beenden: Editor verlassen, auf Wunsch Änderungen speichern.
 $editorButtonFileSave       Speichern: Level unter dem bisherigen Dateinamen abspeichern.
-$editorButtonFileSaveAs    Speichern unter: Level unter einem neuen Dateinamen abspeichern.
+$editorButtonFileSaveAs     Speichern unter: Level unter einem neuen Dateinamen abspeichern.
 $editorButtonGrid2          Raster 2: Objekt-Koordinaten beim Umherziehen auf 2er runden.
 $editorButtonGridCustom     Benutzerdef. Raster: In den Hauptmenü-Optionen verstellbar.
 $editorButtonGrid16         Raster 16: Objekt-Koordinaten beim Umherziehen auf 16er runden.
 $editorButtonSelectAll      Alles: Alle Objekte auf dem Bildschirm in die Auswahl setzen.
 $editorButtonSelectFrame    Rahmen: Mehrfachauswahl von Objekten durch Rahmenziehen.
 $editorButtonSelectAdd      Hinzufügen: Neue Objekte auswählen, ohne alte abzuwählen.
+$editorButtonUndo           Rückgängig: Nimmt die jüngsten Änderungen am Level zurück.
+$editorButtonRedo           Doch wieder: Führt zurückgenommene Änderungen doch wieder aus.
 $editorButtonSelectCopy     Kopieren: Ausgewählte Objekte klonen.
 $editorButtonSelectDelete   Löschen: Ausgewählte Objekte löschen.
-$editorButtonSelectMinus    Hinter: Ausgewählte Objekte hinter einige andere setzen.
-$editorButtonSelectPlus     Hervor: Ausgewählte Objekte vor einige andere holen.
-$editorButtonSelectBack     Hintergrund: Ausgewählte Objekte ganz nach hinten setzen.
-$editorButtonSelectFront    Vordergrund: Ausgewählte Objekte ganz nach vorn holen.
+$editorButtonBackground     Hintergrund: Ausgewählte Objekte hinter andere setzen.
+$editorButtonForeground     Vordergrund: Ausgewählte Objekte vor andere holen.
 $editorButtonSelectFlip     Spiegeln: Ausgewähltes Terrain horizontal spiegeln.
 $editorButtonSelectRotate   Drehen: Ausgewähltes Terrain um ein Viertel drehen.
 $editorButtonSelectDark     Dunkel: Ausgewähltes Terrain im Spiel schwarz zeichnen.
@@ -358,12 +358,14 @@ $optionEdLeft                Nach links
 $optionEdRight               Nach rechts
 $optionEdUp                  Nach oben
 $optionEdDown                Nach unten
-$optionEdCopy                Kopieren
-$optionEdDelete              Loeschen
 $optionEdGrid                Raster
 $optionEdSelectAll           Alles ausw.
 $optionEdSelectFrame         Rahmen
 $optionEdSelectAdd           Mehr ausw.
+$optionEdUndo                Rückgängig
+$optionEdRedo                Doch wieder
+$optionEdCopy                Kopieren
+$optionEdDelete              Loeschen
 $optionEdForeground          Nach vorn
 $optionEdBackground          Nach hinten
 $optionEdMirror              Spiegeln
