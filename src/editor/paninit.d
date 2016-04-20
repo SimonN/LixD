@@ -1,10 +1,12 @@
 module editor.paninit;
 
+import std.algorithm;
 import std.string;
 
 import basics.globals;
 import basics.user;
 import editor.editor;
+import editor.hover;
 import editor.gui.browter;
 import editor.gui.panel;
 import editor.gui.skillset;
@@ -48,12 +50,15 @@ void makePanel(Editor editor)
             // editor._dragger.startRecordingCopyMove();
         });
         onExecute(Lang.editorButtonSelectDelete, keyEditorDelete, () {
-            foreach (sel; editor._selection)
-                sel.removeFromLevel();
+            editor._selection.each!(s => s.removeFromLevel());
             editor._selection = null;
         });
-        onExecute(Lang.editorButtonBackground, keyEditorBackground, null);
-        onExecute(Lang.editorButtonForeground, keyEditorForeground, null);
+        onExecute(Lang.editorButtonBackground, keyEditorBackground, () {
+            editor._selection.each!(s => s.moveTowards(Hover.FgBg.bg));
+        });
+        onExecute(Lang.editorButtonForeground, keyEditorForeground, () {
+            editor._selection.each!(s => s.moveTowards(Hover.FgBg.fg));
+        });
         onExecute(Lang.editorButtonViewZoom, keyEditorZoom, () {
             editor._map.zoom = editor._map.zoom >= 4 ? 1 :
                                editor._map.zoom * 2;

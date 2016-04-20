@@ -8,10 +8,12 @@ module editor.hover;
 // here, so we accept a map. Or accept a visitor from editor.draw.
 
 import std.algorithm;
+import std.conv;
 
 import basics.alleg5; // timer ticks for the hover
 import basics.help;
 import basics.rect;
+import basics.topology;
 import graphic.color;
 import level.level;
 import tile.pos;
@@ -67,6 +69,9 @@ abstract class Hover {
     abstract void removeFromLevel();
     abstract void cloneThenPointToClone();
     abstract AlCol hoverColor(int val) const;
+
+    enum FgBg { fg, bg }
+    abstract void moveTowards(FgBg);
 }
 
 class TerrainHover : Hover {
@@ -93,6 +98,11 @@ public:
         _pos = cloneInListReturnsClone(level.terrain, _pos);
     }
 
+    override void moveTowards(Hover.FgBg fgbg)
+    {
+        moveTowardsImpl(level.topology, level.terrain, _pos, fgbg,
+                        MoveTowards.untilIntersects);
+    }
     override AlCol hoverColor(int val) const
     {
         return color.makecol(val, val, val);
@@ -112,17 +122,29 @@ public:
 
     override inout(GadPos) pos() inout { return _pos; }
 
-    override void removeFromLevel()
+    ref inout(GadPos[]) list() inout
     {
         assert (_pos);
         assert (_pos.ob);
-        removeFromList(level.pos[_pos.ob.type], _pos);
+        return level.pos[_pos.ob.type];
+    }
+
+    override void removeFromLevel()
+    {
+        removeFromList(list, _pos);
         _pos = null;
     }
 
     override void cloneThenPointToClone()
     {
-        _pos = cloneInListReturnsClone(level.pos[_pos.ob.type], _pos);
+        _pos = cloneInListReturnsClone(list, _pos);
+    }
+
+    override void moveTowards(Hover.FgBg fgbg)
+    {
+        moveTowardsImpl(level.topology, list, _pos, fgbg,
+            (pos.ob.type == GadType.HATCH || pos.ob.type == GadType.GOAL)
+            ? MoveTowards.once : MoveTowards.untilIntersects);
     }
 
     override AlCol hoverColor(int val) const
@@ -150,4 +172,28 @@ P cloneInListReturnsClone(P)(ref P[] list, P pos)
     assert (found.length > 0);
     list ~= found[0].clone();
     return list[$-1];
+}
+
+enum MoveTowards { once, untilIntersects }
+
+void moveTowardsImpl(P)(
+    Topology topology, ref P[] list, P pos, Hover.FgBg fgbg, MoveTowards mt
+)   if (is (P : AbstractPos))
+{
+    int we = list.countUntil!"a is b"(pos).to!int;
+    assert (we >= 0);
+    int adj()
+    {
+        return (fgbg == Hover.FgBg.fg) ? we + 1 : we - 1;
+    }
+    while (adj() >= 0 && adj() < list.len) {
+        assert (we >= 0 && we < list.len);
+        swap(list[we], list[adj]);
+        if (mt == MoveTowards.once || topology.rectIntersectsRect(
+            list[we].selboxOnMap, list[adj].selboxOnMap)
+        ) {
+            break;
+        }
+        we = adj();
+    }
 }
