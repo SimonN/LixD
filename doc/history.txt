@@ -1,6 +1,24 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.46
+------
+
+2016-04-20
+
+Fix regression #64: Options menu didn't offer choice of language.
+
+Fix minor bug #62: Profiling via version statements, not empty structs that
+would make a call to an allocating string-formatter.
+
+Fixed a crash on opening non-UTF8 files in the Lix file format reader.
+
+Editor allows to clone and z-order-rearrange tiles. There is a bug left behind
+when reordering many pieces at once: Sometimes, they reorder among each other
+only, producing no change after the entire reordering command.
+
+Sound effects are loaded lazily, that boosts the program start.
+
 0.2.45
 ------
 

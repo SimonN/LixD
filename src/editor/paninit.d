@@ -55,10 +55,10 @@ void makePanel(Editor editor)
         });
         onExecute(Lang.editorButtonBackground, keyEditorBackground, () {
             editor._selection.each!(s => s.moveTowards(Hover.FgBg.bg));
-        });
+            }, Button.WhenToExecute.whenMouseClickAllowingRepeats);
         onExecute(Lang.editorButtonForeground, keyEditorForeground, () {
             editor._selection.each!(s => s.moveTowards(Hover.FgBg.fg));
-        });
+            }, Button.WhenToExecute.whenMouseClickAllowingRepeats);
         onExecute(Lang.editorButtonViewZoom, keyEditorZoom, () {
             editor._map.zoom = editor._map.zoom >= 4 ? 1 :
                                editor._map.zoom * 2;

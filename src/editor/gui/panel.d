@@ -22,8 +22,9 @@ public:
         makeButtons();
     }
 
-    void onExecute(Lang buttonID, int hotkey, void delegate() deg)
-    {
+    void onExecute(Lang buttonID, int hotkey, void delegate() deg,
+        Button.WhenToExecute wte = Button.WhenToExecute.whenMouseRelease
+    ) {
         assert (buttonID >= Lang.editorButtonFileNew
             &&  buttonID <= Lang.editorButtonAddHazard,
             "add delegates only for for Lang.editorButtonXYZ");
@@ -31,6 +32,7 @@ public:
         _buttons[id].xf = id;
         _buttons[id].hotkey = hotkey;
         _buttons[id].onExecute = deg;
+        _buttons[id].whenToExecute = wte;
     }
 
     void allButtonsOff()
