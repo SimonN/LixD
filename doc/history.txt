@@ -1,6 +1,18 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.47
+------
+
+2016-04-20
+
+Fix #65: Sign error when computing the offset for steel checks. The error
+shifted steel checks too far into the ground and to the right.
+
+Backwards framestepping is accelerated by 1/lag, where the lag is measured
+as ratio (FPS / ideal number of FPS). Slight difference in memory management
+for savestates, but no manual management yet.
+
 0.2.46
 ------
 

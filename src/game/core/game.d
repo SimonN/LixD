@@ -35,6 +35,7 @@ import graphic.color;
 import graphic.map;
 import gui;
 import hardware.sound;
+import hardware.display; // fps for framestepping speed
 import level.level;
 
 class Game {
@@ -76,8 +77,14 @@ public:
 
     enum ticksNormalSpeed   = ticksPerSecond / updatesPerSecond;
     enum updatesDuringTurbo = 9;
-    enum updatesBackMany    = ticksPerSecond / ticksNormalSpeed * 1;
     enum updatesAheadMany   = ticksPerSecond / ticksNormalSpeed * 10;
+
+    static int updatesBackMany()
+    {
+        // This is (1/lag) * 1 second. No lag => displayFPS == ticksPerSecond.
+        return (ticksPerSecond + 1) * ticksPerSecond
+            /  (displayFps     + 1) / ticksNormalSpeed;
+    }
 
     this(Runmode rm, Level lv, Filename fn = null, Replay rp = null)
     {
