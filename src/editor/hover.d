@@ -89,13 +89,14 @@ public:
 
     override void removeFromLevel()
     {
-        removeFromList(level.terrain, _pos);
+        level.terrain = level.terrain.remove!(a => a is pos);
         _pos = null;
     }
 
     override void cloneThenPointToClone()
     {
-        _pos = cloneInListReturnsClone(level.terrain, _pos);
+        level.terrain ~= pos.clone();
+        _pos = level.terrain[$-1];
     }
 
     override void moveTowards(Hover.FgBg fgbg)
@@ -131,13 +132,14 @@ public:
 
     override void removeFromLevel()
     {
-        removeFromList(list, _pos);
+        list = list.remove!(a => a is pos);
         _pos = null;
     }
 
     override void cloneThenPointToClone()
     {
-        _pos = cloneInListReturnsClone(list, _pos);
+        list ~= pos.clone();
+        _pos = list[$-1];
     }
 
     override void moveTowards(Hover.FgBg fgbg)
@@ -154,25 +156,6 @@ public:
 }
 
 private:
-
-void removeFromList(P)(ref P[] list, P pos)
-    if (is (P : AbstractPos))
-{
-    assert (pos);
-    auto found = list.find!"a is b"(pos);
-    assert (found.length > 0);
-    list = list[0 .. $ - found.length] ~ found[1 .. $];
-}
-
-P cloneInListReturnsClone(P)(ref P[] list, P pos)
-    if (is (P : AbstractPos))
-{
-    assert (pos);
-    auto found = list.find!"a is b"(pos);
-    assert (found.length > 0);
-    list ~= found[0].clone();
-    return list[$-1];
-}
 
 enum MoveTowards { once, untilIntersects }
 
