@@ -108,7 +108,7 @@ class Phymap : Topology {
                     immutable p = Point(x, y);
                     if (solid.get(x, y)
                         && (ignoreSteel is null || ! ignoreSteel.get(x, y))
-                        && getSteel(eff + p + offset))
+                        && getSteel(eff + p - offset))
                         return true;
                 }
         }
