@@ -52,6 +52,14 @@ class GameState {
  */
     GameState clone() const { return new GameState(this); }
 
+    void dispose()
+    {
+        if (land) {
+            land.dispose();
+            land = null;
+        }
+    }
+
     void foreachGadget(void delegate(Gadget) func)
     {
         chain(hatches, goals, decos, waters, traps, flingers)
@@ -185,15 +193,11 @@ public:
             ) {
                 ret = candidate;
             }
-
         foreach (ref GameState possibleGarbage; _auto)
-            if (possibleGarbage && possibleGarbage.update >= u)
-                // DTODO: find out whether we should manually destroy the
-                // torbit and lookup matrix here, and then garbage-collect
+            if (possibleGarbage && possibleGarbage.update >= u) {
+                possibleGarbage.dispose();
                 possibleGarbage = null;
-        version (tharsisprofiling)
-            auto zone = Zone(profiler, "GC in autoBeforeUpdate");
-        core.memory.GC.collect();
+            }
         return ret;
     }
 
@@ -213,11 +217,7 @@ public:
     {
         if (! wouldAutoSave(s, ultimatelyTo))
             return;
-        scope (success) {
-            version (tharsisprofiling)
-                auto zone = Zone(profiler, "GC in autoSave");
-            core.memory.GC.collect();
-        }
+        GameState[] possibleGarbage;
         // Potentially push older auto-saved states down the hierarchy.
         // First, if it's time to copy a frequent state into a less frequent
         // state, make these copies. Start with least frequent copying the
@@ -239,14 +239,36 @@ public:
                     GameState moreFrequentToCopy = _auto[2*(pair-1)];
                     if (moreFrequentToCopy is null)
                         moreFrequentToCopy = _auto[2*(pair-1) + 1];
-                    if (moreFrequentToCopy !is null)
+                    if (moreFrequentToCopy !is null) {
+                        possibleGarbage ~= _auto[2*pair + whichOfPair];
                         _auto[2*pair + whichOfPair] = moreFrequentToCopy;
+                    }
                 }
                 else {
                     // make a hard copy of the current state
+                    possibleGarbage ~= _auto[0 + whichOfPair];
                     _auto[0 + whichOfPair] = s.clone();
                 }
             }
+        }
+        // Dispose garbage. This is tricky to optimize. Maybe we should go
+        // for full manual memory management in the phymap too.
+        bool runTheGC = false;
+        foreach (ref garb; possibleGarbage)
+            if (garb !is _zero && garb !is _userState
+                && ! _auto[].canFind!"a is b"(garb)
+            ) {
+                version (tharsisprofiling)
+                    auto zone = Zone(profiler, "autoSave disposing VRAM");
+                garb.dispose();
+                garb = null;
+                runTheGC = true;
+            }
+        if (runTheGC) {
+            static int dontCollectSoOften = 0;
+            dontCollectSoOften = (dontCollectSoOften + 1) % 3;
+            if (dontCollectSoOften == 0)
+                core.memory.GC.collect();
         }
     }
     // end function calcSaveAuto
