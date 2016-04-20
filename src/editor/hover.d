@@ -65,6 +65,25 @@ abstract class Hover {
         pos.point = level.topology.wrap(pos.point + p);
     }
 
+    final void mirrorHorizontallyWithin(in Rect box)
+    {
+        immutable self = pos.selboxOnMap;
+        pos.point.x -= self.x - box.x;
+        pos.point.x += box.x + box.xl - self.x - self.xl;
+        pos.point = level.topology.wrap(pos.point);
+        mirrorHorizontally();
+    }
+
+    final void rotateCcwWithin(in Rect box)
+    {
+        rotateCcw();
+        immutable self = pos.selboxOnMap;
+        pos.point = level.topology.wrap(Point(
+            box.center.x + (box.center - self.center).y,
+            box.center.y - (box.center - self.center).x)
+            - self.len/2 - pos.ob.selbox.topLeft);
+    }
+
     abstract inout(AbstractPos) pos() inout;
     abstract void removeFromLevel();
     abstract void cloneThenPointToClone();
@@ -72,6 +91,10 @@ abstract class Hover {
 
     enum FgBg { fg, bg }
     abstract void moveTowards(FgBg);
+
+protected:
+    void mirrorHorizontally() { }
+    void rotateCcw() { }
 }
 
 class TerrainHover : Hover {
@@ -104,9 +127,24 @@ public:
         moveTowardsImpl(level.topology, level.terrain, _pos, fgbg,
                         MoveTowards.untilIntersects);
     }
+
     override AlCol hoverColor(int val) const
     {
         return color.makecol(val, val, val);
+    }
+
+protected:
+    override void mirrorHorizontally()
+    {
+        _pos.mirr = ! _pos.mirr;
+        _pos.rot = positiveMod(2 - _pos.rot, 4);
+    }
+
+    override void rotateCcw()
+    {
+        immutable oldCenter = _pos.selboxOnMap.center;
+        _pos.rot = positiveMod(_pos.rot + 1, 4);
+        moveBy(oldCenter - _pos.selboxOnMap.center);
     }
 }
 
@@ -152,6 +190,13 @@ public:
     override AlCol hoverColor(int val) const
     {
         return color.makecol(val, val, val/2);
+    }
+
+protected:
+    override void rotateCcw() { mirrorHorizontally(); }
+    override void mirrorHorizontally()
+    {
+        _pos.hatchRot = (_pos.ob.type == GadType.HATCH && ! _pos.hatchRot);
     }
 }
 

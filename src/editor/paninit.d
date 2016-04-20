@@ -3,6 +3,7 @@ module editor.paninit;
 import std.algorithm;
 import std.string;
 
+import basics.rect;
 import basics.globals;
 import basics.user;
 import editor.editor;
@@ -63,6 +64,14 @@ void makePanel(Editor editor)
             editor._map.zoom = editor._map.zoom >= 4 ? 1 :
                                editor._map.zoom * 2;
         });
+        onExecute(Lang.editorButtonSelectFlip, keyEditorMirror, () {
+            immutable box = editor.smallestRectContainingSelection();
+            editor._selection.each!(sel => sel.mirrorHorizontallyWithin(box));
+        });
+        onExecute(Lang.editorButtonSelectRotate, keyEditorRotate, () {
+            immutable box = editor.smallestRectContainingSelection();
+            editor._selection.each!(sel => sel.rotateCcwWithin(box));
+        });
         onExecute(Lang.editorButtonMenuScroll, 0, () {
             editor._okCancelWindow = new VisualsWindow(editor._level);
             addFocus(editor._okCancelWindow);
@@ -90,14 +99,21 @@ void makePanel(Editor editor)
         mixin (OnExecuteBrowser!("Hazard", "['W', 'T', 'F']"));
     }
 }
+
+private:
+
+Rect smallestRectContainingSelection(in Editor editor)
+{
+    return editor._selection.empty ? Rect()
+        :  editor._selection.map   !(a => a.pos.selboxOnMap)
+                            .reduce!(Rect.smallestContainer);
+}
     /+
     editorButtonFileNew,
     editorButtonFileSave,
     editorButtonFileSaveAs,
     editorButtonUndo,
     editorButtonRedo,
-    editorButtonSelectFlip,
-    editorButtonSelectRotate,
     editorButtonSelectDark,
     editorButtonSelectNoow,
     editorButtonHelp,
@@ -109,9 +125,6 @@ void makePanel(Editor editor)
     int keyEditorRight       = ALLEGRO_KEY_F;
     int keyEditorUp          = ALLEGRO_KEY_E;
     int keyEditorDown        = ALLEGRO_KEY_D;
-    int keyEditorDelete      = ALLEGRO_KEY_G;
-    int keyEditorMirror      = ALLEGRO_KEY_W;
-    int keyEditorRotate      = ALLEGRO_KEY_R;
     int keyEditorDark        = ALLEGRO_KEY_N;
     int keyEditorNoow        = ALLEGRO_KEY_M;
     int keyEditorHelp        = ALLEGRO_KEY_H;
