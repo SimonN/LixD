@@ -76,7 +76,9 @@ public:
 
     final void highlight(Filename fn)
     {
-        if (fn && _picker.highlightFile(fn)) {
+        if (fn &&
+            _picker.highlightFile(fn, CenterOnHighlightedFile.onlyIfOffscreen)
+        ) {
             buttonPlay.show();
             _fileRecent = fn;
             onFileHighlight(fn);

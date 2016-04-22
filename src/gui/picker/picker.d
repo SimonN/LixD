@@ -68,8 +68,13 @@ public:
 
     @property bool executeFile()   const { return _tiler.executeFile;   }
     @property int  executeFileID() const { return _tiler.executeFileID; }
-              void highlightFile(int i)  { _tiler.highlightFile(i);     }
-              void highlightNothing()    { _tiler.highlightNothing();   }
+
+    void highlightNothing() { _tiler.highlightNothing(); }
+    void highlightFile(int i, CenterOnHighlightedFile chf)
+    {
+        _tiler.highlightFile(i, chf);
+        _scrollbar.pos = _tiler.top;
+    }
 
     Filename executeFileFilename() const
     {
@@ -77,14 +82,14 @@ public:
         return _ls.files[executeFileID];
     }
 
-    bool highlightFile(Filename fn)
+    bool highlightFile(Filename fn, CenterOnHighlightedFile chf)
     {
         if (! fn)
             highlightNothing();
         currentDir = fn;
         immutable int id = _ls.files.countUntil(fn).to!int;
         if (id >= 0) {
-            highlightFile(id);
+            highlightFile(id, chf);
             return true;
         }
         else {

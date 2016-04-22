@@ -9,6 +9,8 @@ import basics.help;
 import gui;
 import hardware.tharsis;
 
+enum CenterOnHighlightedFile : bool { onlyIfOffscreen, always }
+
 abstract class Tiler : Element {
 private:
     Button[] _dirs;
@@ -71,10 +73,12 @@ public:
     }
 
     final void highlightNothing() { _files.each!(b => b.on = false); }
-    final void highlightFile(in int i)
+    final void highlightFile(in int i, CenterOnHighlightedFile chf)
     {
         highlightNothing();
         _files[i].on = true;
+        if (chf || i < top || i >= top + pageLen)
+            top = i - pageLen / 2;
     }
 
 
