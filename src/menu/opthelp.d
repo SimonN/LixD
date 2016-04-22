@@ -179,10 +179,15 @@ class NumPickOption : Option
     this(Geom g, NumPickConfig cfg, string cap, int* t)
     {
         assert (t);
-        _num = new NumPick(new Geom(0, 0, mostButtonsXl, 20), cfg);
-        super(g, new Label(new Geom(mostButtonsXl + spaceGuiTextX, 0,
-                            g.xlg - mostButtonsXl + spaceGuiTextX, g.yl),
-                            cap));
+        // Hack: sixButtons is used in the editor's view options window.
+        // That NumPick selects colors. We hardcode that use case's xlg
+        // here, and hope that nobody else needs to supply custom xlg.
+        immutable plusXl = cfg.sixButtons ? 40 : 0;
+
+        _num = new NumPick(new Geom(0, 0, mostButtonsXl + plusXl, 20), cfg);
+        super(g, new Label(new Geom(mostButtonsXl + plusXl + spaceGuiTextX, 0,
+                            g.xlg - mostButtonsXl + plusXl + spaceGuiTextX,
+                            g.yl), cap));
         addChild(_num);
         _target = t;
     }

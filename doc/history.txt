@@ -1,8 +1,25 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.3.1
+-----
+
+2016-05-01
+
+File picker scrolls with the mouse wheel.
+
+Replay browser can delete files and lists player names next to files.
+
+The editor keeps the manual or automatic screen start from old levels,
+even though it cannot change the screen start yet.
+
+Fix #66: Boolean options react to mouse clicks on their label, not only
+to mouse clicks on the checkbox itself.
+
 0.3.0
 -----
+
+2016-04-27
 
 Physics change: We don't check for physics near the eye, which would have
 depended on the spritesheet. Instead we check at (foot) + (0, y), where

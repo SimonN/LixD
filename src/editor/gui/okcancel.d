@@ -23,7 +23,7 @@ public:
         return _okay.execute || mouseClickRight || _cancel.execute;
     }
 
-    final writeChangesTo(Level level) const
+    final writeChangesTo(Level level)
     {
         if (_okay.execute || mouseClickRight) {
             assert (level);
@@ -32,5 +32,5 @@ public:
     }
 
 protected:
-    abstract void selfWriteChangesTo(Level) const;
+    abstract void selfWriteChangesTo(Level);
 }
