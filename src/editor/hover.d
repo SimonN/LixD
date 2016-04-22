@@ -92,6 +92,8 @@ abstract class Hover {
     enum FgBg { fg, bg }
     abstract void moveTowards(FgBg);
 
+    void toggleDark() { }
+
 protected:
     void mirrorHorizontally() { }
     void rotateCcw() { }
@@ -126,6 +128,12 @@ public:
     {
         moveTowardsImpl(level.topology, level.terrain, _pos, fgbg,
                         MoveTowards.untilIntersects);
+    }
+
+    override void toggleDark()
+    {
+        assert (_pos);
+        _pos.dark = ! _pos.dark;
     }
 
     override AlCol hoverColor(int val) const

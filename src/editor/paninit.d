@@ -72,6 +72,9 @@ void makePanel(Editor editor)
             immutable box = editor.smallestRectContainingSelection();
             editor._selection.each!(sel => sel.rotateCcwWithin(box));
         });
+        onExecute(Lang.editorButtonSelectDark, keyEditorDark, () {
+            editor._selection.each!(sel => sel.toggleDark());
+        });
         onExecute(Lang.editorButtonMenuScroll, 0, () {
             editor._okCancelWindow = new VisualsWindow(editor._level);
             addFocus(editor._okCancelWindow);
@@ -114,7 +117,6 @@ Rect smallestRectContainingSelection(in Editor editor)
     editorButtonFileSaveAs,
     editorButtonUndo,
     editorButtonRedo,
-    editorButtonSelectDark,
     editorButtonSelectNoow,
     editorButtonHelp,
     editorButtonMenuSize,
@@ -125,7 +127,6 @@ Rect smallestRectContainingSelection(in Editor editor)
     int keyEditorRight       = ALLEGRO_KEY_F;
     int keyEditorUp          = ALLEGRO_KEY_E;
     int keyEditorDown        = ALLEGRO_KEY_D;
-    int keyEditorDark        = ALLEGRO_KEY_N;
     int keyEditorNoow        = ALLEGRO_KEY_M;
     int keyEditorHelp        = ALLEGRO_KEY_H;
     int keyEditorMenuSize    = ALLEGRO_KEY_5;
