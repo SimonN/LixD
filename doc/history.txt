@@ -1,6 +1,15 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.48
+
+Fix: Singleplayer results overwrite outdated level results.
+
+Editor rotates and mirrors terrain pieces, and toggles the dark flag.
+
+When you enter a directory in a browser and the picker highlights the
+recent file, this file is scrolled into view.
+
 0.2.47
 ------
 

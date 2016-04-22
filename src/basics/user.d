@@ -231,20 +231,33 @@ class Result {
             && updatesUsed == rhs.updatesUsed;
     }
 
-    // A newly built level's result is always better than older results,
-    // when compared with this. However, the user wouldn't want to replace
-    // an old solving result with a new-built-using non-solving result.
+    // Returns < 0 on a worse rhs result, > 0 for a better rhs result.
+    // The user wouldn't want to replace an old solving result with
+    // a new-built-using non-solving result.
     // To check in results into the database of solved levels, use
-    // setLevelResultCarefully() from this module.
-    int opCmp(in Result r) const
+    // setLevelResult() from this module.
+    int opCmp(in Result rhs) const
     {
-        return built   != r.built       ? built       < r.built
-         : lixSaved    != r.lixSaved    ? lixSaved    < r.lixSaved
-         : skillsUsed  != r.skillsUsed  ? skillsUsed  > r.skillsUsed
-         : updatesUsed != r.updatesUsed ? updatesUsed > r.updatesUsed
-         : 0; // all are equal
+        if (lixSaved != rhs.lixSaved)
+            return lixSaved - rhs.lixSaved; // more lix saved is better
+        if (skillsUsed != rhs.skillsUsed)
+            return rhs.skillsUsed - skillsUsed; // fewer skills used is better
+        if (updatesUsed != rhs.updatesUsed)
+            return rhs.updatesUsed - updatesUsed; // less time taken is better
+        return built.opCmp(rhs.built); // newer result better
     }
 
+    unittest {
+        Result a = new Result(Date.now());
+        Result b = new Result(Date.now());
+        a.lixSaved = 4;
+        b.lixSaved = 5;
+        assert (b > a);
+        b.lixSaved = 4;
+        assert (a >= b);
+        b.updatesUsed = 1;
+        assert (a > b);
+    }
 }
 
 const(Result) getLevelResult(in Filename fn)
