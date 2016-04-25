@@ -85,21 +85,21 @@ void makePanel(Editor editor)
             addFocus(editor._okCancelWindow);
             button(Lang.editorButtonMenuSkill).on = true;
         });
-        template OnExecuteBrowser(string name, string exts) {
-            enum string OnExecuteBrowser = "
+        template mkBrowser(string name, string exts, string curDirPtr) {
+            enum string mkBrowser = "
                     onExecute(Lang.editorButtonAdd%s, keyEditorAdd%s, () {
-                        editor._terrainBrowser = new TerrainBrowser(%s);
+                        editor._terrainBrowser = new TerrainBrowser(%s, %s);
                         addFocus(editor._terrainBrowser);
                         button(Lang.editorButtonAdd%s).on = true;
                     });
-                ".format(name, name, exts, name);
+                ".format(name, name, exts, curDirPtr, name);
         }
-        mixin (OnExecuteBrowser!("Terrain", "[0]"));
-        mixin (OnExecuteBrowser!("Steel", "[preExtSteel]"));
-        mixin (OnExecuteBrowser!("Hatch", "[preExtHatch]"));
-        mixin (OnExecuteBrowser!("Goal", "[preExtGoal]"));
-        mixin (OnExecuteBrowser!("Deco", "[preExtDeco]"));
-        mixin (OnExecuteBrowser!("Hazard", "['W', 'T', 'F']"));
+        mixin (mkBrowser!("Terrain", "[0]",          "&editorLastDirTerrain"));
+        mixin (mkBrowser!("Steel", "[preExtSteel]",  "&editorLastDirSteel"));
+        mixin (mkBrowser!("Hatch", "[preExtHatch]",  "&editorLastDirHatch"));
+        mixin (mkBrowser!("Goal", "[preExtGoal]",    "&editorLastDirGoal"));
+        mixin (mkBrowser!("Deco", "[preExtDeco]",    "&editorLastDirDeco"));
+        mixin (mkBrowser!("Hazard", "['W','T','F']", "&editorLastDirHazard"));
     }
 }
 

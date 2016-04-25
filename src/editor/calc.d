@@ -96,12 +96,14 @@ void calcTerrainBrowser(Editor editor) {
     with (editor)
 {
     if (_terrainBrowser.done) {
-        auto pos = _level.addTileWithCenterAt(_terrainBrowser.chosenTile,
-                                              _map.mouseOnLand);
+        if (auto pos = _level.addTileWithCenterAt(_terrainBrowser.chosenTile,
+                                                  _map.mouseOnLand)
+        ) {
+            _selection = [ Hover.newViaEvilDynamicCast(_level, pos) ];
+            _terrainBrowser.saveDirOfChosenTileToUserCfg();
+        }
         rmFocus(_terrainBrowser);
         editor.closeWindows();
-        if (pos)
-            _selection = [ Hover.newViaEvilDynamicCast(_level, pos) ];
     }
 }}
 

@@ -11,12 +11,16 @@ class TerrainBrowser : Window {
 private:
     Picker _picker;
     TextButton _cancel;
+    MutFilename* _currentDirUserCfg;
 
 public:
-    this(string allowedPreExts)
+    this(string allowedPreExts, MutFilename* currentDirUserCfg)
     {
         super(new Geom(0, 0, Geom.screenXlg, Geom.mapYlg, From.TOP),
             Lang.addTerrain.transl);
+        assert (currentDirUserCfg !is null);
+        _currentDirUserCfg = currentDirUserCfg;
+
         auto cfg  = PickerConfig!ImageTiler();
         cfg.all   = new Geom(20, 40, xlg-140, ylg-60);
         cfg.bread = new Geom(0, 0, cfg.all.xl, 30);
@@ -24,7 +28,7 @@ public:
         cfg.ls    = new ImageLs(allowedPreExts);
         _picker = new Picker(cfg);
         _picker.basedir = dirImages;
-        _picker.currentDir = new Filename("./images/simon/earth/");
+        _picker.currentDir = *_currentDirUserCfg;
         _cancel = new TextButton(new Geom(
             20, 20, 80, 40, From.BOTTOM_RIGHT), Lang.commonCancel.transl);
         _cancel.hotkey = keyMenuExit;
@@ -41,5 +45,11 @@ public:
         if (_picker.executeFile)
             return _picker.executeFileFilename;
         return null;
+    }
+
+    void saveDirOfChosenTileToUserCfg()
+    {
+        assert (chosenTile !is null);
+        *_currentDirUserCfg = chosenTile.guaranteedDirOnly();
     }
 }
