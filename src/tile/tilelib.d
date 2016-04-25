@@ -15,7 +15,7 @@ import file.log;
 import file.search;
 import graphic.cutbit;
 import tile.gadtile;
-import tile.platonic;
+import tile.abstile;
 import tile.terrain;
 
 private:
@@ -59,7 +59,7 @@ auto get_gadget (in string s) { return get_tile!(GadgetTile,  gadgets)(s); }
 auto get_terrain(in string s) { return get_tile!(TerrainTile, terrain)(s); }
 
 private const(T)
-get_tile(T : Platonic, alias container)(in string str)
+get_tile(T : AbstractTile, alias container)(in string str)
 {
     // This function has a lot of returns along its way. Successfully found
     // objects are always returned directly. If the object isn't found in time,
@@ -87,7 +87,7 @@ get_tile(T : Platonic, alias container)(in string str)
     else return null;
 }
 
-string get_filename(in Platonic tile)
+string get_filename(in AbstractTile tile)
 {
     // DTODO: this is slow. Maybe use the key as a property of the tile
     // in addition to the key, so it becomes a lookup associative array.

@@ -11,7 +11,7 @@ import gui;
 import gui.picker.tiler;
 import level.level;
 import tile.tilelib;
-import tile.platonic;
+import tile.abstile;
 
 class ImageTiler : Tiler {
 public:
@@ -62,7 +62,7 @@ public:
     {
         assert (fn);
         super(g);
-        Rebindable!(const(Platonic)) tile = get_terrain(fn.rootlessNoExt);
+        Rebindable!(const(AbstractTile)) tile = get_terrain(fn.rootlessNoExt);
         if (! tile)
             tile = get_gadget(fn.rootlessNoExt);
         if (tile) {

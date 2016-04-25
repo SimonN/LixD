@@ -1,11 +1,8 @@
 module tile.gadtile;
 
-/* Tile was named Object in C++/A4 Lix. Object is not only the base class
- * in D that gets inherited by all classes, but it's a horrible name for
- * a class in general. Tile is a splendid name for this.
- *
- * A Tile owns its very own Cutbit. When the Tile is destroyed, the Cutbit
- * is also destroyed.
+/* Specialization of AbstractTile for hatches, goals, traps, etc.
+ * As with AbstractTile, if you have 4 hatches in a level that all look alike,
+ * you have 4 GadOccs (gadget occurrences), but only 1 AbstractTile.
  */
 
 import std.algorithm;
@@ -17,11 +14,11 @@ import file.filename;
 import file.io;
 import graphic.cutbit;
 import hardware.sound;
-import tile.platonic;
+import tile.abstile;
 
 alias GadType = GadgetTile.Type;
 
-class GadgetTile : Platonic {
+class GadgetTile : AbstractTile {
 private:
     Type _type;
 

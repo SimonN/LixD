@@ -33,7 +33,7 @@ void drawTerrainToSeparateMap(Editor editor)
     with (DrawingTarget(editor._mapTerrain.albit)) {
         editor._mapTerrain.clearToColor(color.transp);
         foreach (t; editor._level.terrain)
-            if (auto cb = t.dark ? t.ob.dark : t.ob.cb)
+            if (auto cb = t.dark ? t.tile.dark : t.tile.cb)
                 cb.draw(editor._mapTerrain, t.point, t.mirr, t.rot,
                         t.dark ? Cutbit.Mode.DARK_EDITOR : Cutbit.Mode.NORMAL);
     }
@@ -62,8 +62,8 @@ void drawGadgets(Editor editor)
         auto zone = Zone(profiler, "Editor.drawGadgets");
     foreach (gadgetList; editor._level.pos)
         foreach (g; gadgetList) {
-            assert (g.ob && g.ob.cb);
-            g.ob.cb.draw(editor._map, g.point);
+            assert (g.tile && g.tile.cb);
+            g.tile.cb.draw(editor._map, g.point);
         }
 }
 
@@ -74,9 +74,9 @@ void drawGadgetAnnotations(Editor editor)
     void annotate(const(typeof(editor._level.pos[0])) list)
     {
         foreach (int i, g; list) {
-            assert (g.ob && g.ob.cb);
+            assert (g.tile && g.tile.cb);
             string s = "%d/%d".format(i+1, list.length);
-            drawTextCentered(djvuM, s, g.point.x + g.ob.cb.xl/2,
+            drawTextCentered(djvuM, s, g.point.x + g.tile.cb.xl/2,
                                        g.point.y, color.guiText);
         }
     }

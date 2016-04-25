@@ -1,4 +1,4 @@
-module tile.pos;
+module tile.occur;
 
 /* Pos is a single instance of a Tile in the level. A Tile can thus appear
  * many times in a level, differently rotated.
@@ -12,24 +12,24 @@ public import basics.rect;
 import file.io;
 import tile.tilelib;
 import tile.terrain;
-import tile.platonic;
+import tile.abstile;
 import tile.gadtile;
 
-abstract class AbstractPos {
+abstract class Occurrence {
 public:
     Point point;
 
-    abstract AbstractPos clone() const
+    abstract Occurrence clone() const
     out (ret) { assert (ret); }
     body { return null; }
 
-    abstract const(Platonic) ob() const;
+    abstract const(AbstractTile) tile() const;
     abstract IoLine    toIoLine() const;
 
     override bool opEquals(Object rhsObj)
     {
-        auto rhs = cast (const AbstractPos) rhsObj;
-        return rhs && ob is rhs.ob && point == rhs.point;
+        auto rhs = cast (const Occurrence) rhsObj;
+        return rhs && tile is rhs.tile && point == rhs.point;
     }
 
     // The selection box, already shifted to the correct spot by x/y.
@@ -41,57 +41,57 @@ public:
     }
 
 protected:
-    @property Rect selboxOnTile() const { assert (ob); return ob.selbox; }
+    @property Rect selboxOnTile() const { assert (tile); return tile.selbox; }
 }
 
-class GadPos : AbstractPos {
+class GadOcc : Occurrence {
 public:
-    const(GadgetTile) _ob;
+    const(GadgetTile) _tile;
     bool hatchRot;
 
-    this(const(GadgetTile) tile) { _ob = tile; }
+    this(const(GadgetTile) t) { _tile = t; }
 
-    override GadPos clone() const
+    override GadOcc clone() const
     {
-        auto ret     = new GadPos(ob);
+        auto ret     = new GadOcc(tile);
         ret.point    = point;
         ret.hatchRot = hatchRot;
         return ret;
     }
 
-    override const(GadgetTile) ob() const { return _ob; }
+    override const(GadgetTile) tile() const { return _tile; }
     override bool opEquals(Object rhsObj)
     {
-        auto rhs = cast (const GadPos) rhsObj;
+        auto rhs = cast (const GadOcc) rhsObj;
         return rhs && hatchRot == rhs.hatchRot && super.opEquals(rhsObj);
     }
 
     override IoLine toIoLine() const
     {
-        return IoLine.Colon(ob ? get_filename(ob) : null,
+        return IoLine.Colon(tile ? get_filename(tile) : null,
                 point.x, point.y, hatchRot ? "r" : null);
     }
 
     // only for hatches
     @property Point screenCenter() const
     {
-        assert (ob);
-        return point + ob.trigger + Point(hatchRot ? -64 : 64, 0);
+        assert (tile);
+        return point + tile.trigger + Point(hatchRot ? -64 : 64, 0);
     }
 }
 
-class TerPos : AbstractPos {
-    const(TerrainTile) _ob;
+class TerOcc : Occurrence {
+    const(TerrainTile) _tile;
     bool mirr; // mirror vertically
     int  rot;  // rotate tile? 0 = normal, 1, 2, 3 = turned counter-clockwise
     bool dark; // Terrain loeschen anstatt neues malen
     bool noow; // Nicht ueberzeichnen?
 
-    this(const(TerrainTile) tile) { _ob = tile; }
+    this(const(TerrainTile) t) { _tile = t; }
 
-    override TerPos clone() const
+    override TerOcc clone() const
     {
-        auto ret  = new TerPos(ob);
+        auto ret  = new TerOcc(tile);
         ret.point = point;
         ret.mirr  = mirr;
         ret.rot   = rot;
@@ -100,10 +100,10 @@ class TerPos : AbstractPos {
         return ret;
     }
 
-    override const(TerrainTile) ob() const { return _ob; }
+    override const(TerrainTile) tile() const { return _tile; }
     override bool opEquals(Object rhsObj)
     {
-        auto rhs = cast (const TerPos) rhsObj;
+        auto rhs = cast (const TerOcc) rhsObj;
         return rhs && mirr == rhs.mirr && rot  == rhs.rot
                    && dark == rhs.dark && noow == rhs.noow
                    && super.opEquals(rhsObj);
@@ -111,7 +111,7 @@ class TerPos : AbstractPos {
 
     override IoLine toIoLine() const
     {
-        string filename = ob ? get_filename(ob) : null;
+        string filename = tile ? get_filename(tile) : null;
         string modifiers;
         if (mirr) modifiers ~= 'f';
         foreach (r; 0 .. rot) modifiers ~= 'r';
@@ -122,8 +122,8 @@ class TerPos : AbstractPos {
 
     auto phybitsOnMap(in Point p) const
     {
-        assert (_ob);
-        return _ob.getPhybitsXYRotMirr(p - point, rot, mirr);
+        assert (_tile);
+        return _tile.getPhybitsXYRotMirr(p - point, rot, mirr);
     }
 
 protected:
@@ -139,15 +139,15 @@ private:
     @property int selboxStart(int plusRot)() const
         if (plusRot == 0 || plusRot == 1)
     {
-        assert (ob);
-        assert (ob.cb);
-        int invX() { return ob.cb.xl - ob.selbox.x - ob.selbox.xl; }
-        int invY() { return ob.cb.yl - ob.selbox.y - ob.selbox.yl; }
+        assert (_tile);
+        assert (_tile.cb);
+        int invX() { return _tile.cb.xl - _tile.selbox.x - _tile.selbox.xl; }
+        int invY() { return _tile.cb.yl - _tile.selbox.y - _tile.selbox.yl; }
         switch (rot + plusRot) {
-            case 0: case 4: return ob.selbox.x;
-            case 1:         return mirr ? invY : ob.selbox.y;
+            case 0: case 4: return _tile.selbox.x;
+            case 1:         return mirr ? invY : _tile.selbox.y;
             case 2:         return invX;
-            case 3:         return mirr ? ob.selbox.y : invY;
+            case 3:         return mirr ? _tile.selbox.y : invY;
             default: assert (false, "rotation should be 0, 1, 2, 3");
         }
     }
@@ -155,7 +155,7 @@ private:
     @property int selboxLen(int plusRot)() const
         if (plusRot == 0 || plusRot == 1)
     {
-        assert (ob);
-        return (rot + plusRot) & 1 ? ob.selbox.yl : ob.selbox.xl;
+        assert (_tile);
+        return (rot + plusRot) & 1 ? _tile.selbox.yl : _tile.selbox.xl;
     }
 }

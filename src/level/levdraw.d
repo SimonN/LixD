@@ -14,7 +14,7 @@ import hardware.tharsis;
 import level.level;
 import tile.gadtile;
 import tile.phymap;
-import tile.pos;
+import tile.occur;
 
 package void implDrawTerrainTo(in Level level, Torbit tb, Phymap lookup)
 {
@@ -29,19 +29,19 @@ package void implDrawTerrainTo(in Level level, Torbit tb, Phymap lookup)
         drawPosTerrain(po, tb, lookup);
 }
 
-private void drawPosGadget(in GadPos po, Torbit ground)
+private void drawPosGadget(in GadOcc po, Torbit ground)
 {
-    po.ob.cb.draw(ground, po.point,
+    po.tile.cb.draw(ground, po.point,
         0, 0, // draw top-left frame. DTODO: Still OK for triggered traps?
         0, // mirroring
         // hatch rotation: not for drawing, only for spawn direction
-        po.ob.type == GadType.HATCH ? 0 : po.hatchRot);
+        po.tile.type == GadType.HATCH ? 0 : po.hatchRot);
 }
 
-private void drawPosTerrain(in TerPos po, Torbit ground, Phymap lookup)
+private void drawPosTerrain(in TerOcc po, Torbit ground, Phymap lookup)
 {
-    assert (po.ob);
-    const(Cutbit) cb = po.dark ? po.ob.dark : po.ob.cb;
+    assert (po.tile);
+    const(Cutbit) cb = po.dark ? po.tile.dark : po.tile.cb;
     assert (cb);
     Cutbit.Mode mode = po.noow ? Cutbit.Mode.NOOW
                      : po.dark ? Cutbit.Mode.DARK
@@ -58,8 +58,8 @@ private void drawPosTerrain(in TerPos po, Torbit ground, Phymap lookup)
     // The lookup map could contain additional info about trigger areas,
     // but drawPosGadget doesn't draw those onto the lookup map.
     // That's done by the game class.
-    immutable xl = (po.rot & 1) ? po.ob.cb.yl : po.ob.cb.xl;
-    immutable yl = (po.rot & 1) ? po.ob.cb.xl : po.ob.cb.yl;
+    immutable xl = (po.rot & 1) ? po.tile.cb.yl : po.tile.cb.xl;
+    immutable yl = (po.rot & 1) ? po.tile.cb.xl : po.tile.cb.yl;
     foreach (int y; po.point.y .. (po.point.y + yl))
         foreach (int x; po.point.x .. (po.point.x + xl)) {
             immutable p = Point(x, y);
@@ -74,7 +74,7 @@ private void drawPosTerrain(in TerPos po, Torbit ground, Phymap lookup)
                 lookup.rm(p, Phybit.terrain | Phybit.steel);
             else {
                 lookup.add(p, bits);
-                if (! po.ob.steel)
+                if (! po.tile.steel)
                     lookup.rm(p, Phybit.steel);
             }
         }

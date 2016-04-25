@@ -1,11 +1,18 @@
-module tile.platonic;
+module tile.abstile;
 
-/* Platonic Tile
+/* AbstractTile: Represents a single tile, may it be terrain or gadget,
+ * loaded from the image directory. This has subclasses for terrain tiles
+ * and for gadget tiles. When you have 10 bricks in the level that all look
+ * the same, you have one Tile, but 10 Occurrences.
  *
  * We don't dispose the cutbit at end of program right now.
  * If you ever decide that exiting without cleaning the garbage is
  * a bad idea, you might want to re-introduce dispose() and destroy
- * the cutbit's image.
+ * the cutbit's image. A Tile owns its Cutbit.
+ *
+ * Tile was named Object in C++/A4 Lix. Object is not only the base class
+ * in D that gets inherited by all classes, but it's a horrible name for
+ * a non-universal class in general. Tile is a splendid name instead.
  */
 
 import std.algorithm;
@@ -14,7 +21,7 @@ import basics.rect;
 import graphic.color;
 import graphic.cutbit;
 
-class Platonic {
+abstract class AbstractTile {
 private:
     Cutbit _cb;
     Rect _selbox; // Smallest rectangle, relative to the cutbit's (0, 0),

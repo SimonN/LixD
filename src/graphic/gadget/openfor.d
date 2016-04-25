@@ -18,7 +18,7 @@ import game.model.state;
 import game.tribe;
 import graphic.gadget;
 import graphic.torbit;
-import tile.pos;
+import tile.occur;
 import tile.gadtile;
 import hardware.sound;
 
@@ -35,16 +35,16 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
     Update wasFedDuringUpdate;
     const(int) idleAnimLength;
 
-    this(const(Topology) top, in ref GadPos levelpos)
+    this(const(Topology) top, in ref GadOcc levelpos)
     {
         super(top, levelpos);
         idleAnimLength = delegate() {
             if (! tile || ! tile.cb)
                 return 0;
-            else for (int i = 0; i < levelpos.ob.cb.xfs; ++i)
-                if (! levelpos.ob.cb.frameExists(i, 1))
+            else for (int i = 0; i < levelpos.tile.cb.xfs; ++i)
+                if (! levelpos.tile.cb.frameExists(i, 1))
                     return i;
-            return levelpos.ob.cb.xfs;
+            return levelpos.tile.cb.xfs;
         }();
     }
 

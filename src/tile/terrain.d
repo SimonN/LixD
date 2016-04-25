@@ -13,9 +13,9 @@ import graphic.cutbit;
 import graphic.color;
 import hardware.tharsis;
 import tile.phymap;
-import tile.platonic;
+import tile.abstile;
 
-class TerrainTile : Platonic {
+class TerrainTile : AbstractTile {
 private:
     Phymap _phymap;
     bool   _steel;

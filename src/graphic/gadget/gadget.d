@@ -28,12 +28,12 @@ import graphic.graphic;
 import graphic.gadget;
 import graphic.torbit;
 import tile.phymap;
-import tile.pos;
+import tile.occur;
 import tile.gadtile;
 import hardware.sound;
 
 package immutable string StandardGadgetCtor =
-    "this(const(Topology) top, in ref GadPos levelpos)
+    "this(const(Topology) top, in ref GadOcc levelpos)
     {
         super(top, levelpos);
     }";
@@ -55,21 +55,21 @@ public:
     @property Sound sound() { return Sound.NOTHING; }
 
 // protected: use the factory to generate gadgets of the correct subclass
-protected this(const(Topology) top, in ref GadPos levelpos)
+protected this(const(Topology) top, in ref GadOcc levelpos)
 in {
-    assert (levelpos.ob, "we shouldn't make gadgets from missing tiles");
-    assert (levelpos.ob.cb, "we shouldn't make gadgets from bad tiles");
+    assert (levelpos.tile, "we shouldn't make gadgets from missing tiles");
+    assert (levelpos.tile.cb, "we shouldn't make gadgets from bad tiles");
 }
 body {
-    super(levelpos.ob.cb, top, levelpos.point);
-    tile = levelpos.ob;
+    super(levelpos.tile.cb, top, levelpos.point);
+    tile = levelpos.tile;
     animationLength = delegate() {
-        if (levelpos.ob.cb is null)
+        if (levelpos.tile.cb is null)
             return 1;
-        for (int i = 0; i < levelpos.ob.cb.xfs; ++i)
-            if (! levelpos.ob.cb.frameExists(i, 0))
+        for (int i = 0; i < levelpos.tile.cb.xfs; ++i)
+            if (! levelpos.tile.cb.frameExists(i, 0))
                 return i;
-        return levelpos.ob.cb.xfs;
+        return levelpos.tile.cb.xfs;
     }();
 }
 
@@ -99,17 +99,17 @@ invariant()
 }
 
 static Gadget
-factory(const(Topology) top, in ref GadPos levelpos)
+factory(const(Topology) top, in ref GadOcc levelpos)
 {
-    assert (levelpos.ob);
-    final switch (levelpos.ob.type) {
+    assert (levelpos.tile);
+    final switch (levelpos.tile.type) {
         case GadType.DECO:    return new Gadget  (top, levelpos);
         case GadType.HATCH:   return new Hatch   (top, levelpos);
         case GadType.GOAL:    return new Goal    (top, levelpos);
         case GadType.TRAP:    return new TrapTrig(top, levelpos);
         case GadType.WATER:   return new Water   (top, levelpos);
         case GadType.FLING:
-            if (levelpos.ob.subtype & 2) return new FlingTrig(top, levelpos);
+            if (levelpos.tile   .subtype & 2) return new FlingTrig(top, levelpos);
             else                         return new FlingPerm(top, levelpos);
         case GadType.MAX:
             assert (false, "GadType isn't supported by Gadget.factory");

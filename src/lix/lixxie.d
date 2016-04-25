@@ -295,9 +295,9 @@ void moveUp(in int minusY = 2)
 bool inTriggerArea(in Gadget g) const
 {
     // There is potential for refactoring here. Gadget doesn't hold a reference
-    // on the GadPos it's instantiated with. AbstractPos has Rect selbox()
-    // const, therefore GadPos should naturally get Rect triggerArea() const.
-    // Then Gadget should defer to GadPos.
+    // on the GadOcc it's instantiated with. Occurrence has Rect selbox()
+    // const, therefore GadOcc should naturally get Rect triggerArea() const.
+    // Then Gadget should defer to GadOcc.
     return env.isPointInRectangle(Point(ex, ey),
         Rect(g.x + g.tile.triggerX(), g.y + g.tile.triggerY(),
              g.tile.triggerXl,        g.tile.triggerYl));

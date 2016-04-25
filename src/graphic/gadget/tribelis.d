@@ -14,7 +14,7 @@ import game.model.state;
 import game.tribe;
 import graphic.gadget;
 import graphic.torbit;
-import tile.pos;
+import tile.occur;
 
 class GadgetWithTribeList : Gadget {
 

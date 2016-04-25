@@ -14,7 +14,7 @@ import graphic.internal;
 import graphic.torbit;
 import hardware.sound;
 import tile.gadtile;
-import tile.pos;
+import tile.occur;
 import lix.enums;
 
 class Hatch : Gadget {
@@ -34,7 +34,7 @@ public:
     immutable bool spawnFacingLeft;
     Style blinkStyle = Style.garden; // if left at garden, then don't blink
 
-    this(const(Topology) top, in ref GadPos levelpos)
+    this(const(Topology) top, in ref GadOcc levelpos)
     {
         super(top, levelpos);
         spawnFacingLeft = levelpos.hatchRot;

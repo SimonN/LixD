@@ -16,7 +16,7 @@ import basics.rect;
 import basics.topology;
 import graphic.color;
 import level.level;
-import tile.pos;
+import tile.occur;
 import tile.gadtile;
 
 abstract class Hover {
@@ -36,12 +36,12 @@ abstract class Hover {
     in   { assert (l); }
     body { level = l; reason = r; }
 
-    static Hover newViaEvilDynamicCast(Level l, AbstractPos forThis)
+    static Hover newViaEvilDynamicCast(Level l, Occurrence forThis)
     {
         assert (forThis);
-        if (auto h = cast (TerPos) forThis)
+        if (auto h = cast (TerOcc) forThis)
             return new TerrainHover(l, h, Reason.addedFromBrowser);
-        else if (auto h = cast (GadPos) forThis)
+        else if (auto h = cast (GadOcc) forThis)
             return new GadgetHover(l, h, Reason.addedFromBrowser);
         assert (false);
     }
@@ -81,10 +81,10 @@ abstract class Hover {
         pos.point = level.topology.wrap(Point(
             box.center.x + (box.center - self.center).y,
             box.center.y - (box.center - self.center).x)
-            - self.len/2 - pos.ob.selbox.topLeft);
+            - self.len/2 - pos.tile.selbox.topLeft);
     }
 
-    abstract inout(AbstractPos) pos() inout;
+    abstract inout(Occurrence) pos() inout;
     abstract void removeFromLevel();
     abstract void cloneThenPointToClone();
     abstract AlCol hoverColor(int val) const;
@@ -101,16 +101,16 @@ protected:
 
 class TerrainHover : Hover {
 private:
-    TerPos _pos;
+    TerOcc _pos;
 
 public:
-    this(Level l, TerPos p, Hover.Reason r)
+    this(Level l, TerOcc p, Hover.Reason r)
     {
         super(l, r);
         _pos = p;
     }
 
-    override inout(TerPos) pos() inout { return _pos; }
+    override inout(TerOcc) pos() inout { return _pos; }
 
     override void removeFromLevel()
     {
@@ -158,22 +158,22 @@ protected:
 
 class GadgetHover : Hover {
 private:
-    GadPos _pos;
+    GadOcc _pos;
 
 public:
-    this(Level l, GadPos p, Hover.Reason r)
+    this(Level l, GadOcc p, Hover.Reason r)
     {
         super(l, r);
         _pos = p;
     }
 
-    override inout(GadPos) pos() inout { return _pos; }
+    override inout(GadOcc) pos() inout { return _pos; }
 
-    ref inout(GadPos[]) list() inout
+    ref inout(GadOcc[]) list() inout
     {
         assert (_pos);
-        assert (_pos.ob);
-        return level.pos[_pos.ob.type];
+        assert (_pos.tile);
+        return level.pos[_pos.tile.type];
     }
 
     override void removeFromLevel()
@@ -191,7 +191,7 @@ public:
     override void moveTowards(Hover.FgBg fgbg)
     {
         moveTowardsImpl(level.topology, list, _pos, fgbg,
-            (pos.ob.type == GadType.HATCH || pos.ob.type == GadType.GOAL)
+            (pos.tile.type == GadType.HATCH || pos.tile.type == GadType.GOAL)
             ? MoveTowards.once : MoveTowards.untilIntersects);
     }
 
@@ -204,7 +204,7 @@ protected:
     override void rotateCcw() { mirrorHorizontally(); }
     override void mirrorHorizontally()
     {
-        _pos.hatchRot = (_pos.ob.type == GadType.HATCH && ! _pos.hatchRot);
+        _pos.hatchRot = (_pos.tile.type == GadType.HATCH && ! _pos.hatchRot);
     }
 }
 
@@ -214,7 +214,7 @@ enum MoveTowards { once, untilIntersects }
 
 void moveTowardsImpl(P)(
     Topology topology, ref P[] list, P pos, Hover.FgBg fgbg, MoveTowards mt
-)   if (is (P : AbstractPos))
+)   if (is (P : Occurrence))
 {
     int we = list.countUntil!"a is b"(pos).to!int;
     assert (we >= 0);

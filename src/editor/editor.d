@@ -17,7 +17,7 @@ import editor.gui.panel;
 import file.filename;
 import graphic.map;
 import level.level;
-import tile.pos;
+import tile.occur;
 import tile.gadtile;
 
 class Editor {

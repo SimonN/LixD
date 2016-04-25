@@ -5,30 +5,30 @@ import std.typecons;
 import file.filename;
 import file.log;
 import level.level;
-import tile.pos;
+import tile.occur;
 import tile.gadtile;
-import tile.platonic;
+import tile.abstile;
 import tile.terrain;
 import tile.tilelib;
 
 package:
 
 // add tile to level such that its center point ends up at the argument point
-AbstractPos implCenter(Level level, Filename fn, Point center)
+Occurrence implCenter(Level level, Filename fn, Point center)
 {
     if (! fn)
         return null;
     auto pos = add_object_from_ascii_line(level, fn.rootlessNoExt, center, "");
     if (! pos)
         return null;
-    assert (pos.ob, "added tile, image doesn't exist?");
-    pos.point = level.topology.clamp(center) - pos.ob.cb.len / 2;
+    assert (pos.tile, "added tile, image doesn't exist?");
+    pos.point = level.topology.clamp(center) - pos.tile.cb.len / 2;
     return pos;
 }
 
 // This gets called with the raw data, it's a factory.
 // This adds to the correct array and, in addition, returns a reference.
-AbstractPos add_object_from_ascii_line(
+Occurrence add_object_from_ascii_line(
     Level     level,
     in string text1,
     in Point  cornerAt,
@@ -37,7 +37,7 @@ AbstractPos add_object_from_ascii_line(
     const(TerrainTile) ter = get_terrain(text1);
     const(GadgetTile)  gad = ter is null ? get_gadget (text1) : null;
     if (ter && ter.cb) {
-        TerPos newpos = new TerPos(ter);
+        TerOcc newpos = new TerOcc(ter);
         newpos.point  = level.topology.wrap(cornerAt);
         foreach (char c; text2) switch (c) {
             case 'f': newpos.mirr = ! newpos.mirr;         break;
@@ -50,7 +50,7 @@ AbstractPos add_object_from_ascii_line(
         return newpos;
     }
     else if (gad && gad.cb) {
-        GadPos newpos = new GadPos(gad);
+        GadOcc newpos = new GadOcc(gad);
         newpos.point  = level.topology.wrap(cornerAt);
         if (gad.type == GadType.HATCH)
             foreach (char c; text2) switch (c) {

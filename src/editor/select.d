@@ -11,7 +11,7 @@ import editor.hover;
 import hardware.keyboard;
 import hardware.mouse;
 import hardware.semantic;
-import tile.pos;
+import tile.occur;
 import tile.gadtile;
 
 package:
@@ -105,13 +105,13 @@ void hoverTilesReversed(Editor editor) { with (editor)
 void maybeAdd(Pos)(
     Editor editor,
     Pos pos
-)   if (is (Pos : AbstractPos) && ! is (Pos == AbstractPos))
+)   if (is (Pos : Occurrence) && ! is (Pos == Occurrence))
 {   with (editor)
     with (editor._map)
 {
     if (! isPointInRectangle(mouseOnLand, pos.selboxOnMap))
         return;
-    static if (is (Pos == TerPos))
+    static if (is (Pos == TerOcc))
         immutable Hover.Reason reason = editor.mouseOnSolidPixel(pos)
             ? Hover.Reason.mouseOnSolidPixel
             : Hover.Reason.mouseInSelbox;
@@ -120,14 +120,14 @@ void maybeAdd(Pos)(
         // even though all we know is mouse inside selbox.
         enum Hover.Reason reason = Hover.Reason.mouseOnSolidPixel;
     if (editor._hover == null || reason >= editor._hover[0].reason) {
-        static if (is (Pos == TerPos))
+        static if (is (Pos == TerOcc))
             _hover = [ new TerrainHover(editor._level, pos, reason) ];
         else
             _hover = [ new GadgetHover( editor._level, pos, reason) ];
     }
 }}
 
-bool mouseOnSolidPixel(Editor editor, in TerPos pos) { with (editor._map)
+bool mouseOnSolidPixel(Editor editor, in TerOcc pos) { with (editor._map)
 {
     auto mol = mouseOnLand;
     while (mol.x < pos.point.x)

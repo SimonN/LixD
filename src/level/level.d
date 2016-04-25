@@ -14,7 +14,7 @@ import graphic.torbit;
 import level.addtile;
 import level.levelio;
 import level.levdraw;
-import tile.pos;
+import tile.occur;
 import tile.gadtile;
 import tile.tilelib : get_filename;
 import lix.enums;
@@ -73,8 +73,8 @@ public:
 
     Enumap!(Ac, int) skills;
 
-    TerPos[] terrain;
-    GadPos[][GadType.MAX] pos; // one array GadPos[] for each GadType,
+    TerOcc[] terrain;
+    GadOcc[][GadType.MAX] pos; // one array GadOcc[] for each GadType,
                                // indexed by ints, not by GadType enum vals
 package:
     LevelStatus _status;
@@ -127,7 +127,7 @@ public:
 
     // Called from the Editor. Adds to the correct array of this level,
     // then returns, in addition, a reference to the added piece.
-    AbstractPos addTileWithCenterAt(Filename fn, Point p)
+    Occurrence addTileWithCenterAt(Filename fn, Point p)
     {
         return implCenter(this, fn, p);
     }
