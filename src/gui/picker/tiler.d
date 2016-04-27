@@ -83,8 +83,7 @@ public:
             return;
         highlightNothing();
         _files[i].on = true;
-        if (chf || shiftedID(i) < top || shiftedID(i) >= top + pageLen)
-            top = _dirs.len + shiftedID(i) - pageLen / 2;
+        maybeCenterOn(_dirs.len * dirSizeMultiplier + i, chf);
     }
 
     final void highlightDir(in int i, CenterOnHighlitFile chf)
@@ -93,8 +92,7 @@ public:
             return;
         highlightNothing();
         _dirs[i].on = true;
-        if (chf || shiftedID(i) < top || shiftedID(i) >= top + pageLen)
-            top = shiftedID(i) - pageLen / 2;
+        maybeCenterOn(dirSizeMultiplier * i, chf);
     }
 
 protected:
@@ -139,5 +137,12 @@ private:
                 anyInRange = true;
                 which = i;
             }
+    }
+
+    void maybeCenterOn(in int id, in CenterOnHighlitFile chf)
+    {
+        if (chf == CenterOnHighlitFile.always || id < top
+                                              || id >= top + pageLen)
+            top = id - pageLen / 2;
     }
 }
