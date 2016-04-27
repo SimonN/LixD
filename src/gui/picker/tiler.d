@@ -9,14 +9,14 @@ import basics.help;
 import gui;
 import hardware.tharsis;
 
-enum CenterOnHighlightedFile : bool { onlyIfOffscreen, always }
+enum CenterOnHighlitFile : bool { onlyIfOffscreen, always }
 
 abstract class Tiler : Element {
 private:
     Button[] _dirs;
     Button[] _files;
-    int _top;
-
+    int _top; // Counts dirs as dirSizeMultiplier each, files as 1 each.
+              // To compare arbitrary IDs with top, use shiftedID(other).
     bool _executeDir;
     bool _executeFile;
     int _executeDirID;
@@ -72,15 +72,30 @@ public:
         return _top;
     }
 
-    final void highlightNothing() { _files.each!(b => b.on = false); }
-    final void highlightFile(in int i, CenterOnHighlightedFile chf)
+    final void highlightNothing()
     {
-        highlightNothing();
-        _files[i].on = true;
-        if (chf || i < top || i >= top + pageLen)
-            top = i - pageLen / 2;
+        chain(_dirs, _files).each!(b => b.on = false);
     }
 
+    final void highlightFile(in int i, CenterOnHighlitFile chf)
+    {
+        if (i < 0 || i > _files.len)
+            return;
+        highlightNothing();
+        _files[i].on = true;
+        if (chf || shiftedID(i) < top || shiftedID(i) >= top + pageLen)
+            top = _dirs.len + shiftedID(i) - pageLen / 2;
+    }
+
+    final void highlightDir(in int i, CenterOnHighlitFile chf)
+    {
+        if (i < 0 || i > _dirs.len)
+            return;
+        highlightNothing();
+        _dirs[i].on = true;
+        if (chf || shiftedID(i) < top || shiftedID(i) >= top + pageLen)
+            top = shiftedID(i) - pageLen / 2;
+    }
 
 protected:
     // dir buttons are larger than file buttons by dirSizeMultiplier

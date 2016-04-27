@@ -2,8 +2,11 @@ module gui.picker.ls;
 
 import std.algorithm;
 import std.array;
+import std.conv;
+import std.range;
 
 import basics.globals;
+import basics.help;
 import file.filename;
 import file.io;
 import file.search;
@@ -38,6 +41,25 @@ public:
         _dirs  = tempD.map!deMut.array;
         _files = tempF.map!deMut.array;
         return currentDir;
+    }
+
+    // This function treats the dirs and files as if they were in one long
+    // list, the dirs coming before the files. This is strange for Ls.
+    final Filename moveHighlightBy(Filename old, in int by)
+    {
+        if (dirs.empty && files.empty)
+            return null;
+        auto both    = chain(dirs, files);
+        auto bothLen = dirs.len + files.len;
+        int id = both.countUntil(old).to!int + by;
+        if (id < by)
+            // No current file. Highlight the first or last entry.
+            // We are guaranteed at least one entry in one of the lists.
+            id = (by >= 0) ? 0 : bothLen - 1;
+        id =  id < 0        ? bothLen - 1
+            : id >= bothLen ? 0
+            : id;
+        return (id < dirs.len) ? dirs[id] : files[id - dirs.len];
     }
 
 protected:

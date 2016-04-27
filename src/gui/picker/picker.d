@@ -70,7 +70,7 @@ public:
     @property int  executeFileID() const { return _tiler.executeFileID; }
 
     void highlightNothing() { _tiler.highlightNothing(); }
-    void highlightFile(int i, CenterOnHighlightedFile chf)
+    void highlightFile(int i, CenterOnHighlitFile chf)
     {
         _tiler.highlightFile(i, chf);
         _scrollbar.pos = _tiler.top;
@@ -82,7 +82,7 @@ public:
         return _ls.files[executeFileID];
     }
 
-    bool highlightFile(Filename fn, CenterOnHighlightedFile chf)
+    bool navigateToAndHighlightFile(Filename fn, CenterOnHighlitFile chf)
     {
         if (! fn)
             highlightNothing();
@@ -96,6 +96,15 @@ public:
             highlightNothing();
             return false;
         }
+    }
+
+    Filename moveHighlightBy(Filename old, in int by, CenterOnHighlitFile chf)
+    {
+        Filename moveTo = _ls.moveHighlightBy(old, by);
+        _tiler.highlightFile(_ls.files.countUntil(moveTo).to!int, chf);
+        _tiler.highlightDir (_ls.dirs .countUntil(moveTo).to!int, chf);
+        _scrollbar.pos = _tiler.top;
+        return moveTo;
     }
 
 protected:

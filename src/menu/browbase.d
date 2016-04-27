@@ -19,6 +19,7 @@ import file.log;
 import gui;
 import gui.picker;
 import hardware.mouse;
+import hardware.keyboard; // up/down change of highlighted file
 import hardware.sound;
 import level.level;
 import menu.preview;
@@ -26,7 +27,8 @@ import menu.preview;
 class BrowserBase : Window {
 private:
     bool _gotoMainMenu;
-    MutFilename _fileRecent; // only used for highlighting, not selecting
+    MutFilename _fileRecent; // highlight, not select. May be in different dir.
+    MutFilename _upDownTo; // last-highlit dir or file with up/down keys
     Picker _picker;
 
     TextButton buttonPlay;
@@ -76,8 +78,8 @@ public:
 
     final void highlight(Filename fn)
     {
-        if (fn &&
-            _picker.highlightFile(fn, CenterOnHighlightedFile.onlyIfOffscreen)
+        if (fn && _picker.navigateToAndHighlightFile(
+            fn, CenterOnHighlitFile.onlyIfOffscreen)
         ) {
             buttonPlay.show();
             _fileRecent = fn;
@@ -92,7 +94,7 @@ public:
     }
 
 protected:
-    // override these
+    // override theser
     void onFileHighlight(Filename) {}
     void onFileSelect   (Filename) {}
 
@@ -123,15 +125,33 @@ protected:
             else
                 onFileSelect(_fileRecent);
         }
-        else if (_picker.executeDir)
-            highlight(currentDirContainsFileRecent ? _fileRecent : null);
         else if (buttonPlay.execute) {
             assert (_fileRecent !is null);
-            assert (currentDirContainsFileRecent);
             onFileSelect(_fileRecent);
+        }
+        else if (_picker.executeDir) {
+            highlightIfInCurrentDir(_fileRecent);
+            _upDownTo = null;
+        }
+        else if (keyMenuOkay.keyTapped && _upDownTo) {
+            _picker.currentDir = _upDownTo;
+            highlightIfInCurrentDir(_fileRecent);
+            _upDownTo = null;
         }
         else if (hardware.mouse.mouseClickRight)
             _gotoMainMenu = true;
+        else {
+            immutable moveBy = keyMenuUpBy1  .keyTappedAllowingRepeats * -1
+                             + keyMenuUpBy5  .keyTappedAllowingRepeats * -5
+                             + keyMenuDownBy1.keyTappedAllowingRepeats * 1
+                             + keyMenuDownBy5.keyTappedAllowingRepeats * 5;
+            if (moveBy != 0) {
+                _upDownTo = _picker.moveHighlightBy(
+                    _upDownTo ? _upDownTo : _fileRecent,
+                    moveBy, CenterOnHighlitFile.onlyIfOffscreen);
+                highlightIfInCurrentDir(_upDownTo);
+            }
+        }
     }
 
 private:
@@ -143,9 +163,9 @@ private:
                          _picker.basedir   .rootless.length .. $];
     }
 
-    @property bool currentDirContainsFileRecent() const
+    @property void highlightIfInCurrentDir(Filename fn)
     {
-        return _fileRecent
-            && _fileRecent.dirRootless == _picker.currentDir.dirRootless;
+        highlight(fn && fn.dirRootless == _picker.currentDir.dirRootless
+            ? fn : null);
     }
 }

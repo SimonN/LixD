@@ -253,7 +253,8 @@ public:
     override void loadValue()
     {
         _lastChosen = basics.user.fileLanguage;
-        _picker.highlightFile(_lastChosen, CenterOnHighlightedFile.always);
+        _picker.navigateToAndHighlightFile(_lastChosen,
+                                           CenterOnHighlitFile.always);
     }
 
     override void saveValue()
@@ -270,7 +271,7 @@ protected:
         if (_picker.executeFile) {
             _lastChosen = _picker.executeFileFilename;
             _picker.highlightFile(_picker.executeFileID,
-                                  CenterOnHighlightedFile.onlyIfOffscreen);
+                                  CenterOnHighlitFile.onlyIfOffscreen);
         }
     }
 
