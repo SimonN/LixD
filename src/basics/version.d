@@ -9,7 +9,7 @@ module basics.versioning;
 import std.conv;
 import std.string;
 
-private immutable _gameVersion     = Version(0, 2, 48);
+private immutable _gameVersion     = Version(0, 2, 49);
 private bool      _versionIsStable = false;
 
 const(Version) gameVersion()     { return _gameVersion;     }

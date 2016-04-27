@@ -15,7 +15,7 @@ import tile.abstile;
 
 class ImageTiler : Tiler {
 public:
-    enum buttonsPerPageX = 8;
+    enum buttonsPerPageX = 10;
     enum buttonsPerPageY = 6;
     this(Geom g) { super(g); }
 
@@ -73,7 +73,7 @@ public:
             _cbe.shrink = true;
             addChild(_cbe);
         }
-        _text = new Label(new Geom(0, 0, xlg, 13, From.BOTTOM),
+        _text = new Label(new Geom(0, 0, xlg - 2*Geom.thickg, 13, From.BOTTOM),
             fn.fileNoExtNoPre);
         _text.font = djvuS;
         addChild(_text);

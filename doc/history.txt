@@ -1,7 +1,18 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.2.49
+------
+
+2016-04-27
+
+Level and replay browsers select adjacent directories and files by hotkey.
+
+Tile browsers in the editor remember the last-chosen tile's directory,
+and use the screen real estate better with 6 x 10 items at a time.
+
 0.2.48
+------
 
 Fix: Singleplayer results overwrite outdated level results.
 

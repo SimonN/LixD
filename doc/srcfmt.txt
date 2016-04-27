@@ -1,5 +1,5 @@
-Lix hacker's guide
-==================
+Lix Source Code Formatting And Style
+====================================
 
 How to use and hack the Lix source.
 
@@ -26,76 +26,93 @@ has not yet been ported.
 
 
 
+Text encoding
+-------------
+
+Everything -- source, levels, gadget definitions, documentation -- is UTF-8.
+Never use byte-order marks. Rationale: http://utf8everywhere.org/
+
+
+
 LF or CRLF terminators
 ----------------------
 
 Source code should have LF terminators. Anything else is crazy.
 
-I don't care about what's used in level or replay files. Lix can read them
-with either, and tools like grep or sed will work, too. Inspecting them with
-an interactive editor is a nice-to-have, but not required.
+I don't care what's used in level or replay files. Lix can read them with
+any terminator, and tools like grep or sed will work, too. Inspecting levels
+or replays with an interactive editor is a nice-to-have, but not required.
 
 Documentation (all ./doc/* files) and translations (all ./data/transl/* files)
-should have CRLF endings. They must be accessible by Windows Notepad users.
-
-The translations (./data/transl/*) should get a UTF-8 byte-order mark, and then
-immediately a CRLF linebreak, for maximum compatibility. I haven't done so yet.
+must have CRLF endings. Rationale: Must be accessible via Windows Notepad.
 
 
 
-Source code formatting
-----------------------
+Source code style
+-----------------
 
-Indentation is 4 spaces. Indenting with tabs is a bug. Indenting with less
-than 4 spaces is unreadable. While 8 spaces would be more readable, it's a
-little much for D code.
+Source code style is, in order of influence from lots to little, a mixture
+of The D Style, personal taste, Linux kernel style, and vibe.d style.
+
+Indentation is 4 spaces. Rationale: The D Style (http://dlang.org/dstyle.html)
+says that each indentation will be 4 spaces, and I have said for 10 years that
+each indentation will be 4 spaces. Therefore, indentation will be 4 spaces.
+
+Tab characters are bugs.
+
+Linebreak before 80 characters. Even if only a parenthesis or brace would go
+after column 79, linebreak. Reasoning: Every line must display entirely
+in git diff, in an 80x24 shell.
+
+Exception to linebreaking at 80 characters: You have only long lines,
+they look all alike, and they benefit from lovely horizontal alignment.
 
 Don't nest stuff deeper than 4 or 5 levels, treating classes and functions
 as a nesting level. Write more functions instead. D allows you to declare
 private functions at module level, or to declare local functions.
 
-Most non-function things get the opening brace '{' on the same line:
-if, while, for[each], class, struct, etc.
+Order of fields and members inside a class is similar to the vibe.d ordering:
+
+    1. private fields
+    2. public fields
+    3. enums and constants
+    4. constructors and static methods that act like constructors
+    5. public methods
+    6. protected methods
+    7. private methods
+
+Naming: Private fields start with an underscore _, then continue in camelCase.
+Variables and functions are named in camelCase, without underscores anywhere.
+Classes and structs are named in PascalCase.
+
+Opening braces '{' go on the same line as the declaration for everything
+that is not a function declaration:
 
     if (condition) {
-        a = 5;
-        doSomething();
+        something();
+        somethingElse();
     }
 
-Nothing goes on the same line as '}', not even else or while. You shouldn't
-use do-while much anyway. Whenever a simple while doesn't do, use for or
-foreach.
+    class A {
+    private:
+        int _field;
 
-Omit braces when a statement is followed by single line. Don't omit braces
-when at least one of the if-else branches has more than one statement.
-
-    scope (exit)
-        cleanUp();
-
-    if (condition)
-        doSomething();
-
-    if (anotherCondition) {
-        doSomethingElse();
-    }
-    else {
-        number += 4;
-        doWhatever();
+    public:
+        enum myConstant = 5;
     }
 
-Functions have the opening brace on a separate line. You can put the function
-name on its own line, apart from the return values.
+Empty line between classes and multiple-line functions. No empty line after
+access modifiers, but one before access modifiers. Try to avoid 2 or more
+blank lines in succession.
 
-    int
-    myFunction(int a)
+Function declarations get the opening brace on a standalone line:
+
+    nothrow void myFunction() const @nogc
     {
-        return something(a * 3);
-    }
-
-    private nothrow void
-    almostLikeJava() const @nogc
-    {
-        // ...
+        int localFunction(int a)
+        {
+            // ...
+        }
     }
 
 When you can fit an entire function definition into a single line, do that
@@ -118,8 +135,7 @@ anywhere else, even if some of my old symbols still violate this guideline.
 When a line, conditional expression or parameter list gets very long and
 has to be broken into separate lines, format it like this:
 
-    private int
-    myFunction(
+    int myFunction(
         LongClassName    longArgument1,
         AnotherClassName longArgument2
     ) {
@@ -192,3 +208,9 @@ Notes about D
     object's fields are all set to their .init values! If you deallocate
     resources in your destructor, wrap them in a check whether the
     resource pointer is not null.
+
+*   std.algorithm is beautiful. You're encouraged to build long pipes
+    à la foo.map!(a => a.something).filter!(b => b < 10).reduce!max.
+    You might find that such pipes generate badly-readable template error
+    messages. If you get errors, rewrite the pipe with foreach loops, then
+    get everything right, then write it functionally again.
