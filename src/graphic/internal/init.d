@@ -22,18 +22,12 @@ package:
 void implInitializeInteractive()
 {
     nullCutbit = new Cutbit(cast (Cutbit) null);
-    displayStartupMessage("Examining Lix spritesheet for eye positions...");
-    createEyeCoordinateMatrix();
-    displayStartupMessage("...done eye positions.");
 }
 
 void implInitializeVerify()
 {
     nullCutbit = new Cutbit(cast (Cutbit) null);
     noninteractiveMode = true;
-    // Load only the Lix spritesheet, because physics depend on it.
-    // Is this a design bug? Discuss with the IRCies eventually.
-    createEyeCoordinateMatrix();
 }
 
 void implDeinitialize()

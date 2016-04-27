@@ -1,6 +1,14 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.3.0
+-----
+
+Physics change: We don't check for physics near the eye, which would have
+depended on the spritesheet. Instead we check at (foot) + (0, y), where
+y is 0, -4, -8, and -12. This check is independent from the current lix job.
+Rationale: http://www.lemmingsforums.net/index.php?topic=2678
+
 0.2.49
 ------
 

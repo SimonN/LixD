@@ -211,6 +211,7 @@ private Point getFuse() const
     // Some skills -- BallisticFlyer -- move before changing their frame,
     // and then choose a frame based on the result. So, they might move while
     // frame == -1. Query frame 0 for eye position in this situation.
+    assert (countdown, "generate the eye matrix before first use");
     Point ret = countdown.get(max(0, frame), ac);
     if (facingLeft)
         ret.x = this.cutbit.xl - ret.x;
@@ -227,8 +228,9 @@ void addEncountersFromHere()
 {
     _encFoot |= lookup.get(Point(_ex, _ey));
     _encBody |= _encFoot
-             |  lookup.get(Point(_ex, _ey - 4))
-             |  lookup.get(Point(_ex, getFuse().y));
+             |  lookup.get(Point(_ex, _ey -  4))
+             |  lookup.get(Point(_ex, _ey -  8))
+             |  lookup.get(Point(_ex, _ey - 12));
 }
 
 package void repositionSprite()
