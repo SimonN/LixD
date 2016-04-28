@@ -8,8 +8,6 @@ import basics.help; // positive mod
 import basics.alleg5;
 import basics.globals; // nameOfTheGame
 import basics.user; // what windowed resolution does the user want
-import graphic.color; // inside displayStartupMessage()
-import graphic.textout; // inside displayStartupMessage()
 import file.log;
 import gui;
 
@@ -25,15 +23,11 @@ static import hardware.mouse; // center mouse after changing resolution
 
 ALLEGRO_DISPLAY* display;
 
-deprecated bool clearScreenAtNextBlit;
-
 private:
 
     ALLEGRO_EVENT_QUEUE* queue;
     bool _displayCloseWasClicked;
     long[] _fpsArr;
-
-
 
 public:
 
@@ -204,23 +198,4 @@ void calc()
             // when it is clicked in the game window
         }
     }
-}
-
-
-
-void displayStartupMessage(string str)
-{
-    if (! display)
-        return;
-    static string[] msgs;
-    msgs ~= str;
-
-    auto drata = DrawingTarget(al_get_backbuffer(display));
-    al_clear_to_color(color.black);
-    int y = 0;
-    foreach (msg; msgs) {
-        al_draw_text(djvuS, color.white, 20, y += 20, ALLEGRO_ALIGN_LEFT,
-         msg.toStringz());
-    }
-    al_flip_display();
 }

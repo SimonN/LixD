@@ -36,7 +36,6 @@ import game.terchang;
 import graphic.color;
 import graphic.torbit;
 import graphic.internal; // must be initialized first
-import hardware.display; // displayStartupMessage
 import hardware.tharsis;
 import lix.enums;
 import lix.skill.cuber; // Cuber.cubeSize
@@ -476,13 +475,12 @@ private:
         assert (! _mask);
         assert (mode == Runmode.INTERACTIVE || mode == Runmode.VERIFY);
         if (mode == Runmode.VERIFY)
+            // We don't need blittable VRAM bitmaps of the various masks.
+            // Physics are in RAM entirely, physics masks are done by CTFE.
             return;
 
         alias Type = TerrainChange.Type;
         alias rf   = al_draw_filled_rectangle;
-
-        // Otherwise, create the mask to blit nice sprites on the land
-        displayStartupMessage("Creating physics mask...");
 
         assert (builderBrickXl >= platformLongXl);
         assert (builderBrickXl >= platformShortXl);

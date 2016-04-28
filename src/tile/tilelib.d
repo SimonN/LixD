@@ -13,6 +13,7 @@ import basics.help; // clear_array
 import file.filename;
 import file.log;
 import file.search;
+import hardware.tharsis;
 import graphic.cutbit;
 import tile.gadtile;
 import tile.abstile;
@@ -28,21 +29,27 @@ public:
 
 void initialize()
 {
-    static import hardware.display;
-    hardware.display.displayStartupMessage("indexing all files in images/");
-    scope (success)
-        hardware.display.displayStartupMessage("    -> done");
-
-    // fill the queue will all files on the disk, but chop off the
-    // "images/" prefix before using the path as the tile's name
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "tilelib.init");
     immutable string imgdir = glo.dirImages.dirRootless;
-    auto files = file.search.findRegularFilesRecursively(glo.dirImages);
+    MutFilename[] files;
+    {
+        version (tharsisprofiling)
+            auto zone2 = Zone(profiler, "tilelib.init find recursively");
+        files = file.search.findRegularFilesRecursively(glo.dirImages);
+    }
     foreach (fn; files) {
+        version (tharsisprofiling)
+            auto zone3 = Zone(profiler, "tilelib.init one file");
         if (! fn.hasImageExtension()) continue;
-
+        version (tharsisprofiling)
+            auto zone4 = Zone(profiler, "tilelib.init one image");
         string rootless = fn.rootlessNoExt;
+        // fill the queue will all files on the disk, but chop off the
+        // "images/" prefix before using the path as the tile's name
         if (imgdir.length <= rootless.length
-         && rootless[0 .. imgdir.length] == imgdir) {
+            && rootless[0 .. imgdir.length] == imgdir
+        ) {
             rootless = rootless[imgdir.length .. $];
         }
         queue[rootless] = fn;
