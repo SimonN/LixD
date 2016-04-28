@@ -4,6 +4,7 @@ import std.algorithm;
 
 import basics.globals;
 import graphic.internal;
+import hardware.mouse; // react directly to mouse wheel
 import gui;
 
 class Scrollbar : Element {
@@ -75,7 +76,7 @@ protected:
     override void calcSelf()
     {
         immutable oldPos = pos;
-        pos = pos + _down.execute() - _up.execute();
+        pos = pos + _down.execute() - _up.execute() + 5 * mouseWheelNotches();
         _execute = pos != oldPos;
         if (disabled)
             _car.down = _up.down = _down.down = false;

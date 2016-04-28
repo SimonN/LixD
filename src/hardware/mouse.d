@@ -33,6 +33,8 @@ void calc();
 @property int  mouseReleaseRight()      { return _mouseRelease[1]; }
 @property int  mouseReleaseMiddle()     { return _mouseRelease[2]; }
 
+@property int  mouseWheelNotches()      { return _wheelNotches; }
+
 void trapMouse(bool b) { _trapMouse = b; }
 void centerMouse();
 void freezeMouseX();
@@ -53,6 +55,7 @@ private:
     int  _mickeyY;
     int  _mickeyLeftoverX; // leftover movement from the previous mickeys,
     int  _mickeyLeftoverY; // yet unspent to _mouseOwnXy, for smoothening
+    int  _wheelNotches;    // often 0, only != 0 when wheel was used
 
     // The mouse has 3 buttons: #0 is left, #1 is right, #2 is middle.
     bool[3] _mouseClick;   // there just was a single click
@@ -104,6 +107,7 @@ void calc()
     // incrementing the times on others.
     _mickeyX = _mickeyLeftoverX;
     _mickeyY = _mickeyLeftoverY;
+    _wheelNotches = 0;
 
     foreach (i; 0 .. 3) {
         _mouseClick  [i] = false;
@@ -134,6 +138,7 @@ void calc()
             _mickeyY += event.mouse.dy * basics.user.mouseSpeed;
             mouseCurX = event.mouse.x;
             mouseCurY = event.mouse.y;
+            _wheelNotches -= event.mouse.dz;
             break;
 
         case ALLEGRO_EVENT_MOUSE_BUTTON_DOWN:
