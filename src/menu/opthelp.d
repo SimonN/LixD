@@ -27,19 +27,18 @@ import file.search;    // for LanguageOption
 import graphic.internal;
 import gui;
 import gui.picker;
+import hardware.mouse; // bool option: click label
 import lix.enums;
 
 enum spaceGuiTextX =  10f;
 enum mostButtonsXl = 120f;
 enum keyButtonXl   =  70f;
 
-abstract class Option : Element
-{
-    private Label _desc; // may be null
+abstract class Option : Element {
+private:
+    Label _desc; // may be null
 
-    abstract void loadValue();
-    abstract void saveValue(); // can't be const
-
+public:
     this(Geom g, Label d = null)
     {
         super(g);
@@ -47,6 +46,9 @@ abstract class Option : Element
         if (_desc)
             addChild(_desc);
     }
+
+    abstract void loadValue();
+    abstract void saveValue(); // can't be const
 }
 
 struct OptionFactory {
@@ -64,11 +66,12 @@ struct OptionFactory {
 
 
 
-class BoolOption : Option
-{
-    private Checkbox _checkbox;
-    private bool*    _target;
+class BoolOption : Option {
+private:
+    Checkbox _checkbox;
+    bool*    _target;
 
+public:
     this(Geom g, string cap, bool* t)
     {
         assert (t);
@@ -80,18 +83,27 @@ class BoolOption : Option
 
     override void loadValue() { _checkbox.checked = *_target; }
     override void saveValue() { *_target = _checkbox.checked; }
+
+protected:
+    override void calcSelf()
+    {
+        // Allow clicks on the label, not only on the tiny checkbox.
+        if (isMouseHere) {
+            _checkbox.down = mouseHeldLeft > 0;
+            if (mouseReleaseLeft && ! _checkbox.execute)
+                _checkbox.toggle();
+        }
+    }
 }
 
 
 
-class TextOption : Option
-{
-    private Texttype _texttype;
-    private string*  _target;
+class TextOption : Option {
+private:
+    Texttype _texttype;
+    string*  _target;
 
-    // hack, to enable immediate check of nonempty
-    public @property inout(Texttype) texttype() inout { return _texttype; }
-
+public:
     this(Geom g, string cap, string* t)
     {
         assert (t);
@@ -105,15 +117,19 @@ class TextOption : Option
 
     override void loadValue() { _texttype.text = *_target; }
     override void saveValue() { *_target = _texttype.text.strip; }
+
+    // hack, to enable immediate check of nonempty
+    @property inout(Texttype) texttype() inout { return _texttype; }
 }
 
 
 
-class HotkeyOption : Option
-{
-    private KeyButton _keyb;
-    private int*      _target;
+class HotkeyOption : Option {
+private:
+    KeyButton _keyb;
+    int*      _target;
 
+public:
     this(Geom g, string cap, int* t)
     {
         assert (t);
