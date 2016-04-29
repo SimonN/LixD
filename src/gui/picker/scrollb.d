@@ -2,6 +2,7 @@ module gui.picker.scrollb;
 
 import std.algorithm;
 
+import basics.help;
 import basics.globals;
 import graphic.internal;
 import hardware.mouse; // react directly to mouse wheel
@@ -16,6 +17,8 @@ private:
 
     int _totalLen;
     int _pageLen;
+    int _coarseness = 1; // always scroll in multiples of this
+    int _wheelSpeed = 5; // should be multiple of _coarseness
     int _pos;
 
     bool _execute;
@@ -37,17 +40,19 @@ public:
         addChildren(_track, _up, _down, _car);
     }
 
-    @property totalLen() const { return _totalLen; }
-    @property pageLen()  const { return _pageLen;  }
-    @property pos()      const { return _pos;      }
-    @property execute()  const { return _execute;  }
+    @property totalLen()   const { return _totalLen;   }
+    @property pageLen()    const { return _pageLen;    }
+    @property coarseness() const { return _coarseness; }
+    @property wheelSpeed() const { return _wheelSpeed; }
+    @property pos()        const { return _pos;        }
+    @property execute()    const { return _execute;    }
 
     @property int totalLen(in int i)
     {
         assert (i >= 0);
-        if (_totalLen == i)
+        if (_totalLen == i.roundUpTo(_coarseness))
             return _totalLen;
-        _totalLen = i;
+        _totalLen = i.roundUpTo(_coarseness);
         updateCar();
         return _totalLen;
     }
@@ -62,9 +67,25 @@ public:
         return pageLen();
     }
 
+    @property int coarseness(in int i)
+    {
+        assert (i > 0);
+        _coarseness = i;
+        totalLen = _totalLen;
+        pos = _pos;
+        return _coarseness;
+    }
+
+    @property int wheelSpeed(in int i)
+    {
+        assert (i >= 0);
+        return _wheelSpeed = i;
+    }
+
     @property int pos(in int i)
     {
-        immutable potentialPos = max(0, min(i, _totalLen - _pageLen));
+        immutable potentialPos = max(0, min(i, _totalLen - _pageLen))
+                                .roundTo(_coarseness);
         if (_pos == potentialPos)
             return _pos;
         _pos = potentialPos;
@@ -75,9 +96,11 @@ public:
 protected:
     override void calcSelf()
     {
-        immutable oldPos = pos;
-        pos = pos + _down.execute() - _up.execute() + 5 * mouseWheelNotches();
-        _execute = pos != oldPos;
+        immutable change = _coarseness * (_down.execute() - _up.execute())
+                         + _wheelSpeed * mouseWheelNotches();
+        _execute = change != 0;
+        if (change != 0)
+            pos = pos + change;
         if (disabled)
             _car.down = _up.down = _down.down = false;
     }

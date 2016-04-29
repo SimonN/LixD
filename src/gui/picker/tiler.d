@@ -32,6 +32,13 @@ public:
 
     abstract @property int pageLen() const;
 
+    // Mouse wheel should scroll this many entries of size 1.
+    // Coarseness suggests to always scroll in multiples of this size,
+    // even if we leave empty space at the bottom of the list. Mouse wheel
+    // speed should be a multiple of coarseness.
+    abstract @property int wheelSpeed() const;
+    abstract @property int coarseness() const;
+
     final int totalLen() const {
         return _dirs.len * dirSizeMultiplier + _files.len;
     }
@@ -62,6 +69,7 @@ public:
     final @property int top(int newTop)
     {
         newTop = min(newTop, totalLen - pageLen);
+        newTop = newTop.roundTo(coarseness);
         newTop = max(newTop, 0);
         if (newTop < _dirs.len * dirSizeMultiplier)
             newTop -= newTop % dirSizeMultiplier;

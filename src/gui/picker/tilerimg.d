@@ -6,6 +6,7 @@ import std.conv;
 import std.string;
 import std.typecons;
 
+import basics.help; // roundInt
 import graphic.textout;
 import gui;
 import gui.picker.tiler;
@@ -15,14 +16,18 @@ import tile.abstile;
 
 class ImageTiler : Tiler {
 public:
-    enum buttonsPerPageX = 10;
-    enum buttonsPerPageY = 6;
     this(Geom g) { super(g); }
+
+    override @property int coarseness() const { return buttonsPerPageX(); }
+    override @property int wheelSpeed() const { return buttonsPerPageX(); }
 
     override @property int pageLen() const
     {
         return buttonsPerPageX * buttonsPerPageY;
     }
+
+    int buttonsPerPageX() const { return 2 + 2 * roundInt(xlg / 180f); }
+    int buttonsPerPageY() const { return 1 +     roundInt(ylg /  70f); }
 
 protected:
     override TextButton newDirButton(Filename fn)

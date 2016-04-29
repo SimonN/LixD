@@ -18,6 +18,9 @@ public:
     enum buttonYlg = 20;
     this(Geom g) { super(g); }
 
+    override @property int wheelSpeed() const { return 5; }
+    override @property int coarseness() const { return 1; }
+
     final override @property int pageLen() const
     {
         return this.ylg.to!int / buttonYlg;

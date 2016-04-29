@@ -39,7 +39,9 @@ public:
         _ls        = cfg.ls;
         _tiler     = new T        (cfg.files.newGeomTiler);
         _scrollbar = new Scrollbar(cfg.files.newGeomScrollbar);
-        _scrollbar.pageLen = _tiler.pageLen;
+        _scrollbar.pageLen    = _tiler.pageLen;
+        _scrollbar.coarseness = _tiler.coarseness;
+        _scrollbar.wheelSpeed = _tiler.wheelSpeed;
         addChildren(_bread, _frame, _tiler, _scrollbar);
     }
 
