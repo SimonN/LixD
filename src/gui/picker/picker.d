@@ -134,8 +134,6 @@ protected:
     }
 
 private:
-    enum KeepScrollingPosition { no, yes }
-
     void updateAccordingToBreadCurrentDir(
         KeepScrollingPosition ksp = KeepScrollingPosition.no
     ) {
@@ -148,10 +146,9 @@ private:
             currentDir = basedir;
             return;
         }
-        _tiler.loadDirsFiles(_ls.dirs, _ls.files);
+        _tiler.loadDirsFiles(_ls.dirs, _ls.files, ksp);
         _scrollbar.totalLen = _tiler.totalLen;
-        if (ksp == KeepScrollingPosition.no)
-            _scrollbar.pos = 0;
+        _scrollbar.pos = _tiler.top;
     }
 }
 

@@ -10,6 +10,7 @@ import gui;
 import hardware.tharsis;
 
 enum CenterOnHighlitFile : bool { onlyIfOffscreen, always }
+enum KeepScrollingPosition : bool { no, yes }
 
 abstract class Tiler : Element {
 private:
@@ -50,8 +51,9 @@ public:
             : dirSizeMultiplier * _dirs.len + (id - _dirs.len);
     }
 
-    final void loadDirsFiles(Filename[] newDirs, Filename[] newFiles)
-    {
+    final void loadDirsFiles(Filename[] newDirs, Filename[] newFiles,
+                             KeepScrollingPosition ksp
+    ) {
         version (tharsisprofiling)
             auto zone = Zone(profiler, newFiles.length
                 ? "ls " ~ newFiles[0].dirRootless : "ls empty dir");
@@ -61,7 +63,7 @@ public:
             .map!(pair => newFileButton(pair[1], pair[0]))
             .array;
         chain(_dirs, _files).each!(b => addChild(b));
-        top = 0;
+        top = (ksp == KeepScrollingPosition.no) ? 0 : _top;
         moveButtonsAccordingToTop();
     }
 
