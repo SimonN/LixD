@@ -50,8 +50,13 @@ public:
             case 3: u.x = xl-g.y-1; u.y = !mirr ? g.x      : yl-g.x-1; break;
             default: assert(false);
         }
-        assert (0 <= u.x && u.x < _phymap.xl);
-        assert (0 <= u.x && u.y < _phymap.yl);
+        import std.string;
+        assert (0 <= u.x && u.x < _phymap.xl
+            &&  0 <= u.y && u.y < _phymap.yl, format(
+            "Bad terrain tile rotation coordinate resolution. "
+            "point=%s, rot=%d, mirr=%d, result=%s. "
+            "Expected 0 <= %d < %d and 0 <= %d < %d.",
+            g.toString, rot, mirr, u.toString, u.x, u.y));
         return _phymap.get(u);
     }
 

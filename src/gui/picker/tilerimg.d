@@ -26,8 +26,8 @@ public:
         return buttonsPerPageX * buttonsPerPageY;
     }
 
-    int buttonsPerPageX() const { return 2 + 2 * roundInt(xlg / 180f); }
-    int buttonsPerPageY() const { return 1 +     roundInt(ylg /  70f); }
+    int buttonsPerPageX() const { return 4 + 2 * roundInt(xls / 0x200); }
+    int buttonsPerPageY() const { return 3 +     roundInt(yls / 0x100); }
 
 protected:
     override TextButton newDirButton(Filename fn)
@@ -73,12 +73,15 @@ public:
         if (tile) {
             // Adding Geom.thickg much of padding around the cutbit element.
             // Reason: We shall not draw on the button's 3D edge.
-            _cbe = new CutbitElement(new Geom(0, Geom.thickg,
+            // Adding + 1 to the thickness offset from the top.
+            // Reason: The rounding is crap, neither +0 nor +1 is optimal right
+            // now. I rather leave empty row than overwrite button thickness.
+            _cbe = new CutbitElement(new Geom(0, Geom.thickg + 1,
                 xlg - 2*Geom.thickg, ylg - 13, From.TOP), tile.cb);
             _cbe.shrink = true;
             addChild(_cbe);
         }
-        _text = new Label(new Geom(0, 0, xlg - 2*Geom.thickg, 13, From.BOTTOM),
+        _text = new Label(new Geom(0, 0, xlg - 2*Geom.thickg, 12, From.BOTTOM),
             fn.fileNoExtNoPre);
         _text.font = djvuS;
         addChild(_text);
