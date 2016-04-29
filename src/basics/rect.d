@@ -94,11 +94,8 @@ struct Point {
     // We round +4, +5, ..., +11           all to +8.
     Point roundTo(int grid) const
     {
-        if (grid == 1)
-            return this;
-        assert (grid > 1);
-        return Point(x + grid/2 - basics.help.positiveMod(x + grid/2, grid),
-                     y + grid/2 - basics.help.positiveMod(y + grid/2, grid));
+        return (grid == 1) ? this : Point(basics.help.roundTo(x, grid),
+                                          basics.help.roundTo(y, grid));
     }
 }
 

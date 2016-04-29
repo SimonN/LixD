@@ -1,7 +1,7 @@
 module basics.help;
 
 import std.array;
-import std.algorithm : find;
+import std.algorithm;
 import std.conv;
 import std.math;
 import std.string;
@@ -15,8 +15,6 @@ unittest {
     assert (even(-5) == -6);
     assert (even(-6) == -6);
 }
-
-
 
 // mod function that always returns values in 0 .. modulo
 pure int positiveMod(in int nr, in int modulo)
@@ -33,7 +31,33 @@ unittest {
     assert (positiveMod( 5, 3) ==  2);
 }
 
+pure int roundTo(in int nr, in int grid)
+{
+    assert (grid >= 1);
+    if (grid == 1)
+        return nr;
+    return nr + grid/2 - positiveMod(nr + grid/2, grid);
+}
 
+unittest {
+    assert ([-12, -11, -10, -9, -8, -7, -6, -5].all!(i => i.roundTo(8) == -8));
+    assert ([-4, -3, -2, -1, 0, 1, 2, 3]       .all!(i => i.roundTo(8) ==  0));
+    assert ([4, 5, 6, 7, 8, 9, 10, 11]         .all!(i => i.roundTo(8) ==  8));
+}
+
+pure int roundUpTo(in int nr, in int grid)
+{
+    assert (grid >= 1);
+    if (grid == 1)
+        return nr;
+    return nr + positiveMod(-nr, grid);
+}
+
+unittest {
+    assert ([-5, -4, -3].all!(i => i.roundUpTo(3) == -3));
+    assert ([-2, -1,  0].all!(i => i.roundUpTo(3) ==  0));
+    assert ([ 1,  2,  3].all!(i => i.roundUpTo(3) ==  3));
+}
 
 // Phobos has rounding, but tiebreaks only either to the even integer,
 // or away from zero. I want to tiebreak to the larger integer.
