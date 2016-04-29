@@ -85,22 +85,24 @@ public:
         chain(_dirs, _files).each!(b => b.on = false);
     }
 
-    final void highlightFile(in int i, CenterOnHighlitFile chf)
+    final bool highlightFile(in int i, CenterOnHighlitFile chf)
     {
         if (i < 0 || i > _files.len)
-            return;
+            return false;
         highlightNothing();
         _files[i].on = true;
         maybeCenterOn(_dirs.len * dirSizeMultiplier + i, chf);
+        return true;
     }
 
-    final void highlightDir(in int i, CenterOnHighlitFile chf)
+    final bool highlightDir(in int i, CenterOnHighlitFile chf)
     {
         if (i < 0 || i > _dirs.len)
-            return;
+            return false;
         highlightNothing();
         _dirs[i].on = true;
         maybeCenterOn(dirSizeMultiplier * i, chf);
+        return true;
     }
 
 protected:

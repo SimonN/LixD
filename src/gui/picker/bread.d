@@ -2,6 +2,9 @@ module gui.picker.bread;
 
 /* Breadcrumb navigation
  * A series of buttons with one nested subdirectory per button.
+ *
+ * This doesn't check whether directories exist! Ls would throw when
+ * we search a nonexisting dir, but Breadcrumb won't.
  */
 
 import std.algorithm;

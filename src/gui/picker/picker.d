@@ -1,8 +1,10 @@
 module gui.picker.picker;
 
 import std.algorithm;
+import std.file; // FileException
 import std.conv;
 
+import file.log;
 import gui;
 import gui.picker;
 
@@ -72,10 +74,11 @@ public:
     @property int  executeFileID() const { return _tiler.executeFileID; }
 
     void highlightNothing() { _tiler.highlightNothing(); }
-    void highlightFile(int i, CenterOnHighlitFile chf)
+    bool highlightFile(int i, CenterOnHighlitFile chf)
     {
-        _tiler.highlightFile(i, chf);
+        immutable b = _tiler.highlightFile(i, chf);
         _scrollbar.pos = _tiler.top;
+        return b;
     }
 
     Filename executeFileFilename() const
@@ -90,10 +93,8 @@ public:
             highlightNothing();
         currentDir = fn;
         immutable int id = _ls.files.countUntil(fn).to!int;
-        if (id >= 0) {
-            highlightFile(id, chf);
-            return true;
-        }
+        if (id >= 0)
+            return highlightFile(id, chf);
         else {
             highlightNothing();
             return false;
@@ -109,6 +110,18 @@ public:
         return moveTo;
     }
 
+    Filename deleteFileHighlightNeighbor(Filename toDelete)
+    {
+        immutable oldID = _ls.files.countUntil(toDelete).to!int;
+        _ls.deleteFile(toDelete);
+        updateAccordingToBreadCurrentDir(KeepScrollingPosition.yes);
+        immutable newID = _ls.files.length.to!int > oldID ? oldID : oldID - 1;
+        if (highlightFile(newID, CenterOnHighlitFile.onlyIfOffscreen))
+            return _ls.files[newID];
+        else
+            return null;
+    }
+
 protected:
     override void calcSelf()
     {
@@ -121,12 +134,24 @@ protected:
     }
 
 private:
-    void updateAccordingToBreadCurrentDir()
-    {
-        _ls.currentDir = currentDir;
+    enum KeepScrollingPosition { no, yes }
+
+    void updateAccordingToBreadCurrentDir(
+        KeepScrollingPosition ksp = KeepScrollingPosition.no
+    ) {
+        try
+            _ls.currentDir = currentDir;
+        catch (FileException e) {
+            log(e.msg);
+            if (currentDir == basedir)
+                throw e;
+            currentDir = basedir;
+            return;
+        }
         _tiler.loadDirsFiles(_ls.dirs, _ls.files);
         _scrollbar.totalLen = _tiler.totalLen;
-        _scrollbar.pos = 0;
+        if (ksp == KeepScrollingPosition.no)
+            _scrollbar.pos = 0;
     }
 }
 

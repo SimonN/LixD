@@ -3,12 +3,14 @@ module gui.picker.ls;
 import std.algorithm;
 import std.array;
 import std.conv;
+import std.file;
 import std.range;
 
 import basics.globals;
 import basics.help;
 import file.filename;
 import file.io;
+import file.log;
 import file.search;
 
 class Ls {
@@ -22,6 +24,7 @@ public:
     final @property          files()      const { return _files; }
     final @property Filename currentDir() const { return _currentDir; }
 
+    // Throws File Exception if not found
     final @property Filename currentDir(Filename newDir)
     {
         assert (newDir.file == "");
@@ -36,7 +39,6 @@ public:
         beforeSortingForCurrentDir();
         sortDirs (tempD);
         sortFiles(tempF);
-
         Filename deMut(in MutFilename a) { return a; }
         _dirs  = tempD.map!deMut.array;
         _files = tempF.map!deMut.array;
@@ -60,6 +62,18 @@ public:
             : id >= bothLen ? 0
             : id;
         return (id < dirs.len) ? dirs[id] : files[id - dirs.len];
+    }
+
+    final void deleteFile(Filename toDelete)
+    {
+        assert (toDelete);
+        try std.file.remove(toDelete.rootful);
+        catch (Exception e)
+            log(e.msg);
+        // Now refresh the directory listing.
+        Filename temp = _currentDir;
+        _currentDir = null;
+        currentDir = temp;
     }
 
 protected:

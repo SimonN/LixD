@@ -53,6 +53,7 @@ public:
         if (_totalLen == i.roundUpTo(_coarseness))
             return _totalLen;
         _totalLen = i.roundUpTo(_coarseness);
+        pos = _pos;
         updateCar();
         return _totalLen;
     }

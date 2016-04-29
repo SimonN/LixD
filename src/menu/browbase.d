@@ -94,24 +94,14 @@ public:
     }
 
 protected:
-    // override theser
+    // override these
     void onFileHighlight(Filename) {}
     void onFileSelect   (Filename) {}
 
     final void deleteFileRecentHighlightNeighbor()
     {
-        /+
-        assert (fileRecent);
-        try std.file.remove(fileRecent.rootful);
-        catch (Exception e)
-            logf(e.msg);
-        auto number = levList.currentNumber;
-        levList.load_dir(levList.currentDir);
-        levList.highlightNumber(-1);
-        levList.highlightNumber(number);
-        _fileRecent = null;
-        highlight(levList.currentFile);
-        +/
+        highlight(_picker.deleteFileHighlightNeighbor(_fileRecent));
+        _upDownTo = null;
         playLoud(Sound.SCISSORS);
     }
 
