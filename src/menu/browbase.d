@@ -42,12 +42,18 @@ public:
 
     // after calling this(), it's a good idea to call
     // highlight(file) with whatever is deemed the correct current file
-    this(
+    this(SomeTiler)(
         in string title,
-        Filename  baseDir
+        Filename  baseDir,
+        PickerConfig!SomeTiler cfg // Hack! I overwrite every field of this
+                                   // argument during the constructor! Why do
+                                   // I ask for cfg at all here? I want to pass
+                                   // SomeTiler to BrowserBase.this(), but
+                                   // can't call super!SomeTiler() explicitly.
+                                   // IFTI works, so cfg is to pass the type.
+    )   if (is (SomeTiler : Tiler)
     ) {
         super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg), title);
-        auto cfg  = PickerConfig!LevelTiler();
         cfg.all   = new Geom(20, 40, xlg-40, ylg-60);
         cfg.bread = new Geom(0, 0, cfg.all.xl, 30);
         cfg.files = new Geom(0, 40, pickerXl, cfg.all.yl - 40);
@@ -56,8 +62,8 @@ public:
         _picker.basedir = baseDir;
         buttonExit = new TextButton(new Geom(infoX + infoXl/2, 20,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.commonBack.transl);
-        buttonPlay = new TextButton(new Geom(infoX, 80,
-            infoXl/3, 40, From.BOTTOM_LEFT), Lang.browserPlay.transl);
+        buttonPlay = new TextButton(new Geom(infoX, 100,
+            infoXl/2, 40, From.BOTTOM_LEFT), Lang.browserPlay.transl);
         preview    = new Preview(new Geom(20, 80, infoXl, 160, From.TOP_RIG));
         buttonPlay.hotkey = basics.user.keyMenuOkay;
         buttonExit.hotkey = basics.user.keyMenuExit;

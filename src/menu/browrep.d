@@ -5,6 +5,7 @@ import file.filename;
 import file.language;
 import game.replay;
 import gui;
+import gui.picker;
 import level.level;
 import menu.browmain;
 
@@ -15,19 +16,19 @@ class BrowserReplay : BrowserCalledFromMainMenu {
     this()
     {
         super(Lang.browserReplayTitle.transl,
-            basics.globals.dirReplays);
+            basics.globals.dirReplays, PickerConfig!ReplayTiler());
         scope (success)
             super.highlight(basics.user.replayLastLevel);
-        TextButton newInfo(float x, string caption, int hotkey)
+        TextButton newInfo(float x, float y, string caption, int hotkey)
         {
-            auto b = new TextButton(new Geom(infoX + x*infoXl/3, 80,
-                infoXl/3, 40, From.BOTTOM_LEFT));
+            auto b = new TextButton(new Geom(infoX + x*infoXl/2, y,
+                infoXl/2, 40, From.BOTTOM_LEFT));
             b.text = caption;
             b.hotkey = hotkey;
             return b;
         }
-        _delete  = newInfo(1, Lang.browserDelete.transl, keyMenuDelete);
-        _extract = newInfo(2,"(extract)", // Lang.browserExtract.transl;
+        _delete  = newInfo(0, 60, Lang.browserDelete.transl, keyMenuDelete);
+        _extract = newInfo(1, 60, "(extract)", // Lang.browserExtract.transl;
                            keyMenuExport);
         addChildren(_delete, _extract);
     }

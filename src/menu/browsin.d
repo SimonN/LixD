@@ -5,6 +5,7 @@ import basics.user;
 import file.language;
 import file.filename;
 import gui;
+import gui.picker;
 import level.level;
 import menu.browmain;
 
@@ -17,11 +18,11 @@ public:
     this()
     {
         super(Lang.browserSingleTitle.transl,
-            basics.globals.dirLevels);
+            basics.globals.dirLevels, PickerConfig!LevelTiler());
         scope (success)
             super.highlight(basics.user.singleLastLevel);
-        _edit = new TextButton(new Geom(infoX + infoXl/3, 80,
-            infoXl/3, 40, From.BOTTOM_LEFT), Lang.browserEdit.transl);
+        _edit = new TextButton(new Geom(infoX + infoXl/2, 100,
+            infoXl/2, 40, From.BOTTOM_LEFT), Lang.browserEdit.transl);
         _edit.hotkey = basics.user.keyMenuEdit;
         _edit.onExecute = () {
             assert (fileRecent !is null);

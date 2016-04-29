@@ -14,7 +14,7 @@ private:
 
 public:
     // forward constructor :E
-    this(string title, Filename baseDir) { super(title, baseDir); }
+    this(T)(string title, Filename baseDir, T t) { super(title, baseDir, t); }
 
     @property bool          gotoGame()     const { return _gotoGame;     }
     @property inout(Replay) replayRecent() inout { return _replayRecent; }
