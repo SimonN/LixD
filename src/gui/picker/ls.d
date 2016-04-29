@@ -58,9 +58,10 @@ public:
             // No current file. Highlight the first or last entry.
             // We are guaranteed at least one entry in one of the lists.
             id = (by >= 0) ? 0 : bothLen - 1;
-        id =  id < 0        ? bothLen - 1
-            : id >= bothLen ? 0
-            : id;
+        if (id < 0)
+            id = (id - by == 0) ? bothLen - 1 : 0;
+        else if (id >= bothLen)
+            id = (id - by == bothLen - 1) ? 0 : bothLen - 1;
         return (id < dirs.len) ? dirs[id] : files[id - dirs.len];
     }
 
