@@ -71,6 +71,9 @@ package FileFormat get_file_format(in Filename fn)
 
 
 
+private enum cppHalfScreenX = 640 / 2;
+private enum cppHalfScreenY = (480 - 80) / 2;
+
 private void tuto(ref string[] into, in string what)
 {
     // this always goes into index 0
@@ -127,8 +130,17 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
         else if (text1 == glo.levelSpawnintSlow) spawnintSlow = nr1;
         else if (text1 == glo.levelSpawnintFast) spawnintFast = nr1;
 
+        else if (text1 == glo.levelStartCornerX) {
+            useManualScreenStart = true;
+            manualScreenStartCenter.x = nr1 + cppHalfScreenX;
+        }
+        else if (text1 == glo.levelStartCornerY) {
+            useManualScreenStart = true;
+            manualScreenStartCenter.y = nr1 + cppHalfScreenY;
+        }
+
         // legacy support
-        else if (text1 == glo.levelInitialLegacy) initial      = nr1;
+        else if (text1 == glo.levelInitialLegacy) initial = nr1;
         else if (text1 == glo.levelRateLegacy) {
             spawnintSlow = 4 + (99 - nr1) / 2;
         }
@@ -237,9 +249,10 @@ public void saveToFile(const(Level) l, std.stdio.File file)
 {
     assert (l);
 
-    file.writeln(IoLine.Dollar(glo.levelBuilt,        l.built       ));
-    file.writeln(IoLine.Dollar(glo.levelAuthor,       l.author      ));
-    file.writeln(IoLine.Dollar(glo.levelNameGerman,  l.nameGerman ));
+    file.writeln(IoLine.Dollar(glo.levelBuilt,       l.built      ));
+    file.writeln(IoLine.Dollar(glo.levelAuthor,      l.author     ));
+    if (l.nameGerman.length > 0)
+        file.writeln(IoLine.Dollar(glo.levelNameGerman,  l.nameGerman ));
     file.writeln(IoLine.Dollar(glo.levelNameEnglish, l.nameEnglish));
     file.writeln();
 
@@ -254,7 +267,6 @@ public void saveToFile(const(Level) l, std.stdio.File file)
         else file.writeln(IoLine.Dollar(str_hint, str));
     }
 
-
     wrhi(l.hintsGerman,  glo.levelTutorialGerman,  glo.levelHintGerman );
     wrhi(l.hintsEnglish, glo.levelTutorialEnglish, glo.levelHintEnglish);
     if (l.hintsGerman != null || l.hintsEnglish != null) {
@@ -267,19 +279,26 @@ public void saveToFile(const(Level) l, std.stdio.File file)
         file.writeln(IoLine.Hash(glo.levelTorusX, l.topology.torusX));
         file.writeln(IoLine.Hash(glo.levelTorusY, l.topology.torusY));
     }
+    if (l.useManualScreenStart) {
+        file.writeln(IoLine.Hash(glo.levelStartCornerX,
+                            l.manualScreenStartCenter.x - cppHalfScreenX));
+        file.writeln(IoLine.Hash(glo.levelStartCornerY,
+                            l.manualScreenStartCenter.y - cppHalfScreenY));
+    }
     if (l.bgRed != 0 || l.bgGreen != 0 || l.bgBlue != 0) {
         file.writeln(IoLine.Hash(glo.levelBackgroundRed,   l.bgRed  ));
         file.writeln(IoLine.Hash(glo.levelBackgroundGreen, l.bgGreen));
         file.writeln(IoLine.Hash(glo.levelBackgroundBlue,  l.bgBlue ));
     }
-    file.writeln();
 
-    file.writeln(IoLine.Hash(glo.levelSeconds,       l.seconds ));
-    file.writeln(IoLine.Hash(glo.levelInitial,       l.initial ));
-    file.writeln(IoLine.Hash(glo.levelRequired,      l.required));
+    file.writeln();
+    file.writeln(IoLine.Hash(glo.levelSeconds,      l.seconds ));
+    file.writeln(IoLine.Hash(glo.levelInitial,      l.initial ));
+    file.writeln(IoLine.Hash(glo.levelRequired,     l.required));
     file.writeln(IoLine.Hash(glo.levelSpawnintSlow, l.spawnintSlow));
     file.writeln(IoLine.Hash(glo.levelSpawnintFast, l.spawnintFast));
 
+    file.writeln();
     foreach (Ac sk, const int nr; l.skills.byKeyValue)
         if (nr != 0)
             file.writeln(IoLine.Hash(acToString(sk), nr));

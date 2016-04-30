@@ -64,6 +64,9 @@ public:
     int  spawnintSlow;
     int  spawnintFast;
 
+    bool useManualScreenStart;
+    Point manualScreenStartCenter;
+
     /* ploder: either Ac.exploder or Ac.imploder.
      * This is never written to the level file. Instead, 0 exploders or 0
      * imploders should always be written to file. If both are missing,
@@ -136,6 +139,7 @@ public:
     {
         implDrawTerrainTo(this, tb, lo);
     }
+
     Torbit create_preview(in int xl, in int yl, AlCol col) const
     {
         return implCreatePreview(this, xl, yl, col);
@@ -173,12 +177,18 @@ public:
         ) {
             return false;
         }
+        // We don't care about a difference in the manual screen position if
+        // we rely on automatic screen start anyway in both levels.
+        if (this.useManualScreenStart != rhs.useManualScreenStart
+            || this.useManualScreenStart
+            && this.manualScreenStartCenter != rhs.manualScreenStartCenter
+        ) {
+            return false;
+        }
         // compare all tiles in one go
         if (this.pos    != rhs.pos   ) return false;
         if (this.skills != rhs.skills) return false;
         return true;
     }
-
-
 }
 // end class Level
