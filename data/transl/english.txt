@@ -240,10 +240,10 @@ $winVarClock                  Time/overtime
 // editor window to set skills
 
 $winSkillTitle               Skill Settings
-$winSkillUseExploder         Knockback exploder
+$winSkillUseExploder         Fling-exploder
 $winSkillClear               All to zero
-$winSkillEightTo             Old 8 to:
-$winSkillAllTo               All to:
+$winSkillEightTo             Classic 8 to:
+$winSkillAllTo               All 14 to:
 
 // exporting a level into a file
 

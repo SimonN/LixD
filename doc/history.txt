@@ -1,6 +1,14 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.3.2
+-----
+
+2016-05-03
+
+Editor skill window: Clicking the label "Fling-exploder" affects checkbox,
+too. Buttons resized and captioned according to Proxima's suggestions.
+
 0.3.1
 -----
 

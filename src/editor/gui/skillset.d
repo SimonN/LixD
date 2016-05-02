@@ -25,20 +25,22 @@ private:
 public:
     this(Level level)
     {
-        super(new Geom(0, 0, 2*20 + skillSort.length * skillXl,
-            240, From.CENTER), Lang.winSkillTitle.transl);
-        _useExploder = new BoolOption(new Geom(20, 50, 180, 20, From.BOT_LEF),
-            Lang.winSkillUseExploder.transl, null);
-        _allToZero = new TextButton(new Geom(20, 20, 180, 20, From.BOT_LEF),
+        enum thisXl = 2*20 + skillSort.length * skillXl;
+        enum expXl  = 150;
+        enum pickX  = expXl + 2*20;
+        enum pickXl = thisXl - expXl - 100 - 2*2*20;
+        super(new Geom(0, 0, thisXl, 240, From.CENTER),
+            Lang.winSkillTitle.transl);
+        _useExploder = new BoolOption(new Geom(20, 50, expXl, 20,
+            From.BOT_LEF), Lang.winSkillUseExploder.transl, null);
+        _allToZero = new TextButton(new Geom(20, 20, expXl, 20, From.BOT_LEF),
             Lang.winSkillClear.transl);
-
-        immutable pickXl = this.xlg - 180 - 100 - 2*2*20;
-        _numPick    = new NumPick   (new Geom(220, 20, pickXl,   20,
+        _numPick = new NumPick(new Geom(pickX, 20, pickXl, 20,
             From.BOT_LEF), this.numPickConfig);
-        _allToNum   = new TextButton(new Geom(220, 50, pickXl/2, 20,
+        _allToNum = new TextButton(new Geom(pickX, 50, pickXl/2 - 10, 20,
             From.BOT_LEF), Lang.winSkillAllTo.transl);
-        _eightToNum = new TextButton(new Geom(220 + pickXl/2, 50, pickXl/2, 20,
-            From.BOT_LEF), Lang.winSkillEightTo.transl);
+        _eightToNum = new TextButton(new Geom(pickX + pickXl/2 - 10, 50,
+            pickXl/2 + 10, 20, From.BOT_LEF), Lang.winSkillEightTo.transl);
         addChildren(_useExploder, _allToZero,
                     _numPick, _allToNum, _eightToNum);
         initializeFromLevel(level);
