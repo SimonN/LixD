@@ -14,7 +14,7 @@ import lix.enums;
 class SkillsetWindow : OkCancelWindow {
 private:
     SkillSetter[skillSort.length] _skillSetters;
-    Checkbox   _useExploder;
+    BoolOption _useExploder;
     TextButton _allToZero;
     NumPick    _numPick;
     TextButton _allToNum;
@@ -27,9 +27,8 @@ public:
     {
         super(new Geom(0, 0, 2*20 + skillSort.length * skillXl,
             240, From.CENTER), Lang.winSkillTitle.transl);
-        _useExploder = new Checkbox(new Geom(20, 50, 20, 20, From.BOT_LEF));
-        addChild(new Label(new Geom(50, 50, 150, 20, From.BOT_LEF),
-            Lang.winSkillUseExploder.transl));
+        _useExploder = new BoolOption(new Geom(20, 50, 180, 20, From.BOT_LEF),
+            Lang.winSkillUseExploder.transl, null);
         _allToZero = new TextButton(new Geom(20, 20, 180, 20, From.BOT_LEF),
             Lang.winSkillClear.transl);
 

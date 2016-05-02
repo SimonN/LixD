@@ -4,7 +4,6 @@ import editor.gui.okcancel;
 import file.language;
 import gui;
 import level.level;
-import menu.opthelp; // DTODO: move this out of package menu
 
 class VisualsWindow : OkCancelWindow {
 private:

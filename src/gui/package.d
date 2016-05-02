@@ -14,6 +14,7 @@ public import gui.frame;
 public import gui.label;
 public import gui.msgbox;
 public import gui.numpick;
+public import gui.options;
 public import gui.root;
 public import gui.texttype;
 public import gui.window;

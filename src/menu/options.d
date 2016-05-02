@@ -16,7 +16,6 @@ import file.language;
 import gui;
 import graphic.color;
 import hardware.mouse; // RMB to OK the window away
-import menu.opthelp;
 
 class OptionsMenu : Window {
 

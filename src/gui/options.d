@@ -1,6 +1,7 @@
-module menu.opthelp;
+module gui.options;
 
-/* Helper classes for the options dialogue.
+/* Wrapping a GUI element with a label. These are used in the options dialogue
+ * and in the editor windows.
  *
  * Subclasses of Option: Wraps the GUI elements through which an option is set,
  * and points to the value T that is used by the game and written to file.
@@ -70,28 +71,45 @@ class BoolOption : Option {
 private:
     Checkbox _checkbox;
     bool*    _target;
+    bool     _execute;
 
 public:
     this(Geom g, string cap, bool* t)
     {
-        assert (t);
+        // t may be null, you may not call load/saveValue then
         _checkbox = new Checkbox(new Geom(0, 0, 20, 20));
         super(g, new Label(new Geom(30, 0, g.xlg - 30, g.yl), cap));
         addChild(_checkbox);
         _target = t;
     }
 
-    override void loadValue() { _checkbox.checked = *_target; }
-    override void saveValue() { *_target = _checkbox.checked; }
+    @property bool checked() const { return _checkbox.checked;     }
+    @property bool checked(bool b) { return _checkbox.checked = b; }
+    @property bool execute() const { return _execute;              }
+
+    override void loadValue()
+    {
+        assert (_target);
+        _checkbox.checked = *_target;
+    }
+
+    override void saveValue()
+    {
+        assert (_target);
+        *_target = _checkbox.checked;
+    }
 
 protected:
     override void calcSelf()
     {
+        _execute = _checkbox.execute;
         // Allow clicks on the label, not only on the tiny checkbox.
         if (isMouseHere) {
             _checkbox.down = mouseHeldLeft > 0;
-            if (mouseReleaseLeft && ! _checkbox.execute)
+            if (mouseReleaseLeft && ! _checkbox.execute) {
                 _checkbox.toggle();
+                _execute = true;
+            }
         }
     }
 }
@@ -192,8 +210,10 @@ class NumPickOption : Option
         _target = t;
     }
 
-    override void loadValue() { _num.number = *_target; }
-    override void saveValue() { *_target = _num.number; }
+    @property int  value()   const { return _num.number;     }
+    @property bool execute() const { return _num.execute;    }
+    override  void loadValue()     { _num.number = *_target; }
+    override  void saveValue()     { *_target = _num.number; }
 }
 
 
