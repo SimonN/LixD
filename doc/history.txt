@@ -1,6 +1,17 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.3.3
+
+2016-05-03
+
+Fix #42: Zoom increases at level start until at least 70 % of map screen
+space is filled. This makes for dynamic zoom per level, per resolution.
+
+Fix #31: I drew air where solid after batch-framestepping, when lots of
+drawing and removing happened in short succession. geoo has suggested
+the new algorithm that's both simpler and bug-free. Thanks!
+
 0.3.2
 -----
 

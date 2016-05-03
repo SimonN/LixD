@@ -16,9 +16,23 @@ package:
 void centerCameraOnHatchAverage(Game game)
 {
     assert (game.map);
+    game.chooseGoodZoom();
     game.map.centerOnAverage(game.ourHatches().map!(h => h.screenCenter.x),
                              game.ourHatches().map!(h => h.screenCenter.y));
 }
+
+void chooseGoodZoom(Game game) {
+    with (game.map)
+{
+    assert (game.map);
+    assert (zoom == 1);
+    float fillableScreenArea()      { return cameraXl * cameraYl; }
+    float areaFilledByUnloopedMap() { return min(xl * zoom^^2, cameraXl)
+                                           * min(yl * zoom^^2, cameraYl); }
+    assert (fillableScreenArea > 0);
+    while (areaFilledByUnloopedMap / fillableScreenArea < 0.7f && zoom < 8)
+        zoom = zoom * 2;
+}}
 
 private:
 

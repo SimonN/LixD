@@ -76,7 +76,7 @@ public:
     @property Point screenCenter() const
     {
         assert (tile);
-        return point + tile.trigger + Point(hatchRot ? -64 : 64, 0);
+        return point + tile.trigger + Point(hatchRot ? -64 : 64, 64);
     }
 }
 
@@ -84,8 +84,8 @@ class TerOcc : Occurrence {
     const(TerrainTile) _tile;
     bool mirr; // mirror vertically
     int  rot;  // rotate tile? 0 = normal, 1, 2, 3 = turned counter-clockwise
-    bool dark; // Terrain loeschen anstatt neues malen
-    bool noow; // Nicht ueberzeichnen?
+    bool dark; // wherever a solid pixel would be drawn, erase exisiting pixels
+    bool noow; // only draw pixels into air; may be culled in the future
 
     this(const(TerrainTile) t) { _tile = t; }
 
