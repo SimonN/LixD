@@ -4,14 +4,31 @@ import basics.nettypes;
 import basics.rect;
 import lix.enums;
 
-struct TerrainChange {
+private mixin template TerrainChangeBase() {
+    Update update;
+    Type   type;
+    int x; // lix store the top-left corner of the terrain change here, ...
+    int y; //    ...not the effective coordinate.
 
+    @property Point loc()       const { return Point(x, y); }
+    @property Point loc(in Point p)   { x = p.x; y = p.y; return loc(); }
+}
+
+public struct TerrainAddition {
+    mixin TerrainChangeBase;
     enum Type {
         build,
         platformLong,
         platformShort,
-        cube,
+        cube
+    }
+    Style style;
+    int cubeYl;
+}
 
+public struct TerrainDeletion {
+    mixin TerrainChangeBase;
+    enum Type {
         implode,
         explode,
         bashLeft,
@@ -22,17 +39,27 @@ struct TerrainChange {
         mineRight,
         dig
     }
+    int digYl;
+}
 
-    Update update;
-    Type   type;
-    Style  style; // for additions
-    int x; // lix store the top-left corner of the terrain change here, ...
-    int y; //    ...not the effective coordinate.
-    int yl; // for digger swing, cuber slice
+// The following structs are of interest only in game.physdraw.PhysicsDrawer.
+// They collect extra information for drawing to land, after having been drawn
+// to the physics map already.
+package struct FlaggedAddition {
+    TerrainAddition terrainChange;
+    alias terrainChange this;
 
-    @property bool isAddition() const { return type < Type.implode; }
-    @property bool isDeletion() const { return ! isAddition; }
+    bool drawPerPixelDueToExistingTerrain;
+    byte[16][16] needsColoring; // if mustDrawPerPixel, then look up where here
+    /* 16 is the length of a cube.
+     * I estimate that all addition-drawing is smaller than this.
+     * How to look up: Coordinate at loc() + Point(x, y) is at arr[y][x].
+     * I chose byte[][] instead of bool[][] to have it packed densely.
+     */
+}
 
-    @property Point loc()       const { return Point(x, y); }
-    @property Point loc(in Point p)   { x = p.x; y = p.y; return loc(); }
+package struct FlaggedDeletion {
+    TerrainDeletion terrainChange;
+    alias terrainChange this;
+    bool drawPerPixelDueToSteel;
 }

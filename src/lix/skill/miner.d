@@ -87,10 +87,10 @@ private:
 
     void removeEarth()
     {
-        TerrainChange tc;
+        TerrainDeletion tc;
         tc.update = outsideWorld.state.update;
-        tc.type = facingRight ? TerrainChange.Type.mineRight
-                              : TerrainChange.Type.mineLeft;
+        tc.type = facingRight ? TerrainDeletion.Type.mineRight
+                              : TerrainDeletion.Type.mineLeft;
         tc.x = ex - masks[tc.type].offsetX;
         tc.y = ey - masks[tc.type].offsetY;
         outsideWorld.physicsDrawer.add(tc);

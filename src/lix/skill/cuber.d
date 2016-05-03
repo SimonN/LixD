@@ -23,18 +23,18 @@ class Cuber : Leaver {
     override void perform()
     {
         if (frame >= 2) {
-            TerrainChange tc;
+            TerrainAddition tc;
             tc.update = outsideWorld.state.update;
-            tc.type   = TerrainChange.Type.cube;
+            tc.type   = TerrainAddition.Type.cube;
             tc.style  = style;
             tc.x      = ex - cubeSize/2;
 
             assert (isLastFrame == (frame == 5),
                 "the following ?: is written assuming frame 5 is last");
-            tc.yl = isLastFrame ? cubeSize : 2*frame - 2;
-            assert (tc.yl > 0);
+            tc.cubeYl = isLastFrame ? cubeSize : 2*frame - 2;
+            assert (tc.cubeYl > 0);
 
-            tc.y = ey - tc.yl + 2;
+            tc.y = ey - tc.cubeYl + 2;
             outsideWorld.physicsDrawer.add(tc);
         }
         super.advanceFrameAndLeave();

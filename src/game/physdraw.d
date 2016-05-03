@@ -63,12 +63,8 @@ class PhysicsDrawer {
         _phymap = null;
     }
 
-    void
-    add(in TerrainChange tc)
-    {
-        if (tc.isAddition) _addsForPhymap ~= tc;
-        else               _delsForPhymap ~= tc;
-    }
+    void add(in TerrainAddition tc) { _addsForPhymap ~= tc; }
+    void add(in TerrainDeletion tc) { _delsForPhymap ~= tc; }
 
     // This should be called when loading a savestate, to throw away any
     // queued drawing changes to the land. The savestate comes with a fresh
@@ -165,40 +161,31 @@ private:
     static Albit _mask;
 
     // this enumap is used by the terrain removers, not by the styled adders
-    static Enumap!(TerrainChange.Type, Albit) _subAlbits;
+    static Enumap!(TerrainDeletion.Type, Albit) _subAlbits;
 
     Torbit _land;
     Phymap _phymap;
 
-    TerrainChange[] _delsForPhymap;
-    TerrainChange[] _addsForPhymap;
+    TerrainDeletion[] _delsForPhymap;
+    TerrainAddition[] _addsForPhymap;
 
-    FlaggedChange[] _delsForLand;
-    FlaggedChange[] _addsForLand;
+    FlaggedDeletion[] _delsForLand;
+    FlaggedAddition[] _addsForLand;
 
     enum buiY  = 0;
     enum cubeY = 3 * lix.enums.brickYl;
     enum remY  = cubeY + Cuber.cubeSize;
  	enum remYl = 32;
     enum ploY  = remY + remYl;
-    enum ploYl = game.mask.masks[TerrainChange.Type.implode].solid.yl;
+    enum ploYl = game.mask.masks[TerrainDeletion.Type.implode].solid.yl;
 
     enum bashX  = Digger.tunnelWidth + 1;
-    enum bashXl = game.mask.masks[TerrainChange.Type.bashRight].solid.xl + 1;
+    enum bashXl = game.mask.masks[TerrainDeletion.Type.bashRight].solid.xl + 1;
     enum mineX  = bashX + 4 * bashXl; // 4 basher masks
-    enum mineXl = game.mask.masks[TerrainChange.Type.mineRight].solid.xl + 1;
+    enum mineXl = game.mask.masks[TerrainDeletion.Type.mineRight].solid.xl + 1;
 
     enum implodeX = 0;
-    enum explodeX = game.mask.masks[TerrainChange.Type.implode].solid.xl + 1;
-
-    static struct FlaggedChange
-    {
-        TerrainChange terrainChange;
-        alias terrainChange this;
-
-        bool mustDrawPerPixel; // if there was land under a land addition,
-                               // or steel amidst a land removal
-    }
+    enum explodeX = game.mask.masks[TerrainDeletion.Type.implode].solid.xl + 1;
 
     static void
     deinitialize()
@@ -215,10 +202,11 @@ private:
     }
 
     mixin template AdditionsDefs() {
-        immutable build = (tc.type == TerrainChange.Type.build);
-        immutable plaLo = (tc.type == TerrainChange.Type.platformLong);
-        immutable plaSh = (tc.type == TerrainChange.Type.platformShort);
-        immutable yl = (build || plaLo || plaSh) ? lix.enums.brickYl : tc.yl;
+        immutable build = (tc.type == TerrainAddition.Type.build);
+        immutable plaLo = (tc.type == TerrainAddition.Type.platformLong);
+        immutable plaSh = (tc.type == TerrainAddition.Type.platformShort);
+        immutable yl = (build || plaLo || plaSh) ? lix.enums.brickYl
+                                                 : tc.cubeYl;
         immutable y  = build ? 0
                      : plaLo ? 1 * lix.enums.brickYl
                      : plaSh ? 2 * lix.enums.brickYl
@@ -230,14 +218,7 @@ private:
         immutable x  = xl * tc.style;
     }
 
-    void assertCalledEachUpdate(TerrainChange[] arr)
-    {
-        // don't let data of different updates accumulate here
-        foreach (const tc; arr)
-            assert (tc.update == arr[0].update);
-    }
-
-    void assertChangesForLand(FlaggedChange[] arr, in Update upd)
+    void assertChangesForLand(T)(T[] arr, in Update upd)
     {
         // Functions calling assertChangesForLand need not be called on each
         // update, but only if the land must be drawn like it should appear
@@ -257,7 +238,7 @@ private:
             "considered a logic bug!");
     }
 
-    FlaggedChange[] splitOffFromArray(ref FlaggedChange[] arr, in Update upd)
+    T[] splitOffFromArray(T)(ref T[] arr, in Update upd)
     {
         // Split the queue into what needs to be processed during this call,
         // remove these from the caller's queue (arr).
@@ -277,14 +258,11 @@ private:
 
 
 
-    void
-    deletionsToPhymap()
-    in {
-        assertCalledEachUpdate(_delsForPhymap);
+    void deletionsToPhymap()
+    in { assert (_delsForPhymap.all!(tc =>
+        tc.update == _delsForPhymap[0].update));
     }
-    out {
-        assert (_delsForPhymap == null);
-    }
+    out { assert (_delsForPhymap == null); }
     body {
         version (tharsisprofiling)
             auto zone = Zone(profiler, format("PhysDraw del lookup %dx",
@@ -293,33 +271,26 @@ private:
             _delsForPhymap = null;
 
         foreach (const tc; _delsForPhymap) {
-            assert (tc.isDeletion);
             version (tharsisprofiling)
                 auto zone2 = Zone(profiler, format("PhysDraw lookup %s",
                     tc.type.to!string));
 
             int steelHit = 0;
-            alias Type = TerrainChange.Type;
-            if (tc.type == Type.dig) {
-                assert (tc.yl > 0);
+            if (tc.type == TerrainDeletion.Type.dig) {
+                assert (tc.digYl > 0);
                 steelHit += _phymap.rectSum!(Phymap.setAirCountSteel)
-                    (Rect(tc.loc, Digger.tunnelWidth, tc.yl));
+                    (Rect(tc.loc, Digger.tunnelWidth, tc.digYl));
             }
             else
                 steelHit += _phymap.setAirCountSteelEvenWhereMaskIgnores(
                                 tc.loc, masks[tc.type]);
             if (_land)
-                _delsForLand ~= FlaggedChange(tc, steelHit > 0);
+                _delsForLand ~= FlaggedDeletion(tc, steelHit > 0);
         }
     }
 
-
-
-    void
-    deletionsToLandForUpdate(in Update upd)
-    in {
-        assertChangesForLand(_delsForLand, upd);
-    }
+    void deletionsToLandForUpdate(in Update upd)
+    in { assertChangesForLand(_delsForLand, upd); }
     out {
         assert (_delsForLand == null
             ||  _delsForLand[0].update > upd);
@@ -340,62 +311,60 @@ private:
         }
     }
 
-    void deletionToLand(in FlaggedChange tc)
+    void deletionToLand(in FlaggedDeletion tc)
     {
         assert (al_is_bitmap_drawing_held());
-        assert (tc.isDeletion);
         version (tharsisprofiling)
             auto zone = Zone(profiler, format("PhysDraw land %s",
                 tc.type.to!string));
-        if (tc.type != TerrainChange.Type.dig)
-            spriteToLandAccordingToFlag(tc, _subAlbits[tc.type]);
+        if (tc.type != TerrainDeletion.Type.dig)
+            spriteToLand(tc, _subAlbits[tc.type]);
         else {
             // digging height is variable length
-            assert (tc.yl > 0);
+            assert (tc.digYl > 0);
             Albit sprite = al_create_sub_bitmap(_mask,
-                0, remY, Digger.tunnelWidth, tc.yl);
-            spriteToLandAccordingToFlag(tc, sprite);
+                0, remY, Digger.tunnelWidth, tc.digYl);
+            spriteToLand(tc, sprite);
             al_destroy_bitmap(sprite);
         }
     }
 
-    void spriteToLandAccordingToFlag(in FlaggedChange tc, Albit sprite)
+    void spriteToLand(T)(in T tc, Albit sprite)
+        if (is (T == FlaggedDeletion) || is (T == FlaggedAddition))
     {
         assert (al_is_bitmap_drawing_held());
         assert (sprite);
         assert (_phymap);
-        if (! tc.mustDrawPerPixel) {
+        static if (is (T == FlaggedDeletion))
+            immutable bool allAtOnce = ! tc.drawPerPixelDueToSteel;
+        else
+            immutable bool allAtOnce = ! tc.drawPerPixelDueToExistingTerrain;
+        if (allAtOnce) {
             version (tharsisprofiling)
                 auto zone = Zone(profiler, format("PhysDraw pix-all %s",
                                                   tc.type.to!string));
             _land.drawFrom(sprite, tc.loc);
             return;
         }
-        // we continue here only if tc.mustDrawPerPixel
+        // we continue here only if we must draw per pixel, not all at once
         version (tharsisprofiling)
             auto zone = Zone(profiler, format("PhysDraw pix-one %s",
                                               tc.type.to!string));
         immutable spriteXl = al_get_bitmap_width (sprite);
         immutable spriteYl = al_get_bitmap_height(sprite);
-        if (tc.isDeletion) {
-            foreach (y; 0 .. spriteYl)
-                foreach (x; 0 .. spriteXl) {
-                    immutable fromPoint = Point(x, y);
-                    immutable toPoint   = tc.loc + fromPoint;
+        foreach (y; 0 .. spriteYl)
+            foreach (x; 0 .. spriteXl) {
+                immutable fromPoint = Point(x, y);
+                immutable toPoint   = tc.loc + fromPoint;
+                static if (is (T == FlaggedDeletion)) {
                     if (! _phymap.getSteel(toPoint))
                         _land.drawFromPixel(sprite, fromPoint, toPoint);
                 }
-        }
-        else
-            foreach (y; 0 .. spriteYl)
-                foreach (x; 0 .. spriteXl) {
-                    immutable fromPoint = Point(x, y);
-                    immutable toPoint   = tc.loc + fromPoint;
-                    if (_phymap.getNeedsColoring(toPoint)) {
-                        _phymap.setDoneColoring (toPoint);
+                else {
+                    if (tc.needsColoring[y][x])
                         _land.drawFromPixel(sprite, fromPoint, toPoint);
-                    }
                 }
+            }
     }
 
 // ############################################################################
@@ -406,8 +375,8 @@ private:
 
     void
     additionsToPhymap()
-    in {
-        assertCalledEachUpdate(_addsForPhymap);
+    in { assert(_addsForPhymap.all!(
+        tc => tc.update == _addsForPhymap[0].update));
     }
     out {
         assert (_addsForPhymap == null);
@@ -420,26 +389,28 @@ private:
             mixin AdditionsDefs;
             assert (yl > 0, format("%s queued with yl <= 0; yl = %d",
                 tc.type.to!string, yl));
-            if (_land) {
-                // If land exists, remember the changes to be able to draw them
-                // later. No land in noninteractive mode => needn't save this.
-                auto fc = FlaggedChange(tc);
-                fc.mustDrawPerPixel = 0 !=
-                    _phymap.rectSum!(Phymap.getSolid)(Rect(tc.loc, xl, yl));
+            // If land exists, remember the changes to be able to draw them
+            // later. No land in noninteractive mode => needn't save this.
+            // We still create it properly... to keep my code short. <_<;;
+            auto fc = FlaggedAddition(tc);
+            foreach (int y; 0 .. yl)
+                foreach (int x; 0 .. xl) {
+                    Point target = tc.loc + Point(x, y);
+                    if (_phymap.getSolid(target))
+                        fc.drawPerPixelDueToExistingTerrain = true;
+                    else {
+                        _phymap.add(target, Phybit.terrain);
+                        fc.needsColoring[y][x] = true;
+                    }
+                }
+            if (_land)
                 _addsForLand ~= fc;
-            }
-            _phymap.rect!(Phymap.setSolidNeedsColoring)(Rect(tc.loc, xl, yl));
         }
         _addsForPhymap = null;
     }
 
-
-
-    void
-    additionsToLandForUpdate(in Update upd)
-    in {
-        assertChangesForLand(_addsForLand, upd);
-    }
+    void additionsToLandForUpdate(in Update upd)
+    in { assertChangesForLand(_addsForLand, upd); }
     out {
         assert (_addsForLand == null
             ||  _addsForLand[0].update > upd);
@@ -454,7 +425,7 @@ private:
         foreach (const tc; processThese) {
             mixin AdditionsDefs;
             Albit sprite = al_create_sub_bitmap(_mask, x, y, xl, yl);
-            spriteToLandAccordingToFlag(tc, sprite);
+            spriteToLand(tc, sprite);
             al_destroy_bitmap(sprite);
         }
     }
@@ -479,7 +450,7 @@ private:
             // Physics are in RAM entirely, physics masks are done by CTFE.
             return;
 
-        alias Type = TerrainChange.Type;
+        alias Type = TerrainDeletion.Type;
         alias rf   = al_draw_filled_rectangle;
 
         assert (builderBrickXl >= platformLongXl);
@@ -557,7 +528,7 @@ private:
 
         // digger swing
         rf(0, remY, Digger.tunnelWidth, remY + remYl, color.white);
-        _subAlbits[TerrainChange.Type.dig] = al_create_sub_bitmap(
+        _subAlbits[Type.dig] = al_create_sub_bitmap(
             _mask, 0, remY, Digger.tunnelWidth, remY + remYl);
 
         void drawPixel(in int x, in int y, in AlCol col)

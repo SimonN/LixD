@@ -71,10 +71,10 @@ private:
     final void changeTerrain()
     {
         assert (ac == Ac.imploder || ac == Ac.exploder);
-        TerrainChange tc;
+        TerrainDeletion tc;
         tc.update = lixxie.outsideWorld.state.update;
-        tc.type   = (ac == Ac.exploder) ? TerrainChange.Type.explode
-                                         : TerrainChange.Type.implode;
+        tc.type   = (ac == Ac.exploder) ? TerrainDeletion.Type.explode
+                                        : TerrainDeletion.Type.implode;
         tc.x      = - masks[tc.type].offsetX + lixxie.ex;
         tc.y      = - masks[tc.type].offsetY + lixxie.ey;
         lixxie.outsideWorld.physicsDrawer.add(tc);

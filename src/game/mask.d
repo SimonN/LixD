@@ -13,15 +13,15 @@ import game.terchang;
 
 enum explodeMaskOffsetY = -6; // used in game.debris, too
 
-enum Mask[TerrainChange.Type] masks = [
-    TerrainChange.Type.bashLeft           : _bashLeft,
-    TerrainChange.Type.bashRight          : _bashRight,
-    TerrainChange.Type.bashNoRelicsLeft   : _bashNoRelicsLeft,
-    TerrainChange.Type.bashNoRelicsRight  : _bashNoRelicsRight,
-    TerrainChange.Type.mineLeft           : _mineLeft,
-    TerrainChange.Type.mineRight          : _mineRight,
-    TerrainChange.Type.implode            : _implode,
-    TerrainChange.Type.explode            : Mask(22, explodeMaskOffsetY),
+enum Mask[TerrainDeletion.Type] masks = [
+    TerrainDeletion.Type.bashLeft          : _bashLeft,
+    TerrainDeletion.Type.bashRight         : _bashRight,
+    TerrainDeletion.Type.bashNoRelicsLeft  : _bashNoRelicsLeft,
+    TerrainDeletion.Type.bashNoRelicsRight : _bashNoRelicsRight,
+    TerrainDeletion.Type.mineLeft          : _mineLeft,
+    TerrainDeletion.Type.mineRight         : _mineRight,
+    TerrainDeletion.Type.implode           : _implode,
+    TerrainDeletion.Type.explode           : Mask(22, explodeMaskOffsetY),
 ];
 
 private enum Mask _bashLeft  = _bashRight.mirrored;
@@ -247,7 +247,7 @@ unittest {
         "XXXXXXXX" "XXXXXXXX"]);
     assert (topOfBasherLeft == topOfBasher.mirrored());
 
-    assert (masks[TerrainChange.Type.implode].mirrored
-        !=  masks[TerrainChange.Type.implode]);
+    assert (masks[TerrainDeletion.Type.implode].mirrored
+        !=  masks[TerrainDeletion.Type.implode]);
         // this is a physics bug, we should strive to get == instead of !=
 }

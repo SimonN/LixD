@@ -81,12 +81,12 @@ class Digger : Job {
 
     private void removeRowsYInterval(in int y, in int yl)
     {
-        TerrainChange tc;
+        TerrainDeletion tc;
         tc.update = outsideWorld.state.update;
-        tc.type   = TerrainChange.Type.dig;
+        tc.type   = TerrainDeletion.Type.dig;
         tc.x      = ex - 8;
         tc.y      = ey + y;
-        tc.yl     = yl;
+        tc.digYl  = yl;
         outsideWorld.physicsDrawer.add(tc);
     }
 

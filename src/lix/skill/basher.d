@@ -72,15 +72,15 @@ private:
             immutable pathClear  = nothingMoreToBash();
             return earthAfter == 0 && pathClear;
         }
-        TerrainChange tc;
+        TerrainDeletion tc;
         tc.update = outsideWorld.state.update;
         if (omitRelics) {
-            if (dir > 0) tc.type = TerrainChange.Type.bashNoRelicsRight;
-            else         tc.type = TerrainChange.Type.bashNoRelicsLeft;
+            if (dir > 0) tc.type = TerrainDeletion.Type.bashNoRelicsRight;
+            else         tc.type = TerrainDeletion.Type.bashNoRelicsLeft;
         }
         else {
-            if (dir > 0) tc.type = TerrainChange.Type.bashRight;
-            else         tc.type = TerrainChange.Type.bashLeft;
+            if (dir > 0) tc.type = TerrainDeletion.Type.bashRight;
+            else         tc.type = TerrainDeletion.Type.bashLeft;
         }
         tc.x = ex - masks[tc.type].offsetX;
         tc.y = ey - masks[tc.type].offsetY;

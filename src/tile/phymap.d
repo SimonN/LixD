@@ -30,8 +30,6 @@ alias Phybitset = short;
 enum  Phybit    : Phybitset {
     terrain = 0x0001,
     steel   = 0x0002,
-    needCol = 0x0004, // Recently added terrain that need yet to be colored.
-                      // Doesn't affect physics.
     goal    = 0x0010,
     fire    = 0x0040,
     water   = 0x0080,
@@ -39,8 +37,6 @@ enum  Phybit    : Phybitset {
     fling   = 0x0200,
     all     = 0x7FFF,
 }
-
-
 
 class Phymap : Topology {
 
@@ -94,11 +90,6 @@ class Phymap : Topology {
     out (ret) { if (ret) assert (getSolid(p)); }
     body      { return get(p, Phybit.steel);   }
 
-    bool getNeedsColoring(in Point p) const
-    {
-        return (getAt(clamp(p)) & Phybit.needCol) != 0;
-    }
-
     bool getSteelUnlessMaskIgnores(in Point eff, in Mask mask) const
     {
         with (mask) {
@@ -149,26 +140,6 @@ class Phymap : Topology {
             addAt(wrap(p), Phybit.terrain);
     }
 
-    void setSolidNeedsColoring(in Point p)
-    {
-        if (! inside(p))
-            return;
-        immutable wrapped = wrap(p);
-        if (getAt(wrapped) & Phybit.terrain)
-            return;
-        addAt(wrapped, Phybit.terrain | Phybit.needCol);
-    }
-
-    void setDoneColoring(in Point p)
-    {
-        if (! inside(p))
-            return;
-        immutable wrapped = wrap(p);
-        assert (getAt(wrapped) & Phybit.terrain);
-        assert (getAt(wrapped) & Phybit.needCol);
-        rmAt(wrapped, Phybit.needCol);
-    }
-
     bool setAirCountSteel(in Point p)
     {
         immutable wrapped = wrap(p);
@@ -179,7 +150,7 @@ class Phymap : Topology {
             return true;
         }
         else {
-            rmAt(wrapped, Phybit.terrain | Phybit.needCol);
+            rmAt(wrapped, Phybit.terrain);
             return false;
         }
     }

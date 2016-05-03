@@ -140,9 +140,9 @@ class Builder : BrickCounter {
         // If we are fully inside terrain, we'll move down later.
         fullyInsideTerrain = solidWallHeight(0, 2) > Walker.highestStepUp;
 
-        TerrainChange tc;
+        TerrainAddition tc;
         tc.update = outsideWorld.state.update;
-        tc.type   = TerrainChange.Type.build;
+        tc.type   = TerrainAddition.Type.build;
         tc.style  = style;
         tc.x      = facingRight ? ex - 2 : ex - 8;
         tc.y      = ey;
@@ -278,10 +278,10 @@ class Platformer : BrickCounter {
     {
         immutable bool firstCycle = (frame == 2);
 
-        TerrainChange tc;
+        TerrainAddition tc;
         tc.update = outsideWorld.state.update;
-        tc.type   = firstCycle ? TerrainChange.Type.platformLong
-                               : TerrainChange.Type.platformShort;
+        tc.type   = firstCycle ? TerrainAddition.Type.platformLong
+                               : TerrainAddition.Type.platformShort;
         tc.style  = style;
         tc.y      = firstCycle ? ey : ey + 2;
         tc.x      = firstCycle ? (facingRight ? ex     : ex - 6)
