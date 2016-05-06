@@ -44,14 +44,16 @@ class Label : Element {
     @property color (AlCol  c) { _color = c; reqDraw(); return _color;     }
     @property fixed (bool   b) { _fixed = b; shorten_text(); return b;     }
 
-    override string toString() const { return "Label-`" ~ _text ~ "'"; }
-
-    bool tooLong(string s)
+    float textLg()         const { return textLg(this._text); }
+    float textLg(string s) const
     {
-        return (! s.len)  ? false
-            :  (! _fixed) ? xls < al_get_text_width(font, s.toStringz)
-            :               xlg < s.byGrapheme.walkLength * fixedCharXl;
+        return (! s.len)  ? 0f
+            :  (! _fixed) ? al_get_text_width(font, s.toStringz)
+                            / Geom.stretchFactor
+            :               s.byGrapheme.walkLength * fixedCharXl;
     }
+
+    bool tooLong(string s) const { return s.len ? textLg(s) > xlg : false; }
 
 private:
 

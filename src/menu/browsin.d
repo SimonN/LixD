@@ -1,5 +1,8 @@
 module menu.browsin;
 
+import std.algorithm;
+import std.format;
+
 import basics.globals;
 import basics.user;
 import file.language;
@@ -13,6 +16,7 @@ class BrowserSingle : BrowserCalledFromMainMenu {
 private:
     bool _gotoEditor;
     TextButton _edit;
+    LabelTwo _by, _save;
 
 public:
     this()
@@ -28,7 +32,12 @@ public:
             assert (fileRecent !is null);
             _gotoEditor = true;
         };
-        addChild(_edit);
+
+        _by = new LabelTwo(new Geom(infoX, infoY, infoXl, 20),
+            Lang.browserInfoAuthor.transl);
+        _save = new LabelTwo(new Geom(infoX, infoY + 20, infoXl, 20),
+            Lang.browserInfoInitgoal.transl);
+        addChildren(_edit, _by, _save);
     }
 
     @property bool gotoEditor() const
@@ -43,7 +52,12 @@ protected:
     {
         assert (_edit);
         levelRecent  = fn is null ? null : new Level(fileRecent);
-        _edit.hidden = fn is null;
+        [_edit, _by, _save].each!(e => e.hidden = fn is null);
+        if (levelRecent) {
+            _by  .value = levelRecent.author;
+            _save.value = "%s/%s".format(levelRecent.required,
+                                         levelRecent.initial);
+        }
         previewLevel(levelRecent);
     }
 

@@ -12,6 +12,7 @@ public import gui.geometry;
 public import gui.element;
 public import gui.frame;
 public import gui.label;
+public import gui.labeltwo;
 public import gui.msgbox;
 public import gui.numpick;
 public import gui.options;

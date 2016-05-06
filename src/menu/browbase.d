@@ -39,6 +39,11 @@ public:
     enum  float pickerXl = 320;
     final float infoX()  const { return pickerXl + 40;       }
     final float infoXl() const { return xlg - pickerXl - 60; }
+    final float infoY()  const
+    {
+        assert (preview);
+        return preview.yg + preview.ylg + 20;
+    }
 
     // after calling this(), it's a good idea to call
     // highlight(file) with whatever is deemed the correct current file
