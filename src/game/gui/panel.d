@@ -108,7 +108,7 @@ this()
         new Geom(0, 0, 4 * skillXl, this.ylg - skillYl, From.BOTTOM_RIGHT),
         getInternal(basics.globals.fileImageGameNuke));
 
-    pause    .hotkey = keyPause;
+    pause    .hotkey = keyPause1;
     stateSave.hotkey = keyStateSave;
     stateLoad.hotkey = keyStateLoad;
     nukeMulti.hotkey = keyNuke;
@@ -223,7 +223,7 @@ protected override void
 calcSelf()
 {
     assert (!!pause && !!speedBack && !!speedAhead && !!speedFast);
-    if (pause.execute) {
+    if (pause.execute || keyPause2.keyTapped) {
         setSpeedTo(pause.on ? 1 : 0);
     }
     else if (speedBack.executeLeft

@@ -1,5 +1,6 @@
 module game.gui.gamewin;
 
+import std.algorithm;
 import std.typecons; // Rebindable
 import std.string; // package class
 
@@ -52,7 +53,8 @@ protected:
             b.hotkey = hk;
             addChild(b);
         }
-        oneBut(_resume,     Lang.winGameResume.transl,     keyPause);
+        oneBut(_resume,     Lang.winGameResume.transl,     min(keyPause1,
+                                                               keyPause2));
         oneBut(_saveReplay, Lang.winGameSaveReplay.transl, keyStateSave);
         oneBut(_restart,    Lang.winGameRestart.transl,    keyRestart);
         oneBut(_exitGame,   Lang.winGameMenu.transl,       keyGameExit);

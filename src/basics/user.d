@@ -23,6 +23,7 @@ import file.date;
 import file.io;
 import file.log; // when writing to disk fails
 import lix.enums;
+import hardware.keynames;
 
 /*  static this();
  *  void load();
@@ -115,7 +116,8 @@ int keyScroll          = ALLEGRO_KEY_PAD_MINUS;
 int keyPriorityInvert  = ALLEGRO_KEY_PAD_MINUS;
 int keySpawnintSlower  = ALLEGRO_KEY_F4;
 int keySpawnintFaster  = ALLEGRO_KEY_F5;
-int keyPause           = ALLEGRO_KEY_SPACE;
+int keyPause1          = ALLEGRO_KEY_SPACE;
+int keyPause2          = hardware.keynames.keyMMB;
 int keyFrameBackMany   = ALLEGRO_KEY_1;
 int keyFrameBackOne    = ALLEGRO_KEY_2;
 int keyFrameAheadOne   = ALLEGRO_KEY_3;
@@ -387,7 +389,8 @@ void load()
         else if (i.text1 == userKeyPriorityInvert) keyPriorityInvert = i.nr1;
         else if (i.text1 == userKeySpawnintSlower) keySpawnintSlower = i.nr1;
         else if (i.text1 == userKeySpawnintFaster) keySpawnintFaster = i.nr1;
-        else if (i.text1 == userKeyPause         ) keyPause          = i.nr1;
+        else if (i.text1 == userKeyPause1        ) keyPause1         = i.nr1;
+        else if (i.text1 == userKeyPause2        ) keyPause2         = i.nr1;
         else if (i.text1 == userKeyFrameBackMany ) keyFrameBackMany  = i.nr1;
         else if (i.text1 == userKeyFrameBackOne  ) keyFrameBackOne   = i.nr1;
         else if (i.text1 == userKeyFrameAheadOne ) keyFrameAheadOne  = i.nr1;
@@ -555,7 +558,8 @@ nothrow void save()
         fwr(IoLine.Hash(userKeyPriorityInvert, keyPriorityInvert));
         fwr(IoLine.Hash(userKeySpawnintSlower, keySpawnintSlower));
         fwr(IoLine.Hash(userKeySpawnintFaster, keySpawnintFaster));
-        fwr(IoLine.Hash(userKeyPause,          keyPause));
+        fwr(IoLine.Hash(userKeyPause1,         keyPause1));
+        fwr(IoLine.Hash(userKeyPause2,         keyPause2));
         fwr(IoLine.Hash(userKeyFrameBackMany,  keyFrameBackMany));
         fwr(IoLine.Hash(userKeyFrameBackOne,   keyFrameBackOne));
         fwr(IoLine.Hash(userKeyFrameAheadOne,  keyFrameAheadOne));

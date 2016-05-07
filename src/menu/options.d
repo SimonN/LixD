@@ -261,8 +261,10 @@ void populateGameKeys()
         fac.factory!HotkeyOption(Lang.optionKeyForceRight.transl, &keyForceRight),
     ];
     fac.y += fac.incrementY;
-    groups[OptionGroup.gameKeys] ~=
-        fac.factory!HotkeyOption(Lang.optionKeyPause.transl, &keyPause);
+    groups[OptionGroup.gameKeys] ~= [
+        fac.factory!HotkeyOption(Lang.optionKeyPause.transl, &keyPause1),
+        fac.factory!HotkeyOption(Lang.optionKeyPause.transl, &keyPause2),
+    ];
     fac.y += fac.incrementY;
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!HotkeyOption(Lang.optionKeyRestart.transl, &keyRestart),
