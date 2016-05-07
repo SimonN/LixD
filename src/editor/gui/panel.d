@@ -7,6 +7,7 @@ import basics.globals;
 import file.language;
 import graphic.internal;
 import gui;
+import hardware.keyset;
 
 class EditorPanel : Element {
 private:
@@ -22,7 +23,7 @@ public:
         makeButtons();
     }
 
-    void onExecute(Lang buttonID, int hotkey, void delegate() deg,
+    void onExecute(Lang buttonID, KeySet hotkey, void delegate() deg,
         Button.WhenToExecute wte = Button.WhenToExecute.whenMouseRelease
     ) {
         assert (buttonID >= Lang.editorButtonFileNew

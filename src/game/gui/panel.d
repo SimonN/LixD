@@ -13,6 +13,7 @@ import game.tribe;
 import graphic.internal;
 import gui;
 import hardware.keyboard; // we need a different behavior of skill button
+import hardware.keyset;
 import hardware.mouse;    // execution and skill button warning sound
 import hardware.sound;
 import lix.enums;
@@ -69,7 +70,7 @@ this()
     }
 
     void newControlButton(T)(ref T b, int x, int y, int frame,
-        in int keyLeft = 0, in int keyRight = 0)
+        in KeySet keyLeft = 0, in KeySet keyRight = 0)
         if (is(T : BitmapButton))
     {
         b = new T(new Geom((3 - x) * skillXl,
@@ -202,7 +203,7 @@ handleExecutingSkillButton(SkillButton skill)
         assert (skill.number == 0);
         // The button executes continually when the mouse button is held down
         // over it, but we should only play the warning sound on the click.
-        if (mouseClickLeft() || keyTapped(skill.hotkey))
+        if (mouseClickLeft() || skill.hotkey.keyTapped)
             hardware.sound.playLoud(Sound.PANEL_EMPTY);
     }
 }

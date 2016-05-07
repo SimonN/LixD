@@ -9,7 +9,6 @@ import basics.alleg5;
 import basics.globals; // nameOfTheGame
 import basics.user; // what windowed resolution does the user want
 import file.log;
-import gui;
 
 static import hardware.keyboard; // clear after changing resolution
 static import hardware.mouse; // center mouse after changing resolution
@@ -161,7 +160,6 @@ void setScreenMode(in Cmdargs cmdargs)
     queue = al_create_event_queue();
     al_register_event_source(queue, al_get_display_event_source(display));
     hardware.mouse.centerMouse();
-    gui.Geom.setScreenXYls(al_x, al_y);
 }
 
 

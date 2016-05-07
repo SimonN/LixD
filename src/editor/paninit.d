@@ -15,6 +15,7 @@ import editor.gui.visuals;
 import editor.select;
 import file.language;
 import gui;
+import hardware.keyset;
 
 package:
 
@@ -75,7 +76,7 @@ void makePanel(Editor editor)
         onExecute(Lang.editorButtonSelectDark, keyEditorDark, () {
             editor._selection.each!(sel => sel.toggleDark());
         });
-        onExecute(Lang.editorButtonMenuScroll, 0, () {
+        onExecute(Lang.editorButtonMenuScroll, KeySet(), () {
             editor._okCancelWindow = new VisualsWindow(editor._level);
             addFocus(editor._okCancelWindow);
             button(Lang.editorButtonMenuScroll).on = true;

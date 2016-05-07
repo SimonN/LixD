@@ -6,6 +6,7 @@ import file.language;
 import game.replay;
 import gui;
 import gui.picker;
+import hardware.keyset;
 import level.level;
 import menu.browmain;
 
@@ -19,7 +20,7 @@ class BrowserReplay : BrowserCalledFromMainMenu {
             basics.globals.dirReplays, PickerConfig!ReplayTiler());
         scope (success)
             super.highlight(basics.user.replayLastLevel);
-        TextButton newInfo(float x, float y, string caption, int hotkey)
+        TextButton newInfo(float x, float y, string caption, KeySet hotkey)
         {
             auto b = new TextButton(new Geom(infoX + x*infoXl/2, y,
                 infoXl/2, 40, From.BOTTOM_LEFT));

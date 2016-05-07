@@ -227,9 +227,8 @@ calcScrolling()
         if (hardware.mouse.mouseX() == 0)     cameraX = _cameraX - scrd;
     }
 
-    scrollingStarts = hardware.keyboard.keyHeld(basics.user.keyScroll)
-                    && ! scrollingContinues;
-    scrollingContinues = hardware.keyboard.keyHeld(basics.user.keyScroll);
+    scrollingStarts    = basics.user.keyScroll.keyHeld && ! scrollingContinues;
+    scrollingContinues = basics.user.keyScroll.keyHeld;
 
     if (scrollingStarts) {
         // remember old position of the mouse

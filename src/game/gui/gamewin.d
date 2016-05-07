@@ -9,23 +9,9 @@ import file.filename;
 import file.language;
 import game.replay;
 import gui;
-import hardware.keyboard; // package class
-import hardware.keynames;
+import hardware.keyset;
 import hardware.sound;
 import level.level;
-
-// This is a bit of a hackjob. Maybe button hotkeys should be implemented
-// with the decorator pattern. Then this becomes two decorators stacked.
-package class TextButtonMenuOkayIsSecondHotkey : TextButton {
-    this(Geom g, string caption = "") { super(g, caption); }
-    override @property bool execute() const {
-        return super.execute || keyMenuOkay.keyTapped;
-    }
-    protected override string hotkeyString() const {
-        return "%s/%s".format(hotkeyNiceShort(keyMenuOkay),
-                              hotkeyNiceShort(super.hotkey));
-    }
-}
 
 abstract class GameWindow : Window {
 
@@ -45,16 +31,16 @@ protected:
 
     final void captionSuperElements()
     {
-        void oneBut(ref TextButton b, in string cap, in int hk)
+        void oneBut(ref TextButton b, in string cap, in KeySet hk)
         {
             if (! b)
                 return;
             b.text   = cap;
-            b.hotkey = hk;
+            b.hotkey = KeySet(b.hotkey, hk);
             addChild(b);
         }
-        oneBut(_resume,     Lang.winGameResume.transl,     min(keyPause1,
-                                                               keyPause2));
+        oneBut(_resume,     Lang.winGameResume.transl, KeySet(keyPause1,
+                                                              keyPause2));
         oneBut(_saveReplay, Lang.winGameSaveReplay.transl, keyStateSave);
         oneBut(_restart,    Lang.winGameRestart.transl,    keyRestart);
         oneBut(_exitGame,   Lang.winGameMenu.transl,       keyGameExit);

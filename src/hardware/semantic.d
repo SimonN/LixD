@@ -4,16 +4,15 @@ module hardware.semantic;
 // according to user options.
 
 import basics.user;
-import hardware.keyboard;
 
 bool forcingLeft()
 {
-    return   keyHeld(basics.user.keyForceLeft)
-        && ! keyHeld(basics.user.keyForceRight);
+    return   basics.user.keyForceLeft.keyHeld
+        && ! basics.user.keyForceRight.keyHeld;
 }
 
 bool forcingRight()
 {
-    return ! keyHeld(basics.user.keyForceLeft)
-        &&   keyHeld(basics.user.keyForceRight);
+    return ! basics.user.keyForceLeft.keyHeld
+        &&   basics.user.keyForceRight.keyHeld;
 }

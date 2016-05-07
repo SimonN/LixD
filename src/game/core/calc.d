@@ -10,7 +10,7 @@ import game.core.active;
 import game.core.passive;
 import game.core.speed;
 import gui;
-import hardware.keyboard;
+import hardware.keyset;
 
 package void
 implGameCalc(Game game)
@@ -19,7 +19,7 @@ implGameCalc(Game game)
     if (game.modalWindow) {
         game.calcModalWindow;
     }
-    else if (keyTapped(keyGameExit)) {
+    else if (keyGameExit.keyTapped) {
         game.createModalWindow;
     }
     else {

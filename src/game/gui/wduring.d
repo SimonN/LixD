@@ -7,6 +7,7 @@ module game.gui.wduring;
  *  class WindowDuringNetwork
  */
 
+import basics.user; // keyMenuOkay
 import file.filename;
 import file.language;
 import game.gui.gamewin;
@@ -15,21 +16,16 @@ import game.tribe;
 import graphic.color;
 import graphic.textout;
 import gui;
+import hardware.keyset;
 import level.level;
 
 private enum butXl  = 150;
 private enum butYsp =  10;
 private enum butYl  =  20;
 
-private auto
-addButton(
-    ref int y,
-    in float xl = butXl,
-    in bool onKeyMenuOkay = false
-) {
-    auto g = new Geom(0, y, xl, butYl, From.TOP);
-    TextButton b = onKeyMenuOkay ? new TextButtonMenuOkayIsSecondHotkey(g)
-                                 : new TextButton(g);
+private auto addButton(ref int y, in float xl = butXl)
+{
+    TextButton b = new TextButton(new Geom(0, y, xl, butYl, From.TOP));
     y += butYl + butYsp;
     return b;
 }
@@ -41,8 +37,6 @@ myGeom(in int numButtons, in int totalXl = butXl + 40, in int plusYl = 0)
         60 + (numButtons - 1) * butYsp +  numButtons * butYl + plusYl,
         From.CENTER);
 }
-
-
 
 class WindowDuringOffline : GameWindow {
 
@@ -93,9 +87,13 @@ class WindowEndSingle : GameWindow {
         super(myGeom(3, 300, extraYl), level.name);
         int y = 40 + extraYl;
         immutable bool won = tribe.lixSaved >= tribe.lixRequired;
-        _restart    = addButton(y, xlg - 40, ! won);
+        _restart = addButton(y, xlg - 40);
+        if (! won)
+            _restart.hotkey = keyMenuOkay;
         _saveReplay = addButton(y, xlg - 40);
-        _exitGame   = addButton(y, xlg - 40, won);
+        _exitGame   = addButton(y, xlg - 40);
+        if (won)
+            _exitGame.hotkey = keyMenuOkay;
         super.captionSuperElements();
         super.setReplayAndLevel(replay, levelFn, level);
 

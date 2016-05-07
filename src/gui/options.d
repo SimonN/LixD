@@ -28,7 +28,8 @@ import file.search;    // for LanguageOption
 import graphic.internal;
 import gui;
 import gui.picker;
-import hardware.mouse; // bool option: click label
+import hardware.keyset;
+import hardware.mouse; // allow clicks on label
 import lix.enums;
 
 enum spaceGuiTextX =  10f;
@@ -145,10 +146,10 @@ public:
 class HotkeyOption : Option {
 private:
     KeyButton _keyb;
-    int*      _target;
+    KeySet*   _target;
 
 public:
-    this(Geom g, string cap, int* t)
+    this(Geom g, string cap, KeySet* t)
     {
         assert (t);
         _keyb = new KeyButton(new Geom(0, 0, keyButtonXl, 20));
@@ -158,17 +159,17 @@ public:
         _target = t;
     }
 
-    override void loadValue() { _keyb.scancode = *_target; }
-    override void saveValue() { *_target = _keyb.scancode; }
+    override void loadValue() { _keyb.keySet = *_target; }
+    override void saveValue() { *_target = _keyb.keySet; }
 }
 
 class SkillHotkeyOption : Option
 {
     private CutbitElement _cb;
     private KeyButton _keyb;
-    private int* _target;
+    private KeySet* _target;
 
-    this(Geom g, Ac ac, int* t)
+    this(Geom g, Ac ac, KeySet* t)
     {
         super(g);
         assert (t);
@@ -180,8 +181,8 @@ class SkillHotkeyOption : Option
         _target = t;
     }
 
-    override void loadValue() { _keyb.scancode = *_target; }
-    override void saveValue() { *_target = _keyb.scancode; }
+    override void loadValue() { _keyb.keySet = *_target; }
+    override void saveValue() { *_target = _keyb.keySet; }
 }
 
 

@@ -11,12 +11,10 @@ import basics.globals; // bitmap file for the spawnint button, doubleclick spd
 import graphic.cutbit;
 import graphic.internal;
 import gui;
-import hardware.keyboard;
-import hardware.keynames;
+import hardware.keyset;
 import hardware.mouse;
 
 class TwoTasksButton : BitmapButton {
-
     this(Geom g, const(Cutbit) cb)
     {
         super(g, cb);
@@ -30,59 +28,44 @@ class TwoTasksButton : BitmapButton {
     @property bool executeLeft()  const { return _executeLeft;  }
     @property bool executeRight() const { return _executeRight; }
 
-    @property int hotkeyRight() const { return _hotkeyRight;     }
-    @property int hotkeyRight(int i)  { return _hotkeyRight = i; }
-
-    // forward/wrap Button methods for convenience
-    @property int  hotkeyLeft() const { return hotkey;     }
-    @property int  hotkeyLeft(int i)  { return hotkey = i; }
+    @property const(KeySet) hotkeyRight() const { return _hotkeyRight; }
+    @property const(KeySet) hotkeyRight(in KeySet ks) {
+        reqDraw();
+        return _hotkeyRight = ks;
+    }
 
     override @property bool execute() const { return _executeLeft
                                                   || _executeRight; }
 private:
-
     bool _executeLeft;
     bool _executeRight;
 
-    int _hotkeyRight;
+    KeySet _hotkeyRight;
 
 protected:
-
     override void calcSelf()
     {
         super.calcSelf();
         _executeLeft  = false;
         _executeRight = false;
-
         if (hidden)
             return;
-
         _executeLeft  = super.execute;
-        _executeRight =
-            isMouseHere && (mouseClickRight() || mouseHeldLongRight())
-            || keyTappedAllowingRepeats(_hotkeyRight);
-
-        down = keyHeld(hotkey) || keyHeld(_hotkeyRight)
+        _executeRight = isMouseHere
+            && (mouseClickRight() || mouseHeldLongRight())
+            || _hotkeyRight.keyTappedAllowingRepeats;
+        down = hotkey.keyHeld || _hotkeyRight.keyHeld
             || (isMouseHere && (mouseHeldLeft || mouseHeldRight));
     }
-    // end calcSelf
 
     override string hotkeyString() const
     {
-        if (! hotkey && ! hotkeyRight) return null;
-        if (! hotkeyRight)             return hotkeyNiceShort(hotkey);
-        if (! hotkey)                  return hotkeyNiceShort(hotkeyRight);
-        return hotkeyNiceShort(hotkey) ~ "/" ~ hotkeyNiceShort(hotkeyRight);
+        return KeySet(hotkey, _hotkeyRight).nameShort;
     }
 }
-// end class TwoTasksButton
-
-
 
 class SpawnIntervalButton : TwoTasksButton {
-
 public:
-
     this(Geom g)
     {
         super(g, getInternal(basics.globals.fileImageGamePanel2));
@@ -104,9 +87,6 @@ public:
     }
 
 private:
-
     int   _spawnint;
     Label _label;
-
 }
-// end class SpawnIntervalButton

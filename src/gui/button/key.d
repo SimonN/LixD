@@ -4,23 +4,26 @@ import basics.alleg5; // timerTicks
 import basics.globals; // ticksForDoubleClick
 import gui;
 import hardware.keyboard;
-import hardware.keynames;
+import hardware.keyset;
 import hardware.mouse;
 
 class KeyButton : TextButton {
+private:
+    KeySet _keySet;
 
-    this(Geom g, in int sc = 0)
+public:
+    this(Geom g, in KeySet set = KeySet())
     {
         super(g);
-        scancode = sc;
+        _keySet = KeySet(set);
     }
 
-    @property int scancode() const { return _scancode; }
-    @property int scancode(in int sc)
+    @property const(KeySet) keySet() const { return _keySet; }
+    @property const(KeySet) keySet(in KeySet sc)
     {
-        if (sc == _scancode)
+        if (sc == _keySet)
             return sc;
-        _scancode = sc;
+        _keySet = KeySet(sc);
         formatScancode();
         return sc;
     }
@@ -36,24 +39,10 @@ class KeyButton : TextButton {
         return b;
     }
 
-private:
-
-    private int _scancode;
-
-    void formatScancode()
-    {
-        reqDraw();
-        text = (on && timerTicks % 30 < 15)
-            ? "\ufffd" // replacement char, question mark in a box
-            : hotkeyNiceLong(_scancode);
-    }
-
 protected:
-
     override void calcSelf()
     {
         super.calcSelf();
-
         if (! on)
             on = execute;
         else {
@@ -61,10 +50,19 @@ protected:
                 // Only LMB cancels this. RMB and MMB are assignable hotkeys.
                 on = false;
             else if (scancodeTapped) {
-                _scancode = scancodeTapped;
+                _keySet = KeySet(scancodeTapped);
                 on = false;
             }
             formatScancode();
         }
+    }
+
+private:
+    void formatScancode()
+    {
+        reqDraw();
+        text = (on && timerTicks % 30 < 15)
+            ? "\ufffd" // replacement char, question mark in a box
+            : _keySet.nameLong;
     }
 }

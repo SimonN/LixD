@@ -15,12 +15,12 @@ import graphic.color;
 import graphic.textout; // drawing the hotkey
 import gui;
 import hardware.keyboard;
-import hardware.keynames;
+import hardware.keyset;
 import hardware.mouse;
 
 class Button : Element {
 private:
-    int  _hotkey; // default is 0, which is not a key.
+    KeySet _hotkey;
     bool _execute;
     bool _down;
     bool _on;
@@ -63,7 +63,7 @@ public:
 protected:
     // override these if needed
     void   drawOntoButton()     { }
-    string hotkeyString() const { return hotkeyNiceShort(hotkey); }
+    string hotkeyString() const { return _hotkey.nameShort; }
 
     override void
     calcSelf()
