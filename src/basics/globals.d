@@ -79,8 +79,7 @@ immutable levelSeconds                = "SECONDS";
 immutable levelInitial                = "INITIAL";
 immutable levelInitialLegacy          = "LEMMINGS"; // backwards compatibility
 immutable levelRequired               = "REQUIRED";
-immutable levelSpawnintSlow           = "SPAWN_INTERVAL";
-immutable levelSpawnintFast           = "SPAWN_INTERVAL_FAST";
+immutable levelSpawnint               = "SPAWN_INTERVAL";
 immutable levelRateLegacy             = "RATE"; // backwards compatibility
 
 // keys for loading objdef files, customization of interactive objects
@@ -115,9 +114,6 @@ immutable replayLevelFilename         = "FILENAME";
 immutable replayFriend                = "FRIEND";
 immutable replayPlayer                = "PLAYER";
 immutable replayPermu                 = "PERMUTATION";
-immutable replayUpdate                = "UPDATE";
-immutable replaySpawnint              = "SPAWNINT";
-immutable replaySkill                 = "SKILL";
 immutable replayNuke                  = "NUKE";
 immutable replayAssignAny             = "ASSIGN";
 immutable replayAssignLeft            = "ASSIGN_LEFT";

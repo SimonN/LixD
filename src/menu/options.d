@@ -271,11 +271,7 @@ void populateGameKeys()
 
     fac = facKeys!1;
     fac.y += 80;
-    groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(Lang.optionKeySpawnintSlower.transl, &keySpawnintSlower),
-        fac.factory!HotkeyOption(Lang.optionKeySpawnintFaster.transl, &keySpawnintFaster),
-    ];
-    fac.y += fac.incrementY;
+    fac.y += fac.incrementY * 3;
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!HotkeyOption(Lang.optionKeyFrameBackMany.transl, &keyFrameBackMany),
         fac.factory!HotkeyOption(Lang.optionKeyFrameBackOne.transl, &keyFrameBackOne),

@@ -102,11 +102,10 @@ auto implLoadFromFile(Replay replay, Filename fn) { with (replay)
             part2 = part2[1 .. $];
 
         ReplayData d;
-        d.update       = i.nr1;
-        d.player       = i.nr2 & 0xFF;
+        d.update     = i.nr1;
+        d.player     = i.nr2 & 0xFF;
         d.toWhichLix = i.nr3;
-        d.action = part1 == replaySpawnint    ? RepAc.SPAWNINT
-                 : part1 == replayAssignAny   ? RepAc.ASSIGN
+        d.action = part1 == replayAssignAny   ? RepAc.ASSIGN
                  : part1 == replayAssignLeft  ? RepAc.ASSIGN_LEFT
                  : part1 == replayAssignRight ? RepAc.ASSIGN_RIGHT
                  : part1 == replayNuke        ? RepAc.NUKE
@@ -152,8 +151,7 @@ void saveToStdioFile(
         file.writeln();
     foreach (d; _data) {
         string word
-            = d.action == RepAc.SPAWNINT     ? replaySpawnint
-            : d.action == RepAc.NUKE         ? replayNuke
+            = d.action == RepAc.NUKE         ? replayNuke
             : d.action == RepAc.ASSIGN       ? replayAssignAny
             : d.action == RepAc.ASSIGN_LEFT  ? replayAssignLeft
             : d.action == RepAc.ASSIGN_RIGHT ? replayAssignRight : "";

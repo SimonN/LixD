@@ -61,8 +61,7 @@ public:
     int  seconds;
     int  initial;
     int  required;
-    int  spawnintSlow;
-    int  spawnintFast;
+    int  spawnint;
 
     bool useManualScreenStart;
     Point manualScreenStartCenter;
@@ -90,8 +89,7 @@ public:
         topology = new Topology(640, 400); // one screen in C++ Lix
         initial      =  30;
         required     =  20;
-        spawnintSlow =  32;
-        spawnintFast =   4;
+        spawnint     =  32;
         ploder       = Ac.exploder;
     }
 
@@ -171,8 +169,7 @@ public:
             || this.seconds      != rhs.seconds
             || this.initial      != rhs.initial
             || this.required     != rhs.required
-            || this.spawnintSlow != rhs.spawnintSlow
-            || this.spawnintFast != rhs.spawnintFast
+            || this.spawnint     != rhs.spawnint
             || this.ploder       != rhs.ploder
         ) {
             return false;

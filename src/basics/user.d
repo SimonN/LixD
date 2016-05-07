@@ -110,8 +110,6 @@ KeySet keyForceLeft       = KeySet(ALLEGRO_KEY_S);
 KeySet keyForceRight      = KeySet(ALLEGRO_KEY_F);
 KeySet keyScroll          = KeySet(hardware.keynames.keyRMB);
 KeySet keyPriorityInvert  = KeySet(hardware.keynames.keyRMB);
-KeySet keySpawnintSlower  = KeySet(ALLEGRO_KEY_F4);
-KeySet keySpawnintFaster  = KeySet(ALLEGRO_KEY_F5);
 KeySet keyPause1          = KeySet(ALLEGRO_KEY_SPACE);
 KeySet keyPause2          = KeySet(hardware.keynames.keyMMB);
 KeySet keyFrameBackMany   = KeySet(ALLEGRO_KEY_1);
@@ -377,8 +375,6 @@ void load()
         else if (i.text1 == userKeyForceRight    ) keyForceRight     = KeySet(i.nr1);
         else if (i.text1 == userKeyScroll        ) keyScroll         = KeySet(i.nr1);
         else if (i.text1 == userKeyPriorityInvert) keyPriorityInvert = KeySet(i.nr1);
-        else if (i.text1 == userKeySpawnintSlower) keySpawnintSlower = KeySet(i.nr1);
-        else if (i.text1 == userKeySpawnintFaster) keySpawnintFaster = KeySet(i.nr1);
         else if (i.text1 == userKeyPause1        ) keyPause1         = KeySet(i.nr1);
         else if (i.text1 == userKeyPause2        ) keyPause2         = KeySet(i.nr1);
         else if (i.text1 == userKeyFrameBackMany ) keyFrameBackMany  = KeySet(i.nr1);
@@ -546,8 +542,6 @@ nothrow void save()
         fwrKey(userKeyForceRight,     keyForceRight);
         fwrKey(userKeyScroll,         keyScroll);
         fwrKey(userKeyPriorityInvert, keyPriorityInvert);
-        fwrKey(userKeySpawnintSlower, keySpawnintSlower);
-        fwrKey(userKeySpawnintFaster, keySpawnintFaster);
         fwrKey(userKeyPause1,         keyPause1);
         fwrKey(userKeyPause2,         keyPause2);
         fwrKey(userKeyFrameBackMany,  keyFrameBackMany);

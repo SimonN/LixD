@@ -127,8 +127,7 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
         else if (text1 == glo.levelSeconds      ) seconds     = nr1;
         else if (text1 == glo.levelInitial      ) initial     = nr1;
         else if (text1 == glo.levelRequired     ) required    = nr1;
-        else if (text1 == glo.levelSpawnintSlow) spawnintSlow = nr1;
-        else if (text1 == glo.levelSpawnintFast) spawnintFast = nr1;
+        else if (text1 == glo.levelSpawnint     ) spawnint    = nr1;
 
         else if (text1 == glo.levelStartCornerX) {
             useManualScreenStart = true;
@@ -141,9 +140,7 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
 
         // legacy support
         else if (text1 == glo.levelInitialLegacy) initial = nr1;
-        else if (text1 == glo.levelRateLegacy) {
-            spawnintSlow = 4 + (99 - nr1) / 2;
-        }
+        else if (text1 == glo.levelRateLegacy) spawnint = 4 + (99 - nr1) / 2;
 
         // If nothing matched yet, look up the skill name.
         // We can't add skills if we've reached the globally allowed maximum.
@@ -191,9 +188,7 @@ private void load_level_finalize(Level level)
         level.resize(topology.xl, topology.yl);
         initial  = clamp(initial,  1, 999);
         required = clamp(required, 1, initial);
-        spawnintSlow = clamp(spawnintSlow, Level.spawnintMin,
-                                           Level.spawnintMax);
-        spawnintFast = clamp(spawnintFast, Level.spawnintMin, spawnintSlow);
+        spawnint = clamp(spawnint, Level.spawnintMin, Level.spawnintMax);
         bgRed   = clamp(bgRed,   0, 255);
         bgGreen = clamp(bgGreen, 0, 255);
         bgBlue  = clamp(bgBlue,  0, 255);
@@ -292,11 +287,10 @@ public void saveToFile(const(Level) l, std.stdio.File file)
     }
 
     file.writeln();
-    file.writeln(IoLine.Hash(glo.levelSeconds,      l.seconds ));
-    file.writeln(IoLine.Hash(glo.levelInitial,      l.initial ));
-    file.writeln(IoLine.Hash(glo.levelRequired,     l.required));
-    file.writeln(IoLine.Hash(glo.levelSpawnintSlow, l.spawnintSlow));
-    file.writeln(IoLine.Hash(glo.levelSpawnintFast, l.spawnintFast));
+    file.writeln(IoLine.Hash(glo.levelSeconds,  l.seconds ));
+    file.writeln(IoLine.Hash(glo.levelInitial,  l.initial ));
+    file.writeln(IoLine.Hash(glo.levelRequired, l.required));
+    file.writeln(IoLine.Hash(glo.levelSpawnint, l.spawnint));
 
     file.writeln();
     foreach (Ac sk, const int nr; l.skills.byKeyValue)

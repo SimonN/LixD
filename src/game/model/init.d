@@ -55,9 +55,7 @@ void preparePlayers(GameState state, in Level level)
         tr.lixInitial   = level.initial;
         tr.lixRequired  = level.required;
         tr.lixHatch     = level.initial;
-        tr.spawnintSlow = level.spawnintSlow;
-        tr.spawnintFast = level.spawnintFast;
-        tr.spawnint     = level.spawnintSlow;
+        tr.spawnint     = level.spawnint;
         tr.skills       = level.skills;
         tr.nukeSkill    = level.ploder;
     }
