@@ -201,6 +201,13 @@ zoom(in int z)
 void
 calcScrolling()
 {
+    // Update zoom according to input directly. The on-screen buttons to
+    // zoom the map send extra calls to zoom().
+    if (basics.user.keyZoomIn.keyTapped)
+        zoom = min(_zoom * 2, 4); // call the property function, no direct set
+    else if (basics.user.keyZoomOut.keyTapped)
+        zoom = max(_zoom / 2, 1);
+
     if (! scrollable) {
         scrollingStarts = false;
         scrollingContinues = false;

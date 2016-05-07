@@ -346,7 +346,8 @@ $optionKeySpeedTurbo         Turbo speed
 $optionKeyRestart             Restart
 $optionKeyStateLoad          Load state
 $optionKeyStateSave          Save state
-$optionKeyZoom                Zoom
+$optionKeyZoomIn             Zoom +
+$optionKeyZoomOut            Zoom −
 $optionKeyChat                Chat
 $optionKeySpecTribe          Cycle teams
 $optionKeyNuke                Nuke
@@ -380,8 +381,6 @@ $optionEdMirror               Mirror
 $optionEdRotate               Rotate
 $optionEdDark                 Draw black
 $optionEdNoow                 No overwrite
-$optionEdZoom                 Zoom
-$optionEdHelp                 Show help
 $optionEdMenuSize            Size menu
 $optionEdMenuVars            General menu
 $optionEdMenuSkills          Skills menu

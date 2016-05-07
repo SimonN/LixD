@@ -333,7 +333,8 @@ $optionKeySpeedTurbo        Turbo
 $optionKeyRestart            Neustart
 $optionKeyStateLoad         Stand laden
 $optionKeyStateSave         Stand speichern
-$optionKeyZoom               Zoom
+$optionKeyZoomIn             Zoom +
+$optionKeyZoomOut            Zoom −
 $optionKeyChat               Chat
 $optionKeySpecTribe         Team zusehen
 $optionKeyNuke               Atombombe
@@ -367,8 +368,6 @@ $optionEdMirror              Spiegeln
 $optionEdRotate              Drehen
 $optionEdDark                Schwarz
 $optionEdNoow                Ni. überschr.
-$optionEdZoom                Zoom
-$optionEdHelp                Hilfe zeigen
 $optionEdMenuSize           Levelgröße
 $optionEdMenuVars           Allg. Menü
 $optionEdMenuSkills         Fähigkeiten

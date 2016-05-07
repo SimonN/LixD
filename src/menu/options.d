@@ -259,19 +259,24 @@ void populateGameKeys()
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(Lang.optionKeyPause.transl, &keyPause1),
-        fac.factory!HotkeyOption(Lang.optionKeyPause.transl, &keyPause2),
+        fac.factory!HotkeyOption(Lang.optionKeyPriorityInvert.transl, &keyPriorityInvert),
     ];
     fac.y += fac.incrementY;
+    groups[OptionGroup.gameKeys] ~=
+        fac.factory!HotkeyOption(Lang.optionKeyRestart.transl, &keyRestart);
+    fac.y += fac.incrementY;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(Lang.optionKeyRestart.transl, &keyRestart),
         fac.factory!HotkeyOption(Lang.optionKeyStateLoad.transl, &keyStateLoad),
         fac.factory!HotkeyOption(Lang.optionKeyStateSave.transl, &keyStateSave),
     ];
 
     fac = facKeys!1;
     fac.y += 80;
-    fac.y += fac.incrementY * 3;
+    groups[OptionGroup.gameKeys] ~= [
+        fac.factory!HotkeyOption(Lang.optionKeyPause.transl, &keyPause1),
+        fac.factory!HotkeyOption(Lang.optionKeyPause.transl, &keyPause2),
+    ];
+    fac.y += fac.incrementY;
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!HotkeyOption(Lang.optionKeyFrameBackMany.transl, &keyFrameBackMany),
         fac.factory!HotkeyOption(Lang.optionKeyFrameBackOne.transl, &keyFrameBackOne),
@@ -289,13 +294,10 @@ void populateGameKeys()
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(Lang.optionKeyZoom.transl, &keyZoom),
+        fac.factory!HotkeyOption(Lang.optionKeyZoomIn.transl,  &keyZoomIn),
+        fac.factory!HotkeyOption(Lang.optionKeyZoomOut.transl, &keyZoomOut),
         fac.factory!HotkeyOption(Lang.optionKeyChat.transl, &keyChat),
         fac.factory!HotkeyOption(Lang.optionKeySpecTribe.transl, &keySpecTribe),
-    ];
-    fac.y += fac.incrementY;
-    groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(Lang.optionKeyPriorityInvert.transl, &keyPriorityInvert),
     ];
 }
 
@@ -313,10 +315,8 @@ void populateEditorKeys()
         fac.factory!HotkeyOption(Lang.optionEdCopy.transl, &keyEditorCopy),
         fac.factory!HotkeyOption(Lang.optionEdDelete.transl, &keyEditorDelete),
         fac.factory!HotkeyOption(Lang.optionEdGrid.transl, &keyEditorGrid),
-        fac.factory!HotkeyOption(Lang.optionEdZoom.transl, &keyEditorZoom),
-        fac.factory!HotkeyOption(Lang.optionEdHelp.transl, &keyEditorHelp),
     ];
-    fac.y += fac.incrementY;
+    fac.y += fac.incrementY * 3;
     fac.xl = this.xlg - 40;
     auto cfg = NumPickConfig();
     cfg.max = 96;

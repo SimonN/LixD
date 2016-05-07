@@ -84,7 +84,7 @@ this()
         addChild(b);
     }
 
-    newControlButton(zoom,       0, 0,  2, keyZoom);
+    newControlButton(zoom,       0, 0,  2, KeySet());
     newControlButton(speedBack,  0, 1, 10, keyFrameBackOne, keyFrameBackMany);
     newControlButton(speedAhead, 1, 1,  3, keyFrameAheadOne,keyFrameAheadMany);
     newControlButton(speedFast,  2, 1, frameFast, keySpeedFast, keySpeedTurbo);
