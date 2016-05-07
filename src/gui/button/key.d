@@ -1,9 +1,10 @@
 module gui.button.key;
 
-import basics.alleg5; // hotkeyNiceLong
+import basics.alleg5; // timerTicks
 import basics.globals; // ticksForDoubleClick
 import gui;
 import hardware.keyboard;
+import hardware.keynames;
 import hardware.mouse;
 
 class KeyButton : TextButton {
@@ -56,7 +57,8 @@ protected:
         if (! on)
             on = execute;
         else {
-            if (mouseClickLeft || mouseClickMiddle || mouseClickRight)
+            if (mouseClickLeft)
+                // Only LMB cancels this. RMB and MMB are assignable hotkeys.
                 on = false;
             else if (scancodeTapped) {
                 _scancode = scancodeTapped;

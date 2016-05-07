@@ -3,13 +3,13 @@ module game.gui.gamewin;
 import std.typecons; // Rebindable
 import std.string; // package class
 
-import basics.alleg5; // package class, hotkeyNiceShort
 import basics.user; // hotkeys
 import file.filename;
 import file.language;
 import game.replay;
 import gui;
 import hardware.keyboard; // package class
+import hardware.keynames;
 import hardware.sound;
 import level.level;
 

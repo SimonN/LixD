@@ -7,12 +7,12 @@ module gui.button.twotask;
  * Don't execute continuously on LMB hold after a while.
  */
 
-import basics.alleg5; // hotkeyNiceShort
 import basics.globals; // bitmap file for the spawnint button, doubleclick spd
 import graphic.cutbit;
 import graphic.internal;
 import gui;
 import hardware.keyboard;
+import hardware.keynames;
 import hardware.mouse;
 
 class TwoTasksButton : BitmapButton {

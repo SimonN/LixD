@@ -215,14 +215,10 @@ void calc()
 }
 // end void update()
 
-
-
 void centerMouse()
 {
     _centerMouseAtNextUpdate = true;
 }
-
-
 
 void freezeMouseX()
 {

@@ -123,8 +123,8 @@ calc()
     hardware.mousecur.mouseCursor.yf = 0;
 
     hardware.display .calc();
-    hardware.keyboard.calc();
     hardware.mouse   .calc();
+    hardware.keyboard.calcCallThisAfterMouseCalc();
     gui              .calc();
 
     exit = exit

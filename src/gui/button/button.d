@@ -9,13 +9,13 @@ module gui.button.button;
 
 import std.conv;
 
-import basics.alleg5; // keyboard enum
 import basics.user; // hotkey display option
 
 import graphic.color;
 import graphic.textout; // drawing the hotkey
 import gui;
 import hardware.keyboard;
+import hardware.keynames;
 import hardware.mouse;
 
 class Button : Element {

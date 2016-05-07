@@ -1,9 +1,17 @@
 module hardware.keyboard;
 
+/* Important for the main loop:
+ * Update mouse first, then keyboard. During updating the keyboard, we read
+ * the keyboard by Allegro 5, and also the mouse by hardware.mouse.
+ * Mouse buttons may be mapped as hotkeys.
+ */
+
 import std.array;
 import std.utf;
 
 import basics.alleg5;
+import hardware.keynames;
+import hardware.mouse;
 
 static import basics.globals;
 
@@ -36,10 +44,7 @@ bool keyTappedAllowingRepeats(int alkey)
 
 void clearKeyBufferAfterAltTab() { _hold[] = 0; }
 
-
-
 private:
-
     ALLEGRO_EVENT_QUEUE* _queue;
 
     bool _backspace;
@@ -47,9 +52,9 @@ private:
     bool _shift; // holding at least one of the two Shift?
     bool _alt;   // holding at least one of the two Alt that I consider equal?
 
-    bool[ALLEGRO_KEY_MAX] _once;
-    int [ALLEGRO_KEY_MAX] _hold;
-    bool[ALLEGRO_KEY_MAX] _rlsd;
+    bool[hardwareKeyboardArrLen] _once;
+    int [hardwareKeyboardArrLen] _hold;
+    bool[hardwareKeyboardArrLen] _rlsd;
 
     string _bufferUTF8;
 
@@ -65,8 +70,6 @@ void initialize()
     al_register_event_source(_queue, al_get_keyboard_event_source());
 }
 
-
-
 void deinitialize()
 {
     if (_queue) {
@@ -77,16 +80,21 @@ void deinitialize()
     }
 }
 
-
-
-void calc()
+void calcCallThisAfterMouseCalc()
 {
-    // zero both arrays
     _once[]     = false;
     _rlsd[]     = false;
     _bufferUTF8 = null;
     _backspace  = false;
 
+    onceRlsdFromAllegro();
+    onceRlsdFromMouse();
+    updateOtherArrays();
+    mergeSomeKeys();
+}
+
+private void onceRlsdFromAllegro()
+{
     ALLEGRO_EVENT event;
     while(al_get_next_event(_queue, &event))
     {
@@ -110,12 +118,33 @@ void calc()
             }
         }
     }
+}
+
+private void onceRlsdFromMouse()
+{
+    _once[keyMMB]       = mouseClickMiddle;
+    _once[keyRMB]       = mouseClickRight;
+    _once[keyWheelUp]   = mouseWheelNotches < 0;
+    _once[keyWheelDown] = mouseWheelNotches > 0;
+
+    _rlsd[keyMMB]       = mouseReleaseMiddle > 0;
+    _rlsd[keyRMB]       = mouseReleaseRight  > 0;
+    _rlsd[keyWheelUp]   = mouseWheelNotches == 0;
+    _rlsd[keyWheelDown] = mouseWheelNotches == 0;
+}
+
+private void updateOtherArrays()
+{
     for (int i = 0; i < _hold.length; ++i) {
         // when the key is still held from last time, hold[i] > 0 right now
         if      (_rlsd[i])     _hold[i] = 0;
         else if (_once[i])     _hold[i] = 1;
         else if (_hold[i] > 0) _hold[i] += 1;
     }
+}
+
+private void mergeSomeKeys()
+{
     _ctrl  = _hold[ALLEGRO_KEY_LCTRL]  || _hold[ALLEGRO_KEY_RCTRL];
     _shift = _hold[ALLEGRO_KEY_LSHIFT] || _hold[ALLEGRO_KEY_RSHIFT];
     _alt   = _hold[ALLEGRO_KEY_ALT]    || _hold[ALLEGRO_KEY_ALTGR];

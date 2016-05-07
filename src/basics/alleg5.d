@@ -1,10 +1,5 @@
 module basics.alleg5;
 
-import std.conv;
-import std.string;
-import std.uni;
-import std.utf;
-
 import basics.globals;
 import hardware.tharsis;
 
@@ -165,34 +160,6 @@ struct LockTemplate(alias flags)
     }
     @disable this();
     @disable this(this);
-}
-
-// ############################################################################
-
-string hotkeyNiceBrackets(in int hotkey)
-{
-    if (hotkey <= 0 || ! al_is_keyboard_installed())
-        return null;
-    return "[" ~ hotkeyNiceShort(hotkey) ~ "]";
-}
-
-string hotkeyNiceShort(in int hotkey)
-{
-    string s = hotkeyNiceLong(hotkey);
-    return (s.length > 3) ? s[0 .. 3] : s;
-}
-
-string hotkeyNiceLong(in int hotkey)
-{
-    if (hotkey <= 0 || ! al_is_keyboard_installed())
-        return null;
-    string s = al_keycode_to_name(hotkey).to!string;
-    string ret;
-    foreach (int i, dchar c; s) {
-        if (i == 0) ret ~= std.uni.toUpper(c);
-        else if (c != '_') ret ~= c;
-    }
-    return ret;
 }
 
 // ############################################################################
