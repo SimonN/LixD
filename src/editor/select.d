@@ -6,11 +6,11 @@ import std.algorithm;
 import std.range;
 
 import basics.rect;
+import basics.user; // keyPriorityInvert
 import editor.editor;
 import editor.hover;
 import hardware.keyboard;
 import hardware.mouse;
-import hardware.semantic;
 import tile.occur;
 import tile.gadtile;
 
@@ -23,7 +23,7 @@ void hoverTiles(Editor editor) { with (editor)
         editor.hoverTilesInRect(_dragger.frame(_map));
     else if (_panel.isMouseHere)
         { }
-    else if (! priorityInvertHeld)
+    else if (! keyPriorityInvert.keyHeld)
         editor.hoverTilesNormally();
     else
         editor.hoverTilesReversed();

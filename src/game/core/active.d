@@ -9,7 +9,8 @@ import game.core.game;
 import gui : SkillButton;
 import hardware.mouse;
 import hardware.mousecur;
-import hardware.semantic;
+import hardware.keyboard; // priority invert held
+import hardware.semantic; // force left/right held
 import hardware.sound;
 import lix;
 
@@ -64,11 +65,10 @@ struct PotentialAssignee {
     // Holding the priority inversion key, or right mouse button (configurable
     // in the options) inverts the sorting of (1.), but not of the others.
     bool isBetterThan(in ref PotentialAssignee rhs) const {
-        immutable bool priorityInvert = hardware.semantic.priorityInvertHeld();
         return lixxie    is null ? false
             : rhs.lixxie is null ? true
-            : priority > rhs.priority ? ! priorityInvert
-            : priority < rhs.priority ?   priorityInvert
+            : priority > rhs.priority ? ! keyPriorityInvert.keyHeld
+            : priority < rhs.priority ?   keyPriorityInvert.keyHeld
             : distanceToCursor < rhs.distanceToCursor ? true
             : distanceToCursor > rhs.distanceToCursor ? false
             : id < rhs.id;

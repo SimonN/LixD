@@ -207,7 +207,7 @@ calcScrolling()
         return;
     }
 
-    if (basics.user.scrollEdge) {
+    if (basics.user.scrollSpeedEdge > 0) {
         int scrd = basics.user.scrollSpeedEdge;
         if (hardware.mouse.mouseHeldRight())
             scrd *= 4;
@@ -227,13 +227,9 @@ calcScrolling()
         if (hardware.mouse.mouseX() == 0)     cameraX = _cameraX - scrd;
     }
 
-    // scrolling with held right/middle mouse button
-    bool scrollNow =
-           (hardware.mouse.mouseHeldRight()  && basics.user.scrollRight)
-        || (hardware.mouse.mouseHeldMiddle() && basics.user.scrollMiddle)
-        ||  hardware.keyboard.keyHeld(basics.user.keyScroll);
-    scrollingStarts    = scrollNow && ! scrollingContinues;
-    scrollingContinues = scrollNow;
+    scrollingStarts = hardware.keyboard.keyHeld(basics.user.keyScroll)
+                    && ! scrollingContinues;
+    scrollingContinues = hardware.keyboard.keyHeld(basics.user.keyScroll);
 
     if (scrollingStarts) {
         // remember old position of the mouse

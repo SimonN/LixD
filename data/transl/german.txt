@@ -298,16 +298,11 @@ $optionReplayAutoSolutions   Level-Lösungen auto-speichern
 $optionReplayAutoMulti       Im Mehrspieler auto-speichern
 $optionReplayCancel          Replay-Ende: deaktiviere >>
 $optionReplayCancelAt        × ¹⁄₁₅ Sekunden vor Ende
-$optionScrollEdge            Scrollen am Bildrand
-$optionScrollRight           Scrollen mit rechter Maustaste
-$optionScrollMiddle          Scrollen mit mittl. Maustaste
 $optionMouseSpeed            Mausgeschwindigkeit
 $optionScrollSpeedEdge       Scroll-Geschw. am Bildrand
-$optionScrollSpeedClick      Scroll-Geschw. bei Maustaste
+$optionScrollSpeedClick      Scroll-Geschw. mit dieser Taste
 $optionAvoidBuilderQueuing   Builder → Nichtbuilder bevorzugen
 $optionAvoidBatterToExploder Batter → Nichtexploder bevorzugen
-$optionPriorityInvertRight   Rechte Maustaste inv. Priorität
-$optionPriorityInvertMiddle  Mittlere Maustaste inv. Priorität
 
 $optionScreenWindowed           Fenstermodus
 $optionScreenWindowedRes        Fenster-Auflösung

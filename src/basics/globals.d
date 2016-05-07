@@ -130,15 +130,10 @@ immutable userOptionGroup            = "OPTION_GROUP";
 immutable userMouseSpeed             = "MOUSE_SPEED";
 immutable userScrollSpeedEdge        = "SCROLL_SPEED_EDGE";
 immutable userScrollSpeedClick       = "SCROLL_SPEED_CLICK";
-immutable userScrollEdge             = "SCROLL_EDGE";
-immutable userScrollRight            = "SCROLL_RIGHT";
-immutable userScrollMiddle           = "SCROLL_MIDDLE";
 immutable userReplayCancel           = "REPLAY_CANCEL";
 immutable userReplayCancelAt         = "REPLAY_CANCEL_AT";
 immutable userAvoidBuilderQueuing    = "AVOID_BUILDER_QUEUING";
 immutable userAvoidBatterToExploder  = "AVOID_BATTER_TO_EXPLODER";
-immutable userPriorityInvertMiddle   = "PRIORITY_INVERT_MIDDLE";
-immutable userPriorityInvertRight    = "PRIORITY_INVERT_RIGHT";
 
 immutable userScreenWindowed         = "SCREEN_WINDOWED";
 immutable userScreenWindowedX        = "SCREEN_WINDOWED_X";
@@ -174,8 +169,8 @@ immutable userEditorGridCustom     = "EDITORGridCustom";
 
 immutable userKeyForceLeft      = "KEY_FORCE_LEFT";
 immutable userKeyForceRight     = "KEY_FORCE_RIGHT";
-immutable userKeyScroll         = "KEY_SCROLL";
-immutable userKeyPriorityInvert = "KEY_PRIORITY";
+immutable userKeyScroll         = "KEY_HOLD_TO_SCROLL";
+immutable userKeyPriorityInvert = "KEY_PRIORITY_INVERT";
 immutable userKeySpawnintSlower = "KEY_RATE_MINUS";
 immutable userKeySpawnintFaster = "KEY_RATE_PLUS";
 immutable userKeyPause1         = "KEY_PAUSE";

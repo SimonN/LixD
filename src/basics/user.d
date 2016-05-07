@@ -43,9 +43,6 @@ int optionGroup = 0;
     return fn == basics.globals.fileLanguageEnglish;
 }
 
-bool scrollEdge        = true;
-bool scrollRight       = true;
-bool scrollMiddle      = true;
 bool replayCancel      = true;
 int  replayCancelAt    = 30;
 int  mouseSpeed        = basics.globals.mouseStandardDivisor;
@@ -53,8 +50,6 @@ int  scrollSpeedEdge   = basics.globals.mouseStandardDivisor / 2;
 int  scrollSpeedClick  = basics.globals.mouseStandardDivisor / 2;
 bool avoidBuilderQueuing   = true;
 bool avoidBatterToExploder = false;
-bool priorityInvertMiddle  = true;
-bool priorityInvertRight   = true;
 
 int  soundVolume       = 10;
 
@@ -71,7 +66,7 @@ int  guiColorRed      = 0x60;
 int  guiColorGreen    = 0x80;
 int  guiColorBlue     = 0xB0;
 
-bool editorHexLevelSize = false;
+bool editorHexLevelSize  = false;
 int  editorGridSelected  = 1;
 int  editorGridCustom    = 8;
 
@@ -112,8 +107,8 @@ private Ac[14] _skillSort = [
 
 int keyForceLeft       = ALLEGRO_KEY_S;
 int keyForceRight      = ALLEGRO_KEY_F;
-int keyScroll          = ALLEGRO_KEY_PAD_MINUS;
-int keyPriorityInvert  = ALLEGRO_KEY_PAD_MINUS;
+int keyScroll          = hardware.keynames.keyRMB;
+int keyPriorityInvert  = hardware.keynames.keyRMB;
 int keySpawnintSlower  = ALLEGRO_KEY_F4;
 int keySpawnintFaster  = ALLEGRO_KEY_F5;
 int keyPause1          = ALLEGRO_KEY_SPACE;
@@ -348,15 +343,10 @@ void load()
         else if (i.text1 == userMouseSpeed          ) mouseSpeed           = i.nr1;
         else if (i.text1 == userScrollSpeedEdge     ) scrollSpeedEdge      = i.nr1;
         else if (i.text1 == userScrollSpeedClick    ) scrollSpeedClick     = i.nr1;
-        else if (i.text1 == userScrollEdge          ) scrollEdge           = i.nr1 > 0;
-        else if (i.text1 == userScrollRight         ) scrollRight          = i.nr1 > 0;
-        else if (i.text1 == userScrollMiddle        ) scrollMiddle         = i.nr1 > 0;
         else if (i.text1 == userReplayCancel        ) replayCancel         = i.nr1 > 0;
         else if (i.text1 == userReplayCancelAt      ) replayCancelAt       = i.nr1;
         else if (i.text1 == userAvoidBuilderQueuing ) avoidBuilderQueuing  = i.nr1 > 0;
         else if (i.text1 == userAvoidBatterToExploder) avoidBatterToExploder = i.nr1 > 0;
-        else if (i.text1 == userPriorityInvertMiddle) priorityInvertMiddle = i.nr1 > 0;
-        else if (i.text1 == userPriorityInvertRight ) priorityInvertRight  = i.nr1 > 0;
 
         else if (i.text1 == userScreenWindowed) screenWindowed = i.nr1 > 0;
         else if (i.text1 == userScreenWindowedX) screenWindowedX = i.nr1;
@@ -503,15 +493,10 @@ nothrow void save()
         fwr(IoLine.Hash(userMouseSpeed,             mouseSpeed));
         fwr(IoLine.Hash(userScrollSpeedEdge,        scrollSpeedEdge));
         fwr(IoLine.Hash(userScrollSpeedClick,       scrollSpeedClick));
-        fwr(IoLine.Hash(userScrollEdge,             scrollEdge));
-        fwr(IoLine.Hash(userScrollRight,            scrollRight));
-        fwr(IoLine.Hash(userScrollMiddle,           scrollMiddle));
         fwr(IoLine.Hash(userReplayCancel,           replayCancel));
         fwr(IoLine.Hash(userReplayCancelAt,         replayCancelAt));
         fwr(IoLine.Hash(userAvoidBuilderQueuing,    avoidBuilderQueuing));
         fwr(IoLine.Hash(userAvoidBatterToExploder,  avoidBatterToExploder));
-        fwr(IoLine.Hash(userPriorityInvertMiddle,   priorityInvertMiddle));
-        fwr(IoLine.Hash(userPriorityInvertRight,    priorityInvertRight));
         f.writeln();
 
         fwr(IoLine.Hash(userScreenWindowed,         screenWindowed));

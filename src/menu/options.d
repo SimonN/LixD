@@ -220,31 +220,28 @@ void populateGraphics()
 void populateControls()
 {
     auto fac = facLeft();
+    fac.y += fac.incrementY * 2;
     groups[OptionGroup.controls] ~= [
-        fac.factory!BoolOption(Lang.optionScrollEdge.transl, &scrollEdge),
-        fac.factory!BoolOption(Lang.optionScrollRight.transl, &scrollRight),
-        fac.factory!BoolOption(Lang.optionScrollMiddle.transl, &scrollMiddle),
+        fac.factory!HotkeyOption(Lang.optionKeyScroll.transl, &keyScroll),
         fac.factory!BoolOption(Lang.optionReplayCancel.transl, &replayCancel),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.controls] ~= [
         fac.factory!BoolOption(Lang.optionAvoidBuilderQueuing.transl,   &avoidBuilderQueuing),
         fac.factory!BoolOption(Lang.optionAvoidBatterToExploder.transl, &avoidBatterToExploder),
-        fac.factory!BoolOption(Lang.optionPriorityInvertRight.transl,   &priorityInvertRight),
-        fac.factory!BoolOption(Lang.optionPriorityInvertMiddle.transl,  &priorityInvertMiddle),
     ];
     fac = facRight();
-    auto cfg = NumPickConfig();
-    cfg.max = 80;
-    cfg.min =  1;
-    groups[OptionGroup.controls] ~= [
-        fac.factory!NumPickOption(cfg, Lang.optionMouseSpeed.transl, &mouseSpeed),
-        fac.factory!NumPickOption(cfg, Lang.optionScrollSpeedEdge.transl, &scrollSpeedEdge),
-        fac.factory!NumPickOption(cfg, Lang.optionScrollSpeedClick.transl, &scrollSpeedClick),
-    ];
-    cfg.min = 0;
-    groups[OptionGroup.controls]
-        ~=fac.factory!NumPickOption(cfg, Lang.optionReplayCancelAt.transl, &replayCancelAt);
+    void addNumPick(in string cap, int* p, in int minVal)
+    {
+        auto cfg = NumPickConfig();
+        cfg.max = 80;
+        cfg.min = minVal;
+        groups[OptionGroup.controls] ~= fac.factory!NumPickOption(cfg, cap, p);
+    }
+    addNumPick(Lang.optionMouseSpeed.transl,       &mouseSpeed,       1);
+    addNumPick(Lang.optionScrollSpeedEdge.transl,  &scrollSpeedEdge,  0);
+    addNumPick(Lang.optionScrollSpeedClick.transl, &scrollSpeedClick, 1);
+    addNumPick(Lang.optionReplayCancelAt.transl,   &replayCancelAt,   0);
 }
 
 void populateGameKeys()
@@ -302,7 +299,6 @@ void populateGameKeys()
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(Lang.optionKeyScroll.transl, &keyScroll),
         fac.factory!HotkeyOption(Lang.optionKeyPriorityInvert.transl, &keyPriorityInvert),
     ];
 }

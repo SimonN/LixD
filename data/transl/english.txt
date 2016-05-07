@@ -312,16 +312,11 @@ $optionReplayAutoSolutions    Auto-save level solutions
 $optionReplayAutoMulti        Auto-save multiplayer games
 $optionReplayCancel           End of replay: turn off >>
 $optionReplayCancelAt         × ¹⁄₁₅ seconds before end
-$optionScrollEdge             Scroll at edge of screen
-$optionScrollRight            Scroll by right mouse button
-$optionScrollMiddle           Scroll by middle mouse button
 $optionMouseSpeed             Mouse speed
-$optionScrollSpeedEdge        Edge scroll speed
-$optionScrollSpeedClick       Right/middle scroll speed
+$optionScrollSpeedEdge        Scroll speed at screen edge
+$optionScrollSpeedClick       Scroll speed with that key
 $optionAvoidBuilderQueuing    Prefer builder → non-builder
 $optionAvoidBatterToExploder  Prefer batter → non-exploder
-$optionPriorityInvertRight    Right button inverts priority
-$optionPriorityInvertMiddle   Middle button inverts priority
 
 $optionScreenWindowed           Windowed mode
 $optionScreenWindowedRes        Windowed resolution

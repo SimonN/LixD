@@ -5,14 +5,6 @@ module hardware.semantic;
 
 import basics.user;
 import hardware.keyboard;
-import hardware.mouse;
-
-bool priorityInvertHeld()
-{
-    return (mouseHeldRight  && basics.user.priorityInvertRight)
-        || (mouseHeldMiddle && basics.user.priorityInvertMiddle)
-        || keyHeld(basics.user.keyPriorityInvert);
-}
 
 bool forcingLeft()
 {
