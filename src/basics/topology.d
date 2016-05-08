@@ -91,11 +91,12 @@ public:
                      _ty ? positiveMod(p.y, _yl) : p.y);
     }
 
-    // If the point is off the torus, return what's closest to that.
+    // If the point is off the non-torus, return what's closest to that.
+    // If the point is off the torus, this is identical to this.wrap(p).
     final Point clamp(in Point p) const
     {
-        return Point(.clamp(p.x, 0, xl - 1),
-                     .clamp(p.y, 0, yl - 1));
+        return Point(_tx ? positiveMod(p.x, _xl) : .clamp(p.x, 0, xl - 1),
+                     _ty ? positiveMod(p.y, _yl) : .clamp(p.y, 0, yl - 1));
     }
 
     // This computes distances similar to (1st_arg - 2nd_arg), but it

@@ -76,7 +76,7 @@ class Phymap : Topology {
     Phybitset get(in Point p)              const { return getAt(clamp(p));   }
     bool      get(in Point p, Phybitset n) const { return (get(p) & n) != 0; }
 
-    bool getSolid    (in Point p) const { return get(p, Phybit.terrain); }
+    bool getSolid(in Point p) const { return (get(p) & Phybit.terrain) != 0; }
     bool getSolidEven(in Point p) const
     {
         assert (xl % 2 == 0, "can't call getSolidEven on an odd-xl Phymap");
