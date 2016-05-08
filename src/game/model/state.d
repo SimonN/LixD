@@ -255,7 +255,7 @@ public:
         // for full manual memory management in the phymap too.
         bool runTheGC = false;
         foreach (ref garb; possibleGarbage)
-            if (garb !is _zero && garb !is _userState
+            if (garb !is null && garb !is _zero && garb !is _userState
                 && ! _auto[].canFind!"a is b"(garb)
             ) {
                 version (tharsisprofiling)
