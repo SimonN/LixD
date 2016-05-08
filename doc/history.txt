@@ -1,7 +1,30 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.3.4
+-----
+
+2016-05-08
+
+Right mouse button, middle mouse button, wheel up, wheel down are all available
+keys to map in the hotkey dialog. There are two keys to map for zoom now.
+Default value for zoom-in is wheel-up, default for zoom-out is wheel-down.
+
+Removed the boolean options that became superfluous after allowing mouse
+buttons as hotkey bindings. Set the edge scroll speed to 0 to disable it.
+
+Pause accepts two keybindings. I'd like multiple keys for any function.
+
+Singleplayer browser shows author and save requirement, allows to delete level.
+
+Culled variable spawn interval UI and level variables.
+
+Fixed wrong phymap querying: clamping coordinates on a torus must wrap them.
+
+Fixed a crash, the game tried to dispose a null state after long play.
+
 0.3.3
+-----
 
 2016-05-03
 

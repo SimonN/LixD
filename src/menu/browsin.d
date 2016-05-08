@@ -32,12 +32,14 @@ public:
             assert (fileRecent !is null);
             _gotoEditor = true;
         };
-
+        _delete = new TextButton(new Geom(infoX + infoXl/2, 60,
+            infoXl/2, 40, From.BOTTOM_LEFT), Lang.browserDelete.transl);
+        _delete.hotkey = basics.user.keyMenuDelete;
         _by = new LabelTwo(new Geom(infoX, infoY, infoXl, 20),
             Lang.browserInfoAuthor.transl);
         _save = new LabelTwo(new Geom(infoX, infoY + 20, infoXl, 20),
             Lang.browserInfoInitgoal.transl);
-        addChildren(_edit, _by, _save);
+        addChildren(_edit, _delete, _by, _save);
     }
 
     @property bool gotoEditor() const
@@ -71,5 +73,24 @@ protected:
             basics.user.singleLastLevel = fileRecent;
             gotoGame = true;
         }
+    }
+
+    override void calcSelf()
+    {
+        super.calcSelf();
+        calcDeleteMixin();
+    }
+
+private:
+    mixin DeleteMixin deleteMixin;
+
+    MsgBox newMsgBoxDelete()
+    {
+        auto m = new MsgBox(Lang.browserBoxDeleteLevelTitle.transl);
+        m.addMsg(Lang.browserBoxDeleteLevelQuestion.transl);
+        m.addMsg(Lang.browserBoxLevelName.transl ~ " " ~ (levelRecent !is null
+            ? levelRecent.name : fileRecent.fileNoExtNoPre));
+        m.addMsg(Lang.browserBoxFileName.transl ~ " " ~ fileRecent.rootful);
+        return m;
     }
 }

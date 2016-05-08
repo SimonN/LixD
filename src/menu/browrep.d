@@ -28,8 +28,8 @@ class BrowserReplay : BrowserCalledFromMainMenu {
             b.hotkey = hotkey;
             return b;
         }
-        _delete  = newInfo(0, 60, Lang.browserDelete.transl, keyMenuDelete);
-        _extract = newInfo(1, 60, "(extract)", // Lang.browserExtract.transl;
+        _delete  = newInfo(1, 60, Lang.browserDelete.transl, keyMenuDelete);
+        _extract = newInfo(0, 60, "(extract)" /*Lang.browserExtract.transl*/,
                            keyMenuExport);
         addChildren(_delete, _extract);
     }
