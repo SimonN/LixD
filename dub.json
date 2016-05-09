@@ -25,9 +25,9 @@
         "allegro_color",
         "allegro_primitives",
     ],
-
-    "libs-windows": ["allegro"],
+    "lflags": ["-lallegro"],
     "lflags-windows": ["-L/subsystem:windows"],
+
     "buildRequirements": ["disallowDeprecations"],
     "versions": ["ALLEGRO_NO_PRAGMA_LIB"],
     "buildTypes": {

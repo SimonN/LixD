@@ -128,15 +128,15 @@ private string hotkeyNiceLong(in int hotkey)
         return ret;
     }
     else if (hotkey == keyMMB)
-        // open parallelogram, filled one, open one
-        return "\u25B1\u25B0\u25B1";
+        // \u27BF = LMB, \u27C0 = MMB, \u27C1 = RMB, \u27C2 = generic mouse
+        return "\u27C0";
     else if (hotkey == keyRMB)
-        return "\u25B1\u25B1\u25B0";
+        return "\u27C1";
     else if (hotkey == keyWheelUp)
         // gear, arrow up
-        return "\u2699\u2191";
+        return "\u27C0\u2191";
     else if (hotkey == keyWheelDown)
-        return "\u2699\u2193";
+        return "\u27C0\u2193";
     assert (false,
         "Unhandled extra key %d >= ALLEGRO_KEY_MAX == %d. Please name key."
         .format(hotkey, ALLEGRO_KEY_MAX));

@@ -46,7 +46,7 @@ public:
         _labelNumL.text = "";
         _labelNumM.text = "";
         if (_number == lix.enums.skillInfinity)
-            _labelNumL.text = "\u2135\u2080"; // aleph-null
+            _labelNumL.text = "\u221E"; // lemniscate
         else if (_number >= 100)
             _labelNumM.number = _number;
         else if (_number >= 1)
