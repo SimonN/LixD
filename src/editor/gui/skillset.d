@@ -30,17 +30,17 @@ public:
         enum pickX  = expXl + 2*20;
         enum pickXl = thisXl - expXl - 100 - 2*2*20;
         super(new Geom(0, 0, thisXl, 240, From.CENTER),
-            Lang.winSkillTitle.transl);
+            Lang.winSkillsTitle.transl);
         _useExploder = new BoolOption(new Geom(20, 50, expXl, 20,
-            From.BOT_LEF), Lang.winSkillUseExploder.transl, null);
+            From.BOT_LEF), Lang.winSkillsUseExploder.transl, null);
         _allToZero = new TextButton(new Geom(20, 20, expXl, 20, From.BOT_LEF),
-            Lang.winSkillClear.transl);
+            Lang.winSkillsClear.transl);
         _numPick = new NumPick(new Geom(pickX, 20, pickXl, 20,
             From.BOT_LEF), this.numPickConfig);
         _allToNum = new TextButton(new Geom(pickX, 50, pickXl/2 - 10, 20,
-            From.BOT_LEF), Lang.winSkillAllTo.transl);
+            From.BOT_LEF), Lang.winSkillsAllTo.transl);
         _eightToNum = new TextButton(new Geom(pickX + pickXl/2 - 10, 50,
-            pickXl/2 + 10, 20, From.BOT_LEF), Lang.winSkillEightTo.transl);
+            pickXl/2 + 10, 20, From.BOT_LEF), Lang.winSkillsEightTo.transl);
         addChildren(_useExploder, _allToZero,
                     _numPick, _allToNum, _eightToNum);
         initializeFromLevel(level);

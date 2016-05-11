@@ -158,11 +158,6 @@ KeySet keyEditorForeground  = KeySet(ALLEGRO_KEY_B);
 KeySet keyEditorMirror      = KeySet(ALLEGRO_KEY_W);
 KeySet keyEditorRotate      = KeySet(ALLEGRO_KEY_R);
 KeySet keyEditorDark        = KeySet(ALLEGRO_KEY_N);
-KeySet keyEditorNoow        = KeySet(ALLEGRO_KEY_M);
-KeySet keyEditorHelp        = KeySet(ALLEGRO_KEY_H);
-KeySet keyEditorMenuSize    = KeySet(ALLEGRO_KEY_5);
-KeySet keyEditorMenuVars    = KeySet(ALLEGRO_KEY_Q);
-KeySet keyEditorMenuSkills  = KeySet(ALLEGRO_KEY_X);
 KeySet keyEditorAddTerrain  = KeySet(ALLEGRO_KEY_SPACE);
 KeySet keyEditorAddSteel    = KeySet(ALLEGRO_KEY_TAB);
 KeySet keyEditorAddHatch    = KeySet(ALLEGRO_KEY_1);
@@ -170,6 +165,10 @@ KeySet keyEditorAddGoal     = KeySet(ALLEGRO_KEY_2);
 KeySet keyEditorAddDeco     = KeySet(ALLEGRO_KEY_3);
 KeySet keyEditorAddHazard   = KeySet(ALLEGRO_KEY_4);
 KeySet keyEditorExit        = KeySet(ALLEGRO_KEY_ESCAPE);
+KeySet keyEditorMenuConstants = KeySet(ALLEGRO_KEY_Q);
+KeySet keyEditorMenuTopology  = KeySet(ALLEGRO_KEY_5);
+KeySet keyEditorMenuLooks     = KeySet();
+KeySet keyEditorMenuSkills    = KeySet(ALLEGRO_KEY_X);
 
 Enumap!(Ac, KeySet) keySkill;
 
@@ -423,18 +422,17 @@ void load()
         else if (i.text1 == userKeyEditorMirror     ) keyEditorMirror      = KeySet(i.nr1);
         else if (i.text1 == userKeyEditorRotate     ) keyEditorRotate      = KeySet(i.nr1);
         else if (i.text1 == userKeyEditorDark       ) keyEditorDark        = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorNoow       ) keyEditorNoow        = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorHelp       ) keyEditorHelp        = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorMenuSize   ) keyEditorMenuSize    = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorMenuVars   ) keyEditorMenuVars    = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorMenuSkills ) keyEditorMenuSkills  = KeySet(i.nr1);
         else if (i.text1 == userKeyEditorAddTerrain ) keyEditorAddTerrain  = KeySet(i.nr1);
         else if (i.text1 == userKeyEditorAddSteel   ) keyEditorAddSteel    = KeySet(i.nr1);
         else if (i.text1 == userKeyEditorAddHatch   ) keyEditorAddHatch    = KeySet(i.nr1);
         else if (i.text1 == userKeyEditorAddGoal    ) keyEditorAddGoal     = KeySet(i.nr1);
         else if (i.text1 == userKeyEditorAddDeco    ) keyEditorAddDeco     = KeySet(i.nr1);
         else if (i.text1 == userKeyEditorAddHazard  ) keyEditorAddHazard   = KeySet(i.nr1);
-        else if (i.text1 == userKeyEditorExit       ) keyEditorExit        = KeySet(i.nr1);
+        else if (i.text1 == userKeyEditorMenuConstants) keyEditorMenuConstants = KeySet(i.nr1);
+        else if (i.text1 == userKeyEditorMenuTopology ) keyEditorMenuTopology  = KeySet(i.nr1);
+        else if (i.text1 == userKeyEditorMenuLooks    ) keyEditorMenuLooks     = KeySet(i.nr1);
+        else if (i.text1 == userKeyEditorMenuSkills   ) keyEditorMenuSkills    = KeySet(i.nr1);
+        else if (i.text1 == userKeyEditorExit         ) keyEditorExit          = KeySet(i.nr1);
 
         else {
             Ac ac = stringToAc(i.text1);
@@ -596,18 +594,17 @@ nothrow void save()
         fwrKey(userKeyEditorMirror,      keyEditorMirror);
         fwrKey(userKeyEditorRotate,      keyEditorRotate);
         fwrKey(userKeyEditorDark,        keyEditorDark);
-        fwrKey(userKeyEditorNoow,        keyEditorNoow);
-        fwrKey(userKeyEditorHelp,        keyEditorHelp);
-        fwrKey(userKeyEditorMenuSize,    keyEditorMenuSize);
-        fwrKey(userKeyEditorMenuVars,    keyEditorMenuVars);
-        fwrKey(userKeyEditorMenuSkills,  keyEditorMenuSkills);
         fwrKey(userKeyEditorAddTerrain,  keyEditorAddTerrain);
         fwrKey(userKeyEditorAddSteel,    keyEditorAddSteel);
         fwrKey(userKeyEditorAddHatch,    keyEditorAddHatch);
         fwrKey(userKeyEditorAddGoal,     keyEditorAddGoal);
         fwrKey(userKeyEditorAddDeco,     keyEditorAddDeco);
         fwrKey(userKeyEditorAddHazard,   keyEditorAddHazard);
-        fwrKey(userKeyEditorExit,        keyEditorExit);
+        fwrKey(userKeyEditorMenuConstants, keyEditorMenuConstants);
+        fwrKey(userKeyEditorMenuTopology,  keyEditorMenuTopology);
+        fwrKey(userKeyEditorMenuLooks,     keyEditorMenuLooks);
+        fwrKey(userKeyEditorMenuSkills,    keyEditorMenuSkills);
+        fwrKey(userKeyEditorExit,          keyEditorExit);
 
         f.writeln();
         foreach (key, r; results)

@@ -337,16 +337,9 @@ void populateEditorKeys()
         fac.factory!HotkeyOption(Lang.optionEdMirror.transl, &keyEditorMirror),
         fac.factory!HotkeyOption(Lang.optionEdRotate.transl, &keyEditorRotate),
         fac.factory!HotkeyOption(Lang.optionEdDark.transl, &keyEditorDark),
-        fac.factory!HotkeyOption(Lang.optionEdNoow.transl, &keyEditorNoow),
     ];
 
     fac = facKeys!2;
-    groups[OptionGroup.editorKeys] ~= [
-        fac.factory!HotkeyOption(Lang.optionEdMenuSize.transl, &keyEditorMenuSize),
-        fac.factory!HotkeyOption(Lang.optionEdMenuVars.transl, &keyEditorMenuVars),
-        fac.factory!HotkeyOption(Lang.optionEdMenuSkills.transl, &keyEditorMenuSkills),
-    ];
-    fac.y += fac.incrementY;
     groups[OptionGroup.editorKeys] ~= [
         fac.factory!HotkeyOption(Lang.optionEdAddTerrain.transl, &keyEditorAddTerrain),
         fac.factory!HotkeyOption(Lang.optionEdAddSteel.transl, &keyEditorAddSteel),
@@ -354,6 +347,13 @@ void populateEditorKeys()
         fac.factory!HotkeyOption(Lang.optionEdAddGoal.transl, &keyEditorAddGoal),
         fac.factory!HotkeyOption(Lang.optionEdAddDeco.transl, &keyEditorAddDeco),
         fac.factory!HotkeyOption(Lang.optionEdAddHazard.transl, &keyEditorAddHazard),
+    ];
+    fac.y += fac.incrementY;
+    groups[OptionGroup.editorKeys] ~= [
+        fac.factory!HotkeyOption(Lang.winConstantsTitle.transl, &keyEditorMenuConstants),
+        fac.factory!HotkeyOption(Lang.winTopologyTitle.transl, &keyEditorMenuTopology),
+        fac.factory!HotkeyOption(Lang.winLooksTitle.transl, &keyEditorMenuLooks),
+        fac.factory!HotkeyOption(Lang.winSkillsTitle.transl, &keyEditorMenuSkills),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.editorKeys] ~=

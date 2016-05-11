@@ -158,26 +158,26 @@ $editorButtonSelectFrame    Rahmen: Mehrfachauswahl von Objekten durch Rahmenzie
 $editorButtonSelectAdd      Hinzufügen: Neue Objekte auswählen, ohne alte abzuwählen.
 $editorButtonUndo           Rückgängig: Nimmt die jüngsten Änderungen am Level zurück.
 $editorButtonRedo           Doch wieder: Führt zurückgenommene Änderungen doch wieder aus.
+$editorButtonGroup          Gruppieren: Erzeugt ein Terrainstück aus den markierten Stücken.
+$editorButtonUngroup        Degruppieren: Löst markierte Gruppen in ihre Einzelstücke auf.
 $editorButtonSelectCopy     Kopieren: Ausgewählte Objekte klonen.
 $editorButtonSelectDelete   Löschen: Ausgewählte Objekte löschen.
-$editorButtonBackground     Hintergrund: Ausgewählte Objekte hinter andere setzen.
-$editorButtonForeground     Vordergrund: Ausgewählte Objekte vor andere holen.
+$editorButtonBackground     Hintergrund: Ausgewählte Teile hinter andere setzen.
+$editorButtonForeground     Vordergrund: Ausgewählte Teile vor andere holen.
 $editorButtonSelectFlip     Spiegeln: Ausgewähltes Terrain horizontal spiegeln.
 $editorButtonSelectRotate   Drehen: Ausgewähltes Terrain um ein Viertel drehen.
 $editorButtonSelectDark     Dunkel: Ausgewähltes Terrain im Spiel schwarz zeichnen.
-$editorButtonSelectNoow     Nicht überschreiben: Ausgew. Ter. ueberschr. nur dunkles Ter.
 $editorButtonViewZoom       Zoom: Vergrößerung der Karte ein- oder ausschalten.
-$editorButtonHelp            (dies macht derzeit nichts)
-$editorButtonMenuSize       Abmessungen: Festlegen der Größe und Topologie des Levels.
-$editorButtonMenuScroll     Aussehen: Festlegen der Startposition und Hintergrundfarbe.
-$editorButtonMenuVars       Variablen: Festlegen grundsätzlicher Level-Variablen.
-$editorButtonMenuSkill      Fähigkeiten: Festlegen der nutzbaren Lix-Fähigkeiten.
-$editorButtonAddTerrain     Terrain: Ein durchgrabbares Terrain-Object platzieren.
+$editorButtonAddTerrain     Terrain: Ein durchgrabbares Terrainstück platzieren.
 $editorButtonAddSteel       Stahl: Ein nicht-durchgrabbares Stahlobjekt platzieren.
 $editorButtonAddHatch       Klappe: Eine Lix-Eingangsklappe platzieren.
 $editorButtonAddGoal        Ziel: Ein Ziel, also einen Lix-Ausgang platzieren.
 $editorButtonAddDeco        Dekoration: Ein harmloses Dekorationsobjekt platzieren.
 $editorButtonAddHazard      Gefahr: Eine Falle, Wasser oder Feuer platzieren.
+$editorButtonMenuConstants  Konstanten: Namen und wichtige Zahlen einstellen.
+$editorButtonMenuTopology   Topologie: Abmessungen ändern, Außenkanten verkleben.
+$editorButtonMenuLooks      Aussehen: Hintergrund färben, Bildschirm-Start ändern.
+$editorButtonMenuSkills     Fähigkeiten: Anzahl Lix-Fähigkeiten pro Spieler einstellen.
 
 // SaveBrowser
 $saveBrowserTitle            Speichern unter
@@ -194,45 +194,45 @@ $addDeco                      Dekoration hinzufuegen
 $addHazard                    Gefahr hinzufuegen
 
 // Kartengroesse
-$winSizeTitle                Level-Abmessungen
-$winSizeL                    Links:
-$winSizeR                    Rechts:
-$winSizeU                    Oben:
-$winSizeD                    Unten:
-$winSizeX                    Breite:
-$winSizeY                    Höhe:
-$winSizeHex                  Hexadezimal anzeigen
-$winSizeTorusX              Horizontal rundumgehend
-$winSizeTorusY              Vertikal rundumgehend
+$winTopologyTitle                Topologie
+$winTopologyL                    Links:
+$winTopologyR                    Rechts:
+$winTopologyU                    Oben:
+$winTopologyD                    Unten:
+$winTopologyX                    Breite:
+$winTopologyY                    Höhe:
+$winTopologyHex                  Hexadezimal anzeigen
+$winTopologyTorusX              Horizontal rundumgehend
+$winTopologyTorusY              Vertikal rundumgehend
 
 // Scrollposition
-$winScrollTitle              Aussehen des Levels
-$winScrollManual             Anfangs sichtbaren Bereich manuell festlegen
-$winScrollX                  X-Koordinate (0 = links)
-$winScrollY                  Y-Koordinate (0 = oben)
-$winScrollRed                  Hintergrund Rot
-$winScrollGreen                  Hintergrund Grün
-$winScrollBlue                  Hintergrund Blau
-$winScrollJump               Dorthin scrollen
-$winScrollCurrent            Aktuelle Position
+$winLooksTitle              Aussehen
+$winLooksManual             Anfangs sichtbaren Bereich manuell festlegen
+$winLooksX                  X-Koordinate (0 = links)
+$winLooksY                  Y-Koordinate (0 = oben)
+$winLooksRed                  Hintergrund Rot
+$winLooksGreen                  Hintergrund Grün
+$winLooksBlue                  Hintergrund Blau
+$winLooksJump               Dorthin scrollen
+$winLooksCurrent            Aktuelle Position
 
 // Variablenfenster
-$winVarTitle                 Allgemeine Leveleinstellungen
-$winVarAuthor                Autor
-$winVarNameGerman           Deutscher Titel
-$winVarNameEnglish          Englischer Titel
-$winVarInitial               Anzahl Lix
-$winVarRequired              Lix zu retten
-$winVarSpawnintSlow         Fall-Intervall
-$winVarSpawnintFast         Fall-I. schnell
-$winVarClock                 Zeit/Nachspielz.
+$winConstantsTitle                 Konstanten
+$winConstantsAuthor                Autor
+$winConstantsNameGerman           Deutscher Titel
+$winConstantsNameEnglish          Englischer Titel
+$winConstantsInitial               Anzahl Lix
+$winConstantsRequired              Lix zu retten
+$winConstantsSpawnintSlow         Fall-Intervall
+$winConstantsSpawnintFast         Fall-I. schnell
+$winConstantsClock                 Zeit/Nachspielz.
 
 // Faehigkeits-Fenster
-$winSkillTitle              Fähigkeits-Einstellungen
-$winSkillUseExploder        Explodierer
-$winSkillClear              Alle auf null
-$winSkillEightTo            Klassische 8:
-$winSkillAllTo              Alle 14 auf:
+$winSkillsTitle              Fähigkeiten
+$winSkillsUseExploder        Explodierer
+$winSkillsClear              Alle auf null
+$winSkillsEightTo            Klassische 8:
+$winSkillsAllTo              Alle 14 auf:
 
 // Exporting a level into a file
 $exportSingleLix             Ziel:
@@ -360,6 +360,8 @@ $optionEdSelectFrame         Rahmen
 $optionEdSelectAdd           Mehr ausw.
 $optionEdUndo                Rückgängig
 $optionEdRedo                Doch wieder
+$optionEdGroup               Gruppieren
+$optionEdUngroup             Degruppieren
 $optionEdCopy                Kopieren
 $optionEdDelete              Loeschen
 $optionEdForeground          Nach vorn
@@ -367,10 +369,6 @@ $optionEdBackground          Nach hinten
 $optionEdMirror              Spiegeln
 $optionEdRotate              Drehen
 $optionEdDark                Schwarz
-$optionEdNoow                Ni. überschr.
-$optionEdMenuSize           Levelgröße
-$optionEdMenuVars           Allg. Menü
-$optionEdMenuSkills         Fähigkeiten
 $optionEdAddTerrain         Terrain hinzuf.
 $optionEdAddSteel           Stahl hinzuf.
 $optionEdAddHatch           Klappe hinzuf.

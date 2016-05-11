@@ -76,16 +76,21 @@ void makePanel(Editor editor)
         onExecute(Lang.editorButtonSelectDark, keyEditorDark, () {
             editor._selection.each!(sel => sel.toggleDark());
         });
-        onExecute(Lang.editorButtonMenuScroll, KeySet(), () {
-            editor._okCancelWindow = new VisualsWindow(editor._level);
-            addFocus(editor._okCancelWindow);
-            button(Lang.editorButtonMenuScroll).on = true;
-        });
-        onExecute(Lang.editorButtonMenuSkill, keyEditorMenuSkills, () {
-            editor._okCancelWindow = new SkillsetWindow(editor._level);
-            addFocus(editor._okCancelWindow);
-            button(Lang.editorButtonMenuSkill).on = true;
-        });
+        onExecuteText(Lang.editorButtonMenuConstants, Lang.winConstantsTitle, KeySet(), () { });
+        onExecuteText(Lang.editorButtonMenuTopology, Lang.winTopologyTitle, KeySet(), () { });
+        onExecuteText(Lang.editorButtonMenuLooks, Lang.winLooksTitle,
+            KeySet(), () {
+                editor._okCancelWindow = new VisualsWindow(editor._level);
+                addFocus(editor._okCancelWindow);
+                button(Lang.editorButtonMenuLooks).on = true;
+            });
+        onExecuteText(Lang.editorButtonMenuSkills, Lang.winSkillsTitle,
+            keyEditorMenuSkills,
+            () {
+                editor._okCancelWindow = new SkillsetWindow(editor._level);
+                addFocus(editor._okCancelWindow);
+                button(Lang.editorButtonMenuSkills).on = true;
+            });
         template mkBrowser(string name, string exts, string curDirPtr) {
             enum string mkBrowser = "
                     onExecute(Lang.editorButtonAdd%s, keyEditorAdd%s, () {

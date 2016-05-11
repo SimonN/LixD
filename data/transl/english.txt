@@ -163,6 +163,8 @@ $editorButtonSelectFrame     Frame: Drag a frame with the mouse to select tiles.
 $editorButtonSelectAdd       Add: Keep tiles selected when selecting additional tiles.
 $editorButtonUndo            Undo: Reverts your latest changes to the level in order.
 $editorButtonRedo            Redo: Re-applies undone changes.
+$editorButtonGroup           Make group: Creates a new single tile from all selected tiles.
+$editorButtonUngroup         Ungroup: Retrieve the individual tiles from selected groups.
 $editorButtonSelectCopy      Copy: Clones the selected tiles for placing them elsewhere.
 $editorButtonSelectDelete    Delete: Removes the selected tiles from the level.
 $editorButtonBackground      Background: Puts the selected tiles behind some others.
@@ -170,19 +172,17 @@ $editorButtonForeground      Foreground: Puts the selected tiles in front of som
 $editorButtonSelectFlip      Flip: Mirrors the selected terrain horizontally.
 $editorButtonSelectRotate    Rotate: Performs a quarter turn on the selected terrain.
 $editorButtonSelectDark      Dark: Selected terrain erases normal terrain.
-$editorButtonSelectNoow      No overwrite: Selected terrain overwrites only dark tiles.
 $editorButtonViewZoom        Zoom: Toggles editor map zoom. Doesn't affect the level.
-$editorButtonHelp             (this doesn't do anything right now)
-$editorButtonMenuSize        Measures: Set the size and the topology for the level.
-$editorButtonMenuScroll      Visuals: Set the scrolling position and background color.
-$editorButtonMenuVars        Variables: Set the fundamental level variables.
-$editorButtonMenuSkill       Skills: Decide which lix skills the players can assign.
 $editorButtonAddTerrain      Terrain: Add a terrain tile.
 $editorButtonAddSteel        Steel: Add a steel tile that cannot be dug through.
 $editorButtonAddHatch        Hatch: Add a lix entrance hatch.
 $editorButtonAddGoal         Goal: Add a goal, i.e., an exit, for the lix.
 $editorButtonAddDeco         Decoration: Add a non-interactive decoration tile.
 $editorButtonAddHazard       Hazard: Add a trap, water or fire.
+$editorButtonMenuConstants   Constants: Name the level, set fundamental values.
+$editorButtonMenuTopology    Topology: Resize the level, wrap the edges.
+$editorButtonMenuLooks       Looks: Color the background, choose screen starting position.
+$editorButtonMenuSkills      Skills: Decide how many lix skills each player may assign.
 
 // save browser
 
@@ -202,48 +202,48 @@ $addHazard                     Add hazard
 
 // editor window about the size of map
 
-$winSizeTitle                 Level Measures
-$winSizeL                     Left:
-$winSizeR                     Right:
-$winSizeU                     Top:
-$winSizeD                     Bottom:
-$winSizeX                     Width:
-$winSizeY                     Height:
-$winSizeHex                   Show size in hexadecimal
-$winSizeTorusX               Wrap around horizontally
-$winSizeTorusY               Wrap around vertically
+$winTopologyTitle                 Topology
+$winTopologyL                     Left:
+$winTopologyR                     Right:
+$winTopologyU                     Top:
+$winTopologyD                     Bottom:
+$winTopologyX                     Width:
+$winTopologyY                     Height:
+$winTopologyHex                   Show size in hexadecimal
+$winTopologyTorusX               Wrap around horizontally
+$winTopologyTorusY               Wrap around vertically
 
 // scrolling start position
 
-$winScrollTitle               Level Visuals
-$winScrollManual              Manually set initially visible region
-$winScrollX                   X Coordinate (0 = left)
-$winScrollY                   Y Coordinate (0 = top)
-$winScrollRed                   Background red
-$winScrollGreen                   Background green
-$winScrollBlue                   Background blue
-$winScrollJump                Scroll there
-$winScrollCurrent             Current Position
+$winLooksTitle               Looks
+$winLooksManual              Manually set initially visible region
+$winLooksX                   X Coordinate (0 = left)
+$winLooksY                   Y Coordinate (0 = top)
+$winLooksRed                 Background red
+$winLooksGreen               Background green
+$winLooksBlue                Background blue
+$winLooksJump                Scroll there
+$winLooksCurrent             Current Position
 
 // editor window to set level variables
 
-$winVarTitle                  General Level Settings
-$winVarAuthor                 Author
-$winVarNameGerman            German title
-$winVarNameEnglish           English title
-$winVarInitial                No. of lix
-$winVarRequired               Lix to save
-$winVarSpawnintSlow          Spawn interval
-$winVarSpawnintFast          Spawn int. fast
-$winVarClock                  Time/overtime
+$winConstantsTitle                  Constants
+$winConstantsAuthor                 Author
+$winConstantsNameGerman            German title
+$winConstantsNameEnglish           English title
+$winConstantsInitial                No. of lix
+$winConstantsRequired               Lix to save
+$winConstantsSpawnintSlow          Spawn interval
+$winConstantsSpawnintFast          Spawn int. fast
+$winConstantsClock                  Time/overtime
 
 // editor window to set skills
 
-$winSkillTitle               Skill Settings
-$winSkillUseExploder         Fling-exploder
-$winSkillClear               All to zero
-$winSkillEightTo             Classic 8 to:
-$winSkillAllTo               All 14 to:
+$winSkillsTitle               Skills
+$winSkillsUseExploder         Fling-exploder
+$winSkillsClear               All to zero
+$winSkillsEightTo             Classic 8 to:
+$winSkillsAllTo               All 14 to:
 
 // exporting a level into a file
 
@@ -368,11 +368,14 @@ $optionEdRight                Move right
 $optionEdUp                   Move up
 $optionEdDown                 Move down
 $optionEdGrid                 Grid size
+$optionEdGridCustom           Custom grid size
 $optionEdSelectAll            Select all
 $optionEdSelectFrame          Select frame
 $optionEdSelectAdd            Add to sel.
 $optionEdUndo                 Undo
 $optionEdRedo                 Redo
+$optionEdGroup                Make group
+$optionEdUngroup              Ungroup
 $optionEdCopy                 Copy
 $optionEdDelete               Delete
 $optionEdForeground           Foreground
@@ -380,17 +383,12 @@ $optionEdBackground           Background
 $optionEdMirror               Mirror
 $optionEdRotate               Rotate
 $optionEdDark                 Draw black
-$optionEdNoow                 No overwrite
-$optionEdMenuSize            Size menu
-$optionEdMenuVars            General menu
-$optionEdMenuSkills          Skills menu
-$optionEdAddTerrain          Add terrain
-$optionEdAddSteel            Add steel
-$optionEdAddHatch            Add hatch
-$optionEdAddGoal             Add goal
-$optionEdAddDeco             Add deco
-$optionEdAddHazard           Add hazard
-$optionEdGridCustom          Custom grid size
+$optionEdAddTerrain           Add terrain
+$optionEdAddSteel             Add steel
+$optionEdAddHatch             Add hatch
+$optionEdAddGoal              Add goal
+$optionEdAddDeco              Add deco
+$optionEdAddHazard            Add hazard
 
 // mini-dialogue to greet a new player
 $windowAskNameTitle          Lix

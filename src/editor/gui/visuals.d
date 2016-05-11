@@ -10,22 +10,22 @@ private:
     NumPickOption _red, _green, _blue;
 
     /+
-    winScrollTitle,
-    winScrollManual,
-    winScrollX,
-    winScrollY,
-    winScrollRed,
-    winScrollGreen,
-    winScrollBlue,
-    winScrollJump,
-    winScrollCurrent,
+    winLooksTitle,
+    winLooksManual,
+    winLooksX,
+    winLooksY,
+    winLooksRed,
+    winLooksGreen,
+    winLooksBlue,
+    winLooksJump,
+    winLooksCurrent,
     +/
 
 public:
     this(Level level)
     {
         super(new Geom(0, 0, 380, 200, From.CENTER),
-            Lang.winScrollTitle.transl);
+            Lang.winLooksTitle.transl);
         NumPickConfig cfg;
         cfg.digits     = 3; // the first one is '0x'
         cfg.sixButtons = true;
@@ -34,11 +34,11 @@ public:
         cfg.stepMedium = 0x04;
         cfg.stepBig    = 0x10;
         _red = new NumPickOption(new Geom(20, 40, xlg-40, 20),
-            cfg, Lang.winScrollRed.transl, &level.bgRed);
+            cfg, Lang.winLooksRed.transl, &level.bgRed);
         _green = new NumPickOption(new Geom(20, 70, xlg-40, 20),
-            cfg, Lang.winScrollGreen.transl, &level.bgGreen);
+            cfg, Lang.winLooksGreen.transl, &level.bgGreen);
         _blue = new NumPickOption(new Geom(20, 100, xlg-40, 20),
-            cfg, Lang.winScrollBlue.transl, &level.bgBlue);
+            cfg, Lang.winLooksBlue.transl, &level.bgBlue);
         foreach (e; [_red, _green, _blue]) {
             addChild(e);
             e.loadValue();
