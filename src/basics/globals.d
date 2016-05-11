@@ -14,6 +14,7 @@ enum int ticksPerSecond       = 60;
 enum int updatesPerSecond     = 15; // logic/physics updates of the game
 enum int ticksForDoubleClick  = 20; // 1/3 of a second at 60 ticks/sec
 
+enum int teamsPerLevelMax     =  8;
 enum int playerNameMaxLength  = 30;
 enum int mouseStandardDivisor = 20;
 
@@ -62,6 +63,7 @@ immutable levelBuilt                  = "BUILT";
 immutable levelAuthor                 = "AUTHOR";
 immutable levelNameGerman             = "GERMAN";
 immutable levelNameEnglish            = "ENGLISH";
+immutable levelIntendedNumberOfPlayers= "INTENDED_NUMBER_OF_PLAYERS";
 immutable levelTutorialGerman         = "TUTORIAL_GERMAN";
 immutable levelTutorialEnglish        = "TUTORIAL_ENGLISH";
 immutable levelHintGerman             = "HINT_GERMAN";

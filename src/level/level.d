@@ -49,6 +49,7 @@ public:
     string author;
     string nameGerman;
     string nameEnglish;
+    int intendedNumberOfPlayers;
 
     string[] hintsGerman;
     string[] hintsEnglish;
@@ -86,11 +87,12 @@ public:
     {
         built   = Date.now();
         _status = LevelStatus.BAD_EMPTY;
+        intendedNumberOfPlayers = 1;
         topology = new Topology(640, 400); // one screen in C++ Lix
-        initial      =  30;
-        required     =  20;
-        spawnint     =  32;
-        ploder       = Ac.exploder;
+        initial  =  30;
+        required =  20;
+        spawnint =  32;
+        ploder   = Ac.exploder;
     }
 
     this(in Filename fn)
@@ -155,7 +157,8 @@ public:
     {
         const(Level) rhs = cast (const Level) rhs_obj;
         if (rhs_obj is null) return false;
-        if (   this.author       != rhs.author
+        if (   this.intendedNumberOfPlayers != rhs.intendedNumberOfPlayers
+            || this.author       != rhs.author
             || this.nameGerman   != rhs.nameGerman
             || this.nameEnglish  != rhs.nameEnglish
             || this.hintsGerman  != rhs.hintsGerman

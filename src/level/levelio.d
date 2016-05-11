@@ -104,11 +104,9 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
     // set a string
     case '$':
         if      (text1 == glo.levelBuilt       ) built = new Date(text2);
-
         else if (text1 == glo.levelAuthor      ) author       = text2;
         else if (text1 == glo.levelNameGerman ) nameGerman  = text2;
         else if (text1 == glo.levelNameEnglish) nameEnglish = text2;
-
         else if (text1 == glo.levelHintGerman ) hint(hintsGerman,  text2);
         else if (text1 == glo.levelHintEnglish) hint(hintsEnglish, text2);
         else if (text1 == glo.levelTutorialGerman ) tuto(hintsGerman,  text2);
@@ -128,7 +126,8 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
         else if (text1 == glo.levelInitial      ) initial     = nr1;
         else if (text1 == glo.levelRequired     ) required    = nr1;
         else if (text1 == glo.levelSpawnint     ) spawnint    = nr1;
-
+        else if (text1 == glo.levelIntendedNumberOfPlayers)
+                                   intendedNumberOfPlayers = nr1;
         else if (text1 == glo.levelStartCornerX) {
             useManualScreenStart = true;
             manualScreenStartCenter.x = nr1 + cppHalfScreenX;
@@ -184,7 +183,8 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
 private void load_level_finalize(Level level)
 {
     with (level) {
-        // set some standards, in case we've read in rubbish values
+        intendedNumberOfPlayers = clamp(intendedNumberOfPlayers, 1,
+                                        glo.teamsPerLevelMax);
         level.resize(topology.xl, topology.yl);
         initial  = clamp(initial,  1, 999);
         required = clamp(required, 1, initial);
@@ -255,11 +255,12 @@ public void saveToFile(const(Level) l, std.stdio.File file)
     void wrhi(in string[] hints, in string str_tuto, in string str_hint)
     {
         // index 0 is the tutorial hint
-        foreach (int i, string str; hints)
-        if (i == 0) {
-            if (str != null) file.writeln(IoLine.Dollar(str_tuto, str));
+        foreach (int i, string str; hints) {
+            if (i > 0)
+                file.writeln(IoLine.Dollar(str_hint, str));
+            else if (str != null)
+                file.writeln(IoLine.Dollar(str_tuto, str));
         }
-        else file.writeln(IoLine.Dollar(str_hint, str));
     }
 
     wrhi(l.hintsGerman,  glo.levelTutorialGerman,  glo.levelHintGerman );
@@ -268,6 +269,8 @@ public void saveToFile(const(Level) l, std.stdio.File file)
         file.writeln();
     }
 
+    file.writeln(IoLine.Hash(glo.levelIntendedNumberOfPlayers,
+                                    l.intendedNumberOfPlayers));
     file.writeln(IoLine.Hash(glo.levelSizeX, l.topology.xl));
     file.writeln(IoLine.Hash(glo.levelSizeY, l.topology.yl));
     if (l.topology.torusX || l.topology.torusY) {
