@@ -217,15 +217,14 @@ $winLooksJump               Dorthin scrollen
 $winLooksCurrent            Aktuelle Position
 
 // Variablenfenster
-$winConstantsTitle                 Konstanten
-$winConstantsAuthor                Autor
-$winConstantsNameGerman           Deutscher Titel
-$winConstantsNameEnglish          Englischer Titel
-$winConstantsInitial               Anzahl Lix
-$winConstantsRequired              Lix zu retten
-$winConstantsSpawnintSlow         Fall-Intervall
-$winConstantsSpawnintFast         Fall-I. schnell
-$winConstantsClock                 Zeit/Nachspielz.
+$winConstantsTitle           Konstanten
+$winConstantsAuthor          Autor
+$winConstantsLevelName       Levelname
+$winConstantsPlayers         Spieler
+$winConstantsInitial         Lix zu Beginn
+$winConstantsRequired        Lix zu retten
+$winConstantsSpawnint        Fall-Intervall
+$winConstantsOvertime        Nachspielzeit
 
 // Faehigkeits-Fenster
 $winSkillsTitle              Fähigkeiten

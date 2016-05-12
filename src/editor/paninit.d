@@ -9,6 +9,7 @@ import basics.user;
 import editor.editor;
 import editor.hover;
 import editor.gui.browter;
+import editor.gui.constant;
 import editor.gui.panel;
 import editor.gui.skillset;
 import editor.gui.visuals;
@@ -76,8 +77,15 @@ void makePanel(Editor editor)
         onExecute(Lang.editorButtonSelectDark, keyEditorDark, () {
             editor._selection.each!(sel => sel.toggleDark());
         });
-        onExecuteText(Lang.editorButtonMenuConstants, Lang.winConstantsTitle, KeySet(), () { });
-        onExecuteText(Lang.editorButtonMenuTopology, Lang.winTopologyTitle, KeySet(), () { });
+        onExecuteText(Lang.editorButtonMenuConstants, Lang.winConstantsTitle,
+            keyEditorMenuConstants, () {
+                editor._okCancelWindow = new ConstantsWindow(editor._level);
+                addFocus(editor._okCancelWindow);
+                button(Lang.editorButtonMenuConstants).on = true;
+            });
+        onExecuteText(Lang.editorButtonMenuTopology, Lang.winTopologyTitle,
+            keyEditorMenuTopology, () {
+            });
         onExecuteText(Lang.editorButtonMenuLooks, Lang.winLooksTitle,
             KeySet(), () {
                 editor._okCancelWindow = new VisualsWindow(editor._level);

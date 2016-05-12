@@ -186,7 +186,7 @@ private void load_level_finalize(Level level)
         intendedNumberOfPlayers = clamp(intendedNumberOfPlayers, 1,
                                         glo.teamsPerLevelMax);
         level.resize(topology.xl, topology.yl);
-        initial  = clamp(initial,  1, 999);
+        initial  = clamp(initial,  1, Level.initialMax);
         required = clamp(required, 1, initial);
         spawnint = clamp(spawnint, Level.spawnintMin, Level.spawnintMax);
         bgRed   = clamp(bgRed,   0, 255);

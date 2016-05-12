@@ -10,7 +10,7 @@ private:
     TextButton _cancel;
 
 public:
-    this(Geom g, string title = "")
+    this(Geom g, string title)
     {
         super(g, title);
         _okay   = newOkay  (new Geom(20, 50, 100, 20, From.BOT_RIG));

@@ -227,15 +227,14 @@ $winLooksCurrent             Current Position
 
 // editor window to set level variables
 
-$winConstantsTitle                  Constants
-$winConstantsAuthor                 Author
-$winConstantsNameGerman            German title
-$winConstantsNameEnglish           English title
-$winConstantsInitial                No. of lix
-$winConstantsRequired               Lix to save
-$winConstantsSpawnintSlow          Spawn interval
-$winConstantsSpawnintFast          Spawn int. fast
-$winConstantsClock                  Time/overtime
+$winConstantsTitle            Constants
+$winConstantsAuthor           Author
+$winConstantsLevelName        Level name
+$winConstantsPlayers          Players
+$winConstantsInitial          Initial lix
+$winConstantsRequired         Lix to save
+$winConstantsSpawnint         Spawn interval
+$winConstantsOvertime         Overtime
 
 // editor window to set skills
 

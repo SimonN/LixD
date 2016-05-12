@@ -241,13 +241,12 @@ enum Lang {
     // editor window to set level variables
     winConstantsTitle,
     winConstantsAuthor,
-    winConstantsNameGerman,
-    winConstantsNameEnglish,
+    winConstantsLevelName,
+    winConstantsPlayers,
     winConstantsInitial,
     winConstantsRequired,
-    winConstantsSpawnintSlow,
-    winConstantsSpawnintFast,
-    winConstantsClock,
+    winConstantsSpawnint,
+    winConstantsOvertime,
 
     // editor window to set skills
     winSkillsTitle,

@@ -37,12 +37,13 @@ enum FileFormat {
 
 class Level {
 public:
-    static immutable int minXl = 160;
-    static immutable int minYl = 160;
-    static immutable int maxXl = 3200;
-    static immutable int maxYl = 2000;
-    static immutable int spawnintMin =  1;
-    static immutable int spawnintMax = 96;
+    enum minXl = 160;
+    enum minYl = 160;
+    enum maxXl = 3200;
+    enum maxYl = 2000;
+    enum spawnintMin =  1;
+    enum spawnintMax = 96;
+    enum initialMax = 999;
 
     // DTODO: implement players_intended;
     MutableDate built;
