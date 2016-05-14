@@ -119,13 +119,13 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
         else if (text1 == glo.levelSizeY) level.resize(topology.xl, nr1);
         else if (text1 == glo.levelTorusX) topology.setTorusXY(nr1 > 0, topology.torusY);
         else if (text1 == glo.levelTorusY) topology.setTorusXY(topology.torusX, nr1 > 0);
-        else if (text1 == glo.levelBackgroundRed  ) bgRed     = nr1;
-        else if (text1 == glo.levelBackgroundGreen) bgGreen   = nr1;
-        else if (text1 == glo.levelBackgroundBlue ) bgBlue    = nr1;
-        else if (text1 == glo.levelSeconds      ) seconds     = nr1;
-        else if (text1 == glo.levelInitial      ) initial     = nr1;
-        else if (text1 == glo.levelRequired     ) required    = nr1;
-        else if (text1 == glo.levelSpawnint     ) spawnint    = nr1;
+        else if (text1 == glo.levelBackgroundRed  ) bgRed = nr1;
+        else if (text1 == glo.levelBackgroundGreen) bgGreen = nr1;
+        else if (text1 == glo.levelBackgroundBlue ) bgBlue = nr1;
+        else if (text1 == glo.levelSeconds      ) overtimeSeconds = nr1;
+        else if (text1 == glo.levelInitial      ) initial = nr1;
+        else if (text1 == glo.levelRequired     ) required = nr1;
+        else if (text1 == glo.levelSpawnint     ) spawnint = nr1;
         else if (text1 == glo.levelIntendedNumberOfPlayers)
                                    intendedNumberOfPlayers = nr1;
         else if (text1 == glo.levelStartCornerX) {
@@ -290,7 +290,7 @@ public void saveToFile(const(Level) l, std.stdio.File file)
     }
 
     file.writeln();
-    file.writeln(IoLine.Hash(glo.levelSeconds,  l.seconds ));
+    file.writeln(IoLine.Hash(glo.levelSeconds,  l.overtimeSeconds));
     file.writeln(IoLine.Hash(glo.levelInitial,  l.initial ));
     file.writeln(IoLine.Hash(glo.levelRequired, l.required));
     file.writeln(IoLine.Hash(glo.levelSpawnint, l.spawnint));

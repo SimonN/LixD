@@ -13,11 +13,12 @@ private:
     NumPick _initial;
     NumPick _spawnint;
     NumPick _required;
+    NumPick _overtime;
 
 public:
     this(Level level)
     {
-        super(new Geom(0, 0, 400, 250, From.CENTER),
+        super(new Geom(0, 0, 450, 250, From.CENTER),
             Lang.winConstantsTitle.transl);
         enum butX   = 140;
         enum butXl  = 400 - butX - 20;
@@ -39,34 +40,45 @@ public:
         cfg.digits = 1;
         cfg.min = 1;
         cfg.max = basics.globals.teamsPerLevelMax;
-        _intendedNumberOfPlayers = new NumPick(new Geom(butX, 90, 120,20),cfg);
+        _intendedNumberOfPlayers = new NumPick(new Geom(butX + 20, 90,
+                                                        130, 20), cfg);
         _intendedNumberOfPlayers.number = level.intendedNumberOfPlayers;
 
         cfg.sixButtons = true;
         cfg.digits = 3;
         cfg.max = Level.initialMax;
-        _initial  = new NumPick(new Geom(butX, 120, 160, 20), cfg);
-        _required = new NumPick(new Geom(butX, 150, 160, 20), cfg);
+        _initial  = new NumPick(new Geom(butX, 120, 170, 20), cfg);
+        _required = new NumPick(new Geom(butX, 150, 170, 20), cfg);
         _initial .number = level.initial;
         _required.number = level.required;
 
         cfg.sixButtons = false;
         cfg.digits = 2;
         cfg.max = Level.spawnintMax;
-        _spawnint = new NumPick(new Geom(butX, 180, 120, 20), cfg);
+        _spawnint = new NumPick(new Geom(butX + 20, 180, 130, 20), cfg);
         _spawnint.number = level.spawnint;
+
+        cfg.time = true;
+        cfg.sixButtons = true;
+        cfg.digits = 5;
+        cfg.min = 0;
+        cfg.max = 30 * 60; // completely arbitrary
+        cfg.stepBig = 60;
+        _overtime = new NumPick(new Geom(butX, 210, 170, 20), cfg);
+        _overtime.number = level.overtimeSeconds;
 
         // DTODO: write format-time in NumPick and add overtime for multiplayer
         addChildren(_intendedNumberOfPlayers,
-                    _initial, _spawnint, _required);
+                    _initial, _spawnint, _required, _overtime);
     }
 
 protected:
     override void selfWriteChangesTo(Level level)
     {
         level.intendedNumberOfPlayers = _intendedNumberOfPlayers.number;
-        level.initial  = _initial.number;
+        level.initial = _initial.number;
         level.required = _required.number;
         level.spawnint = _spawnint.number;
+        level.overtimeSeconds = _overtime.number;
     }
 }

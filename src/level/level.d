@@ -60,7 +60,7 @@ public:
     int  bgGreen;
     int  bgBlue;
 
-    int  seconds;
+    int  overtimeSeconds;
     int  initial;
     int  required;
     int  spawnint;
@@ -164,17 +164,15 @@ public:
             || this.nameEnglish  != rhs.nameEnglish
             || this.hintsGerman  != rhs.hintsGerman
             || this.hintsEnglish != rhs.hintsEnglish
-
-            || this.topology     != rhs.topology
-            || this.bgRed        != rhs.bgRed
-            || this.bgGreen      != rhs.bgGreen
-            || this.bgBlue       != rhs.bgBlue
-
-            || this.seconds      != rhs.seconds
-            || this.initial      != rhs.initial
-            || this.required     != rhs.required
-            || this.spawnint     != rhs.spawnint
-            || this.ploder       != rhs.ploder
+            || this.topology != rhs.topology
+            || this.bgRed != rhs.bgRed
+            || this.bgGreen != rhs.bgGreen
+            || this.bgBlue != rhs.bgBlue
+            || this.overtimeSeconds != rhs.overtimeSeconds
+            || this.initial != rhs.initial
+            || this.required != rhs.required
+            || this.spawnint != rhs.spawnint
+            || this.ploder != rhs.ploder
         ) {
             return false;
         }

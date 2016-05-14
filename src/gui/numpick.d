@@ -175,7 +175,33 @@ formatValHex()
         lab[$-1].color = color.guiTextOn;
 }
 
-private void formatValTime() { }
+private void formatValTime()
+{
+    // Treat val as seconds, format as mm:ss.
+    // Time always prints leading zeroes.
+    int remainder = val.abs;
+    for (int pos = lab.len - 1; pos >= 0; --pos) {
+        lab[pos].color = remainder > 0 ? color.guiTextOn : color.guiText;
+        if (pos == lab.len - 1) {
+            if (cfg.whiteZero)
+                lab[pos].color = color.guiTextOn;
+            lab[pos].text  = [remainder % 10 + '0'];
+            remainder /= 10;
+        }
+        else if (pos == lab.len - 2) {
+            lab[pos].text = [remainder % 6 + '0'];
+            remainder /= 6;
+        }
+        else if (pos == lab.len - 3) {
+            lab[pos].text  = ":";
+        }
+        else {
+            // minute digits
+            lab[pos].text = [remainder % 10 + '0'];
+            remainder /= 10;
+        }
+    }
+}
 
 }
 // end class
