@@ -1,6 +1,6 @@
 module editor.gui.constant;
 
-import basics.user; // length of sorted skill array
+import basics.user;
 import basics.globals;
 import editor.gui.okcancel;
 import file.language;
@@ -9,6 +9,8 @@ import level.level;
 
 class ConstantsWindow : OkCancelWindow {
 private:
+    Texttype _author;
+    Texttype _levelName;
     NumPick _intendedNumberOfPlayers;
     NumPick _initial;
     NumPick _spawnint;
@@ -18,11 +20,12 @@ private:
 public:
     this(Level level)
     {
-        super(new Geom(0, 0, 450, 250, From.CENTER),
+        enum thisXl = 450f;
+        super(new Geom(0, 0, thisXl, 250, From.CENTER),
             Lang.winConstantsTitle.transl);
-        enum butX   = 140;
-        enum butXl  = 400 - butX - 20;
-        enum textXl = 120;
+        enum butX   = 140f;
+        enum butXl  = thisXl - butX - 20f;
+        enum textXl = 120f;
 
         void label(in float y, in Lang cap)
         {
@@ -35,6 +38,11 @@ public:
         label(150, Lang.winConstantsRequired);
         label(180, Lang.winConstantsSpawnint);
         label(210, Lang.winConstantsOvertime);
+
+        _author    = new Texttype(new Geom(butX, 30, butXl, 20));
+        _levelName = new Texttype(new Geom(butX, 60, butXl, 20));
+        _author.text = level.author;
+        _levelName.text = level.nameEnglish;
 
         NumPickConfig cfg;
         cfg.digits = 1;
@@ -66,15 +74,15 @@ public:
         cfg.stepBig = 60;
         _overtime = new NumPick(new Geom(butX, 210, 170, 20), cfg);
         _overtime.number = level.overtimeSeconds;
-
-        // DTODO: write format-time in NumPick and add overtime for multiplayer
-        addChildren(_intendedNumberOfPlayers,
+        addChildren(_author, _levelName, _intendedNumberOfPlayers,
                     _initial, _spawnint, _required, _overtime);
     }
 
 protected:
     override void selfWriteChangesTo(Level level)
     {
+        level.author = _author.text;
+        level.nameEnglish = _levelName.text;
         level.intendedNumberOfPlayers = _intendedNumberOfPlayers.number;
         level.initial = _initial.number;
         level.required = _required.number;
