@@ -102,7 +102,6 @@ void calcTerrainBrowser(Editor editor) {
             _selection = [ Hover.newViaEvilDynamicCast(_level, pos) ];
             _terrainBrowser.saveDirOfChosenTileToUserCfg();
         }
-        rmFocus(_terrainBrowser);
         editor.closeWindows();
     }
 }}
@@ -112,7 +111,6 @@ void calcOkCancelWindow(Editor editor) {
 {
     if (_okCancelWindow.done) {
         _okCancelWindow.writeChangesTo(_level);
-        rmFocus(_okCancelWindow);
         editor.closeWindows();
     }
 }}
@@ -120,8 +118,14 @@ void calcOkCancelWindow(Editor editor) {
 void closeWindows(Editor editor) {
     with (editor)
 {
-    _terrainBrowser = null;
-    _okCancelWindow = null;
+    if (_terrainBrowser) {
+        rmFocus(_terrainBrowser);
+        _terrainBrowser = null;
+    }
+    if (_okCancelWindow) {
+        rmFocus(_okCancelWindow);
+        _okCancelWindow = null;
+    }
     _panel.allButtonsOff();
     editor.selectGrid(); // grid button flickers otherwise
 }}

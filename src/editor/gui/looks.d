@@ -1,11 +1,11 @@
-module editor.gui.visuals;
+module editor.gui.looks;
 
 import editor.gui.okcancel;
 import file.language;
 import gui;
 import level.level;
 
-class VisualsWindow : OkCancelWindow {
+class LooksWindow : OkCancelWindow {
 private:
     NumPickOption _red, _green, _blue;
 

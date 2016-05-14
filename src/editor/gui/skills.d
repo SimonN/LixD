@@ -1,4 +1,4 @@
-module editor.gui.skillset;
+module editor.gui.skills;
 
 import std.algorithm;
 
@@ -11,7 +11,7 @@ import gui;
 import level.level;
 import lix.enums;
 
-class SkillsetWindow : OkCancelWindow {
+class SkillsWindow : OkCancelWindow {
 private:
     SkillSetter[skillSort.length] _skillSetters;
     BoolOption _useExploder;

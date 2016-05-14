@@ -11,8 +11,8 @@ import editor.hover;
 import editor.gui.browter;
 import editor.gui.constant;
 import editor.gui.panel;
-import editor.gui.skillset;
-import editor.gui.visuals;
+import editor.gui.skills;
+import editor.gui.looks;
 import editor.select;
 import file.language;
 import gui;
@@ -77,31 +77,35 @@ void makePanel(Editor editor)
         onExecute(Lang.editorButtonSelectDark, keyEditorDark, () {
             editor._selection.each!(sel => sel.toggleDark());
         });
-        onExecuteText(Lang.editorButtonMenuConstants, Lang.winConstantsTitle,
-            keyEditorMenuConstants, () {
-                editor._okCancelWindow = new ConstantsWindow(editor._level);
-                addFocus(editor._okCancelWindow);
-                button(Lang.editorButtonMenuConstants).on = true;
-            });
+        template mkSubwin(string forWhat) {
+            enum string mkSubwin = "
+                onExecuteText(Lang.editorButtonMenu%s, Lang.win%sTitle,
+                    keyEditorMenu%s, () {
+                        if (editor.gotoMainMenu || editor._terrainBrowser
+                                                || editor._okCancelWindow)
+                            return;
+                        editor._dragger.stop();
+                        editor._hover = null;
+                        editor._okCancelWindow = new %sWindow(editor._level);
+                        addFocus(editor._okCancelWindow);
+                        button(Lang.editorButtonMenu%s).on = true;
+                    });
+                ".format(forWhat, forWhat, forWhat, forWhat, forWhat);
+        }
+        mixin (mkSubwin!"Constants");
+        mixin (mkSubwin!"Looks");
+        mixin (mkSubwin!"Skills");
         onExecuteText(Lang.editorButtonMenuTopology, Lang.winTopologyTitle,
             keyEditorMenuTopology, () {
-            });
-        onExecuteText(Lang.editorButtonMenuLooks, Lang.winLooksTitle,
-            KeySet(), () {
-                editor._okCancelWindow = new VisualsWindow(editor._level);
-                addFocus(editor._okCancelWindow);
-                button(Lang.editorButtonMenuLooks).on = true;
-            });
-        onExecuteText(Lang.editorButtonMenuSkills, Lang.winSkillsTitle,
-            keyEditorMenuSkills,
-            () {
-                editor._okCancelWindow = new SkillsetWindow(editor._level);
-                addFocus(editor._okCancelWindow);
-                button(Lang.editorButtonMenuSkills).on = true;
             });
         template mkBrowser(string name, string exts, string curDirPtr) {
             enum string mkBrowser = "
                     onExecute(Lang.editorButtonAdd%s, keyEditorAdd%s, () {
+                        if (editor.gotoMainMenu || editor._terrainBrowser
+                                                || editor._okCancelWindow)
+                            return;
+                        editor._dragger.stop();
+                        editor._hover = null;
                         editor._terrainBrowser = new TerrainBrowser(%s, %s);
                         addFocus(editor._terrainBrowser);
                         button(Lang.editorButtonAdd%s).on = true;
