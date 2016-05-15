@@ -21,8 +21,7 @@ private:
     immutable(int)[] _keys;
 
 public:
-    this(int singleKey)        { _keys = [ singleKey ]; }
-    this(immutable(int)[] arr) { _keys = arr; }
+    this(int singleKey) { _keys = [ singleKey ]; }
 
     this(const typeof(this)[] sets...)
     {
@@ -87,7 +86,7 @@ public:
 unittest {
     KeySet a = KeySet(4);
     KeySet b = KeySet(2);
-    KeySet c = KeySet(5, 4, 3);
+    KeySet c = KeySet(KeySet(4), KeySet(5), KeySet(3));
     assert (KeySet(a, b, c)._keys == [2, 3, 4, 5]);
     c.remove(4);
     c.remove(6);

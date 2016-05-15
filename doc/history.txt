@@ -1,6 +1,22 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.3.5
+-----
+
+2016-05-15
+
+geoo has designed awesome glyphs, representing mouse wheel and buttons.
+The infinity symbol is now a big lemniscate. I've included the new glyphs
+in the default font. Thank you, geoo!
+
+Editor has a window to set the main level constants, and another to set
+the level topology. Non-browser-opening editor buttons have words, not icons.
+This addresses issue #74 partially.
+
+The editor can only set the English level title. You can set the intended
+number of players per level, but that field has no effect anywhere yet.
+
 0.3.4
 -----
 
