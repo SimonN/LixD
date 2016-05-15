@@ -157,7 +157,7 @@ public:
     opEquals(Object rhs_obj) const
     {
         const(Level) rhs = cast (const Level) rhs_obj;
-        if (rhs_obj is null) return false;
+        if (rhs is null) return false;
         if (   this.intendedNumberOfPlayers != rhs.intendedNumberOfPlayers
             || this.author       != rhs.author
             || this.nameGerman   != rhs.nameGerman

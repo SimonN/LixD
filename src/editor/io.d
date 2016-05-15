@@ -5,6 +5,7 @@ import std.conv;
 import std.string;
 
 import basics.globconf;
+import basics.user; // hotkeys for the popup dialogs
 import editor.dragger;
 import editor.editor;
 import editor.gui.panel;
@@ -13,6 +14,7 @@ import file.filename;
 import file.language;
 import graphic.map;
 import gui;
+import hardware.keyset;
 import level.level;
 import tile.gadtile;
 
@@ -41,33 +43,39 @@ void implDestructor(Editor editor)
 void newLevel(Editor editor)
 {
     Level blank = new Level;
+    blank.author = basics.globconf.userName;
     if (editor._level == blank)
         return;
-    MsgBox box = editor.askForDataLoss();
-    addFocus(box);
-
-    editor._level = blank;
-    editor._level.author = basics.globconf.userName;
-    editor._hover = null;
-    editor._selection = null;
-    editor._loadedFrom = null;
+    editor.askForDataLossThenExecute(delegate void() {
+        editor._level = blank;
+        editor._hover = null;
+        editor._selection = null;
+        editor._loadedFrom = null;
+    });
 }
 
-MsgBox askForDataLoss(Editor editor)
-{
+MsgBox askForDataLossThenExecute(
+    Editor editor,
+    void delegate() unlessCancelledExecuteThis
+) {
     MsgBox box = new MsgBox(Lang.saveBoxTitleSave.transl);
     if (editor._loadedFrom) {
         box.addMsg(Lang.saveBoxQuestionUnsavedChangedLevel.transl);
         box.addMsg("%s %s".format(Lang.saveBoxFileName.transl,
-                                  editor._loadedFrom));
+                                  editor._loadedFrom.rootful));
     }
     else {
         box.addMsg(Lang.saveBoxQuestionUnsavedNewLevel.transl);
     }
     box.addMsg("%s %s".format(Lang.saveBoxLevelName.transl,
                               editor._level.name));
-    box.addButton(Lang.saveBoxYesSave.transl);
-    box.addButton(Lang.saveBoxNoDiscard.transl);
-    box.addButton(Lang.saveBoxNoCancel.transl);
+    // DTODO: add handling for 'yes'
+    box.addButton("(not impl)", // Lang.saveBoxYesSave.transl
+                  keyMenuOkay);
+    box.addButton(Lang.saveBoxNoDiscard.transl, keyMenuDelete,
+                  unlessCancelledExecuteThis);
+    box.addButton(Lang.saveBoxNoCancel.transl,
+                  KeySet(keyMenuExit, keyEditorExit));
+    addFocus(box);
     return box;
 }
