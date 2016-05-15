@@ -19,12 +19,23 @@ void implEditorDraw(Editor editor)
 {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Editor.implEditorDraw");
+    editor.updateTopologies();
     editor.drawTerrainToSeparateMap();
     editor.drawMainMap();
     editor.drawToScreen();
 }
 
 private:
+
+void updateTopologies(Editor editor)
+{
+    with (editor._level.topology) {
+        editor._map       .resize(xl, yl);
+        editor._mapTerrain.resize(xl, yl);
+        editor._map       .setTorusXY(torusX, torusY);
+        editor._mapTerrain.setTorusXY(torusX, torusY);
+    }
+}
 
 void drawTerrainToSeparateMap(Editor editor)
 {

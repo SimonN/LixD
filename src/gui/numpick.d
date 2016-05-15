@@ -146,7 +146,7 @@ private void formatValDecimal()
             --pos;
         }
         if (pos >= 0 && (cfg.signAlways || val < 0)) {
-            lab[pos].text  = val < 0 ? "\u2013"        : "+"; // 2013 = en-dash
+            lab[pos].text  = val < 0 ? "\u2212"        : "+"; // unicode minus
             lab[pos].color = val < 0 ? color.guiTextOn : color.guiText;
             --pos;
         }

@@ -10,9 +10,10 @@ import editor.editor;
 import editor.hover;
 import editor.gui.browter;
 import editor.gui.constant;
+import editor.gui.looks;
 import editor.gui.panel;
 import editor.gui.skills;
-import editor.gui.looks;
+import editor.gui.topology;
 import editor.select;
 import file.language;
 import gui;
@@ -93,11 +94,9 @@ void makePanel(Editor editor)
                 ".format(forWhat, forWhat, forWhat, forWhat, forWhat);
         }
         mixin (mkSubwin!"Constants");
+        mixin (mkSubwin!"Topology");
         mixin (mkSubwin!"Looks");
         mixin (mkSubwin!"Skills");
-        onExecuteText(Lang.editorButtonMenuTopology, Lang.winTopologyTitle,
-            keyEditorMenuTopology, () {
-            });
         template mkBrowser(string name, string exts, string curDirPtr) {
             enum string mkBrowser = "
                     onExecute(Lang.editorButtonAdd%s, keyEditorAdd%s, () {
@@ -135,18 +134,4 @@ Rect smallestRectContainingSelection(in Editor editor)
     editorButtonFileSaveAs,
     editorButtonUndo,
     editorButtonRedo,
-    editorButtonSelectNoow,
-    editorButtonHelp,
-    editorButtonMenuSize,
-    editorButtonMenuScroll,
-    editorButtonMenuVars,
-
-    int keyEditorLeft        = ALLEGRO_KEY_S;
-    int keyEditorRight       = ALLEGRO_KEY_F;
-    int keyEditorUp          = ALLEGRO_KEY_E;
-    int keyEditorDown        = ALLEGRO_KEY_D;
-    int keyEditorNoow        = ALLEGRO_KEY_M;
-    int keyEditorHelp        = ALLEGRO_KEY_H;
-    int keyEditorMenuSize    = ALLEGRO_KEY_5;
-    int keyEditorMenuVars    = ALLEGRO_KEY_Q;
     +/
