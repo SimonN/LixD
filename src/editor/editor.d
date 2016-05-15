@@ -25,7 +25,7 @@ package:
     Map      _map; // level background color, and gadgets
     Map      _mapTerrain; // transp, for rendering terrain, later blit to _map
     Level    _level;
-    Filename _loadedFrom;
+    MutFilename _loadedFrom;
 
     bool _gotoMainMenu;
     EditorPanel _panel;

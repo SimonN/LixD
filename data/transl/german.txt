@@ -49,16 +49,7 @@ $browserInfoBuilt            Level:
 $browserInfoNew              ist zu neu
 $browserInfoSame             passt!
 $browserInfoOld              ist zu alt
-$browserInfoHoldsLevel      enthalten
-
-$browserBoxDirectory         Verzeichnis:
-$browserBoxFileName          Dateiname:
-$browserBoxLevelName         Leveltitel:
-
-$browserBoxDeleteReplayTitle    Replay löschen?
-$browserBoxDeleteReplayQuestion    Soll dieses Replay wirklich gelöscht werden?
-$browserBoxDeleteLevelTitle    Level löschen?
-$browserBoxDeleteLevelQuestion    Soll dieser Level wirklich gelöscht werden?
+$browserInfoHoldsLevel       enthalten
 
 // Lobby
 
@@ -132,10 +123,6 @@ $gameSpecTribe           Fähigkeiten eines anderen Teams ansehen.
 
 // Editor allgemein
 
-$editorUnsavedTitle          Änderungen speichern?
-$editorUnsavedTitleNew      Level speichern?
-$editorUnsavedQuestion       Moechtest du die Änderungen an diesem Level speichern?
-$editorUnsavedQuestionNew   Moechtest du diesen neuen Level speichern?
 $editorHotkey                 Hotkey:
 $editorHotkeyHold            Hotkey: halte
 $editorBarAt                 an
@@ -184,6 +171,19 @@ $saveBrowserTitle            Speichern unter
 $saveFilename                 Dateiname:
 $saveBoxOverwriteTitle      Level überschreiben?
 $saveBoxOverwriteQuestion   Soll dieser Level wirklich überschrieben werden?
+
+$saveBoxTitleDelete       Löschen?
+$saveBoxTitleSave         Speichern?
+$saveBoxQuestionUnsavedChangedLevel Änderungen an diesem Level speichern?
+$saveBoxQuestionUnsavedNewLevel Neuen Level speichern?
+$saveBoxQuestionDeleteReplay Dieses Replay wirklich löschen?
+$saveBoxQuestionDeleteLevel  Diesen Level wirklich löschen?
+$saveBoxDirectory         Verzeichnis:
+$saveBoxFileName          Dateiname:
+$saveBoxLevelName         Leveltitel:
+$saveBoxYesSave                  Speichern
+$saveBoxNoDiscard                Verwerfen
+$saveBoxNoCancel                 Abbrechen
 
 // BitmapBrowser
 $addTerrain                   Terrain hinzufuegen

@@ -86,11 +86,11 @@ private:
 
     MsgBox newMsgBoxDelete()
     {
-        auto m = new MsgBox(Lang.browserBoxDeleteLevelTitle.transl);
-        m.addMsg(Lang.browserBoxDeleteLevelQuestion.transl);
-        m.addMsg(Lang.browserBoxLevelName.transl ~ " " ~ (levelRecent !is null
+        auto m = new MsgBox(Lang.saveBoxTitleDelete.transl);
+        m.addMsg(Lang.saveBoxQuestionDeleteLevel.transl);
+        m.addMsg(Lang.saveBoxLevelName.transl ~ " " ~ (levelRecent !is null
             ? levelRecent.name : fileRecent.fileNoExtNoPre));
-        m.addMsg(Lang.browserBoxFileName.transl ~ " " ~ fileRecent.rootful);
+        m.addMsg(Lang.saveBoxFileName.transl ~ " " ~ fileRecent.rootful);
         return m;
     }
 }

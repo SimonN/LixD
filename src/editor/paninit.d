@@ -3,11 +3,12 @@ module editor.paninit;
 import std.algorithm;
 import std.string;
 
-import basics.rect;
 import basics.globals;
+import basics.rect;
 import basics.user;
 import editor.editor;
 import editor.hover;
+import editor.io;
 import editor.gui.browter;
 import editor.gui.constant;
 import editor.gui.looks;
@@ -18,6 +19,7 @@ import editor.select;
 import file.language;
 import gui;
 import hardware.keyset;
+import level.level;
 
 package:
 
@@ -26,6 +28,9 @@ void makePanel(Editor editor)
     editor._panel = new EditorPanel();
     addElder(editor._panel);
     with (editor._panel) {
+        onExecute(Lang.editorButtonFileNew, KeySet(), () {
+            editor.newLevel();
+        });
         onExecute(Lang.editorButtonFileExit, keyEditorExit, () {
             editor._gotoMainMenu = true;
             import file.filename; // debugging
@@ -129,7 +134,6 @@ Rect smallestRectContainingSelection(in Editor editor)
                             .reduce!(Rect.smallestContainer);
 }
     /+
-    editorButtonFileNew,
     editorButtonFileSave,
     editorButtonFileSaveAs,
     editorButtonUndo,

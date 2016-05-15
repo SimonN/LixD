@@ -55,15 +55,6 @@ $browserInfoSame             fits!
 $browserInfoOld              is too old
 $browserInfoHoldsLevel       contained
 
-$browserBoxDirectory            Directory:
-$browserBoxFileName             File name:
-$browserBoxLevelName            Level title:
-
-$browserBoxDeleteReplayTitle    Delete replay?
-$browserBoxDeleteReplayQuestion Do you really want to delete this replay?
-$browserBoxDeleteLevelTitle     Delete level?
-$browserBoxDeleteLevelQuestion  Do you really want to delete this level?
-
 // networking lobby
 
 $winLobbyTitle                Network Game
@@ -135,10 +126,6 @@ $gameSpecTribe            Examine the skills of a different team.
 
 // main editor screen
 
-$editorUnsavedTitle           Save changes?
-$editorUnsavedTitleNew       Save level?
-$editorUnsavedQuestion        Would you like to save the changes on this level?
-$editorUnsavedQuestionNew    Would you like to save this new level?
 $editorHotkey                  Hotkey:
 $editorHotkeyHold             Hotkey: hold
 $editorBarAt                  at
@@ -190,6 +177,19 @@ $saveBrowserTitle             Save As
 $saveFilename                  File name:
 $saveBoxOverwriteTitle       Overwrite Level?
 $saveBoxOverwriteQuestion    Do you really want to overwrite this level?
+
+$saveBoxTitleDelete       Delete?
+$saveBoxTitleSave         Save?
+$saveBoxQuestionUnsavedChangedLevel Save changes to this level?
+$saveBoxQuestionUnsavedNewLevel Save this new level?
+$saveBoxQuestionDeleteReplay Really delete this replay?
+$saveBoxQuestionDeleteLevel  Really delete this level?
+$saveBoxDirectory         Directory:
+$saveBoxFileName          File name:
+$saveBoxLevelName         Level name:
+$saveBoxYesSave           Save
+$saveBoxNoDiscard         Discard
+$saveBoxNoCancel          Cancel
 
 // BitmapBrowser
 

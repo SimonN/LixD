@@ -75,14 +75,6 @@ enum Lang {
     browserInfoOld,
     browserInfoHoldsLevel,
 
-    browserBoxDirectory,
-    browserBoxFileName,
-    browserBoxLevelName,
-    browserBoxDeleteReplayTitle,
-    browserBoxDeleteReplayQuestion,
-    browserBoxDeleteLevelTitle,
-    browserBoxDeleteLevelQuestion,
-
     // networking lobby
     winLobbyTitle,
     winLobbyTitleLobby,
@@ -151,10 +143,6 @@ enum Lang {
     gameSpecTribe,
 
     // main editor screen
-    editorUnsavedTitle,
-    editorUnsavedTitleNew,
-    editorUnsavedQuestion,
-    editorUnsavedQuestionNew,
     editorHotkey,
     editorHotkeyHold,
     editorBarAt,
@@ -206,6 +194,19 @@ enum Lang {
     saveFilename,
     saveBoxOverwriteTitle,
     saveBoxOverwriteQuestion,
+
+    saveBoxTitleDelete,
+    saveBoxTitleSave,
+    saveBoxQuestionUnsavedChangedLevel,
+    saveBoxQuestionUnsavedNewLevel,
+    saveBoxQuestionDeleteReplay,
+    saveBoxQuestionDeleteLevel,
+    saveBoxDirectory,
+    saveBoxFileName,
+    saveBoxLevelName,
+    saveBoxYesSave,
+    saveBoxNoDiscard,
+    saveBoxNoCancel,
 
     // BitmapBrowser
     addTerrain,

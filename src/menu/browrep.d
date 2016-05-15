@@ -81,10 +81,10 @@ private:
 
     MsgBox newMsgBoxDelete()
     {
-        auto m = new MsgBox(Lang.browserBoxDeleteReplayTitle.transl);
-        m.addMsg(Lang.browserBoxDeleteReplayQuestion.transl);
-        m.addMsg(Lang.browserBoxDirectory.transl~ " " ~ fileRecent.dirRootful);
-        m.addMsg(Lang.browserBoxFileName.transl ~ " " ~ fileRecent.file);
+        auto m = new MsgBox(Lang.saveBoxTitleDelete.transl);
+        m.addMsg(Lang.saveBoxQuestionDeleteReplay.transl);
+        m.addMsg(Lang.saveBoxDirectory.transl~ " " ~ fileRecent.dirRootful);
+        m.addMsg(Lang.saveBoxFileName.transl ~ " " ~ fileRecent.file);
         return m;
     }
 }
