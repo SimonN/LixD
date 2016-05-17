@@ -17,7 +17,7 @@ import tile.abstile;
 
 class TerrainTile : AbstractTile {
 private:
-    Phymap _phymap;
+    Phymap _phymap; // not the game's physics map, but the tile's map!
     bool   _steel;
     Cutbit _dark; // same transparent pixels, but all nontransp are full white
 
@@ -36,8 +36,17 @@ public:
     // Output: The solid/nonsolid bits there of the rotated/mirrored tile
     // It is illegal to call this such that result is outside of tile.
     Phybitset getPhybitsXYRotMirr(in Point g, in int rot, in bool mirr) const
-    {
+    in {
         assert (_phymap);
+        import std.algorithm;
+        immutable bound = max(_phymap.xl, _phymap.yl);
+        import std.string;
+        assert (0 <= g.x && g.x < bound,
+            "input point's x = %d is not inside [0, %d[".format(g.x, bound));
+        assert (0 <= g.y && g.y < bound,
+            "input point's y = %d is not inside [0, %d[".format(g.y, bound));
+    }
+    body {
         // The algorithm for rotation and mirroring is:
         // First mirror vertically, if the mirr flag is true.
         // The resulting thing, turn it by rot * 90 degrees ccw.
@@ -55,8 +64,8 @@ public:
             &&  0 <= u.y && u.y < _phymap.yl, format(
             "Bad terrain tile rotation coordinate resolution. "
             "point=%s, rot=%d, mirr=%d, result=%s. "
-            "Expected 0 <= %d < %d and 0 <= %d < %d.",
-            g.toString, rot, mirr, u.toString, u.x, u.y));
+            "Expected 0 <= %d < %d and 0 <= %d < %d.", g.toString, rot, mirr,
+            u.toString, u.x, _phymap.xl, u.y, _phymap.yl));
         return _phymap.get(u);
     }
 

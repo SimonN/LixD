@@ -107,9 +107,8 @@ void maybeAdd(Pos)(
     Pos pos
 )   if (is (Pos : Occurrence) && ! is (Pos == Occurrence))
 {   with (editor)
-    with (editor._map)
 {
-    if (! isPointInRectangle(mouseOnLand, pos.selboxOnMap))
+    if (! _map.isPointInRectangle(_map.mouseOnLand, pos.selboxOnMap))
         return;
     static if (is (Pos == TerOcc))
         immutable Hover.Reason reason = editor.mouseOnSolidPixel(pos)
@@ -127,12 +126,30 @@ void maybeAdd(Pos)(
     }
 }}
 
-bool mouseOnSolidPixel(Editor editor, in TerOcc pos) { with (editor._map)
+// Call this function only when you know that the mouse is on pos's selbox.
+// The asserts in this function after fixing mol makes that sure.
+bool mouseOnSolidPixel(Editor editor, in TerOcc pos) {
+    with (editor)
 {
-    auto mol = mouseOnLand;
-    while (mol.x < pos.point.x)
-        mol.x += xl;
-    while (mol.y < pos.point.y)
-        mol.y += yl;
+    auto mol = _map.mouseOnLand;
+    if (pos.point.x < 0)        mol.x -= _map.xl;
+    if (pos.point.y < 0)        mol.y -= _map.yl;
+    while (mol.x < pos.point.x) mol.x += _map.xl;
+    while (mol.y < pos.point.y) mol.y += _map.yl;
+    version (assert) {
+        string str()
+        {
+            import std.string;
+            return "%s not in selbox of start %s, length %s, because "
+                   "start+length: %s. Mouse on land: %s"
+                .format(mol.toString, pos.point.toString, pos.selboxOnMap.len,
+                    (pos.point + pos.selboxOnMap.len).toString,
+                    _map.mouseOnLand.toString);
+        }
+        assert (mol.x >= pos.point.x, str());
+        assert (mol.y >= pos.point.y, str());
+        assert (mol.x <  pos.point.x + pos.selboxOnMap.xl, str());
+        assert (mol.y <  pos.point.y + pos.selboxOnMap.yl, str());
+    }
     return 0 != pos.phybitsOnMap(mol);
 }}
