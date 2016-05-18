@@ -23,6 +23,8 @@ package:
 void implConstructor(Editor editor) { with (editor)
 {
     _level = new Level(_loadedFrom);
+    _levelToCompareAgainstToAskForDataLoss = new Level(_loadedFrom);
+
     Map newMap() { with (_level) return new Map(topology,
         Geom.screenXls.to!int, (Geom.screenYls - Geom.panelYls).to!int); }
     _map        = newMap();
@@ -42,15 +44,15 @@ void implDestructor(Editor editor)
 
 void newLevel(Editor editor)
 {
-    Level blank = new Level;
-    blank.author = basics.globconf.userName;
-    if (editor._level == blank)
-        return;
     editor.askForDataLossThenExecute(delegate void() {
-        editor._level = blank;
         editor._hover = null;
         editor._selection = null;
         editor._loadedFrom = null;
+
+        editor._level        = new Level;
+        editor._level.author = basics.globconf.userName;
+        editor._levelToCompareAgainstToAskForDataLoss        = new Level;
+        editor._levelToCompareAgainstToAskForDataLoss.author = userName;
     });
 }
 
@@ -58,24 +60,32 @@ MsgBox askForDataLossThenExecute(
     Editor editor,
     void delegate() unlessCancelledExecuteThis
 ) {
-    MsgBox box = new MsgBox(Lang.saveBoxTitleSave.transl);
-    if (editor._loadedFrom) {
-        box.addMsg(Lang.saveBoxQuestionUnsavedChangedLevel.transl);
-        box.addMsg("%s %s".format(Lang.saveBoxFileName.transl,
-                                  editor._loadedFrom.rootful));
+    assert (editor._level !is editor._levelToCompareAgainstToAskForDataLoss);
+    if (editor._level == editor._levelToCompareAgainstToAskForDataLoss) {
+        unlessCancelledExecuteThis();
+        return null;
     }
     else {
-        box.addMsg(Lang.saveBoxQuestionUnsavedNewLevel.transl);
+        MsgBox box = new MsgBox(Lang.saveBoxTitleSave.transl);
+        if (editor._loadedFrom) {
+            box.addMsg(Lang.saveBoxQuestionUnsavedChangedLevel.transl);
+            box.addMsg("%s %s".format(Lang.saveBoxFileName.transl,
+                                      editor._loadedFrom.rootful));
+        }
+        else {
+            box.addMsg(Lang.saveBoxQuestionUnsavedNewLevel.transl);
+        }
+        if (editor._level.name != null)
+            box.addMsg("%s %s".format(Lang.saveBoxLevelName.transl,
+                                      editor._level.name));
+        // DTODO: add handling for 'yes'
+        box.addButton("(not impl)", // Lang.saveBoxYesSave.transl
+                      keyMenuOkay);
+        box.addButton(Lang.saveBoxNoDiscard.transl, keyMenuDelete,
+                      unlessCancelledExecuteThis);
+        box.addButton(Lang.saveBoxNoCancel.transl,
+                      KeySet(keyMenuExit, keyEditorExit));
+        addFocus(box);
+        return box;
     }
-    box.addMsg("%s %s".format(Lang.saveBoxLevelName.transl,
-                              editor._level.name));
-    // DTODO: add handling for 'yes'
-    box.addButton("(not impl)", // Lang.saveBoxYesSave.transl
-                  keyMenuOkay);
-    box.addButton(Lang.saveBoxNoDiscard.transl, keyMenuDelete,
-                  unlessCancelledExecuteThis);
-    box.addButton(Lang.saveBoxNoCancel.transl,
-                  KeySet(keyMenuExit, keyEditorExit));
-    addFocus(box);
-    return box;
 }

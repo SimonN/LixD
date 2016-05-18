@@ -22,9 +22,10 @@ import tile.gadtile;
 
 class Editor {
 package:
-    Map      _map; // level background color, and gadgets
-    Map      _mapTerrain; // transp, for rendering terrain, later blit to _map
-    Level    _level;
+    Map _map; // level background color, and gadgets
+    Map _mapTerrain; // transp, for rendering terrain, later blit to _map
+    Level _level;
+    Level _levelToCompareAgainstToAskForDataLoss;
     MutFilename _loadedFrom;
 
     bool _gotoMainMenu;

@@ -146,12 +146,8 @@ public:
         return implCreatePreview(this, xl, yl, col);
     }
 
-    // void load_from_stream(std::istream&); DTODO: implement this?
     void saveToFile (in Filename fn) const { implSaveToFile (this, fn); }
     void exportImage(in Filename fn) const { implExportImage(this, fn); }
-
-    // to save a level into a replay, call with existing File descriptor:
-    // mylevel.saveToFile(std.stdio.File existing_handle)
 
     override bool
     opEquals(Object rhs_obj) const
@@ -184,10 +180,9 @@ public:
         ) {
             return false;
         }
-        // compare all tiles in one go
-        if (this.pos    != rhs.pos   ) return false;
-        if (this.skills != rhs.skills) return false;
-        return true;
+        return this.terrain == rhs.terrain
+            && this.pos     == rhs.pos
+            && this.skills  == rhs.skills;
     }
 }
 // end class Level
