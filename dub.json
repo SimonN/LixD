@@ -26,6 +26,7 @@
         "allegro_primitives",
     ],
     "lflags": ["-lallegro"],
+    "libs-windows": ["allegro"],
     "lflags-windows": ["-L/subsystem:windows"],
 
     "buildRequirements": ["disallowDeprecations"],
