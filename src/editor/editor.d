@@ -48,6 +48,16 @@ public:
 
     bool gotoMainMenu() const { return _gotoMainMenu; }
 
+    // Let's prevent data loss from crashes inside the editor.
+    // When you catch a D Error (e.g., assertion failure) in the app's main
+    // loop, tell the editor to dump the level.
+    void emergencySave() const
+    {
+        import basics.globals;
+        _level.saveToFile(new Filename(dirLevels.dirRootless
+                                       ~ "editor-emergency-save.txt"));
+    }
+
     void calc() { this.implEditorCalc(); }
     void draw() { this.implEditorDraw(); }
 }

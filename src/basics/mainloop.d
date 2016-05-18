@@ -57,6 +57,8 @@ public:
                 log(thr.msg);
                 log(thr.info.toString());
             }
+            if (editor)
+                editor.emergencySave();
             throw firstThr;
         }
         kill();

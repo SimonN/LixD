@@ -13,5 +13,7 @@
 /data/profile.txt
 /data/user/*.txt
 
+/levels/editor-emergency-save.txt
+
 # exclude replays -- D Lix is smart enough to generate the directory
 /replays/*

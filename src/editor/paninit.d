@@ -33,9 +33,7 @@ void makePanel(Editor editor)
         });
         onExecute(Lang.editorButtonFileExit, keyEditorExit, () {
             editor._gotoMainMenu = true;
-            import file.filename; // debugging
-            editor._level.saveToFile(
-                new Filename(dirLevels.dirRootless ~ "editor-test.txt"));
+            editor.emergencySave();
         });
         // Changing the grid is done manually in Editor.calc, not with a
         // delegate passed to these buttons.
