@@ -15,6 +15,7 @@ import file.language;
 import graphic.map;
 import gui;
 import hardware.keyset;
+import hardware.sound;
 import level.level;
 import tile.gadtile;
 
@@ -23,7 +24,7 @@ package:
 void implConstructor(Editor editor) { with (editor)
 {
     _level = new Level(_loadedFrom);
-    _levelToCompareAgainstToAskForDataLoss = new Level(_loadedFrom);
+    _levelToCompareForDataLoss = new Level(_loadedFrom);
 
     Map newMap() { with (_level) return new Map(topology,
         Geom.screenXls.to!int, (Geom.screenYls - Geom.panelYls).to!int); }
@@ -42,50 +43,77 @@ void implDestructor(Editor editor)
         rmElder(editor._panel);
 }
 
-void newLevel(Editor editor)
+void newLevel(Editor editor) {
+    with (editor)
 {
     editor.askForDataLossThenExecute(delegate void() {
-        editor._hover = null;
-        editor._selection = null;
-        editor._loadedFrom = null;
+        _hover = null;
+        _selection = null;
+        _loadedFrom = null;
 
-        editor._level        = new Level;
-        editor._level.author = basics.globconf.userName;
-        editor._levelToCompareAgainstToAskForDataLoss        = new Level;
-        editor._levelToCompareAgainstToAskForDataLoss.author = userName;
+        _level        = new Level;
+        _level.author = basics.globconf.userName;
+        _levelToCompareForDataLoss        = new Level;
+        _levelToCompareForDataLoss.author = userName;
     });
+}}
+
+void saveToExistingFile(Editor editor)
+{
+    if (editor._loadedFrom) {
+        editor._level.saveToFile(editor._loadedFrom);
+        editor._levelToCompareForDataLoss = new Level(editor._loadedFrom);
+        playLoud(Sound.DISKSAVE);
+    }
+    else
+        editor.openSaveAsBrowser();
 }
 
-MsgBox askForDataLossThenExecute(
+void openSaveAsBrowser(Editor editor)
+{
+    // DTODO: implement save browser
+    editor.emergencySave();
+    playLoud(Sound.PANEL_EMPTY);
+}
+
+void askForDataLossThenExecute(
     Editor editor,
     void delegate() unlessCancelledExecuteThis
 ) {
-    assert (editor._level !is editor._levelToCompareAgainstToAskForDataLoss);
-    if (editor._level == editor._levelToCompareAgainstToAskForDataLoss) {
+    with (editor)
+{
+    assert (noWindowsOpen);
+    assert (_level !is _levelToCompareForDataLoss);
+    if     (_level  == _levelToCompareForDataLoss) {
         unlessCancelledExecuteThis();
-        return null;
     }
     else {
         MsgBox box = new MsgBox(Lang.saveBoxTitleSave.transl);
-        if (editor._loadedFrom) {
+        if (_loadedFrom) {
             box.addMsg(Lang.saveBoxQuestionUnsavedChangedLevel.transl);
             box.addMsg("%s %s".format(Lang.saveBoxFileName.transl,
-                                      editor._loadedFrom.rootful));
+                                      _loadedFrom.rootful));
         }
         else {
             box.addMsg(Lang.saveBoxQuestionUnsavedNewLevel.transl);
         }
-        if (editor._level.name != null)
+        if (_level.name != null)
             box.addMsg("%s %s".format(Lang.saveBoxLevelName.transl,
-                                      editor._level.name));
-        // DTODO: add handling for 'yes'
-        box.addButton("(not impl)", // Lang.saveBoxYesSave.transl
-                      keyMenuOkay);
-        box.addButton(Lang.saveBoxNoDiscard.transl, keyMenuDelete,
-                      unlessCancelledExecuteThis);
+                                      _level.name));
+        box.addButton(Lang.saveBoxYesSave.transl, keyMenuOkay, () {
+            _askForDataLoss = null;
+            editor.saveToExistingFile();
+            unlessCancelledExecuteThis();
+        });
+        box.addButton(Lang.saveBoxNoDiscard.transl, keyMenuDelete, () {
+            _askForDataLoss = null;
+            unlessCancelledExecuteThis();
+        });
         box.addButton(Lang.saveBoxNoCancel.transl,
-                      KeySet(keyMenuExit, keyEditorExit));
+                      KeySet(keyMenuExit, keyEditorExit), () {
+            _askForDataLoss = null;
+        });
         addFocus(box);
-        return box;
+        _askForDataLoss = box;
     }
-}
+}}

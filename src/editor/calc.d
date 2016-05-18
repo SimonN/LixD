@@ -18,7 +18,7 @@ void implEditorCalc(Editor editor)
 {
     if      (editor._terrainBrowser) editor.calcTerrainBrowser();
     else if (editor._okCancelWindow) editor.calcOkCancelWindow();
-    else                             editor.calcNoWindows();
+    else if (editor.noWindowsOpen)   editor.calcNoWindows();
 }
 
 private:

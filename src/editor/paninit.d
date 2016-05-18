@@ -32,8 +32,16 @@ void makePanel(Editor editor)
             editor.newLevel();
         });
         onExecute(Lang.editorButtonFileExit, keyEditorExit, () {
-            editor._gotoMainMenu = true;
+            editor.askForDataLossThenExecute(() {
+                editor._gotoMainMenu = true;
+            });
             editor.emergencySave();
+        });
+        onExecute(Lang.editorButtonFileSave, KeySet(), () {
+            editor.saveToExistingFile();
+        });
+        onExecute(Lang.editorButtonFileSaveAs, KeySet(), () {
+            editor.openSaveAsBrowser();
         });
         // Changing the grid is done manually in Editor.calc, not with a
         // delegate passed to these buttons.
@@ -85,8 +93,7 @@ void makePanel(Editor editor)
             enum string mkSubwin = "
                 onExecuteText(Lang.editorButtonMenu%s, Lang.win%sTitle,
                     keyEditorMenu%s, () {
-                        if (editor.gotoMainMenu || editor._terrainBrowser
-                                                || editor._okCancelWindow)
+                        if (! editor.noWindowsOpen)
                             return;
                         editor._dragger.stop();
                         editor._hover = null;
@@ -103,8 +110,7 @@ void makePanel(Editor editor)
         template mkBrowser(string name, string exts, string curDirPtr) {
             enum string mkBrowser = "
                     onExecute(Lang.editorButtonAdd%s, keyEditorAdd%s, () {
-                        if (editor.gotoMainMenu || editor._terrainBrowser
-                                                || editor._okCancelWindow)
+                        if (! editor.noWindowsOpen)
                             return;
                         editor._dragger.stop();
                         editor._hover = null;
@@ -131,9 +137,3 @@ Rect smallestRectContainingSelection(in Editor editor)
         :  editor._selection.map   !(a => a.pos.selboxOnMap)
                             .reduce!(Rect.smallestContainer);
 }
-    /+
-    editorButtonFileSave,
-    editorButtonFileSaveAs,
-    editorButtonUndo,
-    editorButtonRedo,
-    +/

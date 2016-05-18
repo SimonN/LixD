@@ -1,6 +1,20 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.3.6
+-----
+
+2016-05-18
+
+Editor: new file, quit, and save to existing file are implemented. The editor
+asks whether you would like to save when you would lose data on new or quit.
+
+Fixed an editor crash on querying terrain on tiles with negative coordinates.
+
+The editor saves to ./levels/editor-emergency-save.txt when you click save-as,
+because save-as is not implemented yet. The editor saves to that file too
+on assertion fails, as a safeguard.
+
 0.3.5
 -----
 

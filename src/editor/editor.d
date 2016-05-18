@@ -16,6 +16,7 @@ import editor.io;
 import editor.gui.panel;
 import file.filename;
 import graphic.map;
+import gui.msgbox;
 import level.level;
 import tile.occur;
 import tile.gadtile;
@@ -25,7 +26,7 @@ package:
     Map _map; // level background color, and gadgets
     Map _mapTerrain; // transp, for rendering terrain, later blit to _map
     Level _level;
-    Level _levelToCompareAgainstToAskForDataLoss;
+    Level _levelToCompareForDataLoss;
     MutFilename _loadedFrom;
 
     bool _gotoMainMenu;
@@ -35,6 +36,7 @@ package:
     Hover[] _hover;
     Hover[] _selection;
 
+    MsgBox         _askForDataLoss;
     TerrainBrowser _terrainBrowser;
     OkCancelWindow _okCancelWindow;
 
@@ -61,4 +63,11 @@ public:
 
     void calc() { this.implEditorCalc(); }
     void draw() { this.implEditorDraw(); }
+
+package:
+    @property bool noWindowsOpen() const
+    {
+        return ! _gotoMainMenu // don't open windows if we're leaving now
+            && ! _askForDataLoss && ! _terrainBrowser && ! _okCancelWindow;
+    }
 }
