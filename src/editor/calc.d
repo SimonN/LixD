@@ -6,6 +6,7 @@ import basics.rect;
 import basics.user; // hotkeys for movement
 import editor.editor;
 import editor.hover;
+import editor.io;
 import editor.select;
 import file.language; // select grid
 import gui;
@@ -18,6 +19,7 @@ void implEditorCalc(Editor editor)
 {
     if      (editor._terrainBrowser) editor.calcTerrainBrowser();
     else if (editor._okCancelWindow) editor.calcOkCancelWindow();
+    else if (editor._saveBrowser)    editor.calcSaveBrowser();
     else if (editor.noWindowsOpen)   editor.calcNoWindows();
 }
 
@@ -112,6 +114,21 @@ void calcOkCancelWindow(Editor editor) {
     if (_okCancelWindow.done) {
         _okCancelWindow.writeChangesTo(_level);
         editor.closeWindows();
+    }
+}}
+
+void calcSaveBrowser(Editor editor) {
+    with (editor)
+{
+    assert (_saveBrowser);
+    if (_saveBrowser.done) {
+        if (_saveBrowser.chosenFile) {
+            _loadedFrom = _saveBrowser.chosenFile;
+            _panel.currentFilename = _loadedFrom;
+            editor.saveToExistingFile();
+        }
+        rmFocus(_saveBrowser);
+        _saveBrowser = null;
     }
 }}
 

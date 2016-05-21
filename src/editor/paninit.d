@@ -26,6 +26,7 @@ package:
 void makePanel(Editor editor)
 {
     editor._panel = new EditorPanel();
+    editor._panel.currentFilename = editor._loadedFrom;
     addElder(editor._panel);
     with (editor._panel) {
         onExecute(Lang.editorButtonFileNew, KeySet(), () {
@@ -35,7 +36,6 @@ void makePanel(Editor editor)
             editor.askForDataLossThenExecute(() {
                 editor._gotoMainMenu = true;
             });
-            editor.emergencySave();
         });
         onExecute(Lang.editorButtonFileSave, KeySet(), () {
             editor.saveToExistingFile();

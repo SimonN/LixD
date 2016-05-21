@@ -20,8 +20,8 @@ import file.log; // logging uncaught Exceptions
 import hardware.display;
 import hardware.keyboard;
 import menu.askname;
-import menu.browrep;
-import menu.browsin;
+import menu.browser.replay;
+import menu.browser.single;
 import menu.mainmenu;
 import menu.options;
 

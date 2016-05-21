@@ -135,7 +135,7 @@ $editorBarMoveWithKeysEnd       ].
 
 $editorButtonFileNew        Neu: Karte leeren und einen ganz neuen Level bauen.
 $editorButtonFileExit       Beenden: Editor verlassen, auf Wunsch Änderungen speichern.
-$editorButtonFileSave       Speichern: Level unter dem bisherigen Dateinamen abspeichern.
+$editorButtonFileSave       Speichern:
 $editorButtonFileSaveAs     Speichern unter: Level unter einem neuen Dateinamen abspeichern.
 $editorButtonGrid2          Raster 2: Objekt-Koordinaten beim Umherziehen auf 2er runden.
 $editorButtonGridCustom     Benutzerdef. Raster: In den Hauptmenü-Optionen verstellbar.
@@ -167,10 +167,11 @@ $editorButtonMenuLooks      Aussehen: Hintergrund färben, Bildschirm-Start änd
 $editorButtonMenuSkills     Fähigkeiten: Anzahl Lix-Fähigkeiten pro Spieler einstellen.
 
 // SaveBrowser
-$saveBrowserTitle            Speichern unter
-$saveFilename                 Dateiname:
-$saveBoxOverwriteTitle      Level überschreiben?
-$saveBoxOverwriteQuestion   Soll dieser Level wirklich überschrieben werden?
+$saveBrowserTitle           Speichern unter
+$saveBrowserWhatToType      Tippe Dateinamen ohne Erweiterung:
+$saveBoxOverwriteTitle      Überschreiben?
+$saveBoxOverwriteQuestion   Diesen Level wirklich überschreiben?
+$saveBoxOverwrite           Überschreiben
 
 $saveBoxTitleDelete       Löschen?
 $saveBoxTitleSave         Speichern?

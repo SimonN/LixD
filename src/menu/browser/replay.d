@@ -1,4 +1,4 @@
-module menu.browrep;
+module menu.browser.replay;
 
 import basics.user;
 import file.filename;
@@ -8,7 +8,7 @@ import gui;
 import gui.picker;
 import hardware.keyset;
 import level.level;
-import menu.browmain;
+import menu.browser.frommain;
 
 static import basics.globals;
 

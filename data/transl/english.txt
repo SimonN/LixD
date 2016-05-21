@@ -140,8 +140,8 @@ $editorBarMoveWithKeysEnd        ].
 
 $editorButtonFileNew         New: Deletes everything on screen and starts a new level.
 $editorButtonFileExit        Quit: Exits the editor and asks about saving changed data.
-$editorButtonFileSave        Save: Saves the current level under its current file name.
-$editorButtonFileSaveAs     Save As: Saves the current level under a new file name.
+$editorButtonFileSave        Save:
+$editorButtonFileSaveAs      Save As: Saves the current level under a new file name.
 $editorButtonGrid2           Grid 2: Rounds tiles' coordinates to multiples of 2.
 $editorButtonGridCustom      Custom grid: This grid size is settable in the options.
 $editorButtonGrid16          Grid 16: Rounds tiles' coordinates to multiples of 16.
@@ -173,10 +173,11 @@ $editorButtonMenuSkills      Skills: Decide how many lix skills each player may 
 
 // save browser
 
-$saveBrowserTitle             Save As
-$saveFilename                  File name:
-$saveBoxOverwriteTitle       Overwrite Level?
-$saveBoxOverwriteQuestion    Do you really want to overwrite this level?
+$saveBrowserTitle            Save As
+$saveBrowserWhatToType       Enter filename without extension:
+$saveBoxOverwriteTitle       Overwrite?
+$saveBoxOverwriteQuestion    Really overwrite this level?
+$saveBoxOverwrite            Overwrite
 
 $saveBoxTitleDelete       Delete?
 $saveBoxTitleSave         Save?

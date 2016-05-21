@@ -33,7 +33,7 @@ import gui;
 
 class MsgBox : Window {
 
-    enum buttonXl = 100;
+    enum buttonXl = 140;
     enum thisXl   = 580;
 
     this(in string title = "")

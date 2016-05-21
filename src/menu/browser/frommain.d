@@ -1,12 +1,12 @@
-module menu.browmain;
+module menu.browser.frommain;
 
 import game.replay;
 import file.filename;
 import gui;
 import level.level;
-import menu.browbase;
+import menu.browser.select;
 
-class BrowserCalledFromMainMenu : BrowserBase {
+class BrowserCalledFromMainMenu : BrowserHighlightSelect {
 private:
     bool     _gotoGame;
     Replay   _replayRecent;
@@ -34,6 +34,8 @@ protected:
  */
 mixin template DeleteMixin()
 {
+    import hardware.keyset;
+
     private Button _delete;
     private MsgBox _boxDelete;
 
@@ -49,9 +51,9 @@ mixin template DeleteMixin()
                 deleteFileRecentHighlightNeighbor();
                 _boxDelete = null;
             });
-            _boxDelete.addButton(Lang.commonNo.transl,  keyMenuDelete, () {
-                _boxDelete = null;
-            });
+            _boxDelete.addButton(Lang.commonNo.transl,
+                KeySet(keyMenuDelete, keyMenuExit),
+                () { _boxDelete = null; });
             addFocus(_boxDelete);
         }
     }

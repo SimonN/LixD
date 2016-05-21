@@ -1,6 +1,14 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.3.7
+-----
+
+2016-05-21
+
+The editor's save-as dialog is implemented. It doesn't preview the old level,
+but asks before overwriting.
+
 0.3.6
 -----
 

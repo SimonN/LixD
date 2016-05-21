@@ -4,6 +4,7 @@ import std.algorithm;
 import std.conv;
 import std.string;
 
+import basics.globals;
 import basics.globconf;
 import basics.user; // hotkeys for the popup dialogs
 import editor.dragger;
@@ -17,6 +18,7 @@ import gui;
 import hardware.keyset;
 import hardware.sound;
 import level.level;
+import menu.browser.saveas;
 import tile.gadtile;
 
 package:
@@ -50,6 +52,7 @@ void newLevel(Editor editor) {
         _hover = null;
         _selection = null;
         _loadedFrom = null;
+        _panel.currentFilename = null;
 
         _level        = new Level;
         _level.author = basics.globconf.userName;
@@ -69,12 +72,14 @@ void saveToExistingFile(Editor editor)
         editor.openSaveAsBrowser();
 }
 
-void openSaveAsBrowser(Editor editor)
+void openSaveAsBrowser(Editor editor) {
+    with (editor)
 {
-    // DTODO: implement save browser
-    editor.emergencySave();
-    playLoud(Sound.PANEL_EMPTY);
-}
+    assert (noWindowsOpen);
+    _saveBrowser = new SaveBrowser(dirLevels);
+    _saveBrowser.highlight(_loadedFrom ? _loadedFrom : singleLastLevel);
+    addFocus(_saveBrowser);
+}}
 
 void askForDataLossThenExecute(
     Editor editor,

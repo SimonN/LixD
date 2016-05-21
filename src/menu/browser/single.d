@@ -1,4 +1,4 @@
-module menu.browsin;
+module menu.browser.single;
 
 import std.algorithm;
 import std.format;
@@ -10,7 +10,7 @@ import file.filename;
 import gui;
 import gui.picker;
 import level.level;
-import menu.browmain;
+import menu.browser.frommain;
 
 class BrowserSingle : BrowserCalledFromMainMenu {
 private:
@@ -54,7 +54,7 @@ protected:
     {
         assert (_edit);
         levelRecent  = fn is null ? null : new Level(fileRecent);
-        [_edit, _by, _save].each!(e => e.hidden = fn is null);
+        [_edit, _delete, _by, _save].each!(e => e.hidden = fn is null);
         if (levelRecent) {
             _by  .value = levelRecent.author;
             _save.value = "%s/%s".format(levelRecent.required,

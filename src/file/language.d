@@ -191,9 +191,10 @@ enum Lang {
 
     // save browser
     saveBrowserTitle,
-    saveFilename,
+    saveBrowserWhatToType,
     saveBoxOverwriteTitle,
     saveBoxOverwriteQuestion,
+    saveBoxOverwrite,
 
     saveBoxTitleDelete,
     saveBoxTitleSave,

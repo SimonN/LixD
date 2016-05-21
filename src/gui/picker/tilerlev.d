@@ -63,6 +63,23 @@ protected:
     }
 }
 
+class LevelWithFilenameTiler : LevelOrReplayTiler {
+public:
+    this(Geom g) { super(g); }
+
+protected:
+    final override TextButton newFileButton(Filename fn, in int fileID)
+    {
+        assert (fn);
+        const dat = new LevelMetaData(fn);
+        auto  ret = new TextButton(new Geom(0, 0, xlg, buttonYlg),
+            // 21A6 is the mapsto arrow, |->
+            "%s   \u21A6   %s".format(fn.fileNoExtNoPre, dat.name));
+        ret.alignLeft  = true;
+        return ret;
+    }
+}
+
 class ReplayTiler : LevelOrReplayTiler {
 public:
     this(Geom g) { super(g); }

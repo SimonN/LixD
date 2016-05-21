@@ -3,8 +3,10 @@ module editor.gui.panel;
 import std.algorithm;
 import std.conv;
 import std.range;
+import std.string;
 
 import basics.globals;
+import file.filename; // currentFilename
 import file.language;
 import graphic.internal;
 import gui;
@@ -16,6 +18,7 @@ private:
     BitmapButton[] _buttons;
     TextButton[]   _textButtons;
     Label          _fps;
+    MutFilename    _currentFilename;
 
 public:
     this()
@@ -23,6 +26,13 @@ public:
         super(new Geom(0, 0, Geom.screenXlg, Geom.panelYlg, From.BOTTOM));
         makeInfo();
         makeButtons();
+    }
+
+    // this is only to display the correct file in the tooltip
+    Filename currentFilename(Filename fn)
+    {
+        _currentFilename = fn;
+        return fn;
     }
 
     void onExecute(Lang buttonID, KeySet hotkey, void delegate() deg,
@@ -81,6 +91,12 @@ protected:
             if (bb.isMouseHere) {
                 try _info.text = (id+Lang.editorButtonFileNew).to!Lang.transl;
                 catch (ConvException) { }
+                if (id + Lang.editorButtonFileNew == Lang.editorButtonFileSave
+                    && _currentFilename !is null
+                ) {
+                    _info.text = "%s %s".format(_info.text,
+                                        _currentFilename.rootful);
+                }
             }
         foreach (id, tb; _textButtons)
             if (tb.isMouseHere) {

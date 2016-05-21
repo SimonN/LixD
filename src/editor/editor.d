@@ -18,6 +18,7 @@ import file.filename;
 import graphic.map;
 import gui.msgbox;
 import level.level;
+import menu.browser.saveas;
 import tile.occur;
 import tile.gadtile;
 
@@ -27,7 +28,7 @@ package:
     Map _mapTerrain; // transp, for rendering terrain, later blit to _map
     Level _level;
     Level _levelToCompareForDataLoss;
-    MutFilename _loadedFrom;
+    MutFilename _loadedFrom; // whenever this changes, notify the panel
 
     bool _gotoMainMenu;
     EditorPanel _panel;
@@ -39,6 +40,7 @@ package:
     MsgBox         _askForDataLoss;
     TerrainBrowser _terrainBrowser;
     OkCancelWindow _okCancelWindow;
+    SaveBrowser    _saveBrowser;
 
 public:
     this(Filename fn)
@@ -68,6 +70,7 @@ package:
     @property bool noWindowsOpen() const
     {
         return ! _gotoMainMenu // don't open windows if we're leaving now
-            && ! _askForDataLoss && ! _terrainBrowser && ! _okCancelWindow;
+            && ! _askForDataLoss && ! _terrainBrowser && ! _okCancelWindow
+            && ! _saveBrowser;
     }
 }
