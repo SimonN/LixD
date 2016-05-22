@@ -20,7 +20,6 @@ private:
     Point  _loc;
     bool   _mirror;
     double _rot;
-    Cutbit.Mode _mode;
     int _xf;
     int _yf;
 
@@ -34,7 +33,6 @@ public:
         env    = to;
         _loc   = env ? env.wrap(newLoc) : newLoc;
         _rot   = 0.0;
-        _mode  = Cutbit.Mode.NORMAL;
     }
 
     Graphic clone() const { return new Graphic(this); }
@@ -46,7 +44,6 @@ public:
         _loc    = rhs.loc;
         _mirror = rhs._mirror;
         _rot    = rhs._rot;
-        _mode   = rhs._mode;
         _xf     = rhs._xf;
         _yf     = rhs._yf;
     }
@@ -59,10 +56,8 @@ public:
 
     @property bool        mirror  () const { return _mirror; }
     @property double      rotation() const { return _rot;    }
-    @property Cutbit.Mode mode    () const { return _mode;   }
     @property bool        mirror  (bool b)        { return _mirror = b;       }
     @property double      rotation(double dbl)    { return _rot = fmod(dbl,4);}
-    @property Cutbit.Mode mode    (Cutbit.Mode m) { return _mode = m;         }
 
     // This looks dumb, why not make _xf/_yf public? Lixxie overrides these,
     // because it wants to choose the frame to draw even while const.
@@ -106,12 +101,9 @@ public:
         assert (env, "can't draw, no target environment specified");
         assert (env == mutableGround, format("drawing target must be == env."
             " env=%x, mutable=%x", &env, &mutableGround));
-        if (mode == Cutbit.Mode.NORMAL)
-            // This calls the virtual xf(), yf() instead of using _xf, _yf.
-            // We want to allow Lixxie to override that with frame and ac.
-            cutbit.draw(mutableGround, _loc, xf, yf, _mirror, _rot);
-        else
-            cutbit.draw(mutableGround, _loc, _mirror, to!int(_rot), _mode);
+        // This calls the virtual xf(), yf() instead of using _xf, _yf.
+        // We want to allow Lixxie to override that with frame and ac.
+        cutbit.draw(mutableGround, _loc, xf, yf, _mirror, _rot);
     }
 
     // Ignore (Topology env) and mirr/rotat; and blit immediately.

@@ -27,7 +27,7 @@ abstract class Hover {
         none,
         selectAll,
         frameSpanning,
-        addedFromBrowser,
+        addedTile,
         mouseInSelbox,
         mouseOnSolidPixel
     }
@@ -40,9 +40,9 @@ abstract class Hover {
     {
         assert (forThis);
         if (auto h = cast (TerOcc) forThis)
-            return new TerrainHover(l, h, Reason.addedFromBrowser);
+            return new TerrainHover(l, h, Reason.addedTile);
         else if (auto h = cast (GadOcc) forThis)
-            return new GadgetHover(l, h, Reason.addedFromBrowser);
+            return new GadgetHover (l, h, Reason.addedTile);
         assert (false);
     }
 

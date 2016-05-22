@@ -5,6 +5,9 @@ module tile.terrain;
  * Terrain pieces come with a matrix in RAM to specify where they're solid.
  * It would be a waste to load the graphic from RAM into VRAM every time
  * we draw the tile on the land.
+ *
+ * Terrain tiles do not have names or filenames. Instead, tile.tilelib
+ * maintains the global associative array of terrain.
  */
 
 import basics.alleg5;

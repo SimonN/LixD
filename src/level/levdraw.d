@@ -1,5 +1,6 @@
 module level.levdraw;
 
+import std.algorithm;
 import std.conv;
 import std.range; // for zone format
 import std.string; // for zone format
@@ -12,6 +13,7 @@ import graphic.graphic;
 import graphic.torbit;
 import hardware.tharsis;
 import level.level;
+import tile.draw;
 import tile.gadtile;
 import tile.phymap;
 import tile.occur;
@@ -25,8 +27,10 @@ package void implDrawTerrainTo(in Level level, Torbit tb, Phymap lookup)
         auto zone = Zone(profiler, "Level.%s %s".format(
                     lookup ? "drawLT" : "drawT", level.name.take(15)));
     tb.clearToColor(color.transp);
-    foreach (po; level.terrain)
-        drawPosTerrain(po, tb, lookup);
+    foreach (occ; level.terrain) {
+        occ.drawOccurrence(tb);
+        occ.drawOccurrence(lookup);
+    }
 }
 
 private void drawPosGadget(in GadOcc po, Torbit ground)
@@ -36,48 +40,6 @@ private void drawPosGadget(in GadOcc po, Torbit ground)
         0, // mirroring
         // hatch rotation: not for drawing, only for spawn direction
         po.tile.type == GadType.HATCH ? 0 : po.hatchRot);
-}
-
-private void drawPosTerrain(in TerOcc po, Torbit ground, Phymap lookup)
-{
-    assert (po.tile);
-    const(Cutbit) cb = po.dark ? po.tile.dark : po.tile.cb;
-    assert (cb);
-    Cutbit.Mode mode = po.noow ? Cutbit.Mode.NOOW
-                     : po.dark ? Cutbit.Mode.DARK
-                     :           Cutbit.Mode.NORMAL;
-    {
-        version (tharsisprofiling)
-            auto zone = Zone(profiler, "Level.drawPos VRAM " ~ mode.to!string);
-        cb.draw(ground, po.point, po.mirr, po.rot, mode);
-    }
-    if (! lookup)
-        return;
-    version (tharsisprofiling)
-        auto zone = Zone(profiler, "Level.drawPos RAM " ~ mode.to!string);
-    // The lookup map could contain additional info about trigger areas,
-    // but drawPosGadget doesn't draw those onto the lookup map.
-    // That's done by the game class.
-    immutable xl = (po.rot & 1) ? po.tile.cb.yl : po.tile.cb.xl;
-    immutable yl = (po.rot & 1) ? po.tile.cb.xl : po.tile.cb.yl;
-    foreach (int y; po.point.y .. (po.point.y + yl))
-        foreach (int x; po.point.x .. (po.point.x + xl)) {
-            immutable p = Point(x, y);
-            immutable bits = po.phybitsOnMap(p);
-            if (! bits)
-                continue;
-            if (po.noow) {
-                if (! lookup.get(p, Phybit.terrain))
-                    lookup.add(p, bits);
-            }
-            else if (po.dark)
-                lookup.rm(p, Phybit.terrain | Phybit.steel);
-            else {
-                lookup.add(p, bits);
-                if (! po.tile.steel)
-                    lookup.rm(p, Phybit.steel);
-            }
-        }
 }
 
 package Torbit implCreatePreview(
@@ -105,10 +67,8 @@ package Torbit implCreatePreview(
         destroy(tempObj);
     }
     for (int type = cast (GadType) 0; type != GadType.MAX; ++type)
-        foreach (pos; level.pos[type])
-            drawPosGadget(pos, tempObj);
-    foreach (pos; level.terrain)
-        drawPosTerrain(pos, tempTer, null);
+        level.pos[type].each!(occ => drawPosGadget(occ, tempObj));
+    level.terrain.each!(occ => drawOccurrence(occ, tempTer));
     ret.drawFromPreservingAspectRatio(tempObj);
     ret.drawFromPreservingAspectRatio(tempTer);
     return ret;

@@ -59,6 +59,14 @@ public:
         }
     }
 
+    Albit loseOwnershipOfAlbit()
+    {
+        assert (bitmap);
+        auto ret = bitmap;
+        bitmap = null;
+        return ret;
+    }
+
     void copyToScreen()
     {
         auto drata = DrawingTarget(al_get_backbuffer(display));

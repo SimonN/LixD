@@ -11,6 +11,7 @@ import graphic.cutbit;
 import graphic.textout;
 import hardware.display;
 import hardware.tharsis;
+import tile.draw;
 import tile.gadtile;
 
 package:
@@ -37,18 +38,16 @@ void updateTopologies(Editor editor)
     }
 }
 
-void drawTerrainToSeparateMap(Editor editor)
+void drawTerrainToSeparateMap(Editor editor) {
+    with (editor)
 {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Editor.drawMapTerrain");
-    with (DrawingTarget(editor._mapTerrain.albit)) {
-        editor._mapTerrain.clearToColor(color.transp);
-        foreach (t; editor._level.terrain)
-            if (auto cb = t.dark ? t.tile.dark : t.tile.cb)
-                cb.draw(editor._mapTerrain, t.point, t.mirr, t.rot,
-                        t.dark ? Cutbit.Mode.DARK_EDITOR : Cutbit.Mode.NORMAL);
+    with (DrawingTarget(_mapTerrain.albit)) {
+        _mapTerrain.clearToColor(color.transp);
+        _level.terrain.each!(occ => occ.drawOccurrence(editor._mapTerrain));
     }
-}
+}}
 
 void drawMainMap(Editor editor)
 {

@@ -26,13 +26,6 @@ private:
     Matrix!bool _existingFrames;
 
 public:
-    enum Mode {
-        NORMAL,
-        NOOW, // no-overwrite, draw only the pixels falling on transparent bg
-        DARK, // instead of drawing a pixel, erase a pixel from the bg
-        DARK_EDITOR, // like DARK, but draw a dark color, not transparent
-    }
-
     this(Cutbit cb)
     {
         if (! cb) return;
@@ -155,48 +148,6 @@ public:
             drawMissingFrameError(targetTorbit, targetCorner, xf, yf);
         }
     }
-
-    // Intended to draw terrain and steel. These can only be rotated by
-    // quarter turns, and have only one frame per piece. However, they can
-    // be drawn with one of the drawing modes, like no-overwrite or dark.
-    void draw(
-        Torbit   targetTorbit,
-        in Point targetCorner,
-        in bool  mirr,
-        int      rot,
-        in Mode  mode) const
-    {
-        assert (targetTorbit, "trying to draw onto null torbit");
-
-        if (! bitmap) {
-            drawMissingFrameError(targetTorbit, targetCorner, 0, 0);
-            return;
-        }
-        // only one frame allowed, so we don't have to make sub-bitmaps
-        assert (_xfs == 1);
-        assert (_yfs == 1);
-
-        rot = basics.help.positiveMod(rot, 4);
-        assert (rot >= 0 || rot < 4);
-
-        final switch (mode) {
-        case Mode.NORMAL:
-            // this is very much like the other draw function
-            targetTorbit.drawFrom(bitmap, targetCorner, mirr, rot * 1.0f);
-            break;
-        case Mode.DARK:
-        case Mode.DARK_EDITOR:
-            with (BlenderMinus)
-                targetTorbit.drawFrom(bitmap, targetCorner, mirr, rot);
-            break;
-        case Mode.NOOW:
-            // DTODO: implement NOOW drawing
-            goto case Mode.NORMAL;
-        }
-        // we don't have to draw the missing-frame error here; there could have
-        // only been the missing-image error. We've checked for that already.
-    }
-    // end function draw with mode
 
     // This should only be used by the mouse cursor, which draws even on top
     // of the gui torbit. Rotation, mirroring, and scaling is not offered.
