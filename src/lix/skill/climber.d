@@ -5,8 +5,7 @@ import lix;
 
 class Climber : Job {
 private:
-    enum ceilingY        = -17;
-    enum hoistableLedgeY = ceilingY + 1;
+    enum ceilingY = -16;
 
 public:
     mixin(CloneByCopyFrom!"Climber");
@@ -98,7 +97,7 @@ private:
 
     bool ascendHoistableLedge()
     {
-        if (! isSolid(2, hoistableLedgeY)) {
+        if (! isSolid(2, ceilingY)) {
             moveAhead();
             become(Ac.ascender);
             return true;

@@ -3,33 +3,28 @@ Lix D/A5 port
 
 Lix is an action-puzzle game inspired by Lemmings (DMA Design, 1991),
 with singleplayer puzzles, networked competitive multiplayer mode,
-and a level editor. The current main repository is over there:
+and a level editor.
+
+I've rewritten Lix in the D Programming Language and rely on Allegro 5
+for graphics, sound, and input. The networking mode is not implemented
+in this rewrite yet. To play a networked game, use the older C++ version:
 
     http://github.com/SimonN/Lix
-
-The repository here instead is an ongoing attempt to port Lix to the
-D Programming Language, using Allegro 5 for graphics, input, and sound.
-The port is not finished yet, but you can already see lix walk around
-the level, and click on them.
-
-If you would like to play Lix, do not build from this repository,
-instead build from the main repository linked above.
 
 How to build
 ------------
 
-For detailed instructions, read the file for your operating system:
-`./doc/build/linux.txt' or `.doc/build/windows.txt'. Ignore `cross.txt'.
+Detailed instructions: `./doc/build/linux.txt' or `.doc/build/windows.txt'.
 
 Quick instructions:
 
 *   $ git clone https://github.com/SimonN/LixD
 *   Install a D compiler (e.g., dmd, from https://dlang.org/download)
-*   Install dub (the D package handler, ships with dmd)
+*   Install dub, the D package handler (http://code.dlang.org/download)
 *   Install the Allegro 5 runtime library (Allegro 5.0.x or 5.1.x work)
 *   $ dub
 
-If you get stuck, follow the detailed instructions in `./doc/build/',
+If you get stuck, follow the detailed instructions in `./doc/build/*.txt',
 or contact me:
 
     E-Mail: eiderdaus@gmail.com

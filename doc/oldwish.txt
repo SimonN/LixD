@@ -1,0 +1,71 @@
+C++ Lix: Old Feature Wishes
+===========================
+
+I have written and maintained C++ Lix from 2006 to 2015. Over these years,
+I've met exciting people, and they presented ideas for new features.
+Here is the list of features suggested for C++ Lix.
+
+Make a scollbar instead of "next" button in file browsers.
+D:  Scrollbar implemented.
+
+With the "next" button, show only some elements on the final page, such that
+the last element is always ID p*n with n items per page, and p integer.
+D:  Scrollbar is superior.
+
+Levels that have replays should be marked in the singleplayer browser.
+Make these replays runnable from the singleplayer browser.
+D:  Not implemeted, but good idea.
+
+Maps should tile themselves for multiplayer. You build one cell in the editor
+and specify how it tiles.
+D:  Moderately interesting for a single map, but better if you generate maps
+    for 2, 3, 4, 5, 6, 7, 8 people all from one such template map.
+
+Assignment shouldn't cancel pause. Or should it? Has both advantages
+(flexibility) and disadvantages (extra keypress if you want to continue).
+Possibly as an option.
+D:  Up for debate.
+
+Changing priority/z-coordinate on selection in the editor: If there are
+multiple pieces selected, their relative z-order should be maintained when
+changing terrain priority. Currently, they get messed up.
+D:  Bug in D-Lix, too.
+
+Advanced trap definitions: For traps, a recolored lix animation should be
+played. A sound effect should be specifiable in the object definition.
+Lix animation could be a custom one or one of the existing ones, and allows
+for proper coloring of player lixes, and maintaining the position
+of a lix that gets into a trap.
+D:  Too complicated to be worthwhile soon. Annoy me if you find this important.
+
+Roper from Lemmings 2.
+D:  An extra skill with an extra two-click user interface? Please no.
+    The cuber adds terrain quickly.
+
+Resolution: Higher resolution than the internal 640x480 inside the game,
+even if it won't be used in the menu.
+D:  Implemented. I allow arbitrary resolutions everywhere.
+
+Nuke disabling: Each level could have the nuke for multiplayer disabled.
+Players can still activate a nuke-like function then, but it merely takes
+away control over their tribe and starts the overtime.
+D:  Good idea for Downward Reduction.
+
+Statistics: After a game, you can view better statistics than now. The better
+screen could show how many lixes every player got from whom.
+D:  Good idea for when I implement the networking mode.
+
+Networking pause: Keep the game running even if a player presses [ESC] during
+a networking game.
+D:  Requirement for the D networking mode.
+
+Level info: In the networking lobby, the preview image should display
+skills, name of map, number of lixes, etc.
+D:  Good idea.
+
+Highscore weight: User option to rank solution time over skills used.
+D:  Won't implement. We want universally comparable scoring.
+
+Extend highscores: Save more than only one best result per user.
+Allow comparison of multiple users.
+D:  If we do this at all, let's do it online.
