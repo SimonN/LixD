@@ -252,4 +252,5 @@ unittest
     assert (data_len == r._data.len);
 
     implSaveToFile(r, fn2, lev);
+    [fn0, fn1, fn2, fnl].map!(f => f.rootful).each!(std.file.remove);
 }

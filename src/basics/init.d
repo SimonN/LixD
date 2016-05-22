@@ -1,7 +1,5 @@
 module basics.init;
 
-import core.memory;
-
 import derelict.enet.enet;
 
 import basics.alleg5;
@@ -22,7 +20,6 @@ import hardware.mousecur;
 import hardware.sound;
 import hardware.tharsis;
 import tile.tilelib;
-import lix;
 
 static import file.log;
 
