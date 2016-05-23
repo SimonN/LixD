@@ -20,7 +20,7 @@ void drawOccurrence(in TerOcc occ, Torbit ground)
         assert (occ.tile.cb.xfs == 1 && occ.tile.cb.yfs == 1);
         // We subvert the Cutbit drawing function for speed.
         // Terrain is guaranteed to have only one frame anyway.
-        ground.drawFrom(occ.tile.cb.albit, occ.point, occ.mirr, occ.rot);
+        ground.drawFrom(occ.tile.cb.albit, occ.point, occ.mirrY, occ.rotCw);
     }
     else {
         version (tharsisprofiling)
@@ -28,7 +28,8 @@ void drawOccurrence(in TerOcc occ, Torbit ground)
         assert (occ.tile);
         assert (occ.tile.dark);
         with (BlenderMinus)
-            ground.drawFrom(occ.tile.dark.albit, occ.point, occ.mirr, occ.rot);
+            ground.drawFrom(occ.tile.dark.albit,
+                            occ.point, occ.mirrY, occ.rotCw);
     }
 }
 
@@ -40,8 +41,8 @@ void drawOccurrence(in TerOcc occ, Phymap lookup)
     // The lookup map could contain additional info about trigger areas,
     // but drawPosGadget doesn't draw those onto the lookup map.
     // That's done by the game class.
-    immutable xl = (occ.rot & 1) ? occ.tile.cb.yl : occ.tile.cb.xl;
-    immutable yl = (occ.rot & 1) ? occ.tile.cb.xl : occ.tile.cb.yl;
+    immutable xl = (occ.rotCw & 1) ? occ.tile.cb.yl : occ.tile.cb.xl;
+    immutable yl = (occ.rotCw & 1) ? occ.tile.cb.xl : occ.tile.cb.yl;
     foreach (int y; occ.point.y .. (occ.point.y + yl))
         foreach (int x; occ.point.x .. (occ.point.x + xl)) {
             immutable p = Point(x, y);

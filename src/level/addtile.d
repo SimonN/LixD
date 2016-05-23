@@ -40,10 +40,10 @@ Occurrence add_object_from_ascii_line(
         TerOcc newpos = new TerOcc(ter);
         newpos.point  = level.topology.wrap(cornerAt);
         foreach (char c; text2) switch (c) {
-            case 'f': newpos.mirr = ! newpos.mirr;         break;
-            case 'r': newpos.rot  =  (newpos.rot + 1) % 4; break;
-            case 'd': newpos.dark = ! newpos.dark;         break;
-            case 'n': newpos.noow = ! newpos.noow;         break;
+            case 'f': newpos.mirrY = ! newpos.mirrY;          break;
+            case 'r': newpos.rotCw =  (newpos.rotCw + 1) % 4; break;
+            case 'd': newpos.dark  = ! newpos.dark;           break;
+            case 'n': newpos.noow  = ! newpos.noow;           break;
             default: break;
         }
         level.terrain ~= newpos;

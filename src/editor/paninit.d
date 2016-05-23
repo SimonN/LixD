@@ -84,7 +84,7 @@ void makePanel(Editor editor)
         });
         onExecute(Lang.editorButtonSelectRotate, keyEditorRotate, () {
             immutable box = editor.smallestRectContainingSelection();
-            editor._selection.each!(sel => sel.rotateCcwWithin(box));
+            editor._selection.each!(sel => sel.rotateCwWithin(box));
         });
         onExecute(Lang.editorButtonSelectDark, keyEditorDark, () {
             editor._selection.each!(sel => sel.toggleDark());

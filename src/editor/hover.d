@@ -74,13 +74,13 @@ abstract class Hover {
         mirrorHorizontally();
     }
 
-    final void rotateCcwWithin(in Rect box)
+    final void rotateCwWithin(in Rect box)
     {
-        rotateCcw();
+        rotateCw();
         immutable self = pos.selboxOnMap;
         pos.point = level.topology.wrap(Point(
-            box.center.x + (box.center - self.center).y,
-            box.center.y - (box.center - self.center).x)
+            box.center.x - (box.center - self.center).y,
+            box.center.y + (box.center - self.center).x)
             - self.len/2 - pos.tile.selbox.topLeft);
     }
 
@@ -96,7 +96,7 @@ abstract class Hover {
 
 protected:
     void mirrorHorizontally() { }
-    void rotateCcw() { }
+    void rotateCw() { }
 }
 
 class TerrainHover : Hover {
@@ -144,14 +144,14 @@ public:
 protected:
     override void mirrorHorizontally()
     {
-        _pos.mirr = ! _pos.mirr;
-        _pos.rot = positiveMod(2 - _pos.rot, 4);
+        _pos.mirrY = ! _pos.mirrY;
+        _pos.rotCw = (2 - _pos.rotCw) & 3;
     }
 
-    override void rotateCcw()
+    override void rotateCw()
     {
         immutable oldCenter = _pos.selboxOnMap.center;
-        _pos.rot = positiveMod(_pos.rot + 1, 4);
+        _pos.rotCw = (_pos.rotCw == 3 ? 0 : _pos.rotCw + 1);
         moveBy(oldCenter - _pos.selboxOnMap.center);
     }
 }
@@ -201,7 +201,7 @@ public:
     }
 
 protected:
-    override void rotateCcw() { mirrorHorizontally(); }
+    override void rotateCw() { mirrorHorizontally(); }
     override void mirrorHorizontally()
     {
         _pos.hatchRot = (_pos.tile.type == GadType.HATCH && ! _pos.hatchRot);

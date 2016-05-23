@@ -106,30 +106,31 @@ public:
     final void drawFrom(
         const(Albit) source,
         in Point targetCorner,
-        bool mirr = false,
-        double rot = 0,
+        bool mirrY = false, // vertically mirrored -- happens before rotation
+        double rotCw = 0,   // clockwise rotation -- after any mirroring
         double scal = 0
-    ) {
+    )
+    in {
+        assert (source, "can't blit the null bitmap onto Torbit");
+        assert (rotCw >= 0 && rotCw < 4);
+    }
+    body {
         Albit bit = cast (Albit) source; // A5 is not typesafe
-        assert (bit, "can't blit the null bitmap onto Torbit");
-        rot = std.math.fmod(rot, 4);
-
         void delegate(int, int) drawFrom_at;
-        assert(drawFrom_at == null);
         // Select the appropriate Allegro function and its arguments.
         // This function will be called up to 4 times for drawing (Albit bit)
         // onto (Torbit this). Only the positions vary based on torus property.
-        if (rot == 0 && ! scal) {
+        if (rotCw == 0 && ! scal) {
             drawFrom_at = delegate void(int x_at, int y_at)
             {
-                al_draw_bitmap(bit, x_at, y_at, ALLEGRO_FLIP_VERTICAL * mirr);
+                al_draw_bitmap(bit, x_at, y_at, ALLEGRO_FLIP_VERTICAL * mirrY);
             };
         }
-        else if (rot == 2 && ! scal) {
+        else if (rotCw == 2 && ! scal) {
             drawFrom_at = delegate void(int x_at, int y_at)
             {
                 al_draw_bitmap(bit, x_at, y_at,
-                 (ALLEGRO_FLIP_VERTICAL * !mirr) | ALLEGRO_FLIP_HORIZONTAL);
+                 (ALLEGRO_FLIP_VERTICAL * ! mirrY) | ALLEGRO_FLIP_HORIZONTAL);
             };
         }
         else {
@@ -144,7 +145,7 @@ public:
             // by the (if)s above. Now, we'll be doing a noncontinuous jump at
             // exactly 1 and 3 quarter turns, which will manage the terrain
             // well, and doesn't affect continuous rotations of squares anyway.
-            immutable bool b = (rot == 1 || rot == 3);
+            immutable bool b = (rotCw == 1 || rotCw == 3);
 
             // x/y-length of the source bitmap
             immutable int xsl = al_get_bitmap_width (bit);
@@ -164,8 +165,8 @@ public:
             {
                 al_draw_rotated_bitmap(bit, xsl/2f, ysl/2f,
                     xdr + x_at, ydr + y_at,
-                    rot * ALLEGRO_PI / 2,
-                    mirr ? ALLEGRO_FLIP_VERTICAL : 0
+                    rotCw * ALLEGRO_PI / 2,
+                    mirrY ? ALLEGRO_FLIP_VERTICAL : 0
                 );
             };
             else drawFrom_at = delegate void(int x_at, int y_at)
@@ -182,8 +183,8 @@ public:
                     xdr * scal + x_at, // (L3) ...to this target pos...
                     ydr * scal + y_at,
                     scal, scal, // ...and then it's scaled relative to there
-                    rot * ALLEGRO_PI / 2,
-                    mirr ? ALLEGRO_FLIP_VERTICAL : 0
+                    rotCw * ALLEGRO_PI / 2,
+                    mirrY ? ALLEGRO_FLIP_VERTICAL : 0
                 );
             };
         }
