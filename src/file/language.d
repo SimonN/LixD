@@ -331,6 +331,7 @@ enum Lang {
     optionScreenWindowedRes,
     optionArrowsReplay,
     optionArrowsNetwork,
+    optionPaintTorusSeams,
     optionIngameTooltips,
     optionShowButtonHotkeys,
     optionGuiColorRed,

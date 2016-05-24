@@ -391,6 +391,8 @@ loadCameraRect(in Torbit src)
     immutable bool drty = torusY && r.yl < cameraZoomedYl;
 
     auto drata = DrawingTarget(this.albit);
+    if (basics.user.paintTorusSeams)
+        drawTorusSeams();
 
     void drawHere(int ax, int ay, int axl, int ayl)
     {
@@ -411,6 +413,20 @@ clearScreenRect(AlCol col)
     r.xl = cameraZoomedXl;
     r.yl = cameraZoomedYl;
     this.drawFilledRectangle(r, col);
+}
+
+void drawTorusSeams()
+{
+    if (torusX) {
+        al_draw_filled_rectangle(xl - 1, 0, xl, yl, color.torusSeamL);
+        al_draw_filled_rectangle(0,      0, 1,  yl, color.torusSeamD);
+    }
+    if (torusY) {
+        al_draw_filled_rectangle(0, yl - 1, xl, yl, color.torusSeamL);
+        al_draw_filled_rectangle(0, 0,      xl, 1,  color.torusSeamD);
+    }
+    if (torusX && torusY)
+        al_draw_filled_rectangle(xl - 1, 0, xl, 1, color.torusSeamL);
 }
 
 }

@@ -209,6 +209,7 @@ void populateGraphics()
     grp ~= [
         fac.factory!BoolOption(Lang.optionArrowsReplay.transl, &arrowsReplay),
         fac.factory!BoolOption(Lang.optionArrowsNetwork.transl, &arrowsNetwork),
+        fac.factory!BoolOption(Lang.optionPaintTorusSeams.transl, &paintTorusSeams),
         fac.factory!BoolOption(Lang.optionIngameTooltips.transl, &ingameTooltips),
         fac.factory!BoolOption(Lang.optionShowButtonHotkeys.transl, &showButtonHotkeys),
     ];

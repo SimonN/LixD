@@ -138,6 +138,7 @@ immutable userScreenWindowedX        = "SCREEN_WINDOWED_X";
 immutable userScreenWindowedY        = "SCREEN_WINDOWED_Y";
 immutable userArrowsReplay           = "ARROWS_REPLAY";
 immutable userArrowsNetwork          = "ARROWS_NETWORK";
+immutable userPaintTorusSeams        = "PAINT_TORUS_SEAMS";
 immutable userIngameTooltips         = "INGAME_TOOLTIPS";
 immutable userShowButtonHotkeys      = "SHOW_BUTTON_HOTKEYS";
 immutable userGuiColorRed            = "GUI_COLOR_RED";

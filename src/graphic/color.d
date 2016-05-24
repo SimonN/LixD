@@ -63,6 +63,9 @@ private class ColorPrivate {
 
         screenBorder,
         editorDark,
+        torusSeamD,
+        torusSeamL,
+
         guiSha,
         guiD,
         guiM,
@@ -85,10 +88,7 @@ private class ColorPrivate {
         guiPicL;
 
 private:
-
     int _guiColorRed, _guiColorGreen, _guiColorBlue;
-
-    AlCol make_sepia(in float li);
 
     this(in int _r, in int _g, in int _b)
     {
@@ -118,6 +118,8 @@ private:
 
         screenBorder = make_sepia(2f / 16f);
         editorDark   = makecol   (0x20, 0x20, 0x20); // erasor pieces
+        torusSeamD   = make_sepia(0.25f);
+        torusSeamL   = make_sepia(0.4f);
 
         guiSha    = make_sepia(3f / 16f);
         guiD      = make_sepia(7.75f / 16f / 1.2f);

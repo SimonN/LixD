@@ -308,6 +308,7 @@ $optionScreenWindowed           Fenstermodus
 $optionScreenWindowedRes        Fenster-Auflösung
 $optionArrowsReplay             Pfeile im Replay
 $optionArrowsNetwork            Pfeile im Netzwerkspiel
+$optionPaintTorusSeams          Torus-Nahtstellen anmalen
 $optionIngameTooltips           Tooltips im Spiel
 $optionShowButtonHotkeys        Button-Hotkeys anzeigen
 $optionGuiColorRed              Menüfarbe Rot

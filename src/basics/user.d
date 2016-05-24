@@ -60,6 +60,7 @@ int  screenWindowedY   = 480;
 
 bool arrowsReplay      = true;
 bool arrowsNetwork     = true;
+bool paintTorusSeams   = true;
 bool ingameTooltips    = true;
 bool showButtonHotkeys = true;
 
@@ -350,6 +351,7 @@ void load()
         else if (i.text1 == userScreenWindowedY) screenWindowedY = i.nr1;
         else if (i.text1 == userArrowsReplay  ) arrowsReplay   = i.nr1 > 0;
         else if (i.text1 == userArrowsNetwork ) arrowsNetwork  = i.nr1 > 0;
+        else if (i.text1 == userPaintTorusSeams ) paintTorusSeams = i.nr1 > 0;
         else if (i.text1 == userIngameTooltips) ingameTooltips = i.nr1 > 0;
         else if (i.text1 == userShowButtonHotkeys) showButtonHotkeys = i.nr1 > 0;
         else if (i.text1 == userGuiColorRed   ) guiColorRed    = i.nr1;
@@ -503,6 +505,7 @@ nothrow void save()
         fwr(IoLine.Hash(userScreenWindowedY,        screenWindowedY));
         fwr(IoLine.Hash(userArrowsReplay,           arrowsReplay));
         fwr(IoLine.Hash(userArrowsNetwork,          arrowsNetwork));
+        fwr(IoLine.Hash(userPaintTorusSeams,        paintTorusSeams));
         fwr(IoLine.Hash(userIngameTooltips,         ingameTooltips));
         fwr(IoLine.Hash(userShowButtonHotkeys,      showButtonHotkeys));
         fwr(IoLine.Hash(userGuiColorRed,            guiColorRed));

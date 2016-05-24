@@ -322,6 +322,7 @@ $optionScreenWindowed           Windowed mode
 $optionScreenWindowedRes        Windowed resolution
 $optionArrowsReplay             Arrows during replays
 $optionArrowsNetwork            Arrows in network games
+$optionPaintTorusSeams          Paint torus seams
 $optionIngameTooltips           Tooltips during game
 $optionShowButtonHotkeys        Show button hotkeys
 $optionGuiColorRed              Menu color red
