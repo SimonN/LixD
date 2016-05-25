@@ -1,6 +1,19 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.4.1
+-----
+
+2016-05-25
+
+Game and editor draw a thin line at the torus seam. This is optional.
+
+The automatic screen start snaps to the level boundary if it's close to it
+and the level has no wrapping in that direction.
+
+Started tile grouping using Nepster's algorithm. Thanks for the straightforward
+idea in O(n^2), with tips on how to optimize to O(n log n) if wanted!
+
 0.4.0
 -----
 
