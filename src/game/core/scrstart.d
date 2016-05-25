@@ -19,6 +19,7 @@ void centerCameraOnHatchAverage(Game game)
     game.chooseGoodZoom();
     game.map.centerOnAverage(game.ourHatches().map!(h => h.screenCenter.x),
                              game.ourHatches().map!(h => h.screenCenter.y));
+    game.map.snapToBoundary();
 }
 
 void chooseGoodZoom(Game game) {

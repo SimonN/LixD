@@ -70,7 +70,7 @@ public:
     @property Point screenCenter() const
     {
         assert (tile);
-        return point + tile.trigger + Point(hatchRot ? -64 : 64, 64);
+        return point + tile.trigger + Point(hatchRot ? -64 : 64, 32);
     }
 }
 

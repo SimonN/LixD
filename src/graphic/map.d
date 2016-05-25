@@ -146,6 +146,25 @@ void centerOnAverage(Rx, Ry)(Rx rangeX, Ry rangeY)
     cameraY = super.torusAverageY(rangeY);
 }
 
+// On non-torus maps, we want the initial scrolling position exactly at the
+// boundary, or a good chunk away from the boundary.
+void snapToBoundary()
+{
+    void snapOneDim(in bool torus, in int aMin, in int aMax,
+        in int value, void delegate(int) setter
+    ) {
+        if (torus)
+            return;
+        immutable int snapInsideMargin = aMin / 6;
+        if (2 * value < aMin + aMax && value < aMin + snapInsideMargin)
+            setter(aMin);
+        else if (value > aMax - snapInsideMargin)
+            setter(aMax);
+    }
+    snapOneDim(torusX, minX, maxX, cameraX, (int a) { this.cameraX = a; });
+    snapOneDim(torusY, minY, maxY, cameraY, (int a) { this.cameraY = a; });
+}
+
 // By how much is the camera larger than the map?
 // These are 0 on torus maps, only > 0 for small non-torus maps.
 // If something > 0 is returned, we will draw a dark border around the level.
