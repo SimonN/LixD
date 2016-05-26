@@ -105,7 +105,7 @@ private:
 
 // Returns start and length without +1 along one dimension due to
 // (mouse position when we started framing) and (mouse position now)
-auto framePart(
+Side framePart(
     in int oldMap,    in int newMap,
     in int oldScreen, in int newScreen,
     in int mapLen,    in bool torus
@@ -117,8 +117,7 @@ auto framePart(
         return newMap <= oldMap && newScreen > oldScreen
             || newMap >= oldMap && newScreen < oldScreen;
     }
-    struct OneDim { int start, len; }
     return frameGoesOverTorusSeam()
-        ? OneDim(max(oldMap, newMap), mapLen - abs(newMap - oldMap))
-        : OneDim(min(oldMap, newMap),          abs(newMap - oldMap));
+        ? Side(max(oldMap, newMap), mapLen - abs(newMap - oldMap))
+        : Side(min(oldMap, newMap),          abs(newMap - oldMap));
 }

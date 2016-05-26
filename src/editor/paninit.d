@@ -7,15 +7,16 @@ import basics.globals;
 import basics.rect;
 import basics.user;
 import editor.editor;
+import editor.group;
 import editor.hover;
 import editor.io;
+import editor.select;
 import editor.gui.browter;
 import editor.gui.constant;
 import editor.gui.looks;
 import editor.gui.panel;
 import editor.gui.skills;
 import editor.gui.topology;
-import editor.select;
 import file.language;
 import gui;
 import hardware.keyset;
@@ -56,6 +57,9 @@ void makePanel(Editor editor)
         });
         onExecute(Lang.editorButtonSelectAdd, keyEditorSelectAdd, () {
             buttonSelectAdd.on = ! buttonSelectAdd.on;
+        });
+        onExecute(Lang.editorButtonGroup, KeySet(), () {
+            editor.createGroup();
         });
         onExecute(Lang.editorButtonSelectCopy, keyEditorCopy, () {
             foreach (sel; editor._selection) {

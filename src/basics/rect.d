@@ -9,8 +9,28 @@ import std.string;
 
 import basics.help;
 
+// a one-dimensional rectangle
+struct Side {
+    int start, len;
+
+    string toString() const { return format("(%d;%d)", start, len); }
+
+    static Side smallestContainer(in Side a, in Side b)
+    {
+        return Side(
+            min(a.start, b.start),
+            max(a.start + a.len, b.start + b.len) - min(a.start, b.start)
+        );
+    }
+}
+
 struct Rect {
-    int x, y, xl, yl;
+    union {
+        struct { int x, y, xl, yl;   }
+        struct { Point topLeft, len; }
+    }
+    static assert (Point.sizeof == 2 * int.sizeof);
+    static assert (Rect .sizeof == 4 * int.sizeof);
 
     this(in int ax, in int ay, in int axl, in int ayl)
     {
@@ -22,12 +42,20 @@ struct Rect {
 
     this(in Point p, in int axl, in int ayl)
     {
-        this(p.x, p.y, axl, ayl);
+        topLeft = p; this(p.x, p.y, axl, ayl);
     }
 
-    @property Point topLeft() const { return Point(x, y);   }
-    @property Point len()     const { return Point(xl, yl); }
-    @property Point center()  const { return topLeft() + len() / 2; }
+    this(Side xs, Side ys)
+    {
+        x  = xs.start;
+        y  = ys.start;
+        xl = xs.len;
+        yl = ys.len;
+    }
+
+    @property Point center() const { return topLeft + len / 2; }
+    @property Side  sideX()  const { return Side(x, xl); }
+    @property Side  sideY()  const { return Side(y, yl); }
 
     string toString() const { return format("(%d,%d;%d,%d)", x, y, xl, yl); }
 
@@ -40,10 +68,8 @@ struct Rect {
 
     static Rect smallestContainer(in Rect a, in Rect b)
     {
-        Rect ret = Rect(min(a.x, b.x), min(a.y, b.y), 0, 0);
-        ret.xl = max(a.x + a.xl, b.x + b.xl) - ret.x;
-        ret.yl = max(a.y + a.yl, b.y + b.yl) - ret.y;
-        return ret;
+        return Rect(Side.smallestContainer(a.sideX, b.sideX),
+                    Side.smallestContainer(a.sideY, b.sideY));
     }
 
     unittest {
