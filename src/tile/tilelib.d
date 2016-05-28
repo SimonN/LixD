@@ -15,14 +15,16 @@ import file.log;
 import file.search;
 import hardware.tharsis;
 import graphic.cutbit;
-import tile.gadtile;
 import tile.abstile;
+import tile.gadtile;
+import tile.group;
 import tile.terrain;
 
 private:
     string[string] replace_strings;
     TerrainTile[string] terrain;
     GadgetTile [string] gadgets;
+    TileGroup[TileGroupKey] groups;
     Rebindable!(const Filename)[string] queue;
 
 public:
@@ -39,11 +41,7 @@ void initialize()
         files = file.search.findRegularFilesRecursively(glo.dirImages);
     }
     foreach (fn; files) {
-        version (tharsisprofiling)
-            auto zone3 = Zone(profiler, "tilelib.init one file");
         if (! fn.hasImageExtension()) continue;
-        version (tharsisprofiling)
-            auto zone4 = Zone(profiler, "tilelib.init one image");
         string rootless = fn.rootlessNoExt;
         // fill the queue will all files on the disk, but chop off the
         // "images/" prefix before using the path as the tile's name
@@ -92,6 +90,14 @@ get_tile(T : AbstractTile, alias container)(in string str)
         return get_tile!(T, container)(repl); // recursive, should be finite
     }
     else return null;
+}
+
+TileGroup get_group(in TileGroupKey key)
+{
+    if (auto found = key in groups)
+        return *found;
+    else
+        return groups[key] = new TileGroup(key);
 }
 
 string get_filename(in AbstractTile tile)

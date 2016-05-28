@@ -8,6 +8,7 @@ import editor.editor;
 import editor.hover;
 import tile.group;
 import tile.occur;
+import tile.tilelib;
 
 void createGroup(Editor editor) {
     with (editor)
@@ -25,9 +26,9 @@ void createGroup(Editor editor) {
         return;
     editor.minimizeSelectionSelboxByMovingSomeAcrossTorus(occurrences);
     // Hack. In all other cases, we let Level add occurrences to itself
-    // by giving it the filename and the position. But our group doesn't
-    // have a filename. We add the new occurrence ourselves.
-    TileGroup group = new TileGroup(occurrences);
+    // by giving to Level the key and the position.
+    // Here, we add the new occurrence ourselves.
+    TileGroup group = get_group(TileGroupKey(occurrences));
     TerOcc groupOcc = new TerOcc(group);
     groupOcc.point  = occurrences.map!(occ => occ.selboxOnMap)
                               .reduce!(Rect.smallestContainer)

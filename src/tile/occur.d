@@ -23,8 +23,8 @@ public:
     out (ret) { assert (ret); }
     body { return null; }
 
-    abstract const(AbstractTile) tile() const;
-    abstract IoLine    toIoLine() const;
+    abstract @safe const(AbstractTile) tile() const pure nothrow;
+    abstract IoLine toIoLine() const;
 
     override bool opEquals(Object rhsObj)
     {
