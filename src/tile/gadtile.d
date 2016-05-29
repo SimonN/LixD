@@ -26,6 +26,7 @@ private:
     int  _triggerY;  // raw data, can be center or top
     bool _triggerXc; // center around triggerX instead of going right from it
     bool _triggerYc; // center around triggerY instead of going down from it
+    immutable string _name;
 
 public:
     int  subtype;
@@ -50,11 +51,13 @@ public:
 
 protected:
     this(
+        string aName,
         Cutbit aCb,
         Type   aType,
         int    aSubtype,
     ) {
         super(aCb); // take ownership
+        _name   = aName;
         _type   = aType;
         subtype = aSubtype;
         set_nice_defaults_based_on_type();
@@ -65,6 +68,7 @@ protected:
 
 public:
     @property type() const { return _type; }
+    override @property string name() const { return _name; }
 
     // phase out these two eventually, replace by Rect/Point below
     @property int triggerX() const { return _triggerX - _triggerXc * triggerXl/2; }
@@ -77,13 +81,14 @@ public:
     }
 
     static typeof(this) takeOverCutbit(
+        string aName,
         Cutbit aCb,
         Type   aType = Type.DECO,
         int    aSubtype = 0
     ) {
         if (! aCb || ! aCb.valid)
             return null;
-        return new typeof(this)(aCb, aType, aSubtype);
+        return new typeof(this)(aName, aCb, aType, aSubtype);
     }
 
     void readDefinitionsFile(in Filename filename)

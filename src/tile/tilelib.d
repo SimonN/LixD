@@ -96,19 +96,10 @@ TileGroup get_group(in TileGroupKey key)
 {
     if (auto found = key in groups)
         return *found;
-    else
+    else if (key.elements.length > 0)
         return groups[key] = new TileGroup(key);
-}
-
-string get_filename(in AbstractTile tile)
-{
-    // DTODO: this is slow. Maybe use the key as a property of the tile
-    // in addition to the key, so it becomes a lookup associative array.
-    foreach (key, value; terrain)
-        if (value is tile) return key;
-    foreach (key, value; gadgets)
-        if (value is tile) return key;
-    return null;
+    else
+        return null;
 }
 
 private:
@@ -142,7 +133,7 @@ void loadGadgetFromDisk(in string strNoExt, in char pe, in Filename fn)
         cb.logBecauseInvalid(fn);
         return;
     }
-    gadgets[strNoExt] = GadgetTile.takeOverCutbit(cb, type, subtype);
+    gadgets[strNoExt] = GadgetTile.takeOverCutbit(strNoExt, cb, type, subtype);
     auto tile = (strNoExt in gadgets);
     assert (tile && *tile);
     // Load overriding definitions from a possibly accompanying text file.
@@ -163,7 +154,7 @@ void loadTerrainFromDisk(in string strNoExt, in bool steel, in Filename fn)
         cb.logBecauseInvalid(fn);
         return;
     }
-    terrain[strNoExt] = TerrainTile.takeOverCutbit(cb, steel);
+    terrain[strNoExt] = TerrainTile.takeOverCutbit(strNoExt, cb, steel);
 }
 
 void logBecauseInvalid(const(Cutbit) cb, in Filename fn)

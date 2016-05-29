@@ -18,6 +18,7 @@ module tile.group;
 import std.algorithm;
 import std.exception;
 import std.range;
+import std.typecons;
 
 import basics.alleg5;
 import basics.rect;
@@ -79,7 +80,7 @@ public:
                                   foundSelbox.x,  foundSelbox.y,
                                   foundSelbox.xl, foundSelbox.yl, 0, 0, 0);
         tooLarge.dispose();
-        super(new Cutbit(tb.loseOwnershipOfAlbit));
+        super(null, new Cutbit(tb.loseOwnershipOfAlbit));
         _transpCutOff = foundSelbox.topLeft;
     }
     // Thoughts about this constructor:
@@ -90,6 +91,14 @@ public:
 
     @property TileGroupKey key() const { return _key; }
 
+    // No need to override name(): we initialize super with name = null.
+    // dependencies() allocates, I'd like to see how to prevent that :-(
+    override @property const(TerrainTile)[] dependencies() const
+    {
+        assert (_key.tilesOfElements.length > 0);
+        return _key.tilesOfElements;
+    }
+
     @property Point transpCutOff() const { return _transpCutOff; }
 }
 
@@ -99,11 +108,18 @@ private:
     // such that their relative positions remain the same, but the leftmost
     // element starts at (0, y) and the topmost element starts at (x, 0).
     immutable(TerOcc)[] _elements;
+    const(TerrainTile)[] _tilesOfElements; // for AbstractTile.dependencies()
 
 public:
     this(T)(T occRange)
-        if (isInputRange!T && is (ElementType!T == TerOcc))
-    {
+        if (isInputRange!T && is (ElementType!T : const(TerOcc)))
+    out {
+        import std.string;
+        assert (_elements.empty == _tilesOfElements.empty,
+            "%d elements, but %d tilesOfElements"
+            .format(_elements.length, _tilesOfElements.length));
+    }
+    body {
         if (occRange.empty)
             return;
         auto tmp = occRange.map!(occ => occ.clone).array;
@@ -112,6 +128,16 @@ public:
         assert (surround.xl > 0 && surround.yl > 0);
         tmp.each!(occ => occ.point -= surround.topLeft);
         _elements = tmp.assumeUnique;
+
+        const(TerrainTile) unrebind(Rebindable!(const(TerrainTile)) a)
+        {
+            return a;
+        }
+        _tilesOfElements = _elements.map!(occ => rebindable(occ.tile))
+            .array
+            .sort!((a, b) => a.toHash < b.toHash)
+            .map!unrebind
+            .uniq.array;
     }
 
     auto elements() const
@@ -131,4 +157,7 @@ public:
             accum = ((accum << 5) & ~31) + (cast () terOcc.tile).toHash();
         return accum;
     }
+
+protected:
+    auto tilesOfElements() const { return _tilesOfElements; }
 }

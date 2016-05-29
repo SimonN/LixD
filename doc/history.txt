@@ -1,6 +1,18 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.4.2
+-----
+
+2016-06-01
+
+Level reads and writes tile groups.
+
+The game renders groups with correct air parts inside.
+I haven't tested steel, I expect bugs when grouping steel.
+
+There is no conversion yet from no-overwrite to groups.
+
 0.4.1
 -----
 

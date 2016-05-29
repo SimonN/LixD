@@ -186,7 +186,7 @@ override string toString() const
 
     switch (type) {
     case '$':
-        ret ~= text1 ~ " " ~ text2;
+        ret ~= format("%s%s%s", text1, text2.empty ? "" : " ", text2);
         break;
     case '#':
         ret ~= format("%s %d", text1, nr1);

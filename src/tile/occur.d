@@ -62,8 +62,8 @@ public:
 
     override IoLine toIoLine() const
     {
-        return IoLine.Colon(tile ? get_filename(tile) : null,
-                point.x, point.y, hatchRot ? "r" : null);
+        assert (_tile);
+        return IoLine.Colon(_tile.name, point.x, point.y, hatchRot ? "r" : "");
     }
 
     // only for hatches
@@ -106,13 +106,13 @@ public:
 
     override IoLine toIoLine() const
     {
-        string filename = tile ? get_filename(tile) : null;
         string modifiers;
         if (mirrY) modifiers ~= 'f';
         foreach (r; 0 .. rotCw) modifiers ~= 'r';
         if (dark) modifiers ~= 'd';
         if (noow) modifiers ~= 'n';
-        return IoLine.Colon(filename, point.x, point.y, modifiers);
+        assert (_tile);
+        return IoLine.Colon(_tile.name, point.x, point.y, modifiers);
     }
 
     auto phybitsOnMap(in Point p) const

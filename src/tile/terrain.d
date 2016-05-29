@@ -21,19 +21,21 @@ import tile.abstile;
 class TerrainTile : AbstractTile {
 private:
     Phymap _phymap; // not the game's physics map, but the tile's map!
-    bool   _steel;
     Cutbit _dark; // same transparent pixels, but all nontransp are full white
+    immutable string _name;
 
 public:
-    static typeof(this) takeOverCutbit(Cutbit aCb, bool aSteel = false)
+    immutable bool steel;
+
+    static typeof(this) takeOverCutbit(string aName, Cutbit aCb, bool aSteel)
     {
         if (! aCb || ! aCb.valid)
             return null;
-        return new typeof(this)(aCb, aSteel);
+        return new typeof(this)(aName, aCb, aSteel);
     }
 
-    @property bool          steel() const { return _steel; }
     @property const(Cutbit) dark()  const { return _dark; }
+    override @property string name() const { return _name; }
 
     // Input: Where you want to draw on the map, in relation to tile's 0, 0.
     // Output: The solid/nonsolid bits there of the rotated/mirrored tile
@@ -73,10 +75,11 @@ public:
     }
 
 protected:
-    this(Cutbit aCb, bool aSteel = false)
+    this(string aName, Cutbit aCb, bool aSteel = false)
     {
         super(aCb);
-        _steel = aSteel;
+        _name = aName;
+        steel = aSteel;
         makePhymapFindSelbox();
         makeDarkVersion();
     }

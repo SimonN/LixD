@@ -2,7 +2,7 @@ module level.level;
 
 import enumap;
 
-public import level.levelio : saveToFile;
+public import level.levelio;
 
 import basics.topology;
 import file.date;
@@ -16,7 +16,6 @@ import level.levelio;
 import level.levdraw;
 import tile.occur;
 import tile.gadtile;
-import tile.tilelib : get_filename;
 import lix.enums;
 
 enum LevelStatus {

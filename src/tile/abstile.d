@@ -30,6 +30,15 @@ public:
           @property const(Cutbit) cb() const { return _cb;     }
     final @property Rect      selbox() const { return _selbox; }
 
+    @property string                name()         const { return null; }
+    @property const(AbstractTile)[] dependencies() const { return null; }
+
+    // Object.toHash is not const! WTF!
+    override @property size_t toHash() const nothrow @trusted
+    {
+        return cast(size_t) cast(void*) this;
+    }
+
 protected:
     this(Cutbit aCb) { assert (aCb); _cb = aCb; } // take ownership
     void findSelboxAssumeLocked() { _selbox = .findSelboxAssumeLocked(_cb); }
