@@ -82,7 +82,11 @@ public:
     bool dark;  // wherever solid pixels would be drawn, erase exisiting pixels
     bool noow;  // only draw pixels into air; may be culled in the future
 
-    this(const(TerrainTile) t) { _tile = t; }
+    this(const(TerrainTile) t, Point p = Point())
+    {
+        _tile = t;
+        point = p;
+    }
 
     override TerOcc clone() const
     {

@@ -4,6 +4,7 @@ module tile.tilelib;
  * In D/A5 Lix, it's not a class anymore, but module-level functions.
  */
 
+import std.algorithm;
 import std.conv; // ulong -> int for string lengths
 import std.typecons; // Rebindable!(const Filename)
 
@@ -96,7 +97,7 @@ TileGroup get_group(in TileGroupKey key)
 {
     if (auto found = key in groups)
         return *found;
-    else if (key.elements.length > 0)
+    else if (key.elements.any!(occ => ! occ.dark))
         return groups[key] = new TileGroup(key);
     else
         return null;

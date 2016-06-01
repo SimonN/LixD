@@ -23,6 +23,7 @@ import file.search; // test if file exists
 import hardware.tharsis;
 import level.addtile;
 import level.level;
+import level.noowalgo;
 import lix.enums;
 import tile.abstile;
 import tile.gadtile;
@@ -226,6 +227,8 @@ private void load_level_finalize(Level level)
             skills[Ac.imploder] = 0;
         else
             skills[Ac.exploder] = 0;
+
+        terrain = terrain.noowAlgorithm(topology);
 
         // Set level error. The error for file not found, or the error for
         // missing tile images, have been set already.

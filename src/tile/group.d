@@ -42,15 +42,22 @@ private:
     // Then, the group doesn't appear to move from its creation spot.
     Point _transpCutOff;
 
-public:
+package:
+    // This constructor is package access: To get a group from a TileGroupKey,
+    // use tile.tilelib.get_group(TileGroupKey) instead, it caches these.
     this(TileGroupKey aKey)
     in {
         assert (! aKey.elements.empty, "can't group zero tiles");
         assert (aKey.elements.all!(occ => occ !is null));
+        assert (aKey.elements.any!(occ => ! occ.dark),
+            "can't group only dark.");
     }
     out {
+        import std.format;
         assert (selbox == Rect(0, 0, cb.xl, cb.yl),
-            "VRAM tile shall be as small as possible, no transparent border");
+            "VRAM tile shall be as small as possible, no transparent border. "
+            "But this selbox is %s, not (0,0;%d,%d)"
+            .format(selbox, cb.xl, cb.yl));
     }
     body {
         this._key = aKey;
@@ -89,6 +96,7 @@ public:
     // be performance-critical if we do it many times on level load.
     // I'll have to see how bad that will be.
 
+public:
     @property TileGroupKey key() const { return _key; }
 
     // No need to override name(): we initialize super with name = null.
@@ -111,6 +119,7 @@ private:
     const(TerrainTile)[] _tilesOfElements; // for AbstractTile.dependencies()
 
 public:
+    // This will move the copied tiles according to the comment at _elements.
     this(T)(T occRange)
         if (isInputRange!T && is (ElementType!T : const(TerOcc)))
     out {
