@@ -46,11 +46,18 @@ class PanelStats : Button {
 
     @property Update updatesSinceZero(in Update u)
     {
-        assert (_lTime);
+        // Hack while we have singleplayer only:
+        // Don't show the time taken. Some mistook it for a time limit.
+        // Use the commented-out code for multiplayer, or for people who want
+        // to see the time passed in singleplayer.
+        _bTime.hide();
+        _lTime.hide();
+        /+
         _lTime.text = "%d:%02d".format(
             u / (60 * updatesPerSecond),
             u % (60 * updatesPerSecond) / updatesPerSecond);
         reqDraw();
+        +/
         return u;
     }
 
