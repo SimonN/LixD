@@ -30,6 +30,7 @@ public:
         _edit.hotkey = basics.user.keyMenuEdit;
         _edit.onExecute = () {
             assert (fileRecent !is null);
+            basics.user.singleLastLevel = fileRecent;
             _gotoEditor = true;
         };
         _delete = new TextButton(new Geom(infoX + infoXl/2, 60,

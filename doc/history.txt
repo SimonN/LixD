@@ -1,6 +1,28 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.4.3
+-----
+
+2016-06-02
+
+Loading levels auto-converts from no-overwrite to tile groups.
+
+Even in a release build, an on-the-fly conversion takes 5.5 seconds for
+A Day In Lixtown and 1.2 seconds for Heed the Traffic Light. Lixtown has 2000
+pieces and does fancy tricks with no-overwrite. I have to decide whether
+the performance is acceptable, whether to improve the algorithm, or whether
+to save converted levels to file.
+
+Merged a tree tile by Amanda to prevent getting stuck in its leaves.
+
+Editor remembers the recently-loaded or recently-saved file, similar to how
+the game remembers the recently-played level. The singleplayer browser
+shows the most recent file.
+
+Don't show elapsed time in singleplayer. It looks like a time limit.
+Does anyone want the elapsed time shown nonetheless?
+
 0.4.2
 -----
 

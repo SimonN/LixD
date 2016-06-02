@@ -64,6 +64,7 @@ void newLevel(Editor editor) {
 void saveToExistingFile(Editor editor)
 {
     if (editor._loadedFrom) {
+        basics.user.singleLastLevel = editor._loadedFrom;
         editor._level.saveToFile(editor._loadedFrom);
         editor._levelToCompareForDataLoss = new Level(editor._loadedFrom);
         playLoud(Sound.DISKSAVE);
