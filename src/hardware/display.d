@@ -142,9 +142,17 @@ void setScreenMode(in Cmdargs cmdargs)
         deinitialize();
         display = al_create_display(mode.x, mode.y);
 
-        if (display)
+        if (display) {
+            // Shotgun debugging to prevent Icho's white window.
+            // An Allegro 5 user reported that this makes the window black.
+            al_flip_display();
+            // If that doesn't help with Icho, try this instead:
+            // al_clear_to_color(ALLEGRO_COLOR(0, 0, 0, 1)); // black
+            // al_flip_display();
+
             // don't try further modes on success
             break;
+        }
     }
 
     // cleaning up after the change, (re)instantiating the event queue
