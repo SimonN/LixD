@@ -52,13 +52,6 @@ abstract class Hover {
         return rhs && pos is rhs.pos;
     }
 
-    final override int opCmp(Object rhsObj) const
-    {
-        const rhs = cast (typeof(this)) rhsObj;
-        const cmp = cast (void*) pos - cast (void*) rhs.pos;
-        return cmp < 0 ? -1 : cmp > 0 ? 1 : 0;
-    }
-
     final void moveBy(in Point p)
     {
         assert (pos);
@@ -91,6 +84,10 @@ abstract class Hover {
 
     enum FgBg { fg, bg }
     abstract void moveTowards(FgBg);
+
+    // Override opCmp, such that all gadget hovers sort before all
+    // terrain hovers. Within each class, sort like level does.
+    abstract override int opCmp(Object rhsObj);
 
     void toggleDark() { }
 
@@ -139,6 +136,17 @@ public:
     override AlCol hoverColor(int val) const
     {
         return color.makecol(val, val, val);
+    }
+
+    final override int opCmp(Object rhsObj) const
+    {
+        if (cast (GadgetHover) rhsObj)
+            return 1; // Terrain sorts after Gadget, see comment in super
+        else if (auto rhs = cast (TerrainHover) rhsObj)
+            return level.terrain.countUntil!"a is b"(this.pos).to!int
+                -  level.terrain.countUntil!"a is b"(rhs .pos).to!int;
+        else
+            assert (false, "add extra classes here, this violates OCP. :-(");
     }
 
 protected:
@@ -198,6 +206,23 @@ public:
     override AlCol hoverColor(int val) const
     {
         return color.makecol(val, val, val/2);
+    }
+
+    final override int opCmp(Object rhsObj) const
+    {
+        if (cast (TerrainHover) rhsObj)
+            return -1; // Gadget sorts before Terrain, see comment in super
+        else if (auto rhs = cast (GadgetHover) rhsObj) {
+            if (this.pos.tile.type != rhs.pos.tile.type)
+                return this.pos.tile.type.to!int - rhs.pos.tile.type.to!int;
+            else {
+                auto list = level.pos[this.pos.tile.type];
+                return list.countUntil!"a is b"(this.pos).to!int
+                    -  list.countUntil!"a is b"(rhs .pos).to!int;
+            }
+        }
+        else
+            assert (false, "add extra classes here, this violates OCP. :-(");
     }
 
 protected:
