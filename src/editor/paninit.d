@@ -1,6 +1,7 @@
 module editor.paninit;
 
 import std.algorithm;
+import std.range;
 import std.string;
 
 import basics.globals;
@@ -73,10 +74,13 @@ void makePanel(Editor editor)
             editor._selection = null;
         });
         onExecute(Lang.editorButtonBackground, keyEditorBackground, () {
-            editor._selection.each!(s => s.moveTowards(Hover.FgBg.bg));
+            // see "Comment on correct zOrdering calls" in editor.hover.
+            foreach (sel; editor._selection)
+                sel.zOrderTowardsButIgnore(Hover.FgBg.bg, editor._selection);
             }, Button.WhenToExecute.whenMouseClickAllowingRepeats);
         onExecute(Lang.editorButtonForeground, keyEditorForeground, () {
-            editor._selection.each!(s => s.moveTowards(Hover.FgBg.fg));
+            foreach (sel; editor._selection.retro)
+                sel.zOrderTowardsButIgnore(Hover.FgBg.fg, editor._selection);
             }, Button.WhenToExecute.whenMouseClickAllowingRepeats);
         onExecute(Lang.editorButtonViewZoom, KeySet(), () {
             editor._map.zoom = editor._map.zoom >= 4 ? 1 :

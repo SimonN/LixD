@@ -1,6 +1,21 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.4.4
+-----
+
+2016-06-06
+
+Bugfixes for these github issues:
+#67: Z-ordering several tiles
+#85: Hover sorting guarantees group's z-order
+#81: Crash on nonexistant base directory of a browser
+Button hotkeys are drawn on top of buttons, not behind main text.
+
+I now try to paint the screen black immediately on display creation.
+I don't want a white flash before showing the main menu. I have to test at
+Icho's Windows machine whether this prevents the white flash.
+
 0.4.3
 -----
 

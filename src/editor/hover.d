@@ -83,7 +83,7 @@ abstract class Hover {
     abstract AlCol hoverColor(int val) const;
 
     enum FgBg { fg, bg }
-    abstract void moveTowards(FgBg);
+    abstract void zOrderTowardsButIgnore(FgBg, in Hover[]);
 
     // Override opCmp, such that all gadget hovers sort before all
     // terrain hovers. Within each class, sort like level does.
@@ -121,10 +121,10 @@ public:
         _pos = level.terrain[$-1];
     }
 
-    override void moveTowards(Hover.FgBg fgbg)
+    override void zOrderTowardsButIgnore(Hover.FgBg fgbg, in Hover[] ignore)
     {
-        moveTowardsImpl(level.topology, level.terrain, _pos, fgbg,
-                        MoveTowards.untilIntersects);
+        zOrderImpl(level.topology, level.terrain, _pos, ignore,
+            fgbg, MoveTowards.untilIntersects);
     }
 
     override void toggleDark()
@@ -196,9 +196,9 @@ public:
         _pos = list[$-1];
     }
 
-    override void moveTowards(Hover.FgBg fgbg)
+    override void zOrderTowardsButIgnore(Hover.FgBg fgbg, in Hover[] ignore)
     {
-        moveTowardsImpl(level.topology, list, _pos, fgbg,
+        zOrderImpl(level.topology, list, _pos, ignore, fgbg,
             (pos.tile.type == GadType.HATCH || pos.tile.type == GadType.GOAL)
             ? MoveTowards.once : MoveTowards.untilIntersects);
     }
@@ -237,8 +237,17 @@ private:
 
 enum MoveTowards { once, untilIntersects }
 
-void moveTowardsImpl(P)(
-    Topology topology, ref P[] list, P pos, Hover.FgBg fgbg, MoveTowards mt
+// ignoreThese: Editor will pass selection. We shall not reorder among the
+// selection. Never reorder the current piece with any from ignoreThese.
+// The editor must take responsibility to call this function in correct order:
+// Correct order ensures that we can break while (adj() >= 0 ...) when we have
+// run into a piece from ignoreThese. This means that the editor must call
+// zOrdering for moving to bg on the regularly-ordered list (bg at front,
+// fg at back), and call zOrdering for moving to fg on the retro list!
+void zOrderImpl(P)(
+    Topology topology, ref P[] list, P pos,
+    in Hover[] ignoreThese, // editor's selection. Don't reorder among these.
+    Hover.FgBg fgbg, MoveTowards mt
 )   if (is (P : Occurrence))
 {
     int we = list.countUntil!"a is b"(pos).to!int;
@@ -249,6 +258,8 @@ void moveTowardsImpl(P)(
     }
     while (adj() >= 0 && adj() < list.len) {
         assert (we >= 0 && we < list.len);
+        if (ignoreThese.map!(hov => hov.pos).canFind!"a is b"(list[adj()]))
+            break;
         swap(list[we], list[adj]);
         if (mt == MoveTowards.once || topology.rectIntersectsRect(
             list[we].selboxOnMap, list[adj].selboxOnMap)
