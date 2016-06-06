@@ -40,7 +40,14 @@ public:
     }
 
 protected:
-    this(Cutbit aCb) { assert (aCb); _cb = aCb; } // take ownership
+    // take ownership of the cutbit
+    this(Cutbit aCb)
+    {
+        assert (aCb);
+        _cb = aCb;
+        _selbox = Rect(0, 0, _cb.xl, _cb.yl);
+    }
+
     void findSelboxAssumeLocked() { _selbox = .findSelboxAssumeLocked(_cb); }
 }
 

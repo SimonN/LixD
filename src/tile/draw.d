@@ -11,8 +11,12 @@ import hardware.tharsis;
 import tile.occur;
 import tile.phymap;
 
-void drawOccurrence(in TerOcc occ, Torbit ground)
-{
+void drawOccurrence(
+    in TerOcc occ,
+    Torbit ground,
+    in Point offset = Point(0, 0)
+) {
+    immutable Point pt = occ.point + offset;
     if (! occ.dark) {
         version (tharsisprofiling)
             auto zone = Zone(profiler, "Level.drawPos VRAM normal");
@@ -20,7 +24,7 @@ void drawOccurrence(in TerOcc occ, Torbit ground)
         assert (occ.tile.cb.xfs == 1 && occ.tile.cb.yfs == 1);
         // We subvert the Cutbit drawing function for speed.
         // Terrain is guaranteed to have only one frame anyway.
-        ground.drawFrom(occ.tile.cb.albit, occ.point, occ.mirrY, occ.rotCw);
+        ground.drawFrom(occ.tile.cb.albit, pt, occ.mirrY, occ.rotCw);
     }
     else {
         version (tharsisprofiling)
@@ -28,14 +32,16 @@ void drawOccurrence(in TerOcc occ, Torbit ground)
         assert (occ.tile);
         assert (occ.tile.dark);
         with (BlenderMinus)
-            ground.drawFrom(occ.tile.dark.albit,
-                            occ.point, occ.mirrY, occ.rotCw);
+            ground.drawFrom(occ.tile.dark.albit, pt, occ.mirrY, occ.rotCw);
     }
 }
 
 void drawOccurrence(in TerOcc occ, Phymap lookup)
-{
+in {
     assert (lookup);
+    assert (! occ.noow, "replace noow with groups before drawing");
+}
+body {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Level.drawPos RAM ");
     // The lookup map could contain additional info about trigger areas,
@@ -49,15 +55,11 @@ void drawOccurrence(in TerOcc occ, Phymap lookup)
             immutable bits = occ.phybitsOnMap(p);
             if (! bits)
                 continue;
-            if (occ.noow) {
-                if (! lookup.get(p, Phybit.terrain))
-                    lookup.add(p, bits);
-            }
             else if (occ.dark)
                 lookup.rm(p, Phybit.terrain | Phybit.steel);
             else {
                 lookup.add(p, bits);
-                if (! occ.tile.steel)
+                if (! (bits & Phybit.steel))
                     lookup.rm(p, Phybit.steel);
             }
         }

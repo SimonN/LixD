@@ -7,17 +7,18 @@ module tile.phymap;
  *  a) game uses it to look up physics.
  *  b) terrain/steel uses a small one, from which a) is generated.
  *
- * But watchout: Water/fire/flingers/exits/hatches etc. don't use a physicsmap
- * to specify their trigger areas! The map in a) is composed from the tile
- * definitions, not from the physicsmap in the tile.
+ * Water/fire/flingers/exits/hatches etc. don't use PhyMap to specify
+ * trigger areas! The map in a) is drawn from the tile definitions,
+ * not from any physics map in the tile.
  *
- * Right now, this doesn't store pointers to objects. Thus, it can be checked
- * whether there is fire or water or steel at a given position, but it cannot
- * tell what exact interactive object instance sits there. If this behavior
- * is desired, the object in question must be looked up manually in the list
- * of objects of its type.
+ * Right now, b) doesn't store pointers to objects. Thus, game can check
+ * whether there is a trap at a given position, but it cannot
+ * tell what exact gadget instance sits there. If necessary, the
+ * gadget must be looked up manually in the list of gadgets of its type.
  */
 
+import std.algorithm;
+import std.range;
 import std.string; // format assert errors
 
 import basics.alleg5;
@@ -70,7 +71,55 @@ class Phymap : Topology {
 
     override void onResize()
     {
-        lt = new Phybitset[xl * yl];
+        lt.length = xl * yl;
+    }
+
+    Rect smallestNonzeroArea() const
+    in {
+        assert (! torusX && ! torusY, "this makes no sense on a torus");
+    }
+    out (ret) {
+        assert (ret.xl <= this.xl);
+        assert (ret.yl <= this.yl);
+    }
+    body {
+        Rect ret = Rect(0, 0, xl, yl);
+        // This relies on the representation of lt: row, row, row...
+        // While the row at ret.x is all zeroes, smallen ret
+        while (ret.xl > 0 && lt.drop(ret.x).stride(xl).allZero) {
+            ++ret.x;
+            --ret.xl;
+        }
+        while (ret.xl > 0 && lt.drop(ret.x + ret.xl - 1).stride(xl).allZero)
+            --ret.xl;
+        // Analyze a single row in the representation of lt
+        while (ret.yl > 0 && lt.drop(ret.y * xl).take(xl).allZero) {
+            ++ret.y;
+            --ret.yl;
+        }
+        while (ret.yl > 0 && lt.drop((ret.y + ret.yl-1) * xl).take(xl).allZero)
+            --ret.yl;
+        return ret;
+    }
+
+    // Crop physics map to a given subarea of itself
+    void cropTo(Rect rect)
+    in {
+        assert (rect.xl > 0);
+        assert (rect.yl > 0);
+        assert (rect.xl <= xl);
+        assert (rect.yl <= yl);
+    }
+    body {
+        if (rect.xl == xl && rect.yl == yl)
+            return;
+        Phybitset[] cropped = new Phybitset[rect.xl * rect.yl];
+        // This implementation works for torus maps, too, but I never use that.
+        foreach (y; 0 .. rect.yl)
+            foreach (x; 0 .. rect.xl)
+                cropped[y * rect.xl + x] = get(Point(rect.x + x, rect.y + y));
+        resize(rect.xl, rect.yl);
+        lt = cropped;
     }
 
     Phybitset get(in Point p)              const { return getAt(clamp(p));   }
@@ -174,6 +223,13 @@ class Phymap : Topology {
     }
 
     // for testing
+    void saveToFile() const
+    {
+        static int runningCount = 0;
+        saveToFile(new Filename("./phymap%03d.png".format(runningCount++)));
+    }
+
+    // for testing
     void saveToFile(in Filename fn) const
     {
         Albit outputBitmap = albitMemoryCreate(xl, yl);
@@ -209,3 +265,5 @@ private:
         return true;
     }
 }
+
+private alias allZero = all!(nr => nr == 0);

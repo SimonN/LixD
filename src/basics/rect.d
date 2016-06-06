@@ -92,6 +92,15 @@ struct Point {
         return ret;
     }
 
+    Point opUnary(string s)() const
+        if (s == "+" || s == "-")
+    {
+        Point ret;
+        mixin("ret.x = " ~ s ~ "this.x;");
+        mixin("ret.y = " ~ s ~ "this.y;");
+        return ret;
+    }
+
     Point opBinary(string s)(in int scalar) const
         if (s == "*" || s == "/")
     {

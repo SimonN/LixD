@@ -29,6 +29,7 @@ import hardware.tharsis;
 import tile.abstile;
 import tile.draw;
 import tile.occur;
+import tile.phymap;
 import tile.terrain;
 
 class TileGroup : TerrainTile {
@@ -66,35 +67,23 @@ package:
             Zone zone = Zone(profiler,
                 "grouping %d tiles".format(_key.elements.walkLength));
         }
-        // This torbit is probably too large, there is lots of empty space
-        // at its sides. We will dispose the VRAM bitmap later.
         Rect surround = _key.elements.map!(occ => occ.selboxOnMap)
                                      .reduce!(Rect.smallestContainer);
-        Torbit tb = new Torbit(surround.xl, surround.yl);
-        tb.clearToColor(color.transp);
-        with (DrawingTarget(tb.albit))
-            _key.elements.each!(e => e.drawOccurrence(tb));
-        auto tooLarge = new Cutbit(tb.loseOwnershipOfAlbit);
-        Rect foundSelbox;
-        with (LockReadOnly(tooLarge.albit))
-            foundSelbox = tooLarge.findSelboxAssumeLocked();
-
-        // This torbit now is of correct size.
-        tb = new Torbit(foundSelbox.xl, foundSelbox.yl);
-        tb.clearToColor(color.transp);
-        with (DrawingTarget(tb.albit))
-            al_draw_bitmap_region(tooLarge.albit,
-                                  foundSelbox.x,  foundSelbox.y,
-                                  foundSelbox.xl, foundSelbox.yl, 0, 0, 0);
-        tooLarge.dispose();
-        super(null, new Cutbit(tb.loseOwnershipOfAlbit));
+        // Unlike regular tile creation, we make the phymap first for groups,
+        // only then make the image for groups. We make the phymap too large
+        // and then crop it to the best size.
+        Phymap phy = new Phymap(surround.xl, surround.yl);
+        _key.elements.each!(e => e.drawOccurrence(phy));
+        immutable Rect foundSelbox = phy.smallestNonzeroArea;
+        phy.cropTo(foundSelbox);
         _transpCutOff = foundSelbox.topLeft;
+
+        Torbit tb = new Torbit(phy);
+        tb.clearToColor(color.transp);
+        with (DrawingTarget(tb.albit))
+            _key.elements.each!(e => e.drawOccurrence(tb, -_transpCutOff));
+        super("", new Cutbit(tb.loseOwnershipOfAlbit), phy);
     }
-    // Thoughts about this constructor:
-    // It's inefficient to allocate two bitmaps and only use one later.
-    // I'm doing it like this to reuse code. Creating a tile will only
-    // be performance-critical if we do it many times on level load.
-    // I'll have to see how bad that will be.
 
 public:
     @property TileGroupKey key() const { return _key; }

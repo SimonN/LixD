@@ -25,8 +25,6 @@ private:
     immutable string _name;
 
 public:
-    immutable bool steel;
-
     static typeof(this) takeOverCutbit(string aName, Cutbit aCb, bool aSteel)
     {
         if (! aCb || ! aCb.valid)
@@ -79,13 +77,21 @@ protected:
     {
         super(aCb);
         _name = aName;
-        steel = aSteel;
-        makePhymapFindSelbox();
+        makePhymapFindSelbox(aSteel);
+        makeDarkVersion();
+    }
+
+    // Take over the cutbit and the Phymap
+    this(string aName, Cutbit aCb, Phymap aPhm)
+    {
+        super(aCb);
+        _name = aName;
+        _phymap = aPhm;
         makeDarkVersion();
     }
 
 private:
-    void makePhymapFindSelbox()
+    void makePhymapFindSelbox(bool steel)
     {
         assert (! _phymap);
         assert (cb);
