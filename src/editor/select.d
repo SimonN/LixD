@@ -71,11 +71,14 @@ void selectAll(Editor editor) { with (editor)
     _selection = _level.pos[].joiner
         .map!(pos => cast (Hover) new GadgetHover(_level, pos, reason)).array
         ~ _level.terrain
-        .map!(pos => cast (Hover) new TerrainHover(_level, pos, reason)).array;
+        .map!(pos => TerrainHover.newViaEvilDynamicCast(_level, pos))
+        .map!(ho => cast (Hover) ho)
+        .tee!(ho => ho.reason = reason).array;
 }}
 
 private:
 
+// copy-pasta from void selectAll()
 void hoverTilesInRect(Editor editor, Rect rect) { with (editor)
 {
     immutable reason = Hover.Reason.frameSpanning;
@@ -84,7 +87,10 @@ void hoverTilesInRect(Editor editor, Rect rect) { with (editor)
         .map!(pos => cast (Hover) new GadgetHover(_level, pos, reason)).array
         ~ _level.terrain
         .filter!(pos => _map.rectIntersectsRect(rect, pos.selboxOnMap))
-        .map!(pos => cast (Hover) new TerrainHover(_level, pos, reason)).array;
+        .map!(pos => TerrainHover.newViaEvilDynamicCast(_level, pos))
+        .map!(ho => cast (Hover) ho)
+        .map!((ho) { ho.reason = reason; return ho; }).array;
+    assert (_hover.all!(ho => ho.reason == reason));
 }}
 
 void hoverTilesNormally(Editor editor) { with (editor)
@@ -119,8 +125,11 @@ void maybeAdd(Pos)(
         // even though all we know is mouse inside selbox.
         enum Hover.Reason reason = Hover.Reason.mouseOnSolidPixel;
     if (editor._hover == null || reason >= editor._hover[0].reason) {
-        static if (is (Pos == TerOcc))
-            _hover = [ new TerrainHover(editor._level, pos, reason) ];
+        static if (is (Pos == TerOcc)) {
+            auto ho = TerrainHover.newViaEvilDynamicCast(editor._level, pos);
+            ho.reason = reason;
+            _hover = [ ho ];
+        }
         else
             _hover = [ new GadgetHover( editor._level, pos, reason) ];
     }

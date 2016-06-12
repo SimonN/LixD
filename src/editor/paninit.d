@@ -62,6 +62,9 @@ void makePanel(Editor editor)
         onExecute(Lang.editorButtonGroup, KeySet(), () {
             editor.createGroup();
         });
+        onExecute(Lang.editorButtonUngroup, KeySet(), () {
+            editor.ungroup();
+        });
         onExecute(Lang.editorButtonSelectCopy, keyEditorCopy, () {
             foreach (sel; editor._selection) {
                 sel.cloneThenPointToClone();

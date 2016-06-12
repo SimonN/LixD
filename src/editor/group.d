@@ -36,8 +36,14 @@ void createGroup(Editor editor) {
     _level.terrain ~= groupOcc;
     _selection.filter!(s => cast (TerrainHover) s)
               .each  !(s => s.removeFromLevel());
-    _selection = [ new TerrainHover(_level, groupOcc, Hover.Reason.addedTile)];
+    _selection = [ new GroupHover(_level, groupOcc, Hover.Reason.addedTile)];
 }}
+
+void ungroup(Editor editor)
+{
+    editor._selection
+        = editor._selection.map!(hov => hov.replaceInLevelWithElements()).join;
+}
 
 private:
 
