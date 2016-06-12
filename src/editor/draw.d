@@ -4,8 +4,10 @@ import std.algorithm;
 import std.string;
 
 import basics.alleg5;
+import basics.help;
 import editor.editor;
 import editor.hover;
+import file.language;
 import graphic.color;
 import graphic.cutbit;
 import graphic.textout;
@@ -63,6 +65,7 @@ void drawMainMap(Editor editor)
         editor.drawHovers(_hover, false);
         editor.drawHovers(_selection, true);
         editor.drawDraggedFrame();
+        editor._panel.info = editor.describeHover();
     }
 }
 
@@ -117,6 +120,19 @@ void drawDraggedFrame(Editor editor) { with (editor)
     assert (val >= 0x40 && val < 0xC0); // because we'll be varying by 0x40
     immutable col = color.makecol(val + 0x40, val, val - 0x40);
     _map.drawRectangle(_dragger.frame(_map), col);
+}}
+
+string describeHover(Editor editor) { with (editor)
+{
+    if (_hover.length == 1)
+        return _hover[0].description;
+    else if (_hover.length > 1)
+        return "%d %s".format(_hover.len, Lang.editorBarHover.transl);
+    else if (_selection.length == 1)
+        return _selection[0].description;
+    else if (_selection.length > 1)
+        return "%d %s".format(_selection.len, Lang.editorBarSelection.transl);
+    return "";
 }}
 
 void drawToScreen(Editor editor)

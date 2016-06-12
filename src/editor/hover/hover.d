@@ -9,10 +9,12 @@ module editor.hover.hover;
 
 import std.algorithm;
 import std.conv;
+import std.string;
 
 import basics.alleg5; // timer ticks for the hover
 import basics.help;
 import basics.topology;
+import file.language;
 import graphic.color;
 import level.level;
 import tile.occur;
@@ -84,6 +86,14 @@ abstract class Hover {
         return this.sortedPositionInLevel - rhs.sortedPositionInLevel;
     }
 
+    final string description() const
+    {
+        // the unicode chars in the string are the subscript of 0x
+        return "%s %s (%d, %d) (\u2080\u2093%X, \u2080\u2093%X)"
+            .format(this.tileDescription, Lang.editorBarAt.transl,
+            pos.point.x, pos.point.y, pos.point.x, pos.point.y);
+    }
+
     // This does 3 things:
     // 1. Delete the occ from the level.
     // 2. Put into the level all elements at correct positions.
@@ -108,6 +118,7 @@ abstract class Hover {
 protected:
     void mirrorHorizontally() { }
     void rotateCw() { }
+    abstract @property string tileDescription() const;
 }
 
 package:

@@ -146,6 +146,7 @@ enum Lang {
     editorHotkey,
     editorHotkeyHold,
     editorBarAt,
+    editorBarGroup,
     editorBarHover,
     editorBarSelection,
     editorBarMoveWithKeysLong,

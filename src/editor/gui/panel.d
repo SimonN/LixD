@@ -81,6 +81,15 @@ public:
         return button(Lang.editorButtonSelectAdd);
     }
 
+    string info(string text)
+    {
+        // Don't overwrite button explanations with the editor's description
+        // about its hover or selection. _info.text != "" iff mouse on panel.
+        if (_info.text.empty)
+            _info.text = text;
+        return text;
+    }
+
 protected:
     override void calcSelf()
     {

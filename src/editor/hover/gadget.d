@@ -68,4 +68,9 @@ protected:
     {
         _pos.hatchRot = (_pos.tile.type == GadType.HATCH && ! _pos.hatchRot);
     }
+
+    override @property string tileDescription() const
+    {
+        return _pos.tile.name;
+    }
 }

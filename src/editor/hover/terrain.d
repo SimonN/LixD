@@ -3,11 +3,13 @@ module editor.hover.terrain;
 import std.array;
 import std.algorithm;
 import std.conv;
-import std.range;
 import std.exception; // assumeUnique
+import std.range;
+import std.string;
 
 import basics.help;
 import editor.hover.hover;
+import file.language;
 import graphic.color;
 import level.level;
 import tile.occur;
@@ -81,6 +83,21 @@ protected:
         _pos.rotCw = (_pos.rotCw == 3 ? 0 : _pos.rotCw + 1);
         moveBy(oldCenter - _pos.selboxOnMap.center);
     }
+
+    final override @property string tileDescription() const
+    {
+        assert (_pos);
+        string ret = this.tileName;
+        if (_pos.rotCw || _pos.mirrY)
+            ret ~= " [%s%s]".format(_pos.mirrY ? "f" : "",
+                                    'r'.repeat(_pos.rotCw));
+        return ret;
+    }
+
+    @property string tileName() const
+    {
+        return _pos.tile.name;
+    }
 }
 
 class GroupHover : TerrainHover {
@@ -120,5 +137,13 @@ class GroupHover : TerrainHover {
     override AlCol hoverColor(int val) const
     {
         return color.makecol(val/2, val*2/3, val);
+    }
+
+protected:
+    override @property string tileName() const
+    {
+        auto tile = cast (TileGroup) pos().tile;
+        return "%d%s".format(tile.key.elements.len,
+                             Lang.editorBarGroup.transl);
     }
 }

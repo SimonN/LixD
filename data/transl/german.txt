@@ -126,9 +126,10 @@ $gameSpecTribe           Fähigkeiten eines anderen Teams ansehen.
 $editorHotkey                 Hotkey:
 $editorHotkeyHold            Hotkey: halte
 $editorBarAt                 an
-$editorBarHover              Objekte werden markiert.
-$editorBarSelection          Objekte markiert.
-$editorBarMoveWithKeysLong      Ziehe Objekte umher oder bewege sie mit [
+$editorBarGroup              -Stücke-Gruppe
+$editorBarHover              Stücke werden markiert.
+$editorBarSelection          Stücke markiert.
+$editorBarMoveWithKeysLong      Ziehe Stücke umher oder bewege sie mit [
 $editorBarMoveWithKeysShort     Bewegen mit [
 $editorBarMoveWithKeysMid       ], [
 $editorBarMoveWithKeysEnd       ].
