@@ -23,7 +23,16 @@ enum GapaMode {
 }
 
 class PanelStats : Button {
+private:
+    int _targetDescNumber;
+    Rebindable!(const(Lixxie)) _targetDescLixxie;
+    Rebindable!(const(Tribe))  _tribe;
 
+    CutbitElement _bOut, _bHatch, _bSaved, _bTime;
+    Label         _lOut, _lHatch, _lSaved, _lTime;
+    Label _spawnint, _targetDesc, _fps;
+
+public:
     this(Geom g)
     {
         super(g);
@@ -66,7 +75,8 @@ class PanelStats : Button {
     void suggestTooltipBuilders() { }
     void suggestTooltipPlatformers() { }
 
-    void showTribe(in Tribe tribe) { with (tribe)
+    void showTribe(in Tribe tribe) {
+        with (tribe)
     {
         assert (tribe);
         reqDraw();
@@ -77,31 +87,16 @@ class PanelStats : Button {
         _bHatch.yf = 1;
         _bSaved.yf = lixSaved == 0 ? 1 : lixSaved >= lixRequired ? 2 : 0;
         _bTime.yf  = 1;
+        // DTODO: spawnint: cull entirely, or make an icon
+        _spawnint.text = "SI: %d".format(spawnint);
         _fps.text  = "FPS: %d".format(displayFps);
     }}
 
 protected:
-
-    override void calcSelf()
-    {
-        down = false;
-    }
-
-    override void drawOntoButton()
-    {
-        formatTargetDesc();
-    }
+    override void calcSelf() { down = false; }
+    override void drawOntoButton() { formatTargetDesc(); }
 
 private:
-
-    int _targetDescNumber;
-    Rebindable!(const(Lixxie)) _targetDescLixxie;
-    Rebindable!(const(Tribe))  _tribe;
-
-    CutbitElement _bOut, _bHatch, _bSaved, _bTime;
-    Label         _lOut, _lHatch, _lSaved, _lTime;
-    Label _targetDesc, _fps;
-
     void formatTargetDesc()
     in {
         assert (  _targetDesc);
@@ -147,9 +142,12 @@ private:
         makeElements(_bHatch, _lHatch,  60, 60, 4);
         makeElements(_bSaved, _lSaved, 120, 80, 5);
         makeElements(_bTime,  _lTime,  200, 70, 7);
+        // I want to show the time in multiplayer. Until I have that,
+        // I display the spawn interval in singleplayer.
+        _spawnint   = new Label(new Geom(_bTime.xg, 0, 70, ylg, From.LEFT));
         _fps        = new Label(new Geom(280, 0, 70, this.ylg, From.LEFT));
         _targetDesc = new Label(new Geom(
             TextButton.textXFromLeft, 0, this.xlg, this.ylg, From.RIGHT));
-        addChildren(_targetDesc, _fps);
+        addChildren(_spawnint, _targetDesc, _fps);
     }
 }
