@@ -88,9 +88,12 @@ void drawGadgetAnnotations(Editor editor)
     {
         foreach (int i, g; list) {
             assert (g.tile && g.tile.cb);
-            string s = "%d/%d".format(i+1, list.length);
-            drawTextCentered(djvuM, s, g.point.x + g.tile.cb.xl/2,
-                                       g.point.y, color.guiText);
+            drawTextCentered(djvuS, "%d/%d".format(i+1, list.length),
+                g.point.x + g.tile.cb.xl/2, g.point.y, color.guiText);
+            if (g.tile.type == GadType.HATCH)
+                // unicode: LEFTWARDS ARROW, RIGHTWARDS ARROW
+                drawTextCentered(djvuM, g.hatchRot ? "\u2190" : "\u2192",
+                    g.point.x + g.tile.cb.xl/2, g.point.y + 5, color.guiText);
         }
     }
     annotate(editor._level.pos[GadType.HATCH]);
