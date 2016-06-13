@@ -21,7 +21,7 @@ void hoverTiles(Editor editor) { with (editor)
     _hover = [];
     if (_dragger.framing)
         editor.hoverTilesInRect(_dragger.frame(_map));
-    else if (_panel.isMouseHere)
+    else if (_dragger.moving || _panel.isMouseHere)
         { }
     else if (! keyPriorityInvert.keyHeld)
         editor.hoverTilesNormally();
