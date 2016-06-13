@@ -427,34 +427,19 @@ override void draw(Torbit tb) const
 {
     if (ac == Ac.nothing)
         return;
-
-    // draw the fuse if necessary
-    if (ploderTimer > 0) {
-        immutable fuseXy = getFuse();
-        immutable fuseX  = fuseXy.x;
-        immutable fuseY  = fuseXy.y;
-
-        int x = 0;
-        int y = 0;
-        for (; -y < (Exploder.ploderDelay - ploderTimer)/5+1; --y) {
-            /*
-            // DTODOVRAM: decide on how to draw the pixel-rendered fuse
-            const int u = ploderTimer;
-            x           = (int) (std::sin(u/2.0) * 0.02 * (y-4) * (y-4));
-            tb.setPixel(fuseX + x-1, fuseY + y-1, color[COL_GREY_FUSE_L]);
-            tb.setPixel(fuseX + x-1, fuseY + y  , color[COL_GREY_FUSE_L]);
-            tb.setPixel(fuseX + x  , fuseY + y-1, color[COL_GREY_FUSE_D]);
-            tb.setPixel(fuseX + x  , fuseY + y  , color[COL_GREY_FUSE_D]);
-            */
-        }
-        auto cb = getInternal(fileImageFuseFlame);
-        cb.draw(tb, fuseXy + Point(x, y) - cb.len/2, ploderTimer % cb.xfs, 0);
-    }
-    // end of drawing the fuse
-
+    // DTODO: draw the fuse in multiplayer
     super.draw(tb);
 }
 
+final void drawAgainHighlit(Torbit tb) const
+{
+    assert (ac != Ac.nothing, "we shouldn't highlight dead lix");
+    // No need to draw the fuse, because we draw on top of the old lix drawing.
+    // Hack: We examine the base class Graphic for what it would draw,
+    // and use a different sprite with the copy-pasted code.
+    graphic.internal.getLixSpritesheet(Style.highlight).draw(
+        tb, super.loc, xf, yf, super.mirror, super.rotation);
+}
 
 // ############################################################################
 // ######################### click priority -- was lix/lix_ac.cpp in C++/A4 Lix

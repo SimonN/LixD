@@ -1,5 +1,6 @@
-    module game.core.draw;
+module game.core.draw;
 
+import std.algorithm;
 import std.conv; // replay sign
 import std.math; // sin, for replay sign
 import std.range : retro;
@@ -78,18 +79,16 @@ void drawAllLixes(Game game)
         auto zone = Zone(profiler, "game draws lixes");
     void drawTribe(in Tribe tr)
     {
-        foreach (lix; tr.lixvec.retro)
-            if (! lix.marked)
-                lix.draw(game.map);
-        foreach (lix; tr.lixvec.retro)
-            if (lix.marked)
-                lix.draw(game.map);
+        tr.lixvec.retro.filter!(l => ! l.marked).each!(l => l.draw(game.map));
+        tr.lixvec.retro.filter!(l => l.marked).each!(l => l.draw(game.map));
     }
     with (game) {
         foreach (otherTribe; nurse.constStateForDrawingOnly.tribes)
             if (otherTribe !is game.tribeLocal)
                 drawTribe(otherTribe);
         drawTribe(nurse.constStateForDrawingOnly.tribes[_indexTribeLocal]);
+        if (_drawHerHighlit)
+            _drawHerHighlit.drawAgainHighlit(game.map);
     }
 }
 

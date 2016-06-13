@@ -14,11 +14,12 @@ import hardware.semantic; // force left/right held
 import hardware.sound;
 import lix;
 
-package void
-calcActive(Game game) { with (game)
+package:
+
+void calcActive(Game game)
 {
     game.handleNukeButton();
-    if (! pan.isMouseHere) {
+    if (! game.pan.isMouseHere) {
         if (mouseClickLeft)
             game.cancelReplay();
         auto potAss = game.findPotentialAssignee();
@@ -26,19 +27,28 @@ calcActive(Game game) { with (game)
             game.assignToPotentialAssignee(potAss);
     }
     else {
-        pan.stats.targetDescriptionLixxie = null;
-        pan.stats.targetDescriptionNumber = 0;
+        game._drawHerHighlit = null;
+        game.pan.stats.targetDescriptionLixxie = null;
+        game.pan.stats.targetDescriptionNumber = 0;
     }
-}}
+}
 
-package ReplayData
-newReplayDataForNextUpdate(Game game)
+// This
+package void findAgainHighlitLixAfterUpdate(Game game)
+{
+    if (! game.pan.isMouseHere)
+        game.findPotentialAssignee();
+}
+
+package ReplayData newReplayDataForNextUpdate(Game game)
 {
     ReplayData data;
     data.player = game.masterLocal.number;
     data.update = game.nurse.upd + 1;
     return data;
 }
+
+// ############################################################################
 
 private:
 
@@ -89,6 +99,9 @@ void handleNukeButton(Game game) { with (game)
     effect.addSound(Update(nurse.upd + 1), tribeID(tribeLocal), 0, Sound.NUKE);
 }}
 
+/* Main function to determine lix under cursor.
+ * Side effect: Assigns the best lix to game._drawHerHighlit.
+ */
 PotentialAssignee findPotentialAssignee(Game game) { with (game)
 {
     assert (tribeLocal);
@@ -96,14 +109,11 @@ PotentialAssignee findPotentialAssignee(Game game) { with (game)
     PotentialAssignee best; // clicks go to her, priority is already considered
     PotentialAssignee worst; // if different from best, make tooltip
     PotentialAssignee described; // her action is described on the panel
-
     int lixesUnderCursor = 0;
-
     bool leftFound  = false; // if both left/right true,
     bool rightFound = false; // make a tooltip
 
     const(SkillButton) currentSkill = game.pan.currentSkill;
-
     assert (map.zoom > 0);
 
     immutable int cursorThicknessOnLand = 12 / map.zoom;
@@ -136,13 +146,11 @@ PotentialAssignee findPotentialAssignee(Game game) { with (game)
 
     if (best.lixxie !is null && best.lixxie !is worst.lixxie)
         pan.stats.suggestTooltipPriorityInvert();
-
     if (leftFound && rightFound)
         pan.stats.suggestTooltipForceDirection();
 
     mouseCursor.xf = (forcingLeft ? 1 : forcingRight ? 2 : mouseCursor.xf);
     mouseCursor.yf = (lixesUnderCursor > 0);
-
     pan.stats.targetDescriptionNumber = lixesUnderCursor;
     pan.stats.targetDescriptionLixxie = described.lixxie;
 
@@ -156,7 +164,7 @@ PotentialAssignee findPotentialAssignee(Game game) { with (game)
         else if (best.lixxie.ac == Ac.platformer)
             pan.stats.suggestTooltipPlatformers();
     }
-
+    game._drawHerHighlit = best.lixxie;
     return best;
 }}
 // end void findPotentialAssignee()

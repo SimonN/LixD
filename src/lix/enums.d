@@ -118,6 +118,7 @@ enum Ac : ubyte {
 
 enum Style : ubyte {
     garden,
+    highlight,
     neutral,
     red,
     orange,

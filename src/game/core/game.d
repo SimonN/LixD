@@ -11,6 +11,7 @@ public import basics.cmdargs; // Runmode;
 
 import std.algorithm; // find;
 import std.conv; // float to int in prepare nurse
+import std.typecons; // Rebindable!(const Lixxie)
 
 import basics.alleg5;
 import basics.globals;
@@ -37,6 +38,7 @@ import gui;
 import hardware.sound;
 import hardware.display; // fps for framestepping speed
 import level.level;
+import lix; // _drawHerHighlit
 
 class Game {
 package:
@@ -54,6 +56,7 @@ package:
     int _indexTribeLocal;
     int _indexMasterLocal;
     long altickLastUpdate;
+    Rebindable!(const Lixxie) _drawHerHighlit;
 
     // Assignments for the next update go in here, and are only written into
     // the replay right before the update happens. If the replay is cut off

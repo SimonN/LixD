@@ -3,6 +3,7 @@ module game.core.speed;
 import basics.alleg5;
 import basics.nettypes; // Update
 import game.core.game;
+import game.core.active; // findAgainHighlitLixAfterUpdate
 import game.gui.panel;
 import hardware.sound;
 
@@ -18,6 +19,7 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
             nurse.updateToDuringTurbo(Update(nurse.upd + howmany));
         else
             nurse.updateTo(Update(nurse.upd + howmany));
+        game.findAgainHighlitLixAfterUpdate();
         game.setLastUpdateToNow();
     }
 
