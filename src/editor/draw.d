@@ -103,9 +103,9 @@ void drawGadgetAnnotations(Editor editor)
 // Returns value in 0 .. 256
 int hoverColorVal(bool light)
 {
-    immutable int time  = timerTicks & 0x0F;
-    immutable int subtr = time < 0x08 ? time : 0x10 - time;
-    return (light ? 0xFF : 0xB0) - (light ? 4 : 12) * subtr;
+    immutable int time  = timerTicks & 0x3F;
+    immutable int subtr = time < 0x20 ? time : 0x40 - time;
+    return (light ? 0xFF : 0xB0) - 2 * subtr;
 }
 
 void drawHovers(Editor editor, const(Hover[]) list, in bool light)
