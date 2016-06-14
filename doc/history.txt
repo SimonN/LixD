@@ -1,6 +1,24 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.5.0
+-----
+
+2016-06-14
+
+Physics: Groups with steel have correct distribution of steel, earth, air.
+
+I highlight on the map the lix under the mouse cursor who would get assigned.
+
+The Editor allows to ungroup tiles.
+
+I show hatch spawn direction, describe hovered tiles, and use a more
+peaceful color flow for hovers and selections. Save-as forbids special chars.
+
+The game shows the constant spawn interval in the panel. I don't know
+whether I want to keep this and make an icon for it, or whether people
+don't need it later.
+
 0.4.4
 -----
 

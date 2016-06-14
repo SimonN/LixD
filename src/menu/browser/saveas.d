@@ -26,6 +26,7 @@ public:
             PickerConfig!LevelWithFilenameTiler());
         _texttype = new Texttype(new Geom(infoX, 80, infoXl, 20,
                                  From.BOTTOM_LEFT));
+        _texttype.allowedChars = Texttype.AllowedChars.filename;
         _texttype.on = true;
         _texttype.onEnter = () {
             if (ALLEGRO_KEY_ENTER.keyTapped)

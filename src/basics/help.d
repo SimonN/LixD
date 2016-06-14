@@ -3,6 +3,7 @@ module basics.help;
 import std.array;
 import std.algorithm;
 import std.conv;
+import std.exception;
 import std.math;
 import std.string;
 import std.uni;
@@ -88,23 +89,24 @@ pure nothrow string
 escapeStringForFilename(string unescapedRemainder)
 {
     // remove all special characters except these few
-    string allowed = "_-";
+    string forbidden = "\"*/:<>?\\|";
     char[] pruned;
     try while (unescapedRemainder.length > 0) {
         dchar c = std.utf.decodeFront(unescapedRemainder);
-        if (c.isAlpha || c.isMark || c.isNumber || allowed.find(c) != null)
+        if (! c.isControl && ! forbidden.canFind(c))
             pruned.encode(c);
     }
     catch (Exception) { }
-    return pruned.idup;
+    return pruned.assumeUnique;
 }
 
 unittest {
     assert (escapeStringForFilename("hallo") == "hallo");
-    assert (escapeStringForFilename("don't/use/dirs") == "dontusedirs");
-    assert (escapeStringForFilename("Ä ö Ü ß") == "ÄöÜß");
-    assert (escapeStringForFilename(":D ^_^ :-|") == "D_-");
-    assert (escapeStringForFilename(".,123") == "123");
+    assert (escapeStringForFilename("no\u0000null") == "nonull");
+    assert (escapeStringForFilename("don't/use/dirs") == "don'tusedirs");
+    assert (escapeStringForFilename("Ä ö Ü ß") == "Ä ö Ü ß");
+    assert (escapeStringForFilename(":D ^_^ :-|") == "D ^_^ -");
+    assert (escapeStringForFilename(".,123") == ".,123");
     assert (escapeStringForFilename("リッくス") == "リッくス");
 }
 
