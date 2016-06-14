@@ -62,38 +62,31 @@ private enum _mineRight = Mask([
     "........" "XXXX...." "..", // 5 = deepest air = miner hole depth is 4 px
 ]);
 
-// DTODOSKILLS: This mask is asymmetric! Should be 2 hi-res pixels thicker or
-// thinner, or be mirrored for left-facers.
-// Only asymmetric because of location of #. The X's themselves are symmetric.
 private enum _implode = Mask([
-//   -16.. -9   -8 .. -1   0  ..  7   8  .. 15
-    "........" "....XXXX" "XXXX...." "........", // -26
-    "........" "..XXXXXX" "XXXXXX.." "........",
-    "........" "XXXXXXXX" "XXXXXXXX" "........",
-    ".......X" "XXXXXXXX" "XXXXXXXX" "X.......", // -23
-
-    "......XX" "XXXXXXXX" "XXXXXXXX" "XX......", // -22
-    "......XX" "XXXXXXXX" "XXXXXXXX" "XX......",
-    ".....XXX" "XXXXXXXX" "XXXXXXXX" "XXX.....",
-    ".....XXX" "XXXXXXXX" "XXXXXXXX" "XXX.....", // -19
-    "....XXXX" "XXXXXXXX" "XXXXXXXX" "XXXX....",
-    "....XXXX" "XXXXXXXX" "XXXXXXXX" "XXXX....",
-    "...XXXXX" "XXXXXXXX" "XXXXXXXX" "XXXXX...",
-    "...XXXXX" "XXXXXXXX" "XXXXXXXX" "XXXXX...", // -15
-    ] ~
-    "..XXXXXX" "XXXXXXXX" "XXXXXXXX" "XXXXXX..".repeat(3).array ~// -14,-13,-12
-    ".XXXXXXX" "XXXXXXXX" "XXXXXXXX" "XXXXXXX.".repeat(5).array ~// -11 thrg -7
-    "XXXXXXXX" "XXXXXXXX" "XXXXXXXX" "XXXXXXXX".repeat(6).array ~// -6 thrg -1
-    "XXXXXXXX" "XXXXXXXX" "#XXXXXXX" "XXXXXXXX".repeat(1).array ~// 0
-    "XXXXXXXX" "XXXXXXXX" "XXXXXXXX" "XXXXXXXX".repeat(5).array ~// 1 2 3 4 5
-    ".XXXXXXX" "XXXXXXXX" "XXXXXXXX" "XXXXXXX.".repeat(3).array ~// 6 7 8
-    "..XXXXXX" "XXXXXXXX" "XXXXXXXX" "XXXXXX..".repeat(2).array ~// 9 10
-    "...XXXXX" "XXXXXXXX" "XXXXXXXX" "XXXXX...".repeat(2).array ~ [
-    "....XXXX" "XXXXXXXX" "XXXXXXXX" "XXXX....", // 13
-    ".....XXX" "XXXXXXXX" "XXXXXXXX" "XXX.....", // 14
-    ".......X" "XXXXXXXX" "XXXXXXXX" "X.......", // 15
-    "........" ".XXXXXXX" "XXXXXXX." "........", // 16
-    "........" "...XXXXX" "XXXXX..." "........", // 17
+//   -16.. -9   -8 .. -1   0    2  ..  9   10  .. 15
+    "........" "......XX" "XX" "XX......" "........", // -26
+    "........" "...XXXXX" "XX" "XXXXX..." "........",
+    "........" ".XXXXXXX" "XX" "XXXXXXX." "........", // -24
+    "........" "XXXXXXXX" "XX" "XXXXXXXX" "........",
+    ".......X" "XXXXXXXX" "XX" "XXXXXXXX" "X.......",
+    "......XX" "XXXXXXXX" "XX" "XXXXXXXX" "XX......", ] ~
+    ".....XXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXX.....".repeat(2).array ~// -20-19
+    "....XXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXX....".repeat(2).array ~// -18-17
+    "...XXXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXXX...".repeat(2).array ~// -16-15
+    "..XXXXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXXXX..".repeat(3).array ~// -14-12
+    ".XXXXXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXXXXX.".repeat(5).array ~// -11 -7
+    "XXXXXXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXXXXXX".repeat(6).array ~//  -6 -1
+    "XXXXXXXX" "XXXXXXXX" "#X" "XXXXXXXX" "XXXXXXXX".repeat(1).array ~//   0
+    "XXXXXXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXXXXXX".repeat(5).array ~//   1  5
+    ".XXXXXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXXXXX.".repeat(3).array ~//   6  8
+    "..XXXXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXXXX..".repeat(2).array ~ [
+    "...XXXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXXX...",
+    "....XXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXX....",
+    ".....XXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXX.....", // 13
+    "......XX" "XXXXXXXX" "XX" "XXXXXXXX" "XX......", // 14
+    ".......X" "XXXXXXXX" "XX" "XXXXXXXX" "X.......", // 15
+    "........" ".XXXXXXX" "XX" "XXXXXXX." "........", // 16
+    "........" "....XXXX" "XX" "XXXX...." "........", // 17
 ]);
 
 struct Mask {
@@ -247,7 +240,8 @@ unittest {
         "XXXXXXXX" "XXXXXXXX"]);
     assert (topOfBasherLeft == topOfBasher.mirrored());
 
+    // Compared to L1, the imploder mask is wider by 1 lo-res pixel.
+    // This makes the imploder mask symmetric.
     assert (masks[TerrainDeletion.Type.implode].mirrored
-        !=  masks[TerrainDeletion.Type.implode]);
-        // this is a physics bug, we should strive to get == instead of !=
+        ==  masks[TerrainDeletion.Type.implode]);
 }

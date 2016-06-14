@@ -1,6 +1,15 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.0
+-----
+
+2016-06-15
+
+Physics: Imploder mask is symmetric. It's wider by 1 lo-res pixel to the right.
+
+You can drag the scrollbar thumb with the left mouse button.
+
 0.5.0
 -----
 
