@@ -97,13 +97,17 @@ public:
 protected:
     override void calcSelf()
     {
-        immutable change = _coarseness * (_down.execute() - _up.execute())
-                         + _wheelSpeed * mouseWheelNotches();
-        _execute = change != 0;
-        if (change != 0)
-            pos = pos + change;
+        startDragging();
+        if (this.hasFocus)
+            setPosFromDragging();
+        else
+            setPosFromButtonsAndWheel();
         if (disabled)
             _car.down = _up.down = _down.down = false;
+        else if (this.hasFocus) {
+            _car.down = true;
+            _up.down = _down.down = false;
+        }
     }
 
     override void drawSelf()
@@ -120,5 +124,34 @@ private:
         reqDraw();
         _car.resize(xlg, _track.ylg * (disabled ? 1 : 1f*pageLen / totalLen));
         _car.move(0, _up.ylg + (disabled ? 0 : _track.ylg * pos / totalLen));
+    }
+
+    void startDragging()
+    {
+        if (! this.hasFocus && ! disabled && mouseClickLeft && isMouseHere
+            && ! _up.isMouseHere && ! _down.isMouseHere)
+            addFocus(this);
+    }
+
+    void setPosFromDragging()
+    {
+        assert (this.hasFocus);
+        if (mouseHeldLeft && ! disabled) {
+            _execute = true;
+            assert (_track.yls > _car.yls);
+            pos = roundInt((mouseY - _track.ys - _car.yls / 2f)
+                / (_track.yls - _car.yls) // screen range that car can travel
+                * (_totalLen - _pageLen));
+        }
+        else
+            rmFocus(this);
+    }
+
+    void setPosFromButtonsAndWheel()
+    {
+        immutable change = _coarseness * (_down.execute() - _up.execute())
+                         + _wheelSpeed * mouseWheelNotches();
+        _execute = change != 0;
+        pos = pos + change;
     }
 }

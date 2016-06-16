@@ -130,7 +130,13 @@ protected:
             updateAccordingToBreadCurrentDir();
         else if (_tiler.executeDir)
             currentDir = _ls.dirs[_tiler.executeDirID];
-        else if (_scrollbar.execute)
+    }
+
+    override void workSelf()
+    {
+        // The scrollbar can take focus, to disable everything else while
+        // dragging the car. Only we should update our view for it.
+        if (_scrollbar.execute)
             _tiler.top = _scrollbar.pos;
     }
 

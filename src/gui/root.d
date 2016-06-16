@@ -76,39 +76,27 @@ rmElder(Element to_rm)
     clearNextDraw = true;
 }
 
-
-
-void
-addFocus(Element toAdd)
+void addFocus(Element toAdd)
 {
-    size_t insertHere = focus.length;
-
-    for (int i = 0; i < focus.length; ++i) {
-        Element e = focus[i];
-        // Erase all instances (should be at most one) of e in the queue,
-        // we're going to add it to the end later.
-        if (e is toAdd) {
-            focus.remove(i);
-            --insertHere;
-        }
-        // Do not add a parent as a more important focus than its child.
-        // This may happen: A parent's constructor may add the child as
-        // focus immediately, but the parent-creating code will then add
-        // the parent as focus, overriding the child.
-        else if (toAdd.isParentOf(e) && insertHere == focus.length) {
-            insertHere = i;
-        }
-    }
-    focus = focus[0 .. insertHere] ~ toAdd ~ focus[insertHere .. $];
+    focus = focus.remove!(e => e is toAdd);
+    focus ~= toAdd;
+    // Don't add a parent as a more important focus than its child.
+    // This may happen: Parent constructor focuses on the child, but the
+    // parent-creating code will focus on the parent.
+    foreach (int i, possibleParent; focus)
+        if (i > 0 && focus[i].isParentOf(focus[i-1]))
+            swap(focus[i-1], focus[i]);
 }
 
-
-
-void
-rmFocus(Element toRm)
+void rmFocus(Element toRm)
 {
     focus = focus.remove!(a => a is toRm);
     clearNextDraw = true;
+}
+
+bool hasFocus(Element elem)
+{
+    return focus.length && focus[$-1] == elem;
 }
 
 void calc()
