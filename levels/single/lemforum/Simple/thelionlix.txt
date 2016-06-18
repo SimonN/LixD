@@ -1,4 +1,4 @@
-$BUILT 2015-04-25 20:32:38
+$BUILT 2015-09-07 20:55:56
 $AUTHOR Michael S. Repton
 $GERMAN 
 $ENGLISH The Lion, Lix and the Wardrobe
@@ -19,6 +19,8 @@ $ENGLISH The Lion, Lix and the Wardrobe
 #SPAWN_INTERVAL 50
 #SPAWN_INTERVAL_FAST 4
 
+#WALKER 5
+#RUNNER 5
 #CLIMBER 5
 #FLOATER 5
 #EXPLODER 5
@@ -28,9 +30,9 @@ $ENGLISH The Lion, Lix and the Wardrobe
 #BASHER 5
 #MINER 5
 #DIGGER 5
-#WALKER 5
 #JUMPER 5
 #BATTER 5
+#CUBER 5
 
 :matt/winter/Hatch.H: 704 16
 

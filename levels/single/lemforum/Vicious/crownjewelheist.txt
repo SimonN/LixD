@@ -1,7 +1,7 @@
-$BUILT 2014-05-06 15:29:12
-$AUTHOR Insane Steve
+$BUILT 2016-03-27 16:23:56
+$AUTHOR I.S./geoo
 $GERMAN 
-$ENGLISH Laser Deathroom (Part 2)
+$ENGLISH Crown Jewel Heist
 
 #SIZE_X 640
 #SIZE_Y 400
@@ -15,22 +15,18 @@ $ENGLISH Laser Deathroom (Part 2)
 
 #SECONDS 0
 #INITIAL 50
-#REQUIRED 49
+#REQUIRED 45
 #SPAWN_INTERVAL 32
 #SPAWN_INTERVAL_FAST 4
 
 #CLIMBER 5
 #FLOATER 5
 #EXPLODER 5
-#BLOCKER 0
-#BUILDER 10
+#BLOCKER 1
+#BUILDER 8
 #BASHER 5
 #MINER 5
 #DIGGER 5
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 
 :geoo/abstract/hatch.H: 222 134
 
@@ -65,10 +61,10 @@ $ENGLISH Laser Deathroom (Part 2)
 :geoo/construction/Laser_vr_64.F: 210 266
 :geoo/construction/Laser_vr_64.F: 346 262
 :geoo/construction/Laser_vr_64.F: 414 266
-:geoo/construction/Laser_hz_16.F: 312 284
-:geoo/construction/Laser_vr_64.F: 306 228
-:geoo/construction/Laser_vr_64.F: 318 228
-:geoo/construction/Laser_hz_16.F: 312 220
+:geoo/construction/Laser_hz_16.F: 312 204
+:geoo/construction/Laser_vr_64.F: 306 148
+:geoo/construction/Laser_vr_64.F: 318 148
+:geoo/construction/Laser_hz_16.F: 312 140
 :geoo/construction/Laser_vr_64.F: 278 246
 :geoo/construction/Laser_vr_64.F: 346 246
 :geoo/construction/Laser_vr_64.F: 210 246
@@ -134,7 +130,3 @@ $ENGLISH Laser Deathroom (Part 2)
 :geoo/abstract/cvblocks/015: 336 368
 :geoo/abstract/cvblocks/015: 288 384
 :geoo/abstract/cvblocks/015: 336 384
-:geoo/abstract/cvblocks/000: 254 206
-:geoo/abstract/cvblocks/000: 254 198
-:geoo/abstract/cvblocks/000: 254 190
-:geoo/abstract/cvblocks/000: 254 182

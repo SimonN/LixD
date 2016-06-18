@@ -1,4 +1,4 @@
-$BUILT 2014-07-04 21:25:35
+$BUILT 2016-01-31 12:30:03
 $AUTHOR Insane Steve
 $GERMAN 
 $ENGLISH Just Stop the Bleeding
@@ -13,24 +13,22 @@ $ENGLISH Just Stop the Bleeding
 #BACKGROUND_GREEN 0
 #BACKGROUND_BLUE 0
 
-#SECONDS 0
+#SECONDS 59
 #INITIAL 50
 #REQUIRED 50
 #SPAWN_INTERVAL 1
 #SPAWN_INTERVAL_FAST 1
 
 #WALKER 1
-#JUMPER 1
+#RUNNER 1
 #CLIMBER 1
 #FLOATER 1
-#EXPLODER 1
-#CUBER 1
-#RUNNER 1
 #BUILDER 1
 #PLATFORMER 1
 #BASHER 1
 #MINER 1
 #DIGGER 1
+#JUMPER 1
 
 :matt/marble/Hatch.H: 1520 48
 :matt/marble/Hatch.H: 1520 48 r
@@ -72,7 +70,7 @@ $ENGLISH Just Stop the Bleeding
 :matt/bricks/02: 1264 368
 :matt/bricks/02: 1328 368
 :matt/bricks/02: 1392 368
-:matt/bricks/03: 1432 112
+:matt/bricks/03: 1432 112 frr
 :matt/bricks/02: 1496 112
 :matt/bricks/02: 1624 144
 :matt/bricks/02: 1688 208
@@ -109,10 +107,10 @@ $ENGLISH Just Stop the Bleeding
 :matt/bricks/10: 1496 208
 :matt/bricks/10: 1464 272
 :matt/bricks/12: 1496 272
-:matt/bricks/11: 1528 240
+:matt/bricks/11: 1530 240
 :matt/bricks/11: 1496 144
 :matt/bricks/09: 1592 144
-:matt/bricks/02: 1624 272
+:matt/bricks/02: 1624 270
 :matt/bricks/02: 1688 272 f
 :matt/bricks/02: 1752 272
 :matt/bricks/11: 1432 176
@@ -522,3 +520,6 @@ $ENGLISH Just Stop the Bleeding
 :amanda/occult/occult_wax_details_drip: 490 167
 :proxima/tile/pink5: 325 40
 :amanda/occult/occult_scrawl_pentagram: 330 45
+:matt/bricks/01a: 1426 110 rrr
+:matt/earth/27: 1406 234 rrrd
+:matt/goldmine/crate32: 1522 362

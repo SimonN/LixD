@@ -1,5 +1,5 @@
 $BUILT 2014-07-02 23:45:52
-$AUTHOR I.S./Michael S. Repton
+$AUTHOR I.S./Michael
 $GERMAN 
 $ENGLISH Let's All Go Down the Strand
 

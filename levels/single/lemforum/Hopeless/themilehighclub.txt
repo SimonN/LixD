@@ -1,0 +1,133 @@
+$BUILT 2016-03-20 10:07:13
+$AUTHOR Ramond
+$GERMAN 
+$ENGLISH The Mile High Club
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 47
+#SPAWN_INTERVAL 64
+#SPAWN_INTERVAL_FAST 4
+
+#RUNNER 1
+#EXPLODER 2
+#BUILDER 9
+#BASHER 1
+
+:matt/beach/decor/moon.D: 506 40
+
+:geoo/construction/Hatch.H: 520 246
+
+:matt/marble/Goal.G: 70 43
+
+:geoo/construction/factory.T: 224 304
+:geoo/construction/factory.T: 144 304
+
+:matt/steel/16x16.S: 280 176
+:matt/steel/16x16.S: 312 176
+:geoo/construction/concrete/016b: 313 176 rrd
+:geoo/construction/concrete/016a: 279 176 rrd
+:geoo/construction/stairsbrick_ru_32: 24 100
+:geoo/construction/stairsbrick_rd_32: 12 84
+:geoo/construction/stairsbrick_rd_32: 8 160
+:geoo/construction/stairsbrick_ru_32: 20 132
+:geoo/construction/stairsbrick_rd_32: 12 192
+:geoo/construction/stairsbrick_ru_32: 24 208
+:geoo/construction/stairsbrick_ru_32: 20 320
+:geoo/construction/stairsbrick_ru_32: 24 240
+:geoo/construction/stairsbrick_rd_32: 12 268
+:geoo/construction/stairsbrick_rd_32: 8 300
+:geoo/construction/concrete/032h: 96 368
+:geoo/construction/concrete/032h: 160 368
+:geoo/construction/concrete/032h: 224 368
+:geoo/construction/concrete/032hd: 494 204
+:geoo/construction/concrete/016: 478 188
+:geoo/construction/concrete/032c: 64 368
+:geoo/construction/concrete/016v: 478 204
+:geoo/construction/concrete/032hd: 414 236
+:geoo/construction/concrete/008: 470 196
+:geoo/construction/pillar_32: 288 208
+:geoo/construction/pillar_32: 288 240
+:geoo/construction/pillar_32: 288 272
+:geoo/construction/pillar_32: 288 336
+:geoo/construction/pillar_32: 288 368
+:geoo/construction/pillar_32: 0 0
+:geoo/construction/pillar_32: 0 32
+:geoo/construction/pillar_32: 0 64
+:geoo/construction/pillar_32: 0 96
+:geoo/construction/pillar_32: 0 128
+:geoo/construction/pillar_32: 0 160
+:geoo/construction/pillar_32: 0 192
+:geoo/construction/pillar_32: 0 224
+:geoo/construction/pillar_32: 0 256
+:geoo/construction/pillar_32: 0 288
+:geoo/construction/pillar_32: 0 320
+:geoo/construction/pillar_32: 0 352
+:geoo/construction/pillar_32: 0 384
+:geoo/construction/pillar_32: 608 0
+:geoo/construction/pillar_32: 608 32
+:geoo/construction/pillar_32: 608 64
+:geoo/construction/pillar_32: 608 96
+:geoo/construction/pillar_32: 608 128
+:geoo/construction/pillar_32: 608 160
+:geoo/construction/pillar_32: 608 192
+:geoo/construction/pillar_32: 608 224
+:geoo/construction/pillar_32: 608 256
+:geoo/construction/pillar_32: 608 288
+:geoo/construction/pillar_32: 608 320
+:geoo/construction/pillar_32: 608 352
+:geoo/construction/pillar_32: 608 384
+:geoo/construction/wall/small_64x64: 70 91
+:geoo/construction/wall/small_64x64: 70 155
+:geoo/construction/wall/small_64x64: 70 219
+:geoo/construction/wall/small_64x64: 70 283
+:geoo/construction/pillar_32: 288 304
+:geoo/construction/pillar_top_shaded: 288 192
+:geoo/construction/concrete/032h: 414 204
+:matt/steel/32x16.S: 288 176
+:geoo/construction/concrete/032v: 576 336
+:geoo/construction/concrete/032v: 576 272
+:matt/steel/32x16.S: 288 144
+:geoo/construction/pillar_32: 288 96
+:geoo/construction/pillar_bottom: 288 128
+:geoo/construction/pillar_32: 288 64
+:geoo/construction/pillar_32: 288 32
+:geoo/construction/pillar_32: 288 0
+:geoo/construction/concrete/016v: 398 204
+:geoo/construction/concrete/016v: 398 236
+:geoo/construction/concrete/016v: 398 136
+:geoo/construction/concrete/032h: 414 136
+:geoo/construction/concrete/016v: 478 136
+:geoo/construction/concrete/032hb: 494 136
+:geoo/construction/concrete/032hb: 414 104
+:geoo/construction/concrete/016v: 398 104
+:geoo/construction/wall/small_brick1: 320 304
+:geoo/construction/concrete/032h: 320 368
+:geoo/construction/concrete/032h: 384 368
+:geoo/construction/concrete/032h: 448 368
+:geoo/construction/concrete/032h: 512 368
+:geoo/construction/wall/small_brick1: 352 304
+:geoo/construction/wall/small_brick1: 384 304
+:geoo/construction/wall/small_brick1: 416 304
+:geoo/construction/wall/small_brick1: 448 304
+:geoo/construction/wall/small_brick1: 480 304
+:geoo/construction/wall/small_brick1: 512 304
+:geoo/construction/wall/small_brick1: 544 304
+:geoo/construction/wall/small_diag_td: 560 288
+:geoo/construction/wall/small_brickdiag_bd: 352 320
+:geoo/construction/wall/small_brickdiag_bd: 416 320
+:geoo/construction/wall/small_brickdiag_bd: 480 320
+:geoo/construction/wall/small_brickdiag_bd: 544 320
+:geoo/construction/wall/small_brickdiag_td: 336 352
+:geoo/construction/wall/small_brickdiag_td: 400 352
+:geoo/construction/wall/small_brickdiag_td: 464 352
+:geoo/construction/wall/small_brickdiag_td: 528 352
+:geoo/construction/concrete/008v: 300 160

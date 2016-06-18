@@ -1,4 +1,4 @@
-$BUILT 2014-08-03 00:52:05
+$BUILT 2015-06-25 19:56:57
 $AUTHOR Nepster
 $GERMAN 
 $ENGLISH Devil's Right Hand
@@ -120,53 +120,51 @@ $ENGLISH Devil's Right Hand
 :matt/underworld/00: 320 0
 :matt/underworld/00: 384 0
 :matt/underworld/00: 448 0
-:matt/underworld/thinplatform128: 768 120 rrr
-:matt/underworld/thinplatform128: 770 128 rrr
-:matt/underworld/thinplatform128: 772 136 rrr
+:matt/underworld/thinplatform128: 768 128 rrr
+:matt/underworld/thinplatform128: 770 136 rrr
+:matt/underworld/thinplatform128: 772 144 rrr
 :matt/underworld/thinplatform64: 774 144 rrr
-:matt/underworld/thinplatform128: 774 144 rrr
+:matt/underworld/thinplatform128: 774 152 rrr
 :matt/underworld/thinplatform64: 776 152 rrr
-:matt/underworld/thinplatform128: 776 152 rrr
+:matt/underworld/thinplatform128: 776 160 rrr
 :matt/underworld/thinplatform64: 778 160 rrr
-:matt/underworld/thinplatform128: 778 160 rrr
+:matt/underworld/thinplatform128: 778 168 rrr
 :matt/underworld/thinplatform64: 780 168 rrr
-:matt/underworld/thinplatform128: 780 168 rrr
+:matt/underworld/thinplatform128: 780 176 rrr
 :matt/underworld/thinplatform64: 782 176 rrr
-:matt/underworld/thinplatform128: 782 176 rrr
-:matt/underworld/thinplatform64: 784 184 rrr
-:matt/underworld/thinplatform128: 784 184 rrr
-:matt/underworld/thinplatform64: 786 192 rrr
-:matt/underworld/thinplatform128: 786 192 rrr
-:matt/underworld/thinplatform64: 788 200 rrr
-:matt/underworld/thinplatform128: 788 200 rrr
-:matt/underworld/thinplatform64: 790 208 rrr
-:matt/underworld/thinplatform128: 790 208 rrr
-:matt/underworld/thinplatform128: 792 216 rrr
-:matt/underworld/thinplatform128: 0 120 rrr
-:matt/underworld/thinplatform128: 2 128 rrr
-:matt/underworld/thinplatform128: 4 136 rrr
+:matt/underworld/thinplatform128: 782 184 rrr
+:matt/underworld/thinplatform64: 784 192 rrr
+:matt/underworld/thinplatform128: 784 192 rrr
+:matt/underworld/thinplatform64: 786 200 rrr
+:matt/underworld/thinplatform128: 786 200 rrr
+:matt/underworld/thinplatform64: 788 208 rrr
+:matt/underworld/thinplatform128: 788 208 rrr
+:matt/underworld/thinplatform64: 790 216 rrr
+:matt/underworld/thinplatform128: 790 216 rrr
+:matt/underworld/thinplatform128: 0 128 rrr
+:matt/underworld/thinplatform128: 2 136 rrr
+:matt/underworld/thinplatform128: 4 144 rrr
 :matt/underworld/thinplatform64: 6 144 rrr
-:matt/underworld/thinplatform128: 6 144 rrr
+:matt/underworld/thinplatform128: 6 152 rrr
 :matt/underworld/thinplatform64: 8 152 rrr
-:matt/underworld/thinplatform128: 8 152 rrr
+:matt/underworld/thinplatform128: 8 160 rrr
 :matt/underworld/thinplatform64: 10 160 rrr
-:matt/underworld/thinplatform128: 10 160 rrr
+:matt/underworld/thinplatform128: 10 168 rrr
 :matt/underworld/thinplatform64: 12 168 rrr
-:matt/underworld/thinplatform128: 12 168 rrr
+:matt/underworld/thinplatform128: 12 176 rrr
 :matt/underworld/thinplatform64: 14 176 rrr
-:matt/underworld/thinplatform128: 14 176 rrr
-:matt/underworld/thinplatform64: 16 184 rrr
-:matt/underworld/thinplatform128: 16 184 rrr
+:matt/underworld/thinplatform128: 14 184 rrr
+:matt/underworld/thinplatform64: 16 192 rrr
+:matt/underworld/thinplatform128: 16 192 rrr
 :matt/underworld/02: 0 96
-:matt/underworld/thinplatform64: 18 192 rrr
-:matt/underworld/thinplatform128: 18 192 rrr
-:matt/underworld/thinplatform64: 20 200 rrr
-:matt/underworld/thinplatform128: 20 200 rrr
+:matt/underworld/thinplatform64: 18 200 rrr
+:matt/underworld/thinplatform128: 18 200 rrr
+:matt/underworld/thinplatform64: 20 208 rrr
+:matt/underworld/thinplatform128: 20 208 rrr
 :matt/underworld/00: 0 192
-:matt/underworld/thinplatform64: 22 208 rrr
-:matt/underworld/thinplatform128: 22 208 rrr
-:matt/underworld/thinplatform128: 24 216 rrr
-:matt/underworld/thinplatform128: 26 224 rrr
+:matt/underworld/thinplatform64: 22 216 rrr
+:matt/underworld/thinplatform128: 22 216 rrr
+:matt/underworld/thinplatform128: 24 224 rrr
 :geoo/steel/dark_64x32o.S: 0 208
 :matt/underworld/thinplatform128: 36 256 rrr
 :matt/underworld/thinplatform128: 38 264 rrr
@@ -246,7 +244,7 @@ $ENGLISH Devil's Right Hand
 :matt/underworld/00: 832 368
 :matt/underworld/00: 817 339 frrd
 :geoo/construction/concrete/016ha: 793 346 rrd
-:matt/underworld/thinplatform128: 794 224 rrr
+:matt/underworld/thinplatform128: 792 224 rrr
 :geoo/steel/dark_64x32o.S: 768 208
 :matt/underworld/thinplatform128: 804 256 rrrn
 :matt/underworld/thinplatform128: 806 264 rrrn

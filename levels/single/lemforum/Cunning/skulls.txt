@@ -1,4 +1,4 @@
-$BUILT 2014-06-29 04:11:38
+$BUILT 2016-01-31 22:18:10
 $AUTHOR Amanda
 $GERMAN 
 $ENGLISH Skulls, Sludge, and Steel
@@ -17,18 +17,12 @@ $ENGLISH Skulls, Sludge, and Steel
 #SPAWN_INTERVAL 80
 #SPAWN_INTERVAL_FAST 80
 
-#FLOATER 1
-#CUBER 2
 #CLIMBER 3
+#FLOATER 1
+#EXPLODER -1
 #BUILDER 4
 #MINER 4
-#BURNER -1
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#CUBER 2
 
 :amanda/occult/hatch_tentacle.H: 47 62
 
@@ -199,8 +193,8 @@ $ENGLISH Skulls, Sludge, and Steel
 :amanda/steel/steel24x16.S: 392 128
 :amanda/occult/occult_wax32x16: 464 96
 :amanda/occult/occult_wax_details_sunken_cube: 395 108
-:amanda/occult/occult_wax_details_drip_b: 339 75
-:amanda/occult/occult_wax_details_drip_b: 346 70 frr
+:amanda/occult/occult_wax_details_drip_b: 354 67
+:amanda/occult/occult_wax_details_drip_b: 345 74 frr
 :amanda/occult/occult_wax32x48: 352 32
 :amanda/occult/occult_wax64x48: 320 -16
 :amanda/occult/occult_wax32x16_cap_right: 384 32

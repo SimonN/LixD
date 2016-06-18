@@ -1,83 +1,75 @@
-$BUILT                                             2012-03-17 11:17:50
-$AUTHOR                                                   Insane Steve
-$GERMAN                                                               
-$ENGLISH                                      Wait Why is There a Tree
+$BUILT 2016-01-31 21:14:29
+$AUTHOR Insane Steve
+$GERMAN 
+$ENGLISH Wait Why is There a Tree
 
-#SIZE_X                                                            640
-#SIZE_Y                                                            400
-#TORUS_X                                                             0
-#TORUS_Y                                                             0
-#START_X                                                             0
-#START_Y                                                             0
-#BACKGROUND_RED                                                      0
-#BACKGROUND_GREEN                                                    0
-#BACKGROUND_BLUE                                                     0
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
 
-#SECONDS                                                             0
-#INITIAL                                                            20
-#REQUIRED                                                           16
-#SPAWN_INTERVAL                                                     32
-#SPAWN_INTERVAL_FAST                                                 4
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 16
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
 
-#CLIMBER                                                             4
-#FLOATER                                                             0
-#EXPLODER                                                            4
-#BLOCKER                                                             0
-#BUILDER                                                             2
-#BASHER                                                              0
-#MINER                                                               0
-#DIGGER                                                              2
-#NOTHING                                                             0
-#NOTHING                                                             0
-#NOTHING                                                             0
-#NOTHING                                                             0
+#CLIMBER 5
+#EXPLODER 4
+#BUILDER 2
+#DIGGER 2
 
-:geoo/abstract/hatch.H:                            96       272
+:geoo/abstract/hatch.H: 96 272
 
-:matt/marble/Goal.G:                         560       160
+:matt/marble/Goal.G: 560 160
 
-:matt/bricks/03:                               0       336
-:matt/bricks/03:                              64       336
-:matt/bricks/03:                             128       336
-:matt/bricks/03:                             192       336
-:matt/bricks/03:                             256       336
-:matt/bricks/03:                             320       336
-:matt/bricks/03:                             384       336
-:matt/bricks/03:                             448       336
-:matt/bricks/19:                             352       288
-:matt/bricks/18:                             360       256
-:matt/bricks/18:                             360       224
-:matt/bricks/18:                             360       192
-:matt/bricks/18:                             360       160
-:matt/bricks/18:                             360       128
-:matt/bricks/17:                             288       248     f
-:matt/bricks/17:                             232       192     f
-:matt/bricks/17:                             246       142
-:matt/bricks/17:                             302        86
-:matt/bricks/18:                             360        96
-:matt/bricks/18:                             360        64
-:matt/bricks/03:                               0         0
-:matt/bricks/03:                              64         0
-:matt/bricks/03:                             256         0
-:matt/bricks/03:                             192         0
-:matt/bricks/03:                             128         0
-:matt/bricks/03:                             320         0
-:matt/bricks/03:                             384         0
-:matt/bricks/03:                             448         0
-:matt/bricks/03:                             512         0
-:matt/bricks/03:                             576         0
-:matt/oriental/bonsaitree:                   16        48
-:matt/bricks/02:                              64       240
-:matt/bricks/03:                             416       272
-:matt/bricks/03:                             480       272
-:matt/bricks/03:                             480       336
-:matt/bricks/03:                             480       208
-:matt/bricks/03:                             416       208
-:matt/bricks/03:                             416       176
-:matt/bricks/03:                             480       176
-:matt/bricks/02:                               0       304
-:matt/bricks/02:                              32       272
-:matt/bricks/19:                             352       224
-:matt/bricks/12:                             544       208
-:matt/bricks/12:                             576       208
-:matt/bricks/12:                             608       208
+:matt/bricks/03: 0 336
+:matt/bricks/03: 64 336
+:matt/bricks/03: 128 336
+:matt/bricks/03: 192 336
+:matt/bricks/03: 256 336
+:matt/bricks/03: 320 336
+:matt/bricks/03: 384 336
+:matt/bricks/03: 448 336
+:matt/bricks/19: 352 288
+:matt/bricks/18: 360 256
+:matt/bricks/18: 360 224
+:matt/bricks/18: 360 192
+:matt/bricks/18: 360 160
+:matt/bricks/18: 360 128
+:matt/bricks/17: 288 248 f
+:matt/bricks/17: 232 192 f
+:matt/bricks/17: 246 142
+:matt/bricks/17: 302 86
+:matt/bricks/18: 360 96
+:matt/bricks/18: 360 64
+:matt/bricks/03: 0 0
+:matt/bricks/03: 64 0
+:matt/bricks/03: 256 0
+:matt/bricks/03: 192 0
+:matt/bricks/03: 128 0
+:matt/bricks/03: 320 0
+:matt/bricks/03: 384 0
+:matt/bricks/03: 448 0
+:matt/bricks/03: 512 0
+:matt/bricks/03: 576 0
+:matt/oriental/bonsaitree: 16 48
+:matt/bricks/02: 64 240
+:matt/bricks/03: 416 272
+:matt/bricks/03: 480 272
+:matt/bricks/03: 480 336
+:matt/bricks/03: 480 208
+:matt/bricks/03: 416 208
+:matt/bricks/03: 416 176
+:matt/bricks/03: 480 176
+:matt/bricks/02: 0 304
+:matt/bricks/02: 32 272
+:matt/bricks/19: 352 224
+:matt/bricks/12: 544 208
+:matt/bricks/12: 576 208
+:matt/bricks/12: 608 208

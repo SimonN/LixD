@@ -1,4 +1,4 @@
-$BUILT 2014-05-20 21:14:54
+$BUILT 2016-04-14 21:12:15
 $AUTHOR Insane Steve
 $GERMAN 
 $ENGLISH Off the Rails
@@ -20,17 +20,15 @@ $ENGLISH Off the Rails
 #SPAWN_INTERVAL_FAST 4
 
 #WALKER 1
-#JUMPER 1
 #CLIMBER 4
-#FLOATER 0
 #EXPLODER2 2
-#BLOCKER 0
-#CUBER 1
 #BUILDER 1
 #PLATFORMER 1
 #BASHER 1
 #MINER 2
 #DIGGER 4
+#JUMPER 1
+#CUBER 1
 
 :matt/goldmine/GoalTop.D: 568 176
 
@@ -96,3 +94,6 @@ $ENGLISH Off the Rails
 :matt/goldmine/crate16: 268 176
 :matt/goldmine/crate16: 148 192
 :geoo/steel/32x32o.S: 308 112
+:matt/goldmine/crate32: 468 176
+:matt/goldmine/crate32: 460 144
+:matt/goldmine/crate16: 480 128

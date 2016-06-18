@@ -1,4 +1,4 @@
-$BUILT 2015-06-22 12:09:59
+$BUILT 2016-01-31 20:49:16
 $AUTHOR Michael S. Repton/geoo
 $GERMAN 
 $ENGLISH Spin Geometry
@@ -19,20 +19,13 @@ $ENGLISH Spin Geometry
 #SPAWN_INTERVAL 32
 #SPAWN_INTERVAL_FAST 4
 
-#NOTHING 0
 #CLIMBER 1
 #FLOATER 1
 #EXPLODER 1
 #BLOCKER 1
 #DIGGER 1
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 
-:matt/marble/Hatch.H: 304 32
+:matt/marble/Hatch.H: 400 32
 :matt/marble/Hatch.H: 912 32
 
 :matt/marble/Goal.G: 656 288
@@ -54,6 +47,7 @@ $ENGLISH Spin Geometry
 :matt/marble/21c: 528 112
 :matt/marble/21c: 592 144
 :matt/marble/21c: 592 112
+:matt/winter/09b: 672 184
 :matt/marble/20: 680 144
 :matt/marble/21c: 656 144
 :matt/marble/21c: 656 112
@@ -336,3 +330,4 @@ $ENGLISH Spin Geometry
 :matt/marble/21: 448 384 rrr
 :matt/marble/21: 400 384
 :matt/winter/09b: 672 182
+:matt/winter/09b: 672 215 d

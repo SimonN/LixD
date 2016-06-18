@@ -4,6 +4,7 @@ buildingblock.txt
 diamonddash.txt
 hrududu.txt
 everylix.txt
+blocked.txt
 climbtofreedom.txt
 goblincity.txt
 escapethepit.txt
@@ -13,7 +14,6 @@ letsblockandblow.txt
 fourcolor.txt
 putyourlix.txt
 alternative.txt
-blocked.txt
 solareclipse.txt
 minimalism1.txt
 letsallgodownthe.txt

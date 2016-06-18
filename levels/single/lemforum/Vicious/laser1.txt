@@ -1,7 +1,7 @@
-$BUILT 2014-05-06 15:29:05
+$BUILT 2016-03-27 20:25:52
 $AUTHOR Insane Steve
 $GERMAN 
-$ENGLISH Laser Deathroom (Part 1)
+$ENGLISH Laser Deathroom
 
 #SIZE_X 640
 #SIZE_Y 400
@@ -22,15 +22,10 @@ $ENGLISH Laser Deathroom (Part 1)
 #CLIMBER 5
 #FLOATER 5
 #EXPLODER 5
-#BLOCKER 0
 #BUILDER 10
 #BASHER 5
 #MINER 5
 #DIGGER 5
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 
 :geoo/abstract/hatch.H: 222 134
 

@@ -1,0 +1,241 @@
+$BUILT 2015-08-16 20:42:27
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Las Ranas Hermanas
+
+#SIZE_X 1168
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 8
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 16
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 34
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 32
+
+#CLIMBER 11
+#MINER 13
+#DIGGER 1
+
+:geoo/construction/Hatch.H: 56 288
+
+:matt/marble/Goal.G: 1064 304
+
+:amanda/forest/frog_happy.T: 328 304
+:amanda/forest/frog.T: 648 304
+:amanda/forest/frog_catch.T: 463 144
+:amanda/forest/frog.T: 184 144
+:amanda/forest/frog_happy.T: 856 144
+:amanda/forest/frog_happy.T: 513 144
+
+:matt/marble/22d: 248 304 rrr
+:matt/marble/thinplatform128p: 752 352
+:matt/marble/22d: 704 336
+:matt/marble/23e: 808 192
+:matt/marble/23e: 840 192
+:matt/marble/23e: 808 224
+:matt/marble/23e: 840 224
+:matt/marble/23e: 808 256
+:matt/marble/23e: 840 256
+:matt/marble/23e: 872 256
+:matt/marble/23e: 904 256
+:matt/marble/23e: 808 288
+:matt/marble/23e: 840 288
+:matt/marble/23e: 808 320
+:matt/marble/23e: 840 320
+:matt/marble/23e: 872 288
+:matt/marble/23e: 904 288
+:matt/marble/23e: 872 320
+:matt/marble/23e: 904 320
+:matt/marble/thinplatform128p: 512 352
+:matt/marble/thinplatform128p: 392 352
+:matt/marble/22d: 600 336 rrr
+:matt/marble/22d: 568 304 rrr
+:matt/marble/thinplatform128p: 928 352
+:matt/marble/22d: 1016 336 rrr
+:matt/marble/22d: 752 288
+:matt/marble/23e: 184 288
+:matt/marble/23e: 216 288
+:matt/marble/23e: 184 320
+:matt/marble/23e: 216 320
+:matt/marble/22d: 128 304
+:matt/marble/22d: 968 288 rrr
+:matt/marble/23e: 936 224
+:matt/marble/23e: 936 256
+:matt/marble/23e: 936 288
+:matt/marble/23e: 936 320
+:matt/marble/23e: 936 192
+:matt/marble/23e: 504 288
+:matt/marble/23e: 472 320
+:matt/marble/23e: 504 320
+:matt/marble/23e: 472 224
+:matt/marble/23e: 504 224
+:matt/marble/23e: 472 256
+:matt/marble/23e: 504 256
+:matt/marble/22d: 416 304
+:matt/marble/21d: 724 80
+:matt/marble/21d: 612 80
+:matt/marble/21d: 692 0 rrr
+:matt/marble/21d: 692 112 rrr
+:matt/marble/07a: 676 64
+:matt/marble/05e: 628 16
+:matt/marble/05e: 628 128
+:matt/marble/05e: 740 128
+:matt/marble/05e: 740 16
+:geoo/abstract/pipes/central6: 708 28
+:geoo/abstract/pipes/central6: 660 28
+:geoo/abstract/pipes/central6: 660 140
+:geoo/abstract/pipes/central6: 708 140
+:geoo/abstract/pipes/central6: 640 48 rrr
+:geoo/abstract/pipes/central6: 640 96 rrr
+:geoo/abstract/pipes/central6: 752 96 rrr
+:geoo/abstract/pipes/central6: 752 48 rrr
+:geoo/abstract/pipes/ends6: 752 160 rrr
+:geoo/abstract/pipes/ends6: 640 160 rrr
+:geoo/abstract/pipes/ends6: 640 8 fr
+:geoo/abstract/pipes/ends6: 752 8 fr
+:geoo/abstract/pipes/ends6: 620 28
+:geoo/abstract/pipes/ends6: 620 140
+:geoo/abstract/pipes/ends6: 772 140 rr
+:geoo/abstract/pipes/ends6: 772 28 rr
+:matt/marble/08: 788 56 rrr
+:matt/marble/08: 580 56 rrr
+:matt/marble/08: 668 176
+:matt/marble/21d: 364 80
+:matt/marble/21d: 252 80
+:matt/marble/21d: 332 0 rrr
+:matt/marble/21d: 332 112 rrr
+:matt/marble/07a: 316 64
+:matt/marble/05e: 268 16
+:matt/marble/05e: 268 128
+:matt/marble/05e: 380 128
+:matt/marble/05e: 380 16
+:geoo/abstract/pipes/central6: 348 28
+:geoo/abstract/pipes/central6: 300 28
+:geoo/abstract/pipes/central6: 300 140
+:geoo/abstract/pipes/central6: 348 140
+:geoo/abstract/pipes/central6: 280 48 rrr
+:geoo/abstract/pipes/central6: 280 96 rrr
+:geoo/abstract/pipes/central6: 392 96 rrr
+:geoo/abstract/pipes/central6: 392 48 rrr
+:geoo/abstract/pipes/ends6: 392 160 rrr
+:geoo/abstract/pipes/ends6: 280 160 rrr
+:geoo/abstract/pipes/ends6: 280 8 fr
+:geoo/abstract/pipes/ends6: 392 8 fr
+:geoo/abstract/pipes/ends6: 260 28
+:geoo/abstract/pipes/ends6: 260 140
+:geoo/abstract/pipes/ends6: 412 140 rr
+:geoo/abstract/pipes/ends6: 412 28 rr
+:matt/marble/08: 220 56 rrr
+:matt/marble/08: 308 176
+:matt/marble/08: 428 56 rrr
+:matt/marble/09d: 1104 0
+:matt/marble/21a: 1040 24
+:matt/marble/21: 1104 88
+:matt/marble/21a: 1128 64 rrr
+:matt/marble/17d: 1008 16
+:matt/marble/17d: 1120 128
+:matt/marble/21: 1064 0 rrr
+:matt/marble/21: 1064 24 rrr
+:matt/marble/21: 1080 88
+:matt/marble/02e: 1064 88
+:matt/marble/14a: 1040 64
+:matt/marble/15a: 1072 96
+:matt/marble/05e: 504 72
+:geoo/abstract/pipes/central7: 536 76
+:geoo/abstract/pipes/central7: 536 92
+:geoo/abstract/pipes/central7: 472 76
+:geoo/abstract/pipes/central7: 472 92
+:geoo/abstract/pipes/central7: 460 76
+:geoo/abstract/pipes/central7: 460 92
+:geoo/abstract/pipes/central7: 548 76
+:geoo/abstract/pipes/central7: 548 92
+:matt/marble/22a: 528 24
+:matt/marble/22a: 456 96 rr
+:matt/marble/22a: 456 24 rrr
+:matt/marble/22a: 528 96 r
+:proxima/tile/spheres/cyansmall: 504 24
+:proxima/tile/spheres/cyansmall: 504 120
+:proxima/tile/spheres/pinksmall: 1008 48
+:proxima/tile/spheres/pink: 992 112
+:proxima/tile/spheres/pinksmall: 1088 128
+:proxima/tile/spheres/pink: 936 0
+:proxima/tile/spheres/pink: 1104 168
+:proxima/tile/spheres/pinksmall: 900 -16
+:proxima/tile/spheres/pink: 832 0
+:matt/marble/09d: 0 0
+:matt/marble/21a: 64 24
+:matt/marble/21: 0 88
+:matt/marble/21a: 24 64 rrr
+:matt/marble/17d: 128 16 frr
+:matt/marble/17d: 16 128 frr
+:matt/marble/21: 88 0 rrr
+:matt/marble/21: 88 24 rrr
+:matt/marble/21: 24 88
+:matt/marble/02e: 88 88
+:proxima/tile/spheres/pinksmall: 128 48
+:proxima/tile/spheres/pink: 112 112 fr
+:proxima/tile/spheres/pinksmall: 48 128
+:proxima/tile/spheres/pink: -32 176
+:matt/marble/17a: 64 96
+:matt/marble/16a: 96 64
+:proxima/tile/spheres/pink: 184 -32 fr
+:matt/marble/23e: 872 192
+:matt/marble/23e: 904 192
+:matt/marble/23e: 872 224
+:matt/marble/23e: 904 224
+:matt/marble/23e: 472 192
+:matt/marble/23e: 504 192
+:matt/marble/23e: 536 320
+:matt/marble/23e: 536 224
+:matt/marble/23e: 536 256
+:matt/marble/23e: 536 192
+:matt/marble/thinplatform128p: 160 352
+:matt/marble/thinplatform128p: 832 352
+:matt/marble/thinplatform128p: 144 352
+:geoo/steel/16x16o.S: 424 336
+:geoo/steel/16x16o.S: 600 336
+:geoo/steel/16x16o.S: 728 352
+:geoo/steel/16x16o.S: 1032 352
+:matt/marble/21a: 884 88 frr
+:matt/marble/21a: 908 64 rrr
+:matt/marble/05_2: 900 80
+:matt/marble/10d: 868 80
+:matt/marble/10d: 900 48
+:matt/marble/12d: 916 48
+:matt/marble/12d: 948 80
+:matt/marble/11d: 948 96
+:matt/marble/11d: 916 128
+:matt/marble/13d: 868 96
+:matt/marble/13d: 900 128
+:matt/marble/02: 280 336
+:matt/marble/02: 728 352
+:matt/marble/02: 1032 352
+:matt/marble/02e: 136 336
+:matt/marble/02e: 280 336
+:matt/marble/02e: 744 336
+:matt/marble/02e: 1016 336
+:matt/marble/23e: 536 288
+:matt/marble/23e: 472 288
+:matt/marble/07d: 704 352
+:matt/marble/07d: 608 352
+:matt/marble/07d: 384 352
+:matt/marble/07d: 288 352
+:matt/marble/07d: 1024 352
+:matt/marble/07d: 1072 352
+:matt/marble/07d: 1120 352
+:matt/marble/07d: 96 352
+:matt/marble/07d: 48 352
+:matt/marble/07d: 0 352
+:matt/marble/07d: 336 352
+:matt/marble/07d: 656 352
+:matt/marble/23e: 184 256
+:matt/marble/23e: 216 256
+:matt/marble/23e: 184 224
+:matt/marble/23e: 216 224
+:matt/marble/23e: 184 192
+:matt/marble/23e: 216 192

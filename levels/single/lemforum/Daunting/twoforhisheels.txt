@@ -1,0 +1,135 @@
+$BUILT 2015-09-21 18:12:22
+$AUTHOR mobius
+$GERMAN 
+$ENGLISH Two for his Heels
+
+#SIZE_X 960
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 190
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 101
+#REQUIRED 100
+#SPAWN_INTERVAL 4
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 2
+#CLIMBER 1
+#FLOATER 1
+#BASHER 1
+#MINER 2
+#DIGGER 5
+
+:geoo/construction/Hatch.H: 600 24 r
+
+:geoo/abstract/goal.G: 96 288
+
+:geoo/construction/sawblade_small.F: 708 202
+:simon/water.W: 592 352
+:simon/water.W: 640 352
+:simon/water.W: 688 352
+:simon/water.W: 736 352
+:simon/water.W: 784 352
+:simon/water.W: 832 352
+:simon/water.W: 880 352
+:simon/water.W: 928 352
+
+:matt/bricks/03b: 272 96
+:matt/bricks/03b: 336 96
+:matt/bricks/03b: 400 96
+:matt/bricks/03b: 464 96
+:matt/bricks/03b: 272 128
+:matt/bricks/03b: 336 128
+:matt/bricks/03b: 400 128
+:matt/bricks/03b: 464 128
+:geoo/steel/32x32o.S: 304 96
+:geoo/steel/32x32o.S: 304 128
+:geoo/steel/32x32o.S: 304 160
+:matt/marble/thinplatform128p: 332 198
+:geoo/steel/32x32o.S: 304 192
+:geoo/steel/32x32o.S: 304 224
+:geoo/steel/32x32o.S: 304 256
+:matt/bricks/03b: 80 336
+:matt/bricks/03b: 144 336
+:matt/bricks/03b: 208 384
+:matt/bricks/03b: 272 384
+:matt/bricks/03b: 336 384
+:matt/bricks/03b: 400 384
+:matt/bricks/03b: 464 384
+:matt/bricks/03b: 528 384
+:matt/bricks/18: 80 96 r
+:matt/bricks/18: 112 96 r
+:matt/bricks/18: 144 96 r
+:matt/bricks/18: 176 96 r
+:matt/bricks/03b: 208 320
+:geoo/steel/32x32o.S: 176 352
+:geoo/steel/32x32o.S: 176 384
+:geoo/steel/64x64o.S: 208 64
+:geoo/steel/64x64o.S: 208 128
+:geoo/steel/64x64o.S: 208 192
+:geoo/steel/64x64o.S: 208 256
+:geoo/steel/32x32o.S: 304 288
+:matt/bricks/08b: 304 352
+:matt/bricks/03b: 336 240
+:matt/bricks/03b: 336 208
+:matt/bricks/03b: 400 240
+:matt/bricks/03b: 400 208
+:matt/bricks/03b: 464 240
+:matt/bricks/03b: 464 208
+:matt/bricks/03b: 528 240
+:matt/bricks/03b: 528 208
+:matt/bricks/03b: 592 240
+:matt/bricks/03b: 592 208
+:matt/bricks/03b: 528 96
+:matt/bricks/03b: 592 96
+:matt/bricks/03b: 528 128
+:matt/bricks/03b: 592 128
+:matt/marble/thinplatform64p: 612 204 frr
+:matt/marble/thinplatform16p: 676 204 rrr
+:matt/marble/thinplatform64p: 676 218 frr
+:geoo/steel/64x64o.S: 0 64
+:geoo/steel/64x64o.S: 0 128
+:geoo/steel/64x64o.S: 0 192
+:matt/bricks/18: 64 96 r
+:matt/bricks/18: 80 152 r
+:matt/bricks/18: 112 152 r
+:matt/bricks/18: 144 152 r
+:matt/bricks/18: 176 152 r
+:matt/bricks/18: 64 152 r
+:matt/bricks/18: 80 208 r
+:matt/bricks/18: 112 208 r
+:matt/bricks/18: 144 208 r
+:matt/bricks/18: 176 208 r
+:matt/bricks/18: 64 208 r
+:geoo/steel/32x32o.S: 176 256
+:geoo/steel/32x32o.S: 144 256
+:matt/bricks/08b: 560 352 frr
+:matt/marble/thinplatform64p: 576 204 frrd
+:matt/bricks/03b: 720 128
+:matt/bricks/03b: 720 96
+:matt/bricks/03b: 784 128
+:matt/bricks/03b: 784 96
+:matt/bricks/03b: 848 128
+:matt/bricks/03b: 848 96
+:matt/bricks/03b: 912 128
+:matt/bricks/03b: 912 96
+:geoo/steel/64x64o.S: 896 0
+:geoo/steel/64x64o.S: 896 64
+:geoo/steel/64x64o.S: 896 128
+:geoo/steel/64x64o.S: 896 128
+:matt/bricks/03b: 848 192
+:geoo/steel/64x64o.S: 896 192
+:geoo/steel/64x64o.S: 896 256
+:matt/bricks/01b: 768 128 d
+:matt/bricks/01b: 784 144 d
+:matt/marble/thinplatform128p: 536 198
+:matt/marble/thinplatform128p: 416 198
+:matt/bricks/03b: 624 96
+:matt/bricks/03b: 624 128
+:matt/marble/thinplatform128p: 550 198 frr

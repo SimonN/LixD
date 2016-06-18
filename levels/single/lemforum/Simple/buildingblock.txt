@@ -1,4 +1,4 @@
-$BUILT 2014-07-01 20:35:28
+$BUILT 2015-09-07 20:53:23
 $AUTHOR Insane Steve
 $GERMAN 
 $ENGLISH Building Block Maze
@@ -19,18 +19,13 @@ $ENGLISH Building Block Maze
 #SPAWN_INTERVAL 32
 #SPAWN_INTERVAL_FAST 4
 
-#NOTHING 0
-#NOTHING 0
-#BLOCKER 20
 #EXPLODER 20
-#NOTHING 0
+#BLOCKER 20
 #BUILDER 20
 #PLATFORMER 20
-#NOTHING 0
 #BASHER 20
 #MINER 20
 #DIGGER 20
-#NOTHING 0
 
 :geoo/sandstone/Hatch.H: 64 256
 
@@ -68,7 +63,6 @@ $ENGLISH Building Block Maze
 :geoo/sandstone/64x64: 64 80
 :geoo/sandstone/slopes/32x64lb: 256 144
 :geoo/sandstone/slopes/32x64rb: 224 144
-:geoo/sandstone/32x32: 128 208
 :geoo/sandstone/32x32: 608 80
 :geoo/sandstone/32x32: 608 112
 :geoo/sandstone/32x32: 608 144

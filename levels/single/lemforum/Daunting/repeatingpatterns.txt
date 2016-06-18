@@ -1,0 +1,258 @@
+$BUILT 2015-08-23 01:05:57
+$AUTHOR geoo
+$GERMAN 
+$ENGLISH Repeating Patterns
+
+#SIZE_X 640
+#SIZE_Y 496
+#TORUS_X 0
+#TORUS_Y 0
+#START_X -128
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 50
+#SPAWN_INTERVAL 8
+#SPAWN_INTERVAL_FAST 8
+
+#WALKER 10
+#BASHER 10
+#JUMPER 10
+
+:geoo/abstract/hatch.H: 224 38
+
+:geoo/abstract/goal.G: 304 438
+
+:geoo/construction/concrete/128: 256 142
+:geoo/construction/concrete/064: 320 78
+:geoo/construction/concrete/064: 192 142
+:geoo/construction/concrete/064: 256 270
+:geoo/construction/concrete/064: 384 206
+:geoo/construction/concrete/032: 352 46
+:geoo/construction/concrete/032: 384 110
+:geoo/construction/concrete/032: 288 78
+:geoo/construction/concrete/032: 224 110
+:geoo/construction/concrete/032: 160 142
+:geoo/construction/concrete/032: 192 206
+:geoo/construction/concrete/032: 224 270
+:geoo/construction/concrete/032: 256 334
+:geoo/construction/concrete/032: 320 302
+:geoo/construction/concrete/032: 384 270
+:geoo/construction/concrete/032: 448 238
+:geoo/construction/concrete/032: 416 174
+:geoo/construction/concrete/016: 368 30
+:geoo/construction/concrete/016: 336 46
+:geoo/construction/concrete/016: 384 62
+:geoo/construction/concrete/016: 304 62
+:geoo/construction/concrete/016: 272 78
+:geoo/construction/concrete/016: 288 110
+:geoo/construction/concrete/016: 240 94
+:geoo/construction/concrete/016: 208 110
+:geoo/construction/concrete/016: 144 142
+:geoo/construction/concrete/016: 160 174
+:geoo/construction/concrete/016: 176 126
+:geoo/construction/concrete/016: 256 126
+:geoo/construction/concrete/016: 384 142
+:geoo/construction/concrete/016: 416 126
+:geoo/construction/concrete/016: 400 94
+:geoo/construction/concrete/016: 432 158
+:geoo/construction/concrete/016: 400 174
+:geoo/construction/concrete/016: 448 190
+:geoo/construction/concrete/016: 480 254
+:geoo/construction/concrete/016: 464 222
+:geoo/construction/concrete/016: 448 270
+:geoo/construction/concrete/016: 384 302
+:geoo/construction/concrete/016: 416 286
+:geoo/construction/concrete/016: 368 270
+:geoo/construction/concrete/016: 256 366
+:geoo/construction/concrete/016: 288 350
+:geoo/construction/concrete/016: 240 334
+:geoo/construction/concrete/016: 352 318
+:geoo/construction/concrete/016: 336 286
+:geoo/construction/concrete/016: 320 334
+:geoo/construction/concrete/016: 208 270
+:geoo/construction/concrete/016: 240 254
+:geoo/construction/concrete/016: 224 302
+:geoo/construction/concrete/016: 192 238
+:geoo/construction/concrete/016: 224 222
+:geoo/construction/concrete/016: 176 206
+:geoo/construction/concrete/008: 376 22
+:geoo/construction/concrete/008: 360 30
+:geoo/construction/concrete/008: 384 38
+:geoo/construction/concrete/008: 320 70
+:geoo/construction/concrete/008: 296 62
+:geoo/construction/concrete/008: 312 54
+:geoo/construction/concrete/008: 256 102
+:geoo/construction/concrete/008: 232 94
+:geoo/construction/concrete/008: 248 86
+:geoo/construction/concrete/008: 192 134
+:geoo/construction/concrete/008: 168 126
+:geoo/construction/concrete/008: 184 118
+:geoo/construction/concrete/008: 416 102
+:geoo/construction/concrete/008: 392 94
+:geoo/construction/concrete/008: 408 86
+:geoo/construction/concrete/008: 448 166
+:geoo/construction/concrete/008: 424 158
+:geoo/construction/concrete/008: 440 150
+:geoo/construction/concrete/008: 480 230
+:geoo/construction/concrete/008: 456 222
+:geoo/construction/concrete/008: 472 214
+:geoo/construction/concrete/008: 352 294
+:geoo/construction/concrete/008: 328 286
+:geoo/construction/concrete/008: 344 278
+:geoo/construction/concrete/008: 232 254
+:geoo/construction/concrete/008: 248 246
+:geoo/construction/concrete/008: 136 142
+:geoo/construction/concrete/008: 152 134
+:geoo/construction/concrete/008: 144 158
+:geoo/construction/concrete/008: 176 222
+:geoo/construction/concrete/008: 168 206
+:geoo/construction/concrete/008: 184 198
+:geoo/construction/concrete/008: 208 286
+:geoo/construction/concrete/008: 200 270
+:geoo/construction/concrete/008: 216 262
+:geoo/construction/concrete/008: 240 350
+:geoo/construction/concrete/008: 232 334
+:geoo/construction/concrete/008: 248 326
+:geoo/construction/concrete/008: 208 126
+:geoo/construction/concrete/008: 200 110
+:geoo/construction/concrete/008: 216 102
+:geoo/construction/concrete/008: 272 94
+:geoo/construction/concrete/008: 264 78
+:geoo/construction/concrete/008: 280 70
+:geoo/construction/concrete/008: 336 62
+:geoo/construction/concrete/008: 328 46
+:geoo/construction/concrete/008: 344 38
+:geoo/construction/concrete/008: 400 190
+:geoo/construction/concrete/008: 392 174
+:geoo/construction/concrete/008: 408 166
+:geoo/construction/concrete/008: 368 286
+:geoo/construction/concrete/008: 360 270
+:geoo/construction/concrete/008: 160 190
+:geoo/construction/concrete/008: 176 182
+:geoo/construction/concrete/008: 152 174
+:geoo/construction/concrete/008: 184 238
+:geoo/construction/concrete/008: 192 254
+:geoo/construction/concrete/008: 208 246
+:geoo/construction/concrete/008: 216 302
+:geoo/construction/concrete/008: 224 318
+:geoo/construction/concrete/008: 240 310
+:geoo/construction/concrete/008: 248 366
+:geoo/construction/concrete/008: 256 382
+:geoo/construction/concrete/008: 272 374
+:geoo/construction/concrete/008: 312 334
+:geoo/construction/concrete/008: 320 350
+:geoo/construction/concrete/008: 336 342
+:geoo/construction/concrete/008: 376 302
+:geoo/construction/concrete/008: 384 318
+:geoo/construction/concrete/008: 400 310
+:geoo/construction/concrete/008: 440 270
+:geoo/construction/concrete/008: 448 286
+:geoo/construction/concrete/008: 464 278
+:geoo/construction/concrete/008: 384 158
+:geoo/construction/concrete/008: 400 150
+:geoo/construction/concrete/008: 280 110
+:geoo/construction/concrete/008: 288 126
+:geoo/construction/concrete/008: 304 118
+:geoo/construction/concrete/008: 400 70
+:geoo/construction/concrete/008: 392 54
+:geoo/construction/concrete/008: 384 78
+:geoo/construction/concrete/008: 416 142
+:geoo/construction/concrete/008: 432 134
+:geoo/construction/concrete/008: 424 118
+:geoo/construction/concrete/008: 448 206
+:geoo/construction/concrete/008: 464 198
+:geoo/construction/concrete/008: 456 182
+:geoo/construction/concrete/008: 480 270
+:geoo/construction/concrete/008: 496 262
+:geoo/construction/concrete/008: 488 246
+:geoo/construction/concrete/008: 416 302
+:geoo/construction/concrete/008: 432 294
+:geoo/construction/concrete/008: 424 278
+:geoo/construction/concrete/008: 352 334
+:geoo/construction/concrete/008: 368 326
+:geoo/construction/concrete/008: 360 310
+:geoo/construction/concrete/008: 288 366
+:geoo/construction/concrete/008: 304 358
+:geoo/construction/concrete/008: 296 342
+:geoo/construction/concrete/008: 224 238
+:geoo/construction/concrete/008: 240 230
+:geoo/construction/concrete/008: 232 214
+:geoo/construction/concrete/008: 272 134
+:geoo/construction/concrete/008: 264 118
+:geoo/construction/platform.S: 0 486
+:geoo/construction/platform.S: 32 486
+:geoo/construction/stairs_rd_8.S: 0 488
+:geoo/construction/stairs_ru_8.S: 32 488
+:geoo/construction/platform.S: 64 486
+:geoo/construction/platform.S: 96 486
+:geoo/construction/stairs_rd_8.S: 64 488
+:geoo/construction/stairs_ru_8.S: 96 488
+:geoo/construction/platform.S: 128 486
+:geoo/construction/platform.S: 160 486
+:geoo/construction/stairs_rd_8.S: 128 488
+:geoo/construction/stairs_ru_8.S: 160 488
+:geoo/construction/platform.S: 192 486
+:geoo/construction/platform.S: 224 486
+:geoo/construction/stairs_rd_8.S: 192 488
+:geoo/construction/stairs_ru_8.S: 224 488
+:geoo/construction/platform.S: 256 486
+:geoo/construction/platform.S: 288 486
+:geoo/construction/stairs_rd_8.S: 256 488
+:geoo/construction/stairs_ru_8.S: 288 488
+:geoo/construction/platform.S: 320 486
+:geoo/construction/platform.S: 352 486
+:geoo/construction/stairs_rd_8.S: 320 488
+:geoo/construction/stairs_ru_8.S: 352 488
+:geoo/construction/platform.S: 384 486
+:geoo/construction/platform.S: 416 486
+:geoo/construction/stairs_rd_8.S: 384 488
+:geoo/construction/stairs_ru_8.S: 416 488
+:geoo/construction/platform.S: 448 486
+:geoo/construction/platform.S: 480 486
+:geoo/construction/stairs_rd_8.S: 448 488
+:geoo/construction/stairs_ru_8.S: 480 488
+:geoo/construction/platform.S: 512 486
+:geoo/construction/platform.S: 544 486
+:geoo/construction/stairs_rd_8.S: 512 488
+:geoo/construction/stairs_ru_8.S: 544 488
+:geoo/construction/platform.S: 576 486
+:geoo/construction/platform.S: 608 486
+:geoo/construction/stairs_rd_8.S: 576 488
+:geoo/construction/stairs_ru_8.S: 608 488
+:geoo/construction/pillar_32: 608 118
+:geoo/construction/pillar_32: 608 150
+:geoo/construction/pillar_32: 608 182
+:geoo/construction/pillar_32: 608 214
+:geoo/construction/pillar_32: 608 246
+:geoo/construction/pillar_32: 608 278
+:geoo/construction/pillar_32: 608 310
+:geoo/construction/pillar_32: 608 342
+:geoo/construction/pillar_32: 608 374
+:geoo/construction/pillar_32: 608 406
+:geoo/construction/pillar_32: 608 438
+:geoo/construction/pillar_bottom: 608 470
+:geoo/construction/pillar_32: 608 86
+:geoo/construction/pillar_32: 0 118
+:geoo/construction/pillar_32: 0 150
+:geoo/construction/pillar_32: 0 182
+:geoo/construction/pillar_32: 0 214
+:geoo/construction/pillar_32: 0 246
+:geoo/construction/pillar_32: 0 278
+:geoo/construction/pillar_32: 0 310
+:geoo/construction/pillar_32: 0 342
+:geoo/construction/pillar_32: 0 374
+:geoo/construction/pillar_32: 0 406
+:geoo/construction/pillar_32: 0 438
+:geoo/construction/pillar_bottom: 0 470
+:geoo/construction/pillar_32: 0 86
+:geoo/construction/pillar_32: 608 62
+:geoo/construction/pillar_32: 608 30
+:geoo/construction/pillar_32: 608 -2
+:geoo/construction/pillar_32: 0 -10
+:geoo/construction/pillar_32: 0 22
+:geoo/construction/pillar_32: 0 54

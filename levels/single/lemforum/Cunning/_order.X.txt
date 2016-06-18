@@ -3,7 +3,6 @@ mergesort.txt
 wreckofthehesp.txt
 itsalongwayup.txt
 lixcannon.txt
-towerofbabel.txt
 miceinthepipe.txt
 labyrinth.txt
 leapoffaith.txt
@@ -15,16 +14,15 @@ whentheleveebreaks.txt
 dontlookback.txt
 threedaysofthecondor.txt
 everywhichway.txt
-acompletelyridiculous.txt
-watchyestep.txt
-skulls.txt
 someliketorun.txt
-comeondown.txt
 coldironsbound.txt
 erbalunga.txt
+skulls.txt
+comeondown.txt
 vignette.txt
 compressionmethod2.txt
 allover.txt
+watchyestep.txt
 needaboost.txt
 haveanothertry.txt
 mentalprocess.txt
@@ -35,6 +33,8 @@ wellokthen.txt
 jacobsladder.txt
 walktheplank.txt
 anotherfuneral.txt
-soaring.txt
+onceyoupop.txt
+therainbowroad.txt
+acompletelyridiculous.txt
 drstrangelix.txt
 theob3lisk.txt

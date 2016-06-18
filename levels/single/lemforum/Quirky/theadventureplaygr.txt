@@ -1,4 +1,4 @@
-$BUILT 2012-05-29 20:27:53
+$BUILT 2015-09-07 20:56:19
 $AUTHOR Michael S. Repton
 $GERMAN 
 $ENGLISH The Adventure Playground
@@ -20,17 +20,19 @@ $ENGLISH The Adventure Playground
 #SPAWN_INTERVAL_FAST 4
 
 #WALKER -1
-#JUMPER -1
+#RUNNER -1
 #CLIMBER -1
 #FLOATER -1
-#RUNNER -1
+#EXPLODER2 -1
 #BLOCKER -1
-#BATTER -1
 #BUILDER -1
 #PLATFORMER -1
 #BASHER -1
 #MINER -1
 #DIGGER -1
+#JUMPER -1
+#BATTER -1
+#CUBER -1
 
 :geoo/construction/Hatch.H: 112 72
 

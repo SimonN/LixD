@@ -1,4 +1,4 @@
-$BUILT 2014-05-19 17:42:53
+$BUILT 2015-06-25 19:45:05
 $AUTHOR Nepster
 $GERMAN 
 $ENGLISH Bashing & Building
@@ -38,19 +38,19 @@ $ENGLISH Bashing & Building
 :proxima/tile/blue1: 640 272
 :proxima/tile/blue1: 640 208
 :proxima/tile/blue1: 640 144
-:proxima/tile/blue1s: 608 360
-:proxima/tile/blue1s: 576 360
-:proxima/tile/blue1s: 544 360
-:proxima/tile/spheres/blue: 416 304
-:proxima/tile/blue1: 416 336
-:proxima/tile/blue1s: 592 328
-:proxima/tile/spheres/blue: 320 238
-:proxima/tile/blue1: 320 272
-:proxima/tile/blue1: 320 336
-:proxima/tile/spheres/blue: 224 176
-:proxima/tile/blue1: 224 210
-:proxima/tile/blue1: 224 274
-:proxima/tile/blue1: 224 338
+:proxima/tile/blue1s: 608 364
+:proxima/tile/blue1s: 576 364
+:proxima/tile/blue1s: 544 364
+:proxima/tile/spheres/blue: 428 308
+:proxima/tile/blue1: 428 336
+:proxima/tile/blue1s: 592 332
+:proxima/tile/spheres/blue: 328 240
+:proxima/tile/blue1: 328 272
+:proxima/tile/blue1: 328 336
+:proxima/tile/spheres/blue: 228 172
+:proxima/tile/blue1: 228 210
+:proxima/tile/blue1: 228 274
+:proxima/tile/blue1: 228 338
 :proxima/tile/blue1: 128 210
 :proxima/tile/blue1: 128 274
 :proxima/tile/blue1: 128 338
@@ -62,16 +62,12 @@ $ENGLISH Bashing & Building
 :proxima/tile/blue1: 0 274
 :proxima/tile/blue1: 0 338
 :proxima/tile/blue1: 0 82
-:proxima/tile/blue1s: 512 360
-:proxima/tile/blue1s: 560 328
-:proxima/tile/blue1s: 576 296
+:proxima/tile/blue1s: 512 364
+:proxima/tile/blue1s: 560 332
+:proxima/tile/blue1s: 576 300
 :proxima/tile/blue1: 128 146
 :proxima/tile/blue1: 64 146
 :proxima/tile/blue1: 64 82
-:proxima/tile/blue1s: 608 392
-:proxima/tile/blue1s: 576 392
-:proxima/tile/blue1s: 544 392
-:proxima/tile/blue1s: 512 392
 :proxima/tile/blue1: 128 82
 :proxima/tile/blue1a: 128 74 d
 :proxima/tile/blue1s: 160 82 rn
@@ -243,3 +239,7 @@ $ENGLISH Bashing & Building
 :proxima/tile/blue1s: 592 194 rrr
 :proxima/tile/blue1s: 592 190 d
 :geoo/abstract/pipes/cshort7: 620 220 d
+:proxima/tile/blue1s: 608 396
+:proxima/tile/blue1s: 576 396
+:proxima/tile/blue1s: 544 396
+:proxima/tile/blue1s: 512 396
