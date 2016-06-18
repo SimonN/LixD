@@ -87,12 +87,8 @@ public:
 protected:
     final override TextButton newFileButton(Filename fn, in int fileID)
     {
-        const replay = Replay.loadFromFile(fn);
-        auto  level  = new LevelMetaData(fn); // included level
-        if (level.empty)
-            level = new LevelMetaData(replay.levelFilename); // pointed-to lvl
         auto ret = new TextButton(new Geom(0, 0, xlg, buttonYlg),
-            "%s (%s)".format(level.name, replay.playerLocalName));
+            fn.fileNoExtNoPre);
         ret.alignLeft = true;
         return ret;
     }
