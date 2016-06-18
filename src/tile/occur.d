@@ -66,6 +66,12 @@ public:
         return IoLine.Colon(_tile.name, point.x, point.y, hatchRot ? "r" : "");
     }
 
+    @property Rect triggerAreaOnMap() const
+    {
+        assert (_tile);
+        return tile.triggerArea + point;
+    }
+
     // only for hatches
     @property Point screenCenter() const
     {

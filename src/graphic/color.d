@@ -62,7 +62,7 @@ private class ColorPrivate {
         guiFileL,
 
         screenBorder,
-        editorDark,
+        triggerArea,
         torusSeamD,
         torusSeamL,
 
@@ -117,7 +117,7 @@ private:
         guiFileL   = makecol(0xFF, 0xFF, 0xFF);
 
         screenBorder = make_sepia(2f / 16f);
-        editorDark   = makecol   (0x20, 0x20, 0x20); // erasor pieces
+        triggerArea  = makecol   (0x80, 0xFF, 0xFF);
         torusSeamD   = make_sepia(0.25f);
         torusSeamL   = make_sepia(0.4f);
 

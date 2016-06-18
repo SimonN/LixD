@@ -1,6 +1,13 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.1
+-----
+
+2016-06-18
+
+Editor displays the trigger area of all gadgets.
+
 0.6.0
 -----
 

@@ -77,6 +77,7 @@ void drawGadgets(Editor editor)
         foreach (g; gadgetList) {
             assert (g.tile && g.tile.cb);
             g.tile.cb.draw(editor._map, g.point);
+            editor._map.drawRectangle(g.triggerAreaOnMap, color.triggerArea);
         }
 }
 
