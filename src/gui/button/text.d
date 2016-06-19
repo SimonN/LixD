@@ -50,6 +50,7 @@ public:
         leftCheck   = new Label(new Geom(th, 0, g.xl - th-chXlg, 0));
         center      = new Label(new Geom(0,  0, g.xl - 1*th,     0, ctr));
         centerCheck = new Label(new Geom(0,  0, g.xl - 2*chXlg,  0, ctr));
+        // See override this.onResize for copypasta
 
         checkGeom = new Geom(0, 0, chXlg, chXlg, Geom.From.RIGHT);
         checkGeom.parent = this.geom;
@@ -69,8 +70,6 @@ public:
     @property int checkFrame() const { return _checkFrame;               }
     @property int checkFrame(int i)  { _checkFrame = i; reqDraw();
                                        return _checkFrame;               }
-
-    override string toString() const { return "But-`" ~  _text ~ "'";   }
 
 protected:
     override void drawOntoButton()
@@ -94,5 +93,15 @@ protected:
                 _checkFrame, 2 * (on && ! down)
             );
         }
+    }
+
+    override void resizeSelf()
+    {
+        // See constructor for copypasta
+        alias th  = textXFromLeft;
+        left       .resize(xlg - 2*th,       left.ylg);
+        leftCheck  .resize(xlg - th - chXlg, leftCheck.ylg);
+        center     .resize(xlg - th,         center.ylg);
+        centerCheck.resize(xlg - 2 * chXlg,  centerCheck.ylg);
     }
 }

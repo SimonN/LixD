@@ -221,9 +221,11 @@ void populateGraphics()
 void populateControls()
 {
     auto fac = facLeft();
-    fac.y += fac.incrementY * 2;
     groups[OptionGroup.controls] ~= [
+        fac.factory!HotkeyOption(keyZoomIn),
+        fac.factory!HotkeyOption(keyZoomOut),
         fac.factory!HotkeyOption(keyScroll),
+        fac.factory!HotkeyOption(keyPriorityInvert),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.controls] ~= [
@@ -258,13 +260,8 @@ void populateGameKeys()
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(keyPriorityInvert),
-    ];
-    fac.y += fac.incrementY;
-    groups[OptionGroup.gameKeys] ~=
-        fac.factory!HotkeyOption(keyRestart);
-    fac.y += fac.incrementY;
-    groups[OptionGroup.gameKeys] ~= [
+        fac.factory!HotkeyOption(keyPause),
+        fac.factory!HotkeyOption(keyRestart),
         fac.factory!HotkeyOption(keyStateLoad),
         fac.factory!HotkeyOption(keyStateSave),
     ];
@@ -272,8 +269,8 @@ void populateGameKeys()
     fac = facKeys!1;
     fac.y += 80;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(keyPause1),
-        fac.factory!HotkeyOption(keyPause2),
+        fac.factory!HotkeyOption(keySpeedFast),
+        fac.factory!HotkeyOption(keySpeedTurbo),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.gameKeys] ~= [
@@ -281,8 +278,6 @@ void populateGameKeys()
         fac.factory!HotkeyOption(keyFrameBackOne),
         fac.factory!HotkeyOption(keyFrameAheadOne),
         fac.factory!HotkeyOption(keyFrameAheadMany),
-        fac.factory!HotkeyOption(keySpeedFast),
-        fac.factory!HotkeyOption(keySpeedTurbo),
     ];
 
     fac = facKeys!2;
@@ -293,8 +288,6 @@ void populateGameKeys()
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(keyZoomIn),
-        fac.factory!HotkeyOption(keyZoomOut),
         fac.factory!HotkeyOption(keyChat),
         fac.factory!HotkeyOption(keySpecTribe),
     ];

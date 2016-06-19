@@ -101,12 +101,14 @@ UserOptionFilename editorLastDirDeco;
 UserOptionFilename editorLastDirHazard;
 
 UserOption!KeySet
-    keyForceLeft,
-    keyForceRight,
     keyScroll,
     keyPriorityInvert,
-    keyPause1,
-    keyPause2,
+    keyZoomIn,
+    keyZoomOut,
+
+    keyForceLeft,
+    keyForceRight,
+    keyPause,
     keyFrameBackMany,
     keyFrameBackOne,
     keyFrameAheadOne,
@@ -116,8 +118,6 @@ UserOption!KeySet
     keyRestart,
     keyStateLoad,
     keyStateSave,
-    keyZoomIn,
-    keyZoomOut,
     keyNuke,
     keySpecTribe,
     keyChat,
@@ -254,12 +254,16 @@ static this()
     {
         return newOpt(str, lang, KeySet(KeySet(key1), KeySet(key2)));
     }
+    // Global keys -- these work in editor and game
+    keyScroll = newKey("KEY_HOLD_TO_SCROLL", Lang.optionKeyScroll, keyRMB);
+    keyPriorityInvert = newKey("KEY_PRIORITY_INVERT", Lang.optionKeyPriorityInvert, keyRMB);
+    keyZoomIn = newKey("KEY_ZOOM_IN", Lang.optionKeyZoomIn, hardware.keynames.keyWheelUp);
+    keyZoomOut = newKey("KEY_ZOOM_OUT", Lang.optionKeyZoomOut, hardware.keynames.keyWheelDown);
+
+    // Game keys
     keyForceLeft = newKey("KEY_FORCE_LEFT", Lang.optionKeyForceLeft, ALLEGRO_KEY_S);
     keyForceRight = newKey("KEY_FORCE_RIGHT", Lang.optionKeyForceRight, ALLEGRO_KEY_F);
-    keyScroll = newKey("KEY_HOLD_TO_SCROLL", Lang.optionKeyScroll, hardware.keynames.keyRMB);
-    keyPriorityInvert = newKey("KEY_PRIORITY_INVERT", Lang.optionKeyPriorityInvert, hardware.keynames.keyRMB);
-    keyPause1 = newKey("KEY_PAUSE", Lang.optionKeyPause, ALLEGRO_KEY_SPACE);
-    keyPause2 = newKey("KEY_PAUSE2", Lang.optionKeyPause, hardware.keynames.keyMMB);
+    keyPause = newKey2("KEY_PAUSE", Lang.optionKeyPause, ALLEGRO_KEY_SPACE, keyMMB);
     keyFrameBackMany = newKey("KEY_SPEED_BACK_MANY", Lang.optionKeyFrameBackMany, ALLEGRO_KEY_1);
     keyFrameBackOne = newKey("KEY_SPEED_BACK_ONE", Lang.optionKeyFrameBackOne, ALLEGRO_KEY_2);
     keyFrameAheadOne = newKey("KEY_SPEED_AHEAD_ONE", Lang.optionKeyFrameAheadOne, ALLEGRO_KEY_3);
@@ -269,8 +273,6 @@ static this()
     keyRestart = newKey("KEY_RESTART", Lang.optionKeyRestart, ALLEGRO_KEY_F1);
     keyStateLoad = newKey("KEY_STATE_LOAD", Lang.optionKeyStateLoad, ALLEGRO_KEY_F2);
     keyStateSave = newKey("KEY_STATE_SAVE", Lang.optionKeyStateSave, ALLEGRO_KEY_F3);
-    keyZoomIn = newKey("KEY_ZOOM_IN", Lang.optionKeyZoomIn, hardware.keynames.keyWheelUp);
-    keyZoomOut = newKey("KEY_ZOOM_OUT", Lang.optionKeyZoomOut, hardware.keynames.keyWheelDown);
     keyNuke = newKey("KEY_NUKE", Lang.optionKeyNuke, ALLEGRO_KEY_F12);
     keySpecTribe = newKey("KEY_SPECTATE_NEXT_PLAYER", Lang.optionKeySpecTribe, ALLEGRO_KEY_TAB);
     keyChat = newKey("KEY_CHAT", Lang.optionKeyChat, ALLEGRO_KEY_ENTER);
@@ -317,6 +319,8 @@ static this()
     keyEditorMenuLooks = newKey("KEY_EDITOR_MENU_LOOKS", Lang.winLooksTitle, ALLEGRO_KEY_7);
     keyEditorMenuSkills = newKey("KEY_EDITOR_MENU_SKILLS", Lang.winSkillsTitle, ALLEGRO_KEY_8);
     keyEditorExit = newKey("KEY_EDITOR_EXIT", Lang.commonExit, ALLEGRO_KEY_ESCAPE);
+
+    _optvecLoad.rehash();
 }
 
 // ############################################################################
@@ -443,6 +447,10 @@ void load()
         }
         else if (auto opt = i.text1 in _optvecLoad)
             opt.set(i);
+        // Backwards compatibility: Before 0.6.2, I had hacked in two hotkeys
+        // for pause that saved to different variables. Load this other var.
+        else if (i.nr1 != 0 && i.text1 == "KEY_PAUSE2")
+            keyPause.value = KeySet(keyPause.value, KeySet(i.nr1));
     }
 }
 

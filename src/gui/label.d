@@ -65,7 +65,9 @@ private:
     AlCol  _color;
     bool   _fixed;
 
+protected:
 
+    override void resizeSelf() { shorten_text(); }
 
 private void
 shorten_text()

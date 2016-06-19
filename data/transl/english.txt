@@ -336,7 +336,7 @@ $optionKeyPriorityInvert      Priority invert
 $optionKeySpawnintSlower      Spawn faster
 $optionKeySpawnintFaster      Spawn slower
 $optionKeyPause               Pause
-$optionKeyFrameBackMany       Back 1 second
+$optionKeyFrameBackMany       Back 1 sec.
 $optionKeyFrameBackOne        Back 1 frame
 $optionKeyFrameAheadOne       Ahead 1 frame
 $optionKeyFrameAheadMany      Ahead 10 sec.

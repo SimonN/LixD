@@ -39,8 +39,7 @@ protected:
             b.hotkey = KeySet(b.hotkey, hk);
             addChild(b);
         }
-        oneBut(_resume,     Lang.winGameResume.transl, KeySet(keyPause1,
-                                                              keyPause2));
+        oneBut(_resume,     Lang.winGameResume.transl,     keyPause);
         oneBut(_saveReplay, Lang.winGameSaveReplay.transl, keyStateSave);
         oneBut(_restart,    Lang.winGameRestart.transl,    keyRestart);
         oneBut(_exitGame,   Lang.winGameMenu.transl,       keyGameExit);

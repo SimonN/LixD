@@ -60,25 +60,20 @@ public:
     }
 
     @property immutable(int)[] keysAsInts() const { return _keys; }
-    @property int kludgeFirstEntry() const
-    {
-        return _keys.empty ? 0 : _keys[0];
-    }
 
     @property string nameLong() const {
         switch (_keys.length) {
             case 0:  return null;
             case 1:  return _keys[0].hotkeyNiceLong;
-            case 2:  return _keys.map!(k => k.hotkeyNiceShort).join(", ");
-            default: return _keys.map!(k => k.hotkeyNiceShort(3)).join(',');
+            default: return nameShort();
         }
     }
 
     @property string nameShort() const {
         switch (_keys.length) {
             case 0:  return null;
-            case 1:  return _keys[0].hotkeyNiceShort;
-            case 2:  return _keys.map!(k => k.hotkeyNiceShort).join('/');
+            case 1:  return _keys[0].hotkeyNiceShort(3);
+            case 2:  return _keys.map!(k => k.hotkeyNiceShort(3)).join('/');
             default: return _keys.map!(k => k.hotkeyNiceShort(2)).join;
         }
     }
@@ -97,7 +92,7 @@ unittest {
 // ############################################################################
 // ########################################################## private functions
 
-private string hotkeyNiceShort(in int hotkey, in int maxLen = 3)
+private string hotkeyNiceShort(in int hotkey, in int maxLen)
 {
     string s = hotkeyNiceLong(hotkey);
     try {

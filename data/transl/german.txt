@@ -331,7 +331,7 @@ $optionKeySpeedFast         Schneller Vorl.
 $optionKeySpeedTurbo        Turbo
 $optionKeyRestart            Neustart
 $optionKeyStateLoad         Stand laden
-$optionKeyStateSave         Stand speichern
+$optionKeyStateSave         Stand speich.
 $optionKeyZoomIn             Zoom +
 $optionKeyZoomOut            Zoom −
 $optionKeyChat               Chat

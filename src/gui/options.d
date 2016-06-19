@@ -35,7 +35,7 @@ import lix.enums;
 
 enum spaceGuiTextX =  10f;
 enum mostButtonsXl = 120f;
-enum keyButtonXl   =  70f;
+enum keyButtonXl   =  85f;
 
 abstract class Option : Element {
 private:
@@ -148,15 +148,15 @@ public:
 
 class HotkeyOption : Option {
 private:
-    KeyButton _keyb;
-    KeySet*   _target;
+    MultiKeyButton _keyb;
+    KeySet* _target;
 
 public:
     this(Geom g, UserOption!KeySet uo) { this(g, uo.descShort, uo.valuePtr); }
     this(Geom g, string cap, KeySet* t)
     {
         assert (t);
-        _keyb = new KeyButton(new Geom(0, 0, keyButtonXl, 20));
+        _keyb = new MultiKeyButton(new Geom(0, 0, keyButtonXl, 20));
         super(g, new Label(new Geom(keyButtonXl + spaceGuiTextX, 0,
                             g.xlg - keyButtonXl + spaceGuiTextX, g.yl), cap));
         addChild(_keyb);

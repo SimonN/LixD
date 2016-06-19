@@ -86,16 +86,20 @@ public:
 
     void move(in float ax, in float ay)
     {
+        if (_geom.x == ax && _geom.y == ay)
         reqDraw();
         _geom.x = ax;
         _geom.y = ay;
     }
 
-    void resize(in float axl, in float ayl)
+    final void resize(in float axl, in float ayl)
     {
+        if (_geom.xl == axl && _geom.yl == ayl)
+            return;
         reqDraw();
         _geom.xl = axl;
         _geom.yl = ayl;
+        resizeSelf();
     }
 
     // Require a redraw of the element and all its children, because some
@@ -192,6 +196,8 @@ protected:
     void calcSelf() { } // do computations when GUI element has focus
     void workSelf() { } // do computations even when hidden or not in focus
     void drawSelf() { } // draw to the screen, this calls geom.get_xs() etc.
+
+    void resizeSelf() { } // after element has been resized, xlg/ylg is new
 
     // Sometimes used if appropriate before drawing. You can still override.
     void undrawSelf()
