@@ -353,6 +353,8 @@ $optionEdLeft                Nach links
 $optionEdRight               Nach rechts
 $optionEdUp                  Nach oben
 $optionEdDown                Nach unten
+$optionEdSave                Speichern
+$optionEdSaveAs              Speich. unter
 $optionEdGrid                Raster
 $optionEdSelectAll           Alles ausw.
 $optionEdSelectFrame         Rahmen

@@ -1,6 +1,17 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.2
+-----
+
+2016-06-20
+
+Multiple hotkeys can be bound to the same function. By default, the editor
+moves tiles both with the arrow keys and with ESDF. Pause is bound to [Space]
+and to the middle mouse button.
+
+Editor grouping, ungrouping, saving, and save-as can be hotkeyed.
+
 0.6.1
 -----
 

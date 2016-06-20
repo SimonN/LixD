@@ -142,12 +142,16 @@ UserOption!KeySet
     keyEditorRight,
     keyEditorUp,
     keyEditorDown,
+    keyEditorSave,
+    keyEditorSaveAs,
     keyEditorCopy,
     keyEditorDelete,
     keyEditorGrid,
     keyEditorSelectAll,
     keyEditorSelectFrame,
     keyEditorSelectAdd,
+    keyEditorGroup,
+    keyEditorUngroup,
     keyEditorBackground,
     keyEditorForeground,
     keyEditorMirror,
@@ -261,8 +265,8 @@ static this()
     keyZoomOut = newKey("KEY_ZOOM_OUT", Lang.optionKeyZoomOut, hardware.keynames.keyWheelDown);
 
     // Game keys
-    keyForceLeft = newKey("KEY_FORCE_LEFT", Lang.optionKeyForceLeft, ALLEGRO_KEY_S);
-    keyForceRight = newKey("KEY_FORCE_RIGHT", Lang.optionKeyForceRight, ALLEGRO_KEY_F);
+    keyForceLeft = newKey2("KEY_FORCE_LEFT", Lang.optionKeyForceLeft, ALLEGRO_KEY_S, ALLEGRO_KEY_LEFT);
+    keyForceRight = newKey2("KEY_FORCE_RIGHT", Lang.optionKeyForceRight, ALLEGRO_KEY_F, ALLEGRO_KEY_RIGHT);
     keyPause = newKey2("KEY_PAUSE", Lang.optionKeyPause, ALLEGRO_KEY_SPACE, keyMMB);
     keyFrameBackMany = newKey("KEY_SPEED_BACK_MANY", Lang.optionKeyFrameBackMany, ALLEGRO_KEY_1);
     keyFrameBackOne = newKey("KEY_SPEED_BACK_ONE", Lang.optionKeyFrameBackOne, ALLEGRO_KEY_2);
@@ -283,9 +287,9 @@ static this()
     keyMenuExport = newKey("KEY_MENU_EXPORT", Lang.optionKeyMenuExport, ALLEGRO_KEY_R);
     keyMenuDelete = newKey("KEY_MENU_DELETE", Lang.optionKeyMenuDelete, ALLEGRO_KEY_G);
     keyMenuUpDir = newKey("KEY_MENU_UP_DIR", Lang.optionKeyMenuUpDir, ALLEGRO_KEY_A);
-    keyMenuUpBy1 = newKey("KEY_MENU_UP_1", Lang.optionKeyMenuUpBy1, ALLEGRO_KEY_S);
+    keyMenuUpBy1 = newKey2("KEY_MENU_UP_1", Lang.optionKeyMenuUpBy1, ALLEGRO_KEY_S, ALLEGRO_KEY_UP);
     keyMenuUpBy5 = newKey("KEY_MENU_UP_5", Lang.optionKeyMenuUpBy5, ALLEGRO_KEY_W);
-    keyMenuDownBy1 = newKey("KEY_MENU_DOWN_1", Lang.optionKeyMenuDownBy1, ALLEGRO_KEY_D);
+    keyMenuDownBy1 = newKey2("KEY_MENU_DOWN_1", Lang.optionKeyMenuDownBy1, ALLEGRO_KEY_D, ALLEGRO_KEY_DOWN);
     keyMenuDownBy5 = newKey("KEY_MENU_DOWN_5", Lang.optionKeyMenuDownBy5, ALLEGRO_KEY_E);
     keyMenuExit = newKey("KEY_MENU_EXIT", Lang.optionKeyMenuExit, ALLEGRO_KEY_ESCAPE);
     keyMenuMainSingle = newKey("KEY_MENU_MAIN_SINGLE", Lang.browserSingleTitle, ALLEGRO_KEY_F);
@@ -293,16 +297,20 @@ static this()
     keyMenuMainReplays = newKey("KEY_MENU_MAIN_REPLAY", Lang.browserReplayTitle, ALLEGRO_KEY_S);
     keyMenuMainOptions = newKey("KEY_MENU_MAIN_OPTIONS", Lang.optionTitle, ALLEGRO_KEY_A);
 
-    keyEditorLeft = newKey("KEY_EDITOR_LEFT", Lang.optionEdLeft, ALLEGRO_KEY_S);
-    keyEditorRight = newKey("KEY_EDITOR_RIGHT", Lang.optionEdRight, ALLEGRO_KEY_F);
-    keyEditorUp = newKey("KEY_EDITOR_UP", Lang.optionEdUp, ALLEGRO_KEY_E);
-    keyEditorDown = newKey("KEY_EDITOR_DOWN", Lang.optionEdDown, ALLEGRO_KEY_D);
+    keyEditorLeft = newKey2("KEY_EDITOR_LEFT", Lang.optionEdLeft, ALLEGRO_KEY_S, ALLEGRO_KEY_LEFT);
+    keyEditorRight = newKey2("KEY_EDITOR_RIGHT", Lang.optionEdRight, ALLEGRO_KEY_F, ALLEGRO_KEY_RIGHT);
+    keyEditorUp = newKey2("KEY_EDITOR_UP", Lang.optionEdUp, ALLEGRO_KEY_E, ALLEGRO_KEY_UP);
+    keyEditorDown = newKey2("KEY_EDITOR_DOWN", Lang.optionEdDown, ALLEGRO_KEY_D, ALLEGRO_KEY_DOWN);
+    keyEditorSave = newOpt("KEY_EDITOR_SAVE", Lang.optionEdSave, KeySet());
+    keyEditorSaveAs = newOpt("KEY_EDITOR_SAVE_AS", Lang.optionEdSaveAs, KeySet());
     keyEditorCopy = newKey("KEY_EDITOR_COPY", Lang.optionEdCopy, ALLEGRO_KEY_A);
-    keyEditorDelete = newKey("KEY_EDITOR_DELETE", Lang.optionEdDelete, ALLEGRO_KEY_G);
+    keyEditorDelete = newKey2("KEY_EDITOR_DELETE", Lang.optionEdDelete, ALLEGRO_KEY_G, ALLEGRO_KEY_DELETE);
     keyEditorGrid = newKey("KEY_EDITOR_GRID", Lang.optionEdGrid, ALLEGRO_KEY_C);
     keyEditorSelectAll = newKey("KEY_EDITOR_SELECT_ALL", Lang.optionEdSelectAll, ALLEGRO_KEY_ALT);
     keyEditorSelectFrame = newKey("KEY_EDITOR_SELECT_FRAME", Lang.optionEdSelectFrame, ALLEGRO_KEY_LSHIFT);
     keyEditorSelectAdd = newKey("KEY_EDITOR_SELECT_ADD", Lang.optionEdSelectAdd, ALLEGRO_KEY_V);
+    keyEditorGroup = newKey("KEY_EDITOR_GROUP", Lang.optionEdGroup, ALLEGRO_KEY_Q);
+    keyEditorUngroup = newOpt("KEY_EDITOR_UNGROUP", Lang.optionEdUngroup, KeySet());
     keyEditorForeground = newKey("KEY_EDITOR_FOREGROUND", Lang.optionEdForeground, ALLEGRO_KEY_T);
     keyEditorBackground = newKey("KEY_EDITOR_BACKGROUND", Lang.optionEdBackground, ALLEGRO_KEY_B);
     keyEditorMirror = newKey("KEY_EDITOR_MIRROR", Lang.optionEdMirror, ALLEGRO_KEY_W);

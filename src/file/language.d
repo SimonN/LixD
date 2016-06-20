@@ -375,6 +375,8 @@ enum Lang {
     optionEdRight,
     optionEdUp,
     optionEdDown,
+    optionEdSave,
+    optionEdSaveAs,
     optionEdGrid,
     optionEdGridCustom,
     optionEdSelectAll,

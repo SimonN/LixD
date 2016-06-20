@@ -304,11 +304,16 @@ void populateEditorKeys()
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.editorKeys] ~= [
+        fac.factory!HotkeyOption(keyEditorSave),
+        fac.factory!HotkeyOption(keyEditorSaveAs),
+    ];
+    fac.y += fac.incrementY;
+    groups[OptionGroup.editorKeys] ~= [
         fac.factory!HotkeyOption(keyEditorCopy),
         fac.factory!HotkeyOption(keyEditorDelete),
         fac.factory!HotkeyOption(keyEditorGrid),
     ];
-    fac.y += fac.incrementY * 3;
+    fac.y += fac.incrementY;
     fac.xl = this.xlg - 40;
     auto cfg = NumPickConfig();
     cfg.max = 96;
@@ -324,6 +329,8 @@ void populateEditorKeys()
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.editorKeys] ~= [
+        fac.factory!HotkeyOption(keyEditorGroup),
+        fac.factory!HotkeyOption(keyEditorUngroup),
         fac.factory!HotkeyOption(keyEditorBackground),
         fac.factory!HotkeyOption(keyEditorForeground),
         fac.factory!HotkeyOption(keyEditorMirror),

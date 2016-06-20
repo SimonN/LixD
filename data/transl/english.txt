@@ -366,6 +366,8 @@ $optionEdLeft                 Move left
 $optionEdRight                Move right
 $optionEdUp                   Move up
 $optionEdDown                 Move down
+$optionEdSave                 Save
+$optionEdSaveAs               Save as
 $optionEdGrid                 Grid size
 $optionEdGridCustom           Custom grid size
 $optionEdSelectAll            Select all

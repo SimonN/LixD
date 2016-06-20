@@ -39,10 +39,10 @@ void makePanel(Editor editor)
                 editor._gotoMainMenu = true;
             });
         });
-        onExecute(Lang.editorButtonFileSave, KeySet(), () {
+        onExecute(Lang.editorButtonFileSave, keyEditorSave, () {
             editor.saveToExistingFile();
         });
-        onExecute(Lang.editorButtonFileSaveAs, KeySet(), () {
+        onExecute(Lang.editorButtonFileSaveAs, keyEditorSaveAs, () {
             editor.openSaveAsBrowser();
         });
         // Changing the grid is done manually in Editor.calc, not with a
@@ -59,10 +59,10 @@ void makePanel(Editor editor)
         onExecute(Lang.editorButtonSelectAdd, keyEditorSelectAdd, () {
             buttonSelectAdd.on = ! buttonSelectAdd.on;
         });
-        onExecute(Lang.editorButtonGroup, KeySet(), () {
+        onExecute(Lang.editorButtonGroup, keyEditorGroup, () {
             editor.createGroup();
         });
-        onExecute(Lang.editorButtonUngroup, KeySet(), () {
+        onExecute(Lang.editorButtonUngroup, keyEditorUngroup, () {
             editor.ungroup();
         });
         onExecute(Lang.editorButtonSelectCopy, keyEditorCopy, () {
