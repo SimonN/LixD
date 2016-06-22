@@ -71,7 +71,8 @@ UserOption!int scrollSpeedEdge;
 UserOption!int scrollSpeedClick;
 UserOption!bool avoidBuilderQueuing;
 UserOption!bool avoidBatterToExploder;
-
+UserOption!int pausedAssign; // 0 = nothing (allows multiple assignments),
+                             // 1 = advance 1 frame, 2 = unpause
 UserOption!bool screenWindowed;
 UserOption!int screenWindowedX;
 UserOption!int screenWindowedY;
@@ -200,6 +201,7 @@ static this()
     scrollSpeedClick = newOpt("SCROLL_SPEED_CLICK", Lang.optionScrollSpeedClick, mouseStandardDivisor / 2);
     avoidBuilderQueuing = newOpt("AVOID_BUILDER_QUEUING", Lang.optionAvoidBuilderQueuing, true);
     avoidBatterToExploder = newOpt("AVOID_BATTER_TO_EXPLODER", Lang.optionAvoidBatterToExploder, false);
+    pausedAssign = newOpt("PAUSED_ASSIGN", Lang.optionPausedAssign, 1);
 
     screenWindowed = newOpt("SCREEN_WINDOWED", Lang.optionScreenWindowed, false);
     screenWindowedX = newOpt("SCREEN_WINDOWED_X", 640);

@@ -229,6 +229,7 @@ void populateControls()
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.controls] ~= [
+        fac.factory!BoolOptionOneOrTwo(pausedAssign),
         fac.factory!BoolOption(avoidBuilderQueuing),
         fac.factory!BoolOption(avoidBatterToExploder),
     ];

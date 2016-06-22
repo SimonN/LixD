@@ -117,7 +117,18 @@ protected:
     }
 }
 
-
+// A hack class: the user option (pausedAssign) can take 3 values: 0, 1, 2.
+// I offer only 1 and 2 for now, with a checkbox. That uses this class.
+class BoolOptionOneOrTwo : BoolOption {
+    private int* _intTarget;
+    this(Geom g, UserOption!int opt)
+    {
+        super(g, "Unpause on skill assignment", null); // hack hardcoded string
+        _intTarget = opt.valuePtr;
+    }
+    override void loadValue() { checked = (*_intTarget == 2); }
+    override void saveValue() { *_intTarget = _checkbox.checked ? 2 : 1; }
+}
 
 class TextOption : Option {
 private:

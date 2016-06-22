@@ -253,7 +253,8 @@ void assignToPotentialAssignee(
                     :                RepAc.ASSIGN;
     data.skill      = currentSkill.skill;
     data.toWhichLix = potAss.id;
-
     undispatchedAssignments ~= data;
+    if (basics.user.pausedAssign.value == 2)
+        pan.pause.on = false;
 }}
 // end PotentialAssignee assignToPotentialAssignee()

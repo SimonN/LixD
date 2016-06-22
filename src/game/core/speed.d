@@ -2,6 +2,7 @@ module game.core.speed;
 
 import basics.alleg5;
 import basics.nettypes; // Update
+import basics.user; // pausedAssign
 import game.core.game;
 import game.core.active; // findAgainHighlitLixAfterUpdate
 import game.gui.panel;
@@ -55,7 +56,8 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
     else if (pan.speedAhead.executeRight) {
         upd(updatesAheadMany);
     }
-    else if (pan.pause.on && ! pan.isMouseHere && mouseClickLeft) {
+    else if (pan.pause.on && ! pan.isMouseHere && mouseClickLeft
+        && basics.user.pausedAssign.value > 0) {
         // Clicking into the non-panel screen advances physics once.
         // This happens either because you've assigned something, or because
         // you have cancelled the replay.

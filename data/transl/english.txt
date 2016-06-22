@@ -314,6 +314,10 @@ $optionScrollSpeedEdge        Scroll speed at screen edge
 $optionScrollSpeedClick       Scroll speed with that key
 $optionAvoidBuilderQueuing    Prefer spamming over queuing
 $optionAvoidBatterToExploder  Prefer batters to non-exploders
+$optionPausedAssign           Skill assignment during pause:
+$optionPausedAssignStayPaused Don't advance
+$optionPausedAssignAdvance    Advance by 1 frame
+$optionPausedAssignUnpause    Unpause
 
 $optionScreenWindowed           Windowed mode
 $optionScreenWindowedRes        Windowed resolution

@@ -323,6 +323,10 @@ enum Lang {
     optionScrollSpeedClick,
     optionAvoidBuilderQueuing,
     optionAvoidBatterToExploder,
+    optionPausedAssign,
+    optionPausedAssignStayPaused,
+    optionPausedAssignAdvance,
+    optionPausedAssignUnpause,
 
     optionScreenWindowed,
     optionScreenWindowedRes,
