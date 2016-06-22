@@ -1,6 +1,20 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.3
+-----
+
+2016-06-22
+
+Fix #97: The game advances physics on assignment and unpauses on nuking.
+
+The browsers' breadcrumbs are wider and less tall. I don't display the current
+directory in the browser's title bar anymore. The picker shows 20 files
+instead of 19, this fixes #96.
+
+The preview draws a dark border around the level instead of the menu color.
+Under the preview, I write the level name.
+
 0.6.2
 -----
 

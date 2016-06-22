@@ -15,6 +15,7 @@ private:
     bool       _gotoMainMenu;
     TextButton _buttonExit;
     Preview    _preview;
+    Label      _previewLevelTitle;
 
 public:
     // after calling this(), it's a good idea to call
@@ -40,8 +41,11 @@ public:
         _buttonExit = new TextButton(new Geom(infoX + infoXl/2, 20,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.commonBack.transl);
         _buttonExit.hotkey = basics.user.keyMenuExit;
-        _preview = new Preview(new Geom(20, 80, infoXl, 160, From.TOP_RIG));
-        addChildren(_picker, _buttonExit, _preview);
+        _preview = new Preview(new Geom(20, 60, infoXl, 160, From.TOP_RIG));
+        _previewLevelTitle = new Label(new Geom(infoX, infoY, infoXl+17, 20));
+        _previewLevelTitle.undrawBeforeDraw = true;
+        addChildren(_picker, _buttonExit, _preview, _previewLevelTitle);
+        previewLevel(null);
     }
 
     ~this()
@@ -63,7 +67,13 @@ public:
 
     @property bool gotoMainMenu() const { return _gotoMainMenu; }
 
-    void previewLevel(Level l) { _preview.level = l;    }
+    void previewLevel(Level l)
+    {
+        _preview.hidden = l is null;
+        _previewLevelTitle.text = l ? l.name : "";
+        if (l)
+            _preview.level = l;
+    }
 
     final Filename currentDir() const { return _picker.currentDir; }
 

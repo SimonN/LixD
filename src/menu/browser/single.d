@@ -36,9 +36,9 @@ public:
         _delete = new TextButton(new Geom(infoX + infoXl/2, 60,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.browserDelete.transl);
         _delete.hotkey = basics.user.keyMenuDelete;
-        _by = new LabelTwo(new Geom(infoX, infoY, infoXl, 20),
+        _by = new LabelTwo(new Geom(infoX, infoY + 20, infoXl, 20),
             Lang.browserInfoAuthor.transl);
-        _save = new LabelTwo(new Geom(infoX, infoY + 20, infoXl, 20),
+        _save = new LabelTwo(new Geom(infoX, infoY + 40, infoXl, 20),
             Lang.browserInfoInitgoal.transl);
         addChildren(_edit, _delete, _by, _save);
     }

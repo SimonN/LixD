@@ -8,6 +8,7 @@ import basics.alleg5;
 import basics.globals;
 import basics.help; // rounding
 import gui;
+import graphic.color;
 import graphic.graphic;
 import graphic.internal;
 import graphic.torbit;
@@ -58,7 +59,7 @@ level(in Level level)
     if (level !is null) {
         torbit  = level.create_preview(
             (xs + xls).roundInt - xs.roundInt,
-            (ys + yls).roundInt - ys.roundInt, undrawColor);
+            (ys + yls).roundInt - ys.roundInt, color.screenBorder);
         _status = level.status;
         iconStatus.xf = status;
         iconTorus .xf = level.topology.torusX + 2 * level.topology.torusY;
