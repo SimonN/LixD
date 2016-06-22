@@ -19,10 +19,18 @@ private:
     MutFilename  _basedir;
     MutFilename  _currentDir;
     TextButton[] _buttons;
+    Label        _label;
     bool         _execute;
 
+    enum butXl = 100f;
+
 public:
-    this(Geom g) { super(g); }
+    this(Geom g)
+    {
+        super(g);
+        _label = new Label(new Geom(0, 0, butXl, 20, From.LEFT));
+        addChild(_label);
+    }
 
     @property bool execute() const { return _execute; }
 
@@ -79,9 +87,8 @@ private:
     void makeButtons()
     {
         reqDraw();
-        rmAllChildren();
+        _buttons.each!(b => rmChild(b));
         _buttons = null;
-        enum butXl = 100;
         float butX() { return _buttons.map!(b => b.xlg).sum; }
         int lastButtonIter = 0;
         int iter = basedir.dirRootless.len;
@@ -96,8 +103,7 @@ private:
             _buttons[$-1].hotkey = keyMenuUpDir;
             _buttons.each!(b => addChild(b));
         }
-        auto label = new Label(new Geom(butX + 4, 0, butXl, 20, From.LEFT));
-        label.text = currentDir.dirRootless[lastButtonIter .. iter];
-        addChild(label);
+        _label.move(butX + 4, 0);
+        _label.text = currentDir.dirRootless[lastButtonIter .. iter];
     }
 }

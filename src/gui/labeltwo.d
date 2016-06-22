@@ -20,6 +20,7 @@ public:
         _value   = new Label(new Geom(_caption.textLg + 6f, 0,
                                 xlg - _caption.textLg - 6f, ylg, From.LEFT));
         _value.color = color.white;
+        _value.undrawBeforeDraw = true;
         addChildren(_caption, _value);
     }
 

@@ -16,6 +16,18 @@ import graphic.textout;
 import gui;
 
 class Label : Element {
+private:
+
+    string _text;
+    string _textShort; // shortened version of text, can't be returned
+    bool   _shortened;  // true if textShort != text
+
+    AlFont _font; // check if this crashes if Label not destroyed!
+    AlCol  _color;
+    bool   _fixed;
+
+public:
+    bool undrawBeforeDraw = false; // if true, drawSelf() calls undraw() first
 
     enum string abbrevSuffix      = ".";
     enum int    fixedCharXl       = 12; // most chars might occupy this much
@@ -55,73 +67,63 @@ class Label : Element {
 
     bool tooLong(string s) const { return s.len ? textLg(s) > xlg : false; }
 
-private:
-
-    string _text;
-    string _textShort; // shortened version of text, can't be returned
-    bool   _shortened;  // true if textShort != text
-
-    AlFont _font; // check if this crashes if Label not destroyed!
-    AlCol  _color;
-    bool   _fixed;
-
 protected:
-
     override void resizeSelf() { shorten_text(); }
-
-private void
-shorten_text()
-out {
-    assert (_shortened == (_textShort != _text));
-}
-body {
-    reqDraw();
-    _textShort = _text;
-    _shortened = false;
-
-    if (! text.length)
-        return;
-    else if (_fixed) {
-        while (tooLong(_textShort)) {
-            _shortened = true;
-            if (aligned == Geom.From.RIGHT)
-                _textShort = _textShort[1 .. $];
-            else
-                _textShort = _textShort[0 .. $-1];
+    override void drawSelf()
+    {
+        if (undrawBeforeDraw)
+            undraw();
+        if (! text.length)
+            return;
+        switch (aligned) {
+        case Geom.From.LEFT:
+            drawText(_font, _textShort, xs, ys, _color);
+            break;
+        case Geom.From.CENTER:
+            drawTextCentered(_font, _textShort, xs + xls / 2, ys, _color);
+            break;
+        case Geom.From.RIGHT:
+            drawTextRight(_font, _textShort, xs + xls, ys, _color);
+            break;
+        default:
+            assert (false);
         }
     }
-    else {
-        _shortened = tooLong(_text);
-        if (_shortened) {
-            while (_textShort.length > 0 && tooLong(_textShort ~ abbrevSuffix))
-                _textShort = backspace(_textShort);
-            _textShort ~= abbrevSuffix;
+
+    override void undrawSelf()
+    {
+        // Some letters extend further to the left than the left border.
+        // Don't only paint the Element's rectangle, paint more to the left.
+        al_draw_filled_rectangle(xs - Geom.thicks, ys,
+                                 xs + xls,         ys + yls, undrawColor);
+    }
+
+private:
+    void shorten_text()
+    out { assert (_shortened == (_textShort != _text)); }
+    body {
+        reqDraw();
+        _textShort = _text;
+        _shortened = false;
+        if (! text.length)
+            return;
+        else if (_fixed) {
+            while (tooLong(_textShort)) {
+                _shortened = true;
+                if (aligned == Geom.From.RIGHT)
+                    _textShort = _textShort[1 .. $];
+                else
+                    _textShort = _textShort[0 .. $-1];
+            }
+        }
+        else {
+            _shortened = tooLong(_text);
+            if (_shortened) {
+                while (_textShort.length > 0 && tooLong(_textShort ~ abbrevSuffix))
+                    _textShort = backspace(_textShort);
+                _textShort ~= abbrevSuffix;
+            }
         }
     }
-}
-
-
-
-protected override void
-drawSelf()
-{
-    if (! text.length)
-        return;
-
-    switch (aligned) {
-    case Geom.From.LEFT:
-        drawText(_font, _textShort, xs, ys, _color);
-        break;
-    case Geom.From.CENTER:
-        drawTextCentered(_font, _textShort, xs + xls / 2, ys, _color);
-        break;
-    case Geom.From.RIGHT:
-        drawTextRight(_font, _textShort, xs + xls, ys, _color);
-        break;
-    default:
-        assert (false);
-    }
-}
-
 }
 // end class Label
