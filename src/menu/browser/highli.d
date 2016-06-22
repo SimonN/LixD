@@ -31,9 +31,9 @@ public:
     )   if (is (SomeTiler : Tiler)
     ) {
         super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg), title);
-        cfg.all   = new Geom(20, 40, xlg-40, ylg-60);
-        cfg.bread = new Geom(0, 0, cfg.all.xl, 30);
-        cfg.files = new Geom(0, 40, pickerXl, cfg.all.yl - 40);
+        cfg.all   = new Geom(20, 30, xlg-40, ylg-50);
+        cfg.bread = new Geom(0, 0, cfg.all.xl, 20);
+        cfg.files = new Geom(0, 30, pickerXl, cfg.all.yl - 30);
         cfg.ls    = new OrderFileLs;
         _picker   = new Picker(cfg);
         _picker.basedir = baseDir;
@@ -65,7 +65,6 @@ public:
     @property bool gotoMainMenu() const { return _gotoMainMenu; }
 
     void previewLevel(Level l) { _preview.level = l;    }
-    void clearPreview()        { _preview.level = null; }
 
     final Filename currentDir() const { return _picker.currentDir; }
 

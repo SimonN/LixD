@@ -81,7 +81,7 @@ private:
         reqDraw();
         rmAllChildren();
         _buttons = null;
-        enum butXl = 80;
+        enum butXl = 100;
         float butX() { return _buttons.map!(b => b.xlg).sum; }
         int lastButtonIter = 0;
         int iter = basedir.dirRootless.len;
