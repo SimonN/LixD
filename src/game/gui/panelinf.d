@@ -53,23 +53,6 @@ public:
         return l;
     }
 
-    @property Update updatesSinceZero(in Update u)
-    {
-        // Hack while we have singleplayer only:
-        // Don't show the time taken. Some mistook it for a time limit.
-        // Use the commented-out code for multiplayer, or for people who want
-        // to see the time passed in singleplayer.
-        _bTime.hide();
-        _lTime.hide();
-        /+
-        _lTime.text = "%d:%02d".format(
-            u / (60 * updatesPerSecond),
-            u % (60 * updatesPerSecond) / updatesPerSecond);
-        reqDraw();
-        +/
-        return u;
-    }
-
     void suggestTooltipForceDirection() { }
     void suggestTooltipPriorityInvert() { }
     void suggestTooltipBuilders() { }
@@ -145,6 +128,7 @@ private:
         makeElements(_bTime,  _lTime,  200, 70, 7);
         // I want to show the time in multiplayer. Until I have that,
         // I display the spawn interval in singleplayer.
+        _bTime.hide();
         _spawnint   = new Label(new Geom(_bTime.xg, 0, 70, ylg, From.LEFT));
         _fps        = new Label(new Geom(280, 0, 70, this.ylg, From.LEFT));
         _targetDesc = new Label(new Geom(
