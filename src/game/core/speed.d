@@ -5,6 +5,7 @@ import basics.nettypes; // Update
 import game.core.game;
 import game.core.active; // findAgainHighlitLixAfterUpdate
 import game.gui.panel;
+import hardware.mouse;
 import hardware.sound;
 
 package:
@@ -53,6 +54,12 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
     }
     else if (pan.speedAhead.executeRight) {
         upd(updatesAheadMany);
+    }
+    else if (pan.pause.on && ! pan.isMouseHere && mouseClickLeft) {
+        // Clicking into the non-panel screen advances physics once.
+        // This happens either because you've assigned something, or because
+        // you have cancelled the replay.
+        upd();
     }
     else if (! pan.pause.on) {
         long updAgo = timerTicks - game.altickLastUpdate;
