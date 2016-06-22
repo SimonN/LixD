@@ -1,4 +1,4 @@
-$BUILT 2012-04-28 15:10:36
+$BUILT 2016-06-24 00:00:00
 $AUTHOR Simon
 $GERMAN Renner
 $ENGLISH Runners
@@ -6,32 +6,19 @@ $ENGLISH Runners
 $TUTORIAL_GERMAN Renner sind schnell! Ihre Sprünge sind viel höher und weiter.<br>Wenn ein Kletterer gegen eine glatte Wand springt,<br>wird sich die Lix festhalten und hinaufklettern.
 $TUTORIAL_ENGLISH Runners are fast! Their jumps are much higher and further.<br>If a climber jumps against a straight wall,<br>it will hold onto it and climb up.
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 0
 #INITIAL 1
 #REQUIRED 1
 #SPAWN_INTERVAL 32
-#SPAWN_INTERVAL_FAST 4
 
-#NOTHING 0
 #RUNNER 1
 #CLIMBER 1
-#NOTHING 0
 #JUMPER 50
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#EXPLODER2 0
 
 :geoo/construction/Hatch.H: 64 280 r
 
@@ -39,7 +26,6 @@ $TUTORIAL_ENGLISH Runners are fast! Their jumps are much higher and further.<br>
 
 :geoo/construction/steam_up.T: 264 120
 :geoo/construction/steam_up.T: 40 152
-:geoo/construction/steam_right.T: -30 40
 :geoo/construction/steam_up.T: 326 104
 :geoo/construction/steam_up.T: 584 200
 
@@ -51,7 +37,6 @@ $TUTORIAL_ENGLISH Runners are fast! Their jumps are much higher and further.<br>
 :geoo/construction/concrete/016ha: 400 144
 :geoo/construction/concrete/016hd: 400 160
 :geoo/construction/concrete/016vd: 320 176
-:geoo/construction/concrete/032v: 288 240
 :geoo/construction/concrete/016vc: 272 176
 :geoo/construction/concrete/016h: 432 144
 :geoo/construction/concrete/016h: 464 144
@@ -74,8 +59,6 @@ $TUTORIAL_ENGLISH Runners are fast! Their jumps are much higher and further.<br>
 :geoo/construction/concrete/016h: 360 336
 :geoo/construction/concrete/016hb: 392 336
 :geoo/construction/concrete/032v: 376 352
-:geoo/construction/concrete/016hc: 224 240
-:geoo/construction/concrete/032v: 232 240
 :geoo/construction/concrete/016b: 264 240
 :geoo/construction/concrete/016d: 264 256
 :geoo/construction/concrete/016a: 272 272
@@ -100,8 +83,7 @@ $TUTORIAL_ENGLISH Runners are fast! Their jumps are much higher and further.<br>
 :geoo/abstract/pipes/central4: 544 320 rrr
 :geoo/abstract/pipes/endr4: 544 318 rrr
 :geoo/abstract/pipes/endr4: 544 346 r
-:geoo/abstract/pipes/central4: 228 232 rr
-:geoo/abstract/pipes/endr4: 222 232 rr
+:geoo/abstract/pipes/endr4: 230 232 rr
 :geoo/abstract/pipes/endr4: 258 232
 :geoo/abstract/pipes/cshort4: 352 340 rrr
 :geoo/abstract/pipes/endr4: 352 334 rrr
@@ -120,28 +102,14 @@ $TUTORIAL_ENGLISH Runners are fast! Their jumps are much higher and further.<br>
 :geoo/construction/concrete/016h: -16 168
 :geoo/construction/concrete/016h: 16 168
 :geoo/construction/concrete/032v: 288 176
-:geoo/construction/concrete/008h: 232 304
+:geoo/construction/concrete/008h: 232 240
 :geoo/construction/concrete/016vc: 592 256
-:geoo/construction/concrete/016hb: 112 248
-:geoo/construction/concrete/016h: 112 264
-:geoo/construction/concrete/016h: 144 264
 :geoo/construction/concrete/016d: 16 240
 :geoo/construction/concrete/008h: 0 240
-:geoo/construction/concrete/016ha: 496 48
-:geoo/construction/concrete/016hd: 496 64
-:geoo/construction/concrete/016h: 528 48
-:geoo/construction/concrete/016h: 560 48
-:geoo/construction/concrete/016hb: 592 48
-:geoo/construction/concrete/016hc: 592 64
 :geoo/construction/concrete/016hb: 592 128
 :geoo/construction/concrete/016v: 624 144
-:geoo/construction/concrete/016vc: 616 -16
-:geoo/construction/concrete/016v: 632 -16
-:geoo/construction/concrete/016vc: 632 48
-:geoo/construction/concrete/016v: 632 16
 :geoo/construction/concrete/016d: 408 352
-:geoo/construction/concrete/016v: 248 304
-:geoo/construction/concrete/016vd: 248 336
+:geoo/construction/concrete/016v: 248 240
 :geoo/construction/concrete/016ha: 592 200
 :geoo/construction/pillar_top_shaded: 592 232
 :geoo/construction/pillar_top_shaded: 624 232
@@ -171,4 +139,31 @@ $TUTORIAL_ENGLISH Runners are fast! Their jumps are much higher and further.<br>
 :geoo/construction/concrete/016h: 528 256
 :geoo/construction/concrete/016: 624 320
 :geoo/construction/concrete/016a: 608 352
-:geoo/construction/concrete/128: 120 312
+:geoo/abstract/pipes/cshort4: 238 232
+:geoo/abstract/pipes/cshort4: 246 232
+:geoo/abstract/pipes/cshort4: 252 232
+:geoo/construction/concrete/064h: 120 360
+:geoo/construction/concrete/016b: 248 320
+:geoo/construction/concrete/016: 248 272
+:geoo/construction/concrete/016vd: 248 288
+:geoo/construction/concrete/016d: 248 336
+:geoo/construction/concrete/016hb: 248 352
+:geoo/construction/concrete/032ha: 160 296
+:geoo/construction/concrete/008v: 224 296
+:geoo/construction/concrete/008v: 240 312
+:geoo/construction/concrete/016: 224 312
+:geoo/construction/concrete/016: 232 296
+:geoo/construction/concrete/016v: 232 328
+:geoo/construction/concrete/016va: 232 264
+:geoo/construction/concrete/016c: 232 248
+:geoo/construction/concrete/032h: 168 328
+:geoo/construction/concrete/008v: 160 328
+:geoo/construction/concrete/008v: 160 344
+:geoo/construction/concrete/008v: 112 248
+:geoo/construction/concrete/016: 112 264
+:geoo/construction/concrete/016h: 120 248
+:geoo/construction/concrete/016d: 128 264
+:geoo/construction/concrete/016vc: 288 240
+:geoo/construction/concrete/016vb: 320 240
+:geoo/construction/concrete/032: 288 272
+:geoo/construction/concrete/016v: 304 240
