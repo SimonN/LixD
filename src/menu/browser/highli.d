@@ -42,7 +42,6 @@ public:
         _buttonExit.hotkey = basics.user.keyMenuExit;
         _preview = new Preview(new Geom(20, 80, infoXl, 160, From.TOP_RIG));
         addChildren(_picker, _buttonExit, _preview);
-        updateWindowSubtitle();
     }
 
     ~this()
@@ -80,14 +79,12 @@ protected:
     {
         immutable ret = _picker.navigateToAndHighlightFile(
                         fn, CenterOnHighlitFile.onlyIfOffscreen);
-        updateWindowSubtitle();
         return ret;
     }
 
     final void navigateTo(Filename fn)
     {
         _picker.currentDir = fn;
-        updateWindowSubtitle();
     }
 
     final auto deleteFileHighlightNeighbor(Filename fn)
@@ -110,14 +107,5 @@ protected:
             onPickerExecuteFile(_picker.executeFileFilename);
         else if (_picker.executeDir)
             onPickerExecuteDir();
-    }
-
-private:
-    void updateWindowSubtitle()
-    {
-        assert (_picker.basedir   .rootless.length
-            <=  _picker.currentDir.rootless.length);
-        windowSubtitle = _picker.currentDir.rootless[
-                         _picker.basedir   .rootless.length .. $];
     }
 }
