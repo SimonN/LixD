@@ -91,6 +91,7 @@ void handleNukeButton(Game game) { with (game)
         return;
     pan.nukeSingle.on = true;
     pan.nukeMulti.on  = true;
+    pan.pause.on = false;
     game.cancelReplay();
     auto data = game.newReplayDataForNextUpdate();
     data.action = RepAc.NUKE;
