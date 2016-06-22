@@ -104,8 +104,6 @@ $winGameOverwriteQuestion   Soll dieses Replay wirklich überschrieben werden?
 
 // Help texts inside the game
 
-$gameSpawnintSlower           Fall-Intervall: Lix erscheinen langsamer.
-$gameSpawnintFaster            Fall-Intervall: Lix erscheinen schneller.
 $gamePause                Pause.
 $gameZoom                 Level-Zoom an- oder ausschalten.
 $gameSpeedSlow           Zeitlupe.
@@ -319,16 +317,14 @@ $optionKeyUnassigned         nichts
 $optionKeyForceLeft         Nur links
 $optionKeyForceRight        Nur rechts
 $optionKeyScroll             Scrollen
-$optionKeyPriorityInvert    Priorität invert.
-$optionKeySpawnintSlower    Spawn langs.
-$optionKeySpawnintFaster    Spawn schn.
+$optionKeyPriorityInvert    Priorität invertieren
 $optionKeyPause              Pause
-$optionKeyFrameBackMany       1 Sek. zurück
-$optionKeyFrameBackOne        1 Bild zurück
-$optionKeyFrameAheadOne       1 Bild vor
-$optionKeyFrameAheadMany      10 Sek. vor
-$optionKeySpeedFast         Schneller Vorl.
-$optionKeySpeedTurbo        Turbo
+$optionKeyFrameBackMany      ◀▮ 1 Sek.
+$optionKeyFrameBackOne       ◀▮ 1 Bild
+$optionKeyFrameAheadOne      ▮▶ 1 Bild
+$optionKeyFrameAheadMany     ▮▶ 10 Sek.
+$optionKeySpeedFast          ▶▶
+$optionKeySpeedTurbo         ▶▶▶
 $optionKeyRestart            Neustart
 $optionKeyStateLoad         Stand laden
 $optionKeyStateSave         Stand speich.

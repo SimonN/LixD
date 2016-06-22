@@ -125,8 +125,6 @@ enum Lang {
     winGameOverwriteQuestion,
 
     // help texts inside the game
-    gameSpawnintSlower,
-    gameSpawnintFaster,
     gamePause,
     gameZoom,
     gameSpeedSlow,
@@ -342,8 +340,6 @@ enum Lang {
     optionKeyForceRight,
     optionKeyScroll,
     optionKeyPriorityInvert,
-    optionKeySpawnintSlower,
-    optionKeySpawnintFaster,
     optionKeyPause,
     optionKeyFrameBackMany,
     optionKeyFrameBackOne,

@@ -107,8 +107,6 @@ $winGameOverwriteQuestion    Do you really want to overwrite this replay?
 
 // help texts inside the game
 
-$gameSpawnintSlower            Raise spawn interval: Lix enter the level slower.
-$gameSpawnintFaster             Lower spawn interval: Lix enter the level faster.
 $gamePause                 Pause the game.
 $gameZoom                  Zoom into the level.
 $gameSpeedSlow            Slow motion.
@@ -333,15 +331,13 @@ $optionKeyForceLeft          Force left
 $optionKeyForceRight         Force right
 $optionKeyScroll              Hold to scroll
 $optionKeyPriorityInvert      Priority invert
-$optionKeySpawnintSlower      Spawn faster
-$optionKeySpawnintFaster      Spawn slower
 $optionKeyPause               Pause
-$optionKeyFrameBackMany       Back 1 sec.
-$optionKeyFrameBackOne        Back 1 frame
-$optionKeyFrameAheadOne       Ahead 1 frame
-$optionKeyFrameAheadMany      Ahead 10 sec.
-$optionKeySpeedFast          Fast forward
-$optionKeySpeedTurbo         Turbo speed
+$optionKeyFrameBackMany       ◀▮ 1 sec.
+$optionKeyFrameBackOne        ◀▮ 1 frame
+$optionKeyFrameAheadOne       ▮▶ 1 frame
+$optionKeyFrameAheadMany      ▮▶ 10 sec.
+$optionKeySpeedFast           ▶▶
+$optionKeySpeedTurbo          ▶▶▶
 $optionKeyRestart             Restart
 $optionKeyStateLoad          Load state
 $optionKeyStateSave          Save state
