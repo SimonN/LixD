@@ -12,6 +12,7 @@ import editor.editor;
 import editor.gui.panel;
 import editor.paninit;
 import file.filename;
+import file.date;
 import file.language;
 import graphic.map;
 import gui;
@@ -61,17 +62,20 @@ void newLevel(Editor editor) {
     });
 }}
 
-void saveToExistingFile(Editor editor)
+void saveToExistingFile(Editor editor) {
+    with (editor)
 {
     if (editor._loadedFrom) {
         basics.user.singleLastLevel = editor._loadedFrom;
-        editor._level.saveToFile(editor._loadedFrom);
-        editor._levelToCompareForDataLoss = new Level(editor._loadedFrom);
+        if (_level != _levelToCompareForDataLoss)
+            _level.built = Date.now();
+        _level.saveToFile(_loadedFrom);
+        _levelToCompareForDataLoss = new Level(_loadedFrom);
         playLoud(Sound.DISKSAVE);
     }
     else
         editor.openSaveAsBrowser();
-}
+}}
 
 void openSaveAsBrowser(Editor editor) {
     with (editor)

@@ -1,6 +1,20 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.4
+-----
+
+2016-06-27
+
+Editor increases the level's $BUILT when saving a changed level.
+
+Fix #106: With mixed dirs and files, picker couldn't scroll to the last file.
+Fix #107: Prefer queuing builders to spamming, then you couldn't queue at all.
+
+New user option to unpause on skill assignments.
+
+Tutorial levels are solvable again, and you can't die in them as easily.
+
 0.6.3
 -----
 
