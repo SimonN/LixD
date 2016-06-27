@@ -185,7 +185,7 @@ PotentialAssignee generatePotentialAssignee(
         mouseOnLand.x, mouseOnLand.y, lixxie.ex, lixxie.ey + dMinusU/2);
     if (currentSkill !is null)
         // true = consider personal settings like multiple builders
-        potAss.priority = lixxie.priorityForNewAc(currentSkill.skill, true);
+        potAss.priority = lixxie.priorityForNewAc(currentSkill.skill);
     else
         // we shouldn't need it, leftover from C++
         potAss.priority = 1;

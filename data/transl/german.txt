@@ -299,8 +299,8 @@ $optionReplayAutoMulti       Im Mehrspieler auto-speichern
 $optionMouseSpeed            Mausgeschwindigkeit
 $optionScrollSpeedEdge       Scroll-Geschw. am Bildrand
 $optionScrollSpeedClick      Scroll-Geschw. mit dieser Taste
-$optionAvoidBuilderQueuing   Builder → Nichtbuilder bevorzugen
-$optionAvoidBatterToExploder Batter → Nichtexploder bevorzugen
+$optionAvoidBuilderQueuing   Builder eher an Nicht-Builder
+$optionAvoidBatterToExploder Batter eher an Nicht-Exploder
 
 $optionScreenWindowed           Fenstermodus
 $optionScreenWindowedRes        Fenster-Auflösung

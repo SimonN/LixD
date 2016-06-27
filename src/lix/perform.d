@@ -79,7 +79,7 @@ void useFlingers(Lixxie lixxie) { with (lixxie)
 void useGoals(Lixxie lixxie) { with (lixxie)
 {
     if (! (footEncounters & Phybit.goal)
-        || priorityForNewAc(Ac.exiter, false) <= 1
+        || priorityForNewAc(Ac.exiter) <= 1
     )
         return;
     const(Tribe)[] alreadyScoredFor;

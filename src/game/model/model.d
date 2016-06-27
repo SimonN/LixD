@@ -128,7 +128,7 @@ private:
                 return;
             Lixxie lixxie = tribe.lixvec[i.toWhichLix];
             assert (lixxie);
-            if (lixxie.priorityForNewAc(i.skill, false) <= 1
+            if (lixxie.priorityForNewAc(i.skill) <= 1
                 || tribe.skills[i.skill] == 0
                 || (lixxie.facingLeft  && i.action == RepAc.ASSIGN_RIGHT)
                 || (lixxie.facingRight && i.action == RepAc.ASSIGN_LEFT))

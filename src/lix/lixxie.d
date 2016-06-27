@@ -463,21 +463,19 @@ bool cursorShouldOpenOverMe() const
 // higher return values mean higher priority. The player can invert priority,
 // e.g., by holding the right mouse button. This inversion is not handled by
 // this function, but should be done by the calling game code.
-int priorityForNewAc(
-    in Ac   newAc,
-    in bool personal // Shall personal settings override the default valuation?
-) const {            // If false, allow anything anyone could do, for network
-    int p = 0;
+int priorityForNewAc(in Ac newAc) const
+{
+    int p = 0; // return value
 
     // Nothing allowed at all, don't even open the cursor
     if (! cursorShouldOpenOverMe) return 0;
 
     // Permanent skills
-    if ((newAc == Ac.imploder  && ploderTimer > 0)
+    if ((newAc == Ac.imploder && ploderTimer > 0)
      || (newAc == Ac.exploder && ploderTimer > 0)
-     || (newAc == Ac.runner    && abilityToRun)
-     || (newAc == Ac.climber   && abilityToClimb)
-     || (newAc == Ac.floater   && abilityToFloat) ) return 1;
+     || (newAc == Ac.runner && abilityToRun)
+     || (newAc == Ac.climber && abilityToClimb)
+     || (newAc == Ac.floater && abilityToFloat) ) return 1;
 
     switch (ac) {
         // When a blocker shall be freed/exploded, the blocker has extremely
@@ -485,7 +483,7 @@ int priorityForNewAc(
         case Ac.blocker:
             if (newAc == Ac.walker
              || newAc == Ac.imploder
-             || newAc == Ac.exploder) p = 5000;
+             || newAc == Ac.exploder) p = 6000;
             else return 1;
             break;
 
@@ -528,25 +526,25 @@ int priorityForNewAc(
             p = 3000;
             break;
 
-        // builders and platformers can be queued. Use the personal variable
-        // to see whether we should read the user's setting. If false, we're
-        // having a replay or multiplayer game, and then queuing must work
-        // even if the user has disabled it for themselves.
+        // Builders and platformers can be queued. These assignments go
+        // always through (p > 1), that's important in networked games.
+        // Maybe we prefer non-builders over builders here, but that's not
+        // a problem with networking. Values > 1 do something different
+        // in the UI, but allow the same networking actions.
         case Ac.builder:
         case Ac.platformer:
-            if (newAc == ac && (! personal || avoidBuilderQueuing.value))
-                p = 1000;
-            else if (newAc != ac)
-                p = 4000;
+            if (newAc == ac)
+                p = avoidBuilderQueuing.value ? 1000 : 4000;
             else
-                return 1;
+                p = 5000;
             break;
 
         // Usually, anything different from the current activity can be assign.
         default:
-            if (newAc != ac) p = 4000;
-            else return 1;
-
+            if (newAc != ac)
+                p = 5000;
+            else
+                return 1;
     }
     p += (newAc == Ac.batter && avoidBatterToExploder.value
           ? (- ploderTimer) : ploderTimer);
