@@ -74,7 +74,11 @@ public:
         newTop = newTop.roundTo(coarseness);
         newTop = max(newTop, 0);
         if (newTop < _dirs.len * dirSizeMultiplier)
-            newTop -= newTop % dirSizeMultiplier;
+            // How to handle non-multiples of dirSizeMultiplier?
+            // Instead of -= newTop % dirSizeMultiplier,
+            // scroll down as far as possible, to remedy github issue #106.
+            newTop = (newTop + dirSizeMultiplier - 1)
+                / dirSizeMultiplier * dirSizeMultiplier;
         if (_top != newTop) {
             _top = newTop;
             moveButtonsAccordingToTop();
