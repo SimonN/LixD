@@ -15,6 +15,7 @@ import menu.browser.frommain;
 class BrowserSingle : BrowserCalledFromMainMenu {
 private:
     bool _gotoEditor;
+    Level _levelRecent;
     TextButton _edit;
     LabelTwo _by, _save;
 
@@ -43,6 +44,11 @@ public:
         addChildren(_edit, _delete, _by, _save);
     }
 
+    override @property inout(Level) levelRecent() inout
+    {
+        return _levelRecent;
+    }
+
     @property bool gotoEditor() const
     {
         if (_gotoEditor)
@@ -54,23 +60,23 @@ protected:
     override void onFileHighlight(Filename fn)
     {
         assert (_edit);
-        levelRecent  = fn is null ? null : new Level(fileRecent);
+        _levelRecent = fn is null ? null : new Level(fileRecent);
         [_edit, _delete, _by, _save].each!(e => e.hidden = fn is null);
-        if (levelRecent) {
-            _by  .value = levelRecent.author;
-            _save.value = "%s/%s".format(levelRecent.required,
-                                         levelRecent.initial);
+        if (_levelRecent) {
+            _by  .value = _levelRecent.author;
+            _save.value = "%s/%s".format(_levelRecent.required,
+                                         _levelRecent.initial);
         }
-        previewLevel(levelRecent);
+        previewLevel(_levelRecent);
     }
 
     override void onFileSelect(Filename fn)
     {
         assert (fileRecent  !is null);
-        assert (levelRecent !is null);
+        assert (_levelRecent !is null);
         // the super class guarantees that on_file_select is only called after
         // onFileHighlight has been called with the same fn immediately before
-        if (levelRecent.good) {
+        if (_levelRecent.good) {
             basics.user.singleLastLevel = fileRecent;
             gotoGame = true;
         }
@@ -89,8 +95,8 @@ private:
     {
         auto m = new MsgBox(Lang.saveBoxTitleDelete.transl);
         m.addMsg(Lang.saveBoxQuestionDeleteLevel.transl);
-        m.addMsg(Lang.saveBoxLevelName.transl ~ " " ~ (levelRecent !is null
-            ? levelRecent.name : fileRecent.fileNoExtNoPre));
+        m.addMsg(Lang.saveBoxLevelName.transl ~ " " ~ (_levelRecent !is null
+            ? _levelRecent.name : fileRecent.fileNoExtNoPre));
         m.addMsg(Lang.saveBoxFileName.transl ~ " " ~ fileRecent.rootful);
         return m;
     }

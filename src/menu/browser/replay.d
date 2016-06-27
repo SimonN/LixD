@@ -13,7 +13,17 @@ import menu.browser.frommain;
 static import basics.globals;
 
 class BrowserReplay : BrowserCalledFromMainMenu {
+private:
+    Replay _replayRecent;
+    Level _included;
+    Level _pointedTo;
+    TextButton _buttonPlayWithPointedTo;
+    TextButton _extract;
+    bool _forcePointedTo;
 
+    mixin DeleteMixin deleteMixin;
+
+public:
     this()
     {
         super(Lang.browserReplayTitle.transl,
@@ -28,10 +38,23 @@ class BrowserReplay : BrowserCalledFromMainMenu {
             b.hotkey = hotkey;
             return b;
         }
+        _buttonPlayWithPointedTo = newInfo(1, 100, "pointedTo", keyMenuEdit);
         _delete  = newInfo(1, 60, Lang.browserDelete.transl, keyMenuDelete);
         _extract = newInfo(0, 60, "(extract)" /*Lang.browserExtract.transl*/,
                            keyMenuExport);
-        addChildren(_delete, _extract);
+        addChildren(_buttonPlayWithPointedTo, _delete, _extract);
+    }
+
+    override @property inout(Level) levelRecent() inout
+    {
+        return (_pointedTo !is null && _pointedTo.good
+            && (_forcePointedTo || _included is null || ! _included.good))
+            ? _pointedTo : _included;
+    }
+
+    override @property inout(Replay) replayRecent() inout
+    {
+        return _replayRecent;
     }
 
 protected:
@@ -41,18 +64,21 @@ protected:
         assert (_delete);
         assert (_extract);
         if (fn is null) {
-            replayRecent = null;
-            levelRecent  = null;
+            _replayRecent = null;
+            _included = null;
+            _pointedTo = null;
+            _buttonPlayWithPointedTo.hide();
             _delete.hide();
             _extract.hide();
         }
         else {
-            replayRecent = Replay.loadFromFile(fn);
-            levelRecent  = new Level(fn); // open the replay file as level
+            _forcePointedTo = false;
+            _replayRecent = Replay.loadFromFile(fn);
+            _included = new Level(fn); // open the replay file as level
+            _pointedTo = new Level(_replayRecent.levelFilename);
             _delete.show();
-            _extract.hidden = ! levelRecent.nonempty;
-            if (! levelRecent.nonempty)
-                levelRecent = new Level(replayRecent.levelFilename);
+            _buttonPlayWithPointedTo.hidden = ! _pointedTo.good;
+            _extract.hidden = ! _included.nonempty;
         }
         previewLevel(levelRecent);
     }
@@ -61,6 +87,7 @@ protected:
     {
         assert (replayRecent !is null);
         assert (levelRecent  !is null);
+        _forcePointedTo = false;
         if (levelRecent.good) {
             basics.user.replayLastLevel = super.fileRecent;
             gotoGame = true;
@@ -71,14 +98,17 @@ protected:
     {
         super.calcSelf();
         calcDeleteMixin();
+        if (_buttonPlayWithPointedTo.execute && replayRecent !is null) {
+            // like onFileSelect, but for pointedTo
+            _forcePointedTo = true;
+            if (levelRecent && levelRecent.good) {
+                basics.user.replayLastLevel = super.fileRecent;
+                gotoGame = true;
+            }
+        }
     }
 
 private:
-
-    TextButton _extract;
-
-    mixin DeleteMixin deleteMixin;
-
     MsgBox newMsgBoxDelete()
     {
         auto m = new MsgBox(Lang.saveBoxTitleDelete.transl);

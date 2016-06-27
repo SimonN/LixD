@@ -8,22 +8,18 @@ import menu.browser.select;
 
 class BrowserCalledFromMainMenu : BrowserHighlightSelect {
 private:
-    bool     _gotoGame;
-    Replay   _replayRecent;
-    Level    _levelRecent;
+    bool _gotoGame;
 
 public:
     // forward constructor :E
     this(T)(string title, Filename baseDir, T t) { super(title, baseDir, t); }
 
-    @property bool          gotoGame()     const { return _gotoGame;     }
-    @property inout(Replay) replayRecent() inout { return _replayRecent; }
-    @property inout(Level)  levelRecent()  inout { return _levelRecent;  }
+    @property bool gotoGame() const { return _gotoGame; }
+    @property inout(Replay) replayRecent() inout { return null; }
+    abstract @property inout(Level) levelRecent() inout;
 
 protected:
-    @property bool   gotoGame(bool b)       { return _gotoGame     = b; }
-    @property Replay replayRecent(Replay r) { return _replayRecent = r; }
-    @property Level  levelRecent (Level l)  { return _levelRecent  = l; }
+    @property bool gotoGame(bool b) { return _gotoGame = b; }
 }
 
 /* How to use the DeleteMixin:
