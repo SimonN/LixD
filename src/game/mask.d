@@ -42,15 +42,15 @@ void initialize() { with (TerrainDeletion.Type)
     mutableMasks[bashNoRelicsLeft] = mutableMasks[bashNoRelicsRight].mirrored;
 
     mutableMasks[mineRight] = Mask([
-        "...XXXXX..........", // -20
-        ".XXXXXXXXX........",
-        "XXXXXXXXXXXX......",
-        "XXXXXXXXXXXXXX....",
-        "XXXXXXXXXXXXXXX...", // -16
-        "XXXXXXXXXXXXXXXX..", // -15
-        "XXXXXXXXXXXXXXXXX.", // -14
-        "XXXXXXXXXXXXXXXXX.", ] ~
-        "XXXXXXXXXXXXXXXXXX".repeat(12).array ~ [ // from -12 to -1 inclusive
+        "...NNNNN..........", // -20
+        ".NNNNNNNNN........",
+        "NNXXXXXXNNNN......",
+        "NNXXXXXXXXXXNN....",
+        "NNXXXXXXXXXXXXN...", // -16
+        "NNXXXXXXXXXXXXXX..", // -15
+        "NNXXXXXXXXXXXXXXX.", // -14
+        "NNXXXXXXXXXXXXXXX.", ] ~
+        "NNXXXXXXXXXXXXXXXX".repeat(12).array ~ [ // from -12 to -1 inclusive
         "#XXXXXXXXXXXXXXXX.", // 0, with '#' the effective coordinate
         "XXXXXXXXXXXXXXXXX.", // 1
         "..XXXXXXXXXXXXXX..", // 2 = old ground level
