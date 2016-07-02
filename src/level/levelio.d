@@ -14,6 +14,7 @@ import std.typecons;
 
 static import glo = basics.globals;
 
+import basics.help; // len
 import basics.rect;
 import file.date;
 import file.filename;
@@ -59,8 +60,6 @@ package void loadFromFile(Level level, in Filename fn)
     level.load_level_finalize();
 }
 
-
-
 package FileFormat get_file_format(in Filename fn)
 {
     if (! fileExists(fn)) return FileFormat.NOTHING;
@@ -71,13 +70,9 @@ package FileFormat get_file_format(in Filename fn)
     // Consider taking not a Filename, but an already opened (ref std.File)!
 }
 
-
-
 // ############################################################################
 // ################################################ Loading the Lix file format
 // ############################################################################
-
-
 
 private enum cppHalfScreenX = 640 / 2;
 private enum cppHalfScreenY = (480 - 80) / 2;
@@ -209,53 +204,40 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
 
 
 
-private void load_level_finalize(Level level)
+private void load_level_finalize(Level level) {
+    with (level)
 {
-    with (level) {
-        intendedNumberOfPlayers = clamp(intendedNumberOfPlayers, 1,
-                                        glo.teamsPerLevelMax);
-        level.resize(topology.xl, topology.yl);
-        initial  = clamp(initial,  1, Level.initialMax);
-        required = clamp(required, 1, initial);
-        spawnint = clamp(spawnint, Level.spawnintMin, Level.spawnintMax);
-        bgRed   = clamp(bgRed,   0, 255);
-        bgGreen = clamp(bgGreen, 0, 255);
-        bgBlue  = clamp(bgBlue,  0, 255);
+    intendedNumberOfPlayers = clamp(intendedNumberOfPlayers, 1,
+                                    glo.teamsPerLevelMax);
+    level.resize(topology.xl, topology.yl);
+    initial  = clamp(initial,  1, Level.initialMax);
+    required = clamp(required, 1, initial);
+    spawnint = clamp(spawnint, Level.spawnintMin, Level.spawnintMax);
+    bgRed   = clamp(bgRed,   0, 255);
+    bgGreen = clamp(bgGreen, 0, 255);
+    bgBlue  = clamp(bgBlue,  0, 255);
 
-        // Only allow one type of im/exploder.
-        if (ploder == Ac.exploder)
-            skills[Ac.imploder] = 0;
-        else
-            skills[Ac.exploder] = 0;
+    // Only allow one type of im/exploder.
+    if (ploder == Ac.exploder)
+        skills[Ac.imploder] = 0;
+    else
+        skills[Ac.exploder] = 0;
 
-        terrain = terrain.noowAlgorithm(topology);
+    terrain = terrain.noowAlgorithm(topology);
 
-        // Set level error. The error for file not found, or the error for
-        // missing tile images, have been set already.
-        if (_status == LevelStatus.GOOD) {
-            int count = 0;
-            foreach (poslist; pos)
-                count += poslist.length;
-            foreach (Ac ac, const int nr; skills)
-                count += nr;
-            if (count == 0)
-                _status = LevelStatus.BAD_EMPTY;
-            else if (pos[GadType.HATCH] == null)
-                _status = LevelStatus.BAD_HATCH;
-            else if (pos[GadType.GOAL ] == null)
-                _status = LevelStatus.BAD_GOAL;
-        }
+    if (_status == LevelStatus.GOOD) {
+        if (terrain.empty && pos[].all!(li => li.empty))
+            _status = LevelStatus.BAD_EMPTY;
+        else if (pos[GadType.HATCH].empty)
+            _status = LevelStatus.BAD_HATCH;
+        else if (pos[GadType.GOAL].empty)
+            _status = LevelStatus.BAD_GOAL;
     }
-    // end with
-}
-
-
+}}
 
 // ############################################################################
 // ###################################### Saving a level in the Lix file format
 // ############################################################################
-
-
 
 package void implSaveToFile(const(Level) level, in Filename fn)
 {
