@@ -1,5 +1,5 @@
 $BUILT                                             2012-02-26 18:31:36
-$AUTHOR                                                        Michael S. Repton
+$AUTHOR Michael S. Repton
 $GERMAN                                                               
 $ENGLISH                                                       Toccata
 

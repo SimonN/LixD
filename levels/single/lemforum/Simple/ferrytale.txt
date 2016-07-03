@@ -1,34 +1,22 @@
-$BUILT 2012-06-13 01:22:36
+$BUILT 2016-06-28 12:02:53
 $AUTHOR Simon
-$GERMAN 
 $ENGLISH Ferry Tale
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 0
 #INITIAL 10
 #REQUIRED 5
 #SPAWN_INTERVAL 19
-#SPAWN_INTERVAL_FAST 19
 
-#WALKER 0
-#JUMPER 0
-#CLIMBER 0
 #FLOATER 1
-#EXPLODER2 0
 #BLOCKER 1
-#BATTER 1
 #BUILDER 2
-#PLATFORMER 0
 #BASHER 10
-#MINER 0
-#DIGGER 0
+#BATTER 1
+#EXPLODER2 0
 
 :geoo/construction/Hatch.H: 32 240
 
@@ -53,6 +41,7 @@ $ENGLISH Ferry Tale
 :geoo/construction/wall/small_brickdiag_bd: 320 344
 :geoo/construction/wall/small_brickdiag_bd: 336 360
 :geoo/construction/wall/small_brickdiag_bd: 352 376
+:matt/goldmine/crate32: 535 239
 :matt/goldmine/crate64: 552 264
 :matt/goldmine/crate32: 552 328
 :geoo/sandstone/pillar_32: 384 376 r
@@ -173,3 +162,4 @@ $ENGLISH Ferry Tale
 :geoo/sandstone/pillar_32: 384 344 r
 :geoo/sandstone/pillar_32: 416 344 r
 :geoo/sandstone/pillar_32: 416 376 r
+:matt/goldmine/crate32: 520 271

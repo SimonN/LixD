@@ -1,5 +1,5 @@
 $BUILT                                             2012-02-04 11:42:40
-$AUTHOR                                                        Michael S. Repton
+$AUTHOR Michael S. Repton
 $GERMAN                                                               
 $ENGLISH                                                      Vignette
 

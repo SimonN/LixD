@@ -1,6 +1,6 @@
 $BUILT 2015-08-26 20:23:03
-$AUTHOR I.S./Michael S. Repton
-$GERMAN
+$AUTHOR I.S./Michael
+$GERMAN 
 $ENGLISH Path of Wickedness
 
 #SIZE_X 640

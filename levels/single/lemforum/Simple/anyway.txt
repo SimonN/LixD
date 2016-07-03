@@ -1,28 +1,22 @@
-$BUILT 2015-09-04 00:52:17
+$BUILT 2016-06-28 11:28:32
 $AUTHOR Insane Steve
-$GERMAN 
 $ENGLISH Any Way You Want
 
-$HINT_ENGLISH You can do this with one blocker, builder, <br>basher, miner, or digger, in some way. 
-$HINT_ENGLISH Or just floaters or climbers. 
-$HINT_ENGLISH Or even bombers, but that's the hard way. <br>If your first inclination was to use bombers, <br>I'd recommend psychiatric help. 
+$HINT_ENGLISH You can do this with one blocker, builder, <br>basher, miner, or digger, in some way.
+$HINT_ENGLISH Or just floaters or climbers.
+$HINT_ENGLISH Or even bombers, but that's the hard way. <br>If your first inclination was to use bombers, <br>I'd recommend psychiatric help.
 $HINT_ENGLISH If you're still stuck, I can't really tell <br>you anything else but to go back to the tutorials <br>and study how each task works. <br>They don't get easier than this >_<
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 3200
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 1264
 #START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 0
-#INITIAL 20
-#REQUIRED 10
-#SPAWN_INTERVAL 90
-#SPAWN_INTERVAL_FAST 4
+#INITIAL 10
+#REQUIRED 1
+#SPAWN_INTERVAL 50
 
 #WALKER 20
 #RUNNER 20
@@ -39,7 +33,7 @@ $HINT_ENGLISH If you're still stuck, I can't really tell <br>you anything else b
 #BATTER 20
 #CUBER 20
 
-:matt/marble/Hatch.H: 1520 48
+:matt/marble/Hatch.H: 1488 48
 
 :matt/marble/Goal.G: 1280 320
 

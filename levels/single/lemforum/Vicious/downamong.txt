@@ -1,5 +1,5 @@
 $BUILT                                             2012-02-15 17:06:25
-$AUTHOR                                                        Michael S. Repton
+$AUTHOR Michael S. Repton
 $GERMAN                                                               
 $ENGLISH                                       Down Among the Dead Lix
 

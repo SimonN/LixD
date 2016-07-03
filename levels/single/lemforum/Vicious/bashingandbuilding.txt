@@ -1,39 +1,37 @@
-$BUILT 2015-06-25 19:45:05
+$BUILT 2016-06-27 18:45:05
 $AUTHOR Nepster
-$GERMAN 
 $ENGLISH Bashing & Building
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 704
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 0
 #INITIAL 30
 #REQUIRED 29
 #SPAWN_INTERVAL 32
-#SPAWN_INTERVAL_FAST 4
 
-#NOTHING 0
 #CLIMBER 1
-#NOTHING 0
 #BUILDER 7
-#NOTHING 0
 #BASHER 7
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#EXPLODER2 0
 
 :matt/marble/Hatch.H: 560 214
 
 :matt/marble/Goal.G: 640 96
 
+:proxima/tile/blue1s: 189 54 rr
+$BEGIN_TILE_GROUP 0
+:proxima/tile/blue1: 0 8
+:proxima/tile/blue1a: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:proxima/tile/blue1s: 32 5 r
+:Group-0: 0 5
+:proxima/tile/blue1bs: 37 3 rrrd
+:proxima/tile/blue1bs: 34 0 rd
+$END_TILE_GROUP
+:Group-1: 128 82
 :proxima/tile/blue1: 640 336
 :proxima/tile/blue1: 640 272
 :proxima/tile/blue1: 640 208
@@ -68,14 +66,8 @@ $ENGLISH Bashing & Building
 :proxima/tile/blue1: 128 146
 :proxima/tile/blue1: 64 146
 :proxima/tile/blue1: 64 82
-:proxima/tile/blue1: 128 82
-:proxima/tile/blue1a: 128 74 d
-:proxima/tile/blue1s: 160 82 rn
-:proxima/tile/blue1bs: 165 80 rrrd
-:proxima/tile/blue1bs: 162 77 rd
 :proxima/tile/blue1bs: 130 76 rrd
 :proxima/tile/blue1bs: 165 111 rrd
-:proxima/tile/blue1s: 189 54 rrn
 :proxima/tile/blue1s: 189 50 d
 :proxima/tile/blue1s: 219 54 rrr
 :proxima/tile/blue1s: 219 50 d

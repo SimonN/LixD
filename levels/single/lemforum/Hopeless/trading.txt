@@ -1,4 +1,4 @@
-$BUILT 2015-06-22 11:37:07
+$BUILT 2016-04-30 15:35:50
 $AUTHOR geoo
 $GERMAN 
 $ENGLISH Trading and Cooperating
@@ -17,18 +17,15 @@ $ENGLISH Trading and Cooperating
 #SPAWN_INTERVAL 48
 #SPAWN_INTERVAL_FAST 48
 
-#WALKER 0
-#JUMPER 1
 #CLIMBER 1
-#FLOATER 0
 #EXPLODER 1
 #BLOCKER 1
-#BATTER 1
 #BUILDER 1
 #PLATFORMER 1
 #BASHER 2
-#MINER 0
 #DIGGER 4
+#JUMPER 1
+#BATTER 1
 
 :geoo/abstract/hatch.H: 368 64
 :geoo/abstract/hatch.H: 312 288 r
@@ -51,11 +48,10 @@ $ENGLISH Trading and Cooperating
 :geoo/construction/sawblade_medium.F: 192 48
 :geoo/construction/sawblade_medium.F: 144 64
 :geoo/construction/sawblade_medium.F: 846 64
-
-:geoo/construction/trampoline.T: 228 96
-:geoo/construction/trampoline.T: 164 160
-:geoo/construction/trampoline.T: 854 160
-:geoo/construction/trampoline.T: 790 96
+:geoo/construction/sawblade_small.F: 172 138
+:geoo/construction/sawblade_small.F: 846 138
+:geoo/construction/sawblade_small.F: 782 74
+:geoo/construction/sawblade_small.F: 236 74
 
 :matt/carnival/35: 570 80
 :matt/carnival/34: 634 80
@@ -68,7 +64,6 @@ $ENGLISH Trading and Cooperating
 :matt/marble/21c: 682 160
 :matt/marble/21c: 746 176
 :matt/marble/21c: 692 160
-:geoo/steel/dark_64x64.S: 754 336
 :matt/marble/20d: 906 288
 :matt/marble/20d: 922 272
 :matt/marble/20d: 890 272
@@ -90,7 +85,6 @@ $ENGLISH Trading and Cooperating
 :matt/marble/20d: 128 288
 :matt/marble/20d: 144 288
 :geoo/steel/dark_64x64.S: 104 336
-:geoo/steel/dark_64x64.S: 168 336
 :geoo/steel/dark_64x64.S: 296 336
 :geoo/steel/dark_64x64.S: 360 336
 :geoo/steel/dark_64x64.S: 360 272
@@ -102,8 +96,6 @@ $ENGLISH Trading and Cooperating
 :matt/carnival/34: 572 128
 :matt/marble/21c: 698 128
 :matt/marble/21c: 792 128
-:geoo/steel/dark_64x64.S: 818 336
-:geoo/steel/dark_64x64.S: 232 336
 :geoo/steel/dark_64x64.S: 626 336
 :geoo/steel/dark_64x64.S: 690 336
 :geoo/construction/platform.S: 706 60
@@ -309,3 +301,27 @@ $ENGLISH Trading and Cooperating
 :geoo/construction/platform_single.S: 472 54 d
 :matt/marble/20a: 590 -48 d
 :matt/marble/20a: 444 -48 d
+:matt/marble/20d: 232 336 r
+:matt/marble/20d: 232 340 rd
+:matt/marble/20d: 232 332 rn
+:matt/marble/20d: 168 336 r
+:matt/marble/20d: 168 340 rd
+:matt/marble/20d: 168 332 rn
+:matt/marble/20d: 818 336 r
+:matt/marble/20d: 818 340 rd
+:matt/marble/20d: 818 332 rn
+:matt/marble/20d: 754 336 r
+:matt/marble/20d: 754 340 rd
+:matt/marble/20d: 754 332 rn
+:geoo/construction/squarebrick_large: 748 304 d
+:geoo/construction/squarebrick_large: 792 304 d
+:geoo/steel/dark_16x16o.S: 778 334
+:geoo/construction/squarebrick_large: 812 304 d
+:geoo/construction/squarebrick_large: 856 304 d
+:geoo/steel/dark_16x16o.S: 842 334
+:geoo/construction/squarebrick_large: 270 304 d
+:geoo/construction/squarebrick_large: 206 304 d
+:geoo/construction/squarebrick_large: 226 304 d
+:geoo/steel/dark_16x16o.S: 256 334
+:geoo/construction/squarebrick_large: 162 304 d
+:geoo/steel/dark_16x16o.S: 192 334

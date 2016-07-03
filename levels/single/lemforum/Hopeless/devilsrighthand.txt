@@ -1,23 +1,17 @@
-$BUILT 2015-06-25 19:56:57
+$BUILT 2016-06-27 17:53:06
 $AUTHOR Nepster
-$GERMAN 
 $ENGLISH Devil's Right Hand
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1086
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 366
 #START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 0
-#INITIAL 80
-#REQUIRED 76
+#INITIAL 24
+#REQUIRED 20
 #SPAWN_INTERVAL 53
-#SPAWN_INTERVAL_FAST 4
 
 #CLIMBER 3
 #FLOATER 3
@@ -25,12 +19,6 @@ $ENGLISH Devil's Right Hand
 #BLOCKER 2
 #BUILDER 3
 #BASHER 3
-#MINER 0
-#DIGGER 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 
 :matt/underworld/Hatch.H: 768 112
 :matt/underworld/Hatch.H: 128 274
@@ -39,6 +27,28 @@ $ENGLISH Devil's Right Hand
 
 :proxima/flame.F: 988 320
 
+:matt/underworld/thinplatform128: 828 352 rrr
+:matt/underworld/thinplatform128: 826 344 rrr
+:matt/underworld/thinplatform64: 826 344 rrr
+:matt/underworld/thinplatform128: 824 336 rrr
+:matt/underworld/thinplatform64: 824 336 rrr
+:matt/underworld/thinplatform128: 822 328 rrr
+:matt/underworld/thinplatform64: 822 328 rrr
+:matt/underworld/thinplatform128: 820 320 rrr
+:matt/underworld/thinplatform64: 820 320 rrr
+:matt/underworld/thinplatform128: 818 312 rrr
+:matt/underworld/thinplatform128: 816 304 rrr
+:matt/underworld/thinplatform128: 814 296 rrr
+:matt/underworld/thinplatform128: 812 288 rrr
+:matt/underworld/thinplatform128: 810 280 rrr
+:matt/underworld/thinplatform128: 808 272 rrr
+:matt/underworld/thinplatform128: 806 264 rrr
+:matt/underworld/thinplatform128: 804 256 rrr
+:geoo/construction/platform.S: 804 320 fr
+:matt/underworld/02: 256 256
+:matt/underworld/02: 512 256
+:matt/underworld/00: 328 368
+:matt/underworld/00: 448 368
 :matt/underworld/thinplatform128: 576 188
 :matt/underworld/thinplatform128: 640 188
 :matt/underworld/thinplatform128: 600 212
@@ -55,34 +65,14 @@ $ENGLISH Devil's Right Hand
 :matt/underworld/thinplatform16: 664 116
 :matt/underworld/thinplatform16: 680 116
 :matt/underworld/thinplatform16: 648 116
-:matt/underworld/00: 328 368
-:matt/underworld/00: 440 368
+:matt/underworld/02: 512 352
 :matt/underworld/00: 128 264
 :matt/underworld/02: 256 352
-:matt/underworld/02: 512 352
-:matt/underworld/thinplatform128: 26 22 rrr
-:matt/underworld/thinplatform64: 26 22 rrr
-:matt/underworld/thinplatform128: 28 32 rrr
-:matt/underworld/thinplatform64: 28 32 rrr
-:matt/underworld/thinplatform128: 30 42 rrr
-:matt/underworld/thinplatform64: 30 42 rrr
-:matt/underworld/thinplatform128: 32 52 rrr
-:matt/underworld/thinplatform64: 32 52 rrr
-:matt/underworld/thinplatform128: 34 62 rrr
-:matt/underworld/thinplatform64: 34 62 rrr
-:matt/underworld/thinplatform16: 36 122 rrr
-:matt/underworld/thinplatform64: 36 72 rrr
-:matt/underworld/thinplatform64: 38 82 rrr
-:matt/underworld/thinplatform64: 40 92 rrr
 :matt/underworld/00: 448 208
 :geoo/steel/dark_64x32o.S: 256 368
 :matt/underworld/00: 320 208
 :matt/underworld/00: 320 208
 :matt/underworld/00: 384 208
-:matt/underworld/thinplatform64: 42 102 rrr
-:matt/underworld/thinplatform16: 44 122 rrr
-:matt/underworld/thinplatform16: 44 112 rrr
-:matt/underworld/thinplatform16: 46 122 rrr
 :matt/underworld/00: 576 368
 :matt/underworld/00: 640 368
 :matt/underworld/00: 704 368
@@ -108,12 +98,7 @@ $ENGLISH Devil's Right Hand
 :matt/underworld/00: 960 0
 :matt/underworld/00: 896 0
 :matt/underworld/00: 832 0
-:matt/underworld/00: 460 368 d
 :geoo/steel/dark_64x32o.S: 512 368
-:matt/underworld/00: 448 368 n
-:matt/underworld/00: 320 368
-:matt/underworld/00: 340 368 d
-:matt/underworld/00: 328 368 n
 :matt/underworld/00: 64 368
 :matt/underworld/00: 128 368
 :matt/underworld/00: 192 368
@@ -196,7 +181,6 @@ $ENGLISH Devil's Right Hand
 :geoo/construction/platform_single.S: 504 366
 :geoo/construction/platform_single.S: 320 366
 :geoo/construction/platform_single.S: 286 366
-:geoo/construction/platform.S: 804 320 fr
 :geoo/construction/platform.S: 804 288 fr
 :geoo/construction/platform.S: 804 256 fr
 :geoo/construction/platform_single.S: 546 366 d
@@ -210,59 +194,41 @@ $ENGLISH Devil's Right Hand
 :geoo/construction/platform.S: 574 240 fr
 :geoo/construction/platform.S: 256 256 fr
 :geoo/construction/platform.S: 256 240 fr
-:matt/underworld/09a: 502 294
-:matt/underworld/09b: 542 288 r
-:matt/underworld/09c: 510 270 rrrd
-:geoo/construction/concrete/016ha: 548 297 d
-:matt/underworld/09c: 507 301 frd
-:geoo/construction/concrete/016: 539 312 d
-:geoo/construction/concrete/016: 571 296 d
-:matt/underworld/09b: 507 305 d
-:geoo/construction/concrete/032: 555 313 d
-:geoo/construction/concrete/032: 487 281 d
-:geoo/construction/concrete/032: 495 311 d
-:matt/underworld/02: 512 256 n
+$BEGIN_TILE_GROUP 0
+:matt/underworld/09a: 15 24
+:matt/underworld/09b: 55 18 r
+:matt/underworld/09c: 23 0 rrrd
+:geoo/construction/concrete/016ha: 61 27 d
+:matt/underworld/09c: 20 31 frd
+:geoo/construction/concrete/016: 52 42 d
+:geoo/construction/concrete/016: 84 26 d
+:matt/underworld/09b: 20 35 d
+:geoo/construction/concrete/032: 68 43 d
+:geoo/construction/concrete/032: 0 11 d
+:geoo/construction/concrete/032: 8 41 d
+$END_TILE_GROUP
+:Group-0: 520 288
 :geoo/construction/platform.S: 574 288 fr
 :geoo/construction/platform.S: 574 320 fr
-:matt/underworld/09a: 264 294 frr
-:matt/underworld/09b: 248 288 fr
-:matt/underworld/09c: 290 270 frrrd
-:geoo/construction/concrete/016ha: 254 297 frrd
-:matt/underworld/09c: 293 301 rd
-:geoo/construction/concrete/016: 279 312 frrd
-:geoo/construction/concrete/016: 247 296 frrd
-:matt/underworld/09b: 285 305 frrd
-:geoo/construction/concrete/032: 247 313 frrd
-:geoo/construction/concrete/032: 315 281 frrd
-:geoo/construction/concrete/032: 307 311 frrd
-:matt/underworld/02: 256 256 n
+$BEGIN_TILE_GROUP 1
+:matt/underworld/09a: 17 24 frr
+:matt/underworld/09b: 1 18 fr
+:matt/underworld/09c: 43 0 frrrd
+:geoo/construction/concrete/016ha: 7 27 frrd
+:matt/underworld/09c: 46 31 rd
+:geoo/construction/concrete/016: 32 42 frrd
+:geoo/construction/concrete/016: 0 26 frrd
+:matt/underworld/09b: 38 35 frrd
+:geoo/construction/concrete/032: 0 43 frrd
+:geoo/construction/concrete/032: 68 11 frrd
+:geoo/construction/concrete/032: 60 41 frrd
+$END_TILE_GROUP
+:Group-1: 263 288
 :geoo/construction/platform.S: 256 288 fr
 :geoo/construction/platform.S: 256 320 fr
-:matt/underworld/09c: 802 346 fr
-:matt/underworld/00: 817 357 frrd
-:matt/underworld/00: 809 366 frrd
 :matt/underworld/00: 832 368
-:matt/underworld/00: 817 339 frrd
-:geoo/construction/concrete/016ha: 793 346 rrd
 :matt/underworld/thinplatform128: 792 224 rrr
 :geoo/steel/dark_64x32o.S: 768 208
-:matt/underworld/thinplatform128: 804 256 rrrn
-:matt/underworld/thinplatform128: 806 264 rrrn
-:matt/underworld/thinplatform128: 808 272 rrrn
-:matt/underworld/thinplatform128: 810 280 rrrn
-:matt/underworld/thinplatform128: 812 288 rrrn
-:matt/underworld/thinplatform128: 814 296 rrrn
-:matt/underworld/thinplatform128: 816 304 rrrn
-:matt/underworld/thinplatform128: 818 312 rrrn
-:matt/underworld/thinplatform64: 820 320 rrrn
-:matt/underworld/thinplatform128: 820 320 rrrn
-:matt/underworld/thinplatform64: 822 328 rrrn
-:matt/underworld/thinplatform128: 822 328 rrrn
-:matt/underworld/thinplatform64: 824 336 rrrn
-:matt/underworld/thinplatform128: 824 336 rrrn
-:matt/underworld/thinplatform64: 826 344 rrrn
-:matt/underworld/thinplatform128: 826 344 rrrn
-:matt/underworld/thinplatform128: 828 352 rrrn
 :geoo/steel/dark_64x32o.S: 768 368
 :geoo/construction/platform_single.S: 816 366
 :geoo/construction/platform_single.S: 830 366
@@ -294,5 +260,19 @@ $ENGLISH Devil's Right Hand
 :geoo/construction/platform.S: 806 264 fr
 :geoo/construction/platform.S: 806 296 fr
 :geoo/construction/platform.S: 806 320 fr
-:matt/underworld/thinplatform8: 804 350 rrr
-:matt/underworld/thinplatform8: 806 350 rrr
+:matt/underworld/thinplatform8: 804 348 rrr
+:matt/underworld/thinplatform8: 806 348 rrr
+$BEGIN_TILE_GROUP 2
+:matt/underworld/09c: 9 7 fr
+:matt/underworld/00: 24 18 frrd
+:matt/underworld/00: 24 0 frrd
+:geoo/construction/concrete/016ha: 0 7 rrd
+:matt/underworld/00: 16 27 frrd
+$END_TILE_GROUP
+:Group-2: 808 352
+$BEGIN_TILE_GROUP 3
+:matt/underworld/00: 0 0
+:matt/underworld/00: 20 0 d
+$END_TILE_GROUP
+:Group-3: 440 368
+:Group-3: 320 368

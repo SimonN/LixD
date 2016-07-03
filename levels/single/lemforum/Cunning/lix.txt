@@ -1,23 +1,17 @@
-$BUILT 2012-05-29 20:30:04
+$BUILT 2016-07-03 00:37:43
 $AUTHOR Michael S. Repton
-$GERMAN
 $ENGLISH LIX
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 0
 #START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 309
 #INITIAL 59
 #REQUIRED 35
-#SPAWN_INTERVAL 59
-#SPAWN_INTERVAL_FAST 4
+#SPAWN_INTERVAL 35
 
 #CLIMBER 5
 #FLOATER 9
@@ -27,18 +21,14 @@ $ENGLISH LIX
 #BASHER 9
 #MINER 5
 #DIGGER 9
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 
 :geoo/construction/Hatch.H: 96 240
 
 :geoo/construction/Goal2.G: 560 48
 
+:geoo/construction/wall/small_64x32: 80 304 frr
+:geoo/construction/wall/small_64x32: 16 304 frr
 :geoo/construction/wall/big_brick1: 256 304
-:geoo/construction/wall/small_64x32: 16 304 frrn
-:geoo/construction/wall/small_64x32: 80 304 frrn
 :geoo/construction/pillar_base: 16 288
 :geoo/construction/pillar_32: 32 208
 :geoo/construction/pillar_32: 32 176

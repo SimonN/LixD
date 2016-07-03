@@ -1,34 +1,21 @@
-$BUILT 2012-05-30 19:10:16
+$BUILT 2016-07-03 00:53:33
 $AUTHOR Insane Steve
-$GERMAN 
 $ENGLISH The Rainbow Road
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 0
-#INITIAL 30
-#REQUIRED 27
+#INITIAL 10
+#REQUIRED 7
 #SPAWN_INTERVAL 32
-#SPAWN_INTERVAL_FAST 4
 
 #CLIMBER 1
 #FLOATER 1
 #EXPLODER 1
 #BLOCKER 1
 #BUILDER 1
-#BASHER 0
-#MINER 0
-#DIGGER 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 
 :geoo/construction/Hatch.H: 112 64
 
@@ -43,6 +30,7 @@ $ENGLISH The Rainbow Road
 :geoo/sandstone/chopper.T: 464 248
 :geoo/sandstone/chopper.T: 512 248
 
+:geoo/abstract/pipes/central1: 104 136 rrr
 :geoo/abstract/pipes/endr0: 120 112 rrr
 :geoo/abstract/pipes/central0: 120 120 rrr
 :geoo/abstract/pipes/corner0: 120 152
@@ -53,7 +41,6 @@ $ENGLISH The Rainbow Road
 :geoo/abstract/pipes/central0: 256 152
 :geoo/abstract/pipes/central0: 288 152
 :geoo/abstract/pipes/endr1: 104 128 rrr
-:geoo/abstract/pipes/central1: 104 136 rrrn
 :geoo/abstract/pipes/central1: 112 168
 :geoo/abstract/pipes/corner1: 104 168
 :geoo/abstract/pipes/central1: 144 168

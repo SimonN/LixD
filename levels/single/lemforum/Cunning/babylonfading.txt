@@ -1,36 +1,25 @@
-$BUILT 2012-08-18 14:31:20
+$BUILT 2016-07-03 00:39:29
 $AUTHOR mobius
-$GERMAN
 $ENGLISH Babylon Fading
 
-#SIZE_X 688
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 0
 #START_Y 380
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 0
-#INITIAL 50
-#REQUIRED 50
+#INITIAL 25
+#REQUIRED 25
 #SPAWN_INTERVAL 90
-#SPAWN_INTERVAL_FAST 4
 
 #CLIMBER 10
 #FLOATER 10
-#JUMPER 0
-#EXPLODER 0
 #BUILDER 8
 #BASHER 2
 #MINER 1
 #DIGGER 2
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#EXPLODER 0
 
 :simon/hatch001.H: 336 8
 
@@ -45,9 +34,6 @@ $ENGLISH Babylon Fading
 :geoo/sandstone/brazier.F: 584 120
 :geoo/sandstone/brazier.F: 600 120
 :geoo/sandstone/brazier.F: 616 120
-:geoo/sandstone/brazier.F: 632 120
-:geoo/sandstone/brazier.F: 648 120
-:geoo/sandstone/brazier.F: 664 120
 :simon/water.W: 136 224
 :simon/water.W: 184 224
 :simon/water.W: 232 224
@@ -55,7 +41,6 @@ $ENGLISH Babylon Fading
 :simon/water.W: 568 200
 :simon/water.W: 520 200
 :simon/water.W: 616 200
-:simon/water.W: 664 200
 
 :simon/tapir/032v: 400 80
 :simon/tapir/032v: 400 192
@@ -109,6 +94,3 @@ $ENGLISH Babylon Fading
 :geoo/construction/rod_steel/end_rect.S: 128 232 fr
 :geoo/construction/rod_steel/end_rect.S: 328 232 fr
 :geoo/construction/rod_steel/end_rect.S: 512 208 fr
-:geoo/steel/32x32o.S: 640 240
-:geoo/steel/16x32o.S: 672 240
-:geoo/steel/16x32o.S: 672 208

@@ -1,23 +1,17 @@
-$BUILT 2015-08-26 21:50:35
+$BUILT 2016-07-03 00:34:06
 $AUTHOR Michael S. Repton
-$GERMAN 
 $ENGLISH Box Set
 
-#SIZE_X 960
-#SIZE_Y 640
-#TORUS_X 1
-#TORUS_Y 1
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 976
+#SIZE_Y 656
 #START_X 0
 #START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 0
-#INITIAL 400
-#REQUIRED 360
+#INITIAL 80
+#REQUIRED 60
 #SPAWN_INTERVAL 16
-#SPAWN_INTERVAL_FAST 4
 
 #WALKER 8
 #CLIMBER 8
@@ -29,8 +23,7 @@ $ENGLISH Box Set
 #MINER 8
 #DIGGER 8
 #CUBER 8
-
-:matt/goldmine/GoalTop.D: 560 32
+#EXPLODER2 0
 
 :geoo/abstract/hatch.H: 56 64
 :matt/goldmine/Hatch.H: 368 80
@@ -49,6 +42,8 @@ $ENGLISH Box Set
 :geoo/construction/Goal2.G: 640 544
 :geoo/construction/Goal2.G: 248 576
 :geoo/sandstone/Goal.G: 448 576
+
+:matt/goldmine/GoalTop.D: 560 32
 
 :geoo/construction/factory.T: 336 208
 :geoo/construction/factory.T: 576 256
@@ -404,9 +399,6 @@ $ENGLISH Box Set
 :geoo/sandstone/pillar_bottom: 544 608
 :geoo/sandstone/pillar_top_jaggedl: 544 528 f
 :geoo/sandstone/pillar_top_shaded: 544 496
-:geoo/steel/dark_16x16o.S: 0 624
-:geoo/steel/dark_16x16o.S: 624 624
-:geoo/steel/dark_16x16o.S: 320 624
 :geoo/sandstone/pillar_top_shaded: 384 528
 :geoo/sandstone/pillar_top_jaggedl: 384 544 f
 :geoo/sandstone/slopes/32x32lt: 368 400
@@ -423,3 +415,56 @@ $ENGLISH Box Set
 :geoo/construction/concrete/032hc: 240 400
 :geoo/construction/concrete/016vc: 304 432
 :geoo/construction/concrete/016v: 304 400
+:geoo/steel/dark_16x32o.S: 960 0
+:geoo/steel/dark_16x32o.S: 960 32
+:geoo/steel/dark_16x32o.S: 960 64
+:geoo/steel/dark_16x32o.S: 960 96
+:geoo/steel/dark_16x32o.S: 960 128
+:geoo/steel/dark_16x32o.S: 960 160
+:geoo/steel/dark_16x32o.S: 960 192
+:geoo/steel/dark_16x32o.S: 960 224
+:geoo/steel/dark_16x32o.S: 960 256
+:geoo/steel/dark_16x32o.S: 960 288
+:geoo/steel/dark_16x32o.S: 960 320
+:geoo/steel/dark_16x32o.S: 960 352
+:geoo/steel/dark_16x32o.S: 960 384
+:geoo/steel/dark_16x32o.S: 960 416
+:geoo/steel/dark_16x32o.S: 960 448
+:geoo/steel/dark_16x32o.S: 960 480
+:geoo/steel/dark_16x32o.S: 960 512
+:geoo/steel/dark_16x32o.S: 960 544
+:geoo/steel/dark_16x32o.S: 960 576
+:geoo/steel/dark_16x32o.S: 960 608
+:geoo/steel/dark_16x32o.S: 0 624
+:geoo/steel/dark_32x16o.S: 80 640
+:geoo/steel/dark_32x16o.S: 112 640
+:geoo/steel/dark_32x16o.S: 144 640
+:geoo/steel/dark_32x16o.S: 176 640
+:geoo/steel/dark_32x16o.S: 16 640
+:geoo/steel/dark_32x16o.S: 48 640
+:geoo/steel/dark_32x16o.S: 208 640
+:geoo/steel/dark_32x16o.S: 304 640
+:geoo/steel/dark_32x16o.S: 336 640
+:geoo/steel/dark_32x16o.S: 368 640
+:geoo/steel/dark_32x16o.S: 400 640
+:geoo/steel/dark_32x16o.S: 240 640
+:geoo/steel/dark_32x16o.S: 272 640
+:geoo/steel/dark_32x16o.S: 432 640
+:geoo/steel/dark_32x16o.S: 528 640
+:geoo/steel/dark_32x16o.S: 560 640
+:geoo/steel/dark_32x16o.S: 592 640
+:geoo/steel/dark_32x16o.S: 688 640
+:geoo/steel/dark_32x16o.S: 464 640
+:geoo/steel/dark_32x16o.S: 496 640
+:geoo/steel/dark_32x16o.S: 720 640
+:geoo/steel/dark_32x16o.S: 816 640
+:geoo/steel/dark_32x16o.S: 848 640
+:geoo/steel/dark_32x16o.S: 880 640
+:geoo/steel/dark_32x16o.S: 912 640
+:geoo/steel/dark_32x16o.S: 752 640
+:geoo/steel/dark_32x16o.S: 784 640
+:geoo/steel/dark_32x16o.S: 944 640
+:geoo/steel/dark_32x16o.S: 656 640
+:geoo/steel/dark_32x16o.S: 624 640
+:geoo/steel/dark_16x16o.S: 320 624
+:geoo/steel/dark_16x16o.S: 624 624

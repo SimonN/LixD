@@ -4,14 +4,14 @@ endeavor.txt
 lowprofile.txt
 betchacantsave.txt
 changing.txt
-fiveforfighting.txt
+thelastlaugh.txt
 roundtrip.txt
 lixsterquadrille.txt
 lixesinarms.txt
 downamong.txt
 laser1.txt
 crownjewelheist.txt
-thelastlaugh.txt
+fiveforfighting.txt
 bulldozer.txt
 thegr8escape.txt
 trapeze.txt

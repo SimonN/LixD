@@ -8,14 +8,14 @@ blocked.txt
 climbtofreedom.txt
 goblincity.txt
 escapethepit.txt
-littleminerpuzz1.txt
+anecklaceofraindrops.txt
 getdown.txt
 letsblockandblow.txt
 fourcolor.txt
 putyourlix.txt
 alternative.txt
 solareclipse.txt
-minimalism1.txt
+littleminerpuzz1.txt
 letsallgodownthe.txt
 theborderland.txt
 lixpotion.txt

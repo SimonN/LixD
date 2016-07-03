@@ -1,5 +1,5 @@
 $BUILT                                             2012-02-19 18:59:15
-$AUTHOR                                                        Michael S. Repton
+$AUTHOR Michael S. Repton
 $GERMAN                                                               
 $ENGLISH                                 Once You Pop, You Can't Stop!
 

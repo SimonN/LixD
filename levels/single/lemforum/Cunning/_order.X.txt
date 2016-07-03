@@ -12,7 +12,7 @@ babylonfading.txt
 cryforme.txt
 whentheleveebreaks.txt
 dontlookback.txt
-threedaysofthecondor.txt
+ittakestime.txt
 everywhichway.txt
 someliketorun.txt
 coldironsbound.txt
@@ -28,7 +28,7 @@ haveanothertry.txt
 mentalprocess.txt
 gowest.txt
 tapestry.txt
-ittakestime.txt
+lixesinmotion.txt
 wellokthen.txt
 jacobsladder.txt
 walktheplank.txt

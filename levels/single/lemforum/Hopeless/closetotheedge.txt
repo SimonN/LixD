@@ -1,5 +1,5 @@
 $BUILT                                             2012-01-30 16:08:11
-$AUTHOR                                                        Michael S. Repton
+$AUTHOR Michael S. Repton
 $GERMAN                                                               
 $ENGLISH                                             Close to the Edge
 

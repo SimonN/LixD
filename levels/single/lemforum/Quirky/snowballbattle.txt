@@ -1,106 +1,95 @@
-$BUILT                                             2012-04-05 00:46:04
-$AUTHOR                                                   I.S./Michael S. Repton
-$GERMAN                                                               
-$ENGLISH                                               Snowball Battle
+$BUILT 2012-04-05 00:46:04
+$AUTHOR I.S./Michael
+$ENGLISH Snowball Battle
 
-#SIZE_X                                                            640
-#SIZE_Y                                                            400
-#TORUS_X                                                             0
-#TORUS_Y                                                             0
-#START_X                                                             0
-#START_Y                                                             0
-#BACKGROUND_RED                                                      0
-#BACKGROUND_GREEN                                                    0
-#BACKGROUND_BLUE                                                     0
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+#START_X 0
+#START_Y 0
 
-#SECONDS                                                             0
-#INITIAL                                                            40
-#REQUIRED                                                           40
-#SPAWN_INTERVAL                                                     20
-#SPAWN_INTERVAL_FAST                                                 4
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 20
 
-#CLIMBER                                                             1
-#FLOATER                                                             1
-#WALKER                                                              1
-#JUMPER                                                              1
-#BUILDER                                                             4
-#BASHER                                                              1
-#MINER                                                               0
-#DIGGER                                                              1
-#NOTHING                                                             0
-#NOTHING                                                             0
-#NOTHING                                                             0
-#NOTHING                                                             0
+#CLIMBER 1
+#FLOATER 1
+#BUILDER 4
+#BASHER 1
+#DIGGER 1
+#JUMPER 1
+#EXPLODER2 0
 
-:geoo/abstract/hatch.H:                            30        14
+:geoo/abstract/hatch.H: 30 14
 
-:geoo/abstract/goal.G:                            534       120
+:geoo/abstract/goal.G: 534 120
 
-:matt/underworld/03:                           0       384
-:matt/underworld/03:                           0       352
-:matt/underworld/03:                           0       320
-:matt/underworld/03:                           0       288
-:matt/underworld/03:                           0       256
-:matt/underworld/03:                           0       224
-:matt/underworld/03:                           0       192
-:matt/underworld/03:                           0       160
-:matt/underworld/03:                           0       128
-:matt/underworld/03:                           0        96
-:matt/underworld/03:                           0        64
-:matt/underworld/03:                          32        64
-:matt/underworld/03:                          64        64
-:matt/underworld/03:                          96        64
-:matt/underworld/03:                         128        64
-:matt/underworld/03:                         160        64
-:matt/underworld/03:                         160        96
-:matt/underworld/03:                         160       128
-:matt/underworld/03:                         160       160
-:matt/underworld/03:                         160       192
-:matt/underworld/03:                         128       192
-:matt/underworld/03:                          96       192
-:matt/underworld/03:                          96       224
-:matt/underworld/03:                          96       256
-:matt/underworld/03:                         128       256
-:matt/underworld/03:                         160       256
-:matt/underworld/03:                         192       256
-:matt/underworld/03:                         224       256
-:matt/underworld/03:                         256       256
-:matt/underworld/03:                         288       256
-:matt/underworld/03:                         288       224
-:matt/underworld/03:                         288       192
-:matt/underworld/03:                         320       192
-:matt/underworld/03:                         352       192
-:matt/underworld/03:                         352       224
-:matt/underworld/03:                         352       256
-:matt/underworld/03:                         352       288
-:matt/underworld/03:                         384       288
-:matt/underworld/03:                         416       288
-:matt/underworld/03:                         416       256
-:matt/underworld/03:                         416       224
-:matt/underworld/03:                         416       192
-:matt/underworld/03:                         416       160
-:matt/underworld/03:                         416       128
-:matt/underworld/03:                         416        96
-:matt/underworld/03:                         416        64
-:matt/underworld/03:                         448        64
-:matt/underworld/03:                         480        64
-:matt/underworld/03:                         512        64
-:matt/underworld/03:                         544        64
-:matt/underworld/03:                         576        64
-:matt/underworld/03:                         576        96
-:matt/underworld/03:                         576       128
-:matt/underworld/03:                         576       160
-:matt/underworld/03:                         544       160
-:matt/underworld/03:                         512       160
-:matt/underworld/03:                         512       192
-:matt/underworld/03:                         512       224
-:matt/underworld/03:                         512       256
-:matt/underworld/03:                         512       288
-:matt/underworld/03:                         512       320
-:matt/underworld/03:                         512       352
-:matt/underworld/03:                         480       352
-:matt/underworld/03:                         448       352
-:matt/underworld/03:                         416       352
-:matt/underworld/03:                         384       352
-:matt/underworld/03:                         352       352
-:matt/underworld/03:                         352       384
+:matt/underworld/03: 0 384
+:matt/underworld/03: 0 352
+:matt/underworld/03: 0 320
+:matt/underworld/03: 0 288
+:matt/underworld/03: 0 256
+:matt/underworld/03: 0 224
+:matt/underworld/03: 0 192
+:matt/underworld/03: 0 160
+:matt/underworld/03: 0 128
+:matt/underworld/03: 0 96
+:matt/underworld/03: 0 64
+:matt/underworld/03: 32 64
+:matt/underworld/03: 64 64
+:matt/underworld/03: 96 64
+:matt/underworld/03: 128 64
+:matt/underworld/03: 160 64
+:matt/underworld/03: 160 96
+:matt/underworld/03: 160 128
+:matt/underworld/03: 160 160
+:matt/underworld/03: 160 192
+:matt/underworld/03: 128 192
+:matt/underworld/03: 96 192
+:matt/underworld/03: 96 224
+:matt/underworld/03: 96 256
+:matt/underworld/03: 128 256
+:matt/underworld/03: 160 256
+:matt/underworld/03: 192 256
+:matt/underworld/03: 224 256
+:matt/underworld/03: 256 256
+:matt/underworld/03: 288 256
+:matt/underworld/03: 288 224
+:matt/underworld/03: 288 192
+:matt/underworld/03: 320 192
+:matt/underworld/03: 352 192
+:matt/underworld/03: 352 224
+:matt/underworld/03: 352 256
+:matt/underworld/03: 352 288
+:matt/underworld/03: 384 288
+:matt/underworld/03: 416 288
+:matt/underworld/03: 416 256
+:matt/underworld/03: 416 224
+:matt/underworld/03: 416 192
+:matt/underworld/03: 416 160
+:matt/underworld/03: 416 128
+:matt/underworld/03: 416 96
+:matt/underworld/03: 416 64
+:matt/underworld/03: 448 64
+:matt/underworld/03: 480 64
+:matt/underworld/03: 512 64
+:matt/underworld/03: 544 64
+:matt/underworld/03: 576 64
+:matt/underworld/03: 576 96
+:matt/underworld/03: 576 128
+:matt/underworld/03: 576 160
+:matt/underworld/03: 544 160
+:matt/underworld/03: 512 160
+:matt/underworld/03: 512 192
+:matt/underworld/03: 512 224
+:matt/underworld/03: 512 256
+:matt/underworld/03: 512 288
+:matt/underworld/03: 512 320
+:matt/underworld/03: 512 352
+:matt/underworld/03: 480 352
+:matt/underworld/03: 448 352
+:matt/underworld/03: 416 352
+:matt/underworld/03: 384 352
+:matt/underworld/03: 352 352
+:matt/underworld/03: 352 384

@@ -1,5 +1,5 @@
 $BUILT 2012-08-27 17:09:51
-$AUTHOR mobius/Michael S. Repton
+$AUTHOR mobius/Michael
 $GERMAN 
 $ENGLISH Tinker Tailor Soldier Lix
 

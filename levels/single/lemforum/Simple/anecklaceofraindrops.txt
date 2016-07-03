@@ -1,0 +1,179 @@
+$BUILT 2016-06-28 13:19:07
+$AUTHOR Michael S. Repton
+$ENGLISH A Necklace of Raindrops
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 960
+#SIZE_Y 400
+#START_X 0
+#START_Y 0
+
+#SECONDS 0
+#INITIAL 30
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+
+#WALKER 40
+#BUILDER 30
+#PLATFORMER 30
+#BASHER 20
+#MINER 20
+#DIGGER 20
+#JUMPER 20
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 176 160
+
+:proxima/tile/goal.G: 792 83
+
+:proxima/tile/spheres/blue: 920 48
+:proxima/tile/spheres/cyan: 896 64
+:proxima/tile/spheres/blue: 880 88
+:proxima/tile/spheres/cyan: 856 112
+:proxima/tile/spheres/blue: 832 128
+:proxima/tile/spheres/cyan: 800 144
+:proxima/tile/spheres/blue: 776 144
+:proxima/tile/spheres/cyan: 752 136
+:proxima/tile/spheres/red: 672 136
+:proxima/tile/spheres/pink: 688 160
+:proxima/tile/spheres/blue: 736 120
+:proxima/tile/spheres/cyan: 720 104
+:proxima/tile/spheres/red: 576 -40
+:proxima/tile/spheres/pink: 608 -32
+:proxima/tile/spheres/red: 624 -8
+:proxima/tile/spheres/pink: 640 16
+:proxima/tile/spheres/red: 648 32
+:proxima/tile/spheres/pink: 656 56
+:proxima/tile/spheres/red: 656 80
+:proxima/tile/spheres/blue: 696 88
+:proxima/tile/spheres/cyan: 680 88
+:proxima/tile/spheres/blue: 664 104
+:proxima/tile/spheres/cyan: 656 120
+:proxima/tile/spheres/blue: 648 136
+:proxima/tile/orange3a: 928 304
+:proxima/tile/spheres/red: 928 264
+:proxima/tile/spheres/pink: 904 272
+:proxima/tile/orange3: 832 336
+:proxima/tile/orange3: 896 336
+:proxima/tile/spheres/red: 888 288
+:proxima/tile/spheres/pink: 872 304
+:proxima/tile/spheres/red: 840 312
+:proxima/tile/orange3: 768 336
+:proxima/tile/orange3a: 800 304
+:proxima/tile/spheres/pink: 816 296
+:proxima/tile/spheres/red: 696 176
+:proxima/tile/spheres/pink: 712 200
+:proxima/tile/orange3: 704 272
+:proxima/tile/spheres/red: 720 224
+:proxima/tile/spheres/pink: 728 240
+:proxima/tile/orange3a: 768 304
+:proxima/tile/spheres/red: 744 264
+:proxima/tile/spheres/pink: 768 264
+:proxima/tile/spheres/red: 792 272
+:proxima/tile/spheres/cyan: 648 160
+:proxima/tile/spheres/blue: 656 176
+:proxima/tile/spheres/cyan: 672 200
+:proxima/tile/orange3: 640 272
+:proxima/tile/spheres/blue: 664 224
+:proxima/tile/spheres/cyan: 656 240
+:proxima/tile/spheres/blue: 640 256
+:proxima/tile/orange3: 576 272
+:proxima/tile/spheres/cyan: 608 256
+:proxima/tile/spheres/blue: 584 248
+:proxima/tile/orange3: 512 272
+:proxima/tile/orange3: 512 208
+:proxima/tile/spheres/cyan: 560 224
+:proxima/tile/spheres/red: 480 216
+:proxima/tile/spheres/pink: 480 240
+:proxima/tile/spheres/red: 480 264
+:proxima/tile/orange3: 448 336
+:proxima/tile/orange3: 512 336
+:proxima/tile/spheres/pink: 472 288
+:proxima/tile/spheres/red: 456 312
+:proxima/tile/orange3: 384 336
+:proxima/tile/spheres/pink: 440 328
+:proxima/tile/spheres/red: 408 328
+:proxima/tile/spheres/blue: 544 200
+:proxima/tile/spheres/cyan: 528 176
+:proxima/tile/spheres/pink: 528 -32
+:proxima/tile/spheres/red: 512 -8
+:proxima/tile/spheres/pink: 496 8
+:proxima/tile/spheres/red: 488 32
+:proxima/tile/spheres/pink: 480 48
+:proxima/tile/spheres/red: 472 64
+:proxima/tile/spheres/pink: 472 88
+:proxima/tile/spheres/red: 472 112
+:proxima/tile/spheres/pink: 464 136
+:proxima/tile/spheres/red: 464 160
+:proxima/tile/spheres/blue: 504 168
+:proxima/tile/spheres/cyan: 480 176
+:proxima/tile/spheres/blue: 464 184
+:proxima/tile/spheres/cyan: 448 208
+:proxima/tile/spheres/blue: 440 224
+:proxima/tile/spheres/cyan: 440 240
+:proxima/tile/spheres/blue: 448 264
+:proxima/tile/spheres/cyan: 440 288
+:proxima/tile/spheres/blue: 424 304
+:proxima/tile/spheres/red: 304 -24
+:proxima/tile/spheres/pink: 328 -8
+:proxima/tile/spheres/red: 336 16
+:proxima/tile/spheres/pink: 336 40
+:proxima/tile/spheres/red: 344 64
+:proxima/tile/spheres/pink: 344 88
+:proxima/tile/spheres/red: 352 120
+:proxima/tile/spheres/pink: 352 152
+:proxima/tile/spheres/red: 344 176
+:proxima/tile/spheres/pink: 344 208
+:proxima/tile/spheres/red: 352 232
+:proxima/tile/spheres/pink: 352 256
+:proxima/tile/spheres/cyan: 392 312
+:proxima/tile/orange3: 320 336
+:proxima/tile/spheres/blue: 368 304
+:proxima/tile/spheres/cyan: 352 288
+:proxima/tile/spheres/blue: 320 280
+:proxima/tile/orange3: 256 336
+:proxima/tile/spheres/cyan: 296 288
+:proxima/tile/spheres/blue: 272 304
+:proxima/tile/orange3: 192 336
+:proxima/tile/orange3: 192 272
+:proxima/tile/spheres/cyan: 240 296
+:proxima/tile/spheres/blue: 224 272
+:proxima/tile/spheres/cyan: 208 248
+:proxima/tile/orange3: 128 272
+:proxima/tile/spheres/blue: 184 232
+:proxima/tile/spheres/cyan: 144 232
+:proxima/tile/spheres/blue: 120 248
+:proxima/tile/spheres/cyan: 96 272
+:proxima/tile/orange3: 128 336
+:proxima/tile/spheres/blue: 88 296
+:proxima/tile/orange3a: 96 368
+:proxima/tile/spheres/cyan: 80 320
+:proxima/tile/spheres/blue: 64 336
+:proxima/tile/spheres/cyan: 40 352
+:proxima/tile/spheres/blue: 16 368
+:proxima/tile/spheres/pink: 264 -32
+:proxima/tile/orange3: 192 0
+:proxima/tile/spheres/red: 248 -16
+:proxima/tile/spheres/pink: 224 0
+:proxima/tile/spheres/red: 216 24
+:proxima/tile/orange3a: 184 64
+:proxima/tile/spheres/pink: 200 48
+:proxima/tile/spheres/red: 184 64
+:proxima/tile/spheres/pink: 152 64
+:proxima/tile/orange3: 128 0
+:proxima/tile/spheres/red: 128 48
+:proxima/tile/orange3: 64 0
+:proxima/tile/spheres/pink: 112 32
+:proxima/tile/orange3a: 64 64
+:proxima/tile/spheres/red: 88 40
+:proxima/tile/spheres/pink: 64 56
+:proxima/tile/orange3: 0 64
+:proxima/tile/spheres/red: 48 80
+:proxima/tile/spheres/pink: 40 104
+:proxima/tile/spheres/red: 16 120
+:proxima/tile/spheres/pink: -16 120
+:proxima/tile/spheres/red: -32 136
+:proxima/tile/orange3: 0 0
+:proxima/tile/orange3: 576 336
+:proxima/tile/orange3: 640 336
+:proxima/tile/orange3: 704 336

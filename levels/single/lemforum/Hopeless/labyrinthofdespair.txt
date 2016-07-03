@@ -1,5 +1,5 @@
 $BUILT 2014-01-29 15:42:26
-$AUTHOR namida/Michael S. Repton
+$AUTHOR namida/Michael
 $GERMAN 
 $ENGLISH Labyrinth of Despair
 

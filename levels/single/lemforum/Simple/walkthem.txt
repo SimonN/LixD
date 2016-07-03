@@ -1,5 +1,5 @@
 $BUILT                                             2012-02-19 20:42:41
-$AUTHOR                                                        Michael S. Repton
+$AUTHOR Michael S. Repton
 $GERMAN                                                               
 $ENGLISH                                       Walk Them Golden Stairs
 

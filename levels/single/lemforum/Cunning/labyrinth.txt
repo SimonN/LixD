@@ -1,5 +1,5 @@
 $BUILT                                             2012-02-13 20:46:00
-$AUTHOR                                                        Michael S. Repton
+$AUTHOR Michael S. Repton
 $GERMAN                                                               
 $ENGLISH                                           Labyrinth of Persia
 

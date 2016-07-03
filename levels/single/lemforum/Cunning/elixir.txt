@@ -1,36 +1,25 @@
-$BUILT 2015-06-22 12:30:29
+$BUILT 2016-07-01 22:16:36
 $AUTHOR mobius/geoo
-$GERMAN 
 $ENGLISH Elixir
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 704
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 0
 #START_Y -20
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 0
-#INITIAL 50
-#REQUIRED 48
+#INITIAL 20
+#REQUIRED 18
 #SPAWN_INTERVAL 50
-#SPAWN_INTERVAL_FAST 4
 
-#JUMPER 3
 #CLIMBER 3
 #FLOATER 1
 #EXPLODER2 1
 #BLOCKER 1
 #BUILDER 3
 #MINER 1
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#JUMPER 3
 
 :matt/marble/Hatch.H: 32 192
 
@@ -44,8 +33,9 @@ $ENGLISH Elixir
 :simon/crystal.W: 192 352
 :geoo/construction/sawblade_small.F: 288 152
 :geoo/construction/sawblade_small.F: 320 152
-:geoo/construction/sawblade_small.F: 304 16
+:geoo/construction/sawblade_small.F: 304 18
 
+:geoo/steel/32x64o.S: 224 272
 :matt/marble/07b: 544 304
 :matt/marble/06b: 688 304
 :matt/marble/06b: 688 240
@@ -54,8 +44,13 @@ $ENGLISH Elixir
 :matt/marble/09: 160 272
 :matt/marble/09: 96 272
 :matt/marble/09: 160 144
-:matt/marble/09: 224 208
-:matt/marble/09: 224 272
+$BEGIN_TILE_GROUP 0
+:matt/marble/09: 0 0
+:matt/marble/09: 0 64
+:geoo/steel/32x64o.S: 0 32
+:geoo/steel/32x64o.S: 0 72 d
+$END_TILE_GROUP
+:Group-0: 224 208
 :matt/marble/09: 224 144
 :matt/marble/09a: 288 336
 :matt/marble/09a: 352 336
@@ -93,10 +88,7 @@ $ENGLISH Elixir
 :geoo/steel/32x64o.S: 672 80
 :geoo/steel/32x64o.S: 304 120
 :geoo/steel/32x16o.S: 400 0
-:geoo/steel/32x64o.S: 224 240
-:geoo/steel/32x64o.S: 224 280 d
 :matt/marble/09a: 224 336
-:geoo/steel/32x64o.S: 224 272 n
 :geoo/steel/32x64o.S: 672 -48
 :matt/marble/20: 56 336
 :matt/marble/16a: 612 144

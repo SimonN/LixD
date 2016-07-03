@@ -1,8 +1,8 @@
 theadventureplaygr.txt
 flugtag.txt
 loggingyourprog.txt
+followtheyellow.txt
 wastenot.txt
-boxset.txt
 6gaps.txt
 ramenmaster.txt
 landofrainbows.txt
@@ -29,7 +29,7 @@ lixlata.txt
 prelude.txt
 snowballbattle.txt
 minimalism3.txt
-followtheyellow.txt
+boxset.txt
 infrastructure.txt
 thepit.txt
 exitstageright.txt

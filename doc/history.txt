@@ -1,6 +1,29 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.5
+-----
+
+2016-07-03
+
+Fix #103: When you re-enter the window, the ingame mouse starts moving from
+where the hardware mouse entered the window.
+
+Fix #108: Adventure Playground displays again in the preview and is playable.
+
+The replay browser has two buttons to start replays: One replays against the
+included level, one replays against the pointed-to level.
+
+Updated the lemforum community pack to geoo89/lixlfpack commit 2a91852.
+This reorders some levels. Two levels have been replaced entirely:
+Out: Three Days of the Condor, Absolute Zero
+In: Lixes in Motion, Eye of the Needle
+
+Afterwards, the lemforum pack got fewer initial lix in the lower three ratings
+Simple, Quirky, Cunning. Proxima has played all these levels, tested for
+solvability under a fixed spawn interval, and recommended lower initial lix
+counts that keep the level idea fully intact. We have removed about 2,000 lix.
+
 0.6.4
 -----
 

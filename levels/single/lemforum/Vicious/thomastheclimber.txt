@@ -1,5 +1,5 @@
 $BUILT                                             2012-03-11 18:09:19
-$AUTHOR                                                        Michael S. Repton
+$AUTHOR Michael S. Repton
 $GERMAN                                                               
 $ENGLISH                                            Thomas the Climber
 

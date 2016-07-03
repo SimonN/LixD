@@ -1,5 +1,5 @@
 $BUILT 2012-06-03 20:51:45
-$AUTHOR I.S./Michael S. Repton
+$AUTHOR I.S./Michael
 $GERMAN 
 $ENGLISH Dream the Impossible Dream
 

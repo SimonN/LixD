@@ -1,5 +1,5 @@
 $BUILT                                             2012-03-02 12:37:26
-$AUTHOR                                                        Michael S. Repton
+$AUTHOR Michael S. Repton
 $GERMAN                                                               
 $ENGLISH                                       I'm Gonna Make You Mine
 

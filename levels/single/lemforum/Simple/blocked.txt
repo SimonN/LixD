@@ -1,23 +1,17 @@
-$BUILT 2015-09-07 20:52:41
+$BUILT 2016-06-28 11:34:31
 $AUTHOR minimac
-$GERMAN 
 $ENGLISH Blocked by a Snowball
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 0
 #START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 0
-#INITIAL 50
-#REQUIRED 50
+#INITIAL 20
+#REQUIRED 19
 #SPAWN_INTERVAL 50
-#SPAWN_INTERVAL_FAST 4
 
 #WALKER 1
 #RUNNER 3
@@ -42,6 +36,7 @@ $ENGLISH Blocked by a Snowball
 :matt/water.W: 0 368
 :matt/water.W: 32 368
 
+:matt/winter/09a: 278 208
 :matt/winter/09b: 352 120 frr
 :matt/winter/00: 216 287
 :matt/winter/01: 188 324
@@ -59,7 +54,6 @@ $ENGLISH Blocked by a Snowball
 :matt/winter/05: 224 334 rrr
 :matt/winter/05: 318 354 rrr
 :matt/winter/05: 94 362 rrr
-:matt/winter/09a: 278 208 n
 :matt/winter/07: 94 290
 :matt/winter/06: 94 354
 :matt/winter/03: 236 136 rr

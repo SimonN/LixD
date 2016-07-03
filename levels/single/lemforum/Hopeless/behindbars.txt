@@ -1,5 +1,5 @@
 $BUILT                                             2012-04-08 12:08:37
-$AUTHOR                                                        Michael S. Repton
+$AUTHOR Michael S. Repton
 $GERMAN                                                               
 $ENGLISH                                                   Behind Bars
 
