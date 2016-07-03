@@ -1,4 +1,4 @@
-$BUILT 2016-07-03 00:47:01
+$BUILT 2016-07-16 23:55:09
 $AUTHOR minimac
 $ENGLISH All Over the Place
 
@@ -83,35 +83,31 @@ $ENGLISH All Over the Place
 :geoo/steel/16x16o.S: 1288 384
 :geoo/steel/16x16o.S: 1320 384
 :geoo/steel/16x16o.S: 1352 384
-:matt/earth/15: 982 250
+:matt/earth/15: 982 246
+:matt/earth/11: 972 262
 :matt/earth/11: 1050 240
 :matt/earth/12: 1100 244
-:matt/earth/15: 1162 232
 :matt/earth/13: 1126 238
 :matt/earth/14: 1176 332
 :geoo/steel/32x16o.S: 1216 384
 :geoo/steel/32x32o.S: 1216 352
-:geoo/steel/64x32o.S: 1056 224
-:geoo/steel/64x32o.S: 992 224
-:matt/earth/11: 1148 234
-:matt/earth/11: 1180 242
+:matt/earth/11: 1148 240
+:matt/earth/11: 1186 242
 :matt/earth/11: 1162 282
-:matt/earth/30: 1234 172
-:geoo/steel/64x32o.S: 1184 224
-:geoo/steel/64x32o.S: 1120 224
+:matt/earth/30: 1234 186
 :geoo/steel/32x32o.S: 1216 320
 :geoo/construction/platformbrick_single: 1244 290
 :geoo/steel/32x32o.S: 1216 288
-:matt/earth/11: 966 332
-:matt/earth/11: 978 264
-:geoo/steel/32x64o.S: 960 224
+:matt/earth/11: 962 333
+:geoo/steel/32x64o.S: 960 236
+:matt/earth/15: 1058 268
 :matt/earth/11: 1122 288 frr
-:matt/earth/11: 1078 266 frr
-:matt/earth/11: 1022 270 frr
+:matt/earth/11: 1020 266 frr
 :matt/earth/15: 982 316
 :matt/earth/11: 1012 330 frr
 :matt/earth/11: 988 354
-:matt/earth/15: 1052 316
+:matt/earth/11: 1078 272 frr
+:matt/earth/15: 1046 316
 :matt/earth/11: 1138 328 frr
 :geoo/steel/32x16o.S: 1152 384
 :geoo/steel/32x16o.S: 1184 384
@@ -123,7 +119,7 @@ $ENGLISH All Over the Place
 :geoo/steel/32x16o.S: 1024 384
 :geoo/steel/32x16o.S: 1056 384
 :geoo/steel/32x16o.S: 1088 384
-:matt/earth/30: 1284 122
+:matt/earth/30: 1284 136
 :matt/earth/30: 1308 148 rr
 :matt/earth/30: 1358 98 rr
 :matt/marble/20d: 1408 92
@@ -171,8 +167,16 @@ $ENGLISH All Over the Place
 :geoo/construction/platformbrick_single: 1256 288
 :geoo/construction/platformbrick_single: 1252 290
 :matt/earth/14: 1172 326
-:matt/earth/12: 938 344 rrrd
-:geoo/steel/32x64o.S: 960 288
+:matt/earth/12: 931 341 rrrd
 :geoo/steel/32x16o.S: 960 384
 :geoo/steel/32x16o.S: 928 384
 :geoo/construction/platformbrick_single: 1264 288
+:geoo/steel/32x64o.S: 960 300
+:geoo/steel/32x16o.S: 992 236
+:geoo/steel/32x16o.S: 1024 236
+:geoo/steel/32x16o.S: 1056 236
+:geoo/steel/32x16o.S: 1088 236
+:geoo/steel/32x16o.S: 1120 236
+:geoo/steel/32x16o.S: 1152 236
+:geoo/steel/32x16o.S: 1184 236
+:geoo/steel/32x16o.S: 1216 236

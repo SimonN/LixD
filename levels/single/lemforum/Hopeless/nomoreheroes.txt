@@ -1,36 +1,28 @@
-$BUILT 2014-06-30 13:37:26
+$BUILT 2016-07-03 17:41:18
 $AUTHOR Insane Steve
-$GERMAN 
 $ENGLISH No More Heroes
 
-#SIZE_X 848
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 784
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 0
-#START_Y -20
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
-#SECONDS 60
+#SECONDS 0
 #INITIAL 30
-#REQUIRED 27
+#REQUIRED 28
 #SPAWN_INTERVAL 4
-#SPAWN_INTERVAL_FAST 4
 
 #WALKER 1
-#JUMPER 1
+#RUNNER 1
 #CLIMBER 1
 #FLOATER 1
-#EXPLODER2 1
-#BLOCKER 1
-#RUNNER 1
 #BUILDER 1
 #PLATFORMER 1
 #BASHER 1
 #MINER 1
 #DIGGER 1
+#JUMPER 1
+#BATTER 1
+#EXPLODER2 0
 
 :simon/hatch001.H: 0 112
 
@@ -39,42 +31,58 @@ $ENGLISH No More Heroes
 :geoo/sandstone/chopper.T: 480 176
 :geoo/sandstone/chopper.T: 528 176
 
-:simon/tapir/016h: 32 176
-:simon/tapir/016h: 32 182 d
-:simon/tapir/016h: 64 176
-:simon/tapir/016h: 64 182 d
-:simon/tapir/016h: 96 176
-:simon/tapir/016h: 96 182 d
-:simon/tapir/016h: 128 176
-:simon/tapir/016h: 128 182 d
-:simon/tapir/016h: 160 176
-:simon/tapir/016h: 160 182 d
-:simon/tapir/016h: 192 176
-:simon/tapir/016h: 192 182 d
-:simon/tapir/016h: 224 176
-:simon/tapir/016h: 224 182 d
-:simon/tapir/016h: 192 272
-:simon/tapir/016h: 160 272
-:simon/tapir/016h: 128 272
-:simon/tapir/016h: 96 272
-:simon/tapir/016h: 64 272
-:simon/tapir/016h: 96 384
-:simon/tapir/016h: 128 384
-:simon/tapir/016h: 160 384
-:simon/tapir/016h: 192 384
-:simon/tapir/016h: 224 384
-:simon/tapir/016h: 256 176
-:simon/tapir/016h: 256 182 d
-:simon/tapir/016h: 288 176
-:simon/tapir/016h: 288 182 d
-:simon/tapir/016h: 256 384
-:simon/tapir/016h: 288 384
-:simon/tapir/016h: 224 272
-:simon/tapir/032: 384 192
+:geoo/construction/sawblade_small.F: 644 252
+:geoo/construction/sawblade_small.F: 660 284
+:geoo/construction/sawblade_small.F: 675 308
+:geoo/construction/sawblade_small.F: 704 322
+:geoo/construction/sawblade_small.F: 738 338
+:geoo/construction/sawblade_small.F: 622 210
+:geoo/construction/sawblade_small.F: 589 258
+
+:geoo/steel/32x64o.S: 768 336
+$BEGIN_TILE_GROUP 0
+:geoo/steel/32x32o.S: 1 0
+:geoo/construction/concrete/032c: 0 0 rrrd
+$END_TILE_GROUP
+:Group-0: 736 340
+:Group-0: 700 326
+:Group-0: 669 314
+:Group-0: 656 288
+:Group-0: 640 256
+:simon/tapir/016v: 640 224
+:simon/tapir/032d: 701 314
+:simon/tapir/032d: 732 326
+:simon/tapir/016h: 288 172
+:simon/tapir/016h: 256 172
+:simon/tapir/016h: 224 172
+:simon/tapir/016h: 192 172
+:simon/tapir/016h: 160 172
+:simon/tapir/016h: 128 172
+:simon/tapir/016h: 96 172
+:simon/tapir/016h: 64 172
+:simon/tapir/016h: 32 172
+$BEGIN_TILE_GROUP 1
+:simon/tapir/016h: 0 0
+:simon/tapir/016h: 0 6 d
+$END_TILE_GROUP
+:Group-1: 32 176
+:Group-1: 64 176
+:Group-1: 96 176
+:Group-1: 128 176
+:Group-1: 160 176
+:Group-1: 192 176
+:Group-1: 224 176
+:simon/tapir/016h: 176 272
+:Group-1: 256 176
+:Group-1: 288 176
+:simon/tapir/016h: 280 384
+:simon/tapir/016h: 312 384
+:simon/tapir/016h: 208 272
+:simon/tapir/032: 384 176
 :simon/tapir/032: 352 128
 :simon/tapir/032: 352 96
-:simon/tapir/016h: 384 176
-:simon/tapir/032: 384 224
+:simon/tapir/016h: 384 336
+:simon/tapir/032: 384 208
 :simon/tapir/064: 416 224
 :simon/tapir/016h: 416 208
 :simon/tapir/016h: 448 208
@@ -84,91 +92,40 @@ $ENGLISH No More Heroes
 :simon/tapir/016h: 512 208
 :simon/tapir/016h: 544 208
 :simon/tapir/064: 416 288
-:simon/tapir/064: 512 288
-:simon/tapir/016h: 320 384
-:simon/tapir/016h: 352 384
-:simon/tapir/016h: 384 384
-:simon/tapir/016h: 416 384
-:simon/tapir/016h: 448 384
-:simon/tapir/016h: 512 384
-:simon/tapir/016h: 544 384
-:simon/tapir/016h: 608 384
-:simon/tapir/016h: 640 384
-:simon/tapir/016h: 672 384
-:simon/tapir/016h: 704 384
-:simon/tapir/032vb: 640 288
-:simon/tapir/032b: 672 352
-:simon/tapir/032a: 640 352
-:simon/tapir/032: 608 288
-:simon/tapir/032b: 608 256
+:simon/tapir/016h: 344 384
+:simon/tapir/016h: 376 384
+:simon/tapir/016h: 408 384
+:simon/tapir/016h: 440 384
+:simon/tapir/016h: 472 384
+:simon/tapir/016h: 536 384
+:simon/tapir/016h: 568 384
 :simon/tapir/032: 352 48
-:simon/tapir/032: 384 256
-:simon/tapir/032: 608 320
-:geoo/steel/64x64.S: 496 64
-:geoo/steel/64x64.S: 432 64
+:simon/tapir/032: 384 240
 :simon/tapir/016h: 352 80
-:geoo/steel/64x64.S: 560 64
 :simon/tapir/064: 688 192
 :simon/tapir/064: 688 128
-:simon/tapir/064: 752 256
-:simon/tapir/032: 624 192
-:simon/tapir/032: 656 224
-:simon/tapir/032: 656 192
-:simon/tapir/032c: 624 224
 :simon/tapir/032vc: 656 256
 :simon/tapir/064: 688 256
-:simon/tapir/032: 784 320
-:simon/tapir/016h: 736 384
-:simon/tapir/032: 576 224
-:simon/tapir/032: 576 256
-:simon/tapir/032: 576 288
-:simon/tapir/032: 576 320
-:simon/tapir/016h: 576 208
-:simon/tapir/016h: 576 384
-:simon/tapir/032: 384 288
-:simon/tapir/032: 384 320
+:simon/tapir/032: 384 272
+:simon/tapir/032: 384 304
 :simon/tapir/032: 480 208
 :simon/tapir/032: 480 240
 :simon/tapir/032: 480 272
 :simon/tapir/032: 480 304
 :simon/tapir/016h: 480 336
-:simon/tapir/016h: 480 384
-:simon/tapir/016h: 768 384
-:geoo/steel/64x64.S: 624 128
+:simon/tapir/016h: 504 384
 :simon/tapir/032vb: 752 96
 :simon/tapir/032: 752 192
-:simon/tapir/032: 752 224
-:simon/tapir/032: 784 224
-:simon/tapir/032b: 784 160
 :simon/tapir/032c: 560 160
 :simon/tapir/032: 592 160
 :simon/tapir/032: 592 128
 :simon/tapir/032: 560 128
 :simon/tapir/032hc: 496 128
 :simon/tapir/032vb: 416 144
-:simon/tapir/032: 752 320
-:geoo/steel/64x64.S: 624 64
 :simon/tapir/032b: 720 64
 :simon/tapir/032: 688 96
-:simon/tapir/016h: 800 384
 :simon/tapir/032hc: 688 320
-:simon/tapir/032vb: 816 192
-:simon/tapir/016h: 816 256
-:simon/tapir/016h: 816 272
-:simon/tapir/032: 816 320
-:simon/tapir/032: 816 352
-:simon/tapir/032hc: 752 352
-:simon/tapir/016h: 832 384
 :geoo/steel/32x32o.S: 352 128
-:simon/tapir/016h: 32 172 n
-:simon/tapir/016h: 64 172 n
-:simon/tapir/016h: 96 172 n
-:simon/tapir/016h: 128 172 n
-:simon/tapir/016h: 160 172 n
-:simon/tapir/016h: 192 172 n
-:simon/tapir/016h: 224 172 n
-:simon/tapir/016h: 256 172 n
-:simon/tapir/016h: 288 172 n
 :simon/tapir/016h: 32 160 d
 :simon/tapir/016h: 64 160 d
 :simon/tapir/016h: 96 160 d
@@ -178,9 +135,46 @@ $ENGLISH No More Heroes
 :simon/tapir/016h: 224 160 d
 :simon/tapir/016h: 256 160 d
 :simon/tapir/016h: 288 160 d
-:geoo/steel/64x64.S: 688 192
 :simon/tapir/032: 688 64
 :simon/tapir/032: 720 96
 :simon/tapir/032: 752 160
-:simon/tapir/032: 784 192
-:simon/tapir/032: 816 288
+:simon/tapir/064: 560 64
+:simon/tapir/064: 624 64
+:simon/tapir/064: 496 64
+:simon/tapir/064: 432 64
+:simon/tapir/064: 624 128
+:simon/tapir/032v: 656 192
+:simon/tapir/016va: 640 192
+:Group-0: 608 224
+:Group-0: 640 352
+:simon/tapir/032: 576 304
+:simon/tapir/016h: 576 336
+:simon/tapir/064: 512 288
+:simon/tapir/032v: 608 288
+:simon/tapir/016hd: 600 384
+:Group-0: 576 272
+:simon/tapir/032d: 576 256
+$BEGIN_TILE_GROUP 2
+:geoo/steel/32x32o.S: 0 0
+:geoo/construction/concrete/032c: 1 0 d
+$END_TILE_GROUP
+:Group-2: 608 256
+:Group-2: 672 352
+$BEGIN_TILE_GROUP 3
+:geoo/steel/32x64o.S: 0 0
+:simon/tapir/032vc: 1 0 d
+$END_TILE_GROUP
+:Group-3: 640 288
+:geoo/steel/32x16o.S: 640 384
+:geoo/steel/32x16o.S: 672 384
+:geoo/steel/32x16o.S: 704 384
+:geoo/steel/32x16o.S: 736 384
+:Group-0: 608 384
+:simon/tapir/016h: 248 384
+:simon/tapir/016h: 224 384
+:simon/tapir/032: 752 256
+:simon/tapir/032: 752 224
+:simon/tapir/032: 752 288
+:simon/tapir/032: 752 320
+:simon/tapir/032: 576 208
+:simon/tapir/016h: 576 240

@@ -10,7 +10,7 @@ lixsterquadrille.txt
 lixesinarms.txt
 downamong.txt
 laser1.txt
-crownjewelheist.txt
+alieninvasion.txt
 fiveforfighting.txt
 bulldozer.txt
 thegr8escape.txt
@@ -18,7 +18,7 @@ trapeze.txt
 toccata.txt
 thomastheclimber.txt
 thecircularruins.txt
-thecrimsonroom.txt
+merdemerdemerde.txt
 buridan.txt
 cuberreplacement.txt
 amatterofperspective.txt

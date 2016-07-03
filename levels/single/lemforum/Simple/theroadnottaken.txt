@@ -1,0 +1,111 @@
+$BUILT 2016-07-16 20:29:19
+$AUTHOR Insane Steve
+$ENGLISH The Road Not Taken
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 960
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+#START_X 320
+#START_Y -20
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 15
+#SPAWN_INTERVAL 47
+
+#WALKER 20
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 10
+#BLOCKER 2
+#BUILDER 20
+#PLATFORMER 2
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#JUMPER 10
+#CUBER 5
+
+:geoo/abstract/hatch.H: 608 112
+:geoo/abstract/hatch.H: 608 112 r
+
+:geoo/abstract/goal.G: 128 224
+
+:geoo/steel/64x32o.S: 592 208
+:geoo/abstract/cvblocks/045: 528 176
+:geoo/abstract/cvblocks/045: 656 176
+:geoo/abstract/cvblocks/045: 656 304
+:geoo/abstract/cvblocks/045: 528 304
+:geoo/abstract/cvblocks/035: 656 368
+:geoo/abstract/cvblocks/035: 528 368
+:geoo/abstract/cvblocks/045: 112 272
+:geoo/abstract/cvblocks/045: 112 336
+:geoo/abstract/cvblocks/005: 496 176
+:geoo/abstract/cvblocks/005: 480 176
+:geoo/abstract/cvblocks/005: 464 176
+:geoo/abstract/cvblocks/005: 448 176
+:geoo/abstract/cvblocks/005: 448 296
+:geoo/abstract/cvblocks/005: 464 296
+:geoo/abstract/cvblocks/005: 480 296
+:geoo/abstract/cvblocks/005: 448 336
+:geoo/abstract/cvblocks/005: 464 336
+:geoo/steel/16x32o.S: 408 0
+:geoo/steel/16x32o.S: 408 32
+:geoo/steel/16x32o.S: 408 64
+:geoo/steel/16x32o.S: 408 96
+:geoo/steel/16x32o.S: 408 128
+:geoo/steel/16x32o.S: 408 160
+:geoo/steel/16x32o.S: 408 192
+:geoo/abstract/cvblocks/030: 376 224
+:geoo/abstract/cvblocks/030: 376 256
+:geoo/steel/16x32o.S: 176 240
+:geoo/steel/16x32o.S: 176 272
+:geoo/abstract/cvblocks/030: 192 208
+:geoo/abstract/cvblocks/005: 264 336
+:geoo/abstract/cvblocks/005: 280 336
+:geoo/abstract/cvblocks/030: 344 256
+:geoo/abstract/cvblocks/005: 512 176
+:geoo/abstract/cvblocks/031: 344 224
+:geoo/abstract/cvblocks/031: 376 192
+:geoo/abstract/cvblocks/030: 336 112
+:geoo/steel/16x32o.S: 176 208
+:geoo/abstract/cvblocks/030: 720 176
+:geoo/abstract/cvblocks/030: 752 144
+:geoo/abstract/cvblocks/030: 816 144
+:geoo/abstract/cvblocks/030: 816 176
+:geoo/abstract/cvblocks/026: 816 112
+:geoo/abstract/cvblocks/027: 832 112
+:geoo/steel/64x64.S: 528 240
+:geoo/steel/64x64.S: 656 240
+:geoo/steel/64x32o.S: 592 304
+:geoo/abstract/cvblocks/030: 752 240
+:geoo/abstract/cvblocks/030: 720 368
+:geoo/abstract/cvblocks/030: 784 336
+:geoo/steel/16x32o.S: 848 176
+:geoo/abstract/cvblocks/030: 880 80
+:geoo/abstract/cvblocks/045: 816 272
+:geoo/abstract/cvblocks/030: 784 208
+:geoo/steel/32x32o.S: 816 208
+:geoo/abstract/cvblocks/030: 272 144
+:geoo/steel/32x32o.S: 224 176
+:geoo/abstract/cvblocks/020: 912 64
+:geoo/abstract/cvblocks/020: 944 64
+:geoo/abstract/cvblocks/020: 16 64
+:geoo/abstract/cvblocks/020: 48 64
+:geoo/abstract/cvblocks/020: 80 64
+:geoo/abstract/cvblocks/020: 112 64
+:geoo/steel/32x32o.S: 912 272
+:geoo/steel/32x32o.S: 912 112
+:geoo/abstract/cvblocks/030: 944 240
+:geoo/abstract/cvblocks/030: 944 208
+:geoo/abstract/cvblocks/030: 16 208
+:geoo/steel/32x32o.S: 80 80
+:geoo/steel/16x32o.S: 928 80
+:geoo/steel/16x16o.S: 576 304
+:geoo/steel/16x16o.S: 656 304
+:geoo/steel/16x32o.S: 848 144
+:geoo/steel/16x16o.S: 656 224
+:geoo/steel/16x16o.S: 576 224
+:geoo/steel/64x64.S: 592 240

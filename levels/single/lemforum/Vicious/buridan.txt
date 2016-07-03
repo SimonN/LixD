@@ -1,41 +1,36 @@
-$BUILT 2016-04-17 20:44:48
+$BUILT 2016-07-05 16:58:49
 $AUTHOR Michael S. Repton
-$GERMAN 
 $ENGLISH Buridan's Lix
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1440
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 224
 #START_Y 380
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 70
 #INITIAL 10
 #REQUIRED 9
 #SPAWN_INTERVAL 60
-#SPAWN_INTERVAL_FAST 4
 
 #BUILDER 4
 #DIGGER 3
+#EXPLODER2 0
 
 :matt/marble/Hatch.H: 560 64
 
-:matt/marble/Goal.G: 236 288
-:matt/marble/Goal.G: 928 256
+:matt/marble/Goal.G: 220 256
+:matt/marble/Goal.G: 1056 320
 
-:simon/water.W: 848 352
-:simon/water.W: 896 352
-:simon/water.W: 944 352
-:simon/water.W: 992 352
-:simon/water.W: 1040 352
-:simon/water.W: 1136 352
-:simon/water.W: 1088 352
-:simon/water.W: 1184 352
-:proxima/flame.F: 248 156
+:simon/water.W: 848 360
+:simon/water.W: 896 360
+:simon/water.W: 944 360
+:simon/water.W: 992 360
+:simon/water.W: 1040 360
+:simon/water.W: 1136 360
+:simon/water.W: 1088 360
+:simon/water.W: 1184 360
+:proxima/flame.F: 308 156
 
 :geoo/abstract/pipes/central0: 432 204
 :geoo/abstract/pipes/central0: 464 204
@@ -43,6 +38,7 @@ $ENGLISH Buridan's Lix
 :geoo/abstract/pipes/central0: 368 204
 :geoo/abstract/pipes/central0: 400 204
 :geoo/abstract/pipes/central0: 336 204
+:matt/marble/20d: 244 320
 :matt/marble/23e: 272 336
 :matt/marble/23e: 272 368
 :matt/marble/23e: 304 336
@@ -84,18 +80,18 @@ $ENGLISH Buridan's Lix
 :matt/marble/09a: 656 144
 :matt/marble/09a: 656 208
 :matt/marble/09a: 656 272
-:matt/marble/17b: 896 304
+:matt/marble/17b: 896 288
 :matt/marble/20d: 952 336
-:matt/marble/17b: 928 336
-:matt/marble/15b: 960 336
-:matt/marble/15b: 992 304
-:matt/marble/08b: 928 304
+:matt/marble/17b: 928 320
+:matt/marble/15b: 960 320
+:matt/marble/21d: 1000 288
+:matt/marble/15b: 992 288
+:matt/marble/08b: 928 288
 :geoo/steel/dark_64x64o.S: 784 336
 :matt/marble/14b: 1024 368
-:matt/marble/20d: 1080 280
-:matt/marble/14b: 1056 336
+:matt/marble/20d: 1128 280
+:matt/marble/20d: 1128 344
 :matt/marble/08b: 1056 368
-:matt/marble/16b: 1088 336
 :matt/marble/16b: 1120 368
 :geoo/steel/dark_64x64o.S: 1216 336
 :matt/marble/04b: 1280 336
@@ -139,23 +135,23 @@ $ENGLISH Buridan's Lix
 :matt/marble/10d: 1384 96
 :matt/marble/10d: 1416 96
 :matt/marble/04d: 1344 192
-:matt/earth/10: 752 -64
-:matt/earth/04: 816 0 rrr
-:matt/earth/04: 912 -16
-:matt/marble/20d: 1080 152
-:matt/earth/10: 1024 -16 rrr
-:matt/earth/10: 944 0
-:matt/earth/16: 1088 16 rr
-:matt/earth/04: 1120 -96 rr
-:matt/earth/04: 1040 -48 rr
+:matt/earth/10: 784 -64
+:matt/earth/04: 848 0 rrr
+:matt/earth/04: 944 -16
+:matt/marble/20d: 1128 152
+:matt/earth/10: 1056 -16 rrr
+:matt/earth/10: 976 0
+:matt/earth/16: 1120 16 rr
+:matt/earth/04: 1152 -96 rr
+:matt/earth/04: 1072 -48 rr
 :matt/earth/10: 1200 -80
-:matt/earth/03: 960 -16
-:matt/marble/20d: 1080 216
-:matt/earth/26: 944 112
-:matt/earth/26: 784 48
-:matt/earth/26: 992 144
-:matt/earth/24: 864 96
-:matt/earth/25: 912 112
+:matt/earth/03: 992 -16
+:matt/marble/20d: 1128 216
+:matt/earth/26: 976 112
+:matt/earth/26: 816 48
+:matt/earth/26: 1024 144
+:matt/earth/24: 896 96
+:matt/earth/25: 944 112
 :matt/earth/26: 1248 32 frr
 :matt/earth/25: 1280 16
 :matt/earth/24: 1344 0
@@ -167,9 +163,7 @@ $ENGLISH Buridan's Lix
 :matt/marble/23e: 208 336
 :matt/earth/04: 144 320 frr
 :matt/earth/10: -32 320 frr
-:geoo/abstract/pipes/central0: 304 204
-:geoo/abstract/pipes/central0: 272 204
-:geoo/steel/dark_32x32o.S: 252 204
+:geoo/steel/dark_32x32o.S: 312 204
 :matt/marble/20a: 96 128
 :matt/marble/21d: 64 168
 :matt/marble/20d: 48 160
@@ -207,3 +201,5 @@ $ENGLISH Buridan's Lix
 :matt/earth/03: 208 368 f
 :matt/earth/03: 304 384 f
 :geoo/steel/dark_32x64o.S: 528 176
+:matt/marble/21d: 1064 288
+:matt/marble/21d: 220 304

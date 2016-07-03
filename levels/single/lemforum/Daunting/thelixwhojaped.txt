@@ -1,21 +1,15 @@
-$BUILT 2016-01-31 15:46:53
+$BUILT 2016-07-05 02:06:01
 $AUTHOR mobius
-$GERMAN 
 $ENGLISH The Lix Who Japed
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 0
 #INITIAL 2
 #REQUIRED 2
-#SPAWN_INTERVAL 50
-#SPAWN_INTERVAL_FAST 4
+#SPAWN_INTERVAL 60
 
 #CLIMBER 1
 #FLOATER 1
@@ -23,6 +17,7 @@ $ENGLISH The Lix Who Japed
 #BASHER 2
 #MINER 1
 #DIGGER 1
+#EXPLODER2 0
 
 :geoo/sandstone/Hatch.H: 16 0
 
@@ -33,6 +28,7 @@ $ENGLISH The Lix Who Japed
 :geoo/construction/sawblade.F: 392 48
 :geoo/construction/sawblade.F: 392 0
 
+:geoo/sandstone/64x64: 232 224
 :geoo/sandstone/64x32: 8 96
 :geoo/sandstone/64x32: 8 128
 :geoo/sandstone/64x32: 8 160
@@ -87,7 +83,6 @@ $ENGLISH The Lix Who Japed
 :geoo/sandstone/64x64: 232 160
 :geoo/sandstone/64x64: 296 160
 :geoo/sandstone/64x64: 296 224
-:geoo/sandstone/64x64: 232 224 n
 :geoo/sandstone/slopes/32x32rb: 320 160 frrrd
 :geoo/sandstone/slopes/32x32rb: 296 184 frrrd
 :geoo/sandstone/slopes/32x32rb: 288 192 frrrd

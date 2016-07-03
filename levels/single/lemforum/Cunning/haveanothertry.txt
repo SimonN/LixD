@@ -1,34 +1,23 @@
-$BUILT 2014-05-21 00:06:04
+$BUILT 2016-07-05 01:49:35
 $AUTHOR geoo
-$GERMAN 
 $ENGLISH Have Another Try
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 0
-#INITIAL 20
-#REQUIRED 18
-#SPAWN_INTERVAL 32
-#SPAWN_INTERVAL_FAST 4
+#INITIAL 10
+#REQUIRED 8
+#SPAWN_INTERVAL 13
 
-#CLIMBER 2
 #WALKER 2
-#JUMPER 1
-#NOTHING 0
-#BLOCKER 1
+#CLIMBER 2
 #EXPLODER2 1
-#NOTHING 0
+#BLOCKER 1
 #BASHER 1
 #MINER 2
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#JUMPER 1
 
 :geoo/construction/Hatch.H: 112 272
 
@@ -36,6 +25,15 @@ $ENGLISH Have Another Try
 
 :geoo/construction/sawblade_small.F: 224 128
 
+:geoo/construction/wall/big_brick3: 0 56
+:geoo/construction/wall/big_brick3: 0 88
+:geoo/construction/wall/big_128x128: 368 -32
+$BEGIN_TILE_GROUP 0
+:geoo/construction/wall/small_64x64: 0 0
+:geoo/construction/wall/small_64x64: 32 0
+:matt/winter/09a: 16 0 d
+$END_TILE_GROUP
+:Group-0: 384 16
 :geoo/construction/wall/small_64x64: 192 208
 :geoo/construction/wall/small_64x64: 192 272
 :geoo/construction/wall/small_64x64: 192 336
@@ -48,9 +46,13 @@ $ENGLISH Have Another Try
 :geoo/construction/wall/small_64x64: 0 208
 :geoo/construction/wall/small_64x64: 0 272
 :geoo/construction/wall/small_64x64: 0 336
-:geoo/construction/rod_steel/straight_diagu32.S: 20 24
-:geoo/construction/wall/small_64x64: 0 48
-:geoo/construction/wall/small_64x64: 0 80
+$BEGIN_TILE_GROUP 1
+:geoo/construction/rod_steel/straight_diagu32.S: 20 0
+:geoo/construction/wall/small_64x64: 0 24
+:geoo/construction/wall/small_64x64: 0 56
+:matt/winter/09b: 16 48 d
+$END_TILE_GROUP
+:Group-1: 0 24
 :geoo/construction/wall/small_64x64: 0 144
 :geoo/construction/wall/small_64x64: 192 144
 :geoo/construction/wall/small_64x64: 224 208
@@ -74,7 +76,6 @@ $ENGLISH Have Another Try
 :geoo/construction/wall/small_64x64: 384 -48
 :geoo/construction/wall/small_64x64: 384 80
 :geoo/construction/wall/small_64x64: 416 -48
-:geoo/construction/wall/small_64x64: 416 16
 :geoo/construction/wall/small_64x64: 416 80
 :geoo/construction/wall/small_64x64: 480 336
 :geoo/construction/wall/small_64x64: 544 336
@@ -142,10 +143,6 @@ $ENGLISH Have Another Try
 :geoo/construction/wall/big_brickdiag_bd: 512 304
 :geoo/construction/wall/big_brickdiag_td: 576 336
 :geoo/construction/wall/big_brickdiag_bd: 576 368
-:matt/winter/09b: 16 72 d
-:geoo/construction/wall/small_64x64: 384 16 n
-:matt/winter/09a: 400 16 d
-:geoo/construction/wall/big_128x128: 368 -32 n
 :geoo/construction/wall/big_128x128: 480 -32 d
 :geoo/construction/wall/big_128x128: 256 -32 d
 :geoo/construction/rod_steel/straight32.S: 352 20
@@ -158,8 +155,6 @@ $ENGLISH Have Another Try
 :geoo/construction/wall/big_brickdiag_bu: 0 208
 :geoo/construction/wall/big_brickdiag_td: 0 368
 :geoo/construction/wall/big_128x128: 64 -8 d
-:geoo/construction/wall/big_brick3: 0 88 n
-:geoo/construction/wall/big_brick3: 0 56 n
 :geoo/construction/rod_steel/link_du_h.S: 52 8
 :geoo/construction/rod_steel/straight32.S: 72 20
 :geoo/construction/rod_steel/straight32.S: 104 20

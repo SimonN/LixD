@@ -1,227 +1,215 @@
-$BUILT                                             2012-03-11 18:09:19
+$BUILT 2016-07-16 19:23:33
 $AUTHOR Michael S. Repton
-$GERMAN                                                               
-$ENGLISH                                            Thomas the Climber
+$ENGLISH Thomas the Climber
 
-#SIZE_X                                                           1440
-#SIZE_Y                                                            400
-#TORUS_X                                                             0
-#TORUS_Y                                                             0
-#START_X                                                             0
-#START_Y                                                           -20
-#BACKGROUND_RED                                                      0
-#BACKGROUND_GREEN                                                    0
-#BACKGROUND_BLUE                                                     0
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1440
+#SIZE_Y 400
+#START_X 0
+#START_Y -20
 
-#SECONDS                                                             0
-#INITIAL                                                            50
-#REQUIRED                                                           49
-#SPAWN_INTERVAL                                                     50
-#SPAWN_INTERVAL_FAST                                                 4
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 39
+#SPAWN_INTERVAL 50
 
-#CLIMBER                                                             2
-#FLOATER                                                             0
-#EXPLODER                                                            2
-#BLOCKER                                                             2
-#BUILDER                                                             2
-#BASHER                                                              2
-#MINER                                                               2
-#NOTHING                                                             0
-#NOTHING                                                             0
-#NOTHING                                                             0
-#NOTHING                                                             0
-#NOTHING                                                             0
+#CLIMBER 2
+#EXPLODER 2
+#BLOCKER 2
+#BUILDER 2
+#BASHER 2
+#MINER 2
 
-:matt/marble/Hatch.H:                        256       192
+:matt/marble/Hatch.H: 256 192
 
-:matt/marble/Goal.G:                        1280       288
+:matt/marble/Goal.G: 1280 288
 
-:simon/acid.W:                                    736       336
-:simon/acid.W:                                    784       336
-:geoo/construction/sawblade_medium.F:             928       240
+:simon/acid.W: 736 336
+:simon/acid.W: 784 336
+:geoo/construction/sawblade_medium.F: 928 240
 
-:matt/marble/23b:                            176       272
-:matt/marble/04a:                            160       304
-:matt/marble/23b:                            176       304
-:matt/marble/23b:                            208       272
-:matt/marble/23b:                            208       304
-:matt/marble/23b:                            240       272
-:matt/marble/23b:                            240       304
-:matt/marble/23b:                            272       272
-:matt/marble/23b:                            272       304
-:matt/marble/23b:                            304       272
-:matt/marble/23b:                            304       304
-:matt/marble/23b:                            368       272
-:matt/marble/04a:                            384       304
-:matt/marble/23b:                            368       304
-:matt/marble/09a:                            192       336
-:matt/marble/09a:                            256       336
-:matt/marble/09a:                            320       336
-:matt/marble/09a:                              0       336
-:matt/marble/09a:                            128       336
-:matt/marble/09a:                             64       336
-:matt/marble/09a:                            448       336
-:matt/marble/09a:                            512       336
-:matt/marble/09a:                            576       336
-:matt/marble/09a:                            384       336
-:geoo/abstract/pipes/central0:                      0       304     rrr
-:geoo/abstract/pipes/central0:                      0       272     rrr
-:geoo/abstract/pipes/central0:                      0       240     rrr
-:geoo/abstract/pipes/central0:                      0       208     rrr
-:geoo/abstract/pipes/central0:                      0       176     rrr
-:geoo/abstract/pipes/central0:                      0       144     rrr
-:geoo/abstract/pipes/central0:                      0       112     rrr
-:geoo/abstract/pipes/central0:                      0        80     rrr
-:geoo/steel/dark_16x16o.S:                        400       192
-:geoo/steel/dark_16x16o.S:                        160       192
-:geoo/abstract/pipes/central0:                    568       304     rrr
-:geoo/abstract/pipes/central0:                    568       272     rrr
-:geoo/abstract/pipes/central0:                    568       240     rrr
-:geoo/abstract/pipes/central0:                    568       208     rrr
-:geoo/abstract/pipes/central0:                    568       176     rrr
-:geoo/abstract/pipes/central0:                    568       144     rrr
-:geoo/abstract/pipes/central0:                    568       112     rrr
-:geoo/abstract/pipes/central0:                    568        80     rrr
-:matt/marble/15:                              32        32
-:matt/marble/15:                               0        64
-:matt/marble/15:                              64         0
-:matt/marble/08:                               0         0
-:matt/marble/08:                             -32        32
-:matt/marble/17:                             544        64
-:matt/marble/17:                             512        32
-:matt/marble/17:                             480         0
-:matt/marble/08:                             512         0
-:matt/marble/08:                             544        32
-:matt/marble/08:                             576         0
-:matt/marble/15:                             576        64
-:matt/marble/15:                             608        32
-:matt/marble/15:                             640         0
-:geoo/abstract/pipes/central0:                    128        24     rrr
-:matt/marble/15:                             128         0
-:matt/marble/17:                              96         0
-:geoo/abstract/pipes/central0:                    440        24     rrr
-:matt/marble/15:                             448         0
-:matt/marble/17:                             416         0
-:matt/marble/15:                             352        32
-:matt/marble/17:                             320        32
-:matt/marble/15:                             384         0
-:matt/marble/17:                             288         0
-:matt/marble/08:                             320         0
-:matt/marble/15:                             224        32
-:matt/marble/17:                             192        32
-:matt/marble/15:                             256         0
-:matt/marble/17:                             160         0
-:matt/marble/08:                             192         0
-:geoo/abstract/pipes/central0:                    128        56     rrr
-:matt/marble/19c:                             88        80
-:geoo/abstract/pipes/central0:                    440        56     rrr
-:matt/marble/18c:                            424        80
-:geoo/steel/dark_32x64o.S:                        704       336
-:geoo/steel/dark_32x16o.S:                        736       384
-:geoo/steel/dark_32x16o.S:                        768       384
-:geoo/steel/dark_32x16o.S:                        800       384
-:geoo/steel/dark_32x64o.S:                        832       336
-:geoo/steel/dark_32x64o.S:                        896       336
-:matt/marble/09a:                            928       336
-:matt/marble/09a:                            640       336
-:matt/marble/09a:                           1056       336
-:matt/marble/09a:                           1120       336
-:matt/marble/09a:                           1184       336
-:matt/marble/09a:                            992       336
-:matt/marble/05a:                            672       304
-:matt/marble/14a:                            672       272
-:matt/marble/14a:                            640       304
-:geoo/steel/dark_32x64o.S:                        704       272
-:matt/marble/23:                             960       272
-:matt/marble/23:                             960       304
-:matt/marble/23:                             992       272
-:matt/marble/23:                             992       304
-:matt/marble/23:                            1024       272
-:matt/marble/23:                            1024       304
-:matt/marble/23:                            1056       272
-:matt/marble/23:                            1056       304
-:matt/marble/23:                            1088       272
-:matt/marble/23:                            1088       304
-:matt/marble/23:                            1120       272
-:matt/marble/23:                            1120       304
-:matt/marble/09a:                           1248       336
-:matt/marble/09a:                           1376       336
-:matt/marble/09a:                           1312       336
-:geoo/abstract/pipes/central0:                   1176       240     rrr
-:geoo/abstract/pipes/central0:                   1176       208     rrr
-:geoo/abstract/pipes/central0:                   1176       176     rrr
-:geoo/abstract/pipes/central0:                   1176       144     rrr
-:geoo/abstract/pipes/central0:                   1176       112     rrr
-:geoo/abstract/pipes/central0:                   1176        80     rrr
-:geoo/abstract/pipes/central0:                   1432       304     rrr
-:geoo/abstract/pipes/central0:                   1432       272     rrr
-:geoo/abstract/pipes/central0:                   1432       240     rrr
-:geoo/abstract/pipes/central0:                   1432       208     rrr
-:geoo/abstract/pipes/central0:                   1432       176     rrr
-:geoo/abstract/pipes/central0:                   1432       144     rrr
-:geoo/abstract/pipes/central0:                   1432       112     rrr
-:geoo/abstract/pipes/central0:                   1432        80     rrr
-:matt/marble/17:                            1408        64
-:matt/marble/17:                            1376        32
-:matt/marble/17:                            1344         0
-:matt/marble/08:                            1376         0
-:matt/marble/08:                            1408        32
-:matt/marble/17:                            1152        64
-:matt/marble/17:                            1120        32
-:matt/marble/17:                            1088         0
-:matt/marble/08:                            1120         0
-:matt/marble/08:                            1152        32
-:matt/marble/08:                            1184         0
-:matt/marble/15:                            1184        64
-:matt/marble/15:                            1216        32
-:matt/marble/15:                            1248         0
-:matt/marble/15:                            1312         0
-:geoo/abstract/pipes/central0:                   1304        24     rrr
-:matt/marble/17:                            1280         0
-:geoo/abstract/pipes/central0:                   1056        24     rrr
-:matt/marble/15:                            1056         0
-:matt/marble/17:                            1024         0
-:matt/marble/15:                             960        32
-:matt/marble/17:                             928        32
-:matt/marble/15:                             992         0
-:matt/marble/17:                             896         0
-:matt/marble/08:                             928         0
-:geoo/abstract/pipes/central0:                   1304        56     rrr
-:matt/marble/18c:                           1288        80
-:geoo/abstract/pipes/central0:                   1056        56     rrr
-:matt/marble/19c:                           1016        80
-:matt/marble/05a:                            928       304
-:geoo/steel/dark_32x64o.S:                       1152       272
-:matt/marble/05a:                            928       272
-:matt/marble/05a:                            928       240
-:geoo/steel/dark_16x16o.S:                        960       176
-:matt/marble/12a:                            400       288
-:matt/marble/12a:                            416       304
-:matt/marble/12a:                            432       320
-:matt/marble/10a:                            160       288
-:matt/marble/10a:                            144       304
-:matt/marble/10a:                            128       320
-:matt/marble/04a:                            144       320
-:matt/marble/04a:                            400       320
-:matt/marble/23b:                            336       272
-:matt/marble/23b:                            336       304
-:geoo/steel/dark_32x32o.S:                        176       104
-:geoo/steel/dark_32x32o.S:                        176       136
-:geoo/steel/dark_32x32o.S:                        176       168
-:geoo/steel/dark_32x32o.S:                        176       200
-:geoo/steel/dark_32x32o.S:                        176       232
-:geoo/steel/dark_32x32o.S:                        368       104
-:geoo/steel/dark_32x32o.S:                        368       136
-:geoo/steel/dark_32x32o.S:                        368       168
-:geoo/steel/dark_32x32o.S:                        368       200
-:geoo/steel/dark_32x32o.S:                        368       232
-:geoo/steel/dark_32x16o.S:                        368       264
-:geoo/steel/dark_32x16o.S:                        176       264
-:geoo/steel/dark_32x16o.S:                        208       264
-:geoo/steel/dark_32x16o.S:                        240       264
-:geoo/steel/dark_32x16o.S:                        336       264
-:geoo/steel/dark_32x16o.S:                        304       264
-:geoo/steel/dark_32x16o.S:                        864       384
-:geoo/steel/dark_32x16o.S:                        864       336
-:matt/marble/05a:                            928       208
-:matt/marble/05a:                            928       176
+:matt/marble/23b: 176 272
+:matt/marble/04a: 160 304
+:matt/marble/23b: 176 304
+:matt/marble/23b: 208 272
+:matt/marble/23b: 208 304
+:matt/marble/23b: 240 272
+:matt/marble/23b: 240 304
+:matt/marble/23b: 272 272
+:matt/marble/23b: 272 304
+:matt/marble/23b: 304 272
+:matt/marble/23b: 304 304
+:matt/marble/23b: 368 272
+:matt/marble/04a: 384 304
+:matt/marble/23b: 368 304
+:matt/marble/09a: 192 336
+:matt/marble/09a: 256 336
+:matt/marble/09a: 320 336
+:matt/marble/09a: 0 336
+:matt/marble/09a: 128 336
+:matt/marble/09a: 64 336
+:matt/marble/09a: 448 336
+:matt/marble/09a: 512 336
+:matt/marble/09a: 576 336
+:matt/marble/09a: 384 336
+:geoo/abstract/pipes/central0: 0 304 rrr
+:geoo/abstract/pipes/central0: 0 272 rrr
+:geoo/abstract/pipes/central0: 0 240 rrr
+:geoo/abstract/pipes/central0: 0 208 rrr
+:geoo/abstract/pipes/central0: 0 176 rrr
+:geoo/abstract/pipes/central0: 0 144 rrr
+:geoo/abstract/pipes/central0: 0 112 rrr
+:geoo/abstract/pipes/central0: 0 80 rrr
+:geoo/steel/dark_16x16o.S: 400 192
+:geoo/steel/dark_16x16o.S: 160 192
+:geoo/abstract/pipes/central0: 568 304 rrr
+:geoo/abstract/pipes/central0: 568 272 rrr
+:geoo/abstract/pipes/central0: 568 240 rrr
+:geoo/abstract/pipes/central0: 568 208 rrr
+:geoo/abstract/pipes/central0: 568 176 rrr
+:geoo/abstract/pipes/central0: 568 144 rrr
+:geoo/abstract/pipes/central0: 568 112 rrr
+:geoo/abstract/pipes/central0: 568 80 rrr
+:matt/marble/15: 32 32
+:matt/marble/15: 0 64
+:matt/marble/15: 64 0
+:matt/marble/08: 0 0
+:matt/marble/08: -32 32
+:matt/marble/17: 544 64
+:matt/marble/17: 512 32
+:matt/marble/17: 480 0
+:matt/marble/08: 512 0
+:matt/marble/08: 544 32
+:matt/marble/08: 576 0
+:matt/marble/15: 576 64
+:matt/marble/15: 608 32
+:matt/marble/15: 640 0
+:geoo/abstract/pipes/central0: 128 24 rrr
+:matt/marble/15: 128 0
+:matt/marble/17: 96 0
+:geoo/abstract/pipes/central0: 440 24 rrr
+:matt/marble/15: 448 0
+:matt/marble/17: 416 0
+:matt/marble/15: 352 32
+:matt/marble/17: 320 32
+:matt/marble/15: 384 0
+:matt/marble/17: 288 0
+:matt/marble/08: 320 0
+:matt/marble/15: 224 32
+:matt/marble/17: 192 32
+:matt/marble/15: 256 0
+:matt/marble/17: 160 0
+:matt/marble/08: 192 0
+:geoo/abstract/pipes/central0: 128 56 rrr
+:matt/marble/19c: 88 80
+:geoo/abstract/pipes/central0: 440 56 rrr
+:matt/marble/18c: 424 80
+:geoo/steel/dark_32x64o.S: 704 336
+:geoo/steel/dark_32x16o.S: 736 384
+:geoo/steel/dark_32x16o.S: 768 384
+:geoo/steel/dark_32x16o.S: 800 384
+:geoo/steel/dark_32x64o.S: 832 336
+:geoo/steel/dark_32x64o.S: 896 336
+:matt/marble/09a: 928 336
+:matt/marble/09a: 640 336
+:matt/marble/09a: 1056 336
+:matt/marble/09a: 1120 336
+:matt/marble/09a: 1184 336
+:matt/marble/09a: 992 336
+:matt/marble/05a: 672 304
+:matt/marble/14a: 672 272
+:matt/marble/14a: 640 304
+:geoo/steel/dark_32x64o.S: 704 272
+:matt/marble/23: 960 272
+:matt/marble/23: 960 304
+:matt/marble/23: 992 272
+:matt/marble/23: 992 304
+:matt/marble/23: 1024 272
+:matt/marble/23: 1024 304
+:matt/marble/23: 1056 272
+:matt/marble/23: 1056 304
+:matt/marble/23: 1088 272
+:matt/marble/23: 1088 304
+:matt/marble/23: 1120 272
+:matt/marble/23: 1120 304
+:matt/marble/09a: 1248 336
+:matt/marble/09a: 1376 336
+:matt/marble/09a: 1312 336
+:geoo/abstract/pipes/central0: 1176 240 rrr
+:geoo/abstract/pipes/central0: 1176 208 rrr
+:geoo/abstract/pipes/central0: 1176 176 rrr
+:geoo/abstract/pipes/central0: 1176 144 rrr
+:geoo/abstract/pipes/central0: 1176 112 rrr
+:geoo/abstract/pipes/central0: 1176 80 rrr
+:geoo/abstract/pipes/central0: 1432 304 rrr
+:geoo/abstract/pipes/central0: 1432 272 rrr
+:geoo/abstract/pipes/central0: 1432 240 rrr
+:geoo/abstract/pipes/central0: 1432 208 rrr
+:geoo/abstract/pipes/central0: 1432 176 rrr
+:geoo/abstract/pipes/central0: 1432 144 rrr
+:geoo/abstract/pipes/central0: 1432 112 rrr
+:geoo/abstract/pipes/central0: 1432 80 rrr
+:matt/marble/17: 1408 64
+:matt/marble/17: 1376 32
+:matt/marble/17: 1344 0
+:matt/marble/08: 1376 0
+:matt/marble/08: 1408 32
+:matt/marble/17: 1152 64
+:matt/marble/17: 1120 32
+:matt/marble/17: 1088 0
+:matt/marble/08: 1120 0
+:matt/marble/08: 1152 32
+:matt/marble/08: 1184 0
+:matt/marble/15: 1184 64
+:matt/marble/15: 1216 32
+:matt/marble/15: 1248 0
+:matt/marble/15: 1312 0
+:geoo/abstract/pipes/central0: 1304 24 rrr
+:matt/marble/17: 1280 0
+:geoo/abstract/pipes/central0: 1056 24 rrr
+:matt/marble/15: 1056 0
+:matt/marble/17: 1024 0
+:matt/marble/15: 960 32
+:matt/marble/17: 928 32
+:matt/marble/15: 992 0
+:matt/marble/17: 896 0
+:matt/marble/08: 928 0
+:geoo/abstract/pipes/central0: 1304 56 rrr
+:matt/marble/18c: 1288 80
+:geoo/abstract/pipes/central0: 1056 56 rrr
+:matt/marble/19c: 1016 80
+:matt/marble/05a: 928 304
+:geoo/steel/dark_32x64o.S: 1152 272
+:matt/marble/05a: 928 272
+:matt/marble/05a: 928 240
+:geoo/steel/dark_16x16o.S: 960 176
+:matt/marble/12a: 400 288
+:matt/marble/12a: 416 304
+:matt/marble/12a: 432 320
+:matt/marble/10a: 160 288
+:matt/marble/10a: 144 304
+:matt/marble/10a: 128 320
+:matt/marble/04a: 144 320
+:matt/marble/04a: 400 320
+:matt/marble/23b: 336 272
+:matt/marble/23b: 336 304
+:geoo/steel/dark_32x32o.S: 176 104
+:geoo/steel/dark_32x32o.S: 176 136
+:geoo/steel/dark_32x32o.S: 176 168
+:geoo/steel/dark_32x32o.S: 176 200
+:geoo/steel/dark_32x32o.S: 176 232
+:geoo/steel/dark_32x32o.S: 368 104
+:geoo/steel/dark_32x32o.S: 368 136
+:geoo/steel/dark_32x32o.S: 368 168
+:geoo/steel/dark_32x32o.S: 368 200
+:geoo/steel/dark_32x32o.S: 368 232
+:geoo/steel/dark_32x16o.S: 368 264
+:geoo/steel/dark_32x16o.S: 176 264
+:geoo/steel/dark_32x16o.S: 208 264
+:geoo/steel/dark_32x16o.S: 240 264
+:geoo/steel/dark_32x16o.S: 336 264
+:geoo/steel/dark_32x16o.S: 304 264
+:geoo/steel/dark_32x16o.S: 864 384
+:geoo/steel/dark_32x16o.S: 864 336
+:matt/marble/05a: 928 208
+:matt/marble/05a: 928 176

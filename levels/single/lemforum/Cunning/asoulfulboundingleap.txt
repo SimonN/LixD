@@ -1,0 +1,85 @@
+$BUILT 2016-07-17 00:01:40
+$AUTHOR mobius
+$ENGLISH A Soulful Bounding Leap!
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 736
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+#START_X 0
+#START_Y -20
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 35
+
+#RUNNER 1
+#BLOCKER 1
+#BUILDER 2
+#BASHER 1
+#DIGGER 1
+#JUMPER 4
+#EXPLODER 0
+
+:simon/hatch001.H: 544 64 r
+:simon/hatch001.H: 224 64
+
+:simon/tapir/goal.G: 16 224
+
+:simon/acid.W: 128 288
+:simon/acid.W: 176 288
+:simon/acid.W: 608 144
+:simon/acid.W: 656 144
+:simon/acid.W: 704 144
+:simon/acid.W: 224 288
+
+:simon/tapir/128: 0 272
+:simon/tapir/128: 256 272
+:geoo/steel/64x64o.S: 128 336
+:geoo/steel/64x64.S: 32 0
+:geoo/steel/64x64.S: 128 0
+:geoo/steel/64x64.S: 192 0
+:geoo/steel/64x64.S: 256 0
+:geoo/steel/64x64.S: 320 0
+:geoo/steel/64x64.S: 384 0
+:geoo/steel/64x64.S: 448 0
+:geoo/steel/64x64.S: 512 0
+:geoo/steel/64x64.S: 576 0
+:geoo/steel/32x16o.S: 192 128
+:geoo/steel/32x16o.S: 224 128
+:geoo/steel/32x16o.S: 256 128
+:geoo/steel/32x16o.S: 288 128
+:geoo/steel/32x16o.S: 320 128
+:geoo/steel/16x32o.S: 192 96
+:geoo/steel/16x32o.S: 192 64
+:simon/tapir/032ha: 352 240
+:simon/tapir/032ha: 416 208
+:simon/tapir/032h: 416 240
+:simon/tapir/032h: 480 208
+:simon/tapir/032h: 480 240
+:simon/tapir/064h: 544 208
+:simon/tapir/128: 608 272
+:geoo/steel/64x64.S: 640 0
+:geoo/steel/64x64.S: 704 0
+:geoo/steel/32x64o.S: 96 0
+:simon/tapir/032ha: 544 144
+:simon/tapir/064: 672 208
+:geoo/steel/64x64o.S: 0 144
+:geoo/steel/64x64o.S: 64 144
+:geoo/steel/64x64o.S: 64 80
+:geoo/steel/32x16o.S: 64 64
+:geoo/steel/32x16o.S: 96 64
+:geoo/steel/64x32o.S: 672 176
+:geoo/steel/64x32o.S: 608 176
+:simon/tapir/064h: 480 336
+:geoo/steel/64x64o.S: 512 272
+:geoo/steel/64x64o.S: 192 336
+:simon/tapir/032v: 576 272
+:geoo/steel/64x32o.S: 480 176
+:simon/tapir/032hd: 480 175 d
+:geoo/steel/64x32o.S: 544 176
+:simon/tapir/064v: 384 272
+:simon/tapir/032v: 448 336
+:simon/tapir/064: 448 272

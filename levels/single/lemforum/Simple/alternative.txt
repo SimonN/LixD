@@ -1,6 +1,6 @@
-$BUILT 2016-06-28 11:54:11
+$BUILT 2016-07-16 19:26:02
 $AUTHOR Insane Steve
-$ENGLISH Alternative Methods
+$ENGLISH Alternative Route Recommended
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640

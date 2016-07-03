@@ -1,36 +1,23 @@
-$BUILT 2014-07-15 22:34:37
+$BUILT 2016-07-04 23:34:25
 $AUTHOR mobius/geoo
-$GERMAN 
 $ENGLISH Over the Hump
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 864
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 224
 #START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 0
 #INITIAL 30
 #REQUIRED 29
 #SPAWN_INTERVAL 16
-#SPAWN_INTERVAL_FAST 4
 
 #CLIMBER 15
-#NOTHING 0
-#NOTHING 0
 #BUILDER 2
 #BASHER 1
 #MINER 1
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#EXPLODER2 0
 
 :matt/earth/Hatch.H: 414 256
 :matt/earth/Hatch.H: 718 256 r
@@ -44,11 +31,14 @@ $ENGLISH Over the Hump
 :simon/water_thin.W: 280 368
 :simon/water_thin.W: 328 368
 
+:matt/earth/01: 779 357 r
+:matt/earth/01: 555 249
+:matt/earth/18: 598 341
+:matt/earth/17: 553 263
 :matt/earth/28: 112 80
 :matt/earth/28: 376 40
 :matt/earth/24: 240 56
 :matt/earth/05: 543 200 frr
-:geoo/steel/dark_32x64o.S: 606 240 d
 :matt/earth/05: 552 140
 :matt/earth/23: 120 72
 :matt/earth/26: 160 56
@@ -64,6 +54,7 @@ $ENGLISH Over the Hump
 :matt/earth/01: 470 360
 :matt/earth/01: 494 362
 :matt/earth/01: 518 364
+:matt/earth/05: 561 224 frr
 :matt/earth/01: 566 360
 :matt/earth/01: 590 360
 :matt/earth/01: 614 360
@@ -94,9 +85,7 @@ $ENGLISH Over the Hump
 :matt/earth/09: 426 354
 :matt/earth/09: 484 356
 :matt/earth/09: 564 356
-:geoo/steel/dark_32x64o.S: 606 304 d
 :matt/earth/05: 575 310 frr
-:matt/earth/05: 560 224 frr
 :matt/earth/05: 535 277
 :matt/earth/09: 586 354
 :matt/earth/09: 672 355
@@ -124,7 +113,6 @@ $ENGLISH Over the Hump
 :geoo/steel/dark_32x64o.S: 574 102
 :geoo/steel/dark_32x64o.S: 574 38
 :matt/earth/29: 582 38
-:matt/earth/07b: 632 346 fd
 :matt/earth/01: 694 360
 :matt/earth/09: 704 354
 :matt/earth/07b: 528 349 d
@@ -132,3 +120,5 @@ $ENGLISH Over the Hump
 :matt/earth/09: 449 356
 :matt/earth/07b: 531 343 d
 :matt/earth/07b: 532 340 d
+:matt/earth/07b: 632 345 rd
+:matt/earth/09: 770 354 frr
