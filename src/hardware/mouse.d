@@ -1,5 +1,7 @@
 module hardware.mouse;
 
+import std.math; // abs
+
 import basics.alleg5;
 import basics.globals;
 import basics.rect;
@@ -36,11 +38,8 @@ void calc();
 @property int  mouseWheelNotches()      { return _wheelNotches; }
 
 void trapMouse(bool b) { _trapMouse = b; }
-void centerMouse();
 void freezeMouseX();
 void freezeMouseY();
-
-
 
 private:
 
@@ -68,8 +67,6 @@ private:
 
     void set_mouse_accel_on_windows(bool);
 
-
-
 public:
 
 void initialize()
@@ -82,10 +79,9 @@ void initialize()
     al_register_event_source(_queue, al_get_mouse_event_source());
 
     if (display) al_hide_mouse_cursor(display);
-    centerMouse();
+    _mouseOwnX = al_get_display_width (display) / 2;
+    _mouseOwnY = al_get_display_height(display) / 2;
 }
-
-
 
 void deinitialize()
 {
@@ -95,8 +91,6 @@ void deinitialize()
         al_uninstall_mouse();
     }
 }
-
-
 
 void calc()
 {
@@ -117,17 +111,17 @@ void calc()
         if (_mouseHeldFor[i]) ++_mouseHeldFor[i];
     }
 
-    // Local variables: current hardware mouse position, these are only used
-    // to reset the mouse later if they differ too much from the following
-    int mouseCurX = xl / 2;
-    int mouseCurY = yl / 2;
+    // Local variables: current hardware mouse position. We reset the hardware
+    // mouse back to the screen center if the hardware mouse is close to edge.
+    int hardwareSavedOnlyForResetX = xl / 2;
+    int hardwareSavedOnlyForResetY = yl / 2;
 
     // I will adhere to my convention from C++/A4 Lix to multiply all incoming
     // mouse movements by the mouse speed, and then later divide by constant
     ALLEGRO_EVENT event;
     while (al_get_next_event(_queue, &event)) {
-        // discard mouse events that do not pertain to our display
-        if (event.mouse.display != display) continue;
+        if (event.mouse.display != display)
+            continue;
 
         immutable int i = event.mouse.button - 1;
 
@@ -136,8 +130,8 @@ void calc()
             // DTODO: Only use mouseSpeed in fullscreen, not in window mode
             _mickeyX += event.mouse.dx * basics.user.mouseSpeed;
             _mickeyY += event.mouse.dy * basics.user.mouseSpeed;
-            mouseCurX = event.mouse.x;
-            mouseCurY = event.mouse.y;
+            hardwareSavedOnlyForResetX = event.mouse.x;
+            hardwareSavedOnlyForResetY = event.mouse.y;
             _wheelNotches -= event.mouse.dz;
             break;
 
@@ -162,6 +156,19 @@ void calc()
 
         case ALLEGRO_EVENT_MOUSE_ENTER_DISPLAY:
             _trapMouse = true;
+            // Nepster 2016-06: When entering the display, the ingame
+            // cursor should jump to where we entered.
+            // This would sometimes trigger when the hardware mouse is close
+            // to the window edge, and is reset to window center by
+            // al_set_mouse_xy(), see further down this function calc().
+            // To guard against this, we move the mouse only if hardware
+            // x or y are sufficiently far away from the screen center.
+            if (   abs(event.mouse.x - xl/2) > 5
+                || abs(event.mouse.y - yl/2) > 5
+            ) {
+                _mouseOwnX = event.mouse.x;
+                _mouseOwnY = event.mouse.y;
+            }
             break;
 
         case ALLEGRO_EVENT_MOUSE_LEAVE_DISPLAY:
@@ -184,27 +191,22 @@ void calc()
 
     if (_trapMouse) {
         al_hide_mouse_cursor(display);
-        if (_centerMouseAtNextUpdate) {
-            _centerMouseAtNextUpdate = false;
-            al_set_mouse_xy(display, xl/2, yl/2);
-            _mouseOwnX = xl/2;
-            _mouseOwnY = yl/2;
-        }
 
-        bool isCloseToEdge(in int mouseCur, in int length)
+        bool isCloseToEdge(in int pos, in int length)
         {
             if (_mouseHeldFor[1] || _mouseHeldFor[2])
                 // RMB scrolling should reset rather often.
                 // Curiously, this is not responsible for trapping the mouse
                 // in the window with guarantee. That's still magic to me.
-                return mouseCur*4 < length || mouseCur*4 >= length*3;
+                return pos * 4 < length || pos * 4 >= length * 3;
             else
                 // Make it even easier for the mouse to leave window,
                 // resetting closer to the edge => less speed to leave.
-                return mouseCur*16 < length || mouseCur*16 >= length*15;
+                return pos * 16 < length || pos * 16 >= length * 15;
         }
 
-        if (isCloseToEdge(mouseCurX, xl) || isCloseToEdge(mouseCurY, yl))
+        if (   isCloseToEdge(hardwareSavedOnlyForResetX, xl)
+            || isCloseToEdge(hardwareSavedOnlyForResetY, yl))
              // do not call centerMouse, that would move _mouseOwnX/Y
              al_set_mouse_xy(display, xl/2, yl/2);
     }
@@ -215,11 +217,6 @@ void calc()
 }
 // end void update()
 
-void centerMouse()
-{
-    _centerMouseAtNextUpdate = true;
-}
-
 void freezeMouseX()
 {
     immutable int xl = al_get_display_width(display);
@@ -227,8 +224,6 @@ void freezeMouseX()
     if (_mouseOwnX < 0)   _mouseOwnX = 0;
     if (_mouseOwnX >= xl) _mouseOwnX = xl - 1;
 }
-
-
 
 void freezeMouseY()
 {

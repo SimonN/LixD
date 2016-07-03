@@ -11,7 +11,7 @@ import basics.user; // what windowed resolution does the user want
 import file.log;
 
 static import hardware.keyboard; // clear after changing resolution
-static import hardware.mouse; // center mouse after changing resolution
+static import hardware.mouse; // untrap the mouse when we leave the display
 
 /* A module for setting a screen resolution.
  * Right now, if you switch the screen resolution after having created all
@@ -167,7 +167,6 @@ void setScreenMode(in Cmdargs cmdargs)
     al_set_window_title(display, nameOfTheGame.toStringz);
     queue = al_create_event_queue();
     al_register_event_source(queue, al_get_display_event_source(display));
-    hardware.mouse.centerMouse();
 }
 
 
