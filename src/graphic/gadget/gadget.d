@@ -61,7 +61,7 @@ in {
     assert (levelpos.tile.cb, "we shouldn't make gadgets from bad tiles");
 }
 body {
-    super(levelpos.tile.cb, top, levelpos.point);
+    super(levelpos.tile.cb, top, levelpos.loc);
     tile = levelpos.tile;
     animationLength = delegate() {
         if (levelpos.tile.cb is null)

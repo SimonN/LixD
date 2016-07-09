@@ -17,7 +17,23 @@ import tile.gadtile;
 
 abstract class Occurrence {
 public:
-    Point point;
+    /* loc: location of the occurrence. This is the top-left corner of the
+     * entire image. The selection box's map coordinates (selboxOnMap)
+     * may too start here (this.selboxOnMap.topLeft == this.loc). If the tile
+     * has transparent borders around visible pixels, the selection box is
+     * smaller than the bitmap, therefore this.selboxOnMap.topLeft is
+     * >= loc in each direction, in general.
+     * The editor snaps loc to the grid, not selboxOnMap.topLeft.
+     *
+     *  A-------------------+   A: loc
+     *  |                B  |   B: transparent border around visible pixels
+     *  |  C---------+      |   C: selboxOnMap.topLeft
+     *  |  |    D    |      |   D: selbox (smallest rect with visible pixels)
+     *  |  |         |      |
+     *  |  +---------+      |
+     *  +-------------------+
+     */
+    Point loc;
 
     abstract Occurrence clone() const
     out (ret) { assert (ret); }
@@ -29,10 +45,10 @@ public:
     override bool opEquals(Object rhsObj)
     {
         auto rhs = cast (const Occurrence) rhsObj;
-        return rhs && tile is rhs.tile && point == rhs.point;
+        return rhs && tile is rhs.tile && loc == rhs.loc;
     }
 
-    final @property Rect selboxOnMap() const { return selboxOnTile + point; }
+    final @property Rect selboxOnMap() const { return selboxOnTile + loc; }
 
 protected:
     @property Rect selboxOnTile() const { assert (tile); return tile.selbox; }
@@ -47,8 +63,8 @@ public:
 
     override GadOcc clone() const
     {
-        auto ret     = new GadOcc(tile);
-        ret.point    = point;
+        auto ret = new GadOcc(tile);
+        ret.loc = loc;
         ret.hatchRot = hatchRot;
         return ret;
     }
@@ -63,20 +79,20 @@ public:
     override IoLine toIoLine() const
     {
         assert (_tile);
-        return IoLine.Colon(_tile.name, point.x, point.y, hatchRot ? "r" : "");
+        return IoLine.Colon(_tile.name, loc.x, loc.y, hatchRot ? "r" : "");
     }
 
     @property Rect triggerAreaOnMap() const
     {
         assert (_tile);
-        return tile.triggerArea + point;
+        return tile.triggerArea + loc;
     }
 
     // only for hatches
     @property Point screenCenter() const
     {
         assert (tile);
-        return point + tile.trigger + Point(hatchRot ? -64 : 64, 32);
+        return loc + tile.trigger + Point(hatchRot ? -64 : 64, 32);
     }
 }
 
@@ -91,13 +107,13 @@ public:
     this(const(TerrainTile) t, Point p = Point())
     {
         _tile = t;
-        point = p;
+        loc = p;
     }
 
     override TerOcc clone() const
     {
-        auto ret  = new TerOcc(tile);
-        ret.point = point;
+        auto ret = new TerOcc(tile);
+        ret.loc = loc;
         ret.mirrY = mirrY;
         ret.rotCw = rotCw;
         ret.dark  = dark;
@@ -122,13 +138,13 @@ public:
         if (dark) modifiers ~= 'd';
         if (noow) modifiers ~= 'n';
         assert (_tile);
-        return IoLine.Colon(_tile.name, point.x, point.y, modifiers);
+        return IoLine.Colon(_tile.name, loc.x, loc.y, modifiers);
     }
 
-    auto phybitsOnMap(in Point p) const
+    auto phybitsOnMap(in Point pointOnMap) const
     {
         assert (_tile);
-        return _tile.getPhybitsXYRotMirr(p - point, rotCw, mirrY);
+        return _tile.getPhybitsXYRotMirr(pointOnMap - loc, rotCw, mirrY);
     }
 
 protected:

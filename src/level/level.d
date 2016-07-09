@@ -77,8 +77,8 @@ public:
     Enumap!(Ac, int) skills;
 
     TerOcc[] terrain;
-    GadOcc[][GadType.MAX] pos; // one array GadOcc[] for each GadType,
-                               // indexed by ints, not by GadType enum vals
+    GadOcc[][GadType.MAX] gadgets; // one array GadOcc[] for each GadType,
+                                   // indexed by ints, not by GadType enum vals
 package:
     LevelStatus _status;
 
@@ -180,7 +180,7 @@ public:
             return false;
         }
         return this.terrain == rhs.terrain
-            && this.pos     == rhs.pos
+            && this.gadgets == rhs.gadgets
             && this.skills  == rhs.skills;
     }
 }

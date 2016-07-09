@@ -33,13 +33,13 @@ package void implDrawTerrainTo(in Level level, Torbit tb, Phymap lookup)
     }
 }
 
-private void drawPosGadget(in GadOcc po, Torbit ground)
+private void drawGadgetOcc(in GadOcc occ, Torbit ground)
 {
-    po.tile.cb.draw(ground, po.point,
+    occ.tile.cb.draw(ground, occ.loc,
         0, 0, // draw top-left frame. DTODO: Still OK for triggered traps?
         0, // mirroring
         // hatch rotation: not for drawing, only for spawn direction
-        po.tile.type == GadType.HATCH ? 0 : po.hatchRot);
+        occ.tile.type == GadType.HATCH ? 0 : occ.hatchRot);
 }
 
 package Torbit implCreatePreview(
@@ -67,7 +67,7 @@ package Torbit implCreatePreview(
         destroy(tempObj);
     }
     for (int type = cast (GadType) 0; type != GadType.MAX; ++type)
-        level.pos[type].each!(occ => drawPosGadget(occ, tempObj));
+        level.gadgets[type].each!(occ => drawGadgetOcc(occ, tempObj));
     level.terrain.each!(occ => drawOccurrence(occ, tempTer));
     ret.drawFromPreservingAspectRatio(tempObj);
     ret.drawFromPreservingAspectRatio(tempTer);

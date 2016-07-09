@@ -17,13 +17,13 @@ import tile.group;
 
 class TerrainHover : Hover {
 private:
-    TerOcc _pos;
+    TerOcc _occ;
 
 public:
     this(Level l, TerOcc p, Hover.Reason r)
     {
         super(l, r);
-        _pos = p;
+        _occ = p;
     }
 
     static TerrainHover newViaEvilDynamicCast(Level l, TerOcc forThis)
@@ -34,30 +34,30 @@ public:
         return new TerrainHover(l, forThis, Hover.Reason.addedTile);
     }
 
-    override inout(TerOcc) pos() inout { return _pos; }
+    override inout(TerOcc) occ() inout { return _occ; }
 
     override void removeFromLevel()
     {
-        level.terrain = level.terrain.remove!(a => a is pos);
-        _pos = null;
+        level.terrain = level.terrain.remove!(a => a is _occ);
+        _occ = null;
     }
 
     override void cloneThenPointToClone()
     {
-        level.terrain ~= pos.clone();
-        _pos = level.terrain[$-1];
+        level.terrain ~= _occ.clone();
+        _occ = level.terrain[$-1];
     }
 
     override void zOrderTowardsButIgnore(Hover.FgBg fgbg, in Hover[] ignore)
     {
-        zOrderImpl(level.topology, level.terrain, _pos, ignore,
+        zOrderImpl(level.topology, level.terrain, _occ, ignore,
             fgbg, MoveTowards.untilIntersects);
     }
 
     override void toggleDark()
     {
-        assert (_pos);
-        _pos.dark = ! _pos.dark;
+        assert (_occ);
+        _occ.dark = ! _occ.dark;
     }
 
     override AlCol hoverColor(int val) const
@@ -65,38 +65,38 @@ public:
         return color.makecol(val, val, val);
     }
 
-    final override int sortedPositionInLevel() const
+    final override int zOrderAmongAllTiles() const
     {
-        return level.terrain.countUntil!"a is b"(this.pos).to!int;
+        return level.terrain.countUntil!"a is b"(_occ).to!int;
     }
 
 protected:
     override void mirrorHorizontally()
     {
-        _pos.mirrY = ! _pos.mirrY;
-        _pos.rotCw = (2 - _pos.rotCw) & 3;
+        _occ.mirrY = ! _occ.mirrY;
+        _occ.rotCw = (2 - _occ.rotCw) & 3;
     }
 
     override void rotateCw()
     {
-        immutable oldCenter = _pos.selboxOnMap.center;
-        _pos.rotCw = (_pos.rotCw == 3 ? 0 : _pos.rotCw + 1);
-        moveBy(oldCenter - _pos.selboxOnMap.center);
+        immutable oldCenter = _occ.selboxOnMap.center;
+        _occ.rotCw = (_occ.rotCw == 3 ? 0 : _occ.rotCw + 1);
+        moveBy(oldCenter - _occ.selboxOnMap.center);
     }
 
     final override @property string tileDescription() const
     {
-        assert (_pos);
+        assert (_occ);
         string ret = this.tileName;
-        if (_pos.rotCw || _pos.mirrY)
-            ret ~= " [%s%s]".format(_pos.mirrY ? "f" : "",
-                                    'r'.repeat(_pos.rotCw));
+        if (_occ.rotCw || _occ.mirrY)
+            ret ~= " [%s%s]".format(_occ.mirrY ? "f" : "",
+                                    'r'.repeat(_occ.rotCw));
         return ret;
     }
 
     @property string tileName() const
     {
-        return _pos.tile.name;
+        return _occ.tile.name;
     }
 }
 
@@ -110,24 +110,24 @@ class GroupHover : TerrainHover {
 
     override Hover[] replaceInLevelWithElements()
     {
-        auto tile = cast (TileGroup) pos().tile;
+        auto tile = cast (TileGroup) occ().tile;
         assert (tile);
         if (tile.key.elements.len < 2)
             return [ this ];
         TerrainHover moveToOurPosition(TerrainHover ho)
         {
-            ho.pos.point += this.pos.point - tile.transpCutOff;
+            ho.occ.loc += this.occ.loc - tile.transpCutOff;
             return ho;
         }
         TerrainHover[] newHovers = tile.key.elements
             .map!(e => TerrainHover.newViaEvilDynamicCast(level, e.clone()))
             .map!moveToOurPosition
             .array;
-        // Remove this.pos from level, add the >= 2 new posses.
-        immutable id = level.terrain.countUntil!"a is b"(pos);
+        // Remove this.occ from level, add the >= 2 new occurrences.
+        immutable id = level.terrain.countUntil!"a is b"(occ);
         assert (id >= 0);
         level.terrain = level.terrain[0 .. id]
-            ~ newHovers.map!(ho => ho.pos).array
+            ~ newHovers.map!(ho => ho.occ).array
             ~ level.terrain[id + 1 .. $];
         // cast is OK because I guarantee that nobody has access
         // to newHovers, except for who reads this returned array.
@@ -142,7 +142,7 @@ class GroupHover : TerrainHover {
 protected:
     override @property string tileName() const
     {
-        auto tile = cast (TileGroup) pos().tile;
+        auto tile = cast (TileGroup) occ().tile;
         return "%d%s".format(tile.key.elements.len,
                              Lang.editorBarGroup.transl);
     }

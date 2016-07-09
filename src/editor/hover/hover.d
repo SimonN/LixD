@@ -1,8 +1,8 @@
 module editor.hover.hover;
 
 // Hovers appear when you have the mouse over a tile in the editor.
-// They point to a Pos in the level, and offer moving, manipulating, deleting.
-// The Hover class hierarchy mimics the hierarchy of Pos and Tile.
+// They point to an Occurrence in the level, and offer moving, manipulating,
+// deleting. The Hover class hierarchy mimics the hierarchy of Occ and Tile.
 
 // Opportunity for refactoring: Move the hover rectangle drawing all into
 // here, so we accept a map. Or accept a visitor from editor.draw.
@@ -37,7 +37,7 @@ abstract class Hover {
     body { level = l; reason = r; }
 
     static Hover newViaEvilDynamicCast(Level l, Occurrence forThis)
-    out (ret) { assert (ret.pos); }
+    out (ret) { assert (ret.occ); }
     body {
         import editor.hover.gadget;
         import editor.hover.terrain;
@@ -51,39 +51,39 @@ abstract class Hover {
     final override bool opEquals(Object rhsObj) const
     {
         auto rhs = cast (typeof(this)) rhsObj;
-        return rhs && pos is rhs.pos;
+        return rhs && occ is rhs.occ;
     }
 
     final void moveBy(in Point p)
     {
-        assert (pos);
-        pos.point = level.topology.wrap(pos.point + p);
+        assert (occ);
+        occ.loc = level.topology.wrap(occ.loc + p);
     }
 
     final void mirrorHorizontallyWithin(in Rect box)
     {
-        immutable self = pos.selboxOnMap;
-        pos.point.x -= self.x - box.x;
-        pos.point.x += box.x + box.xl - self.x - self.xl;
-        pos.point = level.topology.wrap(pos.point);
+        immutable self = occ.selboxOnMap;
+        occ.loc.x -= self.x - box.x;
+        occ.loc.x += box.x + box.xl - self.x - self.xl;
+        occ.loc = level.topology.wrap(occ.loc);
         mirrorHorizontally();
     }
 
     final void rotateCwWithin(in Rect box)
     {
         rotateCw();
-        immutable self = pos.selboxOnMap;
-        pos.point = level.topology.wrap(Point(
+        immutable self = occ.selboxOnMap;
+        occ.loc = level.topology.wrap(Point(
             box.center.x - (box.center - self.center).y,
             box.center.y + (box.center - self.center).x)
-            - self.len/2 - pos.tile.selbox.topLeft);
+            - self.len/2 - occ.tile.selbox.topLeft);
     }
 
     final override int opCmp(Object rhsObj) const
     {
         const rhs = cast (const typeof(this)) rhsObj;
         assert (rhs);
-        return this.sortedPositionInLevel - rhs.sortedPositionInLevel;
+        return this.zOrderAmongAllTiles - rhs.zOrderAmongAllTiles;
     }
 
     final string description() const
@@ -91,7 +91,7 @@ abstract class Hover {
         // the unicode chars in the string are the subscript of 0x
         return "%s %s (%d, %d) (\u2080\u2093%X, \u2080\u2093%X)"
             .format(this.tileDescription, Lang.editorBarAt.transl,
-            pos.point.x, pos.point.y, pos.point.x, pos.point.y);
+            occ.loc.x, occ.loc.y, occ.loc.x, occ.loc.y);
     }
 
     // This does 3 things:
@@ -103,8 +103,8 @@ abstract class Hover {
         return [ this ];
     }
 
-    abstract inout(Occurrence) pos() inout;
-    abstract int sortedPositionInLevel() const;
+    abstract inout(Occurrence) occ() inout;
+    abstract int zOrderAmongAllTiles() const;
 
     abstract void removeFromLevel();
     abstract void cloneThenPointToClone();
@@ -133,12 +133,12 @@ enum MoveTowards { once, untilIntersects }
 // zOrdering for moving to bg on the regularly-ordered list (bg at front,
 // fg at back), and call zOrdering for moving to fg on the retro list!
 void zOrderImpl(P)(
-    Topology topology, ref P[] list, P pos,
+    Topology topology, ref P[] list, P occ,
     in Hover[] ignoreThese, // editor's selection. Don't reorder among these.
     Hover.FgBg fgbg, MoveTowards mt
 )   if (is (P : Occurrence))
 {
-    int we = list.countUntil!"a is b"(pos).to!int;
+    int we = list.countUntil!"a is b"(occ).to!int;
     assert (we >= 0);
     int adj()
     {
@@ -146,7 +146,7 @@ void zOrderImpl(P)(
     }
     while (adj() >= 0 && adj() < list.len) {
         assert (we >= 0 && we < list.len);
-        if (ignoreThese.map!(hov => hov.pos).canFind!"a is b"(list[adj()]))
+        if (ignoreThese.map!(hov => hov.occ).canFind!"a is b"(list[adj()]))
             break;
         swap(list[we], list[adj]);
         if (mt == MoveTowards.once || topology.rectIntersectsRect(

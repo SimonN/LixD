@@ -65,10 +65,10 @@ protected:
         if (moveAllTilesBy != Point(0, 0)) {
             void fun(Occurrence occ)
             {
-                occ.point = level.topology.wrap(occ.point + moveAllTilesBy);
+                occ.loc = level.topology.wrap(occ.loc + moveAllTilesBy);
             }
             level.terrain.each!fun;
-            level.pos[].each!(occList => occList.each!fun);
+            level.gadgets[].each!(occList => occList.each!fun);
         }
     }
 

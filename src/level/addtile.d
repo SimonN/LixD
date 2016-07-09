@@ -20,13 +20,13 @@ Occurrence implCenter(Level level, Filename fn, Point center)
 {
     if (! fn)
         return null;
-    auto pos = addFromLine(level,
+    auto ret = addFromLine(level,
         &level.terrain, resolveTileName(null, fn.rootlessNoExt), center, "");
-    if (! pos)
+    if (! ret)
         return null;
-    assert (pos.tile, "added tile, image doesn't exist?");
-    pos.point = level.topology.clamp(center) - pos.tile.cb.len / 2;
-    return pos;
+    assert (ret.tile, "added tile, image doesn't exist?");
+    ret.loc = level.topology.clamp(center) - ret.tile.cb.len / 2;
+    return ret;
 }
 
 // This gets called with the raw data, it's a factory.
@@ -42,7 +42,7 @@ Occurrence addFromLine(
         assert (terrainGoesHere);
         TerOcc newpos = new TerOcc(resolvedTile.terrain ?
                                    resolvedTile.terrain : resolvedTile.group);
-        newpos.point  = level.topology.wrap(cornerAt);
+        newpos.loc = level.topology.wrap(cornerAt);
         foreach (char c; text2) switch (c) {
             case 'f': newpos.mirrY = ! newpos.mirrY;          break;
             case 'r': newpos.rotCw =  (newpos.rotCw + 1) % 4; break;
@@ -55,13 +55,13 @@ Occurrence addFromLine(
     }
     else if (resolvedTile.gadget) {
         GadOcc newpos = new GadOcc(resolvedTile.gadget);
-        newpos.point  = level.topology.wrap(cornerAt);
+        newpos.loc = level.topology.wrap(cornerAt);
         if (resolvedTile.gadget.type == GadType.HATCH)
             foreach (char c; text2) switch (c) {
                 case 'r': newpos.hatchRot = ! newpos.hatchRot; break;
                 default: break;
             }
-        level.pos[resolvedTile.gadget.type] ~= newpos;
+        level.gadgets[resolvedTile.gadget.type] ~= newpos;
         return newpos;
     }
     else

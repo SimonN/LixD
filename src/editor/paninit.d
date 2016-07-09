@@ -145,6 +145,6 @@ private:
 Rect smallestRectContainingSelection(in Editor editor)
 {
     return editor._selection.empty ? Rect()
-        :  editor._selection.map   !(a => a.pos.selboxOnMap)
+        :  editor._selection.map   !(hov => hov.occ.selboxOnMap)
                             .reduce!(Rect.smallestContainer);
 }

@@ -19,7 +19,7 @@ void createGroup(Editor editor) {
     auto occurrences = editor._selection
         .map   !(hov => cast (TerrainHover) hov)
         .filter!(hov => hov !is null)
-        .map   !(hov => hov.pos);
+        .map   !(hov => hov.occ);
     assert (occurrences.all!(occ => occ !is null && occ.tile !is null));
     if (   occurrences.walkLength < 2
         || occurrences.all!(occ => occ.dark))
@@ -30,7 +30,7 @@ void createGroup(Editor editor) {
     // Here, we add the new occurrence ourselves.
     TileGroup group = get_group(TileGroupKey(occurrences));
     TerOcc groupOcc = new TerOcc(group);
-    groupOcc.point  = occurrences.map!(occ => occ.selboxOnMap)
+    groupOcc.loc  = occurrences.map!(occ => occ.selboxOnMap)
                               .reduce!(Rect.smallestContainer)
                               .topLeft + group.transpCutOff;
     _level.terrain ~= groupOcc;
@@ -72,12 +72,12 @@ void minimizeSelectionSelboxByMovingSomeAcrossTorus(Occurrences)(
         (occ) { return occ.selboxOnMap.sideX; },
         (occ) { return occ.selboxOnMap.x; },
         (occ) { return occ.selboxOnMap.x + occ.selboxOnMap.xl; },
-        (occ, by) { occ.point.x += by; });
+        (occ, by) { occ.loc.x += by; });
     moveSomeOneDimension(_map.torusY, _map.yl,
         (occ) { return occ.selboxOnMap.sideY; },
         (occ) { return occ.selboxOnMap.y; },
         (occ) { return occ.selboxOnMap.y + occ.selboxOnMap.yl; },
-        (occ, by) { occ.point.y += by; });
+        (occ, by) { occ.loc.y += by; });
 }}
 
 /* http://www.lemmingsforums.net/index.php?topic=2720.msg58235#msg58235

@@ -12,40 +12,40 @@ import tile.occur;
 
 class GadgetHover : Hover {
 private:
-    GadOcc _pos;
+    GadOcc _occ;
 
 public:
     this(Level l, GadOcc p, Hover.Reason r)
     {
         super(l, r);
-        _pos = p;
+        _occ = p;
     }
 
-    override inout(GadOcc) pos() inout { return _pos; }
+    override inout(GadOcc) occ() inout { return _occ; }
 
     ref inout(GadOcc[]) list() inout
     {
-        assert (_pos);
-        assert (_pos.tile);
-        return level.pos[_pos.tile.type];
+        assert (_occ);
+        assert (_occ.tile);
+        return level.gadgets[_occ.tile.type];
     }
 
     override void removeFromLevel()
     {
-        list = list.remove!(a => a is pos);
-        _pos = null;
+        list = list.remove!(a => a is _occ);
+        _occ = null;
     }
 
     override void cloneThenPointToClone()
     {
-        list ~= pos.clone();
-        _pos = list[$-1];
+        list ~= _occ.clone();
+        _occ = list[$-1];
     }
 
     override void zOrderTowardsButIgnore(Hover.FgBg fgbg, in Hover[] ignore)
     {
-        zOrderImpl(level.topology, list, _pos, ignore, fgbg,
-            (pos.tile.type == GadType.HATCH || pos.tile.type == GadType.GOAL)
+        zOrderImpl(level.topology, list, _occ, ignore, fgbg,
+            (occ.tile.type == GadType.HATCH || occ.tile.type == GadType.GOAL)
             ? MoveTowards.once : MoveTowards.untilIntersects);
     }
 
@@ -54,23 +54,23 @@ public:
         return color.makecol(val, val, val/2);
     }
 
-    final override int sortedPositionInLevel() const
+    final override int zOrderAmongAllTiles() const
     {
-        assert (pos);
+        assert (occ);
         return level.terrain.len
-            + level.pos[0 .. pos.tile.type].map!(vec => vec.len).sum
-            + level.pos[pos.tile.type].countUntil!"a is b"(pos).to!int;
+            + level.gadgets[0 .. occ.tile.type].map!(vec => vec.len).sum
+            + level.gadgets[occ.tile.type].countUntil!"a is b"(occ).to!int;
     }
 
 protected:
     override void rotateCw() { mirrorHorizontally(); }
     override void mirrorHorizontally()
     {
-        _pos.hatchRot = (_pos.tile.type == GadType.HATCH && ! _pos.hatchRot);
+        _occ.hatchRot = (_occ.tile.type == GadType.HATCH && ! _occ.hatchRot);
     }
 
     override @property string tileDescription() const
     {
-        return _pos.tile.name;
+        return _occ.tile.name;
     }
 }

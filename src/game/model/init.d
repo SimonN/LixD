@@ -64,20 +64,20 @@ void preparePlayers(GameState state, in Level level)
 void prepareGadgets(GameState state, in Level level)
 {
     assert (state.lookup);
-    void gadgetsFromPos(T)(ref T[] gadgetVec, GadType tileType)
+    void instantiateGadgetsFromArray(T)(ref T[] gadgetVec, GadType tileType)
     {
-        foreach (ref pos; level.pos[tileType]) {
-            gadgetVec ~= cast (T) Gadget.factory(state.lookup, pos);
-            assert (gadgetVec[$-1], pos.toIoLine.toString);
+        foreach (ref occ; level.gadgets[tileType]) {
+            gadgetVec ~= cast (T) Gadget.factory(state.lookup, occ);
+            assert (gadgetVec[$-1], occ.toIoLine.toString);
             // don't draw to the lookup map yet, we may remove some goals first
         }
     }
-    gadgetsFromPos(state.hatches,  GadType.HATCH);
-    gadgetsFromPos(state.goals,    GadType.GOAL);
-    gadgetsFromPos(state.decos,    GadType.DECO);
-    gadgetsFromPos(state.traps,    GadType.TRAP);
-    gadgetsFromPos(state.waters,   GadType.WATER);
-    gadgetsFromPos(state.flingers, GadType.FLING);
+    instantiateGadgetsFromArray(state.hatches,  GadType.HATCH);
+    instantiateGadgetsFromArray(state.goals,    GadType.GOAL);
+    instantiateGadgetsFromArray(state.decos,    GadType.DECO);
+    instantiateGadgetsFromArray(state.traps,    GadType.TRAP);
+    instantiateGadgetsFromArray(state.waters,   GadType.WATER);
+    instantiateGadgetsFromArray(state.flingers, GadType.FLING);
 }
 
 void assignTribesToGoals(GameState state) { with (state)

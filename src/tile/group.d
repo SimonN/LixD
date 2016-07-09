@@ -124,7 +124,7 @@ public:
         Rect surround = tmp.map!(occ => occ.selboxOnMap)
                            .reduce!(Rect.smallestContainer);
         assert (surround.xl > 0 && surround.yl > 0);
-        tmp.each!(occ => occ.point -= surround.topLeft);
+        tmp.each!(occ => occ.loc -= surround.topLeft);
         _elements = tmp.assumeUnique;
 
         const(TerrainTile) unrebind(Rebindable!(const(TerrainTile)) a)

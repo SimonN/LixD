@@ -194,7 +194,7 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
     MutableDate zero_date = new Date("0");
     if (built != zero_date && built < new Date("2009-08-23 00:00:00")) {
         // DTODOCOMPILERUPDATE
-        // pos[GadType.TERRAIN].reverse();
+        // gadgets[GadType.TERRAIN].reverse();
     }
     if (built != zero_date && built < new Date("2011-01-08 00:00:00"))
         foreach (Ac ac, ref int nr; skills.byKeyValue)
@@ -226,11 +226,11 @@ private void load_level_finalize(Level level) {
     terrain = terrain.noowAlgorithm(topology);
 
     if (_status == LevelStatus.GOOD) {
-        if (terrain.empty && pos[].all!(li => li.empty))
+        if (terrain.empty && gadgets[].all!(li => li.empty))
             _status = LevelStatus.BAD_EMPTY;
-        else if (pos[GadType.HATCH].empty)
+        else if (gadgets[GadType.HATCH].empty)
             _status = LevelStatus.BAD_HATCH;
-        else if (pos[GadType.GOAL].empty)
+        else if (gadgets[GadType.GOAL].empty)
             _status = LevelStatus.BAD_GOAL;
     }
 }}
@@ -318,7 +318,7 @@ public void saveToFile(const(Level) l, std.stdio.File file)
 
     // I assume that gadgets have no dependencies and generate valid IoLines
     // all by themselves. Write all gadget vectors to file.
-    foreach (vec; l.pos) {
+    foreach (vec; l.gadgets) {
         if (vec != null)
             file.writeln();
         vec.map!(occ => occ.toIoLine).each!(line => file.writeln(line));

@@ -79,8 +79,8 @@ public:
             return Point(0, 0);
         _fromMap += draggedOnGrid;
         assert (_snapper);
-        return (_snapper.pos.point + draggedOnGrid).roundTo(grid)
-              - _snapper.pos.point;
+        return (_snapper.occ.loc + draggedOnGrid).roundTo(grid)
+              - _snapper.occ.loc;
     }
 
     Point clonedShouldMoveBy() const

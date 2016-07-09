@@ -73,10 +73,10 @@ void drawGadgets(Editor editor)
 {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Editor.drawGadgets");
-    foreach (gadgetList; editor._level.pos)
+    foreach (gadgetList; editor._level.gadgets)
         foreach (g; gadgetList) {
             assert (g.tile && g.tile.cb);
-            g.tile.cb.draw(editor._map, g.point);
+            g.tile.cb.draw(editor._map, g.loc);
             editor._map.drawRectangle(g.triggerAreaOnMap, color.triggerArea);
         }
 }
@@ -85,20 +85,20 @@ void drawGadgetAnnotations(Editor editor)
 {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Editor.drawGadgetAnnotations");
-    void annotate(const(typeof(editor._level.pos[0])) list)
+    void annotate(const(typeof(editor._level.gadgets[0])) list)
     {
         foreach (int i, g; list) {
             assert (g.tile && g.tile.cb);
             drawTextCentered(djvuS, "%d/%d".format(i+1, list.length),
-                g.point.x + g.tile.cb.xl/2, g.point.y, color.guiText);
+                g.loc.x + g.tile.cb.xl/2, g.loc.y, color.guiText);
             if (g.tile.type == GadType.HATCH)
                 // unicode: LEFTWARDS ARROW, RIGHTWARDS ARROW
                 drawTextCentered(djvuM, g.hatchRot ? "\u2190" : "\u2192",
-                    g.point.x + g.tile.cb.xl/2, g.point.y + 5, color.guiText);
+                    g.loc.x + g.tile.cb.xl/2, g.loc.y + 5, color.guiText);
         }
     }
-    annotate(editor._level.pos[GadType.HATCH]);
-    annotate(editor._level.pos[GadType.GOAL]);
+    annotate(editor._level.gadgets[GadType.HATCH]);
+    annotate(editor._level.gadgets[GadType.GOAL]);
 }
 
 // Returns value in 0 .. 256
@@ -113,7 +113,7 @@ void drawHovers(Editor editor, const(Hover[]) list, in bool light)
 {
     immutable val = hoverColorVal(light);
     foreach (ho; list)
-        editor._map.drawRectangle(ho.pos.selboxOnMap, ho.hoverColor(val));
+        editor._map.drawRectangle(ho.occ.selboxOnMap, ho.hoverColor(val));
 }
 
 void drawDraggedFrame(Editor editor) { with (editor)

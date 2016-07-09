@@ -34,8 +34,8 @@ void implConstructor(Editor editor) { with (editor)
     _map        = newMap();
     _mapTerrain = newMap();
     _map.centerOnAverage(
-        _level.pos[GadType.HATCH].map!(h => h.screenCenter.x),
-        _level.pos[GadType.HATCH].map!(h => h.screenCenter.y));
+        _level.gadgets[GadType.HATCH].map!(h => h.screenCenter.x),
+        _level.gadgets[GadType.HATCH].map!(h => h.screenCenter.y));
     _dragger = new MouseDragger();
     editor.makePanel();
 }}

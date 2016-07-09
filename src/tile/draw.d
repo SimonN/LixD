@@ -16,7 +16,7 @@ void drawOccurrence(
     Torbit ground,
     in Point offset = Point(0, 0)
 ) {
-    immutable Point pt = occ.point + offset;
+    immutable Point pt = occ.loc + offset;
     if (! occ.dark) {
         version (tharsisprofiling)
             auto zone = Zone(profiler, "Level.drawPos VRAM normal");
@@ -49,8 +49,8 @@ body {
     // That's done by the game class.
     immutable xl = (occ.rotCw & 1) ? occ.tile.cb.yl : occ.tile.cb.xl;
     immutable yl = (occ.rotCw & 1) ? occ.tile.cb.xl : occ.tile.cb.yl;
-    foreach (int y; occ.point.y .. (occ.point.y + yl))
-        foreach (int x; occ.point.x .. (occ.point.x + xl)) {
+    foreach (int y; occ.loc.y .. (occ.loc.y + yl))
+        foreach (int x; occ.loc.x .. (occ.loc.x + xl)) {
             immutable p = Point(x, y);
             immutable bits = occ.phybitsOnMap(p);
             if (! bits)

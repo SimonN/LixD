@@ -68,10 +68,10 @@ void selectTiles(Editor editor) { with (editor)
 void selectAll(Editor editor) { with (editor)
 {
     immutable reason = Hover.Reason.selectAll;
-    _selection = _level.pos[].joiner
-        .map!(pos => cast (Hover) new GadgetHover(_level, pos, reason)).array
+    _selection = _level.gadgets[].joiner
+        .map!(occ => cast (Hover) new GadgetHover(_level, occ, reason)).array
         ~ _level.terrain
-        .map!(pos => TerrainHover.newViaEvilDynamicCast(_level, pos))
+        .map!(occ => TerrainHover.newViaEvilDynamicCast(_level, occ))
         .map!(ho => cast (Hover) ho)
         .tee!(ho => ho.reason = reason).array;
 }}
@@ -82,12 +82,12 @@ private:
 void hoverTilesInRect(Editor editor, Rect rect) { with (editor)
 {
     immutable reason = Hover.Reason.frameSpanning;
-    _hover = _level.pos[].joiner
-        .filter!(pos => _map.rectIntersectsRect(rect, pos.selboxOnMap))
-        .map!(pos => cast (Hover) new GadgetHover(_level, pos, reason)).array
+    _hover = _level.gadgets[].joiner
+        .filter!(occ => _map.rectIntersectsRect(rect, occ.selboxOnMap))
+        .map!(occ => cast (Hover) new GadgetHover(_level, occ, reason)).array
         ~ _level.terrain
-        .filter!(pos => _map.rectIntersectsRect(rect, pos.selboxOnMap))
-        .map!(pos => TerrainHover.newViaEvilDynamicCast(_level, pos))
+        .filter!(occ => _map.rectIntersectsRect(rect, occ.selboxOnMap))
+        .map!(occ => TerrainHover.newViaEvilDynamicCast(_level, occ))
         .map!(ho => cast (Hover) ho)
         .map!((ho) { ho.reason = reason; return ho; }).array;
     assert (_hover.all!(ho => ho.reason == reason));
@@ -98,14 +98,14 @@ void hoverTilesNormally(Editor editor) { with (editor)
     // The tiles at the end of each list are in the foreground.
     // Later tiles will throw out earlier tiles in the hover, unless the
     // earlier tiles have a strictly better reason than the later tiles.
-    _level.pos[].joiner.each!(pos => editor.maybeAdd(pos));
-    _level.terrain     .each!(pos => editor.maybeAdd(pos));
+    _level.gadgets[].joiner.each!(occ => editor.maybeAdd(occ));
+    _level.terrain.each!(occ => editor.maybeAdd(occ));
 }}
 
 void hoverTilesReversed(Editor editor) { with (editor)
 {
-    _level.terrain.retro     .each!(pos => editor.maybeAdd(pos));
-    _level.pos[].retro.joiner.each!(pos => editor.maybeAdd(pos));
+    _level.terrain.retro.each!(occ => editor.maybeAdd(occ));
+    _level.gadgets[].retro.joiner.each!(occ => editor.maybeAdd(occ));
 }}
 
 void maybeAdd(Pos)(
