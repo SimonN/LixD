@@ -185,24 +185,7 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
     default:
         break;
     }
-
-    // LEGACY SUPPORT: Very old levels have sorted backwards the terrain.
-    // Also, in general: Exclude the zero Date. Saved original .LVLs have a
-    // time of 0. In early 2011, the maximal number of skills was raised.
-    // Prior to that, infinity was 100, and finite skill counts had to be
-    // <= 99. Afterwards, infinity was -1, and the maximum skill count was 999.
-    MutableDate zero_date = new Date("0");
-    if (built != zero_date && built < new Date("2009-08-23 00:00:00")) {
-        // DTODOCOMPILERUPDATE
-        // gadgets[GadType.TERRAIN].reverse();
-    }
-    if (built != zero_date && built < new Date("2011-01-08 00:00:00"))
-        foreach (Ac ac, ref int nr; skills.byKeyValue)
-            if (nr == 100)
-                nr = lix.enums.skillInfinity;
 }}
-
-
 
 private void load_level_finalize(Level level) {
     with (level)
