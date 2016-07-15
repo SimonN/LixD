@@ -20,10 +20,10 @@ private:
     NumPick _right;
     NumPick _top;
     NumPick _bottom;
-    Equation _horizontalDec;
-    Equation _horizontalHex;
-    Equation _verticalDec;
-    Equation _verticalHex;
+    Equation _eqXDec;
+    Equation _eqXHex;
+    Equation _eqYDec;
+    Equation _eqYHex;
     BoolOption _torusX;
     BoolOption _torusY;
 
@@ -75,12 +75,12 @@ protected:
     override void calcSelf()
     {
         if (_left.execute || _right.execute) {
-            _horizontalDec.change = suggestedXl - _oldXl;
-            _horizontalHex.change = suggestedXl - _oldXl;
+            _eqXDec.change = suggestedXl - _oldXl;
+            _eqXHex.change = suggestedXl - _oldXl;
         }
         if (_top.execute || _bottom.execute) {
-            _horizontalDec.change = suggestedYl - _oldYl;
-            _horizontalHex.change = suggestedYl - _oldYl;
+            _eqYDec.change = suggestedYl - _oldYl;
+            _eqYHex.change = suggestedYl - _oldYl;
         }
     }
 
@@ -130,17 +130,17 @@ private:
         _right  = newSidePick( 50, Level.maxXl);
         _top    = newSidePick( 80, Level.maxYl);
         _bottom = newSidePick(100, Level.maxYl);
-        _horizontalDec = new Equation(butX, 130, _oldXl, Equation.Format.dec);
-        _horizontalHex = new Equation(butX, 150, _oldXl, Equation.Format.hex);
-        _verticalDec   = new Equation(butX, 180, _oldYl, Equation.Format.dec);
-        _verticalHex   = new Equation(butX, 200, _oldYl, Equation.Format.hex);
+        _eqXDec = new Equation(butX, 130, _oldXl, Equation.Format.dec);
+        _eqXHex = new Equation(butX, 150, _oldXl, Equation.Format.hex);
+        _eqYDec = new Equation(butX, 180, _oldYl, Equation.Format.dec);
+        _eqYHex = new Equation(butX, 200, _oldYl, Equation.Format.hex);
         _torusX = new BoolOption(new Geom(20, 230, boolXl, 20),
                                  Lang.winTopologyTorusX.transl, null);
         _torusY = new BoolOption(new Geom(20, 260, boolXl, 20),
                                  Lang.winTopologyTorusY.transl, null);
         addChildren(_left, _right, _top, _bottom,
-                    _horizontalDec, _horizontalHex,
-                    _verticalDec,   _verticalHex, _torusX, _torusY);
+                    _eqXDec, _eqXHex,
+                    _eqYDec,   _eqYHex, _torusX, _torusY);
     }
 }
 

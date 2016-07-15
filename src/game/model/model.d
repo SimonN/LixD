@@ -26,7 +26,16 @@ import level.level;
 import lix;
 
 class GameModel {
+private:
+    GameState     _cs;            // owned (current state)
+    PhysicsDrawer _physicsDrawer; // owned
+    EffectManager _effect;        // not owned
 
+package: // eventually delete cs() and alias cs this;
+    @property inout(GameState) cs() inout { return _cs; }
+    alias cs this;
+
+public:
     this(in Level level, EffectManager ef)
     {
         _effect = ef;
@@ -82,18 +91,6 @@ class GameModel {
             _physicsDrawer.dispose();
         _physicsDrawer = null;
     }
-
-private:
-
-    GameState     _cs;            // owned (current state)
-    PhysicsDrawer _physicsDrawer; // owned
-    EffectManager _effect;        // not owned
-
-package: // eventually delete
-
-    // eventually deprecate these
-    @property inout(GameState) cs() inout { return _cs; }
-    alias cs this;
 
 private:
 
