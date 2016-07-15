@@ -111,28 +111,17 @@ private string hotkeyNiceShort(in int hotkey, in int maxLen)
 
 private string hotkeyNiceLong(in int hotkey)
 {
-    if (hotkey <= 0 || ! al_is_keyboard_installed())
+    assert (hotkey >= 0);
+    assert (hotkey < hardwareKeyboardArrLen);
+    if (keyNames[hotkey] != null)
+        return keyNames[hotkey];
+    if (! al_is_keyboard_installed())
         return null;
-    else if (hotkey < ALLEGRO_KEY_MAX) {
-        string s = al_keycode_to_name(hotkey).to!string;
-        string ret;
-        foreach (int i, dchar c; s) {
-            if (i == 0) ret ~= std.uni.toUpper(c);
-            else if (c != '_') ret ~= c;
-        }
-        return ret;
+    string s = al_keycode_to_name(hotkey).to!string;
+    string ret;
+    foreach (int i, dchar c; s) {
+        if (i == 0) ret ~= std.uni.toUpper(c);
+        else if (c != '_') ret ~= c;
     }
-    else if (hotkey == keyMMB)
-        // \u27BF = LMB, \u27C0 = MMB, \u27C1 = RMB, \u27C2 = generic mouse
-        return "\u27C0";
-    else if (hotkey == keyRMB)
-        return "\u27C1";
-    else if (hotkey == keyWheelUp)
-        // gear, arrow up
-        return "\u27C0\u2191";
-    else if (hotkey == keyWheelDown)
-        return "\u27C0\u2193";
-    assert (false,
-        "Unhandled extra key %d >= ALLEGRO_KEY_MAX == %d. Please name key."
-        .format(hotkey, ALLEGRO_KEY_MAX));
+    return ret;
 }
