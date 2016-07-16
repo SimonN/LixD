@@ -1,6 +1,33 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.6
+-----
+
+2016-07-17
+
+The lemforum community pack has Proxima's suggestions up to 2016-07-17.
+Several levels have moved between ranks. Some have been replaced entirely:
+Out: Minimalism (Part 1), Fear of Heights, That Pesky Gap, Don't Look Back,
+    Too Far to Walk
+In: A Necklace of Raindrops, The Road Not Taken, All Around the World,
+    Diggin' the Air, A Soulful Bounding Leap
+
+--coverage switch to use along with --verify, to compute level directory
+coverage. From all levels that reside in level directories from where you
+have tested at least one pointed-to level of a replay with --verify,
+--coverage lists those levels that didn't enjoy even a single solution.
+Please read levmaint.txt for detailed instructions. Example command line:
+
+    lix --verify=replays/path/to/dir --coverage
+
+Fix #113: Shorter key names with unicode symbols. In particular, keys on
+the numeric pad have a nice symbol that looks like the keypad.
+
+Fix #120: Topology updates correct equation, not only the horizontal equation
+
+Some assertions to debug issue #121 on MacOS.
+
 0.6.5
 -----
 
