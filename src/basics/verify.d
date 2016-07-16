@@ -1,6 +1,7 @@
 module basics.verify;
 
 import std.algorithm;
+import std.array;
 import std.file;
 import std.stdio;
 import core.memory;
@@ -22,20 +23,30 @@ public void verifyFiles(Cmdargs cmdargs)
             .each!(str => writefln("Error: File not found: `%s'", str));
         return;
     }
-    std.stdio.write("Initializing game...");
-    stdout.flush;
     basics.init.initialize(cmdargs);
-    writeln(" done. Я твой слуга.");
-
-    auto vc = new VerifyCounter;
+    auto vc = new VerifyCounter(cmdargs.verifyCoverage);
     vc.writeCSVHeader();
     cmdargs.verifyFiles.each!(fn => vc.verifyDirOrFile(fn));
+    vc.writeLevelsNotCovered();
     vc.writeStatistics();
 }
 
 private class VerifyCounter {
 
+    // If true: When we verify a single replay filename (either directly
+    // because you've asked on the commandline, or recursively), and the
+    // replay's level exists and is good (playable), we look at
+    // the level's directory, and add all levels from this directory to the
+    // coverage requirement. With writeLevelsNotCovered, we can
+    // later output the difference between the requirement and covered levels.
+    immutable bool verifyCoverage;
+
     int total, noPtr, noLev, badLev, fail, ok;
+
+    string[] levelDirsToCover;
+    MutFilename[] levelsCovered; // this may contain duplicates until output
+
+    this(bool cov) { verifyCoverage = cov; }
 
     void verifyDirOrFile(Filename fn)
     {
@@ -44,28 +55,6 @@ private class VerifyCounter {
                 .each!(foundFile => verifyAndGC(foundFile));
         else
             verifyAndGC(fn);
-    }
-
-    void verifyAndGC(Filename fn)
-    {
-        verify(fn);
-        core.memory.GC.collect();
-    }
-
-    void verify(Filename fn)
-    {
-        ++total;
-        Replay rep = Replay.loadFromFile(fn);
-        Level  lev = new Level(rep.levelFilename);
-        // We never look at the included level
-        if (fn == rep.levelFilename || ! lev.good) {
-            // give a result with all zeroes to pad the fields
-            writeResult(new Result(lev.built), fn, rep, lev);
-            return;
-        }
-        Game game = new Game(Runmode.VERIFY, lev, rep.levelFilename, rep);
-        writeResult(game.evaluateReplay(), fn, rep, lev);
-        destroy(game);
     }
 
     void writeCSVHeader()
@@ -90,21 +79,107 @@ private class VerifyCounter {
     void writeStatistics()
     {
         writeln();
-        writeln("Total results from ", total, " replays:");
+        writeln("Statistics from ", total, " replays:");
         if (noPtr)
-            writefln("%4dx (NO-PTR): replay ignored, "
+            writefln("%5dx (NO-PTR): replay ignored, "
                      "it doesn't name a level file.", noPtr);
         if (noLev)
-            writefln("%4dx (NO-LEV): replay ignored, "
+            writefln("%5dx (NO-LEV): replay ignored, "
                      "it names a level file that doens't exist.", noLev);
         if (badLev)
-            writefln("%4dx (BADLEV): replay ignored, "
+            writefln("%5dx (BADLEV): replay ignored, "
                      "it names a level file with a bad level.", badLev);
         if (fail)
-            writefln("%4dx (FAIL): replay names "
+            writefln("%5dx (FAIL): replay names "
                      "an existing level file, but doesn't solve it.", fail);
         if (ok)
-            writefln("%4dx (OK): replay names "
+            writefln("%5dx (OK): replay names "
                      "an existing level file and solves that level.", ok);
+    }
+
+    void writeLevelsNotCovered()
+    {
+        if (! verifyCoverage)
+            return;
+        // levelsCovered may contain duplicates. Remove duplicates.
+        levelsCovered = levelsCovered.sort().uniq().array();
+        MutFilename[] levelsToCover = levelDirsToCover.sort().uniq()
+            .map!(dirString => new Filename(dirString))
+            .map!(fn => findRegularFilesNoRecursion(fn))
+            .joiner
+            .filter!(fn => fn.preExtension == 0) // no _order.X.txt
+            .array;
+        levelsToCover.sort();
+        immutable totalLevelsToCover = levelsToCover.length;
+        // We assume that every level that (we have tested positive)
+        // has also (been found with the directory search).
+        // Under this assumption, levelsCovered is a subset of levelsToCover.
+        // Because both levelsCovered and levelsToCover are sort.uniq.array,
+        // we can generate list of not-covered levels with the following algo.
+        MutFilename[] levelsNotCovered = [];
+        while (levelsToCover.length) {
+            if (levelsCovered.empty) {
+                levelsNotCovered ~= levelsToCover;
+                levelsToCover = [];
+                break;
+            }
+            else if (levelsCovered[0] == levelsToCover[0])
+                levelsCovered = levelsCovered[1 .. $];
+            else
+                levelsNotCovered ~= levelsToCover[0];
+            levelsToCover = levelsToCover[1 .. $];
+        }
+        // Done algo. levelsToCover and levelsCovered are clobbered.
+        if (levelsNotCovered.length > 0) {
+            writeln();
+            writeln("These ", levelsNotCovered.length,
+                " levels have no proof:");
+            levelsNotCovered.each!(fn => writeln(fn.rootless));
+        }
+        writeln();
+        write("Directory coverage: ");
+        if (levelsNotCovered.empty)
+            writeln("All ", totalLevelsToCover, " levels are solvable.");
+        else
+            writeln(totalLevelsToCover - levelsNotCovered.length,
+                " of ", totalLevelsToCover, " levels are solvable, ",
+                levelsNotCovered.length, " may be unsolvable.");
+    }
+
+private:
+    void verifyAndGC(Filename fn)
+    {
+        verify(fn);
+        core.memory.GC.collect();
+    }
+
+    void verify(Filename fn)
+    {
+        ++total;
+        Replay rep = Replay.loadFromFile(fn);
+        Level  lev = new Level(rep.levelFilename);
+        // We never look at the included level
+        if (fn == rep.levelFilename || ! lev.good) {
+            // give a result with all zeroes to pad the fields
+            writeResult(new Result(lev.built), fn, rep, lev);
+            return;
+        }
+        // The pointed-to level is good.
+        Game game = new Game(Runmode.VERIFY, lev, rep.levelFilename, rep);
+        auto result = game.evaluateReplay();
+        destroy(game);
+        rememberCoverage(rep.levelFilename, result.lixSaved >= lev.required);
+        writeResult(result, fn, rep, lev);
+    }
+
+    void rememberCoverage(in Filename levelFn, bool solved)
+    {
+        if (! verifyCoverage)
+            return;
+        levelDirsToCover = (levelDirsToCover ~ levelFn.dirRootless)
+            .sort().uniq.array;
+        if (solved)
+            levelsCovered = (levelsCovered ~ MutFilename(levelFn))
+                .sort().uniq.array;
     }
 }

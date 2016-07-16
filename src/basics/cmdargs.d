@@ -30,7 +30,8 @@ private string _helpAndExitOutput =
     "--fullscreen            use software fullscreen mode (good Alt+Tab)\n"
     "--hardfull=1600x900     use hardware fullscreen at given resolution\n"
     "--verify=dir/file.txt   verify the replay file `dir/file.txt'\n"
-    "--verify=mydir          verify all replays in directory `mydir'";
+    "--verify=mydir          verify all replays in directory `mydir'\n"
+    "--coverage              print unverified levels when you --verify";
 
 
 
@@ -47,6 +48,7 @@ class Cmdargs {
 
     private string[] badSwitches;
     Filename[]       verifyFiles;
+    bool             verifyCoverage;
 
     @property Runmode mode() const
     {
@@ -112,6 +114,9 @@ private:
         }
         else if (arg == "--fullscreen") {
             forceSoftwareFullscreen = true;
+        }
+        else if (arg == "--coverage") {
+            verifyCoverage = true;
         }
         else if (arg.startsWith(vrf)) {
             verifyFiles ~= new Filename(arg[vrf.length .. $]);
