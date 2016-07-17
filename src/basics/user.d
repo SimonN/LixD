@@ -60,6 +60,8 @@ private auto newOpt(T)(string fileKey, T defaultVal)
 
 @property bool languageIsEnglish()
 {
+    assert (fileLanguage !is null);
+    assert (fileLanguage.value !is null);
     return fileLanguage.value == basics.globals.fileLanguageEnglish;
 }
 
@@ -193,6 +195,8 @@ private Ac[14] _skillSort = [
 
 static this()
 {
+    assert (! fileLanguage);
+    assert (fileLanguageEnglish);
     fileLanguage = newOpt("LANGUAGE", Lang.optionLanguage, fileLanguageEnglish);
     optionGroup = newOpt("OPTION_GROUP", 0);
 

@@ -428,6 +428,8 @@ loadUserLanguageAndIfNotExistSetUserOptionToEnglish()
 {
     IoLine[] lines;
     try {
+        assert (fileLanguage !is null);
+        assert (fileLanguage.value !is null);
         lines = fillVectorFromFile(fileLanguage);
     }
     catch (Exception e) {
