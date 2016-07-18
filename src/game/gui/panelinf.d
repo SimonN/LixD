@@ -10,6 +10,7 @@ import game.tribe;
 import graphic.internal;
 import gui;
 import hardware.display; // show fps
+import hardware.sound; // warn when too few lix alive to win
 import lix;
 
 // "GameplayPanelMode"
@@ -31,6 +32,12 @@ private:
     CutbitElement _bOut, _bHatch, _bSaved, _bTime;
     Label         _lOut, _lHatch, _lSaved, _lTime;
     Label _spawnint, _targetDesc, _fps;
+
+    // This is 0 if you have enough lix alive to win.
+    // This is >= 0 if you don't have enough lix alive.
+    // While it is <= the max number, increase it every frame.
+    // If it's > 0 and < max, flicker the exit icon.
+    int _warningSignFlicker;
 
 public:
     this(Geom g)
@@ -68,12 +75,13 @@ public:
         _lSaved.text   = "%d/%d".format(lixSaved, lixRequired);
         _bOut.yf   = lixHatch + lixOut > 0 ? 0 : 1;
         _bHatch.yf = 1;
-        _bSaved.yf = lixSaved == 0 ? 1 : lixSaved >= lixRequired ? 2 : 0;
         _bTime.yf  = 1;
         // DTODO: spawnint: cull entirely, or make an icon
         _spawnint.text = "SI: %d".format(spawnint);
         if (basics.user.showFPS.value)
             _fps.text  = "FPS: %d".format(displayFps);
+
+        handleWarningSignFlicker(tribe);
     }}
 
 protected:
@@ -135,4 +143,25 @@ private:
             TextButton.textXFromLeft, 0, this.xlg, this.ylg, From.RIGHT));
         addChildren(_spawnint, _targetDesc, _fps);
     }
+
+    void handleWarningSignFlicker(in Tribe tribe) {
+        with (tribe)
+    {
+        enum flickerFreq = 0x10; // total duration of one cycle of 2 frames
+        enum flickerMax = 4 * flickerFreq + 1;
+        if (lixSaved + lixHatch + lixOut >= lixRequired)
+            _warningSignFlicker = 0;
+        else if (nuke)
+            _warningSignFlicker = flickerMax;
+        else if (_warningSignFlicker < flickerMax) {
+            if (_warningSignFlicker % flickerFreq == 0)
+                hardware.sound.playLoud(Sound.CLOCK);
+            ++_warningSignFlicker;
+        }
+        _bSaved.xf = (_warningSignFlicker + flickerFreq - 1) % flickerFreq
+            > flickerFreq/2 ? 5 : 10; // 5 = regular exit, 10 = warning sign
+        _bSaved.yf = _bSaved.xf == 10 ? 0
+            : lixSaved == 0 ? 1
+            : lixSaved >= lixRequired ? 2 : 0;
+    }}
 }
