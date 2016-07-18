@@ -124,53 +124,80 @@ immutable replayAssignAny             = "ASSIGN";
 immutable replayAssignLeft            = "ASSIGN_LEFT";
 immutable replayAssignRight           = "ASSIGN_RIGHT";
 
-static const dirLevels          = new Filename("levels/");
-static const dirLevelsSingle    = new Filename("levels/single/");
-static const dirLevelsNetwork   = new Filename("levels/network/");
-static const dirReplays         = new Filename("replays/");
-static const dirData            = new Filename("data/");
-static const dirDataBitmap      = new Filename("data/images/");
-static const dirDataSound       = new Filename("data/sound/");
-static const dirDataUser        = new Filename("data/user/");
-static const dirDataTransl      = new Filename("data/transl/");
-static const dirImages          = new Filename("images/");
-static const dirImagesOrig      = new Filename("images/orig/");
-static const dirImagesOrigL1    = new Filename("images/orig/L1/");
-static const dirImagesOrigL2    = new Filename("images/orig/L2/");
-
 immutable dirDataBitmapScale = "data/images/scale";
 
-static const dirReplayAutoSolutions  = new Filename("replays/solved/");
-static const dirReplayAutoMulti      = new Filename("replays/network/");
-static const dirReplayManual         = new Filename("replays/manual/");
+// Shotgun debugging to fix this: https://github.com/SimonN/LixD/issues/121
+// I should initialize the Filenames in a module constructor. This requires
+// that I declare them separately from their assignment. I don't declare
+// them const, because I could assign to them twice even with const in the
+// module constructor. I'm confused.
 
-static const fileGlobalConfig        = new Filename("data/config.txt");
-static const fileLog                 = new Filename("data/log.txt");
-static const fileTharsisProf         = new Filename("data/profile.txt");
-static const fileLanguageEnglish     = new Filename("data/transl/english.txt");
+Filename dirLevels, dirLevelsSingle, dirLevelsNetwork, dirReplays, dirData,
+    dirDataBitmap, dirDataSound, dirDataUser, dirDataTransl, dirImages,
+    dirImagesOrig, dirImagesOrigL1, dirImagesOrigL2, dirReplayAutoSolutions,
+    dirReplayAutoMulti, dirReplayManual;
 
-static const fileImageGuiNumber      = new Filename("data/images/api_numb.I");
-static const fileImageDebris         = new Filename("data/images/debris.I");
-static const fileImageEditFlip       = new Filename("data/images/edit_flp.I");
-static const fileImageEditHatch      = new Filename("data/images/edit_hat.I");
-static const fileImageEditPanel      = new Filename("data/images/edit_pan.I");
-static const fileImageExplosion      = new Filename("data/images/explode.I");
-static const fileImageFuseFlame      = new Filename("data/images/fuse_fla.I");
-static const fileImageGameArrow      = new Filename("data/images/game_arr.I");
-static const fileImageGameIcon       = new Filename("data/images/game_ico.I");
-static const fileImageGameNuke       = new Filename("data/images/game_nuk.I");
-static const fileImageGamePanel      = new Filename("data/images/game_pan.I");
-static const fileImageGamePanel2     = new Filename("data/images/game_pa2.I");
-static const fileImageGamePanelHints = new Filename("data/images/game_pah.I");
-static const fileImageGameSpawnint   = new Filename("data/images/game_spi.I");
-static const fileImageGamePause      = new Filename("data/images/game_pau.I");
-static const fileImageGameReplay     = new Filename("data/images/game_rep.I");
-static const fileImageImplosion      = new Filename("data/images/implode.I");
-static const fileImageSpritesheet    = new Filename("data/images/lix.I");
-static const fileImageStyleRecol     = new Filename("data/images/lixrecol.I");
-static const fileImageLobbySpec      = new Filename("data/images/lobby_sp.I");
-static const fileImageMenuBackground = new Filename("data/images/menu_bg.I");
-static const fileImageMenuCheckmark  = new Filename("data/images/menu_chk.I");
-static const fileImageMouse          = new Filename("data/images/mouse.I");
-static const fileImagePreviewIcon    = new Filename("data/images/prev_ico.I");
-static const fileImageSkillIcons     = new Filename("data/images/skillico.I");
+Filename fileGlobalConfig, fileLog, fileTharsisProf, fileLanguageEnglish;
+
+Filename fileImageGuiNumber, fileImageDebris, fileImageEditFlip,
+    fileImageEditHatch, fileImageEditPanel, fileImageExplosion,
+    fileImageFuseFlame, fileImageGameArrow, fileImageGameIcon,
+    fileImageGameNuke, fileImageGamePanel, fileImageGamePanel2,
+    fileImageGamePanelHints, fileImageGameSpawnint, fileImageGamePause,
+    fileImageGameReplay, fileImageImplosion, fileImageSpritesheet,
+    fileImageStyleRecol, fileImageLobbySpec, fileImageMenuBackground,
+    fileImageMenuCheckmark, fileImageMouse, fileImagePreviewIcon,
+    fileImageSkillIcons;
+
+static this()
+{
+    dirLevels = new Filename("levels/");
+    dirLevelsSingle = new Filename("levels/single/");
+    dirLevelsNetwork = new Filename("levels/network/");
+    dirReplays = new Filename("replays/");
+    dirData = new Filename("data/");
+    dirDataBitmap = new Filename("data/images/");
+    dirDataSound = new Filename("data/sound/");
+    dirDataUser = new Filename("data/user/");
+    dirDataTransl = new Filename("data/transl/");
+    dirImages = new Filename("images/");
+    dirImagesOrig = new Filename("images/orig/");
+    dirImagesOrigL1 = new Filename("images/orig/L1/");
+    dirImagesOrigL2 = new Filename("images/orig/L2/");
+
+    dirReplayAutoSolutions = new Filename("replays/solved/");
+    dirReplayAutoMulti = new Filename("replays/network/");
+    dirReplayManual = new Filename("replays/manual/");
+
+    fileGlobalConfig = new Filename("data/config.txt");
+    fileLog = new Filename("data/log.txt");
+    fileTharsisProf = new Filename("data/profile.txt");
+    fileLanguageEnglish = new Filename("data/transl/english.txt");
+
+    fileImageGuiNumber = new Filename("data/images/api_numb.I");
+    fileImageDebris = new Filename("data/images/debris.I");
+    fileImageEditFlip = new Filename("data/images/edit_flp.I");
+    fileImageEditHatch = new Filename("data/images/edit_hat.I");
+    fileImageEditPanel = new Filename("data/images/edit_pan.I");
+    fileImageExplosion = new Filename("data/images/explode.I");
+    fileImageFuseFlame = new Filename("data/images/fuse_fla.I");
+    fileImageGameArrow = new Filename("data/images/game_arr.I");
+    fileImageGameIcon = new Filename("data/images/game_ico.I");
+    fileImageGameNuke = new Filename("data/images/game_nuk.I");
+    fileImageGamePanel = new Filename("data/images/game_pan.I");
+    fileImageGamePanel2 = new Filename("data/images/game_pa2.I");
+    fileImageGamePanelHints = new Filename("data/images/game_pah.I");
+    fileImageGameSpawnint = new Filename("data/images/game_spi.I");
+    fileImageGamePause = new Filename("data/images/game_pau.I");
+    fileImageGameReplay = new Filename("data/images/game_rep.I");
+    fileImageImplosion = new Filename("data/images/implode.I");
+    fileImageSpritesheet = new Filename("data/images/lix.I");
+    fileImageStyleRecol = new Filename("data/images/lixrecol.I");
+    fileImageLobbySpec = new Filename("data/images/lobby_sp.I");
+    fileImageMenuBackground = new Filename("data/images/menu_bg.I");
+    fileImageMenuCheckmark = new Filename("data/images/menu_chk.I");
+    fileImageMouse = new Filename("data/images/mouse.I");
+    fileImagePreviewIcon = new Filename("data/images/prev_ico.I");
+    fileImageSkillIcons = new Filename("data/images/skillico.I");
+}
+
