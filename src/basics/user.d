@@ -244,12 +244,12 @@ static this()
     newSkillKey(Ac.walker, ALLEGRO_KEY_D);
     newSkillKey(Ac.jumper, ALLEGRO_KEY_R);
     newSkillKey(Ac.runner, ALLEGRO_KEY_LSHIFT);
-    newSkillKey(Ac.climber, ALLEGRO_KEY_B);
+    newSkillKey(Ac.climber, ALLEGRO_KEY_Z);
     newSkillKey(Ac.floater, ALLEGRO_KEY_Q);
     newSkillKey(Ac.batter, ALLEGRO_KEY_C);
     newSkillKey(Ac.exploder, ALLEGRO_KEY_V);
     newSkillKey(Ac.blocker, ALLEGRO_KEY_X);
-    newSkillKey(Ac.cuber, ALLEGRO_KEY_X);
+    newSkillKey(Ac.cuber, ALLEGRO_KEY_B);
     newSkillKey(Ac.builder, ALLEGRO_KEY_A);
     newSkillKey(Ac.platformer, ALLEGRO_KEY_T);
     newSkillKey(Ac.basher, ALLEGRO_KEY_E);
@@ -291,7 +291,7 @@ static this()
     keyMenuOkay = newKey("KEY_MENU_OKAY", Lang.optionKeyMenuOkay, ALLEGRO_KEY_SPACE);
     keyMenuEdit = newKey("KEY_MENU_EDIT", Lang.optionKeyMenuEdit, ALLEGRO_KEY_F);
     keyMenuExport = newKey("KEY_MENU_EXPORT", Lang.optionKeyMenuExport, ALLEGRO_KEY_R);
-    keyMenuDelete = newKey("KEY_MENU_DELETE", Lang.optionKeyMenuDelete, ALLEGRO_KEY_G);
+    keyMenuDelete = newKey2("KEY_MENU_DELETE", Lang.optionKeyMenuDelete, ALLEGRO_KEY_G, ALLEGRO_KEY_DELETE);
     keyMenuUpDir = newKey("KEY_MENU_UP_DIR", Lang.optionKeyMenuUpDir, ALLEGRO_KEY_A);
     keyMenuUpBy1 = newKey2("KEY_MENU_UP_1", Lang.optionKeyMenuUpBy1, ALLEGRO_KEY_S, ALLEGRO_KEY_UP);
     keyMenuUpBy5 = newKey("KEY_MENU_UP_5", Lang.optionKeyMenuUpBy5, ALLEGRO_KEY_W);
