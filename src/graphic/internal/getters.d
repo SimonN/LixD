@@ -17,12 +17,14 @@ out (ret) {
     assert (ret && ret != nullCutbit, "can't find Lix spritesheet");
 }
 body {
-    static fn = new Filename(fileImageSpritesheet.rootless ~ imgExt);
-    if (auto ret = fn.rootlessNoExt in internal)
-        return *ret;
+    static Cutbit cached = null;
+    if (cached)
+        return cached;
+    auto fn = new Filename(fileImageSpritesheet.rootless ~ imgExt);
     loadFromDisk(fn);
     assert (fn.rootlessNoExt in internal, "can't find Lix spritesheet");
-    return *(fn.rootlessNoExt in internal);
+    cached = *(fn.rootlessNoExt in internal);
+    return cached;
 }
 
 // Input: filename without any scaling subdir

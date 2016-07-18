@@ -9,7 +9,6 @@ import basics.cmdargs;
 import file.filename;
 import graphic.cutbit;
 import graphic.internal.getters;
-import graphic.internal.scale;
 import graphic.internal.init;
 import graphic.internal.vars;
 import lix.enums;
