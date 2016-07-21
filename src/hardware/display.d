@@ -23,23 +23,25 @@ static import hardware.mouse; // untrap the mouse when we leave the display
 ALLEGRO_DISPLAY* display;
 
 private:
-
     ALLEGRO_EVENT_QUEUE* queue;
+    bool _displayActive;
     bool _displayCloseWasClicked;
     long[] _fpsArr;
 
 public:
 
-bool
-displayCloseWasClicked() {
+@property bool displayCloseWasClicked()
+{
     return _displayCloseWasClicked;
 }
 
+@property bool displayActive()
+{
+    return _displayActive;
+}
 
-
-
-void
-flip_display() {
+void flip_display()
+{
     assert (display, "display hasn't been created");
     al_flip_display();
 
@@ -49,27 +51,18 @@ flip_display() {
         _fpsArr = _fpsArr[1 .. $];
 }
 
-
-
-@property int
-displayFps()
+@property int displayFps()
 {
     return _fpsArr.len;
 }
 
-
-
-@property int
-displayXl()
+@property int displayXl()
 {
     assert(display, "display hasn't been created");
     return al_get_display_width(display);
 }
 
-
-
-@property int
-displayYl()
+@property int displayYl()
 {
     assert(display, "display hasn't been created");
     return al_get_display_height(display);
@@ -133,13 +126,7 @@ void setScreenMode(in Cmdargs cmdargs)
         display = al_create_display(mode.x, mode.y);
 
         if (display) {
-            // Shotgun debugging to prevent Icho's white window.
-            // An Allegro 5 user reported that this makes the window black.
             al_flip_display();
-            // If that doesn't help with Icho, try this instead:
-            // al_clear_to_color(ALLEGRO_COLOR(0, 0, 0, 1)); // black
-            // al_flip_display();
-
             // don't try further modes on success
             break;
         }
@@ -147,6 +134,7 @@ void setScreenMode(in Cmdargs cmdargs)
 
     // cleaning up after the change, (re)instantiating the event queue
     assert (display);
+    _displayActive = true;
 
     immutable int al_x = al_get_display_width (display);
     immutable int al_y = al_get_display_height(display);
@@ -159,8 +147,6 @@ void setScreenMode(in Cmdargs cmdargs)
     al_register_event_source(queue, al_get_display_event_source(display));
 }
 
-
-
 void deinitialize()
 {
     if (display) {
@@ -172,25 +158,32 @@ void deinitialize()
         al_destroy_event_queue(queue);
         queue = null;
     }
+    _displayActive = false;
 }
-
-
 
 void calc()
 {
     ALLEGRO_EVENT event;
-    while(al_get_next_event(queue, &event))
+    while (al_get_next_event(queue, &event))
     {
         if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
             _displayCloseWasClicked = true;
         }
         else if (event.type == ALLEGRO_EVENT_DISPLAY_SWITCH_OUT) {
-            hardware.mouse.trapMouse(false);
+            _displayActive = false;
+            hardware.mouse.trapMouse = false;
+            // This isn't generated on Debian 6 + Gnome 2 + Allegro 5.0.8
+            // on Alt-Tabbing out of Lix. See the comment at
+            // hardware.mouse.issue118workaround.
         }
         else if (event.type == ALLEGRO_EVENT_DISPLAY_SWITCH_IN) {
+            _displayActive = true;
             hardware.keyboard.clearKeyBufferAfterAltTab();
             // Don't affect the mouse: the mouse shall only be trapped
-            // when it is clicked in the game window
+            // when you click in the game window. The mouse will be trapped
+            // when you move it back into the active window -- this is related
+            // to DISPLAY_SWITCH_IN, and it queries displayActive, but happens
+            // on a mouse event, not on a display event.
         }
     }
 }

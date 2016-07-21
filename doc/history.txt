@@ -1,6 +1,29 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.7
+-----
+
+2016-07-22
+
+The lemforum pack's first 5 ranks are guaranteed to be solvable. geoo has
+given maintenance of the lemforum pack to Proxima. Proxima has spent days
+on careful level adaption to D Lix and difficulty reordering.
+Out: Get Down From There, Minimalism Part 3.
+In: Don't Look Back (jagged floor instead of a time-limit gadget),
+    Canadian Glade (inspired by Get Down From There, uses the forest tileset).
+
+Fix #111: Initial zoom on torus maps was too zoomed in.
+
+Fix #112: Hotkey labels ran over nearby buttons.
+
+Fix #118: When Lix wasn't the foreground window, it trapped the mouse
+nonetheless when the cursor passed over the inactive window. Now, you must
+click into the window to trap the mouse. This fix made visible another bug:
+In the inactive Lix, the ingame cursor moves offset from the hardware cursor.
+
+Worked on #124: I don't add 0x0 as a fullscreen mode anymore.
+
 0.6.6
 -----
 

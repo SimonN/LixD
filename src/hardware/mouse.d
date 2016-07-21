@@ -41,6 +41,16 @@ void trapMouse(bool b) { _trapMouse = b; }
 void freezeMouseX();
 void freezeMouseY();
 
+// There seems to be a bug in Allegro 5.0.8: Clicking out of
+// the window sends a switch-out event, correct. But alt-tabbing
+// out of the window doesn't make a display-switch-out-event on
+// Debian 6 + Gnome 2. I want to un-trap the mouse when we alt-tab
+// out of the window, and use a workaround when we lack the event.
+version (linux)
+    enum issue118workaround = true;
+else
+    enum issue118workaround = false;
+
 private:
 
     ALLEGRO_EVENT_QUEUE* _queue;
@@ -150,12 +160,18 @@ void calc()
             _mouseHeldFor[i] = 0;
             break;
 
+        // This occurs after centralizing the mouse manually.
         case ALLEGRO_EVENT_MOUSE_WARPED:
-            // This occurs after centralizing the mouse manually. Ignore.
+            static if (issue118workaround) {
+                _trapMouse = true;
+            }
             break;
 
         case ALLEGRO_EVENT_MOUSE_ENTER_DISPLAY:
-            _trapMouse = true;
+            static if (! issue118workaround) {
+                if (hardware.display.displayActive)
+                    _trapMouse = true;
+            }
             // Nepster 2016-06: When entering the display, the ingame
             // cursor should jump to where we entered.
             // This would sometimes trigger when the hardware mouse is close
