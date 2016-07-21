@@ -120,7 +120,7 @@ class Builder : BrickCounter {
         }
         else if (frame == 8) {
             buildBrick();
-            moveUp();
+            moveUp(2);
         }
         else if (frame == 12) {
             bumpAgainstTerrain();
@@ -190,7 +190,7 @@ class Builder : BrickCounter {
         if (wallNearFoot || insideThinHorizontalBeam || hitHead) {
             turn();
             if (fullyInsideTerrain)
-                moveDown();
+                moveDown(2);
             become(Ac.walker);
         }
     }
@@ -320,7 +320,7 @@ class Platformer : BrickCounter {
     {
         immutable airAbove = ! isSolid(0, -1);
         if (airAbove)
-            moveUp();
+            moveUp(2);
         else
             abortAndStandUp();
     }

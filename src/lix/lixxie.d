@@ -245,13 +245,13 @@ void moveAhead(int plusX = 2)
     for ( ; plusX < 0; plusX += 2) ex = (_ex - 2);
 }
 
-void moveDown(int plusY = 2)
+void moveDown(int plusY)
 {
     for ( ; plusY > 0; --plusY) ey = (_ey + 1);
     for ( ; plusY < 0; ++plusY) ey = (_ey - 1);
 }
 
-void moveUp(in int minusY = 2)
+void moveUp(in int minusY)
 {
     moveDown(-minusY);
 }

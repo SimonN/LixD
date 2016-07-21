@@ -60,6 +60,8 @@ private:
 
     void adjustSpeed()
     {
+        assert (speedX >= 0);
+        assert (speedX % 2 == 0);
         switch (frame) {
             case 0: break;
             case 1: speedY = speedY > 10 ? 10 : 6; break;
@@ -76,32 +78,42 @@ private:
 
     void move()
     {
-        // The following code is a little like BallisticFlyer.collision().
-        // I don't dare to use that code for floaters too. It's already very
-        // complicated and many of its corner cases don't apply to floaters.
-        int  wallHitMovedDownY = 0;
-        immutable maxSpeed = max(speedX, speedY);
+        // How far have we moved during this frame already? move() is 1 frame.
+        int flownAhead = 0;
+        int flownDown = 0;
+        assert (speedX >= 0);
 
-        for (int i = 0; i < maxSpeed; ++i) {
-            // move either 1 pixel down, 1 pixel ahead, or 1 pixel both. This
-            // takes max(spx, spy) chess king moves to get to target square.
-            immutable int x = even(speedX * i / maxSpeed);
-            immutable int y =      speedY * i / maxSpeed;
-            if (isSolid(x, y + 2)) {
-                moveAhead(x);
-                moveDown(y);
-                become(Ac.lander);
+        while (flownAhead < speedX || flownDown < speedY) {
+            // Collide with the terrain before moving
+            if (this.isSolid(0, 2)) {
+                this.become(Ac.lander);
                 return;
             }
-            else if (isSolid(x + 2, y) && speedX > 0) {
-                wallHitMovedDownY = y;
-                moveAhead(x); // DTODOSKILLS: test this, compare with C++
-                moveDown(y);
+            else if (this.isSolid(2, 0)) {
                 speedX = 0;
+                flownAhead = 0;
+                if (flownDown >= speedY)
+                    break;
+            }
+            // Path is now clear in both directions. We don't check again
+            // after moving, to keep physics equality with 0.6.x for floaters
+            // moving straight down.
+            immutable ahead
+                = flownAhead >= speedX ? false // only y left
+                : flownDown >= speedY ? true // only x left
+                : flownAhead == 0 && flownDown == 0 ? speedX >= speedY
+                : speedX * flownDown >= flownAhead * speedY;
+            // In 0.6.0 and C++ Lix, we moved like the chess king.
+            // Now, we move orthogonally only, and check in between.
+            // That should prevent https://github.com/SimonN/LixD/issues/129.
+            if (ahead) {
+                moveAhead();
+                flownAhead += 2;
+            }
+            else {
+                moveDown(1);
+                flownDown += 1;
             }
         }
-        assert (this is lixxie.job);
-        moveAhead(speedX);
-        moveDown (speedY - wallHitMovedDownY);
     }
 }

@@ -42,7 +42,7 @@ class Ascender : Job {
     override void perform()
     {
         if (frame != 5)
-            moveUp();
+            moveUp(2);
 
         if (isLastFrame)
             become(Ac.walker);
