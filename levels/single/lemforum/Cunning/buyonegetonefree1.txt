@@ -1,47 +1,32 @@
-$BUILT 2015-06-22 13:52:16
+$BUILT 2016-07-17 17:46:42
 $AUTHOR geoo
-$GERMAN 
 $ENGLISH Buy One Get One Free (Part 1)
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 0
 #START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 0
 #INITIAL 40
 #REQUIRED 38
 #SPAWN_INTERVAL 4
-#SPAWN_INTERVAL_FAST 4
 
-#NOTHING 0
-#NOTHING 0
 #CLIMBER 1
-#JUMPER 0
 #EXPLODER 1
-#PLATFORMER 1
-#BUILDER 1
-#CUBER 1
-#MINER 1
-#NOTHING 0
 #BLOCKER 1
-#NOTHING 0
+#BUILDER 1
+#PLATFORMER 1
+#MINER 1
+#CUBER 1
 
 :geoo/abstract/hatch.H: 144 208
-:geoo/abstract/hatch.H: 224 80
+:geoo/abstract/hatch.H: 208 80
 
-:geoo/abstract/goal.G: 308 108
-:geoo/abstract/goal.G: 300 108
-:geoo/abstract/goal.G: 306 106
 :geoo/abstract/goal.G: 48 104
 :geoo/abstract/goal.G: 560 104
-:geoo/abstract/goal.G: 302 106
-:geoo/abstract/goal.G: 304 104
+:geoo/abstract/goal.G: 304 102
 
 :matt/carnival/25: 224 224
 :matt/carnival/25: 288 224
@@ -95,3 +80,4 @@ $ENGLISH Buy One Get One Free (Part 1)
 :matt/carnival/25: 32 160
 :geoo/abstract/pipes/central5: 160 152
 :geoo/abstract/pipes/central5: 192 152
+:geoo/steel/32x16o.S: 304 150

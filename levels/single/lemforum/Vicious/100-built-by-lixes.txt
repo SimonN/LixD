@@ -1,4 +1,4 @@
-$BUILT 2016-07-16 19:24:50
+$BUILT 2016-07-21 13:31:03
 $AUTHOR ccx
 $ENGLISH 100% Built by Lixes
 
@@ -40,29 +40,29 @@ $ENGLISH 100% Built by Lixes
 :geoo/construction/wall/small_64x64: 248 192
 :geoo/construction/wall/small_64x64: 312 192
 :geoo/construction/wall/small_64x64: 376 192
-:geoo/construction/pillar_32: 8 288
-:geoo/construction/pillar_base: -8 336
-:geoo/construction/pillar_bottom: 8 320
-:geoo/construction/pillar_top: 8 48
-:geoo/construction/pillar_32: 8 256
-:geoo/construction/pillar_32: 8 224
-:geoo/construction/pillar_base: -8 32
-:geoo/construction/pillar_32: 8 192
-:geoo/construction/pillar_32: 8 160
-:geoo/construction/pillar_32: 8 128
-:geoo/construction/pillar_32: 8 96
-:geoo/construction/pillar_32: 8 64
-:geoo/construction/pillar_32: 600 288
-:geoo/construction/pillar_bottom: 600 320
-:geoo/construction/pillar_top: 600 48
-:geoo/construction/pillar_32: 600 256
-:geoo/construction/pillar_32: 600 224
-:geoo/construction/pillar_base: 584 32
-:geoo/construction/pillar_32: 600 192
-:geoo/construction/pillar_32: 600 160
-:geoo/construction/pillar_32: 600 128
-:geoo/construction/pillar_32: 600 96
-:geoo/construction/pillar_32: 600 64
+:geoo/construction/pillar_32: 16 288
+:geoo/construction/pillar_base: 0 336
+:geoo/construction/pillar_bottom: 16 320
+:geoo/construction/pillar_top: 16 48
+:geoo/construction/pillar_32: 16 256
+:geoo/construction/pillar_32: 16 224
+:geoo/construction/pillar_base: 0 32
+:geoo/construction/pillar_32: 16 192
+:geoo/construction/pillar_32: 16 160
+:geoo/construction/pillar_32: 16 128
+:geoo/construction/pillar_32: 16 96
+:geoo/construction/pillar_32: 16 64
+:geoo/construction/pillar_32: 592 288
+:geoo/construction/pillar_bottom: 592 320
+:geoo/construction/pillar_top: 592 48
+:geoo/construction/pillar_32: 592 256
+:geoo/construction/pillar_32: 592 224
+:geoo/construction/pillar_base: 576 32
+:geoo/construction/pillar_32: 592 192
+:geoo/construction/pillar_32: 592 160
+:geoo/construction/pillar_32: 592 128
+:geoo/construction/pillar_32: 592 96
+:geoo/construction/pillar_32: 592 64
 :geoo/construction/rod_rust/straight32: 0 352
 :geoo/construction/rod_rust/straight32: 32 352
 :geoo/construction/rod_rust/straight32: 64 352
@@ -90,7 +90,7 @@ $ENGLISH 100% Built by Lixes
 :geoo/construction/rod_rust/straight_diagu32: 540 352
 :geoo/construction/rod_rust/straight32: 540 358 r
 :geoo/construction/rod_rust/straight32: 540 368 r
-:geoo/construction/pillar_base: 584 336
+:geoo/construction/pillar_base: 576 336
 :geoo/construction/wall/small_64x32: 0 0
 :geoo/construction/wall/small_64x32: 64 0
 :geoo/construction/wall/small_64x32: 128 0

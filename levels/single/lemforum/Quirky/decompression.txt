@@ -1,26 +1,21 @@
-$BUILT 2016-05-29 18:57:56
+$BUILT 2012-06-03 21:41:02
 $AUTHOR geoo
-$GERMAN 
-$ENGLISH Decompression Method 1
+$ENGLISH Decompression Method
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 0
 #INITIAL 10
 #REQUIRED 10
 #SPAWN_INTERVAL 1
-#SPAWN_INTERVAL_FAST 1
 
 #WALKER 1
 #CLIMBER 1
 #BLOCKER 10
 #MINER 1
+#EXPLODER2 0
 
 :geoo/abstract/hatch.H: 192 160
 :geoo/abstract/hatch.H: 194 160
@@ -37,9 +32,7 @@ $ENGLISH Decompression Method 1
 
 :geoo/construction/spring.T: 416 112
 :geoo/construction/steam_left.T: 480 96
-:geoo/construction/steam_left.T: 192 80
-:geoo/construction/spring.T: 192 96
-:geoo/construction/spring.T: 224 96
+:geoo/construction/steam_left.T: 160 96
 
 :matt/carnival/38: 256 176 frr
 :matt/carnival/38: 320 144 frr
@@ -127,22 +120,4 @@ $ENGLISH Decompression Method 1
 :geoo/construction/rod_steel/straight32.S: 576 100
 :geoo/construction/rod_steel/straight32.S: 608 100
 :geoo/construction/rod_steel/end_rect.S: 512 100
-:geoo/construction/rod_steel/straight32.S: 224 88
-:geoo/construction/rod_steel/end_rect.S: 224 80
-:geoo/construction/rod_steel/end_rect.S: 224 88
-:geoo/construction/rod_steel/straight32.S: 240 0 rrr
-:geoo/construction/rod_steel/straight32.S: 248 0 rrr
-:geoo/construction/rod_steel/straight32.S: 244 0 rrr
-:geoo/construction/rod_steel/straight32.S: 240 48 rrr
-:geoo/construction/rod_steel/straight32.S: 240 32 rrr
-:geoo/construction/rod_steel/straight32.S: 248 32 rrr
-:geoo/construction/rod_steel/straight32.S: 244 32 rrr
-:geoo/construction/rod_steel/edge_lu.S: 240 80
-:geoo/construction/rod_steel/straight32.S: 248 56 rrr
-:geoo/construction/rod_steel/straight32.S: 244 56 rrr
-:geoo/construction/rod_steel/end_rect.S: 224 84
-:geoo/construction/rod_steel/edge_lu.S: 248 88
-:geoo/construction/rod_steel/edge_lu.S: 244 84
-:geoo/construction/rod_steel/straight8.S: 232 80
-:geoo/construction/rod_steel/straight8.S: 232 84
-:geoo/construction/rod_steel/straight8.S: 236 84
+:matt/carnival/38: 192 96

@@ -14,7 +14,7 @@ itoldyouaboutstairs.txt
 thislix.txt
 offtherails.txt
 derailedlevel.txt
-ticktoxic.txt
+lixesinmotion.txt
 thisistoomuch.txt
 danceswithlixes.txt
 slipping.txt
@@ -26,7 +26,7 @@ cornerstone.txt
 repeatingpatterns.txt
 thecrimsonroom.txt
 narbaculardrop.txt
-buyonegetonefree1.txt
+roundtrip.txt
 buyonegetonefree2.txt
 imgonnamakeyoumine.txt
 passingengagement.txt

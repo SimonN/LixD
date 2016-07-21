@@ -14,7 +14,7 @@ timetochange.txt
 theabominablesnowlix.txt
 100waystodie.txt
 roundabout.txt
-decompressionmeth1.txt
+decompression.txt
 pathtomahimah.txt
 anotherlixinthewall.txt
 littleminerpuzz2.txt
@@ -28,7 +28,7 @@ impetus.txt
 lixlata.txt
 prelude.txt
 snowballbattle.txt
-minimalism3.txt
+allover.txt
 boxset.txt
 infrastructure.txt
 thepit.txt

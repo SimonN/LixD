@@ -1,0 +1,96 @@
+$BUILT 2016-07-22 02:57:31
+$AUTHOR Michael/Simon
+$ENGLISH Canadian Glade
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+#START_X 0
+#START_Y 0
+
+#SECONDS 0
+#INITIAL 25
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+
+#WALKER 10
+#FLOATER 10
+#EXPLODER 5
+#BLOCKER 10
+#MINER 10
+#DIGGER 10
+
+:amanda/forest/hatch.H: 16 0
+
+:amanda/forest/exit.G: 489 256
+
+:amanda/forest/leaves_05: 212 100
+:amanda/forest/bark_02: 91 276 rrr
+:amanda/forest/stone_02: 132 303 rrr
+:amanda/forest/stone_02: 86 283 r
+:amanda/forest/moss_00: 101 279 frr
+:amanda/forest/leaves_05: 302 318 frr
+:amanda/forest/bark_02: 355 204
+:amanda/forest/leaves_05: 380 191
+:amanda/forest/bark_04: 584 277
+:amanda/forest/bark_05: 536 197
+:amanda/forest/stone_02: 562 290 r
+:amanda/forest/stone_02: 588 340 fr
+:amanda/forest/moss_00: 575 287
+:amanda/forest/leaves_04: 500 105 frr
+:amanda/forest/leaves_05: 520 205
+:amanda/forest/leaves_02: 499 134 frr
+:amanda/forest/leaves_03: 345 109 frr
+:amanda/forest/leaves_03: 100 179
+:amanda/forest/bark_06: -54 304 r
+:amanda/forest/bark_00: 28 293
+:amanda/forest/bark_02: 341 69
+:amanda/forest/bark_05: 144 241
+:amanda/forest/leaves_05: 137 298
+:amanda/forest/leaves_04: 97 159
+:amanda/forest/bark_02: 299 246 rrr
+:amanda/forest/leaves_05: 300 238
+:amanda/forest/moss_00: 320 345
+:amanda/forest/bark_03: 287 164
+:amanda/forest/bark_04: 261 352
+:amanda/forest/moss_00: 392 184
+:amanda/forest/leaves_04: 96 88
+:amanda/forest/leaves_03: 190 83
+:amanda/forest/leaves_04: 88 80 frr
+:amanda/forest/leaves_03: 23 86
+:amanda/forest/bark_01: 64 216
+:amanda/forest/bark_01: 80 216
+:amanda/forest/bark_03: 152 184
+:amanda/forest/stone_02: -16 320
+:amanda/forest/stone_01: 32 288
+:amanda/forest/stone_02: 88 328
+:amanda/forest/stone_00: 144 360
+:amanda/forest/stone_01: 176 336
+:amanda/forest/moss_00: 192 336
+:amanda/forest/stone_00: 204 292 r
+:amanda/forest/bark_01: 256 280
+:amanda/forest/bark_01: 256 200
+:amanda/forest/leaves_04: 238 98
+:amanda/forest/leaves_05: 260 186
+:amanda/forest/bark_03: 264 192
+:amanda/forest/stone_02: 232 336
+:amanda/forest/stone_00: 296 360
+:amanda/forest/leaves_02: 288 72
+:amanda/forest/bark_03: 336 184
+:amanda/forest/stone_01: 320 352
+:amanda/forest/stone_00: 368 344
+:amanda/forest/moss_00: 396 335 frr
+:amanda/forest/bark_01: 424 256
+:amanda/forest/stone_02: 392 336
+:amanda/forest/stone_01: 448 336 r
+:amanda/forest/stone_02: 536 336 fr
+:amanda/forest/leaves_04: -6 97
+:amanda/forest/leaves_02: 104 96
+:amanda/forest/leaves_04: 196 86
+:amanda/forest/leaves_03: 288 88
+:amanda/forest/bark_01: 424 184
+:amanda/forest/leaves_05: 411 159
+:amanda/forest/bark_02: 425 203
+:amanda/forest/leaves_03: 368 90
+:amanda/forest/bark_02: 116 210 frr
+:amanda/forest/leaves_04: 490 97

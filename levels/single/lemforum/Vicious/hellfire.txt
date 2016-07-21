@@ -1,23 +1,17 @@
-$BUILT 2012-06-22 13:42:52
+$BUILT 2016-07-21 13:10:39
 $AUTHOR namida
-$GERMAN 
 $ENGLISH Hellfire
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 2048
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 160
 #START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 0
-#INITIAL 80
-#REQUIRED 76
+#INITIAL 60
+#REQUIRED 56
 #SPAWN_INTERVAL 50
-#SPAWN_INTERVAL_FAST 4
 
 #CLIMBER 2
 #FLOATER 2
@@ -26,11 +20,6 @@ $ENGLISH Hellfire
 #BUILDER 2
 #BASHER 2
 #MINER 2
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 
 :matt/underworld/Hatch.H: 304 96
 
@@ -48,6 +37,7 @@ $ENGLISH Hellfire
 :proxima/flame.F: 1888 328
 :geoo/construction/sawblade.F: 1376 16
 
+:matt/underworld/07: 1360 352
 :matt/underworld/02: 400 96
 :geoo/steel/dark_32x64o.S: 400 128
 :matt/underworld/01: 400 192
@@ -131,12 +121,92 @@ $ENGLISH Hellfire
 :matt/underworld/02: 864 320
 :matt/underworld/02: 928 320
 :matt/underworld/02: 992 320
-:matt/underworld/02: 1056 320
+$BEGIN_TILE_GROUP 0
+:matt/underworld/02: 0 376
+:matt/underworld/02: 0 184
+:matt/marble/18: 40 32
+:matt/marble/18: 40 80
+:matt/marble/18: 40 128
+:matt/marble/18: 40 176
+:matt/marble/18: 40 224
+:matt/marble/18: 40 272
+:matt/marble/18: 40 320
+:matt/marble/18: 40 368
+:matt/marble/18: 40 416
+:matt/marble/18: 80 24
+:matt/marble/18: 80 72
+:matt/marble/18: 80 120
+:matt/marble/18: 80 168
+:matt/marble/18: 80 216
+:matt/marble/18: 80 264
+:matt/marble/18: 80 312
+:matt/marble/18: 80 360
+:matt/marble/18: 80 408
+:matt/marble/18: 120 16
+:matt/marble/18: 120 64
+:matt/marble/18: 120 112
+:matt/marble/18: 120 160
+:matt/marble/18: 120 208
+:matt/marble/18: 120 256
+:matt/marble/18: 120 304
+:matt/marble/18: 120 352
+:matt/marble/18: 120 400
+:matt/marble/18: 160 8
+:matt/marble/18: 160 56
+:matt/marble/18: 160 104
+:matt/marble/18: 160 152
+:matt/marble/18: 160 200
+:matt/marble/18: 160 248
+:matt/marble/18: 160 296
+:matt/marble/18: 160 344
+:matt/marble/18: 160 392
+:matt/marble/18: 200 0
+:matt/marble/18: 200 48
+:matt/marble/18: 200 96
+:matt/marble/18: 200 144
+:matt/marble/18: 200 192
+:matt/marble/18: 200 240
+:matt/marble/18: 200 288
+:matt/marble/18: 200 336
+:matt/marble/18: 200 384
+:matt/marble/18: 240 40
+:matt/marble/18: 240 88
+:matt/marble/18: 240 136
+:matt/marble/18: 240 184
+:matt/marble/18: 240 232
+:matt/marble/18: 240 280
+:matt/marble/18: 240 328
+:matt/marble/18: 240 376
+:matt/marble/18: 280 32
+:matt/marble/18: 280 80
+:matt/marble/18: 280 128
+:matt/marble/18: 280 176
+:matt/marble/18: 280 224
+:matt/marble/18: 280 272
+:matt/marble/18: 280 320
+:matt/marble/18: 280 368
+:matt/marble/18: 320 24
+:matt/marble/18: 320 72
+:matt/marble/18: 320 120
+:matt/marble/18: 320 168
+:matt/marble/18: 320 216
+:matt/marble/18: 320 264
+:matt/marble/18: 320 312
+:matt/marble/18: 320 360
+:matt/marble/18: 120 448
+:matt/marble/18: 160 440
+:matt/marble/18: 200 432
+:matt/marble/18: 240 424
+:matt/marble/18: 280 416
+:matt/marble/18: 320 408
+:matt/marble/07: 344 392 d
+:matt/marble/07: 344 440 d
+$END_TILE_GROUP
+:Group-0: 1056 -56
 :matt/underworld/02: 800 128
 :matt/underworld/02: 864 128
 :matt/underworld/02: 928 128
 :matt/underworld/02: 992 128
-:matt/underworld/02: 1056 128
 :matt/underworld/02: 800 224 d
 :geoo/construction/pillar_32: 960 16
 :geoo/construction/pillar_32: 1008 16
@@ -148,81 +218,6 @@ $ENGLISH Hellfire
 :geoo/construction/pillar_bottom: 1008 112
 :geoo/construction/pillar_top_shaded: 960 0
 :geoo/construction/pillar_top_shaded: 1008 0
-:matt/marble/18: 1096 -24
-:matt/marble/18: 1096 24
-:matt/marble/18: 1096 72
-:matt/marble/18: 1096 120
-:matt/marble/18: 1096 168
-:matt/marble/18: 1096 216
-:matt/marble/18: 1096 264
-:matt/marble/18: 1096 312
-:matt/marble/18: 1096 360
-:matt/marble/18: 1136 -32
-:matt/marble/18: 1136 16
-:matt/marble/18: 1136 64
-:matt/marble/18: 1136 112
-:matt/marble/18: 1136 160
-:matt/marble/18: 1136 208
-:matt/marble/18: 1136 256
-:matt/marble/18: 1136 304
-:matt/marble/18: 1136 352
-:matt/marble/18: 1176 -40
-:matt/marble/18: 1176 8
-:matt/marble/18: 1176 56
-:matt/marble/18: 1176 104
-:matt/marble/18: 1176 152
-:matt/marble/18: 1176 200
-:matt/marble/18: 1176 248
-:matt/marble/18: 1176 296
-:matt/marble/18: 1176 344
-:matt/marble/18: 1216 -48
-:matt/marble/18: 1216 0
-:matt/marble/18: 1216 48
-:matt/marble/18: 1216 96
-:matt/marble/18: 1216 144
-:matt/marble/18: 1216 192
-:matt/marble/18: 1216 240
-:matt/marble/18: 1216 288
-:matt/marble/18: 1216 336
-:matt/marble/18: 1256 -56
-:matt/marble/18: 1256 -8
-:matt/marble/18: 1256 40
-:matt/marble/18: 1256 88
-:matt/marble/18: 1256 136
-:matt/marble/18: 1256 184
-:matt/marble/18: 1256 232
-:matt/marble/18: 1256 280
-:matt/marble/18: 1256 328
-:matt/marble/18: 1296 -16
-:matt/marble/18: 1296 32
-:matt/marble/18: 1296 80
-:matt/marble/18: 1296 128
-:matt/marble/18: 1296 176
-:matt/marble/18: 1296 224
-:matt/marble/18: 1296 272
-:matt/marble/18: 1296 320
-:matt/marble/18: 1336 -24
-:matt/marble/18: 1336 24
-:matt/marble/18: 1336 72
-:matt/marble/18: 1336 120
-:matt/marble/18: 1336 168
-:matt/marble/18: 1336 216
-:matt/marble/18: 1336 264
-:matt/marble/18: 1336 312
-:matt/marble/18: 1376 -32
-:matt/marble/18: 1376 16
-:matt/marble/18: 1376 64
-:matt/marble/18: 1376 112
-:matt/marble/18: 1376 160
-:matt/marble/18: 1376 208
-:matt/marble/18: 1376 256
-:matt/marble/18: 1376 304
-:matt/marble/18: 1176 392
-:matt/marble/18: 1216 384
-:matt/marble/18: 1256 376
-:matt/marble/18: 1296 368
-:matt/marble/18: 1336 360
-:matt/marble/18: 1376 352
 :matt/marble/07: 1400 0 d
 :matt/marble/07: 1400 48 d
 :matt/marble/07: 1400 96 d
@@ -230,9 +225,6 @@ $ENGLISH Hellfire
 :matt/marble/07: 1400 192 d
 :matt/marble/07: 1400 240 d
 :matt/marble/07: 1400 288 d
-:matt/marble/07: 1400 336 d
-:matt/marble/07: 1400 384 d
-:matt/underworld/07: 1360 352 n
 :matt/underworld/07: 1440 336
 :matt/underworld/07: 1536 320
 :matt/underworld/07: 1616 320

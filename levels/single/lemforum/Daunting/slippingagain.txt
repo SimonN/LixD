@@ -1,4 +1,4 @@
-$BUILT 2016-07-16 19:06:14
+$BUILT 2016-07-19 17:37:30
 $AUTHOR mobius/Nortaneous
 $ENGLISH Slipping Again
 
@@ -36,8 +36,10 @@ $ENGLISH Slipping Again
 :simon/acid.W: 520 352
 :geoo/construction/sawblade.F: 736 320
 :geoo/construction/sawblade.F: 72 320
+:geoo/construction/sawblade.F: 744 48
+:geoo/construction/sawblade.F: 64 48
 
-:geoo/steel/64x64o.S: 88 0
+:geoo/steel/64x64o.S: 0 0
 :geoo/steel/64x64o.S: 696 336
 :geoo/steel/32x64o.S: 56 64
 :matt/marble/04b: 328 72
@@ -99,7 +101,7 @@ $ENGLISH Slipping Again
 :geoo/steel/16x16o.S: 8 272
 :geoo/steel/16x16o.S: 8 224
 :geoo/steel/32x32o.S: 24 240
-:geoo/steel/64x64o.S: 696 0
+:geoo/steel/64x64o.S: 784 0
 :geoo/steel/32x64o.S: 760 64
 :geoo/steel/16x16o.S: 824 160
 :geoo/steel/16x16o.S: 824 112

@@ -1,36 +1,26 @@
-$BUILT 2014-07-14 19:05:32
+$BUILT 2016-07-21 13:28:20
 $AUTHOR Insane Steve
-$GERMAN 
 $ENGLISH Chasm
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1104
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 0
 #START_Y -20
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 0
 #INITIAL 50
 #REQUIRED 45
 #SPAWN_INTERVAL 32
-#SPAWN_INTERVAL_FAST 4
 
 #WALKER 5
-#JUMPER 5
+#RUNNER 5
 #CLIMBER 1
 #FLOATER 5
 #EXPLODER2 2
-#CUBER 5
-#RUNNER 5
-#BUILDER 0
-#PLATFORMER 0
-#BASHER 0
 #MINER 2
-#DIGGER 0
+#JUMPER 5
+#CUBER 5
 
 :geoo/abstract/hatch.H: 64 224
 :geoo/abstract/hatch.H: 632 136
@@ -89,7 +79,6 @@ $ENGLISH Chasm
 :geoo/steel/32x32o.S: 952 264
 :geoo/steel/32x32o.S: 952 232
 :geoo/steel/32x32o.S: 952 200
-:geoo/steel/32x32o.S: 592 104
 :geoo/steel/32x32o.S: 952 168
 :geoo/steel/32x32o.S: 952 136
 :geoo/steel/32x32o.S: 792 328
@@ -178,7 +167,6 @@ $ENGLISH Chasm
 :geoo/steel/32x32o.S: 1008 -16
 :geoo/steel/32x16o.S: 888 48
 :geoo/steel/32x16o.S: 856 48
-:geoo/steel/32x16o.S: 816 48
 :geoo/steel/32x16o.S: 784 48
 :geoo/steel/32x16o.S: 952 56
 :geoo/steel/32x16o.S: 592 48
@@ -302,3 +290,13 @@ $ENGLISH Chasm
 :geoo/abstract/cvblocks/032: 632 168
 :geoo/steel/32x16o.S: 696 136
 :geoo/construction/platform_single.S: 528 360 rrr
+$BEGIN_TILE_GROUP 0
+:geoo/steel/32x32o.S: 0 0
+:geoo/abstract/cvblocks/025: 20 0 d
+$END_TILE_GROUP
+:Group-0: 592 104
+$BEGIN_TILE_GROUP 1
+:geoo/steel/32x16o.S: 0 0
+:geoo/abstract/cvblocks/015: 20 0 d
+$END_TILE_GROUP
+:Group-1: 816 48
