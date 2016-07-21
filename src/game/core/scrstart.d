@@ -27,11 +27,28 @@ void chooseGoodZoom(Game game) {
 {
     assert (game.map);
     assert (zoom == 1);
-    float fillableScreenArea()      { return cameraXl * cameraYl; }
-    float areaFilledByUnloopedMap() { return min(xl * zoom^^2, cameraXl)
-                                           * min(yl * zoom^^2, cameraYl); }
+    // When exactly one of the two directions is torus, then we consider
+    // only the non-torus direction for the zoom.
+    float fillableScreenArea() {
+        if (torusX != torusY)
+            return torusX ? cameraYl : cameraXl;
+        else
+            return cameraXl * cameraYl;
+    }
+    float areaFilledByUnloopedMap()
+    {
+        if (torusX != torusY)
+            return torusX ? min(yl * zoom, cameraYl)
+                          : min(xl * zoom, cameraXl);
+        else
+            return min(xl * zoom, cameraXl) * min(yl * zoom, cameraYl);
+    }
+    float areaRatioThreshold()
+    {
+        return (torusX != torusY) ? 0.6f : 0.4f;
+    }
     assert (fillableScreenArea > 0);
-    while (areaFilledByUnloopedMap / fillableScreenArea < 0.7f && zoom < 8)
+    while (areaFilledByUnloopedMap / fillableScreenArea < areaRatioThreshold)
         zoom = zoom * 2;
 }}
 
