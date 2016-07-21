@@ -104,27 +104,17 @@ void setScreenMode(in Cmdargs cmdargs)
         else try_modes ~= TryMode(false, 640, 480);
     }
 
-    // second priority goes to the normal fullscreen/windowed modes
-    void addFullscreenTryModes() {
-        try_modes ~= TryMode(true, 0, 0);
-        try_modes ~= TryMode(true, 640, 480);
+    // second priority goes to the normal fullscreen/windowed modes.
+    void addTryModes(bool full) {
+        if (screenWindowedX.value > 0 && screenWindowedY.value > 0)
+            try_modes ~= TryMode(full, screenWindowedX.value,
+                                       screenWindowedY.value);
+        try_modes ~= TryMode(full, 640, 480);
     }
-    void addWindowedTryModes() {
-        if (screenWindowedX.value > 0 && screenWindowedY.value > 0) {
-            try_modes ~= TryMode(false, screenWindowedX, screenWindowedY);
-        }
-        try_modes ~= TryMode(false, 640, 480);
-    }
-    if (! cmdargs.forceSoftwareFullscreen
-        && (cmdargs.forceWindowed || basics.user.screenWindowed.value)
-    ) {
-        addWindowedTryModes();
-        addFullscreenTryModes();
-    }
-    else {
-        addFullscreenTryModes();
-        addWindowedTryModes();
-    }
+    immutable preferWindowed = ! cmdargs.forceSoftwareFullscreen
+        && (cmdargs.forceWindowed || basics.user.screenWindowed.value);
+    addTryModes(! preferWindowed);
+    addTryModes(preferWindowed);
 
     immutable fullscreen_flag = cmdargs.forceHardwareFullscreen
         ? ALLEGRO_FULLSCREEN : ALLEGRO_FULLSCREEN_WINDOW;
