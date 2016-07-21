@@ -9,7 +9,10 @@ module gui.button.button;
 
 import std.algorithm;
 import std.conv;
+import std.string;
 
+import basics.alleg5; // we shorten the hotkey label ourselves, not a Label
+import basics.help;
 import basics.user; // hotkey display option
 
 import graphic.color;
@@ -113,6 +116,10 @@ private:
     void drawHotkey()
     {
         string s = hotkeyString();
+        // Minor copy-pasta from gui.Label. The hotkey label is not a Label.
+        while (s.length && al_get_text_width(djvuS, s.toStringz)
+                        / Geom.stretchFactor >= this.xlg - 2 * Geom.thickg)
+            s = basics.help.backspace(s);
         if (s.length)
             drawTextRight(djvuS, s,
                 xs + xls - Geom.thicks,
