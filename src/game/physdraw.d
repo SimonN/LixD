@@ -41,10 +41,8 @@ import lix.enums;
 import lix.skill.cuber; // Cuber.cubeSize
 import lix.skill.digger; // diggerTunnelWidth
 
-void initialize(Runmode mode) { PhysicsDrawer.initialize(mode); }
-void deinitialize()           { PhysicsDrawer.deinitialize();   }
-
-
+void initialize() { PhysicsDrawer.initialize(); }
+void deinitialize() { PhysicsDrawer.deinitialize(); }
 
 class PhysicsDrawer {
 
@@ -439,17 +437,14 @@ private:
 
 
     static void
-    initialize(Runmode mode)
+    initialize()
     {
+        // We need this only during Runmode.INTERACTIVE.
+        // We don't need blittable VRAM bitmaps of the various masks.
+        // Physics are in RAM entirely, physics masks are done by CTFE.
         version (tharsisprofiling)
             auto zoneInitialize = Zone(profiler, "physDraw initialize");
         assert (! _mask);
-        assert (mode == Runmode.INTERACTIVE || mode == Runmode.VERIFY);
-        if (mode == Runmode.VERIFY)
-            // We don't need blittable VRAM bitmaps of the various masks.
-            // Physics are in RAM entirely, physics masks are done by CTFE.
-            return;
-
         alias Type = TerrainDeletion.Type;
         alias rf   = al_draw_filled_rectangle;
 

@@ -71,8 +71,10 @@ public:
         return resolveForReading(this, LookFor.filesAndDirs).toStringz;
     }
 
-    const(char*) stringzForWriting() immutable nothrow
+    const(char*) stringzForWriting() immutable
     {
+        assert (rootForWriting != "", "call VFS initialize before this");
+        this.mkdirRecurse();
         return (rootForWriting ~ rootless).toStringz;
     }
 

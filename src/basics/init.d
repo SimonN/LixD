@@ -33,15 +33,20 @@ static import file.log;
 
 void initialize(in Cmdargs cmdargs)
 {
+    // ph == need physics, may or may not need graphics.
+    // gr == need graphics, may or may not need physics.
     immutable ia = cmdargs.mode == Runmode.INTERACTIVE;
+    immutable ph = cmdargs.mode == Runmode.VERIFY || ia;
+    immutable gr = cmdargs.mode == Runmode.EXPORT_IMAGES || ia;
+
     if (ia) basics.alleg5.initializeInteractive();
-    else    basics.alleg5.initializeVerify();
+    else    basics.alleg5.initializeNoninteractive();
 
             file.filename.initialize(); // the virtual filesystem
             file.log.initialize();
-    if (ia) basics.globconf.load();
-    if (ia) basics.user.load();
-    if (ia) loadUserLanguageAndIfNotExistSetUserOptionToEnglish();
+    if (gr) basics.globconf.load();
+    if (gr) basics.user.load();
+    if (gr) loadUserLanguageAndIfNotExistSetUserOptionToEnglish();
     if (ia) hardware.display.setScreenMode(cmdargs);
 
             al_init_image_addon();
@@ -53,10 +58,10 @@ void initialize(in Cmdargs cmdargs)
     if (ia) hardware.mouse.initialize();
     if (ia) hardware.sound.initialize();
 
-            graphic.color   .initialize();
-    if (ia) graphic.textout .initialize();
+            graphic.color.initialize();
+    if (gr) graphic.textout.initialize();
             graphic.internal.initialize(cmdargs.mode);
-            game   .physdraw.initialize(cmdargs.mode);
+    if (ia) game.physdraw.initialize();
 
     if (ia) hardware.mousecur.initialize();
     if (ia) gui.initialize();

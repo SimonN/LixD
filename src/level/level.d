@@ -128,6 +128,11 @@ public:
             && _status != LevelStatus.BAD_EMPTY;
     }
 
+    @property AlCol bgColor() const
+    {
+        return color.makecol(bgRed, bgGreen, bgBlue);
+    }
+
     // Called from the Editor. Adds to the correct array of this level,
     // then returns, in addition, a reference to the added piece.
     Occurrence addTileWithCenterAt(Filename fn, Point p)
@@ -146,7 +151,13 @@ public:
     }
 
     void saveToFile (in Filename fn) const { implSaveToFile (this, fn); }
-    void exportImage(in Filename fn) const { implExportImage(this, fn); }
+
+    // Call this with on a level with the level's filename.
+    // package exportImageFilename will mangle that to a PNG in the export dir.
+    void exportImage(in Filename fn) const
+    {
+        implExportImage(this, exportImageFilename(fn));
+    }
 
     override bool
     opEquals(Object rhs_obj) const

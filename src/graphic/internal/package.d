@@ -15,10 +15,13 @@ import lix.enums;
 
 void initialize(Runmode runmode)
 {
-    switch (runmode) {
+    final switch (runmode) {
         case Runmode.INTERACTIVE: implInitializeInteractive(); break;
-        case Runmode.VERIFY:      implInitializeVerify();      break;
-        default: assert (false);
+        case Runmode.VERIFY:
+        case Runmode.EXPORT_IMAGES:
+            implInitializeNoninteractive();
+            break;
+        case Runmode.PRINT_AND_EXIT: assert (false);
     }
 }
 

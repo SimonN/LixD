@@ -24,7 +24,7 @@ immutable:
 
     // Silently return null if file not found
     const(char*) stringzForReading() nothrow;
-    const(char*) stringzForWriting() nothrow;
+    const(char*) stringzForWriting();
 
     // dirExists(a/b/) checks if b exists.
     // dirExists(a/b/c) checks if b exists, no matter whether file c is inside.

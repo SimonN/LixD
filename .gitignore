@@ -17,3 +17,4 @@
 
 # exclude replays -- D Lix is smart enough to generate the directory
 /replays/*
+/export/*

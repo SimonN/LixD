@@ -39,13 +39,17 @@ void initialize()
     fontAl = al_create_builtin_font();
     assert (fontAl);
 
-    // We would like the fonts to be in relative size to our resolution.
-    // See gui.geometry for details. Loading the fonts in size 16 gives the
-    // correct height for 24 lines of text stacked vertically on 640 x 480.
-    // Other resolutions require us to scale the font size.
-    assert (display, "need display height to estimate font size");
-    immutable float magnif = min(al_get_display_height(display) / 480f,
-                                 al_get_display_width (display) / 640f);
+    immutable float magnif =
+        // We would like the fonts to be in relative size to our resolution.
+        // See gui.geometry for details. Loading the fonts in size 16 gives the
+        // correct height for 24 lines of text stacked vertically on 640 x 480.
+        // Other resolutions require us to scale the font size.
+        display ? min(al_get_display_height(display) / 480f,
+                      al_get_display_width (display) / 640f)
+        // If no display exists, we're in noninteractive mode. Since we want
+        // text, we'll probably export levels as images. These images should
+        // be unscaled.
+        : 1f;
     immutable int flags = 0; // we don't need this, A5 function wants it
     immutable Filename fn = new VfsFilename("./data/fonts/djvusans.ttf");
     const(char*) fnp = fn.stringzForReading;
@@ -72,7 +76,8 @@ void initialize()
         &dummy, &dummy, &dummy, &bounds_yls, &dummy, &dummy);
     int descent_yls = al_get_font_descent(djvuM);
 
-    float yls_20_geoms   = al_get_display_height(display) * 24 / 480f;
+    float yls_20_geoms = display ? al_get_display_height(display) * 24 / 480f
+                                 : 20f;
     _djvuMOffset = (yls_20_geoms - bounds_yls - descent_yls - 1f) / 2f;
     // subtracting descent_yls looks better somehow, even though it should
     // have been included in bounds_yls. The main goal is to make it look

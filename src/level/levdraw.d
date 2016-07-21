@@ -2,10 +2,11 @@ module level.levdraw;
 
 import std.algorithm;
 import std.conv;
-import std.range; // for zone format
-import std.string; // for zone format
+import std.range;
+import std.string;
 
 import basics.alleg5;
+import basics.globals : dirExportImages;
 import file.filename;
 import graphic.color;
 import graphic.cutbit;
@@ -52,29 +53,74 @@ package Torbit implCreatePreview(
     if (   level.status == LevelStatus.BAD_FILE_NOT_FOUND
         || level.status == LevelStatus.BAD_EMPTY)
         return ret;
-
-    Torbit newTb(AlCol tempTorbitCol)
+    // Render the gadgets, then the terrain, using a temporary bitmap.
+    // If the level has torus, the following temporary torbit need torus, too
     {
-        Torbit t = new Torbit(level.topology);
-        t.clearToColor(tempTorbitCol);
-        return t;
+        Torbit temp = new Torbit(level.topology);
+        scope (exit)
+            destroy(temp);
+        auto target = DrawingTarget(temp.albit);
+
+        temp.clearToColor(level.bgColor);
+        for (int type = cast (GadType) 0; type != GadType.MAX; ++type)
+            level.gadgets[type].each!(occ => drawGadgetOcc(occ, temp));
+        ret.drawFromPreservingAspectRatio(temp);
+
+        temp.clearToColor(color.transp);
+        level.terrain.each!(occ => drawOccurrence(occ, temp));
+        ret.drawFromPreservingAspectRatio(temp);
     }
-    Torbit tempTer = newTb(color.transp);
-    Torbit tempObj = newTb(color.makecol(level.bgRed,
-                                         level.bgGreen, level.bgBlue));
-    scope (exit) {
-        destroy(tempTer);
-        destroy(tempObj);
-    }
-    for (int type = cast (GadType) 0; type != GadType.MAX; ++type)
-        level.gadgets[type].each!(occ => drawGadgetOcc(occ, tempObj));
-    level.terrain.each!(occ => drawOccurrence(occ, tempTer));
-    ret.drawFromPreservingAspectRatio(tempObj);
-    ret.drawFromPreservingAspectRatio(tempTer);
     return ret;
 }
 
-void implExportImage(in Level level, in Filename fn)
+package Filename exportImageFilename(in Filename levelFilename)
 {
-    assert (false, "DTODO: not implemented yet");
+    return new VfsFilename("%s%s.png".format(dirExportImages.rootless,
+                                             levelFilename.fileNoExtNoPre));
+}
+
+package void implExportImage(in Level level, in Filename fnToSaveImage)
+in {
+    assert (level);
+    assert (fnToSaveImage);
+}
+body {
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "Level.export");
+    enum int extraYl = 0; // DTODOIMAGEEXPORT: 60;
+    const tp = level.topology;
+
+    Torbit img = new Torbit(tp.xl, tp.yl + extraYl, tp.torusX, tp.torusY);
+    scope (exit)
+        destroy(img);
+
+    // Render level
+    {
+        Torbit tempLand = new Torbit(tp);
+        scope (exit)
+            destroy(tempLand);
+        auto target = DrawingTarget(tempLand.albit);
+        tempLand.clearToColor(level.bgColor);
+        for (int type = cast (GadType) 0; type != GadType.MAX; ++type)
+            level.gadgets[type].each!(occ => drawGadgetOcc(occ, tempLand));
+        img.drawFrom(tempLand.albit, Point(0, 0));
+
+        // Even without no-overwrite terrain, we should do all gadgets first,
+        // then all terrain. Reason: When terrain erases, it shouldn't erase
+        // the gadgets.
+        tempLand.clearToColor(color.transp);
+        level.terrain.each!(occ => drawOccurrence(occ, tempLand));
+        img.drawFrom(tempLand.albit, Point(0, 0));
+    }
+
+    // Draw UI near the bottom
+    /+ // DTODOIMAGEEXPORT: uncomment and implement
+    {
+        auto target = DrawingTarget(img.albit);
+        img.drawFilledRectangle(Rect(0, tp.yl, tp.xl, extraYl), color.guiM);
+    }
+    +/
+
+    // Done rendering the image.
+    img.saveToFile(fnToSaveImage);
 }

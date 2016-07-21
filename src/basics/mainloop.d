@@ -16,6 +16,7 @@ import basics.alleg5;
 import basics.globconf;
 import editor.editor;
 import game.core.game;
+import file.filename; // running levels from the command-line
 import file.log; // logging uncaught Exceptions
 import hardware.display;
 import hardware.keyboard;
@@ -32,8 +33,47 @@ static import hardware.mousecur;
 static import hardware.sound;
 
 class MainLoop {
+    bool exit;
+
+    MainMenu mainMenu;
+    BrowserSingle browSin;
+    BrowserReplay browRep;
+    OptionsMenu optionsMenu;
+    MenuAskName askName;
+
+    Game   game;
+    Editor editor;
+
+    enum AfterGameGoto { single, replays }
+    AfterGameGoto _afterGameGoto;
 
 public:
+    this(in Cmdargs cmdargs)
+    {
+        // I don't like this function. This takes 1 or 2 arguments, finds out
+        // which level and replay to run, and creates a game with that.
+        // Maybe the replay should be responsibile for finding the level?
+        auto args = cmdargs.fileArgs;
+        if (args.length >= 1) {
+            import level.level;
+            import game.replay;
+            auto rp = Replay.loadFromFile(args[$-1]);
+            if (! cmdargs.preferPointedTo) {
+                auto lv = new Level(args[0]);
+                if (lv.good) {
+                    this.game = new Game(Runmode.INTERACTIVE, lv, args[0], rp);
+                    return;
+                }
+            }
+            // The level in the replay file was bad or unwanted.
+            auto lv = new Level(rp.levelFilename);
+            if (lv.good)
+                this.game = new Game(Runmode.INTERACTIVE, lv,
+                                     rp.levelFilename, rp);
+            // DTODO: render an error on the graphical screen
+        }
+        // if no fileArgs, let calc() decide what menu to spawn
+    }
 
     void mainLoop()
     {
@@ -64,194 +104,170 @@ public:
         kill();
     }
 
-private:
-
-    bool exit;
-
-    MainMenu mainMenu;
-    BrowserSingle browSin;
-    BrowserReplay browRep;
-    OptionsMenu optionsMenu;
-    MenuAskName askName;
-
-    Game   game;
-    Editor editor;
-
-    enum AfterGameGoto { single, replays }
-    AfterGameGoto _afterGameGoto;
-
-void
-kill()
-{
-    if (game) {
-        destroy(game);
-        game = null;
-    }
-    if (editor) {
-        destroy(editor);
-        editor = null;
-    }
-    if (mainMenu) {
-        gui.rmElder(mainMenu);
-        mainMenu = null;
-    }
-    if (browSin) {
-        gui.rmElder(browSin);
-        destroy(browSin); // DTODO: check what is best here. There is a
-                          // Torbit to be destroyed in the browser's preview.
-        browSin = null;
-    }
-    if (browRep) {
-        gui.rmElder(browRep);
-        destroy(browRep); // see comment for destroy(browSin)
-        browRep = null;
-    }
-    if (optionsMenu) {
-        gui.rmElder(optionsMenu);
-        optionsMenu = null;
-    }
-    if (askName) {
-        gui.rmElder(askName);
-        askName = null;
-    }
-    core.memory.GC.collect();
-}
-
-
-
-void
-calc()
-{
-    hardware.mousecur.mouseCursor.xf = 0;
-    hardware.mousecur.mouseCursor.yf = 0;
-
-    hardware.display .calc();
-    hardware.mouse   .calc();
-    hardware.keyboard.calcCallThisAfterMouseCalc();
-    gui              .calc();
-
-    exit = exit
-        || hardware.display.displayCloseWasClicked()
-        || shiftHeld() && keyTapped(ALLEGRO_KEY_ESCAPE);
-
-    if (exit) {
-        return;
-    }
-    else if (mainMenu) {
-        // no need to calc the menu, it's a GUI elder
-        if (mainMenu.gotoSingle) {
-            kill();
-            browSin = new BrowserSingle;
-            gui.addElder(browSin);
+    private void kill()
+    {
+        if (game) {
+            destroy(game);
+            game = null;
         }
-        else if (mainMenu.gotoNetwork) {
-            // DTODO: link to lobby
+        if (editor) {
+            destroy(editor);
+            editor = null;
         }
-        else if (mainMenu.gotoReplays) {
-            kill();
-            browRep = new BrowserReplay;
-            gui.addElder(browRep);
+        if (mainMenu) {
+            gui.rmElder(mainMenu);
+            mainMenu = null;
         }
-        else if (mainMenu.gotoOptions) {
-            kill();
-            optionsMenu = new OptionsMenu;
-            gui.addElder(optionsMenu);
+        if (browSin) {
+            gui.rmElder(browSin);
+            destroy(browSin); // DTODO: check what is best here. There is a
+                              // Torbit to be destroyed in browser's preview.
+            browSin = null;
         }
-        else if (mainMenu.exitProgram) {
-            exit = true;
+        if (browRep) {
+            gui.rmElder(browRep);
+            destroy(browRep); // see comment for destroy(browSin)
+            browRep = null;
         }
+        if (optionsMenu) {
+            gui.rmElder(optionsMenu);
+            optionsMenu = null;
+        }
+        if (askName) {
+            gui.rmElder(askName);
+            askName = null;
+        }
+        core.memory.GC.collect();
     }
-    else if (browSin || browRep) {
-        auto brow = (browSin !is null ? browSin : browRep);
-        if (brow.gotoGame) {
-            auto fn = brow.fileRecent;
-            auto lv = brow.levelRecent;
-            auto rp = brow.replayRecent;
-            _afterGameGoto = (brow is browSin ? AfterGameGoto.single
-                                              : AfterGameGoto.replays);
-            kill();
-            game = new Game(Runmode.INTERACTIVE, lv, fn, rp);
+
+    private void calc()
+    {
+        hardware.mousecur.mouseCursor.xf = 0;
+        hardware.mousecur.mouseCursor.yf = 0;
+
+        hardware.display .calc();
+        hardware.mouse   .calc();
+        hardware.keyboard.calcCallThisAfterMouseCalc();
+        gui              .calc();
+
+        exit = exit
+            || hardware.display.displayCloseWasClicked()
+            || shiftHeld() && keyTapped(ALLEGRO_KEY_ESCAPE);
+
+        if (exit) {
+            return;
         }
-        else if (browSin && browSin.gotoEditor) {
-            auto fn = browSin.fileRecent;
-            kill();
-            editor = new Editor(fn);
-        }
-        else if (brow.gotoMainMenu) {
-            kill();
-            mainMenu = new MainMenu;
-            gui.addElder(mainMenu);
-        }
-    }
-    else if (optionsMenu) {
-        if (optionsMenu.gotoMainMenu) {
-            kill();
-            mainMenu = new MainMenu;
-            gui.addElder(mainMenu);
-        }
-    }
-    else if (askName) {
-        if (askName.gotoMainMenu) {
-            kill();
-            mainMenu = new MainMenu;
-            gui.addElder(mainMenu);
-        }
-        else if (askName.gotoExitApp)
-            exit = true;
-    }
-    else if (game) {
-        game.calc();
-        if (game.gotoMainMenu) {
-            kill();
-            if (_afterGameGoto == AfterGameGoto.replays) {
-                browRep = new BrowserReplay;
-                gui.addElder(browRep);
-            }
-            else {
+        else if (mainMenu) {
+            // no need to calc the menu, it's a GUI elder
+            if (mainMenu.gotoSingle) {
+                kill();
                 browSin = new BrowserSingle;
                 gui.addElder(browSin);
             }
+            else if (mainMenu.gotoNetwork) {
+                // DTODO: link to lobby
+            }
+            else if (mainMenu.gotoReplays) {
+                kill();
+                browRep = new BrowserReplay;
+                gui.addElder(browRep);
+            }
+            else if (mainMenu.gotoOptions) {
+                kill();
+                optionsMenu = new OptionsMenu;
+                gui.addElder(optionsMenu);
+            }
+            else if (mainMenu.exitProgram) {
+                exit = true;
+            }
         }
-    }
-    else if (editor) {
-        editor.calc();
-        if (editor.gotoMainMenu) {
-            kill();
-            browSin = new BrowserSingle();
-            gui.addElder(browSin);
+        else if (browSin || browRep) {
+            auto brow = (browSin !is null ? browSin : browRep);
+            if (brow.gotoGame) {
+                auto fn = brow.fileRecent;
+                auto lv = brow.levelRecent;
+                auto rp = brow.replayRecent;
+                _afterGameGoto = (brow is browSin ? AfterGameGoto.single
+                                                  : AfterGameGoto.replays);
+                kill();
+                game = new Game(Runmode.INTERACTIVE, lv, fn, rp);
+            }
+            else if (browSin && browSin.gotoEditor) {
+                auto fn = browSin.fileRecent;
+                kill();
+                editor = new Editor(fn);
+            }
+            else if (brow.gotoMainMenu) {
+                kill();
+                mainMenu = new MainMenu;
+                gui.addElder(mainMenu);
+            }
         }
-    }
-    else {
-        // program has just started, nothing exists yet
-        if (basics.globconf.userName.length) {
-            mainMenu = new MainMenu;
-            gui.addElder(mainMenu);
+        else if (optionsMenu) {
+            if (optionsMenu.gotoMainMenu) {
+                kill();
+                mainMenu = new MainMenu;
+                gui.addElder(mainMenu);
+            }
+        }
+        else if (askName) {
+            if (askName.gotoMainMenu) {
+                kill();
+                mainMenu = new MainMenu;
+                gui.addElder(mainMenu);
+            }
+            else if (askName.gotoExitApp)
+                exit = true;
+        }
+        else if (game) {
+            game.calc();
+            if (game.gotoMainMenu) {
+                kill();
+                if (_afterGameGoto == AfterGameGoto.replays) {
+                    browRep = new BrowserReplay;
+                    gui.addElder(browRep);
+                }
+                else {
+                    browSin = new BrowserSingle;
+                    gui.addElder(browSin);
+                }
+            }
+        }
+        else if (editor) {
+            editor.calc();
+            if (editor.gotoMainMenu) {
+                kill();
+                browSin = new BrowserSingle();
+                gui.addElder(browSin);
+            }
         }
         else {
-            askName = new MenuAskName;
-            gui.addElder(askName);
+            // program has just started, nothing exists yet
+            if (basics.globconf.userName.length) {
+                mainMenu = new MainMenu;
+                gui.addElder(mainMenu);
+            }
+            else {
+                askName = new MenuAskName;
+                gui.addElder(askName);
+            }
         }
+
     }
 
+    private void draw()
+    {
+        // mainMenu etc. are GUI Windows. Those have been added as elders and
+        // are therefore supervised by module gui.root.
+        if (game)
+            game.draw();
+        if (editor)
+            editor.draw();
+        gui.draw();
+        if (! askName)
+            hardware.mousecur.draw();
+        hardware.sound.draw();
+        flip_display();
+    }
 }
-
-
-
-void
-draw()
-{
-    // mainMenu etc. are GUI Windows. Those have been added as elders and
-    // are therefore supervised by module gui.root.
-    if (game)
-        game.draw();
-    if (editor)
-        editor.draw();
-    gui.draw();
-    if (! askName)
-        hardware.mousecur.draw();
-    hardware.sound.draw();
-    flip_display();
-}
-
-}
-// end class
+// end class MainLoop

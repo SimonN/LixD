@@ -24,7 +24,7 @@ void implInitializeInteractive()
     nullCutbit = new Cutbit(cast (Cutbit) null);
 }
 
-void implInitializeVerify()
+void implInitializeNoninteractive()
 {
     nullCutbit = new Cutbit(cast (Cutbit) null);
     noninteractiveMode = true;

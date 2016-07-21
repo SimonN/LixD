@@ -1,0 +1,114 @@
+Lix command-line arguments
+==========================
+
+Synopsis
+--------
+
+Any of these starts Lix in interactive mode:
+
+    lix                                     Main menu
+    lix level.txt                           Start the given level
+    lix replay.txt                          Run replay on its included level
+    lix level.txt replay.txt                Run replay on the given level
+    lix --pointed-to replay.txt             Run replay on its pointed-to level
+
+Extra switches for interactive mode:
+
+    -w                      run windowed at 640x480
+    --resol=800x600         run windowed at given resolution
+    --fullscreen            use software fullscreen (good Alt+Tab)
+    --hardfull=1600x900     use hardware fullscreen at given resolution
+
+These start Lix as a pure command-line tool, they don't create a window:
+
+    lix --verify replay1 [replay2 ...]      Verify single replays or dirs
+    lix --coverage replay1 [replay2 ...]    Verify, then print coverage stats
+    lix --image level1 [level2 ...]         Export levels as PNG pictures
+
+Extra switches:
+
+    -h or -? or --help      print help and exit
+    -v or --version         print version and exit
+
+lix
+---
+
+No arguments given: Start the game in interactive mode, go to the main menu.
+You can add switches like -w or --resol=800x600 to force a windowed resolution.
+
+lix level.txt
+-------------
+
+Start in interactive mode, bypass the main menu and singleplayer browser,
+and immediately play the given level.
+
+lix replay.txt
+--------------
+
+Start in interactive mode, bypass the main menu and replay browser,
+and immediately run the given replay.
+
+The replay runs against the included level. If there is no level included
+in the replay file, the replay runs against the pointed-to level. If the
+pointed-to level is missing or bad, abort with an error before even opening
+the graphical window for interactive mode.
+
+lix --pointed-to replay.txt
+---------------------------
+
+Start in interactive mode, bypass the main menu and replay browser,
+and immediately run the given replay against its pointed-to level.
+
+When the pointed-to level is missing or bad, abort with an error before even
+opening the graphical window for interactive mode. Under no circumstances,
+the replay runs against the level included in the replay file.
+
+After running the replay, you will go to the replay browser.
+
+lix level.txt replay.txt
+------------------------
+
+Start in interactive mode, bypass the main menu and browsers, and immediately
+run the given replay against the given level.
+
+I don't know where you should end up afterwards.
+
+lix --verify replay1 [replay2 ...]
+----------------------------------
+
+Every argument (replay1, replay2, ...) may be a single replay file, or a
+directory. Passing a directory behaves as if you had passed all replay files
+that you could find recursively within the passed directory.
+
+For each replay, this prints to standard console output whether the replay
+solves the pointed-to level.
+
+This never examines included levels. If there is only an included level and
+no pointed-to level, the replay produces a level-missing line in the output.
+
+lix --coverage replay1 [replay2 ...]
+--------------------------------------------
+
+Live --verify, but afterwards, this prints a list of levels that lack a proof
+of solvability. A level is printed as not-yet-covered iff all of these apply:
+
+*   None of the verified replays solvels that level.
+*   You have verified a replay that points to a level from the same
+    level directory, no matter whether that replay solved or failed.
+
+Example usage: You maintain replays for your awesome level pack in
+./replays/mypack/rank1, ./replays/mypack/rank2, and so on. Each of these
+directories has many replays for the particular rank. Two useful command lines:
+
+lix --coverage replays/mypack
+
+    This verifies all replays, because you could find them recursively within
+    the directory replays/mypack. Then, this prints the levels from your pack
+    that you haven't covered with any replay. It won't list levels from other
+    people's level packs.
+
+lix --coverage replays/mypack/rank1
+
+    This verifies all replays for rank 1, and lists all rank-1 levels that
+    you haven't covered with any replay. It won't list uncovered rank-2 levels
+    because you didn't verify any level from the rank-2 level directory.

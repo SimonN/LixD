@@ -30,18 +30,15 @@ public:
 
     @property string rootless() nothrow immutable { return _s; }
 
-    // Return extension without dot.
+    // Return extension including dot.
     @property string extension() nothrow immutable
     {
-        try {
-            auto extLen = _s.walkLength
-                        - _s.retro.findAmong(['.', '/']).walkLength;
-            return extLen < _s.length && _s[$-1 - extLen] == '/'
-                ? ""
-                : _s[($ - extLen) .. $];
-        }
-        catch (Exception)
+        string lastDot = _s;
+        while (lastDot.length && lastDot[$-1] != '.' && lastDot[$-1] != '/')
+            lastDot = lastDot[0 .. $-1];
+        if (lastDot.empty || lastDot[$-1] == '/')
             return "";
+        return _s[lastDot.length - 1 .. $];
     }
 
     @property string file() nothrow immutable
@@ -68,8 +65,27 @@ public:
         assert (fn.dirRootless == "./dir1/dir2/dir3/", fn.dirRootless);
     }
 
+    @property string fileNoExtNoPre() nothrow immutable
+    {
+        assert (extension.length <= file.length);
+        auto fileNoExt = file[0 .. $ - extension.length];
+        if (fileNoExt.length >= 2 && fileNoExt[$-2] == '.')
+            return fileNoExt[0 .. $-2];
+        return fileNoExt;
+    }
+
+    unittest {
+        auto fn = new immutable(typeof(this))("./somedirectory/myfile.A.txt");
+        assert (fn.file == "myfile.A.txt");
+        assert (fn.extension == ".txt", fn.extension);
+        assert (fn.fileNoExtNoPre == "myfile");
+
+        auto f2 = new immutable(typeof(this))("./somedirectory/myfile.txt");
+        assert (f2.extension == ".txt", f2.extension);
+        assert (f2.fileNoExtNoPre == "myfile");
+    }
+
     // Implement these if needed. I don't think we need them
-    @property string fileNoExtNoPre() nothrow immutable { assert (false); }
     @property string dirInnermost() nothrow immutable { assert (false); }
     @property char preExtension() nothrow immutable { assert (false); }
 

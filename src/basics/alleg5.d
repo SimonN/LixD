@@ -27,7 +27,7 @@ void initializeInteractive()
     al_start_timer(_timer);
 }
 
-void initializeVerify()
+void initializeNoninteractive()
 {
     al_init();
     _defaultNewBitmapFlags = al_get_new_bitmap_flags()

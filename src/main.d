@@ -20,19 +20,25 @@ void main(string[] args)
 {
     Cmdargs cmdargs = new Cmdargs(args);
 
-    if (cmdargs.mode == Runmode.PRINT_AND_EXIT) {
+    final switch (cmdargs.mode) {
+    case Runmode.PRINT_AND_EXIT:
         cmdargs.printNoninteractiveOutput();
-    }
-    else if (cmdargs.mode == Runmode.VERIFY) {
+        break;
+    case Runmode.VERIFY:
         cmdargs.printNoninteractiveOutput();
-        verifyFiles(cmdargs);
+        processFileArgsForRunmode(cmdargs);
+        break;
+    case Runmode.EXPORT_IMAGES:
+        processFileArgsForRunmode(cmdargs);
+        break;
+    case Runmode.INTERACTIVE:
+        al_run_allegro({
+            basics.init.initialize(cmdargs);
+            MainLoop ml = new MainLoop(cmdargs);
+            ml.mainLoop();
+            destroy(ml);
+            basics.init.deinitialize();
+            return 0;
+        });
     }
-    else al_run_allegro({
-        basics.init.initialize(cmdargs);
-        MainLoop ml = new MainLoop();
-        ml.mainLoop();
-        destroy(ml);
-        basics.init.deinitialize();
-        return 0;
-    });
 }

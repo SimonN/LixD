@@ -9,6 +9,7 @@ import file.language;
 import file.filename;
 import gui;
 import gui.picker;
+import hardware.sound;
 import level.level;
 import menu.browser.frommain;
 
@@ -17,6 +18,7 @@ private:
     bool _gotoEditor;
     Level _levelRecent;
     TextButton _edit;
+    TextButton _exportImage;
     LabelTwo _by, _save, _resultSaved, _resultSkills;
     Element[] _hideWhenNullLevelHighlit;
 
@@ -27,6 +29,7 @@ public:
             basics.globals.dirLevels, PickerConfig!LevelTiler());
         scope (success)
             super.highlight(basics.user.singleLastLevel);
+
         _edit = new TextButton(new Geom(infoX + infoXl/2, 100,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.browserEdit.transl);
         _edit.hotkey = basics.user.keyMenuEdit;
@@ -35,9 +38,20 @@ public:
             basics.user.singleLastLevel = fileRecent;
             _gotoEditor = true;
         };
+        _exportImage = new TextButton(new Geom(infoX, 60, infoXl/2, 40,
+            From.BOTTOM_LEFT), Lang.browserExportImage.transl);
+        _exportImage.hotkey = basics.user.keyMenuExport;
+        _exportImage.onExecute = () {
+            assert (fileRecent !is null);
+            assert (levelRecent !is null);
+            levelRecent.exportImage(fileRecent);
+            _exportImage.hide();
+            hardware.sound.playLoud(Sound.DISKSAVE);
+        };
         _delete = new TextButton(new Geom(infoX + infoXl/2, 60,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.browserDelete.transl);
         _delete.hotkey = basics.user.keyMenuDelete;
+
         _by = new LabelTwo(new Geom(infoX, infoY + 20, infoXl, 20),
             Lang.browserInfoAuthor.transl);
         _save = new LabelTwo(new Geom(infoX, infoY + 40, infoXl, 20),
@@ -47,8 +61,8 @@ public:
             Lang.browserInfoResultSaved.transl);
         _resultSkills = new LabelTwo(new Geom(infoX + savedXl, infoY + 60,
             infoXl - savedXl, 20), Lang.browserInfoResultSkills.transl);
-        _hideWhenNullLevelHighlit
-            = [ _edit, _delete, _by, _save, _resultSaved, _resultSkills ];
+        _hideWhenNullLevelHighlit = [ _edit, _delete, _exportImage,
+            _by, _save, _resultSaved, _resultSkills ];
         _hideWhenNullLevelHighlit.each!(la => addChild(la));
     }
 

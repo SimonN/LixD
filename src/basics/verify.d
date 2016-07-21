@@ -15,19 +15,39 @@ import game.core.game;
 import game.replay;
 import level.level;
 
-public void verifyFiles(Cmdargs cmdargs)
+public void processFileArgsForRunmode(Cmdargs cmdargs)
 {
-    if (! cmdargs.verifyFiles.all!(f => f.fileExists || f.dirExists)) {
-        cmdargs.verifyFiles.filter!(f => ! (f.fileExists || f.dirExists))
+    if (! cmdargs.fileArgs.all!(f => f.fileExists || f.dirExists)) {
+        cmdargs.fileArgs.filter!(f => ! (f.fileExists || f.dirExists))
             .each!(f => writefln("Error: File not found: `%s'", f.rootless));
         return;
     }
     basics.init.initialize(cmdargs);
-    auto vc = new VerifyCounter(cmdargs.verifyCoverage);
-    vc.writeCSVHeader();
-    cmdargs.verifyFiles.each!(fn => vc.verifyDirOrFile(fn));
-    vc.writeLevelsNotCovered();
-    vc.writeStatistics();
+    if (cmdargs.verifyReplays) {
+        auto vc = new VerifyCounter(cmdargs.printCoverage);
+        vc.writeCSVHeader();
+        cmdargs.dispatch(fn => vc.verify(fn));
+        vc.writeLevelsNotCovered();
+        vc.writeStatistics();
+    }
+    else if (cmdargs.exportImages) {
+        cmdargs.dispatch((Filename fn) {
+            auto l = new Level(fn);
+            l.exportImage(fn);
+        });
+    }
+    else
+        assert (false);
+}
+
+private void dispatch(Cmdargs cmdargs, void delegate(Filename) func)
+{
+    foreach (fn; cmdargs.fileArgs) {
+        if (fn.dirExists)
+            fn.findTree(filenameExtReplay).each!func;
+        else
+            func(fn);
+    }
 }
 
 private class VerifyCounter {
@@ -47,19 +67,16 @@ private class VerifyCounter {
 
     this(bool cov) { verifyCoverage = cov; }
 
-    void verifyDirOrFile(Filename fn)
-    {
-        if (fn.dirExists)
-            fn.findTree(filenameExtReplay)
-                .each!(foundFile => verifyAndGC(foundFile));
-        else
-            verifyAndGC(fn);
-    }
-
     void writeCSVHeader()
     {
         writeln("Result,Replay filename,Level filename,"
                 "Player,Saved,Required,Skills,Updates");
+    }
+
+    void verify(Filename fn)
+    {
+        verifyImpl(fn);
+        core.memory.GC.collect();
     }
 
     void writeResult(in Result res, Filename fn, in Replay rep, in Level lev)
@@ -146,13 +163,7 @@ private class VerifyCounter {
     }
 
 private:
-    void verifyAndGC(Filename fn)
-    {
-        verify(fn);
-        core.memory.GC.collect();
-    }
-
-    void verify(Filename fn)
+    void verifyImpl(Filename fn)
     {
         ++total;
         Replay rep = Replay.loadFromFile(fn);

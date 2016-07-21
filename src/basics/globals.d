@@ -135,7 +135,7 @@ immutable dirDataBitmapScale = "data/images/scale";
 Filename dirLevels, dirLevelsSingle, dirLevelsNetwork, dirReplays, dirData,
     dirDataBitmap, dirDataSound, dirDataUser, dirDataTransl, dirImages,
     dirImagesOrig, dirImagesOrigL1, dirImagesOrigL2, dirReplayAutoSolutions,
-    dirReplayAutoMulti, dirReplayManual;
+    dirReplayAutoMulti, dirReplayManual, dirExportImages;
 
 Filename fileGlobalConfig, fileLog, fileTharsisProf, fileLanguageEnglish;
 
@@ -166,10 +166,10 @@ static this()
     dirImagesOrig = new Fn("images/orig/");
     dirImagesOrigL1 = new Fn("images/orig/L1/");
     dirImagesOrigL2 = new Fn("images/orig/L2/");
-
     dirReplayAutoSolutions = new Fn("replays/solved/");
     dirReplayAutoMulti = new Fn("replays/network/");
     dirReplayManual = new Fn("replays/manual/");
+    dirExportImages = new Fn("export/");
 
     fileGlobalConfig = new Fn("data/config.txt");
     fileLog = new Fn("data/log.txt");
