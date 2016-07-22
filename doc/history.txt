@@ -1,6 +1,16 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.8
+-----
+
+2016-07-22
+
+Decoration updated on Any Way You Want, The Road Goes Ever On, Just Stop
+the Bleeding.
+
+Fix #125: disksave.ogg was too loud, changed from 0 dBFS to -4.5 dBFS.
+
 0.6.7
 -----
 
