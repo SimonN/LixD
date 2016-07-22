@@ -1,23 +1,17 @@
-$BUILT 2016-01-31 12:30:03
+$BUILT 2016-07-22 01:13:54
 $AUTHOR Insane Steve
-$GERMAN 
 $ENGLISH Just Stop the Bleeding
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 3200
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 1264
 #START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 59
 #INITIAL 50
 #REQUIRED 50
 #SPAWN_INTERVAL 1
-#SPAWN_INTERVAL_FAST 1
 
 #WALKER 1
 #RUNNER 1
@@ -29,6 +23,7 @@ $ENGLISH Just Stop the Bleeding
 #MINER 1
 #DIGGER 1
 #JUMPER 1
+#EXPLODER2 0
 
 :matt/marble/Hatch.H: 1520 48
 :matt/marble/Hatch.H: 1520 48 r
@@ -251,10 +246,6 @@ $ENGLISH Just Stop the Bleeding
 :matt/earth/09: 184 232
 :matt/earth/26: 227 44 rr
 :matt/earth/19: 544 168 rrr
-:matt/earth/11: 528 96
-:matt/earth/14: 496 112
-:matt/earth/13: 576 112
-:matt/earth/15: 512 152
 :matt/earth/26: 568 224 rrr
 :matt/earth/23: 528 208 r
 :matt/earth/23: 528 272 r
@@ -517,9 +508,9 @@ $ENGLISH Just Stop the Bleeding
 :matt/bricks/01a: 1768 208
 :matt/bricks/01b: 1879 277
 :matt/carnival/17: 2052 153
-:amanda/occult/occult_wax_details_drip: 490 167
 :proxima/tile/pink5: 325 40
 :amanda/occult/occult_scrawl_pentagram: 330 45
 :matt/bricks/01a: 1426 110 rrr
 :matt/earth/27: 1406 234 rrrd
 :matt/goldmine/crate32: 1522 362
+:amanda/forest/leaves_02: 496 80
