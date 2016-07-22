@@ -286,7 +286,8 @@ public void saveToFile(const(Level) l, std.stdio.File file)
     }
 
     file.writeln();
-    file.writeln(IoLine.Hash(glo.levelSeconds,  l.overtimeSeconds));
+    if (l.overtimeSeconds != 0)
+        file.writeln(IoLine.Hash(glo.levelSeconds, l.overtimeSeconds));
     file.writeln(IoLine.Hash(glo.levelInitial,  l.initial ));
     file.writeln(IoLine.Hash(glo.levelRequired, l.required));
     file.writeln(IoLine.Hash(glo.levelSpawnint, l.spawnint));
