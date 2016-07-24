@@ -26,8 +26,9 @@ import menu.browser.highli;
 class BrowserHighlightSelect : BrowserHighlight {
 private:
     MutFilename _fileRecent; // highlight, not select. May be in different dir.
-    MutFilename _upDownTo; // last-highlit dir or file with up/down keys
-
+                             // May not point to a directory.
+    MutFilename _upDownTo; // Last-highlit dir or file with up/down keys.
+                           // We need this because it may point to dirs.
     TextButton buttonPlay;
 
 public:
@@ -53,6 +54,7 @@ public:
         if (fn && super.navigateToAndHighlightFile(fn)) {
             buttonPlay.show();
             _fileRecent = fn;
+            _upDownTo = fn;
             onFileHighlight(fn);
         }
         else {
