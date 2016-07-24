@@ -9,6 +9,7 @@ class Floater : Job {
 
     int speedX = 0;
     int speedY = 0;
+    bool accelerateY = false; // if we come from a tumbler, accelerate still
 
     mixin(CloneByCopyFrom!"Floater");
     void copyFromAndBindToLix(in Floater rhs, Lixxie lixToBindTo)
@@ -16,6 +17,7 @@ class Floater : Job {
         super.copyFromAndBindToLix(rhs, lixToBindTo);
         speedX = rhs.speedX;
         speedY = rhs.speedY;
+        accelerateY = rhs.accelerateY;
     }
 
     override @property bool callBecomeAfterAssignment() const { return false; }
@@ -38,6 +40,7 @@ class Floater : Job {
             assert (bf);
             speedX = bf.speedX;
             speedY = bf.speedY;
+            accelerateY = true;
         }
     }
 
@@ -62,18 +65,31 @@ private:
     {
         assert (speedX >= 0);
         assert (speedX % 2 == 0);
-        switch (frame) {
-            case 0: break;
-            case 1: speedY = speedY > 10 ? 10 : 6; break;
-            case 2: speedY = 6; break;
-            case 3: speedY = 2; break;
-            case 4:
-            case 5: speedY = 0; break;
-            case 6: speedY = 2; break;
-            default: speedY = 4; break;
+        // When the umbrella is open, all floaters behave the same.
+        if (frame == 7)
+            // final speed
+            speedY = 4;
+        else if (frame == 6)
+            speedY = 2;
+        else if (frame == 4) {
+            speedX = 0;
+            speedY = 0;
         }
-        if (speedX > 0 && frame > 1)
-            speedX = even(speedX - 2);
+        // Before frame 4:
+        // We special-case heavily. The tumbler shall fly like the tumbler,
+        // so we copy-paste the acceleration from tumbler.d and hope that
+        // everything works out with Floater's move().
+        // The floater-that-was-faller gets the old C++ behavior, so that
+        // as few replays as possible break in July 2016.
+        else if (frame < 4) {
+            if (accelerateY) {
+                // copypasta from tumbler.d, BallisticFlyer.perform()
+                if      (speedY <= 12) speedY += 2;
+                else if (speedY  < 32) speedY += 1;
+            }
+            else
+                speedY = (frame == 1 ? 6 : frame == 3 ? 2 : speedY);
+        }
     }
 
     void move()
