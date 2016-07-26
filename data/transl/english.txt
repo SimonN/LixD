@@ -312,6 +312,7 @@ $optionReplayAutoMulti        Auto-save multiplayer games
 $optionMouseSpeed             Mouse speed
 $optionScrollSpeedEdge        Scroll speed at screen edge
 $optionScrollSpeedClick       Scroll speed with that key
+$optionFastMovementFreesMouse Fast movement releases mouse
 $optionAvoidBuilderQueuing    Prefer spamming over queuing
 $optionAvoidBatterToExploder  Prefer batters to non-exploders
 $optionPausedAssign           Skill assignment during pause:

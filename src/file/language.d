@@ -321,6 +321,7 @@ enum Lang {
     optionMouseSpeed,
     optionScrollSpeedEdge,
     optionScrollSpeedClick,
+    optionFastMovementFreesMouse,
     optionAvoidBuilderQueuing,
     optionAvoidBatterToExploder,
     optionPausedAssign,

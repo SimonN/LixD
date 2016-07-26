@@ -1,6 +1,15 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.9
+-----
+
+2016-07-27
+
+Option: Do fast mouse movements untrap the mouse from windowed Lix?
+
+lemforum pack updated by Proxima, again first 5 ranks solvable.
+
 0.6.8
 -----
 

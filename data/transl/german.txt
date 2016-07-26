@@ -299,6 +299,7 @@ $optionReplayAutoMulti       Im Mehrspieler auto-speichern
 $optionMouseSpeed            Mausgeschwindigkeit
 $optionScrollSpeedEdge       Scroll-Geschw. am Bildrand
 $optionScrollSpeedClick      Scroll-Geschw. mit dieser Taste
+$optionFastMovementFreesMouse Schnelle Beweg. befreit Maus
 $optionAvoidBuilderQueuing   Builder eher an Nicht-Builder
 $optionAvoidBatterToExploder Batter eher an Nicht-Exploder
 $optionPausedAssign           Fähigkeitszuweisung bei Pause:

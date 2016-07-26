@@ -209,7 +209,6 @@ void populateGraphics()
     fac.y += fac.incrementY;
     grp ~= [
         fac.factory!BoolOption(paintTorusSeams),
-        fac.factory!BoolOption(ingameTooltips),
         fac.factory!BoolOption(showButtonHotkeys),
         fac.factory!BoolOption(showFPS),
     ];
@@ -229,9 +228,10 @@ void populateControls()
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.controls] ~= [
-        fac.factory!BoolOptionOneOrTwo(pausedAssign),
+        fac.factory!BoolOption(fastMovementFreesMouse),
         fac.factory!BoolOption(avoidBuilderQueuing),
         fac.factory!BoolOption(avoidBatterToExploder),
+        fac.factory!BoolOptionOneOrTwo(pausedAssign),
     ];
     fac = facRight();
     void addNumPick(UserOption!int uo, in int minVal)

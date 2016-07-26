@@ -210,11 +210,12 @@ void calc()
 
         bool isCloseToEdge(in int pos, in int length)
         {
-            if (_mouseHeldFor[1] || _mouseHeldFor[2])
+            if (_mouseHeldFor[1] > 2 || _mouseHeldFor[2] > 2
+                || ! basics.user.fastMovementFreesMouse.value)
                 // RMB scrolling should reset rather often.
                 // Curiously, this is not responsible for trapping the mouse
                 // in the window with guarantee. That's still magic to me.
-                return pos * 4 < length || pos * 4 >= length * 3;
+                return pos != length/2;
             else
                 // Make it even easier for the mouse to leave window,
                 // resetting closer to the edge => less speed to leave.

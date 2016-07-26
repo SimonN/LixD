@@ -71,6 +71,7 @@ UserOption!int optionGroup;
 UserOption!int mouseSpeed;
 UserOption!int scrollSpeedEdge;
 UserOption!int scrollSpeedClick;
+UserOption!bool fastMovementFreesMouse;
 UserOption!bool avoidBuilderQueuing;
 UserOption!bool avoidBatterToExploder;
 UserOption!int pausedAssign; // 0 = nothing (allows multiple assignments),
@@ -203,6 +204,7 @@ static this()
     mouseSpeed = newOpt("MOUSE_SPEED", Lang.optionMouseSpeed, mouseStandardDivisor);
     scrollSpeedEdge = newOpt("SCROLL_SPEED_EDGE", Lang.optionScrollSpeedEdge, mouseStandardDivisor / 2);
     scrollSpeedClick = newOpt("SCROLL_SPEED_CLICK", Lang.optionScrollSpeedClick, mouseStandardDivisor / 2);
+    fastMovementFreesMouse = newOpt("FAST_MOVEMENT_FREES_MOUSE", Lang.optionFastMovementFreesMouse, true);
     avoidBuilderQueuing = newOpt("AVOID_BUILDER_QUEUING", Lang.optionAvoidBuilderQueuing, true);
     avoidBatterToExploder = newOpt("AVOID_BATTER_TO_EXPLODER", Lang.optionAvoidBatterToExploder, false);
     pausedAssign = newOpt("PAUSED_ASSIGN", Lang.optionPausedAssign, 1);
