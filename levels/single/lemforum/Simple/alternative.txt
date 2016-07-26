@@ -1,4 +1,4 @@
-$BUILT 2016-07-16 19:26:02
+$BUILT 2016-07-23 19:33:38
 $AUTHOR Insane Steve
 $ENGLISH Alternative Route Recommended
 
@@ -8,9 +8,8 @@ $ENGLISH Alternative Route Recommended
 #START_X 0
 #START_Y 0
 
-#SECONDS 0
-#INITIAL 40
-#REQUIRED 30
+#INITIAL 30
+#REQUIRED 20
 #SPAWN_INTERVAL 32
 
 #WALKER 10

@@ -13,7 +13,6 @@ $ENGLISH                                                The Last Laugh
 #BACKGROUND_GREEN                                                    0
 #BACKGROUND_BLUE                                                     0
 
-#SECONDS                                                           120
 #INITIAL                                                             4
 #REQUIRED                                                            3
 #SPAWN_INTERVAL                                                     20

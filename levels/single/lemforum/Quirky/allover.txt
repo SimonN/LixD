@@ -1,4 +1,4 @@
-$BUILT 2016-07-16 23:55:09
+$BUILT 2016-07-22 22:27:41
 $AUTHOR minimac
 $ENGLISH All Over the Place
 
@@ -7,11 +7,7 @@ $ENGLISH All Over the Place
 #SIZE_Y 400
 #START_X 304
 #START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 24
 
-#SECONDS 240
 #INITIAL 60
 #REQUIRED 60
 #SPAWN_INTERVAL 40
@@ -24,7 +20,7 @@ $ENGLISH All Over the Place
 #MINER 2
 #EXPLODER2 0
 
-:matt/marble/Hatch.H: 384 244
+:matt/beach/Hatch.H: 392 224
 
 :matt/bricks/Goal.G: 1296 240
 

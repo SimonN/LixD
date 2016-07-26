@@ -13,11 +13,9 @@ $ENGLISH                                    To Destroy is to Construct
 #BACKGROUND_GREEN                                                    0
 #BACKGROUND_BLUE                                                     0
 
-#SECONDS                                                             0
 #INITIAL                                                            50
 #REQUIRED                                                           48
 #SPAWN_INTERVAL                                                     18
-#SPAWN_INTERVAL_FAST                                                 4
 
 #WALKER                                                              1
 #JUMPER                                                              1

@@ -13,11 +13,9 @@ $ENGLISH                                       Another Lix in the Wall
 #BACKGROUND_GREEN                                                    0
 #BACKGROUND_BLUE                                                     0
 
-#SECONDS                                                             0
 #INITIAL                                                             8
 #REQUIRED                                                            5
 #SPAWN_INTERVAL                                                     10
-#SPAWN_INTERVAL_FAST                                                 4
 
 #CLIMBER                                                             6
 #CUBER                                                               3

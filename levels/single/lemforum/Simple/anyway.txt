@@ -13,7 +13,6 @@ $HINT_ENGLISH If you're still stuck, I can't really tell <br>you anything else b
 #START_X 1264
 #START_Y 0
 
-#SECONDS 0
 #INITIAL 10
 #REQUIRED 1
 #SPAWN_INTERVAL 50

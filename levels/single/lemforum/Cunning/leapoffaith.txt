@@ -11,11 +11,9 @@ $ENGLISH                                                 Leap of Faith
 #BACKGROUND_GREEN                                                    0
 #BACKGROUND_BLUE                                                     0
 
-#SECONDS                                                           180
 #INITIAL                                                            20
 #REQUIRED                                                           20
 #SPAWN_INTERVAL                                                     28
-#SPAWN_INTERVAL_FAST                                                 4
 
 #CLIMBER                                                             2
 #FLOATER                                                             1

@@ -13,7 +13,6 @@ $ENGLISH                                  Little Miner Puzzle (Part 2)
 #BACKGROUND_GREEN                                                    0
 #BACKGROUND_BLUE                                                     0
 
-#SECONDS                                                             0
 #INITIAL                                                            40
 #REQUIRED                                                           40
 #SPAWN_INTERVAL                                                     16

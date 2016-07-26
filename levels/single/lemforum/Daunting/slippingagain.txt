@@ -1,4 +1,4 @@
-$BUILT 2016-07-19 17:37:30
+$BUILT 2016-07-24 20:43:03
 $AUTHOR mobius/Nortaneous
 $ENGLISH Slipping Again
 
@@ -11,15 +11,15 @@ $ENGLISH Slipping Again
 #BACKGROUND_GREEN 24
 #BACKGROUND_BLUE 0
 
-#SECONDS 0
-#INITIAL 20
-#REQUIRED 20
+#INITIAL 10
+#REQUIRED 10
 #SPAWN_INTERVAL 70
 
+#WALKER 1
 #CLIMBER 1
-#BUILDER 7
-#BASHER 2
+#BUILDER 6
 #DIGGER 2
+#BATTER 1
 #EXPLODER 0
 
 :matt/marble/Hatch.H: 392 -8
@@ -48,12 +48,6 @@ $ENGLISH Slipping Again
 :matt/marble/04b: 360 88
 :matt/marble/04b: 392 72
 :matt/marble/04b: 392 88
-:matt/marble/04b: 424 72
-:matt/marble/04b: 424 88
-:matt/marble/04b: 456 72
-:matt/marble/04b: 456 88
-:matt/marble/04b: 488 72
-:matt/marble/04b: 488 88
 :matt/marble/04b: 296 72
 :matt/marble/04b: 296 88
 :matt/marble/04b: 520 72
@@ -106,3 +100,9 @@ $ENGLISH Slipping Again
 :geoo/steel/16x16o.S: 824 160
 :geoo/steel/16x16o.S: 824 112
 :geoo/steel/32x32o.S: 792 128
+:matt/marble/04b: 424 72
+:matt/marble/04b: 424 88
+:matt/marble/04b: 456 72
+:matt/marble/04b: 456 88
+:matt/marble/04b: 488 72
+:matt/marble/04b: 488 88

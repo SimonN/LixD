@@ -13,7 +13,6 @@ $ENGLISH                                          Mice in the Pipeline
 #BACKGROUND_GREEN                                                    0
 #BACKGROUND_BLUE                                                     0
 
-#SECONDS                                                             0
 #INITIAL                                                            22
 #REQUIRED                                                           13
 #SPAWN_INTERVAL                                                     15

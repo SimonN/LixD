@@ -13,11 +13,9 @@ $ENGLISH                                             Lixster Quadrille
 #BACKGROUND_GREEN                                                    0
 #BACKGROUND_BLUE                                                     0
 
-#SECONDS                                                           120
 #INITIAL                                                            80
 #REQUIRED                                                           80
 #SPAWN_INTERVAL                                                      4
-#SPAWN_INTERVAL_FAST                                                 4
 
 #WALKER                                                              2
 #JUMPER                                                              4

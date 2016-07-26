@@ -1,36 +1,22 @@
-$BUILT 2014-06-28 23:28:40
+$BUILT 2016-07-23 19:17:53
 $AUTHOR mobius/geoo
-$GERMAN 
-$ENGLISH Dances With Lixes
+$ENGLISH Dances with Lixes
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 880
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 240
 #START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
-#SECONDS 0
 #INITIAL 50
 #REQUIRED 47
 #SPAWN_INTERVAL 20
-#SPAWN_INTERVAL_FAST 4
 
 #CLIMBER 4
 #FLOATER 1
 #EXPLODER 3
-#BLOCKER 0
 #BUILDER 11
-#BASHER 0
 #MINER 1
-#DIGGER 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 
 :simon/hatch001.H: 784 304
 
@@ -41,6 +27,7 @@ $ENGLISH Dances With Lixes
 :geoo/construction/sawblade_medium.F: 336 128
 :geoo/construction/sawblade_medium.F: 336 80
 
+:geoo/steel/32x64o.S: 752 256
 :matt/marble/09b: 448 336
 :matt/marble/09b: 384 336
 :matt/marble/22c: 128 -8
@@ -92,9 +79,14 @@ $ENGLISH Dances With Lixes
 :matt/marble/23e: 656 240
 :matt/marble/23e: 688 240
 :matt/marble/23e: 720 208
-:matt/marble/23e: 752 208
+$BEGIN_TILE_GROUP 0
+:matt/marble/23e: 0 0
+:matt/marble/23e: 0 32
+:geoo/steel/32x64o.S: 0 16
+:geoo/steel/32x64o.S: 0 54 d
+$END_TILE_GROUP
+:Group-0: 752 208
 :matt/marble/23e: 720 240
-:matt/marble/23e: 752 240
 :matt/marble/16: 768 32
 :matt/marble/16: 800 64
 :matt/marble/05: 768 64
@@ -110,10 +102,7 @@ $ENGLISH Dances With Lixes
 :matt/marble/21b: 784 0
 :matt/marble/21b: 592 0
 :matt/marble/21b: 656 0
-:geoo/steel/32x64o.S: 752 224
-:geoo/steel/32x64o.S: 752 262 d
 :matt/marble/23e: 736 320
-:geoo/steel/32x64o.S: 752 256 n
 :geoo/steel/64x64o.S: 368 192
 :geoo/steel/64x64o.S: 368 256
 :geoo/steel/64x32o.S: 432 192

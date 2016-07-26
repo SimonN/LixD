@@ -1,46 +1,34 @@
-$BUILT 2012-08-18 14:32:26
+$BUILT 2016-07-22 19:08:09
 $AUTHOR mobius
-$GERMAN 
 $ENGLISH Jacob's Ladder
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1024
 #SIZE_Y 702
 #TORUS_X 1
 #TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
-#SECONDS 0
 #INITIAL 20
 #REQUIRED 20
-#SPAWN_INTERVAL 50
-#SPAWN_INTERVAL_FAST 20
+#SPAWN_INTERVAL 30
 
 #CLIMBER 20
 #FLOATER 10
 #BUILDER 5
 #BASHER 10
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#EXPLODER2 0
 
 :matt/carnival/Hatch.H: 352 512
 
 :matt/carnival/Goal.G: 992 448
 
-:geoo/construction/Laser_vr_64.F: 570 396
+:geoo/construction/Laser_vr_64.F: 570 428
 :geoo/construction/Laser_vr_64.F: 570 448
 :geoo/construction/Laser_vr_64.F: 570 512
 :geoo/construction/Laser_vr_64.F: 570 564
-:geoo/construction/Laseremit_vrt_16.F: 570 384
+:geoo/construction/Laseremit_vrt_16.F: 570 416
 :geoo/construction/Laseremit_vrb_16.F: 570 624
-:geoo/construction/sawblade.F: 528 392
+:geoo/construction/sawblade.F: 526 416
 :geoo/construction/sawblade.F: 528 456
 :geoo/construction/sawblade.F: 528 520
 :geoo/construction/sawblade.F: 528 592
@@ -91,15 +79,15 @@ $ENGLISH Jacob's Ladder
 :matt/carnival/11: 64 672 r
 :matt/carnival/57: 592 -32 r
 :matt/carnival/57: 704 -128 r
-:matt/carnival/54: 536 352
-:matt/carnival/54: 568 320
-:matt/carnival/54: 600 288
-:matt/carnival/54: 632 256
-:matt/carnival/54: 664 224
-:matt/carnival/54: 696 192
-:matt/carnival/54: 728 160
-:matt/carnival/54: 760 128
-:matt/carnival/54: 792 96
+:matt/carnival/54: 536 384
+:matt/carnival/54: 568 352
+:matt/carnival/54: 600 320
+:matt/carnival/54: 632 288
+:matt/carnival/54: 664 256
+:matt/carnival/54: 696 224
+:matt/carnival/54: 728 192
+:matt/carnival/54: 760 160
+:matt/carnival/54: 792 128
 :geoo/steel/dark_64x64o.S: 960 192
 :geoo/steel/dark_64x64o.S: 960 256
 :geoo/steel/dark_64x64o.S: 960 320
@@ -190,7 +178,6 @@ $ENGLISH Jacob's Ladder
 :matt/carnival/19: 448 608
 :matt/carnival/19: 448 576
 :matt/carnival/19: 512 416
-:matt/carnival/19: 512 384
 :matt/carnival/18: 512 576 rrr
 :matt/carnival/18: 544 576 rrr
 :matt/carnival/18: 544 448 rrr
@@ -209,3 +196,4 @@ $ENGLISH Jacob's Ladder
 :matt/carnival/01: 0 512
 :matt/carnival/01: 992 512
 :matt/carnival/01: 960 512
+:matt/carnival/54: 824 96

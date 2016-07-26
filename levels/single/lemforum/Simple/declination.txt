@@ -13,11 +13,9 @@ $ENGLISH                                Declination Innovation Station
 #BACKGROUND_GREEN                                                    0
 #BACKGROUND_BLUE                                                     0
 
-#SECONDS                                                             0
 #INITIAL                                                            40
 #REQUIRED                                                           39
 #SPAWN_INTERVAL                                                     32
-#SPAWN_INTERVAL_FAST                                                 4
 
 #CLIMBER                                                            20
 #FLOATER                                                             1

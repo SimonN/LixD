@@ -11,11 +11,9 @@ $ENGLISH                                             Division of Labor
 #BACKGROUND_GREEN                                                    0
 #BACKGROUND_BLUE                                                     0
 
-#SECONDS                                                           210
 #INITIAL                                                             2
 #REQUIRED                                                            2
 #SPAWN_INTERVAL                                                     30
-#SPAWN_INTERVAL_FAST                                                30
 
 #CLIMBER                                                             0
 #FLOATER                                                             1

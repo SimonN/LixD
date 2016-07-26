@@ -1,4 +1,4 @@
-$BUILT 2016-07-19 17:36:39
+$BUILT 2016-07-23 20:47:39
 $AUTHOR mobius/Nortaneous
 $ENGLISH Slipping
 
@@ -11,9 +11,8 @@ $ENGLISH Slipping
 #BACKGROUND_GREEN 0
 #BACKGROUND_BLUE 32
 
-#SECONDS 0
-#INITIAL 20
-#REQUIRED 20
+#INITIAL 10
+#REQUIRED 10
 #SPAWN_INTERVAL 70
 
 #CLIMBER 1
@@ -38,7 +37,7 @@ $ENGLISH Slipping
 :simon/water.W: 424 352
 :simon/water.W: 472 352
 :proxima/flame.F: 516 24
-:proxima/flame.F: 292 22
+:proxima/flame.F: 292 24
 
 :matt/marble/04e_1: 328 72
 :matt/marble/04e_1: 360 72

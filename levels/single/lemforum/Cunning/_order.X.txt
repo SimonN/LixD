@@ -26,7 +26,7 @@ watchyestep.txt
 needaboost.txt
 haveanothertry.txt
 mentalprocess.txt
-gowest.txt
+littleminerpuzz3.txt
 buyonegetonefree1.txt
 ticktoxic.txt
 wellokthen.txt

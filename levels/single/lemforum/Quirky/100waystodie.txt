@@ -13,7 +13,6 @@ $ENGLISH                                               100 Ways to Die
 #BACKGROUND_GREEN                                                    0
 #BACKGROUND_BLUE                                                     0
 
-#SECONDS                                                             0
 #INITIAL                                                            25
 #REQUIRED                                                            5
 #SPAWN_INTERVAL                                                      8

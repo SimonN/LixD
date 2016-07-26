@@ -13,7 +13,6 @@ $ENGLISH                                       Walk Them Golden Stairs
 #BACKGROUND_GREEN                                                    0
 #BACKGROUND_BLUE                                                     0
 
-#SECONDS                                                             0
 #INITIAL                                                            40
 #REQUIRED                                                           20
 #SPAWN_INTERVAL                                                     15

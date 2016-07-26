@@ -13,7 +13,6 @@ $ENGLISH                                           Labyrinth of Persia
 #BACKGROUND_GREEN                                                    0
 #BACKGROUND_BLUE                                                     0
 
-#SECONDS                                                             0
 #INITIAL                                                            50
 #REQUIRED                                                           40
 #SPAWN_INTERVAL                                                     50

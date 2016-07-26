@@ -13,11 +13,9 @@ $ENGLISH                                       Time to Change the Road
 #BACKGROUND_GREEN                                                    0
 #BACKGROUND_BLUE                                                     0
 
-#SECONDS                                                            59
 #INITIAL                                                            26
 #REQUIRED                                                           23
 #SPAWN_INTERVAL                                                     24
-#SPAWN_INTERVAL_FAST                                                24
 
 #NOTHING                                                             0
 #NOTHING                                                             0

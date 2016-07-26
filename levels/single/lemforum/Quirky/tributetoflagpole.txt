@@ -13,11 +13,9 @@ $ENGLISH                                   Tribute to Flagpole Sitting
 #BACKGROUND_GREEN                                                    0
 #BACKGROUND_BLUE                                                     0
 
-#SECONDS                                                             0
 #INITIAL                                                            80
 #REQUIRED                                                           70
 #SPAWN_INTERVAL                                                     32
-#SPAWN_INTERVAL_FAST                                                 4
 
 #CLIMBER                                                            30
 #FLOATER                                                            30

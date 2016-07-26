@@ -7,7 +7,7 @@ nowthisisfun.txt
 varietyday.txt
 mergesort.txt
 backslash.txt
-littleminerpuzz3.txt
+gowest.txt
 thisisastickup.txt
 alternative2.txt
 itoldyouaboutstairs.txt
