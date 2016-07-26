@@ -113,14 +113,24 @@ class EffectManager {
             _tree.insert(e);
     }
 
-    void addDigHammer(in Update upd, in int tribe, in int lix, int ex, int ey)
-    {
+    public alias addDigHammer = addDigHammerOrPickaxe!false;
+    public alias addPickaxe = addDigHammerOrPickaxe!true;
+
+    private void addDigHammerOrPickaxe(bool axe)(
+        Update upd, int tribe, int lix, int ex, int ey, int dir
+    ) {
         Effect e = Effect(upd, tribe, lix,
             tribe == tribeLocal ? Sound.STEEL : Sound.NOTHING, Loudness.loud);
         if (e !in _tree) {
             _tree.insert(e);
             hardware.sound.play(e.sound, e.loudness);
-            // DTODOEFFECT: animate the dig hammer at(x, y - 10)
+            static if (axe) {
+                // frame 0 (4th argument) is the pickaxe
+                _debris ~= Debris.newFlyingTool(ex, ey, dir, 0);
+            }
+            else {
+                // DTODOEFFECT: animate the dig hammer at(x, y - 10)
+            }
         }
     }
 

@@ -95,10 +95,10 @@ private:
         tc.y = ey - masks[tc.type].offsetY;
         outsideWorld.physicsDrawer.add(tc);
         if (wouldHitSteel(masks[tc.type])) {
-            // DTODOSKILLS: add flying pickaxe
+            outsideWorld.effect.addPickaxe(outsideWorld.state.update,
+                outsideWorld.tribeID, outsideWorld.lixID, ex, ey, dir);
             turn();
             become(Ac.walker);
-            playSound(Sound.STEEL);
         }
     }
 
