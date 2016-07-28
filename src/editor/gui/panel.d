@@ -92,12 +92,24 @@ public:
         return text;
     }
 
-protected:
-    override void calcSelf()
+    // This was in calcSelf(), but we take special care for the editor panel.
+    // We want to run this function every frame, because editor.draw runs
+    // this.info(string text). We don't want to run calc() and all children's
+    // calcSelf() during dragging, that's why the editor registers the panel
+    // as a drawingOnlyElder.
+    void calcOnlyTheInfoBar()
     {
         assert (_info);
         _info.down = false;
         _info.text = "";
+        if (basics.user.showFPS.value)
+            _fps.text = "FPS: %d".format(displayFps);
+    }
+
+protected:
+    override void calcSelf()
+    {
+        calcOnlyTheInfoBar();
         foreach (id, bb; _buttons)
             if (bb.isMouseHere) {
                 try _info.text = (id+Lang.editorButtonFileNew).to!Lang.transl;
@@ -115,8 +127,6 @@ protected:
                                    .to!Lang.transl;
                 catch (ConvException) { }
             }
-        if (basics.user.showFPS.value)
-            _fps.text = "FPS: %d".format(displayFps);
     }
 
 private:

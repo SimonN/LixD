@@ -31,6 +31,11 @@ void calcNoWindows(Editor editor) {
     _map.calcScrolling();
     if (_map.scrollingNow)
         mouseCursor.xf = 3;
+    assert (_panel);
+    if (! _dragger.framing && ! _dragger.moving)
+        _panel.calc();
+    else
+        _panel.calcOnlyTheInfoBar();
     editor.handleNonstandardPanelButtons();
     editor.hoverTiles();
     editor.selectTiles();

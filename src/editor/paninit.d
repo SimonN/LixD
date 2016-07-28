@@ -29,7 +29,8 @@ void makePanel(Editor editor)
 {
     editor._panel = new EditorPanel();
     editor._panel.currentFilename = editor._loadedFrom;
-    addElder(editor._panel);
+    addDrawingOnlyElder(editor._panel);
+
     with (editor._panel) {
         onExecute(Lang.editorButtonFileNew, KeySet(), () {
             editor.newLevel();

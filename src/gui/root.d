@@ -2,20 +2,10 @@ module gui.root;
 
 /* This was Api::Manager in C++/A4 Lix. Here, it's a module, not a singleton
  * class.
- *
- * Public functions:
- *
- *  void initialize();
- *  void deinitialize();
- *
- *  void add/rmElder(Element);
- *  void add/rmFocus(Element);
- *
- *  void calc_gui();
- *  void draw_gui_and_this_cursor_then_blit_to_screen(Graphic = null);
  */
 
 import std.algorithm;
+import std.range;
 
 import basics.alleg5;
 import graphic.color;
@@ -27,13 +17,11 @@ import gui;
 public Torbit guiosd; // other gui modules shall use this
 
 private:
-
+    Element[] drawingOnlyElders; // we don't calc these, user wants manual calc
     Element[] elders;
     Element[] focus;
 
     bool clearNextDraw = true;
-
-
 
 public:
 
@@ -49,8 +37,6 @@ initialize()
     Geom.setScreenXYls(guiosd.xl, guiosd.yl);
 }
 
-
-
 void
 deinitialize()
 {
@@ -58,21 +44,24 @@ deinitialize()
     guiosd = null;
 }
 
-
-
-void
-addElder(Element toAdd)
+void addElder(Element toAdd)
 {
-    if (elders.find!"a is b"(toAdd) != []) return;
+    if (chain(elders, drawingOnlyElders).canFind!"a is b"(toAdd))
+        return;
     elders ~= toAdd;
 }
 
+void addDrawingOnlyElder(Element toAdd)
+{
+    if (chain(elders, drawingOnlyElders).canFind!"a is b"(toAdd))
+        return;
+    drawingOnlyElders ~= toAdd;
+}
 
-
-void
-rmElder(Element to_rm)
+void rmElder(Element to_rm)
 {
     elders = elders.remove!(a => a is to_rm);
+    drawingOnlyElders = drawingOnlyElders.remove!(a => a is to_rm);
     clearNextDraw = true;
 }
 
@@ -115,10 +104,12 @@ void draw()
     if (clearNextDraw) {
         clearNextDraw = false;
         guiosd.clearToColor(color.transp);
+        foreach (element; drawingOnlyElders) element.reqDraw();
         foreach (element; elders) element.reqDraw();
         foreach (element; focus)  element.reqDraw();
     }
     auto drata = DrawingTarget(guiosd.albit);
+    foreach (element; drawingOnlyElders) element.draw();
     foreach (element; elders) element.draw();
     foreach (element; focus)  element.draw();
     guiosd.copyToScreen();
