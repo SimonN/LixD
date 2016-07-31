@@ -81,16 +81,19 @@ public:
 
     bool loadUserStateDoesItMismatch()
     {
-        bool ret = false;
         assert (userStateExists);
         _model.takeOwnershipOf(_states.userState.clone());
-        auto r = _states.userReplay;
-        if (! r.isSubsetOf(_replay)) {
-            if (! replay.isSubsetOf(r))
-                ret = true;
-            _replay = r.clone();
+        auto diff = _replay.firstDifference(_states.userReplay);
+        if (! diff.rhsIsSubsetOfThis)
+            _replay = _states.userReplay.clone();
+        if (! diff.thisIsSubsetOfRhs && ! diff.rhsIsSubsetOfThis) {
+            // Forgetting all autosaves on mismatching timelines fixes #130:
+            // https://github.com/SimonN/LixD/issues/130
+            _states.forgetAutoSavesOnAndAfter(
+                diff.firstDifferenceIfNeitherWasSubset);
+            return true;
         }
-        return ret;
+        return false;
     }
 
     void addReplayData(in ref ReplayData data)
@@ -125,7 +128,7 @@ public:
         immutable whatUpdateToLoad = Update(_model.cs.update - backBy);
         auto state = (whatUpdateToLoad <= 0)
                    ? _states.zeroState
-                   : _states.autoBeforeUpdate(whatUpdateToLoad + 1);
+                   : _states.autoBeforeUpdate(Update(whatUpdateToLoad + 1));
         assert (_states.zeroState, "zero state is bad");
         _model.takeOwnershipOf(state.clone());
         updateTo(whatUpdateToLoad);

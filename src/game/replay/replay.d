@@ -106,11 +106,23 @@ public:
 
     // This doesn't check whether the metadata/general data is the same.
     // We assume that Game only calls this on replays of the same level.
-    bool isSubsetOf(in Replay rhs) const
+    // Returns the inner struct, check its fields. E.g., to test if (this)
+    // replay is subset of (rhs): this.firstDifference(rhs).thisIsSubsetOfRhs.
+    // The subset relation is not proper: this is a subset of this.
+    auto firstDifference(in Replay rhs) const
     {
+        static struct FirstDifference {
+            bool thisIsSubsetOfRhs;
+            bool rhsIsSubsetOfThis;
+            Update firstDifferenceIfNeitherWasSubset;
+        }
         assert (rhs !is null);
-        return _data.length <= rhs._data.length
-            && _data[]      == rhs._data[0 .. this._data.length];
+        for (size_t i = 0; i < _data.length && i < rhs._data.length; ++i)
+            if (_data[i] != rhs._data[i])
+                return FirstDifference(false, false,
+                    min(_data[i].update, rhs._data[i].update));
+        return FirstDifference(_data.length <= rhs._data.length,
+                               _data.length >= rhs._data.length);
     }
 
     // this function is necessary to keep old replays working in new versions
@@ -118,7 +130,7 @@ public:
     // The first spawn is still at update 60.
     void increaseEarlyDataToUpdate(in Update upd)
     {
-        foreach (d; _data) {
+        foreach (ref d; _data) {
             if (d.update < upd)
                 d.update = upd;
             else break;

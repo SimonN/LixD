@@ -174,7 +174,9 @@ public:
     {
         _userState  = s.clone();
         assert (r);
-        if (_userReplay is null || ! r.isSubsetOf(_userReplay))
+        if (_userReplay is null
+            || ! r.firstDifference(_userReplay).thisIsSubsetOfRhs)
+            // r has info that _userReplay hasn't, store r
             _userReplay = r.clone();
     }
 
@@ -182,7 +184,7 @@ public:
     @property const(GameState) userState()  const { return _userState;  }
     @property const(Replay)    userReplay() const { return _userReplay; }
 
-    GameState autoBeforeUpdate(in int u)
+    GameState autoBeforeUpdate(in Update u)
     {
         assert (zeroState, "need _zero as a fallback for autoBeforeUpdate");
         GameState ret = _zero;
@@ -193,12 +195,17 @@ public:
             ) {
                 ret = candidate;
             }
+        forgetAutoSavesOnAndAfter(u);
+        return ret;
+    }
+
+    void forgetAutoSavesOnAndAfter(in Update u)
+    {
         foreach (ref GameState possibleGarbage; _auto)
             if (possibleGarbage && possibleGarbage.update >= u) {
                 possibleGarbage.dispose();
                 possibleGarbage = null;
             }
-        return ret;
     }
 
     int updateMultipleForPair(in int pair) const pure
