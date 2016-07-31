@@ -1,34 +1,22 @@
-$BUILT 2014-06-30 03:54:15
+$BUILT 2016-07-29 20:22:57
 $AUTHOR ccx
-$GERMAN 
 $ENGLISH Won't Get Fooled Again
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 896
 #SIZE_Y 464
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 128
 #START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
-#INITIAL 100
-#REQUIRED 93
+#INITIAL 30
+#REQUIRED 23
 #SPAWN_INTERVAL 52
 
 #EXPLODER 1
-#BATTER 1
 #BASHER 2
-#CUBER 1
 #MINER 1
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#BATTER 1
+#CUBER 1
 
 :matt/marble/Hatch.H: 304 -8
 
@@ -47,7 +35,13 @@ $ENGLISH Won't Get Fooled Again
 :geoo/construction/sawblade_small.F: 96 368
 :geoo/construction/sawblade.F: 428 14
 
-:matt/bricks/13b: 828 417 rrr
+:matt/bricks/01b: 543 4
+:matt/bricks/15b: 858 417 r
+$BEGIN_TILE_GROUP 0
+:matt/bricks/13b: 0 0 rrr
+:geoo/construction/rod_rust/straight32: 31 2 rrrd
+$END_TILE_GROUP
+:Group-0: 828 417
 :simon/brick/vert1: 569 14
 :matt/marble/22a: 128 376
 :matt/marble/23a: 240 72
@@ -146,10 +140,7 @@ $ENGLISH Won't Get Fooled Again
 :geoo/steel/32x16o.S: 432 72
 :matt/marble/11a: 184 296
 :matt/marble/13a: 696 296
-:geoo/construction/rod_rust/straight32: 859 419 rrrd
 :simon/brick/broken1: 859 409
-:matt/bricks/15b: 858 417 rn
-:matt/bricks/01b: 543 4 n
 :matt/bricks/01b: 549 19 rrrd
 :matt/bricks/01b: 553 19 rrrd
 :matt/marble/001a: 176 328

@@ -1,32 +1,26 @@
-$BUILT 2014-08-03 00:53:05
+$BUILT 2016-07-25 21:35:08
 $AUTHOR Michael S. Repton
-$GERMAN 
 $ENGLISH You Only Get One Bash at It!
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
+#SECONDS 0
 #INITIAL 50
-#REQUIRED 48
+#REQUIRED 49
 #SPAWN_INTERVAL 4
 
 #CLIMBER 3
 #FLOATER 3
-#BATTER 2
 #BLOCKER 2
-#NOTHING 0
-#BASHER 1
-#CUBER 1
 #PLATFORMER 1
-#JUMPER 1
+#BASHER 1
 #DIGGER 1
-#NOTHING 0
-#NOTHING 0
+#JUMPER 1
+#BATTER 2
+#CUBER 1
+#EXPLODER2 0
 
 :geoo/sandstone/Hatch.H: 144 208
 
@@ -37,18 +31,12 @@ $ENGLISH You Only Get One Bash at It!
 :geoo/construction/sawblade.F: 336 160
 :geoo/construction/sawblade.F: 240 160
 
-:geoo/steel/dark_64x64o.S: 0 336
-:geoo/steel/dark_64x64o.S: 64 336
-:geoo/steel/dark_64x64o.S: 128 336
 :geoo/steel/dark_64x64o.S: 192 336
 :geoo/sandstone/pillar_bottom: 96 288
 :geoo/sandstone/pillar_bottom: 256 288
-:geoo/steel/dark_64x64o.S: 256 336
 :geoo/sandstone/pillar_bottom: 352 288
-:geoo/steel/dark_64x64o.S: 320 336
 :geoo/steel/dark_64x64o.S: 384 336
 :geoo/steel/dark_64x64o.S: 512 336
-:geoo/steel/dark_64x64o.S: 576 336
 :geoo/sandstone/pillar_32: 96 256
 :geoo/sandstone/pillar_32: 96 224
 :geoo/sandstone/pillar_32: 96 192
@@ -97,3 +85,9 @@ $ENGLISH You Only Get One Bash at It!
 :geoo/sandstone/pillar_top: 96 128
 :geoo/steel/dark_16x16o.S: 272 172
 :geoo/steel/dark_16x16o.S: 368 172
+:geoo/sandstone/64x64: 256 336
+:geoo/sandstone/64x64: 320 336
+:geoo/steel/dark_64x64o.S: 576 336
+:geoo/steel/dark_64x64o.S: 128 336
+:geoo/steel/dark_64x64o.S: 64 336
+:geoo/steel/dark_64x64o.S: 0 336

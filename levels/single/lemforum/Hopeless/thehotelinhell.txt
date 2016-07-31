@@ -1,20 +1,16 @@
-$BUILT 2016-05-01 17:44:35
+$BUILT 2016-07-30 14:44:13
 $AUTHOR Michael S. Repton
-$GERMAN 
 $ENGLISH The Hotel in Hell
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 2560
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 720
 #START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
-#INITIAL 30
-#REQUIRED 27
+#SECONDS 180
+#INITIAL 20
+#REQUIRED 17
 #SPAWN_INTERVAL 52
 
 #WALKER 3
@@ -67,9 +63,9 @@ $ENGLISH The Hotel in Hell
 :geoo/construction/pillar_32: 960 184
 :geoo/construction/pillar_top_shaded: 960 184
 :geoo/construction/pillar_base: 944 168
-:matt/underworld/00: 944 128
-:matt/underworld/00: 1008 128
-:matt/underworld/00: 1072 128
+:matt/underworld/00: 946 128
+:matt/underworld/00: 1010 128
+:matt/underworld/00: 1074 128
 :geoo/construction/pillar_32: 960 376
 :geoo/steel/dark_32x64o.S: 864 112
 :geoo/steel/dark_32x32o.S: 864 176

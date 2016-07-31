@@ -1,36 +1,29 @@
-$BUILT 2015-06-24 21:20:41
+$BUILT 2016-07-29 23:46:04
 $AUTHOR tseug
-$GERMAN 
 $ENGLISH Oh No, Not Again!
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 992
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 352
 #START_Y -20
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
-#INITIAL 50
-#REQUIRED 50
-#SPAWN_INTERVAL 20
+#INITIAL 28
+#REQUIRED 28
+#SPAWN_INTERVAL 10
 
 #CLIMBER 1
 #FLOATER 1
-#NOTHING 0
 #BUILDER 3
-#NOTHING 0
 #BASHER 1
 #MINER 1
 #DIGGER 1
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#EXPLODER2 0
 
 :matt/earth/Hatch.H: 722 100
+:geoo/construction/Hatch.H: 456 0 r
+:matt/earth/Hatch.H: 722 100
+:geoo/construction/Hatch.H: 504 0
 
 :matt/earth/Goal.G: 834 312
 
@@ -49,8 +42,6 @@ $ENGLISH Oh No, Not Again!
 :matt/earth/03: 172 142 frr
 :matt/earth/03: 200 176 frr
 :matt/earth/05: 32 136 r
-:geoo/steel/32x64o.S: 64 80
-:geoo/steel/32x64o.S: 64 144
 :geoo/steel/32x64o.S: 64 208
 :geoo/steel/32x64o.S: 64 272
 :geoo/steel/32x64o.S: 64 336
@@ -114,3 +105,66 @@ $ENGLISH Oh No, Not Again!
 :geoo/steel/32x64o.S: 32 192 d
 :matt/earth/03: 745 113 rrd
 :matt/earth/18: 731 115 d
+:geoo/steel/32x64o.S: 64 144
+:geoo/steel/32x64o.S: 64 80
+:geoo/construction/rod_steel/straight32.S: 448 80
+:geoo/construction/rod_steel/straight32.S: 416 80
+:geoo/construction/rod_steel/straight32.S: 384 80
+:geoo/construction/rod_steel/straight32.S: 352 80
+:geoo/construction/rod_steel/straight32.S: 320 80
+:geoo/construction/rod_steel/straight32.S: 288 80
+:geoo/construction/rod_steel/straight32.S: 256 80
+:geoo/construction/rod_steel/straight32.S: 224 80
+:geoo/construction/rod_steel/straight32.S: 192 80
+:geoo/construction/rod_steel/straight32.S: 160 80
+:geoo/construction/rod_steel/straight32.S: 128 80
+:geoo/construction/rod_steel/straight32.S: 512 80
+:geoo/construction/rod_steel/straight32.S: 544 80
+:geoo/construction/rod_steel/straight32.S: 576 80
+:geoo/construction/rod_steel/straight32.S: 608 80
+:geoo/construction/rod_steel/straight32.S: 640 80
+:geoo/construction/rod_steel/straight32.S: 672 80
+:geoo/construction/rod_steel/straight32.S: 704 80
+:geoo/construction/rod_steel/straight32.S: 736 80
+:geoo/construction/rod_steel/straight32.S: 768 80
+:geoo/construction/rod_steel/straight32.S: 800 80
+:geoo/construction/rod_steel/straight32.S: 832 80
+:geoo/construction/rod_steel/edge_lu.S: 864 80
+:geoo/construction/rod_steel/end_rect.S: 504 80
+:geoo/construction/rod_steel/end_rect.S: 480 80 frr
+:geoo/construction/rod_steel/straight32.S: 864 48 rrr
+:geoo/construction/rod_steel/straight32.S: 864 0 rrr
+:geoo/construction/rod_steel/straight32.S: 120 0 rrr
+:geoo/construction/rod_steel/straight32.S: 120 48 rrr
+:geoo/construction/rod_steel/edge_ru.S: 120 80
+:geoo/construction/rod_steel/straight32.S: 480 56
+:geoo/construction/rod_steel/end_rect.S: 472 56
+:geoo/construction/rod_steel/end_rect.S: 512 56 frr
+:geoo/construction/rod_steel/straight32.S: 448 32
+:geoo/construction/rod_steel/straight32.S: 416 32
+:geoo/construction/rod_steel/straight32.S: 384 32
+:geoo/construction/rod_steel/straight32.S: 352 32
+:geoo/construction/rod_steel/straight32.S: 320 32
+:geoo/construction/rod_steel/straight32.S: 288 32
+:geoo/construction/rod_steel/straight32.S: 256 32
+:geoo/construction/rod_steel/straight32.S: 224 32
+:geoo/construction/rod_steel/straight32.S: 192 32
+:geoo/construction/rod_steel/straight32.S: 160 32
+:geoo/construction/rod_steel/straight32.S: 128 32
+:geoo/construction/rod_steel/end_rect.S: 480 32 frr
+:geoo/construction/rod_steel/straight32.S: 512 32
+:geoo/construction/rod_steel/straight32.S: 544 32
+:geoo/construction/rod_steel/straight32.S: 576 32
+:geoo/construction/rod_steel/straight32.S: 608 32
+:geoo/construction/rod_steel/straight32.S: 640 32
+:geoo/construction/rod_steel/straight32.S: 672 32
+:geoo/construction/rod_steel/straight32.S: 704 32
+:geoo/construction/rod_steel/straight32.S: 736 32
+:geoo/construction/rod_steel/straight32.S: 768 32
+:geoo/construction/rod_steel/straight32.S: 800 32
+:geoo/construction/rod_steel/straight32.S: 832 32
+:geoo/construction/rod_steel/end_rect.S: 504 32
+:geoo/construction/rod_steel/straight32.S: 864 32 rrr
+:geoo/construction/rod_steel/link.S: 856 32
+:geoo/construction/rod_steel/straight32.S: 120 32 rrr
+:geoo/construction/rod_steel/link.S: 120 32 frr

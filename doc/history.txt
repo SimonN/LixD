@@ -1,10 +1,30 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.10
+------
+
+2016-07-31
+
+In the lemforum pack, 237 of all 240 levels are guaranteed to be solvable.
+The remaining possibly-unsovable levels are Trading and Cooperating,
+The Mile High Club, and Striking News at Ten.
+
+Fix #116: Editor shows the top-left point of a multiple selection, the minimal
+coordinate each in both the x- and y-direction.
+
+Fix #130: After state-loading a different timeline, framestepping moved back
+to the undesired timeline. Now, I discard old savestates until the merge base
+of the two timelines, and recompute from there on savestate.
+
+Fix #91: Editor buttons are disabled when dragging.
+
 0.6.9
 -----
 
 2016-07-27
+
+Miners throw their pickaxe into the air when they hit steel.
 
 Option: Do fast mouse movements untrap the mouse from windowed Lix?
 
