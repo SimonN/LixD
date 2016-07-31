@@ -86,14 +86,6 @@ abstract class Hover {
         return this.zOrderAmongAllTiles - rhs.zOrderAmongAllTiles;
     }
 
-    final string description() const
-    {
-        // the unicode chars in the string are the subscript of 0x
-        return "%s %s (%d, %d) (\u2080\u2093%X, \u2080\u2093%X)"
-            .format(this.tileDescription, Lang.editorBarAt.transl,
-            occ.loc.x, occ.loc.y, occ.loc.x, occ.loc.y);
-    }
-
     // This does 3 things:
     // 1. Delete the occ from the level.
     // 2. Put into the level all elements at correct positions.
@@ -109,6 +101,7 @@ abstract class Hover {
     abstract void removeFromLevel();
     abstract void cloneThenPointToClone();
     abstract AlCol hoverColor(int val) const;
+    abstract @property string tileDescription() const;
 
     enum FgBg { fg, bg }
     abstract void zOrderTowardsButIgnore(FgBg, in Hover[]);
@@ -118,7 +111,6 @@ abstract class Hover {
 protected:
     void mirrorHorizontally() { }
     void rotateCw() { }
-    abstract @property string tileDescription() const;
 }
 
 package:

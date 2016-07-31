@@ -62,15 +62,15 @@ public:
             + level.gadgets[occ.tile.type].countUntil!"a is b"(occ).to!int;
     }
 
+    override @property string tileDescription() const
+    {
+        return _occ.tile.name;
+    }
+
 protected:
     override void rotateCw() { mirrorHorizontally(); }
     override void mirrorHorizontally()
     {
         _occ.hatchRot = (_occ.tile.type == GadType.HATCH && ! _occ.hatchRot);
-    }
-
-    override @property string tileDescription() const
-    {
-        return _occ.tile.name;
     }
 }

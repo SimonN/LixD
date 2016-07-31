@@ -128,8 +128,8 @@ $editorHotkey                  Hotkey:
 $editorHotkeyHold             Hotkey: hold
 $editorBarAt                  at
 $editorBarGroup               -tile-group
-$editorBarHover               tiles about to be selected.
-$editorBarSelection           tiles selected.
+$editorBarHover               tiles about to be selected
+$editorBarSelection           tiles selected
 $editorBarMoveWithKeysLong       Drag tiles or move them with [
 $editorBarMoveWithKeysShort      Move with [
 $editorBarMoveWithKeysMid        ], [

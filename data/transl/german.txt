@@ -125,8 +125,8 @@ $editorHotkey                 Hotkey:
 $editorHotkeyHold            Hotkey: halte
 $editorBarAt                 an
 $editorBarGroup              -Stücke-Gruppe
-$editorBarHover              Stücke werden markiert.
-$editorBarSelection          Stücke markiert.
+$editorBarHover              Stücke werden markiert
+$editorBarSelection          Stücke markiert
 $editorBarMoveWithKeysLong      Ziehe Stücke umher oder bewege sie mit [
 $editorBarMoveWithKeysShort     Bewegen mit [
 $editorBarMoveWithKeysMid       ], [

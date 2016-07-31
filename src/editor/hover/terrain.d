@@ -65,6 +65,16 @@ public:
         return color.makecol(val, val, val);
     }
 
+    final override @property string tileDescription() const
+    {
+        assert (_occ);
+        string ret = this.tileName;
+        if (_occ.rotCw || _occ.mirrY)
+            ret ~= " [%s%s]".format(_occ.mirrY ? "f" : "",
+                                    'r'.repeat(_occ.rotCw));
+        return ret;
+    }
+
     final override int zOrderAmongAllTiles() const
     {
         return level.terrain.countUntil!"a is b"(_occ).to!int;
@@ -82,16 +92,6 @@ protected:
         immutable oldCenter = _occ.selboxOnMap.center;
         _occ.rotCw = (_occ.rotCw == 3 ? 0 : _occ.rotCw + 1);
         moveBy(oldCenter - _occ.selboxOnMap.center);
-    }
-
-    final override @property string tileDescription() const
-    {
-        assert (_occ);
-        string ret = this.tileName;
-        if (_occ.rotCw || _occ.mirrY)
-            ret ~= " [%s%s]".format(_occ.mirrY ? "f" : "",
-                                    'r'.repeat(_occ.rotCw));
-        return ret;
     }
 
     @property string tileName() const

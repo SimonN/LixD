@@ -128,15 +128,17 @@ void drawDraggedFrame(Editor editor) { with (editor)
 
 string describeHover(Editor editor) { with (editor)
 {
-    if (_hover.length == 1)
-        return _hover[0].description;
-    else if (_hover.length > 1)
-        return "%d %s".format(_hover.len, Lang.editorBarHover.transl);
-    else if (_selection.length == 1)
-        return _selection[0].description;
-    else if (_selection.length > 1)
-        return "%d %s".format(_selection.len, Lang.editorBarSelection.transl);
-    return "";
+    const(Hover[]) list = _hover.empty ? _selection : _hover;
+    if (list.empty)
+        return "";
+    string name = list.length == 1
+        ? list[0].tileDescription
+        : "%d %s".format(list.len, list is _hover
+            ? Lang.editorBarHover.transl : Lang.editorBarSelection.transl);
+    int x = list.map!(hov => hov.occ.loc.x).reduce!min;
+    int y = list.map!(hov => hov.occ.loc.y).reduce!min;
+    return "%s %s (%d, %d) (\u2080\u2093%X, \u2080\u2093%X)"
+        .format(name, Lang.editorBarAt.transl, x, y, x, y);
 }}
 
 void drawToScreen(Editor editor)
