@@ -1,20 +1,15 @@
-$BUILT 2015-08-26 20:23:03
+$BUILT 2016-08-06 03:06:43
 $AUTHOR I.S./Michael
-$GERMAN 
 $ENGLISH Path of Wickedness
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 0
 #START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
-#INITIAL 80
-#REQUIRED 80
+#INITIAL 32
+#REQUIRED 32
 #SPAWN_INTERVAL 23
 
 #WALKER 2
@@ -33,7 +28,7 @@ $ENGLISH Path of Wickedness
 :geoo/sandstone/Hatch.H: 64 256
 
 :geoo/sandstone/Goal.G: 32 16
-:geoo/sandstone/Goal.G: 480 16
+:geoo/sandstone/Goal.G: 472 16
 
 :geoo/sandstone/arc_big: 0 336
 :geoo/sandstone/arc_big: 128 336
@@ -49,16 +44,16 @@ $ENGLISH Path of Wickedness
 :geoo/sandstone/64x32: 544 272
 :geoo/sandstone/64x32: 512 304
 :geoo/sandstone/64x32: 512 240
-:geoo/sandstone/64x32: 352 240
+:geoo/sandstone/64x32: 344 240
 :geoo/sandstone/64x32: 384 208
-:geoo/sandstone/64x32: 352 176
+:geoo/sandstone/64x32: 344 176
 :geoo/sandstone/64x32: 320 208
-:geoo/sandstone/64x32: 320 144
+:geoo/sandstone/64x32: 312 144
 :geoo/sandstone/64x32: 256 208
 :geoo/sandstone/64x32: 192 208
-:geoo/sandstone/64x32: 352 112
-:geoo/sandstone/64x32: 384 80
-:geoo/sandstone/64x32: 448 80
+:geoo/sandstone/64x32: 344 112
+:geoo/sandstone/64x32: 376 80
+:geoo/sandstone/64x32: 440 80
 :geoo/sandstone/32x64: 192 272
 :geoo/sandstone/32x64: 256 240
 :geoo/sandstone/32x64: 288 272
@@ -69,7 +64,7 @@ $ENGLISH Path of Wickedness
 :geoo/sandstone/32x32: 608 80
 :geoo/sandstone/32x32: 608 112
 :geoo/sandstone/32x32: 608 144
-:geoo/sandstone/32x32: 512 80
+:geoo/sandstone/32x32: 504 80
 :geoo/sandstone/slopes/32x32rb: 576 112
 :geoo/sandstone/64x32: 544 144
 :geoo/sandstone/64x32: 192 0

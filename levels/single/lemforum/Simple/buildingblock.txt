@@ -1,4 +1,4 @@
-$BUILT 2016-06-28 11:30:15
+$BUILT 2016-08-06 03:16:05
 $AUTHOR Insane Steve
 $ENGLISH Building Block Maze
 
@@ -22,7 +22,7 @@ $ENGLISH Building Block Maze
 :geoo/sandstone/Hatch.H: 64 256
 
 :geoo/sandstone/Goal.G: 32 16
-:geoo/sandstone/Goal.G: 480 16
+:geoo/sandstone/Goal.G: 472 16
 
 :geoo/sandstone/arc_big: 0 336
 :geoo/sandstone/arc_big: 128 336
@@ -38,16 +38,16 @@ $ENGLISH Building Block Maze
 :geoo/sandstone/64x32: 544 272
 :geoo/sandstone/64x32: 512 304
 :geoo/sandstone/64x32: 512 240
-:geoo/sandstone/64x32: 352 240
+:geoo/sandstone/64x32: 344 240
 :geoo/sandstone/64x32: 384 208
-:geoo/sandstone/64x32: 352 176
+:geoo/sandstone/64x32: 344 176
 :geoo/sandstone/64x32: 320 208
-:geoo/sandstone/64x32: 320 144
+:geoo/sandstone/64x32: 312 144
 :geoo/sandstone/64x32: 256 208
 :geoo/sandstone/64x32: 192 208
-:geoo/sandstone/64x32: 352 112
-:geoo/sandstone/64x32: 384 80
-:geoo/sandstone/64x32: 448 80
+:geoo/sandstone/64x32: 344 112
+:geoo/sandstone/64x32: 376 80
+:geoo/sandstone/64x32: 440 80
 :geoo/sandstone/32x64: 192 272
 :geoo/sandstone/32x64: 256 240
 :geoo/sandstone/32x64: 288 272
@@ -58,7 +58,7 @@ $ENGLISH Building Block Maze
 :geoo/sandstone/32x32: 608 80
 :geoo/sandstone/32x32: 608 112
 :geoo/sandstone/32x32: 608 144
-:geoo/sandstone/32x32: 512 80
+:geoo/sandstone/32x32: 504 80
 :geoo/sandstone/slopes/32x32rb: 576 112
 :geoo/sandstone/64x32: 544 144
 :geoo/sandstone/64x32: 192 0

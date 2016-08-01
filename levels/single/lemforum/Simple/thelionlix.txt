@@ -1,4 +1,4 @@
-$BUILT 2016-06-28 12:10:14
+$BUILT 2016-08-02 00:21:37
 $AUTHOR Michael S. Repton
 $ENGLISH The Lion, Lix and the Wardrobe
 
@@ -8,8 +8,8 @@ $ENGLISH The Lion, Lix and the Wardrobe
 #START_X 400
 #START_Y 0
 
-#INITIAL 40
-#REQUIRED 20
+#INITIAL 24
+#REQUIRED 12
 #SPAWN_INTERVAL 50
 
 #WALKER 5

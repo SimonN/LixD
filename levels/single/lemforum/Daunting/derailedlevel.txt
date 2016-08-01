@@ -1,4 +1,4 @@
-$BUILT 2016-07-19 17:31:18
+$BUILT 2016-08-03 23:20:43
 $AUTHOR I.S./geoo
 $ENGLISH Derailed Level
 
@@ -26,10 +26,14 @@ $ENGLISH Derailed Level
 
 :matt/goldmine/Hatch.H: 32 224
 
-:matt/goldmine/Goal.G: 568 224
+:matt/goldmine/Goal.G: 556 224
 
-:matt/goldmine/GoalTop.D: 568 176
+:matt/goldmine/GoalTop.D: 556 176
 
+:geoo/shadow/rope1: 230 296 fr
+:geoo/shadow/rope1: 210 300 fr
+:geoo/shadow/rope1: 220 298 fr
+:matt/goldmine/crate32: 220 334 d
 :matt/goldmine/crate32: 452 208
 :matt/goldmine/crate16: 252 176
 :matt/goldmine/crate16: 284 176
@@ -91,3 +95,62 @@ $ENGLISH Derailed Level
 :matt/goldmine/crate32: 460 144
 :matt/goldmine/crate16: 480 128
 :geoo/steel/32x32o.S: 308 112
+$BEGIN_TILE_GROUP 0
+:amanda/occult/occult_wax_details_drip: 83 4
+:amanda/occult/occult_wax_details_drip: 69 4
+:amanda/occult/occult_wax_details_drip: 55 4
+:geoo/construction/concrete/032h: 53 0 d
+:geoo/construction/concrete/032h: 0 14 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:proxima/tile/orange1: 0 0
+:Group-0: 18 32 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:proxima/tile/orange1: 0 0
+:Group-1: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:geoo/construction/concrete/008: 28 14
+:geoo/construction/concrete/008: 28 22
+:geoo/construction/concrete/008: 0 14
+:geoo/construction/concrete/008: 8 14
+:geoo/construction/concrete/008: 12 14
+:geoo/construction/concrete/008: 4 22
+:geoo/construction/concrete/008: 12 22
+:geoo/construction/concrete/008: 0 30
+:geoo/construction/concrete/008: 8 30
+:geoo/construction/concrete/008: 16 30
+:geoo/construction/concrete/008: 24 30
+:geoo/construction/concrete/008: 28 30
+:geoo/construction/concrete/008: 0 38
+:geoo/construction/concrete/008: 8 38
+:geoo/construction/concrete/008: 16 38
+:geoo/construction/concrete/008: 24 38
+:geoo/construction/concrete/008: 32 38
+:geoo/construction/concrete/016b: 36 30
+:amanda/occult/occult_scrawl_pentagram: 30 -2 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 4
+:Group-3: 0 0
+:geoo/construction/concrete/016va: 36 10 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 5
+:geoo/construction/concrete/032h: 0 0
+:Group-4: 10 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 6
+:geoo/construction/pillar_top_shaded: 0 8 rrr
+:geoo/construction/pillar_top_shaded: 0 16 rrrd
+:geoo/construction/pillar_top_shaded: 6 0 rrrd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 7
+:Group-2: 10 63
+:geoo/construction/concrete/032h: 0 32
+:geoo/construction/pillar_32: 38 16
+:geoo/construction/pillar_32: 38 0 d
+:geoo/construction/pillar_32: 46 16 d
+:Group-5: 0 32 d
+:Group-6: 19 40
+$END_TILE_GROUP
+:Group-7: 216 340 r

@@ -1,4 +1,4 @@
-$BUILT 2016-07-25 21:35:08
+$BUILT 2016-08-06 00:30:41
 $AUTHOR Michael S. Repton
 $ENGLISH You Only Get One Bash at It!
 
@@ -6,7 +6,6 @@ $ENGLISH You Only Get One Bash at It!
 #SIZE_X 640
 #SIZE_Y 400
 
-#SECONDS 0
 #INITIAL 50
 #REQUIRED 49
 #SPAWN_INTERVAL 4
@@ -31,12 +30,16 @@ $ENGLISH You Only Get One Bash at It!
 :geoo/construction/sawblade.F: 336 160
 :geoo/construction/sawblade.F: 240 160
 
+:geoo/steel/dark_64x64o.S: 0 336
+:geoo/steel/dark_64x64o.S: 64 336
+:geoo/steel/dark_64x64o.S: 128 336
 :geoo/steel/dark_64x64o.S: 192 336
 :geoo/sandstone/pillar_bottom: 96 288
 :geoo/sandstone/pillar_bottom: 256 288
 :geoo/sandstone/pillar_bottom: 352 288
 :geoo/steel/dark_64x64o.S: 384 336
 :geoo/steel/dark_64x64o.S: 512 336
+:geoo/steel/dark_64x64o.S: 576 336
 :geoo/sandstone/pillar_32: 96 256
 :geoo/sandstone/pillar_32: 96 224
 :geoo/sandstone/pillar_32: 96 192
@@ -87,7 +90,3 @@ $ENGLISH You Only Get One Bash at It!
 :geoo/steel/dark_16x16o.S: 368 172
 :geoo/sandstone/64x64: 256 336
 :geoo/sandstone/64x64: 320 336
-:geoo/steel/dark_64x64o.S: 576 336
-:geoo/steel/dark_64x64o.S: 128 336
-:geoo/steel/dark_64x64o.S: 64 336
-:geoo/steel/dark_64x64o.S: 0 336

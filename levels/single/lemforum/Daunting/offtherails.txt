@@ -1,17 +1,12 @@
-$BUILT 2016-04-14 21:12:15
+$BUILT 2016-08-06 00:33:27
 $AUTHOR Insane Steve
-$GERMAN 
-$ENGLISH Off the Rails
+$ENGLISH Railroad Plot
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 0
 #START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #INITIAL 30
 #REQUIRED 27
@@ -28,12 +23,13 @@ $ENGLISH Off the Rails
 #JUMPER 1
 #CUBER 1
 
-:matt/goldmine/GoalTop.D: 568 176
-
 :matt/goldmine/Hatch.H: 32 224
 
-:matt/goldmine/Goal.G: 568 224
+:matt/goldmine/Goal.G: 556 224
 
+:matt/goldmine/GoalTop.D: 556 176
+
+:proxima/tile/orange1: 148 208 rr
 :matt/goldmine/crate32: 452 208
 :matt/goldmine/crate16: 252 176
 :matt/goldmine/crate16: 284 176
@@ -80,10 +76,54 @@ $ENGLISH Off the Rails
 :geoo/steel/32x32o.S: 164 176
 :matt/goldmine/crate32: 148 144
 :matt/goldmine/explosivecrate: 244 208
-:matt/goldmine/crate64: 148 208
 :geoo/steel/32x32o.S: 212 240
 :matt/goldmine/planksupport: 0 272
 :matt/goldmine/planksupport: 512 272
+$BEGIN_TILE_GROUP 0
+:geoo/construction/concrete/008: 28 14
+:geoo/construction/concrete/008: 28 22
+:geoo/construction/concrete/008: 0 14
+:geoo/construction/concrete/008: 8 14
+:geoo/construction/concrete/008: 12 14
+:geoo/construction/concrete/008: 4 22
+:geoo/construction/concrete/008: 12 22
+:geoo/construction/concrete/008: 0 30
+:geoo/construction/concrete/008: 8 30
+:geoo/construction/concrete/008: 16 30
+:geoo/construction/concrete/008: 24 30
+:geoo/construction/concrete/008: 28 30
+:geoo/construction/concrete/008: 0 38
+:geoo/construction/concrete/008: 8 38
+:geoo/construction/concrete/008: 16 38
+:geoo/construction/concrete/008: 24 38
+:geoo/construction/concrete/008: 32 38
+:geoo/construction/concrete/016b: 36 30
+:amanda/occult/occult_scrawl_pentagram: 30 -2 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:Group-0: 0 0
+:geoo/construction/concrete/016va: 36 10 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:matt/goldmine/crate64: 0 0
+:Group-1: 10 12 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:amanda/occult/occult_wax_details_drip: 83 4
+:amanda/occult/occult_wax_details_drip: 69 4
+:amanda/occult/occult_wax_details_drip: 55 4
+:geoo/construction/concrete/032h: 53 0 d
+:geoo/construction/concrete/032h: 0 14 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 4
+:geoo/construction/concrete/032h: 0 44
+:geoo/construction/pillar_32: 38 28
+:geoo/construction/pillar_32: 64 29 d
+:geoo/construction/pillar_32: 38 0 d
+:Group-2: 0 32
+:Group-3: 10 76 d
+$END_TILE_GROUP
+:Group-4: 148 208
 :matt/goldmine/tracks: 80 264
 :matt/goldmine/tracks: 200 264
 :matt/goldmine/tracks: 320 264

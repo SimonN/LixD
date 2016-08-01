@@ -1,4 +1,4 @@
-$BUILT 2016-07-06 16:36:27
+$BUILT 2016-07-25 01:58:30
 $AUTHOR Insane Steve
 $ENGLISH Endeavor
 
@@ -20,7 +20,7 @@ $ENGLISH Endeavor
 #EXPLODER2 0
 
 :geoo/abstract/hatch.H: 736 336
-:geoo/abstract/hatch.H: 48 32
+:geoo/abstract/hatch.H: 64 32
 
 :geoo/abstract/goal.G: 0 32
 :geoo/abstract/goal.G: 48 320
@@ -30,7 +30,7 @@ $ENGLISH Endeavor
 :geoo/construction/Laser_hz_64.F: 336 240
 :geoo/construction/Laser_hz_64.F: 272 240
 
-:geoo/construction/steam_right.T: 128 80
+:geoo/construction/steam_right.T: 160 80
 
 :geoo/sandstone/pillar_top: 544 264
 :geoo/steel/32x32o.S: 768 368
@@ -91,7 +91,6 @@ $ENGLISH Endeavor
 :geoo/sandstone/slopes/32x32rb: 736 272
 :geoo/sandstone/32x32: 768 272
 :geoo/sandstone/32x32: 768 304
-:geoo/sandstone/32x16: 96 64
 :geoo/sandstone/pillar_32: 512 312
 :geoo/sandstone/pillar_32: 512 344
 :geoo/sandstone/pillar_32: 512 376
@@ -119,3 +118,5 @@ $ENGLISH Endeavor
 :geoo/sandstone/pillar_32: 704 -16
 :geoo/sandstone/64x64: 944 176
 :geoo/sandstone/64x64: 944 48
+:geoo/sandstone/32x16: 128 64
+:geoo/steel/32x32o.S: 128 80

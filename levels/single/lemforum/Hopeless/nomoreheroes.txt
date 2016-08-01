@@ -1,9 +1,9 @@
-$BUILT 2016-07-03 17:41:18
+$BUILT 2016-07-26 19:13:07
 $AUTHOR Insane Steve
 $ENGLISH No More Heroes
 
 #INTENDED_NUMBER_OF_PLAYERS 1
-#SIZE_X 784
+#SIZE_X 792
 #SIZE_Y 400
 
 #INITIAL 30
@@ -20,160 +20,153 @@ $ENGLISH No More Heroes
 #MINER 1
 #DIGGER 1
 #JUMPER 1
-#BATTER 1
 #EXPLODER2 0
 
-:simon/hatch001.H: 0 112
+:simon/hatch001.H: 8 112
 
-:simon/tapir/goal.G: 592 16
+:simon/tapir/goal.G: 568 16
 
-:geoo/sandstone/chopper.T: 480 176
-:geoo/sandstone/chopper.T: 528 176
+:geoo/sandstone/chopper.T: 456 176
+:geoo/sandstone/chopper.T: 504 176
 
-:geoo/construction/sawblade_small.F: 644 252
-:geoo/construction/sawblade_small.F: 660 284
-:geoo/construction/sawblade_small.F: 675 308
-:geoo/construction/sawblade_small.F: 704 322
-:geoo/construction/sawblade_small.F: 738 338
-:geoo/construction/sawblade_small.F: 622 210
-:geoo/construction/sawblade_small.F: 589 258
+:geoo/construction/sawblade_small.F: 598 210
+:geoo/construction/sawblade_small.F: 552 256
 
-:geoo/steel/32x64o.S: 768 336
+:simon/tapir/016v: 616 224
+:simon/tapir/016h: 264 172
+:simon/tapir/016h: 232 172
+:simon/tapir/016h: 200 172
+:simon/tapir/016h: 168 172
+:simon/tapir/016h: 136 172
+:simon/tapir/016h: 104 172
+:simon/tapir/016h: 72 172
+:simon/tapir/016h: 40 172
 $BEGIN_TILE_GROUP 0
-:geoo/steel/32x32o.S: 1 0
-:geoo/construction/concrete/032c: 0 0 rrrd
-$END_TILE_GROUP
-:Group-0: 736 340
-:Group-0: 700 326
-:Group-0: 669 314
-:Group-0: 656 288
-:Group-0: 640 256
-:simon/tapir/016v: 640 224
-:simon/tapir/032d: 701 314
-:simon/tapir/032d: 732 326
-:simon/tapir/016h: 288 172
-:simon/tapir/016h: 256 172
-:simon/tapir/016h: 224 172
-:simon/tapir/016h: 192 172
-:simon/tapir/016h: 160 172
-:simon/tapir/016h: 128 172
-:simon/tapir/016h: 96 172
-:simon/tapir/016h: 64 172
-:simon/tapir/016h: 32 172
-$BEGIN_TILE_GROUP 1
 :simon/tapir/016h: 0 0
 :simon/tapir/016h: 0 6 d
 $END_TILE_GROUP
-:Group-1: 32 176
-:Group-1: 64 176
-:Group-1: 96 176
-:Group-1: 128 176
-:Group-1: 160 176
-:Group-1: 192 176
-:Group-1: 224 176
-:simon/tapir/016h: 176 272
-:Group-1: 256 176
-:Group-1: 288 176
-:simon/tapir/016h: 280 384
-:simon/tapir/016h: 312 384
-:simon/tapir/016h: 208 272
-:simon/tapir/032: 384 176
-:simon/tapir/032: 352 128
-:simon/tapir/032: 352 96
-:simon/tapir/016h: 384 336
-:simon/tapir/032: 384 208
-:simon/tapir/064: 416 224
-:simon/tapir/016h: 416 208
-:simon/tapir/016h: 448 208
-:simon/tapir/032vb: 384 80
-:simon/tapir/032a: 384 144
-:simon/tapir/064: 512 224
-:simon/tapir/016h: 512 208
-:simon/tapir/016h: 544 208
-:simon/tapir/064: 416 288
-:simon/tapir/016h: 344 384
-:simon/tapir/016h: 376 384
-:simon/tapir/016h: 408 384
-:simon/tapir/016h: 440 384
-:simon/tapir/016h: 472 384
-:simon/tapir/016h: 536 384
-:simon/tapir/016h: 568 384
-:simon/tapir/032: 352 48
-:simon/tapir/032: 384 240
-:simon/tapir/016h: 352 80
-:simon/tapir/064: 688 192
-:simon/tapir/064: 688 128
-:simon/tapir/032vc: 656 256
-:simon/tapir/064: 688 256
-:simon/tapir/032: 384 272
-:simon/tapir/032: 384 304
-:simon/tapir/032: 480 208
-:simon/tapir/032: 480 240
-:simon/tapir/032: 480 272
-:simon/tapir/032: 480 304
-:simon/tapir/016h: 480 336
-:simon/tapir/016h: 504 384
-:simon/tapir/032vb: 752 96
-:simon/tapir/032: 752 192
-:simon/tapir/032c: 560 160
-:simon/tapir/032: 592 160
-:simon/tapir/032: 592 128
-:simon/tapir/032: 560 128
-:simon/tapir/032hc: 496 128
-:simon/tapir/032vb: 416 144
-:simon/tapir/032b: 720 64
-:simon/tapir/032: 688 96
-:simon/tapir/032hc: 688 320
-:geoo/steel/32x32o.S: 352 128
-:simon/tapir/016h: 32 160 d
-:simon/tapir/016h: 64 160 d
-:simon/tapir/016h: 96 160 d
-:simon/tapir/016h: 128 160 d
-:simon/tapir/016h: 160 160 d
-:simon/tapir/016h: 192 160 d
-:simon/tapir/016h: 224 160 d
-:simon/tapir/016h: 256 160 d
-:simon/tapir/016h: 288 160 d
-:simon/tapir/032: 688 64
-:simon/tapir/032: 720 96
-:simon/tapir/032: 752 160
-:simon/tapir/064: 560 64
-:simon/tapir/064: 624 64
-:simon/tapir/064: 496 64
-:simon/tapir/064: 432 64
-:simon/tapir/064: 624 128
-:simon/tapir/032v: 656 192
-:simon/tapir/016va: 640 192
-:Group-0: 608 224
-:Group-0: 640 352
-:simon/tapir/032: 576 304
-:simon/tapir/016h: 576 336
-:simon/tapir/064: 512 288
-:simon/tapir/032v: 608 288
-:simon/tapir/016hd: 600 384
-:Group-0: 576 272
-:simon/tapir/032d: 576 256
+:Group-0: 40 176
+:Group-0: 72 176
+:Group-0: 104 176
+:Group-0: 136 176
+:Group-0: 168 176
+:Group-0: 200 176
+:Group-0: 232 176
+:simon/tapir/016h: 184 272
+:Group-0: 264 176
+:simon/tapir/016h: 328 384
+:simon/tapir/016h: 216 272
+:simon/tapir/032: 360 176
+:simon/tapir/032: 328 128
+:simon/tapir/032: 328 96
+:simon/tapir/016h: 360 208
+:simon/tapir/032: 360 224
+:simon/tapir/064: 392 208
+:simon/tapir/016h: 392 336
+:simon/tapir/016h: 424 336
+:simon/tapir/032vb: 360 80
+:simon/tapir/032a: 360 144
+:simon/tapir/064: 488 208
+:simon/tapir/016h: 488 336
+:simon/tapir/016h: 520 336
+:simon/tapir/016h: 360 384
+:simon/tapir/016h: 392 384
+:simon/tapir/016h: 424 384
+:simon/tapir/016h: 456 384
+:simon/tapir/016h: 488 384
+:simon/tapir/016h: 552 384
+:simon/tapir/016h: 584 384
+:simon/tapir/032: 360 256
+:simon/tapir/016h: 328 80
+:simon/tapir/064: 664 192
+:simon/tapir/064: 664 128
+:simon/tapir/032vc: 632 256
+:simon/tapir/064: 664 256
+:simon/tapir/032: 360 288
+:simon/tapir/032: 360 320
+:simon/tapir/032: 456 224
+:simon/tapir/032: 456 256
+:simon/tapir/032: 456 288
+:simon/tapir/032: 456 320
+:simon/tapir/016h: 456 208
+:simon/tapir/016h: 520 384
+:simon/tapir/032vb: 728 96
+:simon/tapir/032: 728 192
+:simon/tapir/032c: 536 160
+:simon/tapir/032: 568 160
+:simon/tapir/032: 568 128
+:simon/tapir/032: 536 128
+:simon/tapir/032hc: 472 128
+:simon/tapir/032vb: 392 144
+:simon/tapir/032b: 696 64
+:simon/tapir/032: 664 96
+:simon/tapir/032hc: 696 352
+:geoo/steel/32x32o.S: 328 128
+:simon/tapir/016h: 40 160 d
+:simon/tapir/016h: 72 160 d
+:simon/tapir/016h: 104 160 d
+:simon/tapir/016h: 136 160 d
+:simon/tapir/016h: 168 160 d
+:simon/tapir/016h: 200 160 d
+:simon/tapir/016h: 232 160 d
+:simon/tapir/016h: 264 160 d
+:simon/tapir/032: 664 64
+:simon/tapir/032: 696 96
+:simon/tapir/032: 728 160
+:simon/tapir/064: 536 64
+:simon/tapir/064: 600 64
+:simon/tapir/064: 472 64
+:simon/tapir/064: 408 64
+:simon/tapir/064: 600 128
+:simon/tapir/032v: 632 192
+:simon/tapir/016va: 616 192
+$BEGIN_TILE_GROUP 1
+:geoo/steel/32x32o.S: 1 0
+:geoo/construction/concrete/032c: 0 0 rrrd
+$END_TILE_GROUP
+:Group-1: 584 224
+:simon/tapir/032: 552 320
+:simon/tapir/016h: 552 208
+:simon/tapir/064: 488 272
+:simon/tapir/016h: 264 384
+:simon/tapir/032: 728 256
+:simon/tapir/032: 728 224
+:simon/tapir/032: 728 288
+:simon/tapir/032: 728 320
+:simon/tapir/032: 552 224
+:simon/tapir/032vb: 760 160
+:simon/tapir/064: 760 224
+:simon/tapir/064: 760 288
+:simon/tapir/032a: 328 48
+:simon/tapir/032: 552 256
+:simon/tapir/032: 552 288
+:simon/tapir/064: 392 272
+:simon/tapir/016h: 296 384
+:simon/tapir/016h: 648 384
+:simon/tapir/016h: 680 384
+:simon/tapir/016h: 616 384
+:simon/tapir/016h: 744 384
+:simon/tapir/016h: 776 384
+:simon/tapir/016h: 712 384
+:simon/tapir/016h: 232 384
+:simon/tapir/032c: 664 320
+:simon/tapir/032: 760 352
+:simon/tapir/032a: 616 352
+:matt/winter/09c: 560 260 d
+:matt/winter/09c: 560 268 d
+:matt/winter/09c: 564 264 d
+:matt/winter/09c: 556 264 d
+:matt/winter/09c: 557 261 d
+:matt/winter/09c: 563 261 d
+:matt/winter/09c: 563 267 d
+:matt/winter/09c: 557 267 d
 $BEGIN_TILE_GROUP 2
-:geoo/steel/32x32o.S: 0 0
-:geoo/construction/concrete/032c: 1 0 d
+:geoo/steel/32x32o.S: 0 14
+:geoo/construction/concrete/032c: 3 16 d
+:simon/tapir/016h: 2 0 d
 $END_TILE_GROUP
-:Group-2: 608 256
-:Group-2: 672 352
-$BEGIN_TILE_GROUP 3
-:geoo/steel/32x64o.S: 0 0
-:simon/tapir/032vc: 1 0 d
-$END_TILE_GROUP
-:Group-3: 640 288
-:geoo/steel/32x16o.S: 640 384
-:geoo/steel/32x16o.S: 672 384
-:geoo/steel/32x16o.S: 704 384
-:geoo/steel/32x16o.S: 736 384
-:Group-0: 608 384
-:simon/tapir/016h: 248 384
-:simon/tapir/016h: 224 384
-:simon/tapir/032: 752 256
-:simon/tapir/032: 752 224
-:simon/tapir/032: 752 288
-:simon/tapir/032: 752 320
-:simon/tapir/032: 576 208
-:simon/tapir/016h: 576 240
+:Group-2: 584 256
+:simon/tapir/032vb: 616 288
+:simon/tapir/032v: 584 288
+:simon/tapir/032b: 648 352
+:simon/tapir/032: 696 320
