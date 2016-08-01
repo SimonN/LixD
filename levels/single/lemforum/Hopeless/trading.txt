@@ -1,15 +1,10 @@
-$BUILT 2016-04-30 15:35:50
+$BUILT 2016-08-02 23:44:54
 $AUTHOR geoo
-$GERMAN 
 $ENGLISH Trading and Cooperating
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1050
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #INITIAL 11
 #REQUIRED 10
@@ -51,6 +46,106 @@ $ENGLISH Trading and Cooperating
 :geoo/construction/sawblade_small.F: 782 74
 :geoo/construction/sawblade_small.F: 236 74
 
+:matt/marble/20d: 754 332 r
+:matt/marble/20d: 818 332 r
+:matt/marble/20d: 168 332 r
+:matt/marble/20d: 232 332 r
+:matt/marble/20a: 446 -4
+:matt/marble/20a: 592 -4
+:geoo/construction/platform.S: 260 62
+:geoo/construction/platform.S: 264 60
+:matt/marble/20d: 254 60
+:matt/marble/21c: 240 176
+$BEGIN_TILE_GROUP 0
+:matt/marble/21c: 0 32
+:matt/marble/20d: 34 0
+:matt/marble/20d: 38 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:matt/marble/20d: 78 0
+:matt/marble/21c: 0 48
+:Group-0: 48 0
+:matt/marble/20d: 66 0 d
+$END_TILE_GROUP
+:Group-1: 176 144
+$BEGIN_TILE_GROUP 2
+:matt/marble/20d: 0 0
+:matt/marble/20d: 4 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:matt/marble/20d: 12 20
+:geoo/construction/platform.S: 30 0
+:geoo/construction/platform.S: 22 0
+:geoo/construction/platform.S: 26 2
+:geoo/construction/platform.S: 18 2
+:Group-2: 16 20
+:matt/marble/20d: 0 20 d
+:matt/marble/20d: 16 0
+:matt/marble/20d: 20 0 d
+$END_TILE_GROUP
+:Group-3: 258 60
+$BEGIN_TILE_GROUP 4
+:matt/marble/20d: 22 0
+:matt/marble/20d: 10 0 d
+:matt/marble/20d: 0 64 r
+:matt/marble/20d: 0 68 rd
+$END_TILE_GROUP
+:Group-4: 232 272
+:matt/marble/20d: 254 208
+:geoo/construction/platform.S: 754 60
+:geoo/construction/platform.S: 750 62
+$BEGIN_TILE_GROUP 5
+:matt/marble/21c: 0 48
+:matt/marble/20d: 18 0
+:matt/marble/20d: 22 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 6
+:matt/marble/20d: 48 16
+:matt/marble/21c: 0 0
+:Group-5: 34 16
+:matt/marble/20d: 36 16 d
+:matt/marble/20d: 52 0
+:matt/marble/20d: 56 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 7
+:matt/marble/20d: 94 0
+:Group-6: 46 0
+:matt/marble/21c: 0 48
+:matt/marble/21c: 16 48
+:matt/marble/20d: 34 16
+:matt/marble/20d: 38 16 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 8
+:matt/marble/20d: 30 16
+:Group-7: 0 0
+:matt/marble/20d: 18 16 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 9
+:matt/marble/21c: 0 96
+:Group-8: 0 48
+:matt/marble/20d: 34 0
+:matt/marble/20d: 38 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 10
+:matt/marble/20d: 30 20
+:Group-9: 0 20
+:matt/marble/20d: 18 20 d
+:matt/marble/20d: 34 0
+:matt/marble/20d: 38 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 11
+:matt/marble/20d: 30 0
+:Group-10: 0 0
+:matt/marble/20d: 18 0 d
+$END_TILE_GROUP
+:Group-11: 746 60
+:matt/marble/20d: 776 208
+:Group-4: 754 272
+:Group-4: 818 272
+:matt/marble/20d: 840 208
+:Group-4: 168 272
+:matt/marble/20d: 190 208
+:matt/marble/20d: 190 128
 :matt/carnival/35: 570 80
 :matt/carnival/34: 634 80
 :matt/carnival/35: 634 112
@@ -60,7 +155,6 @@ $ENGLISH Trading and Cooperating
 :geoo/construction/platform.S: 368 60
 :matt/marble/21c: 572 160
 :matt/marble/21c: 682 160
-:matt/marble/21c: 746 176
 :matt/marble/21c: 692 160
 :matt/marble/20d: 906 288
 :matt/marble/20d: 922 272
@@ -69,11 +163,8 @@ $ENGLISH Trading and Cooperating
 :geoo/steel/dark_64x64.S: 946 336
 :geoo/construction/platform.S: 336 60
 :geoo/construction/platform.S: 304 60
-:geoo/construction/platform.S: 272 60
-:geoo/construction/platform.S: 264 60
 :matt/marble/21c: 414 160
 :matt/marble/21c: 336 160
-:matt/marble/21c: 176 192
 :matt/marble/21c: 954 240
 :matt/carnival/25: 986 192
 :matt/marble/21c: 32 240
@@ -93,7 +184,6 @@ $ENGLISH Trading and Cooperating
 :matt/carnival/34: 414 128 frr
 :matt/carnival/34: 572 128
 :matt/marble/21c: 698 128
-:matt/marble/21c: 792 128
 :geoo/steel/dark_64x64.S: 626 336
 :geoo/steel/dark_64x64.S: 690 336
 :geoo/construction/platform.S: 706 60
@@ -105,8 +195,6 @@ $ENGLISH Trading and Cooperating
 :geoo/construction/platform.S: 364 62
 :geoo/construction/platform.S: 332 62
 :geoo/construction/platform.S: 300 62
-:geoo/construction/platform.S: 268 62
-:geoo/construction/platform.S: 260 62
 :geoo/construction/platform.S: 702 62
 :geoo/construction/platform.S: 670 62
 :geoo/construction/platform.S: 638 62
@@ -123,9 +211,7 @@ $ENGLISH Trading and Cooperating
 :matt/carnival/01: 730 112
 :matt/marble/21c: 288 160
 :matt/marble/21c: 698 160
-:matt/marble/21c: 762 176
 :matt/carnival/25: 0 192
-:matt/marble/21c: 826 192
 :matt/marble/21c: 906 208
 :matt/marble/20d: 906 224
 :matt/marble/20d: 922 224
@@ -184,133 +270,57 @@ $ENGLISH Trading and Cooperating
 :geoo/steel/16x16o.S: 906 278
 :geoo/construction/platform_single.S: 116 310
 :geoo/construction/platform_single.S: 926 310
-:matt/marble/20d: 194 128
-:matt/marble/20d: 198 128 d
-:matt/marble/20d: 190 128 n
+:Group-2: 194 128
 :matt/marble/20d: 178 128 d
 :matt/marble/21c: 160 192
-:matt/marble/20d: 194 208
-:matt/marble/20d: 198 208 d
-:matt/marble/20d: 190 208 n
+:Group-2: 194 208
 :matt/marble/20d: 178 208 d
-:matt/marble/20d: 194 272
-:matt/marble/20d: 198 272 d
-:matt/marble/20d: 190 272 n
-:matt/marble/20d: 178 272 d
-:matt/marble/20d: 844 144
-:matt/marble/20d: 848 144 d
-:matt/marble/20d: 840 144 n
-:matt/marble/20d: 828 144 d
+:Group-2: 194 272
 :matt/marble/21c: 810 192
-:matt/marble/20d: 844 208
-:matt/marble/20d: 848 208 d
-:matt/marble/20d: 840 208 n
+:Group-2: 844 208
 :matt/marble/20d: 828 208 d
-:matt/marble/20d: 844 272
-:matt/marble/20d: 848 272 d
-:matt/marble/20d: 840 272 n
-:matt/marble/20d: 828 272 d
-:matt/marble/20d: 844 128
-:matt/marble/20d: 848 128 d
-:matt/marble/20d: 840 128 n
+:Group-2: 844 272
 :matt/marble/20d: 828 128 d
-:matt/marble/20d: 780 272
-:matt/marble/20d: 784 272 d
-:matt/marble/20d: 776 272 n
-:matt/marble/20d: 764 272 d
-:matt/marble/20d: 780 208
-:matt/marble/20d: 784 208 d
-:matt/marble/20d: 776 208 n
+:Group-2: 780 272
+:Group-2: 780 208
 :matt/marble/20d: 764 208 d
-:matt/marble/20d: 780 144
-:matt/marble/20d: 784 144 d
-:matt/marble/20d: 776 144 n
-:matt/marble/20d: 764 144 d
-:matt/marble/21c: 746 176 n
-:matt/marble/20d: 780 80
-:matt/marble/20d: 784 80 d
-:matt/marble/20d: 776 80 n
 :matt/marble/21c: 780 128
-:matt/marble/20d: 764 80 d
 :matt/marble/21c: 718 128
 :matt/carnival/53: 698 112
-:matt/marble/20d: 780 60
-:matt/marble/20d: 784 60 d
-:matt/marble/20d: 776 60 n
-:matt/marble/20d: 764 60 d
-:geoo/construction/platform.S: 750 62 n
-:geoo/construction/platform.S: 754 60 n
-:matt/marble/20d: 258 208
-:matt/marble/20d: 262 208 d
-:matt/marble/20d: 254 208 n
+:Group-2: 258 208
 :matt/marble/20d: 242 208 d
-:matt/marble/20d: 258 272
-:matt/marble/20d: 262 272 d
-:matt/marble/20d: 254 272 n
-:matt/marble/20d: 242 272 d
-:matt/marble/20d: 258 80
-:matt/marble/20d: 262 80 d
-:matt/marble/20d: 254 80 n
-:matt/marble/20d: 242 80 d
+:Group-2: 258 272
 :matt/marble/21c: 206 128
 :matt/marble/21c: 248 128
 :matt/carnival/54: 288 112
-:matt/marble/21c: 224 176
-:matt/marble/20d: 258 144
-:matt/marble/20d: 262 144 d
-:matt/marble/20d: 254 144 n
-:matt/marble/20d: 242 144 d
-:matt/marble/21c: 240 176 n
-:matt/marble/20d: 258 60
-:matt/marble/20d: 262 60 d
-:matt/marble/20d: 254 60 n
-:geoo/construction/platform.S: 264 60 n
-:geoo/construction/platform.S: 260 62 n
 :matt/marble/20d: 242 60 d
-:matt/marble/20a: 588 -4
-:matt/marble/20a: 580 -4 d
+$BEGIN_TILE_GROUP 12
+:matt/marble/20a: 8 0
+:matt/marble/20a: 0 0 d
+$END_TILE_GROUP
+:Group-12: 596 -4
 :matt/carnival/35: 522 0
-:matt/marble/20a: 592 -4 n
 :matt/marble/20a: 604 -4 d
-:matt/marble/20a: 442 -4
-:matt/marble/20a: 434 -4 d
-:matt/marble/20a: 446 -4 n
+:Group-12: 450 -4
 :matt/marble/20a: 458 -4 d
 :matt/carnival/35: 464 0 frr
 :geoo/construction/platform.S: 586 60
-:geoo/construction/platform_single.S: 580 58
-:geoo/construction/platform_single.S: 578 56
-:geoo/construction/platform_single.S: 576 54
+:geoo/construction/platform_single.S: 578 54
 :geoo/construction/platform.S: 590 62
-:geoo/construction/platform_single.S: 574 56 d
-:geoo/construction/platform_single.S: 576 58 d
-:geoo/construction/platform_single.S: 578 60 d
-:geoo/construction/platform_single.S: 570 54 d
+:geoo/construction/platform_single.S: 572 54 d
 :geoo/construction/platform.S: 432 60
-:geoo/construction/platform_single.S: 462 58
+:geoo/construction/platform_single.S: 460 58
 :geoo/construction/platform.S: 432 60
-:geoo/construction/platform_single.S: 464 56
-:geoo/construction/platform_single.S: 466 54
+:geoo/construction/platform_single.S: 462 56
+:geoo/construction/platform_single.S: 464 54
 :geoo/construction/platform.S: 428 62
 :geoo/construction/platform.S: 428 62
-:geoo/construction/platform_single.S: 468 56 d
-:geoo/construction/platform_single.S: 466 58 d
+:geoo/construction/platform_single.S: 466 56 d
+:geoo/construction/platform_single.S: 464 58 d
 :geoo/construction/platform_single.S: 464 60 d
-:geoo/construction/platform_single.S: 472 54 d
+:geoo/construction/platform_single.S: 470 54 d
 :matt/marble/20a: 590 -48 d
 :matt/marble/20a: 444 -48 d
-:matt/marble/20d: 232 336 r
-:matt/marble/20d: 232 340 rd
-:matt/marble/20d: 232 332 rn
-:matt/marble/20d: 168 336 r
-:matt/marble/20d: 168 340 rd
-:matt/marble/20d: 168 332 rn
-:matt/marble/20d: 818 336 r
-:matt/marble/20d: 818 340 rd
-:matt/marble/20d: 818 332 rn
-:matt/marble/20d: 754 336 r
-:matt/marble/20d: 754 340 rd
-:matt/marble/20d: 754 332 rn
 :geoo/construction/squarebrick_large: 748 304 d
 :geoo/construction/squarebrick_large: 792 304 d
 :geoo/steel/dark_16x16o.S: 778 334
@@ -323,3 +333,11 @@ $ENGLISH Trading and Cooperating
 :geoo/steel/dark_16x16o.S: 256 334
 :geoo/construction/squarebrick_large: 162 304 d
 :geoo/steel/dark_16x16o.S: 192 334
+$BEGIN_TILE_GROUP 13
+:geoo/construction/platform_single.S: 4 0
+:geoo/construction/platform_single.S: 0 0 d
+$END_TILE_GROUP
+:Group-13: 586 58
+:Group-13: 584 56
+:geoo/construction/platform_single.S: 580 60 d
+:geoo/construction/platform_single.S: 462 60 d

@@ -1,4 +1,4 @@
-$BUILT 2016-07-19 17:21:59
+$BUILT 2016-08-03 01:29:41
 $AUTHOR geoo
 $ENGLISH Minimalism
 
@@ -17,9 +17,9 @@ $ENGLISH Minimalism
 #BATTER 1
 #EXPLODER2 0
 
-:geoo/abstract/hatch.H: 304 136
+:geoo/abstract/hatch.H: 224 136
 
-:geoo/abstract/goal.G: 160 176
+:geoo/abstract/goal.G: 144 176
 
 :geoo/abstract/pipes/central0: 128 224
 :geoo/abstract/pipes/central0: 160 224
