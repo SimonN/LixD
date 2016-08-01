@@ -91,7 +91,7 @@ public:
         else
             _preExtension = 0;
 
-        // Determine the file. This is done similar as finding the extension.
+        // Determine the file.
         int lastSlash = _rootless.len - 1;
         while (lastSlash >= 0 && _rootless[lastSlash] != '/')
             --lastSlash;
@@ -100,9 +100,13 @@ public:
             _dirRootless = _rootless[0 .. lastSlash + 1];
         }
         else {
-            _file         = "";
+            _file = "";
             _dirRootless = _rootless;
         }
+        // _fileNoExts is _file chopped off at the dot before the pre-ext.
+        // If there is no pre-ext, it's _file chopped off at dot before ext.
+        int fp = _file.len - _extension.len - (_preExtension == 0 ? 0 : 2);
+        _fileNoExts = fp > 0 ? _file[0 .. fp] : _file;
 
         // find the innermost dir, based on the now-set dirRootless.
         // sls = "second-last slash"
@@ -115,13 +119,6 @@ public:
         // sls can be -1, or somewhere in the file. Start behind this.
         // Contain the trailing slash of the directory.
         _dirInnermost = _dirRootless[sls + 1 .. $];
-
-        // For fileNoExts, find the first dot in file
-        int firstDot = 0;
-        for (; firstDot < _file.length; ++firstDot) {
-            if (_file[firstDot] == '.') break;
-        }
-        _fileNoExts = _file[0 .. firstDot];
     }
 
     override bool
@@ -181,3 +178,17 @@ public:
     }
 }
 // end class
+
+unittest
+{
+    Filename a = new Filename("./mydir/anotherdir/many.dots.in.this.one.txt");
+    assert (a.extension == ".txt");
+    assert (a.preExtension == 0);
+    assert (a.file == "many.dots.in.this.one.txt");
+    assert (a.fileNoExtNoPre == "many.dots.in.this.one");
+
+    Filename b = new Filename("./mydir/anotherdir/myfile.with.dots.P.txt");
+    assert (b.preExtension == 'P');
+    assert (b.file == "myfile.with.dots.P.txt");
+    assert (b.fileNoExtNoPre == "myfile.with.dots");
+}

@@ -33,9 +33,10 @@ public:
         _currentDir = newDir;
         if (! currentDir)
             return currentDir;
-        auto tempD = findDirsNoRecursion(currentDir);
+        auto tempD = findDirsNoRecursion(currentDir)
+            .filter!(f => visibleCriterion(f)).array;
         auto tempF = findRegularFilesNoRecursion(currentDir)
-            .filter!(f => searchCriterion(f)).array;
+            .filter!(f => searchCriterion(f) && visibleCriterion(f)).array;
         beforeSortingForCurrentDir();
         sortDirs (tempD);
         sortFiles(tempF);
@@ -78,10 +79,20 @@ public:
     }
 
 protected:
-    bool searchCriterion(Filename) const { return true; }
     void beforeSortingForCurrentDir() { }
     void sortDirs (MutFilename[]) const { }
     void sortFiles(MutFilename[]) const { }
+
+    bool searchCriterion(Filename) const { return true; }
+    bool visibleCriterion(Filename fn) const
+    {
+        if (fn.preExtension == basics.globals.preExtHiddenFile)
+            return false; // .X.txt
+        else if (fn.fileNoExtNoPre.length > 1)
+            return fn.fileNoExtNoPre[0] != '.'; // no Unix hidden file
+        else
+            return fn.dirInnermost.length == 0 || fn.dirInnermost[0] != '.';
+    }
 }
 
 class AlphabeticalLs : Ls {
@@ -96,11 +107,6 @@ private:
     string[] _order;
 
 protected:
-    override bool searchCriterion(Filename fn) const
-    {
-        return fn.preExtension != basics.globals.preExtHiddenFile;
-    }
-
     final override void beforeSortingForCurrentDir()
     {
         try _order = fillVectorFromFileRaw(new Filename(
