@@ -1,6 +1,35 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.11
+------
+
+2016-08-06
+
+lemforum pack: Many updates by Proxima and geoo. Fewer lix in Hopeless.
+geoo has rebuilt Spin Geometry with completely new terrain, and renamed it
+to All Aboard the Pain Train. Off the Rails is now Railroad Plot, and
+Derailed Level got a derailing locomotive as decoration.
+
+Fix #117: Name-asking menu for new players exits with plain Esc. I don't
+display anything for this.
+
+Fix #131 and #111: Simpler starting zoom. Depending on your game
+resolution, either all levels start as 1x or all levels start as 2x. Test
+and see if you like the zoom for your resolution.
+
+Fix #122: When you continue from a saved replay, then win, or save
+manually, the new replay goes into the correct directory and points to the
+correct level file.
+
+Fix #133: The singleplayer menu shows the player's best score: Lix saved
+and skills used.
+
+Fix #138: Editor hotkeys work even while you're dragging. The buttons on
+screen are disabled for the mouse during drag.
+
+Fix #127: I hide dot-files, like .git, in level directories.
+
 0.6.10
 ------
 

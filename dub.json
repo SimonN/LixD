@@ -24,6 +24,7 @@
         "allegro_image",
         "allegro_color",
         "allegro_primitives",
+        "allegro_main",
     ],
     "lflags": ["-lallegro"],
     "libs-windows": ["allegro"],
