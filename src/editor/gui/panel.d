@@ -97,36 +97,21 @@ public:
     // this.info(string text). We don't want to run calc() and all children's
     // calcSelf() during dragging, that's why the editor registers the panel
     // as a drawingOnlyElder.
-    void calcOnlyTheInfoBar()
+    void calcButDisableMouse()
     {
-        assert (_info);
-        _info.down = false;
-        _info.text = "";
-        if (basics.user.showFPS.value)
-            _fps.text = "FPS: %d".format(displayFps);
+        calcInfoBar();
+        foreach (bb; _buttons) {
+            if (bb.hotkey.keyHeld)
+                bb.calc();
+            bb.down = false;
+        }
     }
 
 protected:
     override void calcSelf()
     {
-        calcOnlyTheInfoBar();
-        foreach (id, bb; _buttons)
-            if (bb.isMouseHere) {
-                try _info.text = (id+Lang.editorButtonFileNew).to!Lang.transl;
-                catch (ConvException) { }
-                if (id + Lang.editorButtonFileNew == Lang.editorButtonFileSave
-                    && _currentFilename !is null
-                ) {
-                    _info.text = "%s %s".format(_info.text,
-                                        _currentFilename.rootful);
-                }
-            }
-        foreach (id, tb; _textButtons)
-            if (tb.isMouseHere) {
-                try _info.text = (id + Lang.editorButtonMenuConstants)
-                                   .to!Lang.transl;
-                catch (ConvException) { }
-            }
+        calcInfoBar();
+        writeButtonTooltips();
     }
 
 private:
@@ -165,5 +150,35 @@ private:
                             0, i * textYl, textXl, textYl, From.TOP_RIGHT));
             addChild(_textButtons[$-1]);
         }
+    }
+
+    void calcInfoBar()
+    {
+        assert (_info);
+        _info.down = false;
+        _info.text = "";
+        if (basics.user.showFPS.value)
+            _fps.text = "FPS: %d".format(displayFps);
+    }
+
+    void writeButtonTooltips()
+    {
+        foreach (id, bb; _buttons)
+            if (bb.isMouseHere) {
+                try _info.text = (id+Lang.editorButtonFileNew).to!Lang.transl;
+                catch (ConvException) { }
+                if (id + Lang.editorButtonFileNew == Lang.editorButtonFileSave
+                    && _currentFilename !is null
+                ) {
+                    _info.text = "%s %s".format(_info.text,
+                                        _currentFilename.rootful);
+                }
+            }
+        foreach (id, tb; _textButtons)
+            if (tb.isMouseHere) {
+                try _info.text = (id + Lang.editorButtonMenuConstants)
+                                   .to!Lang.transl;
+                catch (ConvException) { }
+            }
     }
 }

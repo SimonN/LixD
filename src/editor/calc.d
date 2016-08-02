@@ -35,7 +35,7 @@ void calcNoWindows(Editor editor) {
     if (! _dragger.framing && ! _dragger.moving)
         _panel.calc();
     else
-        _panel.calcOnlyTheInfoBar();
+        _panel.calcButDisableMouse();
     editor.handleNonstandardPanelButtons();
     editor.hoverTiles();
     editor.selectTiles();
