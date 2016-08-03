@@ -1,5 +1,12 @@
 module game.replay.replay;
 
+/* Replay: Holds all history for a game, but not the physical map.
+ *
+ * The game relies on the players in the replay to map PlNrs to Styles.
+ * The game or the game's Nurse uses the Style to look up the Tribe.
+ * The Tribe is a team, and the game thinks in terms of Tribes, not PlNrs.
+ */
+
 import core.stdc.string; // memmove
 import std.algorithm; // isSorted
 
@@ -91,6 +98,14 @@ public:
             if (pl.number == playerLocal)
                 return pl.name;
         return null;
+    }
+
+    Style plNrToStyle(in PlNr plnr) const
+    {
+        foreach (pl; _players)
+            if (pl.number == plnr)
+                return pl.style;
+        return Style.garden;
     }
 
     void touch()
@@ -188,14 +203,14 @@ public:
         this.addWithoutTouching(d);
     }
 
-    void saveAsAutoReplay(in Filename levelFn, in Level lev, bool solves) const
+    void saveAsAutoReplay(in Level lev, bool solves) const
     {
-        this.implSaveAsAutoReplay(levelFn, lev, solves);
+        this.implSaveAsAutoReplay(lev, solves);
     }
 
-    void saveManually(in Filename levelFn, in Level lev) const
+    void saveManually(in Level lev) const
     {
-        this.implSaveManually(levelFn, lev);
+        this.implSaveManually(lev);
     }
 
 package:

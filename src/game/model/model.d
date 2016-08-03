@@ -9,6 +9,9 @@ module game.model.model;
  * and have her check the replay!
  */
 
+import std.algorithm;
+import std.conv;
+
 import basics.help; // len
 import basics.nettypes;
 import hardware.tharsis;
@@ -68,13 +71,12 @@ public:
     }
 
     void applyReplayData(
-        in int trID,
-        in Tribe.Master* master,
-        ref const(ReplayData) i
+        ref const(ReplayData) i,
+        in Style tribeStyle
     ) {
         assert (i.update == _cs.update,
             "increase update manually before applying replay data");
-        implApplyReplayData(trID, master, i);
+        implApplyReplayData(i, tribeStyle);
     }
 
     void advance(in Permu permu)
@@ -109,19 +111,21 @@ private:
 
     void
     implApplyReplayData(
-        in int trID,
-        in Tribe.Master* master,
-        ref const(ReplayData) i
+        ref const(ReplayData) i,
+        in Style tribeStyle,
     ) {
         immutable upd = _cs.update;
-        Tribe tribe   = _cs.tribes[trID];
+        immutable int trID = _cs.tribes.countUntil!(
+                             tr => tr.style == tribeStyle).to!int;
+        if (trID < 0)
+            return;
+        Tribe tribe = _cs.tribes[trID];
 
         if (i.isSomeAssignment) {
             // never assert based on the content in ReplayData, which may have
             // been a maleficious attack from a third party, carrying a lix ID
-            // that is not valid. If bogus data comes, return from this function.
-            if (! master || i.toWhichLix < 0 ||
-                            i.toWhichLix >= tribe.lixvec.len)
+            // that is not valid. If bogus data comes, do nothing.
+            if (i.toWhichLix < 0 || i.toWhichLix >= tribe.lixvec.len)
                 return;
             Lixxie lixxie = tribe.lixvec[i.toWhichLix];
             assert (lixxie);

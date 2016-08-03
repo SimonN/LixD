@@ -27,14 +27,13 @@ GameState newZeroState(in Level level)
         s.lookup = new Phymap(level.topology);
         drawTerrainTo(s.land, s.lookup);
     }
-
     s.preparePlayers(level);
     s.prepareGadgets(level);
     s.assignTribesToGoals();
-
     s.foreachGadget((Gadget g) {
         g.drawLookup(s.lookup);
     });
+    s.update = s.tribes.length == 1 ? 45 : 0; // start quickly in 1-player
     return s;
 }
 
@@ -45,12 +44,10 @@ void preparePlayers(GameState state, in Level level)
     assert (state);
     assert (state.tribes == null);
 
-    // Make one singleplayer tribe. DTODONETWORK: Query the network to make
-    // the correct number of tribes, with the correct masters in each.
+    // DTODONETWORK: look up how many players to make
     state.tribes ~= new Tribe();
-    import basics.nettypes; // PlNr
-    state.tribes[0].masters ~= Tribe.Master(PlNr(0), basics.globconf.userName);
-    state.update = state.tribes.length == 1 ? 45 : 0; // start quickly in 1-pl
+    state.tribes[0].style = Style.garden;
+
     foreach (tr; state.tribes) {
         tr.lixInitial   = level.initial;
         tr.lixRequired  = level.required;

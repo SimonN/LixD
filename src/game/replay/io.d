@@ -38,20 +38,19 @@ nothrow void implSaveToFile(
 
 void implSaveAsAutoReplay(
     in Replay replay,
-    in Filename levelFn,
     in Level lev,
     bool solves
 ) {
     immutable bool multi = (replay._players.length > 1);
     if (multi && basics.user.replayAutoMulti.value)
-        replay.saveToTree(basics.globals.dirReplayAutoMulti, levelFn, lev);
+        replay.saveToTree(basics.globals.dirReplayAutoMulti, lev);
     if (! multi && solves && basics.user.replayAutoSolutions.value)
-        replay.saveToTree(basics.globals.dirReplayAutoSolutions, levelFn, lev);
+        replay.saveToTree(basics.globals.dirReplayAutoSolutions, lev);
 }
 
-void implSaveManually(in Replay replay, Filename levelFn, in Level lev)
+void implSaveManually(in Replay replay, in Level lev)
 {
-    replay.saveToTree(basics.globals.dirReplayManual, levelFn, lev);
+    replay.saveToTree(basics.globals.dirReplayManual, lev);
 }
 
 auto implLoadFromFile(Replay replay, Filename fn) { with (replay)
@@ -190,20 +189,19 @@ string mangledLevelFilename(in Replay replay)
 void saveToTree(
     in Replay   replay,
     in Filename treebase,
-    in Filename levelFn,
     in Level lev
 ) {
     string outfile = "%s%s%s-%s-%s%s".format(
         treebase.rootful,
-        mimickLevelPath(levelFn),
-        levelFn.fileNoExtNoPre,
+        replay.mimickLevelPath(),
+        replay.levelFilename ? replay.levelFilename.fileNoExtNoPre : "unknown",
         replay.playerLocalName.escapeStringForFilename(),
         Date.now().toStringForFilename(),
         basics.globals.filenameExtReplay);
     replay.implSaveToFile(new Filename(outfile), lev);
 }
 
-string mimickLevelPath(in Filename levelFn)
+string mimickLevelPath(in Replay replay)
 out (result) {
     assert (result == "" || result[0]   != '/');
     assert (result == "" || result[$-1] == '/');
@@ -215,7 +213,9 @@ body {
         if (str.length >= front.length && str[0 .. front.length] == front)
             str = str[front.length .. $];
     }
-    string path = levelFn.dirRootless;
+    if (! replay || ! replay.levelFilename)
+        return "";
+    string path = replay.levelFilename.dirRootless;
     [   dirLevelsSingle, dirLevelsNetwork, dirLevels,
         dirReplayAutoSolutions, dirReplayAutoMulti, dirReplayManual, dirReplays
         ].each!(dir => cutFront(path, dir.dirRootless));

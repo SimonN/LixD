@@ -43,9 +43,7 @@ import lix; // _drawHerHighlit
 class Game {
 package:
     immutable Runmode runmode;
-
-    Level     level;
-    Filename  levelFilename;
+    Level level;
     Map map; // The map does not hold the referential level image, that's
              // in cs.land and cs.lookup. Instead, the map loads a piece
              // of that land, blits gadgets and lixes on it, and blits the
@@ -54,7 +52,6 @@ package:
     EffectManager effect;
 
     int _indexTribeLocal;
-    int _indexMasterLocal;
     long altickLastUpdate;
     Rebindable!(const Lixxie) _drawHerHighlit;
 
@@ -89,7 +86,7 @@ public:
             /  (displayFps     + 1) / ticksNormalSpeed;
     }
 
-    this(Runmode rm, Level lv, Filename fn = null, Replay rp = null)
+    this(Runmode rm, Level lv, Filename levelFilename = null, Replay rp = null)
     {
         this.runmode = rm;
         assert (lv);
@@ -97,9 +94,8 @@ public:
 
         scope (exit)
             this.setLastUpdateToNow();
-        level         = lv;
-        levelFilename = fn;
-        prepareNurse(rp);
+        level = lv;
+        prepareNurse(levelFilename, rp);
         setLastUpdateToNow();
     }
 
@@ -158,12 +154,10 @@ package:
         return cs.tribes.len - cs.tribes.find!"a is b"(tr).len;
     }
 
-    @property ref const(Tribe.Master) masterLocal() const
+    @property PlNr masterLocal() const { return nurse.replay.playerLocal; }
+    @property string masterLocalName() const
     {
-        assert (cs, "null cs, shouldn't ever be null");
-        assert (cs.tribes.len > _indexTribeLocal, "badly cloned cs");
-        assert (cs.tribes[_indexTribeLocal].masters.len > _indexMasterLocal);
-        return cs.tribes[_indexTribeLocal].masters[_indexMasterLocal];
+        return nurse.replay.playerLocalName;
     }
 
     void setLastUpdateToNow()
@@ -183,8 +177,8 @@ package:
     void saveResult()
     {
         if (nurse && cs.singlePlayerHasWon
-                  && masterLocal.name == basics.globconf.userName)
-            setLevelResult(levelFilename,
+                  && masterLocalName == basics.globconf.userName)
+            setLevelResult(nurse.replay.levelFilename,
                            nurse.resultForTribe(_indexTribeLocal));
     }
 
@@ -196,7 +190,7 @@ private:
         return nurse.stateOnlyPrivatelyForGame;
     }
 
-    private void prepareNurse(Replay rp)
+    private void prepareNurse(Filename levelFilename, Replay rp)
     {
         assert (! effect);
         assert (! nurse);
@@ -214,7 +208,6 @@ private:
         // DTODONETWORKING: initialize to something different, and pass the
         // nurse the number of players
         _indexTribeLocal  = 0;
-        _indexMasterLocal = 0;
         effect.tribeLocal = 0;
 
         assert (pan is null);
@@ -232,7 +225,6 @@ private:
     void saveAutoReplay()
     {
         if (nurse && nurse.replay && ! wasInstantiatedWithReplay)
-            nurse.replay.saveAsAutoReplay(levelFilename, level,
-                                          cs.singlePlayerHasWon);
+            nurse.replay.saveAsAutoReplay(level, cs.singlePlayerHasWon);
     }
 }

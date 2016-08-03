@@ -166,14 +166,9 @@ private:
     {
         assert (_replay);
         auto dataSlice = _replay.getDataForUpdate(upd);
-
-        // Evaluating replay data, which carries out assignments, should be
-        // independent of player order. Nonetheless, out of paranoia, we do it
-        // in the order of players first, only then in the order of 'data'.
-        foreach (int trID, tribe; _model.cs.tribes)
-            foreach (ref const(ReplayData) data; dataSlice)
-                if (auto master = tribe.getMasterWithNumber(data.player))
-                    _model.applyReplayData(trID, master, data);
+        assert (dataSlice.isSorted!("a.player < b.player"));
+        foreach (data; dataSlice)
+            _model.applyReplayData(data, _replay.plNrToStyle(data.player));
     }
 
     // DTODO: Refactor into SaveStatingNurse : Nurse for the interactive

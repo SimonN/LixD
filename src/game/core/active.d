@@ -43,7 +43,7 @@ package void findAgainHighlitLixAfterUpdate(Game game)
 package ReplayData newReplayDataForNextUpdate(Game game)
 {
     ReplayData data;
-    data.player = game.masterLocal.number;
+    data.player = game.masterLocal;
     data.update = game.nurse.upd + 1;
     return data;
 }

@@ -1,8 +1,11 @@
 module game.tribe;
 
-/* A tribe is a team. It can have multiple (Tribe.Master)s, when a multiplayer
+/* A tribe is a team. It can have multiple masters, when a multiplayer
  * team game is played. Each tribe has a color, number of lixes, etc.
  * In singleplayer, there is one tribe with one master.
+ *
+ * Tribe doesn't know about masters; if that info is needed, the game must
+ * fetch it from the replay.
  */
 
 import enumap;
@@ -15,11 +18,6 @@ import lix.lixxie;
 import level.level; // spawnintMax
 
 class Tribe {
-
-    struct Master {
-        PlNr   number;
-        string name;
-    }
 
     private static struct PublicValueFields {
         Style style;
@@ -48,7 +46,6 @@ class Tribe {
     alias valueFields this;
 
     Enumap!(Ac, int) skills;
-    Master[] masters;
     Lixxie[] lixvec;
 
     this() { }
@@ -58,7 +55,6 @@ class Tribe {
         assert (rhs, "don't copy-construct from a null Tribe");
         valueFields = rhs.valueFields;
         skills      = rhs.skills;
-        masters     = rhs.masters.dup;
         lixvec      = rhs.lixvec .clone;
     }
 
@@ -70,30 +66,10 @@ class Tribe {
         int scoreExpected() const { return lixSaved + lixOut + lixHatch; }
     }
 
-    @property string name() const
-    {
-        string ret;
-        foreach (int i, master; masters) {
-            ret ~= master.name;
-            if (i + 1 != masters.length)
-                ret ~= ", ";
-        }
-        return ret;
-    }
-
     void returnSkills(in Ac ac, in int amount)
     {
         skillsUsed -= amount;
         if (skills[ac] != skillInfinity)
             skills[ac] += amount;
     }
-
-    inout(Master)* getMasterWithNumber(in PlNr number) inout
-    {
-        foreach (ref master; masters)
-            if (master.number == number)
-                return &master;
-        return null;
-    }
-
 }
