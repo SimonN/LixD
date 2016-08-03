@@ -38,8 +38,7 @@ $browserInfoAuthorNone      ?
 $browserInfoClockNone       --
 
 $browserInfoResultSaved     Gerettet:
-$browserInfoResultSkills    Fähigktn.:
-$browserInfoResultTime      Dauer:
+$browserInfoResultSkills    Fähigkeiten:
 $browserInfoResultOld1     Der Level wurde
 $browserInfoResultOld2     seitdem editiert.
 

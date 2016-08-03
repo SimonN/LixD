@@ -42,8 +42,7 @@ $browserInfoAuthorNone      ?
 $browserInfoClockNone       --
 
 $browserInfoResultSaved     Saved:
-$browserInfoResultSkills    Skills used:
-$browserInfoResultTime      Time used:
+$browserInfoResultSkills    Skills:
 $browserInfoResultOld1      The level has
 $browserInfoResultOld2      been edited.
 

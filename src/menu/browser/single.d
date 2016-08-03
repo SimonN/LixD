@@ -17,7 +17,8 @@ private:
     bool _gotoEditor;
     Level _levelRecent;
     TextButton _edit;
-    LabelTwo _by, _save;
+    LabelTwo _by, _save, _resultSaved, _resultSkills;
+    Element[] _hideWhenNullLevelHighlit;
 
 public:
     this()
@@ -41,7 +42,14 @@ public:
             Lang.browserInfoAuthor.transl);
         _save = new LabelTwo(new Geom(infoX, infoY + 40, infoXl, 20),
             Lang.browserInfoInitgoal.transl);
-        addChildren(_edit, _delete, _by, _save);
+        immutable savedXl = min(110f, infoXl/2f);
+        _resultSaved = new LabelTwo(new Geom(infoX, infoY + 60, savedXl, 20),
+            Lang.browserInfoResultSaved.transl);
+        _resultSkills = new LabelTwo(new Geom(infoX + savedXl, infoY + 60,
+            infoXl - savedXl, 20), Lang.browserInfoResultSkills.transl);
+        _hideWhenNullLevelHighlit
+            = [ _edit, _delete, _by, _save, _resultSaved, _resultSkills ];
+        _hideWhenNullLevelHighlit.each!(la => addChild(la));
     }
 
     override @property inout(Level) levelRecent() inout
@@ -61,13 +69,20 @@ protected:
     {
         assert (_edit);
         _levelRecent = fn is null ? null : new Level(fileRecent);
-        [_edit, _delete, _by, _save].each!(e => e.hidden = fn is null);
-        if (_levelRecent) {
-            _by  .value = _levelRecent.author;
-            _save.value = "%s/%s".format(_levelRecent.required,
-                                         _levelRecent.initial);
-        }
+        _hideWhenNullLevelHighlit.each!(e => e.hidden = fn is null);
         previewLevel(_levelRecent);
+        if (! _levelRecent)
+            return;
+        _by  .value = _levelRecent.author;
+        _save.value = "%d/%d".format(_levelRecent.required,
+                                     _levelRecent.initial);
+        const(Result) res = getLevelResult(fn);
+        _resultSaved.hidden = res is null;
+        _resultSkills.hidden = res is null;
+        if (res) {
+            _resultSaved.value = "%d".format(res.lixSaved);
+            _resultSkills.value = "%d".format(res.skillsUsed);
+        }
     }
 
     override void onFileSelect(Filename fn)

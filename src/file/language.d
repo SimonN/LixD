@@ -63,7 +63,6 @@ enum Lang {
 
     browserInfoResultSaved,
     browserInfoResultSkills,
-    browserInfoResultTime,
     browserInfoResultOld1,
     browserInfoResultOld2,
 
