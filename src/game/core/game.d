@@ -66,14 +66,13 @@ package:
     Panel pan;
     int _profilingGadgetCount;
     bool _gotoMainMenu;
-    bool _wasInstantiatedWithReplay;
+    bool _replayNeverCancelledThereforeDontSaveAutoReplay;
 
 private:
     Update _setLastUpdateToNowLastCalled = Update(-1);
 
 public:
     @property bool gotoMainMenu()         { return _gotoMainMenu; }
-    @property wasInstantiatedWithReplay() { return _wasInstantiatedWithReplay;}
 
     enum ticksNormalSpeed   = ticksPerSecond / updatesPerSecond;
     enum updatesDuringTurbo = 9;
@@ -194,7 +193,7 @@ private:
     {
         assert (! effect);
         assert (! nurse);
-        _wasInstantiatedWithReplay = rp !is null;
+        _replayNeverCancelledThereforeDontSaveAutoReplay = rp !is null;
         if (! rp) {
             rp = Replay.newForLevel(levelFilename, level.built);
 
@@ -224,7 +223,8 @@ private:
 
     void saveAutoReplay()
     {
-        if (nurse && nurse.replay && ! wasInstantiatedWithReplay)
+        if (! _replayNeverCancelledThereforeDontSaveAutoReplay
+            && nurse && nurse.replay)
             nurse.replay.saveAsAutoReplay(level, cs.singlePlayerHasWon);
     }
 }

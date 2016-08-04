@@ -59,6 +59,7 @@ void cancelReplay(Game game) { with (game)
         // are future actions by other masters queued. Perfect, don't cancel.
         return;
     nurse.cutReplay();
+    _replayNeverCancelledThereforeDontSaveAutoReplay = false;
     playLoud(Sound.SCISSORS);
 }}
 

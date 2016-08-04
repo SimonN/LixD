@@ -77,7 +77,8 @@ private:
     Game   game;
     Editor editor;
 
-
+    enum AfterGameGoto { single, replays }
+    AfterGameGoto _afterGameGoto;
 
 void
 kill()
@@ -166,6 +167,8 @@ calc()
             auto fn = brow.fileRecent;
             auto lv = brow.levelRecent;
             auto rp = brow.replayRecent;
+            _afterGameGoto = (brow is browSin ? AfterGameGoto.single
+                                              : AfterGameGoto.replays);
             kill();
             game = new Game(Runmode.INTERACTIVE, lv, fn, rp);
         }
@@ -197,9 +200,8 @@ calc()
     else if (game) {
         game.calc();
         if (game.gotoMainMenu) {
-            bool rep = game.wasInstantiatedWithReplay;
             kill();
-            if (rep) {
+            if (_afterGameGoto == AfterGameGoto.replays) {
                 browRep = new BrowserReplay;
                 gui.addElder(browRep);
             }

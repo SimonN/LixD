@@ -110,19 +110,6 @@ public:
     alias updateToDuringTurbo = updateToTpl!true;
     alias updateTo            = updateToTpl!false;
 
-    // Only noninteractive mode should call this directly,
-    // interactive mode should call updateTo.
-    // DTODO: make this obvious by a Nurse subclass.
-    void updateOnce()
-    {
-        version (tharsisprofiling)
-            Zone zone = Zone(profiler, "PhysSeq updateOnceNoSync");
-        _model.incrementUpdate;
-        applyReplayDataToModel();
-        assert (_replay);
-        _model.advance(_replay.permu);
-    }
-
     void framestepBackBy(int backBy)
     {
         immutable whatUpdateToLoad = Update(_model.cs.update - backBy);
@@ -169,6 +156,16 @@ private:
         assert (dataSlice.isSorted!("a.player < b.player"));
         foreach (data; dataSlice)
             _model.applyReplayData(data, _replay.plNrToStyle(data.player));
+    }
+
+    void updateOnce()
+    {
+        version (tharsisprofiling)
+            Zone zone = Zone(profiler, "PhysSeq updateOnceNoSync");
+        _model.incrementUpdate;
+        applyReplayDataToModel();
+        assert (_replay);
+        _model.advance(_replay.permu);
     }
 
     // DTODO: Refactor into SaveStatingNurse : Nurse for the interactive
