@@ -4,13 +4,22 @@ import std.string;
 
 static import basics.globconf;
 static import basics.user;
+static import hardware.keyboard;
+
+import basics.alleg5; // Explicit press of ESC
 import file.language;
 import gui;
 import menu.menubg;
 
 class MenuAskName : MenuWithBackground {
+private:
+    bool _gotoMainMenu = false;
+    bool _gotoExitApp = false;
+    Texttype _tt;
 
-    @property bool done() { return _done; }
+public:
+    @property bool gotoMainMenu() const { return _gotoMainMenu; }
+    @property bool gotoExitApp() const { return _gotoExitApp; }
 
     this()
     {
@@ -25,7 +34,7 @@ class MenuAskName : MenuWithBackground {
         _tt = new Texttype(new Geom(0, 100, this.xlg-40, 20, From.TOP));
         _tt.onEnter = () {
             if (_tt.text.strip.length > 0) {
-                _done = true;
+                _gotoMainMenu = true;
                 basics.globconf.userName = _tt.text.strip;
                 basics.user.load();
             }
@@ -35,18 +44,14 @@ class MenuAskName : MenuWithBackground {
     }
 
 protected:
-
     // this is called even if the Window doesn't have focus
     override void workSelf()
     {
-        if (! _done) {
+        if (! _gotoMainMenu && ! _gotoExitApp) {
             _tt.down = false;
             _tt.on = true;
+            if (hardware.keyboard.keyTapped(ALLEGRO_KEY_ESCAPE))
+                _gotoExitApp = true;
         }
     }
-
-private:
-
-    bool _done = false;
-    Texttype _tt;
 }

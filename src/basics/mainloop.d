@@ -191,11 +191,13 @@ calc()
         }
     }
     else if (askName) {
-        if (askName.done) {
+        if (askName.gotoMainMenu) {
             kill();
             mainMenu = new MainMenu;
             gui.addElder(mainMenu);
         }
+        else if (askName.gotoExitApp)
+            exit = true;
     }
     else if (game) {
         game.calc();
