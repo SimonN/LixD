@@ -91,7 +91,25 @@ protected:
     {
         immutable oldCenter = _occ.selboxOnMap.center;
         _occ.rotCw = (_occ.rotCw == 3 ? 0 : _occ.rotCw + 1);
-        moveBy(oldCenter - _occ.selboxOnMap.center);
+        // There is a rounding error: Without this function, 18x17 cutbits
+        // keep their bottom-right-hand corner regardless of
+        // their orientation, and 17x16 tiles keep their top-left
+        // corner, no matter their orientation. Add error-recovery point
+        // to always keep the top-left corner:
+        Point errorRecovery()
+        {
+            // Bypass the rotation, access the tile without its rotation
+            if ((_occ.tile.selbox.xl & 1) == 0 && (_occ.tile.selbox.yl & 1))
+                // We have already rotated, check out the new value here
+                return (_occ.rotCw & 1) ? Point(-1, 1) : Point(1, -1);
+            else
+                return Point(0, 0);
+        }
+        // Editing rotCw doesn't turn around the occurrence's center,
+        // but instead keeps the occurrence's topLeft the same. To compensate
+        // for this, move the tile so that the rotation seems to have been
+        // around the center.
+        moveBy(oldCenter - _occ.selboxOnMap.center + errorRecovery);
     }
 
     @property string tileName() const

@@ -50,7 +50,6 @@ public:
 
     final @property Rect selboxOnMap() const { return selboxOnTile + loc; }
 
-protected:
     @property Rect selboxOnTile() const { assert (tile); return tile.selbox; }
 }
 
@@ -147,7 +146,6 @@ public:
         return _tile.getPhybitsXYRotMirr(pointOnMap - loc, rotCw, mirrY);
     }
 
-protected:
     // Return selbox of terrain tile, but affected by rotation and mirroring.
     // Mirroring is vertically, even though the editor button mirrors
     // horizontally. Reason: The editor button mirrors, then rotates twice.

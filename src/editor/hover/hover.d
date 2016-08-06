@@ -69,14 +69,23 @@ abstract class Hover {
         mirrorHorizontally();
     }
 
+    /* A rotation is a movement around the midpoint.
+     * After computing the occ's selbox's midpoint and the box's midpoint,
+     * we don't need the box anymore.
+     */
     final void rotateCwWithin(in Rect box)
     {
-        rotateCw();
-        immutable self = occ.selboxOnMap;
+        immutable Rect self = occ.selboxOnMap;
+        immutable float ourX = self.x + self.xl / 2f;
+        immutable float ourY = self.y + self.yl / 2f;
+        immutable float aroundX = box.x + box.xl / 2f;
+        immutable float aroundY = box.y + box.yl / 2f;
+        immutable float boxRoundFix = ((box.xl + box.yl) & 1) ? 0.5 : 0;
         occ.loc = level.topology.wrap(Point(
-            box.center.x - (box.center - self.center).y,
-            box.center.y + (box.center - self.center).x)
-            - self.len/2 - occ.tile.selbox.topLeft);
+            roundInt(aroundX + (aroundY - ourY) - self.xl / 2f - boxRoundFix),
+            roundInt(aroundY - (aroundX - ourX) - self.yl / 2f - boxRoundFix))
+            - occ.selboxOnTile.topLeft);
+        rotateCw();
     }
 
     final override int opCmp(Object rhsObj) const
