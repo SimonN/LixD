@@ -9,8 +9,8 @@ import level.level;
 
 class ConstantsWindow : OkCancelWindow {
 private:
-    Texttype _author;
     Texttype _levelName;
+    Texttype _author;
     NumPick _intendedNumberOfPlayers;
     NumPick _initial;
     NumPick _spawnint;
@@ -30,17 +30,17 @@ public:
         {
             addChild(new Label(new Geom(20, y, textXl, 20), cap.transl));
         }
-        label( 40, Lang.winConstantsAuthor);
-        label( 70, Lang.winConstantsLevelName);
+        label( 40, Lang.winConstantsLevelName);
+        label( 70, Lang.winConstantsAuthor);
         label(100, Lang.winConstantsPlayers);
         label(130, Lang.winConstantsInitial);
         label(160, Lang.winConstantsRequired);
         label(190, Lang.winConstantsSpawnint);
 
-        _author    = new Texttype(new Geom(butX, 40, butXl, 20));
-        _levelName = new Texttype(new Geom(butX, 70, butXl, 20));
-        _author.text = level.author;
+        _levelName = new Texttype(new Geom(butX, 40, butXl, 20));
+        _author    = new Texttype(new Geom(butX, 70, butXl, 20));
         _levelName.text = level.nameEnglish;
+        _author.text = level.author;
 
         NumPickConfig cfg;
         cfg.digits = 1;
@@ -64,15 +64,15 @@ public:
         _spawnint = new NumPick(new Geom(butX + 20, 190, 130, 20), cfg);
         _spawnint.number = level.spawnint;
 
-        addChildren(_author, _levelName, _intendedNumberOfPlayers,
+        addChildren(_levelName, _author, _intendedNumberOfPlayers,
                     _initial, _spawnint, _required);
     }
 
 protected:
     override void selfWriteChangesTo(Level level)
     {
-        level.author = _author.text;
         level.nameEnglish = _levelName.text;
+        level.author = _author.text;
         level.intendedNumberOfPlayers = _intendedNumberOfPlayers.number;
         level.initial = _initial.number;
         level.required = _required.number;
