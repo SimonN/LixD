@@ -119,25 +119,25 @@ void makePanel(Editor editor)
         mixin (mkSubwin!"Topology");
         mixin (mkSubwin!"Looks");
         mixin (mkSubwin!"Skills");
-        template mkBrowser(string name, string exts, string curDirOpt) {
+        template mkBrowser(string name, string constructorArgs) {
             enum string mkBrowser = q{
                     onExecute(Lang.editorButtonAdd%s, keyEditorAdd%s, () {
                         if (! editor.noWindowsOpen)
                             return;
                         editor._dragger.stop();
                         editor._hover = null;
-                        editor._terrainBrowser = new TerrainBrowser(%s, %s);
+                        editor._terrainBrowser = new TerrainBrowser(%s);
                         addFocus(editor._terrainBrowser);
                         button(Lang.editorButtonAdd%s).on = true;
                     });
-                }.format(name, name, exts, curDirOpt, name);
+                }.format(name, name, constructorArgs, name);
         }
-        mixin (mkBrowser!("Terrain", "[0]",          "editorLastDirTerrain"));
-        mixin (mkBrowser!("Steel", "[preExtSteel]",  "editorLastDirSteel"));
-        mixin (mkBrowser!("Hatch", "[preExtHatch]",  "editorLastDirHatch"));
-        mixin (mkBrowser!("Goal", "[preExtGoal]",    "editorLastDirGoal"));
-        mixin (mkBrowser!("Deco", "[preExtDeco]",    "editorLastDirDeco"));
-        mixin (mkBrowser!("Hazard", "['W','T','F']", "editorLastDirHazard"));
+        mixin (mkBrowser!("Terrain", "[0], editorLastDirTerrain, MergeAllDirs.no"));
+        mixin (mkBrowser!("Steel", "[preExtSteel], editorLastDirSteel, MergeAllDirs.no"));
+        mixin (mkBrowser!("Hatch", "[preExtHatch], editorLastDirHatch, MergeAllDirs.yes"));
+        mixin (mkBrowser!("Goal", "[preExtGoal], editorLastDirGoal, MergeAllDirs.yes"));
+        mixin (mkBrowser!("Deco", "[preExtDeco], editorLastDirDeco, MergeAllDirs.yes"));
+        mixin (mkBrowser!("Hazard", "['W','T','F'], editorLastDirHazard, MergeAllDirs.yes"));
     }
 }
 

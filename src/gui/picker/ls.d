@@ -33,10 +33,9 @@ public:
         _currentDir = newDir;
         if (! currentDir)
             return currentDir;
-        auto tempD = findDirsNoRecursion(currentDir)
-            .filter!(f => visibleCriterion(f)).array;
-        auto tempF = findRegularFilesNoRecursion(currentDir)
-            .filter!(f => searchCriterion(f) && visibleCriterion(f)).array;
+        auto tempD = dirsInCurrentDir.filter!(f => visibleCriterion(f)).array;
+        auto tempF = filesInCurrentDir.filter!(f => searchCriterion(f)
+                                                && visibleCriterion(f)).array;
         beforeSortingForCurrentDir();
         sortDirs (tempD);
         sortFiles(tempF);
@@ -82,6 +81,16 @@ protected:
     void beforeSortingForCurrentDir() { }
     void sortDirs (MutFilename[]) const { }
     void sortFiles(MutFilename[]) const { }
+
+    MutFilename[] dirsInCurrentDir() const
+    {
+        return file.search.findDirsNoRecursion(currentDir);
+    }
+
+    MutFilename[] filesInCurrentDir() const
+    {
+        return file.search.findRegularFilesNoRecursion(currentDir);
+    }
 
     bool searchCriterion(Filename) const { return true; }
     bool visibleCriterion(Filename fn) const

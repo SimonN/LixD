@@ -8,6 +8,8 @@ import gui;
 import gui.picker;
 import hardware.mouse;
 
+enum MergeAllDirs : bool { no = false, yes = true }
+
 class TerrainBrowser : Window {
 private:
     Picker _picker;
@@ -15,7 +17,7 @@ private:
     UserOptionFilename _curDir;
 
 public:
-    this(string allowedPreExts, UserOptionFilename curDir)
+    this(string allowedPreExts, UserOptionFilename curDir, MergeAllDirs merge)
     {
         assert (curDir !is null);
         _curDir = curDir;
@@ -26,10 +28,11 @@ public:
         cfg.all   = new Geom(20, 40, xlg-40, ylg-60);
         cfg.bread = new Geom(0, 0, cfg.all.xl - 80, 30);
         cfg.files = new Geom(0, 40, cfg.all.xl, cfg.all.yl - 40);
-        cfg.ls    = new ImageLs(allowedPreExts);
+        cfg.ls    = merge ? new RecursingImageLs(allowedPreExts)
+                          : new ImageLs(allowedPreExts);
         _picker = new Picker(cfg);
         _picker.basedir = dirImages;
-        _picker.currentDir = _curDir;
+        _picker.currentDir = merge ? dirImages : _curDir.value;
         _cancel = new TextButton(new Geom(
             20, 40, 80, 30, From.TOP_RIGHT), Lang.commonCancel.transl);
         _cancel.hotkey = keyMenuExit;
