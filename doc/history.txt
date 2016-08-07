@@ -1,6 +1,29 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.12
+------
+
+2016-08-07
+
+Fix #134: Select multiple tiles in the editor and press rotate.
+The tiles rotate correctly with respect to each other. Rotating 4 times
+puts them back exactly where they started, they don't wander. This works
+even if oddly-sized tiles or unrotatable gadgets are in the selection.
+
+Fix #139: The browsers for hatches, goals, decoration, and hazards display
+all tiles in the images/ tree in one listing.
+
+Fix #140: The terrain browser starts browsing from the directory of the
+tile you have selected at the moment. If you haven't selected anything,
+they start from the directory from which you've most recently added a tile.
+
+Fix #143: The file selector scrolls to the final row, even if it's less
+than half-filled. Before, the scrollbar looked like there were more files,
+but didn't make the tiler display these extra files.
+
+Swapped author and level title in the editor's constant-setting window.
+
 0.6.11
 ------
 

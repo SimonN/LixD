@@ -71,7 +71,7 @@ public:
     final @property int top(int newTop)
     {
         newTop = min(newTop, totalLen - pageLen);
-        newTop = newTop.roundTo(coarseness);
+        newTop = newTop.roundUpTo(coarseness);
         newTop = max(newTop, 0);
         if (newTop < _dirs.len * dirSizeMultiplier)
             // How to handle non-multiples of dirSizeMultiplier?
