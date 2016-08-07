@@ -19,6 +19,7 @@ import editor.gui.panel;
 import editor.gui.skills;
 import editor.gui.topology;
 import file.language;
+import file.filename;
 import gui;
 import hardware.keyset;
 import level.level;
@@ -124,20 +125,21 @@ void makePanel(Editor editor)
                     onExecute(Lang.editorButtonAdd%s, keyEditorAdd%s, () {
                         if (! editor.noWindowsOpen)
                             return;
-                        editor._dragger.stop();
-                        editor._hover = null;
                         editor._terrainBrowser = new TerrainBrowser(%s);
                         addFocus(editor._terrainBrowser);
                         button(Lang.editorButtonAdd%s).on = true;
+                        editor._dragger.stop();
+                        editor._hover = null;
                     });
                 }.format(name, name, constructorArgs, name);
         }
-        mixin (mkBrowser!("Terrain", "[0], editorLastDirTerrain, MergeAllDirs.no"));
-        mixin (mkBrowser!("Steel", "[preExtSteel], editorLastDirSteel, MergeAllDirs.no"));
-        mixin (mkBrowser!("Hatch", "[preExtHatch], editorLastDirHatch, MergeAllDirs.yes"));
-        mixin (mkBrowser!("Goal", "[preExtGoal], editorLastDirGoal, MergeAllDirs.yes"));
-        mixin (mkBrowser!("Deco", "[preExtDeco], editorLastDirDeco, MergeAllDirs.yes"));
-        mixin (mkBrowser!("Hazard", "['W','T','F'], editorLastDirHazard, MergeAllDirs.yes"));
+        mixin (mkBrowser!("Terrain",
+            "[0], editorLastDirTerrain, MergeAllDirs.no, editor.overrideCurrentDirectoryWithTileFilename"));
+        mixin (mkBrowser!("Steel", "[preExtSteel], editorLastDirSteel, MergeAllDirs.no, null"));
+        mixin (mkBrowser!("Hatch", "[preExtHatch], editorLastDirHatch, MergeAllDirs.yes, null"));
+        mixin (mkBrowser!("Goal", "[preExtGoal], editorLastDirGoal, MergeAllDirs.yes, null"));
+        mixin (mkBrowser!("Deco", "[preExtDeco], editorLastDirDeco, MergeAllDirs.yes, null"));
+        mixin (mkBrowser!("Hazard", "['W','T','F'], editorLastDirHazard, MergeAllDirs.yes, null"));
     }
 }
 
@@ -148,4 +150,15 @@ Rect smallestRectContainingSelection(in Editor editor)
     return editor._selection.empty ? Rect()
         :  editor._selection.map   !(hov => hov.occ.selboxOnMap)
                             .reduce!(Rect.smallestContainer);
+}
+
+Filename overrideCurrentDirectoryWithTileFilename(in Editor editor)
+{
+    // I don't go through chain(_selection, _hover), because I believe that
+    // will irritate users. If you don't click something, you haven't done
+    // anything, you shouldn't affect the browser's starting directory.
+    foreach (const(Hover) hov; editor._selection)
+        if (hov.occ.tile.name != "")
+            return new Filename(dirImages.rootless ~ hov.occ.tile.name);
+    return null;
 }

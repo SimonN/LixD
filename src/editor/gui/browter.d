@@ -3,6 +3,7 @@ module editor.gui.browter;
 import basics.globals;
 import basics.user;
 import file.language;
+import file.search;
 import file.useropt;
 import gui;
 import gui.picker;
@@ -17,7 +18,8 @@ private:
     UserOptionFilename _curDir;
 
 public:
-    this(string allowedPreExts, UserOptionFilename curDir, MergeAllDirs merge)
+    this(string allowedPreExts, UserOptionFilename curDir, MergeAllDirs merge,
+        Filename overrideStartDir)
     {
         assert (curDir !is null);
         _curDir = curDir;
@@ -32,7 +34,9 @@ public:
                           : new ImageLs(allowedPreExts);
         _picker = new Picker(cfg);
         _picker.basedir = dirImages;
-        _picker.currentDir = merge ? dirImages : _curDir.value;
+        _picker.currentDir = merge ? dirImages
+            : file.search.dirExists(overrideStartDir) ? overrideStartDir
+            : _curDir.value;
         _cancel = new TextButton(new Geom(
             20, 40, 80, 30, From.TOP_RIGHT), Lang.commonCancel.transl);
         _cancel.hotkey = keyMenuExit;
