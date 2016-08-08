@@ -311,13 +311,16 @@ $optionReplayAutoMulti        Auto-save multiplayer games
 $optionMouseSpeed             Mouse speed
 $optionScrollSpeedEdge        Scroll speed at screen edge
 $optionScrollSpeedClick       Scroll speed with that key
-$optionFastMovementFreesMouse Fast movement releases mouse
-$optionAvoidBuilderQueuing    Prefer spamming over queuing
-$optionAvoidBatterToExploder  Prefer batters to non-exploders
-$optionPausedAssign           Skill assignment during pause:
-$optionPausedAssignStayPaused Don't advance
-$optionPausedAssignAdvance    Advance by 1 frame
-$optionPausedAssignUnpause    Unpause
+$optionFastMovementFreesMouse Fast movement untraps mouse
+
+$optionUserNameDesc Your name appears in replays and in multiplayer games.|Lix saves settings to a file in ./data/user/ named after you.
+$optionLanguageDesc Language throughout Lix's user interface.
+$optionReplayAutoSolutionsDesc Saves a replay automatically when you solve a singleplayer level.
+$optionReplayAutoMultiDesc Saves a replay automatically when you have finished a multiplayer game.
+$optionMouseSpeedDesc Speed of the mouse cursor.
+$optionScrollSpeedEdgeDesc Scroll speed when the mouse cursor touches the screen edge.|
+$optionScrollSpeedClickDesc Scroll speed when you move the mouse while holding the scrolling key.|The standard scrolling key is the right mouse button ⟁, look to the left to remap.
+$optionFastMovementFreesMouseDesc The mouse leaves the Lix window when you move quickly against the sides.|If not checked, untrap the mouse by Alt+Tab.
 
 $optionScreenWindowed           Windowed mode
 $optionScreenWindowedRes        Windowed resolution
@@ -330,11 +333,26 @@ $optionGuiColorGreen            Menu color green
 $optionGuiColorBlue             Menu color blue
 $optionSoundVolume              Sound volume
 
-$optionKeyUnassigned          none
+$optionScreenWindowedDesc Run Lix in a window, or in fullscreen mode?|Restart Lix after you change this!
+$optionScreenWindowedResDesc Size of the Lix window. Only for windowed mode, not for fullscreen.|Restart Lix after you change this!
+$optionPaintTorusSeamsDesc Mark the wrapping seam with a thin line whenever a level wraps around.|This doesn't affect game physics, but may improve your orientation.
+$optionIngameTooltipsDesc When the mouse hovers over buttons during play, print an explanation.|Some buttons have two functions: One on left-click, one on right-click.
+$optionShowButtonHotkeysDesc On every button, print the button's hotkeys in the bottom-right-hand corner.
+$optionShowFPSDesc Print the number of video frames per second, during play or editor.|I like this during development. If you screencast, turn this off.
+$optionSoundVolumeDesc Playback volume of all sound effects.|Set to 0 to turn off sound in Lix.
+
+$optionKeyZoomIn Zoom +
+$optionKeyZoomOut Zoom −
+$optionKeyScroll Hold to scroll
+$optionKeyPriorityInvert Priority invert
+
+$optionKeyZoomInDesc Zoom into the level.
+$optionKeyZoomOutDesc Zoom out of the level.
+$optionKeyScrollDesc Hold this (standard: right mouse button ⟁) and move the mouse to scroll.|This is easier, faster, and more precise than scrolling at the screen edge.
+$optionKeyPriorityInvertDesc Hold to assign skills to the lix with the lowest priority instead of the highest.|In the editor, hold to select the bottommost tile instead of the topmost.
+
 $optionKeyForceLeft          Force left
 $optionKeyForceRight         Force right
-$optionKeyScroll              Hold to scroll
-$optionKeyPriorityInvert      Priority invert
 $optionKeyPause               Pause
 $optionKeyFrameBackMany       ◀▮ 1 sec.
 $optionKeyFrameBackOne        ◀▮ 1 frame
@@ -345,22 +363,69 @@ $optionKeySpeedTurbo          ▶▶▶
 $optionKeyRestart             Restart
 $optionKeyStateLoad          Load state
 $optionKeyStateSave          Save state
-$optionKeyZoomIn             Zoom +
-$optionKeyZoomOut            Zoom −
 $optionKeyChat                Chat
 $optionKeySpecTribe          Cycle teams
 $optionKeyNuke                Nuke
 
+$optionKeyForceLeftDesc Hold to assign skills to lix facing left.|This is useful in a dense bunch of lix.
+$optionKeyForceRightDesc Hold to assign skills to lix facing right.|This is useful in a dense bunch of lix.
+$optionKeyPauseDesc Pause the game.|You can choose whether skill assignments should unpause, see below.
+$optionKeyFrameBackManyDesc Rewind the game by 1 second.
+$optionKeyFrameBackOneDesc Rewind the game by 1 frame, i.e., by ¹⁄₁₅ of a second.
+$optionKeyFrameAheadOneDesc Advance the game by 1 frame, i.e., by ¹⁄₁₅ of a second.
+$optionKeyFrameAheadManyDesc Advance the game by 10 seconds.
+$optionKeySpeedFastDesc Toggle fast-forward.|Fast-forward is 4 times faster than normal speed.
+$optionKeySpeedTurboDesc Toggle turbo-fast-forward.|Turbo-fast-forward is 36 times faster than normal speed.
+$optionKeyRestartDesc Restart the level from the beginning. All your actions will replay.|To interrupt the replay, click into the air.
+$optionKeyStateLoadDesc Go back to the remembered game position.|You can remember the position via Save state.
+$optionKeyStateSaveDesc Remember the exact game position.|You can come back to that position via Load state.
+$optionKeyChatDesc Open the console to chat during a multiplayer game.
+$optionKeySpecTribeDesc Show the skillset of a different team when you observe a live multiplayer game|or when you replay a saved multiplayer game.
+$optionKeyNukeDesc Explode all your lix to finish the level.|In multiplayer, if you have saved at least 1 lix, overtime begins.
+$winGameTitleDesc Open the game menu dialog.|Exit the level or save replays from this dialog.
+
+$optionAvoidBuilderQueuing    Prefer spamming over queuing
+$optionAvoidBatterToExploder  Prefer batters to non-exploders
+$optionPausedAssign           Skill assignment during pause:
+$optionPausedAssignStayPaused Don't advance
+$optionPausedAssignAdvance    Advance by 1 frame
+$optionPausedAssignUnpause    Unpause
+
+$optionAvoidBuilderQueuingDesc Prefer builder assignments to non-builders over queuing to existing builders.|You can hold priority invert (see Controls tab) to do what you don't prefer.
+$optionAvoidBatterToExploderDesc Prefer batter assignments to walkers over batter assignments to timed exploders.|You can hold priority invert (see Controls tab) to do what you don't prefer.
+$optionPausedAssignDesc Unpause the game when you assign a skill during pause.|If not checked, skill assignments during pause advance the game by 1 frame.
+$optionPausedAssignStayPausedDesc Don't advance when you assign skills during pause.|You can assign several skills at once.
+$optionPausedAssignAdvanceDesc Advance by 1 frame when you assign a skill during pause, but stay paused.
+$optionPausedAssignUnpauseDesc Unpause when you assign a skill during pause.
+
 $optionKeyMenuOkay            Okay/yes
 $optionKeyMenuEdit            Edit
 $optionKeyMenuExport          Export
-$optionKeyMenuDelete          Delete/no
+$optionKeyMenuDelete          Lose data
 $optionKeyMenuUpDir           Parent dir
 $optionKeyMenuUpBy5           Up by 5
 $optionKeyMenuUpBy1           Up by 1
 $optionKeyMenuDownBy1         Down by 1
 $optionKeyMenuDownBy5         Down by 5
 $optionKeyMenuExit            Back/cancel
+
+$optionKeyMenuOkayDesc Play the highlighted level. Save and close a dialog.
+$optionKeyMenuEditDesc Open the editor on the highlighted level.
+$optionKeyMenuExportDesc Export the highlighted level as an image file.
+$optionKeyMenuDeleteDesc Delete a file. Lose unsaved data when the editor prompts you.
+$optionKeyMenuUpDirDesc Go back up one folder.|You can navigate to other levels, replays, or tiles.
+$optionKeyMenuUpBy5Desc Move the highlight up by 5 files.|With this, you can navigate levels without the mouse.
+$optionKeyMenuUpBy1Desc Move the highlight up by 1 file.|With this, you can navigate levels without the mouse.
+$optionKeyMenuDownBy1Desc Move the highlight down by 1 file.|With this, you can navigate levels without the mouse.
+$optionKeyMenuDownBy5Desc Move the highlight down by 5 files.|With this, you can navigate levels without the mouse.
+$optionKeyMenuExitDesc Exit a browser. Close a dialog without saving.
+$browserSingleTitleDesc From the main menu, go to the singleplayer browser.
+$winLobbyTitleDesc From the main menu, go to the networking lobby.
+$browserReplayTitleDesc From the main menu, go to the replay browser.
+$optionTitleDesc From the main menu, go to the options menu.
+$optionGuiColorRedDesc Recolor Lix's graphical user interface.
+$optionGuiColorGreenDesc Recolor Lix's graphical user interface.
+$optionGuiColorBlueDesc Recolor Lix's graphical user interface.
 
 $optionEdLeft                 Move left
 $optionEdRight                Move right
@@ -390,6 +455,11 @@ $optionEdAddHatch             Add hatch
 $optionEdAddGoal              Add goal
 $optionEdAddDeco              Add deco
 $optionEdAddHazard            Add hazard
+
+$optionEdLeftDesc Move selected tiles to the left.|Movement respects the grid. Hold this key for fast movement.
+$optionEdRightDesc Move selected tiles to the right.|Movement respects the grid. Hold this key for fast movement.
+$optionEdUpDesc Move selected tiles up.|Movement respects the grid. Hold this key for fast movement.
+$optionEdDownDesc Move selected tiles down.|Movement respects the grid. Hold this key for fast movement.
 
 // mini-dialogue to greet a new player
 $windowAskNameTitle          Lix

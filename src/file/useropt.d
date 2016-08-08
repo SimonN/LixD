@@ -88,10 +88,6 @@ public:
 
     alias value this;
 
-    // I want to phase this out eventually. GUI Options should bind to
-    // UserOptions, not to their values. But it's not urgent.
-    @property T* valuePtr() { return &_value; }
-
 protected:
     override void setImpl(in IoLine ioLine)
     {
@@ -187,7 +183,6 @@ public:
     }
 
     alias value this;
-    @property MutFilename* valuePtr() { return &_value; }
 
 protected:
     override void setImpl(in IoLine ioLine)

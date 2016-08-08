@@ -202,7 +202,7 @@ static this()
     optionGroup = newOpt("OPTION_GROUP", 0);
 
     mouseSpeed = newOpt("MOUSE_SPEED", Lang.optionMouseSpeed, mouseStandardDivisor);
-    scrollSpeedEdge = newOpt("SCROLL_SPEED_EDGE", Lang.optionScrollSpeedEdge, mouseStandardDivisor / 2);
+    scrollSpeedEdge = newOpt("SCROLL_SPEED_EDGE", Lang.optionScrollSpeedEdge, mouseStandardDivisor);
     scrollSpeedClick = newOpt("SCROLL_SPEED_CLICK", Lang.optionScrollSpeedClick, mouseStandardDivisor / 2);
     fastMovementFreesMouse = newOpt("FAST_MOVEMENT_FREES_MOUSE", Lang.optionFastMovementFreesMouse, true);
     avoidBuilderQueuing = newOpt("AVOID_BUILDER_QUEUING", Lang.optionAvoidBuilderQueuing, true);
@@ -210,7 +210,7 @@ static this()
     pausedAssign = newOpt("PAUSED_ASSIGN", Lang.optionPausedAssign, 1);
 
     screenWindowed = newOpt("SCREEN_WINDOWED", Lang.optionScreenWindowed, false);
-    screenWindowedX = newOpt("SCREEN_WINDOWED_X", 640);
+    screenWindowedX = newOpt("SCREEN_WINDOWED_X", Lang.optionScreenWindowedRes, 640);
     screenWindowedY = newOpt("SCREEN_WINDOWED_Y", 480);
     paintTorusSeams = newOpt("PAINT_TORUS_SEAMS", Lang.optionPaintTorusSeams, true);
     ingameTooltips = newOpt("INGAME_TOOLTIPS", Lang.optionIngameTooltips, true);

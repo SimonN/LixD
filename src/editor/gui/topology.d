@@ -8,6 +8,7 @@ import basics.user;
 import editor.gui.okcancel;
 import file.language;
 import gui;
+import gui.option;
 import graphic.color;
 import level.level;
 import tile.occur;
@@ -135,9 +136,9 @@ private:
         _eqYDec = new Equation(butX, 180, _oldYl, Equation.Format.dec);
         _eqYHex = new Equation(butX, 200, _oldYl, Equation.Format.hex);
         _torusX = new BoolOption(new Geom(20, 230, boolXl, 20),
-                                 Lang.winTopologyTorusX.transl, null);
+                                 Lang.winTopologyTorusX.transl);
         _torusY = new BoolOption(new Geom(20, 260, boolXl, 20),
-                                 Lang.winTopologyTorusY.transl, null);
+                                 Lang.winTopologyTorusY.transl);
         addChildren(_left, _right, _top, _bottom,
                     _eqXDec, _eqXHex,
                     _eqYDec,   _eqYHex, _torusX, _torusY);

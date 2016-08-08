@@ -8,6 +8,7 @@ import editor.gui.okcancel;
 import file.language;
 import graphic.internal;
 import gui;
+import gui.option; // bool option for exploder
 import level.level;
 import lix.enums;
 
@@ -32,7 +33,7 @@ public:
         super(new Geom(0, 0, thisXl, 240, From.CENTER),
             Lang.winSkillsTitle.transl);
         _useExploder = new BoolOption(new Geom(20, 50, expXl, 20,
-            From.BOT_LEF), Lang.winSkillsUseExploder.transl, null);
+            From.BOT_LEF), Lang.winSkillsUseExploder.transl);
         _allToZero = new TextButton(new Geom(20, 20, expXl, 20, From.BOT_LEF),
             Lang.winSkillsClear.transl);
         _numPick = new NumPick(new Geom(pickX, 20, pickXl, 20,

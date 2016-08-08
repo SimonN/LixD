@@ -1,17 +1,22 @@
 module file.language;
 
 /*  enum Lang
- *
  *      has one ID for each to-be-translated string
  *
  *  string transl(Lang)
- *
  *      translate the ID
  *
  *  void loadUserLanguageAndIfNotExistSetUserOptionToEnglish()
- *
  *      Should be used by loading the user file, or by the options dialogue.
  *      Both of these write to the user file anyway.
+ *
+ * DTODOOPTION
+ *      These appear out of place from regular option names.
+ *      The options menu hijacks some names from elsewhere and reuses them
+ *      as captions in the options menu. The contract in basics.useropt
+ *      demand that the explanation comes right after. Thus, the explanation
+ *      appears out of place from the options, even though only the options
+ *      menu uses it.
  */
 
 import std.conv; // (enum constant) <-> (string of its variable name)
@@ -40,9 +45,9 @@ enum Lang {
     commonVersion,
 
     // browsers
-    browserSingleTitle,
+    browserSingleTitle, browserSingleTitleDesc, // DTODOOPTION
     browserNetworkTitle,
-    browserReplayTitle,
+    browserReplayTitle, browserReplayTitleDesc, // DTODOOPTION
     browserPlay,
     browserEdit,
     browserReplay,
@@ -75,7 +80,7 @@ enum Lang {
     browserInfoHoldsLevel,
 
     // networking lobby
-    winLobbyTitle,
+    winLobbyTitle, winLobbyTitleDesc, // DTODOOPTION
     winLobbyTitleLobby,
     winLobbyTitleRoom,
     winLobbyExit,
@@ -93,7 +98,7 @@ enum Lang {
     winLobbyRoomLeave,
 
     // end-of-game dialog, or pause dialog
-    winGameTitle,
+    winGameTitle, winGameTitleDesc, // DTODOOPTION: option menu explains this
     winGameResult,
     winGameLixSaved,
     winGameLixSavedInTime,
@@ -305,7 +310,7 @@ enum Lang {
     netGameOvertime4Sec,
 
     // Optionsfenster
-    optionTitle,
+    optionTitle, optionTitleDesc, // DTODOOPTION
     optionGroupGeneral,
     optionGroupGraphics,
     optionGroupControls,
@@ -313,68 +318,67 @@ enum Lang {
     optionGroupEditorKeys,
     optionGroupMenuKeys,
     optionGroupSound,
-    optionUserName,
-    optionLanguage,
-    optionReplayAutoSolutions,
-    optionReplayAutoMulti,
-    optionMouseSpeed,
-    optionScrollSpeedEdge,
-    optionScrollSpeedClick,
-    optionFastMovementFreesMouse,
-    optionAvoidBuilderQueuing,
-    optionAvoidBatterToExploder,
-    optionPausedAssign,
-    optionPausedAssignStayPaused,
-    optionPausedAssignAdvance,
-    optionPausedAssignUnpause,
+    optionUserName, optionUserNameDesc,
+    optionLanguage, optionLanguageDesc,
+    optionReplayAutoSolutions, optionReplayAutoSolutionsDesc,
+    optionReplayAutoMulti, optionReplayAutoMultiDesc,
+    optionMouseSpeed, optionMouseSpeedDesc,
+    optionScrollSpeedEdge, optionScrollSpeedEdgeDesc,
+    optionScrollSpeedClick, optionScrollSpeedClickDesc,
+    optionFastMovementFreesMouse, optionFastMovementFreesMouseDesc,
+    optionAvoidBuilderQueuing, optionAvoidBuilderQueuingDesc,
+    optionAvoidBatterToExploder, optionAvoidBatterToExploderDesc,
+    optionPausedAssign, optionPausedAssignDesc,
+    optionPausedAssignStayPaused, optionPausedAssignStayPausedDesc,
+    optionPausedAssignAdvance, optionPausedAssignAdvanceDesc,
+    optionPausedAssignUnpause, optionPausedAssignUnpauseDesc,
 
-    optionScreenWindowed,
-    optionScreenWindowedRes,
-    optionPaintTorusSeams,
-    optionIngameTooltips,
-    optionShowButtonHotkeys,
-    optionShowFPS,
-    optionGuiColorRed,
-    optionGuiColorGreen,
-    optionGuiColorBlue,
-    optionSoundVolume,
+    optionScreenWindowed, optionScreenWindowedDesc,
+    optionScreenWindowedRes, optionScreenWindowedResDesc,
+    optionPaintTorusSeams, optionPaintTorusSeamsDesc,
+    optionIngameTooltips, optionIngameTooltipsDesc,
+    optionShowButtonHotkeys, optionShowButtonHotkeysDesc,
+    optionShowFPS, optionShowFPSDesc,
+    optionGuiColorRed, optionGuiColorRedDesc,
+    optionGuiColorGreen, optionGuiColorGreenDesc,
+    optionGuiColorBlue, optionGuiColorBlueDesc,
+    optionSoundVolume, optionSoundVolumeDesc,
 
-    optionKeyUnassigned,
-    optionKeyForceLeft,
-    optionKeyForceRight,
-    optionKeyScroll,
-    optionKeyPriorityInvert,
-    optionKeyPause,
-    optionKeyFrameBackMany,
-    optionKeyFrameBackOne,
-    optionKeyFrameAheadOne,
-    optionKeyFrameAheadMany,
-    optionKeySpeedFast,
-    optionKeySpeedTurbo,
-    optionKeyRestart,
-    optionKeyStateLoad,
-    optionKeyStateSave,
-    optionKeyZoomIn,
-    optionKeyZoomOut,
-    optionKeyChat,
-    optionKeySpecTribe,
-    optionKeyNuke,
+    optionKeyForceLeft, optionKeyForceLeftDesc,
+    optionKeyForceRight, optionKeyForceRightDesc,
+    optionKeyScroll, optionKeyScrollDesc,
+    optionKeyPriorityInvert, optionKeyPriorityInvertDesc,
+    optionKeyPause, optionKeyPauseDesc,
+    optionKeyFrameBackMany, optionKeyFrameBackManyDesc,
+    optionKeyFrameBackOne, optionKeyFrameBackOneDesc,
+    optionKeyFrameAheadOne, optionKeyFrameAheadOneDesc,
+    optionKeyFrameAheadMany, optionKeyFrameAheadManyDesc,
+    optionKeySpeedFast, optionKeySpeedFastDesc,
+    optionKeySpeedTurbo, optionKeySpeedTurboDesc,
+    optionKeyRestart, optionKeyRestartDesc,
+    optionKeyStateLoad, optionKeyStateLoadDesc,
+    optionKeyStateSave, optionKeyStateSaveDesc,
+    optionKeyZoomIn, optionKeyZoomInDesc,
+    optionKeyZoomOut, optionKeyZoomOutDesc,
+    optionKeyChat, optionKeyChatDesc,
+    optionKeySpecTribe, optionKeySpecTribeDesc,
+    optionKeyNuke, optionKeyNukeDesc,
 
-    optionKeyMenuOkay,
-    optionKeyMenuEdit,
-    optionKeyMenuExport,
-    optionKeyMenuDelete,
-    optionKeyMenuUpDir,
-    optionKeyMenuUpBy1,
-    optionKeyMenuUpBy5,
-    optionKeyMenuDownBy1,
-    optionKeyMenuDownBy5,
-    optionKeyMenuExit,
+    optionKeyMenuOkay, optionKeyMenuOkayDesc,
+    optionKeyMenuEdit, optionKeyMenuEditDesc,
+    optionKeyMenuExport, optionKeyMenuExportDesc,
+    optionKeyMenuDelete, optionKeyMenuDeleteDesc,
+    optionKeyMenuUpDir, optionKeyMenuUpDirDesc,
+    optionKeyMenuUpBy1, optionKeyMenuUpBy1Desc,
+    optionKeyMenuUpBy5, optionKeyMenuUpBy5Desc,
+    optionKeyMenuDownBy1, optionKeyMenuDownBy1Desc,
+    optionKeyMenuDownBy5, optionKeyMenuDownBy5Desc,
+    optionKeyMenuExit, optionKeyMenuExitDesc,
 
-    optionEdLeft,
-    optionEdRight,
-    optionEdUp,
-    optionEdDown,
+    optionEdLeft, optionEdLeftDesc,
+    optionEdRight, optionEdRightDesc,
+    optionEdUp, optionEdUpDesc,
+    optionEdDown, optionEdDownDesc,
     optionEdSave,
     optionEdSaveAs,
     optionEdGrid,

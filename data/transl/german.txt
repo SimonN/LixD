@@ -317,11 +317,13 @@ $optionGuiColorGreen            Menüfarbe Grün
 $optionGuiColorBlue             Menüfarbe Blau
 $optionSoundVolume              Klanglautstärke
 
-$optionKeyUnassigned         nichts
-$optionKeyForceLeft         Nur links
-$optionKeyForceRight        Nur rechts
+$optionKeyZoomIn             Zoom +
+$optionKeyZoomOut            Zoom −
 $optionKeyScroll             Scrollen
-$optionKeyPriorityInvert    Priorität invertieren
+$optionKeyPriorityInvert     Priorität invertieren
+
+$optionKeyForceLeft          Nur links
+$optionKeyForceRight         Nur rechts
 $optionKeyPause              Pause
 $optionKeyFrameBackMany      ◀▮ 1 Sek.
 $optionKeyFrameBackOne       ◀▮ 1 Bild
@@ -332,8 +334,6 @@ $optionKeySpeedTurbo         ▶▶▶
 $optionKeyRestart            Neustart
 $optionKeyStateLoad         Stand laden
 $optionKeyStateSave         Stand speich.
-$optionKeyZoomIn             Zoom +
-$optionKeyZoomOut            Zoom −
 $optionKeyChat               Chat
 $optionKeySpecTribe         Team zusehen
 $optionKeyNuke               Atombombe

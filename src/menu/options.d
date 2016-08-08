@@ -14,6 +14,7 @@ import basics.user;
 import file.language;
 import file.useropt; // only to name the type for addNumPick
 import gui;
+import gui.option;
 import graphic.color;
 import hardware.mouse; // RMB to OK the window away
 
@@ -28,7 +29,7 @@ private:
 
     TextButton okay;
     TextButton cancel;
-    Frame explainer;
+    Explainer explainer;
 
     enum OptionGroup {
         general, graphics, controls, gameKeys, editorKeys, menuKeys
@@ -51,10 +52,8 @@ public this()
 
     okay   = newOkay  (new Geom(-60, 20, 100, 20, From.BOTTOM));
     cancel = newCancel(new Geom( 60, 20, 100, 20, From.BOTTOM));
-    addChildren(okay, cancel);
-
-    explainer = new Frame(new Geom(0, 60, xlg - 40, 40, From.BOTTOM));
-    addChild(explainer);
+    explainer = new Explainer(new Geom(0, 60, xlg - 40, 40, From.BOTTOM));
+    addChildren(okay, cancel, explainer);
 
     void mkGrpButton(OptionGroup grp, Lang cap)
     {
@@ -101,14 +100,40 @@ protected override void calcSelf()
     else if (guiRed.execute || guiGreen.execute || guiBlue.execute) {
         computeColors(guiRed.number, guiGreen.number, guiBlue.number);
         reqDraw();
-        guiRed.undrawColor = guiGreen.undrawColor
-                           = guiBlue .undrawColor = color.guiM;
+        explainer.undrawColor = guiRed.undrawColor = guiGreen.undrawColor
+            = guiBlue.undrawColor = color.guiM;
     }
+    explainOptions();
 }
 
 
 
 private:
+
+void explainOptions()
+{
+    Option[] group;
+    try {
+        group = groups[basics.user.optionGroup.value.to!OptionGroup];
+        // DTODOLANGUAGE: The editor relies on the enum range of editor buttons
+        // to be connected. The UserOptions rely on the enum range of options
+        // to be interspersed with their explanations. DRY demands that I
+        // design one solution to accomodate both. Until then, the options
+        // menu won't explain editor options.
+        if (group is groups[OptionGroup.editorKeys]) {
+            explainer.explain(null);
+            return;
+        }
+    }
+    catch (Exception)
+        return;
+    foreach (opt; group)
+        if (opt.isMouseHere) {
+            explainer.explain(opt);
+            return;
+        }
+    explainer.explain(null);
+}
 
 void showGroup(in OptionGroup gr)
 {
@@ -213,8 +238,7 @@ void populateGraphics()
         fac.factory!BoolOption(showFPS),
     ];
     fac = facRight();
-    grp ~= fac.factory!ResolutionOption(Lang.optionScreenWindowedRes.transl,
-        screenWindowedX.valuePtr, screenWindowedY.valuePtr);
+    grp ~= fac.factory!ResolutionOption(screenWindowedX, screenWindowedY);
 }
 
 void populateControls()
@@ -229,9 +253,6 @@ void populateControls()
     fac.y += fac.incrementY;
     groups[OptionGroup.controls] ~= [
         fac.factory!BoolOption(fastMovementFreesMouse),
-        fac.factory!BoolOption(avoidBuilderQueuing),
-        fac.factory!BoolOption(avoidBatterToExploder),
-        fac.factory!BoolOptionOneOrTwo(pausedAssign),
     ];
     fac = facRight();
     void addNumPick(UserOption!int uo, in int minVal)
@@ -251,15 +272,16 @@ void populateGameKeys()
     immutable float skillXl = (xlg - 40) / skillSort.length;
     foreach (x, ac; skillSort)
         groups[OptionGroup.gameKeys] ~= new SkillHotkeyOption(new Geom(
-            20 + x * skillXl, 90, skillXl, 70), ac, keySkill[ac]);
+            20 + x * skillXl, 80, skillXl, 70), ac, keySkill[ac]);
 
+    enum plusBelowSkills = 70f;
     auto fac = facKeys!0;
-    fac.y += 80;
+    fac.y += plusBelowSkills;
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!HotkeyOption(keyForceLeft),
         fac.factory!HotkeyOption(keyForceRight),
     ];
-    fac.y += fac.incrementY;
+    fac.y += fac.incrementY / 2;
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!HotkeyOption(keyPause),
         fac.factory!HotkeyOption(keyRestart),
@@ -268,12 +290,13 @@ void populateGameKeys()
     ];
 
     fac = facKeys!1;
-    fac.y += 80;
+    fac.y += plusBelowSkills;
+    immutable xForBoolOptionsBelowHotkeys = fac.x;
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!HotkeyOption(keySpeedFast),
         fac.factory!HotkeyOption(keySpeedTurbo),
     ];
-    fac.y += fac.incrementY;
+    fac.y += fac.incrementY / 2;
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!HotkeyOption(keyFrameBackMany),
         fac.factory!HotkeyOption(keyFrameBackOne),
@@ -282,15 +305,29 @@ void populateGameKeys()
     ];
 
     fac = facKeys!2;
-    fac.y += 80;
+    fac.y += plusBelowSkills;
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!HotkeyOption(keyNuke),
         fac.factory!HotkeyOption(keyGameExit),
     ];
-    fac.y += fac.incrementY;
+    fac.y += fac.incrementY / 2;
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!HotkeyOption(keyChat),
         fac.factory!HotkeyOption(keySpecTribe),
+    ];
+
+    enum belowAllGameKeys = 310f;
+    fac = facLeft();
+    fac.y = belowAllGameKeys;
+    groups[OptionGroup.gameKeys] ~= [
+        fac.factory!BoolOptionOneOrTwo(pausedAssign),
+    ];
+    fac = facRight();
+    fac.x = xForBoolOptionsBelowHotkeys + keyButtonXl - 20f;
+    fac.y = belowAllGameKeys;
+    groups[OptionGroup.gameKeys] ~= [
+        fac.factory!BoolOption(avoidBuilderQueuing),
+        fac.factory!BoolOption(avoidBatterToExploder),
     ];
 }
 

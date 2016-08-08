@@ -157,8 +157,13 @@ private:
         assert (_info);
         _info.down = false;
         _info.text = "";
-        if (basics.user.showFPS.value)
+        if (basics.user.showFPS.value) {
             _fps.text = "FPS: %d".format(displayFps);
+            // Require drawing _fps, even if the text hasn't changed since
+            // last time. Otherwise, _fps flickers. The panel seems to be
+            // special w.r.t drawing logic? I forgot the details.
+            _fps.reqDraw();
+        }
     }
 
     void writeButtonTooltips()
