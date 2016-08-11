@@ -106,10 +106,11 @@ private void onceRlsdFromAllegro()
         }
         else if (event.type == ALLEGRO_EVENT_KEY_CHAR) {
             immutable int c = event.keyboard.unichar;
-            if (c >= 0x20    // ignore nonprintable ASCII control chars < 0x20
-             && c != 0x7F) { // ignore the delete character
+            if ((c < 0 || c >= 0x20) // ignore nonprintable ASCII controls
+                && c != 0x7F  // ignore the delete character
+            ) {
                 char[] buf;
-                std.utf.encode(buf, event.keyboard.unichar);
+                std.utf.encode(buf, c);
                 _bufferUTF8 ~= buf;
             }
             else if (event.keyboard.keycode == ALLEGRO_KEY_BACKSPACE) {
