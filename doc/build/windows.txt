@@ -75,9 +75,9 @@ I have chosen Matthew Leverton's binary distribution of Allegro 5. Go here:
 
 Download at random one of the binary files. I took the archive for MinGW 4.7.0.
 Unpack it. There are three directories inside: bin/, include/, lib/.
-We do _not_ need the include/, that's for C/C++ development. Our D bindings
-against the libraries will be fetched with dub automatically. We don't need
-lib/ either, we will generate our own linktime libraries from the DLLs in bin/.
+We do _not_ need the include/, that's for C/C++ development. dub will fetch
+automatically our D bindings against the libraries. We don't need lib/ either,
+we will generate our own linktime libraries from the DLLs in bin/.
 
 Locate your D installation directory, and look for the windows/ subdir.
 It might be here:
@@ -116,7 +116,7 @@ the filename extension maybe.
 I wrote this section in a rush. If it's not clear, ask me again.
 
 There's a German joke. What does "DLL" stand for? "Die lass liegen."
-(Translates roughly to "Just don't touch it, and keep it around.")
+("Let this one lie around.")
 
 
 
@@ -133,10 +133,13 @@ in the progress.
 If the game finds all libraries, but crashes upon program startup, see
 appendix 2.
 
-If the game starts and runs without errors, you can compile a release build
-that runs faster, but won't report errors as well should they happen:
+If the game starts and runs without errors, compile a release build
+for maximum performance:
 
     dub build -b release-nobounds
+
+This takes longer to build. In case of a crash, you won't get a good
+crash report either. Non-fatal errors go to ./data/log.txt.
 
 
 

@@ -2,8 +2,8 @@ module level.noowalgo;
 
 /* Lemmings 1 and C++ Lix allow no-overwrite pieces. A no-overwrite piece N
  * is drawn at normal time, i.e., when it comes in the terrain list in order.
- * N's pixels are only drawn where there is air on the land exactly before
- * the tile N is drawn.
+ * N's pixels drawn like this: For each pixel, the pixel is only drawn where
+ * there is air on the target land pixel exactly before the tile N is drawn.
  *
  * This drawing is time-consuming for the machine. It doesn't match the mental
  * model either: The no-overwrite trick is a poor man's tile cutting.
@@ -57,9 +57,13 @@ private struct MarkedOcc {
 }
 
 /* Algorithm: Find pieces for 0 or 1 new group, replace pieces by group.
+ * Input: The noow-free list of already-processed tiles. The next no-overwrite
+ *        tile that may require grouping of tiles in the list.
+ * Output: Nothing, but we modify the mutable input list. Either the list stays
+ *         the same, or we remove some pieces and replace them by 1 group.
  *
- * This function modifies the input list.
- * This function clobbers list[n].mustGroup.
+ * Clobbers: This function modifies the input list.
+ *           This function clobbers list[n].mustGroup.
  *
  * Invariant: Before and after this function, nothing in the list is noow.
  * This doesn't add (TerOcc next) to the list. This only makes groups.

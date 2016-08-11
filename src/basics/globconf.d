@@ -14,7 +14,7 @@ import file.log;
 
 string userName          = "";
 string ipLastUsed        = "127.0.0.1";
-string ipCentralServer   = "asdfasdf.ethz.ch";
+string ipCentralServer   = "lixgame.com";
 int    serverPort        = 22934;
 
 void load()

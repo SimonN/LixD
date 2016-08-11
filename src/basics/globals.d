@@ -8,7 +8,7 @@ import file.filename;
 
 // Untranslated strings; for translations of other strings see file.language
 immutable nameOfTheGame = "Lix";
-immutable homepageURL   = "asdfasdf.ethz.ch/~simon";
+immutable homepageURL   = "www.lixgame.com";
 
 enum int ticksPerSecond       = 60;
 enum int updatesPerSecond     = 15; // logic/physics updates of the game
