@@ -52,30 +52,29 @@ void makeLixSprites(in Style st)
 {
     assert (spritesheets[st] is null);
     auto src = getLixRawSprites;
-    spritesheets[st] = lockThenRecolor(src, magicnrSpritesheets, st);
+    spritesheets[st] = lockThenRecolor!magicnrSpritesheets(src, st);
 }
 
 void makePanelInfoIcon(in Style st)
 {
-    recolorForGuiAndPlayer(fileImageGameIcon,
-        magicnrPanelInfoIcons, panelInfoIcons, st);
+    recolorForGuiAndPlayer!magicnrPanelInfoIcons(
+        fileImageGameIcon, panelInfoIcons, st);
 }
 
 void makeSkillButtonIcon(in Style st)
 {
-    recolorForGuiAndPlayer(fileImageSkillIcons,
-        magicnrSkillButtonIcons, skillButtonIcons, st);
+    recolorForGuiAndPlayer!magicnrSkillButtonIcons(
+        fileImageSkillIcons, skillButtonIcons, st);
 }
 
 private:
 
-void recolorForGuiAndPlayer(
+void recolorForGuiAndPlayer(int magicnr)(
     in Filename fn,
-    in int magicnr,
     ref Cutbit[Style.max] vec,
     in Style st
 ) {
     assert (vec[st] is null);
     Cutbit sourceCb = getInternalMutable(fn);
-    vec[st] = lockThenRecolor(sourceCb, magicnr, st);
+    vec[st] = lockThenRecolor!magicnr(sourceCb, st);
 }

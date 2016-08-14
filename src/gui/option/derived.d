@@ -139,7 +139,7 @@ public:
 
 class SkillHotkeyOption : Option
 {
-    private CutbitElement _cb;
+    private SkillIcon _cb;
     private KeyButton _keyb;
     private UserOption!KeySet _userOption;
 
@@ -148,9 +148,8 @@ class SkillHotkeyOption : Option
         super(g);
         assert (opt);
         _keyb = new KeyButton(new Geom(0, 0, xlg, 20, From.BOTTOM));
-        _cb   = new CutbitElement(new Geom(0, 0, xlg, ylg-20, From.TOP),
-                                  Style.garden.getSkillButtonIcon);
-        _cb.xf = ac;
+        _cb   = new SkillIcon(new Geom(0, 0, xlg, ylg-20, From.TOP));
+        _cb.ac = ac;
         addChildren(_cb, _keyb);
         _userOption = opt;
     }

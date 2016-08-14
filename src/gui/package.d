@@ -16,5 +16,6 @@ public import gui.labeltwo;
 public import gui.msgbox;
 public import gui.numpick;
 public import gui.root;
+public import gui.skillico;
 public import gui.texttype;
 public import gui.window;

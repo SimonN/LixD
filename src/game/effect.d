@@ -95,12 +95,12 @@ class EffectManager {
     }
 
     void addArrow(in Update upd, in int tribe, in int lix,
-        in int ex, in int ey, in Style style, in int xf
+        in int ex, in int ey, in Style style, in Ac ac
     ) {
         Effect e = Effect(upd, tribe, lix);
         if (e !in _tree) {
             _tree.insert(e);
-            _debris ~= Debris.newArrow(ex, ey, style, xf);
+            _debris ~= Debris.newArrow(ex, ey, style, ac);
         }
     }
 

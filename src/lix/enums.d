@@ -29,6 +29,13 @@ nothrow bool isPloder(in Ac ac) pure
     return ac == Ac.imploder || ac == Ac.exploder;
 }
 
+nothrow @property int acToSkillIconXf(in Ac ac)
+{
+    // I plan to remove black frames from skillico.I.png, to save time.
+    // I will then replace this by a nontrivial computation.
+    return ac;
+}
+
 nothrow Ac stringToAc(in string str)
 {
     try {

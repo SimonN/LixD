@@ -53,12 +53,12 @@ struct Debris {
         return uniform(40, 90);
     }
 
-    static auto newArrow(in int ex, in int ey, in Style style, in int xf)
+    static auto newArrow(in int ex, in int ey, in Style style, in Ac ac)
     {
         auto ret = typeof(this)(Type.arrow, arrowTimeToLive, ex, ey);
         ret.timeToLive = arrowTimeToLive;
         ret.style = style;
-        ret.frame = xf;
+        ret.frame = ac.acToSkillIconXf;
         return ret;
     }
 

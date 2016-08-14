@@ -8,9 +8,16 @@ import graphic.textout; // select small font
 import lix.enums;
 
 class SkillButton : Button {
+private:
+    Style _style = Style.max;
+    int _number;
+    Ac  _skill;
+
+    SkillIcon _icon;
+    Label _labelNumL;
+    Label _labelNumM;
 
 public:
-
     this(Geom g, Style sty = Style.garden)
     {
         super(g);
@@ -67,22 +74,12 @@ public:
 
         if (_icon !is null)
             rmChild(_icon);
-        _icon = new CutbitElement(new Geom(0, 0, xlg, ylg*2f/3f, From.BOTTOM),
-                                  getSkillButtonIcon(_style));
+        _icon = new SkillIcon(new Geom(0, 0, xlg, ylg * 2f / 3f,
+            From.BOTTOM), _style);
         addChild(_icon);
         reqDraw();
         return st;
     }
-
-private:
-
-    Style _style = Style.max;
-    int _number;
-    Ac  _skill;
-
-    CutbitElement _icon;
-    Label _labelNumL;
-    Label _labelNumM;
 
 protected:
 
@@ -104,7 +101,7 @@ protected:
     {
         assert (_icon);
         _icon.yf = _number == 0 ? 1 : 0; // 0 == colorful, 1 == greyed out
-        _icon.xf = _skill;
+        _icon.ac = _skill;
         _icon.draw(); // see comment in BitmapButton.drawOntoButton()
     }
 

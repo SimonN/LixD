@@ -15,20 +15,19 @@ import lix.enums;
 
 package:
 
-void eidrecol(Cutbit cutbit, in int magicnr)
+void eidrecol(Cutbit cutbit, int magicnr)
 {
     // don't do anything for magicnr == magicnrSpritesheets. This function
     // is about GUI recoloring, not player color recoloring. All GUI portions
     // of the spritesheets have been moved to the skill buttons in 2015-10.
-    if (magicnr == magicnrSpritesheets)
-        return;
-    makeColorDicts();
+    assert (magicnr != magicnrSpritesheets);
 
+    makeColorDicts();
     version (tharsisprofiling)
         auto zone = Zone(profiler, "eidrecol magicnr = %d".format(magicnr));
+    if (! cutbit || ! cutbit.valid)
+        return;
     Albit bitmap = cutbit.albit;
-    assert (bitmap);
-    if (! bitmap) return;
 
     if (magicnr == 0) {
         auto region = al_lock_bitmap(bitmap,
@@ -42,7 +41,7 @@ void eidrecol(Cutbit cutbit, in int magicnr)
 
     auto drata = DrawingTarget(bitmap);
     immutable bmp_yl = al_get_bitmap_height(bitmap);
-    if (! magicnr)
+    if (magicnr == 0)
         for (int y = 0; y < bmp_yl; ++y)
             applyToRow(y > cutbit.yl ? dictGuiLight
                                      : dictGuiNormal, bitmap, y);
@@ -58,57 +57,53 @@ void eidrecol(Cutbit cutbit, in int magicnr)
     }
 }
 
-Cutbit lockThenRecolor(
-    Cutbit sourceCutbit,
-    in int magicnr,
+Cutbit lockThenRecolor(int magicnr)(
+    Cutbit sourceCb,
     in Style st
 ) {
-    // We assume sourceCutbit to be unlocked, and are going to lock it
+    // We assume sourceCb to be unlocked, and are going to lock it
     // in this function.
-    if (! sourceCutbit || ! sourceCutbit.valid)
+    if (! sourceCb || ! sourceCb.valid)
         return nullCutbit;
-    Albit lix = sourceCutbit.albit;
+    Albit lix = sourceCb.albit;
     assert (lix);
-
-    immutable int   lixXl    = al_get_bitmap_width (lix);
-    immutable int   lixYl    = al_get_bitmap_height(lix);
-    immutable AlCol colBreak = al_get_pixel(lix, lixXl - 1, 0);
+    immutable int lixXl = al_get_bitmap_width (lix);
+    immutable int lixYl = al_get_bitmap_height(lix);
 
     void recolorTargetForStyle()
     {
         version (tharsisprofiling)
             auto zone = Zone(profiler, format("recolor-one-bmp-%d", magicnr));
         AlCol[AlCol] recolArray = generateRecolArray(st);
+        immutable colBreak = al_get_pixel(lix, lixXl - 1, 0);
+
         Y_LOOP: for (int y = 0; y < lixYl; y++) {
-            X_LOOP: for (int x = 0; x < lixXl; x++) {
+            static if (magicnr == magicnrSkillButtonIcons) {
                 // The skill button icons have two rows: the first has the
                 // skills in player colors, the second has them greyed out.
                 // Ignore the second row here.
-                if (y >= sourceCutbit.yl + 1
-                    && magicnr == magicnrSkillButtonIcons
-                ) {
+                if (y >= sourceCb.yl + 1)
                     break Y_LOOP;
-                }
-                else if (magicnr == magicnrPanelInfoIcons
-                     && y >= sourceCutbit.yl + 1
-                     && y <  2 * (sourceCutbit.yl + 1)
-                ) {
-                    // skip all x pixels in the second row in this
-                    continue;
-                }
+            }
+            else static if (magicnr == magicnrPanelInfoIcons) {
+                // Skip all x pixels in the second row of the little icons.
+                if (y >= sourceCb.yl + 1 && y < 2 * (sourceCb.yl + 1))
+                    continue Y_LOOP;
+            }
+            X_LOOP: for (int x = 0; x < lixXl; x++) {
                 immutable AlCol col = al_get_pixel(lix, x, y);
-                if (magicnr == magicnrSpritesheets && col == colBreak)
+                static if (magicnr == magicnrSpritesheets) {
                     // on two consecutive pixels with colBreak, skip for speed
-                    if (x < lixXl - 1 && al_get_pixel(lix, x+1, y) == colBreak)
+                    if (col == colBreak && x < lixXl - 1
+                        && al_get_pixel(lix, x+1, y) == colBreak)
                         // bad:  immediately begin next row, because
                         //       we may have separating colBreak-colored
                         //       frames in the file.
                         // good: immediately begin next frame. We have already
                         //       advanced into the frame by 1 pixel, as we have
                         //       seen two
-                        x += sourceCutbit.xl;
-
-                // No exceptions for speed encountered so far.
+                        x += sourceCb.xl;
+                }
                 if (AlCol* colPtr = (col in recolArray))
                     al_put_pixel(x, y, *colPtr);
             }
@@ -117,7 +112,7 @@ Cutbit lockThenRecolor(
     // end function recolorForStyle
 
     // now invoke the above code on the single wanted Lix style
-    Cutbit targetCb = new Cutbit(sourceCutbit);
+    Cutbit targetCb = new Cutbit(sourceCb);
     version (tharsisprofiling)
         auto zone = Zone(profiler, format("recolor-one-foreach-%d", magicnr));
     auto lock  = LockReadOnly(lix);
@@ -126,7 +121,7 @@ Cutbit lockThenRecolor(
     recolorTargetForStyle();
 
     // eidrecol invoked with magicnr != 0 expects already-locked bitmap
-    if (magicnr != magicnrSpritesheets)
+    static if (magicnr != magicnrSpritesheets)
         eidrecol(targetCb, magicnr);
     return targetCb;
 
