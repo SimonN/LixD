@@ -5,7 +5,6 @@ import std.file; // FileException
 import std.conv;
 
 import file.log;
-import file.search; // contingency measure: create base dir if not exist
 import gui;
 import gui.picker;
 
@@ -148,11 +147,9 @@ private:
             _ls.currentDir = currentDir;
         catch (FileException e) {
             log(e.msg);
-            if (currentDir == basedir) {
-                std.file.mkdirRecurse(basedir.dirRootful);
-                if (! basedir.dirExists)
-                    throw e;
-            }
+            if (currentDir == basedir && basedir !is null)
+                // This throws if the dir doesn't exist afterwards
+                basedir.mkdirRecurse();
             currentDir = basedir;
             return;
         }

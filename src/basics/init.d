@@ -8,6 +8,7 @@ import basics.globals;
 import basics.globconf;
 import basics.user;
 import file.language;
+import file.filename;
 import game.physdraw;
 import graphic.color;
 import graphic.internal;
@@ -36,6 +37,7 @@ void initialize(in Cmdargs cmdargs)
     if (ia) basics.alleg5.initializeInteractive();
     else    basics.alleg5.initializeVerify();
 
+            file.filename.initialize(); // the virtual filesystem
             file.log.initialize();
     if (ia) basics.globconf.load();
     if (ia) basics.user.load();

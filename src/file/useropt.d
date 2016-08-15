@@ -187,7 +187,7 @@ public:
 protected:
     override void setImpl(in IoLine ioLine)
     {
-        _value = MutFilename(new Filename(ioLine.text2));
+        _value = MutFilename(new VfsFilename(ioLine.text2));
     }
 
     override IoLine toIoLineExceptForKey() const

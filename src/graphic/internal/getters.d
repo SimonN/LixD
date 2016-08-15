@@ -20,7 +20,7 @@ body {
     static Cutbit cached = null;
     if (cached)
         return cached;
-    auto fn = new Filename(fileImageSpritesheet.rootless ~ imgExt);
+    auto fn = new VfsFilename(fileImageSpritesheet.rootless ~ imgExt);
     loadFromDisk(fn);
     assert (fn.rootlessNoExt in internal, "can't find Lix spritesheet");
     cached = *(fn.rootlessNoExt in internal);
@@ -34,8 +34,8 @@ Cutbit getInternalMutable(in Filename fn)
 {
     if (noninteractiveMode)
         return nullCutbit;
-    auto correctScale  = new Filename(scaleDir ~ fn.file ~ imgExt);
-    auto fallbackScale = new Filename(fn.rootless ~ imgExt);
+    auto correctScale  = new VfsFilename(scaleDir ~ fn.file ~ imgExt);
+    auto fallbackScale = new VfsFilename(fn.rootless ~ imgExt);
     if (auto ret = correctScale.rootlessNoExt in internal)
         return *ret;
     if (auto ret = fallbackScale.rootlessNoExt in internal)

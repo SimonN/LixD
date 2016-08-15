@@ -176,7 +176,7 @@ private:
                     && _currentFilename !is null
                 ) {
                     _info.text = "%s %s".format(_info.text,
-                                        _currentFilename.rootful);
+                                        _currentFilename.rootless);
                 }
             }
         foreach (id, tb; _textButtons)

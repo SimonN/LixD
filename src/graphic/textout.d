@@ -8,6 +8,7 @@ import std.string; // toStringz()
 public import basics.alleg5 : AlFont;
 
 import basics.alleg5;
+import file.filename;
 import graphic.color; // gui shadow color
 import hardware.display; // make fonts in a size relative to the display
 
@@ -46,11 +47,12 @@ void initialize()
     immutable float magnif = min(al_get_display_height(display) / 480f,
                                  al_get_display_width (display) / 640f);
     immutable int flags = 0; // we don't need this, A5 function wants it
-    immutable string fn = "./data/fonts/djvusans.ttf";
+    immutable Filename fn = new VfsFilename("./data/fonts/djvusans.ttf");
+    const(char*) fnp = fn.stringzForReading;
 
-    djvuS = al_load_ttf_font(fn.ptr, to!int(floor(magnif *  8)), flags);
-    djvuM = al_load_ttf_font(fn.ptr, to!int(floor(magnif * 14)), flags);
-    djvuL = al_load_ttf_font(fn.ptr, to!int(floor(magnif * 20)), flags);
+    djvuS = al_load_ttf_font(fnp, to!int(floor(magnif *  8)), flags);
+    djvuM = al_load_ttf_font(fnp, to!int(floor(magnif * 14)), flags);
+    djvuL = al_load_ttf_font(fnp, to!int(floor(magnif * 20)), flags);
 
     if (! djvuS) djvuS = fontAl;
     if (! djvuM) djvuM = fontAl;

@@ -159,6 +159,6 @@ Filename overrideCurrentDirectoryWithTileFilename(in Editor editor)
     // anything, you shouldn't affect the browser's starting directory.
     foreach (const(Hover) hov; editor._selection)
         if (hov.occ.tile.name != "")
-            return new Filename(dirImages.rootless ~ hov.occ.tile.name);
+            return new VfsFilename(dirImages.rootless ~ hov.occ.tile.name);
     return null;
 }

@@ -43,8 +43,7 @@ void save()
         // don't save during noninteractive mode, where we didn't load the cfg
         return;
     try {
-        std.file.mkdirRecurse(fileGlobalConfig.dirRootful);
-        std.stdio.File f = std.stdio.File(fileGlobalConfig.rootful, "w");
+        std.stdio.File f = fileGlobalConfig.openForWriting();
 
         f.writeln(IoLine.Dollar(cfgUserName,        userName));
         f.writeln();

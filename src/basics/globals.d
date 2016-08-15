@@ -151,53 +151,55 @@ Filename fileImageGuiNumber, fileImageDebris, fileImageEditFlip,
 
 static this()
 {
-    dirLevels = new Filename("levels/");
-    dirLevelsSingle = new Filename("levels/single/");
-    dirLevelsNetwork = new Filename("levels/network/");
-    dirReplays = new Filename("replays/");
-    dirData = new Filename("data/");
-    dirDataBitmap = new Filename("data/images/");
-    dirDataSound = new Filename("data/sound/");
-    dirDataUser = new Filename("data/user/");
-    dirDataTransl = new Filename("data/transl/");
-    dirImages = new Filename("images/");
-    dirImagesOrig = new Filename("images/orig/");
-    dirImagesOrigL1 = new Filename("images/orig/L1/");
-    dirImagesOrigL2 = new Filename("images/orig/L2/");
+    alias Fn = immutable(VfsFilename);
 
-    dirReplayAutoSolutions = new Filename("replays/solved/");
-    dirReplayAutoMulti = new Filename("replays/network/");
-    dirReplayManual = new Filename("replays/manual/");
+    dirLevels = new Fn("levels/");
+    dirLevelsSingle = new Fn("levels/single/");
+    dirLevelsNetwork = new Fn("levels/network/");
+    dirReplays = new Fn("replays/");
+    dirData = new Fn("data/");
+    dirDataBitmap = new Fn("data/images/");
+    dirDataSound = new Fn("data/sound/");
+    dirDataUser = new Fn("data/user/");
+    dirDataTransl = new Fn("data/transl/");
+    dirImages = new Fn("images/");
+    dirImagesOrig = new Fn("images/orig/");
+    dirImagesOrigL1 = new Fn("images/orig/L1/");
+    dirImagesOrigL2 = new Fn("images/orig/L2/");
 
-    fileGlobalConfig = new Filename("data/config.txt");
-    fileLog = new Filename("data/log.txt");
-    fileTharsisProf = new Filename("data/profile.txt");
-    fileLanguageEnglish = new Filename("data/transl/english.txt");
+    dirReplayAutoSolutions = new Fn("replays/solved/");
+    dirReplayAutoMulti = new Fn("replays/network/");
+    dirReplayManual = new Fn("replays/manual/");
 
-    fileImageGuiNumber = new Filename("data/images/api_numb.I");
-    fileImageDebris = new Filename("data/images/debris.I");
-    fileImageEditFlip = new Filename("data/images/edit_flp.I");
-    fileImageEditHatch = new Filename("data/images/edit_hat.I");
-    fileImageEditPanel = new Filename("data/images/edit_pan.I");
-    fileImageExplosion = new Filename("data/images/explode.I");
-    fileImageFuseFlame = new Filename("data/images/fuse_fla.I");
-    fileImageGameArrow = new Filename("data/images/game_arr.I");
-    fileImageGameIcon = new Filename("data/images/game_ico.I");
-    fileImageGameNuke = new Filename("data/images/game_nuk.I");
-    fileImageGamePanel = new Filename("data/images/game_pan.I");
-    fileImageGamePanel2 = new Filename("data/images/game_pa2.I");
-    fileImageGamePanelHints = new Filename("data/images/game_pah.I");
-    fileImageGameSpawnint = new Filename("data/images/game_spi.I");
-    fileImageGamePause = new Filename("data/images/game_pau.I");
-    fileImageGameReplay = new Filename("data/images/game_rep.I");
-    fileImageImplosion = new Filename("data/images/implode.I");
-    fileImageSpritesheet = new Filename("data/images/lix.I");
-    fileImageStyleRecol = new Filename("data/images/lixrecol.I");
-    fileImageLobbySpec = new Filename("data/images/lobby_sp.I");
-    fileImageMenuBackground = new Filename("data/images/menu_bg.I");
-    fileImageMenuCheckmark = new Filename("data/images/menu_chk.I");
-    fileImageMouse = new Filename("data/images/mouse.I");
-    fileImagePreviewIcon = new Filename("data/images/prev_ico.I");
-    fileImageSkillIcons = new Filename("data/images/skillico.I");
+    fileGlobalConfig = new Fn("data/config.txt");
+    fileLog = new Fn("data/log.txt");
+    fileTharsisProf = new Fn("data/profile.txt");
+    fileLanguageEnglish = new Fn("data/transl/english.txt");
+
+    fileImageGuiNumber = new Fn("data/images/api_numb.I");
+    fileImageDebris = new Fn("data/images/debris.I");
+    fileImageEditFlip = new Fn("data/images/edit_flp.I");
+    fileImageEditHatch = new Fn("data/images/edit_hat.I");
+    fileImageEditPanel = new Fn("data/images/edit_pan.I");
+    fileImageExplosion = new Fn("data/images/explode.I");
+    fileImageFuseFlame = new Fn("data/images/fuse_fla.I");
+    fileImageGameArrow = new Fn("data/images/game_arr.I");
+    fileImageGameIcon = new Fn("data/images/game_ico.I");
+    fileImageGameNuke = new Fn("data/images/game_nuk.I");
+    fileImageGamePanel = new Fn("data/images/game_pan.I");
+    fileImageGamePanel2 = new Fn("data/images/game_pa2.I");
+    fileImageGamePanelHints = new Fn("data/images/game_pah.I");
+    fileImageGameSpawnint = new Fn("data/images/game_spi.I");
+    fileImageGamePause = new Fn("data/images/game_pau.I");
+    fileImageGameReplay = new Fn("data/images/game_rep.I");
+    fileImageImplosion = new Fn("data/images/implode.I");
+    fileImageSpritesheet = new Fn("data/images/lix.I");
+    fileImageStyleRecol = new Fn("data/images/lixrecol.I");
+    fileImageLobbySpec = new Fn("data/images/lobby_sp.I");
+    fileImageMenuBackground = new Fn("data/images/menu_bg.I");
+    fileImageMenuCheckmark = new Fn("data/images/menu_chk.I");
+    fileImageMouse = new Fn("data/images/mouse.I");
+    fileImagePreviewIcon = new Fn("data/images/prev_ico.I");
+    fileImageSkillIcons = new Fn("data/images/skillico.I");
 }
 

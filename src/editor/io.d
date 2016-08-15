@@ -102,7 +102,7 @@ void askForDataLossThenExecute(
         if (_loadedFrom) {
             box.addMsg(Lang.saveBoxQuestionUnsavedChangedLevel.transl);
             box.addMsg("%s %s".format(Lang.saveBoxFileName.transl,
-                                      _loadedFrom.rootful));
+                                      _loadedFrom.rootless));
         }
         else {
             box.addMsg(Lang.saveBoxQuestionUnsavedNewLevel.transl);

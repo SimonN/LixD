@@ -11,16 +11,15 @@ import basics.globals;
 import basics.init;
 import basics.user; // Result
 import file.filename;
-import file.search;
 import game.core.game;
 import game.replay;
 import level.level;
 
 public void verifyFiles(Cmdargs cmdargs)
 {
-    if (! cmdargs.verifyFiles.all!(f => f.rootful.exists)) {
-        cmdargs.verifyFiles.map!(f => f.rootful).filter!(str => ! str.exists)
-            .each!(str => writefln("Error: File not found: `%s'", str));
+    if (! cmdargs.verifyFiles.all!(f => f.fileExists || f.dirExists)) {
+        cmdargs.verifyFiles.filter!(f => ! (f.fileExists || f.dirExists))
+            .each!(f => writefln("Error: File not found: `%s'", f.rootless));
         return;
     }
     basics.init.initialize(cmdargs);
@@ -50,8 +49,8 @@ private class VerifyCounter {
 
     void verifyDirOrFile(Filename fn)
     {
-        if (std.file.isDir(fn.rootful))
-            fn.findRegularFilesRecursively(filenameExtReplay)
+        if (fn.dirExists)
+            fn.findTree(filenameExtReplay)
                 .each!(foundFile => verifyAndGC(foundFile));
         else
             verifyAndGC(fn);
@@ -102,14 +101,14 @@ private class VerifyCounter {
         if (! verifyCoverage)
             return;
         // levelsCovered may contain duplicates. Remove duplicates.
-        levelsCovered = levelsCovered.sort().uniq().array();
-        MutFilename[] levelsToCover = levelDirsToCover.sort().uniq()
-            .map!(dirString => new Filename(dirString))
-            .map!(fn => findRegularFilesNoRecursion(fn))
+        levelsCovered = levelsCovered.sort!fnLessThan.uniq.array;
+        MutFilename[] levelsToCover = levelDirsToCover.sort().uniq
+            .map!(dirString => new VfsFilename(dirString))
+            .map!(fn => fn.findFiles)
             .joiner
             .filter!(fn => fn.preExtension == 0) // no _order.X.txt
             .array;
-        levelsToCover.sort();
+        levelsToCover.sort!fnLessThan;
         immutable totalLevelsToCover = levelsToCover.length;
         // We assume that every level that (we have tested positive)
         // has also (been found with the directory search).
@@ -180,6 +179,6 @@ private:
             .sort().uniq.array;
         if (solved)
             levelsCovered = (levelsCovered ~ MutFilename(levelFn))
-                .sort().uniq.array;
+                .sort!fnLessThan.uniq.array;
     }
 }

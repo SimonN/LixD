@@ -112,7 +112,7 @@ private:
         m.addMsg(Lang.saveBoxQuestionDeleteLevel.transl);
         m.addMsg(Lang.saveBoxLevelName.transl ~ " " ~ (_levelRecent !is null
             ? _levelRecent.name : fileRecent.fileNoExtNoPre));
-        m.addMsg(Lang.saveBoxFileName.transl ~ " " ~ fileRecent.rootful);
+        m.addMsg(Lang.saveBoxFileName.transl ~ " " ~ fileRecent.rootless);
         return m;
     }
 }

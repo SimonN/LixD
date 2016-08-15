@@ -71,7 +71,7 @@ protected:
                     while (s.length > 0 && s[$-1] != '/')
                         s = s[0 .. $-1];
                 }
-                currentDir = new Filename(s);
+                currentDir = new VfsFilename(s);
                 _execute = true;
                 break;
             }

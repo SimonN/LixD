@@ -9,7 +9,6 @@ static import basics.globals;
 import file.filename;
 import file.io;
 import file.language;
-import file.search;
 import gui;
 import gui.option.base;
 import gui.picker;

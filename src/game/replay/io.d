@@ -1,7 +1,6 @@
 module game.replay.io;
 
 import std.algorithm;
-import std.file; // mkdirRecurse
 import std.stdio; // save file, and needed for unittest
 import std.string;
 
@@ -27,13 +26,11 @@ nothrow void implSaveToFile(
     in Level lev
 ) {
     try {
-        std.file.mkdirRecurse(fn.dirRootful);
-        std.stdio.File file = File(fn.rootful, "w");
+        std.stdio.File file = fn.openForWriting();
         saveToStdioFile(replay, file, lev);
     }
-    catch (Exception e) {
+    catch (Exception e)
         log(e.msg);
-    }
 }
 
 void implSaveAsAutoReplay(
@@ -59,7 +56,7 @@ auto implLoadFromFile(Replay replay, Filename fn) { with (replay)
         MutFilename levelFilename;
         MutableDate levelBuiltRequired;
     }
-    auto ret = Return(MutFilename(nullFilename),
+    auto ret = Return(MutFilename(null),
                       MutableDate(new Date("0")));
     IoLine[] lines;
     try {
@@ -79,7 +76,7 @@ auto implLoadFromFile(Replay replay, Filename fn) { with (replay)
         else if (i.text1 == replayGameVersionRequired)
             _gameVersionRequired = Version(i.text2);
         else if (i.text1 == replayLevelFilename)
-            ret.levelFilename = new Filename(dirLevels.dirRootless ~ i.text2);
+            ret.levelFilename = new VfsFilename(dirLevels.dirRootless ~ i.text2);
         break;
     case '+':
         if (i.text1 == replayPlayer || i.text1 == replayFriend) {
@@ -174,9 +171,8 @@ void saveToStdioFile(
 string mangledLevelFilename(in Replay replay)
 {
     // Write the path to the level, but omit the leading (dir-levels)/
-    // DTODOFHS: we chop off a constant length, we shouldn't do that
-    // anymore once we don't know where it's saved
-    if (dirLevels.rootless.length >= replay.levelFilename.rootless.length)
+    if (replay.levelFilename is null
+        || dirLevels.rootless.length >= replay.levelFilename.rootless.length)
         return null;
     return replay.levelFilename.rootless[dirLevels.rootless.length .. $];
 }
@@ -187,13 +183,13 @@ void saveToTree(
     in Level lev
 ) {
     string outfile = "%s%s%s-%s-%s%s".format(
-        treebase.rootful,
+        treebase.rootless,
         replay.mimickLevelPath(),
         replay.levelFilename ? replay.levelFilename.fileNoExtNoPre : "unknown",
         replay.playerLocalName.escapeStringForFilename(),
         Date.now().toStringForFilename(),
         basics.globals.filenameExtReplay);
-    replay.implSaveToFile(new Filename(outfile), lev);
+    replay.implSaveToFile(new VfsFilename(outfile), lev);
 }
 
 string mimickLevelPath(in Replay replay)
@@ -219,13 +215,13 @@ body {
 
 unittest
 {
-    Filename fn0 = new Filename("./replays/unittest-input.txt");
-    Filename fn1 = new Filename("./replays/unittest-output-1.txt");
-    Filename fn2 = new Filename("./replays/unittest-output-2.txt");
-    Filename fnl = new Filename("./replays/unittest-output-level.txt");
+    Filename fn0 = new VfsFilename("./replays/unittest-input.txt");
+    Filename fn1 = new VfsFilename("./replays/unittest-output-1.txt");
+    Filename fn2 = new VfsFilename("./replays/unittest-output-2.txt");
+    Filename fnl = new VfsFilename("./replays/unittest-output-level.txt");
 
     try {
-        auto file = std.stdio.File(fn0.rootful, "w");
+        auto file = fn0.openForWriting();
         // Write 5 lines into the file, we'll assert later that there are 5.
         file.write(
             "! 387 0 ASSIGN=JUMPER 0\n"
@@ -251,5 +247,5 @@ unittest
     assert (data_len == r._data.len);
 
     implSaveToFile(r, fn2, lev);
-    [fn0, fn1, fn2, fnl].map!(f => f.rootful).each!(std.file.remove);
+    [fn0, fn1, fn2, fnl].each!(f => f.deleteFile);
 }

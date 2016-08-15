@@ -59,7 +59,7 @@ public:
     void emergencySave() const
     {
         import basics.globals;
-        _level.saveToFile(new Filename(dirLevels.dirRootless
+        _level.saveToFile(new VfsFilename(dirLevels.dirRootless
                                        ~ "editor-emergency-save.txt"));
     }
 

@@ -3,7 +3,6 @@ module editor.gui.browter;
 import basics.globals;
 import basics.user;
 import file.language;
-import file.search;
 import file.useropt;
 import gui;
 import gui.picker;
@@ -35,7 +34,7 @@ public:
         _picker = new Picker(cfg);
         _picker.basedir = dirImages;
         _picker.currentDir = merge ? dirImages
-            : file.search.dirExists(overrideStartDir) ? overrideStartDir
+            : overrideStartDir && overrideStartDir.dirExists ? overrideStartDir
             : _curDir.value;
         _cancel = new TextButton(new Geom(
             20, 40, 80, 30, From.TOP_RIGHT), Lang.commonCancel.transl);

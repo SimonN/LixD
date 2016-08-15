@@ -98,7 +98,7 @@ public:
 
     void saveToFile(in Filename fn)
     {
-        al_save_bitmap(fn.rootfulZ, bitmap);
+        al_save_bitmap(fn.stringzForWriting, bitmap);
     }
 
     // Draw the entire Albit onto (Torbit this). Can take non-integer quarter

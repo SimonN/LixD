@@ -5,7 +5,6 @@ import std.algorithm; // find
 import basics.alleg5;
 import basics.globals;
 import file.filename;
-import file.search;
 import graphic.color;
 import graphic.cutbit;
 import graphic.internal.getters;

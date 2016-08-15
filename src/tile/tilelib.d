@@ -13,7 +13,6 @@ static import glo = basics.globals;
 import basics.help; // clear_array
 import file.filename;
 import file.log;
-import file.search;
 import hardware.tharsis;
 import graphic.cutbit;
 import tile.abstile;
@@ -39,7 +38,7 @@ void initialize()
     {
         version (tharsisprofiling)
             auto zone2 = Zone(profiler, "tilelib.init find recursively");
-        files = file.search.findRegularFilesRecursively(glo.dirImages);
+        files = glo.dirImages.findTree;
     }
     foreach (fn; files) {
         if (! fn.hasImageExtension()) continue;
@@ -125,7 +124,7 @@ void loadGadgetFromDisk(in string strNoExt, in char pe, in Filename fn)
     else if (pe == glo.preExtWater) { type = GadType.WATER; }
     else if (pe == glo.preExtFire)  { type = GadType.WATER; subtype = 1; }
     else {
-        logf("Unrecognized pre-extension `%c': `%s'", pe, fn.rootful);
+        logf("Unrecognized pre-extension `%c': `%s'", pe, fn.rootless);
         return;
     }
 
@@ -139,12 +138,12 @@ void loadGadgetFromDisk(in string strNoExt, in char pe, in Filename fn)
     assert (tile && *tile);
     // Load overriding definitions from a possibly accompanying text file.
     // That file must have the same name, only its extension must be replaced.
-    Filename defs = new Filename(fn.rootlessNoExt
+    Filename defs = new VfsFilename(fn.rootlessNoExt
                                ~ glo.filenameExtTileDefinitions);
     // We test for existence here, because trying to load the file
     // will generate a log message for nonexisting file otherwise.
     // It's normal to have no definitions file, so don't log that.
-    if (fileExists(defs))
+    if (defs.fileExists)
         tile.readDefinitionsFile(defs);
 }
 
@@ -161,7 +160,7 @@ void loadTerrainFromDisk(in string strNoExt, in bool steel, in Filename fn)
 void logBecauseInvalid(const(Cutbit) cb, in Filename fn)
 {
     assert (! cb.valid);
-    logf("Image has too large proportions: `%s'", fn.rootful);
+    logf("Image has too large proportions: `%s'", fn.rootless);
     log ("    -> See bug report: https://github.com/SimonN/LixD/issues/4");
 }
 

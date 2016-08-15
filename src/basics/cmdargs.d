@@ -119,7 +119,7 @@ private:
             verifyCoverage = true;
         }
         else if (arg.startsWith(vrf)) {
-            verifyFiles ~= new Filename(arg[vrf.length .. $]);
+            verifyFiles ~= new ArgumentFilename(arg[vrf.length .. $]);
         }
         else if (arg.startsWith(resol)) {
             parseWantResolution(arg, resol);

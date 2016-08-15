@@ -33,8 +33,7 @@ initialize()
         return;
     _somethingAlreadyLoggedThisSession = false;
     try {
-        std.file.mkdirRecurse(basics.globals.fileLog.dirRootful);
-        _file = std.stdio.File(basics.globals.fileLog.rootful, "a");
+        _file = basics.globals.fileLog.openForWriting("a");
         _initialized = true;
     }
     catch (Exception) {

@@ -11,7 +11,6 @@ import basics.help;
 import file.filename;
 import file.io;
 import file.log;
-import file.search;
 
 class Ls {
 private:
@@ -68,7 +67,8 @@ public:
     final void deleteFile(Filename toDelete)
     {
         assert (toDelete);
-        try std.file.remove(toDelete.rootful);
+        try
+            toDelete.deleteFile();
         catch (Exception e)
             log(e.msg);
         // Now refresh the directory listing.
@@ -84,12 +84,12 @@ protected:
 
     MutFilename[] dirsInCurrentDir() const
     {
-        return file.search.findDirsNoRecursion(currentDir);
+        return currentDir.findDirs();
     }
 
     MutFilename[] filesInCurrentDir() const
     {
-        return file.search.findRegularFilesNoRecursion(currentDir);
+        return currentDir.findFiles();
     }
 
     bool searchCriterion(Filename) const { return true; }
@@ -107,8 +107,8 @@ protected:
 class AlphabeticalLs : Ls {
 protected:
     final override void beforeSortingForCurrentDir() { }
-    final override void sortDirs (MutFilename[] arr) const { arr.sort(); }
-    final override void sortFiles(MutFilename[] arr) const { arr.sort(); }
+    final override void sortDirs (MutFilename[] arr) const { arr.sort!fnLessThan; }
+    final override void sortFiles(MutFilename[] arr) const { arr.sort!fnLessThan; }
 }
 
 class OrderFileLs : Ls {
@@ -118,8 +118,8 @@ private:
 protected:
     final override void beforeSortingForCurrentDir()
     {
-        try _order = fillVectorFromFileRaw(new Filename(
-            currentDir.dirRootful ~ basics.globals.fileLevelDirOrder));
+        try _order = fillVectorFromFileRaw(new VfsFilename(
+            currentDir.dirRootless ~ basics.globals.fileLevelDirOrder));
         catch (Exception e) {
             // do nothing, missing ordering file is not an error at all
         }
@@ -152,10 +152,10 @@ private:
         }
         _order
             .map!stringModifier
-            .map!(entry => new Filename(currentDir.dirRootful ~ entry))
+            .map!(entry => new VfsFilename(currentDir.dirRootless ~ entry))
             .map!(fn => MutFilename(fn))
             .each!pullFromUnsorted;
-        unsortedRemainder.sort();
+        unsortedRemainder.sort!fnLessThan;
     }
 
     static string appendSlash(string entry) pure
@@ -168,21 +168,21 @@ private:
 unittest
 {
     auto ls = new OrderFileLs;
-    ls._currentDir = new Filename("./mydir/");
+    ls._currentDir = new VfsFilename("./mydir/");
     ls._order = ["order1", "moreorder2/", "evenmore3"];
     auto mydirs = [
-        new Filename("./mydir/b/"),
-        new Filename("./mydir/moreorder2/"),
-        new Filename("./mydir/c/"),
-        new Filename("./mydir/order1/"),
-        new Filename("./mydir/a/")
+        new VfsFilename("./mydir/b/"),
+        new VfsFilename("./mydir/moreorder2/"),
+        new VfsFilename("./mydir/c/"),
+        new VfsFilename("./mydir/order1/"),
+        new VfsFilename("./mydir/a/")
         ].map!(fn => MutFilename(fn)).array;
     ls.sortDirs(mydirs);
     assert (mydirs == [
-        new Filename("./mydir/order1/"),
-        new Filename("./mydir/moreorder2/"),
-        new Filename("./mydir/a/"),
-        new Filename("./mydir/b/"),
-        new Filename("./mydir/c/")
+        new VfsFilename("./mydir/order1/"),
+        new VfsFilename("./mydir/moreorder2/"),
+        new VfsFilename("./mydir/a/"),
+        new VfsFilename("./mydir/b/"),
+        new VfsFilename("./mydir/c/")
         ].map!(fn => MutFilename(fn)).array);
 }

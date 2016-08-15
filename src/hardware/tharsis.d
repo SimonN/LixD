@@ -68,7 +68,7 @@ version (tharsisprofiling) {
             }
         }
 
-        File outfile = File(fileTharsisProf.rootful, "w");
+        File outfile = fileTharsisProf.openForWriting();
 
         outfile.writeln("Lix version ", gameVersion(),
             " profiling results from ", Date.now().toString(), ".");

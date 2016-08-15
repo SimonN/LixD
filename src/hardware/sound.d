@@ -5,7 +5,6 @@ import basics.globals;
 import basics.user;
 import file.filename;
 import file.log;
-import file.search; // file exists
 import hardware.tharsis;
 
 enum Loudness { loud, quiet }
@@ -64,7 +63,7 @@ void initialize()
 
     Sample loadLazily(in string str)
     {
-        return new Sample(new Filename(dirDataSound.rootful ~ str));
+        return new Sample(new VfsFilename(dirDataSound.rootless ~ str));
     }
 
     samples[Sound.DISKSAVE]    = loadLazily("disksave.ogg");
@@ -175,7 +174,7 @@ public:
     {
         if (_loud || (_quiet && !_lastWasLoud))
             stop();
-        if (_loud || _quiet) {
+        if ((_loud || _quiet) && basics.user.soundVolume.value > 0) {
             _lastWasLoud = _loud;
             loadFromDisk();
             if (! _sample)
@@ -207,13 +206,13 @@ private:
             return;
         _loadedFromDisk = true;
         assert (! _sample);
-        _sample = al_load_sample(_filename.rootfulZ);
+        _sample = al_load_sample(_filename.stringzForReading);
         if (! _sample) {
             if (! _filename.fileExists()) {
-                logf("Missing sound file `%s'", _filename.rootful);
+                logf("Missing sound file `%s'", _filename.rootless);
             }
             else {
-                logf("Can't decode sound file `%s'.", _filename.rootful);
+                logf("Can't decode sound file `%s'.", _filename.rootless);
                 static bool oggErrorLogged = false;
                 if (! oggErrorLogged) {
                     oggErrorLogged = true;

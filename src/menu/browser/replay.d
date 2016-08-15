@@ -113,7 +113,7 @@ private:
     {
         auto m = new MsgBox(Lang.saveBoxTitleDelete.transl);
         m.addMsg(Lang.saveBoxQuestionDeleteReplay.transl);
-        m.addMsg(Lang.saveBoxDirectory.transl~ " " ~ fileRecent.dirRootful);
+        m.addMsg(Lang.saveBoxDirectory.transl~ " " ~ fileRecent.dirRootless);
         m.addMsg(Lang.saveBoxFileName.transl ~ " " ~ fileRecent.file);
         return m;
     }

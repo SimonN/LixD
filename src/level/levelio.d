@@ -20,7 +20,6 @@ import file.date;
 import file.filename;
 import file.io;
 import file.log;
-import file.search; // test if file exists
 import hardware.tharsis;
 import level.addtile;
 import level.level;
@@ -62,7 +61,8 @@ package void loadFromFile(Level level, in Filename fn)
 
 package FileFormat get_file_format(in Filename fn)
 {
-    if (! fileExists(fn)) return FileFormat.NOTHING;
+    if (! fn || ! fn.fileExists)
+        return FileFormat.NOTHING;
     else return FileFormat.LIX;
 
     // DTODO: Implement the remaining function from C++/A4 Lix that opens
@@ -225,7 +225,7 @@ private void load_level_finalize(Level level) {
 package void implSaveToFile(const(Level) level, in Filename fn)
 {
     try {
-        std.stdio.File file = File(fn.rootful, "w");
+        std.stdio.File file = fn.openForWriting();
         saveToFile(level, file);
         file.close();
     }

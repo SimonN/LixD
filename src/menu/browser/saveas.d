@@ -7,7 +7,6 @@ import basics.globals; // extension
 import basics.user; // hotkey
 import menu.browser.highli;
 import file.language;
-import file.search; // file exists, to guard against overwrite
 import gui;
 import gui.picker;
 import hardware.keyboard;
@@ -76,7 +75,7 @@ private:
             _texttype.on = true;
             return;
         }
-        Filename maybe = new Filename(currentDir.rootless
+        Filename maybe = new VfsFilename(currentDir.rootless
                          ~ _texttype.text.strip ~ filenameExtLevel);
         if (! maybe.fileExists)
             _chosenFile = maybe;
@@ -84,7 +83,7 @@ private:
             MsgBox box = new MsgBox(Lang.saveBoxOverwriteTitle.transl);
             box.addMsg(Lang.saveBoxOverwriteQuestion.transl);
             box.addMsg("%s %s".format(Lang.saveBoxFileName.transl,
-                                      maybe.rootful));
+                                      maybe.rootless));
             box.addMsg("%s %s".format(Lang.saveBoxLevelName.transl,
                                       // DTODO: load the level meta data
                                       maybe.fileNoExtNoPre));

@@ -3,7 +3,6 @@ module gui.picker.lsimg;
 import std.algorithm;
 
 import file.filename;
-import file.search;
 import gui.picker.ls;
 
 class ImageLs : AlphabeticalLs {
@@ -35,6 +34,6 @@ protected:
     final override MutFilename[] dirsInCurrentDir() const { return []; }
     final override MutFilename[] filesInCurrentDir() const
     {
-        return file.search.findRegularFilesRecursively(currentDir);
+        return currentDir.findTree();
     }
 }

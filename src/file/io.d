@@ -260,10 +260,9 @@ IoLine[]
 fillVectorFromFile(in Filename fn)
 {
     // this can throw on file 404, it's intended
-    File file = File(fn.rootful, "r");
-    scope (exit) file.close();
-
-    return fillVectorFromStream(file);
+    if (! fn)
+        throw new FileException("can't open null filename");
+    return fillVectorFromStream(fn.openForReading());
 }
 
 // return true on no error
@@ -286,8 +285,10 @@ fillVectorFromStream(File file)
 string[]
 fillVectorFromFileRaw(in Filename fn)
 {
+    if (! fn)
+        throw new FileException("can't open null filename");
     string[] ret;
-    File file = File(fn.rootful);
+    File file = fn.openForReading();
     scope (exit) file.close();
 
     foreach (string line; lines(file))

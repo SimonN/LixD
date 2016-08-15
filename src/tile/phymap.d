@@ -226,7 +226,7 @@ class Phymap : Topology {
     void saveToFile() const
     {
         static int runningCount = 0;
-        saveToFile(new Filename("./phymap%03d.png".format(runningCount++)));
+        saveToFile(new VfsFilename("./phymap%03d.png".format(runningCount++)));
     }
 
     // for testing
@@ -245,7 +245,7 @@ class Phymap : Topology {
                         | Phybit.water | Phybit.trap | Phybit.fling);
             al_put_pixel(x, y, AlCol(red, blue, green, 1));
         }
-        al_save_bitmap(fn.rootfulZ, outputBitmap);
+        al_save_bitmap(fn.stringzForWriting, outputBitmap);
     }
 
 private:

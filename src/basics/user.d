@@ -411,7 +411,7 @@ void setLevelResult(
 
 private Filename userFileName()
 {
-    return new Filename(dirDataUser.dirRootful
+    return new VfsFilename(dirDataUser.dirRootless
      ~ basics.help.escapeStringForFilename(userName)
      ~ filenameExtConfig);
 }
@@ -439,8 +439,8 @@ void load()
         log("    -> Falling back to the unescaped filename `"
             ~ userName ~ filenameExtConfig ~ "'.");
         try {
-            lines = fillVectorFromFile(new Filename(
-                dirDataUser.dirRootful ~ userName ~ filenameExtConfig));
+            lines = fillVectorFromFile(new VfsFilename(
+                dirDataUser.dirRootless ~ userName ~ filenameExtConfig));
         }
         catch (Exception e) {
             log("    -> " ~ e.msg);
@@ -452,7 +452,7 @@ void load()
 
     foreach (i; lines) {
         if (i.type == '<') {
-            auto fn = rebindable!(const Filename)(new Filename(i.text1));
+            auto fn = rebindable!(const Filename)(new VfsFilename(i.text1));
             Result read = new Result(new Date(i.text2));
             read.lixSaved    = i.nr1;
             read.skillsUsed  = i.nr2;
@@ -481,9 +481,7 @@ nothrow void save()
         log("    -> None of these characters are allowed in filenames.");
     }
     try {
-        auto ufn = userFileName();
-        mkdirRecurse(ufn.dirRootful);
-        std.stdio.File f = File(ufn.rootful, "w");
+        std.stdio.File f = userFileName.openForWriting();
 
         foreach (opt; _optvecSave)
             f.writeln(opt.ioLine);
