@@ -109,10 +109,21 @@ class GameState {
     {
         assert (rhs, "don't copy-construct from a null GameState");
         assert (rhs.land, "don't copy-construct from GameState without land");
-
-        copyValuesArraysFrom(rhs);
-        land   = new Torbit(rhs.land);
-        lookup = new Phymap(rhs.lookup);
+        version (tharsisprofiling)
+            auto zone = Zone(profiler, "GameState.clone all");
+        {
+            version (tharsisprofiling)
+                auto zone1 = Zone(profiler, "GameState.clone arrays");
+            copyValuesArraysFrom(rhs);
+        } {
+            version (tharsisprofiling)
+                auto zone2 = Zone(profiler, "GameState.clone land");
+            land = new Torbit(rhs.land);
+        } {
+            version (tharsisprofiling)
+                auto zone3 = Zone(profiler, "GameState.clone phymap");
+            lookup = new Phymap(rhs.lookup);
+        }
     }
 
     void copyFrom(in GameState rhs)
