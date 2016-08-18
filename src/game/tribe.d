@@ -29,9 +29,7 @@ class Tribe {
         int  lixSavedLate; // after the goals have been locked
         int  lixOut;       // change this only when killing/generating lixes.
         int  lixLeaving;   // these have been scored, but keep game running
-        int  spawnintSlow = 32;
-        int  spawnintFast =  4;
-        int  spawnint     = 32;
+        int  spawnint;
         bool nuke;
         Ac   nukeSkill;
 

@@ -90,28 +90,23 @@ auto implLoadFromFile(Replay replay, Filename fn) { with (replay)
         break;
     case '!': {
         // replays contain ASSIGN=BASHER or ASSIGN_RIGHT=BUILDER.
-        // cut these strings into a left and right part, none contains '='.
-        string part1 = "";
-        string part2 = i.text1;
-        while (part2.length && part2[0] != '=')
-            part2 = part2[1 .. $];
-        part1 = i.text1[0 .. i.text1.length - part2.length];
-        if (part2.length > 0)
-            // remove '='
-            part2 = part2[1 .. $];
+        auto iSplit = std.algorithm.splitter(i.text1, '=');
+        string assign = iSplit.front;
+        iSplit.popFront;
+        string skill = iSplit.empty ? "" : iSplit.front;
 
         ReplayData d;
         d.update     = i.nr1;
         d.player     = i.nr2 & 0xFF;
         d.toWhichLix = i.nr3;
-        d.action = part1 == replayAssignAny   ? RepAc.ASSIGN
-                 : part1 == replayAssignLeft  ? RepAc.ASSIGN_LEFT
-                 : part1 == replayAssignRight ? RepAc.ASSIGN_RIGHT
-                 : part1 == replayNuke        ? RepAc.NUKE
+        d.action = assign == replayAssignAny   ? RepAc.ASSIGN
+                 : assign == replayAssignLeft  ? RepAc.ASSIGN_LEFT
+                 : assign == replayAssignRight ? RepAc.ASSIGN_RIGHT
+                 : assign == replayNuke        ? RepAc.NUKE
                  : RepAc.NOTHING;
-        if (part2.length > 0)
-            d.skill = stringToAc(part2);
-        if (d.action != RepAc.NOTHING)
+        d.skill = skill.stringToAc;
+        if (d.action != RepAc.NOTHING
+            && (d.skill != Ac.max || ! d.isSomeAssignment))
             addWithoutTouching(d);
         break; }
     default:
@@ -231,11 +226,12 @@ unittest
 
     try {
         auto file = std.stdio.File(fn0.rootful, "w");
+        // Write 5 lines into the file, we'll assert later that there are 5.
         file.write(
             "! 387 0 ASSIGN=JUMPER 0\n"
             "! 268 0 ASSIGN=JUMPER 0\n"
             "! 125 0 ASSIGN=CLIMBER 0\n"
-            "! 506 0 ASSIGN=BLOCKER 0\n"
+            "! 506 0 NUKE 0\n"
             "! 489 0 ASSIGN=BASHER 0\n");
     }
     catch (Exception)
@@ -246,6 +242,9 @@ unittest
 
     Replay r = Replay.loadFromFile(fn0);
     const int data_len = r._data.len;
+    assert (data_len == 5);
+    assert (r._data[0].update == 125);
+    assert (r._data[0].skill == Ac.climber);
 
     implSaveToFile(r, fn1, lev);
     r = Replay.loadFromFile(fn1);
