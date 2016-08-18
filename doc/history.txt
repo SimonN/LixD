@@ -1,6 +1,28 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.13
+------
+
+2016-08-27
+
+Lemforum levels got updates from August 2016. I deleted the tutorial levels:
+The lemforum pack is our flagship pack and starts with very easy levels.
+Other packs need not provide tutorial levels.
+
+Fix #142: There is a virtual file system. It recognizes ./ and ../ now.
+Other directories, in particular installations in Linux File System Hierarchy
+trees, aren't supported yet, but the necessary changes have become easy.
+
+Fix #148: When you fail a singleplayer level, the game halts and allows you
+to go back in time. It doesn't spawn a dialog box anymore.
+
+Fix #144: In the editor, when you mirrored a piece with transparent pixels at
+its sides, the piece moved. Entire selections diverged on repeated mirroring.
+
+Fix #84 and #90: The options menu explains its options, except on the editor
+tab. The box near the menu's bottom provides two lines of explanation.
+
 0.6.12
 ------
 

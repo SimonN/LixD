@@ -1,4 +1,4 @@
-$BUILT 2016-07-21 13:11:14
+$BUILT 2016-08-08 01:00:45
 $AUTHOR Michael S. Repton
 $ENGLISH Survival of the Craftiest
 
@@ -15,7 +15,6 @@ $ENGLISH Survival of the Craftiest
 #WALKER 2
 #CLIMBER 2
 #FLOATER 2
-#EXPLODER2 2
 #BLOCKER 2
 #BUILDER 5
 #PLATFORMER 2
@@ -24,6 +23,7 @@ $ENGLISH Survival of the Craftiest
 #DIGGER 2
 #JUMPER 2
 #BATTER 2
+#EXPLODER2 0
 
 :matt/bricks/Hatch.H: 336 176
 

@@ -1,4 +1,4 @@
-$BUILT 2016-07-16 19:23:56
+$BUILT 2016-08-06 06:36:19
 $AUTHOR Insane Steve
 $ENGLISH A Matter of Perspective
 
@@ -14,10 +14,10 @@ $ENGLISH A Matter of Perspective
 
 #RUNNER 1
 #FLOATER 7
-#EXPLODER2 1
 #BUILDER 1
 #PLATFORMER 1
 #MINER 2
+#EXPLODER2 0
 
 :matt/bricks/Hatch.H: 416 72
 :matt/bricks/Hatch.H: 112 48

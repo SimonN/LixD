@@ -1,5 +1,5 @@
-$BUILT 2016-08-03 23:20:43
-$AUTHOR I.S./geoo
+$BUILT 2016-08-14 15:13:07
+$AUTHOR Insane Steve/geoo
 $ENGLISH Derailed Level
 
 #INTENDED_NUMBER_OF_PLAYERS 1
@@ -9,92 +9,91 @@ $ENGLISH Derailed Level
 #START_Y 0
 
 #INITIAL 30
-#REQUIRED 28
+#REQUIRED 27
 #SPAWN_INTERVAL 32
 
-#WALKER 1
 #CLIMBER 2
 #FLOATER 1
-#EXPLODER2 1
+#EXPLODER2 2
 #BUILDER 1
 #PLATFORMER 4
 #BASHER 1
-#MINER 1
 #DIGGER 3
-#JUMPER 1
 #CUBER 1
 
-:matt/goldmine/Hatch.H: 32 224
+:matt/goldmine/Hatch.H: 31 224
 
-:matt/goldmine/Goal.G: 556 224
+:matt/goldmine/Goal.G: 554 224
 
-:matt/goldmine/GoalTop.D: 556 176
+:matt/goldmine/GoalTop.D: 554 176
 
-:geoo/shadow/rope1: 230 296 fr
-:geoo/shadow/rope1: 210 300 fr
-:geoo/shadow/rope1: 220 298 fr
-:matt/goldmine/crate32: 220 334 d
-:matt/goldmine/crate32: 452 208
-:matt/goldmine/crate16: 252 176
-:matt/goldmine/crate16: 284 176
-:matt/goldmine/crate16: 276 192
-:matt/goldmine/crate16: 260 192
-:matt/goldmine/crate16: 292 192
-:matt/goldmine/crate16: 244 192
-:matt/goldmine/crate32: 460 240
-:matt/goldmine/crate32: 388 112
-:matt/goldmine/crate32: 364 80
-:matt/goldmine/crate32: 332 80
-:matt/goldmine/crate16: 228 224
-:matt/goldmine/crate16: 212 224
-:matt/goldmine/crate32: 412 240
-:matt/goldmine/crate16: 388 192
-:matt/goldmine/crate16: 388 176
-:geoo/steel/32x32o.S: 380 240
-:geoo/steel/32x32o.S: 388 208
-:geoo/steel/32x32o.S: 388 144
-:geoo/steel/32x32o.S: 348 112
-:geoo/steel/32x32o.S: 348 144
-:matt/goldmine/crate32: 348 176
-:geoo/steel/32x32o.S: 348 240
-:geoo/steel/32x32o.S: 348 208
-:geoo/steel/32x32o.S: 308 144
-:matt/goldmine/crate32: 292 48
-:matt/goldmine/crate32: 260 48
-:matt/goldmine/crate32: 292 80
-:matt/goldmine/crate32: 308 112
-:matt/goldmine/crate32: 276 112
-:matt/goldmine/crate32: 308 176
-:geoo/steel/32x32o.S: 308 240
-:matt/goldmine/crate32: 196 48
-:matt/goldmine/crate32: 228 48
-:matt/goldmine/crate32: 244 80
-:matt/goldmine/crate32: 212 80
-:matt/goldmine/crate32: 244 112
-:matt/goldmine/crate32: 260 144
-:matt/goldmine/crate32: 196 112
-:matt/goldmine/crate32: 180 80
-:matt/goldmine/crate32: 164 112
-:matt/goldmine/crate32: 180 144
-:geoo/steel/32x32o.S: 308 208
-:geoo/steel/32x32o.S: 164 176
-:matt/goldmine/crate32: 148 144
-:matt/goldmine/explosivecrate: 244 208
-:matt/goldmine/crate64: 148 208
-:geoo/steel/32x32o.S: 212 240
-:matt/goldmine/planksupport: 0 272
-:matt/goldmine/planksupport: 512 272
-:matt/goldmine/tracks: 80 264
-:matt/goldmine/tracks: 200 264
-:matt/goldmine/tracks: 320 264
-:matt/goldmine/tracks: 440 264
-:matt/goldmine/plankdiag: 0 240
-:matt/goldmine/crate16: 268 176
-:matt/goldmine/crate16: 148 192
-:matt/goldmine/crate32: 468 176
-:matt/goldmine/crate32: 460 144
-:matt/goldmine/crate16: 480 128
-:geoo/steel/32x32o.S: 308 112
+:geoo/construction/steam_left.T: 409 372
+
+:geoo/shadow/rope1: 434 304 r
+:geoo/shadow/rope1: 454 308 r
+:geoo/shadow/rope1: 444 306 r
+:matt/goldmine/crate32: 444 342 d
+:matt/goldmine/crate32: 466 208
+:matt/goldmine/crate16: 250 176
+:matt/goldmine/crate16: 282 176
+:matt/goldmine/crate16: 274 192
+:matt/goldmine/crate16: 258 192
+:matt/goldmine/crate16: 290 192
+:matt/goldmine/crate16: 242 192
+:matt/goldmine/crate32: 458 240
+:matt/goldmine/crate32: 386 112
+:matt/goldmine/crate32: 362 80
+:matt/goldmine/crate32: 330 80
+:matt/goldmine/crate16: 226 224
+:matt/goldmine/crate16: 210 224
+:matt/goldmine/crate32: 410 240
+:matt/goldmine/crate16: 386 192
+:matt/goldmine/crate16: 386 176
+:geoo/steel/32x32o.S: 378 240
+:geoo/steel/32x32o.S: 386 208
+:geoo/steel/32x32o.S: 386 144
+:geoo/steel/32x32o.S: 346 112
+:geoo/steel/32x32o.S: 346 144
+:matt/goldmine/crate32: 346 176
+:geoo/steel/32x32o.S: 346 240
+:geoo/steel/32x32o.S: 346 208
+:geoo/steel/32x32o.S: 306 144
+:matt/goldmine/crate32: 290 48
+:matt/goldmine/crate32: 258 48
+:matt/goldmine/crate32: 290 80
+:matt/goldmine/crate32: 306 112
+:matt/goldmine/crate32: 274 112
+:matt/goldmine/crate32: 306 176
+:geoo/steel/32x32o.S: 306 240
+:matt/goldmine/crate32: 194 48
+:matt/goldmine/crate32: 226 48
+:matt/goldmine/crate32: 242 80
+:matt/goldmine/crate32: 210 80
+:matt/goldmine/crate32: 242 112
+:matt/goldmine/crate32: 258 144
+:matt/goldmine/crate32: 194 112
+:matt/goldmine/crate32: 178 80
+:matt/goldmine/crate32: 162 112
+:matt/goldmine/crate32: 178 144
+:geoo/steel/32x32o.S: 306 208
+:geoo/steel/32x32o.S: 162 176
+:matt/goldmine/crate32: 146 144
+:matt/goldmine/explosivecrate: 242 208
+:matt/goldmine/crate64: 146 208
+:geoo/steel/32x32o.S: 210 240
+:matt/goldmine/planksupport: 8 272
+:matt/goldmine/planksupport: 504 272
+:matt/goldmine/tracks: 78 264
+:matt/goldmine/tracks: 198 264
+:matt/goldmine/tracks: 318 264
+:matt/goldmine/tracks: 438 264
+:matt/goldmine/plankdiag: 8 240
+:matt/goldmine/crate16: 266 176
+:matt/goldmine/crate16: 146 192
+:matt/goldmine/crate32: 452 176
+:matt/goldmine/crate32: 458 144
+:matt/goldmine/crate16: 470 128
+:geoo/steel/32x32o.S: 306 112
 $BEGIN_TILE_GROUP 0
 :amanda/occult/occult_wax_details_drip: 83 4
 :amanda/occult/occult_wax_details_drip: 69 4
@@ -153,4 +152,4 @@ $BEGIN_TILE_GROUP 7
 :Group-5: 0 32 d
 :Group-6: 19 40
 $END_TILE_GROUP
-:Group-7: 216 340 r
+:Group-7: 440 348 fr

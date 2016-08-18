@@ -1,4 +1,4 @@
-$BUILT 2016-07-16 19:23:03
+$BUILT 2016-08-08 01:38:23
 $AUTHOR Insane Steve
 $ENGLISH Trapeze of Weird Blue Blocks
 
@@ -16,7 +16,6 @@ $ENGLISH Trapeze of Weird Blue Blocks
 #RUNNER 1
 #CLIMBER 2
 #FLOATER 4
-#EXPLODER2 1
 #BLOCKER 2
 #BUILDER 4
 #PLATFORMER 1
@@ -24,6 +23,7 @@ $ENGLISH Trapeze of Weird Blue Blocks
 #MINER 1
 #DIGGER 1
 #JUMPER 10
+#EXPLODER2 0
 
 :matt/marble/Hatch.H: 128 48
 

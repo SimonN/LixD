@@ -1,4 +1,4 @@
-$BUILT 2016-07-26 19:13:07
+$BUILT 2016-08-15 11:19:43
 $AUTHOR Insane Steve
 $ENGLISH No More Heroes
 
@@ -10,17 +10,16 @@ $ENGLISH No More Heroes
 #REQUIRED 28
 #SPAWN_INTERVAL 4
 
-#WALKER 1
 #RUNNER 1
 #CLIMBER 1
 #FLOATER 1
+#EXPLODER2 1
 #BUILDER 1
 #PLATFORMER 1
 #BASHER 1
 #MINER 1
 #DIGGER 1
 #JUMPER 1
-#EXPLODER2 0
 
 :simon/hatch001.H: 8 112
 
@@ -116,7 +115,6 @@ $END_TILE_GROUP
 :simon/tapir/064: 536 64
 :simon/tapir/064: 600 64
 :simon/tapir/064: 472 64
-:simon/tapir/064: 408 64
 :simon/tapir/064: 600 128
 :simon/tapir/032v: 632 192
 :simon/tapir/016va: 616 192
@@ -170,3 +168,4 @@ $END_TILE_GROUP
 :simon/tapir/032v: 584 288
 :simon/tapir/032b: 648 352
 :simon/tapir/032: 696 320
+:simon/tapir/064: 408 64
