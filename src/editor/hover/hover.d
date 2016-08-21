@@ -62,7 +62,9 @@ abstract class Hover {
 
     final void mirrorHorizontallyWithin(in Rect box)
     {
-        immutable self = occ.selboxOnMap;
+        // The box is around all the selboxes, but we move according to our
+        // cutbit's box, not according to our selbox. This fixes github #144.
+        immutable self = occ.cutbitOnMap;
         occ.loc.x -= self.x - box.x;
         occ.loc.x += box.x + box.xl - self.x - self.xl;
         occ.loc = level.topology.wrap(occ.loc);

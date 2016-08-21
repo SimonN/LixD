@@ -18,19 +18,19 @@ import tile.gadtile;
 abstract class Occurrence {
 public:
     /* loc: location of the occurrence. This is the top-left corner of the
-     * entire image. The selection box's map coordinates (selboxOnMap)
-     * may too start here (this.selboxOnMap.topLeft == this.loc). If the tile
-     * has transparent borders around visible pixels, the selection box is
-     * smaller than the bitmap, therefore this.selboxOnMap.topLeft is
+     * entire image (cutbitOnMap). The selection box's map coordinates
+     * (selboxOnMap) may too start here (this.selboxOnMap.topLeft == this.loc).
+     * If the tile has transparent borders around visible pixels, the selbox is
+     * smaller than the cutbit, therefore this.selboxOnMap.topLeft is
      * >= loc in each direction, in general.
      * The editor snaps loc to the grid, not selboxOnMap.topLeft.
      *
      *  A-------------------+   A: loc
-     *  |                B  |   B: transparent border around visible pixels
+     *  |                B  |   B: cutbitOnMap -- transp around visible pixels
      *  |  C---------+      |   C: selboxOnMap.topLeft
      *  |  |    D    |      |   D: selbox (smallest rect with visible pixels)
      *  |  |         |      |
-     *  |  +---------+      |
+     *  |  +---------+      |   B is equal or larger than D.
      *  +-------------------+
      */
     Point loc;
@@ -49,8 +49,14 @@ public:
     }
 
     final @property Rect selboxOnMap() const { return selboxOnTile + loc; }
+    final @property Rect cutbitOnMap() const { return cutbitOnTile + loc; }
 
     @property Rect selboxOnTile() const { assert (tile); return tile.selbox; }
+    @property Rect cutbitOnTile() const
+    {
+        assert (tile);
+        return Rect(0, 0, tile.cb.xl, tile.cb.yl);
+    }
 }
 
 class GadOcc : Occurrence {
@@ -154,6 +160,13 @@ public:
     override @property Rect selboxOnTile() const
     {
         return Rect(selboxStart!0, selboxStart!3, selboxLen!0, selboxLen!1);
+    }
+
+    override @property Rect cutbitOnTile() const
+    {
+        assert (_tile);
+        return Rect(0, 0, (rotCw % 2 == 0) ? tile.cb.xl : tile.cb.yl,
+                          (rotCw % 2 == 0) ? tile.cb.yl : tile.cb.xl);
     }
 
 private:
