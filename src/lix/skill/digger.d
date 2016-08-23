@@ -21,16 +21,11 @@ class Digger : Job {
 
     override PhyuOrder updateOrder() const { return PhyuOrder.remover; }
 
-
-
     // If true, return from caller immediately
     private bool hitEnoughSteel()
     {
-        // Stop digging at steel both left and right, or in the 3 double pixels
-        // of the center (overlap of left and right here).
-        immutable int  steelLeft   = countSteel(-8, 2, 3, 2);
-        immutable int  steelRight  = countSteel(-2, 2, 9, 2);
-        immutable bool enoughSteel = steelLeft > 0 && steelRight > 0;
+        enum midLoRes = 5; // stop if steel in the middle N of 9 lo-res pixels
+        immutable bool enoughSteel = countSteel(1-midLoRes, 2, midLoRes, 2) >0;
         if (enoughSteel) {
             if (outsideWorld.effect)
                 outsideWorld.effect.addDigHammer(outsideWorld.state.update,
@@ -40,7 +35,7 @@ class Digger : Job {
         return enoughSteel;
     }
 
-    private bool shouldFall()
+    private bool fallHere()
     {
         bool fall = ! isSolid(-2, 2) && ! isSolid(0, 2) && ! isSolid(2, 2);
         if (fall)
@@ -48,14 +43,12 @@ class Digger : Job {
         return fall;
     }
 
-
-
     override void perform()
     {
         advanceFrame();
 
         if (frame != 12) {
-            if (shouldFall)
+            if (fallHere)
                 return;
         }
         else {
@@ -65,7 +58,7 @@ class Digger : Job {
                     break;
                 ++rowsToDig;
                 moveDown(1);
-                if (shouldFall)
+                if (fallHere)
                     break;
             }
             if (rowsToDig > 0) {
@@ -88,6 +81,5 @@ class Digger : Job {
         tc.digYl  = yl;
         outsideWorld.physicsDrawer.add(tc);
     }
-
 }
 // end class Digger
