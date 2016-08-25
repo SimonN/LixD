@@ -83,7 +83,7 @@ class GameState {
         return (tribes.length > 1);
     }
 
-    @property bool singlePlayerHasWon() const
+    @property bool singleplayerHasWon() const
     {
         return ! multiplayer && tribes[0].lixSaved >= tribes[0].lixRequired;
     }

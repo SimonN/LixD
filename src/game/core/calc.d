@@ -26,7 +26,7 @@ implGameCalc(Game game)
         game.calcPassive();
         game.calcActive();
         game.updatePhysicsAccordingToSpeedButtons();
-        if (game.isFinished)
+        if (game.isFinished && game.nurse.singleplayerHasWon)
             game.createModalWindow;
     }
 }

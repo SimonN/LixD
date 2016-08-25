@@ -175,7 +175,7 @@ package:
 
     void saveResult()
     {
-        if (nurse && cs.singlePlayerHasWon
+        if (nurse && nurse.singleplayerHasWon
                   && masterLocalName == basics.globconf.userName)
             setLevelResult(nurse.replay.levelFilename,
                            nurse.resultForTribe(_indexTribeLocal));
@@ -225,6 +225,6 @@ private:
     {
         if (! _replayNeverCancelledThereforeDontSaveAutoReplay
             && nurse && nurse.replay)
-            nurse.replay.saveAsAutoReplay(level, cs.singlePlayerHasWon);
+            nurse.replay.saveAsAutoReplay(level, nurse.singleplayerHasWon);
     }
 }

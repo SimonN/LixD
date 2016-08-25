@@ -211,7 +211,7 @@ private:
     {
         version (tharsisprofiling)
             Zone zone = Zone(profiler, "PhysSeq updateLixxies()");
-        immutable bool wonBeforeUpdate = singlePlayerHasWon;
+        immutable bool wonBeforeUpdate = singleplayerHasWon;
                   bool anyFlingers     = false;
 
         void foreachLix(void delegate(in int, in int, Lixxie) func)
@@ -274,7 +274,7 @@ private:
 
         performUnmarked(UpdateOrder.peaceful);
 
-        if (! wonBeforeUpdate && singlePlayerHasWon)
+        if (! wonBeforeUpdate && singleplayerHasWon)
             _effect.addSoundGeneral(_cs.update, Sound.YIPPIE);
     }
 

@@ -55,11 +55,18 @@ public:
         _model = null;
     }
 
-    bool stillPlaying() const
+    @property bool stillPlaying() const
     {
         assert (_model);
         return _model.cs.tribes.any!(a => a.stillPlaying)
             || _model.cs.traps .any!(a => a.isEating(upd));
+    }
+
+    @property bool singleplayerHasWon() const
+    {
+        assert (_model);
+        assert (_model.cs);
+        return _model.cs.singleplayerHasWon();
     }
 
     Update updatesSinceZero() const
@@ -173,9 +180,9 @@ private:
     void updateToTpl(bool duringTurbo)(in Update targetUpdate)
     {
         // assert (game.runmode == Runmode.INTERACTIVE);
-        if (_model.cs.update >= targetUpdate)
-            return;
-        while (_model.cs.update < targetUpdate) {
+        while ((stillPlaying || singleplayerHasWon)
+            && _model.cs.update < targetUpdate
+        ) {
             updateOnce();
             considerAutoSavestateIfCloseTo!duringTurbo(targetUpdate);
         }
