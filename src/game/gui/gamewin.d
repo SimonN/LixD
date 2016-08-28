@@ -22,16 +22,18 @@ private:
 protected:
     TextButton _resume;
     TextButton _saveReplay;
+    TextButton _framestepBack;
     TextButton _restart;
     TextButton _exitGame;
 
 public:
-    this(Geom g)               { super(g, Lang.winGameTitle.transl); }
+    this(Geom g) { super(g, Lang.winGameTitle.transl); }
     this(Geom g, string title) { super(g, title); }
 
-    final bool resume()   { return _resume   && _resume.execute;   }
-    final bool restart()  { return _restart  && _restart.execute;  }
-    final bool exitGame() { return _exitGame && _exitGame.execute; }
+    final bool resume() const { return _resume && _resume.execute; }
+    final bool framestepBack() const { return _framestepBack && _framestepBack.execute; }
+    final bool restart() const { return _restart && _restart.execute; }
+    final bool exitGame() const { return _exitGame && _exitGame.execute; }
 
 protected:
     final void captionSuperElements()
@@ -45,6 +47,8 @@ protected:
             addChild(b);
         }
         oneBut(_resume,     Lang.winGameResume.transl,     keyPause);
+        oneBut(_framestepBack, Lang.winGameFramestepBack.transl,
+            KeySet(keyFrameBackOne, keyFrameBackMany));
         oneBut(_saveReplay, Lang.winGameSaveReplay.transl, keyStateSave);
         oneBut(_restart,    Lang.winGameRestart.transl,    keyRestart);
         oneBut(_exitGame,   Lang.winGameMenu.transl,       keyGameExit);

@@ -103,6 +103,7 @@ enum Lang {
     winGameLixSaved,
     winGameLixSavedInTime,
     winGameResume,
+    winGameFramestepBack,
     winGameRestart,
     winGameSaveReplay,
     winGameMenu,

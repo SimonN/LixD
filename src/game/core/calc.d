@@ -26,7 +26,7 @@ implGameCalc(Game game)
         game.calcPassive();
         game.calcActive();
         game.updatePhysicsAccordingToSpeedButtons();
-        if (game.isFinished && game.nurse.singleplayerHasWon)
+        if (game.isFinished)
             game.createModalWindow;
     }
 }
@@ -63,6 +63,10 @@ calcModalWindow(Game game) { with (game)
     }
     assert (modalWindow);
     if (modalWindow.resume) {
+        killWindow();
+    }
+    else if (modalWindow.framestepBack) {
+        game.framestepBackBy(3 * Game.updatesBackMany);
         killWindow();
     }
     else if (modalWindow.restart) {

@@ -25,15 +25,12 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
         game.setLastUpdateToNow();
     }
 
-    // We don't set/unset pause based on the buttons here. This is done by
-    // the panel itself, in Panel.calcSelf().
     if (   pan.speedBack.executeLeft
         || pan.speedBack.executeRight
     ) {
-        with (LoadStateRAII(game))
-            nurse.framestepBackBy(
-                  pan.speedBack.executeLeft  ? 1
-                : pan.speedBack.executeRight ? Game.updatesBackMany : 0);
+        game.framestepBackBy(pan.speedBack.executeLeft  ? 1
+                           : pan.speedBack.executeRight ? Game.updatesBackMany
+                           : 0);
     }
     else if (pan.restart.execute) {
         game.restartLevel();
@@ -81,6 +78,13 @@ void restartLevel(Game game)
 {
     with (LoadStateRAII(game))
         game.nurse.restartLevel();
+}
+
+void framestepBackBy(Game game, in int by)
+{
+    game.pan.setSpeedToPause();
+    with (LoadStateRAII(game))
+        game.nurse.framestepBackBy(by);
 }
 
 private:

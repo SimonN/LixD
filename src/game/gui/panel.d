@@ -210,7 +210,8 @@ handleExecutingSkillButton(SkillButton skill)
 
 
 
-public  void setSpeedToNormal() { setSpeedTo(1); }
+public void setSpeedToPause() { setSpeedTo(0); }
+public void setSpeedToNormal() { setSpeedTo(1); }
 private void setSpeedTo(in int a)
 {
     assert (a >= 0);
@@ -226,12 +227,6 @@ calcSelf()
     assert (!!pause && !!speedBack && !!speedAhead && !!speedFast);
     if (pause.execute) {
         setSpeedTo(pause.on ? 1 : 0);
-    }
-    else if (speedBack.executeLeft
-        ||   speedBack.executeRight
-        ||   speedAhead.executeLeft // but not on speedAhead.executeRight
-    ) {
-        setSpeedTo(0);
     }
     else if (speedFast.executeLeft) {
         setSpeedTo(speedFast.on ? 1 : 2);

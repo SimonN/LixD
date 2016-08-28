@@ -39,25 +39,6 @@ myGeom(in int numButtons, in int totalXl = butXl + 40, in int plusYl = 0)
 }
 
 class WindowDuringOffline : GameWindow {
-
-    this(in Replay replay, in Level level)
-    {
-        super(myGeom(4));
-        int y = 40;
-        _resume     = addButton(y);
-        _restart    = addButton(y);
-        _saveReplay = addButton(y);
-        _exitGame   = addButton(y);
-        super.captionSuperElements();
-        super.setReplayAndLevel(replay, level);
-    }
-
-}
-
-
-
-class WindowDuringNetwork : GameWindow {
-
     this(in Replay replay, in Level level)
     {
         super(myGeom(3));
@@ -68,10 +49,7 @@ class WindowDuringNetwork : GameWindow {
         super.captionSuperElements();
         super.setReplayAndLevel(replay, level);
     }
-
 }
-
-
 
 class WindowEndSingle : GameWindow {
 
@@ -82,14 +60,18 @@ class WindowEndSingle : GameWindow {
     {
         assert (tribe);
         assert (level);
-
         enum extraYl = 95;
-        super(myGeom(3, 300, extraYl), level.name);
-        int y = 40 + extraYl;
         immutable bool won = tribe.lixSaved >= tribe.lixRequired;
-        _restart = addButton(y, xlg - 40);
-        if (! won)
+
+        super(myGeom(won ? 2 : 4, 300, extraYl), level.name);
+        int y = 40 + extraYl;
+        if (! won) {
+            _framestepBack = addButton(y, xlg - 40);
+            _restart = addButton(y, xlg - 40);
+            // no OK if not won => reuse OK hotkey. captionSuperElements()
+            // will add the normal restart hotkey later in this function.
             _restart.hotkey = keyMenuOkay;
+        }
         _saveReplay = addButton(y, xlg - 40);
         _exitGame   = addButton(y, xlg - 40);
         if (won)

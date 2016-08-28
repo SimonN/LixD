@@ -79,6 +79,7 @@ $winGameResult                Result
 $winGameLixSaved             Lix saved:
 $winGameLixSavedInTime     Lix saved in time:
 $winGameResume                Continue
+$winGameFramestepBack         ◀▮ Rewind time ◀▮
 $winGameRestart               Restart level
 $winGameSaveReplay           Save replay
 $winGameMenu                  Exit

@@ -76,6 +76,7 @@ $winGameResult               Ergebnis
 $winGameLixSaved            Lix gerettet:
 $winGameLixSavedInTime    Lix rechtzeitig gerettet:
 $winGameResume               Weiterspielen
+$winGameFramestepBack         ◀▮ Zeit zurückdrehen ◀▮
 $winGameRestart              Level neustarten
 $winGameSaveReplay          Replay speichern
 $winGameMenu                 Beenden
