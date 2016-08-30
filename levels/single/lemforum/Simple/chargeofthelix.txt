@@ -1,4 +1,4 @@
-$BUILT 2016-07-16 19:25:25
+$BUILT 2016-09-02 13:34:37
 $AUTHOR Michael S. Repton
 $ENGLISH Charge of the Lix Brigade
 
@@ -137,29 +137,29 @@ $ENGLISH Charge of the Lix Brigade
 :geoo/sandstone/64x16: 640 176
 :geoo/sandstone/64x16: 704 176
 :geoo/sandstone/64x16: 768 176
-:geoo/sandstone/64x16: 832 160
+:geoo/sandstone/64x16: 800 160
 :geoo/sandstone/pillar_top_ext: 736 192
 :geoo/sandstone/pillar_32: 752 224
 :geoo/sandstone/pillar_top: 752 208
 :geoo/sandstone/pillar_bottom_ext: 736 320
 :geoo/sandstone/pillar_bottom: 752 288
 :geoo/sandstone/pillar_32: 752 256
-:geoo/sandstone/64x16: 896 160
-:geoo/sandstone/64x16: 960 160
-:geoo/sandstone/pillar_top_ext: 928 176
-:geoo/sandstone/pillar_32: 944 224
-:geoo/sandstone/pillar_top: 944 192
-:geoo/sandstone/pillar_top_jaggedl: 944 240 f
+:geoo/sandstone/64x16: 864 160
+:geoo/sandstone/64x16: 928 160
+:geoo/sandstone/pillar_top_ext: 896 176
+:geoo/sandstone/pillar_32: 912 224
+:geoo/sandstone/pillar_top: 912 192
+:geoo/sandstone/pillar_top_jaggedl: 912 240 f
 :geoo/sandstone/32x64: 768 336
-:geoo/sandstone/slopes/32x32rb: 800 128
+:geoo/sandstone/slopes/32x32rb: 768 128
 :geoo/sandstone/pillar_top_ext: 656 48
 :geoo/sandstone/pillar_32: 672 96
 :geoo/sandstone/pillar_top: 672 64
 :geoo/sandstone/pillar_bottom_ext: 656 160
 :geoo/sandstone/pillar_bottom: 672 128
-:geoo/sandstone/64x32: 832 128
-:geoo/sandstone/64x32: 896 128
-:geoo/sandstone/64x32: 960 128
+:geoo/sandstone/64x32: 800 128
+:geoo/sandstone/64x32: 864 128
+:geoo/sandstone/64x32: 928 128
 :geoo/sandstone/slopes/32x32rb: 992 272
 :geoo/sandstone/32x64: 1024 272
 :geoo/sandstone/64x32: 1056 272
@@ -180,4 +180,3 @@ $ENGLISH Charge of the Lix Brigade
 :geoo/sandstone/32x32: 1248 0
 :geoo/sandstone/slopes/32x32rt: 1184 32
 :geoo/sandstone/64x16: 736 160
-:geoo/sandstone/16x32: 800 160 fr

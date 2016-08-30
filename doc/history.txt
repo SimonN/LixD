@@ -1,6 +1,21 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.15
+------
+
+2016-09-13
+
+Started networking backend, lobby, and console. You can log onto the central
+server at lixgame.com and chat.
+
+Fix #145: The editor calced twice after its boxes lost focus. You could cancel
+a box with a hotkey, and the editor interpreted the hotkey itself once more.
+
+Fix #151: When there is no savestate, the state-load button is hidden.
+
+Fast movement frees mouse: This option is off by default.
+
 0.6.14
 ------
 
