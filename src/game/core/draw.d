@@ -31,17 +31,17 @@ implGameDraw(Game game) { with (game)
         // speeding up drawing by setting the drawing target now.
         // This RAII struct is used in each innermost loop, too, but it does
         // nothing except comparing two pointers there if we've set stuff here.
-        DrawingTarget drata = DrawingTarget(map.albit);
+        auto drata = TargetTorbit(map);
         with (level)
             map.clearScreenRect(color.makecol(bgRed, bgGreen, bgBlue));
         game.drawGadgets();
         game.drawLand();
-        effect.draw(map);
+        effect.draw();
         effect.calc(); // --timeToLive, moves. No physics, so OK to calc here.
         game.drawAllLixes();
         pan.stats.showTribe(tribeLocal);
     }
-    DrawingTarget drata = DrawingTarget(al_get_backbuffer(display));
+    auto drata = TargetBitmap(al_get_backbuffer(display));
     {
         version (tharsisprofiling)
             auto zo2 = Zone(profiler, "game draws map to screen");
@@ -61,7 +61,7 @@ void drawGadgets(Game game)
     state.foreachConstGadget((const(Gadget) g) {
         version (tharsisprofiling)
             auto zo2 = Zone(profiler, "game draws one gadget");
-        g.draw(game.map, state);
+        g.draw(state);
     });
 }
 
@@ -78,8 +78,8 @@ void drawAllLixes(Game game)
         auto zone = Zone(profiler, "game draws lixes");
     void drawTribe(in Tribe tr)
     {
-        tr.lixvec.retro.filter!(l => ! l.marked).each!(l => l.draw(game.map));
-        tr.lixvec.retro.filter!(l => l.marked).each!(l => l.draw(game.map));
+        tr.lixvec.retro.filter!(l => ! l.marked).each!(l => l.draw);
+        tr.lixvec.retro.filter!(l => l.marked).each!(l => l.draw);
     }
     with (game) {
         foreach (otherTribe; nurse.constStateForDrawingOnly.tribes)
@@ -87,7 +87,7 @@ void drawAllLixes(Game game)
                 drawTribe(otherTribe);
         drawTribe(nurse.constStateForDrawingOnly.tribes[_indexTribeLocal]);
         if (_drawHerHighlit)
-            _drawHerHighlit.drawAgainHighlit(game.map);
+            _drawHerHighlit.drawAgainHighlit();
     }
 }
 
@@ -96,6 +96,6 @@ void drawReplaySign(Game game)
     if (! game.replaying)
         return;
     const(Cutbit) rep = getInternal(fileImageGameReplay);
-    rep.drawToCurrentTarget(Point(0,
+    rep.drawToCurrentAlbitNotTorbit(Point(0,
         (rep.yl/5 * (1 + sin(timerTicks * 0.08f))).to!int));
 }

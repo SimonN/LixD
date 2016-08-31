@@ -13,7 +13,6 @@ import tile.phymap;
 
 void drawOccurrence(
     in TerOcc occ,
-    Torbit ground,
     in Point offset = Point(0, 0)
 ) {
     immutable Point pt = occ.loc + offset;
@@ -24,7 +23,7 @@ void drawOccurrence(
         assert (occ.tile.cb.xfs == 1 && occ.tile.cb.yfs == 1);
         // We subvert the Cutbit drawing function for speed.
         // Terrain is guaranteed to have only one frame anyway.
-        ground.drawFrom(occ.tile.cb.albit, pt, occ.mirrY, occ.rotCw);
+        drawToTargetTorbit(occ.tile.cb.albit, pt, occ.mirrY, occ.rotCw);
     }
     else {
         version (tharsisprofiling)
@@ -32,7 +31,7 @@ void drawOccurrence(
         assert (occ.tile);
         assert (occ.tile.dark);
         with (BlenderMinus)
-            ground.drawFrom(occ.tile.dark.albit, pt, occ.mirrY, occ.rotCw);
+            drawToTargetTorbit(occ.tile.dark.albit, pt, occ.mirrY, occ.rotCw);
     }
 }
 

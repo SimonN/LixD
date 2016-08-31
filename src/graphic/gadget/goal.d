@@ -28,15 +28,15 @@ class Goal : GadgetWithTribeList {
 
 protected:
 
-    override void drawStateExtras(Torbit t, in GameState s) const
+    override void drawStateExtras(in GameState s) const
     {
-        drawOwners(t, s);
-        drawNoSign(t, s);
+        drawOwners(s);
+        drawNoSign(s);
     }
 
 private:
 
-    void drawOwners(Torbit mutableGround, in GameState state) const
+    void drawOwners(in GameState state) const
     {
         assert (state);
         int offset = 0;
@@ -45,20 +45,19 @@ private:
             if (t.style == Style.garden)
                 continue;
             auto c = graphic.internal.getPanelInfoIcon(t.style);
-            c.draw(mutableGround,
-                Point(x + tile.triggerX + tile.triggerXl / 2 - c.xl / 2
-                  + (20 * offset++) - 10 * (tribesLen - 1),
+            c.draw(Point(x + tile.triggerX + tile.triggerXl / 2 - c.xl / 2
+                    + (20 * offset++) - 10 * (tribesLen - 1),
                 max(y, y + yl - 70)),
                 Ac.walker, 0);
         }
     }
 
-    void drawNoSign(Torbit mutableGround, in GameState state) const
+    void drawNoSign(in GameState state) const
     {
         if (! state.goalsLocked)
             return;
         const(Cutbit) c = getInternal(fileImageMouse);
-        c.draw(mutableGround, Point(
+        c.draw(Point(
             x + tile.triggerX + tile.triggerXl / 2 - c.xl / 2,
             y + tile.triggerY + tile.triggerYl / 2 - c.yl),
             2, 2); // (2,2) are the (xf,yf) of the international "no" sign

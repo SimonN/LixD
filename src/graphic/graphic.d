@@ -96,20 +96,18 @@ public:
         return cutbit.frameExists(which_xf, which_yf);
     }
 
-    void draw(Torbit mutableGround) const
+    void draw() const
     {
         assert (env, "can't draw, no target environment specified");
-        assert (env == mutableGround, format("drawing target must be == env."
-            " env=%x, mutable=%x", &env, &mutableGround));
         // This calls the virtual xf(), yf() instead of using _xf, _yf.
         // We want to allow Lixxie to override that with frame and ac.
-        cutbit.draw(mutableGround, _loc, xf, yf, _mirror, _rot);
+        cutbit.draw(_loc, xf, yf, _mirror, _rot);
     }
 
     // Ignore (Topology env) and mirr/rotat; and blit immediately.
     // Only used for mouse cursor and replay sign.
-    void drawToCurrentTarget() const
+    void drawToCurrentAlbitNotTorbit() const
     {
-        cutbit.drawToCurrentTarget(_loc, _xf, _yf);
+        cutbit.drawToCurrentAlbitNotTorbit(_loc, _xf, _yf);
     }
 }

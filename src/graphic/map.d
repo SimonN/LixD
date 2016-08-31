@@ -409,7 +409,7 @@ loadCameraRect(in Torbit src)
     immutable bool drtx = torusX && r.xl < cameraZoomedXl;
     immutable bool drty = torusY && r.yl < cameraZoomedYl;
 
-    auto drata = DrawingTarget(this.albit);
+    auto targetTorbit = TargetTorbit(this);
     if (basics.user.paintTorusSeams.value)
         drawTorusSeams();
 

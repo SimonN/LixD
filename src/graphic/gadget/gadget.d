@@ -38,117 +38,100 @@ package immutable string StandardGadgetCtor =
         super(top, levelpos);
     }";
 
-
-
 class Gadget : Graphic {
-
 public:
-
     const(GadgetTile) tile;
     const(int) animationLength;
-    bool       drawWithEditorInfo;
 
-    // override these if necessary
-    protected void drawGameExtras(Torbit, in GameState) const { }
-    protected void drawEditorInfo(Torbit) const { }
+protected:
+    // protected, use the factory to generate gadgets of the correct subclass
+    this(const(Topology) top, in ref GadOcc levelpos)
+    in {
+        assert (levelpos.tile, "we shouldn't make gadgets from missing tiles");
+        assert (levelpos.tile.cb, "we shouldn't make gadgets from bad tiles");
+    }
+    body {
+        super(levelpos.tile.cb, top, levelpos.loc);
+        tile = levelpos.tile;
+        animationLength = delegate() {
+            if (levelpos.tile.cb is null)
+                return 1;
+            for (int i = 0; i < levelpos.tile.cb.xfs; ++i)
+                if (! levelpos.tile.cb.frameExists(i, 0))
+                    return i;
+            return levelpos.tile.cb.xfs;
+        }();
+    }
+
+public:
+    static Gadget
+    factory(const(Topology) top, in ref GadOcc levelpos)
+    {
+        assert (levelpos.tile);
+        final switch (levelpos.tile.type) {
+            case GadType.DECO:    return new Gadget  (top, levelpos);
+            case GadType.HATCH:   return new Hatch   (top, levelpos);
+            case GadType.GOAL:    return new Goal    (top, levelpos);
+            case GadType.TRAP:    return new TrapTrig(top, levelpos);
+            case GadType.WATER:   return new Water   (top, levelpos);
+            case GadType.FLING:
+                if (levelpos.tile.subtype & 2)
+                    return new FlingTrig(top, levelpos);
+                else
+                    return new FlingPerm(top, levelpos);
+            case GadType.MAX:
+                assert (false, "GadType isn't supported by Gadget.factory");
+        }
+    }
+
+    override Gadget clone() const { return new Gadget(this); }
+    this(in Gadget rhs)
+    in {
+        assert (rhs !is null, "we shouldn't copy from null rhs");
+        assert (rhs.tile !is null, "don't copy from rhs with missing tile");
+    }
+    body {
+        super(rhs);
+        tile               = rhs.tile;
+        animationLength    = rhs.animationLength;
+    }
+
+    // override if necessary
+    protected void drawGameExtras(in GameState) const { }
 
     @property Sound sound() { return Sound.NOTHING; }
 
-// protected: use the factory to generate gadgets of the correct subclass
-protected this(const(Topology) top, in ref GadOcc levelpos)
-in {
-    assert (levelpos.tile, "we shouldn't make gadgets from missing tiles");
-    assert (levelpos.tile.cb, "we shouldn't make gadgets from bad tiles");
-}
-body {
-    super(levelpos.tile.cb, top, levelpos.loc);
-    tile = levelpos.tile;
-    animationLength = delegate() {
-        if (levelpos.tile.cb is null)
-            return 1;
-        for (int i = 0; i < levelpos.tile.cb.xfs; ++i)
-            if (! levelpos.tile.cb.frameExists(i, 0))
-                return i;
-        return levelpos.tile.cb.xfs;
-    }();
-}
-
-
-
-public:
-
-override Gadget clone() const { return new Gadget(this); }
-
-this(in Gadget rhs)
-in {
-    assert (rhs !is null, "we shouldn't copy from null rhs");
-    assert (rhs.tile !is null, "don't copy from rhs with missing tile");
-}
-body {
-    super(rhs);
-    tile               = rhs.tile;
-    animationLength    = rhs.animationLength;
-    drawWithEditorInfo = rhs.drawWithEditorInfo;
-}
-
-invariant()
-{
-    assert (tile, "Gadget.tile should not be null");
-    assert (tile.cb, "Gadget.tile.cb (the cutbit) shouldn't be null");
-    assert (animationLength > 0, "Cutbit should have xfs > 0 unless null");
-}
-
-static Gadget
-factory(const(Topology) top, in ref GadOcc levelpos)
-{
-    assert (levelpos.tile);
-    final switch (levelpos.tile.type) {
-        case GadType.DECO:    return new Gadget  (top, levelpos);
-        case GadType.HATCH:   return new Hatch   (top, levelpos);
-        case GadType.GOAL:    return new Goal    (top, levelpos);
-        case GadType.TRAP:    return new TrapTrig(top, levelpos);
-        case GadType.WATER:   return new Water   (top, levelpos);
-        case GadType.FLING:
-            if (levelpos.tile   .subtype & 2) return new FlingTrig(top, levelpos);
-            else                         return new FlingPerm(top, levelpos);
-        case GadType.MAX:
-            assert (false, "GadType isn't supported by Gadget.factory");
+    void animateForUpdate(in Update upd)
+    {
+        xf = positiveMod(upd, animationLength);
     }
-}
 
-void
-animateForUpdate(in Update upd)
-{
-    xf = positiveMod(upd, animationLength);
-}
+    deprecated("Gadgets should draw with const GameState")
+    final override void draw() const { super.draw(); }
 
-deprecated("Gadgets should be drawn with const GameState") final override void
-draw(Torbit mutableGround) const { super.draw(mutableGround); }
-
-final void
-draw(Torbit mutableGround, in GameState state = null) const
-{
-    super.draw(mutableGround);
-    drawGameExtras(mutableGround, state);
-}
-
-final void drawLookup(Phymap lk) const
-{
-    assert (tile);
-    Phybitset phyb = 0;
-    final switch (tile.type) {
-        case GadType.HATCH:
-        case GadType.DECO:
-        case GadType.MAX: return;
-
-        case GadType.GOAL:   phyb = Phybit.goal; break;
-        case GadType.TRAP:   phyb = Phybit.trap; break;
-        case GadType.WATER:  phyb = tile.subtype == 0 ? Phybit.water
-                                                       : Phybit.fire; break;
-        case GadType.FLING:  phyb = Phybit.fling; break;
+    final void
+    draw(in GameState state = null) const
+    {
+        super.draw();
+        drawGameExtras(state);
     }
-    lk.rect!(Phymap.add)(tile.triggerArea + this.loc, phyb);
-}
 
+    final void drawLookup(Phymap lk) const
+    {
+        assert (tile);
+        Phybitset phyb = 0;
+        final switch (tile.type) {
+            case GadType.HATCH:
+            case GadType.DECO:
+            case GadType.MAX: return;
+
+            case GadType.GOAL:  phyb = Phybit.goal; break;
+            case GadType.TRAP:  phyb = Phybit.trap; break;
+            case GadType.WATER: phyb = tile.subtype == 0 ? Phybit.water
+                                                         : Phybit.fire; break;
+            case GadType.FLING: phyb = Phybit.fling; break;
+        }
+        lk.rect!(Phymap.add)(tile.triggerArea + this.loc, phyb);
+    }
 }
 // end class Gadget

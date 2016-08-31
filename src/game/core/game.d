@@ -161,6 +161,8 @@ package:
 
     void setLastUpdateToNow()
     {
+        assert (this.effect);
+        assert (this.nurse);
         effect.deleteAfter(nurse.upd);
         if (pan)
             pan.setLikeTribe(tribeLocal);

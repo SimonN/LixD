@@ -32,7 +32,7 @@ body {
 // See comment near graphic.internal.vars.internal about how we save strings
 Cutbit getInternalMutable(in Filename fn)
 {
-    if (noninteractiveMode)
+    if (dontWantRecoloredGraphics)
         return nullCutbit;
     auto correctScale  = new VfsFilename(scaleDir ~ fn.file ~ imgExt);
     auto fallbackScale = new VfsFilename(fn.rootless ~ imgExt);
@@ -60,7 +60,7 @@ Cutbit getInternalMutable(in Filename fn)
 const(Cutbit) implGetLixSprites(in Style st)
 out (ret) { assert(ret); }
 body {
-    if (noninteractiveMode)
+    if (dontWantRecoloredGraphics)
         return getLixRawSprites();
     if (spritesheets[st] is null)
         makeLixSprites(st);
@@ -70,7 +70,7 @@ body {
 const(Cutbit) implGetPanelInfoIcon(in Style st)
 out (ret) { assert(ret); }
 body {
-    if (noninteractiveMode)
+    if (dontWantRecoloredGraphics)
         return nullCutbit;
     if (panelInfoIcons[st] is null)
         makePanelInfoIcon(st);
@@ -80,7 +80,7 @@ body {
 const(Cutbit) implGetSkillButton(in Style st)
 out (ret) { assert(ret); }
 body {
-    if (noninteractiveMode)
+    if (dontWantRecoloredGraphics)
         return nullCutbit;
     if (skillButtonIcons[st] is null)
         makeSkillButtonIcon(st);

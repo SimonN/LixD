@@ -1,4 +1,4 @@
-module graphic.torbit;
+module graphic.torbit.torbit;
 
 import std.math; // fmod, abs
 import std.algorithm; // minPos
@@ -11,6 +11,12 @@ import file.filename;
 import hardware.display;
 
 public import basics.rect;
+
+/* Torbit is a bitmap with possible torus wrapping. When you instruct it to
+ * draw things on itself, it warps the things around accordingly.
+ *
+ * See also TargetTorbit in graphic.targtorb.
+ */
 
 class Torbit : Topology {
 private:
@@ -46,7 +52,7 @@ public:
         assert (rhs.bitmap, "null rhs.bitmap shouldn't ever happen");
         assert (rhs.Topology.opEquals(this),
             "copyFrom only implemented between same size, for speedup");
-        auto drata = DrawingTarget(bitmap);
+        auto targetBitmap = TargetBitmap(bitmap);
         al_draw_bitmap(cast (Albit) rhs.bitmap, 0, 0, 0);
     }
 
@@ -69,7 +75,7 @@ public:
 
     void copyToScreen()
     {
-        auto drata = DrawingTarget(al_get_backbuffer(display));
+        auto targetBitmap = TargetBitmap(al_get_backbuffer(display));
         al_draw_bitmap(bitmap, 0, 0, 0);
     }
 
@@ -77,7 +83,7 @@ public:
     void clearToTransp() { this.clearToColor(color.transp); }
     void clearToColor(AlCol col)
     {
-        auto drata = DrawingTarget(bitmap);
+        auto targetBitmap = TargetBitmap(bitmap);
         al_clear_to_color(col);
     }
 
@@ -101,16 +107,56 @@ public:
         al_save_bitmap(fn.stringzForWriting, bitmap);
     }
 
+    void drawFromPreservingAspectRatio(in Torbit from)
+    {
+        auto targetBitmap = TargetBitmap(bitmap);
+        immutable float scaleX = 1.0f * xl / from.xl;
+        immutable float scaleY = 1.0f * yl / from.yl;
+        // draw (from) as large as possible onto (this), which requires that
+        // the strongest restriction is followed, i.e.,
+        // we scale by the smallest scaling factor.
+        int destXl = xl, destYl = yl;
+        if (scaleX < scaleY)
+            destYl = (yl * scaleX/scaleY).roundInt;
+        else
+            destXl = (xl * scaleY/scaleX).roundInt;
+        assert (destXl <= xl && destYl == yl
+            ||  destYl <= yl && destXl == xl);
+        al_draw_scaled_bitmap(cast (Albit) from.bitmap,
+            0, 0, from.xl, from.yl,
+            (xl-destXl)/2, (yl-destYl)/2, destXl, destYl, 0);
+    }
+
+protected:
+    final override void onResize()
+    out {
+        assert (bitmap);
+        assert (xl == al_get_bitmap_width (bitmap));
+        assert (yl == al_get_bitmap_height(bitmap));
+    }
+    body {
+        if (bitmap)
+            al_destroy_bitmap(bitmap);
+        bitmap = albitCreate(xl, yl);
+    }
+
+package:
+    // To call this, use TargetTorbit on the torbit, then call the free
+    // function drawToTargetTorbit(...), that draws onto the TargetTorbit.
+    // Allegro 5 drawing works like this, with thread-local targets.
     // Draw the entire Albit onto (Torbit this). Can take non-integer quarter
     // turns as (double rot).
     final void drawFrom(
         const(Albit) source,
-        in Point targetCorner,
+        in Point targetCorner = Point(0, 0),
         bool mirrY = false, // vertically mirrored -- happens before rotation
         double rotCw = 0,   // clockwise rotation -- after any mirroring
         double scal = 0
     )
     in {
+        assert (bitmap);
+        assert (this.bitmap == al_get_target_bitmap(),
+            "I ask callers to set the bitmap before this comes in a loop.");
         assert (source, "can't blit the null bitmap onto Torbit");
         assert (rotCw >= 0 && rotCw < 4);
     }
@@ -191,26 +237,7 @@ public:
         useDrawingDelegate(drawFrom_at, wrap(targetCorner));
     }
 
-    void drawFromPreservingAspectRatio(in Torbit from)
-    {
-        auto drata = DrawingTarget(bitmap);
-        immutable float scaleX = 1.0f * xl / from.xl;
-        immutable float scaleY = 1.0f * yl / from.yl;
-        // draw (from) as large as possible onto (this), which requires that
-        // the strongest restriction is followed, i.e.,
-        // we scale by the smallest scaling factor.
-        int destXl = xl, destYl = yl;
-        if (scaleX < scaleY)
-            destYl = (yl * scaleX/scaleY).roundInt;
-        else
-            destXl = (xl * scaleY/scaleX).roundInt;
-        assert (destXl <= xl && destYl == yl
-            ||  destYl <= yl && destXl == xl);
-        al_draw_scaled_bitmap(cast (Albit) from.bitmap,
-            0, 0, from.xl, from.yl,
-            (xl-destXl)/2, (yl-destYl)/2, destXl, destYl, 0);
-    }
-
+    // We need this for nontrivial physics drawing that can't blit everything
     final void drawFromPixel(in Albit from, in Point fromPoint, Point toPoint)
     {
         assert (this.bitmap == al_get_target_bitmap(),
@@ -226,58 +253,18 @@ public:
             fromPoint.x, fromPoint.y, 1, 1, toPoint.x, toPoint.y, 0);
     }
 
-    // These methods (getPixel, setPixel) are very slow on VRAM bitmaps.
-    // You should lock (Torbit.albit) before calling these functions,
-    // they do not lock the bitmap themselves.
-    // Even then, minimize accessing individual pixels, it's slow.
-    final AlCol getPixel(in Point p) const
-    {
-        assert(bitmap);
-        immutable here = clamp(p);
-        return al_get_pixel(cast (Albit) bitmap, here.x, here.y);
-    }
-
-    // See comment for getPixel.
-    final void setPixel(in Point p, AlCol col)
-    {
-        assert(bitmap);
-        // Here, don't draw outside of the boundaries, unlike the reading in
-        // Torbit.get_pixel. Again, it's slow on video bitmaps.
-        assert (this.bitmap == al_get_target_bitmap(),
-            "Torbit.setPixel is designed for high-speed drawing."
-            "Set the target bitmap manually to the target torbit's bitmap.");
-        if (   (torusX || (p.x >= 0 && p.x < xl))
-            && (torusY || (p.y >= 0 && p.y < yl))
-        )
-            al_put_pixel(torusX ? positiveMod(p.x, xl) : p.x,
-                         torusY ? positiveMod(p.y, yl) : p.y, col);
-    }
-
-protected:
-    final override void onResize()
-    out {
-        assert (bitmap);
-        assert (xl == al_get_bitmap_width (bitmap));
-        assert (yl == al_get_bitmap_height(bitmap));
-    }
-    body {
-        if (bitmap)
-            al_destroy_bitmap(bitmap);
-        bitmap = albitCreate(xl, yl);
-    }
-
 private:
-    void useDrawingDelegate(
+    final void useDrawingDelegate(
         void delegate(int, int) drawing_delegate,
         Point targetCorner
     ) {
         assert (bitmap);
+        assert (bitmap.isTargetBitmap);
         assert (drawing_delegate != null);
         assert (targetCorner == wrap(targetCorner));
 
         // We don't lock the bitmap; drawing with high-level primitives
         // and blitting other VRAM bitmaps is best without locking
-        auto drata = DrawingTarget(bitmap);
         with (targetCorner) {
                                   drawing_delegate(x,      y     );
             if (torusX          ) drawing_delegate(x - xl, y     );

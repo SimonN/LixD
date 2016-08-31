@@ -18,14 +18,11 @@ import tile.occur;
 import lix.enums;
 
 class Hatch : Gadget {
-
 private:
-
     int  _xFramesOpen;
     bool _blinkNow;
 
 public:
-
     enum updateOpen      = 55;
     enum updateBlinkStop = 48;
     enum updatesBlinkOn  =  4;
@@ -82,23 +79,12 @@ public:
     }
 
 protected:
-
-    override void drawGameExtras(Torbit mutableGround, in GameState) const
+    override void drawGameExtras(in GameState) const
     {
         if (_blinkNow && blinkStyle != Style.garden) {
             const(Cutbit) c = getPanelInfoIcon(blinkStyle);
-            c.draw(mutableGround, loc + tile.trigger - c.len/2, Ac.walker, 0);
+            c.draw(loc + tile.trigger - c.len/2, Ac.walker, 0);
         }
     }
-
-    override void drawEditorInfo(Torbit mutableGround) const
-    {
-        // draw arrow pointing into the hatch's direction
-        const(Cutbit) cb = getInternal(fileImageEditHatch);
-        cb.draw(mutableGround, Point(x + yl/2 - cb.xl/2,
-            y + 20), // DTODO: +20 was text_height in A4/C++.
-            spawnFacingLeft ? 1 : 0, 0);
-    }
-
 }
 // end class Hatch

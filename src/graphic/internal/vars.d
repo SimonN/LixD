@@ -6,7 +6,7 @@ import lix.enums;
 
 package:
 
-bool noninteractiveMode;
+bool dontWantRecoloredGraphics;
 
 Cutbit[string]    internal;
 Cutbit[Style.max] spritesheets;

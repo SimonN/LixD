@@ -34,6 +34,7 @@ public void processFileArgsForRunmode(Cmdargs cmdargs)
         cmdargs.dispatch((Filename fn) {
             auto l = new Level(fn);
             l.exportImage(fn);
+            core.memory.GC.collect();
         });
     }
     else

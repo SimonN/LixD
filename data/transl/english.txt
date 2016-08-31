@@ -246,9 +246,9 @@ $winSkillsAllTo               All 14 to:
 
 // exporting a level into a file
 
-$exportSingleLix              Save:
-$exportSingleSpawnint         Spawn int.:
-$exportSingleClock            Time:
+$exportSingleInitial          Lix:
+$exportSingleRequired         Save:
+$exportSingleSpawnint         SI:
 $exportMultiLix               Lix:
 $exportMultiSpawnint          Spawn int.:
 $exportMultiClock             Overtime:

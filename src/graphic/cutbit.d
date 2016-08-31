@@ -14,7 +14,6 @@ import graphic.textout; // write error message instead of drawing bitmap
 import file.filename;
 import file.language;
 import file.log; // log bad filename when trying to load a bitmap
-import hardware.display; // drawDirectlyToScreen()
 
 class Cutbit {
 private:
@@ -37,7 +36,7 @@ public:
         if (cb.bitmap) {
             bitmap = albitCreate(al_get_bitmap_width (cb.bitmap),
                                  al_get_bitmap_height(cb.bitmap));
-            auto drata = DrawingTarget(bitmap);
+            auto target = TargetBitmap(bitmap);
             al_draw_bitmap(cast (Albit) cb.bitmap, 0, 0, 0);
             assert(bitmap);
         }
@@ -126,35 +125,31 @@ public:
     // (rot) (either int or double) means how many ccw quarter turns.
     // (scal) can be set to 0 or 1 when one doesn't wish to rescale. 0 is fast
     void draw(
-        Torbit       targetTorbit,
-        const Point  targetCorner,
+        const Point  targetCorner = Point(0, 0),
         const int    xf = 0,
         const int    yf = 0,
         const bool   mirr = false,
         const double rot  = 0,
         const double scal = 0) const
     {
-        assert (targetTorbit, "trying to draw onto null torbit");
-        Albit target = targetTorbit.albit;
-
         if (bitmap && xf >= 0 && yf >= 0 && xf < _xfs && yf < _yfs) {
             Albit sprite = create_sub_bitmap_for_frame(xf, yf);
-            scope (exit) al_destroy_bitmap(sprite);
-            targetTorbit.drawFrom(sprite, targetCorner, mirr, rot, scal);
+            scope (exit)
+                al_destroy_bitmap(sprite);
+            sprite.drawToTargetTorbit(targetCorner, mirr, rot, scal);
         }
         // no frame inside the cutbit has been specified, or the cutbit
         // has a null bitmap
         else {
-            drawMissingFrameError(targetTorbit, targetCorner, xf, yf);
+            drawMissingFrameError(targetCorner, xf, yf);
         }
     }
 
     // This should only be used by the mouse cursor, which draws even on top
     // of the gui torbit. Rotation, mirroring, and scaling is not offered.
-    void drawToCurrentTarget(in Point targetCorner,
+    void drawToCurrentAlbitNotTorbit(in Point targetCorner,
         in int xf = 0, in int yf = 0) const
     {
-        assert (display);
         if (xf < 0 || xf >= _xfs
          || yf < 0 || yf >= _yfs) return;
         // usually, select only the correct frame. If we'd draw off the screen
@@ -169,17 +164,15 @@ public:
     }
 
 private:
-    void drawMissingFrameError(
-        Torbit torbit, in Point targetCorner, in int fx, in int fy) const
+    void drawMissingFrameError(in Point toCorner, in int fx, in int fy) const
     {
         string str = "File N/A";
-        AlCol  col = color.cbBadBitmap;
+        AlCol col = color.cbBadBitmap;
         if (bitmap) {
             str = format("(%d,%d)", fx, fy);
             col = color.cbBadFrame;
         }
-        auto drata = DrawingTarget(torbit.albit);
-        drawText(djvuS, str, targetCorner.x, targetCorner.y, col);
+        drawText(djvuS, str, toCorner.x, toCorner.y, col);
     }
 
     // this is used by the first draw(), and by drawDirectlyToScreen()

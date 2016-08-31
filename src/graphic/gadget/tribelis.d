@@ -74,7 +74,7 @@ class GadgetWithTribeList : Gadget {
     }
 
     // override this
-    void drawStateExtras(Torbit, in GameState) { }
+    void drawStateExtras(in GameState) { }
 
 private:
 

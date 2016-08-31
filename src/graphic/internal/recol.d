@@ -39,7 +39,7 @@ void eidrecol(Cutbit cutbit, int magicnr)
         if (magicnr == 0)
             al_unlock_bitmap(bitmap);
 
-    auto drata = DrawingTarget(bitmap);
+    auto targetBitmap = TargetBitmap(bitmap);
     immutable bmp_yl = al_get_bitmap_height(bitmap);
     if (magicnr == 0)
         for (int y = 0; y < bmp_yl; ++y)
@@ -117,7 +117,7 @@ Cutbit lockThenRecolor(int magicnr)(
         auto zone = Zone(profiler, format("recolor-one-foreach-%d", magicnr));
     auto lock  = LockReadOnly(lix);
     auto lock2 = LockReadWrite(targetCb.albit); // see [1] at end of function
-    auto drata = DrawingTarget(targetCb.albit);
+    auto targetBitmap = TargetBitmap(targetCb.albit);
     recolorTargetForStyle();
 
     // eidrecol invoked with magicnr != 0 expects already-locked bitmap

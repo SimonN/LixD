@@ -119,7 +119,7 @@ private:
         _dark = new Cutbit(albitCreate(_phymap.xl, _phymap.yl), false);
         Point p = Point();
         with (LockWriteOnly(_dark.albit))
-            with (DrawingTarget(_dark.albit))
+            with (TargetBitmap(_dark.albit))
                 for (    p.y = 0; p.y < _phymap.yl; ++p.y)
                     for (p.x = 0; p.x < _phymap.xl; ++p.x)
                         al_put_pixel(p.x, p.y, _phymap.get(p)

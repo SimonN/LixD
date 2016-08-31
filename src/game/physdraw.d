@@ -130,7 +130,7 @@ class PhysicsDrawer {
 
         version (tharsisprofiling)
             auto zone = Zone(profiler, "applyChangesToLand >= 1");
-        auto target = DrawingTarget(_land.albit);
+        auto target = TargetTorbit(_land);
 
         while (_delsForLand != null || _addsForLand != null) {
             // Do deletions for the first update, then additions for that,
@@ -331,6 +331,7 @@ private:
         if (is (T == FlaggedDeletion) || is (T == FlaggedAddition))
     {
         assert (al_is_bitmap_drawing_held());
+        assert (_land.isTargetTorbit);
         assert (sprite);
         assert (_phymap);
         static if (is (T == FlaggedDeletion))
@@ -341,7 +342,7 @@ private:
             version (tharsisprofiling)
                 auto zone = Zone(profiler, format("PhysDraw pix-all %s",
                                                   tc.type.to!string));
-            _land.drawFrom(sprite, tc.loc);
+            sprite.drawToTargetTorbit(tc.loc);
             return;
         }
         // we continue here only if we must draw per pixel, not all at once
@@ -356,11 +357,11 @@ private:
                 immutable toPoint   = tc.loc + fromPoint;
                 static if (is (T == FlaggedDeletion)) {
                     if (! _phymap.getSteel(toPoint))
-                        _land.drawFromPixel(sprite, fromPoint, toPoint);
+                        sprite.singlePixelToTargetTorbit(fromPoint, toPoint);
                 }
                 else {
                     if (tc.needsColoring[y][x])
-                        _land.drawFromPixel(sprite, fromPoint, toPoint);
+                        sprite.singlePixelToTargetTorbit(fromPoint, toPoint);
                 }
             }
     }
@@ -453,7 +454,7 @@ private:
         _mask = albitCreate(0x100, 0x80);
         assert (_mask, "couldn't create mask bitmap");
 
-        auto drawingTarget = DrawingTarget(_mask);
+        auto targetBitmap = TargetBitmap(_mask);
         al_clear_to_color(color.transp);
 
         Albit recol = getInternal(basics.globals.fileImageStyleRecol).albit;

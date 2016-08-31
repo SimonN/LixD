@@ -3,11 +3,7 @@ module hardware.mousecur;
 /* This is only for the drawable mouse cursor.
  * To read mouse input, look at the module hardware.mouse.
  *
- *  void initialize()
- *  void deinitialize();
- *  void draw();
- *
- *  public Graphic mouse; -- work with this object however you wish
+ *  public Graphic mouseCursor; -- work with this object however you wish
  */
 
 import basics.globals;
@@ -19,8 +15,7 @@ import hardware.mouse;
 
 public Graphic mouseCursor;
 
-void
-initialize()
+void initialize()
 {
     assert (mouseCursor is null, "mouse cursor is already initialized");
     const(Cutbit) cb = getInternal(fileImageMouse);
@@ -30,10 +25,7 @@ initialize()
     mouseCursor = new Graphic(cb, null);
 }
 
-
-
-void
-deinitialize()
+void deinitialize()
 {
     if (mouseCursor) {
         destroy(mouseCursor);
@@ -41,13 +33,10 @@ deinitialize()
     }
 }
 
-
-
-void
-draw()
+void draw()
 {
     assert (mouseCursor, "call hardware.mousecur.initialize() before drawing");
     mouseCursor.loc = Point(hardware.mouse.mouseX - mouseCursor.xl/2 + 1,
                             hardware.mouse.mouseY - mouseCursor.yl/2 + 1);
-    mouseCursor.drawToCurrentTarget();
+    mouseCursor.drawToCurrentAlbitNotTorbit();
 }

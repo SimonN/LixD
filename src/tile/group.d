@@ -80,8 +80,8 @@ package:
 
         Torbit tb = new Torbit(phy);
         tb.clearToColor(color.transp);
-        with (DrawingTarget(tb.albit))
-            _key.elements.each!(e => e.drawOccurrence(tb, -_transpCutOff));
+        with (TargetTorbit(tb))
+            _key.elements.each!(e => e.drawOccurrence(-_transpCutOff));
         super("", new Cutbit(tb.loseOwnershipOfAlbit), phy);
     }
 

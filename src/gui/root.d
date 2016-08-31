@@ -108,7 +108,7 @@ void draw()
         foreach (element; elders) element.reqDraw();
         foreach (element; focus)  element.reqDraw();
     }
-    auto drata = DrawingTarget(guiosd.albit);
+    auto targetTorbit = TargetTorbit(guiosd);
     foreach (element; drawingOnlyElders) element.draw();
     foreach (element; elders) element.draw();
     foreach (element; focus)  element.draw();

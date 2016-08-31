@@ -18,26 +18,17 @@ import graphic.torbit;
 import hardware.sound;
 import lix;
 
-// DTODOCOMMENT: add the interesting things from the 150+ line comment in
-// C++/A4 Lix's lix/lix.h top comment.
-
 class Lixxie : Graphic {
-
 private:
-
     int _ex;
     int _ey;
     int _flags;
     int _flingX;
     int _flingY;
-
     Phybitset _encBody;
     Phybitset _encFoot;
-
     Style _style;
-
     Job _job;
-
     OutsideWorld* _outsideWorld; // set whenever physics and tight coupling
                                  // are needed, nulled again at end of those
 
@@ -55,8 +46,7 @@ private:
     };
 
 public:
-
-    int  ploderTimer;
+    int ploderTimer;
 
     Style style() const { return _style; }
 
@@ -179,8 +169,6 @@ this(
     addEncountersFromHere();
 }
 
-
-
 this(in Lixxie rhs)
 {
     assert (rhs !is null);
@@ -204,26 +192,6 @@ this(in Lixxie rhs)
 
 override Lixxie clone() const { return new Lixxie(this); }
 
-
-
-private Point getFuse() const
-{
-    // Some skills -- BallisticFlyer -- move before changing their frame,
-    // and then choose a frame based on the result. So, they might move while
-    // frame == -1. Query frame 0 for eye position in this situation.
-    assert (countdown, "generate the eye matrix before first use");
-    Point ret = countdown.get(max(0, frame), ac);
-    if (facingLeft)
-        ret.x = this.cutbit.xl - ret.x;
-    assert (positiveMod(super.y,        lookup.yl)
-        ==  positiveMod(_ey - eyOffset, lookup.yl)); // for encounters
-    ret.x += super.x;
-    ret.y += super.y;
-    return ret;
-}
-
-
-
 void addEncountersFromHere()
 {
     _encFoot |= lookup.get(Point(_ex, _ey));
@@ -238,8 +206,7 @@ package void repositionSprite()
     super.loc = Point(_ex - exOffset + _job.spriteOffsetX, _ey - eyOffset);
 }
 
-@property int
-ex(in int n)
+@property int ex(in int n)
 {
     _ex = basics.help.even(n);
     if (env.torusX)
@@ -250,10 +217,7 @@ ex(in int n)
     return _ex;
 }
 
-
-
-@property int
-ey(in int n)
+@property int ey(in int n)
 {
     _ey = n;
     if (env.torusY)
@@ -262,8 +226,6 @@ ey(in int n)
     addEncountersFromHere();
     return _ey;
 }
-
-
 
 void moveAhead(int plusX = 2)
 {
@@ -277,22 +239,16 @@ void moveAhead(int plusX = 2)
     for ( ; plusX < 0; plusX += 2) ex = (_ex - 2);
 }
 
-
-
 void moveDown(int plusY = 2)
 {
     for ( ; plusY > 0; --plusY) ey = (_ey + 1);
     for ( ; plusY < 0; ++plusY) ey = (_ey - 1);
 }
 
-
-
 void moveUp(in int minusY = 2)
 {
     moveDown(-minusY);
 }
-
-
 
 bool inTriggerArea(in Gadget g) const
 {
@@ -305,8 +261,6 @@ bool inTriggerArea(in Gadget g) const
              g.tile.triggerXl,        g.tile.triggerYl));
 }
 
-
-
 void addFling(in int px, in int py, in bool same_tribe)
 {
     if (flingBySameTribe && same_tribe) return;
@@ -317,8 +271,6 @@ void addFling(in int px, in int py, in bool same_tribe)
     _flingY += py;
 }
 
-
-
 void resetFlingNew()
 {
     flingNew         = false;
@@ -326,8 +278,6 @@ void resetFlingNew()
     _flingX          = 0;
     _flingY          = 0;
 }
-
-
 
 bool getSteel(in int px, in int py) const
 {
@@ -349,8 +299,6 @@ bool isSolidSingle(in int px = 0, in int py = 2) const
     return lookup.getSolid(Point(_ex + px * dir, _ey + py));
 }
 
-
-
 int solidWallHeight(in int px = 0, in int py = 0) const
 {
     int solid = 0;
@@ -360,8 +308,6 @@ int solidWallHeight(in int px = 0, in int py = 0) const
     }
     return solid;
 }
-
-
 
 int countSolid(int x1, int y1, int x2, int y2) const
 {
@@ -376,8 +322,6 @@ int countSolid(int x1, int y1, int x2, int y2) const
     return ret;
 }
 
-
-
 int countSteel(int x1, int y1, int x2, int y2) const
 {
     if (x2 < x1) swap(x1, x2);
@@ -391,16 +335,12 @@ int countSteel(int x1, int y1, int x2, int y2) const
     return ret;
 }
 
-
-
 void playSound(in Sound sound)
 {
     outsideWorld.effect.addSound(
         outsideWorld.state.update, outsideWorld.tribeID, outsideWorld.lixID,
         sound);
 }
-
-
 
 void playSoundIfTribeLocal(in Sound sound)
 {
@@ -409,37 +349,35 @@ void playSoundIfTribeLocal(in Sound sound)
         sound);
 }
 
-
-
 override bool isLastFrame() const
 {
     return ! cutbit.frameExists(frame + 1, ac);
 }
-
-
 
 void advanceFrame()
 {
     frame = (isLastFrame() ? 0 : frame + 1);
 }
 
-override void draw(Torbit tb) const
+override void draw() const
 {
     if (ac == Ac.nothing)
         return;
     // DTODO: draw the fuse in multiplayer
-    super.draw(tb);
+    super.draw();
 }
 
-final void drawAgainHighlit(Torbit tb) const
+final void drawAgainHighlit() const
 {
     assert (ac != Ac.nothing, "we shouldn't highlight dead lix");
     // No need to draw the fuse, because we draw on top of the old lix drawing.
     // Hack: We examine the base class Graphic for what it would draw,
     // and use a different sprite with the copy-pasted code.
     graphic.internal.getLixSpritesheet(Style.highlight).draw(
-        tb, super.loc, xf, yf, super.mirror, super.rotation);
+        super.loc, xf, yf, super.mirror, super.rotation);
 }
+
+
 
 // ############################################################################
 // ######################### click priority -- was lix/lix_ac.cpp in C++/A4 Lix

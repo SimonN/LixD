@@ -6,7 +6,7 @@ import std.range;
 import std.string;
 
 import basics.alleg5;
-import basics.globals : dirExportImages;
+import basics.globals;
 import file.filename;
 import graphic.color;
 import graphic.cutbit;
@@ -27,16 +27,18 @@ package void implDrawTerrainTo(in Level level, Torbit tb, Phymap lookup)
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Level.%s %s".format(
                     lookup ? "drawLT" : "drawT", level.name.take(15)));
-    tb.clearToColor(color.transp);
-    foreach (occ; level.terrain) {
-        occ.drawOccurrence(tb);
-        occ.drawOccurrence(lookup);
+    with (TargetTorbit(tb)) {
+        tb.clearToColor(color.transp);
+        foreach (occ; level.terrain) {
+            occ.drawOccurrence(); // to target torbit
+            occ.drawOccurrence(lookup);
+        }
     }
 }
 
-private void drawGadgetOcc(in GadOcc occ, Torbit ground)
+private void drawGadgetOcc(in GadOcc occ)
 {
-    occ.tile.cb.draw(ground, occ.loc,
+    occ.tile.cb.draw(occ.loc,
         0, 0, // draw top-left frame. DTODO: Still OK for triggered traps?
         0, // mirroring
         // hatch rotation: not for drawing, only for spawn direction
@@ -59,15 +61,14 @@ package Torbit implCreatePreview(
         Torbit temp = new Torbit(level.topology);
         scope (exit)
             destroy(temp);
-        auto target = DrawingTarget(temp.albit);
-
+        auto target = TargetTorbit(temp);
         temp.clearToColor(level.bgColor);
         for (int type = cast (GadType) 0; type != GadType.MAX; ++type)
-            level.gadgets[type].each!(occ => drawGadgetOcc(occ, temp));
+            level.gadgets[type].each!(g => drawGadgetOcc(g));
         ret.drawFromPreservingAspectRatio(temp);
 
         temp.clearToColor(color.transp);
-        level.terrain.each!(occ => drawOccurrence(occ, temp));
+        level.terrain.each!drawOccurrence;
         ret.drawFromPreservingAspectRatio(temp);
     }
     return ret;
@@ -87,39 +88,74 @@ in {
 body {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Level.export");
-    enum int extraYl = 0; // DTODOIMAGEEXPORT: 60;
+    enum int extraYl = 60;
     const tp = level.topology;
 
-    Torbit img = new Torbit(tp.xl, tp.yl + extraYl, tp.torusX, tp.torusY);
+    Torbit img = new Torbit(max(tp.xl, 640),
+                            tp.yl + extraYl, tp.torusX, tp.torusY);
     scope (exit)
         destroy(img);
+    auto targetTorbit = TargetTorbit(img);
+    img.clearToColor(color.screenBorder);
 
     // Render level
     {
         Torbit tempLand = new Torbit(tp);
         scope (exit)
             destroy(tempLand);
-        auto target = DrawingTarget(tempLand.albit);
+        void drawToImg()
+        {
+            auto target2 = TargetTorbit(img);
+            tempLand.albit.drawToTargetTorbit(Point((img.xl - tp.xl) / 2, 0));
+        }
+        auto target = TargetTorbit(tempLand);
         tempLand.clearToColor(level.bgColor);
         for (int type = cast (GadType) 0; type != GadType.MAX; ++type)
-            level.gadgets[type].each!(occ => drawGadgetOcc(occ, tempLand));
-        img.drawFrom(tempLand.albit, Point(0, 0));
-
+            level.gadgets[type].each!(g => drawGadgetOcc(g));
+        drawToImg();
         // Even without no-overwrite terrain, we should do all gadgets first,
         // then all terrain. Reason: When terrain erases, it shouldn't erase
         // the gadgets.
         tempLand.clearToColor(color.transp);
-        level.terrain.each!(occ => drawOccurrence(occ, tempLand));
-        img.drawFrom(tempLand.albit, Point(0, 0));
+        level.terrain.each!drawOccurrence;
+        // Torus icon in the top-left corner of the level
+        import graphic.internal;
+        getInternal(fileImagePreviewIcon).draw(Point(0, 0),
+            level.topology.torusX + 2 * level.topology.torusY, 1);
+        drawToImg();
     }
 
     // Draw UI near the bottom
-    /+ // DTODOIMAGEEXPORT: uncomment and implement
     {
-        auto target = DrawingTarget(img.albit);
-        img.drawFilledRectangle(Rect(0, tp.yl, tp.xl, extraYl), color.guiM);
+        img.drawFilledRectangle(Rect(0, tp.yl, img.xl, extraYl), color.guiM);
+        import basics.user : skillSort;
+        import file.language;
+        import gui;
+        import lix.enums;
+        enum sbXl = 40;
+        auto sb = new SkillButton(new Geom(0, tp.yl, sbXl, extraYl));
+        foreach (int i, Ac ac; skillSort) {
+            sb.move(i * sbXl, tp.yl);
+            sb.skill = ac.isPloder ? level.ploder : ac;
+            sb.number = level.skills[sb.skill];
+            sb.draw();
+        }
+        import graphic.textout;
+        void printInfo(Lang lang, int value, int plusY)
+        {
+            enum labelX = skillSort.length * sbXl + 5;
+            enum fixY = 2; // In theory, 0 should be here, because the y offset
+                           // is responsibility of graphic.textout.
+                           // But graphic.textout in this runmode seems wrong.
+            auto label = new LabelTwo(new Geom(labelX, tp.yl + plusY + fixY,
+                                      tp.xl - labelX, 20), lang.transl);
+            label.value = value;
+            label.draw();
+        }
+        printInfo(Lang.exportSingleInitial,  level.initial,   0 + 2);
+        printInfo(Lang.exportSingleRequired, level.required, 20 + 0);
+        printInfo(Lang.exportSingleSpawnint, level.spawnint, 40 - 2);
     }
-    +/
 
     // Done rendering the image.
     img.saveToFile(fnToSaveImage);

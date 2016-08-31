@@ -67,8 +67,14 @@ Albit albitMemoryCreate(in int xl, in int yl)
         |   ALLEGRO_MEMORY_BITMAP);
 }
 
+// This should be used only in assertions.
+bool isTargetBitmap(in Albit b)
+{
+    return al_get_target_bitmap() == b;
+}
+
 // The following structs implement RAII.
-struct DrawingTarget
+struct TargetBitmap
 {
     Albit oldTarget;
 

@@ -167,8 +167,8 @@ class EffectManager {
         }
     }
 
-    void draw(Torbit target)
+    void draw()
     {
-        _debris.each!(a => a.draw(target));
+        _debris.each!(a => a.draw());
     }
 }

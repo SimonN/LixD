@@ -87,9 +87,8 @@ protected:
         // Draw to the center of this square.
         if (_checkFrame != 0) {
             auto cb = getInternal(fileImageMenuCheckmark);
-            cb.draw(guiosd, Point(
-                to!int(checkGeom.xs + checkGeom.xls/2 - cb.xl/2),
-                to!int(checkGeom.ys + checkGeom.yls/2 - cb.yl/2)),
+            cb.draw(Point(to!int(checkGeom.xs + checkGeom.xls/2 - cb.xl/2),
+                          to!int(checkGeom.ys + checkGeom.yls/2 - cb.yl/2)),
                 _checkFrame, 2 * (on && ! down)
             );
         }

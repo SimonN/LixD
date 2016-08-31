@@ -100,14 +100,14 @@ struct Debris {
         }
     }
 
-    void draw(Torbit tb)
+    void draw()
     {
         final switch (type) {
-            case Type.arrow:      drawArrow(tb);      break;
-            case Type.flyingTool: drawFlyingTool(tb); break;
-            case Type.implosion:  drawPlosion(tb, fileImageImplosion); break;
-            case Type.explosion:  drawPlosion(tb, fileImageExplosion); break;
-            case Type.particle:   drawParticle(tb);   break;
+            case Type.arrow:      drawArrow();      break;
+            case Type.flyingTool: drawFlyingTool(); break;
+            case Type.implosion:  drawPlosion(fileImageImplosion); break;
+            case Type.explosion:  drawPlosion(fileImageExplosion); break;
+            case Type.particle:   drawParticle();   break;
         }
     }
 
@@ -145,31 +145,30 @@ private:
         moveThenAccelerateByGravity();
     }
 
-    void drawArrow(Torbit ground)
+    void drawArrow()
     {
         auto cbA = getInternal(fileImageGameArrow);
         auto cbI = getSkillButtonIcon(style);
         // x and y are the bottom tip of the arrow
-        cbA.draw(ground, Point(x - cbA.xl/2, y - cbA.yl));
-        cbI.draw(ground, Point(x - cbI.xl/2, y - cbA.yl*15/16), frame);
+        cbA.draw(Point(x - cbA.xl/2, y - cbA.yl));
+        cbI.draw(Point(x - cbI.xl/2, y - cbA.yl*15/16), frame);
     }
 
-    void drawFlyingTool(Torbit ground)
+    void drawFlyingTool()
     {
         auto cb = getInternal(fileImageDebris);
-        cb.draw(ground, Point(x - cb.xl/2, y - cb.yl/2),
+        cb.draw(Point(x - cb.xl/2, y - cb.yl/2),
                 clamp(cb.xfs - timeToLive/4, 0, cb.xfs - 1),
                 frame, false, rotCw);
     }
 
-    void drawPlosion(Torbit ground, in Filename fn)
+    void drawPlosion(in Filename fn)
     {
         auto cb = getInternal(fn);
-        cb.draw(ground, Point(x - cb.xl/2,
-                              y - cb.yl/2 + game.mask.explodeMaskOffsetY),
+        cb.draw(Point(x - cb.xl/2, y - cb.yl/2 + game.mask.explodeMaskOffsetY),
                 clamp(cb.xfs - timeToLive, 0, cb.xfs - 1));
     }
 
-    void drawParticle(Torbit ground) { }
+    void drawParticle() { }
 }
 // end struct Debris

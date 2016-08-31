@@ -11,6 +11,7 @@ import file.language;
 import graphic.color;
 import graphic.cutbit;
 import graphic.textout;
+import graphic.torbit;
 import hardware.display;
 import hardware.tharsis;
 import tile.draw;
@@ -45,9 +46,9 @@ void drawTerrainToSeparateMap(Editor editor) {
 {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Editor.drawMapTerrain");
-    with (DrawingTarget(_mapTerrain.albit)) {
+    with (TargetTorbit(_mapTerrain)) {
         _mapTerrain.clearToColor(color.transp);
-        _level.terrain.each!(occ => occ.drawOccurrence(editor._mapTerrain));
+        _level.terrain.each!drawOccurrence;
     }
 }}
 
@@ -55,7 +56,7 @@ void drawMainMap(Editor editor)
 {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Editor.drawMapMain");
-    with (DrawingTarget(editor._map.albit))
+    with (TargetTorbit(editor._map))
     with (editor)
     with (editor._level) {
         editor._map.clearScreenRect(color.makecol(bgRed, bgGreen, bgBlue));
@@ -76,7 +77,7 @@ void drawGadgets(Editor editor)
     foreach (gadgetList; editor._level.gadgets)
         foreach (g; gadgetList) {
             assert (g.tile && g.tile.cb);
-            g.tile.cb.draw(editor._map, g.loc);
+            g.tile.cb.draw(g.loc);
             editor._map.drawRectangle(g.triggerAreaOnMap, color.triggerArea);
         }
 }
@@ -145,6 +146,6 @@ void drawToScreen(Editor editor)
 {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Editor.drawToScreen");
-    with (DrawingTarget(display.al_get_backbuffer))
+    with (TargetBitmap(display.al_get_backbuffer))
         editor._map.drawCamera();
 }

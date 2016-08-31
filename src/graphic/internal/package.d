@@ -9,23 +9,25 @@ import basics.cmdargs;
 import file.filename;
 import graphic.cutbit;
 import graphic.internal.getters;
-import graphic.internal.init;
 import graphic.internal.vars;
 import lix.enums;
 
 void initialize(Runmode runmode)
 {
+    nullCutbit = new Cutbit(cast (Cutbit) null);
+
     final switch (runmode) {
-        case Runmode.INTERACTIVE: implInitializeInteractive(); break;
         case Runmode.VERIFY:
-        case Runmode.EXPORT_IMAGES:
-            implInitializeNoninteractive();
+            dontWantRecoloredGraphics = true;
             break;
-        case Runmode.PRINT_AND_EXIT: assert (false);
+        case Runmode.INTERACTIVE:
+        case Runmode.EXPORT_IMAGES:
+            break;
+        case Runmode.PRINT_AND_EXIT:
+            assert (false);
     }
 }
 
-void deinitialize()               { implDeinitialize();  }
 void setScaleFromGui(float scale) { implSetScale(scale); }
 
 const(Cutbit) getInternal    (Filename fn) { return getInternalMutable  (fn); }

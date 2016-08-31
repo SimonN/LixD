@@ -234,9 +234,9 @@ $winSkillsEightTo            Klassische 8:
 $winSkillsAllTo              Alle 14 auf:
 
 // Exporting a level into a file
-$exportSingleLix             Ziel:
-$exportSingleSpawnint        Fall-Int.:
-$exportSingleClock           Zeit:
+$exportSingleInitial         Lix:
+$exportSingleRequired        Rette:
+$exportSingleSpawnint        SI:
 $exportMultiLix              Lix:
 $exportMultiSpawnint         Fall-Int.:
 $exportMultiClock            Nachspielzeit:

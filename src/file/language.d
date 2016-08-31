@@ -262,9 +262,9 @@ enum Lang {
     winSkillsEightTo,
 
     // exporting a level into a file
-    exportSingleLix,
+    exportSingleInitial,
+    exportSingleRequired,
     exportSingleSpawnint,
-    exportSingleClock,
     exportMultiLix,
     exportMultiSpawnint,
     exportMultiClock,
