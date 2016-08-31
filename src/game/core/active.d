@@ -54,12 +54,12 @@ private:
 
 void cancelReplay(Game game) { with (game)
 {
+    _replayNeverCancelledThereforeDontSaveAutoReplay = false;
     if (! replaying)
         // During a multiplayer game, replaying is false, even if there
         // are future actions by other masters queued. Perfect, don't cancel.
         return;
     nurse.cutReplay();
-    _replayNeverCancelledThereforeDontSaveAutoReplay = false;
     playLoud(Sound.SCISSORS);
 }}
 

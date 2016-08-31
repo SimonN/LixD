@@ -61,7 +61,8 @@ public:
             if (! cmdargs.preferPointedTo) {
                 auto lv = new Level(args[0]);
                 if (lv.good) {
-                    this.game = new Game(Runmode.INTERACTIVE, lv, args[0], rp);
+                    this.game = new Game(Runmode.INTERACTIVE, lv, args[0],
+                        rp.empty ? null : rp);
                     return;
                 }
             }
@@ -69,7 +70,7 @@ public:
             auto lv = new Level(rp.levelFilename);
             if (lv.good)
                 this.game = new Game(Runmode.INTERACTIVE, lv,
-                                     rp.levelFilename, rp);
+                                     rp.levelFilename, rp.empty ? null : rp);
             // DTODO: render an error on the graphical screen
         }
         // if no fileArgs, let calc() decide what menu to spawn

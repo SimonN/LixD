@@ -30,7 +30,6 @@ class Replay {
     }
 
 package:
-    bool _fileNotFound;
     Version _gameVersionRequired;
     Player[] _players;
     Permu _permu;
@@ -54,7 +53,6 @@ public:
     auto clone() const { return new Replay(this); }
     this(in typeof(this) rhs)
     {
-        _fileNotFound        = rhs._fileNotFound;
         _gameVersionRequired = rhs._gameVersionRequired;
         levelBuiltRequired   = rhs.levelBuiltRequired;
         levelFilename        = rhs.levelFilename;
@@ -81,11 +79,15 @@ private:
     }
 
 public:
-    @property fileNotFound() const        { return _fileNotFound;        }
     @property gameVersionRequired() const { return _gameVersionRequired; }
     @property const(Player)[] players() const  { return _players;      }
     @property const(Permu)    permu()   const  { return _permu;        }
     @property       Permu     permu(Permu p)   { _permu = p; return p; }
+
+    @property bool empty() const
+    {
+        return _data.length == 0 && _players.length == 0;
+    }
 
     @property int latestUpdate() const
     {
@@ -111,7 +113,6 @@ public:
     void touch()
     {
         _gameVersionRequired = gameVersion();
-        _fileNotFound = false;
     }
 
     void addPlayer(PlNr nr, Style s, string name)

@@ -81,6 +81,9 @@ bool fnLessThan(Filename lhs, Filename rhs)
     // than "abc/", since '-' < '/' in ASCII, but we want lexicographical
     // sorting in the program's directory listings.
     // Thus, this function here makes '/' smaller than anything.
+    if (lhs is null && rhs is null) return false;
+    else if (lhs is null)           return true;
+    else if (rhs is null)           return false;
     foreach (i; 0 .. min(lhs.rootless.length, rhs.rootless.length)) {
         immutable a = lhs.rootless[i];
         immutable b = rhs.rootless[i];

@@ -1,6 +1,29 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.14
+------
+
+2016-09-01
+
+Command-line switches to jump into play:
+    lix level.txt                plays the level.
+    lix replay.txt               plays the replay against its included level.
+    lix --pointed-to replay.txt  plays the replay against its pointed-to level.
+    lix level.txt replay.txt     plays the replay against the given level.
+
+Minor bugs left behind here: Depending on from where the levels are run,
+they do or don't generate checkmarks. Auto-replays should always be saved,
+even if, when not run from the root directory, the replays are called unknown.
+
+Command-line switch to export images. The following command-line exports as
+images the two given levels, and all levels recursively found in mydir:
+    lix --image level1.txt level2.txt mydir
+
+Fix #149: Singleplayer always displays a dialog at end of play again,
+so you can control the entire application with the mouse alone. You can
+framestep back from this dialog.
+
 0.6.13
 ------
 

@@ -64,7 +64,6 @@ auto implLoadFromFile(Replay replay, Filename fn) { with (replay)
     }
     catch (Exception e) {
         log(e.msg);
-        _fileNotFound = true;
         return ret;
     }
     foreach (i; lines) switch (i.type) {
