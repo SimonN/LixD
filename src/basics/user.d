@@ -204,7 +204,7 @@ static this()
     mouseSpeed = newOpt("MOUSE_SPEED", Lang.optionMouseSpeed, mouseStandardDivisor);
     scrollSpeedEdge = newOpt("SCROLL_SPEED_EDGE", Lang.optionScrollSpeedEdge, mouseStandardDivisor);
     scrollSpeedClick = newOpt("SCROLL_SPEED_CLICK", Lang.optionScrollSpeedClick, mouseStandardDivisor / 2);
-    fastMovementFreesMouse = newOpt("FAST_MOVEMENT_FREES_MOUSE", Lang.optionFastMovementFreesMouse, true);
+    fastMovementFreesMouse = newOpt("FAST_MOVEMENT_FREES_MOUSE", Lang.optionFastMovementFreesMouse, false);
     avoidBuilderQueuing = newOpt("AVOID_BUILDER_QUEUING", Lang.optionAvoidBuilderQueuing, true);
     avoidBatterToExploder = newOpt("AVOID_BATTER_TO_EXPLODER", Lang.optionAvoidBatterToExploder, false);
     pausedAssign = newOpt("PAUSED_ASSIGN", Lang.optionPausedAssign, 1);
