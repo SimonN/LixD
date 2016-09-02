@@ -319,6 +319,7 @@ void populateGameKeys()
     enum belowAllGameKeys = 310f;
     fac = facLeft();
     fac.y = belowAllGameKeys;
+    fac.xl = fac.xl - 10; // Mouse hover area shouldn't obscure other options
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!BoolOptionOneOrTwo(pausedAssign),
     ];
