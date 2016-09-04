@@ -95,8 +95,10 @@ this()
         new Geom(0, 0, skillXl, skillYl, From.BOTTOM_RIGHT),
         getInternal(basics.globals.fileImageGamePause));
 
+    // stateSave has xl = (2 * its normal xl) because stateLoad starts hidden.
+    // Once there is a savestate, stateSave shrinks and stateLoad pops in.
     stateSave = new BitmapButton(
-        new Geom(skillXl, 0, skillXl, 20, From.TOP_RIGHT),
+        new Geom(0, 0, skillXl * 2, 20, From.TOP_RIGHT),
         getInternal(basics.globals.fileImageGamePanel2));
     stateLoad = new BitmapButton(
         new Geom(0, 0, skillXl, 20, From.TOP_RIGHT),
@@ -104,6 +106,7 @@ this()
 
     stateSave.xf = 2;
     stateLoad.xf = 3;
+    stateLoad.hide();
 
     nukeMulti = new BitmapButton(
         new Geom(0, 0, 4 * skillXl, this.ylg - skillYl, From.BOTTOM_RIGHT),
@@ -136,10 +139,8 @@ gapamode(in GapaMode gp)
     return _gapamode = gp;
 }
 
-
-
-void
-setLikeTribe(in Tribe tr)
+// call this from the Game
+void setLikeTribe(in Tribe tr)
 {
     if (tr is null)
         return;
@@ -155,15 +156,20 @@ setLikeTribe(in Tribe tr)
 
     /*
     stats.set_tribe_local(tr);
-    spawnintSlow.set_spawnint(tr->spawnintSlow);
-    spawnint_cur .set_spawnint(tr->spawnint);
-    rate_fixed   .set_number  (tr->spawnintFast);
     spec_tribe .set_text(tr->get_name());
     */
     highlightIfNonzero(lastOnForRestoringAfterStateLoad);
     reqDraw();
 }
-// end function setLikeTribe()
+
+// I assumed that the game should inform the panel about whether there are
+// savestates. But right now, I call it in this.calcSelf, that seems enough.
+private void showStateLoad(bool b)
+{
+    stateSave.move(skillXl, 0);
+    stateSave.resize(b ? skillXl : skillXl * 2, stateSave.ylg);
+    stateLoad.hidden = ! b;
+}
 
 private void highlightIfNonzero(SkillButton skill)
 {
@@ -250,6 +256,8 @@ calcSelf()
         _nukeDoubleclicked = (now - _nukeLastExecute < ticksForDoubleClick);
         _nukeLastExecute   = now;
     }
+    if (stateSave.execute)
+        showStateLoad(true);
 }
 
 }
