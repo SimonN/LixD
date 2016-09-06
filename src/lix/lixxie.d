@@ -32,6 +32,9 @@ private:
     OutsideWorld* _outsideWorld; // set whenever physics and tight coupling
                                  // are needed, nulled again at end of those
 
+    enum int exOffset = 16; // offset of the effective coordinate of the lix
+    enum int eyOffset = 26; // sprite from the top left corner
+
     @property inout(Phymap) lookup() inout
     {
         return outsideWorld.state.lookup;

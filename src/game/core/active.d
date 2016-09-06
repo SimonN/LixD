@@ -2,7 +2,7 @@ module game.core.active;
 
 import std.typecons : Rebindable;
 
-import basics.nettypes;
+import net.repdata;
 import basics.rect;
 import basics.user; // hotkeys
 import game.core.game;

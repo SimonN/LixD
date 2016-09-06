@@ -18,7 +18,7 @@ import basics.globals;
 import basics.globconf; // username, to determine whether to save result
 import basics.help; // len;
 import basics.user; // Result
-import basics.nettypes;
+import net.repdata;
 import file.filename;
 
 import game.core.calc;
@@ -200,7 +200,6 @@ private:
             rp = Replay.newForLevel(levelFilename, level.built);
 
             // DTODONETWORK: what to add?
-            import lix.enums;
             rp.addPlayer(PlNr(0), Style.garden, basics.globconf.userName);
         }
         effect = new EffectManager;

@@ -1,9 +1,11 @@
 module gui.skillico;
 
+public import net.ac;
+public import net.style;
+
 import graphic.internal;
 import gui.cutbitel;
 import gui.geometry;
-import lix.enums;
 
 class SkillIcon : CutbitElement {
 public:

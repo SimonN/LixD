@@ -1,8 +1,8 @@
 module game.terchang;
 
-import basics.nettypes;
 import basics.rect;
-import lix.enums;
+import net.repdata;
+import net.style;
 
 private mixin template TerrainChangeBase() {
     Update update;

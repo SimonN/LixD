@@ -13,7 +13,7 @@ import std.algorithm; // splitter
 import std.conv;
 import std.stdio;
 
-import basics.versioning;
+import net.versioning;
 import file.filename;
 
 enum Runmode {

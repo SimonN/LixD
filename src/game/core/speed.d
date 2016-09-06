@@ -1,7 +1,7 @@
 module game.core.speed;
 
 import basics.alleg5;
-import basics.nettypes; // Update
+import net.repdata; // Update
 import basics.user; // pausedAssign
 import game.core.game;
 import game.core.active; // findAgainHighlitLixAfterUpdate

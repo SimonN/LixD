@@ -11,7 +11,6 @@ import graphic.internal.getters;
 import graphic.internal.vars;
 import hardware.display; // print startup progress info; maybe make it lazy
 import hardware.tharsis;
-import lix.enums;
 
 package:
 

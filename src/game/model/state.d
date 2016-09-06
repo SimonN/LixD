@@ -15,7 +15,7 @@ import std.algorithm;
 import core.memory; // GC.collect();
 
 import basics.help; // clone(T[]), a deep copy for arrays
-import basics.nettypes;
+import net.repdata;
 import basics.topology;
 import tile.phymap;
 import game.tribe;

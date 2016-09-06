@@ -16,7 +16,6 @@ import hardware.keyboard; // we need a different behavior of skill button
 import hardware.keyset;
 import hardware.mouse;    // execution and skill button warning sound
 import hardware.sound;
-import lix.enums;
 
 class Panel : Element {
 

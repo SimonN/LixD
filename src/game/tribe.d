@@ -12,9 +12,8 @@ import enumap;
 
 import basics.globals;
 import basics.help;
-import basics.nettypes;
-import lix.enums;
-import lix.lixxie;
+import net.repdata;
+import lix;
 import level.level; // spawnintMax
 
 class Tribe {

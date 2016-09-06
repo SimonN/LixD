@@ -10,7 +10,6 @@ import file.filename;
 import graphic.cutbit;
 import graphic.internal.getters;
 import graphic.internal.vars;
-import lix.enums;
 
 void initialize(Runmode runmode)
 {

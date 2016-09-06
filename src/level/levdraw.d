@@ -131,7 +131,6 @@ body {
         import basics.user : skillSort;
         import file.language;
         import gui;
-        import lix.enums;
         enum sbXl = 40;
         auto sb = new SkillButton(new Geom(0, tp.yl, sbXl, extraYl));
         foreach (int i, Ac ac; skillSort) {

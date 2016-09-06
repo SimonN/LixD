@@ -12,7 +12,7 @@ module hardware.tharsis;
  * be as expressive as possible.
  */
 
-import basics.versioning;
+import net.versioning;
 
 version (tharsisprofiling) {
     import std.algorithm;

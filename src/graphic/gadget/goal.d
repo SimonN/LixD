@@ -13,7 +13,8 @@ import graphic.gadget;
 import graphic.internal;
 import graphic.torbit;
 import tile.occur;
-import lix.enums;
+import net.ac;
+import net.style;
 
 /* owners are always drawn onto the goal, unless the owner is GARDEN.
  * When singleplayer time runs out, set drawWithNoSign.

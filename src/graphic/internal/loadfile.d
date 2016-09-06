@@ -10,7 +10,6 @@ import graphic.cutbit;
 import graphic.internal.getters;
 import graphic.internal.vars;
 import graphic.internal.recol;
-import lix.enums; // Style
 
 package:
 

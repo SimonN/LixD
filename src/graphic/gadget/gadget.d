@@ -19,7 +19,7 @@ module graphic.gadget.gadget;
 import std.conv;
 
 import basics.help;
-import basics.nettypes;
+import net.repdata;
 import basics.topology;
 import game.model.state;
 import graphic.cutbit;

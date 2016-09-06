@@ -6,7 +6,6 @@ import graphic.cutbit;
 import graphic.internal.loadfile;
 import graphic.internal.recol;
 import graphic.internal.vars;
-import lix.enums;
 
 private enum imgExt = ".png";
 

@@ -2,6 +2,7 @@ module level.level;
 
 import enumap;
 
+public import net.ac;
 public import level.levelio;
 
 import basics.topology;
@@ -16,7 +17,6 @@ import level.levelio;
 import level.levdraw;
 import tile.occur;
 import tile.gadtile;
-import lix.enums;
 
 enum LevelStatus {
     GOOD,

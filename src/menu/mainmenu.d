@@ -5,7 +5,7 @@ module menu.mainmenu;
  * for language and name are shown first instead, and only then this.
  */
 
-import basics.versioning;
+import net.versioning;
 import basics.user;
 import file.language;
 import gui;

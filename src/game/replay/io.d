@@ -5,16 +5,15 @@ import std.stdio; // save file, and needed for unittest
 import std.string;
 
 import basics.help;
-import basics.nettypes;
+import net.repdata;
 import basics.globals;
-import basics.versioning;
+import net.versioning;
 import file.date;
 import file.filename;
 import file.io;
 import file.log;
 import game.replay.replay;
 import level.level;
-import lix.enums;
 
 static import basics.user;
 

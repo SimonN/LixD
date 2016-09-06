@@ -29,7 +29,7 @@ import basics.alleg5;
 import basics.cmdargs;
 import basics.globals;
 import basics.help;
-import basics.nettypes;
+import net.repdata;
 import tile.phymap;
 import game.mask;
 import game.terchang;
@@ -37,9 +37,10 @@ import graphic.color;
 import graphic.torbit;
 import graphic.internal; // must be initialized first
 import hardware.tharsis;
-import lix.enums;
 import lix.skill.cuber; // Cuber.cubeSize
 import lix.skill.digger; // diggerTunnelWidth
+import net.ac;
+import net.style;
 
 void initialize() { PhysicsDrawer.initialize(); }
 void deinitialize() { PhysicsDrawer.deinitialize(); }
@@ -171,7 +172,7 @@ private:
     FlaggedAddition[] _addsForLand;
 
     enum buiY  = 0;
-    enum cubeY = 3 * lix.enums.brickYl;
+    enum cubeY = 3 * net.ac.brickYl;
     enum remY  = cubeY + Cuber.cubeSize;
  	enum remYl = 32;
     enum ploY  = remY + remYl;
@@ -203,15 +204,15 @@ private:
         immutable build = (tc.type == TerrainAddition.Type.build);
         immutable plaLo = (tc.type == TerrainAddition.Type.platformLong);
         immutable plaSh = (tc.type == TerrainAddition.Type.platformShort);
-        immutable yl = (build || plaLo || plaSh) ? lix.enums.brickYl
+        immutable yl = (build || plaLo || plaSh) ? net.ac.brickYl
                                                  : tc.cubeYl;
         immutable y  = build ? 0
-                     : plaLo ? 1 * lix.enums.brickYl
-                     : plaSh ? 2 * lix.enums.brickYl
+                     : plaLo ? 1 * net.ac.brickYl
+                     : plaSh ? 2 * net.ac.brickYl
                      : cubeY + Cuber.cubeSize - yl;
-        immutable xl = build ? lix.enums.builderBrickXl
-                     : plaLo ? lix.enums.platformLongXl
-                     : plaSh ? lix.enums.platformShortXl
+        immutable xl = build ? net.ac.builderBrickXl
+                     : plaLo ? net.ac.platformLongXl
+                     : plaSh ? net.ac.platformShortXl
                      :         Cuber.cubeSize;
         immutable x  = xl * tc.style;
     }

@@ -4,7 +4,7 @@ import std.string; // format;
 import std.typecons; // Rebindable;
 
 import basics.globals; // game panel icons
-import basics.nettypes; // Update
+import net.repdata; // Update
 import basics.user; // languageIsEnglish
 import game.tribe;
 import graphic.internal;

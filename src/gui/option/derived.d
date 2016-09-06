@@ -9,7 +9,6 @@ import gui;
 import gui.option.base;
 import hardware.keyset;
 import hardware.mouse; // allow clicks on label
-import lix.enums;
 
 class BoolOption : Option {
 private:

@@ -15,7 +15,6 @@ enum int updatesPerSecond     = 15; // logic/physics updates of the game
 enum int ticksForDoubleClick  = 20; // 1/3 of a second at 60 ticks/sec
 
 enum int teamsPerLevelMax     =  8;
-enum int playerNameMaxLength  = 30;
 enum int mouseStandardDivisor = 20;
 
 immutable netIPLocalhost        = "127.0.0.1";

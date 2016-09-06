@@ -1,6 +1,8 @@
 module lix;
 
-public import lix.enums;
+public import net.ac;
+public import net.style;
+
 public import lix.fields;
 public import lix.job;
 public import lix.lixxie;

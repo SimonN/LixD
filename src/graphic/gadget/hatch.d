@@ -4,7 +4,6 @@ import std.algorithm; // min
 
 import basics.help;
 import basics.globals; // hatch arrow graphic
-import basics.nettypes;
 import basics.topology;
 import game.effect;
 import game.model.state;
@@ -13,9 +12,11 @@ import graphic.gadget;
 import graphic.internal;
 import graphic.torbit;
 import hardware.sound;
+import net.ac;
+import net.repdata;
+import net.style;
 import tile.gadtile;
 import tile.occur;
-import lix.enums;
 
 class Hatch : Gadget {
 private:

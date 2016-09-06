@@ -1,4 +1,4 @@
-module basics.nettypes;
+module net.repdata;
 
 /* ReplayData, Permu
  */
@@ -6,58 +6,15 @@ module basics.nettypes;
 import core.stdc.string; // memmove
 import std.bitmanip;
 import std.conv;
+import std.exception;
 import std.random;
 
 import derelict.enet.enet;
 
-import basics.help;
-import lix.enums; // Ac
+import net.ac;
 
-// make function interfaces more typesafe
-struct PlNr   { ubyte n; alias n this; }
-struct Update { int u;   alias u this; }
-
-enum : int {
-    NETWORK_PROTOCOL_VERSION = 2,
-
-    NETWORK_TEXT_LENGTH = 300,
-    NETWORK_PLAYERS_MAX = 127,
-    NETWORK_ROOMS_MAX   = 127,
-}
-
-enum : ubyte {
-    NETWORK_CHANNEL_MAIN    =  0,
-    NETWORK_CHANNEL_REPLAY  =  0,
-    NETWORK_CHANNEL_CHAT    =  1,
-    NETWORK_CHANNEL_MAX     =  2,
-
-    NETWORK_NOTHING         =  0,
-    NETWORK_DISCON_SILENT   =  1,
-    NETWORK_WELCOME_DATA    =  2,
-    NETWORK_YOU_TOO_OLD     =  3,
-    NETWORK_YOU_TOO_NEW     =  4,
-    NETWORK_SOMEONE_OLD     =  5,
-    NETWORK_SOMEONE_NEW     =  6,
-    NETWORK_RECHECK         =  7,
-
-    NETWORK_ASSIGN_NUMBER   = 10,
-    NETWORK_ROOM_DATA       = 11,
-    NETWORK_ROOM_CHANGE     = 12,
-    NETWORK_ROOM_CREATE     = 13,
-
-    NETWORK_PLAYER_DATA     = 20,
-    NETWORK_PLAYER_BEFORE   = 21,
-    NETWORK_PLAYER_OUT_TO   = 22,
-    NETWORK_PLAYER_CLEAR    = 23,
-
-    NETWORK_CHAT_MESSAGE    = 30,
-    NETWORK_LEVEL_FILE      = 31,
-
-    NETWORK_GAME_START      = 40,
-    NETWORK_GAME_END        = 41,
-    NETWORK_REPLAY_DATA     = 42,
-    NETWORK_UPDATES         = 43
-}
+struct PlNr { ubyte n; alias n this; }
+struct Update { int u; alias u this; } // counts how far the game has advanced
 
 enum RepAc : ubyte {
     NOTHING = 0,
@@ -70,14 +27,15 @@ enum RepAc : ubyte {
 }
 
 struct ReplayData {
+    private enum len = player.sizeof + action.sizeof + skill.sizeof
+                        + update.sizeof + toWhichLix.sizeof + 1; // +1 header
+    static assert (len == 12);
 
     PlNr   player;
     RepAc  action;
     Ac     skill; // only meaningful if isSomeAssignment
     Update update;
-    int    toWhichLix; // assign to which lix, or change rate to how much
-    alias  toWhatSpawnint = toWhichLix;
-    deprecated("use toWhichLix/toWhatSpawnint") alias what = toWhichLix;
+    int    toWhichLix;
 
     @property bool isSomeAssignment() const
     {
@@ -97,12 +55,12 @@ struct ReplayData {
         // be with these. Keep such records in whatever order they were input.
     }
 
-    ENetPacket* createPacket() const
+    ENetPacket* createPacket() const nothrow
     {
         ENetPacket* pck = enet_packet_create(null, 12,
                           ENET_PACKET_FLAG_RELIABLE);
         assert (pck);
-        pck.data[0] = NETWORK_REPLAY_DATA;
+        // pck.data[0] in next commit
         pck.data[1] = player;
         pck.data[2] = action;
         pck.data[3] = skill;
@@ -111,10 +69,9 @@ struct ReplayData {
         return pck;
     }
 
-    nothrow this(in ENetPacket* pck)
+    this(in ENetPacket* pck)
     {
-        assert (pck.data[0] == NETWORK_REPLAY_DATA,
-            "don't call ReplayData(p) if p is not replay data");
+        enforce(pck.dataLength == len);
         player = PlNr(pck.data[1]);
         update = Update(bigEndianToNative!int(pck.data[4 ..  8]));
         toWhichLix =    bigEndianToNative!int(pck.data[8 .. 12]);
@@ -184,11 +141,11 @@ class Permu {
         assert (permu.size == 2);
     }
 
-    @property int size() const { return p.len; }
+    @property int size() const { return p.length & 0x7FFF_FFFF; }
 
     PlNr opIndex(int id) const
     {
-        if (id >= 0 && id < p.len)
+        if (id >= 0 && id < size)
             return p[id];
         else
             // outside of the permuted range, pad with the identity
@@ -199,7 +156,7 @@ class Permu {
     shortenTo(int newSize)
     {
         assert (newSize >= 0);
-        assert (newSize < p.len);
+        assert (newSize < size);
         p = p[0 .. newSize];
     }
 

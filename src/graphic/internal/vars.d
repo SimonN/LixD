@@ -2,7 +2,7 @@ module graphic.internal.vars;
 
 import basics.globals;
 import graphic.cutbit;
-import lix.enums;
+public import net.style;
 
 package:
 

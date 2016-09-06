@@ -13,7 +13,7 @@ import std.algorithm;
 import std.conv;
 
 import basics.help; // len
-import basics.nettypes;
+import net.repdata;
 import hardware.tharsis;
 import game.effect;
 import game.physdraw;

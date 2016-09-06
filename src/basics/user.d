@@ -8,8 +8,6 @@ module basics.user;
 import std.typecons; // rebindable
 import std.algorithm; // sort filenames before outputting them
 import std.conv;
-import std.file; // mkdirRecurse
-import std.stdio;
 
 import enumap;
 
@@ -17,23 +15,17 @@ import basics.alleg5;
 import basics.globals;
 import basics.globconf;
 import basics.help;
-import basics.nettypes;
 import file.filename;
 import file.date;
 import file.io;
 import file.language;
 import file.log; // when writing to disk fails
 import file.useropt;
-import lix.enums;
 import hardware.keynames;
 import hardware.keyset;
-
-/*  static this();
- *  void load();
- *  void save();
- *  const(Result) getLevelResult         (Filename);
- *  void          setLevelResultCarefully(Filename, Result, in int);
- */
+import net.ac;
+import net.repdata; // Update, for saving the results
+import net.style;
 
 private Result[Filename] results;
 
@@ -418,21 +410,14 @@ private Filename userFileName()
 
 void load()
 {
-    if (userName == null) {
+    if (userName == null)
         // This happens upon first start after installation.
         // Don't try to load anything, and don't log anything.
         return;
-    }
-
-    while (basics.globconf.userName.length > playerNameMaxLength) {
-        userName = basics.help.backspace(userName);
-    }
 
     IoLine[] lines;
-
-    try {
+    try
         lines = fillVectorFromFile(userFileName());
-    }
     catch (Exception e) {
         log("Can't load user configuration for `" ~ userName ~ "':");
         log("    -> " ~ e.msg);
@@ -481,8 +466,7 @@ nothrow void save()
         log("    -> None of these characters are allowed in filenames.");
     }
     try {
-        std.stdio.File f = userFileName.openForWriting();
-
+        auto f = userFileName.openForWriting();
         foreach (opt; _optvecSave)
             f.writeln(opt.ioLine);
         f.writeln();

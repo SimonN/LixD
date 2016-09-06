@@ -23,7 +23,8 @@ import game.mask; // exploder offset
 import graphic.color;
 import graphic.internal;
 import graphic.torbit;
-import lix.enums;
+public import net.ac;
+public import net.style;
 
 // not a class, I'd like to avoid GC for many flying pixels
 struct Debris {

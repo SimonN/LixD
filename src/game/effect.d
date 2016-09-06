@@ -16,11 +16,10 @@ import std.algorithm;
 import std.container;
 
 import basics.help;
-import basics.nettypes;
+import net.repdata;
 import game.debris;
 import graphic.torbit;
 import hardware.sound;
-import lix.enums;
 
 private struct Effect {
     Update   update;

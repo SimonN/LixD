@@ -10,7 +10,6 @@ import graphic.internal;
 import gui;
 import gui.option; // bool option for exploder
 import level.level;
-import lix.enums;
 
 class SkillsWindow : OkCancelWindow {
 private:

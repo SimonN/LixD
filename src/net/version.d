@@ -1,4 +1,4 @@
-module basics.versioning;
+module net.versioning;
 
 /* Lix versioning should be done like semantic versioning.
  *
@@ -6,6 +6,7 @@ module basics.versioning;
  * Patches that do not break compatibility should only increase patch version.
  */
 
+import std.bitmanip;
 import std.conv;
 import std.string;
 
@@ -15,10 +16,7 @@ private bool      _versionIsStable = false;
 const(Version) gameVersion()     { return _gameVersion;     }
 bool           versionIsStable() { return _versionIsStable; }
 
-
-
 struct Version {
-
     int major;
     int minor;
     int patch;
@@ -72,9 +70,21 @@ struct Version {
             && minor == rhs.minor;
     }
 
+    enum len = 12;
+    void serializeTo(ref ubyte[len] buf) const nothrow
+    {
+        buf[0 .. 4] = nativeToBigEndian!int(major);
+        buf[4 .. 8] = nativeToBigEndian!int(minor);
+        buf[8 .. 12] = nativeToBigEndian!int(patch);
+    }
+
+    this(ref const(ubyte[len]) buf)
+    {
+        major = bigEndianToNative!int(buf[0 .. 4]);
+        minor = bigEndianToNative!int(buf[4 .. 8]);
+        patch = bigEndianToNative!int(buf[8 .. 12]);
+    }
 }
-
-
 
 unittest
 {

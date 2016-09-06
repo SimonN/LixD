@@ -1,11 +1,13 @@
 module gui.button.skill;
 
+public import net.ac;
+public import net.style;
+
 import gui;
 import graphic.color;
 import graphic.internal;
 import graphic.graphic;
 import graphic.textout; // select small font
-import lix.enums;
 
 class SkillButton : Button {
 private:
@@ -46,13 +48,13 @@ public:
     @property int number() const { return _number; }
     @property int number(in int i)
     {
-        assert (i >= 0 || i == lix.enums.skillInfinity);
+        assert (i >= 0 || i == skillInfinity);
         if (_number == i)
             return i;
         _number = i;
         _labelNumL.text = "";
         _labelNumM.text = "";
-        if (_number == lix.enums.skillInfinity)
+        if (_number == skillInfinity)
             _labelNumL.text = "\u221E"; // lemniscate
         else if (_number >= 100)
             _labelNumM.number = _number;

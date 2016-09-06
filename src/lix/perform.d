@@ -8,11 +8,7 @@ import tile.phymap;
 import game.tribe;
 import graphic.gadget;
 import hardware.sound;
-import lix.enums;
-import lix.lixxie;
-import lix.skill.exiter;
-import lix.skill.faller;
-import lix.skill.tumbler;
+import lix;
 
 // called from Lixxie.perform(OutsideWorld*)
 package void performUseGadgets(Lixxie l)

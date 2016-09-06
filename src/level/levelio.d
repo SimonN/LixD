@@ -24,7 +24,6 @@ import hardware.tharsis;
 import level.addtile;
 import level.level;
 import level.noowalgo;
-import lix.enums;
 import tile.abstile;
 import tile.gadtile;
 import tile.group;
@@ -162,7 +161,7 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
         else if (text1 == glo.levelInitialLegacy) initial = nr1;
         else if (text1 == glo.levelRateLegacy) spawnint = 4 + (99 - nr1) / 2;
         else {
-            Ac ac = lix.enums.stringToAc(text1);
+            Ac ac = stringToAc(text1);
             if (ac.isPloder)
                 ploder = ac;
             if (ac != Ac.max)

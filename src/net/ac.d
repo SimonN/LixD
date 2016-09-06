@@ -1,12 +1,13 @@
-module lix.enums;
+module net.ac;
+
+/* Activity enum for the lixes.
+ * This is in net/, not in lix/, because it has to travel over the network.
+ */
 
 import std.algorithm;
 import std.array;
 import std.conv;
 import std.uni;
-
-enum int exOffset = 16; // offset of the effective coordinate of the lix
-enum int eyOffset = 26; // sprite from the top left corner
 
 enum int skillInfinity  = -1;
 enum int skillNumberMax = 999;
@@ -61,19 +62,6 @@ auto acToNiceCase(in Ac ac)
     return s.asCapitalized;
 }
 
-nothrow Style stringToStyle(in string str)
-{
-    try
-        return str.toLower.to!Style;
-    catch (Exception)
-        return Style.garden;
-}
-
-string styleToString(in Style sty)
-{
-    return sty.to!string.asCapitalized.to!string;
-}
-
 unittest {
     assert (acToString(Ac.faller) == "FALLER");
     assert (stringToAc("builDER") == Ac.builder);
@@ -81,9 +69,6 @@ unittest {
     assert (stringToAc("eXploDer2") == Ac.exploder);
     assert (acToString(Ac.imploder) == "EXPLODER");
     assert (acToString(Ac.exploder) == "EXPLODER2");
-    assert (styleToString(Style.yellow) == "Yellow");
-    assert (stringToStyle("ORAnge") == Style.orange);
-    assert (stringToStyle("Not in there") == Style.garden);
     assert (acToNiceCase(Ac.faller).equal("Faller"));
     assert (acToNiceCase(Ac.shrugger2).equal("Shrugger"));
     assert (acToNiceCase(Ac.imploder).equal("Imploder"));
@@ -120,20 +105,5 @@ enum Ac : ubyte {
     batter,
     cuber,
 
-    max
-}
-
-enum Style : ubyte {
-    garden,
-    highlight,
-    neutral,
-    red,
-    orange,
-    yellow,
-    green,
-    blue,
-    purple,
-    grey,
-    black,
     max
 }

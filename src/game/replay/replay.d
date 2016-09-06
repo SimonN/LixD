@@ -10,17 +10,19 @@ module game.replay.replay;
 import core.stdc.string; // memmove
 import std.algorithm; // isSorted
 
+public import net.ac;
+public import net.style;
+
 import basics.help; // array.len of type int
 import basics.globconf;
 import basics.help;
-import basics.nettypes;
-import basics.versioning;
+import net.repdata;
+import net.versioning;
 import game.replay.io;
 import file.date;
 import file.filename;
 import level.level;
 import level.metadata;
-import lix.enums;
 
 class Replay {
     static struct Player {

@@ -10,7 +10,7 @@ module game.model.nurse;
 
 import std.algorithm;
 
-import basics.nettypes; // update
+import net.repdata; // update
 import basics.user; // Result
 import file.date;
 import game.effect;

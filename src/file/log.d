@@ -6,7 +6,7 @@ import std.string;
 
 import basics.alleg5;
 import basics.globals;
-import basics.versioning;
+import net.versioning;
 import file.date;
 
 /*  nothrow static void initialize();
