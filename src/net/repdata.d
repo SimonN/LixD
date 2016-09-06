@@ -10,10 +10,12 @@ import std.exception;
 import std.random;
 
 import derelict.enet.enet;
+import net.packetid;
+import net.enetglob;
 
 import net.ac;
+public import net.structs : PlNr;
 
-struct PlNr { ubyte n; alias n this; }
 struct Update { int u; alias u this; } // counts how far the game has advanced
 
 enum RepAc : ubyte {
@@ -57,10 +59,9 @@ struct ReplayData {
 
     ENetPacket* createPacket() const nothrow
     {
-        ENetPacket* pck = enet_packet_create(null, 12,
-                          ENET_PACKET_FLAG_RELIABLE);
+        ENetPacket* pck = .createPacket(len);
         assert (pck);
-        // pck.data[0] in next commit
+        pck.data[0] = PacketCtoS.myReplayData;
         pck.data[1] = player;
         pck.data[2] = action;
         pck.data[3] = skill;
@@ -71,6 +72,9 @@ struct ReplayData {
 
     this(in ENetPacket* pck)
     {
+        assert (pck.data[0] == PacketCtoS.myReplayData
+            ||  pck.data[0] == PacketStoC.peerReplayData,
+            "don't call ReplayData(p) if p is not replay data");
         enforce(pck.dataLength == len);
         player = PlNr(pck.data[1]);
         update = Update(bigEndianToNative!int(pck.data[4 ..  8]));
