@@ -56,20 +56,38 @@ public:
         checkGeom.parent = this.geom;
 
         addChildren(left, leftCheck, center, centerCheck);
-
-        if (caption != "")
-            text = caption;
+        text = caption;
     }
 
-    @property bool alignLeft() const { return _alignLeft;                }
-    @property bool alignLeft(bool b) { reqDraw(); return _alignLeft = b; }
+    @property bool alignLeft() const { return _alignLeft; }
+    @property bool alignLeft(bool b)
+    {
+        if (_alignLeft == b)
+            return b;
+        _alignLeft = b;
+        reqDraw();
+        return _alignLeft;
+    }
 
-    @property string text() const      { return _text;                   }
-    @property string text(in string s) { _text = s; reqDraw(); return s; }
+    @property string text() const { return _text; }
+    @property string text(in string s)
+    {
+        if (_text == s)
+            return s;
+        _text = s;
+        reqDraw();
+        return s;
+    }
 
-    @property int checkFrame() const { return _checkFrame;               }
-    @property int checkFrame(int i)  { _checkFrame = i; reqDraw();
-                                       return _checkFrame;               }
+    @property int checkFrame() const { return _checkFrame; }
+    @property int checkFrame(int i)
+    {
+        if (_checkFrame == i)
+            return i;
+        _checkFrame = i;
+        reqDraw();
+        return _checkFrame;
+    }
 
 protected:
     override void drawOntoButton()

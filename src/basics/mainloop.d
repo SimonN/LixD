@@ -23,6 +23,7 @@ import hardware.keyboard;
 import menu.askname;
 import menu.browser.replay;
 import menu.browser.single;
+import menu.lobby;
 import menu.mainmenu;
 import menu.options;
 
@@ -37,6 +38,7 @@ class MainLoop {
 
     MainMenu mainMenu;
     BrowserSingle browSin;
+    Lobby lobby;
     BrowserReplay browRep;
     OptionsMenu optionsMenu;
     MenuAskName askName;
@@ -126,6 +128,10 @@ public:
                               // Torbit to be destroyed in browser's preview.
             browSin = null;
         }
+        if (lobby) {
+            gui.rmElder(lobby);
+            lobby = null;
+        }
         if (browRep) {
             gui.rmElder(browRep);
             destroy(browRep); // see comment for destroy(browSin)
@@ -167,7 +173,9 @@ public:
                 gui.addElder(browSin);
             }
             else if (mainMenu.gotoNetwork) {
-                // DTODO: link to lobby
+                kill();
+                lobby = new Lobby;
+                gui.addElder(lobby);
             }
             else if (mainMenu.gotoReplays) {
                 kill();
@@ -201,6 +209,13 @@ public:
                 gui.addElder(editor);
             }
             else if (brow.gotoMainMenu) {
+                kill();
+                mainMenu = new MainMenu;
+                gui.addElder(mainMenu);
+            }
+        }
+        else if (lobby) {
+            if (lobby.gotoMainMenu) {
                 kill();
                 mainMenu = new MainMenu;
                 gui.addElder(mainMenu);

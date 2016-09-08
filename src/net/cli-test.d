@@ -7,6 +7,7 @@ version (lixClientTester)
     import std.file;
     import std.range;
     import std.stdio;
+    import std.string;
     import core.time;
     import core.thread;
 
@@ -37,6 +38,13 @@ version (lixClientTester)
         }
     }
 
+    void describeEverything()
+    {
+        foreach (key, prof; netClient.profilesInOurRoom)
+            writefln("    -> plNr=%d, Room=%d, name=%s, style=%s, feeling=%s",
+                key, prof.room, prof.name, prof.style, prof.feeling);
+    }
+
     void main(string[] args)
     {
         immutable interactiveMode = args.canFind("-i");
@@ -44,15 +52,47 @@ version (lixClientTester)
             interactiveUsage();
 
         NetClientCfg cfg;
-        cfg.log = delegate void(string s) { s.writeln(); };
-        cfg.hostname = "localhost";
+        cfg.hostname = "lixgame.com";
         cfg.port = 22934;
         cfg.ourPlayerName = args.dropOne.filter!(arg => arg != "-i")
                                 .chain(["Default"]).front;
         writeln("We are ", cfg.ourPlayerName, ".");
         netClient = new NetClient(cfg);
 
-        if (interactiveMode) {
+        netClient.onConnect(() {
+            writefln("We connected to %s:%d.", cfg.hostname, cfg.port);
+            describeEverything();
+        });
+        netClient.onConnectionLost(() { writeln("Connection lost!"); });
+        netClient.onChatMessage((string name, string chatMessage) {
+            writefln("%s: %s", name, chatMessage);
+        });
+        netClient.onPeerJoinsRoom( (const(Profile*) changed) {
+            writefln("%s has joined room %d.", changed.name, changed.room);
+            describeEverything();
+        });
+        netClient.onWeChangeRoom((Room toRoom) {
+            writefln("We moved into room %d.".format(toRoom));
+            describeEverything();
+        });
+        netClient.onPeerChangesProfile( (const(Profile*) changed) {
+            writefln("%s updated their profile:", changed.name);
+            describeEverything();
+        });
+        netClient.onLevelSelect( (string playerWhoChose, const(ubyte[]) data) {
+            writefln("%s has chosen this level:", playerWhoChose);
+            writeln("--- BEGIN TRANSFERRED LEVEL ---");
+            writeln((cast (char[]) data).idup);
+            writeln("--- END TRANSFERRED LEVEL ---");
+        });
+        netClient.onPeerDisconnect( (string name) {
+            writefln("%s has left the network.".format(name));
+        });
+
+        if (! interactiveMode)
+            while (true)
+                calc();
+        else {
             calc();
             foreach (line; stdin.byLine()) {
                 if (line.length < 1)
@@ -98,14 +138,13 @@ version (lixClientTester)
                     writeln("    -> connected = ", netClient.connected);
                     writeln("    -> name = ", netClient.ourPlayerName);
                     writeln("    -> style = ", netClient.ourStyle);
-                    netClient.describeEverything();
+                    describeEverything();
                 }
                 else
                     writeln("Unknown command: `", line[0], "'.");
                 calc();
             }
         }
-        else while (true) calc();
     }
 }
 // end version (lixClientTester)

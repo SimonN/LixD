@@ -18,10 +18,8 @@ import net.style;
 import net.versioning;
 
 struct NetClientCfg {
-    void delegate(string) log; // where to print messages
     string hostname;
     int port;
-
     string ourPlayerName;
     Style ourStyle;
 }
@@ -35,14 +33,21 @@ private:
 
     NetClientCfg _cfg;
 
+    void delegate() _onConnect;
+    void delegate() _onConnectionLost;
+    void delegate(string name, string chat) _onChatMessage;
+    void delegate(string name) _onPeerDisconnect;
+    void delegate(const(Profile*)) _onPeerJoinsRoom;
+    void delegate(string name, Room toRoom) _onPeerLeavesRoomTo;
+    void delegate(const(Profile*)) _onPeerChangesProfile;
+    void delegate(Room toRoom) _onWeChangeRoom;
+    void delegate(string name, const(ubyte[]) data) _onLevelSelect;
+    void delegate() _onGameStart;
+
 public:
     /* Immediately tries to connect to hostname:port.
      * Hostname can be a domain, e.g., "example.com" or "localhost",
      * or a dot-separated decimal IP address, e.g. "127.0.0.1"
-     *
-     * logFunc specifies where this prints all its log messages. This could be
-     * the ingame console printer, or writeln to stdout. I want to design the
-     * client and server environment-agnostic.
      */
     this(NetClientCfg cfg)
     {
@@ -76,6 +81,20 @@ public:
 
     void calc() { implCalc(); }
 
+    // NetClient's caller should register some event callbacks.
+    // It's okay to register not even a single callback, these will always
+    // be tested for existence before the call.
+    @property void onConnect(typeof(_onConnect) dg) { _onConnect = dg; }
+    @property void onConnectionLost(typeof(_onConnectionLost) dg) { _onConnectionLost = dg; }
+    @property void onChatMessage(typeof(_onChatMessage) dg) { _onChatMessage = dg; }
+    @property void onPeerDisconnect(typeof(_onPeerDisconnect) dg) { _onPeerDisconnect = dg; }
+    @property void onPeerJoinsRoom(typeof(_onPeerJoinsRoom) dg) { _onPeerJoinsRoom = dg; }
+    @property void onPeerLeavesRoomTo(typeof(_onPeerLeavesRoomTo) dg) { _onPeerLeavesRoomTo = dg; }
+    @property void onPeerChangesProfile(typeof(_onPeerChangesProfile) dg) { _onPeerChangesProfile = dg; }
+    @property void onWeChangeRoom(typeof(_onWeChangeRoom) dg) { _onWeChangeRoom = dg; }
+    @property void onLevelSelect(typeof(_onLevelSelect) dg) { _onLevelSelect = dg; }
+    @property void onGameStart(typeof(_onGameStart) dg) { _onGameStart = dg; }
+
     void sendChatMessage(string aText)
     {
         assert (_ourClient);
@@ -88,16 +107,20 @@ public:
 
     @property bool connected() const
     {
-        return _ourClient && _serverPeer;
+        return _ourClient && _serverPeer && _ourPlNr in _profilesInOurRoom;
+    }
+
+    @property bool connecting() const
+    {
+        return _ourClient && _serverPeer && ! (_ourPlNr in _profilesInOurRoom);
     }
 
     void disconnect()
     {
-        assert (connected);
+        assert (connected || connecting);
         enet_peer_disconnect_now(_serverPeer, 0);
         enet_host_flush(_ourClient);
         destroyEnetPointers();
-        _cfg.log("We have logged out.");
         // We won't wait for the disconnection return packet.
     }
 
@@ -105,8 +128,7 @@ public:
     @property Style ourStyle() const { return _cfg.ourStyle; }
     @property Room ourRoom() const
     {
-        auto ptr = _ourPlNr in _profilesInOurRoom;
-        return ! connected || ! ptr ? Room(0) : ptr.room;
+        return connected ? _profilesInOurRoom[_ourPlNr].room : Room(0);
     }
 
     const(Profile[PlNr]) profilesInOurRoom() const
@@ -163,7 +185,7 @@ public:
 private:
     void implCalc()
     {
-        if (! connected)
+        if (! _ourClient || ! _serverPeer)
             return;
         bool destroyEnetAfterCalc = false;
         ENetEvent event;
@@ -172,9 +194,6 @@ private:
             case ENET_EVENT_TYPE_NONE:
                 assert (false, "enet_host_service should have returned 0");
             case ENET_EVENT_TYPE_CONNECT:
-                _cfg.log("We connected to a server at %s:%u.".format(
-                    toDottedIpAddress(event.peer.address.host),
-                    event.peer.address.port));
                 sayHello();
                 break;
             case ENET_EVENT_TYPE_RECEIVE:
@@ -182,7 +201,7 @@ private:
                 enet_packet_destroy(event.packet);
                 break;
             case ENET_EVENT_TYPE_DISCONNECT:
-                _cfg.log("The server threw us out.");
+                _onConnectionLost && _onConnectionLost();
                 destroyEnetAfterCalc = true;
                 break;
             }
@@ -194,8 +213,9 @@ private:
 
     void destroyEnetPointers()
     {
-        assert (connected);
+        assert (connected || connecting);
         enet_host_destroy(_ourClient);
+        _profilesInOurRoom.clear();
         _serverPeer = null;
         _ourClient = null;
     }
@@ -240,7 +260,7 @@ private:
 
     void sendUpdatedProfile(void delegate(ref Profile) changeTheProfile)
     {
-        if (! connected || _ourPlNr !in _profilesInOurRoom)
+        if (! connected)
             return;
         // Never affect our profiles directly. Always send the desire
         // to change color over the network and wait for the return packet.
@@ -251,9 +271,7 @@ private:
         enet_peer_send(_serverPeer, 0, newStyle.createPacket());
     }
 
-    // This updates a profile and logs stuff. When I dispatch events to the
-    // game, this should be refactored.
-    void tempFunc(ENetPacket* got, string formatstr)
+    Profile* receiveProfilePacket(ENetPacket* got)
     {
         auto updated = ProfilePacket(got);
         auto ptr = updated.header.plNr in _profilesInOurRoom;
@@ -261,17 +279,7 @@ private:
             foreach (ref profile; _profilesInOurRoom)
                 profile.setNotReady();
         _profilesInOurRoom[updated.header.plNr] = updated.profile;
-        _cfg.log(formatstr.format(ourProfile.room, updated.header.plNr,
-                                                   updated.profile.name));
-        describeEverything();
-    }
-
-    package void describeEverything() // test function
-    {
-        foreach (key, profile; _profilesInOurRoom)
-            _cfg.log("    -> plNr=%d, Room=%d, name=%s, style=%s, feeling=%s"
-                .format(key, profile.room, profile.name, profile.style,
-                        profile.feeling));
+        return updated.header.plNr in _profilesInOurRoom;
     }
 
     void receivePacket(ENetPacket* got)
@@ -282,49 +290,57 @@ private:
             auto helloAnswered = HelloAnswerPacket(got);
             _ourPlNr = helloAnswered.header.plNr;
             _profilesInOurRoom[_ourPlNr] = generateOurProfile();
-            _cfg.log("We're good! Our player number is %d.".format(_ourPlNr));
+            _onConnect && _onConnect();
         }
-        else if (got.data[0] == PacketStoC.peerJoinsYourRoom)
-            tempFunc(got, "Here in room %d, player %d (%s) has joined us.");
+        else if (got.data[0] == PacketStoC.peerJoinsYourRoom) {
+            const(Profile*) changed = receiveProfilePacket(got);
+            _onPeerJoinsRoom && _onPeerJoinsRoom(changed);
+        }
+        else if (got.data[0] == PacketStoC.peerLeftYourRoom) {
+            auto gone = RoomChangePacket(got);
+            auto ptr = gone.header.plNr in _profilesInOurRoom;
+            auto name = ptr ? ptr.name : "?";
+            _profilesInOurRoom.remove(gone.header.plNr);
+            foreach (ref profile; _profilesInOurRoom)
+                profile.setNotReady();
+            _onPeerLeavesRoomTo && _onPeerLeavesRoomTo(name, gone.room);
+        }
         else if (got.data[0] == PacketStoC.peersAlreadyInYourNewRoom) {
             auto list = ProfileListPacket(got);
             _profilesInOurRoom.clear();
             foreach (i, plNr; list.plNrs)
                 _profilesInOurRoom[plNr] = list.profiles[i];
             enforce(_ourPlNr in _profilesInOurRoom);
-            _cfg.log("We moved into room %d.".format(ourProfile.room));
-            describeEverything();
+            _onWeChangeRoom && _onWeChangeRoom(ourProfile.room);
         }
         else if (got.data[0] == PacketStoC.peerProfile) {
-            tempFunc(got, "In room %d, player %d (%s) updated their profile:");
+            const(Profile*) changed = receiveProfilePacket(got);
+            _onPeerChangesProfile && _onPeerChangesProfile(changed);
         }
         else if (got.data[0] == PacketStoC.peerChatMessage) {
             auto chat = ChatPacket(got);
-            if (chat.header.plNr != _ourPlNr) {
-                _cfg.log("Player %d (%s) says: %s".format(chat.header.plNr,
-                    playerName(chat.header.plNr), chat.text));
-            }
+            // We display our own chat only now.
+            // Users should be able to estimate their ping with a chat echo.
+            if (_onChatMessage)
+                _onChatMessage(playerName(chat.header.plNr), chat.text);
         }
         else if (got.data[0] == PacketStoC.peerLevelFile) {
             if (got.dataLength >= 2) {
                 // We only display the level when we get it back from server.
-                _cfg.log("Player %d (%s) has selected the following level.".
-                    format(got.data[1], playerName(PlNr(got.data[1]))));
                 foreach (ref profile; _profilesInOurRoom)
                     profile.setNotReady();
-                _cfg.log("--- BEGIN TRANSFERRED LEVEL ---");
-                _cfg.log((cast (char*) got.data)[2 .. got.dataLength].idup);
-                _cfg.log("--- END TRANSFERRED LEVEL ---");
+                _onLevelSelect && _onLevelSelect(playerName(PlNr(got.data[1])),
+                                    got.data[2 .. got.dataLength]);
             }
         }
         else if (got.data[0] == PacketStoC.peerDisconnected) {
             auto discon = SomeoneDisconnectedPacket(got);
+            auto ptr = discon.header.plNr in _profilesInOurRoom;
+            auto name = ptr ? ptr.name : "?";
             _profilesInOurRoom.remove(discon.plNr);
             foreach (ref profile; _profilesInOurRoom)
                 profile.setNotReady();
-            _cfg.log("Player %d (%s) has disconnected.".format(
-                discon.plNr, playerName(discon.plNr)));
-            describeEverything();
+            _onPeerDisconnect && _onPeerDisconnect(name);
         }
     }
 }

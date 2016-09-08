@@ -87,6 +87,7 @@ public:
     void move(in float ax, in float ay)
     {
         if (_geom.x == ax && _geom.y == ay)
+            return;
         reqDraw();
         _geom.x = ax;
         _geom.y = ay;

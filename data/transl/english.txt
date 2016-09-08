@@ -56,17 +56,17 @@ $browserInfoHoldsLevel       contained
 
 // networking lobby
 
-$winLobbyTitle                Network Game
+$winLobbyTitle               Network Game
 $winLobbyTitleLobby          Lobby
 $winLobbyTitleRoom           Room #
-$winLobbyExit                 Leave network
+$winLobbyDisconnect          Disconnect
 $winLobbyUnstableCentral     (Experimental version. Please don't use central server.)
 $winLobbyStartCentral        Connect to central server
 $winLobbyStartServer         Host a game yourself
 $winLobbyStartClient         Connect to:
-$winLobbyChat                 Chat:
+$winLobbyChat                Chat:
 $winLobbySelectLevel         Choose level
-$winLobbyReady                Ready for start
+$winLobbyReady               Ready to start
 $winLobbyRoomNumber          Room #
 $winLobbyRoomPlayer          player
 $winLobbyRoomPlayers         players
@@ -259,9 +259,11 @@ $netChatWelcome1             You can join the central server, host a game yourse
 $netChatWelcomeUnstable      This is an experimental version. Host a game yourself,
 $netChatWelcome2             or enter an IP address/a host name and click "%s".
 $netChatStartServer          You are the server. Other players can connect to you now.
-$netChatStartClient          Searching a server at
+$netChatStartClient          Connecting to
 $netChatStartCancel          Connection attempt cancelled.
-$netChatDisconnection          has quit the network.
+$netChatYouLoggedOut         You left the network.
+$netChatYouLostConnection    Connection to server lost!
+$netChatPeerDisconnected     left the network.
 $netChatWeTooOld            You have too old a Lix version to connect to the server.
 $netChatWeTooNew            You have too new a Lix version. The server should upgrade.
 $netChatSomeoneOld           Someone with too old a Lix version tried to connect.
@@ -271,7 +273,7 @@ $netChatVersionYours         Your version is
 $netChatVersionServer        , the server requires
 $netChatServerUpdate         The server should update to the most recent Lix version.
 $netChatPleaseDownload       Download the newest version from:
-$netChatWeConnected          You have joined the network. Enter a room to start playing.
+$netChatWeConnected          Connected. Enter a room to start playing.
 $netChatWeInRoom            You have entered room #
 $netChatWeInRoom2          .
 $netChatWeInLobby           You went back into the lobby.

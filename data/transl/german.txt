@@ -52,17 +52,17 @@ $browserInfoHoldsLevel       enthalten
 
 // Lobby
 
-$winLobbyTitle               Netzwerkspiel
+$winLobbyTitle              Netzwerkspiel
 $winLobbyTitleLobby         Lobby
 $winLobbyTitleRoom          Raum Nr.
-$winLobbyExit                Netz verlassen
+$winLobbyDisconnect         Netz verlassen
 $winLobbyUnstableCentral    (Experimentelle Version, bitte nicht zentralen Server nutzen.)
 $winLobbyStartCentral       Verbinden zu zentralem Server
 $winLobbyStartServer        Selbst ein Spiel hosten
 $winLobbyStartClient        Verbinden zu:
-$winLobbyChat                Chat:
+$winLobbyChat               Chat:
 $winLobbySelectLevel        Level aussuchen
-$winLobbyReady               Bereit zum Start
+$winLobbyReady              Bereit zum Start
 $winLobbyRoomNumber         Raum Nr.
 $winLobbyRoomPlayer         Spieler
 $winLobbyRoomPlayers        Spieler
@@ -246,16 +246,18 @@ $netChatWelcome1            Verbinde zum Zentralserver, eröffne selbst ein Spie
 $netChatWelcomeUnstable     Diese Version ist experimentell. Eröffne selbst ein Spiel oder gib
 $netChatWelcome2            eine IP-Adresse/einen Rechnernamen ein und wähle "%s".
 $netChatStartServer         Du bist der Server. Andere Spieler koennen zu dir verbinden.
-$netChatStartClient         Suche Server unter
+$netChatStartClient         Verbinde zu
 $netChatStartCancel         Verbindungsaufbau abgebrochen.
-$netChatDisconnection         hat das Netzwerk verlassen.
+$netChatYouLoggedOut        Du hast das Netzwerk verlassen.
+$netChatYouLostConnection   Verbindung zum Server verloren!
+$netChatPeerDisconnected    hat das Netzwerk verlassen.
 $netChatWeTooOld           Deine Lix-Version ist zu alt, um verbinden zu koennen.
 $netChatWeTooNew           Deine Lix-Version ist zu neu, um verbinden zu koennen.
 $netChatSomeoneOld          Jemand wollte verbinden, aber seine Lix-Version war zu alt.
 $netChatSomeoneNew          Jemand wollte verbinden, aber seine Lix-Version war zu neu.
 $netChatNamedGuyOld        %s muss zunächst seine Lix-Version aktualisieren.
 $netChatServerUpdate        Der Server sollte stets eine aktuelle Lix-Version nutzen.
-$netChatWeConnected         Du hast das Netzwerk betreten. Wähle einen Raum zum Spielen.
+$netChatWeConnected         Verbunden. Wähle einen Raum zum Spielen.
 $netChatWeInRoom           Du hast Raum Nr.
 $netChatWeInRoom2         betreten.
 $netChatWeInLobby          Du bist in die Lobby zurückgegangen.

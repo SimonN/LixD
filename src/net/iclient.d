@@ -9,6 +9,7 @@ interface INetClient {
     void sendChatMessage(string);
 
     @property bool connected() const;
+    @property bool connecting() const;
     void disconnect();
 
     @property string ourPlayerName() const;
@@ -31,15 +32,15 @@ interface INetClient {
     // calling class wants to get profilesInOurRoom, too, to update the list
     // as a whole. The class should write one method that queries the profiles
     // from (this) and call that method in many of the callbacks here.
-    /+
-    @property void onConnect(void delegate(string server, int port));
-    @property void onDisconnect(void delegate());
+
+    @property void onConnect(void delegate());
+    @property void onConnectionLost(void delegate());
+    @property void onChatMessage(void delegate(string name, string chat));
     @property void onPeerDisconnect(void delegate(string name));
-    @property void onPeerChatMessage(void delegate(string name, string chat));
-    @property void onPeerSelectsLevel(void delegate(string name, string data));
-    @property void onPeerJoinsRoom(void delegate(string name));
+    @property void onPeerJoinsRoom(void delegate(const(Profile*)));
     @property void onPeerLeavesRoomTo(void delegate(string name, Room toRoom));
-    @property void onPeerChangesProfile(void delegate()); // hope it's enough
+    @property void onPeerChangesProfile(void delegate(const(Profile*)));
+    @property void onWeChangeRoom(void delegate(Room toRoom));
+    @property void onLevelSelect(void delegate(string name, const(ubyte[]) data));
     @property void onGameStart(void delegate());
-    +/
 }

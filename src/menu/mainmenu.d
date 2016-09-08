@@ -47,7 +47,7 @@ class MainMenu : MenuWithBackground {
         _exit   = buttextHeight(Geom.From.TOP,       3);
 
         single .text = Lang.browserSingleTitle.transl;
-        network.text = "(no netplay yet)"; // DTODO Lang.winLobbyTitle.transl;
+        network.text = Lang.winLobbyTitle.transl;
         replays.text = Lang.browserReplayTitle.transl;
         options.text = Lang.optionTitle.transl;
         _exit  .text = Lang.commonExit.transl;

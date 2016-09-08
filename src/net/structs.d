@@ -79,7 +79,9 @@ struct SomeoneDisconnectedPacket {
 struct Profile {
     private enum ubytes = 3;
     enum int len = ubytes + netPlayerNameMaxLen + 1; // null-terminated string
-    enum Feeling : ubyte { thinking, ready, observing }
+    enum Feeling : ubyte { thinking = 0, ready = 2, observing = 4 }
+    // 0, 2, 4: These numbers specify frames in menu_chk.I.
+
     Room room;
     Style style;
     Feeling feeling;
