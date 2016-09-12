@@ -83,6 +83,7 @@ public:
         return button(Lang.editorButtonSelectAdd);
     }
 
+    void forceClearInfo() { _info.text = ""; }
     string info(string text)
     {
         // Don't overwrite button explanations with the editor's description

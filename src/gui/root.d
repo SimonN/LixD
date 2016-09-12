@@ -12,13 +12,15 @@ import graphic.color;
 import graphic.graphic; // mouse cursor
 import graphic.torbit;
 import hardware.display;
-import gui;
+import gui.iroot;
+import gui.element;
+import gui.geometry;
 
 public Torbit guiosd; // other gui modules shall use this
 
 private:
-    Element[] drawingOnlyElders; // we don't calc these, user wants manual calc
-    Element[] elders;
+    IDrawable[] drawingOnlyElders; // we don't calc these, user calcs
+    IRoot[] elders;
     Element[] focus;
 
     bool clearNextDraw = true;
@@ -44,21 +46,21 @@ deinitialize()
     guiosd = null;
 }
 
-void addElder(Element toAdd)
+void addElder(IRoot toAdd)
 {
     if (chain(elders, drawingOnlyElders).canFind!"a is b"(toAdd))
         return;
     elders ~= toAdd;
 }
 
-void addDrawingOnlyElder(Element toAdd)
+void addDrawingOnlyElder(IDrawable toAdd)
 {
     if (chain(elders, drawingOnlyElders).canFind!"a is b"(toAdd))
         return;
     drawingOnlyElders ~= toAdd;
 }
 
-void rmElder(Element to_rm)
+void rmElder(IDrawable to_rm)
 {
     elders = elders.remove!(a => a is to_rm);
     drawingOnlyElders = drawingOnlyElders.remove!(a => a is to_rm);

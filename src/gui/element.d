@@ -8,7 +8,7 @@ import graphic.color;
 import gui;
 import hardware.mouse; // isMouseHere
 
-abstract class Element {
+abstract class Element : IRoot {
 private:
     Geom  _geom;
     bool  _hidden;

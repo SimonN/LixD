@@ -1,6 +1,8 @@
 module editor.calc;
 
 import std.algorithm;
+import std.format;
+import std.range;
 
 import basics.rect;
 import basics.user; // hotkeys for movement
@@ -15,17 +17,24 @@ import hardware.mousecur;
 
 package:
 
-void implEditorCalc(Editor editor)
+void implEditorWork(Editor editor)
 {
-    if      (editor._terrainBrowser) editor.calcTerrainBrowser();
-    else if (editor._okCancelWindow) editor.calcOkCancelWindow();
-    else if (editor._saveBrowser)    editor.calcSaveBrowser();
-    else if (editor.noWindowsOpen)   editor.calcNoWindows();
+    editor.maybeCloseTerrainBrowser();
+    editor.maybeCloseOkCancelWindow();
+    editor.maybeCloseSaveBrowser();
+    editor.selectGrid();
+    if (! editor.noWindowsOpen) {
+        // This is probably a bad hack.
+        // Otherwise, the hover description remains on the info bar even
+        // with windows open. When the editor doesn't have focus: bar empty.
+        editor._panel.forceClearInfo();
+    }
+    // Massive hack! Otherwise, the info bar is blit over the save browser.
+    // I should find out why.
+    editor._panel.hidden = (editor._saveBrowser !is null);
 }
 
-private:
-
-void calcNoWindows(Editor editor) {
+void implEditorCalc(Editor editor) {
     with (editor)
 {
     _map.calcScrolling();
@@ -40,7 +49,10 @@ void calcNoWindows(Editor editor) {
     editor.hoverTiles();
     editor.selectTiles();
     editor.moveTiles();
+    editor._panel.info = editor.describeHover();
 }}
+
+package:
 
 void handleNonstandardPanelButtons(Editor editor) { with (editor)
 {
@@ -50,7 +62,6 @@ void handleNonstandardPanelButtons(Editor editor) { with (editor)
     with (_panel.buttonSelectAdd)
         on = hotkey.keyHeld     ? true
            : hotkey.keyReleased ? false : on;
-    editor.selectGrid();
 }}
 
 void selectGrid(Editor editor)
@@ -97,57 +108,62 @@ void moveTiles(Editor editor) {
         _selection.each!(tile => tile.moveBy(total));
 }}
 
+string describeHover(Editor editor) { with (editor)
+{
+    const(Hover[]) list = _hover.empty ? _selection : _hover;
+    if (list.empty)
+        return "";
+    string name = list.length == 1
+        ? list[0].tileDescription
+        : "%d %s".format(list.length, list is _hover
+            ? Lang.editorBarHover.transl : Lang.editorBarSelection.transl);
+    int x = list.map!(hov => hov.occ.loc.x).reduce!min;
+    int y = list.map!(hov => hov.occ.loc.y).reduce!min;
+    return "%s %s (%d, %d) (\u2080\u2093%X, \u2080\u2093%X)"
+        .format(name, Lang.editorBarAt.transl, x, y, x, y);
+}}
+
 // ############################################################################
 
-void calcTerrainBrowser(Editor editor) {
+void maybeCloseTerrainBrowser(Editor editor) {
     with (editor)
 {
-    if (_terrainBrowser.done) {
-        if (auto pos = _level.addTileWithCenterAt(_terrainBrowser.chosenTile,
-                                                  _map.mouseOnLand)
-        ) {
-            _selection = [ Hover.newViaEvilDynamicCast(_level, pos) ];
-            _terrainBrowser.saveDirOfChosenTileToUserCfg();
-        }
-        editor.closeWindows();
+    if (! _terrainBrowser || ! _terrainBrowser.done)
+        return;
+    if (auto pos = _level.addTileWithCenterAt(_terrainBrowser.chosenTile,
+                                              _map.mouseOnLand)
+    ) {
+        _selection = [ Hover.newViaEvilDynamicCast(_level, pos) ];
+        _terrainBrowser.saveDirOfChosenTileToUserCfg();
     }
-}}
-
-void calcOkCancelWindow(Editor editor) {
-    with (editor)
-{
-    if (_okCancelWindow.done) {
-        _okCancelWindow.writeChangesTo(_level);
-        editor.closeWindows();
-    }
-}}
-
-void calcSaveBrowser(Editor editor) {
-    with (editor)
-{
-    assert (_saveBrowser);
-    if (_saveBrowser.done) {
-        if (_saveBrowser.chosenFile) {
-            _loadedFrom = _saveBrowser.chosenFile;
-            _panel.currentFilename = _loadedFrom;
-            editor.saveToExistingFile();
-        }
-        rmFocus(_saveBrowser);
-        _saveBrowser = null;
-    }
-}}
-
-void closeWindows(Editor editor) {
-    with (editor)
-{
-    if (_terrainBrowser) {
-        rmFocus(_terrainBrowser);
-        _terrainBrowser = null;
-    }
-    if (_okCancelWindow) {
-        rmFocus(_okCancelWindow);
-        _okCancelWindow = null;
-    }
+    rmFocus(_terrainBrowser);
+    _terrainBrowser = null;
     _panel.allButtonsOff();
-    editor.selectGrid(); // grid button flickers otherwise
+}}
+
+void maybeCloseOkCancelWindow(Editor editor) {
+    with (editor)
+{
+    if (! _okCancelWindow || ! _okCancelWindow.done)
+        return;
+    assert (_okCancelWindow.done);
+    _okCancelWindow.writeChangesTo(_level);
+    rmFocus(_okCancelWindow);
+    _okCancelWindow = null;
+    _panel.allButtonsOff();
+}}
+
+void maybeCloseSaveBrowser(Editor editor) {
+    with (editor)
+{
+    if (! _saveBrowser || ! _saveBrowser.done)
+        return;
+    if (_saveBrowser.chosenFile) {
+        _loadedFrom = _saveBrowser.chosenFile;
+        _panel.currentFilename = _loadedFrom;
+        editor.saveToExistingFile();
+    }
+    rmFocus(_saveBrowser);
+    _saveBrowser = null;
+    _panel.allButtonsOff();
 }}

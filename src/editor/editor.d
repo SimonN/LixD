@@ -16,13 +16,14 @@ import editor.io;
 import editor.gui.panel;
 import file.filename;
 import graphic.map;
+import gui.iroot;
 import gui.msgbox;
 import level.level;
 import menu.browser.saveas;
 import tile.occur;
 import tile.gadtile;
 
-class Editor {
+class Editor : IRoot {
 package:
     Map _map; // level background color, and gadgets
     Map _mapTerrain; // transp, for rendering terrain, later blit to _map
@@ -64,6 +65,8 @@ public:
     }
 
     void calc() { this.implEditorCalc(); }
+    void work() { this.implEditorWork(); }
+    void reqDraw() { } // nothing to notify, draw() draws everything anyway
     void draw() { this.implEditorDraw(); }
 
 package:

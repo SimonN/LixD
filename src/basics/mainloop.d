@@ -112,6 +112,7 @@ public:
             game = null;
         }
         if (editor) {
+            gui.rmElder(editor);
             destroy(editor);
             editor = null;
         }
@@ -197,6 +198,7 @@ public:
                 auto fn = browSin.fileRecent;
                 kill();
                 editor = new Editor(fn);
+                gui.addElder(editor);
             }
             else if (brow.gotoMainMenu) {
                 kill();
@@ -235,7 +237,7 @@ public:
             }
         }
         else if (editor) {
-            editor.calc();
+            // editor is a GUI elder, thus already calced
             if (editor.gotoMainMenu) {
                 kill();
                 browSin = new BrowserSingle();
@@ -260,10 +262,9 @@ public:
     {
         // mainMenu etc. are GUI Windows. Those have been added as elders and
         // are therefore supervised by module gui.root.
+        // Even the editor is a gui elder.
         if (game)
             game.draw();
-        if (editor)
-            editor.draw();
         gui.draw();
         if (! askName)
             hardware.mousecur.draw();

@@ -66,7 +66,6 @@ void drawMainMap(Editor editor)
         editor.drawHovers(_hover, false);
         editor.drawHovers(_selection, true);
         editor.drawDraggedFrame();
-        editor._panel.info = editor.describeHover();
     }
 }
 
@@ -125,21 +124,6 @@ void drawDraggedFrame(Editor editor) { with (editor)
     assert (val >= 0x40 && val < 0xC0); // because we'll be varying by 0x40
     immutable col = color.makecol(val + 0x40, val, val - 0x40);
     _map.drawRectangle(_dragger.frame(_map), col);
-}}
-
-string describeHover(Editor editor) { with (editor)
-{
-    const(Hover[]) list = _hover.empty ? _selection : _hover;
-    if (list.empty)
-        return "";
-    string name = list.length == 1
-        ? list[0].tileDescription
-        : "%d %s".format(list.len, list is _hover
-            ? Lang.editorBarHover.transl : Lang.editorBarSelection.transl);
-    int x = list.map!(hov => hov.occ.loc.x).reduce!min;
-    int y = list.map!(hov => hov.occ.loc.y).reduce!min;
-    return "%s %s (%d, %d) (\u2080\u2093%X, \u2080\u2093%X)"
-        .format(name, Lang.editorBarAt.transl, x, y, x, y);
 }}
 
 void drawToScreen(Editor editor)
