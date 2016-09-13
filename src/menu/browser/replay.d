@@ -18,7 +18,6 @@ private:
     Level _included;
     Level _pointedTo;
     TextButton _buttonPlayWithPointedTo;
-    TextButton _extract;
     bool _forcePointedTo;
 
     mixin DeleteMixin deleteMixin;
@@ -39,10 +38,8 @@ public:
             return b;
         }
         _buttonPlayWithPointedTo = newInfo(1, 100, "pointedTo", keyMenuEdit);
-        _delete  = newInfo(1, 60, Lang.browserDelete.transl, keyMenuDelete);
-        _extract = newInfo(0, 60, "(extract)" /*Lang.browserExtract.transl*/,
-                           keyMenuExport);
-        addChildren(_buttonPlayWithPointedTo, _delete, _extract);
+        _delete  = newInfo(0, 20, Lang.browserDelete.transl, keyMenuDelete);
+        addChildren(_buttonPlayWithPointedTo, _delete);
     }
 
     override @property inout(Level) levelRecent() inout
@@ -62,14 +59,12 @@ protected:
     override void onFileHighlight(Filename fn)
     {
         assert (_delete);
-        assert (_extract);
         if (fn is null) {
             _replayRecent = null;
             _included = null;
             _pointedTo = null;
             _buttonPlayWithPointedTo.hide();
             _delete.hide();
-            _extract.hide();
         }
         else {
             _forcePointedTo = false;
@@ -78,7 +73,7 @@ protected:
             _pointedTo = new Level(_replayRecent.levelFilename);
             _delete.show();
             _buttonPlayWithPointedTo.hidden = ! _pointedTo.good;
-            _extract.hidden = ! _included.nonempty;
+            // _extract.hidden = ! _included.nonempty; -- _extract not yet impl
         }
         previewLevel(levelRecent);
     }

@@ -50,6 +50,7 @@ enum Lang {
     browserReplayTitle, browserReplayTitleDesc, // DTODOOPTION
     browserPlay,
     browserEdit,
+    browserNewLevel,
     browserReplay,
     browserDelete,
     browserExtract,
@@ -369,6 +370,7 @@ enum Lang {
 
     optionKeyMenuOkay, optionKeyMenuOkayDesc,
     optionKeyMenuEdit, optionKeyMenuEditDesc,
+    optionKeyMenuNewLevel, optionKeyMenuNewLevelDesc,
     optionKeyMenuExport, optionKeyMenuExportDesc,
     optionKeyMenuDelete, optionKeyMenuDeleteDesc,
     optionKeyMenuUpDir, optionKeyMenuUpDirDesc,

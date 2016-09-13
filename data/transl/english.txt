@@ -25,6 +25,7 @@ $browserNetworkTitle        Select Multiplayer level
 $browserReplayTitle         Replays
 $browserPlay                Play
 $browserEdit                Edit
+$browserNewLevel            New Level
 $browserReplay              Replay
 $browserDelete              Delete
 $browserExtract             Extract level

@@ -15,9 +15,11 @@ import menu.browser.frommain;
 
 class BrowserSingle : BrowserCalledFromMainMenu {
 private:
-    bool _gotoEditor;
+    bool _gotoEditorLoadFileRecent;
+    bool _gotoEditorNewLevel;
     Level _levelRecent;
     TextButton _edit;
+    TextButton _newLevel;
     TextButton _exportImage;
     LabelTwo _by, _save, _resultSaved, _resultSkills;
     Element[] _hideWhenNullLevelHighlit;
@@ -36,7 +38,14 @@ public:
         _edit.onExecute = () {
             assert (fileRecent !is null);
             basics.user.singleLastLevel = fileRecent;
-            _gotoEditor = true;
+            _gotoEditorLoadFileRecent = true;
+        };
+        _newLevel = new TextButton(new Geom(infoX + infoXl/2, 60,
+            infoXl/2, 40, From.BOTTOM_LEFT), Lang.browserNewLevel.transl);
+        _newLevel.hotkey = basics.user.keyMenuNewLevel;
+        _newLevel.onExecute = () {
+            basics.user.singleLastLevel = currentDir.guaranteedDirOnly;
+            _gotoEditorNewLevel = true;
         };
         _exportImage = new TextButton(new Geom(infoX, 60, infoXl/2, 40,
             From.BOTTOM_LEFT), Lang.browserExportImage.transl);
@@ -48,7 +57,7 @@ public:
             _exportImage.hide();
             hardware.sound.playLoud(Sound.DISKSAVE);
         };
-        _delete = new TextButton(new Geom(infoX + infoXl/2, 60,
+        _delete = new TextButton(new Geom(infoX, 20,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.browserDelete.transl);
         _delete.hotkey = basics.user.keyMenuDelete;
 
@@ -61,9 +70,11 @@ public:
             Lang.browserInfoResultSaved.transl);
         _resultSkills = new LabelTwo(new Geom(infoX + savedXl, infoY + 60,
             infoXl - savedXl, 20), Lang.browserInfoResultSkills.transl);
+
         _hideWhenNullLevelHighlit = [ _edit, _delete, _exportImage,
             _by, _save, _resultSaved, _resultSkills ];
         _hideWhenNullLevelHighlit.each!(la => addChild(la));
+        addChild(_newLevel);
     }
 
     override @property inout(Level) levelRecent() inout
@@ -71,11 +82,11 @@ public:
         return _levelRecent;
     }
 
-    @property bool gotoEditor() const
+    @property bool gotoEditorNewLevel() const { return _gotoEditorNewLevel; }
+    @property bool gotoEditorLoadFileRecent() const
     {
-        if (_gotoEditor)
-            assert (fileRecent !is null);
-        return _gotoEditor;
+        assert (! _gotoEditorLoadFileRecent || fileRecent);
+        return _gotoEditorLoadFileRecent;
     }
 
 protected:

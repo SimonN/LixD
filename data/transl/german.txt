@@ -21,6 +21,7 @@ $browserNetworkTitle         Netzwerk-Level aussuchen
 $browserReplayTitle          Replays
 $browserPlay                  Spielen
 $browserEdit                  Editieren
+$browserNewLevel              Neuer Level
 $browserReplay                Abspielen
 $browserDelete                Löschen
 $browserExtract               Level extrah.

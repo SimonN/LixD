@@ -202,8 +202,11 @@ public:
                 kill();
                 game = new Game(Runmode.INTERACTIVE, lv, fn, rp);
             }
-            else if (browSin && browSin.gotoEditor) {
-                auto fn = browSin.fileRecent;
+            else if (browSin && (browSin.gotoEditorNewLevel
+                             ||  browSin.gotoEditorLoadFileRecent)
+            ) {
+                auto fn = browSin.gotoEditorLoadFileRecent
+                        ? browSin.fileRecent : null;
                 kill();
                 editor = new Editor(fn);
                 gui.addElder(editor);
