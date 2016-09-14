@@ -344,6 +344,7 @@ $optionKeyNuke               Atombombe
 
 $optionKeyMenuOkay           Okay/ja
 $optionKeyMenuEdit           Editieren
+$optionKeyMenuNewLevel       Neuer Level
 $optionKeyMenuExport         Exportieren
 $optionKeyMenuDelete         Löschen/nein
 $optionKeyMenuUpDir          Ordner hoch

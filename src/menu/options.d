@@ -407,8 +407,12 @@ void populateMenuKeys()
     grp ~= [
         fac.factory!HotkeyOption(keyMenuOkay),
         fac.factory!HotkeyOption(keyMenuEdit),
+        fac.factory!HotkeyOption(keyMenuNewLevel),
         fac.factory!HotkeyOption(keyMenuExport),
         fac.factory!HotkeyOption(keyMenuDelete),
+    ];
+    fac.y += 20;
+    grp ~= [
         fac.factory!HotkeyOption(keyMenuExit),
     ];
     fac = facKeys!1;
@@ -435,7 +439,7 @@ void populateMenuKeys()
     guiCol.stepSmall  = 0x02;
     fac = facLeft();
     fac.xl = this.xlg - 40;
-    fac.y  = 220;
+    fac.y  = 260;
     grp ~= [
         fac.factory!NumPickOption(guiCol, guiColorRed),
         fac.factory!NumPickOption(guiCol, guiColorGreen),

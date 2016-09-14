@@ -404,6 +404,7 @@ $optionPausedAssignUnpauseDesc Unpause when you assign a skill during pause.
 
 $optionKeyMenuOkay            Okay/yes
 $optionKeyMenuEdit            Edit
+$optionKeyMenuNewLevel        New Level
 $optionKeyMenuExport          Export
 $optionKeyMenuDelete          Lose data
 $optionKeyMenuUpDir           Parent dir
