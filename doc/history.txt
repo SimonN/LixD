@@ -1,6 +1,16 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.16
+------
+
+2016-09-14
+
+Fix #152: The singleplayer browser has a button to create a new level.
+This button is always visible, whether a level is selected or not.
+
+Fixed smearing FPS text in the editor.
+
 0.6.15
 ------
 
