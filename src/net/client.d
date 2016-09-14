@@ -124,14 +124,13 @@ public:
         // We won't wait for the disconnection return packet.
     }
 
-    @property string ourPlayerName() const { return _cfg.ourPlayerName; }
-    @property Style ourStyle() const { return _cfg.ourStyle; }
-    @property Room ourRoom() const
+    @property const(Profile) ourProfile() const
     {
-        return connected ? _profilesInOurRoom[_ourPlNr].room : Room(0);
+        assert (connected);
+        return _profilesInOurRoom[_ourPlNr];
     }
 
-    const(Profile[PlNr]) profilesInOurRoom() const
+    @property const(Profile[PlNr]) profilesInOurRoom() const
     {
         return _profilesInOurRoom;
     }
@@ -143,7 +142,7 @@ public:
         _cfg.ourStyle = sty;
         sendUpdatedProfile((ref Profile p) {
             p.style = sty;
-            p.setNotReady();
+            p.feeling = Profile.Feeling.thinking; // = not observing
         });
     }
 
@@ -232,14 +231,6 @@ private:
         return ptr ? ptr.name : "?";
     }
 
-    ref Profile ourProfile()
-    {
-        assert (_ourClient);
-        auto ptr = _ourPlNr in _profilesInOurRoom;
-        assert (ptr);
-        return *ptr;
-    }
-
     void sayHello()
     {
         HelloPacket hello;
@@ -266,7 +257,7 @@ private:
         // to change color over the network and wait for the return packet.
         ProfilePacket newStyle;
         newStyle.header.packetID = PacketCtoS.myProfile;
-        newStyle.profile = ourProfile;
+        newStyle.profile = _profilesInOurRoom[_ourPlNr];
         changeTheProfile(newStyle.profile);
         enet_peer_send(_serverPeer, 0, newStyle.createPacket());
     }
@@ -311,7 +302,8 @@ private:
             foreach (i, plNr; list.plNrs)
                 _profilesInOurRoom[plNr] = list.profiles[i];
             enforce(_ourPlNr in _profilesInOurRoom);
-            _onWeChangeRoom && _onWeChangeRoom(ourProfile.room);
+            _onWeChangeRoom && _onWeChangeRoom(
+                _profilesInOurRoom[_ourPlNr].room);
         }
         else if (got.data[0] == PacketStoC.peerProfile) {
             const(Profile*) changed = receiveProfilePacket(got);

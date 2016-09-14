@@ -19,6 +19,7 @@ private:
     TextButton _buttonCentral;
     Console _console;
     PeerList _peerList;
+    ColorSelector _colorSelector;
     Texttype _chat;
 
     INetClient _netClient;
@@ -50,8 +51,10 @@ public:
         _buttonCentral.onExecute = () { connect(ipCentralServer); };
         _showWhenDisconnected ~= _buttonCentral;
 
-        _peerList = new PeerList(new Geom(20, 40, 100, 20*8));
+        _peerList = new PeerList(new Geom(20, 40, 120, 20*8));
         _showWhenConnected ~= _peerList;
+        _colorSelector = new ColorSelector(new Geom(160, 40, 40, 20*8));
+        _showWhenConnected ~= _colorSelector;
         _chat = new Texttype(new Geom(60, 20, // 40 = label, 60 = 3x GUI space
             Geom.screenXlg - _buttonExit.xlg - 40 - 60, 20, From.BOT_LEF));
         _chat.onEnter = ()
@@ -78,8 +81,18 @@ protected:
     {
         if (_netClient)
             _netClient.calc();
+        showOrHideGuiBasedOnConnection();
         scope (success)
             showOrHideGuiBasedOnConnection();
+
+        if (_colorSelector.execute && _netClient) {
+            // The color selector doesn't return execute == true when you
+            // click the button that's already on.
+            if (_colorSelector.spectating)
+                _netClient.ourFeeling = Profile.Feeling.spectating;
+            else
+                _netClient.ourStyle = _colorSelector.style;
+        }
     }
 
 private:
@@ -125,6 +138,9 @@ private:
         void refreshPeerList()
         {
             _peerList.recreateButtonsFor(_netClient.profilesInOurRoom.values);
+            _colorSelector.style = _netClient.ourProfile.style;
+            if (_netClient.ourProfile.feeling == Profile.Feeling.spectating)
+                _colorSelector.setSpectating();
         }
 
         _netClient.onConnect = ()

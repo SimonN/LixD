@@ -8,7 +8,10 @@ import graphic.internal;
 import gui;
 
 class BitmapButton : Button {
+private:
+    CutbitElement _cbe;
 
+public:
     this(Geom g, const(Cutbit) cb)
     {
         super(g);
@@ -19,16 +22,12 @@ class BitmapButton : Button {
     @property int xf(in int i) { reqDraw(); return _cbe.xf = i; }
     @property int xf()  const  { return _cbe.xf;  }
     @property int xfs() const  { return _cbe.xfs; }
-
-private:
-
-    CutbitElement _cbe;
+    @property int yf()  const  { return this.on && ! this.down ? 1 : 0; }
 
 protected:
-
     override void drawOntoButton()
     {
-        _cbe.yf = (this.on && ! this.down) ? 1 : 0;
+        _cbe.yf = this.yf;
         // Force drawing _cbe right now, even though it's a child and would be
         // drawn later otherwise. The graphic must go behind the button hotkey
         // that is drawn in final super.drawSelf().
@@ -40,7 +39,10 @@ protected:
 
 
 class Checkbox : BitmapButton {
+private:
+    enum xfCheckmark = 2;
 
+public:
     this(Geom g)
     {
         g.xl = 20;
@@ -53,8 +55,5 @@ class Checkbox : BitmapButton {
                                      reqDraw(); return b; }
     @property bool checked() const { return xf == xfCheckmark;   }
     bool toggle()                  { return checked = ! checked; }
-
-    private enum xfCheckmark = 2;
-
 }
 // end class Checkbox

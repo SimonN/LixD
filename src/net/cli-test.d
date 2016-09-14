@@ -24,7 +24,7 @@ version (lixClientTester)
         writeln("l path/to/level.txt = select and transfer this level file");
         writeln("t = set feeling to thinking, i.e., not ready");
         writeln("r = set feeling to ready");
-        writeln("o = set feeling to observing");
+        writeln("o = set feeling to spectating (o = observing)");
         writeln("d = describe what the network knows");
     }
 
@@ -132,12 +132,11 @@ version (lixClientTester)
                 else if (line[0] == 'r')
                     netClient.ourFeeling = Profile.Feeling.ready;
                 else if (line[0] == 'o')
-                    netClient.ourFeeling = Profile.Feeling.observing;
+                    netClient.ourFeeling = Profile.Feeling.spectating;
                 else if (line[0] == 'd') {
                     writeln("What does the network know?");
                     writeln("    -> connected = ", netClient.connected);
-                    writeln("    -> name = ", netClient.ourPlayerName);
-                    writeln("    -> style = ", netClient.ourStyle);
+                    writeln("    -> name = ", netClient.ourProfile.name);
                     describeEverything();
                 }
                 else
