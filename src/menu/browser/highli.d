@@ -69,7 +69,7 @@ public:
 
     void previewLevel(Level l)
     {
-        _preview.hidden = l is null;
+        _preview.shown = l !is null;
         _previewLevelTitle.text = l ? l.name : "";
         if (l)
             _preview.level = l;

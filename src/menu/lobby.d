@@ -89,8 +89,8 @@ private:
 
     void showOrHideGuiBasedOnConnection()
     {
-        _showWhenDisconnected.each!(e => e.hidden = connected || connecting);
-        _showWhenConnected.each!(e => e.hidden = ! connected || connecting);
+        _showWhenDisconnected.each!(e => e.shown = offline);
+        _showWhenConnected.each!(e => e.shown = connected);
         _buttonExit.text = connected ? Lang.winLobbyDisconnect.transl
                         : connecting ? Lang.commonCancel.transl
                                      : Lang.commonBack.transl;

@@ -51,15 +51,15 @@ public:
     mixin (GetSetWithReqDraw!"down");
     mixin (GetSetWithReqDraw!"on");
 
-    override @property bool hidden() const { return super.hidden; }
-    override @property bool hidden(in bool b)
+    override @property bool shown() const { return super.shown; }
+    override @property bool shown(in bool b)
     {
-        if (super.hidden != b) {
-            super.hidden = b;
+        if (super.shown != b) {
+            super.shown = b;
             _down    = false;
             _execute = false;
         }
-        return super.hidden;
+        return super.shown;
     }
 
     AlCol colorText() { return _on && ! _down ? color.guiTextOn

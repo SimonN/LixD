@@ -48,7 +48,7 @@ protected:
         super.calcSelf();
         _executeLeft  = false;
         _executeRight = false;
-        if (hidden)
+        if (! shown)
             return;
         _executeLeft  = super.execute;
         _executeRight = isMouseHere

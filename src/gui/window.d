@@ -1,9 +1,6 @@
 module gui.window;
 
 /* The Window class. Many windows derive from this.
- *
- *  override void hideAllChildren(bool)
- *      Does not hide the title bar, but all other children.
  */
 
 import gui;
@@ -31,13 +28,6 @@ public:
     {
         _labelTitle.text = s;
         reqDraw();
-    }
-
-    override void hideAllChildren()
-    {
-        foreach (child; children)
-            if (child !is _labelTitle)
-                child.hidden = true;
     }
 
 protected:

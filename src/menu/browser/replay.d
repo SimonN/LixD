@@ -72,8 +72,10 @@ protected:
             _included = new Level(fn); // open the replay file as level
             _pointedTo = new Level(_replayRecent.levelFilename);
             _delete.show();
-            _buttonPlayWithPointedTo.hidden = ! _pointedTo.good;
-            // _extract.hidden = ! _included.nonempty; -- _extract not yet impl
+            _buttonPlayWithPointedTo.shown = _pointedTo.good;
+            // _extract.shown = _included.nonempty; -- _extract not yet impl
+            // Even without _extract implemented, we need _included,
+            // for this.levelRecent().
         }
         previewLevel(levelRecent);
     }

@@ -11,18 +11,17 @@ import hardware.mouse; // isMouseHere
 abstract class Element : IRoot {
 private:
     Geom  _geom;
-    bool  _hidden;
+    bool  _shown = true;
     AlCol _undrawColor; // if != color.transp, then undraw
     Element[] _children;
     bool drawn;
-    bool drawRequired;
+    bool drawRequired = true;
 
 public:
     this(Geom g)
     {
         _geom        = g;
         _undrawColor = color.guiM;
-        drawRequired = true;
     }
 
     // these functions return the position/length in geoms. See geometry.d
@@ -43,16 +42,16 @@ public:
     @property AlCol undrawColor() const  { return _undrawColor;     }
     @property AlCol undrawColor(AlCol c) { return _undrawColor = c; }
 
-    final void hide() { hidden = true;  }
-    final void show() { hidden = false; }
-    @property bool hidden() const { return _hidden; }
-    @property bool hidden(in bool b) // virtual, b/c Button overrides this :-[
+    final void hide() { shown = false; }
+    final void show() { shown = true; }
+    @property bool shown() const { return _shown; }
+    @property bool shown(in bool b) // virtual, b/c Button overrides this :-[
     {
-        if (b != _hidden) {
+        if (b != _shown) {
             reqDraw();
-            _hidden = b;
+            _shown = b;
         }
-        return _hidden;
+        return _shown;
     }
 
     // The children are a set, you can have each child only once in there.
@@ -80,7 +79,6 @@ public:
         _children = _children.remove(_children.length - found.length);
     }
 
-    void hideAllChildren() { _children.each!(e => e.hide()); }
     @property inout(Element[]) children() inout { return _children; }
     bool isParentOf(in Element ch) const { return _geom is ch._geom.parent; }
 
@@ -114,13 +112,14 @@ public:
 
     bool isMouseHere() const
     {
-        return ! _hidden && mouseX() >= xs && mouseX() < xs + xls
-                         && mouseY() >= ys && mouseY() < ys + yls;
+        return _shown && mouseX() >= xs && mouseX() < xs + xls
+                      && mouseY() >= ys && mouseY() < ys + yls;
     }
 
     final void calc()
     {
-        if (_hidden) return;
+        if (! _shown)
+            return;
         _children.each!(c => c.calc);
         calcSelf();
     }
@@ -136,7 +135,7 @@ public:
     // Register your important gui elements as elders or focus elements there.
     final void draw()
     {
-        if (! _hidden) {
+        if (_shown) {
             if (drawRequired) {
                 drawSelf();
                 drawRequired = false;
@@ -145,10 +144,10 @@ public:
             // In the options menu, all stuff has to be undrawn first, then
             // drawn, so that rectangles don't overwrite proper things.
             // Look into this function (final void draw) below.
-            foreach (c; _children) if (  c.hidden) c.draw();
-            foreach (c; _children) if (! c.hidden) c.draw();
+            foreach (c; _children) if (! c.shown) c.draw();
+            foreach (c; _children) if (  c.shown) c.draw();
         }
-        // hidden
+        // element is hidden, i.e., not shown
         else
             undraw();
     }
@@ -160,7 +159,7 @@ public:
                 undrawSelf();
             drawn = false;
         }
-        drawRequired = ! _hidden;
+        drawRequired = _shown;
     }
 
     static final void

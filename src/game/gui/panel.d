@@ -167,7 +167,7 @@ private void showStateLoad(bool b)
 {
     stateSave.move(skillXl, 0);
     stateSave.resize(b ? skillXl : skillXl * 2, stateSave.ylg);
-    stateLoad.hidden = ! b;
+    stateLoad.shown = b;
 }
 
 private void highlightIfNonzero(SkillButton skill)

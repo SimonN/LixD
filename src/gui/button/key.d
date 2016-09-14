@@ -139,9 +139,8 @@ protected:
 private:
     void formatButtons()
     {
-        _plus.hidden = keySet.empty || keySet.len >= 3;
-        _minus.hidden = keySet.empty;
-        _big.resize(_minus.hidden ? xlg : _plus.hidden ? xlg - plusXlg :
-            xlg - 2f * plusXlg, ylg);
+        _minus.shown = keySet.len >= 1;
+        _plus.shown = keySet.len >= 1 && keySet.len < 3;
+        _big.resize(xlg - plusXlg * (_minus.shown + _plus.shown), ylg);
     }
 }

@@ -94,7 +94,7 @@ protected:
     {
         assert (_edit);
         _levelRecent = fn is null ? null : new Level(fileRecent);
-        _hideWhenNullLevelHighlit.each!(e => e.hidden = fn is null);
+        _hideWhenNullLevelHighlit.each!(e => e.shown = fn !is null);
         previewLevel(_levelRecent);
         if (! _levelRecent)
             return;
@@ -102,8 +102,8 @@ protected:
         _save.value = "%d/%d".format(_levelRecent.required,
                                      _levelRecent.initial);
         const(Result) res = getLevelResult(fn);
-        _resultSaved.hidden = res is null;
-        _resultSkills.hidden = res is null;
+        _resultSaved.shown = res !is null;
+        _resultSkills.shown = res !is null;
         if (res) {
             _resultSaved.value = "%d".format(res.lixSaved);
             _resultSkills.value = "%d".format(res.skillsUsed);

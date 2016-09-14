@@ -31,7 +31,7 @@ void implEditorWork(Editor editor)
     }
     // Massive hack! Otherwise, the info bar is blit over the save browser.
     // I should find out why.
-    editor._panel.hidden = (editor._saveBrowser !is null);
+    editor._panel.shown = editor._saveBrowser is null;
 }
 
 void implEditorCalc(Editor editor) {

@@ -139,8 +139,8 @@ private:
         auto range = chain(_dirs, _files).enumerate!int;
         foreach (int unshifted, Button b; range) {
             immutable int shifted = shiftedID(unshifted);
-            b.hidden = (shifted < top || shifted >= top + pageLen);
-            if (! b.hidden)
+            b.shown = (shifted >= top && shifted < top + pageLen);
+            if (b.shown)
                 b.move(buttonXg(shifted - top), buttonYg(shifted - top));
         }
     }
