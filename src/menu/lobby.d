@@ -59,6 +59,8 @@ public:
             Geom.screenXlg - _buttonExit.xlg - 40 - 60, 20, From.BOT_LEF));
         _chat.onEnter = ()
         {
+            if (_chat.text == "")
+                return;
             assert (connected);
             _netClient.sendChatMessage(_chat.text);
             _chat.text = "";
