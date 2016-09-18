@@ -256,9 +256,6 @@ $exportMultiClock             Overtime:
 
 // network chat messages
 
-$netChatWelcome1             You can join the central server, host a game yourself,
-$netChatWelcomeUnstable      This is an experimental version. Host a game yourself,
-$netChatWelcome2             or enter an IP address/a host name and click "%s".
 $netChatStartServer          You are the server. Other players can connect to you now.
 $netChatStartClient          Connecting to
 $netChatStartCancel          Connection attempt cancelled.
@@ -274,10 +271,9 @@ $netChatVersionYours         Your version is
 $netChatVersionServer        , the server requires
 $netChatServerUpdate         The server should update to the most recent Lix version.
 $netChatPleaseDownload       Download the newest version from:
-$netChatWeConnected          Connected. Enter a room to start playing.
 $netChatWeInRoom            You have entered room #
 $netChatWeInRoom2          .
-$netChatWeInLobby           You went back into the lobby.
+$netChatWeInLobby           You are in the lobby.
 $netChatPlayerInRoom         has joined room #
 $netChatPlayerInRoom2      .
 $netChatPlayerInLobby        has entered the lobby.
@@ -416,6 +412,7 @@ $optionKeyMenuExit            Back/cancel
 
 $optionKeyMenuOkayDesc Play the highlighted level. Save and close a dialog.
 $optionKeyMenuEditDesc Open the editor on the highlighted level.
+$optionKeyMenuNewLevelDesc Open the editor on a blank level.
 $optionKeyMenuExportDesc Export the highlighted level as an image file.
 $optionKeyMenuDeleteDesc Delete a file. Lose unsaved data when the editor prompts you.
 $optionKeyMenuUpDirDesc Go back up one folder.|You can navigate to other levels, replays, or tiles.

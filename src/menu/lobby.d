@@ -20,6 +20,7 @@ private:
     Console _console;
     PeerList _peerList;
     ColorSelector _colorSelector;
+    RoomList _roomList;
     Texttype _chat;
 
     INetClient _netClient;
@@ -55,6 +56,8 @@ public:
         _showWhenConnected ~= _peerList;
         _colorSelector = new ColorSelector(new Geom(160, 40, 40, 20*8));
         _showWhenConnected ~= _colorSelector;
+        _roomList = new RoomList(new Geom(20, 40, 300, 20*8, From.TOP_RIG));
+        _showWhenConnected ~= _roomList;
         _chat = new Texttype(new Geom(60, 20, // 40 = label, 60 = 3x GUI space
             Geom.screenXlg - _buttonExit.xlg - 40 - 60, 20, From.BOT_LEF));
         _chat.onEnter = ()
@@ -145,12 +148,9 @@ private:
                 _colorSelector.setSpectating();
         }
 
-        _netClient.onConnect = ()
-        {
-            refreshPeerList();
-            // We don't print the resolved hostname IP address or port.
-            _console.add(Lang.netChatWeConnected.transl);
-        };
+        // We don't print anything on connecting. Entering the lobby will
+        // generate a message anyway, including an update to the peer list.
+        _netClient.onConnect = null;
 
         _netClient.onConnectionLost = ()
         {
@@ -203,8 +203,15 @@ private:
         _netClient.onWeChangeRoom = (Room toRoom)
         {
             refreshPeerList();
-            _console.add("%s%d%s".format(Lang.netChatWeInRoom.transl,
-                                 toRoom, Lang.netChatWeInRoom2.transl));
+            _console.add(toRoom != 0
+                ? "%s%d%s".format(Lang.netChatWeInRoom.transl, toRoom,
+                                  Lang.netChatWeInRoom2.transl)
+                : Lang.netChatWeInLobby.transl);
+            _roomList.shown = toRoom == 0;
+            if (toRoom == 0)
+                // DTODONETWORK: do we recreateButtonsFor on this event?
+                // Or do we have a different event for entering lobby?
+                _roomList.recreateButtonsFor();
         };
 
         _netClient.onLevelSelect = (string name, const(ubyte[]) data)

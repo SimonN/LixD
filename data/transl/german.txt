@@ -243,9 +243,6 @@ $exportMultiSpawnint         Fall-Int.:
 $exportMultiClock            Nachspielzeit:
 
 // Netzwerk-Chatnachrichten
-$netChatWelcome1            Verbinde zum Zentralserver, eröffne selbst ein Spiel oder gib
-$netChatWelcomeUnstable     Diese Version ist experimentell. Eröffne selbst ein Spiel oder gib
-$netChatWelcome2            eine IP-Adresse/einen Rechnernamen ein und wähle "%s".
 $netChatStartServer         Du bist der Server. Andere Spieler koennen zu dir verbinden.
 $netChatStartClient         Verbinde zu
 $netChatStartCancel         Verbindungsaufbau abgebrochen.
@@ -258,10 +255,9 @@ $netChatSomeoneOld          Jemand wollte verbinden, aber seine Lix-Version war 
 $netChatSomeoneNew          Jemand wollte verbinden, aber seine Lix-Version war zu neu.
 $netChatNamedGuyOld        %s muss zunächst seine Lix-Version aktualisieren.
 $netChatServerUpdate        Der Server sollte stets eine aktuelle Lix-Version nutzen.
-$netChatWeConnected         Verbunden. Wähle einen Raum zum Spielen.
 $netChatWeInRoom           Du hast Raum Nr.
 $netChatWeInRoom2         betreten.
-$netChatWeInLobby          Du bist in die Lobby zurückgegangen.
+$netChatWeInLobby          Du bist in der Lobby.
 $netChatPlayerInRoom       hat Raum Nr.
 $netChatPlayerInRoom2     betreten.
 $netChatPlayerInLobby      hat die Lobby betreten.

@@ -271,9 +271,6 @@ enum Lang {
     exportMultiClock,
 
     // network chat messages
-    netChatWelcome1,
-    netChatWelcomeUnstable,
-    netChatWelcome2,
     netChatStartServer,
     netChatStartClient,
     netChatStartCancel,
@@ -289,7 +286,6 @@ enum Lang {
     netChatVersionServer,
     netChatServerUpdate,
     netChatPleaseDownload,
-    netChatWeConnected,
     netChatWeInRoom,
     netChatWeInRoom2,
     netChatWeInLobby,
