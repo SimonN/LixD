@@ -14,14 +14,14 @@ import level.level;
 import tile.tilelib;
 import tile.abstile;
 
-class ImageTiler : Tiler {
+class ImageTiler : FileTiler {
 public:
     this(Geom g) { super(g); }
 
-    override @property int coarseness() const { return buttonsPerPageX(); }
-    override @property int wheelSpeed() const { return buttonsPerPageX(); }
+    @property int coarseness() const { return buttonsPerPageX(); }
+    @property int wheelSpeed() const { return buttonsPerPageX(); }
 
-    override @property int pageLen() const
+    @property int pageLen() const
     {
         return buttonsPerPageX * buttonsPerPageY;
     }

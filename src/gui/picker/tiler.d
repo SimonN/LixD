@@ -7,12 +7,13 @@ import std.range;
 public import file.filename;
 import basics.help;
 import gui;
+import gui.picker.scrolist;
 import hardware.tharsis;
 
 enum CenterOnHighlitFile : bool { onlyIfOffscreen, always }
 enum KeepScrollingPosition : bool { no, yes }
 
-abstract class Tiler : Element {
+abstract class FileTiler : Element, IScrollable {
 private:
     Button[] _dirs;
     Button[] _files;
@@ -30,15 +31,6 @@ public:
     @property bool executeFile()   const { return _executeFile;   }
     @property int  executeDirID()  const { return _executeDirID;  }
     @property int  executeFileID() const { return _executeFileID; }
-
-    abstract @property int pageLen() const;
-
-    // Mouse wheel should scroll this many entries of size 1.
-    // Coarseness suggests to always scroll in multiples of this size,
-    // even if we leave empty space at the bottom of the list. Mouse wheel
-    // speed should be a multiple of coarseness.
-    abstract @property int wheelSpeed() const;
-    abstract @property int coarseness() const;
 
     final int totalLen() const {
         return _dirs.len * dirSizeMultiplier + _files.len;

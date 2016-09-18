@@ -29,7 +29,7 @@ public:
                                    // SomeTiler to BrowserHighlight.this(), but
                                    // can't call super!SomeTiler() explicitly.
                                    // IFTI works, so cfg is to pass the type.
-    )   if (is (SomeTiler : Tiler)
+    )   if (is (SomeTiler : FileTiler)
     ) {
         super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg), title);
         cfg.all   = new Geom(20, 30, xlg-40, ylg-50);

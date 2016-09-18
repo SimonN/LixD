@@ -13,15 +13,15 @@ import game.replay;
 
 static import basics.user;
 
-abstract class LevelOrReplayTiler : Tiler {
+abstract class LevelOrReplayTiler : FileTiler {
 public:
     enum buttonYlg = 20;
     this(Geom g) { super(g); }
 
-    override @property int wheelSpeed() const { return 5; }
-    override @property int coarseness() const { return 1; }
+    @property int wheelSpeed() const { return 5; }
+    @property int coarseness() const { return 1; }
 
-    final override @property int pageLen() const
+    final @property int pageLen() const
     {
         return this.ylg.to!int / buttonYlg;
     }

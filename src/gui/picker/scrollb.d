@@ -71,6 +71,8 @@ public:
     @property int coarseness(in int i)
     {
         assert (i > 0);
+        if (i == _coarseness)
+            return _coarseness;
         _coarseness = i;
         totalLen = _totalLen;
         pos = _pos;
