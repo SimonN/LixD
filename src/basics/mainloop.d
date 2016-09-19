@@ -104,10 +104,13 @@ public:
                 editor.emergencySave();
             throw firstThr;
         }
-        kill();
+        kill(true);
     }
 
-    private void kill()
+    // The network connection isn't global, but we use the same connection
+    // in several application parts. It must survive past a kill(), but
+    // it should be disconnected at program termination in kill(true).
+    private void kill(bool killPersistentThingsLikeNetworkToo = false)
     {
         if (game) {
             destroy(game);
@@ -129,6 +132,8 @@ public:
             browSin = null;
         }
         if (lobby) {
+            if (killPersistentThingsLikeNetworkToo)
+                lobby.disconnect();
             gui.rmElder(lobby);
             lobby = null;
         }

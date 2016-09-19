@@ -65,8 +65,6 @@ $winLobbyChat               Chat:
 $winLobbySelectLevel        Level aussuchen
 $winLobbyReady              Bereit zum Start
 $winLobbyRoomNumber         Raum Nr.
-$winLobbyRoomPlayer         Spieler
-$winLobbyRoomPlayers        Spieler
 $winLobbyRoomCreate         Neuen Raum eroeffnen
 $winLobbyRoomLeave          Raum verlassen
 

@@ -24,8 +24,14 @@ private:
     Texttype _chat;
 
     INetClient _netClient;
-    Element[] _showWhenDisconnected; // Some elements are in neither this...
-    Element[] _showWhenConnected;    // ...nor this array. They're always on.
+    // Rule: A GUI element is either in exactly one of these, or in none.
+    // _showWhenConnected is shown at the union of times when _showDuringLobby
+    // and _showDuringGameRoom. Due to the rule, it nonetheless shouldn't
+    // have anything that's in one of the other two.
+    Element[] _showWhenDisconnected;
+    Element[] _showWhenConnected;
+    Element[] _showDuringLobby;
+    Element[] _showDuringGameRoom;
 
 public:
     this()
@@ -37,9 +43,13 @@ public:
         _buttonExit.hotkey = basics.user.keyMenuExit;
         _buttonExit.onExecute = ()
         {
-            if (offline)
-                _gotoMainMenu = true;
-            disconnect();
+            if (connected && ! inLobby)
+                _netClient.gotoExistingRoom(Room(0));
+            else {
+                if (offline)
+                    _gotoMainMenu = true;
+                disconnect();
+            }
         };
         addChild(_buttonExit);
 
@@ -57,7 +67,7 @@ public:
         _colorSelector = new ColorSelector(new Geom(160, 40, 40, 20*8));
         _showWhenConnected ~= _colorSelector;
         _roomList = new RoomList(new Geom(20, 40, 300, 20*8, From.TOP_RIG));
-        _showWhenConnected ~= _roomList;
+        _showDuringLobby ~= _roomList;
         _chat = new Texttype(new Geom(60, 20, // 40 = label, 60 = 3x GUI space
             Geom.screenXlg - _buttonExit.xlg - 40 - 60, 20, From.BOT_LEF));
         _chat.onEnter = ()
@@ -76,21 +86,37 @@ public:
 
         _showWhenDisconnected.each!(e => addChild(e));
         _showWhenConnected.each!(e => addChild(e));
+        _showDuringLobby.each!(e => addChild(e));
+        _showDuringGameRoom.each!(e => addChild(e));
         showOrHideGuiBasedOnConnection();
     }
 
     bool gotoMainMenu() const { return _gotoMainMenu; }
 
+    void disconnect()
+    {
+        if (offline)
+            return;
+        if (_console)
+            _console.add(connected ? Lang.netChatYouLoggedOut.transl
+                                   : Lang.netChatStartCancel.transl);
+        _netClient.disconnect();
+        _netClient = null;
+    }
+
 protected:
     override void calcSelf()
     {
-        if (_netClient)
-            _netClient.calc();
+        if (! _netClient) {
+            showOrHideGuiBasedOnConnection();
+            return;
+        }
+        _netClient.calc();
         showOrHideGuiBasedOnConnection();
         scope (success)
             showOrHideGuiBasedOnConnection();
 
-        if (_colorSelector.execute && _netClient) {
+        if (_colorSelector.execute) {
             // The color selector doesn't return execute == true when you
             // click the button that's already on.
             if (_colorSelector.spectating)
@@ -98,20 +124,28 @@ protected:
             else
                 _netClient.ourStyle = _colorSelector.style;
         }
+        if (_roomList.executeExistingRoom)
+            _netClient.gotoExistingRoom(_roomList.executeExistingRoomID);
+        else if (_roomList.executeNewRoom)
+            _netClient.createRoom();
     }
 
 private:
     bool connected() const { return _netClient && _netClient.connected; }
     bool connecting() const { return _netClient && _netClient.connecting; }
     bool offline() const { return ! connected && ! connecting; }
+    bool inLobby() const { return connected && _netClient.ourProfile.room ==0;}
 
     void showOrHideGuiBasedOnConnection()
     {
         _showWhenDisconnected.each!(e => e.shown = offline);
-        _showWhenConnected.each!(e => e.shown = connected);
-        _buttonExit.text = connected ? Lang.winLobbyDisconnect.transl
-                        : connecting ? Lang.commonCancel.transl
-                                     : Lang.commonBack.transl;
+        _showWhenConnected   .each!(e => e.shown = connected);
+        _showDuringLobby     .each!(e => e.shown = connected && inLobby);
+        _showDuringGameRoom  .each!(e => e.shown = connected && ! inLobby);
+        _buttonExit.text = inLobby ? Lang.winLobbyDisconnect.transl
+                       : connected ? Lang.winLobbyRoomLeave.transl
+                      : connecting ? Lang.commonCancel.transl
+                                   : Lang.commonBack.transl;
     }
 
     void connect(in string hostname)
@@ -124,16 +158,6 @@ private:
         cfg.port = basics.globconf.serverPort;
         _netClient = new NetClient(cfg);
         setOurEventHandlers();
-    }
-
-    void disconnect()
-    {
-        if (offline)
-            return;
-        _console.add(connected ? Lang.netChatYouLoggedOut.transl
-                               : Lang.netChatStartCancel.transl);
-        _netClient.disconnect();
-        _netClient = null;
     }
 
     // Keep this the last private function in this class, it's so long
@@ -207,11 +231,16 @@ private:
                 ? "%s%d%s".format(Lang.netChatWeInRoom.transl, toRoom,
                                   Lang.netChatWeInRoom2.transl)
                 : Lang.netChatWeInLobby.transl);
-            _roomList.shown = toRoom == 0;
-            if (toRoom == 0)
-                // DTODONETWORK: do we recreateButtonsFor on this event?
-                // Or do we have a different event for entering lobby?
-                _roomList.recreateButtonsFor();
+            // We will later get a packet that tells us the rooms in the lobby.
+            // Until then, don't show anything in this list. If we're not
+            // in the lobby, the room list shouldn't even be shown anyway.
+            _roomList.clearButtons();
+        };
+
+        _netClient.onListOfExistingRooms = (const(Room[]) rooms,
+                                            const(Profile[]) profiles
+        ) {
+            _roomList.recreateButtonsFor(rooms, profiles);
         };
 
         _netClient.onLevelSelect = (string name, const(ubyte[]) data)

@@ -35,12 +35,10 @@ enum PacketStoC : ubyte {
     someoneTooOld = 104, // broadcast to all others when we send youTooOld
     someoneTooNew = 105,
 
-    // Tell a person in the lobby about a new room. When they log on, they
-    // get many such packets, one per existing non-lobby room. When a room
-    // is created, entered, left, or closed, one packet goes to each lobbyist.
-    // This packet tells about the room and the new number of people in it.
-    // A room with 0 people is considered nonexistant.
-    roomDescription = 110,
+    // Tell a person in the lobby about all existing rooms at once.
+    // When a new person joins the lobby, they get this.
+    // When a room is created or closed, everybody gets this.
+    listOfExistingRooms = 110,
 
     peerJoinsYourRoom = 111,
     peersAlreadyInYourNewRoom = 112,

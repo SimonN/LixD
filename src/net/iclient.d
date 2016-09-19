@@ -30,7 +30,6 @@ interface INetClient {
     // calling class wants to get profilesInOurRoom, too, to update the list
     // as a whole. The class should write one method that queries the profiles
     // from (this) and call that method in many of the callbacks here.
-
     @property void onConnect(void delegate());
     @property void onConnectionLost(void delegate());
     @property void onChatMessage(void delegate(string name, string chat));
@@ -39,6 +38,11 @@ interface INetClient {
     @property void onPeerLeavesRoomTo(void delegate(string name, Room toRoom));
     @property void onPeerChangesProfile(void delegate(const(Profile*)));
     @property void onWeChangeRoom(void delegate(Room toRoom));
+
+    // Structure of arrays: The n-th room ID from the first array belongs
+    // to the n-th player from the second array.
+    @property void onListOfExistingRooms(void delegate(const(Room[]),
+                                                       const(Profile[])));
     @property void onLevelSelect(void delegate(string name, const(ubyte[]) data));
     @property void onGameStart(void delegate());
 }

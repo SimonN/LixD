@@ -93,8 +93,6 @@ enum Lang {
     winLobbySelectLevel,
     winLobbyReady,
     winLobbyRoomNumber,
-    winLobbyRoomPlayer,
-    winLobbyRoomPlayers,
     winLobbyRoomCreate,
     winLobbyRoomLeave,
 

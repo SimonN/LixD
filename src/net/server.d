@@ -135,6 +135,41 @@ private:
                 profile.setNotReady();
     }
 
+    RoomListPacket roomsForLobbyists()
+    {
+        Profile[Room] temp;
+        foreach (profile; _profiles)
+            temp[profile.room] = profile;
+        temp.remove(Room(0));
+        RoomListPacket roomList;
+        roomList.header.packetID = PacketStoC.listOfExistingRooms;
+        // We don't need to set a player number on this packet of general info
+        roomList.indices = temp.keys;
+        roomList.profiles = temp.values;
+        return roomList;
+    }
+
+    void informLobbyistAboutRooms(in PlNr who)
+    {
+        assert (_host);
+        assert (_host.peers);
+        assert (who in _profiles);
+        assert (_profiles[who].room == 0);
+        enet_peer_send(_host.peers + who, 0, roomsForLobbyists.createPacket);
+    }
+
+    void informAllLobbyistsAboutRooms()
+    {
+        // Hack: broadcastToRoom examines the packet's header.plNr to find
+        // out what room to broadcast to. We have to find a suitable player >_>
+        auto lobbyist = _profiles.byKeyValue.find!(kv => kv.value.room == 0);
+        if (lobbyist.empty)
+            return;
+        auto packet = roomsForLobbyists;
+        packet.header.plNr = lobbyist.front.key;
+        broadcastToRoom(packet);
+    }
+
     void putPlayerInRoom(in PlNr mover, in Room intoRoom,
                          const(Profile)* insertThisIf404 = null
     ) {
@@ -168,11 +203,13 @@ private:
                 .filter!(kv => kv.value.room == intoRoom) // including mover
                 .each!((kv) {
                     // Fill the structure of arrays. I didn't make a new struct
-                    informMover.plNrs ~= kv.key;
+                    informMover.indices ~= kv.key;
                     informMover.profiles ~= kv.value;
                 });
             enet_peer_send(_host.peers + mover, 0, informMover.createPacket());
         }
+        if (intoRoom == 0)
+            informLobbyistAboutRooms(mover);
     }
 
     void receiveHello(ENetPeer* peer, ENetPacket* got)
@@ -229,10 +266,11 @@ private:
         ) {
             roomToCreate = Room((roomToCreate + 1) & 0xFF);
         }
-        putPlayerInRoom(plNr,
-            // If all rooms are full, put the player into the room they're in.
-            roomToCreate == netRoomsMax ? oldProfile.room : roomToCreate);
-            putPlayerInRoom(plNr, oldProfile.room);
+        // Fallback: If all rooms are full, put the player back where they are.
+        // We still call putPlayerInRoom to override any client's GUI optimism.
+        putPlayerInRoom(plNr, roomToCreate == netRoomsMax ? oldProfile.room
+                                                          : roomToCreate);
+        informAllLobbyistsAboutRooms();
     }
 
     void receiveProfileChange(ENetPeer* peer, ENetPacket* got)

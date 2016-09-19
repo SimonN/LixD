@@ -41,6 +41,7 @@ private:
     void delegate(string name, Room toRoom) _onPeerLeavesRoomTo;
     void delegate(const(Profile*)) _onPeerChangesProfile;
     void delegate(Room toRoom) _onWeChangeRoom;
+    void delegate(const(Room[]), const(Profile[])) _onListOfExistingRooms;
     void delegate(string name, const(ubyte[]) data) _onLevelSelect;
     void delegate() _onGameStart;
 
@@ -92,6 +93,7 @@ public:
     @property void onPeerLeavesRoomTo(typeof(_onPeerLeavesRoomTo) dg) { _onPeerLeavesRoomTo = dg; }
     @property void onPeerChangesProfile(typeof(_onPeerChangesProfile) dg) { _onPeerChangesProfile = dg; }
     @property void onWeChangeRoom(typeof(_onWeChangeRoom) dg) { _onWeChangeRoom = dg; }
+    @property void onListOfExistingRooms(typeof(_onListOfExistingRooms) dg) { _onListOfExistingRooms = dg; }
     @property void onLevelSelect(typeof(_onLevelSelect) dg) { _onLevelSelect = dg; }
     @property void onGameStart(typeof(_onGameStart) dg) { _onGameStart = dg; }
 
@@ -126,7 +128,7 @@ public:
 
     @property const(Profile) ourProfile() const
     {
-        assert (connected);
+        assert (connected, "call this function only when you're connected");
         return _profilesInOurRoom[_ourPlNr];
     }
 
@@ -299,11 +301,16 @@ private:
         else if (got.data[0] == PacketStoC.peersAlreadyInYourNewRoom) {
             auto list = ProfileListPacket(got);
             _profilesInOurRoom.clear();
-            foreach (i, plNr; list.plNrs)
+            foreach (i, const(PlNr) plNr; list.indices)
                 _profilesInOurRoom[plNr] = list.profiles[i];
             enforce(_ourPlNr in _profilesInOurRoom);
             _onWeChangeRoom && _onWeChangeRoom(
                 _profilesInOurRoom[_ourPlNr].room);
+        }
+        else if (got.data[0] == PacketStoC.listOfExistingRooms) {
+            auto list = RoomListPacket(got);
+            if (_onListOfExistingRooms)
+                _onListOfExistingRooms(list.indices, list.profiles);
         }
         else if (got.data[0] == PacketStoC.peerProfile) {
             const(Profile*) changed = receiveProfilePacket(got);

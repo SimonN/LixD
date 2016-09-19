@@ -227,35 +227,40 @@ struct ProfilePacket {
     }
 }
 
-struct ProfileListPacket {
+alias ProfileListPacket = ListPacket!PlNr;
+alias RoomListPacket = ListPacket!Room;
+
+struct ListPacket(Index)
+    if (is (Index == PlNr) || is (Index == Room))
+{
     PacketHeader header;
-    PlNr[] plNrs; // structure of arrays, plNrs[i] belongs to profiles[i]
+    Index[] indices; // structure of arrays, indices[i] belongs to profiles[i]
     Profile[] profiles;
 
     @property int len() const nothrow
     {
         int numProfiles = profiles.length & 0x7FFF;
-        return header.len + (PlNr.len + Profile.len) * numProfiles;
+        return header.len + (Index.len + Profile.len) * numProfiles;
     }
 
     private @property int mid() const nothrow
     {
-        return header.len + PlNr.len * (plNrs.length & 0x7FFF);
+        return header.len + Index.len * (indices.length & 0x7FFF);
     }
 
     ENetPacket* createPacket() const nothrow
     out (ret) {
-        assert (plNrs.length == 0 || ret.data[header.len] == plNrs[0]);
+        assert (indices.length == 0 || ret.data[header.len] == indices[0]);
     }
     body {
         auto ret = .createPacket(len);
         header.serializeTo(ret.data[0 .. header.len]);
 
-        foreach (i, plNr; plNrs) {
-            static assert (plNr.len == 1);
-            ret.data[header.len + i] = plNr;
+        foreach (i, Index; indices) {
+            static assert (Index.len == 1);
+            ret.data[header.len + i] = Index;
         }
-        assert (plNrs.length == 0 || ret.data[header.len] == plNrs[0]);
+        assert (indices.length == 0 || ret.data[header.len] == indices[0]);
         foreach (i, profile; profiles) {
             // profile.serializeTo expects the slice length at compile-time.
             // I don't know how to create a fixed-length D array from a pointer
@@ -269,17 +274,17 @@ struct ProfileListPacket {
     }
 
     this(const(ENetPacket*) p)
-    out { assert (plNrs.length == profiles.length); }
+    out { assert (indices.length == profiles.length); }
     body {
-        enforce((p.dataLength - header.len) % (Profile.len + PlNr.len) == 0);
+        enforce((p.dataLength - header.len) % (Profile.len + Index.len) == 0);
         header = PacketHeader(p.data[0 .. header.len]);
-
-        plNrs.length = (p.dataLength - header.len) / (Profile.len + PlNr.len);
-        foreach (i, ref plNr; plNrs) {
-            static assert (plNr.len == 1);
-            plNr = PlNr(p.data[header.len + i]);
+        indices.length = (p.dataLength - header.len)
+                        / (Profile.len + Index.len);
+        foreach (i, ref oneIndex; indices) {
+            static assert (oneIndex.len == 1);
+            oneIndex = Index(p.data[header.len + i]);
         }
-        profiles.length = plNrs.length;
+        profiles.length = indices.length;
         foreach (i, ref profile; profiles) {
             ubyte[Profile.len] temp = p.data[mid + Profile.len * i
                                           .. mid + Profile.len * (i+1)];
@@ -295,7 +300,7 @@ unittest {
         deinitializeEnet();
 
     ProfileListPacket list;
-    list.plNrs = [ PlNr(80), PlNr(81), PlNr(82) ];
+    list.indices = [ PlNr(80), PlNr(81), PlNr(82) ];
     list.profiles = [ Profile(), Profile(), Profile() ];
     list.profiles[1].name = "Hello";
 
@@ -305,7 +310,7 @@ unittest {
 
     auto anotherList = ProfileListPacket(packet);
     assert (anotherList.profiles.length == 3);
-    assert (anotherList.plNrs[1] == 81);
+    assert (anotherList.indices[1] == 81);
     assert (anotherList.profiles[1].name == "Hello");
 }
 
