@@ -21,7 +21,6 @@ import tile.group;
 import tile.terrain;
 
 private:
-    string[string] replace_strings;
     TerrainTile[string] terrain;
     GadgetTile [string] gadgets;
     TileGroup[TileGroupKey] groups;
@@ -81,15 +80,7 @@ get_tile(T : AbstractTile, alias container)(in string str)
         queue.remove(str);
         return get_tile!(T, container)(str);
     }
-
-    // Otherwise use deprecated text replacement.
-    // Two of them are to strip "bitmap/" or "images/" from the beginning.
-    // Another is to strip "./" from the beginning.
-    immutable string repl = replace_filestring(str);
-    if (repl != str) {
-        return get_tile!(T, container)(repl); // recursive, should be finite
-    }
-    else return null;
+    return null;
 }
 
 TileGroup get_group(in TileGroupKey key)
@@ -136,7 +127,7 @@ void loadGadgetFromDisk(in string strNoExt, in char pe, in Filename fn)
     auto tile = (strNoExt in gadgets);
     assert (tile && *tile);
     // Load overriding definitions from a possibly accompanying text file.
-    // That file must have the same name, only its extension must be replaced.
+    // That file must have the same name, minus its extension, plus ".txt".
     Filename defs = new VfsFilename(fn.rootlessNoExt
                                ~ glo.filenameExtTileDefinitions);
     // We test for existence here, because trying to load the file
@@ -161,82 +152,4 @@ void logBecauseInvalid(const(Cutbit) cb, in Filename fn)
     assert (! cb.valid);
     logf("Image has too large proportions: `%s'", fn.rootless);
     log ("    -> See bug report: https://github.com/SimonN/LixD/issues/4");
-}
-
-private string[string] replace_exact;
-private string[string] replace_substring;
-
-private string replace_filestring(in string str)
-{
-    auto exact_ptr = (str in replace_exact);
-    if (exact_ptr) return *exact_ptr;
-
-    // If we get to here, no match has been found in the exact replacements
-    foreach (repl_old, repl_new; replace_substring) {
-        // find the first occurence of the partial replace string
-        foreach (int i; 0 .. str.length.to!int - repl_old.length.to!int) {
-            if (str[i .. i + repl_old.length] == repl_old) {
-                // the returned string can be longer or shorter
-                return str[0 .. i] ~ repl_new ~ str[i + repl_old.length .. $];
-            }
-        }
-    }
-
-    // Nothing found in the substring replacements, return the original
-    return str;
-}
-
-
-
-static this()
-{
-    replace_exact = [
-        "Universal/water.W"  :   "matt/water.W",
-        "Universal/10tons.T" :   "matt/10tons.T",
-        "./bitmap/Rebuilds/06 - Oriental/hatch.H" : "matt/oriental/Hatch.H",
-        "./bitmap/Rebuilds/04 - Sandy Beach/hatch.H" : "matt/beach/Hatch.H",
-    ];
-
-    replace_substring = [
-        "Universal/" : "matt/steel/",
-        "Rebuilds/"  : "matt/",
-
-        "01 - Earth"       : "earth",
-        "02 - Gold Mine"   : "goldmine",
-        "03 - Carnival"    : "carnival",
-        "04 - Sandy Beach" : "beach",
-        "05 - Winter"      : "winter",
-        "06 - Oriental"    : "oriental",
-        "07 - Underworld"  : "underworld",
-        "08 - Bricks"      : "bricks",
-        "09 - Marble"      : "marble",
-
-        "arnival/Balloons" : "arnival/balloons",
-
-        "/ExplosiveCrate" : "/explosivecrate",
-        "/mine cart"      : "/minecart",
-        "/plank diag"     : "/plankdiag",
-        "/plankdiag 2"    : "/plankdiag2",
-        "/plank support"  : "/planksupport",
-        "/planksupport 2" : "/planksupport2",
-        "/planksupport 3" : "/planksupport3",
-        "/minecart.D"     : "/minecart",
-        "/shovel.D"       : "/shovel",
-        "/pickaxe.D"      : "/pickaxe",
-
-        "iental/asian "  : "iental/asian",
-        "iental/bonsai " : "iental/bonsai",
-        "iental/bamboo " : "iental/bamboo_",
-
-        "Daytime Sand"   : "daytime",
-        "Nighttime Sand" : "nighttime",
-        "Sand Decor"     : "decor",
-
-        // try these last, because they might appear deeper in the dir struct
-        // and we don't want to replace them there
-        "./bitmap/"  : "",
-        "./images/"  : "",
-        "bitmap/"    : "",
-        "images/"    : "",
-    ];
 }
