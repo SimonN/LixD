@@ -70,9 +70,11 @@ public:
         return currentDir;
     }
 
-    @property bool executeDir() const { return _list.tiler.executeDir; }
+    @property bool executeDir() const
+    {
+        return _list.tiler.executeDir || _bread.execute;
+    }
     @property bool executeFile() const { return _list.tiler.executeFile; }
-    @property int executeDirID() const { return _list.tiler.executeDirID; }
     @property int executeFileID() const { return _list.tiler.executeFileID; }
 
     void highlightNothing() { _list.tiler.highlightNothing(); }
