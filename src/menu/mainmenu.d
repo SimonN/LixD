@@ -1,6 +1,6 @@
 module menu.mainmenu;
 
-/* This is shown after the game has initialized everything.
+/* This is shown after the game has started in graphical mode, before input.
  * When the game is run for the first time, the small dialogues asking
  * for language and name are shown first instead, and only then this.
  */
@@ -14,7 +14,17 @@ import menu.menubg;
 static import basics.globals;
 
 class MainMenu : MenuWithBackground {
+private:
+    TextButton single;
+    TextButton network;
+    TextButton replays;
+    TextButton options;
+    TextButton _exit;
 
+    Label versioning;
+    Label website;
+
+public:
     @property bool gotoSingle()  { return single .execute; }
     @property bool gotoNetwork() { return network.execute; }
     @property bool gotoReplays() { return replays.execute; }
@@ -68,17 +78,4 @@ class MainMenu : MenuWithBackground {
         addChildren(single, network, replays, options, _exit,
             versioning, website);
     }
-    // end this()
-
-private:
-
-    TextButton single;
-    TextButton network;
-    TextButton replays;
-    TextButton options;
-    TextButton _exit;
-
-    Label versioning;
-    Label website;
 }
-// end class

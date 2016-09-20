@@ -1,13 +1,18 @@
 module menu.lobby;
 
 import std.algorithm;
+import std.file;
 import std.format;
+import std.range;
 
 import basics.globconf;
 import basics.user;
 import file.language;
 import gui;
+import hardware.mouse;
 import menu.lobbyui;
+import menu.browser.frommain;
+import menu.browser.network;
 import net.client;
 import net.iclient;
 import net.structs; // Profile
@@ -17,10 +22,14 @@ private:
     bool _gotoMainMenu;
     TextButton _buttonExit;
     TextButton _buttonCentral;
+
     Console _console;
     PeerList _peerList;
     ColorSelector _colorSelector;
     RoomList _roomList;
+    BrowserCalledFromMainMenu _browser;
+
+    TextButton _chooseLevel;
     Texttype _chat;
 
     INetClient _netClient;
@@ -66,8 +75,18 @@ public:
         _showWhenConnected ~= _peerList;
         _colorSelector = new ColorSelector(new Geom(160, 40, 40, 20*8));
         _showWhenConnected ~= _colorSelector;
-        _roomList = new RoomList(new Geom(20, 40, 300, 20*8, From.TOP_RIG));
+        _roomList = new RoomList(new Geom(20, 40, 300, 20*8, From.TOP_RIGHT));
         _showDuringLobby ~= _roomList;
+        _chooseLevel = new TextButton(new Geom(20, 60+20*8, 120, 20,
+            From.TOP_RIGHT), Lang.winLobbySelectLevel.transl);
+        _chooseLevel.onExecute = ()
+        {
+            assert (! _browser);
+            _browser = new BrowserNetwork();
+            addFocus(_browser);
+        };
+        _chooseLevel.hotkey = keyMenuEdit;
+        _showDuringGameRoom ~= _chooseLevel;
         _chat = new Texttype(new Geom(60, 20, // 40 = label, 60 = 3x GUI space
             Geom.screenXlg - _buttonExit.xlg - 40 - 60, 20, From.BOT_LEF));
         _chat.onEnter = ()
@@ -83,11 +102,9 @@ public:
         _showWhenConnected ~= _chat;
         _showWhenConnected ~= new Label(new Geom(20, 20, 40, 20, From.BOT_LEF),
                                         Lang.winLobbyChat.transl);
-
-        _showWhenDisconnected.each!(e => addChild(e));
-        _showWhenConnected.each!(e => addChild(e));
-        _showDuringLobby.each!(e => addChild(e));
-        _showDuringGameRoom.each!(e => addChild(e));
+        foreach (e; chain(_showWhenDisconnected, _showWhenConnected,
+                          _showDuringLobby, _showDuringGameRoom))
+            addChild(e);
         showOrHideGuiBasedOnConnection();
     }
 
@@ -105,14 +122,28 @@ public:
     }
 
 protected:
+    // Do this even with a level browser in focus
+    override void workSelf()
+    {
+        if (_browser && (_browser.gotoGame || _browser.gotoMainMenu)) {
+            assert (_netClient);
+            if (_browser.gotoGame)
+                _netClient.selectLevel(_browser.fileRecent.readIntoVoidArray);
+            rmFocus(_browser);
+            destroy(_browser);
+            _browser = null;
+        }
+        if (_netClient)
+            _netClient.calc();
+    }
+
+    // Do this only when there is no level browser
     override void calcSelf()
     {
-        if (! _netClient) {
-            showOrHideGuiBasedOnConnection();
-            return;
-        }
-        _netClient.calc();
         showOrHideGuiBasedOnConnection();
+        handleRightClick();
+        if (! _netClient)
+            return;
         scope (success)
             showOrHideGuiBasedOnConnection();
 
@@ -158,6 +189,18 @@ private:
         cfg.port = basics.globconf.serverPort;
         _netClient = new NetClient(cfg);
         setOurEventHandlers();
+    }
+
+    // This is dubious. Nepster suggests that we shouldn't treat RMB special
+    // ever, because it should be remappable.
+    void handleRightClick()
+    {
+        if (! hardware.mouse.mouseClickRight)
+            return;
+        if (offline)
+            _gotoMainMenu = true;
+        else if (connecting)
+            disconnect();
     }
 
     // Keep this the last private function in this class, it's so long

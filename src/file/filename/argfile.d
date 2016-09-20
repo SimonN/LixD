@@ -121,6 +121,9 @@ public:
     const(char*) stringzForReading() nothrow immutable { return _s.toStringz; }
     const(char*) stringzForWriting() nothrow immutable { return _s.toStringz; }
 
+    // may throw on error
+    const(void)[] readIntoVoidArray() immutable { return std.file.read(_s); }
+
     // dirExists(a/b/) checks if b exists.
     // dirExists(a/b/c) checks if b exists, no matter whether file c is inside.
     bool fileExists() nothrow immutable

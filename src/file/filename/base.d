@@ -21,6 +21,7 @@ immutable:
     // These can throw on file 404
     std.stdio.File openForReading(in string mode = "r");
     std.stdio.File openForWriting(in string mode = "w");
+    const(void)[] readIntoVoidArray();
 
     // Silently return null if file not found
     const(char*) stringzForReading() nothrow;

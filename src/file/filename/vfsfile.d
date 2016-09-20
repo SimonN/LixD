@@ -71,6 +71,12 @@ public:
         return resolveForReading(this, LookFor.filesAndDirs).toStringz;
     }
 
+    // throws on error
+    const(void)[] readIntoVoidArray() immutable
+    {
+        return std.file.read(resolveForReading(this, LookFor.files));
+    }
+
     const(char*) stringzForWriting() immutable
     {
         assert (rootForWriting != "", "call VFS initialize before this");
