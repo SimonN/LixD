@@ -174,8 +174,8 @@ private:
         else if (nuke)
             _warningSignFlicker = flickerMax;
         else if (_warningSignFlicker < flickerMax) {
-            if (_warningSignFlicker % flickerFreq == 0)
-                hardware.sound.playLoud(Sound.CLOCK);
+            if (_warningSignFlicker == 0)
+                hardware.sound.playLoud(Sound.CANT_WIN);
             ++_warningSignFlicker;
         }
         _bSaved.xf = (_warningSignFlicker + flickerFreq - 1) % flickerFreq

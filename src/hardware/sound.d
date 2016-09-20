@@ -27,6 +27,7 @@ enum Sound {
     WATER,       // Glug-glug: lix falls into water
     GOAL,        // Any lix enters the player's own goal
     GOAL_BAD,    // Own lix enters an opponent's goal
+    CANT_WIN,    // Single player: Lost too many lix, we cannot win the level
     YIPPIE,      // Single player: Enough lixes saved
     NUKE,        // Nuke triggered
     OVERTIME,    // Beginning of overtime. DING!
@@ -82,6 +83,7 @@ void initialize()
     samples[Sound.WATER]       = loadLazily("water.ogg");
     samples[Sound.GOAL]        = loadLazily("goal.ogg");
     samples[Sound.GOAL_BAD]    = loadLazily("goal_bad.ogg");
+    samples[Sound.CANT_WIN]    = loadLazily("cant_win.ogg");
     samples[Sound.YIPPIE]      = loadLazily("yippie.ogg");
     samples[Sound.NUKE]        = loadLazily("nuke.ogg");
     samples[Sound.OVERTIME]    = loadLazily("overtime.ogg");
