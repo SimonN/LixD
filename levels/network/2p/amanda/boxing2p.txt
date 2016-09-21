@@ -1,68 +1,18 @@
-$BUILT 2014-07-08 22:15:27
+$BUILT 2016-09-11 19:18:16
 $AUTHOR Amanda
-$GERMAN 
 $ENGLISH Pro Boxing (2p)
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 60
 #INITIAL 11
 #REQUIRED 5
 #SPAWN_INTERVAL 96
-#SPAWN_INTERVAL_FAST 4
 
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 #BATTER 12
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-
-:guideline/platform.D: 213 261
-:guideline/platform.D: 287 261
-:guideline/platform.D: 349 261
-:guideline/maxfall.D: 215 256
-:guideline/platform.D: 217 266
-:guideline/platform.D: 291 266
-:guideline/platform.D: 353 266
-:guideline/maxfall.D: 213 256
-:guideline/maxfall.D: 211 256
-:guideline/maxfall.D: 423 256
-:guideline/maxfall.D: 425 256
-:guideline/maxfall.D: 427 256
-:guideline/cube.D: 176 176
-:guideline/cube.D: 176 192
-:guideline/cube.D: 192 192
-:guideline/cube.D: 192 176
-:guideline/cube.D: 384 176
-:guideline/cube.D: 384 192
-:guideline/cube.D: 368 192
-:guideline/cube.D: 368 176
-:guideline/cube.D: 240 176
-:guideline/cube.D: 240 192
-:guideline/cube.D: 256 176
-:guideline/cube.D: 256 192
-:guideline/cube.D: 304 176
-:guideline/cube.D: 304 192
-:guideline/cube.D: 320 176
-:guideline/cube.D: 320 192
-:simon/rabbit.D: 57 248
-:guideline/cube.D: 432 176
-:guideline/cube.D: 448 192
-:guideline/cube.D: 432 192
-:guideline/cube.D: 448 176
+#EXPLODER2 0
 
 :geoo/abstract/hatch.H: 240 176
 :geoo/abstract/hatch.H: 368 176 r
@@ -124,8 +74,6 @@ $ENGLISH Pro Boxing (2p)
 :amanda/occult/occult_cube: 400 176
 :geoo/shadow/pillar_hztl_32: 368 176 d
 :geoo/shadow/pillar_hztl_32: 240 176 d
-:geoo/shadow/pillar_hztl_32: 304 176 d
-:geoo/shadow/pillar_hztl_32: 432 176 d
 :geoo/shadow/window_broken: 176 136
 :geoo/shadow/window_broken: 144 120
 :geoo/shadow/pillar_verti_32: 312 120
@@ -481,6 +429,17 @@ $ENGLISH Pro Boxing (2p)
 :proxima/tile/cyan1a: 32 360
 :proxima/tile/cyan1a: 96 360
 :proxima/tile/cyan1a: 160 360
-:geoo/shadow/pillar_hztl_32: 176 176 d
 :guideline/bomb: -41 207 rrr
 :guideline/bomb: 637 207 r
+:amanda/occult/occult_cube: 176 192
+:amanda/occult/occult_cube: 192 192
+:amanda/occult/occult_cube: 192 176
+:amanda/occult/occult_cube: 176 176
+:amanda/occult/occult_cube: 304 192
+:amanda/occult/occult_cube: 320 192
+:amanda/occult/occult_cube: 320 176
+:amanda/occult/occult_cube: 304 176
+:amanda/occult/occult_cube: 432 192
+:amanda/occult/occult_cube: 448 192
+:amanda/occult/occult_cube: 448 176
+:amanda/occult/occult_cube: 432 176

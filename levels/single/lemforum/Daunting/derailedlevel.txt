@@ -25,7 +25,6 @@ $ENGLISH Derailed Level
 
 :matt/goldmine/Goal.G: 554 224
 
-:matt/goldmine/GoalTop.D: 554 176
 
 :geoo/construction/steam_left.T: 409 372
 

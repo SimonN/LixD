@@ -30,7 +30,6 @@ $ENGLISH                                             Close to the Edge
 #NOTHING                                                             0
 #NOTHING                                                             0
 
-:matt/goldmine/GoalTop.D:                  1116       240
 
 :matt/goldmine/Hatch.H:                      32       320
 

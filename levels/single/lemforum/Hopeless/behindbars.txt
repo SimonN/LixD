@@ -23,8 +23,8 @@ $ENGLISH Behind Bars
 
 :matt/marble/Goal.G: 928 128
 
-:matt/goldmine/shovel.D: 496 312
-:matt/goldmine/pickaxe.D: 464 312
+:matt/goldmine/shovel: 496 312
+:matt/goldmine/pickaxe: 464 312
 
 :simon/water.W: 48 368
 :simon/water.W: 96 368

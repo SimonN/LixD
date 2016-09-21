@@ -42,7 +42,6 @@ public:
     enum Type {
         HATCH,
         GOAL,
-        DECO,    // subtype 1 = flying flag, not wanted in networked games
         TRAP,
         WATER,   // subtype 1 = fire
         FLING,	 // subtype & 1 = always same xdir, subtype & 2 = non-constant
@@ -83,7 +82,7 @@ public:
     static typeof(this) takeOverCutbit(
         string aName,
         Cutbit aCb,
-        Type   aType = Type.DECO,
+        Type   aType,
         int    aSubtype = 0
     ) {
         if (! aCb || ! aCb.valid)

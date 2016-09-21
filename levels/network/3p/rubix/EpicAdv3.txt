@@ -32,12 +32,9 @@ $ENGLISH Fast money miner (3p)
 #NOTHING 0
 #NOTHING 0
 
-:matt/goldmine/GoalTop.D: 272 694
-:matt/goldmine/minecart.D: 504 690
-:matt/goldmine/GoalTop.D: 938 696
-:matt/goldmine/minecart.D: 1168 690
-:matt/goldmine/GoalTop.D: 1614 696
-:matt/goldmine/minecart.D: 1842 690
+:matt/goldmine/minecart: 504 690
+:matt/goldmine/minecart: 1168 690
+:matt/goldmine/minecart: 1842 690
 
 :matt/goldmine/Hatch.H: 1274 26
 :matt/goldmine/Hatch.H: 1944 20

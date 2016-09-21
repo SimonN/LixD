@@ -32,10 +32,8 @@ $ENGLISH Carnage(2p)
 #CUBER 20
 #NOTHING 0
 
-:matt/goldmine/GoalTop.D: 0 400
-:matt/goldmine/GoalTop.D: 960 400
-:matt/goldmine/pickaxe.D: 330 330
-:matt/goldmine/shovel.D: 680 336
+:matt/goldmine/pickaxe: 330 330
+:matt/goldmine/shovel: 680 336
 
 :matt/goldmine/Hatch.H: -16 64
 :matt/goldmine/Hatch.H: 976 64 r

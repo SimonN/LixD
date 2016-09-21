@@ -32,7 +32,7 @@ $ENGLISH Steel Cage
 #NOTHING 0
 #NOTHING 0
 
-:matt/beach/decor/moon.D: 536 24
+:matt/beach/decor/moon: 536 24
 
 :matt/earth/Hatch.H: 352 296 r
 :matt/earth/Hatch.H: 208 296

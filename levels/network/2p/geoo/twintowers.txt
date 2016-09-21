@@ -31,8 +31,6 @@ $ENGLISH                                                   Twin Towers
 #MINER                                                              60
 #DIGGER                                                             40
 
-:matt/goldmine/GoalTop.D:                   144       608
-:matt/goldmine/GoalTop.D:                   432       608
 
 :geoo/construction/Hatch.H:                       144        16
 :geoo/construction/Hatch.H:                       464        16     r

@@ -38,7 +38,6 @@ class GameState {
 
     Hatch[] hatches;
     Goal[] goals;
-    Gadget[] decos;
     Water[] waters;
     TrapTrig[] traps;
     Flinger[] flingers;
@@ -62,7 +61,7 @@ class GameState {
 
     void foreachGadget(void delegate(Gadget) func)
     {
-        chain(hatches, goals, decos, waters, traps, flingers)
+        chain(hatches, goals, waters, traps, flingers)
             .each!func;
     }
     // It's sad that I need the duplication of this function, but inout
@@ -71,7 +70,6 @@ class GameState {
     {
         foreach (g; hatches) func(g);
         foreach (g; goals) func(g);
-        foreach (g; decos) func(g);
         foreach (g; waters) func(g);
         foreach (g; traps) func(g);
         foreach (g; flingers) func(g);
@@ -99,7 +97,6 @@ class GameState {
         tribes   = rhs.tribes  .clone;
         hatches  = rhs.hatches .clone;
         goals    = rhs.goals   .clone;
-        decos    = rhs.decos   .clone;
         waters   = rhs.waters  .clone;
         traps    = rhs.traps   .clone;
         flingers = rhs.flingers.clone;

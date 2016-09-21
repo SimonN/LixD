@@ -1,188 +1,20 @@
-$BUILT 2014-07-08 17:53:45
+$BUILT 2016-09-11 19:17:57
 $AUTHOR Amanda
-$GERMAN 
 $ENGLISH Pro Boxing (4p)
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1280
 #SIZE_Y 400
 #TORUS_X 1
 #TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 60
 #INITIAL 11
 #REQUIRED 6
 #SPAWN_INTERVAL 96
-#SPAWN_INTERVAL_FAST 4
 
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 #BATTER 12
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-
-:guideline/platform.D: 213 261
-:guideline/platform.D: 287 261
-:guideline/platform.D: 349 261
-:guideline/maxfall.D: 215 256
-:guideline/platform.D: 217 266
-:guideline/platform.D: 291 266
-:guideline/platform.D: 353 266
-:guideline/maxfall.D: 213 256
-:guideline/maxfall.D: 211 256
-:guideline/maxfall.D: 423 256
-:guideline/maxfall.D: 425 256
-:guideline/maxfall.D: 427 256
-:guideline/cube.D: 176 176
-:guideline/cube.D: 176 192
-:guideline/cube.D: 192 192
-:guideline/cube.D: 192 176
-:guideline/cube.D: 384 176
-:guideline/cube.D: 384 192
-:guideline/cube.D: 368 192
-:guideline/cube.D: 368 176
-:guideline/cube.D: 240 176
-:guideline/cube.D: 240 192
-:guideline/cube.D: 256 176
-:guideline/cube.D: 256 192
-:guideline/cube.D: 304 176
-:guideline/cube.D: 304 192
-:guideline/cube.D: 320 176
-:guideline/cube.D: 320 192
-:simon/rabbit.D: 57 248
-:guideline/cube.D: 432 176
-:guideline/cube.D: 448 192
-:guideline/cube.D: 432 192
-:guideline/cube.D: 448 176
-:guideline/platform.D: 853 261
-:guideline/platform.D: 927 261
-:guideline/platform.D: 989 261
-:guideline/maxfall.D: 855 256
-:guideline/platform.D: 857 266
-:guideline/platform.D: 931 266
-:guideline/platform.D: 993 266
-:guideline/maxfall.D: 853 256
-:guideline/maxfall.D: 851 256
-:guideline/maxfall.D: 1063 256
-:guideline/maxfall.D: 1065 256
-:guideline/maxfall.D: 1067 256
-:guideline/cube.D: 816 176
-:guideline/cube.D: 816 192
-:guideline/cube.D: 832 192
-:guideline/cube.D: 832 176
-:guideline/cube.D: 1024 176
-:guideline/cube.D: 1024 192
-:guideline/cube.D: 1008 192
-:guideline/cube.D: 1008 176
-:guideline/cube.D: 880 176
-:guideline/cube.D: 880 192
-:guideline/cube.D: 896 176
-:guideline/cube.D: 896 192
-:guideline/cube.D: 944 176
-:guideline/cube.D: 944 192
-:guideline/cube.D: 960 176
-:guideline/cube.D: 960 192
-:guideline/cube.D: 1072 176
-:guideline/cube.D: 1088 192
-:guideline/cube.D: 1072 192
-:guideline/cube.D: 1088 176
-:guideline/maxfall.D: 872 24
-:guideline/maxfall.D: 874 24
-:guideline/maxfall.D: 876 24
-:guideline/maxfall.D: 878 24
-:guideline/maxfall.D: 880 24
-:guideline/maxfall.D: 882 24
-:guideline/maxfall.D: 884 24
-:guideline/maxfall.D: 886 24
-:guideline/maxfall.D: 888 24
-:guideline/maxfall.D: 890 24
-:guideline/maxfall.D: 892 24
-:guideline/maxfall.D: 894 24
-:guideline/maxfall.D: 896 24
-:guideline/maxfall.D: 898 24
-:guideline/maxfall.D: 900 24
-:guideline/maxfall.D: 902 24
-:guideline/maxfall.D: 904 24
-:guideline/maxfall.D: 906 24
-:guideline/maxfall.D: 908 24
-:guideline/maxfall.D: 910 24
-:guideline/maxfall.D: 912 24
-:guideline/maxfall.D: 914 24
-:guideline/maxfall.D: 916 24
-:guideline/maxfall.D: 918 24
-:guideline/maxfall.D: 920 24
-:guideline/maxfall.D: 922 24
-:guideline/maxfall.D: 924 24
-:guideline/maxfall.D: 926 24
-:guideline/maxfall.D: 928 24
-:guideline/maxfall.D: 930 24
-:guideline/maxfall.D: 932 24
-:guideline/maxfall.D: 934 24
-:guideline/maxfall.D: 936 24
-:guideline/maxfall.D: 938 24
-:guideline/maxfall.D: 940 24
-:guideline/maxfall.D: 942 24
-:guideline/maxfall.D: 944 24
-:guideline/maxfall.D: 946 24
-:guideline/maxfall.D: 948 24
-:guideline/maxfall.D: 950 24
-:guideline/maxfall.D: 952 24
-:guideline/maxfall.D: 954 24
-:guideline/maxfall.D: 956 24
-:guideline/maxfall.D: 958 24
-:guideline/maxfall.D: 960 24
-:guideline/maxfall.D: 962 24
-:guideline/maxfall.D: 964 24
-:guideline/maxfall.D: 966 24
-:guideline/maxfall.D: 968 24
-:guideline/maxfall.D: 970 24
-:guideline/maxfall.D: 972 24
-:guideline/maxfall.D: 974 24
-:guideline/maxfall.D: 976 24
-:guideline/maxfall.D: 978 24
-:guideline/maxfall.D: 980 24
-:guideline/maxfall.D: 982 24
-:guideline/maxfall.D: 984 24
-:guideline/maxfall.D: 986 24
-:guideline/maxfall.D: 988 24
-:guideline/maxfall.D: 990 24
-:guideline/maxfall.D: 992 24
-:guideline/maxfall.D: 994 24
-:guideline/maxfall.D: 996 24
-:guideline/maxfall.D: 998 24
-:guideline/maxfall.D: 1000 24
-:guideline/maxfall.D: 1002 24
-:guideline/maxfall.D: 1004 24
-:guideline/maxfall.D: 1006 24
-:guideline/maxfall.D: 1008 24
-:guideline/maxfall.D: 1010 24
-:guideline/maxfall.D: 1012 24
-:guideline/maxfall.D: 1014 24
-:guideline/maxfall.D: 1016 24
-:guideline/maxfall.D: 1018 24
-:guideline/maxfall.D: 1020 24
-:guideline/maxfall.D: 1022 24
-:guideline/maxfall.D: 1024 24
-:guideline/maxfall.D: 1026 24
-:guideline/maxfall.D: 1028 24
-:guideline/maxfall.D: 1030 24
-:guideline/maxfall.D: 1032 24
-:guideline/maxfall.D: 1034 24
-:guideline/maxfall.D: 1036 24
-:guideline/maxfall.D: 1038 24
-:guideline/maxfall.D: 1040 24
-:guideline/maxfall.D: 1042 24
-:guideline/maxfall.D: 1044 24
-:guideline/maxfall.D: 1046 24
+#EXPLODER2 0
 
 :geoo/abstract/hatch.H: 240 176
 :geoo/abstract/hatch.H: 368 176 r
@@ -196,6 +28,246 @@ $ENGLISH Pro Boxing (4p)
 
 :amanda/forest/frog_happy.T: 568 282
 
+:amanda/occult/occult_wax_details_sunken_lix_b: 688 244
+:matt/carnival/04: 872 24
+:matt/carnival/04: 872 56
+:matt/carnival/04: 896 24
+:matt/carnival/04: 896 56
+:matt/carnival/04: 920 24
+:matt/carnival/04: 920 56
+:matt/carnival/04: 944 24
+:matt/carnival/04: 944 56
+:matt/carnival/04: 968 24
+:matt/carnival/04: 968 56
+:matt/carnival/04: 992 24
+:matt/carnival/04: 992 56
+:matt/carnival/04: 1016 56
+:matt/carnival/04: 1016 24
+$BEGIN_TILE_GROUP 0
+:geoo/abstract/pipes/juncx5: 0 16
+:geoo/abstract/pipes/juncx5: 8 16
+:geoo/abstract/pipes/juncx5: 16 16
+:geoo/abstract/pipes/juncx5: 0 24
+:geoo/abstract/pipes/juncx5: 8 24
+:geoo/abstract/pipes/juncx5: 16 24
+:geoo/abstract/pipes/juncx5: 0 32
+:geoo/abstract/pipes/juncx5: 8 32
+:geoo/abstract/pipes/juncx5: 16 32
+:geoo/abstract/pipes/juncx5: 24 16
+:geoo/abstract/pipes/juncx5: 24 40 rr
+:geoo/construction/rod_steel/straight_diagd32.S: 0 4
+:geoo/abstract/pipes/juncx5: 32 24 rr
+:geoo/abstract/pipes/juncx5: 40 32 rr
+:geoo/construction/rod_steel/straight_diagd32.S: 7 -1
+:geoo/shadow/pillar_verti_32: 0 0 rrrd
+:geoo/abstract/pipes/juncx5: 32 16
+:geoo/abstract/pipes/juncx5: 40 16
+:geoo/abstract/pipes/juncx5: 48 16
+:geoo/abstract/pipes/juncx5: 56 16
+:geoo/abstract/pipes/juncx5: 64 16
+:geoo/abstract/pipes/juncx5: 72 16
+:geoo/abstract/pipes/juncx5: 96 16
+:geoo/abstract/pipes/juncx5: 104 16
+:geoo/abstract/pipes/juncx5: 120 16
+:geoo/abstract/pipes/juncx5: 128 16
+:geoo/abstract/pipes/juncx5: 112 16
+:geoo/abstract/pipes/juncx5: 136 16
+:geoo/abstract/pipes/juncx5: 144 16
+:geoo/abstract/pipes/juncx5: 152 16
+:geoo/abstract/pipes/juncx5: 160 16
+:geoo/abstract/pipes/juncx5: 168 16
+:geoo/abstract/pipes/juncx5: 48 40 rr
+:geoo/construction/rod_steel/straight_diagd32.S: 39 31
+:geoo/construction/rod_steel/straight_diagd32.S: 32 36
+:geoo/construction/rod_steel/straight_diagd32.S: 35 34 d
+:geoo/construction/rod_steel/straight_diagd32.S: 5 4 d
+:geoo/abstract/pipes/juncx5: 96 32
+:geoo/construction/rod_steel/straight32.S: 92 24 r
+:geoo/abstract/pipes/juncx5: 128 32
+:geoo/abstract/pipes/juncx5: 120 40
+:geoo/construction/rod_steel/straight_diagd32.S: 99 31 frr
+:geoo/abstract/pipes/juncx5: 112 32
+:geoo/abstract/pipes/juncx5: 120 32
+:geoo/abstract/pipes/juncx5: 104 32
+:geoo/construction/rod_steel/straight_diagd32.S: 106 36 frr
+:geoo/abstract/pipes/juncx5: 96 40
+:geoo/construction/rod_steel/straight_diagd32.S: 103 34 frrd
+:geoo/abstract/pipes/juncx5: 112 40
+:geoo/abstract/pipes/juncx5: 104 40
+:geoo/abstract/pipes/juncx5: 136 24
+:geoo/abstract/pipes/juncx5: 144 40
+:geoo/abstract/pipes/juncx5: 152 32
+:geoo/construction/rod_steel/straight_diagd32.S: 131 -1 frr
+:geoo/abstract/pipes/juncx5: 160 24
+:geoo/construction/rod_steel/straight_diagd32.S: 138 4 frr
+:geoo/construction/rod_steel/straight_diagd32.S: 133 4 frrd
+:geoo/shadow/pillar_verti_32: 144 0 rrrd
+:geoo/abstract/pipes/juncx5: 96 24
+:geoo/construction/rod_steel/straight32.S: 92 16 r
+:geoo/abstract/pipes/juncx5: 72 24 rr
+:geoo/abstract/pipes/juncx5: 72 32 rr
+:geoo/abstract/pipes/juncx5: 72 40 rr
+:geoo/construction/rod_steel/straight32.S: 76 16 rrr
+:geoo/construction/rod_steel/straight32.S: 76 32 rrr
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 82 40 rrrd
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 82 16 rrrd
+:geoo/abstract/pipes/juncx5: 160 104 rr
+:geoo/abstract/pipes/juncx5: 152 104 rr
+:geoo/abstract/pipes/juncx5: 160 96 rr
+:geoo/abstract/pipes/juncx5: 152 96 rr
+:geoo/abstract/pipes/juncx5: 160 88 rr
+:geoo/abstract/pipes/juncx5: 152 88 rr
+:geoo/abstract/pipes/juncx5: 144 104 rr
+:geoo/abstract/pipes/juncx5: 168 104 rr
+:geoo/abstract/pipes/juncx5: 168 96 rr
+:geoo/abstract/pipes/juncx5: 136 96 rr
+:geoo/abstract/pipes/juncx5: 144 80 rr
+:geoo/construction/rod_steel/straight_diagd32.S: 138 80 rr
+:geoo/abstract/pipes/juncx5: 128 88 rr
+:geoo/abstract/pipes/juncx5: 128 96 rr
+:geoo/construction/rod_steel/straight_diagd32.S: 131 85 rr
+:geoo/abstract/pipes/juncx5: 136 104 rr
+:geoo/abstract/pipes/juncx5: 128 104 rr
+:geoo/abstract/pipes/juncx5: 120 104 rr
+:geoo/abstract/pipes/juncx5: 112 104 rr
+:geoo/abstract/pipes/juncx5: 104 104 rr
+:geoo/abstract/pipes/juncx5: 96 104 rr
+:geoo/abstract/pipes/juncx5: 72 104 rr
+:geoo/abstract/pipes/juncx5: 64 104 rr
+:geoo/abstract/pipes/juncx5: 48 104 rr
+:geoo/abstract/pipes/juncx5: 40 104 rr
+:geoo/abstract/pipes/juncx5: 56 104 rr
+:geoo/abstract/pipes/juncx5: 32 104 rr
+:geoo/abstract/pipes/juncx5: 24 104 rr
+:geoo/abstract/pipes/juncx5: 16 104 rr
+:geoo/abstract/pipes/juncx5: 8 104 rr
+:geoo/abstract/pipes/juncx5: 0 104 rr
+:geoo/abstract/pipes/juncx5: 120 80 rr
+:geoo/abstract/pipes/juncx5: 136 72 rr
+:geoo/construction/rod_steel/straight_diagd32.S: 106 48 rr
+:geoo/abstract/pipes/juncx5: 152 80 rr
+:geoo/construction/rod_steel/straight_diagd32.S: 133 80 rrd
+:geoo/abstract/pipes/juncx5: 96 72 rr
+:geoo/abstract/pipes/juncx5: 112 80 rr
+:geoo/abstract/pipes/juncx5: 112 72 rr
+:geoo/construction/rod_steel/straight_diagd32.S: 99 53 rr
+:geoo/construction/rod_steel/straight_diagd32.S: 103 50 rrd
+:geoo/construction/rod_steel/straight32.S: 99 48
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 80 54 rrd
+:geoo/construction/rod_steel/straight32.S: 0 48
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 24 54 rrd
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 0 54 rrd
+:geoo/abstract/pipes/juncx5: 64 88 rr
+:geoo/abstract/pipes/juncx5: 48 88 rr
+:geoo/abstract/pipes/juncx5: 56 88 rr
+:geoo/abstract/pipes/juncx5: 72 88 rr
+:geoo/abstract/pipes/juncx5: 40 88 rr
+:geoo/abstract/pipes/juncx5: 64 80 rr
+:geoo/abstract/pipes/juncx5: 48 80 rr
+:geoo/abstract/pipes/juncx5: 56 80 rr
+:geoo/abstract/pipes/juncx5: 72 80 rr
+:geoo/abstract/pipes/juncx5: 32 72 rr
+:geoo/construction/rod_steel/straight_diagd32.S: 32 48 f
+:geoo/abstract/pipes/juncx5: 56 72 rr
+:geoo/abstract/pipes/juncx5: 64 72 rr
+:geoo/construction/rod_steel/straight_diagd32.S: 39 53 f
+:geoo/construction/rod_steel/straight_diagd32.S: 35 50 fd
+:geoo/construction/rod_steel/straight32.S: 32 48
+:geoo/abstract/pipes/juncx5: 40 96 rr
+:geoo/abstract/pipes/juncx5: 32 96 rr
+:geoo/abstract/pipes/juncx5: 8 96 rr
+:geoo/abstract/pipes/juncx5: 16 88 rr
+:geoo/abstract/pipes/juncx5: 24 80 rr
+:geoo/construction/rod_steel/straight_diagd32.S: 7 85 f
+:geoo/construction/rod_steel/straight_diagd32.S: 0 80 f
+:geoo/construction/rod_steel/straight_diagd32.S: 5 80 fd
+:geoo/abstract/pipes/juncx5: 72 72 rr
+:geoo/construction/rod_steel/straight32.S: 76 64 rrr
+:geoo/abstract/pipes/juncx5: 72 96 rr
+:geoo/construction/rod_steel/straight32.S: 76 80 rrr
+:geoo/abstract/pipes/juncx5: 96 96 rr
+:geoo/abstract/pipes/juncx5: 96 80 rr
+:geoo/construction/rod_steel/straight32.S: 92 80 r
+:geoo/abstract/pipes/juncx5: 96 88 rr
+:geoo/construction/rod_steel/straight32.S: 92 64 r
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 104 54 rrd
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 82 64 rd
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 82 88 rd
+:geoo/abstract/pipes/juncx5: 168 88 rr
+:geoo/abstract/pipes/juncx5: 104 96 rr
+:geoo/abstract/pipes/juncx5: 104 88 rr
+:geoo/abstract/pipes/juncx5: 112 96 rr
+:geoo/abstract/pipes/juncx5: 112 88 rr
+:geoo/abstract/pipes/juncx5: 120 96 rr
+:geoo/abstract/pipes/juncx5: 120 88 rr
+:geoo/abstract/pipes/juncx5: 104 80 rr
+:geoo/abstract/pipes/juncx5: 160 80 rr
+:geoo/abstract/pipes/juncx5: 168 80 rr
+:geoo/construction/rod_steel/straight32.S: 45 48
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 56 54 rrd
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 32 54 rrd
+:geoo/construction/rod_steel/straight32.S: 131 48
+:geoo/construction/rod_steel/straight32.S: 144 48
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 128 54 rrd
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 152 54 d
+:geoo/abstract/pipes/juncx5: 104 72 rr
+:geoo/construction/rod_steel/straight32.S: 99 68 rr
+:geoo/construction/rod_steel/straight32.S: 112 68 rr
+:geoo/abstract/pipes/juncx5: 144 72 rr
+:geoo/abstract/pipes/juncx5: 152 72 rr
+:geoo/abstract/pipes/juncx5: 160 72 rr
+:geoo/abstract/pipes/juncx5: 168 72 rr
+:geoo/construction/rod_steel/straight32.S: 144 68 rr
+:geoo/construction/rod_steel/straight32.S: 45 69 rr
+:geoo/abstract/pipes/juncx5: 8 72 rr
+:geoo/abstract/pipes/juncx5: 16 72 rr
+:geoo/abstract/pipes/juncx5: 24 72 rr
+:geoo/construction/rod_steel/straight32.S: 13 69 rr
+:geoo/abstract/pipes/juncx5: 0 72 rr
+:geoo/construction/rod_steel/straight32.S: 0 69 rr
+:geoo/abstract/pipes/juncx5: 40 24 rr
+:geoo/abstract/pipes/juncx5: 48 24 rr
+:geoo/abstract/pipes/juncx5: 56 24 rr
+:geoo/abstract/pipes/juncx5: 64 24 rr
+:geoo/abstract/pipes/juncx5: 48 32 rr
+:geoo/abstract/pipes/juncx5: 56 32 rr
+:geoo/abstract/pipes/juncx5: 64 32 rr
+:geoo/abstract/pipes/juncx5: 0 40 rr
+:geoo/abstract/pipes/juncx5: 8 40 rr
+:geoo/abstract/pipes/juncx5: 16 40 rr
+:geoo/abstract/pipes/juncx5: 56 40 rr
+:geoo/abstract/pipes/juncx5: 64 40 rr
+:geoo/abstract/pipes/juncx5: 104 24
+:geoo/abstract/pipes/juncx5: 112 24
+:geoo/abstract/pipes/juncx5: 120 24
+:geoo/abstract/pipes/juncx5: 128 24
+:geoo/abstract/pipes/juncx5: 168 24
+:geoo/abstract/pipes/juncx5: 168 40
+:geoo/abstract/pipes/juncx5: 168 32
+:geoo/abstract/pipes/juncx5: 152 40
+:geoo/abstract/pipes/juncx5: 160 40
+:geoo/abstract/pipes/juncx5: 160 32
+:geoo/abstract/pipes/juncx5: 64 96 rr
+:geoo/abstract/pipes/juncx5: 48 96 rr
+:geoo/abstract/pipes/juncx5: 56 96 rr
+:geoo/abstract/pipes/juncx5: 0 80 rr
+:geoo/abstract/pipes/juncx5: 0 88 rr
+:geoo/abstract/pipes/juncx5: 0 96 rr
+:geoo/abstract/pipes/juncx5: 8 80 rr
+:geoo/abstract/pipes/juncx5: 8 88 rr
+:geoo/abstract/pipes/juncx5: 16 80 rr
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 0 58 rrd
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 24 58 rrd
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 40 58 rrd
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 56 58 rrd
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 72 58 rrd
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 88 58 rrd
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 104 58 rrd
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 120 58 rrd
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 136 58 rrd
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 152 58 rrd
+$END_TILE_GROUP
+:Group-0: 872 24
 :geoo/steel/silhouette_32x32.S: 147 303
 :proxima/tile/cyan2: 192 304
 :proxima/tile/cyan2: 256 304
@@ -248,8 +320,6 @@ $ENGLISH Pro Boxing (4p)
 :amanda/occult/occult_cube: 400 176
 :geoo/shadow/pillar_hztl_32: 368 176 d
 :geoo/shadow/pillar_hztl_32: 240 176 d
-:geoo/shadow/pillar_hztl_32: 304 176 d
-:geoo/shadow/pillar_hztl_32: 432 176 d
 :geoo/shadow/window_broken: 176 136
 :geoo/shadow/window_broken: 144 120
 :geoo/shadow/pillar_verti_32: 312 120
@@ -582,6 +652,7 @@ $ENGLISH Pro Boxing (4p)
 :geoo/shadow/pillar_verti_32: 616 272
 :geoo/shadow/pillar_verti_32: 568 272 d
 :geoo/shadow/pillar_verti_32: 568 272
+:amanda/occult/occult_wax_details_sunken_lix: 52 252
 :matt/bricks/17: 64 264 frr
 :matt/bricks/17: 16 232 frr
 :geoo/shadow/pillar_verti_32: 64 280 frrd
@@ -601,7 +672,6 @@ $ENGLISH Pro Boxing (4p)
 :proxima/tile/cyan1a: 32 360
 :proxima/tile/cyan1a: 96 360
 :proxima/tile/cyan1a: 160 360
-:geoo/shadow/pillar_hztl_32: 176 176 d
 :geoo/steel/silhouette_32x32.S: 787 303
 :proxima/tile/cyan2: 832 304
 :proxima/tile/cyan2: 896 304
@@ -654,8 +724,6 @@ $ENGLISH Pro Boxing (4p)
 :amanda/occult/occult_cube: 1040 176
 :geoo/shadow/pillar_hztl_32: 1008 176 d
 :geoo/shadow/pillar_hztl_32: 880 176 d
-:geoo/shadow/pillar_hztl_32: 944 176 d
-:geoo/shadow/pillar_hztl_32: 1072 176 d
 :geoo/shadow/window_broken: 816 136
 :geoo/shadow/window_broken: 784 120
 :geoo/shadow/window: 944 136
@@ -721,7 +789,6 @@ $ENGLISH Pro Boxing (4p)
 :geoo/shadow/pillar_verti_32: 1208 272 d
 :geoo/shadow/pillar_verti_32: 1208 272
 :matt/bricks/17: 704 264 frr
-:amanda/occult/occult_wax_details_sunken_lix_b: 683 244
 :matt/bricks/17: 656 232 frr
 :geoo/construction/pillar_base: 608 176
 :geoo/shadow/pillar_verti_32: 704 280 frrd
@@ -743,7 +810,6 @@ $ENGLISH Pro Boxing (4p)
 :proxima/tile/cyan1a: 672 360
 :proxima/tile/cyan1a: 736 360
 :proxima/tile/cyan1a: 800 360
-:geoo/shadow/pillar_hztl_32: 816 176 d
 :geoo/construction/pillar_32: 624 144
 :geoo/construction/pillar_base: 608 224
 :geoo/construction/pillar_32: 624 112
@@ -751,235 +817,13 @@ $ENGLISH Pro Boxing (4p)
 :geoo/construction/pillar_32: 624 48
 :geoo/construction/pillar_32: 624 16
 :geoo/construction/pillar_32: 624 0
-:geoo/abstract/pipes/juncx5: 872 24
-:geoo/abstract/pipes/juncx5: 880 24
-:geoo/abstract/pipes/juncx5: 888 24
-:geoo/abstract/pipes/juncx5: 872 32
-:geoo/abstract/pipes/juncx5: 880 32
-:geoo/abstract/pipes/juncx5: 888 32
-:geoo/abstract/pipes/juncx5: 872 40
-:geoo/abstract/pipes/juncx5: 880 40
-:geoo/abstract/pipes/juncx5: 888 40
-:geoo/abstract/pipes/juncx5: 896 24
-:geoo/abstract/pipes/juncx5: 896 48 rr
-:geoo/construction/rod_steel/straight_diagd32.S: 872 12
 :geoo/shadow/pillar_verti_32: 856 -8
 :geoo/shadow/pillar_verti_32: 856 24
-:geoo/abstract/pipes/juncx5: 904 32 rr
-:geoo/abstract/pipes/juncx5: 912 40 rr
-:geoo/construction/rod_steel/straight_diagd32.S: 879 7
-:geoo/shadow/pillar_verti_32: 872 8 rrrd
-:geoo/abstract/pipes/juncx5: 904 24
-:geoo/abstract/pipes/juncx5: 912 24
-:geoo/abstract/pipes/juncx5: 920 24
-:geoo/abstract/pipes/juncx5: 928 24
-:geoo/abstract/pipes/juncx5: 936 24
-:geoo/abstract/pipes/juncx5: 944 24
-:geoo/abstract/pipes/juncx5: 968 24
-:geoo/abstract/pipes/juncx5: 976 24
-:geoo/abstract/pipes/juncx5: 992 24
-:geoo/abstract/pipes/juncx5: 1000 24
-:geoo/abstract/pipes/juncx5: 984 24
-:geoo/abstract/pipes/juncx5: 1008 24
-:geoo/abstract/pipes/juncx5: 1016 24
-:geoo/abstract/pipes/juncx5: 1024 24
-:geoo/abstract/pipes/juncx5: 1032 24
-:geoo/abstract/pipes/juncx5: 1040 24
-:geoo/abstract/pipes/juncx5: 920 48 rr
-:geoo/construction/rod_steel/straight_diagd32.S: 911 39
-:geoo/construction/rod_steel/straight_diagd32.S: 904 44
-:geoo/construction/rod_steel/straight_diagd32.S: 907 42 d
-:geoo/construction/rod_steel/straight_diagd32.S: 877 12 d
-:geoo/abstract/pipes/juncx5: 968 40
-:geoo/construction/rod_steel/straight32.S: 964 32 r
-:geoo/abstract/pipes/juncx5: 1000 40
-:geoo/abstract/pipes/juncx5: 992 48
-:geoo/construction/rod_steel/straight_diagd32.S: 971 39 frr
-:geoo/abstract/pipes/juncx5: 984 40
-:geoo/abstract/pipes/juncx5: 992 40
-:geoo/abstract/pipes/juncx5: 976 40
-:geoo/construction/rod_steel/straight_diagd32.S: 978 44 frr
-:geoo/abstract/pipes/juncx5: 968 48
-:geoo/construction/rod_steel/straight_diagd32.S: 975 42 frrd
-:geoo/abstract/pipes/juncx5: 984 48
-:geoo/abstract/pipes/juncx5: 976 48
-:geoo/abstract/pipes/juncx5: 1008 32
-:geoo/abstract/pipes/juncx5: 1016 48
-:geoo/abstract/pipes/juncx5: 1024 40
-:geoo/construction/rod_steel/straight_diagd32.S: 1003 7 frr
-:geoo/abstract/pipes/juncx5: 1032 32
-:geoo/construction/rod_steel/straight_diagd32.S: 1010 12 frr
-:geoo/construction/rod_steel/straight_diagd32.S: 1005 12 frrd
-:geoo/shadow/pillar_verti_32: 1016 8 rrrd
-:geoo/abstract/pipes/juncx5: 968 32
-:geoo/construction/rod_steel/straight32.S: 964 24 r
-:geoo/abstract/pipes/juncx5: 944 32 rr
-:geoo/abstract/pipes/juncx5: 944 40 rr
-:geoo/abstract/pipes/juncx5: 944 48 rr
-:geoo/construction/rod_steel/straight32.S: 948 24 rrr
-:geoo/construction/rod_steel/straight32.S: 948 40 rrr
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 954 48 rrrd
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 954 24 rrrd
-:geoo/abstract/pipes/juncx5: 1032 112 rr
-:geoo/abstract/pipes/juncx5: 1024 112 rr
-:geoo/abstract/pipes/juncx5: 1032 104 rr
-:geoo/abstract/pipes/juncx5: 1024 104 rr
-:geoo/abstract/pipes/juncx5: 1032 96 rr
-:geoo/abstract/pipes/juncx5: 1024 96 rr
-:geoo/abstract/pipes/juncx5: 1016 112 rr
-:geoo/abstract/pipes/juncx5: 1040 112 rr
-:geoo/abstract/pipes/juncx5: 1040 104 rr
-:geoo/abstract/pipes/juncx5: 1008 104 rr
-:geoo/abstract/pipes/juncx5: 1016 88 rr
-:geoo/construction/rod_steel/straight_diagd32.S: 1010 88 rr
 :geoo/shadow/window: 1008 136
-:geoo/abstract/pipes/juncx5: 1000 96 rr
-:geoo/abstract/pipes/juncx5: 1000 104 rr
-:geoo/construction/rod_steel/straight_diagd32.S: 1003 93 rr
-:geoo/abstract/pipes/juncx5: 1008 112 rr
-:geoo/abstract/pipes/juncx5: 1000 112 rr
-:geoo/abstract/pipes/juncx5: 992 112 rr
-:geoo/abstract/pipes/juncx5: 984 112 rr
-:geoo/abstract/pipes/juncx5: 976 112 rr
-:geoo/abstract/pipes/juncx5: 968 112 rr
-:geoo/abstract/pipes/juncx5: 944 112 rr
-:geoo/abstract/pipes/juncx5: 936 112 rr
-:geoo/abstract/pipes/juncx5: 920 112 rr
-:geoo/abstract/pipes/juncx5: 912 112 rr
-:geoo/abstract/pipes/juncx5: 928 112 rr
-:geoo/abstract/pipes/juncx5: 904 112 rr
-:geoo/abstract/pipes/juncx5: 896 112 rr
-:geoo/abstract/pipes/juncx5: 888 112 rr
-:geoo/abstract/pipes/juncx5: 880 112 rr
-:geoo/abstract/pipes/juncx5: 872 112 rr
-:geoo/abstract/pipes/juncx5: 992 88 rr
-:geoo/abstract/pipes/juncx5: 1008 80 rr
-:geoo/construction/rod_steel/straight_diagd32.S: 978 56 rr
-:geoo/abstract/pipes/juncx5: 1024 88 rr
-:geoo/construction/rod_steel/straight_diagd32.S: 1005 88 rrd
 :geoo/shadow/window: 1008 120
 :geoo/shadow/window: 1040 120
-:geoo/abstract/pipes/juncx5: 968 80 rr
-:geoo/abstract/pipes/juncx5: 984 88 rr
-:geoo/abstract/pipes/juncx5: 984 80 rr
-:geoo/construction/rod_steel/straight_diagd32.S: 971 61 rr
-:geoo/construction/rod_steel/straight_diagd32.S: 975 58 rrd
-:geoo/construction/rod_steel/straight32.S: 971 56
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 952 62 rrd
-:geoo/construction/rod_steel/straight32.S: 872 56
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 896 62 rrd
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 872 62 rrd
-:geoo/abstract/pipes/juncx5: 936 96 rr
-:geoo/abstract/pipes/juncx5: 920 96 rr
-:geoo/abstract/pipes/juncx5: 928 96 rr
-:geoo/abstract/pipes/juncx5: 944 96 rr
-:geoo/abstract/pipes/juncx5: 912 96 rr
-:geoo/abstract/pipes/juncx5: 936 88 rr
-:geoo/abstract/pipes/juncx5: 920 88 rr
-:geoo/abstract/pipes/juncx5: 928 88 rr
-:geoo/abstract/pipes/juncx5: 944 88 rr
-:geoo/abstract/pipes/juncx5: 904 80 rr
-:geoo/construction/rod_steel/straight_diagd32.S: 904 56 f
-:geoo/abstract/pipes/juncx5: 928 80 rr
-:geoo/abstract/pipes/juncx5: 936 80 rr
-:geoo/construction/rod_steel/straight_diagd32.S: 911 61 f
-:geoo/construction/rod_steel/straight_diagd32.S: 907 58 fd
-:geoo/construction/rod_steel/straight32.S: 904 56
-:geoo/abstract/pipes/juncx5: 912 104 rr
-:geoo/abstract/pipes/juncx5: 904 104 rr
-:geoo/abstract/pipes/juncx5: 880 104 rr
-:geoo/abstract/pipes/juncx5: 888 96 rr
-:geoo/abstract/pipes/juncx5: 896 88 rr
-:geoo/construction/rod_steel/straight_diagd32.S: 879 93 f
-:geoo/construction/rod_steel/straight_diagd32.S: 872 88 f
-:geoo/construction/rod_steel/straight_diagd32.S: 877 88 fd
 :geoo/shadow/window: 880 120
 :geoo/shadow/window: 848 120
-:geoo/abstract/pipes/juncx5: 944 80 rr
-:geoo/construction/rod_steel/straight32.S: 948 72 rrr
-:geoo/abstract/pipes/juncx5: 944 104 rr
-:geoo/construction/rod_steel/straight32.S: 948 88 rrr
-:geoo/abstract/pipes/juncx5: 968 104 rr
-:geoo/abstract/pipes/juncx5: 968 88 rr
-:geoo/construction/rod_steel/straight32.S: 964 88 r
-:geoo/abstract/pipes/juncx5: 968 96 rr
-:geoo/construction/rod_steel/straight32.S: 964 72 r
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 976 62 rrd
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 954 72 rd
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 954 96 rd
-:geoo/abstract/pipes/juncx5: 1040 96 rr
-:geoo/abstract/pipes/juncx5: 976 104 rr
-:geoo/abstract/pipes/juncx5: 976 96 rr
-:geoo/abstract/pipes/juncx5: 984 104 rr
-:geoo/abstract/pipes/juncx5: 984 96 rr
-:geoo/abstract/pipes/juncx5: 992 104 rr
-:geoo/abstract/pipes/juncx5: 992 96 rr
-:geoo/abstract/pipes/juncx5: 976 88 rr
-:geoo/abstract/pipes/juncx5: 1032 88 rr
-:geoo/abstract/pipes/juncx5: 1040 88 rr
-:geoo/construction/rod_steel/straight32.S: 917 56
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 928 62 rrd
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 904 62 rrd
-:geoo/construction/rod_steel/straight32.S: 1003 56
-:geoo/construction/rod_steel/straight32.S: 1016 56
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 1000 62 rrd
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 1024 62 d
-:geoo/abstract/pipes/juncx5: 976 80 rr
-:geoo/construction/rod_steel/straight32.S: 971 76 rr
-:geoo/construction/rod_steel/straight32.S: 984 76 rr
-:geoo/abstract/pipes/juncx5: 1016 80 rr
-:geoo/abstract/pipes/juncx5: 1024 80 rr
-:geoo/abstract/pipes/juncx5: 1032 80 rr
-:geoo/abstract/pipes/juncx5: 1040 80 rr
-:geoo/construction/rod_steel/straight32.S: 1016 76 rr
-:geoo/construction/rod_steel/straight32.S: 917 77 rr
-:geoo/abstract/pipes/juncx5: 880 80 rr
-:geoo/abstract/pipes/juncx5: 888 80 rr
-:geoo/abstract/pipes/juncx5: 896 80 rr
-:geoo/construction/rod_steel/straight32.S: 885 77 rr
-:geoo/abstract/pipes/juncx5: 872 80 rr
-:geoo/construction/rod_steel/straight32.S: 872 77 rr
-:geoo/abstract/pipes/juncx5: 912 32 rr
-:geoo/abstract/pipes/juncx5: 920 32 rr
-:geoo/abstract/pipes/juncx5: 928 32 rr
-:geoo/abstract/pipes/juncx5: 936 32 rr
-:geoo/abstract/pipes/juncx5: 920 40 rr
-:geoo/abstract/pipes/juncx5: 928 40 rr
-:geoo/abstract/pipes/juncx5: 936 40 rr
-:geoo/abstract/pipes/juncx5: 872 48 rr
-:geoo/abstract/pipes/juncx5: 880 48 rr
-:geoo/abstract/pipes/juncx5: 888 48 rr
-:geoo/abstract/pipes/juncx5: 928 48 rr
-:geoo/abstract/pipes/juncx5: 936 48 rr
-:geoo/abstract/pipes/juncx5: 976 32
-:geoo/abstract/pipes/juncx5: 984 32
-:geoo/abstract/pipes/juncx5: 992 32
-:geoo/abstract/pipes/juncx5: 1000 32
-:geoo/abstract/pipes/juncx5: 1040 32
-:geoo/abstract/pipes/juncx5: 1040 48
-:geoo/abstract/pipes/juncx5: 1040 40
-:geoo/abstract/pipes/juncx5: 1024 48
-:geoo/abstract/pipes/juncx5: 1032 48
-:geoo/abstract/pipes/juncx5: 1032 40
-:geoo/abstract/pipes/juncx5: 936 104 rr
-:geoo/abstract/pipes/juncx5: 920 104 rr
-:geoo/abstract/pipes/juncx5: 928 104 rr
-:geoo/abstract/pipes/juncx5: 872 88 rr
-:geoo/abstract/pipes/juncx5: 872 96 rr
-:geoo/abstract/pipes/juncx5: 872 104 rr
-:geoo/abstract/pipes/juncx5: 880 88 rr
-:geoo/abstract/pipes/juncx5: 880 96 rr
-:geoo/abstract/pipes/juncx5: 888 88 rr
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 872 66 rrd
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 896 66 rrd
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 912 66 rrd
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 928 66 rrd
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 944 66 rrd
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 960 66 rrd
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 976 66 rrd
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 992 66 rrd
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 1008 66 rrd
-:geoo/construction/squarebrickx12_nonsquare_for_proxima: 1024 66 rrd
 :geoo/construction/pillar_base: 1248 176
 :geoo/construction/pillar_32: 1264 240
 :geoo/construction/pillar_32: 1264 272
@@ -991,3 +835,27 @@ $ENGLISH Pro Boxing (4p)
 :geoo/construction/pillar_32: 1264 16
 :geoo/construction/pillar_32: 1264 0
 :geoo/shadow/sock: 1182 94
+:amanda/occult/occult_cube: 816 176
+:amanda/occult/occult_cube: 816 192
+:amanda/occult/occult_cube: 832 176
+:amanda/occult/occult_cube: 832 192
+:amanda/occult/occult_cube: 1072 176
+:amanda/occult/occult_cube: 1088 176
+:amanda/occult/occult_cube: 1072 192
+:amanda/occult/occult_cube: 1088 192
+:amanda/occult/occult_cube: 944 176
+:amanda/occult/occult_cube: 960 176
+:amanda/occult/occult_cube: 944 192
+:amanda/occult/occult_cube: 960 192
+:amanda/occult/occult_cube: 176 176
+:amanda/occult/occult_cube: 176 192
+:amanda/occult/occult_cube: 192 176
+:amanda/occult/occult_cube: 192 192
+:amanda/occult/occult_cube: 432 176
+:amanda/occult/occult_cube: 448 176
+:amanda/occult/occult_cube: 432 192
+:amanda/occult/occult_cube: 448 192
+:amanda/occult/occult_cube: 304 176
+:amanda/occult/occult_cube: 320 176
+:amanda/occult/occult_cube: 304 192
+:amanda/occult/occult_cube: 320 192

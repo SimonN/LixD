@@ -383,7 +383,6 @@ void populateEditorKeys()
         fac.factory!HotkeyOption(keyEditorAddSteel),
         fac.factory!HotkeyOption(keyEditorAddHatch),
         fac.factory!HotkeyOption(keyEditorAddGoal),
-        fac.factory!HotkeyOption(keyEditorAddDeco),
         fac.factory!HotkeyOption(keyEditorAddHazard),
     ];
     fac.y += fac.incrementY;

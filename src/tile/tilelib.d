@@ -115,11 +115,10 @@ void load_tile_from_disk(in string strNoExt, in Filename fn)
 
 void loadGadgetFromDisk(in string strNoExt, in char pe, in Filename fn)
 {
-    GadType type = GadType.DECO;
+    GadType type;
     int subtype = 0;
     if      (pe == glo.preExtHatch) { type = GadType.HATCH; }
     else if (pe == glo.preExtGoal)  { type = GadType.GOAL;  }
-    else if (pe == glo.preExtDeco)  { type = GadType.DECO;  }
     else if (pe == glo.preExtTrap)  { type = GadType.TRAP;  }
     else if (pe == glo.preExtWater) { type = GadType.WATER; }
     else if (pe == glo.preExtFire)  { type = GadType.WATER; subtype = 1; }
@@ -216,11 +215,14 @@ static this()
 
         "/ExplosiveCrate" : "/explosivecrate",
         "/mine cart"      : "/minecart",
-        "/plank diag"     :  "/plankdiag",
+        "/plank diag"     : "/plankdiag",
         "/plankdiag 2"    : "/plankdiag2",
-        "/plank support"  :  "/planksupport",
+        "/plank support"  : "/planksupport",
         "/planksupport 2" : "/planksupport2",
         "/planksupport 3" : "/planksupport3",
+        "/minecart.D"     : "/minecart",
+        "/shovel.D"       : "/shovel",
+        "/pickaxe.D"      : "/pickaxe",
 
         "iental/asian "  : "iental/asian",
         "iental/bonsai " : "iental/bonsai",

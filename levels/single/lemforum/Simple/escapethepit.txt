@@ -28,7 +28,6 @@ $ENGLISH Escape the Pit
 #NOTHING 0
 #NOTHING 0
 
-:matt/goldmine/GoalTop.D: 578 270
 
 :matt/goldmine/Hatch.H: 281 236
 

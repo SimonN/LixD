@@ -20,7 +20,6 @@ $ENGLISH I'm Gonna Make You Mine
 
 :matt/goldmine/Goal.G: 112 96
 
-:matt/goldmine/GoalTop.D: 112 48
 
 :simon/water.W: 0 352
 :simon/water.W: 48 352

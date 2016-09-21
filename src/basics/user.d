@@ -93,7 +93,6 @@ UserOptionFilename editorLastDirTerrain;
 UserOptionFilename editorLastDirSteel;
 UserOptionFilename editorLastDirHatch;
 UserOptionFilename editorLastDirGoal;
-UserOptionFilename editorLastDirDeco;
 UserOptionFilename editorLastDirHazard;
 
 UserOption!KeySet
@@ -158,7 +157,6 @@ UserOption!KeySet
     keyEditorAddSteel,
     keyEditorAddHatch,
     keyEditorAddGoal,
-    keyEditorAddDeco,
     keyEditorAddHazard,
     keyEditorExit,
     keyEditorMenuConstants,
@@ -226,7 +224,6 @@ static this()
     editorLastDirSteel = newOpt("EDITOR_LAST_DIR_STEEL", Lang.addSteel, dirImages);
     editorLastDirHatch = newOpt("EDITOR_LAST_DIR_HATCH", Lang.addHatch, dirImages);
     editorLastDirGoal = newOpt("EDITOR_LAST_DIR_GOAL", Lang.addGoal, dirImages);
-    editorLastDirDeco = newOpt("EDITOR_LAST_DIR_DECO", Lang.addDeco, dirImages);
     editorLastDirHazard = newOpt("EDITOR_LAST_DIR_HAZARD", Lang.addHazard, dirImages);
 
     editorGridSelected = newOpt("EDITOR_GRID_SELECTED", 1);
@@ -322,7 +319,6 @@ static this()
     keyEditorAddSteel = newKey("KEY_EDITOR_ADD_STEEL", Lang.optionEdAddSteel, ALLEGRO_KEY_TAB);
     keyEditorAddHatch = newKey("KEY_EDITOR_ADD_HATCH", Lang.optionEdAddHatch, ALLEGRO_KEY_1);
     keyEditorAddGoal = newKey("KEY_EDITOR_ADD_GOAL", Lang.optionEdAddGoal, ALLEGRO_KEY_2);
-    keyEditorAddDeco = newKey("KEY_EDITOR_ADD_DECO", Lang.optionEdAddDeco, ALLEGRO_KEY_3);
     keyEditorAddHazard = newKey("KEY_EDITOR_ADD_HAZARD", Lang.optionEdAddHazard, ALLEGRO_KEY_4);
     keyEditorMenuConstants = newKey("KEY_EDITOR_MENU_CONSTANTS", Lang.winConstantsTitle, ALLEGRO_KEY_5);
     keyEditorMenuTopology = newKey("KEY_EDITOR_MENU_TOPOLOGY", Lang.winTopologyTitle, ALLEGRO_KEY_6);

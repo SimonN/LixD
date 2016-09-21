@@ -27,7 +27,6 @@ $ENGLISH Railroad Plot
 
 :matt/goldmine/Goal.G: 554 224
 
-:matt/goldmine/GoalTop.D: 554 176
 
 :geoo/construction/steam_up.T: 492 200
 

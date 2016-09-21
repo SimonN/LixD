@@ -32,12 +32,9 @@ $ENGLISH Golden Slumbers(3p)
 #NOTHING 0
 #NOTHING 0
 
-:matt/goldmine/GoalTop.D: 592 736
-:matt/goldmine/GoalTop.D: 336 736
-:matt/goldmine/GoalTop.D: 80 736
-:matt/goldmine/minecart.D: 279 784
-:matt/goldmine/minecart.D: 535 783
-:matt/goldmine/minecart.D: 23 783
+:matt/goldmine/minecart: 279 784
+:matt/goldmine/minecart: 535 783
+:matt/goldmine/minecart: 23 783
 
 :matt/goldmine/Hatch.H: 576 64
 :matt/goldmine/Hatch.H: 64 64

@@ -24,7 +24,6 @@ $ENGLISH Roundabout
 
 :matt/goldmine/Goal.G: 128 32
 
-:matt/goldmine/GoalTop.D: 128 -16
 
 :geoo/construction/squisher.T: 336 8
 

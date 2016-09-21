@@ -71,7 +71,6 @@ void prepareGadgets(GameState state, in Level level)
     }
     instantiateGadgetsFromArray(state.hatches,  GadType.HATCH);
     instantiateGadgetsFromArray(state.goals,    GadType.GOAL);
-    instantiateGadgetsFromArray(state.decos,    GadType.DECO);
     instantiateGadgetsFromArray(state.traps,    GadType.TRAP);
     instantiateGadgetsFromArray(state.waters,   GadType.WATER);
     instantiateGadgetsFromArray(state.flingers, GadType.FLING);

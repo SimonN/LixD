@@ -31,15 +31,15 @@ $ENGLISH                                       Race to the depths (3P)
 #DIGGER                                                             20
 #NOTHING                                                             0
 
-:matt/goldmine/shovel.D:                485       295
-:matt/goldmine/minecart.D:             569       141
-:matt/goldmine/minecart.D:             120       572
-:matt/goldmine/shovel.D:               1205       295
-:matt/goldmine/minecart.D:            1289       141
-:matt/goldmine/minecart.D:             840       572
-:matt/goldmine/shovel.D:               1925       295
-:matt/goldmine/minecart.D:            2009       141
-:matt/goldmine/minecart.D:            1560       572
+:matt/goldmine/shovel:                485       295
+:matt/goldmine/minecart:             569       141
+:matt/goldmine/minecart:             120       572
+:matt/goldmine/shovel:               1205       295
+:matt/goldmine/minecart:            1289       141
+:matt/goldmine/minecart:             840       572
+:matt/goldmine/shovel:               1925       295
+:matt/goldmine/minecart:            2009       141
+:matt/goldmine/minecart:            1560       572
 
 :matt/goldmine/Hatch.H:                  42       134
 :matt/goldmine/Hatch.H:                 762       134

@@ -1,4 +1,4 @@
-$BUILT 2016-06-28 12:02:53
+$BUILT 2016-09-13 04:18:30
 $AUTHOR Simon
 $ENGLISH Ferry Tale
 
@@ -19,13 +19,14 @@ $ENGLISH Ferry Tale
 
 :geoo/construction/Hatch.H: 32 240
 
-:matt/goldmine/Goal.G: 508 296
+:matt/goldmine/Goal.G: 496 296
 
 :simon/water_thin.W: 324 376
 :simon/water_thin.W: 174 376
 :simon/water_thin.W: 224 376
 :simon/water_thin.W: 274 376
 
+:matt/goldmine/crate32: 536 272
 :matt/goldmine/crate32: 416 312
 :matt/goldmine/crate64: 448 280
 :matt/goldmine/crate32: 384 312
@@ -40,7 +41,7 @@ $ENGLISH Ferry Tale
 :geoo/construction/wall/small_brickdiag_bd: 320 344
 :geoo/construction/wall/small_brickdiag_bd: 336 360
 :geoo/construction/wall/small_brickdiag_bd: 352 376
-:matt/goldmine/crate32: 535 239
+:matt/goldmine/crate32: 544 240
 :matt/goldmine/crate64: 552 264
 :matt/goldmine/crate32: 552 328
 :geoo/sandstone/pillar_32: 384 376 r
@@ -161,4 +162,3 @@ $ENGLISH Ferry Tale
 :geoo/sandstone/pillar_32: 384 344 r
 :geoo/sandstone/pillar_32: 416 344 r
 :geoo/sandstone/pillar_32: 416 376 r
-:matt/goldmine/crate32: 520 271

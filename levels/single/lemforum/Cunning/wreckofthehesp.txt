@@ -29,7 +29,6 @@ $ENGLISH Wreck of the Hesperus
 
 :matt/goldmine/Goal.G: 40 256
 
-:matt/goldmine/GoalTop.D: 40 208
 
 :simon/water.W: 320 312
 :simon/water.W: 368 312

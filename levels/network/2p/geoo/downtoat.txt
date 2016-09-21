@@ -32,8 +32,6 @@ $ENGLISH Down to a T
 #MINER 30
 #DIGGER 20
 
-:matt/goldmine/GoalTop.D: 288 448
-:matt/goldmine/GoalTop.D: 928 448
 
 :matt/goldmine/Hatch.H: 256 352
 :matt/goldmine/Hatch.H: 960 352 r

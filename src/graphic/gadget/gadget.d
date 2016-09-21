@@ -69,7 +69,6 @@ public:
     {
         assert (levelpos.tile);
         final switch (levelpos.tile.type) {
-            case GadType.DECO:    return new Gadget  (top, levelpos);
             case GadType.HATCH:   return new Hatch   (top, levelpos);
             case GadType.GOAL:    return new Goal    (top, levelpos);
             case GadType.TRAP:    return new TrapTrig(top, levelpos);
@@ -122,7 +121,6 @@ public:
         Phybitset phyb = 0;
         final switch (tile.type) {
             case GadType.HATCH:
-            case GadType.DECO:
             case GadType.MAX: return;
 
             case GadType.GOAL:  phyb = Phybit.goal; break;

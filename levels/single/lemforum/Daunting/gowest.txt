@@ -21,7 +21,7 @@ $ENGLISH Go West!
 
 :matt/marble/Goal.G: 384 144
 
-:matt/beach/decor/sun.D: 80 48
+:matt/beach/decor/sun: 80 48
 
 :simon/crystal.W: 448 368
 :simon/crystal.W: 496 368

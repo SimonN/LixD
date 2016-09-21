@@ -32,13 +32,10 @@ $ENGLISH You are all coming with me!!(3p)
 #NOTHING 0
 #NOTHING 0
 
-:matt/goldmine/GoalTop.D: 208 580
-:matt/goldmine/GoalTop.D: 464 580
-:matt/goldmine/GoalTop.D: 720 580
-:matt/goldmine/minecart.D: 76 148
-:matt/goldmine/minecart.D: 423 116
-:matt/goldmine/shovel.D: 97 141
-:matt/goldmine/pickaxe.D: 443 108
+:matt/goldmine/minecart: 76 148
+:matt/goldmine/minecart: 423 116
+:matt/goldmine/shovel: 97 141
+:matt/goldmine/pickaxe: 443 108
 
 :matt/goldmine/Hatch.H: 480 116
 :matt/goldmine/Hatch.H: 736 116

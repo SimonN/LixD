@@ -138,7 +138,6 @@ void makePanel(Editor editor)
         mixin (mkBrowser!("Steel", "[preExtSteel], editorLastDirSteel, MergeAllDirs.no, null"));
         mixin (mkBrowser!("Hatch", "[preExtHatch], editorLastDirHatch, MergeAllDirs.yes, null"));
         mixin (mkBrowser!("Goal", "[preExtGoal], editorLastDirGoal, MergeAllDirs.yes, null"));
-        mixin (mkBrowser!("Deco", "[preExtDeco], editorLastDirDeco, MergeAllDirs.yes, null"));
         mixin (mkBrowser!("Hazard", "['W','T','F'], editorLastDirHazard, MergeAllDirs.yes, null"));
     }
 }

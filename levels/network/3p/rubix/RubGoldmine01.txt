@@ -32,18 +32,15 @@ $ENGLISH The Rescue: A Collapsed mine(3p)
 #NOTHING 0
 #NOTHING 0
 
-:matt/goldmine/minecart.D: 1433 243
-:matt/goldmine/minecart.D: 1960 243
-:matt/goldmine/minecart.D: 384 243
-:matt/goldmine/pickaxe.D: 1548 105
-:matt/goldmine/pickaxe.D: 1433 241
-:matt/goldmine/pickaxe.D: 398 237
-:matt/goldmine/shovel.D: 1881 63
-:matt/goldmine/shovel.D: 1991 232
-:matt/goldmine/shovel.D: 432 243
-:matt/goldmine/GoalTop.D: 1312 176
-:matt/goldmine/GoalTop.D: 544 176
-:matt/goldmine/GoalTop.D: 2080 176
+:matt/goldmine/minecart: 1433 243
+:matt/goldmine/minecart: 1960 243
+:matt/goldmine/minecart: 384 243
+:matt/goldmine/pickaxe: 1548 105
+:matt/goldmine/pickaxe: 1433 241
+:matt/goldmine/pickaxe: 398 237
+:matt/goldmine/shovel: 1881 63
+:matt/goldmine/shovel: 1991 232
+:matt/goldmine/shovel: 432 243
 
 :matt/goldmine/Hatch.H: 158 244
 :matt/goldmine/Hatch.H: 912 244

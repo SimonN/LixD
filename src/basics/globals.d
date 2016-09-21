@@ -41,7 +41,6 @@ immutable fileLevelDirGerman  = "_german.X.txt";
 // pre-extensions of image files
 immutable preExtInternal             = 'I';
 immutable preExtSteel                = 'S';
-immutable preExtDeco                 = 'D';
 immutable preExtHatch                = 'H';
 immutable preExtGoal                 = 'G';
 immutable preExtTrap                 = 'T';
@@ -103,7 +102,6 @@ immutable tileDefFlingY               = "FLING_SPEED_Y";
 
 immutable tileDefTypeTerrain          = "TERRAIN";
 immutable tileDefTypeSteel            = "STEEL";
-immutable tileDefTypeDeco             = "DECORATION";
 immutable tileDefTypeHatch            = "HATCH";
 immutable tileDefTypeGoal             = "GOAL";
 immutable tileDefTypeTrap             = "TRAP";

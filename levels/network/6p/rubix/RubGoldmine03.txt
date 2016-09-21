@@ -32,20 +32,14 @@ $ENGLISH You are all coming with me!!(6p)
 #NOTHING 0
 #NOTHING 0
 
-:matt/goldmine/GoalTop.D: 212 580
-:matt/goldmine/GoalTop.D: 468 580
-:matt/goldmine/GoalTop.D: 722 580
-:matt/goldmine/minecart.D: 76 148
-:matt/goldmine/minecart.D: 423 116
-:matt/goldmine/shovel.D: 97 141
-:matt/goldmine/pickaxe.D: 443 108
-:matt/goldmine/GoalTop.D: 978 580
-:matt/goldmine/GoalTop.D: 1234 580
-:matt/goldmine/GoalTop.D: 1490 580
-:matt/goldmine/minecart.D: 844 148
-:matt/goldmine/minecart.D: 1192 116
-:matt/goldmine/shovel.D: 866 142
-:matt/goldmine/pickaxe.D: 1212 108
+:matt/goldmine/minecart: 76 148
+:matt/goldmine/minecart: 423 116
+:matt/goldmine/shovel: 97 141
+:matt/goldmine/pickaxe: 443 108
+:matt/goldmine/minecart: 844 148
+:matt/goldmine/minecart: 1192 116
+:matt/goldmine/shovel: 866 142
+:matt/goldmine/pickaxe: 1212 108
 
 :matt/goldmine/Hatch.H: 480 116
 :matt/goldmine/Hatch.H: 736 116

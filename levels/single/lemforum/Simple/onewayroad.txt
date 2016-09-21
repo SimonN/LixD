@@ -26,7 +26,6 @@ $ENGLISH One-Way Road
 
 :matt/goldmine/Goal.G: 48 256
 
-:matt/goldmine/GoalTop.D: 48 208
 
 :geoo/sandstone/torch.F: 16 128
 :geoo/sandstone/torch.F: 112 128

@@ -43,8 +43,8 @@ public:
         assert (buttonID >= Lang.editorButtonFileNew
             &&  buttonID <= Lang.editorButtonAddHazard,
             "add delegates only for for bitmap buttons, Lang.editorButtonXYZ");
-        immutable id = buttonID - Lang.editorButtonFileNew;
-        _buttons[id].xf = id;
+        immutable id = langToButtonIndex(buttonID);
+        _buttons[id].xf = langToButtonXf(buttonID);
         _buttons[id].hotkey = hotkey;
         _buttons[id].onExecute = deg;
         _buttons[id].whenToExecute = wte;
@@ -72,7 +72,7 @@ public:
         assert (id >= Lang.editorButtonFileNew);
         assert (id <= Lang.editorButtonMenuSkills);
         return  id <  Lang.editorButtonMenuConstants
-            ? _buttons[id - Lang.editorButtonFileNew]
+            ? _buttons[langToButtonIndex(id)]
             : _textButtons[id - Lang.editorButtonMenuConstants];
     }
 
@@ -130,10 +130,25 @@ private:
         addChildren(_info, _fps);
     }
 
+    int langToButtonXf(Lang l) const { return l - Lang.editorButtonFileNew; }
+    int langToButtonIndex(Lang lang) const
+    {
+        assert (lang >= Lang.editorButtonFileNew);
+        return lang - Lang.editorButtonFileNew
+                    // DTODOUNDO: undo isn't implemented yet, otherwise rm this
+                    - (lang >= Lang.editorButtonUndo ? 2 : 0);
+    }
+    Lang indexToLang(int id) const
+    {
+        return to!Lang(id + Lang.editorButtonFileNew + (id
+            >= Lang.editorButtonUndo - Lang.editorButtonFileNew ? 2 : 0));
+    }
+
     void makeButtons()
     {
         immutable int bitmaps = Lang.editorButtonAddHazard
-                              - Lang.editorButtonFileNew + 1;
+                              - Lang.editorButtonFileNew + 1
+                              - 2; // because no undo or redo yet
         immutable int texts = 4;
         immutable bitmapXl = infoXl * 2f / bitmaps;
         immutable bitmapYl = (Geom.panelYlg - _info.ylg) / 2;
@@ -169,11 +184,11 @@ private:
 
     void writeButtonTooltips()
     {
-        foreach (id, bb; _buttons)
+        foreach (int id, bb; _buttons)
             if (bb.isMouseHere) {
-                try _info.text = (id+Lang.editorButtonFileNew).to!Lang.transl;
+                try _info.text = indexToLang(id).transl;
                 catch (ConvException) { }
-                if (id + Lang.editorButtonFileNew == Lang.editorButtonFileSave
+                if (indexToLang(id) == Lang.editorButtonFileSave
                     && _currentFilename !is null
                 ) {
                     _info.text = "%s %s".format(_info.text,

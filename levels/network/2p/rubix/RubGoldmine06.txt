@@ -32,8 +32,6 @@ $ENGLISH Goldfinger (2p)
 #CUBER 10
 #NOTHING 0
 
-:matt/goldmine/GoalTop.D: 576 240
-:matt/goldmine/GoalTop.D: 0 240
 
 :matt/goldmine/Hatch.H: -16 -16
 :matt/goldmine/Hatch.H: 592 -16 r

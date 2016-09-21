@@ -20,7 +20,7 @@ $ENGLISH The Mile High Club
 #BUILDER 9
 #BASHER 1
 
-:matt/beach/decor/moon.D: 506 40
+:matt/beach/decor/moon: 506 40
 
 :geoo/construction/Hatch.H: 520 246
 

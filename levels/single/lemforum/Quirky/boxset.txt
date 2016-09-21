@@ -42,7 +42,6 @@ $ENGLISH Box Set
 :geoo/construction/Goal2.G: 248 576
 :geoo/sandstone/Goal.G: 448 576
 
-:matt/goldmine/GoalTop.D: 560 32
 
 :geoo/construction/factory.T: 336 208
 :geoo/construction/factory.T: 576 256

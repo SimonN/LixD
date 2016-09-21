@@ -23,7 +23,6 @@ $ENGLISH Five for Fighting
 
 :matt/goldmine/Goal.G: 1232 288
 
-:matt/goldmine/GoalTop.D: 1232 240
 
 :simon/water.W: 208 352
 :simon/water.W: 256 352

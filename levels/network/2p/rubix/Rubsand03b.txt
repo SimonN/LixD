@@ -32,8 +32,8 @@ $ENGLISH The Square 'Route' (2p)
 #NOTHING 0
 #NOTHING 0
 
-:matt/beach/decor/moon.D: 186 -20
-:matt/beach/decor/bonfire.D: 304 430
+:matt/beach/decor/moon: 186 -20
+:matt/beach/decor/bonfire.F: 304 430
 
 :matt/beach/Hatch.H: 16 96
 :matt/beach/Hatch.H: 576 96 r
