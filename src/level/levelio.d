@@ -171,14 +171,10 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
 
     // new tile for the level
     case ':':
-        const maybeAdded = addFromLine(level,
+        addFromLine(level,
             // in case of TerOcc: Where to add the tile? All Gadgets -> level.
             groupName == "" ? &level.terrain : &groupElements,
             resolveTileName(groupsRead, text1), Point(nr1, nr2), text2);
-        if (maybeAdded is null) {
-            level._status = LevelStatus.BAD_IMAGE;
-            logf("Missing image `%s'", text1);
-        }
         break;
 
     default:

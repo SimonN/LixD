@@ -67,17 +67,15 @@ public:
     {
         assert (fn);
         super(g);
-        Rebindable!(const(AbstractTile)) tile = get_terrain(fn.rootlessNoExt);
-        if (! tile)
-            tile = get_gadget(fn.rootlessNoExt);
-        if (tile) {
+        ResolvedTile resolved = resolveTileName(fn);
+        if (resolved.tile) {
             // Adding Geom.thickg much of padding around the cutbit element.
             // Reason: We shall not draw on the button's 3D edge.
             // Adding + 1 to the thickness offset from the top.
             // Reason: The rounding is crap, neither +0 nor +1 is optimal right
             // now. I rather leave empty row than overwrite button thickness.
             _cbe = new CutbitElement(new Geom(0, Geom.thickg + 1,
-                xlg - 2*Geom.thickg, ylg - 13, From.TOP), tile.cb);
+                xlg - 2*Geom.thickg, ylg - 13, From.TOP), resolved.tile.cb);
             _cbe.shrink = true;
             addChild(_cbe);
         }

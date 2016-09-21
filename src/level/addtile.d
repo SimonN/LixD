@@ -64,29 +64,27 @@ Occurrence addFromLine(
         level.gadgets[resolvedTile.gadget.type] ~= newpos;
         return newpos;
     }
-    else
+    else {
+        if (! resolvedTile.weRemovedThisTileThereforeDontRaiseErrors)
+            level._status = LevelStatus.BAD_IMAGE;
         return null;
-}
-
-// Feeble attempt to avoid dynamic cast in this file :-(
-struct ResolvedTile {
-    const(TerrainTile) terrain;
-    const(GadgetTile) gadget;
-    const(TileGroup) group;
+    }
 }
 
 ResolvedTile resolveTileName(
     const(TileGroupKey[string]) groupsRead,
     in string name,
 ) {
-    if (auto ter = get_terrain(name))
-        return ResolvedTile(ter, null, null);
-    else if (auto gad = get_gadget(name))
-        return ResolvedTile(null, gad, null);
-    // Only if nothing else found, try to resolve the name as a group.
-    if (name.length < glo.levelUseGroup.length)
-        return ResolvedTile();
-    if (auto group = name[glo.levelUseGroup.length .. $] in groupsRead)
-        return ResolvedTile(null, null, get_group(*group));
-    return ResolvedTile();
+    auto resolvedByLib = tile.tilelib.resolveTileName(name);
+    if (resolvedByLib.tile !is null)
+        return resolvedByLib;
+    // The level has more knowledge than the tile lib:
+    // If the lib doesn't know the tile, resolve the name as a group.
+    if (name.length >= glo.levelUseGroup.length)
+        if (auto group = name[glo.levelUseGroup.length .. $] in groupsRead)
+            return ResolvedTile(null, null, get_group(*group));
+    // Neither the lib nor the level has resolved this tile name.
+    if (! resolvedByLib.weRemovedThisTileThereforeDontRaiseErrors)
+        logMissingImage(name);
+    return resolvedByLib;
 }

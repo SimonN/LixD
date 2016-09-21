@@ -20,12 +20,6 @@ import tile.gadtile;
 import tile.group;
 import tile.terrain;
 
-private:
-    TerrainTile[string] terrain;
-    GadgetTile [string] gadgets;
-    TileGroup[TileGroupKey] groups;
-    Rebindable!(const Filename)[string] queue;
-
 public:
 
 void initialize()
@@ -59,11 +53,97 @@ void deinitialize()
     destroyArray(gadgets);
 }
 
-auto get_gadget (in string s) { return get_tile!(GadgetTile,  gadgets)(s); }
-auto get_terrain(in string s) { return get_tile!(TerrainTile, terrain)(s); }
+// Feeble attempt to avoid dynamic cast :-( Maybe ripe for the visitor pattern.
+struct ResolvedTile {
+    const(TerrainTile) terrain;
+    const(GadgetTile) gadget;
+    const(TileGroup) group;
+    const(bool) weRemovedThisTileThereforeDontRaiseErrors;
 
-private const(T)
-get_tile(T : AbstractTile, alias container)(in string str)
+    @property const(AbstractTile) tile() const
+    {
+        return terrain ? terrain : gadget ? gadget : group;
+    }
+}
+
+// For most tiles, their name is the filename without "images/", without
+// extension, but with pre-extension in case the filename has one
+ResolvedTile resolveTileName(in string name)
+{
+    if (auto ter = get_tile!(TerrainTile, terrain)(name))
+        return ResolvedTile(ter, null, null);
+    else if (auto gad = get_tile!(GadgetTile, gadgets)(name))
+        return ResolvedTile(null, gad, null);
+    else if (name == "")
+        // If _silentReplacements decides to replace a string with "", then
+        // that means that we removed a tile from the project, but don't want
+        // the levels to fail that used that tile.
+        return ResolvedTile(null, null, null, true);
+    else if (auto replaced = name in _silentReplacements)
+        // This is recursive, but _silentReplacements's entries are
+        // designed such that we recurse at most once here.
+        return resolveTileName(*replaced);
+    return ResolvedTile();
+}
+
+ResolvedTile resolveTileName(Filename fn)
+{
+    // We have indexed the tiles without "images/" at the front
+    if (fn.rootlessNoExt.length < glo.dirImages.rootlessNoExt.length)
+        return ResolvedTile();
+    return resolveTileName(fn.rootlessNoExt[
+                           glo.dirImages.rootlessNoExt.length .. $]);
+}
+
+TileGroup get_group(in TileGroupKey key)
+{
+    if (auto found = key in groups)
+        return *found;
+    else if (key.elements.any!(occ => ! occ.dark))
+        return groups[key] = new TileGroup(key);
+    else
+        return null;
+}
+
+// Called from the level loading function. The level may resolve tile names
+// that the tile library cannot resolve, because they're groups that are only
+// known to the level during level-load time. Therefore, when the lib can't
+// resolve an image, the lib doesn't yet log anything. The level may, later.
+void logMissingImage(in string key)
+{
+    if (key in _loggedMissingImages)
+        return;
+    _loggedMissingImages[key] = true;
+    logf("Missing image: `%s'", key);
+}
+
+// ############################################################################
+
+private:
+
+TerrainTile[string] terrain;
+GadgetTile [string] gadgets;
+TileGroup[TileGroupKey] groups;
+Rebindable!(const Filename)[string] queue;
+bool[string] _loggedMissingImages;
+
+// In September 2016, 0.6.17, I removed the no-effect decoration. I sed'd the
+// levels that ship with the game, they don't feature no-effect decoration
+// since. Backwards-compat replacement for levels that I don't maintain:
+enum string[string] _silentReplacements = [
+    "amanda/forest/lantern.D" : "", // Replace with "" means don't add a tile,
+    "amanda/forest/exit_decal.D" : "", // but don't raise an error either.
+    "matt/beach/decor/bonfire.D" : "matt/beach/decor/bonfire.F",
+    "matt/beach/decor/moon.D" : "matt/beach/decor/moon",
+    "matt/beach/decor/sun.D" : "matt/beach/decor/sun",
+    "matt/goldmine/GoalTop.D" : "",
+    "matt/goldmine/minecart.D" : "matt/goldmine/minecart",
+    "matt/goldmine/pickaxe.D" : "matt/goldmine/pickaxe",
+    "matt/goldmine/shovel.D" : "matt/goldmine/shovel",
+    "simon/rabbit.D" : "",
+];
+
+private const(T) get_tile(T : AbstractTile, alias container)(in string str)
 {
     // This function has a lot of returns along its way. Successfully found
     // objects are always returned directly. If the object isn't found in time,
@@ -82,18 +162,6 @@ get_tile(T : AbstractTile, alias container)(in string str)
     }
     return null;
 }
-
-TileGroup get_group(in TileGroupKey key)
-{
-    if (auto found = key in groups)
-        return *found;
-    else if (key.elements.any!(occ => ! occ.dark))
-        return groups[key] = new TileGroup(key);
-    else
-        return null;
-}
-
-private:
 
 void load_tile_from_disk(in string strNoExt, in Filename fn)
 {
@@ -153,3 +221,4 @@ void logBecauseInvalid(const(Cutbit) cb, in Filename fn)
     logf("Image has too large proportions: `%s'", fn.rootless);
     log ("    -> See bug report: https://github.com/SimonN/LixD/issues/4");
 }
+
