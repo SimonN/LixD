@@ -7,6 +7,7 @@ import basics.globals; // game panel icons
 import net.repdata; // Update
 import basics.user; // languageIsEnglish
 import game.tribe;
+import graphic.color;
 import graphic.internal;
 import gui;
 import hardware.display; // show fps
@@ -70,17 +71,17 @@ public:
     {
         assert (tribe);
         reqDraw();
-        _lOut  .number = lixHatch + lixOut;
+        _lHatch.shown = _bHatch.shown = lixHatch > 0;
+        _lOut.shown = _bOut.shown = lixHatch + lixOut > 0;
         _lHatch.number = lixHatch;
-        _lSaved.text   = "%d/%d".format(lixSaved, lixRequired);
-        _bOut.yf   = lixHatch + lixOut > 0 ? 0 : 1;
         _bHatch.yf = 1;
-        _bTime.yf  = 1;
+        _lOut.number = lixHatch + lixOut;
+        _bOut.yf = lixHatch + lixOut > 0 ? 0 : 1;
         // DTODO: spawnint: cull entirely, or make an icon
         _spawnint.text = "SI: %d".format(spawnint);
         if (basics.user.showFPS.value)
             _fps.text  = "FPS: %d".format(displayFps);
-
+        formatGoal(tribe);
         handleWarningSignFlicker(tribe);
     }}
 
@@ -128,10 +129,20 @@ private:
             cbe.xf = xf;
             lab = new Label(new Geom(x + this.ylg, 0, xl - this.ylg, this.ylg,
                             From.LEFT));
+            // Reason for undraw color: When the displayed values change or
+            // when we show/hide these, we reqDraw() on the entire panel
+            // anyway. Therefore, color.transp can't leave anything during
+            // undraw of cbe and lab. If we don't put color.transp here, then
+            // the panel will flicker once with the undraw color after these
+            // are hidden. Reason for the flickering: They undraw after
+            // the parent (this) is drawn, and they overlay not only a
+            // gui-medium-color area, but (this)'s 3D button effect.
+            cbe.undrawColor = color.transp;
+            lab.undrawColor = color.transp;
             addChildren(cbe, lab);
         }
-        makeElements(_bOut,   _lOut,     0, 60, 3);
-        makeElements(_bHatch, _lHatch,  60, 60, 4);
+        makeElements(_bHatch, _lHatch,   4, 56, 4);
+        makeElements(_bOut,   _lOut,    60, 60, 3);
         makeElements(_bSaved, _lSaved, 120, 80, 5);
         makeElements(_bTime,  _lTime,  200, 70, 7);
         // I want to show the time in multiplayer. Until I have that,
@@ -143,6 +154,15 @@ private:
             TextButton.textXFromLeft, 0, this.xlg, this.ylg, From.RIGHT));
         addChildren(_spawnint, _targetDesc, _fps);
     }
+
+    void formatGoal(in Tribe tribe) {
+        with (tribe)
+    {
+        if (lixSaved < lixRequired)
+            _lSaved.number = lixRequired - lixSaved;
+        else
+            _lSaved.text = "%d/%d".format(lixSaved, lixRequired);
+    }}
 
     void handleWarningSignFlicker(in Tribe tribe) {
         with (tribe)
@@ -160,8 +180,7 @@ private:
         }
         _bSaved.xf = (_warningSignFlicker + flickerFreq - 1) % flickerFreq
             > flickerFreq/2 ? 5 : 10; // 5 = regular exit, 10 = warning sign
-        _bSaved.yf = _bSaved.xf == 10 ? 0
-            : lixSaved == 0 ? 1
-            : lixSaved >= lixRequired ? 2 : 0;
+        _bSaved.yf = _bSaved.xf == 10 ? 0 // colorful warning sign
+            : lixSaved >= lixRequired ? 2 : 1; // green or grayed-out
     }}
 }

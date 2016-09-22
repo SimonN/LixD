@@ -143,7 +143,6 @@ void setLikeTribe(in Tribe tr)
 {
     if (tr is null)
         return;
-
     foreach (b; _skills) {
         b.style = tr.style;
         if (b.skill.isPloder && tr.nukeSkill.isPloder)
@@ -158,7 +157,6 @@ void setLikeTribe(in Tribe tr)
     spec_tribe .set_text(tr->get_name());
     */
     highlightIfNonzero(lastOnForRestoringAfterStateLoad);
-    reqDraw();
 }
 
 // I assumed that the game should inform the panel about whether there are
