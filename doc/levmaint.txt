@@ -4,22 +4,19 @@ Tips for level maintainers
 Automatic replay verification
 -----------------------------
 
-To run the automatic replay checker on your directory full of replays:
+It's good style to ship solvable levels! :-)
 
-    lix --verify=replays/path/to/dir
+Maintain a directory of replays for your level pack. You can test automatically
+whether your pack is 100 % solvable:
+
+    lix --coverage replays/path/to/dir
 
 This tests every replay in replays/path/to/dir/ for whether it solves its
-the pointed-to level. Here, Lix will never consider the level included in
-the replay file. Lix will open the level in the level tree, and run the
+the pointed-to level. Here, Lix will never consider any level saved within
+the replay file. Lix will open the level in your level tree, and run the
 replay against that.
 
-Sometimes, you don't care whether every single replay solves, but only
-whether every level has at least one solution. Use --coverage to perform a
-level coverage analysis after your mass-replay checking:
-
-    lix --verify=replays/path/to/dir --coverage
-
-In addition to the normal replay checking results, this lists all levels
+In addition to the normal replay checking results, Lix prints the levels
 without replay coverage. A level is listed iff it satisfies all points here:
 
 *   The level file resides in directory from which you have tested at
@@ -33,3 +30,8 @@ without replay coverage. A level is listed iff it satisfies all points here:
 
 *   Not a single replay in this entire noninteractive run of the application
     has proven the level solvable.
+
+    Example: You have a directory with levels A, B, C, D, and test a directory
+    with 30 replays -- 10 solving replays for A, 3 solving and 7 failing
+    replays for B, 10 failing replays for C, and none for D. This will report
+    levels C and D as potentially unsolvable.

@@ -1,6 +1,29 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.17
+------
+
+2016-09-21
+
+Fix #153: I have culled the no-effect decoration. The still decoration is now
+solid terrain. Animated decoration is gone, except for the beach bonfire, which
+became a fire trap. I have changed levels that I distribute with the game to
+use the new tiles. Backwards compatibility for levels that I don't maintain:
+The level loading function silently replaces decoration with the new tiles.
+
+I removed the auto-replacements for Matt's terrain that I made in 2010 and
+2011. Almost no levels relied on them anymore, and I've changed the remaining
+two levels that did. These levels remain functionally identical.
+
+Fix #156: Switching to a parent directory in the singleplayer browser clears
+the preview again.
+
+Rubix has created a cute sound for (singleplayer, you have lost too many lix).
+It's included, and plays once when triggered, not five times like the old tick.
+
+The warning sound for empty skill doesn't play on mouse click, only on hotkey.
+
 0.6.16
 ------
 
