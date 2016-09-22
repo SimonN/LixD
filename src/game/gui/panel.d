@@ -200,21 +200,6 @@ currentSkill()
     return null;
 }
 
-private void
-handleExecutingSkillButton(SkillButton skill)
-{
-    highlightIfNonzero(skill);
-    if (skill.number == 0) {
-        assert (skill.number == 0);
-        // The button executes continually when the mouse button is held down
-        // over it, but we should only play the warning sound on the click.
-        if (mouseClickLeft() || skill.hotkey.keyTapped)
-            hardware.sound.playLoud(Sound.PANEL_EMPTY);
-    }
-}
-
-
-
 public void setSpeedToPause() { setSpeedTo(0); }
 public void setSpeedToNormal() { setSpeedTo(1); }
 private void setSpeedTo(in int a)
@@ -242,8 +227,13 @@ calcSelf()
 
     SkillButton oldSkill = currentSkill();
     foreach (skill; _skills)
-        if (skill.execute)
-            handleExecutingSkillButton(skill);
+        if (skill.execute) {
+            highlightIfNonzero(skill);
+            if (skill.number == 0 && skill.hotkey.keyTapped)
+                // Don't play zero-skill sound on mouse click, only on hotkey:
+                // We remind the player while he's not looking at the panel.
+                hardware.sound.playLoud(Sound.PANEL_EMPTY);
+        }
     if (currentSkill !is oldSkill)
         hardware.sound.playLoud(Sound.PANEL);
 
