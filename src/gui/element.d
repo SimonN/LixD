@@ -154,11 +154,9 @@ public:
 
     final void undraw()
     {
-        if (drawn) {
-            if (_undrawColor != color.transp)
-                undrawSelf();
-            drawn = false;
-        }
+        if (drawn && _undrawColor != color.transp)
+            undrawSelf();
+        drawn = false;
         drawRequired = _shown;
     }
 
