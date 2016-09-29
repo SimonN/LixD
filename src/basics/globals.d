@@ -77,7 +77,6 @@ immutable levelBackgroundGreen        = "BACKGROUND_GREEN";
 immutable levelBackgroundBlue         = "BACKGROUND_BLUE";
 immutable levelSeconds                = "SECONDS";
 immutable levelInitial                = "INITIAL";
-immutable levelInitialLegacy          = "LEMMINGS"; // backwards compatibility
 immutable levelRequired               = "REQUIRED";
 immutable levelSpawnint               = "SPAWN_INTERVAL";
 immutable levelRateLegacy             = "RATE"; // backwards compatibility
@@ -199,4 +198,3 @@ static this()
     fileImagePreviewIcon = new Fn("data/images/prev_ico.I");
     fileImageSkillIcons = new Fn("data/images/skillico.I");
 }
-

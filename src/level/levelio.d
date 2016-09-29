@@ -141,13 +141,14 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
         else if (text1 == glo.levelSizeY) level.resize(topology.xl, nr1);
         else if (text1 == glo.levelTorusX) topology.setTorusXY(nr1 > 0, topology.torusY);
         else if (text1 == glo.levelTorusY) topology.setTorusXY(topology.torusX, nr1 > 0);
-        else if (text1 == glo.levelBackgroundRed  ) bgRed = nr1;
+        else if (text1 == glo.levelBackgroundRed) bgRed = nr1;
         else if (text1 == glo.levelBackgroundGreen) bgGreen = nr1;
-        else if (text1 == glo.levelBackgroundBlue ) bgBlue = nr1;
-        else if (text1 == glo.levelSeconds      ) overtimeSeconds = nr1;
-        else if (text1 == glo.levelInitial      ) initial = nr1;
-        else if (text1 == glo.levelRequired     ) required = nr1;
-        else if (text1 == glo.levelSpawnint     ) spawnint = nr1;
+        else if (text1 == glo.levelBackgroundBlue) bgBlue = nr1;
+        else if (text1 == glo.levelSeconds) overtimeSeconds = nr1;
+        else if (text1 == glo.levelInitial) initial = nr1;
+        else if (text1 == glo.levelRequired) required = nr1;
+        else if (text1 == glo.levelSpawnint) spawnint = nr1;
+        else if (text1 == glo.levelRateLegacy) spawnint = 4 + (99 - nr1) / 2;
         else if (text1 == glo.levelIntendedNumberOfPlayers)
                                    intendedNumberOfPlayers = nr1;
         else if (text1 == glo.levelStartCornerX) {
@@ -158,8 +159,6 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
             useManualScreenStart = true;
             manualScreenStartCenter.y = nr1 + cppHalfScreenY;
         }
-        else if (text1 == glo.levelInitialLegacy) initial = nr1;
-        else if (text1 == glo.levelRateLegacy) spawnint = 4 + (99 - nr1) / 2;
         else {
             Ac ac = stringToAc(text1);
             if (ac.isPloder)
