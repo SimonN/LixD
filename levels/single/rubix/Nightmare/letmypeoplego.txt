@@ -1,0 +1,81 @@
+$BUILT 2016-09-24 18:14:00
+$AUTHOR Rubix
+$ENGLISH Let My People Go
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+#BACKGROUND_RED 32
+#BACKGROUND_GREEN 176
+#BACKGROUND_BLUE 181
+
+#INITIAL 6
+#REQUIRED 6
+#SPAWN_INTERVAL 8
+
+#CLIMBER 6
+#BUILDER 1
+#PLATFORMER 2
+#DIGGER 5
+#JUMPER 5
+#EXPLODER2 0
+
+:geoo/sandstone/Hatch.H: 496 0 r
+:geoo/sandstone/Hatch.H: 112 0
+
+:geoo/sandstone/Goal.G: -16 224
+
+:simon/water.W: 48 352
+:simon/water.W: 0 352
+:simon/water.W: 528 352
+:simon/water.W: 480 352
+:simon/water.W: 592 352
+:simon/water.W: 576 352
+
+:geoo/sandstone/16x32: 576 48
+:geoo/sandstone/16x32: 592 48
+:geoo/sandstone/16x32: 400 48
+:geoo/sandstone/16x32: 384 48
+:geoo/sandstone/16x32: 96 48
+:geoo/sandstone/16x32: 112 48
+:geoo/sandstone/pillar_top_ext: 178 160
+:geoo/sandstone/pillar_32: 194 176
+:geoo/sandstone/pillar_32: 194 208
+:geoo/sandstone/pillar_32: 194 240
+:geoo/sandstone/pillar_32: 194 272
+:geoo/sandstone/pillar_32: 194 304
+:geoo/sandstone/pillar_32: 194 336
+:geoo/sandstone/pillar_32: 194 352
+:geoo/sandstone/pillar_bottom_ext: 178 384
+:geoo/sandstone/pillar_top_ext: 257 224
+:geoo/sandstone/pillar_32: 273 240
+:geoo/sandstone/pillar_32: 273 272
+:geoo/sandstone/pillar_32: 273 304
+:geoo/sandstone/pillar_32: 273 336
+:geoo/sandstone/pillar_32: 273 352
+:geoo/sandstone/pillar_bottom_ext: 257 384
+:geoo/sandstone/pillar_top_ext: 336 288
+:geoo/sandstone/pillar_32: 352 336
+:geoo/sandstone/pillar_32: 352 352
+:geoo/sandstone/pillar_bottom_ext: 336 384
+:geoo/sandstone/pillar_32: 352 304
+:geoo/sandstone/64x64: 416 336
+:geoo/sandstone/64x64: 96 336
+:geoo/sandstone/64x64: 448 272
+:geoo/sandstone/64x64: 480 208
+:geoo/sandstone/64x64: 544 208
+:geoo/sandstone/64x64: 608 208
+:geoo/sandstone/64x64: -32 288
+:geoo/sandstone/64x64: 32 304
+:geoo/sandstone/32x16: 32 288
+:geoo/sandstone/32x16: 96 320
+:geoo/sandstone/arc_big: 96 80 rr
+:geoo/sandstone/arc_big: 0 0
+:geoo/sandstone/arc_big: 288 80 rr
+:geoo/sandstone/arc_big: 192 0 frr
+:geoo/sandstone/arc_big: 384 0 frr
+:geoo/sandstone/arc_big: 480 80 rr
+:geoo/sandstone/arc_big: 576 0 frr
+:geoo/sandstone/arc_big: -96 64 rr
+:geoo/sandstone/16x8: 320 392
+:geoo/sandstone/16x8: 242 392

@@ -1,0 +1,77 @@
+$BUILT 2016-09-18 13:37:04
+$AUTHOR Rubix
+$ENGLISH A taste of things to come.
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 416
+#START_X 0
+#START_Y 406
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 48
+#BACKGROUND_BLUE 112
+
+#INITIAL 50
+#REQUIRED 46
+#SPAWN_INTERVAL 53
+
+#CLIMBER 1
+#EXPLODER2 2
+#BLOCKER 3
+#BUILDER 6
+#MINER 2
+
+:matt/marble/Hatch.H: 464 64
+:matt/marble/Hatch.H: 96 304 r
+
+:matt/marble/Goal.G: 49 113
+
+:matt/marble/08d: 0 0
+:matt/marble/08d: 64 0
+:matt/marble/08d: 128 0
+:matt/marble/08d: 192 0
+:matt/marble/08d: 256 0
+:matt/marble/08d: 320 0
+:matt/marble/08d: 384 0
+:matt/marble/08d: 0 384
+:matt/marble/08d: 64 384
+:matt/marble/08d: 128 384
+:matt/marble/08d: 192 384
+:matt/marble/08d: 256 384
+:matt/marble/08d: 320 384
+:matt/marble/08d: 384 384
+:matt/marble/08d: 448 384
+:matt/marble/08d: 448 0
+:matt/marble/08d: 512 0
+:matt/marble/08d: 576 0
+:matt/marble/08d: 512 384
+:matt/marble/08d: 576 384
+:matt/marble/06a: 0 32
+:matt/marble/06a: 0 96
+:matt/marble/06a: 0 160
+:matt/marble/06a: 0 224
+:matt/marble/06a: 0 320
+:matt/marble/06a: 608 32
+:matt/marble/06a: 608 128
+:matt/marble/06a: 608 192
+:matt/marble/06a: 608 256
+:matt/marble/06a: 608 320
+:matt/marble/08c: 544 128
+:matt/marble/08c: 480 128
+:matt/marble/09a: 288 256
+:matt/marble/09a: 288 320
+:matt/marble/08c: 96 192
+:matt/marble/08c: 48 160
+:matt/marble/09a: 224 256
+:matt/marble/09a: 224 320
+:matt/marble/09a: 224 192
+:matt/marble/09a: 160 256
+:matt/marble/09a: 160 320
+:matt/marble/09a: 160 192
+:matt/marble/08a: 288 224
+:matt/marble/08a: 160 160
+:matt/marble/09a: 352 256
+:matt/marble/09a: 352 320
+:matt/steel/64x32.S: 608 352 r
+:matt/steel/64x32.S: 304 352 r
+:matt/steel/64x32.S: 0 352 r

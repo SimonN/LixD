@@ -1,0 +1,152 @@
+$BUILT 2016-09-11 08:26:49
+$AUTHOR Rubix
+$ENGLISH Abstract painting at the beach
+
+$HINT_ENGLISH Theres only 1 place that can make any possible sense to mine... obviously!
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+#START_X 0
+#START_Y 0
+
+#SECONDS 96
+#INITIAL 50
+#REQUIRED 50
+#SPAWN_INTERVAL 4
+
+#WALKER 2
+#RUNNER 1
+#CLIMBER 1
+#FLOATER 1
+#BUILDER 1
+#BASHER 1
+#MINER 2
+#JUMPER 1
+#EXPLODER2 0
+
+:matt/beach/Hatch.H: 80 8
+
+:matt/beach/goal.G: 486 176
+
+:matt/beach/decor/moon.D: 542 38
+
+:amanda/forest/frog.T: 112 288
+
+:matt/beach/decor/grass08: 444 -27
+:matt/beach/nighttime/06: 390 -37 r
+:matt/beach/decor/grass08: 222 160
+:matt/beach/decor/grass11: 255 326
+:matt/beach/decor/grass02: 316 333
+:matt/beach/decor/grass02: 98 332
+:matt/beach/decor/grass02: 161 333
+:matt/beach/nighttime/06: 242 47 frrr
+:matt/beach/nighttime/01: 216 326
+:matt/beach/nighttime/06: 505 -59
+:matt/beach/nighttime/15: 79 63
+:matt/beach/decor/shovel: 370 110
+:matt/beach/nighttime/06: 364 166 r
+:matt/beach/nighttime/06: 42 67
+:matt/beach/nighttime/03: 592 16 r
+:matt/beach/nighttime/03: 624 128 r
+:matt/beach/nighttime/03: 18 232 r
+:matt/beach/nighttime/03: 20 168 r
+:matt/beach/nighttime/03: 18 104 r
+:matt/beach/nighttime/03: 592 304 r
+:matt/beach/nighttime/03: 608 256 r
+:matt/beach/nighttime/03: 598 240 r
+:matt/beach/nighttime/03: 608 64 r
+:matt/beach/nighttime/03: 22 342
+:matt/beach/nighttime/03: 70 340
+:matt/beach/nighttime/03: 171 336
+:matt/beach/decor/beach ball: 357 327
+:matt/beach/nighttime/03: 292 340
+:matt/beach/nighttime/03: 364 342
+:matt/beach/nighttime/03: 588 336 r
+:matt/steel/32x32.S: -16 0
+:matt/steel/32x32.S: -16 32
+:matt/steel/32x32.S: -16 64
+:matt/steel/32x32.S: -16 96
+:matt/steel/32x32.S: -16 128
+:matt/steel/32x32.S: -16 160
+:matt/steel/32x32.S: -16 192
+:matt/steel/32x32.S: -16 224
+:matt/steel/32x32.S: -16 256
+:matt/steel/32x32.S: -16 288
+:matt/steel/32x32.S: -16 320
+:matt/steel/32x32.S: -16 352
+:matt/steel/32x32.S: -16 384
+:matt/steel/32x32.S: 48 384
+:matt/steel/32x32.S: 16 384
+:matt/steel/32x32.S: 80 384
+:matt/steel/32x32.S: 112 384
+:matt/steel/32x32.S: 144 384
+:matt/steel/32x32.S: 208 384
+:matt/steel/32x32.S: 176 384
+:matt/steel/32x32.S: 240 384
+:matt/steel/32x32.S: 272 384
+:matt/steel/32x32.S: 304 384
+:matt/steel/32x32.S: 368 384
+:matt/steel/32x32.S: 336 384
+:matt/steel/32x32.S: 400 384
+:matt/steel/32x32.S: 432 384
+:matt/steel/32x32.S: 464 384
+:matt/steel/32x32.S: 496 384
+:matt/steel/32x32.S: 560 384
+:matt/steel/32x32.S: 592 384
+:matt/steel/32x32.S: 528 384
+:matt/steel/32x32.S: 624 384
+:matt/steel/32x32.S: 624 0
+:matt/steel/32x32.S: 624 32
+:matt/steel/32x32.S: 624 64
+:matt/steel/32x32.S: 624 96
+:matt/steel/32x32.S: 624 128
+:matt/steel/32x32.S: 624 160
+:matt/steel/32x32.S: 624 192
+:matt/steel/32x32.S: 624 224
+:matt/steel/32x32.S: 624 256
+:matt/steel/32x32.S: 624 288
+:matt/steel/32x32.S: 624 320
+:matt/steel/32x32.S: 624 352
+:matt/beach/nighttime/13: 306 202
+:matt/beach/nighttime/06: 241 -33 r
+:matt/beach/decor/grass08: 355 267
+:matt/beach/nighttime/05: 380 80
+:matt/beach/nighttime/04: 408 216
+:matt/beach/nighttime/13: 32 242
+:matt/beach/decor/grass08: 157 84
+:matt/beach/nighttime/06: 125 170 f
+:matt/beach/decor/beach ball: 80 220
+:matt/beach/decor/grass08: 56 298
+:matt/beach/nighttime/13: 46 226 r
+:matt/beach/decor/grass08: 501 311
+:matt/beach/nighttime/06: 379 270
+:matt/beach/nighttime/13: 494 239 rr
+:matt/beach/nighttime/00: 24 62
+:matt/beach/nighttime/02: 36 26
+:matt/beach/nighttime/03: 53 73
+:matt/beach/nighttime/06: -16 -96
+:matt/beach/nighttime/15: 299 284
+:matt/steel/16x32.S: 416 128
+:matt/steel/16x32.S: 416 96
+:matt/steel/16x32.S: 416 64
+:matt/steel/16x32.S: 416 32
+:matt/steel/16x32.S: 416 0
+:matt/steel/32x16.S: 406 192
+:matt/steel/16x32.S: 416 160
+:matt/beach/decor/grass09: 279 172
+:matt/beach/decor/grass06: 435 226
+:matt/beach/decor/grass06: 518 292
+:matt/beach/decor/grass06: 53 75
+:matt/beach/decor/grass10: 288 8
+:matt/beach/decor/grass03: 409 314
+:matt/beach/decor/grass08: 567 -35
+:matt/steel/32x32.S: 32 240
+:matt/steel/32x32.S: 32 272
+:matt/steel/32x32.S: 32 304
+:matt/steel/32x32.S: 32 336
+:matt/steel/32x32.S: 80 96
+:matt/steel/32x32.S: 112 96
+:matt/steel/32x32.S: 176 208
+:matt/steel/32x32.S: 208 208
+:matt/steel/32x32.S: 240 208

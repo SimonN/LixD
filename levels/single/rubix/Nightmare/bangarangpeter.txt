@@ -1,0 +1,80 @@
+$BUILT 2016-09-18 16:13:36
+$AUTHOR Rubix
+$ENGLISH Bangarang Peter!
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 64
+
+#INITIAL 25
+#REQUIRED 24
+#SPAWN_INTERVAL 32
+
+#WALKER 2
+#CLIMBER 1
+#FLOATER 1
+#BLOCKER 1
+#BUILDER 2
+#PLATFORMER 2
+#BASHER 1
+#MINER 2
+#JUMPER 4
+#EXPLODER2 0
+
+:matt/oriental/Hatch.H: 544 48 r
+
+:matt/oriental/Goal.G: 64 50
+
+:simon/water_thin.W: 0 368
+:simon/water_thin.W: 48 368
+:simon/water_thin.W: 96 368
+:simon/water_thin.W: 144 368
+:simon/water_thin.W: 192 368
+:simon/water_thin.W: 240 368
+:simon/water_thin.W: 288 368
+:simon/water_thin.W: 336 368
+:simon/water_thin.W: 416 368
+:simon/water_thin.W: 464 368
+:simon/water_thin.W: 512 368
+:simon/water_thin.W: 560 368
+:simon/water_thin.W: 608 368
+
+:matt/oriental/leaves7: 424 74
+:matt/oriental/07: 0 336 r
+:matt/oriental/06: 80 128 frrr
+:matt/oriental/06: 80 176 r
+:matt/oriental/06: 80 224 r
+:matt/oriental/06: 32 176 r
+:matt/oriental/06: 32 224 frrr
+:matt/oriental/06: 32 80 r
+:matt/oriental/07: 138 272 r
+:matt/oriental/07: 200 272 r
+:matt/oriental/asiantemple: 102 96
+:matt/oriental/06: 32 128 frrr
+:matt/oriental/leaves8: 480 128
+:matt/oriental/bonsaitree: 400 0
+:matt/oriental/bonsaitree: 368 128
+:matt/oriental/07: 384 320 f
+:matt/oriental/06: 384 352 rr
+:matt/oriental/07: 320 320 rr
+:matt/oriental/06: 336 352 f
+:matt/oriental/07: 512 320 f
+:matt/oriental/06: 512 352 rr
+:matt/oriental/07: 448 320 rr
+:matt/oriental/06: 464 352 f
+:matt/oriental/07: 128 320 f
+:matt/oriental/06: 128 352 rr
+:matt/oriental/07: 64 320 rr
+:matt/oriental/06: 80 352 f
+:matt/oriental/07: 256 320 f
+:matt/oriental/06: 256 352 rr
+:matt/oriental/07: 192 320 rr
+:matt/oriental/06: 208 352 f
+:matt/oriental/07: 0 96 r
+:matt/oriental/07: 0 160 frrr
+:matt/oriental/07: 0 224 r
+:matt/oriental/07: 0 32 frrr
+:matt/oriental/07: 0 288 r

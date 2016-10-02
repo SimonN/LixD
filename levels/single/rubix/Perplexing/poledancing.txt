@@ -1,0 +1,78 @@
+$BUILT 2014-02-28 12:45:20
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Pole dancing
+
+#SIZE_X 670
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 380
+#BACKGROUND_RED 64
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 128
+
+#SECONDS 85
+#INITIAL 50
+#REQUIRED 48
+#SPAWN_INTERVAL 4
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 4
+#JUMPER 4
+#FLOATER 4
+#BUILDER 2
+#MINER 4
+#DIGGER 4
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/carnival/Hatch.H: 14 248
+:matt/carnival/Hatch.H: 596 248 r
+
+:matt/carnival/Goal.G: 304 216
+
+:matt/goldmine/plank: 386 230 r
+:matt/goldmine/plank: 444 230 r
+:matt/goldmine/plank: 276 230 r
+:matt/goldmine/plank: 220 230 r
+:matt/carnival/58: 640 48 r
+:matt/carnival/56: 112 48 r
+:matt/carnival/56: 80 48 r
+:matt/carnival/56: 0 48 r
+:matt/carnival/58: 560 48 r
+:matt/carnival/58: 528 48 r
+:matt/carnival/10: 160 368
+:matt/carnival/11: 128 368
+:matt/carnival/10: 224 368
+:matt/carnival/11: 192 368
+:matt/carnival/09: 384 368 rr
+:matt/carnival/09: 416 368 fr
+:matt/carnival/09: 448 368 rr
+:matt/carnival/09: 480 368 fr
+:matt/carnival/09: 512 368 rr
+:matt/carnival/09: 544 368 fr
+:matt/carnival/09: 576 368 rr
+:matt/carnival/09: 608 368 fr
+:matt/carnival/09: 640 368 rr
+:matt/carnival/58: 416 304 rr
+:matt/carnival/58: 416 336 rr
+:matt/carnival/03: 384 336
+:matt/carnival/03: 384 304
+:matt/carnival/28: 304 272
+:matt/carnival/56: 0 304 rr
+:matt/carnival/56: 0 336 rr
+:matt/carnival/10: 32 368
+:matt/carnival/11: 0 368
+:matt/carnival/10: 96 368
+:matt/carnival/11: 64 368
+:matt/carnival/00: 256 304
+:matt/carnival/00: 256 336
+:matt/carnival/11: 256 368
+:matt/goldmine/plank: 182 230
+:matt/goldmine/plank: 360 230

@@ -1,0 +1,83 @@
+$BUILT 2014-02-28 15:27:13
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH All Together now
+
+#SIZE_X 640
+#SIZE_Y 880
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 16
+#BACKGROUND_GREEN 127
+#BACKGROUND_BLUE 255
+
+#SECONDS 120
+#INITIAL 4
+#REQUIRED 4
+#SPAWN_INTERVAL 53
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#FLOATER 1
+#BUILDER 6
+#PLATFORMER 3
+#BASHER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/carnival/Hatch.H: -16 399
+:matt/carnival/Hatch.H: -12 -21
+:matt/carnival/Hatch.H: 582 310 r
+:matt/carnival/Hatch.H: 590 89 r
+
+:matt/carnival/Goal.G: 0 752
+
+:matt/carnival/52: 0 48
+:matt/carnival/53: 64 48
+:matt/carnival/52: 128 48
+:matt/carnival/53: 192 48
+:matt/carnival/53: 576 160
+:matt/carnival/20: 256 256
+:matt/carnival/54: 208 304
+:matt/carnival/52: 208 336 r
+:matt/carnival/54: 144 368
+:matt/carnival/52: 144 400 r
+:matt/carnival/54: 112 464
+:matt/carnival/52: 48 464 rr
+:matt/carnival/54: -16 464
+:matt/carnival/54: 288 304
+:matt/carnival/52: 384 304 r
+:matt/carnival/54: 352 368
+:matt/carnival/52: 288 368 r
+:matt/carnival/12: 368 304
+:matt/carnival/14: 320 368
+:matt/carnival/54: 288 432
+:matt/carnival/52: 384 432 r
+:matt/carnival/13: 368 432
+:matt/carnival/54: 352 496
+:matt/carnival/09: 576 384
+:matt/carnival/10: 608 384
+:matt/carnival/52: 288 496 r
+:matt/carnival/14: 320 496
+:matt/carnival/54: 288 560
+:matt/carnival/52: 384 560 r
+:matt/carnival/13: 368 560
+:matt/carnival/54: 352 624
+:matt/carnival/52: 320 624 r
+:matt/carnival/54: 288 688
+:matt/carnival/52: 256 688 r
+:matt/carnival/54: 224 752
+:matt/carnival/52: 192 752 r
+:matt/carnival/54: 144 816
+:matt/carnival/54: 0 816
+:matt/carnival/28: 624 336 fr
+:matt/carnival/52: 512 160
+:matt/carnival/12: 208 816
+:matt/carnival/13: 208 832

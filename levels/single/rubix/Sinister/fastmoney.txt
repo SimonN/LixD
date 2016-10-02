@@ -1,0 +1,64 @@
+$BUILT 2016-09-10 17:23:15
+$AUTHOR Rubix
+$ENGLISH Fast money
+
+$HINT_ENGLISH You'll find success when you release the rest..
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 1200
+#START_X 0
+#START_Y 780
+
+#SECONDS 165
+#INITIAL 99
+#REQUIRED 92
+#SPAWN_INTERVAL 46
+
+#EXPLODER 7
+#MINER 1
+#DIGGER 1
+
+:matt/goldmine/Hatch.H: 56 66
+:matt/goldmine/Hatch.H: 488 66 r
+
+:matt/goldmine/Goal.G: 272 1152
+
+:matt/goldmine/GoalTop.D: 272 1104
+:matt/goldmine/minecart.D: 504 1090
+
+:matt/goldmine/04: 304 1104 r
+:matt/goldmine/04: 144 1104 fr
+:matt/goldmine/04: 304 1008 rrr
+:matt/goldmine/04: 144 1008 frrr
+:matt/goldmine/04: 304 944 r
+:matt/goldmine/04: 144 944 fr
+:matt/goldmine/04: 304 848 rrr
+:matt/goldmine/04: 144 848 frrr
+:matt/goldmine/04: 304 768 r
+:matt/goldmine/04: 144 768 fr
+:matt/goldmine/04: 304 672 rrr
+:matt/goldmine/04: 144 672 frrr
+:matt/goldmine/04: 304 592 r
+:matt/goldmine/04: 144 592 fr
+:matt/goldmine/04: 304 496 rrr
+:matt/goldmine/04: 144 496 frrr
+:matt/goldmine/04: 304 416 r
+:matt/goldmine/04: 144 416 fr
+:matt/goldmine/04: 304 320 rrr
+:matt/goldmine/04: 144 320 frrr
+:matt/goldmine/04: 304 240 r
+:matt/goldmine/04: 144 240 fr
+:matt/goldmine/04: 304 144 rrr
+:matt/goldmine/04: 145 144 frrr
+:matt/goldmine/07: -32 96
+:matt/goldmine/07: 432 96 frr
+:matt/goldmine/crate64: -16 1088
+:matt/goldmine/07: -32 1120
+:matt/goldmine/07: 432 1120 frr
+:matt/goldmine/crate64: -32 1024
+:matt/goldmine/planksupport: 130 -72 f
+:matt/goldmine/planksupport: 384 -72 f
+:matt/goldmine/plank: 256 48
+:matt/goldmine/plank: 512 48
+:matt/goldmine/plank: 2 48

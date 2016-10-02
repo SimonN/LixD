@@ -1,0 +1,110 @@
+$BUILT 2016-09-11 16:53:56
+$AUTHOR Rubix
+$ENGLISH Unstable Experiment
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 255
+
+#INITIAL 30
+#REQUIRED 30
+#SPAWN_INTERVAL 32
+
+#RUNNER 1
+#BLOCKER 1
+#BUILDER 1
+#PLATFORMER 4
+#JUMPER 2
+#BATTER 1
+#EXPLODER 0
+
+:geoo/abstract/hatch.H: 48 208
+
+:geoo/abstract/goal.G: 608 256
+
+:simon/acid.W: 192 352
+:simon/acid.W: 240 352
+:simon/acid.W: 288 352
+:simon/acid.W: 336 352
+:simon/acid.W: 384 352
+:simon/acid.W: 512 352
+:simon/acid.W: 592 352
+:simon/acid.W: 96 352
+:simon/acid.W: 0 352
+:simon/acid.W: 48 352
+:simon/acid.W: 144 352
+:simon/acid.W: 432 352
+:simon/acid.W: 464 352
+:simon/acid.W: 544 352
+
+:geoo/steel/dark_16x32o.S: 144 192
+:geoo/steel/dark_16x32o.S: 176 272
+:geoo/steel/dark_16x32o.S: 176 304
+:geoo/steel/dark_16x32o.S: 192 320 rrr
+:proxima/tile/spheres/blue: 176 272
+:proxima/tile/spheres/blue: 240 272
+:proxima/tile/blue2s: 352 224
+:proxima/tile/green1s: 192 160
+:proxima/tile/spheres/greensmall: 352 224
+:proxima/tile/blue2s: 336 352
+:proxima/tile/blue2s: 336 160
+:proxima/tile/blue2s: 336 96
+:proxima/tile/blue2s: 336 32
+:proxima/tile/green1s: 224 288
+:proxima/tile/green1s: 224 352
+:proxima/tile/green1s: 224 96
+:proxima/tile/green1s: 224 32
+:proxima/tile/spheres/green: -32 -16
+:proxima/tile/spheres/green: 16 -16
+:proxima/tile/spheres/green: 64 -16
+:proxima/tile/spheres/green: 112 -16
+:proxima/tile/spheres/green: 160 -16
+:proxima/tile/spheres/green: 208 -16
+:proxima/tile/spheres/green: 256 -16
+:proxima/tile/spheres/green: 304 -16
+:proxima/tile/spheres/green: 352 -16
+:proxima/tile/spheres/green: 400 -16
+:proxima/tile/spheres/green: 448 -16
+:proxima/tile/spheres/green: 496 -16
+:proxima/tile/spheres/green: 544 -16
+:proxima/tile/spheres/green: 592 -16
+:proxima/tile/spheres/green: 320 304
+:proxima/tile/spheres/bluesmall: 192 160
+:geoo/steel/dark_16x32o.S: 160 208 rrr
+:proxima/tile/spheres/green: 320 176
+:proxima/tile/spheres/green: 320 112
+:proxima/tile/spheres/green: 320 48
+:proxima/tile/spheres/green: 320 368
+:proxima/tile/green1s: 32 336
+:proxima/tile/green1s: 64 336
+:proxima/tile/green1s: 96 336
+:proxima/tile/green1s: 80 304
+:proxima/tile/green1s: 48 304
+:proxima/tile/green1s: 64 272
+:proxima/tile/green1s: 16 368
+:proxima/tile/green1s: 48 368
+:proxima/tile/green1s: 80 368
+:proxima/tile/green1s: 112 368
+:proxima/tile/blue2s: 544 304
+:proxima/tile/blue2s: 576 304
+:proxima/tile/blue2s: 526 336
+:proxima/tile/blue2s: 558 336
+:proxima/tile/blue2s: 590 336
+:proxima/tile/blue2s: 496 368
+:proxima/tile/blue2s: 528 368
+:proxima/tile/blue2s: 560 368
+:proxima/tile/blue2s: 592 368
+:proxima/tile/spheres/blue: 208 48
+:proxima/tile/spheres/blue: 208 112
+:proxima/tile/spheres/blue: 208 304
+:proxima/tile/spheres/blue: 208 368
+:proxima/tile/spheres/blue: 208 240
+:proxima/tile/spheres/blue: 368 224
+:geoo/steel/dark_16x32o.S: 144 160
+:proxima/tile/spheres/green: 144 160
+:proxima/tile/blue2s: 624 368
+:proxima/tile/blue2s: 622 336
+:proxima/tile/blue2s: 608 304

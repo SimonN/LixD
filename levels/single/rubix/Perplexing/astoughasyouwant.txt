@@ -1,0 +1,116 @@
+$BUILT 2016-09-18 14:29:30
+$AUTHOR Rubix
+$ENGLISH As tough as you want to make it
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 840
+#SIZE_Y 560
+#START_X 160
+#START_Y 0
+#BACKGROUND_RED 32
+#BACKGROUND_GREEN 16
+#BACKGROUND_BLUE 127
+
+#INITIAL 99
+#REQUIRED 98
+#SPAWN_INTERVAL 41
+
+#WALKER 3
+#RUNNER 1
+#CLIMBER 1
+#FLOATER 1
+#BLOCKER 2
+#BUILDER 5
+#PLATFORMER 2
+#BASHER 2
+#DIGGER 6
+#EXPLODER2 0
+
+:matt/bricks/Hatch.H: 640 176 r
+
+:matt/bricks/Goal.G: 0 32
+
+:matt/bricks/03: 656 496
+:matt/bricks/03b: 480 272
+:matt/bricks/03b: 416 272
+:matt/bricks/04b: 464 208
+:matt/bricks/03b: 704 112
+:matt/bricks/03b: 704 176
+:matt/bricks/03b: 704 240
+:matt/bricks/03b: 736 384
+:matt/bricks/03b: 672 384
+:matt/bricks/03b: 608 384
+:matt/bricks/03b: 544 384
+:matt/bricks/05b: 640 112
+:matt/bricks/05b: 400 208
+:matt/bricks/04b: 400 144
+:matt/bricks/05b: 336 144
+:matt/bricks/04b: 592 272
+:matt/bricks/05b: 528 272
+:matt/bricks/05b: 608 336
+:matt/bricks/04b: 560 288
+:matt/bricks/05b: 496 288
+:matt/bricks/04b: 416 208
+:matt/bricks/05b: 352 208
+:matt/bricks/04b: 352 144
+:matt/bricks/05b: 288 144
+:matt/bricks/03b: 640 224
+:matt/bricks/03b: 480 384
+:matt/bricks/03b: 480 448
+:matt/bricks/03b: 480 512
+:matt/bricks/03b: 416 496
+:matt/bricks/03b: 352 496
+:matt/bricks/03b: 288 496
+:matt/bricks/03b: 224 496
+:matt/bricks/03b: 96 496
+:matt/bricks/03b: 96 432
+:matt/bricks/06b: 160 432
+:matt/bricks/03b: 96 432
+:matt/bricks/03b: 704 288
+:matt/bricks/05b: 592 352
+:matt/bricks/03b: 784 384
+:matt/bricks/02b: 704 80
+:matt/bricks/02b: 640 80
+:matt/bricks/02b: 576 80
+:matt/bricks/02b: 512 80
+:matt/bricks/02b: 448 80
+:matt/bricks/02b: 384 80
+:matt/bricks/02b: 320 80
+:matt/bricks/02b: 256 80
+:matt/bricks/02b: 192 80
+:matt/bricks/02b: 128 80
+:matt/bricks/02b: 64 80
+:matt/bricks/02b: 0 80
+:matt/bricks/03b: 160 496
+:matt/bricks/03: 0 496
+:matt/bricks/03: 0 432
+:matt/bricks/03: 0 368
+:matt/bricks/03: 0 304
+:matt/bricks/06: 64 304
+:matt/bricks/06: 96 272
+:matt/bricks/03: 32 272
+:matt/bricks/03: 0 272
+:matt/bricks/03: 592 496
+:matt/bricks/03: 592 496
+:matt/bricks/02: 656 496
+:matt/bricks/03: 720 496
+:matt/bricks/02: 720 496
+:matt/bricks/02: 784 496
+:matt/bricks/02: 656 0
+:matt/bricks/02: 720 0
+:matt/bricks/02: 784 64
+:matt/bricks/02: 464 0
+:matt/bricks/02: 528 0
+:matt/bricks/02: 592 0
+:matt/bricks/02: 272 0
+:matt/bricks/02: 336 0
+:matt/bricks/02: 400 0
+:matt/bricks/02: 80 0
+:matt/bricks/02: 144 0
+:matt/bricks/02: 208 0
+:matt/bricks/05: 16 -32
+:matt/bricks/04: 784 0
+:matt/bricks/03: 784 96
+:matt/bricks/03: 784 160
+:matt/bricks/05: 784 224
+:matt/bricks/03: 784 496

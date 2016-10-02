@@ -1,0 +1,241 @@
+$BUILT 2014-02-27 15:42:11
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Step to the beat
+
+#SIZE_X 640
+#SIZE_Y 720
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 127
+#BACKGROUND_GREEN 63
+#BACKGROUND_BLUE 255
+
+#SECONDS 135
+#INITIAL 30
+#REQUIRED 29
+#SPAWN_INTERVAL 28
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#FLOATER 1
+#JUMPER 5
+#EXPLODER2 1
+#PLATFORMER 2
+#BASHER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/oriental/Hatch.H: -16 2
+
+:matt/oriental/Goal.G: 496 624
+:geoo/abstract/goal.G: 288 64
+
+:matt/water.W: 192 672
+:matt/water.W: 224 672
+:matt/water.W: 256 672
+:matt/water.W: 288 672
+:matt/water.W: 320 672
+:matt/water.W: 352 672
+:matt/water.W: 192 688
+:matt/water.W: 224 688
+:matt/water.W: 256 688
+:matt/water.W: 288 688
+:matt/water.W: 320 688
+:matt/water.W: 352 688
+:matt/water.W: 0 672
+:matt/water.W: 32 672
+:matt/water.W: 64 672
+:matt/water.W: 96 672
+:matt/water.W: 128 672
+:matt/water.W: 160 672
+:matt/water.W: 0 688
+:matt/water.W: 32 688
+:matt/water.W: 64 688
+:matt/water.W: 96 688
+:matt/water.W: 128 688
+:matt/water.W: 160 688
+:matt/water.W: 384 672
+:matt/water.W: 384 688
+
+:matt/oriental/trunk1: -17 633
+:matt/oriental/03: -32 672
+:matt/oriental/bridge_straight: 184 566
+:matt/oriental/bridge_angle: 288 624 f
+:matt/oriental/03: 544 704
+:matt/oriental/03: 16 80
+:matt/oriental/03: 32 96
+:matt/oriental/03: 48 112
+:matt/oriental/03: 64 128
+:matt/oriental/03: 80 144
+:matt/oriental/03: 96 160
+:matt/oriental/03: 112 176
+:matt/oriental/03: 128 192
+:matt/oriental/03: 144 208
+:matt/oriental/03: 160 224
+:matt/oriental/03: 176 240
+:matt/oriental/03: 192 256
+:matt/oriental/03: 208 272
+:matt/oriental/03: 224 288
+:matt/oriental/03: 240 304
+:matt/oriental/03: 256 320
+:matt/oriental/03: 272 336
+:matt/oriental/03: 288 352
+:matt/oriental/03: 304 368
+:matt/oriental/03: 320 384
+:matt/oriental/03: 336 400
+:matt/oriental/03: 352 416
+:matt/oriental/03: 368 432
+:matt/oriental/03: 384 448
+:matt/oriental/03: 400 464
+:matt/oriental/03: 416 480
+:matt/oriental/03: 432 496
+:matt/oriental/03: 368 640
+:matt/oriental/03: 448 704
+:matt/oriental/03: 16 192
+:matt/oriental/03: 32 208
+:matt/oriental/03: 48 224
+:matt/oriental/03: 64 240
+:matt/oriental/03: 80 256
+:matt/oriental/03: 96 272
+:matt/oriental/03: 112 288
+:matt/oriental/03: 128 304
+:matt/oriental/03: 144 320
+:matt/oriental/03: 160 336
+:matt/oriental/03: 176 352
+:matt/oriental/03: 192 368
+:matt/oriental/03: 208 384
+:matt/oriental/03: 224 400
+:matt/oriental/03: 240 416
+:matt/oriental/03: 256 432
+:matt/oriental/03: 272 448
+:matt/oriental/03: 288 464
+:matt/oriental/03: 304 480
+:matt/oriental/03: 320 496
+:matt/oriental/03: 336 512
+:matt/oriental/03: 352 528
+:matt/oriental/03: 368 544
+:matt/oriental/03: 368 560
+:matt/oriental/03: 368 624
+:matt/oriental/03: 368 608
+:matt/oriental/03: 0 288
+:matt/oriental/03: 16 304
+:matt/oriental/03: 32 320
+:matt/oriental/03: 48 336
+:matt/oriental/03: 64 352
+:matt/oriental/03: 80 368
+:matt/oriental/03: 96 384
+:matt/oriental/03: 112 400
+:matt/oriental/03: 128 416
+:matt/oriental/03: 144 432
+:matt/oriental/03: 160 448
+:matt/oriental/03: 176 464
+:matt/oriental/03: 192 480
+:matt/oriental/03: 208 496
+:matt/oriental/03: 224 512
+:matt/oriental/03: 240 528
+:matt/oriental/03: 256 544
+:matt/oriental/03: 272 560
+:matt/oriental/03: 288 576
+:matt/oriental/03: 304 592
+:matt/oriental/03: 320 608
+:matt/oriental/03: 336 624
+:matt/oriental/03: 352 640
+:matt/oriental/03: 368 656
+:matt/oriental/03: 384 672
+:matt/oriental/03: 400 688
+:matt/oriental/03: 416 704
+:matt/oriental/03: 480 704
+:matt/oriental/03: 512 704
+:matt/oriental/08: 576 0
+:matt/oriental/08: 576 64
+:matt/oriental/08: 576 128
+:matt/oriental/08: 576 192
+:matt/oriental/08: 576 256
+:matt/oriental/08: 576 320
+:matt/oriental/08: 576 384
+:matt/oriental/08: 576 448
+:geoo/construction/rod_steel/straight32.S: 576 448 rrr
+:matt/oriental/08: 576 512
+:matt/oriental/08: 576 576
+:matt/oriental/08: 576 640
+:matt/oriental/08: 576 704
+:matt/oriental/08: 528 0
+:matt/oriental/08: 528 64
+:matt/oriental/08: 528 128
+:matt/oriental/08: 528 192
+:matt/oriental/08: 528 256
+:matt/oriental/08: 528 320
+:matt/oriental/03: 368 592
+:matt/oriental/03: 0 272
+:matt/oriental/03: 0 256
+:matt/oriental/03: 0 240
+:matt/oriental/03: 0 224
+:matt/oriental/03: 0 208
+:matt/oriental/03: 0 192
+:matt/oriental/03: 0 176
+:matt/oriental/03: 0 160
+:matt/oriental/03: 0 144
+:matt/oriental/03: 0 128
+:matt/oriental/03: 0 112
+:matt/oriental/03: 0 96
+:matt/oriental/03: 0 80
+:matt/oriental/03: 0 64
+:matt/oriental/08: 528 384
+:matt/oriental/08: 480 320
+:matt/oriental/03: 368 576
+:matt/oriental/08: 480 0
+:matt/oriental/08: 480 64
+:matt/oriental/08: 480 128
+:matt/oriental/08: 480 192
+:matt/oriental/08: 480 256
+:matt/oriental/08: 432 0
+:matt/oriental/08: 432 64
+:matt/oriental/08: 432 128
+:matt/oriental/08: 384 0
+:matt/oriental/bridge_angle: -26 624
+:matt/oriental/bridge_straight: 80 566
+:matt/oriental/07: 200 570 d
+:matt/oriental/07: 198 580 d
+:matt/oriental/07: 142 580 d
+:matt/oriental/07: 72 580 d
+:matt/oriental/07: 74 542 d
+:matt/oriental/07: 148 542 d
+:matt/oriental/07: 180 564 d
+:matt/oriental/07: 184 580 d
+:matt/oriental/07: 98 580 d
+:matt/oriental/01: 258 592 d
+:matt/oriental/01: 262 594 d
+:matt/oriental/01: 252 594 d
+:matt/oriental/leaves4: -16 561
+:matt/oriental/bonsaitree: -61 426
+:matt/oriental/leaves3: -31 600
+:matt/oriental/leaves1: 3 612
+:matt/oriental/trunk1: -12 604
+:matt/oriental/08: 432 192
+:matt/oriental/08: 384 64
+:matt/oriental/08: 320 -64
+:matt/oriental/asiangate: 112 560
+:geoo/construction/rod_steel/straight32.S: 576 480 rrr
+:geoo/construction/rod_steel/straight32.S: 576 512 rrr
+:geoo/construction/rod_steel/straight32.S: 576 544 rrr
+:geoo/construction/rod_steel/straight32.S: 576 528 rrr
+:geoo/construction/rod_steel/straight32.S: 576 560 rrr
+:geoo/construction/rod_steel/straight32.S: 576 592 rrr
+:geoo/construction/rod_steel/straight32.S: 576 624 rrr
+:geoo/construction/rod_steel/straight32.S: 576 656 rrr
+:geoo/construction/rod_steel/straight32.S: 576 672 rrr
+:geoo/steel/dark_32x16o.S: 288 64
+:geoo/steel/dark_32x16o.S: 288 112
+:geoo/steel/dark_32x16o.S: 272 80 rrr
+:geoo/steel/dark_32x16o.S: 320 80 rrr
+:geoo/steel/dark_16x16o.S: 272 64
+:geoo/steel/dark_16x16o.S: 320 64
+:geoo/steel/dark_16x16o.S: 272 112
+:geoo/steel/dark_16x16o.S: 320 112

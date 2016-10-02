@@ -1,0 +1,122 @@
+$BUILT 2014-02-28 15:24:51
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Alternative cancellation
+
+#SIZE_X 960
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 380
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 223
+#BACKGROUND_BLUE 255
+
+#SECONDS 0
+#INITIAL 60
+#REQUIRED 60
+#SPAWN_INTERVAL 45
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#WALKER 1
+#JUMPER 1
+#PLATFORMER 1
+#BUILDER 1
+#DIGGER 4
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: -16 272
+
+:matt/winter/Goal.G: 896 320
+
+:matt/winter/07: 857 215 f
+:matt/winter/07: 839 208 f
+:matt/winter/07: 825 218 f
+:matt/winter/07: 693 252 f
+:matt/winter/07: 490 220 f
+:matt/winter/07: 529 232 f
+:matt/winter/07: 455 213 f
+:matt/winter/07: 112 197 f
+:matt/winter/07: 63 218 f
+:matt/winter/07: 260 182 f
+:matt/winter/07: 225 207 f
+:matt/winter/07: 177 166 f
+:matt/winter/07: 273 162 f
+:matt/winter/07: 299 194 f
+:matt/winter/07: 639 192 f
+:matt/winter/07: 737 199 f
+:matt/winter/07: 515 230 f
+:matt/winter/06: -8 270
+:matt/winter/06: -8 206
+:matt/winter/06: 144 288
+:matt/winter/10: -32 304
+:matt/winter/10: 64 336
+:matt/winter/06: 384 312
+:matt/winter/10: 288 352 frr
+:matt/winter/10: 192 384 f
+:matt/winter/06: 144 224
+:matt/winter/10: 400 304
+:matt/winter/06: 596 308
+:matt/winter/10: 496 336
+:matt/winter/06: 805 310
+:matt/winter/10: 720 352 frr
+:matt/winter/10: 624 384 f
+:matt/winter/06: 153 224 d
+:matt/winter/06: 153 282 d
+:matt/winter/06: 384 248
+:matt/winter/06: 393 246 d
+:matt/winter/06: 393 310 d
+:matt/winter/06: 596 244
+:matt/winter/06: 605 244 d
+:matt/winter/06: 605 308 d
+:matt/winter/06: 805 246
+:matt/winter/06: 815 246 d
+:matt/winter/06: 815 306 d
+:matt/winter/10: -40 126
+:matt/winter/10: 146 110
+:matt/winter/10: 362 128
+:matt/winter/10: 452 138
+:matt/winter/10: 646 144
+:matt/winter/10: 848 142
+:matt/winter/10: -76 82
+:matt/winter/10: 98 90
+:matt/winter/10: 280 94
+:matt/winter/10: 448 106
+:matt/winter/10: 602 94
+:matt/winter/10: 766 98
+:matt/winter/10: 97 7
+:matt/winter/10: 222 32
+:matt/winter/10: 404 36
+:matt/winter/10: 572 48
+:matt/winter/10: 726 36
+:matt/winter/10: 890 40
+:matt/winter/10: -26 14
+:matt/winter/10: 148 22
+:matt/winter/10: 330 26
+:matt/winter/10: 498 38
+:matt/winter/10: 652 26
+:matt/winter/10: 816 30
+:matt/winter/10: -112 -32
+:matt/winter/10: -51 -34
+:matt/winter/10: 244 -20
+:matt/winter/10: 371 -40
+:matt/winter/10: 566 -20
+:matt/winter/10: 730 -16
+:matt/winter/10: 46 55
+:matt/winter/10: 90 -55
+:matt/winter/10: 502 -52
+:matt/winter/10: 570 -42
+:matt/winter/10: 724 -54
+:matt/winter/10: 888 -50
+:matt/winter/05: 910 384 r
+:matt/winter/10: 59 335
+:matt/winter/10: 301 339 frr
+:matt/winter/10: 502 335
+:matt/winter/10: 723 350 frr

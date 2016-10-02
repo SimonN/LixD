@@ -1,0 +1,126 @@
+$BUILT 2014-02-28 15:45:22
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Brute Force Brick
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 6
+#REQUIRED 5
+#SPAWN_INTERVAL 32
+#SPAWN_INTERVAL_FAST 4
+
+#JUMPER 1
+#BLOCKER 1
+#BUILDER 1
+#PLATFORMER 3
+#MINER 2
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/bricks/Hatch.H: 96 176 r
+:matt/bricks/Hatch.H: -16 0
+:matt/bricks/Hatch.H: 592 0 r
+:matt/bricks/Hatch.H: 592 0 r
+:matt/bricks/Hatch.H: 592 0 r
+:matt/bricks/Hatch.H: 592 0 r
+
+:matt/bricks/Goal.G: 480 224
+
+:simon/crystal.W: 0 368
+:simon/crystal.W: 48 368
+:simon/crystal.W: 96 368
+:simon/crystal.W: 144 368
+:simon/crystal.W: 336 368
+:simon/crystal.W: 288 368
+:simon/crystal.W: 240 368
+:simon/crystal.W: 192 368
+:simon/crystal.W: 384 368
+:simon/crystal.W: 432 368
+:simon/crystal.W: 480 368
+:simon/crystal.W: 528 368
+:simon/crystal.W: 576 368
+:simon/crystal.W: 624 368
+
+:matt/bricks/15: 352 64 frr
+:matt/bricks/02: 352 96
+:matt/bricks/02: 352 128
+:matt/bricks/02: 352 160
+:matt/bricks/02: 416 128
+:matt/bricks/02: 416 160
+:matt/bricks/03b: 224 272
+:matt/bricks/03b: 288 272
+:matt/bricks/03b: 352 272
+:matt/bricks/03b: 416 272
+:matt/bricks/03b: 480 272
+:matt/bricks/03: 0 272
+:matt/bricks/03: 0 208
+:matt/bricks/03: 0 144
+:matt/bricks/03: 0 80
+:matt/bricks/03: 576 272
+:matt/bricks/03: 576 208
+:matt/bricks/03: 576 144
+:matt/bricks/03: 576 80
+:matt/bricks/01b: 0 48 rrr
+:matt/bricks/01b: 0 16 rrr
+:matt/bricks/01b: 0 0 rr
+:matt/bricks/01b: 32 0 rr
+:matt/bricks/01b: 64 0 rr
+:matt/bricks/01b: 624 48 r
+:matt/bricks/01b: 624 16 r
+:matt/bricks/01b: 608 0 rr
+:matt/bricks/01b: 576 0 rr
+:matt/bricks/01b: 544 0 rr
+:matt/bricks/02a: 0 176
+:matt/bricks/02a: 0 256
+:matt/bricks/02a: 576 256
+:matt/bricks/02a: 576 176
+:matt/bricks/02a: 576 80
+:matt/bricks/02a: 0 80
+:matt/bricks/01: 320 288
+:matt/bricks/01: 464 272
+:matt/bricks/01: 416 288
+:matt/bricks/01: 272 304
+:matt/bricks/01: 224 288
+:matt/bricks/15: 288 128 f
+:matt/bricks/15: 256 48 fr
+:matt/bricks/02: 288 64
+:matt/bricks/02: 288 96
+:matt/bricks/15: 416 96 frr
+:matt/bricks/01: 368 304
+:matt/bricks/01: 464 304
+:matt/bricks/01: 320 320
+:matt/bricks/01: 272 272
+:matt/bricks/01: 368 272
+:matt/bricks/01: 512 288
+:matt/bricks/01: 416 320
+:matt/bricks/01: 224 320
+:matt/bricks/01: 512 320
+:matt/bricks/01: 96 0
+:matt/bricks/01: 128 0
+:matt/bricks/01: 160 0
+:matt/bricks/01: 192 0
+:matt/bricks/01: 224 0
+:matt/bricks/01: 256 0
+:matt/bricks/01: 288 0
+:matt/bricks/01: 320 0
+:matt/bricks/01: 352 0
+:matt/bricks/01: 384 0
+:matt/bricks/01: 416 0
+:matt/bricks/01: 448 0
+:matt/bricks/01: 480 0
+:matt/bricks/01: 512 0
+:matt/bricks/03b: 96 272
+:matt/bricks/15: 288 32 frr

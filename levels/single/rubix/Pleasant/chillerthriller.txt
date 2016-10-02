@@ -1,0 +1,176 @@
+$BUILT 2014-02-28 15:26:14
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Chiller Thriller
+$HINT_ENGLISH Better that you finish this without any hints.  Things will start getting harder from here on.   Put everything you have learned to use, dont give up, you'll do it! Theres nothing difficult, its all just patience and testing.
+#SIZE_X 1120
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 480
+#START_Y 380
+#BACKGROUND_RED 48
+#BACKGROUND_GREEN 96
+#BACKGROUND_BLUE 255
+
+#SECONDS 0
+#INITIAL 99
+#REQUIRED 95
+#SPAWN_INTERVAL 13
+#SPAWN_INTERVAL_FAST 4
+
+#BLOCKER 2
+#EXPLODER 2
+#BUILDER 5
+#PLATFORMER 4
+#MINER 3
+#BASHER 3
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: 968 68 r
+:matt/winter/Hatch.H: 1040 260 r
+:matt/winter/Hatch.H: 585 213 r
+:matt/winter/Hatch.H: 272 0
+:matt/winter/Hatch.H: 112 256
+
+:matt/winter/Goal.G: 0 64
+
+:matt/winter/03: 1066 298
+:matt/winter/09a: -16 128
+:matt/winter/09a: 0 128
+:matt/winter/09a: 16 128
+:matt/winter/10: 432 240
+:matt/winter/10: 128 336
+:matt/winter/10: 32 352
+:matt/winter/10: 16 288
+:matt/winter/10: -80 304
+:matt/winter/10: 128 272
+:matt/winter/10: 816 288
+:matt/winter/10: 720 304
+:matt/winter/10: 919 287
+:matt/winter/10: 720 240
+:matt/winter/10: 624 256
+:matt/winter/10: 821 238
+:matt/winter/10: 480 272
+:matt/winter/09a: -32 320
+:matt/winter/09a: -16 304
+:matt/winter/09a: 0 288
+:matt/winter/09a: 16 272
+:matt/winter/09a: 32 256
+:matt/winter/09a: 48 240
+:matt/winter/09a: 64 224
+:matt/winter/09a: 80 208
+:matt/winter/09a: 96 192
+:matt/winter/09a: 112 176
+:matt/winter/09a: 160 144
+:matt/winter/09a: 176 128
+:matt/winter/09a: 192 112
+:matt/winter/09a: 208 96
+:matt/winter/09a: 224 80
+:matt/winter/09a: 240 64
+:matt/winter/09a: 256 48
+:matt/winter/09a: 272 48
+:matt/winter/09a: 288 48
+:matt/winter/09a: 304 48
+:matt/winter/09a: 320 48
+:matt/winter/09a: 336 48
+:matt/winter/09a: 352 48
+:matt/winter/09a: 368 64
+:matt/winter/09a: 384 80
+:matt/winter/09a: 400 96
+:matt/winter/09a: 32 128
+:matt/winter/09a: 48 128
+:matt/winter/09a: 64 128
+:matt/winter/09a: 80 128
+:matt/winter/09a: 104 135
+:matt/winter/09a: 124 151
+:matt/winter/09a: 149 164
+:matt/winter/09a: 176 176
+:matt/winter/09a: 208 192
+:matt/winter/09a: 240 208
+:matt/winter/09a: 272 192
+:matt/winter/09a: 304 176
+:matt/winter/09a: 336 160
+:matt/winter/09a: 368 144
+:matt/winter/09a: 400 128
+:matt/winter/09a: 432 112
+:matt/winter/09a: 464 96
+:matt/winter/09a: 496 80
+:matt/winter/09a: 528 64
+:matt/winter/09a: 560 48
+:matt/winter/09a: 592 32
+:matt/winter/09a: 416 112
+:matt/winter/09a: 432 128
+:matt/winter/09a: 448 144
+:matt/winter/09a: 464 160
+:matt/winter/09a: 480 176
+:matt/winter/09a: 496 192
+:matt/winter/09a: 512 208
+:matt/winter/09a: 528 224
+:matt/winter/09a: 544 240
+:matt/winter/09a: 560 256
+:matt/winter/09a: 576 272
+:matt/winter/09a: 592 272
+:matt/winter/09a: 608 256
+:matt/winter/09a: 624 240
+:matt/winter/09a: 640 224
+:matt/winter/09a: 656 208
+:matt/winter/09a: 672 192
+:matt/winter/09a: 688 176
+:matt/winter/09a: 704 160
+:matt/winter/09a: 720 144
+:matt/winter/09a: 736 128
+:matt/winter/09a: 784 96
+:matt/winter/09a: 800 80
+:matt/winter/09a: 816 64
+:matt/winter/09a: 832 48
+:matt/winter/09a: 848 32
+:matt/winter/09a: 864 16
+:matt/winter/09a: 880 0
+:matt/winter/09a: 896 0
+:matt/winter/09a: 912 0
+:matt/winter/09a: 928 0
+:matt/winter/09a: 944 0
+:matt/winter/09a: 960 0
+:matt/winter/09a: 976 0
+:matt/winter/09a: 992 16
+:matt/winter/09a: 1008 32
+:matt/winter/09a: 1024 48
+:matt/winter/09a: 618 37
+:matt/winter/09a: 640 48
+:matt/winter/09a: 672 64
+:matt/winter/09a: 704 80
+:matt/winter/09a: 736 96
+:matt/winter/09a: 768 112
+:matt/winter/09a: 800 128
+:matt/winter/09a: 832 144
+:matt/winter/09a: 864 160
+:matt/winter/09a: 896 144
+:matt/winter/09a: 928 128
+:matt/winter/09a: 960 112
+:matt/winter/09a: 992 96
+:matt/winter/09a: 1024 80
+:matt/winter/09a: 1056 64
+:matt/winter/09a: 1088 48
+:matt/winter/09a: 1040 64
+:matt/winter/09a: 1056 80
+:matt/winter/09a: 1072 96
+:matt/winter/09a: 1088 112
+:matt/winter/09a: 1104 128
+:matt/winter/10: 272 304
+:matt/winter/10: 368 288
+:matt/winter/10: 592 320
+:matt/winter/10: 384 352
+:matt/winter/10: 480 336
+:matt/winter/10: 848 288
+:matt/winter/10: 640 320
+:matt/winter/10: 736 304
+:matt/winter/10: 976 320
+:matt/winter/10: 768 352
+:matt/winter/10: 864 336
+:matt/winter/10: 288 256

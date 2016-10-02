@@ -1,0 +1,87 @@
+$BUILT 2014-02-27 14:36:51
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Out of the blue
+
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 64
+#BACKGROUND_BLUE 128
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 45
+#SPAWN_INTERVAL 4
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 2
+#BUILDER 3
+#PLATFORMER 3
+#BASHER 3
+#MINER 3
+#DIGGER 3
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: 48 304
+
+:matt/winter/Goal.G: 558 292
+
+:matt/winter/07: 76 -6 rr
+:matt/winter/07: 21 10 rr
+:matt/winter/07: 275 29 rr
+:matt/winter/07: 574 73 rr
+:matt/winter/07: 423 8 rr
+:matt/winter/07: 297 14 rr
+:matt/winter/06: 160 288
+:matt/winter/04: -43 224
+:matt/winter/10: 80 352
+:matt/winter/10: 161 233 fr
+:matt/winter/06: 160 272 f
+:matt/winter/06: 496 336
+:matt/winter/06: 496 289
+:matt/winter/09a: 383 337
+:matt/winter/10: 43 345
+:matt/winter/04: 208 352 r
+:matt/winter/06: 112 352 fr
+:matt/winter/06: 48 352 fr
+:matt/winter/06: 48 304 f
+:matt/winter/04: -32 320
+:matt/winter/06: 48 240 f
+:matt/winter/10: 160 263 r
+:matt/winter/06: 112 240 fr
+:matt/winter/06: 48 240 fr
+:matt/winter/03: -32 224
+:matt/winter/10: -95 169
+:matt/winter/04: 88 121
+:matt/winter/10: -64 128
+:matt/winter/04: 240 -80
+:matt/winter/10: 336 -80
+:matt/winter/10: -48 -80
+:matt/winter/10: 496 -48 r
+:matt/winter/09a: 528 352
+:matt/winter/09a: 371 368
+:matt/winter/09a: 410 380
+:matt/winter/09a: 560 352
+:matt/winter/09a: 592 352
+:matt/winter/09b: 452 376
+:matt/winter/09b: 437 353
+:matt/winter/09c: 436 340
+:matt/winter/09c: 421 366
+:matt/winter/09b: 454 349
+:matt/winter/09c: 452 338
+:matt/winter/09c: 442 331
+:matt/winter/04: 550 153
+:matt/winter/02: 585 176
+:matt/winter/10: 597 107 fr
+:matt/winter/05: 625 -37

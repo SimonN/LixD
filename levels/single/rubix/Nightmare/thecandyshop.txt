@@ -1,0 +1,139 @@
+$BUILT 2014-02-27 22:38:55
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH The candy shop
+
+#SIZE_X 622
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 604
+#START_Y 380
+#BACKGROUND_RED 80
+#BACKGROUND_GREEN 112
+#BACKGROUND_BLUE 207
+
+#SECONDS 79
+#INITIAL 40
+#REQUIRED 40
+#SPAWN_INTERVAL 13
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 2
+#WALKER 3
+#JUMPER 3
+#FLOATER 2
+#RUNNER 1
+#PLATFORMER 1
+#BUILDER 2
+#MINER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/marble/Hatch.H: 288 -16 r
+
+:matt/marble/Goal.G: 496 176
+
+:matt/water.W: 112 352
+:matt/water.W: 144 352
+:matt/water.W: 176 352
+:matt/water.W: 208 352
+:matt/water.W: 240 352
+:matt/water.W: 272 352
+:matt/water.W: 112 368
+:matt/water.W: 144 368
+:matt/water.W: 176 368
+:matt/water.W: 208 368
+:matt/water.W: 240 368
+:matt/water.W: 272 368
+:matt/water.W: 384 352
+:matt/water.W: 416 352
+:matt/water.W: 448 352
+:matt/water.W: 480 352
+:matt/water.W: 384 368
+:matt/water.W: 416 368
+:matt/water.W: 448 368
+:matt/water.W: 480 368
+
+:matt/marble/06: 0 176
+:matt/marble/03a: 304 68
+:matt/marble/03b: 320 68
+:matt/marble/03b: 288 68
+:matt/marble/03a: 272 68
+:matt/marble/03b: 288 68
+:matt/marble/03b: 256 68
+:matt/marble/03a: 240 100
+:matt/marble/14: 208 100
+:matt/marble/08: 176 228
+:matt/marble/08: 288 356
+:matt/marble/08: 352 356
+:matt/marble/08: 112 228
+:matt/marble/08: 64 196
+:matt/marble/08: 432 224
+:matt/marble/08: 496 224
+:matt/marble/03a: 304 100 d
+:matt/marble/03b: 320 100 d
+:matt/marble/03b: 288 100 d
+:matt/marble/03a: 272 100 d
+:matt/marble/03b: 288 100 d
+:matt/marble/03a: 336 100 d
+:matt/marble/03b: 256 36
+:matt/marble/03b: 256 4
+:matt/marble/08: 176 244 d
+:matt/marble/08: 112 244 d
+:matt/marble/09a: 288 380
+:matt/marble/09a: 352 380
+:matt/marble/08: 0 304
+:matt/marble/08: 64 304
+:matt/marble/09a: 0 336
+:matt/marble/09a: 64 336
+:matt/marble/08: 496 304
+:matt/marble/08: 560 304
+:matt/marble/09a: 496 336
+:matt/marble/09a: 560 336
+:matt/marble/08: 496 240 d
+:matt/marble/08: 432 240 d
+:matt/marble/06: 592 240
+:matt/marble/06: 0 240
+:matt/marble/06: 592 176
+:matt/marble/05b: 64 0
+:matt/marble/05b: 32 0
+:matt/marble/05b: 0 0
+:matt/marble/05b: 592 0
+:matt/marble/05b: 560 0
+:matt/marble/05b: 528 0
+:matt/marble/15b: 160 0
+:matt/marble/05b: 400 0
+:matt/marble/05b: 368 0
+:matt/marble/15b: 0 32
+:matt/marble/15b: 592 32 frr
+:matt/marble/22a: 0 16
+:matt/marble/22a: 576 16 frr
+:matt/marble/22a: -48 64
+:matt/marble/22a: 592 32 frr
+:matt/marble/03a: 464 0
+:matt/marble/03b: 480 0
+:matt/marble/03b: 448 0
+:matt/marble/03a: 432 0
+:matt/marble/03b: 448 0
+:matt/marble/03a: 496 0
+:matt/marble/03b: 512 0
+:matt/marble/03a: 96 0
+:matt/marble/03b: 112 0
+:matt/marble/03a: 128 0
+:matt/marble/03b: 144 0
+:matt/marble/05b: 368 32
+:matt/steel/32x64.S: 272 164
+:matt/steel/32x64.S: 272 100
+:matt/marble/03a: 256 100
+:matt/marble/05b: 240 107 d
+:matt/steel/32x32.S: 272 224
+:matt/steel/32x32.S: 304 70
+:matt/steel/32x32.S: 304 38
+:matt/steel/32x32.S: 336 38
+:matt/steel/32x32.S: 368 38
+:matt/marble/07d: 368 256
+:matt/marble/07d: 320 256
+:matt/steel/32x32.S: 272 68

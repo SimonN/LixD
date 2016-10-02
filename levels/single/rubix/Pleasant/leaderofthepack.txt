@@ -1,0 +1,80 @@
+$BUILT 2014-02-27 14:40:23
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Leader of the pack
+$HINT_ENGLISH Just because you should block, doesnt mean you need to block immediately.  Wait a bit.
+$HINT_ENGLISH Understanding all the ways you can delay groups of Lix is a skill you'll master overtime.    
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 80
+#BACKGROUND_GREEN 127
+#BACKGROUND_BLUE 191
+
+#SECONDS 0
+#INITIAL 35
+#REQUIRED 33
+#SPAWN_INTERVAL 75
+#SPAWN_INTERVAL_FAST 4
+
+#FLOATER 1
+#EXPLODER 4
+#BLOCKER 4
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/bricks/Hatch.H: 0 32
+
+:matt/bricks/Goal.G: 576 288
+
+:matt/water.W: 144 368
+:matt/water.W: 176 368
+:matt/water.W: 208 368
+:matt/water.W: 400 368
+:matt/water.W: 432 368
+:matt/water.W: 464 368
+:matt/water.W: 288 368
+:matt/water.W: 320 368
+:matt/water.W: 352 368
+
+:matt/bricks/17: 160 336
+:matt/bricks/17: 208 288
+:matt/bricks/17: 256 240
+:matt/bricks/17: 304 192
+:matt/bricks/17: 352 144
+:matt/bricks/17: 400 96
+:matt/bricks/03: 352 208
+:matt/bricks/03: 352 272
+:matt/bricks/03: 480 80
+:matt/bricks/03: 480 144
+:matt/bricks/03: 480 208
+:matt/bricks/03: 480 272
+:matt/bricks/03: 224 336
+:matt/bricks/03: 352 336
+:matt/bricks/03: 480 336
+:matt/bricks/17: 448 48
+:matt/bricks/03: 544 336
+:matt/bricks/03: 592 336
+:matt/bricks/02: 112 368
+:matt/bricks/02: 48 368
+:matt/bricks/02: -16 368
+:matt/bricks/02: 112 288
+:matt/bricks/02: 48 288
+:matt/bricks/02: 64 208
+:matt/bricks/02: 0 208
+:matt/bricks/02: 112 144
+:matt/bricks/02: 48 144
+:matt/bricks/02: 64 80
+:matt/bricks/02: 0 80
+:matt/bricks/02: 176 144
+:matt/bricks/04: 512 272

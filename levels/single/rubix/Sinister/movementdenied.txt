@@ -1,0 +1,128 @@
+$BUILT 2014-02-27 18:51:35
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Movement denied
+$HINT_ENGLISH Holding back is the way forward here.
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 32
+#BACKGROUND_GREEN 16
+#BACKGROUND_BLUE 96
+
+#SECONDS 0
+#INITIAL 99
+#REQUIRED 99
+#SPAWN_INTERVAL 4
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 20
+#JUMPER 4
+#BUILDER 1
+#BASHER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: 224 -16
+
+:matt/winter/Goal.G: -38 114
+
+:matt/winter/06: -10 140
+:matt/winter/06: -10 90
+:matt/winter/06: 160 240
+:matt/winter/06: 64 256
+:matt/winter/06: 0 192
+:matt/winter/06: 352 32
+:matt/winter/06: 384 80 r
+:matt/winter/06: 448 80 r
+:matt/winter/06: 512 80 r
+:matt/winter/06: 624 80
+:matt/winter/06: 496 128 r
+:matt/winter/06: 560 128 r
+:matt/winter/06: 432 128 r
+:matt/winter/06: 320 128
+:matt/winter/06: 400 128 r
+:matt/winter/06: 464 128 r
+:matt/winter/06: 352 128 r
+:matt/winter/06: 480 176 r
+:matt/winter/06: 544 176 r
+:matt/winter/06: 416 176 r
+:matt/winter/06: 384 176 r
+:matt/winter/06: 448 176 r
+:matt/winter/06: 320 176 r
+:matt/winter/06: 624 32 f
+:matt/winter/06: 224 -32 rr
+:matt/winter/06: 224 32 r
+:matt/winter/06: 288 32 r
+:matt/winter/06: 368 224 r
+:matt/winter/06: 624 174 f
+:matt/winter/06: 320 224 r
+:matt/winter/06: 624 144
+:matt/winter/06: 432 224 r
+:matt/winter/06: 496 224 r
+:matt/winter/06: 560 224 r
+:matt/winter/06: 240 304 r
+:matt/winter/06: 320 80 f
+:matt/winter/06: 320 80 fr
+:matt/winter/06: 235 309 r
+:matt/winter/04: 250 223
+:matt/winter/04: 196 265
+:matt/winter/04: 170 347
+:matt/winter/04: 229 305
+:matt/winter/10: 295 223
+:matt/winter/10: 246 300
+:matt/winter/10: 217 333
+:matt/winter/10: 278 270
+:matt/winter/10: 311 237
+:matt/winter/10: 368 236
+:matt/winter/10: 319 313
+:matt/winter/10: 290 346
+:matt/winter/10: 351 283
+:matt/winter/10: 384 250
+:matt/winter/10: 411 233
+:matt/winter/10: 364 316
+:matt/winter/10: 335 349
+:matt/winter/10: 396 286
+:matt/winter/10: 429 253
+:matt/winter/10: 499 234
+:matt/winter/10: 407 314
+:matt/winter/10: 378 347
+:matt/winter/10: 439 284
+:matt/winter/10: 474 231
+:matt/winter/10: 549 236
+:matt/winter/10: 500 313
+:matt/winter/10: 471 346
+:matt/winter/10: 532 283
+:matt/winter/10: 565 250
+:matt/winter/09a: -32 176
+:matt/winter/09a: -8 176
+:matt/winter/09a: 16 176
+:matt/winter/09a: 32 192
+:matt/winter/09a: 48 208
+:matt/winter/09a: 62 224
+:matt/winter/06: 544 80 r
+:matt/winter/09a: 72 240
+:matt/winter/09a: 82 256
+:matt/winter/06: 64 320
+:matt/winter/06: 0 240
+:matt/winter/06: 0 288
+:matt/winter/06: 0 336
+:matt/winter/06: 64 368
+:matt/winter/06: 160 16
+:matt/winter/06: 160 80
+:matt/winter/06: 160 128
+:matt/winter/06: 160 128
+:matt/winter/06: 160 192
+:matt/winter/06: -10 -16
+:matt/winter/06: -10 48
+:matt/winter/09a: 96 276
+:matt/winter/06: 160 0

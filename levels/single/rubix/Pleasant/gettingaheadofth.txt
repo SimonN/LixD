@@ -1,0 +1,229 @@
+$BUILT 2014-06-04 10:13:42
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Getting ahead of the game
+
+#SIZE_X 2820
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 1600
+#START_Y 220
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 137
+#BACKGROUND_BLUE 255
+
+#SECONDS 0
+#INITIAL 99
+#REQUIRED 89
+#SPAWN_INTERVAL 4
+#SPAWN_INTERVAL_FAST 4
+
+#JUMPER 40
+#FLOATER 1
+#BUILDER 4
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/beach/decor/sun.D: 2579 18
+
+:matt/beach/Hatch.H: 96 50
+
+:matt/beach/goal.G: 2728 220
+
+:matt/water.W: 2448 352
+:matt/water.W: 2480 352
+:matt/water.W: 2512 352
+:matt/water.W: 2544 352
+:matt/water.W: 2576 352
+:matt/water.W: 2448 368
+:matt/water.W: 2480 368
+:matt/water.W: 2512 368
+:matt/water.W: 2544 368
+:matt/water.W: 2576 368
+
+:matt/beach/decor/pail: 2078 231
+:matt/beach/daytime/06: 1914 169 r
+:matt/beach/daytime/06: 1911 92 r
+:matt/beach/daytime/06: 1887 127 r
+:matt/beach/daytime/06: 1845 165 r
+:matt/beach/daytime/06: 1930 132 r
+:matt/beach/daytime/06: 1928 168 r
+:matt/beach/daytime/06: 1984 205 r
+:matt/beach/daytime/06: 1945 271 r
+:matt/beach/daytime/06: 1736 158 r
+:matt/beach/daytime/06: 1961 163 r
+:matt/beach/daytime/06: 1882 160 r
+:matt/beach/daytime/06: 1929 149 r
+:matt/beach/daytime/06: 1935 208 r
+:matt/beach/daytime/06: 1934 121 r
+:matt/beach/daytime/06: 1937 213 r
+:matt/beach/daytime/06: 1892 159 r
+:matt/beach/daytime/06: 1815 176 r
+:matt/beach/daytime/06: 1946 281 r
+:matt/beach/daytime/06: 1951 314 r
+:matt/beach/daytime/06: 1906 260 r
+:matt/beach/daytime/06: 1830 279 r
+:matt/beach/daytime/06: 1880 305 r
+:matt/beach/daytime/06: 1835 251 r
+:matt/beach/daytime/06: 1838 343 r
+:matt/beach/daytime/06: 2165 241 r
+:matt/beach/daytime/06: 2032 274 r
+:matt/beach/daytime/06: 1992 265 r
+:matt/beach/daytime/06: 1916 284 r
+:matt/beach/daytime/06: 2010 277 r
+:matt/beach/daytime/06: 1921 256 r
+:matt/beach/daytime/06: 1968 315 r
+:matt/beach/daytime/06: 2021 350 r
+:matt/beach/daytime/06: 1767 272 r
+:matt/beach/daytime/06: 1643 220 r
+:matt/beach/daytime/06: 1699 290 r
+:matt/beach/daytime/06: 1588 248 r
+:matt/beach/daytime/06: 1534 337 r
+:matt/beach/daytime/06: 2123 275 r
+:matt/beach/daytime/06: 2201 279 r
+:matt/beach/daytime/06: 2279 272 r
+:matt/beach/daytime/06: 2336 224 r
+:matt/beach/daytime/06: 2368 288 r
+:matt/beach/daytime/04: 2586 313 fr
+:matt/beach/daytime/04: 2608 281 fr
+:matt/beach/daytime/04: 2698 313 fr
+:matt/beach/daytime/03: 2650 281
+:matt/beach/daytime/03: 2666 281
+:matt/beach/daytime/03: 2634 279
+:matt/beach/daytime/04: 1862 44
+:matt/beach/daytime/06: 1820 181 r
+:matt/beach/daytime/04: 1877 82
+:matt/beach/daytime/04: 2249 146
+:matt/beach/daytime/06: 2261 185 r
+:matt/beach/daytime/06: 2205 194
+:matt/beach/daytime/01: 1825 106
+:matt/beach/daytime/06: 1789 109
+:matt/beach/daytime/06: 2276 166 r
+:matt/beach/daytime/06: 2288 184 fr
+:matt/beach/daytime/06: 1543 271 r
+:matt/beach/daytime/06: 1478 310 r
+:matt/beach/daytime/06: 1534 380 r
+:matt/beach/daytime/06: 1423 338 r
+:matt/beach/daytime/04: 1276 271
+:matt/beach/daytime/06: 1288 310 r
+:matt/beach/daytime/06: 1232 319
+:matt/beach/daytime/06: 1303 291 r
+:matt/beach/daytime/06: 1248 294
+:matt/beach/daytime/06: 1315 261 fr
+:matt/beach/daytime/04: 1164 307
+:matt/beach/daytime/06: 1176 346 r
+:matt/beach/daytime/06: 1120 355
+:matt/beach/daytime/06: 1191 327 r
+:matt/beach/daytime/06: 1136 330
+:matt/beach/daytime/06: 1037 315
+:matt/beach/daytime/13: 953 342
+:matt/beach/daytime/04: 899 281
+:matt/beach/daytime/03: 925 329
+:matt/beach/daytime/03: 975 330
+:matt/beach/daytime/06: 1689 190 r
+:matt/beach/daytime/01: 1393 295
+:matt/beach/daytime/04: 1387 246
+:matt/beach/daytime/04: 1440 212
+:matt/beach/daytime/04: 1472 196 fr
+:matt/beach/daytime/04: 1544 177 fr
+:matt/beach/daytime/04: 1648 180 fr
+:matt/beach/daytime/13: 1838 65
+:matt/beach/daytime/13: 1820 81
+:matt/beach/daytime/06: 2066 299 r
+:matt/beach/daytime/04: 784 276
+:matt/beach/daytime/06: 784 292 r
+:matt/beach/daytime/06: 720 308
+:matt/beach/daytime/06: 784 276 r
+:matt/beach/daytime/06: 736 276
+:matt/beach/daytime/06: 832 260 fr
+:matt/beach/daytime/04: 656 292
+:matt/beach/daytime/06: 672 324 r
+:matt/beach/daytime/06: 608 340
+:matt/beach/daytime/06: 672 308 r
+:matt/beach/daytime/06: 624 308
+:matt/beach/daytime/06: 528 292
+:matt/beach/daytime/13: 448 324
+:matt/beach/daytime/04: 384 260
+:matt/beach/daytime/03: 416 308
+:matt/beach/daytime/03: 464 308
+:matt/beach/daytime/04: 880 228
+:matt/beach/daytime/04: 384 260
+:matt/beach/daytime/06: 336 308
+:matt/beach/daytime/06: 352 276
+:matt/beach/daytime/06: 256 260
+:matt/beach/daytime/13: 176 292
+:matt/beach/daytime/04: 128 244
+:matt/beach/daytime/03: 144 276
+:matt/beach/daytime/03: 192 276
+:matt/beach/daytime/06: 214 326
+:matt/beach/daytime/06: 464 324
+:matt/beach/daytime/13: 80 260
+:matt/beach/daytime/04: 16 196
+:matt/beach/daytime/03: 48 244
+:matt/beach/daytime/13: 96 324
+:matt/beach/daytime/04: 32 260
+:matt/beach/daytime/03: 64 308
+:matt/beach/daytime/13: 32 324
+:matt/beach/daytime/04: -32 260
+:matt/beach/daytime/03: 0 308
+:matt/beach/daytime/13: 0 212
+:matt/beach/daytime/04: -64 148
+:matt/beach/daytime/03: -32 196
+:matt/beach/daytime/04: 2712 274 fr
+:matt/beach/daytime/04: 450 198
+:matt/beach/daytime/04: 450 198
+:matt/beach/daytime/06: 402 246
+:matt/beach/daytime/06: 430 238
+:matt/beach/daytime/06: 322 198
+:matt/beach/daytime/13: 242 230
+:matt/beach/daytime/04: 194 182
+:matt/beach/daytime/03: 210 214
+:matt/beach/daytime/03: 258 214
+:matt/beach/daytime/06: 280 264
+:matt/beach/daytime/13: 146 198
+:matt/beach/daytime/04: 82 134
+:matt/beach/daytime/03: 114 182
+:matt/beach/daytime/13: 162 262
+:matt/beach/daytime/04: 98 198
+:matt/beach/daytime/03: 130 246
+:matt/beach/daytime/13: 98 262
+:matt/beach/daytime/04: 34 198
+:matt/beach/daytime/03: 66 246
+:matt/beach/daytime/13: 66 150
+:matt/beach/daytime/04: -42 18
+:matt/beach/daytime/03: 22 132
+:matt/beach/daytime/04: -8 76
+:matt/beach/decor/grass11: 1921 150
+:matt/beach/decor/grass10: 1547 229
+:matt/beach/decor/grass09: 2001 311
+:matt/beach/decor/grass09: 2309 169
+:matt/beach/decor/grass07: 2215 269
+:matt/beach/decor/grass07: 2767 337
+:matt/beach/decor/grass06: 2651 303
+:matt/beach/decor/grass04: 1950 70
+:matt/beach/decor/grass07: 1090 335
+:matt/beach/decor/grass10: 903 251
+:matt/beach/decor/grass06: 1700 314
+:matt/beach/decor/grass11: 2338 341
+:matt/beach/decor/grass05: 1882 339
+:matt/beach/decor/grass09: 1424 326
+:matt/beach/decor/grass11: 1655 182
+:matt/beach/decor/grass10: 1067 335
+:matt/beach/decor/grass10: 497 227
+:matt/beach/decor/grass09: 726 338
+:matt/beach/decor/grass08: 245 230
+:matt/beach/decor/grass11: 88 233
+:matt/beach/decor/grass09: 11 40
+:matt/beach/decor/grass03: 428 339
+:matt/beach/decor/grass09: 714 336
+:matt/beach/decor/grass09: 719 349
+:matt/beach/decor/grass11: 1550 371
+:matt/beach/decor/grass03: 1330 265

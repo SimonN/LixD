@@ -1,0 +1,130 @@
+$BUILT 2012-04-24 20:02:46
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Start thinking strategically
+$HINT_ENGLISH Think outside the box!
+$HINT_ENGLISH Is there really enough time to go through all those obstacles??
+#SIZE_X 1000
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 380
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 150
+#INITIAL 80
+#REQUIRED 79
+#SPAWN_INTERVAL 4
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#JUMPER 1
+#EXPLODER 2
+#BLOCKER 2
+#BUILDER 10
+#PLATFORMER 5
+#BASHER 15
+#MINER 2
+#DIGGER 2
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/goldmine/minecart.D: 372 325
+:matt/goldmine/minecart.D: 663 257
+:matt/goldmine/GoalTop.D: 938 206
+:matt/goldmine/shovel.D: 396 311
+
+:matt/goldmine/Hatch.H: 0 256
+
+:matt/goldmine/Goal.G: 938 252
+
+:matt/goldmine/07: 208 333
+:matt/goldmine/04: 118 309 r
+:matt/goldmine/07: 52 315
+:matt/goldmine/04: -34 321 r
+:matt/goldmine/07: 567 332
+:matt/goldmine/04: 477 308 r
+:matt/goldmine/07: 411 314
+:matt/goldmine/04: 325 320 r
+:matt/goldmine/07: 961 279
+:matt/goldmine/04: 898 331 r
+:matt/goldmine/07: 568 333
+:matt/goldmine/04: 636 349 r
+:matt/goldmine/planksupport: -32 304
+:matt/goldmine/tracks: 0 296
+:matt/goldmine/plank: 96 304
+:matt/goldmine/planksupport: 224 304
+:matt/goldmine/plank: 352 304
+:matt/goldmine/planksupport: 480 304
+:matt/goldmine/plank: 608 304
+:matt/goldmine/planksupport: 723 304
+:matt/goldmine/plank: 900 304
+:matt/goldmine/tracks: 112 296
+:matt/goldmine/tracks: 226 296
+:matt/goldmine/tracks: 338 296
+:matt/goldmine/tracks: 450 296
+:matt/goldmine/tracks: 562 296
+:matt/goldmine/tracks: 746 296
+:matt/goldmine/tracks: 674 296
+:matt/goldmine/tracks: 900 296
+:matt/goldmine/crate64: 236 240
+:matt/steel/48x48.S: 531 176
+:matt/goldmine/crate64: 172 240
+:matt/goldmine/crate64: 108 240
+:matt/steel/48x48.S: 619 256
+:matt/steel/48x48.S: 619 176
+:matt/goldmine/plank: 579 176 r
+:matt/goldmine/plank: 667 176 r
+:matt/goldmine/plank: 611 176 r
+:matt/goldmine/07: 358 -14 r
+:matt/goldmine/07: 418 -90 r
+:matt/goldmine/07: 302 -94 r
+:matt/goldmine/07: 170 -54 rr
+:matt/goldmine/07: 34 -60 rr
+:matt/goldmine/07: -140 -8 rr
+:matt/goldmine/07: 500 -28 rr
+:matt/goldmine/07: 642 -78 rr
+:matt/goldmine/07: 812 -30 rr
+:matt/goldmine/07: 362 78 r
+:matt/steel/48x48.S: 376 256
+:matt/goldmine/crate64: 208 176
+:matt/goldmine/crate64: 140 176
+:matt/goldmine/crate16: 800 224 fr
+:matt/goldmine/crate16: 512 256
+:matt/goldmine/crate16: 800 256 fr
+:matt/goldmine/crate16: 512 272
+:matt/goldmine/crate16: 800 272 fr
+:matt/goldmine/crate16: 496 272
+:matt/goldmine/crate16: 800 240 fr
+:matt/goldmine/crate16: 800 288 fr
+:matt/goldmine/crate16: 496 288
+:matt/goldmine/crate16: 512 272
+:matt/goldmine/crate16: 480 288
+:matt/goldmine/crate16: 512 288
+:matt/goldmine/crate16: 800 208 fr
+:matt/steel/48x48.S: 531 256
+:matt/goldmine/plank: 523 176 r
+:matt/goldmine/crate16: 784 272 fr
+:matt/goldmine/crate16: 768 256 fr
+:matt/goldmine/crate16: 768 272 fr
+:matt/goldmine/crate16: 784 288 fr
+:matt/goldmine/crate16: 768 288 fr
+:matt/goldmine/crate16: 784 256 fr
+:matt/goldmine/crate16: 768 240 fr
+:matt/goldmine/crate16: 832 288 fr
+:matt/goldmine/crate16: 816 288 fr
+:matt/goldmine/crate16: 832 272 fr
+:matt/goldmine/crate16: 832 256 fr
+:matt/goldmine/crate16: 816 272 fr
+:matt/goldmine/07: 842 305
+:matt/goldmine/07: 774 350
+:matt/steel/48x48.S: 721 256
+:matt/steel/32x32.S: 816 240
+:matt/steel/32x32.S: 816 272
+:matt/steel/32x32.S: 816 208
+:matt/steel/32x32.S: 816 176
+:matt/steel/32x32.S: 848 272

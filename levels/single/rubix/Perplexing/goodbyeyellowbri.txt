@@ -1,0 +1,88 @@
+$BUILT 2014-02-28 15:30:38
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Goodbye yellow brick road
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 360
+#BACKGROUND_RED 127
+#BACKGROUND_GREEN 47
+#BACKGROUND_BLUE 223
+
+#SECONDS 0
+#INITIAL 99
+#REQUIRED 98
+#SPAWN_INTERVAL 53
+#SPAWN_INTERVAL_FAST 4
+
+#JUMPER 2
+#FLOATER 1
+#BLOCKER 1
+#BUILDER 17
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/bricks/Hatch.H: 288 16
+:matt/bricks/Hatch.H: 288 16 r
+
+:matt/bricks/Goal.G: 288 320
+
+:matt/water.W: 480 368
+:matt/water.W: 512 368
+:matt/water.W: 544 368
+:matt/water.W: 576 368
+:matt/water.W: 32 368
+:matt/water.W: 64 368
+:matt/water.W: 96 368
+:matt/water.W: 128 368
+
+:matt/bricks/02a: 128 64
+:matt/bricks/02a: 192 64
+:matt/bricks/02a: 256 64
+:matt/bricks/02a: 320 64
+:matt/bricks/02a: 128 224
+:matt/bricks/02a: 192 224
+:matt/bricks/02a: 256 224
+:matt/bricks/02a: 320 224
+:matt/bricks/02a: 128 368
+:matt/bricks/02a: 192 368
+:matt/bricks/02a: 256 368
+:matt/bricks/02a: 320 368
+:matt/bricks/03a: 576 352
+:matt/bricks/03a: 608 288
+:matt/bricks/03a: 576 224
+:matt/bricks/03a: 576 160
+:matt/bricks/03a: 576 32
+:matt/bricks/03a: 0 352
+:matt/bricks/03a: -32 288
+:matt/bricks/03a: 0 224
+:matt/bricks/03a: 0 160
+:matt/bricks/03a: 0 32
+:matt/bricks/02a: 384 64
+:matt/bricks/02a: 448 64
+:matt/bricks/02a: 384 224
+:matt/bricks/02a: 448 224
+:matt/bricks/02a: 384 368
+:matt/bricks/02a: 448 368
+:matt/bricks/03a: 608 96
+:matt/bricks/03a: -32 96
+:matt/bricks/06a: 352 96
+:matt/bricks/03a: 288 96
+:matt/bricks/06a: 352 256
+:matt/bricks/03a: 288 256
+:matt/bricks/08a: 288 160 rr
+:matt/bricks/03a: 0 384
+:matt/bricks/03a: 576 384
+:matt/bricks/05a: 224 96
+:matt/bricks/05a: 224 256
+:matt/bricks/11a: 320 160

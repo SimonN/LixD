@@ -1,0 +1,92 @@
+$BUILT 2016-09-10 17:31:52
+$AUTHOR Rubix
+$ENGLISH With a hop, skip and a jump
+
+$HINT_ENGLISH Time is short, no doubt you need more than 1 working on these bridges.
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1280
+#SIZE_Y 396
+#START_X 320
+#START_Y 372
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 80
+#BACKGROUND_BLUE 208
+
+#SECONDS 89
+#INITIAL 35
+#REQUIRED 35
+#SPAWN_INTERVAL 48
+
+#RUNNER 2
+#PLATFORMER 4
+#JUMPER 2
+#EXPLODER2 0
+
+:matt/beach/Hatch.H: 10 4
+
+:matt/beach/goal.G: 1204 312
+
+:matt/beach/decor/sun.D: 1110 16
+
+:matt/water.W: 480 368
+:matt/water.W: 512 368
+:matt/water.W: 544 368
+:matt/water.W: 576 368
+:matt/water.W: 1104 368
+:matt/water.W: 1136 368
+:matt/water.W: 1168 368
+:matt/water.W: 768 368
+:matt/water.W: 800 368
+:matt/water.W: 832 368
+:matt/water.W: 912 368
+:matt/water.W: 944 368
+:matt/water.W: 976 368
+
+:matt/beach/decor/pail: 306 290
+:matt/beach/daytime/15: 1043 352
+:matt/beach/daytime/06: 76 337 frr
+:matt/beach/daytime/04: -36 353
+:matt/beach/daytime/01: 44 369
+:matt/beach/daytime/13: 252 337
+:matt/beach/daytime/06: 300 321 frr
+:matt/beach/daytime/13: -64 -17
+:matt/beach/daytime/04: 65 44 r
+:matt/beach/daytime/06: 96 72
+:matt/beach/daytime/04: 192 143
+:matt/beach/daytime/04: -23 75
+:matt/beach/daytime/06: -11 83
+:matt/beach/daytime/06: 117 99
+:matt/beach/daytime/06: 69 94
+:matt/beach/daytime/06: 203 170
+:matt/beach/daytime/06: 172 160 frr
+:matt/beach/daytime/04: 53 99
+:matt/beach/daytime/01: 149 195
+:matt/beach/daytime/06: 53 163
+:matt/beach/daytime/06: 117 195
+:matt/beach/daytime/06: -59 179 frr
+:matt/beach/daytime/04: -28 112
+:matt/beach/daytime/13: 117 4 frr
+:matt/beach/daytime/06: 565 343
+:matt/beach/daytime/06: 142 149 frr
+:matt/beach/daytime/06: -179 234 frr
+:matt/beach/daytime/06: -131 313 frr
+:matt/beach/daytime/06: 843 351 r
+:matt/beach/daytime/04: 961 354
+:matt/beach/daytime/14: 1177 371 fr
+:matt/beach/daytime/04: 682 338
+:matt/beach/decor/beach ball: 1044 345
+:matt/beach/daytime/13: 1042 308
+:matt/beach/daytime/14: 735 350
+:matt/beach/daytime/03: 12 52
+:matt/beach/daytime/15: 128 32
+:matt/beach/daytime/04: 210 114
+:matt/beach/decor/grass10: 273 164
+:matt/beach/decor/grass07: 632 342
+:matt/beach/decor/grass06: 881 355
+:matt/beach/decor/grass08: 62 70
+:matt/beach/decor/grass10: 32 199
+:matt/beach/decor/grass11: 176 345
+:matt/beach/decor/grass10: 1252 342
+:matt/beach/decor/grass04: 156 35
+:matt/beach/decor/grass09: 455 330

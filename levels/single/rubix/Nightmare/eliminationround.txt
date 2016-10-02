@@ -1,0 +1,106 @@
+$BUILT 2016-09-24 10:48:13
+$AUTHOR Rubix
+$ENGLISH Elimination Round
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 448
+#BACKGROUND_RED 16
+#BACKGROUND_GREEN 127
+#BACKGROUND_BLUE 255
+
+#SECONDS 115
+#INITIAL 23
+#REQUIRED 23
+#SPAWN_INTERVAL 35
+
+#RUNNER 3
+#FLOATER 1
+#BLOCKER 2
+#BUILDER 1
+#DIGGER 3
+#JUMPER 5
+#BATTER 2
+#EXPLODER2 0
+
+:matt/bricks/Hatch.H: 592 32 r
+:matt/bricks/Hatch.H: 176 32 r
+
+:matt/bricks/Goal.G: 576 384
+
+:simon/acid.W: 448 208
+:simon/acid.W: 496 208
+:simon/acid.W: 544 208
+:simon/acid.W: 592 208
+:simon/acid.W: 80 432
+:simon/acid.W: 128 432
+:simon/acid.W: 544 432
+
+:matt/bricks/03: 512 80
+:matt/bricks/03: 576 80
+:matt/bricks/03: 512 272
+:matt/bricks/03: 576 272
+:matt/bricks/03: 384 208
+:matt/bricks/03: 384 272
+:matt/bricks/03: 448 272
+:matt/bricks/03: 384 80
+:matt/bricks/03: 448 80
+:matt/bricks/03: 256 80
+:matt/bricks/03: 320 80
+:matt/bricks/03: 256 144
+:matt/bricks/03: 320 144
+:matt/bricks/03: 128 80
+:matt/bricks/03: 192 80
+:matt/bricks/03: 128 144
+:matt/bricks/03: 192 144
+:matt/bricks/03: 256 208
+:matt/bricks/03: 320 208
+:matt/bricks/03: 256 272
+:matt/bricks/03: 320 272
+:matt/bricks/03: 128 208
+:matt/bricks/03: 192 208
+:matt/bricks/03: 160 240
+:matt/bricks/03: 192 272
+:matt/bricks/03: 512 336
+:matt/bricks/03: 576 336
+:matt/bricks/03: 384 336
+:matt/bricks/03: 448 336
+:matt/bricks/03: 256 336
+:matt/bricks/03: 320 336
+:matt/bricks/03: 144 304
+:matt/bricks/02a: 0 96
+:matt/bricks/02a: 0 128
+:matt/bricks/02a: 0 160
+:matt/bricks/02a: 0 192
+:matt/bricks/02a: 0 256
+:matt/bricks/02a: 0 288
+:matt/bricks/02a: 0 320
+:matt/bricks/02a: 0 352
+:matt/bricks/02a: 0 384
+:matt/bricks/02a: 0 416
+:geoo/steel/dark_64x48o.S: 576 96
+:geoo/steel/dark_64x48o.S: 512 96
+:geoo/steel/dark_64x48o.S: 384 144
+:matt/bricks/02b: 576 432
+:matt/bricks/02b: 496 432
+:matt/bricks/02b: 448 432
+:matt/bricks/02b: 384 432
+:matt/bricks/02b: 320 432
+:matt/bricks/02b: 144 432
+:matt/bricks/02b: 256 432
+:matt/bricks/02b: 192 432
+:matt/bricks/01a: 48 432
+:matt/bricks/03: 192 336
+:geoo/steel/dark_64x48o.S: 320 176
+:geoo/steel/dark_64x48o.S: 384 208
+:geoo/steel/dark_64x48o.S: 448 240
+:geoo/steel/dark_64x48o.S: 512 256 rr
+:matt/bricks/03: 96 80
+:matt/bricks/03: 96 144
+:matt/bricks/03: 96 208
+:matt/bricks/03: 96 256
+:geoo/steel/dark_64x48o.S: 576 256
+:geoo/steel/dark_64x48o.S: 448 112
+:matt/bricks/02a: 0 64
+:matt/bricks/02a: 0 32
+:matt/bricks/02a: 0 0

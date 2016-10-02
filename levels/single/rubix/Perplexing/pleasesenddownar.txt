@@ -1,0 +1,113 @@
+$BUILT 2016-10-02 12:54:56
+$AUTHOR Rubix
+$ENGLISH Please send down a rope?
+
+$HINT_ENGLISH Its all in how you start
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 920
+#START_X 0
+#START_Y 260
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 112
+#BACKGROUND_BLUE 208
+
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 48
+
+#WALKER 20
+#BUILDER 33
+#EXPLODER 0
+
+:matt/goldmine/Hatch.H: 280 604
+
+:matt/earth/Goal.G: 544 96
+
+:matt/goldmine/pickaxe: 124 646
+:matt/goldmine/shovel: 260 168
+:matt/beach/decor/sun: 499 -2
+:matt/earth/10: 26 216 frr
+:matt/earth/07: -14 116
+:matt/earth/06: 212 170
+:matt/earth/06: 343 171
+:matt/earth/06: 97 176
+:matt/earth/07: 21 -8
+:matt/earth/09: 141 179
+:matt/goldmine/06: 90 658
+:matt/goldmine/07: -48 632
+:matt/goldmine/01: 176 648
+:matt/goldmine/07: 224 648
+:matt/goldmine/07: 175 667
+:matt/goldmine/07: 602 627
+:matt/goldmine/04: 96 648
+:matt/goldmine/planksupport: -48 616
+:matt/goldmine/planksupport: 560 616
+:matt/goldmine/plank: 80 616
+:matt/goldmine/plank: 432 616
+:matt/earth/16: 166 242 fr
+:matt/earth/16: 348 230 r
+:matt/goldmine/planksupport: 344 232 rrr
+:matt/goldmine/plank: 32 292
+:matt/goldmine/plank: 472 292
+:matt/goldmine/plank: -96 292
+:matt/goldmine/plank: 600 292
+:matt/goldmine/06: -13 275
+:matt/earth/10: -56 198
+:matt/earth/09: 45 205
+:matt/earth/09: 168 188
+:matt/earth/10: 73 180
+:matt/earth/03: 345 263
+:matt/earth/07: 380 172
+:matt/earth/09: 406 187
+:matt/earth/09: 443 197
+:matt/earth/10: 342 190
+:matt/earth/10: 507 187
+:matt/goldmine/planksupport: 160 232 r
+:matt/earth/04: 52 197 fr
+:matt/earth/16: 133 190
+:matt/earth/10: 450 216 frr
+:matt/earth/00: 208 178
+:matt/goldmine/plank: 280 192 r
+:matt/earth/00: 344 178 frr
+:matt/goldmine/plank: 344 192 r
+:matt/earth/06: 484 174
+:matt/earth/10: 486 158
+:matt/earth/10: 584 54 r
+:matt/earth/06: 578 54
+:matt/earth/06: 614 36
+:matt/goldmine/07: -22 701
+:matt/goldmine/07: 156 682
+:matt/goldmine/07: 318 696
+:matt/goldmine/07: 594 691
+:matt/goldmine/07: 223 723
+:matt/goldmine/07: 174 742
+:matt/goldmine/04: 95 723
+:matt/goldmine/07: -23 776
+:matt/goldmine/07: 155 757
+:matt/goldmine/06: 499 754
+:matt/goldmine/07: 433 734 fr
+:matt/goldmine/07: 285 769
+:matt/goldmine/07: 236 788
+:matt/goldmine/04: 157 769
+:matt/goldmine/07: 39 822
+:matt/goldmine/07: 217 803
+:matt/goldmine/07: 266 843 frr
+:matt/goldmine/07: 96 876 frr
+:matt/goldmine/07: -88 848 frr
+:matt/goldmine/07: 596 757 r
+:matt/earth/10: -52 136 r
+:matt/earth/10: -68 -26 r
+:matt/earth/06: 143 -21 frrr
+:matt/earth/10: -36 -76 rr
+:matt/earth/10: 70 -97 rr
+:matt/goldmine/07: 392 846 frr
+:matt/goldmine/07: 550 760 frr
+:matt/earth/09: 65 26
+:matt/earth/07: -8 -13
+:matt/earth/09: 130 171
+:matt/earth/26: 182 12
+:matt/earth/01: -7 235
+:matt/earth/01: 514 252
+:matt/earth/00: 156 195

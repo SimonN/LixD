@@ -1,0 +1,115 @@
+$BUILT 2014-02-27 14:42:33
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH The Interactive Rodent Simulation
+$HINT_ENGLISH You can start low, but staying high at the X is key to easy success
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 96
+#BACKGROUND_BLUE 191
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 40
+#SPAWN_INTERVAL 53
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#FLOATER 1
+#EXPLODER 2
+#BLOCKER 2
+#BUILDER 12
+#PLATFORMER 3
+#MINER 10
+#DIGGER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/underworld/Hatch.H: 32 16
+
+:matt/underworld/Goal.G: 562 14
+
+:matt/underworld/09a: 291 -2
+:matt/underworld/09a: 32 286 frr
+:matt/underworld/09c: 354 88
+:matt/underworld/09a: 90 268
+:matt/underworld/09a: 259 108
+:matt/underworld/09b: 390 224
+:matt/underworld/09c: 510 190
+:matt/underworld/09b: 349 261
+:matt/underworld/09b: 611 368
+:matt/underworld/09b: 18 342
+:matt/underworld/09c: 110 343
+:matt/underworld/09c: 555 362
+:matt/underworld/09a: 378 343
+:matt/underworld/09a: 167 383
+:matt/underworld/09b: 326 349
+:matt/underworld/01: 128 272
+:matt/underworld/03: 250 46
+:matt/underworld/09a: 30 76
+:matt/underworld/02: 32 80
+:matt/underworld/02: 32 176
+:matt/underworld/01: 32 272
+:matt/underworld/01: 96 272
+:matt/underworld/01: 256 240 r
+:matt/underworld/01: 256 176 r
+:matt/underworld/01: 256 112 r
+:matt/underworld/00: 368 272
+:matt/underworld/00: 352 288
+:matt/underworld/00: 384 256
+:matt/underworld/00: 400 240
+:matt/underworld/00: 432 208
+:matt/underworld/00: 416 224
+:matt/underworld/00: 456 192
+:matt/underworld/00: 456 176
+:matt/underworld/09b: 328 344
+:matt/underworld/00: 496 144
+:matt/underworld/00: 480 160
+:matt/underworld/00: 512 128
+:matt/underworld/00: 528 112
+:matt/underworld/00: 544 96
+:matt/underworld/00: 560 80
+:matt/underworld/00: 352 80
+:matt/underworld/00: 368 96
+:matt/underworld/00: 384 112
+:matt/underworld/00: 400 128
+:matt/underworld/00: 416 144
+:matt/underworld/00: 432 160
+:matt/underworld/00: 480 208
+:matt/underworld/00: 496 224
+:matt/underworld/00: 512 240
+:matt/underworld/00: 528 256
+:matt/underworld/00: 544 272
+:matt/underworld/00: 560 288
+:matt/underworld/04: -30 365
+:matt/underworld/08: 15 327
+:matt/underworld/08: 89 367
+:matt/underworld/05: 182 377
+:matt/underworld/08: 314 337
+:matt/underworld/08: 386 347 f
+:matt/underworld/09c: 487 349
+:matt/underworld/06: 482 362
+:matt/underworld/05: 518 372
+:matt/underworld/09a: 262 374
+:matt/underworld/01: 288 96 rd
+:matt/underworld/01: 304 96 rd
+:matt/underworld/09a: 130 268 frr
+:matt/underworld/00: 0 0
+:matt/underworld/00: 64 0
+:matt/underworld/00: 128 0
+:matt/underworld/00: 192 0
+:matt/underworld/00: 256 0
+:matt/underworld/00: 320 0
+:matt/underworld/00: 384 0
+:matt/underworld/00: 448 0
+:matt/underworld/00: 512 0
+:matt/underworld/00: 576 0
+:matt/underworld/09a: 166 -3
+:matt/underworld/09a: 226 -25 rr

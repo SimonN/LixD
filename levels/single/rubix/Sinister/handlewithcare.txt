@@ -1,0 +1,127 @@
+$BUILT 2016-09-08 17:14:43
+$AUTHOR Rubix
+$ENGLISH Handle with care
+
+$HINT_ENGLISH Look around and you shall find..
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 560
+#START_X 0
+#START_Y 0
+
+#INITIAL 14
+#REQUIRED 14
+#SPAWN_INTERVAL 40
+
+#WALKER 3
+#BUILDER 1
+#BASHER 1
+#DIGGER 2
+#JUMPER 1
+#EXPLODER2 0
+
+:matt/underworld/Hatch.H: 160 16
+
+:matt/underworld/Goal.G: 576 480
+
+:matt/underworld/00: 544 480 rrr
+:matt/underworld/00: 544 448 rrr
+:matt/underworld/00: 560 480 rrr
+:matt/underworld/00: 560 448 rrr
+:matt/underworld/09a: 322 -20 f
+:matt/underworld/09a: 327 47 frr
+:matt/underworld/09a: 203 45
+:matt/underworld/09b: 24 348
+:matt/underworld/09c: 568 256
+:matt/underworld/09b: 84 533
+:matt/underworld/09a: 16 -16 frr
+:matt/underworld/09a: 438 -12 frr
+:matt/underworld/09a: 604 -10
+:matt/underworld/09a: 216 -10
+:matt/underworld/09a: 268 -14
+:matt/underworld/09a: 515 540
+:matt/underworld/09a: 468 535
+:matt/underworld/09a: 209 545
+:matt/underworld/09a: 328 551
+:matt/underworld/09a: 44 280 r
+:matt/underworld/09a: 32 208 r
+:matt/underworld/09c: 12 72
+:matt/underworld/09c: 577 75
+:matt/underworld/09b: 532 351
+:matt/underworld/09b: 565 312
+:matt/underworld/09b: 566 143
+:matt/underworld/09c: 27 350
+:matt/underworld/02: 112 48
+:matt/underworld/02: 176 48
+:matt/underworld/02: 240 48
+:matt/underworld/09a: 235 47 frr
+:matt/underworld/02: 304 48
+:matt/underworld/02: 368 48
+:matt/underworld/02: 432 48
+:matt/underworld/02: 112 144
+:matt/underworld/02: 176 144
+:matt/underworld/02: 240 144
+:matt/underworld/02: 304 144
+:matt/underworld/02: 368 144
+:matt/underworld/02: 432 144
+:matt/underworld/02: 112 240
+:matt/underworld/02: 176 240
+:matt/underworld/02: 240 240
+:matt/underworld/02: 304 240
+:matt/underworld/02: 368 240
+:matt/underworld/02: 432 240
+:matt/underworld/02: 112 336
+:matt/underworld/02: 176 336
+:matt/underworld/02: 240 336
+:matt/underworld/02: 304 336
+:matt/underworld/02: 368 336
+:matt/underworld/02: 432 336
+:matt/underworld/02: 112 416
+:matt/underworld/02: 176 416
+:matt/underworld/02: 240 416
+:matt/underworld/02: 304 416
+:matt/underworld/02: 368 416
+:matt/underworld/02: 432 416
+:matt/underworld/05: 80 528
+:matt/underworld/05: -32 544
+:matt/underworld/05: 127 546
+:matt/underworld/05: 231 536
+:matt/underworld/05: 448 533
+:matt/underworld/00: 576 544
+:matt/underworld/08: -78 30
+:matt/underworld/08: -66 108
+:matt/underworld/08: -98 154
+:matt/underworld/08: -54 152
+:matt/underworld/08: -44 242
+:matt/underworld/08: -64 304
+:matt/underworld/08: -84 370
+:matt/underworld/08: -116 416
+:matt/underworld/08: -106 470
+:matt/underworld/08: 576 16
+:matt/underworld/08: 594 82
+:matt/underworld/08: 562 128
+:matt/underworld/08: 620 120
+:matt/underworld/08: 568 202
+:matt/underworld/08: 560 296
+:matt/underworld/08: 534 336
+:matt/underworld/08: 578 344
+:matt/underworld/08: 610 424
+:matt/underworld/00: 126 -10
+:matt/underworld/00: -2 -10
+:matt/underworld/00: 190 -10
+:matt/underworld/00: 574 -10
+:matt/underworld/00: 62 -10
+:matt/underworld/00: 254 -10
+:matt/underworld/00: 318 -10
+:matt/underworld/00: 382 -10
+:matt/underworld/00: 446 -10
+:matt/underworld/00: 510 -10
+:matt/underworld/09a: 110 44
+:matt/underworld/09a: 274 46 frr
+:matt/underworld/09a: 386 46
+:matt/underworld/09a: 434 46 frr
+:matt/underworld/09b: 444 536
+:matt/underworld/08: -26 442
+:matt/underworld/05: -94 352
+:matt/underworld/08: 536 348 frr

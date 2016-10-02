@@ -1,0 +1,113 @@
+$BUILT 2015-08-18 17:30:21
+$AUTHOR Rubix
+$GERMAN 
+$ENGLISH Dignity
+$HINT_ENGLISH There are often hints in the name of a level.  Keep that in mind!! Goodluck
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 32
+#BACKGROUND_GREEN 63
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 35
+#SPAWN_INTERVAL 55
+#SPAWN_INTERVAL_FAST 1
+
+#EXPLODER 1
+#BLOCKER 1
+#BASHER 2
+#MINER 1
+#DIGGER 1
+
+:matt/earth/Hatch.H: -14 12
+
+:matt/earth/Goal.G: 576 256
+
+:matt/earth/06: 273 215
+:matt/earth/09: 411 240
+:matt/earth/09: 189 242
+:matt/earth/06: 60 181
+:matt/earth/09: 64 55
+:matt/earth/07: -13 336
+:matt/earth/07: 57 350
+:matt/earth/09: 189 321
+:matt/earth/09: 157 324
+:matt/earth/06: 125 332
+:matt/earth/26: 598 13
+:matt/earth/26: 595 94
+:matt/earth/26: 596 51
+:matt/earth/26: 594 128
+:matt/earth/17: 10 70 r
+:matt/earth/04: 0 62 rr
+:matt/earth/06: 107 31
+:matt/earth/07: 461 189
+:matt/earth/17: 86 110
+:matt/earth/18: 102 60
+:matt/earth/06: 80 86
+:matt/earth/17: 82 88
+:matt/earth/03: 155 205
+:matt/earth/13: 278 164
+:matt/earth/06: 315 129
+:matt/steel/64x64.S: 112 192
+:matt/earth/18: 148 188
+:matt/earth/18: 254 186
+:matt/earth/18: 269 171
+:matt/earth/18: 292 142
+:matt/earth/03: -40 55
+:matt/earth/03: 164 323
+:matt/earth/09: 236 318
+:matt/earth/06: 288 252
+:matt/earth/16: 274 232
+:matt/earth/03: 355 315
+:matt/earth/03: 439 316
+:matt/earth/03: 524 322
+:matt/earth/18: 119 45
+:matt/earth/18: 130 35
+:matt/earth/18: 322 230
+:matt/earth/18: 325 205
+:matt/earth/18: 281 159
+:matt/earth/10: 295 159
+:matt/earth/00: 304 165
+:matt/earth/06: 263 106
+:matt/earth/04: 234 106
+:matt/earth/18: 305 124
+:matt/earth/18: 304 103
+:matt/earth/17: 293 24
+:matt/earth/07: 294 105
+:matt/earth/26: 456 4
+:matt/earth/26: 220 8
+:matt/earth/26: 219 51
+:matt/earth/28: 221 89
+:matt/earth/09: 150 54
+:matt/earth/17: 124 -52
+:matt/earth/26: 222 -30
+:matt/earth/08: 487 24
+:matt/earth/08: 475 3
+:matt/earth/10: 494 -41
+:matt/earth/10: 356 -82 f
+:matt/earth/10: 26 375
+:matt/earth/10: -112 334 f
+:matt/earth/06: 346 315
+:matt/earth/06: 311 340
+:matt/earth/10: 322 318
+:matt/earth/06: 479 360
+:matt/earth/09: 544 317
+:matt/earth/10: 486 320
+:matt/earth/06: 125 154
+:matt/earth/10: 87 163
+:matt/earth/06: 233 132
+:matt/earth/10: 147 147 frr
+:matt/earth/09: 385 311
+:matt/earth/09: 420 310
+:matt/earth/09: 463 314
+:matt/earth/09: 501 312
+:matt/earth/28: 596 163
+:matt/earth/10: 131 327 r
+:matt/earth/16: -70 46

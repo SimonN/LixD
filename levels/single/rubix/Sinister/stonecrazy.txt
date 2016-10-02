@@ -1,0 +1,84 @@
+$BUILT 2014-02-28 22:44:27
+$AUTHOR rubix
+$GERMAN 
+$ENGLISH Stone crazy
+$HINT_ENGLISH Thats one hell of a leap!
+#SIZE_X 784
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 576
+#START_Y 380
+#BACKGROUND_RED 143
+#BACKGROUND_GREEN 32
+#BACKGROUND_BLUE 16
+
+#SECONDS 162
+#INITIAL 50
+#REQUIRED 50
+#SPAWN_INTERVAL 4
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 1
+#FLOATER 1
+#WALKER 2
+#JUMPER 1
+#RUNNER 1
+#PLATFORMER 2
+#BASHER 1
+#MINER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 640 288 r
+
+:geoo/construction/Goal2.G: 80 208
+
+:geoo/sandstone/64x32: 480 176
+:geoo/sandstone/64x64: 272 336
+:geoo/sandstone/64x64: 272 272
+:geoo/sandstone/64x64: 480 272
+:geoo/sandstone/64x64: 400 336
+:geoo/sandstone/64x64: 464 336
+:geoo/sandstone/64x32: 208 208 rrr
+:geoo/sandstone/64x32: 384 272 rrr
+:geoo/sandstone/64x64: 336 336
+:geoo/sandstone/64x64: 720 336
+:geoo/sandstone/64x32: 720 112
+:geoo/sandstone/64x64: 720 208
+:geoo/sandstone/64x64: 720 272
+:geoo/sandstone/64x64: 720 144
+:geoo/sandstone/32x32: 528 368
+:geoo/sandstone/32x32: 560 368
+:geoo/sandstone/32x32: 592 368
+:geoo/sandstone/32x32: 624 368
+:geoo/sandstone/32x32: 656 368
+:geoo/sandstone/32x32: 752 80
+:geoo/sandstone/32x32: 752 48
+:geoo/sandstone/64x32: 720 0
+:geoo/sandstone/64x32: 656 0
+:geoo/sandstone/64x32: 592 0
+:geoo/sandstone/64x32: 528 0
+:geoo/sandstone/64x32: 464 0
+:geoo/sandstone/64x32: 400 0
+:geoo/sandstone/64x32: 336 0
+:geoo/sandstone/64x32: 272 0
+:geoo/sandstone/64x32: 208 0
+:geoo/sandstone/64x32: 144 0
+:geoo/sandstone/64x32: 80 0
+:geoo/sandstone/64x64: 0 64
+:geoo/sandstone/64x64: 0 0
+:geoo/sandstone/64x64: 0 192
+:geoo/sandstone/64x64: 0 128
+:geoo/sandstone/64x64: 144 336
+:geoo/sandstone/64x64: 144 272
+:geoo/sandstone/64x32: 80 304
+:geoo/sandstone/64x32: 80 272
+:geoo/sandstone/64x32: -48 368
+:geoo/sandstone/16x32: 752 32 rrr
+:geoo/sandstone/64x64: 208 336
+:geoo/sandstone/64x64: 208 272
+:geoo/sandstone/64x32: 240 208 rrr
+:geoo/sandstone/64x32: 480 208 rrr
