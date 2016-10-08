@@ -18,10 +18,8 @@ package:
 // add tile to level such that its center point ends up at the argument point
 Occurrence implCenter(Level level, Filename fn, Point center)
 {
-    if (! fn)
-        return null;
-    auto ret = addFromLine(level,
-        &level.terrain, resolveTileName(null, fn.rootlessNoExt), center, "");
+    auto ret = addFromLine(level, &level.terrain,
+                           tile.tilelib.resolveTileName(fn), center);
     if (! ret)
         return null;
     assert (ret.tile, "added tile, image doesn't exist?");
@@ -36,7 +34,7 @@ Occurrence addFromLine(
     TerOcc[]* terrainGoesHere,
     in ResolvedTile resolvedTile,
     in Point cornerAt,
-    in string text2
+    in string text2 = ""
 ) {
     if (resolvedTile.terrain || resolvedTile.group) {
         assert (terrainGoesHere);

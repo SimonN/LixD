@@ -1,6 +1,14 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.18
+------
+
+2016-10-08
+
+Fix: When you picked a tile from the editor's tile browsers, the tile wouldn't
+appear in the level. Now it does again.
+
 0.6.17
 ------
 

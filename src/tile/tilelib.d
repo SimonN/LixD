@@ -88,9 +88,9 @@ ResolvedTile resolveTileName(in string name)
 
 ResolvedTile resolveTileName(Filename fn)
 {
-    // We have indexed the tiles without "images/" at the front
-    if (fn.rootlessNoExt.length < glo.dirImages.rootlessNoExt.length)
+    if (! fn || fn.rootlessNoExt.length < glo.dirImages.rootlessNoExt.length)
         return ResolvedTile();
+    // We have indexed the tiles without "images/" at the front of filenames
     return resolveTileName(fn.rootlessNoExt[
                            glo.dirImages.rootlessNoExt.length .. $]);
 }
