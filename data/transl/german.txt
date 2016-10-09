@@ -304,7 +304,7 @@ $optionPausedAssignStayPaused Gar nicht weiter
 $optionPausedAssignAdvance    Nur 1 Bild weiter
 $optionPausedAssignUnpause    Pause ausschalten
 
-$optionScreenWindowed           Fenstermodus
+$optionScreenWindowed           Im Fenstermodus starten
 $optionScreenWindowedRes        Fenster-Auflösung
 $optionPaintTorusSeams          Torus-Nahtstellen anmalen
 $optionIngameTooltips           Tooltips im Spiel

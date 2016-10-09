@@ -320,7 +320,7 @@ $optionScrollSpeedEdgeDesc Scroll speed when the mouse cursor touches the screen
 $optionScrollSpeedClickDesc Scroll speed when you move the mouse while holding the scrolling key.|The standard scrolling key is the right mouse button ⟁, look to the left to remap.
 $optionFastMovementFreesMouseDesc The mouse leaves the Lix window when you move quickly against the sides.|If not checked, untrap the mouse by Alt+Tab.
 
-$optionScreenWindowed           Windowed mode
+$optionScreenWindowed           Start in windowed mode
 $optionScreenWindowedRes        Windowed resolution
 $optionPaintTorusSeams          Paint torus seams
 $optionIngameTooltips           Tooltips during game
