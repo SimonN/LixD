@@ -24,6 +24,17 @@ import file.filename;
 import level.level;
 import level.metadata;
 
+struct FirstDifference {
+    bool thisBeginsWithRhs;
+    bool rhsBeginsWithThis;
+    Update firstDifferenceIfMismatch;
+
+    @property bool mismatch() const
+    {
+        return ! thisBeginsWithRhs && ! rhsBeginsWithThis;
+    }
+}
+
 class Replay {
     static struct Player {
         PlNr   number;
@@ -129,11 +140,6 @@ public:
     // The subset relation is not proper: this is a subset of this.
     auto firstDifference(in Replay rhs) const
     {
-        static struct FirstDifference {
-            bool thisIsSubsetOfRhs;
-            bool rhsIsSubsetOfThis;
-            Update firstDifferenceIfNeitherWasSubset;
-        }
         assert (rhs !is null);
         for (size_t i = 0; i < _data.length && i < rhs._data.length; ++i)
             if (_data[i] != rhs._data[i])

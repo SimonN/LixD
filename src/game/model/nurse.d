@@ -15,6 +15,7 @@ import basics.user; // Result
 import file.date;
 import game.effect;
 import game.replay;
+import game.model.cache;
 import game.model.model;
 import game.model.state;
 import game.tribe;
@@ -25,7 +26,7 @@ class Nurse {
 private:
     Replay _replay;
     GameModel _model;
-    StateManager _states;
+    PhysicsCache _cache;
     const(Date) _levelBuilt; // to write it into to results generated later
 
 public:
@@ -41,10 +42,10 @@ public:
     {
         _replay = rp;
         _model  = new GameModel(lev, ef);
-        _states = new StateManager();
+        _cache = new PhysicsCache();
         _levelBuilt = lev.built;
         assert (_replay);
-        _states.saveZero(_model.cs);
+        _cache.saveZero(_model.cs);
     }
 
     ~this() { dispose(); }
@@ -72,35 +73,23 @@ public:
     Update updatesSinceZero() const
     out (result) { assert (result >= 0); }
     body {
-        assert (_states.zeroState);
         assert (_model.cs);
-        return Update(_model.cs.update - _states.zeroState.update);
+        return Update(_model.cs.update - _cache.zeroStateUpdate);
     }
 
-    void restartLevel()
-    {
-        _model.takeOwnershipOf(_states.zeroState.clone());
-        _replay.eraseEarlySingleplayerNukes();
-    }
+    bool userStateExists() { return _cache.userStateExists; }
+    void saveUserState()   { _cache.saveUser(_model.cs, _replay); }
 
-    bool userStateExists() { return _states.userState !is null;    }
-    void saveUserState()   { _states.saveUser(_model.cs, _replay); }
-
+    // This doesn't do any cache invalidation any more, but calls a function
+    // of PhysicsCache that takes care of cache invalidation.
     bool loadUserStateDoesItMismatch()
     {
-        assert (userStateExists);
-        _model.takeOwnershipOf(_states.userState.clone());
-        auto diff = _replay.firstDifference(_states.userReplay);
-        if (! diff.rhsIsSubsetOfThis)
-            _replay = _states.userReplay.clone();
-        if (! diff.thisIsSubsetOfRhs && ! diff.rhsIsSubsetOfThis) {
-            // Forgetting all autosaves on mismatching timelines fixes #130:
-            // https://github.com/SimonN/LixD/issues/130
-            _states.forgetAutoSavesOnAndAfter(
-                diff.firstDifferenceIfNeitherWasSubset);
-            return true;
-        }
-        return false;
+        assert (_model);
+        auto loaded = _cache.loadUser(_replay);
+        _model.takeOwnershipOf(loaded.state.clone);
+        if (! loaded.loadedVsNurseReplay.thisBeginsWithRhs)
+            _replay = loaded.replay.clone();
+        return loaded.loadedVsNurseReplay.mismatch;
     }
 
     void addReplayData(in ref ReplayData data)
@@ -117,15 +106,19 @@ public:
     alias updateToDuringTurbo = updateToTpl!true;
     alias updateTo            = updateToTpl!false;
 
+    void restartLevel()
+    {
+        _replay.eraseEarlySingleplayerNukes();
+        _model.takeOwnershipOf(_cache.loadBeforeUpdate(
+                               _cache.zeroStateUpdate).clone);
+    }
+
     void framestepBackBy(int backBy)
     {
-        immutable whatUpdateToLoad = Update(_model.cs.update - backBy);
-        auto state = (whatUpdateToLoad <= 0)
-                   ? _states.zeroState
-                   : _states.autoBeforeUpdate(Update(whatUpdateToLoad + 1));
-        assert (_states.zeroState, "zero state is bad");
-        _model.takeOwnershipOf(state.clone());
-        updateTo(whatUpdateToLoad);
+        immutable target = Update(_model.cs.update - backBy);
+        _model.takeOwnershipOf(_cache.loadBeforeUpdate(
+                               Update(target + 1)).clone);
+        updateTo(target);
     }
 
     void applyChangesToLand()
@@ -190,11 +183,11 @@ private:
 
     void considerAutoSavestateIfCloseTo(bool duringTurbo)(Update target)
     {
-        assert (_states);
+        assert (_cache);
         static if (duringTurbo)
-            bool saveNow = _states.wouldAutoSaveDuringTurbo(_model.cs, target);
+            bool saveNow = _cache.wouldAutoSaveDuringTurbo(_model.cs, target);
         else
-            bool saveNow = _states.wouldAutoSave(_model.cs, target);
+            bool saveNow = _cache.wouldAutoSave(_model.cs, target);
         if (saveNow) {
             version (tharsisprofiling)
                 Zone zone = Zone(profiler, "Nurse makes auto-savestate");
@@ -205,7 +198,7 @@ private:
             // redraw over and over when loading from this state during
             // framestepping backwards. Instead, let's calculate the land now.
             _model.applyChangesToLand();
-            _states.autoSave(_model.cs, target);
+            _cache.autoSave(_model.cs, target);
         }
     }
 
