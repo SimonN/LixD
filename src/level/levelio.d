@@ -58,6 +58,13 @@ package void loadFromFile(Level level, in Filename fn)
     level.load_level_finalize();
 }
 
+package void loadFromVoidArray(Level level, immutable(void)[] arr)
+{
+    level._status = LevelStatus.GOOD;
+    level.load_from_vector(fillVectorFromVoidArray(arr));
+    level.load_level_finalize();
+}
+
 package FileFormat get_file_format(in Filename fn)
 {
     if (! fn || ! fn.fileExists)

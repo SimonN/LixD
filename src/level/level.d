@@ -101,6 +101,12 @@ public:
         level.levelio.loadFromFile(this, fn);
     }
 
+    this(immutable(void)[] src)
+    {
+        this();
+        level.levelio.loadFromVoidArray(this, src);
+    }
+
     @property string
     name() const
     {

@@ -10,7 +10,9 @@ import basics.user;
 import file.language;
 import gui;
 import hardware.mouse;
+import level.level;
 import menu.lobbyui;
+import menu.preview;
 import menu.browser.frommain;
 import menu.browser.network;
 import net.client;
@@ -27,12 +29,15 @@ private:
     PeerList _peerList;
     ColorSelector _colorSelector;
     RoomList _roomList;
+    Preview _preview;
     BrowserCalledFromMainMenu _browser;
 
     TextButton _chooseLevel;
     Texttype _chat;
 
     INetClient _netClient;
+    Level _level;
+
     // Rule: A GUI element is either in exactly one of these, or in none.
     // _showWhenConnected is shown at the union of times when _showDuringLobby
     // and _showDuringGameRoom. Due to the rule, it nonetheless shouldn't
@@ -52,8 +57,11 @@ public:
         _buttonExit.hotkey = basics.user.keyMenuExit;
         _buttonExit.onExecute = ()
         {
-            if (connected && ! inLobby)
+            if (connected && ! inLobby) {
                 _netClient.gotoExistingRoom(Room(0));
+                _preview.level = null;
+                _level = null;
+            }
             else {
                 if (offline)
                     _gotoMainMenu = true;
@@ -77,6 +85,8 @@ public:
         _showWhenConnected ~= _colorSelector;
         _roomList = new RoomList(new Geom(20, 40, 300, 20*8, From.TOP_RIGHT));
         _showDuringLobby ~= _roomList;
+        _preview = new Preview(new Geom(_roomList.geom));
+        _showDuringGameRoom ~= _preview;
         _chooseLevel = new TextButton(new Geom(20, 60+20*8, 120, 20,
             From.TOP_RIGHT), Lang.winLobbySelectLevel.transl);
         _chooseLevel.onExecute = ()
@@ -286,11 +296,13 @@ private:
             _roomList.recreateButtonsFor(rooms, profiles);
         };
 
-        _netClient.onLevelSelect = (string name, const(ubyte[]) data)
+        _netClient.onLevelSelect = (string senderName, const(ubyte[]) data)
         {
             refreshPeerList();
-            _console.add("%s %s %s".format(name,
-                Lang.netChatLevelChange.transl, "[NOT IMPLEMENTED]"));
+            _level = new Level(cast (immutable(void)[]) data);
+            _preview.level = _level;
+            _console.add("%s %s %s".format(senderName,
+                Lang.netChatLevelChange.transl, _level.name));
         };
 
         _netClient.onGameStart = () {

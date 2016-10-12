@@ -256,8 +256,7 @@ fillVectorFromFileNothrow(in Filename fn)
     }
 }
 
-IoLine[]
-fillVectorFromFile(in Filename fn)
+IoLine[] fillVectorFromFile(in Filename fn)
 {
     // this can throw on file 404, it's intended
     if (! fn)
@@ -265,14 +264,21 @@ fillVectorFromFile(in Filename fn)
     return fillVectorFromStream(fn.openForReading());
 }
 
-// return true on no error
-IoLine[]
-fillVectorFromStream(File file)
+IoLine[] fillVectorFromStream(File file)
+{
+    return fillVectorFromStringRange(lines(file));
+}
+
+IoLine[] fillVectorFromVoidArray(immutable(void)[] src)
+{
+    auto str = cast (string) src;
+    return fillVectorFromStringRange(str.lineSplitter);
+}
+
+private IoLine[] fillVectorFromStringRange(T)(T src)
 {
     IoLine[] ret;
-    foreach (string line; lines(file)) {
-        if (! line.all!(d => d.isValidDchar))
-            throw new UTFException("file doesn't contain UTF8");
+    foreach (string line; src) {
         line = line.stripRight;
         if (! line.empty)
             ret ~= new IoLine(line);
