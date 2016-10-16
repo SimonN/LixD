@@ -43,7 +43,7 @@ We need the following libraries:
 * libvorbis
 * freetype
 * Allegro 5
-* enet, not needed right now, this is the networking library
+* enet
 
 You can get these from your distribution. Alternatively, go to the libraries'
 homepages, download the source, then build and install them yourself.
@@ -56,19 +56,21 @@ on all others coming before it. enet doesn't depend on any of those.
 Installing enet
 ---------------
 
+Skip this section if you installed enet via your Linux package manager.
+
 Right now, August 2016, I rely on enet 1.3.x. Download it from enet.bespin.org,
 or clone from github:
 
-$ git clone https://github.com/lsalzman/enet
+    $ git clone https://github.com/lsalzman/enet
 
 Lix uses enet via Derelict-enet. Derelict is a set of D library bindings and
 wants dynamically linked libraries, not static libraries. Therefore, we will
 build enet as a shared object:
 
-$ autoreconf -vfi
-$ ./configure --enable-shared=yes --enable-static=no
-$ make
-$ sudo make install
+    $ autoreconf -vfi
+    $ ./configure --enable-shared=yes --enable-static=no
+    $ make
+    $ sudo make install
 
 If the game doesn't find the newly-built lib, run sudo /sbin/ldconfig.
 

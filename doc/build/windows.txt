@@ -94,6 +94,12 @@ your D installations's ./dmd/windows/bin/.
 
 
 
+Install enet
+------------
+
+I don't remember anything for this. Look at the enet section of
+`./doc/build/linux.txt' and guess what you must do in Windows.
+
 
 
 Generate .lib files

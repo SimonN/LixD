@@ -22,7 +22,8 @@ Quick instructions:
 *   $ git clone https://github.com/SimonN/LixD
 *   Install a D compiler (e.g., dmd, from https://dlang.org/download)
 *   Install dub, the D package handler (http://code.dlang.org/download)
-*   Install the Allegro 5 runtime library (any version >= 5.0 will work)
+*   Install the Allegro 5.2 runtime library
+*   Install the enet 1.3.1 runtime library
 *   $ dub
 
 If you get stuck, follow the detailed instructions in `./doc/build/*.txt',

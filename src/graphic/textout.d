@@ -73,7 +73,7 @@ void initialize()
     int bounds_yls;
     int dummy;
     al_get_text_dimensions(djvuM, "A/f/g/y)(".toStringz,
-        &dummy, &dummy, &dummy, &bounds_yls, &dummy, &dummy);
+        &dummy, &dummy, &dummy, &bounds_yls);
     int descent_yls = al_get_font_descent(djvuM);
 
     float yls_20_geoms = display ? al_get_display_height(display) * 24 / 480f

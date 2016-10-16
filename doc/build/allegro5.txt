@@ -1,0 +1,22 @@
+Lix requires Allegro 5.2.
+
+Lix is guaranteed to fail with anything below Allegro 5.0.
+In particular, it won't build with Allegro 4.x.
+
+Most likely, Lix works with all of 5.2, 5.1 and 5.0. But these
+Allegro 5 versions require different D dependencies. If you do not use
+Allegro 5.2, edit `dub.json' in Lix's root directory. Find the line
+"allegro": "~>4.0" in `dub.json', and replace "~>4.0" as such:
+
+    You use...      ...then replace "~>4.0" with:
+    Allegro 5.2     "~>4.0"
+    Allegro 5.1     "~>3.0"
+    Allegro 5.0     "~>2.0"
+
+If you get compilation errors still, maybe they're in al_get_text_dimensions.
+For Allegro 5.0, add two more parameters &_dummy to the end of the function:
+It should take 3 dummy parameters, then the interesting one, then 2 dummies.
+
+I am developing under Arch Linux, where Allegro 5.2 is the most recent
+version. Older versions are unsupported. As of October 2016, everything
+builds with Allegro 5.0, but I don't make any guarantee for the future.

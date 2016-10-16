@@ -18,10 +18,9 @@ alias ALLEGRO_FONT*   AlFont;
 
 void initializeInteractive()
 {
-    al_init();
+    initOrThrow();
     _defaultNewBitmapFlags = al_get_new_bitmap_flags()
-        & ~ ALLEGRO_MEMORY_BITMAP
-        |   ALLEGRO_VIDEO_BITMAP;
+        & ~ ALLEGRO_MEMORY_BITMAP | ALLEGRO_VIDEO_BITMAP;
     _timer = al_create_timer(1.0 / basics.globals.ticksPerSecond);
     assert (_timer);
     al_start_timer(_timer);
@@ -29,10 +28,10 @@ void initializeInteractive()
 
 void initializeNoninteractive()
 {
-    al_init();
+    initOrThrow();
+    // We have no display to tie bitmaps to. We require RAM bitmaps.
     _defaultNewBitmapFlags = al_get_new_bitmap_flags()
-        & ~ ALLEGRO_VIDEO_BITMAP
-        |   ALLEGRO_MEMORY_BITMAP;
+        & ~ ALLEGRO_VIDEO_BITMAP | ALLEGRO_MEMORY_BITMAP;
 }
 
 void deinitialize()
@@ -172,6 +171,13 @@ struct LockTemplate(alias flags)
 
 ALLEGRO_TIMER* _timer = null;
 private int _defaultNewBitmapFlags;
+
+private void initOrThrow()
+{
+    if (! al_init())
+        throw new Exception("Failed to initialize Allegro 5.
+            See `./doc/build/allegro5.txt' for troubleshooting.");
+}
 
 private Albit albitCreateWithFlags(in int xl, in int yl, in int flags)
 {

@@ -10,7 +10,7 @@
     "workingDirectory": "./",
 
     "dependencies": {
-        "allegro": "~>2.0",
+        "allegro": "~>4.0",
         "enumap": ">=0.4.0",
         "derelict-enet": "~>2.0.0",
         "tharsis-prof": "~>0.5.3",
@@ -22,7 +22,6 @@
         "allegro_font",
         "allegro_ttf",
         "allegro_image",
-        "allegro_color",
         "allegro_primitives",
         "allegro_main",
     ],
