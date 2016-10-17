@@ -72,8 +72,7 @@ protected:
     void alignButtons()
     {
         reqDraw();
-        foreach (int i, b; _buttons)
-        {
+        foreach (int i, b; _buttons) {
             b.shown = (i >= _top && i < _top + pageLen);
             b.move(0, (i - _top) * buttonYlg);
         }
@@ -82,6 +81,23 @@ protected:
 
 // ############################################################################
 
+class PeerButton : Button {
+public:
+    this(Geom g, in Profile prof)
+    {
+        assert (g.xlg > 2 * 20f);
+        super(g);
+        if (prof.feeling != Profile.Feeling.spectating)
+            addChild(new CutbitElement(new Geom(0, 0, 20, 20),
+                getPanelInfoIcon(prof.style)));
+        addChild(new Label(new Geom(20, 0, xlg - 40, 20), prof.name));
+        auto check = new CutbitElement(new Geom(0, 0, 20, 20, From.RIGHT),
+            getInternal(fileImageMenuCheckmark));
+        check.xf = prof.feeling;
+        addChild(check);
+    }
+}
+
 class PeerList : PeerOrRoomList {
 public:
     this(Geom g) { super(g); }
@@ -89,16 +105,13 @@ public:
     void recreateButtonsFor(const(Profile[]) players)
     {
         Button[] array;
-        foreach (int i, profile; players) {
-            TextButton b = new TextButton(newGeomForButton(i));
-            b.alignLeft = true;
-            b.text = profile.name;
-            b.checkFrame = profile.feeling;
-            array ~= b;
-        }
+        foreach (int i, profile; players)
+            array ~= new PeerButton(newGeomForButton(i), profile);
         replaceAllButtons(array);
     }
 }
+
+// ############################################################################
 
 class RoomList : PeerOrRoomList {
 private:

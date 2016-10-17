@@ -77,15 +77,35 @@ struct SomeoneDisconnectedPacket {
 }
 
 struct Profile {
-    private enum ubytes = 3;
+private:
+    enum ubytes = 3;
+    Style _style = Style.red;
+    static assert (goodForMultiplayer(Profile.init._style));
+
+public:
     enum int len = ubytes + netPlayerNameMaxLen + 1; // null-terminated string
     enum Feeling : ubyte { thinking = 0, ready = 2, spectating = 4 }
     // 0, 2, 4: These numbers specify frames in menu_chk.I.
 
     Room room;
-    Style style;
     Feeling feeling;
     string name;
+
+    @property Style style() const nothrow
+    {
+        assert (goodForMultiplayer(_style));
+        return _style;
+    }
+
+    @property void style(in Style st) nothrow
+    {
+        _style = goodForMultiplayer(st) ? st : Style.red;
+    }
+
+    static bool goodForMultiplayer(in Style st) nothrow
+    {
+        return st >= Style.red && st < Style.max;
+    }
 
     void setNotReady()
     {

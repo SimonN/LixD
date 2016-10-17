@@ -1,6 +1,7 @@
 module menu.lobby;
 
 import std.algorithm;
+import std.conv;
 import std.file;
 import std.format;
 import std.range;
@@ -55,19 +56,7 @@ public:
         _buttonExit = new TextButton(new Geom(20, 20, 120, 20, From.BOT_RIG),
             Lang.commonBack.transl);
         _buttonExit.hotkey = basics.user.keyMenuExit;
-        _buttonExit.onExecute = ()
-        {
-            if (connected && ! inLobby) {
-                _netClient.gotoExistingRoom(Room(0));
-                _preview.level = null;
-                _level = null;
-            }
-            else {
-                if (offline)
-                    _gotoMainMenu = true;
-                disconnect();
-            }
-        };
+        _buttonExit.onExecute = () { onExitButtonExecute(); };
         addChild(_buttonExit);
 
         _console = new LobbyConsole(new Geom(0, 60, xlg-40, 160, From.BOTTOM));
@@ -162,8 +151,10 @@ protected:
             // click the button that's already on.
             if (_colorSelector.spectating)
                 _netClient.ourFeeling = Profile.Feeling.spectating;
-            else
+            else {
                 _netClient.ourStyle = _colorSelector.style;
+                basics.user.networkLastStyle = _colorSelector.style;
+            }
         }
         if (_roomList.executeExistingRoom)
             _netClient.gotoExistingRoom(_roomList.executeExistingRoomID);
@@ -196,6 +187,12 @@ private:
         NetClientCfg cfg;
         cfg.hostname = hostname;
         cfg.ourPlayerName = basics.globconf.userName;
+        try
+            cfg.ourStyle = basics.user.networkLastStyle.value.to!Style;
+        catch (Exception)
+            // Both client and server handle illegal values and will give
+            // us a legal default value
+            { }
         cfg.port = basics.globconf.serverPort;
         _netClient = new NetClient(cfg);
         setOurEventHandlers();
@@ -212,6 +209,21 @@ private:
         else if (connecting)
             disconnect();
     }
+
+    void onExitButtonExecute()
+    {
+        if (connected && ! inLobby) {
+            _netClient.gotoExistingRoom(Room(0));
+            _preview.level = null;
+            _level = null;
+        }
+        else {
+            if (offline)
+                _gotoMainMenu = true;
+            disconnect();
+        }
+    }
+
 
     // Keep this the last private function in this class, it's so long
     void setOurEventHandlers()
