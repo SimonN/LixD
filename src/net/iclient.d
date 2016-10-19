@@ -14,6 +14,7 @@ interface INetClient {
 
     @property const(Profile[PlNr]) profilesInOurRoom();
     @property const(Profile) ourProfile() const;
+    @property bool mayWeDeclareReady() const;
 
     // Call this when the GUI has chosen a new Lix style.
     // The GUI may update ahead of time, but what the server knows, decides.

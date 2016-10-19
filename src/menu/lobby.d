@@ -34,6 +34,7 @@ private:
     BrowserCalledFromMainMenu _browser;
 
     TextButton _chooseLevel;
+    TextButton _declareReady;
     Texttype _chat;
 
     INetClient _netClient;
@@ -60,6 +61,9 @@ public:
         addChild(_buttonExit);
 
         _console = new LobbyConsole(new Geom(0, 60, xlg-40, 160, From.BOTTOM));
+        _console.add("Unfinished!");
+        _console.add("Networking games don't work yet. You can connect to");
+        _console.add("the central server and chat, but can't start games.");
         addChild(_console);
 
         _buttonCentral = new TextButton(new Geom(0, 40, 200, 40, From.TOP));
@@ -76,7 +80,16 @@ public:
         _showDuringLobby ~= _roomList;
         _preview = new Preview(new Geom(_roomList.geom));
         _showDuringGameRoom ~= _preview;
-        _chooseLevel = new TextButton(new Geom(20, 60+20*8, 120, 20,
+
+        enum midButtonsY = 60+20*8;
+        _declareReady = new TextButton(new Geom(20, midButtonsY,
+            _peerList.xlg, 20), Lang.winLobbyReady.transl);
+        _declareReady.hotkey = keyMenuOkay;
+        addChild(_declareReady);
+        // See showOrHideGuiBasedOnConnection for particular showing/hiding,
+        // because _declareReady isn't in any of the _showXyz arrays
+
+        _chooseLevel = new TextButton(new Geom(20, midButtonsY, 120, 20,
             From.TOP_RIGHT), Lang.winLobbySelectLevel.transl);
         _chooseLevel.onExecute = ()
         {
@@ -86,6 +99,7 @@ public:
         };
         _chooseLevel.hotkey = keyMenuEdit;
         _showDuringGameRoom ~= _chooseLevel;
+
         _chat = new Texttype(new Geom(60, 20, // 40 = label, 60 = 3x GUI space
             Geom.screenXlg - _buttonExit.xlg - 40 - 60, 20, From.BOT_LEF));
         _chat.onEnter = ()
@@ -160,6 +174,18 @@ protected:
             _netClient.gotoExistingRoom(_roomList.executeExistingRoomID);
         else if (_roomList.executeNewRoom)
             _netClient.createRoom();
+        if (_declareReady.execute) {
+            assert (_netClient, "declare ready without net client running");
+            assert (_netClient.mayWeDeclareReady, "declare ready disallowed");
+            if (_declareReady.on) {
+                _declareReady.on = false;
+                _netClient.ourFeeling = Profile.Feeling.thinking;
+            }
+            else {
+                _declareReady.on = true;
+                _netClient.ourFeeling = Profile.Feeling.ready;
+            }
+        }
     }
 
 private:
@@ -178,6 +204,9 @@ private:
                        : connected ? Lang.winLobbyRoomLeave.transl
                       : connecting ? Lang.commonCancel.transl
                                    : Lang.commonBack.transl;
+        if (! connected || inLobby)
+            // See also refreshPeerList for visibility of this button
+            _declareReady.shown = false;
     }
 
     void connect(in string hostname)
@@ -235,6 +264,9 @@ private:
             _colorSelector.style = _netClient.ourProfile.style;
             if (_netClient.ourProfile.feeling == Profile.Feeling.spectating)
                 _colorSelector.setSpectating();
+            _declareReady.shown = _netClient.mayWeDeclareReady;
+            _declareReady.on = _netClient.ourProfile.feeling
+                                == Profile.Feeling.ready;
         }
 
         // We don't print anything on connecting. Entering the lobby will
@@ -282,6 +314,8 @@ private:
                 _console.add("%s %s%d%s".format(name,
                     Lang.netChatPlayerOutRoom.transl, toRoom,
                     Lang.netChatPlayerOutRoom2.transl));
+            // If we're in the lobby, we'll get another packet with the
+            // new possible rooms.
         };
 
         _netClient.onPeerChangesProfile = (const(Profile*))

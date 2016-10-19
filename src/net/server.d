@@ -210,6 +210,9 @@ private:
         }
         if (intoRoom == 0)
             informLobbyistAboutRooms(mover);
+        else
+            // The mover has moved out of the lobby. Inform other lobbyists.
+            informAllLobbyistsAboutRooms();
     }
 
     void receiveHello(ENetPeer* peer, ENetPacket* got)

@@ -16,6 +16,7 @@ import std.algorithm;
 import std.bitmanip;
 import std.conv;
 import std.exception;
+import std.range;
 import std.string;
 
 import derelict.enet.enet;
@@ -146,6 +147,17 @@ public:
         if (buf[ubytes + netPlayerNameMaxLen] == '\0')
             name = fromStringz(cast (char*) (buf.ptr + ubytes)).idup;
     }
+}
+
+// Give this function a range with all profiles from the same room
+bool mayRoomDeclareReady(R)(R range)
+    if (isForwardRange!R && is (ElementType!R : const (Profile)))
+{
+    // all must be in same room that isn't the lobby
+    if (range.any!(pro => pro.room != range.front.room || pro.room == 0))
+        return false;
+    return range.walkLength >= 2
+        && range.any!(pro => pro.feeling != Profile.Feeling.spectating);
 }
 
 struct HelloPacket {

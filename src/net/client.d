@@ -137,6 +137,12 @@ public:
         return _profilesInOurRoom;
     }
 
+    @property bool mayWeDeclareReady() const
+    {
+        return connected && mayRoomDeclareReady(_profilesInOurRoom.byValue)
+            && ourProfile.feeling != Profile.Feeling.spectating;
+    }
+
     // Call this when the GUI has chosen a new Lix style.
     // The GUI may update ahead of time, but what the server knows, decides.
     @property void ourStyle(Style sty)

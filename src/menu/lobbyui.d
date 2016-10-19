@@ -154,7 +154,7 @@ public:
         Button[] array = [ new TextButton(newGeomForButton(0),
                                           Lang.winLobbyRoomCreate.transl) ];
         for (int i = 0; i < rooms.length && i < profiles.length; ++i)
-            array ~= new TextButton(newGeomForButton(i),
+            array ~= new TextButton(newGeomForButton(i+1),
                 "%s%d: %s".format(Lang.winLobbyRoomNumber.transl,
                                   rooms[i], profiles[i].name));
         replaceAllButtons(array);
