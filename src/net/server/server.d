@@ -1,4 +1,4 @@
-module net.server;
+module net.server.server;
 
 /* The daemon runs an instance of this. This can take many connections
  * from other people's NetClients.
@@ -11,15 +11,18 @@ module net.server;
 import std.algorithm;
 import derelict.enet.enet;
 
+import net.server.ihotelob;
+import net.server.hotel;
 import net.enetglob;
 import net.packetid;
 import net.structs;
 import net.versioning;
 
-class NetServer {
+class NetServer : IHotelObserver {
 private:
     ENetHost* _host;
     Profile[PlNr] _profiles;
+    Hotel _hotel;
 
 public:
     this(in int port)
@@ -28,6 +31,7 @@ public:
         ENetAddress address;
         address.host = ENET_HOST_ANY;
         address.port = port & 0xFFFF;
+        _hotel = Hotel(this);
         _host = enet_host_create(&address,
             127, // max connections. PlNr is ubyte, redesign PlNr if want more
             2, // allow up to 2 channels to be used, 0 and 1
@@ -43,6 +47,7 @@ public:
             enet_host_destroy(_host);
             _host = null;
         }
+        _hotel.dispose();
         deinitializeEnet();
     }
 
@@ -70,6 +75,88 @@ public:
             }
         enet_host_flush(_host);
     }
+
+// ############################################################################
+// ######################################################### friend class Hotel
+
+    const(Profile[PlNr]) allPlayers() const @nogc { return _profiles; }
+
+    // This doesn't notify anyone, they must do it on a packet receive
+    void unreadyAllInRoom(Room roomWithChange) @nogc
+    {
+        foreach (ref profile; _profiles)
+            if (profile.room == roomWithChange)
+                profile.setNotReady();
+    }
+
+    void sendLevelByChooser(PlNr receiv, const(ubyte[]) level, PlNr from) @nogc
+    {
+        if (_host.peers + receiv is null)
+            return;
+        PacketHeader header;
+        header.packetID = PacketStoC.peerLevelFile;
+        header.plNr = from;
+        auto p = createPacket(header.len + level.length);
+        header.serializeTo(p.data[0 .. header.len]);
+        p.data[header.len .. p.dataLength] = level[0 .. $];
+        enet_peer_send(_host.peers + receiv, 0, p);
+    }
+
+    // describeRoom will send 1 or 2 packets to receiv.
+    void describeRoom(PlNr receiv, const(ubyte[]) level, PlNr from)
+    {
+        auto informMover = ProfileListPacket();
+        informMover.header.packetID = PacketStoC.peersAlreadyInYourNewRoom;
+        informMover.header.plNr = receiv;
+        immutable toRoom = _profiles[receiv].room;
+        _profiles.byKeyValue
+            .filter!(kv => kv.value.room == toRoom) // including themself
+            .each!((kv) {
+                informMover.indices ~= kv.key;
+                informMover.profiles ~= kv.value;
+            });
+        enet_peer_send(_host.peers + receiv, 0, informMover.createPacket());
+        if (toRoom == Room(0))
+            informLobbyistAboutRooms(receiv);
+        else if (level)
+            sendLevelByChooser(receiv, level, from);
+    }
+
+    void informLobbyistAboutRooms(PlNr receiv)
+    {
+        assert (_host);
+        assert (_host.peers);
+        assert (receiv in _profiles);
+        assert (_profiles[receiv].room == 0);
+        enet_peer_send(_host.peers + receiv, 0,roomsForLobbyists.createPacket);
+    }
+
+    void sendPeerEnteredYourRoom(PlNr receiv, PlNr mover)
+    {
+        assert (_host);
+        assert (_host.peers);
+        auto pa = ProfilePacket();
+        pa.header.packetID = PacketStoC.peerJoinsYourRoom;
+        pa.header.plNr = mover;
+        pa.profile = _profiles[mover];
+        enet_peer_send(_host.peers + receiv, 0, pa.createPacket);
+    }
+
+    void sendPeerLeftYourRoom(PlNr receiv, PlNr mover)
+    {
+        assert (_host);
+        assert (_host.peers);
+        assert (receiv in _profiles);
+        assert (mover in _profiles);
+        auto pa = RoomChangePacket();
+        pa.header.packetID = PacketStoC.peerLeftYourRoom;
+        pa.header.plNr = mover;
+        pa.room = _profiles[mover].room;
+        enet_peer_send(_host.peers + receiv, 0, pa.createPacket);
+    }
+
+
+// ############################################################################
 
 private:
     void receivePacket(ENetPeer* peer, ENetPacket* got)
@@ -127,14 +214,6 @@ private:
         _profiles.remove(discon.plNr);
     }
 
-    // This doesn't notify anyone, they must do it on a packet receive
-    void unreadyAllInRoom(in Room roomWithChange)
-    {
-        foreach (ref profile; _profiles)
-            if (profile.room == roomWithChange)
-                profile.setNotReady();
-    }
-
     RoomListPacket roomsForLobbyists()
     {
         Profile[Room] temp;
@@ -147,72 +226,6 @@ private:
         roomList.indices = temp.keys;
         roomList.profiles = temp.values;
         return roomList;
-    }
-
-    void informLobbyistAboutRooms(in PlNr who)
-    {
-        assert (_host);
-        assert (_host.peers);
-        assert (who in _profiles);
-        assert (_profiles[who].room == 0);
-        enet_peer_send(_host.peers + who, 0, roomsForLobbyists.createPacket);
-    }
-
-    void informAllLobbyistsAboutRooms()
-    {
-        // Hack: broadcastToRoom examines the packet's header.plNr to find
-        // out what room to broadcast to. We have to find a suitable player >_>
-        auto lobbyist = _profiles.byKeyValue.find!(kv => kv.value.room == 0);
-        if (lobbyist.empty)
-            return;
-        auto packet = roomsForLobbyists;
-        packet.header.plNr = lobbyist.front.key;
-        broadcastToRoom(packet);
-    }
-
-    void putPlayerInRoom(in PlNr mover, in Room intoRoom,
-                         const(Profile)* insertThisIf404 = null
-    ) {
-        if (mover in _profiles) {
-            // Upon room movement, all involved players unready themselves.
-            // The server does this too now, but doesn't tell anyone.
-            unreadyAllInRoom(_profiles[mover].room);
-            auto tellOldRoom = RoomChangePacket();
-            tellOldRoom.header.packetID = PacketStoC.peerLeftYourRoom;
-            tellOldRoom.header.plNr = mover;
-            tellOldRoom.room = intoRoom;
-            broadcastToOthersInRoom(tellOldRoom);
-        }
-        else {
-            assert (insertThisIf404 !is null);
-            _profiles[mover] = *insertThisIf404;
-        }
-        assert (mover in _profiles);
-        _profiles[mover].room = intoRoom;
-        {
-            auto tellNewRoom = ProfilePacket();
-            tellNewRoom.header.packetID = PacketStoC.peerJoinsYourRoom;
-            tellNewRoom.header.plNr = mover;
-            tellNewRoom.profile = _profiles[mover];
-            broadcastToOthersInRoom(tellNewRoom);
-        } {
-            auto informMover = ProfileListPacket();
-            informMover.header.packetID = PacketStoC.peersAlreadyInYourNewRoom;
-            informMover.header.plNr = mover;
-            _profiles.byKeyValue
-                .filter!(kv => kv.value.room == intoRoom) // including mover
-                .each!((kv) {
-                    // Fill the structure of arrays. I didn't make a new struct
-                    informMover.indices ~= kv.key;
-                    informMover.profiles ~= kv.value;
-                });
-            enet_peer_send(_host.peers + mover, 0, informMover.createPacket());
-        }
-        if (intoRoom == 0)
-            informLobbyistAboutRooms(mover);
-        else
-            // The mover has moved out of the lobby. Inform other lobbyists.
-            informAllLobbyistsAboutRooms();
     }
 
     void receiveHello(ENetPeer* peer, ENetPacket* got)
@@ -229,7 +242,9 @@ private:
 
         _profiles.remove(plNr);
         if (answer.header.packetID == PacketStoC.youGoodHeresPlNr) {
-            putPlayerInRoom(plNr, Room(0), &hello.profile);
+            _profiles[plNr] = hello.profile;
+            _profiles[plNr].room = Room(0);
+            _hotel.newPlayerInLobby(plNr);
         }
         else {
             // Remove peer, so that it won't get the broadcast, but don't
@@ -252,28 +267,24 @@ private:
     {
         auto wish = RoomChangePacket(got);
         wish.header.plNr = peerToPlNr(peer);
-        putPlayerInRoom(wish.header.plNr, wish.room);
+        auto oldProfile = wish.header.plNr in _profiles;
+        immutable oldRoom = oldProfile ? oldProfile.room : Room(0);
+        if (! oldProfile || oldProfile.room == wish.room)
+            return;
+        oldProfile.room = wish.room;
+        _hotel.playerHasMoved(wish.header.plNr, oldRoom, wish.room);
     }
 
     void receiveCreateRoom(ENetPeer* peer, ENetPacket* got)
     {
-        auto plNr = peerToPlNr(peer);
+        immutable plNr = peerToPlNr(peer);
         auto oldProfile = plNr in _profiles;
-        if (! oldProfile)
+        immutable oldRoom = oldProfile ? oldProfile.room : Room(0);
+        immutable newRoom = _hotel.firstFreeRoomElseLobby();
+        if (! oldProfile || oldProfile.room == newRoom)
             return;
-        // Find the first nonexistant room.
-        // Room 0 is the lobby, this always exists, even if empty.
-        Room roomToCreate = Room(1);
-        while (roomToCreate < netRoomsMax
-            && _profiles.byValue.any!(profile => profile.room == roomToCreate)
-        ) {
-            roomToCreate = Room((roomToCreate + 1) & 0xFF);
-        }
-        // Fallback: If all rooms are full, put the player back where they are.
-        // We still call putPlayerInRoom to override any client's GUI optimism.
-        putPlayerInRoom(plNr, roomToCreate == netRoomsMax ? oldProfile.room
-                                                          : roomToCreate);
-        informAllLobbyistsAboutRooms();
+        oldProfile.room = newRoom;
+        _hotel.playerHasMoved(plNr, oldRoom, newRoom);
     }
 
     void receiveProfileChange(ENetPeer* peer, ENetPacket* got)
@@ -311,24 +322,13 @@ private:
 
     void receiveLevel(ENetPeer* peer, ENetPacket* got)
     {
-        // Levels aren't wrapped in a normal struct, they're too large.
-        // We avoid unnecessary copying, and instead pass this minimal struct
-        // that copies from *got directly to the packets to be sent.
-        struct AvoidingLevelCopy {
-            PacketHeader header;
-            ENetPacket* createPacket() const nothrow
-            {
-                auto ret = .createPacket(got.dataLength);
-                header.serializeTo(ret.data[0 .. 2]);
-                ret.data[2 .. got.dataLength] = got.data[2 .. got.dataLength];
-                return ret;
-            }
-        }
-        AvoidingLevelCopy lev;
-        lev.header.packetID = PacketStoC.peerLevelFile;
-        lev.header.plNr = peerToPlNr(peer);
-        if (auto profile = lev.header.plNr in _profiles)
-            unreadyAllInRoom(profile.room);
-        broadcastToRoom(lev);
+        auto plNr = peerToPlNr(peer);
+        auto profile = plNr in _profiles;
+        // Any level data is okay, even an empty one.
+        // We don't impose a max size. We probably should.
+        if (! profile || got.dataLength < 2)
+            return;
+        _hotel.receiveLevel(profile.room, plNr, got.data[2 .. got.dataLength]);
+        unreadyAllInRoom(profile.room);
     }
 }

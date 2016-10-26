@@ -1,4 +1,4 @@
-module net.daemon;
+module net.server.daemon;
 
 /* A standalone daemon application.
  * This instantiates a NetServer and lets that take connections.
@@ -11,7 +11,7 @@ version (lixDaemon)
     import core.time;
     import core.thread;
 
-    import net.server;
+    import net.server.server;
 
     enum defaultPort = 22934;
 

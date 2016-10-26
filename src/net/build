@@ -12,7 +12,7 @@ commonSrc="ac.d enetglob.d packetid.d repdata.d structs.d style.d version.d"
 
 commonFlags="-I${enetDir}/source -I${utilDir}/source -L-L${enetDir}/lib -L-L${utilDir}/lib -L-lDerelictENet -L-lDerelictUtil"
 
-dmd daemon.d server.d ${commonSrc} -version=lixDaemon ${commonFlags}
-dmd cli-test.d client.d iclient.d ${commonSrc} -version=lixClientTester ${commonFlags}
+dmd "./server/"*.d ${commonSrc} -version=lixDaemon ${commonFlags}
+dmd "cli-test.d" "client.d" "iclient.d" ${commonSrc} -version=lixClientTester ${commonFlags}
 rm "daemon.o"
 rm "cli-test.o"

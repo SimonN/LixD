@@ -29,12 +29,14 @@ import net.versioning;
 // make function interfaces more typesafe
 struct PlNr {
     enum int len = 1;
+    enum int maxExclusive = 255;
     ubyte n;
     alias n this;
 }
 
 struct Room {
     enum int len = 1;
+    enum int maxExclusive = 255;
     ubyte n;
     alias n this;
 }
@@ -44,19 +46,19 @@ struct PacketHeader {
     ubyte packetID;
     PlNr plNr;
 
-    void serializeTo(ref ubyte[len] buf) const nothrow
+    void serializeTo(ref ubyte[len] buf) const nothrow @nogc
     {
         buf[0] = packetID;
         buf[1] = plNr;
     }
 
-    this(ref const(ubyte[len]) buf) nothrow
+    this(ref const(ubyte[len]) buf) nothrow @nogc
     {
         packetID = buf[0];
         plNr = PlNr(buf[1]);
     }
 
-    ENetPacket* createPacket() const nothrow
+    ENetPacket* createPacket() const nothrow @nogc
     {
         auto ret = .createPacket(len);
         serializeTo(ret.data[0 .. len]);
@@ -108,7 +110,7 @@ public:
         return st >= Style.red && st < Style.max;
     }
 
-    void setNotReady()
+    void setNotReady() @nogc
     {
         if (feeling == Feeling.ready)
             feeling = Feeling.thinking;

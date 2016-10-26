@@ -139,8 +139,13 @@ public:
 
     @property bool mayWeDeclareReady() const
     {
-        return connected && mayRoomDeclareReady(_profilesInOurRoom.byValue)
-            && ourProfile.feeling != Profile.Feeling.spectating;
+        if (! connected || ! mayRoomDeclareReady(_profilesInOurRoom.byValue))
+            return false;
+        final switch (ourProfile.feeling) {
+            case Profile.Feeling.thinking:
+            case Profile.Feeling.ready: return true;
+            case Profile.Feeling.spectating: return false;
+        }
     }
 
     // Call this when the GUI has chosen a new Lix style.
