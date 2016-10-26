@@ -57,7 +57,6 @@ void initialize()
     djvuS = al_load_ttf_font(fnp, to!int(floor(magnif *  8)), flags);
     djvuM = al_load_ttf_font(fnp, to!int(floor(magnif * 14)), flags);
     djvuL = al_load_ttf_font(fnp, to!int(floor(magnif * 20)), flags);
-
     if (! djvuS) djvuS = fontAl;
     if (! djvuM) djvuM = fontAl;
     if (! djvuL) djvuL = fontAl;
@@ -66,27 +65,14 @@ void initialize()
     assert (djvuL);
 
     _shaOffset = min(magnif, magnif / 2.0f + 2);
+    _djvuSYls = al_get_font_line_height(djvuS);
 
     // djvuMOffset should be set such that the font centers nicely on a
     // GUI button/bar having a height of 20 geoms -- equivalent to 1/24th
     // of the screen height. "yls" == y-length in screen pixels, not in geoms
-    int bounds_yls;
-    int dummy;
-    al_get_text_dimensions(djvuM, "A/f/g/y)(".toStringz,
-        &dummy, &dummy, &dummy, &bounds_yls);
-    int descent_yls = al_get_font_descent(djvuM);
-
-    float yls_20_geoms = display ? al_get_display_height(display) * 24 / 480f
-                                 : 20f;
-    _djvuMOffset = (yls_20_geoms - bounds_yls - descent_yls - 1f) / 2f;
-    // subtracting descent_yls looks better somehow, even though it should
-    // have been included in bounds_yls. The main goal is to make it look
-    // nice on various screen sizes, not to make it theoretically correct.
-
-    _djvuSYls = al_get_font_line_height(djvuS);
+    float yls20g = display ? al_get_display_height(display) / 24f : 20f;
+    _djvuMOffset = (yls20g - al_get_font_line_height(djvuM)) / 2f;
 }
-
-
 
 void deinitialize()
 {
@@ -97,8 +83,6 @@ void deinitialize()
     fontAl = djvuS = djvuM = djvuL = null;
 }
 
-
-
 void
 drawText(int tplFlag = ALLEGRO_ALIGN_LEFT)(
     in AlFont f, in string str, float x, float y, in AlCol col
@@ -106,9 +90,9 @@ drawText(int tplFlag = ALLEGRO_ALIGN_LEFT)(
     assert(f);
     immutable char* s = str.toStringz();
 
-    if (tplFlag == ALLEGRO_ALIGN_CENTRE)
+    static if (tplFlag == ALLEGRO_ALIGN_CENTRE)
         x = (x - shaOffset / 2).ceil.to!int;
-    else if (tplFlag == ALLEGRO_ALIGN_RIGHT)
+    else static if (tplFlag == ALLEGRO_ALIGN_RIGHT)
         x = (x - shaOffset).ceil.to!int;
 
     y = to!int(y + (f == djvuM ? djvuMOffset : 0));
