@@ -1,6 +1,24 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.19
+------
+
+2016-11-01
+
+I require Allegro 5.2 now instead of 5.0.
+
+Included Rubix's levels. They're all solvable in D Lix.
+
+Fix #159: Better encapsulation for physics caching. Don't switch timelines
+merely by framestepping back. Maybe this fixes Rubix's sporadic crashes, #154.
+
+Fix #24: GUI text vertically centered on buttons. I'd like to see how this
+looks on Windows machines.
+
+More work on the networking lobby. You can chat, browse rooms, send and receive
+levels, but can't start a game yet.
+
 0.6.18
 ------
 

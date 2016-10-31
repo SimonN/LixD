@@ -11,19 +11,13 @@ Windows. I don't know where you install libraries, though.
 Install a D compiler and dub
 ----------------------------
 
-I recommend dmd v2.067 or newer to compile this, or one of the other
-available D compilers. This explains how to set up dmd. Get it here:
+I recommend dmd as the D compiler, which ships with dub, the D packaging tool.
+Get dmd from your package manager, or download it here:
 
     http://dlang.org/download.html
 
-You should install dub, the D packaging tool. dub automates the build process,
-i.e., it replaces make, and it will fetch the D bindings for installed and
-used libraries. Download here:
-
-    http://code.dlang.org/download
-
-dub is a standalone binary, put it anywhere in your PATH.
-
+dub automates the build process, i.e., it replaces make, and it will fetch
+the D bindings for installed and used libraries.
 
 
 
@@ -48,8 +42,8 @@ We need the following libraries:
 You can get these from your distribution. Alternatively, go to the libraries'
 homepages, download the source, then build and install them yourself.
 
-You should install the libraries in the order listed, because Allegro depends
-on all others coming before it. enet doesn't depend on any of those.
+If you install manually, you should install the libraries in the order listed,
+because Allegro depends on all others coming before it. enet has no dependency.
 
 
 

@@ -7,16 +7,31 @@ all through Wine.
 
 Install Wine.
 
-Download dmd, the Digital Mars D compiler, for Windows. Run its installer
-through Wine.
+Download dmd, the Digital Mars D compiler, for Windows, and install it through
+Wine. I recommend that you add dmd's bin directory to Wine's PATH, dmd's
+installer offers a checkbox for this. Downlaod dmd's Windows installer here:
 
-Download dub, and install it through Wine.
+    https://dlang.org/download.html
 
-Follow `./doc/build/windows.txt' to install Allegro 5 and other libraries.
-You have to put files where the Windows version of dmd will find them.
-The default installation part of the Windows dmd compiler is
-`~/.wine/drive_c/dmd'. Look around that directory for where to put the
-files in particular.
+dub, the D packaging tool, is shipped with dmd since November 2016.
+After installing dmd, you might verify that you have both dmd and dub:
+
+    wine dmd
+    wine dub
+
+Follow the section in `./doc/build/windows.txt' about installing Allegro 5
+.dlls and .libs: That section will tell you to download readily-built Windows
+binaries for Allegro, where to download `implib', and how to generate .libs
+from the .dlls with `implib'. Your command lines might look like:
+
+    wine implib.exe /s myfile.lib myfile.dll
+
+You have to put the .dlls and .libs into where the Windows version of dmd will
+find them: The default installation part of the Windows dmd compiler is
+`~/.wine/drive_c/D' or `~/.wine/drive_c/"Program Files"/D'.
+There is a directory `dmd2/windows/' inside. That directory has subdirectories
+`bin/' and `lib/', put the .dlls in `bin/' and the generated .libs in `lib/'.
 
 When all libraries are installed, run:
 $ wine dub
+
