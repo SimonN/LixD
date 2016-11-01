@@ -241,8 +241,8 @@ package:
     final void drawFromPixel(in Albit from, in Point fromPoint, Point toPoint)
     {
         assert (this.bitmap == al_get_target_bitmap(),
-            "drawFromSinglePixel is designed for high-speed drawing."
-            "Set the target bitmap manually to the target torbit's bitmap.");
+            "drawFromSinglePixel() is designed for high-speed drawing. "
+            ~ "Set the target bitmap manually to the target torbit's bitmap.");
         assert (from);
         assert (fromPoint.x >= 0);
         assert (fromPoint.y >= 0);

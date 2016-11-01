@@ -23,17 +23,21 @@ enum Runmode {
     PRINT_AND_EXIT
 }
 
-private string _helpAndExitOutput =
-    "-h or -? or --help      print this help and exit\n"
-    "-v or --version         print version and exit\n"
-    "-w                      run windowed at 640x480\n"
-    "--resol=800x600         run windowed at the given resolution\n"
-    "--fullscreen            use software fullscreen mode (good Alt+Tab)\n"
-    "--hardfull=1600x900     use hardware fullscreen at given resolution\n"
-    "--image level.txt       export all given level files as images\n"
-    "--verify replay.txt     verify all given replay files for solvability\n"
-    "--verify replaydir      verify all replays in all given directories\n"
-    "--coverage replaydir    like --verify, then print levels without proof";
+private void writeHelp()
+{
+    writeln(
+        "-h or -? or --help     print this help and exit\n",
+        "-v or --version        print version and exit\n",
+        "-w                     run windowed at 640x480\n",
+        "--resol=800x600        run windowed at the given resolution\n",
+        "--fullscreen           use software fullscreen mode (good Alt+Tab)\n",
+        "--hardfull=1600x900    use hardware fullscreen at given resolution\n",
+        "--image level.txt      export all given levels as images\n",
+        "--verify replay.txt    verify all given replays for solvability\n",
+        "--verify replaydir     verify all replays in all given directories\n",
+        "--coverage replaydir   like --verify, then print levels without proof"
+    );
+}
 
 class Cmdargs {
 public:
@@ -114,12 +118,12 @@ public:
             writeln("Lix version ", gameVersion);
 
         if (helpAndExit)
-            writeln(_helpAndExitOutput);
+            writeHelp();
         if (good)
             return;
         if (badSwitches != null) {
             foreach (sw; badSwitches)
-                writeln("Error: `" ~ sw ~ "' is an unknown switch.");
+                writeln("Error: `", sw, "' is an unknown switch.");
         }
         if (verifyReplays + exportImages + preferPointedTo > 1)
             writeln("Error: Found more than 1 of `--pointed-to', `--image', ",
@@ -127,7 +131,7 @@ public:
         if (! verifyReplays && ! exportImages) {
             // Interactive mode with bad command-line.
             if (fileArgs.length > 2)
-                writeln("Error: Interactive mode takes at most 2 "
+                writeln("Error: Interactive mode takes at most 2 ",
                         "file arguments, not ", fileArgs.length, ".");
             else if (preferPointedTo && fileArgs.length != 1)
                 writeln("Error: --pointed-to takes exactly one file argument.");

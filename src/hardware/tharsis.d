@@ -27,7 +27,7 @@ version (tharsisprofiling) {
     pragma (msg, "Compiling Lix " ~ gameVersion().toString() ~
                  " with profiling information...");
     pragma (msg, "(To optimize for speed, "
-                 "use `dub build -b release-nobounds')");
+               ~ "use `dub build -b release-nobounds')");
 
     Profiler profiler;
 

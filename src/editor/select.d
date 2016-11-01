@@ -149,11 +149,11 @@ bool mouseOnSolidPixel(Editor editor, in TerOcc pos) {
         string str()
         {
             import std.string;
-            return "%s not in selbox %s, because "
-                   "selbox's start+length: %s. Mouse on land: %s"
-                .format(mol.toString, pos.selboxOnMap,
-                    (pos.selboxOnMap.topLeft + pos.selboxOnMap.len).toString,
-                    _map.mouseOnLand.toString);
+            return format("%s not in selbox %s, because "
+                        ~ "selbox's start+length: %s. Mouse on land: %s",
+                mol.toString, pos.selboxOnMap,
+                (pos.selboxOnMap.topLeft + pos.selboxOnMap.len).toString,
+                _map.mouseOnLand.toString);
         }
         assert (mol.x >= pos.selboxOnMap.x, str());
         assert (mol.y >= pos.selboxOnMap.y, str());

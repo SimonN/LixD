@@ -70,7 +70,7 @@ private class VerifyCounter {
 
     void writeCSVHeader()
     {
-        writeln("Result,Replay filename,Level filename,"
+        writeln("Result,Replay filename,Level filename,",
                 "Player,Saved,Required,Skills,Updates");
     }
 
@@ -98,19 +98,19 @@ private class VerifyCounter {
         writeln();
         writeln("Statistics from ", total, " replays:");
         if (noPtr)
-            writefln("%5dx (NO-PTR): replay ignored, "
+            writefln("%5dx (NO-PTR): replay ignored, ",
                      "it doesn't name a level file.", noPtr);
         if (noLev)
-            writefln("%5dx (NO-LEV): replay ignored, "
+            writefln("%5dx (NO-LEV): replay ignored, ",
                      "it names a level file that doens't exist.", noLev);
         if (badLev)
-            writefln("%5dx (BADLEV): replay ignored, "
+            writefln("%5dx (BADLEV): replay ignored, ",
                      "it names a level file with a bad level.", badLev);
         if (fail)
-            writefln("%5dx (FAIL): replay names "
+            writefln("%5dx (FAIL): replay names ",
                      "an existing level file, but doesn't solve it.", fail);
         if (ok)
-            writefln("%5dx (OK): replay names "
+            writefln("%5dx (OK): replay names ",
                      "an existing level file and solves that level.", ok);
     }
 

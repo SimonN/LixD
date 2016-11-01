@@ -55,10 +55,9 @@ package:
     }
     out {
         import std.format;
-        assert (selbox == Rect(0, 0, cb.xl, cb.yl),
+        assert (selbox == Rect(0, 0, cb.xl, cb.yl), format(
             "VRAM tile shall be as small as possible, no transparent border. "
-            "But this selbox is %s, not (0,0;%d,%d)"
-            .format(selbox, cb.xl, cb.yl));
+            ~ "But this selbox is %s, not (0,0;%d,%d)", selbox, cb.xl, cb.yl));
     }
     body {
         this._key = aKey;

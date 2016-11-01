@@ -66,8 +66,8 @@ public:
         assert (0 <= u.x && u.x < _phymap.xl
             &&  0 <= u.y && u.y < _phymap.yl, format(
             "Bad terrain tile rotation coordinate resolution. "
-            "point=%s, rot=%d, mirr=%d, result=%s. "
-            "Expected 0 <= %d < %d and 0 <= %d < %d.", g.toString, rot, mirr,
+            ~ "point=%s, rot=%d, mirr=%d, result=%s. "
+            ~ "Expected 0 <= %d < %d and 0 <= %d < %d.", g.toString, rot, mirr,
             u.toString, u.x, _phymap.xl, u.y, _phymap.yl));
         return _phymap.get(u);
     }

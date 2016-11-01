@@ -350,8 +350,8 @@ private void writeDependencies(
         if (! canFind(*written, dep))
             file.writeDependencies(dep, written);
     assert (tile.dependencies.all!(dep => canFind(*written, dep)
-        || dep.dependencies.empty), "I don't write non-groups (that have "
-        "no dependencies) to the list, but everything else should be there.");
+        || dep.dependencies.empty), "I don't write non-groups (that have no "
+        ~ "dependencies) to the list, but everything else should be there.");
     // The workload of this recursive function
     if (! canFind(*written, tile)
         && tile.dependencies.length != 0 // This is a group, can be dependency.
@@ -367,9 +367,8 @@ private void writeDependencies(
             file.writeln(IoLine.Dollar(glo.levelEndGroup, ""));
         foreach (elem; group.key.elements) {
             auto line = groupOrRegularTileLine(elem, *written);
-            assert (line,
-                "We should only write groups when all elements are either "
-                "already-written groups or plain tiles!");
+            assert (line, "We should only write groups when all elements "
+                ~ "are either already-written groups or plain tiles!");
             file.writeln(line);
         }
     }

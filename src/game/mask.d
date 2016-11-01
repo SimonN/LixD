@@ -26,67 +26,70 @@ enum Mask[TerrainDeletion.Type] masks = [
 
 private enum Mask _bashLeft  = _bashRight.mirrored;
 private enum Mask _bashRight = Mask([
-    "NNNNNNNN" "NNNN....", // Top 2 rows can cut through steel without
-    "NNNNNNNN" "NNNNNN..", // cancelling the basher. Other rows would cancel.
-    "XXXXXXXX" "XXXXXXX."] ~
-    "XXXXXXXX" "XXXXXXXX".repeat(12).array ~ [
-    "XXXXXXXX" "XXXXXXX.",
-    "#XXXXXXX" "XXXXXX..", // '#' = effective coordinate
-    "XXXXXXXX" "XXXX....",
+    "NNNNNNNNNNNN....", // Top 2 rows can cut through steel without
+    "NNNNNNNNNNNNNN..", // cancelling the basher. Other rows would cancel.
+    "XXXXXXXXXXXXXXX."] ~
+    "XXXXXXXXXXXXXXXX".repeat(12).array ~ [
+    "XXXXXXXXXXXXXXX.",
+    "#XXXXXXXXXXXXX..", // '#' = effective coordinate
+    "XXXXXXXXXXXX....",
 ]);
 
 private enum _bashNoRelicsLeft  = _bashNoRelicsRight.mirrored;
 private enum _bashNoRelicsRight = Mask(
-    "NNNNNNNN" "NNNNNNNN".repeat( 2).array ~ // ignore steel here
-    "XXXXXXXX" "XXXXXXXX".repeat(14).array ~ [
-    "#XXXXXXX" "XXXXXXXX", // '#' = effective coordinate
-    "XXXXXXXX" "XXXXXXXX",
+    "NNNNNNNNNNNNNNNN".repeat( 2).array ~ // ignore steel here
+    "XXXXXXXXXXXXXXXX".repeat(14).array ~ [
+    "#XXXXXXXXXXXXXXX", // '#' = effective coordinate
+    "XXXXXXXXXXXXXXXX",
 ]);
 
 private enum _mineLeft  = _mineRight.mirrored;
 private enum _mineRight = Mask([
-    "...XXXXX" "........" "..", // -20
-    ".XXXXXXX" "XX......" "..",
-    "XXXXXXXX" "XXXX...." "..",
-    "XXXXXXXX" "XXXXXX.." "..",
-    "XXXXXXXX" "XXXXXXX." "..", // -16
-    "XXXXXXXX" "XXXXXXXX" "..", // -15
-    "XXXXXXXX" "XXXXXXXX" "X.", // -14
-    "XXXXXXXX" "XXXXXXXX" "X.", ] ~
-    "XXXXXXXX" "XXXXXXXX" "XX".repeat(12).array ~ [ // from -12 to -1 inclusive
-    "#XXXXXXX" "XXXXXXXX" "X.", // 0, with '#' the effective coordinate
-    "XXXXXXXX" "XXXXXXXX" "X.", // 1
-    "..XXXXXX" "XXXXXXXX" "..", // 2 = old ground level
-    "....XXXX" "XXXXXXX." "..", // 3
-    "......XX" "XXXXXX.." "..", // 4
-    "........" "XXXX...." "..", // 5 = deepest air = miner hole depth is 4 px
+    "...XXXXX..........", // -20
+    ".XXXXXXXXX........",
+    "XXXXXXXXXXXX......",
+    "XXXXXXXXXXXXXX....",
+    "XXXXXXXXXXXXXXX...", // -16
+    "XXXXXXXXXXXXXXXX..", // -15
+    "XXXXXXXXXXXXXXXXX.", // -14
+    "XXXXXXXXXXXXXXXXX.", ] ~
+    "XXXXXXXXXXXXXXXXXX".repeat(12).array ~ [ // from -12 to -1 inclusive
+    "#XXXXXXXXXXXXXXXX.", // 0, with '#' the effective coordinate
+    "XXXXXXXXXXXXXXXXX.", // 1
+    "..XXXXXXXXXXXXXX..", // 2 = old ground level
+    "....XXXXXXXXXXX...", // 3
+    "......XXXXXXXX....", // 4
+    "........XXXX......", // 5 = deepest air = miner hole depth is 4 px
 ]);
 
 private enum _implode = Mask([
-//   -16.. -9   -8 .. -1   0    2  ..  9   10  .. 15
-    "........" "......XX" "XX" "XX......" "........", // -26
-    "........" "...XXXXX" "XX" "XXXXX..." "........",
-    "........" ".XXXXXXX" "XX" "XXXXXXX." "........", // -24
-    "........" "XXXXXXXX" "XX" "XXXXXXXX" "........",
-    ".......X" "XXXXXXXX" "XX" "XXXXXXXX" "X.......",
-    "......XX" "XXXXXXXX" "XX" "XXXXXXXX" "XX......", ] ~
-    ".....XXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXX.....".repeat(2).array ~// -20-19
-    "....XXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXX....".repeat(2).array ~// -18-17
-    "...XXXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXXX...".repeat(2).array ~// -16-15
-    "..XXXXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXXXX..".repeat(3).array ~// -14-12
-    ".XXXXXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXXXXX.".repeat(5).array ~// -11 -7
-    "XXXXXXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXXXXXX".repeat(6).array ~//  -6 -1
-    "XXXXXXXX" "XXXXXXXX" "#X" "XXXXXXXX" "XXXXXXXX".repeat(1).array ~//   0
-    "XXXXXXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXXXXXX".repeat(5).array ~//   1  5
-    ".XXXXXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXXXXX.".repeat(3).array ~//   6  8
-    "..XXXXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXXXX..".repeat(2).array ~ [
-    "...XXXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXXX...",
-    "....XXXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXXX....",
-    ".....XXX" "XXXXXXXX" "XX" "XXXXXXXX" "XXX.....", // 13
-    "......XX" "XXXXXXXX" "XX" "XXXXXXXX" "XX......", // 14
-    ".......X" "XXXXXXXX" "XX" "XXXXXXXX" "X.......", // 15
-    "........" ".XXXXXXX" "XX" "XXXXXXX." "........", // 16
-    "........" "....XXXX" "XX" "XXXX...." "........", // 17
+//  -16     -8       0       8       16
+//   |       |       |       |       |
+    "..............XXXXXX..............", // -26
+    "...........XXXXXXXXXXXX...........",
+    ".........XXXXXXXXXXXXXXXX.........", // -24
+    "........XXXXXXXXXXXXXXXXXX........",
+    ".......XXXXXXXXXXXXXXXXXXXX.......",
+    "......XXXXXXXXXXXXXXXXXXXXXX......", ] ~
+    ".....XXXXXXXXXXXXXXXXXXXXXXXX.....".repeat(2).array ~// -20-19
+    "....XXXXXXXXXXXXXXXXXXXXXXXXXX....".repeat(2).array ~// -18-17
+    "...XXXXXXXXXXXXXXXXXXXXXXXXXXXX...".repeat(2).array ~// -16-15
+    "..XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX..".repeat(3).array ~// -14-12
+    ".XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.".repeat(5).array ~// -11 -7
+    "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX".repeat(6).array ~//  -6 -1
+    "XXXXXXXXXXXXXXXX#XXXXXXXXXXXXXXXXX".repeat(1).array ~//   0
+    "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX".repeat(5).array ~//   1  5
+    ".XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.".repeat(3).array ~//   6  8
+    "..XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX..".repeat(2).array ~ [
+    "...XXXXXXXXXXXXXXXXXXXXXXXXXXXX...",
+    "....XXXXXXXXXXXXXXXXXXXXXXXXXX....",
+    ".....XXXXXXXXXXXXXXXXXXXXXXXX.....", // 13
+    "......XXXXXXXXXXXXXXXXXXXXXX......", // 14
+    ".......XXXXXXXXXXXXXXXXXXXX.......", // 15
+    ".........XXXXXXXXXXXXXXXX.........", // 16
+    "............XXXXXXXXXX............", // 17
+//   |       |       |       |       |
+//  -16     -8       0       8       16
 ]);
 
 struct Mask {
@@ -114,12 +117,15 @@ struct Mask {
 
     this(in string[] strs)
     in {
+        assert (__ctfe, "only generate matrices at compile-time");
         assert (strs.length    > 0, "need at least 1 row");
         assert (strs[0].length > 0, "need at least 1 column");
         assert (strs.all!(a => a.length == strs[0].length),
             "matrix of chars is not rectangular");
     }
     body {
+        if (! __ctfe)
+            return;
         _solid          = new Matrix!bool(strs[0].len, strs.len);
         bool offsetSet = false;
         foreach     (const int y, const string s; strs)
@@ -127,25 +133,21 @@ struct Mask {
                 CharOK cc;
                 try cc = std.conv.to!CharOK(c);
                 catch (Exception)
-                    assert (false, format(
-                        "Bad character in string %d, `%s', "
-                        "at position %d: `%c'. "
-                        "Expected `.', `o', `X', `N', or `#'.",
-                        y, s, x, c).idup);
+                    assert (false, format("Bad character in string %d, `%s', "
+                        ~ "at position %d: `%c'. Expected "
+                        ~ "`.', `o', `X', `N', or `#'.", y, s, x, c).idup);
                 _solid.set(x, y, cc == CharOK.solid
-                             || cc == CharOK.solidIgnore
-                             || cc == CharOK.solidOffset);
+                              || cc == CharOK.solidIgnore
+                              || cc == CharOK.solidOffset);
                 if (cc == CharOK.solidIgnore) {
                     if (_ignoreSteel is null)
                     _ignoreSteel = new Matrix!bool(strs[0].len, strs.len);
                     _ignoreSteel.set(x, y, true);
                 }
-                if (   cc == CharOK.solidOffset
-                    || cc == CharOK.airOffset
-                ) {
+                if (cc == CharOK.solidOffset || cc == CharOK.airOffset) {
                     assert (! offsetSet, format(
                         "Offset is (%d, %d), but there is another "
-                        "offset-setting char `%c' at (%d, %d).",
+                        ~ "offset-setting char `%c' at (%d, %d).",
                         offsetX, offsetY, c, x, y).idup);
                     offsetX = x;
                     offsetY = y;
@@ -158,6 +160,9 @@ struct Mask {
     // generate circular mask
     this(in int radius, in int offsetFromCenterY)
     {
+        assert (__ctfe, "generate matrices only during compile-time");
+        if (! __ctfe)
+            return;
         // you'd normally want 2*radius + 1, but we're hi-res, so we use + 2
         // instead of + 1 for the central 2x2 block of of pixels.
         _solid     = new Matrix!bool(2*radius + 2, 2*radius + 2);
@@ -176,15 +181,15 @@ struct Mask {
     }
 
     unittest {
-        auto a = typeof(this)(0, 0);
-        assert (a == a.mirrored);
-        assert (a == typeof(this)(["#X", "XX"]));
+        enum a = typeof(this)(0, 0);
+        static assert (a == a.mirrored);
+        static assert (a == typeof(this)(["#X", "XX"]));
     }
 
     Mask mirrored() const
     in {
         assert (_solid.xl % 2 == 0, "can't mirror a matrix with odd xl");
-        assert (offsetX  % 2 == 0, "can't mirror a matrix with odd offsetX");
+        assert (offsetX   % 2 == 0, "can't mirror a matrix with odd offsetX");
     }
     body {
         Mask ret;
@@ -207,41 +212,41 @@ struct Mask {
 
 }
 
-unittest {
-    Mask a = Mask([
+static unittest {
+    enum Mask a = Mask([
         ".X.X..",
         "..oX..",
         ".XX...",
     ]);
-    assert (  a.solid.get(3, 0));
-    assert (  a.solid.get(3, 1));
-    assert (! a.solid.get(0, 0));
-    assert (! a.solid.get(2, 1));
-    assert (a.offsetX == 2);
-    assert (a.offsetY == 1);
+    static assert (  a.solid.get(3, 0));
+    static assert (  a.solid.get(3, 1));
+    static assert (! a.solid.get(0, 0));
+    static assert (! a.solid.get(2, 1));
+    static assert (a.offsetX == 2);
+    static assert (a.offsetY == 1);
 
-    Mask b = Mask([
+    enum Mask b = Mask([
         "..X.X.",
         "..#...",
         "...XX.",
     ]);
-    assert (b.offsetX == 2);
-    assert (b == a.mirrored());
+    static assert (b.offsetX == 2);
+    static assert (b == a.mirrored());
 
-    Mask topOfBasher = Mask([
-        "NNNNNNNN" "NNNN....",
-        "NNNNNNNN" "NNNNNN..",
-        "#XXXXXXX" "XXXXXXX.",
-        "XXXXXXXX" "XXXXXXXX"]);
-    Mask topOfBasherLeft = Mask([
-        "....NNNN" "NNNNNNNN",
-        "..NNNNNN" "NNNNNNNN",
-        ".XXXXXXX" "XXXXXX#X",
-        "XXXXXXXX" "XXXXXXXX"]);
-    assert (topOfBasherLeft == topOfBasher.mirrored());
+    enum Mask topOfBasher = Mask([
+        "NNNNNNNNNNNN....",
+        "NNNNNNNNNNNNNN..",
+        "#XXXXXXXXXXXXXX.",
+        "XXXXXXXXXXXXXXXX"]);
+    enum Mask topOfBasherLeft = Mask([
+        "....NNNNNNNNNNNN",
+        "..NNNNNNNNNNNNNN",
+        ".XXXXXXXXXXXXX#X",
+        "XXXXXXXXXXXXXXXX"]);
+    static assert (topOfBasherLeft == topOfBasher.mirrored());
 
     // Compared to L1, the imploder mask is wider by 1 lo-res pixel.
     // This makes the imploder mask symmetric.
-    assert (masks[TerrainDeletion.Type.implode].mirrored
-        ==  masks[TerrainDeletion.Type.implode]);
+    static assert (masks[TerrainDeletion.Type.implode].mirrored
+               ==  masks[TerrainDeletion.Type.implode]);
 }

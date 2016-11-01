@@ -178,11 +178,7 @@ unittest
         new VfsFilename("./mydir/a/")
         ].map!(fn => MutFilename(fn)).array;
     ls.sortDirs(mydirs);
-    assert (mydirs == [
-        new VfsFilename("./mydir/order1/"),
-        new VfsFilename("./mydir/moreorder2/"),
-        new VfsFilename("./mydir/a/"),
-        new VfsFilename("./mydir/b/"),
-        new VfsFilename("./mydir/c/")
-        ].map!(fn => MutFilename(fn)).array);
+    assert (mydirs[0] == MutFilename(new VfsFilename("./mydir/order1/")));
+    assert (mydirs[1] == MutFilename(new VfsFilename("./mydir/moreorder2/")));
+    assert (mydirs[2] == MutFilename(new VfsFilename("./mydir/a/")));
 }

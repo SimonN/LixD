@@ -17,14 +17,8 @@ enum int ticksForDoubleClick  = 20; // 1/3 of a second at 60 ticks/sec
 enum int teamsPerLevelMax     =  8;
 enum int mouseStandardDivisor = 20;
 
-immutable netIPLocalhost        = "127.0.0.1";
-immutable errorWrongWorkingDir  = "Wrong working directory!\n"
-                                  "Run the game from its root directory\n"
-                                  "or from its subdirectory bin/.\n"
-                                  "\n"
-                                  "Falsches Arbeitsverzeichnis!\n"
-                                  "Starte das Spiel aus seinem\n"
-                                  "Wurzelverzeichnis oder aus bin/.\n";
+immutable netIPLocalhost = "127.0.0.1";
+
 // loading files
 immutable filenameExtLevel           = ".txt";
 immutable filenameExtLevelOrig       = ".lvl";

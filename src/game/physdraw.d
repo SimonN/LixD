@@ -71,10 +71,9 @@ class PhysicsDrawer {
     void
     rebind(Torbit newLand, Phymap newPhymap)
     in {
-        assert (_land,
-            "You want to reset the draw-to-land queues, but you haven't "
-            "registered a land to draw to during construction "
-            "of PhysicsDrawer.");
+        assert (_land, "You want to reset the draw-to-land queues, but you "
+            ~ "haven't registered a land to draw to during construction "
+            ~ "of PhysicsDrawer.");
         assert (newLand);
         assert (newPhymap);
         assert (_addsForPhymap == null);
@@ -110,14 +109,14 @@ class PhysicsDrawer {
     applyChangesToLand(in Update upd)
     in {
         assert (_land);
-        enum msg = "I don't believe you should draw to land when you still "
-            "have changes to be drawn to the lookup map. You may want to call "
-            "applyChangesToPhymap() more often.";
+        enum msg = "You shouldn't draw to land when you still have changes "
+            ~ "to be drawn to the lookup map. You may want to call "
+            ~ "applyChangesToPhymap() more often.";
         assert (_delsForPhymap == null, msg);
         assert (_addsForPhymap == null, msg);
         enum msg2 = "applyChangesToLand() doesn't get called each update. "
-            "But there should never be something in there that isn't to be "
-            "processed during this call.";
+            ~ "But there should never be something in there that isn't to be "
+            ~ "processed during this call.";
         assert (_delsForLand == null || _delsForLand[$-1].update <= upd, msg2);
         assert (_addsForLand == null || _addsForLand[$-1].update <= upd, msg2);
     }
@@ -225,16 +224,14 @@ private:
         assert (_land);
         assert (_mask);
         assert (isSorted!"a.update < b.update"(arr));
-        assert (arr == null || arr[0].update >= upd, format(
-            "There are additions to the land that should be drawn in "
-            "the earlier update %d. Right now we have update %d. "
-            "If this happens after loading a savestate, "
-            "make sure to empty all queued additions/deletions.",
+        assert (arr == null || arr[0].update >= upd, format("There are "
+            ~ "additions to the land that should be drawn in the earlier "
+            ~ "update %d. Right now we have update %d. If this happens after "
+            ~ "loading a savestate, empty all queued additions/deletions.",
             arr[0].update, upd));
-        assert (al_get_target_bitmap() == _land.albit,
-            "For performance, set the drawing target to _land "
-            "outside of *ToLandForUpdate(). Slow performance is "
-            "considered a logic bug!");
+        assert (al_get_target_bitmap() == _land.albit, "For performance, "
+            ~ "set the drawing target to _land outside of *ToLandForUpdate(). "
+            ~ "Slow performance is a logic bug!");
     }
 
     T[] splitOffFromArray(T)(ref T[] arr, in Update upd)

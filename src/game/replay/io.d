@@ -222,10 +222,10 @@ unittest
         auto file = fn0.openForWriting();
         // Write 5 lines into the file, we'll assert later that there are 5.
         file.write(
-            "! 387 0 ASSIGN=JUMPER 0\n"
-            "! 268 0 ASSIGN=JUMPER 0\n"
-            "! 125 0 ASSIGN=CLIMBER 0\n"
-            "! 506 0 NUKE 0\n"
+            "! 387 0 ASSIGN=JUMPER 0\n",
+            "! 268 0 ASSIGN=JUMPER 0\n",
+            "! 125 0 ASSIGN=CLIMBER 0\n",
+            "! 506 0 NUKE 0\n",
             "! 489 0 ASSIGN=BASHER 0\n");
     }
     catch (Exception)
