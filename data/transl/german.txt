@@ -245,6 +245,7 @@ $netChatStartServer         Du bist der Server. Andere Spieler koennen zu dir ve
 $netChatStartClient         Verbinde zu
 $netChatStartCancel         Verbindungsaufbau abgebrochen.
 $netChatYouLoggedOut        Du hast das Netzwerk verlassen.
+$netChatYouCannotConnect    Server nicht gefunden.
 $netChatYouLostConnection   Verbindung zum Server verloren!
 $netChatPeerDisconnected    hat das Netzwerk verlassen.
 $netChatWeTooOld           Deine Lix-Version ist zu alt, um verbinden zu koennen.

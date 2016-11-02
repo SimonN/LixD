@@ -258,6 +258,7 @@ $netChatStartServer          You are the server. Other players can connect to yo
 $netChatStartClient          Connecting to
 $netChatStartCancel          Connection attempt cancelled.
 $netChatYouLoggedOut         You left the network.
+$netChatYouCannotConnect     Server not found.
 $netChatYouLostConnection    Connection to server lost!
 $netChatPeerDisconnected     left the network.
 $netChatWeTooOld            You have too old a Lix version to connect to the server.

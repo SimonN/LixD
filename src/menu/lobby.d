@@ -62,8 +62,8 @@ public:
 
         _console = new LobbyConsole(new Geom(0, 60, xlg-40, 160, From.BOTTOM));
         _console.add("Unfinished!");
-        _console.add("Networking games don't work yet. You can connect to");
-        _console.add("the central server and chat, but can't start games.");
+        _console.add("You can connect to the central server and chat, "
+                   ~ "but can't start games.");
         addChild(_console);
 
         _buttonCentral = new TextButton(new Geom(0, 40, 200, 40, From.TOP));
@@ -131,6 +131,7 @@ public:
             _console.add(connected ? Lang.netChatYouLoggedOut.transl
                                    : Lang.netChatStartCancel.transl);
         _netClient.disconnect();
+        destroy(_netClient);
         _netClient = null;
     }
 
@@ -211,8 +212,6 @@ private:
 
     void connect(in string hostname)
     {
-        _console.add("%s %s:%d...".format(Lang.netChatStartClient.transl,
-            hostname, basics.globconf.serverPort));
         NetClientCfg cfg;
         cfg.hostname = hostname;
         cfg.ourPlayerName = basics.globconf.userName;
@@ -225,6 +224,9 @@ private:
         cfg.port = basics.globconf.serverPort;
         _netClient = new NetClient(cfg);
         setOurEventHandlers();
+        _console.add("enet v%s. %s %s:%d...".format(
+            _netClient.enetLinkedVersion, Lang.netChatStartClient.transl,
+            hostname, cfg.port));
     }
 
     // This is dubious. Nepster suggests that we shouldn't treat RMB special
@@ -273,10 +275,18 @@ private:
         // generate a message anyway, including an update to the peer list.
         _netClient.onConnect = null;
 
+        _netClient.onCannotConnect = ()
+        {
+            _console.add(Lang.netChatYouCannotConnect.transl);
+            destroy(_netClient);
+            _netClient = null;
+        };
+
         _netClient.onConnectionLost = ()
         {
-            refreshPeerList();
             _console.add(Lang.netChatYouLostConnection.transl);
+            destroy(_netClient);
+            _netClient = null;
         };
 
         _netClient.onChatMessage = (string name, string chatMessage)

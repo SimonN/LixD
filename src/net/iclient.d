@@ -12,6 +12,8 @@ interface INetClient {
     @property bool connecting() const;
     void disconnect();
 
+    @property string enetLinkedVersion() const;
+
     @property const(Profile[PlNr]) profilesInOurRoom();
     @property const(Profile) ourProfile() const;
     @property bool mayWeDeclareReady() const;
@@ -32,6 +34,7 @@ interface INetClient {
     // as a whole. The class should write one method that queries the profiles
     // from (this) and call that method in many of the callbacks here.
     @property void onConnect(void delegate());
+    @property void onCannotConnect(void delegate());
     @property void onConnectionLost(void delegate());
     @property void onChatMessage(void delegate(string name, string chat));
     @property void onPeerDisconnect(void delegate(string name));

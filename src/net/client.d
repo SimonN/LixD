@@ -34,6 +34,7 @@ private:
     NetClientCfg _cfg;
 
     void delegate() _onConnect;
+    void delegate() _onCannotConnect;
     void delegate() _onConnectionLost;
     void delegate(string name, string chat) _onChatMessage;
     void delegate(string name) _onPeerDisconnect;
@@ -71,14 +72,7 @@ public:
         enet_peer_timeout(_serverPeer, 0, 5_000, 5_000);
     }
 
-    ~this()
-    {
-        if (_ourClient) {
-            enet_host_destroy(_ourClient);
-            _ourClient = null;
-        }
-        deinitializeEnet();
-    }
+    ~this() { dispose(); }
 
     void calc() { implCalc(); }
 
@@ -86,6 +80,7 @@ public:
     // It's okay to register not even a single callback, these will always
     // be tested for existence before the call.
     @property void onConnect(typeof(_onConnect) dg) { _onConnect = dg; }
+    @property void onCannotConnect(typeof(_onCannotConnect) dg) { _onCannotConnect = dg; }
     @property void onConnectionLost(typeof(_onConnectionLost) dg) { _onConnectionLost = dg; }
     @property void onChatMessage(typeof(_onChatMessage) dg) { _onChatMessage = dg; }
     @property void onPeerDisconnect(typeof(_onPeerDisconnect) dg) { _onPeerDisconnect = dg; }
@@ -122,8 +117,13 @@ public:
         assert (connected || connecting);
         enet_peer_disconnect_now(_serverPeer, 0);
         enet_host_flush(_ourClient);
-        destroyEnetPointers();
+        dispose();
         // We won't wait for the disconnection return packet.
+    }
+
+    @property string enetLinkedVersion() const
+    {
+        return net.enetglob.enetLinkedVersion();
     }
 
     @property const(Profile) ourProfile() const
@@ -192,11 +192,13 @@ public:
 private:
     void implCalc()
     {
-        if (! _ourClient || ! _serverPeer)
+        if (! _ourClient || ! _serverPeer) // stricter than if (! connected)
             return;
-        bool destroyEnetAfterCalc = false;
         ENetEvent event;
-        while (enet_host_service(_ourClient, &event, 0) > 0)
+        // We test _ourClient every loop iteration, because the Lobby can
+        // tell us to disconnect in a callback, or we can destroy ourselves
+        // on disconnect.
+        while (_ourClient && enet_host_service(_ourClient, &event, 0) > 0)
             final switch (event.type) {
             case ENET_EVENT_TYPE_NONE:
                 assert (false, "enet_host_service should have returned 0");
@@ -208,23 +210,26 @@ private:
                 enet_packet_destroy(event.packet);
                 break;
             case ENET_EVENT_TYPE_DISCONNECT:
-                _onConnectionLost && _onConnectionLost();
-                destroyEnetAfterCalc = true;
+                if (connected)
+                    _onConnectionLost && _onConnectionLost();
+                else
+                    _onCannotConnect && _onCannotConnect();
+                dispose();
                 break;
             }
-        if (destroyEnetAfterCalc)
-            destroyEnetPointers();
-        else
+        if (_ourClient)
             enet_host_flush(_ourClient);
     }
 
-    void destroyEnetPointers()
+    void dispose()
     {
-        assert (connected || connecting);
-        enet_host_destroy(_ourClient);
-        _profilesInOurRoom.clear();
+        if (_ourClient) {
+            enet_host_destroy(_ourClient);
+            _ourClient = null;
+        }
         _serverPeer = null;
-        _ourClient = null;
+        _profilesInOurRoom.clear();
+        deinitializeEnet();
     }
 
     string toDottedIpAddress(uint inNetworkByteOrder)

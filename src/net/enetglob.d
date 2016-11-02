@@ -5,12 +5,15 @@ module net.enetglob;
  * should instantiate NetClient or NetServer, and let those call these funcs.
  */
 
+import std.string;
 import derelict.enet.enet;
 
 private bool _enetDllLoaded = false;
 private bool _enetIsInitialized = false;
 
-package void initializeEnet()
+package:
+
+void initializeEnet()
 {
     if (! _enetDllLoaded) {
         _enetDllLoaded = true;
@@ -23,7 +26,7 @@ package void initializeEnet()
     }
 }
 
-package void deinitializeEnet()
+void deinitializeEnet()
 {
     if (_enetIsInitialized) {
         _enetIsInitialized = false;
@@ -36,4 +39,12 @@ ENetPacket* createPacket(T)(T wantLen) nothrow
 {
     return enet_packet_create(null, wantLen & 0x7FFF_FFFF,
         ENET_PACKET_FLAG_RELIABLE);
+}
+
+string enetLinkedVersion()
+{
+    assert (_enetDllLoaded);
+    immutable ver = enet_linked_version();
+    return format("%d.%d.%d", ENET_VERSION_GET_MAJOR(ver),
+        ENET_VERSION_GET_MINOR(ver), ENET_VERSION_GET_PATCH(ver));
 }

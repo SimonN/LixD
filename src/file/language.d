@@ -273,6 +273,7 @@ enum Lang {
     netChatStartClient,
     netChatStartCancel,
     netChatYouLoggedOut,
+    netChatYouCannotConnect,
     netChatYouLostConnection,
     netChatPeerDisconnected,
     netChatWeTooOld,
