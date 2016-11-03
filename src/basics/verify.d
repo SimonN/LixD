@@ -98,20 +98,20 @@ private class VerifyCounter {
         writeln();
         writeln("Statistics from ", total, " replays:");
         if (noPtr)
-            writefln("%5dx (NO-PTR): replay ignored, ",
-                     "it doesn't name a level file.", noPtr);
+            writefln("%5dx (NO-PTR): replay ignored, "
+                   ~ "it doesn't name a level file.", noPtr);
         if (noLev)
-            writefln("%5dx (NO-LEV): replay ignored, ",
-                     "it names a level file that doens't exist.", noLev);
+            writefln("%5dx (NO-LEV): replay ignored, "
+                   ~ "it names a level file that doens't exist.", noLev);
         if (badLev)
-            writefln("%5dx (BADLEV): replay ignored, ",
-                     "it names a level file with a bad level.", badLev);
+            writefln("%5dx (BADLEV): replay ignored, "
+                   ~ "it names a level file with a bad level.", badLev);
         if (fail)
-            writefln("%5dx (FAIL): replay names ",
-                     "an existing level file, but doesn't solve it.", fail);
+            writefln("%5dx (FAIL): replay names "
+                   ~ "an existing level file, but doesn't solve it.", fail);
         if (ok)
-            writefln("%5dx (OK): replay names ",
-                     "an existing level file and solves that level.", ok);
+            writefln("%5dx (OK): replay names "
+                   ~ "an existing level file and solves that level.", ok);
     }
 
     void writeLevelsNotCovered()
