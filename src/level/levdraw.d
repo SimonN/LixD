@@ -46,7 +46,7 @@ private void drawGadgetOcc(in GadOcc occ)
 }
 
 package Torbit implCreatePreview(
-    in Level level, in int prevXl, in int prevYl, in AlCol c
+    in Level level, in int prevXl, in int prevYl, in Alcol c
 ) {
     assert (prevXl > 0);
     assert (prevYl > 0);

@@ -13,7 +13,7 @@ public import allegro5.allegro_primitives;
 public import allegro5.allegro_ttf;
 
 alias ALLEGRO_BITMAP* Albit;
-alias ALLEGRO_COLOR   AlCol;
+alias ALLEGRO_COLOR   Alcol;
 alias ALLEGRO_FONT*   AlFont;
 
 void initializeInteractive()

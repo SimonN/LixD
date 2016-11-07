@@ -85,7 +85,7 @@ void deinitialize()
 
 void
 drawText(int tplFlag = ALLEGRO_ALIGN_LEFT)(
-    in AlFont f, in string str, float x, float y, in AlCol col
+    in AlFont f, in string str, float x, float y, in Alcol col
 ) {
     assert(f);
     immutable char* s = str.toStringz();

@@ -35,7 +35,7 @@ struct Debris {
     int frame; // yf for flying tools, xf for the Ac on arrows
     union {
         Style style; // for arrows
-        AlCol col;   // for particles
+        Alcol col;   // for particles
         float rotCw; // for flying tools
     }
 

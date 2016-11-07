@@ -49,7 +49,7 @@ public:
             ? MoveTowards.once : MoveTowards.untilIntersects);
     }
 
-    override AlCol hoverColor(int val) const
+    override Alcol hoverColor(int val) const
     {
         return color.makecol(val, val, val/2);
     }

@@ -42,7 +42,7 @@ protected:
     }
 
 private:
-    void add(in string textToPrint, in AlCol col)
+    void add(in string textToPrint, in Alcol col)
     {
         _lines ~= Line(this, textToPrint, col);
         purgeAndMove();
@@ -66,7 +66,7 @@ private struct Line {
     long birth; // Allegro 5 timer tick when we added this
     Label label;
 
-    this(Console parent, in string textToPrint, in AlCol col)
+    this(Console parent, in string textToPrint, in Alcol col)
     {
         birth = timerTicks;
         label = new Label(new Geom(0, 0, parent.xlg, parent.lineYlg));

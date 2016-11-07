@@ -60,7 +60,7 @@ public:
         _occ.dark = ! _occ.dark;
     }
 
-    override AlCol hoverColor(int val) const
+    override Alcol hoverColor(int val) const
     {
         return color.makecol(val, val, val);
     }
@@ -152,7 +152,7 @@ class GroupHover : TerrainHover {
         return cast(Hover[]) newHovers;
     }
 
-    override AlCol hoverColor(int val) const
+    override Alcol hoverColor(int val) const
     {
         return color.makecol(val/2, val*2/3, val);
     }

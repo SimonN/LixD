@@ -62,7 +62,7 @@ public:
         return super.shown;
     }
 
-    AlCol colorText() { return _on && ! _down ? color.guiTextOn
+    Alcol colorText() { return _on && ! _down ? color.guiTextOn
                                               : color.guiText; }
 protected:
     // override these if needed

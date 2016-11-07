@@ -10,7 +10,7 @@ import basics.alleg5;
 import gui.geometry;
 
 void draw3DFrame(float xs, float ys, float xls, float yls,
-                 in AlCol top, in AlCol mid, in AlCol bot
+                 in Alcol top, in Alcol mid, in Alcol bot
 ) {
     alias al_draw_filled_rectangle rf;
     foreach (int i; 0 .. boundary3D(xls, yls)) {
@@ -30,7 +30,7 @@ void draw3DFrame(float xs, float ys, float xls, float yls,
 }
 
 void draw3DButton(float xs, float ys, float xls, float yls,
-                  in AlCol top, in AlCol mid, in AlCol bot
+                  in Alcol top, in Alcol mid, in Alcol bot
 ) {
     draw3DFrame(xs, ys, xls, yls, top, mid, bot);
     // draw the large interior

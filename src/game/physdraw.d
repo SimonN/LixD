@@ -464,7 +464,7 @@ private:
         auto lockRecol = LockReadOnly(recol);
 
         void drawBrick(in int x, in int y, in int xl,
-            in AlCol light, in AlCol medium, in AlCol dark
+            in Alcol light, in Alcol medium, in Alcol dark
         ) {
             alias yl = brickYl;
             rf(x,      y,      x+xl-1, y+1,  light);  // L L L L L M
@@ -474,14 +474,14 @@ private:
         }
 
         void drawCube(in int x, in int y,
-            in AlCol light, in AlCol medium, in AlCol dark
+            in Alcol light, in Alcol medium, in Alcol dark
         ) {
             alias l = Cuber.cubeSize;
             assert (l >= 10);
             rf(x, y, x+l, y+l, medium);
 
             void symmetrical(in int ax,  in int ay,
-                             in int axl, in int ayl, in AlCol col)
+                             in int axl, in int ayl, in Alcol col)
             {
                 rf(x + ax, y + ay, x + ax + axl, y + ay + ayl, col);
                 rf(x + ay, y + ax, x + ay + ayl, y + ax + axl, col);
@@ -525,7 +525,7 @@ private:
         _subAlbits[Type.dig] = al_create_sub_bitmap(
             _mask, 0, remY, Digger.tunnelWidth, remY + remYl);
 
-        void drawPixel(in int x, in int y, in AlCol col)
+        void drawPixel(in int x, in int y, in Alcol col)
         {
             rf(x, y, x + 1, y + 1, col);
         }

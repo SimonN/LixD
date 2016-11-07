@@ -81,13 +81,13 @@ public:
 
     void clearToBlack()  { this.clearToColor(color.black);  }
     void clearToTransp() { this.clearToColor(color.transp); }
-    void clearToColor(AlCol col)
+    void clearToColor(Alcol col)
     {
         auto targetBitmap = TargetBitmap(bitmap);
         al_clear_to_color(col);
     }
 
-    void drawRectangle(in Rect rect, in AlCol col)
+    void drawRectangle(in Rect rect, in Alcol col)
     {
         useDrawingDelegate(delegate void(int x, int y) {
             al_draw_rectangle(x + 0.5f,           y + 0.5f,
@@ -95,7 +95,7 @@ public:
         }, wrap(rect.topLeft));
     }
 
-    void drawFilledRectangle(Rect rect, AlCol col)
+    void drawFilledRectangle(Rect rect, Alcol col)
     {
         useDrawingDelegate(delegate void(int x, int y) {
             al_draw_filled_rectangle(x, y, x + rect.xl, y + rect.yl, col);

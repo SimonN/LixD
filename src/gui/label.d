@@ -23,7 +23,7 @@ private:
     bool   _shortened;  // true if textShort != text
 
     AlFont _font; // check if this crashes if Label not destroyed!
-    AlCol  _color;
+    Alcol  _color;
     bool   _fixed;
 
 public:
@@ -47,7 +47,7 @@ public:
     @property const(AlFont) font()      const { return _font;      }
     @property string        text()      const { return _text;      }
     @property Geom.From     aligned()   const { return geom.xFrom; }
-    @property AlCol         color()     const { return _color;     }
+    @property Alcol         color()     const { return _color;     }
     @property bool          shortened() const { return _shortened; }
 
     @property font(AlFont f) { _font  = f; shorten_text(); return _font; }
@@ -61,7 +61,7 @@ public:
     }
 
     @property number(in int i) { _text  = i.to!string; shorten_text();     }
-    @property color (AlCol  c) { _color = c; reqDraw(); return _color;     }
+    @property color (Alcol  c) { _color = c; reqDraw(); return _color;     }
     @property fixed (bool   b) { _fixed = b; shorten_text(); return b;     }
 
     float textLg()         const { return textLg(this._text); }

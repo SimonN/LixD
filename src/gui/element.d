@@ -12,7 +12,7 @@ abstract class Element : IRoot {
 private:
     Geom  _geom;
     bool  _shown = true;
-    AlCol _undrawColor; // if != color.transp, then undraw
+    Alcol _undrawColor; // if != color.transp, then undraw
     Element[] _children;
     bool drawn;
     bool drawRequired = true;
@@ -39,8 +39,8 @@ public:
     // to edit the geom, use Element.move(x, y) and Element.resize(xl, yl).
     @property const(Geom) geom() const { return _geom; }
 
-    @property AlCol undrawColor() const  { return _undrawColor;     }
-    @property AlCol undrawColor(AlCol c) { return _undrawColor = c; }
+    @property Alcol undrawColor() const  { return _undrawColor;     }
+    @property Alcol undrawColor(Alcol c) { return _undrawColor = c; }
 
     final void hide() { shown = false; }
     final void show() { shown = true; }

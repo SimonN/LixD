@@ -97,7 +97,7 @@ private:
             (xls - 4*Geom.thicks) * ratio, ryls, cols.l, cols.m, cols.d);
     }
 
-    static struct Alcol3D { AlCol l, m, d; }
+    static struct Alcol3D { Alcol l, m, d; }
     Alcol3D alcol3D(in Style style)
     {
         return Alcol3D(color.random, color.random, color.random);

@@ -93,8 +93,8 @@ public:
 
     // These two are slow, consider frameExists() instead
     // or lock the Cutbit's underlying Allegro bitmap yourself.
-    AlCol get_pixel(in Point pixel) const { return get_pixel(0, 0, pixel); }
-    AlCol get_pixel(int fx, int fy, in Point p) const
+    Alcol get_pixel(in Point pixel) const { return get_pixel(0, 0, pixel); }
+    Alcol get_pixel(int fx, int fy, in Point p) const
     {
         // frame doesn't exist, or pixel doesn't exist in the frame
         if  (fx  < 0 || fy  < 0 || fx  >= _xfs || fy  >= _yfs
@@ -167,7 +167,7 @@ private:
     void drawMissingFrameError(in Point toCorner, in int fx, in int fy) const
     {
         string str = "File N/A";
-        AlCol col = color.cbBadBitmap;
+        Alcol col = color.cbBadBitmap;
         if (bitmap) {
             str = format("(%d,%d)", fx, fy);
             col = color.cbBadFrame;
@@ -208,7 +208,7 @@ private:
         // To cut a bitmap into frames, check the top left 2x2 block. The three
         // pixels of it touching the edge shall be of one color, and the inner
         // pixel must be of a different color, to count as a frame grid.
-        AlCol c = al_get_pixel(bitmap, 0, 0);
+        Alcol c = al_get_pixel(bitmap, 0, 0);
         if (xMax > 1 && yMax > 1
          && al_get_pixel(bitmap, 0, 1) == c
          && al_get_pixel(bitmap, 1, 0) == c

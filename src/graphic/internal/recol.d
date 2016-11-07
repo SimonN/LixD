@@ -73,7 +73,7 @@ Cutbit lockThenRecolor(int magicnr)(
     {
         version (tharsisprofiling)
             auto zone = Zone(profiler, format("recolor-one-bmp-%d", magicnr));
-        AlCol[AlCol] recolArray = generateRecolArray(st);
+        Alcol[Alcol] recolArray = generateRecolArray(st);
         immutable colBreak = al_get_pixel(lix, lixXl - 1, 0);
 
         Y_LOOP: for (int y = 0; y < lixYl; y++) {
@@ -90,7 +90,7 @@ Cutbit lockThenRecolor(int magicnr)(
                     continue Y_LOOP;
             }
             X_LOOP: for (int x = 0; x < lixXl; x++) {
-                immutable AlCol col = al_get_pixel(lix, x, y);
+                immutable Alcol col = al_get_pixel(lix, x, y);
                 static if (magicnr == magicnrSpritesheets) {
                     // on two consecutive pixels with colBreak, skip for speed
                     if (col == colBreak && x < lixXl - 1
@@ -103,7 +103,7 @@ Cutbit lockThenRecolor(int magicnr)(
                         //       seen two
                         x += sourceCb.xl;
                 }
-                if (AlCol* colPtr = (col in recolArray))
+                if (Alcol* colPtr = (col in recolArray))
                     al_put_pixel(x, y, *colPtr);
             }
         }
@@ -137,11 +137,11 @@ Cutbit lockThenRecolor(int magicnr)(
 
 private:
 
-AlCol[AlCol] dictGuiLight, dictGuiNormal, dictGuiNormalNoShadow;
+Alcol[Alcol] dictGuiLight, dictGuiNormal, dictGuiNormalNoShadow;
 
 void makeColorDicts()
 {
-    // I don't dare to make these at compile time, unsure whether AlCol's
+    // I don't dare to make these at compile time, unsure whether Alcol's
     // bitwise interpretation depends on color mode chosen by Allegro 5
     if (dictGuiLight != null)
         return;
@@ -159,17 +159,17 @@ void makeColorDicts()
     dictGuiNormalNoShadow.remove(color.guiFileSha);
 }
 
-void applyToAllRows(AlCol[AlCol] dict, Albit bitmap)
+void applyToAllRows(Alcol[Alcol] dict, Albit bitmap)
 {
     foreach (int row; 0 .. al_get_bitmap_height(bitmap))
         dict.applyToRow(bitmap, row);
 }
 
-void applyToRow(AlCol[AlCol] dict, Albit bitmap, int row)
+void applyToRow(Alcol[Alcol] dict, Albit bitmap, int row)
 {
     // We assume the bitmap to be locked for speed!
     foreach (int x; 0 .. al_get_bitmap_width(bitmap)) {
-        immutable AlCol c = al_get_pixel(bitmap, x, row);
+        immutable Alcol c = al_get_pixel(bitmap, x, row);
         if (auto newCol = c in dict)
             al_put_pixel(x, row, *newCol);
     }
@@ -179,19 +179,19 @@ void recolorAllShadows(Albit bitmap)
 {
     foreach (int y; 0 .. al_get_bitmap_height(bitmap))
         foreach (int x; 0 .. al_get_bitmap_width(bitmap)) {
-            immutable AlCol c = al_get_pixel(bitmap, x, y);
+            immutable Alcol c = al_get_pixel(bitmap, x, y);
             if (c == color.guiFileSha)
                 al_put_pixel(x, y, color.guiSha);
         }
 }
 
-AlCol[AlCol] generateRecolArray(in Style st)
+Alcol[Alcol] generateRecolArray(in Style st)
 {
     Cutbit rclCb = getInternalMutable(fileImageStyleRecol);
     assert (rclCb !is nullCutbit, "can't recolor, missing map image");
     Albit recol = rclCb.albit;
     auto lock = LockReadOnly(recol);
-    AlCol[AlCol] recolArray;
+    Alcol[Alcol] recolArray;
     assert(st < al_get_bitmap_height(recol) - 1, "recolor map yl too low");
     foreach (x; 0 .. al_get_bitmap_width(recol))
         // The first row (y == 0) contains the source pixels. The first style

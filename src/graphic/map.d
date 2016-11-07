@@ -426,7 +426,7 @@ loadCameraRect(in Torbit src)
 }
 
 void
-clearScreenRect(AlCol col)
+clearScreenRect(Alcol col)
 {
     Rect r = cameraRectangle();
     r.xl = cameraZoomedXl;

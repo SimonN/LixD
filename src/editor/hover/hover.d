@@ -111,7 +111,7 @@ abstract class Hover {
 
     abstract void removeFromLevel();
     abstract void cloneThenPointToClone();
-    abstract AlCol hoverColor(int val) const;
+    abstract Alcol hoverColor(int val) const;
     abstract @property string tileDescription() const;
 
     enum FgBg { fg, bg }

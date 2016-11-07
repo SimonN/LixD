@@ -134,7 +134,7 @@ public:
             && _status != LevelStatus.BAD_EMPTY;
     }
 
-    @property AlCol bgColor() const
+    @property Alcol bgColor() const
     {
         return color.makecol(bgRed, bgGreen, bgBlue);
     }
@@ -151,7 +151,7 @@ public:
         implDrawTerrainTo(this, tb, lo);
     }
 
-    Torbit create_preview(in int xl, in int yl, AlCol col) const
+    Torbit create_preview(in int xl, in int yl, Alcol col) const
     {
         return implCreatePreview(this, xl, yl, col);
     }
