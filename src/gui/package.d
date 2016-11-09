@@ -9,6 +9,7 @@ module gui;
 public import gui.button;
 public import gui.console;
 public import gui.cutbitel;
+public import gui.draw3d;
 public import gui.geometry;
 public import gui.element;
 public import gui.frame;

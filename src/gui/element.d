@@ -160,35 +160,6 @@ public:
         drawRequired = _shown;
     }
 
-    static final void
-    draw3DButton(
-        float xs, float ys, float xls, float yls,
-        in AlCol top, in AlCol mid, in AlCol bot
-    ) {
-        alias al_draw_filled_rectangle rf;
-
-        foreach (int i; 0 .. Geom.thicks) {
-            rf(xs      +i, ys    +1+i, xs    +1+i, ys+yls-1-i, top); // left
-            rf(xs    +1+i, ys      +i, xs+xls-1-i, ys    +1+i, top); // top
-            rf(xs+xls-1-i, ys    +1+i, xs+xls  -i, ys+yls-1-i, bot); // right
-            rf(xs    +1+i, ys+yls-1-i, xs+xls-1-i, ys+yls  -i, bot); // bttom
-
-            // draw single pixels in the corners where same-colored strips meet
-            rf(xs      +i, ys      +i, xs  +1+i, ys  +1+i, top);
-            rf(xs+xls-1-i, ys+yls-1-i, xs+xls-i, ys+yls-i, bot);
-        }
-        if (mid != color.transp) {
-            // draw single pixels in the bottom-left and top-right corners
-            foreach (int i; 0 .. Geom.thicks) {
-                rf(xs      +i, ys+yls-1-i, xs  +1+i, ys+yls-i, mid);
-                rf(xs+xls-1-i, ys      +i, xs+xls-i, ys  +1+i, mid);
-            }
-            // draw the large interior
-            alias Geom.thicks i;
-            rf(xs + i, ys + i, xs + xls - i, ys + yls - i, mid);
-        }
-    }
-
 protected:
     // override these
     void calcSelf() { } // do computations when GUI element has focus

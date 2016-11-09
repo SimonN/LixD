@@ -15,19 +15,15 @@ import graphic.color;
 import gui;
 
 class Frame : Element {
-
-    this(Geom g)
-    {
-        super(g);
-    }
+public:
+    this(Geom g) { super(g); }
 
 protected:
-
     override void drawSelf()
     {
         alias th = Geom.thicks;
-        draw3DButton(xs - th, ys - th, xls + 2*th, yls + 2*th,
-            color.guiD, color.transp, color.guiL);
+        draw3DFrame(xs - th, ys - th, xls + 2*th, yls + 2*th,
+            color.guiD, color.guiM, color.guiL);
     }
 
     override void undrawSelf()
@@ -36,6 +32,4 @@ protected:
         al_draw_filled_rectangle(xs - th, ys - th,
             xs + xls + th, ys + yls + th, undrawColor);
     }
-
 }
-// end class Frame

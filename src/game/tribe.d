@@ -12,6 +12,7 @@ import enumap;
 
 import basics.globals;
 import basics.help;
+import game.score;
 import net.repdata;
 import lix;
 import level.level; // spawnintMax
@@ -57,10 +58,15 @@ class Tribe {
 
     Tribe clone() const { return new Tribe(this); }
 
-    @property {
-        int stillPlaying()  const { return lixOut + lixLeaving + lixHatch; }
-        int score()         const { return lixSaved; }
-        int scoreExpected() const { return lixSaved + lixOut + lixHatch; }
+    @property int stillPlaying() const { return lixOut+lixLeaving+lixHatch; }
+
+    @property Score score() const
+    {
+        Score ret;
+        ret.style = style;
+        ret.current = lixSaved;
+        ret.potential = lixSaved + lixOut + lixHatch;
+        return ret;
     }
 
     void returnSkills(in Ac ac, in int amount)
