@@ -70,6 +70,13 @@ public:
         return _model.cs.singleplayerHasWon();
     }
 
+    final @property auto scores() const
+    {
+        assert (_model);
+        assert (_model.cs);
+        return _model.cs.tribes.map!(tr => tr.score);
+    }
+
     Update updatesSinceZero() const
     out (result) { assert (result >= 0); }
     body {

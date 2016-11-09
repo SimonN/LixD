@@ -24,9 +24,9 @@ import file.filename;
 import game.core.calc;
 import game.core.draw;
 import game.core.scrstart;
-import game.gui.gamewin;
+import game.window.base;
 import game.model.nurse;
-import game.gui.panel;
+import game.panel.base;
 import game.effect;
 import game.physdraw;
 import game.tribe;
@@ -209,13 +209,14 @@ private:
         // nurse the number of players
         _indexTribeLocal  = 0;
         effect.tribeLocal = 0;
-
+        GapaMode gapamode = rp.players.len == 1 ? GapaMode.single
+                                                : GapaMode.multiPlay;
         assert (pan is null);
         if (runmode == Runmode.INTERACTIVE) {
             map = new Map(cs.land, Geom.screenXls.to!int,
                                   (Geom.screenYls - Geom.panelYls).to!int);
             this.centerCameraOnHatchAverage();
-            pan = new Panel;
+            pan = new Panel(gapamode);
             gui.addElder(pan);
             pan.setLikeTribe(tribeLocal);
             pan.highlightFirstSkill();

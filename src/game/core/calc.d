@@ -5,7 +5,7 @@ import std.algorithm; // all
 import basics.user;
 import basics.cmdargs;
 import game.core.game;
-import game.gui.wduring;
+import game.window.during;
 import game.core.active;
 import game.core.passive;
 import game.core.speed;

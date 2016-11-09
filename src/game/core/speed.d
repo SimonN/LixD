@@ -5,7 +5,7 @@ import net.repdata; // Update
 import basics.user; // pausedAssign
 import game.core.game;
 import game.core.active; // findAgainHighlitLixAfterUpdate
-import game.gui.panel;
+import game.panel.base;
 import hardware.mouse;
 import hardware.sound;
 
@@ -25,21 +25,20 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
         game.setLastUpdateToNow();
     }
 
-    if (   pan.speedBack.executeLeft
-        || pan.speedBack.executeRight
-    ) {
-        game.framestepBackBy(pan.speedBack.executeLeft  ? 1
-                           : pan.speedBack.executeRight ? Game.updatesBackMany
-                           : 0);
+    if (pan.framestepBackOne) {
+        game.framestepBackBy(1);
     }
-    else if (pan.restart.execute) {
+    else if (pan.framestepBackMany) {
+        game.framestepBackBy(Game.updatesBackMany);
+    }
+    else if (pan.restart) {
         game.restartLevel();
     }
-    else if (pan.stateSave.execute) {
+    else if (pan.saveState) {
         nurse.saveUserState();
         hardware.sound.playLoud(Sound.DISKSAVE);
     }
-    else if (pan.stateLoad.execute) {
+    else if (pan.loadState) {
         if (! nurse.userStateExists)
             hardware.sound.playLoud(Sound.PANEL_EMPTY);
         else
@@ -47,29 +46,31 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
                 if (nurse.loadUserStateDoesItMismatch)
                     hardware.sound.playLoud(Sound.SCISSORS);
     }
-    else if (pan.speedAhead.executeLeft) {
+    else if (pan.framestepAheadOne) {
         upd();
     }
-    else if (pan.speedAhead.executeRight) {
+    else if (pan.framestepAheadMany) {
         upd(updatesAheadMany);
     }
-    else if (pan.pause.on && ! pan.isMouseHere && mouseClickLeft
+    else if (pan.paused && ! pan.isMouseHere && mouseClickLeft
         && basics.user.pausedAssign.value > 0) {
         // Clicking into the non-panel screen advances physics once.
         // This happens either because you've assigned something, or because
         // you have cancelled the replay.
         upd();
     }
-    else if (! pan.pause.on) {
+    else if (! pan.paused) {
         long updAgo = timerTicks - game.altickLastUpdate;
-        if (! pan.speedFast.on) {
+        if (pan.speedIsNormal) {
             if (updAgo >= ticksNormalSpeed)
                 upd();
         }
-        else if (pan.speedFast.xf == Panel.frameTurbo)
+        else if (pan.speedIsTurbo)
             upd!true(updatesDuringTurbo);
-        else
+        else {
+            assert (pan.speedIsFast);
             upd();
+        }
     }
 }}
 // end with (game), end function updatePhysicsAccordingToSpeedButtons
@@ -82,7 +83,7 @@ void restartLevel(Game game)
 
 void framestepBackBy(Game game, in int by)
 {
-    game.pan.setSpeedToPause();
+    game.pan.pause(true);
     with (LoadStateRAII(game))
         game.nurse.framestepBackBy(by);
 }

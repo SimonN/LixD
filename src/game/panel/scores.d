@@ -1,4 +1,4 @@
-module game.gui.scores;
+module game.panel.scores;
 
 /* ScoreGraph: The UI element in multiplayer games that displays lovely
  * bar graphs of the current score and the potential score.
@@ -96,10 +96,42 @@ private:
         draw3DButton(xs + 2*Geom.thicks, rycs - ryls/2f,
             (xls - 4*Geom.thicks) * ratio, ryls, cols.l, cols.m, cols.d);
     }
+}
 
-    static struct Alcol3D { Alcol l, m, d; }
-    Alcol3D alcol3D(in Style style)
-    {
-        return Alcol3D(color.random, color.random, color.random);
+private:
+
+struct Alcol3D { Alcol l, m, d; }
+
+Alcol3D alcol3D(in Style style)
+{
+    switch (style) {
+        case Style.red:    return to3Dof16(16,  0,  0);
+        case Style.orange: return to3Dof16(16,  8,  0);
+        case Style.yellow: return to3Dof16(15, 15,  0);
+        case Style.green:  return to3Dof16( 1, 15,  0);
+        case Style.blue:   return to3Dof16( 2,  3, 16);
+        case Style.purple: return to3Dof16(10,  0, 16);
+        case Style.grey:   return to3Dof16(11, 11, 11);
+        case Style.black:  return to3Dof16( 5,  5,  5);
+        default:           return to3Dof16( 5, 13,  0);
     }
+}
+
+Alcol3D to3Dof16(in int r, in int g, in int b)
+{
+    enum div = 16f;
+    Alcol col = Alcol(r/div, g/div, b/div, 1f);
+    return Alcol3D(col.lighten, col, col.darken);
+}
+
+alias darken = lightenDarken!false;
+alias lighten = lightenDarken!true;
+
+Alcol lightenDarken(bool light)(in Alcol col)
+{
+    enum factor = 0.7f;
+    return light ? Alcol(1f - (1f - col.r) * factor,
+                         1f - (1f - col.g) * factor,
+                         1f - (1f - col.b) * factor, 1f)
+        : Alcol(col.r * factor, col.g * factor, col.b * factor, 1f);
 }

@@ -28,8 +28,7 @@ void calcActive(Game game)
     }
     else {
         game._drawHerHighlit = null;
-        game.pan.stats.targetDescriptionLixxie = null;
-        game.pan.stats.targetDescriptionNumber = 0;
+        game.pan.describeTarget(null, 0);
     }
 }
 
@@ -90,9 +89,8 @@ void handleNukeButton(Game game) { with (game)
 {
     if (! pan.nukeDoubleclicked)
         return;
-    pan.nukeSingle.on = true;
-    pan.nukeMulti.on  = true;
-    pan.pause.on = false;
+    pan.nuke = true;
+    pan.pause = false;
     game.cancelReplay();
     auto data = game.newReplayDataForNextUpdate();
     data.action = RepAc.NUKE;
@@ -147,14 +145,13 @@ PotentialAssignee findPotentialAssignee(Game game) { with (game)
     // end loop through all lixes
 
     if (best.lixxie !is null && best.lixxie !is worst.lixxie)
-        pan.stats.suggestTooltipPriorityInvert();
+        {} // DTODOTOOLTIPS: pan.stats.suggestTooltipPriorityInvert();
     if (leftFound && rightFound)
-        pan.stats.suggestTooltipForceDirection();
+        {} // DTODOTOOLTIPS: pan.stats.suggestTooltipForceDirection();
 
     mouseCursor.xf = (forcingLeft ? 1 : forcingRight ? 2 : mouseCursor.xf);
     mouseCursor.yf = (lixesUnderCursor > 0);
-    pan.stats.targetDescriptionNumber = lixesUnderCursor;
-    pan.stats.targetDescriptionLixxie = described.lixxie;
+    pan.describeTarget(described.lixxie, lixesUnderCursor);
 
     if (best.lixxie !is null
         && currentSkill !is null
@@ -162,9 +159,9 @@ PotentialAssignee findPotentialAssignee(Game game) { with (game)
         && currentSkill.skill == best.lixxie.ac
     ) {
         if (best.lixxie.ac == Ac.builder)
-            pan.stats.suggestTooltipBuilders();
+            {} // DTODOTOOLTIPS: pan.stats.suggestTooltipBuilders();
         else if (best.lixxie.ac == Ac.platformer)
-            pan.stats.suggestTooltipPlatformers();
+            {} // DTODOTOOLTIPS: pan.stats.suggestTooltipPlatformers();
     }
     game._drawHerHighlit = best.lixxie;
     return best;
@@ -256,6 +253,6 @@ void assignToPotentialAssignee(
     data.toWhichLix = potAss.id;
     undispatchedAssignments ~= data;
     if (basics.user.pausedAssign.value == 2)
-        pan.pause.on = false;
+        pan.pause = false;
 }}
 // end PotentialAssignee assignToPotentialAssignee()
