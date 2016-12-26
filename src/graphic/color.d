@@ -9,6 +9,13 @@ import basics.user;
 
 public ColorPrivate color;
 
+// bar graph 3D colors for a Lix style, or GUI button outlines
+public struct Alcol3D {
+    Alcol l, m, d;
+    static assert (is (typeof(l.r) == float));
+    bool isValid() const { return l.r == l.r; /* i.e., it's not NaN */ }
+}
+
 void initialize()
 {
     computeColors(basics.user.guiColorRed,
@@ -24,8 +31,6 @@ void computeColors(in int r, in int g, in int b)
         destroy(color);
     color = new ColorPrivate(r, g, b);
 }
-
-
 
 private class ColorPrivate {
 

@@ -85,3 +85,11 @@ body {
         makeSkillButtonIcon(st);
     return skillButtonIcons[st];
 }
+
+const(Alcol3D) implGetAlcol3D(in Style style)
+body {
+    if (! alcol3DforStyles[style].isValid)
+        makeAlcol3DforStyle(style);
+    return alcol3DforStyles[style];
+}
+

@@ -135,6 +135,32 @@ Cutbit lockThenRecolor(int magicnr)(
      */
 }
 
+void makeAlcol3DforStyle(in Style st)
+{
+    assert (! alcol3DforStyles[st].isValid, "don't initialize twice");
+    // Initialize with a default, so we don't query the image several times
+    // if the image fails to exist
+    with (alcol3DforStyles[st])
+        l = m = d = Alcol(1, 1, 1, 1);
+    Cutbit rclCb = getInternalMutable(fileImageStyleRecol);
+    assert (rclCb);
+    Albit recol = rclCb.albit;
+    if (recol is null || al_get_bitmap_height(recol) < st - 1) {
+        logRecoloringError(recol, 0, st);
+        return;
+    }
+    if (al_get_bitmap_width(recol) < 8 + 1) {
+        logRecoloringError(recol, 8, st);
+        return;
+    }
+    auto lock = LockReadOnly(recol);
+    with (alcol3DforStyles[st]) {
+        l = al_get_pixel(recol, 6, st + 1); // st + 1 because row 0 has the
+        m = al_get_pixel(recol, 7, st + 1); // colors from the source file,
+        d = al_get_pixel(recol, 8, st + 1); // they don't belong to any style
+    }
+}
+
 private:
 
 Alcol[Alcol] dictGuiLight, dictGuiNormal, dictGuiNormalNoShadow;
@@ -188,15 +214,41 @@ void recolorAllShadows(Albit bitmap)
 Alcol[Alcol] generateRecolArray(in Style st)
 {
     Cutbit rclCb = getInternalMutable(fileImageStyleRecol);
-    assert (rclCb !is nullCutbit, "can't recolor, missing map image");
+    assert (rclCb);
     Albit recol = rclCb.albit;
+    if (recol is null) {
+        logRecoloringError(null, 0, st);
+        return null;
+    }
     auto lock = LockReadOnly(recol);
     Alcol[Alcol] recolArray;
-    assert(st < al_get_bitmap_height(recol) - 1, "recolor map yl too low");
-    foreach (x; 0 .. al_get_bitmap_width(recol))
-        // The first row (y == 0) contains the source pixels. The first style
-        // (garden) is at y == 1. Thus, target colors are at y == st + 1.
-        recolArray[al_get_pixel(recol, x, 0)] =
-                   al_get_pixel(recol, x, st + 1);
+    if (st < al_get_bitmap_height(recol) - 1)
+        foreach (x; 0 .. al_get_bitmap_width(recol))
+            // The first row (y == 0) contains the source pixels. First style
+            // (garden) is at y == 1. Thus, target colors are at y == st + 1.
+            recolArray[al_get_pixel(recol, x, 0)] =
+                       al_get_pixel(recol, x, st + 1);
+    else
+        logRecoloringError(recol, 0, st);
     return recolArray;
+}
+
+void logRecoloringError(
+    Albit recol, // if null, image doesn't exist, say that
+    in int x, // if > 0, then we tried to read that pixel and it doesn't exist
+    in Style st,
+) {
+    import file.log;
+    import std.conv;
+    logf("Error with the recoloring map `%s':", fileImageStyleRecol.rootless);
+    if (recol is null) {
+        logf("    -> File doesn't exist or format not supported.");
+        return;
+    }
+    if (st >= al_get_bitmap_height(recol) - 1)
+        logf("    -> Height is %d, but for style `%s', we need height >= %d.",
+            al_get_bitmap_height(recol), styleToString(st), st + 1);
+    if (x > 0)
+        logf("    -> Width is %d, but we need width >= %d.",
+            al_get_bitmap_width(recol), x + 1, ".");
 }

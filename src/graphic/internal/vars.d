@@ -2,6 +2,7 @@ module graphic.internal.vars;
 
 import basics.globals;
 import graphic.cutbit;
+public import graphic.color;
 public import net.style;
 
 package:
@@ -14,6 +15,8 @@ Cutbit[Style.max] panelInfoIcons;
 Cutbit[Style.max] skillButtonIcons;
 
 Cutbit nullCutbit; // invalid bitmap to return instead of null pointer
+
+Alcol3D[Style.max] alcol3DforStyles;
 
 immutable int magicnrSpritesheets = 1;
 immutable int magicnrPanelInfoIcons = 2;
