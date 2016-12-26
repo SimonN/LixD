@@ -15,6 +15,22 @@ module hardware.tharsis;
 import net.versioning;
 
 version (tharsisprofiling) {
+    /*
+     * As of December 2016, tharsis.prof doesn't build under the most recent
+     * DMD 2.072.1. Therefore, I (Simon) have removed tharsis.prof from
+     * the dub requirements. Want to profile? Add
+     *
+     *      "tharsis-prof": "~>0.5.3"
+     *
+     * to the dependencies in dub.json. Add
+     *
+     *      "versions": ["tharsisprofiling"],
+     *
+     * to some build types further down dub.json. Then fix the tharsis
+     * build errors by manually merging my pull requests from:
+     *
+     *      https://github.com/SimonN/tharsis.prof
+     */
     import std.algorithm;
     import std.range;
     import std.stdio;
@@ -106,7 +122,7 @@ version (tharsisprofiling) {
 }
 else {
     pragma (msg, "Compiling Lix "
-        ~ gameVersion().toString() ~ " release build...");
+        ~ gameVersion().toString() ~ "...");
     void initialize() { }
     void deinitialize() { }
 }
