@@ -15,6 +15,7 @@ import net.server.ihotelob;
 import net.server.hotel;
 import net.enetglob;
 import net.packetid;
+import net.permu;
 import net.structs;
 import net.versioning;
 
@@ -155,6 +156,14 @@ public:
         enet_peer_send(_host.peers + receiv, 0, pa.createPacket);
     }
 
+    void startGame(PlNr roomOwner, int permuLength)
+    {
+        unreadyAllInRoom(_profiles[roomOwner].room);
+        auto pa = StartGameWithPermuPacket(permuLength);
+        pa.header.packetID = PacketStoC.gameStartsWithPermu;
+        pa.header.plNr = roomOwner;
+        broadcastToRoom(pa);
+    }
 
 // ############################################################################
 
@@ -306,6 +315,7 @@ private:
         changed.header.packetID = PacketStoC.peerProfile;
         changed.header.plNr = plNr;
         broadcastToRoom(changed); // including to the sender!
+        _hotel.maybeStartGame(_profiles[plNr].room);
     }
 
     void receiveChat(ENetPeer* peer, ENetPacket* got)

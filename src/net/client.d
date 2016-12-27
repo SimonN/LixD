@@ -13,6 +13,7 @@ import derelict.enet.enet;
 import net.enetglob;
 import net.iclient;
 import net.packetid;
+import net.permu;
 import net.structs;
 import net.style;
 import net.versioning;
@@ -44,7 +45,7 @@ private:
     void delegate(Room toRoom) _onWeChangeRoom;
     void delegate(const(Room[]), const(Profile[])) _onListOfExistingRooms;
     void delegate(string name, const(ubyte[]) data) _onLevelSelect;
-    void delegate() _onGameStart;
+    void delegate(Permu) _onGameStart;
 
 public:
     /* Immediately tries to connect to hostname:port.
@@ -346,6 +347,15 @@ private:
                     profile.setNotReady();
                 _onLevelSelect && _onLevelSelect(playerName(PlNr(got.data[1])),
                                     got.data[2 .. got.dataLength]);
+            }
+        }
+        else if (got.data[0] == PacketStoC.gameStartsWithPermu) {
+            if (got.dataLength >= 3) {
+                foreach (ref profile; _profilesInOurRoom)
+                    profile.setNotReady();
+                auto pa = StartGameWithPermuPacket(got);
+                Permu permu = new Permu(pa.arr);
+                _onGameStart && _onGameStart(permu);
             }
         }
         else if (got.data[0] == PacketStoC.peerDisconnected) {

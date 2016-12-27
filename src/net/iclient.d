@@ -1,5 +1,6 @@
 module net.iclient;
 
+import net.permu;
 import net.structs;
 import net.style;
 
@@ -48,5 +49,5 @@ interface INetClient {
     @property void onListOfExistingRooms(void delegate(const(Room[]),
                                                        const(Profile[])));
     @property void onLevelSelect(void delegate(string name, const(ubyte[]) data));
-    @property void onGameStart(void delegate());
+    @property void onGameStart(void delegate(Permu));
 }

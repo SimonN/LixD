@@ -13,6 +13,8 @@ module net.server.hotel;
  */
 
 import std.algorithm;
+import std.conv;
+import std.range;
 
 import net.server.ihotelob;
 import net.server.festival;
@@ -39,6 +41,11 @@ public:
         ob = null;
         foreach (ref fe; festivals)
             fe.dispose();
+    }
+
+    PlNr owner(in Room ofRoom)
+    {
+        return festivals[ofRoom].owner;
     }
 
     // Returns new room ID > 0 when we have successfully created that room.
@@ -79,6 +86,7 @@ public:
         assert (from != to);
         ob.unreadyAllInRoom(from);
         ob.unreadyAllInRoom(to);
+        makeOwnerIfAlone(mover);
         ob.describeRoom(mover, festivals[to].level,festivals[to].levelChooser);
         foreach (pl, prof; ob.allPlayers)
             if (prof.room == from) {
@@ -90,8 +98,28 @@ public:
                 ob.sendPeerEnteredYourRoom(pl, mover);
     }
 
+    void maybeStartGame(Room room)
+    {
+        if (room == Room(0))
+            return;
+        auto party = ob.allPlayers.byValue.filter!(prof => prof.room == room);
+        if ( ! party.any!(prof => prof.feeling == Profile.Feeling.ready)
+            || party.any!(prof => prof.feeling == Profile.Feeling.thinking))
+            return;
+        version (assert) {
+            auto p = festivals[room].owner in ob.allPlayers;
+            assert (p);
+            assert (p.room == room);
+            assert (party.walkLength > 0);
+        }
+        festivals[room].playing = true;
+        ob.startGame(festivals[room].owner,
+            party.filter!(prof => prof.feeling == Profile.Feeling.ready)
+                 .walkLength.to!int);
+    }
+
 private:
-    bool isInRoom(in PlNr plNr, Room room)
+    bool isInRoom(in PlNr plNr, Room room) @nogc
     {
         assert (ob);
         auto ptr = plNr in ob.allPlayers;
@@ -104,6 +132,19 @@ private:
             if (profile.room == room)
                 ob.sendLevelByChooser(plNr, festivals[room].level,
                                             festivals[room].levelChooser);
+    }
+
+    void makeOwnerIfAlone(PlNr plNr) @nogc
+    {
+        Room room = Room(0);
+        foreach (pl, prof; ob.allPlayers) {
+            if (pl == plNr)
+                room = prof.room;
+            else if (prof.room == room)
+                return; // we aren't alone
+        }
+        if (room != Room(0))
+            festivals[room].owner = plNr;
     }
 }
 

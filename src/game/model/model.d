@@ -17,7 +17,6 @@ import net.repdata;
 import hardware.tharsis;
 import game.effect;
 import game.physdraw;
-import tile.phymap;
 import game.replay;
 import game.tribe;
 import game.model.state;
@@ -27,6 +26,8 @@ import graphic.torbit;
 import hardware.sound;
 import level.level;
 import lix;
+import net.permu;
+import tile.phymap;
 
 class GameModel {
 private:

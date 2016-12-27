@@ -17,6 +17,7 @@ import basics.help; // array.len of type int
 import basics.globconf;
 import basics.help;
 import net.repdata;
+import net.permu;
 import net.versioning;
 import game.replay.io;
 import file.date;
@@ -79,7 +80,7 @@ private:
     this(Filename levFn, Date levBuilt, Filename loadFrom)
     {
         touch();
-        _permu = new Permu(1);
+        _permu = new Permu("0");
         if (loadFrom) {
             auto loaded = this.implLoadFromFile(loadFrom);
             levelFilename      = loaded.levelFilename;

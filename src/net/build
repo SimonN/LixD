@@ -8,7 +8,7 @@ dubDir="${HOME}/.dub/packages/"
 enetDir="$(find ${dubDir} -name derelict-enet-*)/derelict-enet"
 utilDir="$(find ${dubDir} -name derelict-util-*)/derelict-util"
 
-commonSrc="ac.d enetglob.d packetid.d repdata.d structs.d style.d version.d"
+commonSrc="ac.d enetglob.d packetid.d permu.d repdata.d structs.d style.d version.d"
 
 commonFlags="-I${enetDir}/source -I${utilDir}/source -L-L${enetDir}/lib -L-L${utilDir}/lib -L-lDerelictENet -L-lDerelictUtil"
 

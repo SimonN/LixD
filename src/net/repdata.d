@@ -3,7 +3,6 @@ module net.repdata;
 /* ReplayData, Permu
  */
 
-import core.stdc.string; // memmove
 import std.bitmanip;
 import std.conv;
 import std.exception;
@@ -87,98 +86,3 @@ struct ReplayData {
     }
 
 }
-
-
-
-class Permu {
-
-    private PlNr[] p;
-
-    this(int newSize)
-    {
-        foreach (i; 0 .. newSize)
-            p ~= PlNr(i & 0xFF);
-        p.randomShuffle;
-    }
-
-    this(int numBytesToRead, PlNr* address)
-    {
-        foreach (i; 0 .. numBytesToRead)
-            p ~= *(address + i);
-    }
-
-    pure Permu clone() const
-    {
-        return new Permu(this);
-    }
-
-    pure this(in Permu rhs)
-    {
-        p = rhs.p.dup;
-    }
-
-    // Read in a string that is separated by any non-digit characters
-    this(string src)
-    {
-        PlNr nextID = PlNr(0);
-        bool digitHasBeenRead = false;
-
-        foreach (char c; src) {
-            if (c >= '0' && c <= '9') {
-                nextID.n *= 10;
-                nextID.n += c - '0';
-                digitHasBeenRead = true;
-            }
-            else if (digitHasBeenRead) {
-                p ~= nextID;
-                digitHasBeenRead = false;
-            }
-        }
-        if (digitHasBeenRead)
-            p ~= nextID;
-    }
-
-    unittest {
-        Permu permu = new Permu("0 1 2 3");
-        assert (permu.size == 4);
-        permu = new Permu("this is 2 much 4 me");
-        assert (permu.size == 2);
-    }
-
-    @property int size() const { return p.length & 0x7FFF_FFFF; }
-
-    PlNr opIndex(int id) const
-    {
-        if (id >= 0 && id < size)
-            return p[id];
-        else
-            // outside of the permuted range, pad with the identity
-            return PlNr(id & 0xFF);
-    }
-
-    deprecated("cut off, or erase too high values?") void
-    shortenTo(int newSize)
-    {
-        assert (newSize >= 0);
-        assert (newSize < size);
-        p = p[0 .. newSize];
-    }
-
-    override bool opEquals(Object rhs_obj) const
-    {
-        typeof(this) rhs = cast (const(typeof(this))) rhs_obj;
-        return rhs !is null && this.p == rhs.p;
-    }
-
-    override @property string toString() const
-    {
-        string ret;
-        foreach (index, value; p) {
-            ret ~= value.to!string;
-            if (index < size - 1)
-                ret ~= " ";
-        }
-        return ret;
-    }
-
-};

@@ -18,6 +18,7 @@ import menu.browser.frommain;
 import menu.browser.network;
 import net.client;
 import net.iclient;
+import net.permu;
 import net.structs; // Profile
 
 class Lobby : Window {
@@ -361,9 +362,9 @@ private:
                 Lang.netChatLevelChange.transl, _level.name));
         };
 
-        _netClient.onGameStart = () {
+        _netClient.onGameStart = (Permu permu) {
             refreshPeerList();
-            _console.add("[GAME START NOT IMPLEMENTED]");
+            _console.add("Start game! Permutation: " ~ permu.toString);
         };
     }
 }

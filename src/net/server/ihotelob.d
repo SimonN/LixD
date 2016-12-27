@@ -10,7 +10,7 @@ module net.server.ihotelob;
 import net.structs;
 
 interface IHotelObserver {
-    const(Profile[PlNr]) allPlayers() const;
+    const(Profile[PlNr]) allPlayers() const @nogc;
 
     void unreadyAllInRoom(Room);
 
@@ -20,4 +20,6 @@ interface IHotelObserver {
 
     void sendPeerEnteredYourRoom(PlNr receiv, PlNr mover);
     void sendPeerLeftYourRoom(PlNr receiv, PlNr mover);
+
+    void startGame(PlNr roomOwner, int permuLength);
 }

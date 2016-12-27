@@ -7,6 +7,7 @@ import std.string;
 import basics.help;
 import net.repdata;
 import basics.globals;
+import net.permu;
 import net.versioning;
 import file.date;
 import file.filename;
