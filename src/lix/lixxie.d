@@ -340,16 +340,13 @@ int countSteel(int x1, int y1, int x2, int y2) const
 
 void playSound(in Sound sound)
 {
-    outsideWorld.effect.addSound(
-        outsideWorld.state.update, outsideWorld.tribeID, outsideWorld.lixID,
-        sound);
+    outsideWorld.effect.addSound(outsideWorld.state.update, _style,
+                                 outsideWorld.lixID, sound);
 }
 
 void playSoundIfTribeLocal(in Sound sound)
 {
-    outsideWorld.effect.addSoundIfTribeLocal(
-        outsideWorld.state.update, outsideWorld.tribeID, outsideWorld.lixID,
-        sound);
+    outsideWorld.effect.addSoundIfTribeLocal(outsideWorld.state.update, _style,                                         outsideWorld.lixID, sound);
 }
 
 override bool isLastFrame() const

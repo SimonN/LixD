@@ -21,7 +21,6 @@ import std.conv;
 import basics.help;
 import net.repdata;
 import basics.topology;
-import game.model.state;
 import graphic.cutbit;
 import graphic.color;
 import graphic.graphic;
@@ -95,9 +94,6 @@ public:
         animationLength    = rhs.animationLength;
     }
 
-    // override if necessary
-    protected void drawGameExtras(in GameState) const { }
-
     @property Sound sound() { return Sound.NOTHING; }
 
     void animateForUpdate(in Update upd)
@@ -105,14 +101,11 @@ public:
         xf = positiveMod(upd, animationLength);
     }
 
-    deprecated("Gadgets should draw with const GameState")
-    final override void draw() const { super.draw(); }
-
-    final void
-    draw(in GameState state = null) const
+    protected void drawInner() const { } // override if necessary
+    final override void draw() const
     {
         super.draw();
-        drawGameExtras(state);
+        drawInner();
     }
 
     final void drawLookup(Phymap lk) const

@@ -39,10 +39,10 @@ void useNonconstantTraps(Lixxie lixxie) { with (lixxie)
     if (! (footEncounters & Phybit.trap) || ! healthy)
         return;
     foreach (TrapTrig trap; outsideWorld.state.traps) {
-        if (! inTriggerArea(trap) ||
-            ! trap.isOpenFor(outsideWorld.state.update, outsideWorld.tribeID))
+        if (! inTriggerArea(trap)
+            || ! trap.isOpenFor(outsideWorld.state.update, style))
             continue;
-        trap.feed(outsideWorld.state.update, outsideWorld.tribeID);
+        trap.feed(outsideWorld.state.update, style);
         playSound(trap.tile.sound);
         become(Ac.nothing);
         return;
@@ -57,9 +57,9 @@ void useFlingers(Lixxie lixxie) { with (lixxie)
         return;
     foreach (Flinger fl; outsideWorld.state.flingers) {
         if (! inTriggerArea(fl) ||
-            ! fl.isOpenFor(outsideWorld.state.update, outsideWorld.tribeID))
+            ! fl.isOpenFor(outsideWorld.state.update, style))
             continue;
-        fl.feed(outsideWorld.state.update, outsideWorld.tribeID);
+        fl.feed(outsideWorld.state.update, style);
         assert (fl.tile);
         addFling(fl.tile.subtype & 1 ? fl.tile.specialX // force direction
                                      : fl.tile.specialX * lixxie.dir,
@@ -105,11 +105,11 @@ void useGoal(Lixxie li, in Goal goal, ref const(Tribe)[] alreadyScoredFor) {
         exiter.scoreForTribe(tribe);
     }
 
-    if (goal.hasTribe(outsideWorld.state, outsideWorld.tribe))
+    if (goal.hasTribe(style))
         scoreForTribe(outsideWorld.tribe);
     else
         foreach (enemyTribe; outsideWorld.state.tribes)
-            if (goal.hasTribe(outsideWorld.state, enemyTribe))
+            if (goal.hasTribe(enemyTribe.style))
                 scoreForTribe(enemyTribe);
 }}
 

@@ -59,8 +59,8 @@ public:
     @property bool stillPlaying() const
     {
         assert (_model);
-        return _model.cs.tribes.any!(a => a.stillPlaying)
-            || _model.cs.traps .any!(a => a.isEating(upd));
+        return _model.cs.tribes.byValue.any!(a => a.stillPlaying)
+            || _model.cs.traps         .any!(a => a.isEating(upd));
     }
 
     @property bool singleplayerHasWon() const
@@ -74,7 +74,7 @@ public:
     {
         assert (_model);
         assert (_model.cs);
-        return _model.cs.tribes.map!(tr => tr.score);
+        return _model.cs.tribes.byValue.map!(tr => tr.score);
     }
 
     Update updatesSinceZero() const
@@ -134,25 +134,21 @@ public:
     }
 
     // again, only noninteractive mode should call this
-    Result evaluateReplay()
+    Result evaluateReplay(Style tribeToEvaluate)
     {
         assert (_model);
         assert (_replay);
-        while (_model.cs.tribes.any!(tr => tr.stillPlaying)
+        while (_model.cs.tribes.byValue.any!(tr => tr.stillPlaying)
                 // allow 5 minutes after the last replay data before cancelling
                 && upd < _replay.latestUpdate + 5 * (60 * 15))
             updateOnce();
-        // DTODONETWORKING: Should query the replay about tribe-local index.
-        // It's well possible to check networking replays, even if that won't
-        // give informative results in the replay checker. Don't assert here.
-        assert (_model.cs.tribes.length == 1);
-        return resultOf(_model.cs.tribes[0]);
+        return resultForTribe(tribeToEvaluate);
     }
 
-    Result resultForTribe(in int arrIndex) const
+    Result resultForTribe(in Style style) const
     {
-        assert (arrIndex >= 0 && arrIndex < _model.cs.tribes.length);
-        return resultOf(_model.cs.tribes[arrIndex]);
+        assert (style in _model.cs.tribes);
+        return resultOf(_model.cs.tribes[style]);
     }
 
 private:

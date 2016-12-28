@@ -62,12 +62,10 @@ abstract class Ploder : Job {
     }
 
 protected:
-
              void flingOtherLix() { }
     abstract void makeEffect();
 
 private:
-
     final void changeTerrain()
     {
         assert (ac == Ac.imploder || ac == Ac.exploder);
@@ -88,15 +86,11 @@ class Imploder : Ploder {
     mixin(CloneByCopyFrom!"Imploder");
 
 protected:
-
     override void makeEffect()
     {
-        outsideWorld.effect.addImplosion(
-            outsideWorld.state.update,
-            outsideWorld.tribeID,
-            outsideWorld.lixID, ex, ey);
+        outsideWorld.effect.addImplosion(outsideWorld.state.update, style,
+                                         outsideWorld.lixID, ex, ey);
     }
-
 }
 
 
@@ -106,27 +100,21 @@ class Exploder : Ploder {
     mixin(CloneByCopyFrom!"Exploder");
 
 protected:
-
     override void makeEffect()
     {
-        outsideWorld.effect.addExplosion(
-            outsideWorld.state.update,
-            outsideWorld.tribeID,
-            outsideWorld.lixID, ex, ey);
+        outsideWorld.effect.addExplosion(outsideWorld.state.update, style,
+                                         outsideWorld.lixID, ex, ey);
     }
 
     override void flingOtherLix()
     {
-        foreach (tribe; outsideWorld.state.tribes)
-            foreach (target; tribe.lixvec)
+        foreach (targetTribe; outsideWorld.state.tribes)
+            foreach (target; targetTribe.lixvec)
                 if (target.healthy)
-                    flingOtherLix(target, tribe is outsideWorld.tribe);
+                    flingOtherLix(target, targetTribe.style == this.style);
     }
 
 private:
-
-    // DTODOSKILLS: compare flinging with C++ Lix replays,
-    // once saved-to-disk replays are loadable and playable
     void flingOtherLix(Lixxie target, in bool targetTribeIsOurTribe)
     {
         immutable dx = env.distanceX(ex,     target.ex);
@@ -159,5 +147,4 @@ private:
             target.addFling(sx.roundInt, sy.roundInt, targetTribeIsOurTribe);
         }
     }
-
 }

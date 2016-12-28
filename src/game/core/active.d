@@ -96,7 +96,7 @@ void handleNukeButton(Game game) { with (game)
     data.action = RepAc.NUKE;
     undispatchedAssignments ~= data;
     // DTODONETWORK: Network::send_replay_data(data);
-    effect.addSound(Update(nurse.upd + 1), tribeID(tribeLocal), 0, Sound.NUKE);
+    effect.addSound(Update(nurse.upd + 1), localTribe.style, 0, Sound.NUKE);
 }}
 
 /* Main function to determine lix under cursor.
@@ -104,7 +104,7 @@ void handleNukeButton(Game game) { with (game)
  */
 PotentialAssignee findPotentialAssignee(Game game) { with (game)
 {
-    assert (tribeLocal);
+    assert (localTribe);
 
     PotentialAssignee best; // clicks go to her, priority is already considered
     PotentialAssignee worst; // if different from best, make tooltip
@@ -124,7 +124,7 @@ PotentialAssignee findPotentialAssignee(Game game) { with (game)
 
     // DTODO: Find out why we were traversing the lixvec backwards in C++
     // for (LixIt i =  --trlo->lixvec.end(); i != --trlo->lixvec.begin(); --i)
-    foreach (int id, const(Lixxie) lixxie; tribeLocal.lixvec) {
+    foreach (int id, const(Lixxie) lixxie; localTribe.lixvec) {
         immutable int distX = map.distanceX(lixxie.ex, mol.x);
         immutable int distY = map.distanceY(lixxie.ey, mol.y);
         if (   distX <= mmldX && distX >= -mmldX
@@ -235,9 +235,8 @@ void assignToPotentialAssignee(
     }
 
     auto uNext = Update(nurse.upd + 1);
-    auto trID  = tribeID(tribeLocal);
-    effect.addArrowButDontShow(uNext, trID, potAss.id);
-    effect.addSound           (uNext, trID, potAss.id, Sound.ASSIGN);
+    effect.addArrowDontShow(uNext, localTribe.style, potAss.id);
+    effect.addSound        (uNext, localTribe.style, potAss.id, Sound.ASSIGN);
 
     if (currentSkill.number != skillInfinity)
         // Decrease the visible number on the panel. This is mostly eye candy.

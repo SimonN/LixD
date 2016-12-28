@@ -6,7 +6,6 @@ import basics.help;
 import basics.globals; // hatch arrow graphic
 import basics.topology;
 import game.effect;
-import game.model.state;
 import graphic.cutbit;
 import graphic.gadget;
 import graphic.internal;
@@ -80,7 +79,7 @@ public:
     }
 
 protected:
-    override void drawGameExtras(in GameState) const
+    override void drawInner() const
     {
         if (_blinkNow && blinkStyle != Style.garden) {
             const(Cutbit) c = getPanelInfoIcon(blinkStyle);

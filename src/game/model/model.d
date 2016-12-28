@@ -10,6 +10,7 @@ module game.model.model;
  */
 
 import std.algorithm;
+import std.array;
 import std.conv;
 
 import basics.help; // len
@@ -37,7 +38,6 @@ private:
 
 package: // eventually delete cs() and alias cs this;
     @property inout(GameState) cs() inout { return _cs; }
-    alias cs this;
 
 public:
     this(in Level level, EffectManager ef)
@@ -98,14 +98,13 @@ public:
 private:
 
     lix.OutsideWorld
-    makeGypsyWagon(in int tribeID, in int lixID)
+    makeGypsyWagon(Tribe tribe, in int lixID)
     {
         OutsideWorld ow;
         ow.state         = _cs;
         ow.physicsDrawer = _physicsDrawer;
         ow.effect        = _effect;
-        ow.tribe         = _cs.tribes[tribeID];
-        ow.tribeID       = tribeID;
+        ow.tribe         = tribe;
         ow.lixID         = lixID;
         return ow;
     }
@@ -116,12 +115,8 @@ private:
         in Style tribeStyle,
     ) {
         immutable upd = _cs.update;
-        immutable int trID = _cs.tribes.countUntil!(
-                             tr => tr.style == tribeStyle).to!int;
-        if (trID < 0)
-            return;
-        Tribe tribe = _cs.tribes[trID];
-
+        auto tribe = tribeStyle in _cs.tribes;
+        assert (tribe);
         if (i.isSomeAssignment) {
             // never assert based on the content in ReplayData, which may have
             // been a maleficious attack from a third party, carrying a lix ID
@@ -139,23 +134,23 @@ private:
             ++(tribe.skillsUsed);
             if (tribe.skills[i.skill] != lix.skillInfinity)
                 --(tribe.skills[i.skill]);
-            OutsideWorld ow = makeGypsyWagon(trID, i.toWhichLix);
+            OutsideWorld ow = makeGypsyWagon(*tribe, i.toWhichLix);
             lixxie.assignManually(&ow, i.skill);
 
             // DTODONETWORK: We don't check for tribeLocal or masterLocal here.
             // Instead, the effect manager should decide whether to generate
             // the effect, and what loudness the sound have. Maybe pass more
             // data to the effect manager than this here.
-            _effect.addArrow(upd, trID, i.toWhichLix,
-                lixxie.ex, lixxie.ey, tribe.style, i.skill);
-            _effect.addSound(upd, trID, i.toWhichLix, Sound.ASSIGN);
+            _effect.addSound(upd, tribe.style, i.toWhichLix, Sound.ASSIGN);
+            _effect.addArrow(upd, tribe.style, i.toWhichLix,
+                             lixxie.ex, lixxie.ey, i.skill);
         }
         else if (i.action == RepAc.NUKE) {
             if (tribe.nuke)
                 return;
             tribe.lixHatch = 0;
             tribe.nuke = true;
-            _effect.addSound(upd, trID, 0, Sound.NUKE);
+            _effect.addSound(upd, tribe.style, 0, Sound.NUKE);
         }
     }
 
@@ -163,22 +158,23 @@ private:
     {
         foreach (int teamNumber, Tribe tribe; _cs.tribes) {
             if (tribe.lixHatch == 0
-                || update < 60
-                || update < tribe.updatePreviousSpawn + tribe.spawnint)
+                || _cs.update < 60
+                || _cs.update < tribe.updatePreviousSpawn + tribe.spawnint)
                 continue;
             assert (permu);
             immutable int position = permu[teamNumber];
-            const(Hatch) hatch     = hatches[tribe.hatchNextSpawn];
+            const(Hatch) hatch     = _cs.hatches[tribe.hatchNextSpawn];
 
             bool walkLeftInsteadOfRight = hatch.spawnFacingLeft
                 // This extra turning solution here is necessary to make
                 // some L1 and ONML two-player levels playable better.
-                || (hatches.len < tribes.len && (position/hatches.len)%2 == 1);
+                || (_cs.hatches.len < _cs.numTribes
+                    && (position / _cs.hatches.len) % 2 == 1);
 
             // the only interesting part of OutsideWorld right now is the
             // lookupmap inside the current state. Everything else will be
             // passed anew when the lix are updated.
-            auto ow = makeGypsyWagon(teamNumber, tribe.lixvec.len);
+            auto ow = makeGypsyWagon(tribe, tribe.lixvec.len);
             Lixxie newLix = new Lixxie(_cs.lookup, &ow,
                 hatch.x + hatch.tile.triggerX - 2 * walkLeftInsteadOfRight,
                 hatch.y + hatch.tile.triggerY);
@@ -187,9 +183,9 @@ private:
             tribe.lixvec ~= newLix;
             --tribe.lixHatch;
             ++tribe.lixOut;
-            tribe.updatePreviousSpawn = update;
-            tribe.hatchNextSpawn     += tribes.len;
-            tribe.hatchNextSpawn     %= hatches.len;
+            tribe.updatePreviousSpawn = _cs.update;
+            tribe.hatchNextSpawn     += _cs.numTribes;
+            tribe.hatchNextSpawn     %= _cs.hatches.len;
         }
     }
 
@@ -201,7 +197,7 @@ private:
             foreach (int lixID, lix; tribe.lixvec) {
                 if (! lix.healthy || lix.ploderTimer > 0)
                     continue;
-                auto ow = makeGypsyWagon(tribeID, lixID);
+                auto ow = makeGypsyWagon(tribe, lixID);
                 lix.assignManually(&ow, tribe.nukeSkill);
                 break; // only one lix is hit by the nuke per update
             }
@@ -212,28 +208,35 @@ private:
     {
         version (tharsisprofiling)
             Zone zone = Zone(profiler, "PhysSeq updateLixxies()");
-        immutable bool wonBeforeUpdate = singleplayerHasWon;
+        immutable bool wonBeforeUpdate = _cs.singleplayerHasWon;
                   bool anyFlingers     = false;
 
-        void foreachLix(void delegate(in int, in int, Lixxie) func)
+        /* Refactoring idea:
+         * Put this sorting into State, and do it only once at the beginning
+         * of a game. Encapsulate (Tribe[Style] tribes) and offer methods that
+         * provide the mutable tribe, but don't allow to rewrite the array.
+         */
+        auto sortedTribes = _cs.tribes.byValue.array.sort!"a.style < b.style";
+
+        void foreachLix(void delegate(Tribe, in int, Lixxie) func)
         {
-            foreach (int tribeID, tribe; _cs.tribes)
+            foreach (tribe; sortedTribes)
                 foreach (int lixID, lixxie; tribe.lixvec)
-                    func(tribeID, lixID, lixxie);
+                    func(tribe, lixID, lixxie);
         }
 
         void performFlingersUnmarkOthers()
         {
-            foreachLix((in int tribeID, in int lixID, Lixxie lixxie) {
+            foreachLix((Tribe tribe, in int lixID, Lixxie lixxie) {
                 lixxie.setNoEncountersNoBlockerFlags();
                 if (lixxie.ploderTimer != 0) {
-                    auto ow = makeGypsyWagon(tribeID, lixID);
+                    auto ow = makeGypsyWagon(tribe, lixID);
                     Ploder.handlePloderTimer(lixxie, &ow);
                 }
                 if (lixxie.updateOrder == UpdateOrder.flinger) {
                     lixxie.marked = true;
                     anyFlingers = true;
-                    auto ow = makeGypsyWagon(tribeID, lixID);
+                    auto ow = makeGypsyWagon(tribe, lixID);
                     lixxie.perform(&ow);
                 }
                 else
@@ -245,18 +248,18 @@ private:
         {
             if (! anyFlingers)
                 return;
-            foreachLix((in int tribeID, in int lixID, Lixxie lixxie) {
-                auto ow = makeGypsyWagon(tribeID, lixID);
+            foreachLix((Tribe tribe, in int lixID, Lixxie lixxie) {
+                auto ow = makeGypsyWagon(tribe, lixID);
                 lixxie.applyFlingXY(&ow);
             });
         }
 
         void performUnmarked(UpdateOrder uo)
         {
-            foreachLix((in int tribeID, in int lixID, Lixxie lixxie) {
+            foreachLix((Tribe tribe, in int lixID, Lixxie lixxie) {
                 if (! lixxie.marked && lixxie.updateOrder == uo) {
                     lixxie.marked = true;
-                    auto ow = makeGypsyWagon(tribeID, lixID);
+                    auto ow = makeGypsyWagon(tribe, lixID);
                     lixxie.perform(&ow);
                 }
             });
@@ -275,7 +278,7 @@ private:
 
         performUnmarked(UpdateOrder.peaceful);
 
-        if (! wonBeforeUpdate && singleplayerHasWon)
+        if (! wonBeforeUpdate && _cs.singleplayerHasWon)
             _effect.addSoundGeneral(_cs.update, Sound.YIPPIE);
     }
 
@@ -284,9 +287,9 @@ private:
         // Animate after we had the traps eat lixes. Eating a lix sets a flag
         // in the trap to run through the animation, showing the first killing
         // frame after this next animate() call. Physics depend on this anim!
-        foreach (hatch; hatches)
+        foreach (hatch; _cs.hatches)
             hatch.animate(_effect, _cs.update);
-        foreachGadget((Gadget g) {
+        _cs.foreachGadget((Gadget g) {
             g.animateForUpdate(_cs.update);
         });
     }

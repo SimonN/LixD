@@ -1,10 +1,12 @@
 module game.model.init;
 
+import std.algorithm;
+import std.array;
 import std.conv;
 
 import basics.alleg5;
+import basics.help; // len
 import basics.globconf;
-import basics.help;
 import graphic.gadget;
 import graphic.torbit;
 import game.core.game;
@@ -33,7 +35,7 @@ GameState newZeroState(in Level level)
     s.foreachGadget((Gadget g) {
         g.drawLookup(s.lookup);
     });
-    s.update = s.tribes.length == 1 ? 45 : 0; // start quickly in 1-player
+    s.update = s.multiplayer ? 0 : 45; // start quickly in 1-player
     return s;
 }
 
@@ -45,10 +47,10 @@ void preparePlayers(GameState state, in Level level)
     assert (state.tribes == null);
 
     // DTODONETWORK: look up how many players to make
-    state.tribes ~= new Tribe();
-    state.tribes[0].style = Style.garden;
+    state.tribes[Style.garden] = new Tribe();
 
-    foreach (tr; state.tribes) {
+    foreach (style, tr; state.tribes) {
+        tr.style        = style;
         tr.lixInitial   = level.initial;
         tr.lixRequired  = level.required;
         tr.lixHatch     = level.initial;
@@ -78,17 +80,18 @@ void prepareGadgets(GameState state, in Level level)
 
 void assignTribesToGoals(GameState state) { with (state)
 {
-    assert (goals.len,  "can't assign 0 goals to the players");
-    assert (tribes.len, "can't assign the goals to 0 players");
-    while (goals.len % tribes.len != 0
-        && tribes.len % goals.len != 0)
+    assert (goals.len, "can't assign 0 goals to the players");
+    assert (numTribes, "can't assign the goals to 0 players");
+    while (goals.len % numTribes != 0 && numTribes % goals.len != 0)
         goals = goals[0 .. $-1];
     assert (goals.len);
-    assert (tribes.len);
-    if (goals.len >= tribes.len)
+    auto stylesInPlay = tribes.byKey.array;
+    stylesInPlay.sort();
+    // DTODONETWORK: Permute according to network-sent permu
+    if (goals.len >= numTribes)
         foreach (int i, goal; goals)
-            goal.addTribe(i % tribes.len);
+            goal.addTribe(stylesInPlay[i % numTribes]);
     else
-        foreach (int i, tribe; tribes)
-            goals[i % goals.len].addTribe(i);
+        foreach (i, style; stylesInPlay)
+            goals[i % goals.len].addTribe(style);
 }}

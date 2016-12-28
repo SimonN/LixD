@@ -6,8 +6,9 @@ module game.model.state;
  * a replay.
  */
 
-import std.range;
 import std.algorithm;
+import std.conv;
+import std.range;
 
 import basics.help; // clone(T[]), a deep copy for arrays
 import net.repdata;
@@ -17,6 +18,7 @@ import game.tribe;
 import graphic.torbit;
 import graphic.gadget;
 import hardware.tharsis;
+import net.style;
 
 class GameState {
 
@@ -26,7 +28,7 @@ class GameState {
 
     bool goalsLocked; // in singleplayer, when time has run out
 
-    Tribe[] tribes;
+    Tribe[Style] tribes; // update order is garden, red, orange, yellow, ...
 
     Hatch[] hatches;
     Goal[] goals;
@@ -38,61 +40,6 @@ class GameState {
     Phymap lookup;
 
     this() { }
-/*  this         (in GameState rhs);
- *  void copyFrom(in GameState rhs);
- */
-    GameState clone() const { return new GameState(this); }
-
-    void dispose()
-    {
-        if (land) {
-            land.dispose();
-            land = null;
-        }
-    }
-
-    void foreachGadget(void delegate(Gadget) func)
-    {
-        chain(hatches, goals, waters, traps, flingers)
-            .each!func;
-    }
-    // It's sad that I need the duplication of this function, but inout
-    // didn't work with delegates. No idea if it's me or D.
-    void foreachConstGadget(void delegate(const Gadget) func) const
-    {
-        foreach (g; hatches) func(g);
-        foreach (g; goals) func(g);
-        foreach (g; waters) func(g);
-        foreach (g; traps) func(g);
-        foreach (g; flingers) func(g);
-    }
-
-    @property bool multiplayer() const
-    {
-        assert (tribes.length > 0);
-        return (tribes.length > 1);
-    }
-
-    @property bool singleplayerHasWon() const
-    {
-        return ! multiplayer && tribes[0].lixSaved >= tribes[0].lixRequired;
-    }
-
-    private void
-    copyValuesArraysFrom(in GameState rhs)
-    {
-        update         = rhs.update;
-        clock          = rhs.clock;
-        clockIsRunning = rhs.clockIsRunning;
-        goalsLocked    = rhs.goalsLocked;
-
-        tribes   = rhs.tribes  .clone;
-        hatches  = rhs.hatches .clone;
-        goals    = rhs.goals   .clone;
-        waters   = rhs.waters  .clone;
-        traps    = rhs.traps   .clone;
-        flingers = rhs.flingers.clone;
-    }
 
     this(in GameState rhs)
     {
@@ -128,6 +75,8 @@ class GameState {
         lookup.copyFrom(rhs.lookup);
     }
 
+    GameState clone() const { return new GameState(this); }
+
     // currently unnused, shall be used by StateManager and Game's cs
     static void cloneOrCopyFrom(ref GameState lhs, in GameState rhs)
     {
@@ -137,4 +86,60 @@ class GameState {
             lhs.copyFrom(rhs);
     }
 
+    void dispose()
+    {
+        if (land) {
+            land.dispose();
+            land = null;
+        }
+    }
+
+    int numTribes() const @nogc { return tribes.length & 0xFFFF; }
+
+    void foreachGadget(void delegate(Gadget) func)
+    {
+        chain(hatches, goals, waters, traps, flingers).each!func;
+    }
+
+    // It's sad that I need the duplication of this function, but inout
+    // didn't work with delegates. No idea if it's me or D.
+    void foreachConstGadget(void delegate(const Gadget) func) const
+    {
+        foreach (g; hatches) func(g);
+        foreach (g; goals) func(g);
+        foreach (g; waters) func(g);
+        foreach (g; traps) func(g);
+        foreach (g; flingers) func(g);
+    }
+
+    @property bool multiplayer() const @nogc
+    {
+        assert (numTribes > 0);
+        return numTribes > 1;
+    }
+
+    @property bool singleplayerHasWon() const @nogc
+    {
+        return ! multiplayer && tribes.byValue.front.lixSaved
+                             >= tribes.byValue.front.lixRequired;
+    }
+
+    private void
+    copyValuesArraysFrom(in GameState rhs)
+    {
+        update         = rhs.update;
+        clock          = rhs.clock;
+        clockIsRunning = rhs.clockIsRunning;
+        goalsLocked    = rhs.goalsLocked;
+        hatches  = rhs.hatches .clone;
+        goals    = rhs.goals   .clone;
+        waters   = rhs.waters  .clone;
+        traps    = rhs.traps   .clone;
+        flingers = rhs.flingers.clone;
+
+        // Deep-clone this by hand, I haven't written a generic clone for AAs
+        tribes = null;
+        foreach (style, tribe; rhs.tribes)
+            tribes[style] = tribe.clone();
+    }
 }

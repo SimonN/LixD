@@ -12,8 +12,6 @@ struct OutsideWorld {
     GameState     state;
     PhysicsDrawer physicsDrawer;
     EffectManager effect;
-
-    Tribe tribe;
-    int   tribeID;
-    int   lixID;
+    Tribe         tribe;
+    int           lixID;
 }

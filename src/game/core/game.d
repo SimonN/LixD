@@ -53,7 +53,7 @@ package:
     EffectManager effect;
     INetClient _netClient; // null unless playing/observing multiplayer
 
-    int _indexTribeLocal;
+    Style _localStyle;
     long altickLastUpdate;
     Rebindable!(const Lixxie) _drawHerHighlit;
 
@@ -120,7 +120,7 @@ public:
             nurse.dispose();
     }
 
-    Result evaluateReplay() { return nurse.evaluateReplay(); }
+    Result evaluateReplay() { return nurse.evaluateReplay(_localStyle); }
 
     void calc()
     {
@@ -146,21 +146,12 @@ package:
         return nurse.replay.latestUpdate > nurse.upd;
     }
 
-    @property const(Tribe) tribeLocal() const
+    @property const(Tribe) localTribe() const
     {
         assert (cs, "null cs, shouldn't ever be null");
-        assert (cs.tribes.length > _indexTribeLocal, "badly cloned cs");
-        return cs.tribes[_indexTribeLocal];
-    }
-
-    @property int tribeID(const Tribe tr) const
-    out (result) {
-        assert (result < cs.tribes.length, "tribe must be findable in cs");
-    }
-    body {
-        assert (cs);
-        assert (cs.tribes.length > 0);
-        return cs.tribes.len - cs.tribes.find!"a is b"(tr).len;
+        auto ptr = _localStyle in cs.tribes;
+        assert (ptr, "badly cloned cs? Local style isn't there");
+        return *ptr;
     }
 
     @property PlNr masterLocal() const { return nurse.replay.playerLocal; }
@@ -175,7 +166,7 @@ package:
         assert (this.nurse);
         effect.deleteAfter(nurse.upd);
         if (pan)
-            pan.setLikeTribe(tribeLocal);
+            pan.setLikeTribe(localTribe);
         if (nurse.updatesSinceZero == 0
             && _setLastUpdateToNowLastCalled != 0
         ) {
@@ -190,7 +181,7 @@ package:
         if (nurse && nurse.singleplayerHasWon
                   && masterLocalName == basics.globconf.userName)
             setLevelResult(nurse.replay.levelFilename,
-                           nurse.resultForTribe(_indexTribeLocal));
+                           nurse.resultForTribe(_localStyle));
     }
 
 private:
@@ -210,18 +201,47 @@ private:
             rp = generateFreshReplay(levelFilename);
         effect = new EffectManager;
         nurse  = new Nurse(level, rp, effect);
+        determineLocalStyleFromReplay();
+        initializePanel();
+    }
 
-        // The tribes (teams of >= 1 players) array is sorted as follows:
-        // a < b <=> min(plNrs in tribe a) < min(plNrs in tribe b).
-        // The n-th tribe (n zero-based) is the tribe such that there exists
-        // exactly n tribes with plNrs lower than this tribe's lowest plNr.
-        //
-        // But I think this is bad! We should index tribes by styles.
-        // They should become an AA.
-        _indexTribeLocal  = 0;
-        effect.tribeLocal = 0;
-        GapaMode gapamode = rp.players.len == 1 ? GapaMode.single
-                                                : GapaMode.multiPlay;
+    Replay generateFreshReplay(Filename levelFilename)
+    {
+        auto rp = Replay.newForLevel(levelFilename, level.built);
+        if (! _netClient) {
+            rp.addPlayer(PlNr(0), Style.garden, basics.globconf.userName);
+            rp.playerLocal = PlNr(0);
+        }
+        else {
+            foreach (plNr, prof; _netClient.profilesInOurRoom)
+                rp.addPlayer(plNr, prof.style, prof.name);
+            rp.playerLocal = _netClient.ourPlNr;
+        }
+        return rp;
+    }
+
+    void determineLocalStyleFromReplay()
+    {
+        assert (_localStyle == Style.init);
+        assert (nurse);
+        assert (nurse.replay);
+        if (_netClient)
+            _localStyle = _netClient.ourProfile.style;
+        else {
+            auto a = nurse.replay.players.find!(pl => pl.number
+                                        == nurse.replay.playerLocal);
+            assert (a.length, "playerLocal not in replay player list");
+            _localStyle = a[0].style;
+        }
+        effect.localTribe = _localStyle;
+    }
+
+    void initializePanel()
+    {
+        assert (nurse);
+        assert (nurse.replay);
+        GapaMode gapamode = nurse.replay.players.len == 1
+                          ? GapaMode.single : GapaMode.multiPlay;
         assert (pan is null);
         if (runmode == Runmode.INTERACTIVE) {
             map = new Map(cs.land, Geom.screenXls.to!int,
@@ -229,22 +249,9 @@ private:
             this.centerCameraOnHatchAverage();
             pan = new Panel(gapamode);
             gui.addElder(pan);
-            pan.setLikeTribe(tribeLocal);
+            pan.setLikeTribe(localTribe);
             pan.highlightFirstSkill();
         }
-    }
-
-    Replay generateFreshReplay(Filename levelFilename)
-    {
-        auto rp = Replay.newForLevel(levelFilename, level.built);
-        if (! _netClient)
-            rp.addPlayer(PlNr(0), Style.garden, basics.globconf.userName);
-        else {
-            foreach (plNr, prof; _netClient.profilesInOurRoom)
-                rp.addPlayer(plNr, prof.style, prof.name);
-            rp.playerLocal = _netClient.ourPlNr;
-        }
-        return rp;
     }
 
     void saveAutoReplay()

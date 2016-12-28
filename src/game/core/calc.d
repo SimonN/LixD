@@ -47,7 +47,7 @@ createModalWindow(Game game)
     game.modalWindow =
         // multiplayer && ! replaying ? : ? : ? :
         game.isFinished
-        ? new WindowEndSingle(game.tribeLocal, game.nurse.replay, game.level)
+        ? new WindowEndSingle(game.localTribe, game.nurse.replay, game.level)
         : new WindowDuringOffline(game.nurse.replay, game.level);
     addFocus(game.modalWindow);
 }

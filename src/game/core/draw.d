@@ -39,7 +39,7 @@ implGameDraw(Game game) { with (game)
         effect.draw();
         effect.calc(); // --timeToLive, moves. No physics, so OK to calc here.
         game.drawAllLixes();
-        pan.showInfo(tribeLocal);
+        pan.showInfo(localTribe);
         pan.update(nurse.scores);
     }
     auto drata = TargetBitmap(al_get_backbuffer(display));
@@ -62,7 +62,7 @@ void drawGadgets(Game game)
     state.foreachConstGadget((const(Gadget) g) {
         version (tharsisprofiling)
             auto zo2 = Zone(profiler, "game draws one gadget");
-        g.draw(state);
+        g.draw();
     });
 }
 
@@ -84,9 +84,9 @@ void drawAllLixes(Game game)
     }
     with (game) {
         foreach (otherTribe; nurse.constStateForDrawingOnly.tribes)
-            if (otherTribe !is game.tribeLocal)
+            if (otherTribe !is game.localTribe)
                 drawTribe(otherTribe);
-        drawTribe(nurse.constStateForDrawingOnly.tribes[_indexTribeLocal]);
+        drawTribe(nurse.constStateForDrawingOnly.tribes[_localStyle]);
         if (_drawHerHighlit)
             _drawHerHighlit.drawAgainHighlit();
     }

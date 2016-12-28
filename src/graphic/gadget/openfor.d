@@ -14,13 +14,12 @@ module graphic.gadget.openfor;
 import basics.help;
 import net.repdata;
 import basics.topology;
-import game.model.state;
-import game.tribe;
 import graphic.gadget;
 import graphic.torbit;
 import tile.occur;
 import tile.gadtile;
 import hardware.sound;
+import net.style;
 
 public alias Water     = PermanentlyOpen;
 public alias Fire      = PermanentlyOpen;
@@ -60,10 +59,12 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
         return new GadgetAnimsOnFeed(this);
     }
 
-    bool isOpenFor(in Update upd, in int tribeID) const
+    bool isOpenFor(in Update upd, in Style st) const
     {
+        // During a single update, the gadget can eat a lix from each tribe.
+        // This is fairest in multiplayer.
         if (wasFedDuringUpdate == upd)
-            return ! hasTribe(tribeID);
+            return ! hasTribe(st);
         else
             return ! isEating(upd);
     }
@@ -74,10 +75,10 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
         return upd < firstIdlingUpdateAfterEating;
     }
 
-    void feed(in Update upd, in int tribeID)
+    void feed(in Update upd, in Style st)
     {
-        assert (isOpenFor(upd, tribeID), "don't feed what it's not open for");
-        super.addTribe(tribeID);
+        assert (isOpenFor(upd, st), "don't feed what it's not open for");
+        super.addTribe(st);
         wasFedDuringUpdate = upd;
     }
 
@@ -102,7 +103,6 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
     }
 
 private:
-
     Update firstIdlingUpdateAfterEating() const
     {
         if (wasFedDuringUpdate == 0)
@@ -115,7 +115,6 @@ private:
             // Thus, no -1 here.
             return Update(wasFedDuringUpdate + animationLength);
     }
-
 }
 // end class GadgetAnimsOnFeed
 
@@ -126,7 +125,7 @@ private class PermanentlyOpen : GadgetAnimsOnFeed {
     override PermanentlyOpen clone() const { return new PermanentlyOpen(this);}
     this(in PermanentlyOpen rhs) { super(rhs); }
 
-    override bool isOpenFor(in Update, in int) const { return true; }
+    override bool isOpenFor(in Update, in Style) const { return true; }
 
     override void animateForUpdate(in Update upd)
     {
@@ -139,6 +138,5 @@ private class PermanentlyOpen : GadgetAnimsOnFeed {
              : tile.subtype == 0           ? Sound.WATER
              :                               Sound.FIRE;
     }
-
 }
 // end class PermanentAnim
