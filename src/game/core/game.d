@@ -39,6 +39,7 @@ import hardware.sound;
 import hardware.display; // fps for framestepping speed
 import level.level;
 import lix; // _drawHerHighlit
+import net.iclient;
 
 class Game {
 package:
@@ -50,6 +51,7 @@ package:
              // result to the screen. It is both a renderer and a camera.
     Nurse nurse;
     EffectManager effect;
+    INetClient _netClient; // null unless playing/observing multiplayer
 
     int _indexTribeLocal;
     long altickLastUpdate;
@@ -90,11 +92,19 @@ public:
         this.runmode = rm;
         assert (lv);
         assert (lv.good);
-
-        scope (exit)
-            this.setLastUpdateToNow();
         level = lv;
         prepareNurse(levelFilename, rp);
+        setLastUpdateToNow();
+    }
+
+    this(INetClient client, Level lv)
+    {
+        this.runmode = Runmode.INTERACTIVE;
+        assert (lv);
+        assert (lv.good);
+        level = lv;
+        _netClient = client;
+        prepareNurse(null, null);
         setLastUpdateToNow();
     }
 
@@ -196,17 +206,18 @@ private:
         assert (! effect);
         assert (! nurse);
         _replayNeverCancelledThereforeDontSaveAutoReplay = rp !is null;
-        if (! rp) {
-            rp = Replay.newForLevel(levelFilename, level.built);
-
-            // DTODONETWORK: what to add?
-            rp.addPlayer(PlNr(0), Style.garden, basics.globconf.userName);
-        }
+        if (! rp)
+            rp = generateFreshReplay(levelFilename);
         effect = new EffectManager;
         nurse  = new Nurse(level, rp, effect);
 
-        // DTODONETWORKING: initialize to something different, and pass the
-        // nurse the number of players
+        // The tribes (teams of >= 1 players) array is sorted as follows:
+        // a < b <=> min(plNrs in tribe a) < min(plNrs in tribe b).
+        // The n-th tribe (n zero-based) is the tribe such that there exists
+        // exactly n tribes with plNrs lower than this tribe's lowest plNr.
+        //
+        // But I think this is bad! We should index tribes by styles.
+        // They should become an AA.
         _indexTribeLocal  = 0;
         effect.tribeLocal = 0;
         GapaMode gapamode = rp.players.len == 1 ? GapaMode.single
@@ -221,6 +232,19 @@ private:
             pan.setLikeTribe(tribeLocal);
             pan.highlightFirstSkill();
         }
+    }
+
+    Replay generateFreshReplay(Filename levelFilename)
+    {
+        auto rp = Replay.newForLevel(levelFilename, level.built);
+        if (! _netClient)
+            rp.addPlayer(PlNr(0), Style.garden, basics.globconf.userName);
+        else {
+            foreach (plNr, prof; _netClient.profilesInOurRoom)
+                rp.addPlayer(plNr, prof.style, prof.name);
+            rp.playerLocal = _netClient.ourPlNr;
+        }
+        return rp;
     }
 
     void saveAutoReplay()

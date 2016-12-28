@@ -127,6 +127,12 @@ public:
         return net.enetglob.enetLinkedVersion();
     }
 
+    @property PlNr ourPlNr() const
+    {
+        assert (connected, "call this function only when you're connected");
+        return _ourPlNr;
+    }
+
     @property const(Profile) ourProfile() const
     {
         assert (connected, "call this function only when you're connected");

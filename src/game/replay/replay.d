@@ -45,8 +45,8 @@ class Replay {
 
 package:
     Version _gameVersionRequired;
-    Player[] _players;
-    Permu _permu;
+    Player[] _players; // guaranteed to be sorted by their plNr
+    Permu _permu; // contains natural numbers [0 .. #players[, not the plNrs
     ReplayData[] _data;
 
 public:
@@ -131,7 +131,9 @@ public:
 
     void addPlayer(PlNr nr, Style s, string name)
     {
+        assert (_players.map!(pl => pl.number).all!(plNr => plNr != nr));
         _players ~= Player(nr, s, name);
+        _players.sort!"a.number < b.number";
     }
 
     // This doesn't check whether the metadata/general data is the same.

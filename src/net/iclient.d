@@ -16,6 +16,7 @@ interface INetClient {
     @property string enetLinkedVersion() const;
 
     @property const(Profile[PlNr]) profilesInOurRoom();
+    @property PlNr ourPlNr() const;
     @property const(Profile) ourProfile() const;
     @property bool mayWeDeclareReady() const;
 
