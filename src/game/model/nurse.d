@@ -38,10 +38,11 @@ public:
     @property constStateForDrawingOnly()  const { return _model.cs; }
     @property stateOnlyPrivatelyForGame() const { return _model.cs; }
 
+    // We get to own the replay, but not the level or the effect manager.
     this(in Level lev, Replay rp, EffectManager ef)
     {
         _replay = rp;
-        _model  = new GameModel(lev, ef);
+        _model = new GameModel(lev, rp.stylesInUse, rp.permu, ef);
         _cache = new PhysicsCache();
         _levelBuilt = lev.built;
         assert (_replay);

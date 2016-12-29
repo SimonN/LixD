@@ -18,10 +18,11 @@ import game.tribe;
 import level.level;
 import tile.gadtile;
 import lix;
+import net.permu;
 
 package:
 
-GameState newZeroState(in Level level)
+GameState newZeroState(in Level level, in Style[] tribesToMake, in Permu permu)
 {
     GameState s = new GameState();
     with (level) {
@@ -29,9 +30,9 @@ GameState newZeroState(in Level level)
         s.lookup = new Phymap(level.topology);
         drawTerrainTo(s.land, s.lookup);
     }
-    s.preparePlayers(level);
+    s.preparePlayers(level, tribesToMake, permu);
     s.prepareGadgets(level);
-    s.assignTribesToGoals();
+    s.assignTribesToGoals(tribesToMake, permu);
     s.foreachGadget((Gadget g) {
         g.drawLookup(s.lookup);
     });
@@ -41,15 +42,15 @@ GameState newZeroState(in Level level)
 
 private:
 
-void preparePlayers(GameState state, in Level level)
+void preparePlayers(GameState state, in Level level,
+                    in Style[] tribesToMake, in Permu permu)
 {
     assert (state);
     assert (state.tribes == null);
-
-    // DTODONETWORK: look up how many players to make
-    state.tribes[Style.garden] = new Tribe();
-
-    foreach (style, tr; state.tribes) {
+    assert (tribesToMake.len >= 1);
+    assert (tribesToMake.isStrictlyMonotonic);
+    foreach (int i, style; tribesToMake) {
+        Tribe tr = new Tribe();
         tr.style        = style;
         tr.lixInitial   = level.initial;
         tr.lixRequired  = level.required;
@@ -57,6 +58,7 @@ void preparePlayers(GameState state, in Level level)
         tr.spawnint     = level.spawnint;
         tr.skills       = level.skills;
         tr.nukeSkill    = level.ploder;
+        state.tribes[style] = tr;
     }
 }
 
@@ -78,20 +80,31 @@ void prepareGadgets(GameState state, in Level level)
     instantiateGadgetsFromArray(state.flingers, GadType.FLING);
 }
 
-void assignTribesToGoals(GameState state) { with (state)
+void assignTribesToGoals(GameState state,
+    in Style[] stylesInPlay, in Permu permu
+) { with (state)
 {
+    assert (hatches.len, "we'll do modulo on the hatches, 0 is bad");
     assert (goals.len, "can't assign 0 goals to the players");
     assert (numTribes, "can't assign the goals to 0 players");
+    while (hatches.len % numTribes != 0 && numTribes % hatches.len != 0)
+        hatches = hatches[0 .. $-1];
     while (goals.len % numTribes != 0 && numTribes % goals.len != 0)
         goals = goals[0 .. $-1];
+    assert (hatches.len);
     assert (goals.len);
-    auto stylesInPlay = tribes.byKey.array;
-    stylesInPlay.sort();
-    // DTODONETWORK: Permute according to network-sent permu
-    if (goals.len >= numTribes)
-        foreach (int i, goal; goals)
-            goal.addTribe(stylesInPlay[i % numTribes]);
-    else
-        foreach (i, style; stylesInPlay)
-            goals[i % goals.len].addTribe(style);
+
+    foreach (int i, style; stylesInPlay)
+        tribes[style].nextHatch = permu[i] % hatches.len;
+    foreach (int i, style; stylesInPlay) {
+        if (goals.len >= numTribes)
+            // Permu 0 2 1 for tribes red, orange, yellow means:
+            // Red gets goal 0 & 3. Orange gets 2 & 5. Yellow gets 1 & 4.
+            for (int j = permu[i]; j < goals.len; j += numTribes)
+                goals[j].addTribe(style);
+        else
+            // Permu 0 3 1 2 for tribes red, orange, yellow, green means:
+            // Red & green get goal 0. -- Orange & yellow get goal 1.
+            goals[permu[i] % goals.len].addTribe(style);
+    }
 }}

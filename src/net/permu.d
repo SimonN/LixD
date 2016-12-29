@@ -26,7 +26,6 @@ public:
     {
         PlNr nextID = PlNr(0);
         bool digitHasBeenRead = false;
-
         foreach (char c; src) {
             if (c >= '0' && c <= '9') {
                 nextID.n *= 10;
@@ -35,6 +34,7 @@ public:
             }
             else if (digitHasBeenRead) {
                 p ~= nextID;
+                nextID = PlNr(0);
                 digitHasBeenRead = false;
             }
         }
@@ -43,29 +43,24 @@ public:
     }
 
     unittest {
-        Permu permu = new Permu("0 1 2 3");
-        assert (permu.size == 4);
+        Permu permu = new Permu("1 0 2 3");
+        assert (permu.len == 4);
+        assert (permu[1] == 0);
+        assert (permu[2] == 2);
         permu = new Permu("this is 2 much 4 me");
-        assert (permu.size == 2);
+        assert (permu.len == 2);
+        assert (permu[1] == 4);
     }
 
-    @property int size() const { return p.length & 0x7FFF_FFFF; }
+    @property int len() const { return p.length & 0x7FFF_FFFF; }
 
     PlNr opIndex(int id) const
     {
-        if (id >= 0 && id < size)
+        if (id >= 0 && id < len)
             return p[id];
         else
             // outside of the permuted range, pad with the identity
             return PlNr(id & 0xFF);
-    }
-
-    deprecated("cut off, or erase too high values?") void
-    shortenTo(int newSize)
-    {
-        assert (newSize >= 0);
-        assert (newSize < size);
-        p = p[0 .. newSize];
     }
 
     override bool opEquals(Object rhs_obj) const

@@ -40,10 +40,13 @@ package: // eventually delete cs() and alias cs this;
     @property inout(GameState) cs() inout { return _cs; }
 
 public:
-    this(in Level level, EffectManager ef)
+    // This remembers the effect manager, but not anything else.
+    // We don't own the effect manager.
+    this(in Level level, in Style[] tribesToMake,
+         in Permu permu, EffectManager ef)
     {
         _effect = ef;
-        _cs     = game.model.init.newZeroState(level);
+        _cs     = game.model.init.newZeroState(level, tribesToMake, permu);
         _physicsDrawer = new PhysicsDrawer(_cs.land, _cs.lookup);
         finalizeUpdateAnimateGadgets();
     }
@@ -163,7 +166,7 @@ private:
                 continue;
             assert (permu);
             immutable int position = permu[teamNumber];
-            const(Hatch) hatch     = _cs.hatches[tribe.hatchNextSpawn];
+            const(Hatch) hatch     = _cs.hatches[tribe.nextHatch];
 
             bool walkLeftInsteadOfRight = hatch.spawnFacingLeft
                 // This extra turning solution here is necessary to make
@@ -184,8 +187,8 @@ private:
             --tribe.lixHatch;
             ++tribe.lixOut;
             tribe.updatePreviousSpawn = _cs.update;
-            tribe.hatchNextSpawn     += _cs.numTribes;
-            tribe.hatchNextSpawn     %= _cs.hatches.len;
+            tribe.nextHatch     += _cs.numTribes;
+            tribe.nextHatch     %= _cs.hatches.len;
         }
     }
 

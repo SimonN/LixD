@@ -41,7 +41,7 @@ private:
         foreach (style; tribes) {
             if (style == Style.garden)
                 continue;
-            auto icon = graphic.internal.getPanelInfoIcon(style);
+            auto icon = graphic.internal.getSkillButtonIcon(style);
             icon.draw(Point(x + tile.triggerX + tile.triggerXl/2 - icon.xl/2
                               + (20 * offset++) - 10 * (tribes.len - 1),
                             max(y, y + yl - 70)),

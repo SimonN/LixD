@@ -8,6 +8,7 @@ module game.replay.replay;
  */
 
 import core.stdc.string; // memmove
+import std.array;
 import std.algorithm; // isSorted
 
 public import net.ac;
@@ -122,6 +123,16 @@ public:
             if (pl.number == plnr)
                 return pl.style;
         return Style.garden;
+    }
+
+    Style[] stylesInUse() const
+    {
+        Style[] ret;
+        foreach (style; _players.map!(pl => pl.style))
+            if (! ret.canFind(style))
+                ret ~= style;
+        ret.sort();
+        return ret;
     }
 
     void touch()
