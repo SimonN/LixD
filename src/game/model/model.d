@@ -83,9 +83,9 @@ public:
         implApplyReplayData(i, tribeStyle);
     }
 
-    void advance(in Permu permu)
+    void advance()
     {
-        spawnLixxiesFromHatches(permu);
+        spawnLixxiesFromHatches();
         updateNuke();
         updateLixxies();
         finalizeUpdateAnimateGadgets();
@@ -157,22 +157,16 @@ private:
         }
     }
 
-    void spawnLixxiesFromHatches(in Permu permu)
+    void spawnLixxiesFromHatches()
     {
         foreach (int teamNumber, Tribe tribe; _cs.tribes) {
             if (tribe.lixHatch == 0
                 || _cs.update < 60
                 || _cs.update < tribe.updatePreviousSpawn + tribe.spawnint)
                 continue;
-            assert (permu);
-            immutable int position = permu[teamNumber];
-            const(Hatch) hatch     = _cs.hatches[tribe.nextHatch];
-
-            bool walkLeftInsteadOfRight = hatch.spawnFacingLeft
-                // This extra turning solution here is necessary to make
-                // some L1 and ONML two-player levels playable better.
-                || (_cs.hatches.len < _cs.numTribes
-                    && (position / _cs.hatches.len) % 2 == 1);
+            assert (tribe.nextHatch < _cs.hatches.len);
+            const(Hatch) hatch = _cs.hatches[tribe.nextHatch];
+            immutable bool walkLeftInsteadOfRight = hatch.spawnFacingLeft;
 
             // the only interesting part of OutsideWorld right now is the
             // lookupmap inside the current state. Everything else will be

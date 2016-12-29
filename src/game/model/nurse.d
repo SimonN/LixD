@@ -166,10 +166,9 @@ private:
     {
         version (tharsisprofiling)
             Zone zone = Zone(profiler, "PhysSeq updateOnceNoSync");
-        _model.incrementUpdate;
+        _model.incrementUpdate();
         applyReplayDataToModel();
-        assert (_replay);
-        _model.advance(_replay.permu);
+        _model.advance();
     }
 
     // DTODO: Refactor into SaveStatingNurse : Nurse for the interactive
