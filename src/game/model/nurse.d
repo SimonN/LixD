@@ -42,7 +42,8 @@ public:
     this(in Level lev, Replay rp, EffectManager ef)
     {
         _replay = rp;
-        _model = new GameModel(lev, rp.stylesInUse, rp.permu, ef);
+        _model = new GameModel(lev, rp.stylesInUse, rp.permu, ef,
+                               rp.players[rp.playerLocal].style);
         _cache = new PhysicsCache();
         _levelBuilt = lev.built;
         assert (_replay);

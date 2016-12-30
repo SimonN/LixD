@@ -22,8 +22,9 @@ import net.permu;
 
 package:
 
-GameState newZeroState(in Level level, in Style[] tribesToMake, in Permu permu)
-{
+GameState newZeroState(in Level level, in Style[] tribesToMake,
+                       in Permu permu, in Style makeHatchesBlink
+) {
     GameState s = new GameState();
     with (level) {
         s.land   = new Torbit(level.topology);
@@ -32,7 +33,7 @@ GameState newZeroState(in Level level, in Style[] tribesToMake, in Permu permu)
     }
     s.preparePlayers(level, tribesToMake, permu);
     s.prepareGadgets(level);
-    s.assignTribesToGoals(tribesToMake, permu);
+    s.assignTribesToGoals(tribesToMake, permu, makeHatchesBlink);
     s.foreachGadget((Gadget g) {
         g.drawLookup(s.lookup);
     });
@@ -81,7 +82,7 @@ void prepareGadgets(GameState state, in Level level)
 }
 
 void assignTribesToGoals(GameState state,
-    in Style[] stylesInPlay, in Permu permu
+    in Style[] stylesInPlay, in Permu permu, in Style makeHatchesBlink
 ) { with (state)
 {
     assert (hatches.len, "we'll do modulo on the hatches, 0 is bad");
@@ -94,17 +95,21 @@ void assignTribesToGoals(GameState state,
     assert (hatches.len);
     assert (goals.len);
 
-    foreach (int i, style; stylesInPlay)
-        tribes[style].nextHatch = permu[i] % hatches.len;
+    // Hatches: Distribute to players, make certain hatches blink
     foreach (int i, style; stylesInPlay) {
-        if (goals.len >= numTribes)
-            // Permu 0 2 1 for tribes red, orange, yellow means:
-            // Red gets goal 0 & 3. Orange gets 2 & 5. Yellow gets 1 & 4.
-            for (int j = permu[i]; j < goals.len; j += numTribes)
-                goals[j].addTribe(style);
-        else
-            // Permu 0 3 1 2 for tribes red, orange, yellow, green means:
-            // Red & green get goal 0. -- Orange & yellow get goal 1.
-            goals[permu[i] % goals.len].addTribe(style);
+        immutable ha = permu[i] % hatches.len;
+        tribes[style].nextHatch = ha;
+        if (style == makeHatchesBlink)
+            for (int j = ha; j < hatches.len; j += numTribes)
+                hatches[j].blinkStyle = makeHatchesBlink;
+    }
+    // Goals: Distribute to players
+    foreach (int i, style; stylesInPlay) {
+        // Permu 0 3 1 2 for tribes red, orange, yellow, green means:
+        // Red & green get goal 0. -- Orange & yellow get goal 1.
+        // Permu 0 2 1 for tribes red, orange, yellow means:
+        // Red gets goal 0 & 3. Orange gets 2 & 5. Yellow gets 1 & 4.
+        for (int j = permu[i] % goals.len; j < goals.len; j += numTribes)
+            goals[j].addTribe(style);
     }
 }}

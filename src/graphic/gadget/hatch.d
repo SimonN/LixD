@@ -82,7 +82,7 @@ protected:
     override void drawInner() const
     {
         if (_blinkNow && blinkStyle != Style.garden) {
-            const(Cutbit) c = getPanelInfoIcon(blinkStyle);
+            const(Cutbit) c = getSkillButtonIcon(blinkStyle);
             c.draw(loc + tile.trigger - c.len/2, Ac.walker, 0);
         }
     }
