@@ -5,7 +5,8 @@ import std.algorithm; // all
 import basics.user;
 import basics.cmdargs;
 import game.core.game;
-import game.window.during;
+import game.window.single;
+import game.window.multi;
 import game.core.active;
 import game.core.passive;
 import game.core.speed;
@@ -42,15 +43,22 @@ isFinished(const(Game) game) { with (game)
 }}
 
 private void
-createModalWindow(Game game)
+createModalWindow(Game game) { with (game)
 {
-    game.modalWindow =
-        // multiplayer && ! replaying ? : ? : ? :
-        game.isFinished
-        ? new WindowEndSingle(game.localTribe, game.nurse.replay, game.level)
-        : new WindowDuringOffline(game.nurse.replay, game.level);
+    assert (! modalWindow);
+    if (game.isFinished)
+        // Refactoring idea: I didn't want to pass mutable tribes across the
+        // program, but here I do nonetheless. I don't know who should spawn
+        // the window: The nurse shouldn't spawn it, but we shouldn't have
+        // to refine the data from the nurse.
+        modalWindow = multiplayer ? new WindowEndMulti(
+                                    nurse.stateOnlyPrivatelyForGame.tribes,
+                                    _localStyle, nurse.replay, level)
+            : new WindowEndSingle(localTribe, nurse.replay, level);
+    else
+        modalWindow = new WindowDuringOffline(nurse.replay, level);
     addFocus(game.modalWindow);
-}
+}}
 
 private void
 calcModalWindow(Game game) { with (game)

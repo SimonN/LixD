@@ -77,3 +77,24 @@ protected:
         addChild(_saveReplayDone);
     }
 }
+
+package:
+
+enum butXl  = 150;
+enum butYsp =  10;
+enum butYl  =  20;
+
+auto addButton(ref int y, in float xl = butXl)
+{
+    TextButton b = new TextButton(new Geom(0, y, xl, butYl, From.TOP));
+    y += butYl + butYsp;
+    return b;
+}
+
+Geom
+myGeom(in int numButtons, in int totalXl = butXl + 40, in int plusYl = 0)
+{
+    return new Geom(0, -Geom.panelYlg / 2, totalXl,
+        60 + (numButtons - 1) * butYsp +  numButtons * butYl + plusYl,
+        From.CENTER);
+}

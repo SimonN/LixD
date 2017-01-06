@@ -146,6 +146,11 @@ package:
         return nurse.replay.latestUpdate > nurse.upd;
     }
 
+    @property bool multiplayer() const
+    {
+        return nurse.stateOnlyPrivatelyForGame.multiplayer;
+    }
+
     @property const(Tribe) localTribe() const
     {
         assert (cs, "null cs, shouldn't ever be null");

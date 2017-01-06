@@ -10,6 +10,7 @@ module game.replay.replay;
 import core.stdc.string; // memmove
 import std.array;
 import std.algorithm; // isSorted
+import std.range;
 
 public import net.ac;
 public import net.style;
@@ -115,6 +116,16 @@ public:
             if (pl.number == playerLocal)
                 return pl.name;
         return null;
+    }
+
+    @property string styleToNames(in Style st) const
+    {
+        auto range = _players.filter!(p => p.style == st).map!(p => p.name);
+        switch (range.walkLength) {
+            case 0: return "";
+            case 1: return range.front;
+            default: return range.join(", ");
+        }
     }
 
     Style plNrToStyle(in PlNr plnr) const

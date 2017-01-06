@@ -1,16 +1,17 @@
-module game.gui.wduring;
+module game.window.single;
 
-/* The menu available on hitting ESC (or remapped key) during play. Different
- * from the menu at end of play.
- *
- *  class WindowDuringOffline -- playing singleplayer or
- *  class WindowDuringNetwork
+/* The menu available on hitting ESC (or remapped key) or after end of play.
+ * There are 2x2 of these, during/after single/multiplayer.
  */
+
+import std.array;
+import std.algorithm;
+import std.typecons;
 
 import basics.user; // keyMenuOkay
 import file.filename;
 import file.language;
-import game.gui.gamewin;
+import game.window.base;
 import game.replay;
 import game.tribe;
 import graphic.color;
@@ -18,25 +19,6 @@ import graphic.textout;
 import gui;
 import hardware.keyset;
 import level.level;
-
-private enum butXl  = 150;
-private enum butYsp =  10;
-private enum butYl  =  20;
-
-private auto addButton(ref int y, in float xl = butXl)
-{
-    TextButton b = new TextButton(new Geom(0, y, xl, butYl, From.TOP));
-    y += butYl + butYsp;
-    return b;
-}
-
-private Geom
-myGeom(in int numButtons, in int totalXl = butXl + 40, in int plusYl = 0)
-{
-    return new Geom(0, -Geom.panelYlg / 2, totalXl,
-        60 + (numButtons - 1) * butYsp +  numButtons * butYl + plusYl,
-        From.CENTER);
-}
 
 class WindowDuringOffline : GameWindow {
     this(in Replay replay, in Level level)
@@ -52,7 +34,7 @@ class WindowDuringOffline : GameWindow {
 }
 
 class WindowEndSingle : GameWindow {
-
+public:
     // DTODO: extend this() with level filename, to allow browsing to the
     // next level/next unsolved level. Maybe subclass again, and show the
     // non-next-level-able window for replays
@@ -84,7 +66,6 @@ class WindowEndSingle : GameWindow {
     }
 
 private:
-
     void drawLixSaved(in Tribe tribe)
     {
         addChild(new Label(new Geom(0, 40, xlg, 0, From.TOP),
@@ -123,5 +104,4 @@ private:
         winGameResultTimeUsed,
         */
     }
-
 }
