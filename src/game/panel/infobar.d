@@ -18,8 +18,8 @@ import lix;
 enum GapaMode {
     single,
     multiPlay,
-    multiSpec,
     multiReplay,
+    multiObserving,
 }
 
 class InfoBar : Button {

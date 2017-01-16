@@ -87,7 +87,7 @@ public:
     {
         assert (g.xlg > 2 * 20f);
         super(g);
-        if (prof.feeling != Profile.Feeling.spectating)
+        if (prof.feeling != Profile.Feeling.observing)
             addChild(new CutbitElement(new Geom(0, 0, 20, 20),
                 getPanelInfoIcon(prof.style)));
         addChild(new Label(new Geom(20, 0, xlg - 40, 20), prof.name));
@@ -191,7 +191,7 @@ public:
     }
 
     bool execute() const { return _execute; }
-    @property bool spectating() const { return _spec.on; }
+    @property bool observing() const { return _spec.on; }
     @property Style style() const
     {
         foreach (int i, b; _buttons)
@@ -200,7 +200,7 @@ public:
         return idToStyle(0);
     }
 
-    @property void setSpectating()
+    @property void setObserving()
     {
         _buttons.each!(b => b.on = false);
         _spec.on = true;
@@ -218,8 +218,8 @@ protected:
     override void calcSelf()
     {
         _execute = false;
-        if (_spec.execute && ! spectating) {
-            setSpectating();
+        if (_spec.execute && ! observing) {
+            setObserving();
             _execute = true;
         }
         foreach (int i, b; _buttons)

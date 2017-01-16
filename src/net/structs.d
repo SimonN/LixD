@@ -87,7 +87,7 @@ private:
 
 public:
     enum int len = ubytes + netPlayerNameMaxLen + 1; // null-terminated string
-    enum Feeling : ubyte { thinking = 0, ready = 2, spectating = 4 }
+    enum Feeling : ubyte { thinking = 0, ready = 2, observing = 4 }
     // 0, 2, 4: These numbers specify frames in menu_chk.I.
 
     Room room;
@@ -123,8 +123,8 @@ public:
         return this.style != rhs.style
             || this.room != rhs.room
             || this.name != rhs.name
-            ||    (this.feeling == Feeling.spectating)
-                != (rhs.feeling == Feeling.spectating);
+            ||    (this.feeling == Feeling.observing)
+                != (rhs.feeling == Feeling.observing);
     }
 
     void serializeTo(ref ubyte[len] buf) const nothrow
@@ -159,7 +159,7 @@ bool mayRoomDeclareReady(R)(R range)
     if (range.any!(pro => pro.room != range.front.room || pro.room == 0))
         return false;
     return range.walkLength >= 2
-        && range.any!(pro => pro.feeling != Profile.Feeling.spectating);
+        && range.any!(pro => pro.feeling != Profile.Feeling.observing);
 }
 
 struct HelloPacket {

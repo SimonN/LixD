@@ -25,7 +25,7 @@ version (lixClientTester)
         writeln("s red = set the Lix style to red");
         writeln("l path/to/level.txt = select and transfer this level file");
         writeln("y = set feeling to ready (y = yes)");
-        writeln("o = set feeling to spectating (o = observing)");
+        writeln("o = set feeling to observing");
         writeln("d = describe what the network knows");
     }
 
@@ -99,7 +99,7 @@ version (lixClientTester)
             else if (line[0] == 'y')
                 netClient.ourFeeling = Profile.Feeling.ready;
             else if (line[0] == 'o')
-                netClient.ourFeeling = Profile.Feeling.spectating;
+                netClient.ourFeeling = Profile.Feeling.observing;
             else if (line[0] == 'd') {
                 writeln("What does the network know?");
                 calc();

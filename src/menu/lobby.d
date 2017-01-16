@@ -165,8 +165,8 @@ protected:
         if (_colorSelector.execute) {
             // The color selector doesn't return execute == true when you
             // click the button that's already on.
-            if (_colorSelector.spectating)
-                _netClient.ourFeeling = Profile.Feeling.spectating;
+            if (_colorSelector.observing)
+                _netClient.ourFeeling = Profile.Feeling.observing;
             else {
                 _netClient.ourStyle = _colorSelector.style;
                 basics.user.networkLastStyle = _colorSelector.style;
@@ -265,8 +265,8 @@ private:
         {
             _peerList.recreateButtonsFor(_netClient.profilesInOurRoom.values);
             _colorSelector.style = _netClient.ourProfile.style;
-            if (_netClient.ourProfile.feeling == Profile.Feeling.spectating)
-                _colorSelector.setSpectating();
+            if (_netClient.ourProfile.feeling == Profile.Feeling.observing)
+                _colorSelector.setObserving();
             _declareReady.shown = _netClient.mayWeDeclareReady;
             _declareReady.on = _netClient.ourProfile.feeling
                                 == Profile.Feeling.ready;

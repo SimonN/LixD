@@ -151,7 +151,7 @@ public:
         final switch (ourProfile.feeling) {
             case Profile.Feeling.thinking:
             case Profile.Feeling.ready: return true;
-            case Profile.Feeling.spectating: return false;
+            case Profile.Feeling.observing: return false;
         }
     }
 

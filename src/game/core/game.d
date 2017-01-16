@@ -18,7 +18,6 @@ import basics.globals;
 import basics.globconf; // username, to determine whether to save result
 import basics.help; // len;
 import basics.user; // Result
-import net.repdata;
 import file.filename;
 
 import game.core.calc;
@@ -40,6 +39,8 @@ import hardware.display; // fps for framestepping speed
 import level.level;
 import lix; // _drawHerHighlit
 import net.iclient;
+import net.repdata;
+import net.structs;
 
 class Game {
 package:
@@ -245,18 +246,23 @@ private:
     {
         assert (nurse);
         assert (nurse.replay);
-        GapaMode gapamode = nurse.replay.players.len == 1
-                          ? GapaMode.single : GapaMode.multiPlay;
         assert (pan is null);
-        if (runmode == Runmode.INTERACTIVE) {
-            map = new Map(cs.land, Geom.screenXls.to!int,
-                                  (Geom.screenYls - Geom.panelYls).to!int);
-            this.centerCameraOnHatchAverage();
-            pan = new Panel(gapamode);
-            gui.addElder(pan);
-            pan.setLikeTribe(localTribe);
-            pan.highlightFirstSkill();
-        }
+        if (runmode != Runmode.INTERACTIVE)
+            return;
+
+        GapaMode gapamode = nurse.replay.players.len == 1 ? GapaMode.single
+            : ! _netClient
+                ? GapaMode.multiReplay
+            : _netClient.ourProfile.feeling == Profile.Feeling.observing
+                ? GapaMode.multiObserving
+                : GapaMode.multiPlay;
+        map = new Map(cs.land, Geom.screenXls.to!int,
+                              (Geom.screenYls - Geom.panelYls).to!int);
+        this.centerCameraOnHatchAverage();
+        pan = new Panel(gapamode);
+        gui.addElder(pan);
+        pan.setLikeTribe(localTribe);
+        pan.highlightFirstSkill();
     }
 
     void saveAutoReplay()
