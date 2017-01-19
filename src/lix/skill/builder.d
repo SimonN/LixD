@@ -109,8 +109,6 @@ class Builder : BrickCounter {
         fullyInsideTerrain = rhs.fullyInsideTerrain;
     }
 
-
-
     override void perform()
     {
         advanceFrame();
@@ -130,9 +128,6 @@ class Builder : BrickCounter {
         }
     }
 
-
-
-
     override void onBuildingBrick()
     {
         // don't glitch up through steel, but still get killed by top of
@@ -144,7 +139,7 @@ class Builder : BrickCounter {
         tc.update = outsideWorld.state.update;
         tc.type   = TerrainAddition.Type.build;
         tc.style  = style;
-        tc.x      = facingRight ? ex - 2 : ex - 8;
+        tc.x      = facingRight ? ex : ex - 10;
         tc.y      = ey;
         outsideWorld.physicsDrawer.add(tc);
     }
@@ -161,10 +156,10 @@ class Builder : BrickCounter {
         //   TT - checked for insideThinHorizontalBeam
         //   WT - checked for both wallNearFoot and insideThinHorizontalBeam
         //
-        //                   WW  WW
+        //               WW  WW
         //
-        //               XX
-        //           TT  TT  WT  WT
+        //           XX
+        //           TT  WT  WT
         //           ()()()()()()()()()()()()
         //           ()()()()()()()()()()()()
         //   [][][][][][][][][][][][]
@@ -183,8 +178,8 @@ class Builder : BrickCounter {
         // In rare cases, e.g. lix inside thin horizontal beam, the lix
         // wouldn't build up high enough to make the staircase
         // connect with the beam.
-        immutable bool insideThinHorizontalBeam = isSolid(4, 1)
-            && isSolid(2, 1) && isSolid(0, 1) && isSolid(-2, 1);
+        immutable bool insideThinHorizontalBeam
+            = isSolid(4, 1) && isSolid(2, 1) && isSolid(0, 1);
         // The check for hitHead is not shown in the ASCII art comment above.
         immutable bool hitHead = isSolid(4, -16);
         if (wallNearFoot || insideThinHorizontalBeam || hitHead) {
@@ -194,7 +189,6 @@ class Builder : BrickCounter {
             become(Ac.walker);
         }
     }
-
 }
 // end class Builder
 
@@ -220,8 +214,6 @@ class Platformer : BrickCounter {
         else
             return 0;
     }
-
-
 
     override void perform()
     {
@@ -261,8 +253,6 @@ class Platformer : BrickCounter {
             moveAheadAndCollide();
     }
 
-
-
     // this is called from the following private functions, and also
     // from Walker.become
     void abortAndStandUp()
@@ -271,8 +261,6 @@ class Platformer : BrickCounter {
         assert (lixxie.job.ac == Ac.shrugger2);
         lixxie.job.frame = standingUpFrame;
     }
-
-
 
     override void onBuildingBrick()
     {
@@ -342,7 +330,6 @@ class Platformer : BrickCounter {
         )
             abortAndStandUp();
     }
-
 }
 
 
