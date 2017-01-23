@@ -67,6 +67,8 @@ package:
 
     GameWindow modalWindow;
     Panel pan;
+    Console _console;
+
     int _profilingGadgetCount;
     bool _gotoMainMenu;
     bool _replayNeverCancelledThereforeDontSaveAutoReplay;
@@ -95,10 +97,12 @@ public:
         assert (lv.good);
         level = lv;
         prepareNurse(levelFilename, rp);
+        initializePanel();
+        initializeConsole(null);
         setLastUpdateToNow();
     }
 
-    this(INetClient client, Level lv)
+    this(INetClient client, Level lv, typeof(Console.lines) lines)
     {
         this.runmode = Runmode.INTERACTIVE;
         assert (lv);
@@ -106,13 +110,21 @@ public:
         level = lv;
         _netClient = client;
         prepareNurse(null, null);
+        initializePanel();
+        initializeConsole(lines);
         setLastUpdateToNow();
     }
 
+    /* Using ~this to dispose stuff is probably bad style.
+     * Maybe refactor into a dispose() method that we call at exactly one
+     * point. ~this might be called more often by the language.
+     */
     ~this()
     {
         if (pan)
             gui.rmElder(pan);
+        if (_console)
+            gui.rmElder(_console);
         if (modalWindow)
             gui.rmFocus(modalWindow);
         saveResult();
@@ -122,6 +134,12 @@ public:
     }
 
     Result evaluateReplay() { return nurse.evaluateReplay(_localStyle); }
+
+    auto consoleLines() const
+    {
+        assert (_console, "query console lines only if a console was made");
+        return _console.lines;
+    }
 
     void calc()
     {
@@ -208,7 +226,6 @@ private:
         effect = new EffectManager;
         nurse  = new Nurse(level, rp, effect);
         determineLocalStyleFromReplay();
-        initializePanel();
     }
 
     Replay generateFreshReplay(Filename levelFilename)
@@ -263,6 +280,17 @@ private:
         gui.addElder(pan);
         pan.setLikeTribe(localTribe);
         pan.highlightFirstSkill();
+    }
+
+    void initializeConsole(typeof(Console.lines) lines)
+    {
+        assert (! _console);
+        _console = new TransparentConsole(new Geom(0, 0, Geom.screenXlg, 0),
+                    () { gui.requireCompleteRedraw(); });
+        _console.lines = lines;
+        gui.addElder(_console);
+
+        _console.add("hallo");
     }
 
     void saveAutoReplay()

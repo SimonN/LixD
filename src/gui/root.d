@@ -91,6 +91,12 @@ bool hasFocus(Element elem)
     return focus.length && focus[$-1] == elem;
 }
 
+void requireCompleteRedraw()
+{
+    chain(elders, drawingOnlyElders, focus).each!(e => e.reqDraw);
+    clearNextDraw = true;
+}
+
 void calc()
 {
     if (focus.length)
