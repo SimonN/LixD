@@ -175,15 +175,18 @@ private:
     enum remY  = cubeY + Cuber.cubeSize;
  	enum remYl = 32;
     enum ploY  = remY + remYl;
-    enum ploYl = game.mask.masks[TerrainDeletion.Type.implode].solid.yl;
+    static ploYl() { return game.mask.masks[TerrainDeletion.Type.implode]
+                        .solid.yl; }
 
     enum bashX  = Digger.tunnelWidth + 1;
-    enum bashXl = game.mask.masks[TerrainDeletion.Type.bashRight].solid.xl + 1;
-    enum mineX  = bashX + 4 * bashXl; // 4 basher masks
-    enum mineXl = game.mask.masks[TerrainDeletion.Type.mineRight].solid.xl + 1;
-
+    static bashXl() { return game.mask.masks[TerrainDeletion.Type.bashRight]
+                        .solid.xl + 1; }
+    static mineX() { return bashX + 4 * bashXl; } // 4 basher masks
+    static mineXl() { return game.mask.masks[TerrainDeletion.Type.mineRight]
+                        .solid.xl + 1; }
     enum implodeX = 0;
-    enum explodeX = game.mask.masks[TerrainDeletion.Type.implode].solid.xl + 1;
+    static explodeX() { return game.mask.masks[TerrainDeletion.Type.implode]
+                        .solid.xl + 1; }
 
     static void
     deinitialize()
@@ -444,6 +447,7 @@ private:
         version (tharsisprofiling)
             auto zoneInitialize = Zone(profiler, "physDraw initialize");
         assert (! _mask);
+        assert (masks.length, "please initialize game.masks before this");
         alias Type = TerrainDeletion.Type;
         alias rf   = al_draw_filled_rectangle;
 

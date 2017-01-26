@@ -19,21 +19,17 @@ Detailed instructions: `./doc/build/linux.txt' or `.doc/build/windows.txt'.
 
 Quick instructions:
 
-*   $ git clone https://github.com/SimonN/LixD
-*   Install a D compiler (e.g., dmd, from https://dlang.org/download)
-*   Install dub, the D package handler (http://code.dlang.org/download)
-*   Install the Allegro 5.2 runtime library. Allegro 4.x will not work.
-        For Allegro 5.0 instead of 5.2, read `./doc/build/allegro.txt'.
-*   Install the enet 1.3.1 runtime library.
-*   $ dub
+    $ git clone https://github.com/SimonN/LixD
+    Install a D compiler, e.g., dmd: https://dlang.org/download
+    Install dub, the D package handler: http://code.dlang.org/download
+    Install the Allegro 5.2 runtime library.
+    Install the enet 1.3 runtime library.
+    $ dub
 
-If you get stuck, follow the detailed instructions in `./doc/build/'.
-Feel free to contact me, I don't bite. :-) See below for my contact details.
+Stuck? Follow `./doc/build/*.txt' or contact me, I don't bite. :-) See below.
 
 Report bugs
 -----------
-
-See the list of known bugs, or file a bug that you have found:
 
     https://github.com/SimonN/LixD/issues
 
@@ -47,6 +43,7 @@ information, please read `./doc/copying.txt'.
 Contact
 -------
 
+    Web:    http://www.lixgame.com
     E-Mail: eiderdaus@gmail.com
     IRC:    irc.quakenet.org #lix, my nickname is SimonN or SimonNa
     Forums: lemmingsforums.net, my username is Simon

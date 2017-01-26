@@ -133,8 +133,9 @@ public:
         _tilesOfElements = _elements.map!(occ => rebindable(occ.tile))
             .array
             .sort!((a, b) => a.toHash < b.toHash)
+            .uniq
             .map!unrebind
-            .uniq.array;
+            .array;
     }
 
     auto elements() const

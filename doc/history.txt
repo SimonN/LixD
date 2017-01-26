@@ -1,6 +1,18 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.20
+------
+
+2017-02-04
+
+Code compiles with dmd 2.073: Masks initialize at runtime, before main menu.
+I removed tharsis.prof, that dependency didn't build with dmd 2.072.
+
+Reworkings under the hood towards minimum viable multiplayer. In case you
+have replays from old C++ Lix, you can watch them in D Lix now. But you still
+cannot start multiplayer games yet in D Lix.
+
 0.6.19
 ------
 

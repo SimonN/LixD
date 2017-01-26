@@ -13,87 +13,91 @@ import game.terchang;
 
 enum explodeMaskOffsetY = -6; // used in game.debris, too
 
-enum Mask[TerrainDeletion.Type] masks = [
-    TerrainDeletion.Type.bashLeft          : _bashLeft,
-    TerrainDeletion.Type.bashRight         : _bashRight,
-    TerrainDeletion.Type.bashNoRelicsLeft  : _bashNoRelicsLeft,
-    TerrainDeletion.Type.bashNoRelicsRight : _bashNoRelicsRight,
-    TerrainDeletion.Type.mineLeft          : _mineLeft,
-    TerrainDeletion.Type.mineRight         : _mineRight,
-    TerrainDeletion.Type.implode           : _implode,
-    TerrainDeletion.Type.explode           : Mask(22, explodeMaskOffsetY),
-];
+const(Mask)[TerrainDeletion.Type] masks; // DTODO: should be const to outsiders
 
-private enum Mask _bashLeft  = _bashRight.mirrored;
-private enum Mask _bashRight = Mask([
-    "NNNNNNNNNNNN....", // Top 2 rows can cut through steel without
-    "NNNNNNNNNNNNNN..", // cancelling the basher. Other rows would cancel.
-    "XXXXXXXXXXXXXXX."] ~
-    "XXXXXXXXXXXXXXXX".repeat(12).array ~ [
-    "XXXXXXXXXXXXXXX.",
-    "#XXXXXXXXXXXXX..", // '#' = effective coordinate
-    "XXXXXXXXXXXX....",
-]);
+void initialize() { with (TerrainDeletion.Type)
+{
+    assert (! masks.length, "game.mask.initialize is called twice.");
+    Mask[TerrainDeletion.Type] mutableMasks;
+    scope (success)
+        masks = mutableMasks;
 
-private enum _bashNoRelicsLeft  = _bashNoRelicsRight.mirrored;
-private enum _bashNoRelicsRight = Mask(
-    "NNNNNNNNNNNNNNNN".repeat( 2).array ~ // ignore steel here
-    "XXXXXXXXXXXXXXXX".repeat(14).array ~ [
-    "#XXXXXXXXXXXXXXX", // '#' = effective coordinate
-    "XXXXXXXXXXXXXXXX",
-]);
+    mutableMasks[bashRight] = Mask([
+        "NNNNNNNNNNNN....", // Top 2 rows can cut through steel without
+        "NNNNNNNNNNNNNN..", // cancelling the basher. Other rows would cancel.
+        "XXXXXXXXXXXXXXX."] ~
+        "XXXXXXXXXXXXXXXX".repeat(12).array ~ [
+        "XXXXXXXXXXXXXXX.",
+        "#XXXXXXXXXXXXX..", // '#' = effective coordinate
+        "XXXXXXXXXXXX....",
+    ]);
+    mutableMasks[bashLeft] = mutableMasks[bashRight].mirrored;
 
-private enum _mineLeft  = _mineRight.mirrored;
-private enum _mineRight = Mask([
-    "...XXXXX..........", // -20
-    ".XXXXXXXXX........",
-    "XXXXXXXXXXXX......",
-    "XXXXXXXXXXXXXX....",
-    "XXXXXXXXXXXXXXX...", // -16
-    "XXXXXXXXXXXXXXXX..", // -15
-    "XXXXXXXXXXXXXXXXX.", // -14
-    "XXXXXXXXXXXXXXXXX.", ] ~
-    "XXXXXXXXXXXXXXXXXX".repeat(12).array ~ [ // from -12 to -1 inclusive
-    "#XXXXXXXXXXXXXXXX.", // 0, with '#' the effective coordinate
-    "XXXXXXXXXXXXXXXXX.", // 1
-    "..XXXXXXXXXXXXXX..", // 2 = old ground level
-    "....XXXXXXXXXXX...", // 3
-    "......XXXXXXXX....", // 4
-    "........XXXX......", // 5 = deepest air = miner hole depth is 4 px
-]);
+    mutableMasks[bashNoRelicsRight] = Mask(
+        "NNNNNNNNNNNNNNNN".repeat( 2).array ~ // ignore steel here
+        "XXXXXXXXXXXXXXXX".repeat(14).array ~ [
+        "#XXXXXXXXXXXXXXX", // '#' = effective coordinate
+        "XXXXXXXXXXXXXXXX",
+    ]);
+    mutableMasks[bashNoRelicsLeft] = mutableMasks[bashNoRelicsRight].mirrored;
 
-private enum _implode = Mask([
-//  -16     -8       0       8       16
-//   |       |       |       |       |
-    "..............XXXXXX..............", // -26
-    "...........XXXXXXXXXXXX...........",
-    ".........XXXXXXXXXXXXXXXX.........", // -24
-    "........XXXXXXXXXXXXXXXXXX........",
-    ".......XXXXXXXXXXXXXXXXXXXX.......",
-    "......XXXXXXXXXXXXXXXXXXXXXX......", ] ~
-    ".....XXXXXXXXXXXXXXXXXXXXXXXX.....".repeat(2).array ~// -20-19
-    "....XXXXXXXXXXXXXXXXXXXXXXXXXX....".repeat(2).array ~// -18-17
-    "...XXXXXXXXXXXXXXXXXXXXXXXXXXXX...".repeat(2).array ~// -16-15
-    "..XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX..".repeat(3).array ~// -14-12
-    ".XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.".repeat(5).array ~// -11 -7
-    "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX".repeat(6).array ~//  -6 -1
-    "XXXXXXXXXXXXXXXX#XXXXXXXXXXXXXXXXX".repeat(1).array ~//   0
-    "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX".repeat(5).array ~//   1  5
-    ".XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.".repeat(3).array ~//   6  8
-    "..XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX..".repeat(2).array ~ [
-    "...XXXXXXXXXXXXXXXXXXXXXXXXXXXX...",
-    "....XXXXXXXXXXXXXXXXXXXXXXXXXX....",
-    ".....XXXXXXXXXXXXXXXXXXXXXXXX.....", // 13
-    "......XXXXXXXXXXXXXXXXXXXXXX......", // 14
-    ".......XXXXXXXXXXXXXXXXXXXX.......", // 15
-    ".........XXXXXXXXXXXXXXXX.........", // 16
-    "............XXXXXXXXXX............", // 17
-//   |       |       |       |       |
-//  -16     -8       0       8       16
-]);
+    mutableMasks[mineRight] = Mask([
+        "...XXXXX..........", // -20
+        ".XXXXXXXXX........",
+        "XXXXXXXXXXXX......",
+        "XXXXXXXXXXXXXX....",
+        "XXXXXXXXXXXXXXX...", // -16
+        "XXXXXXXXXXXXXXXX..", // -15
+        "XXXXXXXXXXXXXXXXX.", // -14
+        "XXXXXXXXXXXXXXXXX.", ] ~
+        "XXXXXXXXXXXXXXXXXX".repeat(12).array ~ [ // from -12 to -1 inclusive
+        "#XXXXXXXXXXXXXXXX.", // 0, with '#' the effective coordinate
+        "XXXXXXXXXXXXXXXXX.", // 1
+        "..XXXXXXXXXXXXXX..", // 2 = old ground level
+        "....XXXXXXXXXXX...", // 3
+        "......XXXXXXXX....", // 4
+        "........XXXX......", // 5 = deepest air = miner hole depth is 4 px
+    ]);
+    mutableMasks[mineLeft] = mutableMasks[mineRight].mirrored;
+
+    mutableMasks[explode] = Mask(22, explodeMaskOffsetY),
+    mutableMasks[implode] = Mask([
+    //  -16     -8       0       8       16
+    //   |       |       |       |       |
+        "..............XXXXXX..............", // -26
+        "...........XXXXXXXXXXXX...........",
+        ".........XXXXXXXXXXXXXXXX.........", // -24
+        "........XXXXXXXXXXXXXXXXXX........",
+        ".......XXXXXXXXXXXXXXXXXXXX.......",
+        "......XXXXXXXXXXXXXXXXXXXXXX......", ] ~
+        ".....XXXXXXXXXXXXXXXXXXXXXXXX.....".repeat(2).array ~// -20-19
+        "....XXXXXXXXXXXXXXXXXXXXXXXXXX....".repeat(2).array ~// -18-17
+        "...XXXXXXXXXXXXXXXXXXXXXXXXXXXX...".repeat(2).array ~// -16-15
+        "..XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX..".repeat(3).array ~// -14-12
+        ".XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.".repeat(5).array ~// -11 -7
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX".repeat(6).array ~//  -6 -1
+        "XXXXXXXXXXXXXXXX#XXXXXXXXXXXXXXXXX".repeat(1).array ~//   0
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX".repeat(5).array ~//   1  5
+        ".XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.".repeat(3).array ~//   6  8
+        "..XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX..".repeat(2).array ~ [
+        "...XXXXXXXXXXXXXXXXXXXXXXXXXXXX...",
+        "....XXXXXXXXXXXXXXXXXXXXXXXXXX....",
+        ".....XXXXXXXXXXXXXXXXXXXXXXXX.....", // 13
+        "......XXXXXXXXXXXXXXXXXXXXXX......", // 14
+        ".......XXXXXXXXXXXXXXXXXXXX.......", // 15
+        ".........XXXXXXXXXXXXXXXX.........", // 16
+        "............XXXXXXXXXX............", // 17
+    //   |       |       |       |       |
+    //  -16     -8       0       8       16
+    ]);
+}}
+
+unittest
+{
+    initialize();
+}
 
 struct Mask {
-
     enum CharOK : char {
         solid       = 'X',
         solidIgnore = 'N', // ignore steel here, but remove terrain
@@ -117,16 +121,13 @@ struct Mask {
 
     this(in string[] strs)
     in {
-        assert (__ctfe, "only generate matrices at compile-time");
         assert (strs.length    > 0, "need at least 1 row");
         assert (strs[0].length > 0, "need at least 1 column");
         assert (strs.all!(a => a.length == strs[0].length),
             "matrix of chars is not rectangular");
     }
     body {
-        if (! __ctfe)
-            return;
-        _solid          = new Matrix!bool(strs[0].len, strs.len);
+        _solid         = new Matrix!bool(strs[0].len, strs.len);
         bool offsetSet = false;
         foreach     (const int y, const string s; strs)
             foreach (const int x, const char   c; s) {
@@ -160,9 +161,6 @@ struct Mask {
     // generate circular mask
     this(in int radius, in int offsetFromCenterY)
     {
-        assert (__ctfe, "generate matrices only during compile-time");
-        if (! __ctfe)
-            return;
         // you'd normally want 2*radius + 1, but we're hi-res, so we use + 2
         // instead of + 1 for the central 2x2 block of of pixels.
         _solid     = new Matrix!bool(2*radius + 2, 2*radius + 2);
@@ -181,9 +179,9 @@ struct Mask {
     }
 
     unittest {
-        enum a = typeof(this)(0, 0);
-        static assert (a == a.mirrored);
-        static assert (a == typeof(this)(["#X", "XX"]));
+        const a = typeof(this)(0, 0);
+        assert (a == a.mirrored);
+        assert (a == typeof(this)(["#X", "XX"]));
     }
 
     Mask mirrored() const
@@ -212,41 +210,41 @@ struct Mask {
 
 }
 
-static unittest {
-    enum Mask a = Mask([
+unittest {
+    const Mask a = Mask([
         ".X.X..",
         "..oX..",
         ".XX...",
     ]);
-    static assert (  a.solid.get(3, 0));
-    static assert (  a.solid.get(3, 1));
-    static assert (! a.solid.get(0, 0));
-    static assert (! a.solid.get(2, 1));
-    static assert (a.offsetX == 2);
-    static assert (a.offsetY == 1);
+    assert (  a.solid.get(3, 0));
+    assert (  a.solid.get(3, 1));
+    assert (! a.solid.get(0, 0));
+    assert (! a.solid.get(2, 1));
+    assert (a.offsetX == 2);
+    assert (a.offsetY == 1);
 
-    enum Mask b = Mask([
+    const Mask b = Mask([
         "..X.X.",
         "..#...",
         "...XX.",
     ]);
-    static assert (b.offsetX == 2);
-    static assert (b == a.mirrored());
+    assert (b.offsetX == 2);
+    assert (b == a.mirrored());
 
-    enum Mask topOfBasher = Mask([
+    const Mask topOfBasher = Mask([
         "NNNNNNNNNNNN....",
         "NNNNNNNNNNNNNN..",
         "#XXXXXXXXXXXXXX.",
         "XXXXXXXXXXXXXXXX"]);
-    enum Mask topOfBasherLeft = Mask([
+    const Mask topOfBasherLeft = Mask([
         "....NNNNNNNNNNNN",
         "..NNNNNNNNNNNNNN",
         ".XXXXXXXXXXXXX#X",
         "XXXXXXXXXXXXXXXX"]);
-    static assert (topOfBasherLeft == topOfBasher.mirrored());
+    assert (topOfBasherLeft == topOfBasher.mirrored());
 
     // Compared to L1, the imploder mask is wider by 1 lo-res pixel.
     // This makes the imploder mask symmetric.
-    static assert (masks[TerrainDeletion.Type.implode].mirrored
-               ==  masks[TerrainDeletion.Type.implode]);
+    assert (masks[TerrainDeletion.Type.implode].mirrored
+        ==  masks[TerrainDeletion.Type.implode]);
 }

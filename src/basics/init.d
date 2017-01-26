@@ -9,6 +9,7 @@ import basics.globconf;
 import basics.user;
 import file.language;
 import file.filename;
+import game.mask;
 import game.physdraw;
 import graphic.color;
 import graphic.internal;
@@ -61,6 +62,7 @@ void initialize(in Cmdargs cmdargs)
             graphic.color.initialize();
     if (gr) graphic.textout.initialize();
             graphic.internal.initialize(cmdargs.mode);
+    if (ph) game.mask.initialize();
     if (ia) game.physdraw.initialize();
 
     if (ia) hardware.mousecur.initialize();
