@@ -33,19 +33,16 @@ protected:
             return;
         float cbX = xs + (xls - cutbit.xl) / 2f;
         float cbY = ys + (yls - cutbit.yl) / 2f;
+        auto scal = min(xls / cutbit.xl, yls / cutbit.yl); // Shrink, preserving the aspect ratio.
+        static assert (is (typeof(scal) == float));
         if (! _shrink || (cbX > xs && cbY > ys))
-            // draw the cutbit to the center of this's Element area, no matter
-            // what this.geom.from says. Cutbits must be drawn to scale,
+            // Draw the cutbit to the center of this's Element area.
+            // Allow upscaling only by an integer factor, otherwise
             // they look ugly if scaled up. GUI elements are loaded in an
             // appropriate size from disk.
-            cutbit.draw(Point(cbX.to!int, cbY.to!int), _xf, _yf);
-        else {
-            // The cutbit is too large. Shrink, preserving the aspect ratio.
-            immutable scal = min(xls / cutbit.xl, yls / cutbit.yl);
-            static assert (is (typeof(scal) == immutable(float)));
-            cbX = xs + (xls - cutbit.xl * scal) / 2f;
-            cbY = ys + (yls - cutbit.yl * scal) / 2f;
-            cutbit.draw(Point(cbX.to!int, cbY.to!int), _xf, _yf, 0, 0, scal);
-        }
+            scal = max(1, cast(int)scal);
+        cbX = xs + (xls - cutbit.xl * scal) / 2f;
+        cbY = ys + (yls - cutbit.yl * scal) / 2f;
+        cutbit.draw(Point(cbX.to!int, cbY.to!int), _xf, _yf, 0, 0, scal == 1 ? 0 : scal);
     }
 }
