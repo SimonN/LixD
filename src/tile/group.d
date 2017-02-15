@@ -77,7 +77,7 @@ package:
         phy.cropTo(foundSelbox);
         _transpCutOff = foundSelbox.topLeft;
 
-        Torbit tb = new Torbit(phy);
+        Torbit tb = new Torbit(Torbit.Cfg(phy));
         tb.clearToColor(color.transp);
         with (TargetTorbit(tb))
             _key.elements.each!(e => e.drawOccurrence(-_transpCutOff));

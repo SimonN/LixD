@@ -16,9 +16,9 @@ private:
     enum frameFast  = 4;
     enum frameTurbo = 5;
 
-    BitmapButton _zoom, _restart, _pause, _saveState, _loadState;
+    BitmapButton _restart, _pause, _saveState, _loadState;
     NukeButton _nuke;
-    TwoTasksButton _speedBack, _speedAhead, _speedFast;
+    TwoTasksButton _zoom, _speedBack, _speedAhead, _speedFast;
 
 public:
     this(Geom g)
@@ -40,7 +40,7 @@ public:
                 b.hotkeyRight = keyRight;
             addChild(b);
         }
-        newBut(_zoom,       0, 1,  2, KeySet());
+        newBut(_zoom,       0, 1,  2, keyZoomIn, keyZoomOut);
         newBut(_speedBack,  0, 2, 10, keyFrameBackOne, keyFrameBackMany);
         newBut(_speedAhead, 1, 2,  3, keyFrameAheadOne, keyFrameAheadMany);
         newBut(_speedFast,  2, 2, frameFast, keySpeedFast, keySpeedTurbo);
@@ -81,7 +81,8 @@ public:
         bool restart()            { return _restart.execute; }
         bool saveState()          { return _saveState.execute; }
         bool loadState()          { return _loadState.execute; }
-        bool zoomExecute()        { return _zoom.execute; }
+        bool zoomIn()             { return _zoom.executeLeft; }
+        bool zoomOut()            { return _zoom.executeRight; }
         bool framestepBackOne()   { return _speedBack.executeLeft; }
         bool framestepBackMany()  { return _speedBack.executeRight; }
         bool framestepAheadOne()  { return _speedAhead.executeLeft; }

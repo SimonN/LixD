@@ -33,9 +33,10 @@ initialize()
     assert (display, "must create display before initializing gui");
     assert (guiosd is null);
 
-    guiosd = new Torbit(al_get_display_width (display),
-                        al_get_display_height(display));
-    assert (guiosd);
+    Torbit.Cfg cfg;
+    cfg.xl = al_get_display_width (display);
+    cfg.yl = al_get_display_height(display);
+    guiosd = new Torbit(cfg);
     Geom.setScreenXYls(guiosd.xl, guiosd.yl);
 }
 

@@ -126,7 +126,8 @@ public:
         bool restart()            { return _trbs && _trbs.restart; }
         bool saveState()          { return _trbs && _trbs.saveState; }
         bool loadState()          { return _trbs && _trbs.loadState; }
-        bool zoomExecute()        { return _trbs && _trbs.zoomExecute; }
+        bool zoomIn()             { return _trbs && _trbs.zoomIn; }
+        bool zoomOut()            { return _trbs && _trbs.zoomOut; }
         bool framestepBackOne()   { return _trbs && _trbs.framestepBackOne; }
         bool framestepBackMany()  { return _trbs && _trbs.framestepBackMany; }
         bool framestepAheadOne()  { return _trbs && _trbs.framestepAheadOne; }

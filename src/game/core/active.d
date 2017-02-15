@@ -116,11 +116,11 @@ PotentialAssignee findPotentialAssignee(Game game) { with (game)
     const(SkillButton) currentSkill = game.pan.currentSkill;
     assert (map.zoom > 0);
 
-    immutable int cursorThicknessOnLand = 12 / map.zoom;
-    immutable int mmldX = cursorThicknessOnLand +  2; // + lix thickness
-    immutable int mmldU = cursorThicknessOnLand + 15; // + lix height
-    immutable int mmldD = cursorThicknessOnLand +  0;
-    immutable     mol   = map.mouseOnLand;
+    immutable float cursorThicknessOnLand = 12 / map.zoom;
+    immutable float mmldX = cursorThicknessOnLand +  2; // + lix thickness
+    immutable float mmldU = cursorThicknessOnLand + 15; // + lix height
+    immutable float mmldD = cursorThicknessOnLand +  0;
+    immutable mol = map.mouseOnLand;
 
     // DTODO: Find out why we were traversing the lixvec backwards in C++
     // for (LixIt i =  --trlo->lixvec.end(); i != --trlo->lixvec.begin(); --i)
@@ -173,14 +173,16 @@ PotentialAssignee generatePotentialAssignee(
     in Lixxie lixxie,
     in int id,
     in Point mouseOnLand,
-    in int dMinusU,
+    in float dMinusU,
     in SkillButton currentSkill
 ) {
+    import basics.help;
     PotentialAssignee potAss;
     potAss.lixxie = lixxie;
     potAss.id = id;
     potAss.distanceToCursor = game.map.hypotSquared(
-        mouseOnLand.x, mouseOnLand.y, lixxie.ex, lixxie.ey + dMinusU/2);
+        mouseOnLand.x, mouseOnLand.y, lixxie.ex,
+                                      lixxie.ey + roundInt(dMinusU/2));
     if (currentSkill !is null)
         // true = consider personal settings like multiple builders
         potAss.priority = lixxie.priorityForNewAc(currentSkill.skill);

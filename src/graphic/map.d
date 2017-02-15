@@ -6,6 +6,7 @@ module graphic.map;
  */
 
 import std.algorithm;
+import std.math;
 import std.range;
 
 import basics.alleg5;
@@ -13,13 +14,14 @@ import basics.help;
 import basics.topology;
 import graphic.color;
 import graphic.torbit;
+import graphic.zoom;
 
 static import basics.user;
 static import hardware.display;
 static import hardware.keyboard;
 static import hardware.mouse;
 
-class Map : Torbit {
+class Map {
 
 /*  this(in int xl, int yl, int srceen_xl, int screen_yl)
  *
@@ -46,35 +48,43 @@ class Map : Torbit {
  * zoom easier, and copying the resulting viewed area is encapsulated in
  * draw() anyway.
  */
-    @property int  cameraX() const { return _cameraX; }
-    @property int  cameraY() const { return _cameraY; }
-    void set_cameraXY(in int x, in int y) { cameraX = x; cameraY = y; }
+    @property int cameraX() const { return _cameraX; }
+    @property int cameraY() const { return _cameraY; }
+    @property float zoom() const pure { return _zoom.current; }
 
-    @property int zoom() const { return _zoom; }
+    alias torbit this;
+    @property inout(Torbit) torbit() inout
+    {
+        assert (_zoom);
+        assert (_nearestNeighbor);
+        assert (_blurryScaling);
+        return _zoom.preferNearestNeighbor ? _nearestNeighbor : _blurryScaling;
+    }
 
 private:
 
     immutable int _cameraXl;
     immutable int _cameraYl;
-
-    int  _cameraX;
-    int  _cameraY;
-
-    int  _zoom;
-
+    int _cameraX;
+    int _cameraY;
     int  scrollGrabbedX;
     int  scrollGrabbedY;
-
     bool scrollingStarts;
     bool scrollingContinues;
 
-    @property int divByZoom(int i) const
-    {
-        assert (i >= 0);
-        return (i + _zoom - 1) / _zoom;
-    }
+    // We have two ground torbits, because we must choose at their creation
+    // whether we want nearest-neighbor scaling or blurry linear interpolation.
+    Zoom _zoom;
+    Torbit _nearestNeighbor;
+    Torbit _blurryScaling;
 
-    // these two don't crop at the edge yet
+    // We used to always round _up_ the value of (i / _zoom) when int _zoom.
+    // _zoom became float in 2017-02, I don't know whether (rounding to nearest
+    // intereger instead of always round up) introduces any bugs.
+    @property int divByZoom(in float i) const { return roundInt(i / zoom); }
+
+    // Number of pixels from the map that are copied in that dimension.
+    // If zoom is far in (large _zooom), then these are small.
     @property int cameraZoomedXl() const { return divByZoom(_cameraXl); }
     @property int cameraZoomedYl() const { return divByZoom(_cameraYl); }
 
@@ -90,24 +100,22 @@ private:
 
 public:
 
-this(in Topology topology, in int a_cameraXl, in int a_cameraYl)
+this(in Topology tp, in int a_cameraXl, in int a_cameraYl)
 {
     assert (a_cameraXl > 0);
     assert (a_cameraYl > 0);
-    super(topology);
+    {
+        auto cfg = Torbit.Cfg(tp);
+        _nearestNeighbor = new Torbit(cfg);
+        cfg.smoothlyScalable = true;
+        _blurryScaling = new Torbit(cfg);
+    }
     _cameraXl = a_cameraXl;
     _cameraYl = a_cameraYl;
-    _zoom = 1;
+    _zoom = new Zoom(Point(tp.xl, tp.yl), Point(_cameraXl, _cameraYl));
     cameraX  = _cameraXl / 2;
     cameraY  = _cameraYl / 2;
 }
-
-invariant()
-{
-    assert (_zoom > 0);
-}
-
-
 
 private int cameraSetter(ref int camera, in int newCamera, in bool torus,
                          in int torbitLength, in int min, in int max)
@@ -127,14 +135,12 @@ private int cameraSetter(ref int camera, in int newCamera, in bool torus,
     return camera;
 }
 
-@property int
-cameraX(in int a)
+@property int cameraX(in int a)
 {
     return cameraSetter(_cameraX, a, torusX, xl, minX, maxX);
 }
 
-@property int
-cameraY(in int a)
+@property int cameraY(in int a)
 {
     return cameraSetter(_cameraY, a, torusY, yl, minY, maxY);
 }
@@ -142,8 +148,23 @@ cameraY(in int a)
 void centerOnAverage(Rx, Ry)(Rx rangeX, Ry rangeY)
     if (isInputRange!Rx && isInputRange!Ry)
 {
-    cameraX = super.torusAverageX(rangeX);
-    cameraY = super.torusAverageY(rangeY);
+    cameraX = torusAverageX(rangeX);
+    cameraY = torusAverageY(rangeY);
+}
+
+void zoomIn() {
+    if (! _zoom.zoomableIn)
+        return;
+    auto p = mouseOnLand();
+    _zoom.zoomIn();
+    cameraX = p.x;
+    cameraY = p.y;
+}
+
+void zoomOut() {
+    _zoom.zoomOut();
+    cameraX = _cameraX; // move back onto visible area
+    cameraY = _cameraY;
 }
 
 // On non-torus maps, we want the initial scrolling position exactly at the
@@ -173,14 +194,14 @@ private @property int borderOneSideXl() const
 {
     if (torusX || xl * zoom >= cameraXl)
         return 0;
-    return (_cameraXl - xl * _zoom) / 2;
+    return (_cameraXl - xl * zoom).roundInt / 2;
 }
 
 private @property int borderUpperSideYl() const
 {
     if (torusY || yl * zoom >= cameraYl)
         return 0;
-    return _cameraYl - yl * _zoom;
+    return (_cameraYl - yl * zoom).roundInt;
 }
 
 @property Point
@@ -191,9 +212,9 @@ mouseOnLand() const
         in int borderL,
         in int min, in int mousePos
     ) {
-        immutable int firstDrawnPixel   = (borderL > 0) ? 0 : (camera - min);
-        immutable int mouseOffsetOnLand = (mousePos - borderL) / _zoom;
-        immutable int ret               = firstDrawnPixel + mouseOffsetOnLand;
+        immutable int firstDrawnPixel = (borderL > 0) ? 0 : (camera - min);
+        immutable float mouseOnLandX = (mousePos - borderL) / zoom;
+        immutable int ret = roundInt(firstDrawnPixel + mouseOnLandX.floor);
         if (torus) {
             assert (borderL == 0);
             return basics.help.positiveMod(ret, torbitL);
@@ -205,28 +226,9 @@ mouseOnLand() const
         f(_cameraY, yl, torusY, borderUpperSideYl,minY,hardware.mouse.mouseY));
 }
 
-@property int
-zoom(in int z)
-{
-    assert (z > 0);
-    _zoom = z;
-    cameraX = _cameraX; // move back onto visible area if we have zoomed out
-    cameraY = _cameraY;
-    return _zoom;
-}
-
-
-
 void
 calcScrolling()
 {
-    // Update zoom according to input directly. The on-screen buttons to
-    // zoom the map send extra calls to zoom().
-    if (basics.user.keyZoomIn.keyTapped)
-        zoom = min(_zoom * 2, 4); // call the property function, no direct set
-    else if (basics.user.keyZoomOut.keyTapped)
-        zoom = max(_zoom / 2, 1);
-
     if (! scrollable) {
         scrollingStarts = false;
         scrollingContinues = false;
@@ -234,23 +236,20 @@ calcScrolling()
     }
 
     if (basics.user.scrollSpeedEdge.value > 0) {
-        int scrd = basics.user.scrollSpeedEdge;
+        float scrd = basics.user.scrollSpeedEdge;
         if (hardware.mouse.mouseHeldRight())
             scrd *= 4;
-        if (_zoom > 1) {
-            scrd += _zoom - 1;
-            scrd /= _zoom;
-        }
+        scrd /= zoom;
         if (scrd < 1)
             scrd = 1;
         immutable edgeR = hardware.display.displayXl - 1;
         immutable edgeU = hardware.display.displayYl - 1;
-        // we don't care about this.mouseX/y, because we want to scroll
-        // at the edge of the screen, not the edge of the map
-        if (hardware.mouse.mouseY() == 0)     cameraY = _cameraY - scrd;
-        if (hardware.mouse.mouseX() == edgeR) cameraX = _cameraX + scrd;
-        if (hardware.mouse.mouseY() == edgeU) cameraY = _cameraY + scrd;
-        if (hardware.mouse.mouseX() == 0)     cameraX = _cameraX - scrd;
+        with (hardware.mouse) {
+            if (mouseY() == 0)     cameraY = _cameraY - scrd.roundInt;
+            if (mouseX() == edgeR) cameraX = _cameraX + scrd.roundInt;
+            if (mouseY() == edgeU) cameraY = _cameraY + scrd.roundInt;
+            if (mouseX() == 0)     cameraX = _cameraX - scrd.roundInt;
+        }
     }
 
     scrollingStarts    = basics.user.keyScroll.keyHeld && ! scrollingContinues;
@@ -270,8 +269,8 @@ calcScrolling()
             if (   (minus && mouse <= grabbed && mickey < 0)
                 || (plus  && mouse >= grabbed && mickey > 0)
             ) {
-                ret += mickey * basics.user.scrollSpeedClick / _zoom
-                    / 4; // the factor /4 comes from C++ Lix
+                ret += roundInt(mickey * basics.user.scrollSpeedClick
+                        / zoom / 4); // the factor /4 comes from C++ Lix
                 freeze();
             }
             return ret;
@@ -300,16 +299,15 @@ void
 drawCamera() // ...onto the current drawing target, most likely the screen
 {
     immutable overallMaxX = _cameraXl - borderOneSideXl;
-
-    for (int x = borderOneSideXl; x < overallMaxX; x += xl * _zoom) {
-        for (int y = borderUpperSideYl; y < _cameraYl; y += yl * _zoom) {
+    for (float x = borderOneSideXl; x < overallMaxX; x += xl * zoom) {
+        for (float y = borderUpperSideYl; y < _cameraYl; y += yl * zoom) {
             // maxXl, maxYl describe the size of the image to be drawn
             // in this iteration of the double-for loop. This should always
             // be as much as possible, i.e., the first argument to min().
             // Only in the last iteration of the loop,
             // a smaller rectangle is better.
-            immutable int maxXl = min(xl * _zoom, overallMaxX - x);
-            immutable int maxYl = min(yl * _zoom, _cameraYl   - y);
+            immutable maxXl = min(xl * zoom, overallMaxX - x);
+            immutable maxYl = min(yl * zoom, _cameraYl   - y);
             drawCamera_with_target_corner(x, y, maxXl, maxYl);
             if (borderUpperSideYl != 0) break;
         }
@@ -360,31 +358,31 @@ body {
 
 private void
 drawCamera_with_target_corner(
-    in int tcx, // x coordinate of target corner
-    in int tcy,
-    in int maxTcxl, // length, away from (tcx, tcy). Draw at most this much
-    in int maxTcyl  // to the target.
+    in float tcx, // x coordinate of target corner
+    in float tcy,
+    in float maxTcxl, // length, away from (tcx, tcy). Draw at most this much
+    in float maxTcyl  // to the target.
 ) {
     immutable r = cameraRectangle();
     // Source length of the non-wrapped portion. (Target len = this * zoom.)
     immutable sxl1 = min(r.xl, divByZoom(maxTcxl));
     immutable syl1 = min(r.yl, divByZoom(maxTcyl));
     // target corner coordinates and size of the wrapped-around torus portion
-    immutable tcx2 = tcx + r.xl * _zoom;
-    immutable tcy2 = tcy + r.yl * _zoom;
+    immutable tcx2 = tcx + r.xl * zoom;
+    immutable tcy2 = tcy + r.yl * zoom;
     // source length of the wrapped-around torus portion
     immutable sxl2 = min(cameraZoomedXl - r.xl, divByZoom(maxTcxl) - sxl1);
     immutable syl2 = min(cameraZoomedYl - r.yl, divByZoom(maxTcyl) - syl1);
 
     void blitOnce(in int sx,  in int sy,  // source x, y
                   in int sxl, in int syl, // length on the source
-                  in int tx,  in int ty)  // start of the target
+                  in float tx, in float ty)  // start of the target
     {
         if (zoom == 1)
-            al_draw_bitmap_region(albit, sx, sy, sxl, syl, tx, ty, 0);
+            al_draw_bitmap_region(torbit.albit, sx, sy, sxl, syl, tx, ty, 0);
         else
-            al_draw_scaled_bitmap(albit, sx, sy, sxl,       syl,
-                                         tx, ty, _zoom*sxl, _zoom*syl, 0);
+            al_draw_scaled_bitmap(torbit.albit, sx, sy, sxl, syl,
+                                  tx, ty, zoom * sxl, zoom * syl, 0);
     }
     immutable drtx = torusX && sxl2 > 0;
     immutable drty = torusY && syl2 > 0;

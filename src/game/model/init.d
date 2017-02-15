@@ -27,7 +27,7 @@ GameState newZeroState(in Level level, in Style[] tribesToMake,
 ) {
     GameState s = new GameState();
     with (level) {
-        s.land   = new Torbit(level.topology);
+        s.land   = new Torbit(Torbit.Cfg(level.topology));
         s.lookup = new Phymap(level.topology);
         drawTerrainTo(s.land, s.lookup);
     }

@@ -1,6 +1,21 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.21
+------
+
+2017-02-16
+
+Merged a contribution by CyberShadow to upscale the 640x480 GUI icons
+for high resolutions by integer factors when no high-res icon exists. Thanks!
+
+Initial zoom fits the level height on the screen height, allowing horizontal
+scrolling if the map is very wide. Exception: The map is only slightly wider
+than the screen, then initial zoom fits the width on the screen width,
+generating a black border at the top.
+
+When you increase the zoom factor, the game centers on the mouse cursor.
+
 0.6.20
 ------
 

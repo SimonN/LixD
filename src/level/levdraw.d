@@ -50,15 +50,26 @@ package Torbit implCreatePreview(
 ) {
     assert (prevXl > 0);
     assert (prevYl > 0);
-    Torbit ret = new Torbit(prevXl, prevYl);
+    Torbit ret;
+    {
+        Torbit.Cfg cfg;
+        cfg.xl = prevXl;
+        cfg.yl = prevYl;
+        ret = new Torbit(cfg);
+        // If we want smooth scrolling, it wouldn't help to add merely
+        // cfg.smoothlyScalable = true. Instead, we'd have to add that flag
+        // to a temp bitmap, then blit from the temp bitmap to ret.
+    }
     ret.clearToColor(c);
     if (   level.status == LevelStatus.BAD_FILE_NOT_FOUND
-        || level.status == LevelStatus.BAD_EMPTY)
+        || level.status == LevelStatus.BAD_EMPTY
+    ) {
         return ret;
+    }
     // Render the gadgets, then the terrain, using a temporary bitmap.
     // If the level has torus, the following temporary torbit need torus, too
     {
-        Torbit temp = new Torbit(level.topology);
+        Torbit temp = new Torbit(Torbit.Cfg(level.topology));
         scope (exit)
             destroy(temp);
         auto target = TargetTorbit(temp);
@@ -91,8 +102,13 @@ body {
     enum int extraYl = 60;
     const tp = level.topology;
 
-    Torbit img = new Torbit(max(tp.xl, 640),
-                            tp.yl + extraYl, tp.torusX, tp.torusY);
+    Torbit img;
+    {
+        auto cfg = Torbit.Cfg(level.topology);
+        cfg.xl = max(tp.xl, 640);
+        cfg.yl = tp.yl + extraYl;
+        img = new Torbit(cfg);
+    }
     scope (exit)
         destroy(img);
     auto targetTorbit = TargetTorbit(img);
@@ -100,7 +116,7 @@ body {
 
     // Render level
     {
-        Torbit tempLand = new Torbit(tp);
+        Torbit tempLand = new Torbit(Torbit.Cfg(tp));
         scope (exit)
             destroy(tempLand);
         void drawToImg()

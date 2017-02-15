@@ -16,8 +16,10 @@ import hardware.mousecur;
 package void
 calcPassive(Game game) { with (game)
 {
-    if (pan.zoomExecute)
-        map.zoom = (map.zoom < 4) ? (map.zoom * 2) : 1;
+    if (pan.zoomIn)
+        map.zoomIn();
+    if (pan.zoomOut)
+        map.zoomOut();
 
     mouseCursor.xf = 0;
     mouseCursor.yf = 0;

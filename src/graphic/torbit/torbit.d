@@ -25,24 +25,36 @@ private:
 public:
     @property inout(Albit) albit() inout { return bitmap; }
 
-    this(in int _xl, in int _yl, in bool _tx = false, in bool _ty = false)
-    {
-        super(_xl, _yl, _tx, _ty);
-        bitmap = albitCreate(_xl, _yl);
+    static struct Cfg {
+        int xl, yl;
+        bool torusX, torusY;
+        bool smoothlyScalable; // set this only if you want to blit from this
+                               // albit to anywhere with noninteger scaling
+        this(const(Topology) topol)
+        {
+            xl = topol.xl;
+            yl = topol.yl;
+            torusX = topol.torusX;
+            torusY = topol.torusY;
+        }
     }
 
-    this(const(Topology) topol)
+    this(Cfg cfg)
     {
-        super(topol);
-        bitmap = albitCreate(topol.xl, topol.yl);
+        super(cfg.xl, cfg.yl, cfg.torusX, cfg.torusY);
+        bitmap = cfg.smoothlyScalable
+            ? albitCreateSmoothlyScalable(cfg.xl, cfg.yl)
+            : albitCreate(cfg.xl, cfg.yl);
     }
 
-    this(const Torbit rhs)
+    override Torbit clone() const
     {
-        assert (rhs, "Don't copy-construct from a null Torbit.");
-        assert (rhs.bitmap, "shouldn't ever happen, bug in Torbit");
-        super(rhs);
-        bitmap = al_clone_bitmap(cast (Albit) rhs.bitmap);
+        auto cfg = Cfg(this);
+        cfg.smoothlyScalable = this.albit && (ALLEGRO_MAG_LINEAR &
+            al_get_bitmap_flags(cast (Albit) this.albit)) != 0;
+        auto ret = new Torbit(cfg);
+        ret.copyFrom(this);
+        return ret;
     }
 
     void copyFrom(in Torbit rhs)

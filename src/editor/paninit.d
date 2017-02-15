@@ -87,10 +87,10 @@ void makePanel(Editor editor)
             foreach (sel; editor._selection.retro)
                 sel.zOrderTowardsButIgnore(Hover.FgBg.fg, editor._selection);
             }, Button.WhenToExecute.whenMouseClickAllowingRepeats);
-        onExecute(Lang.editorButtonViewZoom, KeySet(), () {
-            editor._map.zoom = editor._map.zoom >= 4 ? 1 :
-                               editor._map.zoom * 2;
-        });
+
+        // The zoom button should become a TwoTaskButton.
+        // Until then, we don't assign to the button any function here.
+
         onExecute(Lang.editorButtonSelectFlip, keyEditorMirror, () {
             immutable box = editor.smallestRectContainingSelection();
             editor._selection.each!(sel => sel.mirrorHorizontallyWithin(box));

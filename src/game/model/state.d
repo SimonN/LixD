@@ -54,7 +54,7 @@ class GameState {
         } {
             version (tharsisprofiling)
                 auto zone2 = Zone(profiler, "GameState.clone land");
-            land = new Torbit(rhs.land);
+            land = rhs.land.clone();
         } {
             version (tharsisprofiling)
                 auto zone3 = Zone(profiler, "GameState.clone phymap");

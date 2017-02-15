@@ -142,6 +142,9 @@ private void updateOtherArrays()
         else if (_once[i])     _hold[i] = 1;
         else if (_hold[i] > 0) _hold[i] += 1;
     }
+    // You can't hold these keys anyway, so don't flicker buttons on use:
+    _hold[keyWheelUp] = 0;
+    _hold[keyWheelDown] = 0;
 }
 
 private void mergeSomeKeys()

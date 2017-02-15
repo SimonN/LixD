@@ -66,6 +66,12 @@ Albit albitMemoryCreate(in int xl, in int yl)
         |   ALLEGRO_MEMORY_BITMAP);
 }
 
+Albit albitCreateSmoothlyScalable(in int xl, in int yl)
+{
+    return albitCreateWithFlags(xl, yl,
+        _defaultNewBitmapFlags | ALLEGRO_MIN_LINEAR | ALLEGRO_MAG_LINEAR);
+}
+
 // This should be used only in assertions.
 bool isTargetBitmap(in Albit b)
 {

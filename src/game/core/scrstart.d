@@ -17,22 +17,10 @@ package:
 void centerCameraOnHatchAverage(Game game)
 {
     assert (game.map);
-    game.chooseGoodZoom();
     game.map.centerOnAverage(game.ourHatches().map!(h => h.screenCenter.x),
                              game.ourHatches().map!(h => h.screenCenter.y));
     game.map.snapToBoundary();
 }
-
-void chooseGoodZoom(Game game) {
-    with (game.map)
-{
-    assert (game.map);
-    assert (zoom == 1);
-    if (cameraXl * cameraYl > 640 * 300 * 3)
-        zoom = 2;
-    else
-        zoom = 1;
-}}
 
 private:
 
