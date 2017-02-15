@@ -32,9 +32,11 @@ nothrow bool isPloder(in Ac ac) pure
 
 nothrow @property int acToSkillIconXf(in Ac ac)
 {
-    // I plan to remove black frames from skillico.I.png, to save time.
-    // I will then replace this by a nontrivial computation.
-    return ac;
+    // We had xf = _ac before instead of xf = _ac - Ac.walker.
+    // But the smallest skill in the panel is walker.
+    // We can remove empty boxes from the image, saving VRAM & speed.
+    return ac - Ac.walker
+        - (ac > Ac.ascender) - (ac > Ac.shrugger) - (ac > Ac.shrugger2);
 }
 
 nothrow Ac stringToAc(in string str)
