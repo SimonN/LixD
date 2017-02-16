@@ -1,24 +1,25 @@
-$BUILT 2016-07-18 13:26:01
+$BUILT 2017-03-05 11:12:50
 $AUTHOR geoo
 $ENGLISH Triangle Inequality
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
 
 #INITIAL 80
-#REQUIRED 74
+#REQUIRED 75
 #SPAWN_INTERVAL 2
 
 #WALKER 1
-#JUMPER 1
 #CLIMBER 1
 #FLOATER 1
 #EXPLODER 1
 #BUILDER 1
 #MINER 1
+#JUMPER 1
 
-:geoo/construction/Hatch.H: 74 62
-:geoo/construction/Hatch.H: 104 62 r
+:geoo/construction/Hatch.H: 78 62
+:geoo/construction/Hatch.H: 100 62 r
 
 :geoo/construction/Goal2.G: 544 328
 
@@ -88,23 +89,23 @@ $ENGLISH Triangle Inequality
 :geoo/construction/rod_steel/edge_ld.S: 126 96
 :geoo/construction/rod_steel/straight32.S: 0 72 rrr
 :geoo/construction/rod_steel/straight8.S: 80 36
-:geoo/construction/rod_steel/edge_rd.S: 74 36
+:geoo/construction/rod_steel/edge_rd.S: 76 36
 :geoo/construction/rod_steel/straight8.S: 88 36
 :geoo/construction/rod_steel/edge_ld.S: 96 36
-:geoo/construction/rod_steel/straight8.S: 74 44 rrr
+:geoo/construction/rod_steel/straight8.S: 76 44 rrr
 :geoo/construction/rod_steel/straight8.S: 88 52
 :geoo/construction/rod_steel/edge_lu.S: 96 52
 :geoo/construction/rod_steel/straight8.S: 80 52
-:geoo/construction/rod_steel/edge_ru.S: 74 52
+:geoo/construction/rod_steel/edge_ru.S: 76 52
 :geoo/construction/rod_steel/straight8.S: 96 44 rrr
 :geoo/construction/rod_steel/edge_rd.S: 106 36
 :geoo/construction/rod_steel/straight8.S: 122 36
-:geoo/construction/rod_steel/edge_ld.S: 128 36
+:geoo/construction/rod_steel/edge_ld.S: 126 36
 :geoo/construction/rod_steel/straight8.S: 106 44 rrr
 :geoo/construction/rod_steel/straight8.S: 122 52
-:geoo/construction/rod_steel/edge_lu.S: 128 52
+:geoo/construction/rod_steel/edge_lu.S: 126 52
 :geoo/construction/rod_steel/edge_ru.S: 106 52
-:geoo/construction/rod_steel/straight8.S: 128 44 rrr
+:geoo/construction/rod_steel/straight8.S: 126 44 rrr
 :geoo/construction/rod_steel/end_rect.S: 94 128 frr
 :geoo/construction/rod_steel/straight8.S: 86 128
 :geoo/construction/rod_steel/end_rect.S: 108 128

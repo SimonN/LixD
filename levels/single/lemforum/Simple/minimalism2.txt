@@ -1,10 +1,10 @@
-$BUILT 2016-08-03 01:29:41
+$BUILT 2017-02-16 12:02:02
 $AUTHOR geoo
 $ENGLISH Minimalism
 
 #INTENDED_NUMBER_OF_PLAYERS 1
-#SIZE_X 640
-#SIZE_Y 400
+#SIZE_X 576
+#SIZE_Y 288
 #START_X 0
 #START_Y 0
 
@@ -17,21 +17,21 @@ $ENGLISH Minimalism
 #BATTER 1
 #EXPLODER2 0
 
-:geoo/abstract/hatch.H: 224 136
+:geoo/abstract/hatch.H: 192 72
 
-:geoo/abstract/goal.G: 144 176
+:geoo/abstract/goal.G: 112 112
 
-:geoo/abstract/pipes/central0: 128 224
-:geoo/abstract/pipes/central0: 160 224
-:geoo/abstract/pipes/central0: 192 224
-:geoo/abstract/pipes/central0: 224 224
-:geoo/abstract/pipes/central0: 256 224
-:geoo/abstract/pipes/central0: 288 224
-:geoo/abstract/pipes/central0: 320 224
-:geoo/abstract/pipes/central0: 352 224
-:geoo/abstract/pipes/central0: 384 224
-:geoo/abstract/pipes/central0: 416 224
-:geoo/abstract/pipes/central0: 448 224
-:geoo/abstract/pipes/central0: 480 224
-:geoo/abstract/pipes/endr0: 512 224
-:geoo/abstract/pipes/endr0: 120 224 rr
+:geoo/abstract/pipes/central0: 96 160
+:geoo/abstract/pipes/central0: 128 160
+:geoo/abstract/pipes/central0: 160 160
+:geoo/abstract/pipes/central0: 192 160
+:geoo/abstract/pipes/central0: 224 160
+:geoo/abstract/pipes/central0: 256 160
+:geoo/abstract/pipes/central0: 288 160
+:geoo/abstract/pipes/central0: 320 160
+:geoo/abstract/pipes/central0: 352 160
+:geoo/abstract/pipes/central0: 384 160
+:geoo/abstract/pipes/central0: 416 160
+:geoo/abstract/pipes/central0: 448 160
+:geoo/abstract/pipes/endr0: 480 160
+:geoo/abstract/pipes/endr0: 88 160 rr

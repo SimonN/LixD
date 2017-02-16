@@ -1,10 +1,10 @@
-$BUILT 2016-07-16 21:26:08
+$BUILT 2017-02-16 12:13:28
 $AUTHOR geoo
 $ENGLISH Backslash
 
 #INTENDED_NUMBER_OF_PLAYERS 1
-#SIZE_X 640
-#SIZE_Y 400
+#SIZE_X 384
+#SIZE_Y 288
 
 #INITIAL 20
 #REQUIRED 16
@@ -15,33 +15,33 @@ $ENGLISH Backslash
 #MINER 1
 #EXPLODER2 0
 
-:matt/underworld/Hatch.H: 288 128
-:matt/underworld/Hatch.H: 288 192
+:matt/underworld/Hatch.H: 160 16
+:matt/underworld/Hatch.H: 160 80
 
-:matt/underworld/Goal.G: 224 334
-:matt/underworld/Goal.G: 352 334
+:matt/underworld/Goal.G: 96 222
+:matt/underworld/Goal.G: 224 222
 
-:matt/underworld/thinplatform128: 256 192
-:matt/underworld/thinplatform16: 304 304
-:matt/underworld/thinplatform16: 320 304
-:matt/underworld/thinplatform128: 0 398
-:matt/underworld/thinplatform128: 128 398
-:matt/underworld/thinplatform128: 256 398
-:matt/underworld/thinplatform128: 384 398
-:matt/underworld/thinplatform128: 512 398
-:matt/underworld/thinplatform16: 304 232
-:matt/underworld/thinplatform16: 320 232
-:matt/underworld/thinplatform16: 336 232
-:matt/underworld/thinplatform16: 352 232
-:matt/underworld/thinplatform16: 272 232
-:matt/underworld/thinplatform16: 288 232
-:matt/underworld/thinplatform128: 304 232
-:matt/underworld/thinplatform128: 208 232
-:geoo/construction/platform.S: 272 192
-:geoo/construction/platform.S: 240 192
-:geoo/construction/platform.S: 208 192
-:geoo/construction/platform.S: 176 192
-:geoo/construction/platform.S: 368 192
-:geoo/construction/platform.S: 336 192
-:geoo/construction/platform.S: 432 192
-:geoo/construction/platform.S: 400 192
+:matt/underworld/thinplatform128: 128 80
+:matt/underworld/thinplatform16: 176 192
+:matt/underworld/thinplatform16: 192 192
+:matt/underworld/thinplatform128: -128 286
+:matt/underworld/thinplatform128: 0 286
+:matt/underworld/thinplatform128: 128 286
+:matt/underworld/thinplatform128: 256 286
+:matt/underworld/thinplatform128: 384 286
+:matt/underworld/thinplatform16: 176 120
+:matt/underworld/thinplatform16: 192 120
+:matt/underworld/thinplatform16: 208 120
+:matt/underworld/thinplatform16: 224 120
+:matt/underworld/thinplatform16: 144 120
+:matt/underworld/thinplatform16: 160 120
+:matt/underworld/thinplatform128: 176 120
+:matt/underworld/thinplatform128: 80 120
+:geoo/construction/platform.S: 144 80
+:geoo/construction/platform.S: 112 80
+:geoo/construction/platform.S: 80 80
+:geoo/construction/platform.S: 48 80
+:geoo/construction/platform.S: 240 80
+:geoo/construction/platform.S: 208 80
+:geoo/construction/platform.S: 304 80
+:geoo/construction/platform.S: 272 80

@@ -1,10 +1,10 @@
-$BUILT 2016-07-03 00:36:14
+$BUILT 2017-02-16 11:48:34
 $AUTHOR Insane Steve
 $ENGLISH Snowjump
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
-#SIZE_Y 400
+#SIZE_Y 272
 #START_X 0
 #START_Y 0
 
@@ -17,44 +17,44 @@ $ENGLISH Snowjump
 #CUBER 2
 #EXPLODER2 0
 
-:matt/winter/Hatch.H: 72 168
+:matt/winter/Hatch.H: 72 40
 
-:matt/winter/Goal.G: 522 240
+:matt/winter/Goal.G: 522 112
 
-:matt/winter/18: 552 300
-:matt/winter/17: 402 320
-:matt/winter/00: 394 290
-:matt/winter/10: 6 290
-:matt/winter/10: 0 292
-:matt/winter/14: 288 352
-:matt/winter/03: 168 336
-:matt/winter/00: 232 344
-:matt/winter/00: 168 360
-:matt/winter/11: 128 328
-:matt/winter/11: 136 352
-:matt/winter/17: 24 296
-:matt/winter/17: 72 296
-:matt/winter/16: -40 288
-:matt/winter/16: -8 288
-:matt/winter/13: 104 288
-:matt/winter/13: 88 272
-:matt/winter/13: 64 272
-:matt/winter/11: 24 256
-:matt/winter/00: -32 272
-:matt/winter/00: -24 216
-:matt/winter/00: -16 192
-:matt/winter/06: 268 352 rrr
-:matt/winter/06: 210 352 rrr
-:matt/winter/06: 162 352 rrr
-:matt/winter/06: 112 352 rrr
-:matt/winter/06: 56 352 rrr
-:matt/winter/06: 6 352 rrr
-:matt/winter/06: -18 352 rrr
-:matt/winter/06: 268 336 rrrd
-:matt/winter/03: 198 310 rrd
-:matt/winter/06: 392 322
-:matt/winter/06: 392 346
-:matt/winter/06: 316 368
-:matt/winter/16: 422 284
-:matt/winter/17: 498 288
-:matt/winter/16: 534 290
+:matt/winter/18: 552 172
+:matt/winter/17: 402 192
+:matt/winter/00: 394 162
+:matt/winter/10: 6 162
+:matt/winter/10: 0 164
+:matt/winter/14: 288 224
+:matt/winter/03: 168 208
+:matt/winter/00: 232 216
+:matt/winter/00: 168 232
+:matt/winter/11: 128 200
+:matt/winter/11: 136 224
+:matt/winter/17: 24 168
+:matt/winter/17: 72 168
+:matt/winter/16: -40 160
+:matt/winter/16: -8 160
+:matt/winter/13: 104 160
+:matt/winter/13: 88 144
+:matt/winter/13: 64 144
+:matt/winter/11: 24 128
+:matt/winter/00: -32 144
+:matt/winter/00: -24 88
+:matt/winter/00: -16 64
+:matt/winter/06: 268 224 rrr
+:matt/winter/06: 210 224 rrr
+:matt/winter/06: 162 224 rrr
+:matt/winter/06: 112 224 rrr
+:matt/winter/06: 56 224 rrr
+:matt/winter/06: 6 224 rrr
+:matt/winter/06: -18 224 rrr
+:matt/winter/06: 268 208 rrrd
+:matt/winter/03: 198 182 rrd
+:matt/winter/06: 392 194
+:matt/winter/06: 392 218
+:matt/winter/06: 316 240
+:matt/winter/16: 422 156
+:matt/winter/17: 498 160
+:matt/winter/16: 534 162

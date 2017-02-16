@@ -1,10 +1,10 @@
-$BUILT 2016-07-03 00:50:17
+$BUILT 2017-02-21 11:48:48
 $AUTHOR Insane Steve
 $ENGLISH Well OK Then
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
-#SIZE_Y 400
+#SIZE_Y 336
 #START_X 0
 #START_Y 0
 
@@ -19,117 +19,102 @@ $ENGLISH Well OK Then
 #CUBER 6
 #EXPLODER2 0
 
-:geoo/construction/Hatch.H: 160 192
+:geoo/construction/Hatch.H: 160 128
 
-:geoo/construction/Goal2.G: 144 304
+:geoo/construction/Goal2.G: 144 240
 
-:geoo/construction/wall/small_64x32: 130 272
-:geoo/construction/wall/small_64x32: 194 272
-:geoo/construction/wall/small_64x32: 258 272
-:geoo/construction/wall/small_64x32: 322 272
-:geoo/construction/wall/small_64x32: 130 368
-:geoo/construction/wall/small_64x32: 194 368
-:geoo/construction/wall/small_64x32: 258 368
-:geoo/construction/wall/small_64x32: 322 368
-:geoo/steel/16x16o.S: 432 272
-:geoo/steel/16x16o.S: 496 272
-:geoo/steel/16x16o.S: 560 272
-:geoo/construction/wall/small_square: 370 288
-:geoo/construction/wall/small_square: 130 288
-:geoo/construction/wall/small_square: 130 384
-:geoo/construction/wall/small_square: 370 384
-:geoo/construction/rod_steel/straight32.S: 326 232
-:geoo/construction/rod_steel/edge_ru.S: 254 232
-:geoo/construction/rod_steel/end_rect.S: 358 232 frr
-:geoo/construction/rod_steel/straight32.S: 294 232
-:geoo/construction/rod_steel/straight32.S: 262 232
-:geoo/construction/rod_steel/straight32.S: 254 200 rrr
-:geoo/construction/rod_steel/straight32.S: 254 168 rrr
+:geoo/construction/wall/small_64x32: 130 208
+:geoo/construction/wall/small_64x32: 194 208
+:geoo/construction/wall/small_64x32: 258 208
+:geoo/construction/wall/small_64x32: 322 208
+:geoo/construction/wall/small_64x32: 130 304
+:geoo/construction/wall/small_64x32: 194 304
+:geoo/construction/wall/small_64x32: 258 304
+:geoo/construction/wall/small_64x32: 322 304
+:geoo/steel/16x16o.S: 432 208
+:geoo/steel/16x16o.S: 496 208
+:geoo/steel/16x16o.S: 560 208
+:geoo/construction/wall/small_square: 370 224
+:geoo/construction/wall/small_square: 130 224
+:geoo/construction/wall/small_square: 130 320
+:geoo/construction/wall/small_square: 370 320
+:geoo/construction/rod_steel/straight32.S: 326 168
+:geoo/construction/rod_steel/edge_ru.S: 254 168
+:geoo/construction/rod_steel/end_rect.S: 358 168 frr
+:geoo/construction/rod_steel/straight32.S: 294 168
+:geoo/construction/rod_steel/straight32.S: 262 168
 :geoo/construction/rod_steel/straight32.S: 254 136 rrr
 :geoo/construction/rod_steel/straight32.S: 254 104 rrr
 :geoo/construction/rod_steel/straight32.S: 254 72 rrr
 :geoo/construction/rod_steel/straight32.S: 254 40 rrr
 :geoo/construction/rod_steel/straight32.S: 254 8 rrr
 :geoo/construction/rod_steel/straight32.S: 254 -24 rrr
-:geoo/construction/rod_steel/edge_ru.S: 270 216
-:geoo/construction/rod_steel/end_rect.S: 342 216 frr
-:geoo/construction/rod_steel/straight32.S: 310 216
-:geoo/construction/rod_steel/straight32.S: 278 216
-:geoo/construction/rod_steel/straight32.S: 270 184 rrr
-:geoo/construction/rod_steel/straight32.S: 270 152 rrr
+:geoo/construction/rod_steel/edge_ru.S: 270 152
+:geoo/construction/rod_steel/end_rect.S: 342 152 frr
+:geoo/construction/rod_steel/straight32.S: 310 152
+:geoo/construction/rod_steel/straight32.S: 278 152
 :geoo/construction/rod_steel/straight32.S: 270 120 rrr
 :geoo/construction/rod_steel/straight32.S: 270 88 rrr
 :geoo/construction/rod_steel/straight32.S: 270 56 rrr
 :geoo/construction/rod_steel/straight32.S: 270 24 rrr
 :geoo/construction/rod_steel/straight32.S: 270 -8 rrr
-:geoo/construction/rod_steel/edge_ru.S: 286 200
-:geoo/construction/rod_steel/end_rect.S: 326 200 frr
-:geoo/construction/rod_steel/straight32.S: 294 200
-:geoo/construction/rod_steel/straight32.S: 286 168 rrr
-:geoo/construction/rod_steel/straight32.S: 286 136 rrr
+:geoo/construction/rod_steel/edge_ru.S: 286 136
+:geoo/construction/rod_steel/end_rect.S: 326 136 frr
+:geoo/construction/rod_steel/straight32.S: 294 136
 :geoo/construction/rod_steel/straight32.S: 286 104 rrr
 :geoo/construction/rod_steel/straight32.S: 286 72 rrr
 :geoo/construction/rod_steel/straight32.S: 286 40 rrr
 :geoo/construction/rod_steel/straight32.S: 286 8 rrr
 :geoo/construction/rod_steel/straight32.S: 286 -24 rrr
-:geoo/construction/rod_steel/edge_ru.S: 302 184
-:geoo/construction/rod_steel/end_rect.S: 310 184 frr
-:geoo/construction/rod_steel/straight32.S: 302 152 rrr
-:geoo/construction/rod_steel/straight32.S: 302 120 rrr
+:geoo/construction/rod_steel/edge_ru.S: 302 120
+:geoo/construction/rod_steel/end_rect.S: 310 120 frr
 :geoo/construction/rod_steel/straight32.S: 302 88 rrr
 :geoo/construction/rod_steel/straight32.S: 302 56 rrr
 :geoo/construction/rod_steel/straight32.S: 302 24 rrr
 :geoo/construction/rod_steel/straight32.S: 302 -8 rrr
-:geoo/construction/rod_steel/straight32.S: 158 40 rrr
 :geoo/construction/rod_steel/straight32.S: 158 8 rrr
 :geoo/construction/rod_steel/straight32.S: 158 -24 rrr
-:geoo/construction/rod_steel/straight32.S: 174 40 rrr
 :geoo/construction/rod_steel/straight32.S: 174 8 rrr
 :geoo/construction/rod_steel/straight32.S: 174 -24 rrr
-:geoo/construction/rod_steel/straight32.S: 190 40 rrr
 :geoo/construction/rod_steel/straight32.S: 190 8 rrr
 :geoo/construction/rod_steel/straight32.S: 190 -24 rrr
-:geoo/construction/rod_steel/straight32.S: 206 40 rrr
 :geoo/construction/rod_steel/straight32.S: 206 8 rrr
 :geoo/construction/rod_steel/straight32.S: 206 -24 rrr
-:geoo/construction/rod_steel/edge_lu.S: 158 72
-:geoo/construction/rod_steel/edge_lu.S: 174 88
-:geoo/construction/rod_steel/edge_lu.S: 190 104
-:geoo/construction/rod_steel/edge_lu.S: 206 120
-:geoo/construction/rod_steel/straight32.S: 174 56 rrr
-:geoo/construction/rod_steel/straight32.S: 190 72 rrr
-:geoo/construction/rod_steel/straight32.S: 206 72 rrr
-:geoo/construction/rod_steel/straight32.S: 206 88 rrr
+:geoo/construction/rod_steel/edge_lu.S: 158 40
+:geoo/construction/rod_steel/edge_lu.S: 174 56
+:geoo/construction/rod_steel/edge_lu.S: 190 72
+:geoo/construction/rod_steel/edge_lu.S: 206 88
+:geoo/construction/rod_steel/straight32.S: 174 24 rrr
+:geoo/construction/rod_steel/straight32.S: 190 40 rrr
+:geoo/construction/rod_steel/straight32.S: 206 40 rrr
+:geoo/construction/rod_steel/straight32.S: 206 56 rrr
+:geoo/construction/rod_steel/straight32.S: 62 56
+:geoo/construction/rod_steel/straight32.S: 158 72
+:geoo/construction/rod_steel/straight32.S: 174 88
+:geoo/construction/rod_steel/straight32.S: 46 72
 :geoo/construction/rod_steel/straight32.S: 62 88
-:geoo/construction/rod_steel/straight32.S: 158 104
-:geoo/construction/rod_steel/straight32.S: 174 120
-:geoo/construction/rod_steel/straight32.S: 46 104
-:geoo/construction/rod_steel/straight32.S: 62 120
-:geoo/construction/rod_steel/straight32.S: 30 120
-:geoo/construction/rod_steel/straight32.S: 342 248
-:geoo/construction/rod_steel/edge_ru.S: 238 248
-:geoo/construction/rod_steel/end_rect.S: 374 248 frr
-:geoo/construction/rod_steel/straight32.S: 310 248
-:geoo/construction/rod_steel/straight32.S: 278 248
-:geoo/construction/rod_steel/straight32.S: 246 248
-:geoo/construction/rod_steel/straight32.S: 238 216 rrr
-:geoo/construction/rod_steel/straight32.S: 238 184 rrr
+:geoo/construction/rod_steel/straight32.S: 30 88
+:geoo/construction/rod_steel/straight32.S: 342 184
+:geoo/construction/rod_steel/edge_ru.S: 238 184
+:geoo/construction/rod_steel/end_rect.S: 374 184 frr
+:geoo/construction/rod_steel/straight32.S: 310 184
+:geoo/construction/rod_steel/straight32.S: 278 184
+:geoo/construction/rod_steel/straight32.S: 246 184
 :geoo/construction/rod_steel/straight32.S: 238 152 rrr
 :geoo/construction/rod_steel/straight32.S: 238 120 rrr
 :geoo/construction/rod_steel/straight32.S: 238 88 rrr
 :geoo/construction/rod_steel/straight32.S: 238 56 rrr
 :geoo/construction/rod_steel/straight32.S: 238 24 rrr
 :geoo/construction/rod_steel/straight32.S: 238 -8 rrr
-:geoo/construction/rod_steel/straight32.S: 222 56 rrr
 :geoo/construction/rod_steel/straight32.S: 222 24 rrr
 :geoo/construction/rod_steel/straight32.S: 222 -8 rrr
-:geoo/construction/rod_steel/edge_lu.S: 222 136
-:geoo/construction/rod_steel/straight32.S: 222 88 rrr
-:geoo/construction/rod_steel/straight32.S: 222 104 rrr
-:geoo/construction/rod_steel/straight32.S: 190 136
-:geoo/construction/rod_steel/straight32.S: 158 136
-:geoo/construction/rod_steel/straight32.S: 46 136
-:geoo/construction/rod_steel/straight32.S: 14 136
+:geoo/construction/rod_steel/edge_lu.S: 222 104
+:geoo/construction/rod_steel/straight32.S: 222 56 rrr
+:geoo/construction/rod_steel/straight32.S: 222 72 rrr
+:geoo/construction/rod_steel/straight32.S: 190 104
+:geoo/construction/rod_steel/straight32.S: 158 104
+:geoo/construction/rod_steel/straight32.S: 46 104
+:geoo/construction/rod_steel/straight32.S: 14 104
 :geoo/construction/rod_steel/straight32.S: 598 104 rrr
 :geoo/construction/rod_steel/end_rect.S: 614 152 rrr
 :geoo/construction/rod_steel/end_rect.S: 598 136 rrr
@@ -143,45 +128,40 @@ $ENGLISH Well OK Then
 :geoo/construction/rod_steel/straight32.S: 614 88 rrr
 :geoo/construction/rod_steel/end_rect.S: 630 168 rrr
 :geoo/construction/rod_steel/straight32.S: 630 72 rrr
-:geoo/construction/rod_steel/straight32.S: 94 88
-:geoo/construction/rod_steel/straight32.S: 78 104
-:geoo/construction/rod_steel/straight32.S: 94 120
-:geoo/construction/rod_steel/straight32.S: 62 120
-:geoo/construction/rod_steel/straight32.S: 78 136
-:geoo/construction/rod_steel/straight32.S: 46 136
-:geoo/construction/rod_steel/straight32.S: 142 88
-:geoo/construction/rod_steel/straight32.S: 126 104
-:geoo/construction/rod_steel/straight32.S: 142 120
-:geoo/construction/rod_steel/straight32.S: 94 120
-:geoo/construction/rod_steel/straight32.S: 126 136
-:geoo/construction/rod_steel/straight32.S: 78 136
-:geoo/construction/rod_steel/edge_ru.S: 6 136
-:geoo/construction/rod_steel/edge_ru.S: 22 120
-:geoo/construction/rod_steel/edge_ru.S: 38 104
+:geoo/construction/rod_steel/straight32.S: 94 56
 :geoo/construction/rod_steel/straight32.S: 78 72
-:geoo/construction/rod_steel/edge_ru.S: 54 88
-:geoo/construction/rod_steel/edge_ru.S: 70 72
+:geoo/construction/rod_steel/straight32.S: 94 88
+:geoo/construction/rod_steel/straight32.S: 62 88
+:geoo/construction/rod_steel/straight32.S: 78 104
+:geoo/construction/rod_steel/straight32.S: 46 104
+:geoo/construction/rod_steel/straight32.S: 142 56
 :geoo/construction/rod_steel/straight32.S: 126 72
-:geoo/construction/rod_steel/straight32.S: 22 8 rrr
+:geoo/construction/rod_steel/straight32.S: 142 88
+:geoo/construction/rod_steel/straight32.S: 94 88
+:geoo/construction/rod_steel/straight32.S: 126 104
+:geoo/construction/rod_steel/straight32.S: 78 104
+:geoo/construction/rod_steel/edge_ru.S: 6 104
+:geoo/construction/rod_steel/edge_ru.S: 22 88
+:geoo/construction/rod_steel/edge_ru.S: 38 72
+:geoo/construction/rod_steel/straight32.S: 78 40
+:geoo/construction/rod_steel/edge_ru.S: 54 56
+:geoo/construction/rod_steel/edge_ru.S: 70 40
+:geoo/construction/rod_steel/straight32.S: 126 40
 :geoo/construction/rod_steel/straight32.S: 22 -24 rrr
-:geoo/construction/rod_steel/straight32.S: 38 24 rrr
 :geoo/construction/rod_steel/straight32.S: 38 -8 rrr
-:geoo/construction/rod_steel/straight32.S: 54 24 rrr
 :geoo/construction/rod_steel/straight32.S: 54 -8 rrr
-:geoo/construction/rod_steel/straight32.S: 70 40 rrr
 :geoo/construction/rod_steel/straight32.S: 70 8 rrr
-:geoo/construction/rod_steel/straight32.S: 6 24 rrr
-:geoo/construction/rod_steel/straight32.S: 6 -8 rrr
-:geoo/construction/rod_steel/straight32.S: 6 72 rrr
-:geoo/construction/rod_steel/straight32.S: 6 40 rrr
-:geoo/construction/rod_steel/straight32.S: 22 56 rrr
-:geoo/construction/rod_steel/straight32.S: 22 24 rrr
-:geoo/construction/rod_steel/straight32.S: 38 72 rrr
-:geoo/construction/rod_steel/straight32.S: 38 40 rrr
-:geoo/construction/rod_steel/straight32.S: 6 104 rrr
-:geoo/construction/rod_steel/straight32.S: 22 88 rrr
-:geoo/construction/rod_steel/straight32.S: 54 56 rrr
 :geoo/construction/rod_steel/straight32.S: 70 -24 rrr
+:geoo/construction/rod_steel/straight32.S: 6 -8 rrr
+:geoo/construction/rod_steel/straight32.S: 6 40 rrr
+:geoo/construction/rod_steel/straight32.S: 6 8 rrr
+:geoo/construction/rod_steel/straight32.S: 22 24 rrr
+:geoo/construction/rod_steel/straight32.S: 22 -8 rrr
+:geoo/construction/rod_steel/straight32.S: 38 40 rrr
+:geoo/construction/rod_steel/straight32.S: 38 8 rrr
+:geoo/construction/rod_steel/straight32.S: 6 72 rrr
+:geoo/construction/rod_steel/straight32.S: 22 56 rrr
+:geoo/construction/rod_steel/straight32.S: 54 24 rrr
 :geoo/construction/rod_steel/straight32.S: 454 16
 :geoo/construction/rod_steel/straight32.S: 438 32
 :geoo/construction/rod_steel/straight32.S: 454 48
@@ -243,10 +223,10 @@ $ENGLISH Well OK Then
 :geoo/construction/rod_steel/straight32.S: 614 120 rrr
 :geoo/construction/rod_steel/straight32.S: 630 104 rrr
 :geoo/construction/rod_steel/straight32.S: 630 136 rrr
+:geoo/construction/rod_steel/straight32.S: 110 56
+:geoo/construction/rod_steel/straight32.S: 94 72
 :geoo/construction/rod_steel/straight32.S: 110 88
 :geoo/construction/rod_steel/straight32.S: 94 104
-:geoo/construction/rod_steel/straight32.S: 110 120
-:geoo/construction/rod_steel/straight32.S: 94 136
-:geoo/construction/rod_steel/straight32.S: 110 120
-:geoo/construction/rod_steel/straight32.S: 94 136
-:geoo/construction/rod_steel/straight32.S: 94 72
+:geoo/construction/rod_steel/straight32.S: 110 88
+:geoo/construction/rod_steel/straight32.S: 94 104
+:geoo/construction/rod_steel/straight32.S: 94 40

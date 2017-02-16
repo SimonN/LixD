@@ -1,9 +1,9 @@
-$BUILT 2016-07-16 19:41:13
+$BUILT 2017-02-19 18:28:12
 $AUTHOR geoo
 $ENGLISH The Ob3lisk
 
 #INTENDED_NUMBER_OF_PLAYERS 1
-#SIZE_X 640
+#SIZE_X 448
 #SIZE_Y 400
 #START_X 0
 #START_Y 0
@@ -19,40 +19,40 @@ $ENGLISH The Ob3lisk
 #CUBER 40
 #EXPLODER2 0
 
-:geoo/construction/Hatch.H: 304 0
-:geoo/construction/Hatch.H: 336 352
+:geoo/construction/Hatch.H: 208 0
+:geoo/construction/Hatch.H: 240 352
 
-:geoo/abstract/goal.G: 304 96
+:geoo/abstract/goal.G: 208 96
 
-:geoo/steel/dark_16x32o.S: 288 352
-:geoo/steel/dark_16x32o.S: 288 320
-:geoo/steel/dark_16x32o.S: 288 288
-:geoo/steel/dark_16x32o.S: 336 96
-:geoo/steel/dark_16x32o.S: 336 128
-:geoo/steel/dark_16x32o.S: 336 160
-:geoo/steel/dark_64x64.S: 288 32
-:geoo/steel/dark_64x64o.S: 224 384
-:geoo/steel/dark_64x64o.S: 288 384
-:geoo/steel/dark_64x64o.S: 352 384
-:geoo/sandstone/32x32: 304 336
-:geoo/sandstone/32x16: 304 96
-:geoo/sandstone/16x32: 288 96
-:geoo/sandstone/16x32: 288 128
-:geoo/sandstone/16x32: 336 352
-:geoo/sandstone/16x32: 336 320
-:geoo/sandstone/32x16: 304 368
-:geoo/sandstone/32x64: 304 272
-:geoo/sandstone/32x64: 304 176
-:geoo/sandstone/32x32: 304 240
-:geoo/sandstone/16x32: 288 160
-:geoo/sandstone/16x32: 288 192
-:geoo/sandstone/16x32: 288 224
-:geoo/sandstone/16x32: 288 256
-:geoo/sandstone/16x32: 336 192
-:geoo/sandstone/16x32: 336 224
-:geoo/sandstone/16x32: 336 256
-:geoo/sandstone/16x32: 336 288
-:geoo/sandstone/smaragd: 312 248
-:geoo/sandstone/smaragd: 312 296
-:geoo/sandstone/smaragd: 312 200
-:geoo/sandstone/32x32: 304 144
+:geoo/steel/dark_16x32o.S: 192 352
+:geoo/steel/dark_16x32o.S: 192 320
+:geoo/steel/dark_16x32o.S: 192 288
+:geoo/steel/dark_16x32o.S: 240 96
+:geoo/steel/dark_16x32o.S: 240 128
+:geoo/steel/dark_16x32o.S: 240 160
+:geoo/steel/dark_64x64.S: 192 32
+:geoo/steel/dark_64x64o.S: 128 384
+:geoo/steel/dark_64x64o.S: 192 384
+:geoo/steel/dark_64x64o.S: 256 384
+:geoo/sandstone/32x32: 208 336
+:geoo/sandstone/32x16: 208 96
+:geoo/sandstone/16x32: 192 96
+:geoo/sandstone/16x32: 192 128
+:geoo/sandstone/16x32: 240 352
+:geoo/sandstone/16x32: 240 320
+:geoo/sandstone/32x16: 208 368
+:geoo/sandstone/32x64: 208 272
+:geoo/sandstone/32x64: 208 176
+:geoo/sandstone/32x32: 208 240
+:geoo/sandstone/16x32: 192 160
+:geoo/sandstone/16x32: 192 192
+:geoo/sandstone/16x32: 192 224
+:geoo/sandstone/16x32: 192 256
+:geoo/sandstone/16x32: 240 192
+:geoo/sandstone/16x32: 240 224
+:geoo/sandstone/16x32: 240 256
+:geoo/sandstone/16x32: 240 288
+:geoo/sandstone/smaragd: 216 248
+:geoo/sandstone/smaragd: 216 296
+:geoo/sandstone/smaragd: 216 200
+:geoo/sandstone/32x32: 208 144

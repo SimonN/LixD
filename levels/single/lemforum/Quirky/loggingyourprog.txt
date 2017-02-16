@@ -1,10 +1,10 @@
-$BUILT 2016-07-02 23:37:22
+$BUILT 2017-02-16 11:58:10
 $AUTHOR Simon
 $ENGLISH Logging Your Progress
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
-#SIZE_Y 400
+#SIZE_Y 320
 #START_X 0
 #START_Y 0
 
@@ -18,97 +18,94 @@ $ENGLISH Logging Your Progress
 #BATTER 2
 #EXPLODER2 0
 
-:geoo/construction/Hatch.H: 64 208
+:geoo/construction/Hatch.H: 64 128
 
-:simon/tapir/goal.G: 544 248
+:simon/tapir/goal.G: 544 168
 
-:simon/tapir/128: -80 296
-:simon/tapir/128: 48 296
-:simon/tapir/008h: 40 304
-:simon/tapir/008h: 40 320
-:simon/tapir/008h: 40 336
-:simon/tapir/128: 176 296
-:simon/tapir/008h: 168 304
-:simon/tapir/008h: 168 320
-:simon/tapir/008h: 168 336
-:simon/tapir/128: 304 296
-:simon/tapir/008h: 296 304
-:simon/tapir/008h: 296 320
-:simon/tapir/008h: 296 336
-:simon/tapir/008h: 296 352
-:simon/tapir/008h: 168 352
-:simon/tapir/008h: 40 352
-:simon/tapir/128: 432 296
-:simon/tapir/008h: 424 304
-:simon/tapir/008h: 424 320
-:simon/tapir/008h: 424 336
-:simon/tapir/008h: 424 352
-:simon/tapir/128: 560 296
-:simon/tapir/008h: 552 304
-:simon/tapir/008h: 552 320
-:simon/tapir/008h: 552 336
-:simon/tapir/008h: 552 352
-:geoo/construction/pillar_32: 304 232 r
-:geoo/construction/pillar_32: 336 232 r
-:geoo/construction/pillar_32: 368 232 r
-:geoo/construction/pillar_32: 400 232 r
-:geoo/construction/pillar_bottom: 464 232 fr
-:geoo/construction/pillar_bottom: 288 232 r
-:geoo/sandstone/pillar_32: 216 264 fr
-:geoo/sandstone/pillar_32: 248 264 r
-:geoo/sandstone/pillar_32: 256 264 r
-:geoo/sandstone/pillar_32: 288 264 r
-:geoo/sandstone/pillar_32: 320 264 r
-:geoo/sandstone/pillar_32: 384 264 r
-:geoo/sandstone/pillar_32: 416 264 r
-:geoo/sandstone/pillar_32: 448 264 r
-:geoo/sandstone/pillar_top_jaggedl: 474 264 r
-:geoo/sandstone/pillar_top_jaggedr: 184 264 fr
-:simon/tapir/032h: 80 48
-:simon/tapir/032v: 96 -16
-:simon/tapir/032h: 176 144
-:simon/tapir/032v: 192 80
-:simon/tapir/032v: 192 16
-:simon/tapir/032v: 192 -48
-:simon/tapir/032h: 16 96
-:simon/tapir/032v: 32 32
-:simon/tapir/032v: 32 -32
+:simon/tapir/128: -80 216
+:simon/tapir/128: 48 216
+:simon/tapir/008h: 40 224
+:simon/tapir/008h: 40 240
+:simon/tapir/008h: 40 256
+:simon/tapir/128: 176 216
+:simon/tapir/008h: 168 224
+:simon/tapir/008h: 168 240
+:simon/tapir/008h: 168 256
+:simon/tapir/128: 304 216
+:simon/tapir/008h: 296 224
+:simon/tapir/008h: 296 240
+:simon/tapir/008h: 296 256
+:simon/tapir/008h: 296 272
+:simon/tapir/008h: 168 272
+:simon/tapir/008h: 40 272
+:simon/tapir/128: 432 216
+:simon/tapir/008h: 424 224
+:simon/tapir/008h: 424 240
+:simon/tapir/008h: 424 256
+:simon/tapir/008h: 424 272
+:simon/tapir/128: 560 216
+:simon/tapir/008h: 552 224
+:simon/tapir/008h: 552 240
+:simon/tapir/008h: 552 256
+:simon/tapir/008h: 552 272
+:geoo/construction/pillar_32: 304 152 r
+:geoo/construction/pillar_32: 336 152 r
+:geoo/construction/pillar_32: 368 152 r
+:geoo/construction/pillar_32: 400 152 r
+:geoo/construction/pillar_bottom: 464 152 fr
+:geoo/construction/pillar_bottom: 288 152 r
+:geoo/sandstone/pillar_32: 216 184 fr
+:geoo/sandstone/pillar_32: 248 184 r
+:geoo/sandstone/pillar_32: 256 184 r
+:geoo/sandstone/pillar_32: 288 184 r
+:geoo/sandstone/pillar_32: 320 184 r
+:geoo/sandstone/pillar_32: 384 184 r
+:geoo/sandstone/pillar_32: 416 184 r
+:geoo/sandstone/pillar_32: 448 184 r
+:geoo/sandstone/pillar_top_jaggedl: 474 184 r
+:geoo/sandstone/pillar_top_jaggedr: 184 184 fr
+:simon/tapir/032h: 88 16
+:simon/tapir/032v: 104 -48
+:simon/tapir/032h: 176 88
+:simon/tapir/032v: 192 24
+:simon/tapir/032v: 192 -40
+:simon/tapir/032h: 16 80
+:simon/tapir/032v: 32 16
+:simon/tapir/032v: 32 -48
 :simon/tapir/032h: 448 32
 :simon/tapir/032v: 464 -32
 :simon/tapir/032h: 544 112
 :simon/tapir/032v: 560 48
 :simon/tapir/032v: 560 -16
-:simon/tapir/008v: 38 24
-:simon/tapir/008v: 50 24
-:simon/tapir/008v: 114 40
-:simon/tapir/008v: 102 40
-:simon/tapir/008v: 50 88
-:simon/tapir/008v: 38 88
-:simon/tapir/008v: 210 8
-:simon/tapir/008v: 198 8
-:simon/tapir/008v: 210 72
-:simon/tapir/008v: 198 72
-:simon/tapir/008v: 198 136
-:simon/tapir/008v: 210 136
+:simon/tapir/008v: 38 8
+:simon/tapir/008v: 50 8
+:simon/tapir/008v: 122 8
+:simon/tapir/008v: 110 8
+:simon/tapir/008v: 50 72
+:simon/tapir/008v: 38 72
+:simon/tapir/008v: 210 16
+:simon/tapir/008v: 198 16
+:simon/tapir/008v: 198 80
+:simon/tapir/008v: 210 80
 :simon/tapir/008v: 470 24
 :simon/tapir/008v: 482 24
 :simon/tapir/008v: 566 40
 :simon/tapir/008v: 578 40
 :simon/tapir/008v: 566 104
 :simon/tapir/008v: 578 104
-:simon/tapir/032h: 304 16
-:simon/tapir/032v: 320 -48
-:simon/tapir/008v: 326 8
-:simon/tapir/008v: 338 8
-:simon/tapir/008h: 40 368
-:simon/tapir/008h: 40 384
-:simon/tapir/008h: 168 368
-:simon/tapir/008h: 168 384
-:simon/tapir/008h: 296 368
-:simon/tapir/008h: 296 384
-:simon/tapir/008h: 424 368
-:simon/tapir/008h: 424 384
-:simon/tapir/008h: 552 368
-:simon/tapir/008h: 552 384
-:geoo/construction/pillar_32: 432 232 r
-:geoo/sandstone/pillar_32: 352 264 r
+:simon/tapir/032h: 304 48
+:simon/tapir/032v: 320 -16
+:simon/tapir/008v: 326 40
+:simon/tapir/008v: 338 40
+:simon/tapir/008h: 40 288
+:simon/tapir/008h: 40 304
+:simon/tapir/008h: 168 288
+:simon/tapir/008h: 168 304
+:simon/tapir/008h: 296 288
+:simon/tapir/008h: 296 304
+:simon/tapir/008h: 424 288
+:simon/tapir/008h: 424 304
+:simon/tapir/008h: 552 288
+:simon/tapir/008h: 552 304
+:geoo/construction/pillar_32: 432 152 r
+:geoo/sandstone/pillar_32: 352 184 r

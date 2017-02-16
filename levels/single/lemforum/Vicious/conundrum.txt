@@ -1,10 +1,10 @@
-$BUILT 2016-07-16 19:22:08
+$BUILT 2017-02-16 12:16:37
 $AUTHOR mobius
 $ENGLISH Conundrum
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1104
-#SIZE_Y 400
+#SIZE_Y 320
 #START_X 0
 #START_Y -20
 
@@ -20,44 +20,44 @@ $ENGLISH Conundrum
 #BASHER 2
 #EXPLODER 0
 
-:matt/underworld/Hatch.H: 88 256
+:matt/underworld/Hatch.H: 88 176
 
-:matt/underworld/Goal.G: 1008 288
+:matt/underworld/Goal.G: 1008 208
 
-:matt/underworld/Lava.W: 736 352
-:matt/underworld/Lava.W: 784 352
-:geoo/sandstone/torch.F: 14 352
-:geoo/sandstone/torch.F: 1058 352
+:matt/underworld/Lava.W: 736 272
+:matt/underworld/Lava.W: 784 272
+:geoo/sandstone/torch.F: 14 272
+:geoo/sandstone/torch.F: 1058 272
 
-:matt/underworld/00: 872 320 rrr
-:matt/underworld/00: 936 320 rrr
-:matt/underworld/01: 32 352
-:matt/underworld/01: 96 352
-:matt/underworld/01: 160 352
-:matt/underworld/01: 224 352
-:matt/underworld/02: 320 304
-:matt/underworld/02: 320 208
-:matt/underworld/02: 384 304
-:matt/underworld/02: 448 304
-:matt/underworld/02: 512 304
-:matt/underworld/02: 320 112
-:matt/underworld/02: 328 112 d
-:matt/underworld/01: 544 352
-:matt/underworld/01: 608 352
-:matt/underworld/01: 672 352
-:matt/underworld/01: 816 352
-:matt/underworld/01: 880 352
-:matt/underworld/01: 944 352
-:matt/underworld/01: 672 384
-:matt/underworld/01: 816 384
-:matt/underworld/01: 1008 352
-:matt/underworld/01: 320 384 d
-:matt/underworld/01: 384 384 d
-:matt/underworld/01: 448 384 d
-:matt/underworld/01: 512 384 d
-:matt/underworld/02: 448 208
-:matt/underworld/02: 456 208 d
-:matt/underworld/02: 432 136 d
-:matt/underworld/02: 504 208
-:matt/underworld/02: 512 208 d
-:matt/underworld/01: 288 352
+:matt/underworld/00: 872 240 rrr
+:matt/underworld/00: 936 240 rrr
+:matt/underworld/01: 32 272
+:matt/underworld/01: 96 272
+:matt/underworld/01: 160 272
+:matt/underworld/01: 224 272
+:matt/underworld/02: 320 224
+:matt/underworld/02: 320 128
+:matt/underworld/02: 384 224
+:matt/underworld/02: 448 224
+:matt/underworld/02: 512 224
+:matt/underworld/02: 320 32
+:matt/underworld/02: 328 32 d
+:matt/underworld/01: 544 272
+:matt/underworld/01: 608 272
+:matt/underworld/01: 672 272
+:matt/underworld/01: 816 272
+:matt/underworld/01: 880 272
+:matt/underworld/01: 944 272
+:matt/underworld/01: 672 304
+:matt/underworld/01: 816 304
+:matt/underworld/01: 1008 272
+:matt/underworld/01: 320 304 d
+:matt/underworld/01: 384 304 d
+:matt/underworld/01: 448 304 d
+:matt/underworld/01: 512 304 d
+:matt/underworld/02: 448 128
+:matt/underworld/02: 456 128 d
+:matt/underworld/02: 432 56 d
+:matt/underworld/02: 504 128
+:matt/underworld/02: 512 128 d
+:matt/underworld/01: 288 272

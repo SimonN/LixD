@@ -1,10 +1,10 @@
-$BUILT 2016-06-28 11:34:31
+$BUILT 2017-02-16 11:58:55
 $AUTHOR minimac
 $ENGLISH Blocked by a Snowball
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
-#SIZE_Y 400
+#SIZE_Y 320
 #START_X 0
 #START_Y 0
 
@@ -27,38 +27,38 @@ $ENGLISH Blocked by a Snowball
 #BATTER 6
 #CUBER 9
 
-:matt/winter/Hatch.H: 162 210
+:matt/winter/Hatch.H: 162 130
 
-:matt/winter/Goal.G: 216 86
+:matt/winter/Goal.G: 216 6
 
-:matt/water.W: 64 368
-:matt/water.W: 0 368
-:matt/water.W: 32 368
+:matt/water.W: 64 288
+:matt/water.W: 0 288
+:matt/water.W: 32 288
 
-:matt/winter/09a: 278 208
-:matt/winter/09b: 352 120 frr
-:matt/winter/00: 216 287
-:matt/winter/01: 188 324
-:matt/winter/04: 130 336
-:matt/winter/10: 240 254
-:matt/winter/11: 408 304
-:matt/winter/14: 450 354 rrr
-:matt/winter/11: 498 336
-:matt/winter/15: 342 338
-:matt/winter/14: 216 354
-:matt/winter/05: 546 -20
-:matt/winter/02: 544 180
-:matt/winter/05: 540 216
-:matt/winter/05: 564 190
-:matt/winter/05: 224 334 rrr
-:matt/winter/05: 318 354 rrr
-:matt/winter/05: 94 362 rrr
-:matt/winter/07: 94 290
-:matt/winter/06: 94 354
-:matt/winter/03: 236 136 rr
-:matt/winter/01: 360 148
-:matt/winter/01: 398 180 rr
-:matt/winter/18: 436 296
-:matt/winter/03: 110 130 rr
-:matt/winter/05: 106 -64 frr
-:matt/winter/01: 80 -28
+:matt/winter/09a: 278 128
+:matt/winter/09b: 352 40 frr
+:matt/winter/00: 216 207
+:matt/winter/01: 188 244
+:matt/winter/04: 130 256
+:matt/winter/10: 240 174
+:matt/winter/11: 408 224
+:matt/winter/14: 450 274 rrr
+:matt/winter/11: 498 256
+:matt/winter/15: 342 258
+:matt/winter/14: 216 274
+:matt/winter/05: 546 -100
+:matt/winter/02: 544 100
+:matt/winter/05: 540 136
+:matt/winter/05: 564 110
+:matt/winter/05: 224 254 rrr
+:matt/winter/05: 318 274 rrr
+:matt/winter/05: 94 282 rrr
+:matt/winter/07: 94 210
+:matt/winter/06: 94 274
+:matt/winter/03: 236 56 rr
+:matt/winter/01: 360 68
+:matt/winter/01: 398 100 rr
+:matt/winter/18: 436 216
+:matt/winter/03: 110 50 rr
+:matt/winter/05: 106 -144 frr
+:matt/winter/01: 80 -108

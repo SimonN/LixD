@@ -1,10 +1,10 @@
-$BUILT 2016-07-22 21:50:02
+$BUILT 2017-02-16 11:43:58
 $AUTHOR Insane Steve
 $ENGLISH Impetus
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
-#SIZE_Y 400
+#SIZE_Y 320
 
 #INITIAL 20
 #REQUIRED 18
@@ -17,39 +17,39 @@ $ENGLISH Impetus
 #CUBER 2
 #EXPLODER2 0
 
-:matt/underworld/Hatch.H: 80 224
+:matt/underworld/Hatch.H: 80 144
 
-:matt/underworld/Goal.G: 568 240
+:matt/underworld/Goal.G: 568 160
 
-:matt/underworld/02: 96 304
-:matt/underworld/00: 160 304
-:matt/underworld/00: 128 320
-:matt/underworld/00: 224 304
-:matt/underworld/02: 288 304
-:matt/underworld/00: 64 320
-:matt/underworld/00: 32 304
-:matt/underworld/02: 480 304
-:matt/underworld/00: 544 304
-:matt/underworld/00: 512 320
-:matt/underworld/00: 448 320
-:matt/underworld/00: 416 304
-:matt/underworld/00: 352 304
-:matt/underworld/02: 160 208
-:matt/underworld/02: 224 208
-:matt/underworld/02: 160 112
-:matt/underworld/00: 288 208
-:matt/underworld/02: 384 176
-:matt/underworld/00: 384 208
-:matt/underworld/01: 384 240
-:matt/underworld/00: 320 272
-:matt/underworld/00: 384 272
-:matt/underworld/01: 480 256
-:matt/underworld/00: 608 304
-:matt/underworld/01: 480 224
-:matt/underworld/01: 480 192
-:matt/underworld/00: 544 192
-:matt/underworld/00: 608 192
-:matt/underworld/00: -32 304
-:matt/underworld/02: 0 208
-:matt/underworld/00: -32 192
-:matt/underworld/02: 32 112
+:matt/underworld/02: 96 224
+:matt/underworld/00: 160 224
+:matt/underworld/00: 128 240
+:matt/underworld/00: 224 224
+:matt/underworld/02: 288 224
+:matt/underworld/00: 64 240
+:matt/underworld/00: 32 224
+:matt/underworld/02: 480 224
+:matt/underworld/00: 544 224
+:matt/underworld/00: 512 240
+:matt/underworld/00: 448 240
+:matt/underworld/00: 416 224
+:matt/underworld/00: 352 224
+:matt/underworld/02: 160 128
+:matt/underworld/02: 224 128
+:matt/underworld/02: 160 32
+:matt/underworld/00: 288 128
+:matt/underworld/02: 384 96
+:matt/underworld/00: 384 128
+:matt/underworld/01: 384 160
+:matt/underworld/00: 320 192
+:matt/underworld/00: 384 192
+:matt/underworld/01: 480 176
+:matt/underworld/00: 608 224
+:matt/underworld/01: 480 144
+:matt/underworld/01: 480 112
+:matt/underworld/00: 544 112
+:matt/underworld/00: 608 112
+:matt/underworld/00: -32 224
+:matt/underworld/02: 0 128
+:matt/underworld/00: -32 112
+:matt/underworld/02: 32 32

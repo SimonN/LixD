@@ -1,17 +1,12 @@
-$BUILT 2014-07-15 21:08:26
+$BUILT 2017-02-21 11:46:45
 $AUTHOR Ben Bryant
-$GERMAN 
 $ENGLISH Lix Cannon
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1280
-#SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
+#SIZE_Y 352
 #START_X 0
 #START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #INITIAL 50
 #REQUIRED 49
@@ -19,22 +14,18 @@ $ENGLISH Lix Cannon
 
 #CLIMBER 1
 #FLOATER 1
-#NOTHING 0
-#CUBER 1
-#NOTHING 0
 #BASHER 7
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#CUBER 1
+#EXPLODER2 0
 
 :geoo/construction/Hatch.H: 96 64
 :geoo/construction/Hatch.H: 400 64
 
 :geoo/construction/Goal2.G: 1104 64
 
+:geoo/construction/rod_rust/straight_diagd32: 204 124
+:geoo/construction/rod_rust/straight_diagd32: 202 186
+:geoo/construction/rod_rust/straight_diagd32: 196 244
 :geoo/steel/dark_32x32o.S: 192 144
 :geoo/steel/dark_32x32o.S: 192 176
 :geoo/steel/dark_32x32o.S: 192 208
@@ -151,34 +142,32 @@ $ENGLISH Lix Cannon
 :geoo/construction/pillar_32: 1120 256
 :geoo/construction/pillar_32: 1120 288
 :geoo/construction/pillar_32: 1120 320
-:geoo/construction/pillar_32: 1120 352
-:geoo/construction/pillar_bottom: 1120 384
-:geoo/construction/concrete/032va: 40 304
-:geoo/construction/concrete/032va: 16 320
-:geoo/construction/concrete/032va: 0 336
-:geoo/construction/concrete/032vb: 72 304
-:geoo/construction/concrete/032vb: 48 320
-:geoo/construction/concrete/032vb: 32 336
-:geoo/construction/concrete/032vb: 104 336
-:geoo/construction/concrete/032va: 944 336
-:geoo/construction/concrete/032va: 976 320
-:geoo/construction/concrete/032vb: 976 336
-:geoo/construction/concrete/032vb: 1008 320
-:geoo/construction/concrete/032va: 1008 336
-:geoo/construction/concrete/032vb: 1040 336
-:geoo/construction/concrete/032va: 1184 336
-:geoo/construction/concrete/032va: 1216 304
-:geoo/construction/concrete/032vb: 1216 336
-:geoo/construction/concrete/032va: 1248 272
-:geoo/construction/concrete/032vb: 1248 304
-:geoo/construction/concrete/032va: 1248 336
+:geoo/construction/concrete/032va: 40 256
+:geoo/construction/concrete/032va: 16 272
+:geoo/construction/concrete/032va: 0 288
+:geoo/construction/concrete/032vb: 72 256
+:geoo/construction/concrete/032vb: 48 272
+:geoo/construction/concrete/032vb: 32 288
+:geoo/construction/concrete/032vb: 104 288
+:geoo/construction/concrete/032va: 944 288
+:geoo/construction/concrete/032va: 976 272
+:geoo/construction/concrete/032vb: 976 288
+:geoo/construction/concrete/032vb: 1008 272
+:geoo/construction/concrete/032va: 1008 288
+:geoo/construction/concrete/032vb: 1040 288
+:geoo/construction/concrete/032va: 1184 288
+:geoo/construction/concrete/032va: 1216 256
+:geoo/construction/concrete/032vb: 1216 288
+:geoo/construction/concrete/032va: 1248 224
+:geoo/construction/concrete/032vb: 1248 256
+:geoo/construction/concrete/032va: 1248 288
 :geoo/construction/concrete/032vc: 1008 0
 :geoo/construction/concrete/032vd: 1040 0
 :geoo/construction/concrete/016vc: 1072 0
 :geoo/construction/concrete/016vc: 976 0
 :geoo/construction/concrete/016vd: 992 0
 :geoo/construction/concrete/016vd: 1088 0
-:geoo/construction/concrete/032va: 72 336
+:geoo/construction/concrete/032va: 72 288
 :geoo/construction/wall/small_64x32: 448 128
 :geoo/construction/rod_rust/straight32: 416 336
 :geoo/construction/wall/big_diag_bu: 416 128
@@ -201,3 +190,6 @@ $ENGLISH Lix Cannon
 :geoo/construction/wall/small_brickdiag_td: 320 128
 :geoo/construction/wall/small_brickdiag_td: 336 144
 :geoo/construction/wall/small_brickdiag_tu: 368 144
+:geoo/construction/rod_rust/straight32: 266 344 d
+:geoo/construction/rod_rust/straight32: 256 216 d
+:geoo/construction/rod_rust/straight32: 256 280 d

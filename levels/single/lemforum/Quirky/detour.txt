@@ -1,10 +1,10 @@
-$BUILT 2016-07-03 00:28:56
+$BUILT 2017-02-16 11:41:35
 $AUTHOR Insane Steve
 $ENGLISH Detour
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
-#SIZE_Y 400
+#SIZE_Y 272
 
 #INITIAL 20
 #REQUIRED 20
@@ -17,36 +17,36 @@ $ENGLISH Detour
 #DIGGER 1
 #EXPLODER 0
 
-:geoo/sandstone/Hatch.H: 104 88
+:geoo/sandstone/Hatch.H: 104 24
 
-:geoo/sandstone/Goal.G: 512 224
+:geoo/sandstone/Goal.G: 512 160
 
-:geoo/sandstone/64x16: 184 192
-:geoo/sandstone/64x16: 248 192
-:geoo/sandstone/8x8: 312 180
-:geoo/sandstone/64x16: 120 192
-:geoo/sandstone/8x8: 312 188
-:geoo/sandstone/8x8: 312 196
-:geoo/sandstone/8x8: 312 204
-:geoo/sandstone/8x8: 312 212
-:geoo/sandstone/64x16: 96 240
-:geoo/sandstone/64x16: 64 288
-:geoo/sandstone/8x8: 56 276
-:geoo/sandstone/8x8: 56 284
-:geoo/sandstone/8x8: 56 292
-:geoo/sandstone/8x8: 56 300
-:geoo/sandstone/8x8: 56 308
-:geoo/sandstone/64x16: 128 288
-:geoo/sandstone/64x16: 256 288
-:geoo/sandstone/64x16: 192 288
-:geoo/sandstone/64x16: 320 288
-:geoo/sandstone/64x16: 448 288
-:geoo/sandstone/64x16: 512 288
-:geoo/sandstone/smaragd: 144 192
-:geoo/sandstone/smaragd: 272 192
-:geoo/sandstone/smaragd: 216 288
-:geoo/sandstone/smaragd: 344 288
-:geoo/sandstone/smaragd: 88 288
-:geoo/sandstone/64x16: 160 240
-:geoo/sandstone/64x16: 224 240
-:geoo/sandstone/smaragd: 184 240
+:geoo/sandstone/64x16: 184 128
+:geoo/sandstone/64x16: 248 128
+:geoo/sandstone/8x8: 312 116
+:geoo/sandstone/64x16: 120 128
+:geoo/sandstone/8x8: 312 124
+:geoo/sandstone/8x8: 312 132
+:geoo/sandstone/8x8: 312 140
+:geoo/sandstone/8x8: 312 148
+:geoo/sandstone/64x16: 96 176
+:geoo/sandstone/64x16: 64 224
+:geoo/sandstone/8x8: 56 212
+:geoo/sandstone/8x8: 56 220
+:geoo/sandstone/8x8: 56 228
+:geoo/sandstone/8x8: 56 236
+:geoo/sandstone/8x8: 56 244
+:geoo/sandstone/64x16: 128 224
+:geoo/sandstone/64x16: 256 224
+:geoo/sandstone/64x16: 192 224
+:geoo/sandstone/64x16: 320 224
+:geoo/sandstone/64x16: 448 224
+:geoo/sandstone/64x16: 512 224
+:geoo/sandstone/smaragd: 144 128
+:geoo/sandstone/smaragd: 272 128
+:geoo/sandstone/smaragd: 216 224
+:geoo/sandstone/smaragd: 344 224
+:geoo/sandstone/smaragd: 88 224
+:geoo/sandstone/64x16: 160 176
+:geoo/sandstone/64x16: 224 176
+:geoo/sandstone/smaragd: 184 176
