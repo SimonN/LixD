@@ -198,14 +198,14 @@ private @property int borderOneSideXl() const
 {
     if (torusX || xl * zoom >= cameraXl)
         return 0;
-    return (_cameraXl - xl * zoom).roundInt / 2;
+    return (_cameraXl - xl * zoom).ceil.roundInt / 2;
 }
 
 private @property int borderUpperSideYl() const
 {
     if (torusY || yl * zoom >= cameraYl)
         return 0;
-    return (_cameraYl - yl * zoom).roundInt;
+    return (_cameraYl - yl * zoom).ceil.roundInt;
 }
 
 @property Point
