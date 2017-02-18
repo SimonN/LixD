@@ -55,8 +55,10 @@ public:
     @property float current() const pure { return _allowed[_selected]; }
 
     @property bool zoomableIn() const { return _selected < _allowed.len - 1; }
+    @property bool zoomableOut() const { return _selected > 0; }
+
     void zoomIn()  { if (zoomableIn) ++_selected; }
-    void zoomOut() { if (_selected > 0) --_selected; }
+    void zoomOut() { if (zoomableOut) --_selected; }
 
     bool preferNearestNeighbor() const
     {

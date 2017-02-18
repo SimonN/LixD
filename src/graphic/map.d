@@ -152,20 +152,24 @@ void centerOnAverage(Rx, Ry)(Rx rangeX, Ry rangeY)
     cameraY = torusAverageY(rangeY);
 }
 
-void zoomIn() {
-    if (! _zoom.zoomableIn)
-        return;
-    auto p = mouseOnLand();
-    _zoom.zoomIn();
-    cameraX = p.x;
-    cameraY = p.y;
+private template zoomInOrOut(string s) {
+    import std.format;
+    enum string zoomInOrOut = q{
+        public void zoom%s()
+        {
+            if (! _zoom.zoomable%s)
+                return;
+            immutable Point oldMouseOnLand = mouseOnLand();
+            _zoom.zoom%s();
+            // The mouse shall point to the same pixel as before.
+            cameraX = cameraX + oldMouseOnLand.x - mouseOnLand.x;
+            cameraY = cameraY + oldMouseOnLand.y - mouseOnLand.y;
+        }
+    }.format(s, s, s);
 }
 
-void zoomOut() {
-    _zoom.zoomOut();
-    cameraX = _cameraX; // move back onto visible area
-    cameraY = _cameraY;
-}
+mixin(zoomInOrOut!"In");
+mixin(zoomInOrOut!"Out");
 
 // On non-torus maps, we want the initial scrolling position exactly at the
 // boundary, or a good chunk away from the boundary.
