@@ -40,16 +40,25 @@ public:
             .array;
         _allowed.sort();
 
-        /* Select initial zoom:
-         * In general, fit the level's height onto the screen's height.
-         * Special case: If the level is extremely large, use zoom 1.
-         * Special case: If matching height isn't in _allowed, match width.
-         */
+        void initialZoom(in float val)
+        {
+            assert (_allowed.canFind!(x => x == val));
+            _selected = 0xFFFF & _allowed.countUntil!(x => x == val);
+            assert (_selected >= 0);
+            assert (_selected < _allowed.len);
+        }
         if (a < 1 && b < 1 && _allowed.canFind(1f))
-            _selected = 0xFFFF & _allowed.countUntil(1f);
+            // Very large levels should use zoom 1.
+            initialZoom(1f);
+        else if ( ! _allowed.canFind(b)
+                || (_allowed.canFind(a) && levelL.y > levelL.x))
+            // If matching height is not allowed, match width.
+            // Or, if the level is taller than wide, match width -- this
+            // doesn't care about screen ratio to level ratio.
+            initialZoom(a);
         else
-            _selected = 0xFFFF & _allowed.countUntil!(x =>
-                                    x == b || x == a && ! apart(a, b));
+            // In general, fit the level's height onto the screen's height.
+            initialZoom(b);
     }
 
     @property float current() const pure { return _allowed[_selected]; }

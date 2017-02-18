@@ -1,6 +1,23 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.22
+------
+
+2017-02-18
+
+When you zoom in or out, the mouse points to the same pixel on the land
+before and after the zoom. Exception: Map scrolling is restricted on low zoom.
+
+Fix: In-game map boundary was sometimes too thin, there was a 1-pixel wide
+column or row of non-erased pixels between the boundary and the land.
+
+Fix #94: Show spawn interval only when hovering over a hatch. I'm showing
+it in the panel still, not laid over the hatch, which would have been better.
+
+If a map is taller than wide, it tries to fit its width to the screen width,
+not the height.
+
 0.6.21
 ------
 
