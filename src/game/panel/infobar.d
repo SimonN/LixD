@@ -6,6 +6,7 @@ import std.typecons; // Rebindable;
 import basics.globals; // game panel icons
 import net.repdata; // Update
 import basics.user; // languageIsEnglish
+import file.language;
 import game.tribe;
 import graphic.color;
 import graphic.internal;
@@ -27,10 +28,12 @@ private:
     int _targetDescNumber;
     Rebindable!(const(Lixxie)) _targetDescLixxie;
     Rebindable!(const(Tribe))  _tribe;
+    bool _showSpawnInterval;
+    int _spawnInterval;
 
     CutbitElement _bOut, _bHatch, _bSaved, _bTime;
     Label         _lOut, _lHatch, _lSaved, _lTime;
-    Label _spawnint, _targetDesc, _fps;
+    Label _targetDesc, _fps;
 
     // This is 0 if you have enough lix alive to win.
     // This is >= 0 if you don't have enough lix alive.
@@ -53,6 +56,13 @@ public:
         _targetDescNumber = nr;
     }
 
+    void dontShowSpawnInterval() { _showSpawnInterval = false; }
+    void showSpawnInterval(in int si)
+    {
+        _showSpawnInterval = true;
+        _spawnInterval = si;
+    }
+
     void showTribe(in Tribe tribe) {
         with (tribe)
     {
@@ -64,8 +74,6 @@ public:
         _bHatch.yf = 1;
         _lOut.number = lixHatch + lixOut;
         _bOut.yf = lixHatch + lixOut > 0 ? 0 : 1;
-        // DTODO: spawnint: cull entirely, or make an icon
-        _spawnint.text = "SI: %d".format(spawnint);
         if (basics.user.showFPS.value)
             _fps.text  = "FPS: %d".format(displayFps);
         formatGoal(tribe);
@@ -88,21 +96,24 @@ private:
     }
     body { with (_targetDescLixxie) {
         string s = "";
-        scope (exit)
-            _targetDesc.text = s;
-        if (! _targetDescLixxie)
-            return;
-        s = "%d %s%s".format(
-            _targetDescNumber,
-            ac.acToNiceCase,
-            _targetDescNumber > 1 && languageIsEnglish ? "s" : "");
-        if (auto bc = cast (const BrickCounter) constJob)
-            s ~= " [%d]".format(bc.skillsQueued * bc.bricksAtStart + bc.bricksLeft);
-        if (abilityToRun || abilityToClimb || abilityToFloat)
-            s ~= " (%s%s%s)".format(
-                abilityToRun   ? "R" : "",
-                abilityToClimb ? "C" : "",
-                abilityToFloat ? "F" : "");
+        if (_targetDescLixxie) {
+            s = "%d %s%s".format(
+                _targetDescNumber,
+                ac.acToNiceCase,
+                _targetDescNumber > 1 && languageIsEnglish ? "s" : "");
+            if (auto bc = cast (const BrickCounter) constJob)
+                s ~= " [%d]".format(bc.skillsQueued * bc.bricksAtStart
+                                    + bc.bricksLeft);
+            if (abilityToRun || abilityToClimb || abilityToFloat)
+                s ~= " (%s%s%s)".format(
+                    abilityToRun   ? "R" : "",
+                    abilityToClimb ? "C" : "",
+                    abilityToFloat ? "F" : "");
+        }
+        else if (_showSpawnInterval)
+            s = "%s: %d".format(Lang.winConstantsSpawnint.transl,
+                                _spawnInterval);
+        _targetDesc.text = s;
     }}
 
     void implConstructor()
@@ -135,11 +146,10 @@ private:
         // I want to show the time in multiplayer. Until I have that,
         // I display the spawn interval in singleplayer.
         _bTime.hide();
-        _spawnint   = new Label(new Geom(_bTime.xg, 0, 70, ylg, From.LEFT));
         _fps        = new Label(new Geom(280, 0, 70, this.ylg, From.LEFT));
         _targetDesc = new Label(new Geom(
             TextButton.textXFromLeft, 0, this.xlg, this.ylg, From.RIGHT));
-        addChildren(_spawnint, _targetDesc, _fps);
+        addChildren(_targetDesc, _fps);
     }
 
     void formatGoal(in Tribe tribe) {

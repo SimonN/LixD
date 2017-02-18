@@ -39,9 +39,11 @@ implGameDraw(Game game) { with (game)
         effect.draw();
         effect.calc(); // --timeToLive, moves. No physics, so OK to calc here.
         game.drawAllLixes();
-        pan.showInfo(localTribe);
-        pan.update(nurse.scores);
     }
+    pan.showInfo(localTribe);
+    pan.update(nurse.scores);
+    game.showSpawnIntervalOnHatches();
+
     auto drata = TargetBitmap(al_get_backbuffer(display));
     {
         version (tharsisprofiling)
@@ -68,7 +70,7 @@ void drawGadgets(Game game)
 
 void drawLand(Game game)
 {
-    version (tharsisprofiling)
+    version (tharsisproftsriling)
         auto zone = Zone(profiler, "game draws land to map");
     game.map.loadCameraRect(game.nurse.land);
 }
@@ -90,6 +92,14 @@ void drawAllLixes(Game game)
         if (_drawHerHighlit)
             _drawHerHighlit.drawAgainHighlit();
     }
+}
+
+void showSpawnIntervalOnHatches(Game game)
+{
+    game.pan.dontShowSpawnInterval();
+    if (game.nurse.constStateForDrawingOnly.hatches.any!(h =>
+        game.map.isPointInRectangle(game.map.mouseOnLand, h.rect)))
+        game.pan.showSpawnInterval(game.localTribe.spawnint);
 }
 
 void drawReplaySign(Game game)

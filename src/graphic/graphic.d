@@ -67,6 +67,7 @@ public:
     @property int xf(in int i) { return _xf = i; }
     @property int yf(in int i) { return _yf = i; }
 
+    @property Rect rect() const { return Rect(_loc, xl, yl); }
     @property Point loc() const { return _loc; }
     @property Point loc(in Point newLoc)
     {

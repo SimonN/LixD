@@ -138,6 +138,8 @@ public:
 
     void describeTarget(in Lixxie l, int nr) { stats.describeTarget(l, nr); }
     void showInfo(in Tribe tr) { stats.showTribe(tr); }
+    void dontShowSpawnInterval() { stats.dontShowSpawnInterval(); }
+    void showSpawnInterval(in int si) { stats.showSpawnInterval(si); }
 
     void update(T)(T scoreRange)
         if (isInputRange!T && is (ElementType!T : const(Score)))
