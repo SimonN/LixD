@@ -23,7 +23,7 @@ private:
     IRoot[] elders;
     Element[] focus;
 
-    bool clearNextDraw = true;
+    bool _clearNextDraw = true;
 
 public:
 
@@ -65,7 +65,7 @@ void rmElder(IDrawable to_rm)
 {
     elders = elders.remove!(a => a is to_rm);
     drawingOnlyElders = drawingOnlyElders.remove!(a => a is to_rm);
-    clearNextDraw = true;
+    _clearNextDraw = true;
 }
 
 void addFocus(Element toAdd)
@@ -83,7 +83,7 @@ void addFocus(Element toAdd)
 void rmFocus(Element toRm)
 {
     focus = focus.remove!(a => a is toRm);
-    clearNextDraw = true;
+    _clearNextDraw = true;
 }
 
 bool hasFocus(Element elem)
@@ -91,11 +91,7 @@ bool hasFocus(Element elem)
     return focus.length && focus[$-1] == elem;
 }
 
-void requireCompleteRedraw()
-{
-    chain(elders, drawingOnlyElders, focus).each!(e => e.reqDraw);
-    clearNextDraw = true;
-}
+void requireCompleteRedraw() { _clearNextDraw = true; }
 
 void calc()
 {
@@ -110,16 +106,12 @@ void calc()
 void draw()
 {
     assert (guiosd);
-    if (clearNextDraw) {
-        clearNextDraw = false;
+    if (_clearNextDraw) {
+        _clearNextDraw = false;
         guiosd.clearToColor(color.transp);
-        foreach (element; drawingOnlyElders) element.reqDraw();
-        foreach (element; elders) element.reqDraw();
-        foreach (element; focus)  element.reqDraw();
+        chain(drawingOnlyElders, elders, focus).each!(e => e.reqDraw);
     }
     auto targetTorbit = TargetTorbit(guiosd);
-    foreach (element; drawingOnlyElders) element.draw();
-    foreach (element; elders) element.draw();
-    foreach (element; focus)  element.draw();
+    chain(drawingOnlyElders, elders, focus).each!(e => e.draw);
     guiosd.copyToScreen();
 }
