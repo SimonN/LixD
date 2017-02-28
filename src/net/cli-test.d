@@ -52,7 +52,7 @@ version (lixClientTester)
             if (line.length < 1)
                 continue;
             else if (line[0] == 'q') {
-                netClient.disconnect();
+                netClient.disconnectAndDispose();
                 break;
             }
             else if (line[0] == 'c') {

@@ -1,10 +1,17 @@
 module game.core.game;
 
-/* 2015-06-03. After 9 years, it's time to write another one of these classes.
+/* Game is the gameplay part of the program: The part of the program that has
+ * a skill panel at the bottom, a level map above, and occasionally dialogs.
  *
- * There are many methods that were distributed over many files in C++.
- * Here, we don't declare any private (accessible from same file) members,
- * but everything is package (accessible from files in same directory).
+ * Game contains a Nurse. Game also contains UI to affect the nurse.
+ *
+ * Nurse contains states of physics. One of these states is in a Model and
+ * thereby can advance. Other states are in a PhysicsCache and the nurse
+ * loads them as appropriate to recalculate during netgames or framestepping.
+ *
+ * Noninteractive games don't need the UI. I'm confused why I don't
+ * bypass Game in that case and let the verifier work directly on the Nurse.
+ * Game instantiates differently based on Runmode.
  */
 
 public import basics.cmdargs; // Runmode;
@@ -289,8 +296,6 @@ private:
                     () { gui.requireCompleteRedraw(); });
         _console.lines = lines;
         gui.addElder(_console);
-
-        _console.add("hallo");
     }
 
     void saveAutoReplay()

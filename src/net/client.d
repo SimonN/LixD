@@ -73,7 +73,21 @@ public:
         enet_peer_timeout(_serverPeer, 0, 5_000, 5_000);
     }
 
-    ~this() { dispose(); }
+    void disconnectAndDispose()
+    {
+        if (connected || connecting) {
+            enet_peer_disconnect_now(_serverPeer, 0);
+            enet_host_flush(_ourClient);
+            // We won't wait for the disconnection return packet.
+        }
+        if (_ourClient) {
+            enet_host_destroy(_ourClient);
+            _ourClient = null;
+        }
+        _serverPeer = null;
+        _profilesInOurRoom.clear();
+        deinitializeEnet();
+    }
 
     void calc() { implCalc(); }
 
@@ -111,15 +125,6 @@ public:
     @property bool connecting() const
     {
         return _ourClient && _serverPeer && ! (_ourPlNr in _profilesInOurRoom);
-    }
-
-    void disconnect()
-    {
-        assert (connected || connecting);
-        enet_peer_disconnect_now(_serverPeer, 0);
-        enet_host_flush(_ourClient);
-        dispose();
-        // We won't wait for the disconnection return packet.
     }
 
     @property string enetLinkedVersion() const
@@ -226,22 +231,11 @@ private:
                     _onConnectionLost && _onConnectionLost();
                 else
                     _onCannotConnect && _onCannotConnect();
-                dispose();
+                disconnectAndDispose();
                 break;
             }
         if (_ourClient)
             enet_host_flush(_ourClient);
-    }
-
-    void dispose()
-    {
-        if (_ourClient) {
-            enet_host_destroy(_ourClient);
-            _ourClient = null;
-        }
-        _serverPeer = null;
-        _profilesInOurRoom.clear();
-        deinitializeEnet();
     }
 
     string toDottedIpAddress(uint inNetworkByteOrder)

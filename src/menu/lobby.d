@@ -131,8 +131,7 @@ public:
         if (_console)
             _console.add(connected ? Lang.netChatYouLoggedOut.transl
                                    : Lang.netChatStartCancel.transl);
-        _netClient.disconnect();
-        destroy(_netClient);
+        _netClient.disconnectAndDispose();
         _netClient = null;
     }
 
@@ -223,7 +222,7 @@ private:
             // us a legal default value
             { }
         cfg.port = basics.globconf.serverPort;
-        _netClient = new NetClient(cfg);
+        _netClient = new ConsoleNetClient(new NetClient(cfg), _console);
         setOurEventHandlers();
         _console.add("enet v%s. %s %s:%d...".format(
             _netClient.enetLinkedVersion, Lang.netChatStartClient.transl,
@@ -279,52 +278,30 @@ private:
         _netClient.onCannotConnect = ()
         {
             _console.add(Lang.netChatYouCannotConnect.transl);
-            destroy(_netClient);
+            _netClient.disconnectAndDispose();
             _netClient = null;
         };
 
         _netClient.onConnectionLost = ()
         {
             _console.add(Lang.netChatYouLostConnection.transl);
-            destroy(_netClient);
+            _netClient.disconnectAndDispose();
             _netClient = null;
-        };
-
-        _netClient.onChatMessage = (string name, string chatMessage)
-        {
-            _console.addWhite("%s: %s".format(name, chatMessage));
         };
 
         _netClient.onPeerDisconnect = (string name)
         {
             refreshPeerList();
-            _console.add("%s %s".format(name,
-                                        Lang.netChatPeerDisconnected.transl));
         };
 
         _netClient.onPeerJoinsRoom = (const(Profile*) profile)
         {
             refreshPeerList();
-            assert (profile, "the network shouldn't send null pointers");
-            if (profile.room == 0)
-                _console.add("%s %s".format(profile.name,
-                    Lang.netChatPlayerInLobby.transl));
-            else
-                _console.add("%s %s%d%s".format(profile.name,
-                    Lang.netChatPlayerInRoom.transl, profile.room,
-                    Lang.netChatPlayerInRoom2.transl));
         };
 
         _netClient.onPeerLeavesRoomTo = (string name, Room toRoom)
         {
             refreshPeerList();
-            if (toRoom == 0)
-                _console.add("%s %s".format(name,
-                    Lang.netChatPlayerOutLobby.transl));
-            else
-                _console.add("%s %s%d%s".format(name,
-                    Lang.netChatPlayerOutRoom.transl, toRoom,
-                    Lang.netChatPlayerOutRoom2.transl));
             // If we're in the lobby, we'll get another packet with the
             // new possible rooms.
         };
@@ -337,10 +314,6 @@ private:
         _netClient.onWeChangeRoom = (Room toRoom)
         {
             refreshPeerList();
-            _console.add(toRoom != 0
-                ? "%s%d%s".format(Lang.netChatWeInRoom.transl, toRoom,
-                                  Lang.netChatWeInRoom2.transl)
-                : Lang.netChatWeInLobby.transl);
             // We will later get a packet that tells us the rooms in the lobby.
             // Until then, don't show anything in this list. If we're not
             // in the lobby, the room list shouldn't even be shown anyway.

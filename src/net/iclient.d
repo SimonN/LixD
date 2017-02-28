@@ -5,13 +5,13 @@ import net.structs;
 import net.style;
 
 interface INetClient {
+    void disconnectAndDispose();
     void calc(); // call this frequently, this shovels incoming networking
                  // data into refined structs to fetch from other methods
     void sendChatMessage(string);
 
     @property bool connected() const;
     @property bool connecting() const;
-    void disconnect();
 
     @property string enetLinkedVersion() const;
 
