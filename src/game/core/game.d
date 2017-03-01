@@ -59,7 +59,7 @@ package:
              // result to the screen. It is both a renderer and a camera.
     Nurse nurse;
     EffectManager effect;
-    INetClient _netClient; // null unless playing/observing multiplayer
+    ConsoleNetClient _netClient; // null unless playing/observing multiplayer
 
     Style _localStyle;
     long altickLastUpdate;
@@ -105,11 +105,11 @@ public:
         level = lv;
         prepareNurse(levelFilename, rp);
         initializePanel();
-        initializeConsole(null);
+        initializeConsole();
         setLastUpdateToNow();
     }
 
-    this(INetClient client, Level lv, typeof(Console.lines) lines)
+    this(ConsoleNetClient client, Level lv)
     {
         this.runmode = Runmode.INTERACTIVE;
         assert (lv);
@@ -118,7 +118,7 @@ public:
         _netClient = client;
         prepareNurse(null, null);
         initializePanel();
-        initializeConsole(lines);
+        initializeConsole();
         setLastUpdateToNow();
     }
 
@@ -289,12 +289,13 @@ private:
         pan.highlightFirstSkill();
     }
 
-    void initializeConsole(typeof(Console.lines) lines)
+    void initializeConsole()
     {
         assert (! _console);
         _console = new TransparentConsole(new Geom(0, 0, Geom.screenXlg, 0),
                     () { gui.requireCompleteRedraw(); });
-        _console.lines = lines;
+        if (_netClient)
+            _netClient.console = _console;
         gui.addElder(_console);
     }
 

@@ -40,6 +40,8 @@ public:
     @property void console(Console c)
     {
         assert (c);
+        if (_console)
+            c.lines = _console.lines;
         _console = c;
     }
 

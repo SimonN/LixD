@@ -23,6 +23,7 @@ import net.structs; // Profile
 
 class Lobby : Window {
 private:
+    bool _gotoGame;
     bool _gotoMainMenu;
     TextButton _buttonExit;
     TextButton _buttonCentral;
@@ -38,7 +39,7 @@ private:
     TextButton _declareReady;
     Texttype _chat;
 
-    INetClient _netClient;
+    ConsoleNetClient _netClient;
     Level _level;
 
     // Rule: A GUI element is either in exactly one of these, or in none.
@@ -122,7 +123,18 @@ public:
         showOrHideGuiBasedOnConnection();
     }
 
-    bool gotoMainMenu() const { return _gotoMainMenu; }
+    @property gotoMainMenu() const { return _gotoMainMenu; }
+    @property gotoGame() const { return _gotoGame && _level && _netClient; }
+    @property inout(Level) level() inout { return _level; }
+
+    auto loseOwnershipOfConsoleNetClient()
+    {
+        assert (_netClient, "shouldn't lose ownership of null client");
+        auto ret = _netClient;
+        _netClient = null;
+        _gotoGame = false;
+        return ret;
+    }
 
     void disconnect()
     {
@@ -337,7 +349,8 @@ private:
 
         _netClient.onGameStart = (Permu permu) {
             refreshPeerList();
-            _console.add("Start game! Permutation: " ~ permu.toString);
+            _console.add("Game starts! Permutation: " ~ permu.toString);
+            _gotoGame = true;
         };
     }
 }
