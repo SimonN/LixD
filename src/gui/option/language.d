@@ -9,6 +9,7 @@ static import basics.globals;
 import file.filename;
 import file.io;
 import file.language;
+import file.log;
 import gui;
 import gui.option.base;
 import gui.picker;
@@ -71,9 +72,16 @@ protected:
             auto ret = new TextButton(new Geom(0, 0, xlg, buttonYlg));
             ret.text = fn.file;
             immutable key = Lang.mainNameOfLanguage.to!string;
-            fillVectorFromFileNothrow(fn)
-                .filter!(ioLine => ioLine.text1 == key)
-                .takeOne.each!(ioLine => ret.text = ioLine.text2);
+            try {
+                fillVectorFromFile(fn)
+                    .filter!(ioLine => ioLine.text1 == key)
+                    .takeOne.each!(ioLine => ret.text = ioLine.text2);
+            }
+            catch (Exception e) {
+                logf("Error reading language file `%s':", fn.rootless);
+                logf("    -> %s", e.msg);
+                // We've already set a fallback caption for the button
+            }
             return ret;
         }
     }

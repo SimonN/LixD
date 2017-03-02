@@ -12,6 +12,7 @@ import basics.globals;
 import basics.rect;
 import file.filename;
 import file.io;
+import file.log;
 import graphic.cutbit;
 import hardware.sound;
 import tile.abstile;
@@ -94,8 +95,16 @@ public:
     {
         // We assume that the object's xl, yl, type, and subtype
         // have been correctly set by the constructor.
-        IoLine[] lines = fillVectorFromFileNothrow(filename);
-
+        IoLine[] lines;
+        try {
+            lines = fillVectorFromFile(filename);
+        }
+        catch (Exception e) {
+            logf("Error reading gadget definitions `%s':", filename.rootless);
+            logf("    -> %s", e.msg);
+            logf("    -> Falling back to default gadget properties.");
+            return;
+        }
         foreach (i; lines) if (i.type == '#') {
             if      (i.text1 == tileDefTAAbsoluteX) {
                 _triggerX = i.nr1;

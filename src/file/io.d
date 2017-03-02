@@ -242,20 +242,6 @@ private void munch(ref string s) {
     s = s[1 .. $];
 }
 
-nothrow IoLine[]
-fillVectorFromFileNothrow(in Filename fn)
-{
-    try {
-        return fillVectorFromFile(fn);
-    }
-    catch (Exception e) {
-        // Ignore the exception, don't log anything. If something should be
-        // logged here, instead call fillVectorFromFile(), catch the
-        // exception, and log in the calling code.
-        return null;
-    }
-}
-
 IoLine[] fillVectorFromFile(in Filename fn)
 {
     // this can throw on file 404, it's intended
@@ -277,8 +263,10 @@ IoLine[] fillVectorFromVoidArray(immutable(void)[] src)
 
 private IoLine[] fillVectorFromStringRange(T)(T src)
 {
+    // Don't catch errors; let the caller handle it
     IoLine[] ret;
     foreach (string line; src) {
+        line.validate;
         line = line.stripRight;
         if (! line.empty)
             ret ~= new IoLine(line);
