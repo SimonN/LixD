@@ -30,8 +30,9 @@ public:
          */
         bool apart(in float x, in float y)
         {
+            enum ratio = 0.85f;
             assert (x > 0 && y > 0);
-            return x/y + y/x > 2.08f;
+            return x/y < ratio || y/x < ratio;
         }
         _allowed = [ 1f/2, 1, 2, 4, 8, 16 ]
             .filter!(x => x > min(a, b)) // even on torus maps? Probably
@@ -71,6 +72,6 @@ public:
 
     bool preferNearestNeighbor() const
     {
-        return abs(current.roundInt - current) < 0.02f || current >= 3;
+        return abs(current.roundInt - current) < 0.01f || current >= 3;
     }
 }

@@ -1,6 +1,21 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.23
+------
+
+2017-03-02
+
+Fewer zooms are considered similar. This addresses Nepster's concerns:
+http://www.lemmingsforums.net/index.php?topic=3128.msg63116#msg63116
+
+Fix #169: I validate all user files for good UTF-8 before calling Phobos.
+
+Implemented the transparent console for networking messages during play.
+
+I've worked on starting networking games and transferring game data.
+I haven't tested this yet, don't expect anything yet.
+
 0.6.22
 ------
 
