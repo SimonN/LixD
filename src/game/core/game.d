@@ -114,8 +114,13 @@ public:
         this.runmode = Runmode.INTERACTIVE;
         assert (lv);
         assert (lv.good);
+        assert (client);
         level = lv;
         _netClient = client;
+        _netClient.onPeerSendsReplayData = (ReplayData data)
+        {
+            this.undispatchedAssignments ~= data;
+        };
         prepareNurse(null, null);
         initializePanel();
         initializeConsole();

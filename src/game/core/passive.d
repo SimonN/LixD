@@ -28,4 +28,3 @@ calcPassive(Game game) { with (game)
     if (map.scrollingNow)
         mouseCursor.xf = 3;
 }}
-// end with (game), end function calcPassive

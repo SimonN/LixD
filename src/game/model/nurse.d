@@ -101,10 +101,13 @@ public:
         return loaded.loadedVsNurseReplay.mismatch;
     }
 
-    void addReplayData(in ref ReplayData data)
+    void addReplayDataMaybeGoBack(const(ReplayData[]) vec)
     {
+        if (vec.length == 0)
+            return;
         assert (_replay);
-        _replay.add(data);
+        vec.each!(data => _replay.add(data));
+        framestepBackTo(Update(vec.map!(data => data.update).reduce!min - 1));
     }
 
     void cutReplay()
@@ -124,10 +127,7 @@ public:
 
     void framestepBackBy(int backBy)
     {
-        immutable target = Update(_model.cs.update - backBy);
-        _model.takeOwnershipOf(_cache.loadBeforeUpdate(
-                               Update(target + 1)).clone);
-        updateTo(target);
+        framestepBackTo(Update(_model.cs.update - backBy));
     }
 
     void applyChangesToLand()
@@ -154,13 +154,12 @@ public:
     }
 
 private:
-    void applyReplayDataToModel()
+    void framestepBackTo(immutable Update u)
     {
-        assert (_replay);
-        auto dataSlice = _replay.getDataForUpdate(upd);
-        assert (dataSlice.isSorted!("a.player < b.player"));
-        foreach (data; dataSlice)
-            _model.applyReplayData(data, _replay.plNrToStyle(data.player));
+        if (u >= _model.cs.update)
+            return;
+        _model.takeOwnershipOf(_cache.loadBeforeUpdate(Update(u + 1)).clone);
+        updateTo(u);
     }
 
     void updateOnce()
@@ -168,7 +167,12 @@ private:
         version (tharsisprofiling)
             Zone zone = Zone(profiler, "PhysSeq updateOnceNoSync");
         _model.incrementUpdate();
-        applyReplayDataToModel();
+        {
+            auto dataSlice = _replay.getDataForUpdate(upd);
+            assert (dataSlice.isSorted!("a.player < b.player"));
+            foreach (data; dataSlice)
+                _model.applyReplayData(data, _replay.plNrToStyle(data.player));
+        }
         _model.advance();
     }
 

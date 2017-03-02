@@ -97,8 +97,7 @@ void handleNukeButton(Game game) { with (game)
     game.cancelReplay();
     auto data = game.newReplayDataForNextUpdate();
     data.action = RepAc.NUKE;
-    undispatchedAssignments ~= data;
-    // DTODONETWORK: Network::send_replay_data(data);
+    game.includeOurNew(data);
     effect.addSound(Update(nurse.upd + 1), localTribe.style, 0, Sound.NUKE);
 }}
 
@@ -238,11 +237,6 @@ void assignToPotentialAssignee(
         hardware.sound.playLoud(Sound.PANEL_EMPTY);
         return;
     }
-
-    auto uNext = Update(nurse.upd + 1);
-    effect.addArrowDontShow(uNext, localTribe.style, potAss.id);
-    effect.addSound        (uNext, localTribe.style, potAss.id, Sound.ASSIGN);
-
     if (currentSkill.number != skillInfinity)
         // Decrease the visible number on the panel. This is mostly eye candy.
         // It doesn't affect physics, including judging what's coming in over
@@ -255,8 +249,21 @@ void assignToPotentialAssignee(
                     :                RepAc.ASSIGN;
     data.skill      = currentSkill.skill;
     data.toWhichLix = potAss.id;
-    undispatchedAssignments ~= data;
+    game.includeOurNew(data);
+
+    // React faster to the new assignment than during its evaluation next
+    // update. The evaluation could be several ticks ticks later.
+    effect.addArrowDontShow(data.update, _localStyle, potAss.id);
+    effect.addSound(        data.update, _localStyle, potAss.id, Sound.ASSIGN);
+
     if (basics.user.pausedAssign.value == 2)
         pan.pause = false;
 }}
 // end PotentialAssignee assignToPotentialAssignee()
+
+void includeOurNew(Game game, in ReplayData data) { with (game)
+{
+    undispatchedAssignments ~= data;
+    if (_netClient)
+        _netClient.sendReplayData(data);
+}}

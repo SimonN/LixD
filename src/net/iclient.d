@@ -30,6 +30,7 @@ interface INetClient {
     void createRoom();
 
     void selectLevel(const(void[])); // accepts file that's read into a buffer
+    void sendReplayData(in ReplayData);
 
     // Register an event callback. The class who designs the callback functions
     // should display a message from the callback information. Usually, the

@@ -15,12 +15,16 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
 {
     void upd(bool duringTurbo = false)(in int howmany = 1)
     {
-        game.putUndispatchedAssignmentsIntoReplay();
-        game.putNetworkDataIntoReplay();
+        immutable before = nurse.upd;
+        // Don't send undispatched via network, we did that earlier already.
+        // Some from undispatchedAssignments have even come from the net.
+        nurse.addReplayDataMaybeGoBack(undispatchedAssignments);
+        undispatchedAssignments = null;
+
         static if (duringTurbo)
-            nurse.updateToDuringTurbo(Update(nurse.upd + howmany));
+            nurse.updateToDuringTurbo(Update(before + howmany));
         else
-            nurse.updateTo(Update(nurse.upd + howmany));
+            nurse.updateTo(Update(before + howmany));
         game.findAgainHighlitLixAfterUpdate();
         game.setLastUpdateToNow();
     }
@@ -96,18 +100,3 @@ struct LoadStateRAII
     this(Game g) { _game = g; _game.saveResult(); }
     ~this()      { _game.setLastUpdateToNow();    }
 }
-
-void putUndispatchedAssignmentsIntoReplay(Game game) { with (game)
-{
-    foreach (data; undispatchedAssignments) {
-        nurse.addReplayData(data);
-        // DTODONETWORK
-        // Network::send_replay_data(data);
-        // or even better: network-send this data as soon as it is
-        // generated in game.gameacti, not only when the update happens,
-        // to combat lag wherever possible
-    }
-    undispatchedAssignments = null;
-}}
-
-void putNetworkDataIntoReplay(Game game) { }
