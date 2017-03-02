@@ -16,9 +16,6 @@ import hardware.mousecur;
 package void
 calcPassive(Game game) { with (game)
 {
-    if (_netClient)
-        _netClient.calc();
-
     if (pan.zoomIn)
         map.zoomIn();
     if (pan.zoomOut)

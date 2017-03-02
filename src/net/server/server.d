@@ -16,6 +16,7 @@ import net.server.hotel;
 import net.enetglob;
 import net.packetid;
 import net.permu;
+import net.repdata;
 import net.structs;
 import net.versioning;
 
@@ -103,6 +104,14 @@ public:
         enet_peer_send(_host.peers + receiv, 0, p);
     }
 
+    void sendReplayData(PlNr receiv, ReplayData data)
+    {
+        if (_host.peers + receiv is null)
+            return;
+        ENetPacket* p = data.createPacket(PacketStoC.peerReplayData);
+        enet_peer_send(_host.peers + receiv, 0, p);
+    }
+
     // describeRoom will send 1 or 2 packets to receiv.
     void describeRoom(PlNr receiv, const(ubyte[]) level, PlNr from)
     {
@@ -187,6 +196,7 @@ private:
             case myProfile: receiveProfileChange(peer, got); break;
             case chatMessage: receiveChat(peer, got); break;
             case levelFile: receiveLevel(peer, got); break;
+            case myReplayData: receiveReplayData(peer, got); break;
             default: break;
         }
     }
@@ -340,5 +350,16 @@ private:
             return;
         _hotel.receiveLevel(profile.room, plNr, got.data[2 .. got.dataLength]);
         unreadyAllInRoom(profile.room);
+    }
+
+    void receiveReplayData(ENetPeer* peer, ENetPacket* got)
+    {
+        auto plNr = peerToPlNr(peer);
+        auto profile = plNr in _profiles;
+        if (! profile || got.dataLength != ReplayData.len)
+            return;
+        auto data = ReplayData(got);
+        data.player = plNr; // Don't trust the client. We decide who sent it!
+        _hotel.receiveReplayData(profile.room, data);
     }
 }

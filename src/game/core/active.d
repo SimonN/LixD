@@ -1,5 +1,9 @@
 module game.core.active;
 
+/* calcActive evals the input and queues things to be sent through the net.
+ * Game.calc() should afterwards calc the network, that flushes the network.
+ */
+
 import std.typecons : Rebindable;
 
 import net.repdata;
@@ -32,7 +36,6 @@ void calcActive(Game game)
     }
 }
 
-// This
 package void findAgainHighlitLixAfterUpdate(Game game)
 {
     if (! game.pan.isMouseHere)

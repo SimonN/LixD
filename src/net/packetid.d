@@ -48,7 +48,7 @@ enum PacketStoC : ubyte {
     peerChatMessage = 130,
     peerLevelFile = 131,
 
-    // The players sort themselves by PlNr, because e,verybody in a room knows
+    // The players sort themselves by PlNr, because everybody in a room knows
     // everybody else's PlNr. The permutation decides the order in which the
     // players take hatches and goals.
     gameStartsWithPermu = 140,

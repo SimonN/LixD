@@ -7,6 +7,7 @@ module net.server.ihotelob;
  * This way, there is no tight coupling between the server and hotel.
  */
 
+import net.repdata;
 import net.structs;
 
 interface IHotelObserver {
@@ -15,6 +16,7 @@ interface IHotelObserver {
     void unreadyAllInRoom(Room);
 
     void sendLevelByChooser(PlNr receiv, const(ubyte[]) level, PlNr from);
+    void sendReplayData(PlNr receiv, ReplayData data);
     void describeRoom(PlNr receiv, const(ubyte[]) level, PlNr from);
     void informLobbyistAboutRooms(PlNr receiv);
 

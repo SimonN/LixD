@@ -1,6 +1,7 @@
 module net.iclient;
 
 import net.permu;
+import net.repdata;
 import net.structs;
 import net.style;
 
@@ -51,4 +52,5 @@ interface INetClient {
                                                        const(Profile[])));
     @property void onLevelSelect(void delegate(string name, const(ubyte[]) data));
     @property void onGameStart(void delegate(Permu));
+    @property void onPeerSendsReplayData(void delegate(ReplayData));
 }

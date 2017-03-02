@@ -16,6 +16,7 @@ import std.algorithm;
 import std.conv;
 import std.range;
 
+import net.repdata;
 import net.server.ihotelob;
 import net.server.festival;
 import net.structs;
@@ -116,6 +117,16 @@ public:
         ob.startGame(festivals[room].owner,
             party.filter!(prof => prof.feeling == Profile.Feeling.ready)
                  .walkLength.to!int);
+    }
+
+    void receiveReplayData(Room room, ReplayData data)
+    {
+        // DTODONETWORK: Remember these during a game, send all to whoever
+        // late-joins the room.
+        // Right now, we merely relay to existing players except sender.
+        foreach (const plNr, ref const profile; ob.allPlayers)
+            if (profile.room == room && plNr != data.player)
+                ob.sendReplayData(plNr, data);
     }
 
 private:

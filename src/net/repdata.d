@@ -28,8 +28,8 @@ enum RepAc : ubyte {
 }
 
 struct ReplayData {
-    private enum len = player.sizeof + action.sizeof + skill.sizeof
-                        + update.sizeof + toWhichLix.sizeof + 1; // +1 header
+    package enum len = player.sizeof + action.sizeof + skill.sizeof
+                     + update.sizeof + toWhichLix.sizeof + 1; // +1 header
     static assert (len == 12);
 
     PlNr   player;
@@ -56,11 +56,13 @@ struct ReplayData {
         // be with these. Keep such records in whatever order they were input.
     }
 
-    ENetPacket* createPacket() const nothrow
+    ENetPacket* createPacket(ubyte packetID) const nothrow
     {
         ENetPacket* pck = .createPacket(len);
         assert (pck);
-        pck.data[0] = PacketCtoS.myReplayData;
+        assert (packetID == PacketCtoS.myReplayData
+            ||  packetID == PacketStoC.peerReplayData);
+        pck.data[0] = packetID;
         pck.data[1] = player;
         pck.data[2] = action;
         pck.data[3] = skill;

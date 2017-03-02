@@ -14,6 +14,7 @@ import net.enetglob;
 import net.iclient;
 import net.packetid;
 import net.permu;
+import net.repdata;
 import net.structs;
 import net.style;
 import net.versioning;
@@ -46,6 +47,7 @@ private:
     void delegate(const(Room[]), const(Profile[])) _onListOfExistingRooms;
     void delegate(string name, const(ubyte[]) data) _onLevelSelect;
     void delegate(Permu) _onGameStart;
+    void delegate(ReplayData) _onPeerSendsReplayData;
 
 public:
     /* Immediately tries to connect to hostname:port.
@@ -106,6 +108,7 @@ public:
     @property void onListOfExistingRooms(typeof(_onListOfExistingRooms) dg) { _onListOfExistingRooms = dg; }
     @property void onLevelSelect(typeof(_onLevelSelect) dg) { _onLevelSelect = dg; }
     @property void onGameStart(typeof(_onGameStart) dg) { _onGameStart = dg; }
+    @property void onPeerSendsReplayData(typeof(_onPeerSendsReplayData) dg) { _onPeerSendsReplayData = dg; }
 
     void sendChatMessage(string aText)
     {
@@ -204,6 +207,14 @@ public:
         p.data[0] = PacketCtoS.levelFile;
         p.data[2 .. p.dataLength] = (cast (const(ubyte[])) buffer)[0 .. $];
         enet_peer_send(_serverPeer, 0, p);
+    }
+
+    void sendReplayData(const ReplayData data)
+    {
+        if (! connected)
+            return;
+        enet_peer_send(_serverPeer, 0,
+            data.createPacket(PacketCtoS.myReplayData));
     }
 
 private:
@@ -357,6 +368,10 @@ private:
                 Permu permu = new Permu(pa.arr);
                 _onGameStart && _onGameStart(permu);
             }
+        }
+        else if (got.data[0] == PacketStoC.peerReplayData) {
+            if (got.dataLength == ReplayData.len && _onPeerSendsReplayData)
+                _onPeerSendsReplayData(ReplayData(got));
         }
         else if (got.data[0] == PacketStoC.peerDisconnected) {
             auto discon = SomeoneDisconnectedPacket(got);

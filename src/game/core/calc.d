@@ -26,6 +26,8 @@ implGameCalc(Game game)
     else {
         game.calcPassive();
         game.calcActive();
+        if (game._netClient)
+            game._netClient.calc();
         game.updatePhysicsAccordingToSpeedButtons();
         if (game.isFinished)
             game.createModalWindow;
