@@ -8,7 +8,6 @@ module gui;
 
 public import gui.button;
 public import gui.console;
-public import gui.conscli;
 public import gui.cutbitel;
 public import gui.draw3d;
 public import gui.geometry;
@@ -19,6 +18,7 @@ public import gui.label;
 public import gui.labeltwo;
 public import gui.msgbox;
 public import gui.numpick;
+public import gui.richcli;
 public import gui.root;
 public import gui.skillico;
 public import gui.texttype;

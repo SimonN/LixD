@@ -225,7 +225,7 @@ public:
         else if (lobby) {
             if (lobby.gotoGame) {
                 auto lv = lobby.level;
-                auto net = lobby.loseOwnershipOfConsoleNetClient();
+                auto net = lobby.loseOwnershipOfRichClient();
                 kill();
                 game = new Game(net, lv);
             }

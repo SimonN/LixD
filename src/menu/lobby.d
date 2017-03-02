@@ -39,7 +39,7 @@ private:
     TextButton _declareReady;
     Texttype _chat;
 
-    ConsoleNetClient _netClient;
+    RichClient _netClient;
     Level _level;
 
     // Rule: A GUI element is either in exactly one of these, or in none.
@@ -127,10 +127,11 @@ public:
     @property gotoGame() const { return _gotoGame && _level && _netClient; }
     @property inout(Level) level() inout { return _level; }
 
-    auto loseOwnershipOfConsoleNetClient()
+    auto loseOwnershipOfRichClient()
     {
         assert (_netClient, "shouldn't lose ownership of null client");
         auto ret = _netClient;
+        nullOurEventHandlers();
         _netClient = null;
         _gotoGame = false;
         return ret;
@@ -234,7 +235,7 @@ private:
             // us a legal default value
             { }
         cfg.port = basics.globconf.serverPort;
-        _netClient = new ConsoleNetClient(new NetClient(cfg), _console);
+        _netClient = new RichClient(new NetClient(cfg), _console);
         setOurEventHandlers();
         _console.add("enet v%s. %s %s:%d...".format(
             _netClient.enetLinkedVersion, Lang.netChatStartClient.transl,
@@ -267,7 +268,6 @@ private:
         }
     }
 
-
     // Keep this the last private function in this class, it's so long
     void setOurEventHandlers()
     {
@@ -287,25 +287,9 @@ private:
         // generate a message anyway, including an update to the peer list.
         _netClient.onConnect = null;
 
-        _netClient.onCannotConnect = ()
-        {
-            _console.add(Lang.netChatYouCannotConnect.transl);
-            _netClient.disconnectAndDispose();
-            _netClient = null;
-        };
-
-        _netClient.onConnectionLost = ()
-        {
-            _console.add(Lang.netChatYouLostConnection.transl);
-            _netClient.disconnectAndDispose();
-            _netClient = null;
-        };
-
-        _netClient.onPeerDisconnect = (string name)
-        {
-            refreshPeerList();
-        };
-
+        _netClient.onCannotConnect = () { _netClient = null; };
+        _netClient.onConnectionLost = () { _netClient = null; };
+        _netClient.onPeerDisconnect = (string name) { refreshPeerList(); };
         _netClient.onPeerJoinsRoom = (const(Profile*) profile)
         {
             refreshPeerList();
@@ -341,8 +325,7 @@ private:
         _netClient.onLevelSelect = (string senderName, const(ubyte[]) data)
         {
             refreshPeerList();
-            _level = new Level(cast (immutable(void)[]) data);
-            _preview.level = _level;
+            _preview.level = _netClient.level;
             _console.add("%s %s %s".format(senderName,
                 Lang.netChatLevelChange.transl, _level.name));
         };
@@ -352,5 +335,21 @@ private:
             _console.add("Game starts! Permutation: " ~ permu.toString);
             _gotoGame = true;
         };
+    }
+
+    void nullOurEventHandlers()
+    {
+        assert (_netClient, "null only when we own a netClient");
+        _netClient.onConnect = null;
+        _netClient.onCannotConnect = null;
+        _netClient.onConnectionLost = null;
+        _netClient.onPeerDisconnect = null;
+        _netClient.onPeerJoinsRoom = null;
+        _netClient.onPeerLeavesRoomTo = null;
+        _netClient.onPeerChangesProfile = null;
+        _netClient.onWeChangeRoom = null;
+        _netClient.onListOfExistingRooms = null;
+        _netClient.onLevelSelect = null;
+        _netClient.onGameStart = null;
     }
 }

@@ -1,24 +1,25 @@
-module gui.conscli;
+module gui.richcli;
 
-/* A net client decorator that writes messages to a console.
- * This alias-this'se to INetClient.
+/* A net client wrapper that:
+ *  - writes messages to a GUI console,
+ *  - remembers the most recently received level.
  *
- * Maybe this isn't designed well? Maybe the superclass shouldn't expose
- * onStuff(delegate), but rather abstract onStuff() { } to override?
- * How would that work together with decorators?
+ * This alias-this'se to INetClient. To send a level, tell it to that class.
  */
 
 import std.string;
 
 import file.language;
 import gui.console;
+import level.level;
 import net.iclient;
 import net.structs;
 
-class ConsoleNetClient {
+class RichClient {
 private:
     INetClient _inner; // should be treated as owned, but externally c'tored
     Console _console; // not owned
+    Level _level;
 
 public:
     this(INetClient aInner, Console aConsole)
@@ -37,6 +38,8 @@ public:
     alias inner this;
     @property inout(INetClient) inner() inout { return _inner; }
     @property inout(Console) console() inout { return _console; }
+    @property inout(Level) level() inout { return _level; }
+
     @property void console(Console c)
     {
         assert (c);
@@ -44,6 +47,26 @@ public:
             c.lines = _console.lines;
         _console = c;
     }
+
+    @property void onCannotConnect(void delegate() f)
+    {
+        _inner.onCannotConnect = delegate void()
+        {
+            _console.add(Lang.netChatYouCannotConnect.transl);
+            if (f)
+                f();
+        };
+    };
+
+    @property void onConnectionLost(void delegate() f)
+    {
+        _inner.onConnectionLost = delegate void()
+        {
+            _console.add(Lang.netChatYouLostConnection.transl);
+            if (f)
+                f();
+        };
+    };
 
     @property void onChatMessage(void delegate(string, string) f)
     {
@@ -111,4 +134,17 @@ public:
                 f(toRoom);
         };
     }
+
+    @property void onLevelSelect(void delegate(string, const(ubyte[])) f)
+    {
+        _inner.onLevelSelect = delegate void(string plName, const(ubyte[]) lev)
+        {
+            _level = new Level(cast (immutable(void)[]) lev);
+            // We don't write to console, the lobby will do that.
+            // Reason: We don't want to write this during play.
+            if (f)
+                f(plName, lev);
+        };
+    }
+
 }

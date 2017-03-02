@@ -59,7 +59,7 @@ package:
              // result to the screen. It is both a renderer and a camera.
     Nurse nurse;
     EffectManager effect;
-    ConsoleNetClient _netClient; // null unless playing/observing multiplayer
+    RichClient _netClient; // null unless playing/observing multiplayer
 
     Style _localStyle;
     long altickLastUpdate;
@@ -109,7 +109,7 @@ public:
         setLastUpdateToNow();
     }
 
-    this(ConsoleNetClient client, Level lv)
+    this(RichClient client, Level lv)
     {
         this.runmode = Runmode.INTERACTIVE;
         assert (lv);
@@ -292,6 +292,9 @@ private:
     void initializeConsole()
     {
         assert (! _console);
+        if (runmode != Runmode.INTERACTIVE)
+            return;
+
         _console = new TransparentConsole(new Geom(0, 0, Geom.screenXlg, 0),
                     () { gui.requireCompleteRedraw(); });
         if (_netClient)
