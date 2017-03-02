@@ -28,6 +28,7 @@ private:
     TextButton _buttonExit;
     TextButton _buttonCentral;
 
+    RichClient _netClient;
     Console _console;
     PeerList _peerList;
     ColorSelector _colorSelector;
@@ -38,9 +39,6 @@ private:
     TextButton _chooseLevel;
     TextButton _declareReady;
     Texttype _chat;
-
-    RichClient _netClient;
-    Level _level;
 
     // Rule: A GUI element is either in exactly one of these, or in none.
     // _showWhenConnected is shown at the union of times when _showDuringLobby
@@ -124,8 +122,7 @@ public:
     }
 
     @property gotoMainMenu() const { return _gotoMainMenu; }
-    @property gotoGame() const { return _gotoGame && _level && _netClient; }
-    @property inout(Level) level() inout { return _level; }
+    @property gotoGame() const { return _gotoGame && _netClient; }
 
     auto loseOwnershipOfRichClient()
     {
@@ -259,7 +256,6 @@ private:
         if (connected && ! inLobby) {
             _netClient.gotoExistingRoom(Room(0));
             _preview.level = null;
-            _level = null;
         }
         else {
             if (offline)
@@ -327,7 +323,7 @@ private:
             refreshPeerList();
             _preview.level = _netClient.level;
             _console.add("%s %s %s".format(senderName,
-                Lang.netChatLevelChange.transl, _level.name));
+                Lang.netChatLevelChange.transl, _netClient.level.name));
         };
 
         _netClient.onGameStart = (Permu permu) {

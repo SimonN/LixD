@@ -109,13 +109,13 @@ public:
         setLastUpdateToNow();
     }
 
-    this(RichClient client, Level lv)
+    this(RichClient client)
     {
         this.runmode = Runmode.INTERACTIVE;
-        assert (lv);
-        assert (lv.good);
         assert (client);
-        level = lv;
+        assert (client.level);
+        assert (client.level.good);
+        level = client.level;
         _netClient = client;
         _netClient.onPeerSendsReplayData = (ReplayData data)
         {

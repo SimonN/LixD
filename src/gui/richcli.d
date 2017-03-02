@@ -48,6 +48,11 @@ public:
         _console = c;
     }
 
+    bool mayWeDeclareReady() const
+    {
+        return _inner.mayWeDeclareReady && _level && _level.good;
+    }
+
     @property void onCannotConnect(void delegate() f)
     {
         _inner.onCannotConnect = delegate void()
