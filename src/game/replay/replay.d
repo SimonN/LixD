@@ -40,14 +40,13 @@ struct FirstDifference {
 
 class Replay {
     static struct Player {
-        PlNr   number;
-        Style  style;
+        Style style;
         string name;
     }
 
 package:
     Version _gameVersionRequired;
-    Player[] _players; // guaranteed to be sorted by their plNr
+    Player[PlNr] _players;
     Permu _permu; // contains natural numbers [0 .. #players[, not the plNrs
     ReplayData[] _data;
 
@@ -73,9 +72,11 @@ public:
         levelBuiltRequired   = rhs.levelBuiltRequired;
         levelFilename        = rhs.levelFilename;
         playerLocal          = rhs.playerLocal;
-        _players             = rhs._players.dup;
         _permu               = rhs._permu.clone();
         _data                = rhs._data.dup;
+
+        assert (! _players.length);
+        rhs._players.byKeyValue.each!(a => _players[a.key] = a.value);
     }
 
 private:
@@ -96,7 +97,7 @@ private:
 
 public:
     @property gameVersionRequired() const { return _gameVersionRequired; }
-    @property const(Player)[] players() const  { return _players;      }
+    @property const(Player[PlNr]) players() const  { return _players;  }
     @property const(Permu)    permu()   const  { return _permu;        }
     @property       Permu     permu(Permu p)   { _permu = p; return p; }
 
@@ -112,15 +113,15 @@ public:
 
     @property string playerLocalName() const
     {
-        foreach (pl; _players)
-            if (pl.number == playerLocal)
-                return pl.name;
+        if (auto pl = playerLocal in _players)
+            return pl.name;
         return null;
     }
 
     @property string styleToNames(in Style st) const
     {
-        auto range = _players.filter!(p => p.style == st).map!(p => p.name);
+        auto range = _players.byValue.filter!(p => p.style == st)
+                                     .map!(p => p.name);
         switch (range.walkLength) {
             case 0: return "";
             case 1: return range.front;
@@ -128,18 +129,17 @@ public:
         }
     }
 
-    Style plNrToStyle(in PlNr plnr) const
+    Style plNrToStyle(in PlNr plNr) const
     {
-        foreach (pl; _players)
-            if (pl.number == plnr)
-                return pl.style;
+        if (auto pl = plNr in _players)
+            return pl.style;
         return Style.garden;
     }
 
     Style[] stylesInUse() const
     {
         Style[] ret;
-        foreach (style; _players.map!(pl => pl.style))
+        foreach (style; _players.byValue.map!(pl => pl.style))
             if (! ret.canFind(style))
                 ret ~= style;
         ret.sort();
@@ -153,9 +153,8 @@ public:
 
     void addPlayer(PlNr nr, Style s, string name)
     {
-        assert (_players.map!(pl => pl.number).all!(plNr => plNr != nr));
-        _players ~= Player(nr, s, name);
-        _players.sort!"a.number < b.number";
+        assert (nr !in _players);
+        _players[nr] = Player(s, name);
     }
 
     // This doesn't check whether the metadata/general data is the same.

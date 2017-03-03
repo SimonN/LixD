@@ -130,10 +130,10 @@ void saveToStdioFile(
 
     if (_players.length)
         file.writeln();
-    foreach (pl; _players)
-        file.writeln(IoLine.Plus(pl.number == playerLocal
+    foreach (plNr, pl; _players)
+        file.writeln(IoLine.Plus(plNr == playerLocal
              ? basics.globals.replayPlayer : basics.globals.replayFriend,
-             pl.number, styleToString(pl.style), pl.name));
+             plNr, styleToString(pl.style), pl.name));
     if (_players.length > 1)
         file.writeln(IoLine.Dollar(replayPermu, permu.toString));
 

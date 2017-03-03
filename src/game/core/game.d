@@ -260,14 +260,8 @@ private:
         assert (_localStyle == Style.init);
         assert (nurse);
         assert (nurse.replay);
-        if (_netClient)
-            _localStyle = _netClient.ourProfile.style;
-        else {
-            auto a = nurse.replay.players.find!(pl => pl.number
-                                        == nurse.replay.playerLocal);
-            assert (a.length, "playerLocal not in replay player list");
-            _localStyle = a[0].style;
-        }
+        _localStyle = _netClient ? _netClient.ourProfile.style
+                    : nurse.replay.players[nurse.replay.playerLocal].style;
         effect.localTribe = _localStyle;
     }
 
@@ -279,7 +273,7 @@ private:
         if (runmode != Runmode.INTERACTIVE)
             return;
 
-        GapaMode gapamode = nurse.replay.players.len == 1 ? GapaMode.single
+        GapaMode gapamode = nurse.replay.players.length == 1 ? GapaMode.single
             : ! _netClient
                 ? GapaMode.multiReplay
             : _netClient.ourProfile.feeling == Profile.Feeling.observing
