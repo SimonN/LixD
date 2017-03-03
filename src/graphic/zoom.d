@@ -25,21 +25,10 @@ public:
         assert (a > 0.001f);
         assert (b > 0.001f);
 
-        /* Allowed zoom values are (a), (b), and furthermore all nice powers
-         * of 2 that aren't close to either a or b.
-         */
-        bool apart(in float x, in float y)
-        {
-            enum ratio = 0.85f;
-            assert (x > 0 && y > 0);
-            return x/y < ratio || y/x < ratio;
-        }
-        _allowed = [ 1f/2, 1, 2, 4, 8, 16 ]
-            .filter!(x => x > min(a, b)) // even on torus maps? Probably
-            .filter!(x => apart(x, a) && apart(x, b))
-            .chain(apart(a, b) ? [a, b] : [ min(a, b) ])
-            .array;
-        _allowed.sort();
+        enum root2 = 1.41421f;
+        _allowed = [ a, b, 1f/2, root2/2, 1, root2, 2, 3, 4, 6, 8, 16 ]
+            .filter!(x => x >= min(a, b)) // even on torus maps? Probably
+            .array.sort().uniq.array;
 
         void initialZoom(in float val)
         {
