@@ -77,6 +77,7 @@ calcModalWindow(Game game) { with (game)
     }
     else if (modalWindow.framestepBack) {
         game.framestepBackBy(3 * Game.updatesBackMany);
+        game.pan.pause = true;
         killWindow();
     }
     else if (modalWindow.restart) {

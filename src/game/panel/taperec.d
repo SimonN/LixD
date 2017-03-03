@@ -110,6 +110,9 @@ protected:
             setSpeedTo(_speedFast.on ? 1 : 2);
         else if (_speedFast.executeRight)
             setSpeedTo(_speedFast.xf == frameTurbo ? 1 : 3);
+        else if (_speedBack.executeLeft || _speedBack.executeRight
+                                        || _speedAhead.executeLeft)
+            setSpeedTo(0);
 
         if (_saveState.execute)
             showLoadState(true);

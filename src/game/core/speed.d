@@ -87,7 +87,6 @@ void restartLevel(Game game)
 
 void framestepBackBy(Game game, in int by)
 {
-    game.pan.pause(true);
     with (LoadStateRAII(game))
         game.nurse.framestepBackBy(by);
 }
