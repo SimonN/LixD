@@ -45,8 +45,9 @@ class EffectManager {
     private Debris[] _debris;
     public  Style localTribe;
 
-    this()
+    this(Style st)
     {
+        localTribe = st;
         _tree = new RedBlackTree!Effect;
     }
 

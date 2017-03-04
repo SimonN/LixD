@@ -61,7 +61,6 @@ package:
     EffectManager effect;
     RichClient _netClient; // null unless playing/observing multiplayer
 
-    Style _localStyle;
     long altickLastUpdate;
     Rebindable!(const Lixxie) _drawHerHighlit;
 
@@ -145,7 +144,7 @@ public:
             nurse.dispose();
     }
 
-    Result evaluateReplay() { return nurse.evaluateReplay(_localStyle); }
+    Result evaluateReplay() { return nurse.evaluateReplay(); }
 
     auto consoleLines() const
     {
@@ -182,19 +181,21 @@ package:
         return nurse.stateOnlyPrivatelyForGame.multiplayer;
     }
 
+    @property Style localStyle() const
+    {
+        return nurse.replay.playerLocal.style;
+    }
+
     @property const(Tribe) localTribe() const
     {
         assert (cs, "null cs, shouldn't ever be null");
-        auto ptr = _localStyle in cs.tribes;
+        auto ptr = localStyle in cs.tribes;
         assert (ptr, "badly cloned cs? Local style isn't there");
         return *ptr;
     }
 
-    @property PlNr masterLocal() const { return nurse.replay.playerLocal; }
-    @property string masterLocalName() const
-    {
-        return nurse.replay.playerLocalName;
-    }
+    @property PlNr plNrLocal() const { return nurse.replay.plNrLocal; }
+    @property auto playerLocal() const { return nurse.replay.playerLocal; }
 
     void setLastUpdateToNow()
     {
@@ -215,9 +216,9 @@ package:
     void saveResult()
     {
         if (nurse && nurse.singleplayerHasWon
-                  && masterLocalName == basics.globconf.userName)
+                  && playerLocal.name == basics.globconf.userName)
             setLevelResult(nurse.replay.levelFilename,
-                           nurse.resultForTribe(_localStyle));
+                           nurse.resultForTribe(localStyle));
     }
 
 private:
@@ -235,9 +236,8 @@ private:
         _replayNeverCancelledThereforeDontSaveAutoReplay = rp !is null;
         if (! rp)
             rp = generateFreshReplay(levelFilename);
-        effect = new EffectManager;
+        effect = new EffectManager(rp.playerLocal.style);
         nurse  = new Nurse(level, rp, effect);
-        determineLocalStyleFromReplay();
     }
 
     Replay generateFreshReplay(Filename levelFilename)
@@ -245,24 +245,14 @@ private:
         auto rp = Replay.newForLevel(levelFilename, level.built);
         if (! _netClient) {
             rp.addPlayer(PlNr(0), Style.garden, basics.globconf.userName);
-            rp.playerLocal = PlNr(0);
+            rp.plNrLocal = PlNr(0);
         }
         else {
             foreach (plNr, prof; _netClient.profilesInOurRoom)
                 rp.addPlayer(plNr, prof.style, prof.name);
-            rp.playerLocal = _netClient.ourPlNr;
+            rp.plNrLocal = _netClient.ourPlNr;
         }
         return rp;
-    }
-
-    void determineLocalStyleFromReplay()
-    {
-        assert (_localStyle == Style.init);
-        assert (nurse);
-        assert (nurse.replay);
-        _localStyle = _netClient ? _netClient.ourProfile.style
-                    : nurse.replay.players[nurse.replay.playerLocal].style;
-        effect.localTribe = _localStyle;
     }
 
     void initializePanel()

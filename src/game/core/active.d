@@ -45,7 +45,7 @@ package void findAgainHighlitLixAfterUpdate(Game game)
 package ReplayData newReplayDataForNextUpdate(Game game)
 {
     ReplayData data;
-    data.player = game.masterLocal;
+    data.player = game.plNrLocal;
     data.update = game.nurse.upd + 1;
     return data;
 }
@@ -253,8 +253,8 @@ void assignToPotentialAssignee(
 
     // React faster to the new assignment than during its evaluation next
     // update. The evaluation could be several ticks ticks later.
-    effect.addArrowDontShow(data.update, _localStyle, potAss.id);
-    effect.addSound(        data.update, _localStyle, potAss.id, Sound.ASSIGN);
+    effect.addArrowDontShow(data.update, localStyle, potAss.id);
+    effect.addSound(        data.update, localStyle, potAss.id, Sound.ASSIGN);
 
     if (basics.user.pausedAssign.value == 2)
         pan.pause = false;

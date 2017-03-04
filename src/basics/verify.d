@@ -89,7 +89,7 @@ private class VerifyCounter {
         else if (res.lixSaved < lev.required) { key = "(FAIL)";   ++fail;   }
         else                                  { key = "(OK)";     ++ok;     }
         writeln(key, ",", fn.rootless, ",", rep.levelFilename.rootless, ",",
-            rep.playerLocalName, ",", res.lixSaved, ",", lev.required, ",",
+            rep.playerLocal.name, ",", res.lixSaved, ",", lev.required, ",",
             res.skillsUsed, ",", res.updatesUsed);
     }
 

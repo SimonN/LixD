@@ -43,10 +43,10 @@ public:
     // This remembers the effect manager, but not anything else.
     // We don't own the effect manager.
     this(in Level level, in Style[] tribesToMake,
-         in Permu permu, EffectManager ef, Style makeHatchesBlink)
+         in Permu permu, EffectManager ef)
     {
         _effect = ef;
-        _cs     = newZeroState(level, tribesToMake, permu, makeHatchesBlink);
+        _cs     = newZeroState(level, tribesToMake, permu, ef.localTribe);
         _physicsDrawer = new PhysicsDrawer(_cs.land, _cs.lookup);
         finalizeUpdateAnimateGadgets();
     }

@@ -53,7 +53,7 @@ package:
 public:
     Date     levelBuiltRequired;
     Filename levelFilename;
-    PlNr     playerLocal;
+    PlNr     plNrLocal;
 
     static newForLevel(Filename levFn, Date levBuilt)
     {
@@ -71,7 +71,7 @@ public:
         _gameVersionRequired = rhs._gameVersionRequired;
         levelBuiltRequired   = rhs.levelBuiltRequired;
         levelFilename        = rhs.levelFilename;
-        playerLocal          = rhs.playerLocal;
+        plNrLocal            = rhs.plNrLocal;
         _permu               = rhs._permu.clone();
         _data                = rhs._data.dup;
 
@@ -111,11 +111,11 @@ public:
         return (_data.length > 0) ? _data[$-1].update : 0;
     }
 
-    @property string playerLocalName() const
+    @property Player playerLocal() const
     {
-        if (auto pl = playerLocal in _players)
-            return pl.name;
-        return null;
+        auto pl = plNrLocal in _players;
+        assert (pl, "there is no local player in this replay");
+        return *pl;
     }
 
     @property string styleToNames(in Style st) const

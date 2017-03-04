@@ -81,7 +81,7 @@ auto implLoadFromFile(Replay replay, Filename fn) { with (replay)
         if (i.text1 == replayPlayer || i.text1 == replayFriend) {
             addPlayer(PlNr(i.nr1 & 0xFF), stringToStyle(i.text2), i.text3);
             if (i.text1 == replayPlayer)
-                playerLocal = PlNr(i.nr1 & 0xFF);
+                plNrLocal = PlNr(i.nr1 & 0xFF);
         }
         break;
     case '!': {
@@ -131,7 +131,7 @@ void saveToStdioFile(
     if (_players.length)
         file.writeln();
     foreach (plNr, pl; _players)
-        file.writeln(IoLine.Plus(plNr == playerLocal
+        file.writeln(IoLine.Plus(plNr == plNrLocal
              ? basics.globals.replayPlayer : basics.globals.replayFriend,
              plNr, styleToString(pl.style), pl.name));
     if (_players.length > 1)
@@ -185,7 +185,7 @@ void saveToTree(
         treebase.rootless,
         replay.mimickLevelPath(),
         replay.levelFilename ? replay.levelFilename.fileNoExtNoPre : "unknown",
-        replay.playerLocalName.escapeStringForFilename(),
+        replay.playerLocal.name.escapeStringForFilename(),
         Date.now().toStringForFilename(),
         basics.globals.filenameExtReplay);
     replay.implSaveToFile(new VfsFilename(outfile), lev);

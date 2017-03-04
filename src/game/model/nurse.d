@@ -42,8 +42,7 @@ public:
     this(in Level lev, Replay rp, EffectManager ef)
     {
         _replay = rp;
-        _model = new GameModel(lev, rp.stylesInUse, rp.permu, ef,
-                               rp.players[rp.playerLocal].style);
+        _model = new GameModel(lev, rp.stylesInUse, rp.permu, ef);
         _cache = new PhysicsCache();
         _levelBuilt = lev.built;
         assert (_replay);
@@ -136,7 +135,7 @@ public:
     }
 
     // again, only noninteractive mode should call this
-    Result evaluateReplay(Style tribeToEvaluate)
+    Result evaluateReplay()
     {
         assert (_model);
         assert (_replay);
@@ -144,7 +143,7 @@ public:
                 // allow 5 minutes after the last replay data before cancelling
                 && upd < _replay.latestUpdate + 5 * (60 * 15))
             updateOnce();
-        return resultForTribe(tribeToEvaluate);
+        return resultForTribe(_replay.playerLocal.style);
     }
 
     Result resultForTribe(in Style style) const

@@ -88,7 +88,7 @@ void drawAllLixes(Game game)
         foreach (otherTribe; nurse.constStateForDrawingOnly.tribes)
             if (otherTribe !is game.localTribe)
                 drawTribe(otherTribe);
-        drawTribe(nurse.constStateForDrawingOnly.tribes[_localStyle]);
+        drawTribe(game.localTribe);
         if (_drawHerHighlit)
             _drawHerHighlit.drawAgainHighlit();
     }

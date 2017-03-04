@@ -19,7 +19,7 @@ private:
     Style _ourStyle;
 
 public:
-    this(in Tribe[Style] rawTribes, Style ourStyle,
+    this(in Tribe[Style] rawTribes,
         in Replay replay, in Level level)
     {
         super(myGeom(2, butXl + 40,
@@ -36,7 +36,7 @@ public:
             super.captionSuperElements();
             super.setReplayAndLevel(replay, level);
         }
-        _ourStyle = ourStyle;
+        _ourStyle = replay.playerLocal.style;
         foreach (int i, tribe; sortedTribes(rawTribes))
             addChild(new Line(new Geom(0, 40 + 20*i, xlg-40, 20, From.TOP),
                 tribe, replay.styleToNames(tribe.style)));
