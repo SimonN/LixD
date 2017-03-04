@@ -152,7 +152,7 @@ $editorButtonForeground     Vordergrund: Ausgewählte Teile vor andere holen.
 $editorButtonSelectFlip     Spiegeln: Ausgewähltes Terrain horizontal spiegeln.
 $editorButtonSelectRotate   Drehen: Ausgewähltes Terrain um ein Viertel drehen.
 $editorButtonSelectDark     Dunkel: Ausgewähltes Terrain im Spiel schwarz zeichnen.
-$editorButtonViewZoom       Zoom: Vergrößerung der Karte ein- oder ausschalten.
+$editorButtonViewZoom       Zoom: Linksklick zoomt in die Karte, Rechtsklick zoomt heraus.
 $editorButtonAddTerrain     Terrain: Ein durchgrabbares Terrainstück platzieren.
 $editorButtonAddSteel       Stahl: Ein nicht-durchgrabbares Stahlobjekt platzieren.
 $editorButtonAddHatch       Klappe: Eine Lix-Eingangsklappe platzieren.

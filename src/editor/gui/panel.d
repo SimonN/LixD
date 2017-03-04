@@ -17,7 +17,8 @@ import hardware.keyset;
 class EditorPanel : Element {
 private:
     TextButton     _info;
-    BitmapButton[] _buttons;
+    BitmapButton[] _buttons; // except zoom button, but still has slot for it
+    TwoTasksButton _zoom;
     TextButton[]   _textButtons;
     Label          _fps;
     MutFilename    _currentFilename;
@@ -76,6 +77,7 @@ public:
             : _textButtons[id - Lang.editorButtonMenuConstants];
     }
 
+    @property buttonZoom() inout { return _zoom; }
     @property buttonFraming() inout {
         return button(Lang.editorButtonSelectFrame);
     }
@@ -154,12 +156,21 @@ private:
         immutable bitmapYl = (Geom.panelYlg - _info.ylg) / 2;
         immutable textXl = Geom.screenXlg - infoXl();
         immutable textYl = Geom.panelYlg / texts;
+        const cutbit = fileImageEditPanel.getInternal;
+
         foreach (int i; 0 .. bitmaps) {
-            _buttons ~= new BitmapButton(new Geom(
-                i/2*bitmapXl, _info.ylg + i%2*bitmapYl, bitmapXl, bitmapYl),
-                fileImageEditPanel.getInternal);
+            auto g = new Geom(i/2*bitmapXl, _info.ylg + i%2*bitmapYl,
+                              bitmapXl, bitmapYl);
+            if (langToButtonIndex(Lang.editorButtonViewZoom) == i) {
+                _zoom = new TwoTasksButton(g, cutbit);
+                _zoom.xf = langToButtonXf(Lang.editorButtonViewZoom);
+                _buttons ~= _zoom;
+            }
+            else {
+                _buttons ~= new BitmapButton(g, cutbit);
+                _buttons[$-1].xf = -1;
+            }
             addChild(_buttons[$-1]);
-            _buttons[$-1].xf = -1;
         }
         foreach (int i; 0 .. texts) {
             _textButtons ~= new TextButton(new Geom(

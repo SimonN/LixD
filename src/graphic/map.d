@@ -100,21 +100,46 @@ private:
 
 public:
 
-this(in Topology tp, in int a_cameraXl, in int a_cameraYl)
+this(in Topology tp, in int aCameraXl, in int aCameraYl)
 {
-    assert (a_cameraXl > 0);
-    assert (a_cameraYl > 0);
-    {
-        auto cfg = Torbit.Cfg(tp);
-        _nearestNeighbor = new Torbit(cfg);
-        cfg.smoothlyScalable = true;
-        _blurryScaling = new Torbit(cfg);
-    }
-    _cameraXl = a_cameraXl;
-    _cameraYl = a_cameraYl;
+    assert (aCameraXl > 0);
+    assert (aCameraYl > 0);
+    _cameraXl = aCameraXl;
+    _cameraYl = aCameraYl;
+
     _zoom = new Zoom(Point(tp.xl, tp.yl), Point(_cameraXl, _cameraYl));
-    cameraX  = _cameraXl / 2;
-    cameraY  = _cameraYl / 2;
+    auto cfg = Torbit.Cfg(tp);
+    _nearestNeighbor = new Torbit(cfg);
+    cfg.smoothlyScalable = true;
+    _blurryScaling = new Torbit(cfg);
+
+    cameraX = _cameraXl / 2;
+    cameraY = _cameraYl / 2;
+}
+
+void dispose()
+{
+    if (_nearestNeighbor) {
+        _nearestNeighbor.dispose();
+        _nearestNeighbor = null;
+    }
+    if (_blurryScaling) {
+        _blurryScaling.dispose();
+        _blurryScaling = null;
+    }
+}
+
+// This function shall intercept calls to Torbit.resize.
+void resize(in int newXl, in int newYl)
+{
+    if (xl == newXl && yl == newYl)
+        // the Torbits would get no-op calls, but we shouldn't reset zoom.
+        return;
+    _nearestNeighbor.resize(newXl, newYl);
+    _blurryScaling.resize(newXl, newYl);
+    _zoom = new Zoom(Point(newXl, newYl), Point(_cameraXl, _cameraYl));
+    cameraX = cameraX; // re-snap to boundaries
+    cameraY = cameraY;
 }
 
 private int cameraSetter(ref int camera, in int newCamera, in bool torus,

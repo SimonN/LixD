@@ -88,8 +88,9 @@ void makePanel(Editor editor)
                 sel.zOrderTowardsButIgnore(Hover.FgBg.fg, editor._selection);
             }, Button.WhenToExecute.whenMouseClickAllowingRepeats);
 
-        // The zoom button should become a TwoTaskButton.
-        // Until then, we don't assign to the button any function here.
+        // Zoom execute is handled in Editor.calc()
+        buttonZoom.hotkey = keyZoomIn;
+        buttonZoom.hotkeyRight = keyZoomOut;
 
         onExecute(Lang.editorButtonSelectFlip, keyEditorMirror, () {
             immutable box = editor.smallestRectContainingSelection();

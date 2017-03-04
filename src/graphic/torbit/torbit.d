@@ -30,6 +30,12 @@ public:
         bool torusX, torusY;
         bool smoothlyScalable; // set this only if you want to blit from this
                                // albit to anywhere with noninteger scaling
+        this(const(Torbit) other)
+        {
+            this(cast (Topology) other);
+            smoothlyScalable = other.smoothlyScalable;
+        }
+
         this(const(Topology) topol)
         {
             xl = topol.xl;
@@ -49,23 +55,9 @@ public:
 
     override Torbit clone() const
     {
-        auto cfg = Cfg(this);
-        cfg.smoothlyScalable = this.albit && (ALLEGRO_MAG_LINEAR &
-            al_get_bitmap_flags(cast (Albit) this.albit)) != 0;
-        auto ret = new Torbit(cfg);
+        auto ret = new Torbit(Cfg(this));
         ret.copyFrom(this);
         return ret;
-    }
-
-    void copyFrom(in Torbit rhs)
-    {
-        assert (rhs, "can't copyFrom a null Torbit");
-        assert (bitmap, "null bitmap shouldn't ever happen, bug in Torbit");
-        assert (rhs.bitmap, "null rhs.bitmap shouldn't ever happen");
-        assert (rhs.Topology.opEquals(this),
-            "copyFrom only implemented between same size, for speedup");
-        auto targetBitmap = TargetBitmap(bitmap);
-        al_draw_bitmap(cast (Albit) rhs.bitmap, 0, 0, 0);
     }
 
     ~this() { dispose(); }
@@ -77,12 +69,30 @@ public:
         }
     }
 
+    bool smoothlyScalable() const
+    {
+        return this.albit && (ALLEGRO_MAG_LINEAR &
+            al_get_bitmap_flags(cast (Albit) this.albit)) != 0;
+    }
+
     Albit loseOwnershipOfAlbit()
     {
         assert (bitmap);
         auto ret = bitmap;
         bitmap = null;
         return ret;
+    }
+
+
+    void copyFrom(in Torbit rhs)
+    {
+        assert (rhs, "can't copyFrom a null Torbit");
+        assert (bitmap, "null bitmap shouldn't ever happen, bug in Torbit");
+        assert (rhs.bitmap, "null rhs.bitmap shouldn't ever happen");
+        assert (rhs.Topology.opEquals(this),
+            "copyFrom only implemented between same size, for speedup");
+        auto targetBitmap = TargetBitmap(bitmap);
+        al_draw_bitmap(cast (Albit) rhs.bitmap, 0, 0, 0);
     }
 
     void copyToScreen()
@@ -147,9 +157,12 @@ protected:
         assert (yl == al_get_bitmap_height(bitmap));
     }
     body {
+        auto cfg = Cfg(this);
         if (bitmap)
             al_destroy_bitmap(bitmap);
-        bitmap = albitCreate(xl, yl);
+        bitmap = cfg.smoothlyScalable
+            ? albitCreateSmoothlyScalable(cfg.xl, cfg.yl)
+            : albitCreate(cfg.xl, cfg.yl);
     }
 
 package:

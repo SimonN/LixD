@@ -1,6 +1,17 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.24
+------
+
+Fix #167: Editor button zooms again. Map is rezoomed when editor resizes map.
+
+Fix #170: Game crashed due to the Nurse indexing players in the replay by
+PlNr. Now, the replay uses a PlNr-indexed associative array.
+
+I offer more zoom values: 1/sqrt(2), 1, sqrt(2), 2, 3, 4, 6, 8, 16, and
+fitting the level's width or height to screen.
+
 0.6.23
 ------
 

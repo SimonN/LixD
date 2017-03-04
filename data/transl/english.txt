@@ -157,7 +157,7 @@ $editorButtonForeground      Foreground: Puts the selected tiles in front of som
 $editorButtonSelectFlip      Flip: Mirrors the selected terrain horizontally.
 $editorButtonSelectRotate    Rotate: Performs a quarter turn on the selected terrain.
 $editorButtonSelectDark      Dark: Selected terrain erases normal terrain.
-$editorButtonViewZoom        Zoom: Toggles editor map zoom. Doesn't affect the level.
+$editorButtonViewZoom        Zoom: Left-click zooms into the map, right-click zooms out.
 $editorButtonAddTerrain      Terrain: Add a terrain tile.
 $editorButtonAddSteel        Steel: Add a steel tile that cannot be dug through.
 $editorButtonAddHatch        Hatch: Add a lix entrance hatch.

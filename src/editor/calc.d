@@ -62,6 +62,12 @@ void handleNonstandardPanelButtons(Editor editor) { with (editor)
     with (_panel.buttonSelectAdd)
         on = hotkey.keyHeld     ? true
            : hotkey.keyReleased ? false : on;
+    with (_panel.buttonZoom) {
+        if (executeLeft)
+            _map.zoomIn();
+        if (executeRight)
+            _map.zoomOut();
+    }
 }}
 
 void selectGrid(Editor editor)
