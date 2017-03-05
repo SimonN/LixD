@@ -397,3 +397,29 @@ struct ChatPacket {
             text = fromStringz(cast (char*) (p.data + header.len)).idup;
     }
 }
+
+struct SuggestUpdatePacket {
+    import net.repdata : Update;
+
+    PacketHeader header;
+    Update update;
+
+    enum len = header.len + update.sizeof;
+
+    ENetPacket* createPacket() const nothrow
+    {
+        auto ret = .createPacket(len);
+        header.serializeTo(ret.data[0 .. header.len]);
+        ret.data[header.len .. header.len + update.sizeof]
+            = nativeToBigEndian!int(update);
+        return ret;
+    }
+
+    this(const(ENetPacket*) p)
+    {
+        enforce(p.dataLength >= len);
+        header = PacketHeader(p.data[0 .. header.len]);
+        update = Update(bigEndianToNative!int(
+                    p.data[header.len .. header.len + update.sizeof]));
+    }
+}

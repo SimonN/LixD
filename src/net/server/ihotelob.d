@@ -24,4 +24,5 @@ interface IHotelObserver {
     void sendPeerLeftYourRoom(PlNr receiv, PlNr mover);
 
     void startGame(PlNr roomOwner, int permuLength);
+    void suggestUpdate(PlNr receiv, Update upd);
 }

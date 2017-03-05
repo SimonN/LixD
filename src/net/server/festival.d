@@ -4,7 +4,11 @@ module net.server.festival;
  * Only the server knows about festivals.
  * Not about who is in a room, because NetServer._profiles keep track of that.
  *
- * Festival is manually memory-managed, all of it is @nogc.
+ * All of Festival is @nogc.
+ *
+ * Call updatesToSuggestOrZero() often, it suggests to the client the number
+ * of physics updates the server would have done. The client can add the
+ * client's own lag to see where he should be.
  */
 
 // DTODO: Make the replay known in the network, include in Festival,
@@ -12,9 +16,11 @@ module net.server.festival;
 // gets the correct replay and can jump right into the action.
 
 import core.stdc.stdlib;
+import core.time;
 
 import net.structs;
 import net.repdata;
+import net.packetid : updatesPerSecond;
 
 package:
 
@@ -22,11 +28,12 @@ struct Festival {
 @nogc:
 private:
     ubyte[] _level; // send this data to new-joiners. Manually memory-managed.
+    MonoTime _gameStart;
+    MonoTime _recentSync;
 
 public:
     PlNr owner; // creator of the room, I plan that he shall kick others
     PlNr levelChooser; // who has chosen the most recent level?
-    bool playing; // is a game in progress?
     Update update; // if game in progress, players should sync to this
 
     @property const(ubyte)[] level() const { return _level; }
@@ -48,9 +55,10 @@ public:
         if (_level.ptr !is null)
             free(_level.ptr);
         duplicate(fe.level);
+        _gameStart = fe._gameStart;
+        _recentSync = fe._recentSync;
         owner = fe.owner;
         levelChooser = fe.levelChooser;
-        playing = fe.playing;
         update = fe.update;
         return this;
     }
@@ -59,14 +67,43 @@ public:
 
     void dispose()
     {
+        endGame();
         owner = owner.init;
         levelChooser = levelChooser.init;
-        playing = playing.init;
         update = update.init;
         if (_level.ptr !is null) {
             free(_level.ptr);
             _level = null;
         }
+    }
+
+    @property bool gameRunning() const
+    {
+        return _gameStart != MonoTime.zero;
+    }
+
+    void startGame()
+    {
+        assert (! gameRunning);
+        _gameStart = MonoTime.currTime;
+        _recentSync = MonoTime.currTime;
+    }
+
+    void endGame()
+    {
+        _gameStart = MonoTime.zero;
+        _recentSync = MonoTime.zero;
+    }
+
+    Update updatesToSuggestOrZero()
+    {
+        if (! gameRunning
+            || MonoTime.currTime - _recentSync < dur!"seconds"(3))
+            return Update(0);
+        enum oneUpdate = dur!"hnsecs"(10_000_000 / updatesPerSecond);
+        auto updatesSinceStart = (MonoTime.currTime - _gameStart) / oneUpdate;
+        _recentSync = MonoTime.currTime;
+        return Update(updatesSinceStart & 0x7FFF_FFFF);
     }
 
 private:

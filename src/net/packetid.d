@@ -1,6 +1,7 @@
 module net.packetid;
 
 enum : int {
+    updatesPerSecond = 15, // logic/physics updates of the game
     netPlayerNameMaxLen = 30,
     netChatMaxLen = 300,
 }
@@ -54,5 +55,5 @@ enum PacketStoC : ubyte {
     gameStartsWithPermu = 140,
 
     peerReplayData = 141,
-    updatesToSync = 142,
+    suggestPhysicsUpdate = 142,
 }

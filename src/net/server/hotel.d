@@ -7,6 +7,9 @@ module net.server.hotel;
  * Only the server knows about the hotel. Clients know their Room.
  * The server makes people move between rooms by demanding that from the hotel.
  *
+ * Call calc() frequently to poll stuff, e.g., for syncing packets.
+ * Not every calc() leads to a syncing packet send, Hotel takes care.
+ *
  * Hotel doesn't check whether the packets are an attack against the server.
  * The Server is reponsible for that, and it calls Hotel methods if the packet
  * is good.
@@ -113,7 +116,7 @@ public:
             assert (p.room == room);
             assert (party.walkLength > 0);
         }
-        festivals[room].playing = true;
+        festivals[room].startGame();
         ob.startGame(festivals[room].owner,
             party.filter!(prof => prof.feeling == Profile.Feeling.ready)
                  .walkLength.to!int);
@@ -127,6 +130,11 @@ public:
         foreach (const plNr, ref const profile; ob.allPlayers)
             if (profile.room == room && plNr != data.player)
                 ob.sendReplayData(plNr, data);
+    }
+
+    void calc()
+    {
+        sendTimeSyncingPackets();
     }
 
 private:
@@ -157,5 +165,14 @@ private:
         if (room != Room(0))
             festivals[room].owner = plNr;
     }
-}
 
+    void sendTimeSyncingPackets()
+    {
+        for (Room ro = Room(0); ro < Room.maxExclusive;
+                                ro = Room(1 + ro & 0xFF))
+            if (Update upd = festivals[ro].updatesToSuggestOrZero)
+                foreach (const plNr, ref const profile; ob.allPlayers)
+                    if (profile.room == ro)
+                        ob.suggestUpdate(plNr, upd);
+    }
+}

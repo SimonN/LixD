@@ -39,8 +39,7 @@ public:
             2, // allow up to 2 channels to be used, 0 and 1
             0, // assume any amount of incoming bandwidth
             0); // assume any amount of outgoing bandwidth
-        if (_host is null)
-            assert (false, "error creating enet server host");
+        assert (_host, "error creating enet server host");
     }
 
     ~this()
@@ -172,6 +171,15 @@ public:
         pa.header.packetID = PacketStoC.gameStartsWithPermu;
         pa.header.plNr = roomOwner;
         broadcastToRoom(pa);
+    }
+
+    void suggestUpdate(PlNr receiv, Update upd)
+    {
+        auto pa = SuggestUpdatePacket();
+        pa.header.packetID = PacketStoC.suggestPhysicsUpdate;
+        pa.header.plNr = receiv; // doesn't matter
+        pa.update = upd;
+        enet_peer_send(_host.peers + receiv, 0, pa.createPacket);
     }
 
 // ############################################################################
