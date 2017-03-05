@@ -1,8 +1,18 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.25
+------
+
+2017-03-05
+
+The Windows executable has a Lix icon in the file manager. On all operating
+systems, the application window and taskbar entry have a Lix icon.
+
 0.6.24
 ------
+
+2017-03-04
 
 Fix #167: Editor button zooms again. Map is rezoomed when editor resizes map.
 

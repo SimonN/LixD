@@ -26,6 +26,8 @@
     ],
     "lflags": ["-lallegro"],
     "libs-windows": ["allegro"],
+    "sourceFiles-windows": ["src\\icon.res"],
+    "dflags-windows": ["-Jsrc\\icon.res"],
     "lflags-windows": ["-L/subsystem:windows"],
 
     "buildRequirements": ["disallowDeprecations"],
