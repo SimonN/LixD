@@ -48,13 +48,13 @@ void initialize(in Cmdargs cmdargs)
     if (gr) basics.globconf.load();
     if (gr) basics.user.load();
     if (gr) loadUserLanguageAndIfNotExistSetUserOptionToEnglish();
-    if (ia) hardware.display.setScreenMode(cmdargs);
 
             al_init_image_addon();
             al_init_font_addon();
             al_init_ttf_addon();
             al_init_primitives_addon();
             hardware.tharsis.initialize();
+    if (ia) hardware.display.setScreenMode(cmdargs);
     if (ia) hardware.keyboard.initialize();
     if (ia) hardware.mouse.initialize();
     if (ia) hardware.sound.initialize();
@@ -68,12 +68,12 @@ void initialize(in Cmdargs cmdargs)
     if (ia) hardware.mousecur.initialize();
     if (ia) gui.initialize();
             tile.tilelib.initialize();
-    // comment this back in once we've built enet dynamically
-    // DerelictENet.load();
 }
 
 void deinitialize()
 {
+    // We don't deinitialize much. It should be okay to leak at end of
+    // application on any modern OS, it makes for faster exiting.
     hardware.tharsis.deinitialize();
     basics.user.save();
     basics.globconf.save();

@@ -24,6 +24,7 @@ ALLEGRO_DISPLAY* display;
 
 private:
     ALLEGRO_EVENT_QUEUE* queue;
+    Albit _appIcon = null;
     bool _displayActive;
     bool _displayCloseWasClicked;
     long[] _fpsArr;
@@ -143,6 +144,7 @@ void setScreenMode(in Cmdargs cmdargs)
     assert (al_y > 0);
 
     al_set_window_title(display, nameOfTheGame.toStringz);
+    loadIcon();
     queue = al_create_event_queue();
     al_register_event_source(queue, al_get_display_event_source(display));
 }
@@ -157,6 +159,10 @@ void deinitialize()
     if (queue) {
         al_destroy_event_queue(queue);
         queue = null;
+    }
+    if (_appIcon) {
+        al_destroy_bitmap(_appIcon);
+        _appIcon = null;
     }
     _displayActive = false;
 }
@@ -186,4 +192,15 @@ void calc()
             // on a mouse event, not on a display event.
         }
     }
+}
+
+private:
+
+void loadIcon()
+{
+    assert (display);
+    if (! _appIcon)
+        _appIcon = al_load_bitmap(fileImageAppIcon.stringzForReading);
+    if (_appIcon)
+        al_set_display_icon(display, _appIcon);
 }

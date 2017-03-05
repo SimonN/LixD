@@ -129,7 +129,8 @@ Filename dirLevels, dirLevelsSingle, dirLevelsNetwork, dirReplays, dirData,
 
 Filename fileGlobalConfig, fileLog, fileTharsisProf, fileLanguageEnglish;
 
-Filename fileImageGuiNumber, fileImageDebris, fileImageEditFlip,
+Filename fileImageGuiNumber, fileImageAppIcon,
+    fileImageDebris, fileImageEditFlip,
     fileImageEditHatch, fileImageEditPanel, fileImageExplosion,
     fileImageFuseFlame, fileImageGameArrow, fileImageGameIcon,
     fileImageGameNuke, fileImageGamePanel, fileImageGamePanel2,
@@ -166,6 +167,10 @@ static this()
     fileTharsisProf = new Fn("data/profile.txt");
     fileLanguageEnglish = new Fn("data/transl/english.txt");
 
+    fileImageAppIcon = new Fn("data/images/app_icon.I.png"); // with extension
+
+    // These are without image extensions due to legacy design that tried
+    // to stay format-agnostic. But PNG has become the standard since.
     fileImageGuiNumber = new Fn("data/images/api_numb.I");
     fileImageDebris = new Fn("data/images/debris.I");
     fileImageEditFlip = new Fn("data/images/edit_flp.I");
