@@ -119,7 +119,9 @@ private:
     ) {
         immutable upd = _cs.update;
         auto tribe = tribeStyle in _cs.tribes;
-        assert (tribe);
+        // Ignore bogus data that can come from anywhere
+        if (! tribe)
+            return;
         if (i.isSomeAssignment) {
             // never assert based on the content in ReplayData, which may have
             // been a maleficious attack from a third party, carrying a lix ID

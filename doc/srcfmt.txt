@@ -9,20 +9,20 @@ Building Lix
 ------------
 
 Look in the `build' directory and read the file for your operating system.
-
 That file has instructions on how to install a D compiler, the build system
 dub, and the required libraries.
 
 
 
-Finishing the port
+Sending in patches
 ------------------
 
-Simon shall search the code for instances of DTODO, which mark things that
-shall be tested/altered when most things have been ported.
+I encourage using git to send in patches. Make a github pull request, or
+send your commits by email. See the default readme for my contact data.
 
-Instances of DTODOLANG point to missing use of the Language class, which
-has not yet been ported.
+Please limit the first line of your git commit messages to 50 characters.
+If you want to write a longer message, make a blank line below the first,
+and then add more lines of at most 72 characters each.
 
 
 
@@ -30,25 +30,15 @@ Text encoding
 -------------
 
 Everything -- source, levels, gadget definitions, documentation -- is UTF-8.
-Rationale: http://utf8everywhere.org/
+Never use byte-order marks. Rationale: http://utf8everywhere.org/
 
-Never use byte-order marks. Reasoning: When you cat two files, byte-order
-marks in the middle of output become clutter. cat is an excellent program
-because it doesn't interpret your input in any way.
+Source code shall have LF terminators.
 
+Level and replay files can have LF, CRLF, or CR endings.
 
-
-LF or CRLF terminators
-----------------------
-
-Source code should have LF terminators. Anything else is crazy.
-
-I don't care what's used in level or replay files. Lix can read them with
-any terminator, and tools like grep or sed will work, too. Inspecting levels
-or replays with an interactive editor is a nice-to-have, but not required.
-
-Documentation (all ./doc/* files) and translations (all ./data/transl/* files)
-must have CRLF endings. Rationale: Must be accessible via Windows Notepad.
+Documentation that is system-independent (most files in ./doc/) and
+translations (all ./data/transl/* files) shall have CRLF endings.
+They shall be accessible in Windows Notepad.
 
 
 
@@ -165,18 +155,6 @@ There is no "the" line anyway.
 Don't align things horizontally. If you did that, you would introduce
 unnecessary dependencies between lines. You want low coupling between modules;
 likewise, you shouldn't couple lines.
-
-
-
-Sending in patches
-------------------
-
-I encourage to use git to send in patches. Make a github pull request, or
-send your commits by email. See the default readme for my contact data.
-
-Please limit the first line of your git commit messages to 50 characters.
-If you want to write a longer message, make a blank line below the first,
-and then add more lines of at most 72 characters each.
 
 
 

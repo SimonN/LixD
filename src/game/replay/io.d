@@ -108,6 +108,13 @@ auto implLoadFromFile(Replay replay, Filename fn) { with (replay)
     default:
         break;
     }
+
+    // Sanity-fix the replay
+    if (plNrLocal !in _players) {
+        if (_players.length == 0)
+            addPlayer(PlNr(0), Style.garden, ""); // add unknown player
+        plNrLocal = _players.byKey.front;
+    }
     return ret;
 }}
 
