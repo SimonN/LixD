@@ -1,0 +1,232 @@
+$BUILT 2016-07-23 13:55:40
+$AUTHOR Nepster
+$ENGLISH Cliff Jumpers
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1984
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 50
+
+#CLIMBER 5
+#FLOATER 5
+#BLOCKER 5
+#BUILDER 5
+#BASHER 5
+#MINER 5
+#DIGGER 5
+#EXPLODER 0
+
+:geoo/sandstone/Hatch.H: 0 112
+
+:geoo/sandstone/Goal.G: 1906 150
+
+:geoo/sandstone/pillar_top_jaggedl: 50 208
+:geoo/sandstone/pillar_top_jaggedr: 18 208
+:geoo/sandstone/pillar_32: 18 240
+:geoo/sandstone/pillar_32: 50 240
+:geoo/sandstone/pillar_32: 18 272
+:geoo/sandstone/pillar_32: 50 272
+:geoo/sandstone/pillar_32: 18 304
+:geoo/sandstone/pillar_32: 50 304
+:geoo/sandstone/pillar_32: 18 336
+:geoo/sandstone/pillar_32: 50 336
+:geoo/sandstone/pillar_32: 18 368
+:guideline/build-L: 78 346 rrr
+:guideline/build-L: 102 298 rrr
+:guideline/build-L: 126 250 rrr
+:guideline/build-L: 150 202 rrr
+:guideline/build-L: 174 154 rrr
+:guideline/build-L: 198 106 rrr
+:guideline/build-L: 222 58 rrr
+:geoo/sandstone/pillar_top_jaggedl: 278 48
+:geoo/sandstone/pillar_top_jaggedr: 246 48
+:geoo/sandstone/pillar_32: 246 80
+:geoo/sandstone/pillar_32: 278 80
+:geoo/sandstone/pillar_32: 246 112
+:geoo/sandstone/pillar_32: 278 112
+:geoo/sandstone/pillar_32: 246 144
+:geoo/sandstone/pillar_32: 278 144
+:geoo/sandstone/pillar_32: 246 176
+:geoo/sandstone/pillar_32: 278 176
+:geoo/sandstone/pillar_32: 246 208
+:geoo/sandstone/pillar_32: 278 208
+:geoo/sandstone/pillar_32: 246 240
+:geoo/sandstone/pillar_32: 278 240
+:geoo/sandstone/pillar_32: 246 272
+:geoo/sandstone/pillar_32: 278 272
+:geoo/sandstone/pillar_32: 246 304
+:geoo/sandstone/pillar_32: 278 304
+:geoo/sandstone/pillar_32: 246 336
+:geoo/sandstone/pillar_32: 278 336
+:geoo/sandstone/pillar_32: 246 368
+:guideline/build-L: 306 346 rrr
+:guideline/build-L: 330 298 rrr
+:guideline/build-L: 354 250 rrr
+:guideline/build-L: 378 202 rrr
+:guideline/build-L: 402 154 rrr
+:guideline/build-L: 426 106 rrr
+:guideline/build-L: 450 58 rrr
+:geoo/sandstone/pillar_top_jaggedl: 506 48
+:geoo/sandstone/pillar_top_jaggedr: 474 48
+:geoo/sandstone/pillar_32: 474 80
+:geoo/sandstone/pillar_32: 506 80
+:geoo/sandstone/pillar_32: 474 112
+:geoo/sandstone/pillar_32: 506 112
+:geoo/sandstone/pillar_32: 474 144
+:geoo/sandstone/pillar_32: 506 144
+:geoo/sandstone/pillar_32: 474 176
+:geoo/sandstone/pillar_32: 506 176
+:geoo/sandstone/pillar_32: 474 208
+:geoo/sandstone/pillar_32: 506 208
+:geoo/sandstone/pillar_32: 474 240
+:geoo/sandstone/pillar_32: 506 240
+:geoo/sandstone/pillar_32: 474 272
+:geoo/sandstone/pillar_32: 506 272
+:geoo/sandstone/pillar_32: 474 304
+:geoo/sandstone/pillar_32: 506 304
+:geoo/sandstone/pillar_top_jaggedl: 474 336 f
+:geoo/sandstone/pillar_top_jaggedr: 506 336 f
+:guideline/build-L: 534 346 rrr
+:guideline/build-L: 558 298 rrr
+:guideline/build-L: 582 250 rrr
+:guideline/build-L: 606 202 rrr
+:guideline/build-L: 630 154 rrr
+:guideline/build-L: 654 106 rrr
+:guideline/build-L: 678 58 rrr
+:geoo/sandstone/pillar_top_jaggedl: 734 48
+:geoo/sandstone/pillar_top_jaggedr: 702 48
+:geoo/sandstone/pillar_32: 702 80
+:geoo/sandstone/pillar_32: 734 80
+:geoo/sandstone/pillar_32: 702 112
+:geoo/sandstone/pillar_32: 734 112
+:geoo/sandstone/pillar_32: 702 144
+:geoo/sandstone/pillar_32: 734 144
+:geoo/sandstone/pillar_32: 702 176
+:geoo/sandstone/pillar_32: 734 176
+:geoo/sandstone/pillar_32: 702 208
+:geoo/sandstone/pillar_32: 734 208
+:geoo/sandstone/pillar_32: 702 240
+:geoo/sandstone/pillar_32: 734 240
+:geoo/sandstone/pillar_32: 702 272
+:geoo/sandstone/pillar_32: 734 272
+:geoo/sandstone/pillar_top_jaggedl: 702 304 f
+:geoo/sandstone/pillar_top_jaggedr: 734 304 f
+:guideline/build-L: 762 346 rrr
+:guideline/build-L: 786 298 rrr
+:guideline/build-L: 810 250 rrr
+:guideline/build-L: 834 202 rrr
+:guideline/build-L: 858 154 rrr
+:guideline/build-L: 882 106 rrr
+:guideline/build-L: 906 58 rrr
+:geoo/sandstone/pillar_top_jaggedl: 962 48
+:geoo/sandstone/pillar_top_jaggedr: 930 48
+:geoo/sandstone/pillar_32: 930 80
+:geoo/sandstone/pillar_32: 962 80
+:geoo/sandstone/pillar_32: 930 112
+:geoo/sandstone/pillar_32: 962 112
+:geoo/sandstone/pillar_32: 930 144
+:geoo/sandstone/pillar_32: 962 144
+:geoo/sandstone/pillar_32: 930 176
+:geoo/sandstone/pillar_32: 962 176
+:geoo/sandstone/pillar_32: 930 208
+:geoo/sandstone/pillar_32: 962 208
+:geoo/sandstone/pillar_32: 930 240
+:geoo/sandstone/pillar_32: 962 240
+:geoo/sandstone/pillar_top_jaggedl: 930 272 f
+:geoo/sandstone/pillar_top_jaggedr: 962 272 f
+:guideline/build-L: 992 346 rrr
+:guideline/build-L: 1016 298 rrr
+:guideline/build-L: 1040 250 rrr
+:guideline/build-L: 1064 202 rrr
+:guideline/build-L: 1088 154 rrr
+:guideline/build-L: 1112 106 rrr
+:guideline/build-L: 1136 58 rrr
+:geoo/sandstone/pillar_top_jaggedl: 1192 48
+:geoo/sandstone/pillar_top_jaggedr: 1160 48
+:geoo/sandstone/pillar_32: 1160 80
+:geoo/sandstone/pillar_32: 1192 80
+:geoo/sandstone/pillar_32: 1160 112
+:geoo/sandstone/pillar_32: 1192 112
+:geoo/sandstone/pillar_32: 1160 144
+:geoo/sandstone/pillar_32: 1192 144
+:geoo/sandstone/pillar_32: 1160 176
+:geoo/sandstone/pillar_32: 1192 176
+:geoo/sandstone/pillar_32: 1160 208
+:geoo/sandstone/pillar_32: 1192 208
+:geoo/sandstone/pillar_top_jaggedl: 1160 240 f
+:geoo/sandstone/pillar_top_jaggedr: 1192 240 f
+:guideline/build-L: 1218 346 rrr
+:guideline/build-L: 1242 298 rrr
+:guideline/build-L: 1266 250 rrr
+:guideline/build-L: 1290 202 rrr
+:guideline/build-L: 1314 154 rrr
+:guideline/build-L: 1338 106 rrr
+:guideline/build-L: 1362 58 rrr
+:geoo/sandstone/pillar_top_jaggedl: 1418 48
+:geoo/sandstone/pillar_top_jaggedr: 1386 48
+:geoo/sandstone/pillar_32: 1386 80
+:geoo/sandstone/pillar_32: 1418 80
+:geoo/sandstone/pillar_32: 1386 112
+:geoo/sandstone/pillar_32: 1418 112
+:geoo/sandstone/pillar_32: 1386 144
+:geoo/sandstone/pillar_32: 1418 144
+:geoo/sandstone/pillar_32: 1386 176
+:geoo/sandstone/pillar_32: 1418 176
+:geoo/sandstone/pillar_top_jaggedl: 1386 208 f
+:geoo/sandstone/pillar_top_jaggedr: 1418 208 f
+:guideline/build-L: 1446 346 rrr
+:guideline/build-L: 1470 298 rrr
+:guideline/build-L: 1494 250 rrr
+:guideline/build-L: 1518 202 rrr
+:guideline/build-L: 1542 154 rrr
+:guideline/build-L: 1566 106 rrr
+:guideline/build-L: 1590 58 rrr
+:geoo/sandstone/pillar_top_jaggedl: 1646 48
+:geoo/sandstone/pillar_top_jaggedr: 1614 48
+:geoo/sandstone/pillar_32: 1614 80
+:geoo/sandstone/pillar_32: 1646 80
+:geoo/sandstone/pillar_32: 1614 112
+:geoo/sandstone/pillar_32: 1646 112
+:geoo/sandstone/pillar_32: 1614 144
+:geoo/sandstone/pillar_32: 1646 144
+:geoo/sandstone/pillar_top_jaggedl: 1614 176 f
+:geoo/sandstone/pillar_top_jaggedr: 1646 176 f
+:guideline/build-L: 1674 346 rrr
+:guideline/build-L: 1698 298 rrr
+:guideline/build-L: 1722 250 rrr
+:guideline/build-L: 1746 202 rrr
+:guideline/build-L: 1770 154 rrr
+:guideline/build-L: 1794 106 rrr
+:guideline/build-L: 1818 58 rrr
+:geoo/sandstone/pillar_top_jaggedl: 1874 48
+:geoo/sandstone/pillar_top_jaggedr: 1842 48
+:geoo/sandstone/pillar_32: 1842 80
+:geoo/sandstone/pillar_32: 1874 80
+:geoo/sandstone/pillar_32: 1842 112
+:geoo/sandstone/pillar_32: 1874 112
+:geoo/sandstone/pillar_top_jaggedl: 1842 144 f
+:geoo/sandstone/pillar_top_jaggedr: 1874 144 f
+:geoo/sandstone/pillar_top_jaggedl: 1938 208
+:geoo/sandstone/pillar_top_jaggedr: 1906 208
+:geoo/sandstone/pillar_32: 1906 240
+:geoo/sandstone/pillar_32: 1938 240
+:geoo/sandstone/pillar_32: 1906 272
+:geoo/sandstone/pillar_32: 1938 272
+:geoo/sandstone/pillar_32: 1906 304
+:geoo/sandstone/pillar_32: 1938 304
+:geoo/sandstone/pillar_32: 1906 336
+:geoo/sandstone/pillar_32: 1938 336
+:geoo/sandstone/pillar_32: 1906 368
+:geoo/sandstone/pillar_32: 1938 368
+:guideline/build-L: 1650 394 rrr
+:guideline/build-L: 1422 394 rrr
+:guideline/build-L: 1194 394 rrr
+:guideline/build-L: 968 394 rrr
+:guideline/build-L: 738 394 rrr
+:guideline/build-L: 510 394 rrr
+:geoo/sandstone/pillar_32: 50 368
+:geoo/sandstone/pillar_32: 278 368

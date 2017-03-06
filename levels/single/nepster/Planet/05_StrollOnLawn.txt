@@ -1,0 +1,175 @@
+$BUILT 2016-01-29 22:08:05
+$AUTHOR Nepster
+$ENGLISH A Stroll on the Lawn
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1426
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 8
+#REQUIRED 6
+#SPAWN_INTERVAL 35
+
+#CLIMBER 1
+#BUILDER 3
+#MINER 3
+#EXPLODER 0
+
+:amanda/forest/hatch.H: 492 -10
+
+:amanda/forest/exit_tent_condensed.G: -8 188
+:amanda/forest/exit_tent_condensed.G: 1336 188
+
+:geoo/sandstone/torch.F: 958 112
+:geoo/sandstone/torch.F: 424 110
+
+:amanda/forest/bark_04: 632 291 rr
+:matt/earth/19: 564 284
+:geoo/nopales/fruit_01: 248 284
+:geoo/nopales/fruit_03: 242 285
+:geoo/nopales/fruit_07: 237 288
+:geoo/nopales/fruit_03: 236 294
+:geoo/nopales/fruit_00: 244 289
+:amanda/occult/occult_skulls32x32: 1142 260 frrr
+:amanda/forest/bark_00: 77 303 r
+:matt/earth/17: 698 344 fr
+:matt/earth/17: 744 304 fr
+:matt/earth/03: 678 156
+:matt/earth/00: 1328 284 frr
+:matt/earth/00: 796 302
+:matt/earth/03: 708 156
+:matt/earth/03: 784 156
+:matt/earth/03: 640 144
+:matt/earth/03: 720 128
+:matt/earth/00: 16 284
+:matt/earth/16: 568 304 rr
+:matt/earth/16: 680 304 rr
+:matt/earth/07b: 840 123
+:matt/earth/07b: 858 122
+:matt/earth/05: 748 126 fr
+:matt/earth/05: 440 126 r
+:matt/earth/03: 576 128
+:matt/earth/03: 506 158
+:matt/earth/03: 732 158
+:matt/earth/03: 638 160
+:matt/earth/03: 546 158
+:matt/earth/03: 590 158
+:matt/earth/10: 208 258 frr
+:matt/earth/17: 361 303
+:matt/earth/17: 468 304 r
+:matt/earth/10: 488 304
+:matt/earth/10: 584 304
+:matt/earth/10: 744 320
+:matt/earth/17: 840 304 fr
+:matt/earth/16: 192 304 frr
+:matt/earth/10: 208 322 frr
+:matt/earth/07: 380 274
+:matt/earth/07b: 416 318
+:matt/earth/08: 356 250
+:matt/earth/07b: 352 244 d
+:matt/earth/09: 310 254 frr
+:matt/earth/06: 204 296
+:matt/earth/07b: 302 258
+:matt/earth/09: 240 268 frr
+:matt/earth/18: 236 254 d
+:matt/earth/08: 240 272 frr
+:matt/earth/07b: 286 266
+:matt/earth/07b: 296 260 frr
+$BEGIN_TILE_GROUP 0
+:matt/earth/10: 0 10
+:matt/earth/18: 154 10 d
+:matt/earth/18: 148 0 d
+$END_TILE_GROUP
+:Group-0: -56 284
+:matt/earth/17: 98 334
+:matt/earth/04: -10 316 rr
+:matt/earth/07: 118 318
+:matt/earth/08: 86 296
+:matt/earth/06: 466 290
+:matt/earth/18: 488 272 d
+:matt/earth/18: 448 282 d
+:matt/earth/18: 460 274 d
+:matt/earth/18: 478 270 d
+:matt/earth/09: 490 298
+:matt/earth/09: 536 298
+:matt/earth/09: 584 300
+:matt/earth/09: 630 300 frr
+:matt/earth/09: 676 298 frr
+:matt/earth/09: 718 298 frr
+:matt/earth/09: 856 298 frr
+:matt/earth/07: 924 296
+:matt/earth/18: 956 320 d
+:matt/earth/18: 960 304 d
+:matt/earth/07b: 906 298 frr
+:matt/earth/07b: 914 296 frr
+:matt/earth/04: 862 336
+:matt/earth/04: 442 340 frr
+:matt/earth/09: 914 122
+:matt/earth/07b: 958 130 frr
+:matt/earth/09: 868 123
+:matt/earth/09: 820 122 frr
+:matt/earth/09: 682 128
+:matt/earth/09: 632 124
+:matt/earth/09: 584 128
+:matt/earth/09: 534 124
+:matt/earth/09: 478 122
+:matt/earth/07b: 520 124 frr
+:matt/earth/09: 442 122 frr
+:matt/earth/07b: 440 128 frr
+:matt/earth/08: 72 282
+:matt/earth/09: 22 280 frr
+:matt/earth/09: -12 280 frr
+:matt/earth/07b: 864 120 frr
+:matt/earth/09: 790 298 frr
+:matt/earth/09: 816 298 frr
+:matt/earth/09: 726 126 frr
+:matt/earth/09: 792 124 frr
+:matt/earth/03: 910 184 frrd
+:matt/earth/03: 962 170 frrd
+:matt/earth/03: 970 160 frrd
+:matt/earth/03: 344 184 d
+:matt/earth/03: 302 170 frrd
+:matt/earth/03: 296 160 frrd
+:matt/earth/10: 1002 244
+:matt/earth/17: 981 289 frr
+:matt/earth/16: 1126 290
+:matt/earth/10: 1002 308
+:matt/earth/07: 992 260 frr
+:matt/earth/07b: 992 304 frr
+:matt/earth/08: 1032 236 frr
+:matt/earth/07b: 1056 230 frrd
+:matt/earth/09: 1058 240
+:matt/earth/06: 1178 282 frr
+:matt/earth/07b: 1106 244 frr
+:matt/earth/09: 1128 254
+:matt/earth/18: 1152 240 frrd
+:matt/earth/08: 1148 258
+:matt/earth/07b: 1122 252 frr
+:matt/earth/07b: 1112 246
+$BEGIN_TILE_GROUP 1
+:matt/earth/10: 0 10 frr
+:matt/earth/18: 24 10 frrd
+:matt/earth/18: 30 0 frrd
+$END_TILE_GROUP
+:Group-1: 1266 284
+:matt/earth/17: 1244 334 frr
+:matt/earth/04: 1312 316 f
+:matt/earth/07: 1254 318 frr
+:matt/earth/08: 1302 296 frr
+:matt/earth/08: 1316 282 frr
+:matt/earth/09: 1346 280
+:matt/earth/09: 1380 280
+:matt/earth/10: 1302 352
+:matt/earth/10: -90 342 frr
+:matt/earth/07b: 790 124 frr
+:matt/earth/07b: 780 124 frr
+:matt/earth/09: 756 298 frr
+:matt/carnival/balloons: 24 130
+:matt/carnival/balloons: 1367 129
+:matt/earth/07b: 624 128 frr
+:matt/earth/07b: 990 275 d
+:matt/earth/07b: 1000 261 frrd
+:matt/earth/07b: 994 273 frrd
+:matt/earth/07b: 995 269 frrd
+:matt/earth/07b: 998 264 frrd

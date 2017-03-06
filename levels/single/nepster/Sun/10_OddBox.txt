@@ -1,0 +1,114 @@
+$BUILT 2017-03-07 21:38:15
+$AUTHOR Nepster
+$ENGLISH OddBox
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 800
+#SIZE_Y 400
+
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 4
+
+#RUNNER 1
+#CLIMBER 10
+#FLOATER 1
+#BLOCKER 1
+#BUILDER 3
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#EXPLODER 0
+
+:matt/goldmine/Hatch.H: 96 288
+
+:matt/goldmine/Goal.G: 0 96
+:matt/goldmine/Goal.G: 736 256
+
+:matt/goldmine/plank: 320 336
+:matt/goldmine/plankdiag: 240 80
+:matt/goldmine/plankdiag: 480 0
+:matt/goldmine/plankdiag2: 432 0
+:matt/goldmine/plankdiag2: 720 0
+:matt/goldmine/plankdiag2: 592 32
+:matt/goldmine/plankdiag2: 608 48
+:matt/goldmine/plankdiag: 288 32
+:matt/goldmine/plankdiag: 256 64
+:matt/goldmine/plankdiag: 208 112
+:matt/goldmine/plankdiag2: 448 192
+:matt/goldmine/plankdiag2: 416 160
+:matt/goldmine/plankdiag2: 384 128
+:matt/goldmine/plank: 478 32
+:matt/goldmine/plankdiag: 464 192
+:matt/goldmine/crate32: 256 240
+:matt/goldmine/crate64: 160 336
+:matt/goldmine/crate64: 224 336
+:matt/goldmine/crate64: 0 336
+:matt/goldmine/crate64: 0 272
+:matt/goldmine/crate64: 96 336
+:matt/goldmine/crate64: 0 144
+:matt/goldmine/crate64: 288 336
+:matt/goldmine/crate64: 416 336
+:matt/goldmine/crate64: 336 224
+:matt/goldmine/crate64: 336 160
+:matt/goldmine/crate64: 176 144
+:matt/goldmine/crate64: 112 144
+:matt/goldmine/crate64: 480 336
+:matt/goldmine/crate64: 544 336
+:matt/goldmine/crate64: 608 336
+:matt/goldmine/crate32: 464 304
+:matt/goldmine/crate32: 464 272
+:matt/goldmine/crate32: 464 240
+:matt/goldmine/crate32: 464 208
+:matt/goldmine/plankdiag: 496 160
+:matt/goldmine/plankdiag: 528 128
+:matt/goldmine/crate64: 448 64
+:matt/goldmine/crate64: 240 96
+:matt/goldmine/plank: 320 32
+:matt/goldmine/crate64: 608 272
+:matt/goldmine/crate64: 608 208
+:matt/goldmine/crate64: 608 80
+:matt/goldmine/crate64: 736 64
+:matt/goldmine/crate32: 736 304
+:matt/goldmine/crate32: 768 304
+:matt/goldmine/crate32: 672 88
+:matt/goldmine/crate32: 704 88
+:matt/goldmine/crate64: 736 128
+:matt/goldmine/crate16: 240 256
+:matt/goldmine/crate32: 0 240
+:matt/goldmine/crate32: 0 208
+:matt/goldmine/crate32: 672 152
+:matt/goldmine/crate32: 704 152
+:matt/goldmine/explosivecrate: 224 272
+:matt/goldmine/explosivecrate: 448 0
+:matt/goldmine/explosivecrate: 736 336
+:matt/goldmine/crate32: 240 160
+:matt/goldmine/crate16: 638 52 d
+:matt/goldmine/crate16: 32 256
+:matt/goldmine/crate32: 120 112
+:matt/marble/18d: 328 -22 d
+:matt/goldmine/crate64: 736 0
+:matt/goldmine/crate16: 330 112
+:matt/goldmine/crate16: 346 112
+:matt/goldmine/crate32: 336 128
+:matt/goldmine/crate32: 368 128
+:matt/goldmine/crate16: 256 68 d
+:matt/goldmine/crate64: 80 0
+:matt/goldmine/crate64: 144 0
+:matt/goldmine/crate32: 208 0
+:matt/goldmine/crate32: 48 0
+:matt/goldmine/crate32: 16 0
+:matt/goldmine/crate16: 0 0
+:matt/goldmine/crate16: 64 32
+:matt/goldmine/crate16: 208 32
+:matt/goldmine/crate16: 104 128
+:matt/goldmine/crate32: 745 138 d
+:matt/goldmine/crate16: 340 96
+:matt/goldmine/crate32: 759 138 d
+:matt/goldmine/crate32: 759 152 d
+:matt/goldmine/crate32: 745 151 d
+:matt/goldmine/crate64: 608 144
+:matt/goldmine/crate32: 617 154 d
+:matt/goldmine/crate32: 631 154 d
+:matt/goldmine/crate32: 631 168 d
+:matt/goldmine/crate32: 617 167 d

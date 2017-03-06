@@ -1,0 +1,449 @@
+$BUILT 2016-07-23 16:43:50
+$AUTHOR Nepster
+$ENGLISH Paradise or Hell?
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 2016
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 30
+#SPAWN_INTERVAL 20
+
+#WALKER 5
+#RUNNER 5
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER 5
+#BLOCKER 5
+#BUILDER 5
+#PLATFORMER 5
+#BASHER 5
+#MINER 5
+#DIGGER 5
+#JUMPER 5
+#BATTER 5
+#CUBER 5
+
+:geoo/construction/Hatch.H: 1008 0
+:geoo/construction/Hatch.H: 1008 144 r
+
+:matt/oriental/Goal.G: 82 44
+:matt/underworld/Goal.G: 1408 10
+
+:amanda/forest/frog.T: 536 295
+
+:simon/water.W: 702 350
+:simon/water.W: 750 350
+:proxima/flame.F: 1138 84
+:proxima/flame.F: 1298 234
+:matt/underworld/Lava.W: 1368 368
+:matt/underworld/Lava.W: 1416 368
+:proxima/flame.F: 1378 36
+:proxima/flame.F: 1710 258
+:proxima/flame.F: 1981 222
+
+:amanda/forest/leaves_03: 394 68
+:amanda/forest/leaves_03: 806 12
+:matt/goldmine/crate32: 1636 104
+:matt/earth/18: 952 384
+:amanda/forest/rope_c: 679 242
+:matt/underworld/04: 1608 120 rrr
+:matt/underworld/04: 1704 304 rrr
+:matt/underworld/06: 1054 348
+:matt/underworld/05: 1056 116
+:amanda/forest/bark_03: 86 206
+:amanda/forest/bark_04: 58 334
+:matt/earth/03: 8 354
+:matt/earth/10: 242 344
+:amanda/forest/leaves_04: 388 58
+:matt/earth/10: 444 342
+:matt/earth/10: 294 346
+:amanda/forest/rope: 896 186
+:amanda/forest/rope: 944 186
+:matt/earth/16: 608 248
+:matt/earth/05: 656 244
+:amanda/forest/leaves_04: 776 40
+:amanda/forest/leaves_04: 806 0
+:matt/earth/16: 880 344 rr
+:matt/earth/09: 922 338 frr
+:matt/earth/16: 800 344 rr
+:matt/winter/09b: 1008 64
+:matt/winter/09b: 1008 224
+:matt/winter/09c: 1036 112
+:matt/winter/09c: 996 112
+:matt/winter/09c: 1036 192
+:matt/winter/09c: 996 192
+:matt/winter/09c: 1036 32
+:matt/winter/09c: 996 32
+:matt/winter/09b: 1008 304
+:matt/winter/09c: 1036 272
+:matt/winter/09c: 996 272
+:matt/winter/09b: 1008 384
+:matt/winter/09c: 1036 352
+:matt/winter/09c: 996 352
+:amanda/forest/bark_04: 814 328
+:matt/earth/16: 734 346
+:matt/earth/17: 652 298
+:amanda/forest/rope: 944 202
+:amanda/forest/rope: 944 218
+:amanda/forest/rope: 944 234
+:amanda/forest/rope: 944 250
+:amanda/forest/rope: 944 266
+:amanda/forest/rope: 896 202
+:amanda/forest/rope: 896 218
+:amanda/forest/rope: 896 234
+:amanda/forest/rope: 896 250
+:amanda/forest/rope: 896 266
+:matt/goldmine/plank: 832 282
+:matt/goldmine/plank: 767 282 d
+:amanda/forest/bark_03: 840 136
+:amanda/forest/leaves_04: 822 58
+:amanda/forest/leaves_02: 758 82
+:matt/earth/10: 358 334
+:matt/earth/10: 508 344
+:amanda/forest/bark_04: 404 326
+:amanda/forest/bark_03: 430 134
+:amanda/forest/leaves_04: 362 106 frr
+:amanda/forest/leaves_02: 424 122 frr
+:matt/earth/04: 206 274
+:matt/earth/10: 146 324
+:matt/earth/10: 68 354
+:matt/earth/10: -62 350
+:matt/earth/09: 40 348
+:matt/earth/09: -8 348
+:matt/earth/09: 88 348
+:matt/earth/09: 124 346 frr
+:matt/earth/08: 170 324 frr
+:matt/earth/08: 210 300 frr
+:matt/earth/08: 240 274 frr
+:matt/earth/07b: 198 322
+:matt/earth/07: 270 270
+:matt/earth/18: 302 294 d
+:matt/earth/18: 306 278 d
+:amanda/forest/leaves_04: 62 104
+:amanda/forest/leaves_04: 10 104 frr
+:amanda/forest/bark_05: -96 114 frr
+:amanda/forest/leaves_02: -42 34
+:amanda/forest/leaves_03: -2 76 frr
+:matt/earth/09: 298 338
+:matt/earth/09: 384 339
+:matt/earth/09: 429 338
+:matt/earth/09: 538 338
+:matt/earth/09: 562 338 frr
+:geoo/construction/platformbrick: 976 320 rrr
+:geoo/construction/platformbrick: 978 316 rrr
+:geoo/construction/platformbrick: 980 320 rrr
+:geoo/construction/platformbrick: 982 316 rrr
+:geoo/construction/platformbrick: 984 320 rrr
+:geoo/construction/platformbrick: 986 316 rrr
+:geoo/construction/platformbrick: 988 320 rrr
+:geoo/construction/platformbrick: 990 316 rrr
+:geoo/construction/platformbrick: 976 288 rrr
+:geoo/construction/platformbrick: 978 284 rrr
+:geoo/construction/platformbrick: 980 288 rrr
+:geoo/construction/platformbrick: 982 284 rrr
+:geoo/construction/platformbrick: 984 288 rrr
+:geoo/construction/platformbrick: 986 284 rrr
+:geoo/construction/platformbrick: 988 288 rrr
+:geoo/construction/platformbrick: 990 284 rrr
+:geoo/construction/platformbrick: 976 256 rrr
+:geoo/construction/platformbrick: 978 252 rrr
+:geoo/construction/platformbrick: 980 256 rrr
+:geoo/construction/platformbrick: 982 252 rrr
+:geoo/construction/platformbrick: 984 256 rrr
+:geoo/construction/platformbrick: 986 252 rrr
+:geoo/construction/platformbrick: 988 256 rrr
+:geoo/construction/platformbrick: 990 252 rrr
+:geoo/construction/platformbrick: 976 224 rrr
+:geoo/construction/platformbrick: 978 220 rrr
+:geoo/construction/platformbrick: 980 224 rrr
+:geoo/construction/platformbrick: 982 220 rrr
+:geoo/construction/platformbrick: 984 224 rrr
+:geoo/construction/platformbrick: 986 220 rrr
+:geoo/construction/platformbrick: 988 224 rrr
+:geoo/construction/platformbrick: 990 220 rrr
+:geoo/construction/platformbrick: 976 192 rrr
+:geoo/construction/platformbrick: 978 188 rrr
+:geoo/construction/platformbrick: 980 192 rrr
+:geoo/construction/platformbrick: 982 188 rrr
+:geoo/construction/platformbrick: 984 192 rrr
+:geoo/construction/platformbrick: 986 188 rrr
+:geoo/construction/platformbrick: 988 192 rrr
+:geoo/construction/platformbrick: 990 188 rrr
+:geoo/construction/platformbrick: 976 160 rrr
+:geoo/construction/platformbrick: 978 156 rrr
+:geoo/construction/platformbrick: 980 160 rrr
+:geoo/construction/platformbrick: 982 156 rrr
+:geoo/construction/platformbrick: 984 160 rrr
+:geoo/construction/platformbrick: 986 156 rrr
+:geoo/construction/platformbrick: 988 160 rrr
+:geoo/construction/platformbrick: 990 156 rrr
+:geoo/construction/platformbrick: 976 128 rrr
+:geoo/construction/platformbrick: 978 124 rrr
+:geoo/construction/platformbrick: 980 128 rrr
+:geoo/construction/platformbrick: 982 124 rrr
+:geoo/construction/platformbrick: 984 128 rrr
+:geoo/construction/platformbrick: 986 124 rrr
+:geoo/construction/platformbrick: 988 128 rrr
+:geoo/construction/platformbrick: 990 124 rrr
+:geoo/construction/platformbrick: 976 96 rrr
+:geoo/construction/platformbrick: 978 92 rrr
+:geoo/construction/platformbrick: 980 96 rrr
+:geoo/construction/platformbrick: 982 92 rrr
+:geoo/construction/platformbrick: 984 96 rrr
+:geoo/construction/platformbrick: 986 92 rrr
+:geoo/construction/platformbrick: 988 96 rrr
+:geoo/construction/platformbrick: 990 92 rrr
+:geoo/construction/platformbrick: 976 64 rrr
+:geoo/construction/platformbrick: 978 60 rrr
+:geoo/construction/platformbrick: 980 64 rrr
+:geoo/construction/platformbrick: 982 60 rrr
+:geoo/construction/platformbrick: 984 64 rrr
+:geoo/construction/platformbrick: 986 60 rrr
+:geoo/construction/platformbrick: 988 64 rrr
+:geoo/construction/platformbrick: 990 60 rrr
+:geoo/construction/platformbrick: 976 32 rrr
+:geoo/construction/platformbrick: 978 28 rrr
+:geoo/construction/platformbrick: 980 32 rrr
+:geoo/construction/platformbrick: 982 28 rrr
+:geoo/construction/platformbrick: 984 32 rrr
+:geoo/construction/platformbrick: 986 28 rrr
+:geoo/construction/platformbrick: 988 32 rrr
+:geoo/construction/platformbrick: 990 28 rrr
+:geoo/construction/platformbrick: 976 0 rrr
+:geoo/construction/platformbrick: 978 -4 rrr
+:geoo/construction/platformbrick: 980 0 rrr
+:geoo/construction/platformbrick: 982 -4 rrr
+:geoo/construction/platformbrick: 984 0 rrr
+:geoo/construction/platformbrick: 986 -4 rrr
+:geoo/construction/platformbrick: 988 0 rrr
+:geoo/construction/platformbrick: 990 -4 rrr
+:geoo/construction/platformbrick: 976 352 rrr
+:geoo/construction/platformbrick: 978 348 rrr
+:geoo/construction/platformbrick: 980 352 rrr
+:geoo/construction/platformbrick: 982 348 rrr
+:geoo/construction/platformbrick: 984 352 rrr
+:geoo/construction/platformbrick: 986 348 rrr
+:geoo/construction/platformbrick: 988 352 rrr
+:geoo/construction/platformbrick: 990 348 rrr
+:geoo/construction/platformbrick: 976 384 rrr
+:geoo/construction/platformbrick: 978 380 rrr
+:geoo/construction/platformbrick: 980 384 rrr
+:geoo/construction/platformbrick: 982 380 rrr
+:geoo/construction/platformbrick: 984 384 rrr
+:geoo/construction/platformbrick: 986 380 rrr
+:geoo/construction/platformbrick: 988 384 rrr
+:geoo/construction/platformbrick: 990 380 rrr
+:geoo/construction/platformbrick: 1056 64 rrr
+:geoo/construction/platformbrick: 1058 60 rrr
+:geoo/construction/platformbrick: 1060 64 rrr
+:geoo/construction/platformbrick: 1062 60 rrr
+:geoo/construction/platformbrick: 1064 64 rrr
+:geoo/construction/platformbrick: 1066 60 rrr
+:geoo/construction/platformbrick: 1068 64 rrr
+:geoo/construction/platformbrick: 1070 60 rrr
+:geoo/construction/platformbrick: 1056 32 rrr
+:geoo/construction/platformbrick: 1058 28 rrr
+:geoo/construction/platformbrick: 1060 32 rrr
+:geoo/construction/platformbrick: 1062 28 rrr
+:geoo/construction/platformbrick: 1064 32 rrr
+:geoo/construction/platformbrick: 1066 28 rrr
+:geoo/construction/platformbrick: 1068 32 rrr
+:geoo/construction/platformbrick: 1070 28 rrr
+:geoo/construction/platformbrick: 1056 0 rrr
+:geoo/construction/platformbrick: 1058 -4 rrr
+:geoo/construction/platformbrick: 1060 0 rrr
+:geoo/construction/platformbrick: 1062 -4 rrr
+:geoo/construction/platformbrick: 1064 0 rrr
+:geoo/construction/platformbrick: 1066 -4 rrr
+:geoo/construction/platformbrick: 1068 0 rrr
+:geoo/construction/platformbrick: 1070 -4 rrr
+:geoo/construction/platformbrick: 1056 160 rrr
+:geoo/construction/platformbrick: 1058 156 rrr
+:geoo/construction/platformbrick: 1060 160 rrr
+:geoo/construction/platformbrick: 1062 156 rrr
+:geoo/construction/platformbrick: 1064 160 rrr
+:geoo/construction/platformbrick: 1066 156 rrr
+:geoo/construction/platformbrick: 1068 160 rrr
+:geoo/construction/platformbrick: 1070 156 rrr
+:geoo/construction/platformbrick: 1056 128 rrr
+:geoo/construction/platformbrick: 1058 124 rrr
+:geoo/construction/platformbrick: 1060 128 rrr
+:geoo/construction/platformbrick: 1062 124 rrr
+:geoo/construction/platformbrick: 1064 128 rrr
+:geoo/construction/platformbrick: 1066 124 rrr
+:geoo/construction/platformbrick: 1068 128 rrr
+:geoo/construction/platformbrick: 1070 124 rrr
+:geoo/construction/platformbrick: 1056 96 rrr
+:geoo/construction/platformbrick: 1058 92 rrr
+:geoo/construction/platformbrick: 1060 96 rrr
+:geoo/construction/platformbrick: 1062 92 rrr
+:geoo/construction/platformbrick: 1064 96 rrr
+:geoo/construction/platformbrick: 1066 92 rrr
+:geoo/construction/platformbrick: 1068 96 rrr
+:geoo/construction/platformbrick: 1070 92 rrr
+:geoo/construction/platformbrick: 1056 256 rrr
+:geoo/construction/platformbrick: 1058 252 rrr
+:geoo/construction/platformbrick: 1060 256 rrr
+:geoo/construction/platformbrick: 1062 252 rrr
+:geoo/construction/platformbrick: 1064 256 rrr
+:geoo/construction/platformbrick: 1066 252 rrr
+:geoo/construction/platformbrick: 1068 256 rrr
+:geoo/construction/platformbrick: 1070 252 rrr
+:geoo/construction/platformbrick: 1056 224 rrr
+:geoo/construction/platformbrick: 1058 220 rrr
+:geoo/construction/platformbrick: 1060 224 rrr
+:geoo/construction/platformbrick: 1062 220 rrr
+:geoo/construction/platformbrick: 1064 224 rrr
+:geoo/construction/platformbrick: 1066 220 rrr
+:geoo/construction/platformbrick: 1068 224 rrr
+:geoo/construction/platformbrick: 1070 220 rrr
+:geoo/construction/platformbrick: 1056 192 rrr
+:geoo/construction/platformbrick: 1058 188 rrr
+:geoo/construction/platformbrick: 1060 192 rrr
+:geoo/construction/platformbrick: 1062 188 rrr
+:geoo/construction/platformbrick: 1064 192 rrr
+:geoo/construction/platformbrick: 1066 188 rrr
+:geoo/construction/platformbrick: 1068 192 rrr
+:geoo/construction/platformbrick: 1070 188 rrr
+:geoo/construction/platformbrick: 1056 352 rrr
+:geoo/construction/platformbrick: 1058 348 rrr
+:geoo/construction/platformbrick: 1060 352 rrr
+:geoo/construction/platformbrick: 1062 348 rrr
+:geoo/construction/platformbrick: 1064 352 rrr
+:geoo/construction/platformbrick: 1066 348 rrr
+:geoo/construction/platformbrick: 1068 352 rrr
+:geoo/construction/platformbrick: 1070 348 rrr
+:geoo/construction/platformbrick: 1056 320 rrr
+:geoo/construction/platformbrick: 1058 316 rrr
+:geoo/construction/platformbrick: 1060 320 rrr
+:geoo/construction/platformbrick: 1062 316 rrr
+:geoo/construction/platformbrick: 1064 320 rrr
+:geoo/construction/platformbrick: 1066 316 rrr
+:geoo/construction/platformbrick: 1068 320 rrr
+:geoo/construction/platformbrick: 1070 316 rrr
+:geoo/construction/platformbrick: 1056 288 rrr
+:geoo/construction/platformbrick: 1058 284 rrr
+:geoo/construction/platformbrick: 1060 288 rrr
+:geoo/construction/platformbrick: 1062 284 rrr
+:geoo/construction/platformbrick: 1064 288 rrr
+:geoo/construction/platformbrick: 1066 284 rrr
+:geoo/construction/platformbrick: 1068 288 rrr
+:geoo/construction/platformbrick: 1070 284 rrr
+:geoo/construction/platformbrick: 1056 384 rrr
+:geoo/construction/platformbrick: 1058 380 rrr
+:geoo/construction/platformbrick: 1060 384 rrr
+:geoo/construction/platformbrick: 1062 380 rrr
+:geoo/construction/platformbrick: 1064 384 rrr
+:geoo/construction/platformbrick: 1066 380 rrr
+:geoo/construction/platformbrick: 1068 384 rrr
+:geoo/construction/platformbrick: 1070 380 rrr
+:matt/underworld/08: 1106 350
+:matt/underworld/08: 1170 350
+:matt/underworld/08: 1216 352 f
+:matt/underworld/07: 1216 288
+:matt/underworld/07: 1216 240
+:matt/underworld/08: 1248 272
+:matt/underworld/06: 1296 352
+:matt/underworld/06: 1438 340 frr
+:matt/underworld/06: 1472 292 frr
+:matt/underworld/06: 1506 242 frr
+:matt/underworld/05: 1376 64
+:matt/underworld/06: 1556 172
+:matt/underworld/07: 1494 42
+:matt/underworld/07: 1532 88
+:matt/underworld/08: 1508 -30 frr
+:matt/underworld/06: 1576 118
+:matt/underworld/07: 1628 148
+:matt/underworld/06: 1718 20
+:matt/underworld/08: 1694 98 f
+:matt/underworld/06: 1694 -62
+:matt/underworld/06: 1748 146
+:matt/underworld/06: 1784 228
+:matt/underworld/06: 1868 262
+:matt/underworld/06: 1938 264
+:matt/underworld/06: 1966 124
+:matt/underworld/04: 1692 220 d
+:matt/underworld/04: 1678 228 d
+:matt/underworld/06: 1566 248 rrr
+:matt/underworld/06: 1772 290 frrr
+:matt/underworld/04: 1782 228
+:matt/underworld/06: 1546 328
+:matt/underworld/06: 1806 310
+:matt/underworld/06: 1894 330
+:matt/underworld/06: 1962 336
+:matt/underworld/06: 1928 92
+:matt/underworld/07: 1894 62
+:matt/underworld/07: 1864 36
+:matt/underworld/07: 1786 10
+:matt/underworld/07: 1772 -52
+:matt/underworld/07: 1860 -46
+:matt/underworld/08: 1912 -32
+:matt/underworld/08: 1948 60
+:matt/underworld/08: 1596 -102
+:matt/underworld/08: 1546 -92
+:matt/underworld/06: 1578 310 rrr
+:matt/underworld/06: 1606 344
+:matt/underworld/06: 1702 358 rr
+:matt/underworld/06: 1644 366
+:matt/underworld/04: 1704 332
+:matt/underworld/04: 1704 296 rrr
+:matt/underworld/04: 1696 344 rrr
+:matt/earth/18: 1753 284 d
+:matt/earth/18: 1757 274 d
+:matt/earth/18: 1757 262 d
+:matt/earth/18: 1753 255 d
+:matt/earth/18: 1758 267 d
+:matt/goldmine/crate16: 1652 88
+:matt/underworld/04: 1496 60
+:matt/underworld/06: 1456 -62 fr
+:matt/underworld/06: 1374 -94 fr
+:matt/carnival/balloons: 670 80
+:amanda/forest/rope_c: 679 194
+:amanda/forest/rope_c: 679 210
+:amanda/forest/rope_c: 679 226
+:matt/earth/09: 344 340
+:matt/earth/09: 445 338
+:matt/earth/09: 493 338
+:amanda/steel/steel_flange_right24x16.S: 1256 72 rrr
+:amanda/steel/steel24x16.S: 1256 48 rrr
+:amanda/steel/steel24x16.S: 1256 24 rrr
+:amanda/steel/steel24x16.S: 1256 0 rrr
+:amanda/steel/steel_flange_right24x16.S: 1240 48 rrr
+:amanda/steel/steel24x16.S: 1240 24 rrr
+:amanda/steel/steel24x16.S: 1240 0 rrr
+:amanda/steel/steel_flange_right24x16.S: 1224 24 rrr
+:amanda/steel/steel24x16.S: 1224 0 rrr
+:amanda/steel/steel_flange_right24x16.S: 1208 0 rrr
+:amanda/steel/steel24x16.S: 1304 72 rrr
+:amanda/steel/steel24x16.S: 1304 48 rrr
+:geoo/abstract/cvblocks/016: 1304 80 d
+:amanda/steel/steel24x16.S: 1304 24 rrr
+:amanda/steel/steel24x16.S: 1304 0 rrr
+:amanda/steel/steel24x16.S: 1320 24 rrr
+:amanda/steel/steel24x16.S: 1320 0 rrr
+:amanda/steel/steel24x16.S: 1320 48 rrr
+:geoo/abstract/cvblocks/016: 1320 56 d
+:amanda/steel/steel24x16.S: 1336 24 rrr
+:geoo/abstract/cvblocks/016: 1336 32 d
+:amanda/steel/steel24x16.S: 1352 0 rrr
+:geoo/abstract/cvblocks/016: 1352 8 d
+:amanda/steel/steel24x16.S: 1336 0 rrr
+:amanda/steel/steel_flange_right24x16.S: 1272 96 rrr
+:amanda/steel/steel24x16.S: 1272 72 rrr
+:amanda/steel/steel24x16.S: 1272 48 rrr
+:amanda/steel/steel24x16.S: 1272 24 rrr
+:amanda/steel/steel24x16.S: 1288 96 rrr
+:amanda/steel/steel24x16.S: 1288 72 rrr
+:geoo/abstract/cvblocks/016: 1288 104 d
+:amanda/steel/steel24x16.S: 1288 48 rrr
+:amanda/steel/steel24x16.S: 1288 24 rrr
+:amanda/steel/steel24x16.S: 1272 0 rrr
+:amanda/steel/steel24x16.S: 1288 0 rrr
+:matt/earth/09: 874 338 frr
+:matt/earth/09: 826 338 frr
+:matt/earth/09: 794 338 frr
+:matt/earth/07b: 788 344
+:matt/earth/07b: 778 348 rrr

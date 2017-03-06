@@ -1,0 +1,441 @@
+$BUILT 2016-01-06 15:45:17
+$AUTHOR Nepster
+$ENGLISH Introdicing: Climbers
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 2128
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 3
+#REQUIRED 1
+#SPAWN_INTERVAL 30
+
+#CLIMBER 3
+#EXPLODER 0
+
+:matt/marble/Hatch.H: 620 52
+:matt/marble/Hatch.H: 1456 260
+:matt/marble/Hatch.H: 1152 68
+
+:matt/marble/Goal.G: 1008 176
+:matt/marble/Goal.G: 896 336
+:matt/marble/Goal.G: 1328 256
+:matt/marble/Goal.G: 1696 336
+:matt/marble/Goal.G: 256 256
+:matt/marble/Goal.G: 128 96
+
+:geoo/construction/factory.T: 872 160
+:geoo/construction/factory.T: 1464 160
+:geoo/construction/factory.T: 72 80
+
+:matt/marble/22e: 536 64
+:matt/marble/22e: 1840 64 frr
+:matt/marble/22e: 1872 96 frr
+:matt/marble/22e: 2040 256
+:matt/marble/22e: 2072 224
+:matt/marble/22e: 1920 240 frr
+:matt/marble/22e: 1952 272 frr
+:matt/marble/22e: 1808 336 frr
+:matt/marble/22e: 1776 304 frr
+:matt/marble/22e: 1688 64
+:matt/marble/22e: 1656 96
+:matt/marble/22e: 1672 224
+:matt/marble/22e: 1616 176 frr
+:matt/marble/22e: 1584 144 frr
+:matt/marble/22e: 1624 272
+:matt/marble/22e: 1608 288
+:matt/marble/22e: 1560 336
+:matt/marble/22e: 1424 336 frr
+:matt/marble/22e: 1392 304 frr
+:matt/marble/22e: 1240 224
+:matt/marble/22e: 1192 272
+:matt/marble/22e: 1360 176 frr
+:matt/marble/22e: 1328 144 frr
+:matt/marble/22e: 1248 96 frr
+:matt/marble/22e: 1216 64 frr
+:matt/marble/22e: 1096 304
+:matt/marble/22e: 1048 352
+:matt/marble/22e: 976 336 frr
+:matt/marble/22e: 944 304 frr
+:matt/marble/22e: 1064 64
+:matt/marble/22e: 1032 96
+:matt/marble/22e: 696 64 frr
+:matt/marble/22e: 728 96 frr
+:matt/marble/22e: 776 144 frr
+:matt/marble/22e: 808 176 frr
+:matt/marble/22e: 776 256
+:matt/marble/22e: 808 224
+:matt/marble/22e: 728 64
+:matt/marble/22e: 696 96
+:matt/marble/22e: 656 256 frr
+:matt/marble/22e: 624 224 frr
+:matt/marble/22e: 576 320 frr
+:matt/marble/22e: 592 336 frr
+:matt/marble/22e: 520 224
+:matt/marble/22e: 504 240
+:matt/marble/22e: 456 288
+:matt/marble/22e: 408 336
+:matt/marble/22e: 520 80
+:matt/marble/22e: 472 128
+:matt/marble/22e: 424 176
+:matt/marble/22e: 336 144 frr
+:matt/marble/22e: 368 176 frr
+:matt/marble/22e: 264 64
+:matt/marble/22e: 232 96
+:matt/marble/22e: 16 144 frr
+:matt/marble/22e: 48 176 frr
+:matt/marble/22e: 184 304
+:matt/marble/22e: 152 336
+:matt/marble/04e_1: 0 384
+:matt/marble/04e_2: 32 384
+:matt/marble/04e_1: 64 384
+:matt/marble/04e_2: 96 384
+:matt/marble/04e_1: 128 384
+:matt/marble/04e_2: 160 384
+:matt/marble/04e_1: 192 384
+:matt/marble/04e_2: 224 384
+:matt/marble/04e_1: 256 384
+:matt/marble/04e_2: 288 384
+:matt/marble/04e_1: 320 384
+:matt/marble/04e_2: 352 384
+:matt/marble/04e_1: 384 384
+:matt/marble/04e_2: 416 384
+:matt/marble/04e_1: 448 384
+:matt/marble/04e_2: 480 384
+:matt/marble/03e_1: 0 352
+:matt/marble/03e_2: 0 320
+:matt/marble/03e_1: 0 272
+:matt/marble/03e_2: 0 240
+:matt/marble/03e_1: 0 192
+:matt/marble/03e_2: 0 160
+:matt/marble/03e_1: 0 112
+:matt/marble/03e_2: 0 80
+:matt/marble/03e_1: 0 32
+:matt/marble/03e_2: 0 0
+:matt/marble/04e_2: 32 224
+:matt/marble/04e_1: 64 224
+:matt/marble/04e_2: 96 224
+:matt/marble/04e_2: 32 144
+:matt/marble/04e_1: 64 144
+:matt/marble/04e_2: 96 144
+:matt/marble/03e_1: 112 352
+:matt/marble/03e_2: 112 320
+:matt/marble/03e_1: 112 272
+:matt/marble/03e_2: 112 240
+:matt/marble/04e_1: 0 144
+:matt/marble/04e_1: 0 224
+:matt/marble/02e: 0 304
+:matt/marble/02e_2: 112 304
+:matt/marble/04e_2: 224 304
+:matt/marble/04e_1: 256 304
+:matt/marble/04e_2: 288 304
+:matt/marble/04e_1: 320 304
+:matt/marble/04e_2: 224 224
+:matt/marble/04e_1: 256 224
+:matt/marble/04e_2: 288 224
+:matt/marble/04e_2: 160 144
+:matt/marble/04e_1: 192 144
+:matt/marble/04e_1: 128 144
+:matt/marble/03e_1: 224 192
+:matt/marble/03e_2: 224 160
+:matt/marble/02e: 224 144
+:matt/marble/02e_2: 0 64
+:matt/marble/04e_2: 352 304
+:matt/marble/04e_1: 320 224
+:matt/marble/04e_1: 320 144
+:matt/marble/04e_1: 320 64
+:matt/marble/04e_2: 416 224
+:matt/marble/04e_1: 448 224
+:matt/marble/04e_2: 480 224
+:matt/marble/04e_2: 352 64
+:matt/marble/04e_1: 384 64
+:matt/marble/04e_2: 416 64
+:matt/marble/04e_1: 448 64
+:matt/marble/04e_2: 480 64
+:matt/marble/04e_1: 512 64
+:matt/marble/04e_2: 544 64
+:matt/marble/04e_1: 576 64
+:matt/marble/03e_1: 592 32
+:matt/marble/03e_2: 592 0
+:matt/marble/04e_1: 512 224
+:matt/marble/04e_2: 544 224
+:matt/marble/04e_1: 576 224
+:matt/marble/04e_2: 608 224
+:matt/marble/04e_1: 512 384
+:matt/marble/04e_2: 544 384
+:matt/marble/04e_1: 640 384
+:matt/marble/04e_2: 672 384
+:matt/marble/04e_1: 704 384
+:matt/marble/04e_2: 736 384
+:matt/marble/04e_1: 768 304
+:matt/marble/04e_2: 800 304
+:matt/marble/04e_1: 832 384
+:matt/marble/04e_2: 864 384
+:matt/marble/03e_1: 752 352
+:matt/marble/03e_2: 752 320
+:matt/marble/03e_1: 832 352
+:matt/marble/03e_2: 832 320
+:matt/marble/02e: 752 304
+:matt/marble/02e_2: 832 304
+:matt/marble/04e_1: 576 144
+:matt/marble/04e_2: 608 144
+:matt/marble/04e_1: 640 144
+:matt/marble/04e_2: 672 144
+:matt/marble/04e_1: 832 64
+:matt/marble/04e_2: 864 64
+:matt/marble/04e_2: 800 64
+:matt/marble/04e_1: 896 384
+:matt/marble/04e_2: 928 384
+:matt/marble/04e_1: 960 384
+:matt/marble/04e_2: 992 384
+:matt/marble/04e_2: 864 224
+:matt/marble/04e_1: 896 224
+:matt/marble/04e_2: 928 224
+:matt/marble/04e_1: 960 224
+:matt/marble/04e_2: 992 224
+:matt/marble/03e_1: 928 192
+:matt/marble/03e_2: 928 160
+:matt/marble/02e: 928 144
+:matt/marble/04e_1: 1024 224
+:matt/marble/04e_2: 1056 224
+:matt/marble/04e_1: 1088 224
+:matt/marble/04e_2: 1120 224
+:matt/marble/04e_1: 1152 224
+:matt/marble/04e_2: 1184 224
+:matt/marble/04e_1: 1024 144
+:matt/marble/04e_2: 1056 144
+:matt/marble/04e_2: 992 144
+:matt/marble/03e_1: 1072 192
+:matt/marble/03e_2: 1072 160
+:matt/marble/04e_1: 896 64
+:matt/marble/04e_2: 928 64
+:matt/marble/04e_1: 960 64
+:matt/marble/04e_2: 992 64
+:matt/marble/04e_2: 1120 64
+:matt/marble/04e_1: 1152 64
+:matt/marble/04e_2: 1184 64
+:matt/marble/04e_1: 1024 384
+:matt/marble/04e_2: 1056 384
+:matt/marble/04e_1: 1088 384
+:matt/marble/04e_2: 1120 384
+:matt/marble/04e_1: 1152 384
+:matt/marble/04e_2: 1184 384
+:matt/marble/04e_1: 1216 384
+:matt/marble/04e_2: 1248 384
+:matt/marble/04e_1: 1280 384
+:matt/marble/04e_2: 1312 384
+:matt/marble/04e_1: 1344 384
+:matt/marble/04e_2: 1376 384
+:matt/marble/04e_1: 896 304
+:matt/marble/04e_2: 928 304
+:matt/marble/03e_1: 1136 272
+:matt/marble/03e_2: 1136 240
+:matt/marble/04e_1: 1152 144
+:matt/marble/04e_2: 1184 144
+:matt/marble/04e_1: 1216 144
+:matt/marble/04e_2: 1248 144
+:matt/marble/04e_1: 1280 144
+:matt/marble/04e_2: 1312 144
+:matt/marble/04e_1: 1408 384
+:matt/marble/04e_2: 1440 384
+:matt/marble/04e_1: 1472 384
+:matt/marble/04e_2: 1504 384
+:matt/marble/04e_1: 1536 384
+:matt/marble/04e_2: 1568 384
+:matt/marble/04e_1: 1280 224
+:matt/marble/04e_2: 1312 224
+:matt/marble/04e_1: 1344 224
+:matt/marble/04e_2: 1376 224
+:matt/marble/04e_1: 1408 224
+:matt/marble/04e_2: 1440 224
+:matt/marble/04e_1: 1472 224
+:matt/marble/04e_2: 1504 224
+:matt/marble/04e_1: 768 64
+:matt/marble/04e_1: 1344 304
+:matt/marble/04e_2: 1376 304
+:matt/marble/04e_1: 1536 304
+:matt/marble/04e_2: 1568 304
+:matt/marble/03e_1: 1584 272
+:matt/marble/04e_2: 1504 144
+:matt/marble/04e_2: 1568 144
+:matt/marble/04e_1: 1536 144
+:matt/marble/03e_1: 1504 112
+:matt/marble/04e_2: 1440 64
+:matt/marble/04e_1: 1472 64
+:matt/marble/04e_2: 1504 64
+:matt/marble/04e_1: 1600 384
+:matt/marble/04e_2: 1632 384
+:matt/marble/04e_1: 1664 384
+:matt/marble/04e_2: 1696 384
+:matt/marble/04e_1: 1728 384
+:matt/marble/04e_2: 1760 384
+:matt/marble/04e_1: 1728 224
+:matt/marble/04e_2: 1760 224
+:matt/marble/04e_1: 1664 224
+:matt/marble/04e_2: 1696 224
+:matt/marble/04e_1: 1600 144
+:matt/marble/04e_2: 1632 144
+:matt/marble/04e_2: 1568 64
+:matt/marble/04e_1: 1536 64
+:matt/marble/04e_1: 1600 64
+:matt/marble/04e_2: 1632 64
+:matt/marble/04e_1: 1664 64
+:matt/marble/04e_2: 1696 64
+:matt/marble/03e_1: 1776 192
+:matt/marble/04e_1: 1792 384
+:matt/marble/04e_2: 1824 384
+:matt/marble/04e_1: 1856 384
+:matt/marble/04e_2: 1888 384
+:matt/marble/03e_1: 1904 352
+:matt/marble/03e_2: 1904 320
+:matt/marble/02e_2: 1904 304
+:matt/marble/04e_1: 1984 304
+:matt/marble/04e_2: 2016 304
+:matt/marble/03e_1: 2112 352
+:matt/marble/03e_2: 2112 320
+:matt/marble/03e_1: 2112 272
+:matt/marble/03e_2: 2112 240
+:matt/marble/03e_1: 2112 192
+:matt/marble/03e_2: 2112 160
+:matt/marble/03e_1: 2112 112
+:matt/marble/03e_2: 2112 80
+:matt/marble/03e_1: 2112 32
+:matt/marble/03e_2: 2112 0
+:matt/marble/02e: 2112 304
+:matt/marble/02e_2: 2112 64
+:matt/marble/02e: 2112 144
+:matt/marble/02e_2: 2112 384
+:matt/marble/04e_1: 1984 144
+:matt/marble/04e_2: 2016 144
+:matt/marble/04e_1: 2048 144
+:matt/marble/04e_1: 1728 64
+:matt/marble/04e_2: 1760 64
+:matt/marble/04e_1: 1792 64
+:matt/marble/04e_2: 1824 64
+:matt/marble/03e_1: 2000 112
+:matt/marble/03e_2: 2000 80
+:matt/marble/02e_2: 2000 64
+:matt/marble/04e_1: 1920 144
+:matt/marble/04e_2: 1952 144
+:matt/marble/02e_2: 16 0
+:matt/marble/02e: 576 0
+:matt/marble/02e: 2096 0
+:matt/marble/02e: 1984 320 d
+:matt/marble/02e: 1184 304 d
+:matt/marble/02e: 1200 320 d
+:matt/marble/02e: 704 288 d
+:matt/marble/02e: 688 304 d
+:geoo/construction/platformbrick_single: 76 206 d
+:geoo/construction/platformbrick_single: 76 204 d
+:geoo/construction/platformbrick_single: 78 208 rrrd
+:geoo/construction/platformbrick_single: 76 208 rrrd
+:geoo/construction/platformbrick_single: 724 92 d
+:geoo/construction/platformbrick_single: 724 94 d
+:geoo/construction/platformbrick_single: 726 96 rrrd
+:geoo/construction/platformbrick_single: 724 96 rrrd
+:geoo/construction/platformbrick_single: 844 212 d
+:geoo/construction/platformbrick_single: 844 214 d
+:geoo/construction/platformbrick_single: 846 216 rrrd
+:geoo/construction/platformbrick_single: 844 216 rrrd
+:geoo/construction/platformbrick_single: 1004 364 d
+:geoo/construction/platformbrick_single: 1004 366 d
+:geoo/construction/platformbrick_single: 1006 368 rrrd
+:geoo/construction/platformbrick_single: 1004 368 rrrd
+:geoo/construction/platformbrick_single: 1276 124 d
+:geoo/construction/platformbrick_single: 1276 126 d
+:geoo/construction/platformbrick_single: 1278 128 rrrd
+:geoo/construction/platformbrick_single: 1276 128 rrrd
+:geoo/construction/platformbrick_single: 1388 204 d
+:geoo/construction/platformbrick_single: 1388 206 d
+:geoo/construction/platformbrick_single: 1390 208 rrrd
+:geoo/construction/platformbrick_single: 1388 208 rrrd
+:geoo/construction/platformbrick_single: 1452 364 d
+:geoo/construction/platformbrick_single: 1452 366 d
+:geoo/construction/platformbrick_single: 1454 368 rrrd
+:geoo/construction/platformbrick_single: 1452 368 rrrd
+:geoo/construction/platformbrick_single: 1836 364 d
+:geoo/construction/platformbrick_single: 1836 366 d
+:geoo/construction/platformbrick_single: 1838 368 rrrd
+:geoo/construction/platformbrick_single: 1836 368 rrrd
+:geoo/construction/platformbrick_single: 172 366 d
+:geoo/construction/platformbrick_single: 172 364 d
+:geoo/construction/platformbrick_single: 176 368 rrrd
+:geoo/construction/platformbrick_single: 178 368 rrrd
+:geoo/construction/platformbrick_single: 428 366 d
+:geoo/construction/platformbrick_single: 428 364 d
+:geoo/construction/platformbrick_single: 432 368 rrrd
+:geoo/construction/platformbrick_single: 434 368 rrrd
+:geoo/construction/platformbrick_single: 444 206 d
+:geoo/construction/platformbrick_single: 444 204 d
+:geoo/construction/platformbrick_single: 448 208 rrrd
+:geoo/construction/platformbrick_single: 450 208 rrrd
+:geoo/construction/platformbrick_single: 748 94 d
+:geoo/construction/platformbrick_single: 748 92 d
+:geoo/construction/platformbrick_single: 752 96 rrrd
+:geoo/construction/platformbrick_single: 754 96 rrrd
+:geoo/construction/platformbrick_single: 796 286 d
+:geoo/construction/platformbrick_single: 796 284 d
+:geoo/construction/platformbrick_single: 800 288 rrrd
+:geoo/construction/platformbrick_single: 802 288 rrrd
+:geoo/construction/platformbrick_single: 1084 366 d
+:geoo/construction/platformbrick_single: 1084 364 d
+:geoo/construction/platformbrick_single: 1088 368 rrrd
+:geoo/construction/platformbrick_single: 1090 368 rrrd
+:geoo/construction/platformbrick_single: 1052 126 d
+:geoo/construction/platformbrick_single: 1052 124 d
+:geoo/construction/platformbrick_single: 1056 128 rrrd
+:geoo/construction/platformbrick_single: 1058 128 rrrd
+:geoo/construction/platformbrick_single: 1580 366 d
+:geoo/construction/platformbrick_single: 1580 364 d
+:geoo/construction/platformbrick_single: 1584 368 rrrd
+:geoo/construction/platformbrick_single: 1586 368 rrrd
+:geoo/construction/platformbrick_single: 1692 238 d
+:geoo/construction/platformbrick_single: 1692 236 d
+:geoo/construction/platformbrick_single: 1700 228 d
+:geoo/construction/platformbrick_single: 1700 230 d
+:matt/marble/00e_1: 1704 232
+:geoo/construction/platformbrick_single: 1700 232 rrrd
+:geoo/construction/platformbrick_single: 1702 232 rrrd
+:geoo/construction/platformbrick_single: 1716 68 d
+:geoo/construction/platformbrick_single: 1716 70 d
+:geoo/construction/platformbrick_single: 1716 72 rrrd
+:geoo/construction/platformbrick_single: 1718 72 rrrd
+:matt/marble/00e_1: 1720 72
+:geoo/construction/platformbrick_single: 1708 76 d
+:geoo/construction/platformbrick_single: 1708 78 d
+:geoo/construction/platformbrick_single: 564 68 d
+:geoo/construction/platformbrick_single: 564 70 d
+:geoo/construction/platformbrick_single: 564 72 rrrd
+:geoo/construction/platformbrick_single: 566 72 rrrd
+:matt/marble/00e_1: 568 72
+:geoo/construction/platformbrick_single: 556 76 d
+:geoo/construction/platformbrick_single: 556 78 d
+:geoo/construction/platformbrick_single: 548 228 d
+:geoo/construction/platformbrick_single: 548 230 d
+:geoo/construction/platformbrick_single: 548 232 rrrd
+:geoo/construction/platformbrick_single: 550 232 rrrd
+:matt/marble/00e_1: 552 232
+:geoo/construction/platformbrick_single: 540 236 d
+:geoo/construction/platformbrick_single: 540 238 d
+:geoo/construction/platformbrick_single: 36 148 frrd
+:geoo/construction/platformbrick_single: 36 150 frrd
+:geoo/construction/platformbrick_single: 42 152 frrrd
+:geoo/construction/platformbrick_single: 40 152 frrrd
+:geoo/construction/platformbrick_single: 44 156 frrd
+:geoo/construction/platformbrick_single: 44 158 frrd
+:matt/marble/00e_2: 32 152
+:geoo/construction/platformbrick_single: 1604 148 frrd
+:geoo/construction/platformbrick_single: 1604 150 frrd
+:geoo/construction/platformbrick_single: 1610 152 frrrd
+:geoo/construction/platformbrick_single: 1608 152 frrrd
+:geoo/construction/platformbrick_single: 1612 156 frrd
+:geoo/construction/platformbrick_single: 1612 158 frrd
+:matt/marble/00e_2: 1600 152
+:matt/marble/04e_2: 1312 304
+:matt/marble/00e_1: 584 16
+:matt/marble/00e_2: 568 -2
+:matt/marble/00e_2: 16 16
+:matt/marble/00e_1: 32 0
+:matt/marble/00e_1: 2104 16
+:matt/marble/00e_1: 2088 0

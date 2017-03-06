@@ -1,0 +1,133 @@
+$BUILT 2017-03-02 12:12:02
+$AUTHOR Nepster
+$ENGLISH Lament of Innocence
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 20
+#REQUIRED 18
+#SPAWN_INTERVAL 4
+
+#CLIMBER 10
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 4
+#BASHER 1
+#MINER 2
+
+:matt/marble/Hatch.H: 248 256
+
+:matt/marble/Goal.G: 418 64
+:matt/marble/Goal.G: 158 64
+
+:matt/marble/thinplatform128p: 398 -18 rrr
+:matt/marble/thinplatform128p: 400 -20 rrr
+:matt/marble/thinplatform128p: 164 114 rr
+:matt/marble/thinplatform128p: 162 112 rr
+:matt/marble/thinplatform128p: 386 112
+:matt/marble/thinplatform128p: 388 114
+:matt/marble/thinplatform128p: 272 208
+:matt/marble/thinplatform128p: 144 208
+:matt/marble/thinplatform128p: 146 210
+:matt/marble/thinplatform128p: 350 396
+:matt/marble/thinplatform128p: 222 396
+:matt/marble/25: 64 272
+:matt/marble/25a: 32 272
+:matt/marble/25b: 96 272
+:matt/marble/25c: 0 272
+:matt/marble/25: 192 272
+:matt/marble/25a: 160 272
+:matt/marble/25c: 128 272
+:matt/marble/25: 64 144
+:matt/marble/25a: 32 144
+:matt/marble/25b: 96 144
+:matt/marble/25c: 0 144
+:matt/marble/25a: 160 144
+:matt/marble/25c: 128 144
+:matt/marble/25: 192 208
+:matt/marble/25: 64 0
+:matt/marble/25a: 32 0
+:matt/marble/25b: 96 0
+:matt/marble/25c: 0 0
+:matt/marble/25c: 128 0
+:matt/marble/25: 64 80
+:matt/marble/25a: 32 80
+:matt/marble/25b: 96 80
+:matt/marble/25c: 0 80
+:matt/marble/25c: 128 80
+:matt/marble/25a: 160 112
+:matt/marble/thinplatform128p: 224 398
+:matt/marble/thinplatform128p: 352 398
+:matt/marble/25: 416 272
+:matt/marble/25: 416 208
+:matt/marble/25a: 448 272
+:matt/marble/25a: 448 144
+:matt/marble/25a: 448 112
+:matt/marble/25c: 480 0
+:matt/marble/25b: 512 0
+:matt/marble/25: 544 0
+:matt/marble/25a: 576 0
+:matt/marble/25c: 608 0
+:matt/marble/25c: 480 96
+:matt/marble/25b: 512 96
+:matt/marble/25: 544 96
+:matt/marble/25a: 576 96
+:matt/marble/25c: 608 96
+:matt/marble/25c: 480 208
+:matt/marble/25b: 512 208
+:matt/marble/25: 544 208
+:matt/marble/25a: 576 208
+:matt/marble/25c: 608 208
+:matt/marble/25c: 480 272
+:matt/marble/25b: 512 272
+:matt/marble/25: 544 272
+:matt/marble/25a: 576 272
+:matt/marble/25c: 608 272
+:matt/marble/thinplatform128p: 270 210
+:matt/marble/24d: 368 208 rrrd
+:matt/marble/thinplatform16p: 302 164
+:matt/marble/thinplatform16p: 302 166 frr
+:matt/marble/thinplatform16p: 308 160 frr
+:matt/marble/thinplatform16p: 308 162
+:matt/marble/thinplatform16p: 314 156
+:matt/marble/thinplatform16p: 314 158 frr
+:matt/marble/thinplatform16p: 320 152 frr
+:matt/marble/thinplatform16p: 320 154
+:matt/marble/thinplatform16p: 326 148
+:matt/marble/thinplatform16p: 326 150 frr
+:matt/marble/thinplatform16p: 332 144 frr
+:matt/marble/thinplatform16p: 332 146
+:matt/marble/thinplatform16p: 338 140
+:matt/marble/thinplatform16p: 338 142 frr
+:matt/marble/thinplatform16p: 344 136 frr
+:matt/marble/thinplatform16p: 344 138
+:matt/marble/thinplatform16p: 350 132
+:matt/marble/thinplatform16p: 350 134 frr
+:matt/marble/thinplatform16p: 356 128 frr
+:matt/marble/thinplatform16p: 356 130
+:matt/marble/thinplatform16p: 362 124
+:matt/marble/thinplatform16p: 362 126 frr
+:matt/marble/thinplatform16p: 368 120 frr
+:matt/marble/thinplatform16p: 368 122
+:matt/marble/thinplatform16p: 374 116
+:matt/marble/thinplatform16p: 374 118 frr
+:matt/marble/thinplatform16p: 380 112 frr
+:matt/marble/thinplatform16p: 380 114
+:matt/marble/thinplatform16p: 290 114 f
+:matt/marble/thinplatform16p: 290 112 rr
+:matt/marble/thinplatform16p: 386 108
+:matt/marble/thinplatform16p: 386 110 frr
+:matt/marble/thinplatform16p: 392 104 frr
+:matt/marble/thinplatform16p: 392 106
+:matt/marble/thinplatform16p: 398 108
+:matt/marble/thinplatform16p: 398 110 frr
+:matt/marble/25b: 336 310
+:geoo/sandstone/pillar_top_jaggedl: 336 304 rrd
+:matt/marble/thinplatform16p: 398 2 rr
+:matt/marble/thinplatform16p: 398 0 f
+:matt/marble/thinplatform16p: 392 6 f
+:matt/marble/thinplatform16p: 392 4 rr
+:matt/marble/thinplatform16p: 386 2 rr
+:matt/marble/thinplatform16p: 386 0 f

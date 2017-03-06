@@ -1,0 +1,68 @@
+$BUILT 2016-01-13 21:56:38
+$AUTHOR Crane/Nepster
+$ENGLISH Operation Overlord
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 16
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 35
+#SPAWN_INTERVAL 55
+
+#FLOATER 8
+#EXPLODER 3
+#BLOCKER 3
+#BUILDER 10
+
+:matt/underworld/Hatch.H: 112 0
+:matt/underworld/Hatch.H: 288 0
+:matt/underworld/Hatch.H: 464 0
+:matt/underworld/Hatch.H: 288 0
+
+:matt/underworld/Goal.G: 288 240
+
+:simon/water.W: 590 350
+:simon/water.W: 542 350
+:simon/water.W: 494 350
+:simon/water.W: 446 350
+:simon/water.W: 398 350
+:simon/water.W: 350 350
+:simon/water.W: 302 350
+:simon/water.W: 254 350
+:simon/water.W: 206 350
+:simon/water.W: 158 350
+:simon/water.W: 110 350
+:simon/water.W: 62 350
+:simon/water.W: 14 350
+:simon/water.W: -34 350
+
+:geoo/steel/silhouette_64x32.S: 320 164
+:geoo/steel/silhouette_64x32.S: 256 164
+:geoo/steel/silhouette_64x32.S: 288 84
+:geoo/steel/silhouette_64x32.S: 544 164
+:geoo/steel/silhouette_32x64.S: 576 100
+:geoo/steel/silhouette_32x64.S: 576 36
+:geoo/steel/silhouette_32x64.S: 576 -28
+:geoo/steel/silhouette_32x64.S: 32 100
+:geoo/steel/silhouette_32x64.S: 32 36
+:geoo/steel/silhouette_32x64.S: 32 -28
+:geoo/steel/silhouette_64x32.S: 32 164
+:geoo/steel/silhouette_32x64.S: 32 272
+:geoo/steel/silhouette_32x64.S: 32 336
+:geoo/steel/silhouette_32x64.S: 112 336
+:geoo/steel/silhouette_32x64.S: 176 336
+:geoo/steel/silhouette_32x64.S: 256 336
+:geoo/steel/silhouette_32x64.S: 352 336
+:geoo/steel/silhouette_32x64.S: 432 336
+:geoo/steel/silhouette_32x64.S: 496 336
+:geoo/steel/silhouette_32x64.S: 576 272
+:geoo/steel/silhouette_32x64.S: 576 336
+:geoo/steel/silhouette_64x32.S: 256 304
+:geoo/steel/silhouette_64x32.S: 320 304
+:geoo/steel/silhouette_32x32.S: 464 336
+:geoo/steel/silhouette_32x32.S: 144 336

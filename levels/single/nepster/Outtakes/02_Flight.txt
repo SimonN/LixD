@@ -1,0 +1,125 @@
+$BUILT 2016-01-30 16:37:39
+$AUTHOR Nepster
+$ENGLISH The Flight
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 7
+#REQUIRED 1
+#SPAWN_INTERVAL 30
+
+#WALKER 10
+#RUNNER 10
+#EXPLODER 10
+#BLOCKER 10
+#JUMPER 10
+#BATTER 10
+#CUBER 10
+
+:matt/marble/Hatch.H: 60 -12
+
+:matt/marble/Goal.G: 288 336
+
+:matt/marble/21c: 256 384
+:matt/marble/21c: 320 384
+:matt/marble/21c: 384 384
+:matt/marble/21c: 448 384
+:matt/marble/21c: 512 384
+:matt/marble/21c: 576 384
+:matt/marble/21c: 450 188
+:matt/marble/21c: 530 188
+:matt/marble/21c: 466 48
+:matt/marble/21c: 530 48
+:matt/marble/21c: 338 48
+:matt/marble/21c: 402 48
+:matt/marble/21c: 336 48
+:matt/marble/21c: 336 88
+:matt/marble/21c: 176 48
+:matt/marble/21c: 240 48
+:matt/marble/21c: 48 48
+:matt/marble/21c: 112 48
+:matt/marble/21c: 46 48
+:matt/marble/21c: 240 160
+:matt/marble/21c: 110 312
+:matt/marble/21c: 174 312
+:geoo/construction/platform.S: 304 48 r
+:geoo/construction/platform.S: 304 80 r
+:geoo/construction/platform.S: 304 112 r
+:geoo/construction/platform.S: 304 144 r
+:geoo/construction/platform.S: 334 48 r
+:geoo/construction/platform.S: 334 72 r
+:geoo/construction/platform.S: 448 88 r
+:geoo/construction/platform.S: 448 120 r
+:geoo/construction/platform.S: 448 144 r
+:geoo/construction/platform.S: 448 172 r
+:geoo/construction/platform.S: 594 128 r
+:geoo/construction/platform.S: 594 144 r
+:geoo/construction/platform.S: 594 172 r
+:geoo/construction/platform.S: 594 48 r
+:geoo/construction/platform.S: 594 80 r
+:geoo/construction/platform.S: 594 112 r
+:geoo/construction/platform.S: 238 160 r
+:geoo/construction/platform.S: 238 192 r
+:geoo/construction/platform.S: 238 248 r
+:geoo/construction/platform.S: 238 296 r
+:matt/marble/21c: 384 88
+:geoo/construction/platform.S: 238 216 r
+:matt/marble/21c: 46 312
+:geoo/construction/platform.S: 44 248 r
+:geoo/construction/platform.S: 44 296 r
+:geoo/construction/platform.S: 44 216 r
+:geoo/construction/platform.S: 44 160 r
+:geoo/construction/platform.S: 44 192 r
+:geoo/construction/platform.S: 44 128 r
+:geoo/construction/platform.S: 44 64 r
+:geoo/construction/platform.S: 44 96 r
+:geoo/construction/platform.S: 44 48 r
+:matt/marble/21c: 110 248
+:geoo/construction/platform.S: 174 160 r
+:geoo/construction/platform.S: 174 232 r
+:matt/marble/21c: 0 384
+:matt/marble/21c: 64 384
+:matt/marble/21c: 128 384
+:matt/marble/21c: 192 384
+:matt/marble/21c: 492 304
+:geoo/construction/platform.S: 556 304 r
+:geoo/construction/platform.S: 556 352 r
+:geoo/construction/platform.S: 490 304 r
+:geoo/construction/platform.S: 490 352 r
+:matt/marble/21c: 514 188
+:geoo/construction/platform.S: 238 264 r
+:geoo/construction/platform.S: 44 264 r
+:geoo/construction/platform.S: 174 192 r
+:geoo/construction/platform.S: 556 336 r
+:geoo/construction/platform.S: 490 336 r
+:geoo/construction/platform.S: 206 326
+:geoo/construction/platform.S: 174 326
+:geoo/construction/platform.S: 142 326
+:geoo/construction/platform.S: 110 326
+:geoo/construction/platform.S: 78 326
+:geoo/construction/platform.S: 46 326
+:geoo/construction/platform.S: 450 202
+:geoo/construction/platform.S: 482 202
+:geoo/construction/platform.S: 514 202
+:geoo/construction/platform.S: 546 202
+:geoo/construction/platform.S: 562 202
+:matt/marble/21c: 46 248
+:matt/marble/21c: 110 160
+:geoo/construction/platform.S: 142 262
+:geoo/construction/platform.S: 110 262
+:geoo/construction/platform.S: 78 262
+:geoo/construction/platform.S: 46 262
+:geoo/construction/platform.S: 110 174
+:geoo/construction/platform.S: 142 174
+:geoo/construction/platform.S: 240 174
+:geoo/construction/platform.S: 272 174
+:geoo/construction/platform.S: 336 102
+:geoo/construction/platform.S: 368 102
+:geoo/construction/platform.S: 400 102
+:geoo/construction/platform.S: 416 102
+:geoo/construction/platform.S: 492 318
+:geoo/construction/platform.S: 524 318
+:geoo/construction/platform.S: 174 208 r

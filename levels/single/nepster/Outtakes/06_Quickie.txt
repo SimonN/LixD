@@ -1,0 +1,71 @@
+$BUILT 2016-01-05 15:26:35
+$AUTHOR Nepster
+$ENGLISH Just a quickie - 30sec
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 30
+#INITIAL 10
+#REQUIRED 8
+#SPAWN_INTERVAL 4
+
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+
+:matt/underworld/Hatch.H: 288 32
+
+:matt/underworld/Goal.G: 122 288
+:matt/underworld/Goal.G: 144 0
+:matt/underworld/Goal.G: 432 0
+
+:geoo/construction/squisher.T: 320 208
+:geoo/construction/squisher.T: 288 208
+
+:proxima/tile/spheres/red: 32 336
+:proxima/tile/spheres/red: 308 272
+:proxima/tile/red3: 0 336
+:proxima/tile/red3: 0 272
+:proxima/tile/red3: 0 208
+:proxima/tile/red3: 0 128
+:proxima/tile/red3: 0 64
+:proxima/tile/red3: 0 0
+:proxima/tile/red3: 576 336
+:proxima/tile/red3: 576 64
+:proxima/tile/red3: 576 0
+:proxima/tile/red3: 288 144
+:proxima/tile/red3: 576 128
+:proxima/tile/red3: 288 272
+:proxima/tile/red3: 576 208
+:proxima/tile/red3: 144 64
+:proxima/tile/red3: 144 128
+:proxima/tile/spheres/red: 370 272
+:proxima/tile/spheres/red: 432 272
+:proxima/tile/red3: 432 64
+:proxima/tile/red3: 432 128
+:proxima/tile/spheres/red: 494 272
+:proxima/tile/spheres/red: 556 272
+:proxima/tile/red3: 576 272
+:proxima/tile/spheres/red: 92 336
+:proxima/tile/spheres/red: 152 336
+:proxima/tile/spheres/red: 256 336
+:proxima/tile/red3: 288 336
+:geoo/abstract/pipes/central0: 352 168
+:geoo/abstract/pipes/central0: 384 168
+:geoo/abstract/pipes/central0: 400 168
+:geoo/abstract/pipes/central0: 496 168
+:geoo/abstract/pipes/central0: 512 168
+:geoo/abstract/pipes/central0: 544 168
+:geoo/abstract/pipes/central0: 256 168
+:geoo/abstract/pipes/central0: 240 168
+:geoo/abstract/pipes/central0: 208 168
+:geoo/abstract/pipes/central0: 112 168
+:geoo/abstract/pipes/central0: 80 168
+:geoo/abstract/pipes/central0: 64 168

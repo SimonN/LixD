@@ -1,0 +1,94 @@
+$BUILT 2017-03-08 18:38:28
+$AUTHOR Nepster
+$ENGLISH White Wonder
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 800
+#SIZE_Y 400
+#START_X 32
+#START_Y 0
+
+#INITIAL 20
+#REQUIRED 17
+#SPAWN_INTERVAL 30
+
+#CLIMBER 3
+#FLOATER 1
+#EXPLODER 3
+#BLOCKER 3
+#BUILDER 3
+#PLATFORMER 3
+
+:matt/winter/Hatch.H: 40 86
+
+:matt/winter/Goal.G: 700 265
+
+:simon/crystal.W: 199 352
+:simon/crystal.W: 519 352
+:simon/crystal.W: 617 352
+
+:matt/winter/05: 567 352 frr
+:matt/winter/03: 162 244 frrr
+:matt/winter/09c: 34 186
+:matt/winter/09c: 586 326
+:matt/winter/09c: 495 319
+:matt/winter/09c: 320 76
+:matt/winter/18: 688 328
+:matt/winter/06: 288 207
+:matt/winter/14: 265 157 frr
+:matt/winter/14: 160 213
+:matt/winter/14: 161 196
+:matt/winter/05: 136 197
+:matt/winter/14: 159 249
+:matt/winter/17: 127 195 f
+:matt/winter/10: -29 289
+:matt/winter/00: 78 262
+:matt/winter/11: 126 226
+:matt/winter/03: -88 191
+:matt/winter/03: 45 195
+:matt/winter/04: 250 298 rrr
+:matt/winter/16: 366 307 frr
+:matt/winter/14: 265 126 frr
+:matt/winter/14: 265 89 frr
+:matt/winter/17: 282 88 f
+:matt/winter/13: 289 156
+:matt/winter/11: 299 94
+:matt/winter/15: 328 129 rrr
+:matt/winter/11: 266 108 rr
+:matt/winter/15: 275 81 rr
+:matt/winter/17: 447 131
+:matt/winter/17: 435 96
+:matt/winter/15: 430 132 r
+:matt/winter/13: 431 190
+:matt/winter/05: 231 333 frr
+:matt/winter/10: 410 297 r
+:matt/winter/16: 382 300 f
+:matt/winter/14: 550 334
+:matt/winter/17: 554 338
+:matt/winter/05: 666 316 rrr
+:matt/winter/10: 666 348
+:matt/winter/05: 648 352
+:matt/winter/05: 529 375
+:matt/winter/10: -47 208
+:matt/winter/10: -31 342 frr
+:matt/winter/05: 96 213 rr
+:matt/winter/05: -39 88 frr
+:matt/winter/02: -32 25
+:matt/winter/17: -10 -36 r
+:matt/winter/03: 18 -22
+:matt/winter/04: 544 -35 rr
+:matt/winter/10: 575 67
+:matt/winter/10: 623 -31
+:matt/winter/10: 690 24
+:matt/winter/10: 599 101 f
+:matt/winter/17: 651 152 fr
+:matt/winter/16: 714 155 rrr
+:matt/winter/16: 711 74 rrr
+:matt/winter/16: 711 -46 rrr
+:matt/winter/03: 134 -26 rr
+:matt/winter/03: 226 -25
+:matt/winter/16: 299 -105
+:matt/winter/16: 487 -53 rrr
+:matt/winter/05: 343 -45 rrr
+:matt/winter/07: 288 265 f
+:matt/winter/08: 203 345 rd

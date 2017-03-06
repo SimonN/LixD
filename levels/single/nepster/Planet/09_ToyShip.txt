@@ -1,0 +1,143 @@
+$BUILT 2016-08-15 11:51:09
+$AUTHOR Nepster
+$ENGLISH On the Toy Ship
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1120
+#SIZE_Y 400
+
+#INITIAL 20
+#REQUIRED 18
+#SPAWN_INTERVAL 10
+
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 3
+#BASHER 2
+#MINER 1
+
+:matt/carnival/Hatch.H: 684 40
+
+:matt/carnival/Goal.G: 411 49
+
+:geoo/construction/sawblade_medium.F: 494 206
+:simon/water.W: 1070 350
+:simon/water.W: 1022 350
+:simon/water.W: -2 350
+:simon/water.W: 46 350
+
+:geoo/construction/concrete/032: 674 304
+:matt/carnival/04: 16 368 fr
+:matt/carnival/05: 80 304 fr
+:matt/carnival/06: 144 272 fr
+:matt/carnival/07: 16 336 fr
+:matt/carnival/04: 80 368 fr
+:matt/carnival/04: 144 368 fr
+:matt/carnival/04: 208 368 fr
+:matt/carnival/04: 272 368 fr
+:matt/carnival/04: 336 368 fr
+:matt/carnival/04: 400 368 fr
+:matt/carnival/04: 464 368 fr
+:matt/carnival/04: 528 368 fr
+:matt/carnival/04: 592 368 fr
+:matt/carnival/07: 80 336 fr
+:matt/carnival/07: 144 336 fr
+:matt/carnival/07: 208 336 fr
+:matt/carnival/07: 272 336 fr
+:matt/carnival/07: 336 336 fr
+:matt/carnival/07: 400 336 fr
+:matt/carnival/07: 464 336 fr
+:matt/carnival/07: 528 336 fr
+:matt/carnival/07: 592 336 fr
+:matt/carnival/05: 144 304 fr
+:matt/carnival/05: 208 304 fr
+:matt/carnival/05: 272 304 fr
+:matt/carnival/05: 336 304 fr
+:matt/carnival/05: 400 304 fr
+:matt/carnival/05: 464 304 fr
+:matt/carnival/05: 528 304 fr
+:matt/carnival/06: 208 272 fr
+:matt/carnival/06: 272 272 fr
+:matt/carnival/06: 336 272 fr
+:matt/carnival/06: 400 272 fr
+:matt/carnival/04: 208 240 fr
+:matt/carnival/04: 272 240 fr
+:matt/carnival/04: 336 240 fr
+:matt/carnival/04: 400 240 fr
+:matt/carnival/07: 272 208 fr
+:matt/carnival/05: 400 176 fr
+:matt/carnival/06: 400 144 fr
+:matt/carnival/04: 400 112 fr
+:matt/carnival/07: 336 208 fr
+:matt/carnival/07: 400 208 fr
+:matt/carnival/05: 336 176 fr
+:matt/carnival/06: 336 144 fr
+:matt/carnival/04: 336 112 fr
+:matt/carnival/43: 368 112 d
+:matt/carnival/43: 336 144 d
+:matt/carnival/00: 336 112 d
+:matt/carnival/06: 464 272 fr
+:matt/carnival/06: 528 272 fr
+:matt/carnival/06: 592 272 fr
+:matt/carnival/04: 464 240 fr
+:matt/carnival/04: 528 240 fr
+:matt/carnival/04: 592 240 fr
+:matt/carnival/07: 464 208 fr
+:matt/carnival/07: 528 208 fr
+:matt/carnival/07: 592 208 fr
+:matt/carnival/05: 592 304 fr
+:matt/carnival/05: 656 176 fr
+:matt/carnival/04: 656 368 fr
+:matt/carnival/07: 656 336 fr
+:matt/carnival/06: 656 272 fr
+:matt/carnival/04: 656 240 fr
+:matt/carnival/07: 656 208 fr
+:matt/carnival/05: 720 304 fr
+:matt/carnival/04: 720 368 fr
+:matt/carnival/07: 720 336 fr
+:matt/carnival/06: 720 272 fr
+:matt/carnival/04: 720 240 fr
+:matt/carnival/07: 720 208 fr
+:matt/carnival/04: 784 368 fr
+:matt/carnival/07: 784 336 fr
+:matt/carnival/06: 784 272 fr
+:matt/carnival/04: 784 240 fr
+$BEGIN_TILE_GROUP 0
+:matt/carnival/05: 0 0 fr
+:geoo/abstract/cvblocks/002: 38 8 d
+:geoo/abstract/cvblocks/004: 38 16 d
+:geoo/abstract/cvblocks/005: 22 12 d
+$END_TILE_GROUP
+:Group-0: 656 304
+:matt/carnival/06: 848 272 fr
+:matt/carnival/04: 848 368 fr
+:matt/carnival/07: 848 336 fr
+:matt/carnival/04: 912 368 fr
+:matt/carnival/07: 912 336 fr
+:matt/carnival/04: 976 368 fr
+:matt/carnival/07: 976 336 fr
+:matt/carnival/05: 976 304 fr
+:matt/carnival/04: 1040 368 fr
+:matt/carnival/07: 1040 336 fr
+:matt/carnival/44: 112 304 d
+:matt/carnival/46: 144 304 d
+:matt/carnival/44: 464 208 d
+:matt/carnival/46: 496 208 d
+:matt/carnival/43: 624 208 d
+:matt/carnival/45: 592 208 d
+:matt/carnival/45: 560 240 d
+:matt/carnival/45: 528 272 d
+:matt/carnival/45: 496 304 d
+:matt/carnival/43: 592 240 d
+:matt/carnival/43: 560 272 d
+:matt/carnival/43: 528 304 d
+:geoo/construction/platform.S: 688 334
+:geoo/construction/platform.S: 656 334
+:matt/carnival/00: 16 368 d
+:matt/carnival/46: 16 336 d
+:matt/carnival/46: 48 368 d
+:matt/carnival/00: 1072 368 d
+:matt/carnival/45: 1072 336 d
+:matt/carnival/45: 1040 368 d

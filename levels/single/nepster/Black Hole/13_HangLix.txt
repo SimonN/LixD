@@ -1,0 +1,450 @@
+$BUILT 2016-01-13 21:48:36
+$AUTHOR Nepster
+$ENGLISH HangLix
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1056
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 18
+#REQUIRED 1
+#SPAWN_INTERVAL 35
+
+#RUNNER 2
+#CLIMBER 10
+#EXPLODER 10
+#BASHER 2
+#DIGGER 2
+
+:geoo/sandstone/Hatch.H: 760 192
+:geoo/sandstone/Hatch.H: 832 192
+:geoo/sandstone/Hatch.H: 552 192
+:geoo/sandstone/Hatch.H: 760 272
+:geoo/sandstone/Hatch.H: 832 272
+:geoo/sandstone/Hatch.H: 408 192
+
+:geoo/sandstone/Goal.G: 0 304
+
+:geoo/sandstone/chopper.T: 952 332
+:geoo/construction/factory.T: 368 300
+:geoo/construction/factory.T: 320 300
+:geoo/construction/factory.T: 272 300
+:geoo/construction/factory.T: 224 300
+:geoo/construction/factory.T: 176 300
+:geoo/construction/factory.T: 128 300
+:geoo/construction/factory.T: 80 300
+
+:geoo/sandstone/brazier.F: 656 40
+:geoo/sandstone/brazier.F: 512 40
+:geoo/sandstone/brazier.F: 528 272
+:geoo/sandstone/brazier.F: 496 272
+:geoo/sandstone/brazier.F: 640 272
+:geoo/sandstone/brazier.F: 672 272
+:geoo/sandstone/brazier.F: 368 40
+:geoo/sandstone/brazier.F: 224 40
+:geoo/sandstone/brazier.F: 80 40
+:geoo/sandstone/brazier.F: 16 40
+
+:geoo/sandstone/pillar_top_shaded: 168 188
+:geoo/sandstone/pillar_top_shaded: 136 188
+:geoo/sandstone/pillar_top_shaded: 312 188
+:geoo/sandstone/pillar_top_shaded: 280 188
+:geoo/sandstone/pillar_bottom_ext: 960 352
+$BEGIN_TILE_GROUP 0
+:geoo/sandstone/pillar_bottom_ext: 0 4
+:geoo/sandstone/16x16: 0 0 d
+$END_TILE_GROUP
+:Group-0: 992 352
+:geoo/sandstone/pillar_bottom_ext: 480 352
+:Group-0: 512 352
+:geoo/sandstone/pillar_bottom_ext: 624 352
+:Group-0: 656 352
+:geoo/construction/platform.S: 352 366
+:geoo/construction/fence_32x32.S: 352 368
+:geoo/construction/fence_32x32.S: 384 368
+:geoo/construction/fence_32x32.S: 416 368
+:geoo/construction/fence_32x32.S: 448 368
+:geoo/construction/fence_32x32.S: 480 368
+:geoo/construction/fence_32x32.S: 512 368
+:geoo/construction/fence_32x32.S: 544 368
+:geoo/construction/fence_32x32.S: 576 368
+:geoo/construction/fence_32x32.S: 608 368
+:geoo/construction/fence_32x32.S: 640 368
+:geoo/construction/fence_32x32.S: 672 368
+:geoo/construction/fence_32x32.S: 704 368
+:geoo/construction/fence_32x32.S: 736 368
+:geoo/construction/fence_32x32.S: 768 368
+:geoo/construction/fence_32x32.S: 800 368
+:geoo/construction/fence_32x32.S: 832 368
+:geoo/construction/fence_32x32.S: 864 368
+:geoo/construction/fence_32x32.S: 896 368
+:geoo/construction/fence_32x32.S: 928 368
+:geoo/construction/fence_32x32.S: 960 368
+:geoo/construction/platform.S: 384 366
+:geoo/construction/platform.S: 416 366
+:geoo/construction/platform.S: 448 366
+:geoo/construction/platform.S: 480 366
+:geoo/construction/platform.S: 512 366
+:geoo/construction/platform.S: 544 366
+:geoo/construction/platform.S: 576 366
+:geoo/construction/platform.S: 608 366
+:geoo/construction/platform.S: 640 366
+:geoo/construction/platform.S: 672 366
+:geoo/construction/platform.S: 704 366
+:geoo/construction/platform.S: 736 366
+:geoo/construction/platform.S: 768 366
+:geoo/construction/platform.S: 800 366
+:geoo/construction/platform.S: 832 366
+:geoo/construction/platform.S: 864 366
+:geoo/construction/platform.S: 896 366
+:geoo/construction/platform.S: 928 366
+:geoo/construction/platform.S: 960 366
+:geoo/construction/platform.S: 348 364
+:geoo/construction/platform.S: 380 364
+:geoo/construction/platform.S: 412 364
+:geoo/construction/platform.S: 444 364
+:geoo/construction/platform.S: 476 364
+:geoo/construction/platform.S: 508 364
+:geoo/construction/platform.S: 540 364
+:geoo/construction/platform.S: 572 364
+:geoo/construction/platform.S: 604 364
+:geoo/construction/platform.S: 636 364
+:geoo/construction/platform.S: 668 364
+:geoo/construction/platform.S: 700 364
+:geoo/construction/platform.S: 732 364
+:geoo/construction/platform.S: 764 364
+:geoo/construction/platform.S: 796 364
+:geoo/construction/platform.S: 828 364
+:geoo/construction/platform.S: 860 364
+:geoo/construction/platform.S: 892 364
+:geoo/construction/platform.S: 924 364
+:geoo/construction/platform.S: 956 364
+:geoo/construction/platform.S: 1052 364
+:geoo/sandstone/pillar_bottom: 1008 320
+:geoo/sandstone/pillar_top_shaded: 1008 268
+:geoo/sandstone/pillar_top_shaded: 976 268
+:geoo/sandstone/pillar_bottom_ext: 976 256
+:geoo/sandstone/pillar_bottom: 672 320
+:geoo/sandstone/pillar_top_shaded: 672 268
+:geoo/sandstone/pillar_top_shaded: 640 268
+:geoo/sandstone/pillar_bottom_ext: 640 256
+:geoo/sandstone/pillar_bottom: 528 320
+:geoo/sandstone/pillar_top_shaded: 528 268
+:geoo/sandstone/pillar_top_shaded: 496 268
+:geoo/sandstone/pillar_bottom_ext: 496 256
+:geoo/sandstone/pillar_32: 656 96
+:geoo/sandstone/pillar_32: 656 64
+:geoo/sandstone/pillar_top_jaggedr: 656 32
+:geoo/sandstone/pillar_bottom: 992 224
+:geoo/sandstone/pillar_32: 992 192
+:geoo/sandstone/pillar_32: 992 160
+:geoo/sandstone/pillar_32: 992 128
+:geoo/sandstone/pillar_32: 992 96
+:geoo/sandstone/pillar_32: 992 64
+:geoo/sandstone/pillar_32: 496 300
+:geoo/sandstone/pillar_32: 512 96
+:geoo/sandstone/pillar_32: 512 64
+:geoo/sandstone/pillar_top_jaggedl: 992 32
+:geoo/sandstone/pillar_top_jaggedl: 512 32
+:geoo/sandstone/pillar_bottom_ext: 424 176
+:geoo/sandstone/pillar_bottom_ext: 568 176
+:geoo/sandstone/pillar_bottom_ext: 776 176
+:geoo/sandstone/pillar_bottom_ext: 848 176
+:geoo/sandstone/pillar_bottom_ext: 848 256
+:geoo/sandstone/pillar_bottom_ext: 776 256
+:geoo/sandstone/pillar_top_ext: 568 240
+:geoo/sandstone/pillar_top_ext: 424 240
+:geoo/sandstone/pillar_top_ext: 776 240
+:geoo/sandstone/pillar_top_ext: 848 240
+:geoo/construction/platform.S: 320 366
+:geoo/construction/fence_32x32.S: 320 368
+:geoo/construction/platform.S: 316 364
+:geoo/construction/platform.S: 288 366
+:geoo/construction/fence_32x32.S: 288 368
+:geoo/construction/platform.S: 284 364
+:geoo/construction/platform.S: 256 366
+:geoo/construction/fence_32x32.S: 256 368
+:geoo/construction/platform.S: 252 364
+:geoo/construction/platform.S: 224 366
+:geoo/construction/fence_32x32.S: 224 368
+:geoo/construction/platform.S: 220 364
+:geoo/construction/platform.S: 192 366
+:geoo/construction/fence_32x32.S: 192 368
+:geoo/construction/platform.S: 188 364
+:geoo/construction/platform.S: 160 366
+:geoo/construction/fence_32x32.S: 160 368
+:geoo/construction/platform.S: 156 364
+:geoo/sandstone/pillar_32: 584 256
+:geoo/sandstone/pillar_32: 440 256
+:geoo/sandstone/pillar_top_jaggedr: 440 312 f
+:geoo/sandstone/pillar_top_jaggedl: 584 312 f
+:geoo/sandstone/pillar_32: 440 16
+:geoo/sandstone/pillar_32: 440 144
+:geoo/sandstone/pillar_32: 440 112
+:geoo/sandstone/pillar_32: 440 80
+:geoo/sandstone/pillar_32: 440 48
+:geoo/sandstone/pillar_32: 440 -16
+:geoo/sandstone/pillar_32: 584 144
+:geoo/sandstone/pillar_32: 584 112
+:geoo/sandstone/pillar_32: 584 80
+:geoo/sandstone/pillar_32: 584 48
+:geoo/sandstone/pillar_32: 584 16
+:geoo/sandstone/pillar_32: 584 -16
+:geoo/sandstone/pillar_32: 792 144
+:geoo/sandstone/pillar_32: 792 112
+:geoo/sandstone/pillar_32: 792 80
+:geoo/sandstone/pillar_32: 792 48
+:geoo/sandstone/pillar_32: 792 16
+:geoo/sandstone/pillar_32: 792 -16
+:geoo/sandstone/pillar_32: 864 144
+:geoo/sandstone/pillar_32: 864 112
+:geoo/sandstone/pillar_32: 864 80
+:geoo/sandstone/pillar_32: 864 48
+:geoo/sandstone/pillar_32: 864 16
+:geoo/sandstone/pillar_32: 864 -16
+:geoo/construction/platform.S: 128 366
+:geoo/construction/fence_32x32.S: 128 368
+:geoo/construction/platform.S: 124 364
+:geoo/construction/platform.S: 96 366
+:geoo/construction/fence_32x32.S: 96 368
+:geoo/construction/platform.S: 92 364
+:geoo/construction/platform.S: 64 366
+:geoo/construction/fence_32x32.S: 64 368
+:geoo/construction/platform.S: 60 364
+:geoo/construction/platform.S: 32 366
+:geoo/construction/fence_32x32.S: 32 368
+:geoo/construction/platform.S: 28 364
+:geoo/construction/platform.S: 0 366
+:geoo/construction/fence_32x32.S: 0 368
+:geoo/construction/platform.S: -4 364
+:geoo/sandstone/pillar_bottom_ext: 0 288
+:geoo/sandstone/pillar_32: 16 128
+:geoo/sandstone/pillar_32: 16 256
+:geoo/sandstone/pillar_32: 16 224
+:geoo/sandstone/pillar_32: 16 192
+:geoo/sandstone/pillar_32: 16 160
+:geoo/sandstone/pillar_32: 16 96
+:geoo/sandstone/pillar_32: 16 64
+:geoo/sandstone/pillar_top_jaggedr: 16 32
+:geoo/construction/fence_32x32.S: 992 368
+:geoo/construction/platform.S: 992 366
+:geoo/construction/platform.S: 988 364
+:geoo/construction/fence_32x32.S: 1024 368
+:geoo/construction/platform.S: 1024 366
+:geoo/construction/platform.S: 1020 364
+:geoo/sandstone/pillar_32: 528 300
+:geoo/sandstone/pillar_32: 640 300
+:geoo/sandstone/pillar_32: 672 300
+:geoo/sandstone/pillar_32: 728 144
+:geoo/sandstone/pillar_32: 728 112
+:geoo/sandstone/pillar_32: 728 80
+:geoo/sandstone/pillar_32: 728 48
+:geoo/sandstone/pillar_32: 728 16
+:geoo/sandstone/pillar_32: 728 -16
+:geoo/sandstone/pillar_32: 728 240
+:geoo/sandstone/pillar_32: 728 208
+:geoo/sandstone/pillar_32: 728 176
+:geoo/sandstone/pillar_top_jaggedr: 728 312 f
+:geoo/sandstone/pillar_32: 728 256
+:geoo/sandstone/pillar_32: 928 144
+:geoo/sandstone/pillar_32: 928 112
+:geoo/sandstone/pillar_32: 928 80
+:geoo/sandstone/pillar_32: 928 48
+:geoo/sandstone/pillar_32: 928 16
+:geoo/sandstone/pillar_32: 928 -16
+:geoo/sandstone/pillar_32: 928 240
+:geoo/sandstone/pillar_32: 928 208
+:geoo/sandstone/pillar_32: 928 176
+:geoo/sandstone/pillar_32: 928 256
+:geoo/sandstone/pillar_top_jaggedr: 928 312 f
+:geoo/sandstone/pillar_bottom: 512 224
+:geoo/sandstone/pillar_32: 512 192
+:geoo/sandstone/pillar_32: 512 160
+:geoo/sandstone/pillar_32: 512 128
+:geoo/construction/platformbrick_single: 524 198 d
+:geoo/construction/platformbrick_single: 524 230 d
+:geoo/construction/platformbrick_single: 524 166 d
+:geoo/construction/platformbrick_single: 524 134 d
+:geoo/sandstone/pillar_32: 928 288
+:geoo/sandstone/pillar_32: 728 288
+:geoo/sandstone/pillar_32: 584 288
+:geoo/sandstone/pillar_32: 440 288
+:geoo/sandstone/pillar_32: 1008 300
+:geoo/sandstone/pillar_bottom: 640 320
+:geoo/sandstone/pillar_bottom: 496 320
+:geoo/sandstone/pillar_bottom: 656 224
+:geoo/sandstone/pillar_32: 656 192
+:geoo/sandstone/pillar_32: 656 160
+:geoo/sandstone/pillar_32: 656 128
+:geoo/construction/platformbrick_single: 668 198 d
+:geoo/construction/platformbrick_single: 668 230 d
+:geoo/construction/platformbrick_single: 668 166 d
+:geoo/construction/platformbrick_single: 668 134 d
+:geoo/construction/platformbrick_single: 668 102 d
+:geoo/construction/platformbrick_single: 668 70 d
+:geoo/construction/platformbrick_single: 524 102 d
+:geoo/construction/platformbrick_single: 524 70 d
+:geoo/construction/platformbrick_single: 508 326 d
+:geoo/construction/platformbrick_single: 540 326 d
+:geoo/construction/platformbrick_single: 652 326 d
+:geoo/construction/platformbrick_single: 684 326 d
+:geoo/construction/platformbrick_single: 1004 230 d
+:geoo/construction/platformbrick_single: 1004 198 d
+:geoo/construction/platformbrick_single: 1004 166 d
+:geoo/construction/platformbrick_single: 1004 134 d
+:geoo/construction/platformbrick_single: 1004 102 d
+:geoo/construction/platformbrick_single: 1004 70 d
+:geoo/construction/platformbrick_single: 988 294 d
+:geoo/construction/platformbrick_single: 1020 326 d
+:geoo/construction/platformbrick_single: 1020 294 d
+:geoo/sandstone/pillar_bottom: 976 320
+:geoo/sandstone/pillar_32: 976 300
+:geoo/construction/platformbrick_single: 988 326 d
+:geoo/sandstone/pillar_32: 368 96
+:geoo/sandstone/pillar_32: 368 64
+:geoo/sandstone/pillar_top_jaggedr: 368 32
+:geoo/sandstone/pillar_32: 224 96
+:geoo/sandstone/pillar_32: 224 64
+:geoo/sandstone/pillar_top_jaggedl: 224 32
+:geoo/sandstone/pillar_bottom_ext: 136 176
+:geoo/sandstone/pillar_bottom_ext: 280 176
+:geoo/sandstone/pillar_32: 152 16
+:geoo/sandstone/pillar_32: 152 144
+:geoo/sandstone/pillar_32: 152 112
+:geoo/sandstone/pillar_32: 152 80
+:geoo/sandstone/pillar_32: 152 48
+:geoo/sandstone/pillar_32: 152 -16
+:geoo/sandstone/pillar_32: 296 144
+:geoo/sandstone/pillar_32: 296 112
+:geoo/sandstone/pillar_32: 296 80
+:geoo/sandstone/pillar_32: 296 48
+:geoo/sandstone/pillar_32: 296 16
+:geoo/sandstone/pillar_32: 296 -16
+:geoo/sandstone/pillar_32: 224 160
+:geoo/sandstone/pillar_32: 224 128
+:geoo/construction/platformbrick_single: 236 166 d
+:geoo/construction/platformbrick_single: 236 134 d
+:geoo/sandstone/pillar_32: 368 160
+:geoo/sandstone/pillar_32: 368 128
+:geoo/construction/platformbrick_single: 380 166 d
+:geoo/construction/platformbrick_single: 380 134 d
+:geoo/construction/platformbrick_single: 380 102 d
+:geoo/construction/platformbrick_single: 380 70 d
+:geoo/construction/platformbrick_single: 236 102 d
+:geoo/construction/platformbrick_single: 236 70 d
+:geoo/sandstone/pillar_32: 80 96
+:geoo/sandstone/pillar_32: 80 64
+:geoo/sandstone/pillar_top_jaggedr: 80 32
+:geoo/sandstone/pillar_32: 80 160
+:geoo/sandstone/pillar_32: 80 128
+:geoo/construction/platformbrick_single: 92 166 d
+:geoo/construction/platformbrick_single: 92 134 d
+:geoo/construction/platformbrick_single: 92 102 d
+:geoo/construction/platformbrick_single: 92 70 d
+:geoo/sandstone/pillar_top_ext: 280 240
+:geoo/sandstone/pillar_32: 296 256
+:geoo/sandstone/pillar_top_ext: 136 240
+:geoo/sandstone/pillar_32: 152 256
+:geoo/sandstone/pillar_top_jaggedr: 296 268 f
+:geoo/sandstone/pillar_top_jaggedl: 152 268 f
+:geoo/sandstone/pillar_32: 136 208
+:geoo/sandstone/pillar_32: 168 208
+:geoo/sandstone/pillar_32: 280 208
+:geoo/sandstone/pillar_32: 312 208
+:geoo/sandstone/pillar_32: 80 192
+:geoo/sandstone/pillar_32: 80 224
+:geoo/sandstone/pillar_32: 80 240
+:geoo/sandstone/pillar_32: 224 240
+:geoo/sandstone/pillar_32: 224 224
+:geoo/sandstone/pillar_32: 224 192
+:geoo/sandstone/pillar_32: 368 192
+:geoo/sandstone/pillar_32: 368 224
+:geoo/sandstone/pillar_32: 368 256
+:geoo/sandstone/pillar_top_jaggedl: 368 268 f
+:geoo/sandstone/pillar_top_jaggedl: 224 268 f
+:geoo/sandstone/pillar_top_jaggedr: 80 268 f
+:geoo/construction/platformbrick_single: 92 198 d
+:geoo/construction/platformbrick_single: 92 230 d
+:geoo/construction/platformbrick_single: 92 262 d
+:geoo/construction/platformbrick_single: 236 262 d
+:geoo/construction/platformbrick_single: 236 198 d
+:geoo/construction/platformbrick_single: 236 230 d
+:geoo/construction/platformbrick_single: 380 198 d
+:geoo/construction/platformbrick_single: 380 230 d
+:geoo/construction/platformbrick_single: 380 262 d
+:geoo/construction/platformbrick_single: 164 150 d
+:geoo/construction/platformbrick_single: 164 118 d
+:geoo/construction/platformbrick_single: 164 86 d
+:geoo/construction/platformbrick_single: 164 54 d
+:geoo/construction/platformbrick_single: 164 22 d
+:geoo/construction/platformbrick_single: 308 150 d
+:geoo/construction/platformbrick_single: 308 118 d
+:geoo/construction/platformbrick_single: 308 86 d
+:geoo/construction/platformbrick_single: 308 54 d
+:geoo/construction/platformbrick_single: 308 22 d
+:geoo/construction/platformbrick_single: 324 214 d
+:geoo/construction/platformbrick_single: 292 214 d
+:geoo/construction/platformbrick_single: 180 214 d
+:geoo/construction/platformbrick_single: 148 214 d
+:geoo/construction/platformbrick_single: 452 150 d
+:geoo/construction/platformbrick_single: 452 118 d
+:geoo/construction/platformbrick_single: 452 86 d
+:geoo/construction/platformbrick_single: 452 54 d
+:geoo/construction/platformbrick_single: 452 22 d
+:geoo/construction/platformbrick_single: 452 278 d
+:geoo/construction/platformbrick_single: 452 310 d
+:geoo/construction/platformbrick_single: 596 310 d
+:geoo/construction/platformbrick_single: 596 278 d
+:geoo/construction/platformbrick_single: 596 150 d
+:geoo/construction/platformbrick_single: 596 118 d
+:geoo/construction/platformbrick_single: 596 86 d
+:geoo/construction/platformbrick_single: 596 54 d
+:geoo/construction/platformbrick_single: 596 22 d
+:geoo/construction/platformbrick_single: 740 22 d
+:geoo/construction/platformbrick_single: 740 54 d
+:geoo/construction/platformbrick_single: 740 86 d
+:geoo/construction/platformbrick_single: 740 118 d
+:geoo/construction/platformbrick_single: 740 150 d
+:geoo/construction/platformbrick_single: 740 182 d
+:geoo/construction/platformbrick_single: 740 214 d
+:geoo/construction/platformbrick_single: 740 246 d
+:geoo/construction/platformbrick_single: 740 278 d
+:geoo/construction/platformbrick_single: 740 310 d
+:geoo/construction/platformbrick_single: 804 150 d
+:geoo/construction/platformbrick_single: 804 118 d
+:geoo/construction/platformbrick_single: 804 22 d
+:geoo/construction/platformbrick_single: 804 54 d
+:geoo/construction/platformbrick_single: 804 86 d
+:geoo/construction/platformbrick_single: 876 22 d
+:geoo/construction/platformbrick_single: 876 54 d
+:geoo/construction/platformbrick_single: 876 86 d
+:geoo/construction/platformbrick_single: 876 118 d
+:geoo/construction/platformbrick_single: 876 150 d
+:geoo/construction/platformbrick_single: 940 22 d
+:geoo/construction/platformbrick_single: 940 54 d
+:geoo/construction/platformbrick_single: 940 86 d
+:geoo/construction/platformbrick_single: 940 118 d
+:geoo/construction/platformbrick_single: 940 150 d
+:geoo/construction/platformbrick_single: 940 182 d
+:geoo/construction/platformbrick_single: 940 214 d
+:geoo/construction/platformbrick_single: 940 246 d
+:geoo/construction/platformbrick_single: 940 278 d
+:geoo/construction/platformbrick_single: 940 310 d
+:geoo/construction/platformbrick_single: 28 262 d
+:geoo/construction/platformbrick_single: 28 230 d
+:geoo/construction/platformbrick_single: 28 198 d
+:geoo/construction/platformbrick_single: 28 166 d
+:geoo/construction/platformbrick_single: 28 134 d
+:geoo/construction/platformbrick_single: 28 102 d
+:geoo/construction/platformbrick_single: 28 70 d
+:matt/winter/09c: 664 47 d
+:matt/winter/09c: 520 47 d
+:matt/winter/09c: 536 279 d
+:matt/winter/09c: 504 279 d
+:matt/winter/09c: 648 279 d
+:matt/winter/09c: 680 279 d
+:matt/winter/09c: 376 47 d
+:matt/winter/09c: 232 47 d
+:matt/winter/09c: 88 47 d
+:matt/winter/09c: 24 47 d

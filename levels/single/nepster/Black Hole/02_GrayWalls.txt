@@ -1,0 +1,82 @@
+$BUILT 2016-01-01 15:18:12
+$AUTHOR Nepster
+$ENGLISH Gray Walls
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 848
+#SIZE_Y 400
+
+#SECONDS 160
+#INITIAL 6
+#REQUIRED 3
+#SPAWN_INTERVAL 30
+
+#CLIMBER 2
+#FLOATER 2
+#EXPLODER 2
+#BLOCKER 2
+#BUILDER 6
+#BASHER 1
+#MINER 1
+#DIGGER 1
+
+:matt/underworld/Hatch.H: 0 4
+
+:matt/underworld/Goal.G: 784 64
+
+:matt/underworld/00: 80 56
+:matt/underworld/02: 0 288
+:matt/underworld/02: 128 288
+:matt/underworld/02: 238 256
+:matt/underworld/02: 348 288
+:matt/underworld/02: 458 288
+:matt/underworld/02: 568 352
+:matt/underworld/02: 678 256
+:matt/underworld/02: 784 288
+:matt/underworld/06: -16 376
+:matt/underworld/06: 36 378
+:matt/underworld/06: 66 382
+:matt/underworld/06: 112 380
+:matt/underworld/06: 140 380 rrr
+:matt/underworld/06: 154 380 rrr
+:matt/underworld/06: 206 374 rr
+:matt/underworld/06: 238 376 r
+:matt/underworld/06: 297 381
+:matt/underworld/06: 322 377 rrr
+:matt/underworld/06: 352 384 rr
+:matt/underworld/06: 410 378
+:matt/underworld/06: 438 378 rrr
+:matt/underworld/06: 512 376 rr
+:matt/underworld/06: 548 374 r
+:matt/underworld/06: 604 376 r
+:matt/underworld/06: 676 378
+:matt/underworld/06: 706 380 rrr
+:matt/underworld/06: 784 368 rr
+:matt/underworld/02: 238 96
+:matt/underworld/02: 238 32
+:matt/underworld/02: 238 -64
+:matt/underworld/02: 128 192
+:matt/underworld/02: 128 96
+:matt/underworld/02: 0 96
+:matt/underworld/02: 0 192
+:matt/underworld/02: 348 160
+:matt/underworld/02: 348 0
+:matt/underworld/02: 458 0
+:matt/underworld/02: 458 192
+:matt/underworld/02: 458 128
+:matt/underworld/02: 784 192
+:matt/underworld/02: 784 128
+:matt/underworld/02: 678 128
+:matt/underworld/02: 568 224
+:matt/underworld/02: 568 64
+:matt/underworld/02: 568 0
+:matt/underworld/02: 678 32
+:matt/underworld/02: 678 -64
+:matt/underworld/02: 568 160
+:matt/underworld/00: 64 64
+:matt/underworld/01: 238 224
+:matt/underworld/02: 0 64
+:matt/underworld/01: 568 144 d
+:matt/underworld/00: 96 48
+:matt/underworld/02: 128 32
+:matt/underworld/00: 128 32 d

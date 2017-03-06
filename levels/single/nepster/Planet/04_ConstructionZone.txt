@@ -1,0 +1,277 @@
+$BUILT 2017-03-07 21:43:31
+$AUTHOR Nepster
+$ENGLISH Construction Zone
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 40
+#REQUIRED 20
+#SPAWN_INTERVAL 30
+
+#FLOATER 2
+#BLOCKER 1
+#BUILDER 2
+#MINER 1
+#DIGGER 1
+#EXPLODER 0
+
+:geoo/construction/Hatch.H: 23 32
+
+:geoo/construction/Goal2.G: 571 44
+
+:geoo/sandstone/brazier.F: 207 149
+
+:geoo/construction/rod_rust/straight_diagd8: 87 102
+:geoo/construction/rod_rust/straight_diagd32: 492 308 frr
+:geoo/construction/rod_rust/link_diag: 486 338 frr
+:geoo/construction/rod_rust/straight32: 88 -1 rrr
+:geoo/construction/rod_rust/straight_diagd32: 92 43
+:geoo/construction/rod_rust/straight_diagd32: 260 77
+:geoo/construction/rod_rust/straight_diagd32: 342 77 frr
+:geoo/construction/rod_rust/straight_diagd32: 308 64
+:geoo/construction/rod_rust/straight_diagd32: 292 48
+:geoo/construction/rod_rust/straight_diagd32: 310 48 frr
+:geoo/construction/rod_rust/straight_diagd32: 308 125
+:geoo/construction/rod_rust/straight_diagd32: 292 109
+:geoo/construction/rod_rust/straight_diagd32: 310 109 frr
+:geoo/construction/rod_rust/straight_diagd32: 308 186
+:geoo/construction/rod_rust/straight_diagd32: 292 170
+:geoo/construction/rod_rust/straight_diagd32: 310 170 frr
+:geoo/construction/rod_rust/link: 339 291 frr
+:geoo/construction/rod_rust/link: 285 291
+:geoo/construction/rod_rust/straight32: 473 139 frr
+:geoo/construction/rod_rust/straight32: 135 139
+:geoo/construction/rod_rust/link_diag: 534 153
+:geoo/construction/rod_rust/straight_diagd32: 506 125
+:geoo/construction/rod_rust/straight_diagd32: 490 109
+:geoo/construction/rod_rust/link_diag: 534 112 f
+:geoo/construction/rod_rust/link_diag: 534 214
+:geoo/construction/rod_rust/straight_diagd32: 506 186
+:geoo/construction/rod_rust/straight_diagd32: 490 170
+:geoo/construction/rod_rust/link_diag: 534 173 f
+:geoo/construction/rod_rust/straight_diagd32: 508 170 frr
+:geoo/construction/rod_rust/link_diag: 534 275
+:geoo/construction/rod_rust/straight_diagd32: 506 247
+:geoo/construction/rod_rust/straight_diagd32: 490 231
+:geoo/construction/rod_rust/link_diag: 534 234 f
+:geoo/construction/rod_rust/straight_diagd32: 508 231 frr
+:geoo/construction/rod_rust/straight_diagd32: 506 308
+:geoo/construction/rod_rust/straight_diagd32: 490 292
+:geoo/construction/rod_rust/straight_diagd32: 508 292 frr
+$BEGIN_TILE_GROUP 0
+:geoo/construction/rod_rust/straight_diagd32: 18 13
+:geoo/construction/rod_rust/link_diag: 0 0 rr
+:geoo/construction/rod_rust/straight_diagd32: 2 -3
+:geoo/construction/rod_rust/straight_diagd32: 20 -3 frr
+:geoo/construction/rod_rust/link_diag: 0 41 frr
+:geoo/construction/rod_rust/straight_diagd32: 4 13 frr
+:geoo/construction/rod_rust/cross_diag_full: 18 21
+:geoo/construction/rod_rust/link: 33 27 frr
+:geoo/construction/platformbrick_single: 36 29 d
+$END_TILE_GROUP
+:Group-0: 92 112
+:geoo/construction/rod_rust/straight_diagd32: 110 186
+:geoo/construction/rod_rust/link_diag: 92 173 rr
+:geoo/construction/rod_rust/straight_diagd32: 94 170
+:geoo/construction/rod_rust/straight_diagd32: 112 170 frr
+:geoo/construction/rod_rust/link_diag: 92 214 frr
+:geoo/construction/rod_rust/straight_diagd32: 110 247
+:geoo/construction/rod_rust/link_diag: 92 234 rr
+:geoo/construction/rod_rust/straight_diagd32: 94 231
+:geoo/construction/rod_rust/straight_diagd32: 112 231 frr
+:geoo/construction/rod_rust/link_diag: 92 275 frr
+:geoo/construction/rod_rust/link_diag: 140 338
+:geoo/construction/rod_rust/straight_diagd32: 110 308
+:geoo/construction/rod_rust/link_diag: 92 295 rr
+:geoo/construction/rod_rust/straight_diagd32: 94 292
+:geoo/construction/rod_rust/straight_diagd32: 112 292 frr
+:geoo/construction/rod_rust/link_diag: 92 336 frr
+:geoo/construction/rod_rust/straight_diagd32: 113 64
+:geoo/construction/rod_rust/straight_diagd32: 508 109 frr
+:geoo/construction/rod_rust/link_diag: 143 94
+:geoo/construction/rod_rust/straight32: 88 336 rrr
+:geoo/construction/rod_rust/straight32: 88 304 rrr
+:geoo/construction/rod_rust/straight32: 88 272 rrr
+:geoo/construction/rod_rust/straight32: 88 240 rrr
+:geoo/construction/rod_rust/straight32: 88 208 rrr
+:geoo/construction/rod_rust/straight32: 88 176 rrr
+:geoo/construction/rod_rust/straight32: 88 144 rrr
+:geoo/construction/rod_rust/straight32: 96 352
+:geoo/construction/rod_rust/straight32: 128 352
+:geoo/construction/rod_rust/straight32: 160 352
+:geoo/construction/rod_rust/straight32: 192 352
+:geoo/construction/rod_rust/straight32: 224 352
+:geoo/construction/rod_rust/straight32: 256 352
+:geoo/construction/rod_rust/straight32: 288 352
+:geoo/construction/rod_rust/straight32: 320 352
+:geoo/construction/rod_rust/straight32: 352 352
+:geoo/construction/rod_rust/straight32: 384 352
+:geoo/construction/rod_rust/straight32: 416 352
+:geoo/construction/rod_rust/straight32: 448 352
+:geoo/construction/rod_rust/straight32: 480 352
+:geoo/construction/rod_rust/link: 88 352 frr
+:geoo/construction/rod_rust/straight_diagd32: 96 308 frr
+:geoo/construction/rod_rust/cross_diag_full: 110 316
+:geoo/construction/rod_rust/link_diag: 138 295 f
+:geoo/construction/rod_rust/straight_diagd32: 96 247 frr
+:geoo/construction/rod_rust/cross_diag_full: 110 255
+:geoo/construction/rod_rust/link_diag: 138 234 f
+:geoo/construction/rod_rust/link_diag: 138 275
+:geoo/construction/rod_rust/straight_diagd32: 96 186 frr
+:geoo/construction/rod_rust/cross_diag_full: 110 194
+:geoo/construction/rod_rust/link_diag: 138 173 f
+:geoo/construction/rod_rust/link_diag: 138 214
+:geoo/construction/rod_rust/link_diag: 138 112 f
+:geoo/construction/rod_rust/link_diag: 138 153
+:geoo/construction/rod_rust/straight32: 167 291
+:geoo/construction/rod_rust/link_dd_h: 146 283
+:geoo/construction/rod_rust/link_du_h: 147 279
+:geoo/construction/rod_rust/link_dd_h: 146 222
+:geoo/construction/rod_rust/link_du_h: 147 218
+:geoo/construction/rod_rust/link_dd_h: 146 161
+:geoo/construction/rod_rust/link_du_h: 147 157
+:geoo/construction/rod_rust/link_du_h: 147 96
+:geoo/construction/rod_rust/straight32: 167 230
+:geoo/construction/rod_rust/straight32: 167 169
+:geoo/construction/rod_rust/straight32: 167 108
+:geoo/construction/rod_rust/straight32: 119 108
+:geoo/construction/rod_rust/straight32: 87 108
+:geoo/construction/rod_rust/straight32: 55 108
+:geoo/construction/rod_rust/straight32: 23 108
+:geoo/construction/rod_rust/straight32: 88 368 rrr
+:geoo/construction/rod_rust/straight32: 199 291
+:geoo/construction/rod_rust/straight32: 231 291
+:geoo/construction/rod_rust/straight32: 263 291
+:geoo/construction/rod_rust/straight32: 345 291
+:geoo/construction/rod_rust/link_diag: 483 94 frr
+:geoo/construction/rod_rust/straight_diagd32: 489 64 frr
+:geoo/construction/rod_rust/cross_diag_full: 506 316
+:geoo/construction/rod_rust/link_diag: 534 295 f
+:geoo/construction/rod_rust/link_diag: 488 295 rr
+:geoo/construction/rod_rust/link_diag: 534 336
+:geoo/construction/rod_rust/straight32: 377 291
+:geoo/construction/rod_rust/straight32: 409 291
+:geoo/construction/rod_rust/straight32: 512 352
+:geoo/construction/rod_rust/straight32: 441 291
+:geoo/construction/rod_rust/straight32: 544 368 rrr
+:geoo/construction/rod_rust/straight32: 544 336 rrr
+:geoo/construction/rod_rust/straight32: 544 304 rrr
+:geoo/construction/rod_rust/straight32: 544 272 rrr
+:geoo/construction/rod_rust/straight32: 544 240 rrr
+:geoo/construction/rod_rust/straight32: 544 208 rrr
+:geoo/construction/rod_rust/straight32: 544 176 rrr
+:geoo/construction/rod_rust/link_diag: 488 275 frr
+:geoo/construction/rod_rust/straight_diagd32: 492 247 frr
+:geoo/construction/rod_rust/cross_diag_full: 506 255
+:geoo/construction/rod_rust/link_diag: 488 234 rr
+:geoo/construction/rod_rust/link_diag: 488 214 frr
+:geoo/construction/rod_rust/straight_diagd32: 492 186 frr
+:geoo/construction/rod_rust/cross_diag_full: 506 194
+:geoo/construction/rod_rust/link_diag: 488 173 rr
+:geoo/construction/rod_rust/straight32: 544 144 rrr
+:geoo/construction/rod_rust/straight32: 544 112 rrr
+:geoo/construction/rod_rust/link_diag: 488 153 frr
+:geoo/construction/rod_rust/straight_diagd32: 492 125 frr
+:geoo/construction/rod_rust/cross_diag_full: 506 133
+:geoo/construction/rod_rust/link_diag: 488 112 rr
+:geoo/construction/rod_rust/link_dd_h: 474 283 frr
+:geoo/construction/rod_rust/link_du_h: 473 279 frr
+:geoo/construction/rod_rust/straight32: 199 230
+:geoo/construction/rod_rust/straight32: 199 169
+:geoo/construction/rod_rust/straight32: 199 108
+:geoo/construction/rod_rust/straight32: 441 230
+:geoo/construction/rod_rust/link_dd_h: 474 222 frr
+:geoo/construction/rod_rust/link_du_h: 473 218 frr
+:geoo/construction/rod_rust/straight32: 441 169
+:geoo/construction/rod_rust/link_dd_h: 474 161 frr
+:geoo/construction/rod_rust/link_du_h: 473 157 frr
+:geoo/construction/rod_rust/straight32: 441 108
+:geoo/construction/rod_rust/link_du_h: 473 96 frr
+:geoo/construction/rod_rust/straight32: 489 108
+:geoo/construction/rod_rust/straight32: 521 108
+:geoo/construction/rod_rust/straight32: 553 108
+:geoo/construction/rod_rust/straight32: 585 108
+:geoo/construction/rod_rust/straight32: 409 230
+:geoo/construction/rod_rust/straight32: 409 169
+:geoo/construction/rod_rust/straight32: 409 108
+:geoo/construction/rod_rust/straight32: 192 344 frr
+:geoo/construction/rod_rust/straight32: 224 344 frr
+:geoo/construction/rod_rust/straight32: 256 344 frr
+:geoo/construction/rod_rust/straight32: 256 336
+:geoo/construction/rod_rust/straight32: 224 336
+:geoo/construction/rod_rust/straight32: 192 336
+:geoo/construction/rod_rust/straight32: 192 328 frr
+:geoo/construction/rod_rust/straight32: 224 328 frr
+:geoo/construction/rod_rust/straight32: 256 328 frr
+:geoo/construction/platformbrick_single: 542 276 rrrd
+:geoo/construction/platformbrick_single: 492 276 rrrd
+:geoo/construction/platformbrick_single: 542 215 rrrd
+:geoo/construction/platformbrick_single: 492 215 rrrd
+:geoo/construction/platformbrick_single: 542 154 rrrd
+:geoo/construction/platformbrick_single: 492 154 rrrd
+:geoo/construction/platformbrick_single: 146 154 rrrd
+:geoo/construction/platformbrick_single: 96 154 rrrd
+:geoo/construction/platformbrick_single: 146 215 rrrd
+:geoo/construction/platformbrick_single: 96 215 rrrd
+:geoo/construction/platformbrick_single: 146 276 rrrd
+:geoo/construction/platformbrick_single: 96 276 rrrd
+:geoo/construction/rod_rust/straight32: 256 320
+:geoo/construction/rod_rust/straight32: 224 320
+:geoo/construction/rod_rust/straight32: 192 320
+:geoo/construction/rod_rust/straight32: 167 139
+:geoo/construction/rod_rust/straight32: 199 139
+:geoo/construction/rod_rust/link: 499 139
+:geoo/construction/rod_rust/straight32: 441 139 frr
+:geoo/construction/rod_rust/straight32: 409 139 frr
+:geoo/construction/platformbrick_single: 504 141 d
+:geoo/construction/rod_rust/straight32: 426 100 frr
+:geoo/construction/rod_rust/link_diag: 288 216 frr
+:geoo/construction/rod_rust/straight_diagd32: 294 186 frr
+:geoo/construction/rod_rust/cross_diag_full: 308 194
+:geoo/construction/rod_rust/link_diag: 338 171 f
+:geoo/construction/rod_rust/link_diag: 288 171 rr
+:geoo/construction/rod_rust/link_diag: 338 216
+:geoo/construction/rod_rust/straight32: 320 230
+:geoo/construction/rod_rust/straight32: 288 230
+:geoo/construction/rod_rust/link_diag: 288 155 frr
+:geoo/construction/rod_rust/straight_diagd32: 294 125 frr
+:geoo/construction/rod_rust/cross_diag_full: 308 133
+:geoo/construction/rod_rust/link_diag: 338 155
+:geoo/construction/rod_rust/straight32: 320 169
+:geoo/construction/rod_rust/straight32: 288 169
+:geoo/construction/rod_rust/link_diag: 288 94 frr
+:geoo/construction/rod_rust/straight_diagd32: 294 64 frr
+:geoo/construction/rod_rust/cross_diag_full: 308 72
+:geoo/construction/rod_rust/link_diag: 338 94
+:geoo/construction/rod_rust/straight32: 320 108
+:geoo/construction/rod_rust/straight32: 288 108
+:geoo/construction/rod_rust/link_dd_h: 368 69 rrr
+:geoo/construction/rod_rust/link_du_h: 244 68 rrr
+:geoo/construction/rod_rust/straight32: 256 36 rrr
+:geoo/construction/rod_rust/straight32: 256 4 rrr
+:geoo/construction/rod_rust/straight32: 256 -28 rrr
+:geoo/construction/rod_rust/straight32: 376 38 rrr
+:geoo/construction/rod_rust/straight32: 376 6 rrr
+:geoo/construction/rod_rust/straight32: 376 -26 rrr
+:geoo/construction/rod_rust/link_dd_h: 336 40 rrr
+:geoo/construction/rod_rust/link_du_h: 276 39 rrr
+:geoo/construction/rod_rust/straight32: 288 7 rrr
+:geoo/construction/rod_rust/straight32: 288 -25 rrr
+:geoo/construction/rod_rust/straight32: 344 8 rrr
+:geoo/construction/rod_rust/straight32: 344 -24 rrr
+:geoo/construction/rod_rust/straight32: 617 108
+:geoo/construction/rod_rust/straight32: -9 108
+:geoo/construction/rod_rust/straight_diagd32: 510 43 frr
+:geoo/construction/rod_rust/link_dd_h: 536 35 rrr
+:geoo/construction/rod_rust/straight32: 544 3 rrr
+:geoo/construction/rod_rust/straight32: 544 -19 rrr
+:geoo/construction/rod_rust/straight32: 88 2 rrr
+:geoo/construction/rod_rust/link_du_h: 76 34 rrr
+:geoo/construction/rod_rust/link: 544 108 frrr
+:geoo/construction/platformbrick_single: 144 88 rrrd
+:geoo/construction/platformbrick_single: 494 88 rrrd
+:geoo/construction/rod_rust/end_rect: 88 136 fr
+:geoo/construction/rod_rust/straight8: 434 92 frr
+:geoo/construction/rod_rust/straight8: 442 92

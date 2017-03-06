@@ -1,0 +1,253 @@
+$BUILT 2016-07-18 22:16:18
+$AUTHOR Nepster
+$ENGLISH The Icy Smell of Steel
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 752
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 16
+#SPAWN_INTERVAL 33
+
+#RUNNER 1
+#FLOATER 1
+#EXPLODER 4
+#BLOCKER 4
+#BUILDER 5
+#BASHER 2
+#JUMPER 1
+
+:matt/winter/Hatch.H: 128 -6
+
+:matt/winter/Goal.G: 128 272
+
+:geoo/construction/squisher.T: 256 32
+
+:simon/crystal.W: 624 372
+:simon/crystal.W: 672 372
+:simon/crystal.W: 64 372
+:simon/crystal.W: 112 372
+
+:matt/winter/17: 528 -26 fr
+:matt/winter/17: 256 -62 rrr
+:matt/winter/18: 226 -2
+:matt/winter/13: 376 81 rrr
+:matt/winter/05: 632 216 rrr
+$BEGIN_TILE_GROUP 0
+:matt/winter/16: 0 50 rrr
+:matt/winter/05: 118 112
+:matt/winter/05: 120 226
+:matt/winter/05: 118 0
+:matt/carnival/04: 112 130 d
+:matt/carnival/04: 112 194 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:matt/winter/13: 120 148 rr
+:Group-0: 0 0
+:matt/carnival/04: 112 258 d
+:matt/carnival/04: 112 322 d
+$END_TILE_GROUP
+:Group-1: 560 -66
+:amanda/steel/steel32x32.S: 160 336
+:amanda/steel/steel32x32.S: 128 336
+:amanda/steel/steel_flange_left24x16.S: 256 352
+:amanda/steel/steel32x32.S: 256 368
+:amanda/steel/steel32x32.S: 464 368
+:amanda/steel/steel32x32.S: 224 368
+:amanda/steel/steel32x32.S: 192 368
+:amanda/steel/steel32x32.S: 160 368
+:amanda/steel/steel32x32.S: 128 368
+:amanda/steel/steel32x32.S: 528 368
+:amanda/steel/steel32x32.S: 496 368
+:amanda/steel/steel32x32.S: 592 368
+:amanda/steel/steel32x32.S: 560 368
+:amanda/steel/steel32x32.S: 592 336
+:amanda/steel/steel32x32.S: 560 336
+$BEGIN_TILE_GROUP 2
+:matt/winter/05: 4 125
+:matt/winter/05: 0 11
+:matt/winter/05: 78 9
+:matt/carnival/04: 52 13 d
+:matt/carnival/04: 132 45 d
+:matt/winter/09c: 131 14 d
+:matt/winter/09c: 130 11 d
+:matt/winter/09c: 120 0 d
+:matt/winter/09c: 85 14 d
+:matt/winter/09c: 86 11 d
+:matt/winter/09c: 90 5 d
+:matt/winter/09c: 93 2 d
+:matt/winter/09c: 96 0 d
+$END_TILE_GROUP
+:Group-2: 300 77
+:amanda/steel/steel32x32.S: 288 368
+:matt/carnival/04: 288 304 d
+:matt/carnival/04: 288 240 d
+:matt/carnival/04: 288 176 d
+:matt/carnival/04: 288 112 d
+:matt/winter/05: 382 190
+:amanda/steel/steel32x32.S: 432 368
+:matt/carnival/04: 352 336 d
+:matt/carnival/04: 352 272 d
+:matt/carnival/04: 352 208 d
+:matt/carnival/04: 352 144 d
+:matt/carnival/04: 368 272 d
+:matt/carnival/04: 368 336 d
+:matt/carnival/04: 368 208 d
+:matt/carnival/04: 368 144 d
+:matt/carnival/04: 432 176 d
+:matt/carnival/04: 432 240 d
+:matt/carnival/04: 432 304 d
+:matt/winter/05: -10 46
+:matt/winter/05: -8 160
+:matt/winter/05: -10 -66
+:amanda/steel/steel32x32.S: 32 368
+:amanda/steel/steel32x32.S: 0 368
+:matt/carnival/04: 48 304 d
+:matt/carnival/04: 48 240 d
+:matt/carnival/04: 48 176 d
+:matt/carnival/04: 48 -16 d
+:matt/carnival/04: 48 48 d
+:matt/carnival/04: 48 112 d
+:matt/carnival/04: -16 304 d
+:matt/carnival/04: -16 -16 d
+:matt/carnival/04: -16 48 d
+:amanda/steel/steel_flange_right24x16.S: 472 352
+:matt/carnival/04: 736 304 d
+:matt/carnival/04: 736 -16 d
+:matt/carnival/04: 736 48 d
+:matt/carnival/04: 736 112 d
+:matt/carnival/04: 672 320 d
+:matt/carnival/04: 672 0 d
+:amanda/steel/steel32x32.S: 688 368
+:amanda/steel/steel32x32.S: 720 368
+:matt/carnival/04: 736 176 d
+:matt/carnival/04: 736 240 d
+:matt/carnival/04: 640 206 rrrd
+:matt/carnival/04: 640 270 rrrd
+:matt/winter/09c: 635 223 d
+:matt/winter/09c: 632 224 d
+:matt/winter/09c: 635 269 d
+:matt/winter/09c: 632 268 d
+:matt/winter/09c: 627 265 d
+:matt/winter/09c: 625 263 d
+:matt/winter/09c: 620 236 d
+:matt/winter/09c: 620 237 d
+:matt/winter/09c: 618 247 d
+:matt/winter/09c: 619 253 d
+:matt/winter/09c: 623 261 d
+:matt/winter/09c: 621 258 d
+:matt/carnival/04: 288 64 d
+:matt/winter/09c: 351 81 d
+:matt/winter/09c: 350 78 d
+:amanda/steel/steel_flange_right24x16.S: 504 336
+:amanda/steel/steel32x32.S: 192 336
+:amanda/steel/steel_flange_left24x16.S: 224 336
+:amanda/steel/steel16x16.S: 224 352
+:amanda/steel/steel16x16.S: 240 352
+:amanda/steel/steel16x16.S: 496 352
+:amanda/steel/steel16x16.S: 512 352
+:amanda/steel/steel32x32.S: 528 336
+:amanda/steel/steel16x16.S: 200 344
+:amanda/steel/steel16x16.S: 168 344
+:amanda/steel/steel16x16.S: 136 344
+:amanda/steel/steel16x16.S: 136 376
+:amanda/steel/steel16x16.S: 168 376
+:amanda/steel/steel16x16.S: 200 376
+:amanda/steel/steel16x16.S: 232 376
+:amanda/steel/steel16x16.S: 264 376
+:amanda/steel/steel16x16.S: 296 376
+:amanda/steel/steel16x16.S: 440 376
+:amanda/steel/steel16x16.S: 472 376
+:amanda/steel/steel16x16.S: 504 376
+:amanda/steel/steel16x16.S: 536 376
+:amanda/steel/steel16x16.S: 568 376
+:amanda/steel/steel16x16.S: 600 376
+:amanda/steel/steel16x16.S: 536 344
+:amanda/steel/steel16x16.S: 568 344
+:amanda/steel/steel16x16.S: 600 344
+:amanda/steel/steel16x16.S: 696 376
+:amanda/steel/steel16x16.S: 728 376
+:amanda/steel/steel16x16.S: 8 376
+:amanda/steel/steel16x16.S: 40 376
+:matt/winter/09c: 340 67 d
+:matt/winter/09c: 335 65 d
+:matt/winter/09c: 305 81 d
+:matt/winter/09c: 306 78 d
+:matt/winter/09c: 310 72 d
+:matt/winter/09c: 313 69 d
+:matt/winter/09c: 316 67 d
+:matt/winter/09c: 321 65 d
+:matt/winter/09c: 328 64 d
+:amanda/steel/steel32x32.S: 288 96
+:amanda/steel/steel32x32.S: 256 96
+:amanda/steel/steel32x32.S: 224 96
+:amanda/steel/steel32x32.S: 192 96
+:amanda/steel/steel32x32.S: 160 96
+:amanda/steel/steel32x32.S: 128 96
+:amanda/steel/steel32x32.S: 160 224
+:amanda/steel/steel32x32.S: 192 224
+:amanda/steel/steel32x32.S: 224 224
+:amanda/steel/steel32x32.S: 256 224
+:amanda/steel/steel32x32.S: 288 224
+:amanda/steel/steel32x32.S: 464 224
+:amanda/steel/steel32x32.S: 496 224
+:amanda/steel/steel32x32.S: 528 224
+:matt/winter/09c: 415 65 d
+:matt/winter/09c: 401 65 d
+:matt/winter/09c: 408 64 d
+:matt/carnival/04: 432 64 d
+:matt/carnival/04: 368 80 d
+:matt/winter/06: 432 86 rrr
+:matt/winter/06: 432 122 rrr
+:matt/winter/06: 432 104 rrr
+:matt/winter/06: 432 76 rrrd
+:matt/winter/06: 432 132 rrrd
+:geoo/abstract/pipes/central0: 432 96 d
+:geoo/abstract/pipes/central0: 464 96 d
+:geoo/abstract/pipes/central0: 432 120 d
+:geoo/abstract/pipes/central0: 464 120 d
+:geoo/abstract/pipes/central0: 432 102 d
+:geoo/abstract/pipes/central0: 464 102 d
+:geoo/abstract/pipes/central0: 432 114 d
+:geoo/abstract/pipes/central0: 464 114 d
+:matt/winter/06: 496 86 rrr
+:matt/winter/06: 496 122 rrr
+:matt/winter/06: 496 104 rrr
+:matt/winter/06: 496 76 rrrd
+:matt/winter/06: 496 132 rrrd
+:geoo/abstract/pipes/central0: 528 96 d
+:geoo/abstract/pipes/central0: 528 120 d
+:geoo/abstract/pipes/central0: 528 102 d
+:geoo/abstract/pipes/central0: 528 114 d
+:geoo/abstract/pipes/central0: 496 96 d
+:geoo/abstract/pipes/central0: 496 102 d
+:geoo/abstract/pipes/central0: 496 114 d
+:geoo/abstract/pipes/central0: 496 120 d
+:matt/winter/06: 560 86 rrr
+:matt/winter/06: 560 122 rrr
+:matt/winter/06: 560 104 rrr
+:matt/winter/06: 560 76 rrrd
+:matt/winter/06: 560 132 rrrd
+:geoo/abstract/pipes/central0: 592 96 d
+:geoo/abstract/pipes/central0: 592 120 d
+:geoo/abstract/pipes/central0: 592 102 d
+:geoo/abstract/pipes/central0: 592 114 d
+:geoo/abstract/pipes/central0: 560 96 d
+:geoo/abstract/pipes/central0: 560 102 d
+:geoo/abstract/pipes/central0: 560 114 d
+:geoo/abstract/pipes/central0: 560 120 d
+:matt/winter/05: 236 -186
+:matt/winter/10: -24 -78
+:matt/winter/16: 140 -100
+:matt/winter/10: 554 -68 frr
+:matt/winter/03: 298 -4
+:matt/winter/17: 390 -54 rrr
+:matt/winter/11: 480 -38
+:matt/winter/05: 450 -40 rrr
+:matt/carnival/04: -16 176 d
+:matt/carnival/04: -16 240 d
+:matt/carnival/04: -16 112 d
+:matt/winter/10: 646 -96 r
+:amanda/steel/steel32x32.S: 128 224

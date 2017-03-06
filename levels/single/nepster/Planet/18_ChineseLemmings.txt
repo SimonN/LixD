@@ -1,0 +1,205 @@
+$BUILT 2016-01-30 17:23:20
+$AUTHOR Nepster
+$ENGLISH Chinese Lemmings
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 908
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 5
+#REQUIRED 5
+#SPAWN_INTERVAL 50
+
+#CLIMBER 1
+#BLOCKER 1
+#BUILDER 4
+#BASHER 2
+#MINER 1
+#EXPLODER 0
+
+:matt/oriental/Hatch.H: 208 166
+
+:matt/oriental/Goal.G: 718 158
+
+:matt/oriental/bamboo_segment2: 551 186 rr
+:matt/oriental/bamboo_segment2: 554 194 rr
+:matt/oriental/bamboo_segment2: 648 96 r
+:matt/oriental/bamboo_segment2: 624 96 r
+:matt/oriental/bamboo_segment2: 624 156 r
+:matt/oriental/bamboo_segment2: 648 156 r
+:matt/oriental/bamboo_segment2: 648 276 r
+:matt/oriental/bamboo_segment2: 622 276 r
+:matt/oriental/bamboo_segment2: 648 216 r
+:matt/oriental/bamboo_segment2: 622 216 r
+:matt/oriental/bamboo_segment2: 590 188 r
+:matt/oriental/bamboo_segment2: 566 188 r
+:matt/oriental/bamboo_segment2: 612 130 rr
+:matt/oriental/bamboo_segment2: 612 156 rr
+:matt/oriental/bamboo_segment2: 612 190 rr
+:matt/oriental/bamboo_segment2: 612 216 rr
+:matt/oriental/bamboo_segment2: 553 231 rr
+:matt/oriental/bamboo_segment2: 554 218 rr
+:matt/oriental/bamboo_segment2: 554 162 rr
+:matt/oriental/bamboo_segment2: 553 139 rr
+:matt/oriental/bamboo_segment2: 552 128 rr
+:matt/oriental/bamboo_segment2: 844 76 rrr
+:matt/oriental/bamboo_segment2: 806 276 rrr
+:matt/oriental/bamboo_segment2: 758 274 rrr
+:matt/oriental/bamboo_segment2: 736 272 rrr
+:matt/oriental/bamboo_pole: 602 -132
+:matt/oriental/bamboo_pole: 680 -130
+:matt/oriental/bamboo_pole: 872 122 r
+:matt/oriental/bamboo_pole: 812 276 r
+$BEGIN_TILE_GROUP 0
+:matt/oriental/06: 0 0
+:matt/oriental/10: 26 0 rd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:matt/oriental/bamboo_pole: 54 6 rr
+:Group-0: 2 0
+:matt/oriental/10: 0 28 rd
+$END_TILE_GROUP
+:Group-1: 806 220
+:matt/oriental/bamboo_pole: 900 122 rr
+:matt/oriental/bamboo_pole: 902 284 rr
+:matt/oriental/bamboo_pole: 844 286 rr
+:matt/oriental/bamboo_pole: 786 284 rr
+:matt/oriental/bamboo_pole: 728 310 rr
+:matt/oriental/bamboo_pole: 700 318 rr
+:matt/oriental/bamboo_pole: 670 310 rr
+:matt/oriental/bamboo_pole: 622 334 rrr
+:matt/oriental/bamboo_pole: 746 334 rrr
+:matt/oriental/bamboo_pole: 748 392 rrr
+:matt/oriental/bamboo_pole: 632 394 rrr
+:matt/oriental/bamboo_pole: 398 394 rrr
+:matt/oriental/bamboo_pole: 286 392 rrr
+:matt/oriental/bamboo_pole: 108 392 rrr
+:matt/oriental/bamboo_pole: -102 394 rrr
+:matt/oriental/bamboo_pole: -106 334 rrr
+:matt/oriental/bamboo_pole: -104 274 rrr
+:matt/oriental/bamboo_pole: -102 214 rrr
+:matt/oriental/bamboo_pole: -104 154 rrr
+:matt/oriental/bamboo_pole: -106 94 rrr
+:matt/oriental/bamboo_pole: 222 94 rrr
+:matt/oriental/bamboo_pole: 54 -42
+:matt/oriental/bamboo_pole: 70 -84
+:matt/oriental/bamboo_pole: 98 -80
+:matt/oriental/bamboo_pole: 142 -88
+:matt/oriental/bamboo_pole: 148 -116
+:matt/oriental/bamboo_pole: 172 -88
+:matt/oriental/bamboo_pole: 216 -84
+:matt/oriental/bamboo_pole: 224 -112
+:matt/oriental/bamboo_pole: 260 -44
+:matt/oriental/bamboo_pole: 298 -122
+:matt/oriental/bamboo_pole: 376 -130
+:matt/oriental/bamboo_pole: 318 -14
+:matt/oriental/bamboo_pole: 216 36 r
+:matt/oriental/bamboo_pole: 124 36 r
+:matt/oriental/bamboo_pole: -22 34 r
+:matt/oriental/bamboo_pole: -4 -6 rr
+:matt/oriental/bamboo_pole: -4 92 rr
+:matt/oriental/bamboo_pole: -4 238 rr
+:matt/oriental/bamboo_pole: 148 342 rr
+:matt/oriental/bamboo_pole: 206 276 rr
+:matt/oriental/bamboo_pole: 264 268 rr
+:matt/oriental/bamboo_pole: 496 96 rr
+:matt/oriental/bamboo_pole: 496 224 rr
+:matt/oriental/bamboo_pole: 438 312 rr
+:matt/oriental/bamboo_pole: 380 344 rr
+:matt/oriental/bamboo_pole: 322 312 rr
+:matt/oriental/bamboo_pole: 266 334 rrr
+:matt/oriental/bamboo_pole: 160 334 rrr
+:matt/oriental/bamboo_pole: 168 274 rrr
+:matt/oriental/bamboo_segment2: 508 94 rrr
+:matt/oriental/bamboo_segment2: 532 334 rrr
+:matt/oriental/bamboo_segment2: 532 274 rrr
+:matt/oriental/bamboo_segment2: 508 334 rrr
+:matt/oriental/bamboo_segment2: 508 274 rrr
+:matt/oriental/bamboo_segment2: 474 334 rrr
+:matt/oriental/bamboo_segment2: 474 274 rrr
+:matt/oriental/bamboo_segment2: 450 334 rrr
+:matt/oriental/bamboo_segment2: 450 274 rrr
+:matt/oriental/bamboo_segment2: 450 154 rrr
+:matt/oriental/bamboo_segment2: 474 154 rrr
+:matt/oriental/bamboo_segment2: 508 154 rrr
+:matt/oriental/bamboo_segment2: 532 154 rrr
+:matt/oriental/bamboo_segment2: 532 214 rrr
+:matt/oriental/bamboo_segment2: 506 214 rrr
+:matt/oriental/bamboo_segment2: 474 214 rrr
+:matt/oriental/bamboo_segment2: 450 214 rrr
+:matt/oriental/06: 0 340
+:matt/oriental/06: 0 280
+:matt/oriental/06: 96 340
+:matt/oriental/06: 154 340
+:matt/oriental/06: 212 340
+:matt/oriental/06: 270 340
+:matt/oriental/06: 328 340
+:matt/oriental/06: 386 340
+:matt/oriental/06: 444 340
+:matt/oriental/06: 502 340
+:matt/oriental/06: 154 280
+:matt/oriental/06: 212 280
+:matt/oriental/06: 270 280
+:matt/oriental/07: 150 236
+:matt/oriental/07: 256 236
+:matt/oriental/03: 218 252
+:matt/oriental/03: 218 228
+:matt/oriental/06: 444 280
+:matt/oriental/06: 502 280
+:matt/oriental/06: 444 220
+:matt/oriental/06: 502 220
+:matt/oriental/06: 444 160
+:matt/oriental/06: 502 160
+:matt/oriental/06: 444 100
+:matt/oriental/06: 502 100
+:matt/oriental/06: 560 132
+:matt/oriental/06: 618 340
+:matt/oriental/06: 618 280
+:matt/oriental/06: 618 220
+:matt/oriental/06: 618 160
+:matt/oriental/06: 618 100
+:matt/oriental/06: 618 40
+:matt/oriental/07: 608 -2
+:matt/oriental/06: 676 340
+:matt/oriental/06: 734 340
+:matt/oriental/06: 734 280
+:matt/oriental/06: 792 340
+:matt/oriental/06: 792 280
+:matt/oriental/06: 850 340
+:matt/oriental/06: 850 280
+:matt/oriental/05: 864 204
+:matt/oriental/05: 864 128
+:matt/oriental/07: 834 84
+:matt/oriental/05: 834 8
+:matt/oriental/05: 834 -68
+:matt/oriental/07: 464 56
+:matt/oriental/06: 0 220
+:matt/oriental/06: 0 160
+:matt/oriental/06: 0 100
+:matt/oriental/06: 0 40
+:matt/oriental/07: 0 -4
+:matt/oriental/07: 76 -4
+:matt/oriental/07: 152 -4
+:matt/oriental/07: 228 -4
+:matt/oriental/07: 304 -4
+:matt/oriental/06: 322 40
+:matt/oriental/06: 264 40
+:matt/oriental/06: 322 100
+:matt/oriental/06: 264 100
+:matt/oriental/05: 220 40
+:matt/oriental/04: 176 40
+:matt/oriental/05: 58 40
+:matt/oriental/04: 102 40
+:matt/oriental/01: 147 40
+:matt/oriental/03: 380 -2
+:matt/oriental/03: 562 -1
+:matt/oriental/03: 684 -1
+:matt/oriental/03: 328 312
+:matt/oriental/03: 398 312
+:matt/oriental/01: 371 312
+:matt/oriental/01: 805 219 d
+:matt/oriental/01: 676 310
+:matt/oriental/01: 705 310
+:matt/oriental/07: 714 236
+:matt/oriental/06: 560 192

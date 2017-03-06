@@ -1,0 +1,81 @@
+$BUILT 2016-07-18 21:33:54
+$AUTHOR Nepster
+$ENGLISH Ugly Bricks
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 40
+#SPAWN_INTERVAL 10
+
+#BLOCKER 5
+#BUILDER 9
+#BASHER 2
+#MINER 3
+#EXPLODER 0
+
+:geoo/construction/Hatch.H: 320 216
+:geoo/construction/Hatch.H: 160 48
+
+:matt/bricks/Goal.G: 18 320
+
+:matt/bricks/04: 352 272
+:matt/bricks/07: 512 320
+:matt/bricks/07: 576 256
+:matt/bricks/03: 576 320
+:matt/bricks/03: 352 336
+:matt/bricks/03: 288 336
+:matt/bricks/03: 288 272
+:matt/bricks/04: 416 336
+:matt/bricks/12: 288 240
+:matt/bricks/03a: 288 152
+:matt/bricks/03a: 352 152
+:matt/bricks/03a: 416 152
+:matt/bricks/03a: 224 152
+:matt/bricks/03a: 160 152
+:matt/bricks/12a: 448 120
+:matt/bricks/12a: 320 120
+:matt/steel/32x32.S: 288 152
+:matt/steel/32x32.S: 320 152
+:matt/steel/32x32.S: 352 152
+:matt/bricks/18: 232 304
+:matt/bricks/18: 232 336
+:matt/bricks/18: 170 320
+:matt/bricks/12: 130 368
+:matt/bricks/12: 66 368
+:matt/bricks/12: 34 368
+:matt/bricks/03a: 96 152
+:matt/bricks/12: 2 368
+:matt/bricks/18: 136 256
+:matt/bricks/19: 128 216 f
+:matt/bricks/19: 192 216 f
+:matt/bricks/08a: 352 120
+:matt/bricks/05b: 576 128
+:matt/bricks/05b: 512 64
+:matt/bricks/05b: 448 0
+:matt/bricks/03b: 512 0
+:matt/bricks/03b: 576 0
+:matt/bricks/03b: 576 64
+:matt/bricks/03b: 0 0
+:matt/bricks/03b: 64 0
+:matt/bricks/03b: 0 64
+:matt/bricks/06b: 64 64
+:matt/bricks/06b: 128 0
+:matt/bricks/06b: 0 128
+:matt/bricks/12: 98 368
+:matt/bricks/19: 162 352
+:matt/bricks/12: 162 368
+:matt/bricks/18: 136 224
+:matt/bricks/18: 200 224
+:matt/bricks/18: 232 272
+:matt/bricks/18: 170 304
+:matt/bricks/07: 480 352
+:matt/bricks/03: 544 384
+:matt/bricks/03: 608 384
+:matt/steel/32x32.S: 384 152
+:matt/bricks/12: -30 368
+:matt/steel/32x32.S: 256 152
+:matt/bricks/18: 232 368

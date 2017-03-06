@@ -1,0 +1,143 @@
+$BUILT 2016-02-29 21:24:44
+$AUTHOR Nepster
+$ENGLISH Moonshine Trio
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 19
+#SPAWN_INTERVAL 20
+
+#CLIMBER 1
+#EXPLODER 1
+#BLOCKER 2
+#BUILDER 2
+#MINER 1
+#DIGGER 3
+
+:matt/earth/Hatch.H: 182 286
+:matt/earth/Hatch.H: 482 96 r
+
+:matt/earth/Goal.G: 20 232
+
+:geoo/construction/sawblade.F: 378 122
+
+:amanda/forest/stone_01: 584 250
+:matt/earth/02: 82 304 frr
+:matt/earth/10: -80 304
+:matt/earth/10: -48 304
+:matt/earth/10: 0 304
+:matt/earth/10: 96 336
+:matt/earth/10: 256 336
+:matt/earth/10: 368 336
+:matt/earth/10: 528 336
+:matt/earth/10: 480 336
+:matt/earth/10: 148 336
+:proxima/tile/blue1: 258 208
+:proxima/tile/blue1: 258 144
+:proxima/tile/blue1: 366 208
+:proxima/tile/blue1: 366 144
+:proxima/tile/blue1: 474 208
+:proxima/tile/blue1: 474 144
+:amanda/steel/steel32x32.S: 258 336
+:amanda/steel/steel32x32.S: 290 336
+:amanda/steel/steel32x32.S: 258 368
+:amanda/steel/steel32x32.S: 290 368
+:amanda/steel/steel32x32.S: 398 336
+:amanda/steel/steel32x32.S: 366 368
+:amanda/steel/steel32x32.S: 398 368
+:amanda/steel/steel32x32.S: 506 336
+:amanda/steel/steel32x32.S: 474 368
+:amanda/steel/steel32x32.S: 506 368
+:matt/earth/09: 318 330
+:matt/earth/09: 424 330 frr
+:matt/earth/09: 532 330 frr
+:matt/earth/09: 204 332 frr
+:matt/earth/09: 158 328
+:matt/earth/08: 128 302
+:matt/earth/09: 78 298
+:matt/earth/09: 32 296
+:matt/earth/09: -10 300
+:proxima/tile/blue1: 258 272
+:proxima/tile/blue1: 366 272
+:proxima/tile/blue1: 474 272
+:matt/earth/09: 546 330 frr
+:matt/winter/09a: 100 54 rr
+:matt/winter/09a: 90 50 rrd
+:matt/winter/09c: 58 134
+:geoo/abstract/cvblocks/015: 66 125 d
+:geoo/abstract/cvblocks/015: 49 125 d
+:geoo/abstract/cvblocks/015: 49 142 d
+:geoo/abstract/cvblocks/015: 66 142 d
+:geoo/abstract/cvblocks/016: 61 138 d
+:matt/winter/09c: -2 70
+:geoo/abstract/cvblocks/015: 6 61 d
+:geoo/abstract/cvblocks/015: -11 61 d
+:geoo/abstract/cvblocks/015: -11 78 d
+:geoo/abstract/cvblocks/015: 6 78 d
+:geoo/abstract/cvblocks/016: 1 74 d
+:matt/winter/09c: 70 30
+:geoo/abstract/cvblocks/015: 78 21 d
+:geoo/abstract/cvblocks/015: 61 21 d
+:geoo/abstract/cvblocks/015: 61 38 d
+:geoo/abstract/cvblocks/015: 78 38 d
+:geoo/abstract/cvblocks/016: 73 34 d
+:matt/winter/09c: 190 118
+:geoo/abstract/cvblocks/015: 198 109 d
+:geoo/abstract/cvblocks/015: 181 109 d
+:geoo/abstract/cvblocks/015: 181 126 d
+:geoo/abstract/cvblocks/015: 198 126 d
+:geoo/abstract/cvblocks/016: 193 122 d
+:matt/winter/09c: 198 6
+:geoo/abstract/cvblocks/015: 206 -3 d
+:geoo/abstract/cvblocks/015: 189 -3 d
+:geoo/abstract/cvblocks/015: 189 14 d
+:geoo/abstract/cvblocks/015: 206 14 d
+:geoo/abstract/cvblocks/016: 201 10 d
+:matt/winter/09c: 270 54
+:geoo/abstract/cvblocks/015: 278 45 d
+:geoo/abstract/cvblocks/015: 261 45 d
+:geoo/abstract/cvblocks/015: 261 62 d
+:geoo/abstract/cvblocks/015: 278 62 d
+:geoo/abstract/cvblocks/016: 273 58 d
+:matt/winter/09c: 350 22
+:geoo/abstract/cvblocks/015: 358 13 d
+:geoo/abstract/cvblocks/015: 341 13 d
+:geoo/abstract/cvblocks/015: 341 30 d
+:geoo/abstract/cvblocks/015: 358 30 d
+:geoo/abstract/cvblocks/016: 353 26 d
+:matt/winter/09c: 430 62
+:geoo/abstract/cvblocks/015: 438 53 d
+:geoo/abstract/cvblocks/015: 421 53 d
+:geoo/abstract/cvblocks/015: 421 70 d
+:geoo/abstract/cvblocks/015: 438 70 d
+:geoo/abstract/cvblocks/016: 433 66 d
+:matt/winter/09c: 494 6
+:geoo/abstract/cvblocks/015: 502 -3 d
+:geoo/abstract/cvblocks/015: 485 -3 d
+:geoo/abstract/cvblocks/015: 485 14 d
+:geoo/abstract/cvblocks/015: 502 14 d
+:geoo/abstract/cvblocks/016: 497 10 d
+:matt/winter/09c: 574 38
+:geoo/abstract/cvblocks/015: 582 29 d
+:geoo/abstract/cvblocks/015: 565 29 d
+:geoo/abstract/cvblocks/015: 565 46 d
+:geoo/abstract/cvblocks/015: 582 46 d
+:geoo/abstract/cvblocks/016: 577 42 d
+:matt/winter/09c: 598 126
+:geoo/abstract/cvblocks/015: 606 117 d
+:geoo/abstract/cvblocks/015: 589 117 d
+:geoo/abstract/cvblocks/015: 589 134 d
+:geoo/abstract/cvblocks/015: 606 134 d
+:geoo/abstract/cvblocks/016: 601 130 d
+:matt/winter/09c: 630 6
+:geoo/abstract/cvblocks/015: 638 -3 d
+:geoo/abstract/cvblocks/015: 621 -3 d
+:geoo/abstract/cvblocks/015: 621 14 d
+:geoo/abstract/cvblocks/015: 638 14 d
+:geoo/abstract/cvblocks/016: 633 10 d
+:amanda/steel/steel32x32.S: 366 336
+:amanda/steel/steel32x32.S: 474 336

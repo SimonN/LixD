@@ -1,0 +1,348 @@
+$BUILT 2016-09-19 19:57:26
+$AUTHOR Nepster
+$ENGLISH A Study in Scarlet
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 920
+#SIZE_Y 400
+
+#INITIAL 30
+#REQUIRED 29
+#SPAWN_INTERVAL 10
+
+#BLOCKER 1
+#BUILDER 3
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#EXPLODER 0
+
+:matt/bricks/Hatch.H: 228 114
+
+:proxima/tile/goal.G: 768 136
+
+$BEGIN_TILE_GROUP 0
+:geoo/construction/pillar_32: 0 0
+:geoo/construction/pillar_32: 0 4
+:matt/carnival/00: 1 0
+:matt/carnival/00: 5 0
+:matt/carnival/00: 1 2
+:matt/carnival/00: 5 2
+:matt/carnival/00: 1 4
+:matt/carnival/00: 5 4
+:matt/carnival/00: 1 6
+:matt/carnival/00: 5 6
+:matt/carnival/00: 1 8
+:matt/carnival/00: 5 8
+:matt/carnival/00: 1 10
+:matt/carnival/00: 5 10
+:matt/carnival/00: 1 12
+:matt/carnival/00: 5 12
+:matt/carnival/00: 1 14
+:matt/carnival/00: 5 14
+:matt/carnival/00: 1 16
+:matt/carnival/00: 5 16
+:matt/carnival/00: 1 18
+:matt/carnival/00: 5 18
+:matt/carnival/00: 1 20
+:matt/carnival/00: 5 20
+:matt/carnival/00: 1 22
+:matt/carnival/00: 5 22
+:matt/carnival/00: 1 24
+:matt/carnival/00: 5 24
+:matt/carnival/00: 1 26
+:matt/carnival/00: 5 26
+:matt/carnival/00: 1 28
+:matt/carnival/00: 5 28
+:matt/carnival/00: 1 30
+:matt/carnival/00: 5 30
+:matt/carnival/00: 1 32
+:matt/carnival/00: 5 32
+:matt/carnival/00: 1 34
+:matt/carnival/00: 5 34
+:geoo/abstract/pipes/central0: 5 36 rrd
+:geoo/abstract/pipes/central0: 1 36 rrd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:geoo/construction/pillar_32: 8 0 fr
+:geoo/construction/pillar_32: 0 0 fr
+:geoo/construction/pillar_32: 8 1 frr
+:geoo/construction/pillar_32: 8 8 frr
+:geoo/construction/pillar_32: 7 8 frrr
+:geoo/construction/pillar_32: 0 8 frrr
+:geoo/construction/pillar_32: 0 7 f
+:geoo/construction/pillar_32: 0 1 f
+:geoo/construction/pillar_32: 7 1 r
+:geoo/construction/pillar_32: 1 1 r
+:geoo/construction/pillar_32: 7 2 rr
+:geoo/construction/pillar_32: 7 7 rr
+:geoo/construction/pillar_32: 6 7 rrr
+:geoo/construction/pillar_32: 1 7 rrr
+:Group-0: 1 2
+:geoo/abstract/pipes/central0: 2 46 rrd
+:geoo/abstract/pipes/central0: 2 54 rrd
+:geoo/abstract/pipes/central0: 2 60 rrd
+:geoo/abstract/pipes/central0: 6 60 rrd
+:geoo/abstract/pipes/central0: 6 52 rrd
+:geoo/abstract/pipes/central0: 6 46 rrd
+$END_TILE_GROUP
+:Group-1: 0 80
+:Group-1: 0 120
+:Group-1: 0 160
+:Group-1: 0 200
+:Group-1: 0 240
+:Group-1: 120 120
+:Group-1: 120 160
+$BEGIN_TILE_GROUP 2
+:Group-1: 0 0
+:geoo/sandstone/slopes/32x32rt: 1 0 d
+:geoo/sandstone/slopes/32x32rt: 8 7 d
+:geoo/sandstone/slopes/32x32rt: 8 0 d
+:geoo/sandstone/slopes/32x32rt: 7 8 d
+:geoo/sandstone/slopes/32x32rt: 1 2 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:geoo/construction/pillar_32: 39 38 rr
+:geoo/construction/pillar_32: 38 37 rr
+:geoo/construction/pillar_32: 37 36 rr
+:geoo/construction/pillar_32: 36 35 rr
+:geoo/construction/pillar_32: 35 34 rr
+:geoo/construction/pillar_32: 34 33 rr
+:geoo/construction/pillar_32: 33 32 rr
+:geoo/construction/pillar_32: 32 31 rr
+:geoo/construction/pillar_32: 31 30 rr
+:geoo/construction/pillar_32: 30 29 rr
+:geoo/construction/pillar_32: 29 28 rr
+:geoo/construction/pillar_32: 28 27 rr
+:geoo/construction/pillar_32: 27 26 rr
+:geoo/construction/pillar_32: 26 25 rr
+:geoo/construction/pillar_32: 25 24 rr
+:geoo/construction/pillar_32: 24 23 rr
+:geoo/construction/pillar_32: 23 22 rr
+:geoo/construction/pillar_32: 22 21 rr
+:geoo/construction/pillar_32: 21 20 rr
+:geoo/construction/pillar_32: 20 19 rr
+:geoo/construction/pillar_32: 19 18 rr
+:geoo/construction/pillar_32: 18 17 rr
+:geoo/construction/pillar_32: 17 16 rr
+:geoo/construction/pillar_32: 16 15 rr
+:geoo/construction/pillar_32: 15 14 rr
+:geoo/construction/pillar_32: 14 13 rr
+:geoo/construction/pillar_32: 13 12 rr
+:geoo/construction/pillar_32: 12 11 rr
+:geoo/construction/pillar_32: 11 10 rr
+:geoo/construction/pillar_32: 10 9 rr
+:geoo/construction/pillar_32: 9 8 rr
+:geoo/construction/pillar_32: 8 7 rr
+:geoo/construction/pillar_32: 7 6 rr
+:geoo/construction/pillar_32: 6 5 rr
+:geoo/construction/pillar_32: 5 4 rr
+:geoo/construction/pillar_32: 4 3 rr
+:geoo/construction/pillar_32: 3 2 rr
+:geoo/construction/pillar_32: 2 1 rr
+:Group-2: 32 0
+:geoo/construction/pillar_32: 0 1 rrd
+:geoo/construction/pillar_32: 0 33 rrd
+:geoo/construction/pillar_32: 32 40 rrd
+:geoo/construction/pillar_32: 48 40 rrd
+$END_TILE_GROUP
+:Group-3: 120 240
+:Group-1: 80 240
+:Group-1: 0 280
+:Group-1: 40 280
+:Group-1: 80 280
+:Group-1: 120 280
+:Group-1: 160 280
+$BEGIN_TILE_GROUP 4
+:Group-1: 0 0
+:geoo/sandstone/slopes/32x32lt: 7 2 d
+:geoo/sandstone/slopes/32x32lt: 2 7 d
+:geoo/sandstone/slopes/32x32lt: 0 0 d
+:geoo/sandstone/slopes/32x32lt: 7 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 5
+:geoo/construction/pillar_32: 32 7
+:geoo/construction/pillar_32: 33 6
+:geoo/construction/pillar_32: 34 5
+:geoo/construction/pillar_32: 35 4
+:geoo/construction/pillar_32: 36 3
+:geoo/construction/pillar_32: 37 2
+:geoo/construction/pillar_32: 38 1
+:Group-4: 0 0
+:geoo/sandstone/slopes/32x32lt: 0 7 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 6
+:geoo/construction/pillar_32: 2 37
+:geoo/construction/pillar_32: 3 36
+:geoo/construction/pillar_32: 4 35
+:geoo/construction/pillar_32: 5 34
+:geoo/construction/pillar_32: 6 33
+:geoo/construction/pillar_32: 7 32
+:geoo/construction/pillar_32: 8 31
+:geoo/construction/pillar_32: 9 30
+:geoo/construction/pillar_32: 10 29
+:geoo/construction/pillar_32: 11 28
+:geoo/construction/pillar_32: 12 27
+:geoo/construction/pillar_32: 13 26
+:geoo/construction/pillar_32: 14 25
+:geoo/construction/pillar_32: 15 24
+:geoo/construction/pillar_32: 16 23
+:geoo/construction/pillar_32: 17 22
+:geoo/construction/pillar_32: 18 21
+:geoo/construction/pillar_32: 19 20
+:geoo/construction/pillar_32: 20 19
+:geoo/construction/pillar_32: 21 18
+:geoo/construction/pillar_32: 22 17
+:geoo/construction/pillar_32: 23 16
+:geoo/construction/pillar_32: 24 15
+:geoo/construction/pillar_32: 25 14
+:geoo/construction/pillar_32: 26 13
+:geoo/construction/pillar_32: 27 12
+:geoo/construction/pillar_32: 28 11
+:geoo/construction/pillar_32: 29 10
+:geoo/construction/pillar_32: 30 9
+:geoo/construction/pillar_32: 31 8
+:Group-5: 0 0
+:geoo/construction/pillar_32: 2 40 d
+:geoo/construction/pillar_32: 34 40 d
+:geoo/construction/pillar_32: 40 10 d
+:geoo/construction/pillar_32: 40 0 d
+$END_TILE_GROUP
+:Group-6: 360 240
+:Group-1: 360 120
+:Group-1: 360 160
+:Group-6: 200 160
+:Group-3: 280 160
+:Group-1: 240 160
+:Group-1: 200 200
+:Group-1: 240 200
+:Group-1: 280 200
+:Group-1: 0 320
+:Group-1: 0 360
+:Group-1: 40 360
+:Group-1: 40 320
+:Group-1: 80 320
+:Group-1: 80 360
+:Group-1: 120 360
+:Group-1: 120 320
+:Group-1: 160 320
+:Group-1: 160 360
+:Group-1: 200 360
+:Group-1: 200 320
+:Group-1: 200 280
+:Group-1: 240 280
+:Group-1: 240 320
+:Group-1: 240 360
+:Group-1: 280 280
+:Group-1: 280 320
+:Group-1: 280 360
+:Group-1: 320 360
+:Group-1: 320 320
+:Group-1: 320 280
+:Group-1: 360 280
+:Group-1: 360 320
+:Group-1: 360 360
+:Group-1: 400 280
+:Group-1: 400 320
+:Group-1: 400 360
+:Group-1: 440 360
+:Group-1: 440 320
+:Group-1: 440 280
+:Group-1: 480 280
+:Group-1: 480 320
+:Group-1: 480 360
+:Group-1: 480 160
+:Group-1: 480 200
+:Group-1: 480 240
+:Group-1: 520 280
+:Group-1: 520 320
+:Group-1: 520 360
+:Group-1: 520 200
+:Group-1: 520 240
+:Group-1: 560 280
+:Group-1: 560 320
+:Group-1: 560 360
+:Group-1: 560 200
+:Group-1: 560 240
+$BEGIN_TILE_GROUP 7
+:Group-1: 1 0
+:geoo/sandstone/slopes/32x32lt: 0 8 d
+:geoo/sandstone/slopes/32x32rt: 7 7 d
+:geoo/sandstone/slopes/32x32lt: 3 7 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 8
+:geoo/construction/pillar_32: 35 36 r
+:geoo/construction/pillar_32: 34 37 r
+:geoo/construction/pillar_32: 33 38 r
+:geoo/construction/pillar_32: 32 39 r
+:geoo/construction/pillar_32: 31 40 r
+:geoo/construction/pillar_32: 30 41 r
+:geoo/construction/pillar_32: 29 42 r
+:geoo/construction/pillar_32: 28 43 r
+:geoo/construction/pillar_32: 27 44 r
+:geoo/construction/pillar_32: 26 45 r
+:geoo/construction/pillar_32: 25 46 r
+:geoo/construction/pillar_32: 24 47 r
+:geoo/construction/pillar_32: 23 48 r
+:geoo/construction/pillar_32: 22 49 r
+:geoo/construction/pillar_32: 21 50 r
+:geoo/construction/pillar_32: 20 51 r
+:geoo/construction/pillar_32: 21 51 r
+:geoo/construction/pillar_32: 22 52 r
+:geoo/construction/pillar_32: 19 52 r
+:geoo/construction/pillar_32: 23 53 r
+:geoo/construction/pillar_32: 18 53 r
+:geoo/construction/pillar_32: 23 54 r
+:geoo/construction/pillar_32: 18 54 r
+:Group-7: 16 16
+:geoo/sandstone/slopes/32x32rt: 25 24 d
+:geoo/construction/squarebrick_large: 57 24 d
+:geoo/sandstone/64x32_blank: 0 0 d
+:geoo/construction/pillar_32: 18 56 rd
+:geoo/construction/pillar_32: 38 56 rd
+$END_TILE_GROUP
+:Group-8: 640 180
+:Group-1: 600 280
+:Group-1: 600 320
+:Group-1: 600 360
+:Group-1: 600 200
+:Group-1: 600 240
+:Group-1: 640 280
+:Group-1: 640 320
+:Group-1: 640 360
+:Group-1: 640 200
+:Group-1: 640 240
+:Group-1: 680 280
+:Group-1: 680 320
+:Group-1: 680 360
+:Group-1: 680 200
+:Group-1: 680 240
+:Group-1: 720 280
+:Group-1: 720 320
+:Group-1: 720 360
+:Group-1: 720 200
+:matt/winter/09b: 724 204 d
+:Group-1: 720 240
+:matt/winter/09b: 724 244 d
+:Group-1: 760 280
+:Group-1: 760 320
+:Group-1: 760 360
+:Group-1: 760 200
+:Group-1: 760 240
+:Group-1: 720 120
+:Group-1: 720 160
+:Group-1: 800 280
+:Group-1: 800 320
+:Group-1: 800 360
+:Group-1: 840 320
+:Group-1: 840 360
+:Group-1: 880 280
+:Group-1: 880 320
+:Group-1: 880 360
+:Group-1: 800 200
+:Group-1: 800 240
+:Group-1: 880 240
+:Group-1: 880 120
+:Group-1: 880 160
+:Group-1: 880 80
+:Group-1: 400 240

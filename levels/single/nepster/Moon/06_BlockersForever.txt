@@ -1,0 +1,107 @@
+$BUILT 2016-07-23 15:59:47
+$AUTHOR Nepster
+$ENGLISH Blockers Forever!
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 30
+#REQUIRED 29
+#SPAWN_INTERVAL 20
+
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 2
+#BUILDER 1
+#BASHER 1
+#CUBER 1
+
+:matt/bricks/Hatch.H: 352 208
+:matt/bricks/Hatch.H: 32 96
+
+:matt/bricks/Goal.G: 300 208
+:matt/bricks/Goal.G: 32 320
+
+:matt/goldmine/pickaxe.D: 236 26
+
+:matt/10tons.T: 276 216
+:matt/10tons.T: 224 216
+
+:simon/acid.W: 464 366
+
+:matt/bricks/17: 136 208
+:matt/bricks/03a: -32 16
+:matt/bricks/03a: -32 80
+:matt/bricks/03a: -32 144
+:matt/bricks/03a: -32 208
+:matt/bricks/03a: -32 272
+:matt/bricks/03a: -32 336
+:matt/bricks/03a: 512 368
+:matt/bricks/03a: 608 304
+:matt/bricks/03a: 608 240
+:matt/bricks/03a: 576 368
+:matt/bricks/02a: 32 368
+:matt/bricks/02a: 96 368
+:matt/bricks/02a: 160 368
+:matt/bricks/02a: 224 368
+:matt/bricks/02a: 288 368
+:matt/bricks/02a: 352 368
+:matt/bricks/02a: 416 368
+:matt/bricks/02a: 0 -16
+:matt/bricks/02a: 64 -16
+:matt/bricks/02a: 128 -16
+:matt/bricks/02a: 192 -16
+:matt/bricks/02a: 256 -16
+:matt/bricks/02a: 320 -16
+:matt/bricks/02a: 384 -16
+:matt/bricks/03a: 608 176
+:matt/bricks/03a: 608 112
+:matt/bricks/02a: 448 -16
+:matt/bricks/02a: 512 -16
+:matt/bricks/02a: 576 -16
+:matt/bricks/02a: 96 256
+:matt/bricks/02a: 160 256
+:matt/bricks/02a: 224 256
+:matt/bricks/02a: 288 256
+:matt/bricks/02a: 352 256
+:matt/bricks/02a: 32 144
+:matt/bricks/17: 184 160
+:matt/bricks/17: 240 160
+:matt/bricks/17: 288 112
+:matt/bricks/02a: 448 256
+:matt/bricks/01a: 480 112
+:matt/bricks/01a: 448 112
+:matt/bricks/01a: 416 112
+:matt/bricks/01a: 384 112
+:matt/bricks/01a: 352 112
+:amanda/forest/rope: 294 200
+:matt/bricks/12a: 480 224
+:matt/bricks/12a: 480 192
+:matt/bricks/12a: 480 160
+:matt/bricks/12a: 480 128
+:matt/bricks/17: 544 312 frr
+:matt/bricks/17: 512 280 frr
+:matt/bricks/17: 520 224
+:matt/bricks/17: 544 200
+:matt/bricks/17: 512 120 frr
+:matt/bricks/17: 544 152 frr
+:matt/bricks/17: 520 64
+:matt/bricks/17: 544 40
+:matt/bricks/03a: 608 48
+:matt/bricks/01a: 608 32
+:geoo/construction/platformbrick: 524 118 d
+:geoo/construction/platformbrick: 564 198 d
+:geoo/construction/platformbrick: 524 278 d
+:geoo/construction/platformbrick: 564 358 d
+:matt/bricks/12a: 96 16
+:matt/bricks/12a: 256 16
+:matt/bricks/17: 128 40 frr
+:matt/bricks/17: 192 40
+:matt/bricks/17: 288 40 frr
+:matt/bricks/12a: 480 16
+:matt/bricks/17: 416 40
+:amanda/forest/rope: 294 184
+:amanda/forest/rope: 294 168

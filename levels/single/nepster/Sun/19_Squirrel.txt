@@ -1,0 +1,232 @@
+$BUILT 2016-06-05 22:49:28
+$AUTHOR Nepster
+$ENGLISH Oh, to be a Squirrel...
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 2080
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 30
+#REQUIRED 25
+#SPAWN_INTERVAL 32
+
+#CLIMBER 10
+#FLOATER 1
+#EXPLODER 5
+#BLOCKER 1
+#BUILDER 3
+#BASHER 1
+#MINER 7
+
+:amanda/forest/hatch.H: 120 64
+
+:amanda/forest/exit_tent_condensed.G: 1904 176
+
+:amanda/forest/moss_00: 992 194
+:amanda/forest/leaves_04: 660 -44
+:amanda/forest/leaves_05: 853 19
+:amanda/forest/leaves_04: 830 -66
+:amanda/forest/leaves_05: 1646 280
+:amanda/forest/leaves_03: 872 278
+:amanda/forest/leaves_05: 1358 168
+:amanda/forest/leaves_05: 898 37
+:amanda/forest/leaves_05: 917 161
+:amanda/forest/leaves_05: 938 181
+:amanda/forest/leaves_05: 684 131
+:amanda/forest/leaves_05: 607 112
+:amanda/forest/leaves_05: 594 86
+:amanda/forest/leaves_05: 516 23
+:amanda/forest/leaves_05: 563 45
+:amanda/forest/leaves_05: 80 307
+:amanda/forest/leaves_05: 128 194
+:amanda/forest/leaves_05: 282 328
+:amanda/forest/leaves_05: 292 221
+:amanda/forest/leaves_05: 305 246
+:amanda/forest/leaves_05: 368 327
+:amanda/forest/leaves_05: 432 266
+:amanda/forest/leaves_05: 596 245
+:amanda/forest/leaves_05: 600 313
+:amanda/forest/leaves_05: 872 329
+:amanda/forest/leaves_05: 943 274
+:amanda/forest/leaves_05: 950 297
+:amanda/forest/leaves_05: 1255 286
+:amanda/forest/leaves_05: 1656 269
+:amanda/forest/leaves_05: 2038 222
+:amanda/forest/leaves_05: 1790 276
+:amanda/forest/leaves_05: 1776 291
+:amanda/forest/leaves_05: 1936 266
+:amanda/forest/leaves_05: 1866 218
+:amanda/forest/leaves_05: 1855 202
+:amanda/forest/leaves_05: 1767 207
+:amanda/forest/leaves_05: 1738 160
+:amanda/forest/leaves_05: 1836 127
+:amanda/forest/leaves_04: 1044 270
+:amanda/forest/bark_03: 1580 376 r
+:amanda/forest/leaves_04: 1082 200
+:amanda/forest/leaves_05: 1078 258
+:amanda/forest/moss_00: 552 178
+:amanda/forest/leaves_05: 1876 90
+:amanda/forest/leaves_05: 1908 80
+:amanda/forest/leaves_05: 1942 76
+$BEGIN_TILE_GROUP 0
+:amanda/forest/bark_03: 8 0
+:geoo/sandstone/pillar_top_jaggedr: 22 114 fd
+:matt/underworld/09c: 0 110 d
+:geoo/sandstone/pillar_top_jaggedr: 8 98 fd
+:matt/underworld/02: 0 28 d
+$END_TILE_GROUP
+:Group-0: 810 2
+:amanda/forest/bark_04: 782 162
+:matt/earth/30: 1434 58 frr
+:matt/earth/30: 1466 90 frr
+:matt/earth/30: 1514 138 frr
+:matt/earth/30: 1562 186 frr
+:matt/earth/30: 1610 234 frr
+:matt/earth/30: 1626 58
+:matt/earth/30: 1578 106
+:matt/earth/30: 1530 154
+:matt/earth/30: 1482 202
+:matt/earth/30: 1434 250
+:matt/goldmine/crate64: 1340 58
+:matt/goldmine/crate64: 1340 122
+:matt/goldmine/crate64: 1276 122
+:amanda/forest/moss_00: 1034 268
+:amanda/forest/moss_00: 930 268
+:amanda/forest/leaves_04: 600 -6
+:amanda/forest/bark_06: 368 78
+:amanda/forest/bark_06: 332 44
+:amanda/forest/leaves_04: 490 -62
+:amanda/forest/leaves_04: 538 -36
+:amanda/forest/leaves_04: 566 4
+:amanda/forest/bark_01: 832 176 r
+:amanda/forest/bark_01: 736 174 r
+:amanda/forest/bark_05: 506 316
+:amanda/forest/bark_00: 388 278 frr
+:amanda/forest/bark_03: 270 -8
+:amanda/forest/bark_03: 270 34
+:amanda/forest/leaves_04: 336 304
+:amanda/forest/leaves_03: 240 208
+:amanda/forest/leaves_04: 192 208
+:amanda/forest/leaves_04: 96 176
+:amanda/forest/leaves_04: 96 208
+:amanda/forest/leaves_04: 144 192
+:amanda/forest/leaves_04: 48 288
+:amanda/forest/leaves_02: 208 272
+:amanda/forest/leaves_02: 208 320
+:amanda/forest/leaves_04: -96 144
+:amanda/forest/leaves_04: -80 208
+:amanda/forest/leaves_02: -48 272
+:amanda/forest/leaves_02: -96 288
+:amanda/forest/leaves_04: -32 320
+:amanda/forest/leaves_04: -112 336
+:amanda/forest/leaves_04: 128 272
+:amanda/forest/leaves_04: 144 336
+:amanda/forest/bark_02: 220 66 frr
+:amanda/forest/leaves_04: 400 246
+:amanda/forest/leaves_02: 456 234
+:amanda/forest/leaves_03: 510 230
+:amanda/forest/leaves_03: 548 232
+:amanda/forest/leaves_04: 576 232
+:amanda/forest/leaves_04: 624 254
+:amanda/forest/leaves_04: 640 286
+:amanda/forest/leaves_04: 644 316
+:amanda/forest/moss_00: 560 172
+:amanda/forest/leaves_05: 580 150 frr
+:amanda/forest/leaves_02: 606 74
+:amanda/forest/leaves_05: 702 154 frr
+:amanda/forest/leaves_04: -58 -78
+:amanda/forest/leaves_04: 46 -84
+:amanda/forest/leaves_04: 148 -86
+:amanda/forest/leaves_04: 260 -68
+:amanda/forest/leaves_04: 386 -72
+:amanda/forest/leaves_03: 356 -52
+:amanda/forest/leaves_03: 232 -68
+:amanda/forest/bark_02: 424 134 r
+:amanda/forest/leaves_04: 872 -48
+:amanda/forest/leaves_04: 908 4
+:amanda/forest/leaves_04: 918 50
+:amanda/forest/leaves_04: 910 94
+:amanda/forest/leaves_02: 856 316 frr
+:amanda/forest/leaves_03: 884 262
+:amanda/forest/leaves_05: 906 156
+:amanda/forest/leaves_04: 898 318
+:amanda/forest/leaves_04: 996 322
+:amanda/forest/leaves_04: 1068 244
+:amanda/forest/leaves_04: 1098 190
+:amanda/forest/leaves_03: 1152 170
+:amanda/forest/leaves_03: 962 330
+:amanda/forest/leaves_03: 988 324
+:amanda/forest/leaves_04: 1174 168
+:amanda/forest/leaves_04: 1210 164
+:amanda/forest/bark_03: 1196 380 r
+:amanda/forest/leaves_04: 1074 292
+:matt/goldmine/crate32: 1308 90
+:matt/goldmine/crate16: 1292 106
+:matt/goldmine/crate16: 1292 90
+:matt/goldmine/crate16: 1292 74
+:amanda/forest/bark_01: 1632 320
+:amanda/forest/leaves_04: 1622 252
+:amanda/forest/leaves_02: 1648 32
+:amanda/forest/leaves_04: 1696 32
+:amanda/forest/leaves_04: 1760 32
+:amanda/forest/leaves_04: 1712 80
+:amanda/forest/leaves_04: 1744 128
+:amanda/forest/leaves_04: 1648 288
+:amanda/forest/leaves_02: 1792 192
+:amanda/forest/leaves_02: 1632 320
+:amanda/forest/leaves_02: 1808 240
+:amanda/forest/leaves_04: 1744 272
+:amanda/forest/leaves_03: 1840 272
+:amanda/forest/leaves_03: 1872 256
+:amanda/forest/leaves_03: 1920 256
+:amanda/forest/leaves_03: 1964 218
+:amanda/forest/leaves_03: 1982 204
+:amanda/forest/leaves_04: 1982 258
+:amanda/forest/leaves_04: 1824 290
+:amanda/forest/leaves_04: 1916 286
+:amanda/forest/leaves_04: 1986 296
+:amanda/forest/leaves_04: 2018 -42
+:amanda/forest/leaves_02: 2002 -48
+:amanda/forest/leaves_02: 1996 -66 frr
+:amanda/forest/leaves_02: 1972 -88 frr
+:amanda/forest/leaves_04: 1104 -100
+:amanda/forest/leaves_04: 1058 -72
+:amanda/forest/leaves_04: 1030 -40 frr
+:amanda/forest/leaves_04: 956 -44
+:amanda/forest/leaves_02: 976 26
+:amanda/forest/leaves_02: 1016 20
+:amanda/forest/leaves_04: 978 42
+:amanda/forest/leaves_04: 976 84 frr
+:amanda/forest/leaves_02: 1274 162
+:amanda/forest/leaves_04: 1306 172
+:amanda/forest/leaves_04: 1316 202
+:amanda/forest/leaves_02: 1240 214
+:amanda/forest/leaves_02: 1184 226
+:amanda/forest/leaves_04: 1138 218
+:amanda/forest/rope: 305 170 d
+:amanda/forest/rope: 304 180 d
+:amanda/forest/rope: 1546 156 d
+:amanda/forest/rope: 1556 156 d
+:amanda/forest/rope: 1623 328 d
+:amanda/forest/rope: 1625 312 d
+:amanda/forest/rope: 1626 304 d
+:amanda/forest/rope: 1651 259 d
+:amanda/forest/leaves_04: 734 -72
+$BEGIN_TILE_GROUP 1
+:amanda/forest/leaves_03: -7 -8
+:amanda/forest/moss_00: 105 40
+:amanda/forest/leaves_05: 107 16
+:amanda/forest/leaves_05: 121 40
+:amanda/forest/leaves_03: 25 -8
+:amanda/forest/stone_00: 71 70 d
+:amanda/forest/stone_00: 95 66 d
+:amanda/forest/stone_00: 123 66 d
+$END_TILE_GROUP
+:Group-1: 1831 40
+:amanda/forest/bark_02: 1480 340
+$BEGIN_TILE_GROUP 2
+:amanda/forest/bark_03: 0 15 r
+:amanda/forest/bark_06: 82 0 frrd
+$END_TILE_GROUP
+:Group-2: 1388 378

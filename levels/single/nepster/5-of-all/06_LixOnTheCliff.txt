@@ -1,0 +1,89 @@
+$BUILT 2016-01-06 15:27:05
+$AUTHOR Nepster
+$ENGLISH Lix on the Cliff
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 30
+#SPAWN_INTERVAL 20
+
+#WALKER 5
+#RUNNER 5
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER 5
+#BLOCKER 5
+#BUILDER 5
+#PLATFORMER 5
+#BASHER 5
+#MINER 5
+#DIGGER 5
+#JUMPER 5
+#BATTER 5
+#CUBER 5
+
+:matt/beach/Hatch.H: 144 16
+:matt/beach/Hatch.H: 448 16 r
+
+:matt/beach/goal.G: 170 274
+:matt/beach/goal.G: 372 274
+
+:simon/water.W: 270 352
+:simon/water.W: 318 352
+:simon/water.W: 462 352
+:simon/water.W: 126 352
+
+:matt/beach/decor/beach ball: 496 72
+:matt/beach/decor/grass03: 104 74
+:matt/beach/decor/grass03: 102 60 frr
+:matt/beach/daytime/14: 500 190 frrr
+:matt/beach/daytime/14: 501 223 frrr
+:matt/beach/daytime/15: 480 152 frr
+:matt/beach/decor/umbrella_green: 346 58 frr
+:matt/beach/daytime/14: 380 336 f
+:matt/beach/daytime/14: 22 190 rrr
+:matt/beach/daytime/14: 21 223 rrr
+:matt/beach/daytime/15: 122 152
+:matt/beach/daytime/14: 176 336 rr
+:matt/beach/daytime/03: 96 128
+:matt/beach/daytime/14: 208 336
+:matt/beach/daytime/02: 160 336
+:matt/beach/daytime/06: -8 80
+:matt/beach/daytime/13: 8 -16
+:matt/beach/daytime/06: 32 -152 fr
+:matt/beach/daytime/13: 16 320 rrr
+:matt/beach/daytime/13: 16 248 rrr
+:matt/beach/daytime/13: 16 176 rrr
+:matt/beach/daytime/13: 16 152 rrr
+:matt/beach/daytime/14: 72 160 f
+:matt/beach/daytime/06: -8 218 rrr
+:matt/beach/daytime/06: -42 148 rrr
+:matt/beach/daytime/06: -60 18 rrr
+:matt/beach/daytime/06: -36 -88 rrr
+:matt/beach/daytime/06: -28 266 rrr
+:geoo/sandstone/64x16: 134 360 rrrd
+:geoo/sandstone/64x16: 135 305 rrrd
+:matt/beach/daytime/03: 392 128 frr
+:matt/beach/daytime/14: 348 336 frr
+:matt/beach/daytime/02: 414 336 frr
+:matt/beach/daytime/06: 432 80 frr
+:matt/beach/daytime/13: 524 -16 frr
+:matt/beach/daytime/06: 494 -152 r
+:matt/beach/daytime/13: 500 320 frrr
+:matt/beach/daytime/13: 500 248 frrr
+:matt/beach/daytime/13: 500 176 frrr
+:matt/beach/daytime/13: 500 152 frrr
+:matt/beach/daytime/14: 484 160 rr
+:matt/beach/daytime/06: 534 218 frrr
+:matt/beach/daytime/06: 568 148 frrr
+:matt/beach/daytime/06: 586 18 frrr
+:matt/beach/daytime/06: 562 -88 frrr
+:matt/beach/daytime/06: 554 266 frrr
+:geoo/sandstone/64x16: 488 360 frrrd
+:geoo/sandstone/64x16: 487 305 frrrd
+:matt/beach/daytime/06: 448 -64 rr
+:matt/beach/daytime/06: -16 -64 f

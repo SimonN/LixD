@@ -1,0 +1,445 @@
+$BUILT 2015-12-31 16:59:57
+$AUTHOR Nepster
+$ENGLISH Time Out - 3min
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 2176
+#SIZE_Y 400
+
+#SECONDS 210
+#INITIAL 40
+#REQUIRED 20
+#SPAWN_INTERVAL 10
+
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER 10
+#BLOCKER 10
+#BUILDER 10
+#BASHER 10
+#MINER 10
+#DIGGER 10
+
+:geoo/construction/Hatch.H: 48 240
+
+:geoo/construction/Goal2.G: 2080 176
+
+:geoo/construction/sawblade_small.F: 512 224
+:geoo/construction/sawblade_small.F: 1344 128
+:geoo/construction/sawblade.F: 524 348
+:geoo/construction/sawblade.F: 556 348
+:geoo/construction/sawblade.F: 1036 348
+:geoo/construction/sawblade.F: 1068 348
+:geoo/construction/sawblade.F: 1100 348
+:geoo/construction/sawblade.F: 1132 348
+:geoo/construction/sawblade.F: 1052 380
+:geoo/construction/sawblade.F: 1084 380
+:geoo/construction/sawblade.F: 1116 380
+:geoo/construction/sawblade.F: 540 380
+
+:matt/goldmine/plank: 1180 142 rrr
+:matt/goldmine/plank: 1180 208 rrr
+:matt/goldmine/plank: 224 128
+:matt/goldmine/plank: 768 128
+:matt/goldmine/plankdiag: 800 304
+:amanda/steel/steel32x32.S: 64 368
+:amanda/steel/steel32x32.S: 96 368
+:amanda/steel/steel32x32.S: 128 368
+:amanda/steel/steel32x32.S: 160 368
+:amanda/steel/steel32x32.S: 192 368
+:amanda/steel/steel32x32.S: 224 368
+:amanda/steel/steel32x32.S: 256 368
+:amanda/steel/steel32x32.S: 288 368
+:amanda/steel/steel32x32.S: 320 368
+:amanda/steel/steel32x32.S: 352 368
+:amanda/steel/steel32x32.S: 384 368
+:amanda/steel/steel32x32.S: 416 368
+:amanda/steel/steel32x32.S: 448 368
+:amanda/steel/steel32x32.S: 480 368
+:amanda/steel/steel32x32.S: 512 368
+:amanda/steel/steel32x32.S: 576 368
+:amanda/steel/steel32x32.S: 608 368
+:amanda/steel/steel32x32.S: 640 368
+:amanda/steel/steel32x32.S: 672 368
+:amanda/steel/steel32x32.S: 0 368
+:amanda/steel/steel32x32.S: 32 368
+:amanda/steel/steel32x32.S: 64 336
+:amanda/steel/steel32x32.S: 96 336
+:amanda/steel/steel32x32.S: 128 336
+:amanda/steel/steel32x32.S: 160 336
+:amanda/steel/steel32x32.S: 192 336
+:amanda/steel/steel32x32.S: 224 336
+:amanda/steel/steel32x32.S: 256 336
+:amanda/steel/steel32x32.S: 288 336
+:amanda/steel/steel32x32.S: 320 336
+:amanda/steel/steel32x32.S: 352 336
+:amanda/steel/steel32x32.S: 384 336
+:amanda/steel/steel32x32.S: 416 336
+:amanda/steel/steel32x32.S: 448 336
+:amanda/steel/steel32x32.S: 480 336
+:amanda/steel/steel32x32.S: 512 336
+:amanda/steel/steel32x32.S: 576 336
+:amanda/steel/steel32x32.S: 608 336
+:amanda/steel/steel32x32.S: 640 336
+:amanda/steel/steel32x32.S: 672 336
+:amanda/steel/steel32x32.S: 0 336
+:amanda/steel/steel32x32.S: 32 336
+:geoo/construction/squarebrick_large: 96 304
+:geoo/construction/squarebrick_large: 96 272
+:geoo/construction/squarebrick_large: 96 240
+:geoo/construction/squarebrick_large: 96 208
+:geoo/construction/squarebrick_large: 96 176
+:geoo/construction/squarebrick_large: 96 144
+:geoo/construction/squarebrick_large: 96 112
+:geoo/construction/squarebrick_large: 96 80
+:geoo/construction/squarebrick_large: 96 48
+:geoo/construction/squarebrick_large: 128 48
+:geoo/construction/squarebrick_large: 160 48
+:geoo/construction/squarebrick_large: 192 48
+:geoo/construction/squarebrick_large: 224 48
+:geoo/construction/squarebrick_large: 256 48
+:geoo/construction/squarebrick_large: 288 48
+:geoo/construction/squarebrick_large: 320 48
+:geoo/construction/squarebrick_large: 352 48
+:geoo/construction/squarebrick_large: 384 48
+:geoo/construction/squarebrick_large: 416 48
+:geoo/construction/squarebrick_large: 448 48
+:geoo/construction/squarebrick_large: 192 304
+:geoo/construction/squarebrick_large: 192 272
+:geoo/construction/squarebrick_large: 192 240
+:geoo/construction/squarebrick_large: 224 240
+:geoo/construction/squarebrick_large: 224 304
+:geoo/construction/squarebrick_large: 256 272
+:geoo/construction/squarebrick_large: 256 240
+:geoo/construction/squarebrick_large: 224 272 rr
+:amanda/steel/steel32x32.S: 256 304
+:amanda/steel/steel_flange_left24x16.S: 288 304
+:amanda/steel/steel_flange_left24x16.S: 304 320
+:amanda/steel/steel16x16.S: 288 320
+:geoo/construction/squarebrick_large: 352 304
+:geoo/construction/squarebrick_large: 384 304
+:geoo/construction/squarebrick_large: 384 272
+:geoo/construction/squarebrick_large: 416 240
+:geoo/construction/squarebrick_large: 448 240
+:geoo/construction/squarebrick_large: 480 240
+:geoo/construction/squarebrick_large: 512 240
+:geoo/construction/squarebrick_large: 480 272
+:geoo/construction/squarebrick_large: 448 272
+:geoo/construction/squarebrick_large: 416 272
+:geoo/construction/squarebrick_large: 416 304
+:geoo/construction/squarebrick_large: 448 304
+:geoo/construction/squarebrick_large: 576 240
+:geoo/construction/squarebrick_large: 608 240
+:geoo/construction/squarebrick_large: 640 240
+:geoo/construction/squarebrick_large: 672 240
+:geoo/construction/squarebrick_large: 608 272
+:geoo/construction/squarebrick_large: 640 272
+:geoo/construction/squarebrick_large: 672 272
+:geoo/construction/squarebrick_large: 704 272
+:geoo/construction/squarebrick_large: 640 304
+:geoo/construction/squarebrick_large: 672 304
+:geoo/construction/squarebrick_large: 704 304
+:amanda/steel/steel32x32.S: 704 368
+:amanda/steel/steel32x32.S: 736 368
+:amanda/steel/steel32x32.S: 768 368
+:amanda/steel/steel32x32.S: 800 368
+:amanda/steel/steel32x32.S: 704 336
+:amanda/steel/steel32x32.S: 736 336
+:amanda/steel/steel32x32.S: 768 336
+:amanda/steel/steel32x32.S: 800 336
+:amanda/steel/steel32x32.S: 832 368
+:amanda/steel/steel32x32.S: 864 368
+:amanda/steel/steel32x32.S: 896 368
+:amanda/steel/steel32x32.S: 928 368
+:amanda/steel/steel32x32.S: 832 336
+:amanda/steel/steel32x32.S: 864 336
+:amanda/steel/steel32x32.S: 896 336
+:amanda/steel/steel32x32.S: 928 336
+:amanda/steel/steel32x32.S: 960 368
+:amanda/steel/steel32x32.S: 992 368
+:amanda/steel/steel32x32.S: 1024 368
+:amanda/steel/steel32x32.S: 960 336
+:amanda/steel/steel32x32.S: 992 336
+:amanda/steel/steel32x32.S: 1024 336
+:amanda/steel/steel32x32.S: 1152 368
+:amanda/steel/steel32x32.S: 1184 368
+:amanda/steel/steel32x32.S: 1216 368
+:amanda/steel/steel32x32.S: 1248 368
+:amanda/steel/steel32x32.S: 1280 368
+:amanda/steel/steel32x32.S: 1312 368
+:amanda/steel/steel32x32.S: 1216 336
+:amanda/steel/steel32x32.S: 1248 336
+:amanda/steel/steel32x32.S: 1280 336
+:amanda/steel/steel32x32.S: 1312 336
+:geoo/construction/squarebrick_large: 736 304
+:matt/goldmine/plankdiag: 672 192
+:matt/goldmine/plankdiag: 704 160
+:matt/goldmine/plankdiag: 736 128
+:amanda/steel/steel32x32.S: 832 304
+:amanda/steel/steel32x32.S: 832 272
+:amanda/steel/steel32x32.S: 832 240
+:amanda/steel/steel32x32.S: 832 208
+:amanda/steel/steel32x32.S: 832 176
+:geoo/construction/squarebrick_large: 480 48
+:geoo/construction/squarebrick_large: 512 48
+:geoo/construction/squarebrick_large: 544 48
+:geoo/construction/squarebrick_large: 576 48
+:geoo/construction/squarebrick_large: 608 48
+:geoo/construction/squarebrick_large: 640 48
+:geoo/construction/squarebrick_large: 672 48
+:geoo/construction/squarebrick_large: 704 48
+:geoo/construction/squarebrick_large: 736 48
+:geoo/construction/squarebrick_large: 768 48
+:geoo/construction/squarebrick_large: 800 48
+:geoo/construction/squarebrick_large: 832 48
+:geoo/construction/squarebrick_large: 864 48
+:geoo/construction/squarebrick_large: 896 48
+:geoo/construction/squarebrick_large: 928 48
+:geoo/construction/squarebrick_large: 960 48
+:geoo/construction/squarebrick_large: 992 48
+:geoo/construction/squarebrick_large: 1024 48
+:geoo/construction/squarebrick_large: 1056 48
+:geoo/construction/squarebrick_large: 1088 48
+:geoo/construction/squarebrick_large: 1120 48
+:geoo/construction/squarebrick_large: 1152 48
+:geoo/construction/squarebrick_large: 1184 48
+:geoo/construction/squarebrick_large: 1216 48
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 848 128 d
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 872 128 d
+:matt/goldmine/plankdiag2: 400 192
+:matt/goldmine/plankdiag2: 368 160
+:matt/goldmine/plankdiag2: 336 128
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 224 128 d
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 248 128 d
+:geoo/construction/squarebrick_large: 992 304
+:geoo/construction/squarebrick_large: 992 272
+:geoo/construction/squarebrick_large: 976 240
+:geoo/construction/squarebrick_large: 960 208
+:geoo/construction/squarebrick_large: 992 208 rr
+:geoo/construction/squarebrick_large: 1008 240
+:geoo/construction/squarebrick_large: 1024 208
+:geoo/construction/squarebrick_large: 1008 176
+:geoo/construction/squarebrick_large: 976 176
+:geoo/construction/squarebrick_large: 992 144
+:geoo/construction/squarebrick_large: 992 112
+:amanda/steel/steel8x16.S: 1180 328
+:amanda/steel/steel32x32.S: 1152 336
+:amanda/steel/steel32x32.S: 1184 336
+:geoo/construction/squarebrick_large: 1216 304
+:geoo/construction/squarebrick_large: 1248 304
+:geoo/construction/squarebrick_large: 1248 272
+:geoo/construction/squarebrick_large: 1280 240
+:geoo/construction/squarebrick_large: 1280 272
+:geoo/construction/squarebrick_large: 1280 304
+:amanda/steel/steel32x32.S: 1344 368
+:amanda/steel/steel32x32.S: 1376 368
+:amanda/steel/steel32x32.S: 1408 368
+:amanda/steel/steel32x32.S: 1440 368
+:amanda/steel/steel32x32.S: 1472 368
+:amanda/steel/steel32x32.S: 1504 368
+:amanda/steel/steel32x32.S: 1408 336
+:amanda/steel/steel32x32.S: 1440 336
+:amanda/steel/steel32x32.S: 1472 336
+:amanda/steel/steel32x32.S: 1504 336
+:amanda/steel/steel32x32.S: 1344 336
+:amanda/steel/steel32x32.S: 1376 336
+:amanda/steel/steel32x32.S: 1536 368
+:amanda/steel/steel32x32.S: 1568 368
+:amanda/steel/steel32x32.S: 1600 368
+:amanda/steel/steel32x32.S: 1632 368
+:amanda/steel/steel32x32.S: 1664 368
+:amanda/steel/steel32x32.S: 1696 368
+:amanda/steel/steel32x32.S: 1600 336
+:amanda/steel/steel32x32.S: 1632 336
+:amanda/steel/steel32x32.S: 1664 336
+:amanda/steel/steel32x32.S: 1696 336
+:amanda/steel/steel32x32.S: 1536 336
+:amanda/steel/steel32x32.S: 1568 336
+:amanda/steel/steel32x32.S: 1728 368
+:amanda/steel/steel32x32.S: 1760 368
+:amanda/steel/steel32x32.S: 1792 368
+:amanda/steel/steel32x32.S: 1824 368
+:amanda/steel/steel32x32.S: 1856 368
+:amanda/steel/steel32x32.S: 1888 368
+:amanda/steel/steel32x32.S: 1792 336
+:amanda/steel/steel32x32.S: 1824 336
+:amanda/steel/steel32x32.S: 1856 336
+:amanda/steel/steel32x32.S: 1888 336
+:amanda/steel/steel32x32.S: 1728 336
+:amanda/steel/steel32x32.S: 1760 336
+:geoo/construction/squarebrick_large: 1312 144
+:geoo/construction/squarebrick_large: 1344 144
+:geoo/construction/squarebrick_large: 1376 144
+:geoo/construction/squarebrick_large: 1408 144
+:geoo/construction/squarebrick_large: 1408 176
+:geoo/construction/squarebrick_large: 1408 208
+:geoo/construction/squarebrick_large: 1408 240
+:geoo/construction/squarebrick_large: 1408 272
+:geoo/construction/squarebrick_large: 1408 304
+:geoo/construction/squarebrick_large: 1440 304
+:geoo/construction/squarebrick_large: 1472 304
+:geoo/construction/squarebrick_large: 1504 304
+:geoo/construction/squarebrick_large: 1536 304
+:geoo/construction/squarebrick_large: 1536 272
+:geoo/construction/squarebrick_large: 1504 272
+:geoo/construction/squarebrick_large: 1472 272
+:geoo/construction/squarebrick_large: 1440 272 rr
+:geoo/construction/squarebrick_large: 1568 304
+:geoo/construction/squarebrick_large: 1600 304
+:geoo/construction/squarebrick_large: 1632 304
+:geoo/construction/squarebrick_large: 1632 272
+:geoo/construction/squarebrick_large: 1600 272 rr
+:geoo/construction/squarebrick_large: 1568 272
+:geoo/construction/squarebrick_large: 1440 240
+:geoo/construction/squarebrick_large: 1472 240
+:geoo/construction/squarebrick_large: 1504 240 rr
+:geoo/construction/squarebrick_large: 1536 240 rr
+:geoo/construction/squarebrick_large: 1536 208 rr
+:geoo/construction/squarebrick_large: 1504 208 rr
+:geoo/construction/squarebrick_large: 1472 208
+:geoo/construction/squarebrick_large: 1440 208
+:geoo/construction/squarebrick_large: 1568 240
+:geoo/construction/squarebrick_large: 1600 240
+:geoo/construction/squarebrick_large: 1632 240
+:geoo/construction/squarebrick_large: 1632 208
+:geoo/construction/squarebrick_large: 1600 208
+:geoo/construction/squarebrick_large: 1568 208
+:geoo/construction/squarebrick_large: 1440 176 rr
+:geoo/construction/squarebrick_large: 1472 176
+:geoo/construction/squarebrick_large: 1504 176
+:geoo/construction/squarebrick_large: 1536 176
+:geoo/construction/squarebrick_large: 1536 144
+:geoo/construction/squarebrick_large: 1504 144
+:geoo/construction/squarebrick_large: 1472 144
+:geoo/construction/squarebrick_large: 1440 144
+:geoo/construction/squarebrick_large: 1568 176
+:geoo/construction/squarebrick_large: 1600 176 rr
+:geoo/construction/squarebrick_large: 1632 176
+:geoo/construction/squarebrick_large: 1632 144
+:geoo/construction/squarebrick_large: 1600 144
+:geoo/construction/squarebrick_large: 1568 144
+:amanda/steel/steel32x32.S: 1664 304
+:amanda/steel/steel32x32.S: 1664 272
+:amanda/steel/steel32x32.S: 1664 240
+:amanda/steel/steel32x32.S: 1664 208
+:amanda/steel/steel32x32.S: 1664 176
+:amanda/steel/steel32x32.S: 1664 144
+:geoo/construction/squarebrick_large: 1728 304
+:geoo/construction/squarebrick_large: 1728 272
+:geoo/construction/squarebrick_large: 1728 240
+:geoo/construction/squarebrick_large: 1728 208
+:geoo/construction/squarebrick_large: 1728 176
+:geoo/construction/squarebrick_large: 1728 144
+:geoo/construction/squarebrick_large: 1248 48
+:geoo/construction/squarebrick_large: 1280 48
+:geoo/construction/squarebrick_large: 1312 48
+:geoo/construction/squarebrick_large: 1344 48
+:geoo/construction/squarebrick_large: 1376 48
+:geoo/construction/squarebrick_large: 1408 48
+:geoo/construction/squarebrick_large: 1440 48
+:geoo/construction/squarebrick_large: 1472 48
+:geoo/construction/squarebrick_large: 1504 48
+:geoo/construction/squarebrick_large: 1536 48
+:geoo/construction/squarebrick_large: 1568 48
+:geoo/construction/squarebrick_large: 1600 48
+:geoo/construction/squarebrick_large: 1632 48
+:geoo/construction/squarebrick_large: 1664 48
+:geoo/construction/squarebrick_large: 1696 48
+:geoo/construction/squarebrick_large: 1728 48
+:geoo/construction/squarebrick_large: 1760 48
+:geoo/construction/squarebrick_large: 1792 48
+:geoo/construction/squarebrick_large: 1824 48
+:geoo/construction/squarebrick_large: 1856 48
+:geoo/construction/squarebrick_large: 1888 48
+:geoo/construction/squarebrick_large: 1920 48
+:geoo/construction/squarebrick_large: 1952 48
+:geoo/construction/squarebrick_large: 1984 48
+:geoo/construction/squarebrick_large: 2016 48
+:geoo/construction/squarebrick_large: 2048 48
+:geoo/construction/squarebrick_large: 1728 112
+:geoo/construction/squarebrick_large: 1760 176
+:geoo/construction/squarebrick_large: 1760 304
+:geoo/construction/squarebrick_large: 1760 272
+:geoo/construction/squarebrick_large: 1760 240
+:geoo/construction/squarebrick_large: 1760 208
+:geoo/construction/squarebrick_large: 1792 272
+:geoo/construction/squarebrick_large: 1792 240
+:geoo/construction/squarebrick_large: 1792 304
+:geoo/construction/squarebrick_large: 1856 272
+:geoo/construction/squarebrick_large: 1856 304
+:amanda/steel/steel32x32.S: 1920 368
+:amanda/steel/steel32x32.S: 1952 368
+:amanda/steel/steel32x32.S: 1984 368
+:amanda/steel/steel32x32.S: 2016 368
+:amanda/steel/steel32x32.S: 1920 336
+:amanda/steel/steel32x32.S: 1952 336
+:amanda/steel/steel32x32.S: 1984 336
+:amanda/steel/steel32x32.S: 2016 336
+:amanda/steel/steel32x32.S: 2048 368
+:amanda/steel/steel32x32.S: 2080 368
+:amanda/steel/steel32x32.S: 2112 368
+:amanda/steel/steel32x32.S: 2144 368
+:amanda/steel/steel32x32.S: 2112 336
+:amanda/steel/steel32x32.S: 2144 336
+:amanda/steel/steel32x32.S: 2048 336
+:amanda/steel/steel32x32.S: 2080 336
+:geoo/construction/squarebrick_large: 1888 272
+:geoo/construction/squarebrick_large: 1888 304
+:geoo/construction/squarebrick_large: 1920 272
+:geoo/construction/squarebrick_large: 1920 304
+:geoo/construction/squarebrick_large: 1920 208
+:geoo/construction/squarebrick_large: 1920 240
+:geoo/construction/squarebrick_large: 1952 208
+:geoo/construction/squarebrick_large: 1952 240
+:geoo/construction/squarebrick_large: 1952 272
+:geoo/construction/squarebrick_large: 1952 304
+:geoo/construction/squarebrick_large: 1984 240
+:geoo/construction/squarebrick_large: 1984 272
+:geoo/construction/squarebrick_large: 2016 240
+:geoo/construction/squarebrick_large: 2016 272
+:geoo/construction/squarebrick_large: 1984 304
+:geoo/construction/squarebrick_large: 2016 304
+:geoo/construction/squarebrick_large: 2048 304
+:geoo/construction/squarebrick_large: 2048 272
+:geoo/construction/squarebrick_large: 2048 240
+:geoo/construction/squarebrick_large: 2048 208
+:geoo/construction/squarebrick_large: 2048 176
+:geoo/construction/squarebrick_large: 2048 144
+:geoo/construction/squarebrick_large: 2048 112
+:geoo/construction/squarebrick_large: 2048 80
+:geoo/construction/squarebrick_large: 2080 240
+:geoo/construction/squarebrick_large: 2112 240
+:geoo/construction/squarebrick_large: 2144 240
+:geoo/construction/squarebrick_large: 2144 272
+:geoo/construction/squarebrick_large: 2144 304
+:geoo/construction/squarebrick_large: 2144 208
+:geoo/construction/squarebrick_large: 2144 176
+:geoo/construction/squarebrick_large: 2144 144
+:geoo/construction/squarebrick_large: 2144 112
+:geoo/construction/squarebrick_large: 2144 80
+:geoo/construction/squarebrick_large: 2144 48
+:geoo/construction/squarebrick_large: 0 304
+:geoo/construction/squarebrick_large: 0 272
+:geoo/construction/squarebrick_large: 0 240
+:geoo/construction/squarebrick_large: 0 208
+:geoo/construction/squarebrick_large: 0 176
+:geoo/construction/squarebrick_large: 0 144
+:geoo/construction/squarebrick_large: 0 112
+:geoo/construction/squarebrick_large: 0 80
+:geoo/construction/squarebrick_large: 0 48
+:geoo/construction/concrete/032d: 416 240 d
+:geoo/construction/concrete/032d: 384 272 d
+:geoo/construction/concrete/032d: 352 304 d
+:geoo/construction/concrete/032d: 512 240 rrd
+:geoo/construction/concrete/032d: 480 272 rrd
+:geoo/construction/concrete/032d: 448 304 rrd
+:geoo/construction/concrete/032d: 576 240 rrrd
+:geoo/construction/concrete/032d: 608 272 rrrd
+:geoo/construction/concrete/032d: 640 304 rrrd
+:geoo/construction/concrete/032d: 736 304 rd
+:geoo/construction/concrete/032d: 704 272 rd
+:geoo/construction/concrete/032d: 672 240 rd
+:geoo/construction/concrete/032d: 1216 304 d
+:geoo/construction/concrete/032d: 1248 272 d
+:geoo/construction/concrete/032d: 1280 240 d
+:geoo/construction/squarebrick_large: 1312 240

@@ -1,0 +1,94 @@
+$BUILT 2016-07-23 13:58:06
+$AUTHOR Nepster
+$ENGLISH Mount Doom
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 35
+
+#BUILDER 2
+#BASHER 2
+#MINER 2
+#DIGGER 2
+#EXPLODER 0
+
+:matt/goldmine/Hatch.H: -8 74
+
+:matt/goldmine/Goal.G: 558 284
+
+:matt/goldmine/GoalTop.D: 558 236
+:matt/goldmine/pickaxe.D: 608 66
+
+:geoo/sandstone/brazier.F: 242 114
+:matt/underworld/Lava.W: 0 352
+:matt/underworld/Lava.W: 256 352
+:matt/underworld/Lava.W: 304 352
+:matt/underworld/Lava.W: 384 352
+:matt/underworld/Lava.W: 432 352
+
+:matt/goldmine/04: 616 298 rrr
+:matt/goldmine/crate16: 250 166
+:matt/goldmine/10: 232 174
+:matt/goldmine/09: 32 344
+:matt/goldmine/09: 188 344 frr
+:matt/goldmine/04: 540 334 rrr
+:matt/goldmine/crate16: 250 150
+:matt/goldmine/04: 118 256
+:matt/goldmine/04: 48 248
+:matt/goldmine/09: 192 172 frr
+:matt/goldmine/09: 190 274 frr
+:matt/goldmine/09: 322 240 frr
+:matt/goldmine/09: 322 278 frr
+:matt/goldmine/04: 474 304 frrr
+:matt/goldmine/04: 422 294 frr
+:matt/goldmine/03: 230 288 frrr
+:matt/goldmine/03: 32 288 rrr
+:matt/goldmine/04: 296 288 frr
+:matt/goldmine/08: 456 214
+:matt/goldmine/08: 514 140
+:matt/goldmine/08: 558 80
+:matt/goldmine/09: 322 240
+:matt/goldmine/08: 152 210 fr
+:matt/goldmine/08: 30 244 frrr
+:matt/goldmine/02: 166 168
+:matt/goldmine/08: 100 168 rr
+:matt/goldmine/04: 30 198 rrr
+:matt/goldmine/09: 28 160 rrr
+:matt/goldmine/08: 30 196 frrr
+:matt/goldmine/04: 58 190
+:matt/goldmine/03: 72 130 d
+:matt/goldmine/10: 360 216 d
+:matt/goldmine/10: 332 214 d
+:matt/goldmine/04: 576 128
+:matt/goldmine/04: 594 42
+:matt/goldmine/10: 344 214 d
+:matt/goldmine/crate16: 250 134
+:matt/goldmine/04: -66 -12 r
+:matt/goldmine/04: 494 -76 r
+:matt/goldmine/08: 68 -38
+:matt/goldmine/08: 228 -52
+:matt/goldmine/09: 152 2 r
+:matt/goldmine/08: 418 -72
+:matt/goldmine/04: 300 -52 r
+:matt/goldmine/08: 16 -82
+:matt/goldmine/04: 106 -74 r
+:matt/goldmine/04: 240 -74 rrr
+:matt/goldmine/04: 406 -90 rrr
+:matt/goldmine/03: -88 108 f
+:matt/goldmine/03: 280 292 rrrd
+:matt/goldmine/03: 402 290 rrrd
+:matt/goldmine/03: 402 334 rrrd
+:matt/goldmine/03: 422 352 rrrd
+:matt/goldmine/03: 422 372 rrrd
+:matt/goldmine/04: 114 326 fr
+:matt/goldmine/04: 32 334 fr
+:matt/goldmine/10: 226 172
+:matt/goldmine/10: 267 174 d
+:matt/goldmine/10: 269 179 d
+:matt/goldmine/10: 271 185 d
+:matt/goldmine/10: 273 189 d

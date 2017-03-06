@@ -1,0 +1,101 @@
+$BUILT 2016-07-18 21:30:26
+$AUTHOR Nepster
+$ENGLISH Canonballs in the Air
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 912
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 6
+#REQUIRED 5
+#SPAWN_INTERVAL 30
+
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 5
+#PLATFORMER 2
+#BASHER 1
+#DIGGER 1
+
+:matt/underworld/Hatch.H: 504 -6
+:matt/underworld/Hatch.H: -2 -6
+
+:matt/earth/Goal.G: 381 283
+
+:geoo/sandstone/brazier.F: 580 300
+:geoo/sandstone/brazier.F: 538 300
+:geoo/sandstone/brazier.F: 546 292
+:geoo/sandstone/brazier.F: 574 292
+:geoo/sandstone/brazier.F: 568 290
+:geoo/sandstone/brazier.F: 552 288
+:geoo/sandstone/brazier.F: 560 286
+
+:proxima/tile/spheres/gold: 544 304
+:matt/earth/10: 715 354
+:matt/earth/10: 653 355
+:matt/earth/03: 530 350
+:matt/earth/18: 400 352
+:matt/earth/17: 192 368 r
+:proxima/tile/spheres/gold: 52 142
+:proxima/tile/spheres/gold: 160 126
+:proxima/tile/spheres/gold: 132 246
+:proxima/tile/spheres/gold: 236 210
+:proxima/tile/spheres/gold: 32 288
+:proxima/tile/spheres/gold: -40 208
+:proxima/tile/spheres/gold: -6 46
+:proxima/tile/spheres/gold: 248 -16
+:proxima/tile/spheres/gold: 332 154
+:proxima/tile/spheres/gold: 424 240
+:proxima/tile/spheres/gold: 360 64
+:proxima/tile/spheres/gold: 504 40
+:proxima/tile/spheres/gold: 614 64
+:proxima/tile/spheres/gold: 586 164
+:proxima/tile/spheres/gold: 679 232
+:proxima/tile/spheres/gold: 760 120
+:proxima/tile/spheres/gold: 832 272
+:proxima/tile/spheres/gold: 720 -8
+:proxima/tile/spheres/gold: 864 40
+:matt/earth/04: 220 374
+:matt/earth/10: 96 368
+:matt/earth/10: 48 368
+:matt/earth/10: 0 368
+:matt/earth/10: -48 368
+:matt/earth/10: -80 368
+:matt/earth/07: 276 364
+:matt/earth/09: 228 364
+:matt/earth/09: 180 364
+:matt/earth/09: 132 364
+:matt/earth/09: 84 364
+:matt/earth/09: 36 364
+:matt/earth/09: -12 364
+:matt/earth/17: 400 352
+:matt/earth/17: 352 352 frr
+:matt/earth/06: 361 348
+:matt/earth/07: 424 344
+:matt/earth/07b: 358 390
+:matt/earth/07b: 460 389
+:matt/earth/07b: 396 347
+:matt/earth/07b: 414 344
+:matt/earth/07b: 404 346
+:matt/earth/16: 480 356
+:matt/earth/10: 526 366
+:matt/earth/10: 599 357
+:matt/earth/08: 498 378 frr
+:matt/earth/06: 514 352
+:matt/earth/09: 540 350 frr
+:matt/earth/09: 588 344 frr
+:matt/earth/09: 638 348
+:matt/earth/09: 686 350
+:matt/earth/09: 718 350
+:matt/earth/09: 760 348
+:matt/earth/08: 800 338
+:matt/earth/07b: 796 334 rrd
+:matt/earth/07b: 812 336 rrd
+:matt/earth/07b: 802 332 rrd
+:matt/earth/16: 862 328 rrrd
+:matt/earth/08: 864 372
+:matt/earth/09: 818 362
+:matt/earth/18: 798 364
+:matt/earth/10: 718 370
+:proxima/tile/spheres/gold: 98 -24

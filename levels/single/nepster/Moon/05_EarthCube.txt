@@ -1,0 +1,101 @@
+$BUILT 2017-03-02 12:12:37
+$AUTHOR Nepster
+$ENGLISH Earth Cube
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 11
+#REQUIRED 10
+#SPAWN_INTERVAL 10
+
+#CLIMBER 2
+#BUILDER 2
+#MINER 3
+#DIGGER 2
+#EXPLODER 0
+
+:amanda/forest/hatch.H: 48 210
+
+:amanda/forest/exit_tent_condensed.G: 560 242
+
+:matt/goldmine/crate16: 34 314
+:matt/goldmine/crate16: 44 298
+:matt/goldmine/crate16: 50 314
+:matt/earth/10: 104 56 rrr
+:matt/earth/10: 136 56 rrr
+:matt/earth/10: 168 56 rrr
+:matt/earth/10: 200 56 rrr
+:matt/earth/10: 232 56 rrr
+:matt/earth/10: 264 56 rrr
+:matt/earth/10: 296 56 rrr
+:matt/earth/10: 104 120 rrr
+:matt/earth/10: 136 120 rrr
+:matt/earth/10: 168 120 rrr
+:matt/earth/10: 200 120 rrr
+:matt/earth/10: 232 120 rrr
+:matt/earth/10: 264 120 rrr
+:matt/earth/10: 296 120 rrr
+:matt/earth/10: 104 184 rrr
+:matt/earth/10: 138 184 rrr
+:matt/earth/10: 168 184 rrr
+:matt/earth/10: 200 184 rrr
+:matt/earth/10: 232 184 rrr
+:matt/earth/10: 264 184 rrr
+:matt/earth/10: 296 184 rrr
+:amanda/steel/steel32x32.S: 544 338
+:amanda/steel/steel32x32.S: 576 338
+:amanda/steel/steel32x32.S: 608 338
+:amanda/steel/steel32x32.S: 544 370
+:amanda/steel/steel32x32.S: 576 370
+:amanda/steel/steel32x32.S: 608 370
+:amanda/steel/steel32x32.S: 512 338
+:amanda/steel/steel32x32.S: 512 370
+:geoo/sandstone/32x64: 380 272 d
+:geoo/sandstone/32x64: 380 208 d
+:geoo/sandstone/32x64: 380 144 d
+:geoo/sandstone/32x64: 380 80 d
+:geoo/sandstone/64x32: 332 80 d
+:geoo/sandstone/64x32: 268 80 d
+:geoo/sandstone/64x32: 204 80 d
+:geoo/sandstone/64x32: 140 80 d
+:geoo/sandstone/32x64: 124 272 d
+:geoo/sandstone/32x64: 124 208 d
+:geoo/sandstone/32x64: 124 144 d
+:geoo/sandstone/32x64: 124 80 d
+:geoo/sandstone/32x64: 92 80 d
+:geoo/sandstone/32x64: 92 144 d
+:geoo/sandstone/32x64: 92 208 d
+:geoo/sandstone/32x64: 92 272 d
+:geoo/sandstone/64x32: 140 48 d
+:geoo/sandstone/64x32: 204 48 d
+:geoo/sandstone/64x32: 268 48 d
+:geoo/sandstone/64x32: 332 48 d
+:matt/goldmine/plank: 556 210 rrr
+:geoo/sandstone/64x32: 156 336 d
+:geoo/sandstone/64x32: 220 336 d
+:geoo/sandstone/64x32: 284 336 d
+:geoo/sandstone/64x32: 348 336 d
+:geoo/sandstone/64x32: 156 368 d
+:geoo/sandstone/64x32: 220 368 d
+:geoo/sandstone/64x32: 284 368 d
+:geoo/sandstone/64x32: 348 368 d
+:geoo/sandstone/64x32: 92 336 d
+:geoo/sandstone/64x32: 92 368 d
+:matt/goldmine/plank: 90 336 rrr
+:matt/goldmine/plank: 24 336 rrr
+:amanda/forest/moss_00: 22 320
+:amanda/forest/moss_00: 68 320
+:matt/goldmine/plank: 156 336 rrr
+:matt/goldmine/plank: 210 336 rrr
+:matt/goldmine/plank: 264 336 rrr
+:matt/goldmine/plank: 318 336 rrr
+:matt/goldmine/plank: 372 336 rrr
+:matt/goldmine/plank: 404 336 rrr
+:amanda/forest/moss_00: 228 322
+:amanda/forest/moss_00: 290 324
+:amanda/forest/moss_00: 340 322
+:amanda/forest/moss_00: 134 320
+:amanda/forest/moss_00: 176 320
+:matt/earth/29: 146 302 rr

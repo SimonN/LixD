@@ -1,0 +1,205 @@
+$BUILT 2016-07-18 22:48:19
+$AUTHOR Nepster
+$ENGLISH Poor Wee Creatures-Twin Edition
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 25
+#SPAWN_INTERVAL 50
+
+#CLIMBER 1
+#FLOATER 5
+#BUILDER 6
+#PLATFORMER 5
+#BASHER 3
+#EXPLODER2 0
+
+:geoo/sandstone/Hatch.H: 430 28
+:geoo/sandstone/Hatch.H: 178 28
+
+:geoo/sandstone/Goal.G: 320 136
+
+:geoo/sandstone/chopper.T: 496 208
+:geoo/sandstone/chopper.T: 112 336
+:geoo/sandstone/chopper.T: 48 80
+:geoo/sandstone/chopper.T: 560 16
+
+:geoo/sandstone/brazier.F: 16 48
+:geoo/sandstone/brazier.F: 16 112
+:geoo/sandstone/brazier.F: 16 176
+:geoo/sandstone/brazier.F: 16 240
+:geoo/sandstone/brazier.F: 16 304
+:geoo/sandstone/brazier.F: 592 304
+:geoo/sandstone/brazier.F: 592 240
+:geoo/sandstone/brazier.F: 592 176
+:geoo/sandstone/brazier.F: 592 112
+:geoo/sandstone/brazier.F: 592 48
+:proxima/flame.F: 140 372
+:proxima/flame.F: 172 372
+:proxima/flame.F: 204 372
+:proxima/flame.F: 556 370
+:proxima/flame.F: 156 378
+:proxima/flame.F: 124 378
+:proxima/flame.F: 188 378
+:proxima/flame.F: 220 378
+:proxima/flame.F: 540 378
+:proxima/flame.F: 572 378
+
+:geoo/shadow/pillar_verti_32: 280 327
+$BEGIN_TILE_GROUP 0
+:geoo/sandstone/32x64: 0 0
+:geoo/abstract/cvblocks/000: 9 13 d
+:geoo/abstract/cvblocks/002: 16 39 d
+:geoo/abstract/cvblocks/000: 9 28 d
+:geoo/abstract/cvblocks/002: 16 24 d
+:geoo/abstract/cvblocks/004: 16 32 d
+:geoo/abstract/cvblocks/002: 16 9 d
+:geoo/abstract/cvblocks/004: 16 17 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:geoo/shadow/pillar_verti_32: 8 8
+:Group-0: 0 0
+:geoo/abstract/cvblocks/000: 9 43 d
+:geoo/abstract/cvblocks/004: 16 47 d
+$END_TILE_GROUP
+:Group-1: 272 304
+:geoo/sandstone/slopes/16x32rt: 385 232
+$BEGIN_TILE_GROUP 2
+:geoo/sandstone/slopes/16x32rt: 1 0
+:geoo/sandstone/slopes/16x32rt: 0 0 d
+$END_TILE_GROUP
+:Group-2: 399 232
+:geoo/sandstone/slopes/16x32lt: 303 232
+:geoo/sandstone/32x32: 400 272
+:geoo/sandstone/32x32: 272 272
+:geoo/sandstone/32x64: 592 336
+:geoo/sandstone/32x64: 592 272
+:geoo/sandstone/32x64: 592 208
+:geoo/sandstone/32x64: 592 144
+:geoo/sandstone/32x64: 592 80
+:geoo/sandstone/32x64: 592 16
+:geoo/sandstone/32x64: 16 336
+:geoo/sandstone/32x64: 16 272
+:geoo/sandstone/32x64: 16 208
+:geoo/sandstone/32x64: 16 144
+:geoo/sandstone/32x64: 16 80
+:geoo/sandstone/32x64: 16 16
+:geoo/sandstone/64x32: 496 368
+:geoo/sandstone/64x32: 432 368
+:geoo/sandstone/64x32: 368 368
+:geoo/sandstone/64x32: 304 368
+:geoo/sandstone/64x32: 240 368
+:geoo/sandstone/32x64: 400 304
+:geoo/sandstone/32x64: 400 200
+:geoo/sandstone/32x64: 400 136
+:geoo/sandstone/32x64: 272 200
+:geoo/sandstone/arc_small: 304 200
+:geoo/sandstone/64x32: 528 240
+:geoo/sandstone/32x32: 496 240
+:geoo/sandstone/16x8: 192 360
+:geoo/sandstone/16x8: 176 344
+:geoo/sandstone/16x8: 184 352
+:geoo/sandstone/16x8: 160 328
+:geoo/sandstone/16x8: 168 336
+:geoo/sandstone/16x8: 144 312
+:geoo/sandstone/16x8: 152 320
+:geoo/sandstone/16x8: 128 296
+:geoo/sandstone/16x8: 136 304
+:geoo/sandstone/16x8: 112 280
+:geoo/sandstone/16x8: 120 288
+:geoo/sandstone/16x8: 96 264
+:geoo/sandstone/16x8: 104 272
+:geoo/sandstone/16x8: 80 248
+:geoo/sandstone/16x8: 88 256
+:geoo/sandstone/16x8: 64 232
+:geoo/sandstone/16x8: 72 240
+:geoo/sandstone/16x8: 56 224
+:geoo/sandstone/16x8: 48 216
+:geoo/sandstone/16x8: 56 208
+:geoo/sandstone/16x8: 64 200
+:geoo/sandstone/16x8: 72 192
+:geoo/sandstone/16x8: 80 184
+:geoo/sandstone/16x8: 88 176
+:geoo/sandstone/16x8: 96 168
+:geoo/sandstone/16x8: 104 160
+:geoo/sandstone/16x8: 112 152
+:geoo/sandstone/16x8: 120 144
+:geoo/sandstone/16x8: 128 136
+:geoo/sandstone/16x8: 136 128
+:geoo/sandstone/16x8: 144 120
+:geoo/sandstone/16x8: 152 112
+:geoo/sandstone/16x8: 160 104
+:geoo/sandstone/16x8: 168 96
+:geoo/sandstone/16x8: 176 88
+:geoo/sandstone/pillar_top_ext: 0 0
+:geoo/sandstone/pillar_top_ext: 576 0
+:geoo/construction/platformbrick_single: 60 214 d
+:geoo/construction/platformbrick_single: 60 212 d
+:geoo/sandstone/64x32: 48 368
+:geoo/sandstone/32x32: 112 368
+:geoo/sandstone/32x32: 48 112
+:geoo/sandstone/32x32: 560 48
+:geoo/sandstone/8x8: 31 63 d
+:geoo/sandstone/8x8: 31 57 d
+:geoo/sandstone/8x8: 25 57 d
+:geoo/sandstone/8x8: 25 63 d
+:geoo/sandstone/8x8: 31 127 d
+:geoo/sandstone/8x8: 31 121 d
+:geoo/sandstone/8x8: 25 121 d
+:geoo/sandstone/8x8: 25 127 d
+:geoo/sandstone/8x8: 31 191 d
+:geoo/sandstone/8x8: 31 185 d
+:geoo/sandstone/8x8: 25 185 d
+:geoo/sandstone/8x8: 25 191 d
+:geoo/sandstone/8x8: 31 255 d
+:geoo/sandstone/8x8: 31 249 d
+:geoo/sandstone/8x8: 25 249 d
+:geoo/sandstone/8x8: 25 255 d
+:geoo/sandstone/8x8: 31 319 d
+:geoo/sandstone/8x8: 31 313 d
+:geoo/sandstone/8x8: 25 313 d
+:geoo/sandstone/8x8: 25 319 d
+:geoo/sandstone/8x8: 607 319 d
+:geoo/sandstone/8x8: 607 313 d
+:geoo/sandstone/8x8: 601 313 d
+:geoo/sandstone/8x8: 601 319 d
+:geoo/sandstone/8x8: 607 255 d
+:geoo/sandstone/8x8: 607 249 d
+:geoo/sandstone/8x8: 601 249 d
+:geoo/sandstone/8x8: 601 255 d
+:geoo/sandstone/8x8: 607 191 d
+:geoo/sandstone/8x8: 607 185 d
+:geoo/sandstone/8x8: 601 185 d
+:geoo/sandstone/8x8: 601 191 d
+:geoo/sandstone/8x8: 607 127 d
+:geoo/sandstone/8x8: 607 121 d
+:geoo/sandstone/8x8: 601 121 d
+:geoo/sandstone/8x8: 601 127 d
+:geoo/sandstone/8x8: 607 63 d
+:geoo/sandstone/8x8: 607 57 d
+:geoo/sandstone/8x8: 601 57 d
+:geoo/sandstone/8x8: 601 63 d
+:geoo/sandstone/16x8: 200 368
+:geoo/sandstone/16x8: 208 376
+$BEGIN_TILE_GROUP 3
+:geoo/sandstone/32x32: 0 0
+:geoo/sandstone/32x16: 0 18 d
+$END_TILE_GROUP
+:Group-3: 272 264
+:Group-3: 400 264
+:geoo/construction/platform_single.S: 268 366
+:geoo/construction/platform_single.S: 276 366
+:geoo/construction/platform_single.S: 292 366 d
+:geoo/construction/platform.S: 302 264 rrr
+:geoo/construction/platform.S: 302 296 rrr
+:geoo/construction/platform.S: 302 320 rrr
+:geoo/construction/platform_single.S: 288 364 d
+:geoo/construction/platform_single.S: 264 364
+:geoo/construction/platform_single.S: 272 364
+:geoo/construction/platform_single.S: 260 366
+:geoo/construction/platform_single.S: 280 364
+:geoo/construction/platform_single.S: 284 366

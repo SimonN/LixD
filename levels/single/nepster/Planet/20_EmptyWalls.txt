@@ -1,0 +1,106 @@
+$BUILT 2016-01-01 12:39:39
+$AUTHOR Nepster
+$ENGLISH Empty Walls
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 8
+#SPAWN_INTERVAL 30
+
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+
+:matt/marble/Hatch.H: 48 192
+
+:matt/marble/Goal.G: 576 64
+
+:geoo/construction/squisher.T: 0 240
+
+:geoo/construction/sawblade_small.F: 560 232
+
+:geoo/construction/fence_rust_64x64: 384 272
+:geoo/construction/fence_rust_64x64: 544 272
+:geoo/construction/fence_rust_64x64: 544 208
+:geoo/construction/fence_rust_64x64: 544 144
+:geoo/construction/concrete/064: 448 336
+:geoo/construction/concrete/064: 512 336
+:geoo/construction/concrete/064: 576 336
+:geoo/construction/concrete/064: 384 336
+:geoo/construction/concrete/064: 192 336
+:geoo/construction/concrete/064: 128 336
+:geoo/construction/concrete/064: 64 336
+:geoo/construction/concrete/064: 256 336
+:geoo/construction/concrete/064: 320 336
+:geoo/construction/wall/small_64x64: 192 272
+:geoo/construction/wall/small_64x64: 128 272
+:geoo/construction/wall/small_64x64: 128 208
+:geoo/construction/wall/small_64x64: 192 208
+:geoo/construction/wall/small_64x64: 192 144
+:geoo/construction/wall/small_64x64: 192 80
+:geoo/construction/wall/small_64x64: 128 144
+:geoo/construction/wall/small_64x64: 256 272
+:geoo/construction/wall/small_64x64: 320 272
+:geoo/construction/wall/small_64x64: 128 80
+:geoo/construction/wall/small_64x64: 256 80
+:geoo/construction/wall/small_64x64: 320 80
+:geoo/construction/wall/small_64x64: 384 80
+:geoo/construction/wall/small_64x64: 448 80
+:geoo/construction/wall/small_64x64: 448 144
+:geoo/construction/wall/small_64x64: 384 144
+:geoo/construction/wall/small_64x64: 320 144
+:geoo/construction/wall/small_64x64: 320 208
+:geoo/construction/wall/small_64x64: 384 208
+:geoo/construction/wall/small_64x64: 448 208
+:geoo/construction/wall/small_64x64: 448 272
+:geoo/construction/wall/small_64x32: 512 112
+:geoo/construction/wall/small_64x32: 576 112
+:geoo/construction/wall/small_64x64: 480 208
+:geoo/construction/wall/small_64x64: 480 272
+:geoo/construction/wall/small_64x64: 608 208
+:geoo/construction/wall/small_64x64: 608 144
+:geoo/construction/wall/small_64x64: -32 304
+:geoo/construction/wall/big_diag_bd: 480 80 d
+:geoo/construction/wall/big_brickdiag_bu: 128 80 d
+:geoo/construction/wall/big_diag_bu: 128 112 d
+:geoo/construction/wall/small_64x32: 256 128 d
+:geoo/construction/wall/small_64x32: 256 256 d
+:geoo/construction/fence_rust_64x64: 256 128
+:geoo/construction/fence_rust_64x64: 256 192
+:geoo/construction/fence_rust_64x64: 256 224
+:geoo/construction/stairsbrick_rd_32: 24 304
+:geoo/construction/concrete/064: 0 336
+:geoo/construction/platformbrick_single: 591 313 d
+:geoo/construction/platformbrick_single: 592 314 d
+:geoo/construction/platformbrick_single: 592 316 d
+:geoo/construction/platformbrick_single: 592 317 d
+:geoo/construction/platformbrick_single: 593 318 d
+:geoo/construction/platformbrick_single: 599 321 d
+:geoo/construction/platformbrick_single: 600 323 d
+:geoo/construction/platformbrick_single: 600 325 d
+:geoo/construction/platformbrick_single: 601 326 d
+:geoo/construction/wall/small_64x64: 608 272
+:geoo/construction/platformbrick_single: 543 153 d
+:geoo/construction/platformbrick_single: 544 154 d
+:geoo/construction/platformbrick_single: 544 156 d
+:geoo/construction/platformbrick_single: 544 157 d
+:geoo/construction/platformbrick_single: 545 158 d
+:geoo/construction/platformbrick_single: 551 161 d
+:geoo/construction/platformbrick_single: 552 162 d
+:geoo/construction/platformbrick_single: 552 164 d
+:geoo/construction/platformbrick_single: 552 165 d
+:geoo/construction/platformbrick_single: 553 166 d
+:geoo/construction/wall/small_64x64: 480 144
+:geoo/construction/wall/small_64x64: -32 176
+:geoo/construction/wall/small_64x64: -32 112
+:geoo/construction/wall/small_64x64: -32 48
+:geoo/construction/wall/small_64x64: -32 -16

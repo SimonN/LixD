@@ -1,0 +1,68 @@
+$BUILT 2016-07-23 13:57:20
+$AUTHOR Nepster
+$ENGLISH Dunes
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 960
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 40
+
+#RUNNER 1
+#CLIMBER 1
+#BLOCKER 1
+#BUILDER 1
+#BASHER 1
+#MINER 1
+#EXPLODER 0
+
+:matt/beach/Hatch.H: 679 186 r
+:matt/beach/Hatch.H: 223 186
+
+:matt/beach/goal.G: 451 211
+
+:matt/beach/decor/sun.D: 144 0
+
+:matt/beach/decor/beach ball: 897 309
+:matt/beach/daytime/06: 462 266 r
+:matt/beach/daytime/06: 156 334 rr
+:matt/beach/daytime/03: 174 332 rr
+:matt/beach/daytime/06: 324 342 rr
+:matt/beach/daytime/06: 524 336 rr
+:matt/beach/daytime/06: 682 340 rr
+:matt/beach/daytime/03: 300 330 rr
+:matt/beach/daytime/03: 392 330 rr
+:matt/beach/daytime/03: 520 330 rr
+:matt/beach/daytime/03: 616 328 rr
+:matt/beach/daytime/03: 708 328 rr
+:matt/beach/daytime/03: 792 326 rr
+:matt/beach/daytime/03: 114 332 rr
+:matt/beach/daytime/02: 546 314 frr
+:matt/beach/daytime/15: 546 312
+:matt/beach/daytime/13: 258 288 frr
+:matt/beach/daytime/14: 214 286 r
+:matt/beach/daytime/13: 180 276 r
+:matt/beach/daytime/14: 738 274
+:matt/beach/daytime/04: 736 260
+:matt/beach/daytime/15: 786 256
+:matt/beach/daytime/05: 458 264 f
+:matt/beach/daytime/05: 462 232 frr
+:matt/beach/daytime/03: 396 228 d
+:matt/beach/daytime/15: 438 246 d
+:matt/beach/daytime/15: 452 240 d
+:matt/beach/daytime/15: 482 241 d
+:matt/beach/daytime/15: 477 240 d
+:matt/beach/daytime/05: 464 54 rrd
+:matt/beach/daytime/05: 469 53 rrd
+:matt/beach/daytime/05: 459 50 rrd
+:matt/beach/daytime/06: 784 320 rr
+:matt/beach/daytime/14: 915 251
+:matt/beach/daytime/13: 935 182
+:matt/beach/daytime/06: 32 333 f
+:matt/beach/daytime/06: -26 326 f
+:matt/beach/daytime/13: 123 276
+:matt/beach/daytime/04: -58 282
+:matt/beach/daytime/03: -3 247 d

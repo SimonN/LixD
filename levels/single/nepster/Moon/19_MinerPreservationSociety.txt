@@ -1,0 +1,164 @@
+$BUILT 2015-12-30 23:34:19
+$AUTHOR Nepster
+$ENGLISH Miner Preservation Society
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 39
+#SPAWN_INTERVAL 20
+
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 5
+#BUILDER 1
+#BASHER 1
+#MINER 1
+
+:geoo/sandstone/Hatch.H: 256 0
+:geoo/sandstone/Hatch.H: 16 0
+
+:geoo/sandstone/Goal.G: 576 272
+
+:geoo/sandstone/32x64: 544 160
+:geoo/sandstone/32x64: 576 112
+$BEGIN_TILE_GROUP 0
+:geoo/sandstone/32x64: 0 48
+:geoo/sandstone/32x64: 0 0 d
+$END_TILE_GROUP
+:Group-0: 576 160
+:Group-0: 576 192
+:geoo/sandstone/32x64: 608 0
+:Group-0: 608 32
+:Group-0: 608 64
+:Group-0: 608 96
+:Group-0: 608 128
+:Group-0: 608 160
+:Group-0: 608 192
+:Group-0: 544 192
+:geoo/sandstone/32x64: 320 144
+:Group-0: 320 192
+:Group-0: 320 224
+:Group-0: 320 256
+:Group-0: 320 288
+:Group-0: 320 320
+:geoo/sandstone/32x64: 32 80
+:Group-0: 32 128
+:Group-0: 32 160
+:Group-0: 32 192
+:Group-0: 32 224
+:Group-0: 32 256
+:Group-0: 32 288
+:Group-0: 32 320
+:geoo/sandstone/32x64: 0 80
+:Group-0: 0 128
+:Group-0: 0 160
+:Group-0: 0 192
+:Group-0: 0 224
+:Group-0: 0 256
+:Group-0: 0 288
+:Group-0: 0 320
+:geoo/sandstone/32x64: 480 208
+:Group-0: 480 256
+:Group-0: 480 288
+:Group-0: 480 320
+:geoo/sandstone/32x64: 448 240
+:Group-0: 448 288
+:Group-0: 448 320
+:geoo/sandstone/32x64: 416 240
+:Group-0: 416 288
+:Group-0: 416 320
+:geoo/sandstone/32x64: 384 112
+:Group-0: 384 160
+:Group-0: 384 192
+:Group-0: 384 224
+:Group-0: 384 256
+:Group-0: 384 288
+:Group-0: 384 320
+:geoo/sandstone/32x64: 352 176
+:Group-0: 352 224
+:Group-0: 352 256
+:Group-0: 352 288
+:Group-0: 352 320
+:geoo/sandstone/32x64: 288 144
+:Group-0: 288 192
+:Group-0: 288 224
+:Group-0: 288 256
+:Group-0: 288 288
+:Group-0: 288 320
+:geoo/sandstone/32x64: 256 144
+:Group-0: 256 192
+:Group-0: 256 224
+:Group-0: 256 256
+:Group-0: 256 288
+:Group-0: 256 320
+:geoo/sandstone/32x64: 192 80
+:Group-0: 192 128
+:Group-0: 192 160
+:Group-0: 192 192
+:Group-0: 192 224
+:Group-0: 192 256
+:Group-0: 192 288
+:Group-0: 192 320
+:geoo/sandstone/32x64: 160 80
+:Group-0: 160 128
+:Group-0: 160 160
+:Group-0: 160 192
+:Group-0: 160 224
+:Group-0: 160 256
+:Group-0: 160 288
+:Group-0: 160 320
+:geoo/sandstone/32x64: 128 80
+:Group-0: 128 128
+:Group-0: 128 160
+:Group-0: 128 192
+:Group-0: 128 224
+:Group-0: 128 256
+:Group-0: 128 288
+:Group-0: 128 320
+:geoo/sandstone/32x64: 96 80
+:Group-0: 96 128
+:Group-0: 96 160
+:Group-0: 96 192
+:Group-0: 96 224
+:Group-0: 96 256
+:Group-0: 96 288
+:Group-0: 96 320
+:geoo/sandstone/32x64: 64 80
+:Group-0: 64 128
+:Group-0: 64 160
+:Group-0: 64 192
+:Group-0: 64 224
+:Group-0: 64 256
+:Group-0: 64 288
+:Group-0: 64 320
+:Group-0: 64 352
+:Group-0: 96 352
+:Group-0: 128 352
+:Group-0: 160 352
+:Group-0: 192 352
+:geoo/sandstone/32x64: 224 336
+:Group-0: 256 352
+:Group-0: 288 352
+:Group-0: 352 352
+:Group-0: 384 352
+:Group-0: 416 352
+:Group-0: 448 352
+:Group-0: 480 352
+:Group-0: 0 352
+:Group-0: 32 352
+:Group-0: 320 352
+:geoo/sandstone/32x64: 512 208
+:Group-0: 544 224
+:Group-0: 608 224
+:geoo/sandstone/32x64: 576 0
+:Group-0: 576 224
+:geoo/sandstone/32x64: 512 336
+:geoo/sandstone/32x64: 544 336
+:geoo/sandstone/32x64: 576 336
+:geoo/sandstone/32x64: 608 336
+:geoo/sandstone/32x32: 544 0

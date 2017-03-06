@@ -1,0 +1,68 @@
+$BUILT 2016-01-25 23:09:55
+$AUTHOR Nepster
+$ENGLISH Big Ice Block
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 30
+#SPAWN_INTERVAL 20
+
+#WALKER 5
+#RUNNER 5
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER 5
+#BLOCKER 5
+#BUILDER 5
+#PLATFORMER 5
+#BASHER 5
+#MINER 5
+#DIGGER 5
+#JUMPER 5
+#BATTER 5
+#CUBER 5
+
+:matt/winter/Hatch.H: 68 236
+:matt/winter/Hatch.H: 510 226 r
+
+:matt/winter/Goal.G: 162 36
+:matt/winter/Goal.G: 388 34
+
+:matt/winter/17: 412 296
+:matt/winter/14: 596 236 frr
+:matt/winter/14: 594 270 frr
+:matt/winter/14: 602 190 frr
+:matt/winter/17: -24 272
+:matt/winter/14: -8 238
+:matt/winter/14: -10 196
+:matt/winter/05: -32 112
+:matt/winter/10: -64 336
+:matt/winter/03: 384 96
+:matt/winter/05: 592 112 frr
+:matt/winter/03: 120 96 frr
+:matt/winter/10: 104 336
+:matt/winter/15: 70 352
+:matt/winter/16: 160 96 rr
+:matt/winter/17: 400 96 rr
+:matt/winter/04: 160 224
+:matt/winter/10: 184 98
+:matt/winter/16: 360 174 rrr
+:matt/winter/04: 432 316 frrr
+:matt/winter/10: 574 244 rrr
+:matt/winter/10: 168 128 rrr
+:matt/winter/10: 232 156
+:matt/winter/17: 282 100 r
+:matt/winter/16: 354 98 rr
+:matt/winter/10: 264 326
+:matt/winter/10: 214 238
+:matt/winter/10: 234 284 rr
+:matt/winter/10: 264 194 rr
+:matt/winter/14: -6 258
+:matt/winter/11: 538 358
+:matt/winter/17: 414 232
+:matt/winter/14: 438 230
+:matt/winter/00: 358 98

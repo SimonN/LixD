@@ -1,0 +1,1757 @@
+$BUILT 2016-07-19 09:19:59
+$AUTHOR Nepster
+$ENGLISH Dawn in Lixtown
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 512
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+#START_X 32
+#START_Y 640
+
+#SECONDS 0
+#INITIAL 11
+#REQUIRED 7
+#SPAWN_INTERVAL 48
+
+#WALKER 1
+#RUNNER 1
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 1
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#JUMPER 1
+#BATTER 1
+#CUBER 1
+
+:matt/underworld/Hatch.H: 65 298
+:matt/underworld/Hatch.H: 239 69 r
+
+:matt/marble/Goal.G: 448 80
+:matt/marble/Goal.G: 64 176
+
+:geoo/shadow/wall/deco_crags: 489 328
+:geoo/shadow/wall/center: 384 192
+:geoo/shadow/wall/center: 352 192
+:geoo/shadow/wall/center: 352 224
+:geoo/shadow/wall/center: 384 224
+:geoo/shadow/window: 374 192
+:geoo/shadow/wall/center: 448 240
+:geoo/shadow/wall/center: 448 224
+:geoo/shadow/wall/center: 224 320
+:geoo/shadow/wall/center: 256 352
+:matt/underworld/00: 192 384
+:geoo/shadow/door: 224 336
+:geoo/shadow/wall/center: 272 192
+:geoo/shadow/wall/center: 256 192
+:geoo/shadow/wall/center: 288 224
+:geoo/shadow/wall/center: 256 224
+:matt/underworld/00: 384 384
+:geoo/shadow/wall/center: 416 224
+:geoo/shadow/wall/left: 192 160
+:geoo/shadow/wall/right: 480 160
+:geoo/shadow/wall/center: 224 160
+:geoo/shadow/wall/left: 192 192
+:geoo/shadow/wall/left: 192 224
+:geoo/shadow/wall/left: 192 256
+:geoo/shadow/wall/left: 192 288
+:geoo/shadow/wall/center: 224 288
+:geoo/shadow/wall/center: 256 160
+:geoo/shadow/wall/center: 256 288
+:geoo/shadow/wall/center: 288 160
+:geoo/shadow/wall/center: 288 288
+:geoo/shadow/wall/center: 320 160
+:geoo/shadow/wall/center: 320 224
+:geoo/shadow/wall/center: 320 256
+:geoo/shadow/wall/center: 320 288
+:geoo/shadow/wall/center: 352 160
+:geoo/shadow/wall/center: 352 256
+:geoo/shadow/wall/center: 352 288
+:geoo/shadow/wall/center: 384 160
+:geoo/shadow/wall/center: 384 256
+:geoo/shadow/wall/center: 384 288
+:geoo/shadow/wall/center: 416 160
+:geoo/shadow/wall/center: 416 256
+:geoo/shadow/wall/center: 416 288
+:geoo/shadow/wall/right: 480 288
+:geoo/shadow/wall/center: 256 320
+$BEGIN_TILE_GROUP 0
+:geoo/shadow/wall/right: 0 0
+:geoo/sandstone/8x8: 16 16 d
+:geoo/sandstone/8x8: 20 16 d
+$END_TILE_GROUP
+:Group-0: 480 320
+:geoo/shadow/wall/right: 480 352
+:geoo/shadow/wall/left: 40 176
+:geoo/shadow/wall/left: 40 144
+:geoo/shadow/wall/left: 40 112
+:geoo/shadow/wall/left: 40 208
+:geoo/shadow/wall/center: 72 208
+:geoo/sandstone/64x16: 56 160 rrrd
+:geoo/shadow/wall/center: 88 208
+:geoo/sandstone/64x16: 72 208 d
+:geoo/shadow/wall/center: 136 16
+:geoo/shadow/wall/center: 104 32
+:geoo/shadow/wall/center: 168 16
+:geoo/shadow/wall/center: 448 160
+:geoo/shadow/wall/center: 416 192
+:geoo/shadow/wall/center: 448 288
+:geoo/shadow/wall/center: 448 320
+:geoo/shadow/wall/center: 448 352
+:geoo/shadow/wall/center: 320 192
+:geoo/shadow/window_broken: 299 192
+:geoo/shadow/window: 448 264
+:geoo/shadow/window: 374 264
+:geoo/shadow/wall/left: 40 272
+:geoo/shadow/wall/right: 120 272
+:geoo/shadow/wall/left: 40 240
+:geoo/shadow/wall/right: 120 240
+:geoo/shadow/wall/center: 88 272
+:geoo/shadow/wall/center: 72 272
+:geoo/shadow/wall/center: 88 240
+:geoo/shadow/wall/center: 72 240
+:matt/underworld/00: 64 384
+:matt/underworld/00: 128 384
+:matt/underworld/00: 448 384
+:geoo/shadow/wall/center: 136 -16
+:geoo/shadow/wall/center: 104 0
+:geoo/shadow/wall/center: 168 -16
+:geoo/shadow/wall/center: 416 128
+:geoo/shadow/wall/center: 352 128
+:geoo/shadow/wall/center: 416 112
+:geoo/shadow/wall/center: 352 112
+:geoo/shadow/wall/center: 320 112
+:geoo/shadow/wall/center: 320 128
+:amanda/steel/steel8x16.S: 320 112
+:amanda/steel/steel8x16.S: 320 128
+:amanda/steel/steel8x16.S: 320 160 fr
+:amanda/steel/steel8x16.S: 336 160 fr
+:amanda/steel/steel8x16.S: 352 160 fr
+:amanda/steel/steel8x16.S: 368 160 fr
+:amanda/steel/steel8x16.S: 384 160 fr
+:amanda/steel/steel8x16.S: 400 160 fr
+:amanda/steel/steel8x16.S: 416 160 fr
+:amanda/steel/steel8x16.S: 432 160 fr
+:amanda/steel/steel8x16.S: 440 128
+:amanda/steel/steel8x16.S: 440 144
+:geoo/shadow/wall/center: 448 128
+:geoo/shadow/wall/right: 480 128
+:geoo/shadow/wall/right: 120 48
+:geoo/shadow/wall/center: 72 64
+:matt/underworld/00: 0 384
+:geoo/construction/platformbrick: 502 368 rrrd
+:proxima/tile/spheres/bluesmall: 10 370 d
+:geoo/shadow/wall/center: 384 128
+:geoo/shadow/wall/center: 384 112
+:amanda/steel/steel8x16.S: 432 104 fr
+:amanda/steel/steel8x16.S: 416 104 fr
+:amanda/steel/steel8x16.S: 400 104 fr
+:amanda/steel/steel8x16.S: 384 104 fr
+:amanda/steel/steel8x16.S: 368 104 fr
+:amanda/steel/steel8x16.S: 352 104 fr
+:amanda/steel/steel8x16.S: 336 104 fr
+:amanda/steel/steel8x16.S: 320 104 fr
+:geoo/construction/stairsbrick_ru_32: 352 128 d
+:geoo/shadow/wall/left: 192 320
+:geoo/shadow/wall/left: 192 352
+:geoo/shadow/wall/left: 40 80
+:geoo/shadow/wall/left: 40 48
+:geoo/shadow/wall/center: 72 32
+:geoo/shadow/wall/center: 40 16
+:geoo/shadow/wall/center: 40 -16
+:geoo/shadow/wall/center: 72 0
+:geoo/shadow/wall/center: 8 16
+:geoo/shadow/wall/center: 488 16
+:geoo/shadow/wall/center: 488 -16
+:geoo/shadow/wall/center: 8 -16
+:geoo/shadow/wall/center: 392 16
+:geoo/shadow/wall/center: 360 16
+:geoo/shadow/wall/center: 360 -16
+:geoo/shadow/wall/center: 392 -16
+:geoo/shadow/wall/center: 296 -16
+:geoo/shadow/wall/center: 328 -16
+:geoo/shadow/wall/center: 232 16
+:geoo/shadow/wall/center: 232 -16
+:geoo/shadow/wall/center: 264 -16
+:geoo/shadow/wall/center: 200 16
+:geoo/shadow/wall/center: 200 -16
+:geoo/construction/platformbrick: 502 341 rrrd
+:geoo/shadow/wall/deco_crags: 0 319 rrrd
+:amanda/steel/steel8x16.S: 88 160 fr
+:amanda/steel/steel8x16.S: 104 160 fr
+:geoo/shadow/wall/center: 88 64
+:geoo/shadow/wall/center: 72 80
+:geoo/shadow/wall/center: 88 80
+:geoo/abstract/pipes/central0: 72 104 d
+:geoo/abstract/pipes/central0: 88 104 d
+:geoo/sandstone/64x16: 124 160 rrrd
+:geoo/shadow/wall/right: 120 160
+:geoo/sandstone/64x16: 52 104 rrrd
+:geoo/sandstone/64x16: 52 160 rrrd
+:geoo/sandstone/64x16: 56 104 rrrd
+:amanda/steel/steel8x16.S: 56 160 fr
+:amanda/steel/steel8x16.S: 40 160 fr
+$BEGIN_TILE_GROUP 1
+:geoo/abstract/pipes/cshort0: 0 0 r
+:geoo/abstract/pipes/cshort0: 1 0 r
+:geoo/abstract/pipes/cshort0: 2 0 rd
+:geoo/abstract/pipes/cshort0: 0 2 rd
+$END_TILE_GROUP
+:Group-1: 438 36
+$BEGIN_TILE_GROUP 2
+:geoo/abstract/pipes/cshort0: 5 0 r
+:geoo/abstract/pipes/cshort0: 10 0 rd
+:geoo/abstract/pipes/cshort0: 0 0 rd
+:geoo/abstract/pipes/cshort0: 8 2 rd
+$END_TILE_GROUP
+:Group-2: 440 36
+$BEGIN_TILE_GROUP 3
+:geoo/construction/concrete/008: 0 0
+:geoo/construction/concrete/008: 1 0
+:geoo/construction/concrete/008: 2 0 d
+:geoo/construction/concrete/008: 0 2 d
+$END_TILE_GROUP
+:Group-3: 440 34
+$BEGIN_TILE_GROUP 4
+:geoo/construction/concrete/008: 2 2
+:geoo/construction/concrete/008: 1 2
+:geoo/construction/concrete/008: 2 0 d
+:geoo/construction/concrete/008: 0 2 d
+$END_TILE_GROUP
+:Group-4: 438 34
+$BEGIN_TILE_GROUP 5
+:geoo/abstract/pipes/cshort4: 0 0 rrr
+:geoo/abstract/pipes/cshort4: 1 0 rrr
+:geoo/abstract/pipes/cshort4: 2 0 rrrd
+:geoo/abstract/pipes/cshort4: 0 2 rrrd
+$END_TILE_GROUP
+:Group-5: 438 32
+$BEGIN_TILE_GROUP 6
+:geoo/abstract/pipes/cshort4: 0 0 rrr
+:geoo/abstract/pipes/cshort4: 2 0 rrrd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 7
+:Group-6: 8 0
+:Group-6: 7 0
+:geoo/abstract/pipes/cshort4: 0 0 rrrd
+:geoo/abstract/pipes/cshort4: 8 2 rrrd
+$END_TILE_GROUP
+:Group-7: 440 32
+$BEGIN_TILE_GROUP 8
+:geoo/abstract/pipes/cshort1: 2 0 rrr
+:geoo/abstract/pipes/cshort1: 1 0 rrr
+:geoo/abstract/pipes/cshort1: 2 2 rrrd
+:geoo/abstract/pipes/cshort1: 0 0 rrrd
+$END_TILE_GROUP
+:Group-8: 438 30
+$BEGIN_TILE_GROUP 9
+:geoo/abstract/pipes/cshort1: 5 0 rrr
+:geoo/abstract/pipes/cshort1: 10 0 rrrd
+:geoo/abstract/pipes/cshort1: 0 0 rrrd
+:geoo/abstract/pipes/cshort1: 8 2 rrrd
+$END_TILE_GROUP
+:Group-9: 440 30
+$BEGIN_TILE_GROUP 10
+:geoo/abstract/pipes/cshort3: 5 0 rrr
+:geoo/abstract/pipes/cshort3: 10 0 rrrd
+:geoo/abstract/pipes/cshort3: 0 0 rrrd
+:geoo/abstract/pipes/cshort3: 6 2 rrrd
+$END_TILE_GROUP
+:Group-10: 438 38
+$BEGIN_TILE_GROUP 11
+:matt/marble/00: 0 0
+:matt/marble/00: 0 1
+:matt/marble/00: 2 0 d
+:matt/marble/00: 0 2 d
+$END_TILE_GROUP
+:Group-11: 440 40
+$BEGIN_TILE_GROUP 12
+:matt/marble/00: 3 4 r
+:matt/marble/00: 10 4 rd
+:matt/marble/00: 2 10 rd
+:matt/marble/00: 0 2 rd
+:matt/marble/00: 6 0 rd
+$END_TILE_GROUP
+:Group-12: 438 40
+$BEGIN_TILE_GROUP 13
+:geoo/abstract/pipes/cshort2: 5 0 rrr
+:geoo/abstract/pipes/cshort2: 10 0 rrrd
+:geoo/abstract/pipes/cshort2: 0 0 rrrd
+:geoo/abstract/pipes/cshort2: 5 2 rrrd
+$END_TILE_GROUP
+:Group-13: 440 38
+$BEGIN_TILE_GROUP 14
+:geoo/abstract/pipes/cshort2: 7 0 rrr
+:geoo/abstract/pipes/cshort2: 10 0 rrrd
+:geoo/abstract/pipes/cshort2: 0 0 rrrd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 15
+:Group-14: 8 0
+:Group-14: 7 0
+:geoo/abstract/pipes/cshort2: 0 0 rrrd
+:geoo/abstract/pipes/cshort2: 8 2 rrrd
+$END_TILE_GROUP
+:Group-15: 440 42
+$BEGIN_TILE_GROUP 16
+:Group-14: 0 0
+:Group-14: 1 0
+:geoo/abstract/pipes/cshort2: 2 0 rrrd
+:geoo/abstract/pipes/cshort2: 0 2 rrrd
+$END_TILE_GROUP
+:Group-16: 438 42
+$BEGIN_TILE_GROUP 17
+:Group-8: 14 0
+:Group-8: 14 2
+:Group-3: 18 0
+:Group-3: 22 2
+:Group-3: 24 2
+:Group-3: 24 0
+:Group-9: 20 6
+:Group-9: 20 2
+:Group-9: 16 2
+:Group-9: 16 4
+:Group-9: 18 2
+:Group-9: 18 4
+:Group-9: 20 4
+:Group-3: 14 8
+:Group-3: 16 8
+:Group-3: 16 6
+:Group-3: 14 10
+:Group-3: 16 10
+:Group-3: 18 6
+:Group-3: 16 12
+:Group-3: 18 12
+:Group-3: 18 10
+:Group-4: 18 8
+:Group-2: 22 4
+:Group-2: 24 4
+:Group-2: 22 6
+:Group-2: 24 6
+:Group-2: 20 8
+:Group-2: 22 8
+:Group-2: 20 10
+:Group-2: 22 10
+:Group-2: 20 12
+:Group-2: 22 12
+:Group-2: 20 14
+:Group-2: 18 14
+:Group-2: 24 8
+:Group-8: 26 6
+:Group-8: 28 10
+:Group-8: 28 16
+:Group-8: 24 20
+:Group-9: 26 8
+:Group-9: 24 10
+:Group-9: 26 10
+:Group-9: 24 12
+:Group-9: 28 14
+:Group-9: 26 12
+:Group-9: 28 12
+:Group-9: 26 14
+:Group-9: 26 18
+:Group-9: 24 16
+:Group-9: 26 16
+:Group-9: 24 18
+:Group-9: 22 20
+:Group-9: 20 18
+:Group-9: 22 18
+:Group-9: 20 20
+:Group-9: 22 16
+:Group-9: 24 14
+:Group-9: 22 14
+:Group-9: 20 16
+:Group-9: 18 18
+:Group-1: 16 14
+:Group-1: 18 16
+:Group-1: 16 16
+:Group-1: 18 20
+:Group-1: 18 22
+:Group-1: 16 22
+:Group-1: 16 20
+:Group-1: 16 18
+:Group-1: 14 18
+:Group-1: 14 20
+:Group-1: 12 20
+:Group-1: 12 18
+:Group-1: 14 22
+:Group-1: 14 16
+:Group-7: 14 24
+:Group-7: 12 22
+:Group-7: 12 24
+:Group-7: 10 28
+:Group-7: 10 26
+:Group-7: 12 26
+:Group-7: 10 24
+:Group-7: 10 22
+:Group-7: 6 24
+:Group-7: 8 24
+:Group-7: 8 22
+:Group-7: 4 28
+:Group-7: 4 26
+:Group-7: 4 24
+:Group-5: 8 26
+:Group-3: 0 24
+:Group-3: 0 26
+:Group-3: 2 26
+:Group-3: 6 26
+:Group-3: 6 28
+:Group-3: 0 28
+:Group-3: 2 28
+:Group-3: 6 30
+:Group-3: 8 32
+:Group-3: 8 30
+:Group-3: 8 28
+$END_TILE_GROUP
+:Group-17: 292 48
+:geoo/shadow/wall/center: 264 16
+:geoo/shadow/wall/center: 296 16
+:geoo/shadow/wall/center: 328 16
+$BEGIN_TILE_GROUP 18
+:Group-3: 2 32
+:Group-3: 2 30
+:Group-3: 0 30
+:Group-3: 4 32
+:Group-3: 4 34
+:Group-3: 8 36
+:Group-3: 10 34
+:Group-3: 8 34
+:Group-3: 8 32
+:Group-3: 10 32
+:Group-3: 10 30
+:Group-4: 4 30
+:Group-5: 6 28
+:Group-7: 8 30
+:Group-7: 8 28
+:Group-7: 10 26
+:Group-7: 10 28
+:Group-7: 0 28
+:Group-7: 2 26
+:Group-7: 2 28
+:Group-7: 4 26
+:Group-7: 4 28
+:Group-7: 10 22
+:Group-7: 10 24
+:Group-7: 6 24
+:Group-7: 6 26
+:Group-7: 8 24
+:Group-7: 8 26
+:Group-7: 4 24
+:Group-7: 8 22
+:Group-1: 4 22
+:Group-1: 6 22
+:Group-1: 6 20
+:Group-1: 8 20
+:Group-1: 10 20
+:Group-1: 6 18
+:Group-1: 8 18
+:Group-1: 10 18
+:Group-1: 10 16
+:Group-1: 12 16
+:Group-1: 11 20
+:Group-1: 11 18
+:Group-1: 12 17
+:Group-3: 14 16
+:Group-3: 16 14
+:Group-3: 18 14
+:Group-3: 16 12
+:Group-3: 14 10
+:Group-3: 10 8
+:Group-3: 12 8
+:Group-3: 14 8
+:Group-3: 16 8
+:Group-3: 14 6
+:Group-3: 16 6
+:Group-3: 14 4
+:Group-4: 12 6
+:Group-8: 4 14
+:Group-8: 16 4
+:Group-8: 6 4
+:Group-2: 8 16
+:Group-2: 8 14
+:Group-2: 14 14
+:Group-2: 14 12
+:Group-2: 12 10
+:Group-2: 12 12
+:Group-2: 12 14
+:Group-2: 10 14
+:Group-2: 10 12
+:Group-2: 8 12
+:Group-2: 10 10
+:Group-9: 6 16
+:Group-9: 6 14
+:Group-9: 6 12
+:Group-9: 4 12
+:Group-9: 16 2
+:Group-9: 4 10
+:Group-9: 4 8
+:Group-9: 6 10
+:Group-9: 8 10
+:Group-9: 8 8
+:Group-9: 6 8
+:Group-9: 6 6
+:Group-9: 8 6
+:Group-9: 10 4
+:Group-9: 8 4
+:Group-9: 8 2
+:Group-9: 10 2
+:Group-9: 14 2
+:Group-9: 12 2
+:Group-9: 12 0
+:Group-9: 14 0
+:Group-9: 10 6
+:Group-9: 12 4
+:Group-9: 10 0
+$END_TILE_GROUP
+:Group-18: 229 60
+$BEGIN_TILE_GROUP 19
+:Group-9: 0 10
+:Group-9: 0 12
+:Group-9: 0 14
+:Group-9: 0 16
+:Group-9: 2 12
+:Group-9: 2 14
+:Group-9: 2 16
+:Group-9: 2 18
+:Group-9: 4 14
+:Group-9: 4 16
+:Group-9: 4 18
+:Group-9: 4 20
+:Group-9: 6 14
+:Group-9: 6 16
+:Group-9: 6 18
+:Group-9: 6 20
+:Group-9: 8 16
+:Group-9: 8 18
+:Group-9: 8 20
+:Group-9: 4 22
+:Group-9: 4 24
+:Group-9: 4 26
+:Group-9: 6 22
+:Group-9: 6 24
+:Group-9: 2 20
+:Group-9: 2 22
+:Group-8: 0 18
+:Group-8: 2 24
+:Group-8: 4 28
+:Group-8: 6 26
+:Group-7: 8 26
+:Group-7: 10 26
+:Group-7: 12 26
+:Group-7: 8 28
+:Group-7: 10 28
+:Group-7: 12 28
+:Group-7: 10 32
+:Group-7: 12 32
+:Group-7: 14 32
+:Group-7: 12 24
+:Group-7: 14 24
+:Group-7: 10 30
+:Group-7: 12 30
+:Group-7: 14 34
+:Group-4: 16 34
+:Group-4: 18 32
+:Group-4: 4 10
+:Group-1: 10 14
+:Group-1: 12 14
+:Group-1: 12 12
+:Group-1: 14 10
+:Group-1: 16 6
+:Group-1: 14 8
+:Group-1: 14 22
+:Group-1: 14 20
+:Group-1: 12 22
+:Group-1: 12 20
+:Group-1: 8 24
+:Group-1: 8 22
+:Group-1: 10 24
+:Group-1: 10 22
+:Group-1: 10 20
+:Group-2: 10 12
+:Group-2: 10 10
+:Group-2: 12 10
+:Group-2: 16 4
+:Group-2: 12 6
+:Group-2: 12 8
+:Group-2: 14 6
+:Group-2: 14 4
+:Group-2: 16 20
+:Group-2: 10 18
+:Group-2: 16 16
+:Group-2: 10 16
+:Group-2: 12 16
+:Group-2: 12 18
+:Group-2: 14 16
+:Group-2: 14 18
+:Group-3: 16 2
+:Group-3: 18 0
+:Group-3: 18 2
+:Group-3: 18 4
+:Group-3: 18 16
+:Group-3: 16 18
+:Group-3: 18 18
+:Group-3: 18 20
+:Group-3: 14 26
+:Group-3: 14 28
+:Group-3: 14 30
+:Group-3: 18 34
+:Group-3: 18 36
+:Group-3: 18 38
+:Group-3: 16 28
+:Group-3: 16 30
+:Group-3: 16 32
+:Group-3: 8 10
+:Group-3: 8 12
+:Group-3: 8 14
+:Group-3: 16 36
+:Group-3: 4 12
+:Group-3: 6 10
+:Group-3: 6 12
+:Group-3: 2 8
+:Group-3: 4 6
+:Group-3: 4 8
+:Group-3: 6 8
+:Group-3: 6 6
+:Group-3: 8 8
+:Group-3: 2 10
+$END_TILE_GROUP
+:Group-19: 20 56
+:geoo/shadow/wall/right: 120 208
+:geoo/shadow/wall/right: 120 176
+:geoo/sandstone/64x16: 124 160 rrrd
+:geoo/shadow/wall/right: 120 80
+:geoo/sandstone/64x16: 120 160 rrrd
+:amanda/steel/steel8x16.S: 120 160 fr
+:amanda/steel/steel8x16.S: 136 160 fr
+:amanda/steel/steel8x16.S: 72 160 fr
+$BEGIN_TILE_GROUP 20
+:Group-3: 2 34
+:Group-3: 4 34
+:Group-3: 4 32
+:Group-3: 6 34
+:Group-3: 6 32
+:Group-3: 8 34
+:Group-4: 8 32
+:Group-4: 10 34
+:Group-3: 10 32
+:Group-3: 12 32
+:Group-3: 12 34
+:Group-3: 14 34
+:Group-5: 8 30
+:Group-7: 10 30
+:Group-5: 8 28
+:Group-7: 10 28
+:Group-7: 4 30
+:Group-7: 4 28
+:Group-7: 6 30
+:Group-7: 6 28
+:Group-7: 10 26
+:Group-7: 10 24
+:Group-7: 8 26
+:Group-7: 8 24
+:Group-7: 6 26
+:Group-7: 4 26
+:Group-3: 4 22
+:Group-3: 4 24
+:Group-3: 6 24
+:Group-3: 14 16
+:Group-3: 14 18
+:Group-3: 16 16
+:Group-2: 2 22
+:Group-2: 2 20
+:Group-2: 4 20
+:Group-2: 4 18
+:Group-2: 6 18
+:Group-2: 4 16
+:Group-2: 6 12
+:Group-2: 8 12
+:Group-2: 10 16
+:Group-2: 12 18
+:Group-2: 12 16
+:Group-1: 4 14
+:Group-1: 8 18
+:Group-1: 10 20
+:Group-1: 10 22
+:Group-1: 10 18
+:Group-1: 6 14
+:Group-1: 6 16
+:Group-1: 6 20
+:Group-1: 6 22
+:Group-1: 8 20
+:Group-1: 8 22
+:Group-1: 8 14
+:Group-1: 8 16
+:Group-8: 0 12
+:Group-9: 2 12
+:Group-8: 2 16
+:Group-9: 2 14
+:Group-9: 4 12
+:Group-3: 6 10
+:Group-3: 6 8
+:Group-3: 8 10
+:Group-3: 8 8
+:Group-3: 10 8
+:Group-3: 10 6
+:Group-3: 12 8
+:Group-3: 12 6
+:Group-3: 10 10
+:Group-3: 6 6
+:Group-3: 8 4
+:Group-3: 10 4
+:Group-4: 8 6
+:Group-8: 12 4
+:Group-8: 2 2
+:Group-9: 10 2
+:Group-9: 12 2
+:Group-9: 8 0
+:Group-9: 10 0
+:Group-9: 6 2
+:Group-9: 8 2
+:Group-9: 6 0
+:Group-9: 4 4
+:Group-9: 6 4
+:Group-9: 4 2
+:Group-9: 2 6
+:Group-9: 4 6
+:Group-9: 2 4
+:Group-9: 0 8
+:Group-9: 2 8
+:Group-9: 0 6
+:Group-9: 0 10
+:Group-9: 2 10
+:Group-9: 4 8
+:Group-9: 4 10
+$END_TILE_GROUP
+:Group-20: 233 348
+:matt/underworld/00: 256 384
+:matt/underworld/00: 320 384
+:geoo/shadow/wall/center: 288 352
+:geoo/shadow/wall/center: 288 320
+:geoo/shadow/wall/center: 320 320
+:geoo/shadow/wall/center: 320 352
+:geoo/shadow/wall/center: 352 352
+:geoo/shadow/wall/center: 352 320
+:geoo/shadow/wall/center: 384 320
+:geoo/shadow/wall/center: 384 352
+:geoo/shadow/wall/center: 416 320
+:geoo/shadow/wall/center: 416 352
+:geoo/shadow/window_broken: 446 336
+:geoo/shadow/window: 299 336
+$BEGIN_TILE_GROUP 21
+:Group-3: 10 36
+:Group-3: 12 36
+:Group-3: 8 38
+:Group-3: 10 38
+:Group-3: 12 38
+:Group-3: 14 38
+:Group-4: 6 42
+:Group-4: 2 42
+:Group-4: 4 40
+:Group-3: 0 42
+:Group-3: 2 40
+:Group-7: 6 40
+:Group-7: 2 38
+:Group-7: 4 38
+:Group-7: 4 36
+:Group-7: 6 36
+:Group-7: 6 38
+:Group-7: 4 34
+:Group-7: 6 34
+:Group-7: 6 32
+:Group-7: 10 34
+:Group-7: 12 34
+:Group-7: 12 32
+:Group-7: 8 32
+:Group-7: 10 32
+:Group-7: 8 34
+:Group-5: 8 36
+:Group-1: 4 32
+:Group-1: 12 30
+:Group-1: 10 30
+:Group-1: 8 30
+:Group-1: 4 30
+:Group-1: 6 30
+:Group-1: 10 28
+:Group-1: 8 28
+:Group-1: 4 28
+:Group-1: 6 28
+:Group-1: 10 26
+:Group-1: 8 26
+:Group-1: 4 26
+:Group-1: 6 26
+:Group-1: 10 24
+:Group-1: 8 24
+:Group-1: 6 24
+:Group-1: 10 22
+:Group-1: 10 20
+:Group-1: 12 18
+:Group-2: 6 20
+:Group-2: 6 22
+:Group-2: 8 22
+:Group-2: 8 18
+:Group-2: 8 20
+:Group-2: 10 18
+:Group-2: 10 16
+:Group-2: 12 16
+:Group-8: 16 20
+:Group-8: 18 16
+:Group-11: 6 18
+:Group-11: 8 16
+:Group-11: 10 14
+:Group-11: 14 12
+:Group-11: 16 12
+:Group-11: 14 10
+:Group-11: 16 10
+:Group-11: 18 10
+:Group-11: 18 8
+:Group-11: 16 8
+:Group-9: 18 20
+:Group-9: 18 18
+:Group-9: 16 14
+:Group-9: 16 18
+:Group-9: 16 16
+:Group-9: 14 18
+:Group-9: 14 16
+:Group-9: 10 12
+:Group-9: 10 10
+:Group-9: 8 12
+:Group-9: 8 10
+:Group-9: 6 10
+:Group-9: 6 8
+:Group-9: 4 10
+:Group-9: 4 8
+:Group-9: 12 10
+:Group-9: 8 8
+:Group-8: 10 8
+:Group-8: 2 10
+:Group-3: 12 12
+:Group-3: 14 14
+:Group-3: 12 14
+:Group-3: 4 18
+:Group-3: 8 14
+:Group-3: 6 16
+:Group-3: 6 12
+:Group-3: 4 12
+:Group-3: 4 14
+:Group-3: 4 16
+:Group-3: 2 14
+:Group-3: 2 16
+:Group-4: 6 14
+:Group-3: 20 8
+:Group-3: 20 6
+:Group-3: 18 6
+:Group-3: 24 12
+:Group-3: 24 10
+:Group-3: 22 10
+:Group-3: 26 16
+:Group-3: 26 14
+:Group-3: 24 14
+:Group-3: 26 18
+:Group-3: 26 12
+:Group-3: 16 4
+:Group-3: 16 2
+:Group-3: 14 2
+:Group-3: 12 2
+:Group-3: 12 0
+:Group-3: 10 0
+:Group-3: 24 8
+:Group-3: 22 8
+:Group-3: 22 6
+:Group-3: 20 4
+:Group-3: 18 4
+:Group-3: 18 2
+:Group-3: 8 0
+:Group-3: 14 0
+:Group-3: 4 42
+$END_TILE_GROUP
+:Group-21: 306 344
+$BEGIN_TILE_GROUP 22
+:Group-3: 0 34
+:Group-3: 2 34
+:Group-3: 2 32
+:Group-3: 4 34
+:Group-3: 4 32
+:Group-3: 12 34
+:Group-3: 8 34
+:Group-3: 8 32
+:Group-3: 10 34
+:Group-3: 10 32
+:Group-4: 6 34
+:Group-4: 6 32
+:Group-5: 6 30
+:Group-5: 6 28
+:Group-7: 8 28
+:Group-7: 8 30
+:Group-7: 10 30
+:Group-7: 10 28
+:Group-7: 2 28
+:Group-7: 2 30
+:Group-7: 4 30
+:Group-7: 4 28
+:Group-7: 4 24
+:Group-7: 4 26
+:Group-7: 6 26
+:Group-7: 6 24
+:Group-7: 8 24
+:Group-7: 8 26
+:Group-7: 10 26
+:Group-7: 10 24
+:Group-7: 2 24
+:Group-7: 2 26
+:Group-1: 8 22
+:Group-1: 6 22
+:Group-1: 4 22
+:Group-1: 2 22
+:Group-1: 8 16
+:Group-1: 6 16
+:Group-1: 6 14
+:Group-1: 8 14
+:Group-2: 10 14
+:Group-2: 10 16
+:Group-2: 12 16
+:Group-2: 14 16
+:Group-2: 14 18
+:Group-2: 2 20
+:Group-2: 0 20
+:Group-2: 0 18
+:Group-2: 0 16
+:Group-2: 2 16
+:Group-2: 2 14
+:Group-2: 4 14
+:Group-2: 6 12
+:Group-2: 8 12
+:Group-3: 12 20
+:Group-3: 10 18
+:Group-3: 12 18
+:Group-3: 4 18
+:Group-3: 4 20
+:Group-3: 6 20
+:Group-12: 6 18
+:Group-12: 8 20
+:Group-11: 10 22
+:Group-11: 10 20
+:Group-11: 2 18
+:Group-11: 8 18
+:Group-11: 4 16
+:Group-10: 12 22
+:Group-10: 14 20
+:Group-10: 14 22
+:Group-10: 14 24
+:Group-10: 16 22
+:Group-10: 16 24
+:Group-10: 18 22
+:Group-10: 18 24
+:Group-10: 18 26
+:Group-10: 20 24
+:Group-10: 20 26
+:Group-10: 22 24
+:Group-10: 22 26
+:Group-10: 24 24
+:Group-10: 24 26
+:Group-10: 26 26
+:Group-10: 26 28
+:Group-10: 28 26
+:Group-10: 28 28
+:Group-10: 22 28
+:Group-10: 26 30
+:Group-10: 24 28
+:Group-10: 24 30
+:Group-9: 4 12
+:Group-9: 2 10
+:Group-9: 10 12
+:Group-9: 12 14
+:Group-9: 12 12
+:Group-9: 12 10
+:Group-9: 14 10
+:Group-9: 10 8
+:Group-9: 12 8
+:Group-9: 12 6
+:Group-9: 14 6
+:Group-9: 14 8
+:Group-9: 10 6
+:Group-9: 10 4
+:Group-9: 12 4
+:Group-9: 8 4
+:Group-9: 8 2
+:Group-9: 10 2
+:Group-9: 6 2
+:Group-9: 6 0
+:Group-9: 8 0
+:Group-9: 2 4
+:Group-9: 2 2
+:Group-9: 4 2
+:Group-8: 14 12
+:Group-8: 12 2
+:Group-8: 4 0
+:Group-8: 0 6
+:Group-8: 2 12
+:Group-8: 0 8
+:Group-3: 10 10
+:Group-3: 6 10
+:Group-3: 6 8
+:Group-3: 8 10
+:Group-3: 8 8
+:Group-3: 8 6
+:Group-3: 6 4
+:Group-3: 4 4
+:Group-3: 4 6
+:Group-3: 2 8
+:Group-3: 4 8
+:Group-3: 4 10
+:Group-4: 2 6
+:Group-4: 6 6
+$END_TILE_GROUP
+:Group-22: 336 348
+:geoo/shadow/window: 375 336
+$BEGIN_TILE_GROUP 23
+:Group-4: 2 34
+:Group-3: 2 32
+:Group-3: 4 34
+:Group-3: 2 30
+:Group-3: 4 32
+:Group-3: 6 34
+:Group-7: 4 30
+:Group-7: 6 30
+:Group-7: 6 32
+:Group-7: 8 28
+:Group-7: 8 30
+:Group-7: 8 32
+:Group-7: 10 32
+:Group-7: 10 30
+:Group-7: 10 26
+:Group-7: 10 28
+:Group-7: 12 24
+:Group-7: 12 26
+:Group-7: 12 30
+:Group-7: 12 28
+:Group-7: 14 28
+:Group-7: 14 24
+:Group-7: 16 26
+:Group-7: 16 24
+:Group-7: 18 24
+:Group-7: 16 22
+:Group-7: 18 20
+:Group-7: 18 22
+:Group-7: 20 22
+:Group-7: 20 20
+:Group-3: 16 28
+:Group-3: 16 30
+:Group-3: 18 26
+:Group-3: 18 28
+:Group-3: 20 24
+:Group-3: 20 26
+:Group-1: 10 24
+:Group-1: 10 22
+:Group-1: 12 22
+:Group-1: 14 22
+:Group-1: 10 20
+:Group-1: 12 20
+:Group-1: 14 20
+:Group-1: 16 20
+:Group-1: 12 18
+:Group-1: 14 18
+:Group-1: 16 18
+:Group-1: 12 16
+:Group-1: 14 16
+:Group-1: 16 16
+:Group-1: 10 18
+:Group-1: 12 14
+:Group-1: 14 14
+:Group-5: 14 26
+:Group-3: 8 20
+:Group-3: 6 22
+:Group-3: 8 22
+:Group-3: 18 14
+:Group-3: 18 16
+:Group-3: 20 16
+:Group-3: 16 10
+:Group-3: 14 10
+:Group-3: 12 10
+:Group-3: 18 8
+:Group-3: 18 6
+:Group-3: 16 6
+:Group-3: 16 4
+:Group-3: 14 4
+:Group-3: 12 6
+:Group-3: 12 8
+:Group-3: 14 8
+:Group-3: 16 8
+:Group-4: 14 6
+:Group-2: 16 14
+:Group-2: 12 12
+:Group-2: 14 12
+:Group-2: 10 14
+:Group-2: 10 16
+:Group-2: 8 14
+:Group-2: 8 16
+:Group-2: 8 18
+:Group-2: 6 16
+:Group-2: 6 18
+:Group-2: 6 20
+:Group-2: 4 18
+:Group-2: 4 20
+:Group-8: 8 12
+:Group-8: 2 12
+:Group-9: 4 12
+:Group-9: 4 10
+:Group-9: 6 12
+:Group-9: 6 10
+:Group-9: 8 10
+:Group-9: 8 8
+:Group-9: 10 10
+:Group-9: 10 8
+:Group-9: 8 6
+:Group-9: 8 4
+:Group-9: 10 6
+:Group-9: 10 4
+:Group-9: 4 6
+:Group-9: 4 4
+:Group-9: 6 6
+:Group-9: 6 4
+:Group-9: 10 2
+:Group-9: 10 0
+:Group-9: 12 2
+:Group-9: 12 0
+:Group-9: 14 2
+:Group-9: 14 0
+:Group-9: 16 2
+:Group-9: 18 2
+:Group-9: 12 4
+:Group-9: 8 2
+:Group-9: 2 6
+:Group-9: 6 8
+:Group-8: 0 6
+:Group-8: 6 2
+:Group-8: 20 0
+$END_TILE_GROUP
+:Group-23: 407 348
+:geoo/shadow/wall/center: 256 256
+:geoo/shadow/wall/center: 288 256
+:geoo/shadow/wall/center: 224 240
+:geoo/shadow/wall/center: 224 224
+$BEGIN_TILE_GROUP 24
+:Group-4: 24 50
+:Group-3: 22 50
+:Group-4: 26 48
+:Group-3: 24 48
+:Group-3: 20 50
+:Group-3: 22 48
+:Group-3: 24 46
+:Group-3: 28 48
+:Group-3: 28 46
+:Group-3: 30 46
+:Group-3: 28 44
+:Group-3: 30 44
+:Group-7: 26 46
+:Group-7: 20 48
+:Group-7: 18 48
+:Group-7: 22 46
+:Group-7: 20 46
+:Group-7: 18 46
+:Group-7: 26 44
+:Group-7: 24 44
+:Group-7: 26 42
+:Group-7: 24 42
+:Group-7: 20 44
+:Group-7: 18 44
+:Group-7: 20 42
+:Group-7: 18 42
+:Group-7: 24 40
+:Group-7: 22 40
+:Group-7: 24 38
+:Group-7: 22 42
+:Group-7: 20 40
+:Group-1: 18 40
+:Group-1: 18 38
+:Group-1: 20 38
+:Group-1: 22 38
+:Group-1: 18 36
+:Group-1: 20 36
+:Group-1: 22 36
+:Group-1: 24 36
+:Group-1: 20 34
+:Group-1: 22 34
+:Group-1: 24 34
+:Group-1: 22 32
+:Group-1: 24 32
+:Group-1: 22 30
+:Group-9: 20 32
+:Group-9: 18 34
+:Group-9: 16 32
+:Group-9: 18 32
+:Group-9: 18 30
+:Group-9: 14 30
+:Group-9: 16 30
+:Group-9: 16 28
+:Group-9: 12 26
+:Group-9: 14 26
+:Group-9: 14 24
+:Group-9: 14 28
+:Group-9: 16 26
+:Group-9: 14 22
+:Group-8: 16 34
+:Group-8: 14 32
+:Group-8: 12 28
+:Group-8: 12 24
+:Group-8: 14 20
+:Group-8: 28 14
+:Group-5: 22 44
+:Group-2: 20 30
+:Group-2: 18 28
+:Group-2: 20 28
+:Group-2: 22 28
+:Group-2: 18 26
+:Group-2: 20 26
+:Group-2: 16 24
+:Group-2: 18 24
+:Group-2: 16 22
+:Group-2: 18 22
+:Group-2: 16 20
+:Group-2: 18 20
+:Group-2: 16 18
+:Group-2: 18 18
+:Group-2: 20 24
+:Group-2: 20 22
+:Group-3: 22 26
+:Group-3: 24 26
+:Group-3: 22 24
+:Group-3: 24 24
+:Group-3: 24 22
+:Group-3: 26 22
+:Group-3: 24 20
+:Group-3: 26 24
+:Group-3: 22 20
+:Group-4: 22 22
+:Group-9: 20 18
+:Group-9: 22 18
+:Group-9: 24 18
+:Group-9: 22 16
+:Group-9: 24 16
+:Group-9: 26 16
+:Group-9: 20 20
+:Group-9: 20 16
+:Group-3: 16 16
+:Group-3: 18 16
+:Group-3: 16 14
+:Group-3: 22 14
+:Group-11: 20 14
+:Group-12: 18 14
+:Group-11: 20 12
+:Group-12: 18 12
+:Group-13: 22 10
+:Group-13: 20 10
+:Group-13: 18 10
+:Group-13: 16 10
+:Group-15: 24 10
+:Group-15: 24 8
+:Group-15: 14 10
+:Group-15: 14 8
+:Group-13: 22 8
+:Group-13: 20 8
+:Group-13: 18 8
+:Group-13: 16 8
+:Group-13: 22 6
+:Group-13: 20 6
+:Group-13: 18 6
+:Group-13: 16 6
+:Group-13: 22 4
+:Group-13: 20 4
+:Group-13: 18 4
+:Group-13: 16 4
+:Group-13: 20 2
+:Group-13: 18 2
+:Group-13: 16 0
+:Group-13: 14 0
+:Group-13: 12 2
+:Group-13: 10 2
+:Group-13: 10 4
+:Group-13: 8 4
+:Group-13: 6 4
+:Group-13: 24 0
+:Group-13: 22 0
+:Group-13: 28 2
+:Group-13: 26 2
+:Group-13: 8 6
+:Group-13: 6 6
+:Group-13: 4 6
+:Group-13: 6 8
+:Group-13: 4 8
+:Group-13: 2 8
+:Group-13: 4 10
+:Group-13: 2 10
+:Group-13: 0 10
+:Group-13: 32 4
+:Group-13: 30 4
+:Group-13: 28 4
+:Group-13: 34 6
+:Group-13: 32 6
+:Group-13: 30 6
+:Group-13: 36 8
+:Group-13: 34 8
+:Group-13: 32 8
+:Group-13: 38 10
+:Group-13: 36 10
+:Group-13: 34 10
+:Group-16: 18 0
+:Group-16: 20 0
+:Group-16: 22 2
+:Group-16: 24 2
+:Group-16: 24 4
+:Group-16: 26 4
+:Group-16: 12 4
+:Group-16: 14 4
+:Group-16: 14 2
+:Group-16: 16 2
+:Group-16: 6 10
+:Group-16: 8 10
+:Group-16: 10 10
+:Group-16: 12 10
+:Group-16: 26 10
+:Group-16: 28 10
+:Group-16: 30 10
+:Group-16: 32 10
+:Group-16: 24 6
+:Group-16: 26 6
+:Group-16: 28 6
+:Group-16: 26 8
+:Group-16: 28 8
+:Group-16: 30 8
+:Group-16: 8 8
+:Group-16: 10 8
+:Group-16: 12 8
+:Group-16: 10 6
+:Group-16: 12 6
+:Group-16: 14 6
+$END_TILE_GROUP
+:Group-24: 251 221
+:geoo/shadow/window: 224 192
+:geoo/shadow/window_broken: 224 264
+:geoo/shadow/window: 299 264
+:geoo/shadow/wall/right: 480 256
+:geoo/shadow/wall/right: 480 224
+:geoo/shadow/wall/right: 480 192
+:geoo/shadow/window: 448 192
+$BEGIN_TILE_GROUP 25
+:Group-3: 2 4
+:Group-3: 0 6
+:Group-3: 2 6
+:Group-3: 2 8
+:Group-3: 4 6
+:Group-3: 8 4
+:Group-3: 10 4
+:Group-3: 10 0
+:Group-3: 8 2
+:Group-3: 10 2
+:Group-7: 10 6
+:Group-7: 8 6
+:Group-7: 4 8
+:Group-7: 8 8
+:Group-7: 12 8
+:Group-7: 10 8
+:Group-7: 4 10
+:Group-7: 2 10
+:Group-7: 4 12
+:Group-7: 2 12
+:Group-7: 12 10
+:Group-7: 10 10
+:Group-7: 12 12
+:Group-7: 10 12
+:Group-7: 6 14
+:Group-7: 4 14
+:Group-7: 6 16
+:Group-7: 4 16
+:Group-7: 10 14
+:Group-7: 8 14
+:Group-7: 10 16
+:Group-7: 8 16
+:Group-7: 6 12
+:Group-7: 6 18
+:Group-7: 12 14
+:Group-1: 14 12
+:Group-1: 12 16
+:Group-1: 8 18
+:Group-1: 8 20
+:Group-1: 10 18
+:Group-1: 10 20
+:Group-1: 12 18
+:Group-1: 12 20
+:Group-1: 10 22
+:Group-1: 10 24
+:Group-1: 12 22
+:Group-1: 12 24
+:Group-1: 14 22
+:Group-1: 14 24
+:Group-1: 12 26
+:Group-9: 14 14
+:Group-9: 16 12
+:Group-9: 16 14
+:Group-9: 20 14
+:Group-9: 20 12
+:Group-9: 24 14
+:Group-9: 24 16
+:Group-9: 22 16
+:Group-9: 22 18
+:Group-9: 20 16
+:Group-9: 20 18
+:Group-9: 18 16
+:Group-9: 18 18
+:Group-9: 16 16
+:Group-9: 16 18
+:Group-9: 14 16
+:Group-9: 14 18
+:Group-9: 16 22
+:Group-9: 16 24
+:Group-9: 18 20
+:Group-9: 16 20
+:Group-9: 14 20
+:Group-3: 20 20
+:Group-3: 22 20
+:Group-3: 22 22
+:Group-3: 24 22
+:Group-3: 22 24
+:Group-3: 24 24
+:Group-3: 18 22
+:Group-3: 18 24
+:Group-3: 20 24
+:Group-3: 18 26
+:Group-3: 20 26
+:Group-3: 22 26
+:Group-4: 20 22
+:Group-1: 26 30
+:Group-1: 22 28
+:Group-1: 24 26
+:Group-1: 24 28
+:Group-1: 26 26
+:Group-1: 26 28
+:Group-3: 28 28
+:Group-3: 30 28
+:Group-3: 28 30
+:Group-3: 24 32
+:Group-3: 26 32
+:Group-3: 24 34
+:Group-2: 14 26
+:Group-2: 16 26
+:Group-2: 14 28
+:Group-2: 22 34
+:Group-2: 16 28
+:Group-2: 18 28
+:Group-2: 16 30
+:Group-2: 18 30
+:Group-2: 20 30
+:Group-2: 18 32
+:Group-2: 20 32
+:Group-2: 22 32
+:Group-2: 22 30
+:Group-8: 18 14
+:Group-8: 22 14
+:Group-8: 24 12
+:Group-8: 20 10
+$END_TILE_GROUP
+:Group-25: 469 221
+$BEGIN_TILE_GROUP 26
+:Group-3: 0 18
+:Group-3: 2 18
+:Group-3: 2 16
+:Group-2: 4 16
+:Group-2: 6 14
+:Group-2: 8 14
+:Group-2: 12 12
+:Group-2: 14 12
+:Group-2: 16 12
+:Group-2: 22 14
+:Group-2: 22 16
+:Group-2: 24 16
+:Group-3: 28 18
+:Group-3: 26 18
+:Group-3: 26 16
+:Group-1: 4 18
+:Group-1: 6 18
+:Group-1: 6 16
+:Group-1: 8 16
+:Group-1: 24 18
+:Group-1: 20 16
+:Group-1: 18 14
+:Group-1: 18 16
+:Group-1: 16 14
+:Group-1: 16 16
+:Group-1: 14 14
+:Group-1: 14 16
+:Group-1: 12 14
+:Group-1: 12 16
+:Group-1: 10 14
+:Group-1: 10 16
+:Group-9: 8 12
+:Group-9: 20 14
+:Group-9: 10 12
+:Group-9: 8 10
+:Group-9: 10 10
+:Group-9: 20 12
+:Group-9: 22 12
+:Group-9: 20 10
+:Group-9: 22 10
+:Group-9: 18 6
+:Group-9: 20 6
+:Group-9: 18 4
+:Group-9: 20 4
+:Group-9: 14 2
+:Group-9: 16 2
+:Group-9: 14 0
+:Group-9: 16 0
+:Group-9: 18 8
+:Group-9: 20 8
+:Group-9: 18 12
+:Group-9: 18 10
+:Group-9: 8 8
+:Group-9: 8 6
+:Group-9: 10 4
+:Group-9: 10 2
+:Group-9: 12 2
+:Group-9: 12 0
+:Group-9: 8 4
+:Group-8: 8 2
+:Group-8: 10 0
+:Group-8: 20 2
+:Group-8: 22 8
+:Group-8: 18 0
+:Group-9: 18 2
+:Group-3: 10 8
+:Group-3: 12 8
+:Group-3: 12 6
+:Group-3: 12 10
+:Group-3: 14 10
+:Group-3: 14 8
+:Group-3: 16 8
+:Group-3: 16 6
+:Group-3: 16 10
+:Group-3: 14 4
+:Group-3: 12 4
+:Group-3: 16 4
+:Group-4: 10 6
+:Group-4: 14 6
+$END_TILE_GROUP
+:Group-26: 375 204
+:geoo/shadow/wall/center: 456 16
+:geoo/shadow/wall/center: 424 16
+:geoo/shadow/wall/center: 424 -16
+:geoo/shadow/wall/center: 456 -16
+:geoo/shadow/wall/right: 120 104 d
+$BEGIN_TILE_GROUP 27
+:Group-13: 0 42
+:Group-13: 2 42
+:Group-13: 4 42
+:Group-13: 6 42
+:Group-13: 8 42
+:Group-13: 10 42
+:Group-13: 12 42
+:Group-13: 14 42
+:Group-13: 16 42
+:Group-13: 18 42
+:Group-13: 20 42
+:Group-15: 0 44
+:Group-15: 22 42
+:Group-16: 2 44
+:Group-16: 4 44
+:Group-16: 6 44
+:Group-16: 8 44
+:Group-16: 10 44
+:Group-16: 12 44
+:Group-16: 14 44
+:Group-16: 16 44
+:Group-16: 18 44
+:Group-16: 20 44
+:Group-16: 22 44
+:Group-13: 8 38
+:Group-13: 10 38
+:Group-13: 12 38
+:Group-13: 14 38
+:Group-13: 16 38
+:Group-13: 18 38
+:Group-13: 20 38
+:Group-13: 22 38
+:Group-13: 24 38
+:Group-13: 26 38
+:Group-13: 28 38
+:Group-15: 8 40
+:Group-15: 30 38
+:Group-16: 10 40
+:Group-16: 12 40
+:Group-16: 14 40
+:Group-16: 16 40
+:Group-16: 18 40
+:Group-16: 20 40
+:Group-16: 22 40
+:Group-16: 24 40
+:Group-16: 26 40
+:Group-16: 28 40
+:Group-16: 30 40
+:Group-13: 16 34
+:Group-13: 18 34
+:Group-13: 20 34
+:Group-13: 22 34
+:Group-13: 24 34
+:Group-13: 26 34
+:Group-13: 28 34
+:Group-13: 30 34
+:Group-13: 32 34
+:Group-13: 34 34
+:Group-13: 36 34
+:Group-15: 16 36
+:Group-15: 38 34
+:Group-16: 18 36
+:Group-16: 20 36
+:Group-16: 22 36
+:Group-16: 24 36
+:Group-16: 26 36
+:Group-16: 28 36
+:Group-16: 30 36
+:Group-16: 32 36
+:Group-16: 34 36
+:Group-16: 36 36
+:Group-16: 38 36
+:Group-3: 34 32
+:Group-3: 32 32
+:Group-3: 30 30
+:Group-3: 32 30
+:Group-3: 28 32
+:Group-3: 26 32
+:Group-3: 24 30
+:Group-3: 26 30
+:Group-3: 22 32
+:Group-3: 24 32
+:Group-4: 28 30
+:Group-5: 28 28
+:Group-5: 28 26
+:Group-4: 30 32
+:Group-7: 28 24
+:Group-7: 30 28
+:Group-7: 30 26
+:Group-7: 30 24
+:Group-7: 24 28
+:Group-7: 24 26
+:Group-7: 24 24
+:Group-7: 26 28
+:Group-7: 26 26
+:Group-7: 26 24
+:Group-7: 22 24
+:Group-7: 22 22
+:Group-7: 24 22
+:Group-7: 26 22
+:Group-1: 30 22
+:Group-1: 28 22
+:Group-1: 28 20
+:Group-1: 26 20
+:Group-1: 24 20
+:Group-1: 26 18
+:Group-1: 24 18
+:Group-1: 28 18
+:Group-1: 26 16
+:Group-1: 24 16
+:Group-1: 28 16
+:Group-1: 26 14
+:Group-1: 26 12
+:Group-1: 26 10
+:Group-1: 30 12
+:Group-1: 34 16
+:Group-2: 28 12
+:Group-2: 34 18
+:Group-2: 34 20
+:Group-2: 32 20
+:Group-2: 28 14
+:Group-2: 30 14
+:Group-2: 30 18
+:Group-2: 32 18
+:Group-2: 30 16
+:Group-2: 32 16
+:Group-3: 38 20
+:Group-3: 36 18
+:Group-3: 38 18
+:Group-3: 36 20
+:Group-3: 30 10
+:Group-3: 28 8
+:Group-3: 30 8
+:Group-3: 28 10
+:Group-3: 34 10
+:Group-3: 32 8
+:Group-3: 34 8
+:Group-3: 32 10
+:Group-3: 34 6
+:Group-3: 32 4
+:Group-3: 34 4
+:Group-3: 30 6
+:Group-3: 36 8
+:Group-3: 36 6
+:Group-4: 32 6
+:Group-10: 24 14
+:Group-10: 22 12
+:Group-10: 24 12
+:Group-10: 22 14
+:Group-10: 18 12
+:Group-10: 16 10
+:Group-10: 18 10
+:Group-10: 16 12
+:Group-10: 22 20
+:Group-10: 20 18
+:Group-10: 22 18
+:Group-10: 20 20
+:Group-10: 20 16
+:Group-10: 18 14
+:Group-10: 20 14
+:Group-10: 18 16
+:Group-10: 16 14
+:Group-10: 18 18
+:Group-10: 22 16
+:Group-9: 20 12
+:Group-9: 20 10
+:Group-9: 24 10
+:Group-9: 22 10
+:Group-9: 20 8
+:Group-9: 24 8
+:Group-9: 22 8
+:Group-9: 26 8
+:Group-9: 22 6
+:Group-9: 26 6
+:Group-9: 24 6
+:Group-9: 28 6
+:Group-9: 24 4
+:Group-9: 28 4
+:Group-9: 26 4
+:Group-9: 30 4
+:Group-9: 28 2
+:Group-9: 32 2
+:Group-9: 30 2
+:Group-9: 34 2
+:Group-9: 28 0
+:Group-9: 30 0
+:Group-9: 24 2
+:Group-9: 26 2
+:Group-9: 22 4
+:Group-8: 20 6
+:Group-8: 26 0
+:Group-8: 36 4
+:Group-8: 32 0
+:Group-13: 38 16
+:Group-13: 38 14
+:Group-15: 40 14
+:Group-16: 42 14
+:Group-16: 40 18
+:Group-16: 40 16
+:Group-13: 40 12
+:Group-13: 40 10
+:Group-15: 42 10
+:Group-16: 44 10
+:Group-16: 42 12
+:Group-13: 42 8
+:Group-13: 42 6
+:Group-15: 44 6
+:Group-16: 46 6
+:Group-16: 44 8
+:Group-13: 44 4
+:Group-13: 44 2
+:Group-15: 46 2
+:Group-16: 46 4
+$END_TILE_GROUP
+:Group-27: 96 114

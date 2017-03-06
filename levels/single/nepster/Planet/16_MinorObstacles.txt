@@ -1,0 +1,259 @@
+$BUILT 2016-07-18 21:30:40
+$AUTHOR Nepster
+$ENGLISH Minor Obstacles
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 832
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 10
+#SPAWN_INTERVAL 20
+
+#CLIMBER 2
+#EXPLODER 2
+#BLOCKER 2
+#BUILDER 2
+#BASHER 2
+#MINER 2
+#DIGGER 2
+
+:simon/hatch001.H: 32 198
+
+:proxima/tile/goal.G: 768 272
+
+:proxima/tile/cyan3a: 384 144 fr
+$BEGIN_TILE_GROUP 0
+:proxima/tile/cyan3a: 0 2 frr
+:proxima/tile/blue2as: 2 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:proxima/tile/cyan3a: 0 0
+:geoo/construction/platformbrick: 30 0 rrrd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:proxima/tile/cyan3a: 31 2 fr
+:Group-0: 29 2
+:Group-1: 1 2
+:proxima/tile/blue1as: -1 0 d
+$END_TILE_GROUP
+:Group-2: 386 144
+:proxima/tile/cyan3a: 414 304 frr
+:proxima/tile/cyan3a: 414 272 frr
+:proxima/tile/cyan3a: 414 240 frr
+:proxima/tile/cyan3a: 414 208 frr
+:proxima/tile/cyan3a: 414 176 frr
+:proxima/tile/spheres/blue: 646 182 frr
+:proxima/tile/spheres/blue: 122 183
+:amanda/steel/steel32x32.S: 0 336
+:amanda/steel/steel32x32.S: 32 336
+:amanda/steel/steel32x32.S: 160 336
+:amanda/steel/steel32x32.S: 192 336
+:amanda/steel/steel32x32.S: 224 336
+:amanda/steel/steel32x32.S: 256 336
+:amanda/steel/steel32x32.S: 288 336
+:amanda/steel/steel32x32.S: 320 336
+:amanda/steel/steel32x32.S: 352 336
+:amanda/steel/steel32x32.S: 384 336
+:amanda/steel/steel32x32.S: 416 336
+:amanda/steel/steel32x32.S: 448 336
+:amanda/steel/steel32x32.S: 480 336
+:amanda/steel/steel32x32.S: 512 336
+:amanda/steel/steel32x32.S: 544 336
+:amanda/steel/steel32x32.S: 576 336
+:amanda/steel/steel32x32.S: 608 336
+:proxima/tile/blue1: 208 272
+:proxima/tile/blue1: 272 208
+:proxima/tile/blue1: 272 272
+:proxima/tile/blue1: 208 208
+:proxima/tile/blue1: 208 128
+:proxima/tile/blue1: 272 128
+:proxima/tile/blue1: 272 64
+:proxima/tile/blue1: 208 64
+:amanda/steel/steel32x32.S: 0 32
+:amanda/steel/steel32x32.S: 32 32
+:amanda/steel/steel32x32.S: 160 32
+:amanda/steel/steel32x32.S: 192 32
+:amanda/steel/steel32x32.S: 224 32
+:amanda/steel/steel32x32.S: 256 32
+:amanda/steel/steel32x32.S: 288 32
+:amanda/steel/steel32x32.S: 320 32
+:amanda/steel/steel32x32.S: 352 32
+:amanda/steel/steel32x32.S: 384 32
+:amanda/steel/steel32x32.S: 416 32
+:amanda/steel/steel32x32.S: 448 32
+:amanda/steel/steel32x32.S: 480 32
+:amanda/steel/steel32x32.S: 512 32
+:amanda/steel/steel32x32.S: 544 32
+:amanda/steel/steel32x32.S: 576 32
+:amanda/steel/steel32x32.S: 608 32
+:proxima/tile/spheres/blue: 122 192
+:proxima/tile/spheres/blue: 122 204
+:proxima/tile/spheres/blue: 122 216
+:proxima/tile/spheres/blue: 120 226
+:proxima/tile/spheres/blue: 118 236
+:proxima/tile/spheres/blue: 114 244
+:proxima/tile/spheres/blue: 110 252
+:proxima/tile/spheres/blue: 104 258
+:proxima/tile/spheres/blue: 98 264
+:proxima/tile/spheres/blue: 92 270
+:proxima/tile/spheres/blue: 88 278
+:proxima/tile/spheres/blue: 84 286
+:proxima/tile/spheres/blue: 82 296
+:proxima/tile/spheres/blue: 80 304
+:proxima/tile/spheres/blue: 80 316
+:proxima/tile/spheres/blue: 80 328
+:amanda/steel/steel32x32.S: 64 336
+:amanda/steel/steel32x32.S: 96 336
+:proxima/tile/spheres/blue: 30 146 rr
+:proxima/tile/spheres/blue: 30 134 rr
+:proxima/tile/spheres/blue: 30 122 rr
+:proxima/tile/spheres/blue: 32 112 rr
+:proxima/tile/spheres/blue: 34 102 rr
+:proxima/tile/spheres/blue: 38 94 rr
+:proxima/tile/spheres/blue: 42 86 rr
+:proxima/tile/spheres/blue: 48 80 rr
+:proxima/tile/spheres/blue: 54 74 rr
+:proxima/tile/spheres/blue: 60 68 rr
+:proxima/tile/spheres/blue: 64 60 rr
+:proxima/tile/spheres/blue: 68 52 rr
+:proxima/tile/spheres/blue: 70 42 rr
+:proxima/tile/spheres/blue: 72 34 rr
+:proxima/tile/spheres/blue: 72 22 rr
+:proxima/tile/spheres/blue: 72 10 rr
+:amanda/steel/steel32x32.S: 64 32
+:amanda/steel/steel32x32.S: 96 32
+:amanda/steel/steel32x32.S: 0 0
+:amanda/steel/steel32x32.S: 32 0
+:amanda/steel/steel32x32.S: 64 0
+:amanda/steel/steel32x32.S: 96 0
+:amanda/steel/steel32x32.S: 128 0
+:amanda/steel/steel32x32.S: 160 0
+:amanda/steel/steel32x32.S: 192 0
+:amanda/steel/steel32x32.S: 224 0
+:amanda/steel/steel32x32.S: 256 0
+:amanda/steel/steel32x32.S: 288 0
+:amanda/steel/steel32x32.S: 320 0
+:amanda/steel/steel32x32.S: 0 368
+:amanda/steel/steel32x32.S: 32 368
+:amanda/steel/steel32x32.S: 64 368
+:amanda/steel/steel32x32.S: 96 368
+:amanda/steel/steel32x32.S: 128 368
+:amanda/steel/steel32x32.S: 160 368
+:amanda/steel/steel32x32.S: 192 368
+:amanda/steel/steel32x32.S: 224 368
+:amanda/steel/steel32x32.S: 256 368
+:amanda/steel/steel32x32.S: 288 368
+:amanda/steel/steel32x32.S: 320 368
+:amanda/steel/steel32x32.S: 352 368
+:amanda/steel/steel32x32.S: 384 368
+:amanda/steel/steel32x32.S: 416 368
+:amanda/steel/steel32x32.S: 448 368
+:amanda/steel/steel32x32.S: 480 368
+:amanda/steel/steel32x32.S: 512 368
+:amanda/steel/steel32x32.S: 544 368
+:amanda/steel/steel32x32.S: 576 368
+:amanda/steel/steel32x32.S: 608 368
+:amanda/steel/steel32x32.S: 352 0
+:amanda/steel/steel32x32.S: 384 0
+:amanda/steel/steel32x32.S: 416 0
+:amanda/steel/steel32x32.S: 448 0
+:amanda/steel/steel32x32.S: 480 0
+:amanda/steel/steel32x32.S: 512 0
+:amanda/steel/steel32x32.S: 544 0
+:amanda/steel/steel32x32.S: 576 0
+:amanda/steel/steel32x32.S: 608 0
+:Group-1: 386 304
+:Group-1: 386 272
+:Group-1: 386 240
+:Group-1: 386 208
+:Group-1: 386 176
+:geoo/abstract/pipes/central4: 372 304 rrr
+:geoo/abstract/pipes/central4: 372 272 rrr
+:geoo/abstract/pipes/central4: 452 304 rrr
+:geoo/abstract/pipes/central4: 452 272 rrr
+:amanda/steel/steel32x32.S: 640 336
+:amanda/steel/steel32x32.S: 768 336
+:amanda/steel/steel32x32.S: 800 336
+:proxima/tile/spheres/blue: 646 192 frr
+:proxima/tile/spheres/blue: 646 204 frr
+:proxima/tile/spheres/blue: 646 216 frr
+:proxima/tile/spheres/blue: 648 226 frr
+:proxima/tile/spheres/blue: 650 236 frr
+:proxima/tile/spheres/blue: 654 244 frr
+:proxima/tile/spheres/blue: 658 252 frr
+:proxima/tile/spheres/blue: 664 258 frr
+:proxima/tile/spheres/blue: 670 264 frr
+:proxima/tile/spheres/blue: 676 270 frr
+:proxima/tile/spheres/blue: 680 278 frr
+:proxima/tile/spheres/blue: 684 286 frr
+:proxima/tile/spheres/blue: 686 296 frr
+:proxima/tile/spheres/blue: 688 304 frr
+:proxima/tile/spheres/blue: 688 316 frr
+:proxima/tile/spheres/blue: 688 328 frr
+:amanda/steel/steel32x32.S: 704 336
+:amanda/steel/steel32x32.S: 736 336
+:proxima/tile/spheres/blue: 738 146 f
+:proxima/tile/spheres/blue: 738 134 f
+:proxima/tile/spheres/blue: 738 122 f
+:proxima/tile/spheres/blue: 736 112 f
+:proxima/tile/spheres/blue: 734 102 f
+:proxima/tile/spheres/blue: 730 94 f
+:proxima/tile/spheres/blue: 726 86 f
+:proxima/tile/spheres/blue: 720 80 f
+:proxima/tile/spheres/blue: 714 74 f
+:proxima/tile/spheres/blue: 708 68 f
+:proxima/tile/spheres/blue: 704 60 f
+:proxima/tile/spheres/blue: 700 52 f
+:proxima/tile/spheres/blue: 698 42 f
+:proxima/tile/spheres/blue: 696 34 f
+:proxima/tile/spheres/blue: 696 22 f
+:proxima/tile/spheres/blue: 696 10 f
+:amanda/steel/steel32x32.S: 640 368
+:amanda/steel/steel32x32.S: 672 368
+:amanda/steel/steel32x32.S: 704 368
+:amanda/steel/steel32x32.S: 736 368
+:amanda/steel/steel32x32.S: 768 368
+:amanda/steel/steel32x32.S: 800 368
+:amanda/steel/steel32x32.S: 640 32
+:amanda/steel/steel32x32.S: 672 32
+:amanda/steel/steel32x32.S: 704 32
+:amanda/steel/steel32x32.S: 736 32
+:amanda/steel/steel32x32.S: 768 32
+:amanda/steel/steel32x32.S: 800 32
+:amanda/steel/steel32x32.S: 640 0
+:amanda/steel/steel32x32.S: 672 0
+:amanda/steel/steel32x32.S: 704 0
+:amanda/steel/steel32x32.S: 736 0
+:amanda/steel/steel32x32.S: 768 0
+:amanda/steel/steel32x32.S: 800 0
+:proxima/tile/blue1a: 272 208 d
+:proxima/tile/blue1a: 208 128 rrd
+:proxima/tile/blue1b: 208 144
+:proxima/tile/blue1b: 272 192 rr
+:proxima/tile/blue1: 560 272 frr
+:proxima/tile/blue1: 496 208 frr
+:proxima/tile/blue1: 496 272 frr
+:proxima/tile/blue1: 560 208 frr
+:proxima/tile/blue1: 560 128 frr
+:proxima/tile/blue1: 496 128 frr
+:proxima/tile/blue1: 496 64 frr
+:proxima/tile/blue1: 560 64 frr
+:proxima/tile/blue1a: 496 208 frrd
+:proxima/tile/blue1a: 560 128 fd
+:proxima/tile/blue1b: 560 144 frr
+:proxima/tile/blue1b: 496 192 f
+:geoo/construction/platformbrick: 458 304 rrrd
+:geoo/construction/platformbrick: 458 272 rrrd
+:geoo/construction/platformbrick: 452 272 rrrd
+:geoo/construction/platformbrick: 452 304 rrrd
+:geoo/construction/platformbrick: 378 304 rrrd
+:geoo/construction/platformbrick: 378 272 rrrd
+:geoo/construction/platformbrick: 372 304 rrrd
+:geoo/construction/platformbrick: 372 272 rrrd
+:geoo/construction/platformbrick: 384 144 rrrd
+:geoo/construction/platformbrick: 446 144 rrrd
+:amanda/steel/steel32x32.S: 672 336
+:amanda/steel/steel32x32.S: 128 32
+:amanda/steel/steel32x32.S: 128 336

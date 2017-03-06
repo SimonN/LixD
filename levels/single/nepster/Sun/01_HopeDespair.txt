@@ -1,0 +1,256 @@
+$BUILT 2017-03-07 21:33:09
+$AUTHOR Nepster
+$ENGLISH Hope and Despair
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 864
+#SIZE_Y 400
+
+#INITIAL 2
+#REQUIRED 2
+#SPAWN_INTERVAL 5
+
+#CLIMBER 1
+#FLOATER 1
+#BLOCKER 2
+#BUILDER 2
+#BASHER 2
+#MINER 1
+#DIGGER 1
+#EXPLODER 0
+
+:simon/hatch001.H: 184 272
+
+:matt/bricks/Goal.G: 16 240
+
+:geoo/sandstone/brazier.F: 432 76
+
+:matt/bricks/18: 688 248 r
+$BEGIN_TILE_GROUP 0
+:matt/bricks/18: 0 40 rrr
+:matt/bricks/18: 42 32 frr
+:matt/bricks/18: 42 0 frr
+:matt/bricks/08: 18 16 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:matt/bricks/18: 0 32
+:matt/bricks/18: 0 0
+:matt/bricks/10: 8 16 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:matt/bricks/18: 24 40 rrr
+:Group-0: 6 0
+:matt/bricks/18: 0 64
+:Group-1: 0 0
+:matt/bricks/09: 8 47 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:matt/bricks/18: 8 40 r
+:Group-2: 0 0
+:matt/bricks/18: 48 64 frr
+:matt/bricks/11: 24 47 d
+$END_TILE_GROUP
+:Group-3: 664 208
+:matt/bricks/18: 696 144 r
+:matt/bricks/18: 664 144 r
+:amanda/steel/steel32x32.S: 0 368
+:amanda/steel/steel32x32.S: 0 336
+:amanda/steel/steel32x32.S: 0 304
+:amanda/steel/steel32x32.S: 0 272
+:amanda/steel/steel32x32.S: 0 240
+:amanda/steel/steel32x32.S: 0 208
+:amanda/steel/steel32x32.S: 0 176
+:amanda/steel/steel32x32.S: 0 144
+:amanda/steel/steel32x32.S: 0 112
+:amanda/steel/steel32x32.S: 0 80
+:amanda/steel/steel32x32.S: 0 16
+:amanda/steel/steel32x32.S: 0 -16
+:amanda/steel/steel32x32.S: 832 368
+:amanda/steel/steel32x32.S: 832 336
+:amanda/steel/steel32x32.S: 832 304
+:amanda/steel/steel32x32.S: 832 272
+:amanda/steel/steel32x32.S: 832 240
+:amanda/steel/steel32x32.S: 832 208
+:amanda/steel/steel32x32.S: 832 176
+:amanda/steel/steel32x32.S: 832 144
+:amanda/steel/steel32x32.S: 832 16
+:amanda/steel/steel32x32.S: 832 -16
+:amanda/steel/steel32x32.S: 128 368
+:amanda/steel/steel32x32.S: 128 336
+:amanda/steel/steel32x32.S: 128 304
+:amanda/steel/steel32x32.S: 128 272
+:amanda/steel/steel32x32.S: 128 240
+:amanda/steel/steel32x32.S: 128 208
+:amanda/steel/steel32x32.S: 128 176
+:matt/bricks/10: 192 368
+:matt/bricks/11: 224 368
+:matt/bricks/10: 224 336
+:matt/bricks/09: 384 368
+:matt/bricks/08: 384 336
+:matt/bricks/08: 416 368
+:matt/bricks/10: 416 368
+:matt/bricks/10: 448 336
+:matt/bricks/11: 448 368
+:matt/bricks/12: 480 336
+:matt/bricks/12: 512 336
+:matt/bricks/12: 544 336
+:matt/bricks/12: 576 336
+:matt/bricks/12: 704 336
+:matt/bricks/12: 736 336
+:matt/bricks/09: 768 368
+:matt/bricks/08: 768 336
+:matt/bricks/08: 800 368
+:matt/bricks/12: 608 336
+:matt/bricks/12: 672 336
+:matt/bricks/17: 496 280
+:matt/bricks/17: 584 208
+:matt/bricks/17: 592 280 frr
+:matt/bricks/17: 504 208 frr
+:matt/bricks/17: 496 136
+:matt/bricks/17: 592 136 frr
+:matt/bricks/17: 504 64 frr
+:matt/bricks/17: 512 264
+:matt/bricks/17: 576 264 frr
+:matt/bricks/17: 600 192
+:matt/bricks/17: 576 120 frr
+:matt/bricks/17: 488 192 frr
+:matt/bricks/17: 512 120
+:matt/bricks/17: 456 16 frr
+:matt/bricks/17: 408 256 frr
+$BEGIN_TILE_GROUP 4
+:matt/bricks/17: 43 0
+:matt/bricks/17: 27 16
+:matt/bricks/18: 11 16 frr
+:matt/bricks/11: 0 10 d
+$END_TILE_GROUP
+:Group-4: 712 128
+:matt/bricks/17: 768 248
+:matt/bricks/17: 736 280
+:matt/bricks/17: 776 0 frr
+:matt/bricks/17: 24 0
+:matt/bricks/18: 664 304
+:matt/bricks/18: 664 176
+$BEGIN_TILE_GROUP 5
+:matt/bricks/18: 3 4
+:matt/bricks/09: 0 0 d
+$END_TILE_GROUP
+:Group-5: 664 144
+:matt/bricks/18: 712 304 frr
+:matt/bricks/18: 712 176 frr
+:matt/bricks/17: 592 72
+:matt/bricks/17: 608 72
+:matt/bricks/17: 624 72
+:matt/bricks/17: 640 72
+:matt/bricks/17: 656 72
+:matt/bricks/17: 672 72
+:matt/bricks/17: 688 72
+:matt/bricks/17: 704 72
+:matt/bricks/17: 720 72
+:matt/bricks/17: 736 72
+:matt/bricks/17: 752 72
+:matt/bricks/17: 768 72
+:matt/bricks/17: 784 72
+:matt/bricks/17: 800 72
+:matt/bricks/19: 656 320
+:matt/bricks/19: 704 320 frr
+:matt/bricks/12: 640 336
+:matt/bricks/03: 360 208
+:matt/bricks/17: 120 96
+:matt/bricks/03: 360 144
+:matt/bricks/03: 232 144
+:matt/bricks/03: 200 144
+:matt/bricks/03: 200 80
+:matt/bricks/03: 264 80
+:matt/bricks/03: 376 96
+:matt/bricks/11: 256 336
+:matt/bricks/09: 352 336
+:matt/bricks/03: 296 144
+:matt/bricks/03: 328 80
+:matt/bricks/03: 296 208
+:matt/bricks/03: 200 208
+:matt/bricks/03: 232 208
+:matt/bricks/01: 96 144
+:matt/bricks/01: 64 144
+:matt/bricks/01: 32 144
+:matt/bricks/01: 96 288
+:matt/bricks/01: 64 288
+:matt/bricks/01: 32 288
+:matt/bricks/03: 600 56 d
+:matt/bricks/03: 664 56 d
+:matt/bricks/03: 728 56 d
+:matt/bricks/03: 770 56 d
+:amanda/steel/steel32x32.S: 832 80
+:amanda/steel/steel32x32.S: 832 48
+:matt/bricks/03: 424 144
+:matt/bricks/12: 456 160 d
+:matt/bricks/12: 456 128 d
+:matt/bricks/03: 424 208
+:geoo/construction/platformbrick_single: 508 326 d
+:geoo/construction/platformbrick_single: 508 324 d
+:geoo/construction/platformbrick_single: 556 262 d
+:geoo/construction/platformbrick_single: 556 260 d
+:geoo/construction/platformbrick_single: 588 262 d
+:geoo/construction/platformbrick_single: 588 260 d
+:geoo/construction/platformbrick_single: 636 326 d
+:geoo/construction/platformbrick_single: 636 324 d
+:geoo/construction/platformbrick_single: 748 326 d
+:geoo/construction/platformbrick_single: 748 324 d
+:geoo/construction/platformbrick_single: 644 190 d
+:geoo/construction/platformbrick_single: 644 188 d
+:geoo/construction/platformbrick_single: 500 190 d
+:geoo/construction/platformbrick_single: 500 188 d
+:geoo/construction/platformbrick_single: 556 118 d
+:geoo/construction/platformbrick_single: 556 116 d
+:geoo/construction/platformbrick_single: 596 126 d
+:geoo/construction/platformbrick_single: 596 124 d
+:geoo/construction/platformbrick_single: 788 126 d
+:geoo/construction/platformbrick_single: 788 124 d
+:matt/bricks/01a: 248 112
+:matt/bricks/01b: 392 128
+:matt/bricks/01b: 296 160
+:matt/bricks/01b: 376 240
+:matt/bricks/01a: 280 208
+:matt/bricks/01a: 376 176
+:geoo/construction/platformbrick_single: 140 134 d
+:geoo/construction/platformbrick_single: 140 132 d
+:amanda/steel/steel32x32.S: 832 112
+:matt/bricks/17: 432 280 frr
+:geoo/construction/platformbrick_single: 476 326 d
+:geoo/construction/platformbrick_single: 476 324 d
+:matt/bricks/03: 184 96
+:matt/bricks/03: 184 160
+:matt/bricks/03: 184 224
+:matt/bricks/01b: 200 224
+:amanda/steel/steel32x32.S: 128 144
+:matt/bricks/03: 312 32 d
+:matt/bricks/03: 264 32 d
+:matt/bricks/03: 200 32 d
+:matt/bricks/03: 184 32 d
+:matt/bricks/03: 376 -32
+:matt/bricks/12: 440 160 d
+:matt/bricks/12: 440 128 d
+:matt/bricks/17: 440 0 frr
+:matt/bricks/17: 472 48 frr
+:matt/bricks/17: 456 48 frr
+:matt/bricks/17: 440 48 frr
+:matt/bricks/17: 424 48 frr
+:matt/bricks/17: 408 48 frr
+:matt/bricks/17: 392 48 frr
+:matt/bricks/17: 464 40 frrd
+:matt/bricks/17: 448 40 frrd
+:matt/bricks/17: 432 40 frrd
+:matt/bricks/03: 376 32
+:matt/bricks/01a: 392 32
+:matt/bricks/04: 440 32 d
+:amanda/steel/steel32x32.S: 0 48
+:geoo/construction/platformbrick_single: 444 4 d
+:geoo/construction/platformbrick_single: 444 6 d
+:matt/bricks/10: 256 304
+:matt/bricks/08: 352 304
+:matt/bricks/12: 288 304
+:matt/bricks/12: 320 304
+:matt/bricks/11: 288 288 d
+:matt/bricks/09: 320 288 d
+:matt/bricks/12: 256 288 d
+:matt/bricks/12: 352 288 d
+:matt/bricks/01a: 392 64 d

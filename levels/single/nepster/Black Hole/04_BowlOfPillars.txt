@@ -1,0 +1,169 @@
+$BUILT 2016-01-03 11:28:29
+$AUTHOR Nepster
+$ENGLISH A Bowl of Pillars
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 832
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 80
+#REQUIRED 60
+#SPAWN_INTERVAL 4
+
+#CLIMBER 1
+#EXPLODER 1
+#BUILDER 2
+#BASHER 1
+#MINER 2
+
+:geoo/construction/Hatch.H: 96 -2
+
+:geoo/construction/Goal2.G: 424 304
+
+:geoo/construction/pillar_32: 240 336
+:geoo/construction/pillar_32: 0 336
+:geoo/construction/concrete/032h: 0 368
+:geoo/construction/concrete/032h: 64 368
+:geoo/construction/concrete/032h: 128 368
+:geoo/construction/concrete/032h: 192 368
+:geoo/construction/concrete/032h: 256 368
+:geoo/construction/concrete/032h: 320 368
+:geoo/construction/concrete/032h: 384 368
+:geoo/construction/concrete/032h: 448 368
+:geoo/construction/pillar_32: 0 304
+:geoo/construction/pillar_32: 0 272
+:geoo/construction/pillar_32: 0 240
+:geoo/construction/pillar_32: 0 208
+:geoo/construction/pillar_32: 0 176
+:geoo/construction/pillar_32: 0 144
+:geoo/construction/pillar_32: 0 112
+:geoo/construction/pillar_32: 0 80
+:geoo/construction/pillar_32: 0 48
+:geoo/construction/pillar_32: 0 16
+:geoo/construction/pillar_top_shaded: 0 0
+:geoo/construction/pillar_32: 80 336
+:geoo/construction/pillar_32: 80 272
+:geoo/construction/pillar_32: 80 224
+:geoo/construction/pillar_top_shaded: 80 208
+:geoo/construction/pillar_32: 160 336
+:geoo/construction/pillar_32: 160 308
+:geoo/construction/pillar_top_shaded: 160 292
+:geoo/construction/pillar_top_shaded: 240 330
+:geoo/construction/pillar_32: 320 336
+:geoo/construction/pillar_top_shaded: 320 330
+:geoo/construction/pillar_32: 400 336
+:geoo/construction/pillar_top_shaded: 400 330
+:geoo/construction/pillar_32: 480 336
+:geoo/construction/pillar_top_shaded: 480 330
+:geoo/construction/concrete/032h: 512 368
+:geoo/construction/concrete/032h: 576 368
+:geoo/construction/concrete/032h: 640 368
+:geoo/construction/pillar_32: 560 336
+:geoo/construction/pillar_top_shaded: 560 330
+:geoo/construction/pillar_32: 640 336
+:geoo/construction/pillar_top_shaded: 640 292
+:geoo/construction/concrete/032h: 704 368
+:geoo/construction/concrete/032h: 768 368
+:geoo/construction/pillar_32: 720 336
+:geoo/construction/pillar_32: 720 304
+:geoo/construction/pillar_32: 720 224
+:geoo/construction/pillar_top_shaded: 720 208
+:geoo/construction/pillar_32: 800 336
+:geoo/construction/pillar_32: 800 304
+:geoo/construction/pillar_32: 800 240
+:geoo/construction/pillar_32: 800 208
+:geoo/construction/pillar_32: 800 176
+:geoo/construction/pillar_32: 800 144
+:geoo/construction/pillar_32: 800 112
+:geoo/construction/pillar_32: 800 80
+:geoo/construction/pillar_32: 800 48
+:geoo/construction/pillar_32: 800 16
+:geoo/construction/pillar_top_shaded: 800 0
+:geoo/construction/concrete/032h: 128 96
+:geoo/construction/concrete/032h: 192 96
+:geoo/construction/concrete/032h: 256 96
+:geoo/construction/concrete/032h: 320 96
+:geoo/construction/concrete/032h: 192 128
+:geoo/construction/concrete/032h: 256 128
+:geoo/construction/concrete/032h: 320 128
+:geoo/construction/concrete/032h: 384 128
+:geoo/construction/concrete/032h: 192 160
+:geoo/construction/concrete/032h: 256 160
+:geoo/construction/concrete/032h: 320 160
+:geoo/construction/concrete/032h: 384 160
+:geoo/construction/concrete/032h: 448 160
+:geoo/construction/concrete/032h: 512 160
+:geoo/construction/concrete/032h: 576 160
+:geoo/construction/concrete/032h: 448 128
+:geoo/construction/concrete/032h: 512 128
+:geoo/construction/concrete/032h: 576 128
+:geoo/construction/concrete/032h: 576 96
+:geoo/construction/concrete/032h: 640 96
+:geoo/construction/concrete/032: 704 96
+:geoo/construction/concrete/032: 96 96
+:geoo/construction/pillar_32: 80 304
+:geoo/construction/pillar_32: 720 272
+:geoo/construction/concrete/032h: 320 64
+:geoo/construction/concrete/032h: 384 64
+:geoo/construction/concrete/032h: 448 64
+:geoo/construction/concrete/032h: 512 64
+:geoo/construction/concrete/032h: 576 64
+:geoo/construction/concrete/032h: 320 32
+:geoo/construction/concrete/032h: 384 32
+:geoo/construction/concrete/032h: 448 32
+:geoo/construction/concrete/032h: 512 32
+:geoo/construction/concrete/032h: 576 32
+:geoo/construction/concrete/032h: 576 0
+:geoo/construction/concrete/032h: 512 0
+:matt/earth/07: 734 202 d
+:matt/earth/07: 742 210 d
+:matt/earth/07: 743 220 d
+:geoo/construction/pillar_32: 80 256
+:geoo/construction/pillar_32: 720 256
+:matt/earth/07: 747 228 d
+:matt/earth/07: 749 234 d
+:matt/earth/07: 750 240 d
+:geoo/construction/concrete/032h: 384 96
+:proxima/tile/spheres/bluesmall: 144 96
+:proxima/tile/spheres/bluesmall: 272 128
+:proxima/tile/spheres/bluesmall: 336 64
+:proxima/tile/spheres/bluesmall: 400 160
+:proxima/tile/spheres/bluesmall: 592 128
+:proxima/tile/spheres/bluesmall: 528 32
+:proxima/tile/spheres/redsmall: 208 128
+:proxima/tile/spheres/redsmall: 336 160
+:proxima/tile/spheres/redsmall: 400 96
+:proxima/tile/spheres/redsmall: 464 32
+:proxima/tile/spheres/redsmall: 592 64
+:proxima/tile/spheres/redsmall: 528 128
+:proxima/tile/spheres/greensmall: 208 96
+:proxima/tile/spheres/greensmall: 336 128
+:proxima/tile/spheres/greensmall: 400 64
+:proxima/tile/spheres/greensmall: 464 160
+:proxima/tile/spheres/greensmall: 592 32
+:proxima/tile/spheres/cyansmall: 208 160
+:proxima/tile/spheres/cyansmall: 272 96
+:proxima/tile/spheres/cyansmall: 400 128
+:proxima/tile/spheres/cyansmall: 336 32
+:proxima/tile/spheres/cyansmall: 464 64
+:proxima/tile/spheres/cyansmall: 528 0
+:proxima/tile/spheres/cyansmall: 592 96
+:proxima/tile/spheres/cyansmall: 528 160
+:proxima/tile/spheres/goldsmall: 272 160
+:proxima/tile/spheres/goldsmall: 336 96
+:proxima/tile/spheres/goldsmall: 400 32
+:proxima/tile/spheres/goldsmall: 464 128
+:proxima/tile/spheres/goldsmall: 528 64
+:proxima/tile/spheres/goldsmall: 592 0
+:proxima/tile/spheres/goldsmall: 656 96
+:proxima/tile/spheres/goldsmall: 592 160
+:proxima/tile/spheres/blue: 0 376 d
+:proxima/tile/spheres/blue: 128 376 d
+:proxima/tile/spheres/blue: 256 376 d
+:proxima/tile/spheres/blue: 384 376 d
+:proxima/tile/spheres/blue: 512 376 d
+:proxima/tile/spheres/blue: 640 376 d
+:proxima/tile/spheres/blue: 768 376 d
+:geoo/construction/pillar_32: 640 308
+:geoo/construction/pillar_32: 800 272

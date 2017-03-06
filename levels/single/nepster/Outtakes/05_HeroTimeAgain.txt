@@ -1,0 +1,97 @@
+$BUILT 2016-01-02 16:12:40
+$AUTHOR Nepster
+$ENGLISH It's hero time again! - 1min
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 60
+#INITIAL 30
+#REQUIRED 29
+#SPAWN_INTERVAL 4
+
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 1
+#PLATFORMER 1
+#BASHER 1
+#DIGGER 1
+
+:matt/underworld/Hatch.H: 266 0
+
+:matt/underworld/Goal.G: 504 320
+
+:simon/tapir/008v: 8 64
+:simon/tapir/016h: 8 80
+:simon/tapir/016h: 40 80
+:simon/tapir/016h: 72 80
+:simon/tapir/016h: 104 80
+:simon/tapir/016h: 136 80
+:simon/tapir/016h: 168 80
+:simon/tapir/016h: 200 80
+:simon/tapir/016h: 232 80
+:simon/tapir/016h: 264 80
+:simon/tapir/016h: 296 80
+:simon/tapir/016h: 328 80
+:simon/tapir/016h: 360 80
+:simon/tapir/016h: 40 288
+:simon/tapir/016h: 72 288
+:simon/tapir/016h: 104 288
+:simon/tapir/016h: 136 288
+:simon/tapir/016h: 168 288
+:simon/tapir/016h: 200 288
+:simon/tapir/016h: 232 288
+:simon/tapir/016h: 264 288
+:simon/tapir/016h: 296 288
+:simon/tapir/016h: 376 176
+:simon/tapir/016h: 408 176
+:simon/tapir/016h: 440 176
+:simon/tapir/016h: 472 176
+:simon/tapir/016h: 504 176
+:simon/tapir/016h: 536 176
+:simon/tapir/016h: 568 176
+:simon/tapir/016h: 600 176
+:simon/tapir/016h: 344 384
+:simon/tapir/016h: 376 384
+:simon/tapir/016h: 408 384
+:simon/tapir/016h: 440 384
+:simon/tapir/016h: 472 384
+:simon/tapir/016h: 504 384
+:simon/tapir/016h: 536 384
+:simon/tapir/016h: 568 384
+:simon/tapir/008v: 32 64
+:simon/tapir/008v: 20 64
+:simon/tapir/008v: 104 64
+:simon/tapir/008v: 128 64
+:simon/tapir/008v: 116 64
+:simon/tapir/008v: 40 272
+:simon/tapir/008v: 64 272
+:simon/tapir/008v: 52 272
+:simon/tapir/008v: 136 272
+:simon/tapir/008v: 160 272
+:simon/tapir/008v: 148 272
+:simon/tapir/008v: 472 368
+:simon/tapir/008v: 496 368
+:simon/tapir/008v: 484 368
+:simon/tapir/008v: 504 160
+:simon/tapir/008v: 528 160
+:simon/tapir/008v: 516 160
+:simon/tapir/008v: 600 160
+:simon/tapir/008v: 624 160
+:simon/tapir/008v: 612 160
+:proxima/tile/spheres/cyan: 360 80 d
+:proxima/tile/spheres/cyan: 296 288 d
+:proxima/tile/spheres/cyan: 344 176 d
+:proxima/tile/spheres/cyan: 312 384 d
+:simon/tapir/008v: 568 368
+:simon/tapir/008v: 592 368
+:simon/tapir/008v: 580 368
+:simon/tapir/016h: 40 256
+:simon/tapir/016h: 72 256
+:simon/tapir/016h: 8 48
+:simon/tapir/016h: 40 48
+:simon/tapir/016h: 568 144
+:simon/tapir/016h: 600 144

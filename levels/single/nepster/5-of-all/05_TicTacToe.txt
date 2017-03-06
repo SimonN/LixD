@@ -1,0 +1,213 @@
+$BUILT 2016-01-13 22:20:26
+$AUTHOR Nepster
+$ENGLISH Tic-Tac-Toe
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 10
+#SPAWN_INTERVAL 20
+
+#WALKER 5
+#RUNNER 5
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER 5
+#BLOCKER 5
+#BUILDER 5
+#PLATFORMER 5
+#BASHER 5
+#MINER 5
+#DIGGER 5
+#JUMPER 5
+#BATTER 5
+#CUBER 5
+
+:matt/underworld/Hatch.H: 80 64
+
+:matt/carnival/Goal.G: 512 235
+
+:simon/crystal.W: 592 352
+:simon/crystal.W: 544 352
+:simon/crystal.W: 496 352
+:simon/crystal.W: 448 352
+:simon/crystal.W: 400 352
+:simon/crystal.W: 352 352
+:simon/crystal.W: 304 352
+:simon/crystal.W: 256 352
+:simon/crystal.W: 208 352
+:simon/crystal.W: 160 352
+:simon/crystal.W: 112 352
+:simon/crystal.W: 64 352
+:simon/crystal.W: 16 352
+:simon/crystal.W: -32 352
+
+:matt/earth/30: 517 362 frr
+:matt/earth/30: 369 362
+:matt/earth/30: 225 362
+:matt/earth/30: 81 362
+:matt/earth/30: 229 362 frr
+:matt/earth/30: 373 362 frr
+:matt/earth/30: 505 378 frr
+:matt/earth/30: 477 378 frr
+:matt/earth/30: 345 362 frr
+:matt/earth/30: 317 362 frr
+:matt/earth/30: 201 362 frr
+:matt/earth/30: 173 362 frr
+:matt/earth/30: 425 362
+:matt/earth/30: 397 362
+:matt/earth/30: 281 362
+:matt/earth/30: 253 362
+:matt/earth/30: 109 362
+:matt/earth/30: 137 362
+:matt/earth/30: -7 362
+:matt/earth/30: 417 314
+:matt/earth/30: 469 314 frr
+:matt/earth/30: 273 314
+:matt/earth/30: 325 314 frr
+$BEGIN_TILE_GROUP 0
+:matt/earth/30: 94 2
+:matt/earth/30: 78 10
+:matt/earth/30: 128 24 frr
+:matt/earth/30: 120 8 frr
+:matt/earth/30: 124 0 frr
+:matt/earth/30: 78 2
+:matt/earth/30: 28 80
+:matt/earth/30: 0 80
+:matt/earth/30: 48 32
+:matt/earth/30: 76 32
+:geoo/abstract/cvblocks/001: 82 54 d
+:geoo/abstract/cvblocks/004: 109 41 d
+:geoo/abstract/cvblocks/004: 104 46 d
+:geoo/abstract/cvblocks/004: 100 50 d
+:geoo/abstract/cvblocks/001: 95 41 d
+:geoo/abstract/cvblocks/001: 90 46 d
+:geoo/abstract/cvblocks/001: 86 51 d
+:geoo/abstract/cvblocks/004: 97 48 d
+:geoo/abstract/cvblocks/004: 91 53 d
+:geoo/abstract/cvblocks/004: 84 59 d
+:geoo/abstract/cvblocks/004: 102 41 d
+:geoo/abstract/cvblocks/001: 103 41 d
+$END_TILE_GROUP
+:Group-0: 413 266
+:matt/earth/30: 589 346 frr
+:matt/earth/30: 617 346 frr
+:matt/earth/30: 541 298 frr
+:matt/earth/30: 569 298 frr
+:matt/earth/30: 129 314
+:matt/earth/30: 181 314 frr
+:matt/earth/30: 445 346 frr
+:matt/earth/30: 473 346 frr
+:matt/earth/30: 297 346
+:matt/earth/30: 269 346
+:matt/earth/30: 345 298
+:matt/earth/30: 397 298 frr
+:matt/earth/30: 425 298 frr
+:matt/earth/30: 317 298
+:matt/earth/30: 301 346 frr
+:matt/earth/30: 329 346 frr
+:matt/earth/30: 153 346
+:matt/earth/30: 125 346
+:matt/earth/30: 201 298
+:matt/earth/30: 253 298 frr
+:matt/earth/30: 281 298 frr
+:matt/earth/30: 173 298
+:matt/earth/30: 157 346 frr
+:matt/earth/30: 185 346 frr
+:matt/earth/30: 9 346
+:matt/earth/30: -19 346
+:matt/earth/30: 57 298
+:matt/earth/30: 109 298 frr
+:matt/earth/30: 137 298 frr
+:matt/earth/30: 29 298
+:proxima/tile/spheres/redsmall: 168 84
+:proxima/tile/green1: 80 240
+:proxima/tile/green1: 80 176
+:proxima/tile/green1: 224 112
+:proxima/tile/green1: 224 240
+:proxima/tile/green1: 368 112
+:proxima/tile/green1: 368 176
+:matt/steel/64x64.S: 80 112
+:matt/steel/64x64.S: 224 176
+:matt/steel/64x64.S: 368 240
+:matt/goldmine/crate64: 512 234 d
+:proxima/tile/spheres/red: 152 38
+:proxima/tile/spheres/red: 184 22
+:proxima/tile/spheres/red: 120 22
+:proxima/tile/spheres/redsmall: 24 84
+:proxima/tile/spheres/red: 8 38
+:proxima/tile/spheres/red: 40 22
+:proxima/tile/spheres/red: -24 22
+:proxima/tile/spheres/redsmall: 312 84
+:proxima/tile/spheres/red: 296 38
+:proxima/tile/spheres/red: 328 22
+:proxima/tile/spheres/red: 264 22
+:proxima/tile/spheres/redsmall: 456 84
+:proxima/tile/spheres/red: 440 38
+:proxima/tile/spheres/red: 472 22
+:proxima/tile/spheres/red: 408 22
+:proxima/tile/spheres/redsmall: 600 84
+:proxima/tile/spheres/red: 584 38
+:proxima/tile/spheres/red: 616 22
+:proxima/tile/spheres/red: 552 22
+:proxima/tile/spheres/red: 80 10
+:proxima/tile/spheres/red: 224 10
+:proxima/tile/spheres/red: 512 10
+:proxima/tile/spheres/red: 368 10
+:proxima/tile/spheres/pink: 8 6
+:proxima/tile/spheres/pink: -24 -10
+:proxima/tile/spheres/pink: 40 -10
+:proxima/tile/spheres/pink: 152 6
+:proxima/tile/spheres/pink: 120 -10
+:proxima/tile/spheres/pink: 184 -10
+:proxima/tile/spheres/pink: 296 6
+:proxima/tile/spheres/pink: 264 -10
+:proxima/tile/spheres/pink: 328 -10
+:proxima/tile/spheres/pink: 440 6
+:proxima/tile/spheres/pink: 408 -10
+:proxima/tile/spheres/pink: 472 -10
+:proxima/tile/spheres/pink: 584 6
+:proxima/tile/spheres/pink: 552 -10
+:proxima/tile/spheres/pink: 616 -10
+:proxima/tile/spheres/pink: 80 -22
+:proxima/tile/spheres/pink: 224 -22
+:proxima/tile/spheres/pink: 368 -22
+:proxima/tile/spheres/pink: 512 -22
+:proxima/tile/spheres/blue: 8 -26
+:proxima/tile/spheres/blue: -24 -42
+:proxima/tile/spheres/blue: 40 -42
+:proxima/tile/spheres/blue: 152 -26
+:proxima/tile/spheres/blue: 120 -42
+:proxima/tile/spheres/blue: 184 -42
+:proxima/tile/spheres/blue: 296 -26
+:proxima/tile/spheres/blue: 264 -42
+:proxima/tile/spheres/blue: 328 -42
+:proxima/tile/spheres/blue: 440 -26
+:proxima/tile/spheres/blue: 408 -42
+:proxima/tile/spheres/blue: 472 -42
+:proxima/tile/spheres/blue: 584 -26
+:proxima/tile/spheres/blue: 552 -42
+:proxima/tile/spheres/blue: 616 -42
+:proxima/tile/spheres/blue: 80 -54
+:proxima/tile/spheres/blue: 224 -54
+:proxima/tile/spheres/blue: 368 -54
+:proxima/tile/spheres/blue: 512 -54
+:geoo/abstract/cvblocks/002: 572 307 d
+:geoo/abstract/cvblocks/002: 582 317 d
+:geoo/abstract/cvblocks/002: 577 312 d
+:geoo/abstract/cvblocks/003: 586 335 d
+:geoo/abstract/cvblocks/003: 580 329 d
+:geoo/abstract/cvblocks/003: 574 323 d
+:geoo/abstract/cvblocks/003: 568 317 d
+:geoo/abstract/cvblocks/003: 563 312 d
+:geoo/abstract/cvblocks/003: 558 307 d
+:geoo/abstract/cvblocks/002: 581 323 d
+:geoo/abstract/cvblocks/002: 587 329 d
+:geoo/abstract/cvblocks/002: 593 335 d
+:geoo/abstract/cvblocks/002: 576 315 d
+:geoo/abstract/cvblocks/002: 570 309 d
+:geoo/abstract/cvblocks/003: 564 307 d
+:geoo/abstract/cvblocks/002: 566 308 d

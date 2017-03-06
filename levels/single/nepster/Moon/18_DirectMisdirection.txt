@@ -1,0 +1,81 @@
+$BUILT 2016-08-10 22:11:35
+$AUTHOR Nepster
+$ENGLISH Direct Misdirection
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 40
+#REQUIRED 39
+#SPAWN_INTERVAL 5
+
+#CLIMBER 2
+#FLOATER 2
+#BLOCKER 1
+#PLATFORMER 2
+#BASHER 1
+#JUMPER 2
+#CUBER 1
+#EXPLODER 0
+
+:geoo/construction/Hatch.H: 320 64
+:geoo/construction/Hatch.H: 288 64 r
+
+:proxima/tile/goal.G: 16 80
+:proxima/tile/goal.G: 560 80
+
+:proxima/flame.F: 268 352
+:proxima/flame.F: 300 352
+:proxima/flame.F: 332 352
+:proxima/flame.F: 282 358
+:proxima/flame.F: 250 358
+:proxima/flame.F: 314 358
+:proxima/flame.F: 346 358
+:proxima/flame.F: -8 352
+:proxima/flame.F: 606 352
+
+:proxima/tile/green1: 320 176
+:proxima/tile/green1: 256 176
+:proxima/tile/green1: 368 272
+:proxima/tile/green1: 368 336
+:proxima/tile/green1: 208 336
+:proxima/tile/green1: 208 272
+:proxima/tile/green1: 448 48
+:proxima/tile/green1: 128 48
+:proxima/tile/green1: 128 112
+:proxima/tile/blue1b: 128 112 d
+:proxima/tile/green1: 192 112
+:proxima/tile/blue1a: 192 112 d
+:proxima/tile/green1: 192 176
+:proxima/tile/blue1b: 192 176 d
+:proxima/tile/green1: 448 112
+:proxima/tile/green1: 384 112
+:proxima/tile/green1: 384 176
+:proxima/tile/blue2a: 384 112 d
+:proxima/tile/blue2b: 384 176 d
+:proxima/tile/blue2b: 448 112 d
+:proxima/tile/green1: 464 208
+:proxima/tile/green1: 464 272
+:proxima/tile/green1: 464 336
+:proxima/tile/green1: 560 336
+:proxima/tile/green1: 560 272
+:proxima/tile/green1: 560 208
+:proxima/tile/green1: 560 144
+:proxima/tile/green1: 16 144
+:proxima/tile/green1: 16 208
+:proxima/tile/green1: 16 272
+:proxima/tile/green1: 16 336
+:proxima/tile/green1: 112 208
+:proxima/tile/green1: 112 272
+:proxima/tile/green1: 112 336
+:proxima/tile/green1s: 176 352
+:proxima/tile/green1s: 176 288
+:proxima/tile/green1s: 432 288
+:proxima/tile/green1s: 432 352
+:proxima/tile/green1s: 528 352
+:proxima/tile/green1s: 528 288
+:proxima/tile/green1s: 528 224
+:proxima/tile/green1s: 80 352
+:proxima/tile/green1s: 80 288
+:proxima/tile/green1s: 80 224

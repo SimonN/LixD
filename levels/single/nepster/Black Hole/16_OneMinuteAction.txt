@@ -1,0 +1,188 @@
+$BUILT 2016-07-24 10:27:47
+$AUTHOR Nepster
+$ENGLISH One Minute of Action
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 60
+#INITIAL 10
+#REQUIRED 9
+#SPAWN_INTERVAL 9
+
+#WALKER 1
+#CLIMBER 1
+#FLOATER 2
+#EXPLODER 1
+#PLATFORMER 4
+#BASHER 5
+#DIGGER 1
+
+:geoo/construction/Hatch.H: 304 16
+
+:geoo/abstract/goal.G: 88 320
+
+:geoo/shadow/wall/deco_light: 32 136
+:geoo/shadow/wall/center: 214 104
+:geoo/shadow/wall/center: 392 104
+:geoo/shadow/wall/deco_light: 576 136
+:geoo/shadow/wall/center: 0 368
+:geoo/shadow/wall/center: 48 368
+:geoo/shadow/wall/center: 64 368
+:geoo/shadow/wall/center: 96 368
+:geoo/shadow/wall/center: 128 368
+:geoo/shadow/wall/center: 160 368
+:geoo/shadow/wall/center: 192 368
+:geoo/shadow/wall/center: 224 368
+:geoo/shadow/wall/center: 256 368
+:geoo/shadow/wall/center: 608 368
+:geoo/shadow/wall/center: 576 368
+:geoo/shadow/wall/center: 544 368
+:geoo/shadow/wall/center: 512 368
+:geoo/shadow/wall/center: 480 368
+:geoo/shadow/wall/center: 448 368
+:geoo/shadow/wall/center: 416 368
+:geoo/shadow/wall/center: 384 368
+:geoo/shadow/wall/center: 272 368
+:geoo/shadow/wall/center: 352 368
+:geoo/shadow/wall/center: 432 336
+:geoo/shadow/wall/center: 400 336
+:geoo/shadow/wall/center: 208 304
+:geoo/shadow/wall/center: 176 304
+:geoo/shadow/wall/center: 208 272
+:geoo/shadow/wall/center: 176 272
+:geoo/shadow/wall/center: 208 240
+:geoo/shadow/wall/center: 176 240
+:geoo/shadow/wall/center: 208 208
+:geoo/shadow/wall/center: 176 208
+:geoo/shadow/wall/center: 208 176
+:geoo/shadow/wall/center: 176 176
+:geoo/shadow/wall/center: 208 128
+:geoo/shadow/wall/center: 176 128
+:geoo/shadow/wall/center: 432 128
+:geoo/shadow/wall/center: 400 128
+:geoo/shadow/wall/center: 432 176
+:geoo/shadow/wall/center: 400 176
+:geoo/shadow/wall/center: 432 208
+:geoo/shadow/wall/center: 400 208
+:geoo/shadow/wall/center: 432 240
+:geoo/shadow/wall/center: 400 240
+:geoo/shadow/wall/center: 432 272
+:geoo/shadow/wall/center: 400 272
+:geoo/shadow/wall/center: 432 304
+:geoo/shadow/wall/center: 400 304
+:geoo/shadow/wall/center: 608 336
+:geoo/shadow/wall/center: 608 304
+:geoo/shadow/wall/center: 608 272
+:geoo/shadow/wall/center: 608 240
+:geoo/shadow/wall/center: 608 208
+:geoo/shadow/wall/center: 608 176
+:geoo/shadow/wall/center: 608 144
+:geoo/shadow/wall/center: 608 112
+:geoo/shadow/wall/center: 608 80
+:geoo/shadow/wall/center: 608 48
+:geoo/shadow/wall/center: 608 16
+:geoo/shadow/wall/center: 0 336
+:geoo/shadow/wall/center: 0 304
+:geoo/shadow/wall/center: 0 272
+:geoo/shadow/wall/center: 0 240
+:geoo/shadow/wall/center: 0 208
+:geoo/shadow/wall/center: 0 176
+:geoo/shadow/wall/center: 0 144
+:geoo/shadow/wall/center: 0 112
+:geoo/shadow/wall/center: 0 80
+:geoo/shadow/wall/center: 0 48
+:geoo/shadow/wall/center: 0 16
+:geoo/shadow/wall/deco_light: 264 192
+:geoo/shadow/wall/deco_light: 344 192
+:geoo/shadow/wall/center: 304 160 frr
+:geoo/shadow/wall/deco_light: 312 192
+:geoo/shadow/wall/deco_light: 296 192
+:geoo/shadow/wall/center: 304 208 frr
+:geoo/shadow/wall/center: 304 216 frrd
+:geoo/shadow/wall/center: 304 152 frrd
+:geoo/shadow/wall/center: 208 96
+:geoo/shadow/wall/center: 176 96
+:geoo/shadow/wall/center: 432 96
+:geoo/shadow/wall/center: 400 96
+:geoo/shadow/wall/deco_light: 240 112
+:geoo/shadow/wall/deco_light: 272 112
+:geoo/shadow/wall/deco_light: 304 112
+:geoo/shadow/wall/deco_light: 336 112
+:geoo/shadow/wall/deco_light: 368 112
+:geoo/shadow/wall/deco_light: 480 136
+:geoo/shadow/wall/deco_light: 512 136
+:geoo/shadow/wall/deco_light: 544 136
+:geoo/shadow/wall/deco_light: 128 136
+:geoo/shadow/wall/deco_light: 64 136
+:geoo/shadow/wall/deco_light: 96 136
+:geoo/shadow/wall/center: 336 368
+:geoo/shadow/wall/center: 496 80
+:geoo/shadow/wall/center: 528 80
+:geoo/shadow/wall/center: 560 80
+:geoo/shadow/wall/center: 560 48
+:geoo/shadow/wall/center: 496 48
+:geoo/shadow/wall/center: 496 16
+:geoo/shadow/wall/center: 464 16
+:geoo/shadow/wall/center: 560 -16
+:geoo/shadow/wall/center: 560 16
+:geoo/shadow/wall/center: 48 80
+:geoo/shadow/wall/center: 80 80
+:geoo/shadow/wall/center: 112 80
+:geoo/shadow/wall/center: 48 48
+:geoo/shadow/wall/center: 48 16
+:geoo/shadow/wall/center: 48 -16
+:geoo/shadow/wall/center: 144 16
+:geoo/shadow/wall/center: 112 16
+:geoo/shadow/wall/center: 112 48
+:geoo/shadow/wall/center: 176 16
+:geoo/shadow/wall/center: 208 16
+:geoo/shadow/wall/center: 240 16
+:geoo/shadow/wall/center: 272 16
+:geoo/shadow/wall/center: 432 16
+:geoo/shadow/wall/center: 400 16
+:geoo/shadow/wall/center: 368 16
+:geoo/shadow/wall/center: 336 16
+:geoo/shadow/wall/center: 528 336
+:geoo/shadow/wall/center: 528 304
+:geoo/shadow/wall/center: 528 272
+:geoo/shadow/wall/center: 528 240
+:geoo/shadow/wall/center: 528 208
+:geoo/shadow/wall/deco_light: 512 200
+:geoo/shadow/wall/deco_light: 544 200
+:geoo/shadow/wall/deco_light: 560 280
+:geoo/shadow/wall/deco_light: 144 176
+:geoo/shadow/wall/deco_light: 112 176
+:geoo/shadow/wall/deco_light: 80 176
+:geoo/shadow/wall/deco_light: 48 176
+:geoo/shadow/wall/center: 176 160
+:geoo/shadow/wall/center: 208 160
+:geoo/shadow/wall/center: 432 160
+:geoo/shadow/wall/center: 400 160
+:geoo/shadow/wall/deco_light: 264 272
+:geoo/shadow/wall/deco_light: 344 272
+:geoo/shadow/wall/center: 304 240 frr
+:geoo/shadow/wall/deco_light: 296 272
+:geoo/shadow/wall/deco_light: 312 272
+:geoo/shadow/wall/center: 304 288 frr
+:geoo/shadow/wall/center: 304 296 frrd
+:geoo/shadow/wall/center: 304 232 frrd
+:geoo/shadow/wall/center: 176 336
+:geoo/shadow/wall/center: 208 336
+:geoo/construction/rod_steel/straight32.S: 184 208
+:geoo/construction/rod_steel/straight32.S: 200 208
+:geoo/construction/rod_steel/straight32.S: 408 208
+:geoo/construction/rod_steel/straight32.S: 424 208
+:geoo/construction/rod_steel/end_rect.S: 456 192 fr
+:geoo/construction/rod_steel/edge_ru.S: 400 208
+:geoo/construction/rod_steel/edge_lu.S: 456 208
+:geoo/construction/rod_steel/end_rect.S: 400 192 fr
+:geoo/construction/rod_steel/end_rect.S: 232 192 fr
+:geoo/construction/rod_steel/edge_ru.S: 176 208
+:geoo/construction/rod_steel/edge_lu.S: 232 208
+:geoo/construction/rod_steel/end_rect.S: 176 192 fr
+:geoo/construction/rod_steel/straight8.S: 400 200 fr
+:geoo/construction/rod_steel/straight8.S: 456 200 fr
+:geoo/construction/rod_steel/straight8.S: 232 200 fr
+:geoo/construction/rod_steel/straight8.S: 176 200 fr

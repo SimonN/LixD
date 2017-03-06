@@ -1,0 +1,380 @@
+$BUILT 2016-07-23 13:53:37
+$AUTHOR Nepster
+$ENGLISH Maze-Lix
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 60
+#REQUIRED 60
+#SPAWN_INTERVAL 20
+
+#CLIMBER 10
+#FLOATER 10
+#BLOCKER 10
+#BUILDER 10
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#EXPLODER 0
+
+:geoo/construction/Hatch.H: 44 50
+:geoo/construction/Hatch.H: 44 290
+:geoo/construction/Hatch.H: 576 50 r
+:geoo/construction/Hatch.H: 576 290 r
+
+:proxima/tile/goal.G: 276 106
+
+:geoo/construction/sawblade.F: 240 348
+:geoo/construction/sawblade.F: 200 348
+:geoo/construction/sawblade.F: 400 348
+:geoo/construction/sawblade.F: 440 348
+
+$BEGIN_TILE_GROUP 0
+:simon/tapir/016h: 0 0
+:simon/tapir/016: 16 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:simon/tapir/016h: 8 0
+:Group-0: 0 0
+:simon/tapir/008h: 0 8 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:simon/tapir/008h: 0 4
+:Group-1: 0 0
+:simon/tapir/008h: 12 8 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:simon/tapir/008h: 8 4
+:Group-2: 0 0
+:simon/tapir/008h: 20 8 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 4
+:simon/tapir/008h: 16 4
+:Group-3: 0 0
+:simon/tapir/008h: 28 8 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 5
+:simon/tapir/008h: 24 4
+:Group-4: 0 0
+$END_TILE_GROUP
+:Group-5: -20 2
+:Group-5: 0 14
+:Group-5: 20 2
+:Group-5: 40 14
+:Group-5: 60 2
+:Group-5: 80 14
+:Group-5: 100 2
+:Group-5: 120 14
+:Group-5: 140 2
+:Group-5: 160 14
+:Group-5: 180 2
+:Group-5: 200 14
+:Group-5: 220 2
+:Group-5: 240 14
+:Group-5: 260 2
+:Group-5: 280 14
+:Group-5: 300 2
+:Group-5: 320 14
+:Group-5: 340 2
+:Group-5: 360 14
+:Group-5: 380 2
+:Group-5: 400 14
+:Group-5: 420 2
+:Group-5: 440 14
+:Group-5: 460 2
+:Group-5: 480 14
+:Group-5: 500 2
+:Group-5: 520 14
+:Group-5: 540 2
+:Group-5: 560 14
+:Group-5: 580 2
+:Group-5: 600 14
+:Group-5: 620 2
+:Group-5: -20 26
+:Group-5: 0 38
+:Group-5: 20 26
+:Group-5: 40 38
+:Group-5: 60 26
+:Group-5: 80 38
+:Group-5: 100 26
+:Group-5: 120 38
+:Group-5: 140 26
+:Group-5: 160 38
+:Group-5: 180 26
+:Group-5: 200 38
+:Group-5: 220 26
+:Group-5: 240 38
+:Group-5: 260 26
+:Group-5: 280 38
+:Group-5: 300 26
+:Group-5: 320 38
+:Group-5: 340 26
+:Group-5: 360 38
+:Group-5: 380 26
+:Group-5: 400 38
+:Group-5: 420 26
+:Group-5: 440 38
+:Group-5: 460 26
+:Group-5: 480 38
+:Group-5: 500 26
+:Group-5: 520 38
+:Group-5: 540 26
+:Group-5: 560 38
+:Group-5: 580 26
+:Group-5: 600 38
+:Group-5: 620 26
+:Group-5: 600 62
+:Group-5: 620 50
+:Group-5: 600 86
+:Group-5: 620 74
+:Group-5: 600 110
+:Group-5: 620 98
+:Group-5: 600 134
+:Group-5: 620 122
+:Group-5: 600 158
+:Group-5: 620 146
+:Group-5: 600 182
+:Group-5: 620 170
+:Group-5: 600 206
+:Group-5: 620 194
+:Group-5: 540 50
+:Group-5: 300 50
+:Group-5: 100 50
+:Group-5: 140 50
+:Group-5: -20 50
+:Group-5: 0 62
+:Group-5: 80 62
+:Group-5: 120 62
+:Group-5: 160 62
+:Group-5: 280 62
+:Group-5: 400 62
+:Group-5: 440 62
+:Group-5: 480 62
+:Group-5: 500 74
+:Group-5: 420 74
+:Group-5: 340 74
+:Group-5: 260 74
+:Group-5: 180 74
+:Group-5: 100 74
+:Group-5: -20 74
+:Group-5: 0 86
+:Group-5: -20 98
+:Group-5: 0 110
+:Group-5: 20 98
+:Group-5: 80 86
+:Group-5: 100 98
+:Group-5: 180 98
+:Group-5: 200 86
+:Group-5: 240 86
+:Group-5: 280 86
+:Group-5: 140 122
+:Group-5: 160 110
+:Group-5: 60 122
+:Group-5: 80 110
+:Group-5: -20 122
+:Group-5: 0 134
+:Group-5: -20 146
+:Group-5: 0 158
+:Group-5: 100 146
+:Group-5: 120 134
+:Group-5: 80 134
+:Group-5: 80 158
+:Group-5: 400 86
+:Group-5: 420 98
+:Group-5: 380 98
+:Group-5: 520 86
+:Group-5: 540 98
+:Group-5: 500 98
+:Group-5: 520 110
+:Group-5: 540 122
+:Group-5: 440 110
+:Group-5: 420 122
+:Group-5: 440 134
+:Group-5: 480 134
+:Group-5: 340 122
+:Group-5: 360 134
+:Group-5: 340 146
+:Group-5: 360 158
+:Group-5: 380 170
+:Group-5: 420 170
+:Group-5: 260 170
+:Group-5: 300 170
+:Group-5: 220 122
+:Group-5: 240 134
+:Group-5: 220 146
+:Group-5: 240 158
+:Group-5: 180 146
+:Group-5: 200 158
+:Group-5: 100 170
+:Group-5: 60 170
+:Group-5: 20 170
+:Group-5: -20 170
+:Group-5: 0 182
+:Group-5: -20 194
+:Group-5: 0 206
+:Group-5: -20 218
+:Group-5: 0 230
+:Group-5: 20 218
+:Group-5: 40 230
+:Group-5: -20 242
+:Group-5: 0 254
+:Group-5: -20 266
+:Group-5: 0 278
+:Group-5: -20 290
+:Group-5: 0 302
+:Group-5: -20 314
+:Group-5: 0 326
+:Group-5: 120 182
+:Group-5: 180 194
+:Group-5: 140 194
+:Group-5: 100 194
+:Group-5: 200 206
+:Group-5: 220 218
+:Group-5: 240 230
+:Group-5: 220 242
+:Group-5: 260 242
+:Group-5: 140 218
+:Group-5: 120 230
+:Group-5: 100 242
+:Group-5: 80 254
+:Group-5: 60 266
+:Group-5: 40 278
+:Group-5: 140 242
+:Group-5: 80 278
+:Group-5: 100 290
+:Group-5: 80 302
+:Group-5: 140 314
+:Group-5: 120 326
+:Group-5: 160 254
+:Group-5: 200 254
+:Group-5: 180 266
+:Group-5: 220 266
+:Group-5: 160 278
+:Group-5: 240 278
+:Group-5: 260 290
+:Group-5: 240 302
+:Group-5: 240 326
+:Group-5: 220 314
+:Group-5: 280 302
+:Group-5: 320 302
+:Group-5: 340 290
+:Group-5: 360 278
+:Group-5: 300 314
+:Group-5: 320 326
+:Group-5: 380 194
+:Group-5: 360 206
+:Group-5: 300 194
+:Group-5: 280 206
+:Group-5: 300 218
+:Group-5: 320 230
+:Group-5: 340 242
+:Group-5: 320 254
+:Group-5: 380 242
+:Group-5: 420 242
+:Group-5: 440 230
+:Group-5: 480 230
+:Group-5: 520 158
+:Group-5: 500 170
+:Group-5: 520 182
+:Group-5: 500 194
+:Group-5: 460 194
+:Group-5: 540 194
+:Group-5: 440 206
+:Group-5: 560 206
+:Group-5: 600 230
+:Group-5: 620 218
+:Group-5: 600 254
+:Group-5: 620 242
+:Group-5: 600 278
+:Group-5: 620 266
+:Group-5: 560 278
+:Group-5: 580 266
+:Group-5: 520 302
+:Group-5: 540 290
+:Group-5: 480 326
+:Group-5: 500 314
+:Group-5: 600 302
+:Group-5: 620 290
+:Group-5: 600 326
+:Group-5: 620 314
+:Group-5: 520 254
+:Group-5: 540 242
+:Group-5: 440 254
+:Group-5: 420 266
+:Group-5: 460 266
+:Group-5: 500 266
+:Group-5: 420 290
+:Group-5: 440 278
+:Group-5: 440 302
+:Group-5: 600 350
+:Group-5: 620 338
+:Group-5: 600 374
+:Group-5: 620 362
+:Group-5: 620 386
+:Group-5: 560 350
+:Group-5: 580 338
+:Group-5: 560 374
+:Group-5: 580 362
+:Group-5: 580 386
+:Group-5: 520 350
+:Group-5: 540 338
+:Group-5: 520 374
+:Group-5: 540 362
+:Group-5: 540 386
+:Group-5: 500 338
+:Group-5: 500 362
+:Group-5: 500 386
+:Group-5: 480 350
+:Group-5: 480 374
+:Group-5: 460 338
+:Group-5: 460 362
+:Group-5: 460 386
+:Group-5: 360 350
+:Group-5: 380 338
+:Group-5: 360 374
+:Group-5: 380 362
+:Group-5: 380 386
+:Group-5: 320 350
+:Group-5: 340 338
+:Group-5: 320 374
+:Group-5: 340 362
+:Group-5: 340 386
+:Group-5: 300 338
+:Group-5: 300 362
+:Group-5: 300 386
+:Group-5: 280 350
+:Group-5: 280 374
+:Group-5: 260 338
+:Group-5: 260 362
+:Group-5: 260 386
+:Group-5: 160 350
+:Group-5: 180 338
+:Group-5: 160 374
+:Group-5: 180 362
+:Group-5: 180 386
+:Group-5: 120 350
+:Group-5: 140 338
+:Group-5: 120 374
+:Group-5: 140 362
+:Group-5: 140 386
+:Group-5: 100 338
+:Group-5: 100 362
+:Group-5: 100 386
+:Group-5: 80 350
+:Group-5: 80 374
+:Group-5: 60 338
+:Group-5: 60 362
+:Group-5: 60 386
+:Group-5: 40 350
+:Group-5: 40 374
+:Group-5: 20 338
+:Group-5: 20 362
+:Group-5: 20 386
+:Group-5: 0 350
+:Group-5: 0 374
+:Group-5: -20 338
+:Group-5: -20 362
+:Group-5: -20 386

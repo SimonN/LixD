@@ -1,0 +1,101 @@
+$BUILT 2016-01-03 13:55:09
+$AUTHOR Nepster
+$ENGLISH Another Miner Problem
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 4
+
+#CLIMBER 1
+#BUILDER 1
+#BASHER 1
+#MINER 3
+#EXPLODER 0
+
+:matt/goldmine/Hatch.H: 64 256
+
+:matt/goldmine/Goal.G: 288 192
+
+:matt/goldmine/GoalTop.D: 288 144
+:matt/goldmine/shovel.D: 576 226
+
+:amanda/steel/steel32x32.S: 224 240
+:amanda/steel/steel32x32.S: 384 240
+:matt/goldmine/crate64: 160 240
+:matt/goldmine/crate64: 160 176
+:matt/goldmine/crate64: 160 112
+:matt/goldmine/crate64: 224 112
+:matt/goldmine/crate32: 224 272
+:matt/goldmine/crate32: 256 272
+:matt/goldmine/crate32: 288 272
+:matt/goldmine/crate32: 320 272
+:matt/goldmine/crate32: 352 272
+:matt/goldmine/crate32: 384 272
+:matt/goldmine/crate64: 416 240
+:matt/goldmine/crate64: 416 176
+:matt/goldmine/crate64: 416 112
+:matt/goldmine/crate64: 352 176
+:matt/goldmine/crate64: 352 112
+:matt/goldmine/04: 320 272 rrr
+:amanda/steel/steel32x32.S: 256 240
+:amanda/steel/steel32x32.S: 288 240
+:amanda/steel/steel32x32.S: 320 240
+:amanda/steel/steel32x32.S: 352 240
+:matt/goldmine/04: 416 240
+:matt/goldmine/09: 464 240 r
+:matt/goldmine/04: 512 214 rrr
+:matt/goldmine/04: 564 156 frr
+:matt/goldmine/08: 546 64 f
+:matt/goldmine/08: 502 -8 f
+:matt/goldmine/08: 244 296 f
+:matt/goldmine/08: 162 298 f
+:matt/goldmine/03: 70 298
+:matt/goldmine/09: -28 194 frr
+:matt/goldmine/04: -24 276 frrr
+:matt/goldmine/04: -58 290
+:matt/goldmine/04: 86 308
+:matt/goldmine/04: 218 306
+:matt/goldmine/04: 406 288
+:matt/goldmine/04: 562 272
+:matt/goldmine/04: 576 -54
+:matt/goldmine/09: 38 322
+:matt/goldmine/09: 326 328
+:matt/goldmine/09: 508 256
+:matt/goldmine/09: 516 328
+:matt/goldmine/09: 616 100
+:matt/goldmine/crate32: 288 144 frr
+:matt/goldmine/crate32: 320 144
+:matt/carnival/45: 288 144 d
+:matt/carnival/45: 320 144 frrd
+:matt/goldmine/crate32: 320 112
+:matt/goldmine/crate32: 288 112 frr
+:matt/goldmine/08: -60 124 fr
+:matt/goldmine/03: 8 0
+:matt/goldmine/02: 210 -40
+:matt/goldmine/08: 128 -88
+:matt/goldmine/09: 226 -50 rrr
+:matt/goldmine/04: 306 -102
+:matt/goldmine/08: 408 -44 frrr
+:matt/goldmine/09: 427 -37 fr
+:matt/goldmine/08: 44 -26 frrr
+:matt/goldmine/08: -6 24 rr
+:matt/goldmine/04: -42 -82 rr
+:matt/goldmine/04: -80 14 rr
+:matt/goldmine/04: 102 302 rr
+:matt/goldmine/04: 342 308 rr
+:matt/goldmine/explosivecrate: 224 176
+$BEGIN_TILE_GROUP 0
+:matt/goldmine/crate32: 0 0
+:matt/carnival/44: 0 0 d
+$END_TILE_GROUP
+:Group-0: 224 241
+$BEGIN_TILE_GROUP 1
+:matt/goldmine/crate32: 0 0 frr
+:matt/carnival/43: 0 0 d
+$END_TILE_GROUP
+:Group-1: 385 241

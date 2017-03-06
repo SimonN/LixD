@@ -1,0 +1,277 @@
+$BUILT 2016-07-18 22:20:19
+$AUTHOR Nepster
+$ENGLISH Divide and Conquer
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 928
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 8
+#REQUIRED 6
+#SPAWN_INTERVAL 10
+
+#CLIMBER 2
+#FLOATER 2
+#EXPLODER 2
+#BLOCKER 2
+#BUILDER 2
+#BASHER 2
+#MINER 2
+#DIGGER 2
+
+:amanda/occult/hatch_tentacle.H: 144 -8 r
+:amanda/forest/hatch.H: 298 24
+:matt/underworld/Hatch.H: 478 40
+:matt/beach/Hatch.H: 704 290
+
+:amanda/forest/exit_tent_condensed.G: 236 264
+:amanda/occult/occult_goal_skull.G: 112 280
+:matt/underworld/Goal.G: 476 296
+:matt/beach/goal.G: 764 90
+
+:amanda/forest/frog_happy.T: 323 313
+:geoo/sandstone/chopper.T: 62 154
+:geoo/sandstone/chopper.T: 62 330
+:geoo/sandstone/chopper.T: 158 236
+:geoo/sandstone/chopper.T: 30 154
+
+:geoo/sandstone/torch.F: 690 75
+:geoo/sandstone/brazier.F: 591 156
+
+:matt/earth/28: 272 278
+:matt/earth/29: 267 263
+:matt/beach/decor/grass03: 765 244 frr
+:matt/beach/decor/grass03: 802 268
+:matt/beach/decor/grass03: 831 283 fr
+:matt/beach/decor/grass03: 831 285 fr
+:matt/earth/28: 306 328 rr
+:matt/earth/02: 350 334 rr
+:matt/beach/decor/beach ball: 790 340
+:matt/beach/daytime/15: 690 99
+:matt/beach/daytime/14: 676 106
+:matt/beach/decor/umbrella_yellow: 734 92 frr
+:matt/beach/decor/grass03: 830 274
+:matt/beach/decor/grass03: 820 268
+$BEGIN_TILE_GROUP 0
+:matt/beach/decor/grass03: 88 133 frr
+:matt/beach/daytime/13: 0 59 frr
+:matt/beach/daytime/00: 84 25 rr
+:matt/beach/daytime/03: 43 0 d
+:matt/beach/daytime/15: 60 3 d
+:matt/beach/daytime/15: 70 13 rrd
+$END_TILE_GROUP
+:Group-0: 690 154
+:matt/beach/decor/grass03: 815 252 frr
+:matt/beach/daytime/15: 828 288 f
+:matt/beach/daytime/05: 812 292 rr
+:matt/beach/daytime/14: 684 184
+:matt/beach/daytime/05: 800 282 f
+:matt/underworld/09a: 620 76 frr
+:matt/underworld/09b: 570 30 frr
+:matt/underworld/09b: 608 330 frr
+:matt/underworld/09a: 560 266 frr
+:matt/underworld/09a: 518 266
+:matt/underworld/09a: 458 266
+:matt/underworld/09a: 532 200 frr
+:matt/underworld/09a: 472 200
+:amanda/occult/occult_wax_details_drip: 42 32
+:amanda/occult/occult_overlay32x32_d: 28 40 rr
+:amanda/occult/occult_overlay32x32_d: 132 30 rrr
+:amanda/occult/occult_overlay32x32_d: 118 44
+:matt/earth/29: 251 271
+:matt/earth/28: 236 332 rr
+:matt/earth/29: 438 336 rr
+:matt/earth/29: 351 266
+:matt/earth/29: 330 281
+:matt/earth/29: 318 290 rr
+:matt/earth/29: 310 282 rr
+:matt/earth/29: 308 308
+:matt/earth/29: 321 332 rr
+:matt/earth/29: 362 254
+:matt/earth/27: 322 242 frr
+$BEGIN_TILE_GROUP 1
+:matt/earth/27: 2 130
+:matt/earth/04: 0 2
+:matt/underworld/02: 70 0 d
+:matt/underworld/02: 70 80 d
+$END_TILE_GROUP
+:Group-1: 410 147
+:matt/earth/27: 304 262
+:matt/earth/18: 232 194
+:matt/earth/18: 315 138
+:matt/earth/29: 319 168
+:matt/earth/29: 371 146
+:matt/earth/29: 436 42
+:matt/earth/29: 248 46
+:matt/earth/27: 254 260
+:matt/earth/18: 312 208 rr
+:matt/earth/18: 317 146
+:matt/earth/05: 160 200 r
+:amanda/steel/steel32x32.S: 0 40
+:amanda/steel/steel32x32.S: 0 72
+:amanda/steel/steel32x32.S: 0 104
+:amanda/steel/steel32x32.S: 0 136
+:amanda/steel/steel32x32.S: 0 168
+:amanda/steel/steel32x32.S: 0 200
+:amanda/steel/steel32x32.S: 0 232
+:amanda/steel/steel32x32.S: 0 264
+:amanda/steel/steel32x32.S: 0 296
+:amanda/steel/steel32x32.S: 0 328
+:amanda/steel/steel32x32.S: 0 360
+:amanda/steel/steel32x32.S: 0 8
+:amanda/steel/steel32x32.S: 32 360
+:amanda/steel/steel32x32.S: 64 360
+:amanda/steel/steel32x32.S: 96 360
+:amanda/steel/steel32x32.S: 128 360
+:amanda/steel/steel32x32.S: 160 360
+:amanda/steel/steel32x32.S: 192 360
+:amanda/steel/steel32x32.S: 224 360
+:amanda/steel/steel32x32.S: 224 328
+:amanda/steel/steel32x32.S: 224 296
+:amanda/steel/steel32x32.S: 224 264
+:amanda/steel/steel32x32.S: 224 232
+:amanda/steel/steel32x32.S: 224 200
+:amanda/steel/steel32x32.S: 224 168
+:amanda/steel/steel32x32.S: 224 136
+:amanda/steel/steel32x32.S: 224 104
+:amanda/steel/steel32x32.S: 224 72
+:amanda/steel/steel32x32.S: 224 40
+:amanda/steel/steel32x32.S: 32 8
+:amanda/steel/steel32x32.S: 64 8
+:amanda/steel/steel32x32.S: 96 8
+:amanda/steel/steel32x32.S: 128 8
+:amanda/steel/steel32x32.S: 160 8
+:amanda/steel/steel32x32.S: 192 8
+:amanda/steel/steel32x32.S: 224 8
+:amanda/steel/steel32x32.S: 256 360
+:amanda/steel/steel32x32.S: 288 360
+:amanda/steel/steel32x32.S: 320 360
+:amanda/steel/steel32x32.S: 352 360
+:amanda/steel/steel32x32.S: 384 360
+:amanda/steel/steel32x32.S: 416 360
+:amanda/steel/steel32x32.S: 448 360
+:amanda/steel/steel32x32.S: 448 328
+:amanda/steel/steel32x32.S: 448 296
+:amanda/steel/steel32x32.S: 448 264
+:amanda/steel/steel32x32.S: 448 232
+:amanda/steel/steel32x32.S: 448 200
+:amanda/steel/steel32x32.S: 448 168
+:amanda/steel/steel32x32.S: 448 136
+:amanda/steel/steel32x32.S: 448 104
+:amanda/steel/steel32x32.S: 448 72
+:amanda/steel/steel32x32.S: 448 40
+:amanda/steel/steel32x32.S: 256 8
+:amanda/steel/steel32x32.S: 288 8
+:amanda/steel/steel32x32.S: 320 8
+:amanda/steel/steel32x32.S: 352 8
+:amanda/steel/steel32x32.S: 384 8
+:amanda/steel/steel32x32.S: 416 8
+:amanda/steel/steel32x32.S: 448 8
+:amanda/steel/steel32x32.S: 480 360
+:amanda/steel/steel32x32.S: 512 360
+:amanda/steel/steel32x32.S: 544 360
+:amanda/steel/steel32x32.S: 576 360
+:amanda/steel/steel32x32.S: 608 360
+:amanda/steel/steel32x32.S: 640 360
+:amanda/steel/steel32x32.S: 672 360
+:amanda/steel/steel32x32.S: 672 328
+:amanda/steel/steel32x32.S: 672 296
+:amanda/steel/steel32x32.S: 672 264
+:amanda/steel/steel32x32.S: 672 232
+:amanda/steel/steel32x32.S: 672 200
+:amanda/steel/steel32x32.S: 672 168
+:amanda/steel/steel32x32.S: 672 136
+:amanda/steel/steel32x32.S: 672 104
+:amanda/steel/steel32x32.S: 672 72
+:amanda/steel/steel32x32.S: 672 40
+:amanda/steel/steel32x32.S: 480 8
+:amanda/steel/steel32x32.S: 512 8
+:amanda/steel/steel32x32.S: 544 8
+:amanda/steel/steel32x32.S: 576 8
+:amanda/steel/steel32x32.S: 608 8
+:amanda/steel/steel32x32.S: 640 8
+:amanda/steel/steel32x32.S: 672 8
+:amanda/steel/steel32x32.S: 704 360
+:amanda/steel/steel32x32.S: 736 360
+:amanda/steel/steel32x32.S: 768 360
+:amanda/steel/steel32x32.S: 864 360
+:amanda/steel/steel32x32.S: 896 360
+:amanda/steel/steel32x32.S: 896 328
+:amanda/steel/steel32x32.S: 896 296
+:amanda/steel/steel32x32.S: 896 264
+:amanda/steel/steel32x32.S: 896 232
+:amanda/steel/steel32x32.S: 896 200
+:amanda/steel/steel32x32.S: 896 168
+:amanda/steel/steel32x32.S: 896 136
+:amanda/steel/steel32x32.S: 896 104
+:amanda/steel/steel32x32.S: 896 72
+:amanda/steel/steel32x32.S: 896 40
+:amanda/steel/steel32x32.S: 704 8
+:amanda/steel/steel32x32.S: 736 8
+:amanda/steel/steel32x32.S: 768 8
+:amanda/steel/steel32x32.S: 800 8
+:amanda/steel/steel32x32.S: 832 8
+:amanda/steel/steel32x32.S: 864 8
+:amanda/steel/steel32x32.S: 896 8
+:matt/earth/02: 323 138
+:matt/earth/00: 312 187 r
+:matt/earth/28: 310 40
+:matt/earth/29: 400 40
+:matt/earth/27: 324 38
+:matt/earth/27: 384 38
+:matt/earth/28: 370 46
+:matt/earth/28: 296 270
+:matt/earth/27: 256 40
+:matt/earth/28: 298 320 rr
+:matt/earth/28: 310 308
+:matt/earth/28: 320 274
+:amanda/occult/occult_wax32x16: 192 104
+:amanda/occult/occult_wax64x64: 160 212 d
+:amanda/occult/occult_wax64x64: 160 180 d
+:amanda/occult/occult_wax32x16_b: 160 104
+:amanda/occult/occult_wax16x16: 144 104
+:amanda/occult/occult_wax32x16_cap_left: 80 104
+:amanda/occult/occult_wax32x16: 112 104
+:amanda/occult/occult_wax16x16: 208 264
+:amanda/occult/occult_wax32x16_b: 176 264
+:amanda/occult/occult_wax32x16: 144 264
+:amanda/occult/occult_wax32x16_b: 112 264 frr
+:amanda/occult/occult_wax32x16_cap_left_alt: 80 264
+:amanda/occult/occult_wax16x16: 32 184
+:amanda/occult/occult_wax32x16: 48 184
+:amanda/occult/occult_wax16x16: 80 184
+:amanda/occult/occult_wax32x16_b: 96 184
+:amanda/occult/occult_wax16x16: 128 184
+:amanda/occult/occult_wax32x16_cap_right_alt: 144 184
+:amanda/occult/occult_wax_details_drip: 96 206
+:amanda/occult/occult_wax_details_drip: 140 284
+:amanda/occult/occult_overlay32x32_c: 86 42
+:amanda/occult/occult_overlay32x32_c: 60 42 rr
+:amanda/occult/occult_wax_details_drip_b: 58 68
+:amanda/occult/occult_wax_details_sunken_lix_b: 128 88
+:amanda/occult/occult_wax_details_lump: 112 260
+:matt/underworld/09c: 596 184 frr
+:matt/underworld/09a: 496 108
+:matt/underworld/09b: 528 268 frr
+:matt/underworld/09b: 554 288 frr
+:matt/underworld/09b: 580 310 frr
+:matt/underworld/09c: 600 58
+:matt/underworld/09c: 608 144
+:matt/underworld/09c: 627 171 frrd
+:matt/underworld/09c: 626 175 frrd
+:matt/underworld/09b: 586 134 frr
+:matt/underworld/09b: 558 108 frr
+:matt/underworld/09c: 626 182 frrd
+:matt/earth/30: 758 283 d
+:geoo/sandstone/64x16: 832 392 d
+:geoo/sandstone/64x16: 800 392 d
+:geoo/sandstone/64x16: 352 392 d
+:proxima/tile/spheres/bluesmall: 824 339 d
+:amanda/steel/steel32x32.S: 832 360
+:amanda/steel/steel32x32.S: 800 360
+:matt/underworld/09c: 580 155
+:matt/underworld/00: 536 170 d
+:matt/underworld/00: 534 155 d
+:matt/underworld/09a: 536 166 frr
+:matt/underworld/09b: 509 143 frr

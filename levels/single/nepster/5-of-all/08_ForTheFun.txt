@@ -1,0 +1,251 @@
+$BUILT 2016-01-13 19:23:47
+$AUTHOR Nepster
+$ENGLISH For the Fun of it!
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1280
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 30
+#REQUIRED 20
+#SPAWN_INTERVAL 30
+
+#WALKER 5
+#RUNNER 5
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER 5
+#BLOCKER 5
+#BUILDER 5
+#PLATFORMER 5
+#BASHER 5
+#MINER 5
+#DIGGER 5
+#JUMPER 5
+#BATTER 5
+#CUBER 5
+
+:amanda/forest/hatch.H: 48 214
+:amanda/forest/hatch.H: 864 34
+
+:amanda/forest/exit_tent.G: 642 240
+
+:amanda/forest/lantern.D: 664 322
+
+:matt/10tons.T: 518 120
+:matt/10tons.T: 807 120
+
+:simon/water.W: 512 330
+:simon/water.W: 560 330
+:simon/water.W: 850 330
+:simon/water.W: 898 330
+
+:matt/earth/18: 334 262 rrr
+:matt/earth/18: 340 278 rrr
+:matt/earth/18: 344 290 rrr
+:matt/earth/18: 1024 180 frr
+:matt/earth/16: 1034 160 frr
+:matt/earth/30: 1014 320 frr
+:matt/earth/30: 966 272 frr
+:matt/earth/30: 918 224 frr
+:matt/earth/30: 870 176 frr
+:matt/earth/30: 918 288 frr
+:matt/earth/30: 816 288
+:matt/earth/07: 732 296 fr
+:matt/earth/18: 472 158
+:matt/earth/03: 380 156 frr
+:matt/earth/03: 346 210 rrr
+:matt/earth/17: 310 174 rr
+:matt/earth/00: 356 290 fr
+:matt/earth/05: 342 212
+:matt/earth/16: 208 256 frr
+:amanda/forest/bark_00: 964 106
+:matt/earth/07: 590 300 f
+:matt/earth/03: 378 156
+:amanda/steel/steel32x32.S: 0 368
+:amanda/steel/steel32x32.S: 0 336
+:amanda/steel/steel32x32.S: 32 336
+:amanda/steel/steel32x32.S: 32 368
+:amanda/steel/steel32x32.S: 64 368
+:amanda/steel/steel32x32.S: 64 336
+:amanda/steel/steel32x32.S: 96 368
+:amanda/steel/steel32x32.S: 96 336
+:amanda/steel/steel32x32.S: 192 368
+:amanda/steel/steel32x32.S: 224 368
+:amanda/steel/steel32x32.S: 256 368
+:amanda/steel/steel32x32.S: 256 336
+:amanda/steel/steel32x32.S: 288 368
+:amanda/steel/steel32x32.S: 288 336
+:amanda/steel/steel32x32.S: 320 336
+:amanda/steel/steel32x32.S: 320 368
+:amanda/steel/steel32x32.S: 352 368
+:amanda/steel/steel32x32.S: 352 336
+:amanda/steel/steel32x32.S: 384 368
+:amanda/steel/steel32x32.S: 384 336
+:amanda/steel/steel32x32.S: 416 336
+:amanda/steel/steel32x32.S: 416 368
+:amanda/steel/steel32x32.S: 448 368
+:amanda/steel/steel32x32.S: 448 336
+:amanda/steel/steel32x32.S: 480 368
+:amanda/steel/steel32x32.S: 480 336
+:amanda/steel/steel32x32.S: 512 336
+:amanda/steel/steel32x32.S: 512 368
+:amanda/steel/steel32x32.S: 544 368
+:amanda/steel/steel32x32.S: 544 336
+:amanda/steel/steel32x32.S: 576 368
+:amanda/steel/steel32x32.S: 576 336
+:amanda/steel/steel32x32.S: 608 368
+:amanda/steel/steel32x32.S: 608 336
+:amanda/steel/steel32x32.S: 640 336
+:amanda/steel/steel32x32.S: 640 368
+:amanda/steel/steel32x32.S: 672 368
+:amanda/steel/steel32x32.S: 672 336
+:amanda/steel/steel32x32.S: 704 368
+:amanda/steel/steel32x32.S: 704 336
+:amanda/steel/steel32x32.S: 736 336
+:amanda/steel/steel32x32.S: 736 368
+:amanda/steel/steel32x32.S: 768 368
+:amanda/steel/steel32x32.S: 768 336
+:amanda/steel/steel32x32.S: 800 368
+:amanda/steel/steel32x32.S: 800 336
+:amanda/steel/steel32x32.S: 832 336
+:amanda/steel/steel32x32.S: 832 368
+:amanda/steel/steel32x32.S: 864 368
+:amanda/steel/steel32x32.S: 864 336
+:amanda/steel/steel32x32.S: 896 368
+:amanda/steel/steel32x32.S: 896 336
+:amanda/steel/steel32x32.S: 928 368
+:amanda/steel/steel32x32.S: 928 336
+:matt/earth/16: 176 208 frr
+:matt/earth/16: 144 160 frr
+:matt/earth/04: 128 224 frr
+:matt/goldmine/explosivecrate: 106 172 d
+:matt/goldmine/explosivecrate: 106 236 d
+:matt/goldmine/explosivecrate: 106 256 d
+:matt/earth/18: 134 306 d
+:amanda/steel/steel32x32.S: 128 336
+:amanda/steel/steel32x32.S: 160 336
+:amanda/steel/steel32x32.S: 192 336
+:amanda/steel/steel32x32.S: 224 336
+:matt/earth/18: 122 306 d
+:matt/earth/18: 137 157 d
+:amanda/steel/steel32x32.S: 128 368
+:amanda/steel/steel32x32.S: 160 368
+:amanda/steel/steel32x32.S: 240 160
+:amanda/steel/steel32x32.S: 272 160
+:amanda/steel/steel32x32.S: 496 160
+:amanda/steel/steel32x32.S: 528 160
+:amanda/steel/steel32x32.S: 560 160
+:matt/earth/02: 366 182
+:amanda/steel/steel32x32.S: 304 160
+:amanda/steel/steel32x32.S: 336 160
+:amanda/steel/steel32x32.S: 368 160
+:amanda/steel/steel32x32.S: 400 160
+:amanda/steel/steel_flange_left24x16.S: 432 320
+:amanda/steel/steel_flange_right24x16.S: 392 304
+:matt/earth/16: 522 250 rrd
+:matt/earth/16: 486 240 fd
+:matt/earth/07: 696 260
+:matt/earth/06: 632 262
+:matt/earth/09: 658 260
+:amanda/steel/steel32x32.S: 784 160
+:amanda/steel/steel32x32.S: 816 160
+:amanda/steel/steel32x32.S: 960 336
+:amanda/steel/steel32x32.S: 960 368
+:amanda/steel/steel32x32.S: 992 368
+:amanda/steel/steel32x32.S: 992 336
+:amanda/steel/steel32x32.S: 1024 368
+:amanda/steel/steel32x32.S: 1056 368
+:amanda/steel/steel32x32.S: 848 160
+:amanda/steel/steel32x32.S: 880 160
+:amanda/steel/steel32x32.S: 912 160
+:amanda/steel/steel32x32.S: 944 160
+:matt/earth/18: 876 338 d
+:matt/earth/18: 888 334 d
+:matt/earth/18: 896 328 d
+:matt/earth/18: 904 320 d
+:matt/earth/18: 870 332 d
+:matt/earth/18: 866 326 d
+:matt/earth/18: 858 318 d
+:amanda/steel/steel32x32.S: 976 160
+:matt/earth/16: 1056 198 frr
+:matt/earth/16: 1094 254 frr
+:amanda/steel/steel32x32.S: 1088 368
+:amanda/steel/steel32x32.S: 1120 368
+:amanda/steel/steel32x32.S: 1120 336
+:amanda/steel/steel32x32.S: 1152 368
+:amanda/steel/steel32x32.S: 1152 336
+:amanda/steel/steel32x32.S: 1184 368
+:amanda/steel/steel32x32.S: 1184 336
+:matt/earth/17: 1042 222
+:matt/earth/03: 1032 204 rrr
+:matt/earth/03: 1034 158 rrr
+:matt/earth/01: 1050 284
+:matt/earth/00: 1040 240
+:matt/earth/00: 1036 196
+:amanda/steel/steel32x32.S: 1024 336
+:amanda/steel/steel32x32.S: 1056 336
+:amanda/steel/steel32x32.S: 1088 336
+:amanda/steel/steel32x32.S: 1216 368
+:amanda/steel/steel32x32.S: 1248 368
+:amanda/steel/steel32x32.S: 1216 336
+:amanda/steel/steel32x32.S: 1248 336
+:amanda/forest/bark_04: -32 320
+:amanda/forest/bark_03: -8 128
+:amanda/forest/leaves_02: -38 36
+:amanda/forest/leaves_03: -66 4
+:amanda/forest/bark_04: 1210 320
+:amanda/forest/bark_03: 1236 128
+:geoo/sandstone/pillar_top_jaggedr: 1234 286 fd
+:geoo/sandstone/pillar_top_jaggedl: 1256 286 rrd
+:geoo/sandstone/64x64: 1234 226 d
+:geoo/sandstone/64x64: 1224 162 d
+:geoo/sandstone/64x64: 1220 114 d
+:amanda/forest/bark_00: 1016 106 frr
+:amanda/steel/steel32x32.S: 1040 160
+:amanda/steel/steel32x32.S: 1008 160
+:amanda/forest/rope: 824 104
+:amanda/forest/rope: 824 88
+:amanda/forest/rope: 824 72
+:amanda/forest/rope: 824 56
+:amanda/forest/rope: 824 40
+:amanda/forest/rope: 824 24
+:amanda/forest/rope: 824 8
+:amanda/forest/rope: 824 -8
+:amanda/forest/rope: 535 104
+:amanda/forest/rope: 535 88
+:amanda/forest/rope: 535 72
+:amanda/forest/rope: 535 56
+:amanda/forest/rope: 535 40
+:amanda/forest/rope: 535 24
+:amanda/forest/rope: 535 8
+:amanda/forest/rope: 535 -8
+:amanda/forest/bark_05: 1185 29
+:amanda/forest/bark_05: 1066 -96
+:amanda/forest/moss_00: 1072 -9
+:amanda/forest/moss_00: 1008 -12
+:amanda/forest/moss_00: 1146 -6
+:amanda/forest/moss_00: 1203 -10
+:amanda/forest/moss_00: 1248 -8
+:amanda/forest/moss_00: 949 -10
+:amanda/forest/moss_00: 883 -8
+:amanda/forest/moss_00: 829 -11
+:amanda/forest/moss_00: 769 -8
+:amanda/forest/moss_00: 714 -12
+:amanda/forest/moss_00: 651 -7
+:amanda/forest/moss_00: 592 -10
+:amanda/forest/moss_00: 532 -9
+:amanda/forest/moss_00: 470 -12
+:amanda/forest/moss_00: 408 -11
+:amanda/forest/moss_00: 362 -8
+:amanda/forest/moss_00: 310 -8
+:amanda/forest/moss_00: 250 -9
+:amanda/forest/moss_00: 194 -6
+:amanda/forest/moss_00: 143 -13
+:amanda/forest/moss_00: 75 -17
+:matt/earth/07b: 736 302
+:amanda/steel/steel_flange_left24x16.S: 416 304
+:amanda/steel/steel_flange_right24x16.S: 376 320
+:amanda/steel/steel16x16.S: 400 320
+:amanda/steel/steel16x16.S: 416 320

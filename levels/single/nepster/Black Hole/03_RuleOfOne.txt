@@ -1,0 +1,147 @@
+$BUILT 2016-07-24 11:03:52
+$AUTHOR Nepster
+$ENGLISH The Rule of the One
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 7
+#SPAWN_INTERVAL 32
+
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#JUMPER 1
+
+:matt/winter/Hatch.H: 414 -18
+
+:matt/winter/Goal.G: 556 304
+
+:geoo/construction/sawblade_small.F: 486 238
+:geoo/construction/sawblade_small.F: 414 238
+:geoo/construction/sawblade.F: 432 234
+:geoo/construction/sawblade.F: 460 234
+:geoo/construction/sawblade.F: 452 350
+:geoo/construction/sawblade_small.F: 554 238
+:geoo/construction/sawblade.F: 572 234
+:geoo/construction/sawblade_small.F: 626 238
+:geoo/construction/sawblade.F: 600 234
+:geoo/construction/sawblade.F: 502 380
+:geoo/construction/sawblade.F: 530 380
+:geoo/construction/sawblade.F: 270 328
+
+:matt/winter/02: 428 325
+:matt/winter/14: 429 339 frr
+:matt/winter/14: 468 339
+:matt/winter/18: 260 10
+:matt/winter/18: 462 325
+:matt/winter/17: -76 274 frrr
+:matt/winter/17: 4 290 frrr
+:matt/winter/17: 84 306 frrr
+:matt/winter/17: 164 322 frrr
+:matt/winter/17: 244 338 frrr
+:matt/winter/18: 364 251
+$BEGIN_TILE_GROUP 0
+:matt/winter/10: 212 50
+:matt/winter/17: 190 30 frrr
+:matt/winter/03: 144 0 d
+:matt/winter/17: 104 18 frrr
+:matt/winter/03: 0 2 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:matt/winter/17: 0 0 frrr
+:Group-0: 158 41
+:matt/winter/17: 92 20 frrr
+:matt/winter/10: 123 52
+:geoo/sandstone/64x64: 288 138 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:Group-1: 0 0
+:matt/winter/10: 23 58
+:geoo/sandstone/64x32_blank: 96 138 d
+:geoo/sandstone/64x32_blank: 160 138 d
+$END_TILE_GROUP
+:Group-2: -96 134
+:matt/winter/09b: 488 104
+:matt/winter/09c: 496 88
+:matt/winter/10: 38 20
+:matt/winter/03: 36 102
+:matt/winter/04: 12 -44 rrr
+:matt/winter/05: -14 -90
+:matt/winter/17: 150 22
+:matt/winter/10: 106 -24
+:matt/winter/10: 204 26
+:matt/winter/10: 310 76
+:matt/winter/04: 600 -42 rr
+:matt/winter/17: 616 62 r
+:matt/winter/04: 590 -32 rr
+:matt/winter/06: 0 128 r
+:matt/winter/06: 64 128 r
+:matt/winter/06: 128 128 r
+:matt/winter/06: 192 128 r
+:matt/winter/06: 256 128 r
+:matt/winter/06: 320 128 r
+:matt/winter/06: 384 128 r
+:matt/winter/06: 448 128 r
+:matt/winter/06: 512 128 r
+:matt/winter/06: 576 128 r
+:matt/winter/06: 0 256 r
+:matt/winter/06: 64 256 r
+:matt/winter/06: 128 256 r
+:matt/winter/06: 192 256 r
+:matt/winter/06: 256 256 r
+:matt/winter/06: 332 256 r
+:geoo/sandstone/64x32_blank: 304 144 d
+:geoo/sandstone/64x32_blank: 368 144 d
+:geoo/sandstone/64x32_blank: 432 144 d
+:geoo/sandstone/64x32_blank: 480 144 d
+:geoo/sandstone/64x32_blank: 320 160 d
+:geoo/sandstone/64x32_blank: 368 160 d
+:geoo/sandstone/64x32_blank: 320 272 d
+:geoo/sandstone/64x32_blank: 256 272 d
+:geoo/sandstone/64x32_blank: 128 272 d
+:matt/winter/10: 27 330
+:matt/winter/10: -117 298
+:matt/winter/06: 0 368 r
+:matt/winter/06: 64 368 r
+:matt/winter/06: 128 368 r
+:matt/winter/06: 192 368 r
+:matt/winter/06: 256 368 r
+:matt/winter/06: 320 368 r
+:matt/winter/14: 468 323
+:matt/winter/14: 428 325 frr
+:matt/winter/18: 442 325
+:matt/winter/18: 474 325
+:matt/winter/18: 454 325
+:matt/winter/06: 448 256 r
+:matt/winter/06: 420 256 r
+:matt/winter/04: 290 -66 f
+:matt/winter/06: 560 368 r
+:matt/winter/06: 576 368 r
+:matt/winter/06: 576 384 r
+:matt/winter/06: 560 384 r
+:matt/winter/06: 320 384 r
+:matt/winter/06: 256 384 r
+:matt/winter/06: 0 384 r
+:matt/winter/06: 64 384 r
+:matt/winter/06: 128 384 r
+:matt/winter/06: 192 384 r
+:matt/winter/06: 384 368 r
+:matt/winter/06: 384 384 r
+:matt/winter/09b: 456 352 d
+:matt/winter/06: 448 368 r
+:matt/winter/06: 560 256 r
+:matt/winter/06: 576 256 r
+:matt/winter/10: 166 -82 rr
+:matt/winter/06: 316 256 r
+:matt/winter/06: 337 272 rd
+:matt/winter/06: 396 230 d
+:matt/winter/06: 448 384 r

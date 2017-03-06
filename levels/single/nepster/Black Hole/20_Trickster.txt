@@ -1,0 +1,249 @@
+$BUILT 2016-01-13 18:29:24
+$AUTHOR Nepster
+$ENGLISH House of the Mad Trickster
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 100
+#REQUIRED 96
+#SPAWN_INTERVAL 10
+
+#WALKER 1
+#RUNNER 1
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 1
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#JUMPER 1
+#CUBER 1
+
+:geoo/construction/Hatch.H: 120 264
+
+:matt/carnival/Goal.G: 90 19
+
+:simon/rabbit.D: 328 250
+
+:geoo/construction/squisher.T: 208 288
+:geoo/construction/squisher.T: 488 178
+
+:geoo/construction/sawblade_small.F: 464 78
+:geoo/construction/sawblade_small.F: 441 47
+:geoo/construction/sawblade_small.F: 391 -9
+
+:simon/tapir/032: 32 192
+:simon/tapir/016: 463 352
+:simon/tapir/032v: 464 114
+:simon/tapir/016h: 384 352
+:simon/tapir/032h: 336 146
+:simon/tapir/032h: 272 146
+:simon/tapir/032v: 0 160
+:simon/tapir/032v: 0 224
+:simon/tapir/032v: 0 288
+:simon/tapir/032h: 208 146
+:simon/tapir/032h: 144 146
+:simon/tapir/032h: 144 82
+:simon/tapir/008v: 44 368
+:simon/tapir/008v: 44 384
+:simon/tapir/008v: 76 368
+:simon/tapir/008v: 76 384
+:simon/tapir/008v: 108 368
+:simon/tapir/008v: 108 384
+:simon/tapir/008v: 140 368
+:simon/tapir/008v: 140 384
+:simon/tapir/008v: 172 368
+:simon/tapir/008v: 172 384
+:simon/tapir/008v: 204 368
+:simon/tapir/008v: 204 384
+:simon/tapir/008v: 236 368
+:simon/tapir/008v: 236 384
+:simon/tapir/008v: 268 368
+:simon/tapir/008v: 268 384
+:simon/tapir/008v: 300 368
+:simon/tapir/008v: 300 384
+:simon/tapir/008v: 332 368
+:simon/tapir/008v: 332 384
+:simon/tapir/008v: 364 368
+:simon/tapir/008v: 364 384
+:simon/tapir/008v: 396 367
+:simon/tapir/008v: 396 384
+:simon/tapir/008v: 424 368
+:simon/tapir/008v: 424 384
+:simon/tapir/008v: 463 368
+:simon/tapir/008v: 463 384
+:simon/tapir/008v: 492 368
+:simon/tapir/008v: 492 384
+:simon/tapir/008v: 524 368
+:simon/tapir/008v: 524 384
+:simon/tapir/008v: 556 368
+:simon/tapir/008v: 556 384
+:simon/tapir/008v: 588 368
+:simon/tapir/008v: 588 384
+:simon/tapir/016h: 0 352
+:simon/tapir/016h: 32 352
+:simon/tapir/016h: 64 352
+:simon/tapir/016h: 96 352
+:simon/tapir/016h: 128 352
+:simon/tapir/016h: 160 352
+:simon/tapir/016h: 192 352
+:simon/tapir/016h: 224 352
+:simon/tapir/016h: 256 352
+:simon/tapir/016h: 288 352
+:simon/tapir/016h: 320 352
+:simon/tapir/016h: 352 352
+:simon/tapir/016h: 608 352
+:simon/tapir/016h: 576 352
+:simon/tapir/016h: 544 352
+:simon/tapir/016h: 512 352
+:simon/tapir/016h: 480 352
+:simon/tapir/008h: 200 288
+:simon/tapir/008h: 232 288
+:simon/tapir/008h: 240 296
+:simon/tapir/008h: 416 296
+:simon/tapir/008h: 424 288
+:simon/tapir/008h: 456 288
+:simon/tapir/008h: 248 304
+:simon/tapir/008h: 256 312
+:simon/tapir/008h: 264 320
+:simon/tapir/008h: 408 304
+:simon/tapir/008h: 400 312
+:simon/tapir/008h: 392 320
+:simon/tapir/008h: 416 202
+:simon/tapir/008h: 424 210
+:simon/tapir/008h: 456 210
+:simon/tapir/008h: 408 194
+:simon/tapir/008h: 400 186
+:simon/tapir/008h: 392 178
+:simon/tapir/008h: 200 210
+:simon/tapir/008h: 232 210
+:simon/tapir/008h: 240 202
+:simon/tapir/008h: 248 194
+:simon/tapir/008h: 256 186
+:simon/tapir/008h: 264 178
+:simon/tapir/008h: 320 234
+:simon/tapir/008h: 312 242
+:simon/tapir/008h: 336 234
+:simon/tapir/008h: 344 242
+:simon/tapir/008h: 320 266
+:simon/tapir/008h: 312 258
+:simon/tapir/008h: 304 250
+:simon/tapir/008h: 336 266
+:simon/tapir/008h: 344 258
+:simon/tapir/008h: 352 250
+:simon/tapir/016: 416 352
+$BEGIN_TILE_GROUP 0
+:simon/tapir/016: 7 0
+:simon/tapir/016: 0 0 d
+$END_TILE_GROUP
+:Group-0: 473 352
+:simon/tapir/032vd: 0 0
+:simon/tapir/032vc: 608 0
+:simon/tapir/032v: 608 160
+:simon/tapir/032v: 608 224
+:simon/tapir/032v: 608 288
+:simon/tapir/008h: 440 288
+:simon/tapir/008h: 216 288
+:simon/tapir/008h: 440 210
+:simon/tapir/008h: 216 210
+:simon/tapir/008h: 168 256
+:simon/tapir/008h: 176 264
+:simon/tapir/008h: 184 272
+:simon/tapir/008h: 192 280
+:simon/tapir/008h: 488 256
+:simon/tapir/008h: 480 264
+:simon/tapir/008h: 472 272
+:simon/tapir/008h: 464 280
+:simon/tapir/008h: 168 242
+:simon/tapir/008h: 176 234
+:simon/tapir/008h: 184 226
+:simon/tapir/008h: 192 218
+:simon/tapir/008h: 488 242
+:simon/tapir/008h: 480 234
+:simon/tapir/008h: 472 226
+:simon/tapir/008h: 464 218
+:simon/tapir/032h: 240 114
+:simon/tapir/032h: 208 82
+:simon/tapir/008h: 152 256
+:simon/tapir/008h: 152 242
+:simon/tapir/008h: 136 256
+:simon/tapir/008h: 136 242
+:simon/tapir/008h: 504 256
+:simon/tapir/008h: 504 242
+:simon/tapir/008h: 520 256
+:simon/tapir/008h: 520 242
+:simon/tapir/032h: 496 146
+:simon/tapir/032va: 608 96
+:simon/tapir/032vb: 496 82
+:simon/tapir/032vc: 336 0
+:matt/steel/16x8.S: 448 50
+:matt/steel/16x8.S: 432 50 frr
+:matt/steel/16x8.S: 400 88 frr
+:matt/steel/16x8.S: 416 88
+:simon/tapir/008v: 12 368
+:simon/tapir/008v: 12 384
+:simon/tapir/008v: 620 368
+:simon/tapir/008v: 620 384
+:simon/tapir/032va: 576 160
+:simon/tapir/032va: 544 224
+:simon/tapir/032va: 512 288
+:simon/tapir/032v: 576 224
+:simon/tapir/032v: 576 288
+:simon/tapir/032v: 544 288
+:simon/tapir/032vb: 64 224
+:simon/tapir/032vb: 96 288
+:simon/tapir/032v: 32 224
+:simon/tapir/032v: 32 288
+:simon/tapir/032v: 64 288
+:simon/tapir/032: 80 114
+:simon/tapir/032h: 176 114
+:simon/tapir/032vb: 0 96
+:simon/tapir/032h: 112 114
+:simon/tapir/032h: 80 82
+:simon/tapir/032h: 80 146
+:simon/tapir/008h: 536 242
+:simon/tapir/008h: 120 242
+:geoo/construction/platformbrick_single: 402 350 rrrd
+:geoo/construction/platformbrick_single: 403 348 rrrd
+:geoo/construction/platformbrick_single: 404 346 rrrd
+:matt/steel/32x32.S: 464 50
+:simon/tapir/032c: 464 50 d
+:matt/steel/32x32.S: 368 64
+:simon/tapir/032b: 368 64 d
+:simon/tapir/032v: 368 0
+$BEGIN_TILE_GROUP 1
+:simon/tapir/032v: 0 0
+:simon/tapir/016h: 0 48 d
+$END_TILE_GROUP
+:Group-1: 464 82
+:simon/tapir/016v: 470 140 d
+:simon/tapir/016v: 474 140 d
+:simon/tapir/016v: 474 110 d
+:simon/tapir/016v: 470 110 d
+:simon/tapir/016v: 474 88 d
+:simon/tapir/016v: 470 88 d
+:geoo/construction/platformbrick_single: 399 356 rrrd
+:geoo/construction/platformbrick_single: 400 354 rrrd
+:geoo/construction/platformbrick_single: 401 352 rrrd
+:geoo/construction/platformbrick_single: 396 362 rrrd
+:geoo/construction/platformbrick_single: 397 360 rrrd
+:geoo/construction/platformbrick_single: 398 358 rrrd
+:geoo/construction/platformbrick_single: 395 364 rrrd
+:geoo/construction/platformbrick_single: 393 364 rrrd
+:geoo/construction/platformbrick_single: 392 362 rrrd
+:geoo/construction/platformbrick_single: 391 360 rrrd
+:geoo/construction/platformbrick_single: 390 358 rrrd
+:geoo/construction/platformbrick_single: 389 356 rrrd
+$BEGIN_TILE_GROUP 2
+:simon/tapir/032vb: 0 0
+:simon/tapir/032: 16 32 d
+$END_TILE_GROUP
+:Group-2: 32 160
+:simon/tapir/016c: 96 50 d
+:simon/tapir/032h: 400 146

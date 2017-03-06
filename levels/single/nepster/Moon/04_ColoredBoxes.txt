@@ -1,0 +1,65 @@
+$BUILT 2017-03-02 13:01:18
+$AUTHOR Nepster
+$ENGLISH Colored Boxes
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 20
+#REQUIRED 19
+#SPAWN_INTERVAL 40
+
+#CLIMBER 1
+#FLOATER 1
+#BLOCKER 1
+#BUILDER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#CUBER 1
+#EXPLODER 0
+
+:simon/hatch001.H: 128 0
+
+:proxima/tile/goal.G: 0 304
+
+:proxima/tile/spheres/blue: 288 96
+:proxima/tile/spheres/blue: 96 96
+:proxima/tile/spheres/blue: 480 96
+:proxima/tile/green1: 0 368
+:proxima/tile/red3: 64 368
+:proxima/tile/green1: 128 368
+:proxima/tile/red3: 192 368
+:proxima/tile/green1: 256 368
+:proxima/tile/red3: 320 368
+:proxima/tile/green1: 384 368
+:proxima/tile/red3: 448 368
+:proxima/tile/green1: 512 368
+:proxima/tile/red3: 576 368
+:proxima/tile/green1: 192 304
+:proxima/tile/red3: 256 304
+:proxima/tile/green1: 320 304
+:proxima/tile/red3: 128 304
+:proxima/tile/green1: 128 240
+:proxima/tile/red3: 192 240
+:proxima/tile/green1: 256 240
+:proxima/tile/red3: 320 240
+:proxima/tile/green1: 192 176
+:proxima/tile/red3: 256 176
+:proxima/tile/green1: 320 176
+:proxima/tile/red3: 128 176
+:proxima/tile/green1: 128 64
+:proxima/tile/red3: 192 64
+:proxima/tile/green1: 256 64
+:proxima/tile/red3: 320 64
+:proxima/tile/red3: 448 64
+:proxima/tile/green1: 512 64
+:proxima/tile/green1: 384 64
+:proxima/tile/green1: 64 304
+:proxima/tile/red3: 64 240
+:proxima/tile/green1: 64 176
+:proxima/tile/red3: 64 64
+:proxima/tile/green1: 64 0
+:proxima/tile/blue1: 416 272
+:proxima/tile/blue1: 512 176

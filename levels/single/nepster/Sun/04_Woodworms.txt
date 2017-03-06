@@ -1,0 +1,247 @@
+$BUILT 2016-07-23 13:55:29
+$AUTHOR Nepster
+$ENGLISH Woodworms
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1088
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 30
+
+#CLIMBER 1
+#FLOATER 1
+#BLOCKER 1
+#BUILDER 2
+#BASHER 2
+#MINER 2
+#DIGGER 1
+#EXPLODER 0
+
+:amanda/forest/hatch.H: 144 8
+
+:amanda/forest/exit.G: 888 150
+
+:amanda/forest/bark_03: -8 256
+:amanda/forest/bark_03: -8 64
+:amanda/forest/bark_03: -8 -128
+:amanda/forest/bark_03: 16 304
+:amanda/forest/bark_03: 16 112
+:amanda/forest/bark_03: 16 -80
+:amanda/forest/bark_03: 40 240
+:amanda/forest/bark_03: 40 48
+:amanda/forest/bark_03: 40 -144
+:amanda/forest/bark_03: 64 296
+:amanda/forest/bark_03: 64 104
+:amanda/forest/bark_03: 64 -88
+:amanda/forest/bark_03: 88 256
+:amanda/forest/bark_03: 88 64
+:amanda/forest/bark_03: 88 -128
+:amanda/forest/bark_03: 112 296
+:amanda/forest/bark_03: 112 104
+:amanda/forest/bark_03: 112 -88
+:amanda/forest/bark_03: 136 240
+:amanda/forest/bark_03: 136 48
+:amanda/forest/bark_03: 136 -144
+:amanda/forest/bark_03: 160 -80
+:amanda/forest/bark_03: 160 112
+:amanda/forest/bark_03: 160 304
+:amanda/forest/bark_03: 184 -144
+:amanda/forest/bark_03: 184 48
+:amanda/forest/bark_03: 184 240
+:amanda/forest/bark_03: 208 -96
+:amanda/forest/bark_03: 208 96
+:amanda/forest/bark_03: 208 288
+:amanda/forest/bark_03: 232 -120
+:amanda/forest/bark_03: 232 72
+:amanda/forest/bark_03: 232 264
+:amanda/forest/bark_03: 256 -72
+:amanda/forest/bark_03: 256 120
+:amanda/forest/bark_03: 256 312
+:amanda/forest/bark_03: 280 -128
+:amanda/forest/bark_03: 280 64
+:amanda/forest/bark_03: 280 256
+:amanda/forest/bark_03: 304 -16
+:amanda/forest/bark_03: 304 176
+:amanda/forest/bark_03: 304 368
+:amanda/forest/bark_03: 328 -32
+:amanda/forest/bark_03: 328 160
+:amanda/forest/bark_03: 328 352
+:amanda/forest/bark_03: 352 -112
+:amanda/forest/bark_03: 352 80
+:amanda/forest/bark_03: 352 272
+:amanda/forest/bark_03: 376 -160
+:amanda/forest/bark_03: 376 32
+:amanda/forest/bark_03: 376 224
+:amanda/forest/bark_03: 392 272
+:amanda/forest/bark_03: 392 80
+:amanda/forest/bark_03: 392 -112
+:amanda/forest/bark_03: 416 320
+:amanda/forest/bark_03: 416 128
+:amanda/forest/bark_03: 416 -64
+:amanda/forest/bark_03: 440 256
+:amanda/forest/bark_03: 440 64
+:amanda/forest/bark_03: 440 -128
+:amanda/forest/bark_03: 464 312
+:amanda/forest/bark_03: 464 120
+:amanda/forest/bark_03: 464 -72
+:amanda/forest/bark_03: 488 272
+:amanda/forest/bark_03: 488 80
+:amanda/forest/bark_03: 488 -112
+:amanda/forest/bark_03: 512 312
+:amanda/forest/bark_03: 512 120
+:amanda/forest/bark_03: 512 -72
+:amanda/forest/bark_03: 536 256
+:amanda/forest/bark_03: 536 64
+:amanda/forest/bark_03: 536 -128
+:amanda/forest/bark_03: 560 -64
+:amanda/forest/bark_03: 560 128
+:amanda/forest/bark_03: 560 320
+:amanda/forest/bark_03: 584 -128
+:amanda/forest/bark_03: 584 64
+:amanda/forest/bark_03: 584 256
+:amanda/forest/bark_03: 608 -80
+:amanda/forest/bark_03: 608 112
+:amanda/forest/bark_03: 608 304
+:amanda/forest/bark_03: 632 -104
+:amanda/forest/bark_03: 632 88
+:amanda/forest/bark_03: 632 280
+:amanda/forest/bark_03: 656 -56
+:amanda/forest/bark_03: 656 136
+:amanda/forest/bark_03: 656 328
+:amanda/forest/bark_03: 680 -112
+:amanda/forest/bark_03: 680 80
+:amanda/forest/bark_03: 680 272
+:amanda/forest/bark_03: 704 0
+:amanda/forest/bark_03: 704 192
+:amanda/forest/bark_03: 704 384
+:amanda/forest/bark_03: 728 -16
+:amanda/forest/bark_03: 728 176
+:amanda/forest/bark_03: 728 368
+:amanda/forest/bark_03: 752 -96
+:amanda/forest/bark_03: 752 96
+:amanda/forest/bark_03: 752 288
+:amanda/forest/bark_03: 776 -144
+:amanda/forest/bark_03: 776 48
+:amanda/forest/bark_03: 776 240
+:amanda/forest/bark_03: 800 288
+:amanda/forest/bark_03: 800 96
+:amanda/forest/bark_03: 800 -96
+:amanda/forest/bark_03: 824 336
+:amanda/forest/bark_03: 824 144
+:amanda/forest/bark_03: 824 -48
+:amanda/forest/bark_03: 848 272
+:amanda/forest/bark_03: 848 80
+:amanda/forest/bark_03: 848 -112
+:amanda/forest/bark_03: 872 328
+:amanda/forest/bark_03: 872 136
+:amanda/forest/bark_03: 872 -56
+:amanda/forest/bark_03: 896 288
+:amanda/forest/bark_03: 896 96
+:amanda/forest/bark_03: 896 -96
+:amanda/forest/bark_03: 920 328
+:amanda/forest/bark_03: 920 136
+:amanda/forest/bark_03: 920 -56
+:amanda/forest/bark_03: 944 272
+:amanda/forest/bark_03: 944 80
+:amanda/forest/bark_03: 944 -112
+:amanda/forest/bark_03: 968 -48
+:amanda/forest/bark_03: 968 144
+:amanda/forest/bark_03: 968 336
+:amanda/forest/bark_03: 992 -112
+:amanda/forest/bark_03: 992 80
+:amanda/forest/bark_03: 992 272
+:amanda/forest/bark_03: 1016 -64
+:amanda/forest/bark_03: 1016 128
+:amanda/forest/bark_03: 1016 320
+:amanda/forest/bark_03: 1040 -88
+:amanda/forest/bark_03: 1040 104
+:amanda/forest/bark_03: 1040 296
+:amanda/forest/bark_03: 1064 -40
+:amanda/forest/bark_03: 1064 152
+:amanda/forest/bark_03: 1064 344
+:geoo/abstract/cvblocks/040: 64 64 d
+:geoo/abstract/cvblocks/035: 64 128 d
+:geoo/abstract/cvblocks/035: 128 128 d
+:geoo/abstract/cvblocks/035: 192 128 d
+:geoo/abstract/cvblocks/035: 256 128 d
+:geoo/abstract/cvblocks/035: 320 128 d
+:geoo/abstract/cvblocks/040: 112 160 d
+:geoo/abstract/cvblocks/040: 112 224 d
+:geoo/abstract/cvblocks/040: 112 288 d
+:geoo/abstract/cvblocks/035: 48 320 d
+:geoo/abstract/cvblocks/040: 32 256 d
+:geoo/abstract/cvblocks/030: 32 320 d
+:geoo/abstract/cvblocks/040: 176 64 d
+:geoo/abstract/cvblocks/040: 176 16 d
+:geoo/abstract/cvblocks/035: 208 48 d
+:geoo/abstract/cvblocks/035: 272 48 d
+:geoo/abstract/cvblocks/020: 384 136 d
+:geoo/abstract/cvblocks/040: 416 48 d
+:geoo/abstract/cvblocks/040: 416 112 d
+:geoo/abstract/cvblocks/040: 416 176 d
+:geoo/abstract/cvblocks/040: 416 240 d
+:geoo/abstract/cvblocks/040: 416 336 d
+:geoo/abstract/cvblocks/035: 448 320 d
+:geoo/abstract/cvblocks/030: 512 320 d
+:geoo/abstract/cvblocks/020: 544 328 d
+:geoo/abstract/cvblocks/025: 400 272 d
+:geoo/abstract/cvblocks/035: 512 256 d
+:geoo/abstract/cvblocks/035: 464 256 d
+:geoo/abstract/cvblocks/025: 496 288 d
+:geoo/abstract/cvblocks/040: 544 192 d
+:geoo/abstract/cvblocks/040: 544 128 d
+:geoo/abstract/cvblocks/040: 544 64 d
+:geoo/abstract/cvblocks/035: 448 48 d
+:geoo/abstract/cvblocks/035: 512 48 d
+:geoo/abstract/cvblocks/035: 576 48 d
+:geoo/abstract/cvblocks/040: 448 -16 d
+:geoo/abstract/cvblocks/040: 608 -16 d
+:geoo/abstract/cvblocks/040: 336 176 d
+:geoo/abstract/cvblocks/035: 272 208 d
+:geoo/abstract/cvblocks/035: 240 208 d
+:geoo/abstract/cvblocks/040: 288 240 d
+:geoo/abstract/cvblocks/035: 304 304 d
+:geoo/abstract/cvblocks/035: 240 304 d
+:geoo/abstract/cvblocks/035: 192 304 d
+:geoo/abstract/cvblocks/035: 576 320 d
+:geoo/abstract/cvblocks/040: 608 256 d
+:geoo/abstract/cvblocks/035: 624 208 d
+:geoo/abstract/cvblocks/040: 688 176 d
+:geoo/abstract/cvblocks/040: 688 128 d
+:geoo/abstract/cvblocks/040: 688 64 d
+:geoo/abstract/cvblocks/035: 688 48 d
+:geoo/abstract/cvblocks/040: 608 208 d
+:geoo/abstract/cvblocks/035: 752 48 d
+:geoo/abstract/cvblocks/040: 752 160 d
+:geoo/abstract/cvblocks/035: 752 128 d
+:geoo/abstract/cvblocks/035: 752 208 d
+:geoo/abstract/cvblocks/040: 816 96 d
+:geoo/abstract/cvblocks/040: 816 48 d
+:geoo/abstract/cvblocks/040: 848 16 d
+:geoo/abstract/cvblocks/035: 816 208 d
+:geoo/abstract/cvblocks/035: 880 208 d
+:geoo/abstract/cvblocks/035: 880 128 d
+:geoo/abstract/cvblocks/020: 848 136 d
+:geoo/abstract/cvblocks/040: 944 96 d
+:geoo/abstract/cvblocks/035: 944 208 d
+:geoo/abstract/cvblocks/040: 1024 0 d
+:geoo/abstract/cvblocks/040: 1008 208 d
+:geoo/abstract/cvblocks/035: 1024 64 d
+:geoo/abstract/cvblocks/040: 1008 272 d
+:geoo/abstract/cvblocks/040: 1008 336 d
+:geoo/abstract/cvblocks/035: 912 320 d
+:geoo/abstract/cvblocks/020: 976 328 d
+:geoo/abstract/cvblocks/035: 848 320 d
+:geoo/abstract/cvblocks/035: 784 320 d
+:geoo/abstract/cvblocks/040: 784 352 d
+:geoo/abstract/cvblocks/035: 1040 272 d
+:geoo/abstract/cvblocks/035: 0 64 d
+:geoo/abstract/cvblocks/030: 848 -16 d
+:geoo/abstract/cvblocks/040: 416 304 d
+:geoo/abstract/cvblocks/035: 352 368 d
+:geoo/abstract/cvblocks/035: 288 368 d
+:geoo/abstract/cvblocks/035: 352 364 d
+:geoo/abstract/cvblocks/035: 288 364 d

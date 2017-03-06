@@ -1,0 +1,828 @@
+$BUILT 2016-02-29 20:46:21
+$AUTHOR Nepster
+$ENGLISH Thin Layers
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 708
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 7
+#SPAWN_INTERVAL 30
+
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+
+:matt/underworld/Hatch.H: 66 264
+
+:matt/marble/Goal.G: 66 150
+
+:geoo/sandstone/chopper.T: 400 166
+:geoo/sandstone/chopper.T: 210 294
+
+:geoo/sandstone/ebony/h8a: 226 326
+:geoo/sandstone/ebony/h8a: 194 326
+:geoo/sandstone/ebony/v8l: 316 194 rr
+:geoo/sandstone/ebony/v8l: 0 386
+:geoo/sandstone/ebony/v8l: 252 262 rr
+:geoo/sandstone/ebony/v8l: 380 326 rr
+:geoo/sandstone/ebony/v8l: 636 6 rr
+:geoo/sandstone/ebony/v8l: 636 198 rr
+:geoo/sandstone/ebony/v8l: 512 70
+:geoo/sandstone/ebony/v8l: 448 130
+:geoo/sandstone/ebony/v8l: 380 134 rr
+:geoo/sandstone/ebony/v8l: 320 134
+:geoo/sandstone/ebony/v8l: 0 6
+:geoo/sandstone/ebony/h16l: 542 250
+:geoo/sandstone/ebony/h16l: 530 236
+:geoo/sandstone/ebony/h16l: 516 222
+:geoo/sandstone/ebony/h16l: 516 236
+:geoo/sandstone/ebony/h16l: 530 250
+:geoo/sandstone/ebony/h16l: 516 250
+:geoo/sandstone/ebony/h16l: 696 6
+:geoo/sandstone/ebony/h16l: 692 10
+:geoo/sandstone/ebony/h16l: 684 18
+:geoo/sandstone/ebony/h16l: 676 26
+:geoo/sandstone/ebony/h16l: 668 34
+:geoo/sandstone/ebony/h16l: 660 42
+:geoo/sandstone/ebony/h16l: 652 50
+:geoo/sandstone/ebony/h16l: 640 58
+:geoo/sandstone/ebony/h16l: 640 70
+:geoo/sandstone/ebony/h16l: 650 82
+:geoo/sandstone/ebony/h16l: 658 90
+:geoo/sandstone/ebony/h16l: 666 98
+:geoo/sandstone/ebony/h16l: 674 106
+:geoo/sandstone/ebony/h16l: 686 114
+:geoo/sandstone/ebony/h16l: 694 128
+$BEGIN_TILE_GROUP 0
+:geoo/sandstone/ebony/h16l: 0 0
+:geoo/sandstone/ebony/h16l: 10 12
+:geoo/sandstone/ebony/h16l: 18 20
+:geoo/sandstone/ebony/h16l: 26 28
+:geoo/sandstone/ebony/h16l: 34 36
+:geoo/sandstone/ebony/h16l: 44 44
+:geoo/sandstone/ebony/h16l: 54 56
+:geoo/sandstone/16x16: 68 68 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:geoo/sandstone/ebony/h16l: 64 66
+:Group-0: 0 0
+:geoo/sandstone/16x16: 68 4 d
+$END_TILE_GROUP
+:Group-1: 576 70
+:geoo/sandstone/ebony/h16l: 650 146
+:geoo/sandstone/ebony/h16l: 658 154
+:geoo/sandstone/ebony/h16l: 666 162
+:geoo/sandstone/ebony/h16l: 674 170
+:geoo/sandstone/ebony/h16l: 684 178
+:geoo/sandstone/ebony/h16l: 692 190
+:geoo/sandstone/ebony/h16l: 576 200
+:geoo/sandstone/ebony/h16l: 586 210
+:geoo/sandstone/ebony/h16l: 594 218
+:geoo/sandstone/ebony/h16l: 602 226
+:geoo/sandstone/ebony/h16l: 610 234
+:geoo/sandstone/ebony/h16l: 620 242
+:geoo/sandstone/ebony/h16l: 630 254
+:geoo/sandstone/ebony/h16l: 512 136
+:geoo/sandstone/ebony/h16l: 522 146
+:geoo/sandstone/ebony/h16l: 530 154
+:geoo/sandstone/ebony/h16l: 538 162
+:geoo/sandstone/ebony/h16l: 546 170
+:geoo/sandstone/ebony/h16l: 556 178
+:geoo/sandstone/ebony/h16l: 564 190
+:geoo/sandstone/ebony/h16l: 640 264
+:geoo/sandstone/ebony/h16l: 650 274
+:geoo/sandstone/ebony/h16l: 658 282
+:geoo/sandstone/ebony/h16l: 666 290
+:geoo/sandstone/ebony/h16l: 674 298
+:geoo/sandstone/ebony/h16l: 684 306
+:geoo/sandstone/ebony/h16l: 692 318
+:geoo/sandstone/ebony/h16l: 640 328
+:geoo/sandstone/ebony/h16l: 650 338
+:geoo/sandstone/ebony/h16l: 658 346
+:geoo/sandstone/ebony/h16l: 666 354
+:geoo/sandstone/ebony/h16l: 674 362
+:geoo/sandstone/ebony/h16l: 684 370
+:geoo/sandstone/ebony/h16l: 692 382
+:geoo/sandstone/ebony/h16l: 512 326
+:geoo/sandstone/ebony/h16l: 522 338
+:geoo/sandstone/ebony/h16l: 530 346
+:geoo/sandstone/ebony/h16l: 538 354
+:geoo/sandstone/ebony/h16l: 546 362
+:geoo/sandstone/ebony/h16l: 556 370
+:geoo/sandstone/ebony/h16l: 564 382
+$BEGIN_TILE_GROUP 2
+:geoo/sandstone/ebony/h16l: 0 0
+:geoo/sandstone/16x16: 12 4 d
+$END_TILE_GROUP
+:Group-2: 632 262
+:geoo/sandstone/ebony/h16l: 628 266
+:geoo/sandstone/ebony/h16l: 620 274
+:geoo/sandstone/ebony/h16l: 612 282
+:geoo/sandstone/ebony/h16l: 604 290
+:geoo/sandstone/ebony/h16l: 596 298
+:geoo/sandstone/ebony/h16l: 586 306
+:geoo/sandstone/ebony/h16l: 576 316
+:geoo/sandstone/ebony/h16l: 504 262
+:geoo/sandstone/ebony/h16l: 500 266
+:geoo/sandstone/ebony/h16l: 492 274
+:geoo/sandstone/ebony/h16l: 484 282
+:geoo/sandstone/ebony/h16l: 476 290
+:geoo/sandstone/ebony/h16l: 468 298
+:geoo/sandstone/ebony/h16l: 458 306
+:geoo/sandstone/ebony/h16l: 448 316
+:geoo/sandstone/ebony/h16l: 384 200
+:geoo/sandstone/ebony/h16l: 394 210
+:geoo/sandstone/ebony/h16l: 402 218
+:geoo/sandstone/ebony/h16l: 410 226
+:geoo/sandstone/ebony/h16l: 418 234
+:geoo/sandstone/ebony/h16l: 428 242
+:geoo/sandstone/ebony/h16l: 436 254
+:geoo/sandstone/ebony/h16l: 320 136
+:geoo/sandstone/ebony/h16l: 330 146
+:geoo/sandstone/ebony/h16l: 338 154
+:geoo/sandstone/ebony/h16l: 346 162
+:geoo/sandstone/ebony/h16l: 354 170
+:geoo/sandstone/ebony/h16l: 364 178
+:geoo/sandstone/ebony/h16l: 372 190
+:geoo/sandstone/ebony/h16l: 320 8
+:geoo/sandstone/ebony/h16l: 330 18
+:geoo/sandstone/ebony/h16l: 338 26
+:geoo/sandstone/ebony/h16l: 346 34
+:geoo/sandstone/ebony/h16l: 354 42
+:geoo/sandstone/ebony/h16l: 364 50
+:geoo/sandstone/ebony/h16l: 372 62
+:geoo/sandstone/ebony/h16l: 504 6
+:geoo/sandstone/ebony/h16l: 500 10
+:geoo/sandstone/ebony/h16l: 492 18
+:geoo/sandstone/ebony/h16l: 484 26
+:geoo/sandstone/ebony/h16l: 476 34
+:geoo/sandstone/ebony/h16l: 468 42
+:geoo/sandstone/ebony/h16l: 460 50
+:geoo/sandstone/ebony/h16l: 448 58
+:geoo/sandstone/ebony/h16l: 308 70
+:geoo/sandstone/ebony/h16l: 300 82
+:geoo/sandstone/ebony/h16l: 292 90
+$BEGIN_TILE_GROUP 3
+:geoo/sandstone/ebony/h16l: 30 0
+:geoo/sandstone/ebony/h16l: 22 8
+:geoo/sandstone/ebony/h16l: 10 16
+:geoo/sandstone/ebony/h16l: 2 28
+:geoo/sandstone/ebony/h16l: 0 36
+:geoo/sandstone/slopes/32x32rb: 8 6 d
+$END_TILE_GROUP
+:Group-3: 254 98
+$BEGIN_TILE_GROUP 4
+:geoo/sandstone/ebony/h8a: 0 0
+:geoo/sandstone/ebony/h8a: 32 0
+:geoo/sandstone/ebony/h8a: 32 4 d
+:geoo/sandstone/ebony/h8a: 0 4 d
+$END_TILE_GROUP
+:Group-4: 290 70
+:geoo/sandstone/ebony/h8a: 258 70
+:geoo/sandstone/ebony/h16l: 116 70
+:geoo/sandstone/ebony/h16l: 116 74
+:geoo/sandstone/ebony/h16l: 108 82
+:geoo/sandstone/ebony/h16l: 100 90
+:geoo/sandstone/ebony/h16l: 92 98
+:geoo/sandstone/ebony/h16l: 84 106
+:geoo/sandstone/ebony/h16l: 76 114
+:geoo/sandstone/ebony/h16l: 66 122
+:geoo/sandstone/ebony/h16l: 56 130
+:geoo/sandstone/ebony/h16l: 52 138
+:geoo/sandstone/ebony/h16l: 44 146
+:geoo/sandstone/ebony/h16l: 36 154
+:geoo/sandstone/ebony/h16l: 28 162
+:geoo/sandstone/ebony/h16l: 20 170
+:geoo/sandstone/ebony/h16l: 12 178
+:geoo/sandstone/ebony/h16l: 0 186
+:geoo/sandstone/ebony/v8a: 636 328 rr
+:geoo/sandstone/ebony/v8a: 636 358 rr
+:geoo/sandstone/ebony/v8a: 636 8 rr
+:geoo/sandstone/ebony/v8a: 636 40 rr
+$BEGIN_TILE_GROUP 5
+:geoo/sandstone/ebony/h8a: 0 0
+:geoo/sandstone/ebony/h8a: 0 4 d
+$END_TILE_GROUP
+:Group-5: 610 262
+:geoo/sandstone/ebony/h8a: 578 262
+:geoo/sandstone/ebony/h8a: 546 262
+$BEGIN_TILE_GROUP 6
+:geoo/sandstone/ebony/h8a: 32 0
+:geoo/sandstone/ebony/h8a: 0 0
+:geoo/sandstone/ebony/h8a: 0 4 d
+:geoo/sandstone/ebony/h8a: 32 4 d
+$END_TILE_GROUP
+:Group-6: 482 262
+:geoo/sandstone/ebony/h8a: 450 262
+$BEGIN_TILE_GROUP 7
+:geoo/sandstone/ebony/v8a: 4 0 rr
+:geoo/sandstone/ebony/v8a: 4 30 rr
+:geoo/sandstone/ebony/v8a: 0 30 rrd
+$END_TILE_GROUP
+:Group-7: 636 200
+:geoo/sandstone/ebony/v8a: 508 200 rr
+:geoo/sandstone/ebony/v8a: 508 230 rr
+:geoo/sandstone/ebony/v8a: 508 136 rr
+$BEGIN_TILE_GROUP 8
+:geoo/sandstone/ebony/v8a: 26 0 rr
+:geoo/sandstone/ebony/h8a: 0 30
+:geoo/sandstone/ebony/h8a: 0 34 d
+$END_TILE_GROUP
+:Group-8: 482 168
+:geoo/sandstone/ebony/v8a: 508 72 rr
+$BEGIN_TILE_GROUP 9
+:geoo/sandstone/ebony/v8a: 26 0 rr
+:geoo/sandstone/ebony/h8a: 32 30
+:geoo/sandstone/ebony/h8a: 0 30
+:geoo/sandstone/ebony/h8a: 0 34 d
+:geoo/sandstone/ebony/h8a: 32 34 d
+$END_TILE_GROUP
+:Group-9: 482 104
+:Group-5: 610 198
+:Group-5: 578 198
+:geoo/sandstone/ebony/h8a: 450 198
+:geoo/sandstone/ebony/h8a: 418 198
+$BEGIN_TILE_GROUP 10
+:geoo/sandstone/ebony/h8a: 10 30
+:geoo/sandstone/ebony/v8a: 4 0 rr
+:geoo/sandstone/ebony/v8a: 0 0 rrd
+:geoo/sandstone/ebony/h8a: 10 34 d
+$END_TILE_GROUP
+:Group-10: 384 168
+:Group-5: 546 70
+:Group-5: 514 70
+:geoo/sandstone/ebony/h8a: 610 134
+:geoo/sandstone/ebony/h8a: 578 134
+:geoo/sandstone/ebony/h8a: 546 134
+:geoo/sandstone/ebony/h8a: 450 134
+$BEGIN_TILE_GROUP 11
+:geoo/sandstone/ebony/h8a: 32 0
+:geoo/sandstone/ebony/h8a: 0 0
+:geoo/sandstone/ebony/h8a: 2 4 d
+:geoo/sandstone/ebony/h8a: 32 4 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 12
+:geoo/sandstone/ebony/v8a: 58 2 rr
+:Group-11: 0 0
+:geoo/sandstone/16x16: 2 4 d
+$END_TILE_GROUP
+:Group-12: 322 134
+:geoo/sandstone/ebony/v8a: 444 72 rr
+:geoo/sandstone/ebony/v8a: 444 104 rr
+:Group-5: 610 6
+:geoo/sandstone/ebony/h8a: 578 6
+:geoo/sandstone/ebony/h8a: 546 6
+:Group-6: 482 6
+:geoo/sandstone/ebony/h8a: 450 6
+:geoo/sandstone/ebony/h8a: 418 6
+:geoo/sandstone/ebony/h8a: 386 6
+:geoo/sandstone/ebony/h8a: 354 6
+$BEGIN_TILE_GROUP 13
+:geoo/sandstone/ebony/h8a: 0 0
+:geoo/sandstone/ebony/h8a: 0 4 d
+:geoo/sandstone/16x16: 2 4 d
+$END_TILE_GROUP
+:Group-13: 322 6
+:Group-5: 418 70
+:geoo/sandstone/ebony/h8a: 386 70
+:geoo/sandstone/ebony/h8a: 354 70
+$BEGIN_TILE_GROUP 14
+:geoo/sandstone/ebony/h16l: 0 0
+:geoo/sandstone/ebony/h8a: 46 0
+:geoo/sandstone/ebony/h8a: 14 0
+:geoo/sandstone/ebony/h8a: 16 4 d
+:geoo/sandstone/ebony/h8a: 46 4 d
+$END_TILE_GROUP
+:Group-14: 244 6
+:geoo/sandstone/ebony/h16l: 236 18
+:geoo/sandstone/ebony/h16l: 228 26
+:geoo/sandstone/ebony/h8a: 162 6
+:geoo/sandstone/ebony/h8a: 130 6
+:geoo/sandstone/ebony/h8a: 98 6
+:geoo/sandstone/ebony/h8a: 66 6
+:geoo/sandstone/ebony/h8a: 34 6
+:geoo/sandstone/ebony/h8a: 2 6
+$BEGIN_TILE_GROUP 15
+:geoo/sandstone/ebony/h16l: 28 0
+:geoo/sandstone/ebony/h16l: 20 8
+:geoo/sandstone/ebony/h16l: 8 16
+:geoo/sandstone/ebony/h16l: 0 28
+:geoo/sandstone/slopes/32x32rb: 12 0 d
+$END_TILE_GROUP
+:Group-15: 192 34
+:geoo/sandstone/ebony/h16l: 56 70
+:geoo/sandstone/ebony/h16l: 52 74
+:geoo/sandstone/ebony/h16l: 44 82
+:geoo/sandstone/ebony/h16l: 36 90
+:geoo/sandstone/ebony/h16l: 28 98
+:geoo/sandstone/ebony/h16l: 20 106
+:geoo/sandstone/ebony/h16l: 10 114
+:geoo/sandstone/ebony/h16l: 0 124
+:geoo/sandstone/ebony/h16l: 128 72
+:geoo/sandstone/ebony/h16l: 138 82
+:geoo/sandstone/ebony/h16l: 146 90
+:geoo/sandstone/ebony/h16l: 154 98
+:geoo/sandstone/ebony/h16l: 162 106
+:geoo/sandstone/ebony/h16l: 172 114
+:geoo/sandstone/ebony/h16l: 180 122
+:geoo/sandstone/ebony/h16l: 266 146
+:geoo/sandstone/ebony/h16l: 274 154
+:geoo/sandstone/ebony/h16l: 282 162
+:geoo/sandstone/ebony/h16l: 290 170
+:geoo/sandstone/ebony/h16l: 300 178
+:geoo/sandstone/ebony/h16l: 306 184
+$BEGIN_TILE_GROUP 16
+:geoo/sandstone/ebony/h16l: 118 0
+:geoo/sandstone/ebony/h16l: 114 4
+:geoo/sandstone/ebony/h16l: 106 12
+:geoo/sandstone/ebony/h16l: 98 20
+:geoo/sandstone/ebony/h16l: 90 28
+:geoo/sandstone/ebony/h16l: 82 36
+:geoo/sandstone/ebony/h16l: 74 44
+:geoo/sandstone/ebony/h16l: 66 52
+:geoo/sandstone/ebony/h16l: 58 60
+:geoo/sandstone/ebony/h16l: 50 68
+:geoo/sandstone/ebony/h16l: 42 76
+:geoo/sandstone/ebony/h16l: 34 84
+:geoo/sandstone/ebony/h16l: 26 92
+:geoo/sandstone/ebony/h16l: 18 100
+:geoo/sandstone/ebony/h16l: 10 108
+:geoo/sandstone/ebony/h16l: 2 116
+:Group-5: 32 64
+:geoo/sandstone/ebony/h8a: 0 64
+:geoo/sandstone/ebony/h8a: 0 68 d
+:geoo/sandstone/slopes/32x32rb: 6 96 d
+:geoo/sandstone/slopes/32x32rb: 34 68 d
+:geoo/sandstone/slopes/32x32lt: 2 92 d
+:geoo/sandstone/slopes/32x32lt: 26 68 d
+:geoo/sandstone/slopes/32x32rb: 74 28 d
+:geoo/sandstone/slopes/32x32lt: 66 28 d
+:geoo/sandstone/slopes/32x32rb: 50 52 d
+:geoo/construction/rod_steel/link_h_du.S: 45 54 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 17
+:geoo/sandstone/ebony/v8a: 56 2 rr
+:geoo/sandstone/ebony/v8a: 56 34 rr
+:geoo/sandstone/ebony/h16l: 118 64
+:geoo/sandstone/ebony/h16l: 114 68
+:geoo/sandstone/ebony/h16l: 106 76
+:geoo/sandstone/ebony/h16l: 98 84
+:geoo/sandstone/ebony/h16l: 90 92
+:geoo/sandstone/ebony/h16l: 82 100
+:geoo/sandstone/ebony/h16l: 74 108
+:geoo/sandstone/ebony/h16l: 62 116
+:Group-5: 128 64
+:Group-16: 0 0
+:geoo/sandstone/16x16: 130 4 d
+:geoo/sandstone/16x16: 130 4 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 18
+:geoo/sandstone/ebony/h16l: 136 12
+:geoo/sandstone/ebony/h16l: 144 20
+:geoo/sandstone/ebony/h16l: 152 28
+:Group-17: 0 0
+:geoo/sandstone/slopes/32x32rb: 98 4 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 19
+:geoo/sandstone/ebony/h16l: 128 4
+:Group-18: 0 0
+:geoo/sandstone/ebony/h8a: 160 0
+:geoo/sandstone/ebony/h8a: 160 4 d
+$END_TILE_GROUP
+:Group-19: 66 134
+:geoo/sandstone/ebony/h16l: 226 170
+:geoo/sandstone/ebony/h16l: 236 178
+:geoo/sandstone/ebony/h16l: 244 190
+$BEGIN_TILE_GROUP 20
+:geoo/sandstone/ebony/v8a: 4 0 rr
+:geoo/sandstone/ebony/v8a: 4 32 rr
+:geoo/sandstone/ebony/v8a: 0 30 rrd
+$END_TILE_GROUP
+:Group-20: 316 136
+:Group-5: 98 70
+:Group-5: 66 70
+:geoo/sandstone/ebony/h8a: 162 70
+:Group-13: 130 70
+:geoo/sandstone/ebony/h8a: 290 198
+:geoo/sandstone/ebony/h8a: 258 198
+:geoo/sandstone/ebony/h8a: 226 198
+:geoo/sandstone/ebony/h16l: 56 258
+:geoo/sandstone/ebony/h16l: 52 266
+:geoo/sandstone/ebony/h16l: 44 274
+:geoo/sandstone/ebony/h16l: 36 282
+:geoo/sandstone/ebony/h16l: 28 290
+:geoo/sandstone/ebony/h16l: 20 298
+:geoo/sandstone/ebony/h16l: 12 306
+:geoo/sandstone/ebony/h16l: 4 314
+:Group-5: 194 134
+:geoo/sandstone/ebony/h8a: 34 198
+:geoo/sandstone/ebony/h8a: 2 198
+:geoo/sandstone/ebony/h8a: 98 262
+:Group-5: 66 262
+:geoo/sandstone/ebony/h8a: 162 262
+:geoo/sandstone/ebony/h8a: 130 262
+:geoo/sandstone/ebony/h8a: 226 262
+$BEGIN_TILE_GROUP 21
+:geoo/sandstone/ebony/h8a: 32 0
+:geoo/sandstone/ebony/h16l: 28 64
+:geoo/sandstone/ebony/v8a: 26 2 rr
+:Group-8: 0 34
+:geoo/sandstone/ebony/v8a: 22 32 rrd
+:geoo/sandstone/ebony/v8a: 22 2 rrd
+$END_TILE_GROUP
+:Group-21: 162 262
+$BEGIN_TILE_GROUP 22
+:geoo/sandstone/ebony/h16l: 60 0
+:geoo/sandstone/ebony/h16l: 52 12
+:geoo/sandstone/ebony/h16l: 44 20
+:geoo/sandstone/ebony/h16l: 36 28
+:geoo/sandstone/ebony/h16l: 28 36
+:geoo/sandstone/ebony/h16l: 16 44
+:geoo/sandstone/ebony/h16l: 8 56
+:geoo/sandstone/ebony/v8a: 4 34 rr
+:geoo/sandstone/ebony/h8a: 10 64
+:geoo/sandstone/ebony/v8a: 0 34 rrd
+:geoo/sandstone/ebony/h8a: 8 68 d
+$END_TILE_GROUP
+:Group-22: 256 262
+$BEGIN_TILE_GROUP 23
+:geoo/sandstone/ebony/v8a: 4 0 rr
+:geoo/sandstone/ebony/v8a: 0 0 rrd
+$END_TILE_GROUP
+:Group-23: 256 264
+:geoo/sandstone/ebony/h16l: 344 326
+:geoo/sandstone/ebony/h16l: 340 330
+:geoo/sandstone/ebony/h16l: 332 338
+:geoo/sandstone/ebony/h16l: 324 346
+:geoo/sandstone/ebony/h16l: 316 354
+:geoo/sandstone/ebony/h16l: 308 362
+:geoo/sandstone/ebony/h16l: 296 370
+:geoo/sandstone/ebony/h16l: 288 382
+:geoo/sandstone/ebony/h16l: 202 338
+:geoo/sandstone/ebony/h16l: 210 346
+:geoo/sandstone/ebony/h16l: 218 354
+:geoo/sandstone/ebony/h16l: 226 362
+:geoo/sandstone/ebony/h16l: 236 370
+:geoo/sandstone/ebony/h16l: 244 382
+:geoo/sandstone/ebony/h16l: 130 330
+:geoo/sandstone/ebony/h16l: 138 338
+:geoo/sandstone/ebony/h16l: 146 346
+:geoo/sandstone/ebony/h16l: 154 354
+:geoo/sandstone/ebony/h16l: 162 362
+:geoo/sandstone/ebony/h16l: 172 370
+:geoo/sandstone/ebony/h16l: 180 382
+:geoo/sandstone/ebony/h16l: 56 326
+:geoo/sandstone/ebony/h16l: 52 330
+:geoo/sandstone/ebony/h16l: 44 338
+:geoo/sandstone/ebony/h16l: 36 346
+:geoo/sandstone/ebony/h16l: 28 354
+:geoo/sandstone/ebony/h16l: 20 362
+:geoo/sandstone/ebony/h16l: 12 370
+:geoo/sandstone/ebony/h16l: 4 378
+:geoo/sandstone/ebony/v8a: 380 328 rr
+:geoo/sandstone/ebony/v8a: 380 360 rr
+:geoo/sandstone/ebony/h8a: 2 390
+:geoo/sandstone/ebony/h8a: 34 390
+:geoo/sandstone/ebony/h8a: 66 390
+:geoo/sandstone/ebony/h8a: 98 390
+:geoo/sandstone/ebony/h8a: 130 390
+:geoo/sandstone/ebony/h8a: 162 390
+:geoo/sandstone/ebony/h8a: 258 390
+:geoo/sandstone/ebony/h8a: 290 390
+:geoo/sandstone/ebony/h8a: 322 390
+:geoo/sandstone/ebony/h8a: 354 390
+:geoo/sandstone/ebony/h8a: 386 390
+:geoo/sandstone/ebony/h8a: 418 390
+:geoo/sandstone/ebony/h8a: 450 390
+:geoo/sandstone/ebony/h8a: 482 390
+:geoo/sandstone/ebony/h8a: 514 390
+:geoo/sandstone/ebony/h8a: 546 390
+:geoo/sandstone/ebony/h8a: 578 390
+:geoo/sandstone/ebony/h8a: 610 390
+:geoo/sandstone/ebony/v8a: -4 360 rr
+:geoo/sandstone/ebony/v8a: -4 328 rr
+:geoo/sandstone/ebony/v8a: -4 296 rr
+:geoo/sandstone/ebony/v8a: -4 264 rr
+:geoo/sandstone/ebony/v8a: -4 232 rr
+:geoo/sandstone/ebony/v8a: -4 200 rr
+:geoo/sandstone/ebony/v8a: -4 104 rr
+:geoo/sandstone/ebony/v8a: -4 72 rr
+:geoo/sandstone/ebony/v8a: -4 40 rr
+:geoo/sandstone/ebony/v8a: -4 8 rr
+:Group-5: 66 326
+:geoo/sandstone/ebony/h8a: 98 326
+:geoo/sandstone/ebony/h8a: 98 330 d
+:Group-13: 130 326
+:geoo/sandstone/ebony/h8a: 290 326
+:geoo/sandstone/ebony/h8a: 288 330 d
+:Group-5: 322 326
+:Group-5: 354 326
+:geoo/sandstone/ebony/v8a: 376 358 rrd
+:geoo/sandstone/slopes/32x32rb: 8 358 d
+:geoo/sandstone/slopes/32x32rb: 36 330 d
+:geoo/sandstone/slopes/32x32lt: 4 354 d
+:geoo/sandstone/slopes/32x32lt: 32 326 d
+:geoo/sandstone/slopes/32x32rt: 164 358 d
+:geoo/sandstone/slopes/32x32rt: 136 330 d
+:geoo/sandstone/slopes/32x32lb: 156 358 d
+:geoo/sandstone/slopes/32x32lb: 130 332 d
+:geoo/sandstone/slopes/32x32rt: 228 358 d
+:geoo/sandstone/slopes/32x32lb: 218 356 d
+:geoo/sandstone/slopes/32x32lb: 230 368 d
+:geoo/sandstone/slopes/32x32rt: 212 342 d
+:geoo/sandstone/slopes/32x32rb: 296 358 d
+:geoo/sandstone/slopes/32x32rb: 324 330 d
+:geoo/sandstone/slopes/32x32lt: 288 358 d
+:geoo/sandstone/slopes/32x32lt: 316 330 d
+:geoo/sandstone/slopes/32x32rb: 264 294 d
+:geoo/sandstone/slopes/32x32lt: 260 290 d
+:geoo/sandstone/slopes/32x32lt: 288 262 d
+:geoo/sandstone/ebony/h8a: 322 262
+:geoo/sandstone/ebony/h8a: 324 266 d
+:geoo/sandstone/slopes/32x32rb: 292 266 d
+:geoo/sandstone/ebony/h8a: 196 266 d
+:Group-13: 514 326
+:geoo/sandstone/ebony/h8a: 546 326
+:geoo/sandstone/ebony/h8a: 578 326
+$BEGIN_TILE_GROUP 24
+:geoo/sandstone/ebony/h8a: 0 0
+:geoo/sandstone/ebony/h8a: 0 4 d
+:geoo/sandstone/ebony/h8a: 32 0
+:geoo/sandstone/ebony/h8a: 32 4 d
+$END_TILE_GROUP
+:Group-24: 610 326
+:geoo/sandstone/ebony/h8a: 674 326
+:geoo/sandstone/ebony/h8a: 642 390
+:geoo/sandstone/ebony/h8a: 674 390
+:geoo/sandstone/ebony/v8a: 704 360
+:geoo/sandstone/ebony/v8a: 704 328
+:geoo/sandstone/ebony/h8a: 130 266 d
+:geoo/sandstone/ebony/h8a: 160 266 d
+:geoo/sandstone/ebony/h8a: 98 266 d
+:geoo/sandstone/ebony/h8a: 4 202 d
+:geoo/sandstone/ebony/h8a: 34 202 d
+:geoo/sandstone/slopes/32x32rb: 4 298 d
+:geoo/sandstone/slopes/32x32rb: 36 266 d
+:geoo/sandstone/slopes/32x32lt: 4 290 d
+:geoo/sandstone/slopes/32x32lt: 36 258 d
+:geoo/sandstone/slopes/32x32rb: 136 230 d
+:geoo/sandstone/slopes/32x32rb: 164 202 d
+:geoo/sandstone/slopes/32x32lt: 128 230 d
+:geoo/sandstone/slopes/32x32lt: 160 198 d
+:geoo/sandstone/ebony/v8a: 118 166 rrd
+:geoo/sandstone/ebony/v8a: 118 136 rrd
+:geoo/sandstone/ebony/v8a: 312 136 rrd
+:geoo/sandstone/slopes/32x32rt: 228 166 d
+:geoo/sandstone/slopes/32x32rt: 200 138 d
+:geoo/sandstone/slopes/32x32lb: 220 166 d
+:geoo/sandstone/slopes/32x32lb: 194 140 d
+:geoo/sandstone/slopes/32x32rt: 288 162 d
+:geoo/sandstone/slopes/32x32lb: 284 166 d
+:geoo/sandstone/slopes/32x32rt: 164 102 d
+:geoo/sandstone/slopes/32x32rt: 136 74 d
+:geoo/sandstone/slopes/32x32lb: 158 104 d
+:geoo/sandstone/ebony/h8a: 226 202 d
+:geoo/sandstone/ebony/h8a: 258 202 d
+:geoo/sandstone/ebony/h8a: 290 202 d
+:geoo/sandstone/slopes/32x32lt: 158 136 d
+:geoo/sandstone/slopes/32x32rb: 12 98 d
+:geoo/sandstone/slopes/32x32rb: 36 74 d
+:geoo/sandstone/slopes/32x32lt: 4 98 d
+:geoo/sandstone/slopes/32x32lt: 32 70 d
+:geoo/sandstone/slopes/32x32lt: 196 34 d
+:geoo/sandstone/64x32_blank: 2 394 d
+:geoo/sandstone/64x32_blank: 66 394 d
+:geoo/sandstone/64x32_blank: 130 394 d
+:geoo/sandstone/64x32_blank: 194 394 d
+:geoo/sandstone/64x32_blank: 258 394 d
+:geoo/sandstone/64x32_blank: 322 394 d
+:geoo/sandstone/64x32_blank: 386 394 d
+:geoo/sandstone/64x32_blank: 450 394 d
+:geoo/sandstone/slopes/32x32rb: -4 114 d
+:geoo/sandstone/8x8: 0 138 d
+:geoo/sandstone/ebony/h8a: 164 74 d
+:geoo/sandstone/slopes/32x32rb: 188 50 d
+:geoo/construction/rod_steel/link_h_dd.S: 176 58 fd
+:geoo/sandstone/ebony/h8a: 34 10 d
+:geoo/sandstone/ebony/h8a: 66 10 d
+:geoo/sandstone/ebony/h8a: 98 10 d
+:geoo/sandstone/ebony/h8a: 130 10 d
+:geoo/sandstone/ebony/h8a: 162 10 d
+:geoo/sandstone/slopes/32x32lt: 224 6 d
+:geoo/sandstone/slopes/32x32rb: 228 10 d
+:geoo/sandstone/ebony/h8a: 354 10 d
+:geoo/sandstone/ebony/h8a: 386 10 d
+:geoo/sandstone/ebony/h8a: 418 10 d
+:geoo/sandstone/ebony/h8a: 450 10 d
+:geoo/sandstone/ebony/h8a: 546 10 d
+:geoo/sandstone/ebony/h8a: 578 10 d
+:geoo/sandstone/ebony/v8a: 440 104 rrd
+:geoo/sandstone/ebony/v8a: 440 74 rrd
+:geoo/sandstone/ebony/h8a: 450 138 d
+:geoo/sandstone/ebony/h8a: 546 138 d
+:geoo/sandstone/ebony/h8a: 578 138 d
+:geoo/sandstone/ebony/h8a: 418 202 d
+:geoo/sandstone/ebony/h8a: 450 202 d
+:geoo/sandstone/ebony/v8a: 504 102 rrd
+:geoo/sandstone/ebony/v8a: 504 72 rrd
+:geoo/sandstone/ebony/v8a: 504 166 rrd
+:geoo/sandstone/ebony/v8a: 504 138 rrd
+:geoo/sandstone/ebony/v8a: 504 230 rrd
+:geoo/sandstone/ebony/v8a: 504 202 rrd
+:geoo/sandstone/ebony/v8a: 704 296
+:geoo/sandstone/ebony/v8a: 704 264
+:geoo/sandstone/ebony/v8a: 704 232
+:geoo/sandstone/ebony/v8a: 704 200
+:geoo/sandstone/ebony/v8a: 704 168
+:geoo/sandstone/ebony/v8a: 704 136
+:geoo/sandstone/ebony/v8a: 632 358 rrd
+:geoo/sandstone/ebony/v8a: 632 330 rrd
+:geoo/sandstone/slopes/32x32rb: 8 166 d
+:geoo/sandstone/slopes/32x32rb: 28 146 d
+:geoo/sandstone/slopes/32x32lt: 0 166 d
+:geoo/sandstone/slopes/32x32lt: 28 138 d
+:geoo/sandstone/slopes/32x32rb: 76 98 d
+:geoo/sandstone/slopes/32x32rb: 98 76 d
+:geoo/sandstone/slopes/32x32lt: 68 98 d
+:geoo/sandstone/slopes/32x32lt: 92 74 d
+:geoo/sandstone/slopes/32x32lb: 130 76 d
+:geoo/sandstone/slopes/32x32rb: 50 124 d
+:geoo/sandstone/slopes/32x32lt: 44 122 d
+:geoo/sandstone/ebony/h8a: 258 74 d
+:geoo/sandstone/slopes/32x32lt: 256 102 d
+:geoo/sandstone/slopes/32x32lt: 284 74 d
+:geoo/sandstone/slopes/32x32rb: 292 74 d
+:geoo/sandstone/slopes/32x32rt: 262 136 d
+:geoo/sandstone/slopes/32x32lb: 256 138 d
+:geoo/sandstone/slopes/32x32rb: 452 42 d
+:geoo/sandstone/slopes/32x32rb: 484 10 d
+:geoo/sandstone/slopes/32x32lt: 448 38 d
+:geoo/sandstone/slopes/32x32lt: 476 10 d
+:geoo/sandstone/slopes/32x32rt: 356 38 d
+:geoo/sandstone/slopes/32x32rt: 328 10 d
+:geoo/sandstone/slopes/32x32lb: 348 38 d
+:geoo/sandstone/slopes/32x32lb: 320 10 d
+:geoo/sandstone/ebony/h8a: 354 74 d
+:geoo/sandstone/ebony/h8a: 386 74 d
+:geoo/sandstone/slopes/32x32rt: 352 162 d
+:geoo/sandstone/slopes/32x32rt: 328 138 d
+:geoo/sandstone/slopes/32x32lb: 346 164 d
+:geoo/sandstone/slopes/32x32lb: 324 142 d
+:geoo/sandstone/slopes/32x32rt: 420 230 d
+:geoo/sandstone/slopes/32x32rt: 392 202 d
+:geoo/sandstone/slopes/32x32lb: 416 234 d
+:geoo/sandstone/slopes/32x32lb: 392 210 d
+:geoo/sandstone/ebony/h8a: 450 266 d
+:geoo/sandstone/ebony/h8a: 418 266 d
+:geoo/sandstone/slopes/32x32lb: 368 186 d
+:geoo/sandstone/slopes/32x32rb: 452 298 d
+:geoo/sandstone/slopes/32x32rb: 484 266 d
+:geoo/sandstone/slopes/32x32lt: 448 294 d
+:geoo/sandstone/slopes/32x32lt: 476 266 d
+:geoo/sandstone/slopes/32x32rb: 584 294 d
+:geoo/sandstone/slopes/32x32lt: 576 294 d
+:geoo/sandstone/ebony/h8a: 448 330 d
+:geoo/sandstone/ebony/h8a: 578 330 d
+:geoo/sandstone/ebony/h8a: 546 330 d
+:geoo/sandstone/slopes/32x32rt: 548 358 d
+:geoo/sandstone/slopes/32x32rt: 520 330 d
+:geoo/sandstone/slopes/32x32lb: 540 358 d
+:geoo/sandstone/slopes/32x32lb: 512 330 d
+:geoo/sandstone/slopes/32x32rt: 672 354 d
+:geoo/sandstone/slopes/32x32rt: 648 330 d
+:geoo/sandstone/slopes/32x32lb: 668 358 d
+:geoo/sandstone/slopes/32x32lb: 644 334 d
+:geoo/sandstone/slopes/32x32rt: 672 290 d
+:geoo/sandstone/slopes/32x32lb: 668 294 d
+:geoo/sandstone/slopes/32x32rt: 548 166 d
+:geoo/sandstone/slopes/32x32rt: 520 138 d
+:geoo/sandstone/slopes/32x32lb: 538 164 d
+:geoo/sandstone/slopes/32x32lb: 516 142 d
+:geoo/sandstone/slopes/32x32rt: 608 226 d
+:geoo/sandstone/slopes/32x32rt: 584 202 d
+:geoo/sandstone/slopes/32x32lb: 604 230 d
+:geoo/sandstone/slopes/32x32lb: 576 202 d
+:geoo/sandstone/slopes/32x32rt: 612 102 d
+:geoo/sandstone/slopes/32x32rt: 580 70 d
+:geoo/sandstone/slopes/32x32lb: 604 102 d
+:geoo/sandstone/slopes/32x32lb: 576 74 d
+:geoo/sandstone/slopes/32x32rt: 672 162 d
+:geoo/sandstone/slopes/32x32rt: 644 134 d
+:geoo/sandstone/slopes/32x32lb: 672 170 d
+:geoo/sandstone/slopes/32x32lb: 640 138 d
+:geoo/sandstone/slopes/32x32rt: 676 102 d
+:geoo/sandstone/slopes/32x32lb: 672 106 d
+:geoo/sandstone/slopes/32x32lb: 640 74 d
+:geoo/sandstone/64x32_blank: 578 394 d
+:geoo/sandstone/64x32_blank: 514 394 d
+:geoo/sandstone/ebony/h8a: 672 330 d
+:geoo/sandstone/64x32_blank: 642 394 d
+:geoo/sandstone/64x32_blank: 650 394 d
+:geoo/sandstone/slopes/32x32lt: 604 266 d
+:geoo/sandstone/slopes/32x32rb: 610 268 d
+:geoo/sandstone/ebony/v8a: 644 230 rrd
+:geoo/sandstone/slopes/32x32lb: 642 268 d
+:geoo/sandstone/slopes/32x32rt: 644 262 d
+:geoo/sandstone/slopes/32x32lb: 554 180 d
+:geoo/sandstone/ebony/h8a: 608 138 d
+:geoo/sandstone/ebony/v8a: 632 40 rrd
+:geoo/sandstone/slopes/32x32rb: 646 40 d
+:geoo/sandstone/slopes/32x32rb: 676 10 d
+:geoo/sandstone/slopes/32x32lt: 644 34 d
+:geoo/sandstone/slopes/32x32lt: 672 6 d
+:geoo/sandstone/slopes/32x32rt: 646 72 d
+:geoo/sandstone/16x16: 516 10 d
+:geoo/sandstone/16x16: 484 42 d
+:geoo/sandstone/16x16: 612 86 d
+:geoo/sandstone/16x16: 588 106 d
+:geoo/sandstone/16x16: 644 118 d
+:geoo/sandstone/16x16: 656 106 d
+:geoo/sandstone/16x16: 678 86 d
+:geoo/sandstone/16x16: 678 42 d
+:geoo/sandstone/16x16: 688 138 d
+:geoo/sandstone/16x16: 658 170 d
+:geoo/sandstone/16x16: 552 150 d
+:geoo/sandstone/16x16: 588 234 d
+:geoo/sandstone/16x16: 616 300 d
+:geoo/sandstone/16x16: 654 298 d
+:geoo/sandstone/16x16: 656 364 d
+:geoo/sandstone/16x16: 552 344 d
+:geoo/sandstone/16x16: 526 362 d
+:geoo/sandstone/16x16: 484 298 d
+:geoo/sandstone/16x16: 516 266 d
+:geoo/sandstone/16x16: 424 214 d
+:geoo/sandstone/16x16: 358 22 d
+:geoo/sandstone/16x16: 332 40 d
+:geoo/sandstone/16x16: 294 106 d
+:geoo/sandstone/16x16: 240 138 d
+:geoo/sandstone/16x16: 268 168 d
+:geoo/sandstone/16x16: 232 150 d
+:geoo/sandstone/16x16: 204 172 d
+:geoo/sandstone/16x16: 166 86 d
+:geoo/sandstone/16x16: 142 108 d
+:geoo/sandstone/16x16: 68 74 d
+:geoo/sandstone/16x16: 196 202 d
+:geoo/sandstone/16x16: 168 234 d
+:geoo/sandstone/16x16: 144 214 d
+:geoo/sandstone/16x16: 104 232 d
+:geoo/sandstone/16x16: 68 266 d
+:geoo/sandstone/16x16: 36 298 d
+:geoo/sandstone/16x16: 68 330 d
+:geoo/sandstone/16x16: 40 362 d
+:geoo/sandstone/16x16: 142 364 d
+:geoo/sandstone/16x16: 168 344 d
+:geoo/sandstone/16x16: 176 330 d
+:geoo/sandstone/16x16: 296 296 d
+:geoo/sandstone/16x16: 356 330 d
+:geoo/sandstone/16x16: 328 362 d
+:geoo/sandstone/ebony/h8a: 546 266 d
+:geoo/sandstone/ebony/h8a: 578 266 d
+:geoo/abstract/cvblocks/002: 516 250 d
+:geoo/abstract/cvblocks/002: 520 254 d
+:geoo/abstract/cvblocks/002: 516 254 d
+:geoo/abstract/cvblocks/002: 516 230 d
+:geoo/abstract/cvblocks/002: 516 242 rrd
+:geoo/abstract/cvblocks/002: 522 248 rrd
+:geoo/abstract/cvblocks/002: 528 254 rrd
+:geoo/abstract/cvblocks/002: 524 238 d
+:geoo/abstract/cvblocks/002: 532 246 d
+:geoo/abstract/cvblocks/002: 540 254 d
+:geoo/abstract/cvblocks/002: 516 222 rrd
+:geoo/abstract/cvblocks/002: 524 230 rrd
+:geoo/abstract/cvblocks/002: 532 238 rrd
+:geoo/abstract/cvblocks/002: 540 246 rrd
+:geoo/abstract/cvblocks/002: 548 254 rrd
+:geoo/abstract/cvblocks/000: 524 222 d
+:geoo/abstract/cvblocks/000: 532 230 d
+:geoo/abstract/cvblocks/000: 540 238 d
+:geoo/abstract/cvblocks/000: 548 246 d
+:geoo/abstract/cvblocks/000: 556 254 d
+:geoo/abstract/cvblocks/000: 556 246 d
+:geoo/abstract/cvblocks/000: 540 230 d
+:geoo/abstract/cvblocks/002: 516 234 d
+:geoo/abstract/cvblocks/002: 524 242 d
+:geoo/abstract/cvblocks/002: 528 246 d
+:geoo/abstract/cvblocks/002: 536 254 d
+:geoo/abstract/cvblocks/002: 516 238 rrd
+:geoo/abstract/cvblocks/002: 524 246 rrd
+:geoo/abstract/cvblocks/002: 532 254 rrd
+:geoo/sandstone/16x16: 688 202 d
+:geoo/sandstone/ebony/h8a: 4 10 d
+:geoo/sandstone/ebony/v8a: 376 138 rrd
+:geoo/sandstone/ebony/v8l: 452 126 d
+:geoo/sandstone/ebony/v8l: 516 74 d
+:geoo/sandstone/ebony/v8a: 632 202 rrd
+:geoo/sandstone/ebony/v8a: 632 10 rrd
+:geoo/sandstone/ebony/v8a: 376 330 rrd
+:geoo/sandstone/ebony/h8a: 224 266 d
+:geoo/sandstone/ebony/h8a: 226 330 d
+:geoo/sandstone/slopes/32x32rt: 200 330 d
+:geoo/sandstone/slopes/32x32lb: 192 330 d

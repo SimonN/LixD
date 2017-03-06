@@ -1,0 +1,143 @@
+$BUILT 2016-07-18 21:28:54
+$AUTHOR Nepster
+$ENGLISH Death of a Working Lix
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1200
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 36
+#SPAWN_INTERVAL 4
+
+#CLIMBER 10
+#EXPLODER 1
+#BUILDER 1
+#BASHER 1
+#MINER 1
+
+:matt/winter/Hatch.H: 279 121
+:matt/winter/Hatch.H: 899 245
+
+:matt/winter/Goal.G: 864 106
+:geoo/abstract/goal.G: 492 128
+
+:matt/10tons.T: 822 266
+
+:matt/winter/02: 1121 351 rr
+:amanda/forest/rope: 839 250
+:matt/winter/18: 974 350
+:matt/winter/18: 982 246
+:matt/winter/18: 988 252
+:matt/winter/18: 994 260
+:matt/winter/18: 996 266
+:matt/winter/18: 998 274
+:matt/winter/18: 160 228
+:matt/winter/18: 593 222
+:matt/winter/14: 195 201
+:matt/winter/14: 193 176
+:matt/winter/14: 191 135
+:matt/winter/14: 183 55 frr
+:matt/winter/14: 179 59 frr
+:matt/winter/14: 178 69 frr
+:matt/winter/14: 177 85 frr
+:matt/winter/14: 176 97 frr
+:matt/winter/14: 175 116 frr
+:matt/winter/14: 172 160 frr
+:matt/winter/14: 171 176 frr
+:matt/earth/30: 1061 250 frr
+:matt/earth/30: 1109 298 frr
+:matt/winter/18: 496 178
+:matt/winter/14: 393 181
+:matt/winter/14: 391 156
+:matt/winter/14: 389 115
+:matt/winter/14: 381 35 frr
+:matt/winter/14: 377 39 frr
+:matt/winter/14: 376 49 frr
+:matt/winter/14: 375 65 frr
+:matt/winter/14: 374 77 frr
+:matt/winter/14: 373 96 frr
+:matt/winter/14: 370 140 frr
+:matt/winter/14: 369 156 frr
+:matt/winter/18: 814 336
+:matt/winter/14: 620 166
+:matt/winter/14: 616 108
+:matt/winter/14: 618 124
+:matt/winter/14: 600 30 frr
+:matt/winter/14: 594 32 frr
+:matt/winter/14: 594 64 frr
+:matt/winter/14: 594 96 frr
+:matt/winter/14: 594 128 frr
+:matt/winter/14: 594 160 frr
+:matt/winter/18: 756 260
+:matt/winter/05: 368 30
+:matt/winter/05: 594 30
+:matt/winter/10: 134 234
+:matt/winter/10: 212 250
+:matt/winter/04: 280 226 rrr
+:matt/winter/10: 366 240 f
+:matt/winter/16: 536 250 rr
+:matt/winter/02: 636 242 fr
+:matt/winter/13: 640 218
+:matt/winter/10: 548 230
+:matt/winter/10: 460 290
+:matt/winter/10: 612 286
+:matt/winter/10: 312 294
+:matt/winter/10: 176 292
+:matt/winter/10: 120 294
+:matt/winter/18: 712 237 d
+:matt/winter/18: 705 235 d
+:matt/winter/04: 615 266 rrr
+:matt/winter/16: 730 242
+:matt/winter/16: 732 258
+:matt/winter/05: 791 338 frrr
+:matt/winter/03: 824 305 frrr
+:matt/winter/17: 804 183 r
+:matt/winter/17: 986 250 frr
+:matt/winter/10: 900 344 frr
+:matt/winter/04: 877 160 fr
+:matt/winter/05: 799 156 rrr
+:matt/winter/05: 346 200 frr
+:matt/winter/17: 786 182 fr
+:matt/winter/12: 486 172 rr
+:matt/winter/13: 758 226 frr
+:matt/winter/13: 766 216 frr
+:matt/winter/10: 784 352 frr
+:matt/winter/10: 640 336 frr
+:matt/winter/10: 464 336 frr
+:matt/winter/16: 1008 240 frr
+:matt/winter/13: 1008 208
+:matt/winter/16: 976 100 fd
+:matt/winter/10: 982 348 frr
+:matt/winter/10: 1066 338 frr
+:matt/winter/05: 1166 182
+:geoo/construction/platformbrick_single: 1154 337 d
+:matt/winter/18: 972 134 d
+:matt/winter/18: 984 136 d
+:matt/winter/10: 316 340 frr
+:matt/winter/17: 352 300 d
+:matt/winter/11: 344 294 d
+:matt/winter/00: 214 288 frrd
+:matt/winter/17: 192 308 frrd
+:matt/winter/16: 262 290 rrd
+:matt/winter/10: 258 310 rd
+:matt/winter/05: 170 50
+:matt/winter/04: 34 234 rrr
+:matt/winter/17: 10 262 frr
+:matt/winter/17: -4 334 frr
+:matt/winter/10: 58 280 r
+:matt/winter/14: 438 188 rrd
+:matt/winter/18: 878 254 d
+:matt/winter/18: 872 254 d
+:matt/winter/18: 862 252 d
+:matt/winter/18: 854 252 d
+:matt/winter/18: 846 253 d
+:matt/winter/18: 724 238 d
+:matt/winter/18: 731 237 d
+:amanda/forest/rope: 839 258
+:amanda/forest/rope: 839 266 d
+:matt/winter/17: 666 340 d
+:matt/winter/17: 606 366 rrrd
+:matt/winter/00: 648 352 d
+:matt/winter/00: 630 368 d

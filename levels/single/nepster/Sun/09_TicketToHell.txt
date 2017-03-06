@@ -1,0 +1,308 @@
+$BUILT 2016-02-04 18:40:53
+$AUTHOR Nepster
+$ENGLISH A Ticket to Hell!
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1152
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 40
+#SPAWN_INTERVAL 10
+
+#CLIMBER 1
+#FLOATER 1
+#BUILDER 2
+#PLATFORMER 1
+#BASHER 1
+#MINER 2
+#DIGGER 2
+#EXPLODER2 0
+
+:matt/underworld/Hatch.H: 896 12 r
+:matt/underworld/Hatch.H: 192 12
+
+:matt/underworld/Goal.G: 0 320
+:matt/underworld/Goal.G: 1088 320
+
+:proxima/flame.F: 790 288
+:proxima/flame.F: 524 160
+:proxima/flame.F: 524 240
+:proxima/flame.F: 238 240
+:proxima/flame.F: 908 240
+:proxima/flame.F: 364 48
+:proxima/flame.F: 748 48
+:proxima/flame.F: 1024 366
+:proxima/flame.F: 128 366
+:proxima/flame.F: 64 366
+:proxima/flame.F: 32 42
+:proxima/flame.F: 24 49
+:proxima/flame.F: 40 49
+:proxima/flame.F: 1076 42
+:proxima/flame.F: 1068 49
+:proxima/flame.F: 1084 49
+:proxima/flame.F: 11 282
+:proxima/flame.F: 1099 280
+:proxima/flame.F: 704 288
+:proxima/flame.F: 732 288
+:proxima/flame.F: 760 288
+
+:matt/underworld/thinplatform128: 708 176 rrr
+:matt/underworld/thinplatform128: 706 176 rrr
+:matt/underworld/thinplatform128: 704 176 rrr
+:matt/underworld/thinplatform128: 708 208 rrr
+:matt/underworld/thinplatform128: 706 208 rrr
+:matt/underworld/thinplatform128: 704 208 rrr
+:matt/underworld/thinplatform128: 830 176 rrr
+:matt/underworld/thinplatform128: 828 176 rrr
+:matt/underworld/thinplatform128: 826 176 rrr
+:matt/underworld/thinplatform128: 830 208 rrr
+:matt/underworld/thinplatform128: 828 208 rrr
+:matt/underworld/thinplatform128: 826 208 rrr
+:matt/underworld/thinplatform64: 1122 16 rrr
+:matt/underworld/thinplatform64: 1120 16 rrr
+:matt/underworld/thinplatform64: 1070 16 rrr
+:matt/underworld/thinplatform64: 1068 16 rrr
+:matt/underworld/thinplatform64: 78 16 rrr
+:matt/underworld/thinplatform64: 76 16 rrr
+:matt/underworld/thinplatform64: 26 16 rrr
+:matt/underworld/thinplatform64: 24 16 rrr
+:matt/underworld/07: 0 84
+:matt/underworld/00: 0 384
+:matt/underworld/00: 64 384
+:matt/underworld/00: 128 384
+:matt/underworld/00: 192 384
+:matt/underworld/00: 256 384
+:matt/underworld/00: 320 384
+:matt/underworld/00: 384 384
+:matt/underworld/00: 448 384
+:matt/underworld/00: 512 384
+:matt/underworld/00: 576 384
+:matt/underworld/00: 640 384
+:matt/underworld/00: 704 384
+:matt/underworld/00: 768 384
+:matt/underworld/00: 1024 384
+:matt/underworld/00: 1088 384
+:matt/underworld/thinplatform128: 124 256 rrr
+:matt/underworld/thinplatform128: 126 256 rrr
+:matt/underworld/thinplatform128: 128 256 rrr
+:matt/underworld/thinplatform128: 124 128 rrr
+:matt/underworld/thinplatform128: 126 128 rrr
+:matt/underworld/thinplatform128: 128 128 rrr
+:matt/underworld/00: 192 288
+:matt/underworld/00: 256 288
+:matt/underworld/00: 192 208
+:matt/underworld/00: 256 208
+:matt/underworld/00: 192 128
+:matt/underworld/00: 256 128
+:matt/underworld/00: 320 208
+:matt/underworld/01: 320 128
+:matt/underworld/01: 320 96
+:matt/underworld/01: 384 96
+:matt/underworld/01: 384 128
+:matt/underworld/00: 320 160
+:matt/underworld/00: 384 160
+:matt/underworld/00: 448 128
+:matt/underworld/00: 512 128
+:matt/underworld/00: 512 208
+:matt/underworld/00: 576 208
+:matt/underworld/00: 640 128
+:matt/underworld/01: 704 128
+:matt/underworld/01: 704 96
+:matt/underworld/01: 768 96
+:matt/underworld/01: 768 128
+:matt/underworld/00: 832 128
+:matt/underworld/00: 960 128
+:matt/underworld/00: 832 384
+:matt/underworld/00: 960 384
+:matt/underworld/00: 128 128
+:matt/underworld/thinplatform128: 1020 256 rrr
+:matt/underworld/thinplatform128: 1022 256 rrr
+:matt/underworld/thinplatform128: 1024 256 rrr
+:matt/underworld/thinplatform128: 1020 128 rrr
+:matt/underworld/thinplatform128: 1022 128 rrr
+:matt/underworld/thinplatform128: 1024 128 rrr
+:matt/underworld/00: 384 288
+:matt/underworld/00: 448 288
+:matt/underworld/00: 512 288
+:matt/underworld/01: 704 192
+:matt/underworld/01: 704 160
+:matt/underworld/01: 768 160
+:matt/underworld/01: 768 192
+:matt/underworld/01: 704 256
+:matt/underworld/01: 704 224
+:matt/underworld/01: 768 224
+:matt/underworld/01: 768 256
+:matt/underworld/00: 896 208
+:matt/underworld/00: 896 128
+:matt/underworld/00: 896 288
+:matt/underworld/00: 896 384
+:matt/winter/09b: 132 368 d
+:matt/winter/09b: 68 368 d
+:matt/winter/09b: 1028 368 d
+:matt/underworld/thinplatform128: 124 96 rrr
+:matt/underworld/thinplatform128: 126 96 rrr
+:matt/underworld/thinplatform128: 128 96 rrr
+:matt/underworld/thinplatform128: 1020 96 rrr
+:matt/underworld/thinplatform128: 1022 96 rrr
+:matt/underworld/thinplatform128: 1024 96 rrr
+:matt/underworld/thinplatform16: 366 80 rrr
+:matt/underworld/thinplatform16: 368 80 rrr
+:matt/underworld/thinplatform16: 370 80 rrr
+:matt/underworld/thinplatform16: 396 80 rrr
+:matt/underworld/thinplatform16: 398 80 rrr
+:matt/underworld/thinplatform16: 400 80 rrr
+:matt/underworld/thinplatform16: 750 80 rrr
+:matt/underworld/thinplatform16: 752 80 rrr
+:matt/underworld/thinplatform16: 754 80 rrr
+:matt/underworld/thinplatform16: 780 80 rrr
+:matt/underworld/thinplatform16: 782 80 rrr
+:matt/underworld/thinplatform16: 784 80 rrr
+:matt/underworld/05: -48 -32
+:matt/underworld/05: 112 -32 rr
+:matt/underworld/07: 240 -80
+:matt/underworld/07: 306 -82 rrr
+:matt/underworld/07: 358 -86 rr
+:matt/underworld/05: 418 -28 rr
+:matt/underworld/08: 558 -98 r
+:matt/underworld/08: 624 -104
+:matt/underworld/07: 692 -82
+:matt/underworld/05: 740 -30
+:matt/underworld/04: 894 -32
+:matt/underworld/06: 930 -76
+:matt/underworld/06: 992 -86 rr
+:matt/underworld/06: 1074 -88 r
+:matt/underworld/thinplatform64: 24 32 rrr
+:matt/underworld/thinplatform64: 26 32 rrr
+:matt/underworld/thinplatform64: 76 32 rrr
+:matt/underworld/thinplatform64: 78 32 rrr
+:geoo/sandstone/64x32_blank: 80 88 rrrd
+:geoo/sandstone/64x32_blank: -8 90 rrrd
+:geoo/sandstone/64x32_blank: -7 99 rrrd
+:geoo/sandstone/64x32_blank: -6 102 rrrd
+:geoo/sandstone/64x32_blank: -5 105 rrrd
+:geoo/sandstone/64x32_blank: -4 108 rrrd
+:geoo/sandstone/64x32_blank: -3 111 rrrd
+:geoo/sandstone/64x32_blank: -2 114 rrrd
+:geoo/sandstone/64x32_blank: -1 117 rrrd
+:geoo/sandstone/64x32_blank: 0 120 rrrd
+:geoo/sandstone/64x32_blank: 1 123 rrrd
+:geoo/sandstone/64x32_blank: 79 99 rrrd
+:geoo/sandstone/64x32_blank: 78 102 rrrd
+:geoo/sandstone/64x32_blank: 77 105 rrrd
+:geoo/sandstone/64x32_blank: 77 105 rrrd
+:geoo/sandstone/64x32_blank: 76 108 rrrd
+:geoo/sandstone/64x32_blank: 75 111 rrrd
+:geoo/sandstone/64x32_blank: 74 114 rrrd
+:geoo/sandstone/64x32_blank: 73 117 rrrd
+:geoo/sandstone/64x32_blank: 72 120 rrrd
+:geoo/sandstone/64x32_blank: 71 123 rrrd
+:geoo/sandstone/64x32_blank: 70 126 rrrd
+:geoo/sandstone/64x32_blank: 69 129 rrrd
+:geoo/sandstone/64x32_blank: 68 132 rrrd
+:geoo/sandstone/64x32_blank: 68 132 rrrd
+:geoo/sandstone/64x32_blank: 2 126 rrrd
+:geoo/sandstone/64x32_blank: 3 129 rrrd
+:geoo/sandstone/64x32_blank: 4 132 rrrd
+:geoo/sandstone/64x32_blank: 5 135 rrrd
+:geoo/sandstone/64x32_blank: 6 138 rrrd
+:geoo/sandstone/64x32_blank: 7 141 rrrd
+:geoo/sandstone/64x32_blank: 8 144 rrrd
+:geoo/sandstone/64x32_blank: 9 147 rrrd
+:geoo/sandstone/64x32_blank: 10 150 rrrd
+:geoo/sandstone/64x32_blank: 67 135 rrrd
+:geoo/sandstone/64x32_blank: 66 138 rrrd
+:geoo/sandstone/64x32_blank: 65 141 rrrd
+:geoo/sandstone/64x32_blank: 64 144 rrrd
+:geoo/sandstone/64x32_blank: 63 147 rrrd
+:geoo/sandstone/64x32_blank: 62 150 rrrd
+:geoo/sandstone/64x32_blank: 61 153 rrrd
+:geoo/sandstone/64x32_blank: 60 156 rrrd
+:geoo/sandstone/64x32_blank: 11 153 rrrd
+:geoo/sandstone/64x32_blank: 12 156 rrrd
+:geoo/sandstone/64x32_blank: 13 159 rrrd
+:geoo/sandstone/64x32_blank: 14 162 rrrd
+:geoo/sandstone/64x32_blank: 59 159 rrrd
+:geoo/sandstone/64x32_blank: 58 162 rrrd
+:geoo/sandstone/64x32_blank: 57 165 rrrd
+:geoo/sandstone/64x32_blank: 56 168 rrrd
+:geoo/sandstone/64x32_blank: 15 165 rrrd
+:geoo/sandstone/64x32_blank: 16 168 rrrd
+:geoo/sandstone/64x32_blank: 17 171 rrrd
+:geoo/sandstone/64x32_blank: 55 171 rrrd
+:geoo/sandstone/64x32_blank: 54 174 rrrd
+:geoo/sandstone/64x32_blank: 18 174 rrrd
+:geoo/sandstone/64x32_blank: 19 177 rrrd
+:geoo/sandstone/64x32_blank: 53 177 rrrd
+:geoo/sandstone/32x16: 28 80 d
+:geoo/sandstone/32x16: 44 80 d
+:matt/underworld/07: 1044 84
+:matt/underworld/thinplatform64: 1068 32 rrr
+:matt/underworld/thinplatform64: 1070 32 rrr
+:matt/underworld/thinplatform64: 1120 32 rrr
+:matt/underworld/thinplatform64: 1122 32 rrr
+:geoo/sandstone/64x32_blank: 1124 88 rrrd
+:geoo/sandstone/64x32_blank: 1036 90 rrrd
+:geoo/sandstone/64x32_blank: 1037 99 rrrd
+:geoo/sandstone/64x32_blank: 1038 102 rrrd
+:geoo/sandstone/64x32_blank: 1039 105 rrrd
+:geoo/sandstone/64x32_blank: 1040 108 rrrd
+:geoo/sandstone/64x32_blank: 1041 111 rrrd
+:geoo/sandstone/64x32_blank: 1042 114 rrrd
+:geoo/sandstone/64x32_blank: 1043 117 rrrd
+:geoo/sandstone/64x32_blank: 1044 120 rrrd
+:geoo/sandstone/64x32_blank: 1045 123 rrrd
+:geoo/sandstone/64x32_blank: 1123 99 rrrd
+:geoo/sandstone/64x32_blank: 1122 102 rrrd
+:geoo/sandstone/64x32_blank: 1121 105 rrrd
+:geoo/sandstone/64x32_blank: 1121 105 rrrd
+:geoo/sandstone/64x32_blank: 1120 108 rrrd
+:geoo/sandstone/64x32_blank: 1119 111 rrrd
+:geoo/sandstone/64x32_blank: 1118 114 rrrd
+:geoo/sandstone/64x32_blank: 1117 117 rrrd
+:geoo/sandstone/64x32_blank: 1116 120 rrrd
+:geoo/sandstone/64x32_blank: 1115 123 rrrd
+:geoo/sandstone/64x32_blank: 1114 126 rrrd
+:geoo/sandstone/64x32_blank: 1113 129 rrrd
+:geoo/sandstone/64x32_blank: 1112 132 rrrd
+:geoo/sandstone/64x32_blank: 1112 132 rrrd
+:geoo/sandstone/64x32_blank: 1046 126 rrrd
+:geoo/sandstone/64x32_blank: 1047 129 rrrd
+:geoo/sandstone/64x32_blank: 1048 132 rrrd
+:geoo/sandstone/64x32_blank: 1049 135 rrrd
+:geoo/sandstone/64x32_blank: 1050 138 rrrd
+:geoo/sandstone/64x32_blank: 1051 141 rrrd
+:geoo/sandstone/64x32_blank: 1052 144 rrrd
+:geoo/sandstone/64x32_blank: 1053 147 rrrd
+:geoo/sandstone/64x32_blank: 1054 150 rrrd
+:geoo/sandstone/64x32_blank: 1111 135 rrrd
+:geoo/sandstone/64x32_blank: 1110 138 rrrd
+:geoo/sandstone/64x32_blank: 1109 141 rrrd
+:geoo/sandstone/64x32_blank: 1108 144 rrrd
+:geoo/sandstone/64x32_blank: 1107 147 rrrd
+:geoo/sandstone/64x32_blank: 1106 150 rrrd
+:geoo/sandstone/64x32_blank: 1105 153 rrrd
+:geoo/sandstone/64x32_blank: 1104 156 rrrd
+:geoo/sandstone/64x32_blank: 1055 153 rrrd
+:geoo/sandstone/64x32_blank: 1056 156 rrrd
+:geoo/sandstone/64x32_blank: 1057 159 rrrd
+:geoo/sandstone/64x32_blank: 1058 162 rrrd
+:geoo/sandstone/64x32_blank: 1103 159 rrrd
+:geoo/sandstone/64x32_blank: 1102 162 rrrd
+:geoo/sandstone/64x32_blank: 1101 165 rrrd
+:geoo/sandstone/64x32_blank: 1100 168 rrrd
+:geoo/sandstone/64x32_blank: 1059 165 rrrd
+:geoo/sandstone/64x32_blank: 1060 168 rrrd
+:geoo/sandstone/64x32_blank: 1061 171 rrrd
+:geoo/sandstone/64x32_blank: 1099 171 rrrd
+:geoo/sandstone/64x32_blank: 1098 174 rrrd
+:geoo/sandstone/64x32_blank: 1062 174 rrrd
+:geoo/sandstone/64x32_blank: 1063 177 rrrd
+:geoo/sandstone/64x32_blank: 1097 177 rrrd
+:geoo/sandstone/32x16: 1072 80 d
+:geoo/sandstone/32x16: 1088 80 d
+:matt/underworld/00: 704 288
+:matt/underworld/00: 768 288
+:matt/underworld/00: 704 336
+:matt/underworld/00: 768 336

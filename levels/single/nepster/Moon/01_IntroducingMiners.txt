@@ -1,0 +1,206 @@
+$BUILT 2016-01-01 11:13:24
+$AUTHOR Nepster
+$ENGLISH Introducing Miners
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 976
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 3
+#REQUIRED 3
+#SPAWN_INTERVAL 40
+
+#MINER 7
+#EXPLODER 0
+
+:amanda/forest/hatch.H: 480 -26
+
+:amanda/forest/exit_tent_condensed.G: 290 144
+
+:amanda/forest/frog.T: 416 62
+
+:amanda/forest/bark_03: 626 184 f
+:amanda/forest/bark_04: 598 240
+:matt/earth/10: 902 -22 rrr
+$BEGIN_TILE_GROUP 0
+:matt/earth/10: 240 96
+:matt/earth/03: 0 80 frr
+:matt/earth/05: 80 64 fr
+:matt/earth/04: 208 0
+:matt/earth/10: 288 96
+:matt/earth/18: 303 70 d
+:matt/earth/18: 303 62 d
+:matt/earth/18: 303 54 d
+:matt/earth/18: 225 5 d
+:matt/earth/18: 222 15 d
+:matt/earth/18: 211 42 d
+:matt/earth/18: 215 34 d
+:matt/earth/18: 217 25 d
+:matt/earth/18: 206 44 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:matt/earth/00: 136 138
+:matt/earth/10: 98 68 rr
+:Group-0: 0 0
+:matt/earth/18: 315 72 d
+$END_TILE_GROUP
+:Group-1: 288 160
+:matt/earth/30: 118 74
+:matt/earth/30: 86 106
+:matt/earth/02: 8 28
+:matt/earth/16: -6 84 frr
+:matt/earth/16: 48 150 frr
+:matt/earth/16: 102 220 frr
+:matt/earth/03: 688 110
+:matt/earth/03: 656 110
+:matt/earth/03: 624 110
+:matt/earth/03: 592 110
+:matt/earth/03: 560 110
+:matt/earth/03: 528 110
+:matt/earth/03: 496 110
+:matt/earth/03: 464 110
+:matt/earth/03: 432 110
+:matt/earth/10: 160 94
+:matt/earth/05: 250 94 r
+:matt/earth/03: 400 110
+:matt/earth/16: 752 110 frr
+:matt/earth/18: 752 126
+:matt/earth/04: 768 192
+:matt/earth/04: 800 320
+:matt/earth/16: 736 144
+:matt/earth/16: 670 210 fr
+:matt/earth/10: 672 256
+:matt/earth/10: 592 304
+:matt/earth/10: 672 320 frr
+:matt/earth/10: 752 224 fr
+:matt/earth/10: 180 332
+:matt/earth/10: 412 300
+:matt/earth/10: 506 340
+:matt/earth/10: 318 340
+:matt/earth/10: 272 348
+:matt/earth/10: 78 288
+:matt/earth/10: 16 324
+:matt/earth/10: -56 228
+:matt/earth/10: -30 280 r
+:matt/earth/10: -40 108 r
+:matt/earth/10: -48 -76 r
+:matt/earth/00: 38 290
+:geoo/construction/concrete/008: 90 144 d
+:matt/earth/18: 564 130 d
+:matt/earth/18: 580 128 d
+:matt/earth/18: 594 130 d
+:matt/earth/18: 610 128 d
+:matt/earth/18: 624 132 d
+:matt/earth/18: 634 130 d
+:matt/earth/18: 646 128 d
+:matt/earth/18: 658 130 d
+:matt/earth/18: 672 130 d
+:matt/earth/18: 728 142 d
+:matt/earth/18: 726 134 d
+:matt/earth/18: 718 128 d
+:matt/earth/18: 706 130 d
+:matt/earth/18: 692 132 d
+:matt/earth/18: 550 130 d
+:matt/earth/18: 538 134 d
+:matt/earth/18: 524 130 d
+:matt/earth/18: 514 130 d
+:matt/earth/18: 504 132 d
+:matt/earth/18: 492 132 d
+:matt/earth/18: 478 134 d
+:matt/earth/18: 464 130 d
+:matt/earth/18: 454 132 d
+:matt/earth/18: 446 128 d
+:matt/earth/18: 440 130 d
+:matt/earth/18: 428 130 d
+:matt/earth/18: 418 132 d
+:matt/earth/18: 404 134 d
+:matt/earth/18: 392 138 d
+:matt/earth/18: 382 144 d
+:matt/earth/18: 370 142 d
+:matt/earth/09: 740 104
+:matt/earth/09: 692 104
+:matt/earth/09: 644 104
+:matt/earth/09: 596 104
+:matt/earth/09: 548 102
+:matt/earth/09: 508 104
+:matt/earth/09: 466 106
+:matt/earth/09: 418 104
+:matt/earth/09: 262 88
+:matt/earth/09: 350 94
+:matt/earth/07b: 394 98
+:matt/earth/07b: 404 102
+:matt/earth/07b: 410 104
+:matt/earth/18: 814 112 d
+:matt/earth/18: 812 102 d
+:matt/earth/18: 804 92 d
+:matt/earth/07: 780 104
+:matt/earth/09: 310 92
+:matt/earth/06: 154 114
+:matt/earth/06: 192 86
+:matt/earth/09: 226 86
+:matt/earth/09: 302 236 frr
+:matt/earth/07b: 286 246
+:matt/earth/07b: 294 240
+:matt/earth/07b: 300 238
+:matt/earth/09: 336 234 frr
+:matt/earth/09: 384 234 frr
+:matt/earth/09: 452 224 frr
+:matt/earth/07b: 448 226
+:matt/earth/07b: 438 230
+:matt/earth/07b: 426 234
+:matt/earth/07: 492 200 r
+:matt/earth/07b: 508 210 d
+:matt/earth/07b: 514 199 d
+:matt/earth/00: 454 236
+:matt/earth/07b: 522 192 d
+:matt/earth/07: 716 186 r
+:matt/earth/08: 688 226 rrr
+:matt/earth/09: 636 252 frr
+:matt/earth/09: 596 254
+:matt/earth/07b: 588 248
+:matt/earth/07b: 598 252
+:matt/earth/07b: 734 196 frrd
+:matt/earth/07b: 740 186 frrd
+:matt/earth/07b: 744 178 frrd
+:matt/earth/05: 924 206
+:matt/earth/10: 900 132 rrr
+:matt/earth/05: 898 34
+:matt/earth/16: 870 14 f
+:matt/earth/16: 834 -42 f
+:matt/earth/10: 928 -8 rrr
+:matt/earth/10: 898 -132 rrr
+:matt/earth/04: 12 -72 r
+:matt/earth/04: 132 -104 r
+:matt/earth/04: 740 -82 fr
+:matt/earth/04: 606 -110 fr
+:matt/earth/09: 300 342
+:matt/earth/09: 368 334 frr
+:matt/earth/08: 150 228
+:matt/earth/08: 224 302
+:matt/earth/06: 182 268 rrr
+:matt/earth/07b: 202 278 frrd
+:matt/earth/07b: 196 268 frd
+:matt/earth/07b: 178 260
+:matt/earth/07b: 174 252
+:matt/earth/07b: 220 300
+:matt/earth/07b: 142 224
+:matt/earth/07b: 290 340
+:matt/earth/07b: 254 326
+:matt/earth/07b: 264 330 rr
+:matt/earth/07b: 274 330 rr
+:matt/earth/07b: 282 334 rr
+:matt/earth/07b: 362 342 rr
+:matt/earth/07b: 344 344
+:matt/earth/07b: 352 346
+:geoo/sandstone/pillar_top_jaggedl: 614 210 rrd
+:geoo/sandstone/pillar_top_jaggedl: 640 210 rrd
+:geoo/sandstone/64x32_blank: 612 178 d
+:matt/earth/08: 408 310 f
+:matt/earth/07b: 510 224
+:matt/earth/00: 296 162 fd
+:matt/earth/00: 326 150 fd
+:matt/earth/07b: 464 106
+:matt/earth/07b: 516 200 d
+:matt/earth/07b: 518 197 d
+:matt/earth/07b: 520 194 d

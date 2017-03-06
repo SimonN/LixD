@@ -1,0 +1,102 @@
+$BUILT 2016-07-18 22:32:29
+$AUTHOR Nepster
+$ENGLISH On the Edge of Death
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 9
+#SPAWN_INTERVAL 80
+
+#CLIMBER 1
+#FLOATER 1
+#EXPLODER 1
+#BUILDER 1
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+
+:matt/goldmine/Hatch.H: 146 112
+
+:matt/goldmine/Goal.G: 576 276
+
+:matt/goldmine/GoalTop.D: 576 228
+
+:matt/goldmine/04: 136 -58 r
+:matt/goldmine/04: 54 -42 r
+:matt/goldmine/04: 226 -44 r
+:matt/goldmine/05: 141 47 rrr
+:matt/goldmine/05: 144 52
+:matt/goldmine/04: 132 0 rrr
+:matt/goldmine/04: 0 -46 rrr
+:matt/goldmine/09: 319 -27 f
+:matt/goldmine/09: 595 -1 f
+:matt/goldmine/09: 500 -18 fr
+:matt/goldmine/04: 446 -62
+:matt/goldmine/04: 532 0
+:matt/goldmine/04: 348 -48 r
+:matt/goldmine/09: 414 28 fr
+:matt/goldmine/04: -106 28 r
+:matt/goldmine/09: 252 168 frrr
+:matt/goldmine/09: 256 186 frrr
+:matt/goldmine/04: 564 346 r
+:matt/goldmine/04: -58 342 r
+:matt/goldmine/04: 274 12 r
+:matt/goldmine/crate16: 390 138
+:matt/goldmine/crate16: 394 154
+:matt/goldmine/explosivecrate: 436 106
+:matt/goldmine/explosivecrate: 378 170
+:matt/goldmine/04: 262 158 r
+:matt/goldmine/02: 342 270
+:matt/goldmine/04: 350 202 rr
+:matt/goldmine/plank: 30 160
+:matt/goldmine/plank: 22 162
+$BEGIN_TILE_GROUP 0
+:matt/goldmine/plank: 12 1
+:matt/goldmine/plank: 6 3
+:matt/goldmine/crate16: 0 0 d
+$END_TILE_GROUP
+:Group-0: 94 160
+:matt/goldmine/plank: 208 160 rrr
+:matt/goldmine/plank: 210 160 rrr
+$BEGIN_TILE_GROUP 1
+:matt/goldmine/plank: 2 3 rrr
+:matt/goldmine/crate16: 70 113
+:matt/goldmine/08: 8 119
+:matt/goldmine/plank: 4 15 rrr
+:matt/goldmine/crate16: 0 0 d
+$END_TILE_GROUP
+:Group-1: 208 215
+:matt/goldmine/04: 225 30 rr
+:matt/goldmine/crate16: 276 280
+:matt/goldmine/crate16: 276 296
+:matt/goldmine/04: -68 186 rr
+:matt/goldmine/09: 206 328 frrr
+:matt/goldmine/04: 510 324
+:matt/goldmine/08: 376 344 r
+:matt/goldmine/08: -46 258
+:matt/goldmine/04: 4 334 r
+:matt/goldmine/08: 104 328 rrr
+:matt/goldmine/04: 254 342 r
+:matt/goldmine/08: -40 154 f
+:matt/goldmine/09: 254 168
+:matt/goldmine/09: 562 308 rrr
+:matt/goldmine/09: -54 102 rrr
+:matt/goldmine/08: 292 224 rrr
+:matt/goldmine/08: 414 220 frrr
+:matt/goldmine/08: 480 168 frrr
+:matt/goldmine/08: 538 128 frrr
+:matt/goldmine/02: 450 326 d
+:matt/goldmine/04: 516 76 rr
+:matt/goldmine/09: 386 16 rrr
+:matt/goldmine/08: 40 6 rrr
+:matt/goldmine/00: 464 270 d
+:matt/goldmine/10: 462 296 d
+:matt/goldmine/00: 476 252 d
+:matt/goldmine/00: 490 232 d
+:matt/goldmine/03: 528 222 frrd
+:matt/goldmine/03: 579 211 frrd

@@ -1,0 +1,167 @@
+$BUILT 2016-06-04 18:59:32
+$AUTHOR Nepster
+$ENGLISH Underground Labyrinth
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 10
+#SPAWN_INTERVAL 20
+
+#WALKER 5
+#RUNNER 5
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER 5
+#BLOCKER 5
+#BUILDER 5
+#PLATFORMER 5
+#BASHER 5
+#MINER 5
+#DIGGER 5
+#JUMPER 5
+#BATTER 5
+#CUBER 5
+
+:matt/earth/Hatch.H: 48 66
+
+:matt/earth/Goal.G: 480 48
+
+:matt/earth/17: 504 160
+:matt/earth/17: 512 264
+:matt/earth/17: 0 264
+:matt/earth/17: 80 216
+:matt/earth/17: 72 128
+:matt/earth/17: 413 111 fr
+:matt/earth/17: 479 113 fr
+:matt/earth/17: 285 113 fr
+:matt/earth/03: 98 112
+:matt/earth/05: -112 96 r
+:matt/earth/10: 200 112
+:matt/earth/10: 40 112
+:matt/earth/10: 120 128
+:matt/earth/10: -40 144
+:matt/earth/10: -24 176
+:matt/earth/10: 136 176
+:matt/earth/10: 312 176
+:matt/earth/10: 408 192
+:matt/earth/10: 504 176
+:matt/earth/10: 504 240
+:matt/earth/10: 280 208
+:matt/earth/10: 184 224
+:matt/earth/10: 8 224
+:matt/earth/10: 24 288
+:matt/earth/10: 120 288
+:matt/earth/10: 200 288
+:matt/earth/10: 296 272
+:matt/earth/10: 392 288
+:matt/earth/10: 488 288
+:matt/earth/10: 248 128
+:matt/earth/10: 328 112
+:matt/earth/10: 424 128
+:matt/earth/10: 520 112
+:amanda/steel/steel32x32.S: -16 16
+:amanda/steel/steel32x32.S: -16 -16
+:amanda/steel/steel32x32.S: -16 48
+:amanda/steel/steel32x32.S: -16 80
+:amanda/steel/steel32x32.S: -16 112
+:amanda/steel/steel32x32.S: -16 144
+:amanda/steel/steel32x32.S: -16 176
+:amanda/steel/steel32x32.S: -16 208
+:amanda/steel/steel32x32.S: -16 240
+:amanda/steel/steel32x32.S: -16 272
+:amanda/steel/steel32x32.S: -16 304
+:amanda/steel/steel32x32.S: -16 336
+:amanda/steel/steel32x32.S: -16 368
+:amanda/steel/steel32x32.S: 16 368
+:amanda/steel/steel32x32.S: 48 368
+:amanda/steel/steel32x32.S: 80 368
+:amanda/steel/steel32x32.S: 112 368
+:amanda/steel/steel32x32.S: 144 368
+:amanda/steel/steel32x32.S: 176 368
+:amanda/steel/steel32x32.S: 208 368
+:amanda/steel/steel32x32.S: 240 368
+:amanda/steel/steel32x32.S: 272 368
+:amanda/steel/steel32x32.S: 304 368
+:amanda/steel/steel32x32.S: 336 368
+:amanda/steel/steel32x32.S: 368 368
+:amanda/steel/steel32x32.S: 400 368
+:amanda/steel/steel32x32.S: 432 368
+:amanda/steel/steel32x32.S: 464 368
+:amanda/steel/steel32x32.S: 528 368
+:amanda/steel/steel32x32.S: 560 368
+:amanda/steel/steel32x32.S: 592 368
+:amanda/steel/steel32x32.S: 624 368
+:amanda/steel/steel32x32.S: 624 336
+:amanda/steel/steel32x32.S: 624 304
+:amanda/steel/steel32x32.S: 624 272
+:amanda/steel/steel32x32.S: 624 240
+:amanda/steel/steel32x32.S: 624 208
+:amanda/steel/steel32x32.S: 624 176
+:amanda/steel/steel32x32.S: 624 144
+:amanda/steel/steel32x32.S: 624 112
+:amanda/steel/steel32x32.S: 624 80
+:amanda/steel/steel32x32.S: 624 48
+:amanda/steel/steel32x32.S: 624 16
+:amanda/steel/steel32x32.S: 624 -16
+:amanda/steel/steel32x32.S: 592 -16
+:amanda/steel/steel32x32.S: 560 -16
+:amanda/steel/steel32x32.S: 16 -16
+:amanda/steel/steel32x32.S: 48 -16
+:amanda/steel/steel32x32.S: 16 176
+:amanda/steel/steel32x32.S: 144 272
+:amanda/steel/steel32x32.S: 176 272
+:amanda/steel/steel32x32.S: 208 272
+:amanda/steel/steel32x32.S: 208 240
+:amanda/steel/steel32x32.S: 304 336
+:amanda/steel/steel32x32.S: 304 304
+:amanda/steel/steel32x32.S: 48 176
+:amanda/steel/steel32x32.S: 208 208
+:amanda/steel/steel32x32.S: 208 176
+:amanda/steel/steel32x32.S: 208 144
+:amanda/steel/steel32x32.S: 208 112
+:amanda/steel/steel32x32.S: 208 80
+:amanda/steel/steel32x32.S: 208 48
+:amanda/steel/steel32x32.S: 432 272
+:amanda/steel/steel32x32.S: 400 272
+:amanda/steel/steel32x32.S: 400 240
+:amanda/steel/steel32x32.S: 400 208
+:amanda/steel/steel32x32.S: 400 176
+:amanda/steel/steel32x32.S: 400 144
+:amanda/steel/steel32x32.S: 400 112
+:amanda/steel/steel32x32.S: 400 80
+:amanda/steel/steel32x32.S: 400 48
+:amanda/steel/steel32x32.S: 464 272
+:amanda/steel/steel32x32.S: 560 176
+:amanda/steel/steel32x32.S: 592 176
+:amanda/steel/steel32x32.S: 304 48
+:amanda/steel/steel32x32.S: 304 16
+:amanda/steel/steel32x32.S: 304 -16
+:amanda/steel/steel24x16.S: 212 32
+:amanda/steel/steel24x16.S: 404 32
+:amanda/steel/steel32x32.S: 496 368
+:amanda/steel/steel_flange_right24x16.S: 512 176
+:amanda/steel/steel_flange_right24x16.S: 96 272
+:amanda/steel/steel_flange_left24x16.S: 104 176
+:amanda/steel/steel_flange_left24x16.S: 520 272
+:amanda/steel/steel16x16.S: 216 16
+:amanda/steel/steel16x16.S: 408 16
+$BEGIN_TILE_GROUP 0
+:amanda/steel/steel24x16.S: 0 0
+:matt/marble/10a: 8 0 d
+$END_TILE_GROUP
+:Group-0: 104 192
+:amanda/steel/steel32x32.S: 80 176
+$BEGIN_TILE_GROUP 1
+:amanda/steel/steel24x16.S: 0 0
+:matt/marble/12: 0 0 d
+$END_TILE_GROUP
+:Group-1: 97 288
+:amanda/steel/steel32x32.S: 112 272
+:Group-1: 513 192
+:amanda/steel/steel32x32.S: 528 176
+:Group-0: 520 288
+:amanda/steel/steel32x32.S: 496 272
