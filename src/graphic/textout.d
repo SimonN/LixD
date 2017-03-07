@@ -25,6 +25,10 @@ private float _djvuMOffset; // Gui code should think this has a height of 20
                             // This affects the y pos for djvuM. No other
                             // font is affected.
 
+// To combat blurry screens, print djvuS without shadow on small screens, but
+// print with a dark surrounding
+private bool _smallScreenDjvuSSurround;
+
 public @property float shaOffset()   { return _shaOffset;   }
 public @property float djvuMOffset() { return _djvuMOffset; }
 public @property float djvuSYls()    { return _djvuSYls;    }
@@ -66,6 +70,7 @@ void initialize()
 
     _shaOffset = min(magnif, magnif / 2.0f + 2);
     _djvuSYls = al_get_font_line_height(djvuS);
+    _smallScreenDjvuSSurround = magnif <= 1.3f;
 
     // djvuMOffset should be set such that the font centers nicely on a
     // GUI button/bar having a height of 20 geoms -- equivalent to 1/24th
@@ -98,8 +103,20 @@ drawText(int tplFlag = ALLEGRO_ALIGN_LEFT)(
     y = to!int(y + (f == djvuM ? djvuMOffset : 0));
     enum fla = tplFlag | ALLEGRO_ALIGN_INTEGER;
 
-    al_draw_text(f, color.guiSha, x + shaOffset, y + shaOffset, fla, s);
-    al_draw_text(f, col,          x,             y,             fla, s);
+    if (f == djvuS && _smallScreenDjvuSSurround) {
+        // On small screens like 640x480 (where _yls20g is 20),
+        // print sharper the small font. Re Nepster's complaint.
+        al_draw_text(f, color.guiSha, x - shaOffset, y, fla, s);
+        al_draw_text(f, color.guiSha, x + shaOffset, y, fla, s);
+        al_draw_text(f, color.guiSha, x, y - shaOffset, fla, s);
+        al_draw_text(f, color.guiSha, x, y + shaOffset, fla, s);
+        al_draw_text(f, col, x, y, fla, s);
+        al_draw_text(f, col, x, y, fla, s);
+    }
+    else {
+        al_draw_text(f, color.guiSha, x + shaOffset, y + shaOffset, fla, s);
+        al_draw_text(f, col, x, y, fla, s);
+    }
 }
 
 alias drawTextCentered = drawText!ALLEGRO_ALIGN_CENTRE;
