@@ -98,6 +98,7 @@ private:
 public:
     @property gameVersionRequired() const { return _gameVersionRequired; }
     @property const(Player[PlNr]) players() const  { return _players;  }
+    @property int numPlayers() const { return _players.length & 0x7FFF_FFFF; }
     @property const(Permu)    permu()   const  { return _permu;        }
     @property       Permu     permu(Permu p)   { _permu = p; return p; }
 

@@ -3,14 +3,13 @@ module game.panel.base;
 /* Panel: A large GUI element that features all the visible buttons
  * during gameplay.
  *
- * Can appear in many different forms, see enum GapaMode in game.panelinf.
- * Has different children according to GapaMode, but always offers all methods.
- * Some methods don't do anything if GapaMode doesn't match.
+ * Some methods don't do anything depending on View.
  */
 
 import std.range;
 
 import basics.user;
+import game.core.view;
 import game.panel.infobar;
 import game.panel.nuke;
 import game.panel.scores;
@@ -24,8 +23,6 @@ import hardware.mouse;    // execution and skill button warning sound
 import hardware.sound;
 import lix.lixxie; // forward method of InfoBar to our users
 
-public import game.panel.infobar : GapaMode;
-
 class Panel : Element {
 private:
     SkillButton[] _skills;
@@ -37,12 +34,9 @@ private:
     ScoreGraph _scoreGraph;
 
 public:
-    const GapaMode gapamode;
-
-    this(GapaMode gpm)
+    this(in View aView)
     {
         super(new Geom(0, 0, Geom.screenXlg, Geom.panelYlg, From.BOTTOM));
-        gapamode = gpm;
         stats = new InfoBar(new Geom(0, 0, this.xlg - 4 * skillXl,
                             this.ylg - skillYl, From.TOP_LEFT));
         addChild(stats);
@@ -54,20 +48,17 @@ public:
             _skills[id].hotkey = basics.user.keySkill[skillSort[id]];
             addChild(_skills[id]);
         }
-        switch (gapamode) {
-        case GapaMode.multiPlay:
+        if (aView.showTapeRecorderButtons) {
+            _trbs = new TapeRecorderButtons(
+                    new Geom(0, 0, 4 * skillXl, this.ylg, From.RIGHT));
+            addChild(_trbs);
+        }
+        else {
             _scoreGraph = new ScoreGraph(new Geom(0, 0, 4 * skillXl,
                                                   ylg - 20f, From.TOP_RIGHT));
             _nukeMulti = new NukeButton(new Geom(0, 0, 4 * skillXl, 20f,
                                                  From.BOTTOM_RIGHT));
             addChildren(_scoreGraph, _nukeMulti);
-            break;
-        case GapaMode.single:
-        default:
-            _trbs = new TapeRecorderButtons(
-                    new Geom(0, 0, 4 * skillXl, this.ylg, From.RIGHT));
-            addChild(_trbs);
-            break;
         }
     }
 

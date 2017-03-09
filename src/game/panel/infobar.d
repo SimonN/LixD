@@ -15,14 +15,6 @@ import hardware.display; // show fps
 import hardware.sound; // warn when too few lix alive to win
 import lix;
 
-// "GameplayPanelMode"
-enum GapaMode {
-    single,
-    multiPlay,
-    multiReplay,
-    multiObserving,
-}
-
 class InfoBar : Button {
 private:
     int _targetDescNumber;

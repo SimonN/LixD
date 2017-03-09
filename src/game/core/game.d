@@ -15,6 +15,7 @@ module game.core.game;
  */
 
 public import basics.cmdargs; // Runmode;
+public import game.core.view;
 
 import std.algorithm; // find;
 import std.conv; // float to int in prepare nurse
@@ -197,6 +198,14 @@ package:
     @property PlNr plNrLocal() const { return nurse.replay.plNrLocal; }
     @property auto playerLocal() const { return nurse.replay.playerLocal; }
 
+    @property View view() const
+    {
+        assert (nurse && nurse.replay, "call view() after init'ing replay");
+        return createView(nurse.replay.numPlayers,
+            // need && and ?: due to _netClient's alias inner() this
+            _netClient && _netClient.inner ? _netClient.inner : null);
+    }
+
     void setLastUpdateToNow()
     {
         assert (this.effect);
@@ -263,16 +272,10 @@ private:
         if (runmode != Runmode.INTERACTIVE)
             return;
 
-        GapaMode gapamode = nurse.replay.players.length == 1 ? GapaMode.single
-            : ! _netClient
-                ? GapaMode.multiReplay
-            : _netClient.ourProfile.feeling == Profile.Feeling.observing
-                ? GapaMode.multiObserving
-                : GapaMode.multiPlay;
         map = new Map(cs.land, Geom.screenXls.to!int,
                               (Geom.screenYls - Geom.panelYls).to!int);
         this.centerCameraOnHatchAverage();
-        pan = new Panel(gapamode);
+        pan = new Panel(view);
         gui.addElder(pan);
         pan.setLikeTribe(localTribe);
         pan.highlightFirstSkill();
