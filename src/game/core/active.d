@@ -56,13 +56,11 @@ private:
 
 void cancelReplay(Game game) { with (game)
 {
-    _replayNeverCancelledThereforeDontSaveAutoReplay = false;
-    if (! replaying)
-        // During a multiplayer game, replaying is false, even if there
-        // are future actions by other masters queued. Perfect, don't cancel.
-        return;
-    nurse.cutReplay();
-    playLoud(Sound.SCISSORS);
+    if (replaying && game.view.canInterruptReplays) {
+        _replayNeverCancelledThereforeDontSaveAutoReplay = false;
+        nurse.cutReplay();
+        playLoud(Sound.SCISSORS);
+    }
 }}
 
 struct PotentialAssignee {
