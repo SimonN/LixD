@@ -1,6 +1,22 @@
 Version history of the Lix D/Allegro 5 port
 ===========================================
 
+0.6.26
+------
+
+2017-03-09
+
+NepsterLix 1.6 is an excellent singleplayer puzzle pack with 106 levels.
+It was released in 2016, now it's finally included in the main download.
+
+Sharper small text on small resolutions such as 800x600 and below: Instead
+of small shadow text, I print small text with a dark outline.
+
+More networking code: Transferring and interpreting game data works.
+Can't interrupt other players' replay actions anymore. Game's network
+connection is picked up by lobby after game. But the server doesn't yet
+send time-syncing packets every few seconds, thus clients will time-shift.
+
 0.6.25
 ------
 

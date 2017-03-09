@@ -50,8 +50,8 @@ private:
     Element[] _showDuringGameRoom;
 
 public:
-    this()
-    {
+    this(RichClient aRichClient // existing client or null if not connected
+    ) {
         super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg),
             Lang.winLobbyTitle.transl);
         _buttonExit = new TextButton(new Geom(20, 20, 120, 20, From.BOT_RIG),
@@ -61,9 +61,6 @@ public:
         addChild(_buttonExit);
 
         _console = new LobbyConsole(new Geom(0, 60, xlg-40, 160, From.BOTTOM));
-        _console.add("Unfinished!");
-        _console.add("You can connect to the central server and chat, "
-                   ~ "but can't start games.");
         addChild(_console);
 
         _buttonCentral = new TextButton(new Geom(0, 40, 200, 40, From.TOP));
@@ -118,6 +115,15 @@ public:
         foreach (e; chain(_showWhenDisconnected, _showWhenConnected,
                           _showDuringLobby, _showDuringGameRoom))
             addChild(e);
+
+        if (aRichClient) {
+            _netClient = aRichClient;
+            _netClient.console = _console;
+            setOurEventHandlers();
+            _preview.level = _netClient.level;
+            refreshPeerList();
+
+        }
         showOrHideGuiBasedOnConnection();
     }
 
@@ -264,25 +270,25 @@ private:
         }
     }
 
+    void refreshPeerList()
+    {
+        _peerList.recreateButtonsFor(_netClient.profilesInOurRoom.values);
+        _colorSelector.style = _netClient.ourProfile.style;
+        if (_netClient.ourProfile.feeling == Profile.Feeling.observing)
+            _colorSelector.setObserving();
+        _declareReady.shown = _netClient.mayWeDeclareReady;
+        _declareReady.on = _netClient.ourProfile.feeling
+                            == Profile.Feeling.ready;
+    }
+
     // Keep this the last private function in this class, it's so long
     void setOurEventHandlers()
     {
         assert (_netClient);
-        void refreshPeerList()
-        {
-            _peerList.recreateButtonsFor(_netClient.profilesInOurRoom.values);
-            _colorSelector.style = _netClient.ourProfile.style;
-            if (_netClient.ourProfile.feeling == Profile.Feeling.observing)
-                _colorSelector.setObserving();
-            _declareReady.shown = _netClient.mayWeDeclareReady;
-            _declareReady.on = _netClient.ourProfile.feeling
-                                == Profile.Feeling.ready;
-        }
 
         // We don't print anything on connecting. Entering the lobby will
         // generate a message anyway, including an update to the peer list.
         _netClient.onConnect = null;
-
         _netClient.onCannotConnect = () { _netClient = null; };
         _netClient.onConnectionLost = () { _netClient = null; };
         _netClient.onPeerDisconnect = (string name) { refreshPeerList(); };

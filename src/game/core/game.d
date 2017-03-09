@@ -147,10 +147,14 @@ public:
 
     Result evaluateReplay() { return nurse.evaluateReplay(); }
 
-    auto consoleLines() const
+    auto loseOwnershipOfRichClient()
     {
-        assert (_console, "query console lines only if a console was made");
-        return _console.lines;
+        if (! _netClient)
+            return null;
+        auto ret = _netClient;
+        _netClient = null;
+        ret.onPeerSendsReplayData = null;
+        return ret;
     }
 
     void calc()

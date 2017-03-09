@@ -104,13 +104,10 @@ public:
                 editor.emergencySave();
             throw firstThr;
         }
-        kill(true);
+        kill();
     }
 
-    // The network connection isn't global, but we use the same connection
-    // in several application parts. It must survive past a kill(), but
-    // it should be disconnected at program termination in kill(true).
-    private void kill(bool killPersistentThingsLikeNetworkToo = false)
+    private void kill()
     {
         if (game) {
             destroy(game);
@@ -132,8 +129,7 @@ public:
             browSin = null;
         }
         if (lobby) {
-            if (killPersistentThingsLikeNetworkToo)
-                lobby.disconnect();
+            lobby.disconnect();
             gui.rmElder(lobby);
             lobby = null;
         }
@@ -179,7 +175,7 @@ public:
             }
             else if (mainMenu.gotoNetwork) {
                 kill();
-                lobby = new Lobby;
+                lobby = new Lobby(null);
                 gui.addElder(lobby);
             }
             else if (mainMenu.gotoReplays) {
@@ -253,8 +249,13 @@ public:
         else if (game) {
             game.calc();
             if (game.gotoMainMenu) {
+                auto net = game.loseOwnershipOfRichClient();
                 kill();
-                if (_afterGameGoto == AfterGameGoto.replays) {
+                if (net) {
+                    lobby = new Lobby(net);
+                    gui.addElder(lobby);
+                }
+                else if (_afterGameGoto == AfterGameGoto.replays) {
                     browRep = new BrowserReplay;
                     gui.addElder(browRep);
                 }
