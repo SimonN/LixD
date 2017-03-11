@@ -310,7 +310,6 @@ $optionReplayAutoMulti        Auto-save multiplayer games
 $optionMouseSpeed             Mouse speed
 $optionScrollSpeedEdge        Scroll speed at screen edge
 $optionScrollSpeedClick       Scroll speed with that key
-$optionFastMovementFreesMouse Fast movement untraps mouse
 
 $optionUserNameDesc Your name appears in replays and in multiplayer games.|Lix saves settings to a file in ./data/user/ named after you.
 $optionLanguageDesc Language throughout Lix's user interface.
@@ -319,7 +318,6 @@ $optionReplayAutoMultiDesc Saves a replay automatically when you have finished a
 $optionMouseSpeedDesc Speed of the mouse cursor.
 $optionScrollSpeedEdgeDesc Scroll speed when the mouse cursor touches the screen edge.|
 $optionScrollSpeedClickDesc Scroll speed when you move the mouse while holding the scrolling key.|The standard scrolling key is the right mouse button ⟁, look to the left to remap.
-$optionFastMovementFreesMouseDesc The mouse leaves the Lix window when you move quickly against the sides.|If not checked, untrap the mouse by Alt+Tab.
 
 $optionScreenWindowed           Start in windowed mode
 $optionScreenWindowedRes        Windowed resolution

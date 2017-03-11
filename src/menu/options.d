@@ -250,10 +250,6 @@ void populateControls()
         fac.factory!HotkeyOption(keyScroll),
         fac.factory!HotkeyOption(keyPriorityInvert),
     ];
-    fac.y += fac.incrementY;
-    groups[OptionGroup.controls] ~= [
-        fac.factory!BoolOption(fastMovementFreesMouse),
-    ];
     fac = facRight();
     void addNumPick(UserOption!int uo, in int minVal)
     {

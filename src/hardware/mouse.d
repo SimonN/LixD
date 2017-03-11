@@ -41,16 +41,6 @@ void trapMouse(bool b) { _trapMouse = b; }
 void freezeMouseX();
 void freezeMouseY();
 
-// There seems to be a bug in Allegro 5.0.8: Clicking out of
-// the window sends a switch-out event, correct. But alt-tabbing
-// out of the window doesn't make a display-switch-out-event on
-// Debian 6 + Gnome 2. I want to un-trap the mouse when we alt-tab
-// out of the window, and use a workaround when we lack the event.
-version (linux)
-    enum issue118workaround = true;
-else
-    enum issue118workaround = false;
-
 private:
 
     ALLEGRO_EVENT_QUEUE* _queue;
@@ -121,11 +111,6 @@ void calc()
         if (_mouseHeldFor[i]) ++_mouseHeldFor[i];
     }
 
-    // Local variables: current hardware mouse position. We reset the hardware
-    // mouse back to the screen center if the hardware mouse is close to edge.
-    int hardwareSavedOnlyForResetX = xl / 2;
-    int hardwareSavedOnlyForResetY = yl / 2;
-
     // I will adhere to my convention from C++/A4 Lix to multiply all incoming
     // mouse movements by the mouse speed, and then later divide by constant
     ALLEGRO_EVENT event;
@@ -140,9 +125,9 @@ void calc()
             // DTODO: Only use mouseSpeed in fullscreen, not in window mode
             _mickeyX += event.mouse.dx * basics.user.mouseSpeed;
             _mickeyY += event.mouse.dy * basics.user.mouseSpeed;
-            hardwareSavedOnlyForResetX = event.mouse.x;
-            hardwareSavedOnlyForResetY = event.mouse.y;
             _wheelNotches -= event.mouse.dz;
+            if (_trapMouse)
+                al_set_mouse_xy(display, xl/2, yl/2);
             break;
 
         case ALLEGRO_EVENT_MOUSE_BUTTON_DOWN:
@@ -160,18 +145,11 @@ void calc()
             _mouseHeldFor[i] = 0;
             break;
 
-        // This occurs after centralizing the mouse manually.
+        // This occurs after centralizing the mouse manually. Do nothing.
         case ALLEGRO_EVENT_MOUSE_WARPED:
-            static if (issue118workaround) {
-                _trapMouse = true;
-            }
             break;
 
         case ALLEGRO_EVENT_MOUSE_ENTER_DISPLAY:
-            static if (! issue118workaround) {
-                if (hardware.display.displayActive)
-                    _trapMouse = true;
-            }
             // Nepster 2016-06: When entering the display, the ingame
             // cursor should jump to where we entered.
             // This would sometimes trigger when the hardware mouse is close
@@ -205,32 +183,10 @@ void calc()
     if (_mouseOwnX >= xl) _mouseOwnX = xl - 1;
     if (_mouseOwnY >= yl) _mouseOwnY = yl - 1;
 
-    if (_trapMouse) {
+    if (_trapMouse)
         al_hide_mouse_cursor(display);
-
-        bool isCloseToEdge(in int pos, in int length)
-        {
-            if (_mouseHeldFor[1] > 2 || _mouseHeldFor[2] > 2
-                || ! basics.user.fastMovementFreesMouse.value)
-                // RMB scrolling should reset rather often.
-                // Curiously, this is not responsible for trapping the mouse
-                // in the window with guarantee. That's still magic to me.
-                return pos != length/2;
-            else
-                // Make it even easier for the mouse to leave window,
-                // resetting closer to the edge => less speed to leave.
-                return pos * 16 < length || pos * 16 >= length * 15;
-        }
-
-        if (   isCloseToEdge(hardwareSavedOnlyForResetX, xl)
-            || isCloseToEdge(hardwareSavedOnlyForResetY, yl))
-             // do not call centerMouse, that would move _mouseOwnX/Y
-             al_set_mouse_xy(display, xl/2, yl/2);
-    }
-    else {
-        assert (! _trapMouse);
+    else
         al_show_mouse_cursor(display);
-    }
 }
 // end void update()
 
