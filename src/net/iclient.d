@@ -11,14 +11,14 @@ interface INetClient {
                  // data into refined structs to fetch from other methods
     void sendChatMessage(string);
 
-    @property bool connected() const;
-    @property bool connecting() const;
+    @property bool connected() const pure;
+    @property bool connecting() const pure;
 
     @property string enetLinkedVersion() const;
 
     @property const(Profile[PlNr]) profilesInOurRoom();
-    @property PlNr ourPlNr() const;
-    @property const(Profile) ourProfile() const;
+    @property PlNr ourPlNr() const pure;
+    @property const(Profile) ourProfile() const pure;
     @property bool mayWeDeclareReady() const;
 
     // Call this when the GUI has chosen a new Lix style.

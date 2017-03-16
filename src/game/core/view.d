@@ -13,7 +13,7 @@ enum View {
     replayBattle, // one player watches the replay of a a multiplayer battle
 }
 
-View createView(in int numPlayers, in INetClient netClient)
+View createView(in int numPlayers, in INetClient netClient) pure
 {
     assert (numPlayers > 0);
     if (netClient) {
@@ -33,6 +33,12 @@ bool canInterruptReplays(in View v)
 bool showTapeRecorderButtons(in View v)
 {
     return v.canInterruptReplays || v == View.replayBattle;
+}
+
+bool continuePhysicsDuringModalWindow(in View v)
+{
+    return v == View.solveTogether || v == View.observeBattle
+        || v == View.battle        || v == View.observeSolving;
 }
 
 unittest {

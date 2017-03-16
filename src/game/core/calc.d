@@ -19,6 +19,8 @@ implGameCalc(Game game)
     assert (game.runmode == Runmode.INTERACTIVE);
     if (game.modalWindow) {
         game.calcModalWindow;
+        if (game.view.continuePhysicsDuringModalWindow && ! game.isFinished)
+            game.updatePhysicsAccordingToSpeedButtons();
     }
     else if (keyGameExit.keyTapped) {
         game.createModalWindow;
@@ -28,7 +30,8 @@ implGameCalc(Game game)
         game.calcActive();
         if (game._netClient)
             game._netClient.calc();
-        game.updatePhysicsAccordingToSpeedButtons();
+        if (! game.isFinished)
+            game.updatePhysicsAccordingToSpeedButtons();
         if (game.isFinished)
             game.createModalWindow;
     }
