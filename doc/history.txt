@@ -1,5 +1,15 @@
-Version history of the Lix D/Allegro 5 port
-===========================================
+Version history
+===============
+
+0.6.27
+------
+
+2017-03-16
+
+In multiplayer, the server sends time-syncing packets to all players in a
+room. This happens every 0.5 seconds during the first few seconds in the game,
+and every 5 seconds later on. Players adjust their physics' speed to match.
+Even if players open the ESC menu, a networked game will continue to run.
 
 0.6.26
 ------
@@ -1493,3 +1503,8 @@ months.
 
 Started development by porting the fundamental Lix graphic classes from
 Allegro 4.4 to Allegro 5 with the D Programming Language.
+
+C++ Lix
+-------
+
+2006 to 2016

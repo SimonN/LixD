@@ -1,23 +1,19 @@
-Lix D/A5 port
-=============
+Lix
+===
 
 Lix is an action-puzzle game inspired by Lemmings (DMA Design, 1991),
-with singleplayer puzzles, networked competitive multiplayer mode,
-and a level editor. Lix came to life as a C++/Allegro 4 game in 2006.
+with singleplayer puzzles, networked multiplayer, and a level editor.
+Lix is written in the D programming language, uses Allegro 5 for graphics,
+sound, and input, and uses enet for networking.
 
-I (Simon) have rewritten Lix in the D Programming Language and rely on
-Allegro 5 for graphics, sound, and input. I'm still porting the networking.
+License/Copying/Public domain
+-----------------------------
 
-Right now, in 2016, you need the C++ version to play networked games:
+Lix is placed in the public domain via the CC0 public domain dedication.
+An exception is the text font, DejaVu Sans. See `./doc/copying.txt'.
 
-    http://github.com/SimonN/Lix
-
-How to build D Lix
+Build instructions
 ------------------
-
-Detailed instructions: `./doc/build/linux.txt' or `.doc/build/windows.txt'.
-
-Quick instructions:
 
     $ git clone https://github.com/SimonN/LixD
     Install a D compiler, e.g., dmd: https://dlang.org/download
@@ -26,24 +22,15 @@ Quick instructions:
     Install the enet 1.3 runtime library.
     $ dub
 
-Stuck? Follow `./doc/build/*.txt' or contact me, I don't bite. :-) See below.
+Especially on Windows, you might like more detailed build instructions:
+See `.doc/build/windows.txt' or `./doc/build/linux.txt' according to your OS.
 
-Report bugs
------------
-
-    https://github.com/SimonN/LixD/issues
-
-License/Copying
----------------
-
-Almost everything of Lix is placed in the public domain via the CC0 public
-domain dedication. An exception is the text font, DejaVu Sans. For detailed
-information, please read `./doc/copying.txt'.
+Found a bug, have an idea? Report on https://github.com/SimonN/LixD/issues.
 
 Contact
 -------
 
     Web:    http://www.lixgame.com
     E-Mail: eiderdaus@gmail.com
-    IRC:    irc.quakenet.org #lix, my nickname is SimonN or SimonNa
-    Forums: lemmingsforums.net, my username is Simon
+    IRC:    irc.quakenet.org #lix, I'm SimonN or SimonNa
+    Forums: lemmingsforums.net, I'm Simon

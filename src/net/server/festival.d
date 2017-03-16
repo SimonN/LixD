@@ -94,10 +94,9 @@ public:
 
     int millisecondsSinceGameStartOrZero()
     {
-        if (! gameRunning
-            || MonoTime.currTime - _recentSync < dur!"seconds"(3))
+        if (! tellMillisecondsSinceGameStartNow)
             return 0;
-        auto ret = (MonoTime.currTime - _gameStart) / dur!"msecs"(1);
+        immutable ret = (MonoTime.currTime - _gameStart) / dur!"msecs"(1);
         _recentSync = MonoTime.currTime;
         return ret & 0x7FFF_FFFF;
     }
@@ -112,6 +111,16 @@ private:
             _level = cast (ubyte[]) p[0 .. toCopy.length];
             _level[] = toCopy[];
         }
+    }
+
+    bool tellMillisecondsSinceGameStartNow() const
+    {
+        if (! gameRunning)
+            return false;
+        if (MonoTime.currTime - _gameStart <= dur!"seconds"(5))
+            return MonoTime.currTime - _recentSync >= dur!"msecs"(500);
+        else
+            return MonoTime.currTime - _recentSync >= dur!"seconds"(5);
     }
 }
 
@@ -132,6 +141,12 @@ unittest
     assert (cast (const(char)[]) fe.level == "a");
     fe = another;
     assert (cast (const(char)[]) fe.level == "hallo");
+
+    fe._gameStart  = MonoTime.zero + dur!"msecs"(  1);
+    fe._recentSync = MonoTime.zero + dur!"msecs"(600);
+    assert (fe.millisecondsSinceGameStartOrZero >  0);
+    assert (fe.millisecondsSinceGameStartOrZero == 0);
+
     fe.dispose;
     assert (fe.level is null);
 }
