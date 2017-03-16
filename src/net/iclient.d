@@ -54,5 +54,9 @@ interface INetClient {
     @property void onLevelSelect(void delegate(string name, const(ubyte[]) data));
     @property void onGameStart(void delegate(Permu));
     @property void onPeerSendsReplayData(void delegate(ReplayData));
-    @property void onSuggestPhysicsPhyu(void delegate(Phyu));
+
+    // The server tells us how many milliseconds have passed.
+    // The client adds his networking lag to that value, then calls the
+    // delegate with the thereby-increased value of milliseconds.
+    @property void onMillisecondsSinceGameStart(void delegate(int));
 }

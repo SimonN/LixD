@@ -23,7 +23,6 @@ import derelict.enet.enet;
 
 import net.enetglob;
 import net.packetid;
-import net.phyu;
 import net.style;
 import net.versioning;
 
@@ -399,18 +398,18 @@ struct ChatPacket {
     }
 }
 
-struct SuggestPhyuPacket {
+struct MillisecondsSinceGameStartPacket {
     PacketHeader header;
-    Phyu update;
+    int milliseconds;
 
-    enum len = header.len + update.sizeof;
+    enum len = header.len + milliseconds.sizeof;
 
     ENetPacket* createPacket() const nothrow
     {
         auto ret = .createPacket(len);
         header.serializeTo(ret.data[0 .. header.len]);
-        ret.data[header.len .. header.len + update.sizeof]
-            = nativeToBigEndian!int(update);
+        ret.data[header.len .. header.len + milliseconds.sizeof]
+            = nativeToBigEndian!int(milliseconds);
         return ret;
     }
 
@@ -418,7 +417,7 @@ struct SuggestPhyuPacket {
     {
         enforce(p.dataLength >= len);
         header = PacketHeader(p.data[0 .. header.len]);
-        update = Phyu(bigEndianToNative!int(
-                    p.data[header.len .. header.len + update.sizeof]));
+        milliseconds = bigEndianToNative!int(
+            p.data[header.len .. header.len + milliseconds.sizeof]);
     }
 }

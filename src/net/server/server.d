@@ -174,12 +174,12 @@ public:
         broadcastToRoom(pa);
     }
 
-    void suggestPhyu(PlNr receiv, Phyu upd)
+    void sendMillisecondsSinceGameStart(PlNr receiv, int millis)
     {
-        auto pa = SuggestPhyuPacket();
-        pa.header.packetID = PacketStoC.suggestPhysicsPhyu;
+        auto pa = MillisecondsSinceGameStartPacket();
+        pa.header.packetID = PacketStoC.millisecondsSinceGameStart;
         pa.header.plNr = receiv; // doesn't matter
-        pa.update = upd;
+        pa.milliseconds = millis;
         enet_peer_send(_host.peers + receiv, 0, pa.createPacket);
     }
 

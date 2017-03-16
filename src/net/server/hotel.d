@@ -170,9 +170,9 @@ private:
     {
         for (Room ro = Room(0); ro < Room.maxExclusive;
                                 ro = Room(1 + ro & 0xFF))
-            if (Phyu upd = festivals[ro].updatesToSuggestOrZero)
+            if (int since = festivals[ro].millisecondsSinceGameStartOrZero)
                 foreach (const plNr, ref const profile; ob.allPlayers)
                     if (profile.room == ro)
-                        ob.suggestPhyu(plNr, upd);
+                        ob.sendMillisecondsSinceGameStart(plNr, since);
     }
 }

@@ -13,6 +13,7 @@ import file.language;
 import gui.console;
 import level.level;
 import net.iclient;
+import net.phyu;
 import net.structs;
 
 class RichClient {
@@ -33,6 +34,7 @@ public:
         onPeerJoinsRoom(null);
         onPeerLeavesRoomTo(null);
         onWeChangeRoom(null);
+        onMillisecondsSinceGameStart(null);
     }
 
     alias inner this;
@@ -149,6 +151,16 @@ public:
             // Reason: We don't want to write this during play.
             if (f)
                 f(plName, lev);
+        };
+    }
+
+    @property void onMillisecondsSinceGameStart(void delegate(int) f)
+    {
+        _inner.onMillisecondsSinceGameStart = delegate void(int millis)
+        {
+            _console.add("phuy %d".format(millis)); // debugging
+            if (f)
+                f(millis);
         };
     }
 

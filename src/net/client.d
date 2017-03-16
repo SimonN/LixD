@@ -48,7 +48,7 @@ private:
     void delegate(string name, const(ubyte[]) data) _onLevelSelect;
     void delegate(Permu) _onGameStart;
     void delegate(ReplayData) _onPeerSendsReplayData;
-    void delegate(Phyu) _onSuggestPhysicsPhyu;
+    void delegate(int) _onMillisecondsSinceGameStart;
 
 public:
     /* Immediately tries to connect to hostname:port.
@@ -110,7 +110,7 @@ public:
     @property void onLevelSelect(typeof(_onLevelSelect) dg) { _onLevelSelect = dg; }
     @property void onGameStart(typeof(_onGameStart) dg) { _onGameStart = dg; }
     @property void onPeerSendsReplayData(typeof(_onPeerSendsReplayData) dg) { _onPeerSendsReplayData = dg; }
-    @property void onSuggestPhysicsPhyu(typeof(_onSuggestPhysicsPhyu) dg) { _onSuggestPhysicsPhyu = dg; }
+    @property void onMillisecondsSinceGameStart(typeof(_onMillisecondsSinceGameStart) dg) { _onMillisecondsSinceGameStart = dg; }
 
     void sendChatMessage(string aText)
     {
@@ -384,9 +384,12 @@ private:
                 profile.setNotReady();
             _onPeerDisconnect && _onPeerDisconnect(name);
         }
-        else if (got.data[0] == PacketStoC.suggestPhysicsPhyu) {
-            _onSuggestPhysicsPhyu
-                && _onSuggestPhysicsPhyu(SuggestPhyuPacket(got).update);
+        else if (got.data[0] == PacketStoC.millisecondsSinceGameStart) {
+            assert (_serverPeer);
+            _onMillisecondsSinceGameStart && _onMillisecondsSinceGameStart(
+                MillisecondsSinceGameStartPacket(got).milliseconds
+                + _serverPeer.roundTripTime
+            );
         }
     }
 }

@@ -6,9 +6,10 @@ module net.server.festival;
  *
  * All of Festival is @nogc.
  *
- * Call updatesToSuggestOrZero() often, it suggests to the client the number
- * of physics updates the server would have done. The client can add the
- * client's own lag to see where he should be.
+ * Call updatesToSuggestOrZero() often, it suggests to the client the time
+ * in milliseconds that has passed since game start. Festival doesn't know
+ * how fast physics update. The client can add the client's own lag to
+ * see where he should be.
  */
 
 // DTODO: Make the replay known in the network, include in Festival,
@@ -19,8 +20,6 @@ import core.stdc.stdlib;
 import core.time;
 
 import net.structs;
-import net.repdata;
-import net.packetid : updatesPerSecond;
 
 package:
 
@@ -34,7 +33,6 @@ private:
 public:
     PlNr owner; // creator of the room, I plan that he shall kick others
     PlNr levelChooser; // who has chosen the most recent level?
-    Phyu update; // if game in progress, players should sync to this
 
     @property const(ubyte)[] level() const { return _level; }
     @property void level(const(ubyte[]) toCopy)
@@ -59,7 +57,6 @@ public:
         _recentSync = fe._recentSync;
         owner = fe.owner;
         levelChooser = fe.levelChooser;
-        update = fe.update;
         return this;
     }
 
@@ -70,7 +67,6 @@ public:
         endGame();
         owner = owner.init;
         levelChooser = levelChooser.init;
-        update = update.init;
         if (_level.ptr !is null) {
             free(_level.ptr);
             _level = null;
@@ -84,7 +80,8 @@ public:
 
     void startGame()
     {
-        assert (! gameRunning);
+        // DTODONETWORK: Implement something that calls endGame.
+        // Then assert (! gameRunning) here in startGame().
         _gameStart = MonoTime.currTime;
         _recentSync = MonoTime.currTime;
     }
@@ -95,15 +92,14 @@ public:
         _recentSync = MonoTime.zero;
     }
 
-    Phyu updatesToSuggestOrZero()
+    int millisecondsSinceGameStartOrZero()
     {
         if (! gameRunning
             || MonoTime.currTime - _recentSync < dur!"seconds"(3))
-            return Phyu(0);
-        enum onePhyu = dur!"hnsecs"(10_000_000 / updatesPerSecond);
-        auto updatesSinceStart = (MonoTime.currTime - _gameStart) / onePhyu;
+            return 0;
+        auto ret = (MonoTime.currTime - _gameStart) / dur!"msecs"(1);
         _recentSync = MonoTime.currTime;
-        return Phyu(updatesSinceStart & 0x7FFF_FFFF);
+        return ret & 0x7FFF_FFFF;
     }
 
 private:
