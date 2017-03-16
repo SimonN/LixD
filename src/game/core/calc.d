@@ -17,21 +17,24 @@ package void
 implGameCalc(Game game)
 {
     assert (game.runmode == Runmode.INTERACTIVE);
-    if (game.modalWindow) {
-        game.calcModalWindow;
-        if (game.view.continuePhysicsDuringModalWindow && ! game.isFinished)
-            game.updatePhysicsAccordingToSpeedButtons();
-    }
-    else if (keyGameExit.keyTapped) {
-        game.createModalWindow;
-    }
-    else {
-        game.calcPassive();
-        game.calcActive();
+    void noninputCalc()
+    {
         if (game._netClient)
             game._netClient.calc();
         if (! game.isFinished)
             game.updatePhysicsAccordingToSpeedButtons();
+    }
+    if (game.modalWindow) {
+        game.calcModalWindow;
+        if (game.view.continuePhysicsDuringModalWindow)
+            noninputCalc();
+    }
+    else if (keyGameExit.keyTapped)
+        game.createModalWindow;
+    else {
+        game.calcPassive();
+        game.calcActive();
+        noninputCalc();
         if (game.isFinished)
             game.createModalWindow;
     }

@@ -34,7 +34,6 @@ public:
         onPeerJoinsRoom(null);
         onPeerLeavesRoomTo(null);
         onWeChangeRoom(null);
-        onMillisecondsSinceGameStart(null);
     }
 
     alias inner this;
@@ -153,15 +152,4 @@ public:
                 f(plName, lev);
         };
     }
-
-    @property void onMillisecondsSinceGameStart(void delegate(int) f)
-    {
-        _inner.onMillisecondsSinceGameStart = delegate void(int millis)
-        {
-            _console.add("phuy %d".format(millis)); // debugging
-            if (f)
-                f(millis);
-        };
-    }
-
 }

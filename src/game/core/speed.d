@@ -1,5 +1,7 @@
 module game.core.speed;
 
+static import basics.globals;
+
 import basics.alleg5;
 import net.repdata; // Phyu
 import basics.user; // pausedAssign
@@ -64,9 +66,8 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
         upd();
     }
     else if (! pan.paused) {
-        long updAgo = timerTicks - game.altickLastPhyu;
         if (pan.speedIsNormal) {
-            if (updAgo >= ticksNormalSpeed)
+            if (game.shallWeUpdateAtAdjustedNormalSpeed())
                 upd();
         }
         else if (pan.speedIsTurbo)
@@ -91,6 +92,21 @@ void framestepBackBy(Game game, in int by)
         game.nurse.framestepBackBy(by);
 }
 
+// The server tells us the milliseconds since game start, and the net client
+// has added our lag. We think in Phyus or Allegro ticks, not in millis,
+// therefore convert millis to Phyus.
+void adjustToMatchMillisecondsSinceGameStart(Game game, in int suggMillis)
+{ with (game) with (game.nurse)
+{
+    // How many ticks have elapsed since game start? This is the number of
+    // completed Phyus converted to ticks, plus leftover ticks that didn't
+    // yet make a complete Phyu.
+    immutable ourTicks = updatesSinceZero * ticksNormalSpeed
+                            + (timerTicks - altickLastPhyu);
+    immutable suggTicks = suggMillis * basics.globals.ticksPerSecond / 1000;
+    game._alticksToAdjust = suggTicks - ourTicks;
+}}
+
 private:
 
 struct LoadStateRAII
@@ -99,3 +115,19 @@ struct LoadStateRAII
     this(Game g) { _game = g; _game.saveResult(); }
     ~this()      { _game.setLastPhyuToNow();    }
 }
+
+// Combat the network time-lag, affect _alticksToAdjust.
+// _alticksToAdjust is < 0 if we have to slow down, > 0 if we have to speed up.
+bool shallWeUpdateAtAdjustedNormalSpeed(Game game) { with (game)
+{
+    immutable long updAgo = timerTicks - game.altickLastPhyu;
+    immutable long adjust = _alticksToAdjust < -20 ? 2
+                        :   _alticksToAdjust <   0 ? 1
+                        :   _alticksToAdjust >  20 ? -2
+                        :   _alticksToAdjust >   0 ? -1 : 0;
+    if (updAgo >= ticksNormalSpeed + adjust) {
+        _alticksToAdjust += adjust;
+        return true;
+    }
+    return false;
+}}

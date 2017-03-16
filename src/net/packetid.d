@@ -1,7 +1,6 @@
 module net.packetid;
 
 enum : int {
-    updatesPerSecond = 15, // logic/physics updates of the game
     netPlayerNameMaxLen = 30,
     netChatMaxLen = 300,
 }

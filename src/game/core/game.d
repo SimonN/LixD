@@ -31,6 +31,7 @@ import file.filename;
 import game.core.calc;
 import game.core.draw;
 import game.core.scrstart;
+import game.core.speed;
 import game.window.base;
 import game.model.nurse;
 import game.panel.base;
@@ -63,6 +64,13 @@ package:
     RichClient _netClient; // null unless playing/observing multiplayer
 
     long altickLastPhyu;
+
+    // When we have time-shifted away from the server, we set this variable,
+    // and let the physics update function gradually pay back this dept.
+    // Is > 0 if we have to speed up, is < 0 if we have to slow down.
+    // Should always be zero in singleplayer.
+    long _alticksToAdjust;
+
     Rebindable!(const Lixxie) _drawHerHighlit;
 
     // Assignments for the next update go in here, and are only written into
@@ -86,7 +94,7 @@ private:
 public:
     @property bool gotoMainMenu()         { return _gotoMainMenu; }
 
-    enum ticksNormalSpeed   = ticksPerSecond / updatesPerSecond;
+    enum ticksNormalSpeed   = ticksPerSecond / 15; // run at 15 Pyus per sec
     enum updatesDuringTurbo = 9;
     enum updatesAheadMany   = ticksPerSecond / ticksNormalSpeed * 10;
 
@@ -121,6 +129,10 @@ public:
         {
             this.undispatchedAssignments ~= data;
         };
+        _netClient.onMillisecondsSinceGameStart = (int millis)
+        {
+            this.adjustToMatchMillisecondsSinceGameStart(millis);
+        };
         prepareNurse(null, null);
         initializePanel();
         initializeConsole();
@@ -153,7 +165,10 @@ public:
             return null;
         auto ret = _netClient;
         _netClient = null;
+
+        // Null all our event handlers. Maybe refactor to observer pattern?
         ret.onPeerSendsReplayData = null;
+        ret.onMillisecondsSinceGameStart = null;
         return ret;
     }
 
