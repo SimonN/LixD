@@ -56,7 +56,7 @@ private:
     ALLEGRO_EVENT_QUEUE* _queue;
 
     bool _trapMouse = true;
-    bool _centerMouseAtNextUpdate = true;
+    bool _centerMouseAtNextPhyu = true;
 
     int  _mouseOwnX; // where the cursor will appear, != al_mouse
     int  _mouseOwnY;

@@ -14,8 +14,7 @@ import net.enetglob;
 
 import net.ac;
 public import net.structs : PlNr;
-
-struct Update { int u; alias u this; } // counts how far the game has advanced
+public import net.phyu;
 
 enum RepAc : ubyte {
     NOTHING = 0,
@@ -32,11 +31,11 @@ struct ReplayData {
                      + update.sizeof + toWhichLix.sizeof + 1; // +1 header
     static assert (len == 12);
 
-    PlNr   player;
-    RepAc  action;
-    Ac     skill; // only meaningful if isSomeAssignment
-    Update update;
-    int    toWhichLix;
+    PlNr player;
+    RepAc action;
+    Ac skill; // only meaningful if isSomeAssignment
+    Phyu update;
+    int toWhichLix;
 
     @property bool isSomeAssignment() const
     {
@@ -78,7 +77,7 @@ struct ReplayData {
             "don't call ReplayData(p) if p is not replay data");
         enforce(pck.dataLength == len);
         player = PlNr(pck.data[1]);
-        update = Update(bigEndianToNative!int(pck.data[4 ..  8]));
+        update = Phyu(bigEndianToNative!int(pck.data[4 ..  8]));
         toWhichLix =    bigEndianToNative!int(pck.data[8 .. 12]);
 
         try               action = pck.data[2].to!RepAc;

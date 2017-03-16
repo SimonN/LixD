@@ -54,4 +54,5 @@ interface INetClient {
     @property void onLevelSelect(void delegate(string name, const(ubyte[]) data));
     @property void onGameStart(void delegate(Permu));
     @property void onPeerSendsReplayData(void delegate(ReplayData));
+    @property void onSuggestPhysicsPhyu(void delegate(Phyu));
 }

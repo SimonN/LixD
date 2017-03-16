@@ -62,7 +62,7 @@ package:
     EffectManager effect;
     RichClient _netClient; // null unless playing/observing multiplayer
 
-    long altickLastUpdate;
+    long altickLastPhyu;
     Rebindable!(const Lixxie) _drawHerHighlit;
 
     // Assignments for the next update go in here, and are only written into
@@ -81,7 +81,7 @@ package:
     bool _replayNeverCancelledThereforeDontSaveAutoReplay;
 
 private:
-    Update _setLastUpdateToNowLastCalled = Update(-1);
+    Phyu _setLastPhyuToNowLastCalled = Phyu(-1);
 
 public:
     @property bool gotoMainMenu()         { return _gotoMainMenu; }
@@ -106,7 +106,7 @@ public:
         prepareNurse(levelFilename, rp);
         initializePanel();
         initializeConsole();
-        setLastUpdateToNow();
+        setLastPhyuToNow();
     }
 
     this(RichClient client)
@@ -124,7 +124,7 @@ public:
         prepareNurse(null, null);
         initializePanel();
         initializeConsole();
-        setLastUpdateToNow();
+        setLastPhyuToNow();
     }
 
     /* Using ~this to dispose stuff is probably bad style.
@@ -178,7 +178,7 @@ package:
         // then we are replaying.
         // DTODONETWORKING: Add a check that we are never replaying while
         // we're connected with other players.
-        return nurse.replay.latestUpdate > nurse.upd;
+        return nurse.replay.latestPhyu > nurse.upd;
     }
 
     @property bool multiplayer() const
@@ -210,7 +210,7 @@ package:
             _netClient && _netClient.inner ? _netClient.inner : null);
     }
 
-    void setLastUpdateToNow()
+    void setLastPhyuToNow()
     {
         assert (this.effect);
         assert (this.nurse);
@@ -218,12 +218,12 @@ package:
         if (pan)
             pan.setLikeTribe(localTribe);
         if (nurse.updatesSinceZero == 0
-            && _setLastUpdateToNowLastCalled != 0
+            && _setLastPhyuToNowLastCalled != 0
         ) {
             hardware.sound.playLoud(Sound.LETS_GO);
         }
-        _setLastUpdateToNowLastCalled = nurse.updatesSinceZero;
-        altickLastUpdate = timerTicks;
+        _setLastPhyuToNowLastCalled = nurse.updatesSinceZero;
+        altickLastPhyu = timerTicks;
     }
 
     void saveResult()

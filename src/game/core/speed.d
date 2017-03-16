@@ -1,10 +1,10 @@
 module game.core.speed;
 
 import basics.alleg5;
-import net.repdata; // Update
+import net.repdata; // Phyu
 import basics.user; // pausedAssign
 import game.core.game;
-import game.core.active; // findAgainHighlitLixAfterUpdate
+import game.core.active; // findAgainHighlitLixAfterPhyu
 import game.panel.base;
 import hardware.mouse;
 import hardware.sound;
@@ -22,11 +22,11 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
         undispatchedAssignments = null;
 
         static if (duringTurbo)
-            nurse.updateToDuringTurbo(Update(before + howmany));
+            nurse.updateToDuringTurbo(Phyu(before + howmany));
         else
-            nurse.updateTo(Update(before + howmany));
-        game.findAgainHighlitLixAfterUpdate();
-        game.setLastUpdateToNow();
+            nurse.updateTo(Phyu(before + howmany));
+        game.findAgainHighlitLixAfterPhyu();
+        game.setLastPhyuToNow();
     }
 
     if (pan.framestepBackOne) {
@@ -64,7 +64,7 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
         upd();
     }
     else if (! pan.paused) {
-        long updAgo = timerTicks - game.altickLastUpdate;
+        long updAgo = timerTicks - game.altickLastPhyu;
         if (pan.speedIsNormal) {
             if (updAgo >= ticksNormalSpeed)
                 upd();
@@ -97,5 +97,5 @@ struct LoadStateRAII
 {
     private Game _game;
     this(Game g) { _game = g; _game.saveResult(); }
-    ~this()      { _game.setLastUpdateToNow();    }
+    ~this()      { _game.setLastPhyuToNow();    }
 }

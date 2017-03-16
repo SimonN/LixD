@@ -33,7 +33,7 @@ public:
     @property final int frame()         const { return _frame;         }
     @property final int spriteOffsetX() const { return _spriteOffsetX; }
 
-    @property UpdateOrder updateOrder() const { return UpdateOrder.peaceful; }
+    @property PhyuOrder updateOrder() const { return PhyuOrder.peaceful; }
     @property bool        blockable()   const { return true; }
 
     @property bool callBecomeAfterAssignment() const { return true; }

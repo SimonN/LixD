@@ -48,14 +48,14 @@ public:
         _effect = ef;
         _cs     = newZeroState(level, tribesToMake, permu, ef.localTribe);
         _physicsDrawer = new PhysicsDrawer(_cs.land, _cs.lookup);
-        finalizeUpdateAnimateGadgets();
+        finalizePhyuAnimateGadgets();
     }
 
     void takeOwnershipOf(GameState s)
     {
         _cs = s;
         _physicsDrawer.rebind(_cs.land, _cs.lookup);
-        finalizeUpdateAnimateGadgets();
+        finalizePhyuAnimateGadgets();
     }
 
     void applyChangesToLand() {
@@ -63,13 +63,13 @@ public:
     }
 
     /* Design burden: These methods must all be called in the correct order:
-     *  1. incrementUpdate()
+     *  1. incrementPhyu()
      *  2. applyReplayData(...) for each piece of data from that update
      *  3. advance()
      * Refactor this eventually!
      */
 
-    void incrementUpdate()
+    void incrementPhyu()
     {
         ++_cs.update;
     }
@@ -88,7 +88,7 @@ public:
         spawnLixxiesFromHatches();
         updateNuke();
         updateLixxies();
-        finalizeUpdateAnimateGadgets();
+        finalizePhyuAnimateGadgets();
     }
 
     void dispose()
@@ -207,7 +207,7 @@ private:
     {
         version (tharsisprofiling)
             Zone zone = Zone(profiler, "PhysSeq updateLixxies()");
-        immutable bool wonBeforeUpdate = _cs.singleplayerHasWon;
+        immutable bool wonBeforePhyu = _cs.singleplayerHasWon;
                   bool anyFlingers     = false;
 
         /* Refactoring idea:
@@ -232,7 +232,7 @@ private:
                     auto ow = makeGypsyWagon(tribe, lixID);
                     Ploder.handlePloderTimer(lixxie, &ow);
                 }
-                if (lixxie.updateOrder == UpdateOrder.flinger) {
+                if (lixxie.updateOrder == PhyuOrder.flinger) {
                     lixxie.marked = true;
                     anyFlingers = true;
                     auto ow = makeGypsyWagon(tribe, lixID);
@@ -253,7 +253,7 @@ private:
             });
         }
 
-        void performUnmarked(UpdateOrder uo)
+        void performUnmarked(PhyuOrder uo)
         {
             foreachLix((Tribe tribe, in int lixID, Lixxie lixxie) {
                 if (! lixxie.marked && lixxie.updateOrder == uo) {
@@ -268,20 +268,20 @@ private:
         applyFlinging();
         _physicsDrawer.applyChangesToPhymap();
 
-        performUnmarked(UpdateOrder.blocker);
-        performUnmarked(UpdateOrder.remover);
+        performUnmarked(PhyuOrder.blocker);
+        performUnmarked(PhyuOrder.remover);
         _physicsDrawer.applyChangesToPhymap();
 
-        performUnmarked(UpdateOrder.adder);
+        performUnmarked(PhyuOrder.adder);
         _physicsDrawer.applyChangesToPhymap();
 
-        performUnmarked(UpdateOrder.peaceful);
+        performUnmarked(PhyuOrder.peaceful);
 
-        if (! wonBeforeUpdate && _cs.singleplayerHasWon)
+        if (! wonBeforePhyu && _cs.singleplayerHasWon)
             _effect.addSoundGeneral(_cs.update, Sound.YIPPIE);
     }
 
-    void finalizeUpdateAnimateGadgets()
+    void finalizePhyuAnimateGadgets()
     {
         // Animate after we had the traps eat lixes. Eating a lix sets a flag
         // in the trap to run through the animation, showing the first killing
@@ -289,7 +289,7 @@ private:
         foreach (hatch; _cs.hatches)
             hatch.animate(_effect, _cs.update);
         _cs.foreachGadget((Gadget g) {
-            g.animateForUpdate(_cs.update);
+            g.animateForPhyu(_cs.update);
         });
     }
 }

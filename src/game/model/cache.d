@@ -40,7 +40,7 @@ public:
 
     void saveZero(in GameState s) { _zero = s.clone(); }
 
-    @property Update zeroStateUpdate() const
+    @property Phyu zeroStatePhyu() const
     {
         assert (_zero);
         return _zero.update;
@@ -80,9 +80,9 @@ public:
         return Ret(_userState, _userReplay, diff);
     }
 
-    const(GameState) loadBeforeUpdate(in Update u)
+    const(GameState) loadBeforePhyu(in Phyu u)
     {
-        assert (_zero, "need _zero as a fallback for autoBeforeUpdate");
+        assert (_zero, "need _zero as a fallback for autoBeforePhyu");
         GameState ret = _zero;
         foreach (ref GameState candidate; _auto)
             if (   candidate !is null
@@ -98,7 +98,7 @@ public:
     alias wouldAutoSave            = wouldAutoSaveTpl!0;
     alias wouldAutoSaveDuringTurbo = wouldAutoSaveTpl!1;
 
-    void autoSave(in GameState s, in Update ultimatelyTo)
+    void autoSave(in GameState s, in Phyu ultimatelyTo)
     {
         if (! wouldAutoSave(s, ultimatelyTo))
             return;
@@ -159,7 +159,7 @@ public:
     // end function calcSaveAuto
 
 private:
-    void forgetAutoSavesOnAndAfter(in Update u)
+    void forgetAutoSavesOnAndAfter(in Phyu u)
     {
         foreach (ref GameState possibleGarbage; _auto)
             if (possibleGarbage && possibleGarbage.update >= u) {
@@ -177,7 +177,7 @@ private:
         return ret;
     }
 
-    bool wouldAutoSaveTpl(int pair)(in GameState s, in Update updTo) const pure
+    bool wouldAutoSaveTpl(int pair)(in GameState s, in Phyu updTo) const pure
         if (pair >= 0 && pair < pairsToKeep)
     {
         if (! s || s.update == 0

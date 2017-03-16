@@ -31,7 +31,7 @@ private:
 
 public:
     @property const(Replay) replay() const { return _replay; }
-    @property Update        upd()    const { return _model.cs.update; }
+    @property Phyu        upd()    const { return _model.cs.update; }
     @property               land()   const { return _model.cs.land;   }
 
     // this is bad, DTODO: refactor
@@ -78,11 +78,11 @@ public:
         return _model.cs.tribes.byValue.map!(tr => tr.score);
     }
 
-    Update updatesSinceZero() const
+    Phyu updatesSinceZero() const
     out (result) { assert (result >= 0); }
     body {
         assert (_model.cs);
-        return Update(_model.cs.update - _cache.zeroStateUpdate);
+        return Phyu(_model.cs.update - _cache.zeroStatePhyu);
     }
 
     bool userStateExists() { return _cache.userStateExists; }
@@ -106,12 +106,12 @@ public:
             return;
         assert (_replay);
         vec.each!(data => _replay.add(data));
-        framestepBackTo(Update(vec.map!(data => data.update).reduce!min - 1));
+        framestepBackTo(Phyu(vec.map!(data => data.update).reduce!min - 1));
     }
 
     void cutReplay()
     {
-        _replay.deleteAfterUpdate(upd);
+        _replay.deleteAfterPhyu(upd);
     }
 
     alias updateToDuringTurbo = updateToTpl!true;
@@ -120,13 +120,13 @@ public:
     void restartLevel()
     {
         _replay.eraseEarlySingleplayerNukes();
-        _model.takeOwnershipOf(_cache.loadBeforeUpdate(
-                               _cache.zeroStateUpdate).clone);
+        _model.takeOwnershipOf(_cache.loadBeforePhyu(
+                               _cache.zeroStatePhyu).clone);
     }
 
     void framestepBackBy(int backBy)
     {
-        framestepBackTo(Update(_model.cs.update - backBy));
+        framestepBackTo(Phyu(_model.cs.update - backBy));
     }
 
     void applyChangesToLand()
@@ -141,7 +141,7 @@ public:
         assert (_replay);
         while (_model.cs.tribes.byValue.any!(tr => tr.stillPlaying)
                 // allow 5 minutes after the last replay data before cancelling
-                && upd < _replay.latestUpdate + 5 * (60 * 15))
+                && upd < _replay.latestPhyu + 5 * (60 * 15))
             updateOnce();
         return resultForTribe(_replay.playerLocal.style);
     }
@@ -153,11 +153,11 @@ public:
     }
 
 private:
-    void framestepBackTo(immutable Update u)
+    void framestepBackTo(immutable Phyu u)
     {
         if (u >= _model.cs.update)
             return;
-        _model.takeOwnershipOf(_cache.loadBeforeUpdate(Update(u + 1)).clone);
+        _model.takeOwnershipOf(_cache.loadBeforePhyu(Phyu(u + 1)).clone);
         updateTo(u);
     }
 
@@ -165,9 +165,9 @@ private:
     {
         version (tharsisprofiling)
             Zone zone = Zone(profiler, "PhysSeq updateOnceNoSync");
-        _model.incrementUpdate();
+        _model.incrementPhyu();
         {
-            auto dataSlice = _replay.getDataForUpdate(upd);
+            auto dataSlice = _replay.getDataForPhyu(upd);
             assert (dataSlice.isSorted!("a.player < b.player"));
             foreach (data; dataSlice)
                 _model.applyReplayData(data, _replay.plNrToStyle(data.player));
@@ -177,18 +177,18 @@ private:
 
     // DTODO: Refactor into SaveStatingNurse : Nurse for the interactive
     // mode, and the regular nurse otherwise
-    void updateToTpl(bool duringTurbo)(in Update targetUpdate)
+    void updateToTpl(bool duringTurbo)(in Phyu targetPhyu)
     {
         // assert (game.runmode == Runmode.INTERACTIVE);
         while ((stillPlaying || singleplayerHasWon)
-            && _model.cs.update < targetUpdate
+            && _model.cs.update < targetPhyu
         ) {
             updateOnce();
-            considerAutoSavestateIfCloseTo!duringTurbo(targetUpdate);
+            considerAutoSavestateIfCloseTo!duringTurbo(targetPhyu);
         }
     }
 
-    void considerAutoSavestateIfCloseTo(bool duringTurbo)(Update target)
+    void considerAutoSavestateIfCloseTo(bool duringTurbo)(Phyu target)
     {
         assert (_cache);
         static if (duringTurbo)
@@ -214,7 +214,7 @@ private:
         auto result = new Result(_levelBuilt);
         result.lixSaved    = tr.lixSaved;
         result.skillsUsed  = tr.skillsUsed;
-        result.updatesUsed = tr.updatePreviousSave;
+        result.phyusUsed = tr.updatePreviousSave;
         return result;
     }
 }

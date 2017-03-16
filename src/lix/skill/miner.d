@@ -36,7 +36,7 @@ class Miner : Job {
         futureGroundIsSolid[] = rhs.futureGroundIsSolid[];
     }
 
-    override UpdateOrder updateOrder() const { return UpdateOrder.remover; }
+    override PhyuOrder updateOrder() const { return PhyuOrder.remover; }
 
     override void perform()
     {

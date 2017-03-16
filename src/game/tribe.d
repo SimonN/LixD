@@ -33,8 +33,8 @@ class Tribe {
         bool nuke;
         Ac   nukeSkill;
 
-        Update updatePreviousSpawn = Update(-Level.spawnintMax); // => at once
-        Update updatePreviousSave; // ...within the time limit
+        Phyu updatePreviousSpawn = Phyu(-Level.spawnintMax); // => at once
+        Phyu updatePreviousSave; // ...within the time limit
         int nextHatch; // Initialized by the state initalizer with the permu.
                        // We don't need the permu afterwards for spawns.
         int skillsUsed;

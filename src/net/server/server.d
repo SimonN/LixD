@@ -74,6 +74,7 @@ public:
                 broadcastDisconnection(event.peer);
                 break;
             }
+        _hotel.calc();
         enet_host_flush(_host);
     }
 
@@ -173,10 +174,10 @@ public:
         broadcastToRoom(pa);
     }
 
-    void suggestUpdate(PlNr receiv, Update upd)
+    void suggestPhyu(PlNr receiv, Phyu upd)
     {
-        auto pa = SuggestUpdatePacket();
-        pa.header.packetID = PacketStoC.suggestPhysicsUpdate;
+        auto pa = SuggestPhyuPacket();
+        pa.header.packetID = PacketStoC.suggestPhysicsPhyu;
         pa.header.plNr = receiv; // doesn't matter
         pa.update = upd;
         enet_peer_send(_host.peers + receiv, 0, pa.createPacket);

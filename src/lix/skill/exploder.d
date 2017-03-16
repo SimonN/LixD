@@ -13,7 +13,7 @@ abstract class Ploder : Job {
 
     override @property bool blockable()                 const { return false; }
     override @property bool callBecomeAfterAssignment() const { return false; }
-    override UpdateOrder    updateOrder() const { return UpdateOrder.flinger; }
+    override PhyuOrder    updateOrder() const { return PhyuOrder.flinger; }
 
     static void handlePloderTimer(Lixxie li, OutsideWorld* ow)
     {

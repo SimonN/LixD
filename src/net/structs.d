@@ -23,6 +23,7 @@ import derelict.enet.enet;
 
 import net.enetglob;
 import net.packetid;
+import net.phyu;
 import net.style;
 import net.versioning;
 
@@ -398,11 +399,9 @@ struct ChatPacket {
     }
 }
 
-struct SuggestUpdatePacket {
-    import net.repdata : Update;
-
+struct SuggestPhyuPacket {
     PacketHeader header;
-    Update update;
+    Phyu update;
 
     enum len = header.len + update.sizeof;
 
@@ -419,7 +418,7 @@ struct SuggestUpdatePacket {
     {
         enforce(p.dataLength >= len);
         header = PacketHeader(p.data[0 .. header.len]);
-        update = Update(bigEndianToNative!int(
+        update = Phyu(bigEndianToNative!int(
                     p.data[header.len .. header.len + update.sizeof]));
     }
 }

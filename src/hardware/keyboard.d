@@ -1,7 +1,7 @@
 module hardware.keyboard;
 
 /* Important for the main loop:
- * Update mouse first, then keyboard. During updating the keyboard, we read
+ * Phyu mouse first, then keyboard. During updating the keyboard, we read
  * the keyboard by Allegro 5, and also the mouse by hardware.mouse.
  * Mouse buttons may be mapped as hotkeys.
  */

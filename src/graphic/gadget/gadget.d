@@ -96,7 +96,7 @@ public:
 
     @property Sound sound() { return Sound.NOTHING; }
 
-    void animateForUpdate(in Update upd)
+    void animateForPhyu(in Phyu upd)
     {
         xf = positiveMod(upd, animationLength);
     }

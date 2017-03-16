@@ -48,6 +48,7 @@ private:
     void delegate(string name, const(ubyte[]) data) _onLevelSelect;
     void delegate(Permu) _onGameStart;
     void delegate(ReplayData) _onPeerSendsReplayData;
+    void delegate(Phyu) _onSuggestPhysicsPhyu;
 
 public:
     /* Immediately tries to connect to hostname:port.
@@ -109,6 +110,7 @@ public:
     @property void onLevelSelect(typeof(_onLevelSelect) dg) { _onLevelSelect = dg; }
     @property void onGameStart(typeof(_onGameStart) dg) { _onGameStart = dg; }
     @property void onPeerSendsReplayData(typeof(_onPeerSendsReplayData) dg) { _onPeerSendsReplayData = dg; }
+    @property void onSuggestPhysicsPhyu(typeof(_onSuggestPhysicsPhyu) dg) { _onSuggestPhysicsPhyu = dg; }
 
     void sendChatMessage(string aText)
     {
@@ -168,7 +170,7 @@ public:
     @property void ourStyle(Style sty)
     {
         _cfg.ourStyle = sty;
-        sendUpdatedProfile((ref Profile p) {
+        sendPhyudProfile((ref Profile p) {
             p.style = sty;
             p.feeling = Profile.Feeling.thinking; // = not observing
         });
@@ -177,7 +179,7 @@ public:
     // Feeling is readiness, and whether we want to observe.
     @property void ourFeeling(Profile.Feeling feel)
     {
-        sendUpdatedProfile((ref Profile p) { p.feeling = feel; });
+        sendPhyudProfile((ref Profile p) { p.feeling = feel; });
     }
 
     void gotoExistingRoom(Room newRoom)
@@ -279,7 +281,7 @@ private:
         return ret;
     }
 
-    void sendUpdatedProfile(void delegate(ref Profile) changeTheProfile)
+    void sendPhyudProfile(void delegate(ref Profile) changeTheProfile)
     {
         if (! connected)
             return;
@@ -381,6 +383,10 @@ private:
             foreach (ref profile; _profilesInOurRoom)
                 profile.setNotReady();
             _onPeerDisconnect && _onPeerDisconnect(name);
+        }
+        else if (got.data[0] == PacketStoC.suggestPhysicsPhyu) {
+            _onSuggestPhysicsPhyu
+                && _onSuggestPhysicsPhyu(SuggestPhyuPacket(got).update);
         }
     }
 }

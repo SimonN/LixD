@@ -55,5 +55,5 @@ enum PacketStoC : ubyte {
     gameStartsWithPermu = 140,
 
     peerReplayData = 141,
-    suggestPhysicsUpdate = 142,
+    suggestPhysicsPhyu = 142,
 }

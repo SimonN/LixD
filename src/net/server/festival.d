@@ -34,7 +34,7 @@ private:
 public:
     PlNr owner; // creator of the room, I plan that he shall kick others
     PlNr levelChooser; // who has chosen the most recent level?
-    Update update; // if game in progress, players should sync to this
+    Phyu update; // if game in progress, players should sync to this
 
     @property const(ubyte)[] level() const { return _level; }
     @property void level(const(ubyte[]) toCopy)
@@ -95,15 +95,15 @@ public:
         _recentSync = MonoTime.zero;
     }
 
-    Update updatesToSuggestOrZero()
+    Phyu updatesToSuggestOrZero()
     {
         if (! gameRunning
             || MonoTime.currTime - _recentSync < dur!"seconds"(3))
-            return Update(0);
-        enum oneUpdate = dur!"hnsecs"(10_000_000 / updatesPerSecond);
-        auto updatesSinceStart = (MonoTime.currTime - _gameStart) / oneUpdate;
+            return Phyu(0);
+        enum onePhyu = dur!"hnsecs"(10_000_000 / updatesPerSecond);
+        auto updatesSinceStart = (MonoTime.currTime - _gameStart) / onePhyu;
         _recentSync = MonoTime.currTime;
-        return Update(updatesSinceStart & 0x7FFF_FFFF);
+        return Phyu(updatesSinceStart & 0x7FFF_FFFF);
     }
 
 private:

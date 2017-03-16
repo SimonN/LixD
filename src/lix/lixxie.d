@@ -72,7 +72,7 @@ public:
         return _job.ac;
     }
 
-    @property UpdateOrder updateOrder() const
+    @property PhyuOrder updateOrder() const
     {
         assert (_job);
         return _job.updateOrder;

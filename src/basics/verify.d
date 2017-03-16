@@ -71,7 +71,7 @@ private class VerifyCounter {
     void writeCSVHeader()
     {
         writeln("Result,Replay filename,Level filename,",
-                "Player,Saved,Required,Skills,Updates");
+                "Player,Saved,Required,Skills,Phyus");
     }
 
     void verify(Filename fn)
@@ -90,7 +90,7 @@ private class VerifyCounter {
         else                                  { key = "(OK)";     ++ok;     }
         writeln(key, ",", fn.rootless, ",", rep.levelFilename.rootless, ",",
             rep.playerLocal.name, ",", res.lixSaved, ",", lev.required, ",",
-            res.skillsUsed, ",", res.updatesUsed);
+            res.skillsUsed, ",", res.phyusUsed);
     }
 
     void writeStatistics()

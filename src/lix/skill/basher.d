@@ -22,7 +22,7 @@ class Basher : Job {
         steelWasHit = rhs.steelWasHit;
     }
 
-    override UpdateOrder updateOrder() const { return UpdateOrder.remover; }
+    override PhyuOrder updateOrder() const { return PhyuOrder.remover; }
 
     override void onBecome()
     {

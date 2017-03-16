@@ -104,9 +104,9 @@ class PhysicsDrawer {
     // You should know what a lookup map is (class Phymap from tile.phymap).
     // _land is the torus bitmap onto which we draw the terrain, but this
     // is never queried for physics -- that's what the lookup map is for.
-    // in Update upd: Pass current update of the game to this.
+    // in Phyu upd: Pass current update of the game to this.
     void
-    applyChangesToLand(in Update upd)
+    applyChangesToLand(in Phyu upd)
     in {
         assert (_land);
         enum msg = "You shouldn't draw to land when you still have changes "
@@ -135,14 +135,14 @@ class PhysicsDrawer {
         while (_delsForLand != null || _addsForLand != null) {
             // Do deletions for the first update, then additions for that,
             // then deletions for the next update, then additions, ...
-            immutable Update earliestUpdate
+            immutable Phyu earliestPhyu
                 = _delsForLand != null && _addsForLand != null
                 ? min(_delsForLand[0].update, _addsForLand[0].update)
                 : _delsForLand != null
                 ? _delsForLand[0].update : _addsForLand[0].update;
 
-            deletionsToLandForUpdate(earliestUpdate);
-            additionsToLandForUpdate(earliestUpdate);
+            deletionsToLandForPhyu(earliestPhyu);
+            additionsToLandForPhyu(earliestPhyu);
         }
     }
 
@@ -219,7 +219,7 @@ private:
         immutable x  = xl * tc.style;
     }
 
-    void assertChangesForLand(T)(T[] arr, in Update upd)
+    void assertChangesForLand(T)(T[] arr, in Phyu upd)
     {
         // Functions calling assertChangesForLand need not be called on each
         // update, but only if the land must be drawn like it should appear
@@ -233,11 +233,11 @@ private:
             ~ "loading a savestate, empty all queued additions/deletions.",
             arr[0].update, upd));
         assert (al_get_target_bitmap() == _land.albit, "For performance, "
-            ~ "set the drawing target to _land outside of *ToLandForUpdate(). "
+            ~ "set the drawing target to _land outside of *ToLandForPhyu(). "
             ~ "Slow performance is a logic bug!");
     }
 
-    T[] splitOffFromArray(T)(ref T[] arr, in Update upd)
+    T[] splitOffFromArray(T)(ref T[] arr, in Phyu upd)
     {
         // Split the queue into what needs to be processed during this call,
         // remove these from the caller's queue (arr).
@@ -288,7 +288,7 @@ private:
         }
     }
 
-    void deletionsToLandForUpdate(in Update upd)
+    void deletionsToLandForPhyu(in Phyu upd)
     in { assertChangesForLand(_delsForLand, upd); }
     out {
         assert (_delsForLand == null
@@ -409,7 +409,7 @@ private:
         _addsForPhymap = null;
     }
 
-    void additionsToLandForUpdate(in Update upd)
+    void additionsToLandForPhyu(in Phyu upd)
     in { assertChangesForLand(_addsForLand, upd); }
     out {
         assert (_addsForLand == null

@@ -14,7 +14,7 @@ class Blocker : Job {
     mixin(CloneByCopyFrom!"Blocker");
 
     override @property bool blockable()   const { return false; }
-    override UpdateOrder    updateOrder() const { return UpdateOrder.blocker; }
+    override PhyuOrder    updateOrder() const { return PhyuOrder.blocker; }
 
     override void perform()
     {

@@ -36,13 +36,13 @@ void calcActive(Game game)
     }
 }
 
-package void findAgainHighlitLixAfterUpdate(Game game)
+package void findAgainHighlitLixAfterPhyu(Game game)
 {
     if (! game.pan.isMouseHere)
         game.findPotentialAssignee();
 }
 
-package ReplayData newReplayDataForNextUpdate(Game game)
+package ReplayData newReplayDataForNextPhyu(Game game)
 {
     ReplayData data;
     data.player = game.plNrLocal;
@@ -93,10 +93,10 @@ void handleNukeButton(Game game) { with (game)
     pan.nuke = true;
     pan.pause = false;
     game.cancelReplay();
-    auto data = game.newReplayDataForNextUpdate();
+    auto data = game.newReplayDataForNextPhyu();
     data.action = RepAc.NUKE;
     game.includeOurNew(data);
-    effect.addSound(Update(nurse.upd + 1), localTribe.style, 0, Sound.NUKE);
+    effect.addSound(Phyu(nurse.upd + 1), localTribe.style, 0, Sound.NUKE);
 }}
 
 /* Main function to determine lix under cursor.
@@ -241,7 +241,7 @@ void assignToPotentialAssignee(
         // the network, but it affects the assignment user interface.
         currentSkill.number = currentSkill.number - 1;
 
-    ReplayData data = game.newReplayDataForNextUpdate();
+    ReplayData data = game.newReplayDataForNextPhyu();
     data.action     = forcingLeft  ? RepAc.ASSIGN_LEFT
                     : forcingRight ? RepAc.ASSIGN_RIGHT
                     :                RepAc.ASSIGN;

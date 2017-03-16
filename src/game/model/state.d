@@ -22,7 +22,7 @@ import net.style;
 
 class GameState {
 
-    Update update;
+    Phyu update;
     int  clock;
     bool clockIsRunning;
 

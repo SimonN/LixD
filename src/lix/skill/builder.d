@@ -24,7 +24,7 @@ abstract class BrickCounter : Job {
         bricksLeft   = rhs.bricksLeft;
     }
 
-    override UpdateOrder updateOrder() const { return UpdateOrder.adder; }
+    override PhyuOrder updateOrder() const { return PhyuOrder.adder; }
 
     override @property bool callBecomeAfterAssignment() const
     {

@@ -10,7 +10,7 @@ class Cuber : Leaver {
 
     mixin(CloneByCopyFrom!"Cuber");
 
-    override UpdateOrder updateOrder() const { return UpdateOrder.adder; }
+    override PhyuOrder updateOrder() const { return PhyuOrder.adder; }
 
     override void onBecomeLeaver()
     {

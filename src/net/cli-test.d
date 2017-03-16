@@ -162,6 +162,7 @@ version (lixClientTester)
             writeln((cast (char[]) data).idup);
             writeln("--- END TRANSFERRED LEVEL ---");
         });
+        import net.repdata : Phyu; // DTODOREFACTOR: Put update in own module
         netClient.onPeerDisconnect( (string name) {
             writefln("%s has left the network.".format(name));
         });

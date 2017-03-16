@@ -17,12 +17,12 @@ enum int platformLongXl  = 8; // first brick
 enum int platformShortXl = 6; // all bricks laid down while kneeling
 enum int brickYl         = 2;
 
-enum UpdateOrder {
-    peaceful, // Least priority -- cannot affect other lix. Updated last.
+enum PhyuOrder {
+    peaceful, // Least priority -- cannot affect other lix. Phyud last.
     adder,    // Worker that adds terrain. Adders may add in fresh holes.
     remover,  // Worker that removes terrain.
     blocker,  // Affects lixes directly other than by flinging -- blocker.
-    flinger,  // Affects lixes directly by flinging. Updated first.
+    flinger,  // Affects lixes directly by flinging. Phyud first.
 }
 
 nothrow bool isPloder(in Ac ac) pure

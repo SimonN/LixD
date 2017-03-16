@@ -69,7 +69,7 @@ calcModalWindow(Game game) { with (game)
     {
         rmFocus(modalWindow);
         modalWindow = null;
-        game.setLastUpdateToNow();
+        game.setLastPhyuToNow();
     }
     assert (modalWindow);
     if (modalWindow.resume) {

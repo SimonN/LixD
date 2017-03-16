@@ -24,7 +24,7 @@ import file.useropt;
 import hardware.keynames;
 import hardware.keyset;
 import net.ac;
-import net.repdata; // Update, for saving the results
+import net.phyu;
 import net.style;
 
 private Result[Filename] results;
@@ -335,7 +335,7 @@ class Result {
     const(Date) built;
     int    lixSaved;
     int    skillsUsed;
-    Update updatesUsed;
+    Phyu phyusUsed;
 
     this (const(Date) bu)
     {
@@ -347,7 +347,7 @@ class Result {
         return built       == rhs.built
             && lixSaved    == rhs.lixSaved
             && skillsUsed  == rhs.skillsUsed
-            && updatesUsed == rhs.updatesUsed;
+            && phyusUsed == rhs.phyusUsed;
     }
 
     // Returns < 0 on a worse rhs result, > 0 for a better rhs result.
@@ -361,8 +361,8 @@ class Result {
             return lixSaved - rhs.lixSaved; // more lix saved is better
         if (skillsUsed != rhs.skillsUsed)
             return rhs.skillsUsed - skillsUsed; // fewer skills used is better
-        if (updatesUsed != rhs.updatesUsed)
-            return rhs.updatesUsed - updatesUsed; // less time taken is better
+        if (phyusUsed != rhs.phyusUsed)
+            return rhs.phyusUsed - phyusUsed; // less time taken is better
         return built.opCmp(rhs.built); // newer result better
     }
 
@@ -374,7 +374,7 @@ class Result {
         assert (b > a);
         b.lixSaved = 4;
         assert (a >= b);
-        b.updatesUsed = 1;
+        b.phyusUsed = 1;
         assert (a > b);
     }
 }
@@ -439,7 +439,7 @@ void load()
             Result read = new Result(new Date(i.text2));
             read.lixSaved    = i.nr1;
             read.skillsUsed  = i.nr2;
-            read.updatesUsed = Update(i.nr3);
+            read.phyusUsed = Phyu(i.nr3);
             Result* old = (fn in results);
             if (! old || *old < read)
                 results[fn] = read;
@@ -470,7 +470,7 @@ nothrow void save()
         f.writeln();
         foreach (key, r; results)
             f.writeln(IoLine.Angle(key.rootless,
-                r.lixSaved, r.skillsUsed, r.updatesUsed, r.built.toString));
+                r.lixSaved, r.skillsUsed, r.phyusUsed, r.built.toString));
     }
     catch (Exception e) {
         log("Can't save user configuration for `" ~ userName ~ "':");

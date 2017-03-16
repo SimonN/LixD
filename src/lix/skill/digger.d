@@ -19,7 +19,7 @@ class Digger : Job {
         upstrokeDone = rhs.upstrokeDone;
     }
 
-    override UpdateOrder updateOrder() const { return UpdateOrder.remover; }
+    override PhyuOrder updateOrder() const { return PhyuOrder.remover; }
 
 
 

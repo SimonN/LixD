@@ -52,9 +52,9 @@ public:
     override Hatch clone() const { return new Hatch(this); }
 
     deprecated("use Hatch.animate(EffectManager, int) instead")
-    override void animateForUpdate(in Update) { }
+    override void animateForPhyu(in Phyu) { }
 
-    void animate(EffectManager effect, in Update u)
+    void animate(EffectManager effect, in Phyu u)
     {
         immutable int of = updateOpen - tile.specialX;
         // of == first absolute frame of opening. This is earlier if the sound

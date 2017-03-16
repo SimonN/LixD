@@ -22,7 +22,7 @@ import graphic.torbit;
 import hardware.sound;
 
 private struct Effect {
-    Update   update;
+    Phyu   update;
     Style    tribe;
     int      lix;   // if not necessary, set to 0
     Sound    sound; // if not necessary, set to 0 == Sound::NOTHING
@@ -58,7 +58,7 @@ class EffectManager {
         return _debris.length == 0;
     }
 
-    void deleteAfter(in Update upd)
+    void deleteAfter(in Phyu upd)
     out {
         foreach (e; _tree)
             assert (e.update <= upd);
@@ -69,14 +69,14 @@ class EffectManager {
         _tree.remove(_tree.upperBound(Effect(upd, Style.max, 0)));
     }
 
-    void addSoundGeneral(in Update upd,
+    void addSoundGeneral(in Phyu upd,
         in Sound sound, in Loudness loudness = Loudness.loud
     ) {
         addSound(upd, localTribe, 0, sound, loudness);
     }
 
     void addSound(
-        in Update upd, in Style tribe, in int lix,
+        in Phyu upd, in Style tribe, in int lix,
         in Sound sound, in Loudness loudness = Loudness.loud
     ) {
         Effect e = Effect(upd, tribe, lix, sound, loudness);
@@ -87,14 +87,14 @@ class EffectManager {
     }
 
     void addSoundIfTribeLocal(
-        in Update upd, in Style tribe, in int lix,
+        in Phyu upd, in Style tribe, in int lix,
         in Sound sound, in Loudness loudness = Loudness.loud
     ) {
         if (tribe == localTribe)
             addSound(upd, tribe, lix, sound, loudness);
     }
 
-    void addArrow(in Update upd, in Style tribe, in int lix,
+    void addArrow(in Phyu upd, in Style tribe, in int lix,
         in int ex, in int ey, in Ac ac
     ) {
         Effect e = Effect(upd, tribe, lix);
@@ -106,7 +106,7 @@ class EffectManager {
 
     // Only remember the effect, don't draw any debris now.
     // This is used for assignments by the local tribe master.
-    void addArrowDontShow(in Update upd, in Style tribe, in int lix)
+    void addArrowDontShow(in Phyu upd, in Style tribe, in int lix)
     {
         Effect e = Effect(upd, tribe, lix);
         if (e !in _tree)
@@ -117,7 +117,7 @@ class EffectManager {
     public alias addPickaxe = addDigHammerOrPickaxe!true;
 
     private void addDigHammerOrPickaxe(bool axe)(
-        Update upd, Style tribe, int lix, int ex, int ey, int dir
+        Phyu upd, Style tribe, int lix, int ex, int ey, int dir
     ) {
         Effect e = Effect(upd, tribe, lix,
             tribe == localTribe ? Sound.STEEL : Sound.NOTHING, Loudness.loud);
@@ -134,7 +134,7 @@ class EffectManager {
         }
     }
 
-    void addImplosion(in Update upd, in Style tribe, int lix, int ex, int ey)
+    void addImplosion(in Phyu upd, in Style tribe, int lix, int ex, int ey)
     {
         Effect e = Effect(upd, tribe, lix, Sound.POP,
             tribe == localTribe ? Loudness.loud : Loudness.quiet);
@@ -145,7 +145,7 @@ class EffectManager {
         }
     }
 
-    void addExplosion(in Update upd, in Style tribe, int lix, int ex, int ey)
+    void addExplosion(in Phyu upd, in Style tribe, int lix, int ex, int ey)
     {
         Effect e = Effect(upd, tribe, lix, Sound.POP,
             tribe == localTribe ? Loudness.loud : Loudness.quiet);

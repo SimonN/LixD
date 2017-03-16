@@ -5,7 +5,7 @@ import net.repdata;
 import net.style;
 
 private mixin template TerrainChangeBase() {
-    Update update;
+    Phyu update;
     Type   type;
     int x; // lix store the top-left corner of the terrain change here, ...
     int y; //    ...not the effective coordinate.

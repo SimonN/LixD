@@ -21,16 +21,16 @@ class Batter : Job {
 
     override @property bool blockable() const { return false; }
 
-    override UpdateOrder updateOrder() const
+    override PhyuOrder updateOrder() const
     {
-        if (frame == flingAfterFrame) return UpdateOrder.flinger;
-        else                          return UpdateOrder.peaceful;
+        if (frame == flingAfterFrame) return PhyuOrder.flinger;
+        else                          return PhyuOrder.peaceful;
     }
 
     override void perform()
     {
         // be consistent with the update order in game.core.physlix
-        immutable bool batNow = (updateOrder == UpdateOrder.flinger);
+        immutable bool batNow = (updateOrder == PhyuOrder.flinger);
 
         if      (! isSolid)   become(Ac.faller);
         else if (isLastFrame) become(Ac.walker);

@@ -170,9 +170,9 @@ private:
     {
         for (Room ro = Room(0); ro < Room.maxExclusive;
                                 ro = Room(1 + ro & 0xFF))
-            if (Update upd = festivals[ro].updatesToSuggestOrZero)
+            if (Phyu upd = festivals[ro].updatesToSuggestOrZero)
                 foreach (const plNr, ref const profile; ob.allPlayers)
                     if (profile.room == ro)
-                        ob.suggestUpdate(plNr, upd);
+                        ob.suggestPhyu(plNr, upd);
     }
 }

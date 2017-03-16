@@ -31,7 +31,7 @@ public alias Flinger   = GadgetAnimsOnFeed; // both FlingPerm and FlingTrig
 
 private class GadgetAnimsOnFeed : GadgetWithTribeList {
 
-    Update wasFedDuringUpdate;
+    Phyu wasFedDuringPhyu;
     const(int) idleAnimLength;
 
     this(const(Topology) top, in ref GadOcc levelpos)
@@ -50,7 +50,7 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
     this(in GadgetAnimsOnFeed rhs)
     {
         super(rhs);
-        wasFedDuringUpdate = rhs.wasFedDuringUpdate;
+        wasFedDuringPhyu = rhs.wasFedDuringPhyu;
         idleAnimLength    = rhs.idleAnimLength;
     }
 
@@ -59,37 +59,37 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
         return new GadgetAnimsOnFeed(this);
     }
 
-    bool isOpenFor(in Update upd, in Style st) const
+    bool isOpenFor(in Phyu upd, in Style st) const
     {
         // During a single update, the gadget can eat a lix from each tribe.
         // This is fairest in multiplayer.
-        if (wasFedDuringUpdate == upd)
+        if (wasFedDuringPhyu == upd)
             return ! hasTribe(st);
         else
             return ! isEating(upd);
     }
 
-    bool isEating(in Update upd) const
+    bool isEating(in Phyu upd) const
     {
-        assert (upd >= wasFedDuringUpdate, "relics from the future");
-        return upd < firstIdlingUpdateAfterEating;
+        assert (upd >= wasFedDuringPhyu, "relics from the future");
+        return upd < firstIdlingPhyuAfterEating;
     }
 
-    void feed(in Update upd, in Style st)
+    void feed(in Phyu upd, in Style st)
     {
         assert (isOpenFor(upd, st), "don't feed what it's not open for");
         super.addTribe(st);
-        wasFedDuringUpdate = upd;
+        wasFedDuringPhyu = upd;
     }
 
-    override void animateForUpdate(in Update upd)
+    override void animateForPhyu(in Phyu upd)
     {
         if (isEating(upd)) {
             yf = 0;
-            xf = (upd == firstIdlingUpdateAfterEating - 1)
+            xf = (upd == firstIdlingPhyuAfterEating - 1)
                 ? 0 // Last frame of eating is a frame that looks like idling.
                     // This is a mechanic taken over 1:1 from C++ Lix.
-                : upd - wasFedDuringUpdate + 1;
+                : upd - wasFedDuringPhyu + 1;
         }
         else if (idleAnimLength == 0) {
             yf = 0;
@@ -97,23 +97,23 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
         }
         else {
             yf = 1;
-            xf = (upd - firstIdlingUpdateAfterEating) % idleAnimLength;
+            xf = (upd - firstIdlingPhyuAfterEating) % idleAnimLength;
         }
         clearTribes();
     }
 
 private:
-    Update firstIdlingUpdateAfterEating() const
+    Phyu firstIdlingPhyuAfterEating() const
     {
-        if (wasFedDuringUpdate == 0)
-            // _wasFedDuringUpdate == 0 is the init value, there shouldn't
+        if (wasFedDuringPhyu == 0)
+            // _wasFedDuringPhyu == 0 is the init value, there shouldn't
             // happen anything on that frame, Game.update isn't even called.
-            return Update(0);
+            return Phyu(0);
         else
             // Frame 0 may not be part of the anim, but even under a very dense
             // stream of lix, frame 0 is shown after eating for 1 update.
             // Thus, no -1 here.
-            return Update(wasFedDuringUpdate + animationLength);
+            return Phyu(wasFedDuringPhyu + animationLength);
     }
 }
 // end class GadgetAnimsOnFeed
@@ -125,11 +125,11 @@ private class PermanentlyOpen : GadgetAnimsOnFeed {
     override PermanentlyOpen clone() const { return new PermanentlyOpen(this);}
     this(in PermanentlyOpen rhs) { super(rhs); }
 
-    override bool isOpenFor(in Update, in Style) const { return true; }
+    override bool isOpenFor(in Phyu, in Style) const { return true; }
 
-    override void animateForUpdate(in Update upd)
+    override void animateForPhyu(in Phyu upd)
     {
-        Gadget.animateForUpdate(upd); // the constantly looping animation
+        Gadget.animateForPhyu(upd); // the constantly looping animation
     }
 
     override @property Sound sound()

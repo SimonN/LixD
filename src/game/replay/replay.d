@@ -30,7 +30,7 @@ import level.metadata;
 struct FirstDifference {
     bool thisBeginsWithRhs;
     bool rhsBeginsWithThis;
-    Update firstDifferenceIfMismatch;
+    Phyu firstDifferenceIfMismatch;
 
     @property bool mismatch() const
     {
@@ -107,7 +107,7 @@ public:
         return _data.length == 0 && _players.length == 0;
     }
 
-    @property int latestUpdate() const
+    @property int latestPhyu() const
     {
         return (_data.length > 0) ? _data[$-1].update : 0;
     }
@@ -177,7 +177,7 @@ public:
     // this function is necessary to keep old replays working in new versions
     // that skip the first 30 or so updates, to get into the action faster.
     // The first spawn is still at update 60.
-    void increaseEarlyDataToUpdate(in Update upd)
+    void increaseEarlyDataToPhyu(in Phyu upd)
     {
         foreach (ref d; _data) {
             if (d.update < upd)
@@ -190,11 +190,11 @@ public:
     void eraseEarlySingleplayerNukes()
     {
         // Game updates nukes, then spawns, then lix perform.
-        enum beforeUpdate = 61; // Not 60, only nuke if it kills lix.
+        enum beforePhyu = 61; // Not 60, only nuke if it kills lix.
         if (_players.length > 1)
             return;
         for (int i = 0; i < _data.length; ++i) {
-            if (_data[i].update >= beforeUpdate)
+            if (_data[i].update >= beforePhyu)
                 break;
             else if (_data[i].action == RepAc.NUKE) {
                 _data = _data[0 .. i] ~ _data[i+1 .. $];
@@ -204,16 +204,16 @@ public:
         // doesn't call touch(), because it's housekeeping
     }
 
-    void deleteAfterUpdate(in Update upd)
+    void deleteAfterPhyu(in Phyu upd)
     {
         assert (upd >= 0);
-        _data = _data[0 .. dataSliceBeforeUpdate(Update(upd + 1)).length];
+        _data = _data[0 .. dataSliceBeforePhyu(Phyu(upd + 1)).length];
         touch();
     }
 
-    const(ReplayData)[] getDataForUpdate(in Update upd) const
+    const(ReplayData)[] getDataForPhyu(in Phyu upd) const
     {
-        auto slice = dataSliceBeforeUpdate(Update(upd + 1));
+        auto slice = dataSliceBeforePhyu(Phyu(upd + 1));
         int firstGood = slice.len;
         while (firstGood > 0 && slice[firstGood - 1].update == upd)
             --firstGood;
@@ -222,9 +222,9 @@ public:
         return _data[firstGood .. slice.length];
     }
 
-    bool getOnUpdateLixClicked(in Update upd, in int lix_id, in Ac ac) const
+    bool getOnPhyuLixClicked(in Phyu upd, in int lix_id, in Ac ac) const
     {
-        auto vec = getDataForUpdate(upd);
+        auto vec = getDataForPhyu(upd);
         foreach (const ref d; vec)
             if (d.isSomeAssignment && d.toWhichLix == lix_id && d.skill == ac)
                 return true;
@@ -248,7 +248,7 @@ public:
     }
 
 package:
-    inout(ReplayData)[] dataSliceBeforeUpdate(in Update upd) inout
+    inout(ReplayData)[] dataSliceBeforePhyu(in Phyu upd) inout
     {
         // The binary search algo works also for this case.
         // But we add mostly to the end of the data, so check here for speed.
@@ -274,10 +274,10 @@ package:
     {
         // Add after the latest record that's smaller than or equal to d
         // Equivalently, add before the earliest record that's greater than d.
-        // dataSliceBeforeUpdate doesn't do exactly that, it ignores players.
+        // dataSliceBeforePhyu doesn't do exactly that, it ignores players.
         // DTODO: I believe the C++ version had a bug in the choice of
         // comparison. I have fixed that here. Test to see if it's good now.
-        auto slice = dataSliceBeforeUpdate(Update(d.update + 1));
+        auto slice = dataSliceBeforePhyu(Phyu(d.update + 1));
         while (slice.length && slice[$-1] > d)
             slice = slice[0 .. $-1];
         if (slice.length < _data.length) {
