@@ -1,5 +1,10 @@
 module gui.picker.ls;
 
+/* Ls looks for dirs/files based on its own criteria.
+ * Ls is not concerned with displaying the dirs/files with certain styles
+ * of buttons in a Picker. Instead, Tiler does that.
+ */
+
 import std.algorithm;
 import std.array;
 import std.conv;

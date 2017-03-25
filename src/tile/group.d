@@ -88,8 +88,7 @@ public:
     @property TileGroupKey key() const { return _key; }
 
     // No need to override name(): we initialize super with name = null.
-    // dependencies() allocates, I'd like to see how to prevent that :-(
-    override @property const(TerrainTile)[] dependencies() const
+    override @property const(TerrainTile)[] dependencies() const @nogc
     {
         assert (_key.tilesOfElements.length > 0);
         return _key.tilesOfElements;
@@ -157,5 +156,5 @@ public:
     }
 
 protected:
-    auto tilesOfElements() const { return _tilesOfElements; }
+    auto tilesOfElements() const @nogc { return _tilesOfElements; }
 }

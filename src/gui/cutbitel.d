@@ -4,6 +4,7 @@ module gui.cutbitel;
 
 import std.algorithm;
 import std.conv;
+import std.math;
 
 import graphic.cutbit;
 import gui.element;
@@ -13,7 +14,10 @@ class CutbitElement : Element {
 private:
     int _xf;
     int _yf;
-    bool _shrink; // when cutbit too large, shring to this's geom
+
+    // When cutbit is too large, always shring to this's geom.
+    // When the cutbit is too small, do we upscale or leave blank room?
+    bool _allowUpscaling = true;
 
 public:
     const(Cutbit) cutbit;
@@ -24,7 +28,7 @@ public:
     @property auto yfs() const { return cutbit ? cutbit.yfs : 0; }
     mixin (GetSetWithReqDraw!"xf");
     mixin (GetSetWithReqDraw!"yf");
-    mixin (GetSetWithReqDraw!"shrink");
+    mixin (GetSetWithReqDraw!"allowUpscaling");
 
 protected:
     override void drawSelf()
@@ -33,16 +37,16 @@ protected:
             return;
         float cbX = xs + (xls - cutbit.xl) / 2f;
         float cbY = ys + (yls - cutbit.yl) / 2f;
-        auto scal = min(xls / cutbit.xl, yls / cutbit.yl); // Shrink, preserving the aspect ratio.
-        static assert (is (typeof(scal) == float));
-        if (! _shrink || (cbX > xs && cbY > ys))
-            // Draw the cutbit to the center of this's Element area.
-            // Allow upscaling only by an integer factor, otherwise
-            // they look ugly if scaled up. GUI elements are loaded in an
-            // appropriate size from disk.
-            scal = max(1, cast(int)scal);
+        // Shrink, preserving the aspect ratio.
+        float scal = min(xls / cutbit.xl, yls / cutbit.yl);
+        if (scal >= 1)
+            // Allow upscaling only by integers for good looks, or not at all.
+            scal = _allowUpscaling ? scal.floor : 1;
+
+        // Draw the cutbit to the center of this's Element area.
         cbX = xs + (xls - cutbit.xl * scal) / 2f;
         cbY = ys + (yls - cutbit.yl * scal) / 2f;
-        cutbit.draw(Point(cbX.to!int, cbY.to!int), _xf, _yf, 0, 0, scal == 1 ? 0 : scal);
+        cutbit.draw(Point(cbX.to!int, cbY.to!int), _xf, _yf, 0, 0,
+                                                   scal == 1 ? 0 : scal);
     }
 }

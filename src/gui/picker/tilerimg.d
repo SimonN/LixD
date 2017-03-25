@@ -76,7 +76,7 @@ public:
             // now. I rather leave empty row than overwrite button thickness.
             _cbe = new CutbitElement(new Geom(0, Geom.thickg + 1,
                 xlg - 2*Geom.thickg, ylg - 13, From.TOP), resolved.tile.cb);
-            _cbe.shrink = true;
+            _cbe.allowUpscaling = false;
             addChild(_cbe);
         }
         _text = new Label(new Geom(0, 0, xlg - 2*Geom.thickg, 12, From.BOTTOM),
