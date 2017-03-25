@@ -30,6 +30,7 @@ bool canInterruptReplays(in View v)
     return v == View.solveAlone || v == View.solveTogether;
 }
 
+bool showReplaySign(in View v) { return v.showTapeRecorderButtons; }
 bool showTapeRecorderButtons(in View v)
 {
     return v.canInterruptReplays || v == View.replayBattle;
