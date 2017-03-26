@@ -22,6 +22,8 @@ private:
     Console _console; // not owned
     Level _level;
 
+    public string unsentChat; // carry unsent text between Lobby/Game
+
 public:
     this(INetClient aInner, Console aConsole)
     {

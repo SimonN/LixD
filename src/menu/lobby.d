@@ -121,8 +121,9 @@ public:
             _netClient.console = _console;
             setOurEventHandlers();
             _preview.level = _netClient.level;
+            _chat.text = _netClient.unsentChat;
+            _netClient.unsentChat = "";
             refreshPeerList();
-
         }
         showOrHideGuiBasedOnConnection();
     }
@@ -137,6 +138,8 @@ public:
         nullOurEventHandlers();
         _netClient = null;
         _gotoGame = false;
+        _chat.on = false;
+        ret.unsentChat = _chat.text;
         return ret;
     }
 
