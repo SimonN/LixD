@@ -22,8 +22,8 @@ import tile.occur;
 package void implDrawTerrainTo(in Level level, Torbit tb, Phymap lookup)
 {
     if (! tb) return;
-    assert (tb == level.topology);
-    assert (! lookup || lookup == level.topology);
+    assert (tb.matches(level.topology));
+    assert (! lookup || lookup.matches(level.topology));
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Level.%s %s".format(
                     lookup ? "drawLT" : "drawT", level.name.take(15)));

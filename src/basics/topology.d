@@ -46,15 +46,10 @@ public:
         _ty = rhs._ty;
     }
 
-    override bool opEquals(Object rhsObj) const
+    bool matches(in Topology rhs) const
     {
-        const(Topology) rhs = cast (const Topology) rhsObj;
-        if (! rhs)
-            return false;
-        return _xl == rhs._xl
-            && _yl == rhs._yl
-            && _tx == rhs._tx
-            && _ty == rhs._ty;
+        return rhs && _xl == rhs._xl && _yl == rhs._yl
+                   && _tx == rhs._tx && _ty == rhs._ty;
     }
 
     final @property int  xl()     const { return _xl; }

@@ -46,7 +46,8 @@ public:
     }
 
     this(Cfg cfg)
-    {
+    out { assert (bitmap); }
+    body {
         super(cfg.xl, cfg.yl, cfg.torusX, cfg.torusY);
         bitmap = cfg.smoothlyScalable
             ? albitCreateSmoothlyScalable(cfg.xl, cfg.yl)
@@ -83,13 +84,12 @@ public:
         return ret;
     }
 
-
     void copyFrom(in Torbit rhs)
     {
         assert (rhs, "can't copyFrom a null Torbit");
         assert (bitmap, "null bitmap shouldn't ever happen, bug in Torbit");
         assert (rhs.bitmap, "null rhs.bitmap shouldn't ever happen");
-        assert (rhs.Topology.opEquals(this),
+        assert (rhs.matches(this),
             "copyFrom only implemented between same size, for speedup");
         auto targetBitmap = TargetBitmap(bitmap);
         al_draw_bitmap(cast (Albit) rhs.bitmap, 0, 0, 0);

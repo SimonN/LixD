@@ -63,7 +63,7 @@ class Phymap : Topology {
     void copyFrom(in typeof(this) rhs)
     {
         assert (rhs);
-        assert (rhs.Topology.opEquals(this),
+        assert (this.matches(rhs),
             "copy is implemented only between same size for speedup");
         assert (rhs.lt.length == lt.length);
         lt[] = rhs.lt[];

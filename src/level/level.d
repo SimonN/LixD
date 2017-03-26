@@ -176,7 +176,7 @@ public:
             || this.nameEnglish  != rhs.nameEnglish
             || this.hintsGerman  != rhs.hintsGerman
             || this.hintsEnglish != rhs.hintsEnglish
-            || this.topology != rhs.topology
+            || ! this.topology.matches(rhs.topology)
             || this.bgRed != rhs.bgRed
             || this.bgGreen != rhs.bgGreen
             || this.bgBlue != rhs.bgBlue

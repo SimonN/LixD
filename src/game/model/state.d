@@ -67,9 +67,8 @@ class GameState {
         assert (rhs);
         assert (rhs.land);
         assert (this.land);
-        assert (rhs.land.Topology.opEquals(this.land),
+        assert (rhs.land.matches(this.land),
             "for fast copyFrom, we want to avoid newing Albits, we only blit");
-
         copyValuesArraysFrom(rhs);
         land  .copyFrom(rhs.land);
         lookup.copyFrom(rhs.lookup);
