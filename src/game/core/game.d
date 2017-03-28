@@ -143,18 +143,26 @@ public:
      * Maybe refactor into a dispose() method that we call at exactly one
      * point. ~this might be called more often by the language.
      */
-    ~this()
+    void dispose()
     {
-        if (pan)
+        if (pan) {
             gui.rmElder(pan);
-        if (_console)
+            pan = null;
+        }
+        if (_console) {
             gui.rmElder(_console);
-        if (modalWindow)
+            _console = null;
+        }
+        if (modalWindow) {
             gui.rmFocus(modalWindow);
+            modalWindow = null;
+        }
         saveResult();
         saveAutoReplay();
-        if (nurse)
+        if (nurse) {
             nurse.dispose();
+            nurse = null;
+        }
     }
 
     Result evaluateReplay() { return nurse.evaluateReplay(); }

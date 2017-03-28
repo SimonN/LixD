@@ -110,6 +110,7 @@ public:
     private void kill()
     {
         if (game) {
+            game.dispose();
             destroy(game);
             game = null;
         }

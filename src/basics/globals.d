@@ -115,12 +115,7 @@ immutable replayAssignRight           = "ASSIGN_RIGHT";
 
 immutable dirDataBitmapScale = "data/images/scale";
 
-// Shotgun debugging to fix this: https://github.com/SimonN/LixD/issues/121
-// I should initialize the Filenames in a module constructor. This requires
-// that I declare them separately from their assignment. I don't declare
-// them const, because I could assign to them twice even with const in the
-// module constructor. I'm confused.
-
+// Class objects will be instantiated in the module constructor.
 Filename dirLevels, dirLevelsSingle, dirLevelsNetwork, dirReplays, dirData,
     dirDataBitmap, dirDataSound, dirDataUser, dirDataTransl, dirImages,
     dirImagesOrig, dirImagesOrigL1, dirImagesOrigL2, dirReplayAutoSolutions,

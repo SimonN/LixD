@@ -128,9 +128,7 @@ private:
     }
 
     // Horrible function. Copied out of C++ Lix almost unaltered.
-    // The problem is that this function's semantics have already been
-    // debugged to no end, C++ Lix had lots of bugs with tumblers over
-    // the years. We'd have to be really smart to make this simpler.
+    // We'd have to be really smart to make this simpler.
     // Comments within this function are taken from C++ Lix, too.
     final Collision collision()
     {

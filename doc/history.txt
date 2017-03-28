@@ -1,6 +1,22 @@
 Version history
 ===============
 
+0.6.29
+------
+
+2017-03-29
+
+Moved gamestate memory management from GC with manual GC calls to reference
+counting. Maybe that fixes #177, outdated terrain during multiplayer?
+
+Fix #179: Unfocus lobby chat when a game starts.
+
+Fix #178: Don't flash the R for replaying during multiplayer.
+
+Fix #185: Hotkeyed zoom during multiplayer, even if the button isn't shown.
+
+Fix #171: Terrain browser doesn't upscale small tiles.
+
 0.6.28
 ------
 

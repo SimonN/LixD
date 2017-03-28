@@ -48,14 +48,16 @@ public:
         _cache.saveZero(_model.cs);
     }
 
-    ~this() { dispose(); }
     void dispose()
     {
-        if (_cache)
+        if (_cache) {
             _cache.dispose();
-        if (_model)
+            _cache = null;
+        }
+        if (_model) {
             _model.dispose();
-        _model = null;
+            _model = null;
+        }
     }
 
     @property bool stillPlaying() const
