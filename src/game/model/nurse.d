@@ -116,8 +116,18 @@ public:
         _replay.deleteAfterPhyu(upd);
     }
 
-    alias updateToDuringTurbo = updateToTpl!true;
-    alias updateTo            = updateToTpl!false;
+    // DTODO: Refactor into SaveStatingNurse : Nurse for the interactive
+    // mode, and the regular nurse otherwise
+    void updateTo(in Phyu targetPhyu, in DuringTurbo duringTurbo)
+    {
+        // assert (game.runmode == Runmode.INTERACTIVE);
+        while ((stillPlaying || singleplayerHasWon)
+            && _model.cs.update < targetPhyu
+        ) {
+            updateOnce();
+            considerAutoSavestateIfCloseTo(targetPhyu, duringTurbo);
+        }
+    }
 
     void restartLevel()
     {
@@ -160,7 +170,7 @@ private:
         if (u >= _model.cs.update)
             return;
         _model.takeOwnershipOf(_cache.loadBeforePhyu(Phyu(u + 1)).clone);
-        updateTo(u);
+        updateTo(u, DuringTurbo.no);
     }
 
     void updateOnce()
@@ -177,27 +187,10 @@ private:
         _model.advance();
     }
 
-    // DTODO: Refactor into SaveStatingNurse : Nurse for the interactive
-    // mode, and the regular nurse otherwise
-    void updateToTpl(bool duringTurbo)(in Phyu targetPhyu)
-    {
-        // assert (game.runmode == Runmode.INTERACTIVE);
-        while ((stillPlaying || singleplayerHasWon)
-            && _model.cs.update < targetPhyu
-        ) {
-            updateOnce();
-            considerAutoSavestateIfCloseTo!duringTurbo(targetPhyu);
-        }
-    }
-
-    void considerAutoSavestateIfCloseTo(bool duringTurbo)(Phyu target)
+    void considerAutoSavestateIfCloseTo(in Phyu target, in DuringTurbo turbo)
     {
         assert (_cache);
-        static if (duringTurbo)
-            bool saveNow = _cache.wouldAutoSaveDuringTurbo(_model.cs, target);
-        else
-            bool saveNow = _cache.wouldAutoSave(_model.cs, target);
-        if (saveNow) {
+        if (_cache.wouldAutoSave(_model.cs, target, turbo)) {
             version (tharsisprofiling)
                 Zone zone = Zone(profiler, "Nurse makes auto-savestate");
             // It seems dubious to do drawing to bitmaps during calc/update.

@@ -18,6 +18,8 @@ import net.repdata;
 
 import std.string; // format
 
+enum DuringTurbo : bool { no = false, yes = true }
+
 class PhysicsCache {
 
 private:
@@ -98,12 +100,29 @@ public:
         return ret;
     }
 
-    alias wouldAutoSave            = wouldAutoSaveTpl!0;
-    alias wouldAutoSaveDuringTurbo = wouldAutoSaveTpl!1;
+    bool wouldAutoSave(
+        in GameState s,
+        in Phyu updTo,
+        in DuringTurbo duringTurbo) const
+    {
+        immutable pair = duringTurbo ? 1 : 0;
+        assert (pair >= 0 && pair < pairsToKeep);
+        if (s.update == 0 || s.update % updateMultipleForPair(pair) != 0)
+            return false;
+        foreach (possible; pair .. pairsToKeep)
+            // We save 2 states per update multiple. But when we want to update
+            // 100 times, there is no need saving states after 10, 20, 30, ...
+            // updates, we would only keep the states at 90 and 100, anyway.
+            // And the state at 50 and 100, in a higher pair.
+            if (s.update > updTo - 2 * updateMultipleForPair(possible)
+                && s.update % updateMultipleForPair(possible) == 0)
+                return true;
+        return false;
+    }
 
     void autoSave(in GameState s, in Phyu ultimatelyTo)
     {
-        if (! wouldAutoSave(s, ultimatelyTo))
+        if (! wouldAutoSave(s, ultimatelyTo, DuringTurbo.no))
             return;
         // Potentially push older auto-saved states down the hierarchy.
         // First, if it's time to copy a frequent state into a less frequent
@@ -143,22 +162,6 @@ private:
         foreach (i; 0 .. pair)
             ret *= updatesMultiplierNextPairIsSlowerBy;
         return ret;
-    }
-
-    bool wouldAutoSaveTpl(int pair)(in GameState s, in Phyu updTo) const
-        if (pair >= 0 && pair < pairsToKeep)
-    {
-        if (s.update == 0 || s.update % updateMultipleForPair(pair) != 0)
-            return false;
-        foreach (possible; pair .. pairsToKeep)
-            // We save 2 states per update multiple. But when we want to update
-            // 100 times, there is no need saving states after 10, 20, 30, ...
-            // updates, we would only keep the states at 90 and 100, anyway.
-            // And the state at 50 and 100, in a higher pair.
-            if (s.update > updTo - 2 * updateMultipleForPair(possible)
-                && s.update % updateMultipleForPair(possible) == 0)
-                return true;
-        return false;
     }
 }
 // end class StateManager

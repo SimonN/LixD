@@ -15,18 +15,15 @@ package:
 
 void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
 {
-    void upd(bool duringTurbo = false)(in int howmany = 1)
+    import game.model.cache : DuringTurbo;
+    void upd(in int howmany = 1, in DuringTurbo duringTurbo = DuringTurbo.no)
     {
         immutable before = nurse.upd;
         // Don't send undispatched via network, we did that earlier already.
         // Some from undispatchedAssignments have even come from the net.
         nurse.addReplayDataMaybeGoBack(undispatchedAssignments);
         undispatchedAssignments = null;
-
-        static if (duringTurbo)
-            nurse.updateToDuringTurbo(Phyu(before + howmany));
-        else
-            nurse.updateTo(Phyu(before + howmany));
+        nurse.updateTo(Phyu(before + howmany), duringTurbo);
         game.findAgainHighlitLixAfterPhyu();
         game.setLastPhyuToNow();
     }
@@ -71,7 +68,7 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
                 upd();
         }
         else if (pan.speedIsTurbo)
-            upd!true(updatesDuringTurbo);
+            upd(updatesDuringTurbo, DuringTurbo.yes);
         else {
             assert (pan.speedIsFast);
             upd();
