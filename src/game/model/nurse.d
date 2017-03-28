@@ -31,8 +31,7 @@ private:
 
 public:
     @property const(Replay) replay() const { return _replay; }
-    @property Phyu        upd()    const { return _model.cs.update; }
-    @property               land()   const { return _model.cs.land;   }
+    @property Phyu upd() const { return _model.cs.update; }
 
     // this is bad, DTODO: refactor
     @property constStateForDrawingOnly()  const { return _model.cs; }
@@ -52,6 +51,8 @@ public:
     ~this() { dispose(); }
     void dispose()
     {
+        if (_cache)
+            _cache.dispose();
         if (_model)
             _model.dispose();
         _model = null;
@@ -67,21 +68,20 @@ public:
     @property bool singleplayerHasWon() const
     {
         assert (_model);
-        assert (_model.cs);
         return _model.cs.singleplayerHasWon();
     }
 
     final @property auto scores() const
     {
         assert (_model);
-        assert (_model.cs);
         return _model.cs.tribes.byValue.map!(tr => tr.score);
     }
 
     Phyu updatesSinceZero() const
-    out (result) { assert (result >= 0); }
+    out (result) {
+        assert (result >= 0);
+    }
     body {
-        assert (_model.cs);
         return Phyu(_model.cs.update - _cache.zeroStatePhyu);
     }
 

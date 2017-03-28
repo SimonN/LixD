@@ -9,6 +9,7 @@ module game.model.state;
 import std.algorithm;
 import std.conv;
 import std.range;
+import std.typecons;
 
 import basics.help; // clone(T[]), a deep copy for arrays
 import net.repdata;
@@ -20,8 +21,18 @@ import graphic.gadget;
 import hardware.tharsis;
 import net.style;
 
-class GameState {
+alias GameState = RefCounted!(RawGameState, RefCountedAutoInitialize.no);
 
+GameState clone(in GameState gs)
+{
+    GameState ret;
+    ret.refCountedStore.ensureInitialized();
+    ret.refCountedPayload = gs.refCountedPayload;
+    return ret;
+}
+
+private struct RawGameState {
+public:
     Phyu update;
     int  clock;
     bool clockIsRunning;
@@ -39,58 +50,34 @@ class GameState {
     Torbit land;
     Phymap lookup;
 
-    this() { }
+    this(this) { this.opAssign(this); }
 
-    this(in GameState rhs)
+    ref RawGameState opAssign(ref const(RawGameState) rhs)
     {
-        assert (rhs, "don't copy-construct from a null GameState");
-        assert (rhs.land, "don't copy-construct from GameState without land");
-        version (tharsisprofiling)
-            auto zone = Zone(profiler, "GameState.clone all");
-        {
-            version (tharsisprofiling)
-                auto zone1 = Zone(profiler, "GameState.clone arrays");
-            copyValuesArraysFrom(rhs);
-        } {
-            version (tharsisprofiling)
-                auto zone2 = Zone(profiler, "GameState.clone land");
+        if (this is rhs)
+            return this;
+        this.copyValuesArraysFrom(rhs);
+        if (! land) {
             land = rhs.land.clone();
-        } {
-            version (tharsisprofiling)
-                auto zone3 = Zone(profiler, "GameState.clone phymap");
-            lookup = new Phymap(rhs.lookup);
         }
+        else if (land.matches(rhs.land))
+            land.copyFrom(rhs.land);
+        else {
+            land.dispose();
+            land = rhs.land.clone();
+        }
+        lookup = rhs.lookup.clone();
+        return this;
     }
 
-    void copyFrom(in GameState rhs)
+    ~this()
     {
-        assert (rhs);
-        assert (rhs.land);
-        assert (this.land);
-        assert (rhs.land.matches(this.land),
-            "for fast copyFrom, we want to avoid newing Albits, we only blit");
-        copyValuesArraysFrom(rhs);
-        land  .copyFrom(rhs.land);
-        lookup.copyFrom(rhs.lookup);
-    }
-
-    GameState clone() const { return new GameState(this); }
-
-    // currently unnused, shall be used by StateManager and Game's cs
-    static void cloneOrCopyFrom(ref GameState lhs, in GameState rhs)
-    {
-        if (lhs is null)
-            lhs = new GameState(rhs);
-        else
-            lhs.copyFrom(rhs);
-    }
-
-    void dispose()
-    {
+        update = Phyu(0);
         if (land) {
             land.dispose();
             land = null;
         }
+        lookup = null;
     }
 
     int numTribes() const @nogc { return tribes.length & 0xFFFF; }
@@ -123,22 +110,25 @@ class GameState {
                              >= tribes.byValue.front.lixRequired;
     }
 
-    private void
-    copyValuesArraysFrom(in GameState rhs)
+private:
+    void copyValuesArraysFrom(ref const(RawGameState) rhs)
     {
         update         = rhs.update;
         clock          = rhs.clock;
         clockIsRunning = rhs.clockIsRunning;
         goalsLocked    = rhs.goalsLocked;
-        hatches  = rhs.hatches .clone;
-        goals    = rhs.goals   .clone;
-        waters   = rhs.waters  .clone;
-        traps    = rhs.traps   .clone;
-        flingers = rhs.flingers.clone;
+
+        hatches  = basics.help.clone(rhs.hatches);
+        goals    = basics.help.clone(rhs.goals);
+        waters   = basics.help.clone(rhs.waters);
+        traps    = basics.help.clone(rhs.traps);
+        flingers = basics.help.clone(rhs.flingers);
 
         // Deep-clone this by hand, I haven't written a generic clone for AAs
-        tribes = null;
+        // Don't start with (tribes = null;) because rhs could be this.
+        typeof(tribes) temp;
         foreach (style, tribe; rhs.tribes)
-            tribes[style] = tribe.clone();
+            temp[style] = tribe.clone();
+        tribes = temp;
     }
 }

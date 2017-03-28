@@ -38,11 +38,19 @@ private:
 
 public:
 
+    void dispose()
+    {
+        destroy(_zero);
+        destroy(_userState);
+        foreach (ref gs; _auto)
+            destroy(gs);
+        assert (! _auto[0].refCountedStore.isInitialized);
+    }
+
     void saveZero(in GameState s) { _zero = s.clone(); }
 
-    @property Phyu zeroStatePhyu() const
-    {
-        assert (_zero);
+    @property Phyu zeroStatePhyu() const {
+        assert (_zero.refCountedStore.isInitialized);
         return _zero.update;
     }
 
@@ -56,14 +64,13 @@ public:
             _userReplay = r.clone();
     }
 
-    bool userStateExists() const { return _userState !is null; }
+    bool userStateExists() const { return _userReplay !is null; }
 
     // Depending on mismatches between Nurse's replay and our saved replay,
     // some cached states must be invalidated. Fixes user-stateload desyncs.
     auto loadUser(in Replay nurseReplay)
     in {
-        assert (_userState);
-        assert (_userReplay, "don't load if there is nothing to load");
+        assert (userStateExists, "don't load if there is nothing to load");
         assert (nurseReplay, "need reference so I know what to invalidate");
     }
     body {
@@ -82,15 +89,11 @@ public:
 
     const(GameState) loadBeforePhyu(in Phyu u)
     {
-        assert (_zero, "need _zero as a fallback for autoBeforePhyu");
         GameState ret = _zero;
-        foreach (ref GameState candidate; _auto)
-            if (   candidate !is null
-                && candidate.update < u
-                && candidate.update > ret.update
-            ) {
-                ret = candidate;
-            }
+        foreach (gs; _auto)
+            if (   gs.refCountedStore.isInitialized
+                && gs.update < u && gs.update > ret.update)
+                ret = gs;
         forgetAutoSavesOnAndAfter(u);
         return ret;
     }
@@ -102,7 +105,6 @@ public:
     {
         if (! wouldAutoSave(s, ultimatelyTo))
             return;
-        GameState[] possibleGarbage;
         // Potentially push older auto-saved states down the hierarchy.
         // First, if it's time to copy a frequent state into a less frequent
         // state, make these copies. Start with least frequent copying the
@@ -114,58 +116,24 @@ public:
             immutable int umfp = updateMultipleForPair(pair);
             if (s.update % umfp == 0) {
                 int whichOfPair = (s.update / umfp) % 2;
-                if (pair > 0) {
-                    // make a shallow copy, because we treat states inside
-                    // the save manager like immutable data. If the thing
-                    // to copy is null, don't copy it, because we might
-                    // currently hold good data that is old, and the newer
-                    // data to copy was set to null because it's a wrong
-                    // timeline.
-                    GameState moreFrequentToCopy = _auto[2*(pair-1)];
-                    if (moreFrequentToCopy is null)
-                        moreFrequentToCopy = _auto[2*(pair-1) + 1];
-                    if (moreFrequentToCopy !is null) {
-                        possibleGarbage ~= _auto[2*pair + whichOfPair];
-                        _auto[2*pair + whichOfPair] = moreFrequentToCopy;
-                    }
-                }
-                else {
-                    // make a hard copy of the current state
-                    possibleGarbage ~= _auto[0 + whichOfPair];
+                if (pair > 0)
+                    // Make a shallow copy of the more-frequently-hit state:
+                    // We treat states inside PhysicsCache like immutable.
+                    // Only clone when we return to outside of PhysicsCache.
+                    _auto[2*pair + whichOfPair] = _auto[2*(pair-1)];
+                else
+                    // Make a hard copy of the current state.
                     _auto[0 + whichOfPair] = s.clone();
-                }
             }
-        }
-        // Dispose garbage. This is tricky to optimize. Maybe we should go
-        // for full manual memory management in the phymap too.
-        bool runTheGC = false;
-        foreach (ref garb; possibleGarbage)
-            if (garb !is null && garb !is _zero && garb !is _userState
-                && ! _auto[].canFind!"a is b"(garb)
-            ) {
-                version (tharsisprofiling)
-                    auto zone = Zone(profiler, "autoSave disposing VRAM");
-                garb.dispose();
-                garb = null;
-                runTheGC = true;
-            }
-        if (runTheGC) {
-            static int dontCollectSoOften = 0;
-            dontCollectSoOften = (dontCollectSoOften + 1) % 3;
-            if (dontCollectSoOften == 0)
-                core.memory.GC.collect();
         }
     }
-    // end function calcSaveAuto
 
 private:
     void forgetAutoSavesOnAndAfter(in Phyu u)
     {
-        foreach (ref GameState possibleGarbage; _auto)
-            if (possibleGarbage && possibleGarbage.update >= u) {
-                possibleGarbage.dispose();
-                possibleGarbage = null;
-            }
+        foreach (ref GameState gs; _auto)
+            if (gs.refCountedStore.isInitialized && gs.update >= u)
+                destroy(gs);
     }
 
     int updateMultipleForPair(in int pair) const pure
@@ -177,11 +145,10 @@ private:
         return ret;
     }
 
-    bool wouldAutoSaveTpl(int pair)(in GameState s, in Phyu updTo) const pure
+    bool wouldAutoSaveTpl(int pair)(in GameState s, in Phyu updTo) const
         if (pair >= 0 && pair < pairsToKeep)
     {
-        if (! s || s.update == 0
-                || s.update % updateMultipleForPair(pair) != 0)
+        if (s.update == 0 || s.update % updateMultipleForPair(pair) != 0)
             return false;
         foreach (possible; pair .. pairsToKeep)
             // We save 2 states per update multiple. But when we want to update

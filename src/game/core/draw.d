@@ -72,7 +72,7 @@ void drawLand(Game game)
 {
     version (tharsisproftsriling)
         auto zone = Zone(profiler, "game draws land to map");
-    game.map.loadCameraRect(game.nurse.land);
+    game.map.loadCameraRect(game.nurse.constStateForDrawingOnly.land);
 }
 
 void drawAllLixes(Game game)

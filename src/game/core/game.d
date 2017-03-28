@@ -208,7 +208,6 @@ package:
 
     @property const(Tribe) localTribe() const
     {
-        assert (cs, "null cs, shouldn't ever be null");
         auto ptr = localStyle in cs.tribes;
         assert (ptr, "badly cloned cs? Local style isn't there");
         return *ptr;
@@ -253,7 +252,6 @@ private:
     @property cs() inout
     {
         assert (nurse);
-        assert (nurse.stateOnlyPrivatelyForGame);
         return nurse.stateOnlyPrivatelyForGame;
     }
 

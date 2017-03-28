@@ -3,6 +3,7 @@ module game.model.init;
 import std.algorithm;
 import std.array;
 import std.conv;
+import std.typecons;
 
 import basics.alleg5;
 import basics.help; // len
@@ -25,7 +26,8 @@ package:
 GameState newZeroState(in Level level, in Style[] tribesToMake,
                        in Permu permu, in Style makeHatchesBlink
 ) {
-    GameState s = new GameState();
+    GameState s;
+    s.refCountedStore.ensureInitialized();
     with (level) {
         s.land   = new Torbit(Torbit.Cfg(level.topology));
         s.lookup = new Phymap(level.topology);
@@ -46,7 +48,6 @@ private:
 void preparePlayers(GameState state, in Level level,
                     in Style[] tribesToMake, in Permu permu)
 {
-    assert (state);
     assert (state.tribes == null);
     assert (tribesToMake.len >= 1);
     assert (tribesToMake.isStrictlyMonotonic);
