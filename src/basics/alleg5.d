@@ -146,6 +146,13 @@ Blender BlenderMinus()
         ALLEGRO_BLEND_MODE.ALLEGRO_ONE); // ...from the target
 }
 
+Blender BlenderCopy()
+{
+    // Copy the source to the target, including alpha, unmodified
+    return Blender(ALLEGRO_BLEND_OPERATIONS.ALLEGRO_ADD,
+        ALLEGRO_BLEND_MODE.ALLEGRO_ONE, ALLEGRO_BLEND_MODE.ALLEGRO_ZERO);
+}
+
 alias LockReadWrite = LockTemplate!(ALLEGRO_LOCK_READWRITE);
 alias LockReadOnly  = LockTemplate!(ALLEGRO_LOCK_READONLY);
 alias LockWriteOnly = LockTemplate!(ALLEGRO_LOCK_WRITEONLY);

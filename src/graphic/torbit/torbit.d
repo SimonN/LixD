@@ -92,7 +92,8 @@ public:
         assert (rhs.matches(this),
             "copyFrom only implemented between same size, for speedup");
         auto targetBitmap = TargetBitmap(bitmap);
-        al_draw_bitmap(cast (Albit) rhs.bitmap, 0, 0, 0);
+        with (BlenderCopy)
+            al_draw_bitmap(cast (Albit) rhs.bitmap, 0, 0, 0);
     }
 
     void copyToScreen()
