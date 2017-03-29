@@ -155,7 +155,7 @@ public:
                 // allow 5 minutes after the last replay data before cancelling
                 && upd < _replay.latestPhyu + 5 * (60 * 15))
             updateOnce();
-        return resultForTribe(_replay.playerLocal.style);
+        return resultForTribe(_replay.playerLocalOrSmallest.style);
     }
 
     Result resultForTribe(in Style style) const

@@ -211,7 +211,7 @@ package:
 
     @property Style localStyle() const
     {
-        return nurse.replay.playerLocal.style;
+        return nurse.replay.playerLocalOrSmallest.style;
     }
 
     @property const(Tribe) localTribe() const
@@ -221,8 +221,15 @@ package:
         return *ptr;
     }
 
-    @property PlNr plNrLocal() const { return nurse.replay.plNrLocal; }
-    @property auto playerLocal() const { return nurse.replay.playerLocal; }
+    @property PlNr plNrLocal() const
+    {
+        return nurse.replay.plNrLocalOrSmallest;
+    }
+
+    @property auto playerLocal() const
+    {
+        return nurse.replay.playerLocalOrSmallest;
+    }
 
     @property View view() const
     {
@@ -270,21 +277,24 @@ private:
         _replayNeverCancelledThereforeDontSaveAutoReplay = rp !is null;
         if (! rp)
             rp = generateFreshReplay(levelFilename);
-        effect = new EffectManager(rp.playerLocal.style);
+        // DTODONETWORK: Eventually, observers shall cycle through the
+        // spectating teams. Don't set a final style here, but somehow
+        // make the effect manager depend on what the GUI chooses.
+        effect = new EffectManager(rp.playerLocalOrSmallest.style);
         nurse  = new Nurse(level, rp, effect);
     }
 
     Replay generateFreshReplay(Filename levelFilename)
     {
         auto rp = Replay.newForLevel(levelFilename, level.built);
-        if (! _netClient) {
-            rp.addPlayer(PlNr(0), Style.garden, basics.globconf.userName);
-            rp.plNrLocal = PlNr(0);
-        }
+        if (! _netClient)
+            rp.addPlayer(PlNr(0), Style.garden,
+                         basics.globconf.userName, true);
         else {
             foreach (plNr, prof; _netClient.profilesInOurRoom)
-                rp.addPlayer(plNr, prof.style, prof.name);
-            rp.plNrLocal = _netClient.ourPlNr;
+                if (prof.feeling != Profile.Feeling.observing)
+                    rp.addPlayer(plNr, prof.style, prof.name,
+                                 plNr == _netClient.ourPlNr);
         }
         return rp;
     }

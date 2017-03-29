@@ -49,11 +49,12 @@ package:
     Player[PlNr] _players;
     Permu _permu; // contains natural numbers [0 .. #players[, not the plNrs
     ReplayData[] _data;
+    PlNr _plNrLocal;
+    bool _hasLocal; // if false, all players were observed netplayers
 
 public:
     Date     levelBuiltRequired;
     Filename levelFilename;
-    PlNr     plNrLocal;
 
     static newForLevel(Filename levFn, Date levBuilt)
     {
@@ -71,7 +72,8 @@ public:
         _gameVersionRequired = rhs._gameVersionRequired;
         levelBuiltRequired   = rhs.levelBuiltRequired;
         levelFilename        = rhs.levelFilename;
-        plNrLocal            = rhs.plNrLocal;
+        _plNrLocal           = rhs._plNrLocal;
+        _hasLocal            = rhs._hasLocal;
         _permu               = rhs._permu.clone();
         _data                = rhs._data.dup;
 
@@ -112,11 +114,19 @@ public:
         return (_data.length > 0) ? _data[$-1].update : 0;
     }
 
-    @property Player playerLocal() const
+    @property bool hasLocal()  const { return  _hasLocal; }
+    @property PlNr plNrLocalOrSmallest() const
     {
-        auto pl = plNrLocal in _players;
-        assert (pl, "there is no local player in this replay");
-        return *pl;
+        if (_hasLocal) {
+            assert (_plNrLocal in _players);
+            return _plNrLocal;
+        }
+        return _players.byKey.reduce!min;
+    }
+
+    @property Player playerLocalOrSmallest() const
+    {
+        return _players[plNrLocalOrSmallest];
     }
 
     @property string styleToNames(in Style st) const
@@ -152,10 +162,15 @@ public:
         _gameVersionRequired = gameVersion();
     }
 
-    void addPlayer(PlNr nr, Style s, string name)
+    void addPlayer(PlNr nr, Style s, string name, in bool local)
     {
-        assert (nr !in _players);
+        if (nr in _players)
+            return;
         _players[nr] = Player(s, name);
+        if (local && ! _hasLocal) {
+            _hasLocal = true;
+            _plNrLocal = nr;
+        }
     }
 
     // This doesn't check whether the metadata/general data is the same.

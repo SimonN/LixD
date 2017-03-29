@@ -1,6 +1,19 @@
 Version history
 ===============
 
+0.6.30
+------
+
+2017-03-30
+
+Fix #184: Observing players don't add colors to the game. There is still a
+bug with observers: The can assign skills, changing their own replay, even
+though others won't interpret these assignments.
+
+Maybe fix #177: Multiplayer or state-loaded singleplayer produced outdated
+land, even though physics were correct. Copying the land without transparency
+should fix that.
+
 0.6.29
 ------
 

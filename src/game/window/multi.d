@@ -36,7 +36,7 @@ public:
             super.captionSuperElements();
             super.setReplayAndLevel(replay, level);
         }
-        _ourStyle = replay.playerLocal.style;
+        _ourStyle = replay.playerLocalOrSmallest.style;
         foreach (int i, tribe; sortedTribes(rawTribes))
             addChild(new Line(new Geom(0, 40 + 20*i, xlg-40, 20, From.TOP),
                 tribe, replay.styleToNames(tribe.style)));

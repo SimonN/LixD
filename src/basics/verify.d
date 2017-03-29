@@ -61,7 +61,7 @@ private class VerifyCounter {
     // later output the difference between the requirement and covered levels.
     immutable bool verifyCoverage;
 
-    int total, noPtr, noLev, badLev, fail, ok;
+    int total, noPtr, noLev, badLev, multi, fail, ok;
 
     string[] levelDirsToCover;
     MutFilename[] levelsCovered; // this may contain duplicates until output
@@ -81,22 +81,32 @@ private class VerifyCounter {
     }
 
     void writeResult(in Result res, Filename fn, in Replay rep, in Level lev)
-    {
+    in {
+        assert (res);
+        assert (fn);
+        assert (rep);
+    }
+    body {
         string key;
-        if      (fn == rep.levelFilename)     { key = "(NO-PTR)"; ++noPtr;  }
+        if      (rep.numPlayers > 1)          { key = "(MULTI)";  ++multi;  }
+        else if (fn == rep.levelFilename)     { key = "(NO-PTR)"; ++noPtr;  }
         else if (! lev.nonempty)              { key = "(NO-LEV)"; ++noLev;  }
         else if (! lev.good)                  { key = "(BADLEV)"; ++badLev; }
         else if (res.lixSaved < lev.required) { key = "(FAIL)";   ++fail;   }
         else                                  { key = "(OK)";     ++ok;     }
-        writeln(key, ",", fn.rootless, ",", rep.levelFilename.rootless, ",",
-            rep.playerLocal.name, ",", res.lixSaved, ",", lev.required, ",",
-            res.skillsUsed, ",", res.phyusUsed);
+        writeln(key, ",", fn.rootless, ",",
+            rep.levelFilename ? rep.levelFilename.rootless : "", ",",
+            rep.playerLocalOrSmallest.name, ",", res.lixSaved, ",",
+            lev ? lev.required : 0, ",", res.skillsUsed, ",", res.phyusUsed);
     }
 
     void writeStatistics()
     {
         writeln();
         writeln("Statistics from ", total, " replays:");
+        if (multi)
+            writefln("%5dx (MULTI): replay ignored, "
+                   ~ "it is multiplayer.", multi);
         if (noPtr)
             writefln("%5dx (NO-PTR): replay ignored, "
                    ~ "it doesn't name a level file.", noPtr);
@@ -170,7 +180,7 @@ private:
         Replay rep = Replay.loadFromFile(fn);
         Level  lev = new Level(rep.levelFilename);
         // We never look at the included level
-        if (fn == rep.levelFilename || ! lev.good) {
+        if (fn == rep.levelFilename || ! lev.good || rep.numPlayers > 1) {
             // give a result with all zeroes to pad the fields
             writeResult(new Result(lev.built), fn, rep, lev);
             return;

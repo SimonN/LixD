@@ -78,11 +78,9 @@ auto implLoadFromFile(Replay replay, Filename fn) { with (replay)
             ret.levelFilename = new VfsFilename(dirLevels.dirRootless ~ i.text2);
         break;
     case '+':
-        if (i.text1 == replayPlayer || i.text1 == replayFriend) {
-            addPlayer(PlNr(i.nr1 & 0xFF), stringToStyle(i.text2), i.text3);
-            if (i.text1 == replayPlayer)
-                plNrLocal = PlNr(i.nr1 & 0xFF);
-        }
+        if (i.text1 == replayPlayer || i.text1 == replayFriend)
+            addPlayer(PlNr(i.nr1 & 0xFF), stringToStyle(i.text2), i.text3,
+                      i.text1 == replayPlayer);
         break;
     case '!': {
         // replays contain ASSIGN=BASHER or ASSIGN_RIGHT=BUILDER.
@@ -110,11 +108,8 @@ auto implLoadFromFile(Replay replay, Filename fn) { with (replay)
     }
 
     // Sanity-fix the replay
-    if (plNrLocal !in _players) {
-        if (_players.length == 0)
-            addPlayer(PlNr(0), Style.garden, ""); // add unknown player
-        plNrLocal = _players.byKey.front;
-    }
+    if (_players.length == 0)
+        addPlayer(PlNr(0), Style.garden, "", true); // add unknown local player
     return ret;
 }}
 
@@ -138,7 +133,7 @@ void saveToStdioFile(
     if (_players.length)
         file.writeln();
     foreach (plNr, pl; _players)
-        file.writeln(IoLine.Plus(plNr == plNrLocal
+        file.writeln(IoLine.Plus(_hasLocal && plNr == _plNrLocal
              ? basics.globals.replayPlayer : basics.globals.replayFriend,
              plNr, styleToString(pl.style), pl.name));
     if (_players.length > 1)
@@ -192,7 +187,7 @@ void saveToTree(
         treebase.rootless,
         replay.mimickLevelPath(),
         replay.levelFilename ? replay.levelFilename.fileNoExtNoPre : "unknown",
-        replay.playerLocal.name.escapeStringForFilename(),
+        replay.playerLocalOrSmallest.name.escapeStringForFilename(),
         Date.now().toStringForFilename(),
         basics.globals.filenameExtReplay);
     replay.implSaveToFile(new VfsFilename(outfile), lev);
