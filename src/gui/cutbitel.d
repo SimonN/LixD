@@ -42,6 +42,9 @@ protected:
         if (scal >= 1)
             // Allow upscaling only by integers for good looks, or not at all.
             scal = _allowUpscaling ? scal.floor : 1;
+        if (scal < 1 && _allowUpscaling)
+            // Never scale down UI, that would look sucky
+            scal = 1;
 
         // Draw the cutbit to the center of this's Element area.
         cbX = xs + (xls - cutbit.xl * scal) / 2f;
