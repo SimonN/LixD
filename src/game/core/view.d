@@ -1,5 +1,10 @@
 module game.core.view;
 
+/* The idea of View is to collect all possible behavioral differences of
+ * the Game class in one place. Game behaves differently based on how many
+ * players are there, whether we play, replay, or observe live, etc.
+ */
+
 import net.iclient;
 import net.structs;
 
@@ -28,6 +33,11 @@ View createView(in int numPlayers, in INetClient netClient) pure
 bool canInterruptReplays(in View v)
 {
     return v == View.solveAlone || v == View.solveTogether;
+}
+
+bool canAssignSkills(in View v)
+{
+    return v.canInterruptReplays || v == View.battle;
 }
 
 bool showReplaySign(in View v) { return v.showTapeRecorderButtons; }

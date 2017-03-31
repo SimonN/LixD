@@ -27,7 +27,8 @@ void calcActive(Game game)
         if (mouseClickLeft)
             game.cancelReplay();
         auto potAss = game.findPotentialAssignee();
-        if (potAss.lixxie !is null)
+        if (potAss.lixxie !is null && hardware.mouse.mouseClickLeft
+                                   && game.view.canAssignSkills)
             game.assignToPotentialAssignee(potAss);
     }
     else {
@@ -223,10 +224,6 @@ void assignToPotentialAssignee(
     Game game,
     in ref PotentialAssignee potAss) { with (game)
 {
-    if (! hardware.mouse.mouseClickLeft || potAss.lixxie is null)
-        // assign on left clicks; if no click, don't do anything
-        return;
-
     SkillButton currentSkill = pan.currentSkill;
     if (potAss.lixxie is null
         || currentSkill is null
