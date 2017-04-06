@@ -51,11 +51,7 @@ package ReplayData newReplayDataForNextPhyu(Game game)
     return data;
 }
 
-// ############################################################################
-
-private:
-
-void cancelReplay(Game game) { with (game)
+package void cancelReplay(Game game) { with (game)
 {
     if (replaying && game.view.canInterruptReplays) {
         _replayNeverCancelledThereforeDontSaveAutoReplay = false;
@@ -63,6 +59,10 @@ void cancelReplay(Game game) { with (game)
         playLoud(Sound.SCISSORS);
     }
 }}
+
+// ############################################################################
+
+private:
 
 struct PotentialAssignee {
     Rebindable!(const(Lixxie)) lixxie;

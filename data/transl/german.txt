@@ -297,12 +297,6 @@ $optionReplayAutoMulti       Im Mehrspieler auto-speichern
 $optionMouseSpeed            Mausgeschwindigkeit
 $optionScrollSpeedEdge       Scroll-Geschw. am Bildrand
 $optionScrollSpeedClick      Scroll-Geschw. mit dieser Taste
-$optionAvoidBuilderQueuing   Builder eher an Nicht-Builder
-$optionAvoidBatterToExploder Batter eher an Nicht-Exploder
-$optionPausedAssign           Fähigkeitszuweisung bei Pause:
-$optionPausedAssignStayPaused Gar nicht weiter
-$optionPausedAssignAdvance    Nur 1 Bild weiter
-$optionPausedAssignUnpause    Pause ausschalten
 
 $optionScreenWindowed           Im Fenstermodus starten
 $optionScreenWindowedRes        Fenster-Auflösung
@@ -335,6 +329,16 @@ $optionKeyStateSave         Stand speich.
 $optionKeyChat               Chat
 $optionKeySpecTribe         Team zusehen
 $optionKeyNuke               Atombombe
+
+$optionAvoidBuilderQueuing   Builder eher an Nicht-Builder
+$optionAvoidBatterToExploder Batter eher an Nicht-Exploder
+$optionReplayAfterFrameBack   Replay bei ◀▮ behalten
+$optionPausedAssign           Fähigkeitszuweisung bei Pause:
+$optionPausedAssignStayPaused Gar nicht weiter
+$optionPausedAssignAdvance    Nur 1 Bild weiter
+$optionPausedAssignUnpause    Pause ausschalten
+
+$optionReplayAfterFrameBackDesc Zukünftige Replay-Aktionen beibehalten und wieder abspielen, wenn du in der Zeit zurückgehst (◀▮).|Ohne Haken: Replay-Aktionen werden entfernt, sobald sie durch ◀▮ ungeschehen gemacht werden.
 
 $optionKeyMenuOkay           Okay/ja
 $optionKeyMenuEdit           Editieren

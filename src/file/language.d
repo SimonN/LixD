@@ -326,6 +326,7 @@ enum Lang {
     optionScrollSpeedClick, optionScrollSpeedClickDesc,
     optionAvoidBuilderQueuing, optionAvoidBuilderQueuingDesc,
     optionAvoidBatterToExploder, optionAvoidBatterToExploderDesc,
+    optionReplayAfterFrameBack, optionReplayAfterFrameBackDesc,
     optionPausedAssign, optionPausedAssignDesc,
     optionPausedAssignStayPaused, optionPausedAssignStayPausedDesc,
     optionPausedAssignAdvance, optionPausedAssignAdvanceDesc,

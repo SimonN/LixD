@@ -85,8 +85,11 @@ void restartLevel(Game game)
 
 void framestepBackBy(Game game, in int by)
 {
-    with (LoadStateRAII(game))
+    with (LoadStateRAII(game)) {
         game.nurse.framestepBackBy(by);
+        if (! replayAfterFrameBack.value)
+            game.cancelReplay();
+    }
 }
 
 // The server tells us the milliseconds since game start, and the net client

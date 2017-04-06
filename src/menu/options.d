@@ -318,6 +318,7 @@ void populateGameKeys()
     fac.xl = fac.xl - 10; // Mouse hover area shouldn't obscure other options
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!BoolOptionOneOrTwo(pausedAssign),
+        fac.factory!BoolOption(replayAfterFrameBack),
     ];
     fac = facRight();
     fac.x = xForBoolOptionsBelowHotkeys + keyButtonXl - 20f;
