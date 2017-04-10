@@ -31,6 +31,8 @@ private:
     Job _job;
     OutsideWorld* _outsideWorld; // set whenever physics and tight coupling
                                  // are needed, nulled again at end of those
+    int _ploderTimer; // phyus since ploder assignment. For details,
+                      // see lix.skills.exploder.handlePloderTimer.
 
     enum int exOffset = 16; // offset of the effective coordinate of the lix
     enum int eyOffset = 26; // sprite from the top left corner
@@ -49,8 +51,6 @@ private:
     };
 
 public:
-    int ploderTimer;
-
     Style style() const { return _style; }
 
     @property int ex() const { return _ex; }
@@ -83,6 +83,9 @@ public:
         assert (_outsideWorld !is null, "can't access _outsideWorld here");
         return _outsideWorld;
     }
+
+            @property int  ploderTimer() const   { return _ploderTimer; }
+    package @property void ploderTimer(in int i) { _ploderTimer = i;    }
 
     @property int  flingX()   const { return _flingX;   }
     @property int  flingY()   const { return _flingY;   }
@@ -363,7 +366,10 @@ override void draw() const
 {
     if (ac == Ac.nothing)
         return;
-    // DTODO: draw the fuse in multiplayer
+    if (_ploderTimer > 0) {
+        import lix.skill.exploder; // DTODOREFACTOR?
+        drawFuse(this);
+    }
     super.draw();
 }
 

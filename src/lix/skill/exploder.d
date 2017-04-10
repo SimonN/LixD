@@ -3,9 +3,27 @@ module lix.skill.exploder;
 import std.math; // sqrt
 
 import basics.help; // roundInt
+import basics.globals;
+import basics.rect;
 import game.mask;
 import game.terchang;
+import graphic.internal;
 import lix;
+
+void drawFuse(in Lixxie lixxie)
+{
+    assert (lixxie.ploderTimer > 0);
+    version (tharsisprofiling) {
+        import hardware.tharsis;
+        import std.string;
+        auto zo = Zone(profiler, "lix fuse=%d".format(lixxie.ploderTimer));
+    }
+    const fuse = getInternal(fileImageFuseFlame);
+    // DTODO: Examine the skillsheet for where the eye is.
+    const head = Point(lixxie.ex, lixxie.ey - 14);
+    const tip = head - Point(0, (Ploder.ploderDelay - lixxie.ploderTimer) / 4);
+    fuse.draw(tip - fuse.len/2, lixxie.ploderTimer % fuse.xfs, 0);
+}
 
 abstract class Ploder : Job {
 
@@ -29,7 +47,7 @@ abstract class Ploder : Job {
             if (ow.state.tribes.length <= 1 || li.ploderTimer == ploderDelay)
                 li.becomePloder(ow);
             else
-                ++li.ploderTimer;
+                li.ploderTimer = li.ploderTimer + 1;
                 // 0 -> 1 -> 2 happens in the same frame, therefore don't
                 // trigger explosion immediately after reaching ploderDelay
         }
@@ -44,7 +62,7 @@ abstract class Ploder : Job {
     final override void onManualAssignment()
     {
         assert (lixxie.ploderTimer == 0);
-        ++lixxie.ploderTimer;
+        lixxie.ploderTimer = lixxie.ploderTimer + 1;
         lixxie.ploderIsExploder = (ac == Ac.exploder);
     }
 
