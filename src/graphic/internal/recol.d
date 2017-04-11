@@ -68,13 +68,13 @@ Cutbit lockThenRecolor(int magicnr)(
     assert (lix);
     immutable int lixXl = al_get_bitmap_width (lix);
     immutable int lixYl = al_get_bitmap_height(lix);
+    immutable colBreak  = al_get_pixel(lix, lixXl - 1, 0);
 
     void recolorTargetForStyle()
     {
         version (tharsisprofiling)
             auto zone = Zone(profiler, format("recolor-one-bmp-%d", magicnr));
         Alcol[Alcol] recolArray = generateRecolArray(st);
-        immutable colBreak = al_get_pixel(lix, lixXl - 1, 0);
 
         Y_LOOP: for (int y = 0; y < lixYl; y++) {
             static if (magicnr == magicnrSkillButtonIcons) {
@@ -117,7 +117,10 @@ Cutbit lockThenRecolor(int magicnr)(
     auto lock  = LockReadOnly(lix);
     auto lock2 = LockReadWrite(targetCb.albit); // see [1] at end of function
     auto targetBitmap = TargetBitmap(targetCb.albit);
+
     recolorTargetForStyle();
+    if (magicnr == magicnrSpritesheets && ! eyesOnSpritesheet)
+        findEyesOnSpritesheet(sourceCb, colBreak);
 
     // eidrecol invoked with magicnr != 0 expects already-locked bitmap
     static if (magicnr != magicnrSpritesheets)
@@ -127,8 +130,7 @@ Cutbit lockThenRecolor(int magicnr)(
     /* [1]: Why do we lock targetCb.albit at all?
      * I have no idea why we are doing this (2016-03). recolorTargetForStyle
      * runs extremely slowly if we don't lock targetCb.albit, even though we
-     * only write to it. Speculation: al_put_pixel is slow when not writing
-     * to VRAM bitmaps.
+     * only write to it. Speculation: al_put_pixel is slow on RAM bitmaps.
      *
      * We would have to lock targetCb.albit as read-write when going into
      * the eidrecol function. So we don't lose anything by locking it earlier.
@@ -160,6 +162,10 @@ void makeAlcol3DforStyle(in Style st)
         d = al_get_pixel(recol, 8, st + 1); // they don't belong to any style
     }
 }
+
+
+
+// ############################################################################
 
 private:
 
@@ -251,4 +257,44 @@ void logRecoloringError(
     if (x > 0)
         logf("    -> Width is %d, but we need width >= %d.",
             al_get_bitmap_width(recol), x + 1, ".");
+}
+
+void findEyesOnSpritesheet(in Cutbit spri, in Alcol colBreak)
+{
+    // We assume spri's Albit to be locked already!
+    // spri are the unrecolored sprites directly loaded from file.
+    assert (spri);
+    assert (! eyesOnSpritesheet, "don't find the eyes twice");
+
+    version (tharsisprofiling) {
+        import hardware.tharsis;
+        auto zo = Zone(profiler, "eye matrix creation");
+    }
+    assert (spri && spri.xfs > 1 && spri.yfs > 1, "need Lix sprites for eyes");
+    eyesOnSpritesheet = new typeof(eyesOnSpritesheet)(spri.xfs, spri.yfs);
+    immutable eyeCol = color.lixFileEye;
+
+    foreach (int yf; 0 .. spri.yfs)
+        FRAME_LOOP: foreach (int xf; 0 .. spri.xfs) {
+            foreach (int y; 0 .. spri.yl)
+                foreach (int x; 0 .. spri.xl) {
+                    Alcol c = spri.get_pixel(xf, yf, Point(x, y));
+                    if (c == eyeCol) {
+                        // found one eye. Maybe use average of two eyes?
+                        if (x + 2 < spri.xl && spri.get_pixel(xf, yf,
+                                               Point(x + 2, y)) == eyeCol)
+                            eyesOnSpritesheet.set(xf, yf, Point(x + 1, y));
+                        else
+                            eyesOnSpritesheet.set(xf, yf, Point(x, y));
+                        continue FRAME_LOOP;
+                    }
+                    else if (c == colBreak)
+                        continue FRAME_LOOP;
+                }
+            assert (eyesOnSpritesheet.get(xf, yf) == Point.init);
+            if (xf > 0)
+                // Sometimes, the lix covers her eyes with her hands.
+                // Use the previous frame's eye position then.
+                eyesOnSpritesheet.set(xf, yf, eyesOnSpritesheet.get(xf-1, yf));
+        }
 }

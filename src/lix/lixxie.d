@@ -51,6 +51,8 @@ private:
     };
 
 public:
+    enum int ploderDelay = 76; // explode once _ploderTimer >= ploderDelay
+
     Style style() const { return _style; }
 
     @property int ex() const { return _ex; }
@@ -366,11 +368,9 @@ override void draw() const
 {
     if (ac == Ac.nothing)
         return;
-    if (_ploderTimer > 0) {
-        import lix.skill.exploder; // DTODOREFACTOR?
-        drawFuse(this);
-    }
+    drawFuse(this);
     super.draw();
+    drawFlame(this);
 }
 
 final void drawAgainHighlit() const
@@ -381,6 +381,7 @@ final void drawAgainHighlit() const
     // and use a different sprite with the copy-pasted code.
     graphic.internal.getLixSpritesheet(Style.highlight).draw(
         super.loc, xf, yf, super.mirror, super.rotation);
+    drawFlame(this);
 }
 
 

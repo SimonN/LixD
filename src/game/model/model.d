@@ -230,7 +230,7 @@ private:
                 lixxie.setNoEncountersNoBlockerFlags();
                 if (lixxie.ploderTimer != 0) {
                     auto ow = makeGypsyWagon(tribe, lixID);
-                    Ploder.handlePloderTimer(lixxie, &ow);
+                    handlePloderTimer(lixxie, &ow);
                 }
                 if (lixxie.updateOrder == PhyuOrder.flinger) {
                     lixxie.marked = true;

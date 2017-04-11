@@ -124,8 +124,8 @@ Filename dirLevels, dirLevelsSingle, dirLevelsNetwork, dirReplays, dirData,
 Filename fileGlobalConfig, fileLog, fileTharsisProf, fileLanguageEnglish;
 
 Filename fileImageGuiNumber, fileImageAppIcon,
-    fileImageDebris, fileImageEditFlip,
-    fileImageEditHatch, fileImageEditPanel, fileImageExplosion,
+    fileImageDebris, fileImageEditFlip, fileImageEditHatch,
+    fileImageEditPanel, fileImageExplosion, fileImageFuse,
     fileImageFuseFlame, fileImageGameArrow, fileImageGameIcon,
     fileImageGameNuke, fileImageGamePanel, fileImageGamePanel2,
     fileImageGamePanelHints, fileImageGameSpawnint, fileImageGamePause,
@@ -171,6 +171,7 @@ static this()
     fileImageEditHatch = new Fn("data/images/edit_hat.I");
     fileImageEditPanel = new Fn("data/images/edit_pan.I");
     fileImageExplosion = new Fn("data/images/explode.I");
+    fileImageFuse = new Fn("data/images/fuse.I");
     fileImageFuseFlame = new Fn("data/images/fuse_fla.I");
     fileImageGameArrow = new Fn("data/images/game_arr.I");
     fileImageGameIcon = new Fn("data/images/game_ico.I");

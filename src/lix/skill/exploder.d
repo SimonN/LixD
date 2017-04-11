@@ -1,29 +1,18 @@
 module lix.skill.exploder;
 
+/* This is about the assignment of exploders and imploders, and about
+ * their final explosion.
+ *
+ * This is _not_ about handling the timer and drawing the fuse during
+ * the countdown. See module lixxie.fuse for that.
+ */
+
 import std.math; // sqrt
 
 import basics.help; // roundInt
-import basics.globals;
-import basics.rect;
 import game.mask;
 import game.terchang;
-import graphic.internal;
 import lix;
-
-void drawFuse(in Lixxie lixxie)
-{
-    assert (lixxie.ploderTimer > 0);
-    version (tharsisprofiling) {
-        import hardware.tharsis;
-        import std.string;
-        auto zo = Zone(profiler, "lix fuse=%d".format(lixxie.ploderTimer));
-    }
-    const fuse = getInternal(fileImageFuseFlame);
-    // DTODO: Examine the skillsheet for where the eye is.
-    const head = Point(lixxie.ex, lixxie.ey - 14);
-    const tip = head - Point(0, (Ploder.ploderDelay - lixxie.ploderTimer) / 4);
-    fuse.draw(tip - fuse.len/2, lixxie.ploderTimer % fuse.xfs, 0);
-}
 
 abstract class Ploder : Job {
 
@@ -32,32 +21,6 @@ abstract class Ploder : Job {
     override @property bool blockable()                 const { return false; }
     override @property bool callBecomeAfterAssignment() const { return false; }
     override PhyuOrder    updateOrder() const { return PhyuOrder.flinger; }
-
-    static void handlePloderTimer(Lixxie li, OutsideWorld* ow)
-    {
-        assert (ow);
-        assert (li.ac != Ac.imploder);
-        assert (li.ac != Ac.exploder);
-
-        if (li.ploderTimer == 0)
-            return;
-
-        if (li.healthy) {
-            // multiplayer has ploder countdown, singleplayer is instant
-            if (ow.state.tribes.length <= 1 || li.ploderTimer == ploderDelay)
-                li.becomePloder(ow);
-            else
-                li.ploderTimer = li.ploderTimer + 1;
-                // 0 -> 1 -> 2 happens in the same frame, therefore don't
-                // trigger explosion immediately after reaching ploderDelay
-        }
-        else {
-            if (li.ploderTimer > ploderDelay)
-                li.ploderTimer = 0;
-            else
-                li.ploderTimer = li.ploderTimer + li.frame + 1;
-        }
-    }
 
     final override void onManualAssignment()
     {

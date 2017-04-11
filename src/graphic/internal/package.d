@@ -35,3 +35,11 @@ const(Cutbit) getPanelInfoIcon  (Style st) { return implGetPanelInfoIcon(st); }
 const(Cutbit) getSkillButtonIcon(Style st) { return implGetSkillButton  (st); }
 
 const(Alcol3D) getAlcol3DforStyle(Style st) { return implGetAlcol3D(st); }
+
+const(typeof(graphic.internal.vars.eyesOnSpritesheet)) eyesOnSpritesheet()
+{
+    assert (graphic.internal.vars.eyesOnSpritesheet,
+        "Generate at least one Lix style first before finding eyes."
+        ~ " We require this for efficiency to lock the bitmap only once.");
+    return graphic.internal.vars.eyesOnSpritesheet;
+}

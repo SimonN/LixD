@@ -4,6 +4,7 @@ public import net.ac;
 public import net.style;
 
 public import lix.fields;
+public import lix.fuse;
 public import lix.job;
 public import lix.lixxie;
 public import lix.perform;

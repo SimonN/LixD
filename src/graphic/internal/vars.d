@@ -1,6 +1,7 @@
 module graphic.internal.vars;
 
 import basics.globals;
+import basics.matrix;
 import graphic.cutbit;
 public import graphic.color;
 public import net.style;
@@ -17,6 +18,8 @@ Cutbit[Style.max] skillButtonIcons;
 Cutbit nullCutbit; // invalid bitmap to return instead of null pointer
 
 Alcol3D[Style.max] alcol3DforStyles;
+
+Matrix!Point eyesOnSpritesheet;
 
 immutable int magicnrSpritesheets = 1;
 immutable int magicnrPanelInfoIcons = 2;
