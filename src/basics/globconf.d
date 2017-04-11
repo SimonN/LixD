@@ -12,9 +12,11 @@ import basics.globals;
 import file.io;
 import file.log;
 
+private enum defaultIpCentralServer = "lixgame.com";
+
 string userName          = "";
 string ipLastUsed        = "127.0.0.1";
-string ipCentralServer   = "lixgame.com";
+string ipCentralServer   = defaultIpCentralServer;
 int    serverPort        = 22934;
 
 void load()
@@ -35,6 +37,10 @@ void load()
         else if (i.text1 == cfgIPCentralServer) ipCentralServer  = i.text2;
         else if (i.text1 == cfgServerPort     ) serverPort       = i.nr1;
     }
+    // If you install this over C++ Lix, you can't play on the right server
+    // because we still read C++'s config file. Hardcode this transition.
+    if (ipCentralServer == "asdfasdf.ethz.ch")
+        ipCentralServer = defaultIpCentralServer;
 }
 
 void save()
