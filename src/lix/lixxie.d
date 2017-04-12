@@ -349,11 +349,6 @@ void playSound(in Sound sound)
                                  outsideWorld.lixID, sound);
 }
 
-void playSoundIfTribeLocal(in Sound sound)
-{
-    outsideWorld.effect.addSoundIfTribeLocal(outsideWorld.state.update, _style,                                         outsideWorld.lixID, sound);
-}
-
 override bool isLastFrame() const
 {
     return ! cutbit.frameExists(frame + 1, ac);

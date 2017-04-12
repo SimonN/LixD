@@ -38,12 +38,19 @@ class Batter : Job {
 
         if (batNow) {
             bool hit = false;
-            foreach (Tribe tribe; outsideWorld.state.tribes)
-                foreach (Lixxie lix; tribe.lixvec)
-                    if (flingIfCloseTo(lix, this.ex + 6*this.dir, this.ey - 4))
+            foreach (Tribe battedTribe; outsideWorld.state.tribes)
+                foreach (int battedID, Lixxie battedLix; battedTribe.lixvec)
+                    if (flingIfCloseTo(battedLix, lixxie.ex + 6 * lixxie.dir,
+                                                  lixxie.ey - 4)) {
                         hit = true;
-            if (hit) playSound            (Sound.BATTER_HIT);
-            else     playSoundIfTribeLocal(Sound.BATTER_MISS);
+                        lixxie.outsideWorld.effect.addSound(
+                            lixxie.outsideWorld.state.update, battedLix.style,
+                            battedID, Sound.BATTER_HIT);
+                    }
+            // Both the hitter and the target will play the hit sound.
+            // This hitting sound isn't played even quietly if an enemy lix
+            // hits an enemy lix, but we want the sound if we're involved.
+            lixxie.playSound(hit ? Sound.BATTER_HIT : Sound.BATTER_MISS);
         }
 
     }

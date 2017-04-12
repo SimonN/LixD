@@ -69,29 +69,25 @@ class EffectManager {
         _tree.remove(_tree.upperBound(Effect(upd, Style.max, 0)));
     }
 
-    void addSoundGeneral(in Phyu upd,
-        in Sound sound, in Loudness loudness = Loudness.loud
-    ) {
-        addSound(upd, localTribe, 0, sound, loudness);
+    void addSoundGeneral(in Phyu upd, in Sound sound)
+    {
+        addSound(upd, localTribe, 0, sound);
     }
 
-    void addSound(
-        in Phyu upd, in Style tribe, in int lix,
-        in Sound sound, in Loudness loudness = Loudness.loud
-    ) {
-        Effect e = Effect(upd, tribe, lix, sound, loudness);
+    void addSound(in Phyu upd, in Style tribe, in int lix, in Sound sound)
+    {
+        Loudness lou = tribe == localTribe ? Loudness.loud : Loudness.quiet;
+        if (tribe != localTribe && ! [Sound.NUKE, Sound.SPLAT, Sound.POP,
+                    Sound.OBLIVION, Sound.FIRE, Sound.WATER].canFind(sound))
+            // Most sounds aren't played for other teams. Only death-related
+            // sounds go through here. See lix.skill.batter for how both the
+            // batter and its target play sounds for their tribe.
+            return;
+        Effect e = Effect(upd, tribe, lix, sound, lou);
         if (e !in _tree) {
             _tree.insert(e);
-            hardware.sound.play(sound, loudness);
+            hardware.sound.play(sound, lou);
         }
-    }
-
-    void addSoundIfTribeLocal(
-        in Phyu upd, in Style tribe, in int lix,
-        in Sound sound, in Loudness loudness = Loudness.loud
-    ) {
-        if (tribe == localTribe)
-            addSound(upd, tribe, lix, sound, loudness);
     }
 
     void addArrow(in Phyu upd, in Style tribe, in int lix,

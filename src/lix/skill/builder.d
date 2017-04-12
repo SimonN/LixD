@@ -59,7 +59,7 @@ abstract class BrickCounter : Job {
         assert (bricksLeft > 0);
         --bricksLeft;
         if (bricksLeft < 3 && skillsQueued == 0)
-            playSoundIfTribeLocal(Sound.BRICK);
+            playSound(Sound.BRICK);
         onBuildingBrick();
     }
 

@@ -41,10 +41,7 @@ class Exiter : Leaver {
 
     void playSound(in Goal goal)
     {
-        if (goal.hasTribe(style))
-            lixxie.playSound(Sound.GOAL);
-        else
-            playSoundIfTribeLocal(Sound.GOAL_BAD);
+        lixxie.playSound(goal.hasTribe(style) ? Sound.GOAL : Sound.GOAL_BAD);
     }
 
     override void perform()

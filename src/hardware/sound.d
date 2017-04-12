@@ -185,7 +185,7 @@ public:
                 // The user setting allows sound volumes between 0 and 20.
                 // Setting 10 corresponds to Allegro 5's default volume of 1.0.
                 // Allegro 5 can work with higher settings than 1.0.
-                (_loud ? 0.1f : 0.025f) * soundVolume,
+                (_loud ? 0.1f : 0.02f) * soundVolume,
                 ALLEGRO_AUDIO_PAN_NONE, 1.0f, // speed factor
                 ALLEGRO_PLAYMODE.ALLEGRO_PLAYMODE_ONCE, &_playID);
         }
