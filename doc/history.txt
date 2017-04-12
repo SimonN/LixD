@@ -1,6 +1,26 @@
 Version history
 ===============
 
+0.6.33
+------
+
+2017-04-14
+
+Fix #182: Timed exploders in multiplayer have a nice burning fuse. I examine
+the spritesheet for the eye position. The fuse burns slow at the beginning,
+then faster when it's short, for visibility.
+
+Fix #193: Most opponents' sounds aren't played. Opponents' deaths and baseball
+bats still play sounds.
+
+Fix #168: Server resets all room data once a room is empty, and deallocates
+the level. Before, you could find old levels when entering a new room.
+
+NaOH's forest exit has animated candles. Physics remain identical.
+
+Singleplayer nuke buttons don't have a red background anymore. I want to
+redesign multiplayer nuke buttons, e.g., by printing overtime on them.
+
 0.6.32
 ------
 
