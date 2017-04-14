@@ -65,6 +65,8 @@ public:
     void dispose()
     {
         endGame();
+        _gameStart = MonoTime.zero;
+        _recentSync = MonoTime.zero;
         owner = owner.init;
         levelChooser = levelChooser.init;
         if (_level.ptr !is null) {

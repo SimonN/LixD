@@ -13,6 +13,7 @@ import net.structs;
 interface IHotelObserver {
     const(Profile[PlNr]) allPlayers() const @nogc;
 
+    void broadcastDisconnectionOfAndRemove(PlNr);
     void unreadyAllInRoom(Room);
 
     void sendLevelByChooser(PlNr receiv, const(ubyte[]) level, PlNr from);

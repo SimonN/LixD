@@ -71,7 +71,7 @@ public:
                 enet_packet_destroy(event.packet);
                 break;
             case ENET_EVENT_TYPE_DISCONNECT:
-                broadcastDisconnection(event.peer);
+                _hotel.playerHasDisconnected(peerToPlNr(event.peer));
                 break;
             }
         _hotel.calc();
@@ -82,6 +82,17 @@ public:
 // ######################################################### friend class Hotel
 
     const(Profile[PlNr]) allPlayers() const @nogc { return _profiles; }
+
+    void broadcastDisconnectionOfAndRemove(PlNr whoToRemove)
+    {
+        auto prof = whoToRemove in _profiles;
+        assert (prof, "can't disconnect who is not there");
+        auto discon = SomeoneDisconnectedPacket();
+        discon.packetID = PacketStoC.peerDisconnected;
+        discon.plNr = whoToRemove;
+        broadcastToOthersInRoom(discon);
+        _profiles.remove(discon.plNr);
+    }
 
     // This doesn't notify anyone, they must do it on a packet receive
     void unreadyAllInRoom(Room roomWithChange) @nogc
@@ -232,15 +243,6 @@ private:
     }
     alias broadcastToRoom = broadcastTemplate!true;
     alias broadcastToOthersInRoom = broadcastTemplate!false;
-
-    void broadcastDisconnection(ENetPeer* peer)
-    {
-        auto discon = SomeoneDisconnectedPacket();
-        discon.packetID = PacketStoC.peerDisconnected;
-        discon.plNr = peerToPlNr(peer);
-        broadcastToOthersInRoom(discon);
-        _profiles.remove(discon.plNr);
-    }
 
     RoomListPacket roomsForLobbyists()
     {

@@ -100,6 +100,20 @@ public:
             }
             else if (prof.room == to && pl != mover)
                 ob.sendPeerEnteredYourRoom(pl, mover);
+        maybeCleanRoom(from);
+    }
+
+    // The server calls this while the player is still in the profile array,
+    // but the server got a disconnection packet already. We tell the
+    // server to remove the player, it won't do by itself.
+    void playerHasDisconnected(PlNr who)
+    {
+        auto prof = who in ob.allPlayers;
+        assert (prof, "remove from hotel before removing from player list");
+        auto room = prof.room;
+        ob.broadcastDisconnectionOfAndRemove(who);
+        ob.unreadyAllInRoom(room);
+        maybeCleanRoom(room);
     }
 
     void maybeStartGame(Room room)
@@ -143,6 +157,14 @@ private:
         assert (ob);
         auto ptr = plNr in ob.allPlayers;
         return ptr && ptr.room == room;
+    }
+
+    void maybeCleanRoom(Room room) @nogc
+    {
+        foreach (ref const prof; ob.allPlayers)
+            if (prof.room == room)
+                return;
+        festivals[room].dispose();
     }
 
     void relayLevelToAll(Room room)
