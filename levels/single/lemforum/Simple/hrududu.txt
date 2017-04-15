@@ -1,32 +1,19 @@
-$BUILT 2014-06-27 01:34:27
+$BUILT 2017-04-15 20:50:28
 $AUTHOR Prob Lem
-$GERMAN 
 $ENGLISH Hrududu
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1024
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #INITIAL 30
 #REQUIRED 29
 #SPAWN_INTERVAL 40
 
-#CLIMBER 0
-#FLOATER 0
 #EXPLODER 1
 #BLOCKER 1
 #BUILDER 10
 #BASHER 3
-#MINER 0
-#DIGGER 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 
 :geoo/construction/Hatch.H: 1 252
 
@@ -147,7 +134,8 @@ $ENGLISH Hrududu
 :matt/beach/daytime/15: 664 226
 :matt/beach/daytime/15: 854 226
 :matt/earth/22: 272 300
-:matt/earth/22: 372 300
-:simon/desert/stone_h: 750 270
-:simon/desert/stone_h: 309 320
-:simon/brick/vert2: 0 308
+:matt/earth/22: 374 300
+:matt/underworld/00: 302 324
+:matt/underworld/00: 744 276
+:geoo/construction/pillar_top_shaded: -18 320
+:geoo/construction/pillar_32: -18 336

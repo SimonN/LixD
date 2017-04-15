@@ -1,34 +1,30 @@
-$BUILT 2014-06-24 17:37:27
+$BUILT 2017-04-15 20:54:15
 $AUTHOR Amanda
-$GERMAN 
 $ENGLISH Group Therapy (6p)
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1536
 #SIZE_Y 384
 #TORUS_X 1
 #TORUS_Y 1
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 30
 #INITIAL 50
 #REQUIRED 20
 #SPAWN_INTERVAL 45
-#SPAWN_INTERVAL_FAST 45
 
 #WALKER 2
-#JUMPER 2
 #CLIMBER 2
 #FLOATER 2
 #EXPLODER2 3
 #BLOCKER 3
-#BATTER 2
 #BUILDER 2
 #PLATFORMER 2
 #BASHER 2
 #MINER 2
 #DIGGER 2
+#JUMPER 2
+#BATTER 2
 
 :geoo/abstract/hatch.H: 112 48 r
 :geoo/abstract/hatch.H: 368 48
@@ -52,10 +48,11 @@ $ENGLISH Group Therapy (6p)
 :matt/beach/daytime/06: 856 216
 :matt/beach/daytime/06: 864 24
 :geoo/abstract/cvblocks/047: 0 128
-:matt/beach/daytime/04: 928 288
+:matt/beach/daytime/04: 932 276
+:matt/beach/decor/umbrella_green: 976 316
+:matt/beach/decor/grass06: 986 362
+:matt/beach/decor/grass08: 992 374
 :matt/beach/daytime/05: 896 224
-:simon/desert/leaf_s2: 929 324 frr
-:simon/desert/leaf_s3: 980 326 f
 :geoo/abstract/cvblocks/047: 0 256
 :geoo/abstract/cvblocks/047: 192 128
 :geoo/abstract/cvblocks/047: 192 256
@@ -191,7 +188,6 @@ $ENGLISH Group Therapy (6p)
 :matt/marble/05a: 736 128
 :matt/marble/05b: 736 160
 :matt/beach/decor/grass11: 928 128
-:simon/desert/palm_4: 937 344
 :matt/bricks/03b: 896 160 d
 :geoo/construction/concrete/032hd: 896 129 fd
 :geoo/construction/concrete/032hd: 832 129 rrd
@@ -208,10 +204,8 @@ $ENGLISH Group Therapy (6p)
 :matt/beach/decor/grass10: 922 370
 :matt/beach/decor/grass02: 886 374
 :matt/beach/decor/grass09: 945 376
-:matt/beach/decor/grass06: 991 377
 :matt/beach/decor/grass11: 793 1
 :matt/bricks/03b: 832 32 d
-:simon/desert/leaf_b2: 973 336
 :matt/beach/decor/grass06: 975 377
 :geoo/shadow/wall/center: 1024 16
 :geoo/shadow/wall/center: 1024 368
