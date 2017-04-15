@@ -66,8 +66,10 @@ public:
 
     void calc() { this.implEditorCalc(); }
     void work() { this.implEditorWork(); }
-    void reqDraw() { } // nothing to notify, draw() draws everything anyway
-    void draw() { this.implEditorDraw(); }
+
+    // We always draw ourselves.
+    void reqDraw() { }
+    bool draw() { this.implEditorDraw(); return noWindowsOpen; }
 
 package:
     @property bool noWindowsOpen() const

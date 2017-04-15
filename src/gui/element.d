@@ -101,13 +101,12 @@ public:
         resizeSelf();
     }
 
-    // Require a redraw of the element and all its children, because some
-    // data of the element has changed.
+    // Require a redraw because some data of the element has changed,
+    // or because things that would be drawn below need a redraw.
     void reqDraw()
     {
         drawRequired = true;
-        foreach (child; _children)
-            child.reqDraw();
+        _children.each!(c => c.reqDraw);
     }
 
     bool isMouseHere() const
@@ -133,31 +132,40 @@ public:
     // draw() and undraw() assume that you've selected the correct target
     // bitmap! In the best scenario, these are only called by gui.root.
     // Register your important gui elements as elders or focus elements there.
-    final void draw()
+    // Returns true iff this/any children recursively needed to be drawn.
+    final bool draw()
     {
         if (_shown) {
+            bool ret = false;
             if (drawRequired) {
                 drawSelf();
                 drawRequired = false;
                 drawn = true;
+                ret = true;
             }
             // In the options menu, all stuff has to be undrawn first, then
             // drawn, so that rectangles don't overwrite proper things.
             // Look into this function (final void draw) below.
-            foreach (c; _children) if (! c.shown) c.draw();
-            foreach (c; _children) if (  c.shown) c.draw();
+            foreach (c; _children) if (! c.shown) ret = c.draw() || ret;
+            foreach (c; _children) if (  c.shown) ret = c.draw() || ret;
+            return ret;
         }
         // element is hidden, i.e., not shown
         else
-            undraw();
+            return undraw();
     }
 
-    final void undraw()
+    // Returns true if this drew things.
+    final bool undraw()
     {
-        if (drawn && _undrawColor != color.transp)
+        bool ret = false;
+        if (drawn && _undrawColor != color.transp) {
             undrawSelf();
+            ret = true;
+        }
         drawn = false;
         drawRequired = _shown;
+        return ret;
     }
 
 protected:

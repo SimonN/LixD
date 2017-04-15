@@ -97,8 +97,10 @@ public:
         _chooseLevel.hotkey = keyMenuEdit;
         _showDuringGameRoom ~= _chooseLevel;
 
-        _chat = new Texttype(new Geom(60, 20, // 40 = label, 60 = 3x GUI space
-            Geom.screenXlg - _buttonExit.xlg - 40 - 60, 20, From.BOT_LEF));
+        enum chatLabelXl = 50;
+        _chat = new Texttype(new Geom(20 + chatLabelXl, 20,
+            Geom.screenXlg - _buttonExit.xlg - chatLabelXl - 60,
+            20, From.BOT_LEF));
         _chat.onEnter = ()
         {
             if (_chat.text == "")
@@ -110,8 +112,8 @@ public:
         _chat.onEsc = () { _chat.text = ""; };
         _chat.hotkey = basics.user.keyChat;
         _showWhenConnected ~= _chat;
-        _showWhenConnected ~= new Label(new Geom(20, 20, 40, 20, From.BOT_LEF),
-                                        Lang.winLobbyChat.transl);
+        _showWhenConnected ~= new Label(new Geom(20, 20, chatLabelXl,
+                                20, From.BOT_LEF), Lang.winLobbyChat.transl);
         foreach (e; chain(_showWhenDisconnected, _showWhenConnected,
                           _showDuringLobby, _showDuringGameRoom))
             addChild(e);

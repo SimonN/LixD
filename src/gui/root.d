@@ -112,6 +112,17 @@ void draw()
         chain(drawingOnlyElders, elders, focus).each!(e => e.reqDraw);
     }
     auto targetTorbit = TargetTorbit(guiosd);
-    chain(drawingOnlyElders, elders, focus).each!(e => e.draw);
+
+    // When the lobby receives new information, the lobby redraws.
+    // That draws over the focussed level browser, thus redraw the browser.
+    // e.draw() returns true if e or any children required drawing.
+    bool redrawFocus = false;
+    foreach (e; chain(drawingOnlyElders, elders))
+        redrawFocus = e.draw() || redrawFocus;
+    foreach (e; focus) {
+        if (redrawFocus)
+            e.reqDraw();
+        redrawFocus = e.draw() || redrawFocus;
+    }
     guiosd.copyToScreen();
 }

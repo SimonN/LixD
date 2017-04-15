@@ -7,7 +7,7 @@ module gui.iroot;
 
 interface IDrawable {
     void reqDraw(); // notify that it can't cut shortcuts in draw()
-    void draw();
+    bool draw(); // draws, returns true if this/any children required drawing.
 }
 
 interface IRoot : IDrawable {
