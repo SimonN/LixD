@@ -267,9 +267,9 @@ $netChatSomeoneOld           Someone with too old a Lix version tried to connect
 $netChatSomeoneNew           Someone with too new a Lix version tried to connect.
 $netChatNamedGuyOld          must update his Lix version to continue.
 $netChatVersionYours         Your version is
-$netChatVersionServer        , the server requires
+$netChatVersionServer        The server requires
 $netChatServerUpdate         The server should update to the most recent Lix version.
-$netChatPleaseDownload       Download the newest version from:
+$netChatPleaseDownload       Download the newest version:
 $netChatWeInRoom            You have entered room #
 $netChatWeInRoom2          .
 $netChatWeInLobby           You are in the lobby.

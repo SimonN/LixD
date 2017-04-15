@@ -20,6 +20,7 @@ import net.client;
 import net.iclient;
 import net.permu;
 import net.structs; // Profile
+import net.versioning;
 
 class Lobby : Window {
 private:
@@ -245,7 +246,7 @@ private:
         cfg.port = basics.globconf.serverPort;
         _netClient = new RichClient(new NetClient(cfg), _console);
         setOurEventHandlers();
-        _console.add("enet v%s. %s %s:%d...".format(
+        _console.add("Lix %s, enet %s. %s %s:%d...".format(gameVersion,
             _netClient.enetLinkedVersion, Lang.netChatStartClient.transl,
             hostname, cfg.port));
     }

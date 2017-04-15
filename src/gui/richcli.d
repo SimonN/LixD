@@ -9,12 +9,14 @@ module gui.richcli;
 
 import std.string;
 
+import basics.globals : homepageURL;
 import file.language;
 import gui.console;
 import level.level;
 import net.iclient;
 import net.phyu;
 import net.structs;
+import net.versioning;
 
 class RichClient {
 private:
@@ -31,6 +33,9 @@ public:
         _inner = aInner;
         console = aConsole;
 
+        onCannotConnect(null);
+        onVersionMisfit(null);
+        onConnectionLost(null);
         onPeerDisconnect(null);
         onChatMessage(null);
         onPeerJoinsRoom(null);
@@ -65,6 +70,22 @@ public:
                 f();
         };
     };
+
+    @property void onVersionMisfit(void delegate(Version serverVersion) f)
+    {
+        _inner.onVersionMisfit = delegate void(Version serverVersion)
+        {
+            _console.add(serverVersion > gameVersion
+                ? Lang.netChatWeTooOld.transl : Lang.netChatWeTooNew.transl);
+            _console.add("%s %s. %s %s.".format(
+                Lang.netChatVersionYours.transl, gameVersion,
+                Lang.netChatVersionServer.transl, serverVersion.compatibles));
+            _console.add("%s %s".format(
+                Lang.netChatPleaseDownload.transl, homepageURL));
+            if (f)
+                f(serverVersion);
+        };
+    }
 
     @property void onConnectionLost(void delegate() f)
     {

@@ -211,33 +211,18 @@ struct HelloAnswerPacket {
     }
 }
 
-struct SomeoneMisfitsPacket {
-    enum len = header.len + misfitProfile.len + 2 * Version.len;
-    PacketHeader header;
-    Profile misfitProfile;
-    Version misfitVersion;
-    Version serverVersion;
+unittest {
+    import net.enetglob;
+    initializeEnet();
+    scope (exit)
+        deinitializeEnet();
 
-    private enum mid = header.len + misfitProfile.len;
-
-    ENetPacket* createPacket() const nothrow
-    {
-        auto ret = .createPacket(len);
-        header.serializeTo(ret.data[0 .. header.len]);
-        misfitProfile.serializeTo(ret.data[header.len .. mid]);
-        misfitVersion.serializeTo(ret.data[mid .. mid + misfitVersion.len]);
-        serverVersion.serializeTo(ret.data[len - serverVersion.len .. len]);
-        return ret;
-    }
-
-    this(const(ENetPacket*) p)
-    {
-        enforce(p.dataLength == len);
-        header = PacketHeader(p.data[0 .. header.len]);
-        misfitProfile = Profile(p.data[header.len .. mid]);
-        misfitVersion = Version(p.data[mid .. mid + misfitVersion.len]);
-        serverVersion = Version(p.data[len - serverVersion.len .. len]);
-    }
+    HelloAnswerPacket a;
+    a.serverVersion = Version(1, 23, 456);
+    ENetPacket* p = a.createPacket;
+    auto b = HelloAnswerPacket(p);
+    assert (b.serverVersion == a.serverVersion);
+    assert (b.serverVersion.minor == 23);
 }
 
 struct ProfilePacket {

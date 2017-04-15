@@ -37,6 +37,7 @@ private:
 
     void delegate() _onConnect;
     void delegate() _onCannotConnect;
+    void delegate(Version serverVersion) _onVersionMisfit;
     void delegate() _onConnectionLost;
     void delegate(string name, string chat) _onChatMessage;
     void delegate(string name) _onPeerDisconnect;
@@ -99,6 +100,7 @@ public:
     // be tested for existence before the call.
     @property void onConnect(typeof(_onConnect) dg) { _onConnect = dg; }
     @property void onCannotConnect(typeof(_onCannotConnect) dg) { _onCannotConnect = dg; }
+    @property void onVersionMisfit(typeof(_onVersionMisfit) dg) { _onVersionMisfit = dg; }
     @property void onConnectionLost(typeof(_onConnectionLost) dg) { _onConnectionLost = dg; }
     @property void onChatMessage(typeof(_onChatMessage) dg) { _onChatMessage = dg; }
     @property void onPeerDisconnect(typeof(_onPeerDisconnect) dg) { _onPeerDisconnect = dg; }
@@ -310,10 +312,17 @@ private:
         if (got.dataLength < 1)
             return;
         else if (got.data[0] == PacketStoC.youGoodHeresPlNr) {
-            auto helloAnswered = HelloAnswerPacket(got);
-            _ourPlNr = helloAnswered.header.plNr;
+            auto answer = HelloAnswerPacket(got);
+            _ourPlNr = answer.header.plNr;
             _profilesInOurRoom[_ourPlNr] = generateOurProfile();
             _onConnect && _onConnect();
+        }
+        else if (got.data[0] == PacketStoC.youTooOld
+            ||   got.data[0] == PacketStoC.youTooNew
+        ) {
+            auto answer = HelloAnswerPacket(got);
+            _onVersionMisfit && _onVersionMisfit(answer.serverVersion);
+            disconnectAndDispose();
         }
         else if (got.data[0] == PacketStoC.peerJoinsYourRoom) {
             const(Profile*) changed = receiveProfilePacket(got);

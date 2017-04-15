@@ -4,6 +4,7 @@ import net.permu;
 import net.repdata;
 import net.structs;
 import net.style;
+import net.versioning;
 
 interface INetClient {
     void disconnectAndDispose();
@@ -39,6 +40,7 @@ interface INetClient {
     // from (this) and call that method in many of the callbacks here.
     @property void onConnect(void delegate());
     @property void onCannotConnect(void delegate());
+    @property void onVersionMisfit(void delegate(Version serverVersion));
     @property void onConnectionLost(void delegate());
     @property void onChatMessage(void delegate(string name, string chat));
     @property void onPeerDisconnect(void delegate(string name));

@@ -57,6 +57,11 @@ struct Version {
         return "%d.%d.%d".format(major, minor, patch);
     }
 
+    @property string compatibles() const
+    {
+        return "%d.%d.*".format(major, minor);
+    }
+
     int opCmp(in Version rhs) const
     {
         return major > rhs.major ? 1 : major < rhs.major ? -1
@@ -102,4 +107,8 @@ unittest
     assert (! d.compatibleWith(b));
     assert (e == Version());
     assert (! e.compatibleWith(a));
+
+    ubyte[Version.len] buf;
+    a.serializeTo(buf);
+    assert (Version(buf) == a);
 }

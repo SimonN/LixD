@@ -264,7 +264,7 @@ $netChatPlayerOutRoom      wechselt in Raum Nr.
 $netChatPlayerOutRoom2    .
 $netChatPlayerOutLobby     hat den Raum verlassen.
 $netChatVersionYours        Deine Version ist
-$netChatVersionServer       , der Server verlangt
+$netChatVersionServer       Der Server verlangt
 $netChatServerUpdate        Der Server sollte seine Lix-Version aktualisieren.
 $netChatPleaseDownload      Lade die neueste Version herunter:
 $netChatLevelChange         hat diesen Level gewaehlt:

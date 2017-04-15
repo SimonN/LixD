@@ -268,6 +268,7 @@ private:
                                ? PacketStoC.youGoodHeresPlNr
                                : hello.fromVersion < gameVersion
                                ? PacketStoC.youTooOld : PacketStoC.youTooNew;
+        answer.serverVersion = gameVersion;
         enet_peer_send(peer, 0, answer.createPacket());
 
         _profiles.remove(plNr);
@@ -277,19 +278,9 @@ private:
             _hotel.newPlayerInLobby(plNr);
         }
         else {
-            // Remove peer, so that it won't get the broadcast, but don't
-            // generate any packets. The peer already got our answer packet
-            // and will disconnect themself.
+            assert (_host);
+            enet_host_flush(_host);
             enet_peer_reset(peer);
-
-            auto misfit = SomeoneMisfitsPacket();
-            misfit.header.packetID = hello.fromVersion < gameVersion
-                ? PacketStoC.someoneTooOld : PacketStoC.someoneTooNew;
-            misfit.header.plNr = plNr;
-            misfit.misfitProfile = hello.profile;
-            misfit.misfitVersion = hello.fromVersion;
-            misfit.serverVersion = gameVersion;
-            enet_host_broadcast(_host, 0, misfit.createPacket());
         }
     }
 
