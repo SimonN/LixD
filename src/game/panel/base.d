@@ -29,6 +29,7 @@ private:
     SkillButton lastOnForRestoringAfterStateLoad;
 
     InfoBar stats;
+    SaveStateButtons _ssbs;
     TapeRecorderButtons _trbs; // contains the singleplayer nuke button
     NukeButton _nukeMulti;
     ScoreGraph _scoreGraph;
@@ -48,16 +49,30 @@ public:
             _skills[id].hotkey = basics.user.keySkill[skillSort[id]];
             addChild(_skills[id]);
         }
-        if (aView.showTapeRecorderButtons) {
+        if (aView.showTapeRecorderButtons && aView.showScoreGraph) {
+            // We don't have SaveStateButtons in this mode to preserve UI space
+            immutable ya = this.ylg * 0.6f;
+            immutable yb = this.ylg - ya;
+            _scoreGraph = new ScoreGraph(
+                    new Geom(0, 0, 4 * skillXl, yb, From.TOP_RIGHT));
             _trbs = new TapeRecorderButtons(
-                    new Geom(0, 0, 4 * skillXl, this.ylg, From.RIGHT));
-            addChild(_trbs);
+                    new Geom(0, 0, 4 * skillXl, ya, From.BOTTOM_RIGHT));
+            addChildren(_scoreGraph, _trbs);
+        }
+        else if (aView.showTapeRecorderButtons) {
+            _ssbs = new SaveStateButtons(
+                    new Geom(0, 0, 4*skillXl, ylg - skillYl, From.TOP_RIGHT));
+            _trbs = new TapeRecorderButtons(
+                    new Geom(0, 0, 4*skillXl, skillYl, From.BOTTOM_RIGHT));
+            addChildren(_ssbs, _trbs);
         }
         else {
+            // Hack: Even if neither score graph or trbs shown, still
+            // show the score graph to fill the void.
             _scoreGraph = new ScoreGraph(new Geom(0, 0, 4 * skillXl,
                                                   ylg - 20f, From.TOP_RIGHT));
             _nukeMulti = new NukeButton(new Geom(0, 0, 4 * skillXl, 20f,
-                                                 From.BOTTOM_RIGHT));
+                            From.BOTTOM_RIGHT), NukeButton.WideDesign.yes);
             addChildren(_scoreGraph, _nukeMulti);
         }
     }
@@ -74,7 +89,8 @@ public:
             b.number = tr.skills[b.skill];
         }
         nuke = tr.nuke;
-
+        if (_scoreGraph)
+            _scoreGraph.ourStyle = tr.style;
         /*
         stats.set_tribe_local(tr);
         spec_tribe .set_text(tr->get_name());
@@ -115,8 +131,8 @@ public:
         bool speedIsFast()        { return _trbs && _trbs.speedIsFast; }
         bool speedIsTurbo()       { return _trbs && _trbs.speedIsTurbo; }
         bool restart()            { return _trbs && _trbs.restart; }
-        bool saveState()          { return _trbs && _trbs.saveState; }
-        bool loadState()          { return _trbs && _trbs.loadState; }
+        bool saveState()          { return _ssbs && _ssbs.saveState; }
+        bool loadState()          { return _ssbs && _ssbs.loadState; }
         bool framestepBackOne()   { return _trbs && _trbs.framestepBackOne; }
         bool framestepBackMany()  { return _trbs && _trbs.framestepBackMany; }
         bool framestepAheadOne()  { return _trbs && _trbs.framestepAheadOne; }

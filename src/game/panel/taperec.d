@@ -11,12 +11,13 @@ import graphic.internal;
 import gui;
 import hardware.keyset;
 
+// This doesn't have save/load state
 class TapeRecorderButtons : Element {
 private:
     enum frameFast  = 4;
     enum frameTurbo = 5;
 
-    BitmapButton _restart, _pause, _saveState, _loadState;
+    BitmapButton _restart, _pause;
     NukeButton _nuke;
     TwoTasksButton _zoom, _speedBack, _speedAhead, _speedFast;
 
@@ -24,8 +25,8 @@ public:
     this(Geom g)
     {
         super(g);
-        immutable ylg1 = 20f;
-        immutable ylg2 = (ylg - ylg1)/2f;
+        immutable ylg1 = 0f;
+        immutable ylg2 = ylg/2f;
 
         void newBut(T)(ref T b, int x, int y, int frame,
             in KeySet keyLeft = 0, in KeySet keyRight = 0)
@@ -46,29 +47,15 @@ public:
         newBut(_speedFast,  2, 2, frameFast, keySpeedFast, keySpeedTurbo);
         newBut(_restart,    1, 1,  8, keyRestart);
 
-        _nuke = new NukeButton(new Geom(xlg/2f, ylg1, xlg/4f, ylg2));
+        _nuke = new NukeButton(new Geom(xlg/2f, ylg1, xlg/4f, ylg2),
+                               NukeButton.WideDesign.no);
         addChild(_nuke);
 
         _pause = new BitmapButton(
-            new Geom(0, 0, xlg/4f, ylg - 20f, From.BOTTOM_RIGHT),
+            new Geom(0, 0, xlg/4f, ylg - ylg1, From.BOTTOM_RIGHT),
             getInternal(basics.globals.fileImageGamePause));
-
-        // stateSave has xl = (2 * its normal xl) because stateLoad starts hidden.
-        // Once there is a savestate, stateSave shrinks and stateLoad pops in.
-        _saveState = new BitmapButton(
-            new Geom(0, 0, xlg, 20),
-            getInternal(basics.globals.fileImageGamePanel2));
-        _loadState = new BitmapButton(
-            new Geom(xlg/2f, 0, xlg/2f, 20),
-            getInternal(basics.globals.fileImageGamePanel2));
-        _saveState.xf = 2;
-        _loadState.xf = 3;
-        showLoadState(false);
-
-        _pause   .hotkey = keyPause;
-        _saveState.hotkey = keyStateSave;
-        _loadState.hotkey = keyStateLoad;
-        addChildren(_pause, _saveState, _loadState);
+        _pause.hotkey = keyPause;
+        addChild(_pause);
     }
 
     @property const {
@@ -79,8 +66,6 @@ public:
         bool speedIsTurbo()  { return ! paused && _speedFast.on
                                                && _speedFast.xf == frameTurbo;}
         bool restart()            { return _restart.execute; }
-        bool saveState()          { return _saveState.execute; }
-        bool loadState()          { return _loadState.execute; }
         bool zoomIn()             { return _zoom.executeLeft; }
         bool zoomOut()            { return _zoom.executeRight; }
         bool framestepBackOne()   { return _speedBack.executeLeft; }
@@ -113,7 +98,51 @@ protected:
         else if (_speedBack.executeLeft || _speedBack.executeRight
                                         || _speedAhead.executeLeft)
             setSpeedTo(0);
+    }
 
+
+private:
+    void setSpeedTo(in int a)
+    {
+        assert (a >= 0);
+        assert (a <  4);
+        _pause.on     = (a == 0);
+        _speedFast.on = (a >= 2);
+        _speedFast.xf = (a < 3 ? frameFast : frameTurbo);
+    }
+}
+
+class SaveStateButtons : Element {
+private:
+    BitmapButton _saveState, _loadState;
+
+public:
+    this(Geom g)
+    {
+        super(g);
+
+        // stateSave.xl = (2 * its normal xl) because stateLoad starts hidden.
+        // Once there is a savestate, stateSave shrinks and stateLoad pops in.
+        _saveState = new BitmapButton(
+            new Geom(0, 0, xlg, 20),
+            getInternal(basics.globals.fileImageGamePanel2));
+        _loadState = new BitmapButton(
+            new Geom(xlg/2f, 0, xlg/2f, 20),
+            getInternal(basics.globals.fileImageGamePanel2));
+        _saveState.xf = 2;
+        _loadState.xf = 3;
+        _saveState.hotkey = keyStateSave;
+        _loadState.hotkey = keyStateLoad;
+        addChildren(_saveState, _loadState);
+        showLoadState(false);
+    }
+
+    @property bool saveState() const { return _saveState.execute; }
+    @property bool loadState() const { return _loadState.execute; }
+
+protected:
+    override void calcSelf()
+    {
         if (_saveState.execute)
             showLoadState(true);
     }
@@ -126,14 +155,5 @@ private:
     {
         _saveState.resize(b ? xlg/2f : xlg, _saveState.ylg);
         _loadState.shown = b;
-    }
-
-    private void setSpeedTo(in int a)
-    {
-        assert (a >= 0);
-        assert (a <  4);
-        _pause.on     = (a == 0);
-        _speedFast.on = (a >= 2);
-        _speedFast.xf = (a < 3 ? frameFast : frameTurbo);
     }
 }

@@ -19,7 +19,7 @@ import gui;
 class ScoreGraph : Element {
 private:
     Score[] scores; // not an associative array because we want to sort it
-    Style ourStyle; // tiebreak in favor of this for sorting
+    Style _ourStyle; // tiebreak in favor of this for sorting
 
 public:
     this(Geom g) { super(g); }
@@ -27,18 +27,23 @@ public:
     void update(Score updatedScore)
     {
         auto found = scores.find!(e => e.style == updatedScore.style);
-        if (found == [])
+        if (found == []) {
             scores ~= updatedScore;
+            sortScores();
+        }
         else if (found[0] != updatedScore) {
             found[0] = updatedScore;
-            reqDraw();
+            sortScores();
         }
-        scores.sort!((a, b) =>
-              a.current > b.current ? true
-            : a.current < b.current ? false
-            : a.potential > b.potential ? true
-            : a.potential < b.potential ? false
-            : a.style == ourStyle);
+    }
+
+    @property Style ourStyle(in Style st)
+    {
+        if (_ourStyle == st)
+            return _ourStyle;
+        _ourStyle = st;
+        sortScores();
+        return _ourStyle;
     }
 
 protected:
@@ -50,6 +55,17 @@ protected:
     }
 
 private:
+    void sortScores()
+    {
+        reqDraw();
+        scores.sort!((a, b) =>
+              a.current > b.current ? true
+            : a.current < b.current ? false
+            : a.potential > b.potential ? true
+            : a.potential < b.potential ? false
+            : a.style == _ourStyle);
+    }
+
     void drawFrame()
     {
         alias th = Geom.thicks;

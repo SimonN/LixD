@@ -89,7 +89,7 @@ struct PotentialAssignee {
 
 void handleNukeButton(Game game) { with (game)
 {
-    if (! pan.nukeDoubleclicked)
+    if (! pan.nukeDoubleclicked || ! game.view.canAssignSkills)
         return;
     pan.nuke = true;
     pan.pause = false;

@@ -12,9 +12,10 @@ private:
     typeof(timerTicks) _lastExecute;
 
 public:
-    this(Geom g)
+    enum WideDesign : bool { no, yes }
+
+    this(Geom g, in WideDesign wide)
     {
-        immutable bool wide = g.ylg < 20f + 1f;
         super(g, getInternal(wide ? fileImageGameNuke : fileImageGamePanel));
         hotkey = keyNuke;
         xf = wide ? 0 : 9;

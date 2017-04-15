@@ -40,10 +40,21 @@ bool canAssignSkills(in View v)
     return v.canInterruptReplays || v == View.battle;
 }
 
-bool showReplaySign(in View v) { return v.showTapeRecorderButtons; }
-bool showTapeRecorderButtons(in View v)
+bool showReplaySign(in View v)
 {
     return v.canInterruptReplays || v == View.replayBattle;
+}
+
+bool showScoreGraph(in View v)
+{
+    return v == View.battle || v == View.observeBattle
+        || v == View.replayBattle;
+}
+
+bool showTapeRecorderButtons(in View v)
+{
+    return v == View.solveAlone || v == View.solveTogether
+        || v == View.replayBattle;
 }
 
 bool continuePhysicsDuringModalWindow(in View v)
