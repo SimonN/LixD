@@ -15,9 +15,6 @@ import game.terchang;
 import lix;
 
 abstract class Ploder : Job {
-
-    enum ploderDelay = 75;
-
     override @property bool blockable()                 const { return false; }
     override @property bool callBecomeAfterAssignment() const { return false; }
     override PhyuOrder    updateOrder() const { return PhyuOrder.flinger; }

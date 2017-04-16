@@ -30,10 +30,11 @@ void handlePloderTimer(Lixxie li, OutsideWorld* ow)
             // trigger explosion immediately after reaching ploderDelay
     }
     else {
+        // This is purely cosmetics. If we're drowning, we should still
+        // show a fuse, but never explode anymore.
+        li.ploderTimer = li.ploderTimer + li.frame + 2;
         if (li.ploderTimer > Lixxie.ploderDelay)
             li.ploderTimer = 0;
-        else
-            li.ploderTimer = li.ploderTimer + li.frame + 1;
     }
 }
 
@@ -62,10 +63,23 @@ void drawFuseOrFlame(bool fuseIfFalseFlameIfTrue)(in Lixxie lixxie)
             import std.string;
             auto zo = Zone(profiler, "fuse %d".format(lixxie.ploderTimer/10));
         }
-    // DTODO: Examine the skillsheet for where the eye is.
     const eye = eyeOnMap(lixxie);
     const tip = eye.y - 18 + roundInt(18 * (1.0 * lixxie.ploderTimer
                                                 / Lixxie.ploderDelay)^^2);
+    version (assert) {
+        immutable a = roundInt(18 * (1.0 * lixxie.ploderTimer
+                                         / Lixxie.ploderDelay)^^2);
+        import std.format;
+        string msg() {
+            return "ploder timer out of range, a=%d".format(a)
+            ~ " ploderTimer=%d".format(lixxie.ploderTimer)
+            ~ " activity=%s".format(lixxie.ac);
+        }
+        assert (a >= 0, msg);
+        assert (a <= 18, msg);
+        assert (lixxie.ploderTimer > 0, msg);
+        assert (lixxie.ploderTimer <= lixxie.ploderDelay, msg);
+    }
     Point wiggle(int y)
     {
         assert (y >= tip);

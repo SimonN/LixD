@@ -51,7 +51,7 @@ private:
     };
 
 public:
-    enum int ploderDelay = 76; // explode once _ploderTimer >= ploderDelay
+    enum int ploderDelay = 75; // explode once _ploderTimer >= ploderDelay
 
     Style style() const { return _style; }
 
