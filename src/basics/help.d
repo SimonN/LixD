@@ -83,21 +83,17 @@ unittest {
     assert (backspace("") == "");
 }
 
-
-
-pure nothrow string
-escapeStringForFilename(string unescapedRemainder)
+// Remove dchars that don't satisfy pred, return newly allocated string.
+// If the entire input satisfies pred, return old string instead of allocating.
+pure string pruneString(in string input, bool function(dchar) pure pred)
 {
-    // remove all special characters except these few
-    string forbidden = "\"*/:<>?\\|";
-    char[] pruned;
-    try while (unescapedRemainder.length > 0) {
-        dchar c = std.utf.decodeFront(unescapedRemainder);
-        if (! c.isControl && ! forbidden.canFind(c))
-            pruned.encode(c);
-    }
-    catch (Exception) { }
-    return pruned.assumeUnique;
+    std.utf.validate(input);
+    return input.all!pred ? input : input.filter!pred.to!string;
+}
+
+pure string escapeStringForFilename(in string s)
+{
+    return pruneString(s, c => ! c.isControl && ! "\"*/:<>?\\|".canFind(c));
 }
 
 unittest {

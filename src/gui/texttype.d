@@ -138,25 +138,20 @@ private:
         }
     }
 
+    // This usually allocates. Prefer to not call this every frame, but only
+    // if serious things happen and everything changes anyway.
     void pruneText()
     {
         reqDraw();
         if (allowedChars == AllowedChars.filename)
             _text = escapeStringForFilename(_text);
-        else if (allowedChars == AllowedChars.digits) {
-            bool pred(dchar c) { return c >= '0' && c <= '9'; }
-            _text = _text.filter!pred.to!string;
-        }
+        else if (allowedChars == AllowedChars.digits)
+            _text = pruneString(_text, c => c >= '0' && c <= '9');
 
-        while (textTooLong)
+        while (! _allowScrolling && _label.tooLong(_text ~ caretChar))
             _text = backspace(_text);
 
         assert (! _allowScrolling, "DTODO: implement _allowScrolling");
-    }
-
-    bool textTooLong()
-    {
-        return ! _allowScrolling && _label.tooLong(_text ~ caretChar);
     }
 
     void pruneDigits()
