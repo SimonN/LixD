@@ -166,7 +166,12 @@ public:
         }
     }
 
-    Result evaluateReplay() { return nurse.evaluateReplay(); }
+    Result evaluateReplay()
+    {
+        assert (level);
+        return nurse.evaluateReplayUntilSingleplayerHasSavedAtLeast(
+            level.required);
+    }
 
     auto loseOwnershipOfRichClient()
     {
@@ -260,7 +265,7 @@ package:
 
     void saveResult()
     {
-        if (nurse && nurse.singleplayerHasWon
+        if (nurse && nurse.singleplayerHasSavedAtLeast(level.required)
                   && playerLocal.name == basics.globconf.userName)
             setLevelResult(nurse.replay.levelFilename,
                            nurse.resultForTribe(localStyle));
@@ -313,7 +318,8 @@ private:
         map = new Map(cs.land, Geom.screenXls.to!int,
                               (Geom.screenYls - Geom.panelYls).to!int);
         this.centerCameraOnHatchAverage();
-        pan = new Panel(view);
+        assert (level);
+        pan = new Panel(view, level.required);
         gui.addElder(pan);
         pan.setLikeTribe(localTribe);
         pan.highlightFirstSkill();
@@ -332,7 +338,10 @@ private:
     void saveAutoReplay()
     {
         if (! _replayNeverCancelledThereforeDontSaveAutoReplay
-            && nurse && nurse.replay)
-            nurse.replay.saveAsAutoReplay(level, nurse.singleplayerHasWon);
+            && nurse && nurse.replay
+        ) {
+            nurse.replay.saveAsAutoReplay(level,
+                nurse.singleplayerHasSavedAtLeast(level.required));
+        }
     }
 }

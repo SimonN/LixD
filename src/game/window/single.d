@@ -43,7 +43,7 @@ public:
         assert (tribe);
         assert (level);
         enum extraYl = 95;
-        immutable bool won = tribe.lixSaved >= tribe.lixRequired;
+        immutable bool won = tribe.lixSaved >= level.required;
 
         super(myGeom(won ? 2 : 4, 300, extraYl), level.name);
         int y = 40 + extraYl;
@@ -61,12 +61,11 @@ public:
         super.captionSuperElements();
         super.setReplayAndLevel(replay, level);
 
-        drawLixSaved(tribe);
-        drawSkillsAndTimeUsed(tribe);
+        drawLixSaved(tribe, level);
     }
 
 private:
-    void drawLixSaved(in Tribe tribe)
+    void drawLixSaved(in Tribe tribe, in Level level)
     {
         addChild(new Label(new Geom(0, 40, xlg, 0, From.TOP),
             tribe.lixSavedLate == 0 ? Lang.winGameLixSaved.transl
@@ -76,32 +75,26 @@ private:
         Label requi = new Label(new Geom( 25, 65, xlg/2, 0, From.TOP));
         slash.font = saved.font = requi.font = graphic.textout.djvuL;
         saved.number = tribe.lixSaved;
-        requi.number = tribe.lixRequired;
+        requi.number = level.required;
         if (tribe.lixSaved > 0)
             saved.color = color.white;
-        if (tribe.lixSaved >= tribe.lixRequired) {
+        if (tribe.lixSaved >= level.required) {
             slash.color = color.white;
             requi.color = color.white;
         }
         addChildren(slash, saved, requi,
-            new Label(new Geom(0, 95, xlg, 0, From.TOP), flavorText(tribe)));
+            new Label(new Geom(0, 95, xlg, 0, From.TOP),
+                      flavorText(tribe, level)));
     }
 
-    static string flavorText(in Tribe tribe) { with (tribe)
+    static string flavorText(in Tribe tribe, in Level level)
+    { with (tribe) with (level)
     {
-        if (lixSaved >  lixInitial)  assert (false, "not in singleplayer");
-        if (lixSaved == lixInitial)  return Lang.winGameCommentPerfect.transl;
-        if (lixSaved >  lixRequired) return Lang.winGameCommentMore.transl;
-        if (lixSaved == lixRequired) return Lang.winGameCommentExactly.transl;
-        if (lixSaved >  0)           return Lang.winGameCommentFewer.transl;
-        else                         return Lang.winGameCommentNone.transl;
+        if (lixSaved >  initial)  assert (false, "not in singleplayer");
+        if (lixSaved == initial)  return Lang.winGameCommentPerfect.transl;
+        if (lixSaved >  required) return Lang.winGameCommentMore.transl;
+        if (lixSaved == required) return Lang.winGameCommentExactly.transl;
+        if (lixSaved >  0)        return Lang.winGameCommentFewer.transl;
+        else                      return Lang.winGameCommentNone.transl;
     }}
-
-    void drawSkillsAndTimeUsed(in Tribe tribe)
-    {
-        /*
-        winGameResultSkillsUsed,
-        winGameResultTimeUsed,
-        */
-    }
 }

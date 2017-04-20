@@ -35,12 +35,9 @@ private:
     ScoreGraph _scoreGraph;
 
 public:
-    this(in View aView)
+    this(in View aView, in int lixRequired)
     {
         super(new Geom(0, 0, Geom.screenXlg, Geom.panelYlg, From.BOTTOM));
-        stats = new InfoBar(new Geom(0, 0, this.xlg - 4 * skillXl,
-                            this.ylg - skillYl, From.TOP_LEFT));
-        addChild(stats);
         _skills.length = basics.user.skillSort.length;
         foreach (int id, ac; basics.user.skillSort) {
             _skills[id] = new SkillButton(new Geom(id * skillXl, 0,
@@ -49,7 +46,9 @@ public:
             _skills[id].hotkey = basics.user.keySkill[skillSort[id]];
             addChild(_skills[id]);
         }
+        auto barGeom = new Geom(0, 0, xlg - 4 * skillXl, ylg - skillYl);
         if (aView.showTapeRecorderButtons && aView.showScoreGraph) {
+            stats = new InfoBarMultiplayer(barGeom);
             // We don't have SaveStateButtons in this mode to preserve UI space
             immutable ya = this.ylg * 0.6f;
             immutable yb = this.ylg - ya;
@@ -57,23 +56,25 @@ public:
                     new Geom(0, 0, 4 * skillXl, yb, From.TOP_RIGHT));
             _trbs = new TapeRecorderButtons(
                     new Geom(0, 0, 4 * skillXl, ya, From.BOTTOM_RIGHT));
-            addChildren(_scoreGraph, _trbs);
+            addChildren(stats, _scoreGraph, _trbs);
         }
         else if (aView.showTapeRecorderButtons) {
+            stats = new InfoBarSingleplayer(barGeom, lixRequired);
             _ssbs = new SaveStateButtons(
                     new Geom(0, 0, 4*skillXl, ylg - skillYl, From.TOP_RIGHT));
             _trbs = new TapeRecorderButtons(
                     new Geom(0, 0, 4*skillXl, skillYl, From.BOTTOM_RIGHT));
-            addChildren(_ssbs, _trbs);
+            addChildren(stats, _ssbs, _trbs);
         }
         else {
+            stats = new InfoBarMultiplayer(barGeom);
             // Hack: Even if neither score graph or trbs shown, still
             // show the score graph to fill the void.
             _scoreGraph = new ScoreGraph(new Geom(0, 0, 4 * skillXl,
                                                   ylg - 20f, From.TOP_RIGHT));
             _nukeMulti = new NukeButton(new Geom(0, 0, 4 * skillXl, 20f,
                             From.BOTTOM_RIGHT), NukeButton.WideDesign.yes);
-            addChildren(_scoreGraph, _nukeMulti);
+            addChildren(stats, _scoreGraph, _nukeMulti);
         }
     }
 

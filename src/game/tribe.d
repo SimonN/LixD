@@ -22,8 +22,6 @@ class Tribe {
     private static struct PublicValueFields {
         Style style;
 
-        int  lixInitial;
-        int  lixRequired;
         int  lixHatch;
         int  lixSaved;
         int  lixSavedLate; // after the goals have been locked

@@ -67,10 +67,10 @@ public:
             || _model.cs.traps         .any!(a => a.isEating(upd));
     }
 
-    @property bool singleplayerHasWon() const
+    @property bool singleplayerHasSavedAtLeast(in int lixRequired) const
     {
         assert (_model);
-        return _model.cs.singleplayerHasWon();
+        return _model.cs.singleplayerHasSavedAtLeast(lixRequired);
     }
 
     final @property auto scores() const
@@ -121,9 +121,7 @@ public:
     void updateTo(in Phyu targetPhyu, in DuringTurbo duringTurbo)
     {
         // assert (game.runmode == Runmode.INTERACTIVE);
-        while ((stillPlaying || singleplayerHasWon)
-            && _model.cs.update < targetPhyu
-        ) {
+        while (stillPlaying && _model.cs.update < targetPhyu) {
             updateOnce();
             considerAutoSavestateIfCloseTo(targetPhyu, duringTurbo);
         }
@@ -147,11 +145,12 @@ public:
     }
 
     // again, only noninteractive mode should call this
-    Result evaluateReplay()
+    Result evaluateReplayUntilSingleplayerHasSavedAtLeast(in int lixRequired)
     {
         assert (_model);
         assert (_replay);
-        while (_model.cs.tribes.byValue.any!(tr => tr.stillPlaying)
+        while (! _model.cs.singleplayerHasSavedAtLeast(lixRequired)
+                && _model.cs.tribes.byValue.any!(tr => tr.stillPlaying)
                 // allow 5 minutes after the last replay data before cancelling
                 && upd < _replay.latestPhyu + 5 * (60 * 15))
             updateOnce();

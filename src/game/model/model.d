@@ -207,8 +207,7 @@ private:
     {
         version (tharsisprofiling)
             Zone zone = Zone(profiler, "PhysSeq updateLixxies()");
-        immutable bool wonBeforePhyu = _cs.singleplayerHasWon;
-                  bool anyFlingers     = false;
+        bool anyFlingers     = false;
 
         /* Refactoring idea:
          * Put this sorting into State, and do it only once at the beginning
@@ -276,9 +275,6 @@ private:
         _physicsDrawer.applyChangesToPhymap();
 
         performUnmarked(PhyuOrder.peaceful);
-
-        if (! wonBeforePhyu && _cs.singleplayerHasWon)
-            _effect.addSoundGeneral(_cs.update, Sound.YIPPIE);
     }
 
     void finalizePhyuAnimateGadgets()

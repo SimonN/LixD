@@ -104,10 +104,9 @@ public:
         return numTribes > 1;
     }
 
-    @property bool singleplayerHasWon() const @nogc
+    @property bool singleplayerHasSavedAtLeast(in int lixRequired) const @nogc
     {
-        return ! multiplayer && tribes.byValue.front.lixSaved
-                             >= tribes.byValue.front.lixRequired;
+        return ! multiplayer && tribes.byValue.front.lixSaved >= lixRequired;
     }
 
 private:

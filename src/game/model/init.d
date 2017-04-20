@@ -54,8 +54,6 @@ void preparePlayers(GameState state, in Level level,
     foreach (int i, style; tribesToMake) {
         Tribe tr = new Tribe();
         tr.style        = style;
-        tr.lixInitial   = level.initial;
-        tr.lixRequired  = level.required;
         tr.lixHatch     = level.initial;
         tr.spawnint     = level.spawnint;
         tr.skills       = level.skills;

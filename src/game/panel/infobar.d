@@ -15,29 +15,26 @@ import hardware.display; // show fps
 import hardware.sound; // warn when too few lix alive to win
 import lix;
 
-class InfoBar : Button {
+abstract class InfoBar : Button {
 private:
+    bool _showSpawnInterval;
+    int _spawnInterval;
     int _targetDescNumber;
     Rebindable!(const(Lixxie)) _targetDescLixxie;
     Rebindable!(const(Tribe))  _tribe;
-    bool _showSpawnInterval;
-    int _spawnInterval;
-
-    CutbitElement _bOut, _bHatch, _bSaved, _bTime;
-    Label         _lOut, _lHatch, _lSaved, _lTime;
-    Label _targetDesc, _fps;
-
-    // This is 0 if you have enough lix alive to win.
-    // This is >= 0 if you don't have enough lix alive.
-    // While it is <= the max number, increase it every frame.
-    // If it's > 0 and < max, flicker the exit icon.
-    int _warningSignFlicker;
+    CutbitElement _bOut, _bHatch;
+    Label         _lOut, _lHatch, _targetDesc, _fps;
 
 public:
     this(Geom g)
     {
         super(g);
-        implConstructor();
+        makeElements(_bHatch, _lHatch,   4, 56, 4);
+        makeElements(_bOut,   _lOut,    60, 60, 3);
+        _fps        = new Label(new Geom(280, 0, 70, this.ylg, From.LEFT));
+        _targetDesc = new Label(new Geom(
+            TextButton.textXFromLeft, 0, this.xlg, this.ylg, From.RIGHT));
+        addChildren(_targetDesc, _fps);
     }
 
     void describeTarget(in Lixxie l, in int nr)
@@ -55,6 +52,8 @@ public:
         _spawnInterval = si;
     }
 
+    // Eventually, subclass InfoBar for singleplayer and multiplayer?
+    // Pass lixRequired to the constructor of the one subclass.
     void showTribe(in Tribe tribe) {
         with (tribe)
     {
@@ -68,13 +67,38 @@ public:
         _bOut.yf = lixHatch + lixOut > 0 ? 0 : 1;
         if (basics.user.showFPS.value)
             _fps.text  = "FPS: %d".format(displayFps);
-        formatGoal(tribe);
-        handleWarningSignFlicker(tribe);
+        onShowTribe(tribe);
     }}
 
 protected:
+    abstract void onShowTribe(in Tribe tribe);
+
     override void calcSelf() { down = false; }
     override void drawOntoButton() { formatTargetDesc(); }
+
+    // Helper function to make children.
+    // This generates a pair of CutbitElement and Label.
+    // Reeks like that pair should become its own class.
+    auto makeElements(ref CutbitElement cbe, ref Label lab,
+        in int x, in int xl, in int xf
+    ) {
+        cbe = new CutbitElement(new Geom(x, 0, this.ylg, this.ylg,
+                        From.LEFT), getPanelInfoIcon(Style.garden));
+        cbe.xf = xf;
+        lab = new Label(new Geom(x + this.ylg, 0, xl - this.ylg, this.ylg,
+                        From.LEFT));
+        // Reason for undraw color: When the displayed values change or
+        // when we show/hide these, we reqDraw() on the entire panel
+        // anyway. Therefore, color.transp can't leave anything during
+        // undraw of cbe and lab. If we don't put color.transp here, then
+        // the panel will flicker once with the undraw color after these
+        // are hidden. Reason for the flickering: They undraw after
+        // the parent (this) is drawn, and they overlay not only a
+        // gui-medium-color area, but (this)'s 3D button effect.
+        cbe.undrawColor = color.transp;
+        lab.undrawColor = color.transp;
+        addChildren(cbe, lab);
+    }
 
 private:
     void formatTargetDesc()
@@ -107,58 +131,51 @@ private:
                                 _spawnInterval);
         _targetDesc.text = s;
     }}
+}
 
-    void implConstructor()
+// ############################################################################
+
+class InfoBarSingleplayer : InfoBar {
+private:
+    CutbitElement _bSaved;
+    Label _lSaved;
+
+    int _lixRequired;
+
+    // This is 0 if you have enough lix alive to win.
+    // This is >= 0 if you don't have enough lix alive.
+    // While it is <= the max number, increase it every frame.
+    // If it's > 0 and < max, flicker the exit icon.
+    int _warningSignFlicker;
+    bool _singleplayerWinSoundPlayed = false;
+
+public:
+    this(Geom g, in int lixRequired)
     {
-        assert (! _bOut);
-        auto makeElements(ref CutbitElement cbe, ref Label lab,
-            in int x, in int xl, in int xf
-        ) {
-            cbe = new CutbitElement(new Geom(x, 0, this.ylg, this.ylg,
-                            From.LEFT), getPanelInfoIcon(Style.garden));
-            cbe.xf = xf;
-            lab = new Label(new Geom(x + this.ylg, 0, xl - this.ylg, this.ylg,
-                            From.LEFT));
-            // Reason for undraw color: When the displayed values change or
-            // when we show/hide these, we reqDraw() on the entire panel
-            // anyway. Therefore, color.transp can't leave anything during
-            // undraw of cbe and lab. If we don't put color.transp here, then
-            // the panel will flicker once with the undraw color after these
-            // are hidden. Reason for the flickering: They undraw after
-            // the parent (this) is drawn, and they overlay not only a
-            // gui-medium-color area, but (this)'s 3D button effect.
-            cbe.undrawColor = color.transp;
-            lab.undrawColor = color.transp;
-            addChildren(cbe, lab);
-        }
-        makeElements(_bHatch, _lHatch,   4, 56, 4);
-        makeElements(_bOut,   _lOut,    60, 60, 3);
+        super(g);
+        _lixRequired = lixRequired;
         makeElements(_bSaved, _lSaved, 120, 80, 5);
-        makeElements(_bTime,  _lTime,  200, 70, 7);
-        // I want to show the time in multiplayer. Until I have that,
-        // I display the spawn interval in singleplayer.
-        _bTime.hide();
-        _fps        = new Label(new Geom(280, 0, 70, this.ylg, From.LEFT));
-        _targetDesc = new Label(new Geom(
-            TextButton.textXFromLeft, 0, this.xlg, this.ylg, From.RIGHT));
-        addChildren(_targetDesc, _fps);
     }
 
-    void formatGoal(in Tribe tribe) {
-        with (tribe)
+protected:
+    override void onShowTribe(in Tribe tribe) { with (tribe)
     {
-        if (lixSaved < lixRequired)
-            _lSaved.number = lixRequired - lixSaved;
-        else
-            _lSaved.text = "%d/%d".format(lixSaved, lixRequired);
-    }}
+        if (lixSaved < _lixRequired) {
+            // "\u2212" is unicode minus
+            _lSaved.text = "\u2212%d".format(_lixRequired - lixSaved);
+            _singleplayerWinSoundPlayed = false;
+        }
+        else {
+            _lSaved.text = "%d/%d".format(lixSaved, _lixRequired);
+            if (! _singleplayerWinSoundPlayed) {
+                _singleplayerWinSoundPlayed = true;
+                hardware.sound.playLoud(Sound.YIPPIE);
+            }
+        }
 
-    void handleWarningSignFlicker(in Tribe tribe) {
-        with (tribe)
-    {
         enum flickerFreq = 0x10; // total duration of one cycle of 2 frames
         enum flickerMax = 4 * flickerFreq + 1;
-        if (lixSaved + lixHatch + lixOut >= lixRequired)
+        if (lixSaved + lixHatch + lixOut >= _lixRequired)
             _warningSignFlicker = 0;
         else if (nuke)
             _warningSignFlicker = flickerMax;
@@ -170,6 +187,29 @@ private:
         _bSaved.xf = (_warningSignFlicker + flickerFreq - 1) % flickerFreq
             > flickerFreq/2 ? 5 : 10; // 5 = regular exit, 10 = warning sign
         _bSaved.yf = _bSaved.xf == 10 ? 0 // colorful warning sign
-            : lixSaved >= lixRequired ? 2 : 1; // green or grayed-out
+            : lixSaved >= _lixRequired ? 2 : 1; // green or grayed-out
     }}
+}
+
+class InfoBarMultiplayer : InfoBar {
+private:
+    CutbitElement _bSaved; // same as in singleplayer. Abstract this sometime
+    Label _lSaved;
+
+public:
+    this(Geom g)
+    {
+        super(g);
+        makeElements(_bSaved, _lSaved, 120, 80, 5); // same as in SP :-/
+    }
+
+protected:
+    override void onShowTribe(in Tribe tribe)
+    {
+        _bSaved.shown = _lSaved.shown = tribe.lixSaved > 0;
+        if (tribe.lixSaved > 0) {
+            _bSaved.yf = 1; // greyed out. Maybe invent something better
+            _lSaved.number = tribe.lixSaved;
+        }
+    }
 }

@@ -1,6 +1,22 @@
 Version history
 ===============
 
+0.6.35
+------
+
+Fix #183: Multiplayer panel shows only number of saved, not any requirement.
+We can still improve this later, e.g., by showing the score of the best
+opponent.
+
+Fix #180: Chat during play implemented.
+
+Fix #181: Chat message length is unlimited. The entry box scrolls along.
+
+Fix #146: Skill arrows scale only once. There are only 1x-zoomed arrows,
+they are drawn straight to the map, then scroll and zoom along with the
+terrain. Maybe GUI-scaled arrows should move as GUI components along with
+the scrolling, but that would be very hard and force frequent total redraws.
+
 0.6.34
 ------
 
