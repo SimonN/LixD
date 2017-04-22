@@ -9,6 +9,7 @@ module gui.texttype;
 import std.conv; // filter result to string
 import std.algorithm; // filter
 import std.string; // stringz
+import std.utf;
 
 import basics.alleg5;
 import basics.globals; // ticksForDoubleClick
@@ -18,25 +19,19 @@ import hardware.keyboard;
 import hardware.mouse;
 
 class Texttype : Button {
-
     enum AllowedChars { unicode, filename, digits }
     enum caretChar = '|';
 
 private:
-
     Label _label;
-
     string _text;
     string _textBackupForCancelling;
-
     bool _invisibleBG;
     bool _allowScrolling;
-
     void delegate() _onEnter;
     void delegate() _onEsc;
 
 public:
-
     this(Geom g)
     {
         super(g);
@@ -87,7 +82,6 @@ public:
     }
 
 protected:
-
     override void calcSelf()
     {
         super.calcSelf();
@@ -101,13 +95,19 @@ protected:
 
     override void drawOntoButton()
     {
-        _label.text = ! on || timerTicks % ticksForDoubleClick
-                              < ticksForDoubleClick/2
-            ? _text : _text ~ caretChar;
+        immutable hasCaret = on && timerTicks % ticksForDoubleClick
+                                    >= ticksForDoubleClick/2;
+        string forLabel = hasCaret ? _text ~ caretChar : _text;
+        // There is similar cutting in pruneText, but that cutting affects
+        // _text, not the label presentation. _text is the retrievable data.
+        while (_allowScrolling && forLabel.length > 1
+            && _label.tooLong(hasCaret ? forLabel : forLabel ~ caretChar))
+            // remove first UTF char
+            forLabel = forLabel[forLabel.stride .. $];
+        _label.text = forLabel;
     }
 
 private:
-
     void handleOnAndTyping()
     {
         if (mouseClickLeft || mouseClickRight || ALLEGRO_KEY_ENTER.keyTapped) {
@@ -138,8 +138,9 @@ private:
         }
     }
 
-    // This usually allocates. Prefer to not call this every frame, but only
-    // if serious things happen and everything changes anyway.
+    // pruneText always allocates because it measures _text ~ caretChar :-/
+    // The basics.help functions pruneString and escapeStringForFilename
+    // only allocate if there is work to do, otherwise they return input.
     void pruneText()
     {
         reqDraw();
@@ -150,8 +151,6 @@ private:
 
         while (! _allowScrolling && _label.tooLong(_text ~ caretChar))
             _text = backspace(_text);
-
-        assert (! _allowScrolling, "DTODO: implement _allowScrolling");
     }
 
     void pruneDigits()

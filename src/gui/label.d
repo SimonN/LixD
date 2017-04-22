@@ -73,7 +73,7 @@ public:
             :               s.byGrapheme.walkLength * fixedCharXl;
     }
 
-    bool tooLong(string s) const { return s.len ? textLg(s) > xlg : false; }
+    bool tooLong(string s) const { return s.len && textLg(s) > xlg; }
 
 protected:
     override void resizeSelf() { shorten_text(); }

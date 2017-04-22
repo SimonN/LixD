@@ -1,19 +1,20 @@
-module gui.console;
+module gui.console.console;
 
 /* A console is a box with text lines.
  * There's a LobbyConsole that draws a frame and has lines in medium text.
  * There's an ingame console with transparent bg and has lines in small text.
  */
 
+import std.array;
 import std.conv;
 import std.math;
 
 import basics.alleg5;
-import basics.globals;
 import basics.help;
 import graphic.color;
 import graphic.textout;
 import gui;
+import gui.console.line;
 
 abstract class Console : Element {
 private:
@@ -29,12 +30,16 @@ public:
     @property void lines(const(Line[]) aLines)
     {
         if (_lines.len) {
+            foreach (ref line; _lines)
+                rmChild(line.label);
             _lines = [];
             onLineChange();
         }
         foreach (old; aLines) {
-            Line cloned = Line(this, old.label.text, old.label.color);
+            Line cloned = Line(old.label.text, lineFont,
+                               old.label.color, this.xlg, lineYlg);
             cloned.birth = old.birth;
+            addChild(cloned.label);
             _lines ~= cloned;
         }
         purgeAndMove();
@@ -59,7 +64,10 @@ protected:
 private:
     void add(in string textToPrint, in Alcol col)
     {
-        _lines ~= Line(this, textToPrint, col);
+        foreach(ref l; LineFactory(textToPrint, lineFont, col, xlg, lineYlg)) {
+            _lines ~= l;
+            addChild(l.label);
+        }
         purgeAndMove();
         onLineChange();
         reqDraw();
@@ -77,21 +85,6 @@ private:
         }
         foreach (int i, ref line; _lines)
             moveLine(line, i);
-    }
-}
-
-private struct Line {
-    long birth; // Allegro 5 timer tick when we added this
-    Label label;
-
-    this(Console parent, in string textToPrint, in Alcol col)
-    {
-        birth = timerTicks;
-        label = new Label(new Geom(0, 0, parent.xlg, parent.lineYlg));
-        label.font = parent.lineFont;
-        label.text = textToPrint;
-        label.color = col;
-        parent.addChild(label);
     }
 }
 

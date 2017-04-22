@@ -102,6 +102,7 @@ public:
         _chat = new Texttype(new Geom(20 + chatLabelXl, 20,
             Geom.screenXlg - _buttonExit.xlg - chatLabelXl - 60,
             20, From.BOT_LEF));
+        _chat.allowScrolling = true;
         _chat.onEnter = ()
         {
             if (_chat.text == "")
