@@ -127,6 +127,7 @@ public:
             _preview.level = _netClient.level;
             _chat.text = _netClient.unsentChat;
             _netClient.unsentChat = "";
+            _chat.on = _chat.text != "";
             refreshPeerList();
         }
         showOrHideGuiBasedOnConnection();
@@ -339,9 +340,11 @@ private:
                 Lang.netChatLevelChange.transl, _netClient.level.name));
         };
 
-        _netClient.onGameStart = (Permu permu) {
+        _netClient.onGameStart = (Permu permu)
+        {
             refreshPeerList();
-            _console.add("Game starts! Permutation: " ~ permu.toString);
+            _console.add("%s%s%s".format(Lang.netGameHowToChat1.transl,
+                keyChat.nameLong, Lang.netGameHowToChat2.transl));
             _gotoGame = true;
         };
     }

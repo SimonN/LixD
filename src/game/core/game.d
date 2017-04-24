@@ -29,6 +29,7 @@ import basics.user; // Result
 import file.filename;
 
 import game.core.calc;
+import game.core.chatarea;
 import game.core.draw;
 import game.core.scrstart;
 import game.core.speed;
@@ -82,7 +83,7 @@ package:
 
     GameWindow modalWindow;
     Panel pan;
-    Console _console;
+    ChatArea _chatArea;
 
     int _profilingGadgetCount;
     bool _gotoMainMenu;
@@ -149,9 +150,9 @@ public:
             gui.rmElder(pan);
             pan = null;
         }
-        if (_console) {
-            gui.rmElder(_console);
-            _console = null;
+        if (_chatArea) {
+            gui.rmElder(_chatArea);
+            _chatArea = null;
         }
         if (modalWindow) {
             gui.rmFocus(modalWindow);
@@ -174,6 +175,8 @@ public:
         auto ret = _netClient;
         _netClient = null;
 
+        if (_chatArea)
+            _chatArea.saveUnsentMessageAndDispose();
         // Null all our event handlers. Maybe refactor to observer pattern?
         ret.onPeerSendsReplayData = null;
         ret.onMillisecondsSinceGameStart = null;
@@ -318,15 +321,12 @@ private:
 
     void initializeConsole()
     {
-        assert (! _console);
+        assert (! _chatArea);
         if (runmode != Runmode.INTERACTIVE)
             return;
-
-        _console = new TransparentConsole(new Geom(0, 0, Geom.screenXlg, 0),
-                    () { gui.requireCompleteRedraw(); });
-        if (_netClient)
-            _netClient.console = _console;
-        gui.addElder(_console);
+        _chatArea = new ChatArea(new Geom(0, 0, Geom.screenXlg, 0),
+            _netClient);
+        gui.addElder(_chatArea);
     }
 
     void saveAutoReplay()

@@ -33,7 +33,6 @@ public:
             foreach (ref line; _lines)
                 rmChild(line.label);
             _lines = [];
-            onLineChange();
         }
         foreach (old; aLines) {
             Line cloned = Line(old.label.text, lineFont,
@@ -43,6 +42,7 @@ public:
             _lines ~= cloned;
         }
         purgeAndMove();
+        onLineChange();
     }
 
 protected:
@@ -59,7 +59,7 @@ protected:
         line.label.move(Geom.thickg, whichFromTop * lineYlg);
     }
 
-    override void calcSelf() { purgeAndMove(); }
+    override void workSelf() { purgeAndMove(); }
 
 private:
     void add(in string textToPrint, in Alcol col)
@@ -120,24 +120,17 @@ protected:
 }
 
 /* A transparent console. If stuff happens, maybe others should redraw.
+ * We assume that everybody in the world must redraw! If you want fewer things
+ * to redraw, redesign this class.
+ *
  * Pass any ylg to this's geometry, doesn't matter.
  */
 class TransparentConsole : Console {
-private:
-    // This is called whenever we've moved or erased lines, and the parent
-    // or GUI elder shall redraw whatever we're on top on. That parent or
-    // GUI elder shall register their own redraw-everything for this.
-    // We might call this several times in a loop! The callback should merely
-    // set a flag in the parent/GUI elder, not do expensive drawing!
-    void delegate() _callbackOnLineChange;
-
 public:
-    this(Geom g, void delegate() f)
+    this(Geom g)
     {
         g.yl = 0f;
         super(g);
-        assert (f, "Won't handle cleanup? See comment _callbackOnLineChange.");
-        _callbackOnLineChange = f;
     }
 
 protected:
@@ -149,6 +142,9 @@ protected:
     override void onLineChange()
     {
         resize(xlg, numLines * lineYlg);
-        _callbackOnLineChange();
+        // The global redraw call (or whatever you call here) should only
+        // set a flag, not be expensive every time it's called. We might call
+        // it several times within loops here.
+        gui.requireCompleteRedraw();
     }
 }
