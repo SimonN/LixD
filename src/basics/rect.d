@@ -102,7 +102,7 @@ struct Point {
     }
 
     Point opBinary(string s)(in int scalar) const
-        if (s == "*" || s == "/")
+        if (s == "*" || s == "/" || s == "%")
     {
         Point ret;
         mixin("ret.x = this.x " ~ s ~ " scalar;");

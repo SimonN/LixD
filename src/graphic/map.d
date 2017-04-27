@@ -305,11 +305,13 @@ calcScrolling()
             return ret;
         }
         cameraX = clickScrollingOneDimension(scrollableLeft, scrollableRight,
-            scrollGrabbedX, hardware.mouse.mouseX, hardware.mouse.mouseMickeyX,
+            scrollGrabbedX, hardware.mouse.mouseX,
+            hardware.mouse.mouseMickey.x,
             _cameraX, &hardware.mouse.freezeMouseX);
 
         cameraY = clickScrollingOneDimension(scrollableUp, scrollableDown,
-            scrollGrabbedY, hardware.mouse.mouseY, hardware.mouse.mouseMickeyY,
+            scrollGrabbedY, hardware.mouse.mouseY,
+            hardware.mouse.mouseMickey.y,
             _cameraY, &hardware.mouse.freezeMouseY);
     }
     // end right-click scrolling

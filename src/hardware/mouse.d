@@ -13,11 +13,10 @@ void deinitialize();
 
 void calc();
 
-@property int   mouseMickeyX()  { return _mickeyX / mouseStandardDivisor; }
-@property int   mouseMickeyY()  { return _mickeyY / mouseStandardDivisor; }
-@property int   mouseX()        { return _mouseOwnX; }
-@property int   mouseY()        { return _mouseOwnY; }
-@property Point mouseOnScreen() { return Point(_mouseOwnX, _mouseOwnY); }
+@property int   mouseX()        { return _mouseOwn.x; }
+@property int   mouseY()        { return _mouseOwn.y; }
+@property Point mouseOnScreen() { return _mouseOwn; }
+@property Point mouseMickey()   { return _mickey / mouseStandardDivisor; }
 
 @property bool mouseClickLeft()         { return _mouseClick  [0]; }
 @property bool mouseClickRight()        { return _mouseClick  [1]; }
@@ -41,6 +40,16 @@ void trapMouse(bool b) { _trapMouse = b; }
 void freezeMouseX();
 void freezeMouseY();
 
+// There seems to be a bug in Allegro 5.0.8: Clicking out of
+// the window sends a switch-out event, correct. But alt-tabbing
+// out of the window doesn't make a display-switch-out-event on
+// Debian 6 + Gnome 2. I want to un-trap the mouse when we alt-tab
+// out of the window, and use a workaround when we lack the event.
+version (linux)
+    enum issue118workaround = true;
+else
+    enum issue118workaround = false;
+
 private:
 
     ALLEGRO_EVENT_QUEUE* _queue;
@@ -48,13 +57,16 @@ private:
     bool _trapMouse = true;
     bool _centerMouseAtNextPhyu = true;
 
-    int  _mouseOwnX; // where the cursor will appear, != al_mouse
-    int  _mouseOwnY;
-    int  _mickeyX; // Difference of _mouseOwnX since last mainLoop
-    int  _mickeyY;
-    int  _mickeyLeftoverX; // leftover movement from the previous mickeys,
-    int  _mickeyLeftoverY; // yet unspent to _mouseOwnXy, for smoothening
-    int  _wheelNotches;    // often 0, only != 0 when wheel was used
+    Point _mouseOwn; // where is the cursor on the Lix screen
+    Point _mouseFreezeRevert; // previous main loop's _mouseOwn
+    Point _mickey; // Difference of _mouseOwnX since last mainLoop
+    Point _mickeyLeftover; // leftover movement from the previous mickeys,
+                           // yet unspent to _mouseOwnXy, for smoothening
+    int _wheelNotches; // often 0, only != 0 when wheel was used
+
+    // We reset the hardware mouse back to the screen center if the hardware
+    // mouse is close to edge. This doesn't reset the Lix cursor.
+    Point _hardwareForReset;
 
     // The mouse has 3 buttons: #0 is left, #1 is right, #2 is middle.
     bool[3] _mouseClick;   // there just was a single click
@@ -65,7 +77,8 @@ private:
 
     alias _dSpeed = basics.globals.ticksForDoubleClick;
 
-    void set_mouse_accel_on_windows(bool);
+    int xl() { assert (display); return al_get_display_width (display); }
+    int yl() { assert (display); return al_get_display_height(display); }
 
 public:
 
@@ -78,9 +91,11 @@ void initialize()
     assert (_queue);
     al_register_event_source(_queue, al_get_mouse_event_source());
 
-    if (display) al_hide_mouse_cursor(display);
-    _mouseOwnX = al_get_display_width (display) / 2;
-    _mouseOwnY = al_get_display_height(display) / 2;
+    if (display) {
+        al_hide_mouse_cursor(display);
+        _mouseOwn = Point(xl / 2, yl / 2);
+        _mouseFreezeRevert = _mouseOwn;
+    }
 }
 
 void deinitialize()
@@ -94,13 +109,9 @@ void deinitialize()
 
 void calc()
 {
-    immutable int xl = al_get_display_width (display);
-    immutable int yl = al_get_display_height(display);
-
     // Setting to zero all things that are good for only one mainLoop,
     // incrementing the times on others.
-    _mickeyX = _mickeyLeftoverX;
-    _mickeyY = _mickeyLeftoverY;
+    _mickey = _mickeyLeftover;
     _wheelNotches = 0;
 
     foreach (i; 0 .. 3) {
@@ -111,10 +122,33 @@ void calc()
         if (_mouseHeldFor[i]) ++_mouseHeldFor[i];
     }
 
+    consumeAllegroMouseEvents();
+    handleTrappedMouse();
+
+    _mouseFreezeRevert = _mouseOwn; // make backup from previous calc()
+    _mouseOwn += _mickey / mouseStandardDivisor;
+    _mickeyLeftover = _mickey % mouseStandardDivisor; // we want signed %
+
+    if (_mouseOwn.x < 0) _mouseOwn.x = 0;
+    if (_mouseOwn.y < 0) _mouseOwn.y = 0;
+    if (_mouseOwn.x >= xl) _mouseOwn.x = xl - 1;
+    if (_mouseOwn.y >= yl) _mouseOwn.y = yl - 1;
+}
+// end void update()
+
+void freezeMouseX() { _mouseOwn.x = _mouseFreezeRevert.x; }
+void freezeMouseY() { _mouseOwn.y = _mouseFreezeRevert.y; }
+
+private:
+
+void consumeAllegroMouseEvents(bool discardBuggyJumps = false)
+{
     // I will adhere to my convention from C++/A4 Lix to multiply all incoming
     // mouse movements by the mouse speed, and then later divide by constant
     ALLEGRO_EVENT event;
     while (al_get_next_event(_queue, &event)) {
+        if (discardBuggyJumps)
+            continue;
         if (event.mouse.display != display)
             continue;
 
@@ -122,12 +156,12 @@ void calc()
 
         switch (event.type) {
         case ALLEGRO_EVENT_MOUSE_AXES:
-            // DTODO: Only use mouseSpeed in fullscreen, not in window mode
-            _mickeyX += event.mouse.dx * basics.user.mouseSpeed;
-            _mickeyY += event.mouse.dy * basics.user.mouseSpeed;
+            if (! isBuggyJump(&event)) {
+                _mickey += Point(event.mouse.dx, event.mouse.dy)
+                            * basics.user.mouseSpeed,
+                _hardwareForReset = Point(event.mouse.x, event.mouse.y);
+            }
             _wheelNotches -= event.mouse.dz;
-            if (_trapMouse)
-                al_set_mouse_xy(display, xl/2, yl/2);
             break;
 
         case ALLEGRO_EVENT_MOUSE_BUTTON_DOWN:
@@ -145,11 +179,20 @@ void calc()
             _mouseHeldFor[i] = 0;
             break;
 
-        // This occurs after centralizing the mouse manually. Do nothing.
+        // This occurs after centralizing the mouse manually.
         case ALLEGRO_EVENT_MOUSE_WARPED:
+            _hardwareForReset = Point(event.mouse.x, event.mouse.y);
+            static if (issue118workaround) {
+                _trapMouse = true;
+            }
             break;
 
         case ALLEGRO_EVENT_MOUSE_ENTER_DISPLAY:
+            _hardwareForReset = Point(event.mouse.x, event.mouse.y);
+            static if (! issue118workaround) {
+                if (hardware.display.displayActive)
+                    _trapMouse = true;
+            }
             // Nepster 2016-06: When entering the display, the ingame
             // cursor should jump to where we entered.
             // This would sometimes trigger when the hardware mouse is close
@@ -158,11 +201,8 @@ void calc()
             // To guard against this, we move the mouse only if hardware
             // x or y are sufficiently far away from the screen center.
             if (   abs(event.mouse.x - xl/2) > 5
-                || abs(event.mouse.y - yl/2) > 5
-            ) {
-                _mouseOwnX = event.mouse.x;
-                _mouseOwnY = event.mouse.y;
-            }
+                || abs(event.mouse.y - yl/2) > 5)
+                _mouseOwn = _hardwareForReset;
             break;
 
         case ALLEGRO_EVENT_MOUSE_LEAVE_DISPLAY:
@@ -173,35 +213,40 @@ void calc()
             break;
         }
     }
-    _mouseOwnX      += _mickeyX / mouseStandardDivisor;
-    _mouseOwnY      += _mickeyY / mouseStandardDivisor;
-    _mickeyLeftoverX = _mickeyX % mouseStandardDivisor; // we want signed %
-    _mickeyLeftoverY = _mickeyY % mouseStandardDivisor;
+}
 
-    if (_mouseOwnX < 0)   _mouseOwnX = 0;
-    if (_mouseOwnY < 0)   _mouseOwnY = 0;
-    if (_mouseOwnX >= xl) _mouseOwnX = xl - 1;
-    if (_mouseOwnY >= yl) _mouseOwnY = yl - 1;
+bool isBuggyJump(const ALLEGRO_EVENT* event)
+{
+    if (   event.type != ALLEGRO_EVENT_MOUSE_AXES
+        && event.type != ALLEGRO_EVENT_MOUSE_WARPED)
+        return false;
+    // I had these massive jumps on hardware mouse warp on Arch 2017, Al 5.2.
+    // Consider to guard only against huge jumps over almost half the screen.
+    return event.mouse.dx.abs > xl/3 || event.mouse.dy.abs > yl/3;
+}
 
-    if (_trapMouse)
+bool isCloseToEdge(in int pos, in int length)
+{
+    if (_mouseHeldFor[1] > 2 || _mouseHeldFor[2] > 2
+        || ! basics.user.fastMovementFreesMouse.value)
+        // RMB scrolling should reset rather often.
+        // Curiously, this is not responsible for trapping the mouse
+        // in the window with guarantee. That's still magic to me.
+        return pos != length/2;
+    else
+        // Make it even easier for the mouse to leave window,
+        // resetting closer to the edge => less speed to leave.
+        return pos * 16 < length || pos * 16 >= length * 15;
+}
+
+void handleTrappedMouse()
+{
+    if (_trapMouse) {
         al_hide_mouse_cursor(display);
+        if (   isCloseToEdge(_hardwareForReset.x, xl)
+            || isCloseToEdge(_hardwareForReset.y, yl))
+            al_set_mouse_xy(display, xl/2, yl/2);
+    }
     else
         al_show_mouse_cursor(display);
-}
-// end void update()
-
-void freezeMouseX()
-{
-    immutable int xl = al_get_display_width(display);
-    _mouseOwnX -= _mickeyX / mouseStandardDivisor;
-    if (_mouseOwnX < 0)   _mouseOwnX = 0;
-    if (_mouseOwnX >= xl) _mouseOwnX = xl - 1;
-}
-
-void freezeMouseY()
-{
-    immutable int yl = al_get_display_height(display);
-    _mouseOwnY -= _mickeyY / mouseStandardDivisor;
-    if (_mouseOwnY < 0)   _mouseOwnY = 0;
-    if (_mouseOwnY >= yl) _mouseOwnY = yl - 1;
 }
