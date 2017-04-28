@@ -1,8 +1,23 @@
 Version history
 ===============
 
+0.6.36
+------
+
+2017-04-28
+
+Re-enable the option to untrap mouse with fast movement. I have a kludgy fix
+against the buggy mouse jump (Arch 2016, Allegro 5.2, my old code or Allegro
+generated extra move events when I merely wanted to warp the mouse).
+* This kludge is only helpful when you always trap the mouse inside Lix.
+* If you allow the mouse to leave with fast movement, you'll still have a
+    warp when you begin right-click scrolling. Need kludge on top of kludge?
+* The kludge is only active on Linux, I've static-if'd it away elsewhere.
+
 0.6.35
 ------
+
+2017-04-25
 
 Fix #183: Multiplayer panel shows only number of saved, not any requirement.
 We can still improve this later, e.g., by showing the score of the best

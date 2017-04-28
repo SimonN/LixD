@@ -37,25 +37,24 @@ void calc();
 @property int  mouseWheelNotches()      { return _wheelNotches; }
 
 void trapMouse(bool b) { _trapMouse = b; }
-void freezeMouseX();
-void freezeMouseY();
 
 // There seems to be a bug in Allegro 5.0.8: Clicking out of
 // the window sends a switch-out event, correct. But alt-tabbing
 // out of the window doesn't make a display-switch-out-event on
 // Debian 6 + Gnome 2. I want to un-trap the mouse when we alt-tab
 // out of the window, and use a workaround when we lack the event.
-version (linux)
+version (linux) {
     enum issue118workaround = true;
-else
+    enum mouseWarpKludge = true;
+}
+else {
     enum issue118workaround = false;
+    enum mouseWarpKludge = false;
+}
 
 private:
-
     ALLEGRO_EVENT_QUEUE* _queue;
-
     bool _trapMouse = true;
-    bool _centerMouseAtNextPhyu = true;
 
     Point _mouseOwn; // where is the cursor on the Lix screen
     Point _mouseFreezeRevert; // previous main loop's _mouseOwn
@@ -63,10 +62,6 @@ private:
     Point _mickeyLeftover; // leftover movement from the previous mickeys,
                            // yet unspent to _mouseOwnXy, for smoothening
     int _wheelNotches; // often 0, only != 0 when wheel was used
-
-    // We reset the hardware mouse back to the screen center if the hardware
-    // mouse is close to edge. This doesn't reset the Lix cursor.
-    Point _hardwareForReset;
 
     // The mouse has 3 buttons: #0 is left, #1 is right, #2 is middle.
     bool[3] _mouseClick;   // there just was a single click
@@ -157,9 +152,7 @@ void consumeAllegroMouseEvents(bool discardBuggyJumps = false)
         switch (event.type) {
         case ALLEGRO_EVENT_MOUSE_AXES:
             if (! isBuggyJump(&event)) {
-                _mickey += Point(event.mouse.dx, event.mouse.dy)
-                            * basics.user.mouseSpeed,
-                _hardwareForReset = Point(event.mouse.x, event.mouse.y);
+                _mickey += Point(event.mouse.dx, event.mouse.dy) * mouseSpeed;
             }
             _wheelNotches -= event.mouse.dz;
             break;
@@ -181,14 +174,17 @@ void consumeAllegroMouseEvents(bool discardBuggyJumps = false)
 
         // This occurs after centralizing the mouse manually.
         case ALLEGRO_EVENT_MOUSE_WARPED:
-            _hardwareForReset = Point(event.mouse.x, event.mouse.y);
+            if (mouseWarpKludge && ! basics.user.fastMovementFreesMouse.value)
+                // This is a weird shotgun fix against the jumping mouse.
+                // The jumping mouse happened when you started RMB-scrolling
+                // on Arch 2016 with Allegro 5.2.
+                _mickey += Point(event.mouse.dx, event.mouse.dy) * mouseSpeed;
             static if (issue118workaround) {
                 _trapMouse = true;
             }
             break;
 
         case ALLEGRO_EVENT_MOUSE_ENTER_DISPLAY:
-            _hardwareForReset = Point(event.mouse.x, event.mouse.y);
             static if (! issue118workaround) {
                 if (hardware.display.displayActive)
                     _trapMouse = true;
@@ -201,8 +197,9 @@ void consumeAllegroMouseEvents(bool discardBuggyJumps = false)
             // To guard against this, we move the mouse only if hardware
             // x or y are sufficiently far away from the screen center.
             if (   abs(event.mouse.x - xl/2) > 5
-                || abs(event.mouse.y - yl/2) > 5)
-                _mouseOwn = _hardwareForReset;
+                || abs(event.mouse.y - yl/2) > 5) {
+                _mouseOwn = Point(event.mouse.x, event.mouse.y);
+            }
             break;
 
         case ALLEGRO_EVENT_MOUSE_LEAVE_DISPLAY:
@@ -217,21 +214,31 @@ void consumeAllegroMouseEvents(bool discardBuggyJumps = false)
 
 bool isBuggyJump(const ALLEGRO_EVENT* event)
 {
-    if (   event.type != ALLEGRO_EVENT_MOUSE_AXES
-        && event.type != ALLEGRO_EVENT_MOUSE_WARPED)
+    static if (mouseWarpKludge) {
+        if (   event.type != ALLEGRO_EVENT_MOUSE_AXES
+            && event.type != ALLEGRO_EVENT_MOUSE_WARPED)
+            return false;
+        // I had massive jumps on hardware mouse warp on Arch 2017, Al 5.2.
+        // Guard only against huge jumps over almost half the screen.
+        return event.mouse.dx.abs > xl/3 || event.mouse.dy.abs > yl/3;
+    }
+    else {
         return false;
-    // I had these massive jumps on hardware mouse warp on Arch 2017, Al 5.2.
-    // Consider to guard only against huge jumps over almost half the screen.
-    return event.mouse.dx.abs > xl/3 || event.mouse.dy.abs > yl/3;
+    }
+}
+
+bool warpAlways()
+{
+    // DTODO: This should not depend on the mouse buttons, but on whether
+    // we are RMB-scrolling with whatever button we have assigned to it.
+    // Maybe freezeMouseX/Y should set this flag.
+    return _mouseHeldFor[1] > 2 || _mouseHeldFor[2] > 2
+        || ! basics.user.fastMovementFreesMouse.value;
 }
 
 bool isCloseToEdge(in int pos, in int length)
 {
-    if (_mouseHeldFor[1] > 2 || _mouseHeldFor[2] > 2
-        || ! basics.user.fastMovementFreesMouse.value)
-        // RMB scrolling should reset rather often.
-        // Curiously, this is not responsible for trapping the mouse
-        // in the window with guarantee. That's still magic to me.
+    if (warpAlways)
         return pos != length/2;
     else
         // Make it even easier for the mouse to leave window,
@@ -243,8 +250,10 @@ void handleTrappedMouse()
 {
     if (_trapMouse) {
         al_hide_mouse_cursor(display);
-        if (   isCloseToEdge(_hardwareForReset.x, xl)
-            || isCloseToEdge(_hardwareForReset.y, yl))
+        ALLEGRO_MOUSE_STATE state;
+        al_get_mouse_state(&state);
+        if (   isCloseToEdge(al_get_mouse_state_axis(&state, 0), xl)
+            || isCloseToEdge(al_get_mouse_state_axis(&state, 1), yl))
             al_set_mouse_xy(display, xl/2, yl/2);
     }
     else
