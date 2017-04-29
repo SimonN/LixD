@@ -80,7 +80,7 @@ void saveToExistingFile(Editor editor) {
 void openSaveAsBrowser(Editor editor) {
     with (editor)
 {
-    assert (noWindowsOpen);
+    assert (mainUIisActive);
     _saveBrowser = new SaveBrowser(dirLevels);
     _saveBrowser.highlight(_loadedFrom ? _loadedFrom : singleLastLevel);
     addFocus(_saveBrowser);
@@ -92,7 +92,7 @@ void askForDataLossThenExecute(
 ) {
     with (editor)
 {
-    assert (noWindowsOpen);
+    assert (mainUIisActive);
     assert (_level !is _levelToCompareForDataLoss);
     if     (_level  == _levelToCompareForDataLoss) {
         unlessCancelledExecuteThis();

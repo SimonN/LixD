@@ -1,6 +1,20 @@
 Version history
 ===============
 
+0.6.37
+------
+
+2017-04-29
+
+Codebase builds with dmd 2.074.
+
+Fix #197: Create a new level, never save, then instruct the editor to exit.
+When the editor asks about potential data loss, choose to save. The buttons
+in the save browser didn't work, the level was lost. This is now fixed.
+
+Fix #198: When the editor inserts a tile from a browser, the new tile
+aligns to the grid.
+
 0.6.36
 ------
 

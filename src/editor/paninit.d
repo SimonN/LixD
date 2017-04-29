@@ -38,7 +38,7 @@ void makePanel(Editor editor)
         });
         onExecute(Lang.editorButtonFileExit, keyEditorExit, () {
             editor.askForDataLossThenExecute(() {
-                editor._gotoMainMenu = true;
+                editor._gotoMainMenuOnceAllWindowsAreClosed = true;
             });
         });
         onExecute(Lang.editorButtonFileSave, keyEditorSave, () {
@@ -107,7 +107,7 @@ void makePanel(Editor editor)
             enum string mkSubwin = q{
                 onExecuteText(Lang.editorButtonMenu%s, Lang.win%sTitle,
                     keyEditorMenu%s, () {
-                        if (! editor.noWindowsOpen)
+                        if (! editor.mainUIisActive)
                             return;
                         editor._dragger.stop();
                         editor._hover = null;
@@ -124,7 +124,7 @@ void makePanel(Editor editor)
         template mkBrowser(string name, string constructorArgs) {
             enum string mkBrowser = q{
                     onExecute(Lang.editorButtonAdd%s, keyEditorAdd%s, () {
-                        if (! editor.noWindowsOpen)
+                        if (! editor.mainUIisActive)
                             return;
                         editor._terrainBrowser = new TerrainBrowser(%s);
                         addFocus(editor._terrainBrowser);

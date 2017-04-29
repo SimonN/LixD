@@ -31,7 +31,7 @@ package:
     Level _levelToCompareForDataLoss;
     MutFilename _loadedFrom; // whenever this changes, notify the panel
 
-    bool _gotoMainMenu;
+    bool _gotoMainMenuOnceAllWindowsAreClosed;
     EditorPanel _panel;
     MouseDragger _dragger;
 
@@ -52,7 +52,10 @@ public:
 
     ~this() { this.implDestructor(); }
 
-    bool gotoMainMenu() const { return _gotoMainMenu; }
+    bool gotoMainMenu() const
+    {
+        return _gotoMainMenuOnceAllWindowsAreClosed && noWindows;
+    }
 
     // Let's prevent data loss from crashes inside the editor.
     // When you catch a D Error (e.g., assertion failure) in the app's main
@@ -69,13 +72,19 @@ public:
 
     // We always draw ourselves.
     void reqDraw() { }
-    bool draw() { this.implEditorDraw(); return noWindowsOpen; }
+    bool draw() { this.implEditorDraw(); return mainUIisActive; }
 
 package:
-    @property bool noWindowsOpen() const
+    // Verify this when you would like to open new windows.
+    @property bool mainUIisActive() const
     {
-        return ! _gotoMainMenu // don't open windows if we're leaving now
-            && ! _askForDataLoss && ! _terrainBrowser && ! _okCancelWindow
+        return noWindows && ! _gotoMainMenuOnceAllWindowsAreClosed;
+    }
+
+private:
+    @property bool noWindows() const
+    {
+        return ! _askForDataLoss && ! _terrainBrowser && ! _okCancelWindow
             && ! _saveBrowser;
     }
 }

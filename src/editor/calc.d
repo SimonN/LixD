@@ -23,7 +23,7 @@ void implEditorWork(Editor editor)
     editor.maybeCloseOkCancelWindow();
     editor.maybeCloseSaveBrowser();
     editor.selectGrid();
-    if (! editor.noWindowsOpen) {
+    if (! editor.mainUIisActive) {
         // This is probably a bad hack.
         // Otherwise, the hover description remains on the info bar even
         // with windows open. When the editor doesn't have focus: bar empty.
