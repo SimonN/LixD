@@ -82,7 +82,8 @@ protected:
     {
         if (_blinkNow && blinkStyle != Style.garden) {
             const(Cutbit) c = getSkillButtonIcon(blinkStyle);
-            c.draw(loc + tile.trigger - c.len/2, Ac.walker, 0);
+            c.draw(loc + tile.trigger - c.len/2,
+                Ac.walker.acToSkillIconXf, 0);
         }
     }
 }

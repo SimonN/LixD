@@ -45,7 +45,7 @@ private:
             icon.draw(Point(x + tile.triggerX + tile.triggerXl/2 - icon.xl/2
                               + (20 * offset++) - 10 * (tribes.len - 1),
                             min(y, y + yl - 60)),
-                      Ac.walker, 0);
+                      Ac.walker.acToSkillIconXf, 0);
         }
     }
 
