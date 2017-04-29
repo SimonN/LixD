@@ -96,10 +96,12 @@ public:
     @property int frame(in int i) { return _job.frame = i; }
 
     // (super == Graphic) shall use frame and ac to draw itself
-               override @property int xf() const   { return this.frame; }
-               override @property int yf() const   { return this.ac;    }
-    deprecated override @property int xf(in int i) { assert (false);    }
-    deprecated override @property int yf(in int i) { assert (false);    }
+    // DTODOREFACTOR: Inheriting from Graphic
+    // violates the Liskov subtitution principle because I don't want
+    // to offer setting yf here. Give the Lix different activities instead.
+
+    override @property int xf() const { return this.frame; }
+    override @property int yf() const { return this.ac;    }
 
     @property auto bodyEncounters() const { return _encBody; }
     @property auto footEncounters() const { return _encFoot; }
