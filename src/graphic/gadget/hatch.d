@@ -1,10 +1,5 @@
 module graphic.gadget.hatch;
 
-/* USAGE!
- *
- * Don't use animateForPhyu. Use Hatch.animate(EffectManager, int).
- */
-
 import std.algorithm; // min
 
 import basics.help;
@@ -55,6 +50,8 @@ public:
     }
 
     override Hatch clone() const { return new Hatch(this); }
+
+    override void animateForPhyu(in Phyu) { } // use Hatch.animate instead
 
     void animate(EffectManager effect, in Phyu u)
     {
