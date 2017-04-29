@@ -162,20 +162,16 @@ public:
 
 public:
 
-this(
-    const(Topology) env,
-    OutsideWorld* ow,
-    int new_ex,
-    int new_ey
-) {
+this(const(Topology) env, OutsideWorld* ow, in Point aLoc)
+{
     mixin (tmpOutsideWorld);
     _style = outsideWorld.tribe.style;
-    super(getLixSpritesheet(_style), env, Point(even(new_ex) - exOffset,
-                                                     new_ey  - eyOffset));
+    _ex = env.wrap(aLoc).x.even;
+    _ey = env.wrap(aLoc).y;
+    super(getLixSpritesheet(_style), env, Point(_ex - exOffset,
+                                                _ey - eyOffset));
     _job  = Job.factory(this, Ac.faller);
     frame = 4;
-    _ex   = new_ex.even;
-    _ey   = new_ey;
     addEncountersFromHere();
 }
 
