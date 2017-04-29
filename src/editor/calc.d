@@ -137,7 +137,7 @@ void maybeCloseTerrainBrowser(Editor editor) {
     if (! _terrainBrowser || ! _terrainBrowser.done)
         return;
     if (auto pos = _level.addTileWithCenterAt(_terrainBrowser.chosenTile,
-                                              _map.mouseOnLand)
+                    _map.mouseOnLand.roundTo(editorGridSelected))
     ) {
         _selection = [ Hover.newViaEvilDynamicCast(_level, pos) ];
         _terrainBrowser.saveDirOfChosenTileToUserCfg();
