@@ -68,7 +68,7 @@ private:
 
     void drawFrame()
     {
-        alias th = Geom.thicks;
+        alias th = gui.thicks;
         assert (xls >= 4*th);
         assert (yls >= 4*th);
         draw3DFrame(xs, ys, xls, yls, color.guiL, color.guiM, color.guiD);
@@ -88,7 +88,7 @@ private:
             return;
 
         // See argument comments in this.drawRatio for cryptic variable names
-        alias th = Geom.thicks;
+        alias th = gui.thicks;
         immutable div = scores.length.to!float;
         immutable rycs = ys + 2*th + (yls - 4*th) * (idFromTop + 0.5f) / div;
         immutable ryls = (yls - 4*th) / div;
@@ -110,7 +110,7 @@ private:
         if (ratio <= 0f)
             return;
         Alcol3D cols = getAlcol3DforStyle(style);
-        draw3DButton(xs + 2*Geom.thicks, rycs - ryls/2f,
-            (xls - 4*Geom.thicks) * ratio, ryls, cols.l, cols.m, cols.d);
+        draw3DButton(xs + 2*gui.thicks, rycs - ryls/2f,
+            (xls - 4*gui.thicks) * ratio, ryls, cols.l, cols.m, cols.d);
     }
 }

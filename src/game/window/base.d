@@ -94,7 +94,7 @@ auto addButton(ref int y, in float xl = butXl)
 Geom
 myGeom(in int numButtons, in int totalXl = butXl + 40, in int plusYl = 0)
 {
-    return new Geom(0, -Geom.panelYlg / 2, totalXl,
+    return new Geom(0, -gui.panelYlg / 2, totalXl,
         60 + (numButtons - 1) * butYsp +  numButtons * butYl + plusYl,
         From.CENTER);
 }

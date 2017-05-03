@@ -7,7 +7,6 @@ import gui;
 import graphic.color;
 import graphic.internal;
 import graphic.graphic;
-import graphic.textout; // select small font
 
 class SkillButton : Button {
 private:

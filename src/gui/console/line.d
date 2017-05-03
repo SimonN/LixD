@@ -14,7 +14,7 @@ package struct Line {
     long birth; // Allegro 5 timer tick when we added this
     Label label;
 
-    this(in string textToPrint, AlFont font, in Alcol col,
+    this(in string textToPrint, Alfont font, in Alcol col,
                                 in float xlg, in float ylg
     ) {
         birth = timerTicks;
@@ -30,7 +30,7 @@ static assert (isForwardRange!LineFactory);
 package struct LineFactory {
 private:
     string _input;
-    AlFont _font;
+    Alfont _font;
     Alcol _col;
     float _xlg, _ylg;
 
@@ -38,7 +38,7 @@ private:
     enum indentationXlg = 40f;
 
 public:
-    this(in string textToPrint, AlFont font, in Alcol col,
+    this(in string textToPrint, Alfont font, in Alcol col,
                                 in float xlg, in float ylg)
     {
         _input = textToPrint;

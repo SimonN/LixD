@@ -21,14 +21,14 @@ public:
 protected:
     override void drawSelf()
     {
-        alias th = Geom.thicks;
+        alias th = gui.thicks;
         draw3DFrame(xs - th, ys - th, xls + 2*th, yls + 2*th,
             color.guiD, color.guiM, color.guiL);
     }
 
     override void undrawSelf()
     {
-        alias th = Geom.thicks;
+        alias th = gui.thicks;
         al_draw_filled_rectangle(xs - th, ys - th,
             xs + xls + th, ys + yls + th, undrawColor);
     }

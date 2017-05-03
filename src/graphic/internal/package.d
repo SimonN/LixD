@@ -27,7 +27,7 @@ void initialize(Runmode runmode)
     }
 }
 
-void setScaleFromGui(float scale) { implSetScale(scale); }
+void initializeScale(float scale) { implSetScale(scale); }
 
 const(Cutbit) getInternal    (Filename fn) { return getInternalMutable  (fn); }
 const(Cutbit) getLixSpritesheet (Style st) { return implGetLixSprites   (st); }

@@ -10,7 +10,7 @@ import basics.help; // positiveMod
 import basics.matrix; // which frames exist?
 import graphic.color;
 import graphic.torbit;
-import graphic.textout; // write error message instead of drawing bitmap
+import gui; // strange, but we'll write error message instead of drawing bitmap
 import file.filename;
 import file.language;
 import file.log; // log bad filename when trying to load a bitmap

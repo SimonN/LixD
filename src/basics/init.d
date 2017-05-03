@@ -13,8 +13,8 @@ import game.mask;
 import game.physdraw;
 import graphic.color;
 import graphic.internal;
-import graphic.textout;
-import gui;
+import gui.context;
+import gui.root;
 import hardware.display;
 import hardware.keyboard;
 import hardware.mouse;
@@ -60,13 +60,12 @@ void initialize(in Cmdargs cmdargs)
     if (ia) hardware.sound.initialize();
 
             graphic.color.initialize();
-    if (gr) graphic.textout.initialize();
             graphic.internal.initialize(cmdargs.mode);
     if (ph) game.mask.initialize();
-    if (ia) game.physdraw.initialize();
 
+    if (ia) game.physdraw.initialize();
     if (ia) hardware.mousecur.initialize();
-    if (ia) gui.initialize();
+    if (ia) initializeGUI();
             tile.tilelib.initialize();
 }
 
@@ -77,4 +76,14 @@ void deinitialize()
     hardware.tharsis.deinitialize();
     basics.user.save();
     basics.globconf.save();
+}
+
+private void initializeGUI()
+{
+    assert (display);
+    immutable xl = al_get_display_width(display);
+    immutable yl = al_get_display_height(display);
+    gui.context.initialize(xl, yl);
+    gui.root.initialize(xl, yl);
+    graphic.internal.initializeScale(gui.stretchFactor);
 }

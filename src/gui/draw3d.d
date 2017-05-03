@@ -41,7 +41,7 @@ void draw3DButton(float xs, float ys, float xls, float yls,
 
 private int boundary3D(in float xls, in float yls)
 {
-    int ret = Geom.thicks;
+    int ret = gui.thicks;
     while (ret > 0 && (ret > xls/2f || ret > yls/2f))
         --ret;
     return ret;

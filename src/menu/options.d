@@ -47,7 +47,7 @@ private:
 
 public this()
 {
-    super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg));
+    super(new Geom(0, 0, gui.screenXlg, gui.screenYlg));
     windowTitle = Lang.optionTitle.transl;
 
     okay   = newOkay  (new Geom(-60, 20, 100, 20, From.BOTTOM));

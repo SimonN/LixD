@@ -26,7 +26,7 @@ private:
 public:
     this()
     {
-        super(new Geom(0, 0, Geom.screenXlg, Geom.panelYlg, From.BOTTOM));
+        super(new Geom(0, 0, gui.screenXlg, gui.panelYlg, From.BOTTOM));
         makeInfo();
         makeButtons();
     }
@@ -120,7 +120,7 @@ protected:
 private:
     float infoXl()
     {
-        return Geom.screenXlg * 6f/7f;
+        return gui.screenXlg * 6f/7f;
     }
 
     void makeInfo()
@@ -153,9 +153,9 @@ private:
                               - 2; // because no undo or redo yet
         immutable int texts = 4;
         immutable bitmapXl = infoXl * 2f / bitmaps;
-        immutable bitmapYl = (Geom.panelYlg - _info.ylg) / 2;
-        immutable textXl = Geom.screenXlg - infoXl();
-        immutable textYl = Geom.panelYlg / texts;
+        immutable bitmapYl = (gui.panelYlg - _info.ylg) / 2;
+        immutable textXl = gui.screenXlg - infoXl();
+        immutable textYl = gui.panelYlg / texts;
         const cutbit = fileImageEditPanel.getInternal;
 
         foreach (int i; 0 .. bitmaps) {

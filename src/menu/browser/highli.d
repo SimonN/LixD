@@ -31,7 +31,7 @@ public:
                                    // IFTI works, so cfg is to pass the type.
     )   if (is (SomeTiler : FileTiler)
     ) {
-        super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg), title);
+        super(new Geom(0, 0, gui.screenXlg, gui.screenYlg), title);
         cfg.all   = new Geom(20, 30, xlg-40, ylg-50);
         cfg.bread = new Geom(0, 0, cfg.all.xl, 20);
         cfg.files = new Geom(0, 30, pickerXl, cfg.all.yl - 30);

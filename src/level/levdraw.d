@@ -143,10 +143,14 @@ body {
 
     // Draw UI near the bottom
     {
+        import gui;
+        gui.forceUnscaledGUIDrawing = true;
+        scope (exit)
+            gui.forceUnscaledGUIDrawing = false;
+
         img.drawFilledRectangle(Rect(0, tp.yl, img.xl, extraYl), color.guiM);
         import basics.user : skillSort;
         import file.language;
-        import gui;
         enum sbXl = 40;
         auto sb = new SkillButton(new Geom(0, tp.yl, sbXl, extraYl));
         foreach (int i, Ac ac; skillSort) {
@@ -155,14 +159,10 @@ body {
             sb.number = level.skills[sb.skill];
             sb.draw();
         }
-        import graphic.textout;
         void printInfo(Lang lang, int value, int plusY)
         {
             enum labelX = skillSort.length * sbXl + 5;
-            enum fixY = 2; // In theory, 0 should be here, because the y offset
-                           // is responsibility of graphic.textout.
-                           // But graphic.textout in this runmode seems wrong.
-            auto label = new LabelTwo(new Geom(labelX, tp.yl + plusY + fixY,
+            auto label = new LabelTwo(new Geom(labelX, tp.yl + plusY,
                                       tp.xl - labelX, 20), lang.transl);
             label.value = value;
             label.draw();

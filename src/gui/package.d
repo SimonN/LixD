@@ -8,6 +8,7 @@ module gui;
 
 public import gui.button;
 public import gui.console;
+public import gui.context;
 public import gui.cutbitel;
 public import gui.draw3d;
 public import gui.geometry;

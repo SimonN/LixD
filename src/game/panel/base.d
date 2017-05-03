@@ -37,7 +37,7 @@ private:
 public:
     this(in View aView, in int lixRequired)
     {
-        super(new Geom(0, 0, Geom.screenXlg, Geom.panelYlg, From.BOTTOM));
+        super(new Geom(0, 0, gui.screenXlg, gui.panelYlg, From.BOTTOM));
         _skills.length = basics.user.skillSort.length;
         foreach (int id, ac; basics.user.skillSort) {
             _skills[id] = new SkillButton(new Geom(id * skillXl, 0,
@@ -178,7 +178,7 @@ protected:
 private:
     @property float skillYl() const { return this.geom.ylg - 20; }
     @property float skillXl() const {
-        return Geom.screenXlg / (skillSort.length + 4);
+        return gui.screenXlg / (skillSort.length + 4);
     }
 
     private void highlightIfNonzero(SkillButton skill)

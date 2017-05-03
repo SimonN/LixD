@@ -24,8 +24,8 @@ public:
         g.yl = 20f;
         super(g);
         _network = netw;
-        _label = new Label(new Geom(Geom.thickg, 0,
-                               50 - Geom.thickg, 20, From.BOTTOM_LEFT));
+        _label = new Label(new Geom(gui.thickg, 0,
+                               50 - gui.thickg, 20, From.BOTTOM_LEFT));
         _label.text = Lang.winLobbyChat.transl;
         _label.undrawColor = color.transp;
         _label.shown = false;

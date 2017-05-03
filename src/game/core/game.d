@@ -315,8 +315,8 @@ private:
         if (runmode != Runmode.INTERACTIVE)
             return;
 
-        map = new Map(cs.land, Geom.screenXls.to!int,
-                              (Geom.screenYls - Geom.panelYls).to!int);
+        map = new Map(cs.land, gui.screenXls.to!int,
+                              (gui.screenYls - gui.panelYls).to!int);
         this.centerCameraOnHatchAverage();
         assert (level);
         pan = new Panel(view, level.required);
@@ -330,7 +330,7 @@ private:
         assert (! _chatArea);
         if (runmode != Runmode.INTERACTIVE)
             return;
-        _chatArea = new ChatArea(new Geom(0, 0, Geom.screenXlg, 0),
+        _chatArea = new ChatArea(new Geom(0, 0, gui.screenXlg, 0),
             _netClient);
         gui.addElder(_chatArea);
     }

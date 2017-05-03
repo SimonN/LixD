@@ -15,7 +15,7 @@ protected:
         auto bg = getInternal(fileImageMenuBackground);
         if (bg && bg.valid)
             al_draw_scaled_bitmap(bg.albit, 0, 0, bg.xl, bg.yl,
-                0, 0, Geom.screenXls, Geom.screenYls, 0);
+                0, 0, gui.screenXls, gui.screenYls, 0);
         else
             torbit.clearToBlack();
         super.drawSelf();

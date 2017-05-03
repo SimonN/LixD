@@ -53,7 +53,7 @@ private:
 public:
     this(RichClient aRichClient // existing client or null if not connected
     ) {
-        super(new Geom(0, 0, Geom.screenXlg, Geom.screenYlg),
+        super(new Geom(0, 0, gui.screenXlg, gui.screenYlg),
             Lang.winLobbyTitle.transl);
         _buttonExit = new TextButton(new Geom(20, 20, 120, 20, From.BOT_RIG),
             Lang.commonBack.transl);
@@ -100,7 +100,7 @@ public:
 
         enum chatLabelXl = 50;
         _chat = new Texttype(new Geom(20 + chatLabelXl, 20,
-            Geom.screenXlg - _buttonExit.xlg - chatLabelXl - 60,
+            gui.screenXlg - _buttonExit.xlg - chatLabelXl - 60,
             20, From.BOT_LEF));
         _chat.allowScrolling = true;
         _chat.onEnter = ()

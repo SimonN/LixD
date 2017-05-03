@@ -30,7 +30,7 @@ void implConstructor(Editor editor) { with (editor)
     _levelToCompareForDataLoss = new Level(_loadedFrom);
 
     Map newMap() { with (_level) return new Map(topology,
-        Geom.screenXls.to!int, (Geom.screenYls - Geom.panelYls).to!int); }
+        gui.screenXls.to!int, (gui.screenYls - gui.panelYls).to!int); }
     _map        = newMap();
     _mapTerrain = newMap();
     _map.centerOnAverage(

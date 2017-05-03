@@ -15,7 +15,6 @@ import game.window.base;
 import game.replay;
 import game.tribe;
 import graphic.color;
-import graphic.textout;
 import gui;
 import hardware.keyset;
 import level.level;
@@ -73,7 +72,7 @@ private:
         Label slash = new Label(new Geom(  0, 65, xlg/2, 0, From.TOP), "/");
         Label saved = new Label(new Geom(-25, 65, xlg/2, 0, From.TOP));
         Label requi = new Label(new Geom( 25, 65, xlg/2, 0, From.TOP));
-        slash.font = saved.font = requi.font = graphic.textout.djvuL;
+        slash.font = saved.font = requi.font = djvuL;
         saved.number = tribe.lixSaved;
         requi.number = level.required;
         if (tribe.lixSaved > 0)

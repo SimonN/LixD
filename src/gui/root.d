@@ -11,7 +11,6 @@ import basics.alleg5;
 import graphic.color;
 import graphic.graphic; // mouse cursor
 import graphic.torbit;
-import hardware.display;
 import gui.iroot;
 import gui.element;
 import gui.geometry;
@@ -27,17 +26,13 @@ private:
 
 public:
 
-void
-initialize()
+void initialize(in int aScreenXl, in int aScreenYl)
 {
-    assert (display, "must create display before initializing gui");
     assert (guiosd is null);
-
     Torbit.Cfg cfg;
-    cfg.xl = al_get_display_width (display);
-    cfg.yl = al_get_display_height(display);
+    cfg.xl = aScreenXl;
+    cfg.yl = aScreenYl;
     guiosd = new Torbit(cfg);
-    Geom.setScreenXYls(guiosd.xl, guiosd.yl);
 }
 
 void

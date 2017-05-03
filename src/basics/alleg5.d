@@ -14,7 +14,7 @@ public import allegro5.allegro_ttf;
 
 alias ALLEGRO_BITMAP* Albit;
 alias ALLEGRO_COLOR   Alcol;
-alias ALLEGRO_FONT*   AlFont;
+alias const(ALLEGRO_FONT)* Alfont;
 
 void initializeInteractive()
 {

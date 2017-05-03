@@ -12,7 +12,6 @@ import std.uni;    // .byGrapheme.walkLength, find size of displayed string
 import basics.alleg5; // filled rectangle undraw
 import basics.help; // backspace when shortening a string
 import graphic.color;
-import graphic.textout;
 import gui;
 
 class Label : Element {
@@ -22,7 +21,7 @@ private:
     string _textShort; // shortened version of text, can't be returned
     bool   _shortened;  // true if textShort != text
 
-    AlFont _font; // check if this crashes if Label not destroyed!
+    Alfont _font; // check if this crashes if Label not destroyed!
     Alcol  _color;
     bool   _fixed;
 
@@ -44,13 +43,13 @@ public:
         shorten_text();
     }
 
-    @property const(AlFont) font()      const { return _font;      }
+    @property const(Alfont) font()      const { return _font;      }
     @property string        text()      const { return _text;      }
     @property Geom.From     aligned()   const { return geom.xFrom; }
     @property Alcol         color()     const { return _color;     }
     @property bool          shortened() const { return _shortened; }
 
-    @property font(AlFont f) { _font  = f; shorten_text(); return _font; }
+    @property font(Alfont f) { _font  = f; shorten_text(); return _font; }
     @property text(string s)
     {
         if (s == _text)
@@ -69,7 +68,7 @@ public:
     {
         return (! s.len)  ? 0f
             :  (! _fixed) ? al_get_text_width(font, s.toStringz)
-                            / Geom.stretchFactor
+                            / gui.stretchFactor
             :               s.byGrapheme.walkLength * fixedCharXl;
     }
 
@@ -102,7 +101,7 @@ protected:
     {
         // Some letters extend further to the left than the left border.
         // Don't only paint the Element's rectangle, paint more to the left.
-        al_draw_filled_rectangle(xs - Geom.thicks, ys,
+        al_draw_filled_rectangle(xs - gui.thicks, ys,
                                  xs + xls,         ys + yls, undrawColor);
     }
 

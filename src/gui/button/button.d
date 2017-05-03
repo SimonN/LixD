@@ -16,7 +16,6 @@ import basics.help;
 import basics.user; // hotkey display option
 
 import graphic.color;
-import graphic.textout; // drawing the hotkey
 import gui;
 import hardware.keyboard;
 import hardware.keyset;
@@ -118,11 +117,12 @@ private:
         string s = hotkeyString();
         // Minor copy-pasta from gui.Label. The hotkey label is not a Label.
         while (s.length && al_get_text_width(djvuS, s.toStringz)
-                        / Geom.stretchFactor >= this.xlg - 2 * Geom.thickg)
+                        / gui.stretchFactor >= this.xlg - 2 * gui.thickg)
             s = basics.help.backspace(s);
         if (s.length)
             drawTextRight(djvuS, s,
-                xs + xls - Geom.thicks,
-                ys + yls - Geom.thicks - djvuSYls, colorText);
+                xs + xls - gui.thicks,
+                ys + yls - gui.thicks - al_get_font_line_height(djvuS),
+                colorText);
     }
 }

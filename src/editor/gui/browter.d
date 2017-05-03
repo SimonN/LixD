@@ -22,7 +22,7 @@ public:
     {
         assert (curDir !is null);
         _curDir = curDir;
-        super(new Geom(0, 0, Geom.screenXlg, Geom.mapYlg, From.TOP),
+        super(new Geom(0, 0, gui.screenXlg, gui.mapYlg, From.TOP),
             _curDir.descShort);
 
         auto cfg  = PickerConfig!ImageTiler();

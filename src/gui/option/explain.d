@@ -18,7 +18,7 @@ public:
     {
         Label newExplainerLine(in int y)
         {
-            return new Label(new Geom(Geom.thickg, y, xlg-2*Geom.thickg, 20));
+            return new Label(new Geom(gui.thickg, y, xlg-2*gui.thickg, 20));
         }
         super(g);
         _frame = new Frame(new Geom(0, 0, xlg, ylg));

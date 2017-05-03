@@ -7,7 +7,6 @@ import std.string;
 import std.typecons;
 
 import basics.help; // roundInt
-import graphic.textout;
 import gui;
 import gui.picker.tiler;
 import level.level;
@@ -69,17 +68,17 @@ public:
         super(g);
         ResolvedTile resolved = resolveTileName(fn);
         if (resolved.tile) {
-            // Adding Geom.thickg much of padding around the cutbit element.
+            // Adding gui.thickg much of padding around the cutbit element.
             // Reason: We shall not draw on the button's 3D edge.
             // Adding + 1 to the thickness offset from the top.
             // Reason: The rounding is crap, neither +0 nor +1 is optimal right
             // now. I rather leave empty row than overwrite button thickness.
-            _cbe = new CutbitElement(new Geom(0, Geom.thickg + 1,
-                xlg - 2*Geom.thickg, ylg - 13, From.TOP), resolved.tile.cb);
+            _cbe = new CutbitElement(new Geom(0, gui.thickg + 1,
+                xlg - 2*gui.thickg, ylg - 13, From.TOP), resolved.tile.cb);
             _cbe.allowUpscaling = false;
             addChild(_cbe);
         }
-        _text = new Label(new Geom(0, 0, xlg - 2*Geom.thickg, 12, From.BOTTOM),
+        _text = new Label(new Geom(0, 0, xlg - 2*gui.thickg, 12, From.BOTTOM),
             fn.fileNoExtNoPre);
         _text.font = djvuS;
         addChild(_text);

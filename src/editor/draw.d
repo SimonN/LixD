@@ -10,7 +10,7 @@ import editor.hover;
 import file.language;
 import graphic.color;
 import graphic.cutbit;
-import graphic.textout;
+import gui.context; // draw text to screen
 import graphic.torbit;
 import hardware.display;
 import hardware.tharsis;

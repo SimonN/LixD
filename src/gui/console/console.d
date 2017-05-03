@@ -12,7 +12,6 @@ import std.math;
 import basics.alleg5;
 import basics.help;
 import graphic.color;
-import graphic.textout;
 import gui;
 import gui.console.line;
 
@@ -46,7 +45,7 @@ public:
     }
 
 protected:
-    abstract @property AlFont lineFont() const;
+    abstract @property Alfont lineFont() const;
     abstract @property float lineYlg() const;
     abstract @property long ticksToLive() const;
 
@@ -56,7 +55,7 @@ protected:
     void onLineChange() { }
     void moveLine(ref Line line, int whichFromTop)
     {
-        line.label.move(Geom.thickg, whichFromTop * lineYlg);
+        line.label.move(gui.thickg, whichFromTop * lineYlg);
     }
 
     override void workSelf() { purgeAndMove(); }
@@ -101,7 +100,7 @@ public:
     }
 
 protected:
-    override @property AlFont lineFont() const { return djvuM; }
+    override @property Alfont lineFont() const { return djvuM; }
     override @property float lineYlg() const { return 20; }
     override @property long ticksToLive() const { return 999_999_999; } // inf
 
@@ -109,7 +108,7 @@ protected:
     {
         // This y-positioning looks better: Slightly more space at the top
         // and bottom, slightly less space between lines.
-        line.label.move(Geom.thickg, maxLines / 4f
+        line.label.move(gui.thickg, maxLines / 4f
                                     + (lineYlg - 0.5f) * whichFromTop);
     }
 
@@ -134,7 +133,7 @@ public:
     }
 
 protected:
-    override @property AlFont lineFont() const { return djvuS; }
+    override @property Alfont lineFont() const { return djvuS; }
     override @property int maxLines() const { return 8; }
     override @property float lineYlg() const { return 13; }
     override @property long ticksToLive() const { return 10 * 60; }
