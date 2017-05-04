@@ -25,8 +25,8 @@ public:
         return buttonsPerPageX * buttonsPerPageY;
     }
 
-    int buttonsPerPageX() const { return 4 + 2 * roundInt(xls / 0x200); }
-    int buttonsPerPageY() const { return 3 +     roundInt(yls / 0x100); }
+    int buttonsPerPageX() const { return 6 + 2 * roundInt(xls / 0x1D0); }
+    int buttonsPerPageY() const { return 4 +     roundInt(yls / 0x160); }
 
 protected:
     override TextButton newDirButton(Filename fn)

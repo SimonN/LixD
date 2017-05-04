@@ -1,6 +1,19 @@
 Version history
 ===============
 
+0.6.38
+------
+
+2017-05-14
+
+Fixed #158: When you exported levels as images from the game and your game's
+resolution was not 640x480, the images had blank stripes instead of skillbars.
+
+Editor draws teams on hatches and goals. (Bug: When you have fewer gadgets
+of either type than teams, only the first team will be drawn.)
+
+Editor terrain browser shows more tiles with smaller buttons.
+
 0.6.37
 ------
 
