@@ -165,6 +165,25 @@ public:
         implExportImage(this, exportImageFilename(fn));
     }
 
+    int teamIDforGadget(int gadgetID) const
+    in {
+        assert (gadgetID >= 0);
+        assert (intendedNumberOfPlayers > 0);
+    }
+    body {
+        return gadgetID % intendedNumberOfPlayers;
+    }
+
+    int howManyDoesTeamGetOutOf(int tribe, int listLen) const
+    in {
+        assert (tribe >= 0 && tribe < intendedNumberOfPlayers);
+        assert (listLen >= 0);
+    }
+    body {
+        return (listLen + intendedNumberOfPlayers - 1 - tribe)
+            / intendedNumberOfPlayers;
+    }
+
     override bool
     opEquals(Object rhs_obj) const
     {
@@ -202,3 +221,19 @@ public:
     }
 }
 // end class Level
+
+unittest {
+    Level l = new Level();
+    l.intendedNumberOfPlayers = 5;
+    assert (l.howManyDoesTeamGetOutOf(0, 15) == 3);
+    assert (l.howManyDoesTeamGetOutOf(2, 15) == 3);
+    assert (l.howManyDoesTeamGetOutOf(4, 15) == 3);
+    assert (l.howManyDoesTeamGetOutOf(2, 13) == 3);
+    assert (l.howManyDoesTeamGetOutOf(4, 13) == 2);
+    assert (l.howManyDoesTeamGetOutOf(0, 11) == 3);
+    assert (l.howManyDoesTeamGetOutOf(1, 11) == 2);
+    assert (l.howManyDoesTeamGetOutOf(2, 3) == 1);
+    assert (l.howManyDoesTeamGetOutOf(4, 3) == 0);
+    assert (l.howManyDoesTeamGetOutOf(3, 0) == 0);
+    assert (l.howManyDoesTeamGetOutOf(3, 0) == 0);
+}

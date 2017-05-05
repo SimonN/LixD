@@ -63,6 +63,7 @@ void drawMainMap(Editor editor)
         editor.drawGadgets();
         editor._map.loadCameraRect(_mapTerrain);
         editor.drawGadgetAnnotations();
+        editor.drawGadgetTriggerAreas();
         editor.drawHovers(_hover, false);
         editor.drawHovers(_selection, true);
         editor.drawDraggedFrame();
@@ -74,32 +75,62 @@ void drawGadgets(Editor editor)
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Editor.drawGadgets");
     foreach (gadgetList; editor._level.gadgets)
-        foreach (g; gadgetList) {
-            assert (g.tile && g.tile.cb);
+        foreach (g; gadgetList)
             g.tile.cb.draw(g.loc);
-            editor._map.drawRectangle(g.triggerAreaOnMap, color.triggerArea);
-        }
 }
 
-void drawGadgetAnnotations(Editor editor)
+void drawGadgetTriggerAreas(Editor editor)
+{
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "Editor.annotateGadgets");
+    foreach (gadgetList; editor._level.gadgets)
+        foreach (g; gadgetList)
+            editor._map.drawRectangle(g.triggerAreaOnMap, color.triggerArea);
+}
+
+void drawGadgetAnnotations(Editor editor) {
+    with (editor._level)
 {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Editor.drawGadgetAnnotations");
-    void annotate(const(typeof(editor._level.gadgets[0])) list)
+    void annotate(const(typeof(gadgets[0])) list)
     {
-        foreach (int i, g; list) {
+        void print(const(typeof(gadgets[0][0])) g, in int plusY, in string str)
+        {
+            forceUnscaledGUIDrawing = true;
+            drawTextCentered(djvuL, str,
+                g.loc.x + g.tile.cb.xl/2, g.loc.y + plusY, color.guiText);
+            forceUnscaledGUIDrawing = false;
+        }
+
+        foreach (int i, g; list)  {
             assert (g.tile && g.tile.cb);
-            drawTextCentered(djvuS, "%d/%d".format(i+1, list.length),
-                g.loc.x + g.tile.cb.xl/2, g.loc.y, color.guiText);
+            assert (intendedNumberOfPlayers >= 1);
+            // DTODOREFACTOR:
+            // All this sounds like we need better OO for gadget types.
+            // Should gadgets know their team IDs? They do in the instantiatons
+            // after loading the level in the game, but the GadOccs do not.
+            // Who's our authority that assign gadgets <-> teams?
+            // I duplicate logic here that's also in the Game's state init.
+            enum int plusY = 15;
+            int y = -plusY;
+            immutable int team = teamIDforGadget(i);
+            immutable int weGetTotal = howManyDoesTeamGetOutOf(team, list.len);
+
+            if (intendedNumberOfPlayers > 1)
+                print(g, y += plusY, "ABCDEFGH"[team .. team + 1]);
+            if (intendedNumberOfPlayers == 1
+                || (g.tile.type == GadType.HATCH && weGetTotal > 1))
+                print(g, y += plusY, "%d/%d".format(
+                    ((i - team) / intendedNumberOfPlayers) + 1, weGetTotal));
             if (g.tile.type == GadType.HATCH)
                 // unicode: LEFTWARDS ARROW, RIGHTWARDS ARROW
-                drawTextCentered(djvuM, g.hatchRot ? "\u2190" : "\u2192",
-                    g.loc.x + g.tile.cb.xl/2, g.loc.y + 5, color.guiText);
+                print(g, y += plusY, g.hatchRot ? "\u2190" : "\u2192");
         }
     }
-    annotate(editor._level.gadgets[GadType.HATCH]);
-    annotate(editor._level.gadgets[GadType.GOAL]);
-}
+    annotate(gadgets[GadType.HATCH]);
+    annotate(gadgets[GadType.GOAL]);
+}}
 
 // Returns value in 0 .. 256
 int hoverColorVal(bool light)
