@@ -142,6 +142,10 @@ public:
     mixin(flagsProperty!(0x0100, "turnedByBlocker"));
     mixin(flagsProperty!(0x0200, "inBlockerFieldLeft"));
     mixin(flagsProperty!(0x0400, "inBlockerFieldRight"));
+    /* turnedByBlocker is set by the blocker on the target Lix, typically
+     * before the target lix updates itself -- see PhyuOrder in module net.ac.
+     * If true, turned builders e.g. generate extra steps on their own update.
+     */
 
     @property bool facingRight() const { return ! facingLeft; }
     @property int dir()          const { return facingLeft ? -1 : 1; }

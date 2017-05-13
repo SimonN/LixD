@@ -54,6 +54,16 @@ abstract class BrickCounter : Job {
         skillsQueued = 0;
     }
 
+    abstract void onPerform(); // You can call buildBrick again from this
+    final override void perform()
+    {
+        if (turnedByBlocker)
+            buildBrickForFree();
+        onPerform();
+    }
+
+    private final void buildBrickForFree() { onBuildingBrick(); }
+    protected abstract void onBuildingBrick();
     final void buildBrick()
     {
         assert (bricksLeft > 0);
@@ -62,9 +72,6 @@ abstract class BrickCounter : Job {
             playSound(Sound.BRICK);
         onBuildingBrick();
     }
-
-    // override this to draw on terrain
-    void onBuildingBrick() { }
 
     final bool maybeBecomeShrugger(Ac shruggingAc)
     {
@@ -109,7 +116,7 @@ class Builder : BrickCounter {
         fullyInsideTerrain = rhs.fullyInsideTerrain;
     }
 
-    override void perform()
+    override void onPerform()
     {
         advanceFrame();
 
@@ -117,8 +124,13 @@ class Builder : BrickCounter {
             maybeBecomeShrugger(Ac.shrugger);
         }
         else if (frame == 8) {
-            buildBrick();
+            // To not glitch up through steel, but still get killed by top of
+            // screen: first see whether we're trapped, only then make brick.
+            // If we are fully inside terrain, we'll move down later.
+            fullyInsideTerrain = solidWallHeight(0, 2) > Walker.highestStepUp;
+
             moveUp(2);
+            buildBrick();
         }
         else if (frame == 12) {
             bumpAgainstTerrain();
@@ -130,17 +142,12 @@ class Builder : BrickCounter {
 
     override void onBuildingBrick()
     {
-        // don't glitch up through steel, but still get killed by top of
-        // screen: first see whether trapped, then make brick.
-        // If we are fully inside terrain, we'll move down later.
-        fullyInsideTerrain = solidWallHeight(0, 2) > Walker.highestStepUp;
-
         TerrainAddition tc;
         tc.update = outsideWorld.state.update;
         tc.type   = TerrainAddition.Type.build;
         tc.style  = style;
         tc.x      = facingRight ? ex : ex - 10;
-        tc.y      = ey;
+        tc.y      = ey + 2;
         outsideWorld.physicsDrawer.add(tc);
     }
 
@@ -215,7 +222,7 @@ class Platformer : BrickCounter {
             return 0;
     }
 
-    override void perform()
+    override void onPerform()
     {
         enum loopBackToFrame = 10;
         bool loopCompleted = false;
