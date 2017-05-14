@@ -1,3 +1,7 @@
+2017-05:
+amanda/occult/occult_* => amanda/occult/*
+
+2015 or earlier:
 renamed:
 
 occult_wax16x32 -> occult_wax16x16
