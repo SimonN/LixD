@@ -71,7 +71,14 @@ public:
                 enet_packet_destroy(event.packet);
                 break;
             case ENET_EVENT_TYPE_DISCONNECT:
-                _hotel.playerHasDisconnected(peerToPlNr(event.peer));
+                // There are two types of disconnections:
+                // We threw him out for old version by disconnect_later(),
+                // then we don't have to do anything else now.
+                // Or he disconnected by his own will. The difference is
+                // whether he's in our player array. Remove from hotel and
+                // let the hotel decide what to do.
+                if (peerToPlNr(event.peer) in _profiles)
+                    _hotel.playerHasDisconnected(peerToPlNr(event.peer));
                 break;
             }
         _hotel.calc();
@@ -277,11 +284,8 @@ private:
             _profiles[plNr].room = Room(0);
             _hotel.newPlayerInLobby(plNr);
         }
-        else {
-            assert (_host);
-            enet_host_flush(_host);
-            enet_peer_reset(peer);
-        }
+        else
+            enet_peer_disconnect_later(peer, answer.header.packetID);
     }
 
     void receiveRoomChange(ENetPeer* peer, ENetPacket* got)
