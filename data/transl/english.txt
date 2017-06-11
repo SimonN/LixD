@@ -307,19 +307,11 @@ $optionUserName               Player name
 $optionLanguage               Language
 $optionReplayAutoSolutions    Auto-save level solutions
 $optionReplayAutoMulti        Auto-save multiplayer games
-$optionMouseSpeed             Mouse speed
-$optionScrollSpeedEdge        Scroll speed at screen edge
-$optionScrollSpeedClick       Scroll speed with that key
-$optionFastMovementFreesMouse Fast movement untraps mouse
 
 $optionUserNameDesc Your name appears in replays and in multiplayer games.|Lix saves settings to a file in ./data/user/ named after you.
 $optionLanguageDesc Language throughout Lix's user interface.
 $optionReplayAutoSolutionsDesc Saves a replay automatically when you solve a singleplayer level.
 $optionReplayAutoMultiDesc Saves a replay automatically when you have finished a multiplayer game.
-$optionMouseSpeedDesc Speed of the mouse cursor.
-$optionScrollSpeedEdgeDesc Scroll speed when the mouse cursor touches the screen edge.|
-$optionScrollSpeedClickDesc Scroll speed when you move the mouse while holding the scrolling key.|The standard scrolling key is the right mouse button ⟁, look to the left to remap.
-$optionFastMovementFreesMouseDesc The mouse leaves the Lix window when you move quickly against the sides.|If not checked, untrap the mouse by Alt+Tab.
 
 $optionScreenWindowed           Start in windowed mode
 $optionScreenWindowedRes        Windowed resolution
@@ -345,10 +337,20 @@ $optionKeyZoomOut Zoom −
 $optionKeyScroll Hold to scroll
 $optionKeyPriorityInvert Priority invert
 
+$optionMouseSpeed Mouse speed
+$optionScrollSpeedEdge Scroll speed at screen edge
+$optionScrollSpeedClick Scroll speed with scroll key
+$optionFastMovementFreesMouse Fast movement untraps mouse
+
 $optionKeyZoomInDesc Zoom into the level.
 $optionKeyZoomOutDesc Zoom out of the level.
 $optionKeyScrollDesc Hold this (standard: right mouse button ⟁) and move the mouse to scroll.|This is easier, faster, and more precise than scrolling at the screen edge.
 $optionKeyPriorityInvertDesc Hold to assign skills to the lix with the lowest priority instead of the highest.|In the editor, hold to select the bottommost tile instead of the topmost.
+
+$optionMouseSpeedDesc Speed of the mouse cursor.
+$optionScrollSpeedEdgeDesc Scroll speed when the mouse cursor touches the screen edge.|
+$optionScrollSpeedClickDesc Scroll speed when you move the mouse while holding the scrolling key.|The standard scrolling key is the right mouse button ⟁, see left to remap.
+$optionFastMovementFreesMouseDesc The mouse leaves the Lix window when you move quickly against the sides.|If not checked, untrap the mouse by Alt+Tab.
 
 $optionKeyForceLeft          Force left
 $optionKeyForceRight         Force right

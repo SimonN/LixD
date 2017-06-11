@@ -294,10 +294,6 @@ $optionUserName              Spielername
 $optionLanguage              Sprache/Language
 $optionReplayAutoSolutions   Level-Lösungen auto-speichern
 $optionReplayAutoMulti       Im Mehrspieler auto-speichern
-$optionMouseSpeed            Mausgeschwindigkeit
-$optionScrollSpeedEdge       Scroll-Geschw. am Bildrand
-$optionScrollSpeedClick      Scroll-Geschw. mit dieser Taste
-$optionFastMovementFreesMouse Schnelle Beweg. befreit Maus
 $optionAvoidBuilderQueuing   Builder eher an Nicht-Builder
 $optionAvoidBatterToExploder Batter eher an Nicht-Exploder
 $optionPausedAssign           Fähigkeitszuweisung bei Pause:
@@ -318,8 +314,23 @@ $optionSoundVolume              Klanglautstärke
 
 $optionKeyZoomIn             Zoom +
 $optionKeyZoomOut            Zoom −
-$optionKeyScroll             Scrollen
+$optionKeyScroll             Halten zum Scrollen
 $optionKeyPriorityInvert     Priorität invertieren
+
+$optionMouseSpeed            Mausgeschwindigkeit
+$optionScrollSpeedEdge       Scroll-Geschw. am Bildrand
+$optionScrollSpeedClick      Scroll-Geschw. mit Scrolltaste
+$optionFastMovementFreesMouse Schnelle Beweg. befreit Maus
+
+$optionKeyZoomInDesc Level größer darstellen, dafür weniger auf einmal sehen.
+$optionKeyZoomOutDesc Level kleiner darstellen, dafür mehr auf einmal sehen.
+$optionKeyScrollDesc Halte dies (Standard: rechte Maustaste ⟁) und bewege die Maus zum Scrollen.|Das ist einfacher, schneller und präziser als Scrollen am Bildschirmrand.
+$optionKeyPriorityInvertDesc Halte dies, um Fähigkeiten der Lix mit der niedrigsten Priorität zuzuweisen.|Halte dies im Editor, um das hinterste Element anstatt des vordersten zu wählen.
+
+$optionMouseSpeedDesc Geschwindigkeit des Mauscursors im Spiel, im Editor und im Menü.
+$optionScrollSpeedEdgeDesc Scroll-Geschwindigkeit, wenn die Maus am Rand des Bildschirms ist.
+$optionScrollSpeedClickDesc Scroll-Geschwindigkeit bei Mausbewegung, während die Scrolltaste gehalten wird.|Die Standard-Scrolltaste ist die rechte Maustaste ⟁, änderbar links.
+$optionFastMovementFreesMouseDesc The mouse leaves the Lix window when you move quickly against the sides.|If not checked, untrap the mouse by Alt+Tab.
 
 $optionKeyForceLeft          Nur links
 $optionKeyForceRight         Nur rechts
