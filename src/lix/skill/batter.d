@@ -43,7 +43,8 @@ class Batter : Job {
                     if (flingIfCloseTo(battedLix, lixxie.ex + 6 * lixxie.dir,
                                                   lixxie.ey - 4)) {
                         hit = true;
-                        lixxie.outsideWorld.effect.addSound(
+                        if (lixxie.outsideWorld.effect)
+                            lixxie.outsideWorld.effect.addSound(
                             lixxie.outsideWorld.state.update, battedLix.style,
                             battedID, Sound.BATTER_HIT);
                     }

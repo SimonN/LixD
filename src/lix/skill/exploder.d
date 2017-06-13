@@ -66,8 +66,9 @@ class Imploder : Ploder {
 protected:
     override void makeEffect()
     {
-        outsideWorld.effect.addImplosion(outsideWorld.state.update, style,
-                                         outsideWorld.lixID, ex, ey);
+        if (outsideWorld.effect)
+            outsideWorld.effect.addImplosion(outsideWorld.state.update, style,
+                                             outsideWorld.lixID, ex, ey);
     }
 }
 
@@ -80,8 +81,9 @@ class Exploder : Ploder {
 protected:
     override void makeEffect()
     {
-        outsideWorld.effect.addExplosion(outsideWorld.state.update, style,
-                                         outsideWorld.lixID, ex, ey);
+        if (outsideWorld.effect)
+            outsideWorld.effect.addExplosion(outsideWorld.state.update, style,
+                                             outsideWorld.lixID, ex, ey);
     }
 
     override void flingOtherLix()

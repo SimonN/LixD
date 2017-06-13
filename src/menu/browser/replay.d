@@ -9,6 +9,7 @@ import gui.picker;
 import hardware.keyset;
 import level.level;
 import menu.browser.frommain;
+import menu.verify;
 
 static import basics.globals;
 
@@ -18,6 +19,7 @@ private:
     Level _included;
     Level _pointedTo;
     TextButton _buttonPlayWithPointedTo;
+    TextButton _buttonVerify;
     bool _forcePointedTo;
 
     mixin DeleteMixin deleteMixin;
@@ -37,9 +39,12 @@ public:
             b.hotkey = hotkey;
             return b;
         }
+        // DTODOLANG: caption these two buttons, even if they're hacks
         _buttonPlayWithPointedTo = newInfo(1, 100, "pointedTo", keyMenuEdit);
+        _buttonVerify = newInfo(1, 60, "Verify Dir", KeySet());
+
         _delete  = newInfo(0, 20, Lang.browserDelete.transl, keyMenuDelete);
-        addChildren(_buttonPlayWithPointedTo, _delete);
+        addChildren(_buttonPlayWithPointedTo, _buttonVerify, _delete);
     }
 
     override @property inout(Level) levelRecent() inout
@@ -102,6 +107,11 @@ protected:
                 basics.user.replayLastLevel = super.fileRecent;
                 gotoGame = true;
             }
+        }
+        else if (_buttonVerify.execute) {
+            basics.user.replayLastLevel = currentDir;
+            auto win = new VerifyMenu(currentDir);
+            addFocus(win);
         }
     }
 

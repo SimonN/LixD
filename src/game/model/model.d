@@ -34,7 +34,7 @@ class GameModel {
 private:
     GameState     _cs;            // owned (current state)
     PhysicsDrawer _physicsDrawer; // owned
-    EffectManager _effect;        // not owned
+    EffectManager _effect;        // not owned. May be null.
 
 package: // eventually delete cs() and alias cs this;
     @property inout(GameState) cs() inout { return _cs; }
@@ -46,7 +46,9 @@ public:
          in Permu permu, EffectManager ef)
     {
         _effect = ef;
-        _cs     = newZeroState(level, tribesToMake, permu, ef.localTribe);
+        _cs = newZeroState(level, tribesToMake, permu,
+            ef ? ef.localTribe : Style.garden // only to make hatches blink
+        );
         _physicsDrawer = new PhysicsDrawer(_cs.land, _cs.lookup);
         finalizePhyuAnimateGadgets();
     }
@@ -142,20 +144,19 @@ private:
             OutsideWorld ow = makeGypsyWagon(*tribe, i.toWhichLix);
             lixxie.assignManually(&ow, i.skill);
 
-            // DTODONETWORK: We don't check for tribeLocal or masterLocal here.
-            // Instead, the effect manager should decide whether to generate
-            // the effect, and what loudness the sound have. Maybe pass more
-            // data to the effect manager than this here.
-            _effect.addSound(upd, tribe.style, i.toWhichLix, Sound.ASSIGN);
-            _effect.addArrow(upd, tribe.style, i.toWhichLix,
-                             lixxie.ex, lixxie.ey, i.skill);
+            if (_effect) {
+                _effect.addSound(upd, tribe.style, i.toWhichLix, Sound.ASSIGN);
+                _effect.addArrow(upd, tribe.style, i.toWhichLix,
+                                 lixxie.ex, lixxie.ey, i.skill);
+            }
         }
         else if (i.action == RepAc.NUKE) {
             if (tribe.nuke)
                 return;
             tribe.lixHatch = 0;
             tribe.nuke = true;
-            _effect.addSound(upd, tribe.style, 0, Sound.NUKE);
+            if (_effect)
+                _effect.addSound(upd, tribe.style, 0, Sound.NUKE);
         }
     }
 

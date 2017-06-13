@@ -46,8 +46,10 @@ isFinished(const(Game) game) { with (game)
     assert (nurse);
     if (runmode == Runmode.VERIFY)
         return ! nurse.stillPlaying();
-    else
-        return ! nurse.stillPlaying() && effect.nothingGoingOn;
+    else {
+        assert (_effect);
+        return ! nurse.stillPlaying() && _effect.nothingGoingOn;
+    }
 }}
 
 private void

@@ -36,8 +36,10 @@ implGameDraw(Game game) { with (game)
             map.clearScreenRect(color.makecol(bgRed, bgGreen, bgBlue));
         game.drawGadgets();
         game.drawLand();
-        effect.draw();
-        effect.calc(); // --timeToLive, moves. No physics, so OK to calc here.
+
+        assert (_effect);
+        _effect.draw();
+        _effect.calc(); // --timeToLive, moves. No physics, so OK to calc here.
         game.drawAllLixes();
     }
     pan.showInfo(localTribe);

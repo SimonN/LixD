@@ -97,7 +97,8 @@ void handleNukeButton(Game game) { with (game)
     auto data = game.newReplayDataForNextPhyu();
     data.action = RepAc.NUKE;
     game.includeOurNew(data);
-    effect.addSound(Phyu(nurse.upd + 1), localTribe.style, 0, Sound.NUKE);
+    assert (_effect);
+    _effect.addSound(Phyu(nurse.upd + 1), localTribe.style, 0, Sound.NUKE);
 }}
 
 /* Main function to determine lix under cursor.
@@ -248,8 +249,9 @@ void assignToPotentialAssignee(
 
     // React faster to the new assignment than during its evaluation next
     // update. The evaluation could be several ticks ticks later.
-    effect.addArrowDontShow(data.update, localStyle, potAss.id);
-    effect.addSound(        data.update, localStyle, potAss.id, Sound.ASSIGN);
+    assert (_effect);
+    _effect.addArrowDontShow(data.update, localStyle, potAss.id);
+    _effect.addSound(        data.update, localStyle, potAss.id, Sound.ASSIGN);
 
     if (basics.user.pausedAssign.value == 2)
         pan.pause = false;

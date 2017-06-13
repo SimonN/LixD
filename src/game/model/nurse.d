@@ -38,6 +38,7 @@ public:
     @property stateOnlyPrivatelyForGame() const { return _model.cs; }
 
     // We get to own the replay, but not the level or the effect manager.
+    // EffectManager may be null.
     this(in Level lev, Replay rp, EffectManager ef)
     {
         _replay = rp;

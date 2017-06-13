@@ -14,7 +14,7 @@ import basics.alleg5;
 import basics.cmdargs;
 import basics.init;
 import basics.mainloop;
-import basics.verify;
+import verify.cmdargs;
 
 void main(string[] args)
 {

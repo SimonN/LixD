@@ -46,7 +46,11 @@ public:
         _col = col;
         _xlg = xlg;
         _ylg = ylg;
-        generateNext();
+        if (! empty)
+            generateNext();
+        else
+            // Generate at least one empty line. Without this, our algo would // generate zero lines from an empty input, not the empty line.
+            _next = Line("", _font, _col, _xlg, _ylg);
     }
 
     @property bool empty() const { return _input.empty && _next == _next.init;}

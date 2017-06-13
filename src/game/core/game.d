@@ -61,7 +61,7 @@ package:
              // of that land, blits gadgets and lixes on it, and blits the
              // result to the screen. It is both a renderer and a camera.
     Nurse nurse;
-    EffectManager effect;
+    EffectManager _effect; // null if we're verifying
     RichClient _netClient; // null unless playing/observing multiplayer
 
     long altickLastPhyu;
@@ -249,12 +249,12 @@ package:
 
     void setLastPhyuToNow()
     {
-        assert (this.effect);
         assert (this.nurse);
-        effect.deleteAfter(nurse.upd);
+        if (_effect)
+            _effect.deleteAfter(nurse.upd);
         if (pan)
             pan.setLikeTribe(localTribe);
-        if (nurse.updatesSinceZero == 0
+        if (runmode == Runmode.INTERACTIVE && nurse.updatesSinceZero == 0
             && _setLastPhyuToNowLastCalled != 0
         ) {
             hardware.sound.playLoud(Sound.LETS_GO);
@@ -280,7 +280,6 @@ private:
 
     private void prepareNurse(Filename levelFilename, Replay rp)
     {
-        assert (! effect);
         assert (! nurse);
         _replayNeverCancelledThereforeDontSaveAutoReplay = rp !is null;
         if (! rp)
@@ -288,8 +287,9 @@ private:
         // DTODONETWORK: Eventually, observers shall cycle through the
         // spectating teams. Don't set a final style here, but somehow
         // make the effect manager depend on what the GUI chooses.
-        effect = new EffectManager(rp.playerLocalOrSmallest.style);
-        nurse  = new Nurse(level, rp, effect);
+        if (runmode == Runmode.INTERACTIVE)
+            _effect = new EffectManager(rp.playerLocalOrSmallest.style);
+        nurse = new Nurse(level, rp, _effect);
     }
 
     Replay generateFreshReplay(Filename levelFilename)

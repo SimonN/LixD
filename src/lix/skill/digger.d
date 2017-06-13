@@ -32,8 +32,9 @@ class Digger : Job {
         immutable int  steelRight  = countSteel(-2, 2, 9, 2);
         immutable bool enoughSteel = steelLeft > 0 && steelRight > 0;
         if (enoughSteel) {
-            outsideWorld.effect.addDigHammer(outsideWorld.state.update, style,
-                                             outsideWorld.lixID, ex, ey, dir);
+            if (outsideWorld.effect)
+                outsideWorld.effect.addDigHammer(outsideWorld.state.update,
+                    style, outsideWorld.lixID, ex, ey, dir);
             become(Ac.walker);
         }
         return enoughSteel;

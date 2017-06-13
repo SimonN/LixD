@@ -73,7 +73,7 @@ public:
             _blinkNow
             = (u % (updatesBlinkOn + updatesBlinkOff) < updatesBlinkOn);
         }
-        if (u == updateOpen)
+        if (u == updateOpen && effect)
             effect.addSoundGeneral(u, Sound.HATCH_OPEN);
     }
 
