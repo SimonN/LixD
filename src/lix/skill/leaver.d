@@ -75,10 +75,13 @@ class Burner : Leaver {
 
 class Drowner : Leaver {
 
-    mixin(CloneByCopyFrom!"Burner");
+    mixin(CloneByCopyFrom!"Drowner");
 
     override void onBecomeLeaver()
     {
+        if (lixxie.ac == Ac.tumbler && lixxie.frame >= 9)
+            // fall head-first into water, not feet-first (frame 0)
+            this.frame = 6;
         playSound(Sound.WATER);
     }
     // DTODOSKILLS: Look at C++ Lix about how we moved during drowning
