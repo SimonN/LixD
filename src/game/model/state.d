@@ -34,10 +34,7 @@ GameState clone(in GameState gs)
 private struct RawGameState {
 public:
     Phyu update;
-    int  clock;
-    bool clockIsRunning;
-
-    bool goalsLocked; // in singleplayer, when time has run out
+    int overtimeAtStartInPhyus;
 
     Tribe[Style] tribes; // update order is garden, red, orange, yellow, ...
 
@@ -109,14 +106,21 @@ public:
         return ! multiplayer && tribes.byValue.front.lixSaved >= lixRequired;
     }
 
+    @property bool nuking() const
+    {
+        auto nukeWanters = tribes.byValue.filter!(tr => tr.wantsNuke
+                                                    && tr.score.current > 0);
+        return tribes.byValue.all!(tr => tr.wantsNuke)
+            || ! nukeWanters.save.empty
+                && update >= nukeWanters.map!(tr => tr.wantsNukeSince)
+                                        .reduce!min + overtimeAtStartInPhyus;
+    }
+
 private:
     void copyValuesArraysFrom(ref const(RawGameState) rhs)
     {
-        update         = rhs.update;
-        clock          = rhs.clock;
-        clockIsRunning = rhs.clockIsRunning;
-        goalsLocked    = rhs.goalsLocked;
-
+        overtimeAtStartInPhyus = rhs.overtimeAtStartInPhyus;
+        update   = rhs.update;
         hatches  = basics.help.clone(rhs.hatches);
         goals    = basics.help.clone(rhs.goals);
         waters   = basics.help.clone(rhs.waters);

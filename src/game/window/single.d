@@ -67,8 +67,7 @@ private:
     void drawLixSaved(in Tribe tribe, in Level level)
     {
         addChild(new Label(new Geom(0, 40, xlg, 0, From.TOP),
-            tribe.lixSavedLate == 0 ? Lang.winGameLixSaved.transl
-                              : Lang.winGameLixSavedInTime.transl));
+            Lang.winGameLixSaved.transl));
         Label slash = new Label(new Geom(  0, 65, xlg/2, 0, From.TOP), "/");
         Label saved = new Label(new Geom(-25, 65, xlg/2, 0, From.TOP));
         Label requi = new Label(new Geom( 25, 65, xlg/2, 0, From.TOP));

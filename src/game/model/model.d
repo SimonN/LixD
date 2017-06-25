@@ -151,10 +151,10 @@ private:
             }
         }
         else if (i.action == RepAc.NUKE) {
-            if (tribe.nuke)
+            if (tribe.wantsNuke)
                 return;
             tribe.lixHatch = 0;
-            tribe.nuke = true;
+            tribe.wantsNukeSince = upd;
             if (_effect)
                 _effect.addSound(upd, tribe.style, 0, Sound.NUKE);
         }
@@ -191,14 +191,14 @@ private:
 
     void updateNuke()
     {
+        if (! _cs.nuking)
+            return;
         foreach (int tribeID, tribe; _cs.tribes) {
-            if (! tribe.nuke || tribe.nukeSkill == Ac.nothing)
-                continue;
             foreach (int lixID, lix; tribe.lixvec) {
                 if (! lix.healthy || lix.ploderTimer > 0)
                     continue;
                 auto ow = makeGypsyWagon(tribe, lixID);
-                lix.assignManually(&ow, tribe.nukeSkill);
+                lix.assignManually(&ow, Ac.exploder);
                 break; // only one lix is hit by the nuke per update
             }
         }

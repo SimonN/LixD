@@ -177,7 +177,7 @@ protected:
         enum flickerMax = 4 * flickerFreq + 1;
         if (lixSaved + lixHatch + lixOut >= _lixRequired)
             _warningSignFlicker = 0;
-        else if (nuke)
+        else if (wantsNuke)
             _warningSignFlicker = flickerMax;
         else if (_warningSignFlicker < flickerMax) {
             if (_warningSignFlicker == 0)

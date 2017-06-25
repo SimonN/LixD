@@ -20,9 +20,7 @@ class Exiter : Leaver {
 
     void scoreForTribe(Tribe tribe)
     {
-        if (outsideWorld.state.goalsLocked)
-            ++tribe.lixSavedLate;
-        else {
+        if (! outsideWorld.state.nuking) {
             ++tribe.lixSaved;
             tribe.updatePreviousSave = outsideWorld.state.update;
         }

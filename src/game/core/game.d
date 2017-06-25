@@ -95,7 +95,8 @@ private:
 public:
     @property bool gotoMainMenu()         { return _gotoMainMenu; }
 
-    enum ticksNormalSpeed   = ticksPerSecond / 15; // run at 15 Pyus per sec
+    enum phyusPerSecond     = 15;
+    enum ticksNormalSpeed   = ticksPerSecond / phyusPerSecond;
     enum updatesDuringTurbo = 9;
     enum updatesAheadMany   = ticksPerSecond / ticksNormalSpeed * 10;
 
@@ -253,7 +254,7 @@ package:
         if (_effect)
             _effect.deleteAfter(nurse.upd);
         if (pan)
-            pan.setLikeTribe(localTribe);
+            pan.setLikeTribe(localTribe, level.ploder);
         if (runmode == Runmode.INTERACTIVE && nurse.updatesSinceZero == 0
             && _setLastPhyuToNowLastCalled != 0
         ) {
@@ -321,7 +322,7 @@ private:
         assert (level);
         pan = new Panel(view, level.required);
         gui.addElder(pan);
-        pan.setLikeTribe(localTribe);
+        pan.setLikeTribe(localTribe, level.ploder);
         pan.highlightFirstSkill();
     }
 

@@ -40,6 +40,7 @@ GameState newZeroState(in Level level, in Style[] tribesToMake,
         g.drawLookup(s.lookup);
     });
     s.update = s.multiplayer ? 0 : 45; // start quickly in 1-player
+    s.overtimeAtStartInPhyus = level.overtimeSeconds * Game.phyusPerSecond;
     return s;
 }
 
@@ -57,7 +58,6 @@ void preparePlayers(GameState state, in Level level,
         tr.lixHatch     = level.initial;
         tr.spawnint     = level.spawnint;
         tr.skills       = level.skills;
-        tr.nukeSkill    = level.ploder;
         state.tribes[style] = tr;
     }
 }

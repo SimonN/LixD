@@ -79,17 +79,17 @@ public:
     }
 
     // call this from the Game
-    void setLikeTribe(in Tribe tr)
+    void setLikeTribe(in Tribe tr, in Ac ploderToDisplay)
     {
         if (tr is null)
             return;
         foreach (b; _skills) {
             b.style = tr.style;
-            if (b.skill.isPloder && tr.nukeSkill.isPloder)
-                b.skill = tr.nukeSkill;
+            if (b.skill.isPloder)
+                b.skill = ploderToDisplay;
             b.number = tr.skills[b.skill];
         }
-        nuke = tr.nuke;
+        nuke = tr.wantsNuke;
         if (_scoreGraph)
             _scoreGraph.ourStyle = tr.style;
         /*

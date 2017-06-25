@@ -24,12 +24,10 @@ class Tribe {
 
         int  lixHatch;
         int  lixSaved;
-        int  lixSavedLate; // after the goals have been locked
         int  lixOut;       // change this only when killing/generating lixes.
         int  lixLeaving;   // these have been scored, but keep game running
         int  spawnint;
-        bool nuke;
-        Ac   nukeSkill;
+        Phyu wantsNukeSince; // Phyu(0) if doesn't want nuke
 
         Phyu updatePreviousSpawn = Phyu(-Level.spawnintMax); // => at once
         Phyu updatePreviousSave; // ...within the time limit
@@ -66,6 +64,8 @@ class Tribe {
         ret.potential = lixSaved + lixOut + lixHatch;
         return ret;
     }
+
+    @property bool wantsNuke() const { return wantsNukeSince > Phyu(0); }
 
     void returnSkills(in Ac ac, in int amount)
     {
