@@ -106,14 +106,37 @@ public:
         return ! multiplayer && tribes.byValue.front.lixSaved >= lixRequired;
     }
 
+    @property bool overtimeRunning() const
+    {
+        return tribes.byValue.all!(tr => tr.wantsNuke)
+            || tribes.byValue.any!(tr => tr.wantsNuke && tr.score.current > 0);
+    }
+
+    @property Phyu overtimeRunningSince() const
+    in { assert (overtimeRunning); }
+    body {
+        auto nukeWanters = tribes.byValue.filter!(tr => tr.wantsNuke
+                                                     && tr.score.current > 0);
+        if (nukeWanters.save.empty) {
+            assert (tribes.byValue.all!(tr => tr.wantsNuke
+                                           && tr.score.current == 0));
+            return tribes.byValue.map!(tr => tr.wantsNukeSince).reduce!max;
+        }
+        else
+            return nukeWanters.map!(tr => tr.wantsNukeSince).reduce!min;
+    }
+
+    // This doesn't return Phyu because Phyu is a point in time, not a duration
+    @property int overtimeRemainingInPhyus() const
+    {
+        return overtimeRunning
+            ? clamp(update - overtimeRunningSince, 0, overtimeAtStartInPhyus)
+            : overtimeAtStartInPhyus;
+    }
+
     @property bool nuking() const
     {
-        auto nukeWanters = tribes.byValue.filter!(tr => tr.wantsNuke
-                                                    && tr.score.current > 0);
-        return tribes.byValue.all!(tr => tr.wantsNuke)
-            || ! nukeWanters.save.empty
-                && update >= nukeWanters.map!(tr => tr.wantsNukeSince)
-                                        .reduce!min + overtimeAtStartInPhyus;
+        return overtimeRunning() && overtimeRemainingInPhyus == 0;
     }
 
 private:

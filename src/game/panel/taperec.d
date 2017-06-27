@@ -76,7 +76,6 @@ public:
     }
 
     void speedToNormal() { setSpeedTo(1); }
-    void nuke(bool b) { _nuke.on = b; }
     void pause(bool b)
     {
         if (b)
@@ -84,6 +83,8 @@ public:
         else
             _pause.on = false;
     }
+
+    inout(NukeButton) nuke() inout { return _nuke; }
 
 protected:
     override void calcSelf()

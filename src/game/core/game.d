@@ -254,7 +254,8 @@ package:
         if (_effect)
             _effect.deleteAfter(nurse.upd);
         if (pan)
-            pan.setLikeTribe(localTribe, level.ploder);
+            pan.setLikeTribe(localTribe, level.ploder,
+                             cs.overtimeRunning, cs.overtimeRemainingInPhyus);
         if (runmode == Runmode.INTERACTIVE && nurse.updatesSinceZero == 0
             && _setLastPhyuToNowLastCalled != 0
         ) {
@@ -322,7 +323,8 @@ private:
         assert (level);
         pan = new Panel(view, level.required);
         gui.addElder(pan);
-        pan.setLikeTribe(localTribe, level.ploder);
+        pan.setLikeTribe(localTribe, level.ploder,
+                         cs.overtimeRunning, cs.overtimeRemainingInPhyus);
         pan.highlightFirstSkill();
     }
 

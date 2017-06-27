@@ -79,8 +79,9 @@ public:
     }
 
     // call this from the Game
-    void setLikeTribe(in Tribe tr, in Ac ploderToDisplay)
-    {
+    void setLikeTribe(in Tribe tr, in Ac ploderToDisplay,
+                      in bool overtimeRunning, in int overtimeRemainingInPhyus
+    ) {
         if (tr is null)
             return;
         foreach (b; _skills) {
@@ -89,7 +90,9 @@ public:
                 b.skill = ploderToDisplay;
             b.number = tr.skills[b.skill];
         }
-        nuke = tr.wantsNuke;
+        nuke.on = tr.wantsNuke;
+        nuke.overtimeRunning = overtimeRunning;
+        nuke.overtimeRemainingInPhyus = overtimeRemainingInPhyus;
         if (_scoreGraph)
             _scoreGraph.ourStyle = tr.style;
         /*
@@ -118,13 +121,6 @@ public:
     }
 
     void pause(bool b) { if (_trbs) _trbs.pause(b); }
-    void nuke(bool b)
-    {
-        if (_trbs)
-            _trbs.nuke(b);
-        if (_nukeMulti)
-            _nukeMulti.on = b;
-    }
 
     @property const {
         bool paused()             { return _trbs && _trbs.paused; }
@@ -138,8 +134,7 @@ public:
         bool framestepBackMany()  { return _trbs && _trbs.framestepBackMany; }
         bool framestepAheadOne()  { return _trbs && _trbs.framestepAheadOne; }
         bool framestepAheadMany() { return _trbs && _trbs.framestepAheadMany; }
-        bool nukeDoubleclicked()  { return _trbs && _trbs.nukeDoubleclicked
-                                   || _nukeMulti && _nukeMulti.doubleclicked; }
+        bool nukeDoubleclicked()  { return nuke.doubleclicked; }
         bool zoomIn()             { return _trbs && _trbs.zoomIn
                                       || ! _trbs && keyZoomIn.keyTapped; }
         bool zoomOut()            { return _trbs && _trbs.zoomOut
@@ -179,6 +174,12 @@ private:
     @property float skillYl() const { return this.geom.ylg - 20; }
     @property float skillXl() const {
         return gui.screenXlg / (skillSort.length + 4);
+    }
+
+    inout(NukeButton) nuke() inout
+    {
+        assert (_trbs && _trbs.nuke || _nukeMulti);
+        return _nukeMulti ? _nukeMulti : _trbs.nuke;
     }
 
     private void highlightIfNonzero(SkillButton skill)
