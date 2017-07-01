@@ -1,4 +1,4 @@
-$BUILT 2016-07-19 09:12:14
+$BUILT 2017-06-28 13:46:02
 $AUTHOR Nepster
 $ENGLISH A Day in Lixtown
 
@@ -10,7 +10,6 @@ $ENGLISH A Day in Lixtown
 #START_X 32
 #START_Y 0
 
-#SECONDS 0
 #INITIAL 11
 #REQUIRED 9
 #SPAWN_INTERVAL 48
@@ -144,7 +143,6 @@ $END_TILE_GROUP
 :geoo/shadow/wall/center: 72 64
 :matt/underworld/00: 0 384
 :geoo/construction/platformbrick: 502 368 rrrd
-:proxima/tile/spheres/bluesmall: 10 370 d
 :geoo/shadow/wall/center: 384 128
 :geoo/shadow/wall/center: 384 112
 :amanda/steel/steel8x16.S: 432 104 fr
@@ -1754,3 +1752,5 @@ $BEGIN_TILE_GROUP 27
 :Group-16: 46 4
 $END_TILE_GROUP
 :Group-27: 96 114
+:geoo/abstract/cvblocks/033: 24 376 d
+:geoo/abstract/cvblocks/034: 56 376 d

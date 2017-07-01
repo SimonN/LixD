@@ -1,4 +1,4 @@
-$BUILT 2017-03-08 14:20:50
+$BUILT 2017-06-28 13:58:19
 $AUTHOR Nepster
 $ENGLISH No matter what I try...
 
@@ -12,7 +12,7 @@ $ENGLISH No matter what I try...
 #REQUIRED 20
 #SPAWN_INTERVAL 50
 
-#WALKER 1
+#RUNNER 1
 #CLIMBER 2
 #FLOATER 2
 #EXPLODER 2
@@ -334,3 +334,25 @@ $ENGLISH No matter what I try...
 :geoo/construction/platformbrick: 209 183 rrd
 :geoo/construction/platformbrick: 113 183 rrd
 :geoo/construction/platformbrick: 241 183 rrd
+$BEGIN_TILE_GROUP 0
+:proxima/tile/pink4s: 0 8
+:proxima/tile/pink4s: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:proxima/tile/pink4s: 8 0
+:Group-0: 8 8
+:proxima/tile/pink4s: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:proxima/tile/pink4s: 24 0
+:Group-1: 32 0
+:proxima/tile/pink4s: 0 8 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:proxima/tile/pink4s: 8 16
+:Group-2: 8 32
+:proxima/tile/pink4s: 8 0 d
+:proxima/tile/pink4s: 24 32 d
+:proxima/tile/pink4s: 0 48 d
+$END_TILE_GROUP
+:Group-3: 360 312

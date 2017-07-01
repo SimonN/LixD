@@ -1,4 +1,4 @@
-$BUILT 2016-01-13 18:29:24
+$BUILT 2017-06-28 14:11:39
 $AUTHOR Nepster
 $ENGLISH House of the Mad Trickster
 
@@ -6,7 +6,6 @@ $ENGLISH House of the Mad Trickster
 #SIZE_X 640
 #SIZE_Y 400
 
-#SECONDS 0
 #INITIAL 100
 #REQUIRED 96
 #SPAWN_INTERVAL 10
@@ -29,8 +28,6 @@ $ENGLISH House of the Mad Trickster
 
 :matt/carnival/Goal.G: 90 19
 
-:simon/rabbit.D: 328 250
-
 :geoo/construction/squisher.T: 208 288
 :geoo/construction/squisher.T: 488 178
 
@@ -39,7 +36,7 @@ $ENGLISH House of the Mad Trickster
 :geoo/construction/sawblade_small.F: 391 -9
 
 :simon/tapir/032: 32 192
-:simon/tapir/016: 463 352
+:simon/tapir/016: 495 352
 :simon/tapir/032v: 464 114
 :simon/tapir/016h: 384 352
 :simon/tapir/032h: 336 146
@@ -74,12 +71,12 @@ $ENGLISH House of the Mad Trickster
 :simon/tapir/008v: 364 384
 :simon/tapir/008v: 396 367
 :simon/tapir/008v: 396 384
-:simon/tapir/008v: 424 368
-:simon/tapir/008v: 424 384
-:simon/tapir/008v: 463 368
-:simon/tapir/008v: 463 384
-:simon/tapir/008v: 492 368
-:simon/tapir/008v: 492 384
+:simon/tapir/008v: 456 368
+:simon/tapir/008v: 456 384
+:simon/tapir/008v: 495 368
+:simon/tapir/008v: 495 384
+:simon/tapir/008v: 428 368
+:simon/tapir/008v: 428 384
 :simon/tapir/008v: 524 368
 :simon/tapir/008v: 524 384
 :simon/tapir/008v: 556 368
@@ -102,7 +99,7 @@ $ENGLISH House of the Mad Trickster
 :simon/tapir/016h: 576 352
 :simon/tapir/016h: 544 352
 :simon/tapir/016h: 512 352
-:simon/tapir/016h: 480 352
+:simon/tapir/016h: 416 352
 :simon/tapir/008h: 200 288
 :simon/tapir/008h: 232 288
 :simon/tapir/008h: 240 296
@@ -137,12 +134,12 @@ $ENGLISH House of the Mad Trickster
 :simon/tapir/008h: 336 266
 :simon/tapir/008h: 344 258
 :simon/tapir/008h: 352 250
-:simon/tapir/016: 416 352
+:simon/tapir/016: 448 352
 $BEGIN_TILE_GROUP 0
 :simon/tapir/016: 7 0
 :simon/tapir/016: 0 0 d
 $END_TILE_GROUP
-:Group-0: 473 352
+:Group-0: 505 352
 :simon/tapir/032vd: 0 0
 :simon/tapir/032vc: 608 0
 :simon/tapir/032v: 608 160
@@ -209,9 +206,6 @@ $END_TILE_GROUP
 :simon/tapir/032h: 80 146
 :simon/tapir/008h: 536 242
 :simon/tapir/008h: 120 242
-:geoo/construction/platformbrick_single: 402 350 rrrd
-:geoo/construction/platformbrick_single: 403 348 rrrd
-:geoo/construction/platformbrick_single: 404 346 rrrd
 :matt/steel/32x32.S: 464 50
 :simon/tapir/032c: 464 50 d
 :matt/steel/32x32.S: 368 64
@@ -228,18 +222,6 @@ $END_TILE_GROUP
 :simon/tapir/016v: 470 110 d
 :simon/tapir/016v: 474 88 d
 :simon/tapir/016v: 470 88 d
-:geoo/construction/platformbrick_single: 399 356 rrrd
-:geoo/construction/platformbrick_single: 400 354 rrrd
-:geoo/construction/platformbrick_single: 401 352 rrrd
-:geoo/construction/platformbrick_single: 396 362 rrrd
-:geoo/construction/platformbrick_single: 397 360 rrrd
-:geoo/construction/platformbrick_single: 398 358 rrrd
-:geoo/construction/platformbrick_single: 395 364 rrrd
-:geoo/construction/platformbrick_single: 393 364 rrrd
-:geoo/construction/platformbrick_single: 392 362 rrrd
-:geoo/construction/platformbrick_single: 391 360 rrrd
-:geoo/construction/platformbrick_single: 390 358 rrrd
-:geoo/construction/platformbrick_single: 389 356 rrrd
 $BEGIN_TILE_GROUP 2
 :simon/tapir/032vb: 0 0
 :simon/tapir/032: 16 32 d
@@ -247,3 +229,7 @@ $END_TILE_GROUP
 :Group-2: 32 160
 :simon/tapir/016c: 96 50 d
 :simon/tapir/032h: 400 146
+:geoo/construction/stairsbrick_ru_8: 396 352 d
+:geoo/construction/stairsbrick_ru_8: 380 360 d
+:geoo/construction/stairsbrick_rd_8: 260 360 d
+:geoo/construction/stairsbrick_rd_8: 252 356 d

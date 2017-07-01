@@ -1,6 +1,17 @@
 Version history
 ===============
 
+0.6.39
+------
+
+2017-07-01
+
+The replay browser allows you to batch-verify all replays in the current
+directory. The results are printed on screen and to the logfile.
+
+Fixed 3 backroutes in NepsterLix; the changed levels are A Day in Lixtown,
+House of the Mad Trickster, and No Matter What I Try.
+
 0.6.38
 ------
 
