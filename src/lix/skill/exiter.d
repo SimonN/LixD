@@ -20,10 +20,8 @@ class Exiter : Leaver {
 
     void scoreForTribe(Tribe tribe)
     {
-        if (! outsideWorld.state.nuking) {
-            ++tribe.lixSaved;
-            tribe.updatePreviousSave = outsideWorld.state.update;
-        }
+        if (! outsideWorld.state.nuking)
+            tribe.addSaved(this.style, outsideWorld.state.update);
     }
 
     void determineSidewaysMotion(in Goal goal)

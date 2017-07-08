@@ -160,13 +160,13 @@ public:
 protected:
     override void onShowTribe(in Tribe tribe) { with (tribe)
     {
-        if (lixSaved < _lixRequired) {
+        if (score.current < _lixRequired) {
             // "\u2212" is unicode minus
-            _lSaved.text = "\u2212%d".format(_lixRequired - lixSaved);
+            _lSaved.text = "\u2212%d".format(_lixRequired - score.current);
             _singleplayerWinSoundPlayed = false;
         }
         else {
-            _lSaved.text = "%d/%d".format(lixSaved, _lixRequired);
+            _lSaved.text = "%d/%d".format(score.current, _lixRequired);
             if (! _singleplayerWinSoundPlayed) {
                 _singleplayerWinSoundPlayed = true;
                 hardware.sound.playLoud(Sound.YIPPIE);
@@ -175,7 +175,7 @@ protected:
 
         enum flickerFreq = 0x10; // total duration of one cycle of 2 frames
         enum flickerMax = 4 * flickerFreq + 1;
-        if (lixSaved + lixHatch + lixOut >= _lixRequired)
+        if (score.potential >= _lixRequired)
             _warningSignFlicker = 0;
         else if (wantsNuke)
             _warningSignFlicker = flickerMax;
@@ -187,7 +187,7 @@ protected:
         _bSaved.xf = (_warningSignFlicker + flickerFreq - 1) % flickerFreq
             > flickerFreq/2 ? 5 : 10; // 5 = regular exit, 10 = warning sign
         _bSaved.yf = _bSaved.xf == 10 ? 0 // colorful warning sign
-            : lixSaved >= _lixRequired ? 2 : 1; // green or grayed-out
+            : score.current >= _lixRequired ? 2 : 1; // green or grayed-out
     }}
 }
 
@@ -206,10 +206,10 @@ public:
 protected:
     override void onShowTribe(in Tribe tribe)
     {
-        _bSaved.shown = _lSaved.shown = tribe.lixSaved > 0;
-        if (tribe.lixSaved > 0) {
+        _bSaved.shown = _lSaved.shown = tribe.hasScored;
+        if (tribe.hasScored) {
             _bSaved.yf = 1; // greyed out. Maybe invent something better
-            _lSaved.number = tribe.lixSaved;
+            _lSaved.number = tribe.score.current;
         }
     }
 }

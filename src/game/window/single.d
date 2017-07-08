@@ -42,7 +42,7 @@ public:
         assert (tribe);
         assert (level);
         enum extraYl = 95;
-        immutable bool won = tribe.lixSaved >= level.required;
+        immutable bool won = tribe.score.current >= level.required;
 
         super(myGeom(won ? 2 : 4, 300, extraYl), level.name);
         int y = 40 + extraYl;
@@ -72,11 +72,11 @@ private:
         Label saved = new Label(new Geom(-25, 65, xlg/2, 0, From.TOP));
         Label requi = new Label(new Geom( 25, 65, xlg/2, 0, From.TOP));
         slash.font = saved.font = requi.font = djvuL;
-        saved.number = tribe.lixSaved;
+        saved.number = tribe.score.current;
         requi.number = level.required;
-        if (tribe.lixSaved > 0)
+        if (tribe.hasScored)
             saved.color = color.white;
-        if (tribe.lixSaved >= level.required) {
+        if (tribe.score.current >= level.required) {
             slash.color = color.white;
             requi.color = color.white;
         }
@@ -88,11 +88,12 @@ private:
     static string flavorText(in Tribe tribe, in Level level)
     { with (tribe) with (level)
     {
-        if (lixSaved >  initial)  assert (false, "not in singleplayer");
-        if (lixSaved == initial)  return Lang.winGameCommentPerfect.transl;
-        if (lixSaved >  required) return Lang.winGameCommentMore.transl;
-        if (lixSaved == required) return Lang.winGameCommentExactly.transl;
-        if (lixSaved >  0)        return Lang.winGameCommentFewer.transl;
-        else                      return Lang.winGameCommentNone.transl;
+        immutable score = tribe.score.current;
+        if (score >  initial)  assert (false, "not in singleplayer");
+        if (score == initial)  return Lang.winGameCommentPerfect.transl;
+        if (score >  required) return Lang.winGameCommentMore.transl;
+        if (score == required) return Lang.winGameCommentExactly.transl;
+        if (score >  0)        return Lang.winGameCommentFewer.transl;
+        else                   return Lang.winGameCommentNone.transl;
     }}
 }

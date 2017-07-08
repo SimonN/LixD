@@ -103,7 +103,8 @@ public:
 
     @property bool singleplayerHasSavedAtLeast(in int lixRequired) const @nogc
     {
-        return ! multiplayer && tribes.byValue.front.lixSaved >= lixRequired;
+        return ! multiplayer
+            && tribes.byValue.front.score.current >= lixRequired;
     }
 
     @property bool overtimeRunning() const
@@ -116,21 +117,22 @@ public:
     in { assert (overtimeRunning); }
     body {
         auto nukeWanters = tribes.byValue.filter!(tr => tr.wantsNuke
-                                                     && tr.score.current > 0);
+                                                     && tr.hasScored);
         if (nukeWanters.save.empty) {
-            assert (tribes.byValue.all!(tr => tr.wantsNuke
-                                           && tr.score.current == 0));
+            assert (tribes.byValue.all!(tr => tr.wantsNuke && ! tr.hasScored));
             return tribes.byValue.map!(tr => tr.wantsNukeSince).reduce!max;
         }
-        else
-            return nukeWanters.map!(tr => tr.wantsNukeSince).reduce!min;
+        else return nukeWanters
+            .map!(tr => max(tr.wantsNukeSince, tr.hasScoredSince))
+            .reduce!min;
     }
 
     // This doesn't return Phyu because Phyu is a point in time, not a duration
     @property int overtimeRemainingInPhyus() const
     {
         return overtimeRunning
-            ? clamp(update - overtimeRunningSince, 0, overtimeAtStartInPhyus)
+            ? clamp(overtimeAtStartInPhyus + overtimeRunningSince - update,
+                    0, overtimeAtStartInPhyus)
             : overtimeAtStartInPhyus;
     }
 

@@ -51,7 +51,7 @@ public:
             return;
         _overtimeRemainingInPhyus = re;
         immutable secs = (re + Game.phyusPerSecond - 1) / Game.phyusPerSecond;
-        _label.text = format!"%d:%2d"(secs / 60, secs % 60);
+        _label.text = format!"%d:%02d"(secs / 60, secs % 60);
         reqDraw();
     }
 

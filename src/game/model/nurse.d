@@ -207,7 +207,7 @@ private:
     Result resultOf(in Tribe tr) const
     {
         auto result = new Result(_levelBuilt);
-        result.lixSaved    = tr.lixSaved;
+        result.lixSaved    = tr.score.current;
         result.skillsUsed  = tr.skillsUsed;
         result.phyusUsed = tr.updatePreviousSave;
         return result;

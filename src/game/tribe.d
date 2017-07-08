@@ -18,25 +18,28 @@ import lix;
 import level.level; // spawnintMax
 
 class Tribe {
+    private static struct ValueFields {
+    private:
+        Phyu _hasScoredSince; // Phyu(0) if ! hasScored()
+        Phyu _updatePreviousSave; // ...within the time limit
+        int  _lixSaved; // query with score()
 
-    private static struct PublicValueFields {
+    public:
         Style style;
 
         int  lixHatch;
-        int  lixSaved;
         int  lixOut;       // change this only when killing/generating lixes.
         int  lixLeaving;   // these have been scored, but keep game running
         int  spawnint;
         Phyu wantsNukeSince; // Phyu(0) if doesn't want nuke
 
         Phyu updatePreviousSpawn = Phyu(-Level.spawnintMax); // => at once
-        Phyu updatePreviousSave; // ...within the time limit
         int nextHatch; // Initialized by the state initalizer with the permu.
                        // We don't need the permu afterwards for spawns.
         int skillsUsed;
     }
 
-    PublicValueFields valueFields;
+    ValueFields valueFields;
     alias valueFields this;
 
     Enumap!(Ac, int) skills;
@@ -56,16 +59,35 @@ class Tribe {
 
     @property int stillPlaying() const { return lixOut+lixLeaving+lixHatch; }
 
-    @property Score score() const
+    @property Score score() const @nogc
     {
         Score ret;
         ret.style = style;
-        ret.current = lixSaved;
-        ret.potential = lixSaved + lixOut + lixHatch;
+        ret.current = _lixSaved;
+        ret.potential = _lixSaved + lixOut + lixHatch;
         return ret;
     }
 
-    @property bool wantsNuke() const { return wantsNukeSince > Phyu(0); }
+    @property bool hasScored() const @nogc { return score.current > 0; }
+
+    @property Phyu hasScoredSince() const @nogc
+    in { assert (hasScored); }
+    body { return _hasScoredSince; }
+
+    @property Phyu updatePreviousSave() const @nogc
+    {
+        return _updatePreviousSave;
+    }
+
+    void addSaved(in Style fromWho, in Phyu now)
+    {
+        if (_lixSaved == 0)
+            _hasScoredSince = now;
+        ++_lixSaved;
+        _updatePreviousSave = now;
+    }
+
+    @property bool wantsNuke() const @nogc { return wantsNukeSince > Phyu(0); }
 
     void returnSkills(in Ac ac, in int amount)
     {

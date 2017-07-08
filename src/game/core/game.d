@@ -323,8 +323,7 @@ private:
         assert (level);
         pan = new Panel(view, level.required);
         gui.addElder(pan);
-        pan.setLikeTribe(localTribe, level.ploder,
-                         cs.overtimeRunning, cs.overtimeRemainingInPhyus);
+        setLastPhyuToNow(); // to fill skills, needed for highlightFirstSkill
         pan.highlightFirstSkill();
     }
 

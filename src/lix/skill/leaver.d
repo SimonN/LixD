@@ -19,6 +19,7 @@ class RemovedLix : Job {
             "Lix can't be killed twice, that would miscount them.");
         if (healthy) --outsideWorld.tribe.lixOut;
         else         --outsideWorld.tribe.lixLeaving;
+        lixxie.ploderTimer = 0; // Hard cancel :/ Maybe burn fast and then 0?
     }
 
 }
