@@ -23,7 +23,7 @@ import hardware.keyboard;
 import menu.askname;
 import menu.browser.replay;
 import menu.browser.single;
-import menu.lobby;
+import menu.lobby.lobby;
 import menu.mainmenu;
 import menu.options;
 

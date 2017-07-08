@@ -62,7 +62,7 @@ $winLobbyTitleLobby          Lobby
 $winLobbyTitleRoom           Room #
 $winLobbyDisconnect          Disconnect
 $winLobbyUnstableCentral     (Experimental version. Please don't use central server.)
-$winLobbyStartCentral        Connect to central server
+$winLobbyStartCentral        Connect to
 $winLobbyStartServer         Host a game yourself
 $winLobbyStartClient         Connect to:
 $winLobbyChat                Chat:

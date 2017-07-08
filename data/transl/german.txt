@@ -58,9 +58,9 @@ $winLobbyTitleLobby         Lobby
 $winLobbyTitleRoom          Raum Nr.
 $winLobbyDisconnect         Netz verlassen
 $winLobbyUnstableCentral    (Experimentelle Version, bitte nicht zentralen Server nutzen.)
-$winLobbyStartCentral       Verbinden zu zentralem Server
+$winLobbyStartCentral       Verbinden mit
 $winLobbyStartServer        Selbst ein Spiel hosten
-$winLobbyStartClient        Verbinden zu:
+$winLobbyStartClient        Verbinden mit:
 $winLobbyChat               Chat:
 $winLobbySelectLevel        Level aussuchen
 $winLobbyReady              Bereit zum Start

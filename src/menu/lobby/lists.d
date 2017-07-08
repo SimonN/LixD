@@ -1,4 +1,4 @@
-module menu.lobbyui;
+module menu.lobby.lists;
 
 /* Extra UI elements that appear only in menu.lobby:
  * The list of players in the room, and the netplay color selector.

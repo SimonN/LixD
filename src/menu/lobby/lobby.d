@@ -1,4 +1,4 @@
-module menu.lobby;
+module menu.lobby.lobby;
 
 import std.algorithm;
 import std.conv;
@@ -12,7 +12,8 @@ import file.language;
 import gui;
 import hardware.mouse;
 import level.level;
-import menu.lobbyui;
+import menu.lobby.connect;
+import menu.lobby.lists;
 import menu.preview;
 import menu.browser.frommain;
 import menu.browser.network;
@@ -27,7 +28,7 @@ private:
     bool _gotoGame;
     bool _gotoMainMenu;
     TextButton _buttonExit;
-    TextButton _buttonCentral;
+    ConnectionPicker _connections;
 
     RichClient _netClient;
     Console _console;
@@ -64,11 +65,9 @@ public:
         _console = new LobbyConsole(new Geom(0, 60, xlg-40, 160, From.BOTTOM));
         addChild(_console);
 
-        _buttonCentral = new TextButton(new Geom(0, 40, 200, 40, From.TOP));
-        _buttonCentral.text = Lang.winLobbyStartCentral.transl;
-        _buttonCentral.hotkey = keyMenuMainNetwork;
-        _buttonCentral.onExecute = () { connect(ipCentralServer); };
-        _showWhenDisconnected ~= _buttonCentral;
+        _connections = new ConnectionPicker(new Geom(0, 40, 300,100,From.TOP));
+        _connections.onExecute = (string ip) { this.connect(ip); };
+        _showWhenDisconnected ~= _connections;
 
         _peerList = new PeerList(new Geom(20, 40, 120, 20*8));
         _showWhenConnected ~= _peerList;
