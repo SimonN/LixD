@@ -203,6 +203,7 @@ void loadGadgetFromDisk(in string strNoExt, in char pe, in Filename fn)
     // It's normal to have no definitions file, so don't log that.
     if (defs.fileExists)
         tile.readDefinitionsFile(defs);
+    tile.logAnyErrors(strNoExt);
 }
 
 void loadTerrainFromDisk(in string strNoExt, in bool steel, in Filename fn)

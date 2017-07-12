@@ -5,10 +5,18 @@ module graphic.gadget.openfor;
  * Triggerable : GadgetAnimsOnFeed is a cooldown trap or cooldown flinger.
  *
  * GadgetAnimsOnFeed allows for two different rows of animation: The first row
- * is played back once whenever a lix enters the gadget. The second row is
- * looped while the gadget is idle. If the second row doesn't exist, frame 0
- * from the first row is shown all the time while idle. Frame 0 from the first
- * row never belongs to the once-played-back anim, even if there is a 2nd row.
+ * is looped while idle. When a lix enters, the game immediately jumps to the
+ * second row, finishes one loop through the second row, then displays the
+ * first frame of the first row again. This first frame of the first row is
+ * skipped if the gadget is triggered immediately again that frame, instead
+ * looping back to the beginning of the second row. Thus: If the second row
+ * has n frames, the gadget activates every n frames.
+ *
+ * Second row doesn't exist: This is outdated from C++ Lix and D Lix 0.6.
+ * I removed the code for that. It worked like this: Frame 0 from the first
+ * row is shown all the time while idle. All frames other than the first frame
+ * act like the second row in the second-row-exists case. You had to loop
+ * into frame 0 and show frame 0 at least once between two eatings.
  */
 
 import basics.help;
@@ -30,20 +38,31 @@ public alias FlingTrig = GadgetAnimsOnFeed;
 public alias Flinger   = GadgetAnimsOnFeed; // both FlingPerm and FlingTrig
 
 private class GadgetAnimsOnFeed : GadgetWithTribeList {
-
     Phyu wasFedDuringPhyu;
-    const(int) idleAnimLength;
+    immutable int idleAnimLength;
+    immutable int eatingAnimLength;
 
     this(const(Topology) top, in ref GadOcc levelpos)
-    {
+    out { assert (idleAnimLength >= 1); }
+    body {
         super(top, levelpos);
         idleAnimLength = delegate() {
-            if (! tile || ! tile.cb)
-                return 0;
-            else for (int i = 0; i < levelpos.tile.cb.xfs; ++i)
-                if (! levelpos.tile.cb.frameExists(i, 1))
+            if (! tile || ! tile.cb || ! tile.cb.frameExists(0, 0))
+                return 1;
+            for (int i = 0; i < tile.cb.xfs; ++i)
+                if (! tile.cb.frameExists(i, 0))
                     return i;
-            return levelpos.tile.cb.xfs;
+            return tile.cb.xfs;
+        }();
+        eatingAnimLength = delegate() {
+            if (! tile || ! tile.cb)
+                return 1;
+            else if (tile.cb.yfs == 1)
+                return tile.cb.xfs - 1;
+            else for (int i = 0; i < tile.cb.xfs; ++i)
+                if (! tile.cb.frameExists(i, 1))
+                    return i;
+            return tile.cb.xfs;
         }();
     }
 
@@ -51,7 +70,8 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
     {
         super(rhs);
         wasFedDuringPhyu = rhs.wasFedDuringPhyu;
-        idleAnimLength    = rhs.idleAnimLength;
+        idleAnimLength   = rhs.idleAnimLength;
+        eatingAnimLength = rhs.eatingAnimLength;
     }
 
     override GadgetAnimsOnFeed clone() const
@@ -85,18 +105,11 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
     override void animateForPhyu(in Phyu upd)
     {
         if (isEating(upd)) {
-            yf = 0;
-            xf = (upd == firstIdlingPhyuAfterEating - 1)
-                ? 0 // Last frame of eating is a frame that looks like idling.
-                    // This is a mechanic taken over 1:1 from C++ Lix.
-                : upd - wasFedDuringPhyu + 1;
-        }
-        else if (idleAnimLength == 0) {
-            yf = 0;
-            xf = 0;
+            yf = 1;
+            xf = upd - wasFedDuringPhyu;
         }
         else {
-            yf = 1;
+            yf = 0;
             xf = (upd - firstIdlingPhyuAfterEating) % idleAnimLength;
         }
         clearTribes();
@@ -105,15 +118,8 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
 private:
     Phyu firstIdlingPhyuAfterEating() const
     {
-        if (wasFedDuringPhyu == 0)
-            // _wasFedDuringPhyu == 0 is the init value, there shouldn't
-            // happen anything on that frame, Game.update isn't even called.
-            return Phyu(0);
-        else
-            // Frame 0 may not be part of the anim, but even under a very dense
-            // stream of lix, frame 0 is shown after eating for 1 update.
-            // Thus, no -1 here.
-            return Phyu(wasFedDuringPhyu + animationLength);
+        return wasFedDuringPhyu == 0 ? Phyu(0) // never eaten anything
+            : Phyu(wasFedDuringPhyu + eatingAnimLength);
     }
 }
 // end class GadgetAnimsOnFeed

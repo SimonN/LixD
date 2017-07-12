@@ -158,6 +158,16 @@ public:
     }
     // end read_definitions_file
 
+    void logAnyErrors(in string name) const
+    {
+        if (! cb)
+            return;
+        if (type == Type.TRAP && cb.yfs != 2) {
+            logf("Error: Triggered trap `%s':", name);
+            logf("    -> Image has %d rows of frames, not 2.", cb.yfs);
+        }
+    }
+
 private:
     void set_nice_defaults_based_on_type()
     {
