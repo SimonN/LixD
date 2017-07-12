@@ -7,6 +7,8 @@ module gui.button.twotask;
  * Don't execute continuously on LMB hold after a while.
  */
 
+import std.format;
+
 import basics.globals; // bitmap file for the spawnint button, doubleclick spd
 import graphic.cutbit;
 import graphic.internal;
@@ -60,7 +62,7 @@ protected:
 
     override string hotkeyString() const
     {
-        return KeySet(hotkey, _hotkeyRight).nameShort;
+        return "%s/%s".format(hotkey.nameShort, _hotkeyRight.nameShort);
     }
 }
 
