@@ -25,8 +25,9 @@ bool keyReleased(int alkey) { return _rlsd[alkey];     }
 // meaningful if executed many times in a row. Move once, wait for repetitions.
 bool keyTappedAllowingRepeats(int alkey)
 {
+    enum repeatSpeed = basics.globals.ticksForDoubleClick * 3 / 5;
     return _once[alkey]
-        || _hold[alkey] > basics.globals.ticksForDoubleClick;
+        || _hold[alkey] > repeatSpeed;
 }
 
 @property bool backspace()  { return _backspace;   } // detects hold-repeats
@@ -109,9 +110,9 @@ private void onceRlsdFromAllegro()
             if ((c < 0 || c >= 0x20) // ignore nonprintable ASCII controls
                 && c != 0x7F  // ignore the delete character
             ) {
-                char[] buf;
-                std.utf.encode(buf, c);
-                _bufferUTF8 ~= buf;
+                char[4] buf;
+                auto bytesUsed = std.utf.encode(buf, c);
+                _bufferUTF8 ~= buf[0 .. bytesUsed];
             }
             else if (event.keyboard.keycode == ALLEGRO_KEY_BACKSPACE) {
                 // A5 manual tells us to do this outside of the UTF8 scanning
