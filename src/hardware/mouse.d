@@ -38,20 +38,6 @@ void calc();
 
 void trapMouse(bool b) { _trapMouse = b; }
 
-// There seems to be a bug in Allegro 5.0.8: Clicking out of
-// the window sends a switch-out event, correct. But alt-tabbing
-// out of the window doesn't make a display-switch-out-event on
-// Debian 6 + Gnome 2. I want to un-trap the mouse when we alt-tab
-// out of the window, and use a workaround when we lack the event.
-version (linux) {
-    enum issue118workaround = true;
-    enum mouseWarpKludge = true;
-}
-else {
-    enum issue118workaround = false;
-    enum mouseWarpKludge = false;
-}
-
 private:
     ALLEGRO_EVENT_QUEUE* _queue;
     bool _trapMouse = true;
@@ -136,14 +122,12 @@ void freezeMouseY() { _mouseOwn.y = _mouseFreezeRevert.y; }
 
 private:
 
-void consumeAllegroMouseEvents(bool discardBuggyJumps = false)
+void consumeAllegroMouseEvents()
 {
     // I will adhere to my convention from C++/A4 Lix to multiply all incoming
     // mouse movements by the mouse speed, and then later divide by constant
     ALLEGRO_EVENT event;
     while (al_get_next_event(_queue, &event)) {
-        if (discardBuggyJumps)
-            continue;
         if (event.mouse.display != display)
             continue;
 
@@ -174,21 +158,11 @@ void consumeAllegroMouseEvents(bool discardBuggyJumps = false)
 
         // This occurs after centralizing the mouse manually.
         case ALLEGRO_EVENT_MOUSE_WARPED:
-            if (mouseWarpKludge && ! basics.user.fastMovementFreesMouse.value)
-                // This is a weird shotgun fix against the jumping mouse.
-                // The jumping mouse happened when you started RMB-scrolling
-                // on Arch 2016 with Allegro 5.2.
-                _mickey += Point(event.mouse.dx, event.mouse.dy) * mouseSpeed;
-            static if (issue118workaround) {
-                _trapMouse = true;
-            }
             break;
 
         case ALLEGRO_EVENT_MOUSE_ENTER_DISPLAY:
-            static if (! issue118workaround) {
-                if (hardware.display.displayActive)
-                    _trapMouse = true;
-            }
+            if (hardware.display.displayActive)
+                _trapMouse = true;
             // Nepster 2016-06: When entering the display, the ingame
             // cursor should jump to where we entered.
             // This would sometimes trigger when the hardware mouse is close
@@ -213,49 +187,43 @@ void consumeAllegroMouseEvents(bool discardBuggyJumps = false)
 }
 
 bool isBuggyJump(const ALLEGRO_EVENT* event)
-{
-    static if (mouseWarpKludge) {
-        if (   event.type != ALLEGRO_EVENT_MOUSE_AXES
-            && event.type != ALLEGRO_EVENT_MOUSE_WARPED)
-            return false;
+in {
+    assert (event.type == ALLEGRO_EVENT_MOUSE_AXES
+        ||  event.type == ALLEGRO_EVENT_MOUSE_WARPED);
+}
+do {
+    version (linux)
         // I had massive jumps on hardware mouse warp on Arch 2017, Al 5.2.
         // Guard only against huge jumps over almost half the screen.
         return event.mouse.dx.abs > xl/3 || event.mouse.dy.abs > yl/3;
-    }
-    else {
-        return false;
-    }
-}
-
-bool warpAlways()
-{
-    // DTODO: This should not depend on the mouse buttons, but on whether
-    // we are RMB-scrolling with whatever button we have assigned to it.
-    // Maybe freezeMouseX/Y should set this flag.
-    return _mouseHeldFor[1] > 2 || _mouseHeldFor[2] > 2
-        || ! basics.user.fastMovementFreesMouse.value;
-}
-
-bool isCloseToEdge(in int pos, in int length)
-{
-    if (warpAlways)
-        return pos != length/2;
     else
-        // Make it even easier for the mouse to leave window,
-        // resetting closer to the edge => less speed to leave.
-        return pos * 16 < length || pos * 16 >= length * 15;
+        return false;
 }
 
 void handleTrappedMouse()
 {
-    if (_trapMouse) {
-        al_hide_mouse_cursor(display);
-        ALLEGRO_MOUSE_STATE state;
-        al_get_mouse_state(&state);
-        if (   isCloseToEdge(al_get_mouse_state_axis(&state, 0), xl)
-            || isCloseToEdge(al_get_mouse_state_axis(&state, 1), yl))
-            al_set_mouse_xy(display, xl/2, yl/2);
-    }
-    else
+    if (! _trapMouse) {
         al_show_mouse_cursor(display);
+        return;
+    }
+    bool isCloseToEdge(in int pos, in int length)
+    {
+        // DTODO: This should not depend on the mouse buttons, but on whether
+        // we are RMB-scrolling with whatever button we have assigned to it.
+        // Maybe freezeMouseX/Y should set this flag.
+        immutable bool warpAlways =
+            _mouseHeldFor[1] > 2 || _mouseHeldFor[2] > 2
+            || ! basics.user.fastMovementFreesMouse.value;
+        return warpAlways
+            ? pos != length/2 // hard to leave
+            : pos * 16 < length || pos * 16 >= length * 15; // easy to leave
+    }
+    al_hide_mouse_cursor(display);
+    ALLEGRO_MOUSE_STATE state;
+    al_get_mouse_state(&state);
+    if (   isCloseToEdge(al_get_mouse_state_axis(&state, 0), xl)
+        || isCloseToEdge(al_get_mouse_state_axis(&state, 1), yl)
+    ) {
+        al_set_mouse_xy(display, xl/2, yl/2);
+    }
 }
