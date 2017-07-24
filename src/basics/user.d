@@ -208,7 +208,7 @@ static this()
     paintTorusSeams = newOpt("PAINT_TORUS_SEAMS", Lang.optionPaintTorusSeams, true);
     ingameTooltips = newOpt("INGAME_TOOLTIPS", Lang.optionIngameTooltips, true);
     showButtonHotkeys = newOpt("SHOW_BUTTON_HOTKEYS", Lang.optionShowButtonHotkeys, true);
-    showFPS = newOpt("SHOW_FPS", Lang.optionShowFPS, true);
+    showFPS = newOpt("SHOW_FPS", Lang.optionShowFPS, false);
     guiColorRed = newOpt("GUI_COLOR_RED", Lang.optionGuiColorRed, 0x60);
     guiColorGreen = newOpt("GUI_COLOR_GREEN", Lang.optionGuiColorGreen, 0x80);
     guiColorBlue = newOpt("GUI_COLOR_BLUE", Lang.optionGuiColorBlue, 0xB0);

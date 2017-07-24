@@ -88,7 +88,9 @@ public:
             b.style = tr.style;
             if (b.skill.isPloder)
                 b.skill = ploderToDisplay;
-            b.number = tr.skills[b.skill];
+            // Since you're not allowed to assign skills when you want to nuke,
+            // show 0 skills on the GUI even if we have more.
+            b.number = tr.wantsNuke ? 0 : tr.skills[b.skill];
         }
         nuke.on = tr.wantsNuke;
         nuke.overtimeRunning = overtimeRunning;

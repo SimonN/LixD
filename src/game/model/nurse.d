@@ -171,6 +171,7 @@ private:
         if (u >= _model.cs.update)
             return;
         _model.takeOwnershipOf(_cache.loadBeforePhyu(Phyu(u + 1)).clone);
+        _replay.eraseEarlySingleplayerNukes(); // should bring no bugs
         updateTo(u, DuringTurbo.no);
     }
 

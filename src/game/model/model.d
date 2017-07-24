@@ -87,8 +87,8 @@ public:
 
     void advance()
     {
+        updateNuke(); // sets lixHatch = 0, thus affects spawnLixxiesFromHatch
         spawnLixxiesFromHatches();
-        updateNuke();
         updateLixxies();
         finalizePhyuAnimateGadgets();
     }
@@ -121,8 +121,12 @@ private:
     ) {
         immutable upd = _cs.update;
         auto tribe = tribeStyle in _cs.tribes;
-        // Ignore bogus data that can come from anywhere
         if (! tribe)
+            // Ignore bogus data that can come from anywhere
+            return;
+        if (tribe.wantsNuke)
+            // Game rule: After you call for the nuke, you may not assign
+            // other things, nuke again, or do whatever we allow in the future
             return;
         if (i.isSomeAssignment) {
             // never assert based on the content in ReplayData, which may have
@@ -151,9 +155,7 @@ private:
             }
         }
         else if (i.action == RepAc.NUKE) {
-            if (tribe.wantsNuke)
-                return;
-            tribe.lixHatch = 0;
+            assert (! tribe.wantsNuke);
             tribe.wantsNukeSince = upd;
             if (_effect)
                 _effect.addSound(upd, tribe.style, 0, Sound.NUKE);
@@ -194,6 +196,7 @@ private:
         if (! _cs.nuking)
             return;
         foreach (int tribeID, tribe; _cs.tribes) {
+            tribe.lixHatch = 0;
             foreach (int lixID, lix; tribe.lixvec) {
                 if (! lix.healthy || lix.ploderTimer > 0)
                     continue;
