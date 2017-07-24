@@ -95,6 +95,12 @@ public:
         foreach (g; flingers) func(g);
     }
 
+    void drawAllGadgets()
+    {
+        goals.each!(goal => goal.lockedWithNoSign = nuking);
+        foreachConstGadget(delegate void (const(Gadget) g) { g.draw; });
+    }
+
     @property bool multiplayer() const @nogc
     {
         assert (numTribes > 0);

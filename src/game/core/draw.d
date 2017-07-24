@@ -62,12 +62,7 @@ void drawGadgets(Game game)
 {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "game draws gadgets");
-    auto state = game.nurse.constStateForDrawingOnly;
-    state.foreachConstGadget((const(Gadget) g) {
-        version (tharsisprofiling)
-            auto zo2 = Zone(profiler, "game draws one gadget");
-        g.draw();
-    });
+    game.nurse.drawAllGadgets();
 }
 
 void drawLand(Game game)
