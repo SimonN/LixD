@@ -84,15 +84,18 @@ public:
     ) {
         if (tr is null)
             return;
+        immutable bool multiNuking = tr.style != Style.garden
+            && overtimeRunning && overtimeRemainingInPhyus == 0;
         foreach (b; _skills) {
             b.style = tr.style;
             if (b.skill.isPloder)
                 b.skill = ploderToDisplay;
             // Since you're not allowed to assign skills when you want to nuke,
-            // show 0 skills on the GUI even if we have more.
-            b.number = tr.wantsNuke ? 0 : tr.skills[b.skill];
+            // show 0 skills on the GUI even if we have more. But in
+            // singleplayer, we want to see how many skills we have left.
+            b.number = tr.nukePressed || multiNuking ? 0 : tr.skills[b.skill];
         }
-        nuke.on = tr.wantsNuke;
+        nuke.on = tr.nukePressed || multiNuking;
         nuke.overtimeRunning = overtimeRunning;
         nuke.overtimeRemainingInPhyus = overtimeRemainingInPhyus;
         if (_scoreGraph)

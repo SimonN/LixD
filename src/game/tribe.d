@@ -8,6 +8,8 @@ module game.tribe;
  * fetch it from the replay.
  */
 
+import std.algorithm;
+
 import enumap;
 
 import basics.globals;
@@ -20,18 +22,19 @@ import level.level; // spawnintMax
 class Tribe {
     private static struct ValueFields {
     private:
-        Phyu _hasScoredSince; // Phyu(0) if ! hasScored()
-        Phyu _updatePreviousSave; // ...within the time limit
+        Phyu _firstScoring; // Phyu(0) if ! hasScored()
+        Phyu _recentScoring; // Phyu(0) if ! hasScored()
+        Phyu _finishedPlayingAt; // Phyu(0) if can maken more decisions
+        Phyu _nukePressedSince; // Phyu(0) if never pressed
+
+        int  _lixOut;
+        int  _lixLeaving; // these have been scored, but keep game running
         int  _lixSaved; // query with score()
 
     public:
         Style style;
-
-        int  lixHatch;
-        int  lixOut;       // change this only when killing/generating lixes.
-        int  lixLeaving;   // these have been scored, but keep game running
-        int  spawnint;
-        Phyu wantsNukeSince; // Phyu(0) if doesn't want nuke
+        int spawnint;
+        int lixHatch;
 
         Phyu updatePreviousSpawn = Phyu(-Level.spawnintMax); // => at once
         int nextHatch; // Initialized by the state initalizer with the permu.
@@ -57,42 +60,120 @@ class Tribe {
 
     Tribe clone() const { return new Tribe(this); }
 
-    @property int stillPlaying() const { return lixOut+lixLeaving+lixHatch; }
+    @property const @nogc {
+        bool doneDeciding()  { return _lixOut == 0 && lixHatch == 0; }
+        bool doneAnimating() { return doneDeciding() && ! _lixLeaving; }
 
-    @property Score score() const @nogc
-    {
-        Score ret;
-        ret.style = style;
-        ret.current = _lixSaved;
-        ret.potential = _lixSaved + lixOut + lixHatch;
-        return ret;
+        int lixOut() { return _lixOut; }
+        Score score()
+        {
+            Score ret;
+            ret.style = style;
+            ret.current = _lixSaved;
+            ret.potential = _lixSaved + _lixOut + lixHatch;
+            return ret;
+        }
+
+        bool hasScored() { return score.current > 0; }
+        Phyu firstScoring() { return _firstScoring; }
+        Phyu recentScoring() { return _recentScoring; }
+
+        Phyu finishedPlayingAt()
+        in { assert (doneDeciding); }
+        do { return _finishedPlayingAt; }
     }
 
-    @property bool hasScored() const @nogc { return score.current > 0; }
+    ///////////////////////////////////////////////////////////////////////////
+    // Mutation
+    ///////////////////////////////////////////////////////////////////////////
 
-    @property Phyu hasScoredSince() const @nogc
-    in { assert (hasScored); }
-    body { return _hasScoredSince; }
+    void recordSpawnedFromHatch()
+    in { assert (this.lixHatch > 0); }
+    out { assert (this.lixHatch >= 0 && this._lixOut >= 0); }
+    do {
+        --lixHatch;
+        ++_lixOut;
+    }
 
-    @property Phyu updatePreviousSave() const @nogc
-    {
-        return _updatePreviousSave;
+    void recordOutToLeaver()
+    in { assert (this._lixOut > 0); }
+    out { assert (this._lixOut >= 0 && this._lixLeaving >= 0); }
+    do {
+        --_lixOut;
+        ++_lixLeaving;
+    }
+
+    void recordLeaverDone(in Phyu now)
+    out { assert (this._lixOut >= 0 && this._lixLeaving >= 0); }
+    in {
+        assert (this._lixLeaving > 0);
+        assert (this._finishedPlayingAt == this._finishedPlayingAt.init
+            ||  this._finishedPlayingAt == now);
+    }
+    do {
+        --_lixLeaving;
+        if (doneDeciding)
+            _finishedPlayingAt = now;
     }
 
     void addSaved(in Style fromWho, in Phyu now)
     {
+        _recentScoring = now;
         if (_lixSaved == 0)
-            _hasScoredSince = now;
+            _firstScoring = now;
         ++_lixSaved;
-        _updatePreviousSave = now;
     }
-
-    @property bool wantsNuke() const @nogc { return wantsNukeSince > Phyu(0); }
 
     void returnSkills(in Ac ac, in int amount)
     {
         skillsUsed -= amount;
         if (skills[ac] != skillInfinity)
             skills[ac] += amount;
+    }
+
+    ///////////////////////////////////////////////////////////////////////////
+    // Nuke
+    ///////////////////////////////////////////////////////////////////////////
+
+    @property void nukePressedSince(Phyu u) @nogc { _nukePressedSince = u; }
+
+    @property const @nogc {
+        bool nukePressed()
+        {
+            return _nukePressedSince > Phyu(0);
+        }
+
+        bool triggersOvertime()
+        {
+            return hasScored && (nukePressed || doneDeciding);
+        }
+
+        Phyu triggersOvertimeSince()
+        in { assert (triggersOvertime); }
+        do {
+            if (nukePressed && doneDeciding)
+                return min(finishedPlayingAt,
+                            max(_nukePressedSince, firstScoring));
+            else if (nukePressed)
+                return max(_nukePressedSince, firstScoring);
+            else
+                return finishedPlayingAt;
+        }
+
+        bool wantsAbortiveTie()
+        {
+            return ! hasScored && (nukePressed || doneDeciding);
+        }
+
+        Phyu wantsAbortiveTieSince()
+        in { assert (wantsAbortiveTie); }
+        do {
+            if (nukePressed && doneDeciding)
+                return min(_nukePressedSince, finishedPlayingAt);
+            else if (nukePressed)
+                return _nukePressedSince;
+            else
+                return finishedPlayingAt;
+        }
     }
 }

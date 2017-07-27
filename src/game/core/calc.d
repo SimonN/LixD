@@ -44,11 +44,12 @@ private bool
 isFinished(const(Game) game) { with (game)
 {
     assert (nurse);
-    if (runmode == Runmode.VERIFY)
-        return ! nurse.stillPlaying();
+    if (runmode == Runmode.VERIFY) {
+        return nurse.doneDeciding();
+    }
     else {
         assert (_effect);
-        return ! nurse.stillPlaying() && _effect.nothingGoingOn;
+        return nurse.doneAnimating() && _effect.nothingGoingOn;
     }
 }}
 

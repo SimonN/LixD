@@ -285,13 +285,8 @@ $netGameHowToChat1          Press [
 $netGameHowToChat2         ] to chat.
 $netGameEnd                   The game is over.
 $netGameEndResult            Game outcome:
-$netGameOvertime1            has finished playing and has saved
-$netGameOvertime2            lix.
-$netGameOvertime2One        one lix.
-$netGameOvertime3            Now, the overtime of
-$netGameOvertime4            minutes will begin!
-$netGameOvertime4One        minute will begin!
-$netGameOvertime4Sec        seconds will begin!
+$netGameTriggersOvertime    has triggered overtime! Nuke in
+$netGameWantsAbortiveTie    wants to cancel the game. To cancel, double-click the nuke, otherwise play on.
 
 // Optionsfenster
 

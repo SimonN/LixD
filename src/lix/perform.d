@@ -19,7 +19,10 @@ package void performUseGadgets(Lixxie l)
     l.useWater();
     l.useNonconstantTraps();
     l.useFlingers();
-    l.useGoals();
+
+    assert (l.outsideWorld);
+    if (! l.outsideWorld.state.nuking)
+        l.useGoals();
 }
 
 private:

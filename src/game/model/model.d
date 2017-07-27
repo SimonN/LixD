@@ -124,9 +124,10 @@ private:
         if (! tribe)
             // Ignore bogus data that can come from anywhere
             return;
-        if (tribe.wantsNuke)
+        if (tribe.nukePressed || _cs.nuking)
             // Game rule: After you call for the nuke, you may not assign
-            // other things, nuke again, or do whatever we allow in the future
+            // other things, nuke again, or do whatever we allow in the future.
+            // During the nuke, nobody can assign or save lixes.
             return;
         if (i.isSomeAssignment) {
             // never assert based on the content in ReplayData, which may have
@@ -155,8 +156,7 @@ private:
             }
         }
         else if (i.action == RepAc.NUKE) {
-            assert (! tribe.wantsNuke);
-            tribe.wantsNukeSince = upd;
+            tribe.nukePressedSince = upd;
             if (_effect)
                 _effect.addSound(upd, tribe.style, 0, Sound.NUKE);
         }
@@ -183,8 +183,7 @@ private:
             if (walkLeftInsteadOfRight)
                 newLix.turn();
             tribe.lixvec ~= newLix;
-            --tribe.lixHatch;
-            ++tribe.lixOut;
+            tribe.recordSpawnedFromHatch();
             tribe.updatePreviousSpawn = _cs.update;
             tribe.nextHatch     += _cs.numTribes;
             tribe.nextHatch     %= _cs.hatches.len;

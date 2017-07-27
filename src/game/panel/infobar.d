@@ -177,7 +177,7 @@ protected:
         enum flickerMax = 4 * flickerFreq + 1;
         if (score.potential >= _lixRequired)
             _warningSignFlicker = 0;
-        else if (wantsNuke)
+        else if (triggersOvertime)
             _warningSignFlicker = flickerMax;
         else if (_warningSignFlicker < flickerMax) {
             if (_warningSignFlicker == 0)

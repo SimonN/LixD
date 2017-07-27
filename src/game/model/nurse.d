@@ -62,11 +62,17 @@ public:
         }
     }
 
-    @property bool stillPlaying() const
+    @property bool doneDeciding() const
     {
         assert (_model);
-        return _model.cs.tribes.byValue.any!(a => a.stillPlaying)
-            || _model.cs.traps         .any!(a => a.isEating(upd));
+        return _model.cs.tribes.byValue.all!(a => a.doneDeciding);
+    }
+
+    @property bool doneAnimating() const
+    {
+        assert (_model);
+        return _model.cs.tribes.byValue.all!(a => a.doneAnimating)
+            && _model.cs.traps         .all!(a => ! a.isEating(upd));
     }
 
     @property bool singleplayerHasSavedAtLeast(in int lixRequired) const
@@ -123,7 +129,7 @@ public:
     void updateTo(in Phyu targetPhyu, in DuringTurbo duringTurbo)
     {
         // assert (game.runmode == Runmode.INTERACTIVE);
-        while (stillPlaying && _model.cs.update < targetPhyu) {
+        while (! doneAnimating && _model.cs.update < targetPhyu) {
             updateOnce();
             considerAutoSavestateIfCloseTo(targetPhyu, duringTurbo);
         }
@@ -152,7 +158,7 @@ public:
         assert (_model);
         assert (_replay);
         while (! _model.cs.singleplayerHasSavedAtLeast(lixRequired)
-                && _model.cs.tribes.byValue.any!(tr => tr.stillPlaying)
+                && ! doneDeciding
                 // allow 5 minutes after the last replay data before cancelling
                 && upd < _replay.latestPhyu + 5 * (60 * 15))
             updateOnce();
@@ -209,9 +215,9 @@ private:
     Result resultOf(in Tribe tr) const
     {
         auto result = new Result(_levelBuilt);
-        result.lixSaved    = tr.score.current;
-        result.skillsUsed  = tr.skillsUsed;
-        result.phyusUsed = tr.updatePreviousSave;
+        result.lixSaved = tr.score.current;
+        result.skillsUsed = tr.skillsUsed;
+        result.phyusUsed = tr.recentScoring;
         return result;
     }
 }

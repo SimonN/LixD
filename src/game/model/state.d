@@ -97,7 +97,8 @@ public:
 
     void drawAllGadgets()
     {
-        goals.each!(goal => goal.lockedWithNoSign = nuking);
+        goals.each!(g => g.lockedWithNoSign =
+            nuking && ! tribes.byValue.all!(tr => tr.doneDeciding));
         foreachConstGadget(delegate void (const(Gadget) g) { g.draw; });
     }
 
@@ -114,32 +115,38 @@ public:
     }
 
     @property bool overtimeRunning() const
-    {
-        return tribes.byValue.all!(tr => tr.wantsNuke)
-            || tribes.byValue.any!(tr => tr.wantsNuke && tr.score.current > 0);
+    in { assert (tribes.length > 0); }
+    do {
+        return tribes.byValue.all!(tr => tr.wantsAbortiveTie)
+            || tribes.byValue.any!(tr => tr.triggersOvertime);
     }
 
     @property Phyu overtimeRunningSince() const
-    in { assert (overtimeRunning); }
+    in {
+        assert (overtimeRunning);
+        assert (tribes.length > 0);
+    }
     body {
-        auto nukeWanters = tribes.byValue.filter!(tr => tr.wantsNuke
-                                                     && tr.hasScored);
-        if (nukeWanters.save.empty) {
-            assert (tribes.byValue.all!(tr => tr.wantsNuke && ! tr.hasScored));
-            return tribes.byValue.map!(tr => tr.wantsNukeSince).reduce!max;
+        if (tribes.byValue.all!(tr => tr.wantsAbortiveTie)) {
+            return tribes.byValue.map!(tr => tr.wantsAbortiveTieSince)
+                                 .reduce!max;
         }
-        else return nukeWanters
-            .map!(tr => max(tr.wantsNukeSince, tr.hasScoredSince))
-            .reduce!min;
+        else {
+            assert (tribes.byValue.any!(tr => tr.triggersOvertime));
+            return tribes.byValue.filter!(tr => tr.triggersOvertime)
+                .map!(tr => tr.triggersOvertimeSince).reduce!min;
+        }
     }
 
     // This doesn't return Phyu because Phyu is a point in time, not a duration
     @property int overtimeRemainingInPhyus() const
     {
-        return overtimeRunning
-            ? clamp(overtimeAtStartInPhyus + overtimeRunningSince - update,
-                    0, overtimeAtStartInPhyus)
-            : overtimeAtStartInPhyus;
+        if (! overtimeRunning)
+            return overtimeAtStartInPhyus;
+        if (tribes.byValue.all!(tr => tr.doneDeciding || tr.wantsAbortiveTie))
+            return 0;
+        return clamp(overtimeAtStartInPhyus + overtimeRunningSince - update,
+                    0, overtimeAtStartInPhyus);
     }
 
     @property bool nuking() const

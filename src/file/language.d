@@ -300,13 +300,8 @@ enum Lang {
     netGameHowToChat2,
     netGameEnd,
     netGameEndResult,
-    netGameOvertime1,
-    netGameOvertime2,
-    netGameOvertime2One,
-    netGameOvertime3,
-    netGameOvertime4,
-    netGameOvertime4One,
-    netGameOvertime4Sec,
+    netGameTriggersOvertime,
+    netGameWantsAbortiveTie,
 
     // Optionsfenster
     optionTitle, optionTitleDesc, // DTODOOPTION

@@ -273,13 +273,8 @@ $netGameHowToChat1        Du kannst mit [
 $netGameHowToChat2        ] chatten.
 $netGameEnd                  Das Spiel ist zu Ende.
 $netGameEndResult           Spielergebnis:
-$netGameOvertime1           hat zu Ende gespielt und
-$netGameOvertime2           Lix gerettet.
-$netGameOvertime2One       eine Lix gerettet.
-$netGameOvertime3           Jetzt beginnt die Nachspielzeit von
-$netGameOvertime4           Minuten!
-$netGameOvertime4One       Minute!
-$netGameOvertime4Sec       Sekunden!
+$netGameTriggersOvertime    hat die Nachspielzeit ausgelöst! Atombombe in
+$netGameWantsAbortiveTie    möchte das Spiel abbrechen. Zum Abbruch doppelklicke auf die Atombombe, ansonsten spiele weiter.
 
 // Optionsfenster
 $optionTitle                  Optionen

@@ -10,15 +10,12 @@ class RemovedLix : Job {
     override @property bool blockable() const { return false; }
 
     override void onBecome()
-    out {
-        assert (lixxie.outsideWorld.tribe.lixOut     >= 0);
-        assert (lixxie.outsideWorld.tribe.lixLeaving >= 0);
-    }
-    body {
+    {
         assert (lixxie.job.ac != Ac.nothing,
             "Lix can't be killed twice, that would miscount them.");
-        if (healthy) --outsideWorld.tribe.lixOut;
-        else         --outsideWorld.tribe.lixLeaving;
+        if (healthy)
+            outsideWorld.tribe.recordOutToLeaver();
+        outsideWorld.tribe.recordLeaverDone(lixxie.outsideWorld.state.update);
         lixxie.ploderTimer = 0; // Hard cancel :/ Maybe burn fast and then 0?
     }
 
@@ -32,8 +29,7 @@ abstract class Leaver : Job {
 
     final override void onBecome()
     {
-        --lixxie.outsideWorld.tribe.lixOut;
-        ++lixxie.outsideWorld.tribe.lixLeaving;
+        lixxie.outsideWorld.tribe.recordOutToLeaver();
         onBecomeLeaver();
     }
 
