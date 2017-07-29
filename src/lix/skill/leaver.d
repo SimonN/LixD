@@ -14,8 +14,9 @@ class RemovedLix : Job {
         assert (lixxie.job.ac != Ac.nothing,
             "Lix can't be killed twice, that would miscount them.");
         if (healthy)
-            outsideWorld.tribe.recordOutToLeaver();
-        outsideWorld.tribe.recordLeaverDone(lixxie.outsideWorld.state.update);
+            outsideWorld.tribe.recordOutToLeaver(
+                lixxie.outsideWorld.state.update);
+        outsideWorld.tribe.recordLeaverDone();
         lixxie.ploderTimer = 0; // Hard cancel :/ Maybe burn fast and then 0?
     }
 
@@ -29,7 +30,8 @@ abstract class Leaver : Job {
 
     final override void onBecome()
     {
-        lixxie.outsideWorld.tribe.recordOutToLeaver();
+        lixxie.outsideWorld.tribe.recordOutToLeaver(
+            lixxie.outsideWorld.state.update);
         onBecomeLeaver();
     }
 

@@ -95,26 +95,26 @@ class Tribe {
         ++_lixOut;
     }
 
-    void recordOutToLeaver()
-    in { assert (this._lixOut > 0); }
-    out { assert (this._lixOut >= 0 && this._lixLeaving >= 0); }
-    do {
-        --_lixOut;
-        ++_lixLeaving;
-    }
-
-    void recordLeaverDone(in Phyu now)
-    out { assert (this._lixOut >= 0 && this._lixLeaving >= 0); }
+    void recordOutToLeaver(in Phyu now)
     in {
-        assert (this._lixLeaving > 0);
+        assert (this._lixOut > 0);
         assert (this._finishedPlayingAt == this._finishedPlayingAt.init
             ||  this._finishedPlayingAt == now);
     }
+    out {
+        assert (this._lixOut >= 0 && this._lixLeaving >= 0);
+    }
     do {
-        --_lixLeaving;
+        --_lixOut;
+        ++_lixLeaving;
         if (doneDeciding)
             _finishedPlayingAt = now;
     }
+
+    void recordLeaverDone()
+    in { assert (this._lixLeaving > 0); }
+    out { assert (this._lixOut >= 0 && this._lixLeaving >= 0); }
+    do { --_lixLeaving; }
 
     void addSaved(in Style fromWho, in Phyu now)
     {
