@@ -24,14 +24,8 @@ public:
         _curDir = curDir;
         super(new Geom(0, 0, gui.screenXlg, gui.mapYlg, From.TOP),
             _curDir.descShort);
-
-        auto cfg  = PickerConfig!ImageTiler();
-        cfg.all   = new Geom(20, 40, xlg-40, ylg-60);
-        cfg.bread = new Geom(0, 0, cfg.all.xl - 80, 30);
-        cfg.files = new Geom(0, 40, cfg.all.xl, cfg.all.yl - 40);
-        cfg.ls    = merge ? new RecursingImageLs(allowedPreExts)
-                          : new ImageLs(allowedPreExts);
-        _picker = new Picker(cfg);
+        _picker = merge ? makePicker!true(allowedPreExts)
+                        : makePicker!false(allowedPreExts);
         _picker.basedir = dirImages;
         _picker.currentDir = merge ? dirImages
             : overrideStartDir && overrideStartDir.dirExists ? overrideStartDir
@@ -58,5 +52,22 @@ public:
     {
         assert (chosenTile !is null);
         _curDir.value = chosenTile.guaranteedDirOnly();
+    }
+
+private:
+    Picker makePicker(bool merge)(string allowedPreExts) const
+    {
+        static if (merge) {
+            auto cfg = PickerConfig!(ImageTiler!GadgetBrowserButton)();
+            cfg.ls  = new RecursingImageLs(allowedPreExts);
+        }
+        else {
+            auto cfg  = PickerConfig!(ImageTiler!TerrainBrowserButton)();
+            cfg.ls = new ImageLs(allowedPreExts);
+        }
+        cfg.all   = new Geom(20, 40, xlg-40, ylg-60);
+        cfg.bread = new Geom(0, 0, cfg.all.xl - 80, 30);
+        cfg.files = new Geom(0, 40, cfg.all.xl, cfg.all.yl - 40);
+        return new Picker(cfg);
     }
 }

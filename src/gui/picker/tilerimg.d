@@ -3,6 +3,7 @@ module gui.picker.tilerimg;
 // this is used in the editor's terrain browser.
 
 import std.conv;
+import std.range;
 import std.string;
 import std.typecons;
 
@@ -13,7 +14,7 @@ import level.level;
 import tile.tilelib;
 import tile.abstile;
 
-class ImageTiler : FileTiler {
+class ImageTiler(ButtonType : TerrainBrowserButton) : FileTiler {
 public:
     this(Geom g) { super(g); }
 
@@ -37,10 +38,10 @@ protected:
             ylg / buttonsPerPageY), fn.dirInnermost);
     }
 
-    override TerrainBrowserButton newFileButton(Filename fn, in int fileID)
+    override ButtonType newFileButton(Filename fn, in int fileID)
     {
         assert (fn);
-        return new TerrainBrowserButton(new Geom(0, 0,
+        return new ButtonType(new Geom(0, 0,
             xlg / buttonsPerPageX,
             ylg / buttonsPerPageY), fn);
     }
@@ -79,8 +80,24 @@ public:
             addChild(_cbe);
         }
         _text = new Label(new Geom(0, 0, xlg - 2*gui.thickg, 12, From.BOTTOM),
-            fn.fileNoExtNoPre);
+            toLabel(fn));
         _text.font = djvuS;
         addChild(_text);
+    }
+
+protected:
+    string toLabel(in Filename fn) const { return fn.fileNoExtNoPre; }
+}
+
+class GadgetBrowserButton : TerrainBrowserButton {
+public:
+    this(Geom g, Filename fn) { super(g, fn); }
+
+protected:
+    override string toLabel(in Filename fn) const
+    {
+        return fn.dirInnermost.walkLength <= 8
+            ? fn.dirInnermost ~ fn.fileNoExtNoPre
+            : fn.dirInnermost.take(6).chain("./", fn.fileNoExtNoPre).to!string;
     }
 }
