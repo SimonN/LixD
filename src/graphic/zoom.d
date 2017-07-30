@@ -27,7 +27,7 @@ public:
 
         enum root2 = 1.41421f;
         _allowed = [ a, b, 1f/2, root2/2, 1, root2, 2, 3, 4, 6, 8, 16 ]
-            .filter!(x => x >= min(a, b)) // even on torus maps? Probably
+            .filter!(x => x >= min(a, b, 1)) // even on torus maps? Probably
             .array.sort().uniq.array;
 
         void initialZoom(in float val)
