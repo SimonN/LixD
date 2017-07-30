@@ -437,7 +437,13 @@ void load()
 
     foreach (i; lines) {
         if (i.type == '<') {
-            auto fn = rebindable!(const Filename)(new VfsFilename(i.text1));
+            import std.string;
+            auto fn = rebindable!(const Filename)(new VfsFilename(
+                // Backwards compat for renaming Simple to Lovely:
+                // Load all old user results. We would save with the new name.
+                // Remove the call to replace during early 2018.
+                i.text1.replace("lemforum/Simple/", "lemforum/Lovely/")
+            ));
             Result read = new Result(new Date(i.text2));
             read.lixSaved    = i.nr1;
             read.skillsUsed  = i.nr2;
