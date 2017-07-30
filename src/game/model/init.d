@@ -40,7 +40,8 @@ GameState newZeroState(in Level level, in Style[] tribesToMake,
         g.drawLookup(s.lookup);
     });
     s.update = s.multiplayer ? 0 : 45; // start quickly in 1-player
-    s.overtimeAtStartInPhyus = level.overtimeSeconds * Game.phyusPerSecond;
+    s.overtimeAtStartInPhyus =
+        s.multiplayer ? level.overtimeSeconds * Game.phyusPerSecond : 0;
     return s;
 }
 
