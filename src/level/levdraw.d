@@ -161,9 +161,10 @@ body {
         }
         void printInfo(Lang lang, int value, int plusY)
         {
-            enum labelX = skillSort.length * sbXl + 5;
+            enum niceLeftSpace = 5;
+            enum labelX = skillSort.length * sbXl + niceLeftSpace;
             auto label = new LabelTwo(new Geom(labelX, tp.yl + plusY,
-                                      tp.xl - labelX, 20), lang.transl);
+                                2 * sbXl - niceLeftSpace, 20), lang.transl);
             label.value = value;
             label.draw();
         }
