@@ -55,16 +55,6 @@ haven't installed the Allegro libraries. We will do that now.
 Install Allegro 5
 -----------------
 
-I have chosen Matthew Leverton's binary distribution of Allegro 5. Go here:
-
-    https://www.allegro.cc/files/
-
-Download at random one of the binary files. I took the archive for MinGW 4.7.0.
-Unpack it. There are three directories inside: bin/, include/, lib/.
-We do _not_ need the include/, that's for C/C++ development. dub will fetch
-automatically our D bindings against the libraries. We don't need lib/ either,
-we will generate our own linktime libraries from the DLLs in bin/.
-
 Locate your D installation directory, and look for the windows/ subdir.
 It might be in one of these paths:
 
@@ -74,10 +64,30 @@ It might be in one of these paths:
 This also has subdirectories bin/ and lib/. If you like, make backups of these
 directories, so you can retry if something goes wrong.
 
-Allegro 5's bin/ directory has each DLL in 4 possible versions. You can throw
-away all versions with "-debug" in their name, and then again all versions
-with "-md". This will leave you with one fourth of the DLLs. Put these into
-your D installations's ./dmd/windows/bin/. Don't rename them.
+Download the Allegro DLLs and *.lib files from my website:
+
+    http://www.lixgame.com/dow/alleg-5.2-dlls-libs.zip
+
+Extract this into your D installation's windows/ directory.
+
+Maybe you don't trust me instructing you to download opaque binaries? :-)
+You can find or build Allegro 5.2 DLLs yourself, then follow the instructions
+by SiegeLord on how to generate your .lib files from your own DLLs:
+
+    https://github.com/SiegeLord/DAllegro5#windows-notes
+
+Summary of that page: Find implib.exe, then, for each Allegro DLL xyz, call:
+
+    implib /s allegro_xyz.lib allegro_xyz-5.2.dll
+
+Put the resulting .lib files in the D installation's lib/ dir.
+Remove the version number, e.g., `-5.2', from Allegro's .lib files in lib/.
+Do not remove the version number from the DLL files, and keep those in bin/.
+
+If it's not clear, ask me -- see top of file for contact details.
+
+There's a German joke. What does "DLL" stand for? "Die lass liegen."
+("Let this one lie around.")
 
 
 
@@ -90,30 +100,6 @@ I don't remember anything for this. Look at the enet section of
 Most likely, you don't have to do anything now. Later, you should find an enet
 DLL on the internet and put that in the path of the Lix binary. Otherwise,
 the game will error out when you click "Networking mode" in the main menu.
-
-
-
-Generate .lib files
--------------------
-
-The D linker doesn't like libXXX.a files, and instead wants XXX.lib files.
-We have to make these ourselves. Get implib.exe, look at the Allegro D binding
-page on github about where to get it:
-
-    https://github.com/SiegeLord/DAllegro5#windows-notes
-
-For each Allegro DLL that does not have "-debug" or "-md" in its name, do:
-
-    implib /s yourfile.lib yourfile.dll
-
-Put the resulting .lib files in the D installation's lib/ dir.
-Remove the version number, e.g., `-5.2', from Allegro's .lib files in lib/.
-Do not remove the version number from the DLL files, and keep those in bin/.
-
-If it's not clear, ask me -- see top of file for contact details.
-
-There's a German joke. What does "DLL" stand for? "Die lass liegen."
-("Let this one lie around.")
 
 
 
