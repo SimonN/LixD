@@ -80,7 +80,7 @@ class Tribe {
 
         Phyu finishedPlayingAt()
         in { assert (doneDeciding); }
-        do { return _finishedPlayingAt; }
+        body{ return _finishedPlayingAt; }
     }
 
     ///////////////////////////////////////////////////////////////////////////
@@ -90,7 +90,7 @@ class Tribe {
     void recordSpawnedFromHatch()
     in { assert (this.lixHatch > 0); }
     out { assert (this.lixHatch >= 0 && this._lixOut >= 0); }
-    do {
+    body{
         --lixHatch;
         ++_lixOut;
     }
@@ -104,7 +104,7 @@ class Tribe {
     out {
         assert (this._lixOut >= 0 && this._lixLeaving >= 0);
     }
-    do {
+    body{
         --_lixOut;
         ++_lixLeaving;
         if (doneDeciding)
@@ -114,7 +114,7 @@ class Tribe {
     void recordLeaverDone()
     in { assert (this._lixLeaving > 0); }
     out { assert (this._lixOut >= 0 && this._lixLeaving >= 0); }
-    do { --_lixLeaving; }
+    body{ --_lixLeaving; }
 
     void addSaved(in Style fromWho, in Phyu now)
     {
@@ -150,7 +150,7 @@ class Tribe {
 
         Phyu triggersOvertimeSince()
         in { assert (triggersOvertime); }
-        do {
+        body{
             if (nukePressed && doneDeciding)
                 return min(finishedPlayingAt,
                             max(_nukePressedSince, firstScoring));
@@ -167,7 +167,7 @@ class Tribe {
 
         Phyu wantsAbortiveTieSince()
         in { assert (wantsAbortiveTie); }
-        do {
+        body{
             if (nukePressed && doneDeciding)
                 return min(_nukePressedSince, finishedPlayingAt);
             else if (nukePressed)

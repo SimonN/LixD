@@ -116,7 +116,7 @@ public:
 
     @property bool overtimeRunning() const
     in { assert (tribes.length > 0); }
-    do {
+    body{
         return tribes.byValue.all!(tr => tr.wantsAbortiveTie)
             || tribes.byValue.any!(tr => tr.triggersOvertime);
     }
