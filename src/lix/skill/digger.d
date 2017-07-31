@@ -45,9 +45,13 @@ class Digger : Job {
 
     override void perform()
     {
-        advanceFrame();
+        if (isLastFrame)
+            frame = 4;
+        else
+            advanceFrame();
 
-        if (frame != 12) {
+        if (frame != 16) {
+            // All non-digging frames
             if (fallHere)
                 return;
         }
