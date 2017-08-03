@@ -72,11 +72,8 @@ public:
             case GadType.GOAL:    return new Goal    (top, levelpos);
             case GadType.TRAP:    return new TrapTrig(top, levelpos);
             case GadType.WATER:   return new Water   (top, levelpos);
-            case GadType.FLING:
-                if (levelpos.tile.subtype & 2)
-                    return new FlingTrig(top, levelpos);
-                else
-                    return new FlingPerm(top, levelpos);
+            case GadType.FLINGTRIG: return new FlingTrig(top, levelpos);
+            case GadType.FLINGPERM: return new FlingPerm(top, levelpos);
             case GadType.MAX:
                 assert (false, "GadType isn't supported by Gadget.factory");
         }
@@ -120,7 +117,8 @@ public:
             case GadType.TRAP:  phyb = Phybit.trap; break;
             case GadType.WATER: phyb = tile.subtype == 0 ? Phybit.water
                                                          : Phybit.fire; break;
-            case GadType.FLING: phyb = Phybit.fling; break;
+            case GadType.FLINGTRIG: phyb = Phybit.fling; break;
+            case GadType.FLINGPERM: phyb = Phybit.fling; break;
         }
         lk.rect!(Phymap.add)(tile.triggerArea + this.loc, phyb);
     }

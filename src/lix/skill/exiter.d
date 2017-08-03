@@ -26,7 +26,7 @@ class Exiter : Leaver {
     void determineSidewaysMotion(in Goal goal)
     {
         xOffsetFromGoal = env.distanceX(
-            goal.x + goal.tile.triggerX + goal.tile.triggerXl / 2, lixxie.ex);
+            goal.x + goal.tile.trigger.x + goal.tile.triggerXl / 2, lixxie.ex);
         if (xOffsetFromGoal % 2 == 0)
             // From C++ Lix: The +1 is necessary because this counts
             // pixel-wise, but the physics skip ahead 2 pixels at a time,

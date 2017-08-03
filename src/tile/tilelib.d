@@ -175,12 +175,12 @@ void load_tile_from_disk(in string strNoExt, in Filename fn)
 void loadGadgetFromDisk(in string strNoExt, in char pe, in Filename fn)
 {
     GadType type;
-    int subtype = 0;
+    bool subtype = false;
     if      (pe == glo.preExtHatch) { type = GadType.HATCH; }
     else if (pe == glo.preExtGoal)  { type = GadType.GOAL;  }
     else if (pe == glo.preExtTrap)  { type = GadType.TRAP;  }
     else if (pe == glo.preExtWater) { type = GadType.WATER; }
-    else if (pe == glo.preExtFire)  { type = GadType.WATER; subtype = 1; }
+    else if (pe == glo.preExtFire)  { type = GadType.WATER; subtype = true; }
     else {
         logf("Unrecognized pre-extension `%c': `%s'", pe, fn.rootless);
         return;

@@ -42,7 +42,7 @@ private:
             if (style == Style.garden)
                 continue;
             auto icon = graphic.internal.getSkillButtonIcon(style);
-            icon.draw(Point(x + tile.triggerX + tile.triggerXl/2 - icon.xl/2
+            icon.draw(Point(x + tile.trigger.x + tile.triggerXl/2 - icon.xl/2
                               + (20 * offset++) - 10 * (tribes.len - 1),
                             min(y, y + yl - 60)),
                       Ac.walker.acToSkillIconXf, 0);
@@ -54,8 +54,8 @@ private:
         if (lockedWithNoSign) {
             const(Cutbit) c = getInternal(fileImageMouse);
             c.draw(Point(
-                x + tile.triggerX + tile.triggerXl / 2 - c.xl / 2,
-                y + tile.triggerY + tile.triggerYl / 2 - c.yl),
+                x + tile.trigger.x + tile.triggerXl / 2 - c.xl / 2,
+                y + tile.trigger.y + tile.triggerYl / 2 - c.yl),
                 2, 2); // (2,2) are the (xf,yf) of the international "no" sign
         }
     }

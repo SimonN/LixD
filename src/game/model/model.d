@@ -178,15 +178,15 @@ private:
             // passed anew when the lix are updated.
             auto ow = makeGypsyWagon(tribe, tribe.lixvec.len);
             Lixxie newLix = new Lixxie(_cs.lookup, &ow, Point(
-                hatch.x + hatch.tile.triggerX - 2 * walkLeftInsteadOfRight,
-                hatch.y + hatch.tile.triggerY));
+                hatch.x + hatch.tile.trigger.x - 2 * walkLeftInsteadOfRight,
+                hatch.y + hatch.tile.trigger.y));
             if (walkLeftInsteadOfRight)
                 newLix.turn();
             tribe.lixvec ~= newLix;
             tribe.recordSpawnedFromHatch();
             tribe.updatePreviousSpawn = _cs.update;
-            tribe.nextHatch     += _cs.numTribes;
-            tribe.nextHatch     %= _cs.hatches.len;
+            tribe.nextHatch += _cs.numTribes;
+            tribe.nextHatch %= _cs.hatches.len;
         }
     }
 

@@ -30,7 +30,7 @@ private:
     immutable string _name;
 
 public:
-    int  subtype;
+    bool subtype; // see Type enum for what subtype does
     int  triggerXl;
     int  triggerYl;
 
@@ -44,8 +44,9 @@ public:
         HATCH,
         GOAL,
         TRAP,
-        WATER,   // subtype 1 = fire
-        FLING,	 // subtype & 1 = always same xdir, subtype & 2 = non-constant
+        WATER, // subtype true = fire
+        FLINGTRIG, // subtype true = always same xdir
+        FLINGPERM, // subtype true = always same xdir
         MAX
     }
 
@@ -54,7 +55,7 @@ protected:
         string aName,
         Cutbit aCb,
         Type   aType,
-        int    aSubtype,
+        bool   aSubtype,
     ) {
         super(aCb); // take ownership
         _name   = aName;
@@ -70,21 +71,22 @@ public:
     @property type() const { return _type; }
     override @property string name() const { return _name; }
 
-    // phase out these two eventually, replace by Rect/Point below
-    @property int triggerX() const { return _triggerX - _triggerXc * triggerXl/2; }
-    @property int triggerY() const { return _triggerY - _triggerYc * triggerYl/2; }
-
-    @property Point trigger()     const { return Point(triggerX, triggerY); }
-    @property Rect  triggerArea() const
+    @property Point trigger() const
     {
-        return Rect(triggerX, triggerY, triggerXl, triggerYl);
+        return Point(_triggerX - _triggerXc * triggerXl/2,
+                     _triggerY - _triggerYc * triggerYl/2);
+    }
+
+    @property Rect triggerArea() const
+    {
+        return Rect(trigger, triggerXl, triggerYl);
     }
 
     static typeof(this) takeOverCutbit(
         string aName,
         Cutbit aCb,
         Type   aType,
-        int    aSubtype = 0
+        bool   aSubtype = false
     ) {
         if (! aCb || ! aCb.valid)
             return null;
@@ -139,19 +141,21 @@ public:
                 specialX = i.nr1;
             }
             else if (i.text1 == tileDefFlingNonpermanent) {
-                _type = Type.FLING;
-                subtype |= 2; // bit 1 nonpermanent trap
+                _type = Type.FLINGTRIG;
             }
             else if (i.text1 == tileDefFlingIgnoreOrientation) {
-                _type = Type.FLING;
-                subtype |= 1; // bit 0 signifies fixed direction
+                if (_type != Type.FLINGTRIG)
+                    _type = Type.FLINGPERM;
+                subtype = true; // fixed direction
             }
             else if (i.text1 == tileDefFlingX) {
-                _type = Type.FLING;
+                if (_type != Type.FLINGTRIG)
+                    _type = Type.FLINGPERM;
                 specialX = i.nr1;
             }
             else if (i.text1 == tileDefFlingY) {
-                _type = Type.FLING;
+                if (_type != Type.FLINGTRIG)
+                    _type = Type.FLINGPERM;
                 specialY = i.nr1;
             }
         }
@@ -162,8 +166,9 @@ public:
     {
         if (! cb)
             return;
-        if (type == Type.TRAP && cb.yfs != 2) {
-            logf("Error: Triggered trap `%s':", name);
+        if ((type == Type.TRAP || type == Type.FLINGTRIG) && cb.yfs != 2) {
+            logf("Error: Triggered %s `%s':",
+                type == Type.TRAP ? "trap" : "flinger", name);
             logf("    -> Image has %d rows of frames, not 2.", cb.yfs);
         }
     }

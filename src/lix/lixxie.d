@@ -266,9 +266,7 @@ bool inTriggerArea(in Gadget g) const
     // on the GadOcc it's instantiated with. Occurrence has Rect selbox()
     // const, therefore GadOcc should naturally get Rect triggerArea() const.
     // Then Gadget should defer to GadOcc.
-    return env.isPointInRectangle(Point(ex, ey),
-        Rect(g.x + g.tile.triggerX(), g.y + g.tile.triggerY(),
-             g.tile.triggerXl,        g.tile.triggerYl));
+    return env.isPointInRectangle(Point(ex, ey), g.tile.triggerArea + g.loc);
 }
 
 void addFling(in int px, in int py, in bool same_tribe)
