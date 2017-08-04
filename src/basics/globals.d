@@ -121,7 +121,8 @@ Filename dirLevels, dirLevelsSingle, dirLevelsNetwork, dirReplays, dirData,
     dirImagesOrig, dirImagesOrigL1, dirImagesOrigL2, dirReplayAutoSolutions,
     dirReplayAutoMulti, dirReplayManual, dirExportImages;
 
-Filename fileGlobalConfig, fileLog, fileTharsisProf, fileLanguageEnglish;
+Filename fileGlobalConfig, fileLog, fileReplayVerifier, fileTharsisProf,
+    fileLanguageEnglish;
 
 Filename fileImageGuiNumber, fileImageAppIcon,
     fileImageDebris, fileImageEditFlip, fileImageEditHatch,
@@ -158,6 +159,7 @@ static this()
 
     fileGlobalConfig = new Fn("data/config.txt");
     fileLog = new Fn("data/log.txt");
+    fileReplayVerifier = new Fn("data/verifier.txt");
     fileTharsisProf = new Fn("data/profile.txt");
     fileLanguageEnglish = new Fn("data/transl/english.txt");
 

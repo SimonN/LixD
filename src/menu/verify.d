@@ -6,6 +6,7 @@ module menu.verify;
 import core.memory;
 import std.algorithm;
 import std.string;
+import std.stdio;
 
 import basics.globals;
 import basics.user; // hotkeys to cancel the dialog;
@@ -20,6 +21,7 @@ private:
     Console _console;
     VerifyCounter _vc;
     MutFilename[] _queue;
+    File _permanent;
 
 public:
     this(Filename dir)
@@ -31,13 +33,15 @@ public:
             "Replay Verifier");
         _console = new LobbyConsole(new Geom(20, 40, xlg - 40, ylg - 60));
         addChild(_console);
+        _permanent = fileReplayVerifier.openForWriting("a");
+        _permanent.writeln();
 
         _queue = dir.findTree(filenameExtReplay);
         _vc = new VerifyCounter(new class VerifyPrinter {
             override bool printCoverage() { return true; }
             override void log(string s) {
                 _console.add(s);
-                file.log.log(s);
+                _permanent.writeln(s);
             }
         });
         _vc.writeCSVHeader();
@@ -50,6 +54,7 @@ protected:
         if (keyMenuOkay.keyTapped || keyMenuExit.keyTapped
             || keyMenuDelete.keyTapped || mouseClickLeft || mouseClickRight
         ) {
+            _permanent.close();
             rmFocus(this);
         }
     }
@@ -66,8 +71,9 @@ private:
         if (_queue.length == 0) {
             _vc.writeLevelsNotCovered();
             _vc.writeStatistics();
-            _console.addWhite("Output written to `"
-                ~ fileLog.rootless ~ "'. Click to return."); // DTODOLANG
+            _console.addWhite("Output written to `" // DTODOLANG
+                ~ fileReplayVerifier.rootless ~ "'. Click to return.");
+            _permanent.close();
         }
     }
 }

@@ -13,6 +13,7 @@
 /data/log.txt
 /data/config.txt
 /data/profile.txt
+/data/verifier.txt
 /data/user/*.txt
 
 /levels/editor-emergency-save.txt
