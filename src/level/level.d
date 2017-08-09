@@ -89,7 +89,7 @@ public:
         _status = LevelStatus.BAD_EMPTY;
         intendedNumberOfPlayers = 1;
         topology = new Topology(640, 400); // one screen in C++ Lix
-        initial  =  30;
+        initial  =  20;
         required =  20;
         spawnint =  32;
         ploder   = Ac.exploder;
