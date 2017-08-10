@@ -208,13 +208,7 @@ void handleTrappedMouse()
     }
     bool isCloseToEdge(in int pos, in int length)
     {
-        // DTODO: This should not depend on the mouse buttons, but on whether
-        // we are RMB-scrolling with whatever button we have assigned to it.
-        // Maybe freezeMouseX/Y should set this flag.
-        immutable bool warpAlways =
-            _mouseHeldFor[1] > 2 || _mouseHeldFor[2] > 2
-            || ! basics.user.fastMovementFreesMouse.value;
-        return warpAlways
+        return ! basics.user.fastMovementFreesMouse.value
             ? pos != length/2 // hard to leave
             : pos * 16 < length || pos * 16 >= length * 15; // easy to leave
     }
