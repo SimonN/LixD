@@ -91,6 +91,8 @@ public:
         spawnLixxiesFromHatches();
         updateLixxies();
         finalizePhyuAnimateGadgets();
+        if (_cs.overtimeRunning && _effect)
+            _effect.announceOvertime(_cs.update, _cs.overtimeAtStartInPhyus);
     }
 
     void dispose()

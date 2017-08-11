@@ -273,6 +273,7 @@ $netGameHowToChat1        Du kannst mit [
 $netGameHowToChat2        ] chatten.
 $netGameEnd                  Das Spiel ist zu Ende.
 $netGameEndResult           Spielergebnis:
+$netGameOvertimeNukeIn    Die Nachspielzeit läuft! Atombombe in
 $netGameTriggersOvertime    hat die Nachspielzeit ausgelöst! Atombombe in
 $netGameWantsAbortiveTie    möchte das Spiel abbrechen. Zum Abbruch doppelklicke auf die Atombombe, ansonsten spiele weiter.
 

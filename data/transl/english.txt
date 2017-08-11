@@ -285,6 +285,7 @@ $netGameHowToChat1          Press [
 $netGameHowToChat2         ] to chat.
 $netGameEnd                   The game is over.
 $netGameEndResult            Game outcome:
+$netGameOvertimeNukeIn    Overtime is running! Nuke in
 $netGameTriggersOvertime    has triggered overtime! Nuke in
 $netGameWantsAbortiveTie    wants to cancel the game. To cancel, double-click the nuke, otherwise play on.
 

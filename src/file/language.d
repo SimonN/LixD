@@ -300,6 +300,7 @@ enum Lang {
     netGameHowToChat2,
     netGameEnd,
     netGameEndResult,
+    netGameOvertimeNukeIn,
     netGameTriggersOvertime,
     netGameWantsAbortiveTie,
 

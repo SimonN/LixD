@@ -14,10 +14,14 @@ module game.effect;
 
 import std.algorithm;
 import std.container;
+import std.format;
 
 import basics.help;
+import file.language;
 import net.repdata;
 import game.debris;
+import game.core.game; // Game.phyusPerSecond
+import gui.console;
 import graphic.torbit;
 import hardware.sound;
 
@@ -40,10 +44,14 @@ private struct Effect {
 }
 
 class EffectManager {
+private:
+    RedBlackTree!Effect _tree;
+    Debris[] _debris;
+    int _overtimeInPhyusToAnnounce;
+    bool _weScheduledOvertimeAnnouncementBefore;
 
-    private RedBlackTree!Effect _tree;
-    private Debris[] _debris;
-    public  Style localTribe;
+public:
+    Style localTribe;
 
     this(Style st)
     {
@@ -152,32 +160,16 @@ class EffectManager {
         }
     }
 
-    void addWantsAbortiveTie(Phyu upd, Style tribe, int overtimeInSeconds)
+    void announceOvertime(in Phyu upd, int overtimeInPhyus)
     {
-        addWantsNuke(upd, tribe, overtimeInSeconds, true);
+        if (_weScheduledOvertimeAnnouncementBefore || overtimeInPhyus == 0)
+            return;
+        _weScheduledOvertimeAnnouncementBefore = true;
+        _overtimeInPhyusToAnnounce = overtimeInPhyus;
+        hardware.sound.play(Sound.OVERTIME, Loudness.loud);
     }
 
-    void addWantsNuke(in Phyu upd, in Style tribe, int overtimeInPhyus,
-        bool abortiveTie = false
-    ) {
-        Effect e = Effect(upd, tribe, 0,
-            abortiveTie ? Sound.CANT_WIN // [1]
-            : tribe == Style.garden ? Sound.NUKE : Sound.OVERTIME, // [2]
-            tribe == localTribe ? Loudness.loud : Loudness.quiet);
-        // [1]: This sound may be a strange choice, it means "we can't win
-        // anymore", not "let's stop playing entirely. But it's the closest
-        // and not yet used in multiplayer, therefore I choose it for now.
-        // Maybe sample something else.
-        // [2]: I distinguish here between singleplayer and multiplayer
-        // by testing for the exact tribe. Maybe we should be more explicit
-        // and somehow tell the effect manager whether we're single/multi?
-        if (e !in _tree) {
-            _tree.insert(e);
-            hardware.sound.play(e.sound, e.loudness);
-            // DTODOEFFECT: print tie suggestion to console. Maybe also print
-            // nuking info to console, but normal nukes are OK without message.
-        }
-    }
+// ############################################################################
 
     void calc()
     {
@@ -190,8 +182,15 @@ class EffectManager {
         }
     }
 
-    void draw()
+    void draw(Console console)
     {
         _debris.each!(a => a.draw());
+        if (_overtimeInPhyusToAnnounce != 0 && console !is null) {
+            console.add(format!"%s %d:%02d..."(
+                Lang.netGameOvertimeNukeIn.transl,
+                _overtimeInPhyusToAnnounce / (60 * Game.phyusPerSecond),
+                (_overtimeInPhyusToAnnounce / Game.phyusPerSecond) % 60));
+            _overtimeInPhyusToAnnounce = 0; // don't print again on next draw
+        }
     }
 }

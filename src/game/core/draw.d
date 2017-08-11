@@ -38,7 +38,7 @@ implGameDraw(Game game) { with (game)
         game.drawLand();
 
         assert (_effect);
-        _effect.draw();
+        _effect.draw(_chatArea.console);
         _effect.calc(); // --timeToLive, moves. No physics, so OK to calc here.
         game.drawAllLixes();
     }

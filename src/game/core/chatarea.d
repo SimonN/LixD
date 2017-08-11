@@ -60,6 +60,11 @@ public:
         // can later copy the lines. That's OK, the console is GC-allocated.
     }
 
+    // To draw something else onto the console during game, e.g.
+    // announce that overtime has started. Leave it to the network to get
+    // lines out of the console and into the lobby console.
+    @property inout(Console) console() inout { return _console; }
+
 protected:
     override void calcSelf()
     {
