@@ -9,19 +9,29 @@ import lix;
 
 abstract class BallisticFlyer : Job {
 
-    enum speedYToSplat = 19;
     enum speedYToFloat = 15;
+    enum pixelsSafeToFall = {
+       import lix.skill.faller; return Faller.pixelsSafeToFall;
+    }();
 
-    int speedX;
+    int speedX; // should be >= 0. Is really speed ahead, not absolute x dir.
     int speedY;
+    int pixelsFallen; // always >= 0. Upflinginging keeps 0. Resets on fling.
 
     alias lixxie this;
     alias copyFromAndBindToLix = super.copyFromAndBindToLix;
     protected void copyFromAndBindToLix(in BallisticFlyer rhs, Lixxie li)
     {
         super.copyFromAndBindToLix(rhs, li);
+        copyFrom(rhs);
+    }
+
+    protected void copyFrom(in BallisticFlyer rhs)
+    {
+        assert (rhs, "can't copy from null job");
         speedX = rhs.speedX;
         speedY = rhs.speedY;
+        pixelsFallen = rhs.pixelsFallen;
     }
 
     final override void perform()
@@ -68,7 +78,7 @@ private:
 
     final void landOnFloor()
     {
-        if (speedY >= speedYToSplat && ! abilityToFloat) {
+        if (pixelsFallen > pixelsSafeToFall && ! abilityToFloat) {
             become(Ac.splatter);
             if (this.splatUpsideDown)
                 lixxie.frame = 10;
@@ -87,8 +97,18 @@ private:
         foreach(int step; 0 .. max(yAbs, speedX)) {
             immutable oldEx = ex;
             immutable oldEy = ey;
+            immutable oldFallen = pixelsFallen;
             immutable oldEncBody = bodyEncounters;
             immutable oldEncFoot = footEncounters;
+
+            void moveDownCounting(int by)
+            {
+                lixxie.moveDown(by);
+                if (by >= 0)
+                    pixelsFallen += by;
+                else
+                    pixelsFallen = 0;
+            }
 
             if (yAbs >= speedX) {
                 // move ahead occasionally only. / 2 * 2 to keep stuff even.
@@ -96,12 +116,12 @@ private:
                                     - (step)     * speedX / 2 / yAbs;
                 assert (halfX == 0 || halfX == 1);
                 moveAhead(2 * halfX);
-                moveDown(ySgn);
+                moveDownCounting(ySgn);
             }
             else {
                 // move down occasionally only
-                moveDown(ySgn * ( (step + 1) * yAbs / speedX
-                                - (step)     * yAbs / speedX));
+                moveDownCounting(ySgn * ( (step + 1) * yAbs / speedX
+                                        - (step)     * yAbs / speedX));
                 moveAhead(2 * (step & 1));
             }
 
@@ -118,6 +138,7 @@ private:
                 forceBodyAndFootEncounters(oldEncBody, oldEncFoot);
                 ex = oldEx;
                 ey = oldEy;
+                pixelsFallen = oldFallen;
                 if (isSolid(0, 1))
                     // completely immobilized
                     become(Ac.stunner);
@@ -298,6 +319,7 @@ class Tumbler : BallisticFlyer {
             assert (tumbling);
             tumbling.speedX = wantFlingX.abs;
             tumbling.speedY = wantFlingY;
+            tumbling.pixelsFallen = 0; // you can break falls by flinging
             tumbling.selectFrame();
         }
         else
@@ -323,10 +345,7 @@ class Tumbler : BallisticFlyer {
             become(Ac.stunner);
         }
         else if (lixxie.ac == Ac.jumper) {
-            Jumper jumping = cast (Jumper) lixxie.job;
-            assert (jumping);
-            this.speedX = jumping.speedX;
-            this.speedY = jumping.speedY;
+            this.copyFrom(cast (Jumper) lixxie.job);
             this.frame  = 3;
         }
         else
