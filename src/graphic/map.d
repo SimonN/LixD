@@ -6,6 +6,7 @@ module graphic.map;
  */
 
 import std.algorithm;
+import std.conv;
 import std.math;
 import std.range;
 
@@ -329,16 +330,18 @@ calcScrolling()
 void
 drawCamera() // ...onto the current drawing target, most likely the screen
 {
-    immutable overallMaxX = _cameraXl - borderOneSideXl;
-    for (float x = borderOneSideXl; x < overallMaxX; x += xl * zoom) {
-        for (float y = borderUpperSideYl; y < _cameraYl; y += yl * zoom) {
+    immutable int overallMaxX = _cameraXl - borderOneSideXl;
+    immutable int plusX = (xl * zoom).ceil.to!int;
+    immutable int plusY = (yl * zoom).ceil.to!int;
+    for (int x = borderOneSideXl; x < overallMaxX; x += plusX) {
+        for (int y = borderUpperSideYl; y < _cameraYl; y += plusY) {
             // maxXl, maxYl describe the size of the image to be drawn
             // in this iteration of the double-for loop. This should always
             // be as much as possible, i.e., the first argument to min().
             // Only in the last iteration of the loop,
             // a smaller rectangle is better.
-            immutable maxXl = min(xl * zoom, overallMaxX - x);
-            immutable maxYl = min(yl * zoom, _cameraYl   - y);
+            immutable maxXl = min(plusX, overallMaxX - x);
+            immutable maxYl = min(plusY, _cameraYl   - y);
             drawCamera_with_target_corner(x, y, maxXl, maxYl);
             if (borderUpperSideYl != 0) break;
         }
@@ -389,10 +392,10 @@ body {
 
 private void
 drawCamera_with_target_corner(
-    in float tcx, // x coordinate of target corner
-    in float tcy,
-    in float maxTcxl, // length, away from (tcx, tcy). Draw at most this much
-    in float maxTcyl  // to the target.
+    in int tcx, // x coordinate of target corner
+    in int tcy,
+    in int maxTcxl, // length, away from (tcx, tcy). Draw at most this much
+    in int maxTcyl  // to the target.
 ) {
     immutable r = cameraRectangle();
     // Source length of the non-wrapped portion. (Target len = this * zoom.)
