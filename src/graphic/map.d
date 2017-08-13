@@ -79,10 +79,7 @@ private:
     Torbit _nearestNeighbor;
     Torbit _blurryScaling;
 
-    // We used to always round _up_ the value of (i / _zoom) when int _zoom.
-    // _zoom became float in 2017-02, I don't know whether (rounding to nearest
-    // intereger instead of always round up) introduces any bugs.
-    @property int divByZoom(in float i) const { return roundInt(i / zoom); }
+    @property int divByZoom(in float i) const { return ceil(i / zoom).to!int; }
 
     // Number of pixels from the map that are copied in that dimension.
     // If zoom is far in (large _zooom), then these are small.
