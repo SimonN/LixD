@@ -273,19 +273,47 @@ private:
             version (tharsisprofiling)
                 auto zone2 = Zone(profiler, format("PhysDraw lookup %s",
                     tc.type.to!string));
-
             int steelHit = 0;
-            if (tc.type == TerrainDeletion.Type.dig) {
-                assert (tc.digYl > 0);
-                steelHit += _phymap.rectSum!(Phymap.setAirCountSteel)
-                    (Rect(tc.loc, Digger.tunnelWidth, tc.digYl));
-            }
+            if (tc.type == TerrainDeletion.Type.dig)
+                steelHit = diggerAntiRazorsEdge!true(tc);
             else
                 steelHit += _phymap.setAirCountSteelEvenWhereMaskIgnores(
                                 tc.loc, masks[tc.type]);
             if (_land)
                 _delsForLand ~= FlaggedDeletion(tc, steelHit > 0);
         }
+    }
+
+    // The digger can't call the regular setAirCountSteel in a rectangle.
+    // Reason: Steel in pixel p affects whether the digger tries to remove
+    // earth in a pixel p' left or right of p.
+    // As usualy, any steel in the mask requires the land-drawing later to
+    // draw pixel-by-pixel. But for the digger, even the land-drawing must
+    // go through diggerAntiRazorsEdge again if it's pixel-by-pixel!
+    bool diggerAntiRazorsEdge(bool toPhymap, T)(in T tc)
+        if (is (T == TerrainDeletion) || is (T == FlaggedDeletion))
+    in { assert (tc.type == TerrainDeletion.Type.dig); }
+    body {
+        bool ret = false;
+        Point p;
+        for (p.y = 0; p.y < tc.digYl; ++p.y) {
+            enum string digCheck = toPhymap ? q{
+                if (_phymap.setAirCountSteel(tc.loc + p)) {
+                    ret = true;
+                    break;
+                }
+            } : q{
+                if (_phymap.getSteel(tc.loc + p))
+                    break;
+                // Assume we're in subtractive drawing mode: white erases
+                auto wrapped = _land.wrap(tc.loc + p);
+                al_draw_pixel(wrapped.x + 0.5f, wrapped.y + 0.5f, color.white);
+            };
+            enum int half = Digger.tunnelWidth / 2;
+            for (p.x = half - 1; p.x >= 0; --p.x) { mixin(digCheck); }
+            for (p.x = half; p.x < 2*half; ++p.x) { mixin(digCheck); }
+        }
+        return ret;
     }
 
     void deletionsToLandForPhyu(in Phyu upd)
@@ -318,8 +346,11 @@ private:
                 tc.type.to!string));
         if (tc.type != TerrainDeletion.Type.dig)
             spriteToLand(tc, _subAlbits[tc.type]);
+        else if (tc.drawPerPixelDueToSteel)
+            diggerAntiRazorsEdge!false(tc);
         else {
-            // digging height is variable length
+            // digging height is variable length. Generate correct bitmap.
+            assert (tc.type == TerrainDeletion.Type.dig);
             assert (tc.digYl > 0);
             Albit sprite = al_create_sub_bitmap(_mask,
                 0, remY, Digger.tunnelWidth, tc.digYl);
@@ -346,7 +377,10 @@ private:
             sprite.drawToTargetTorbit(tc.loc);
             return;
         }
-        // we continue here only if we must draw per pixel, not all at once
+        // We continue here only if we must draw per pixel, not all at once.
+        // We aren't a digger: Per-pixel-diggers don't even enter
+        // spriteToLand, instead they're dispatched by deletionToLand
+        // directly to the digger-anti-razor-edging.
         version (tharsisprofiling)
             auto zone = Zone(profiler, format("PhysDraw pix-one %s",
                                               tc.type.to!string));
