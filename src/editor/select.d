@@ -60,6 +60,10 @@ void selectTiles(Editor editor) { with (editor)
             selectHover();
             _panel.buttonFraming.on = _panel.buttonFraming.hotkey.keyHeld;
         }
+        else if (aboutToTrash) {
+            editor._selection.each!(s => s.removeFromLevel());
+            editor._selection = null;
+        }
         _dragger.stop();
     }
 }}

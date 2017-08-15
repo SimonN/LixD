@@ -81,6 +81,13 @@ package:
         return noWindows && ! _gotoMainMenuOnceAllWindowsAreClosed;
     }
 
+    // you can drag tiles onto the panel to delete them
+    @property bool aboutToTrash() const
+    {
+        assert (_dragger && _panel);
+        return _dragger.moving && _panel.isMouseHere;
+    }
+
 private:
     @property bool noWindows() const
     {

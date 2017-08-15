@@ -37,10 +37,12 @@ void implEditorWork(Editor editor)
 void implEditorCalc(Editor editor) {
     with (editor)
 {
-    _map.calcScrolling();
-    if (_map.scrollingNow)
-        mouseCursor.xf = 3;
     assert (_panel);
+    _map.calcScrolling();
+    if (aboutToTrash)
+        mouseCursor.yf = 2; // trashcan
+    else if (_map.scrollingNow)
+        mouseCursor.xf = 3; // scrolling arrows
     if (! _dragger.framing && ! _dragger.moving)
         _panel.calc();
     else

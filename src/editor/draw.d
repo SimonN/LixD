@@ -16,6 +16,7 @@ import hardware.display;
 import hardware.tharsis;
 import tile.draw;
 import tile.gadtile;
+import tile.occur;
 
 package:
 
@@ -41,14 +42,27 @@ void updateTopologies(Editor editor)
     }
 }
 
+// This must be mixin template to be easily accessible from callers, it
+// can't be a standalone private function. Reason: _editor is not global.
+// Can't take _editor as an argument because function must be argument to
+// std.algorithm.filter.
+mixin template nATT() {
+    bool notAboutToTrash(Occurrence o)
+    {
+        return ! editor.aboutToTrash
+            || ! editor._selection.any!(hover => hover.occ is o);
+    }
+}
+
 void drawTerrainToSeparateMap(Editor editor) {
     with (editor)
 {
+    mixin nATT;
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Editor.drawMapTerrain");
     with (TargetTorbit(_mapTerrain)) {
         _mapTerrain.clearToColor(color.transp);
-        _level.terrain.each!drawOccurrence;
+        _level.terrain.filter!notAboutToTrash.each!drawOccurrence;
     }
 }}
 
@@ -74,9 +88,9 @@ void drawGadgets(Editor editor)
 {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "Editor.drawGadgets");
+    mixin nATT;
     foreach (gadgetList; editor._level.gadgets)
-        foreach (g; gadgetList)
-            g.tile.cb.draw(g.loc);
+        gadgetList.filter!notAboutToTrash.each!(g => g.tile.cb.draw(g.loc));
 }
 
 void drawGadgetTriggerAreas(Editor editor)
