@@ -77,6 +77,8 @@ void makePanel(Editor editor)
         onExecute(Lang.editorButtonSelectDelete, keyEditorDelete, () {
             editor._selection.each!(s => s.removeFromLevel());
             editor._selection = null;
+            if (editor._dragger.moving)
+                editor._dragger.stop();
         });
         onExecute(Lang.editorButtonBackground, keyEditorBackground, () {
             // see "Comment on correct zOrdering calls" in editor.hover.
