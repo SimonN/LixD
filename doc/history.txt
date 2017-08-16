@@ -1,6 +1,325 @@
 Version history
 ===============
 
+0.8.0
+-----
+
+Stable 0.7.22 physics. I would like to keep these physics at least for several
+months.
+
+Tooltips during game explain directional select, priority invert,
+and double-click on nuke. Can disable tooltips in the options menu.
+
+Removed the unused editor button to add decoration. To fill the void,
+the button to add terrain is twice as large. Not perfect, but good for now.
+
+0.7.22
+------
+
+2017-08-20
+
+Physics: Flinging downwards initializes pixelsFallen with the distance that
+speed-0 tumblers normally fall before reaching the given speed. Still, all
+flinging overwrites pixelsFallen without respect to earlier values. Tumblers
+splat when pixelsFallen on impact is larger than 126.
+
+Re-introduced downwards steam and the 2016 decoration on Goblin City, Gomen
+ne, 100 Ways to Die.
+
+Digger unchanged since 0.7.19: Still 5/9 with anti-razor-edging. Discussing.
+
+lemforum: Bulldozer out, Sinking Ship v2 in. Empty Space reverted to the 2014
+version, rejecting both propesed versions from 2017. Renamed Cuber Replacement
+to Jack in the Box.
+
+0.7.21
+------
+
+2017-08-18
+
+Fix: The last exiter didn't play the exiter sound.
+
+Renamed Rubix's "Just a Minute... (Part three)" to "Come on Down! The Price Is
+Right", which is almost too long but still fits well.
+
+Removed lemforum/wip-0.7/ and images/geoo/construction/chain1.png, the
+now-obsolete tile because its size doesn't conform to multiples of 8.
+[url=http://www.lixgame.com/etc/unused-levels-0.7.zip]Download unused levels
+and chain1[/url].
+
+Removed simon/wood/ tileset. I've replaced these tiles with Matt's wooden
+planks in the 3 multiplayer levels by Rubix used them:
+Going Up, Coming Down (2p); Naoh's Ark (2p), Naoh's Ark (Team).
+
+0.7.19
+------
+
+2017-08-16
+
+Physics: Digger has anti-razor-edging: Whenever a digger ignores steel, he
+cannot remove earth pixels beyond the steel in the same row. (The digger stays
+at 5/9 steel sensitivity, i.e., chokes on steel in the central 10 of 18 hi-res
+pixels and continues despite steel in the outermost 4 hi-res pixels on either
+side.)
+
+Updated lemforum's Down Among the Dead Lix, Let's All Go Down the Strand,
+Division of Labor, Empty Space is Hardly a Waste (Proxima's 2017-08-15
+version). Theresa v2 has been up-to-date since 0.7.16.
+
+Merged Rubix's remakes of The Clairvoyant and Flatlined. Thanks!
+
+Removed the downwards steam. I adapted the decoration in the only 3 lemforum
+levels that used downwards steam: Giblin City, Gomen Ne, 100 Ways To Die.
+(Downwards transportation beams are slow, not intended to kill, and therefore
+still in the game.)
+
+In the editor, you can delete tiles by dragging them onto the panel. While
+hovering over the panel with dragged tiles, the mouse cursor becomes a
+trashcan and the tiles become invisible.
+
+Fix: Drag tiles around in the editor, tap the tile-deleting hotkey, and
+continue to drag around nothing. The game crashed. Fixed by stopping the
+dragging on deleting a selection.
+
+Fix #174: The ingame level map, during non-integral zoom, sometimes
+didn't initialize/overwrite outside rows of pixels. Fixed by rounding up.
+
+Fix #201: The ingame level map during large integral zoom that didn't
+divide the length of the map, didn't initialize/overwrite outside rows of
+pixels. Fixed by rounding up.
+
+0.7.18
+------
+
+2017-08-12
+
+Tumblers remember how many pixels they have moved downwards since (they got
+flung for the last time, or since they moved upwards, whatever of these
+happened later). When non-floatable tumblers hit the ground, they splat if the
+fallen hi-res pixels exceed 126. They ignore the y-speed for splatting.
+
+I've drawn 4 new digger frames before the animation loop begins.
+
+In multiplayer, when overtime starts, the bell sounds and the console warns
+about how much time will be left before the nuke.
+
+0.7.17
+------
+
+2017-08-10
+
+100 % proof coverage for lemforum and NepsterLix! Thanks to all who submit
+replays. The coverage is for the 5/9 digger.
+
+Rubix's singleplayer levels are almost covered: 155/157. Uncovered levels are
+The Clairvoyant and Flatlined, these Oriental levels need an overhaul due to
+tileset breakage. I'll PM Rubix. Removed The More You Know because that's a
+nuke level, but D Lix locks the exits during the nuke. Lowered initial lix on
+many levels.
+
+No decision yet for the digger. 5/9 is implemented. I'm leaning towards
+keeping this 5/9 digger, but I want to read over yesterday's chatlogs again
+and Proxima might post to the 0.7-steel-sensitivity topic.
+
+0.7.16
+------
+
+2017-08-09
+
+All water gadgets in images/simon have multiples of 16 for their sizes: 48x48
+or 48x32 or 48x16. The old water size was 50x50. I've looked through all
+singleplayer levels -- lemforum, NepsterLix, and Rubix -- and fixed the few
+water placements that had not yet looked good with 48x48.
+
+All triggered gadgets (triggered traps and triggered flingers) have two rows
+of animations: The first row loops while idle, the second row plays while
+busy. After the final frame of the second row has played, the gadget will
+eat another lix and jump back to the frontmost frame of the second row, or,
+if nobody is in range, begin looping the idling animation from the front.
+
+Kept digger at 5/9 sensitivity for now: Digger chokes on steel when the
+innermost 10 of 18 pixels contain any steel. I should make a final decision
+this week.
+
+Rubix's singleplayer levels, Perplexing: Lowered initial lix on some levels.
+Coverage 108/158 -> 119/158, need 39 more.
+
+Get Hype and Theresa V2 merged into lemforum from the 0.7-lemforum thread.
+lemforum coverage is 239/240, need 1 more: Theresa V2.
+
+0.7.15
+------
+
+2017-08-04
+
+Revert basher mask: Bottom 16 pixels are steel-sensitive, not only the
+bottom 13. I.e., we have 2, not 5, insensitive pixels over the sensitive.
+
+Replay verifier logs to `data/verifier.txt' and closes the file after
+writing its last line or after closing the dialog.
+
+0.7.14
+------
+
+2017-08-02
+
+Proxima's planned changes to the lemforum pack. Snowball Battle: Spawn interval 20->22, to keep it solvable.
+
+0.7.13
+------
+
+2017-08-01
+
+Physics: The basher ignores steel in its top 5/18 rows, not merely 2/18.
+The digger ignores steel in its 4 outermost hi-res pixels on both sides,
+not merely in its outermost 2 on each side. The digger digs every (16*n)
+frames following its assignment, not already every (16*n - 4).
+
+Fixed bug #202: Small levels image-export with all stats again, not only
+with their skills.
+
+0.7.12
+------
+
+2017-07-31
+
+lemforum pack: Simple renamed to Lovely. Some backwards-compatibility code
+that converts progress checkmarks during loading the user file.
+
+lemforum/wip-0.7 has all levels in consideration for lemforum pack's stable
+release with 0.7.x in 2 weeks. I hope all levels are up-to-date.
+
+Raymanni's 3 water tiles have higher trigger areas. (Lixes drown earlier and
+higher up than before when they drop into the water.)
+
+Zoom 1x is always allowed, even if the level doesn't fill the available area.
+
+Fix #206: Editor browsers show the innermost directory of hatches, goals,
+traps, and other gadgets.
+
+Goals are locked during the nuke. The nuke is purely for decoration and
+to finish replays in style.
+
+Mouse code reverted to the 0.6 mouse code. If anybody has trouble, tell me.
+
+Keyboard key duration before first repeat for moving selected editor
+pieces: 0.33 seconds -> 0.2 seconds.
+
+Lots of multiplayer nuke code that handles conceding and calling for the nuke.
+When you press the nuke button, you lose control over your lix, overtime
+starts, but your lix don't explode yet. We'll see how it feels.
+
+Editor allows to set overtime in multiplayer levels. Existing multiplayer
+levels are tagged with the correct player number.
+
+0.7.11
+------
+
+When you want to nuke, you can't assign skills anymore. The game core dismisses
+assignments after your nuke, and the GUI shows zero skills.
+
+Game doesn't show FPS in the panel by default. It's an option still.
+
+0.7.10
+------
+
+2017-07-17
+
+Updated lemforum/Vicious/_order.X.txt, ordering One-Lix Showdown.
+
+0.7.9
+-----
+
+2017-07-17
+
+Physics change:
+Reverted the physics change from 0.7.8: The walker skill behaves like in 0.6
+again. Either the lix cancels her activity and walks on, or turns.
+
+Shotgun-debugged mobius's mouse problem by applying a Linux workaround for
+all systems. I couldn't test, hope this helps.
+
+More lemforum level pack coverage. Only 7 levels left to cover:
+fromtheotherside.txt metalcitymayhem.txt thecontinuum.txt
+dreamtheimpossible.txt lixsterquadrille.txt survivalofthecraft.txt
+toccata.txt
+
+0.7.8
+-----
+
+2017-07-01
+
+Physics change:
+0.6 walker: If target lix is working, revert to walker. Otherwise, turn.
+0.7.8 walker: If target lix is working, revert to walker. Turn in every case.
+
+0.7.6
+-----
+
+2017-06-20
+
+Fix: Builders and platformers duplicate bricks for free when turning at
+blockers. Before, number bricks left decreased for these extra bricks.
+
+0.7.5
+-----
+
+2017-06-20
+
+lemforum: Completely Ridiculous Level is narrower by 48 pixels.
+203/240 levels are proven solvable in 0.7 physics, let's cover 37 more.
+
+Down-facing tumblers drown head-first, not feet-first.
+
+0.7.4
+-----
+
+2017-06-14
+
+simon/oriental/bonsai: This tree got lixes stuck beneath its leaves.
+Changed some pixels and therefore the tree's physics. Didn't affect any
+levels for the worse.
+
+Rubix's Pleasand and Sinister are 100 % covered. The higher difficulties
+aren't covered yet.
+
+When you verify dirs in the replay browser, that dir becomes the most recent
+dir for exiting and restarting the browser.
+
+0.7.3
+-----
+
+2017-06-14
+
+NepsterLix is 100 % solvable with 0.7.2 physics.
+
+The replay browser offers a button "Verify dir" that verifies all replays
+in the current directory, recursing through subdirectories. Lix shows the
+results in the GUI and copies them to the logfile.
+
+0.7.2
+-----
+
+2017-06-11
+
+Blocker field is back like in 0.6: LLLLLL-RRRRRR against everything.
+This is simplest and allows crowd-follows-builder in at least 70 % of the
+cases.
+
+0.7.1
+-----
+
+2017-05
+
+Blocker fields by geoo's suggestion, LLLLLL-RRRRRR against nonbuilders and LLLLL---RRRRR against builders.
+
+0.7.0
+-----
+
+2017-05
+
+Lots of changes, see experimental version thread on lemmingsforums.com.
+
 0.6.39
 ------
 
