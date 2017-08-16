@@ -1,6 +1,6 @@
 $BUILT                                             2012-01-21 10:38:52
 $AUTHOR                                                   Clam Spammer
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 3
 $ENGLISH                                       Let's go mining (h, 3P)
 
 #SIZE_X                                                            960

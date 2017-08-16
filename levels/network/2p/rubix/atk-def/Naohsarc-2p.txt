@@ -1,38 +1,31 @@
-$BUILT 2014-05-08 13:51:49
+$BUILT 2017-08-18 01:09:19
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH NaOH's Arc (2 round att/def) 2P
 
+#INTENDED_NUMBER_OF_PLAYERS 2
 #SIZE_X 1760
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 1
 #INITIAL 8
 #REQUIRED 1
 #SPAWN_INTERVAL 40
-#SPAWN_INTERVAL_FAST 4
 
+#WALKER -1
+#RUNNER 1
 #CLIMBER 8
 #FLOATER 4
-#WALKER -1
-#JUMPER -1
-#RUNNER 1
 #BUILDER 60
 #PLATFORMER 60
 #BASHER 55
 #MINER 55
 #DIGGER 20
-#NOTHING 0
+#JUMPER -1
 #BATTER 70
+#EXPLODER2 0
 
-:matt/carnival/Hatch.H: 1232 0 r
+:simon/hatch001.H: 1216 16 r
 :matt/earth/Hatch.H: 48 288
-:matt/carnival/Hatch.H: 1184 48
 
 :geoo/abstract/goal.G: 0 16
 :matt/earth/Goal.G: 1648 224
@@ -61,6 +54,16 @@ $ENGLISH NaOH's Arc (2 round att/def) 2P
 :simon/water.W: 1488 368
 :simon/water.W: 1536 368
 
+:matt/earth/30: 1154 238 rr
+:matt/earth/30: 1176 142 r
+:matt/goldmine/plank: 1106 192
+:matt/goldmine/plank: 1152 160 fr
+:matt/earth/30: 1146 112 r
+:matt/goldmine/plank: 1008 192
+:matt/goldmine/plank: 1106 112
+:matt/goldmine/plank: 1152 64 fr
+:matt/goldmine/plank: 1062 112
+:matt/earth/30: 976 192 rrr
 :matt/earth/06: 296 272
 :matt/earth/08: 26 286
 :matt/earth/07: -12 186
@@ -71,28 +74,19 @@ $ENGLISH NaOH's Arc (2 round att/def) 2P
 :matt/earth/09: 1712 272
 :matt/earth/08: 1536 336 rrr
 :matt/earth/08: 1600 304 rrr
-:matt/earth/30: 800 192
+:matt/earth/30: 802 190
 :matt/earth/30: 880 112
-:matt/earth/30: 1136 112 r
 :matt/earth/30: 1024 64 rr
-:simon/wood/wood_h1: 1152 176 rrr
-:matt/earth/30: 928 240 rr
+:matt/earth/30: 926 242 rr
 :matt/earth/30: 880 288 rr
 :matt/earth/30: 1232 160 rr
-:matt/earth/30: 1152 240 rr
 :matt/earth/30: 1200 192 rr
 :matt/earth/30: 1088 304 rrr
 :matt/earth/20: 480 288
 :matt/earth/13: 544 304 frr
 :matt/earth/20: 384 288
-:simon/wood/wood_h1: 1152 192 rrr
-:simon/wood/wood_h1: 1152 240 rrr
-:simon/wood/wood_h1: 1216 288
-:simon/wood/wood_h1: 1168 288
-:simon/wood/wood_h1: 1024 288
-:simon/wood/wood_h1: 976 288
-:simon/wood/wood_h1: 1264 192
-:simon/wood/wood_h1: 976 320 frrr
+:matt/goldmine/plank: 1120 288
+:matt/goldmine/plank: 1162 288
 :simon/tapir/032h: 848 352
 :simon/tapir/032h: 912 352
 :simon/tapir/032hb: 848 320
@@ -115,18 +109,7 @@ $ENGLISH NaOH's Arc (2 round att/def) 2P
 :simon/tapir/032: 1264 352 frr
 :simon/tapir/032h: 1296 320 frrr
 :simon/tapir/032: 1296 288 frr
-:simon/wood/wood_h1: 784 240
-:simon/wood/wood_h1: 832 240
-:simon/wood/wood_h1: 880 240
-:simon/wood/wood_h1: 976 240 rrr
-:simon/wood/wood_h1: 976 288 rrr
-:simon/wood/wood_h1: 1024 192
-:simon/wood/wood_h1: 1072 192
-:simon/wood/wood_h1: 1120 192
-:simon/wood/wood_h1: 1136 192
-:simon/wood/wood_h1: 1184 192
-:simon/wood/wood_h1: 1312 192 rrr
-:simon/wood/wood_h1: 1120 288
+:matt/goldmine/plank: 976 192 r
 :simon/tapir/032h: 1296 160 frrr
 :simon/tapir/032h: 1296 224 frrr
 :simon/tapir/032h: 1264 192 frrr
@@ -158,45 +141,14 @@ $ENGLISH NaOH's Arc (2 round att/def) 2P
 :matt/earth/07: 546 330 rrr
 :matt/earth/13: 544 336
 :matt/earth/13: 560 336 frr
-:matt/earth/30: 976 192 rrr
 :matt/earth/30: 1024 240 rrr
 :matt/earth/30: 1072 288 rrr
-:simon/wood/wood_h1: 912 240
-:simon/wood/wood_h1: 1008 192
-:simon/wood/wood_h1: 976 192 rrr
 :geoo/steel/dark_16x16o.S: 752 368
 :simon/tapir/032h: 768 112 rrr
 :simon/tapir/032h: 1264 64 frrr
+:matt/goldmine/plank: 1168 64
 :simon/tapir/032h: 1296 32 frrr
-:simon/wood/wood_h1: 1184 64 rrr
-:simon/wood/wood_h1: 1088 64
-:simon/wood/wood_h1: 1136 64
-:simon/wood/wood_h1: 1184 64
-:simon/wood/wood_h1: 1200 64
-:simon/wood/wood_h1: 1248 64
-:simon/wood/wood_h1: 1072 64
-:simon/wood/wood_h1: 1152 112 rrr
-:simon/wood/wood_h1: 1024 112
-:simon/wood/wood_h1: 1072 112
-:simon/wood/wood_h1: 1120 112
-:simon/wood/wood_h1: 1136 112
-:simon/wood/wood_h1: 1184 112
-:simon/wood/wood_h1: 1008 112
-:simon/wood/wood_h1: 928 112 rrr
-:simon/wood/wood_h1: 800 112
-:simon/wood/wood_h1: 848 112
-:simon/wood/wood_h1: 896 112
-:simon/wood/wood_h1: 912 112
-:simon/wood/wood_h1: 960 112
-:simon/wood/wood_h1: 768 112
-:simon/wood/wood_h1: 768 112 rrr
-:simon/wood/wood_h1: 928 160 rrr
-:simon/wood/wood_h1: 928 176 rrr
-:simon/wood/wood_h1: 928 192 rrr
-:simon/wood/wood_h1: 1152 160 rrr
-:matt/earth/30: 1168 144 r
 :matt/earth/30: 832 160
-:geoo/steel/32x64o.S: 752 240
 :matt/earth/07: 332 364
 :matt/earth/10: 224 272 frr
 :matt/earth/07: 294 346
@@ -252,3 +204,11 @@ $ENGLISH NaOH's Arc (2 round att/def) 2P
 :geoo/steel/32x32o.S: 1728 0
 :geoo/steel/32x32o.S: 1696 0
 :geoo/steel/32x16o.S: 1664 294
+:matt/goldmine/plank: 834 240
+:matt/goldmine/plank: 752 240
+:geoo/steel/32x64o.S: 752 240
+:matt/goldmine/plank: 928 112 r
+:matt/goldmine/plank: 800 112
+:matt/goldmine/plank: 936 112
+:matt/goldmine/plank: 972 120 d
+:matt/goldmine/plank: 1074 64

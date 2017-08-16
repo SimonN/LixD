@@ -1,6 +1,6 @@
 $BUILT                                             2011-09-04 23:02:25
 $AUTHOR                                                          RubiX
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 3
 $ENGLISH                                     The box office [Low] (3p)
 
 #SIZE_X                                                            768

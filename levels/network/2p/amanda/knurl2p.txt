@@ -1,6 +1,6 @@
 $BUILT 2014-04-06 14:28:32
 $AUTHOR Amanda
-$GERMAN Riffelung (2p)
+#INTENDED_NUMBER_OF_PLAYERS 2Riffelung (2p)
 $ENGLISH Knurl (2p)
 
 #SIZE_X 960

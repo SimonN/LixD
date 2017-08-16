@@ -1,6 +1,6 @@
 $BUILT                                             2012-01-20 16:22:04
 $AUTHOR                                                   Clam Spammer
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 4
 $ENGLISH                                         Tapirmid Blunder (4P)
 
 #SIZE_X                                                           1536

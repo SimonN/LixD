@@ -1,6 +1,6 @@
 $BUILT 2014-04-16 21:15:54
 $AUTHOR RubiX
-$GERMAN 
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH Keep a close eye(2p)
 
 #SIZE_X 1578
@@ -32,13 +32,13 @@ $ENGLISH Keep a close eye(2p)
 #BATTER 15
 #NOTHING 0
 
-:matt/oriental/Hatch.H: 656 320 r
-:matt/oriental/Hatch.H: 864 320
-:matt/oriental/Hatch.H: 688 64 r
-:matt/oriental/Hatch.H: 832 64
+:simon/oriental/hatch.H: 656 320 r
+:simon/oriental/hatch.H: 864 320
+:simon/oriental/hatch.H: 688 64 r
+:simon/oriental/hatch.H: 832 64
 
-:matt/oriental/Goal.G: 1530 160
-:matt/oriental/Goal.G: -16 160
+:simon/oriental/goal.G: 1530 160
+:simon/oriental/goal.G: -16 160
 
 :matt/water.W: 720 400
 :matt/water.W: 752 400
@@ -65,145 +65,145 @@ $ENGLISH Keep a close eye(2p)
 :matt/water.W: 208 416
 :matt/water.W: 240 416
 
-:matt/oriental/asiantemple: 1398 64
-:matt/oriental/07: 1388 240 r
-:matt/oriental/07: 1356 240 r
-:matt/oriental/07: 1324 240 r
-:matt/oriental/07: 1292 240 r
-:matt/oriental/07: 252 240 r
-:matt/oriental/07: 220 240 r
-:matt/oriental/07: 188 240 r
-:matt/oriental/07: 156 240 r
-:matt/oriental/06: 684 384
-:matt/oriental/06: 636 384
-:matt/oriental/06: 892 384
-:matt/oriental/06: 844 384
-:matt/oriental/06: 588 384
-:matt/oriental/06: 540 384
-:matt/oriental/07: 1036 304 r
-:matt/oriental/07: 1036 368 r
-:matt/oriental/06: 988 384
-:matt/oriental/06: 940 384
-:matt/oriental/07: 508 368 r
-:matt/oriental/07: 508 304 r
-:matt/oriental/07: 1068 368 r
-:matt/oriental/07: 1068 304 r
-:matt/oriental/07: 476 368 r
-:matt/oriental/07: 476 304 r
-:matt/oriental/07: 1100 368 r
-:matt/oriental/07: 1100 304 r
-:matt/oriental/07: 444 368 r
-:matt/oriental/07: 444 304 r
-:matt/oriental/07: 1132 304 r
-:matt/oriental/07: 1132 368 r
-:matt/oriental/07: 1164 368 r
-:matt/oriental/07: 1164 304 r
-:matt/oriental/07: 1196 368 r
-:matt/oriental/07: 1196 304 r
-:matt/oriental/07: 348 304 r
-:matt/oriental/07: 348 368 r
-:matt/oriental/07: 380 368 r
-:matt/oriental/07: 380 304 r
-:matt/oriental/07: 412 368 r
-:matt/oriental/07: 412 304 r
-:matt/oriental/07: 1132 176 r
-:matt/oriental/07: 1132 240 r
-:matt/oriental/07: 1164 240 r
-:matt/oriental/07: 1164 176 r
-:matt/oriental/07: 1196 240 r
-:matt/oriental/07: 1196 176 r
-:matt/oriental/07: 348 176 r
-:matt/oriental/07: 348 240 r
-:matt/oriental/07: 380 240 r
-:matt/oriental/07: 380 176 r
-:matt/oriental/07: 412 240 r
-:matt/oriental/07: 412 176 r
-:matt/oriental/07: 1228 304 r
-:matt/oriental/07: 1228 368 r
-:matt/oriental/07: 1260 368 r
-:matt/oriental/07: 1260 304 r
-:matt/oriental/07: 1292 368 r
-:matt/oriental/07: 1292 304 r
-:matt/oriental/07: 1228 176 r
-:matt/oriental/07: 1228 240 r
-:matt/oriental/07: 1260 240 r
-:matt/oriental/07: 1260 176 r
-:matt/oriental/07: 1292 240 r
-:matt/oriental/07: 1292 176 r
-:matt/oriental/07: 252 304 r
-:matt/oriental/07: 252 368 r
-:matt/oriental/07: 284 368 r
-:matt/oriental/07: 284 304 r
-:matt/oriental/07: 316 368 r
-:matt/oriental/07: 316 304 r
-:matt/oriental/07: 252 176 r
-:matt/oriental/07: 252 240 r
-:matt/oriental/07: 284 240 r
-:matt/oriental/07: 284 176 r
-:matt/oriental/07: 316 240 r
-:matt/oriental/07: 316 176 r
-:matt/oriental/asiangate: 284 112 frr
-:matt/oriental/asiangate: 1180 112
-:matt/oriental/asiantemple: 16 64
-:matt/oriental/07: 1420 368 r
-:matt/oriental/07: 1420 304 r
-:matt/oriental/07: 1452 368 r
-:matt/oriental/07: 1452 304 r
-:matt/oriental/07: 1420 240 r
-:matt/oriental/07: 1452 240 r
-:matt/oriental/07: 1484 304 r
-:matt/oriental/07: 1484 368 r
-:matt/oriental/07: 1516 368 r
-:matt/oriental/07: 1516 304 r
-:matt/oriental/07: 1548 368 r
-:matt/oriental/07: 1548 304 r
-:matt/oriental/07: 1484 240 r
-:matt/oriental/07: 1516 240 r
-:matt/oriental/07: 1548 240 r
-:matt/oriental/07: -36 304 r
-:matt/oriental/07: -36 368 r
-:matt/oriental/07: -4 368 r
-:matt/oriental/07: -4 304 r
-:matt/oriental/07: 28 368 r
-:matt/oriental/07: 28 304 r
-:matt/oriental/07: -36 240 r
-:matt/oriental/07: -4 240 r
-:matt/oriental/07: 28 240 r
-:matt/oriental/07: 60 304 r
-:matt/oriental/07: 60 368 r
-:matt/oriental/07: 92 368 r
-:matt/oriental/07: 92 304 r
-:matt/oriental/07: 124 368 r
-:matt/oriental/07: 124 304 r
-:matt/oriental/07: 60 240 r
-:matt/oriental/07: 92 240 r
-:matt/oriental/07: 124 240 r
-:matt/oriental/06: 972 128
-:matt/oriental/06: 924 128
-:matt/oriental/06: 876 128
-:matt/oriental/06: 828 128
-:matt/oriental/06: 700 128
-:matt/oriental/06: 652 128
-:matt/oriental/06: 604 128
-:matt/oriental/06: 556 128
-:matt/oriental/06: 508 128
-:matt/oriental/06: 1020 128
-:matt/oriental/06: 924 80
-:matt/oriental/06: 604 80
-:matt/oriental/06: 924 32
-:matt/oriental/06: 604 32
-:matt/oriental/06: 924 -16
-:matt/oriental/06: 604 -16
-:matt/oriental/06: 700 176
-:matt/oriental/06: 652 176
-:matt/oriental/06: 604 176
-:matt/oriental/06: 556 176
-:matt/oriental/06: 508 176
-:matt/oriental/06: 1020 176
-:matt/oriental/06: 972 176
-:matt/oriental/06: 924 176
-:matt/oriental/06: 876 176
-:matt/oriental/06: 828 176
+:simon/oriental/temple: 1398 64
+:simon/oriental/07: 1388 240 r
+:simon/oriental/07: 1356 240 r
+:simon/oriental/07: 1324 240 r
+:simon/oriental/07: 1292 240 r
+:simon/oriental/07: 252 240 r
+:simon/oriental/07: 220 240 r
+:simon/oriental/07: 188 240 r
+:simon/oriental/07: 156 240 r
+:simon/oriental/06: 684 384
+:simon/oriental/06: 636 384
+:simon/oriental/06: 892 384
+:simon/oriental/06: 844 384
+:simon/oriental/06: 588 384
+:simon/oriental/06: 540 384
+:simon/oriental/07: 1036 304 r
+:simon/oriental/07: 1036 368 r
+:simon/oriental/06: 988 384
+:simon/oriental/06: 940 384
+:simon/oriental/07: 508 368 r
+:simon/oriental/07: 508 304 r
+:simon/oriental/07: 1068 368 r
+:simon/oriental/07: 1068 304 r
+:simon/oriental/07: 476 368 r
+:simon/oriental/07: 476 304 r
+:simon/oriental/07: 1100 368 r
+:simon/oriental/07: 1100 304 r
+:simon/oriental/07: 444 368 r
+:simon/oriental/07: 444 304 r
+:simon/oriental/07: 1132 304 r
+:simon/oriental/07: 1132 368 r
+:simon/oriental/07: 1164 368 r
+:simon/oriental/07: 1164 304 r
+:simon/oriental/07: 1196 368 r
+:simon/oriental/07: 1196 304 r
+:simon/oriental/07: 348 304 r
+:simon/oriental/07: 348 368 r
+:simon/oriental/07: 380 368 r
+:simon/oriental/07: 380 304 r
+:simon/oriental/07: 412 368 r
+:simon/oriental/07: 412 304 r
+:simon/oriental/07: 1132 176 r
+:simon/oriental/07: 1132 240 r
+:simon/oriental/07: 1164 240 r
+:simon/oriental/07: 1164 176 r
+:simon/oriental/07: 1196 240 r
+:simon/oriental/07: 1196 176 r
+:simon/oriental/07: 348 176 r
+:simon/oriental/07: 348 240 r
+:simon/oriental/07: 380 240 r
+:simon/oriental/07: 380 176 r
+:simon/oriental/07: 412 240 r
+:simon/oriental/07: 412 176 r
+:simon/oriental/07: 1228 304 r
+:simon/oriental/07: 1228 368 r
+:simon/oriental/07: 1260 368 r
+:simon/oriental/07: 1260 304 r
+:simon/oriental/07: 1292 368 r
+:simon/oriental/07: 1292 304 r
+:simon/oriental/07: 1228 176 r
+:simon/oriental/07: 1228 240 r
+:simon/oriental/07: 1260 240 r
+:simon/oriental/07: 1260 176 r
+:simon/oriental/07: 1292 240 r
+:simon/oriental/07: 1292 176 r
+:simon/oriental/07: 252 304 r
+:simon/oriental/07: 252 368 r
+:simon/oriental/07: 284 368 r
+:simon/oriental/07: 284 304 r
+:simon/oriental/07: 316 368 r
+:simon/oriental/07: 316 304 r
+:simon/oriental/07: 252 176 r
+:simon/oriental/07: 252 240 r
+:simon/oriental/07: 284 240 r
+:simon/oriental/07: 284 176 r
+:simon/oriental/07: 316 240 r
+:simon/oriental/07: 316 176 r
+:simon/oriental/gate: 284 112 frr
+:simon/oriental/gate: 1180 112
+:simon/oriental/temple: 16 64
+:simon/oriental/07: 1420 368 r
+:simon/oriental/07: 1420 304 r
+:simon/oriental/07: 1452 368 r
+:simon/oriental/07: 1452 304 r
+:simon/oriental/07: 1420 240 r
+:simon/oriental/07: 1452 240 r
+:simon/oriental/07: 1484 304 r
+:simon/oriental/07: 1484 368 r
+:simon/oriental/07: 1516 368 r
+:simon/oriental/07: 1516 304 r
+:simon/oriental/07: 1548 368 r
+:simon/oriental/07: 1548 304 r
+:simon/oriental/07: 1484 240 r
+:simon/oriental/07: 1516 240 r
+:simon/oriental/07: 1548 240 r
+:simon/oriental/07: -36 304 r
+:simon/oriental/07: -36 368 r
+:simon/oriental/07: -4 368 r
+:simon/oriental/07: -4 304 r
+:simon/oriental/07: 28 368 r
+:simon/oriental/07: 28 304 r
+:simon/oriental/07: -36 240 r
+:simon/oriental/07: -4 240 r
+:simon/oriental/07: 28 240 r
+:simon/oriental/07: 60 304 r
+:simon/oriental/07: 60 368 r
+:simon/oriental/07: 92 368 r
+:simon/oriental/07: 92 304 r
+:simon/oriental/07: 124 368 r
+:simon/oriental/07: 124 304 r
+:simon/oriental/07: 60 240 r
+:simon/oriental/07: 92 240 r
+:simon/oriental/07: 124 240 r
+:simon/oriental/06: 972 128
+:simon/oriental/06: 924 128
+:simon/oriental/06: 876 128
+:simon/oriental/06: 828 128
+:simon/oriental/06: 700 128
+:simon/oriental/06: 652 128
+:simon/oriental/06: 604 128
+:simon/oriental/06: 556 128
+:simon/oriental/06: 508 128
+:simon/oriental/06: 1020 128
+:simon/oriental/06: 924 80
+:simon/oriental/06: 604 80
+:simon/oriental/06: 924 32
+:simon/oriental/06: 604 32
+:simon/oriental/06: 924 -16
+:simon/oriental/06: 604 -16
+:simon/oriental/06: 700 176
+:simon/oriental/06: 652 176
+:simon/oriental/06: 604 176
+:simon/oriental/06: 556 176
+:simon/oriental/06: 508 176
+:simon/oriental/06: 1020 176
+:simon/oriental/06: 972 176
+:simon/oriental/06: 924 176
+:simon/oriental/06: 876 176
+:simon/oriental/06: 828 176
 :matt/steel/64x32.S: 656 384
 :matt/steel/64x32.S: 864 384
 :matt/steel/64x32.S: 1554 240

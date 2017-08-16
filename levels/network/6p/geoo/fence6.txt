@@ -1,6 +1,6 @@
 $BUILT                                             2011-08-18 18:18:59
 $AUTHOR                                                           geoo
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 6
 $ENGLISH                                                         Fence
 
 #SIZE_X                                                            640

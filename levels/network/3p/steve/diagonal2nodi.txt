@@ -1,6 +1,6 @@
 $BUILT 2013-01-06 13:42:35
 $AUTHOR Insane Steve
-$GERMAN 
+#INTENDED_NUMBER_OF_PLAYERS 3
 $ENGLISH Diagonal (part 2) (no diggers)
 
 #SIZE_X 672

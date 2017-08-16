@@ -1,6 +1,6 @@
 $BUILT                                             2011-09-11 17:04:13
 $AUTHOR                                                          Simon
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH                                   A good first 2-player level
 
 #SIZE_X                                                            640

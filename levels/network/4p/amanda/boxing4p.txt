@@ -28,7 +28,7 @@ $ENGLISH Pro Boxing (4p)
 
 :amanda/forest/frog_happy.T: 568 282
 
-:amanda/occult/occult_wax_details_sunken_lix_b: 688 244
+:amanda/occult/wax_details_sunken_lix_b: 688 244
 :matt/carnival/04: 872 24
 :matt/carnival/04: 872 56
 :matt/carnival/04: 896 24
@@ -290,34 +290,34 @@ $END_TILE_GROUP
 :proxima/tile/cyan1: 384 336
 :proxima/tile/cyan1: 448 336
 :geoo/shadow/pillar_hztl_32: 240 168
-:amanda/occult/occult_cube: 208 192
-:amanda/occult/occult_cube: 224 192
+:amanda/occult/cube: 208 192
+:amanda/occult/cube: 224 192
 :geoo/shadow/pillar_hztl_32: 304 168
-:amanda/occult/occult_cube: 272 192
-:amanda/occult/occult_cube: 288 192
+:amanda/occult/cube: 272 192
+:amanda/occult/cube: 288 192
 :geoo/shadow/pillar_hztl_32: 368 168
-:amanda/occult/occult_cube: 336 192
-:amanda/occult/occult_cube: 352 192
+:amanda/occult/cube: 336 192
+:amanda/occult/cube: 352 192
 :geoo/shadow/pillar_hztl_32: 432 168
-:amanda/occult/occult_cube: 400 192
-:amanda/occult/occult_cube: 416 192
+:amanda/occult/cube: 400 192
+:amanda/occult/cube: 416 192
 :geoo/shadow/pillar_hztl_32: 176 168
 :geoo/shadow/rope1: 112 184
 :geoo/shadow/rope1: 112 168
 :geoo/shadow/rope1: 464 184 frr
 :geoo/shadow/rope1: 464 168 frr
 :geoo/shadow/pillar_hztl_32: 208 168
-:amanda/occult/occult_cube: 224 176
-:amanda/occult/occult_cube: 208 176
+:amanda/occult/cube: 224 176
+:amanda/occult/cube: 208 176
 :geoo/shadow/pillar_hztl_32: 336 168
-:amanda/occult/occult_cube: 352 176
-:amanda/occult/occult_cube: 336 176
+:amanda/occult/cube: 352 176
+:amanda/occult/cube: 336 176
 :geoo/shadow/pillar_hztl_32: 272 168
-:amanda/occult/occult_cube: 272 176
-:amanda/occult/occult_cube: 288 176
+:amanda/occult/cube: 272 176
+:amanda/occult/cube: 288 176
 :geoo/shadow/pillar_hztl_32: 400 168
-:amanda/occult/occult_cube: 416 176
-:amanda/occult/occult_cube: 400 176
+:amanda/occult/cube: 416 176
+:amanda/occult/cube: 400 176
 :geoo/shadow/pillar_hztl_32: 368 176 d
 :geoo/shadow/pillar_hztl_32: 240 176 d
 :geoo/shadow/window_broken: 176 136
@@ -652,7 +652,7 @@ $END_TILE_GROUP
 :geoo/shadow/pillar_verti_32: 616 272
 :geoo/shadow/pillar_verti_32: 568 272 d
 :geoo/shadow/pillar_verti_32: 568 272
-:amanda/occult/occult_wax_details_sunken_lix: 52 252
+:amanda/occult/wax_details_sunken_lix: 52 252
 :matt/bricks/17: 64 264 frr
 :matt/bricks/17: 16 232 frr
 :geoo/shadow/pillar_verti_32: 64 280 frrd
@@ -694,34 +694,34 @@ $END_TILE_GROUP
 :proxima/tile/cyan1: 1024 336
 :proxima/tile/cyan1: 1088 336
 :geoo/shadow/pillar_hztl_32: 880 168
-:amanda/occult/occult_cube: 848 192
-:amanda/occult/occult_cube: 864 192
+:amanda/occult/cube: 848 192
+:amanda/occult/cube: 864 192
 :geoo/shadow/pillar_hztl_32: 944 168
-:amanda/occult/occult_cube: 912 192
-:amanda/occult/occult_cube: 928 192
+:amanda/occult/cube: 912 192
+:amanda/occult/cube: 928 192
 :geoo/shadow/pillar_hztl_32: 1008 168
-:amanda/occult/occult_cube: 976 192
-:amanda/occult/occult_cube: 992 192
+:amanda/occult/cube: 976 192
+:amanda/occult/cube: 992 192
 :geoo/shadow/pillar_hztl_32: 1072 168
-:amanda/occult/occult_cube: 1040 192
-:amanda/occult/occult_cube: 1056 192
+:amanda/occult/cube: 1040 192
+:amanda/occult/cube: 1056 192
 :geoo/shadow/pillar_hztl_32: 816 168
 :geoo/shadow/rope1: 752 184
 :geoo/shadow/rope1: 752 168
 :geoo/shadow/rope1: 1104 184 frr
 :geoo/shadow/rope1: 1104 168 frr
 :geoo/shadow/pillar_hztl_32: 848 168
-:amanda/occult/occult_cube: 864 176
-:amanda/occult/occult_cube: 848 176
+:amanda/occult/cube: 864 176
+:amanda/occult/cube: 848 176
 :geoo/shadow/pillar_hztl_32: 976 168
-:amanda/occult/occult_cube: 992 176
-:amanda/occult/occult_cube: 976 176
+:amanda/occult/cube: 992 176
+:amanda/occult/cube: 976 176
 :geoo/shadow/pillar_hztl_32: 912 168
-:amanda/occult/occult_cube: 912 176
-:amanda/occult/occult_cube: 928 176
+:amanda/occult/cube: 912 176
+:amanda/occult/cube: 928 176
 :geoo/shadow/pillar_hztl_32: 1040 168
-:amanda/occult/occult_cube: 1056 176
-:amanda/occult/occult_cube: 1040 176
+:amanda/occult/cube: 1056 176
+:amanda/occult/cube: 1040 176
 :geoo/shadow/pillar_hztl_32: 1008 176 d
 :geoo/shadow/pillar_hztl_32: 880 176 d
 :geoo/shadow/window_broken: 816 136
@@ -835,27 +835,27 @@ $END_TILE_GROUP
 :geoo/construction/pillar_32: 1264 16
 :geoo/construction/pillar_32: 1264 0
 :geoo/shadow/sock: 1182 94
-:amanda/occult/occult_cube: 816 176
-:amanda/occult/occult_cube: 816 192
-:amanda/occult/occult_cube: 832 176
-:amanda/occult/occult_cube: 832 192
-:amanda/occult/occult_cube: 1072 176
-:amanda/occult/occult_cube: 1088 176
-:amanda/occult/occult_cube: 1072 192
-:amanda/occult/occult_cube: 1088 192
-:amanda/occult/occult_cube: 944 176
-:amanda/occult/occult_cube: 960 176
-:amanda/occult/occult_cube: 944 192
-:amanda/occult/occult_cube: 960 192
-:amanda/occult/occult_cube: 176 176
-:amanda/occult/occult_cube: 176 192
-:amanda/occult/occult_cube: 192 176
-:amanda/occult/occult_cube: 192 192
-:amanda/occult/occult_cube: 432 176
-:amanda/occult/occult_cube: 448 176
-:amanda/occult/occult_cube: 432 192
-:amanda/occult/occult_cube: 448 192
-:amanda/occult/occult_cube: 304 176
-:amanda/occult/occult_cube: 320 176
-:amanda/occult/occult_cube: 304 192
-:amanda/occult/occult_cube: 320 192
+:amanda/occult/cube: 816 176
+:amanda/occult/cube: 816 192
+:amanda/occult/cube: 832 176
+:amanda/occult/cube: 832 192
+:amanda/occult/cube: 1072 176
+:amanda/occult/cube: 1088 176
+:amanda/occult/cube: 1072 192
+:amanda/occult/cube: 1088 192
+:amanda/occult/cube: 944 176
+:amanda/occult/cube: 960 176
+:amanda/occult/cube: 944 192
+:amanda/occult/cube: 960 192
+:amanda/occult/cube: 176 176
+:amanda/occult/cube: 176 192
+:amanda/occult/cube: 192 176
+:amanda/occult/cube: 192 192
+:amanda/occult/cube: 432 176
+:amanda/occult/cube: 448 176
+:amanda/occult/cube: 432 192
+:amanda/occult/cube: 448 192
+:amanda/occult/cube: 304 176
+:amanda/occult/cube: 320 176
+:amanda/occult/cube: 304 192
+:amanda/occult/cube: 320 192

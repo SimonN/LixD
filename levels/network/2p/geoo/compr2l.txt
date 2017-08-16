@@ -1,6 +1,6 @@
 $BUILT                                             2011-09-06 00:29:55
 $AUTHOR                                                           geoo
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH                                           Pancake Compression
 
 #SIZE_X                                                            640

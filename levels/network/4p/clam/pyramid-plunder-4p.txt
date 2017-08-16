@@ -1,6 +1,6 @@
 $BUILT                                             2012-01-20 16:18:27
 $AUTHOR                                                   Clam Spammer
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 4
 $ENGLISH                                          Pyramid Plunder (4P)
 
 #SIZE_X                                                           1536

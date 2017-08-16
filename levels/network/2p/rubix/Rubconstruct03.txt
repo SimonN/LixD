@@ -1,6 +1,6 @@
 $BUILT                                             2011-08-19 19:42:47
 $AUTHOR                                                          RubiX
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH                                 Lifes a box of chocolates(2p)
 
 #SIZE_X                                                            638

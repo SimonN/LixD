@@ -1,6 +1,6 @@
 $BUILT                                             2012-01-20 16:40:35
 $AUTHOR                                                   Clam Spammer
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 4
 $ENGLISH                                       Can't stop me now! (4P)
 
 #SIZE_X                                                            832

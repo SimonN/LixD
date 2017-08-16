@@ -1,34 +1,28 @@
-$BUILT 2014-05-08 13:51:15
+$BUILT 2017-08-18 01:07:39
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH NaOH's Arc (Attack&Defense) Team
 
+#INTENDED_NUMBER_OF_PLAYERS 2
 #SIZE_X 3200
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 120
 #INITIAL 16
 #REQUIRED 1
 #SPAWN_INTERVAL 40
-#SPAWN_INTERVAL_FAST 4
 
+#WALKER -1
+#RUNNER 2
 #CLIMBER 16
 #FLOATER 8
-#WALKER -1
-#JUMPER -1
-#RUNNER 2
 #BUILDER 90
 #PLATFORMER 90
 #BASHER 85
 #MINER 85
 #DIGGER 30
-#NOTHING 0
+#JUMPER -1
 #BATTER 80
+#EXPLODER2 0
 
 :geoo/abstract/hatch.H: 112 256
 :geoo/abstract/hatch.H: 3056 256 r
@@ -61,33 +55,48 @@ $ENGLISH NaOH's Arc (Attack&Defense) Team
 :simon/water.W: 1328 368
 :simon/water.W: 1376 368
 :simon/water.W: 1424 368
-:simon/water.W: 2398 368
-:simon/water.W: 2350 368
-:simon/water.W: 2302 368
-:simon/water.W: 2254 368
-:simon/water.W: 2206 368
-:simon/water.W: 2158 368
-:simon/water.W: 2110 368
-:simon/water.W: 2062 368
-:simon/water.W: 2686 368
-:simon/water.W: 2638 368
-:simon/water.W: 2590 368
-:simon/water.W: 2542 368
-:simon/water.W: 2494 368
-:simon/water.W: 2446 368
-:simon/water.W: 2014 368
-:simon/water.W: 1966 368
-:simon/water.W: 1918 368
-:simon/water.W: 1870 368
+:simon/water.W: 2640 368
+:simon/water.W: 2592 368
+:simon/water.W: 1872 368
+:simon/water.W: 1824 368
+:simon/water.W: 1776 368
+:simon/water.W: 1728 368
+:simon/water.W: 2400 368
+:simon/water.W: 2352 368
+:simon/water.W: 2304 368
+:simon/water.W: 2256 368
+:simon/water.W: 2208 368
+:simon/water.W: 2160 368
+:simon/water.W: 2112 368
+:simon/water.W: 2064 368
+:simon/water.W: 2544 368
+:simon/water.W: 2496 368
+:simon/water.W: 2448 368
+:simon/water.W: 2016 368
+:simon/water.W: 1968 368
+:simon/water.W: 1920 368
 :geoo/construction/sawblade_small.F: 2496 112
 :geoo/construction/sawblade_small.F: 2160 112
-:simon/water.W: 1822 368
-:simon/water.W: 1774 368
-:simon/water.W: 1726 368
+:simon/water.W: 2688 368
 
+:matt/earth/30: 2101 238 f
+:matt/earth/30: 1120 160 rr
+:matt/earth/30: 1088 192 rr
+:matt/earth/30: 1064 142 r
+:matt/earth/30: 1034 112 r
+:matt/earth/30: 864 192 rrr
+:matt/earth/30: 690 190
+:matt/earth/30: 768 112
+:matt/earth/30: 912 64 rr
+:matt/earth/30: 814 242 rr
+:matt/earth/30: 768 288 rr
+:simon/tapir/032h: 1152 128 frrr
+:matt/earth/30: 976 304 rrr
+:matt/earth/30: 912 240 rrr
+:matt/earth/30: 960 288 rrr
+:matt/earth/30: 720 160
 :matt/earth/07: 32 224
 :matt/earth/06: 3136 208
-:matt/earth/30: 2086 144 fr
 :matt/earth/10: 3152 112 fr
 :matt/earth/10: -64 112 r
 :matt/earth/18: 80 320
@@ -99,28 +108,9 @@ $ENGLISH NaOH's Arc (Attack&Defense) Team
 :matt/earth/07: 364 328
 :matt/earth/08: 1424 336 rrr
 :matt/earth/08: 1488 304 rrr
-:matt/earth/30: 688 192
-:matt/earth/30: 768 112
-:matt/earth/30: 1024 112 r
-:matt/earth/30: 912 64 rr
-:simon/wood/wood_h1: 1040 176 rrr
-:matt/earth/30: 816 240 rr
-:matt/earth/30: 768 288 rr
-:matt/earth/30: 1120 160 rr
-:matt/earth/30: 1040 240 rr
-:matt/earth/30: 1088 192 rr
-:matt/earth/30: 976 304 rrr
 :matt/earth/20: 368 288
 :matt/earth/13: 432 304 frr
 :matt/earth/20: 272 288
-:simon/wood/wood_h1: 1040 192 rrr
-:simon/wood/wood_h1: 1040 240 rrr
-:simon/wood/wood_h1: 1104 288
-:simon/wood/wood_h1: 1056 288
-:simon/wood/wood_h1: 912 288
-:simon/wood/wood_h1: 864 288
-:simon/wood/wood_h1: 1152 192
-:simon/wood/wood_h1: 864 320 frrr
 :simon/tapir/032h: 736 352
 :simon/tapir/032h: 800 352
 :simon/tapir/032hb: 736 320
@@ -137,28 +127,13 @@ $ENGLISH NaOH's Arc (Attack&Defense) Team
 :simon/tapir/032h: 928 352 frr
 :simon/tapir/032h: 864 352 frr
 :simon/tapir/032hb: 1056 320 frr
-:simon/tapir/032b: 1120 288 frr
 :simon/tapir/032h: 1120 320 frrr
-:simon/tapir/032h: 1152 288 frrr
 :simon/tapir/032: 1152 352 frr
 :simon/tapir/032h: 1184 320 frrr
 :simon/tapir/032: 1184 288 frr
-:simon/wood/wood_h1: 672 240
-:simon/wood/wood_h1: 720 240
-:simon/wood/wood_h1: 768 240
-:simon/wood/wood_h1: 864 240 rrr
-:simon/wood/wood_h1: 864 288 rrr
-:simon/wood/wood_h1: 912 192
-:simon/wood/wood_h1: 960 192
-:simon/wood/wood_h1: 1008 192
-:simon/wood/wood_h1: 1024 192
-:simon/wood/wood_h1: 1072 192
-:simon/wood/wood_h1: 1200 192 rrr
-:simon/wood/wood_h1: 1008 288
 :simon/tapir/032h: 1184 160 frrr
 :simon/tapir/032h: 1184 224 frrr
 :simon/tapir/032h: 1152 192 frrr
-:simon/tapir/032h: 1152 128 frrr
 :simon/tapir/032h: 1184 96 frrr
 :simon/tapir/032: 1152 256
 :geoo/steel/32x16o.S: 640 368
@@ -186,45 +161,10 @@ $ENGLISH NaOH's Arc (Attack&Defense) Team
 :matt/earth/07: 432 332 rrr
 :matt/earth/13: 432 336
 :matt/earth/13: 448 336 frr
-:matt/earth/30: 864 192 rrr
-:matt/earth/30: 912 240 rrr
-:matt/earth/30: 960 288 rrr
-:simon/wood/wood_h1: 800 240
-:simon/wood/wood_h1: 896 192
-:simon/wood/wood_h1: 864 192 rrr
 :geoo/steel/dark_16x16o.S: 640 368
 :simon/tapir/032h: 656 112 rrr
 :simon/tapir/032h: 1152 64 frrr
 :simon/tapir/032h: 1184 32 frrr
-:simon/wood/wood_h1: 1072 64 rrr
-:simon/wood/wood_h1: 976 64
-:simon/wood/wood_h1: 1024 64
-:simon/wood/wood_h1: 1072 64
-:simon/wood/wood_h1: 1088 64
-:simon/wood/wood_h1: 1136 64
-:simon/wood/wood_h1: 960 64
-:simon/wood/wood_h1: 1040 112 rrr
-:simon/wood/wood_h1: 912 112
-:simon/wood/wood_h1: 960 112
-:simon/wood/wood_h1: 1008 112
-:simon/wood/wood_h1: 1024 112
-:simon/wood/wood_h1: 1072 112
-:simon/wood/wood_h1: 896 112
-:simon/wood/wood_h1: 816 112 rrr
-:simon/wood/wood_h1: 688 112
-:simon/wood/wood_h1: 736 112
-:simon/wood/wood_h1: 784 112
-:simon/wood/wood_h1: 800 112
-:simon/wood/wood_h1: 848 112
-:simon/wood/wood_h1: 656 112
-:simon/wood/wood_h1: 656 112 rrr
-:simon/wood/wood_h1: 816 160 rrr
-:simon/wood/wood_h1: 816 176 rrr
-:simon/wood/wood_h1: 816 192 rrr
-:simon/wood/wood_h1: 1040 160 rrr
-:matt/earth/30: 1056 144 r
-:matt/earth/30: 720 160
-:geoo/steel/32x64o.S: 640 240
 :matt/earth/07: 220 364
 :matt/earth/10: 160 288 frr
 :matt/earth/07: 182 346
@@ -239,12 +179,8 @@ $ENGLISH NaOH's Arc (Attack&Defense) Team
 :geoo/steel/16x32o.S: 1024 112
 :geoo/steel/16x32o.S: 1024 144
 :geoo/steel/16x32o.S: 1008 176 rrr
-:geoo/steel/16x32o.S: 1040 192 rrr
-:geoo/steel/16x32o.S: 1008 192 rrr
-:geoo/steel/16x32o.S: 864 288 rrr
 :geoo/steel/16x32o.S: 896 288 rrr
 :geoo/steel/16x32o.S: 928 288 rrr
-:geoo/steel/16x32o.S: 864 304 rr
 :geoo/steel/16x32o.S: 864 336 rr
 :geoo/steel/16x32o.S: 640 96 rrr
 :geoo/steel/32x64o.S: 656 112 rr
@@ -277,86 +213,9 @@ $ENGLISH NaOH's Arc (Attack&Defense) Team
 :matt/earth/07: 2784 328 frr
 :matt/earth/08: 1742 336 frrr
 :matt/earth/08: 1678 304 frrr
-:matt/earth/30: 2454 192 frr
-:matt/earth/30: 2374 112 frr
-:matt/earth/30: 2118 112 fr
-:matt/earth/30: 2230 64 f
-:simon/wood/wood_h1: 2150 176 frrr
-:matt/earth/30: 2326 240 f
-:matt/earth/30: 2374 288 f
-:matt/earth/30: 2022 160 f
-:matt/earth/30: 2102 240 f
-:matt/earth/30: 2054 192 f
-:matt/earth/30: 2166 304 frrr
 :matt/earth/20: 2734 288 frr
 :matt/earth/13: 2722 304
 :matt/earth/20: 2830 288 frr
-:simon/wood/wood_h1: 2150 192 frrr
-:simon/wood/wood_h1: 2150 240 frrr
-:simon/wood/wood_h1: 2046 288 frr
-:simon/wood/wood_h1: 2094 288 frr
-:simon/wood/wood_h1: 2238 288 frr
-:simon/wood/wood_h1: 2286 288 frr
-:simon/wood/wood_h1: 1998 192 frr
-:simon/wood/wood_h1: 2326 320 rrr
-:simon/tapir/032h: 2400 352 frr
-:simon/tapir/032h: 2336 352 frr
-:simon/tapir/032hb: 2400 320 frr
-:simon/tapir/032b: 2464 288 frr
-:simon/tapir/032h: 2464 320 frrr
-:simon/tapir/032h: 2496 288 frrr
-:simon/tapir/032: 2496 352 frr
-:simon/tapir/032b: 2496 256 frr
-:simon/tapir/032h: 2528 320 frrr
-:simon/tapir/032: 2528 288 frr
-:simon/tapir/032h: 2528 224 frrr
-:simon/tapir/032h: 2080 352
-:simon/tapir/032h: 2144 352
-:simon/tapir/032h: 2208 352
-:simon/tapir/032h: 2272 352
-:simon/tapir/032hb: 2080 320
-:simon/tapir/032b: 2048 288
-:simon/tapir/032h: 2048 320 rrr
-:simon/tapir/032h: 2016 288 rrr
-:simon/tapir/032: 2016 352
-:simon/tapir/032h: 1984 320 rrr
-:simon/tapir/032: 1984 288
-:simon/wood/wood_h1: 2478 240 frr
-:simon/wood/wood_h1: 2430 240 frr
-:simon/wood/wood_h1: 2382 240 frr
-:simon/wood/wood_h1: 2326 240 frrr
-:simon/wood/wood_h1: 2326 288 frrr
-:simon/wood/wood_h1: 2238 192 frr
-:simon/wood/wood_h1: 2190 192 frr
-:simon/wood/wood_h1: 2142 192 frr
-:simon/wood/wood_h1: 2126 192 frr
-:simon/wood/wood_h1: 2078 192 frr
-:simon/wood/wood_h1: 1990 192 frrr
-:simon/wood/wood_h1: 2142 288 frr
-:simon/tapir/032h: 1984 160 rrr
-:simon/tapir/032h: 1984 224 rrr
-:simon/tapir/032h: 2016 192 rrr
-:simon/tapir/032h: 2016 128 rrr
-:simon/tapir/032h: 1984 96 rrr
-:simon/tapir/032: 2016 256 frr
-:geoo/steel/32x16o.S: 2528 368 frr
-:geoo/steel/32x16o.S: 2496 368 frr
-:geoo/steel/32x16o.S: 2464 368 frr
-:geoo/steel/32x16o.S: 2400 368 frr
-:geoo/steel/32x16o.S: 2368 368 frr
-:geoo/steel/32x16o.S: 2336 368 frr
-:geoo/steel/32x16o.S: 2304 368 frr
-:geoo/steel/32x16o.S: 2240 368 frr
-:geoo/steel/32x16o.S: 2208 368 frr
-:geoo/steel/32x16o.S: 2176 368 frr
-:geoo/steel/32x16o.S: 2144 368 frr
-:geoo/steel/32x16o.S: 2112 368 frr
-:geoo/steel/32x16o.S: 2080 368 frr
-:geoo/steel/32x16o.S: 2048 368 frr
-:geoo/steel/32x16o.S: 1984 368 frr
-:geoo/steel/32x64o.S: 2528 304 frr
-:geoo/steel/32x64o.S: 1984 304 frr
-:geoo/steel/32x64o.S: 1984 240 frr
 :matt/earth/10: 2698 336 frr
 :matt/earth/10: 2810 288 frr
 :matt/earth/06: 2850 342 frr
@@ -364,82 +223,21 @@ $ENGLISH NaOH's Arc (Attack&Defense) Team
 :matt/earth/07: 2718 332 frrr
 :matt/earth/13: 2722 336 frr
 :matt/earth/13: 2706 336
-:matt/earth/30: 2278 192 frrr
-:matt/earth/30: 2230 240 frrr
-:matt/earth/30: 2182 288 frrr
-:simon/wood/wood_h1: 2350 240 frr
-:simon/wood/wood_h1: 2254 192 frr
-:simon/wood/wood_h1: 2326 192 frrr
-:geoo/steel/dark_16x16o.S: 2544 368 frr
-:simon/tapir/032h: 2512 112 frrr
-:simon/tapir/032h: 2016 64 rrr
-:simon/tapir/032h: 1984 32 rrr
-:simon/wood/wood_h1: 2118 64 frrr
-:simon/wood/wood_h1: 2174 64 frr
-:simon/wood/wood_h1: 2126 64 frr
-:simon/wood/wood_h1: 2078 64 frr
-:simon/wood/wood_h1: 2062 64 frr
-:simon/wood/wood_h1: 2014 64 frr
-:simon/wood/wood_h1: 2190 64 frr
-:simon/wood/wood_h1: 2150 112 frrr
-:simon/wood/wood_h1: 2238 112 frr
-:simon/wood/wood_h1: 2190 112 frr
-:simon/wood/wood_h1: 2142 112 frr
-:simon/wood/wood_h1: 2126 112 frr
-:simon/wood/wood_h1: 2078 112 frr
-:simon/wood/wood_h1: 2254 112 frr
-:simon/wood/wood_h1: 2374 112 frrr
-:simon/wood/wood_h1: 2462 112 frr
-:simon/wood/wood_h1: 2414 112 frr
-:simon/wood/wood_h1: 2366 112 frr
-:simon/wood/wood_h1: 2350 112 frr
-:simon/wood/wood_h1: 2302 112 frr
-:simon/wood/wood_h1: 2494 112 frr
-:simon/wood/wood_h1: 2534 112 frrr
-:simon/wood/wood_h1: 2374 160 frrr
-:simon/wood/wood_h1: 2374 176 frrr
-:simon/wood/wood_h1: 2374 192 frrr
-:simon/wood/wood_h1: 2150 160 frrr
-:matt/earth/30: 2422 160 frr
-:geoo/steel/32x64o.S: 2528 240 frr
 :matt/earth/07: 2928 364 frr
 :matt/earth/10: 2826 288
 :matt/earth/07: 2966 346 frr
 :matt/earth/10: 2922 320 frr
-:geoo/steel/32x16o.S: 1984 32 frr
 :matt/earth/10: 1530 336 frr
 :matt/earth/10: 1498 288 frr
 :matt/earth/10: 1498 272 f
-:geoo/steel/32x64o.S: 1984 176 frr
 :matt/earth/10: 1520 304 frrr
 :matt/earth/10: 1632 304 fr
-:geoo/steel/16x32o.S: 2160 112 frr
-:geoo/steel/16x32o.S: 2160 144 frr
-:geoo/steel/16x32o.S: 2160 176 frrr
-:geoo/steel/16x32o.S: 2128 192 frrr
-:geoo/steel/16x32o.S: 2160 192 frrr
-:geoo/steel/16x32o.S: 2304 288 frrr
-:geoo/steel/16x32o.S: 2272 288 frrr
-:geoo/steel/16x32o.S: 2240 288 frrr
-:geoo/steel/16x32o.S: 2320 304 f
-:geoo/steel/16x32o.S: 2320 336 f
-:geoo/steel/16x32o.S: 2528 96 frrr
-:geoo/steel/32x64o.S: 2512 112 f
-:geoo/construction/stairs_rd_32.S: 2304 128 frr
-:geoo/construction/stairs_rd_32.S: 2240 160 frr
-:geoo/steel/32x64o.S: 1920 176 frrr
-:geoo/steel/32x16o.S: 1952 32 frr
-:geoo/steel/32x16o.S: 1920 32 frr
-:geoo/steel/32x16o.S: 1920 48 frr
-:geoo/steel/32x16o.S: 1920 64 frr
 :geoo/steel/32x16o.S: 3032 322 frr
 :geoo/steel/32x16o.S: 3064 322 frr
 :matt/earth/13: 2690 370
-:geoo/steel/dark_16x16o.S: 1984 368 frr
 :matt/earth/10: 1664 336 fr
 :matt/earth/05: 1734 368
 :matt/earth/10: 1664 352 fr
-:geoo/steel/32x64o.S: 1984 112 frr
 :geoo/steel/32x32o.S: 1600 32 frr
 :geoo/steel/32x32o.S: 1600 0 frr
 :geoo/steel/32x32o.S: 1632 0 frr
@@ -471,3 +269,133 @@ $ENGLISH NaOH's Arc (Attack&Defense) Team
 :geoo/steel/32x16o.S: 1600 352 fr
 :geoo/steel/32x16o.S: 1584 352 fr
 :geoo/steel/32x16o.S: 1584 384 frr
+:matt/goldmine/plank: 994 192
+:matt/earth/30: 1042 238 rr
+:matt/goldmine/plank: 1040 160 fr
+:matt/goldmine/plank: 896 192
+:matt/goldmine/plank: 994 112
+:matt/goldmine/plank: 1040 64 fr
+:matt/goldmine/plank: 950 112
+:matt/goldmine/plank: 1008 288
+:matt/goldmine/plank: 1050 288
+:matt/goldmine/plank: 864 192 r
+:matt/goldmine/plank: 1056 64
+:matt/goldmine/plank: 722 240
+:matt/goldmine/plank: 640 240
+:matt/goldmine/plank: 816 112 r
+:matt/goldmine/plank: 688 112
+:matt/goldmine/plank: 824 112
+:matt/goldmine/plank: 860 120 d
+:matt/goldmine/plank: 962 64
+:geoo/steel/16x32o.S: 864 304 rr
+:geoo/steel/16x32o.S: 864 288 rrr
+:geoo/steel/32x64o.S: 640 240
+:geoo/steel/16x32o.S: 1008 192 rrr
+:geoo/steel/16x32o.S: 1040 192 rrr
+:simon/tapir/032b: 1120 288 frr
+:simon/tapir/032h: 1152 288 frrr
+:matt/earth/30: 2079 142 fr
+:matt/earth/30: 2109 112 fr
+:matt/earth/30: 2279 192 frrr
+:matt/earth/30: 2453 190 frr
+:matt/earth/30: 2375 112 frr
+:matt/earth/30: 2231 64 f
+:matt/earth/30: 2329 242 f
+:matt/earth/30: 2375 288 f
+:matt/earth/30: 2023 160 f
+:matt/earth/30: 2055 192 f
+:matt/earth/30: 2167 304 frrr
+:matt/earth/30: 2231 240 frrr
+:matt/earth/30: 2183 288 frrr
+:matt/earth/30: 2423 160 frr
+:simon/tapir/032h: 2400 352 frr
+:simon/tapir/032h: 2336 352 frr
+:simon/tapir/032hb: 2400 320 frr
+:simon/tapir/032b: 2464 288 frr
+:simon/tapir/032h: 2464 320 frrr
+:simon/tapir/032h: 2496 288 frrr
+:simon/tapir/032: 2496 352 frr
+:simon/tapir/032b: 2496 256 frr
+:simon/tapir/032h: 2528 320 frrr
+:simon/tapir/032: 2528 288 frr
+:simon/tapir/032h: 2528 224 frrr
+:simon/tapir/032h: 2080 352
+:simon/tapir/032h: 2144 352
+:simon/tapir/032h: 2208 352
+:simon/tapir/032h: 2272 352
+:simon/tapir/032hb: 2080 320
+:simon/tapir/032h: 2048 320 rrr
+:simon/tapir/032: 2016 352
+:simon/tapir/032h: 1984 320 rrr
+:simon/tapir/032: 1984 288
+:simon/tapir/032h: 1984 160 rrr
+:simon/tapir/032h: 1984 224 rrr
+:simon/tapir/032h: 2016 192 rrr
+:simon/tapir/032h: 2016 128 rrr
+:simon/tapir/032h: 1984 96 rrr
+:simon/tapir/032: 2016 256 frr
+:geoo/steel/32x16o.S: 2528 368 frr
+:geoo/steel/32x16o.S: 2496 368 frr
+:geoo/steel/32x16o.S: 2464 368 frr
+:geoo/steel/32x16o.S: 2400 368 frr
+:geoo/steel/32x16o.S: 2368 368 frr
+:geoo/steel/32x16o.S: 2336 368 frr
+:geoo/steel/32x16o.S: 2304 368 frr
+:geoo/steel/32x16o.S: 2240 368 frr
+:geoo/steel/32x16o.S: 2208 368 frr
+:geoo/steel/32x16o.S: 2176 368 frr
+:geoo/steel/32x16o.S: 2144 368 frr
+:geoo/steel/32x16o.S: 2112 368 frr
+:geoo/steel/32x16o.S: 2080 368 frr
+:geoo/steel/32x16o.S: 2048 368 frr
+:geoo/steel/32x16o.S: 1984 368 frr
+:geoo/steel/32x64o.S: 2528 304 frr
+:geoo/steel/32x64o.S: 1984 304 frr
+:geoo/steel/32x64o.S: 1984 240 frr
+:geoo/steel/dark_16x16o.S: 2544 368 frr
+:simon/tapir/032h: 2512 112 frrr
+:simon/tapir/032h: 2016 64 rrr
+:simon/tapir/032h: 1984 32 rrr
+:geoo/steel/32x16o.S: 1984 32 frr
+:geoo/steel/32x64o.S: 1984 176 frr
+:geoo/steel/16x32o.S: 2160 112 frr
+:geoo/steel/16x32o.S: 2160 144 frr
+:geoo/steel/16x32o.S: 2160 176 frrr
+:geoo/steel/16x32o.S: 2272 288 frrr
+:geoo/steel/16x32o.S: 2240 288 frrr
+:geoo/steel/16x32o.S: 2320 336 f
+:geoo/steel/16x32o.S: 2528 96 frrr
+:geoo/steel/32x64o.S: 2512 112 f
+:geoo/construction/stairs_rd_32.S: 2304 128 frr
+:geoo/construction/stairs_rd_32.S: 2240 160 frr
+:geoo/steel/32x64o.S: 1920 176 frrr
+:geoo/steel/32x16o.S: 1952 32 frr
+:geoo/steel/32x16o.S: 1920 32 frr
+:geoo/steel/32x16o.S: 1920 48 frr
+:geoo/steel/32x16o.S: 1920 64 frr
+:geoo/steel/dark_16x16o.S: 1984 368 frr
+:geoo/steel/32x64o.S: 1984 112 frr
+:matt/goldmine/plank: 2078 192 frr
+:matt/goldmine/plank: 2152 160 r
+:matt/goldmine/plank: 2176 192 frr
+:matt/goldmine/plank: 2078 112 frr
+:matt/goldmine/plank: 2152 64 r
+:matt/goldmine/plank: 2122 112 frr
+:matt/goldmine/plank: 2064 288 frr
+:matt/goldmine/plank: 2022 288 frr
+:matt/goldmine/plank: 2328 192 fr
+:matt/goldmine/plank: 2016 64 frr
+:matt/goldmine/plank: 2350 240 frr
+:matt/goldmine/plank: 2432 240 frr
+:matt/goldmine/plank: 2376 112 fr
+:matt/goldmine/plank: 2384 112 frr
+:matt/goldmine/plank: 2248 112 frr
+:matt/goldmine/plank: 2212 120 frrd
+:matt/goldmine/plank: 2110 64 frr
+:geoo/steel/16x32o.S: 2320 304 f
+:geoo/steel/16x32o.S: 2304 288 frrr
+:geoo/steel/32x64o.S: 2528 240 frr
+:geoo/steel/16x32o.S: 2160 192 frrr
+:geoo/steel/16x32o.S: 2128 192 frrr
+:simon/tapir/032b: 2048 288
+:simon/tapir/032h: 2016 288 rrr

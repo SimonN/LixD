@@ -1,6 +1,6 @@
 $BUILT 2014-04-16 21:49:32
 $AUTHOR Rubix
-$GERMAN 
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH I want to punch your face in! (2p)
 
 #SIZE_X 1280

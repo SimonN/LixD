@@ -1,6 +1,6 @@
 $BUILT                                             2011-07-15 08:20:29
 $AUTHOR                                                          Simon
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH                                               Look out below!
 
 #SIZE_X                                                            640

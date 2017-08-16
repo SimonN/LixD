@@ -1,6 +1,6 @@
 $BUILT                                             2011-08-21 10:16:21
 $AUTHOR                                                          Rubix
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH                                         Wack for pleasure(2p)
 
 #SIZE_X                                                           1536

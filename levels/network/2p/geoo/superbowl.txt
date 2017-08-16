@@ -1,6 +1,6 @@
 $BUILT                                             2011-08-18 15:22:52
 $AUTHOR                                                           geoo
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH                                                     Superbowl
 
 #SIZE_X                                                            640

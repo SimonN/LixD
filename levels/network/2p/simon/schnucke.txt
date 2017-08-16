@@ -1,6 +1,6 @@
 $BUILT                                             2012-02-06 03:43:17
 $AUTHOR                                                          Simon
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH                                                Schnuckeluguck
 
 #SIZE_X                                                            640

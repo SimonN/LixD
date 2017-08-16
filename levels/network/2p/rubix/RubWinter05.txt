@@ -1,6 +1,6 @@
 $BUILT                                             2011-09-04 22:31:46
 $AUTHOR                                                          RubiX
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH                                          10 degrees below(2p)
 
 #SIZE_X                                                            512

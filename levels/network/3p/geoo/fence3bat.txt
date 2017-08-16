@@ -1,6 +1,6 @@
 $BUILT                                             2011-08-21 18:01:47
 $AUTHOR                                                           geoo
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 3
 $ENGLISH                                            Fence with Batters
 
 #SIZE_X                                                            768

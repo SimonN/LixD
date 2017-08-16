@@ -1,26 +1,19 @@
-$BUILT 2014-04-17 10:36:21
+$BUILT 2017-05-10 01:41:44
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH Give me a break (team)
 
+#INTENDED_NUMBER_OF_PLAYERS 2
 #SIZE_X 1610
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 656
 #START_Y 380
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 50
 #INITIAL 90
 #REQUIRED 50
 #SPAWN_INTERVAL 32
-#SPAWN_INTERVAL_FAST 4
 
 #WALKER 90
-#JUMPER 90
 #FLOATER 20
 #EXPLODER 6
 #BLOCKER 2
@@ -29,16 +22,16 @@ $ENGLISH Give me a break (team)
 #BASHER 40
 #MINER 65
 #DIGGER 25
+#JUMPER 90
 #BATTER 40
-#NOTHING 0
 
-:matt/oriental/Hatch.H: 1440 -18 r
-:matt/oriental/Hatch.H: 96 -18
-:matt/oriental/Hatch.H: 1484 206
-:matt/oriental/Hatch.H: 52 212 r
+:simon/oriental/hatch.H: 1440 -18 r
+:simon/oriental/hatch.H: 96 -18
+:simon/oriental/hatch.H: 1474 210
+:simon/oriental/hatch.H: 76 212 r
 
-:matt/oriental/Goal.G: 678 274
-:matt/oriental/Goal.G: 870 274
+:simon/oriental/goal.G: 678 274
+:simon/oriental/goal.G: 870 274
 
 :matt/water.W: 928 368
 :matt/water.W: 960 368
@@ -100,11 +93,7 @@ $ENGLISH Give me a break (team)
 :matt/water.W: 448 384
 :matt/water.W: 480 384
 :matt/water.W: 512 384
-:matt/water.W: 64 368
-:matt/water.W: 96 368
 :matt/water.W: 128 368
-:matt/water.W: 160 368
-:matt/water.W: 192 368
 :matt/water.W: 224 368
 :matt/water.W: 256 368
 :matt/water.W: 288 368
@@ -112,11 +101,7 @@ $ENGLISH Give me a break (team)
 :matt/water.W: 352 368
 :matt/water.W: 384 368
 :matt/water.W: 416 368
-:matt/water.W: 64 384
-:matt/water.W: 96 384
 :matt/water.W: 128 384
-:matt/water.W: 160 384
-:matt/water.W: 192 384
 :matt/water.W: 224 384
 :matt/water.W: 256 384
 :matt/water.W: 288 384
@@ -125,72 +110,77 @@ $ENGLISH Give me a break (team)
 :matt/water.W: 384 384
 :matt/water.W: 416 384
 
-:matt/oriental/leaves3: 1437 37
-:matt/oriental/leaves3: 110 36 frr
-:matt/oriental/07: 1312 374
-:matt/oriental/02: -16 336
-:matt/oriental/02: 1596 336
-:matt/oriental/bonsaitree: 1380 38
-:matt/oriental/bonsaitree: 4 38 frr
-:matt/oriental/04: 1568 374
-:matt/oriental/04: 2 374
-:matt/oriental/asiantemple: 142 6
-:matt/oriental/asiantemple: 1302 6
-:matt/oriental/04: 160 170
-:matt/oriental/04: 186 170
-:matt/oriental/04: 218 170
-:matt/oriental/04: 250 170
-:matt/oriental/04: 282 170
-:matt/oriental/04: 314 170
-:matt/oriental/04: 346 170
-:matt/oriental/04: 378 170
-:matt/oriental/04: 410 170
-:matt/oriental/04: 442 170
-:matt/oriental/04: 474 170
-:matt/oriental/04: 506 170
-:matt/oriental/04: 538 170
-:matt/oriental/04: 570 170
-:matt/oriental/04: 602 170
-:matt/oriental/04: 962 170
-:matt/oriental/04: 994 170
-:matt/oriental/04: 1026 170
-:matt/oriental/04: 1058 170
-:matt/oriental/04: 1090 170
-:matt/oriental/04: 1122 170
-:matt/oriental/04: 1154 170
-:matt/oriental/04: 1186 170
-:matt/oriental/04: 1218 170
-:matt/oriental/04: 1250 170
-:matt/oriental/04: 1282 170
-:matt/oriental/04: 1314 170
-:matt/oriental/04: 1346 170
-:matt/oriental/04: 1378 170
-:matt/oriental/bridge_angle: 646 110
-:matt/oriental/bridge_straight: 752 110
-:matt/oriental/bridge_angle: 856 110 f
-:matt/oriental/06: 962 214
-:matt/oriental/06: 1010 214
-:matt/oriental/06: 1058 214
-:matt/oriental/06: 1106 214
-:matt/oriental/06: 1154 214
-:matt/oriental/06: 1202 214
-:matt/oriental/06: 1250 214
-:matt/oriental/06: 1298 214
-:matt/oriental/06: 1346 214
-:matt/oriental/06: 1394 214
-:matt/oriental/04: 1410 170
-:matt/oriental/06: 158 214
-:matt/oriental/06: 206 214
-:matt/oriental/06: 254 214
-:matt/oriental/06: 302 214
-:matt/oriental/06: 350 214
-:matt/oriental/06: 398 214
-:matt/oriental/06: 446 214
-:matt/oriental/06: 494 214
-:matt/oriental/06: 542 214
-:matt/oriental/06: 590 214
-:matt/oriental/06: 1440 214
-:matt/oriental/06: 112 214
+:simon/oriental/07: 48 272
+:simon/oriental/bridge1: 586 218
+:simon/oriental/05: 562 274 rd
+:simon/oriental/bridge3: 970 218
+:simon/oriental/bridge3: 906 186
+:simon/oriental/bridge1: 650 186
+:simon/oriental/bridge3: 970 170
+:simon/oriental/bridge1: 586 170
+:simon/oriental/bush3: 1437 37
+:simon/oriental/bush3: 110 36 frr
+:simon/oriental/07: 1312 358
+:simon/oriental/02: -16 336
+:simon/oriental/02: 1596 336
+:simon/oriental/bonsai: 1380 38
+:simon/oriental/bonsai: 4 38 frr
+:simon/oriental/04: 1568 374
+:simon/oriental/04: 2 374
+:simon/oriental/temple: 142 6
+:simon/oriental/temple: 1302 6
+:simon/oriental/04: 1410 170
+:simon/oriental/04: 160 170
+:simon/oriental/04: 186 170
+:simon/oriental/04: 218 170
+:simon/oriental/04: 250 170
+:simon/oriental/04: 282 170
+:simon/oriental/04: 314 170
+:simon/oriental/04: 346 170
+:simon/oriental/04: 378 170
+:simon/oriental/04: 410 170
+:simon/oriental/04: 442 170
+:simon/oriental/04: 474 170
+:simon/oriental/04: 506 170
+:simon/oriental/04: 538 170
+:simon/oriental/04: 570 170
+:simon/oriental/04: 602 170
+:simon/oriental/04: 970 170
+:simon/oriental/04: 1002 170
+:simon/oriental/04: 1034 170
+:simon/oriental/04: 1066 170
+:simon/oriental/04: 1098 170
+:simon/oriental/04: 1130 170
+:simon/oriental/04: 1162 170
+:simon/oriental/04: 1194 170
+:simon/oriental/04: 1226 170
+:simon/oriental/04: 1258 170
+:simon/oriental/04: 1290 170
+:simon/oriental/04: 1322 170
+:simon/oriental/04: 1354 170
+:simon/oriental/04: 1386 170
+:simon/oriental/06: 1392 214 frr
+:simon/oriental/06: 1344 214 frr
+:simon/oriental/06: 1296 214 frr
+:simon/oriental/06: 1248 214 frr
+:simon/oriental/06: 1200 214 frr
+:simon/oriental/06: 1152 214 frr
+:simon/oriental/06: 1104 214 frr
+:simon/oriental/06: 1056 214 frr
+:simon/oriental/05: 976 266 rd
+:simon/oriental/06: 1008 214 frr
+:simon/oriental/06: 158 214
+:simon/oriental/06: 206 214
+:simon/oriental/06: 254 214
+:simon/oriental/06: 302 214
+:simon/oriental/06: 350 214
+:simon/oriental/06: 398 214
+:simon/oriental/06: 446 214
+:simon/oriental/06: 494 214
+:simon/oriental/06: 542 214
+:simon/oriental/06: 590 214
+:simon/oriental/06: 960 214 frr
+:simon/oriental/06: 112 214
 :matt/steel/32x32.S: 582 354
 :matt/steel/32x32.S: 614 354
 :matt/steel/32x32.S: 678 354
@@ -205,19 +195,25 @@ $ENGLISH Give me a break (team)
 :matt/steel/48x48.S: 0 374
 :matt/steel/32x32.S: 1536 368
 :matt/steel/48x48.S: 1568 374
-:matt/oriental/asiangate: 368 346
-:matt/oriental/asiangate: 1104 348 frr
-:matt/oriental/07: 212 374
+:simon/oriental/gate: 368 346
+:simon/oriental/gate: 1104 348 frr
+:simon/oriental/07: 212 358
 :matt/steel/64x32.S: 678 384
 :matt/steel/64x32.S: 582 384
 :matt/steel/64x32.S: 774 384
 :matt/steel/64x32.S: 870 384
 :matt/steel/64x32.S: 966 386
-:matt/oriental/06: 112 272
-:matt/oriental/06: 112 320
-:matt/oriental/06: 112 368
-:matt/oriental/06: 1440 272
-:matt/oriental/06: 1440 320
-:matt/oriental/06: 1440 368
-:matt/oriental/07: 1496 270
-:matt/oriental/07: 38 274
+:simon/oriental/07: 1480 270
+:simon/oriental/bridge3: 906 138
+:simon/oriental/bridge1: 650 138
+:simon/oriental/bridge2: 778 154
+:simon/oriental/06: 112 278
+:simon/oriental/06: 112 342
+:simon/oriental/06: 1440 278 frr
+:simon/oriental/06: 1440 342 frr
+:simon/oriental/06: 1440 214 frr
+:simon/oriental/bridge2: 778 106
+:simon/oriental/bridge1: 714 154
+:simon/oriental/bridge1: 714 106
+:simon/oriental/bridge3: 842 154
+:simon/oriental/bridge3: 842 106

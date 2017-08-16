@@ -1,6 +1,6 @@
 $BUILT                                             2011-10-01 16:51:31
 $AUTHOR                                                           geoo
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH                                          Stepping Stones (2P)
 
 #SIZE_X                                                           1758

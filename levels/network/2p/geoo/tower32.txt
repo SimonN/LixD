@@ -1,6 +1,6 @@
 $BUILT                                             2011-10-15 20:13:47
 $AUTHOR                                                           geoo
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH                                        Tower Defense (Part 3)
 
 #SIZE_X                                                            640

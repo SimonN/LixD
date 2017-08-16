@@ -1,6 +1,6 @@
 $BUILT 2014-04-19 10:44:49
 $AUTHOR Rubix
-$GERMAN 
+#INTENDED_NUMBER_OF_PLAYERS 8
 $ENGLISH Rubadubdub 8 nubs in the tubs (8p)
 
 #SIZE_X 1920

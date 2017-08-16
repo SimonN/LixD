@@ -1,6 +1,6 @@
 $BUILT                                             2011-08-29 15:28:54
 $AUTHOR                                                           geoo
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 4
 $ENGLISH                             Ceci n'est pas Downward Reduction
 
 #SIZE_X                                                            640

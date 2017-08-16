@@ -1,6 +1,6 @@
 $BUILT                                             2011-09-11 09:04:28
 $AUTHOR                                                   Clam Spammer
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH                                        Attack of the 50ft Lix
 
 #SIZE_X                                                            640

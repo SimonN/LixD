@@ -1,6 +1,6 @@
 $BUILT                                             2011-08-29 17:59:32
 $AUTHOR                                                           geoo
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH                                                   Speedcubing
 
 #SIZE_X                                                            640

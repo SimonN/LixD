@@ -44,34 +44,34 @@ $ENGLISH Pro Boxing (2p)
 :proxima/tile/cyan1: 384 336
 :proxima/tile/cyan1: 448 336
 :geoo/shadow/pillar_hztl_32: 240 168
-:amanda/occult/occult_cube: 208 192
-:amanda/occult/occult_cube: 224 192
+:amanda/occult/cube: 208 192
+:amanda/occult/cube: 224 192
 :geoo/shadow/pillar_hztl_32: 304 168
-:amanda/occult/occult_cube: 272 192
-:amanda/occult/occult_cube: 288 192
+:amanda/occult/cube: 272 192
+:amanda/occult/cube: 288 192
 :geoo/shadow/pillar_hztl_32: 368 168
-:amanda/occult/occult_cube: 336 192
-:amanda/occult/occult_cube: 352 192
+:amanda/occult/cube: 336 192
+:amanda/occult/cube: 352 192
 :geoo/shadow/pillar_hztl_32: 432 168
-:amanda/occult/occult_cube: 400 192
-:amanda/occult/occult_cube: 416 192
+:amanda/occult/cube: 400 192
+:amanda/occult/cube: 416 192
 :geoo/shadow/pillar_hztl_32: 176 168
 :geoo/shadow/rope1: 112 184
 :geoo/shadow/rope1: 112 168
 :geoo/shadow/rope1: 464 184 frr
 :geoo/shadow/rope1: 464 168 frr
 :geoo/shadow/pillar_hztl_32: 208 168
-:amanda/occult/occult_cube: 224 176
-:amanda/occult/occult_cube: 208 176
+:amanda/occult/cube: 224 176
+:amanda/occult/cube: 208 176
 :geoo/shadow/pillar_hztl_32: 336 168
-:amanda/occult/occult_cube: 352 176
-:amanda/occult/occult_cube: 336 176
+:amanda/occult/cube: 352 176
+:amanda/occult/cube: 336 176
 :geoo/shadow/pillar_hztl_32: 272 168
-:amanda/occult/occult_cube: 272 176
-:amanda/occult/occult_cube: 288 176
+:amanda/occult/cube: 272 176
+:amanda/occult/cube: 288 176
 :geoo/shadow/pillar_hztl_32: 400 168
-:amanda/occult/occult_cube: 416 176
-:amanda/occult/occult_cube: 400 176
+:amanda/occult/cube: 416 176
+:amanda/occult/cube: 400 176
 :geoo/shadow/pillar_hztl_32: 368 176 d
 :geoo/shadow/pillar_hztl_32: 240 176 d
 :geoo/shadow/window_broken: 176 136
@@ -431,15 +431,15 @@ $ENGLISH Pro Boxing (2p)
 :proxima/tile/cyan1a: 160 360
 :guideline/bomb: -41 207 rrr
 :guideline/bomb: 637 207 r
-:amanda/occult/occult_cube: 176 192
-:amanda/occult/occult_cube: 192 192
-:amanda/occult/occult_cube: 192 176
-:amanda/occult/occult_cube: 176 176
-:amanda/occult/occult_cube: 304 192
-:amanda/occult/occult_cube: 320 192
-:amanda/occult/occult_cube: 320 176
-:amanda/occult/occult_cube: 304 176
-:amanda/occult/occult_cube: 432 192
-:amanda/occult/occult_cube: 448 192
-:amanda/occult/occult_cube: 448 176
-:amanda/occult/occult_cube: 432 176
+:amanda/occult/cube: 176 192
+:amanda/occult/cube: 192 192
+:amanda/occult/cube: 192 176
+:amanda/occult/cube: 176 176
+:amanda/occult/cube: 304 192
+:amanda/occult/cube: 320 192
+:amanda/occult/cube: 320 176
+:amanda/occult/cube: 304 176
+:amanda/occult/cube: 432 192
+:amanda/occult/cube: 448 192
+:amanda/occult/cube: 448 176
+:amanda/occult/cube: 432 176

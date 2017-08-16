@@ -1,6 +1,6 @@
 $BUILT                                             2011-04-06 21:04:02
 $AUTHOR                                                           phil
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH                                       Race to the depths (2P)
 
 #SIZE_X                                                           1472

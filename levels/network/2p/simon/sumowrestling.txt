@@ -1,54 +1,41 @@
-$BUILT 2014-07-09 03:00:38
+$BUILT 2017-05-01 17:16:22
 $AUTHOR Simon
-$GERMAN 
 $ENGLISH Sumo Wrestling
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 272
 #SIZE_Y 176
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 10
 #INITIAL 70
 #REQUIRED 20
 #SPAWN_INTERVAL 3
-#SPAWN_INTERVAL_FAST 3
 
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 #WALKER 10
-#JUMPER 10
 #BLOCKER 5
+#JUMPER 10
 #BATTER 15
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#EXPLODER2 0
 
-:matt/oriental/Hatch.H: 66 56
-:matt/oriental/Hatch.H: 142 56 r
+:simon/oriental/hatch.H: 66 56
+:simon/oriental/hatch.H: 142 56 r
 
-:matt/oriental/Goal.G: 0 92
-:matt/oriental/Goal.G: 208 92
-:matt/oriental/Goal.G: 208 8
-:matt/oriental/Goal.G: 0 8
+:simon/oriental/goal.G: 0 92
+:simon/oriental/goal.G: 208 92
+:simon/oriental/goal.G: 208 8
+:simon/oriental/goal.G: 0 8
 
 :geoo/abstract/tbeam_left.T: 32 76
 :geoo/abstract/tbeam_right.T: -6 76
 :geoo/abstract/tbeam_left.T: 246 76
 :geoo/abstract/tbeam_right.T: 208 76
 
-:matt/oriental/11: 32 88 rr
-:matt/oriental/09: 0 88 f
-:matt/oriental/11: 32 100 rr
-:matt/oriental/03: 0 88
-:matt/oriental/09: 208 88 rr
-:matt/oriental/03: 226 88 frr
+:simon/oriental/05: 120 120 r
+:simon/oriental/05: 152 128 f
+:simon/oriental/09: 0 88 f
+:simon/oriental/03: 0 88
+:simon/oriental/09: 208 88 rr
+:simon/oriental/03: 226 88 frr
 :geoo/sandstone/8x16: 0 136
 :geoo/sandstone/8x16: 0 152
 :geoo/sandstone/8x16: 0 24
@@ -63,18 +50,6 @@ $ENGLISH Sumo Wrestling
 :geoo/sandstone/8x16: 264 152
 :geoo/sandstone/16x8: 0 168
 :geoo/sandstone/16x8: 16 168
-:geoo/sandstone/16x8: 32 168
-:geoo/sandstone/16x8: 48 168
-:geoo/sandstone/16x8: 64 168
-:geoo/sandstone/16x8: 80 168
-:geoo/sandstone/16x8: 96 168
-:matt/oriental/bamboo_segment1: 136 160 r
-:matt/oriental/bamboo_segment1: 112 160 fr
-:geoo/sandstone/16x8: 112 168
-:geoo/sandstone/16x8: 128 168
-:geoo/sandstone/16x8: 144 168
-:geoo/sandstone/16x8: 160 168
-:geoo/sandstone/16x8: 176 168
 :geoo/sandstone/16x8: 192 168
 :geoo/sandstone/16x8: 208 168
 :geoo/sandstone/16x8: 224 168
@@ -106,19 +81,11 @@ $ENGLISH Sumo Wrestling
 :simon/tapir/032b: 136 16
 :geoo/sandstone/8x16: 0 88
 :geoo/sandstone/8x16: 264 88
-:matt/oriental/09: 144 120 rr
-:matt/oriental/09: 144 136 frr
-:matt/oriental/07: 132 120 frr
-:matt/oriental/09: 64 120 f
-:matt/oriental/09: 64 136
-:matt/oriental/07: 64 120
-:matt/oriental/03: 18 88
+:simon/oriental/03: 18 88
 :simon/tapir/016ha: 0 108 d
 :geoo/sandstone/8x16: 0 104
 :geoo/sandstone/8x16: 0 120
-:matt/oriental/11: 208 88 f
-:matt/oriental/11: 208 100 f
-:matt/oriental/03: 208 88 frr
+:simon/oriental/03: 208 88 frr
 :simon/tapir/016hb: 240 108 d
 :geoo/sandstone/8x16: 264 104
 :geoo/sandstone/8x16: 264 120
@@ -126,3 +93,15 @@ $ENGLISH Sumo Wrestling
 :simon/tapir/016ha: 208 108 d
 :geoo/construction/concrete/008: 124 52
 :geoo/construction/concrete/008: 140 52
+:simon/oriental/05: 72 120 r
+:simon/oriental/05: 72 128
+:geoo/sandstone/16x8: 32 168
+:geoo/sandstone/16x8: 48 168
+:geoo/sandstone/16x8: 64 168
+:geoo/sandstone/16x8: 80 168
+:geoo/sandstone/16x8: 96 168
+:geoo/sandstone/16x8: 112 168
+:geoo/sandstone/16x8: 128 168
+:geoo/sandstone/16x8: 144 168
+:geoo/sandstone/16x8: 160 168
+:geoo/sandstone/16x8: 176 168

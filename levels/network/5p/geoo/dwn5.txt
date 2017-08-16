@@ -1,6 +1,6 @@
 $BUILT                                             2011-10-07 05:57:11
 $AUTHOR                                                           geoo
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 5
 $ENGLISH                                            Downward Reduction
 
 #SIZE_X                                                            960

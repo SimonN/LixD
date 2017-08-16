@@ -1,6 +1,6 @@
 $BUILT 2014-02-14 09:25:52
 $AUTHOR Rubix
-$GERMAN 
+#INTENDED_NUMBER_OF_PLAYERS 3
 $ENGLISH Tribute to Multiplayer Mining (3p)
 
 #SIZE_X 1872

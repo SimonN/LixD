@@ -1,6 +1,6 @@
 $BUILT                                             2011-09-04 23:16:08
 $AUTHOR                                                          RubiX
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 4
 $ENGLISH                                   Infernal towers [High] (4p)
 
 #SIZE_X                                                           1472

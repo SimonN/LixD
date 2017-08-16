@@ -1,6 +1,6 @@
 $BUILT 2014-06-06 10:21:40
 $AUTHOR Rubix
-$GERMAN 
+#INTENDED_NUMBER_OF_PLAYERS 7
 $ENGLISH Purple Sticky Punch (7p)
 
 #SIZE_X 448
@@ -38,33 +38,33 @@ $ENGLISH Purple Sticky Punch (7p)
 :amanda/occult/hatch_tentacle.H: 208 992
 :amanda/occult/hatch_tentacle.H: 272 1184
 
-:amanda/occult/occult_goal_skull.G: 240 448
-:amanda/occult/occult_goal_skull.G: 304 640
-:amanda/occult/occult_goal_skull.G: 368 832
-:amanda/occult/occult_goal_skull.G: 432 1024
-:amanda/occult/occult_goal_skull.G: 48 1216
-:amanda/occult/occult_goal_skull.G: 112 64
-:amanda/occult/occult_goal_skull.G: 176 256
+:amanda/occult/goal_skull.G: 240 448
+:amanda/occult/goal_skull.G: 304 640
+:amanda/occult/goal_skull.G: 368 832
+:amanda/occult/goal_skull.G: 432 1024
+:amanda/occult/goal_skull.G: 48 1216
+:amanda/occult/goal_skull.G: 112 64
+:amanda/occult/goal_skull.G: 176 256
 
-:amanda/occult/occult_wax32x16_cap_left: 288 112
-:amanda/occult/occult_wax32x16_cap_left: 304 80
-:amanda/occult/occult_wax32x16_cap_left: 320 112 frr
-:amanda/occult/occult_wax32x16_cap_left: 352 304
-:amanda/occult/occult_wax32x16_cap_left: 368 272
-:amanda/occult/occult_wax32x16_cap_left: 384 304 frr
-:amanda/occult/occult_wax32x16_cap_left: 416 496
-:amanda/occult/occult_wax32x16_cap_left: 432 464
-:amanda/occult/occult_wax32x16_cap_left: 0 496 frr
-:amanda/occult/occult_wax32x16_cap_left: 32 688
-:amanda/occult/occult_wax32x16_cap_left: 48 656
-:amanda/occult/occult_wax32x16_cap_left: 64 688 frr
-:amanda/occult/occult_wax32x16_cap_left: 96 880
-:amanda/occult/occult_wax32x16_cap_left: 112 848
-:amanda/occult/occult_wax32x16_cap_left: 128 880 frr
-:amanda/occult/occult_wax32x16_cap_left: 160 1072
-:amanda/occult/occult_wax32x16_cap_left: 176 1040
-:amanda/occult/occult_wax32x16_cap_left: 192 1072 frr
-:amanda/occult/occult_wax32x16_cap_left: 256 1264 frr
+:amanda/occult/wax32x16_cap_left: 288 112
+:amanda/occult/wax32x16_cap_left: 304 80
+:amanda/occult/wax32x16_cap_left: 320 112 frr
+:amanda/occult/wax32x16_cap_left: 352 304
+:amanda/occult/wax32x16_cap_left: 368 272
+:amanda/occult/wax32x16_cap_left: 384 304 frr
+:amanda/occult/wax32x16_cap_left: 416 496
+:amanda/occult/wax32x16_cap_left: 432 464
+:amanda/occult/wax32x16_cap_left: 0 496 frr
+:amanda/occult/wax32x16_cap_left: 32 688
+:amanda/occult/wax32x16_cap_left: 48 656
+:amanda/occult/wax32x16_cap_left: 64 688 frr
+:amanda/occult/wax32x16_cap_left: 96 880
+:amanda/occult/wax32x16_cap_left: 112 848
+:amanda/occult/wax32x16_cap_left: 128 880 frr
+:amanda/occult/wax32x16_cap_left: 160 1072
+:amanda/occult/wax32x16_cap_left: 176 1040
+:amanda/occult/wax32x16_cap_left: 192 1072 frr
+:amanda/occult/wax32x16_cap_left: 256 1264 frr
 :geoo/steel/32x16o.S: 368 576
 :geoo/steel/32x16o.S: 432 768
 :geoo/steel/32x16o.S: 48 960
@@ -73,104 +73,104 @@ $ENGLISH Purple Sticky Punch (7p)
 :geoo/steel/32x16o.S: 304 384
 :geoo/steel/32x16o.S: 240 192
 :geoo/steel/16x32o.S: 336 80
-:amanda/occult/occult_wax64x48: 224 1104
-:amanda/occult/occult_wax64x48: 288 1104
-:amanda/occult/occult_wax64x48: 352 1104
-:amanda/occult/occult_wax64x48: 416 1104
-:amanda/occult/occult_wax64x48: 32 1104
-:amanda/occult/occult_wax64x48: 96 1104
-:amanda/occult/occult_wax64x48: 160 1104
-:amanda/occult/occult_wax64x48: 352 1296
-:amanda/occult/occult_wax64x48: 416 1296
-:amanda/occult/occult_wax64x48: 32 1296
-:amanda/occult/occult_wax64x48: 288 1296
-:amanda/occult/occult_wax64x48: 160 1296
-:amanda/occult/occult_wax64x48: 224 1296
-:amanda/occult/occult_wax64x48: 96 1296
-:amanda/occult/occult_wax64x48: 304 144
-:amanda/occult/occult_wax64x48: 368 144
-:amanda/occult/occult_wax64x48: 48 144
-:amanda/occult/occult_wax64x48: 432 144
-:amanda/occult/occult_wax64x48: 112 144
-:amanda/occult/occult_wax64x48: 176 144
-:amanda/occult/occult_wax64x48: 240 144
-:amanda/occult/occult_wax64x48: 0 336
-:amanda/occult/occult_wax64x48: 384 336
-:amanda/occult/occult_wax64x48: 64 336
-:amanda/occult/occult_wax64x48: 128 336
-:amanda/occult/occult_wax64x48: 256 336
-:amanda/occult/occult_wax64x48: 192 336
-:amanda/occult/occult_wax64x48: 320 336
-:amanda/occult/occult_wax64x48: 48 528
-:amanda/occult/occult_wax64x48: 112 528
-:amanda/occult/occult_wax64x48: 176 528
-:amanda/occult/occult_wax64x48: 240 528
-:amanda/occult/occult_wax64x48: 304 528
-:amanda/occult/occult_wax64x48: 368 528
-:amanda/occult/occult_wax64x48: 432 528
-:amanda/occult/occult_wax64x48: 96 720
-:amanda/occult/occult_wax64x48: 160 720
-:amanda/occult/occult_wax64x48: 224 720
-:amanda/occult/occult_wax64x48: 288 720
-:amanda/occult/occult_wax64x48: 352 720
-:amanda/occult/occult_wax64x48: 416 720
-:amanda/occult/occult_wax64x48: 32 720
-:amanda/occult/occult_wax64x48: 208 912
-:amanda/occult/occult_wax64x48: 144 912
-:amanda/occult/occult_wax64x48: 336 912
-:amanda/occult/occult_wax64x48: 272 912
-:amanda/occult/occult_wax64x48: 16 912
-:amanda/occult/occult_wax64x48: 400 912
-:amanda/occult/occult_wax64x48: 80 912
-:amanda/occult/occult_wax64x48: 208 960
-:amanda/occult/occult_wax64x48: 144 960
-:amanda/occult/occult_wax64x48: 272 960
-:amanda/occult/occult_wax64x48: 400 960
-:amanda/occult/occult_wax64x48: 336 960
-:amanda/occult/occult_wax64x48: 16 960
-:amanda/occult/occult_wax64x48: 80 960
-:amanda/occult/occult_wax64x48: 224 1152
-:amanda/occult/occult_wax64x48: 288 1152
-:amanda/occult/occult_wax64x48: 160 1152
-:amanda/occult/occult_wax64x48: 416 1152
-:amanda/occult/occult_wax64x48: 32 1152
-:amanda/occult/occult_wax64x48: 352 1152
-:amanda/occult/occult_wax64x48: 96 1152
-:amanda/occult/occult_wax64x48: 416 0
-:amanda/occult/occult_wax64x48: 32 0
-:amanda/occult/occult_wax64x48: 96 0
-:amanda/occult/occult_wax64x48: 160 0
-:amanda/occult/occult_wax64x48: 224 0
-:amanda/occult/occult_wax64x48: 288 0
-:amanda/occult/occult_wax64x48: 352 0
-:amanda/occult/occult_wax64x48: 368 192
-:amanda/occult/occult_wax64x48: 432 192
-:amanda/occult/occult_wax64x48: 48 192
-:amanda/occult/occult_wax64x48: 112 192
-:amanda/occult/occult_wax64x48: 176 192
-:amanda/occult/occult_wax64x48: 240 192
-:amanda/occult/occult_wax64x48: 304 192
-:amanda/occult/occult_wax64x48: 384 384
-:amanda/occult/occult_wax64x48: 320 384
-:amanda/occult/occult_wax64x48: 64 384
-:amanda/occult/occult_wax64x48: 0 384
-:amanda/occult/occult_wax64x48: 192 384
-:amanda/occult/occult_wax64x48: 128 384
-:amanda/occult/occult_wax64x48: 256 384
-:amanda/occult/occult_wax64x48: 240 576
-:amanda/occult/occult_wax64x48: 304 576
-:amanda/occult/occult_wax64x48: 368 576
-:amanda/occult/occult_wax64x48: 432 576
-:amanda/occult/occult_wax64x48: 48 576
-:amanda/occult/occult_wax64x48: 112 576
-:amanda/occult/occult_wax64x48: 176 576
-:amanda/occult/occult_wax64x48: 224 768
-:amanda/occult/occult_wax64x48: 288 768
-:amanda/occult/occult_wax64x48: 352 768
-:amanda/occult/occult_wax64x48: 416 768
-:amanda/occult/occult_wax64x48: 32 768
-:amanda/occult/occult_wax64x48: 96 768
-:amanda/occult/occult_wax64x48: 160 768
+:amanda/occult/wax64x48: 224 1104
+:amanda/occult/wax64x48: 288 1104
+:amanda/occult/wax64x48: 352 1104
+:amanda/occult/wax64x48: 416 1104
+:amanda/occult/wax64x48: 32 1104
+:amanda/occult/wax64x48: 96 1104
+:amanda/occult/wax64x48: 160 1104
+:amanda/occult/wax64x48: 352 1296
+:amanda/occult/wax64x48: 416 1296
+:amanda/occult/wax64x48: 32 1296
+:amanda/occult/wax64x48: 288 1296
+:amanda/occult/wax64x48: 160 1296
+:amanda/occult/wax64x48: 224 1296
+:amanda/occult/wax64x48: 96 1296
+:amanda/occult/wax64x48: 304 144
+:amanda/occult/wax64x48: 368 144
+:amanda/occult/wax64x48: 48 144
+:amanda/occult/wax64x48: 432 144
+:amanda/occult/wax64x48: 112 144
+:amanda/occult/wax64x48: 176 144
+:amanda/occult/wax64x48: 240 144
+:amanda/occult/wax64x48: 0 336
+:amanda/occult/wax64x48: 384 336
+:amanda/occult/wax64x48: 64 336
+:amanda/occult/wax64x48: 128 336
+:amanda/occult/wax64x48: 256 336
+:amanda/occult/wax64x48: 192 336
+:amanda/occult/wax64x48: 320 336
+:amanda/occult/wax64x48: 48 528
+:amanda/occult/wax64x48: 112 528
+:amanda/occult/wax64x48: 176 528
+:amanda/occult/wax64x48: 240 528
+:amanda/occult/wax64x48: 304 528
+:amanda/occult/wax64x48: 368 528
+:amanda/occult/wax64x48: 432 528
+:amanda/occult/wax64x48: 96 720
+:amanda/occult/wax64x48: 160 720
+:amanda/occult/wax64x48: 224 720
+:amanda/occult/wax64x48: 288 720
+:amanda/occult/wax64x48: 352 720
+:amanda/occult/wax64x48: 416 720
+:amanda/occult/wax64x48: 32 720
+:amanda/occult/wax64x48: 208 912
+:amanda/occult/wax64x48: 144 912
+:amanda/occult/wax64x48: 336 912
+:amanda/occult/wax64x48: 272 912
+:amanda/occult/wax64x48: 16 912
+:amanda/occult/wax64x48: 400 912
+:amanda/occult/wax64x48: 80 912
+:amanda/occult/wax64x48: 208 960
+:amanda/occult/wax64x48: 144 960
+:amanda/occult/wax64x48: 272 960
+:amanda/occult/wax64x48: 400 960
+:amanda/occult/wax64x48: 336 960
+:amanda/occult/wax64x48: 16 960
+:amanda/occult/wax64x48: 80 960
+:amanda/occult/wax64x48: 224 1152
+:amanda/occult/wax64x48: 288 1152
+:amanda/occult/wax64x48: 160 1152
+:amanda/occult/wax64x48: 416 1152
+:amanda/occult/wax64x48: 32 1152
+:amanda/occult/wax64x48: 352 1152
+:amanda/occult/wax64x48: 96 1152
+:amanda/occult/wax64x48: 416 0
+:amanda/occult/wax64x48: 32 0
+:amanda/occult/wax64x48: 96 0
+:amanda/occult/wax64x48: 160 0
+:amanda/occult/wax64x48: 224 0
+:amanda/occult/wax64x48: 288 0
+:amanda/occult/wax64x48: 352 0
+:amanda/occult/wax64x48: 368 192
+:amanda/occult/wax64x48: 432 192
+:amanda/occult/wax64x48: 48 192
+:amanda/occult/wax64x48: 112 192
+:amanda/occult/wax64x48: 176 192
+:amanda/occult/wax64x48: 240 192
+:amanda/occult/wax64x48: 304 192
+:amanda/occult/wax64x48: 384 384
+:amanda/occult/wax64x48: 320 384
+:amanda/occult/wax64x48: 64 384
+:amanda/occult/wax64x48: 0 384
+:amanda/occult/wax64x48: 192 384
+:amanda/occult/wax64x48: 128 384
+:amanda/occult/wax64x48: 256 384
+:amanda/occult/wax64x48: 240 576
+:amanda/occult/wax64x48: 304 576
+:amanda/occult/wax64x48: 368 576
+:amanda/occult/wax64x48: 432 576
+:amanda/occult/wax64x48: 48 576
+:amanda/occult/wax64x48: 112 576
+:amanda/occult/wax64x48: 176 576
+:amanda/occult/wax64x48: 224 768
+:amanda/occult/wax64x48: 288 768
+:amanda/occult/wax64x48: 352 768
+:amanda/occult/wax64x48: 416 768
+:amanda/occult/wax64x48: 32 768
+:amanda/occult/wax64x48: 96 768
+:amanda/occult/wax64x48: 160 768
 :geoo/steel/16x32o.S: 336 112
 :geoo/steel/32x16o.S: 336 144
 :geoo/steel/32x16o.S: 368 144
@@ -310,12 +310,12 @@ $ENGLISH Purple Sticky Punch (7p)
 :geoo/steel/32x16o.S: 48 1104 rr
 :geoo/steel/32x16o.S: 400 912 rr
 :geoo/steel/32x16o.S: 432 912 rr
-:amanda/occult/occult_scrawl_pentagram: 240 928
-:amanda/occult/occult_scrawl_pentagram: 176 736
-:amanda/occult/occult_scrawl_pentagram: 112 544
-:amanda/occult/occult_scrawl_pentagram: 48 352
-:amanda/occult/occult_scrawl_pentagram: 304 1120
-:amanda/occult/occult_scrawl_pentagram: 432 160
-:amanda/occult/occult_scrawl_pentagram: 368 1312
-:amanda/occult/occult_wax32x16_cap_left: 240 1232
-:amanda/occult/occult_wax32x16_cap_left: 224 1264
+:amanda/occult/scrawl_pentagram: 240 928
+:amanda/occult/scrawl_pentagram: 176 736
+:amanda/occult/scrawl_pentagram: 112 544
+:amanda/occult/scrawl_pentagram: 48 352
+:amanda/occult/scrawl_pentagram: 304 1120
+:amanda/occult/scrawl_pentagram: 432 160
+:amanda/occult/scrawl_pentagram: 368 1312
+:amanda/occult/wax32x16_cap_left: 240 1232
+:amanda/occult/wax32x16_cap_left: 224 1264

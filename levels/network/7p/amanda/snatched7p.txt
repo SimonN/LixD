@@ -1,6 +1,6 @@
 $BUILT 2014-07-03 15:59:02
 $AUTHOR Amanda
-$GERMAN 
+#INTENDED_NUMBER_OF_PLAYERS 7
 $ENGLISH Snatched! (7p)
 
 #SIZE_X 640
@@ -47,14 +47,14 @@ $ENGLISH Snatched! (7p)
 :geoo/construction/Hatch.H: 112 1264
 :geoo/construction/Hatch.H: 496 1264 r
 
-:amanda/occult/occult_goal_skull.G: 192 1520
+:amanda/occult/goal_skull.G: 192 1520
 :geoo/abstract/goal.G: 528 736
 :geoo/abstract/goal.G: 80 736
 :geoo/abstract/goal.G: 544 1136
 :geoo/abstract/goal.G: 64 1136
 :geoo/abstract/goal.G: 496 1520
 :geoo/abstract/goal.G: 48 1520
-:amanda/occult/occult_goal_skull.G: 320 1520
+:amanda/occult/goal_skull.G: 320 1520
 :geoo/abstract/goal.G: 528 736
 :geoo/abstract/goal.G: 80 736
 :geoo/abstract/goal.G: 544 1136

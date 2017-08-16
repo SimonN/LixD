@@ -1,6 +1,6 @@
 $BUILT                                             2011-09-04 23:00:06
 $AUTHOR                                                          Rubix
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 3
 $ENGLISH                                              Come on down(3p)
 
 #SIZE_X                                                            640

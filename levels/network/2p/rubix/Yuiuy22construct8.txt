@@ -1,6 +1,6 @@
 $BUILT                                             2011-08-21 15:15:15
 $AUTHOR                                                          Aidan
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH                                         The Grate Bridge (2p)
 
 #SIZE_X                                                            640

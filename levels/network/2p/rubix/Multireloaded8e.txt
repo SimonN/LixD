@@ -1,6 +1,6 @@
 $BUILT 2014-03-25 20:16:12
 $AUTHOR Rubix
-$GERMAN 
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH Tribute to Multiplayer Bashing (2p)
 
 #SIZE_X 1250

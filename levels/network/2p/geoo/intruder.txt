@@ -1,6 +1,6 @@
 $BUILT                                             2011-10-15 20:13:24
 $AUTHOR                                                           geoo
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH                                                      Intruder
 
 #SIZE_X                                                            640

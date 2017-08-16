@@ -1,8 +1,9 @@
 $BUILT 2015-02-08 21:01:50
 $AUTHOR RubiX
-$GERMAN 
-$ENGLISH The first to finish!(2p race)
+$GERMAN
+$ENGLISH The first to finish! (2p race)
 
+#INTENDED_NUMBER_OF_PLAYERS 2
 #SIZE_X 1360
 #SIZE_Y 990
 #TORUS_X 0

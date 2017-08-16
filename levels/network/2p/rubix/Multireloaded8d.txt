@@ -1,6 +1,6 @@
 $BUILT 2014-02-14 09:26:05
 $AUTHOR Rubix
-$GERMAN 
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH Tribute to Multiplayer Digging (2p)
 
 #SIZE_X 1250

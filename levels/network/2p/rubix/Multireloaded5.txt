@@ -1,12 +1,10 @@
-$BUILT 2014-02-14 18:10:43
+$BUILT 2017-08-18 01:36:28
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH Going Up, Coming Down (2p)
 
+#INTENDED_NUMBER_OF_PLAYERS 2
 #SIZE_X 2688
 #SIZE_Y 320
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 704
 #START_Y -80
 #BACKGROUND_RED 15
@@ -17,20 +15,16 @@ $ENGLISH Going Up, Coming Down (2p)
 #INITIAL 70
 #REQUIRED 70
 #SPAWN_INTERVAL 32
-#SPAWN_INTERVAL_FAST 4
 
 #WALKER 50
-#JUMPER 30
 #EXPLODER 5
 #BLOCKER 5
 #BUILDER 50
 #PLATFORMER 25
 #BASHER 40
 #MINER 35
-#NOTHING 0
+#JUMPER 30
 #BATTER 15
-#NOTHING 0
-#NOTHING 0
 
 :geoo/construction/Hatch.H: 2120 0
 :geoo/construction/Hatch.H: 534 0 r
@@ -74,6 +68,14 @@ $ENGLISH Going Up, Coming Down (2p)
 :matt/water.W: 1998 288
 :matt/water.W: 1326 288
 
+:matt/goldmine/plankdiag2: 612 154
+:matt/goldmine/plankdiag2: 582 124
+:matt/goldmine/plankdiag2: 580 136
+:matt/goldmine/plankdiag2: 612 168
+:matt/goldmine/plankdiag: 534 110
+:matt/goldmine/plankdiag: 502 142
+:matt/goldmine/plankdiag: 542 116
+:matt/goldmine/plankdiag: 510 148
 :geoo/construction/concrete/016h: 566 64 rrr
 :geoo/construction/concrete/016: 188 277
 :geoo/construction/concrete/016: 204 277
@@ -108,19 +110,13 @@ $ENGLISH Going Up, Coming Down (2p)
 :geoo/construction/concrete/064v: 1264 0
 :geoo/construction/concrete/064: 1264 128
 :geoo/steel/64x64.S: 1200 256
-:simon/wood/wood_d1: 585 120
-:simon/wood/wood_d1: 577 128
-:simon/wood/wood_d1: 492 120 r
-:simon/wood/wood_d1: 500 128 r
 :proxima/tile/spheres/cyan: 542 88
 :proxima/tile/spheres/cyan: 618 167
 :proxima/tile/spheres/cyan: 470 167
 :proxima/tile/spheres/gold: 542 88
-:simon/wood/wood_v2: 640 224
-:simon/wood/wood_v2: 650 224
-:proxima/tile/spheres/gold: 618 167
 :geoo/construction/concrete/128: 512 255
 :geoo/construction/concrete/128: 364 229
+:geoo/construction/concrete/016: 480 270 d
 :geoo/construction/concrete/128: 236 229
 :geoo/construction/concrete/016: 228 216 d
 :geoo/construction/concrete/016: 246 216 d
@@ -209,12 +205,7 @@ $ENGLISH Going Up, Coming Down (2p)
 :geoo/construction/concrete/016: 480 216 d
 :geoo/construction/concrete/016: 480 234 d
 :geoo/construction/concrete/016: 480 252 d
-:geoo/construction/concrete/016: 480 270 d
-:geoo/construction/concrete/016: 480 288 d
 :geoo/construction/concrete/016: 228 234 d
-:simon/wood/wood_v2: 492 224
-:simon/wood/wood_v2: 502 224
-:proxima/tile/spheres/gold: 470 167
 :geoo/construction/wall/small_64x32: 428 288
 :geoo/construction/wall/small_64x32: 364 288
 :geoo/construction/wall/small_64x32: 300 288
@@ -258,18 +249,10 @@ $ENGLISH Going Up, Coming Down (2p)
 :geoo/construction/concrete/064v: 1358 0 frr
 :geoo/construction/concrete/064: 1358 128 frr
 :geoo/steel/64x64.S: 1422 256 frr
-:simon/wood/wood_d1: 2030 120 frr
-:simon/wood/wood_d1: 2038 128 frr
-:simon/wood/wood_d1: 2124 120 fr
-:simon/wood/wood_d1: 2116 128 fr
 :geoo/construction/concrete/016h: 2104 64 rrr
 :proxima/tile/spheres/cyan: 2080 88 frr
 :proxima/tile/spheres/cyan: 2004 168 frr
 :proxima/tile/spheres/cyan: 2152 168 frr
-:proxima/tile/spheres/gold: 2080 88 frr
-:simon/wood/wood_v2: 2036 224 frr
-:simon/wood/wood_v2: 2026 224 frr
-:proxima/tile/spheres/gold: 2004 168 frr
 :geoo/construction/concrete/128: 2046 256 frr
 :geoo/construction/concrete/128: 2194 230 frr
 :geoo/construction/concrete/128: 2322 230 frr
@@ -363,9 +346,6 @@ $ENGLISH Going Up, Coming Down (2p)
 :geoo/construction/concrete/016: 2190 270 frrd
 :geoo/construction/concrete/016: 2190 288 frrd
 :geoo/construction/concrete/016: 2442 234 frrd
-:simon/wood/wood_v2: 2184 224 frr
-:simon/wood/wood_v2: 2174 224 frr
-:proxima/tile/spheres/gold: 2152 168 frr
 :geoo/construction/wall/small_64x32: 2194 288 frr
 :geoo/construction/wall/small_64x32: 2258 288 frr
 :geoo/construction/wall/small_64x32: 2322 288 frr
@@ -382,3 +362,28 @@ $ENGLISH Going Up, Coming Down (2p)
 :geoo/construction/concrete/016h: 2104 32 rrr
 :geoo/steel/dark_32x16o.S: 2594 288
 :geoo/steel/dark_32x16o.S: 60 288
+:matt/goldmine/plank: 492 192 fr
+:matt/goldmine/plank: 504 192 fr
+:matt/goldmine/plank: 640 192 fr
+:matt/goldmine/plank: 652 192 fr
+:matt/goldmine/plank: 498 226 fr
+:proxima/tile/spheres/gold: 470 167
+:matt/goldmine/plank: 646 226 fr
+:proxima/tile/spheres/gold: 618 167
+:matt/goldmine/plankdiag2: 2150 154
+:matt/goldmine/plankdiag2: 2120 124
+:matt/goldmine/plankdiag2: 2118 136
+:matt/goldmine/plankdiag2: 2150 168
+:matt/goldmine/plankdiag: 2072 110
+:matt/goldmine/plankdiag: 2040 142
+:matt/goldmine/plankdiag: 2076 120
+:matt/goldmine/plankdiag: 2044 152
+:matt/goldmine/plank: 2026 192 fr
+:matt/goldmine/plank: 2038 192 fr
+:matt/goldmine/plank: 2174 192 fr
+:matt/goldmine/plank: 2186 192 fr
+:matt/goldmine/plank: 2032 226 fr
+:matt/goldmine/plank: 2180 226 fr
+:proxima/tile/spheres/gold: 2004 168 frr
+:proxima/tile/spheres/gold: 2152 168 frr
+:proxima/tile/spheres/gold: 2080 88 frr

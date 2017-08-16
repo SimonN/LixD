@@ -1,6 +1,6 @@
 $BUILT                                             2011-09-27 05:59:44
 $AUTHOR                                                           geoo
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH                                                         Jenga
 
 #SIZE_X                                                            640

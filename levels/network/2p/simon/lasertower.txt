@@ -1,6 +1,6 @@
 $BUILT                                             2011-09-24 19:08:30
 $AUTHOR                                                          Simon
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH                                                   Laser Tower
 
 #SIZE_X                                                            640

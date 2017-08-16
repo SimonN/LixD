@@ -1,6 +1,6 @@
 $BUILT                                             2011-07-31 20:02:26
 $AUTHOR                                                          Simon
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH                                              Shredding Stones
 
 #SIZE_X                                                            960

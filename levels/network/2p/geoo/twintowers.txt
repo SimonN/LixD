@@ -1,6 +1,6 @@
 $BUILT                                             2011-09-27 09:37:28
 $AUTHOR                                                           geoo
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH                                                   Twin Towers
 
 #SIZE_X                                                            640

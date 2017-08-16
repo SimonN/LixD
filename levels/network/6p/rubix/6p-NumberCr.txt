@@ -1,6 +1,6 @@
 $BUILT 2014-04-19 10:59:44
 $AUTHOR Rubix
-$GERMAN 
+#INTENDED_NUMBER_OF_PLAYERS 6
 $ENGLISH Number Crunch (6p)
 
 #SIZE_X 1280
@@ -37,18 +37,18 @@ $ENGLISH Number Crunch (6p)
 :amanda/occult/hatch_tentacle.H: 32 176
 :amanda/occult/hatch_tentacle.H: 32 416
 
-:amanda/occult/occult_goal_skull.G: 944 672
-:amanda/occult/occult_goal_skull.G: 944 192
-:amanda/occult/occult_goal_skull.G: 944 432
-:amanda/occult/occult_goal_skull.G: 944 1392
-:amanda/occult/occult_goal_skull.G: 944 912
-:amanda/occult/occult_goal_skull.G: 944 1152
-:amanda/occult/occult_goal_skull.G: 944 592
-:amanda/occult/occult_goal_skull.G: 944 112
-:amanda/occult/occult_goal_skull.G: 944 352
-:amanda/occult/occult_goal_skull.G: 944 1312
-:amanda/occult/occult_goal_skull.G: 944 832
-:amanda/occult/occult_goal_skull.G: 944 1072
+:amanda/occult/goal_skull.G: 944 672
+:amanda/occult/goal_skull.G: 944 192
+:amanda/occult/goal_skull.G: 944 432
+:amanda/occult/goal_skull.G: 944 1392
+:amanda/occult/goal_skull.G: 944 912
+:amanda/occult/goal_skull.G: 944 1152
+:amanda/occult/goal_skull.G: 944 592
+:amanda/occult/goal_skull.G: 944 112
+:amanda/occult/goal_skull.G: 944 352
+:amanda/occult/goal_skull.G: 944 1312
+:amanda/occult/goal_skull.G: 944 832
+:amanda/occult/goal_skull.G: 944 1072
 
 :geoo/construction/squisher.T: 556 1024
 :geoo/construction/squisher.T: 556 1016
@@ -277,136 +277,136 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel_flange_left24x16.S: 1184 752 rrr
 :amanda/steel/steel_flange_left24x16.S: 1184 1232 rrr
 :amanda/steel/steel_flange_left24x16.S: 1184 992 rrr
-:amanda/occult/occult_wax32x16_cap_left: 536 912 frrr
-:amanda/occult/occult_wax32x16_cap_left: 496 912 rrr
-:amanda/occult/occult_wax32x16_cap_left: 536 1392 frrr
-:amanda/occult/occult_wax32x16_cap_left: 496 1392 rrr
-:amanda/occult/occult_wax32x16_cap_left: 536 1152 frrr
-:amanda/occult/occult_wax32x16_cap_left: 592 1168 frrr
-:amanda/occult/occult_wax32x16_cap_left: 592 1408 frrr
-:amanda/occult/occult_wax32x16_cap_left: 592 928 frrr
-:amanda/occult/occult_wax32x48_cap_left_sheer: 384 800 frrr
-:amanda/occult/occult_wax64x64: 384 736 r
-:amanda/occult/occult_wax32x48_cap_left_sheer: 384 1040 frrr
-:amanda/occult/occult_wax64x64: 384 976 r
-:amanda/occult/occult_wax64x64: 384 1216 r
-:amanda/occult/occult_wax32x48_cap_left_sheer: 144 1040 rrr
-:amanda/occult/occult_wax64x64: 128 976 rrr
-:amanda/occult/occult_wax32x16_cap_left: 928 1264 rrr
-:amanda/occult/occult_wax32x16_cap_left: 928 784 rrr
-:amanda/occult/occult_wax32x16_cap_left: 928 1024 rrr
-:amanda/occult/occult_wax32x16_cap_left: 496 1152 rrr
-:amanda/occult/occult_wax32x16_cap_left: 576 1392 frrr
-:amanda/occult/occult_wax32x16_cap_left: 576 912 frrr
-:amanda/occult/occult_wax32x16_cap_left: 576 1152 frrr
-:amanda/occult/occult_wax32x16_cap_left: 448 1264 rrr
-:amanda/occult/occult_wax32x16_cap_left: 448 1024 rrr
-:amanda/occult/occult_wax32x16_cap_left: 448 784 rrr
-:amanda/occult/occult_wax32x16_cap_left: 464 1040 rrr
-:amanda/occult/occult_wax32x16_cap_left: 464 800 rrr
-:amanda/occult/occult_wax_details_sunken_cube: 64 1296 frr
-:amanda/occult/occult_wax_details_sunken_cube: 48 1296 frr
-:amanda/occult/occult_wax_details_sunken_cube: 64 1056 frr
-:amanda/occult/occult_wax_details_sunken_cube: 48 1056 frr
-:amanda/occult/occult_wax_details_sunken_cube: 64 816 frr
-:amanda/occult/occult_wax_details_sunken_cube: 32 1056 frr
-:amanda/occult/occult_wax_details_sunken_lix_b: 432 1312
-:amanda/occult/occult_wax_details_sunken_lix_b: 432 1072
-:amanda/occult/occult_wax_details_sunken_lix_b: 432 832
-:amanda/occult/occult_wax_details_sunken_lix_b: 144 1312
-:amanda/occult/occult_wax_details_sunken_lix_b: 144 1072
-:amanda/occult/occult_wax_details_sunken_lix_b: 144 832
-:amanda/occult/occult_wax_details_sunken_cube: 160 1312
-:amanda/occult/occult_wax_details_sunken_cube: 160 1072
-:amanda/occult/occult_wax_details_sunken_cube: 160 832
-:amanda/occult/occult_wax_details_drip: 592 1424
-:amanda/occult/occult_wax_details_drip: 592 1184
-:amanda/occult/occult_wax_details_drip: 592 944
-:amanda/occult/occult_wax32x48_cap_right_sheer: 912 1248
-:amanda/occult/occult_wax32x48_cap_right_sheer: 912 1008
-:amanda/occult/occult_wax32x48_cap_right_sheer: 912 768
-:amanda/occult/occult_wax32x48_cap_left_sheer: 592 1152
-:amanda/occult/occult_wax32x48_cap_left_sheer: 592 912
-:amanda/occult/occult_wax32x48_cap_left_sheer: 592 1392
-:amanda/occult/occult_wax32x48_cap_left_sheer: 592 1328
-:amanda/occult/occult_wax32x48_cap_left_sheer: 592 848
-:amanda/occult/occult_wax32x48_cap_left_sheer: 592 1088
-:amanda/occult/occult_wax32x48_cap_left_sheer: 592 1104
-:amanda/occult/occult_wax32x48_cap_left_sheer: 592 864
-:amanda/occult/occult_wax32x48_cap_left_sheer: 592 1344
+:amanda/occult/wax32x16_cap_left: 536 912 frrr
+:amanda/occult/wax32x16_cap_left: 496 912 rrr
+:amanda/occult/wax32x16_cap_left: 536 1392 frrr
+:amanda/occult/wax32x16_cap_left: 496 1392 rrr
+:amanda/occult/wax32x16_cap_left: 536 1152 frrr
+:amanda/occult/wax32x16_cap_left: 592 1168 frrr
+:amanda/occult/wax32x16_cap_left: 592 1408 frrr
+:amanda/occult/wax32x16_cap_left: 592 928 frrr
+:amanda/occult/wax32x48_cap_left_sheer: 384 800 frrr
+:amanda/occult/wax64x64: 384 736 r
+:amanda/occult/wax32x48_cap_left_sheer: 384 1040 frrr
+:amanda/occult/wax64x64: 384 976 r
+:amanda/occult/wax64x64: 384 1216 r
+:amanda/occult/wax32x48_cap_left_sheer: 144 1040 rrr
+:amanda/occult/wax64x64: 128 976 rrr
+:amanda/occult/wax32x16_cap_left: 928 1264 rrr
+:amanda/occult/wax32x16_cap_left: 928 784 rrr
+:amanda/occult/wax32x16_cap_left: 928 1024 rrr
+:amanda/occult/wax32x16_cap_left: 496 1152 rrr
+:amanda/occult/wax32x16_cap_left: 576 1392 frrr
+:amanda/occult/wax32x16_cap_left: 576 912 frrr
+:amanda/occult/wax32x16_cap_left: 576 1152 frrr
+:amanda/occult/wax32x16_cap_left: 448 1264 rrr
+:amanda/occult/wax32x16_cap_left: 448 1024 rrr
+:amanda/occult/wax32x16_cap_left: 448 784 rrr
+:amanda/occult/wax32x16_cap_left: 464 1040 rrr
+:amanda/occult/wax32x16_cap_left: 464 800 rrr
+:amanda/occult/wax_details_sunken_cube: 64 1296 frr
+:amanda/occult/wax_details_sunken_cube: 48 1296 frr
+:amanda/occult/wax_details_sunken_cube: 64 1056 frr
+:amanda/occult/wax_details_sunken_cube: 48 1056 frr
+:amanda/occult/wax_details_sunken_cube: 64 816 frr
+:amanda/occult/wax_details_sunken_cube: 32 1056 frr
+:amanda/occult/wax_details_sunken_lix_b: 432 1312
+:amanda/occult/wax_details_sunken_lix_b: 432 1072
+:amanda/occult/wax_details_sunken_lix_b: 432 832
+:amanda/occult/wax_details_sunken_lix_b: 144 1312
+:amanda/occult/wax_details_sunken_lix_b: 144 1072
+:amanda/occult/wax_details_sunken_lix_b: 144 832
+:amanda/occult/wax_details_sunken_cube: 160 1312
+:amanda/occult/wax_details_sunken_cube: 160 1072
+:amanda/occult/wax_details_sunken_cube: 160 832
+:amanda/occult/wax_details_drip: 592 1424
+:amanda/occult/wax_details_drip: 592 1184
+:amanda/occult/wax_details_drip: 592 944
+:amanda/occult/wax32x48_cap_right_sheer: 912 1248
+:amanda/occult/wax32x48_cap_right_sheer: 912 1008
+:amanda/occult/wax32x48_cap_right_sheer: 912 768
+:amanda/occult/wax32x48_cap_left_sheer: 592 1152
+:amanda/occult/wax32x48_cap_left_sheer: 592 912
+:amanda/occult/wax32x48_cap_left_sheer: 592 1392
+:amanda/occult/wax32x48_cap_left_sheer: 592 1328
+:amanda/occult/wax32x48_cap_left_sheer: 592 848
+:amanda/occult/wax32x48_cap_left_sheer: 592 1088
+:amanda/occult/wax32x48_cap_left_sheer: 592 1104
+:amanda/occult/wax32x48_cap_left_sheer: 592 864
+:amanda/occult/wax32x48_cap_left_sheer: 592 1344
 :amanda/steel/steel32x32.S: 448 944
-:amanda/occult/occult_wax32x48: 192 1168
-:amanda/occult/occult_wax32x48: 224 1168
-:amanda/occult/occult_wax32x48: 288 1168
-:amanda/occult/occult_wax32x48: 256 1168
-:amanda/occult/occult_wax32x48: 352 1168
-:amanda/occult/occult_wax32x48: 320 1168
-:amanda/occult/occult_wax32x48: 416 1168
-:amanda/occult/occult_wax32x48: 384 1168
-:amanda/occult/occult_wax32x48: 192 1408
-:amanda/occult/occult_wax32x48: 224 1408
-:amanda/occult/occult_wax32x48: 288 1408
-:amanda/occult/occult_wax32x48: 256 1408
-:amanda/occult/occult_wax32x48: 352 1408
-:amanda/occult/occult_wax32x48: 320 1408
-:amanda/occult/occult_wax32x48: 416 1408
-:amanda/occult/occult_wax32x48: 384 1408
-:amanda/occult/occult_wax32x48: 384 928
-:amanda/occult/occult_wax32x48: 416 928
-:amanda/occult/occult_wax32x48: 320 928
-:amanda/occult/occult_wax32x48: 352 928
-:amanda/occult/occult_wax32x48: 256 928
-:amanda/occult/occult_wax32x48: 288 928
-:amanda/occult/occult_wax32x48: 224 928
-:amanda/occult/occult_wax32x48: 192 928
-:amanda/occult/occult_wax64x48: 320 832 rr
-:amanda/occult/occult_wax64x48: 256 832 rr
-:amanda/occult/occult_wax64x48: 192 832 rr
-:amanda/occult/occult_wax64x48: 192 720
-:amanda/occult/occult_wax64x48: 256 720
-:amanda/occult/occult_wax64x48: 320 720
-:amanda/occult/occult_wax64x48: 320 880 rr
-:amanda/occult/occult_wax64x48: 256 880 rr
-:amanda/occult/occult_wax64x48: 192 880 rr
+:amanda/occult/wax32x48: 192 1168
+:amanda/occult/wax32x48: 224 1168
+:amanda/occult/wax32x48: 288 1168
+:amanda/occult/wax32x48: 256 1168
+:amanda/occult/wax32x48: 352 1168
+:amanda/occult/wax32x48: 320 1168
+:amanda/occult/wax32x48: 416 1168
+:amanda/occult/wax32x48: 384 1168
+:amanda/occult/wax32x48: 192 1408
+:amanda/occult/wax32x48: 224 1408
+:amanda/occult/wax32x48: 288 1408
+:amanda/occult/wax32x48: 256 1408
+:amanda/occult/wax32x48: 352 1408
+:amanda/occult/wax32x48: 320 1408
+:amanda/occult/wax32x48: 416 1408
+:amanda/occult/wax32x48: 384 1408
+:amanda/occult/wax32x48: 384 928
+:amanda/occult/wax32x48: 416 928
+:amanda/occult/wax32x48: 320 928
+:amanda/occult/wax32x48: 352 928
+:amanda/occult/wax32x48: 256 928
+:amanda/occult/wax32x48: 288 928
+:amanda/occult/wax32x48: 224 928
+:amanda/occult/wax32x48: 192 928
+:amanda/occult/wax64x48: 320 832 rr
+:amanda/occult/wax64x48: 256 832 rr
+:amanda/occult/wax64x48: 192 832 rr
+:amanda/occult/wax64x48: 192 720
+:amanda/occult/wax64x48: 256 720
+:amanda/occult/wax64x48: 320 720
+:amanda/occult/wax64x48: 320 880 rr
+:amanda/occult/wax64x48: 256 880 rr
+:amanda/occult/wax64x48: 192 880 rr
 :amanda/steel/steel32x32.S: 448 848
 :amanda/steel/steel32x32.S: 480 848
 :amanda/steel/steel32x32.S: 512 848
 :amanda/steel/steel32x32.S: 544 848
-:amanda/occult/occult_wax64x48: 320 1072 rr
-:amanda/occult/occult_wax64x48: 256 1072 rr
-:amanda/occult/occult_wax64x48: 192 1072 rr
-:amanda/occult/occult_wax64x48: 192 960
-:amanda/occult/occult_wax64x48: 256 960
-:amanda/occult/occult_wax64x48: 320 960
-:amanda/occult/occult_wax64x48: 320 1120 rr
-:amanda/occult/occult_wax64x48: 256 1120 rr
-:amanda/occult/occult_wax64x48: 192 1120 rr
+:amanda/occult/wax64x48: 320 1072 rr
+:amanda/occult/wax64x48: 256 1072 rr
+:amanda/occult/wax64x48: 192 1072 rr
+:amanda/occult/wax64x48: 192 960
+:amanda/occult/wax64x48: 256 960
+:amanda/occult/wax64x48: 320 960
+:amanda/occult/wax64x48: 320 1120 rr
+:amanda/occult/wax64x48: 256 1120 rr
+:amanda/occult/wax64x48: 192 1120 rr
 :amanda/steel/steel32x32.S: 448 1088
 :amanda/steel/steel32x32.S: 480 1088
 :amanda/steel/steel32x32.S: 512 1088
 :amanda/steel/steel32x32.S: 544 1088
-:amanda/occult/occult_wax64x48: 320 1312 rr
-:amanda/occult/occult_wax64x48: 256 1312 rr
-:amanda/occult/occult_wax64x48: 192 1312 rr
-:amanda/occult/occult_wax64x48: 192 1200
-:amanda/occult/occult_wax64x48: 256 1200
-:amanda/occult/occult_wax64x48: 320 1200
-:amanda/occult/occult_wax64x48: 320 1360 rr
-:amanda/occult/occult_wax64x48: 256 1360 rr
-:amanda/occult/occult_wax64x48: 192 1360 rr
+:amanda/occult/wax64x48: 320 1312 rr
+:amanda/occult/wax64x48: 256 1312 rr
+:amanda/occult/wax64x48: 192 1312 rr
+:amanda/occult/wax64x48: 192 1200
+:amanda/occult/wax64x48: 256 1200
+:amanda/occult/wax64x48: 320 1200
+:amanda/occult/wax64x48: 320 1360 rr
+:amanda/occult/wax64x48: 256 1360 rr
+:amanda/occult/wax64x48: 192 1360 rr
 :amanda/steel/steel32x32.S: 448 1328
 :amanda/steel/steel32x32.S: 480 1328
 :amanda/steel/steel32x32.S: 512 1328
 :amanda/steel/steel32x32.S: 544 1328
-:amanda/occult/occult_wax64x48: 384 832 rr
-:amanda/occult/occult_wax64x48: 384 720
-:amanda/occult/occult_wax64x48: 384 880 rr
-:amanda/occult/occult_wax64x48: 384 1072 rr
-:amanda/occult/occult_wax64x48: 384 960
-:amanda/occult/occult_wax64x48: 384 1120 rr
-:amanda/occult/occult_wax64x48: 384 1312 rr
-:amanda/occult/occult_wax64x48: 384 1200
-:amanda/occult/occult_wax64x48: 384 1360 rr
+:amanda/occult/wax64x48: 384 832 rr
+:amanda/occult/wax64x48: 384 720
+:amanda/occult/wax64x48: 384 880 rr
+:amanda/occult/wax64x48: 384 1072 rr
+:amanda/occult/wax64x48: 384 960
+:amanda/occult/wax64x48: 384 1120 rr
+:amanda/occult/wax64x48: 384 1312 rr
+:amanda/occult/wax64x48: 384 1200
+:amanda/occult/wax64x48: 384 1360 rr
 :amanda/steel/steel32x32.S: 448 1360
 :amanda/steel/steel32x32.S: 448 1392
 :amanda/steel/steel32x32.S: 448 1120
@@ -419,61 +419,61 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel32x32.S: 576 1120
 :amanda/steel/steel32x32.S: 576 848
 :amanda/steel/steel32x32.S: 576 880
-:amanda/occult/occult_wax64x64: 128 1328 rrr
-:amanda/occult/occult_wax64x64: 128 1392 rrr
-:amanda/occult/occult_wax64x64: 128 736 rrr
-:amanda/occult/occult_wax64x64: 128 848 rrr
-:amanda/occult/occult_wax64x64: 128 912 rrr
-:amanda/occult/occult_wax64x64: 128 1088 rrr
-:amanda/occult/occult_wax64x64: 128 1152 rrr
-:amanda/occult/occult_wax64x64: 128 1216 rrr
-:amanda/occult/occult_wax32x48_cap_left_sheer: 144 800 rrr
-:amanda/occult/occult_wax32x48_cap_left_sheer: 144 1280 rrr
-:amanda/occult/occult_skulls32x32: 32 1024
-:amanda/occult/occult_skulls32x32: 48 1024
-:amanda/occult/occult_skulls32x32: 80 1024
-:amanda/occult/occult_skulls32x32: -16 976
-:amanda/occult/occult_skulls32x32: -16 960
-:amanda/occult/occult_skulls32x32: -16 928
-:amanda/occult/occult_skulls32x32: -16 896
-:amanda/occult/occult_skulls32x32: -16 864
-:amanda/occult/occult_skulls32x32: 16 864
-:amanda/occult/occult_skulls32x32: 48 864
-:amanda/occult/occult_skulls32x32: 80 864
-:amanda/occult/occult_skulls32x32: 112 864
-:amanda/occult/occult_skulls32x32: 96 1024
-:amanda/occult/occult_skulls32x32: 112 1008
-:amanda/occult/occult_wax_details_sunken_cube: 32 1296 frr
-:amanda/occult/occult_skulls32x32: 32 1264
-:amanda/occult/occult_skulls32x32: 48 1264
-:amanda/occult/occult_skulls32x32: 80 1264
-:amanda/occult/occult_skulls32x32: -16 1216
-:amanda/occult/occult_skulls32x32: -16 1200
-:amanda/occult/occult_skulls32x32: -16 1168
-:amanda/occult/occult_skulls32x32: -16 1136
-:amanda/occult/occult_skulls32x32: -16 1104
-:amanda/occult/occult_skulls32x32: 16 1104
-:amanda/occult/occult_skulls32x32: 48 1104
-:amanda/occult/occult_skulls32x32: 80 1104
-:amanda/occult/occult_skulls32x32: 112 1104
-:amanda/occult/occult_skulls32x32: 96 1264
-:amanda/occult/occult_skulls32x32: 112 1248
-:amanda/occult/occult_wax_details_sunken_cube: 48 816 frr
-:amanda/occult/occult_wax_details_sunken_cube: 32 816 frr
-:amanda/occult/occult_skulls32x32: 32 784
-:amanda/occult/occult_skulls32x32: 48 784
-:amanda/occult/occult_skulls32x32: 80 784
-:amanda/occult/occult_skulls32x32: -16 736
-:amanda/occult/occult_skulls32x32: -16 720
-:amanda/occult/occult_skulls32x32: -16 1408
-:amanda/occult/occult_skulls32x32: -16 1376
-:amanda/occult/occult_skulls32x32: -16 1344
-:amanda/occult/occult_skulls32x32: 16 1344
-:amanda/occult/occult_skulls32x32: 48 1344
-:amanda/occult/occult_skulls32x32: 80 1344
-:amanda/occult/occult_skulls32x32: 112 1344
-:amanda/occult/occult_skulls32x32: 96 784
-:amanda/occult/occult_skulls32x32: 112 768
+:amanda/occult/wax64x64: 128 1328 rrr
+:amanda/occult/wax64x64: 128 1392 rrr
+:amanda/occult/wax64x64: 128 736 rrr
+:amanda/occult/wax64x64: 128 848 rrr
+:amanda/occult/wax64x64: 128 912 rrr
+:amanda/occult/wax64x64: 128 1088 rrr
+:amanda/occult/wax64x64: 128 1152 rrr
+:amanda/occult/wax64x64: 128 1216 rrr
+:amanda/occult/wax32x48_cap_left_sheer: 144 800 rrr
+:amanda/occult/wax32x48_cap_left_sheer: 144 1280 rrr
+:amanda/occult/skulls32x32: 32 1024
+:amanda/occult/skulls32x32: 48 1024
+:amanda/occult/skulls32x32: 80 1024
+:amanda/occult/skulls32x32: -16 976
+:amanda/occult/skulls32x32: -16 960
+:amanda/occult/skulls32x32: -16 928
+:amanda/occult/skulls32x32: -16 896
+:amanda/occult/skulls32x32: -16 864
+:amanda/occult/skulls32x32: 16 864
+:amanda/occult/skulls32x32: 48 864
+:amanda/occult/skulls32x32: 80 864
+:amanda/occult/skulls32x32: 112 864
+:amanda/occult/skulls32x32: 96 1024
+:amanda/occult/skulls32x32: 112 1008
+:amanda/occult/wax_details_sunken_cube: 32 1296 frr
+:amanda/occult/skulls32x32: 32 1264
+:amanda/occult/skulls32x32: 48 1264
+:amanda/occult/skulls32x32: 80 1264
+:amanda/occult/skulls32x32: -16 1216
+:amanda/occult/skulls32x32: -16 1200
+:amanda/occult/skulls32x32: -16 1168
+:amanda/occult/skulls32x32: -16 1136
+:amanda/occult/skulls32x32: -16 1104
+:amanda/occult/skulls32x32: 16 1104
+:amanda/occult/skulls32x32: 48 1104
+:amanda/occult/skulls32x32: 80 1104
+:amanda/occult/skulls32x32: 112 1104
+:amanda/occult/skulls32x32: 96 1264
+:amanda/occult/skulls32x32: 112 1248
+:amanda/occult/wax_details_sunken_cube: 48 816 frr
+:amanda/occult/wax_details_sunken_cube: 32 816 frr
+:amanda/occult/skulls32x32: 32 784
+:amanda/occult/skulls32x32: 48 784
+:amanda/occult/skulls32x32: 80 784
+:amanda/occult/skulls32x32: -16 736
+:amanda/occult/skulls32x32: -16 720
+:amanda/occult/skulls32x32: -16 1408
+:amanda/occult/skulls32x32: -16 1376
+:amanda/occult/skulls32x32: -16 1344
+:amanda/occult/skulls32x32: 16 1344
+:amanda/occult/skulls32x32: 48 1344
+:amanda/occult/skulls32x32: 80 1344
+:amanda/occult/skulls32x32: 112 1344
+:amanda/occult/skulls32x32: 96 784
+:amanda/occult/skulls32x32: 112 768
 :amanda/steel/steel32x32.S: 448 1424
 :amanda/steel/steel32x32.S: 448 1184
 :amanda/steel/steel16x16.S: 448 1248
@@ -539,92 +539,92 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel16x16.S: 0 1296
 :amanda/steel/steel16x16.S: 0 1280
 :amanda/steel/steel16x16.S: 0 1264
-:amanda/occult/occult_skulls32x32: 112 1088
-:amanda/occult/occult_skulls32x32: 112 848
+:amanda/occult/skulls32x32: 112 1088
+:amanda/occult/skulls32x32: 112 848
 :amanda/steel/steel16x16.S: 128 848
-:amanda/occult/occult_skulls32x32: 112 1328
+:amanda/occult/skulls32x32: 112 1328
 :amanda/steel/steel16x16.S: 0 768
 :amanda/steel/steel16x16.S: 0 752
 :amanda/steel/steel16x16.S: 0 1248
 :amanda/steel/steel16x16.S: 0 1232
 :amanda/steel/steel16x16.S: 0 1008
 :amanda/steel/steel16x16.S: 0 992
-:amanda/occult/occult_skulls32x32: 64 752
-:amanda/occult/occult_skulls32x32: 64 1232
-:amanda/occult/occult_skulls32x32: 64 992
-:amanda/occult/occult_wax32x48: 864 928
-:amanda/occult/occult_wax32x48: 896 928
-:amanda/occult/occult_wax32x48: 800 928
-:amanda/occult/occult_wax32x48: 832 928
-:amanda/occult/occult_wax32x48: 736 928
-:amanda/occult/occult_wax32x48: 768 928
-:amanda/occult/occult_wax32x48: 704 928
-:amanda/occult/occult_wax32x48: 672 928
-:amanda/occult/occult_wax64x48: 800 832 rr
-:amanda/occult/occult_wax64x48: 736 832 rr
-:amanda/occult/occult_wax64x48: 672 832 rr
-:amanda/occult/occult_wax64x48: 800 880 rr
-:amanda/occult/occult_wax64x48: 736 880 rr
-:amanda/occult/occult_wax64x48: 672 880 rr
-:amanda/occult/occult_wax64x48: 672 960
-:amanda/occult/occult_wax64x48: 736 960
-:amanda/occult/occult_wax64x48: 800 960
-:amanda/occult/occult_wax64x48: 864 832 rr
-:amanda/occult/occult_wax64x48: 864 880 rr
-:amanda/occult/occult_wax64x48: 864 960
-:amanda/occult/occult_wax64x64: 608 848 rrr
-:amanda/occult/occult_wax64x64: 608 912 rrr
-:amanda/occult/occult_wax32x48_cap_left_sheer: 608 1040 rrr
-:amanda/occult/occult_wax32x48: 864 1168
-:amanda/occult/occult_wax32x48: 896 1168
-:amanda/occult/occult_wax32x48: 800 1168
-:amanda/occult/occult_wax32x48: 832 1168
-:amanda/occult/occult_wax32x48: 736 1168
-:amanda/occult/occult_wax32x48: 768 1168
-:amanda/occult/occult_wax32x48: 704 1168
-:amanda/occult/occult_wax32x48: 672 1168
-:amanda/occult/occult_wax64x48: 800 1072 rr
-:amanda/occult/occult_wax64x48: 736 1072 rr
-:amanda/occult/occult_wax64x48: 672 1072 rr
-:amanda/occult/occult_wax64x48: 800 1120 rr
-:amanda/occult/occult_wax64x48: 736 1120 rr
-:amanda/occult/occult_wax64x48: 672 1120 rr
-:amanda/occult/occult_wax32x48_cap_left_sheer: 608 1280 rrr
-:amanda/occult/occult_wax32x48_cap_left_sheer: 624 1280 rrr
-:amanda/occult/occult_wax64x48: 672 1200
-:amanda/occult/occult_wax64x48: 736 1200
-:amanda/occult/occult_wax64x48: 800 1200
-:amanda/occult/occult_wax64x48: 864 1072 rr
-:amanda/occult/occult_wax64x48: 864 1120 rr
-:amanda/occult/occult_wax64x48: 864 1200
-:amanda/occult/occult_wax64x64: 608 1088 rrr
-:amanda/occult/occult_wax64x64: 608 1152 rrr
-:amanda/occult/occult_wax64x64: 608 1216 rrr
-:amanda/occult/occult_wax32x48: 864 1408
-:amanda/occult/occult_wax32x48: 896 1408
-:amanda/occult/occult_wax32x48: 800 1408
-:amanda/occult/occult_wax32x48: 832 1408
-:amanda/occult/occult_wax32x48: 736 1408
-:amanda/occult/occult_wax32x48: 768 1408
-:amanda/occult/occult_wax32x48: 704 1408
-:amanda/occult/occult_wax32x48: 672 1408
-:amanda/occult/occult_wax64x48: 800 1312 rr
-:amanda/occult/occult_wax64x48: 736 1312 rr
-:amanda/occult/occult_wax64x48: 672 1312 rr
-:amanda/occult/occult_wax64x48: 800 1360 rr
-:amanda/occult/occult_wax64x48: 736 1360 rr
-:amanda/occult/occult_wax64x48: 672 1360 rr
-:amanda/occult/occult_wax32x48_cap_left_sheer: 608 800 rrr
-:amanda/occult/occult_wax32x48_cap_left_sheer: 624 800 rrr
-:amanda/occult/occult_wax64x48: 672 720
-:amanda/occult/occult_wax64x48: 736 720
-:amanda/occult/occult_wax64x48: 800 720
-:amanda/occult/occult_wax64x48: 864 1312 rr
-:amanda/occult/occult_wax64x48: 864 1360 rr
-:amanda/occult/occult_wax64x48: 864 720
-:amanda/occult/occult_wax64x64: 608 1328 rrr
-:amanda/occult/occult_wax64x64: 608 1392 rrr
-:amanda/occult/occult_wax64x64: 608 736 rrr
+:amanda/occult/skulls32x32: 64 752
+:amanda/occult/skulls32x32: 64 1232
+:amanda/occult/skulls32x32: 64 992
+:amanda/occult/wax32x48: 864 928
+:amanda/occult/wax32x48: 896 928
+:amanda/occult/wax32x48: 800 928
+:amanda/occult/wax32x48: 832 928
+:amanda/occult/wax32x48: 736 928
+:amanda/occult/wax32x48: 768 928
+:amanda/occult/wax32x48: 704 928
+:amanda/occult/wax32x48: 672 928
+:amanda/occult/wax64x48: 800 832 rr
+:amanda/occult/wax64x48: 736 832 rr
+:amanda/occult/wax64x48: 672 832 rr
+:amanda/occult/wax64x48: 800 880 rr
+:amanda/occult/wax64x48: 736 880 rr
+:amanda/occult/wax64x48: 672 880 rr
+:amanda/occult/wax64x48: 672 960
+:amanda/occult/wax64x48: 736 960
+:amanda/occult/wax64x48: 800 960
+:amanda/occult/wax64x48: 864 832 rr
+:amanda/occult/wax64x48: 864 880 rr
+:amanda/occult/wax64x48: 864 960
+:amanda/occult/wax64x64: 608 848 rrr
+:amanda/occult/wax64x64: 608 912 rrr
+:amanda/occult/wax32x48_cap_left_sheer: 608 1040 rrr
+:amanda/occult/wax32x48: 864 1168
+:amanda/occult/wax32x48: 896 1168
+:amanda/occult/wax32x48: 800 1168
+:amanda/occult/wax32x48: 832 1168
+:amanda/occult/wax32x48: 736 1168
+:amanda/occult/wax32x48: 768 1168
+:amanda/occult/wax32x48: 704 1168
+:amanda/occult/wax32x48: 672 1168
+:amanda/occult/wax64x48: 800 1072 rr
+:amanda/occult/wax64x48: 736 1072 rr
+:amanda/occult/wax64x48: 672 1072 rr
+:amanda/occult/wax64x48: 800 1120 rr
+:amanda/occult/wax64x48: 736 1120 rr
+:amanda/occult/wax64x48: 672 1120 rr
+:amanda/occult/wax32x48_cap_left_sheer: 608 1280 rrr
+:amanda/occult/wax32x48_cap_left_sheer: 624 1280 rrr
+:amanda/occult/wax64x48: 672 1200
+:amanda/occult/wax64x48: 736 1200
+:amanda/occult/wax64x48: 800 1200
+:amanda/occult/wax64x48: 864 1072 rr
+:amanda/occult/wax64x48: 864 1120 rr
+:amanda/occult/wax64x48: 864 1200
+:amanda/occult/wax64x64: 608 1088 rrr
+:amanda/occult/wax64x64: 608 1152 rrr
+:amanda/occult/wax64x64: 608 1216 rrr
+:amanda/occult/wax32x48: 864 1408
+:amanda/occult/wax32x48: 896 1408
+:amanda/occult/wax32x48: 800 1408
+:amanda/occult/wax32x48: 832 1408
+:amanda/occult/wax32x48: 736 1408
+:amanda/occult/wax32x48: 768 1408
+:amanda/occult/wax32x48: 704 1408
+:amanda/occult/wax32x48: 672 1408
+:amanda/occult/wax64x48: 800 1312 rr
+:amanda/occult/wax64x48: 736 1312 rr
+:amanda/occult/wax64x48: 672 1312 rr
+:amanda/occult/wax64x48: 800 1360 rr
+:amanda/occult/wax64x48: 736 1360 rr
+:amanda/occult/wax64x48: 672 1360 rr
+:amanda/occult/wax32x48_cap_left_sheer: 608 800 rrr
+:amanda/occult/wax32x48_cap_left_sheer: 624 800 rrr
+:amanda/occult/wax64x48: 672 720
+:amanda/occult/wax64x48: 736 720
+:amanda/occult/wax64x48: 800 720
+:amanda/occult/wax64x48: 864 1312 rr
+:amanda/occult/wax64x48: 864 1360 rr
+:amanda/occult/wax64x48: 864 720
+:amanda/occult/wax64x64: 608 1328 rrr
+:amanda/occult/wax64x64: 608 1392 rrr
+:amanda/occult/wax64x64: 608 736 rrr
 :amanda/steel/steel32x32.S: 928 944
 :amanda/steel/steel32x32.S: 928 848
 :amanda/steel/steel32x32.S: 960 848
@@ -745,15 +745,15 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel16x16.S: 128 736
 :amanda/steel/steel16x16.S: 128 752
 :amanda/steel/steel16x16.S: 128 768
-:amanda/occult/occult_skulls32x32: 128 896
-:amanda/occult/occult_skulls32x32: 128 1376
-:amanda/occult/occult_skulls32x32: 128 1136
-:amanda/occult/occult_skulls32x32: 144 1152
-:amanda/occult/occult_skulls32x32: 144 912
-:amanda/occult/occult_skulls32x32: 144 1392
-:amanda/occult/occult_skulls32x32: 128 1408
-:amanda/occult/occult_skulls32x32: 128 928
-:amanda/occult/occult_skulls32x32: 128 1168
+:amanda/occult/skulls32x32: 128 896
+:amanda/occult/skulls32x32: 128 1376
+:amanda/occult/skulls32x32: 128 1136
+:amanda/occult/skulls32x32: 144 1152
+:amanda/occult/skulls32x32: 144 912
+:amanda/occult/skulls32x32: 144 1392
+:amanda/occult/skulls32x32: 128 1408
+:amanda/occult/skulls32x32: 128 928
+:amanda/occult/skulls32x32: 128 1168
 :amanda/steel/steel16x16.S: 960 1232
 :amanda/steel/steel16x16.S: 976 1232
 :amanda/steel/steel16x16.S: 992 1232
@@ -800,7 +800,7 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel16x16.S: 544 1120
 :amanda/steel/steel16x16.S: 496 1120
 :amanda/steel/steel32x32.S: 464 1024
-:amanda/occult/occult_wax32x16_cap_left: 464 1280 rrr
+:amanda/occult/wax32x16_cap_left: 464 1280 rrr
 :amanda/steel/steel32x32.S: 464 1264
 :amanda/steel/steel32x32.S: 464 784
 :amanda/steel/steel16x16.S: 944 1024
@@ -882,27 +882,27 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel16x16.S: 160 1248
 :amanda/steel/steel16x16.S: 144 1232
 :amanda/steel/steel16x16.S: 144 752
-:amanda/occult/occult_skulls32x32: 896 1008
-:amanda/occult/occult_skulls32x32: 880 976
-:amanda/occult/occult_skulls32x32: 896 944
-:amanda/occult/occult_skulls32x32: 896 1248
-:amanda/occult/occult_skulls32x32: 880 1216
-:amanda/occult/occult_skulls32x32: 896 1184
-:amanda/occult/occult_skulls32x32: 896 768
-:amanda/occult/occult_skulls32x32: 880 736
-:amanda/occult/occult_skulls32x32: 896 1424
-:amanda/occult/occult_skulls32x32: 880 1424
-:amanda/occult/occult_skulls32x32: 880 1184
-:amanda/occult/occult_skulls32x32: 880 944
-:amanda/occult/occult_skulls32x32: 864 768
-:amanda/occult/occult_skulls32x32: 864 1008
-:amanda/occult/occult_skulls32x32: 864 1248
-:amanda/occult/occult_skulls32x32: 896 1168
-:amanda/occult/occult_skulls32x32: 896 928
-:amanda/occult/occult_skulls32x32: 896 1408
-:amanda/occult/occult_skulls32x32: 848 1264
-:amanda/occult/occult_skulls32x32: 848 1024
-:amanda/occult/occult_skulls32x32: 848 784
+:amanda/occult/skulls32x32: 896 1008
+:amanda/occult/skulls32x32: 880 976
+:amanda/occult/skulls32x32: 896 944
+:amanda/occult/skulls32x32: 896 1248
+:amanda/occult/skulls32x32: 880 1216
+:amanda/occult/skulls32x32: 896 1184
+:amanda/occult/skulls32x32: 896 768
+:amanda/occult/skulls32x32: 880 736
+:amanda/occult/skulls32x32: 896 1424
+:amanda/occult/skulls32x32: 880 1424
+:amanda/occult/skulls32x32: 880 1184
+:amanda/occult/skulls32x32: 880 944
+:amanda/occult/skulls32x32: 864 768
+:amanda/occult/skulls32x32: 864 1008
+:amanda/occult/skulls32x32: 864 1248
+:amanda/occult/skulls32x32: 896 1168
+:amanda/occult/skulls32x32: 896 928
+:amanda/occult/skulls32x32: 896 1408
+:amanda/occult/skulls32x32: 848 1264
+:amanda/occult/skulls32x32: 848 1024
+:amanda/occult/skulls32x32: 848 784
 :amanda/steel/steel16x16.S: 288 1088
 :amanda/steel/steel16x16.S: 288 848
 :amanda/steel/steel16x16.S: 304 848
@@ -912,8 +912,8 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel16x16.S: 320 1328
 :amanda/steel/steel16x16.S: 304 1088
 :amanda/steel/steel16x16.S: 320 1088
-:amanda/occult/occult_wax64x64: 608 976 rrr
-:amanda/occult/occult_wax32x48_cap_left_sheer: 624 1040 rrr
+:amanda/occult/wax64x64: 608 976 rrr
+:amanda/occult/wax32x48_cap_left_sheer: 624 1040 rrr
 :amanda/steel/steel16x16.S: 784 1328
 :amanda/steel/steel16x16.S: 800 1328
 :amanda/steel/steel16x16.S: 816 848
@@ -922,7 +922,7 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel16x16.S: 816 1088
 :amanda/steel/steel16x16.S: 784 1088
 :amanda/steel/steel16x16.S: 800 1088
-:amanda/occult/occult_wax32x48_cap_left_sheer: 384 1280 frrr
+:amanda/occult/wax32x48_cap_left_sheer: 384 1280 frrr
 :amanda/steel/steel32x32.S: 1088 944
 :amanda/steel/steel16x16.S: 1088 848
 :amanda/steel/steel16x16.S: 1120 880
@@ -1070,18 +1070,18 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel16x16.S: 608 1424
 :amanda/steel/steel16x16.S: 608 1184
 :amanda/steel/steel16x16.S: 608 944
-:amanda/occult/occult_skulls32x32: -16 848
-:amanda/occult/occult_skulls32x32: 16 848
-:amanda/occult/occult_skulls32x32: 48 848
-:amanda/occult/occult_skulls32x32: 80 848
-:amanda/occult/occult_skulls32x32: -16 1328
-:amanda/occult/occult_skulls32x32: 16 1328
-:amanda/occult/occult_skulls32x32: 48 1328
-:amanda/occult/occult_skulls32x32: 80 1328
-:amanda/occult/occult_skulls32x32: -16 1088
-:amanda/occult/occult_skulls32x32: 16 1088
-:amanda/occult/occult_skulls32x32: 48 1088
-:amanda/occult/occult_skulls32x32: 80 1088
+:amanda/occult/skulls32x32: -16 848
+:amanda/occult/skulls32x32: 16 848
+:amanda/occult/skulls32x32: 48 848
+:amanda/occult/skulls32x32: 80 848
+:amanda/occult/skulls32x32: -16 1328
+:amanda/occult/skulls32x32: 16 1328
+:amanda/occult/skulls32x32: 48 1328
+:amanda/occult/skulls32x32: 80 1328
+:amanda/occult/skulls32x32: -16 1088
+:amanda/occult/skulls32x32: 16 1088
+:amanda/occult/skulls32x32: 48 1088
+:amanda/occult/skulls32x32: 80 1088
 :amanda/steel/steel_flange_right24x16.S: 784 1312
 :amanda/steel/steel_flange_right24x16.S: 784 1072
 :amanda/steel/steel_flange_right24x16.S: 784 832
@@ -1107,9 +1107,9 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel16x16.S: 896 848
 :amanda/steel/steel16x16.S: 912 848
 :amanda/steel/steel_flange_right24x16.S: 800 816
-:amanda/occult/occult_cube: 816 832 d
-:amanda/occult/occult_cube: 816 1312 d
-:amanda/occult/occult_cube: 816 1072 d
+:amanda/occult/cube: 816 832 d
+:amanda/occult/cube: 816 1312 d
+:amanda/occult/cube: 816 1072 d
 :amanda/steel/steel_flange_right24x16.S: 816 1040
 :amanda/steel/steel_flange_right24x16.S: 816 1280
 :amanda/steel/steel_flange_right24x16.S: 816 800
@@ -1143,136 +1143,136 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel_flange_left24x16.S: 1184 32 rrr
 :amanda/steel/steel_flange_left24x16.S: 1184 512 rrr
 :amanda/steel/steel_flange_left24x16.S: 1184 272 rrr
-:amanda/occult/occult_wax32x16_cap_left: 536 192 frrr
-:amanda/occult/occult_wax32x16_cap_left: 496 192 rrr
-:amanda/occult/occult_wax32x16_cap_left: 536 672 frrr
-:amanda/occult/occult_wax32x16_cap_left: 496 672 rrr
-:amanda/occult/occult_wax32x16_cap_left: 536 432 frrr
-:amanda/occult/occult_wax32x16_cap_left: 592 448 frrr
-:amanda/occult/occult_wax32x16_cap_left: 592 688 frrr
-:amanda/occult/occult_wax32x16_cap_left: 592 208 frrr
-:amanda/occult/occult_wax32x48_cap_left_sheer: 384 80 frrr
-:amanda/occult/occult_wax64x64: 384 16 r
-:amanda/occult/occult_wax32x48_cap_left_sheer: 384 320 frrr
-:amanda/occult/occult_wax64x64: 384 256 r
-:amanda/occult/occult_wax64x64: 384 496 r
-:amanda/occult/occult_wax32x48_cap_left_sheer: 144 320 rrr
-:amanda/occult/occult_wax64x64: 128 256 rrr
-:amanda/occult/occult_wax32x16_cap_left: 928 544 rrr
-:amanda/occult/occult_wax32x16_cap_left: 928 64 rrr
-:amanda/occult/occult_wax32x16_cap_left: 928 304 rrr
-:amanda/occult/occult_wax32x16_cap_left: 496 432 rrr
-:amanda/occult/occult_wax32x16_cap_left: 576 672 frrr
-:amanda/occult/occult_wax32x16_cap_left: 576 192 frrr
-:amanda/occult/occult_wax32x16_cap_left: 576 432 frrr
-:amanda/occult/occult_wax32x16_cap_left: 448 544 rrr
-:amanda/occult/occult_wax32x16_cap_left: 448 304 rrr
-:amanda/occult/occult_wax32x16_cap_left: 448 64 rrr
-:amanda/occult/occult_wax32x16_cap_left: 464 320 rrr
-:amanda/occult/occult_wax32x16_cap_left: 464 80 rrr
-:amanda/occult/occult_wax_details_sunken_cube: 64 576 frr
-:amanda/occult/occult_wax_details_sunken_cube: 48 576 frr
-:amanda/occult/occult_wax_details_sunken_cube: 64 336 frr
-:amanda/occult/occult_wax_details_sunken_cube: 48 336 frr
-:amanda/occult/occult_wax_details_sunken_cube: 64 96 frr
-:amanda/occult/occult_wax_details_sunken_cube: 32 336 frr
-:amanda/occult/occult_wax_details_sunken_lix_b: 432 592
-:amanda/occult/occult_wax_details_sunken_lix_b: 432 352
-:amanda/occult/occult_wax_details_sunken_lix_b: 432 112
-:amanda/occult/occult_wax_details_sunken_lix_b: 144 592
-:amanda/occult/occult_wax_details_sunken_lix_b: 144 352
-:amanda/occult/occult_wax_details_sunken_lix_b: 144 112
-:amanda/occult/occult_wax_details_sunken_cube: 160 592
-:amanda/occult/occult_wax_details_sunken_cube: 160 352
-:amanda/occult/occult_wax_details_sunken_cube: 160 112
-:amanda/occult/occult_wax_details_drip: 592 704
-:amanda/occult/occult_wax_details_drip: 592 464
-:amanda/occult/occult_wax_details_drip: 592 224
-:amanda/occult/occult_wax32x48_cap_right_sheer: 912 528
-:amanda/occult/occult_wax32x48_cap_right_sheer: 912 288
-:amanda/occult/occult_wax32x48_cap_right_sheer: 912 48
-:amanda/occult/occult_wax32x48_cap_left_sheer: 592 432
-:amanda/occult/occult_wax32x48_cap_left_sheer: 592 192
-:amanda/occult/occult_wax32x48_cap_left_sheer: 592 672
-:amanda/occult/occult_wax32x48_cap_left_sheer: 592 608
-:amanda/occult/occult_wax32x48_cap_left_sheer: 592 128
-:amanda/occult/occult_wax32x48_cap_left_sheer: 592 368
-:amanda/occult/occult_wax32x48_cap_left_sheer: 592 384
-:amanda/occult/occult_wax32x48_cap_left_sheer: 592 144
-:amanda/occult/occult_wax32x48_cap_left_sheer: 592 624
+:amanda/occult/wax32x16_cap_left: 536 192 frrr
+:amanda/occult/wax32x16_cap_left: 496 192 rrr
+:amanda/occult/wax32x16_cap_left: 536 672 frrr
+:amanda/occult/wax32x16_cap_left: 496 672 rrr
+:amanda/occult/wax32x16_cap_left: 536 432 frrr
+:amanda/occult/wax32x16_cap_left: 592 448 frrr
+:amanda/occult/wax32x16_cap_left: 592 688 frrr
+:amanda/occult/wax32x16_cap_left: 592 208 frrr
+:amanda/occult/wax32x48_cap_left_sheer: 384 80 frrr
+:amanda/occult/wax64x64: 384 16 r
+:amanda/occult/wax32x48_cap_left_sheer: 384 320 frrr
+:amanda/occult/wax64x64: 384 256 r
+:amanda/occult/wax64x64: 384 496 r
+:amanda/occult/wax32x48_cap_left_sheer: 144 320 rrr
+:amanda/occult/wax64x64: 128 256 rrr
+:amanda/occult/wax32x16_cap_left: 928 544 rrr
+:amanda/occult/wax32x16_cap_left: 928 64 rrr
+:amanda/occult/wax32x16_cap_left: 928 304 rrr
+:amanda/occult/wax32x16_cap_left: 496 432 rrr
+:amanda/occult/wax32x16_cap_left: 576 672 frrr
+:amanda/occult/wax32x16_cap_left: 576 192 frrr
+:amanda/occult/wax32x16_cap_left: 576 432 frrr
+:amanda/occult/wax32x16_cap_left: 448 544 rrr
+:amanda/occult/wax32x16_cap_left: 448 304 rrr
+:amanda/occult/wax32x16_cap_left: 448 64 rrr
+:amanda/occult/wax32x16_cap_left: 464 320 rrr
+:amanda/occult/wax32x16_cap_left: 464 80 rrr
+:amanda/occult/wax_details_sunken_cube: 64 576 frr
+:amanda/occult/wax_details_sunken_cube: 48 576 frr
+:amanda/occult/wax_details_sunken_cube: 64 336 frr
+:amanda/occult/wax_details_sunken_cube: 48 336 frr
+:amanda/occult/wax_details_sunken_cube: 64 96 frr
+:amanda/occult/wax_details_sunken_cube: 32 336 frr
+:amanda/occult/wax_details_sunken_lix_b: 432 592
+:amanda/occult/wax_details_sunken_lix_b: 432 352
+:amanda/occult/wax_details_sunken_lix_b: 432 112
+:amanda/occult/wax_details_sunken_lix_b: 144 592
+:amanda/occult/wax_details_sunken_lix_b: 144 352
+:amanda/occult/wax_details_sunken_lix_b: 144 112
+:amanda/occult/wax_details_sunken_cube: 160 592
+:amanda/occult/wax_details_sunken_cube: 160 352
+:amanda/occult/wax_details_sunken_cube: 160 112
+:amanda/occult/wax_details_drip: 592 704
+:amanda/occult/wax_details_drip: 592 464
+:amanda/occult/wax_details_drip: 592 224
+:amanda/occult/wax32x48_cap_right_sheer: 912 528
+:amanda/occult/wax32x48_cap_right_sheer: 912 288
+:amanda/occult/wax32x48_cap_right_sheer: 912 48
+:amanda/occult/wax32x48_cap_left_sheer: 592 432
+:amanda/occult/wax32x48_cap_left_sheer: 592 192
+:amanda/occult/wax32x48_cap_left_sheer: 592 672
+:amanda/occult/wax32x48_cap_left_sheer: 592 608
+:amanda/occult/wax32x48_cap_left_sheer: 592 128
+:amanda/occult/wax32x48_cap_left_sheer: 592 368
+:amanda/occult/wax32x48_cap_left_sheer: 592 384
+:amanda/occult/wax32x48_cap_left_sheer: 592 144
+:amanda/occult/wax32x48_cap_left_sheer: 592 624
 :amanda/steel/steel32x32.S: 448 224
-:amanda/occult/occult_wax32x48: 192 448
-:amanda/occult/occult_wax32x48: 224 448
-:amanda/occult/occult_wax32x48: 288 448
-:amanda/occult/occult_wax32x48: 256 448
-:amanda/occult/occult_wax32x48: 352 448
-:amanda/occult/occult_wax32x48: 320 448
-:amanda/occult/occult_wax32x48: 416 448
-:amanda/occult/occult_wax32x48: 384 448
-:amanda/occult/occult_wax32x48: 192 688
-:amanda/occult/occult_wax32x48: 224 688
-:amanda/occult/occult_wax32x48: 288 688
-:amanda/occult/occult_wax32x48: 256 688
-:amanda/occult/occult_wax32x48: 352 688
-:amanda/occult/occult_wax32x48: 320 688
-:amanda/occult/occult_wax32x48: 416 688
-:amanda/occult/occult_wax32x48: 384 688
-:amanda/occult/occult_wax32x48: 384 208
-:amanda/occult/occult_wax32x48: 416 208
-:amanda/occult/occult_wax32x48: 320 208
-:amanda/occult/occult_wax32x48: 352 208
-:amanda/occult/occult_wax32x48: 256 208
-:amanda/occult/occult_wax32x48: 288 208
-:amanda/occult/occult_wax32x48: 224 208
-:amanda/occult/occult_wax32x48: 192 208
-:amanda/occult/occult_wax64x48: 320 112 rr
-:amanda/occult/occult_wax64x48: 256 112 rr
-:amanda/occult/occult_wax64x48: 192 112 rr
-:amanda/occult/occult_wax64x48: 192 0
-:amanda/occult/occult_wax64x48: 256 0
-:amanda/occult/occult_wax64x48: 320 0
-:amanda/occult/occult_wax64x48: 320 160 rr
-:amanda/occult/occult_wax64x48: 256 160 rr
-:amanda/occult/occult_wax64x48: 192 160 rr
+:amanda/occult/wax32x48: 192 448
+:amanda/occult/wax32x48: 224 448
+:amanda/occult/wax32x48: 288 448
+:amanda/occult/wax32x48: 256 448
+:amanda/occult/wax32x48: 352 448
+:amanda/occult/wax32x48: 320 448
+:amanda/occult/wax32x48: 416 448
+:amanda/occult/wax32x48: 384 448
+:amanda/occult/wax32x48: 192 688
+:amanda/occult/wax32x48: 224 688
+:amanda/occult/wax32x48: 288 688
+:amanda/occult/wax32x48: 256 688
+:amanda/occult/wax32x48: 352 688
+:amanda/occult/wax32x48: 320 688
+:amanda/occult/wax32x48: 416 688
+:amanda/occult/wax32x48: 384 688
+:amanda/occult/wax32x48: 384 208
+:amanda/occult/wax32x48: 416 208
+:amanda/occult/wax32x48: 320 208
+:amanda/occult/wax32x48: 352 208
+:amanda/occult/wax32x48: 256 208
+:amanda/occult/wax32x48: 288 208
+:amanda/occult/wax32x48: 224 208
+:amanda/occult/wax32x48: 192 208
+:amanda/occult/wax64x48: 320 112 rr
+:amanda/occult/wax64x48: 256 112 rr
+:amanda/occult/wax64x48: 192 112 rr
+:amanda/occult/wax64x48: 192 0
+:amanda/occult/wax64x48: 256 0
+:amanda/occult/wax64x48: 320 0
+:amanda/occult/wax64x48: 320 160 rr
+:amanda/occult/wax64x48: 256 160 rr
+:amanda/occult/wax64x48: 192 160 rr
 :amanda/steel/steel32x32.S: 448 128
 :amanda/steel/steel32x32.S: 480 128
 :amanda/steel/steel32x32.S: 512 128
 :amanda/steel/steel32x32.S: 544 128
-:amanda/occult/occult_wax64x48: 320 352 rr
-:amanda/occult/occult_wax64x48: 256 352 rr
-:amanda/occult/occult_wax64x48: 192 352 rr
-:amanda/occult/occult_wax64x48: 192 240
-:amanda/occult/occult_wax64x48: 256 240
-:amanda/occult/occult_wax64x48: 320 240
-:amanda/occult/occult_wax64x48: 320 400 rr
-:amanda/occult/occult_wax64x48: 256 400 rr
-:amanda/occult/occult_wax64x48: 192 400 rr
+:amanda/occult/wax64x48: 320 352 rr
+:amanda/occult/wax64x48: 256 352 rr
+:amanda/occult/wax64x48: 192 352 rr
+:amanda/occult/wax64x48: 192 240
+:amanda/occult/wax64x48: 256 240
+:amanda/occult/wax64x48: 320 240
+:amanda/occult/wax64x48: 320 400 rr
+:amanda/occult/wax64x48: 256 400 rr
+:amanda/occult/wax64x48: 192 400 rr
 :amanda/steel/steel32x32.S: 448 368
 :amanda/steel/steel32x32.S: 480 368
 :amanda/steel/steel32x32.S: 512 368
 :amanda/steel/steel32x32.S: 544 368
-:amanda/occult/occult_wax64x48: 320 592 rr
-:amanda/occult/occult_wax64x48: 256 592 rr
-:amanda/occult/occult_wax64x48: 192 592 rr
-:amanda/occult/occult_wax64x48: 192 480
-:amanda/occult/occult_wax64x48: 256 480
-:amanda/occult/occult_wax64x48: 320 480
-:amanda/occult/occult_wax64x48: 320 640 rr
-:amanda/occult/occult_wax64x48: 256 640 rr
-:amanda/occult/occult_wax64x48: 192 640 rr
+:amanda/occult/wax64x48: 320 592 rr
+:amanda/occult/wax64x48: 256 592 rr
+:amanda/occult/wax64x48: 192 592 rr
+:amanda/occult/wax64x48: 192 480
+:amanda/occult/wax64x48: 256 480
+:amanda/occult/wax64x48: 320 480
+:amanda/occult/wax64x48: 320 640 rr
+:amanda/occult/wax64x48: 256 640 rr
+:amanda/occult/wax64x48: 192 640 rr
 :amanda/steel/steel32x32.S: 448 608
 :amanda/steel/steel32x32.S: 480 608
 :amanda/steel/steel32x32.S: 512 608
 :amanda/steel/steel32x32.S: 544 608
-:amanda/occult/occult_wax64x48: 384 112 rr
-:amanda/occult/occult_wax64x48: 384 0
-:amanda/occult/occult_wax64x48: 384 160 rr
-:amanda/occult/occult_wax64x48: 384 352 rr
-:amanda/occult/occult_wax64x48: 384 240
-:amanda/occult/occult_wax64x48: 384 400 rr
-:amanda/occult/occult_wax64x48: 384 592 rr
-:amanda/occult/occult_wax64x48: 384 480
-:amanda/occult/occult_wax64x48: 384 640 rr
+:amanda/occult/wax64x48: 384 112 rr
+:amanda/occult/wax64x48: 384 0
+:amanda/occult/wax64x48: 384 160 rr
+:amanda/occult/wax64x48: 384 352 rr
+:amanda/occult/wax64x48: 384 240
+:amanda/occult/wax64x48: 384 400 rr
+:amanda/occult/wax64x48: 384 592 rr
+:amanda/occult/wax64x48: 384 480
+:amanda/occult/wax64x48: 384 640 rr
 :amanda/steel/steel32x32.S: 448 640
 :amanda/steel/steel32x32.S: 448 672
 :amanda/steel/steel32x32.S: 448 400
@@ -1285,61 +1285,61 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel32x32.S: 576 400
 :amanda/steel/steel32x32.S: 576 128
 :amanda/steel/steel32x32.S: 576 160
-:amanda/occult/occult_wax64x64: 128 608 rrr
-:amanda/occult/occult_wax64x64: 128 672 rrr
-:amanda/occult/occult_wax64x64: 128 16 rrr
-:amanda/occult/occult_wax64x64: 128 128 rrr
-:amanda/occult/occult_wax64x64: 128 192 rrr
-:amanda/occult/occult_wax64x64: 128 368 rrr
-:amanda/occult/occult_wax64x64: 128 432 rrr
-:amanda/occult/occult_wax64x64: 128 496 rrr
-:amanda/occult/occult_wax32x48_cap_left_sheer: 144 80 rrr
-:amanda/occult/occult_wax32x48_cap_left_sheer: 144 560 rrr
-:amanda/occult/occult_skulls32x32: 32 304
-:amanda/occult/occult_skulls32x32: 48 304
-:amanda/occult/occult_skulls32x32: 80 304
-:amanda/occult/occult_skulls32x32: -16 256
-:amanda/occult/occult_skulls32x32: -16 240
-:amanda/occult/occult_skulls32x32: -16 208
-:amanda/occult/occult_skulls32x32: -16 176
-:amanda/occult/occult_skulls32x32: -16 144
-:amanda/occult/occult_skulls32x32: 16 144
-:amanda/occult/occult_skulls32x32: 48 144
-:amanda/occult/occult_skulls32x32: 80 144
-:amanda/occult/occult_skulls32x32: 112 144
-:amanda/occult/occult_skulls32x32: 96 304
-:amanda/occult/occult_skulls32x32: 112 288
-:amanda/occult/occult_wax_details_sunken_cube: 32 576 frr
-:amanda/occult/occult_skulls32x32: 32 544
-:amanda/occult/occult_skulls32x32: 48 544
-:amanda/occult/occult_skulls32x32: 80 544
-:amanda/occult/occult_skulls32x32: -16 496
-:amanda/occult/occult_skulls32x32: -16 480
-:amanda/occult/occult_skulls32x32: -16 448
-:amanda/occult/occult_skulls32x32: -16 416
-:amanda/occult/occult_skulls32x32: -16 384
-:amanda/occult/occult_skulls32x32: 16 384
-:amanda/occult/occult_skulls32x32: 48 384
-:amanda/occult/occult_skulls32x32: 80 384
-:amanda/occult/occult_skulls32x32: 112 384
-:amanda/occult/occult_skulls32x32: 96 544
-:amanda/occult/occult_skulls32x32: 112 528
-:amanda/occult/occult_wax_details_sunken_cube: 48 96 frr
-:amanda/occult/occult_wax_details_sunken_cube: 32 96 frr
-:amanda/occult/occult_skulls32x32: 32 64
-:amanda/occult/occult_skulls32x32: 48 64
-:amanda/occult/occult_skulls32x32: 80 64
-:amanda/occult/occult_skulls32x32: -16 16
-:amanda/occult/occult_skulls32x32: -16 0
-:amanda/occult/occult_skulls32x32: -16 688
-:amanda/occult/occult_skulls32x32: -16 656
-:amanda/occult/occult_skulls32x32: -16 624
-:amanda/occult/occult_skulls32x32: 16 624
-:amanda/occult/occult_skulls32x32: 48 624
-:amanda/occult/occult_skulls32x32: 80 624
-:amanda/occult/occult_skulls32x32: 112 624
-:amanda/occult/occult_skulls32x32: 96 64
-:amanda/occult/occult_skulls32x32: 112 48
+:amanda/occult/wax64x64: 128 608 rrr
+:amanda/occult/wax64x64: 128 672 rrr
+:amanda/occult/wax64x64: 128 16 rrr
+:amanda/occult/wax64x64: 128 128 rrr
+:amanda/occult/wax64x64: 128 192 rrr
+:amanda/occult/wax64x64: 128 368 rrr
+:amanda/occult/wax64x64: 128 432 rrr
+:amanda/occult/wax64x64: 128 496 rrr
+:amanda/occult/wax32x48_cap_left_sheer: 144 80 rrr
+:amanda/occult/wax32x48_cap_left_sheer: 144 560 rrr
+:amanda/occult/skulls32x32: 32 304
+:amanda/occult/skulls32x32: 48 304
+:amanda/occult/skulls32x32: 80 304
+:amanda/occult/skulls32x32: -16 256
+:amanda/occult/skulls32x32: -16 240
+:amanda/occult/skulls32x32: -16 208
+:amanda/occult/skulls32x32: -16 176
+:amanda/occult/skulls32x32: -16 144
+:amanda/occult/skulls32x32: 16 144
+:amanda/occult/skulls32x32: 48 144
+:amanda/occult/skulls32x32: 80 144
+:amanda/occult/skulls32x32: 112 144
+:amanda/occult/skulls32x32: 96 304
+:amanda/occult/skulls32x32: 112 288
+:amanda/occult/wax_details_sunken_cube: 32 576 frr
+:amanda/occult/skulls32x32: 32 544
+:amanda/occult/skulls32x32: 48 544
+:amanda/occult/skulls32x32: 80 544
+:amanda/occult/skulls32x32: -16 496
+:amanda/occult/skulls32x32: -16 480
+:amanda/occult/skulls32x32: -16 448
+:amanda/occult/skulls32x32: -16 416
+:amanda/occult/skulls32x32: -16 384
+:amanda/occult/skulls32x32: 16 384
+:amanda/occult/skulls32x32: 48 384
+:amanda/occult/skulls32x32: 80 384
+:amanda/occult/skulls32x32: 112 384
+:amanda/occult/skulls32x32: 96 544
+:amanda/occult/skulls32x32: 112 528
+:amanda/occult/wax_details_sunken_cube: 48 96 frr
+:amanda/occult/wax_details_sunken_cube: 32 96 frr
+:amanda/occult/skulls32x32: 32 64
+:amanda/occult/skulls32x32: 48 64
+:amanda/occult/skulls32x32: 80 64
+:amanda/occult/skulls32x32: -16 16
+:amanda/occult/skulls32x32: -16 0
+:amanda/occult/skulls32x32: -16 688
+:amanda/occult/skulls32x32: -16 656
+:amanda/occult/skulls32x32: -16 624
+:amanda/occult/skulls32x32: 16 624
+:amanda/occult/skulls32x32: 48 624
+:amanda/occult/skulls32x32: 80 624
+:amanda/occult/skulls32x32: 112 624
+:amanda/occult/skulls32x32: 96 64
+:amanda/occult/skulls32x32: 112 48
 :amanda/steel/steel32x32.S: 448 704
 :amanda/steel/steel32x32.S: 448 464
 :amanda/steel/steel16x16.S: 448 528
@@ -1405,92 +1405,92 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel16x16.S: 0 576
 :amanda/steel/steel16x16.S: 0 560
 :amanda/steel/steel16x16.S: 0 544
-:amanda/occult/occult_skulls32x32: 112 368
-:amanda/occult/occult_skulls32x32: 112 128
+:amanda/occult/skulls32x32: 112 368
+:amanda/occult/skulls32x32: 112 128
 :amanda/steel/steel16x16.S: 128 128
-:amanda/occult/occult_skulls32x32: 112 608
+:amanda/occult/skulls32x32: 112 608
 :amanda/steel/steel16x16.S: 0 48
 :amanda/steel/steel16x16.S: 0 32
 :amanda/steel/steel16x16.S: 0 528
 :amanda/steel/steel16x16.S: 0 512
 :amanda/steel/steel16x16.S: 0 288
 :amanda/steel/steel16x16.S: 0 272
-:amanda/occult/occult_skulls32x32: 64 32
-:amanda/occult/occult_skulls32x32: 64 512
-:amanda/occult/occult_skulls32x32: 64 272
-:amanda/occult/occult_wax32x48: 864 208
-:amanda/occult/occult_wax32x48: 896 208
-:amanda/occult/occult_wax32x48: 800 208
-:amanda/occult/occult_wax32x48: 832 208
-:amanda/occult/occult_wax32x48: 736 208
-:amanda/occult/occult_wax32x48: 768 208
-:amanda/occult/occult_wax32x48: 704 208
-:amanda/occult/occult_wax32x48: 672 208
-:amanda/occult/occult_wax64x48: 800 112 rr
-:amanda/occult/occult_wax64x48: 736 112 rr
-:amanda/occult/occult_wax64x48: 672 112 rr
-:amanda/occult/occult_wax64x48: 800 160 rr
-:amanda/occult/occult_wax64x48: 736 160 rr
-:amanda/occult/occult_wax64x48: 672 160 rr
-:amanda/occult/occult_wax64x48: 672 240
-:amanda/occult/occult_wax64x48: 736 240
-:amanda/occult/occult_wax64x48: 800 240
-:amanda/occult/occult_wax64x48: 864 112 rr
-:amanda/occult/occult_wax64x48: 864 160 rr
-:amanda/occult/occult_wax64x48: 864 240
-:amanda/occult/occult_wax64x64: 608 128 rrr
-:amanda/occult/occult_wax64x64: 608 192 rrr
-:amanda/occult/occult_wax32x48_cap_left_sheer: 608 320 rrr
-:amanda/occult/occult_wax32x48: 864 448
-:amanda/occult/occult_wax32x48: 896 448
-:amanda/occult/occult_wax32x48: 800 448
-:amanda/occult/occult_wax32x48: 832 448
-:amanda/occult/occult_wax32x48: 736 448
-:amanda/occult/occult_wax32x48: 768 448
-:amanda/occult/occult_wax32x48: 704 448
-:amanda/occult/occult_wax32x48: 672 448
-:amanda/occult/occult_wax64x48: 800 352 rr
-:amanda/occult/occult_wax64x48: 736 352 rr
-:amanda/occult/occult_wax64x48: 672 352 rr
-:amanda/occult/occult_wax64x48: 800 400 rr
-:amanda/occult/occult_wax64x48: 736 400 rr
-:amanda/occult/occult_wax64x48: 672 400 rr
-:amanda/occult/occult_wax32x48_cap_left_sheer: 608 560 rrr
-:amanda/occult/occult_wax32x48_cap_left_sheer: 624 560 rrr
-:amanda/occult/occult_wax64x48: 672 480
-:amanda/occult/occult_wax64x48: 736 480
-:amanda/occult/occult_wax64x48: 800 480
-:amanda/occult/occult_wax64x48: 864 352 rr
-:amanda/occult/occult_wax64x48: 864 400 rr
-:amanda/occult/occult_wax64x48: 864 480
-:amanda/occult/occult_wax64x64: 608 368 rrr
-:amanda/occult/occult_wax64x64: 608 432 rrr
-:amanda/occult/occult_wax64x64: 608 496 rrr
-:amanda/occult/occult_wax32x48: 864 688
-:amanda/occult/occult_wax32x48: 896 688
-:amanda/occult/occult_wax32x48: 800 688
-:amanda/occult/occult_wax32x48: 832 688
-:amanda/occult/occult_wax32x48: 736 688
-:amanda/occult/occult_wax32x48: 768 688
-:amanda/occult/occult_wax32x48: 704 688
-:amanda/occult/occult_wax32x48: 672 688
-:amanda/occult/occult_wax64x48: 800 592 rr
-:amanda/occult/occult_wax64x48: 736 592 rr
-:amanda/occult/occult_wax64x48: 672 592 rr
-:amanda/occult/occult_wax64x48: 800 640 rr
-:amanda/occult/occult_wax64x48: 736 640 rr
-:amanda/occult/occult_wax64x48: 672 640 rr
-:amanda/occult/occult_wax32x48_cap_left_sheer: 608 80 rrr
-:amanda/occult/occult_wax32x48_cap_left_sheer: 624 80 rrr
-:amanda/occult/occult_wax64x48: 672 0
-:amanda/occult/occult_wax64x48: 736 0
-:amanda/occult/occult_wax64x48: 800 0
-:amanda/occult/occult_wax64x48: 864 592 rr
-:amanda/occult/occult_wax64x48: 864 640 rr
-:amanda/occult/occult_wax64x48: 864 0
-:amanda/occult/occult_wax64x64: 608 608 rrr
-:amanda/occult/occult_wax64x64: 608 672 rrr
-:amanda/occult/occult_wax64x64: 608 16 rrr
+:amanda/occult/skulls32x32: 64 32
+:amanda/occult/skulls32x32: 64 512
+:amanda/occult/skulls32x32: 64 272
+:amanda/occult/wax32x48: 864 208
+:amanda/occult/wax32x48: 896 208
+:amanda/occult/wax32x48: 800 208
+:amanda/occult/wax32x48: 832 208
+:amanda/occult/wax32x48: 736 208
+:amanda/occult/wax32x48: 768 208
+:amanda/occult/wax32x48: 704 208
+:amanda/occult/wax32x48: 672 208
+:amanda/occult/wax64x48: 800 112 rr
+:amanda/occult/wax64x48: 736 112 rr
+:amanda/occult/wax64x48: 672 112 rr
+:amanda/occult/wax64x48: 800 160 rr
+:amanda/occult/wax64x48: 736 160 rr
+:amanda/occult/wax64x48: 672 160 rr
+:amanda/occult/wax64x48: 672 240
+:amanda/occult/wax64x48: 736 240
+:amanda/occult/wax64x48: 800 240
+:amanda/occult/wax64x48: 864 112 rr
+:amanda/occult/wax64x48: 864 160 rr
+:amanda/occult/wax64x48: 864 240
+:amanda/occult/wax64x64: 608 128 rrr
+:amanda/occult/wax64x64: 608 192 rrr
+:amanda/occult/wax32x48_cap_left_sheer: 608 320 rrr
+:amanda/occult/wax32x48: 864 448
+:amanda/occult/wax32x48: 896 448
+:amanda/occult/wax32x48: 800 448
+:amanda/occult/wax32x48: 832 448
+:amanda/occult/wax32x48: 736 448
+:amanda/occult/wax32x48: 768 448
+:amanda/occult/wax32x48: 704 448
+:amanda/occult/wax32x48: 672 448
+:amanda/occult/wax64x48: 800 352 rr
+:amanda/occult/wax64x48: 736 352 rr
+:amanda/occult/wax64x48: 672 352 rr
+:amanda/occult/wax64x48: 800 400 rr
+:amanda/occult/wax64x48: 736 400 rr
+:amanda/occult/wax64x48: 672 400 rr
+:amanda/occult/wax32x48_cap_left_sheer: 608 560 rrr
+:amanda/occult/wax32x48_cap_left_sheer: 624 560 rrr
+:amanda/occult/wax64x48: 672 480
+:amanda/occult/wax64x48: 736 480
+:amanda/occult/wax64x48: 800 480
+:amanda/occult/wax64x48: 864 352 rr
+:amanda/occult/wax64x48: 864 400 rr
+:amanda/occult/wax64x48: 864 480
+:amanda/occult/wax64x64: 608 368 rrr
+:amanda/occult/wax64x64: 608 432 rrr
+:amanda/occult/wax64x64: 608 496 rrr
+:amanda/occult/wax32x48: 864 688
+:amanda/occult/wax32x48: 896 688
+:amanda/occult/wax32x48: 800 688
+:amanda/occult/wax32x48: 832 688
+:amanda/occult/wax32x48: 736 688
+:amanda/occult/wax32x48: 768 688
+:amanda/occult/wax32x48: 704 688
+:amanda/occult/wax32x48: 672 688
+:amanda/occult/wax64x48: 800 592 rr
+:amanda/occult/wax64x48: 736 592 rr
+:amanda/occult/wax64x48: 672 592 rr
+:amanda/occult/wax64x48: 800 640 rr
+:amanda/occult/wax64x48: 736 640 rr
+:amanda/occult/wax64x48: 672 640 rr
+:amanda/occult/wax32x48_cap_left_sheer: 608 80 rrr
+:amanda/occult/wax32x48_cap_left_sheer: 624 80 rrr
+:amanda/occult/wax64x48: 672 0
+:amanda/occult/wax64x48: 736 0
+:amanda/occult/wax64x48: 800 0
+:amanda/occult/wax64x48: 864 592 rr
+:amanda/occult/wax64x48: 864 640 rr
+:amanda/occult/wax64x48: 864 0
+:amanda/occult/wax64x64: 608 608 rrr
+:amanda/occult/wax64x64: 608 672 rrr
+:amanda/occult/wax64x64: 608 16 rrr
 :amanda/steel/steel32x32.S: 928 224
 :amanda/steel/steel32x32.S: 928 128
 :amanda/steel/steel32x32.S: 960 128
@@ -1611,15 +1611,15 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel16x16.S: 128 16
 :amanda/steel/steel16x16.S: 128 32
 :amanda/steel/steel16x16.S: 128 48
-:amanda/occult/occult_skulls32x32: 128 176
-:amanda/occult/occult_skulls32x32: 128 656
-:amanda/occult/occult_skulls32x32: 128 416
-:amanda/occult/occult_skulls32x32: 144 432
-:amanda/occult/occult_skulls32x32: 144 192
-:amanda/occult/occult_skulls32x32: 144 672
-:amanda/occult/occult_skulls32x32: 128 688
-:amanda/occult/occult_skulls32x32: 128 208
-:amanda/occult/occult_skulls32x32: 128 448
+:amanda/occult/skulls32x32: 128 176
+:amanda/occult/skulls32x32: 128 656
+:amanda/occult/skulls32x32: 128 416
+:amanda/occult/skulls32x32: 144 432
+:amanda/occult/skulls32x32: 144 192
+:amanda/occult/skulls32x32: 144 672
+:amanda/occult/skulls32x32: 128 688
+:amanda/occult/skulls32x32: 128 208
+:amanda/occult/skulls32x32: 128 448
 :amanda/steel/steel16x16.S: 960 512
 :amanda/steel/steel16x16.S: 976 512
 :amanda/steel/steel16x16.S: 992 512
@@ -1666,7 +1666,7 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel16x16.S: 544 400
 :amanda/steel/steel16x16.S: 496 400
 :amanda/steel/steel32x32.S: 464 304
-:amanda/occult/occult_wax32x16_cap_left: 464 560 rrr
+:amanda/occult/wax32x16_cap_left: 464 560 rrr
 :amanda/steel/steel32x32.S: 464 544
 :amanda/steel/steel32x32.S: 464 64
 :amanda/steel/steel16x16.S: 944 304
@@ -1748,27 +1748,27 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel16x16.S: 160 528
 :amanda/steel/steel16x16.S: 144 512
 :amanda/steel/steel16x16.S: 144 32
-:amanda/occult/occult_skulls32x32: 896 288
-:amanda/occult/occult_skulls32x32: 880 256
-:amanda/occult/occult_skulls32x32: 896 224
-:amanda/occult/occult_skulls32x32: 896 528
-:amanda/occult/occult_skulls32x32: 880 496
-:amanda/occult/occult_skulls32x32: 896 464
-:amanda/occult/occult_skulls32x32: 896 48
-:amanda/occult/occult_skulls32x32: 880 16
-:amanda/occult/occult_skulls32x32: 896 704
-:amanda/occult/occult_skulls32x32: 880 704
-:amanda/occult/occult_skulls32x32: 880 464
-:amanda/occult/occult_skulls32x32: 880 224
-:amanda/occult/occult_skulls32x32: 864 48
-:amanda/occult/occult_skulls32x32: 864 288
-:amanda/occult/occult_skulls32x32: 864 528
-:amanda/occult/occult_skulls32x32: 896 448
-:amanda/occult/occult_skulls32x32: 896 208
-:amanda/occult/occult_skulls32x32: 896 688
-:amanda/occult/occult_skulls32x32: 848 544
-:amanda/occult/occult_skulls32x32: 848 304
-:amanda/occult/occult_skulls32x32: 848 64
+:amanda/occult/skulls32x32: 896 288
+:amanda/occult/skulls32x32: 880 256
+:amanda/occult/skulls32x32: 896 224
+:amanda/occult/skulls32x32: 896 528
+:amanda/occult/skulls32x32: 880 496
+:amanda/occult/skulls32x32: 896 464
+:amanda/occult/skulls32x32: 896 48
+:amanda/occult/skulls32x32: 880 16
+:amanda/occult/skulls32x32: 896 704
+:amanda/occult/skulls32x32: 880 704
+:amanda/occult/skulls32x32: 880 464
+:amanda/occult/skulls32x32: 880 224
+:amanda/occult/skulls32x32: 864 48
+:amanda/occult/skulls32x32: 864 288
+:amanda/occult/skulls32x32: 864 528
+:amanda/occult/skulls32x32: 896 448
+:amanda/occult/skulls32x32: 896 208
+:amanda/occult/skulls32x32: 896 688
+:amanda/occult/skulls32x32: 848 544
+:amanda/occult/skulls32x32: 848 304
+:amanda/occult/skulls32x32: 848 64
 :amanda/steel/steel16x16.S: 288 368
 :amanda/steel/steel16x16.S: 288 128
 :amanda/steel/steel16x16.S: 304 128
@@ -1778,8 +1778,8 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel16x16.S: 320 608
 :amanda/steel/steel16x16.S: 304 368
 :amanda/steel/steel16x16.S: 320 368
-:amanda/occult/occult_wax64x64: 608 256 rrr
-:amanda/occult/occult_wax32x48_cap_left_sheer: 624 320 rrr
+:amanda/occult/wax64x64: 608 256 rrr
+:amanda/occult/wax32x48_cap_left_sheer: 624 320 rrr
 :amanda/steel/steel16x16.S: 784 608
 :amanda/steel/steel16x16.S: 800 608
 :amanda/steel/steel16x16.S: 816 128
@@ -1788,7 +1788,7 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel16x16.S: 816 368
 :amanda/steel/steel16x16.S: 784 368
 :amanda/steel/steel16x16.S: 800 368
-:amanda/occult/occult_wax32x48_cap_left_sheer: 384 560 frrr
+:amanda/occult/wax32x48_cap_left_sheer: 384 560 frrr
 :amanda/steel/steel32x32.S: 1088 224
 :amanda/steel/steel16x16.S: 1088 128
 :amanda/steel/steel16x16.S: 1120 160
@@ -1936,18 +1936,18 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel16x16.S: 608 704
 :amanda/steel/steel16x16.S: 608 464
 :amanda/steel/steel16x16.S: 608 224
-:amanda/occult/occult_skulls32x32: -16 128
-:amanda/occult/occult_skulls32x32: 16 128
-:amanda/occult/occult_skulls32x32: 48 128
-:amanda/occult/occult_skulls32x32: 80 128
-:amanda/occult/occult_skulls32x32: -16 608
-:amanda/occult/occult_skulls32x32: 16 608
-:amanda/occult/occult_skulls32x32: 48 608
-:amanda/occult/occult_skulls32x32: 80 608
-:amanda/occult/occult_skulls32x32: -16 368
-:amanda/occult/occult_skulls32x32: 16 368
-:amanda/occult/occult_skulls32x32: 48 368
-:amanda/occult/occult_skulls32x32: 80 368
+:amanda/occult/skulls32x32: -16 128
+:amanda/occult/skulls32x32: 16 128
+:amanda/occult/skulls32x32: 48 128
+:amanda/occult/skulls32x32: 80 128
+:amanda/occult/skulls32x32: -16 608
+:amanda/occult/skulls32x32: 16 608
+:amanda/occult/skulls32x32: 48 608
+:amanda/occult/skulls32x32: 80 608
+:amanda/occult/skulls32x32: -16 368
+:amanda/occult/skulls32x32: 16 368
+:amanda/occult/skulls32x32: 48 368
+:amanda/occult/skulls32x32: 80 368
 :amanda/steel/steel_flange_right24x16.S: 784 592
 :amanda/steel/steel_flange_right24x16.S: 784 352
 :amanda/steel/steel_flange_right24x16.S: 784 112
@@ -1973,9 +1973,9 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel16x16.S: 896 128
 :amanda/steel/steel16x16.S: 912 128
 :amanda/steel/steel_flange_right24x16.S: 800 96
-:amanda/occult/occult_cube: 816 112 d
-:amanda/occult/occult_cube: 816 592 d
-:amanda/occult/occult_cube: 816 352 d
+:amanda/occult/cube: 816 112 d
+:amanda/occult/cube: 816 592 d
+:amanda/occult/cube: 816 352 d
 :amanda/steel/steel_flange_right24x16.S: 816 320
 :amanda/steel/steel_flange_right24x16.S: 816 560
 :amanda/steel/steel_flange_right24x16.S: 816 80
@@ -2006,36 +2006,36 @@ $ENGLISH Number Crunch (6p)
 :amanda/steel/steel32x32.S: 896 624
 :amanda/steel/steel32x32.S: 896 384
 :amanda/steel/steel32x32.S: 896 144
-:amanda/occult/occult_cube: 624 416 d
-:amanda/occult/occult_cube: 624 432 d
-:amanda/occult/occult_cube: 608 432 d
-:amanda/occult/occult_cube: 608 448 d
-:amanda/occult/occult_cube: 592 448 d
-:amanda/occult/occult_cube: 624 656 d
-:amanda/occult/occult_cube: 624 672 d
-:amanda/occult/occult_cube: 608 672 d
-:amanda/occult/occult_cube: 608 688 d
-:amanda/occult/occult_cube: 592 688 d
-:amanda/occult/occult_cube: 624 896 d
-:amanda/occult/occult_cube: 624 912 d
-:amanda/occult/occult_cube: 608 912 d
-:amanda/occult/occult_cube: 608 928 d
-:amanda/occult/occult_cube: 592 928 d
-:amanda/occult/occult_cube: 624 1136 d
-:amanda/occult/occult_cube: 624 1152 d
-:amanda/occult/occult_cube: 608 1152 d
-:amanda/occult/occult_cube: 608 1168 d
-:amanda/occult/occult_cube: 592 1168 d
-:amanda/occult/occult_cube: 624 1376 d
-:amanda/occult/occult_cube: 624 1392 d
-:amanda/occult/occult_cube: 608 1392 d
-:amanda/occult/occult_cube: 608 1408 d
-:amanda/occult/occult_cube: 592 1408 d
-:amanda/occult/occult_cube: 624 176 d
-:amanda/occult/occult_cube: 624 192 d
-:amanda/occult/occult_cube: 608 192 d
-:amanda/occult/occult_cube: 608 208 d
-:amanda/occult/occult_cube: 592 208 d
+:amanda/occult/cube: 624 416 d
+:amanda/occult/cube: 624 432 d
+:amanda/occult/cube: 608 432 d
+:amanda/occult/cube: 608 448 d
+:amanda/occult/cube: 592 448 d
+:amanda/occult/cube: 624 656 d
+:amanda/occult/cube: 624 672 d
+:amanda/occult/cube: 608 672 d
+:amanda/occult/cube: 608 688 d
+:amanda/occult/cube: 592 688 d
+:amanda/occult/cube: 624 896 d
+:amanda/occult/cube: 624 912 d
+:amanda/occult/cube: 608 912 d
+:amanda/occult/cube: 608 928 d
+:amanda/occult/cube: 592 928 d
+:amanda/occult/cube: 624 1136 d
+:amanda/occult/cube: 624 1152 d
+:amanda/occult/cube: 608 1152 d
+:amanda/occult/cube: 608 1168 d
+:amanda/occult/cube: 592 1168 d
+:amanda/occult/cube: 624 1376 d
+:amanda/occult/cube: 624 1392 d
+:amanda/occult/cube: 608 1392 d
+:amanda/occult/cube: 608 1408 d
+:amanda/occult/cube: 592 1408 d
+:amanda/occult/cube: 624 176 d
+:amanda/occult/cube: 624 192 d
+:amanda/occult/cube: 608 192 d
+:amanda/occult/cube: 608 208 d
+:amanda/occult/cube: 592 208 d
 :matt/marble/03: 560 312 rrr
 :matt/marble/11: 592 320
 :matt/marble/11: 592 304 rrr

@@ -1,6 +1,6 @@
 $BUILT 2014-07-05 18:14:05
 $AUTHOR Amanda
-$GERMAN Why is Lix set for German!?
+#INTENDED_NUMBER_OF_PLAYERS 4Why is Lix set for German!?
 $ENGLISH One For Me, One For You (4p)
 
 #SIZE_X 896

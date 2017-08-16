@@ -1,6 +1,6 @@
 $BUILT 2014-04-16 21:02:06
 $AUTHOR RubiX
-$GERMAN 
+#INTENDED_NUMBER_OF_PLAYERS 6
 $ENGLISH You are all coming with me!!(6p)
 
 #SIZE_X 1536

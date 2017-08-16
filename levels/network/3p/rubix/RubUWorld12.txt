@@ -1,6 +1,6 @@
 $BUILT                                             2011-09-04 22:58:16
 $AUTHOR                                                          RubiX
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 3
 $ENGLISH                                    Infernal towers [Low] (3p)
 
 #SIZE_X                                                           1104

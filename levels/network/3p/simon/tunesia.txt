@@ -1,6 +1,6 @@
 $BUILT                                             2012-03-06 04:18:44
 $AUTHOR                                                          Simon
-$GERMAN                                                               
+#INTENDED_NUMBER_OF_PLAYERS 3
 $ENGLISH                                                       Tunesia
 
 #SIZE_X                                                            960

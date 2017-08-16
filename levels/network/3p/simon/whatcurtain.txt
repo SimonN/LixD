@@ -1,6 +1,6 @@
 $BUILT 2014-07-06 06:48:46
 $AUTHOR Simon
-$GERMAN 
+#INTENDED_NUMBER_OF_PLAYERS 3
 $ENGLISH What's behind the curtain?
 
 #SIZE_X 768
