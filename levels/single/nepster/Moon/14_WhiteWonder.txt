@@ -1,4 +1,4 @@
-$BUILT 2017-03-08 18:38:28
+$BUILT 2017-08-09 01:51:20
 $AUTHOR Nepster
 $ENGLISH White Wonder
 
@@ -25,7 +25,7 @@ $ENGLISH White Wonder
 
 :simon/crystal.W: 199 352
 :simon/crystal.W: 519 352
-:simon/crystal.W: 617 352
+:simon/crystal.W: 619 352
 
 :matt/winter/05: 567 352 frr
 :matt/winter/03: 162 244 frrr

@@ -8,14 +8,14 @@ ramenmaster.txt
 landofrainbows.txt
 settingafundament.txt
 cantreachit.txt
-migration.txt
+slaughterhouse.txt
 downpour.txt
 timetochange.txt
 theabominablesnowlix.txt
 100waystodie.txt
 roundabout.txt
 decompression.txt
-pathtomahimah.txt
+forestoffears.txt
 anotherlixinthewall.txt
 littleminerpuzz2.txt
 tributetoflagpole.txt
@@ -32,7 +32,7 @@ allover.txt
 boxset.txt
 infrastructure.txt
 thepit.txt
-exitstageright.txt
+pathtomahiman.txt
 towerofbabel.txt
 snowjump.txt
 therunaround.txt

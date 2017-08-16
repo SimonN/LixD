@@ -1,4 +1,4 @@
-$BUILT 2016-09-18 16:13:36
+$BUILT 2017-08-09 03:02:02
 $AUTHOR Rubix
 $ENGLISH Bangarang Peter!
 
@@ -24,9 +24,9 @@ $ENGLISH Bangarang Peter!
 #JUMPER 4
 #EXPLODER2 0
 
-:matt/oriental/Hatch.H: 544 48 r
+:simon/oriental/hatch.H: 544 48 r
 
-:matt/oriental/Goal.G: 64 50
+:simon/oriental/goal.G: 64 50
 
 :simon/water_thin.W: 0 368
 :simon/water_thin.W: 48 368
@@ -36,45 +36,48 @@ $ENGLISH Bangarang Peter!
 :simon/water_thin.W: 240 368
 :simon/water_thin.W: 288 368
 :simon/water_thin.W: 336 368
-:simon/water_thin.W: 416 368
-:simon/water_thin.W: 464 368
-:simon/water_thin.W: 512 368
-:simon/water_thin.W: 560 368
-:simon/water_thin.W: 608 368
+:simon/water_thin.W: 384 368
+:simon/water_thin.W: 432 368
+:simon/water_thin.W: 480 368
+:simon/water_thin.W: 528 368
+:simon/water_thin.W: 576 368
+:simon/water_thin.W: 624 368
 
-:matt/oriental/leaves7: 424 74
-:matt/oriental/07: 0 336 r
-:matt/oriental/06: 80 128 frrr
-:matt/oriental/06: 80 176 r
-:matt/oriental/06: 80 224 r
-:matt/oriental/06: 32 176 r
-:matt/oriental/06: 32 224 frrr
-:matt/oriental/06: 32 80 r
-:matt/oriental/07: 138 272 r
-:matt/oriental/07: 200 272 r
-:matt/oriental/asiantemple: 102 96
-:matt/oriental/06: 32 128 frrr
-:matt/oriental/leaves8: 480 128
-:matt/oriental/bonsaitree: 400 0
-:matt/oriental/bonsaitree: 368 128
-:matt/oriental/07: 384 320 f
-:matt/oriental/06: 384 352 rr
-:matt/oriental/07: 320 320 rr
-:matt/oriental/06: 336 352 f
-:matt/oriental/07: 512 320 f
-:matt/oriental/06: 512 352 rr
-:matt/oriental/07: 448 320 rr
-:matt/oriental/06: 464 352 f
-:matt/oriental/07: 128 320 f
-:matt/oriental/06: 128 352 rr
-:matt/oriental/07: 64 320 rr
-:matt/oriental/06: 80 352 f
-:matt/oriental/07: 256 320 f
-:matt/oriental/06: 256 352 rr
-:matt/oriental/07: 192 320 rr
-:matt/oriental/06: 208 352 f
-:matt/oriental/07: 0 96 r
-:matt/oriental/07: 0 160 frrr
-:matt/oriental/07: 0 224 r
-:matt/oriental/07: 0 32 frrr
-:matt/oriental/07: 0 288 r
+:simon/oriental/bush7: 128 160
+:simon/oriental/leaf2: 70 188
+:simon/oriental/branch6: 48 132 rrr
+:simon/oriental/bush2: 32 120
+:simon/oriental/bush3: 108 130
+:simon/oriental/leaf4: 108 174 r
+:simon/oriental/branch5: 92 142 fr
+:simon/oriental/bush5: 88 156
+:simon/oriental/bush2: 476 122
+:simon/oriental/bush7: 424 74
+:simon/oriental/07: 0 336 r
+:simon/oriental/07: 138 272 r
+:simon/oriental/07: 200 272 r
+:simon/oriental/temple: 102 96
+:simon/oriental/bonsai: 400 0
+:simon/oriental/06: 384 352 rr
+:simon/oriental/07: 384 320 f
+:simon/oriental/06: 336 352 f
+:simon/oriental/07: 320 320 rr
+:simon/oriental/06: 512 352 rr
+:simon/oriental/07: 512 320 f
+:simon/oriental/06: 464 352 f
+:simon/oriental/07: 448 320 rr
+:simon/oriental/06: 128 352 rr
+:simon/oriental/07: 128 320 f
+:simon/oriental/06: 80 352 f
+:simon/oriental/07: 64 320 rr
+:simon/oriental/06: 256 352 rr
+:simon/oriental/07: 256 320 f
+:simon/oriental/06: 208 352 f
+:simon/oriental/07: 192 320 rr
+:simon/oriental/bush4: 40 126
+:simon/oriental/07: 0 96 r
+:simon/oriental/07: 0 160 frrr
+:simon/oriental/07: 0 224 r
+:simon/oriental/07: 0 32 frrr
+:simon/oriental/07: 0 288 r
+:simon/oriental/bonsai: 362 128

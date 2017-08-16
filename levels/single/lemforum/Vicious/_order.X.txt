@@ -7,12 +7,12 @@ changing.txt
 thelastlaugh.txt
 elixir.txt
 lixsterquadrille.txt
-lixesinarms.txt
+onelixshowdown.txt
 downamong.txt
 laser1.txt
-cuberreplacement.txt
+danceswithlixes.txt
 fiveforfighting.txt
-bulldozer.txt
+evacuatethesinking.txt
 thegr8escape.txt
 trapeze.txt
 toccata.txt
@@ -28,9 +28,9 @@ waltzincsharp.txt
 waitwhyisthereatree.txt
 gethype.txt
 allaboardthepain.txt
-bashingandbuilding.txt
+tinkertailorsoldier.txt
 survivalofthecraft.txt
-hellfire.txt
+theresa.txt
 heedthetrafficlight.txt
 halfwaydownthestairs.txt
 dreamtheimpossible.txt

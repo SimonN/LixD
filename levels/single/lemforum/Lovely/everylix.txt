@@ -1,0 +1,139 @@
+$BUILT 2017-06-21 15:12:12
+$AUTHOR geoo
+$ENGLISH Every Lix for Herself!
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 50
+#REQUIRED 20
+#SPAWN_INTERVAL 12
+
+#WALKER 10
+#CLIMBER 10
+#FLOATER 10
+#JUMPER 10
+#BATTER 10
+#EXPLODER2 0
+
+:simon/oriental/hatch.H: 280 36
+:simon/oriental/hatch.H: 108 10 r
+:simon/oriental/hatch.H: 518 34
+
+:simon/oriental/goal.G: 16 216
+:simon/oriental/goal.G: 560 216
+
+:simon/oriental/pebbles5: 122 308
+:simon/oriental/pebble3: 468 296 r
+:simon/oriental/pebbles6: 84 346
+:simon/oriental/pebbles5: 134 294
+:simon/oriental/pebbles6: 118 324
+:simon/oriental/pebbles6: 426 296
+:simon/oriental/pebbles6: 496 368
+:simon/oriental/pebbles5: 462 362
+:simon/oriental/pebbles6: 464 320
+:simon/oriental/pebbles5: 462 296
+:simon/oriental/08: 416 344
+:simon/oriental/02b: 416 296
+:simon/oriental/02b: 192 296
+:simon/oriental/leaf2: 487 223 f
+$BEGIN_TILE_GROUP 0
+:matt/earth/23: 44 46
+:matt/earth/26: 24 30
+:simon/oriental/leaf1: 32 20 r
+:simon/oriental/leaf3: 0 8 f
+:simon/oriental/leaf3: 48 18 rr
+:matt/earth/15: 8 30 frr
+:matt/earth/13: 76 0 rrrd
+:matt/earth/12: 84 34 d
+$END_TILE_GROUP
+:Group-0: 418 208
+:simon/oriental/culm_long: 298 96 fr
+:simon/oriental/culm_long: 248 144 r
+:simon/oriental/culm_long: 298 192 fr
+:simon/oriental/culm_long: 248 240 r
+:simon/oriental/01: 216 220
+:simon/oriental/01: 216 124
+:simon/oriental/01: 394 172
+:simon/oriental/01: 394 76
+:simon/oriental/branch4: 358 320 frr
+:simon/oriental/bush1: 376 314
+:simon/oriental/branch3: 294 320 frr
+:simon/oriental/branch6: 310 340 rr
+:simon/oriental/bush2: 358 374
+:simon/oriental/bush3: 310 330
+:simon/oriental/branch4: 230 332
+:simon/oriental/bush4: 206 314
+:simon/oriental/bush5: 278 374
+:simon/oriental/branch7: 244 366
+:simon/oriental/bush6: 236 352
+:simon/oriental/branch4: 216 386
+:simon/oriental/pebbles6: 90 294
+:simon/oriental/08: 144 344
+:simon/oriental/bush7: 206 380
+:simon/oriental/branch4: 266 382 rrr
+:simon/oriental/leaf2: 416 112 frrr
+:matt/earth/25: 442 164
+:simon/oriental/leaf1: 464 124 frr
+:matt/earth/12: 440 128 rrr
+:simon/oriental/leaf2: 190 144 rrr
+:simon/oriental/leaf3: 168 160 rr
+:simon/oriental/leaf3: 124 174 f
+:simon/oriental/branch4: 118 196 frr
+:matt/earth/24: 142 196
+:simon/oriental/leaf1: 134 160
+:matt/earth/12: 140 174
+:simon/oriental/culm_long: -2 106 rr
+:simon/oriental/leaf3: 18 -6 frr
+:simon/oriental/culm_half1: -5 31
+:simon/oriental/leaf2: 0 -2
+:simon/oriental/culm_half1: -1 38
+:simon/oriental/culm_long: -2 14 rr
+:simon/oriental/culm_long: 634 106 rr
+:simon/oriental/leaf1: 620 28
+:simon/oriental/culm_long: 634 14 rr
+:simon/oriental/culm_long: -2 -4 rrr
+:simon/oriental/culm_long: 186 -4 rrr
+:simon/oriental/culm_long: 278 -4 rrr
+:simon/oriental/leaf2: 586 0 frr
+:simon/oriental/culm_long: 466 -4 rrr
+:simon/oriental/culm_long: 558 -4 rrr
+:simon/oriental/leaf2: 584 18 frr
+:simon/oriental/leaf3: 604 2 rrr
+:simon/oriental/culm_long: 72 70 fr
+:simon/oriental/culm_half1: 499 74
+:simon/oriental/culm_long: 510 94 fr
+:simon/oriental/01: 478 74
+:simon/oriental/culm_long: 94 -4 rrr
+:simon/oriental/culm_long: 374 -4 rrr
+:simon/oriental/culm_long: -2 202 rr
+:simon/oriental/culm_long: -2 -82 rr
+:simon/oriental/culm_long: 634 202 rr
+:simon/oriental/culm_long: 634 -82 rr
+:simon/oriental/pebbles6: 528 304
+:simon/oriental/pebbles6: 592 372
+:simon/oriental/pebbles3: 616 368
+:simon/oriental/pebbles6: 576 352
+:simon/oriental/pebbles6: 496 304
+:simon/oriental/pebbles6: 608 304
+:simon/oriental/pebbles5: 548 290
+:simon/oriental/pebbles4: 580 292
+:simon/oriental/pebbles3: 538 294
+:simon/oriental/pebbles5: 586 288 frr
+:simon/oriental/pebbles6: 528 348
+:simon/oriental/pebbles5: 546 328
+:simon/oriental/pebbles6: -20 292
+:simon/oriental/pebbles6: 12 340
+:simon/oriental/pebbles6: 50 296
+:simon/oriental/pebbles2: 128 294
+:simon/oriental/pebble1: 76 294
+:simon/oriental/pebbles5: 14 290
+:simon/oriental/pebbles5: 38 362
+:simon/oriental/pebbles6: -22 352
+:simon/oriental/pebbles5: 28 328
+:simon/oriental/pebbles3: 10 292
+:simon/oriental/pebble2: 54 292
+:simon/oriental/culm_half1: 274 96 fr
+:simon/oriental/culm_end: 168 70 r
+:simon/oriental/culm_long: 606 94 fr

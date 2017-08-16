@@ -1,4 +1,4 @@
-$BUILT 2016-07-16 19:22:26
+$BUILT 2017-08-10 16:08:06
 $AUTHOR Michael S. Repton
 $ENGLISH Down Among the Dead Lix
 
@@ -75,9 +75,8 @@ $ENGLISH Down Among the Dead Lix
 :geoo/sandstone/ebony/h16b: 464 224
 :geoo/sandstone/ebony/h16c: 496 224
 :geoo/sandstone/ebony/h16a: 528 160
-:geoo/sandstone/ebony/h16a: 320 320
-:geoo/sandstone/ebony/h16b: 352 320
-:geoo/sandstone/ebony/h16c: 384 320
+:geoo/sandstone/ebony/h16b: 336 320
+:geoo/sandstone/ebony/h16c: 368 320
 :geoo/construction/stairsbrick_ru_32: 256 480
 :geoo/sandstone/pillar_32: 240 480
 :geoo/sandstone/pillar_32: 240 512
@@ -186,7 +185,7 @@ $ENGLISH Down Among the Dead Lix
 :geoo/sandstone/ebony/h16a: 1040 96
 :geoo/sandstone/ebony/h16b: 880 96
 :geoo/sandstone/ebony/h16a: 848 96
-:geoo/sandstone/ebony/h16a: 416 320
+:geoo/sandstone/ebony/h16a: 400 320
 :geoo/sandstone/pillar_top_jaggedr: 128 64 f
 :geoo/sandstone/pillar_32: 128 0
 :geoo/sandstone/pillar_32: 128 32

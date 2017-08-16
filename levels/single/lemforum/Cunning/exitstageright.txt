@@ -1,0 +1,162 @@
+$BUILT 2017-07-30 14:50:27
+$AUTHOR mobius
+$ENGLISH Exit, Stage Right
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 20
+#REQUIRED 17
+#SPAWN_INTERVAL 8
+
+#FLOATER 2
+#EXPLODER 1
+#BLOCKER 1
+#PLATFORMER 1
+#BASHER 1
+#DIGGER 1
+#JUMPER 1
+
+:matt/carnival/Hatch.H: 344 40
+
+:matt/carnival/Goal.G: 566 288
+
+:raymanni/lab/shower.T: 376 120
+
+:simon/crystal.W: 496 352
+:simon/crystal.W: 96 352
+:simon/crystal.W: 48 352
+:simon/crystal.W: 544 352
+:simon/crystal.W: 592 352
+:simon/crystal.W: 640 352
+:simon/crystal.W: 304 352
+:simon/crystal.W: 352 352
+:simon/crystal.W: 400 352
+:simon/crystal.W: 448 352
+:simon/crystal.W: 0 352
+:geoo/construction/sawblade.F: 402 296
+:geoo/construction/sawblade.F: 284 216
+:geoo/construction/sawblade.F: 302 234
+:geoo/construction/sawblade.F: 266 234
+
+:matt/carnival/58: 240 184
+:matt/carnival/55: 536 120
+:matt/carnival/55: 536 128 d
+:matt/carnival/25: 144 344
+:matt/carnival/25: 208 344
+:matt/carnival/25: 0 96
+:matt/carnival/25: 0 32
+:matt/carnival/25: 576 144
+:matt/carnival/12: 64 144
+:matt/carnival/12: 80 144
+:matt/carnival/12: 96 144
+:matt/carnival/12: 112 144
+:matt/carnival/12: 48 0
+:matt/carnival/12: 64 0
+:matt/carnival/12: 80 0
+:matt/carnival/12: 96 0
+:matt/carnival/12: 112 0
+:matt/carnival/12: 128 0
+:matt/carnival/12: 144 0
+:matt/carnival/12: 160 0
+:matt/carnival/12: 176 0
+:matt/carnival/12: 192 0
+:matt/carnival/12: 208 0
+:matt/carnival/12: 224 0
+:matt/carnival/12: 240 0
+:matt/carnival/12: 256 0
+:matt/carnival/12: 272 0
+:matt/carnival/12: 288 0
+:matt/carnival/12: 304 0
+:matt/carnival/12: 320 0
+:matt/carnival/12: 336 0
+:matt/carnival/12: 352 0
+:matt/carnival/12: 368 0
+:matt/carnival/12: 384 0
+:matt/carnival/12: 400 0
+:matt/carnival/12: 416 0
+:matt/carnival/12: 432 0
+:matt/carnival/12: 448 0
+:matt/carnival/12: 464 0
+:matt/carnival/12: 480 0
+:matt/carnival/12: 496 0
+:matt/carnival/12: 512 0
+:matt/carnival/12: 528 0
+:matt/carnival/12: 544 0
+:matt/carnival/12: 560 0
+:matt/carnival/12: 576 0
+:matt/carnival/12: 592 0
+:matt/carnival/12: 608 0
+:matt/carnival/12: 624 0
+:matt/carnival/12: 640 0
+:matt/carnival/12: 656 0
+:matt/carnival/12: 672 0
+:matt/carnival/25: 272 336
+:geoo/steel/64x64.S: 272 336
+:matt/carnival/07: 608 80
+:matt/carnival/54: 442 352
+:matt/carnival/54: 506 352
+:matt/carnival/54: 570 352
+:matt/carnival/54: 442 356 d
+:matt/carnival/54: 506 356 d
+:matt/carnival/54: 570 356 d
+:matt/carnival/54: 336 336
+:matt/carnival/26: 272 272
+:matt/carnival/55: 240 120
+:matt/carnival/55: 240 128 d
+:matt/carnival/24: 576 16
+:matt/carnival/24: 144 344
+:matt/carnival/27: 0 32
+:matt/carnival/06: 608 208
+:matt/carnival/24: 240 88 d
+:matt/carnival/33: 96 16
+:matt/carnival/33: 192 16 frr
+:matt/carnival/33: 384 16
+:matt/carnival/33: 480 16 frr
+:matt/carnival/25: 464 168 d
+:matt/carnival/25: 432 168 d
+:matt/carnival/58: 272 184
+:matt/carnival/58: 240 192 d
+:matt/carnival/46: 248 160
+:matt/carnival/50: 216 128
+:matt/carnival/09: 216 160
+:matt/carnival/14: 200 128 d
+:matt/carnival/13: 64 272
+:matt/carnival/15: 200 208
+:matt/carnival/15: 184 208
+:matt/carnival/15: 168 208
+:matt/carnival/15: 216 192
+:matt/carnival/15: 216 208
+:matt/carnival/12: 0 16
+:matt/carnival/12: 16 16
+:matt/carnival/12: 32 16
+:matt/carnival/12: 48 16
+:matt/carnival/13: 80 272
+:matt/carnival/15: 152 208
+:matt/carnival/15: 136 208
+:matt/carnival/15: 120 208
+:matt/carnival/12: 128 144
+:matt/carnival/12: 0 0
+:matt/carnival/12: 16 0
+:matt/carnival/12: 32 0
+:matt/carnival/26: 80 344
+:matt/carnival/15: 104 208
+:matt/carnival/15: 88 208
+:matt/carnival/13: 96 272
+:matt/carnival/13: 112 272
+:matt/carnival/13: 128 272
+:matt/carnival/13: 144 272
+:matt/carnival/13: 160 272
+:matt/carnival/12: 96 144
+:matt/carnival/12: 112 144
+:matt/carnival/12: 128 144
+:matt/carnival/12: 144 144
+:matt/carnival/12: 160 144
+:matt/carnival/03: 496 184 d
+:matt/carnival/06: 0 160
+:matt/carnival/04: 0 224
+:matt/carnival/13: 32 272
+:matt/carnival/13: 48 272
+:matt/carnival/15: 72 208
+:matt/carnival/15: 56 208

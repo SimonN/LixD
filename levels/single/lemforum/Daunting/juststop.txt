@@ -1,4 +1,4 @@
-$BUILT 2016-07-22 01:13:54
+$BUILT 2017-08-09 00:51:23
 $AUTHOR Insane Steve
 $ENGLISH Just Stop the Bleeding
 
@@ -40,7 +40,7 @@ $ENGLISH Just Stop the Bleeding
 :simon/water.W: 1072 360
 :simon/water.W: 1024 360
 :simon/water.W: 976 360
-:simon/water.W: 928 365
+:simon/water.W: 928 360
 :simon/water.W: 880 360
 :proxima/flame.F: 1276 120
 :proxima/flame.F: 737 30
@@ -51,12 +51,12 @@ $ENGLISH Just Stop the Bleeding
 :simon/acid.W: 2768 352
 :simon/acid.W: 2816 352
 :simon/acid.W: 2864 352
-:simon/acid.W: 2911 346
+:simon/acid.W: 2912 352
 :simon/acid.W: 2960 352
 :simon/acid.W: 3008 352
 :simon/acid.W: 3056 352
 :simon/acid.W: 3104 352
-:simon/acid.W: 3146 310
+:simon/acid.W: 3152 352
 :proxima/flame.F: 538 59
 :proxima/flame.F: 26 98
 :proxima/flame.F: 1218 332
@@ -488,7 +488,7 @@ $ENGLISH Just Stop the Bleeding
 :matt/earth/20: 1638 -6
 :matt/earth/07b: 1882 383
 :matt/earth/18: 2076 22
-:matt/oriental/02: 2938 74
+:simon/oriental/02: 2938 74
 :matt/underworld/09b: 2902 111
 :matt/underworld/09a: 1131 265
 :matt/underworld/09b: 99 292
@@ -498,7 +498,7 @@ $ENGLISH Just Stop the Bleeding
 :matt/underworld/00: 1079 226
 :matt/goldmine/plankdiag: 1108 168
 :matt/goldmine/plankdiag: 1139 155
-:matt/oriental/10: 826 120
+:simon/oriental/10: 826 120
 :matt/marble/03e_2: 1526 221
 :matt/marble/02e_2: 1922 278
 :matt/underworld/09b: 2870 139
@@ -508,7 +508,7 @@ $ENGLISH Just Stop the Bleeding
 :matt/bricks/01b: 1879 277
 :matt/carnival/17: 2052 153
 :proxima/tile/pink5: 325 40
-:amanda/occult/occult_scrawl_pentagram: 330 45
+:amanda/occult/scrawl_pentagram: 330 45
 :matt/bricks/01a: 1426 110 rrr
 :matt/earth/27: 1406 234 rrrd
 :matt/goldmine/crate32: 1522 362

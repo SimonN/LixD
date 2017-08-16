@@ -1,40 +1,31 @@
-$BUILT 2014-02-28 15:28:40
+$BUILT 2017-06-14 19:28:53
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH Bridge over troubled water
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1850
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 480
 #START_Y 380
 #BACKGROUND_RED 0
 #BACKGROUND_GREEN 80
 #BACKGROUND_BLUE 160
 
-#SECONDS 0
 #INITIAL 40
 #REQUIRED 39
 #SPAWN_INTERVAL 53
-#SPAWN_INTERVAL_FAST 4
 
 #CLIMBER 1
-#JUMPER 2
-#PLATFORMER 5
 #BUILDER 2
+#PLATFORMER 5
 #BASHER 2
+#JUMPER 2
 #CUBER 1
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#EXPLODER2 0
 
-:matt/oriental/Hatch.H: 618 274
+:simon/oriental/hatch.H: 626 272
 
-:matt/oriental/Goal.G: 1232 258
+:simon/oriental/goal.G: 1232 258
 
 :matt/water.W: 1104 384
 :matt/water.W: 1136 384
@@ -71,105 +62,120 @@ $ENGLISH Bridge over troubled water
 :matt/water.W: 288 384
 :matt/water.W: 320 384
 
+:simon/oriental/bush2: 170 346
+:simon/oriental/leaf5: 1478 216 rr
+:simon/oriental/leaf2: 1490 200
+:simon/oriental/leaf4: 1482 126 rrr
+:simon/oriental/leaf2: 1474 186
+:simon/oriental/leaf3: 1452 216 rrr
+:simon/oriental/leaf1: 1443 200 frrr
+:simon/oriental/leaf6: 460 182 rr
+:simon/oriental/leaf5: 1462 185 rr
+:simon/oriental/leaf2: 1473 171
+:simon/oriental/leaf5: 1492 150 r
+:simon/oriental/leaf3: 1442 137 r
+:simon/oriental/leaf2: 420 233 r
+:simon/oriental/leaf4: 403 163 rr
+:simon/oriental/leaf5: 424 149
+:simon/oriental/leaf3: 409 193
+:simon/oriental/leaf3: 437 217 frrr
+:simon/oriental/fat_d_long: 393 142 frr
+:simon/oriental/fat_d_long: 1418 120
 :matt/goldmine/plank: 1024 64 r
-:matt/oriental/04: 1216 48
+:simon/oriental/04: 1216 48
 :matt/goldmine/plank: 1120 64 r
 :matt/goldmine/plank: 1024 128 r
 :matt/goldmine/plank: 832 48 r
-:matt/oriental/08: 480 112
-:matt/oriental/08: 480 176
-:matt/oriental/08: 480 240
-:matt/oriental/08: 480 304
-:matt/oriental/08: 480 368
-:matt/oriental/08: 544 112
-:matt/oriental/08: 544 176
-:matt/oriental/08: 544 240
-:matt/oriental/08: 544 304
-:matt/oriental/08: 544 368
-:matt/oriental/08: 480 48
-:matt/oriental/08: 544 48
-:matt/oriental/bridge_straight: 618 46 rd
-:matt/oriental/bridge_straight: 618 142 rd
-:matt/oriental/bridge_straight: 618 238 rd
-:matt/oriental/bridge_straight: 618 334 rd
-:matt/oriental/08: 614 336
-:matt/oriental/08: 686 336
+:simon/oriental/08: 480 112
+:simon/oriental/08: 480 176
+:simon/oriental/08: 480 240
+:simon/oriental/08: 480 304
+:simon/oriental/08: 480 368
+:simon/oriental/08: 544 112
+:simon/oriental/08: 544 176
+:simon/oriental/08: 544 240
+:simon/oriental/08: 544 304
+:simon/oriental/08: 544 368
+:simon/oriental/08: 480 48
+:simon/oriental/08: 544 48
+:simon/oriental/08: 614 336
+:simon/oriental/08: 686 336
 :matt/goldmine/plank: 832 304 r
 :matt/goldmine/plank: 928 240 r
 :matt/goldmine/plank: 1024 304 r
 :matt/goldmine/plank: 1120 336 r
-:matt/oriental/08: 1216 336
-:matt/oriental/08: 1286 82
-:matt/oriental/08: 1286 146
-:matt/oriental/08: 1286 210
-:matt/oriental/08: 1286 274
-:matt/oriental/08: 1286 338
-:matt/oriental/08: 1350 82
-:matt/oriental/08: 1350 146
-:matt/oriental/08: 1350 210
-:matt/oriental/08: 1350 274
-:matt/oriental/08: 1350 338
-:matt/oriental/08: 1286 18
-:matt/oriental/08: 1350 18
-:matt/oriental/04: 1184 48
-:matt/oriental/04: 1152 48
-:matt/oriental/04: 1120 48
-:matt/oriental/04: 1088 48
-:matt/oriental/04: 1056 48
-:matt/oriental/04: 1024 48
-:matt/oriental/04: 992 48
-:matt/oriental/04: 960 48
-:matt/oriental/04: 928 48
-:matt/oriental/04: 896 48
-:matt/oriental/04: 864 48
-:matt/oriental/04: 832 48
-:matt/oriental/04: 800 48
-:matt/oriental/04: 768 48
-:matt/oriental/04: 736 48
-:matt/oriental/04: 704 48
-:matt/oriental/04: 672 48
+:simon/oriental/08: 1216 336
+:simon/oriental/08: 1286 82
+:simon/oriental/08: 1286 146
+:simon/oriental/08: 1286 210
+:simon/oriental/08: 1286 274
+:simon/oriental/08: 1286 338
+:simon/oriental/08: 1350 82
+:simon/oriental/08: 1350 146
+:simon/oriental/08: 1350 210
+:simon/oriental/08: 1350 274
+:simon/oriental/08: 1350 338
+:simon/oriental/08: 1286 18
+:simon/oriental/08: 1350 18
+:simon/oriental/04: 1184 48
+:simon/oriental/04: 1152 48
+:simon/oriental/04: 1120 48
+:simon/oriental/04: 1088 48
+:simon/oriental/04: 1056 48
+:simon/oriental/04: 1024 48
+:simon/oriental/04: 992 48
+:simon/oriental/04: 960 48
+:simon/oriental/04: 928 48
+:simon/oriental/04: 896 48
+:simon/oriental/04: 864 48
+:simon/oriental/04: 832 48
+:simon/oriental/04: 800 48
+:simon/oriental/04: 768 48
+:simon/oriental/04: 736 48
+:simon/oriental/04: 704 48
+:simon/oriental/04: 672 48
 :matt/goldmine/plank: 928 144 r
-:matt/oriental/10: 448 48 rrr
-:matt/oriental/10: 416 80 rrr
-:matt/oriental/10: 384 112 rrr
-:matt/oriental/10: 352 144 rrr
-:matt/oriental/10: 320 176 rrr
-:matt/oriental/10: 288 208 rrr
-:matt/oriental/10: 256 240 rrr
-:matt/oriental/10: 224 272 rrr
-:matt/oriental/08: 408 336
-:matt/oriental/08: 334 336
-:matt/oriental/bonsaitree: -23 210
-:matt/oriental/03: 64 384
-:matt/oriental/03: 32 384
-:matt/oriental/03: 0 384
-:matt/oriental/10: 1424 16
-:matt/oriental/10: 1456 48
-:matt/oriental/10: 1488 80
-:matt/oriental/10: 1520 112
-:matt/oriental/10: 1552 144
-:matt/oriental/10: 1584 176
-:matt/oriental/10: 1616 208
-:matt/oriental/10: 1648 240
-:matt/oriental/08: 1420 340
-:matt/oriental/08: 1490 342
-:matt/oriental/bonsaitree: 1695 192
-:matt/oriental/03: 1807 384
-:matt/oriental/03: 1775 384
-:matt/oriental/03: 1743 384
-:matt/oriental/10: 256 272 r
-:matt/oriental/10: 288 240 r
-:matt/oriental/10: 320 208 r
-:matt/oriental/10: 352 176 r
-:matt/oriental/10: 384 144 r
-:matt/oriental/10: 416 112 r
-:matt/oriental/10: 448 80 r
-:matt/oriental/10: 1424 48 rr
-:matt/oriental/10: 1456 80 rr
-:matt/oriental/10: 1488 112 rr
-:matt/oriental/10: 1520 144 rr
-:matt/oriental/10: 1552 176 rr
-:matt/oriental/10: 1584 208 rr
-:matt/oriental/10: 1616 240 rr
+:simon/oriental/10: 448 48 rrr
+:simon/oriental/10: 416 80 rrr
+:simon/oriental/10: 384 112 rrr
+:simon/oriental/10: 352 144 rrr
+:simon/oriental/10: 320 176 rrr
+:simon/oriental/10: 288 208 rrr
+:simon/oriental/10: 256 240 rrr
+:simon/oriental/10: 224 272 rrr
+:simon/oriental/08: 408 336
+:simon/oriental/08: 334 336
+:simon/oriental/bonsai: -23 210
+:simon/oriental/03: 64 384
+:simon/oriental/03: 32 384
+:simon/oriental/03: 0 384
+:simon/oriental/10: 1424 16
+:simon/oriental/10: 1456 48
+:simon/oriental/10: 1488 80
+:simon/oriental/10: 1520 112
+:simon/oriental/10: 1552 144
+:simon/oriental/10: 1584 176
+:simon/oriental/10: 1616 208
+:simon/oriental/10: 1648 240
+:simon/oriental/08: 1420 340
+:simon/oriental/08: 1490 342
+:simon/oriental/bonsai: 1695 192
+:simon/oriental/03: 1807 384
+:simon/oriental/03: 1775 384
+:simon/oriental/03: 1743 384
+:simon/oriental/10: 256 272 r
+:simon/oriental/10: 288 240 r
+:simon/oriental/10: 320 208 r
+:simon/oriental/10: 352 176 r
+:simon/oriental/10: 384 144 r
+:simon/oriental/10: 416 112 r
+:simon/oriental/10: 448 80 r
+:simon/oriental/10: 1424 48 rr
+:simon/oriental/10: 1456 80 rr
+:simon/oriental/10: 1488 112 rr
+:simon/oriental/10: 1520 144 rr
+:simon/oriental/10: 1552 176 rr
+:simon/oriental/10: 1584 208 rr
+:simon/oriental/10: 1616 240 rr
 :matt/goldmine/plank: 928 352 r
 :matt/goldmine/plank: 1120 176 r

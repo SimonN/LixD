@@ -1,4 +1,4 @@
-$BUILT 2016-07-18 21:30:40
+$BUILT 2017-08-02 16:04:43
 $AUTHOR Nepster
 $ENGLISH Minor Obstacles
 
@@ -6,7 +6,6 @@ $ENGLISH Minor Obstacles
 #SIZE_X 832
 #SIZE_Y 400
 
-#SECONDS 0
 #INITIAL 20
 #REQUIRED 10
 #SPAWN_INTERVAL 20
@@ -64,10 +63,8 @@ $END_TILE_GROUP
 :amanda/steel/steel32x32.S: 576 336
 :amanda/steel/steel32x32.S: 608 336
 :proxima/tile/blue1: 208 272
-:proxima/tile/blue1: 272 208
 :proxima/tile/blue1: 272 272
 :proxima/tile/blue1: 208 208
-:proxima/tile/blue1: 208 128
 :proxima/tile/blue1: 272 128
 :proxima/tile/blue1: 272 64
 :proxima/tile/blue1: 208 64
@@ -228,22 +225,12 @@ $END_TILE_GROUP
 :amanda/steel/steel32x32.S: 736 0
 :amanda/steel/steel32x32.S: 768 0
 :amanda/steel/steel32x32.S: 800 0
-:proxima/tile/blue1a: 272 208 d
-:proxima/tile/blue1a: 208 128 rrd
-:proxima/tile/blue1b: 208 144
-:proxima/tile/blue1b: 272 192 rr
 :proxima/tile/blue1: 560 272 frr
-:proxima/tile/blue1: 496 208 frr
 :proxima/tile/blue1: 496 272 frr
 :proxima/tile/blue1: 560 208 frr
-:proxima/tile/blue1: 560 128 frr
 :proxima/tile/blue1: 496 128 frr
 :proxima/tile/blue1: 496 64 frr
 :proxima/tile/blue1: 560 64 frr
-:proxima/tile/blue1a: 496 208 frrd
-:proxima/tile/blue1a: 560 128 fd
-:proxima/tile/blue1b: 560 144 frr
-:proxima/tile/blue1b: 496 192 f
 :geoo/construction/platformbrick: 458 304 rrrd
 :geoo/construction/platformbrick: 458 272 rrrd
 :geoo/construction/platformbrick: 452 272 rrrd
@@ -257,3 +244,36 @@ $END_TILE_GROUP
 :amanda/steel/steel32x32.S: 672 336
 :amanda/steel/steel32x32.S: 128 32
 :amanda/steel/steel32x32.S: 128 336
+$BEGIN_TILE_GROUP 3
+:proxima/tile/blue1: 0 0
+:geoo/sandstone/slopes/32x32lb: 0 1 d
+:geoo/sandstone/slopes/32x32lb: 31 32 d
+:geoo/sandstone/32x32: 0 32 d
+$END_TILE_GROUP
+:Group-3: 208 128
+$BEGIN_TILE_GROUP 4
+:proxima/tile/blue1: 0 0
+:geoo/sandstone/slopes/32x32rt: 0 0 d
+:geoo/sandstone/slopes/32x32rt: 32 32 d
+:geoo/sandstone/32x32: 32 0 d
+$END_TILE_GROUP
+:Group-4: 208 145
+:Group-3: 272 192
+:Group-4: 272 209
+$BEGIN_TILE_GROUP 5
+:proxima/tile/blue1: 0 0 frr
+:geoo/sandstone/slopes/32x32rb: 32 1 d
+:geoo/sandstone/slopes/32x32rb: 1 32 d
+:geoo/sandstone/32x32: 32 32 d
+$END_TILE_GROUP
+:Group-5: 560 128
+$BEGIN_TILE_GROUP 6
+:proxima/tile/blue1: 0 0 frr
+:geoo/sandstone/slopes/32x32lt: 32 0 d
+:geoo/sandstone/slopes/32x32lt: 0 32 d
+:geoo/sandstone/32x32: 0 0 d
+$END_TILE_GROUP
+:Group-6: 561 145
+:Group-6: 497 209
+:Group-5: 496 192
+:proxima/tile/blue2bs: 333 240 d

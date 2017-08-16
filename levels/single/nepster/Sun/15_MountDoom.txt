@@ -1,4 +1,4 @@
-$BUILT 2016-07-23 13:58:06
+$BUILT 2017-08-02 12:57:33
 $AUTHOR Nepster
 $ENGLISH Mount Doom
 
@@ -6,7 +6,6 @@ $ENGLISH Mount Doom
 #SIZE_X 640
 #SIZE_Y 400
 
-#SECONDS 0
 #INITIAL 20
 #REQUIRED 20
 #SPAWN_INTERVAL 35
@@ -21,9 +20,6 @@ $ENGLISH Mount Doom
 
 :matt/goldmine/Goal.G: 558 284
 
-:matt/goldmine/GoalTop.D: 558 236
-:matt/goldmine/pickaxe.D: 608 66
-
 :geoo/sandstone/brazier.F: 242 114
 :matt/underworld/Lava.W: 0 352
 :matt/underworld/Lava.W: 256 352
@@ -31,6 +27,7 @@ $ENGLISH Mount Doom
 :matt/underworld/Lava.W: 384 352
 :matt/underworld/Lava.W: 432 352
 
+:matt/goldmine/pickaxe: 608 66
 :matt/goldmine/04: 616 298 rrr
 :matt/goldmine/crate16: 250 166
 :matt/goldmine/10: 232 174
@@ -55,6 +52,7 @@ $ENGLISH Mount Doom
 :matt/goldmine/09: 322 240
 :matt/goldmine/08: 152 210 fr
 :matt/goldmine/08: 30 244 frrr
+:matt/goldmine/10: 187 171
 :matt/goldmine/02: 166 168
 :matt/goldmine/08: 100 168 rr
 :matt/goldmine/04: 30 198 rrr

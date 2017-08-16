@@ -1,4 +1,4 @@
-$BUILT 2016-07-16 19:04:34
+$BUILT 2017-07-24 19:29:08
 $AUTHOR mobius
 $ENGLISH Over My Head
 
@@ -6,10 +6,11 @@ $ENGLISH Over My Head
 #SIZE_X 640
 #SIZE_Y 400
 
-#INITIAL 15
-#REQUIRED 15
-#SPAWN_INTERVAL 60
+#INITIAL 25
+#REQUIRED 25
+#SPAWN_INTERVAL 40
 
+#RUNNER 1
 #CLIMBER 1
 #FLOATER 1
 #BUILDER 1
@@ -18,45 +19,138 @@ $ENGLISH Over My Head
 #DIGGER 1
 #EXPLODER2 0
 
-:matt/bricks/Hatch.H: 80 8
+:raymanni/lab/hatch.H: 96 16
 
-:matt/bricks/Goal.G: 544 320
+:raymanni/lab/goal.G: 560 304
 
-:matt/bricks/03: -32 272
-:matt/bricks/03: -32 336
-:matt/bricks/03: -32 208
-:matt/bricks/03: 32 272
-:matt/bricks/03: 32 336
-:matt/bricks/03: 32 208
-:matt/bricks/03: 160 272
-:matt/bricks/02: 224 368
-:matt/bricks/03: 160 336
-:matt/bricks/03: 96 336
-:matt/bricks/02: 352 368
-:matt/bricks/02: 416 368
-:matt/bricks/02: 480 368
-:matt/bricks/02: 544 368
+:raymanni/lab/goo.W: 224 376
+:raymanni/lab/goo.W: 256 376
+:raymanni/lab/goo.W: 288 376
+:raymanni/lab/goo.W: 320 376
+:raymanni/lab/goo.W: 352 376
+:raymanni/lab/goo.W: 384 376
+:raymanni/lab/goo.W: 416 376
+:raymanni/lab/goo.W: 448 376
+:raymanni/lab/goo.W: 480 376
+:raymanni/lab/goo.W: 512 376
+:raymanni/lab/goo.W: 544 376
+:raymanni/lab/goo.W: 576 376
+:raymanni/lab/goo.W: 608 376
+
+:raymanni/lab/block_1: 480 160
+:raymanni/lab/block_1: 480 192
+:raymanni/lab/block_1: 128 224
+:raymanni/lab/block_1: 160 288
+:raymanni/lab/block_1: 160 320
+:raymanni/lab/block_1: 192 288
+:raymanni/lab/block_1: 192 320
+:raymanni/lab/pipe_1: 216 360
+:raymanni/lab/pipe_1: 248 360
+:raymanni/lab/block_1: 32 288
+:raymanni/lab/block_1: 32 320
+:raymanni/lab/block_1: 0 320
+:raymanni/lab/block_1: 0 288
+:raymanni/lab/block_1: 96 288
+:raymanni/lab/block_1: 64 288
+:raymanni/lab/block_1: 96 320
+:raymanni/lab/block_1: 64 320
+:raymanni/lab/block_1: 128 288
+:raymanni/lab/block_1: 128 320
+:matt/bricks/03: 256 160
+:raymanni/lab/block_1: 96 96
+:raymanni/lab/block_1: 96 128
+:raymanni/lab/block_1: 64 128
+:raymanni/lab/block_1: 64 96
+:raymanni/lab/block_1: 160 96
+:raymanni/lab/block_1: 128 96
+:raymanni/lab/block_1: 160 128
+:raymanni/lab/block_1: 128 128
+:raymanni/lab/block_1: 224 96
+:raymanni/lab/block_1: 192 96
+:raymanni/lab/block_1: 224 128
+:raymanni/lab/block_1: 192 128
+:raymanni/lab/block_1: 256 96
+:raymanni/lab/block_1: 256 128
+:raymanni/lab/block_1: 288 160
+:raymanni/lab/block_1: 256 160
+:raymanni/lab/block_1: 288 192
+:raymanni/lab/block_1: 256 192
+:matt/bricks/03: 320 160
+:raymanni/lab/block_1: 352 160
+:raymanni/lab/block_1: 320 160
+:raymanni/lab/block_1: 352 192
+:raymanni/lab/block_1: 320 192
+:matt/bricks/03: 384 160
+:raymanni/lab/block_1: 416 160
+:raymanni/lab/block_1: 384 160
+:raymanni/lab/block_1: 416 192
+:raymanni/lab/block_1: 384 192
+:raymanni/lab/block_1: 512 160
+:raymanni/lab/block_1: 448 160
+:raymanni/lab/block_1: 512 192
+:raymanni/lab/block_1: 448 192
+:raymanni/lab/block_2: 504 176
+:raymanni/lab/block_1: 288 128
+:raymanni/lab/block_1: 288 96
+:raymanni/lab/block_2: 112 120
+:raymanni/lab/block_2: 240 104
+:raymanni/lab/block_2: 304 168
+:raymanni/lab/block_2: 368 200
+:raymanni/lab/block_1: 368 224 d
+:raymanni/lab/block_1: 504 128 d
+:raymanni/lab/pipe_1: 280 360
+:raymanni/lab/pipe_1: 312 360
+:raymanni/lab/pipe_1: 344 360
+:raymanni/lab/pipe_1: 376 360
+:raymanni/lab/pipe_1: 408 360
+:raymanni/lab/pipe_1: 440 360
+:raymanni/lab/pipe_1: 472 360
+:raymanni/lab/pipe_1: 504 360
+:raymanni/lab/pipe_1: 536 360
+:raymanni/lab/pipe_1: 568 360
+:raymanni/lab/pipe_1: 600 360
+:raymanni/lab/pipe_3: 496 40 frr
+:raymanni/lab/scen_4: 480 40
+:raymanni/lab/pipe_2: 616 376
+:raymanni/lab/block_3: 520 40
+:raymanni/lab/block_1: 32 224
+:raymanni/lab/block_1: 32 256
+:raymanni/lab/block_1: 0 256
+:raymanni/lab/block_1: 0 224
+:raymanni/lab/block_1: 96 224
+:raymanni/lab/block_1: 64 224
+:raymanni/lab/block_1: -32 256
+:raymanni/lab/block_1: -32 224
+:raymanni/lab/block_1: 96 256
+:raymanni/lab/block_1: 64 256
+:raymanni/lab/block_2: 144 224
 :geoo/steel/dark_64x64o.S: 160 224
-:geoo/steel/dark_64x64o.S: 160 336
-:matt/bricks/03: 96 272
-:matt/bricks/03: 96 208
-:matt/marble/21c: -8 208 d
-:matt/marble/21c: 56 208 d
-:matt/marble/21c: 112 208 d
-:matt/bricks/03: 352 160
-:matt/bricks/03: 416 160
-:matt/bricks/03: 288 96
-:matt/bricks/03: 96 96
-:matt/bricks/03: 160 96
-:matt/bricks/03: 224 96
-:matt/bricks/03: 32 96
-:matt/bricks/03: 480 160
-:geoo/steel/dark_64x64o.S: 96 336
-:matt/bricks/02: 288 368
-:matt/bricks/03: 288 160
-:matt/bricks/03: 320 96 d
-:matt/bricks/02: 608 368
-:geoo/steel/dark_64x64o.S: 576 0
-:geoo/steel/dark_64x64o.S: 512 0
-:geoo/steel/dark_64x64o.S: 448 0
-:matt/bricks/03: 0 96 d
+:raymanni/lab/block_1: 128 256
+:raymanni/lab/block_2: 88 272
+:raymanni/lab/block_1: 32 352
+:raymanni/lab/block_1: 0 352
+:raymanni/lab/block_1: 96 352
+:raymanni/lab/block_1: 64 352
+:raymanni/lab/block_1: 128 384
+:raymanni/lab/block_1: 128 352
+:raymanni/lab/block_2: 192 320
+:raymanni/lab/block_1: 32 384
+:raymanni/lab/block_1: 0 384
+:raymanni/lab/block_1: 96 384
+:raymanni/lab/block_1: 64 384
+:raymanni/lab/block_2: 16 344
+:raymanni/lab/block_2: -16 272
+:geoo/steel/dark_64x64o.S: 160 352
+:raymanni/lab/pipe_3: 448 72
+:raymanni/lab/pipe_3: 480 72
+:raymanni/lab/pipe_3: 544 72
+:raymanni/lab/pipe_3: 512 72
+:raymanni/lab/pipe_3: 608 72
+:raymanni/lab/pipe_3: 576 72
+:raymanni/lab/pipe_4: 456 40
+:raymanni/lab/pipe_4: 456 8
+:raymanni/lab/pipe_4: 456 24
+:raymanni/lab/pipe_4: 456 -8
+:raymanni/lab/scen_5: 600 8
+:raymanni/lab/block_2: 600 0
+:raymanni/lab/scen_7: 592 72

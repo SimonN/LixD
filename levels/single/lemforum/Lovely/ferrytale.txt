@@ -1,4 +1,4 @@
-$BUILT 2016-09-13 04:18:30
+$BUILT 2017-08-09 00:17:11
 $AUTHOR Simon
 $ENGLISH Ferry Tale
 
@@ -21,10 +21,10 @@ $ENGLISH Ferry Tale
 
 :matt/goldmine/Goal.G: 496 296
 
-:simon/water_thin.W: 324 376
-:simon/water_thin.W: 174 376
-:simon/water_thin.W: 224 376
-:simon/water_thin.W: 274 376
+:simon/water.W: 200 352
+:simon/water.W: 248 352
+:simon/water.W: 296 352
+:simon/water.W: 344 352
 
 :matt/goldmine/crate32: 536 272
 :matt/goldmine/crate32: 416 312

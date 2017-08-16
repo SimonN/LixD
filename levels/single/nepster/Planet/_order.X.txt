@@ -1,7 +1,7 @@
 01_Fourtissimo.txt
 02_SlowDownWalkers.txt
 03_FiveDoNotSurvive.txt
-04_ConstructionZone.txt
+04_Woodworms.txt
 05_StrollOnLawn.txt
 06_Altruism.txt
 07_TombRaider.txt
@@ -15,7 +15,7 @@
 15_NoMatter.txt
 16_MinorObstacles.txt
 17_MarbleTemple.txt
-18_ChineseLemmings.txt
+18_ChineseLix.txt
 19_UglyBricks.txt
 20_EmptyWalls.txt
 

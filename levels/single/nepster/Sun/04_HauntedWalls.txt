@@ -1,0 +1,214 @@
+$BUILT 2017-06-12 00:27:08
+$AUTHOR Nepster
+$ENGLISH Haunted Walls
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 32
+
+#WALKER 1
+#CLIMBER 5
+#FLOATER 1
+#BLOCKER 1
+#BUILDER 2
+#PLATFORMER 2
+#BASHER 3
+#MINER 2
+#EXPLODER 0
+
+:geoo/construction/Hatch.H: 64 128
+
+:matt/marble/Goal.G: 64 48
+
+:geoo/shadow/wall/center: 0 352
+:geoo/shadow/wall/center: 0 320
+:geoo/shadow/wall/center: 64 288
+:geoo/shadow/wall/center: 64 256
+:geoo/shadow/wall/center: 64 224
+:geoo/shadow/wall/center: 96 224
+:geoo/shadow/wall/center: 128 224
+:geoo/shadow/wall/center: 160 224
+:geoo/shadow/wall/center: 192 224
+:geoo/shadow/wall/center: 224 224
+:geoo/shadow/wall/center: 32 320
+:geoo/shadow/wall/center: 160 288
+:geoo/shadow/wall/center: 288 224
+:geoo/shadow/wall/center: 320 224
+:geoo/shadow/wall/center: 352 224
+:geoo/shadow/wall/center: 352 192
+:geoo/shadow/wall/center: 352 160
+:geoo/shadow/wall/center: 352 128
+:geoo/shadow/wall/center: 384 128
+:geoo/shadow/wall/center: 416 128
+:geoo/shadow/wall/center: 416 160
+:geoo/shadow/wall/center: 448 160
+:geoo/shadow/wall/center: 480 192
+:geoo/shadow/wall/center: 512 192
+:geoo/shadow/wall/center: 544 192
+:geoo/shadow/wall/center: 608 224
+:geoo/shadow/wall/center: 608 192
+:geoo/shadow/wall/center: 608 256
+:geoo/shadow/wall/center: 608 288
+:geoo/shadow/wall/center: 608 320
+:geoo/shadow/wall/center: 608 352
+:geoo/shadow/wall/center: 512 320
+:geoo/shadow/wall/center: 480 352
+:geoo/shadow/wall/center: 416 352
+:geoo/shadow/wall/center: 352 320
+:geoo/shadow/wall/center: 608 160
+:geoo/shadow/wall/center: 608 128
+:geoo/shadow/wall/center: 608 96
+:geoo/shadow/wall/center: 512 96
+:geoo/shadow/wall/center: 448 64
+:geoo/shadow/wall/center: 448 0
+:geoo/shadow/wall/center: 480 0
+:geoo/shadow/wall/center: 544 32
+:geoo/shadow/wall/center: 608 0
+:geoo/shadow/wall/center: 416 0
+:geoo/shadow/wall/center: 416 64
+:geoo/shadow/wall/center: 352 256
+:geoo/shadow/wall/center: 352 288
+:geoo/shadow/wall/center: 288 160
+:geoo/shadow/wall/center: 288 128
+:geoo/shadow/wall/center: 256 64
+:geoo/shadow/wall/center: 288 64
+:geoo/shadow/wall/center: 320 64
+:geoo/shadow/wall/center: 352 64
+:geoo/shadow/wall/center: 384 64
+:geoo/shadow/wall/center: 0 288
+:geoo/shadow/wall/center: 0 256
+:geoo/shadow/wall/center: 0 224
+:geoo/shadow/wall/center: 0 192
+:geoo/shadow/wall/center: 0 160
+:geoo/shadow/wall/center: 256 160
+:geoo/shadow/wall/center: 224 160
+:geoo/shadow/wall/center: 192 160
+:geoo/shadow/wall/center: 0 128
+:geoo/shadow/wall/center: 0 96
+:geoo/shadow/wall/center: 32 96
+:geoo/shadow/wall/center: 64 96
+:geoo/shadow/wall/center: 96 96
+:geoo/shadow/wall/center: 160 64
+:geoo/shadow/wall/center: 192 64
+:geoo/shadow/wall/center: 224 64
+:geoo/shadow/wall/center: 256 320
+:geoo/shadow/wall/center: 608 384
+:geoo/shadow/wall/center: 256 0
+:geoo/shadow/wall/center: 288 0
+:geoo/shadow/wall/center: 320 0
+:geoo/shadow/wall/center: 352 0
+:geoo/shadow/wall/center: 384 0
+:geoo/shadow/wall/center: 160 0
+:geoo/shadow/wall/center: 192 0
+:geoo/shadow/wall/center: 224 0
+:geoo/shadow/wall/center: 96 0
+:geoo/shadow/wall/center: 0 0
+:geoo/shadow/wall/center: 32 0
+:geoo/shadow/wall/center: 64 0
+:geoo/shadow/wall/center: 128 0
+:geoo/shadow/wall/center: 416 192
+:geoo/shadow/wall/center: 416 224
+:geoo/shadow/wall/center: 480 224
+:geoo/shadow/wall/center: 224 320
+:geoo/shadow/wall/center: 288 320
+:geoo/shadow/wall/center: 320 320
+:geoo/shadow/wall/center: 160 384
+:geoo/shadow/wall/center: 192 384
+:geoo/shadow/wall/center: 224 384
+:geoo/shadow/wall/center: 32 384
+:geoo/shadow/wall/center: 64 384
+:geoo/shadow/wall/center: 96 384
+:geoo/shadow/wall/center: 0 384
+:geoo/shadow/wall/center: 384 384
+:geoo/shadow/wall/center: 416 384
+:geoo/shadow/wall/center: 480 384
+:geoo/shadow/wall/center: 288 384
+:geoo/shadow/wall/center: 320 384
+:geoo/shadow/wall/center: 352 384
+:geoo/shadow/wall/center: 256 384
+:geoo/shadow/wall/center: 512 384
+:geoo/shadow/wall/center: 544 384
+:geoo/shadow/wall/center: 576 384
+:geoo/shadow/wall/center: 416 256
+:geoo/shadow/wall/center: 416 320
+:geoo/abstract/cvblocks/033: 416 320 d
+:geoo/shadow/wall/center: 480 256
+:geoo/abstract/cvblocks/033: 416 256 rd
+:geoo/abstract/cvblocks/033: 480 256 rrd
+:geoo/shadow/wall/center: 480 320
+:geoo/abstract/cvblocks/033: 480 320 rrrd
+:geoo/shadow/wall/center: 544 224
+:geoo/abstract/cvblocks/033: 544 224 rrd
+:geoo/shadow/wall/center: 544 128
+:geoo/abstract/cvblocks/033: 544 128 rrd
+:geoo/shadow/wall/center: 480 160
+:geoo/abstract/cvblocks/033: 480 160 d
+:geoo/shadow/wall/center: 384 320
+:geoo/shadow/wall/center: 576 224
+:geoo/abstract/cvblocks/033: 576 223 d
+:geoo/shadow/wall/center: 576 256
+:geoo/abstract/cvblocks/033: 575 256 rrrd
+:geoo/shadow/wall/center: 544 288
+:geoo/abstract/cvblocks/033: 543 288 rrrd
+:geoo/shadow/wall/center: 576 288
+:geoo/abstract/cvblocks/033: 576 288 rd
+:geoo/shadow/wall/center: 544 320
+:geoo/abstract/cvblocks/033: 544 320 rd
+:geoo/shadow/wall/center: 288 256
+:geoo/shadow/wall/center: 224 256
+:geoo/abstract/cvblocks/033: 288 256 rd
+:geoo/abstract/cvblocks/033: 224 256 rrd
+:geoo/shadow/wall/center: 128 192
+:geoo/abstract/cvblocks/033: 128 192 d
+:geoo/shadow/wall/center: 32 160
+:geoo/abstract/cvblocks/033: 32 160 rd
+:geoo/shadow/wall/center: 96 128
+:geoo/abstract/cvblocks/033: 96 128 rd
+:geoo/shadow/wall/center: 32 128
+:geoo/abstract/cvblocks/033: 32 128 rrrd
+:geoo/shadow/wall/center: 128 64
+:geoo/abstract/cvblocks/033: 128 64 rrrd
+:geoo/shadow/wall/center: 160 96
+:geoo/abstract/cvblocks/033: 160 96 rd
+:geoo/shadow/wall/center: 480 64
+:geoo/abstract/cvblocks/033: 480 64 d
+:geoo/shadow/wall/center: 480 96
+:geoo/abstract/cvblocks/033: 480 96 rrd
+:geoo/shadow/wall/center: 608 64
+:geoo/abstract/cvblocks/033: 608 64 rrrd
+:geoo/shadow/wall/center: 512 0
+:geoo/abstract/cvblocks/033: 512 0 d
+:geoo/shadow/wall/center: 512 32
+:geoo/abstract/cvblocks/033: 512 32 rrd
+:geoo/shadow/wall/center: 576 32
+:geoo/abstract/cvblocks/033: 576 32 rd
+:geoo/shadow/wall/center: 576 0
+:geoo/abstract/cvblocks/033: 576 0 rrrd
+:geoo/shadow/wall/center: 288 96
+:geoo/abstract/cvblocks/033: 288 96 d
+:geoo/shadow/wall/center: 160 160
+:geoo/abstract/cvblocks/033: 160 160 rrd
+:geoo/shadow/wall/center: 224 96
+:geoo/abstract/cvblocks/033: 224 96 rrd
+:geoo/shadow/wall/center: 192 288
+:geoo/abstract/cvblocks/033: 192 288 d
+:geoo/shadow/wall/center: 256 96
+:geoo/shadow/wall/center: 128 96
+:geoo/shadow/wall/center: 32 64
+:geoo/abstract/cvblocks/033: 32 64 d
+:geoo/shadow/wall/center: 0 64
+:geoo/shadow/wall/center: 96 288
+:geoo/shadow/wall/center: 160 352
+:geoo/abstract/cvblocks/033: 160 352 d
+:geoo/shadow/wall/center: 96 352
+:geoo/abstract/cvblocks/033: 96 352 rrrd
+:geoo/shadow/wall/center: 64 320
+:geoo/abstract/cvblocks/033: 64 320 rd
+:geoo/shadow/wall/center: 192 320
+:geoo/abstract/cvblocks/033: 192 320 rrd
+:geoo/shadow/wall/center: 544 96
+:geoo/abstract/cvblocks/033: 544 95 d

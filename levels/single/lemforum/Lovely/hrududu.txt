@@ -1,4 +1,4 @@
-$BUILT 2017-04-15 20:50:28
+$BUILT 2017-05-02 12:59:35
 $AUTHOR Prob Lem
 $ENGLISH Hrududu
 
@@ -32,6 +32,18 @@ $ENGLISH Hrududu
 :proxima/flame.F: 952 336
 :proxima/flame.F: 984 336
 
+:geoo/steel/64x32o.S: 759 56
+$BEGIN_TILE_GROUP 0
+:geoo/steel/64x64.S: 0 0
+:geoo/steel/64x64.S: 0 34 d
+$END_TILE_GROUP
+:Group-0: 234 286
+$BEGIN_TILE_GROUP 1
+:geoo/steel/64x64.S: 0 33
+:geoo/steel/64x64.S: 0 0 d
+$END_TILE_GROUP
+:Group-1: 234 303
+:geoo/abstract/pipes/central4: 317 214
 :geoo/construction/pillar_base: -12 384
 :geoo/construction/pillar_base: 28 384
 :geoo/construction/pillar_base: 68 384
@@ -56,22 +68,13 @@ $ENGLISH Hrududu
 :amanda/steel/steel24x16.S: 218 336 rrr
 :amanda/steel/steel24x16.S: 234 360 rrr
 :amanda/steel/steel24x16.S: 234 336 rrr
-:simon/steel/clean_h3.S: 234 286
-:simon/steel/clean_h3.S: 334 286
 :geoo/abstract/pipes/central4: 255 254 rrr
 :geoo/abstract/pipes/central4: 405 254 rrr
 :geoo/abstract/pipes/ends4: 255 246 r
 :geoo/abstract/pipes/ends4: 405 246 r
-:simon/steel/clean_s1.S: 255 221
-:simon/steel/clean_s1.S: 280 221
-:simon/steel/clean_s1.S: 363 221
-:simon/steel/clean_s1.S: 388 221
-:geoo/abstract/pipes/central4: 305 221
-:geoo/abstract/pipes/central4: 331 221
-:geoo/abstract/pipes/central4: 305 229
-:geoo/abstract/pipes/central4: 331 229
-:geoo/abstract/pipes/central4: 305 237
-:geoo/abstract/pipes/central4: 331 237
+:geoo/abstract/pipes/central4: 317 222
+:geoo/abstract/pipes/central4: 317 230
+:geoo/abstract/pipes/central4: 317 238
 :amanda/steel/steel24x16.S: 418 360 rrr
 :amanda/steel/steel24x16.S: 418 336 rrr
 :amanda/steel/steel24x16.S: 434 360 rrr
@@ -128,14 +131,30 @@ $ENGLISH Hrududu
 :matt/steel/32x32.S: 842 88
 :matt/steel/32x32.S: 708 88
 :matt/steel/32x32.S: 811 88
-:simon/steel/clean_h2.S: 726 63
 :geoo/construction/pillar_base: 948 384
 :geoo/construction/pillar_base: 988 384
 :matt/beach/daytime/15: 664 226
 :matt/beach/daytime/15: 854 226
-:matt/earth/22: 272 300
-:matt/earth/22: 374 300
-:matt/underworld/00: 302 324
+:matt/earth/22: 255 299
+:matt/earth/22: 378 300
 :matt/underworld/00: 744 276
 :geoo/construction/pillar_top_shaded: -18 320
 :geoo/construction/pillar_32: -18 336
+:Group-0: 370 286
+:Group-1: 370 303
+:geoo/steel/64x32o.S: 255 214
+:geoo/steel/64x32o.S: 349 214
+:matt/earth/22: 391 299
+:matt/underworld/00: 438 225 rd
+:matt/underworld/00: 302 322
+$BEGIN_TILE_GROUP 2
+:geoo/steel/64x32o.S: 0 0
+:geoo/steel/32x32o.S: 34 0 d
+$END_TILE_GROUP
+:Group-2: 728 56
+:geoo/steel/64x32o.S: 306 286
+$BEGIN_TILE_GROUP 3
+:geoo/steel/64x32o.S: 0 0
+:geoo/steel/32x32o.S: 35 0 d
+$END_TILE_GROUP
+:Group-3: 298 286

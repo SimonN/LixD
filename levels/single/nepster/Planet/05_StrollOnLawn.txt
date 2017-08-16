@@ -31,7 +31,7 @@ $ENGLISH A Stroll on the Lawn
 :geoo/nopales/fruit_07: 237 288
 :geoo/nopales/fruit_03: 236 294
 :geoo/nopales/fruit_00: 244 289
-:amanda/occult/occult_skulls32x32: 1142 260 frrr
+:amanda/occult/skulls32x32: 1142 260 frrr
 :amanda/forest/bark_00: 77 303 r
 :matt/earth/17: 698 344 fr
 :matt/earth/17: 744 304 fr

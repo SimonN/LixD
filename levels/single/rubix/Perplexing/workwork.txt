@@ -1,9 +1,9 @@
-$BUILT 2016-09-18 15:02:13
+$BUILT 2017-08-09 04:27:20
 $AUTHOR Rubix
 $ENGLISH Work work
 
 #INTENDED_NUMBER_OF_PLAYERS 1
-#SIZE_X 640
+#SIZE_X 704
 #SIZE_Y 400
 #START_X 0
 #START_Y 0
@@ -20,50 +20,52 @@ $ENGLISH Work work
 #CUBER 3
 #EXPLODER2 0
 
-:matt/underworld/Hatch.H: 592 192
-:matt/underworld/Hatch.H: 64 0
+:matt/underworld/Hatch.H: 640 200
+:matt/underworld/Hatch.H: 112 8
 
-:matt/underworld/Goal.G: 208 208
+:matt/underworld/Goal.G: 256 216
 
-:matt/underworld/Lava.W: 352 368
-:matt/underworld/Lava.W: 400 368
-:matt/underworld/Lava.W: 448 368
-:matt/underworld/Lava.W: 496 368
-:matt/underworld/Lava.W: 544 368
-:matt/underworld/Lava.W: 48 368
-:matt/underworld/Lava.W: 0 368
-:matt/underworld/Lava.W: 592 368
+:matt/underworld/Lava.W: 400 376
+:matt/underworld/Lava.W: 448 376
+:matt/underworld/Lava.W: 496 376
+:matt/underworld/Lava.W: 544 376
+:matt/underworld/Lava.W: 592 376
+:matt/underworld/Lava.W: 96 376
+:matt/underworld/Lava.W: 48 376
+:matt/underworld/Lava.W: 640 376
+:matt/underworld/Lava.W: 0 376
+:matt/underworld/Lava.W: 688 376
 
-:matt/underworld/09c: 154 270 frr
-:matt/underworld/09c: 296 304
-:matt/underworld/09a: 528 368
-:matt/underworld/09a: 112 64
-:matt/underworld/01: 288 368
-:matt/underworld/08: 224 304 r
-:matt/underworld/02: 224 304
-:matt/underworld/02: 528 288
-:matt/underworld/01: 592 288
-:matt/underworld/09a: 16 304
-:matt/underworld/00: 32 304
-:matt/underworld/02: 96 304
-:matt/underworld/08: 112 288
-:matt/underworld/08: 176 256 frrr
-:matt/underworld/01: -44 64
-:matt/underworld/01: 64 64
-:matt/underworld/01: 128 64
-:matt/underworld/01: 288 64
-:matt/underworld/01: 400 64
-:matt/underworld/01: 464 64
-:matt/underworld/01: 528 64
-:matt/underworld/02: -44 96
-:matt/underworld/02: 528 96
-:matt/underworld/02: 528 192
-:matt/underworld/01: 64 80 d
-:matt/underworld/01: 128 80 d
-:matt/underworld/01: 288 80 d
-:matt/underworld/01: 368 80 d
-:matt/underworld/01: 400 80 d
-:matt/underworld/01: 464 80 d
-:matt/underworld/00: -32 304
-:matt/underworld/02: -44 122
-:matt/underworld/02: 592 320 d
+:matt/underworld/09c: 202 278 frr
+:matt/underworld/09c: 344 312
+:matt/underworld/09a: 576 344
+:matt/underworld/09a: 160 72
+:matt/underworld/01: 336 376
+:matt/underworld/08: 272 312 r
+:matt/underworld/02: 272 312
+:matt/underworld/02: 576 264
+:matt/underworld/01: 640 296
+:matt/underworld/09a: 64 312
+:matt/underworld/00: 80 312
+:matt/underworld/02: 144 312
+:matt/underworld/08: 160 296
+:matt/underworld/08: 224 264 frrr
+:matt/underworld/01: 112 72
+:matt/underworld/01: 176 72
+:matt/underworld/01: 336 72
+:matt/underworld/01: 448 72
+:matt/underworld/01: 512 72
+:matt/underworld/01: 576 72
+:matt/underworld/02: 0 72
+:matt/underworld/02: 576 104
+:matt/underworld/02: 576 200
+:matt/underworld/01: 112 88 d
+:matt/underworld/01: 176 88 d
+:matt/underworld/01: 336 88 d
+:matt/underworld/01: 416 88 d
+:matt/underworld/01: 448 88 d
+:matt/underworld/01: 512 88 d
+:matt/underworld/02: 0 136
+:matt/underworld/02: 640 328 d
+:matt/underworld/00: 16 312
+:matt/underworld/00: -48 312

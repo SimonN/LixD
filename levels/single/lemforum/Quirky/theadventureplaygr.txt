@@ -1,17 +1,12 @@
-$BUILT 2015-09-07 20:56:19
+$BUILT 2017-08-09 00:21:25
 $AUTHOR Michael S. Repton
-$GERMAN 
 $ENGLISH The Adventure Playground
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 1200
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 0
 #START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #INITIAL 25
 #REQUIRED 10
@@ -239,3 +234,4 @@ $ENGLISH The Adventure Playground
 :geoo/construction/wall/big_square: 304 192
 :geoo/construction/wall/small_brick1: 184 224 fr
 :geoo/construction/wall/small_brick1: 312 224 fr
+:geoo/steel/dark_32x32o.S: 224 480 d

@@ -1,4 +1,4 @@
-$BUILT 2016-09-24 08:13:23
+$BUILT 2017-08-10 03:03:16
 $AUTHOR Rubix
 $ENGLISH Can you handle the heat?
 
@@ -38,6 +38,38 @@ $ENGLISH Can you handle the heat?
 :matt/underworld/Lava.W: 1072 896
 :matt/underworld/Lava.W: 1120 896
 
+$BEGIN_TILE_GROUP 0
+:matt/underworld/00: 4 0 fr
+:matt/underworld/00: 0 0 frd
+$END_TILE_GROUP
+:Group-0: 678 268
+:Group-0: 1142 208
+:Group-0: 1088 208 fr
+:Group-0: 902 208
+:Group-0: 870 208 fr
+:Group-0: 678 208
+:Group-0: 646 208 fr
+:Group-0: 454 232
+:Group-0: 454 208
+:Group-0: 422 208 fr
+:Group-0: 214 304
+:Group-0: 214 256
+:Group-0: 214 208
+:Group-0: 182 208 fr
+:Group-0: 54 208
+:Group-0: 22 208 fr
+:matt/underworld/01: 1072 216
+:matt/underworld/09a: 1064 232 frr
+:matt/underworld/01: 832 216
+:matt/underworld/09a: 544 232 frr
+:matt/underworld/01: 608 216
+:matt/underworld/09a: 264 232 frr
+:matt/underworld/09a: 320 240
+:matt/underworld/01: 384 216
+:matt/underworld/09a: 230 204
+:matt/underworld/09c: 168 222
+:matt/underworld/01: 144 216
+:matt/underworld/01: 114 216
 :matt/underworld/09a: 471 855 r
 :matt/underworld/09c: 473 862
 :matt/underworld/09a: 125 752 r
@@ -65,22 +97,18 @@ $ENGLISH Can you handle the heat?
 :matt/underworld/09a: 703 204
 :matt/underworld/09a: 808 734
 :matt/underworld/09a: 872 730
-:matt/underworld/09a: 116 216 f
-:matt/underworld/09a: 60 216 f
+:matt/underworld/09a: 124 226 f
+:matt/underworld/09a: 64 226 f
 :matt/underworld/09a: 970 214 rr
-:matt/underworld/09a: 1018 214 rr
-:matt/underworld/09a: 970 214 rr
-:matt/underworld/09a: 1066 214 rr
-:matt/underworld/09a: 806 216 rr
-:matt/underworld/09a: 758 212 rr
-:matt/underworld/09a: 704 214 rr
+:matt/underworld/09a: 1018 222 rr
+:matt/underworld/09a: 970 222 rr
+:matt/underworld/09a: 806 224 rr
+:matt/underworld/09a: 758 220 rr
+:matt/underworld/09a: 704 222 rr
 :matt/underworld/09a: 710 212 rr
 :matt/underworld/09a: 538 216 rr
-:matt/underworld/09a: 442 216 rr
 :matt/underworld/09a: 490 216 rr
-:matt/underworld/09a: 442 216 rr
 :matt/underworld/09a: 346 216 rr
-:matt/underworld/09a: 394 216 rr
 :matt/underworld/09a: 328 8 rr
 :matt/underworld/09a: 232 8 rr
 :matt/underworld/09a: 280 8 rr
@@ -118,20 +146,16 @@ $ENGLISH Can you handle the heat?
 :matt/underworld/00: 1248 18 r
 :matt/underworld/00: 720 606 r
 :matt/underworld/00: 1024 544 r
-:matt/underworld/00: 448 240 r
 :matt/underworld/01: 1056 736
 :matt/underworld/00: 376 816 r
 :matt/underworld/00: 1120 720 r
 :matt/underworld/00: 5 666 r
 :matt/underworld/00: 5 602 r
-:matt/underworld/00: 204 270 r
-:matt/underworld/00: 204 304 r
 :matt/underworld/02: 288 464
 :matt/underworld/02: 352 464
 :matt/underworld/02: 416 464
-:matt/underworld/01: 480 208
-:matt/underworld/01: 544 208
-:matt/underworld/00: 672 272 r
+:matt/underworld/01: 464 216
+:matt/underworld/01: 528 216
 :matt/underworld/00: 1120 416 r
 :matt/underworld/00: 1120 480 r
 :matt/underworld/01: 1136 331
@@ -149,7 +173,7 @@ $ENGLISH Can you handle the heat?
 :matt/underworld/00: 1248 274 r
 :matt/underworld/00: 1120 544 r
 :matt/underworld/00: 1120 608 r
-:matt/underworld/01: 608 208
+:matt/underworld/01: 592 216
 :matt/underworld/08: -7 579
 :matt/underworld/08: 9 592
 :matt/underworld/05: -101 558
@@ -163,6 +187,7 @@ $ENGLISH Can you handle the heat?
 :matt/underworld/01: 480 736
 :matt/underworld/01: 416 752
 :matt/underworld/01: 480 544
+:geoo/construction/stairs_ru_32.S: 436 546
 :matt/underworld/00: 1120 672 r
 :matt/underworld/01: 352 752
 :matt/underworld/01: 288 752
@@ -234,9 +259,9 @@ $ENGLISH Can you handle the heat?
 :matt/underworld/08: 160 896
 :matt/underworld/00: 272 32 r
 :matt/underworld/00: 560 32 r
-:matt/underworld/01: 688 208
-:matt/underworld/01: 752 208
-:matt/underworld/01: 816 208
+:matt/underworld/01: 688 216
+:matt/underworld/01: 752 216
+:matt/underworld/01: 816 216
 :matt/underworld/01: 864 480
 :matt/underworld/01: 928 416
 :matt/underworld/01: 544 544
@@ -265,31 +290,21 @@ $ENGLISH Can you handle the heat?
 :matt/underworld/01: 672 640
 :matt/underworld/01: 608 640
 :matt/underworld/01: 544 640
-:matt/underworld/01: 880 208
-:matt/underworld/01: 944 208
-:matt/underworld/01: 1008 208
-:matt/underworld/00: 1136 208 r
-:matt/underworld/01: 1072 208
-:matt/underworld/01: 288 208
-:matt/underworld/01: 352 208
-:matt/underworld/01: 416 208
-:matt/underworld/01: 96 208
-:matt/underworld/01: 160 208
-:matt/underworld/01: 224 208
-:matt/underworld/01: -32 208
-:matt/underworld/01: 32 208
+:matt/underworld/01: 912 216
+:matt/underworld/01: 976 216
+:matt/underworld/01: 288 216
+:matt/underworld/01: 352 216
+:matt/underworld/01: 64 216
+:matt/underworld/09c: 102 232 frr
+:matt/underworld/01: 224 216
+:matt/underworld/01: -16 216
 :matt/underworld/01: 416 784
 :matt/underworld/01: 352 784
 :matt/underworld/01: 288 784
 :matt/underworld/08: 1104 816
 :matt/underworld/08: 1142 795
 :matt/underworld/00: 688 736 r
-:matt/underworld/00: 204 208 r
-:matt/underworld/00: 40 214 r
 :matt/underworld/00: 1200 339 r
-:matt/underworld/00: 448 214 r
-:matt/underworld/00: 672 208 r
-:matt/underworld/00: 896 214 r
 :matt/underworld/00: 1024 424 r
 :matt/underworld/00: 1024 488 r
 :matt/underworld/00: 720 486 r
@@ -303,9 +318,7 @@ $ENGLISH Can you handle the heat?
 :matt/underworld/09a: 550 542
 :matt/underworld/09a: 936 730
 :matt/underworld/09a: 732 478
-:matt/underworld/09a: 632 206
 :matt/underworld/09a: 1244 476
-:matt/underworld/09a: 230 204
 :matt/underworld/09a: 350 462
 :matt/underworld/09a: 854 574 frr
 :matt/underworld/09a: 185 865
@@ -315,18 +328,6 @@ $ENGLISH Can you handle the heat?
 :matt/underworld/09a: 1183 32 frr
 :matt/underworld/09a: 698 31
 :matt/underworld/09a: 174 31 frr
-:matt/underworld/00: 210 244 frrrd
-:matt/underworld/00: 210 210 frrrd
-:matt/underworld/00: 210 304 frrrd
-:matt/underworld/00: 454 240 frrrd
-:matt/underworld/00: 454 210 frrrd
-:matt/underworld/00: 676 208 frrrd
-:matt/underworld/00: 46 214 frrrd
-:matt/underworld/00: 46 210 frrrd
-:matt/underworld/00: 676 272 frrrd
-:matt/underworld/00: 900 210 frrrd
-:matt/underworld/00: 900 214 frrrd
-:matt/underworld/00: 1140 210 frrrd
 :matt/steel/16x8.S: 384 208
 :matt/steel/16x8.S: 400 208
 :matt/steel/16x8.S: 416 208
@@ -360,7 +361,7 @@ $ENGLISH Can you handle the heat?
 :matt/steel/16x8.S: 144 208
 :matt/steel/16x8.S: 160 208
 :matt/steel/16x8.S: 176 208
-:matt/steel/16x8.S: 190 208
+:matt/steel/16x8.S: 192 208
 :matt/steel/16x8.S: 224 208
 :matt/steel/16x8.S: 240 208
 :matt/steel/16x8.S: 256 208
@@ -430,8 +431,6 @@ $ENGLISH Can you handle the heat?
 :matt/steel/16x8.S: 880 480
 :matt/steel/16x8.S: 896 480
 :matt/steel/16x8.S: 912 480
-:matt/steel/16x8.S: 484 544
-:matt/steel/16x8.S: 496 544
 :matt/steel/16x8.S: 512 544
 :matt/steel/16x8.S: 528 544
 :matt/steel/16x8.S: 544 544
@@ -473,8 +472,8 @@ $ENGLISH Can you handle the heat?
 :matt/steel/16x8.S: 688 640
 :matt/steel/16x8.S: 704 640
 :matt/steel/16x8.S: 720 640
-:matt/steel/16x8.S: 480 736
-:matt/steel/16x8.S: 496 736
+:geoo/construction/stairs_ru_32.S: 432 740
+:matt/steel/16x8.S: 484 736
 :matt/steel/16x8.S: 512 736
 :matt/steel/16x8.S: 528 736
 :matt/steel/16x8.S: 544 736
@@ -512,21 +511,25 @@ $ENGLISH Can you handle the heat?
 :matt/steel/16x8.S: 1056 736
 :matt/steel/16x8.S: 1072 736
 :matt/steel/16x8.S: 1088 736
-:geoo/construction/stairs_ru_32.S: 406 506
+:geoo/construction/stairs_ru_32.S: 408 496
 :geoo/construction/stairs_ru_32.S: 408 560
+:geoo/construction/stairs_ru_32.S: 344 528
+:geoo/construction/stairs_ru_32.S: 408 624
+:geoo/construction/stairs_ru_32.S: 408 688
+:geoo/construction/stairs_ru_32.S: 344 720
+:geoo/construction/stairs_ru_32.S: 344 656
+:geoo/construction/stairs_ru_32.S: 300 678
 :geoo/construction/stairs_ru_32.S: 344 592
-:geoo/construction/stairs_ru_32.S: 348 534
-:geoo/construction/stairs_ru_32.S: 408 614
-:geoo/construction/stairs_ru_32.S: 408 676
-:geoo/construction/stairs_ru_32.S: 352 704
-:geoo/construction/stairs_ru_32.S: 350 644
-:geoo/construction/stairs_ru_32.S: 292 674
-:geoo/construction/stairs_ru_32.S: 292 618
-:geoo/construction/stairs_ru_32.S: 294 560
-:geoo/construction/stairs_ru_32.S: 292 734
-:geoo/construction/stairs_ru_32.S: 412 736
-:geoo/construction/stairs_ru_32.S: 350 766
-:geoo/construction/stairs_ru_32.S: 322 780
-:geoo/construction/stairs_ru_32.S: 374 464
-:geoo/construction/stairs_ru_32.S: 312 494
-:geoo/construction/stairs_ru_32.S: 294 504
+:geoo/construction/stairs_ru_32.S: 300 550
+:geoo/construction/stairs_ru_32.S: 300 742
+:geoo/construction/stairs_ru_32.S: 408 752
+:geoo/construction/stairs_ru_32.S: 348 782
+:matt/underworld/09a: 368 232
+:matt/underworld/01: 1040 216
+:matt/underworld/09c: 1072 224 frr
+:geoo/construction/stairs_ru_32.S: 300 614
+:geoo/construction/stairs_ru_32.S: 300 486
+:geoo/construction/stairs_ru_32.S: 344 464
+:matt/steel/16x8.S: 484 544
+:matt/steel/16x8.S: 496 544
+:matt/steel/16x8.S: 496 736

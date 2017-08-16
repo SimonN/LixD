@@ -1,38 +1,28 @@
-$BUILT 2014-02-28 15:29:14
+$BUILT 2017-08-10 16:32:08
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH Postcards arrived, colorized.
+
 $HINT_ENGLISH Sorry, but no hints from here ;)  Beating harder maps without tips is highly rewarding.  Well I have always felt so..
 $HINT_ENGLISH Take a break, clear your head and try again later.   This for some reason really does work, and many people have said the same thing.
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1982
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 258
 #START_Y 380
 #BACKGROUND_RED 16
 #BACKGROUND_GREEN 95
 #BACKGROUND_BLUE 112
 
-#SECONDS 0
 #INITIAL 75
 #REQUIRED 74
 #SPAWN_INTERVAL 4
-#SPAWN_INTERVAL_FAST 4
 
-#CLIMBER 1
 #WALKER 5
+#CLIMBER 1
+#EXPLODER 1
 #BLOCKER 6
-#EXPLODER 6
 #DIGGER 5
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 
 :matt/carnival/Hatch.H: 368 250
 

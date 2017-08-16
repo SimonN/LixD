@@ -1,4 +1,4 @@
-$BUILT 2016-09-24 18:06:55
+$BUILT 2017-08-09 02:58:13
 $AUTHOR Rubix
 $ENGLISH Quarantine
 
@@ -28,7 +28,7 @@ $ENGLISH Quarantine
 
 :geoo/abstract/goal.G: 576 304
 
-:simon/acid.W: 80 352
+:simon/acid.W: 80 360
 :simon/acid.W: 128 352
 :simon/acid.W: 176 352
 :simon/acid.W: 224 352
@@ -37,11 +37,8 @@ $ENGLISH Quarantine
 :simon/acid.W: 368 352
 :simon/acid.W: 416 352
 :simon/acid.W: 464 352
-:simon/acid.W: 512 352
-:simon/acid.W: 528 352
-:simon/acid.W: 576 368
-:simon/acid.W: 592 368
-:simon/acid.W: 32 112
+:simon/acid.W: 512 360
+:simon/acid.W: 0 112
 :simon/acid.W: 48 112
 :simon/acid.W: 96 112
 :simon/acid.W: 144 112
@@ -50,11 +47,11 @@ $ENGLISH Quarantine
 :simon/acid.W: 448 112
 :simon/acid.W: 496 112
 :simon/acid.W: 544 112
-:simon/acid.W: 560 112
-:simon/acid.W: 32 352
-:simon/acid.W: -16 368
 :simon/acid.W: 592 112
-:simon/acid.W: 0 112
+:simon/acid.W: 32 360
+:simon/acid.W: -16 360
+:simon/acid.W: 560 360
+:simon/acid.W: 608 360
 
 :geoo/abstract/cvblocks/036: 80 288
 :geoo/abstract/cvblocks/035: 208 288 rrr

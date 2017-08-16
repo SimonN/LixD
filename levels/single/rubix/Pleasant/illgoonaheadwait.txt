@@ -1,113 +1,99 @@
-$BUILT 2014-02-27 14:42:03
+$BUILT 2017-06-14 18:03:52
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH I'll go on ahead.  Wait here!
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
-#SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
+#SIZE_Y 336
 #START_X 0
 #START_Y 0
 #BACKGROUND_RED 0
 #BACKGROUND_GREEN 48
 #BACKGROUND_BLUE 128
 
-#SECONDS 0
-#INITIAL 50
-#REQUIRED 47
+#INITIAL 20
+#REQUIRED 17
 #SPAWN_INTERVAL 53
-#SPAWN_INTERVAL_FAST 4
 
-#PLATFORMER 4
 #BUILDER 4
+#PLATFORMER 4
 #MINER 2
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#EXPLODER2 0
 
-:matt/oriental/Hatch.H: 544 256 r
+:simon/oriental/hatch.H: 536 208 r
 
-:matt/oriental/Goal.G: 496 96
+:simon/oriental/goal.G: 496 32
 
-:matt/water.W: 128 352
-:matt/water.W: 160 352
-:matt/water.W: 192 352
-:matt/water.W: 224 352
-:matt/water.W: 128 368
-:matt/water.W: 160 368
-:matt/water.W: 192 368
-:matt/water.W: 224 368
-:matt/water.W: 128 384
-:matt/water.W: 160 384
-:matt/water.W: 192 384
-:matt/water.W: 224 384
+:matt/water.W: 152 288
+:matt/water.W: 216 288
+:matt/water.W: 248 288
+:matt/water.W: 152 304
+:matt/water.W: 216 304
+:matt/water.W: 248 304
+:matt/water.W: 184 288
+:matt/water.W: 184 304
+:matt/water.W: 600 288
+:matt/water.W: 600 304
+:matt/water.W: 632 288
+:matt/water.W: 632 304
 
-:matt/oriental/bamboo_pole: 88 -32
-:matt/oriental/bamboo_pole: 88 122
-:matt/oriental/10: 96 256
-:matt/oriental/06: 192 192
-:matt/oriental/06: 144 192
-:matt/oriental/06: 528 192
-:matt/oriental/06: 480 192
-:matt/oriental/06: 432 192
-:matt/oriental/06: 384 192
-:matt/oriental/06: 336 192
-:matt/oriental/06: 288 192
-:matt/oriental/06: 240 192
-:matt/oriental/bonsaitree: -70 168
-:matt/oriental/bonsaitree: 528 128 frr
-:matt/oriental/06: 0 352
-:matt/oriental/06: 48 352
-:matt/oriental/06: 96 352
-:matt/oriental/06: 240 320
-:matt/oriental/06: 288 320
-:matt/oriental/06: 336 320
-:matt/oriental/06: 384 320
-:matt/oriental/06: 432 320
-:matt/oriental/06: 240 368
-:matt/oriental/06: 288 368
-:matt/oriental/06: 336 368
-:matt/oriental/06: 384 368
-:matt/oriental/06: 432 368
-:matt/oriental/06: 480 320
-:matt/oriental/06: 528 320
-:matt/oriental/06: 576 320
-:matt/oriental/06: 624 320
-:matt/oriental/06: 480 368
-:matt/oriental/06: 528 368
-:matt/oriental/06: 576 368
-:matt/oriental/06: 624 368
-:matt/oriental/asiangate: 224 112
-:matt/oriental/03: 70 36 d
-:matt/oriental/03: 160 176
-:matt/oriental/03: 192 176
-:matt/oriental/03: 224 176
-:matt/oriental/03: 256 176
-:matt/oriental/03: 288 176
-:matt/oriental/03: 320 176
-:matt/oriental/03: 352 176
-:matt/oriental/03: 384 176
-:matt/oriental/03: 416 176
-:matt/oriental/03: 448 176
-:matt/oriental/03: 480 176
-:matt/oriental/03: 512 176
-:matt/oriental/03: 544 176
-:matt/oriental/03: 6 64
-:matt/oriental/03: 51 64
-:matt/oriental/03: -40 64
-:matt/oriental/02: 80 -4 d
-:matt/oriental/03: 413 130
-:matt/oriental/02: 384 130
-:matt/oriental/bamboo_pole: 126 107 frr
-:matt/oriental/10: 96 226 frr
-:matt/oriental/10: 96 196
-:matt/oriental/10: 96 166 rrr
-:matt/oriental/10: 96 136
-:matt/oriental/10: 96 106 rrr
+:simon/oriental/bridge1: 112 272
+:simon/oriental/bridge3: 248 264
+:simon/oriental/culm_d_half: 116 177
+:simon/oriental/culm_end: 124 159
+:simon/oriental/culm_end: 125 138 f
+:simon/oriental/culm_long: 125 42
+:simon/oriental/culm_long: 89 146
+:simon/oriental/culm_long: 88 58
+:simon/oriental/10: 96 192
+:simon/oriental/06: 192 128
+:simon/oriental/06: 144 128
+:simon/oriental/06: 528 128
+:simon/oriental/06: 480 128
+:simon/oriental/06: 432 128
+:simon/oriental/06: 384 128
+:simon/oriental/06: 336 128
+:simon/oriental/06: 288 128
+:simon/oriental/06: 240 128
+:simon/oriental/bonsai: -70 104
+:simon/oriental/bonsai: 512 64 frr
+:simon/oriental/06: 96 288
+:simon/oriental/gate: 224 48
+:simon/oriental/03: 160 112
+:simon/oriental/03: 192 112
+:simon/oriental/03: 224 112
+:simon/oriental/03: 256 112
+:simon/oriental/03: 288 112
+:simon/oriental/03: 320 112
+:simon/oriental/03: 352 112
+:simon/oriental/03: 384 112
+:simon/oriental/03: 416 112
+:simon/oriental/03: 448 112
+:simon/oriental/03: 480 112
+:simon/oriental/03: 512 112
+:simon/oriental/03: 544 112
+:simon/oriental/03: -13 32
+:simon/oriental/03: 32 32
+:simon/oriental/03: -59 32
+:simon/oriental/03: 413 66
+:simon/oriental/02: 384 66
+:simon/oriental/10: 96 162 frr
+:simon/oriental/10: 96 132
+:simon/oriental/10: 96 102 rrr
+:simon/oriental/10: 96 72
+:simon/oriental/10: 96 42 rrr
+:simon/oriental/06: 264 272
+:simon/oriental/06: 296 272
+:simon/oriental/06: 328 272
+:simon/oriental/06: 360 272
+:simon/oriental/06: 392 272
+:simon/oriental/06: 424 272
+:simon/oriental/06: 456 272
+:simon/oriental/06: 488 272
+:simon/oriental/06: 520 272
+:simon/oriental/06: 64 288
+:simon/oriental/06: 32 288
+:simon/oriental/06: 0 288
+:simon/oriental/06: -32 288
+:simon/oriental/bush6: 608 256 d
+:simon/oriental/06: 552 272

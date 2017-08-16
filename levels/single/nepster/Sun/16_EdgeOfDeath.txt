@@ -1,4 +1,4 @@
-$BUILT 2016-07-18 22:32:29
+$BUILT 2017-08-02 13:10:15
 $AUTHOR Nepster
 $ENGLISH On the Edge of Death
 
@@ -6,7 +6,6 @@ $ENGLISH On the Edge of Death
 #SIZE_X 640
 #SIZE_Y 400
 
-#SECONDS 0
 #INITIAL 10
 #REQUIRED 9
 #SPAWN_INTERVAL 80
@@ -23,8 +22,6 @@ $ENGLISH On the Edge of Death
 :matt/goldmine/Hatch.H: 146 112
 
 :matt/goldmine/Goal.G: 576 276
-
-:matt/goldmine/GoalTop.D: 576 228
 
 :matt/goldmine/04: 136 -58 r
 :matt/goldmine/04: 54 -42 r
@@ -51,8 +48,8 @@ $ENGLISH On the Edge of Death
 :matt/goldmine/explosivecrate: 436 106
 :matt/goldmine/explosivecrate: 378 170
 :matt/goldmine/04: 262 158 r
-:matt/goldmine/02: 342 270
-:matt/goldmine/04: 350 202 rr
+:matt/goldmine/02: 354 270
+:matt/goldmine/04: 350 200 rr
 :matt/goldmine/plank: 30 160
 :matt/goldmine/plank: 22 162
 $BEGIN_TILE_GROUP 0
@@ -100,3 +97,4 @@ $END_TILE_GROUP
 :matt/goldmine/00: 490 232 d
 :matt/goldmine/03: 528 222 frrd
 :matt/goldmine/03: 579 211 frrd
+:matt/goldmine/10: 423 330 d

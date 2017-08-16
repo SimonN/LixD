@@ -8,10 +8,10 @@ blocked.txt
 climbtofreedom.txt
 goblincity.txt
 escapethepit.txt
-anecklaceofraindrops.txt
+beneaththelab.txt
 canadianglade.txt
 letsblockandblow.txt
-fourcolor.txt
+anecklaceofraindrops.txt
 putyourlix.txt
 alternative.txt
 solareclipse.txt

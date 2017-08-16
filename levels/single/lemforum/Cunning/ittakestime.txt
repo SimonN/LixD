@@ -1,118 +1,147 @@
-$BUILT 2016-07-03 00:47:30
+$BUILT 2017-07-30 17:47:23
 $AUTHOR mobius
-$ENGLISH It Takes Time to Build...
+$ENGLISH It Takes Time to Build
 
 #INTENDED_NUMBER_OF_PLAYERS 1
-#SIZE_X 1152
+#SIZE_X 640
 #SIZE_Y 400
 #START_X 64
 #START_Y 0
 
 #INITIAL 40
 #REQUIRED 37
-#SPAWN_INTERVAL 28
+#SPAWN_INTERVAL 30
 
-#BUILDER 1
-#PLATFORMER 5
-#BASHER 3
-#DIGGER 3
+#CLIMBER 1
+#PLATFORMER 4
+#BASHER 5
+#DIGGER 4
 #EXPLODER2 0
 
-:matt/underworld/Hatch.H: 176 16
-:matt/underworld/Hatch.H: 728 240
+:raymanni/gore/hatch.H: 132 16
+:raymanni/gore/hatch.H: 492 250 r
 
-:matt/underworld/Goal.G: 912 224
+:raymanni/gore/goal.G: 0 240
 
-:matt/underworld/Lava.W: 880 368
-:matt/underworld/Lava.W: 928 368
-:matt/underworld/Lava.W: 976 368
-:geoo/sandstone/brazier.F: 792 136
-:matt/underworld/Lava.W: 400 368
-:matt/underworld/Lava.W: 448 368
-:matt/underworld/Lava.W: 496 368
-:matt/underworld/Lava.W: 544 368
-:matt/underworld/Lava.W: 592 368
-:matt/underworld/Lava.W: 640 368
-:matt/underworld/Lava.W: 64 368
-:matt/underworld/Lava.W: 112 368
-:matt/underworld/Lava.W: 160 368
-:matt/underworld/Lava.W: 208 368
-:matt/underworld/Lava.W: 256 368
-:matt/underworld/Lava.W: 304 368
-:matt/underworld/Lava.W: 352 368
-:matt/underworld/Lava.W: 1120 368
-:matt/underworld/Lava.W: 320 -16
-:matt/underworld/Lava.W: 416 -16
-:matt/underworld/Lava.W: 464 -16
-:matt/underworld/Lava.W: 512 -16
-:matt/underworld/Lava.W: 560 -16
-:matt/underworld/Lava.W: 608 -16
-:matt/underworld/Lava.W: 656 -16
-:matt/underworld/Lava.W: 704 -16
-:matt/underworld/Lava.W: 752 -16
-:matt/underworld/Lava.W: 800 -16
-:matt/underworld/Lava.W: 1024 -16
-:matt/underworld/Lava.W: 1072 -16
-:matt/underworld/Lava.W: 1120 -16
-:matt/underworld/Lava.W: 16 368
-:matt/underworld/Lava.W: -32 368
-:matt/underworld/Lava.W: 368 -16
-:matt/underworld/Lava.W: 272 -16
+:raymanni/gore/acid.W: 80 350
+:raymanni/gore/acid.W: 112 352
+:raymanni/gore/acid.W: 144 352
+:raymanni/gore/acid.W: 176 352
+:raymanni/gore/acid.W: 208 352
+:raymanni/gore/acid.W: 240 352
+:raymanni/gore/acid.W: 272 352
+:raymanni/gore/acid.W: 304 352
+:raymanni/gore/acid.W: 0 184
+:raymanni/gore/acid.W: 32 184
+:raymanni/gore/acid.W: 64 184
+:raymanni/gore/acid.W: -32 184
+:raymanni/gore/acid.W: 336 352
+:geoo/construction/sawblade_medium.F: 336 176
+:geoo/construction/sawblade_medium.F: 368 152
+:geoo/construction/sawblade_medium.F: 368 120
+:geoo/construction/sawblade_medium.F: 368 88
+:geoo/construction/sawblade_medium.F: 368 56
+:geoo/construction/sawblade_medium.F: 368 24
+:geoo/construction/sawblade_medium.F: 368 -8
+:geoo/construction/sawblade_medium.F: -24 104
+:geoo/construction/sawblade_medium.F: -24 64
+:geoo/construction/sawblade_medium.F: -24 24
+:raymanni/gore/acid.W: 376 350
+:raymanni/gore/acid.W: 408 350
+:geoo/construction/sawblade_medium.F: 368 184
+:geoo/construction/sawblade_medium.F: 480 152
 
-:geoo/construction/fence_rust_64x64: 824 32
-:matt/underworld/00: 848 158
-:geoo/construction/fence_rust_64x64: 824 96
-:geoo/steel/64x64o.S: 816 352
-:geoo/steel/64x64o.S: 1008 344
-:matt/underworld/02: 80 80
-:matt/underworld/02: 144 80
-:matt/underworld/02: 208 80
-:matt/underworld/02: 80 176
-:matt/underworld/02: 144 176
-:matt/underworld/02: 208 176
-:matt/underworld/02: 272 80
-:matt/underworld/02: 272 176
-:matt/bricks/18: 288 0
-:matt/underworld/05: 58 -28
-:matt/underworld/07: 220 -64
-:matt/underworld/09a: 160 8
-:matt/underworld/09c: 224 8
-:matt/underworld/09b: 294 0
-:matt/underworld/09c: 74 0
-:matt/underworld/09a: 100 10
-:matt/underworld/04: 76 -30
-:matt/underworld/07: 754 320
-:matt/underworld/08: 706 336
-:matt/underworld/06: 1026 320
-:matt/underworld/01: 904 312
-:matt/underworld/01: 932 304
-:matt/underworld/01: 892 288
-:matt/underworld/05: 794 304
-:matt/underworld/05: 914 304
-:matt/underworld/04: 672 368
-:matt/bricks/18: 1040 166
-:matt/underworld/07: 848 102
-:matt/underworld/07: 912 102
-:matt/underworld/07: 976 86
-:matt/underworld/07: 832 30
-:matt/underworld/07: 896 30
-:matt/underworld/07: 960 14
-:matt/underworld/07: 992 118
-:matt/underworld/07: 832 -32
-:matt/underworld/07: 800 -42
-:matt/underworld/07: 896 -18
-:matt/underworld/00: 784 158
-:matt/underworld/09c: 864 184
-:matt/underworld/09a: 886 190
-:matt/underworld/04: 866 148
-:matt/underworld/09a: 944 192
-:matt/underworld/09c: 1008 192
-:matt/underworld/04: 978 304
-:matt/underworld/09a: 240 24
-:matt/underworld/04: 688 336 rrr
-:matt/underworld/04: 672 352 rr
-:matt/underworld/04: 884 308
-:matt/underworld/07: 960 -48
-:matt/underworld/07: -16 -72
-:matt/underworld/01: 932 272
-:matt/underworld/01: 932 256 d
+:raymanni/gore/blob_3: 60 130 rrr
+:raymanni/gore/blob_3: 400 292
+:raymanni/gore/blob_1: 416 294 frr
+:raymanni/gore/blob_4: 406 324 rr
+:raymanni/gore/blob_3: 462 192
+:raymanni/gore/blob_1: 476 200
+:raymanni/gore/blob_1: 482 112
+:raymanni/gore/blob_1: 480 96
+:raymanni/gore/bone_1: 48 216
+:raymanni/gore/blob_4: 54 102
+:raymanni/gore/blob_2: 148 88
+:raymanni/gore/blob_2: 44 86
+:raymanni/gore/blob_2: 228 88
+:raymanni/gore/blob_2: 200 106
+:raymanni/gore/blob_2: 152 106
+:raymanni/gore/blob_1: 274 96
+:raymanni/gore/blob_1: 272 132
+:raymanni/gore/blob_2: 70 110
+:raymanni/gore/blob_2: 154 142
+:raymanni/gore/blob_2: 76 144
+:raymanni/gore/blob_1: 272 158
+:raymanni/gore/blob_2: 234 142
+:raymanni/gore/blob_1: 310 94
+:raymanni/gore/blob_1: 308 124
+:raymanni/gore/blob_2: 76 170
+:raymanni/gore/blob_2: 198 168
+:raymanni/gore/blob_2: 150 168
+:raymanni/gore/blob_1: 308 152
+:raymanni/gore/blob_3: 300 168
+:raymanni/gore/blob_2: 108 192
+:raymanni/gore/bone_1: 16 216
+:raymanni/gore/bone_1: -16 216
+:raymanni/gore/blob_4: 32 320 rr
+:raymanni/gore/blob_2: -48 304
+:raymanni/gore/blob_2: -32 320
+:raymanni/gore/blob_2: -23 354
+:raymanni/gore/blob_2: 64 367
+:raymanni/gore/blob_2: 160 368
+:raymanni/gore/blob_2: 240 366
+:raymanni/gore/bone_5: 293 319 frr
+:raymanni/gore/blob_2: 96 384
+:raymanni/gore/blob_2: 296 368 rr
+:raymanni/gore/bone_5: 246 320 frr
+:raymanni/gore/blob_2: 80 -30
+:geoo/steel/silhouette_32x64.S: -16 24
+:raymanni/gore/blob_2: 16 -16
+:geoo/steel/silhouette_32x64.S: -16 88
+:raymanni/gore/blob_1: 404 302 frr
+:raymanni/gore/blob_2: 336 368 rr
+:geoo/steel/silhouette_64x64.S: 424 336
+:geoo/steel/silhouette_64x64.S: 488 336
+:geoo/steel/silhouette_64x64.S: 552 336
+:geoo/steel/silhouette_64x64.S: 552 144
+:geoo/steel/silhouette_64x64.S: 616 16
+:geoo/steel/silhouette_64x64.S: 616 80
+:geoo/steel/silhouette_64x64.S: 616 144
+:geoo/steel/silhouette_64x64.S: 616 208
+:geoo/steel/silhouette_32x64.S: 464 112
+:geoo/steel/silhouette_64x64.S: 616 336
+:geoo/steel/silhouette_64x64.S: 616 272
+:raymanni/gore/bone_5: 528 103 r
+:geoo/steel/silhouette_64x64.S: 552 272
+:geoo/steel/silhouette_32x32.S: 448 208
+:geoo/steel/silhouette_64x64.S: 552 208
+:geoo/steel/silhouette_32x64.S: 464 176
+:geoo/steel/silhouette_64x32.S: 552 -14
+:geoo/steel/silhouette_64x32.S: 488 -16
+:geoo/steel/silhouette_64x32.S: 424 -16
+:raymanni/gore/blob_2: 432 -16
+:geoo/steel/silhouette_64x32.S: 616 -16
+:raymanni/gore/bone_6: 514 16 rr
+:raymanni/gore/blob_2: 488 -32
+:raymanni/gore/blob_2: 248 188
+:geoo/steel/silhouette_64x32.S: -24 216
+:geoo/steel/silhouette_64x32.S: 40 216
+:geoo/steel/silhouette_32x64.S: 392 -16
+:geoo/steel/silhouette_32x64.S: 392 48
+:geoo/steel/silhouette_32x64.S: 392 112
+:geoo/steel/silhouette_32x64.S: 392 176
+:raymanni/gore/blob_2: 180 192
+:geoo/steel/silhouette_64x32.S: 424 304
+:raymanni/gore/bone_5: 434 244
+:geoo/steel/silhouette_64x32.S: 488 304
+:geoo/steel/dark_16x32o.S: 470 272 d
+:raymanni/gore/blob_4: 42 288
+:raymanni/gore/blob_2: -64 288
+:raymanni/gore/blob_3: 348 358
+:raymanni/gore/blob_3: 87 360
+:raymanni/gore/bone_5: 98 308
+:raymanni/gore/blob_4: 128 102
+:raymanni/gore/blob_2: -48 -16
+:raymanni/gore/bone_5: 343 303 frr
+:raymanni/gore/bone_5: 204 320
+:raymanni/gore/bone_5: 150 320

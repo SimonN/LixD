@@ -1,4 +1,4 @@
-$BUILT 2016-07-23 16:41:26
+$BUILT 2017-08-02 16:57:16
 $AUTHOR Nepster
 $ENGLISH We all fly down
 
@@ -6,7 +6,6 @@ $ENGLISH We all fly down
 #SIZE_X 768
 #SIZE_Y 400
 
-#SECONDS 0
 #INITIAL 10
 #REQUIRED 9
 #SPAWN_INTERVAL 90
@@ -38,9 +37,22 @@ $ENGLISH We all fly down
 :geoo/sandstone/torch.F: 338 98
 :geoo/sandstone/torch.F: 398 98
 
+:amanda/steel/steel32x32.S: 320 98
+$BEGIN_TILE_GROUP 0
+:geoo/sandstone/32x32: 0 18
+:geoo/sandstone/ebony/v8l: 15 33
+:geoo/sandstone/ebony/v8l: 15 27
+:geoo/sandstone/ebony/v8l: 9 33 rr
+:geoo/sandstone/ebony/v8l: 9 27 rr
+:geoo/sandstone/ebony/v8l: 10 33 r
+:geoo/sandstone/ebony/v8l: 14 33 r
+:geoo/sandstone/ebony/v8l: 14 27 rrr
+:geoo/sandstone/ebony/v8l: 10 27 rrr
+:geoo/sandstone/slopes/32x32rt: 2 0 d
+$END_TILE_GROUP
+:Group-0: 320 98
 :geoo/sandstone/pillar_top_jaggedr: 16 68
 :amanda/steel/steel32x32.S: 416 98
-:amanda/steel/steel32x32.S: 320 98
 :geoo/sandstone/pillar_top_jaggedl: 240 68
 :geoo/sandstone/pillar_top_jaggedl: 592 274
 :geoo/sandstone/pillar_bottom_ext: 288 288
@@ -81,11 +93,11 @@ $ENGLISH We all fly down
 :geoo/sandstone/pillar_top_jaggedl: 432 212
 :geoo/sandstone/pillar_top_jaggedr: 432 172 f
 :geoo/sandstone/pillar_bottom_ext: 576 288
-$BEGIN_TILE_GROUP 0
+$BEGIN_TILE_GROUP 1
 :geoo/sandstone/pillar_bottom: 0 2
 :geoo/sandstone/pillar_bottom: 0 0 d
 $END_TILE_GROUP
-:Group-0: 592 286
+:Group-1: 592 286
 :geoo/sandstone/pillar_top: 592 146
 :geoo/sandstone/pillar_top_ext: 576 130
 :geoo/sandstone/pillar_top_jaggedr: 592 236 f
@@ -100,21 +112,8 @@ $END_TILE_GROUP
 :geoo/sandstone/pillar_32: 720 18
 :geoo/sandstone/pillar_32: 720 -14
 :geoo/sandstone/pillar_32: 16 0
-$BEGIN_TILE_GROUP 1
-:geoo/sandstone/32x32: 0 18
-:geoo/sandstone/ebony/v8l: 15 33
-:geoo/sandstone/ebony/v8l: 15 27
-:geoo/sandstone/ebony/v8l: 9 33 rr
-:geoo/sandstone/ebony/v8l: 9 27 rr
-:geoo/sandstone/ebony/v8l: 10 33 r
-:geoo/sandstone/ebony/v8l: 14 33 r
-:geoo/sandstone/ebony/v8l: 14 27 rrr
-:geoo/sandstone/ebony/v8l: 10 27 rrr
-:geoo/sandstone/slopes/32x32rt: 0 0 d
-$END_TILE_GROUP
-:Group-1: 320 98
 :geoo/sandstone/pillar_bottom_ext: 224 82
-:Group-0: 240 80
+:Group-1: 240 80
 :geoo/sandstone/pillar_top_jaggedr: 240 30 f
 :geoo/sandstone/slopes/32x32lt: 210 74 d
 :geoo/sandstone/slopes/32x32lt: 213 70 d
@@ -364,47 +363,41 @@ $END_TILE_GROUP
 :geoo/sandstone/ebony/h8a: 598 319
 :geoo/sandstone/ebony/v8c: 598 313 rrr
 $BEGIN_TILE_GROUP 2
-:geoo/sandstone/32x32: 0 18
-:geoo/sandstone/ebony/v8l: 15 33
-:geoo/sandstone/ebony/v8l: 15 27
-:geoo/sandstone/ebony/v8l: 9 33 rr
-:geoo/sandstone/ebony/v8l: 9 27 rr
-:geoo/sandstone/ebony/v8l: 10 33 r
-:geoo/sandstone/ebony/v8l: 14 33 r
-:geoo/sandstone/ebony/v8l: 14 27 rrr
-:geoo/sandstone/ebony/v8l: 10 27 rrr
-:geoo/sandstone/slopes/32x32lt: 0 0 d
-$END_TILE_GROUP
-:Group-2: 416 98
-$BEGIN_TILE_GROUP 3
 :geoo/sandstone/pillar_bottom: 0 2
 :geoo/sandstone/pillar_32: 0 0 d
 $END_TILE_GROUP
-:Group-3: 16 80
+:Group-2: 16 80
 :geoo/sandstone/pillar_top_ext: 36 66 d
 :geoo/sandstone/pillar_top_jaggedl: 16 32 f
+$BEGIN_TILE_GROUP 3
+:geoo/sandstone/32x32: 2 18
+:geoo/sandstone/ebony/v8l: 17 33
+:geoo/sandstone/ebony/v8l: 17 27
+:geoo/sandstone/ebony/v8l: 11 33 rr
+:geoo/sandstone/ebony/v8l: 11 27 rr
+:geoo/sandstone/ebony/v8l: 12 33 r
+:geoo/sandstone/ebony/v8l: 16 33 r
+:geoo/sandstone/ebony/v8l: 16 27 rrr
+:geoo/sandstone/ebony/v8l: 12 27 rrr
+:geoo/sandstone/slopes/32x32lt: 0 0 d
+$END_TILE_GROUP
+:Group-3: 416 98
 $BEGIN_TILE_GROUP 4
-:amanda/steel/steel16x16.S: 0 0
-:amanda/steel/steel16x16.S: 10 0 d
+:amanda/steel/steel8x16.S: 0 0
+:amanda/steel/steel8x16.S: 2 0 d
 $END_TILE_GROUP
 $BEGIN_TILE_GROUP 5
-:amanda/steel/steel16x16.S: 5 0
-:Group-4: 10 0
-:amanda/steel/steel16x16.S: 0 0 d
+:amanda/steel/steel8x16.S: 4 0
+:Group-4: 8 0
+:amanda/steel/steel8x16.S: 0 0 d
+:amanda/steel/steel8x16.S: 10 6 d
+:amanda/steel/steel8x16.S: 8 9 d
 $END_TILE_GROUP
 $BEGIN_TILE_GROUP 6
-:amanda/steel/steel16x16.S: 0 0
-:Group-5: 1 0
-:amanda/steel/steel16x16.S: 6 0 d
+:amanda/steel/steel8x16.S: 4 10
+:Group-5: 8 16
+:amanda/steel/steel8x16.S: 4 0 d
+:amanda/steel/steel8x16.S: 0 10 d
 $END_TILE_GROUP
-$BEGIN_TILE_GROUP 7
-:Group-6: 0 0
-:Group-6: 0 4 d
-$END_TILE_GROUP
-$BEGIN_TILE_GROUP 8
-:Group-6: 0 8
-:Group-7: 0 16
-:Group-6: 0 0 d
-$END_TILE_GROUP
-:Group-8: 317 98
-:Group-8: 445 98
+:Group-6: 318 98
+:Group-6: 446 98

@@ -16,7 +16,7 @@ offtherails.txt
 derailedlevel.txt
 lixesinmotion.txt
 thisistoomuch.txt
-danceswithlixes.txt
+jackinthebox.txt
 slipping.txt
 slippingagain.txt
 lixferenda.txt
@@ -31,7 +31,7 @@ buyonegetonefree2.txt
 imgonnamakeyoumine.txt
 passingengagement.txt
 theringoffnargl.txt
-sevenpillars.txt
+hellfire.txt
 gomenne.txt
 rumbletothebottom.txt
 todestroyis.txt

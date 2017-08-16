@@ -1,4 +1,4 @@
-$BUILT 2016-01-13 21:56:38
+$BUILT 2017-08-09 01:49:47
 $AUTHOR Crane/Nepster
 $ENGLISH Operation Overlord
 
@@ -9,7 +9,6 @@ $ENGLISH Operation Overlord
 #BACKGROUND_GREEN 0
 #BACKGROUND_BLUE 16
 
-#SECONDS 0
 #INITIAL 40
 #REQUIRED 35
 #SPAWN_INTERVAL 55
@@ -26,20 +25,20 @@ $ENGLISH Operation Overlord
 
 :matt/underworld/Goal.G: 288 240
 
-:simon/water.W: 590 350
-:simon/water.W: 542 350
-:simon/water.W: 494 350
-:simon/water.W: 446 350
-:simon/water.W: 398 350
-:simon/water.W: 350 350
-:simon/water.W: 302 350
-:simon/water.W: 254 350
-:simon/water.W: 206 350
-:simon/water.W: 158 350
-:simon/water.W: 110 350
-:simon/water.W: 62 350
-:simon/water.W: 14 350
-:simon/water.W: -34 350
+:simon/water.W: 624 352
+:simon/water.W: 576 352
+:simon/water.W: 528 352
+:simon/water.W: 480 352
+:simon/water.W: 432 352
+:simon/water.W: 384 352
+:simon/water.W: 336 352
+:simon/water.W: 288 352
+:simon/water.W: 240 352
+:simon/water.W: 192 352
+:simon/water.W: 144 352
+:simon/water.W: 96 352
+:simon/water.W: 48 352
+:simon/water.W: 0 352
 
 :geoo/steel/silhouette_64x32.S: 320 164
 :geoo/steel/silhouette_64x32.S: 256 164

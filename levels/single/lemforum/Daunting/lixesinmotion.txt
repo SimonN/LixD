@@ -1,15 +1,10 @@
-$BUILT 2014-05-27 02:42:45
+$BUILT 2017-07-03 11:10:23
 $AUTHOR mobius
-$GERMAN 
 $ENGLISH Lixes in Motion
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 832
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #INITIAL 20
 #REQUIRED 19
@@ -20,46 +15,30 @@ $ENGLISH Lixes in Motion
 #BUILDER 2
 #BASHER 1
 #DIGGER 1
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#EXPLODER2 0
 
-:matt/bricks/Hatch.H: 720 160 r
-:matt/bricks/Hatch.H: 464 32
+:raymanni/toys/hatch.H: 697 160 r
+:raymanni/toys/hatch.H: 464 32
 
-:matt/bricks/Goal.G: 56 224
+:raymanni/toys/goal.G: 64 208
 
-:simon/acid.W: 240 352
-:simon/acid.W: 192 352
-:simon/acid.W: 48 352
-:simon/acid.W: 96 352
-:simon/acid.W: 144 352
-:simon/acid.W: 0 352
-:simon/acid.W: 792 352
+:simon/acid.W: 752 416
+:simon/water.W: 784 352
+:raymanni/toys/water.W: 384 448
+:simon/water.W: 0 352
+:simon/water.W: 48 352
+:simon/water.W: 96 352
+:simon/water.W: 144 352
+:simon/water.W: 192 352
+:simon/water.W: 240 352
 
+:raymanni/toys/brick_1: 384 128 rrr
+:raymanni/toys/letter_blank: 416 208
+:raymanni/toys/letter_blank: 416 176
+:raymanni/toys/letter_blank: 416 144
 :matt/bricks/17: 440 168 frr
 :matt/bricks/17: 440 152 frr
 :matt/bricks/17: 440 136 frr
-:matt/bricks/03a: 736 272
-:matt/bricks/03a: 672 272
-:matt/bricks/03a: 608 272
-:matt/bricks/03a: 544 272
-:matt/bricks/03a: 480 272
-:matt/bricks/03a: 416 272
-:matt/bricks/03a: 352 272
-:matt/bricks/03a: 288 272
-:matt/bricks/03a: 576 208
-:matt/bricks/03a: 512 208
-:matt/bricks/03a: 448 208
-:matt/bricks/03a: 384 208
-:matt/bricks/03a: 384 144
-:matt/bricks/02a: 448 176
-:matt/bricks/02a: 512 176
-:matt/bricks/02a: 576 176
 :matt/bricks/19: 608 160
 :matt/bricks/19: 568 160
 :matt/bricks/19: 528 160
@@ -73,29 +52,138 @@ $ENGLISH Lixes in Motion
 :matt/bricks/03a: 128 272
 :matt/bricks/03a: 64 272
 :matt/bricks/03a: 0 272
-:matt/bricks/19: 48 32 rr
-:matt/bricks/19: 88 32 rr
-:matt/bricks/19: 128 32 rr
-:matt/bricks/18: 56 48 rr
-:matt/bricks/18: 56 80 rr
-:matt/bricks/18: 96 48 rr
-:matt/bricks/18: 96 80 rr
-:matt/bricks/18: 136 48 rr
-:matt/bricks/18: 56 112 rr
-:matt/bricks/02a: 24 0
-:matt/bricks/02a: 88 0
-:matt/bricks/02a: 152 0
-:matt/bricks/02a: 216 0
-:matt/bricks/01a: 384 128
-:matt/bricks/01a: 416 128
-:matt/bricks/03a: 736 336
-:matt/bricks/03a: 672 336
-:matt/bricks/03a: 608 336
-:matt/bricks/03a: 544 336
-:matt/bricks/03a: 480 336
-:matt/bricks/03a: 416 336
-:matt/bricks/03a: 352 336
-:matt/bricks/03a: 288 336
 :geoo/steel/dark_16x32o.S: 432 128
 :geoo/steel/dark_16x32o.S: 432 160
 :geoo/steel/dark_16x32o.S: 432 192
+:raymanni/toys/brick_2: 16 0 rrr
+:raymanni/toys/letter_blank: 608 176
+:raymanni/toys/letter_3: 608 208
+:raymanni/toys/letter_blank: 608 240
+:raymanni/toys/letter_blank: 576 176
+:raymanni/toys/letter_blank: 576 208
+:raymanni/toys/letter_blank: 576 240
+:raymanni/toys/letter_blank: 608 272
+:raymanni/toys/letter_blank: 608 304
+:raymanni/toys/letter_blank: 640 272
+:raymanni/toys/letter_blank: 672 272
+:raymanni/toys/letter_1: 576 272
+:raymanni/toys/letter_1: 544 176
+:raymanni/toys/letter_2: 704 272
+:raymanni/toys/letter_blank: 544 208
+:raymanni/toys/letter_blank: 544 240
+:raymanni/toys/letter_blank: 544 272
+:raymanni/toys/letter_blank: 544 304
+:raymanni/toys/letter_blank: 704 304
+:raymanni/toys/letter_blank: 704 336
+:raymanni/toys/letter_blank: 736 304
+:raymanni/toys/letter_blank: 768 304
+:raymanni/toys/letter_blank: 768 336
+:raymanni/toys/letter_blank: 768 368
+:raymanni/toys/letter_blank: 736 336
+:raymanni/toys/letter_blank: 736 368
+:raymanni/toys/letter_blank: 704 336
+:raymanni/toys/letter_blank: 704 368
+:raymanni/toys/letter_blank: 672 336
+:raymanni/toys/letter_blank: 672 368
+:raymanni/toys/letter_blank: 640 336
+:raymanni/toys/letter_blank: 640 368
+:raymanni/toys/letter_blank: 608 336
+:raymanni/toys/letter_blank: 608 368
+:raymanni/toys/letter_blank: 736 272
+:raymanni/toys/letter_blank: 768 272
+:raymanni/toys/letter_blank: 640 304
+:raymanni/toys/letter_blank: 672 304
+:raymanni/toys/letter_blank: 576 336
+:raymanni/toys/letter_blank: 576 368
+:raymanni/toys/letter_blank: 544 336
+:raymanni/toys/letter_blank: 544 368
+:raymanni/toys/letter_blank: 512 336
+:raymanni/toys/letter_blank: 512 368
+:raymanni/toys/letter_blank: 480 336
+:raymanni/toys/letter_blank: 480 368
+:raymanni/toys/letter_blank: 448 336
+:raymanni/toys/letter_blank: 448 368
+:raymanni/toys/letter_blank: 416 336
+:raymanni/toys/letter_blank: 416 368
+:raymanni/toys/letter_blank: 512 272
+:raymanni/toys/letter_blank: 512 304
+:raymanni/toys/letter_blank: 480 272
+:raymanni/toys/letter_blank: 480 304
+:raymanni/toys/letter_blank: 448 272
+:raymanni/toys/letter_blank: 448 304
+:raymanni/toys/letter_blank: 416 272
+:raymanni/toys/letter_blank: 416 304
+:raymanni/toys/letter_4: 576 304
+:raymanni/toys/letter_4: 448 336
+:raymanni/toys/letter_3: 480 272
+:raymanni/toys/letter_1: 512 368
+:raymanni/toys/letter_1: 672 336
+:raymanni/toys/letter_2: 544 336
+:raymanni/toys/letter_2: 384 304
+:raymanni/toys/letter_blank: 512 176
+:raymanni/toys/letter_blank: 512 208
+:raymanni/toys/letter_blank: 480 176
+:raymanni/toys/letter_blank: 480 208
+:raymanni/toys/letter_2: 448 208
+:raymanni/toys/letter_4: 512 240
+:raymanni/toys/letter_1: 448 240
+:raymanni/toys/letter_3: 384 272
+:raymanni/toys/letter_3: 768 272
+:raymanni/toys/letter_2: 736 368
+:raymanni/toys/letter_blank: 480 240
+:raymanni/toys/letter_blank: 448 176
+:raymanni/toys/letter_blank: 416 240
+:raymanni/toys/letter_blank: 384 240
+:raymanni/toys/letter_blank: 384 208
+:raymanni/toys/letter_blank: 384 176
+:raymanni/toys/letter_blank: 384 144
+:raymanni/toys/brick_3: 760 0
+:raymanni/toys/brick_8: 512 432
+:raymanni/toys/brick_16: 184 40 r
+:raymanni/toys/soldier_2: 624 464
+:raymanni/toys/chalk_2: 432 464
+:raymanni/toys/letter_blank: 352 272
+:raymanni/toys/letter_blank: 352 304
+:raymanni/toys/letter_blank: 288 336
+:raymanni/toys/letter_blank: 288 368
+:raymanni/toys/letter_blank: 320 272
+:raymanni/toys/letter_blank: 320 304
+:raymanni/toys/letter_blank: 288 304
+:raymanni/toys/letter_blank: 288 272
+:raymanni/toys/letter_1: 384 176
+:raymanni/toys/letter_1: 288 304
+:raymanni/toys/letter_2: 384 240
+:raymanni/toys/letter_blank: 352 336
+:raymanni/toys/letter_blank: 352 368
+:raymanni/toys/letter_blank: 320 336
+:raymanni/toys/letter_blank: 320 368
+:raymanni/toys/letter_blank: 384 336
+:raymanni/toys/letter_blank: 384 368
+:raymanni/toys/letter_blank: 352 336
+:raymanni/toys/letter_blank: 352 368
+:raymanni/toys/letter_3: 320 368
+:raymanni/toys/letter_blank: 160 272
+:raymanni/toys/letter_blank: 160 304
+:raymanni/toys/letter_blank: 128 304
+:raymanni/toys/letter_blank: 128 272
+:raymanni/toys/letter_1: 128 304
+:raymanni/toys/letter_blank: 96 272
+:raymanni/toys/letter_blank: 96 304
+:raymanni/toys/letter_blank: 64 304
+:raymanni/toys/letter_blank: 64 272
+:raymanni/toys/letter_1: 64 304
+:raymanni/toys/letter_blank: 32 272
+:raymanni/toys/letter_blank: 32 304
+:raymanni/toys/letter_blank: 0 304
+:raymanni/toys/letter_blank: 0 272
+:raymanni/toys/letter_1: 0 304
+:raymanni/toys/letter_3: 96 272
+:raymanni/toys/letter_2: 0 304
+:raymanni/toys/letter_blank: 64 304
+:raymanni/toys/letter_4: 160 304
+:raymanni/toys/brick_2: 416 448 rrr
+:raymanni/toys/brick_2: 144 0 rrr
+:raymanni/toys/brick_1: 80 0 rrr
+:raymanni/toys/brick_1: 208 0 rrr
+:raymanni/toys/brick_14: 96 40 rr
+:raymanni/toys/brick_12: 248 424

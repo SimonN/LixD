@@ -1,4 +1,4 @@
-$BUILT 2016-07-21 13:10:53
+$BUILT 2017-08-09 00:56:33
 $AUTHOR Michael S. Repton
 $ENGLISH Halfway Down the Stairs
 
@@ -29,14 +29,14 @@ $ENGLISH Halfway Down the Stairs
 
 :matt/bricks/Goal.G: 800 64
 
-:simon/water.W: 208 352
-:simon/water.W: 256 352
-:simon/water.W: 304 352
-:simon/water.W: 352 352
-:simon/water.W: 400 352
-:simon/water.W: 448 352
-:simon/water.W: 496 352
-:simon/water.W: 544 352
+:simon/water.W: 224 352
+:simon/water.W: 272 352
+:simon/water.W: 320 352
+:simon/water.W: 368 352
+:simon/water.W: 416 352
+:simon/water.W: 464 352
+:simon/water.W: 512 352
+:simon/water.W: 560 352
 
 :matt/bricks/02: 400 176
 :matt/bricks/02: 464 176

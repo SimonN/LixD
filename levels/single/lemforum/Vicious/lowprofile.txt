@@ -1,4 +1,4 @@
-$BUILT 2016-07-24 21:45:21
+$BUILT 2017-06-21 13:42:25
 $AUTHOR Rubix
 $ENGLISH Low Profile
 
@@ -54,7 +54,7 @@ $ENGLISH Low Profile
 :geoo/construction/sawblade.F: 464 0
 
 :geoo/shadow/pillar_hztl_32: 96 128
-:geoo/shadow/pillar_hztl_32: 256 128
+:geoo/shadow/pillar_hztl_32: 268 128
 :geoo/shadow/pillar_hztl_32: 80 160
 :geoo/shadow/pillar_hztl_32: 80 160
 :geoo/shadow/pillar_hztl_32: 64 128

@@ -1,12 +1,10 @@
-$BUILT 2014-02-27 11:19:45
+$BUILT 2017-08-09 02:50:38
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH A factory Full Of Fools!
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #BACKGROUND_RED 96
 #BACKGROUND_GREEN 0
 #BACKGROUND_BLUE 180
@@ -15,20 +13,14 @@ $ENGLISH A factory Full Of Fools!
 #INITIAL 50
 #REQUIRED 49
 #SPAWN_INTERVAL 32
-#SPAWN_INTERVAL_FAST 4
 
-#CLIMBER 50
 #RUNNER 50
-#JUMPER 50
+#CLIMBER 50
 #BUILDER 2
 #DIGGER 1
+#JUMPER 50
 #CUBER 1
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#EXPLODER2 0
 
 :matt/marble/Hatch.H: -16 64
 
@@ -38,13 +30,12 @@ $ENGLISH A factory Full Of Fools!
 :geoo/construction/squisher.T: 512 80
 :geoo/construction/squisher.T: 544 80
 
-:simon/acid.W: 416 352
-:simon/acid.W: 464 352
+:simon/acid.W: 432 352
+:simon/acid.W: 480 352
 :simon/acid.W: 384 352
-:simon/acid.W: 496 352
 :simon/acid.W: 0 352
 :simon/acid.W: 48 352
-:simon/acid.W: -32 352
+:simon/acid.W: 528 352
 
 :geoo/construction/steam_up.T: 352 256
 :geoo/construction/steam_right.T: 146 60

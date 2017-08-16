@@ -94,9 +94,9 @@ $ENGLISH Derailed Level
 :matt/goldmine/crate16: 470 128
 :geoo/steel/32x32o.S: 306 112
 $BEGIN_TILE_GROUP 0
-:amanda/occult/occult_wax_details_drip: 83 4
-:amanda/occult/occult_wax_details_drip: 69 4
-:amanda/occult/occult_wax_details_drip: 55 4
+:amanda/occult/wax_details_drip: 83 4
+:amanda/occult/wax_details_drip: 69 4
+:amanda/occult/wax_details_drip: 55 4
 :geoo/construction/concrete/032h: 53 0 d
 :geoo/construction/concrete/032h: 0 14 d
 $END_TILE_GROUP
@@ -127,7 +127,7 @@ $BEGIN_TILE_GROUP 3
 :geoo/construction/concrete/008: 24 38
 :geoo/construction/concrete/008: 32 38
 :geoo/construction/concrete/016b: 36 30
-:amanda/occult/occult_scrawl_pentagram: 30 -2 d
+:amanda/occult/scrawl_pentagram: 30 -2 d
 $END_TILE_GROUP
 $BEGIN_TILE_GROUP 4
 :Group-3: 0 0

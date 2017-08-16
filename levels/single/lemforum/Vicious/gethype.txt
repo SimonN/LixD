@@ -1,20 +1,15 @@
-$BUILT 2016-01-30 22:48:57
+$BUILT 2017-08-02 12:32:28
 $AUTHOR Insane Steve
-$GERMAN 
 $ENGLISH Get Hype
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 768
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 128
 #START_Y -20
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
-#INITIAL 15
-#REQUIRED 14
+#INITIAL 16
+#REQUIRED 15
 #SPAWN_INTERVAL 4
 
 #CLIMBER 1
@@ -80,7 +75,6 @@ $ENGLISH Get Hype
 :simon/tapir/008h: 592 136
 :simon/tapir/008h: 672 200
 :simon/tapir/008h: 688 200
-:simon/tapir/008v: 760 320
 :simon/tapir/064: 128 272
 :simon/tapir/128: 0 144
 :simon/tapir/128: 0 272
@@ -127,3 +121,16 @@ $ENGLISH Get Hype
 :simon/tapir/008v: 248 272
 :geoo/steel/64x64o.S: 192 336
 :simon/tapir/064: 128 336
+$BEGIN_TILE_GROUP 0
+:simon/tapir/008v: 2 0
+:simon/tapir/008v: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:simon/tapir/008v: 0 0
+:simon/tapir/008v: 2 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:Group-1: 0 0
+:Group-0: 2 0
+$END_TILE_GROUP
+:Group-2: 764 320

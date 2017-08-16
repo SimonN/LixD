@@ -1,4 +1,4 @@
-$BUILT 2016-09-09 09:34:12
+$BUILT 2017-06-14 19:10:14
 $AUTHOR Rubix
 $ENGLISH The center of attention
 
@@ -15,12 +15,12 @@ $HINT_ENGLISH Its staring you right in the face what needs to happen here.
 #SPAWN_INTERVAL 70
 
 #CLIMBER 1
-#EXPLODER 1
 #BUILDER 4
 #BASHER 1
 #MINER 3
 #DIGGER 1
 #JUMPER 1
+#EXPLODER 0
 
 :matt/carnival/Hatch.H: 48 208
 :matt/carnival/Hatch.H: 0 80

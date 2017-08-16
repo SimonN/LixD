@@ -29,7 +29,7 @@ $ENGLISH Paradise or Hell?
 :geoo/construction/Hatch.H: 1008 0
 :geoo/construction/Hatch.H: 1008 144 r
 
-:matt/oriental/Goal.G: 82 44
+:simon/oriental/goal.G: 82 44
 :matt/underworld/Goal.G: 1408 10
 
 :amanda/forest/frog.T: 536 295

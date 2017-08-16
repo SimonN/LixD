@@ -1,4 +1,4 @@
-$BUILT 2016-07-18 21:30:26
+$BUILT 2017-06-11 22:12:16
 $AUTHOR Nepster
 $ENGLISH Canonballs in the Air
 
@@ -6,7 +6,6 @@ $ENGLISH Canonballs in the Air
 #SIZE_X 912
 #SIZE_Y 400
 
-#SECONDS 0
 #INITIAL 6
 #REQUIRED 5
 #SPAWN_INTERVAL 30
@@ -40,7 +39,7 @@ $ENGLISH Canonballs in the Air
 :proxima/tile/spheres/gold: 52 142
 :proxima/tile/spheres/gold: 160 126
 :proxima/tile/spheres/gold: 132 246
-:proxima/tile/spheres/gold: 236 210
+:proxima/tile/spheres/gold: 239 210
 :proxima/tile/spheres/gold: 32 288
 :proxima/tile/spheres/gold: -40 208
 :proxima/tile/spheres/gold: -6 46

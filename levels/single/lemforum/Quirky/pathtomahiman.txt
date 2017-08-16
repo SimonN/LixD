@@ -1,0 +1,247 @@
+$BUILT 2017-07-31 00:09:40
+$AUTHOR M. Zurlinden/mobius/geoo
+$ENGLISH Path to Mahiman
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 398
+#START_X 0
+#START_Y -20
+
+#INITIAL 1
+#REQUIRED 1
+#SPAWN_INTERVAL 1
+
+#WALKER 5
+#CLIMBER 1
+#BASHER 1
+#JUMPER 5
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 530 50 r
+
+:geoo/abstract/goal.G: 530 210
+
+:matt/marble/thinplatform64p: 138 42
+:matt/marble/thinplatform64p: 402 258
+:matt/marble/thinplatform64p: 378 258
+:matt/marble/thinplatform64p: 18 258 rrr
+:matt/marble/thinplatform128p: 18 252 rrr
+:matt/marble/thinplatform128p: 82 378
+:matt/marble/thinplatform128p: 146 378
+:matt/marble/thinplatform128p: 274 378
+:matt/marble/thinplatform64p: 66 282 rrr
+:matt/marble/thinplatform64p: 18 378
+:matt/marble/thinplatform64p: 98 306 rr
+:matt/marble/thinplatform16p: 90 66
+:matt/marble/thinplatform16p: 106 66
+:matt/marble/thinplatform16p: 122 66
+:matt/marble/thinplatform16p: 210 66
+:matt/marble/thinplatform16p: 226 66
+:matt/marble/thinplatform16p: 66 194 rrr
+:matt/marble/thinplatform16p: 66 188 rrr
+:matt/marble/thinplatform16p: 42 282
+:matt/marble/thinplatform16p: 50 282
+:matt/marble/thinplatform16p: 66 330 rrr
+:matt/marble/thinplatform16p: 66 338 rrr
+:matt/marble/thinplatform16p: 122 354
+:matt/marble/thinplatform16p: 194 306
+:matt/marble/thinplatform16p: 242 282
+:matt/marble/thinplatform16p: 114 354
+:matt/marble/thinplatform16p: 148 138
+:matt/marble/thinplatform16p: 186 290 rrr
+:matt/marble/thinplatform16p: 186 290 rrr
+:matt/marble/thinplatform16p: 186 282 rrr
+:matt/marble/thinplatform16p: 234 282
+:matt/marble/thinplatform16p: 138 138
+:matt/marble/thinplatform16p: 186 306
+:matt/marble/thinplatform16p: 210 282
+:matt/marble/thinplatform16p: 218 282
+:matt/marble/thinplatform16p: 162 122 rrr
+:matt/marble/thinplatform16p: 162 114 rrr
+:matt/marble/thinplatform16p: 306 338 rrr
+:matt/marble/thinplatform16p: 306 330 rrr
+:matt/marble/thinplatform16p: 170 66
+:matt/marble/thinplatform16p: 162 66
+:matt/marble/thinplatform16p: 362 90
+:matt/marble/thinplatform16p: 194 114
+:matt/marble/thinplatform16p: 186 114
+:matt/marble/thinplatform16p: 290 42
+:matt/marble/thinplatform16p: 170 162
+:matt/marble/thinplatform16p: 162 162
+:matt/marble/thinplatform16p: 146 90
+:matt/marble/thinplatform16p: 138 90
+:matt/marble/thinplatform16p: 162 114 rrr
+:matt/marble/thinplatform16p: 162 90 rrr
+:matt/marble/thinplatform16p: 162 98 rrr
+:matt/marble/thinplatform64p: 306 90
+:matt/marble/thinplatform64p: 146 42
+:matt/marble/thinplatform16p: 258 42
+:matt/marble/thinplatform16p: 274 42
+:matt/marble/thinplatform16p: 274 42
+:matt/marble/thinplatform16p: 274 42
+:matt/marble/thinplatform16p: 362 42
+:matt/marble/thinplatform16p: 330 42
+:matt/marble/thinplatform16p: 346 42
+:matt/marble/thinplatform16p: 346 42
+:matt/marble/thinplatform16p: 346 42
+:matt/marble/thinplatform128p: 378 138
+:matt/marble/thinplatform128p: 498 138
+:matt/marble/thinplatform128p: 450 258
+:matt/marble/thinplatform128p: 498 258
+$BEGIN_TILE_GROUP 0
+:matt/marble/thinplatform16p: 12 0
+:matt/marble/thinplatform16p: 0 0
+:matt/marble/thinplatform16p: 26 0 d
+$END_TILE_GROUP
+:Group-0: 306 186
+:Group-0: 378 90
+:Group-0: 234 66
+:Group-0: 114 18 frrr
+:Group-0: 210 114 frrr
+:Group-0: 186 42 frrr
+:Group-0: 186 66 frrr
+:Group-0: 186 90 frrr
+:Group-0: 114 92 frrr
+:Group-0: 138 138 frrr
+:Group-0: 186 162
+:Group-0: 114 138 r
+:Group-0: 114 162
+:Group-0: 42 162
+:Group-0: 66 210
+:Group-0: 114 116
+:Group-0: 234 18 frrr
+:Group-0: 354 18 frrr
+:Group-0: 90 306
+:Group-0: 42 138
+:matt/marble/thinplatform64p: 66 162 r
+:Group-0: 18 210
+:matt/marble/thinplatform64p: 66 170 r
+:Group-0: 42 138 r
+:Group-0: 42 162 r
+:Group-0: 42 234
+:Group-0: 90 282 r
+:Group-0: 66 258 rr
+:Group-0: 42 234 r
+:Group-0: 42 258 r
+:Group-0: 114 186
+:Group-0: 138 186
+:Group-0: 306 138 r
+:Group-0: 186 138 r
+:Group-0: 186 162 r
+:Group-0: 186 186 r
+:Group-0: 138 210
+:Group-0: 138 186 r
+:Group-0: 138 210 r
+:Group-0: 138 234 rr
+:Group-0: 210 138 frrr
+:Group-0: 210 138 f
+:Group-0: 378 42 r
+:Group-0: 354 162
+:Group-0: 330 186
+:Group-0: 354 186 r
+:Group-0: 186 234
+:Group-0: 162 258
+:Group-0: 186 234 r
+:Group-0: 162 234 r
+$BEGIN_TILE_GROUP 1
+:matt/marble/thinplatform64p: 0 0
+:matt/marble/thinplatform16p: 58 0 rr
+$END_TILE_GROUP
+:Group-1: 210 186
+:Group-1: 210 186 r
+:Group-1: 114 258 r
+:Group-1: 114 210 r
+:Group-0: 330 282 rr
+:Group-1: 378 138 r
+:Group-0: 354 234 rrr
+:Group-0: 330 258 rr
+:Group-0: 378 210 rrr
+:Group-0: 330 210 rrr
+:Group-0: 282 186 rrr
+:Group-1: 306 234 r
+:Group-0: 306 210 rr
+:Group-0: 306 234 rr
+:Group-0: 306 258 rr
+:Group-0: 282 234 rr
+:Group-0: 354 354 rr
+:Group-1: 330 282 r
+:Group-0: 378 258 rrr
+:Group-0: 378 306 rr
+:Group-0: 378 330 rr
+:Group-0: 282 210 rrr
+:Group-0: 282 138 f
+:Group-0: 234 114 f
+:Group-1: 282 42 r
+:Group-1: 330 114 r
+:Group-0: 354 282 rrr
+:Group-0: 354 330 rrr
+:Group-0: 306 354 rr
+:Group-0: 330 330 rr
+:Group-0: 258 282 rrr
+:Group-0: 258 354
+:Group-1: 234 210 r
+:Group-1: 234 330
+:Group-1: 210 306 r
+:Group-0: 234 330 rrr
+:Group-0: 138 330 rrr
+:Group-0: 138 354 rrr
+:Group-1: 282 114
+:Group-1: 402 42 r
+:Group-0: 378 114 r
+:Group-0: 378 114 rr
+:Group-1: 282 258 r
+:Group-0: 234 306
+:Group-0: 402 138 r
+:matt/marble/thinplatform128p: 18 124 rrr
+:matt/marble/thinplatform128p: 18 20 rrr
+:matt/marble/thinplatform128p: 18 18
+:matt/marble/thinplatform128p: 146 18
+:matt/marble/thinplatform128p: 274 18
+:Group-0: 378 18 f
+:Group-1: 42 42 r
+:Group-0: 42 18 frrr
+:Group-0: 258 42 frrr
+:Group-0: 210 42 frrr
+:Group-1: 138 42 r
+:Group-1: 210 90 rr
+:Group-0: 90 92 f
+:Group-0: 66 92 f
+:Group-0: 90 42 frrr
+:Group-1: 66 42 r
+:Group-0: 66 114 frrr
+:Group-0: 138 330 rr
+:Group-0: 162 330 rr
+:Group-0: 186 330 rrr
+:Group-0: 258 114 fr
+:Group-0: 258 138 fr
+:Group-0: 234 210
+:Group-0: 258 234 r
+:Group-0: 258 210 r
+:Group-0: 258 258 rr
+:Group-1: 234 162 rr
+:Group-0: 234 162 r
+:Group-0: 282 354 rrr
+:Group-0: 138 282
+:Group-0: 162 282
+:Group-0: 114 258
+:Group-0: 138 258 r
+:Group-0: 42 354 rrr
+:Group-0: 42 330 rrr
+:Group-0: 90 330 rrr
+:Group-0: 90 330 rr
+:Group-0: 18 306 rr
+:Group-0: 330 66 frrr
+:Group-0: 306 66 f
+:Group-0: 330 66 f
+:Group-0: 354 90 r
+:Group-0: 354 114 r
+:Group-0: 162 354 rr
+:Group-1: 90 114 r
+:Group-1: 90 186 r
+:Group-1: 402 282 r
+:Group-0: 378 282 rr
+:Group-0: 402 234 r
+:Group-0: 402 210 r
+:Group-0: 402 162 r
+:Group-0: 378 378 rr

@@ -1,4 +1,4 @@
-$BUILT 2016-09-18 09:19:50
+$BUILT 2017-08-13 08:37:09
 $AUTHOR Rubix
 $ENGLISH The clairvoyant
 
@@ -13,125 +13,123 @@ $ENGLISH The clairvoyant
 
 #SECONDS 140
 #INITIAL 99
-#REQUIRED 99
+#REQUIRED 98
 #SPAWN_INTERVAL 4
 
-#WALKER 1
+#WALKER 3
 #CLIMBER 1
 #FLOATER 1
 #PLATFORMER 3
-#BASHER 7
-#JUMPER 1
+#BASHER 1
+#JUMPER 4
+#CUBER 1
 #EXPLODER2 0
 
-:matt/oriental/Hatch.H: 524 305 r
+:simon/oriental/hatch.H: 524 305 r
 
-:matt/oriental/Goal.G: 979 2
+:simon/oriental/goal.G: 979 2
 
 :matt/water.W: 576 368
 :matt/water.W: 608 368
 :matt/water.W: 848 368
 :matt/water.W: 880 368
 
-:matt/oriental/bamboo_pole: 569 14
-:matt/oriental/bamboo_pole: 569 42
-:matt/oriental/10: 540 20
-:matt/oriental/bamboo_pole: 258 247
-:matt/oriental/bamboo_pole: 285 156 r
-:matt/oriental/08: 912 336
-:matt/oriental/asiantemple: 94 193
-:matt/oriental/bonsaitree: 366 74
-:matt/oriental/bonsaitree: 338 188
-:matt/oriental/05: 384 368 r
-:matt/oriental/07: 320 368
-:matt/oriental/07: 256 368
-:matt/oriental/07: 192 368
-:matt/oriental/07: 128 368
-:matt/oriental/07: 64 368
-:matt/oriental/07: 0 368
-:matt/oriental/bamboo_pole: 32 192 r
-:matt/oriental/bamboo_pole: 912 80 r
-:matt/oriental/bamboo_pole: 287 69
-:matt/oriental/06: 240 192
-:matt/oriental/06: 288 192
-:matt/oriental/bamboo_pole: 1013 84
-:matt/oriental/06: 336 192
-:matt/oriental/bamboo_pole: 571 13 r
-:matt/oriental/asiangate: 624 224
-:matt/oriental/04: 720 288
-:matt/oriental/04: 688 288
-:matt/oriental/04: 656 288
-:matt/oriental/04: 624 288
-:matt/oriental/07: 624 320
-:matt/oriental/07: 608 352
-:matt/oriental/07: 608 384
-:matt/oriental/07: 688 320
-:matt/oriental/07: 672 352
-:matt/oriental/07: 672 384
-:matt/oriental/07: 736 352
-:matt/oriental/07: 736 384
-:matt/oriental/07: 800 352
-:matt/oriental/07: 800 384
-:matt/oriental/07: 448 368
-:matt/oriental/07: 512 368
-:matt/oriental/bamboo_pole: 30 192
-:matt/oriental/08: 912 80 r
-:matt/oriental/08: 912 144 r
-:matt/oriental/08: 912 208
-:matt/oriental/08: 912 272 r
-:matt/oriental/bamboo_pole: 128 40
-:matt/oriental/07: 231 68
-:matt/oriental/07: 112 32
-:matt/oriental/07: 48 32
-:matt/oriental/07: -16 32
-:matt/oriental/04: 187 67
-:matt/oriental/bamboo_pole: 134 132 r
-:matt/oriental/bamboo_pole: -22 96 r
-:matt/oriental/bonsaitree: 901 227
-:matt/oriental/bamboo_pole: 1013 241
-:matt/oriental/03: 712 165 r
-:matt/oriental/bamboo_pole: 534 -112
-:matt/oriental/01: 180 170 rd
-:matt/oriental/05: 775 8 rd
-:matt/oriental/10: 0 336
-:matt/oriental/10: 0 308 frr
-:matt/oriental/10: 0 278
-:matt/oriental/10: 0 250 frr
-:matt/oriental/10: 0 222
-:matt/oriental/10: 0 194 frr
-:matt/oriental/bamboo_pole: -4 190
-:matt/oriental/10: 538 158 frr
-:matt/oriental/10: 538 128
-:matt/oriental/10: 538 102 frr
-:matt/oriental/10: 538 72
-:matt/oriental/10: 538 46 frr
-:matt/oriental/bamboo_pole: 534 19
-:matt/oriental/bamboo_pole: 569 25
-:matt/oriental/10: 540 -6 frr
-:matt/oriental/05: 552 -32 rd
-:matt/oriental/bamboo_pole: 813 206
-:matt/oriental/10: 784 186
-:matt/oriental/10: 783 322 frr
-:matt/oriental/10: 783 292
-:matt/oriental/10: 784 266 frr
-:matt/oriental/10: 784 240
-:matt/oriental/10: 784 212 frr
-:matt/oriental/bamboo_pole: 779 189
-:matt/oriental/03: 740 182
-:matt/oriental/bamboo_pole: 813 49
-:matt/oriental/05: 795 46 d
-:matt/oriental/05: 796 104 d
-:matt/oriental/bamboo_pole: 770 9
-:matt/oriental/10: 740 151
-:matt/oriental/bamboo_pole: 736 5
-:matt/oriental/05: 656 -6 rd
-:matt/oriental/leaves5: 776 323 frd
-:matt/oriental/04: 569 13
-:matt/oriental/05: 768 0 rd
-:matt/oriental/bamboo_pole: 770 44 r
-:matt/oriental/bamboo_pole: 720 36 r
-:matt/oriental/05: 742 -32 d
-:matt/oriental/05: 784 -32 d
+:simon/oriental/culm_long: 569 14
+:simon/oriental/culm_long: 568 40
+:simon/oriental/10: 536 18
+:simon/oriental/culm_long: 258 247
+:simon/oriental/culm_long: 285 156 r
+:simon/oriental/08: 912 336
+:simon/oriental/bonsai: 366 74
+:simon/oriental/bonsai: 338 188
+:simon/oriental/05: 384 368 r
+:simon/oriental/07: 320 368
+:simon/oriental/07: 256 368
+:simon/oriental/07: 192 368
+:simon/oriental/07: 128 368
+:simon/oriental/07: 64 368
+:simon/oriental/07: 0 368
+:simon/oriental/culm_long: 32 192 r
+:simon/oriental/culm_long: 912 80 r
+:simon/oriental/culm_long: 287 69
+:simon/oriental/06: 240 192
+:simon/oriental/06: 288 192
+:simon/oriental/culm_long: 1013 84
+:simon/oriental/06: 336 192
+:simon/oriental/culm_long: 572 26 r
+:simon/oriental/gate: 624 224
+:simon/oriental/04: 720 288
+:simon/oriental/04: 688 288
+:simon/oriental/04: 656 288
+:simon/oriental/04: 624 288
+:simon/oriental/07: 624 320
+:simon/oriental/07: 608 352
+:simon/oriental/07: 608 384
+:simon/oriental/07: 688 320
+:simon/oriental/07: 672 352
+:simon/oriental/07: 672 384
+:simon/oriental/07: 736 352
+:simon/oriental/07: 736 384
+:simon/oriental/07: 800 352
+:simon/oriental/07: 800 384
+:simon/oriental/07: 448 368
+:simon/oriental/07: 512 368
+:simon/oriental/culm_long: 30 192
+:simon/oriental/08: 912 80 r
+:simon/oriental/08: 912 144 r
+:simon/oriental/08: 912 208
+:simon/oriental/08: 912 272 r
+:simon/oriental/culm_long: 128 40
+:simon/oriental/07: 231 68
+:simon/oriental/07: 112 32
+:simon/oriental/07: 48 32
+:simon/oriental/07: -16 32
+:simon/oriental/04: 187 67
+:simon/oriental/culm_long: 134 132 r
+:simon/oriental/culm_long: -22 96 r
+:simon/oriental/bonsai: 901 227
+:simon/oriental/culm_long: 1013 241
+:simon/oriental/03: 712 172 r
+:simon/oriental/culm_long: 534 -112
+:simon/oriental/01: 180 170 rd
+:simon/oriental/05: 775 8 rd
+:simon/oriental/10: 0 336
+:simon/oriental/10: 0 308 frr
+:simon/oriental/10: 0 278
+:simon/oriental/10: 0 250 frr
+:simon/oriental/10: 0 222
+:simon/oriental/10: 0 194 frr
+:simon/oriental/culm_long: -4 190
+:simon/oriental/10: 538 158 frr
+:simon/oriental/10: 538 128
+:simon/oriental/10: 538 102 frr
+:simon/oriental/10: 538 72
+:simon/oriental/10: 538 46 frr
+:simon/oriental/culm_long: 534 19
+:simon/oriental/culm_long: 569 25
+:simon/oriental/10: 540 -6 frr
+:simon/oriental/05: 552 -34 rd
+:simon/oriental/culm_long: 814 210
+:simon/oriental/10: 784 186
+:simon/oriental/10: 783 322 frr
+:simon/oriental/10: 783 292
+:simon/oriental/10: 784 266 frr
+:simon/oriental/10: 784 240
+:simon/oriental/10: 784 212 frr
+:simon/oriental/03: 740 182
+:simon/oriental/culm_long: 813 49
+:simon/oriental/05: 800 34 d
+:simon/oriental/05: 796 104 d
+:simon/oriental/culm_long: 770 9
+:simon/oriental/10: 740 151
+:simon/oriental/culm_long: 736 5
+:simon/oriental/05: 618 82 rd
+:simon/oriental/bush5: 776 323 frd
+:simon/oriental/04: 569 13
+:simon/oriental/05: 768 0 rd
+:simon/oriental/culm_long: 720 36 r
+:simon/oriental/05: 742 -32 d
+:simon/oriental/05: 784 -32 d
 :matt/bricks/18: 740 124 frr
 :matt/bricks/18: 740 92 frr
 :matt/bricks/18: 740 60 frr
@@ -140,9 +138,29 @@ $ENGLISH The clairvoyant
 :matt/bricks/18: 742 92 frrd
 :matt/bricks/18: 742 60 frrd
 :matt/bricks/18: 742 28 frrd
-:matt/oriental/05: 700 -6 rd
-:matt/oriental/bamboo_pole: 152 192 r
-:matt/oriental/05: 816 0 rd
-:matt/oriental/bamboo_pole: -146 184 r
-:matt/oriental/bamboo_pole: 500 -4 r
-:matt/oriental/05: 458 -18 rd
+:simon/oriental/05: 700 -6 rd
+:simon/oriental/culm_long: 152 192 r
+:simon/oriental/05: 816 0 rd
+:simon/oriental/culm_long: -146 184 r
+:simon/oriental/culm_long: 500 -4 r
+:simon/oriental/05: 458 -18 rd
+:simon/oriental/culm_long: -4 272
+:simon/oriental/culm_long: 780 240
+:simon/oriental/culm_long: 902 272 r
+:simon/oriental/culm_long: 902 144 r
+:simon/oriental/culm_long: 904 208 r
+:simon/oriental/culm_long: 534 76
+:simon/oriental/culm_long: 30 244
+:simon/oriental/culm_long: 534 -8
+:simon/oriental/culm_long: 108 192 r
+:simon/oriental/culm_long: 822 44 r
+:simon/oriental/05: 822 0 rd
+:simon/oriental/05: 858 0 rd
+:simon/oriental/culm_long: -68 184 r
+:simon/oriental/culm_long: 376 360 rd
+:simon/oriental/culm_long: 400 174 rd
+:simon/oriental/culm_long: 448 168 rd
+:simon/oriental/culm_long: 628 26 r
+:simon/oriental/culm_long: 766 44 r
+:simon/oriental/culm_long: 766 60 r
+:simon/oriental/culm_long: 824 44 r

@@ -1,0 +1,155 @@
+$BUILT 2017-06-21 12:20:43
+$AUTHOR geoo
+$ENGLISH Let's Block and Blow?
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 576
+#SIZE_Y 288
+#BACKGROUND_RED 8
+#BACKGROUND_GREEN 72
+#BACKGROUND_BLUE 0
+
+#INITIAL 20
+#REQUIRED 19
+#SPAWN_INTERVAL 12
+
+#EXPLODER2 1
+#BLOCKER 1
+
+:raymanni/lab/hatch.H: 144 48
+
+:raymanni/lab/goal.G: 192 144
+
+:raymanni/lab/shower.T: 472 144
+
+:simon/acid.W: 16 248
+:simon/acid.W: 64 248
+:simon/acid.W: 112 248
+:simon/acid.W: 160 248
+:simon/acid.W: 208 248
+:simon/acid.W: 256 248
+:simon/acid.W: 304 248
+:simon/acid.W: 352 248
+:simon/acid.W: 400 248
+:simon/acid.W: 448 248
+:simon/acid.W: 496 248
+:simon/acid.W: 544 248
+:simon/acid.W: -32 248
+:raymanni/lab/goo.W: 368 96
+:raymanni/lab/goo.W: 400 96
+:raymanni/lab/goo.W: 432 96
+:raymanni/lab/goo.W: 464 96
+:raymanni/lab/goo.W: 496 96
+
+:raymanni/lab/pipe_2: 428 132
+:raymanni/lab/pipe_2: 428 186
+:raymanni/lab/pipe_3: 406 178
+:raymanni/lab/scen_8: 368 120
+:geoo/abstract/pipes/central3: 512 112 rrr
+:geoo/abstract/pipes/central3: 488 208
+:geoo/abstract/pipes/central3: 368 208
+:geoo/abstract/pipes/central3: 400 208
+:geoo/abstract/pipes/central3: 432 208
+:geoo/abstract/pipes/central3: 464 208
+:geoo/abstract/pipes/junct3: 512 136 rrr
+:geoo/abstract/pipes/central3: 64 216 rrr
+:geoo/abstract/pipes/central3: 64 248 rrr
+:geoo/abstract/pipes/central3: 64 280 rrr
+:geoo/abstract/pipes/junct3: 64 208 r
+:geoo/abstract/pipes/junct3: 512 208 rrr
+:raymanni/lab/scen_4: 380 176
+:raymanni/lab/pipe_1: 368 128
+:raymanni/lab/pipe_3: 128 96
+:raymanni/lab/scen_6: 420 134
+:raymanni/lab/pipe_1: 400 128
+:raymanni/lab/pipe_1: 432 128
+:raymanni/lab/pipe_1: 464 128
+:raymanni/lab/pipe_1: 368 208
+:raymanni/lab/pipe_1: 400 208
+:raymanni/lab/scen_1: 448 162
+:raymanni/lab/pipe_1: 432 208
+:raymanni/lab/pipe_1: 464 208
+:raymanni/lab/pipe_1: 496 208
+:raymanni/lab/pipe_3: 160 96
+:raymanni/lab/pipe_3: 192 96
+:raymanni/lab/pipe_3: 224 96
+:raymanni/lab/pipe_3: 256 96
+:raymanni/lab/pipe_3: 288 96
+:raymanni/lab/pipe_3: 320 96
+:raymanni/lab/pipe_3: 72 120
+:raymanni/lab/pipe_3: 104 120
+:raymanni/lab/pipe_3: 136 120
+:raymanni/lab/pipe_3: 168 120
+:raymanni/lab/pipe_3: 200 120
+:raymanni/lab/pipe_3: 232 120
+:raymanni/lab/pipe_3: 264 120
+:raymanni/lab/pipe_3: 296 120
+:raymanni/lab/pipe_3: 328 120
+:raymanni/lab/pipe_1: 80 208
+:raymanni/lab/pipe_1: 112 208
+:raymanni/lab/pipe_1: 144 208
+:raymanni/lab/pipe_1: 176 208
+:raymanni/lab/pipe_1: 208 208
+:raymanni/lab/pipe_1: 240 208
+:raymanni/lab/pipe_1: 272 208
+:raymanni/lab/pipe_1: 304 208
+:raymanni/lab/pipe_1: 336 208
+$BEGIN_TILE_GROUP 0
+:raymanni/lab/pipe_2: 24 0
+:raymanni/lab/slope_1: 0 0 d
+:raymanni/lab/slope_2: 32 0 d
+$END_TILE_GROUP
+:Group-0: 352 186
+:raymanni/lab/pipe_2: 352 160
+:raymanni/lab/pipe_2: 352 128
+:raymanni/lab/pipe_2: 352 96
+:raymanni/lab/pipe_2: 512 0
+:raymanni/lab/pipe_2: 512 32
+:raymanni/lab/pipe_2: 512 64
+:raymanni/lab/pipe_2: 512 96
+:raymanni/lab/pipe_2: 512 144
+:raymanni/lab/pipe_2: 512 176
+:raymanni/lab/pipe_4: 519 224
+:raymanni/lab/pipe_4: 519 256
+:raymanni/lab/pipe_2: 64 256
+:raymanni/lab/pipe_2: 64 208
+:raymanni/lab/pipe_2: 64 240
+:raymanni/lab/pipe_4: 71 176
+:raymanni/lab/pipe_4: 71 144
+:raymanni/lab/pipe_4: 71 112
+:raymanni/lab/pipe_4: 71 80
+:raymanni/lab/pipe_4: 71 48
+:raymanni/lab/pipe_4: 71 16
+:raymanni/lab/pipe_4: 71 -16
+$BEGIN_TILE_GROUP 1
+:raymanni/lab/pipe_1: 24 16
+:raymanni/lab/slope_1: 0 0 d
+:raymanni/lab/slope_1: 16 0 rd
+$END_TILE_GROUP
+:Group-1: 360 128
+:raymanni/lab/pipe_2: 512 120
+$BEGIN_TILE_GROUP 2
+:raymanni/lab/pipe_1: 0 16
+:raymanni/lab/slope_1: 8 0 rrd
+:raymanni/lab/slope_1: 8 16 rrrd
+$END_TILE_GROUP
+:Group-2: 490 128
+:raymanni/lab/block_2: 56 200
+:raymanni/lab/block_2: 504 200
+:raymanni/lab/block_2: 368 96 d
+$BEGIN_TILE_GROUP 3
+:raymanni/lab/block_4: 0 0
+:raymanni/lab/block_4: 0 2 d
+$END_TILE_GROUP
+:Group-3: 352 96
+:raymanni/lab/scen_2: 442 -2
+:raymanni/lab/scen_8: 468 -26
+:raymanni/lab/scen_7: 388 -8
+:raymanni/lab/pipe_1: 32 24
+:raymanni/lab/block_2: 56 16
+:raymanni/lab/pipe_2: 64 -16
+:raymanni/lab/pipe_1: 0 24
+:Group-1: 520 56
+:raymanni/lab/pipe_1: 544 56
+:raymanni/lab/scen_5: 24 -40
+:raymanni/lab/scen_5: -8 -40

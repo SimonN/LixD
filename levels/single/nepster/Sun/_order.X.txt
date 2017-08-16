@@ -1,7 +1,7 @@
 01_HopeDespair.txt
 02_IcySmellSteel.txt
 03_BrokenSymmetry.txt
-04_Woodworms.txt
+04_HauntedWalls.txt
 05_CliffJumpers.txt
 06_LamentOfInnocence.txt
 07_DivideConquer.txt

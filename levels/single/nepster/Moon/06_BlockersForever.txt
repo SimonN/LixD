@@ -1,4 +1,4 @@
-$BUILT 2016-07-23 15:59:47
+$BUILT 2017-03-10 22:39:04
 $AUTHOR Nepster
 $ENGLISH Blockers Forever!
 
@@ -6,7 +6,6 @@ $ENGLISH Blockers Forever!
 #SIZE_X 640
 #SIZE_Y 400
 
-#SECONDS 0
 #INITIAL 30
 #REQUIRED 29
 #SPAWN_INTERVAL 20
@@ -25,14 +24,12 @@ $ENGLISH Blockers Forever!
 :matt/bricks/Goal.G: 300 208
 :matt/bricks/Goal.G: 32 320
 
-:matt/goldmine/pickaxe.D: 236 26
-
-:matt/10tons.T: 276 216
-:matt/10tons.T: 224 216
-
 :simon/acid.W: 464 366
+:geoo/sandstone/brazier.F: 279 234
+:geoo/sandstone/brazier.F: 215 234
 
-:matt/bricks/17: 136 208
+:matt/goldmine/pickaxe: 236 26
+:matt/bricks/17: 112 208
 :matt/bricks/03a: -32 16
 :matt/bricks/03a: -32 80
 :matt/bricks/03a: -32 144
@@ -68,16 +65,15 @@ $ENGLISH Blockers Forever!
 :matt/bricks/02a: 288 256
 :matt/bricks/02a: 352 256
 :matt/bricks/02a: 32 144
-:matt/bricks/17: 184 160
-:matt/bricks/17: 240 160
-:matt/bricks/17: 288 112
+:matt/bricks/17: 160 160
+:matt/bricks/17: 208 160
+:matt/bricks/17: 256 112
 :matt/bricks/02a: 448 256
 :matt/bricks/01a: 480 112
 :matt/bricks/01a: 448 112
 :matt/bricks/01a: 416 112
 :matt/bricks/01a: 384 112
 :matt/bricks/01a: 352 112
-:amanda/forest/rope: 294 200
 :matt/bricks/12a: 480 224
 :matt/bricks/12a: 480 192
 :matt/bricks/12a: 480 160
@@ -103,5 +99,4 @@ $ENGLISH Blockers Forever!
 :matt/bricks/17: 288 40 frr
 :matt/bricks/12a: 480 16
 :matt/bricks/17: 416 40
-:amanda/forest/rope: 294 184
-:amanda/forest/rope: 294 168
+:matt/bricks/01a: 320 112

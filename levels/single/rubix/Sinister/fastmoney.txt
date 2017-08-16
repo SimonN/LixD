@@ -1,4 +1,4 @@
-$BUILT 2016-09-10 17:23:15
+$BUILT 2017-08-09 17:36:39
 $AUTHOR Rubix
 $ENGLISH Fast money
 
@@ -6,59 +6,58 @@ $HINT_ENGLISH You'll find success when you release the rest..
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
-#SIZE_Y 1200
+#SIZE_Y 1056
 #START_X 0
 #START_Y 780
 
 #SECONDS 165
-#INITIAL 99
-#REQUIRED 92
+#INITIAL 30
+#REQUIRED 23
 #SPAWN_INTERVAL 46
 
 #EXPLODER 7
 #MINER 1
 #DIGGER 1
 
-:matt/goldmine/Hatch.H: 56 66
-:matt/goldmine/Hatch.H: 488 66 r
+:matt/goldmine/Hatch.H: 56 82
+:matt/goldmine/Hatch.H: 488 82 r
 
-:matt/goldmine/Goal.G: 272 1152
+:matt/goldmine/Goal.G: 274 1002
 
-:matt/goldmine/GoalTop.D: 272 1104
-:matt/goldmine/minecart.D: 504 1090
-
-:matt/goldmine/04: 304 1104 r
-:matt/goldmine/04: 144 1104 fr
-:matt/goldmine/04: 304 1008 rrr
-:matt/goldmine/04: 144 1008 frrr
-:matt/goldmine/04: 304 944 r
-:matt/goldmine/04: 144 944 fr
-:matt/goldmine/04: 304 848 rrr
-:matt/goldmine/04: 144 848 frrr
-:matt/goldmine/04: 304 768 r
-:matt/goldmine/04: 144 768 fr
-:matt/goldmine/04: 304 672 rrr
-:matt/goldmine/04: 144 672 frrr
-:matt/goldmine/04: 304 592 r
-:matt/goldmine/04: 144 592 fr
-:matt/goldmine/04: 304 496 rrr
-:matt/goldmine/04: 144 496 frrr
-:matt/goldmine/04: 304 416 r
-:matt/goldmine/04: 144 416 fr
-:matt/goldmine/04: 304 320 rrr
-:matt/goldmine/04: 144 320 frrr
+:matt/goldmine/10: 290 1048 rr
+:matt/goldmine/minecart: 504 946
+:matt/goldmine/04: 304 960 r
+:matt/goldmine/04: 144 960 fr
+:matt/goldmine/04: 304 880 rrr
+:matt/goldmine/04: 144 880 frrr
+:matt/goldmine/04: 304 816 r
+:matt/goldmine/04: 144 816 fr
+:matt/goldmine/04: 304 740 rrr
+:matt/goldmine/04: 144 740 frrr
+:matt/goldmine/04: 304 672 r
+:matt/goldmine/04: 144 672 fr
+:matt/goldmine/04: 304 592 rrr
+:matt/goldmine/04: 144 592 frrr
+:matt/goldmine/04: 304 528 r
+:matt/goldmine/04: 144 528 fr
+:matt/goldmine/04: 304 448 rrr
+:matt/goldmine/04: 144 448 frrr
+:matt/goldmine/04: 304 384 r
+:matt/goldmine/04: 144 384 fr
+:matt/goldmine/04: 304 304 rrr
+:matt/goldmine/04: 144 304 frrr
 :matt/goldmine/04: 304 240 r
 :matt/goldmine/04: 144 240 fr
-:matt/goldmine/04: 304 144 rrr
-:matt/goldmine/04: 145 144 frrr
-:matt/goldmine/07: -32 96
-:matt/goldmine/07: 432 96 frr
-:matt/goldmine/crate64: -16 1088
-:matt/goldmine/07: -32 1120
-:matt/goldmine/07: 432 1120 frr
-:matt/goldmine/crate64: -32 1024
-:matt/goldmine/planksupport: 130 -72 f
-:matt/goldmine/planksupport: 384 -72 f
-:matt/goldmine/plank: 256 48
-:matt/goldmine/plank: 512 48
-:matt/goldmine/plank: 2 48
+:matt/goldmine/04: 304 160 rrr
+:matt/goldmine/04: 145 160 frrr
+:matt/goldmine/07: -32 112
+:matt/goldmine/07: 432 112 frr
+:matt/goldmine/crate64: -16 944
+:matt/goldmine/07: -32 976
+:matt/goldmine/07: 432 976 frr
+:matt/goldmine/crate64: -32 880
+:matt/goldmine/planksupport: 130 -56 f
+:matt/goldmine/planksupport: 384 -56 f
+:matt/goldmine/plank: 256 64
+:matt/goldmine/plank: 512 64
+:matt/goldmine/plank: 2 64

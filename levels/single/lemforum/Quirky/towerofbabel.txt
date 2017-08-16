@@ -1,76 +1,129 @@
-$BUILT 2016-07-21 17:38:32
+$BUILT 2017-07-28 22:57:02
 $AUTHOR mobius
 $ENGLISH Tower of Babel
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
-#SIZE_Y 560
+#SIZE_Y 400
 
-#INITIAL 50
+#INITIAL 40
 #REQUIRED 30
 #SPAWN_INTERVAL 20
 
-#WALKER 10
-#CLIMBER 30
-#EXPLODER 10
-#BLOCKER 10
-#DIGGER 20
-#CUBER 20
+#CLIMBER 10
+#DIGGER 10
+#CUBER 10
+#EXPLODER 0
 
-:simon/hatch001.H: 48 384
-:simon/hatch001.H: 48 128
+:raymanni/toys/hatch.H: 64 200
+:raymanni/toys/hatch.H: 88 40
 
-:simon/tapir/goal.G: 528 448
+:raymanni/toys/goal.G: 512 256
 
-:simon/acid.W: 240 512
-:simon/acid.W: 288 512
-:simon/acid.W: 336 512
+:raymanni/toys/water.W: 256 368
+:raymanni/toys/water.W: 288 368
+:raymanni/toys/water.W: 320 368
+:raymanni/toys/water.W: 352 368
 
-:simon/tapir/064h: 0 496
-:simon/tapir/064h: 128 496
-:simon/tapir/064h: 384 496
-:simon/tapir/064h: 512 496
-:simon/tapir/032v: 0 432
-:simon/tapir/032v: 0 368
-:simon/tapir/032v: 0 304
-:simon/tapir/032v: 0 240
-:simon/tapir/032v: 608 432
-:simon/tapir/032v: 608 368
-:simon/tapir/032v: 608 304
-:simon/tapir/032v: 608 240
-:simon/tapir/032v: 608 176
-:simon/tapir/032v: 608 112
-:simon/tapir/032v: 608 48
-:simon/tapir/032v: 608 -16
-:simon/tapir/032v: 0 176
-:simon/tapir/032v: 0 112
-:simon/tapir/032v: 0 48
-:simon/tapir/032v: 0 -16
-:geoo/steel/32x16o.S: 256 496
-:geoo/steel/32x16o.S: 288 496
-:geoo/steel/32x16o.S: 320 496
-:geoo/steel/32x16o.S: 352 496
-:simon/tapir/064h: 32 240
-:simon/tapir/064h: 0 0
-:simon/tapir/064h: 128 0
-:simon/tapir/064h: 256 0
-:simon/tapir/064h: 384 0
-:simon/tapir/064h: 512 0
-:simon/tapir/032hd: 224 240
-:simon/tapir/032hd: 160 272
-:simon/tapir/032h: 160 240
-:geoo/steel/64x32o.S: 0 272
-:geoo/steel/64x32o.S: 64 272
-:geoo/steel/64x32o.S: 288 64
-:geoo/steel/64x64o.S: 256 0
-:geoo/steel/64x64o.S: 320 0
-:geoo/steel/64x64o.S: 320 96
-:geoo/steel/64x64o.S: 544 64
-:geoo/steel/64x64o.S: 480 96
-:geoo/steel/32x16o.S: 128 272
-:geoo/steel/16x16o.S: 160 280
-:geoo/steel/16x16o.S: 176 264
-:geoo/steel/16x16o.S: 192 256
-:geoo/steel/16x16o.S: 208 256
-:geoo/steel/16x16o.S: 224 248
-:geoo/steel/32x32o.S: 488 160
+:raymanni/toys/brick_8: 0 360
+:raymanni/toys/brick_7: 64 360
+:raymanni/toys/brick_5: 128 360
+:raymanni/toys/brick_6: 192 360
+:raymanni/toys/brick_5: 384 360
+:raymanni/toys/brick_6: 448 360
+:raymanni/toys/brick_8: 128 320
+:raymanni/toys/brick_7: 192 320
+:raymanni/toys/brick_8: 384 320
+:raymanni/toys/brick_7: 448 320
+:raymanni/toys/brick_5: 512 320
+:raymanni/toys/brick_6: 576 320
+:raymanni/toys/brick_8: 512 360
+:raymanni/toys/brick_7: 576 360
+:raymanni/toys/brick_5: 640 360
+:raymanni/toys/brick_6: 704 360
+:raymanni/toys/brick_7: -64 320
+:raymanni/toys/brick_5: 0 320
+:raymanni/toys/brick_6: 64 320
+:raymanni/toys/letter_blank: 0 288
+:raymanni/toys/letter_blank: 0 256
+:raymanni/toys/letter_blank: 0 224
+:raymanni/toys/letter_blank: 0 192
+:raymanni/toys/letter_blank: 0 160
+:raymanni/toys/letter_blank: 0 128
+:raymanni/toys/letter_blank: 0 96
+:raymanni/toys/letter_blank: 0 64
+:raymanni/toys/letter_blank: 0 32
+:raymanni/toys/brick_10: 32 152 r
+:raymanni/toys/brick_3: 32 112 rrr
+:raymanni/toys/brick_3: 160 112 rrr
+:raymanni/toys/brick_1: 96 112 rrr
+:raymanni/toys/brick_3: 160 112 rrr
+:raymanni/toys/brick_1: 224 112 rrr
+:raymanni/toys/chalk_2: 256 320
+:raymanni/toys/chalk_2: 264 320
+:raymanni/toys/chalk_2: 272 320
+:raymanni/toys/chalk_2: 280 320
+:raymanni/toys/chalk_2: 288 320
+:raymanni/toys/chalk_2: 296 320
+:raymanni/toys/chalk_2: 304 320
+:raymanni/toys/chalk_2: 312 320
+:raymanni/toys/chalk_2: 320 320
+:raymanni/toys/chalk_2: 328 320
+:raymanni/toys/chalk_2: 336 320
+:raymanni/toys/chalk_2: 344 320
+:raymanni/toys/chalk_2: 352 320
+:raymanni/toys/chalk_2: 360 320
+:raymanni/toys/chalk_2: 344 320
+:raymanni/toys/chalk_2: 352 320
+:raymanni/toys/chalk_2: 360 320
+:raymanni/toys/chalk_2: 368 320
+:raymanni/toys/chalk_2: 376 320
+:raymanni/toys/letter_blank: 32 0
+:raymanni/toys/letter_blank: 0 0
+:raymanni/toys/letter_blank: 96 0
+:raymanni/toys/letter_blank: 64 0
+:raymanni/toys/letter_blank: 160 0
+:raymanni/toys/letter_blank: 128 0
+:raymanni/toys/letter_blank: 224 0
+:raymanni/toys/letter_blank: 192 0
+:raymanni/toys/letter_blank: 288 0
+:raymanni/toys/letter_blank: 256 0
+:raymanni/toys/letter_blank: 352 0
+:raymanni/toys/letter_blank: 320 0
+:raymanni/toys/letter_blank: 416 0
+:raymanni/toys/letter_blank: 384 0
+:raymanni/toys/letter_blank: 480 0
+:raymanni/toys/letter_blank: 448 0
+:raymanni/toys/letter_blank: 416 0
+:raymanni/toys/letter_blank: 384 0
+:raymanni/toys/letter_blank: 480 0
+:raymanni/toys/letter_blank: 448 0
+:raymanni/toys/letter_blank: 544 0
+:raymanni/toys/letter_blank: 512 0
+:raymanni/toys/letter_blank: 608 0
+:raymanni/toys/letter_blank: 576 0
+:raymanni/toys/letter_blank: 608 288
+:raymanni/toys/letter_blank: 608 256
+:raymanni/toys/letter_blank: 608 224
+:raymanni/toys/letter_blank: 608 192
+:raymanni/toys/letter_blank: 608 160
+:raymanni/toys/letter_blank: 608 128
+:raymanni/toys/letter_blank: 608 96
+:raymanni/toys/letter_blank: 608 64
+:raymanni/toys/letter_blank: 608 32
+:raymanni/toys/brick_4: 480 112 rrr
+:raymanni/toys/brick_2: 544 112 rrr
+:raymanni/toys/brick_4: 352 112 rrr
+:raymanni/toys/brick_2: 416 112 rrr
+:raymanni/toys/brick_13: 576 152 rrr
+:raymanni/toys/car_2: 416 80
+:raymanni/toys/cracker: 544 48
+:raymanni/toys/letter_2: 0 224
+:raymanni/toys/letter_1: 256 0
+:raymanni/toys/letter_3: 608 96
+:raymanni/toys/letter_4: 0 64
+:raymanni/toys/letter_2: 384 0
+:geoo/steel/dark_32x32o.S: 0 128
+:geoo/steel/dark_32x32o.S: 0 160
+:geoo/steel/dark_32x32o.S: 608 128
+:geoo/steel/dark_32x32o.S: 608 160

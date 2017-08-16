@@ -1,4 +1,4 @@
-$BUILT 2016-07-18 22:20:19
+$BUILT 2017-08-02 12:58:13
 $AUTHOR Nepster
 $ENGLISH Divide and Conquer
 
@@ -6,10 +6,9 @@ $ENGLISH Divide and Conquer
 #SIZE_X 928
 #SIZE_Y 400
 
-#SECONDS 0
 #INITIAL 8
 #REQUIRED 6
-#SPAWN_INTERVAL 10
+#SPAWN_INTERVAL 12
 
 #CLIMBER 2
 #FLOATER 2
@@ -26,7 +25,7 @@ $ENGLISH Divide and Conquer
 :matt/beach/Hatch.H: 704 290
 
 :amanda/forest/exit_tent_condensed.G: 236 264
-:amanda/occult/occult_goal_skull.G: 112 280
+:amanda/occult/goal_skull.G: 112 280
 :matt/underworld/Goal.G: 476 296
 :matt/beach/goal.G: 764 90
 
@@ -75,10 +74,10 @@ $END_TILE_GROUP
 :matt/underworld/09a: 458 266
 :matt/underworld/09a: 532 200 frr
 :matt/underworld/09a: 472 200
-:amanda/occult/occult_wax_details_drip: 42 32
-:amanda/occult/occult_overlay32x32_d: 28 40 rr
-:amanda/occult/occult_overlay32x32_d: 132 30 rrr
-:amanda/occult/occult_overlay32x32_d: 118 44
+:amanda/occult/wax_details_drip: 42 32
+:amanda/occult/overlay32x32_d: 28 40 rr
+:amanda/occult/overlay32x32_d: 132 30 rrr
+:amanda/occult/overlay32x32_d: 118 44
 :matt/earth/29: 251 271
 :matt/earth/28: 236 332 rr
 :matt/earth/29: 438 336 rr
@@ -226,31 +225,31 @@ $END_TILE_GROUP
 :matt/earth/28: 298 320 rr
 :matt/earth/28: 310 308
 :matt/earth/28: 320 274
-:amanda/occult/occult_wax32x16: 192 104
-:amanda/occult/occult_wax64x64: 160 212 d
-:amanda/occult/occult_wax64x64: 160 180 d
-:amanda/occult/occult_wax32x16_b: 160 104
-:amanda/occult/occult_wax16x16: 144 104
-:amanda/occult/occult_wax32x16_cap_left: 80 104
-:amanda/occult/occult_wax32x16: 112 104
-:amanda/occult/occult_wax16x16: 208 264
-:amanda/occult/occult_wax32x16_b: 176 264
-:amanda/occult/occult_wax32x16: 144 264
-:amanda/occult/occult_wax32x16_b: 112 264 frr
-:amanda/occult/occult_wax32x16_cap_left_alt: 80 264
-:amanda/occult/occult_wax16x16: 32 184
-:amanda/occult/occult_wax32x16: 48 184
-:amanda/occult/occult_wax16x16: 80 184
-:amanda/occult/occult_wax32x16_b: 96 184
-:amanda/occult/occult_wax16x16: 128 184
-:amanda/occult/occult_wax32x16_cap_right_alt: 144 184
-:amanda/occult/occult_wax_details_drip: 96 206
-:amanda/occult/occult_wax_details_drip: 140 284
-:amanda/occult/occult_overlay32x32_c: 86 42
-:amanda/occult/occult_overlay32x32_c: 60 42 rr
-:amanda/occult/occult_wax_details_drip_b: 58 68
-:amanda/occult/occult_wax_details_sunken_lix_b: 128 88
-:amanda/occult/occult_wax_details_lump: 112 260
+:amanda/occult/wax32x16: 192 104
+:amanda/occult/wax64x64: 160 212 d
+:amanda/occult/wax64x64: 160 180 d
+:amanda/occult/wax32x16_b: 160 104
+:amanda/occult/wax16x16: 144 104
+:amanda/occult/wax32x16_cap_left: 80 104
+:amanda/occult/wax32x16: 112 104
+:amanda/occult/wax16x16: 208 264
+:amanda/occult/wax32x16_b: 176 264
+:amanda/occult/wax32x16: 144 264
+:amanda/occult/wax32x16_b: 112 264 frr
+:amanda/occult/wax32x16_cap_left_alt: 80 264
+:amanda/occult/wax16x16: 32 184
+:amanda/occult/wax32x16: 48 184
+:amanda/occult/wax16x16: 80 184
+:amanda/occult/wax32x16_b: 96 184
+:amanda/occult/wax16x16: 128 184
+:amanda/occult/wax32x16_cap_right_alt: 144 184
+:amanda/occult/wax_details_drip: 96 206
+:amanda/occult/wax_details_drip: 140 284
+:amanda/occult/overlay32x32_c: 86 42
+:amanda/occult/overlay32x32_c: 60 42 rr
+:amanda/occult/wax_details_drip_b: 58 68
+:amanda/occult/wax_details_sunken_lix_b: 128 88
+:amanda/occult/wax_details_lump: 112 260
 :matt/underworld/09c: 596 184 frr
 :matt/underworld/09a: 496 108
 :matt/underworld/09b: 528 268 frr

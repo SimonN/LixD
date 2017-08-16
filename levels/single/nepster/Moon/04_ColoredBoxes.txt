@@ -1,4 +1,4 @@
-$BUILT 2017-03-02 13:01:18
+$BUILT 2017-08-02 14:36:17
 $AUTHOR Nepster
 $ENGLISH Colored Boxes
 
@@ -8,7 +8,7 @@ $ENGLISH Colored Boxes
 
 #INITIAL 20
 #REQUIRED 19
-#SPAWN_INTERVAL 40
+#SPAWN_INTERVAL 33
 
 #CLIMBER 1
 #FLOATER 1
@@ -24,7 +24,10 @@ $ENGLISH Colored Boxes
 
 :proxima/tile/goal.G: 0 304
 
+:proxima/tile/spheres/blue: 64 -48
 :proxima/tile/spheres/blue: 288 96
+:proxima/tile/spheres/blue: 64 0
+:proxima/tile/spheres/blue: 64 48
 :proxima/tile/spheres/blue: 96 96
 :proxima/tile/spheres/blue: 480 96
 :proxima/tile/green1: 0 368
@@ -60,6 +63,5 @@ $ENGLISH Colored Boxes
 :proxima/tile/red3: 64 240
 :proxima/tile/green1: 64 176
 :proxima/tile/red3: 64 64
-:proxima/tile/green1: 64 0
 :proxima/tile/blue1: 416 272
 :proxima/tile/blue1: 512 176

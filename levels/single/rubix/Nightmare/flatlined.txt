@@ -1,4 +1,4 @@
-$BUILT 2016-09-24 17:41:52
+$BUILT 2017-08-16 03:48:09
 $AUTHOR Rubix
 $ENGLISH Flatlined
 
@@ -15,7 +15,7 @@ $ENGLISH Flatlined
 #REQUIRED 20
 #SPAWN_INTERVAL 53
 
-#WALKER 5
+#WALKER 4
 #CLIMBER 11
 #BUILDER 1
 #PLATFORMER 2
@@ -24,10 +24,10 @@ $ENGLISH Flatlined
 #DIGGER 4
 #EXPLODER2 0
 
-:matt/oriental/Hatch.H: 856 18 r
-:matt/oriental/Hatch.H: 18 322
+:simon/oriental/hatch.H: 856 18 r
+:simon/oriental/hatch.H: 18 322
 
-:matt/oriental/Goal.G: 82 34
+:simon/oriental/goal.G: 82 34
 
 :matt/water.W: 96 384
 :matt/water.W: 128 384
@@ -50,121 +50,133 @@ $ENGLISH Flatlined
 :matt/water.W: 768 384
 :matt/water.W: 800 384
 
-:matt/oriental/02: 368 272 r
-:matt/oriental/02: 368 288 r
-:matt/oriental/02: 368 304 r
-:matt/oriental/02: 368 320 r
-:matt/oriental/02: 368 336 r
-:matt/oriental/02: 368 352 r
-:matt/oriental/02: 368 368 r
-:matt/oriental/02: 368 384 r
-:matt/oriental/09: 400 208
-:matt/oriental/09: 462 240
-:matt/oriental/06: 406 238
-:matt/oriental/06: 406 296
-:matt/oriental/06: 406 354
-:matt/oriental/09: 528 272
-:matt/oriental/09: 592 304
-:matt/oriental/09: 656 336
-:matt/oriental/09: 464 272 rr
-:matt/oriental/09: 528 304 rr
-:matt/oriental/09: 592 336 rr
-:matt/oriental/09: 656 368 rr
-:matt/oriental/09: 592 336
-:matt/oriental/09: 464 272
-:matt/oriental/09: 528 304
-:matt/oriental/09: 464 304 rr
-:matt/oriental/09: 528 336 rr
-:matt/oriental/09: 656 368
-:matt/oriental/09: 592 368 rr
-:matt/oriental/09: 464 336 rr
-:matt/oriental/09: 464 304
-:matt/oriental/09: 528 336
-:matt/oriental/09: 592 368
-:matt/oriental/09: 528 368 rr
-:matt/oriental/bamboo_pole: 802 80 r
-:matt/oriental/bamboo_pole: 800 80
-:matt/oriental/bamboo_pole: 800 208
-:matt/oriental/bamboo_pole: 800 352
-:matt/oriental/asiantemple: 818 160
-:matt/oriental/03: 704 32
-:matt/oriental/03: 672 32
-:matt/oriental/03: 640 32
-:matt/oriental/03: 608 32
-:matt/oriental/03: 576 32
-:matt/oriental/03: 544 32
-:matt/oriental/03: 512 32
-:matt/oriental/03: 480 32
-:matt/oriental/03: 448 32
-:matt/oriental/03: 416 32
-:matt/oriental/03: 384 32
-:matt/oriental/03: 352 32
-:matt/oriental/03: 320 32
-:matt/oriental/03: 288 32
-:matt/oriental/03: 256 32
-:matt/oriental/03: 224 32
-:matt/oriental/03: 192 32
-:matt/oriental/03: 160 32
-:matt/oriental/03: 128 32
-:matt/oriental/03: 96 32
-:matt/oriental/03: 64 32
-:matt/oriental/03: 32 32
-:matt/oriental/03: 0 112
-:matt/oriental/03: -32 32
-:matt/oriental/05: -32 336
-:matt/oriental/05: -32 272
-:matt/oriental/05: -32 208
-:matt/oriental/05: -32 160
-:matt/oriental/05: -32 96
-:matt/oriental/05: -32 32
-:matt/oriental/05: 704 32
-:matt/oriental/05: 704 96
-:matt/oriental/05: 704 160
-:matt/oriental/05: 704 224
-:matt/oriental/05: 704 288
-:matt/oriental/05: 704 352
-:matt/oriental/05: 800 80
-:matt/oriental/05: 800 144
-:matt/oriental/05: 800 208
-:matt/oriental/05: 800 272
-:matt/oriental/05: 800 336
-:matt/oriental/04: 842 336
-:matt/oriental/04: 874 336
-:matt/oriental/04: 906 336
-:matt/oriental/04: 938 336
-:matt/oriental/04: 842 368
-:matt/oriental/04: 874 368
-:matt/oriental/04: 906 368
-:matt/oriental/04: 938 368
-:matt/oriental/03: 64 384
-:matt/oriental/03: 16 384
-:matt/oriental/bamboo_pole: -48 384 r
-:matt/oriental/10: 960 220 frr
-:matt/oriental/10: 960 192 frrr
-:matt/oriental/10: 960 164 frr
-:matt/oriental/10: 960 134 frrr
-:matt/oriental/10: 960 106 frr
-:matt/oriental/10: 960 78 frrr
-:matt/oriental/bamboo_pole: 990 92
-:matt/oriental/bamboo_pole: 954 80
-:matt/oriental/bamboo_pole: 952 250
-:matt/oriental/bamboo_pole: 952 378
-:matt/oriental/05: 952 250
-:matt/oriental/05: 952 314
-:matt/oriental/05: 952 378
-:matt/oriental/03: 32 112
-:matt/oriental/03: 64 112
-:matt/oriental/03: 96 112
-:matt/oriental/02: 140 94
-:matt/oriental/02: 140 54
-:matt/oriental/bamboo_pole: 990 -64
-:matt/oriental/01: 926 79 d
-:matt/oriental/bamboo_pole: 256 272 r
-:matt/oriental/04: 272 272
-:matt/oriental/04: 272 304
-:matt/oriental/04: 272 336
-:matt/oriental/04: 272 368
-:matt/oriental/04: 176 340
-:matt/oriental/04: 176 384
-:matt/oriental/bamboo_pole: 160 336 r
-:matt/oriental/bamboo_pole: 64 384 r
+:simon/oriental/culm_long: 274 272 r
+:simon/oriental/culm_long: 182 340 r
+:simon/oriental/culm_long: 160 340 r
+:simon/oriental/culm_long: 256 272 r
+:simon/oriental/02: 368 272 r
+:simon/oriental/02: 368 288 r
+:simon/oriental/02: 368 304 r
+:simon/oriental/02: 368 320 r
+:simon/oriental/02: 368 336 r
+:simon/oriental/02: 368 352 r
+:simon/oriental/02: 368 368 r
+:simon/oriental/02: 368 384 r
+:simon/oriental/09: 400 210
+:simon/oriental/09: 462 240
+:simon/oriental/06: 406 238
+:simon/oriental/06: 406 296
+:simon/oriental/06: 406 354
+:simon/oriental/09: 528 272
+:simon/oriental/09: 592 304
+:simon/oriental/09: 656 336
+:simon/oriental/09: 464 272 rr
+:simon/oriental/09: 528 304 rr
+:simon/oriental/09: 592 336 rr
+:simon/oriental/09: 656 368 rr
+:simon/oriental/09: 592 336
+:simon/oriental/09: 464 272
+:simon/oriental/09: 528 304
+:simon/oriental/09: 464 304 rr
+:simon/oriental/09: 528 336 rr
+:simon/oriental/09: 656 368
+:simon/oriental/09: 592 368 rr
+:simon/oriental/09: 464 336 rr
+:simon/oriental/09: 464 304
+:simon/oriental/09: 528 336
+:simon/oriental/09: 592 368
+:simon/oriental/09: 528 368 rr
+:simon/oriental/culm_long: 802 80 r
+:simon/oriental/culm_long: 800 80
+:simon/oriental/culm_long: 800 208
+:simon/oriental/culm_long: 800 352
+:simon/oriental/temple: 818 160
+:simon/oriental/03: 704 32
+:simon/oriental/03: 672 32
+:simon/oriental/03: 640 32
+:simon/oriental/03: 608 32
+:simon/oriental/03: 576 32
+:simon/oriental/03: 544 32
+:simon/oriental/03: 512 32
+:simon/oriental/03: 480 32
+:simon/oriental/03: 448 32
+:simon/oriental/03: 416 32
+:simon/oriental/03: 384 32
+:simon/oriental/03: 352 32
+:simon/oriental/03: 320 32
+:simon/oriental/03: 288 32
+:simon/oriental/03: 256 32
+:simon/oriental/03: 224 32
+:simon/oriental/03: 192 32
+:simon/oriental/03: 160 32
+:simon/oriental/03: 128 32
+:simon/oriental/03: 96 32
+:simon/oriental/03: 64 32
+:simon/oriental/03: 32 32
+:simon/oriental/03: 0 112
+:simon/oriental/03: -32 32
+:simon/oriental/05: -32 336
+:simon/oriental/05: -32 272
+:simon/oriental/05: -32 208
+:simon/oriental/05: -32 160
+:simon/oriental/05: -32 96
+:simon/oriental/05: -32 32
+:simon/oriental/05: 704 32
+:simon/oriental/05: 704 96
+:simon/oriental/05: 704 160
+:simon/oriental/05: 704 224
+:simon/oriental/05: 704 288
+:simon/oriental/05: 704 352
+:simon/oriental/05: 800 80
+:simon/oriental/05: 800 144
+:simon/oriental/05: 800 208
+:simon/oriental/05: 800 272
+:simon/oriental/05: 800 336
+:simon/oriental/04: 842 336
+:simon/oriental/04: 874 336
+:simon/oriental/04: 906 336
+:simon/oriental/04: 938 336
+:simon/oriental/04: 842 368
+:simon/oriental/04: 874 368
+:simon/oriental/04: 906 368
+:simon/oriental/04: 938 368
+:simon/oriental/03: 64 384
+:simon/oriental/03: 16 384
+:simon/oriental/culm_long: -46 382 r
+:simon/oriental/10: 960 220 frr
+:simon/oriental/10: 960 192 frrr
+:simon/oriental/10: 960 164 frr
+:simon/oriental/10: 960 134 frrr
+:simon/oriental/10: 960 106 frr
+:simon/oriental/10: 960 78 frrr
+:simon/oriental/culm_long: 990 92
+:simon/oriental/culm_long: 954 80
+:simon/oriental/culm_long: 952 250
+:simon/oriental/culm_long: 952 378
+:simon/oriental/05: 952 250
+:simon/oriental/05: 952 314
+:simon/oriental/05: 952 378
+:simon/oriental/03: 32 112
+:simon/oriental/03: 64 112
+:simon/oriental/03: 96 112
+:simon/oriental/02: 140 94
+:simon/oriental/02: 140 54
+:simon/oriental/culm_long: 990 -4
+:simon/oriental/04: 272 272
+:simon/oriental/04: 272 304
+:simon/oriental/04: 272 336
+:simon/oriental/04: 272 368
+:simon/oriental/culm_long: 46 382 r
+:simon/oriental/culm_long: 700 62 rr
+:simon/oriental/culm_long: 700 158 rr
+:simon/oriental/culm_long: 700 252 rr
+:simon/oriental/culm_long: 700 346 rr
+:simon/oriental/culm_long: 80 400 r
+:simon/oriental/culm_long: 88 382 r
+:simon/oriental/04: 176 384
+:simon/oriental/04: 176 340
+:simon/oriental/culm_long: 170 340 rr
+:simon/oriental/culm_long: 268 272 rr
+:simon/oriental/culm_long: 268 366 rr
+:simon/oriental/culm_long: 8 -32 rr
+:simon/oriental/culm_long: 8 48 rr

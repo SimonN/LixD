@@ -1,0 +1,99 @@
+$BUILT 2017-07-30 18:30:36
+$AUTHOR geoo
+$ENGLISH Beneath the Lab
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 512
+#SIZE_Y 288
+
+#INITIAL 15
+#REQUIRED 15
+#SPAWN_INTERVAL 12
+
+#BUILDER 1
+#PLATFORMER 1
+#MINER 1
+#EXPLODER2 0
+
+:amanda/occult/hatch_tentacle.H: 88 40
+
+:amanda/occult/goal_skull.G: 348 56
+
+:amanda/tar.W: 392 224
+:amanda/tar.W: 424 240
+:amanda/tar.W: 360 256
+:amanda/tar.W: 488 256
+
+:amanda/occult/overlay32x32_c: 254 -14
+:amanda/occult/wax_details_drip: 14 66
+:amanda/occult/wax_details_drip: 112 -6
+:amanda/occult/wax64x64: 344 240
+:amanda/occult/wax32x48: 56 256
+:amanda/occult/wax64x64: 88 240
+:amanda/occult/wax64x48: 312 208
+:amanda/occult/wax32x48: 248 256 frr
+:amanda/occult/wax64x64: 248 192
+:amanda/occult/wax64x48: 40 208
+:amanda/occult/wax64x64: 184 224
+:amanda/occult/wax64x48: 104 224
+:amanda/occult/wax32x48: 152 256
+:amanda/occult/wax32x48_cap_right_sheer: 168 208
+:amanda/occult/wax32x48_cap_right_soft: 444 128
+$BEGIN_TILE_GROUP 0
+:amanda/occult/wax_details_drip: 0 20
+:amanda/occult/overlay32x32_d: 0 -11
+$END_TILE_GROUP
+:Group-0: 431 168
+:amanda/occult/wax64x48: 380 128
+:amanda/occult/wax32x48_cap_right_sheer: 296 160
+:amanda/occult/wax32x48: 264 160 frr
+:amanda/occult/wax32x48_cap_left_soft: 348 128
+:amanda/occult/wax32x48_cap_right_sheer: 168 160
+:amanda/occult/wax64x64: 104 160
+:amanda/occult/wax32x48_cap_left_sheer: 72 160
+:amanda/occult/wax32x48_cap_left_soft: 216 192
+:amanda/occult/wax32x48_cap_left_sheer: 232 160
+:amanda/occult/wax32x48_cap_right_soft: 376 208
+:amanda/occult/wax64x64: -24 208
+:amanda/occult/wax64x64: -8 256
+:amanda/occult/wax64x48: 280 256
+:amanda/occult/wax32x48_cap_right_soft: 408 240
+:amanda/occult/wax_details_sunken_cube: 32 192
+:amanda/occult/wax_details_sunken_lix: 352 200
+:amanda/occult/wax_details_sunken_lix_b: 80 144
+:amanda/occult/skulls32x32: -32 0
+:amanda/occult/skulls32x32: -40 -16
+:amanda/occult/wax_details_drip: 48 -18 f
+:raymanni/lab/scen_6: 48 -8
+:amanda/occult/wax_details_drip: 80 -2
+:raymanni/lab/scen_5: 80 -8
+:raymanni/lab/scen_6: 112 -8
+:amanda/occult/wax32x16_cap_right_alt: 128 48
+:amanda/occult/wax_details_drip_b: 74 62
+:amanda/occult/wax32x16: 64 48
+:amanda/occult/wax32x16_b: 96 48
+:amanda/occult/wax16x16: 48 48
+$BEGIN_TILE_GROUP 1
+:amanda/occult/skulls32x32: -2 -6
+:amanda/occult/wax64x48: 0 24 d
+$END_TILE_GROUP
+:Group-1: 0 30
+:amanda/occult/wax32x16: 16 48
+:amanda/occult/wax32x16_b: -16 48
+:amanda/occult/overlay32x32_c: 286 -14
+:amanda/occult/overlay32x32_d: 240 -22
+:amanda/occult/wax_details_drip: 240 10
+:amanda/occult/wax32x16_b: 318 -14
+:amanda/occult/wax_details_drip_b: 492 -1
+:amanda/occult/wax_details_drip_b: 484 -17
+:amanda/occult/wax_details_drip_b: 476 -11
+:amanda/occult/wax_details_drip: 470 -30
+:amanda/occult/overlay32x32_c: 372 -8 frr
+:amanda/occult/wax_details_drip_b: 356 0
+:amanda/occult/wax_details_drip_b: 348 -6
+:amanda/occult/wax32x16_cap_right: 350 -14
+:amanda/occult/overlay32x32_c: 404 -8 frr
+:amanda/occult/overlay32x32_d: 416 -22
+:amanda/occult/wax_details_drip: 416 10
+:amanda/occult/wax_details_drip_b: 440 -14
+:amanda/occult/wax_details_lump: 210 -4 rr

@@ -1,4 +1,4 @@
-$BUILT 2016-07-29 20:22:57
+$BUILT 2017-05-02 12:36:13
 $AUTHOR ccx
 $ENGLISH Won't Get Fooled Again
 
@@ -35,14 +35,42 @@ $ENGLISH Won't Get Fooled Again
 :geoo/construction/sawblade_small.F: 96 368
 :geoo/construction/sawblade.F: 428 14
 
+$BEGIN_TILE_GROUP 0
+:geoo/construction/concrete/016h: 0 3
+:geoo/construction/concrete/016h: 14 3 d
+:geoo/construction/concrete/016h: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:geoo/construction/concrete/016h: 12 0
+:geoo/construction/concrete/016h: 12 3 d
+:geoo/construction/concrete/016h: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:geoo/construction/concrete/016h: 6 7
+:geoo/construction/concrete/016h: 8 0 d
+:geoo/construction/concrete/016h: 0 7 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:geoo/construction/concrete/016h: 0 0
+:geoo/construction/concrete/016h: 14 0 d
+:geoo/construction/concrete/016h: 0 8 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 4
+:Group-2: 14 3
+:Group-3: 0 0
+:Group-0: 0 7
+:Group-1: 8 0
+$END_TILE_GROUP
+:Group-4: 569 14 fr
+:Group-4: 539 14 fr
 :matt/bricks/01b: 543 4
 :matt/bricks/15b: 858 417 r
-$BEGIN_TILE_GROUP 0
+:Group-4: 869 439
+$BEGIN_TILE_GROUP 5
 :matt/bricks/13b: 0 0 rrr
 :geoo/construction/rod_rust/straight32: 31 2 rrrd
 $END_TILE_GROUP
-:Group-0: 828 417
-:simon/brick/vert1: 569 14
+:Group-5: 828 417
 :matt/marble/22a: 128 376
 :matt/marble/23a: 240 72
 :matt/marble/23a: 336 136
@@ -112,9 +140,9 @@ $END_TILE_GROUP
 :matt/marble/23a: 48 448
 :matt/marble/23a: 80 448
 :matt/marble/23a: 784 448
+:Group-4: 829 439
 :matt/marble/23a: 816 448
 :matt/marble/01a: 696 376
-:matt/marble/23a: 880 448
 :matt/marble/17a: 416 0
 :matt/marble/15a: 448 0
 :matt/marble/23a: 112 448
@@ -123,24 +151,10 @@ $END_TILE_GROUP
 :matt/marble/001a: 128 408 d
 :matt/marble/001a: 760 416 d
 :matt/marble/001a: 752 432
-:simon/brick/broken1: 839 409
-:simon/brick/broken1: 829 438
-:simon/brick/broken1: 529 4
-:simon/brick/broken1: 549 4
-:simon/brick/broken1: 569 4
-:simon/brick/vert1: 539 14
-:simon/brick/broken1: 529 14
-:simon/brick/broken1: 569 14
-:simon/brick/broken1: 829 429
-:simon/brick/broken1: 869 429
-:simon/brick/broken1: 869 438
-:simon/brick/broken1: 829 419
-:simon/brick/broken1: 869 419
 :matt/marble/23a: 456 112
 :geoo/steel/32x16o.S: 432 72
 :matt/marble/11a: 184 296
 :matt/marble/13a: 696 296
-:simon/brick/broken1: 859 409
 :matt/bricks/01b: 549 19 rrrd
 :matt/bricks/01b: 553 19 rrrd
 :matt/marble/001a: 176 328
@@ -193,7 +207,6 @@ $END_TILE_GROUP
 :matt/marble/01a: 568 376
 :matt/marble/01a: 584 376
 :matt/marble/01a: 600 376
-:matt/marble/23a: 848 448
 :matt/marble/23a: 208 72
 :matt/marble/23a: 208 136
 :matt/marble/23a: 208 104
@@ -262,3 +275,16 @@ $END_TILE_GROUP
 :matt/steel/8x8.S: 168 392
 :matt/steel/8x8.S: 144 400
 :matt/steel/8x8.S: 152 408
+:Group-4: 529 14
+:Group-4: 569 14
+:Group-4: 529 4
+:Group-4: 549 4
+:Group-4: 569 4
+:Group-4: 839 409
+:Group-4: 859 409
+:Group-4: 829 419
+:Group-4: 829 429
+:Group-4: 869 419
+:Group-4: 869 429
+:matt/marble/23a: 848 448
+:matt/marble/23a: 880 448

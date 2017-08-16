@@ -1,0 +1,133 @@
+$BUILT 2017-08-11 01:01:10
+$AUTHOR I.S./Michael
+$ENGLISH Let's All Go Down the Strand
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 768
+#SIZE_Y 400
+#START_X 128
+#START_Y -20
+
+#INITIAL 16
+#REQUIRED 8
+#SPAWN_INTERVAL 24
+
+#WALKER 3
+#CLIMBER 3
+#FLOATER 3
+#BUILDER 10
+#PLATFORMER 10
+#BASHER 3
+#MINER 3
+#JUMPER 3
+#EXPLODER2 0
+
+:simon/hatch001.H: 448 16
+
+:simon/tapir/goal.G: 32 96
+
+:simon/tapir/032: 320 144
+:simon/tapir/032: 320 176
+:simon/tapir/032: 352 176
+:simon/tapir/016: 352 144
+:simon/tapir/016: 352 160
+:simon/tapir/016: 368 160
+:simon/tapir/008v: 368 144
+:simon/tapir/008v: 368 144
+:simon/tapir/008v: 376 144
+:simon/tapir/016h: 416 144
+:simon/tapir/032: 448 144
+:simon/tapir/032: 448 176
+:simon/tapir/032: 448 208
+:simon/tapir/032: 448 240
+:simon/tapir/032: 448 272
+:simon/tapir/016h: 512 144
+:simon/tapir/032: 544 144
+:simon/tapir/032: 544 176
+:simon/tapir/032: 544 208
+:simon/tapir/032: 544 240
+:simon/tapir/032: 544 272
+:simon/tapir/064: 384 336
+:simon/tapir/064: 448 336
+:simon/tapir/064: 512 336
+:simon/tapir/064: 640 336
+:simon/tapir/016h: 672 208
+:simon/tapir/032: 640 208
+:simon/tapir/032: 640 240
+:simon/tapir/032: 640 272
+:simon/tapir/064: 704 336
+:simon/tapir/032: 448 112
+:simon/tapir/032: 448 80
+:simon/tapir/016: 576 344
+:simon/tapir/016: 624 344
+:simon/tapir/016h: 576 144
+:simon/tapir/016h: 608 208
+:simon/tapir/032v: 320 208
+:simon/tapir/016h: 704 272
+:simon/tapir/016: 384 272
+:simon/tapir/016: 560 304
+:simon/tapir/016: 352 208
+:simon/tapir/016: 656 304
+:simon/tapir/032: 448 304
+:simon/tapir/016h: 480 80
+:simon/tapir/008h: 480 72
+:simon/tapir/008h: 496 72
+:simon/tapir/008h: 576 136
+:simon/tapir/008h: 592 136
+:simon/tapir/008h: 672 200
+:simon/tapir/008h: 688 200
+:simon/tapir/064h: 128 336
+:simon/tapir/064: 128 272
+:simon/tapir/128: 0 144
+:simon/tapir/128: 0 272
+:simon/tapir/064: 256 144
+:simon/tapir/064h: 128 144
+:simon/tapir/064: 128 208
+:simon/tapir/032: 192 240
+:simon/tapir/016: 224 240
+:simon/tapir/016: 240 240
+:simon/tapir/016: 224 256
+:simon/tapir/008v: 240 256
+:simon/tapir/008v: 240 256
+:simon/tapir/008v: 248 256
+:geoo/steel/32x32o.S: 192 272
+:geoo/steel/16x16o.S: 224 272
+:simon/tapir/064h: 256 336
+:simon/tapir/064: 320 272
+:simon/tapir/032: 288 272
+:simon/tapir/032: 288 304
+:simon/tapir/032: 256 304
+:simon/tapir/016: 256 288
+:simon/tapir/016: 272 288
+:simon/tapir/016: 272 272
+:simon/tapir/008v: 256 272
+:simon/tapir/008v: 256 272
+:simon/tapir/008v: 264 272
+:simon/tapir/032: 256 208
+:simon/tapir/032: 288 208
+:simon/tapir/032: 288 240
+:geoo/steel/16x16o.S: 240 288
+:geoo/steel/16x16o.S: 224 288
+:geoo/steel/32x32o.S: 192 304
+:geoo/steel/32x32o.S: 224 304
+:geoo/steel/32x32o.S: 192 208
+:geoo/steel/32x32o.S: 224 208
+:simon/tapir/016: 256 240
+:simon/tapir/016: 272 240
+:simon/tapir/016: 272 256
+:simon/tapir/008v: 256 256
+:simon/tapir/008v: 256 256
+:simon/tapir/008v: 264 256
+:simon/tapir/008v: 240 272
+:simon/tapir/008v: 240 272
+:simon/tapir/008v: 248 272
+$BEGIN_TILE_GROUP 0
+:simon/tapir/008v: 2 0
+:simon/tapir/008v: 0 0 d
+$END_TILE_GROUP
+:Group-0: 766 320
+$BEGIN_TILE_GROUP 1
+:simon/tapir/008v: 0 0
+:simon/tapir/008v: 2 0 d
+$END_TILE_GROUP
+:Group-1: 764 320

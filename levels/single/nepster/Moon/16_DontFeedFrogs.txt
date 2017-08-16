@@ -1,4 +1,4 @@
-$BUILT 2016-08-10 21:58:54
+$BUILT 2017-08-09 01:52:09
 $AUTHOR Nepster
 $ENGLISH Don't feed the frogs!
 
@@ -14,100 +14,109 @@ $ENGLISH Don't feed the frogs!
 #BLOCKER 1
 #PLATFORMER 4
 
-:matt/oriental/Hatch.H: 162 17
+:simon/oriental/hatch.H: 162 17
 
-:matt/oriental/Goal.G: 122 237
+:simon/oriental/goal.G: 131 237
 
-:amanda/forest/frog.T: 427 33
-:amanda/forest/frog_happy.T: 293 72
-:amanda/forest/frog_catch.T: 388 270
+:amanda/forest/frog.T: 428 33
+:amanda/forest/frog_happy.T: 294 74
+:amanda/forest/frog_catch.T: 386 268
 
-:simon/crystal.W: 0 350
-:simon/crystal.W: 48 350
-:simon/crystal.W: 96 350
-:simon/crystal.W: 144 350
-:simon/crystal.W: 192 350
-:simon/crystal.W: 240 350
-:simon/crystal.W: 288 350
-:simon/crystal.W: 336 350
-:simon/crystal.W: 384 350
-:simon/crystal.W: 432 350
-:simon/crystal.W: 480 350
-:simon/crystal.W: 528 350
-:simon/crystal.W: 576 350
-:simon/crystal.W: 624 350
+:simon/crystal.W: 0 352
+:simon/crystal.W: 48 352
+:simon/crystal.W: 96 352
+:simon/crystal.W: 144 352
+:simon/crystal.W: 192 352
+:simon/crystal.W: 240 352
+:simon/crystal.W: 288 352
+:simon/crystal.W: 336 352
+:simon/crystal.W: 384 352
+:simon/crystal.W: 432 352
+:simon/crystal.W: 480 352
+:simon/crystal.W: 528 352
+:simon/crystal.W: 576 352
+:simon/crystal.W: 624 352
 
-:matt/oriental/asiantemple: 32 0
-:matt/oriental/bamboo_segment1: 382 226 r
-:matt/oriental/07: 116 316
-:matt/oriental/07: 350 316
-:matt/oriental/02: 0 354
-:matt/oriental/02: 0 308
-:matt/oriental/02: 0 262
-:matt/oriental/02: 0 216
-:matt/oriental/02: 0 170
-:matt/oriental/02: 0 124
-:matt/oriental/02: 0 78
-:matt/oriental/02: 0 32
-:matt/oriental/02: 0 -14
-:matt/oriental/02: 610 354
-:matt/oriental/02: 610 308
-:matt/oriental/02: 610 262
-:matt/oriental/02: 610 216
-:matt/oriental/02: 610 170
-:matt/oriental/02: 610 124
-:matt/oriental/02: 610 78
-:matt/oriental/02: 610 32
-:matt/oriental/02: 610 -14
-:matt/oriental/04: 250 80
-:matt/oriental/bamboo_segment2: 295 78 rrr
-:matt/oriental/bamboo_segment1: 315 78 rrr
-:matt/oriental/bamboo_segment2: 295 115 rrr
-:matt/oriental/bamboo_segment1: 315 115 rrr
-:matt/oriental/bamboo_segment2: 383 78 rrr
-:matt/oriental/bamboo_segment1: 403 78 rrr
-:matt/oriental/bamboo_segment2: 427 78 rrr
-:matt/oriental/bamboo_segment1: 447 78 rrr
-:matt/oriental/bamboo_segment2: 383 115 rrr
-:matt/oriental/bamboo_segment1: 403 115 rrr
-:matt/oriental/bamboo_segment2: 427 115 rrr
-:matt/oriental/bamboo_segment1: 447 115 rrr
-:matt/oriental/bamboo_segment2: 471 78 rrr
-:matt/oriental/bamboo_segment2: 471 115 rrr
-:matt/oriental/02: 140 354
-:matt/oriental/02: 374 354
-:matt/oriental/01: 140 324
-:matt/oriental/01: 374 324
-:matt/oriental/01: 88 316
-:matt/oriental/01: 191 316
-:matt/oriental/01: 322 316
-:matt/oriental/01: 425 316
-:matt/oriental/bamboo_segment2: 220 314 rrr
-:matt/oriental/bamboo_segment2: 67 314 frrr
-:matt/oriental/bamboo_segment2: 301 314 frrr
-:matt/oriental/bamboo_segment2: 454 314 rrr
-:matt/oriental/bamboo_segment2: 319 295 rr
-:matt/oriental/bamboo_segment2: 445 295 rr
-:matt/oriental/bamboo_segment1: 320 271 rr
-:matt/oriental/bamboo_segment1: 445 271 rr
-:matt/oriental/bamboo_segment2: 328 247 rrr
-:matt/oriental/bamboo_segment2: 426 247 frrr
-:matt/oriental/bamboo_segment1: 341 226 rr
-:matt/oriental/bamboo_segment1: 424 226 rr
-:matt/oriental/bamboo_segment2: 350 223 rrr
-:matt/oriental/bamboo_segment2: 405 223 frrr
-:matt/oriental/bamboo_segment1: 371 224 rrr
-:matt/oriental/08: 28 120 d
-:matt/oriental/08: 100 120 d
-:matt/oriental/08: 164 122 d
-:matt/oriental/04: 30 80
-:matt/oriental/04: 74 80
-:matt/oriental/04: 118 80
-:matt/oriental/04: 162 80
-:matt/oriental/04: 206 80
-:matt/oriental/bamboo_segment2: 445 250 rr
-:matt/oriental/bamboo_segment2: 319 250 rr
-:matt/oriental/bamboo_segment2: 339 78 rrr
-:matt/oriental/bamboo_segment1: 359 78 rrr
-:matt/oriental/bamboo_segment2: 339 115 rrr
-:matt/oriental/bamboo_segment1: 359 115 rrr
+:simon/oriental/temple: 32 -4
+:simon/oriental/07: 125 322
+:simon/oriental/04: 250 80
+:simon/oriental/01: 149 391
+:simon/oriental/01: 93 322
+:simon/oriental/01: 205 322
+:simon/oriental/08: 32 128 d
+:simon/oriental/08: 100 120 d
+:simon/oriental/08: 164 122 d
+:simon/oriental/04: 30 80
+:simon/oriental/04: 74 80
+:simon/oriental/04: 118 80
+:simon/oriental/04: 162 80
+:simon/oriental/04: 206 80
+:simon/oriental/02b: 610 -30
+:simon/oriental/02b: 610 18
+:simon/oriental/02b: 610 66
+:simon/oriental/02b: 610 114
+:simon/oriental/02b: 610 162
+:simon/oriental/02b: 610 210
+:simon/oriental/02b: 610 258
+:simon/oriental/02b: 610 306
+:simon/oriental/02b: 610 354
+:simon/oriental/02b: 0 18
+:simon/oriental/02b: 0 66
+:simon/oriental/02b: 0 114
+:simon/oriental/02b: 0 162
+:simon/oriental/02b: 0 210
+:simon/oriental/02b: 0 258
+:simon/oriental/02b: 0 306
+:simon/oriental/02b: 0 354
+:simon/oriental/02b: 0 -30
+:simon/oriental/02b: 149 343
+:simon/oriental/culm_half1: 298 78 frrr
+:simon/oriental/culm_half2: 322 78 frrr
+:simon/oriental/culm_half1: 346 78 frrr
+:simon/oriental/culm_half2: 370 78 frrr
+:simon/oriental/culm_half1: 394 78 frrr
+:simon/oriental/culm_half2: 418 78 frrr
+:simon/oriental/culm_half1: 442 78 frrr
+:simon/oriental/culm_half2: 466 78 frrr
+:simon/oriental/culm_half1: 298 120 frrr
+:simon/oriental/culm_half2: 322 120 frrr
+:simon/oriental/culm_half1: 346 120 frrr
+:simon/oriental/culm_half2: 370 120 frrr
+:simon/oriental/culm_half1: 394 120 frrr
+:simon/oriental/culm_half2: 418 120 frrr
+:simon/oriental/culm_half1: 442 120 frrr
+:simon/oriental/culm_half2: 466 120 frrr
+:simon/oriental/culm_half2: 224 314 frrr
+:simon/oriental/culm_half1: 200 314 frrr
+:simon/oriental/culm_half2: 176 314 frrr
+:simon/oriental/culm_half1: 152 314 frrr
+:simon/oriental/culm_half2: 128 314 frrr
+:simon/oriental/culm_half1: 104 314 frrr
+:simon/oriental/culm_end: 80 314 rrr
+:simon/oriental/07: 350 322
+:simon/oriental/01: 430 322
+:simon/oriental/02b: 374 343
+:simon/oriental/culm_half2: 401 314 frrr
+:simon/oriental/culm_half1: 377 314 frrr
+:simon/oriental/01: 374 391
+:simon/oriental/culm_half1: 434 226
+:simon/oriental/culm_half1: 318 275 f
+:simon/oriental/culm_half2: 318 252 f
+:simon/oriental/culm_half1: 331 226
+:simon/oriental/culm_end: 317 246 rrr
+:simon/oriental/culm_half2: 318 299 f
+:simon/oriental/01: 318 322
+:simon/oriental/culm_half1: 329 314 frrr
+:simon/oriental/culm_end: 305 314 rrr
+:simon/oriental/culm_half2: 353 314 frrr
+:simon/oriental/culm_half1: 446 275 f
+:simon/oriental/culm_half2: 446 252 f
+:simon/oriental/culm_end: 434 248 rrr
+:simon/oriental/culm_half2: 446 299 f
+:simon/oriental/culm_half2: 449 314 frrr
+:simon/oriental/culm_half1: 425 314 frrr
+:simon/oriental/culm_half2: 399 224 frrr
+:simon/oriental/culm_end: 419 224 rrr
+:simon/oriental/culm_half1: 376 224 frrr
+:simon/oriental/culm_half2: 353 224 frrr
+:simon/oriental/culm_end: 331 224 rrr

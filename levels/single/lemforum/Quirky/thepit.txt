@@ -1,55 +1,46 @@
-$BUILT 2014-07-16 19:30:14
+$BUILT 2017-07-30 12:51:53
 $AUTHOR Nortaneous
-$GERMAN 
 $ENGLISH The Pit
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
-#SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
+#SIZE_Y 368
 #START_X 0
 #START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #INITIAL 30
 #REQUIRED 18
-#SPAWN_INTERVAL 70
+#SPAWN_INTERVAL 50
 
-#CLIMBER 5
-#EXPLODER2 1
+#CLIMBER 10
 #BUILDER 5
 #BASHER 1
 #DIGGER 2
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#EXPLODER2 0
 
-:matt/winter/Hatch.H: 100 132
-:matt/winter/Hatch.H: 368 128
+:matt/winter/Hatch.H: 100 100
+:matt/winter/Hatch.H: 368 96
 
-:matt/winter/Goal.G: 353 67
+:matt/winter/Goal.G: 353 35
 
-:matt/winter/15: 237 376
-:matt/winter/06: 12 194 fr
-:matt/winter/06: 76 194 r
-:matt/winter/06: 140 194 r
-:matt/winter/06: 204 194 r
-:matt/winter/06: 268 194
-:matt/winter/08: 268 186
-:matt/winter/06: 268 258
-:matt/winter/06: 268 322
-:matt/winter/06: 492 194
-:matt/winter/08: 492 123
-:matt/winter/06: 492 258
-:matt/winter/06: 492 322
-:matt/winter/08: 492 385 f
-:matt/winter/08: 507 370 r
+:matt/winter/16: 554 24
+:matt/winter/15: 237 344
+:matt/winter/06: 12 162 fr
+:matt/winter/06: 76 162 r
+:matt/winter/06: 140 162 r
+:matt/winter/06: 204 162 r
+:matt/winter/06: 268 162
+:matt/winter/08: 268 154
+:matt/winter/06: 268 226
+:matt/winter/06: 268 290
+:matt/winter/06: 492 162
+:matt/winter/08: 492 91
+:matt/winter/06: 492 226
+:matt/winter/06: 492 290
+:matt/winter/08: 492 353 f
+:matt/winter/08: 507 338 r
+:matt/winter/08: 283 162 r
+:matt/winter/08: 283 178 r
 :matt/winter/08: 283 194 r
 :matt/winter/08: 283 210 r
 :matt/winter/08: 283 226 r
@@ -59,8 +50,8 @@ $ENGLISH The Pit
 :matt/winter/08: 283 290 r
 :matt/winter/08: 283 306 r
 :matt/winter/08: 283 322 r
-:matt/winter/08: 283 338 r
-:matt/winter/08: 283 354 r
+:matt/winter/08: 483 162 fr
+:matt/winter/08: 483 178 fr
 :matt/winter/08: 483 194 fr
 :matt/winter/08: 483 210 fr
 :matt/winter/08: 483 226 fr
@@ -70,54 +61,54 @@ $ENGLISH The Pit
 :matt/winter/08: 483 290 fr
 :matt/winter/08: 483 306 fr
 :matt/winter/08: 483 322 fr
-:matt/winter/08: 483 338 fr
-:matt/winter/08: 483 354 fr
-:matt/winter/06: 492 131
-:matt/winter/06: 251 131 fr
-:matt/winter/06: 315 131 r
-:matt/winter/06: 379 131 r
-:matt/winter/06: 428 131 r
-:matt/winter/06: 9 131 fr
-:matt/winter/06: 59 131 r
-:matt/winter/06: 123 131 r
-:matt/winter/06: 187 131 r
+:matt/winter/06: 492 99
+:matt/winter/06: 251 99 fr
+:matt/winter/06: 315 99 r
+:matt/winter/06: 379 99 r
+:matt/winter/06: 428 99 r
+:matt/winter/06: 9 99 fr
+:matt/winter/06: 59 99 r
+:matt/winter/06: 123 99 r
+:matt/winter/06: 187 99 r
+:matt/winter/08: 483 114 fr
+:matt/winter/08: 483 130 fr
 :matt/winter/08: 483 146 fr
-:matt/winter/08: 483 162 fr
-:matt/winter/08: 483 178 fr
-:matt/winter/00: 534 132 r
-:matt/winter/06: 508 195 r
-:matt/winter/06: 548 195 r
-:matt/winter/08: 611 195 r
-:matt/winter/11: 484 356
-:matt/winter/11: 500 329
-:matt/winter/00: 500 312
-:matt/winter/16: 494 243
-:matt/winter/14: 470 297
-:matt/winter/16: 513 287
-:matt/winter/14: 500 262
-:matt/winter/14: 606 295
-:matt/winter/11: 507 240
-:matt/winter/16: 545 297
-:matt/winter/00: 551 -46 frrr
-:matt/winter/05: 580 -42
-:matt/winter/02: 589 112
-:matt/winter/05: 546 3
-:matt/winter/16: 559 200
-:matt/winter/11: 528 200
-:matt/winter/16: 545 132
-:matt/winter/05: 530 117
-:matt/winter/17: 550 183
-:matt/winter/10: 326 341 rr
-:matt/winter/18: 443 331
-:matt/winter/15: 252 362
-:matt/winter/15: 397 337
-:matt/winter/16: 289 343 rrr
-:matt/winter/00: 419 343
-:matt/winter/11: 453 335
-:matt/winter/17: 187 360 r
-:matt/winter/14: 128 362
-:matt/winter/12: 125 365
-:matt/winter/02: 145 360
-:matt/winter/06: -17 194 fr
-:matt/winter/06: -20 131 fr
-:matt/winter/05: -35 365 rrr
+:matt/winter/00: 534 100 r
+:matt/winter/06: 508 163 r
+:matt/winter/06: 548 163 r
+:matt/winter/08: 611 163 r
+:matt/winter/11: 484 324
+:matt/winter/11: 500 297
+:matt/winter/00: 500 280
+:matt/winter/16: 494 211
+:matt/winter/14: 470 265
+:matt/winter/14: 500 230
+:matt/winter/14: 606 263
+:matt/winter/16: 514 258
+:matt/winter/11: 507 208
+:matt/winter/16: 545 265
+:matt/winter/00: 560 -34 frrr
+:matt/winter/05: 582 -74
+:matt/winter/02: 589 80
+:matt/winter/16: 559 168
+:matt/winter/11: 522 168
+:matt/winter/16: 545 100
+:matt/winter/10: 326 309 rr
+:matt/winter/18: 443 299
+:matt/winter/15: 252 330
+:matt/winter/15: 397 305
+:matt/winter/16: 289 309 rrr
+:matt/winter/00: 419 311
+:matt/winter/11: 453 303
+:matt/winter/17: 187 328 r
+:matt/winter/14: 128 330
+:matt/winter/12: 125 333
+:matt/winter/02: 145 328
+:matt/winter/06: -17 162 fr
+:matt/winter/06: -20 99 fr
+:matt/winter/05: -35 333 rrr
+:matt/winter/14: 354 302 fr
+:matt/winter/00: 384 288
+:matt/winter/00: 436 278 rr
+:matt/winter/13: 402 278 rrr
+:matt/winter/00: 442 256 f

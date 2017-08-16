@@ -1,4 +1,4 @@
-$BUILT 2017-03-02 12:03:58
+$BUILT 2017-08-09 01:46:12
 $AUTHOR Nepster
 $ENGLISH On Magic Wings
 
@@ -24,18 +24,18 @@ $ENGLISH On Magic Wings
 :geoo/construction/squisher.T: 576 8
 :geoo/construction/squisher.T: 128 8
 
-:simon/crystal.W: 32 350
-:simon/crystal.W: 80 350
-:simon/crystal.W: 128 350
-:simon/crystal.W: 176 350
-:simon/crystal.W: 224 350
-:simon/crystal.W: 272 350
-:simon/crystal.W: 320 350
-:simon/crystal.W: 368 350
-:simon/crystal.W: 416 350
-:simon/crystal.W: 464 350
-:simon/crystal.W: 512 350
-:simon/crystal.W: 560 350
+:simon/crystal.W: 32 352
+:simon/crystal.W: 80 352
+:simon/crystal.W: 128 352
+:simon/crystal.W: 176 352
+:simon/crystal.W: 224 352
+:simon/crystal.W: 272 352
+:simon/crystal.W: 320 352
+:simon/crystal.W: 368 352
+:simon/crystal.W: 416 352
+:simon/crystal.W: 464 352
+:simon/crystal.W: 512 352
+:simon/crystal.W: 560 352
 
 :geoo/shadow/pillar_verti_32: 528 288
 :geoo/shadow/pillar_verti_32: 496 256

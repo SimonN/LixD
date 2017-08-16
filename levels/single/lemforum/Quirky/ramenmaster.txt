@@ -1,32 +1,19 @@
-$BUILT 2012-06-06 12:14:03
+$BUILT 2017-08-09 00:24:56
 $AUTHOR geoo
-$GERMAN 
 $ENGLISH Ramen Masterchef
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #INITIAL 400
 #REQUIRED 200
 #SPAWN_INTERVAL 1
 
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#JUMPER 10
 #BUILDER 10
 #PLATFORMER 10
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#JUMPER 10
+#EXPLODER2 0
 
 :geoo/construction/Hatch.H: 144 96
 :geoo/construction/Hatch.H: 208 96
@@ -42,29 +29,31 @@ $ENGLISH Ramen Masterchef
 :geoo/abstract/goal.G: 56 272
 :geoo/abstract/goal.G: 552 272
 
-:simon/acid.W: 342 254
-:simon/acid.W: 390 254
+:simon/acid.W: 342 256
+:simon/acid.W: 390 256
+:simon/acid.W: 404 242
+:simon/acid.W: 334 236
 :simon/acid.W: 382 236
-:simon/acid.W: 404 220
+:simon/acid.W: 374 220
+:simon/acid.W: 404 222
+:simon/acid.W: 412 206
+:simon/acid.W: 432 188
 :simon/acid.W: 294 254
 :simon/acid.W: 248 254
-:simon/acid.W: 198 254
+:simon/acid.W: 206 256
 :simon/acid.W: 286 236
-:simon/acid.W: 334 236
 :simon/acid.W: 240 236
-:simon/acid.W: 190 236
-:simon/acid.W: 374 220
+:simon/acid.W: 192 236
 :simon/acid.W: 278 220
 :simon/acid.W: 326 220
 :simon/acid.W: 232 220
-:simon/acid.W: 182 220
+:simon/acid.W: 184 220
 :simon/acid.W: 366 204
 :simon/acid.W: 270 204
 :simon/acid.W: 318 204
 :simon/acid.W: 224 204
-:simon/acid.W: 414 204
 :simon/acid.W: 174 204
-:simon/acid.W: 166 188
+:simon/acid.W: 168 188
 :simon/acid.W: 406 188
 :simon/acid.W: 310 188
 :simon/acid.W: 358 188
@@ -78,6 +67,14 @@ $ENGLISH Ramen Masterchef
 :simon/acid.W: 390 172
 :simon/acid.W: 438 172
 
+:matt/earth/28: 58 11 rr
+:matt/earth/29: 56 8 rr
+:matt/winter/18: 0 24
+:matt/earth/29: 62 16
+:matt/underworld/09c: 48 88 frr
+:matt/earth/07b: 72 86
+:matt/underworld/09a: 58 76 rrr
+:matt/earth/07b: 10 88
 :simon/tapir/064h: 0 336
 :simon/tapir/064h: 128 336
 :simon/tapir/064h: 256 336
@@ -247,7 +244,12 @@ $ENGLISH Ramen Masterchef
 :geoo/abstract/pipes/central2: 216 224 rrr
 :geoo/construction/concrete/032vb: 192 240
 :geoo/abstract/pipes/ends2: 208 240 frr
-:matt/goldmine/crate32: 8 72
+$BEGIN_TILE_GROUP 0
+:matt/goldmine/crate32: 0 4
+:geoo/sandstone/ebony/v16a: 4 0 d
+:geoo/sandstone/ebony/v16a: 12 0 d
+$END_TILE_GROUP
+:Group-0: 8 72
 :matt/earth/07b: 302 256
 :matt/earth/07b: 294 176
 :geoo/construction/concrete/016h: 56 320
@@ -290,11 +292,8 @@ $ENGLISH Ramen Masterchef
 :geoo/sandstone/ebony/h16b: 0 104
 :geoo/sandstone/ebony/h16c: 32 104
 :geoo/sandstone/ebony/h16a: 64 104
-:geoo/sandstone/ebony/v16a: 12 68 d
-:geoo/sandstone/ebony/v16a: 20 68 d
 :matt/beach/decor/grass05: 22 68
 :matt/beach/decor/grass06: 6 56
-:matt/earth/07b: 10 88 n
 :geoo/abstract/pipes/corner2: 616 40 r
 :geoo/abstract/pipes/corner2: 624 40 rr
 :geoo/abstract/pipes/corner2: 624 64 rrr
@@ -319,25 +318,12 @@ $ENGLISH Ramen Masterchef
 :geoo/abstract/pipes/corner2: 624 96 frrr
 :geoo/abstract/pipes/corner2: 616 64 r
 :geoo/abstract/pipes/cshort2: 616 72 rrr
-:matt/goldmine/crate32: 56 72
-:geoo/sandstone/ebony/v16a: 60 68 d
-:geoo/sandstone/ebony/v16a: 68 68 d
-:matt/underworld/09a: 58 76 rrrn
-:matt/earth/07b: 72 86 n
-:matt/underworld/09c: 48 88 frrn
+:Group-0: 56 72
 :matt/underworld/01: 38 120 d
-:matt/goldmine/crate32: 8 8
+:Group-0: 8 8
 :geoo/sandstone/ebony/h16r: 96 40
 :geoo/sandstone/ebony/h16b: 0 40
 :geoo/sandstone/ebony/h16c: 32 40
 :geoo/sandstone/ebony/h16a: 64 40
-:geoo/sandstone/ebony/v16a: 12 4 d
-:geoo/sandstone/ebony/v16a: 20 4 d
-:matt/goldmine/crate32: 56 8
-:geoo/sandstone/ebony/v16a: 60 4 d
-:geoo/sandstone/ebony/v16a: 68 4 d
-:matt/earth/29: 62 16 n
-:matt/winter/18: 0 24 n
+:Group-0: 56 8
 :geoo/sandstone/ebony/v16a: -8 8 d
-:matt/earth/29: 56 8 rrn
-:matt/earth/28: 58 11 rrn

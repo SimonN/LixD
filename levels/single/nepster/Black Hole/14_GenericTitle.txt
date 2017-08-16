@@ -1,4 +1,4 @@
-$BUILT 2016-07-24 10:44:09
+$BUILT 2017-08-09 01:50:23
 $AUTHOR Nepster
 $ENGLISH Another Generic Title
 
@@ -6,7 +6,6 @@ $ENGLISH Another Generic Title
 #SIZE_X 1088
 #SIZE_Y 400
 
-#SECONDS 0
 #INITIAL 30
 #REQUIRED 27
 #SPAWN_INTERVAL 20
@@ -26,12 +25,12 @@ $ENGLISH Another Generic Title
 
 :geoo/construction/factory.T: 448 176
 
-:simon/crystal.W: 310 350
-:simon/crystal.W: 662 350
-:simon/crystal.W: 758 350
-:simon/crystal.W: 854 350
-:simon/crystal.W: 902 350
-:simon/crystal.W: 992 350
+:simon/crystal.W: 312 352
+:simon/crystal.W: 664 352
+:simon/crystal.W: 760 352
+:simon/crystal.W: 856 352
+:simon/crystal.W: 904 352
+:simon/crystal.W: 992 352
 :geoo/construction/sawblade.F: 170 186
 :geoo/construction/sawblade.F: 46 282
 

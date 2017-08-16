@@ -56,7 +56,7 @@ $ENGLISH Wait Why is There a Tree
 :matt/bricks/03: 448 0
 :matt/bricks/03: 512 0
 :matt/bricks/03: 576 0
-:matt/oriental/bonsaitree: 16 48
+:simon/oriental/bonsai: 16 48
 :matt/bricks/02: 64 240
 :matt/bricks/03: 416 272
 :matt/bricks/03: 480 272

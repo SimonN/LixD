@@ -1,4 +1,4 @@
-$BUILT 2016-07-21 20:00:43
+$BUILT 2017-03-17 00:44:26
 $AUTHOR Rubix
 $ENGLISH Tick Toxic
 
@@ -35,16 +35,16 @@ $ENGLISH Tick Toxic
 :simon/acid.W: 608 352
 :simon/acid.W: 576 352
 
-:geoo/abstract/cvblocks/040: 512 336
+:geoo/abstract/cvblocks/040: 506 336
 :matt/earth/26: 196 8 frr
-:geoo/abstract/cvblocks/040: 528 336
+:geoo/abstract/cvblocks/040: 522 336
 :matt/earth/26: 0 304
 :geoo/abstract/cvblocks/035: 16 304
-:geoo/abstract/cvblocks/045: 560 144
-:geoo/abstract/cvblocks/045: 560 208
-:geoo/abstract/cvblocks/045: 560 272
-:geoo/abstract/cvblocks/045: 560 336
-:geoo/abstract/cvblocks/046: 432 144
+:geoo/abstract/cvblocks/045: 554 144
+:geoo/abstract/cvblocks/045: 554 208
+:geoo/abstract/cvblocks/045: 554 272
+:geoo/abstract/cvblocks/045: 554 336
+:geoo/abstract/cvblocks/046: 426 144
 :geoo/abstract/cvblocks/046: 288 352
 :geoo/abstract/cvblocks/046: 64 352
 :geoo/abstract/cvblocks/036: 16 32 rrr
@@ -88,27 +88,21 @@ $ENGLISH Tick Toxic
 :geoo/abstract/cvblocks/020: 560 16
 :geoo/abstract/cvblocks/020: 592 16
 :geoo/abstract/cvblocks/043: 592 32 frr
-:geoo/abstract/cvblocks/040: 528 272
-:geoo/abstract/cvblocks/028: 416 144
-:geoo/abstract/cvblocks/028: 80 304 rr
+:geoo/abstract/cvblocks/040: 522 272
+:geoo/abstract/cvblocks/028: 410 144
 :geoo/abstract/cvblocks/028: 192 352 frr
 :geoo/abstract/cvblocks/028: 416 352 frr
 :geoo/abstract/cvblocks/028: 272 352
 :geoo/abstract/cvblocks/028: 48 352
 :geoo/abstract/cvblocks/028: 624 16 frr
 :geoo/abstract/cvblocks/028: 0 16
-:geoo/abstract/cvblocks/028: 512 272
-:geoo/abstract/cvblocks/028: 496 336
-:geoo/abstract/cvblocks/035: -16 272 r
-:geoo/abstract/cvblocks/028: -16 320 frrr
+:geoo/abstract/cvblocks/028: 506 272
+:geoo/abstract/cvblocks/028: 490 336
 :matt/earth/29: 198 102
 :matt/earth/29: 198 84
 :matt/earth/26: 194 72
 :matt/earth/26: 196 30
-:geoo/steel/16x32o.S: 432 192 rrr
-:geoo/steel/16x32o.S: 464 192 rrr
-:geoo/steel/16x32o.S: 496 192 rrr
-:geoo/steel/16x32o.S: 528 192 rrr
+:geoo/steel/16x32o.S: 426 192 fr
 :geoo/abstract/cvblocks/045: 580 160 d
 :geoo/abstract/cvblocks/045: 580 208 d
 :geoo/abstract/cvblocks/045: 580 272 d
@@ -145,3 +139,19 @@ $ENGLISH Tick Toxic
 :geoo/abstract/pipes/central3: 544 336 rr
 :geoo/abstract/pipes/central3: 176 352
 :geoo/abstract/pipes/central3: 400 352
+:geoo/steel/16x32o.S: 458 192 fr
+:geoo/steel/16x32o.S: 490 192 fr
+:geoo/steel/16x32o.S: 522 192 fr
+:geoo/abstract/pipes/corner3: 576 144 rr
+:geoo/abstract/pipes/ends3: 410 144
+:geoo/abstract/pipes/ends3: 506 272
+:geoo/abstract/pipes/ends3: 490 336
+:geoo/abstract/pipes/junct3: 576 336 rrr
+:geoo/abstract/pipes/junct3: 576 272 rrr
+:geoo/abstract/pipes/ends3: 272 352
+:geoo/abstract/pipes/ends3: 424 352 rr
+:geoo/abstract/pipes/ends3: 200 352 rr
+:geoo/abstract/pipes/ends3: 48 352
+:geoo/abstract/pipes/ends3: 72 304 rr
+:geoo/abstract/cvblocks/027: 80 304
+:geoo/abstract/cvblocks/040: -16 272

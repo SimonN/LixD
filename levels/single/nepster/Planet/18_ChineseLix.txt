@@ -1,0 +1,115 @@
+$BUILT 2017-06-12 18:40:17
+$AUTHOR Nepster
+$ENGLISH Chinese Lix
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 928
+#SIZE_Y 400
+
+#INITIAL 5
+#REQUIRED 5
+#SPAWN_INTERVAL 50
+
+#CLIMBER 1
+#BLOCKER 1
+#BUILDER 4
+#BASHER 2
+#MINER 1
+#EXPLODER 0
+
+:simon/oriental/hatch.H: 208 176
+
+:simon/oriental/goal.G: 728 160
+
+:simon/oriental/01: 112 240
+:simon/oriental/01: 336 240
+:simon/oriental/07: 224 0 frr
+:simon/oriental/culm_half2: 766 274 rrr
+:simon/oriental/culm_half2: 744 272 rrr
+:simon/oriental/culm_long: 610 -132
+:simon/oriental/culm_long: 688 -130
+:simon/oriental/culm_long: -102 394 rrr
+:simon/oriental/culm_long: -106 334 rrr
+:simon/oriental/culm_long: -104 274 rrr
+:simon/oriental/culm_long: -102 214 rrr
+:simon/oriental/culm_long: -104 154 rrr
+:simon/oriental/culm_long: -106 94 rrr
+:simon/oriental/culm_long: 156 -116
+:simon/oriental/culm_long: 232 -112
+:simon/oriental/culm_long: 306 -122
+:simon/oriental/culm_long: 384 -130
+:simon/oriental/07: 848 112
+:simon/oriental/07: 96 0
+:simon/oriental/04: 256 48
+:simon/oriental/04: 176 48
+:simon/oriental/01: 224 48
+:simon/oriental/07: 720 240
+:simon/oriental/07: 640 320 r
+:simon/oriental/07: 640 240 r
+:simon/oriental/07: 640 160 r
+:simon/oriental/07: 640 80 r
+:simon/oriental/07: 640 0 r
+:simon/oriental/04: 592 0
+:simon/oriental/04: 688 0
+:simon/oriental/01: 560 0
+:simon/oriental/01: 736 0
+:simon/oriental/08: 688 320
+:simon/oriental/08: 768 320
+:simon/oriental/08: 848 320
+:simon/oriental/01: 768 288
+:simon/oriental/02b: 800 288 r
+:simon/oriental/01: 848 288
+:simon/oriental/07: 880 240 r
+:simon/oriental/07: 880 160 r
+:simon/oriental/08: 800 208
+:simon/tapir/032d: 800 256 d
+:simon/tapir/032d: 824 232 d
+:simon/tapir/032d: 848 208 d
+:simon/tapir/032: 816 208 d
+:simon/tapir/032: 800 208 d
+:simon/tapir/032: 800 224 d
+:simon/oriental/07: 848 32 r
+:simon/oriental/04: 848 -16
+:simon/oriental/08: 464 320
+:simon/oriental/07: 544 320 r
+:simon/oriental/08: 464 240
+:simon/oriental/08: 464 160
+:simon/oriental/07: 464 112
+:simon/oriental/07: 544 240 r
+:simon/oriental/02b: 592 240 r
+:simon/oriental/02b: 592 128 r
+:simon/oriental/07: 592 160 r
+:simon/oriental/07: 544 160 r
+:simon/oriental/07: 544 80 r
+:simon/oriental/02b: 488 64
+:simon/oriental/01: 512 80
+:simon/oriental/01: 464 80
+:simon/oriental/07: 336 320 r
+:simon/oriental/07: 416 320 r
+:simon/oriental/08: 360 320
+:simon/oriental/08: 256 240
+:simon/oriental/08: 144 240
+:simon/oriental/08: 256 320
+:simon/oriental/08: 144 320
+:simon/oriental/02b: 224 352
+:simon/oriental/02b: 224 240
+:simon/oriental/01: 224 288
+:simon/oriental/01: 224 320
+:simon/oriental/07: 0 320 r
+:simon/oriental/07: 0 240 r
+:simon/oriental/07: 0 160 r
+:simon/oriental/07: 0 80 r
+:simon/oriental/07: 0 0 r
+:simon/oriental/08: 96 48
+:simon/oriental/08: 304 48
+:simon/oriental/07: 304 0
+:simon/oriental/07: 384 80 r
+:simon/oriental/07: 384 0 r
+$BEGIN_TILE_GROUP 0
+:simon/oriental/07: 0 0
+:simon/oriental/04: 64 0 d
+$END_TILE_GROUP
+:Group-0: 176 0
+:simon/oriental/07: 96 320 r
+:simon/oriental/07: 48 80 r
+:simon/oriental/07: 48 0 r

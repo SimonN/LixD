@@ -1,43 +1,31 @@
-$BUILT 2014-06-04 10:11:00
+$BUILT 2017-08-09 16:41:00
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH Overexposure
+
 $HINT_ENGLISH Welcome to Rubix's Adventure!
+
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 0
 #START_Y 0
 #BACKGROUND_RED 0
 #BACKGROUND_GREEN 172
 #BACKGROUND_BLUE 255
 
-#SECONDS 0
-#INITIAL 30
+#INITIAL 20
 #REQUIRED 5
 #SPAWN_INTERVAL 33
-#SPAWN_INTERVAL_FAST 4
 
 #BASHER 5
 #DIGGER 5
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-
-:matt/beach/decor/sun.D: -23 -23
+#EXPLODER2 0
 
 :matt/beach/Hatch.H: 434 9 r
 
 :matt/beach/goal.G: 528 304
 
+:matt/beach/decor/sun: -23 -23
 :matt/beach/decor/grass11: 67 214
 :matt/beach/decor/grass08: 398 151
 :matt/beach/daytime/01: 247 306

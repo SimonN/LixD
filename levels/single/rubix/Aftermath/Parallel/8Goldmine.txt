@@ -43,9 +43,9 @@ $HINT_ENGLISH There it is! That must be the way back to our reality!
 :matt/underworld/Lava.W: 576 368
 :matt/underworld/Lava.W: 624 368
 
-:matt/oriental/09: 416 96
-:matt/oriental/09: 352 64
-:matt/oriental/09: 288 32
+:simon/oriental/09: 416 96
+:simon/oriental/09: 352 64
+:simon/oriental/09: 288 32
 :matt/goldmine/explosivecrate: 576 80
 :matt/goldmine/crate64: 416 128
 :matt/goldmine/crate64: 352 96
@@ -58,8 +58,8 @@ $HINT_ENGLISH There it is! That must be the way back to our reality!
 :matt/goldmine/crate16: 368 176
 :matt/goldmine/crate16: 384 176
 :matt/goldmine/crate16: 400 176
-:matt/oriental/09: 288 128 rr
-:matt/oriental/09: 256 48 rrr
+:simon/oriental/09: 288 128 rr
+:simon/oriental/09: 256 48 rrr
 :matt/goldmine/crate64: 224 272
 :matt/goldmine/crate64: 480 272
 :matt/goldmine/crate64: 288 272

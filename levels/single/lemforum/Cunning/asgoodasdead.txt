@@ -1,0 +1,117 @@
+$BUILT 2017-07-28 22:48:49
+$AUTHOR mobius
+$ENGLISH As Good as Dead
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 20
+#REQUIRED 18
+#SPAWN_INTERVAL 20
+
+#CLIMBER 1
+#FLOATER 2
+#EXPLODER 1
+#BLOCKER 1
+#BUILDER 2
+#MINER 1
+
+:matt/winter/Hatch.H: 40 48
+
+:simon/oriental/goal.G: 512 264
+:amanda/forest/exit_tent.G: 408 408
+:simon/tapir/goal.G: 416 440
+
+:simon/water.W: 240 360
+:geoo/construction/sawblade_medium.F: 576 176
+
+:simon/oriental/02: 448 344 r
+:simon/oriental/09: 432 344 fd
+:simon/oriental/fat_d_long: -16 0
+:simon/oriental/02b: 288 352 r
+:simon/oriental/culm_long: 222 158 r
+:simon/oriental/08: 0 288
+:simon/oriental/bonsai: 400 16 frr
+:simon/oriental/03: -32 368
+:simon/oriental/03: 16 368
+:simon/oriental/03: 64 368
+:simon/oriental/03: 112 368
+:simon/oriental/03: 160 368
+:simon/oriental/03: 304 368
+:simon/oriental/03: 352 368
+:simon/oriental/03: 400 368
+:simon/oriental/03: 448 368
+:simon/oriental/02: 496 344 r
+:simon/oriental/03: 496 368
+:simon/oriental/08: 0 208
+:simon/oriental/04: 288 160
+:simon/oriental/04: 288 208
+:simon/oriental/04: 288 304
+:simon/oriental/08: 160 208
+:simon/oriental/08: 160 288
+:simon/oriental/04: 288 256
+:simon/oriental/04: 688 432
+:geoo/steel/16x32o.S: 0 96
+:geoo/steel/16x32o.S: 0 64
+:geoo/steel/16x32o.S: 0 32
+:geoo/steel/16x32o.S: 0 0
+:simon/oriental/pebbles6: 8 336
+:simon/oriental/pebbles6: -16 360
+:simon/oriental/pebbles6: 32 376
+:simon/oriental/pebbles6: -24 304
+:geoo/steel/64x32o.S: 16 -16
+:geoo/steel/64x32o.S: 80 -16
+:geoo/steel/64x32o.S: 144 -16
+:geoo/steel/64x32o.S: 208 -16
+:geoo/steel/64x32o.S: 272 -16
+:geoo/steel/64x32o.S: 336 -16
+:geoo/steel/64x32o.S: 400 -16
+:geoo/steel/64x32o.S: 464 -16
+:geoo/steel/64x32o.S: 400 -16
+:geoo/steel/64x32o.S: 464 -16
+:geoo/steel/64x32o.S: 528 -16
+:geoo/steel/64x32o.S: 592 -16
+:geoo/steel/64x32o.S: 656 -16
+:geoo/steel/64x32o.S: 720 -16
+:geoo/steel/64x32o.S: 784 -16
+:geoo/steel/64x32o.S: 848 -16
+:simon/oriental/bush1: 120 -8 rr
+:simon/oriental/bush1: 176 8 rr
+:simon/oriental/bush1: 160 -8 rr
+:simon/oriental/bush1: 224 12 rr
+:simon/oriental/bush1: 192 0 rr
+:simon/oriental/bush1: 208 -8 rr
+:simon/oriental/bush1: 248 0 rr
+:simon/oriental/bush1: 264 -8 rr
+:guideline/maxfall: 384 440
+:simon/oriental/04: 144 160
+:simon/oriental/04: 192 160
+:simon/oriental/04: 48 160
+:simon/oriental/04: 96 160
+:simon/oriental/04: -48 160
+:simon/oriental/04: 0 160
+:geoo/steel/16x32o.S: 0 128
+:geoo/steel/32x32o.S: 304 160
+:geoo/steel/64x32o.S: 480 208
+:geoo/steel/64x32o.S: 544 208
+:geoo/steel/64x32o.S: 608 208
+:geoo/steel/64x32o.S: 656 -16
+:simon/oriental/02: 544 344 r
+:simon/oriental/03: 544 368
+:simon/oriental/03: 592 368
+:geoo/steel/32x64o.S: 608 16
+:geoo/steel/32x64o.S: 608 80
+:geoo/steel/32x64o.S: 608 144
+:simon/oriental/pebbles6: 544 352 frr
+:simon/oriental/pebbles6: 576 352 frr
+:simon/oriental/pebbles6: 576 320 frr
+:simon/oriental/pebbles6: 592 288 frr
+:simon/oriental/pebbles6: 608 352 frr
+:simon/oriental/pebbles6: 624 320 frr
+:simon/oriental/pebbles6: 640 368 frr
+:simon/oriental/pebbles6: 608 272 frr
+:geoo/steel/32x32o.S: 290 128 d
+:geoo/steel/32x64o.S: 208 208
+:simon/oriental/03: 288 368
+:simon/oriental/03: 192 368

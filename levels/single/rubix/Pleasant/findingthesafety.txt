@@ -27,53 +27,53 @@ $HINT_ENGLISH Looks like you need to rebound yourself to make a safe bridge land
 
 :amanda/occult/hatch_tentacle.H: 480 0 r
 
-:amanda/occult/occult_goal_skull.G: 48 240
+:amanda/occult/goal_skull.G: 48 240
 
-:amanda/occult/occult_wax64x48: 368 112
-:amanda/occult/occult_wax_details_drip: 272 160
-:amanda/occult/occult_wax64x48: 240 112
-:amanda/occult/occult_wax64x48: 176 112
-:amanda/occult/occult_wax64x48: 304 112
-:amanda/occult/occult_wax64x48: 224 320
-:amanda/occult/occult_wax64x48: 160 320
-:amanda/occult/occult_wax32x48: 432 112
-:amanda/occult/occult_wax32x48: 128 320
-:amanda/occult/occult_wax32x48: 464 112
-:amanda/occult/occult_wax32x48: 496 112
-:amanda/occult/occult_wax32x48: 528 112
-:amanda/occult/occult_wax32x48: 448 320
-:amanda/occult/occult_wax32x48: 64 320
-:amanda/occult/occult_wax32x48: 96 320
-:amanda/occult/occult_wax64x48: 512 224
-:amanda/occult/occult_wax64x48: 256 352
-:amanda/occult/occult_wax64x48: 128 352
-:amanda/occult/occult_wax64x48: 64 352
-:amanda/occult/occult_wax64x48: 192 352
-:amanda/occult/occult_wax32x48: 32 352
-:amanda/occult/occult_wax32x48: 0 352
-:amanda/occult/occult_wax64x48: 544 352
-:amanda/occult/occult_wax64x48: 480 352
-:amanda/occult/occult_wax64x48: 608 352
-:amanda/occult/occult_wax32x48: 448 352
-:amanda/occult/occult_wax32x48: 416 352
-:amanda/occult/occult_wax64x48: 576 224
-:amanda/occult/occult_wax32x48_cap_left_sheer: 144 112
-:amanda/occult/occult_wax32x48_cap_left_soft: 480 224
-:amanda/occult/occult_wax32x48_cap_right_sheer: 560 112
-:amanda/occult/occult_wax32x48_cap_left_soft: 416 320
-:amanda/occult/occult_wax32x48_cap_left_soft: 384 352
-:amanda/occult/occult_wax32x48_cap_right_sheer: 288 320
-:amanda/occult/occult_skulls32x32: 256 304
-:amanda/occult/occult_wax32x48_cap_right_sheer: 304 352
-:amanda/occult/occult_wax32x48_cap_right_sheer: 480 320
-:amanda/occult/occult_wax32x48_cap_left_soft: 32 320
-:amanda/occult/occult_wax32x48: -32 144 rrr
-:amanda/occult/occult_wax32x48: -32 112 rrr
-:amanda/occult/occult_wax32x48: -32 80 rrr
-:amanda/occult/occult_wax32x48: -32 48 rrr
-:amanda/occult/occult_wax32x48: -32 16 rrr
-:amanda/occult/occult_wax32x48: -32 208 rrr
-:amanda/occult/occult_wax32x48: -32 176 rrr
-:amanda/occult/occult_wax32x48: -32 240 rrr
-:amanda/occult/occult_wax32x48_cap_right_sheer: -32 0 rrr
-:amanda/occult/occult_wax32x48_cap_left_sheer: -32 272 rrr
+:amanda/occult/wax64x48: 368 112
+:amanda/occult/wax_details_drip: 272 160
+:amanda/occult/wax64x48: 240 112
+:amanda/occult/wax64x48: 176 112
+:amanda/occult/wax64x48: 304 112
+:amanda/occult/wax64x48: 224 320
+:amanda/occult/wax64x48: 160 320
+:amanda/occult/wax32x48: 432 112
+:amanda/occult/wax32x48: 128 320
+:amanda/occult/wax32x48: 464 112
+:amanda/occult/wax32x48: 496 112
+:amanda/occult/wax32x48: 528 112
+:amanda/occult/wax32x48: 448 320
+:amanda/occult/wax32x48: 64 320
+:amanda/occult/wax32x48: 96 320
+:amanda/occult/wax64x48: 512 224
+:amanda/occult/wax64x48: 256 352
+:amanda/occult/wax64x48: 128 352
+:amanda/occult/wax64x48: 64 352
+:amanda/occult/wax64x48: 192 352
+:amanda/occult/wax32x48: 32 352
+:amanda/occult/wax32x48: 0 352
+:amanda/occult/wax64x48: 544 352
+:amanda/occult/wax64x48: 480 352
+:amanda/occult/wax64x48: 608 352
+:amanda/occult/wax32x48: 448 352
+:amanda/occult/wax32x48: 416 352
+:amanda/occult/wax64x48: 576 224
+:amanda/occult/wax32x48_cap_left_sheer: 144 112
+:amanda/occult/wax32x48_cap_left_soft: 480 224
+:amanda/occult/wax32x48_cap_right_sheer: 560 112
+:amanda/occult/wax32x48_cap_left_soft: 416 320
+:amanda/occult/wax32x48_cap_left_soft: 384 352
+:amanda/occult/wax32x48_cap_right_sheer: 288 320
+:amanda/occult/skulls32x32: 256 304
+:amanda/occult/wax32x48_cap_right_sheer: 304 352
+:amanda/occult/wax32x48_cap_right_sheer: 480 320
+:amanda/occult/wax32x48_cap_left_soft: 32 320
+:amanda/occult/wax32x48: -32 144 rrr
+:amanda/occult/wax32x48: -32 112 rrr
+:amanda/occult/wax32x48: -32 80 rrr
+:amanda/occult/wax32x48: -32 48 rrr
+:amanda/occult/wax32x48: -32 16 rrr
+:amanda/occult/wax32x48: -32 208 rrr
+:amanda/occult/wax32x48: -32 176 rrr
+:amanda/occult/wax32x48: -32 240 rrr
+:amanda/occult/wax32x48_cap_right_sheer: -32 0 rrr
+:amanda/occult/wax32x48_cap_left_sheer: -32 272 rrr

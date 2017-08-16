@@ -1,15 +1,10 @@
-$BUILT 2014-07-15 22:07:33
+$BUILT 2017-08-09 00:15:10
 $AUTHOR mobius
-$GERMAN 
 $ENGLISH Another Funeral
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #INITIAL 4
 #REQUIRED 3
@@ -17,16 +12,12 @@ $ENGLISH Another Funeral
 
 #CLIMBER 4
 #FLOATER 1
-#JUMPER 1
 #EXPLODER 1
 #BLOCKER 1
 #BUILDER 3
 #BASHER 2
 #DIGGER 1
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#JUMPER 1
 
 :matt/winter/Hatch.H: 256 240
 :matt/winter/Hatch.H: 256 120
@@ -41,8 +32,8 @@ $ENGLISH Another Funeral
 :simon/crystal.W: 144 352
 :simon/crystal.W: 192 352
 :simon/crystal.W: 240 352
-:simon/crystal.W: 528 274
-:simon/crystal.W: 480 274
+:simon/crystal.W: 528 276
+:simon/crystal.W: 480 276
 :geoo/sandstone/torch.F: 188 160
 
 :matt/winter/10: 488 336

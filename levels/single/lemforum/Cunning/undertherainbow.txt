@@ -1,4 +1,4 @@
-$BUILT 2016-07-03 00:28:21
+$BUILT 2017-08-09 00:13:58
 $AUTHOR Nortaneous
 $ENGLISH Under the Rainbow
 
@@ -44,37 +44,37 @@ $ENGLISH Under the Rainbow
 :matt/underworld/Lava.W: 192 352
 :matt/underworld/Lava.W: 240 304
 :matt/underworld/Lava.W: 240 352
-:simon/water.W: 488 16
-:simon/water.W: 536 16
-:simon/water.W: 584 16
-:simon/water.W: 632 16
-:simon/water.W: 440 16
+:simon/water.W: 496 16
+:simon/water.W: 544 16
+:simon/water.W: 592 16
+:simon/water.W: 448 16
 :geoo/construction/sawblade_small.F: 536 144
-:simon/water.W: 680 16
-:simon/water_main.W: 456 66
-:simon/water_main.W: 456 82
-:simon/water_main.W: 456 98
-:simon/water_main.W: 456 114
-:simon/water_main.W: 488 66
-:simon/water_main.W: 488 82
-:simon/water_main.W: 488 98
-:simon/water_main.W: 488 114
-:simon/water_main.W: 536 66
-:simon/water_main.W: 536 82
-:simon/water_main.W: 536 98
-:simon/water_main.W: 536 114
-:simon/water_main.W: 584 66
-:simon/water_main.W: 584 82
-:simon/water_main.W: 584 98
-:simon/water_main.W: 584 114
-:simon/water_main.W: 632 66
-:simon/water_main.W: 632 82
-:simon/water_main.W: 632 98
-:simon/water_main.W: 632 114
-:simon/water_main.W: 680 66
-:simon/water_main.W: 680 82
-:simon/water_main.W: 680 98
-:simon/water_main.W: 680 114
+:simon/water.W: 640 16
+:simon/water_main.W: 448 64
+:simon/water.W: 688 16
+:simon/water_main.W: 448 80
+:simon/water_main.W: 448 96
+:simon/water_main.W: 448 112
+:simon/water_main.W: 496 64
+:simon/water_main.W: 496 80
+:simon/water_main.W: 496 96
+:simon/water_main.W: 496 112
+:simon/water_main.W: 544 64
+:simon/water_main.W: 544 80
+:simon/water_main.W: 544 96
+:simon/water_main.W: 544 112
+:simon/water_main.W: 592 64
+:simon/water_main.W: 592 80
+:simon/water_main.W: 592 96
+:simon/water_main.W: 592 112
+:simon/water_main.W: 640 64
+:simon/water_main.W: 640 80
+:simon/water_main.W: 640 96
+:simon/water_main.W: 640 112
+:simon/water_main.W: 688 64
+:simon/water_main.W: 688 80
+:simon/water_main.W: 688 96
+:simon/water_main.W: 688 112
 
 :geoo/abstract/pipes/central7: 840 152
 :geoo/abstract/pipes/central3: 416 16 rr

@@ -1,9 +1,9 @@
-$BUILT 2016-07-18 18:37:54
+$BUILT 2017-07-27 18:54:52
 $AUTHOR mobius/Clam
 $ENGLISH Five for Fighting
 
 #INTENDED_NUMBER_OF_PLAYERS 1
-#SIZE_X 1440
+#SIZE_X 1376
 #SIZE_Y 400
 #START_X 160
 #START_Y -20
@@ -19,10 +19,9 @@ $ENGLISH Five for Fighting
 #MINER 2
 #EXPLODER 0
 
-:matt/goldmine/Hatch.H: 314 46
+:matt/goldmine/Hatch.H: 298 46
 
 :matt/goldmine/Goal.G: 1232 288
-
 
 :simon/water.W: 208 352
 :simon/water.W: 256 352
@@ -33,24 +32,27 @@ $ENGLISH Five for Fighting
 :simon/water.W: 112 352
 :simon/water.W: 160 352
 
+:matt/goldmine/crate64: 776 352
 :matt/goldmine/08: 752 -32 rr
 :matt/goldmine/04: 32 288
 :matt/goldmine/09: 8 336
 :matt/goldmine/crate64: 1008 144
 :matt/goldmine/crate64: 1008 208
 :matt/goldmine/09: 904 104
+:matt/goldmine/tracks: 1008 136
+:matt/goldmine/explosivecrate: 1008 144
 :matt/goldmine/09: 952 104
 :matt/goldmine/08: 952 160
 :matt/goldmine/08: 896 152
 :matt/goldmine/08: 848 128
 :matt/goldmine/crate64: 64 0
-:matt/goldmine/crate32: 298 168
-:matt/goldmine/crate32: 330 168
-:matt/goldmine/crate32: 362 168
-:matt/goldmine/crate32: 394 168
-:matt/goldmine/crate32: 426 168
-:matt/goldmine/crate32: 458 168
-:matt/goldmine/crate32: 490 168
+:matt/goldmine/crate32: 282 168
+:matt/goldmine/crate32: 314 168
+:matt/goldmine/crate32: 346 168
+:matt/goldmine/crate32: 378 168
+:matt/goldmine/crate32: 410 168
+:matt/goldmine/crate32: 442 168
+:matt/goldmine/crate32: 474 168
 :matt/goldmine/crate64: 80 32
 :matt/goldmine/crate64: 96 0
 :matt/goldmine/07: 400 -64
@@ -89,6 +91,7 @@ $ENGLISH Five for Fighting
 :matt/goldmine/07: 752 328
 :matt/goldmine/09: 816 232
 :matt/goldmine/07: 832 320
+:matt/goldmine/crate64: 1136 336
 :matt/goldmine/07: 944 352
 :matt/goldmine/08: 904 224
 :matt/goldmine/09: 824 168
@@ -105,6 +108,7 @@ $ENGLISH Five for Fighting
 :matt/goldmine/crate64: 1136 208
 :matt/goldmine/explosivecrate: 1200 336
 :matt/goldmine/explosivecrate: 1264 336
+:matt/goldmine/crate64: 1264 336
 :matt/goldmine/07: 1160 352
 :matt/goldmine/07: 576 -64
 :matt/goldmine/crate16: 552 384
@@ -115,13 +119,13 @@ $ENGLISH Five for Fighting
 :matt/goldmine/crate16: 632 384
 :matt/goldmine/explosivecrate: 648 352
 :matt/goldmine/07: 656 360
-:matt/goldmine/crate32: 202 264
-:matt/goldmine/crate32: 234 264
-:matt/goldmine/crate32: 170 232 rrr
-:matt/goldmine/crate32: 170 200 rrr
-:matt/goldmine/crate32: 266 232 rrr
-:matt/goldmine/crate32: 266 200 rrr
-:matt/goldmine/crate32: 266 168
+:matt/goldmine/crate32: 186 264
+:matt/goldmine/crate32: 218 264
+:matt/goldmine/crate32: 154 232 rrr
+:matt/goldmine/crate32: 154 200 rrr
+:matt/goldmine/crate32: 250 232 rrr
+:matt/goldmine/crate32: 250 200 rrr
+:matt/goldmine/crate32: 250 168
 :matt/goldmine/explosivecrate: 496 352
 :geoo/steel/64x64o.S: 960 336
 :geoo/steel/32x32o.S: 976 304
@@ -137,8 +141,9 @@ $ENGLISH Five for Fighting
 :matt/goldmine/00: 1312 0
 :matt/goldmine/00: 1328 -40
 :matt/goldmine/00: 1144 -56
-:matt/goldmine/crate32: 170 264 rrr
-:matt/goldmine/crate32: 266 264 rrr
+:matt/goldmine/crate32: 154 264 rrr
+:matt/goldmine/crate32: 250 264 rrr
+:matt/goldmine/crate16: 282 200
 :matt/goldmine/crate16: 298 200
 :matt/goldmine/crate16: 314 200
 :matt/goldmine/crate16: 330 200
@@ -152,4 +157,11 @@ $ENGLISH Five for Fighting
 :matt/goldmine/crate16: 458 200
 :matt/goldmine/crate16: 474 200
 :matt/goldmine/crate16: 490 200
-:matt/goldmine/crate16: 506 200
+:matt/goldmine/tracks: 1056 136
+:matt/goldmine/minecart: 1064 96
+:matt/goldmine/crate64: 712 288
+:matt/goldmine/explosivecrate: 1136 208
+:matt/goldmine/crate64: 1136 272
+:geoo/steel/64x64o.S: 656 0
+:geoo/steel/64x64o.S: 656 64
+:geoo/steel/32x32o.S: 680 128

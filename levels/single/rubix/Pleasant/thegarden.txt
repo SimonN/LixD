@@ -1,23 +1,19 @@
-$BUILT 2015-08-21 10:26:57
+$BUILT 2017-05-10 21:06:30
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH The garden
 
-#SIZE_X 1648
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1632
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #START_X 700
 #START_Y 380
 #BACKGROUND_RED 0
 #BACKGROUND_GREEN 64
 #BACKGROUND_BLUE 192
 
-#SECONDS 0
 #INITIAL 80
 #REQUIRED 79
 #SPAWN_INTERVAL 28
-#SPAWN_INTERVAL_FAST 4
 
 #EXPLODER 2
 #BLOCKER 2
@@ -26,129 +22,138 @@ $ENGLISH The garden
 #BASHER 4
 #MINER 1
 
-:matt/oriental/Hatch.H: -16 240
+:simon/oriental/hatch.H: 0 224
 
-:matt/oriental/Goal.G: 1134 28
-:geoo/abstract/goal.G: 230 146
+:simon/oriental/goal.G: 1118 28
+:geoo/abstract/goal.G: 214 146
 
-:matt/water.W: 1216 368
-:matt/water.W: 1248 368
-:matt/water.W: 1280 368
-:matt/water.W: 1312 368
-:matt/water.W: 1344 368
+:matt/water.W: 1200 368
+:matt/water.W: 1232 368
+:matt/water.W: 1264 368
+:matt/water.W: 1296 368
+:matt/water.W: 1328 368
+:matt/water.W: 1360 368
+:matt/water.W: 1200 384
+:matt/water.W: 1232 384
+:matt/water.W: 1264 384
+:matt/water.W: 1296 384
+:matt/water.W: 1328 384
+:matt/water.W: 1360 384
+:matt/water.W: 880 368
+:matt/water.W: 912 368
+:matt/water.W: 944 368
+:matt/water.W: 976 368
+:matt/water.W: 1008 368
+:matt/water.W: 1040 368
+:matt/water.W: 880 384
+:matt/water.W: 912 384
+:matt/water.W: 944 384
+:matt/water.W: 976 384
+:matt/water.W: 1008 384
+:matt/water.W: 1040 384
+:matt/water.W: 496 368
+:matt/water.W: 528 368
+:matt/water.W: 560 368
+:matt/water.W: 592 368
+:matt/water.W: 624 368
+:matt/water.W: 656 368
+:matt/water.W: 496 384
+:matt/water.W: 528 384
+:matt/water.W: 560 384
+:matt/water.W: 592 384
+:matt/water.W: 624 384
+:matt/water.W: 656 384
+:matt/water.W: 304 368
+:matt/water.W: 336 368
+:matt/water.W: 368 368
+:matt/water.W: 400 368
+:matt/water.W: 432 368
+:matt/water.W: 464 368
+:matt/water.W: 304 384
+:matt/water.W: 336 384
+:matt/water.W: 368 384
+:matt/water.W: 400 384
+:matt/water.W: 432 384
+:matt/water.W: 464 384
+:matt/water.W: 144 368
+:matt/water.W: 176 368
+:matt/water.W: 208 368
+:matt/water.W: 240 368
+:matt/water.W: 272 368
+:matt/water.W: 112 384
+:matt/water.W: 144 384
+:matt/water.W: 176 384
+:matt/water.W: 208 384
+:matt/water.W: 240 384
+:matt/water.W: 272 384
 :matt/water.W: 1376 368
-:matt/water.W: 1216 384
-:matt/water.W: 1248 384
-:matt/water.W: 1280 384
-:matt/water.W: 1312 384
-:matt/water.W: 1344 384
 :matt/water.W: 1376 384
-:matt/water.W: 896 368
-:matt/water.W: 928 368
-:matt/water.W: 960 368
-:matt/water.W: 992 368
-:matt/water.W: 1024 368
-:matt/water.W: 1056 368
-:matt/water.W: 896 384
-:matt/water.W: 928 384
-:matt/water.W: 960 384
-:matt/water.W: 992 384
-:matt/water.W: 1024 384
-:matt/water.W: 1056 384
-:matt/water.W: 512 368
-:matt/water.W: 544 368
-:matt/water.W: 576 368
-:matt/water.W: 608 368
-:matt/water.W: 640 368
-:matt/water.W: 672 368
-:matt/water.W: 512 384
-:matt/water.W: 544 384
-:matt/water.W: 576 384
-:matt/water.W: 608 384
-:matt/water.W: 640 384
-:matt/water.W: 672 384
-:matt/water.W: 320 368
-:matt/water.W: 352 368
-:matt/water.W: 384 368
-:matt/water.W: 416 368
-:matt/water.W: 448 368
-:matt/water.W: 480 368
-:matt/water.W: 320 384
-:matt/water.W: 352 384
-:matt/water.W: 384 384
-:matt/water.W: 416 384
-:matt/water.W: 448 384
-:matt/water.W: 480 384
-:matt/water.W: 128 368
-:matt/water.W: 160 368
-:matt/water.W: 192 368
-:matt/water.W: 224 368
-:matt/water.W: 256 368
-:matt/water.W: 288 368
-:matt/water.W: 128 384
-:matt/water.W: 160 384
-:matt/water.W: 192 384
-:matt/water.W: 224 384
-:matt/water.W: 256 384
-:matt/water.W: 288 384
-:matt/water.W: 1392 368
-:matt/water.W: 1392 384
 
-:matt/oriental/06: 28 352
-:matt/oriental/asiantemple: 1411 191
-:matt/oriental/bonsaitree: 1082 45
-:matt/oriental/bamboo_pole: 1642 210
-:matt/oriental/asiangate: 1260 336
-:matt/oriental/05: 700 368 fr
-:matt/oriental/05: 764 368 fr
-:matt/oriental/05: 828 368 fr
-:matt/oriental/05: 1084 368 fr
-:matt/oriental/05: 1148 368 fr
-:matt/oriental/05: 1420 368 fr
-:matt/oriental/05: 1484 368 fr
-:matt/oriental/05: 1548 368 fr
-:matt/oriental/05: 1612 368 fr
-:matt/oriental/asiangate: 940 336
-:matt/oriental/10: 1612 336 frr
-:matt/oriental/10: 1612 308 frrr
-:matt/oriental/10: 1612 278 frr
-:matt/oriental/10: 1612 248 frrr
-:matt/oriental/10: 1612 218 frr
-:matt/oriental/10: 1612 188 frrr
-:matt/oriental/bamboo_pole: 1642 52
-:matt/oriental/bamboo_pole: 1641 26 d
-:matt/oriental/10: 1610 158 frr
-:matt/oriental/10: 1610 130 frrr
-:matt/oriental/10: 1610 104 frr
-:matt/oriental/10: 1610 74 frrr
-:matt/oriental/bamboo_pole: 1606 28
-:matt/oriental/bamboo_pole: 1641 32
-:matt/oriental/bamboo_pole: 1639 -152 d
-:matt/oriental/bamboo_pole: 1640 -126
-:matt/oriental/bamboo_pole: 1647 31 d
-:matt/oriental/bonsaitree: 1052 171
-:matt/oriental/bamboo_pole: 1606 182
-:matt/oriental/03: 1595 19 frd
-:matt/oriental/03: 1631 -8 frd
-:matt/oriental/03: 1635 26 frd
-:matt/oriental/03: 1598 34 frd
-:matt/oriental/bridge_angle: 593 308 f
-:matt/oriental/bridge_angle: 382 308
-:matt/oriental/bridge_straight: 277 368
-:matt/oriental/bridge_straight: 172 368
-:matt/oriental/bonsaitree: 691 189 frr
-:matt/oriental/06: 124 352
-:matt/oriental/06: 76 352
-:matt/oriental/06: 76 336
-:matt/oriental/06: 28 320
-:matt/oriental/06: -20 352
-:matt/oriental/06: 28 320
-:matt/oriental/06: -20 304
-:geoo/steel/dark_32x16o.S: 230 146
-:geoo/steel/dark_32x16o.S: 230 194
-:geoo/steel/dark_32x16o.S: 262 162 rrr
-:geoo/steel/dark_32x16o.S: 214 162 rrr
-:geoo/steel/dark_16x16o.S: 214 146
-:geoo/steel/dark_16x16o.S: 262 146
-:geoo/steel/dark_16x16o.S: 214 194
-:geoo/steel/dark_16x16o.S: 262 194
+:simon/oriental/10: 1596 337 frr
+:simon/oriental/10: 1596 307 frrr
+:simon/oriental/10: 1596 277 frr
+:simon/oriental/10: 1596 247 frrr
+:simon/oriental/10: 1596 217 frr
+:simon/oriental/10: 1596 187 frrr
+:simon/oriental/10: 1594 157 frr
+:simon/oriental/10: 1594 130 frrr
+:simon/oriental/10: 1594 104 frr
+:simon/oriental/10: 1594 74 frrr
+:simon/oriental/branch7: 1101 362 r
+:simon/oriental/08: 48 336
+:simon/oriental/06: 16 288
+:simon/oriental/bridge2: 128 336
+:simon/oriental/culm_long: 1590 244
+:simon/oriental/bush2: 20 192
+:simon/oriental/temple: 1395 191
+:simon/oriental/bonsai: 1066 45
+:simon/oriental/culm_long: 1626 176
+:simon/oriental/gate: 1244 336
+:simon/oriental/05: 684 368 fr
+:simon/oriental/05: 748 368 fr
+:simon/oriental/05: 812 369 fr
+:simon/oriental/05: 1068 368 fr
+:simon/oriental/05: 1132 368 fr
+:simon/oriental/05: 1404 368 fr
+:simon/oriental/05: 1468 368 fr
+:simon/oriental/05: 1532 368 fr
+:simon/oriental/05: 1596 368 fr
+:simon/oriental/gate: 924 336
+:simon/oriental/culm_long: 1626 80
+:simon/oriental/culm_long: 1625 26 d
+:simon/oriental/culm_long: 1590 52
+:simon/oriental/culm_long: 1625 60
+:simon/oriental/culm_long: 1623 -152 d
+:simon/oriental/culm_long: 1624 -126
+:simon/oriental/culm_long: 1631 31 d
+:simon/oriental/bonsai: 1036 171
+:simon/oriental/culm_long: 1590 148
+:simon/oriental/03: 1615 -8 frd
+:simon/oriental/bridge1: 320 272
+:simon/oriental/bonsai: 675 189 frr
+:geoo/steel/dark_32x16o.S: 214 146
+:geoo/steel/dark_32x16o.S: 214 194
+:geoo/steel/dark_32x16o.S: 246 162 fr
+:geoo/steel/dark_32x16o.S: 198 162 fr
+:geoo/steel/dark_16x16o.S: 198 146
+:geoo/steel/dark_16x16o.S: 246 146
+:geoo/steel/dark_16x16o.S: 198 194
+:geoo/steel/dark_16x16o.S: 246 194
+:simon/oriental/branch6: 0 168 rrr
+:simon/oriental/bush5: 12 180
+:simon/oriental/bush7: 26 164
+:simon/oriental/culm_long: 1626 272
+:simon/oriental/02: 1578 28 d
+:simon/oriental/05_top: 1404 368 fr
+:simon/oriental/05_top: 1068 368 fr
+:simon/oriental/05_top: 672 368 fr
+:simon/oriental/bridge3: 608 336
+:simon/oriental/bridge3: 544 304
+:simon/oriental/bridge1: 256 304
+:simon/oriental/bridge2: 192 336
+:simon/oriental/bridge3: 480 272
+:simon/oriental/06: -16 288
+:simon/oriental/06: 16 352
+:simon/oriental/06: -16 352
+:simon/oriental/05_btm: 879 369 fr
+:simon/oriental/05_btm: 1204 368 fr
