@@ -158,9 +158,23 @@ private:
         immutable textYl = gui.panelYlg / texts;
         const cutbit = fileImageEditPanel.getInternal;
 
+        Geom newGeomForButton(int i)
+        {
+            if (langToButtonIndex(Lang.editorButtonAddTerrain) == i)
+                return new Geom(i/2*bitmapXl, _info.ylg + i%2*bitmapYl,
+                                bitmapXl, 2 * bitmapYl);
+            if (langToButtonIndex(Lang.editorButtonAddDeco) == i)
+                // massive hack, put outside of screen, but make valid geom
+                return new Geom(9999, 9999, 20, 20);
+            if (langToButtonIndex(Lang.editorButtonAddTerrain) < i
+                && langToButtonIndex(Lang.editorButtonAddDeco) > i)
+                ++i;
+            return new Geom(i/2*bitmapXl, _info.ylg + i%2*bitmapYl,
+                            bitmapXl, bitmapYl);
+        }
+
         foreach (int i; 0 .. bitmaps) {
-            auto g = new Geom(i/2*bitmapXl, _info.ylg + i%2*bitmapYl,
-                              bitmapXl, bitmapYl);
+            auto g = newGeomForButton(i);
             if (langToButtonIndex(Lang.editorButtonViewZoom) == i) {
                 _zoom = new TwoTasksButton(g, cutbit);
                 _zoom.xf = langToButtonXf(Lang.editorButtonViewZoom);
