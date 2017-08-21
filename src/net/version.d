@@ -10,11 +10,8 @@ import std.bitmanip;
 import std.conv;
 import std.string;
 
-private immutable _gameVersion     = Version(0, 8, 0);
-private bool      _versionIsStable = false;
-
-const(Version) gameVersion()     { return _gameVersion;     }
-bool           versionIsStable() { return _versionIsStable; }
+private immutable _gameVersion = Version(0, 8, 1);
+const(Version) gameVersion() { return _gameVersion; }
 
 struct Version {
     int major;

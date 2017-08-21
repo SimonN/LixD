@@ -1,8 +1,30 @@
 Version history
 ===============
 
+0.8.1
+-----
+
+2017-08-24
+
+The save-as browser (used by the editor to save levels) allows to create
+new directories.
+
+Editor defaults to 30 seconds of overtime on new levels. Singleplayer levels
+discard their time.
+
+Removed hints during levels and manual screen start.
+
+Rebevelled [tt]matt/underworld/{00,01,02}.png[/tt]: Better shading, these
+bricks don't look flattened near their left edge anymore.
+
+lemforum: Sinking Ship, geoo is author. namida written in only small letters.
+Setting a Fundament, renamed to Cubic Interpolation. Forest of fears, removed
+2 backroutes.
+
 0.8.0
 -----
+
+2017-08-22
 
 Stable 0.7.22 physics. I would like to keep these physics at least for several
 months.
