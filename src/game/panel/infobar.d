@@ -8,6 +8,7 @@ import net.repdata; // Phyu
 import basics.user; // languageIsEnglish
 import file.language;
 import game.tribe;
+import game.panel.tooltip;
 import graphic.color;
 import graphic.internal;
 import gui;
@@ -20,10 +21,11 @@ private:
     bool _showSpawnInterval;
     int _spawnInterval;
     int _targetDescNumber;
+    int _tooltipsSuggested; // bitset, values are in enum Tooltip
     Rebindable!(const(Lixxie)) _targetDescLixxie;
     Rebindable!(const(Tribe))  _tribe;
     CutbitElement _bOut, _bHatch;
-    Label         _lOut, _lHatch, _targetDesc, _fps;
+    Label         _lOut, _lHatch, _tooltip, _targetDesc;
 
 public:
     this(Geom g)
@@ -31,10 +33,10 @@ public:
         super(g);
         makeElements(_bHatch, _lHatch,   4, 56, 4);
         makeElements(_bOut,   _lOut,    60, 60, 3);
-        _fps        = new Label(new Geom(280, 0, 70, this.ylg, From.LEFT));
-        _targetDesc = new Label(new Geom(
+        _targetDesc = new Label(new Geom(190, 0, this.xlg - 190, this.ylg));
+        _tooltip = new Label(new Geom(
             TextButton.textXFromLeft, 0, this.xlg, this.ylg, From.RIGHT));
-        addChildren(_targetDesc, _fps);
+        addChildren(_tooltip, _targetDesc);
     }
 
     void describeTarget(in Lixxie l, in int nr)
@@ -45,9 +47,27 @@ public:
         _targetDescNumber = nr;
     }
 
-    void dontShowSpawnInterval() { _showSpawnInterval = false; }
+    void suggestTooltip(Tooltip.ID id)
+    {
+        if (_tooltipsSuggested & id)
+            return;
+        reqDraw();
+        _tooltipsSuggested |= id;
+    }
+
+    void dontShowSpawnInterval()
+    {
+        if (! _showSpawnInterval)
+            return;
+        reqDraw();
+        _showSpawnInterval = false;
+    }
+
     void showSpawnInterval(in int si)
     {
+        if (_showSpawnInterval && _spawnInterval == si)
+            return;
+        reqDraw();
         _showSpawnInterval = true;
         _spawnInterval = si;
     }
@@ -65,8 +85,6 @@ public:
         _bHatch.yf = 1;
         _lOut.number = lixHatch + lixOut;
         _bOut.yf = lixHatch + lixOut > 0 ? 0 : 1;
-        if (basics.user.showFPS.value)
-            _fps.text  = "FPS: %d".format(displayFps);
         onShowTribe(tribe);
     }}
 
@@ -74,7 +92,11 @@ protected:
     abstract void onShowTribe(in Tribe tribe);
 
     override void calcSelf() { down = false; }
-    override void drawOntoButton() { formatTargetDesc(); }
+    override void drawOntoButton()
+    {
+        formatTargetDesc();
+        formatTooltip();
+    }
 
     // Helper function to make children.
     // This generates a pair of CutbitElement and Label.
@@ -131,6 +153,17 @@ private:
                                 _spawnInterval);
         _targetDesc.text = s;
     }}
+
+    void formatTooltip()
+    {
+        string s;
+        if (basics.user.ingameTooltips.value)
+            s = Tooltip.format(_tooltipsSuggested);
+        if (basics.user.showFPS.value && s == "")
+            s = format!"FPS: %d"(displayFps);
+        _tooltip.text = s;
+        _tooltipsSuggested = 0;
+    }
 }
 
 // ############################################################################

@@ -14,6 +14,7 @@ import game.panel.infobar;
 import game.panel.nuke;
 import game.panel.scores;
 import game.panel.taperec;
+import game.panel.tooltip;
 import game.tribe;
 import game.score;
 import gui;
@@ -150,6 +151,7 @@ public:
     void showInfo(in Tribe tr) { stats.showTribe(tr); }
     void dontShowSpawnInterval() { stats.dontShowSpawnInterval(); }
     void showSpawnInterval(in int si) { stats.showSpawnInterval(si); }
+    void suggestTooltip(in Tooltip.ID id) { stats.suggestTooltip(id); }
 
     void update(T)(T scoreRange)
         if (isInputRange!T && is (ElementType!T : const(Score)))
@@ -173,6 +175,8 @@ protected:
             }
         if (currentSkill !is oldSkill)
             hardware.sound.playLoud(Sound.PANEL);
+        if (nuke.isMouseHere)
+            suggestTooltip(Tooltip.ID.nuke);
     }
 
 private:

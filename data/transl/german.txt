@@ -103,20 +103,22 @@ $winGameOverwriteQuestion   Soll dieses Replay wirklich überschrieben werden?
 
 // Help texts inside the game
 
-$gamePause                Pause.
-$gameZoom                 Level-Zoom an- oder ausschalten.
-$gameSpeedSlow           Zeitlupe.
-$gameSpeedFast           Schneller Vorlauf.
-$gameSpeedTurbo          Turbo-Vorlauf.
-$gameStateSave           Aktuellen Spielstand schnellspeichern.
-$gameStateLoad           Den schnellgespeicherten Spielstand laden.
-$gameRestart              Level neustarten.
-$gameNuke                 Atombombe. Aktivierung durch Doppelklick.
-$gameHintFirst           Einen Tipp für diesen Level lesen.
-$gameHintNext            Den nächsten Tipp lesen.
-$gameHintPrev            Den vorherigen Tipp lesen.
-$gameHintOff             Den Tipp ausblenden.
-$gameSpecTribe           Fähigkeiten eines anderen Teams ansehen.
+$gameForceLeft       [%s] für Linksläufer.
+$gameForceRight      [%s] für Rechtsläufer.
+$gamePriorityInvert  [%s] für hintere Lix.
+$gameQueueBuilder    Klicke zum Vormerken.
+$gameQueuePlatformer Klicke zum Vormerken.
+$gameHoldToScroll    [%s] erlaubt Maus-Scrolling.
+$gamePause           Pause.
+$gameZoom            %s zum Hineinzoomen, %s zum Herauszoomen.
+$gameStateSave       Spielstand schnellspeichern.
+$gameStateLoad       Schnellgespeicherten Spielstand laden.
+$gameFramestepBack   %s für Schritt zurück, %s für Sprung zurück.
+$gameFramestepAhead  %s für Schritt vorwärts, %s für Sprung vorwärts.
+$gameFastForward     %s für schnellen Vorlauf, %s für Turbo.
+$gameRestart         Level neu starten.
+$gameNuke            Atombombe. Doppelklicke zum Aktivieren.
+$gameSpecTribe       Fähigkeiten anderer Teams ansehen.
 
 // Editor allgemein
 

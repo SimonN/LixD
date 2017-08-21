@@ -10,6 +10,7 @@ import net.repdata;
 import basics.rect;
 import basics.user; // hotkeys
 import game.core.game;
+import game.panel.tooltip;
 import gui : SkillButton;
 import hardware.mouse;
 import hardware.mousecur;
@@ -145,10 +146,11 @@ PotentialAssignee findPotentialAssignee(Game game) { with (game)
     }
     // end loop through all lixes
 
-    if (best.lixxie !is null && best.lixxie !is worst.lixxie)
-        {} // DTODOTOOLTIPS: pan.stats.suggestTooltipPriorityInvert();
-    if (leftFound && rightFound)
-        {} // DTODOTOOLTIPS: pan.stats.suggestTooltipForceDirection();
+    if (best.lixxie !is null && leftFound && rightFound)
+        pan.suggestTooltip(best.lixxie.facingLeft ? Tooltip.ID.forceRight
+                                                  : Tooltip.ID.forceLeft);
+    else if (best.priority != worst.priority && ! keyPriorityInvert.keyHeld)
+        pan.suggestTooltip(Tooltip.ID.priorityInvert);
 
     mouseCursor.xf = (forcingLeft ? 1 : forcingRight ? 2 : mouseCursor.xf);
     mouseCursor.yf = (lixesUnderCursor > 0);
@@ -160,9 +162,9 @@ PotentialAssignee findPotentialAssignee(Game game) { with (game)
         && currentSkill.skill == best.lixxie.ac
     ) {
         if (best.lixxie.ac == Ac.builder)
-            {} // DTODOTOOLTIPS: pan.stats.suggestTooltipBuilders();
+            pan.suggestTooltip(Tooltip.ID.queueBuilder);
         else if (best.lixxie.ac == Ac.platformer)
-            {} // DTODOTOOLTIPS: pan.stats.suggestTooltipPlatformers();
+            pan.suggestTooltip(Tooltip.ID.queuePlatformer);
     }
     game._drawHerHighlit = best.lixxie;
     return best;
@@ -213,9 +215,11 @@ void comparePotentialWithBestWorst(
         && ! (potAss.lixxie.facingRight && forcingLeft);
 
     if (eligibleAccordingToDirSelect) {
+        anyFoundLeft = anyFoundLeft || potAss.lixxie.facingLeft;
+        anyFoundRight = anyFoundRight || potAss.lixxie.facingRight;
         if (potAss.isBetterThan(best))
             best = potAss;
-        if (worst.isBetterThan(potAss))
+        if (worst.lixxie is null || worst.isBetterThan(potAss))
             worst = potAss;
     }
 }

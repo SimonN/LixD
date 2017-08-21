@@ -235,6 +235,7 @@ void populateGraphics()
     grp ~= [
         fac.factory!BoolOption(paintTorusSeams),
         fac.factory!BoolOption(showButtonHotkeys),
+        fac.factory!BoolOption(ingameTooltips),
         fac.factory!BoolOption(showFPS),
     ];
     fac = facRight();

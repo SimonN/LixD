@@ -105,21 +105,22 @@ $winGameOverwriteTitle       Overwrite Replay?
 $winGameOverwriteQuestion    Do you really want to overwrite this replay?
 
 // help texts inside the game
-
-$gamePause                 Pause the game.
-$gameZoom                  Zoom into the level.
-$gameSpeedSlow            Slow motion.
-$gameSpeedFast            Fast forward.
-$gameSpeedTurbo           Turbo fast forward.
-$gameStateSave            Quicksave the current game position.
-$gameStateLoad            Load the previously quicksaved position.
-$gameRestart               Restart the level.
-$gameNuke                  Nuke. Activate with a double click.
-$gameHintFirst            View a hint for this level.
-$gameHintNext             View the next hint.
-$gameHintPrev             View the previous hint.
-$gameHintOff              Hide the hint.
-$gameSpecTribe            Examine the skills of a different team.
+$gameForceLeft       [%s] for left-facing.
+$gameForceRight      [%s] for right-facing.
+$gamePriorityInvert  [%s] for hindmost lix.
+$gameQueueBuilder    Click again to queue.
+$gameQueuePlatformer Click again to queue.
+$gameHoldToScroll    [%s] for mouse scrolling.
+$gamePause           Pause.
+$gameZoom            %s to zoom in, %s to zoom out.
+$gameStateSave       Quicksave game position.
+$gameStateLoad       Load quicksaved position.
+$gameFramestepBack   %s to step back, %s to jump back.
+$gameFramestepAhead  %s to step ahead, %s to jump ahead.
+$gameFastForward     %s for fast-forward, %s for turbo.
+$gameRestart         Restart level.
+$gameNuke            Nuke. Double-click to activate.
+$gameSpecTribe       View skillset of another team.
 
 // main editor screen
 
@@ -323,7 +324,7 @@ $optionSoundVolume              Sound volume
 $optionScreenWindowedDesc Run Lix in a window, or in fullscreen mode?|Restart Lix after you change this!
 $optionScreenWindowedResDesc Size of the Lix window. Only for windowed mode, not for fullscreen.|Restart Lix after you change this!
 $optionPaintTorusSeamsDesc Mark the wrapping seam with a thin line whenever a level wraps around.|This doesn't affect game physics, but may improve your orientation.
-$optionIngameTooltipsDesc When the mouse hovers over buttons during play, print an explanation.|Some buttons have two functions: One on left-click, one on right-click.
+$optionIngameTooltipsDesc Explain buttons and lix-selecting hotkeys during play, e.g., to select left-facing lix.|Some buttons have two functions: One on left-click, one on right-click.
 $optionShowButtonHotkeysDesc On every button, print the button's hotkeys in the bottom-right-hand corner.
 $optionShowFPSDesc Print the number of video frames per second, during play or editor.|I like this during development. If you screencast, turn this off.
 $optionSoundVolumeDesc Playback volume of all sound effects.|Set to 0 to turn off sound in Lix.

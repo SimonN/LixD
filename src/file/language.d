@@ -129,19 +129,21 @@ enum Lang {
     winGameOverwriteQuestion,
 
     // help texts inside the game
+    gameForceLeft,
+    gameForceRight,
+    gamePriorityInvert,
+    gameQueueBuilder,
+    gameQueuePlatformer,
+    gameHoldToScroll,
     gamePause,
     gameZoom,
-    gameSpeedSlow,
-    gameSpeedFast,
-    gameSpeedTurbo,
     gameStateSave,
     gameStateLoad,
+    gameFramestepBack,
+    gameFramestepAhead,
+    gameFastForward,
     gameRestart,
     gameNuke,
-    gameHintFirst,
-    gameHintNext,
-    gameHintPrev,
-    gameHintOff,
     gameSpecTribe,
 
     // main editor screen
