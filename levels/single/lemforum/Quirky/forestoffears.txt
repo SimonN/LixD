@@ -1,4 +1,4 @@
-$BUILT 2017-08-09 00:47:10
+$BUILT 2017-08-23 13:39:55
 $AUTHOR mobius
 $ENGLISH Forest of Fears
 
@@ -13,24 +13,33 @@ $ENGLISH Forest of Fears
 #FLOATER 2
 #EXPLODER 1
 #PLATFORMER 4
-#BASHER 2
+#BASHER 1
+#MINER 1
 
 :amanda/forest/hatch.H: 248 40
 
-:proxima/tile/goal.G: 508 144
+:proxima/tile/goal.G: 536 144
 
 :simon/water.W: 88 312
 :simon/water_thin.W: 344 192
 :simon/water_thin.W: 392 192
-:simon/water.W: 496 312
-:simon/water.W: 648 304
-:simon/water.W: 696 304
+:simon/water.W: 472 312
+:simon/water.W: 648 312
+:simon/water.W: 696 312
 :simon/water_thin.W: 296 192
 :simon/water.W: 136 312
+:simon/water.W: 520 312
 
-:amanda/forest/stone_00: 600 150 f
-:amanda/forest/bark_02: 642 188 f
-:amanda/forest/bark_05: 624 208 r
+:amanda/forest/stone_00: 581 189 frr
+:geoo/steel/dark_48x32o.S: 584 240 d
+:amanda/forest/moss_00: 602 222 frr
+:amanda/forest/moss_00: 544 222 frr
+:amanda/forest/bark_04: 590 220 frr
+:amanda/forest/bark_04: 578 216 frr
+:amanda/forest/bark_02: 636 200 f
+:amanda/forest/stone_00: 622 166 f
+:amanda/forest/leaves_05: 610 190
+:amanda/forest/bark_05: 646 188 r
 :amanda/forest/bark_02: 16 208
 :amanda/forest/bark_03: -16 56 frr
 :amanda/forest/bark_01: 272 216 r
@@ -38,13 +47,12 @@ $ENGLISH Forest of Fears
 :amanda/forest/bark_06: 312 112 r
 :amanda/forest/stone_02: 240 160 r
 :amanda/forest/moss_00: 248 160
-:amanda/forest/stone_00: 208 144
+:amanda/forest/stone_00: 198 144
 :amanda/forest/stone_02: 128 152 r
-:amanda/forest/stone_02: 176 160
 :amanda/forest/stone_00: 160 128
 :amanda/forest/bark_02: 440 376
-:amanda/forest/moss_00: 184 136
-:amanda/forest/leaves_03: 128 104
+:amanda/forest/moss_00: 174 136
+:amanda/forest/leaves_03: 120 104
 :amanda/forest/stone_02: 80 168 r
 :amanda/forest/leaves_03: 80 96
 :amanda/forest/stone_02: 184 168 r
@@ -56,25 +64,25 @@ $ENGLISH Forest of Fears
 :amanda/forest/leaves_05: 424 184 d
 :amanda/forest/leaves_03: -40 -48
 :amanda/forest/leaves_03: -48 0
-:amanda/forest/moss_00: 200 168
+:amanda/forest/moss_00: 200 166
 :amanda/forest/stone_02: 140 306 fr
 :amanda/forest/stone_02: 176 304 fr
 :amanda/forest/stone_02: 240 304 fr
 :amanda/forest/stone_02: 312 304 fr
 :amanda/forest/stone_02: 368 304 fr
-:amanda/forest/stone_02: 416 304 fr
+:amanda/forest/stone_02: 410 304 fr
 :amanda/forest/leaves_03: 788 136
 :amanda/forest/bark_03: 838 172
-:geoo/steel/dark_32x64o.S: 464 112
-:geoo/steel/dark_32x64o.S: 464 176
-:geoo/steel/dark_48x32o.S: 496 208
+:geoo/steel/dark_32x64o.S: 504 64
+:geoo/steel/dark_32x64o.S: 504 128
+:geoo/steel/dark_48x32o.S: 536 208
 :geoo/steel/dark_48x32o.S: 640 416
 :amanda/forest/stone_01: 724 130
 :amanda/forest/fern_00: 742 124
 :amanda/forest/leaves_04: 768 72
 :amanda/forest/stone_01: 736 208
 :amanda/forest/stone_01: 704 264
-:amanda/forest/stone_02: 568 304 fr
+:amanda/forest/stone_02: 582 300 fr
 :amanda/forest/stone_00: 776 248
 :amanda/forest/stone_00: 792 272
 :amanda/forest/stone_02: 760 304
@@ -82,29 +90,24 @@ $ENGLISH Forest of Fears
 :matt/earth/29: 392 320
 :amanda/forest/moss_00: 378 308
 :amanda/forest/moss_00: 322 306
-:amanda/forest/moss_00: 582 308
-:amanda/forest/moss_00: 422 304
+:amanda/forest/stone_02: 532 304 fr
+:amanda/forest/moss_00: 594 304
+:amanda/forest/moss_00: 416 304
 :matt/earth/29: 378 122
-:matt/earth/29: 472 112
-:geoo/steel/dark_32x32o.S: 576 208
-:matt/earth/29: 588 210
-:geoo/steel/dark_32x48o.S: 464 64
+:matt/earth/29: 510 128
 :amanda/forest/moss_00: 256 306
 :amanda/forest/moss_00: 200 304
 :amanda/forest/moss_00: 150 304
-:amanda/forest/bark_04: 44 258 d
 :amanda/forest/bark_04: 326 236 d
-:amanda/forest/stone_02: 528 304 fr
-:amanda/forest/moss_00: 538 304
-:geoo/steel/dark_32x32o.S: 544 208
+:amanda/forest/moss_00: 542 304
+:geoo/steel/dark_32x32o.S: 584 208
 :geoo/steel/dark_16x32o.S: 432 64
 :geoo/steel/dark_16x32o.S: 432 128
 :geoo/steel/dark_16x32o.S: 432 96
 :geoo/steel/dark_16x32o.S: 432 192
 :geoo/steel/dark_16x32o.S: 432 160
 :geoo/steel/dark_16x16o.S: 432 224
-:geoo/steel/dark_48x32o.S: 640 178 d
-:amanda/forest/bark_04: 578 192
-:geoo/steel/dark_48x32o.S: 632 178 d
-:geoo/steel/dark_48x32o.S: 624 210
-:amanda/forest/stone_00: 608 152 f
+:matt/earth/29: 598 210
+:amanda/forest/stone_00: 482 318 frrd
+:matt/earth/23: 54 266 frrrd
+:geoo/steel/dark_32x48o.S: 504 192

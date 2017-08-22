@@ -6,7 +6,7 @@ wastenot.txt
 6gaps.txt
 ramenmaster.txt
 landofrainbows.txt
-settingafundament.txt
+cubicinterpolation.txt
 cantreachit.txt
 slaughterhouse.txt
 downpour.txt
