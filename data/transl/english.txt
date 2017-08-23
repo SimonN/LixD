@@ -32,6 +32,9 @@ $browserExtract             Extract level
 $browserExportImage        Export image
 $browserExportImageDone    Done.
 
+$browserMkdirTitle          New Directory
+$browserMkdirPleaseEnter    Name of new directory:
+
 $browserInfoAuthor          By:
 $browserInfoInitgoal        Save:
 $browserInfoInitial         Lix:
@@ -173,7 +176,7 @@ $editorButtonMenuSkills      Skills: Decide how many lix skills each player may 
 // save browser
 
 $saveBrowserTitle            Save As
-$saveBrowserWhatToType       Enter filename without extension:
+$saveBrowserWhatToType       Filename without extension:
 $saveBoxOverwriteTitle       Overwrite?
 $saveBoxOverwriteQuestion    Really overwrite this level?
 $saveBoxOverwrite            Overwrite

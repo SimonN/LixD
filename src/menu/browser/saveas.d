@@ -6,6 +6,7 @@ import basics.alleg5; // return accepts the file, too
 import basics.globals; // extension
 import basics.user; // hotkey
 import menu.browser.highli;
+import menu.browser.mkdir;
 import file.language;
 import gui;
 import gui.picker;
@@ -14,28 +15,37 @@ import hardware.keyset;
 
 class SaveBrowser : BrowserHighlight {
 private:
+    TextButton  _mkdirButton;
     MutFilename _chosenFile;
     Texttype    _texttype;
     TextButton  _saveAsTexttype;
+
+    MkdirDialog _mkdirBrowser;
 
 public:
     this(Filename baseDir)
     {
         super(Lang.saveBrowserTitle.transl, baseDir,
             PickerConfig!LevelWithFilenameTiler());
+
+        _mkdirButton = new TextButton(new Geom(infoX, 140, infoXl/2, 40,
+            From.BOTTOM_LEFT), Lang.browserMkdirTitle.transl);
+        _mkdirButton.hotkey = keyMenuNewLevel;
+        _mkdirButton.onExecute = () {
+            _mkdirBrowser = new MkdirDialog(new Geom(20, 20,
+                xlg - infoX - 20, 160, From.BOTTOM_RIGHT), currentDir);
+            addFocus(_mkdirBrowser);
+        };
         _texttype = new Texttype(new Geom(infoX, 80, infoXl, 20,
                                  From.BOTTOM_LEFT));
         _texttype.allowedChars = Texttype.AllowedChars.filename;
         _texttype.on = true;
-        _texttype.onEnter = () {
-            if (ALLEGRO_KEY_ENTER.keyTapped)
-                this.askForOverwriteOrReturn();
-        };
+        _texttype.onEnter = () { this.askForOverwriteOrReturn(); };
         _saveAsTexttype = new TextButton(new Geom(infoX, 20,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.commonOk.transl);
         _saveAsTexttype.hotkey = KeySet(keyMenuOkay,
                                         KeySet(ALLEGRO_KEY_ENTER));
-        addChildren(_texttype, _saveAsTexttype,
+        addChildren(_mkdirButton, _texttype, _saveAsTexttype,
             new Label(new Geom(infoX, 100, infoXl, 20, From.BOTTOM_LEFT),
             Lang.saveBrowserWhatToType.transl));
     }
@@ -64,6 +74,11 @@ protected:
     override void calcSelf()
     {
         super.calcSelf();
+        if (_mkdirBrowser && _mkdirBrowser.done) {
+            navigateTo(_mkdirBrowser.createdDir);
+            _mkdirBrowser = null;
+            _texttype.on = true;
+        }
         if (! done && _saveAsTexttype.execute)
             askForOverwriteOrReturn();
     }

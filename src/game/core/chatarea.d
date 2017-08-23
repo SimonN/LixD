@@ -101,14 +101,7 @@ private:
 
     void maybeSendText()
     {
-        import hardware.keyboard;
-        import basics.alleg5;
-        if (_texttype.text == "" || ! ALLEGRO_KEY_ENTER.keyTapped)
-            // Hack: Ideally, we'd only return early if text == "".
-            // We test for Enter/Return tapped because onEnter fires
-            // even if we click outside the texttype, not merely on Enter.
-            return;
-        if (_network)
+        if (_texttype.text != "" && _network !is null)
             _network.sendChatMessage(_texttype.text);
         _texttype.text = "";
     }

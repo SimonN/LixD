@@ -28,6 +28,9 @@ $browserExtract               Level extrah.
 $browserExportImage          Bild export.
 $browserExportImageDone     Fertig.
 
+$browserMkdirTitle          Neues Verzeichnis
+$browserMkdirPleaseEnter    Name des neuen Verzeichnisses:
+
 $browserInfoAuthor           Von:
 $browserInfoInitgoal         Ziel:
 $browserInfoInitial          Anzahl Lix:
@@ -168,7 +171,7 @@ $editorButtonMenuSkills     Fähigkeiten: Anzahl Lix-Fähigkeiten pro Spieler ei
 
 // SaveBrowser
 $saveBrowserTitle           Speichern unter
-$saveBrowserWhatToType      Tippe Dateinamen ohne Erweiterung:
+$saveBrowserWhatToType      Dateiname ohne Erweiterung:
 $saveBoxOverwriteTitle      Überschreiben?
 $saveBoxOverwriteQuestion   Diesen Level wirklich überschreiben?
 $saveBoxOverwrite           Überschreiben

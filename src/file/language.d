@@ -57,6 +57,9 @@ enum Lang {
     browserExportImage,
     browserExportImageDone,
 
+    browserMkdirTitle,
+    browserMkdirPleaseEnter,
+
     browserInfoAuthor,
     browserInfoInitgoal,
     browserInfoInitial,

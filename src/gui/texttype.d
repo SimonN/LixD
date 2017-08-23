@@ -113,7 +113,7 @@ private:
         if (mouseClickLeft || mouseClickRight || ALLEGRO_KEY_ENTER.keyTapped) {
             on = false;
             pruneDigits();
-            if (_onEnter !is null)
+            if (ALLEGRO_KEY_ENTER.keyTapped && _onEnter !is null)
                 _onEnter();
         }
         else if (ALLEGRO_KEY_ESCAPE.keyTapped) {
