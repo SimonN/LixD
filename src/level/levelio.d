@@ -90,17 +90,6 @@ private void tuto(ref string[] into, in string what)
     else              into[0] = what;
 }
 
-private void hint(ref string[] into, in string what)
-{
-    // empty hints aren't allowed, all hints shall be in consecutive entries
-    if (what == null) return;
-
-    // hint 0 is the tutorial hint, this should be empty for most levels.
-    if (into == null) into ~= "";
-    into ~= what;
-}
-
-
 private void resize(Level level, in int x, in int y)
 {
     level.topology.resize(clamp(x, Level.minXl, Level.maxXl),
@@ -127,10 +116,6 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
         else if (text1 == glo.levelAuthor      ) author       = text2;
         else if (text1 == glo.levelNameGerman ) nameGerman  = text2;
         else if (text1 == glo.levelNameEnglish) nameEnglish = text2;
-        else if (text1 == glo.levelHintGerman ) hint(hintsGerman,  text2);
-        else if (text1 == glo.levelHintEnglish) hint(hintsEnglish, text2);
-        else if (text1 == glo.levelTutorialGerman ) tuto(hintsGerman,  text2);
-        else if (text1 == glo.levelTutorialEnglish) tuto(hintsEnglish, text2);
         else if (text1 == glo.levelBeginGroup) {
             groupElements = [];
             groupName = text2;
@@ -158,14 +143,6 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
         else if (text1 == glo.levelRateLegacy) spawnint = 4 + (99 - nr1) / 2;
         else if (text1 == glo.levelIntendedNumberOfPlayers)
                                    intendedNumberOfPlayers = nr1;
-        else if (text1 == glo.levelStartCornerX) {
-            useManualScreenStart = true;
-            manualScreenStartCenter.x = nr1 + cppHalfScreenX;
-        }
-        else if (text1 == glo.levelStartCornerY) {
-            useManualScreenStart = true;
-            manualScreenStartCenter.y = nr1 + cppHalfScreenY;
-        }
         else {
             Ac ac = stringToAc(text1);
             if (ac.isPloder)
@@ -248,24 +225,6 @@ public void saveToFile(const(Level) l, std.stdio.File file)
     file.writeln(IoLine.Dollar(glo.levelNameEnglish, l.nameEnglish));
     file.writeln();
 
-    // write hint
-    void wrhi(in string[] hints, in string str_tuto, in string str_hint)
-    {
-        // index 0 is the tutorial hint
-        foreach (int i, string str; hints) {
-            if (i > 0)
-                file.writeln(IoLine.Dollar(str_hint, str));
-            else if (str != null)
-                file.writeln(IoLine.Dollar(str_tuto, str));
-        }
-    }
-
-    wrhi(l.hintsGerman,  glo.levelTutorialGerman,  glo.levelHintGerman );
-    wrhi(l.hintsEnglish, glo.levelTutorialEnglish, glo.levelHintEnglish);
-    if (l.hintsGerman != null || l.hintsEnglish != null) {
-        file.writeln();
-    }
-
     file.writeln(IoLine.Hash(glo.levelIntendedNumberOfPlayers,
                                     l.intendedNumberOfPlayers));
     file.writeln(IoLine.Hash(glo.levelSizeX, l.topology.xl));
@@ -273,12 +232,6 @@ public void saveToFile(const(Level) l, std.stdio.File file)
     if (l.topology.torusX || l.topology.torusY) {
         file.writeln(IoLine.Hash(glo.levelTorusX, l.topology.torusX));
         file.writeln(IoLine.Hash(glo.levelTorusY, l.topology.torusY));
-    }
-    if (l.useManualScreenStart) {
-        file.writeln(IoLine.Hash(glo.levelStartCornerX,
-                            l.manualScreenStartCenter.x - cppHalfScreenX));
-        file.writeln(IoLine.Hash(glo.levelStartCornerY,
-                            l.manualScreenStartCenter.y - cppHalfScreenY));
     }
     if (l.bgRed != 0 || l.bgGreen != 0 || l.bgBlue != 0) {
         file.writeln(IoLine.Hash(glo.levelBackgroundRed,   l.bgRed  ));

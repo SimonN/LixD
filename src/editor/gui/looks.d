@@ -35,14 +35,6 @@ public:
         _red = newPick(40, level.bgRed, Lang.winLooksRed);
         _green = newPick(70, level.bgGreen, Lang.winLooksGreen);
         _blue = newPick(100, level.bgBlue, Lang.winLooksBlue);
-
-        // DTODO: Replace these with the correct GUI elements to set
-        // initial scrolling position, both automatic and normal
-        auto g = new Geom(20, 55, xlg-140, 20, From.BOTTOM_LEFT);
-        addChild(new Label(new Geom(g), "Manual screen start not yet"));
-        g.y = 42; addChild(new Label(new Geom(g), "implemented. Old levels:"));
-        g.y = 29; addChild(new Label(new Geom(g), "Editor keeps their setting."));
-        g.y = 16; addChild(new Label(new Geom(g), "New levels focus on hatches."));
     }
 
 protected:

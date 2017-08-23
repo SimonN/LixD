@@ -51,9 +51,6 @@ public:
     string nameEnglish;
     int intendedNumberOfPlayers;
 
-    string[] hintsGerman;
-    string[] hintsEnglish;
-
     Topology topology;
     int  bgRed;
     int  bgGreen;
@@ -63,9 +60,6 @@ public:
     int  initial;
     int  required;
     int  spawnint;
-
-    bool useManualScreenStart;
-    Point manualScreenStartCenter;
 
     /* ploder: either Ac.exploder or Ac.imploder.
      * This is never written to the level file. Instead, 0 exploders or 0
@@ -114,15 +108,6 @@ public:
         // if (Lang.get_current() == Language.GERMAN)
         //      return nameGerman  == null ? nameEnglish : nameGerman;
         return nameEnglish == null ? nameGerman  : nameEnglish;
-    }
-
-    @property inout(string[])
-    hints() inout
-    {
-        // DTODOLANG
-        // if (Lang.get_current() == Language.GERMAN)
-        //      return hintsGerman  == null ? hintsEnglish : hintsGerman;
-        return hintsEnglish == null ? hintsGerman  : hintsEnglish;
     }
 
     @property LevelStatus status() const { return _status; }
@@ -193,8 +178,6 @@ public:
             || this.author       != rhs.author
             || this.nameGerman   != rhs.nameGerman
             || this.nameEnglish  != rhs.nameEnglish
-            || this.hintsGerman  != rhs.hintsGerman
-            || this.hintsEnglish != rhs.hintsEnglish
             || ! this.topology.matches(rhs.topology)
             || this.bgRed != rhs.bgRed
             || this.bgGreen != rhs.bgGreen
@@ -208,14 +191,6 @@ public:
         }
         if (intendedNumberOfPlayers > 1
             && this.overtimeSeconds != rhs.overtimeSeconds
-        ) {
-            return false;
-        }
-        // We don't care about a difference in the manual screen position if
-        // we rely on automatic screen start anyway in both levels.
-        if (this.useManualScreenStart != rhs.useManualScreenStart
-            || this.useManualScreenStart
-            && this.manualScreenStartCenter != rhs.manualScreenStartCenter
         ) {
             return false;
         }
