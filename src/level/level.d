@@ -199,11 +199,15 @@ public:
             || this.bgRed != rhs.bgRed
             || this.bgGreen != rhs.bgGreen
             || this.bgBlue != rhs.bgBlue
-            || this.overtimeSeconds != rhs.overtimeSeconds
             || this.initial != rhs.initial
             || this.required != rhs.required
             || this.spawnint != rhs.spawnint
             || this.ploder != rhs.ploder
+        ) {
+            return false;
+        }
+        if (intendedNumberOfPlayers > 1
+            && this.overtimeSeconds != rhs.overtimeSeconds
         ) {
             return false;
         }

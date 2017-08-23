@@ -26,9 +26,13 @@ package:
 
 void implConstructor(Editor editor) { with (editor)
 {
-    _level = new Level(_loadedFrom);
-    _levelToCompareForDataLoss = new Level(_loadedFrom);
-
+    if (_loadedFrom) {
+        _level = new Level(_loadedFrom);
+        _levelToCompareForDataLoss = new Level(_loadedFrom);
+    }
+    else {
+        editor.newLevelNoQuestions();
+    }
     Map newMap() { with (_level) return new Map(topology,
         gui.screenXls.to!int, (gui.screenYls - gui.panelYls).to!int); }
     _map        = newMap();
@@ -54,12 +58,22 @@ void newLevel(Editor editor) {
         _selection = null;
         _loadedFrom = null;
         _panel.currentFilename = null;
-
-        _level        = new Level;
-        _level.author = basics.globconf.userName;
-        _levelToCompareForDataLoss        = new Level;
-        _levelToCompareForDataLoss.author = userName;
+        editor.newLevelNoQuestions();
     });
+}}
+
+private void newLevelNoQuestions(Editor editor) {
+    with (editor)
+{
+    Level f()
+    {
+        Level l = new Level;
+        l.author = basics.globconf.userName;
+        l.overtimeSeconds = 30; // Level discards this if saved as 1-pl
+        return l;
+    }
+    _level = f();
+    _levelToCompareForDataLoss = f();
 }}
 
 void saveToExistingFile(Editor editor) {

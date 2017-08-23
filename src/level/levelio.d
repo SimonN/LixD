@@ -287,7 +287,7 @@ public void saveToFile(const(Level) l, std.stdio.File file)
     }
 
     file.writeln();
-    if (l.overtimeSeconds != 0)
+    if (l.intendedNumberOfPlayers > 1 && l.overtimeSeconds != 0)
         file.writeln(IoLine.Hash(glo.levelSeconds, l.overtimeSeconds));
     file.writeln(IoLine.Hash(glo.levelInitial,  l.initial ));
     file.writeln(IoLine.Hash(glo.levelRequired, l.required));
