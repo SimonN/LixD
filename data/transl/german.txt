@@ -21,15 +21,15 @@ $browserNetworkTitle         Netzwerk-Level aussuchen
 $browserReplayTitle          Replays
 $browserPlay                  Spielen
 $browserEdit                  Editieren
-$browserNewLevel              Neuer Level
+$browserNewLevel              Level erstellen
 $browserReplay                Abspielen
 $browserDelete                Löschen
 $browserExtract               Level extrah.
 $browserExportImage          Bild export.
 $browserExportImageDone     Fertig.
 
-$browserMkdirTitle          Neues Verzeichnis
-$browserMkdirPleaseEnter    Name des neuen Verzeichnisses:
+$browserMkdirTitle          Ordner erstellen
+$browserMkdirPleaseEnter    Name des neuen Ordners:
 
 $browserInfoAuthor           Von:
 $browserInfoInitgoal         Ziel:
@@ -68,7 +68,7 @@ $winLobbyChat               Chat:
 $winLobbySelectLevel        Level aussuchen
 $winLobbyReady              Bereit zum Start
 $winLobbyRoomNumber         Raum Nr.
-$winLobbyRoomCreate         Neuen Raum eroeffnen
+$winLobbyRoomCreate         Raum eröffnen
 $winLobbyRoomLeave          Raum verlassen
 
 // Spielfenster
@@ -164,7 +164,7 @@ $editorButtonAddHatch       Klappe: Eine Lix-Eingangsklappe platzieren.
 $editorButtonAddGoal        Ziel: Ein Ziel, also einen Lix-Ausgang platzieren.
 $editorButtonAddDeco        Dekoration: Ein harmloses Dekorationsobjekt platzieren.
 $editorButtonAddHazard      Gefahr: Eine Falle, Wasser oder Feuer platzieren.
-$editorButtonMenuConstants  Konstanten: Namen und wichtige Zahlen einstellen.
+$editorButtonMenuConstants  Konstanten: Titel und wichtige Zahlen einstellen.
 $editorButtonMenuTopology   Topologie: Abmessungen ändern, Außenkanten verkleben.
 $editorButtonMenuLooks      Aussehen: Hintergrund färben, Bildschirm-Start ändern.
 $editorButtonMenuSkills     Fähigkeiten: Anzahl Lix-Fähigkeiten pro Spieler einstellen.
@@ -182,9 +182,9 @@ $saveBoxQuestionUnsavedChangedLevel Änderungen an diesem Level speichern?
 $saveBoxQuestionUnsavedNewLevel Neuen Level speichern?
 $saveBoxQuestionDeleteReplay Dieses Replay wirklich löschen?
 $saveBoxQuestionDeleteLevel  Diesen Level wirklich löschen?
-$saveBoxDirectory         Verzeichnis:
-$saveBoxFileName          Dateiname:
-$saveBoxLevelName         Leveltitel:
+$saveBoxDirectory         Ordner:
+$saveBoxFileName          Datei:
+$saveBoxLevelName         Titel:
 $saveBoxYesSave                  Speichern
 $saveBoxNoDiscard                Verwerfen
 $saveBoxNoCancel                 Abbrechen
@@ -223,7 +223,7 @@ $winLooksCurrent            Aktuelle Position
 // Variablenfenster
 $winConstantsTitle           Konstanten
 $winConstantsAuthor          Autor
-$winConstantsLevelName       Levelname
+$winConstantsLevelName       Leveltitel
 $winConstantsPlayers         Spieler
 $winConstantsInitial         Lix zu Beginn
 $winConstantsRequired        Lix zu retten
@@ -361,7 +361,7 @@ $optionReplayAfterFrameBackDesc Zukünftige Replay-Aktionen beibehalten und wied
 
 $optionKeyMenuOkay           Okay/ja
 $optionKeyMenuEdit           Editieren
-$optionKeyMenuNewLevel       Neuer Level
+$optionKeyMenuNewLevel       Erstellen
 $optionKeyMenuExport         Exportieren
 $optionKeyMenuDelete         Löschen/nein
 $optionKeyMenuUpDir          Ordner hoch

@@ -25,15 +25,15 @@ $browserNetworkTitle        Select Multiplayer level
 $browserReplayTitle         Replays
 $browserPlay                Play
 $browserEdit                Edit
-$browserNewLevel            New Level
+$browserNewLevel            Create Level
 $browserReplay              Replay
 $browserDelete              Delete
 $browserExtract             Extract level
 $browserExportImage        Export image
 $browserExportImageDone    Done.
 
-$browserMkdirTitle          New Directory
-$browserMkdirPleaseEnter    Name of new directory:
+$browserMkdirTitle          Create Folder
+$browserMkdirPleaseEnter    Name of new folder:
 
 $browserInfoAuthor          By:
 $browserInfoInitgoal        Save:
@@ -187,9 +187,9 @@ $saveBoxQuestionUnsavedChangedLevel Save changes to this level?
 $saveBoxQuestionUnsavedNewLevel Save this new level?
 $saveBoxQuestionDeleteReplay Really delete this replay?
 $saveBoxQuestionDeleteLevel  Really delete this level?
-$saveBoxDirectory         Directory:
-$saveBoxFileName          File name:
-$saveBoxLevelName         Level name:
+$saveBoxDirectory         Folder:
+$saveBoxFileName          File:
+$saveBoxLevelName         Title:
 $saveBoxYesSave           Save
 $saveBoxNoDiscard         Discard
 $saveBoxNoCancel          Cancel
@@ -232,7 +232,7 @@ $winLooksCurrent             Current Position
 
 $winConstantsTitle            Constants
 $winConstantsAuthor           Author
-$winConstantsLevelName        Level name
+$winConstantsLevelName        Level title
 $winConstantsPlayers          Players
 $winConstantsInitial          Initial lix
 $winConstantsRequired         Lix to save
@@ -404,7 +404,7 @@ $optionPausedAssignUnpauseDesc Unpause when you assign a skill during pause.
 
 $optionKeyMenuOkay            Okay/yes
 $optionKeyMenuEdit            Edit
-$optionKeyMenuNewLevel        New Level
+$optionKeyMenuNewLevel        Create
 $optionKeyMenuExport          Export
 $optionKeyMenuDelete          Lose data
 $optionKeyMenuUpDir           Parent dir
