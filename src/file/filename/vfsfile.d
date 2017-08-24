@@ -54,7 +54,11 @@ public:
     // Throws Exception if file not found in any of the VFS trees.
     std.stdio.File openForReading(in string mode = "r") immutable
     {
-        return std.stdio.File(resolveForReading(this, LookFor.files), mode);
+        auto resolved = resolveForReading(this, LookFor.files);
+        if (resolved == "")
+            // FileException will add "file not found" to the message anyway?
+            throw new FileException(format!"VFS file `%s'"(_rootless));
+        return std.stdio.File(resolved, mode);
     }
 
     // I believe this throws if it can't open the file or mkdir -p its dir.

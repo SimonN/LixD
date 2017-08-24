@@ -244,10 +244,12 @@ private void munch(ref string s) {
 
 IoLine[] fillVectorFromFile(in Filename fn)
 {
-    // this can throw on file 404, it's intended
     if (! fn)
         throw new FileException("can't open null filename");
-    return fillVectorFromStream(fn.openForReading());
+    // This can throw on file 404, it's intended.
+    // "fill(fn.open)" crashed in Wine, but "a = fn.open; fill(a)" is OK. WTF!
+    auto file = fn.openForReading();
+    return fillVectorFromStream(file);
 }
 
 IoLine[] fillVectorFromStream(File file)
