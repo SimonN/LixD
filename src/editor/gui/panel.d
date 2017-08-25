@@ -41,9 +41,6 @@ public:
     void onExecute(Lang buttonID, KeySet hotkey, void delegate() deg,
         Button.WhenToExecute wte = Button.WhenToExecute.whenMouseRelease
     ) {
-        assert (buttonID >= Lang.editorButtonFileNew
-            &&  buttonID <= Lang.editorButtonAddHazard,
-            "add delegates only for for bitmap buttons, Lang.editorButtonXYZ");
         immutable id = langToButtonIndex(buttonID);
         _buttons[id].xf = langToButtonXf(buttonID);
         _buttons[id].hotkey = hotkey;
@@ -53,9 +50,7 @@ public:
 
     void onExecuteText(Lang langID, Lang cap, KeySet hk, void delegate() deg)
     {
-        assert (langID >= Lang.editorButtonMenuConstants
-            &&  langID <= Lang.editorButtonMenuSkills);
-        immutable id = langID - Lang.editorButtonMenuConstants;
+        immutable id = langToButtonIndex(langID);
         _textButtons[id].hotkey    = hk;
         _textButtons[id].text      = cap.transl;
         _textButtons[id].onExecute = deg;
@@ -74,7 +69,7 @@ public:
         assert (id <= Lang.editorButtonMenuSkills);
         return  id <  Lang.editorButtonMenuConstants
             ? _buttons[langToButtonIndex(id)]
-            : _textButtons[id - Lang.editorButtonMenuConstants];
+            : _textButtons[langToButtonIndex(id)];
     }
 
     @property buttonZoom() inout { return _zoom; }
@@ -136,9 +131,14 @@ private:
     int langToButtonIndex(Lang lang) const
     {
         assert (lang >= Lang.editorButtonFileNew);
-        return lang - Lang.editorButtonFileNew
-                    // DTODOUNDO: undo isn't implemented yet, otherwise rm this
-                    - (lang >= Lang.editorButtonUndo ? 2 : 0);
+        assert (lang <= Lang.editorButtonMenuSkills);
+        if (lang < Lang.editorButtonMenuConstants)
+            return lang - Lang.editorButtonFileNew
+                // DTODOUNDO: undo isn't implemented yet, otherwise rm this
+                - (lang >= Lang.editorButtonUndo ? 2 : 0);
+        else
+            return lang - Lang.editorButtonMenuConstants
+                        - (lang >= Lang.editorButtonMenuLooks ? 1 : 0);
     }
     Lang indexToLang(int id) const
     {
@@ -151,7 +151,7 @@ private:
         immutable int bitmaps = Lang.editorButtonAddHazard
                               - Lang.editorButtonFileNew + 1
                               - 2; // because no undo or redo yet
-        immutable int texts = 4;
+        immutable int texts = 3;
         immutable bitmapXl = infoXl * 2f / bitmaps;
         immutable bitmapYl = (gui.panelYlg - _info.ylg) / 2;
         immutable textXl = gui.screenXlg - infoXl();

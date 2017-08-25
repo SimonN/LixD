@@ -14,7 +14,6 @@ import editor.io;
 import editor.select;
 import editor.gui.browter;
 import editor.gui.constant;
-import editor.gui.looks;
 import editor.gui.panel;
 import editor.gui.skills;
 import editor.gui.topology;
@@ -121,7 +120,6 @@ void makePanel(Editor editor)
         }
         mixin (mkSubwin!"Constants");
         mixin (mkSubwin!"Topology");
-        mixin (mkSubwin!"Looks");
         mixin (mkSubwin!"Skills");
         template mkBrowser(string name, string constructorArgs) {
             enum string mkBrowser = q{

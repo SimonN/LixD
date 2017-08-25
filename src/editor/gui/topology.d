@@ -28,18 +28,18 @@ private:
     BoolOption _torusX;
     BoolOption _torusY;
 
-    enum thisXl = 400;
+    NumPick _red, _green, _blue;
+    enum thisXl = 480;
 
 public:
     this(Level level)
     {
-        super(new Geom(0, 0, thisXl, 300, From.CENTER),
+        super(new Geom(0, 0, thisXl, 290, From.CENTER),
             Lang.winTopologyTitle.transl);
         _oldXl = level.topology.xl;
         _oldYl = level.topology.yl;
-        makeAllChildren();
-        _torusX.checked = level.topology.torusX;
-        _torusY.checked = level.topology.torusY;
+        makeTopologyChildren(level);
+        makeColorChildren(level);
     }
 
 protected:
@@ -71,6 +71,9 @@ protected:
             level.terrain.each!fun;
             level.gadgets[].each!(occList => occList.each!fun);
         }
+        level.bgRed = _red.number;
+        level.bgGreen = _green.number;
+        level.bgBlue = _blue.number;
     }
 
     override void calcSelf()
@@ -98,7 +101,7 @@ private:
                      Level.minYl, Level.maxYl);
     }
 
-    void makeAllChildren()
+    void makeTopologyChildren(Level level)
     {
         enum butX   = 100f;
         enum textXl = 80f;
@@ -111,8 +114,6 @@ private:
         label( 50, Lang.winTopologyR);
         label( 80, Lang.winTopologyU);
         label(100, Lang.winTopologyD);
-        label(130, Lang.winTopologyX);
-        label(180, Lang.winTopologyY);
 
         NumPick newSidePick(in float y, in int valMax)
         {
@@ -131,17 +132,45 @@ private:
         _right  = newSidePick( 50, Level.maxXl);
         _top    = newSidePick( 80, Level.maxYl);
         _bottom = newSidePick(100, Level.maxYl);
-        _eqXDec = new Equation(butX, 130, _oldXl, Equation.Format.dec);
-        _eqXHex = new Equation(butX, 150, _oldXl, Equation.Format.hex);
-        _eqYDec = new Equation(butX, 180, _oldYl, Equation.Format.dec);
-        _eqYHex = new Equation(butX, 200, _oldYl, Equation.Format.hex);
-        _torusX = new BoolOption(new Geom(20, 230, boolXl, 20),
+        _eqXDec = new Equation( 30, _oldXl, Equation.Format.dec);
+        _eqXHex = new Equation( 50, _oldXl, Equation.Format.hex);
+        _eqYDec = new Equation( 80, _oldYl, Equation.Format.dec);
+        _eqYHex = new Equation(100, _oldYl, Equation.Format.hex);
+        _torusX = new BoolOption(new Geom(20, 140, boolXl, 20),
                                  Lang.winTopologyTorusX.transl);
-        _torusY = new BoolOption(new Geom(20, 260, boolXl, 20),
+        _torusY = new BoolOption(new Geom(20, 170, boolXl, 20),
                                  Lang.winTopologyTorusY.transl);
+        _torusX.checked = level.topology.torusX;
+        _torusY.checked = level.topology.torusY;
         addChildren(_left, _right, _top, _bottom,
                     _eqXDec, _eqXHex,
                     _eqYDec,   _eqYHex, _torusX, _torusY);
+    }
+
+    void makeColorChildren(Level level)
+    {
+        auto newPick(in float y, in int startValue, in Lang desc)
+        {
+            NumPickConfig cfg;
+            cfg.digits     = 3; // the first one is '0x'
+            cfg.sixButtons = true;
+            cfg.hex        = true;
+            cfg.max        = 0xFF;
+            cfg.stepMedium = 0x04;
+            cfg.stepBig    = 0x10;
+            enum colorPickXl = 120 + 40 + 10;
+            auto ret = new NumPick(new Geom(140, y, colorPickXl, 20,
+                From.TOP_RIGHT), cfg);
+            ret.number = startValue;
+            this.addChild(ret);
+            this.addChild(new Label(new Geom(20, y,
+                xlg-colorPickXl - 100 - 80, 20), // -100 for OK, -80 for spaces
+                desc.transl));
+            return ret;
+        }
+        _red = newPick(ylg-80, level.bgRed, Lang.winLooksRed);
+        _green = newPick(ylg-60, level.bgGreen, Lang.winLooksGreen);
+        _blue = newPick(ylg-40, level.bgBlue, Lang.winLooksBlue);
     }
 }
 
@@ -161,13 +190,13 @@ public:
     enum Format { dec, hex }
     enum valueMax = 16^^3;
 
-    this(in float x, in float y, in int oldValue, in Format decOrHex)
+    this(in float y, in int oldValue, in Format decOrHex)
     in {
         static assert (Level.maxXl < valueMax);
         static assert (Level.maxYl < valueMax);
     }
     body {
-        super(new Geom(x, y, 150f, 20f, From.TOP_LEFT));
+        super(new Geom(20f, y, 150f, 20f, From.TOP_RIGHT));
         undrawColor = color.guiM; // erase old labels before writing
         _oldValue = oldValue;
         _decOrHex = decOrHex;

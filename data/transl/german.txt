@@ -165,7 +165,7 @@ $editorButtonAddGoal        Ziel: Ein Ziel, also einen Lix-Ausgang platzieren.
 $editorButtonAddDeco        Dekoration: Ein harmloses Dekorationsobjekt platzieren.
 $editorButtonAddHazard      Gefahr: Eine Falle, Wasser oder Feuer platzieren.
 $editorButtonMenuConstants  Konstanten: Titel und wichtige Zahlen einstellen.
-$editorButtonMenuTopology   Topologie: Abmessungen ändern, Außenkanten verkleben.
+$editorButtonMenuTopology   Karte: Abmessungen ändern, Außenkanten verkleben.
 $editorButtonMenuLooks      Aussehen: Hintergrund färben, Bildschirm-Start ändern.
 $editorButtonMenuSkills     Fähigkeiten: Anzahl Lix-Fähigkeiten pro Spieler einstellen.
 
@@ -198,7 +198,7 @@ $addDeco                      Dekoration hinzufügen
 $addHazard                    Gefahr hinzufügen
 
 // Kartengroesse
-$winTopologyTitle                Topologie
+$winTopologyTitle                Karte
 $winTopologyL                    Links:
 $winTopologyR                    Rechts:
 $winTopologyU                    Oben:

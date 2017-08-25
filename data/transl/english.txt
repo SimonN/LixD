@@ -169,7 +169,7 @@ $editorButtonAddGoal         Goal: Add a goal, i.e., an exit, for the lix.
 $editorButtonAddDeco         Decoration: Add a non-interactive decoration tile.
 $editorButtonAddHazard       Hazard: Add a trap, water or fire.
 $editorButtonMenuConstants   Constants: Name the level, set fundamental values.
-$editorButtonMenuTopology    Topology: Resize the level, wrap the edges.
+$editorButtonMenuTopology    Map: Resize the level, wrap the edges.
 $editorButtonMenuLooks       Looks: Color the background, choose screen starting position.
 $editorButtonMenuSkills      Skills: Decide how many lix skills each player may assign.
 
@@ -205,7 +205,7 @@ $addHazard                     Add hazard
 
 // editor window about the size of map
 
-$winTopologyTitle                 Topology
+$winTopologyTitle                 Map
 $winTopologyL                     Left:
 $winTopologyR                     Right:
 $winTopologyU                     Top:
