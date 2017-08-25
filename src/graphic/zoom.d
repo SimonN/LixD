@@ -8,6 +8,7 @@ import std.range;
 
 import basics.help;
 import basics.rect;
+import level.level;
 
 class Zoom {
 private:
@@ -17,38 +18,8 @@ private:
 public:
     this(Point levelL, Point cameraL)
     {
-        /* a is fit-level-width-to-map, (b) is fit-level-height-to-map-height.
-         * Even if blurry, these should be supported?
-         */
-        immutable float a = 1f / levelL.x * cameraL.x;
-        immutable float b = 1f / levelL.y * cameraL.y;
-        assert (a > 0.001f);
-        assert (b > 0.001f);
-
-        enum root2 = 1.41421f;
-        _allowed = [ a, b, 1f/2, root2/2, 1, root2, 2, 3, 4, 6, 8, 16 ]
-            .filter!(x => x >= min(a, b, 1)) // even on torus maps? Probably
-            .array.sort().uniq.array;
-
-        void initialZoom(in float val)
-        {
-            assert (_allowed.canFind!(x => x == val));
-            _selected = 0xFFFF & _allowed.countUntil!(x => x == val);
-            assert (_selected >= 0);
-            assert (_selected < _allowed.len);
-        }
-        if (a < 1 && b < 1 && _allowed.canFind(1f))
-            // Very large levels should use zoom 1.
-            initialZoom(1f);
-        else if ( ! _allowed.canFind(b)
-                || (_allowed.canFind(a) && levelL.y > levelL.x))
-            // If matching height is not allowed, match width.
-            // Or, if the level is taller than wide, match width -- this
-            // doesn't care about screen ratio to level ratio.
-            initialZoom(a);
-        else
-            // In general, fit the level's height onto the screen's height.
-            initialZoom(b);
+        populateAllowed(levelL, cameraL);
+        selectOneAllowed(levelL, cameraL);
     }
 
     @property float current() const pure { return _allowed[_selected]; }
@@ -62,5 +33,46 @@ public:
     bool preferNearestNeighbor() const
     {
         return abs(current.roundInt - current) < 0.01f || current >= 3;
+    }
+
+private:
+    mixin template aAndB() {
+        /* a is fit-level-width-to-map, (b) is fit-level-height-to-map-height.
+         * Even if blurry, these should be supported?
+         */
+        immutable float a = 1f / levelL.x * cameraL.x;
+        immutable float b = 1f / levelL.y * cameraL.y;
+    }
+
+    void populateAllowed(in Point levelL, in Point cameraL)
+    {
+        mixin aAndB;
+        enum root2 = 1.41421f;
+        _allowed = [ a, b, 1f/2, root2/2, 1, root2, 2, 3, 4, 6, 8, 16 ].sort()
+            .filter!(x => x >= min(a, b, 1)) // even on torus maps? Probably
+            .uniq.array;
+    }
+
+    void selectOneAllowed(in Point levelL, in Point cameraL)
+    {
+        mixin aAndB;
+        void select(in float val)
+        {
+            assert (_allowed.canFind!(x => x == val));
+            _selected = 0xFFFF & _allowed.countUntil!(x => x == val);
+            assert (_selected >= 0);
+            assert (_selected < _allowed.len);
+        }
+        // In general, fit to height (b), except fit small maps onto the screen
+        // entirely by min(a, b) or have huge maps select at least zoom 1.
+        select(max(1f, levelL.x <= Level.cppLixOneScreenXl ? min(a, b) : b));
+
+        void roundDownToInt(float target)
+        {
+            // never round up, that might obscure vertically outlying ledges
+            if (current/target > 1f && current/target < 1.1f)
+                select(target);
+        }
+        [1f, 2f, 3f, 4f].each!roundDownToInt;
     }
 }

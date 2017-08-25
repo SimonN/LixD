@@ -40,6 +40,7 @@ public:
     enum minYl = 160;
     enum maxXl = 3200;
     enum maxYl = 2000;
+    enum cppLixOneScreenXl = 640;
     enum spawnintMin =  1;
     enum spawnintMax = 96;
     enum initialMax = 999;
@@ -82,7 +83,7 @@ public:
         built   = Date.now();
         _status = LevelStatus.BAD_EMPTY;
         intendedNumberOfPlayers = 1;
-        topology = new Topology(640, 400); // one screen in C++ Lix
+        topology = new Topology(cppLixOneScreenXl, 400);
         initial  =  20;
         required =  20;
         spawnint =  32;

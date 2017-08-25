@@ -80,16 +80,6 @@ package FileFormat get_file_format(in Filename fn)
 // ################################################ Loading the Lix file format
 // ############################################################################
 
-private enum cppHalfScreenX = 640 / 2;
-private enum cppHalfScreenY = (480 - 80) / 2;
-
-private void tuto(ref string[] into, in string what)
-{
-    // this always goes into index 0
-    if (into == null) into   ~= what;
-    else              into[0] = what;
-}
-
 private void resize(Level level, in int x, in int y)
 {
     level.topology.resize(clamp(x, Level.minXl, Level.maxXl),
