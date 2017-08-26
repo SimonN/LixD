@@ -1,4 +1,4 @@
-$BUILT 2017-08-23 13:39:55
+$BUILT 2017-08-26 04:41:43
 $AUTHOR mobius
 $ENGLISH Forest of Fears
 
@@ -18,7 +18,7 @@ $ENGLISH Forest of Fears
 
 :amanda/forest/hatch.H: 248 40
 
-:proxima/tile/goal.G: 536 144
+:proxima/tile/goal.G: 516 144
 
 :simon/water.W: 88 312
 :simon/water_thin.W: 344 192
@@ -73,9 +73,8 @@ $ENGLISH Forest of Fears
 :amanda/forest/stone_02: 410 304 fr
 :amanda/forest/leaves_03: 788 136
 :amanda/forest/bark_03: 838 172
-:geoo/steel/dark_32x64o.S: 504 64
-:geoo/steel/dark_32x64o.S: 504 128
-:geoo/steel/dark_48x32o.S: 536 208
+:geoo/steel/dark_32x64o.S: 472 64
+:geoo/steel/dark_32x64o.S: 472 128
 :geoo/steel/dark_48x32o.S: 640 416
 :amanda/forest/stone_01: 724 130
 :amanda/forest/fern_00: 742 124
@@ -94,20 +93,21 @@ $ENGLISH Forest of Fears
 :amanda/forest/moss_00: 594 304
 :amanda/forest/moss_00: 416 304
 :matt/earth/29: 378 122
-:matt/earth/29: 510 128
+:matt/earth/29: 478 128
 :amanda/forest/moss_00: 256 306
 :amanda/forest/moss_00: 200 304
 :amanda/forest/moss_00: 150 304
 :amanda/forest/bark_04: 326 236 d
 :amanda/forest/moss_00: 542 304
-:geoo/steel/dark_32x32o.S: 584 208
 :geoo/steel/dark_16x32o.S: 432 64
 :geoo/steel/dark_16x32o.S: 432 128
 :geoo/steel/dark_16x32o.S: 432 96
 :geoo/steel/dark_16x32o.S: 432 192
 :geoo/steel/dark_16x32o.S: 432 160
 :geoo/steel/dark_16x16o.S: 432 224
+:geoo/steel/dark_48x32o.S: 568 208
 :matt/earth/29: 598 210
 :amanda/forest/stone_00: 482 318 frrd
 :matt/earth/23: 54 266 frrrd
-:geoo/steel/dark_32x48o.S: 504 192
+:geoo/steel/dark_32x48o.S: 472 192
+:geoo/steel/dark_64x32o.S: 504 208
