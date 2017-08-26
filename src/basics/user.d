@@ -221,7 +221,7 @@ static this()
     guiColorBlue = newOpt("GUI_COLOR_BLUE", Lang.optionGuiColorBlue, 0xB0);
     soundVolume = newOpt("SOUND_VOLUME", Lang.optionSoundVolume, 10);
 
-    singleLastLevel = newOpt("SINGLE_LAST_LEVEL", dirLevelsSingle);
+    singleLastLevel = newOpt("SINGLE_LAST_LEVEL", fileSingleplayerFirstLevel);
     networkLastLevel = newOpt("NETWORK_LAST_LEVEL", dirLevelsNetwork);
     replayLastLevel = newOpt("REPLAY_LAST_LEVEL", dirReplays);
     networkLastStyle = newOpt("NETWORK_LAST_STYLE", Style.red.to!int);

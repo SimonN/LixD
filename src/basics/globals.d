@@ -116,7 +116,7 @@ Filename dirLevels, dirLevelsSingle, dirLevelsNetwork, dirReplays, dirData,
     dirReplayAutoMulti, dirReplayManual, dirExportImages;
 
 Filename fileGlobalConfig, fileLog, fileReplayVerifier, fileTharsisProf,
-    fileLanguageEnglish;
+    fileLanguageEnglish, fileSingleplayerFirstLevel;
 
 Filename fileImageGuiNumber, fileImageAppIcon,
     fileImageDebris, fileImageEditFlip, fileImageEditHatch,
@@ -156,6 +156,8 @@ static this()
     fileReplayVerifier = new Fn("data/verifier.txt");
     fileTharsisProf = new Fn("data/profile.txt");
     fileLanguageEnglish = new Fn("data/transl/english.txt");
+    fileSingleplayerFirstLevel = new Fn(dirLevelsSingle.rootless
+                                    ~ "lemforum/Lovely/anyway.txt");
 
     fileImageAppIcon = new Fn("data/images/app_icon.I.png"); // with extension
 
