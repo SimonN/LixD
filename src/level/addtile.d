@@ -79,8 +79,15 @@ ResolvedTile resolveTileName(
     // The level has more knowledge than the tile lib:
     // If the lib doesn't know the tile, resolve the name as a group.
     if (name.length >= glo.levelUseGroup.length)
-        if (auto group = name[glo.levelUseGroup.length .. $] in groupsRead)
-            return ResolvedTile(null, null, get_group(*group));
+        if (auto group = name[glo.levelUseGroup.length .. $] in groupsRead) {
+            try {
+                return ResolvedTile(null, null, getGroup(*group));
+            }
+            catch (TileGroup.InvisibleException) {
+                logMissingImage(name ~ " has no visible pixels");
+                return resolvedByLib;
+            }
+        }
     // Neither the lib nor the level has resolved this tile name.
     if (! resolvedByLib.weRemovedThisTileThereforeDontRaiseErrors)
         logMissingImage(name);

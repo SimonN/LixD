@@ -25,10 +25,15 @@ void createGroup(Editor editor) {
         || occurrences.all!(occ => occ.dark))
         return;
     editor.minimizeSelectionSelboxByMovingSomeAcrossTorus(occurrences);
+    TileGroup group;
+    try
+        group = getGroup(TileGroupKey(occurrences));
+    catch (TileGroup.InvisibleException)
+        return;
+
     // Hack. In all other cases, we let Level add occurrences to itself
     // by giving to Level the key and the position.
     // Here, we add the new occurrence ourselves.
-    TileGroup group = get_group(TileGroupKey(occurrences));
     TerOcc groupOcc = new TerOcc(group);
     groupOcc.loc  = occurrences.map!(occ => occ.selboxOnMap)
                               .reduce!(Rect.smallestContainer)

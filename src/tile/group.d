@@ -46,20 +46,24 @@ private:
 package:
     // This constructor is package access: To get a group from a TileGroupKey,
     // use tile.tilelib.get_group(TileGroupKey) instead, it caches these.
+    // It's allowed to even call this with only dark tiles, but discouraged:
+    // The caller checking that beforehand might be smarter than relying on
+    // the exception that this constructor throws.
+    // It's allowed to call it with dark tiles completely overlapping the
+    // nondark tiles, the constructor will throw InvisibleException.
     this(TileGroupKey aKey)
-    in {
-        assert (! aKey.elements.empty, "can't group zero tiles");
-        assert (aKey.elements.all!(occ => occ !is null));
-        assert (aKey.elements.any!(occ => ! occ.dark),
-            "can't group only dark.");
-    }
+    in { assert (aKey.elements.all!(occ => occ !is null)); }
     out {
         import std.format;
+        assert (selbox.xl > 0 && selbox.yl > 0, "Tile can't be trivial.");
         assert (selbox == Rect(0, 0, cb.xl, cb.yl), format(
             "VRAM tile shall be as small as possible, no transparent border. "
             ~ "But this selbox is %s, not (0,0;%d,%d)", selbox, cb.xl, cb.yl));
     }
     body {
+        if (aKey.elements.all!(occ => occ.dark))
+            throw new InvisibleException();
+
         this._key = aKey;
         version (tharsisprofiling) {
             import std.string;
@@ -74,6 +78,9 @@ package:
         Phymap phy = new Phymap(surround.xl, surround.yl);
         _key.elements.each!(e => e.drawOccurrence(phy));
         immutable Rect foundSelbox = phy.smallestNonzeroArea;
+        if (foundSelbox.xl <= 0 || foundSelbox.yl <= 0)
+            throw new InvisibleException();
+
         phy.cropTo(foundSelbox);
         _transpCutOff = foundSelbox.topLeft;
 
@@ -95,6 +102,10 @@ public:
     }
 
     @property Point transpCutOff() const { return _transpCutOff; }
+
+    class InvisibleException : Exception {
+        this() { super("Can't create tile group with zero visible pixels."); }
+    }
 }
 
 struct TileGroupKey {

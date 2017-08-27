@@ -123,9 +123,10 @@ body {
     auto loc = key.map!(occ => occ.selboxOnMap)
                   .reduce!(Rect.smallestContainer)
                   .topLeft;
-    auto group = get_group(TileGroupKey(key));
-    auto minPos = list.countUntil(key.front);
-    if (group) {
+    try {
+        TileGroup group = getGroup(TileGroupKey(key));
+        assert (group);
+        auto minPos = list.countUntil(key.front);
         assert (minPos < list.length);
         assert (minPos >= 0);
         // Alter the input list for the 1st time in this function.
@@ -136,9 +137,11 @@ body {
                        topol.wrap(loc + group.transpCutOff)));
         assert (! list[minPos].mustGroup);
     }
-    else {
+    catch (TileGroup.InvisibleException) {
         // The algorithm has decided that we make a group entirely from
-        // later-transparent tiles. We will remove the group pieces, perfect.
+        // tiles (dark or non-dark, but at least the noow piece should be
+        // non-dark) that leave only dark pixels in the group. Don't add this!
+        // We will remove the group pieces and put nothing back, perfect.
     }
     // Now alter the input list for the 2nd time.
     list = std.algorithm.remove!(elem => elem.mustGroup)(list);

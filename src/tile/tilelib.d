@@ -95,14 +95,16 @@ ResolvedTile resolveTileName(Filename fn)
                            glo.dirImages.rootlessNoExt.length .. $]);
 }
 
-TileGroup get_group(in TileGroupKey key)
-{
+// throws TileGroup.InvisibleException if all visible pixels are overlapped
+// with dark tiles. This can happen because all tiles are dark, which the
+// caller could check easily, but also if all non-dark tiles are covered
+// with dark tiles, which only TileGroup's constructor checks.
+TileGroup getGroup(in TileGroupKey key)
+out (ret) { assert (ret !is null); }
+body {
     if (auto found = key in groups)
         return *found;
-    else if (key.elements.any!(occ => ! occ.dark))
-        return groups[key] = new TileGroup(key);
-    else
-        return null;
+    return groups[key] = new TileGroup(key);
 }
 
 // Called from the level loading function. The level may resolve tile names
