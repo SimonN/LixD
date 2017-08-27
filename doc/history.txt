@@ -1,6 +1,28 @@
 Version history
 ===============
 
+0.8.3
+-----
+
+2017-08-27
+
+Fix #176: Make a tile group with at least one non-dark tile where all non-dark
+tiles are covered entirely by dark tiles. This crashed the game before. This
+crash is now fixed.
+
+Fix #191: Initial zoom on tall narrow maps (e.g., Rubix's Hamunaptra for 4
+players) is fit-to-height, or zoom 1 if fit-to-height would zoom even further
+out. Initial zoom on small narrow maps (e.g., The Runaround) fits the entire
+map on the screen, obviating scrolling, allowing dark borders.
+
+Merged editor's Topology and Looks dialogs into a single new Map dialog.
+No new functionality yet. I'm thinking about custom screen starts.
+
+For a new player, the singleplayer browser highlights Any Way You Want,
+the first map of the lemforum pack.
+
+lemforum, Forest of Fears: Wider exit platform, should look less cramped now.
+
 0.8.2
 -----
 
