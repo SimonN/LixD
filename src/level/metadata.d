@@ -6,7 +6,6 @@ import file.filename;
 import file.log;
 import file.io;
 import level.level;
-import level.levelio;
 
 class LevelMetaData {
 public:
@@ -20,7 +19,7 @@ public:
     this(in Filename fn) // throws onwards any caught exception
     {
         try {
-            format = level.levelio.get_file_format(fn);
+            format = getFileFormat(fn);
             MutableDate tmp;
             if      (format == FileFormat.LIX)     metadata_lix    (fn, tmp);
             else if (format == FileFormat.BINARY)  metadata_binary (fn, tmp);
@@ -45,6 +44,17 @@ public:
     @property bool empty() const
     {
         return initial == 0 && nameEnglish == "";
+    }
+
+package:
+    static FileFormat getFileFormat(in Filename fn)
+    {
+        if (! fn || ! fn.fileExists)
+            return FileFormat.NOTHING;
+        // DTODO: Implement the remaining function from C++/A4 Lix that opens
+        // a file in binary mode. Implement L1 loader functions.
+        // Consider taking not Filename, but an already opened (ref std.File)!
+        else return FileFormat.LIX;
     }
 
 private:

@@ -3,7 +3,7 @@ module level.level;
 import enumap;
 
 public import net.ac;
-public import level.levelio;
+public import level.save;
 
 import basics.topology;
 import file.date;
@@ -13,8 +13,8 @@ import tile.phymap;
 import graphic.color;
 import graphic.torbit;
 import level.addtile;
-import level.levelio;
 import level.levdraw;
+import level.load;
 import tile.occur;
 import tile.gadtile;
 
@@ -93,13 +93,13 @@ public:
     this(in Filename fn)
     {
         this();
-        level.levelio.loadFromFile(this, fn);
+        loadFromFile(this, fn);
     }
 
     this(immutable(void)[] src)
     {
         this();
-        level.levelio.loadFromVoidArray(this, src);
+        loadFromVoidArray(this, src);
     }
 
     @property string
