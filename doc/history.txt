@@ -1,6 +1,22 @@
 Version history
 ===============
 
+0.8.4
+-----
+
+2017-08-30
+
+Fix #4 and #213: Some graphics cards cannot load textures wider or taller than
+4096 pixels. Amanda's tar and occult hatch were too wide. Now, I allow
+two-dimensional spritesheets for single-animation gadgets,  and I've
+rearranged the frames in the tar and occult hatch. In Lix, looks and physics
+should be unaffected.
+
+lemforum: Over the Hump out, Duality in. Duality and Round Trip swap places
+within Daunting.
+
+5 new multiplayer maps by Rubix.
+
 0.8.3
 -----
 
