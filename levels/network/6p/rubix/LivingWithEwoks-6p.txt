@@ -1,0 +1,685 @@
+$BUILT 2017-08-28 13:53:35
+$AUTHOR Rubix
+$ENGLISH Living with the Ewoks (6p)
+
+#INTENDED_NUMBER_OF_PLAYERS 3
+#SIZE_X 2496
+#SIZE_Y 1154
+#TORUS_X 1
+#TORUS_Y 0
+#BACKGROUND_RED 20
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 51
+
+#SECONDS 80
+#INITIAL 60
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+
+#WALKER 50
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER 5
+#BLOCKER 5
+#BUILDER 20
+#PLATFORMER 50
+#BASHER 50
+#MINER 50
+#DIGGER 5
+#JUMPER 50
+#BATTER 25
+
+:amanda/forest/hatch.H: 1792 32
+:amanda/forest/hatch.H: 2208 32
+:amanda/forest/hatch.H: 1392 32
+:amanda/forest/hatch.H: 544 32
+:amanda/forest/hatch.H: 960 32
+:amanda/forest/hatch.H: 144 32
+
+:amanda/forest/exit.G: 2000 1056
+:amanda/forest/exit.G: 2416 1056
+:amanda/forest/exit.G: 1584 1056
+:amanda/forest/exit.G: 752 1056
+:amanda/forest/exit.G: 1168 1056
+:amanda/forest/exit.G: 336 1056
+
+:amanda/forest/leaves_05: 1856 112
+:amanda/forest/leaves_05: 1856 96
+:amanda/forest/leaves_03: 2208 64
+:amanda/forest/leaves_03: 1392 64
+:amanda/forest/leaves_03: 1792 64
+:amanda/forest/moss_00: 2096 400
+:amanda/forest/moss_00: 1680 400
+:amanda/forest/moss_00: 1264 400
+:amanda/forest/bark_03: 2096 256
+:amanda/forest/bark_03: 2368 256
+:amanda/forest/leaves_05: 1344 224
+:amanda/forest/leaves_05: 1360 224
+:amanda/forest/leaves_05: 1392 224
+:amanda/forest/leaves_05: 1376 224
+:amanda/forest/leaves_05: 1408 224
+:amanda/forest/leaves_05: 1808 224
+:amanda/forest/leaves_05: 1792 224
+:amanda/forest/leaves_05: 1776 224
+:amanda/forest/leaves_05: 1744 224
+:amanda/forest/leaves_05: 2224 224
+:amanda/forest/leaves_05: 2208 224
+:amanda/forest/leaves_05: 2176 224
+:amanda/forest/fern_00: 2160 544
+:amanda/forest/fern_00: 2112 544
+:amanda/forest/fern_00: 1744 544
+:amanda/forest/fern_00: 1328 544
+:amanda/forest/fern_00: 2160 1056
+:amanda/forest/fern_00: 1760 1056
+:amanda/forest/fern_00: 1712 1056
+:amanda/forest/moss_00: 1888 928
+:amanda/forest/moss_00: 1472 928
+:amanda/forest/moss_00: 2304 928
+:amanda/forest/fern_00: 1696 544
+$BEGIN_TILE_GROUP 0
+:geoo/construction/platform.S: 0 0
+:geoo/construction/platform.S: 32 0
+:geoo/construction/platform.S: 64 0
+:geoo/construction/platform.S: 96 0
+$END_TILE_GROUP
+:Group-0: 1696 544
+:Group-0: 2112 544
+:amanda/forest/fern_00: 1280 544
+:Group-0: 1280 544
+:amanda/forest/leaves_03: 2464 80
+:amanda/forest/leaves_03: 1648 80
+:amanda/forest/leaves_05: 2080 144
+:amanda/forest/leaves_03: 2048 80
+:amanda/forest/leaves_05: 2048 144
+:amanda/forest/leaves_03: 1232 80
+:amanda/forest/leaves_05: 2464 144
+:amanda/forest/leaves_05: 1248 144
+:amanda/forest/leaves_05: 1664 144
+:amanda/forest/leaves_05: 1632 144
+:amanda/forest/moss_00: 1968 144
+:amanda/forest/moss_00: 2384 144
+:amanda/forest/moss_00: 1568 144
+:amanda/forest/fern_00: 1344 1056
+:amanda/forest/fern_00: 1296 1056
+:amanda/forest/fern_00: 2112 1056
+$BEGIN_TILE_GROUP 1
+:geoo/construction/stairs_ru_32.S: 64 32
+:geoo/construction/stairs_ru_32.S: 128 0
+:geoo/construction/stairs_ru_32.S: 0 64
+$END_TILE_GROUP
+:Group-1: 1296 704 f
+:Group-1: 2128 704 f
+:Group-1: 1712 704 f
+:amanda/forest/bark_00: 1488 928 rrr
+:amanda/forest/bark_00: 1904 928 rrr
+:amanda/forest/bark_00: 2320 928 rrr
+:geoo/construction/stairs_ru_32.S: 2304 944 f
+:amanda/forest/leaves_05: 2288 928
+:geoo/construction/stairs_ru_32.S: 1820 544 f
+:geoo/construction/stairs_ru_32.S: 1808 640
+:geoo/construction/stairs_ru_32.S: 1392 640
+:geoo/construction/stairs_ru_32.S: 2224 544 frr
+:geoo/construction/stairs_ru_32.S: 2224 640
+:geoo/construction/stairs_ru_32.S: 2384 560
+:amanda/forest/bark_03: 1952 608
+:geoo/construction/stairs_ru_32.S: 1888 944 f
+:amanda/forest/bark_03: 1952 784
+:amanda/forest/bark_03: 1536 608
+:geoo/construction/stairs_ru_32.S: 1472 944 f
+:amanda/forest/bark_03: 1536 784
+:amanda/forest/bark_03: 1680 608
+:amanda/forest/bark_03: 1680 784
+:Group-1: 1488 800 f
+:amanda/forest/bark_03: 1264 608
+:amanda/forest/bark_03: 1264 784
+:amanda/forest/bark_03: 2096 608
+:amanda/forest/bark_03: 2096 784
+:Group-1: 1904 800 f
+:amanda/forest/bark_03: 2368 608
+:amanda/forest/bark_03: 2368 784
+:Group-1: 2320 800 f
+:amanda/forest/bark_02: 2336 416 fr
+:amanda/forest/moss_00: 2368 432
+:amanda/forest/bark_02: 2320 448 fr
+:amanda/forest/bark_03: 2368 432
+:amanda/forest/bark_03: 1264 256
+:amanda/forest/moss_00: 1536 432
+:amanda/forest/bark_02: 1488 448 fr
+:amanda/forest/bark_02: 1504 416 fr
+:amanda/forest/bark_03: 1264 432
+:amanda/forest/bark_03: 1536 256
+:geoo/construction/stairs_ru_32.S: 1552 560
+:amanda/forest/bark_03: 1536 432
+:amanda/forest/bark_03: 1680 256
+:amanda/forest/bark_02: 1920 416 fr
+:amanda/forest/bark_02: 1904 448 fr
+:amanda/forest/moss_00: 1952 432
+:amanda/forest/bark_03: 1680 432
+:amanda/forest/bark_03: 1952 256
+:geoo/construction/stairs_ru_32.S: 1968 560
+:amanda/forest/bark_03: 1952 432
+:amanda/forest/bark_03: 2096 432
+:amanda/forest/bark_02: 1296 800
+:amanda/forest/bark_02: 1712 800
+:amanda/forest/bark_02: 2128 800
+:amanda/forest/bark_03: 1264 960
+:amanda/forest/bark_03: 2096 960
+:amanda/forest/bark_03: 1680 960
+:amanda/forest/bark_03: 1952 960
+:Group-1: 1984 976 rr
+:amanda/forest/bark_04: 1920 1136 frr
+:amanda/forest/bark_04: 2064 1136 frr
+:amanda/forest/bark_04: 1232 1136 frr
+:amanda/forest/bark_03: 1536 960
+:Group-1: 1568 976 rr
+:amanda/forest/bark_04: 1504 1136 frr
+:amanda/forest/bark_04: 1648 1136 frr
+$BEGIN_TILE_GROUP 2
+:amanda/forest/leaves_02: 0 25
+:amanda/forest/leaves_02: 112 25
+:amanda/forest/leaves_03: 64 -7
+:amanda/forest/leaves_02: 192 -7 rr
+:amanda/forest/leaves_02: 80 -7 rr
+:amanda/forest/leaves_03: 128 25 rr
+$END_TILE_GROUP
+:Group-2: 1440 144
+:amanda/forest/moss_00: 1600 144
+:amanda/forest/leaves_05: 2192 224
+:amanda/forest/leaves_05: 2160 224
+:Group-2: 1856 144
+:Group-2: 2272 144
+:Group-2: 2080 128
+:Group-2: 1264 128
+:Group-2: 1664 128
+:simon/tapir/032h: 1968 96 rd
+:amanda/forest/moss_00: 2416 144
+:geoo/construction/stairs_ru_32.S: 1392 544 frr
+:Group-1: 1728 272 f
+:Group-1: 2144 272 f
+:Group-1: 1312 272 f
+$BEGIN_TILE_GROUP 3
+:amanda/forest/rope: -5 0
+:amanda/forest/rope: -5 16
+:amanda/forest/rope: -5 32
+:amanda/forest/rope: -5 48
+:amanda/forest/rope: -5 64
+:amanda/forest/rope: -5 80
+:amanda/forest/rope: -5 96
+$END_TILE_GROUP
+:Group-3: 2064 368
+:Group-3: 1232 368
+:Group-3: 1648 368
+$BEGIN_TILE_GROUP 4
+:geoo/construction/platform.S: 0 0
+:geoo/construction/platform.S: 32 0
+:geoo/construction/platform.S: 64 0
+:geoo/construction/platform.S: 96 0
+:geoo/construction/platform.S: 64 0
+:geoo/construction/platform.S: 96 0
+:geoo/construction/platform.S: 128 0
+:geoo/construction/platform.S: 160 0
+$END_TILE_GROUP
+:Group-4: 1488 1152
+:Group-4: 1648 1152
+:Group-4: 1664 1168
+:Group-4: 1840 1152
+:Group-4: 2032 1152
+:Group-4: 1360 1152
+:Group-4: 2416 1152
+:Group-4: 2224 1152
+:geoo/construction/platform.S: 2336 160
+:geoo/construction/platform.S: 1472 128
+:geoo/construction/platform.S: 1488 160
+:geoo/construction/platform.S: 1520 160
+:geoo/construction/platform.S: 2304 160
+:geoo/construction/platform.S: 1920 160
+:geoo/construction/platform.S: 1888 160
+:amanda/forest/bark_02: 2384 368
+:geoo/construction/stairs_ru_32.S: 2096 896 f
+:geoo/construction/stairs_ru_32.S: 1264 896 f
+:geoo/construction/stairs_ru_32.S: 1680 896 f
+$BEGIN_TILE_GROUP 5
+:amanda/forest/rope: -5 0
+:amanda/forest/rope: -5 16
+:amanda/forest/rope: -5 32
+:amanda/forest/rope: -5 48
+:amanda/forest/rope: -5 64
+:amanda/forest/rope: -5 80
+$END_TILE_GROUP
+:Group-5: 1616 864
+:amanda/forest/rope: 2027 864
+:amanda/forest/rope: 2027 880
+:Group-5: 2448 864
+:geoo/construction/platform.S: 2272 128
+:geoo/construction/platform.S: 2256 128
+:geoo/construction/platform.S: 2224 160
+:geoo/construction/platform.S: 1440 128
+:geoo/construction/platform.S: 1408 160
+:geoo/construction/platform.S: 1856 128
+:geoo/construction/platform.S: 1840 128
+:geoo/construction/platform.S: 1808 160
+:simon/tapir/032h: 2384 96 rd
+:geoo/construction/platform.S: 2384 128 frrr
+:geoo/construction/platform.S: 1968 128 frrr
+:simon/tapir/032h: 1568 96 rd
+:geoo/construction/platform.S: 1568 128 frrr
+:geoo/construction/platform.S: 2352 160
+:geoo/construction/platform.S: 1536 160
+:geoo/construction/platform.S: 1936 160
+:simon/tapir/032h: 1904 128 d
+:simon/tapir/032h: 2320 128 d
+:simon/tapir/032h: 1504 128 d
+:simon/tapir/032h: 1408 96 rd
+:geoo/construction/platform.S: 1408 144 frrr
+:simon/tapir/032h: 1808 96 rd
+:geoo/construction/platform.S: 1808 144 frrr
+:simon/tapir/032h: 2224 96 rd
+:geoo/construction/platform.S: 2224 144 frrr
+:geoo/construction/stairs_ru_32.S: 1456 96
+:geoo/construction/stairs_ru_32.S: 1856 96
+:geoo/construction/stairs_ru_32.S: 2272 96
+:geoo/construction/stairs_ru_32.S: 2368 160 frr
+:geoo/construction/stairs_ru_32.S: 1952 160 frr
+:geoo/construction/stairs_ru_32.S: 1552 160 frr
+:amanda/forest/moss_00: 2000 144
+:amanda/forest/moss_00: 2448 144
+:amanda/forest/leaves_05: 1456 928
+:amanda/forest/leaves_05: 1872 928
+:amanda/forest/leaves_05: 1744 816
+:amanda/forest/leaves_05: 2160 816
+:amanda/forest/leaves_05: 1328 816
+:amanda/forest/leaves_05: 2160 800
+:amanda/forest/leaves_05: 1328 800
+:amanda/forest/leaves_05: 1744 800
+:amanda/forest/leaves_05: 1728 800
+:amanda/forest/leaves_05: 2144 800
+:amanda/forest/leaves_05: 1312 800
+:geoo/construction/stairs_ru_32.S: 1936 576
+:geoo/construction/stairs_ru_32.S: 2352 576
+:geoo/construction/stairs_ru_32.S: 1520 576
+:amanda/forest/bark_02: 1968 368
+:amanda/forest/bark_02: 1552 368
+$BEGIN_TILE_GROUP 6
+:geoo/construction/fence_32x32.S: 0 48
+:geoo/construction/fence_32x32.S: 32 32
+:geoo/construction/fence_32x32.S: 64 16
+:geoo/construction/fence_32x32.S: 96 0
+$END_TILE_GROUP
+:Group-6: 2288 672
+:geoo/construction/platform.S: 1280 272
+:geoo/construction/platform.S: 1248 272
+:geoo/construction/platform.S: 1696 272
+:geoo/construction/platform.S: 1664 272
+:geoo/construction/platform.S: 2112 272
+:geoo/construction/platform.S: 2080 272
+:amanda/forest/leaves_05: 2016 544
+:amanda/forest/leaves_05: 2432 544
+:amanda/forest/leaves_05: 1600 544
+:Group-0: 1680 1072
+:Group-0: 2096 1072
+:Group-0: 1264 1072
+:Group-6: 1872 672
+:geoo/construction/platform.S: 1504 432
+:geoo/construction/platform.S: 1920 432
+:geoo/construction/platform.S: 2336 432
+:geoo/construction/platform.S: 1888 432
+:geoo/construction/platform.S: 2304 432
+:geoo/construction/platform.S: 2272 432
+:geoo/construction/platform.S: 2240 432
+:geoo/construction/platform.S: 2208 432
+:geoo/construction/platform.S: 1856 432
+:geoo/construction/platform.S: 1824 432
+:geoo/construction/platform.S: 1792 432
+:geoo/construction/platform.S: 1472 432
+:geoo/construction/platform.S: 1440 432
+:geoo/construction/platform.S: 1408 432
+:geoo/construction/platform.S: 1376 432
+:Group-0: 2016 768
+:Group-0: 1600 768
+:Group-0: 2432 768
+:geoo/construction/platform.S: 1296 928
+:geoo/construction/platform.S: 1264 928
+:geoo/construction/platform.S: 1712 928
+:geoo/construction/platform.S: 1680 928
+:geoo/construction/platform.S: 2128 928
+:geoo/construction/platform.S: 2096 928
+:amanda/forest/fern_00: 32 544
+$BEGIN_TILE_GROUP 7
+:Group-6: 96 0
+:Group-6: 0 48
+$END_TILE_GROUP
+:Group-7: 1504 448 f
+:Group-7: 1920 448 f
+:Group-6: 1456 672
+$BEGIN_TILE_GROUP 8
+:amanda/forest/rope: -5 0
+:amanda/forest/rope: -5 16
+:amanda/forest/rope: -5 32
+:amanda/forest/rope: -5 48
+$END_TILE_GROUP
+:Group-8: 2032 896
+:simon/tapir/032h: 1808 48 rd
+:simon/tapir/032h: 1408 64 rd
+:simon/tapir/032h: 2224 64 rd
+:geoo/construction/platform.S: 1424 160
+:geoo/construction/platform.S: 2240 160
+:geoo/construction/platform.S: 1824 160
+:geoo/construction/platform.S: 1856 160
+:geoo/construction/platform.S: 1456 160
+:geoo/construction/platform.S: 2272 160
+:geoo/construction/stairs_ru_32.S: 2416 64
+:geoo/construction/stairs_ru_32.S: 1600 64
+:geoo/construction/stairs_ru_32.S: 2000 64
+:geoo/construction/platform.S: 1920 96
+:geoo/construction/platform.S: 2336 96
+:geoo/construction/platform.S: 1520 96
+:geoo/construction/platform.S: 1232 64
+:geoo/construction/platform.S: 1664 64
+:geoo/construction/platform.S: 2064 64
+:simon/tapir/032h: 1822 64 rd
+:simon/tapir/032h: 1424 64 rd
+:simon/tapir/032h: 2240 64 rd
+:simon/tapir/032h: 1360 96 rrd
+:simon/tapir/032h: 1344 112 rrd
+:simon/tapir/032h: 1776 48 rrrd
+:simon/tapir/032h: 1760 112 d
+:amanda/forest/leaves_05: 1722 96
+:simon/tapir/032h: 2192 96 rrd
+:simon/tapir/032h: 2160 112 rrd
+:amanda/forest/leaves_05: 2120 98
+:amanda/forest/leaves_05: 1300 102
+:amanda/forest/bark_03: 2368 960
+:amanda/forest/bark_04: 2336 1136 frr
+:Group-1: 2400 976 rr
+:amanda/forest/moss_00: 2432 544
+:amanda/forest/moss_00: 1600 544
+:amanda/forest/moss_00: 2016 544
+:amanda/forest/leaves_05: 608 112
+:amanda/forest/leaves_05: 608 96
+:amanda/forest/leaves_03: 960 64
+:amanda/forest/leaves_03: 144 64
+:amanda/forest/leaves_03: 544 64
+:amanda/forest/moss_00: 848 400
+:amanda/forest/moss_00: 432 400
+:amanda/forest/moss_00: 16 400
+:amanda/forest/bark_03: 848 256
+:amanda/forest/bark_03: 1120 256
+:amanda/forest/leaves_05: 96 224
+:amanda/forest/leaves_05: 112 224
+:amanda/forest/leaves_05: 144 224
+:amanda/forest/leaves_05: 128 224
+:amanda/forest/leaves_05: 160 224
+:amanda/forest/leaves_05: 560 224
+:amanda/forest/leaves_05: 544 224
+:amanda/forest/leaves_05: 528 224
+:amanda/forest/leaves_05: 496 224
+:amanda/forest/leaves_05: 976 224
+:amanda/forest/leaves_05: 960 224
+:amanda/forest/leaves_05: 928 224
+:amanda/forest/fern_00: 912 544
+:amanda/forest/fern_00: 864 544
+:amanda/forest/fern_00: 496 544
+:amanda/forest/fern_00: 80 544
+:amanda/forest/fern_00: 912 1056
+:amanda/forest/fern_00: 512 1056
+:amanda/forest/fern_00: 464 1056
+:amanda/forest/moss_00: 640 928
+:amanda/forest/moss_00: 224 928
+:amanda/forest/moss_00: 1056 928
+:amanda/forest/fern_00: 448 544
+:Group-0: 448 544
+:Group-0: 864 544
+:Group-0: 32 544
+:amanda/forest/bark_03: 16 432
+:Group-7: 2336 448 f
+:amanda/forest/leaves_03: 1216 80
+:amanda/forest/leaves_03: 400 80
+:amanda/forest/leaves_05: 832 144
+:amanda/forest/leaves_03: 800 80
+:amanda/forest/leaves_05: 800 144
+:amanda/forest/leaves_03: 1232 80
+:amanda/forest/leaves_05: 1216 144
+:amanda/forest/leaves_05: 0 144
+:amanda/forest/leaves_05: 416 144
+:amanda/forest/leaves_05: 384 144
+:amanda/forest/moss_00: 720 144
+:amanda/forest/moss_00: 1136 144
+:amanda/forest/moss_00: 320 144
+:amanda/forest/fern_00: 96 1056
+:amanda/forest/fern_00: 48 1056
+:amanda/forest/fern_00: 864 1056
+:Group-1: 48 704 f
+:Group-1: 880 704 f
+:Group-1: 464 704 f
+:amanda/forest/bark_00: 240 928 rrr
+:amanda/forest/bark_00: 656 928 rrr
+:amanda/forest/bark_00: 1072 928 rrr
+:geoo/construction/stairs_ru_32.S: 1056 944 f
+:amanda/forest/leaves_05: 1040 928
+:geoo/construction/stairs_ru_32.S: 572 544 f
+:geoo/construction/stairs_ru_32.S: 560 640
+:geoo/construction/stairs_ru_32.S: 144 640
+:geoo/construction/stairs_ru_32.S: 976 544 frr
+:geoo/construction/stairs_ru_32.S: 976 640
+:geoo/construction/stairs_ru_32.S: 1136 560
+:amanda/forest/bark_03: 704 608
+:geoo/construction/stairs_ru_32.S: 640 944 f
+:amanda/forest/bark_03: 704 784
+:amanda/forest/bark_03: 288 608
+:geoo/construction/stairs_ru_32.S: 224 944 f
+:amanda/forest/bark_03: 288 784
+:amanda/forest/bark_03: 432 608
+:amanda/forest/bark_03: 432 784
+:Group-1: 240 800 f
+:amanda/forest/bark_03: 16 608
+:amanda/forest/bark_03: 16 784
+:amanda/forest/bark_03: 848 608
+:amanda/forest/bark_03: 848 784
+:Group-1: 656 800 f
+:amanda/forest/bark_03: 1120 608
+:amanda/forest/bark_03: 1120 784
+:Group-1: 1072 800 f
+:amanda/forest/bark_02: 1088 416 fr
+:amanda/forest/moss_00: 1120 432
+:amanda/forest/bark_02: 1072 448 fr
+:amanda/forest/bark_03: 1120 432
+:amanda/forest/bark_03: 16 256
+:amanda/forest/moss_00: 288 432
+:amanda/forest/bark_02: 240 448 fr
+:amanda/forest/bark_02: 256 416 fr
+:amanda/forest/bark_03: 288 256
+:geoo/construction/stairs_ru_32.S: 304 560
+:amanda/forest/bark_03: 288 432
+:amanda/forest/bark_03: 432 256
+:amanda/forest/bark_02: 672 416 fr
+:amanda/forest/bark_02: 656 448 fr
+:amanda/forest/moss_00: 704 432
+:amanda/forest/bark_03: 432 432
+:amanda/forest/bark_03: 704 256
+:geoo/construction/stairs_ru_32.S: 720 560
+:amanda/forest/bark_03: 704 432
+:amanda/forest/bark_03: 848 432
+:amanda/forest/bark_02: 48 800
+:amanda/forest/bark_02: 464 800
+:amanda/forest/bark_02: 880 800
+:amanda/forest/bark_03: 16 960
+:amanda/forest/bark_03: 848 960
+:amanda/forest/bark_03: 432 960
+:amanda/forest/bark_03: 704 960
+:Group-1: 736 976 rr
+:amanda/forest/bark_04: 672 1136 frr
+:amanda/forest/bark_04: 816 1136 frr
+:amanda/forest/bark_04: 1232 1136 frr
+:amanda/forest/bark_03: 288 960
+:Group-1: 320 976 rr
+:amanda/forest/bark_04: 256 1136 frr
+:amanda/forest/bark_04: 400 1136 frr
+:Group-2: 192 144
+:amanda/forest/moss_00: 352 144
+:amanda/forest/leaves_05: 944 224
+:amanda/forest/leaves_05: 912 224
+:Group-2: 608 144
+:Group-2: 1024 144
+:Group-2: 832 128
+:Group-2: 16 128
+:Group-2: 416 128
+:simon/tapir/032h: 720 96 rd
+:amanda/forest/moss_00: 1168 144
+:geoo/construction/stairs_ru_32.S: 144 544 frr
+:Group-1: 480 272 f
+:Group-1: 896 272 f
+:Group-1: 64 272 f
+:Group-3: 816 368
+:Group-3: 1232 368
+:Group-3: 400 368
+:Group-4: 240 1152
+:Group-4: 400 1152
+:Group-4: 416 1168
+:Group-4: 592 1152
+:Group-4: 784 1152
+:Group-4: 112 1152
+:Group-4: 1168 1152
+:Group-4: 976 1152
+:geoo/construction/platform.S: 1088 160
+:geoo/construction/platform.S: 224 128
+:geoo/construction/platform.S: 240 160
+:geoo/construction/platform.S: 272 160
+:geoo/construction/platform.S: 1056 160
+:geoo/construction/platform.S: 672 160
+:geoo/construction/platform.S: 640 160
+:amanda/forest/bark_02: 1136 368
+:geoo/construction/stairs_ru_32.S: 848 896 f
+:geoo/construction/stairs_ru_32.S: 16 896 f
+:geoo/construction/stairs_ru_32.S: 432 896 f
+:Group-5: 368 864
+:amanda/forest/rope: 779 864
+:amanda/forest/rope: 779 880
+:Group-5: 1200 864
+:geoo/construction/platform.S: 1024 128
+:geoo/construction/platform.S: 1008 128
+:geoo/construction/platform.S: 976 160
+:geoo/construction/platform.S: 192 128
+:geoo/construction/platform.S: 160 160
+:geoo/construction/platform.S: 608 128
+:geoo/construction/platform.S: 592 128
+:geoo/construction/platform.S: 560 160
+:simon/tapir/032h: 1136 96 rd
+:geoo/construction/platform.S: 1136 128 frrr
+:geoo/construction/platform.S: 720 128 frrr
+:simon/tapir/032h: 320 96 rd
+:geoo/construction/platform.S: 320 128 frrr
+:geoo/construction/platform.S: 1104 160
+:geoo/construction/platform.S: 288 160
+:geoo/construction/platform.S: 688 160
+:simon/tapir/032h: 656 128 d
+:simon/tapir/032h: 1072 128 d
+:simon/tapir/032h: 256 128 d
+:simon/tapir/032h: 160 96 rd
+:geoo/construction/platform.S: 160 144 frrr
+:simon/tapir/032h: 560 96 rd
+:geoo/construction/platform.S: 560 144 frrr
+:simon/tapir/032h: 976 96 rd
+:geoo/construction/platform.S: 976 144 frrr
+:geoo/construction/stairs_ru_32.S: 208 96
+:geoo/construction/stairs_ru_32.S: 608 96
+:geoo/construction/stairs_ru_32.S: 1024 96
+:geoo/construction/stairs_ru_32.S: 1120 160 frr
+:geoo/construction/stairs_ru_32.S: 704 160 frr
+:geoo/construction/stairs_ru_32.S: 304 160 frr
+:amanda/forest/moss_00: 752 144
+:amanda/forest/moss_00: 1200 144
+:amanda/forest/leaves_05: 208 928
+:amanda/forest/leaves_05: 624 928
+:amanda/forest/leaves_05: 496 816
+:amanda/forest/leaves_05: 912 816
+:amanda/forest/leaves_05: 80 816
+:amanda/forest/leaves_05: 912 800
+:amanda/forest/leaves_05: 80 800
+:amanda/forest/leaves_05: 496 800
+:amanda/forest/leaves_05: 480 800
+:amanda/forest/leaves_05: 896 800
+:amanda/forest/leaves_05: 64 800
+:geoo/construction/stairs_ru_32.S: 688 576
+:geoo/construction/stairs_ru_32.S: 1104 576
+:geoo/construction/stairs_ru_32.S: 272 576
+:amanda/forest/bark_02: 720 368
+:amanda/forest/bark_02: 304 368
+:Group-6: 1040 672
+:geoo/construction/platform.S: 32 272
+:geoo/construction/platform.S: 0 272
+:geoo/construction/platform.S: 448 272
+:geoo/construction/platform.S: 416 272
+:geoo/construction/platform.S: 864 272
+:geoo/construction/platform.S: 832 272
+:amanda/forest/leaves_05: 768 544
+:amanda/forest/leaves_05: 1184 544
+:amanda/forest/leaves_05: 352 544
+:Group-0: 432 1072
+:Group-0: 848 1072
+:Group-0: 16 1072
+:Group-6: 624 672
+:geoo/construction/platform.S: 256 432
+:geoo/construction/platform.S: 672 432
+:geoo/construction/platform.S: 1088 432
+:geoo/construction/platform.S: 640 432
+:geoo/construction/platform.S: 1056 432
+:geoo/construction/platform.S: 1024 432
+:geoo/construction/platform.S: 992 432
+:geoo/construction/platform.S: 960 432
+:geoo/construction/platform.S: 608 432
+:geoo/construction/platform.S: 576 432
+:geoo/construction/platform.S: 544 432
+:geoo/construction/platform.S: 224 432
+:geoo/construction/platform.S: 192 432
+:geoo/construction/platform.S: 160 432
+:geoo/construction/platform.S: 128 432
+:Group-0: 768 768
+:Group-0: 352 768
+:Group-0: 1184 768
+:geoo/construction/platform.S: 48 928
+:geoo/construction/platform.S: 16 928
+:geoo/construction/platform.S: 464 928
+:geoo/construction/platform.S: 432 928
+:geoo/construction/platform.S: 880 928
+:geoo/construction/platform.S: 848 928
+:Group-7: 1088 448 f
+:Group-7: 256 448 f
+:Group-7: 672 448 f
+:Group-6: 208 672
+:Group-8: 784 896
+:simon/tapir/032h: 560 48 rd
+:simon/tapir/032h: 160 64 rd
+:simon/tapir/032h: 976 64 rd
+:geoo/construction/platform.S: 176 160
+:geoo/construction/platform.S: 992 160
+:geoo/construction/platform.S: 576 160
+:geoo/construction/platform.S: 608 160
+:geoo/construction/platform.S: 208 160
+:geoo/construction/platform.S: 1024 160
+:geoo/construction/stairs_ru_32.S: 1168 64
+:geoo/construction/stairs_ru_32.S: 352 64
+:geoo/construction/stairs_ru_32.S: 752 64
+:geoo/construction/platform.S: 672 96
+:geoo/construction/platform.S: 1088 96
+:geoo/construction/platform.S: 272 96
+:geoo/construction/platform.S: 1232 64
+:geoo/construction/platform.S: 416 64
+:geoo/construction/platform.S: 816 64
+:simon/tapir/032h: 574 64 rd
+:simon/tapir/032h: 176 64 rd
+:simon/tapir/032h: 992 64 rd
+:simon/tapir/032h: 112 96 rrd
+:simon/tapir/032h: 96 112 rrd
+:simon/tapir/032h: 528 48 rrrd
+:simon/tapir/032h: 512 112 d
+:amanda/forest/leaves_05: 474 96
+:simon/tapir/032h: 944 96 rrd
+:simon/tapir/032h: 912 112 rrd
+:amanda/forest/leaves_05: 872 98
+:amanda/forest/leaves_05: 52 102
+:amanda/forest/bark_03: 1120 960
+:amanda/forest/bark_04: 1088 1136 frr
+:Group-1: 1152 976 rr
+:amanda/forest/moss_00: 1184 544
+:amanda/forest/moss_00: 352 544
+:amanda/forest/moss_00: 768 544

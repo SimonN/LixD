@@ -1,0 +1,184 @@
+$BUILT 2017-08-28 14:20:09
+$AUTHOR Rubix
+$ENGLISH Air Traffic Control (2p / Team)
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1920
+#SIZE_Y 400
+
+#INITIAL 80
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+
+#WALKER 199
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 5
+#BLOCKER 30
+#BUILDER 99
+#PLATFORMER 33
+#BASHER 50
+#MINER 50
+#DIGGER 25
+#JUMPER 199
+#BATTER 99
+#CUBER 10
+
+:geoo/construction/Hatch.H: 0 0
+:geoo/construction/Hatch.H: 1888 0 r
+
+:matt/marble/Goal.G: 1776 176
+:matt/marble/Goal.G: 80 176
+
+:simon/water.W: 0 352
+:simon/water.W: 48 352
+:simon/water.W: 96 352
+:simon/water.W: 144 352
+:simon/water.W: 192 352
+:simon/water.W: 240 352
+:simon/water.W: 288 352
+:simon/water.W: 336 352
+:simon/water.W: 384 352
+:simon/water.W: 432 352
+:simon/water.W: 480 352
+:simon/water.W: 528 352
+:simon/water.W: 576 352
+:simon/water.W: 624 352
+:simon/water.W: 672 352
+:simon/water.W: 720 352
+:simon/water.W: 768 352
+:simon/water.W: 816 352
+:simon/water.W: 864 352
+:simon/water.W: 912 352
+:simon/water.W: 960 352
+:simon/water.W: 1008 352
+:simon/water.W: 1056 352
+:simon/water.W: 1104 352
+:simon/water.W: 1152 352
+:simon/water.W: 1200 352
+:simon/water.W: 1248 352
+:simon/water.W: 1296 352
+:simon/water.W: 1344 352
+:simon/water.W: 1392 352
+:simon/water.W: 1440 352
+:simon/water.W: 1488 352
+:simon/water.W: 1536 352
+:simon/water.W: 1584 352
+:simon/water.W: 1632 352
+:simon/water.W: 1680 352
+:simon/water.W: 1728 352
+:simon/water.W: 1776 352
+:simon/water.W: 1824 352
+:simon/water.W: 1872 352
+
+:matt/marble/25a: 896 272 rr
+:matt/marble/25b: 0 96 r
+:matt/marble/25b: 0 128 rr
+:matt/marble/25b: 32 224 rrr
+:matt/marble/25b: 432 96 r
+:matt/marble/25b: 1632 96 r
+:matt/marble/25b: 1360 96 r
+:matt/marble/25b: 1792 96 r
+:matt/marble/25b: 1216 96 r
+:matt/marble/25b: 576 96 r
+:matt/marble/25b: 1888 128 rr
+:matt/marble/25b: 1760 224 r
+:matt/marble/25b: 1632 224 r
+:matt/marble/25b: 1600 224 rr
+:matt/marble/25b: 160 224 r
+:matt/marble/25b: 288 224 rr
+:matt/marble/25b: 928 144 rr
+:matt/marble/25b: 960 144 rr
+:matt/marble/25a: 720 96 r
+:matt/marble/25a: 1056 96 r
+:matt/marble/25a: 944 16 rr
+:matt/marble/25a: 992 272 rr
+:matt/marble/25a: 960 272 rr
+:matt/marble/25a: 928 272 rr
+:geoo/steel/32x64o.S: 1600 80
+:geoo/steel/32x64o.S: 1728 80
+:geoo/steel/dark_48x32o.S: 1632 96
+:geoo/steel/dark_48x32o.S: 1680 96
+:matt/marble/25b: 192 96 r
+:geoo/steel/32x64o.S: 160 80
+:geoo/steel/32x64o.S: 288 80
+:geoo/steel/dark_48x32o.S: 192 96
+:geoo/steel/dark_48x32o.S: 240 96
+:geoo/steel/dark_48x32o.S: 320 96
+:geoo/steel/dark_48x32o.S: 368 96
+:geoo/steel/dark_48x32o.S: 1504 96
+:geoo/steel/dark_48x32o.S: 1552 96
+:matt/marble/25: 784 176 r
+:matt/marble/25: 1008 176 r
+:matt/marble/25b: 1088 96 r
+:geoo/steel/32x64o.S: 1056 80
+:geoo/steel/32x64o.S: 1184 80
+:geoo/steel/dark_48x32o.S: 1088 96
+:geoo/steel/dark_48x32o.S: 1136 96
+:matt/marble/25b: 736 96 r
+:geoo/steel/32x64o.S: 704 80
+:geoo/steel/32x64o.S: 832 80
+:geoo/steel/dark_48x32o.S: 736 96
+:geoo/steel/dark_48x32o.S: 784 96
+:geoo/construction/stairs_ru_32.S: 864 80 f
+:geoo/construction/stairs_ru_32.S: 984 80
+:matt/marble/25: 656 208 r
+:matt/marble/25: 1136 208 r
+:matt/marble/25b: 1328 240 r
+:geoo/steel/32x64o.S: 1424 224
+:geoo/steel/dark_48x32o.S: 1328 240
+:geoo/steel/dark_48x32o.S: 1376 240
+:matt/marble/25a: 464 240 r
+:geoo/steel/32x64o.S: 464 224
+:geoo/steel/dark_48x32o.S: 496 240
+:geoo/steel/dark_48x32o.S: 544 240
+:matt/marble/25b: 320 240 rr
+:matt/marble/25b: 352 256 rr
+:matt/marble/25b: 1536 256 rr
+:matt/marble/25b: 1568 240 rr
+:geoo/steel/dark_48x32o.S: 1216 208
+:geoo/steel/dark_48x32o.S: 1088 176
+:geoo/steel/dark_48x32o.S: 784 176
+:geoo/steel/dark_48x32o.S: 656 208
+:geoo/steel/32x64o.S: 1888 192
+:geoo/steel/32x64o.S: 0 192
+:geoo/steel/32x64o.S: 32 224 r
+:geoo/steel/32x64o.S: 1824 224 r
+:geoo/steel/32x64o.S: 1760 224 r
+:geoo/steel/32x64o.S: 96 224 r
+:matt/marble/25a: 1040 304 r
+:matt/marble/25b: 1072 304 r
+:geoo/steel/32x64o.S: 1040 288
+:geoo/steel/32x64o.S: 1168 288
+:geoo/steel/dark_48x32o.S: 1072 304
+:geoo/steel/dark_48x32o.S: 1120 304
+:matt/marble/25a: 720 304 r
+:matt/marble/25b: 752 304 r
+:geoo/steel/32x64o.S: 720 288
+:geoo/steel/32x64o.S: 848 288
+:geoo/steel/dark_48x32o.S: 752 304
+:geoo/steel/dark_48x32o.S: 800 304
+:geoo/construction/stairs_ru_32.S: 1256 240
+:geoo/construction/stairs_ru_32.S: 592 240 f
+:matt/marble/25b: 1504 272 rr
+:matt/marble/25b: 384 272 rr
+:geoo/construction/fence_32x32.S: 1504 288
+:geoo/construction/fence_32x32.S: 1536 272
+:geoo/construction/fence_32x32.S: 1568 256
+:geoo/construction/fence_32x32.S: 1600 240
+:geoo/construction/fence_32x32.S: 1728 224
+:geoo/construction/fence_32x32.S: 160 224
+:geoo/construction/fence_32x32.S: 288 240
+:geoo/construction/fence_32x32.S: 320 256
+:geoo/construction/fence_32x32.S: 352 272
+:geoo/construction/fence_32x32.S: 384 288
+:geoo/construction/fence_32x32.S: 432 224
+:geoo/construction/fence_32x32.S: 1456 224
+:geoo/steel/32x64o.S: 928 304 r
+:geoo/steel/32x64o.S: 1360 96 r
+:geoo/steel/32x64o.S: 1280 128 r
+:geoo/steel/32x64o.S: 496 96 r
+:geoo/steel/32x64o.S: 576 128 r
+:geoo/steel/dark_48x32o.S: 0 144 r
+:geoo/steel/dark_48x32o.S: 1888 144 r
