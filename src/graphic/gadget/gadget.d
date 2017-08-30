@@ -16,6 +16,7 @@ module graphic.gadget.gadget;
  * Consider making a subclass for that.
  */
 
+import std.algorithm;
 import std.conv;
 
 import basics.help;
@@ -29,7 +30,10 @@ import graphic.torbit;
 import tile.phymap;
 import tile.occur;
 import tile.gadtile;
-import hardware.sound;
+
+public alias Water     = Gadget;
+public alias Fire      = Gadget;
+public alias FlingPerm = Gadget;
 
 package immutable string StandardGadgetCtor =
     "this(const(Topology) top, in ref GadOcc levelpos)
@@ -40,7 +44,6 @@ package immutable string StandardGadgetCtor =
 class Gadget : Graphic {
 public:
     const(GadgetTile) tile;
-    const(int) animationLength;
 
 protected:
     // protected, use the factory to generate gadgets of the correct subclass
@@ -52,14 +55,6 @@ protected:
     body {
         super(levelpos.tile.cb, top, levelpos.loc);
         tile = levelpos.tile;
-        animationLength = delegate() {
-            if (levelpos.tile.cb is null)
-                return 1;
-            for (int i = 0; i < levelpos.tile.cb.xfs; ++i)
-                if (! levelpos.tile.cb.frameExists(i, 0))
-                    return i;
-            return levelpos.tile.cb.xfs;
-        }();
     }
 
 public:
@@ -87,15 +82,18 @@ public:
     }
     body {
         super(rhs);
-        tile               = rhs.tile;
-        animationLength    = rhs.animationLength;
+        tile = rhs.tile;
     }
-
-    @property Sound sound() { return Sound.NOTHING; }
 
     void animateForPhyu(in Phyu upd)
     {
-        xf = positiveMod(upd, animationLength);
+        // Most graphics have only one animation. This can be in a row,
+        // in column, or in a rectangular sheet. We traverse a rectangular
+        // sheet row-majorly, like we read a western book.
+        // The rectangular sheet solves github issues #4 and #213 about
+        // graphics card limitation with Amanda's tar.
+        xf = positiveMod(upd, xfs);
+        yf = positiveMod(upd / xfs, yfs);
     }
 
     protected void drawInner() const { } // override if necessary

@@ -78,8 +78,8 @@ void prepareGadgets(GameState state, in Level level)
     instantiateGadgetsFromArray(state.goals,    GadType.GOAL);
     instantiateGadgetsFromArray(state.traps,    GadType.TRAP);
     instantiateGadgetsFromArray(state.waters,   GadType.WATER);
-    instantiateGadgetsFromArray(state.flingers, GadType.FLINGTRIG);
-    instantiateGadgetsFromArray(state.flingers, GadType.FLINGPERM);
+    instantiateGadgetsFromArray(state.flingPerms, GadType.FLINGPERM);
+    instantiateGadgetsFromArray(state.flingTrigs, GadType.FLINGTRIG);
 }
 
 void assignTribesToGoals(GameState state,

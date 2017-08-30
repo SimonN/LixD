@@ -84,8 +84,8 @@ public:
         return (_rot == 0 || _rot == 2) ? cutbit.yl : cutbit.xl;
     }
 
-    @property int xfs() const { return cutbit ? cutbit.xfs : 0; }
-    @property int yfs() const { return cutbit ? cutbit.yfs : 0; }
+    @property int xfs() const { return cutbit ? cutbit.xfs : 1; }
+    @property int yfs() const { return cutbit ? cutbit.yfs : 1; }
 
     bool isLastFrame() const
     {

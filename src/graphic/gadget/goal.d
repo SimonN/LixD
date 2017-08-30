@@ -2,7 +2,6 @@ module graphic.gadget.goal;
 
 import std.algorithm; // max
 
-import basics.help;
 import basics.globals; // fileImageMouse
 import basics.help; // len
 import basics.topology;

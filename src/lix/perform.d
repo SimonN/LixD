@@ -3,6 +3,7 @@ module lix.perform;
 import std.algorithm; // find
 import std.conv;
 import std.math; // sqrt
+import std.range;
 
 import tile.phymap;
 import game.tribe;
@@ -54,15 +55,15 @@ void useNonconstantTraps(Lixxie lixxie) { with (lixxie)
 
 
 
-void useFlingers(Lixxie lixxie) { with (lixxie)
+void useFlingers(Lixxie lixxie) { with (lixxie) with (outsideWorld.state)
 {
     if (! (bodyEncounters & Phybit.fling) || ! healthy)
         return;
-    foreach (Flinger fl; outsideWorld.state.flingers) {
-        if (! inTriggerArea(fl) ||
-            ! fl.isOpenFor(outsideWorld.state.update, style))
-            continue;
-        fl.feed(outsideWorld.state.update, style);
+    auto encounteredOpenFlingers = chain(flingTrigs
+            .filter!(fl => inTriggerArea(fl) && fl.isOpenFor(update, style))
+            .tee!(fl => fl.feed(update, style)),
+        outsideWorld.state.flingPerms.filter!(fl => inTriggerArea(fl)));
+    foreach (Gadget fl; encounteredOpenFlingers) {
         assert (fl.tile);
         addFling(fl.tile.subtype & 1 ? fl.tile.specialX // force direction
                                      : fl.tile.specialX * lixxie.dir,

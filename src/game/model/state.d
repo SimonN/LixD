@@ -42,7 +42,8 @@ public:
     Goal[] goals;
     Water[] waters;
     TrapTrig[] traps;
-    Flinger[] flingers;
+    FlingPerm[] flingPerms;
+    FlingTrig[] flingTrigs;
 
     Torbit land;
     Phymap lookup;
@@ -79,20 +80,15 @@ public:
 
     int numTribes() const @nogc { return tribes.length & 0xFFFF; }
 
+    // With dmd 2.0715.1, inout doesn't seem to work for this.
+    // Let's duplicate the function, once for const, once for mutable.
+    void foreachConstGadget(void delegate(const(Gadget)) func) const
+    {
+        chain(hatches, goals, waters, traps, flingPerms, flingTrigs).each!func;
+    }
     void foreachGadget(void delegate(Gadget) func)
     {
-        chain(hatches, goals, waters, traps, flingers).each!func;
-    }
-
-    // It's sad that I need the duplication of this function, but inout
-    // didn't work with delegates. No idea if it's me or D.
-    void foreachConstGadget(void delegate(const Gadget) func) const
-    {
-        foreach (g; hatches) func(g);
-        foreach (g; goals) func(g);
-        foreach (g; waters) func(g);
-        foreach (g; traps) func(g);
-        foreach (g; flingers) func(g);
+        chain(hatches, goals, waters, traps, flingPerms, flingTrigs).each!func;
     }
 
     void drawAllGadgets()
@@ -163,7 +159,8 @@ private:
         goals    = basics.help.clone(rhs.goals);
         waters   = basics.help.clone(rhs.waters);
         traps    = basics.help.clone(rhs.traps);
-        flingers = basics.help.clone(rhs.flingers);
+        flingPerms = basics.help.clone(rhs.flingPerms);
+        flingTrigs = basics.help.clone(rhs.flingTrigs);
 
         // Deep-clone this by hand, I haven't written a generic clone for AAs
         // Don't start with (tribes = null;) because rhs could be this.

@@ -19,34 +19,27 @@ module graphic.gadget.openfor;
  * into frame 0 and show frame 0 at least once between two eatings.
  */
 
-import basics.help;
 import net.repdata;
 import basics.topology;
 import graphic.gadget;
-import graphic.torbit;
 import tile.occur;
-import tile.gadtile;
-import hardware.sound;
 import net.style;
 
-public alias Water     = PermanentlyOpen;
-public alias Fire      = PermanentlyOpen;
-public alias FlingPerm = PermanentlyOpen;
-
 public alias TrapTrig  = GadgetAnimsOnFeed;
-public alias FlingTrig = GadgetAnimsOnFeed;
-public alias Flinger   = GadgetAnimsOnFeed; // both FlingPerm and FlingTrig
+public alias FlingTrig = GadgetAnimsOnFeed; // see gadget.d for FlingPerm
 
 private class GadgetAnimsOnFeed : GadgetWithTribeList {
-    Phyu wasFedDuringPhyu;
-    immutable int idleAnimLength;
-    immutable int eatingAnimLength;
+private:
+    Phyu _lastFed;
+    immutable int _idleAnimLen;
+    immutable int _eatingAnimLen;
 
+public:
     this(const(Topology) top, in ref GadOcc levelpos)
-    out { assert (idleAnimLength >= 1); }
+    out { assert (_idleAnimLen >= 1); }
     body {
         super(top, levelpos);
-        idleAnimLength = delegate() {
+        _idleAnimLen = delegate() {
             if (! tile || ! tile.cb || ! tile.cb.frameExists(0, 0))
                 return 1;
             for (int i = 0; i < tile.cb.xfs; ++i)
@@ -54,11 +47,11 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
                     return i;
             return tile.cb.xfs;
         }();
-        eatingAnimLength = delegate() {
+        _eatingAnimLen = delegate() {
             if (! tile || ! tile.cb)
                 return 1;
             else if (tile.cb.yfs == 1)
-                return tile.cb.xfs - 1;
+                return tile.cb.xfs - 1; // only for physics compatibility
             else for (int i = 0; i < tile.cb.xfs; ++i)
                 if (! tile.cb.frameExists(i, 1))
                     return i;
@@ -69,9 +62,9 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
     this(in GadgetAnimsOnFeed rhs)
     {
         super(rhs);
-        wasFedDuringPhyu = rhs.wasFedDuringPhyu;
-        idleAnimLength   = rhs.idleAnimLength;
-        eatingAnimLength = rhs.eatingAnimLength;
+        _lastFed = rhs._lastFed;
+        _idleAnimLen = rhs._idleAnimLen;
+        _eatingAnimLen = rhs._eatingAnimLen;
     }
 
     override GadgetAnimsOnFeed clone() const
@@ -83,7 +76,7 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
     {
         // During a single update, the gadget can eat a lix from each tribe.
         // This is fairest in multiplayer.
-        if (wasFedDuringPhyu == upd)
+        if (_lastFed == upd)
             return ! hasTribe(st);
         else
             return ! isEating(upd);
@@ -91,7 +84,7 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
 
     bool isEating(in Phyu upd) const
     {
-        assert (upd >= wasFedDuringPhyu, "relics from the future");
+        assert (upd >= _lastFed, "relics from the future");
         return upd < firstIdlingPhyuAfterEating;
     }
 
@@ -99,18 +92,18 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
     {
         assert (isOpenFor(upd, st), "don't feed what it's not open for");
         super.addTribe(st);
-        wasFedDuringPhyu = upd;
+        _lastFed = upd;
     }
 
     override void animateForPhyu(in Phyu upd)
     {
         if (isEating(upd)) {
             yf = 1;
-            xf = upd - wasFedDuringPhyu;
+            xf = upd - _lastFed;
         }
         else {
             yf = 0;
-            xf = (upd - firstIdlingPhyuAfterEating) % idleAnimLength;
+            xf = (upd - firstIdlingPhyuAfterEating) % _idleAnimLen;
         }
         clearTribes();
     }
@@ -118,31 +111,7 @@ private class GadgetAnimsOnFeed : GadgetWithTribeList {
 private:
     Phyu firstIdlingPhyuAfterEating() const
     {
-        return wasFedDuringPhyu == 0 ? Phyu(0) // never eaten anything
-            : Phyu(wasFedDuringPhyu + eatingAnimLength);
+        return _lastFed == 0 ? Phyu(0) // never eaten anything
+            : Phyu(_lastFed + _eatingAnimLen);
     }
 }
-// end class GadgetAnimsOnFeed
-
-private class PermanentlyOpen : GadgetAnimsOnFeed {
-
-    mixin (StandardGadgetCtor);
-
-    override PermanentlyOpen clone() const { return new PermanentlyOpen(this);}
-    this(in PermanentlyOpen rhs) { super(rhs); }
-
-    override bool isOpenFor(in Phyu, in Style) const { return true; }
-
-    override void animateForPhyu(in Phyu upd)
-    {
-        Gadget.animateForPhyu(upd); // the constantly looping animation
-    }
-
-    override @property Sound sound()
-    {
-        return tile.type != GadType.WATER ? Sound.NOTHING // perm. flinger
-             : tile.subtype == 0           ? Sound.WATER
-             :                               Sound.FIRE;
-    }
-}
-// end class PermanentAnim
