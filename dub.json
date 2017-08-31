@@ -36,9 +36,19 @@
         "debug": {
             "buildOptions": ["debugMode", "debugInfo"],
         },
+        "debugXDG": {
+            "versions": ["useXDGBaseDirs"],
+            "buildOptions": ["debugMode", "debugInfo"],
+        },
+        "releaseXDG": {
+            "versions": ["useXDGBaseDirs"],
+            "buildOptions": ["releaseMode", "optimize",
+                             "inline", "noBoundsCheck"],
+        },
         "profile": {
-            "buildOptions": ["optimize", "inline", "releaseMode"],
             "versions": ["tharsisprofiling"],
+            "buildOptions": ["releaseMode", "optimize",
+                             "inline", "noBoundsCheck"],
         },
     },
 }

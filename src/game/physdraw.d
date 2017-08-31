@@ -472,6 +472,9 @@ private:
 
 
 
+    // Blergh function, it's gotten too long. It generates several masks
+    // and colorful bricks on the (_mask) bitmap. Maybe outsource to extra
+    // file and refactor into smaller private functions.
     static void
     initialize()
     {
@@ -494,7 +497,10 @@ private:
         al_clear_to_color(color.transp);
 
         Albit recol = getInternal(basics.globals.fileImageStyleRecol).albit;
-        assert (recol, "we lack the recoloring bitmap");
+        if (! recol)
+            throw new Exception("We lack the recoloring bitmap. "
+                ~ "Is Lix installed properly? We're looking for: `"
+                ~ basics.globals.fileImageStyleRecol.rootless ~ "'.");
         immutable int recolXl = al_get_bitmap_width (recol);
         immutable int recolYl = al_get_bitmap_height(recol);
         assert (recolXl >= 3);

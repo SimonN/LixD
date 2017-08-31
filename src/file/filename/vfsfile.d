@@ -22,13 +22,17 @@ import std.stdio; // File
 
 import basics.help;
 import file.filename.base;
+import file.filename.fhs;
 
 public alias VfsFilename = immutable(_VfsFilename);
 
-// You should call this before you make calls to any other
-// public function. This should somehow decide whether we're installed
-// into a FHS-tree or should read from the working dir instead. Hm.
-public void initialize() { implInitialize(); }
+// You should call this before you make calls to any other public function.
+// This will decide whether we're FHS-installed or self-contained.
+public void initialize()
+{
+    rootForWriting = getRootForWriting();
+    rootsForReading = getRootsForReading();
+}
 
 private class _VfsFilename : IFilename {
 private:
@@ -128,16 +132,12 @@ public:
             std.file.remove(realFile);
     }
 
-    pure this(in string s) immutable nothrow
+    this(in string s) immutable nothrow
     {
         assert (s.length < int.max);
-        // Possible root dirs are "./" and "../". We erase everything from the
-        // start of the filename that is '.' or '/' and call that rootless.
-        int sos = 0; // start_of_rootless
-        while (sos < s.length && (s[sos] == '.' || s[sos] == '/')) ++sos;
-        _rootless = s[sos .. $];
+        _rootless = pruneRoots(s);
 
-        // Determine the extension, this is done by finding the last '.'
+        // Determine the extension by finding the last '.'
         int lastDot = _rootless.len - 1;
         int extensionLength = 0;
         while (lastDot >= 0 && _rootless[lastDot] != '.') {
@@ -251,14 +251,14 @@ protected:
 
 unittest
 {
-    auto a = new VfsFilename("./mydir/anotherdir/many.dots.in.this.one.txt");
+    auto a = new VfsFilename("mydir/anotherdir/many.dots.in.this.one.txt");
     assert (a.extension == ".txt");
     assert (a.preExtension == 0);
     assert (a.file == "many.dots.in.this.one.txt");
     assert (a.fileNoExtNoPre == "many.dots.in.this.one");
     assert (a.dirRootless == "mydir/anotherdir/");
 
-    Filename b = new VfsFilename("./mydir/anotherdir/myfile.with.dots.P.txt");
+    Filename b = new VfsFilename("mydir/anotherdir/myfile.with.dots.P.txt");
     assert (b.preExtension == 'P');
     assert (b.file == "myfile.with.dots.P.txt");
     assert (b.fileNoExtNoPre == "myfile.with.dots");
@@ -276,40 +276,16 @@ unittest
 
 // #################################################################### private
 
-private string rootForWriting;
-private string[] rootsForReading; // Try the roots from from to back.
+private:
+
+string rootForWriting;
+string[] rootsForReading; // Try the roots from from to back.
                                   // The local, writeable root should be first.
                                   // The computer-global root should be last.
 
-private enum LookFor { files, dirs, filesAndDirs }
+enum LookFor { files, dirs, filesAndDirs }
 
-// DTODOVFS: We should allow for installation in a Linux FHS tree.
-// rootForWriting should, if we're installed, not be "./", but instead
-// something like "~/.local/lix/", and rootsForReading should be
-// [ "~/.local/lix/", "/usr/local/share/lix/" ]. How to detect if we're
-// installed? If not installed, we should read and write from "./".
-private void implInitialize()
-{
-    bool rootAndTestDir(string root, string testDir)
-    {
-        // I don't rely on the functions in file.search to test for file
-        // exist or dir exist. Ultimately, those should rely on the VFS.
-        if (std.file.exists(testDir) && std.file.isDir(testDir)) {
-            rootForWriting = root;
-            rootsForReading = [ root ];
-            return true;
-        }
-        return false;
-    }
-    if (rootAndTestDir("./", "./images/"))
-        return;
-    else if (rootAndTestDir("../", "../images/"))
-        return;
-    else
-        throw new FileException("Can't find the Lix file tree.");
-}
-
-private string resolveForReading(VfsFilename fn, in LookFor lookFor) nothrow
+string resolveForReading(VfsFilename fn, in LookFor lookFor) nothrow
 {
     assert (rootsForReading.length, "call VFS initialize() before this");
     assert (fn !is null, "Don't pass null VfsFilenames to this.");
@@ -326,6 +302,14 @@ private string resolveForReading(VfsFilename fn, in LookFor lookFor) nothrow
     catch (Exception)
         { }
     return null;
+}
+
+string pruneRoots(in string tail) nothrow @nogc
+{
+    foreach (root; rootsForReading)
+        if (tail.startsWith(root))
+            return pruneRoots(tail[root.length .. $]);
+    return tail;
 }
 
 unittest {

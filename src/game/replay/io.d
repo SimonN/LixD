@@ -216,6 +216,7 @@ body {
 
 unittest
 {
+    file.filename.vfsfile.initialize();
     Filename fn0 = new VfsFilename("./replays/unittest-input.txt");
     Filename fn1 = new VfsFilename("./replays/unittest-output-1.txt");
     Filename fn2 = new VfsFilename("./replays/unittest-output-2.txt");
