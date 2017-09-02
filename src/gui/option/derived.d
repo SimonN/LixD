@@ -6,7 +6,7 @@ import std.string; // strip
 import file.useropt;
 import graphic.internal;
 import gui;
-import gui.option.base;
+import gui.option;
 import hardware.keyset;
 import hardware.mouse; // allow clicks on label
 
@@ -114,13 +114,22 @@ public:
 
 
 
+private void registerAtWatcher(KeyDuplicationWatcher watcher, KeyButton button)
+{
+    if (watcher is null || button is null)
+        return;
+    watcher.watch(button);
+    button.onChange = () { watcher.checkForDuplicateBindings(); };
+}
+
 class HotkeyOption : Option {
 private:
     MultiKeyButton _keyb;
     UserOption!KeySet _userOption;
 
 public:
-    this(Geom g, UserOption!KeySet opt)
+    // watcher may be null, then we won't register ourselves with any watcher
+    this(Geom g, UserOption!KeySet opt, KeyDuplicationWatcher watcher = null)
     {
         assert (opt);
         _keyb = new MultiKeyButton(new Geom(0, 0, keyButtonXl, 20));
@@ -129,6 +138,7 @@ public:
                             opt.descShort));
         addChild(_keyb);
         _userOption = opt;
+        registerAtWatcher(watcher, _keyb);
     }
 
     override void loadValue() { _keyb.keySet = _userOption.value; }
@@ -139,18 +149,20 @@ public:
 class SkillHotkeyOption : Option
 {
     private SkillIcon _cb;
-    private KeyButton _keyb;
+    private SingleKeyButton _keyb;
     private UserOption!KeySet _userOption;
 
-    this(Geom g, Ac ac, UserOption!KeySet opt)
+    // watcher may be null, then we won't register ourselves with any watcher
+    this(Geom g, Ac ac, UserOption!KeySet opt, KeyDuplicationWatcher watcher)
     {
         super(g);
         assert (opt);
-        _keyb = new KeyButton(new Geom(0, 0, xlg, 20, From.BOTTOM));
+        _keyb = new SingleKeyButton(new Geom(0, 0, xlg, 20, From.BOTTOM));
         _cb   = new SkillIcon(new Geom(0, 0, xlg, ylg-20, From.TOP));
         _cb.ac = ac;
         addChildren(_cb, _keyb);
         _userOption = opt;
+        registerAtWatcher(watcher, _keyb);
     }
 
     override void loadValue() { _keyb.keySet = _userOption.value; }

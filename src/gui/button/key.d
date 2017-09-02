@@ -1,30 +1,43 @@
 module gui.button.key;
 
-/* class KeyButton:
+/* class SingleKeyButton:
  * You can assign several keys to this. If you click it, it will wait for a
  * hotkey assignment via keyboard or mouse, but then erase everything on it.
  * Multiple keys can only be assigned via this.keySet.
  *
  * class MultiKeyButton:
- * This has a KeyButton as a component, and will manage its multiple keys.
- * If you click the KeyButton component, you replace all of its keys with one
- * key, as described for KeyButton above. Click the '+' button to add extras.
+ * This has a SingleKeyButton as a component and manage its multiple keys.
+ * If you click the SingleKeyButton component, you replace all of its keys with
+ * one key, as described for KeyButton above. Click the '+' button to add
+ * extras.
  */
 
 import basics.alleg5; // timerTicks
 import basics.globals; // ticksForDoubleClick
+import graphic.color;
 import gui;
 import hardware.keyboard;
 import hardware.keyset;
 import hardware.mouse;
 
-class KeyButton : TextButton {
+interface KeyButton {
+    @property void onChange(void delegate());
+    @property bool warnAboutDuplicateBindings() const;
+    @property bool warnAboutDuplicateBindings(in bool);
+    @property const(KeySet) keySet() const;
+    @property const(KeySet) keySet(in KeySet);
+}
+
+class SingleKeyButton : TextButton, KeyButton {
 private:
     KeySet _keySet;
-    void delegate() _onKeyTapped; // called on new assignment, not on cancel
+    void delegate() _onChange; // called on new assignment, not on cancel
+    bool _warnAboutDuplicateBindings; // only set externally, we don't check
 
 public:
     this(Geom g) { super(g); }
+
+    mixin (GetSetWithReqDraw!"warnAboutDuplicateBindings");
 
     @property const(KeySet) keySet() const { return _keySet; }
     @property const(KeySet) keySet(in KeySet sc)
@@ -36,7 +49,7 @@ public:
         return sc;
     }
 
-    @property void onKeyTapped(void delegate() f) { _onKeyTapped = f; }
+    @property void onChange(void delegate() f) { _onChange = f; }
 
     @property override bool on() const { return super.on(); }
     @property override bool on(in bool b)
@@ -47,6 +60,11 @@ public:
         if (b) addFocus(this);
         else    rmFocus(this);
         return b;
+    }
+
+    @property override Alcol colorText() const
+    {
+        return _warnAboutDuplicateBindings ? color.red : super.colorText();
     }
 
 protected:
@@ -62,8 +80,8 @@ protected:
             else if (scancodeTapped) {
                 _keySet = KeySet(scancodeTapped);
                 on = false;
-                if (_onKeyTapped !is null)
-                    _onKeyTapped();
+                if (_onChange !is null)
+                    _onChange();
             }
             formatScancode();
         }
@@ -81,12 +99,13 @@ private:
 
 // ############################################################################
 
-class MultiKeyButton : Element {
+class MultiKeyButton : Element, KeyButton {
 private:
-    KeyButton _big;
+    SingleKeyButton _big;
     TextButton _plus;
     TextButton _minus;
     KeySet _addTheseToBig; // Saves _big's keys when we click _plus
+    void delegate() _onChange;
 
     enum plusXlg = 15f;
 
@@ -94,22 +113,40 @@ public:
     this(Geom g)
     {
         super(g);
-        _big = new KeyButton(new Geom(0, 0, xlg, ylg, From.RIGHT));
-        _big.onKeyTapped = () { this.formatButtons(); };
-        _plus = new TextButton(new Geom(plusXlg, 0, plusXlg, ylg),
-            "+");
-        _minus = new TextButton(new Geom(0, 0, plusXlg, ylg),
-            "\u2212");
+        _big = new SingleKeyButton(new Geom(0, 0, xlg, ylg, From.RIGHT));
+        _big.onChange = () { this.formatButtonsAndCallCallback(); };
+        _plus = new TextButton(new Geom(plusXlg, 0, plusXlg, ylg), "+");
+        _minus = new TextButton(new Geom(0, 0, plusXlg, ylg), "\u2212");
         addChildren(_big, _plus, _minus);
         keySet = KeySet();
+
+        assert (! _onChange);
+        formatButtonsAndCallCallback();
     }
 
     @property const(KeySet) keySet() const { return _big.keySet; }
     @property const(KeySet) keySet(in KeySet set)
     {
+        if (_big.keySet == set)
+            return set;
         _big.keySet = set;
-        formatButtons();
+        formatButtonsAndCallCallback();
         return set;
+    }
+
+    @property void onChange(void delegate() f) { _onChange = f; }
+
+    @property bool warnAboutDuplicateBindings() const
+    {
+        return _big.warnAboutDuplicateBindings;
+    }
+
+    @property bool warnAboutDuplicateBindings(in bool b)
+    {
+        if (_big.warnAboutDuplicateBindings == b)
+            return b;
+        reqDraw();
+        return _big.warnAboutDuplicateBindings = b;
     }
 
 protected:
@@ -137,10 +174,12 @@ protected:
     }
 
 private:
-    void formatButtons()
+    void formatButtonsAndCallCallback()
     {
         _minus.shown = keySet.len >= 1;
         _plus.shown = keySet.len >= 1 && keySet.len < 3;
         _big.resize(xlg - plusXlg * (_minus.shown + _plus.shown), ylg);
+        if (_onChange !is null)
+            _onChange();
     }
 }

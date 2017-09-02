@@ -61,8 +61,11 @@ public:
         return super.shown;
     }
 
-    Alcol colorText() { return _on && ! _down ? color.guiTextOn
-                                              : color.guiText; }
+    @property Alcol colorText() const
+    {
+        return _on && ! _down ? color.guiTextOn : color.guiText;
+    }
+
 protected:
     // override these if needed
     void   drawOntoButton()     { }

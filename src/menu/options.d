@@ -270,51 +270,55 @@ void populateControls()
 
 void populateGameKeys()
 {
+    KeyDuplicationWatcher watcher = new KeyDuplicationWatcher();
+    scope (success)
+        watcher.checkForDuplicateBindings();
+
     immutable float skillXl = (xlg - 40) / skillSort.length;
     foreach (x, ac; skillSort)
         groups[OptionGroup.gameKeys] ~= new SkillHotkeyOption(new Geom(
-            20 + x * skillXl, 80, skillXl, 70), ac, keySkill[ac]);
+            20 + x * skillXl, 80, skillXl, 70), ac, keySkill[ac], watcher);
 
     enum plusBelowSkills = 70f;
     auto fac = facKeys!0;
     fac.y += plusBelowSkills;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(keyForceLeft),
-        fac.factory!HotkeyOption(keyForceRight),
+        fac.factory!HotkeyOption(keyForceLeft, watcher),
+        fac.factory!HotkeyOption(keyForceRight, watcher),
     ];
     fac.y += fac.incrementY / 2;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(keyPause),
-        fac.factory!HotkeyOption(keyRestart),
-        fac.factory!HotkeyOption(keyStateLoad),
-        fac.factory!HotkeyOption(keyStateSave),
+        fac.factory!HotkeyOption(keyPause, watcher),
+        fac.factory!HotkeyOption(keyRestart, watcher),
+        fac.factory!HotkeyOption(keyStateLoad, watcher),
+        fac.factory!HotkeyOption(keyStateSave, watcher),
     ];
 
     fac = facKeys!1;
     fac.y += plusBelowSkills;
     immutable xForBoolOptionsBelowHotkeys = fac.x;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(keySpeedFast),
-        fac.factory!HotkeyOption(keySpeedTurbo),
+        fac.factory!HotkeyOption(keySpeedFast, watcher),
+        fac.factory!HotkeyOption(keySpeedTurbo, watcher),
     ];
     fac.y += fac.incrementY / 2;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(keyFrameBackMany),
-        fac.factory!HotkeyOption(keyFrameBackOne),
-        fac.factory!HotkeyOption(keyFrameAheadOne),
-        fac.factory!HotkeyOption(keyFrameAheadMany),
+        fac.factory!HotkeyOption(keyFrameBackMany, watcher),
+        fac.factory!HotkeyOption(keyFrameBackOne, watcher),
+        fac.factory!HotkeyOption(keyFrameAheadOne, watcher),
+        fac.factory!HotkeyOption(keyFrameAheadMany, watcher),
     ];
 
     fac = facKeys!2;
     fac.y += plusBelowSkills;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(keyNuke),
-        fac.factory!HotkeyOption(keyGameExit),
+        fac.factory!HotkeyOption(keyNuke, watcher),
+        fac.factory!HotkeyOption(keyGameExit, watcher),
     ];
     fac.y += fac.incrementY / 2;
     groups[OptionGroup.gameKeys] ~= [
-        fac.factory!HotkeyOption(keyChat),
-        fac.factory!HotkeyOption(keySpecTribe),
+        fac.factory!HotkeyOption(keyChat, watcher),
+        fac.factory!HotkeyOption(keySpecTribe, watcher),
     ];
 
     enum belowAllGameKeys = 310f;
@@ -336,23 +340,27 @@ void populateGameKeys()
 
 void populateEditorKeys()
 {
+    KeyDuplicationWatcher watcher = new KeyDuplicationWatcher();
+    scope (success)
+        watcher.checkForDuplicateBindings();
+
     auto fac = facKeys!0;
     groups[OptionGroup.editorKeys] ~= [
-        fac.factory!HotkeyOption(keyEditorLeft),
-        fac.factory!HotkeyOption(keyEditorRight),
-        fac.factory!HotkeyOption(keyEditorUp),
-        fac.factory!HotkeyOption(keyEditorDown),
+        fac.factory!HotkeyOption(keyEditorLeft, watcher),
+        fac.factory!HotkeyOption(keyEditorRight, watcher),
+        fac.factory!HotkeyOption(keyEditorUp, watcher),
+        fac.factory!HotkeyOption(keyEditorDown, watcher),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.editorKeys] ~= [
-        fac.factory!HotkeyOption(keyEditorSave),
-        fac.factory!HotkeyOption(keyEditorSaveAs),
+        fac.factory!HotkeyOption(keyEditorSave, watcher),
+        fac.factory!HotkeyOption(keyEditorSaveAs, watcher),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.editorKeys] ~= [
-        fac.factory!HotkeyOption(keyEditorCopy),
-        fac.factory!HotkeyOption(keyEditorDelete),
-        fac.factory!HotkeyOption(keyEditorGrid),
+        fac.factory!HotkeyOption(keyEditorCopy, watcher),
+        fac.factory!HotkeyOption(keyEditorDelete, watcher),
+        fac.factory!HotkeyOption(keyEditorGrid, watcher),
     ];
     fac.y += fac.incrementY;
     fac.xl = this.xlg - 40;
@@ -364,72 +372,76 @@ void populateEditorKeys()
 
     fac = facKeys!1;
     groups[OptionGroup.editorKeys] ~= [
-        fac.factory!HotkeyOption(keyEditorSelectAll),
-        fac.factory!HotkeyOption(keyEditorSelectFrame),
-        fac.factory!HotkeyOption(keyEditorSelectAdd),
+        fac.factory!HotkeyOption(keyEditorSelectAll, watcher),
+        fac.factory!HotkeyOption(keyEditorSelectFrame, watcher),
+        fac.factory!HotkeyOption(keyEditorSelectAdd, watcher),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.editorKeys] ~= [
-        fac.factory!HotkeyOption(keyEditorGroup),
-        fac.factory!HotkeyOption(keyEditorUngroup),
-        fac.factory!HotkeyOption(keyEditorBackground),
-        fac.factory!HotkeyOption(keyEditorForeground),
-        fac.factory!HotkeyOption(keyEditorMirror),
-        fac.factory!HotkeyOption(keyEditorRotate),
-        fac.factory!HotkeyOption(keyEditorDark),
+        fac.factory!HotkeyOption(keyEditorGroup, watcher),
+        fac.factory!HotkeyOption(keyEditorUngroup, watcher),
+        fac.factory!HotkeyOption(keyEditorBackground, watcher),
+        fac.factory!HotkeyOption(keyEditorForeground, watcher),
+        fac.factory!HotkeyOption(keyEditorMirror, watcher),
+        fac.factory!HotkeyOption(keyEditorRotate, watcher),
+        fac.factory!HotkeyOption(keyEditorDark, watcher),
     ];
 
     fac = facKeys!2;
     groups[OptionGroup.editorKeys] ~= [
-        fac.factory!HotkeyOption(keyEditorAddTerrain),
-        fac.factory!HotkeyOption(keyEditorAddSteel),
-        fac.factory!HotkeyOption(keyEditorAddHatch),
-        fac.factory!HotkeyOption(keyEditorAddGoal),
-        fac.factory!HotkeyOption(keyEditorAddHazard),
+        fac.factory!HotkeyOption(keyEditorAddTerrain, watcher),
+        fac.factory!HotkeyOption(keyEditorAddSteel, watcher),
+        fac.factory!HotkeyOption(keyEditorAddHatch, watcher),
+        fac.factory!HotkeyOption(keyEditorAddGoal, watcher),
+        fac.factory!HotkeyOption(keyEditorAddHazard, watcher),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.editorKeys] ~= [
-        fac.factory!HotkeyOption(keyEditorMenuConstants),
-        fac.factory!HotkeyOption(keyEditorMenuTopology),
-        fac.factory!HotkeyOption(keyEditorMenuLooks),
-        fac.factory!HotkeyOption(keyEditorMenuSkills),
+        fac.factory!HotkeyOption(keyEditorMenuConstants, watcher),
+        fac.factory!HotkeyOption(keyEditorMenuTopology, watcher),
+        fac.factory!HotkeyOption(keyEditorMenuLooks, watcher),
+        fac.factory!HotkeyOption(keyEditorMenuSkills, watcher),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.editorKeys] ~=
-        fac.factory!HotkeyOption(keyEditorExit);
+        fac.factory!HotkeyOption(keyEditorExit, watcher);
 }
 
 void populateMenuKeys()
 {
+    KeyDuplicationWatcher watcher = new KeyDuplicationWatcher();
+    scope (success)
+        watcher.checkForDuplicateBindings();
+
     Option[] grp;
     scope (exit)
         groups[OptionGroup.menuKeys] = grp;
     auto fac = facKeys!0;
     grp ~= [
-        fac.factory!HotkeyOption(keyMenuOkay),
-        fac.factory!HotkeyOption(keyMenuEdit),
-        fac.factory!HotkeyOption(keyMenuNewLevel),
-        fac.factory!HotkeyOption(keyMenuExport),
-        fac.factory!HotkeyOption(keyMenuDelete),
+        fac.factory!HotkeyOption(keyMenuOkay, watcher),
+        fac.factory!HotkeyOption(keyMenuEdit, watcher),
+        fac.factory!HotkeyOption(keyMenuNewLevel, watcher),
+        fac.factory!HotkeyOption(keyMenuExport, watcher),
+        fac.factory!HotkeyOption(keyMenuDelete, watcher),
     ];
     fac.y += 20;
     grp ~= [
-        fac.factory!HotkeyOption(keyMenuExit),
+        fac.factory!HotkeyOption(keyMenuExit, watcher),
     ];
     fac = facKeys!1;
     grp ~= [
-        fac.factory!HotkeyOption(keyMenuUpDir),
-        fac.factory!HotkeyOption(keyMenuUpBy5),
-        fac.factory!HotkeyOption(keyMenuUpBy1),
-        fac.factory!HotkeyOption(keyMenuDownBy1),
-        fac.factory!HotkeyOption(keyMenuDownBy5),
+        fac.factory!HotkeyOption(keyMenuUpDir, watcher),
+        fac.factory!HotkeyOption(keyMenuUpBy5, watcher),
+        fac.factory!HotkeyOption(keyMenuUpBy1, watcher),
+        fac.factory!HotkeyOption(keyMenuDownBy1, watcher),
+        fac.factory!HotkeyOption(keyMenuDownBy5, watcher),
     ];
     fac = facKeys!2;
     grp ~= [
-        fac.factory!HotkeyOption(keyMenuMainSingle),
-        fac.factory!HotkeyOption(keyMenuMainNetwork),
-        fac.factory!HotkeyOption(keyMenuMainReplays),
-        fac.factory!HotkeyOption(keyMenuMainOptions),
+        fac.factory!HotkeyOption(keyMenuMainSingle, watcher),
+        fac.factory!HotkeyOption(keyMenuMainNetwork, watcher),
+        fac.factory!HotkeyOption(keyMenuMainReplays, watcher),
+        fac.factory!HotkeyOption(keyMenuMainOptions, watcher),
     ];
 
     auto guiCol   = NumPickConfig();
