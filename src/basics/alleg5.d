@@ -199,9 +199,12 @@ private Albit albitCreateWithFlags(in int xl, in int yl, in int flags)
         al_set_new_bitmap_flags(_defaultNewBitmapFlags);
 
     Albit ret = al_create_bitmap(xl, yl);
-    assert (ret);
+    if (! ret) {
+        import std.format;
+        throw new Exception(format!("Out of memory. Can't create bitmap of "
+            ~ " size %dx%d with flags %d")(xl, yl, flags));
+    }
     assert (al_get_bitmap_width (ret) == xl);
     assert (al_get_bitmap_height(ret) == yl);
-
     return ret;
 }
