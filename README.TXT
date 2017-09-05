@@ -22,8 +22,9 @@ Build instructions
     Install the enet 1.3 runtime library.
     $ dub -b release
 
-Especially on Windows, you might like more detailed build instructions:
-See `.doc/build/windows.txt' or `./doc/build/linux.txt' according to your OS.
+Detailed instructions: `./doc/build/windows.txt' or `./doc/build/linux.txt'.
+
+Linux package maintainers, please see `./doc/build/package.txt'.
 
 Found a bug, have an idea? Report on https://github.com/SimonN/LixD/issues.
 

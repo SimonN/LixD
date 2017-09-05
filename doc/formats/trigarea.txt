@@ -1,0 +1,120 @@
+Custom trigger areas for Lix gadgets
+====================================
+
+Gadgets is a collective name for hatches, exits, traps, flingers, ...,
+everything that you can place in a level other than earth and steel.
+Lix guesses a trigger area for each gadget.
+
+You can override Lix's guess for `images/path/mygadget.T.png' by creating
+`images/path/mygadget.T.txt': A text file in the same folder, with the same
+name, merely the image extension swapped for `.txt'.
+
+Mix and match these directives in the text file:
+
+#TRIGGER_AREA_POSITION_ABSOLUTE_X 20
+#TRIGGER_AREA_POSITION_ABSOLUTE_Y 10
+#TRIGGER_AREA_POSITION_FROM_CENTER_X -5
+#TRIGGER_AREA_POSITION_FROM_CENTER_Y -12
+#TRIGGER_AREA_POSITION_FROM_BOTTOM_Y 0
+#TRIGGER_AREA_SIZE_X 20
+#TRIGGER_AREA_SIZE_Y 20
+
+#HATCH_OPENING_FRAME 1
+
+#FLING_SPEED_X 4
+#FLING_SPEED_Y -16
+#FLING_NONPERMANENT
+#FLING_IGNORE_X_ORIENTATION
+
+
+
+Explanations
+------------
+
+#TRIGGER_AREA_POSITION_ABSOLUTE_X n
+
+    The left edge of the trigger area will be n pixels away from the left edge
+    of the gadget. If you want to center the trigger area horizontally, use
+    #TRIGGER_AREA_POSITION_FROM_CENTER_X instead.
+
+#TRIGGER_AREA_POSITION_ABSOLUTE_Y n
+
+    The upper edge of the trigger area will start n pixels away
+    from the upper edge of the object. If you want to center the trigger area
+    vertically or place it at the bottom of the object, use
+    #TRIGGER_AREA_POSITION_FROM_CENTER_Y or
+    #TRIGGER_AREA_POSITION_FROM_BOTTOM_Y instead, see below.
+
+#TRIGGER_AREA_POSITION_FROM_CENTER_X n
+
+    The center (not left edge) of the trigger area will be n pixels away from
+    the horizontal center of the object. Use positive values to shift the
+    trigger area to the right, and negative values to shift to the left.
+
+#TRIGGER_AREA_POSITION_FROM_CENTER_Y n
+
+    The center (not upper edge) of the trigger area will be n pixels away from
+    the vertical center of the object. Use positive values to shift the
+    trigger area down, and negative values to pull it further up.
+
+#TRIGGER_AREA_POSITION_FROM_BOTTOM_Y n
+
+    The center (not upper edge) of the trigger area will be n pixels away from
+    the bottom of the object. Positive values will push it even further down,
+    negative values pull it up. If you give 0 as the number, the center will
+    be on the second-to-last pixel row vertically. This is the default setting
+    for goals (exits).
+
+#TRIGGER_AREA_SIZE_X n
+
+    Set trigger area width to n pixels.
+
+#TRIGGER_AREA_SIZE_Y n
+
+    Set trigger area height to n pixels.
+
+#HATCH_OPENING_FRAME n
+
+    Specifies the animation frame that is to be displayed when the hatch
+    opening sound is played. The default value is 1, i.e., there is no
+    animation before the opening sound, only the constant frame 0. The frame
+    count starts from zero. If this is set to a late frame, the hatch animates
+    earlier after starting the level to match the sound. The setting has no
+    effect on game physics.
+
+
+
+Directives for flingers
+-----------------------
+
+Use the trap pre-extension .T for flingers, i.e., call your flingers like so:
+myflinger.T.png
+
+Flingers are gadgets that launch lix into the air by assigning them a
+velocity. Trigger areas for these are defined like for any other gadget above.
+By default, the object is permanent. Pass #FLING_NONPERMANENT for a triggered
+flinger that processing one lix at a time. By default, lix will be flung
+depending on their orientation. Pass #FLING_IGNORE_X_ORIENTATION to always
+fling them into the same horizontal direction. If any of the parameters below
+is encountered, the object will automatically be turned into a flinger.
+
+#FLING_SPEED_X n
+
+    Make the gadget a flinger. Horizontal speed will be n pixels forward
+    in the direction of the lix.
+
+#FLING_SPEED_Y n
+
+    Make the gadget a flinger. Vertical speed will be n pixels.
+    Give a negative value n to fling upwards, a positive value for downwards.
+
+#FLING_NONPERMANENT
+
+    Make the gadget a flinger that processes only one lix at a time.
+    (By default, all lixes entering the trigger area would be flung at once.)
+
+#FLING_IGNORE_X_ORIENTATION
+
+    Make #FLING_SPEED_X ignore the lix's facing direction: Positive values
+    to #FLING_SPEED_X will mean speed towards the right, negative values
+    mean speed towards the left.

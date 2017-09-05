@@ -7,8 +7,13 @@ Automatic replay verification
 It's good style to ship solvable levels! :-)
 
 Maintain a directory of replays for your level pack. You can test automatically
-whether your pack is 100 % solvable:
+whether your pack is 100 % solvable. There are two ways, both give the same
+information:
 
+*   Open the replay browser, navigate to your directory of proof replays, and
+    click "Verify Dir". Results show on-screen and in `./data/verifier.txt'.
+
+*   Or use the command line, this prints results to standard output:
     lix --coverage replays/path/to/dir
 
 This tests every replay in replays/path/to/dir/ for whether it solves its

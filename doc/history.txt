@@ -1,6 +1,39 @@
 Version history
 ===============
 
+0.8.5
+-----
+
+2017-09-09
+
+Fix #244: Grouping certain tiles led to an assertion failure: The game
+attempted to cut the group like a gridded animation. Fixed.
+
+Most of #216: Ping button: A small button in multipalyer games, next to the
+nuke. Button clicks highlight all own goals for 4 seconds by flashing them
+inside black and white boxes above the terrain. Can be hotkeyed; by default,
+no key is bound.
+
+Fix #162: In the hotkey options, if you bind the same key twice, all its
+bindings show in red. You can decide whether to remove one binding or keep
+all.
+
+Fix: When the editor inserts a tile from the terrain browser into a level, the
+tile will be aligned to the grid.
+
+I enforce bitmap creation: If you run out of VRAM, Lix should now terminate
+with a proper exception, not crash later in unrelated functions. If you crash,
+screenshot the error, or send me [tt]data/log.txt[/tt].
+
+I optimized the lix Job hierarchy for speed: Lixes are value types, and carry
+their job as a value type within themselves. (Drawing many exploder fuses at
+once is still slow. Organ Symphony will still kill the framerate.)
+
+Fix #211: On Linux, you can pass a compiler switch to make Lix system-wide
+installable, follwing the XDG base directory structure. For arbitrary
+installation paths, open an issue on github.
+
+
 0.8.4
 -----
 
@@ -8,7 +41,7 @@ Version history
 
 Fix #4 and #213: Some graphics cards cannot load textures wider or taller than
 4096 pixels. Amanda's tar and occult hatch were too wide. Now, I allow
-two-dimensional spritesheets for single-animation gadgets,  and I've
+two-dimensional spritesheets for single-animation gadgets, and I've
 rearranged the frames in the tar and occult hatch. In Lix, looks and physics
 should be unaffected.
 
@@ -234,7 +267,8 @@ writing its last line or after closing the dialog.
 
 2017-08-02
 
-Proxima's planned changes to the lemforum pack. Snowball Battle: Spawn interval 20->22, to keep it solvable.
+Proxima's planned changes to the lemforum pack. Snowball Battle: Spawn
+interval 20->22, to keep it solvable.
 
 0.7.13
 ------
@@ -382,7 +416,8 @@ cases.
 
 2017-05
 
-Blocker fields by geoo's suggestion, LLLLLL-RRRRRR against nonbuilders and LLLLL---RRRRR against builders.
+Blocker fields by geoo's suggestion, LLLLLL-RRRRRR against nonbuilders and
+LLLLL---RRRRR against builders.
 
 0.7.0
 -----
