@@ -5,12 +5,11 @@ import std.algorithm;
 import lix;
 
 class Ascender : Job {
-
-    mixin(CloneByCopyFrom!"Ascender");
+    mixin JobChild;
 
     override @property bool blockable() const { return false; }
 
-    override void onBecome()
+    override void onBecome(in Job old)
     {
         bool solidPixelWithAirAbove(in int y)
         {

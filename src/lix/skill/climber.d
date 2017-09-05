@@ -8,20 +8,20 @@ private:
     enum ceilingY = -16;
 
 public:
-    mixin(CloneByCopyFrom!"Climber");
+    mixin JobChild;
 
-    override @property bool callBecomeAfterAssignment() const { return false; }
-    override @property bool blockable()                 const { return false; }
+    override @property bool blockable() const { return false; }
 
-    override void onManualAssignment()
+    override AfterAssignment onManualAssignment(Job old)
     {
         assert (! abilityToClimb);
         abilityToClimb = true;
+        return AfterAssignment.doNotBecome;
     }
 
-    override void onBecome()
+    override void onBecome(in Job old)
     {
-        if (cast (Jumper) lixxie.job)
+        if (old.ac == Ac.jumper)
             playSound(Sound.CLIMBER);
         else
             frame = 3;

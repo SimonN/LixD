@@ -5,14 +5,13 @@ import game.terchang;
 import lix;
 
 class Cuber : Leaver {
+    mixin JobChild;
 
     enum cubeSize = 16;
 
-    mixin(CloneByCopyFrom!"Cuber");
-
     override PhyuOrder updateOrder() const { return PhyuOrder.adder; }
 
-    override void onBecomeLeaver()
+    override void onBecomeLeaver(in Job old)
     {
         if (facingLeft) {
             turn();      // moveAhead() makes the two directions balanced,
@@ -39,5 +38,4 @@ class Cuber : Leaver {
         }
         super.advanceFrameAndLeave();
     }
-
 }

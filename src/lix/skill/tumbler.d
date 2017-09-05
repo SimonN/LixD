@@ -7,24 +7,25 @@ import std.math; // abs
 import basics.help;
 import lix;
 
-abstract class BallisticFlyer : Job {
+private enum PleaseDo : ubyte {
+    nothing,         // nothing hit, keep moving
+    stopMovement,    // hit something, stop, remain in place with state
+    resetEncounters, // we un-glitched out of sth., so reset encounters
+    resetPosition,   // we hit something, didn't un-glitch yet
+}
 
-    enum speedYToFloat = 15;
-    enum pixelsSafeToFall = {
-       import lix.skill.faller; return Faller.pixelsSafeToFall;
-    }();
+abstract class BallisticFlyer : Job {
 
     int speedX; // should be >= 0. Is really speed ahead, not absolute x dir.
     int speedY;
     int pixelsFallen; // always >= 0. Upflinginging keeps 0. Resets on fling.
 
-    alias lixxie this;
-    alias copyFromAndBindToLix = super.copyFromAndBindToLix;
-    protected void copyFromAndBindToLix(in BallisticFlyer rhs, Lixxie li)
-    {
-        super.copyFromAndBindToLix(rhs, li);
-        copyFrom(rhs);
-    }
+    mixin JobChild;
+
+    enum speedYToFloat = 15;
+    enum pixelsSafeToFall = {
+       import lix.skill.faller; return Faller.pixelsSafeToFall;
+    }();
 
     protected void copyFrom(in BallisticFlyer rhs)
     {
@@ -39,9 +40,9 @@ abstract class BallisticFlyer : Job {
         assert (speedX >= 0, "Lix should only fly forwards. Turn first.");
         if (speedX % 2 != 0)
             ++speedX;
-        moveSeveralTimes();
-        if (this !is lixxie.job)
+        if (moveSeveralTimes() == BecomeCalled.yes) {
             return;
+        }
         speedY += accel(speedY);
         selectFrame();
         if (speedY >= speedYToFloat) {
@@ -51,6 +52,11 @@ abstract class BallisticFlyer : Job {
     }
 
 protected:
+
+    struct Collision {
+        BecomeCalled becomeCalled;
+        PleaseDo pleaseDo;
+    }
 
     final bool wall  (in int y) { return isSolid(0, y); }
     final bool behind(in int y) { return wall(y) && isSolid(-2, y); }
@@ -64,30 +70,26 @@ protected:
     bool splatUpsideDown() const { return false; }
 
     abstract Collision onHittingWall();
-    abstract void onLandingWithoutSplatting();
+    abstract BecomeCalled onLandingWithoutSplatting();
     abstract void selectFrame();
-
-    enum Collision {
-        nothing,         // nothing hit, keep moving
-        stopMovement,    // hit something, stop, but remain in place with state
-        resetEncounters, // we un-glitched out of sth., so reset encounters
-        resetPosition    // we hit something, didn't handle un-glitching yet
-    }
 
 private:
 
-    final void landOnFloor()
+    final BecomeCalled landOnFloor()
     {
         if (pixelsFallen > pixelsSafeToFall && ! abilityToFloat) {
+            immutable sud = this.splatUpsideDown();
             become(Ac.splatter);
-            if (this.splatUpsideDown)
+            if (sud)
                 lixxie.frame = 10;
+            return BecomeCalled.yes;
         }
         else
-            onLandingWithoutSplatting();
+            return onLandingWithoutSplatting();
     }
 
-    final void moveSeveralTimes()
+    // returns true iff weCalledBecome
+    final BecomeCalled moveSeveralTimes()
     {
         immutable int ySgn = speedY >= 0 ? 1 : -1;
         immutable int yAbs = speedY.abs;
@@ -125,27 +127,31 @@ private:
                 moveAhead(2 * (step & 1));
             }
 
-            final switch (collision) {
-            case Collision.nothing:
+            Collision col = collision();
+            final switch (col.pleaseDo) {
+            case PleaseDo.nothing:
                 break;
-            case Collision.stopMovement:
-                break BREAK_MOTION;
-            case Collision.resetEncounters:
+            case PleaseDo.stopMovement:
+                return col.becomeCalled;
+            case PleaseDo.resetEncounters:
                 forceBodyAndFootEncounters(oldEncBody, oldEncFoot);
                 ey = ey; // re-check encounters here
-                break BREAK_MOTION;
-            case Collision.resetPosition:
+                return col.becomeCalled;
+            case PleaseDo.resetPosition:
                 forceBodyAndFootEncounters(oldEncBody, oldEncFoot);
                 ex = oldEx;
                 ey = oldEy;
                 pixelsFallen = oldFallen;
-                if (isSolid(0, 1))
+                if (isSolid(0, 1)) {
                     // completely immobilized
                     become(Ac.stunner);
-                break BREAK_MOTION;
+                    return BecomeCalled.yes;
+                }
+                return col.becomeCalled;
             }
         }
         // end BREAK_MOTION: foreach
+        return BecomeCalled.no;
     }
 
     // Horrible function. Copied out of C++ Lix almost unaltered.
@@ -193,8 +199,8 @@ private:
             || (swh <= 2 && isSolid(0, 2) && (isSolid(2, 1) || down))
         ) {
             while (isSolid(0, 1)) moveUp(1);
-            landOnFloor();
-            return Collision.resetEncounters;
+            auto bec = landOnFloor();
+            return Collision(bec, PleaseDo.resetEncounters);
         }
         // Stepping up a step we jumped onto
         if (lowest_floor != -999
@@ -203,27 +209,28 @@ private:
                 || (abilityToClimb && ! behind(lowest_floor)))
         ) {
             become(Ac.ascender);
-            return Collision.resetEncounters;
+            return Collision(BecomeCalled.yes, PleaseDo.resetEncounters);
         }
         // bump head into ceilings
         if ((behind_count > 0 && speedY < 2)
             || (wall(-12) && ! wall_count_t && speedY < 0)
         ) {
-            if (ac != Ac.tumbler)
+            auto bec = BecomeCalled.no;
+            if (ac != Ac.tumbler) {
                 become(Ac.tumbler);
-
+                bec = BecomeCalled.yes;
+            }
             auto tumbling = cast (BallisticFlyer) lixxie.job;
             assert (tumbling);
             tumbling.speedY = 4;
             tumbling.speedX = this.speedX / 2;
-
-            if (isSolid(0, 1)) return Collision.resetPosition;
-            else               return Collision.stopMovement;
+            return Collision(bec, isSolid(0, 1) ? PleaseDo.resetPosition
+                                                : PleaseDo.stopMovement);
         }
         // Jumping against a wall
         if (wall_count_t)
             return onHittingWall();
-        return Collision.nothing;
+        return Collision(BecomeCalled.no, PleaseDo.nothing);
     }
     // end collision()
 }
@@ -237,10 +244,9 @@ private:
 
 
 class Jumper : BallisticFlyer {
+    mixin JobChild;
 
-    mixin(CloneByCopyFrom!"Jumper");
-
-    override void onBecome()
+    override void onBecome(in Job old)
     {
         if (abilityToRun) {
             speedX =   8;
@@ -260,11 +266,13 @@ class Jumper : BallisticFlyer {
 
 protected:
 
-    override void onLandingWithoutSplatting()
+    override BecomeCalled onLandingWithoutSplatting()
     {
+        immutable soft = speedY < 12;
         become(Ac.lander);
-        if (speedY < 12)
+        if (soft)
             lixxie.advanceFrame(); // of the landing anim
+        return BecomeCalled.yes;
     }
 
     override Collision onHittingWall()
@@ -272,11 +280,11 @@ protected:
         if (abilityToClimb) {
             moveAhead(-2);
             become(Ac.climber);
-            return Collision.stopMovement;
+            return Collision(BecomeCalled.yes, PleaseDo.stopMovement);
         }
         else {
             turn();
-            return Collision.resetPosition;
+            return Collision(BecomeCalled.no, PleaseDo.resetPosition);
         }
     }
 
@@ -287,7 +295,6 @@ protected:
         else
             advanceFrame();
     }
-
 }
 
 
@@ -299,8 +306,7 @@ protected:
 
 
 class Tumbler : BallisticFlyer {
-
-    mixin(CloneByCopyFrom!"Tumbler");
+    mixin JobChild;
 
     static applyFlingXY(Lixxie lix)
     {
@@ -326,9 +332,9 @@ class Tumbler : BallisticFlyer {
             assert (lix.ac == Ac.stunner, "should be the only possibility");
     }
 
-    override void onBecome()
+    override void onBecome(in Job old)
     {
-        if (isSolid(0, 1) && lixxie.ac == Ac.ascender)
+        if (isSolid(0, 1) && old.ac == Ac.ascender)
             // unglitch out of wall, but only back and up
             for (int dist = 1; dist <= Walker.highestStepUp; ++dist) {
                 if (! isSolid(0, 1 - dist)) {
@@ -344,9 +350,9 @@ class Tumbler : BallisticFlyer {
         if (isSolid(0, 1)) {
             become(Ac.stunner);
         }
-        else if (lixxie.ac == Ac.jumper) {
-            this.copyFrom(cast (Jumper) lixxie.job);
-            this.frame  = 3;
+        else if (old.ac == Ac.jumper) {
+            this.copyFrom(cast (Jumper) old);
+            this.frame = 3;
         }
         else
             selectFrame();
@@ -356,7 +362,11 @@ protected:
 
     override bool splatUpsideDown() const { return this.frame >= 9; }
 
-    override void onLandingWithoutSplatting() { become(Ac.stunner); }
+    override BecomeCalled onLandingWithoutSplatting()
+    {
+        become(Ac.stunner);
+        return BecomeCalled.yes;
+    }
 
     override Collision onHittingWall()
     {
@@ -365,9 +375,9 @@ protected:
             || (wall(-2) && ! behind(-2))
         ) {
             turn();
-            return Collision.resetPosition;
+            return Collision(BecomeCalled.no, PleaseDo.resetPosition);
         }
-        return Collision.nothing;
+        return Collision(BecomeCalled.no, PleaseDo.nothing);
     }
 
     override void selectFrame()

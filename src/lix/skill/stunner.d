@@ -4,23 +4,16 @@ import hardware.sound;
 import lix;
 
 class Stunner : Job {
-
+private:
     int stayedInFrame8;
 
-    mixin(CloneByCopyFrom!"Stunner");
-    protected void copyFromAndBindToLix(in Stunner rhs, Lixxie lixToBindTo)
+public:
+    mixin JobChild;
+
+    override void onBecome(in Job old)
     {
-        super.copyFromAndBindToLix(rhs, lixToBindTo);
-        stayedInFrame8 = rhs.stayedInFrame8;
+        playSound(Sound.OUCH);
     }
-
-    override void onBecome()
-    {
-        if (cast (BallisticFlyer) lixxie.job)
-            playSound(Sound.OUCH);
-    }
-
-
 
     override void perform()
     {
@@ -59,5 +52,4 @@ class Stunner : Job {
         if (this is lixxie.job && considerBecomingWalker)
             become(Ac.walker);
     }
-
 }

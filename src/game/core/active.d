@@ -4,7 +4,7 @@ module game.core.active;
  * Game.calc() should afterwards calc the network, that flushes the network.
  */
 
-import std.typecons : Rebindable;
+import std.range;
 
 import net.repdata;
 import basics.rect;
@@ -66,7 +66,7 @@ package void cancelReplay(Game game) { with (game)
 private:
 
 struct PotentialAssignee {
-    Rebindable!(const(Lixxie)) lixxie;
+    ConstLix lixxie;
     int id;
     int priority;
     double distanceToCursor;
@@ -124,9 +124,7 @@ PotentialAssignee findPotentialAssignee(Game game) { with (game)
     immutable float mmldD = cursorThicknessOnLand +  0;
     immutable mol = map.mouseOnLand;
 
-    // DTODO: Find out why we were traversing the lixvec backwards in C++
-    // for (LixIt i =  --trlo->lixvec.end(); i != --trlo->lixvec.begin(); --i)
-    foreach (int id, const(Lixxie) lixxie; localTribe.lixvec) {
+    foreach (id, ConstLix lixxie; localTribe.lixvec.enumerate!int) {
         immutable int distX = map.distanceX(lixxie.ex, mol.x);
         immutable int distY = map.distanceY(lixxie.ey, mol.y);
         if (   distX <= mmldX && distX >= -mmldX

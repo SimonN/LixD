@@ -11,32 +11,24 @@ class Floater : Job {
     int speedY = 0;
     bool accelerateY = false; // if we come from a tumbler, accelerate still
 
-    mixin(CloneByCopyFrom!"Floater");
-    void copyFromAndBindToLix(in Floater rhs, Lixxie lixToBindTo)
-    {
-        super.copyFromAndBindToLix(rhs, lixToBindTo);
-        speedX = rhs.speedX;
-        speedY = rhs.speedY;
-        accelerateY = rhs.accelerateY;
-    }
+    mixin JobChild;
 
-    override @property bool callBecomeAfterAssignment() const { return false; }
-
-    override void onManualAssignment()
+    override AfterAssignment onManualAssignment(Job old)
     {
         assert (! abilityToFloat);
         abilityToFloat = true;
+        return AfterAssignment.doNotBecome;
     }
 
-    override void onBecome()
+    override void onBecome(in Job old)
     {
-        if (lixxie.ac == Ac.faller) {
-            auto fa = cast (const Faller) job;
+        if (old.ac == Ac.faller) {
+            auto fa = cast (const Faller) old;
             assert (fa);
             speedY = fa.ySpeed;
         }
-        else if (lixxie.ac == Ac.jumper || lixxie.ac == Ac.tumbler) {
-            auto bf = cast (const BallisticFlyer) job;
+        else if (old.ac == Ac.jumper || old.ac == Ac.tumbler) {
+            auto bf = cast (const BallisticFlyer) old;
             assert (bf);
             speedX = bf.speedX;
             speedY = bf.speedY;

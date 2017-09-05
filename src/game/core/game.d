@@ -19,7 +19,6 @@ public import game.core.view;
 
 import std.algorithm; // find;
 import std.conv; // float to int in prepare nurse
-import std.typecons; // Rebindable!(const Lixxie)
 
 import basics.alleg5;
 import basics.globals;
@@ -72,7 +71,7 @@ package:
     // Should always be zero in singleplayer.
     long _alticksToAdjust;
 
-    Rebindable!(const Lixxie) _drawHerHighlit;
+    ConstLix _drawHerHighlit;
 
     // Assignments for the next update go in here, and are only written into
     // the replay right before the update happens. If the replay is cut off

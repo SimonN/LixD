@@ -5,19 +5,13 @@ import game.terchang;
 import lix;
 
 class Digger : Job {
+private:
+    bool _upstrokeDone; // Takes out terrain on first swing above normal mask
+
+public:
+    mixin JobChild;
 
     enum tunnelWidth = 18;
-
-    // The upstroke takes out extra terrain above the normal digging mask
-    // on the first swing.
-    bool upstrokeDone;
-
-    mixin(CloneByCopyFrom!"Digger");
-    protected void copyFromAndBindToLix(in Digger rhs, Lixxie lixToBindTo)
-    {
-        super.copyFromAndBindToLix(rhs, lixToBindTo);
-        upstrokeDone = rhs.upstrokeDone;
-    }
 
     override PhyuOrder updateOrder() const { return PhyuOrder.remover; }
 
@@ -35,12 +29,9 @@ class Digger : Job {
         return enoughSteel;
     }
 
-    private bool fallHere()
+    private bool shouldWeFallHere() const
     {
-        bool fall = ! isSolid(-2, 2) && ! isSolid(0, 2) && ! isSolid(2, 2);
-        if (fall)
-            become(Ac.faller);
-        return fall;
+        return ! isSolid(-2, 2) && ! isSolid(0, 2) && ! isSolid(2, 2);
     }
 
     override void perform()
@@ -50,29 +41,32 @@ class Digger : Job {
         else
             advanceFrame();
 
+        bool weWillFall = false;
         if (frame != 16) {
             // All non-digging frames
-            if (fallHere)
-                return;
+            weWillFall = shouldWeFallHere();
         }
         else {
-            int rowsToDig;
+            int rowsToDig = 0;
             while (rowsToDig < 4) {
                 if (hitEnoughSteel)
                     break;
                 ++rowsToDig;
                 moveDown(1);
-                if (fallHere)
+                weWillFall = shouldWeFallHere();
+                if (weWillFall)
                     break;
             }
             if (rowsToDig > 0) {
-                immutable int plusUpstroke = (upstrokeDone ? 0 : 4);
+                immutable int plusUpstroke = (_upstrokeDone ? 0 : 4);
                 // we have already moved down by rowsToDig through this earth
                 removeRowsYInterval(2 - rowsToDig - plusUpstroke,
                                         rowsToDig + plusUpstroke);
             }
-            upstrokeDone = true;
+            _upstrokeDone = true;
         }
+        if (weWillFall)
+            become(Ac.faller);
     }
 
     private void removeRowsYInterval(in int y, in int yl)

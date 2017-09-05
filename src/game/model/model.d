@@ -12,6 +12,7 @@ module game.model.model;
 import std.algorithm;
 import std.array;
 import std.conv;
+import std.range;
 
 import basics.help; // len
 import net.repdata;
@@ -135,7 +136,7 @@ private:
             // never assert based on the content in ReplayData, which may have
             // been a maleficious attack from a third party, carrying a lix ID
             // that is not valid. If bogus data comes, do nothing.
-            if (i.toWhichLix < 0 || i.toWhichLix >= tribe.lixvec.len)
+            if (i.toWhichLix < 0 || i.toWhichLix >= tribe.lixlen)
                 return;
             Lixxie lixxie = tribe.lixvec[i.toWhichLix];
             assert (lixxie);
@@ -171,24 +172,11 @@ private:
                 || _cs.update < 60
                 || _cs.update < tribe.updatePreviousSpawn + tribe.spawnint)
                 continue;
-            assert (tribe.nextHatch < _cs.hatches.len);
-            const(Hatch) hatch = _cs.hatches[tribe.nextHatch];
-            immutable bool walkLeftInsteadOfRight = hatch.spawnFacingLeft;
-
             // the only interesting part of OutsideWorld right now is the
             // lookupmap inside the current state. Everything else will be
             // passed anew when the lix are updated.
-            auto ow = makeGypsyWagon(tribe, tribe.lixvec.len);
-            Lixxie newLix = new Lixxie(_cs.lookup, &ow, Point(
-                hatch.x + hatch.tile.trigger.x - 2 * walkLeftInsteadOfRight,
-                hatch.y + hatch.tile.trigger.y));
-            if (walkLeftInsteadOfRight)
-                newLix.turn();
-            tribe.lixvec ~= newLix;
-            tribe.recordSpawnedFromHatch();
-            tribe.updatePreviousSpawn = _cs.update;
-            tribe.nextHatch += _cs.numTribes;
-            tribe.nextHatch %= _cs.hatches.len;
+            auto ow = makeGypsyWagon(tribe, tribe.lixlen);
+            tribe.spawnLixxie(&ow);
         }
     }
 
@@ -198,7 +186,7 @@ private:
             return;
         foreach (int tribeID, tribe; _cs.tribes) {
             tribe.lixHatch = 0;
-            foreach (int lixID, lix; tribe.lixvec) {
+            foreach (int lixID, lix; tribe.lixvec.enumerate!int) {
                 if (! lix.healthy || lix.ploderTimer > 0)
                     continue;
                 auto ow = makeGypsyWagon(tribe, lixID);
@@ -224,7 +212,7 @@ private:
         void foreachLix(void delegate(Tribe, in int, Lixxie) func)
         {
             foreach (tribe; sortedTribes)
-                foreach (int lixID, lixxie; tribe.lixvec)
+                foreach (int lixID, lixxie; tribe.lixvec.enumerate!int)
                     func(tribe, lixID, lixxie);
         }
 

@@ -10,17 +10,11 @@ class Faller : Job {
     int ySpeed = 4;
     int pixelsFallen = 0;
 
+    mixin JobChild;
+
     enum ySpeedTerminal = 8;
     enum pixelsSafeToFall = 126;
     enum pixelsFallenToBecomeFloater = 60;
-
-    mixin(CloneByCopyFrom!"Faller");
-    protected void copyFromAndBindToLix(in Faller rhs, Lixxie lixToBindTo)
-    {
-        super.copyFromAndBindToLix(rhs, lixToBindTo);
-        ySpeed       = rhs.ySpeed;
-        pixelsFallen = rhs.pixelsFallen;
-    }
 
     static void becomeAndFallPixels(Lixxie lixxie, in int fallY)
     {

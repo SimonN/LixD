@@ -6,17 +6,13 @@ import hardware.sound;
 import lix;
 
 class Exiter : Leaver {
-
+private:
     // Do this much sideways motion during exiting, because the goal was
     // endered closer to the side than to the center of the trigger area
     int xOffsetFromGoal;
 
-    mixin(CloneByCopyFrom!"Exiter");
-    protected void copyFromAndBindToLix(in Exiter rhs, Lixxie lixToBindTo)
-    {
-        super.copyFromAndBindToLix(rhs, lixToBindTo);
-        xOffsetFromGoal  = rhs.xOffsetFromGoal;
-    }
+public:
+    mixin JobChild;
 
     void scoreForTribe(Tribe tribe)
     {

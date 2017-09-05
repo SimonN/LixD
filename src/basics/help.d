@@ -136,7 +136,7 @@ destroyArray(T)(ref T arr)
 clone(T)(in const(T)[] arr)
     if (is (T == class) || is (T == struct))
 {
-    static if (is (T == struct))
+    static if (is (T == struct) && is (const(T) : T))
         return arr.dup;
     else {
         T[] ret;

@@ -3,6 +3,7 @@ module lix.skill.builder;
 import lix;
 import game.physdraw;
 import game.terchang;
+import game.tribe;
 import hardware.sound;
 
 // base class for Builder and Platformer
@@ -11,46 +12,38 @@ abstract class BrickCounter : Job {
     int skillsQueued;
     int bricksLeft;
 
+    mixin JobChild;
+
     enum bricksAtStart = 12;
 
-    int startFrame() const { return 0; }
-
-    alias lixxie this;
-    alias copyFromAndBindToLix = super.copyFromAndBindToLix;
-    protected void copyFromAndBindToLix(in BrickCounter rhs, Lixxie bindToLix)
-    {
-        super.copyFromAndBindToLix(rhs, bindToLix);
-        skillsQueued = rhs.skillsQueued;
-        bricksLeft   = rhs.bricksLeft;
-    }
+    abstract int startFrame(in Job old) const;
 
     override PhyuOrder updateOrder() const { return PhyuOrder.adder; }
 
-    override @property bool callBecomeAfterAssignment() const
+    override AfterAssignment onManualAssignment(Job old)
     {
-        return lixxie.ac != this.ac;
-    }
-
-    override void onManualAssignment()
-    {
-        if (lixxie.ac == this.ac) {
-            // skillsQueued = ... would be a mistake. The new job (this) is
-            // discarded. We want to give the extra skills to the old job.
-            BrickCounter oldAc = cast (BrickCounter) lixxie.job;
-            assert (oldAc);
-            oldAc.skillsQueued = oldAc.skillsQueued + 1;
+        if (ac != old.ac) {
+            return AfterAssignment.becomeNormally;
+        }
+        else {
+            // this.skillsQueued = ... would be a mistake. The new job (this)
+            // will be discarded. Give the extra skills to the old job.
+            BrickCounter casted = cast (BrickCounter) old;
+            assert (casted);
+            casted.skillsQueued = casted.skillsQueued + 1;
+            return AfterAssignment.doNotBecome;
         }
     }
 
-    override void onBecome()
+    override void onBecome(in Job old)
     {
         bricksLeft = bricksAtStart;
-        frame = startFrame();
+        frame = startFrame(old);
     }
 
-    override void onBecomingSomethingElse()
+    override void returnSkillsDontCallLixxieInHere(Tribe ourTribe)
     {
-        outsideWorld.tribe.returnSkills(this.ac, skillsQueued);
+        ourTribe.returnSkills(this.ac, skillsQueued);
         skillsQueued = 0;
     }
 
@@ -73,22 +66,22 @@ abstract class BrickCounter : Job {
         onBuildingBrick();
     }
 
-    final bool maybeBecomeShrugger(Ac shruggingAc)
+    final BecomeCalled maybeBecomeShrugger(Ac shruggingAc)
     {
         assert (bricksLeft   >= 0);
         assert (skillsQueued >= 0);
 
         if (bricksLeft > 0) {
-            return false;
+            return BecomeCalled.no;
         }
         else if (skillsQueued > 0) {
             --skillsQueued;
             bricksLeft += bricksAtStart;
-            return false;
+            return BecomeCalled.no;
         }
         else {
             become(shruggingAc);
-            return true;
+            return BecomeCalled.yes;
         }
     }
 
@@ -107,14 +100,9 @@ class Builder : BrickCounter {
 
     bool fullyInsideTerrain;
 
-    override int startFrame() const { return 6; }
+    mixin JobChild;
 
-    mixin(CloneByCopyFrom!"Builder");
-    protected void copyFromAndBindToLix(in Builder rhs, Lixxie lixToBindTo)
-    {
-        super.copyFromAndBindToLix(rhs, lixToBindTo);
-        fullyInsideTerrain = rhs.fullyInsideTerrain;
-    }
+    override int startFrame(in Job) const { return 6; }
 
     override void onPerform()
     {
@@ -151,7 +139,7 @@ class Builder : BrickCounter {
         outsideWorld.physicsDrawer.add(tc);
     }
 
-    private void bumpAgainstTerrain()
+    private BecomeCalled bumpAgainstTerrain()
     {
         // The lix has already moved up and the image has its
         // feet below the regular position, inside the newly placed brick.
@@ -194,7 +182,10 @@ class Builder : BrickCounter {
             if (fullyInsideTerrain)
                 moveDown(2);
             become(Ac.walker);
+            return BecomeCalled.yes;
         }
+        else
+            return BecomeCalled.no;
     }
 }
 // end class Builder
@@ -208,14 +199,13 @@ class Builder : BrickCounter {
 
 
 class Platformer : BrickCounter {
-
-    mixin(CloneByCopyFrom!"Platformer");
+    mixin JobChild;
 
     enum standingUpFrame = 9;
 
-    override int startFrame() const
+    override int startFrame(in Job old) const
     {
-        if (lixxie.ac == Ac.shrugger2 && lixxie.frame < standingUpFrame)
+        if (old.ac == Ac.shrugger2 && old.frame < standingUpFrame)
             // continue platforming on same height, don't increase by 2
             return 16;
         else
@@ -243,6 +233,12 @@ class Platformer : BrickCounter {
         else if (frame == 5)
             planNextBrickFirstCycle();
         else if (frame == 7) {
+            // DTODO there could be a nasty bug here when the first of these
+            // 2 funcs terminates platforming, and the second assumes that
+            // the lixxie() is still platforming. I believe the effect in
+            // the 2017-09-06 code (JobUnion) is that the second function
+            // makes us move (perfectly fine) and maybe again issues the
+            // transition to shrugger (fine even though we already are shrug).
             moveUpAndCollide();
             moveAheadAndCollide();
         }
@@ -251,7 +247,8 @@ class Platformer : BrickCounter {
 
         // Looping 16 frames: build brick at floor height, not above
         else if (frame == loopBackToFrame) {
-            if (loopCompleted && ! maybeBecomeShrugger(Ac.shrugger2))
+            if (loopCompleted
+                && maybeBecomeShrugger(Ac.shrugger2) == BecomeCalled.no)
                 planNextBrickSubsequentCycles();
         }
         else if (frame == 18)
@@ -262,11 +259,11 @@ class Platformer : BrickCounter {
 
     // this is called from the following private functions, and also
     // from Walker.become
-    void abortAndStandUp()
+    static void abortAndStandUp(Lixxie who)
     {
-        become(Ac.shrugger2);
-        assert (lixxie.job.ac == Ac.shrugger2);
-        lixxie.job.frame = standingUpFrame;
+        who.become(Ac.shrugger2);
+        assert (who.job.ac == Ac.shrugger2);
+        who.job.frame = standingUpFrame;
     }
 
     override void onBuildingBrick()
@@ -317,7 +314,7 @@ class Platformer : BrickCounter {
         if (airAbove)
             moveUp(2);
         else
-            abortAndStandUp();
+            abortAndStandUp(lixxie);
     }
 
     private void moveAheadAndCollide()
@@ -325,7 +322,7 @@ class Platformer : BrickCounter {
         if (! platformerTreatsAsSolid(2, 1))
             moveAhead();
         else
-            abortAndStandUp();
+            abortAndStandUp(lixxie);
     }
 
     private void planNextBrickSubsequentCycles()
@@ -335,14 +332,15 @@ class Platformer : BrickCounter {
             && platformerTreatsAsSolid(4, 1)
             && platformerTreatsAsSolid(6, 1)
         )
-            abortAndStandUp();
+            abortAndStandUp(lixxie);
     }
 }
 
 
 
 class Shrugger : Job {
-    mixin(CloneByCopyFrom!"Shrugger");
+    mixin JobChild;
+
     override void perform()
     {
         if (isLastFrame) become(Ac.walker);

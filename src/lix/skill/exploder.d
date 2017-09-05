@@ -15,21 +15,23 @@ import game.terchang;
 import lix;
 
 abstract class Ploder : Job {
-    override @property bool blockable()                 const { return false; }
-    override @property bool callBecomeAfterAssignment() const { return false; }
-    override PhyuOrder    updateOrder() const { return PhyuOrder.flinger; }
+    mixin JobChild;
 
-    final override void onManualAssignment()
+    override PhyuOrder updateOrder() const { return PhyuOrder.flinger; }
+    override @property bool blockable() const { return false; }
+
+    final override AfterAssignment onManualAssignment(Job old)
     {
         assert (lixxie.ploderTimer == 0);
         lixxie.ploderTimer = lixxie.ploderTimer + 1;
         lixxie.ploderIsExploder = (ac == Ac.exploder);
+        return AfterAssignment.doNotBecome; // instead, game checks ploderTimer
     }
 
     // onBecome(): Do nothing, instead wait until we do perform(),
     // which is called immediately after this in the game loop.
     // During onBecome(), we lack outsideWorld; Ploders are special herefore.
-    final override void onBecome() { }
+    final override void onBecome(in Job) { }
 
     final override void perform()
     {
@@ -60,8 +62,7 @@ private:
 
 
 class Imploder : Ploder {
-
-    mixin(CloneByCopyFrom!"Imploder");
+    mixin JobChild;
 
 protected:
     override void makeEffect()
@@ -75,8 +76,7 @@ protected:
 
 
 class Exploder : Ploder {
-
-    mixin(CloneByCopyFrom!"Exploder");
+    mixin JobChild;
 
 protected:
     override void makeEffect()

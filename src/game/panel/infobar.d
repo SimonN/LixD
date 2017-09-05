@@ -22,7 +22,7 @@ private:
     int _spawnInterval;
     int _targetDescNumber;
     int _tooltipsSuggested; // bitset, values are in enum Tooltip
-    Rebindable!(const(Lixxie)) _targetDescLixxie;
+    ConstLix _targetDescLixxie;
     Rebindable!(const(Tribe))  _tribe;
     CutbitElement _bOut, _bHatch;
     Label         _lOut, _lHatch, _tooltip, _targetDesc;

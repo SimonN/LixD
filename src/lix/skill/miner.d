@@ -9,9 +9,7 @@ import hardware.sound;
 import lix;
 
 class Miner : Job {
-
-    enum maxGapDepth = 3;
-
+private:
     // Counts how many pixels the miner has been moved down during the frames
     // where the lix is not moving forward. This can happen due to terrain
     // being removed below the lix. When this counter exceeds 4, the lix stops
@@ -25,16 +23,13 @@ class Miner : Job {
     // removed under him. It is only allowed to move down in two cases:
     // (1) It's not moving forward.
     // (2) It's moving forward, but the path was solid before moving.
-    enum futureLength = 4;
     bool[futureLength] futureGroundIsSolid;
 
-    mixin(CloneByCopyFrom!"Miner");
-    void copyFromAndBindToLix(in Miner rhs, Lixxie lixToBindTo)
-    {
-        super.copyFromAndBindToLix(rhs, lixToBindTo);
-        movedDownSinceSwing   = rhs.movedDownSinceSwing;
-        futureGroundIsSolid[] = rhs.futureGroundIsSolid[];
-    }
+public:
+    mixin JobChild;
+
+    enum futureLength = 4;
+    enum maxGapDepth = 3;
 
     override PhyuOrder updateOrder() const { return PhyuOrder.remover; }
 
@@ -62,7 +57,6 @@ class Miner : Job {
     }
 
 private:
-
     void antiShock(in int resiliance) {
         int downThisFrame = antiShockMoveDown(resiliance);
         if (! isSolid || movedDownSinceSwing > resiliance)
@@ -150,6 +144,5 @@ private:
         assert (faller);
         faller.pixelsFallen = downThisFrame;
     }
-
 }
 // end class Miner

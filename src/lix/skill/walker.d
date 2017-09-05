@@ -2,94 +2,69 @@ module lix.skill.walker;
 
 import lix;
 
-private void
-setFrameAfterShortFallTo(Job newAc, int targetFrame)
-{
-    if (newAc.lixxie.ac == Ac.faller) {
-        auto oldAc = cast (const(Faller)) newAc.lixxie.job;
-        assert (oldAc);
-        if (   oldAc.pixelsFallen <= 9 && oldAc.frame < 1
-            || oldAc.pixelsFallen == 0
-        ) {
-            newAc.frame = targetFrame;
-        }
-        else if (oldAc.frame < 2) {
-            newAc.frame = 0;
-        }
-    }
-}
-
-
-
 class Walker : Job {
+    mixin JobChild;
 
     enum highestStepUp = 12;
 
-    mixin (CloneByCopyFrom!"Walker");
-
-    override @property bool callBecomeAfterAssignment() const { return false; }
-
-    override void onManualAssignment()
+    override AfterAssignment onManualAssignment(Job old)
     {
         // In general: Since we have callBecomeAfterAssignment == false,
         // if we decide to become walker after all, we have to set our frame
         // manually.
-        if (lixxie.ac == Ac.walker
-         || lixxie.ac == Ac.runner
-         || lixxie.ac == Ac.lander) {
+        if (old.ac == Ac.walker || old.ac == Ac.runner || old.ac == Ac.lander){
             turn();
-            lixxie.frame = -1;
+            old.frame = -1;
+            return AfterAssignment.doNotBecome;
         }
-        else if (lixxie.ac == Ac.stunner
-              || lixxie.ac == Ac.ascender) {
+        else if (old.ac == Ac.stunner || old.ac == Ac.ascender) {
             // priority allows to get here only when the frame is high enough
             become(Ac.walker);
             turn();
-            lixxie.frame =-1;
+            lixxie.frame = -1;
+            return AfterAssignment.weAlreadyBecame;
         }
-        else if (lixxie.ac == Ac.blocker) {
-            if (lixxie.frame < 20)
+        else if (old.ac == Ac.blocker) {
+            if (old.frame < 20)
                 // Setting the frame to 21 copies a bug from C++ Lix. There
                 // is a frame in the spritesheet (1st of blocker->walker anim)
                 // that is not shown at all. The fast resolution of the blocker
                 // isn't problematic though. We'll keep it as in C++ for now.
-                lixxie.frame = 21;
+                old.frame = 21;
             else
                 // during the blocker->walker transistion, allow turning
                 // by a second walker assignment
                 turn();
+            return AfterAssignment.doNotBecome;
         }
-        else if (lixxie.ac == Ac.platformer && lixxie.frame > 5) {
+        else if (old.ac == Ac.platformer && old.frame > 5) {
             // Don't become walker immediately, instead go through the nice
             // animation of standing up from kneeling.
-            auto platf = cast (Platformer) lixxie.job;
-            assert (platf !is null);
-            platf.abortAndStandUp();
+            Platformer.abortAndStandUp(lixxie);
+            return AfterAssignment.weAlreadyBecame;
             // See also the next else-if.
             // Clicking twice on the platformer shall turn it around.
         }
-        else if (lixxie.ac == Ac.shrugger || lixxie.ac == Ac.shrugger2) {
+        else if (old.ac == Ac.shrugger || old.ac == Ac.shrugger2) {
             become(Ac.walker);
             turn();
             lixxie.frame = -1;
+            return AfterAssignment.weAlreadyBecame;
         }
         else {
             become(Ac.walker);
             lixxie.frame = -1;
+            return AfterAssignment.weAlreadyBecame;
         }
     }
 
-
-
-    override void onBecome()
+    override void onBecome(in Job old)
     {
         if (abilityToRun)
             become(Ac.runner);
         else
-            this.setFrameAfterShortFallTo(8);
+            this.setFrameAfterShortFallTo(old, 8);
     }
-
-
 
     override void perform()
     {
@@ -101,9 +76,8 @@ class Walker : Job {
         performWalkingOrRunning();
     }
 
-
-
-    protected final void performWalkingOrRunning()
+protected:
+    final void performWalkingOrRunning()
     {
         immutable oldEx = ex;
         immutable oldEy = ey;
@@ -143,10 +117,25 @@ class Walker : Job {
         }
     }
 
+    void setFrameAfterShortFallTo(in Job old, int targetFrame)
+    {
+        if (old.ac == Ac.faller) {
+            auto faller = cast (const(Faller)) old;
+            assert (faller);
+            if (   faller.pixelsFallen <= 9 && faller.frame < 1
+                || faller.pixelsFallen == 0
+            ) {
+                this.frame = targetFrame;
+            }
+            else if (old.frame < 2) {
+                this.frame = 0;
+            }
+        }
+    }
 
-
+private:
     // returns true if the lixxie shall turn or can start to climb
-    private final bool handleWallOrPitHere()
+    final bool handleWallOrPitHere()
     {
         // Check for floor at the new position. If there is none, check
         // slightly above -- we don't want to fall through checkerboards,
@@ -191,25 +180,25 @@ class Walker : Job {
 
 
 class Runner : Walker {
+    mixin JobChild;
 
-    mixin (CloneByCopyFrom!"Runner");
-
-    override @property bool callBecomeAfterAssignment() const { return false; }
-
-    override void onManualAssignment()
+    override AfterAssignment onManualAssignment(Job old)
     {
         assert (! abilityToRun);
         abilityToRun = true;
-        if (lixxie.ac == Ac.walker) {
+        if (old.ac == Ac.walker) {
             become(Ac.runner);
             lixxie.frame = 2; // looks best, with a foot on the ground behind
+            return AfterAssignment.weAlreadyBecame;
         }
+        else
+            return AfterAssignment.doNotBecome;
     }
 
-    override void onBecome()
+    override void onBecome(in Job old)
     {
         assert (abilityToRun);
-        this.setFrameAfterShortFallTo(6);
+        this.setFrameAfterShortFallTo(old, 6);
     }
 
     override void perform()
@@ -225,5 +214,4 @@ class Runner : Walker {
         if (lixxie.ac == Ac.runner && oldDir == dir)
             performWalkingOrRunning();
     }
-
 }

@@ -1,6 +1,7 @@
 module lix.lixxie;
 
 import std.algorithm; // swap
+import std.conv;
 import std.string; // format, for codegen
 
 import basics.globals; // fuse image
@@ -11,36 +12,39 @@ import basics.user; // multipleBuilders
 import game.mask;
 import tile.phymap;
 import graphic.color;
+import graphic.cutbit;
 import graphic.gadget;
-import graphic.graphic;
 import graphic.internal;
 import graphic.torbit;
 import hardware.sound;
 import lix;
 
-class Lixxie : Graphic {
+alias Lixxie = LixxieImpl*;
+alias ConstLix = const(LixxieImpl)*;
+
+struct LixxieImpl {
 private:
-    int _ex;
-    int _ey;
-    int _flags;
-    int _flingX;
-    int _flingY;
+    /* _job refers back to Lixxie by counting backwards (Lixxie._job.offsetof).
+     * This allows us to model the Job with D's OO features and be fast by
+     * making Lixxie-Job-combos fast value types.
+     * Gets package access for job to emplace itself here.
+     */
+    package JobUnion _job;
+
+    short _ex;
+    short _ey;
+    short _flags;
+    byte _flingX;
+    byte _flingY;
+    byte _ploderTimer; // phyus since assign. See exploder.handlePloderTimer.
+    Style _style;
     Phybitset _encBody;
     Phybitset _encFoot;
-    Style _style;
-    Job _job;
     OutsideWorld* _outsideWorld; // set whenever physics and tight coupling
                                  // are needed, nulled again at end of those
-    int _ploderTimer; // phyus since ploder assignment. For details,
-                      // see lix.skills.exploder.handlePloderTimer.
 
     enum int exOffset = 16; // offset of the effective coordinate of the lix
     enum int eyOffset = 26; // sprite from the top left corner
-
-    @property inout(Phymap) lookup() inout
-    {
-        return outsideWorld.state.lookup;
-    }
 
     enum string tmpOutsideWorld = q{
         assert (ow);
@@ -49,6 +53,22 @@ private:
         scope (exit)
             _outsideWorld = null;
     };
+
+    @property inout(Phymap) lookup() inout
+    {
+        assert (_outsideWorld, "need outsideWorld for ex/ey movement");
+        return outsideWorld.state.lookup;
+    }
+
+package:
+    enum jobOffset = _job.offsetof;
+    static assert (_job.offsetof % size_t.sizeof == 0); // emplace alignment
+
+    @property const(Topology) env() const
+    {
+        assert (_outsideWorld, "need outsideWorld for ex/ey movement");
+        return outsideWorld.state.lookup;
+    }
 
 public:
     enum int ploderDelay = 75; // explode once _ploderTimer >= ploderDelay
@@ -59,26 +79,11 @@ public:
     @property int ey() const { return _ey; }
     // setters for these are below in the main code
 
-    @property const(Job) constJob() const
-    {
-        return _job;
-    }
-    package @property inout(Job) job() inout
-    {
-        return _job;
-    }
+            @property const(Job) constJob() const { return _job.asClass; }
+    package @property inout(Job) job()      inout { return _job.asClass; }
 
-    @property Ac ac() const
-    {
-        assert (_job);
-        return _job.ac;
-    }
-
-    @property PhyuOrder updateOrder() const
-    {
-        assert (_job);
-        return _job.updateOrder;
-    }
+    @property Ac ac() const { return job.ac; }
+    @property PhyuOrder updateOrder() const { return job.updateOrder; }
 
     package @property inout(OutsideWorld*) outsideWorld() inout
     {
@@ -87,21 +92,16 @@ public:
     }
 
             @property int  ploderTimer() const   { return _ploderTimer; }
-    package @property void ploderTimer(in int i) { _ploderTimer = i;    }
+    package @property void ploderTimer(in int i) { _ploderTimer = i.to!byte; }
 
     @property int  flingX()   const { return _flingX;   }
     @property int  flingY()   const { return _flingY;   }
 
-    @property int frame() const   { return _job.frame;     }
-    @property int frame(in int i) { return _job.frame = i; }
+    @property int frame() const   { return job.frame;     }
+    @property int frame(in int i) { return job.frame = i; }
 
-    // (super == Graphic) shall use frame and ac to draw itself
-    // DTODOREFACTOR: Inheriting from Graphic
-    // violates the Liskov subtitution principle because I don't want
-    // to offer setting yf here. Give the Lix different activities instead.
-
-    override @property int xf() const { return this.frame; }
-    override @property int yf() const { return this.ac;    }
+    @property int xf() const { return this.frame; }
+    @property int yf() const { return this.ac;    }
 
     @property auto bodyEncounters() const { return _encBody; }
     @property auto footEncounters() const { return _encFoot; }
@@ -148,59 +148,57 @@ public:
      */
 
     @property bool facingRight() const { return ! facingLeft; }
+    @property bool mirror()      const { return facingLeft; }
+    @property int rotation()     const { return 2 * facingLeft; }
     @property int dir()          const { return facingLeft ? -1 : 1; }
     @property int dir(in int i)
     {
         assert (i != 0);
         facingLeft = (i < 0);
-        // Mirror flips vertically. Therefore, when facingLeft, we have to
-        // rotate by 180 degrees in addition.
-        super.mirror   =     facingLeft;
-        super.rotation = 2 * facingLeft;
         return dir;
     }
 
     void turn() { dir = -dir; }
 
-
+    // Mirror flips vertically. Therefore, when facingLeft, we have to
+    // rotate by 180 degrees in addition.
 
 public:
 
-this(const(Topology) env, OutsideWorld* ow, in Point aLoc)
+this(OutsideWorld* ow, in Point aLoc)
 {
     mixin (tmpOutsideWorld);
     _style = outsideWorld.tribe.style;
-    _ex = env.wrap(aLoc).x.even;
-    _ey = env.wrap(aLoc).y;
-    super(getLixSpritesheet(_style), env, Point(_ex - exOffset,
-                                                _ey - eyOffset));
-    _job  = Job.factory(this, Ac.faller);
+    _ex = env.wrap(aLoc).x.even.to!(typeof(_ex));
+    _ey = env.wrap(aLoc).y.to!(typeof(_ey));
+    _job = JobUnion(Ac.faller);
     frame = 4;
     addEncountersFromHere();
 }
 
-this(in Lixxie rhs)
+this(this)
 {
-    assert (rhs !is null);
-    _style = rhs._style;
-    _ex    = rhs._ex;
-    _ey    = rhs._ey;
-    _flags = rhs._flags;
-    super(graphic.internal.getLixSpritesheet(_style), rhs.env,
-        Point(_ex - exOffset, _ey - eyOffset));
-
-    dir = rhs.dir; // important to set super's mirr and rot
-    _flingX = rhs._flingX;
-    _flingY = rhs._flingY;
-    _encBody = rhs._encBody;
-    _encFoot = rhs._encFoot;
-    ploderTimer = rhs.ploderTimer;
-    _job = rhs._job.cloneAndBindToLix(this);
+    // Even the _job, as a struct, is copied bitwise. Perfect, since it points
+    // to its lixxie by deducting its offset. Only 1 Lixxie member is special:
     _outsideWorld = null; // Must be passed anew by the next update.
-                          // Can't copy this from const lix, keep it at .init.
 }
 
-override Lixxie clone() const { return new Lixxie(this); }
+LixxieImpl clone() const
+{
+    LixxieImpl ret;
+    ret._style = this._style;
+    ret._ex = this._ex;
+    ret._ey = this._ey;
+    ret._flags = this._flags;
+    ret._flingX = this._flingX;
+    ret._flingY = this._flingY;
+    ret._encBody = this._encBody;
+    ret._encFoot = this._encFoot;
+    ret.ploderTimer = this.ploderTimer;
+    ret._job = this._job; // POD, designed to be copied like this
+    ret._outsideWorld = null; // Must be passed anew by the next update.
+    return ret;
+}
 
 void addEncountersFromHere()
 {
@@ -211,28 +209,25 @@ void addEncountersFromHere()
              |  lookup.get(Point(_ex, _ey - 12));
 }
 
-package void repositionSprite()
+package Point loc() const
 {
-    super.loc = Point(_ex - exOffset + _job.spriteOffsetX, _ey - eyOffset);
+    return Point(_ex - exOffset + job.spriteOffsetX, _ey - eyOffset);
 }
 
 @property int ex(in int n)
 {
-    _ex = basics.help.even(n);
+    _ex = basics.help.even(n).to!(typeof(_ex));
     if (env.torusX)
-        _ex = positiveMod(_ex, env.xl);
-    assert (_job);
-    repositionSprite();
+        _ex = positiveMod(_ex, env.xl).to!(typeof(_ex));
     addEncountersFromHere();
     return _ex;
 }
 
 @property int ey(in int n)
 {
-    _ey = n;
+    _ey = n.to!(typeof(_ey));
     if (env.torusY)
-        _ey = positiveMod(_ey, env.yl);
-    repositionSprite();
+        _ey = positiveMod(_ey, env.yl).to!(typeof(_ey));
     addEncountersFromHere();
     return _ey;
 }
@@ -350,34 +345,26 @@ void playSound(in Sound sound)
             outsideWorld.state.update, _style, outsideWorld.lixID, sound);
 }
 
-override bool isLastFrame() const
-{
-    return ! cutbit.frameExists(frame + 1, ac);
-}
+const(Cutbit) cutbit() const { return getLixSpritesheet(_style); }
+bool isLastFrame() const { return ! cutbit.frameExists(frame + 1, ac); }
+void advanceFrame() { frame = (isLastFrame() ? 0 : frame + 1); }
 
-void advanceFrame()
-{
-    frame = (isLastFrame() ? 0 : frame + 1);
-}
-
-override void draw() const
+void draw() const
 {
     if (ac == Ac.nothing)
         return;
-    drawFuse(this);
-    super.draw();
-    drawFlame(this);
+    drawFuse(&this);
+    cutbit.draw(loc, xf, yf, mirror, rotation);
+    drawFlame(&this);
 }
 
 final void drawAgainHighlit() const
 {
     assert (ac != Ac.nothing, "we shouldn't highlight dead lix");
     // No need to draw the fuse, because we draw on top of the old lix drawing.
-    // Hack: We examine the base class Graphic for what it would draw,
-    // and use a different sprite with the copy-pasted code.
-    graphic.internal.getLixSpritesheet(Style.highlight).draw(
-        super.loc, xf, yf, super.mirror, super.rotation);
-    drawFlame(this);
+    graphic.internal.getLixSpritesheet(Style.highlight)
+        .draw(loc, xf, yf, mirror, rotation);
+    drawFlame(&this);
 }
 
 
@@ -388,15 +375,8 @@ final void drawAgainHighlit() const
 
 
 
-bool healthy() const
-{
-    return ac != Ac.nothing && ! cast (Leaver) this.job;
-}
-
-bool cursorShouldOpenOverMe() const
-{
-    return healthy;
-}
+bool healthy() const { return JobUnion.healthy(ac); }
+bool cursorShouldOpenOverMe() const { return healthy; }
 
 // returns 0 iff lix is not clickable and the cursor should be closed
 // returns 1 iff lix is not clickable, but the cursor should open still
@@ -501,16 +481,18 @@ int priorityForNewAc(in Ac newAc) const
 
 
 
+void become(in Ac newAc) { becomeTemplate!false(newAc); }
+
 void assignManually(OutsideWorld* ow, in Ac newAc)
 {
     mixin(tmpOutsideWorld);
-    become!true(newAc);
+    becomeTemplate!true(newAc);
 }
 
 void perform(OutsideWorld* ow)
 {
     mixin(tmpOutsideWorld);
-    performUseGadgets(this); // in lix.perform
+    performUseGadgets(&this); // in lix.perform
 }
 
 void becomePloder(OutsideWorld* ow)
@@ -524,36 +506,43 @@ void applyFlingXY(OutsideWorld* ow)
     if (! healthy)
         return;
     mixin(tmpOutsideWorld);
-    Tumbler.applyFlingXY(this); // this will check if flingNew == true
+    Tumbler.applyFlingXY(&this); // this will check if flingNew == true
 }
 
-void become(bool manualAssignment = false)(in Ac newAc)
+private void becomeTemplate(bool manualAssignment)(in Ac newAc)
 {
-    assert (_job);
-    auto oldJob = _job;
-    auto newJob = Job.factory(this, newAc);
-    immutable yesBecome = newJob.callBecomeAfterAssignment
-                          || ! manualAssignment;
-    if (ac != newJob.ac && yesBecome) {
-        _job.onBecomingSomethingElse();
+    JobUnion oldJob = _job;
+    _job = JobUnion(newAc);
+
+    immutable AfterAssignment afas = manualAssignment
+        ? job.onManualAssignment(oldJob.asClass) // has side effects
+        : AfterAssignment.becomeNormally;
+
+    if (oldJob.asClass.ac != ac && ! restoreOldJob(afas)) {
+        // For memory safety, we could temporarily copy oldJob back into _job,
+        // call onBecomingSomethingElse, and copy back the new job.
+        // Not doing that, and instead telling the Job override functions not
+        // to look into their lixxie().
+        oldJob.asClass.returnSkillsDontCallLixxieInHere(outsideWorld.tribe);
     }
-    static if (manualAssignment) {
-        // while Lix still has old performed ac
-        newJob.onManualAssignment();
+    if (restoreOldJob(afas)) {
+        _job = oldJob;
     }
-    if (yesBecome) {
-        newJob.onBecome();
-        if (_job is oldJob) {
-            // if onBecome() calls become() again, only let the last change
-            // through into Lixxie's data. Ignore the intermediate _job.
-            _job = newJob;
-            static if (manualAssignment)
-                // can go to -1, then after the update, frame 0 is displayed
-                frame = frame - 1;
-            repositionSprite(); // consider new job's spriteOffsetX
-        }
+    else if (afas == AfterAssignment.becomeNormally) {
+        job.onBecome(oldJob.asClass); // can call become() recursively
+        static if (manualAssignment)
+            // can go to -1, then after the update, frame 0 is displayed
+            frame = frame - 1;
+    }
+}
+
+private bool restoreOldJob(AfterAssignment afas)
+{
+    final switch (afas) {
+        case AfterAssignment.becomeNormally:  return false;
+        case AfterAssignment.doNotBecome:     return true;
+        case AfterAssignment.weAlreadyBecame: return false;
     }
 }
 
 }
-// end class Lixxie

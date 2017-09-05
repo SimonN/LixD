@@ -6,14 +6,14 @@ import lix;
 import game.tribe;
 
 class Blocker : Job {
+    mixin JobChild;
+
     // blockers have a 1-lo-res pixel (= 2 hi-res pixel) dead zone in their
     // center, then turn lems if (blocker's x - other lem's x).abs is strictly
     // less than forceFieldXlEachSide.
     enum forceFieldXlEachSide = 14;
     enum forceFieldYlAbove = 16;
     enum forceFieldYlBelow = 8;
-
-    mixin(CloneByCopyFrom!"Blocker");
 
     override @property bool blockable() const { return false; }
     override PhyuOrder updateOrder() const { return PhyuOrder.blocker; }

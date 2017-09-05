@@ -14,6 +14,7 @@ import enumap;
 
 import basics.globals;
 import basics.help;
+import basics.rect;
 import game.score;
 import net.repdata;
 import lix;
@@ -46,7 +47,7 @@ class Tribe {
     alias valueFields this;
 
     Enumap!(Ac, int) skills;
-    Lixxie[] lixvec;
+    LixxieImpl[] lixvecImpl;
 
     this() { }
 
@@ -54,13 +55,27 @@ class Tribe {
     {
         assert (rhs, "don't copy-construct from a null Tribe");
         valueFields = rhs.valueFields;
-        skills      = rhs.skills;
-        lixvec      = rhs.lixvec .clone;
+        skills = rhs.skills;
+        lixvecImpl = rhs.lixvecImpl.clone; // only value types since 2017-09!
     }
 
     Tribe clone() const { return new Tribe(this); }
 
+    @property lixvec() @nogc // mutable. For const, see 5 lines below
+    {
+        Lixxie f(ref LixxieImpl value) { return &value; }
+        return lixvecImpl.map!f;
+    }
+
     @property const @nogc {
+        auto lixvec()
+        {
+            ConstLix f(ref const(LixxieImpl) value) { return &value; }
+            return lixvecImpl[].map!f;
+        }
+
+        int lixlen() { return lixvecImpl.len; }
+
         bool doneDeciding()  { return _lixOut == 0 && lixHatch == 0; }
         bool doneAnimating() { return doneDeciding() && ! _lixLeaving; }
 
@@ -130,6 +145,22 @@ class Tribe {
         if (skills[ac] != skillInfinity)
             skills[ac] += amount;
     }
+
+    void spawnLixxie(OutsideWorld* ow)
+    {
+        const hatch = ow.state.hatches[nextHatch];
+        LixxieImpl newLix = LixxieImpl(ow, Point(
+            hatch.x + hatch.tile.trigger.x - 2 * hatch.spawnFacingLeft,
+            hatch.y + hatch.tile.trigger.y));
+        if (hatch.spawnFacingLeft)
+            newLix.turn();
+        lixvecImpl ~= newLix;
+        recordSpawnedFromHatch();
+        updatePreviousSpawn = ow.state.update;
+        nextHatch += ow.state.numTribes;
+        nextHatch %= ow.state.hatches.len;
+    }
+
 
     ///////////////////////////////////////////////////////////////////////////
     // Nuke

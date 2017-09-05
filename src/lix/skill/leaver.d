@@ -4,16 +4,15 @@ import lix;
 import hardware.sound;
 
 class RemovedLix : Job {
-
-    mixin(CloneByCopyFrom!"RemovedLix");
+    mixin JobChild;
 
     override @property bool blockable() const { return false; }
 
-    override void onBecome()
+    override void onBecome(in Job old)
     {
-        assert (lixxie.job.ac != Ac.nothing,
+        assert (old.ac != Ac.nothing,
             "Lix can't be killed twice, that would miscount them.");
-        if (healthy)
+        if (! cast (Leaver) old) // if healthy
             outsideWorld.tribe.recordOutToLeaver(
                 lixxie.outsideWorld.state.update);
         outsideWorld.tribe.recordLeaverDone();
@@ -25,17 +24,18 @@ class RemovedLix : Job {
 
 
 abstract class Leaver : Job {
+    mixin JobChild;
 
     override @property bool blockable() const { return false; }
 
-    final override void onBecome()
+    final override void onBecome(in Job old)
     {
         lixxie.outsideWorld.tribe.recordOutToLeaver(
             lixxie.outsideWorld.state.update);
-        onBecomeLeaver();
+        onBecomeLeaver(old);
     }
 
-    void onBecomeLeaver() { } // override this instead of onBecome
+    void onBecomeLeaver(in Job) { } // override this instead of onBecome
 
     override void perform() { advanceFrameAndLeave(); }
 
@@ -52,36 +52,31 @@ abstract class Leaver : Job {
 
 
 class Splatter : Leaver {
+    mixin JobChild;
 
-    mixin(CloneByCopyFrom!"Splatter");
-
-    override void onBecomeLeaver()
+    override void onBecomeLeaver(in Job)
     {
         playSound(Sound.SPLAT);
     }
 }
 
 class Burner : Leaver {
+    mixin JobChild;
 
-    mixin(CloneByCopyFrom!"Burner");
-
-    override void onBecomeLeaver()
+    override void onBecomeLeaver(in Job)
     {
         playSound(Sound.FIRE);
     }
-    // DTODOSKILLS: Implement moving up/down in the air
 }
 
 class Drowner : Leaver {
+    mixin JobChild;
 
-    mixin(CloneByCopyFrom!"Drowner");
-
-    override void onBecomeLeaver()
+    override void onBecomeLeaver(in Job old)
     {
-        if (lixxie.ac == Ac.tumbler && lixxie.frame >= 9)
+        playSound(Sound.WATER);
+        if (old.ac == Ac.tumbler && old.frame >= 9)
             // fall head-first into water, not feet-first (frame 0)
             this.frame = 6;
-        playSound(Sound.WATER);
     }
-    // DTODOSKILLS: Look at C++ Lix about how we moved during drowning
 }

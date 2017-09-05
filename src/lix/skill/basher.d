@@ -10,21 +10,15 @@ import hardware.sound;
 
 class Basher : Job {
 
-    enum halfPixelsToFall = 9;
-    int  halfPixelsMovedDown; // per pixel down: += 2; per frame passed: -= 1;
+    int halfPixelsMovedDown; // per pixel down: += 2; per frame passed: -= 1;
     bool steelWasHit;
 
-    mixin(CloneByCopyFrom!"Basher");
-    protected void copyFromAndBindToLix(in Basher rhs, Lixxie lixToBindTo)
-    {
-        super.copyFromAndBindToLix(rhs, lixToBindTo);
-        halfPixelsMovedDown = rhs.halfPixelsMovedDown;
-        steelWasHit = rhs.steelWasHit;
-    }
+    mixin JobChild;
+    enum halfPixelsToFall = 9;
 
     override PhyuOrder updateOrder() const { return PhyuOrder.remover; }
 
-    override void onBecome()
+    override void onBecome(in Job old)
     {
         // September 2015: start faster to make the basher slightly stronger
         frame = 2;
@@ -44,7 +38,6 @@ class Basher : Job {
     }
 
 private:
-
     bool nothingMoreToBash()
     {
         // We don't check the pixels that would be in the upcoming basher
@@ -132,6 +125,5 @@ private:
                 Faller.becomeAndFallPixels(lixxie, y);
         }
     }
-
 }
 // end class Basher
