@@ -9,9 +9,11 @@ module game.core.passive;
  */
 
 import basics.alleg5;
+import basics.globals;
 import game.core.game;
 import hardware.keyboard;
 import hardware.mousecur;
+import hardware.sound;
 
 package void
 calcPassive(Game game) { with (game)
@@ -27,4 +29,9 @@ calcPassive(Game game) { with (game)
     map.calcScrolling();
     if (map.scrollingNow)
         mouseCursor.xf = 3;
+
+    if (game.pan.pingGoals) {
+        _altickPingGoalsUntil = timerTicks + ticksPerSecond * 4;
+        playLoud(Sound.CLOCK);
+    }
 }}

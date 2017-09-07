@@ -319,6 +319,7 @@ void populateGameKeys()
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!HotkeyOption(keyChat, watcher),
         fac.factory!HotkeyOption(keySpecTribe, watcher),
+        fac.factory!HotkeyOption(keyPingGoals, watcher),
     ];
 
     enum belowAllGameKeys = 310f;

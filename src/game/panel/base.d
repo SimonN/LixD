@@ -33,6 +33,7 @@ private:
     SaveStateButtons _ssbs;
     TapeRecorderButtons _trbs; // contains the singleplayer nuke button
     NukeButton _nukeMulti;
+    TextButton _pingGoals; // often null
     ScoreGraph _scoreGraph;
 
 public:
@@ -68,14 +69,19 @@ public:
             addChildren(stats, _ssbs, _trbs);
         }
         else {
-            stats = new InfoBarMultiplayer(barGeom);
+            // This is the branch for (yes score graph, no tape recorder).
             // Hack: Even if neither score graph or trbs shown, still
-            // show the score graph to fill the void.
+            // enter this branch: Show the score graph to fill the void.
+            stats = new InfoBarMultiplayer(barGeom);
             _scoreGraph = new ScoreGraph(new Geom(0, 0, 4 * skillXl,
                                                   ylg - 20f, From.TOP_RIGHT));
-            _nukeMulti = new NukeButton(new Geom(0, 0, 4 * skillXl, 20f,
-                            From.BOTTOM_RIGHT), NukeButton.WideDesign.yes);
-            addChildren(stats, _scoreGraph, _nukeMulti);
+            enum pingXl = 25f;
+            _nukeMulti = new NukeButton(new Geom(pingXl, 0, 4*skillXl - pingXl,
+                20f, From.BOTTOM_RIGHT), NukeButton.WideDesign.yes);
+            _pingGoals = new TextButton(new Geom(0, 0, pingXl, 20f,
+                            From.BOTTOM_RIGHT), "\u2302?");
+            _pingGoals.hotkey = basics.user.keyPingGoals;
+            addChildren(stats, _scoreGraph, _nukeMulti, _pingGoals);
         }
     }
 
@@ -141,6 +147,7 @@ public:
         bool framestepAheadOne()  { return _trbs && _trbs.framestepAheadOne; }
         bool framestepAheadMany() { return _trbs && _trbs.framestepAheadMany; }
         bool nukeDoubleclicked()  { return nuke.doubleclicked; }
+        bool pingGoals()          { return _pingGoals && _pingGoals.execute; }
         bool zoomIn()             { return _trbs && _trbs.zoomIn
                                       || ! _trbs && keyZoomIn.keyTapped; }
         bool zoomOut()            { return _trbs && _trbs.zoomOut
@@ -177,6 +184,8 @@ protected:
             hardware.sound.playLoud(Sound.PANEL);
         if (nuke.isMouseHere)
             suggestTooltip(Tooltip.ID.nuke);
+        if (_pingGoals && _pingGoals.isMouseHere)
+            suggestTooltip(Tooltip.ID.pingGoals);
     }
 
 private:

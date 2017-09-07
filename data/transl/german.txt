@@ -121,6 +121,7 @@ $gameFramestepAhead  %s für Schritt vorwärts, %s für Sprung vorwärts.
 $gameFastForward     %s für schnellen Vorlauf, %s für Turbo.
 $gameRestart         Level neu starten.
 $gameNuke            Atombombe. Doppelklicke zum Aktivieren.
+$gamePingGoals       Eigene Ziele hervorheben.
 $gameSpecTribe       Fähigkeiten anderer Teams ansehen.
 
 // Editor allgemein
@@ -347,7 +348,12 @@ $optionKeyStateLoad         Stand laden
 $optionKeyStateSave         Stand speich.
 $optionKeyChat               Chat
 $optionKeySpecTribe         Team zusehen
+$optionKeyPingGoals         Ziele hervorheben
 $optionKeyNuke               Atombombe
+
+$optionKeyPingGoalsDesc Die eigenen Ziele im Netzwerkspiel kurz hervorheben. Das ist hilfreich|in wilden Partien, oder falls Terrain die Markierungen verdeckt.
+$optionKeyNukeDesc Im Einzelspieler alle Lix sprengen, um den Level zu beenden.|Im Netzwerkspiel die Nachspielzeit starten, sofern mindestens 1 Lix gerettet ist.
+$winGameTitleDesc Das Menü während des Spiels aufrufen,|um den Level zu beenden oder das Replay zu speichern.
 
 $optionAvoidBuilderQueuing   Builder eher an Nicht-Builder
 $optionAvoidBatterToExploder Batter eher an Nicht-Exploder

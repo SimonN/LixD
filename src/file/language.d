@@ -147,6 +147,7 @@ enum Lang {
     gameFastForward,
     gameRestart,
     gameNuke,
+    gamePingGoals,
     gameSpecTribe,
 
     // main editor screen
@@ -363,6 +364,7 @@ enum Lang {
     optionKeyZoomOut, optionKeyZoomOutDesc,
     optionKeyChat, optionKeyChatDesc,
     optionKeySpecTribe, optionKeySpecTribeDesc,
+    optionKeyPingGoals, optionKeyPingGoalsDesc,
     optionKeyNuke, optionKeyNukeDesc,
 
     optionKeyMenuOkay, optionKeyMenuOkayDesc,

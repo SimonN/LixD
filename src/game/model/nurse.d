@@ -36,7 +36,8 @@ public:
     // this is bad, DTODO: refactor
     @property constStateForDrawingOnly()  const { return _model.cs; }
     @property stateOnlyPrivatelyForGame() const { return _model.cs; }
-    void drawAllGadgets() { _model.cs.drawAllGadgets; }
+    // end bad
+    void drawAllGadgets() { _model.cs.drawAllGadgets(); }
 
     // We get to own the replay, but not the level or the effect manager.
     // EffectManager may be null.
@@ -169,6 +170,12 @@ public:
     {
         assert (style in _model.cs.tribes);
         return resultOf(_model.cs.tribes[style]);
+    }
+
+    auto goalsOfTeam(in Style st) const
+    body {
+        assert (_model);
+        return _model.cs.goals.filter!(g => g.hasTribe(st));
     }
 
 private:

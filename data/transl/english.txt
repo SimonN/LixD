@@ -123,6 +123,7 @@ $gameFramestepAhead  %s to step ahead, %s to jump ahead.
 $gameFastForward     %s for fast-forward, %s for turbo.
 $gameRestart         Restart level.
 $gameNuke            Nuke. Double-click to activate.
+$gamePingGoals       Highlight own goals.
 $gameSpecTribe       View skillset of another team.
 
 // main editor screen
@@ -366,7 +367,8 @@ $optionKeyStateLoad          Load state
 $optionKeyStateSave          Save state
 $optionKeyChat                Chat
 $optionKeySpecTribe          Cycle teams
-$optionKeyNuke                Nuke
+$optionKeyPingGoals          Highlight goals
+$optionKeyNuke               Nuke
 
 $optionKeyForceLeftDesc Hold to assign skills to lix facing left.|This is useful in a dense bunch of lix.
 $optionKeyForceRightDesc Hold to assign skills to lix facing right.|This is useful in a dense bunch of lix.
@@ -382,7 +384,8 @@ $optionKeyStateLoadDesc Go back to the remembered game position.|You can remembe
 $optionKeyStateSaveDesc Remember the exact game position.|You can come back to that position via Load state.
 $optionKeyChatDesc Open the console to chat during a multiplayer game.
 $optionKeySpecTribeDesc Show the skillset of a different team when you observe a live multiplayer game|or when you replay a saved multiplayer game.
-$optionKeyNukeDesc Explode all your lix to finish the level.|In multiplayer, if you have saved at least 1 lix, overtime begins.
+$optionKeyPingGoalsDesc Highlight own goals during a networking game. This may be helpful|in chaotic games, or when terrain covers the colored goal markers.
+$optionKeyNukeDesc In singleplayer, explode all your lix to finish the level.|In multiplayer, start overtime if you have saved at least 1 lix.
 $winGameTitleDesc Open the game menu dialog.|Exit the level or save replays from this dialog.
 
 $optionAvoidBuilderQueuing    Prefer spamming over queuing
