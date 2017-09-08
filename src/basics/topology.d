@@ -46,16 +46,87 @@ public:
         _ty = rhs._ty;
     }
 
-    bool matches(in Topology rhs) const
-    {
-        return rhs && _xl == rhs._xl && _yl == rhs._yl
-                   && _tx == rhs._tx && _ty == rhs._ty;
+    final const pure @nogc {
+        @property int  xl()     { return _xl; }
+        @property int  yl()     { return _yl; }
+        @property bool torusX() { return _tx; }
+        @property bool torusY() { return _ty; }
+
+        bool matches(in Topology rhs)
+        {
+            return rhs && _xl == rhs._xl && _yl == rhs._yl
+                       && _tx == rhs._tx && _ty == rhs._ty;
+        }
+
+        Point wrap(in Point p)
+        {
+            return Point(_tx ? positiveMod(p.x, _xl) : p.x,
+                         _ty ? positiveMod(p.y, _yl) : p.y);
+        }
+
+        // If the point is off the non-torus, return what's closest to that.
+        // If the point is off the torus, this is identical to this.wrap(p).
+        Point clamp(in Point p)
+        {
+            return Point(_tx ? positiveMod(p.x, _xl) : .clamp(p.x, 0, xl - 1),
+                         _ty ? positiveMod(p.y, _yl) : .clamp(p.y, 0, yl - 1));
+        }
+
+        // This computes distances similar to (1st_arg - 2nd_arg), but it
+        // check for shortcuts around the cylinder/torus if appropriate.
+        int distanceX(in int x1, in int x2)
+        {
+            if (! _tx) return x2 - x1;
+            else {
+                int[3] possible = [x2-x1, x2-x1-_xl, x2-x1+_xl];
+                return std.algorithm.minPos!"abs(a) < abs(b)"(possible[])[0];
+            }
+        }
+
+        int distanceY(in int y1, in int y2)
+        {
+            if (! _ty) return y2 - y1;
+            else {
+                int[3] possible = [y2-y1, y2-y1-_yl, y2-y1+_yl];
+                return std.algorithm.minPos!"abs(a) < abs(b)"(possible[])[0];
+            }
+        }
+
+        float hypot(in int x1, in int y1, in int x2, in int y2)
+        {
+            return std.math.sqrt(hypotSquared(x1, y1, x2, y2).to!float);
+        }
+
+        int hypotSquared(in int x1, in int y1, in int x2, in int y2)
+        {
+            immutable int dx = distanceX(x2, x1);
+            immutable int dy = distanceY(y2, y1);
+            return (dx * dx + dy * dy);
+        }
+
+        bool rectIntersectsRect(Rect a, Rect b)
+        {
+            return lineIntersectsLine(a.x, a.xl, b.x, b.xl, _xl, _tx)
+                && lineIntersectsLine(a.y, a.yl, b.y, b.yl, _yl, _ty);
+        }
+
+        bool isPointInRectangle(in Point p, Rect rect)
+        {
+            return rectIntersectsRect(Rect(p.x, p.y, 1, 1), rect);
+        }
     }
 
-    final @property int  xl()     const { return _xl; }
-    final @property int  yl()     const { return _yl; }
-    final @property bool torusX() const { return _tx; }
-    final @property bool torusY() const { return _ty; }
+    final const {
+        int torusAverageX(Range)(Range range) const if (isInputRange!Range)
+        {
+            return torusAverage(xl, torusX, (a, b) => distanceX(a, b), range);
+        }
+
+        int torusAverageY(Range)(Range range) const if (isInputRange!Range)
+        {
+            return torusAverage(yl, torusY, (a, b) => distanceY(a, b), range);
+        }
+    }
 
     final void resize(in int nxl, in int nyl)
     in {
@@ -80,73 +151,6 @@ public:
         onAnyChange();
     }
 
-    final Point wrap(in Point p) const
-    {
-        return Point(_tx ? positiveMod(p.x, _xl) : p.x,
-                     _ty ? positiveMod(p.y, _yl) : p.y);
-    }
-
-    // If the point is off the non-torus, return what's closest to that.
-    // If the point is off the torus, this is identical to this.wrap(p).
-    final Point clamp(in Point p) const
-    {
-        return Point(_tx ? positiveMod(p.x, _xl) : .clamp(p.x, 0, xl - 1),
-                     _ty ? positiveMod(p.y, _yl) : .clamp(p.y, 0, yl - 1));
-    }
-
-    // This computes distances similar to (1st_arg - 2nd_arg), but it
-    // check for shortcuts around the cylinder/torus if appropriate.
-    final int distanceX(in int x1, in int x2) const
-    {
-        if (! _tx) return x2 - x1;
-        else {
-            int[] possible = [x2-x1, x2-x1-_xl, x2-x1+_xl];
-            return std.algorithm.minPos!"abs(a) < abs(b)"(possible)[0];
-        }
-    }
-
-    final int distanceY(in int y1, in int y2) const
-    {
-        if (! _ty) return y2 - y1;
-        else {
-            int[] possible = [y2-y1, y2-y1-_yl, y2-y1+_yl];
-            return std.algorithm.minPos!"abs(a) < abs(b)"(possible)[0];
-        }
-    }
-
-    final float hypot(in int x1, in int y1, in int x2, in int y2) const
-    {
-        return std.math.sqrt(hypotSquared(x1, y1, x2, y2).to!float);
-    }
-
-    final int hypotSquared(in int x1, in int y1, in int x2, in int y2) const
-    {
-        immutable int dx = distanceX(x2, x1);
-        immutable int dy = distanceY(y2, y1);
-        return (dx * dx + dy * dy);
-    }
-
-    final int torusAverageX(Range)(Range range) const if (isInputRange!Range)
-    {
-        return torusAverage(xl, torusX, (a, b) => distanceX(a, b), range);
-    }
-
-    final int torusAverageY(Range)(Range range) const if (isInputRange!Range)
-    {
-        return torusAverage(yl, torusY, (a, b) => distanceY(a, b), range);
-    }
-
-    final bool isPointInRectangle(in Point p, Rect rect) const
-    {
-        return rectIntersectsRect(Rect(p.x, p.y, 1, 1), rect);
-    }
-
-    final bool rectIntersectsRect(Rect a, Rect b) const
-    {
-        return lineIntersectsLine(a.x, a.xl, b.x, b.xl, _xl, _tx)
-            && lineIntersectsLine(a.y, a.yl, b.y, b.yl, _yl, _ty);
-    }
-
 protected:
     void onResize()    { }
     void onAnyChange() { }
@@ -157,8 +161,8 @@ private:
 int torusAverage(Range)(
     in int  screenLen,
     in bool torus,
-    int delegate(int, int) dist,
-    Range hatchPoints
+    in int delegate(int, int) dist,
+    scope Range hatchPoints
 ) if (isInputRange!Range)
 {
     immutable int len = hatchPoints.walkLength.to!int;
@@ -185,7 +189,7 @@ bool lineIntersectsLine(
     int a, in int al, // first  line's start and length
     int b, in int bl, // second line's start and length
     in int len, in bool torus // underlying one-dimensional topology
-) pure
+) pure @nogc
 {
     bool intersects() {
         return ! (b >= a + al)  // not lying alongside like so: --a--  ---b---

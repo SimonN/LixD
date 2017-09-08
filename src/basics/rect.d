@@ -15,6 +15,8 @@ struct Side {
 
     string toString() const { return format("(%d;%d)", start, len); }
 
+pure:
+@nogc:
     static Side smallestContainer(in Side a, in Side b)
     {
         return Side(
@@ -32,6 +34,10 @@ struct Rect {
     static assert (Point.sizeof == 2 * int.sizeof);
     static assert (Rect .sizeof == 4 * int.sizeof);
 
+    string toString() const { return format("(%d,%d;%d,%d)", x, y, xl, yl); }
+
+pure:
+@nogc:
     this(in int ax, in int ay, in int axl, in int ayl)
     {
         x  = ax;
@@ -57,8 +63,6 @@ struct Rect {
     @property Side  sideX()  const { return Side(x, xl); }
     @property Side  sideY()  const { return Side(y, yl); }
 
-    string toString() const { return format("(%d,%d;%d,%d)", x, y, xl, yl); }
-
     // Translate the rectangle, keeping its length
     Rect opBinary(string s)(in Point p) const
         if (s == "+" || s == "-")
@@ -71,12 +75,12 @@ struct Rect {
         return Rect(Side.smallestContainer(a.sideX, b.sideX),
                     Side.smallestContainer(a.sideY, b.sideY));
     }
+}
 
-    unittest {
-        assert (Rect(3, 4, 20, 30).center == Point(13, 19));
-        assert ([ Rect(3, 5, 10, 10), Rect(5, 5, 9, 9), Rect(1, 1, 1, 1) ]
-            .reduce!smallestContainer == Rect(1, 1, 13, 14));
-    }
+unittest {
+    assert (Rect(3, 4, 20, 30).center == Point(13, 19));
+    assert ([ Rect(3, 5, 10, 10), Rect(5, 5, 9, 9), Rect(1, 1, 1, 1) ]
+        .reduce!(Rect.smallestContainer) == Rect(1, 1, 13, 14));
 }
 
 struct Point {
@@ -127,7 +131,7 @@ struct Point {
     // we round -12, -11, ..., -5          all to -8.
     // we round -4, -3, -2, -1, 0, 1, 2, 3 all to  0.
     // We round +4, +5, ..., +11           all to +8.
-    Point roundTo(int grid) const
+    Point roundTo(int grid) const pure
     {
         return (grid == 1) ? this : Point(basics.help.roundTo(x, grid),
                                           basics.help.roundTo(y, grid));

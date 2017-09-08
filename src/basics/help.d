@@ -18,7 +18,7 @@ unittest {
 }
 
 // mod function that always returns values in 0 .. modulo
-pure int positiveMod(in int nr, in int modulo)
+pure int positiveMod(in int nr, in int modulo) @nogc
 {
     if (modulo <= 0) return 0;
     immutable int normalMod = nr % modulo;

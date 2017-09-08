@@ -4,7 +4,7 @@ import std.algorithm;
 import std.format;
 import std.range;
 
-import basics.rect;
+import basics.topology;
 import basics.user; // hotkeys for movement
 import editor.editor;
 import editor.hover;
@@ -139,8 +139,15 @@ void maybeCloseTerrainBrowser(Editor editor) {
     if (! _terrainBrowser || ! _terrainBrowser.done)
         return;
     if (auto pos = _level.addTileWithCenterAt(_terrainBrowser.chosenTile,
-                    _map.mouseOnLand.roundTo(editorGridSelected))
+                                              _map.mouseOnLand)
     ) {
+        // Must round the pos's location, not the mouse coordinates for center.
+        // Therefore, round in a separate call from the creation above.
+        assert (pos.tile);
+        assert (pos.tile.cb);
+        auto cbLen = pos.tile.cb.len;
+        pos.loc = roundWithin(_level.topology,
+                    Rect(pos.loc, cbLen.x, cbLen.y), editorGridSelected);
         _selection = [ Hover.newViaEvilDynamicCast(_level, pos) ];
         _terrainBrowser.saveDirOfChosenTileToUserCfg();
     }
@@ -175,3 +182,26 @@ void maybeCloseSaveBrowser(Editor editor) {
     _saveBrowser = null;
     _panel.allButtonsOff();
 }}
+
+pure Point roundWithin(in Topology topol, in Rect tile, in int grid)
+in {
+    assert (topol);
+}
+body {
+    Point ret = tile.topLeft.roundTo(grid);
+    // This is pedestrian code and I'd rather use a static smaller topology to
+    // clamp the point in one line:
+    if (topol.torusX) {
+        while (ret.x + tile.xl/2 < 0)
+            ret.x += grid;
+        while (ret.x - tile.xl/2 >= topol.xl)
+            ret.x -= grid;
+    }
+    if (topol.torusY) {
+        while (ret.y + tile.yl/2 < 0)
+            ret.y += grid;
+        while (ret.y - tile.yl/2 >= topol.yl)
+            ret.y -= grid;
+    }
+    return ret;
+}
