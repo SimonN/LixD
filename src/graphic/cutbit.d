@@ -25,6 +25,8 @@ private:
     Matrix!bool _existingFrames;
 
 public:
+    enum Cut : bool { no = false, ifGridExists = true }
+
     this(Cutbit cb)
     {
         if (! cb) return;
@@ -43,24 +45,25 @@ public:
     }
 
     // Takes ownership of the argument bitmap!
-    this(Albit bit, const bool cut = true)
+    this(Albit bit, in Cut cut)
     {
         bitmap = bit;
-        if (! bitmap) return;
-
-        if (cut) cutBitmap();
+        if (! bitmap)
+            return;
+        if (cut == Cut.ifGridExists) {
+            cutBitmap();
+        }
         else {
             _xl = al_get_bitmap_width (bitmap);
             _yl = al_get_bitmap_height(bitmap);
             _xfs = 1;
             _yfs = 1;
-
             _existingFrames = new Matrix!bool(1, 1);
             _existingFrames.set(0, 0, true);
         }
     }
 
-    this(const Filename fn, const bool cut = true)
+    this(const Filename fn, in Cut cut)
     {
         // Try loading the file. If not found, don't crash, but log.
         bitmap = al_load_bitmap(fn.stringzForReading);
@@ -204,8 +207,8 @@ private:
         auto lock = LockReadOnly(bitmap);
         immutable int xMax = al_get_bitmap_width (bitmap);
         immutable int yMax = al_get_bitmap_height(bitmap);
-        // Called when the constructor was invoked with bool cut == true.
-        // To cut a bitmap into frames, check the top left 2x2 block. The three
+        // Called when the constructor was invoked with Cut.yes.
+        // Cut a bitmap into frames, check the top left 2x2 block. The three
         // pixels of it touching the edge shall be of one color, and the inner
         // pixel must be of a different color, to count as a frame grid.
         Alcol c = al_get_pixel(bitmap, 0, 0);

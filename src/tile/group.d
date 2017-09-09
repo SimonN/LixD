@@ -59,6 +59,8 @@ package:
         assert (selbox == Rect(0, 0, cb.xl, cb.yl), format(
             "VRAM tile shall be as small as possible, no transparent border. "
             ~ "But this selbox is %s, not (0,0;%d,%d)", selbox, cb.xl, cb.yl));
+        if (cb)
+            assert (cb.xfs == 1 && cb.yfs == 1);
     }
     body {
         if (aKey.elements.all!(occ => occ.dark))
@@ -88,7 +90,7 @@ package:
         tb.clearToColor(color.transp);
         with (TargetTorbit(tb))
             _key.elements.each!(e => e.drawOccurrence(-_transpCutOff));
-        super("", new Cutbit(tb.loseOwnershipOfAlbit), phy);
+        super("", new Cutbit(tb.loseOwnershipOfAlbit, Cutbit.Cut.no), phy);
     }
 
 public:

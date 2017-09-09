@@ -188,7 +188,7 @@ void loadGadgetFromDisk(in string strNoExt, in char pe, in Filename fn)
         return;
     }
 
-    Cutbit cb = new Cutbit(fn, true); // true == cut into frames
+    Cutbit cb = new Cutbit(fn, Cutbit.Cut.ifGridExists);
     if (! cb.valid) {
         cb.logBecauseInvalid(fn);
         return;
@@ -210,7 +210,7 @@ void loadGadgetFromDisk(in string strNoExt, in char pe, in Filename fn)
 
 void loadTerrainFromDisk(in string strNoExt, in bool steel, in Filename fn)
 {
-    Cutbit cb = new Cutbit(fn, false); // false == don't cut into frames
+    Cutbit cb = new Cutbit(fn, Cutbit.Cut.no);
     if (! cb.valid) {
         cb.logBecauseInvalid(fn);
         return;

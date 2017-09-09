@@ -116,7 +116,7 @@ private:
         assert (_phymap);
         version (tharsisprofiling)
             auto zone = Zone(profiler, "Terrain.makeDarkVersion");
-        _dark = new Cutbit(albitCreate(_phymap.xl, _phymap.yl), false);
+        _dark = new Cutbit(albitCreate(_phymap.xl, _phymap.yl), Cutbit.Cut.no);
         Point p = Point();
         with (LockWriteOnly(_dark.albit))
             with (TargetBitmap(_dark.albit))

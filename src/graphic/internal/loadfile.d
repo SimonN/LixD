@@ -18,7 +18,7 @@ void loadFromDisk(Filename fn)
     if (! fn.fileExists || ! fn.hasImageExtension) {
         return;
     }
-    Cutbit cb = new Cutbit(fn);
+    Cutbit cb = new Cutbit(fn, Cutbit.Cut.ifGridExists);
     if (!cb || !cb.valid) {
         return;
     }
