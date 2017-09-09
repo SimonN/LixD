@@ -1,0 +1,359 @@
+$BUILT 2017-09-10 19:08:00
+$AUTHOR Simon
+$ENGLISH Eater Island
+
+#INTENDED_NUMBER_OF_PLAYERS 8
+#SIZE_X 2048
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 40
+#INITIAL 90
+#REQUIRED 20
+#SPAWN_INTERVAL 27
+
+#WALKER 30
+#RUNNER 10
+#FLOATER 10
+#EXPLODER2 10
+#BUILDER 50
+#PLATFORMER 30
+#BASHER 30
+#MINER 30
+#JUMPER 30
+#BATTER 30
+#CUBER 30
+
+:matt/underworld/Hatch.H: 128 16
+:matt/underworld/Hatch.H: 224 16 r
+:matt/underworld/Hatch.H: 640 16
+:matt/underworld/Hatch.H: 736 16 r
+:matt/underworld/Hatch.H: 1152 16
+:matt/underworld/Hatch.H: 1248 16 r
+:matt/underworld/Hatch.H: 1664 16
+:matt/underworld/Hatch.H: 1760 16 r
+:raymanni/gore/hatch.H: 448 0
+:raymanni/gore/hatch.H: 1984 0 r
+:raymanni/gore/hatch.H: 960 0
+:raymanni/gore/hatch.H: 448 0 r
+:raymanni/gore/hatch.H: 1472 0
+:raymanni/gore/hatch.H: 960 0 r
+:raymanni/gore/hatch.H: 1984 0
+:raymanni/gore/hatch.H: 1472 0 r
+
+:raymanni/gore/goal.G: 752 272
+:raymanni/gore/goal.G: 1648 272
+:raymanni/gore/goal.G: 1264 272
+:raymanni/gore/goal.G: 112 272
+:raymanni/gore/goal.G: 1776 272
+:raymanni/gore/goal.G: 624 272
+:raymanni/gore/goal.G: 240 272
+:raymanni/gore/goal.G: 1136 272
+
+:raymanni/gore/eater.T: 48 256
+:raymanni/gore/eater.T: 304 256
+:raymanni/gore/eater.T: 176 272
+:raymanni/gore/eater.T: 560 256
+:raymanni/gore/eater.T: 816 256
+:raymanni/gore/eater.T: 688 272
+:raymanni/gore/eater.T: 1072 256
+:raymanni/gore/eater.T: 1328 256
+:raymanni/gore/eater.T: 1200 272
+:raymanni/gore/eater.T: 1584 256
+:raymanni/gore/eater.T: 1840 256
+:raymanni/gore/eater.T: 1712 272
+
+:proxima/flame.F: 444 96
+:proxima/flame.F: 956 96
+:proxima/flame.F: 1468 96
+:amanda/tar.W: 848 368
+:amanda/tar.W: 976 368
+:amanda/tar.W: 1360 368
+:amanda/tar.W: 1488 368
+:amanda/tar.W: 336 368
+:amanda/tar.W: 464 368
+:proxima/flame.F: 1980 96
+:amanda/tar.W: 1872 368
+:amanda/tar.W: 2000 368
+
+:geoo/steel/16x16o.S: 146 108 frr
+:geoo/steel/16x16o.S: 254 108
+:raymanni/gore/blob_1: 64 130
+:raymanni/gore/blob_3: 44 150 rr
+:raymanni/gore/blob_1: 288 130 frr
+:raymanni/gore/blob_3: 308 150 f
+:raymanni/gore/bone_5: 274 90 frr
+:raymanni/gore/bone_5: 78 90
+:raymanni/gore/blob_2: 102 102 rr
+:raymanni/gore/goop_4: 416 90 rr
+:raymanni/gore/goop_3: 425 136 frr
+:raymanni/gore/bone_6: 440 132 rr
+:raymanni/gore/goop_4: 292 214 frr
+:raymanni/gore/goop_4: 60 214
+:raymanni/gore/goop_1: 316 238 frr
+:raymanni/gore/blob_4: 304 210 frr
+:raymanni/gore/goop_1: 36 238
+:raymanni/gore/blob_4: 48 210
+:raymanni/gore/goop_2: 328 272 f
+:raymanni/gore/goop_4: 164 164 rr
+:raymanni/gore/goop_4: 68 204
+:raymanni/gore/goop_2: 24 272 rr
+:raymanni/gore/blob_4: 336 312 f
+:raymanni/gore/blob_4: 16 312 rr
+:raymanni/gore/blob_4: 264 314 rr
+:raymanni/gore/blob_4: 88 314 f
+:raymanni/gore/blob_2: 0 352 rr
+:raymanni/gore/bone_6: 83 224 f
+:raymanni/gore/bone_6: 160 208 rr
+:geoo/steel/32x16o.S: 64 320
+:raymanni/gore/blob_3: 44 328 frr
+:geoo/steel/32x16o.S: 320 320 frr
+:geoo/steel/32x16o.S: 320 320 frr
+:raymanni/gore/blob_3: 308 328
+:raymanni/gore/blob_1: 144 320
+:raymanni/gore/blob_1: 208 320 frr
+:geoo/steel/32x16o.S: 128 336
+:geoo/steel/32x16o.S: 192 336
+:raymanni/gore/blob_2: 80 336 rr
+:geoo/steel/32x16o.S: 256 336 frr
+:raymanni/gore/blob_2: 208 336 f
+:raymanni/gore/blob_4: 158 345 r
+:raymanni/gore/blob_4: 194 345 fr
+:raymanni/gore/blob_2: 96 352 rr
+:raymanni/gore/blob_2: 288 352 f
+:raymanni/gore/blob_2: 192 352 f
+:raymanni/gore/blob_4: 36 184 frrr
+:raymanni/gore/goop_2: 96 220
+:raymanni/gore/bone_5: 128 208 f
+:raymanni/gore/goop_4: 142 192
+:raymanni/gore/goop_1: 110 210
+:raymanni/gore/blob_3: 90 166 fr
+:raymanni/gore/blob_2: 114 160
+:raymanni/gore/goop_4: 188 164 f
+:raymanni/gore/goop_4: 284 204 frr
+:raymanni/gore/bone_6: 269 224 rr
+:raymanni/gore/bone_6: 192 208 f
+:raymanni/gore/blob_4: 316 184 rrr
+:raymanni/gore/goop_2: 256 220 frr
+:raymanni/gore/bone_5: 224 208 rr
+:raymanni/gore/goop_4: 210 192 frr
+:raymanni/gore/goop_1: 242 210 frr
+:raymanni/gore/blob_3: 262 166 r
+:raymanni/gore/blob_2: 174 160 frr
+:raymanni/gore/goop_4: 448 90 f
+:raymanni/gore/goop_3: 439 136
+:raymanni/gore/bone_6: 432 144 f
+:raymanni/gore/blob_2: 96 124 rr
+:raymanni/gore/blob_2: 192 124 f
+:raymanni/gore/blob_2: 186 102 f
+:geoo/steel/16x16o.S: 658 108 frr
+:geoo/steel/16x16o.S: 766 108
+:raymanni/gore/blob_1: 576 130
+:raymanni/gore/blob_3: 556 150 rr
+:raymanni/gore/blob_1: 800 130 frr
+:raymanni/gore/blob_3: 820 150 f
+:raymanni/gore/bone_5: 786 90 frr
+:raymanni/gore/bone_5: 590 90
+:raymanni/gore/blob_2: 614 102 rr
+:raymanni/gore/goop_4: 928 90 rr
+:raymanni/gore/goop_3: 937 136 frr
+:raymanni/gore/bone_6: 952 132 rr
+:raymanni/gore/goop_4: 804 214 frr
+:raymanni/gore/goop_4: 572 214
+:raymanni/gore/goop_1: 828 238 frr
+:raymanni/gore/blob_4: 816 210 frr
+:raymanni/gore/goop_1: 548 238
+:raymanni/gore/blob_4: 560 210
+:raymanni/gore/goop_2: 840 272 f
+:raymanni/gore/goop_4: 676 164 rr
+:raymanni/gore/goop_4: 580 204
+:raymanni/gore/goop_2: 536 272 rr
+:raymanni/gore/blob_4: 848 312 f
+:raymanni/gore/blob_4: 528 312 rr
+:raymanni/gore/blob_4: 776 314 rr
+:raymanni/gore/blob_4: 600 314 f
+:raymanni/gore/blob_2: 512 352 rr
+:raymanni/gore/bone_6: 595 224 f
+:raymanni/gore/bone_6: 672 208 rr
+:geoo/steel/32x16o.S: 576 320
+:raymanni/gore/blob_3: 556 328 frr
+:geoo/steel/32x16o.S: 832 320 frr
+:geoo/steel/32x16o.S: 832 320 frr
+:raymanni/gore/blob_3: 820 328
+:raymanni/gore/blob_1: 656 320
+:raymanni/gore/blob_1: 720 320 frr
+:geoo/steel/32x16o.S: 640 336
+:geoo/steel/32x16o.S: 704 336
+:raymanni/gore/blob_2: 592 336 rr
+:geoo/steel/32x16o.S: 768 336 frr
+:raymanni/gore/blob_2: 720 336 f
+:raymanni/gore/blob_4: 670 345 r
+:raymanni/gore/blob_4: 706 345 fr
+:raymanni/gore/blob_2: 608 352 rr
+:raymanni/gore/blob_2: 800 352 f
+:raymanni/gore/blob_2: 704 352 f
+:raymanni/gore/blob_4: 548 184 frrr
+:raymanni/gore/goop_2: 608 220
+:raymanni/gore/bone_5: 640 208 f
+:raymanni/gore/goop_4: 654 192
+:raymanni/gore/goop_1: 622 210
+:raymanni/gore/blob_3: 602 166 fr
+:raymanni/gore/blob_2: 626 160
+:raymanni/gore/goop_4: 700 164 f
+:raymanni/gore/goop_4: 796 204 frr
+:raymanni/gore/bone_6: 781 224 rr
+:raymanni/gore/bone_6: 704 208 f
+:raymanni/gore/blob_4: 828 184 rrr
+:raymanni/gore/goop_2: 768 220 frr
+:raymanni/gore/bone_5: 736 208 rr
+:raymanni/gore/goop_4: 722 192 frr
+:raymanni/gore/goop_1: 754 210 frr
+:raymanni/gore/blob_3: 774 166 r
+:raymanni/gore/blob_2: 686 160 frr
+:raymanni/gore/goop_4: 960 90 f
+:raymanni/gore/goop_3: 951 136
+:raymanni/gore/bone_6: 944 144 f
+:raymanni/gore/blob_2: 608 124 rr
+:raymanni/gore/blob_2: 704 124 f
+:raymanni/gore/blob_2: 698 102 f
+:geoo/steel/16x16o.S: 1170 108 frr
+:geoo/steel/16x16o.S: 1278 108
+:raymanni/gore/blob_1: 1088 130
+:raymanni/gore/blob_3: 1068 150 rr
+:raymanni/gore/blob_1: 1312 130 frr
+:raymanni/gore/blob_3: 1332 150 f
+:raymanni/gore/bone_5: 1298 90 frr
+:raymanni/gore/bone_5: 1102 90
+:raymanni/gore/blob_2: 1126 102 rr
+:raymanni/gore/goop_4: 1440 90 rr
+:raymanni/gore/goop_3: 1449 136 frr
+:raymanni/gore/bone_6: 1464 132 rr
+:raymanni/gore/goop_4: 1316 214 frr
+:raymanni/gore/goop_4: 1084 214
+:raymanni/gore/goop_1: 1340 238 frr
+:raymanni/gore/blob_4: 1328 210 frr
+:raymanni/gore/goop_1: 1060 238
+:raymanni/gore/blob_4: 1072 210
+:raymanni/gore/goop_2: 1352 272 f
+:raymanni/gore/goop_4: 1188 164 rr
+:raymanni/gore/goop_4: 1092 204
+:raymanni/gore/goop_2: 1048 272 rr
+:raymanni/gore/blob_4: 1360 312 f
+:raymanni/gore/blob_4: 1040 312 rr
+:raymanni/gore/blob_4: 1288 314 rr
+:raymanni/gore/blob_4: 1112 314 f
+:raymanni/gore/blob_2: 1024 352 rr
+:raymanni/gore/bone_6: 1107 224 f
+:raymanni/gore/bone_6: 1184 208 rr
+:geoo/steel/32x16o.S: 1088 320
+:raymanni/gore/blob_3: 1068 328 frr
+:geoo/steel/32x16o.S: 1344 320 frr
+:geoo/steel/32x16o.S: 1344 320 frr
+:raymanni/gore/blob_3: 1332 328
+:raymanni/gore/blob_1: 1168 320
+:raymanni/gore/blob_1: 1232 320 frr
+:geoo/steel/32x16o.S: 1152 336
+:geoo/steel/32x16o.S: 1216 336
+:raymanni/gore/blob_2: 1104 336 rr
+:geoo/steel/32x16o.S: 1280 336 frr
+:raymanni/gore/blob_2: 1232 336 f
+:raymanni/gore/blob_4: 1182 345 r
+:raymanni/gore/blob_4: 1218 345 fr
+:raymanni/gore/blob_2: 1120 352 rr
+:raymanni/gore/blob_2: 1312 352 f
+:raymanni/gore/blob_2: 1216 352 f
+:raymanni/gore/blob_4: 1060 184 frrr
+:raymanni/gore/goop_2: 1120 220
+:raymanni/gore/bone_5: 1152 208 f
+:raymanni/gore/goop_4: 1166 192
+:raymanni/gore/goop_1: 1134 210
+:raymanni/gore/blob_3: 1114 166 fr
+:raymanni/gore/blob_2: 1138 160
+:raymanni/gore/goop_4: 1212 164 f
+:raymanni/gore/goop_4: 1308 204 frr
+:raymanni/gore/bone_6: 1293 224 rr
+:raymanni/gore/bone_6: 1216 208 f
+:raymanni/gore/blob_4: 1340 184 rrr
+:raymanni/gore/goop_2: 1280 220 frr
+:raymanni/gore/bone_5: 1248 208 rr
+:raymanni/gore/goop_4: 1234 192 frr
+:raymanni/gore/goop_1: 1266 210 frr
+:raymanni/gore/blob_3: 1286 166 r
+:raymanni/gore/blob_2: 1198 160 frr
+:raymanni/gore/goop_4: 1472 90 f
+:raymanni/gore/goop_3: 1463 136
+:raymanni/gore/bone_6: 1456 144 f
+:raymanni/gore/blob_2: 1120 124 rr
+:raymanni/gore/blob_2: 1216 124 f
+:raymanni/gore/blob_2: 1210 102 f
+:geoo/steel/16x16o.S: 1682 108 frr
+:geoo/steel/16x16o.S: 1790 108
+:raymanni/gore/blob_1: 1600 130
+:raymanni/gore/blob_3: 1580 150 rr
+:raymanni/gore/blob_1: 1824 130 frr
+:raymanni/gore/blob_3: 1844 150 f
+:raymanni/gore/bone_5: 1810 90 frr
+:raymanni/gore/bone_5: 1614 90
+:raymanni/gore/blob_2: 1638 102 rr
+:raymanni/gore/goop_4: 1952 90 rr
+:raymanni/gore/goop_3: 1961 136 frr
+:raymanni/gore/bone_6: 1976 132 rr
+:raymanni/gore/goop_4: 1828 214 frr
+:raymanni/gore/goop_4: 1596 214
+:raymanni/gore/goop_1: 1852 238 frr
+:raymanni/gore/blob_4: 1840 210 frr
+:raymanni/gore/goop_1: 1572 238
+:raymanni/gore/blob_4: 1584 210
+:raymanni/gore/goop_2: 1864 272 f
+:raymanni/gore/goop_4: 1700 164 rr
+:raymanni/gore/goop_4: 1604 204
+:raymanni/gore/goop_2: 1560 272 rr
+:raymanni/gore/blob_4: 1872 312 f
+:raymanni/gore/blob_4: 1552 312 rr
+:raymanni/gore/blob_4: 1800 314 rr
+:raymanni/gore/blob_4: 1624 314 f
+:raymanni/gore/blob_2: 1536 352 rr
+:raymanni/gore/bone_6: 1619 224 f
+:raymanni/gore/bone_6: 1696 208 rr
+:geoo/steel/32x16o.S: 1600 320
+:raymanni/gore/blob_3: 1580 328 frr
+:geoo/steel/32x16o.S: 1856 320 frr
+:geoo/steel/32x16o.S: 1856 320 frr
+:raymanni/gore/blob_3: 1844 328
+:raymanni/gore/blob_1: 1680 320
+:raymanni/gore/blob_1: 1744 320 frr
+:geoo/steel/32x16o.S: 1664 336
+:geoo/steel/32x16o.S: 1728 336
+:raymanni/gore/blob_2: 1616 336 rr
+:geoo/steel/32x16o.S: 1792 336 frr
+:raymanni/gore/blob_2: 1744 336 f
+:raymanni/gore/blob_4: 1694 345 r
+:raymanni/gore/blob_4: 1730 345 fr
+:raymanni/gore/blob_2: 1632 352 rr
+:raymanni/gore/blob_2: 1824 352 f
+:raymanni/gore/blob_2: 1728 352 f
+:raymanni/gore/blob_4: 1572 184 frrr
+:raymanni/gore/goop_2: 1632 220
+:raymanni/gore/bone_5: 1664 208 f
+:raymanni/gore/goop_4: 1678 192
+:raymanni/gore/goop_1: 1646 210
+:raymanni/gore/blob_3: 1626 166 fr
+:raymanni/gore/blob_2: 1650 160
+:raymanni/gore/goop_4: 1724 164 f
+:raymanni/gore/goop_4: 1820 204 frr
+:raymanni/gore/bone_6: 1805 224 rr
+:raymanni/gore/bone_6: 1728 208 f
+:raymanni/gore/blob_4: 1852 184 rrr
+:raymanni/gore/goop_2: 1792 220 frr
+:raymanni/gore/bone_5: 1760 208 rr
+:raymanni/gore/goop_4: 1746 192 frr
+:raymanni/gore/goop_1: 1778 210 frr
+:raymanni/gore/blob_3: 1798 166 r
+:raymanni/gore/blob_2: 1710 160 frr
+:raymanni/gore/goop_4: 1984 90 f
+:raymanni/gore/goop_3: 1975 136
+:raymanni/gore/bone_6: 1968 144 f
+:raymanni/gore/blob_2: 1632 124 rr
+:raymanni/gore/blob_2: 1728 124 f
+:raymanni/gore/blob_2: 1722 102 f
