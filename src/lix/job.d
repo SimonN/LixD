@@ -91,10 +91,19 @@ struct JobUnion {
     bool valid() const { return data[0..8].any; /* contains a vtable ptr */ }
 
     static bool healthy(in Ac ac)
-    {
+    out (ret) {
+        JobUnion job = JobUnion(ac);
+        if (! ret)
+            assert (ac == Ac.nothing || cast (Leaver) job.asClass,
+                format!"healthy(%s) == false, but should be true"(ac));
+        else
+            assert (null is cast (Leaver) job.asClass,
+                format!"healthy(%s) == true, but should be false"(ac));
+    }
+    body {
         return ac != Ac.nothing && ac != Ac.splatter && ac != Ac.burner
             && ac != Ac.drowner && ac != Ac.imploder && ac != Ac.exploder
-            && ac != Ac.exiter;
+            && ac != Ac.exiter  && ac != Ac.cuber;
     }
 
     this(in Ac ac) {

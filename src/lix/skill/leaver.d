@@ -12,7 +12,7 @@ class RemovedLix : Job {
     {
         assert (old.ac != Ac.nothing,
             "Lix can't be killed twice, that would miscount them.");
-        if (! cast (Leaver) old) // if healthy
+        if (JobUnion.healthy(old.ac))
             outsideWorld.tribe.recordOutToLeaver(
                 lixxie.outsideWorld.state.update);
         outsideWorld.tribe.recordLeaverDone();

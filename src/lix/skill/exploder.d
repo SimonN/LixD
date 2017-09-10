@@ -14,7 +14,7 @@ import game.mask;
 import game.terchang;
 import lix;
 
-abstract class Ploder : Job {
+abstract class Ploder : Leaver {
     mixin JobChild;
 
     override PhyuOrder updateOrder() const { return PhyuOrder.flinger; }
@@ -28,10 +28,9 @@ abstract class Ploder : Job {
         return AfterAssignment.doNotBecome; // instead, game checks ploderTimer
     }
 
-    // onBecome(): Do nothing, instead wait until we do perform(),
+    // onBecome(): Do nothing except Leaver things. Wait until we do perform(),
     // which is called immediately after this in the game loop.
-    // During onBecome(), we lack outsideWorld; Ploders are special herefore.
-    final override void onBecome(in Job) { }
+    final override void onBecomeLeaver(in Job) { }
 
     final override void perform()
     {
