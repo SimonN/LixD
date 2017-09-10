@@ -1,6 +1,25 @@
 Version history
 ===============
 
+0.8.6
+-----
+
+2017-09-19
+
+Fix #227: Lobby player list shows 8 entries at a time and scrolls. Before, it
+let the the 9th, 10th, ..., button bleed underneath the list.
+
+Fix #228: Edge scrolling requires the hardware mouse inside the window.
+
+Fix #229: Pressing the hotkey of an empty skill deselects all skills instead
+of keeping the previous selection.
+
+Included Rubix's variants on Marble Run, Eater Island, Diagonal 8p, and removed dead space on Across the Gap. Everybody else: Post your multiplayer maps, then I can include them in the next version.
+
+Optionally print during play the number of physics updates, frames per second, and a ballpark guess of allocated VRAM.
+
+
+
 0.8.5
 -----
 

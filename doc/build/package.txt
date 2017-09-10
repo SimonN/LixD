@@ -1,7 +1,18 @@
 Notes for package maintainers
 =============================
 
-Hi!
+Hi! If you decide to package Lix for your Linux distribution, I'll be
+flattered. Please speak up with any questions or ideas, see the main readme
+file in Lix's root dir for concacting.
+
+1. Suggested command line
+2. Runtime speed
+3. Minor version increments (y in x.y.z)
+
+
+
+1. Suggested command line
+-------------------------
 
 For binary packages in Linux distributions, I recommend to build Lix with this
 dub command line:
@@ -30,8 +41,31 @@ file an issue on github. :-)
 With `-b release' instead of `-b releaseXDG', Lix would be self-contained,
 i.e., read and write only within its working directory.
 
-The release binary should have reasonable runtime speed already. To optimize
-even more for speed, use GDC or LDC instead of the reference compiler DMD.
-It's also possible, but discouraged by the D community, to disable even
-the array bounds checks; you'd have to edit the build type `releaseXDG'
-in `dub.json' according to the dub package format.
+
+
+2. Runtime speed
+----------------
+
+With the suggested command line above, release binary should have reasonable
+runtime speed already. To optimize even more for speed, use GDC or LDC instead
+of the reference compiler DMD. It's also possible, but discouraged by the D
+community, to disable even the array bounds checks; you'd have to edit the
+build type `releaseXDG' in `dub.json' according to the dub package format.
+
+
+
+3. Minor version increments (y in x.y.z)
+----------------------------------------
+
+The networking game server rejects connection attempts from different minor
+versions (y in x.y.z.) than the current stable. I'd appreciate if you keep
+your package up-to-date with the minor versions! Reasons:
+
+I try to release bugfixes early and often, bumping Lix's patch version number
+(z in x.y.z). Levels may change between patch versions. It's nice, but
+low-priority, to update on patch version bumps.
+
+In contrast, I wait with physics changes until I can release all planned
+physics changes in a reasonably-tested minor version bump (y in x.y.z).
+Examples: A skill behaves differently, the networking protocol gets a feature,
+terrain tiles change shape.
