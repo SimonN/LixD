@@ -2,7 +2,7 @@ module gui.richcli;
 
 /* A net client wrapper that:
  *  - writes messages to a GUI console,
- *  - remembers the most recently received level.
+ *  - remembers the most recently received level and permu.
  *
  * This alias-this'se to INetClient. To send a level, tell it to that class.
  */
@@ -14,6 +14,7 @@ import file.language;
 import gui.console;
 import level.level;
 import net.iclient;
+import net.permu;
 import net.phyu;
 import net.structs;
 import net.versioning;
@@ -23,6 +24,7 @@ private:
     INetClient _inner; // should be treated as owned, but externally c'tored
     Console _console; // not owned
     Level _level;
+    Permu _permu;
 
     public string unsentChat; // carry unsent text between Lobby/Game
 
@@ -41,12 +43,14 @@ public:
         onPeerJoinsRoom(null);
         onPeerLeavesRoomTo(null);
         onWeChangeRoom(null);
+        onGameStart(null);
     }
 
     alias inner this;
     @property inout(INetClient) inner() inout { return _inner; }
     @property inout(Console) console() inout { return _console; }
     @property inout(Level) level() inout { return _level; }
+    @property inout(Permu) permu() inout { return _permu; }
 
     @property void console(Console c)
     {
@@ -173,6 +177,16 @@ public:
             // Reason: We don't want to write this during play.
             if (f)
                 f(plName, lev);
+        };
+    }
+
+    @property void onGameStart(void delegate(Permu) f)
+    {
+        _inner.onGameStart = delegate void(Permu pe)
+        {
+            _permu = pe;
+            if (f)
+                f(pe);
         };
     }
 }

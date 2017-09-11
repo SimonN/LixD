@@ -17,13 +17,12 @@ module game.core.game;
 public import basics.cmdargs; // Runmode;
 public import game.core.view;
 
-import std.algorithm; // find;
 import std.conv; // float to int in prepare nurse
+import std.exception;
 
 import basics.alleg5;
 import basics.globals;
 import basics.globconf; // username, to determine whether to save result
-import basics.help; // len;
 import basics.user; // Result
 import file.filename;
 
@@ -40,14 +39,12 @@ import game.physdraw;
 import game.tribe;
 import game.replay;
 
-import graphic.color;
 import graphic.map;
 import gui;
 import hardware.sound;
 import hardware.display; // fps for framestepping speed
 import level.level;
 import lix; // _drawHerHighlit
-import net.iclient;
 import net.repdata;
 import net.structs;
 
@@ -122,9 +119,11 @@ public:
     this(RichClient client)
     {
         this.runmode = Runmode.INTERACTIVE;
-        assert (client);
-        assert (client.level);
-        assert (client.level.good);
+        enforce(client, "Game started without networking client.");
+        enforce(client.level, "Networking game started without level.");
+        enforce(client.level.good, "Networking level is unplayable.");
+        enforce(client.permu, "Networking game has no player permutation.");
+
         level = client.level;
         _netClient = client;
         _netClient.onPeerSendsReplayData = (ReplayData data)
@@ -301,6 +300,7 @@ private:
             rp.addPlayer(PlNr(0), Style.garden,
                          basics.globconf.userName, true);
         else {
+            rp.permu = _netClient.permu;
             foreach (plNr, prof; _netClient.profilesInOurRoom)
                 if (prof.feeling != Profile.Feeling.observing)
                     rp.addPlayer(plNr, prof.style, prof.name,
