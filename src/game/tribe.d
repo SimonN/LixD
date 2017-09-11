@@ -76,8 +76,8 @@ class Tribe {
 
         int lixlen() { return lixvecImpl.len; }
 
-        bool doneDeciding()  { return _lixOut == 0 && lixHatch == 0; }
-        bool doneAnimating() { return doneDeciding() && ! _lixLeaving; }
+        bool outOfLix() { return _lixOut == 0 && lixHatch == 0; }
+        bool doneAnimating() { return outOfLix() && ! _lixLeaving; }
 
         int lixOut() { return _lixOut; }
         Score score()
@@ -94,7 +94,7 @@ class Tribe {
         Phyu recentScoring() { return _recentScoring; }
 
         Phyu finishedPlayingAt()
-        in { assert (doneDeciding); }
+        in { assert (outOfLix()); }
         body{ return _finishedPlayingAt; }
     }
 
@@ -122,7 +122,7 @@ class Tribe {
     body{
         --_lixOut;
         ++_lixLeaving;
-        if (doneDeciding)
+        if (outOfLix)
             _finishedPlayingAt = now;
     }
 
@@ -169,20 +169,14 @@ class Tribe {
     @property void nukePressedSince(Phyu u) @nogc { _nukePressedSince = u; }
 
     @property const @nogc {
-        bool nukePressed()
-        {
-            return _nukePressedSince > Phyu(0);
-        }
-
-        bool triggersOvertime()
-        {
-            return hasScored && (nukePressed || doneDeciding);
-        }
+        bool nukePressed()      { return _nukePressedSince > Phyu(0);   }
+        bool prefersGameToEnd() { return nukePressed || outOfLix;       }
+        bool triggersOvertime() { return prefersGameToEnd && hasScored; }
 
         Phyu triggersOvertimeSince()
         in { assert (triggersOvertime); }
-        body{
-            if (nukePressed && doneDeciding)
+        body {
+            if (nukePressed && outOfLix)
                 return min(finishedPlayingAt,
                             max(_nukePressedSince, firstScoring));
             else if (nukePressed)
@@ -191,15 +185,10 @@ class Tribe {
                 return finishedPlayingAt;
         }
 
-        bool wantsAbortiveTie()
-        {
-            return ! hasScored && (nukePressed || doneDeciding);
-        }
-
-        Phyu wantsAbortiveTieSince()
-        in { assert (wantsAbortiveTie); }
-        body{
-            if (nukePressed && doneDeciding)
+        Phyu prefersGameToEndSince()
+        in { assert (prefersGameToEnd); }
+        body {
+            if (nukePressed && outOfLix)
                 return min(_nukePressedSince, finishedPlayingAt);
             else if (nukePressed)
                 return _nukePressedSince;

@@ -94,7 +94,7 @@ public:
     void drawAllGadgets()
     {
         goals.each!(g => g.lockedWithNoSign =
-            nuking && ! tribes.byValue.all!(tr => tr.doneDeciding));
+            nuking && ! tribes.byValue.all!(tr => tr.outOfLix));
         foreachConstGadget(delegate void (const(Gadget) g) { g.draw; });
     }
 
@@ -113,25 +113,8 @@ public:
     @property bool overtimeRunning() const
     in { assert (tribes.length > 0); }
     body{
-        return tribes.byValue.all!(tr => tr.wantsAbortiveTie)
+        return tribes.byValue.all!(tr => tr.prefersGameToEnd)
             || tribes.byValue.any!(tr => tr.triggersOvertime);
-    }
-
-    @property Phyu overtimeRunningSince() const
-    in {
-        assert (overtimeRunning);
-        assert (tribes.length > 0);
-    }
-    body {
-        if (tribes.byValue.all!(tr => tr.wantsAbortiveTie)) {
-            return tribes.byValue.map!(tr => tr.wantsAbortiveTieSince)
-                                 .reduce!max;
-        }
-        else {
-            assert (tribes.byValue.any!(tr => tr.triggersOvertime));
-            return tribes.byValue.filter!(tr => tr.triggersOvertime)
-                .map!(tr => tr.triggersOvertimeSince).reduce!min;
-        }
     }
 
     // This doesn't return Phyu because Phyu is a point in time, not a duration
@@ -139,7 +122,7 @@ public:
     {
         if (! overtimeRunning)
             return overtimeAtStartInPhyus;
-        if (tribes.byValue.all!(tr => tr.doneDeciding || tr.wantsAbortiveTie))
+        if (tribes.byValue.all!(tr => tr.prefersGameToEnd))
             return 0;
         return clamp(overtimeAtStartInPhyus + overtimeRunningSince - update,
                     0, overtimeAtStartInPhyus);
@@ -168,5 +151,22 @@ private:
         foreach (style, tribe; rhs.tribes)
             temp[style] = tribe.clone();
         tribes = temp;
+    }
+
+    @property Phyu overtimeRunningSince() const
+    in {
+        assert (overtimeRunning);
+        assert (tribes.length > 0);
+    }
+    body {
+        if (tribes.byValue.all!(tr => tr.prefersGameToEnd)) {
+            return tribes.byValue.map!(tr => tr.prefersGameToEndSince)
+                                 .reduce!max;
+        }
+        else {
+            assert (tribes.byValue.any!(tr => tr.triggersOvertime));
+            return tribes.byValue.filter!(tr => tr.triggersOvertime)
+                .map!(tr => tr.triggersOvertimeSince).reduce!min;
+        }
     }
 }

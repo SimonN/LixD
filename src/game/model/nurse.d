@@ -64,10 +64,10 @@ public:
         }
     }
 
-    @property bool doneDeciding() const
+    @property bool everybodyOutOfLix() const
     {
         assert (_model);
-        return _model.cs.tribes.byValue.all!(a => a.doneDeciding);
+        return _model.cs.tribes.byValue.all!(a => a.outOfLix);
     }
 
     @property bool doneAnimating() const
@@ -160,7 +160,7 @@ public:
         assert (_model);
         assert (_replay);
         while (! _model.cs.singleplayerHasSavedAtLeast(lixRequired)
-                && ! doneDeciding
+                && ! everybodyOutOfLix
                 // allow 5 minutes after the last replay data before cancelling
                 && upd < _replay.latestPhyu + 5 * (60 * 15))
             updateOnce();

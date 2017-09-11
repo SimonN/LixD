@@ -45,7 +45,7 @@ isFinished(const(Game) game) { with (game)
 {
     assert (nurse);
     if (runmode == Runmode.VERIFY) {
-        return nurse.doneDeciding();
+        return nurse.everybodyOutOfLix();
     }
     else {
         assert (_effect);
