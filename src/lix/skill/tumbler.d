@@ -12,6 +12,12 @@ private enum PleaseDo : ubyte {
     stopMovement,    // hit something, stop, remain in place with state
     resetEncounters, // we un-glitched out of sth., so reset encounters
     resetPosition,   // we hit something, didn't un-glitch yet
+
+    // we hit something, but must work around github LixD issue #231:
+    // oscillating tumbler in thin wall. If our last single-pixel sub-frame
+    // movement was horizontally, treat like PleaseDo.resetPosition. Otherwise,
+    // treat line PleasDo.nothing.
+    resetPositionIfMovedX,
 }
 
 abstract class BallisticFlyer : Job {
@@ -128,16 +134,20 @@ private:
             }
 
             Collision col = collision();
-            final switch (col.pleaseDo) {
-            case PleaseDo.nothing:
-                break;
-            case PleaseDo.stopMovement:
+            if (col.pleaseDo == PleaseDo.nothing ||
+                col.pleaseDo == PleaseDo.resetPositionIfMovedX && ex == oldEx)
+                { }
+            else if (col.pleaseDo == PleaseDo.stopMovement) {
                 return col.becomeCalled;
-            case PleaseDo.resetEncounters:
+            }
+            else if (col.pleaseDo == PleaseDo.resetEncounters) {
                 forceBodyAndFootEncounters(oldEncBody, oldEncFoot);
                 ey = ey; // re-check encounters here
                 return col.becomeCalled;
-            case PleaseDo.resetPosition:
+            }
+            else if (col.pleaseDo == PleaseDo.resetPosition ||
+                col.pleaseDo == PleaseDo.resetPositionIfMovedX && ex != oldEx
+            ) {
                 forceBodyAndFootEncounters(oldEncBody, oldEncFoot);
                 ex = oldEx;
                 ey = oldEy;
@@ -148,6 +158,9 @@ private:
                     return BecomeCalled.yes;
                 }
                 return col.becomeCalled;
+            }
+            else {
+                assert (false);
             }
         }
         // end BREAK_MOTION: foreach
@@ -375,7 +388,7 @@ protected:
             || (wall(-2) && ! behind(-2))
         ) {
             turn();
-            return Collision(BecomeCalled.no, PleaseDo.resetPosition);
+            return Collision(BecomeCalled.no, PleaseDo.resetPositionIfMovedX);
         }
         return Collision(BecomeCalled.no, PleaseDo.nothing);
     }
