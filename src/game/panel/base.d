@@ -22,7 +22,8 @@ import hardware.keyboard; // we need a different behavior of skill button
 import hardware.keyset;
 import hardware.mouse;    // execution and skill button warning sound
 import hardware.sound;
-import lix.lixxie; // forward method of InfoBar to our users
+import lix; // forward method of InfoBar to our users
+import net.phyu;
 
 class Panel : Element {
 private:
@@ -159,6 +160,7 @@ public:
     void dontShowSpawnInterval() { stats.dontShowSpawnInterval(); }
     void showSpawnInterval(in int si) { stats.showSpawnInterval(si); }
     void suggestTooltip(in Tooltip.ID id) { stats.suggestTooltip(id); }
+    @property Phyu age(in Phyu phyu) { return stats.age = phyu; }
 
     void update(T)(T scoreRange)
         if (isInputRange!T && is (ElementType!T : const(Score)))

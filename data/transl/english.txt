@@ -319,7 +319,7 @@ $optionScreenWindowedRes        Windowed resolution
 $optionPaintTorusSeams          Paint torus seams
 $optionIngameTooltips           Tooltips during game
 $optionShowButtonHotkeys        Show button hotkeys
-$optionShowFPS                  Show framerate (FPS)
+$optionShowFPS                  Count physics and FPS
 $optionGuiColorRed              Menu color red
 $optionGuiColorGreen            Menu color green
 $optionGuiColorBlue             Menu color blue
@@ -330,7 +330,7 @@ $optionScreenWindowedResDesc Size of the Lix window. Only for windowed mode, not
 $optionPaintTorusSeamsDesc Mark the wrapping seam with a thin line whenever a level wraps around.|This doesn't affect game physics, but may improve your orientation.
 $optionIngameTooltipsDesc Explain buttons and lix-selecting hotkeys during play, e.g., to select left-facing lix.|Some buttons have two functions: One on left-click, one on right-click.
 $optionShowButtonHotkeysDesc On every button, print the button's hotkeys in the bottom-right-hand corner.
-$optionShowFPSDesc Print the number of video frames per second, during play or editor.|I like this during development. If you screencast, turn this off.
+$optionShowFPSDesc Print number of physics updates since the game started.|Print the number of video frames per second, during play or editor.
 $optionSoundVolumeDesc Playback volume of all sound effects.|Set to 0 to turn off sound in Lix.
 
 $optionKeyZoomIn Zoom +

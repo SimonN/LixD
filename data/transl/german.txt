@@ -308,7 +308,7 @@ $optionScreenWindowedRes        Fenster-Auflösung
 $optionPaintTorusSeams          Torus-Nahtstellen anmalen
 $optionIngameTooltips           Tooltips im Spiel
 $optionShowButtonHotkeys        Button-Hotkeys anzeigen
-$optionShowFPS                  Framerate (FPS) anzeigen
+$optionShowFPS                  Physik und FPS zählen
 $optionGuiColorRed              Menüfarbe Rot
 $optionGuiColorGreen            Menüfarbe Grün
 $optionGuiColorBlue             Menüfarbe Blau
@@ -324,6 +324,7 @@ $optionScrollSpeedEdge       Scroll-Geschw. am Bildrand
 $optionScrollSpeedClick      Scroll-Geschw. mit Scrolltaste
 $optionFastMovementFreesMouse Schnelle Beweg. befreit Maus
 
+$optionShowFPSDesc Anzahl Physik-Updates seit Spielbeginn anzeigen.|Bilder pro Sekunde zählen und anzeigen.
 $optionKeyZoomInDesc Level größer darstellen, dafür weniger auf einmal sehen.
 $optionKeyZoomOutDesc Level kleiner darstellen, dafür mehr auf einmal sehen.
 $optionKeyScrollDesc Halte dies (Standard: rechte Maustaste ⟁) und bewege die Maus zum Scrollen.|Das ist einfacher, schneller und präziser als Scrollen am Bildschirmrand.

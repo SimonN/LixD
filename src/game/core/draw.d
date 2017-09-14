@@ -45,6 +45,7 @@ implGameDraw(Game game) { with (game)
     }
     pan.showInfo(localTribe);
     pan.update(nurse.scores);
+    pan.age = nurse.constStateForDrawingOnly.update;
     game.showSpawnIntervalOnHatches();
 
     auto drata = TargetBitmap(al_get_backbuffer(display));

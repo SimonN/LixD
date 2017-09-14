@@ -22,6 +22,7 @@ private:
     int _spawnInterval;
     int _targetDescNumber;
     int _tooltipsSuggested; // bitset, values are in enum Tooltip
+    Phyu _age;
     ConstLix _targetDescLixxie;
     Rebindable!(const(Tribe))  _tribe;
     CutbitElement _bOut, _bHatch;
@@ -70,6 +71,14 @@ public:
         reqDraw();
         _showSpawnInterval = true;
         _spawnInterval = si;
+    }
+
+    @property Phyu age(in Phyu phyu)
+    {
+        if (_age == phyu)
+            return phyu;
+        reqDraw();
+        return _age = phyu;
     }
 
     // Eventually, subclass InfoBar for singleplayer and multiplayer?
@@ -160,7 +169,7 @@ private:
         if (basics.user.ingameTooltips.value)
             s = Tooltip.format(_tooltipsSuggested);
         if (basics.user.showFPS.value && s == "")
-            s = format!"FPS: %d"(displayFps);
+            s = format!"Phyu: %d   FPS: %d"(_age, displayFps);
         _tooltip.text = s;
         _tooltipsSuggested = 0;
     }
