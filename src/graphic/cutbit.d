@@ -77,7 +77,7 @@ public:
     void dispose()
     {
         if (bitmap) {
-            al_destroy_bitmap(bitmap);
+            albitDestroy(bitmap);
             bitmap = null;
         }
     }
@@ -138,7 +138,7 @@ public:
         if (bitmap && xf >= 0 && yf >= 0 && xf < _xfs && yf < _yfs) {
             Albit sprite = create_sub_bitmap_for_frame(xf, yf);
             scope (exit)
-                al_destroy_bitmap(sprite);
+                albitDestroy(sprite);
             sprite.drawToTargetTorbit(targetCorner, mirr, rot, scal);
         }
         // no frame inside the cutbit has been specified, or the cutbit
@@ -161,7 +161,7 @@ public:
         Albit sprite = create_sub_bitmap_for_frame(xf, yf,
             max(-targetCorner.x, 0), max(-targetCorner.y, 0));
         scope (exit)
-            al_destroy_bitmap(sprite);
+            albitDestroy(sprite);
         al_draw_bitmap(sprite, max(0, targetCorner.x),
                                max(0, targetCorner.y), 0);
     }

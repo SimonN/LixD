@@ -65,7 +65,7 @@ public:
     void dispose()
     {
         if (bitmap) {
-            al_destroy_bitmap(bitmap);
+            albitDestroy(bitmap);
             bitmap = null;
         }
     }
@@ -160,7 +160,7 @@ protected:
     body {
         auto cfg = Cfg(this);
         if (bitmap)
-            al_destroy_bitmap(bitmap);
+            albitDestroy(bitmap);
         bitmap = cfg.smoothlyScalable
             ? albitCreateSmoothlyScalable(cfg.xl, cfg.yl)
             : albitCreate(cfg.xl, cfg.yl);

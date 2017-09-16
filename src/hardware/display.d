@@ -161,7 +161,7 @@ void deinitialize()
         queue = null;
     }
     if (_appIcon) {
-        al_destroy_bitmap(_appIcon);
+        albitDestroy(_appIcon);
         _appIcon = null;
     }
     _displayActive = false;

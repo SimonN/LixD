@@ -1,5 +1,7 @@
 module basics.alleg5;
 
+import std.conv;
+import std.math;
 import basics.globals;
 import hardware.tharsis;
 
@@ -46,9 +48,11 @@ void deinitialize()
 
 // ############################################################################
 
-@property long timerTicks()
+@property long timerTicks() { return _timer ? al_get_timer_count(_timer) : 0; }
+@property int totalPixelsAllocated() { return _totalPixelsAllocated; }
+@property int vramAllocatedInMB()
 {
-    return _timer ? al_get_timer_count(_timer) : 0;
+    return _totalPixelsAllocated / 1024 * 4 / 1024; // 32-bit colors
 }
 
 Albit albitCreate(in int xl, in int yl)
@@ -56,6 +60,17 @@ Albit albitCreate(in int xl, in int yl)
     version (tharsisprofiling)
         auto zone = Zone(profiler, "alleg5: create VRAM bitmap");
     return albitCreateWithFlags(xl, yl, _defaultNewBitmapFlags);
+}
+
+void albitDestroy(Albit bmp)
+{
+    assert (bmp);
+    if (! al_is_sub_bitmap(bmp))
+        _totalPixelsAllocated -= vramConsumption(bmp);
+    // I can't assert _totalPixelsAllocated >= 0 because that would crash
+    // during program shutdown with invalid memory operation in druntime.
+    // When I exit the game, I don't dispose VRAM, I let the OS do that.
+    al_destroy_bitmap(bmp);
 }
 
 Albit albitMemoryCreate(in int xl, in int yl)
@@ -184,6 +199,7 @@ struct LockTemplate(alias flags)
 
 ALLEGRO_TIMER* _timer = null;
 private int _defaultNewBitmapFlags;
+private int _totalPixelsAllocated;
 
 private void initOrThrow()
 {
@@ -201,10 +217,23 @@ private Albit albitCreateWithFlags(in int xl, in int yl, in int flags)
     Albit ret = al_create_bitmap(xl, yl);
     if (! ret) {
         import std.format;
-        throw new Exception(format!("Out of memory. Can't create bitmap of "
-            ~ " size %dx%d with flags %d")(xl, yl, flags));
+        throw new Exception(format!("Out of video memory. Can't create bitmap"
+            ~ " of size %dx%d with flags %d.")(xl, yl, flags));
     }
     assert (al_get_bitmap_width (ret) == xl);
     assert (al_get_bitmap_height(ret) == yl);
+    _totalPixelsAllocated += vramConsumption(ret);
     return ret;
+}
+
+// This is a ballpark estimation. It can underestimate the VRAM used or
+// reserved by the gfx driver. Monitor the VRAM externally for exact numbers.
+private int vramConsumption(Albit bmp)
+{
+    assert (bmp);
+    immutable xl = al_get_bitmap_width(bmp);
+    immutable yl = al_get_bitmap_height(bmp);
+
+    int f(int n) { return 2^^(n.log2.ceil.to!int); }
+    return f(xl * yl);
 }

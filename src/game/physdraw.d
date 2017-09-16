@@ -193,11 +193,11 @@ private:
     {
         foreach (enumVal, ref Albit sub; _subAlbits)
             if (sub !is null) {
-                al_destroy_bitmap(sub);
+                albitDestroy(sub);
                 sub = null;
             }
         if (_mask) {
-            al_destroy_bitmap(_mask);
+            albitDestroy(_mask);
             _mask = null;
         }
     }
@@ -355,7 +355,7 @@ private:
             Albit sprite = al_create_sub_bitmap(_mask,
                 0, remY, Digger.tunnelWidth, tc.digYl);
             spriteToLand(tc, sprite);
-            al_destroy_bitmap(sprite);
+            albitDestroy(sprite);
         }
     }
 
@@ -460,7 +460,7 @@ private:
             mixin AdditionsDefs;
             Albit sprite = al_create_sub_bitmap(_mask, x, y, xl, yl);
             spriteToLand(tc, sprite);
-            al_destroy_bitmap(sprite);
+            albitDestroy(sprite);
         }
     }
 

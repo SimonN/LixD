@@ -234,7 +234,7 @@ class Phymap : Topology {
     {
         Albit outputBitmap = albitMemoryCreate(xl, yl);
         scope (exit)
-            al_destroy_bitmap(outputBitmap);
+            albitDestroy(outputBitmap);
         auto targetBitmap = TargetBitmap(outputBitmap);
 
         foreach (y; 0 .. yl) foreach (x; 0 .. xl) {

@@ -3,6 +3,7 @@ module game.panel.infobar;
 import std.string; // format;
 import std.typecons; // Rebindable;
 
+import basics.alleg5;
 import basics.globals; // game panel icons
 import net.repdata; // Phyu
 import basics.user; // languageIsEnglish
@@ -169,7 +170,8 @@ private:
         if (basics.user.ingameTooltips.value)
             s = Tooltip.format(_tooltipsSuggested);
         if (basics.user.showFPS.value && s == "")
-            s = format!"Phyu: %d   FPS: %d"(_age, displayFps);
+            s = format!"Phyu: %d   FPS: %d   VRAM: %d MB"(
+                _age, displayFps, vramAllocatedInMB);
         _tooltip.text = s;
         _tooltipsSuggested = 0;
     }
