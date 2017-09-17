@@ -6,6 +6,7 @@ module game.panel.base;
  * Some methods don't do anything depending on View.
  */
 
+import std.algorithm;
 import std.range;
 
 import basics.user;
@@ -112,20 +113,17 @@ public:
         stats.set_tribe_local(tr);
         spec_tribe .set_text(tr->get_name());
         */
-        highlightIfNonzero(lastOnForRestoringAfterStateLoad);
+        makeCurrent(lastOnForRestoringAfterStateLoad);
     }
 
     void highlightFirstSkill()
     {
         assert (currentSkill is null);
-        foreach (skill; _skills)
-            if (skill.number != 0) {
-                highlightIfNonzero(skill);
-                break;
-            }
+        _skills.filter!(sk => sk.number != 0).takeOne.each!(
+                                                (sk) { makeCurrent(sk); });
     }
 
-    SkillButton currentSkill()
+    @property inout(SkillButton) currentSkill() inout
     {
         foreach (b; _skills)
             if (b.on && b.skill != Ac.nothing && b.number != 0)
@@ -174,20 +172,16 @@ protected:
     override void calcSelf()
     {
         SkillButton oldSkill = currentSkill();
-        foreach (skill; _skills)
-            if (skill.execute) {
-                highlightIfNonzero(skill);
-                if (skill.number == 0 && skill.hotkey.keyTapped)
-                    // Don't play zero-skill sound on click, only on hotkey:
-                    // We remind the player while he's not looking at panels.
-                    hardware.sound.playLoud(Sound.PANEL_EMPTY);
-            }
-        if (currentSkill !is oldSkill)
-            hardware.sound.playLoud(Sound.PANEL);
-        if (nuke.isMouseHere)
-            suggestTooltip(Tooltip.ID.nuke);
-        if (_pingGoals && _pingGoals.isMouseHere)
-            suggestTooltip(Tooltip.ID.pingGoals);
+        _skills.filter!(sk => sk.execute && sk != oldSkill)
+               .filter!(sk => sk.number != 0 || sk.hotkey.keyTapped).each!((sk)
+        {
+            makeCurrent(sk);
+            if (sk.number != 0)
+                hardware.sound.playLoud(Sound.PANEL);
+            else
+                hardware.sound.playQuiet(Sound.PANEL_EMPTY);
+        });
+        suggestTooltips();
     }
 
 private:
@@ -202,13 +196,20 @@ private:
         return _nukeMulti ? _nukeMulti : _trbs.nuke;
     }
 
-    private void highlightIfNonzero(SkillButton skill)
+    void makeCurrent(SkillButton skill)
     {
-        if (skill is null || skill.number == 0)
-            return;
-        if (currentSkill)
+        if (currentSkill !is null)
             currentSkill.on = false;
-        skill.on = true;
-        lastOnForRestoringAfterStateLoad = skill;
+        if (skill && skill.number != 0)
+            skill.on = true;
+        lastOnForRestoringAfterStateLoad = skill; // even if currently 0
+    }
+
+    void suggestTooltips()
+    {
+        if (nuke.isMouseHere)
+            suggestTooltip(Tooltip.ID.nuke);
+        if (_pingGoals && _pingGoals.isMouseHere)
+            suggestTooltip(Tooltip.ID.pingGoals);
     }
 }

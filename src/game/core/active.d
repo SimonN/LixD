@@ -28,8 +28,7 @@ void calcActive(Game game)
         if (mouseClickLeft)
             game.cancelReplay();
         auto potAss = game.findPotentialAssignee();
-        if (potAss.lixxie !is null && hardware.mouse.mouseClickLeft
-                                   && game.view.canAssignSkills)
+        if (hardware.mouse.mouseClickLeft && game.view.canAssignSkills)
             game.assignToPotentialAssignee(potAss);
     }
     else {
@@ -77,9 +76,12 @@ struct PotentialAssignee {
     // 3. what has spawned earlier (if still equal)
     // Holding the priority inversion key, or right mouse button (configurable
     // in the options) inverts the sorting of (1.), but not of the others.
+    // Never invert priority for unclickable lix (priority == 0 or == 1).
     bool isBetterThan(in ref PotentialAssignee rhs) const {
         return lixxie    is null ? false
             : rhs.lixxie is null ? true
+            : priority <= 1 && rhs.priority >  1 ? false
+            : priority >  1 && rhs.priority <= 1 ? true
             : priority > rhs.priority ? ! keyPriorityInvert.keyHeld
             : priority < rhs.priority ?   keyPriorityInvert.keyHeld
             : distanceToCursor < rhs.distanceToCursor ? true
@@ -151,14 +153,10 @@ PotentialAssignee findPotentialAssignee(Game game) { with (game)
         pan.suggestTooltip(Tooltip.ID.priorityInvert);
 
     mouseCursor.xf = (forcingLeft ? 1 : forcingRight ? 2 : mouseCursor.xf);
-    mouseCursor.yf = (lixesUnderCursor > 0);
+    mouseCursor.yf = best.lixxie !is null;
     pan.describeTarget(described.lixxie, lixesUnderCursor);
 
-    if (best.lixxie !is null
-        && currentSkill !is null
-        && currentSkill.number != 0
-        && currentSkill.skill == best.lixxie.ac
-    ) {
+    if (best.lixxie !is null && currentSkill !is null) {
         if (best.lixxie.ac == Ac.builder)
             pan.suggestTooltip(Tooltip.ID.queueBuilder);
         else if (best.lixxie.ac == Ac.platformer)
@@ -184,12 +182,8 @@ PotentialAssignee generatePotentialAssignee(
     potAss.distanceToCursor = game.map.hypotSquared(
         mouseOnLand.x, mouseOnLand.y, lixxie.ex,
                                       lixxie.ey + roundInt(dMinusU/2));
-    if (currentSkill !is null)
-        // true = consider personal settings like multiple builders
-        potAss.priority = lixxie.priorityForNewAc(currentSkill.skill);
-    else
-        // we shouldn't need it, leftover from C++
-        potAss.priority = 1;
+    potAss.priority = currentSkill !is null
+        ? lixxie.priorityForNewAc(currentSkill.skill) : 1;
 
     return potAss;
 }
@@ -202,12 +196,6 @@ void comparePotentialWithBestWorst(
     ref bool anyFoundRight,
 ) {
     assert (potAss.lixxie !is null);
-
-    if (potAss.priority <= 1)
-        // This function is only concerned with possible assignments,
-        // not with who should be counted on the panel even if unassignable.
-        return;
-
     immutable bool eligibleAccordingToDirSelect =
            ! (potAss.lixxie.facingLeft  && forcingRight)
         && ! (potAss.lixxie.facingRight && forcingLeft);
@@ -227,13 +215,13 @@ void assignToPotentialAssignee(
     in ref PotentialAssignee potAss) { with (game)
 {
     SkillButton currentSkill = pan.currentSkill;
-    if (potAss.lixxie is null
-        || currentSkill is null
-        || currentSkill.number == 0
-    ) {
+    if (potAss.lixxie is null)
+        return;
+    if (potAss.priority <= 1 || ! currentSkill) {
         hardware.sound.playLoud(Sound.PANEL_EMPTY);
         return;
     }
+    assert (currentSkill.number != 0);
     if (currentSkill.number != skillInfinity)
         // Decrease the visible number on the panel. This is mostly eye candy.
         // It doesn't affect physics, including judging what's coming in over
