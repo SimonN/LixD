@@ -262,7 +262,9 @@ calcScrolling()
         return;
     }
 
-    if (basics.user.scrollSpeedEdge.value > 0) {
+    if (hardware.mouse.hardwareMouseInsideWindow
+        && basics.user.scrollSpeedEdge.value > 0
+    ) {
         float scrd = basics.user.scrollSpeedEdge;
         if (hardware.mouse.mouseHeldRight())
             scrd *= 4;

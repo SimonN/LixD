@@ -33,8 +33,9 @@ void calc();
 @property int  mouseReleaseLeft()       { return _mouseRelease[0]; }
 @property int  mouseReleaseRight()      { return _mouseRelease[1]; }
 @property int  mouseReleaseMiddle()     { return _mouseRelease[2]; }
-
 @property int  mouseWheelNotches()      { return _wheelNotches; }
+
+@property bool hardwareMouseInsideWindow() { return _trapMouse; }
 
 void trapMouse(bool b) { _trapMouse = b; }
 
