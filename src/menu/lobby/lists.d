@@ -58,17 +58,18 @@ protected:
         _buttons.each!(b => rmChild(b));
         _buttons = array;
         _buttons.each!(b => addChild(b));
-        reqDraw();
+        alignButtons();
     }
 
-    Geom newGeomForButton(in int i) const
+    Geom newGeomForButton() const
     {
         auto g = newGeomForTiler();
-        g.y = i * buttonYlg;
+        // We don't set the y-position. Call alignButtons() for that.
         g.yl = buttonYlg;
         return g;
     }
 
+private:
     void alignButtons()
     {
         reqDraw();
@@ -106,7 +107,7 @@ public:
     {
         Button[] array;
         foreach (int i, profile; players)
-            array ~= new PeerButton(newGeomForButton(i), profile);
+            array ~= new PeerButton(newGeomForButton(), profile);
         replaceAllButtons(array);
     }
 }
@@ -151,10 +152,10 @@ public:
 
     void recreateButtonsFor(const(Room[]) rooms, const(Profile[]) profiles)
     {
-        Button[] array = [ new TextButton(newGeomForButton(0),
+        Button[] array = [ new TextButton(newGeomForButton(),
                                           Lang.winLobbyRoomCreate.transl) ];
         for (int i = 0; i < rooms.length && i < profiles.length; ++i)
-            array ~= new TextButton(newGeomForButton(i+1),
+            array ~= new TextButton(newGeomForButton(),
                 "%s%d: %s".format(Lang.winLobbyRoomNumber.transl,
                                   rooms[i], profiles[i].name));
         replaceAllButtons(array);
