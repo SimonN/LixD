@@ -1,6 +1,17 @@
 Version history
 ===============
 
+0.8.7
+-----
+
+2017-09-19
+
+The out-of-skills beep was too trigger-happy: When we clicked a mining lix
+and had miners left in the skill panel, the game beeped as if we were out of
+skills. Fixed.
+
+
+
 0.8.6
 -----
 

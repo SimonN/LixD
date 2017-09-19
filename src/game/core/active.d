@@ -217,10 +217,13 @@ void assignToPotentialAssignee(
     SkillButton currentSkill = pan.currentSkill;
     if (potAss.lixxie is null)
         return;
-    if (potAss.priority <= 1 || ! currentSkill) {
+    if (! currentSkill) {
         hardware.sound.playLoud(Sound.PANEL_EMPTY);
         return;
     }
+    if (potAss.priority <= 1)
+        return;
+
     assert (currentSkill.number != 0);
     if (currentSkill.number != skillInfinity)
         // Decrease the visible number on the panel. This is mostly eye candy.
