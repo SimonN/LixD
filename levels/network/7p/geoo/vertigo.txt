@@ -1,0 +1,140 @@
+$BUILT 2017-09-14 20:45:55
+$AUTHOR geoo
+$ENGLISH Vertigo
+
+#INTENDED_NUMBER_OF_PLAYERS 7
+#SIZE_X 224
+#SIZE_Y 1344
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 30
+#INITIAL 40
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+
+#WALKER 80
+#CLIMBER 10
+#BUILDER 80
+#PLATFORMER 80
+#BASHER 50
+#MINER 50
+#DIGGER 50
+#JUMPER 80
+#CUBER 20
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 32 160
+:geoo/construction/Hatch.H: 64 352
+:geoo/construction/Hatch.H: 96 544
+:geoo/construction/Hatch.H: 128 736
+:geoo/construction/Hatch.H: 160 928
+:geoo/construction/Hatch.H: 192 1120
+:geoo/construction/Hatch.H: 0 1312
+
+:geoo/abstract/goal.G: 32 1040
+:geoo/abstract/goal.G: 64 1232
+:geoo/abstract/goal.G: 96 80
+:geoo/abstract/goal.G: 128 272
+:geoo/abstract/goal.G: 160 464
+:geoo/abstract/goal.G: 192 656
+:geoo/abstract/goal.G: 0 848
+
+:simon/tapir/032v: 0 0
+:simon/tapir/032v: 0 64
+:simon/tapir/032v: 0 128
+:simon/tapir/032v: 32 192
+:simon/tapir/032v: 32 256
+:simon/tapir/032v: 32 320
+:simon/tapir/032v: 64 384
+:simon/tapir/032v: 64 448
+:simon/tapir/032v: 64 512
+:simon/tapir/032v: 96 576
+:simon/tapir/032v: 96 640
+:simon/tapir/032v: 96 704
+:simon/tapir/032v: 128 768
+:simon/tapir/032v: 128 832
+:simon/tapir/032v: 128 896
+:simon/tapir/032v: 160 960
+:simon/tapir/032v: 160 1024
+:simon/tapir/032v: 160 1088
+:simon/tapir/032v: 192 1152
+:simon/tapir/032v: 192 1216
+:simon/tapir/032v: 192 1280
+:simon/tapir/032v: 0 192
+:simon/tapir/032v: 0 256
+:simon/tapir/032v: 0 320
+:simon/tapir/032v: 32 384
+:simon/tapir/032v: 32 448
+:simon/tapir/032v: 32 512
+:simon/tapir/032v: 64 576
+:simon/tapir/032v: 64 640
+:simon/tapir/032v: 64 704
+:simon/tapir/032v: 96 768
+:simon/tapir/032v: 96 832
+:simon/tapir/032v: 96 896
+:simon/tapir/032v: 128 960
+:simon/tapir/032v: 128 1024
+:simon/tapir/032v: 128 1088
+:simon/tapir/032v: 160 1152
+:simon/tapir/032v: 160 1216
+:simon/tapir/032v: 160 1280
+:simon/tapir/032v: 192 0
+:simon/tapir/032v: 192 64
+:simon/tapir/032v: 192 128
+:simon/tapir/032v: 0 384
+:simon/tapir/032v: 0 448
+:simon/tapir/032v: 0 512
+:simon/tapir/032v: 0 576
+:simon/tapir/032v: 0 640
+:simon/tapir/032v: 0 704
+:simon/tapir/032v: 32 576
+:simon/tapir/032v: 32 640
+:simon/tapir/032v: 32 704
+:simon/tapir/032v: 32 768
+:simon/tapir/032v: 32 832
+:simon/tapir/032v: 32 896
+:simon/tapir/032v: 64 768
+:simon/tapir/032v: 64 832
+:simon/tapir/032v: 64 896
+:simon/tapir/032v: 64 960
+:simon/tapir/032v: 64 1024
+:simon/tapir/032v: 64 1088
+:simon/tapir/032v: 96 960
+:simon/tapir/032v: 96 1024
+:simon/tapir/032v: 96 1088
+:simon/tapir/032v: 96 1152
+:simon/tapir/032v: 96 1216
+:simon/tapir/032v: 96 1280
+:simon/tapir/032v: 128 1152
+:simon/tapir/032v: 128 1216
+:simon/tapir/032v: 128 1280
+:simon/tapir/032v: 128 0
+:simon/tapir/032v: 128 64
+:simon/tapir/032v: 128 128
+:simon/tapir/032v: 160 0
+:simon/tapir/032v: 160 64
+:simon/tapir/032v: 160 128
+:simon/tapir/032v: 160 192
+:simon/tapir/032v: 160 256
+:simon/tapir/032v: 160 320
+:simon/tapir/032v: 192 192
+:simon/tapir/032v: 192 256
+:simon/tapir/032v: 192 320
+:simon/tapir/032v: 192 384
+:simon/tapir/032v: 192 448
+:simon/tapir/032v: 192 512
+:matt/marble/09: 192 256
+:matt/marble/09a: 64 832
+:matt/marble/09c: 0 448
+:matt/marble/09b: 32 640
+:matt/marble/09d: 96 1024
+:matt/carnival/24: 160 64
+:matt/carnival/27a: 128 1216
+:geoo/steel/32x64o.S: 32 1088
+:geoo/steel/32x64o.S: 64 1280
+:geoo/steel/32x64o.S: 96 128
+:geoo/steel/32x64o.S: 128 320
+:geoo/steel/32x64o.S: 160 512
+:geoo/steel/32x64o.S: 192 704
+:geoo/steel/32x64o.S: 0 896
