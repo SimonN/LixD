@@ -12,8 +12,8 @@ import game.core.game;
 import game.replay;
 import level.level;
 
-// Implement this class, then pass one to VerifyCounter.
-abstract class VerifyPrinter {
+// Pass such an object to VerifyCounter.
+interface VerifyPrinter {
     // If true: When we verify a single replay filename (either directly
     // because you've asked on the commandline, or recursively), and the
     // replay's level exists and is good (playable), we look at

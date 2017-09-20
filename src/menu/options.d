@@ -437,6 +437,8 @@ void populateMenuKeys()
         fac.factory!HotkeyOption(keyMenuDownBy1, watcher),
         fac.factory!HotkeyOption(keyMenuDownBy5, watcher),
     ];
+
+    watcher = new KeyDuplicationWatcher(); // main menu keys are OK to collide
     fac = facKeys!2;
     grp ~= [
         fac.factory!HotkeyOption(keyMenuMainSingle, watcher),
