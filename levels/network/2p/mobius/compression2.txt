@@ -1,34 +1,24 @@
-$BUILT 2012-08-12 17:08:23
+$BUILT 2017-09-20 10:57:37
 $AUTHOR mobius
-#INTENDED_NUMBER_OF_PLAYERS 2
 $ENGLISH Compression Method (2P)
 
+#INTENDED_NUMBER_OF_PLAYERS 2
 #SIZE_X 1024
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
-#SECONDS 0
+#SECONDS 30
 #INITIAL 100
 #REQUIRED 50
 #SPAWN_INTERVAL 10
-#SPAWN_INTERVAL_FAST 4
 
-#CLIMBER 20
-#JUMPER 40
 #WALKER 40
+#CLIMBER 20
 #EXPLODER2 20
-#CUBER 20
 #BASHER 40
 #MINER 40
 #DIGGER 40
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#JUMPER 40
+#CUBER 20
 
 :matt/marble/Hatch.H: 288 96
 :matt/marble/Hatch.H: 416 96 r
@@ -43,6 +33,8 @@ $ENGLISH Compression Method (2P)
 :geoo/construction/squisher.T: 560 320
 :geoo/construction/squisher.T: 688 320
 
+:geoo/steel/64x32o.S: 736 320
+:geoo/steel/64x32o.S: 224 320
 :matt/marble/21a: 664 384
 :matt/marble/23: 288 192
 :matt/marble/23: 320 192
@@ -71,7 +63,11 @@ $ENGLISH Compression Method (2P)
 :matt/marble/23: 448 256
 :matt/marble/23: 416 288
 :matt/marble/23: 448 288
-:geoo/steel/32x64o.S: 224 288
+$BEGIN_TILE_GROUP 0
+:geoo/steel/32x64o.S: 0 0
+:matt/marble/14a: 0 32 d
+$END_TILE_GROUP
+:Group-0: 224 288
 :geoo/steel/64x32o.S: 288 320
 :geoo/steel/64x32o.S: 352 320
 :geoo/steel/64x32o.S: 416 320
@@ -134,7 +130,11 @@ $ENGLISH Compression Method (2P)
 :matt/marble/23: 256 192
 :matt/marble/23: 224 224
 :matt/marble/23: 256 224
-:geoo/steel/32x64o.S: 768 288
+$BEGIN_TILE_GROUP 1
+:geoo/steel/32x64o.S: 0 0
+:matt/marble/16a: 0 32 d
+$END_TILE_GROUP
+:Group-1: 768 288
 :matt/marble/08a: 224 160
 :matt/marble/20a: 248 96
 :matt/marble/20a: 248 32
@@ -211,7 +211,3 @@ $ENGLISH Compression Method (2P)
 :matt/marble/06a: 0 32
 :matt/marble/03a: 0 96
 :matt/marble/02a: 32 32
-:matt/marble/14a: 224 320 d
-:geoo/steel/64x32o.S: 224 320 n
-:matt/marble/16a: 768 320 d
-:geoo/steel/64x32o.S: 736 320 n
