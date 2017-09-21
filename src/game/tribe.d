@@ -20,7 +20,7 @@ import net.repdata;
 import lix;
 import level.level; // spawnintMax
 
-class Tribe {
+final class Tribe {
     private static struct ValueFields {
     private:
         Phyu _firstScoring; // Phyu(0) if ! hasScored()
@@ -48,8 +48,14 @@ class Tribe {
 
     Enumap!(Ac, int) skills;
     LixxieImpl[] lixvecImpl;
+    immutable(Rule) rule; // affects how the tribe judges whether he nukes
 
-    this() { }
+    enum Rule {
+        normalOvertime,
+        raceToFirstSave,
+    }
+
+    this(in Rule aRule) { rule = aRule; }
 
     this(in Tribe rhs)
     {
@@ -57,6 +63,7 @@ class Tribe {
         valueFields = rhs.valueFields;
         skills = rhs.skills;
         lixvecImpl = rhs.lixvecImpl.clone; // only value types since 2017-09!
+        rule = rhs.rule;
     }
 
     Tribe clone() const { return new Tribe(this); }
@@ -90,11 +97,17 @@ class Tribe {
         }
 
         bool hasScored() { return score.current > 0; }
-        Phyu firstScoring() { return _firstScoring; }
-        Phyu recentScoring() { return _recentScoring; }
+
+        Phyu firstScoring()
+        in { assert (hasScored); }
+        body { return _firstScoring; }
+
+        Phyu recentScoring()
+        in { assert (hasScored); }
+        body { return _recentScoring; }
 
         Phyu finishedPlayingAt()
-        in { assert (outOfLix()); }
+        in { assert (outOfLix); }
         body{ return _finishedPlayingAt; }
     }
 
@@ -169,31 +182,37 @@ class Tribe {
     @property void nukePressedSince(Phyu u) @nogc { _nukePressedSince = u; }
 
     @property const @nogc {
-        bool nukePressed()      { return _nukePressedSince > Phyu(0);   }
-        bool prefersGameToEnd() { return nukePressed || outOfLix;       }
-        bool triggersOvertime() { return prefersGameToEnd && hasScored; }
+        bool nukePressed() { return _nukePressedSince > Phyu(0); }
 
-        Phyu triggersOvertimeSince()
-        in { assert (triggersOvertime); }
-        body {
-            if (nukePressed && outOfLix)
-                return min(finishedPlayingAt,
-                            max(_nukePressedSince, firstScoring));
-            else if (nukePressed)
-                return max(_nukePressedSince, firstScoring);
-            else
-                return finishedPlayingAt;
+        bool prefersGameToEnd()
+        {
+            return nukePressed || outOfLix
+                || rule == rule.raceToFirstSave && hasScored;
         }
 
         Phyu prefersGameToEndSince()
         in { assert (prefersGameToEnd); }
         body {
-            if (nukePressed && outOfLix)
-                return min(_nukePressedSince, finishedPlayingAt);
-            else if (nukePressed)
-                return _nukePressedSince;
-            else
-                return finishedPlayingAt;
+            return min(
+                nukePressed ? _nukePressedSince : Phyu(int.max),
+                outOfLix ? finishedPlayingAt : Phyu(int.max),
+                rule == rule.raceToFirstSave && hasScored
+                    ? firstScoring : Phyu(int.max));
+        }
+
+        bool triggersOvertime()
+        {
+            return prefersGameToEnd && hasScored;
+        }
+
+        Phyu triggersOvertimeSince()
+        in { assert (triggersOvertime); }
+        out (ret) { assert (ret >= firstScoring); }
+        body {
+            return min(nukePressed ? max(_nukePressedSince, firstScoring)
+                                   : Phyu(int.max),
+                outOfLix ? finishedPlayingAt : Phyu(int.max),
+                rule == rule.raceToFirstSave ? firstScoring : Phyu(int.max));
         }
     }
 }

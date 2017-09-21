@@ -162,7 +162,7 @@ public:
 
     void announceOvertime(in Phyu upd, int overtimeInPhyus)
     {
-        if (_weScheduledOvertimeAnnouncementBefore || overtimeInPhyus == 0)
+        if (_weScheduledOvertimeAnnouncementBefore)
             return;
         _weScheduledOvertimeAnnouncementBefore = true;
         _overtimeInPhyusToAnnounce = overtimeInPhyus;

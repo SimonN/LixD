@@ -54,7 +54,9 @@ void preparePlayers(GameState state, in Level level,
     assert (tribesToMake.len >= 1);
     assert (tribesToMake.isStrictlyMonotonic);
     foreach (int i, style; tribesToMake) {
-        Tribe tr = new Tribe();
+        Tribe tr = new Tribe(
+            tribesToMake.len > 1 && level.overtimeSeconds == 0
+                ? Tribe.Rule.raceToFirstSave : Tribe.Rule.normalOvertime);
         tr.style        = style;
         tr.lixHatch     = level.initial;
         tr.spawnint     = level.spawnint;

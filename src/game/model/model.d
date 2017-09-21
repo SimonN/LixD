@@ -92,7 +92,7 @@ public:
         spawnLixxiesFromHatches();
         updateLixxies();
         finalizePhyuAnimateGadgets();
-        if (_cs.overtimeRunning && _effect)
+        if (_cs.overtimeRunning && _cs.multiplayer && _effect)
             _effect.announceOvertime(_cs.update, _cs.overtimeAtStartInPhyus);
     }
 
