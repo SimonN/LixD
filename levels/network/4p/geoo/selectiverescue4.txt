@@ -47,11 +47,11 @@ $ENGLISH Selective Rescue
 :geoo/construction/sawblade_small.F: 128 200
 :raymanni/lab/goo.W: 208 336
 
-:raymanni/lab/pipe_1: 288 304
-:raymanni/lab/pipe_1: 256 304
+:raymanni/lab/pipe_1: 288 304 rrr
+:raymanni/lab/pipe_1: 256 304 rrr
 :geoo/steel/32x64o.S: 144 64
 :geoo/steel/32x64o.S: 208 64
-:raymanni/lab/pipe_3: 176 80
+:raymanni/lab/pipe_2: 176 80 rrr
 :geoo/steel/32x64o.S: 242 64
 :geoo/steel/32x64o.S: 242 0
 :geoo/steel/32x64o.S: 144 0
@@ -61,11 +61,11 @@ $ENGLISH Selective Rescue
 :geoo/steel/64x32o.S: 288 368
 :geoo/steel/32x64o.S: 232 304
 :geoo/steel/32x64o.S: 312 304
-:raymanni/lab/pipe_1: 416 304
-:raymanni/lab/pipe_1: 384 304
+:raymanni/lab/pipe_1: 416 304 rrr
+:raymanni/lab/pipe_1: 384 304 rrr
 :geoo/steel/32x64o.S: 272 64
 :geoo/steel/32x64o.S: 336 64
-:raymanni/lab/pipe_3: 304 80
+:raymanni/lab/pipe_2: 304 80 rrr
 :geoo/steel/32x64o.S: 370 64
 :geoo/steel/32x64o.S: 370 0
 :geoo/steel/32x64o.S: 272 0
@@ -75,11 +75,11 @@ $ENGLISH Selective Rescue
 :geoo/steel/64x32o.S: 416 368
 :geoo/steel/32x64o.S: 360 304
 :geoo/steel/32x64o.S: 440 304
-:raymanni/lab/pipe_1: 32 304
-:raymanni/lab/pipe_1: 0 304
+:raymanni/lab/pipe_1: 32 304 rrr
+:raymanni/lab/pipe_1: 0 304 rrr
 :geoo/steel/32x64o.S: 400 64
 :geoo/steel/32x64o.S: 464 64
-:raymanni/lab/pipe_3: 432 80
+:raymanni/lab/pipe_2: 432 80 rrr
 :geoo/steel/32x64o.S: 498 64
 :geoo/steel/32x64o.S: 498 0
 :geoo/steel/32x64o.S: 400 0
@@ -89,11 +89,11 @@ $ENGLISH Selective Rescue
 :geoo/steel/64x32o.S: 32 368
 :geoo/steel/32x64o.S: 488 304
 :geoo/steel/32x64o.S: 56 304
-:raymanni/lab/pipe_1: 160 304
-:raymanni/lab/pipe_1: 128 304
+:raymanni/lab/pipe_1: 160 304 rrr
+:raymanni/lab/pipe_1: 128 304 rrr
 :geoo/steel/32x64o.S: 16 64
 :geoo/steel/32x64o.S: 80 64
-:raymanni/lab/pipe_3: 48 80
+:raymanni/lab/pipe_2: 48 80 rrr
 :geoo/steel/32x64o.S: 114 64
 :geoo/steel/32x64o.S: 114 0
 :geoo/steel/32x64o.S: 16 0

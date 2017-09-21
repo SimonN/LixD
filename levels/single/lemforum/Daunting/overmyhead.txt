@@ -1,4 +1,4 @@
-$BUILT 2017-07-24 19:29:08
+$BUILT 2017-09-21 16:50:26
 $AUTHOR mobius
 $ENGLISH Over My Head
 
@@ -37,6 +37,8 @@ $ENGLISH Over My Head
 :raymanni/lab/goo.W: 576 376
 :raymanni/lab/goo.W: 608 376
 
+:raymanni/lab/pipe_2: 496 40 r
+:raymanni/lab/pipe_2: 608 72 r
 :raymanni/lab/block_1: 480 160
 :raymanni/lab/block_1: 480 192
 :raymanni/lab/block_1: 128 224
@@ -44,8 +46,8 @@ $ENGLISH Over My Head
 :raymanni/lab/block_1: 160 320
 :raymanni/lab/block_1: 192 288
 :raymanni/lab/block_1: 192 320
-:raymanni/lab/pipe_1: 216 360
-:raymanni/lab/pipe_1: 248 360
+:raymanni/lab/pipe_1: 544 360 rrr
+:raymanni/lab/pipe_1: 512 360 rrr
 :raymanni/lab/block_1: 32 288
 :raymanni/lab/block_1: 32 320
 :raymanni/lab/block_1: 0 320
@@ -56,7 +58,6 @@ $ENGLISH Over My Head
 :raymanni/lab/block_1: 64 320
 :raymanni/lab/block_1: 128 288
 :raymanni/lab/block_1: 128 320
-:matt/bricks/03: 256 160
 :raymanni/lab/block_1: 96 96
 :raymanni/lab/block_1: 96 128
 :raymanni/lab/block_1: 64 128
@@ -75,12 +76,10 @@ $ENGLISH Over My Head
 :raymanni/lab/block_1: 256 160
 :raymanni/lab/block_1: 288 192
 :raymanni/lab/block_1: 256 192
-:matt/bricks/03: 320 160
 :raymanni/lab/block_1: 352 160
 :raymanni/lab/block_1: 320 160
 :raymanni/lab/block_1: 352 192
 :raymanni/lab/block_1: 320 192
-:matt/bricks/03: 384 160
 :raymanni/lab/block_1: 416 160
 :raymanni/lab/block_1: 384 160
 :raymanni/lab/block_1: 416 192
@@ -95,23 +94,20 @@ $ENGLISH Over My Head
 :raymanni/lab/block_2: 112 120
 :raymanni/lab/block_2: 240 104
 :raymanni/lab/block_2: 304 168
-:raymanni/lab/block_2: 368 200
+:raymanni/lab/block_2: 368 208
 :raymanni/lab/block_1: 368 224 d
 :raymanni/lab/block_1: 504 128 d
-:raymanni/lab/pipe_1: 280 360
-:raymanni/lab/pipe_1: 312 360
-:raymanni/lab/pipe_1: 344 360
-:raymanni/lab/pipe_1: 376 360
-:raymanni/lab/pipe_1: 408 360
-:raymanni/lab/pipe_1: 440 360
-:raymanni/lab/pipe_1: 472 360
-:raymanni/lab/pipe_1: 504 360
-:raymanni/lab/pipe_1: 536 360
-:raymanni/lab/pipe_1: 568 360
-:raymanni/lab/pipe_1: 600 360
-:raymanni/lab/pipe_3: 496 40 frr
+:raymanni/lab/pipe_1: 480 360 rrr
+:raymanni/lab/pipe_1: 448 360 rrr
+:raymanni/lab/pipe_1: 416 360 rrr
+:raymanni/lab/pipe_1: 576 360 rrr
+:raymanni/lab/pipe_1: 224 360 rrr
+:raymanni/lab/pipe_1: 256 360 rrr
+:raymanni/lab/pipe_1: 288 360 rrr
+:raymanni/lab/pipe_1: 320 360 rrr
+:raymanni/lab/pipe_1: 352 360 rrr
+:raymanni/lab/pipe_1: 384 360 rrr
 :raymanni/lab/scen_4: 480 40
-:raymanni/lab/pipe_2: 616 376
 :raymanni/lab/block_3: 520 40
 :raymanni/lab/block_1: 32 224
 :raymanni/lab/block_1: 32 256
@@ -123,10 +119,9 @@ $ENGLISH Over My Head
 :raymanni/lab/block_1: -32 224
 :raymanni/lab/block_1: 96 256
 :raymanni/lab/block_1: 64 256
-:raymanni/lab/block_2: 144 224
 :geoo/steel/dark_64x64o.S: 160 224
 :raymanni/lab/block_1: 128 256
-:raymanni/lab/block_2: 88 272
+:raymanni/lab/block_2: 80 304
 :raymanni/lab/block_1: 32 352
 :raymanni/lab/block_1: 0 352
 :raymanni/lab/block_1: 96 352
@@ -141,16 +136,17 @@ $ENGLISH Over My Head
 :raymanni/lab/block_2: 16 344
 :raymanni/lab/block_2: -16 272
 :geoo/steel/dark_64x64o.S: 160 352
-:raymanni/lab/pipe_3: 448 72
-:raymanni/lab/pipe_3: 480 72
-:raymanni/lab/pipe_3: 544 72
-:raymanni/lab/pipe_3: 512 72
-:raymanni/lab/pipe_3: 608 72
-:raymanni/lab/pipe_3: 576 72
-:raymanni/lab/pipe_4: 456 40
-:raymanni/lab/pipe_4: 456 8
-:raymanni/lab/pipe_4: 456 24
-:raymanni/lab/pipe_4: 456 -8
 :raymanni/lab/scen_5: 600 8
 :raymanni/lab/block_2: 600 0
 :raymanni/lab/scen_7: 592 72
+:raymanni/lab/pipe_1: 616 376
+:raymanni/lab/pipe_6: 600 360
+:raymanni/lab/pipe_2: 576 72 r
+:raymanni/lab/pipe_2: 544 72 r
+:raymanni/lab/pipe_2: 512 72 r
+:raymanni/lab/pipe_2: 480 72 r
+:raymanni/lab/pipe_2: 448 72 r
+:raymanni/lab/pipe_2: 462 42
+:raymanni/lab/pipe_2: 462 10
+:raymanni/lab/pipe_2: 462 -22
+:raymanni/lab/block_2: 112 240

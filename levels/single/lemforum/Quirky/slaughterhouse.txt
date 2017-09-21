@@ -1,12 +1,10 @@
-$BUILT 2017-08-02 01:02:35
+$BUILT 2017-09-23 16:33:49
 $AUTHOR mobius
 $ENGLISH Slaughterhouse
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 976
 #SIZE_Y 368
-#START_X 0
-#START_Y -20
 
 #INITIAL 10
 #REQUIRED 10
@@ -34,8 +32,10 @@ $ENGLISH Slaughterhouse
 :geoo/construction/sawblade.F: 448 192
 :geoo/construction/sawblade.F: 776 136
 :geoo/construction/sawblade.F: 776 192
-:amanda/tar.W: 186 342
+:amanda/tar.W: 176 336
 
+:raymanni/gore/blob_1: 592 293
+:raymanni/gore/bone_6: 600 245
 :raymanni/gore/goop_1: 658 32 frr
 :raymanni/gore/blob_1: 684 226
 :raymanni/gore/blob_2: 680 184 rrr
@@ -45,8 +45,9 @@ $ENGLISH Slaughterhouse
 :raymanni/gore/bone_5: 704 224 frr
 :raymanni/gore/blob_4: 640 248 rr
 :raymanni/gore/blob_2: 656 192 rrr
-:raymanni/gore/blob_4: 616 216 rr
+:raymanni/gore/blob_4: 616 215 rr
 :raymanni/gore/blob_4: 608 256 rr
+:raymanni/gore/bone_1: 632 304 f
 :raymanni/gore/bone_5: 560 312
 :geoo/steel/silhouette_64x64.S: 168 304
 :geoo/steel/silhouette_64x64.S: 168 240
@@ -68,9 +69,9 @@ $ENGLISH Slaughterhouse
 :geoo/steel/silhouette_32x32.S: 384 96
 :geoo/steel/silhouette_32x32.S: 384 64
 :geoo/steel/silhouette_32x32.S: 384 32
-:raymanni/gore/bone_1: 288 104
-:raymanni/gore/bone_1: 320 104
-:raymanni/gore/bone_1: 352 104
+:raymanni/gore/bone_1: 288 104 rrr
+:raymanni/gore/bone_1: 320 104 rrr
+:raymanni/gore/bone_1: 352 104 rrr
 :raymanni/gore/goop_1: 300 120
 :raymanni/gore/goop_2: 72 304
 :raymanni/gore/blob_2: 240 328 rr
@@ -88,8 +89,6 @@ $ENGLISH Slaughterhouse
 :raymanni/gore/blob_3: 400 280 rr
 :raymanni/gore/blob_3: 472 304 rr
 :geoo/steel/silhouette_64x64.S: 592 312
-:raymanni/gore/bone_3: 384 88
-:raymanni/gore/bone_3: 256 88 frr
 :geoo/steel/silhouette_64x64.S: 656 304
 :geoo/steel/silhouette_64x64.S: 720 304
 :geoo/steel/silhouette_64x64.S: 784 304
@@ -103,11 +102,9 @@ $ENGLISH Slaughterhouse
 :raymanni/gore/blob_4: 624 192
 :raymanni/gore/goop_3: 496 32
 :raymanni/gore/blob_4: 632 216 rr
+:raymanni/gore/bone_1: 632 272 f
 :raymanni/gore/bone_2: 616 272
-:raymanni/gore/bone_4: 600 304 f
-:raymanni/gore/bone_2: 616 240
-:raymanni/gore/bone_2: 616 208
-:raymanni/gore/bone_6: 584 184 rrd
+:raymanni/gore/bone_2: 616 242
 :raymanni/gore/bone_5: 880 32 frr
 :raymanni/gore/blob_2: 544 -16
 :raymanni/gore/bone_5: 576 24 f
@@ -122,7 +119,7 @@ $ENGLISH Slaughterhouse
 :geoo/steel/silhouette_32x32.S: 384 0
 :geoo/steel/silhouette_32x32.S: 304 152 d
 :raymanni/gore/blob_1: 656 178
-:raymanni/gore/blob_1: 616 212
-:raymanni/gore/bone_3: 246 342 d
+:raymanni/gore/blob_1: 618 216
 :geoo/steel/silhouette_32x32.S: 320 0
 :geoo/steel/silhouette_32x32.S: 96 200
+:raymanni/gore/bone_6: 600 171 fd
