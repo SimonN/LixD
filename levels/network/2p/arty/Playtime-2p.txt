@@ -1,0 +1,164 @@
+$BUILT 2017-09-19 14:43:41
+$AUTHOR Colorful Arty
+$ENGLISH Playtime! (2p)
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1280
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 60
+#INITIAL 70
+#REQUIRED 20
+#SPAWN_INTERVAL 50
+
+#WALKER 10
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#BUILDER 10
+#PLATFORMER 10
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#JUMPER 10
+#CUBER 10
+#EXPLODER2 0
+
+:raymanni/toys/hatch.H: 105 256
+:raymanni/toys/hatch.H: 745 256
+
+:raymanni/toys/goal.G: 448 160
+:raymanni/toys/goal.G: 1088 160
+
+:raymanni/toys/brick_1: 0 336
+:raymanni/toys/brick_1: 0 272
+:raymanni/toys/brick_1: 0 208
+:raymanni/toys/brick_1: 0 144
+:raymanni/toys/brick_1: 0 80
+:raymanni/toys/brick_1: 0 16
+:raymanni/toys/brick_3: 0 0 r
+:raymanni/toys/brick_3: 64 0 r
+:raymanni/toys/brick_3: 128 0 r
+:raymanni/toys/brick_3: 192 0 r
+:raymanni/toys/brick_3: 256 0 r
+:raymanni/toys/brick_3: 320 0 r
+:raymanni/toys/brick_3: 384 0 r
+:raymanni/toys/brick_1: 480 16
+:raymanni/toys/brick_3: 448 0 r
+:raymanni/toys/brick_1: 560 32
+:raymanni/toys/brick_1: 520 56
+:raymanni/toys/brick_1: 520 392
+:raymanni/toys/brick_3: 512 0 r
+:raymanni/toys/brick_1: 600 72
+:raymanni/toys/brick_1: 600 8
+:raymanni/toys/brick_3: 576 0 r
+:raymanni/toys/brick_2: 40 360 r
+:raymanni/toys/brick_2: 104 360 r
+:raymanni/toys/brick_2: 168 360 r
+:raymanni/toys/brick_2: 232 360 r
+:raymanni/toys/brick_4: 40 320 r
+:raymanni/toys/brick_4: 104 320 r
+:raymanni/toys/brick_4: 168 320 r
+:raymanni/toys/brick_2: 576 360 r
+:raymanni/toys/brick_2: 512 360 r
+:raymanni/toys/brick_2: 448 360 r
+:raymanni/toys/brick_2: 512 320 r
+:raymanni/toys/brick_2: 576 320 r
+:raymanni/toys/brick_2: 576 280 r
+:raymanni/toys/letter_1: 464 264
+:raymanni/toys/letter_2: 464 296
+:raymanni/toys/letter_3: 464 328
+:raymanni/toys/brick_1: 448 224 r
+:raymanni/toys/brick_3: 40 256 rr
+:raymanni/toys/brick_3: 192 256 rr
+:raymanni/toys/brick_4: 40 40 r
+:raymanni/toys/brick_4: 104 40 r
+:raymanni/toys/brick_4: 168 40 r
+:raymanni/toys/brick_1: 600 136
+:raymanni/toys/brick_10: 608 200 fr
+:raymanni/toys/brick_10: 568 160 fr
+:raymanni/toys/brick_1: 560 96
+:raymanni/toys/brick_10: 528 120 fr
+:raymanni/toys/brick_10: 488 80 fr
+:raymanni/toys/brick_10: 448 40 fr
+:raymanni/toys/brick_4: 104 80 r
+:raymanni/toys/brick_4: 40 80 r
+:raymanni/toys/brick_4: 40 120 r
+:raymanni/toys/soldier_2: 36 208
+:raymanni/toys/soldier_2: 188 208 frr
+:raymanni/toys/brick_2: 332 40 rr
+:raymanni/toys/letter_4: 336 168
+:raymanni/toys/letter_1: 336 136
+:raymanni/toys/brick_5: 320 264
+:raymanni/toys/letter_2: 336 104
+:raymanni/toys/letter_4: 336 232
+:raymanni/toys/letter_1: 336 200
+:raymanni/toys/brick_15: 372 40 frrr
+:raymanni/toys/brick_15: 300 40 rrr
+:raymanni/toys/brick_1: 640 336
+:raymanni/toys/brick_1: 640 272
+:raymanni/toys/brick_1: 640 208
+:raymanni/toys/brick_1: 640 144
+:raymanni/toys/brick_1: 640 80
+:raymanni/toys/brick_1: 640 16
+:raymanni/toys/brick_3: 640 0 r
+:raymanni/toys/brick_3: 704 0 r
+:raymanni/toys/brick_3: 768 0 r
+:raymanni/toys/brick_3: 832 0 r
+:raymanni/toys/brick_3: 896 0 r
+:raymanni/toys/brick_3: 960 0 r
+:raymanni/toys/brick_3: 1024 0 r
+:raymanni/toys/brick_1: 1120 16
+:raymanni/toys/brick_3: 1088 0 r
+:raymanni/toys/brick_1: 1200 32
+:raymanni/toys/brick_1: 1160 56
+:raymanni/toys/brick_1: 1160 392
+:raymanni/toys/brick_3: 1152 0 r
+:raymanni/toys/brick_1: 1240 72
+:raymanni/toys/brick_1: 1240 8
+:raymanni/toys/brick_3: 1216 0 r
+:raymanni/toys/brick_2: 680 360 r
+:raymanni/toys/brick_2: 744 360 r
+:raymanni/toys/brick_2: 808 360 r
+:raymanni/toys/brick_2: 872 360 r
+:raymanni/toys/brick_4: 680 320 r
+:raymanni/toys/brick_4: 744 320 r
+:raymanni/toys/brick_4: 808 320 r
+:raymanni/toys/brick_2: 1216 360 r
+:raymanni/toys/brick_2: 1152 360 r
+:raymanni/toys/brick_2: 1088 360 r
+:raymanni/toys/brick_2: 1152 320 r
+:raymanni/toys/brick_2: 1216 320 r
+:raymanni/toys/brick_2: 1216 280 r
+:raymanni/toys/letter_1: 1104 264
+:raymanni/toys/letter_2: 1104 296
+:raymanni/toys/letter_3: 1104 328
+:raymanni/toys/brick_1: 1088 224 r
+:raymanni/toys/brick_3: 680 256 rr
+:raymanni/toys/brick_3: 832 256 rr
+:raymanni/toys/brick_4: 680 40 r
+:raymanni/toys/brick_4: 744 40 r
+:raymanni/toys/brick_4: 808 40 r
+:raymanni/toys/brick_1: 1240 136
+:raymanni/toys/brick_10: 1248 200 fr
+:raymanni/toys/brick_10: 1208 160 fr
+:raymanni/toys/brick_1: 1200 96
+:raymanni/toys/brick_10: 1168 120 fr
+:raymanni/toys/brick_10: 1128 80 fr
+:raymanni/toys/brick_10: 1088 40 fr
+:raymanni/toys/brick_4: 744 80 r
+:raymanni/toys/brick_4: 680 80 r
+:raymanni/toys/brick_4: 680 120 r
+:raymanni/toys/soldier_2: 676 208
+:raymanni/toys/soldier_2: 828 208 frr
+:raymanni/toys/brick_2: 972 40 rr
+:raymanni/toys/letter_4: 976 168
+:raymanni/toys/letter_1: 976 136
+:raymanni/toys/brick_5: 960 264
+:raymanni/toys/letter_2: 976 104
+:raymanni/toys/letter_4: 976 232
+:raymanni/toys/letter_1: 976 200
+:raymanni/toys/brick_15: 1012 40 frrr
+:raymanni/toys/brick_15: 940 40 rrr
