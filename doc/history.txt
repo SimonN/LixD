@@ -1,6 +1,43 @@
 Version history
 ===============
 
+0.9.0
+-----
+
+2017-09-28
+
+Raymanni's Toy, Lab, and Gore tilesets to v3: Raymanni has drawn Lab monitors,
+Gore tentacles, eyes, and a bonesaw, a Toy chalkbox, and several more. All
+tiles have shading from the top-left as normal for Lix tiles. Thanks!
+
+Added Proxima's and mobius's multiplayer levels, merged geoo's level changes
+for the tileset update.
+
+Level search.
+
+Fix #230: Frogs ate cubers, and flung cubers reanimated. Now, cubers stay dead.
+
+Fix #231: Tumblers oscillated in thin walls. Now, tumblers will either move or
+land. (The tumbler code is not perfect yet, I'm planning to rewrite it, but
+the rewrite's subtle physics changes would invalidate too many replays still.)
+
+Fix #214: Players permute correctly in networking games.
+
+Fix #239: The server sends a permutation of correct size. This fixes wrong
+hatch/goal distributions in games with many observers and larger teams.
+
+Fix #217: Skip remaining overtime when everybody has nuked or finished
+playing.
+
+Race maps (= maps that have zero overtime) nuke automatically on the first
+scoring.
+
+Fix #240: Observers don't have to cancel the end-of-game dialog anymore. I
+print the game result to the console. This is not beautiful, but it's an
+acceptable medium-term solution.
+
+
+
 0.8.8
 -----
 
@@ -18,7 +55,8 @@ maps have nonzero overtime.
 
 The ping button highlights both your hatches and your exits in multiplayer.
 
-Multiplayer colors: Orange and yellow are more distinct. Grey is lighter. Blue and black are darker.
+Multiplayer colors: Orange and yellow are more distinct. Grey is lighter. Blue
+and black are darker.
 
 Warn about fewer key collisions in the the options tab for hotkeys in menus.
 
