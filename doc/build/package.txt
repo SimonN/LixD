@@ -1,23 +1,37 @@
 Notes for package maintainers
 =============================
 
-Hi! If you decide to package Lix for your Linux distribution, I'll be
-flattered. Please speak up with any questions or ideas, see the main readme
-file in Lix's root dir for concacting.
+1. tl;dr
+--------
 
-1. Suggested command line
-2. Runtime speed
-3. Minor version increments (y in x.y.z)
+If Lix shall read from `/usr/share/lix' or `/usr/local/share/lix', or wherever
+the user's `${XDG_DATA_DIRS}/lix/' points, don't change the Lix D source.
+If you want a custom install path, replace in `src/file/filename/fhs.d':
+
+    enum customReadOnlyDir = "";
+
+with, e.g.,
+
+    enum customReadOnlyDir = "/usr/share/games";
+
+...and the source will auto-append `/lix/' to make `/usr/share/games/lix/'.
+Read-write dir will be `${XDG_DATA_HOME}/lix/', usually `~/.local/share/lix/'.
+Build Lix with:
+
+    dub build -f -b releaseXDG
+
+Please update when I bump minor version, to support netplay. Many thanks! <3
+For a desktop icon, `data/images/lix_logo.svg' might be handy.
 
 
 
-1. Suggested command line
+2. Suggested command line
 -------------------------
 
 For binary packages in Linux distributions, I recommend to build Lix with this
 dub command line:
 
-    dub build -b releaseXDG
+    dub build -f -b releaseXDG
 
 Explanation:
 
@@ -25,36 +39,54 @@ Explanation:
 
 *   `build' is the dub command to build, but not execute.
 
+*   `-f` forces a re-build of all dependencies and Lix, even when the build
+    system believes they're up-to-date.
+
 *   `-b releaseXDG' builds with optimizations and inlining, without contracts
-    or unittests, but still with array bounds checks.
+    or unittests, and passes a flag to the compiler to let Lix look in
+    predefined directories for its data instead of in the working directory.
 
-    `-b releaseXDG' passes a version flag to the compiler to make Lix read
-    from `/usr/local/share/lix' or, if that directory doesn't exist, from
-    `/usr/share/lix', and to write to `${HOME}/.local/share/lix'. These paths
-    can be configured at runtime with environment variables by the XDG Base
-    Directory Specification.
-
-I don't offer compile-time path choice like `configure --prefix=/usr'.
-If you would like that, and the above `-b releaseXDG' is not enough,
-file an issue on github. :-)
-
-With `-b release' instead of `-b releaseXDG', Lix would be self-contained,
-i.e., read and write only within its working directory.
+For a self-contained build, use `-b release' instead of `-b releaseXDG'.
+Then, Lix will read and write only within its working directory.
 
 
 
-2. Runtime speed
+
+3. Directories
+--------------
+
+Lix will read from `/usr/local/share/lix' or, if that directory doesn't exist,
+from `/usr/share/lix'. These paths can be configured at runtime with
+environment variable XDG_DATA_DIRS according to the XDG Base Directory
+Specification: Lix will read from `${XDG_DATA_DIRS}/lix/'. If the variable has
+several colon-separated paths, they will be tried in order per file from the
+leftmost to the rightmost, until a required file is found.
+
+If the source in `src/file/filename/fhs.d' defines `customReadOnlyDir' as a
+nonempty string, that string will override the user's XDG environment
+variable, and instead hardcode the path for the read-only files.
+E.g., on Debian, you might hardcode `/usr/share/games'.
+
+Lix will write data and configurations to to `${HOME}/.local/share/lix/'.
+The environment variable XDG_DATA_HOME can override this directory;
+then Lix will read and write from `${XDG_DATA_HOME}/lix/'.
+
+Read the entire `src/file/filename/fhs.d' if you would like to know all
+details, and ask questions on github or in IRC. Contact details are in the
+readme file in the project's root dir.
+
+
+
+4. Runtime speed
 ----------------
 
 With the suggested command line above, release binary should have reasonable
-runtime speed already. To optimize even more for speed, use GDC or LDC instead
-of the reference compiler DMD. It's also possible, but discouraged by the D
-community, to disable even the array bounds checks; you'd have to edit the
-build type `releaseXDG' in `dub.json' according to the dub package format.
+runtime speed already. To optimize even more for speed, use LDC instead of the
+reference compiler DMD.
 
 
 
-3. Minor version increments (y in x.y.z)
+5. Minor version increments (y in x.y.z)
 ----------------------------------------
 
 The networking game server rejects connection attempts from different minor

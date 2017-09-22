@@ -1,8 +1,9 @@
-Lix -- a multiplayer-capable action-puzzle game
+Lix -- a single- and multiplayer action-puzzle game
 
-Written in 2006 to 2015 by Simon N. <eiderdaus@gmail.com>.
-Character sprites and non-level graphics by Simon.
+Written in 2006 to 2017 by Simon Naarmann <s.naarmann@gmail.com>.
+Character sprites and non-level graphics by Simon N.
 In-Level graphics, e.g., terrain, by Matt C., geoo, Proxima, and Amanda (NaOH).
+Logo in ./data/images/lix_logo.svg by Lucki. Levels carry an author field.
 
 The font djvusans.ttf in ./data/fonts/ is exempt from the following public
 domain dedication/CC0 waiver. It's licensed under the Bitstream Vera Fonts

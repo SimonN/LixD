@@ -1,14 +1,27 @@
 module file.filename.fhs;
 
 version (useXDGBaseDirs) {
-    enum selfContained = false;
+    // You can override the XDG specification by setting this string nonempty.
+    // See `doc/build/package.txt'. E.g., for Debian, put "/usr/share/games".
+    // This will make Lix read from a hardcoded path instead of looking at
+    // the XDG base dir variables at runtime, but still save according to
+    // the XDG base dir variables.
+    enum customReadOnlyDir = "";
+
     enum ourSubdir = "/lix/";
-    pragma (msg, "Using the XDG Base Directory Specification: `",
-        "$XDG_DATA_DIRS", ourSubdir, "'");
+    enum selfContained = false;
+
+    pragma (msg, "Lix will use the following runtime directories:");
+    pragma (msg, " -> Read-only dir:  ", customReadOnlyDir == ""
+        ? "${XDG_DATA_DIRS}" : customReadOnlyDir, ourSubdir);
+    pragma (msg, " -> Read-write dir: ${XDG_DATA_HOME}", ourSubdir);
+    pragma (msg, " -> See `doc/build/package.txt' on how to configure these.");
 }
 else {
     enum selfContained = true;
 }
+
+
 
 package:
 
@@ -38,6 +51,7 @@ else {
     // https://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
     // rootForWriting "~/.local/share/lix/", and rootsForReading should be
     // [ "~/.local/lix/", "/usr/local/share/lix/", "/usr/share/lix/" ].
+    // See customReadOnlyDir at the top of this module for overriding XDG vars.
     version (Windows) {
         static assert (false, "On Windows, I support only self-contained Lix. "
             ~ "I probably should look into standard directories again. "
@@ -63,17 +77,29 @@ else {
         return xdg ~ ourSubdir;
     }
 
-    // Assuming (ourSubdir == "/lix/"), the most likely return value will be:
-    // [ "/home/simon/.local/share/lix/",
-    //   "/usr/local/share/lix/",
-    //   "/usr/share/lix/" ]
-    string[] getRootsForReading()
-    {
-        string xdg = getenv("XDG_DATA_DIRS").to!string;
-        if (xdg == "")
-            // Use the fallback value according to the XDG Base Dir Spec
-            xdg = "/usr/local/share/:/usr/share/";
-        return getRootForWriting
-            ~ xdg.splitter(':').map!(path => path ~ ourSubdir).array;
+    static if (customReadOnlyDir == "") {
+        // Assuming (ourSubdir == "/lix/"), a likely return value will be:
+        // [ "/home/simon/.local/share/lix/",
+        //   "/usr/local/share/lix/",
+        //   "/usr/share/lix/" ]
+        string[] getRootsForReading()
+        {
+            // if no customReadOnlyDir, use XDG base dir spec
+            string xdg = getenv("XDG_DATA_DIRS").to!string;
+            if (xdg == "")
+                // Use the fallback value according to the XDG Base Dir Spec
+                xdg = "/usr/local/share/:/usr/share/";
+            return getRootForWriting
+                ~ xdg.splitter(':').map!(path => path ~ ourSubdir).array;
+        }
+    }
+    else {
+        // We ignore the XDG variable and fallback for the read-only dir
+        string[] getRootsForReading()
+        {
+            enum truncatedCustom = customReadOnlyDir[$-1] == '/'
+                ? customReadOnlyDir[0 .. $-1] : customReadOnlyDir;
+            return [ getRootForWriting, truncatedCustom ~ ourSubdir ];
+        }
     }
 }
