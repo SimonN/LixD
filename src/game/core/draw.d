@@ -36,7 +36,7 @@ implGameDraw(Game game) { with (game)
             map.clearScreenRect(color.makecol(bgRed, bgGreen, bgBlue));
         game.drawGadgets();
         game.drawLand();
-        game.pingGoals();
+        game.pingOwnGadgets();
 
         assert (_effect);
         _effect.draw(_chatArea.console);
@@ -67,7 +67,7 @@ void drawGadgets(Game game)
     game.nurse.drawAllGadgets();
 }
 
-void pingGoals(Game game) { with (game)
+void pingOwnGadgets(Game game) { with (game)
 {
     immutable remains = _altickPingGoalsUntil - timerTicks;
     if (remains < 0)
@@ -75,12 +75,11 @@ void pingGoals(Game game) { with (game)
     immutable int period = ticksPerSecond / 4;
     assert (period > 0);
     Alcol colOuter = remains % period > period / 2 ? color.white : color.black;
-    Alcol colInner = colOuter == color.white       ? color.black : color.white;
-    foreach (g; nurse.goalsOfTeam(localTribe.style)) {
+    foreach (g; nurse.gadgetsOfTeam(localTribe.style)) {
         Rect outer = Rect(g.loc - Point(5, 5), g.xl + 10, g.yl + 10);
         Rect inner = Rect(g.loc, g.xl, g.yl);
         map.drawFilledRectangle(outer, colOuter);
-        map.drawFilledRectangle(inner, colInner);
+        map.drawFilledRectangle(inner, color.black);
         g.draw();
     }
 }}

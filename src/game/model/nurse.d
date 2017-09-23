@@ -9,6 +9,7 @@ module game.model.nurse;
  */
 
 import std.algorithm;
+import std.range;
 
 import net.repdata; // update
 import basics.user; // Result
@@ -172,10 +173,11 @@ public:
         return resultOf(_model.cs.tribes[style]);
     }
 
-    auto goalsOfTeam(in Style st) const
+    auto gadgetsOfTeam(in Style st) const
     body {
         assert (_model);
-        return _model.cs.goals.filter!(g => g.hasTribe(st));
+        return _model.cs.goals.filter!(g => g.hasTribe(st)).chain(
+               _model.cs.hatches.filter!(h => h.blinkStyle == st));
     }
 
 private:

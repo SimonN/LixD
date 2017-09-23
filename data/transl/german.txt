@@ -349,10 +349,10 @@ $optionKeyStateLoad         Stand laden
 $optionKeyStateSave         Stand speich.
 $optionKeyChat               Chat
 $optionKeySpecTribe         Team zusehen
-$optionKeyPingGoals         Ziele hervorheben
+$optionKeyPingGoals         Klappen & Ziele pingen
 $optionKeyNuke               Atombombe
 
-$optionKeyPingGoalsDesc Die eigenen Ziele im Netzwerkspiel kurz hervorheben. Das ist hilfreich|in wilden Partien, oder falls Terrain die Markierungen verdeckt.
+$optionKeyPingGoalsDesc Eigene Klappen und Ziele im Netzwerkspiel kurz hervorheben.|Das hilft in wilden Partien oder bei verdeckten Markierungen.
 $optionKeyNukeDesc Im Einzelspieler alle Lix sprengen, um den Level zu beenden.|Im Netzwerkspiel die Nachspielzeit starten, sofern mindestens 1 Lix gerettet ist.
 $winGameTitleDesc Das Menü während des Spiels aufrufen,|um den Level zu beenden oder das Replay zu speichern.
 
