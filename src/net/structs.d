@@ -94,7 +94,7 @@ public:
     Feeling feeling;
     string name;
 
-    @property Style style() const nothrow
+    @property Style style() const nothrow @nogc pure
     {
         assert (goodForMultiplayer(_style));
         return _style;
@@ -105,7 +105,7 @@ public:
         _style = goodForMultiplayer(st) ? st : Style.red;
     }
 
-    static bool goodForMultiplayer(in Style st) nothrow
+    static bool goodForMultiplayer(in Style st) nothrow @nogc pure
     {
         return st >= Style.red && st < Style.max;
     }

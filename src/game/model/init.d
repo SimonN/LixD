@@ -35,7 +35,7 @@ GameState newZeroState(in Level level, in Style[] tribesToMake,
     }
     s.preparePlayers(level, tribesToMake, permu);
     s.prepareGadgets(level);
-    s.assignTribesToGoals(tribesToMake, permu, makeHatchesBlink);
+    s.assignTribesToGoals(permu, makeHatchesBlink);
     s.foreachGadget((Gadget g) {
         g.drawLookup(s.lookup);
     });
@@ -84,13 +84,18 @@ void prepareGadgets(GameState state, in Level level)
     instantiateGadgetsFromArray(state.flingTrigs, GadType.FLINGTRIG);
 }
 
-void assignTribesToGoals(GameState state,
-    in Style[] stylesInPlay, in Permu permu, in Style makeHatchesBlink
-) { with (state)
+void assignTribesToGoals(GameState state, in Permu permu, in Style hatchBlink)
+in {
+    import std.format;
+    assert (state.hatches.len, "we'll do modulo on the hatches, 0 is bad");
+    assert (state.goals.len, "can't assign 0 goals to the players");
+    assert (state.numTribes, "can't assign the goals to 0 players");
+    assert (permu.len == state.numTribes,
+        format!"permu length mismatch: permu len = %d, numTribes = %d"
+            (permu.len, state.numTribes));
+}
+body { with (state)
 {
-    assert (hatches.len, "we'll do modulo on the hatches, 0 is bad");
-    assert (goals.len, "can't assign 0 goals to the players");
-    assert (numTribes, "can't assign the goals to 0 players");
     while (hatches.len % numTribes != 0 && numTribes % hatches.len != 0)
         hatches = hatches[0 .. $-1];
     while (goals.len % numTribes != 0 && numTribes % goals.len != 0)
@@ -98,13 +103,16 @@ void assignTribesToGoals(GameState state,
     assert (hatches.len);
     assert (goals.len);
 
+    auto stylesInPlay = tribes.keys;
+    stylesInPlay.sort();
+
     // Hatches: Distribute to players, make certain hatches blink
     foreach (int i, style; stylesInPlay) {
         immutable ha = permu[i] % hatches.len;
         tribes[style].nextHatch = ha;
-        if (style == makeHatchesBlink)
+        if (style == hatchBlink)
             for (int j = ha; j < hatches.len; j += numTribes)
-                hatches[j].blinkStyle = makeHatchesBlink;
+                hatches[j].blinkStyle = hatchBlink;
     }
     // Goals: Distribute to players
     foreach (int i, style; stylesInPlay) {

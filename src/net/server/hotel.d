@@ -131,9 +131,7 @@ public:
             assert (party.walkLength > 0);
         }
         festivals[room].startGame();
-        ob.startGame(festivals[room].owner,
-            party.filter!(prof => prof.feeling == Profile.Feeling.ready)
-                 .walkLength.to!int);
+        ob.startGame(festivals[room].owner, numberOfDifferentTribes(party));
     }
 
     void receiveReplayData(Room room, ReplayData data)
@@ -196,5 +194,15 @@ private:
                 foreach (const plNr, ref const profile; ob.allPlayers)
                     if (profile.room == ro)
                         ob.sendMillisecondsSinceGameStart(plNr, since);
+    }
+
+    static int numberOfDifferentTribes(T)(T party) @nogc pure nothrow
+    {
+        int ret = 0;
+        auto styles = party.filter!(p => p.feeling == Profile.Feeling.ready)
+                           .map!(p => p.style);
+        return 0xFFFF & styles.save.enumerate.count!(
+            enuStyle => ! styles.save.take(enuStyle.index).canFind!(
+                earlierStyle => earlierStyle == enuStyle.value));
     }
 }
