@@ -10,7 +10,7 @@ import std.bitmanip;
 import std.conv;
 import std.string;
 
-private immutable _gameVersion = Version(0, 8, 7);
+private immutable _gameVersion = Version(0, 8, 8);
 const(Version) gameVersion() { return _gameVersion; }
 
 struct Version {

@@ -1,6 +1,33 @@
 Version history
 ===============
 
+0.8.8
+-----
+
+2017-09-24
+
+(Still 0.8.5 physics: This 0.8.8 still has the severe bug where you can fling
+cubers and thereby reanimate them, leading to wrong counts of lix alive. 0.9
+will fix this.)
+
+Merged 9 new multiplayer maps by Colorful Arty. Merged multiplayer map updates
+by geoo.
+
+All racing maps, and geoo's Tower Defense 22934, have zero overtime. All other
+maps have nonzero overtime.
+
+The ping button highlights both your hatches and your exits in multiplayer.
+
+Multiplayer colors: Orange and yellow are more distinct. Grey is lighter. Blue and black are darker.
+
+Warn about fewer key collisions in the the options tab for hotkeys in menus.
+
+Linux packaging: You can override the XDG install path with a custom path, see
+doc/build/package.txt. In the git repository, data/images/lix_logo.svg has a
+large logo as SVG. I don't ship that in the download because it's over 3 MB.
+
+
+
 0.8.7
 -----
 
