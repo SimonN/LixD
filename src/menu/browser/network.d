@@ -8,6 +8,7 @@ import gui;
 import gui.picker;
 import level.level;
 import menu.browser.frommain;
+import menu.search;
 
 class BrowserNetwork : BrowserCalledFromMainMenu {
 private:
@@ -18,6 +19,7 @@ public:
     {
         super(Lang.browserNetworkTitle.transl,
             basics.globals.dirLevels, PickerConfig!LevelTiler());
+        createSearchButton(new Geom(infoX, 20, infoXl/2, 40, From.BOT_LEF));
         scope (success)
             super.highlight(basics.user.networkLastLevel);
     }
@@ -45,4 +47,13 @@ protected:
             gotoGame = true;
         }
     }
+
+    override void workSelf()
+    {
+        super.workSelf();
+        workSearchMixin();
+    }
+
+private:
+    mixin SearchMixin searchMixin;
 }

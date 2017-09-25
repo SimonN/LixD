@@ -53,6 +53,7 @@ enum Lang {
     browserNewLevel,
     browserReplay,
     browserDelete,
+    browserSearch,
     browserExtract,
     browserExportImage,
     browserExportImageDone,
@@ -82,6 +83,10 @@ enum Lang {
     browserInfoSame,
     browserInfoOld,
     browserInfoHoldsLevel,
+
+    winSearchTitle,
+
+    winVerifyTitle,
 
     // networking lobby
     winLobbyTitle, winLobbyTitleDesc, // DTODOOPTION

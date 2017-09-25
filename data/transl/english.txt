@@ -28,6 +28,7 @@ $browserEdit                Edit
 $browserNewLevel            Create Level
 $browserReplay              Replay
 $browserDelete              Delete
+$browserSearch              Search
 $browserExtract             Extract level
 $browserExportImage        Export image
 $browserExportImageDone    Done.
@@ -57,6 +58,10 @@ $browserInfoNew              is too new
 $browserInfoSame             fits!
 $browserInfoOld              is too old
 $browserInfoHoldsLevel       contained
+
+$winSearchTitle              Level Search
+
+$winVerifyTitle              Replay Verifier
 
 // networking lobby
 

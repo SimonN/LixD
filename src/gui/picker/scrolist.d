@@ -1,8 +1,8 @@
 module gui.picker.scrolist;
 
-/* This looks like a file picker, but doesn't know about files:
- * It's a scrollable list of anything. The file picker contains this.
- */
+import std.algorithm;
+import std.math;
+import std.conv;
 
 import gui;
 import gui.picker.scrollb;
@@ -25,6 +25,12 @@ public:
     @property int top(int newTop);
 }
 
+// ############################################################################
+
+/*
+ * This looks like a file picker, but doesn't know about files:
+ * It's a scrollable list of anything. The file picker contains this.
+ */
 abstract class ScrolledList : Element {
 private:
     Frame _frame;
@@ -68,4 +74,72 @@ protected:
 
     override void drawSelf() { _frame.undraw(); }
     override void undrawSelf() { _frame.undraw(); } // frame bigger than this.
+}
+
+// ############################################################################
+
+/*
+ * This has a scrollbar, and it's scrollable itself.
+ * Normally, we'd use a Picker, who owns and mediates between a ScrolledList,
+ * an Ls, and a Tiler to fill the ScrolledList. But sometimes, it's handy
+ * to have a standalone button-filled list without a tiler attached.
+ */
+abstract class ScrollableButtonList : ScrolledList, IScrollable {
+private:
+    Button[] _buttons;
+    int _top;
+
+public:
+    enum float buttonYlg = 20f;
+
+    this(Geom g) { super(g); }
+
+    @property int wheelSpeed() const { return pageLen() <= 10 ? 3 : 5; }
+    @property int coarseness() const { return 1; }
+    @property int pageLen() const { return (ylg / buttonYlg).floor.to!int; }
+    @property int totalLen() const { return _buttons.length.to!int; }
+    @property int top() const { return _top; }
+    @property int top(int newTop)
+    {
+        // DTODOGUI: There is a bug left behind here.
+        // When the list enlarges or shrinks due to newly-arrived data,
+        // we would like to keep our scrolling position roughly the same.
+        // Yet we should make sure that we aren't scrolled out of bounds.
+        if (newTop == _top)
+            return _top;
+        _top = newTop;
+        alignButtons();
+        return _top;
+    }
+
+protected:
+    final override @property inout(IScrollable) tiler() inout { return this; }
+
+    @property const(Button[]) buttons() const { return _buttons; }
+
+    void replaceAllButtons(Button[] array)
+    {
+        _buttons.each!(b => rmChild(b));
+        _buttons = array;
+        _buttons.each!(b => addChild(b));
+        alignButtons();
+    }
+
+    Geom newGeomForButton() const
+    {
+        auto g = newGeomForTiler();
+        // We don't set the y-position. Call alignButtons() for that.
+        g.yl = buttonYlg;
+        return g;
+    }
+
+private:
+    void alignButtons()
+    {
+        reqDraw();
+        foreach (int i, b; _buttons) {
+            b.shown = (i >= _top && i < _top + pageLen);
+            b.move(0, (i - _top) * buttonYlg);
+        }
+    }
 }

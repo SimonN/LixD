@@ -24,6 +24,7 @@ $browserEdit                  Editieren
 $browserNewLevel              Level erstellen
 $browserReplay                Abspielen
 $browserDelete                Löschen
+$browserSearch                Suchen
 $browserExtract               Level extrah.
 $browserExportImage          Bild export.
 $browserExportImageDone     Fertig.
@@ -53,6 +54,10 @@ $browserInfoNew              ist zu neu
 $browserInfoSame             passt!
 $browserInfoOld              ist zu alt
 $browserInfoHoldsLevel       enthalten
+
+$winSearchTitle              Levelsuche
+
+$winVerifyTitle              Replay-Verifizierer
 
 // Lobby
 

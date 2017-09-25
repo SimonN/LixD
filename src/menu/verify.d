@@ -11,6 +11,7 @@ import std.stdio;
 import basics.globals;
 import basics.user; // hotkeys to cancel the dialog;
 import file.filename;
+import file.language;
 import file.log;
 import gui;
 import hardware.mouse; // clicks to cancel the dialog
@@ -29,8 +30,7 @@ public:
     out { assert (_vc); }
     body {
         super(new Geom(0, 0, gui.screenXlg, gui.screenYlg),
-            // DTODOLANG
-            "Replay Verifier");
+            Lang.winVerifyTitle.transl);
         _console = new LobbyConsole(new Geom(20, 40, xlg - 40, ylg - 60));
         addChild(_console);
         _permanent = fileReplayVerifier.openForWriting("a");

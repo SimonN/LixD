@@ -424,9 +424,7 @@ void populateMenuKeys()
         fac.factory!HotkeyOption(keyMenuNewLevel, watcher),
         fac.factory!HotkeyOption(keyMenuExport, watcher),
         fac.factory!HotkeyOption(keyMenuDelete, watcher),
-    ];
-    fac.y += 20;
-    grp ~= [
+        fac.factory!HotkeyOption(keyMenuSearch, watcher),
         fac.factory!HotkeyOption(keyMenuExit, watcher),
     ];
     fac = facKeys!1;

@@ -27,6 +27,8 @@ protected:
  * title and msgs, but without adding buttons:
  *
  *  MsgBox newMsgBoxDelete();
+ *
+ * In the using class's calcSelf, call calcDeleteMixin.
  */
 mixin template DeleteMixin()
 {
@@ -51,6 +53,40 @@ mixin template DeleteMixin()
                 KeySet(keyMenuDelete, keyMenuExit),
                 () { _boxDelete = null; });
             addFocus(_boxDelete);
+        }
+    }
+}
+
+/*
+ * How to use the SearchMixin:
+ * Mix it into a browser. In the browser's constructor, call
+ * createSearchButton with the desired geom. In the browser's workSelf(),
+ * call workSearchMixin().
+ */
+mixin template SearchMixin()
+{
+    private Button _button;
+    private SearchWindow _window;
+
+    private void createSearchButton(Geom g)
+    {
+        _button = new TextButton(g, Lang.browserSearch.transl);
+        _button.hotkey = basics.user.keyMenuSearch;
+        _button.onExecute = () {
+            assert (! _window);
+            _window = new SearchWindow();
+            addFocus(_window);
+        };
+        addChild(_button);
+    }
+
+    private void workSearchMixin()
+    {
+        assert (_button);
+        if (_window && _window.done) {
+            if (_window.selectedResult)
+                highlight(_window.selectedResult);
+            _window = null;
         }
     }
 }
