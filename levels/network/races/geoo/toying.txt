@@ -1,4 +1,4 @@
-$BUILT 2017-09-09 15:56:47
+$BUILT 2017-09-28 11:03:22
 $AUTHOR geoo
 $ENGLISH Toying Around (2-8P race)
 
@@ -43,20 +43,20 @@ $ENGLISH Toying Around (2-8P race)
 :geoo/construction/spring.T: 480 688
 
 $BEGIN_TILE_GROUP 0
-:raymanni/toys/chalk_5: 0 0
-:raymanni/toys/chalk_2: 8 0
-:raymanni/toys/chalk_2: 16 0
-:raymanni/toys/chalk_2: 24 0
-:raymanni/toys/chalk_2: 32 0
-:raymanni/toys/chalk_2: 40 0
-:raymanni/toys/chalk_2: 48 0
-:raymanni/toys/chalk_2: 56 0
-:raymanni/toys/chalk_2: 64 0
-:raymanni/toys/chalk_6: 104 0
-:raymanni/toys/chalk_2: 72 0
-:raymanni/toys/chalk_2: 80 0
-:raymanni/toys/chalk_2: 88 0
-:raymanni/toys/chalk_2: 96 0
+:raymanni/toys/chalk_2: 0 0 fr
+:raymanni/toys/chalk_1: 8 0 r
+:raymanni/toys/chalk_1: 16 0 r
+:raymanni/toys/chalk_1: 24 0 r
+:raymanni/toys/chalk_1: 32 0 r
+:raymanni/toys/chalk_1: 40 0 r
+:raymanni/toys/chalk_1: 48 0 r
+:raymanni/toys/chalk_1: 56 0 r
+:raymanni/toys/chalk_1: 64 0 r
+:raymanni/toys/chalk_2: 104 0 r
+:raymanni/toys/chalk_1: 72 0 r
+:raymanni/toys/chalk_1: 80 0 r
+:raymanni/toys/chalk_1: 88 0 r
+:raymanni/toys/chalk_1: 96 0 r
 $END_TILE_GROUP
 :Group-0: -40 152
 :Group-0: 248 96
@@ -119,53 +119,53 @@ $END_TILE_GROUP
 :matt/bricks/19: 360 1136
 :matt/bricks/20: 360 1112
 :matt/bricks/17: 368 1056
-:raymanni/toys/brick_2: 96 1008 frrr
+:raymanni/toys/brick_2: 96 1008 fr
 :raymanni/toys/cracker: 160 1040
 :raymanni/toys/letter_1: 40 1120
 :raymanni/toys/letter_blank: 48 1088
-:raymanni/toys/chalk_2: 160 1008
-:raymanni/toys/chalk_2: 168 1008
-:raymanni/toys/chalk_2: 176 1008
-:raymanni/toys/chalk_2: 184 1008
-:raymanni/toys/chalk_2: 192 1008
-:raymanni/toys/chalk_2: 200 1008
-:raymanni/toys/chalk_2: 208 1008
-:raymanni/toys/chalk_6: 272 1008
-:raymanni/toys/chalk_2: 216 1008
-:raymanni/toys/chalk_2: 224 1008
-:raymanni/toys/chalk_2: 232 1008
+:raymanni/toys/chalk_1: 160 1008 r
+:raymanni/toys/chalk_1: 168 1008 r
+:raymanni/toys/chalk_1: 176 1008 r
+:raymanni/toys/chalk_1: 184 1008 r
+:raymanni/toys/chalk_1: 192 1008 r
+:raymanni/toys/chalk_1: 200 1008 r
+:raymanni/toys/chalk_1: 208 1008 r
+:raymanni/toys/chalk_2: 272 1008 r
+:raymanni/toys/chalk_1: 216 1008 r
+:raymanni/toys/chalk_1: 224 1008 r
+:raymanni/toys/chalk_1: 232 1008 r
 :raymanni/toys/letter_blank: 176 976
-:raymanni/toys/chalk_2: 248 1008
-:raymanni/toys/chalk_2: 256 1008
-:raymanni/toys/chalk_2: 240 1008
+:raymanni/toys/chalk_1: 248 1008 r
+:raymanni/toys/chalk_1: 256 1008 r
+:raymanni/toys/chalk_1: 240 1008 r
 :geoo/steel/64x32o.S: 96 912
 :geoo/steel/64x32o.S: 160 912
 :geoo/steel/32x64o.S: 0 960
-:raymanni/toys/chalk_2: 264 1008
+:raymanni/toys/chalk_1: 264 1008 r
 :Group-0: 168 1104
 :raymanni/toys/car_2: 416 1024
-:raymanni/toys/chalk_2: 432 1056
-:raymanni/toys/chalk_2: 440 1056
-:raymanni/toys/chalk_2: 448 1056
-:raymanni/toys/chalk_2: 456 1056
-:raymanni/toys/chalk_2: 464 1056
-:raymanni/toys/chalk_2: 472 1056
-:raymanni/toys/chalk_2: 480 1056
-:raymanni/toys/chalk_2: 488 1056
+:raymanni/toys/chalk_1: 432 1056 r
+:raymanni/toys/chalk_1: 440 1056 r
+:raymanni/toys/chalk_1: 448 1056 r
+:raymanni/toys/chalk_1: 456 1056 r
+:raymanni/toys/chalk_1: 464 1056 r
+:raymanni/toys/chalk_1: 472 1056 r
+:raymanni/toys/chalk_1: 480 1056 r
+:raymanni/toys/chalk_1: 488 1056 r
 :raymanni/toys/letter_4: 544 1120
-:raymanni/toys/chalk_6: 528 1056
-:raymanni/toys/chalk_2: 496 1056
+:raymanni/toys/chalk_2: 528 1056 r
+:raymanni/toys/chalk_1: 496 1056 r
 :raymanni/toys/letter_2: 480 1024
 :raymanni/toys/letter_blank: 472 992
 :raymanni/toys/letter_1: 472 960
 :raymanni/toys/letter_3: 576 1120
 :raymanni/toys/letter_blank: 576 1088
 :geoo/steel/32x64o.S: 608 960
-:raymanni/toys/brick_3: 312 944 frrr
-:raymanni/toys/brick_3: 376 944 frrr
+:raymanni/toys/brick_3: 376 944 fr
+:raymanni/toys/brick_3: 312 944 fr
 :geoo/steel/32x16o.S: 408 880
-:raymanni/toys/chalk_2: 504 1056
-:raymanni/toys/chalk_2: 512 1056
+:raymanni/toys/chalk_1: 504 1056 r
+:raymanni/toys/chalk_1: 512 1056 r
 :geoo/steel/32x64o.S: 608 896
 :geoo/steel/32x64o.S: 608 832
 :geoo/steel/32x16o.S: 312 880
@@ -189,7 +189,7 @@ $END_TILE_GROUP
 :geoo/steel/32x64o.S: 0 832
 :geoo/steel/32x64o.S: 0 768
 :geoo/steel/32x64o.S: 0 704
-:raymanni/toys/chalk_2: 520 1056
+:raymanni/toys/chalk_1: 520 1056 r
 :raymanni/toys/car_1: 88 880
 :geoo/steel/32x16o.S: 48 816
 :geoo/steel/32x16o.S: 80 816
@@ -223,18 +223,15 @@ $END_TILE_GROUP
 :geoo/construction/platform.S: 64 640
 :raymanni/toys/letter_1: 576 768
 :geoo/steel/32x16o.S: 112 816
-$BEGIN_TILE_GROUP 1
-:raymanni/toys/chalk_3: 0 0
-:raymanni/toys/chalk_1: 0 8
-:raymanni/toys/chalk_1: 0 16
-:raymanni/toys/chalk_1: 0 24
-:raymanni/toys/chalk_8: 0 32
-:raymanni/toys/chalk_1: 0 40
-:raymanni/toys/chalk_1: 0 48
-:raymanni/toys/chalk_1: 0 56
-:raymanni/toys/chalk_4: 0 64
-$END_TILE_GROUP
-:Group-1: 456 504
+:raymanni/toys/chalk_3: 456 504
+:raymanni/toys/chalk_1: 456 512
+:raymanni/toys/chalk_1: 456 520
+:raymanni/toys/chalk_1: 456 528
+:raymanni/toys/chalk_3: 456 536
+:raymanni/toys/chalk_1: 456 544
+:raymanni/toys/chalk_1: 456 552
+:raymanni/toys/chalk_1: 456 560 r
+:raymanni/toys/chalk_4: 456 568
 :geoo/steel/32x64o.S: 608 576
 :geoo/steel/32x64o.S: 608 512
 :geoo/steel/32x64o.S: 608 448
@@ -272,29 +269,29 @@ $END_TILE_GROUP
 :raymanni/toys/letter_1: 96 544
 :raymanni/toys/letter_2: 96 512
 :geoo/steel/64x64.S: 80 448
-$BEGIN_TILE_GROUP 2
+$BEGIN_TILE_GROUP 1
 :geoo/steel/32x64o.S: 0 64
 :geoo/steel/32x64o.S: 0 0
 :geoo/abstract/pipes/link0: 24 60 rrd
 $END_TILE_GROUP
-:Group-2: 0 512
+:Group-1: 0 512
 :raymanni/toys/letter_4: 32 512
 :geoo/steel/32x64o.S: 0 384
 :raymanni/toys/letter_4: 128 384
-:raymanni/toys/chalk_5: 216 408
-:raymanni/toys/chalk_2: 224 408
-:raymanni/toys/chalk_2: 232 408
-:raymanni/toys/chalk_2: 240 408
-:raymanni/toys/chalk_2: 248 408
-:raymanni/toys/chalk_2: 256 408
-:raymanni/toys/chalk_2: 264 408
-:raymanni/toys/chalk_2: 272 408
-:raymanni/toys/chalk_2: 280 408
-:raymanni/toys/chalk_6: 368 408
-:raymanni/toys/chalk_2: 288 408
-:raymanni/toys/chalk_2: 296 408
-:raymanni/toys/chalk_2: 304 408
-:raymanni/toys/chalk_2: 312 408
+:raymanni/toys/chalk_2: 216 408 fr
+:raymanni/toys/chalk_1: 224 408 r
+:raymanni/toys/chalk_1: 232 408 r
+:raymanni/toys/chalk_1: 240 408 r
+:raymanni/toys/chalk_1: 248 408 r
+:raymanni/toys/chalk_1: 256 408 r
+:raymanni/toys/chalk_1: 264 408 r
+:raymanni/toys/chalk_1: 272 408 r
+:raymanni/toys/chalk_1: 280 408 r
+:raymanni/toys/chalk_2: 368 408 r
+:raymanni/toys/chalk_1: 288 408 r
+:raymanni/toys/chalk_1: 296 408 r
+:raymanni/toys/chalk_1: 304 408 r
+:raymanni/toys/chalk_1: 312 408 r
 :raymanni/toys/letter_blank: 236 344
 :raymanni/toys/letter_blank: 272 376
 :raymanni/toys/letter_3: 224 376
@@ -382,41 +379,41 @@ $END_TILE_GROUP
 :raymanni/toys/letter_3: 120 24
 :raymanni/toys/letter_2: 152 24
 :raymanni/toys/letter_1: 136 -8
-$BEGIN_TILE_GROUP 3
-:raymanni/toys/chalk_5: 0 0
-:raymanni/toys/chalk_2: 24 0
-:raymanni/toys/chalk_2: 32 0
-:raymanni/toys/chalk_2: 40 0
-:raymanni/toys/chalk_2: 48 0
-:raymanni/toys/chalk_2: 56 0
-:raymanni/toys/chalk_2: 64 0
-:raymanni/toys/chalk_2: 72 0
-:raymanni/toys/chalk_2: 80 0
-:raymanni/toys/chalk_6: 136 0
-:raymanni/toys/chalk_2: 88 0
-:raymanni/toys/chalk_2: 96 0
-:raymanni/toys/chalk_2: 104 0
-:raymanni/toys/chalk_2: 112 0
-:raymanni/toys/chalk_2: 120 0
-:raymanni/toys/chalk_2: 128 0
-:raymanni/toys/chalk_2: 8 0
-:raymanni/toys/chalk_2: 16 0
+$BEGIN_TILE_GROUP 2
+:raymanni/toys/chalk_2: 0 0 fr
+:raymanni/toys/chalk_1: 24 0 r
+:raymanni/toys/chalk_1: 32 0 r
+:raymanni/toys/chalk_1: 40 0 r
+:raymanni/toys/chalk_1: 48 0 r
+:raymanni/toys/chalk_1: 56 0 r
+:raymanni/toys/chalk_1: 64 0 r
+:raymanni/toys/chalk_1: 72 0 r
+:raymanni/toys/chalk_1: 80 0 r
+:raymanni/toys/chalk_2: 136 0 r
+:raymanni/toys/chalk_1: 88 0 r
+:raymanni/toys/chalk_1: 96 0 r
+:raymanni/toys/chalk_1: 104 0 r
+:raymanni/toys/chalk_1: 112 0 r
+:raymanni/toys/chalk_1: 120 0 r
+:raymanni/toys/chalk_1: 128 0 r
+:raymanni/toys/chalk_1: 8 0 r
+:raymanni/toys/chalk_1: 16 0 r
 $END_TILE_GROUP
-:Group-3: 88 88
+:Group-2: 88 88
 :raymanni/toys/letter_2: 172 112
 :Group-0: 104 96
-$BEGIN_TILE_GROUP 4
-:raymanni/toys/chalk_5: 0 0
-:raymanni/toys/chalk_2: 8 0
-:raymanni/toys/chalk_2: 16 0
-:raymanni/toys/chalk_2: 24 0
-:raymanni/toys/chalk_6: 64 0
-:raymanni/toys/chalk_2: 32 0
-:raymanni/toys/chalk_2: 40 0
-:raymanni/toys/chalk_2: 48 0
-:raymanni/toys/chalk_2: 56 0
+$BEGIN_TILE_GROUP 3
+:raymanni/toys/chalk_2: 0 0 fr
+:raymanni/toys/chalk_1: 8 0 r
+:raymanni/toys/chalk_1: 16 0 r
+:raymanni/toys/chalk_1: 24 0 r
+:raymanni/toys/chalk_2: 64 0 r
+:raymanni/toys/chalk_1: 32 0 r
+:raymanni/toys/chalk_1: 40 0 r
+:raymanni/toys/chalk_1: 48 0 r
+:raymanni/toys/chalk_1: 56 0 r
 $END_TILE_GROUP
-:Group-4: 136 104
+:Group-3: 136 104
 :raymanni/toys/letter_1: 120 128
 :raymanni/toys/letter_3: 16 32
 :raymanni/toys/letter_2: -16 32
@@ -427,14 +424,14 @@ $END_TILE_GROUP
 :raymanni/toys/letter_3: 280 -24
 :raymanni/toys/letter_blank: 312 -24
 :geoo/abstract/pipes/link0: 24 444 rrd
-:raymanni/toys/chalk_2: 320 408
-:raymanni/toys/chalk_2: 328 408
-:raymanni/toys/chalk_2: 336 408
-:raymanni/toys/chalk_2: 344 408
-:raymanni/toys/chalk_2: 352 408
-:raymanni/toys/chalk_2: 360 408
-:raymanni/toys/chalk_2: 292 296
-:raymanni/toys/chalk_2: 300 296
-:raymanni/toys/chalk_2: 304 296
-:Group-4: 480 96
+:raymanni/toys/chalk_1: 320 408 r
+:raymanni/toys/chalk_1: 328 408 r
+:raymanni/toys/chalk_1: 336 408 r
+:raymanni/toys/chalk_1: 344 408 r
+:raymanni/toys/chalk_1: 352 408 r
+:raymanni/toys/chalk_1: 360 408 r
+:raymanni/toys/chalk_1: 292 296 r
+:raymanni/toys/chalk_1: 300 296 r
+:raymanni/toys/chalk_1: 304 296 r
+:Group-3: 480 96
 :raymanni/toys/letter_blank: 448 472
