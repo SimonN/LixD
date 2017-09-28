@@ -1,6 +1,6 @@
-$BUILT 2017-09-20 10:58:20
-$AUTHOR TM
-$ENGLISH Fast Food Kitchen
+$BUILT 2017-09-26 18:48:44
+$AUTHOR mobius
+$ENGLISH Hell's Kitchen
 
 #INTENDED_NUMBER_OF_PLAYERS 2
 #SIZE_X 1264
@@ -9,17 +9,18 @@ $ENGLISH Fast Food Kitchen
 #SECONDS 30
 #INITIAL 100
 #REQUIRED 50
-#SPAWN_INTERVAL 42
+#SPAWN_INTERVAL 40
 
 #WALKER 40
-#CLIMBER 20
+#RUNNER 20
 #EXPLODER2 20
-#BLOCKER 20
-#BUILDER 80
-#BASHER 40
-#MINER 40
-#DIGGER 40
+#BUILDER 60
+#PLATFORMER 10
+#BASHER 20
+#DIGGER 20
 #JUMPER 40
+#BATTER 30
+#CUBER 20
 
 :matt/underworld/Hatch.H: 72 184
 :matt/underworld/Hatch.H: 1128 184 r
@@ -71,3 +72,17 @@ $ENGLISH Fast Food Kitchen
 :matt/underworld/05: 88 264 frr
 :geoo/steel/16x16o.S: 504 208
 :geoo/steel/16x16o.S: 744 208
+:matt/underworld/04: 960 240 r
+:matt/underworld/04: 240 240 r
+:geoo/steel/32x16o.S: 1128 272
+:geoo/steel/32x16o.S: 1160 272
+:geoo/steel/32x16o.S: 72 272
+:geoo/steel/32x16o.S: 104 272
+:geoo/steel/32x16o.S: 480 208
+:geoo/steel/32x16o.S: 512 208
+:geoo/steel/32x16o.S: 720 208
+:geoo/steel/32x16o.S: 752 208
+:matt/underworld/02: 600 144
+:matt/underworld/02: 600 64 d
+:geoo/steel/32x16o.S: 104 256 d
+:geoo/steel/32x16o.S: 1128 256 d

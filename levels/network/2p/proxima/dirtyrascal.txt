@@ -1,0 +1,233 @@
+$BUILT 2017-09-27 19:06:00
+$AUTHOR Michael S. Repton
+$ENGLISH Dirty rascal
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1600
+#SIZE_Y 320
+#TORUS_X 1
+#TORUS_Y 0
+#START_X 80
+#START_Y -80
+
+#SECONDS 90
+#INITIAL 100
+#REQUIRED 75
+#SPAWN_INTERVAL 32
+
+#WALKER 20
+#CLIMBER 20
+#FLOATER 20
+#EXPLODER2 10
+#BLOCKER 10
+#BUILDER 80
+#PLATFORMER 40
+#BASHER 20
+#JUMPER 20
+#BATTER 20
+
+:matt/underworld/Hatch.H: 596 224 r
+:matt/underworld/Hatch.H: 936 224
+
+:matt/underworld/Goal.G: 104 40
+:matt/underworld/Goal.G: 1432 40
+
+:matt/underworld/Lava.W: 356 288
+:matt/underworld/Lava.W: 1192 288
+:matt/underworld/Lava.W: 1576 288
+:proxima/flame.F: 784 160
+:proxima/flame.F: 776 160
+:matt/underworld/Lava.W: 776 288
+
+:geoo/steel/dark_64x48o.S: 628 272
+:geoo/steel/dark_64x48o.S: 564 272
+:geoo/steel/dark_32x48o.S: 404 272
+:geoo/steel/dark_32x48o.S: 324 272
+:matt/underworld/01: 436 272
+:matt/underworld/01: 500 272
+:matt/underworld/00: 436 304
+:matt/underworld/00: 500 304
+:matt/underworld/01: 196 272
+:matt/underworld/01: 260 272
+:matt/underworld/00: 196 304
+:geoo/steel/dark_32x48o.S: 196 272
+:matt/underworld/00: 260 304
+:geoo/abstract/pipes/central0: 692 256 rrr
+:matt/underworld/07: 676 256 frr
+:matt/underworld/01: 68 272
+:matt/underworld/01: 132 272
+:matt/underworld/00: 68 304
+:matt/underworld/07: 4 256 frr
+:matt/underworld/00: 132 304
+:geoo/abstract/pipes/central0: 692 224 rrr
+:geoo/abstract/pipes/central0: 692 192 rrr
+:geoo/abstract/pipes/central0: 692 160 rrr
+:geoo/abstract/pipes/central0: 692 128 rrr
+:geoo/abstract/pipes/central0: 692 96 rrr
+:geoo/abstract/pipes/central0: 692 64 rrr
+:geoo/abstract/pipes/central0: 692 32 rrr
+:geoo/abstract/pipes/central0: 692 0 rrr
+:geoo/abstract/pipes/central0: 220 216
+:geoo/abstract/pipes/central0: 252 216
+:geoo/abstract/pipes/central0: 284 216
+:geoo/abstract/pipes/central0: 316 216
+:geoo/abstract/pipes/central0: 348 216
+:geoo/abstract/pipes/central0: 380 216
+:geoo/abstract/pipes/central0: 412 216
+:geoo/abstract/pipes/central0: 444 216
+:geoo/abstract/pipes/central0: 476 216
+:geoo/abstract/pipes/central0: 508 216
+:geoo/abstract/pipes/central0: 540 216
+:geoo/abstract/pipes/central0: 572 216
+:geoo/abstract/pipes/central0: 604 216
+:geoo/abstract/pipes/central0: 636 216
+:geoo/abstract/pipes/central0: 668 216
+:geoo/abstract/pipes/central0: 96 240 rrr
+:geoo/abstract/pipes/central0: 96 208 rrr
+:geoo/abstract/pipes/central0: 96 176 rrr
+:geoo/abstract/pipes/central0: 96 144 rrr
+:geoo/abstract/pipes/central0: 96 112 rrr
+:geoo/abstract/pipes/central0: 92 104
+:geoo/abstract/pipes/central0: 124 104
+:geoo/abstract/pipes/central0: 180 80 rrr
+:geoo/abstract/pipes/central0: 156 104
+:geoo/abstract/pipes/central0: 104 168
+:geoo/abstract/pipes/central0: 136 168
+:geoo/abstract/pipes/central0: 168 168
+:geoo/abstract/pipes/central0: 200 168
+:geoo/abstract/pipes/central0: 232 168
+:geoo/abstract/pipes/central0: 264 168
+:geoo/abstract/pipes/central0: 296 168
+:geoo/abstract/pipes/central0: 328 168
+:geoo/abstract/pipes/central0: 360 168
+:geoo/abstract/pipes/central0: 392 168
+:geoo/abstract/pipes/central0: 424 168
+:geoo/abstract/pipes/central0: 456 168
+:geoo/abstract/pipes/central0: 488 168
+:geoo/abstract/pipes/central0: 520 168
+:geoo/abstract/pipes/central0: 552 168
+:geoo/abstract/pipes/central0: 584 168
+:geoo/abstract/pipes/central0: 204 128
+:geoo/abstract/pipes/central0: 236 128
+:geoo/abstract/pipes/central0: 268 128
+:geoo/abstract/pipes/central0: 300 128
+:geoo/abstract/pipes/central0: 332 128
+:geoo/abstract/pipes/central0: 364 128
+:geoo/abstract/pipes/central0: 396 128
+:geoo/abstract/pipes/central0: 428 128
+:geoo/abstract/pipes/central0: 460 128
+:geoo/abstract/pipes/central0: 492 128
+:geoo/abstract/pipes/central0: 524 128
+:geoo/abstract/pipes/central0: 556 128
+:geoo/abstract/pipes/central0: 588 128
+:geoo/abstract/pipes/central0: 620 128
+:geoo/abstract/pipes/central0: 652 128
+:geoo/abstract/pipes/central0: 180 80
+:geoo/abstract/pipes/central0: 212 80
+:geoo/abstract/pipes/central0: 244 80
+:geoo/abstract/pipes/central0: 276 80
+:geoo/abstract/pipes/central0: 308 80
+:geoo/abstract/pipes/central0: 340 80
+:geoo/abstract/pipes/central0: 372 80
+:geoo/abstract/pipes/central0: 404 80
+:geoo/abstract/pipes/central0: 436 80
+:geoo/abstract/pipes/central0: 468 80
+:geoo/steel/dark_64x48o.S: 968 272
+:geoo/steel/dark_64x48o.S: 904 272
+:geoo/steel/dark_32x48o.S: 1240 272
+:geoo/steel/dark_32x48o.S: 1160 272
+:matt/underworld/01: 1272 272
+:matt/underworld/01: 1336 272
+:matt/underworld/00: 1272 304
+:matt/underworld/00: 1336 304
+:matt/underworld/01: 1032 272
+:matt/underworld/01: 1096 272
+:matt/underworld/00: 1032 304
+:geoo/steel/dark_32x48o.S: 1368 272
+:matt/underworld/00: 1096 304
+:geoo/abstract/pipes/central0: 1496 256 rrr
+:matt/underworld/01: 1400 272
+:matt/underworld/01: 1464 272
+:matt/underworld/00: 1400 304
+:matt/underworld/07: 808 256 frr
+:matt/underworld/00: 1464 304
+:matt/underworld/07: 1480 256 frr
+:geoo/abstract/pipes/central0: 1496 224 rrr
+:geoo/abstract/pipes/central0: 1496 192 rrr
+:geoo/abstract/pipes/central0: 1496 160 rrr
+:geoo/abstract/pipes/central0: 1496 128 rrr
+:geoo/abstract/pipes/central0: 904 80 rrr
+:geoo/abstract/pipes/central0: 904 48 rrr
+:geoo/abstract/pipes/central0: 904 16 rrr
+:geoo/abstract/pipes/central0: 904 -16 rrr
+:geoo/abstract/pipes/central0: 904 216
+:geoo/abstract/pipes/central0: 936 216
+:geoo/abstract/pipes/central0: 968 216
+:geoo/abstract/pipes/central0: 1000 216
+:geoo/abstract/pipes/central0: 1032 216
+:geoo/abstract/pipes/central0: 1064 216
+:geoo/abstract/pipes/central0: 1096 216
+:geoo/abstract/pipes/central0: 1128 216
+:geoo/abstract/pipes/central0: 1160 216
+:geoo/abstract/pipes/central0: 1192 216
+:geoo/abstract/pipes/central0: 1224 216
+:geoo/abstract/pipes/central0: 1256 216
+:geoo/abstract/pipes/central0: 1288 216
+:geoo/abstract/pipes/central0: 1320 216
+:geoo/abstract/pipes/central0: 1352 216
+:geoo/abstract/pipes/central0: 904 240 rrr
+:geoo/abstract/pipes/central0: 904 208 rrr
+:geoo/abstract/pipes/central0: 904 176 rrr
+:geoo/abstract/pipes/central0: 904 144 rrr
+:geoo/abstract/pipes/central0: 904 112 rrr
+:geoo/abstract/pipes/central0: 1416 80 rrr
+:geoo/abstract/pipes/central0: 1416 104
+:geoo/abstract/pipes/central0: 1448 104
+:geoo/abstract/pipes/central0: 1480 104
+:geoo/abstract/pipes/central0: 984 168
+:geoo/abstract/pipes/central0: 1016 168
+:geoo/abstract/pipes/central0: 1048 168
+:geoo/abstract/pipes/central0: 1080 168
+:geoo/abstract/pipes/central0: 1112 168
+:geoo/abstract/pipes/central0: 1144 168
+:geoo/abstract/pipes/central0: 1176 168
+:geoo/abstract/pipes/central0: 1208 168
+:geoo/abstract/pipes/central0: 1240 168
+:geoo/abstract/pipes/central0: 1272 168
+:geoo/abstract/pipes/central0: 1304 168
+:geoo/abstract/pipes/central0: 1336 168
+:geoo/abstract/pipes/central0: 1368 168
+:geoo/abstract/pipes/central0: 1400 168
+:geoo/abstract/pipes/central0: 1432 168
+:geoo/abstract/pipes/central0: 1464 168
+:geoo/abstract/pipes/central0: 920 128
+:geoo/abstract/pipes/central0: 952 128
+:geoo/abstract/pipes/central0: 984 128
+:geoo/abstract/pipes/central0: 1016 128
+:geoo/abstract/pipes/central0: 1048 128
+:geoo/abstract/pipes/central0: 1080 128
+:geoo/abstract/pipes/central0: 1112 128
+:geoo/abstract/pipes/central0: 1144 128
+:geoo/abstract/pipes/central0: 1176 128
+:geoo/abstract/pipes/central0: 1208 128
+:geoo/abstract/pipes/central0: 1240 128
+:geoo/abstract/pipes/central0: 1272 128
+:geoo/abstract/pipes/central0: 1304 128
+:geoo/abstract/pipes/central0: 1336 128
+:geoo/abstract/pipes/central0: 1368 128
+:geoo/abstract/pipes/central0: 1104 80
+:geoo/abstract/pipes/central0: 1136 80
+:geoo/abstract/pipes/central0: 1168 80
+:geoo/abstract/pipes/central0: 1200 80
+:geoo/abstract/pipes/central0: 1232 80
+:geoo/abstract/pipes/central0: 1264 80
+:geoo/abstract/pipes/central0: 1296 80
+:geoo/abstract/pipes/central0: 1328 80
+:geoo/abstract/pipes/central0: 1360 80
+:geoo/abstract/pipes/central0: 1392 80
+:geoo/abstract/pipes/central0: 1496 112 rrr
+:geoo/steel/dark_32x16o.S: 1432 104
+:geoo/steel/dark_32x16o.S: 1464 104
+:geoo/steel/dark_32x16o.S: 104 104
+:geoo/steel/dark_32x16o.S: 136 104
+:geoo/steel/dark_64x48o.S: 768 208

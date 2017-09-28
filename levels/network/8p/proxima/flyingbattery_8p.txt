@@ -1,0 +1,112 @@
+$BUILT 2017-09-27 19:06:21
+$AUTHOR Michael S. Repton
+$ENGLISH Flying Batter-y Zone (8P)
+
+#INTENDED_NUMBER_OF_PLAYERS 8
+#SIZE_X 768
+#SIZE_Y 384
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 60
+#INITIAL 100
+#REQUIRED 100
+#SPAWN_INTERVAL 2
+
+#WALKER -1
+#RUNNER -1
+#JUMPER -1
+#BATTER -1
+#EXPLODER 0
+
+:geoo/construction/Hatch.H: 368 96
+:geoo/construction/Hatch.H: 624 96 r
+:geoo/construction/Hatch.H: 368 288
+:geoo/construction/Hatch.H: 624 288 r
+:geoo/construction/Hatch.H: 752 288
+:geoo/construction/Hatch.H: 240 288 r
+:geoo/construction/Hatch.H: 752 96
+:geoo/construction/Hatch.H: 240 96 r
+
+:raymanni/lab/goal.G: 688 224
+:raymanni/lab/goal.G: 272 224
+:raymanni/lab/goal.G: 688 32
+:raymanni/lab/goal.G: 272 32
+:raymanni/lab/goal.G: 304 32
+:raymanni/lab/goal.G: 656 32
+:raymanni/lab/goal.G: 304 224
+:raymanni/lab/goal.G: 656 224
+
+:geoo/construction/squisher.T: 480 128
+:geoo/construction/squisher.T: 512 128
+:geoo/construction/squisher.T: 480 320
+:geoo/construction/squisher.T: 512 320
+:geoo/construction/squisher.T: 96 128
+:geoo/construction/squisher.T: 128 128
+:geoo/construction/squisher.T: 96 320
+:geoo/construction/squisher.T: 128 320
+
+:geoo/construction/stairsbrick_ru_32: 0 320
+:geoo/construction/stairsbrick_ru_32: 64 288
+:geoo/construction/stairsbrick_ru_32: 120 288 frr
+:geoo/construction/stairsbrick_ru_32: 184 320 frr
+:geoo/construction/stairsbrick_ru_32: 192 224
+:geoo/construction/stairsbrick_ru_32: 256 192
+:geoo/construction/stairsbrick_ru_32: 312 192 frr
+:geoo/construction/stairsbrick_ru_32: 376 224 frr
+:geoo/construction/stairsbrick_ru_32: 0 128
+:geoo/construction/stairsbrick_ru_32: 64 96
+:geoo/construction/stairsbrick_ru_32: 120 96 frr
+:geoo/construction/stairsbrick_ru_32: 184 128 frr
+:geoo/construction/stairsbrick_ru_32: 192 32
+:geoo/construction/stairsbrick_ru_32: 256 0
+:geoo/construction/stairsbrick_ru_32: 312 0 frr
+:geoo/construction/stairsbrick_ru_32: 376 32 frr
+:geoo/construction/stairsbrick_ru_32: 384 320
+:geoo/construction/stairsbrick_ru_32: 448 288
+:geoo/construction/stairsbrick_ru_32: 504 288 frr
+:geoo/construction/stairsbrick_ru_32: 568 320 frr
+:geoo/construction/stairsbrick_ru_32: 576 224
+:geoo/construction/stairsbrick_ru_32: 640 192
+:geoo/construction/stairsbrick_ru_32: 696 192 frr
+:geoo/construction/stairsbrick_ru_32: 760 224 frr
+:geoo/construction/stairsbrick_ru_32: 384 128
+:geoo/construction/stairsbrick_ru_32: 448 96
+:geoo/construction/stairsbrick_ru_32: 504 96 frr
+:geoo/construction/stairsbrick_ru_32: 568 128 frr
+:geoo/construction/stairsbrick_ru_32: 576 32
+:geoo/construction/stairsbrick_ru_32: 640 0
+:geoo/construction/stairsbrick_ru_32: 696 0 frr
+:geoo/construction/stairsbrick_ru_32: 760 32 frr
+:geoo/construction/platformbrick: 288 287
+:geoo/construction/platformbrick: 320 287
+:geoo/construction/platformbrick: 319 256 r
+:geoo/construction/platformbrick: 319 224 r
+:geoo/construction/platformbrick: 672 287
+:geoo/construction/platformbrick: 704 287
+:geoo/construction/platformbrick: 703 256 r
+:geoo/construction/platformbrick: 703 224 r
+:geoo/construction/platformbrick: 480 191
+:geoo/construction/platformbrick: 512 191
+:geoo/construction/platformbrick: 511 160 r
+:geoo/construction/platformbrick: 511 128 r
+:geoo/construction/platformbrick: 96 191
+:geoo/construction/platformbrick: 128 191
+:geoo/construction/platformbrick: 127 160 r
+:geoo/construction/platformbrick: 127 128 r
+:geoo/construction/platformbrick: 288 95
+:geoo/construction/platformbrick: 320 95
+:geoo/construction/platformbrick: 319 64 r
+:geoo/construction/platformbrick: 319 32 r
+:geoo/construction/platformbrick: 672 95
+:geoo/construction/platformbrick: 704 95
+:geoo/construction/platformbrick: 703 64 r
+:geoo/construction/platformbrick: 703 32 r
+:geoo/construction/platformbrick: 480 383
+:geoo/construction/platformbrick: 512 383
+:geoo/construction/platformbrick: 511 352 r
+:geoo/construction/platformbrick: 511 320 r
+:geoo/construction/platformbrick: 96 383
+:geoo/construction/platformbrick: 128 383
+:geoo/construction/platformbrick: 127 352 r
+:geoo/construction/platformbrick: 127 320 r

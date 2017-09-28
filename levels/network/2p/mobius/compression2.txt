@@ -1,37 +1,66 @@
-$BUILT 2017-09-20 10:57:37
+$BUILT 2017-09-27 18:51:14
 $AUTHOR mobius
-$ENGLISH Compression Method (2P)
+$ENGLISH Compression Method 9000
 
 #INTENDED_NUMBER_OF_PLAYERS 2
 #SIZE_X 1024
 #SIZE_Y 400
 
 #SECONDS 30
-#INITIAL 100
+#INITIAL 200
 #REQUIRED 50
 #SPAWN_INTERVAL 10
 
-#WALKER 40
-#CLIMBER 20
+#WALKER 30
+#FLOATER 20
 #EXPLODER2 20
-#BASHER 40
-#MINER 40
-#DIGGER 40
-#JUMPER 40
+#BLOCKER 20
+#BASHER 30
+#MINER 30
+#DIGGER 30
+#BATTER 20
 #CUBER 20
 
-:matt/marble/Hatch.H: 288 96
-:matt/marble/Hatch.H: 416 96 r
-:matt/marble/Hatch.H: 544 96
-:matt/marble/Hatch.H: 672 96 r
+:matt/marble/Hatch.H: 288 96 r
+:matt/marble/Hatch.H: 416 96
+:matt/marble/Hatch.H: 544 96 r
+:matt/marble/Hatch.H: 672 96
 
-:matt/marble/Goal.G: 928 304
-:matt/marble/Goal.G: 32 304
+:matt/marble/Goal.G: 424 336
+:matt/marble/Goal.G: 536 336
 
-:geoo/construction/squisher.T: 304 320
-:geoo/construction/squisher.T: 432 320
-:geoo/construction/squisher.T: 560 320
-:geoo/construction/squisher.T: 688 320
+:geoo/construction/squisher.T: 280 320
+:geoo/construction/squisher.T: 280 312
+:geoo/construction/squisher.T: 280 304
+:geoo/construction/squisher.T: 280 296
+:geoo/construction/squisher.T: 240 320
+:geoo/construction/squisher.T: 240 312
+:geoo/construction/squisher.T: 240 304
+:geoo/construction/squisher.T: 240 296
+:geoo/construction/squisher.T: 320 320
+:geoo/construction/squisher.T: 320 312
+:geoo/construction/squisher.T: 320 304
+:geoo/construction/squisher.T: 320 296
+:geoo/construction/squisher.T: 360 320
+:geoo/construction/squisher.T: 360 312
+:geoo/construction/squisher.T: 360 304
+:geoo/construction/squisher.T: 360 296
+:geoo/construction/squisher.T: 664 320
+:geoo/construction/squisher.T: 664 312
+:geoo/construction/squisher.T: 664 304
+:geoo/construction/squisher.T: 664 296
+:geoo/construction/squisher.T: 624 320
+:geoo/construction/squisher.T: 624 312
+:geoo/construction/squisher.T: 624 304
+:geoo/construction/squisher.T: 624 296
+:geoo/construction/squisher.T: 704 320
+:geoo/construction/squisher.T: 704 312
+:geoo/construction/squisher.T: 704 304
+:geoo/construction/squisher.T: 704 296
+:geoo/construction/squisher.T: 744 320
+:geoo/construction/squisher.T: 744 312
+:geoo/construction/squisher.T: 744 304
+:geoo/construction/squisher.T: 744 296
 
 :geoo/steel/64x32o.S: 736 320
 :geoo/steel/64x32o.S: 224 320
@@ -67,12 +96,9 @@ $BEGIN_TILE_GROUP 0
 :geoo/steel/32x64o.S: 0 0
 :matt/marble/14a: 0 32 d
 $END_TILE_GROUP
-:Group-0: 224 288
+:Group-0: 976 168
 :geoo/steel/64x32o.S: 288 320
 :geoo/steel/64x32o.S: 352 320
-:geoo/steel/64x32o.S: 416 320
-:geoo/steel/64x32o.S: 480 320
-:geoo/steel/64x32o.S: 544 320
 :matt/marble/23: 480 192
 :matt/marble/23: 480 224
 :matt/marble/23: 480 256
@@ -134,7 +160,7 @@ $BEGIN_TILE_GROUP 1
 :geoo/steel/32x64o.S: 0 0
 :matt/marble/16a: 0 32 d
 $END_TILE_GROUP
-:Group-1: 768 288
+:Group-1: 16 176
 :matt/marble/08a: 224 160
 :matt/marble/20a: 248 96
 :matt/marble/20a: 248 32
@@ -211,3 +237,21 @@ $END_TILE_GROUP
 :matt/marble/06a: 0 32
 :matt/marble/03a: 0 96
 :matt/marble/02a: 32 32
+:geoo/steel/32x64o.S: 496 320
+:geoo/steel/64x32o.S: 416 288
+:geoo/steel/64x32o.S: 480 288
+:geoo/steel/64x32o.S: 544 288
+:geoo/steel/16x16o.S: 416 320
+:geoo/steel/16x16o.S: 592 320
+:matt/marble/08a: 32 320
+:matt/marble/25a: 48 192
+:matt/marble/25a: 48 64
+:matt/marble/25a: 48 32
+:matt/marble/08a: 928 320
+:matt/marble/25a: 944 192
+:matt/marble/25a: 944 64
+:matt/marble/25a: 944 32
+:geoo/steel/16x16o.S: 608 304
+:geoo/steel/16x16o.S: 400 304
+:matt/marble/23: 224 288
+:matt/marble/23: 768 288

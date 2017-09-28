@@ -1,0 +1,142 @@
+$BUILT 2017-09-27 19:01:01
+$AUTHOR I.S. / Michael
+$ENGLISH Any Way You Both Want
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1280
+#SIZE_Y 400
+#START_X 0
+#START_Y 0
+
+#SECONDS 90
+#INITIAL 90
+#REQUIRED 10
+#SPAWN_INTERVAL 20
+
+#WALKER 20
+#CLIMBER 20
+#FLOATER 20
+#EXPLODER2 10
+#BLOCKER 10
+#BUILDER 20
+#PLATFORMER 20
+#BASHER 20
+#MINER 20
+#DIGGER 20
+#JUMPER 20
+#BATTER 20
+
+:matt/marble/Hatch.H: 256 48
+:matt/marble/Hatch.H: 952 48 r
+
+:matt/marble/Goal.G: 1200 320
+:matt/marble/Goal.G: 16 320
+
+:matt/bricks/01: 456 200
+:matt/bricks/02: 0 368
+:matt/bricks/02: 64 368
+:matt/bricks/02: 128 368
+:matt/bricks/03: 168 112
+:matt/bricks/02: 232 112
+:matt/bricks/02: 360 144
+:matt/bricks/02: 424 208
+:matt/bricks/02: 360 208
+:matt/bricks/03: 488 176
+:matt/bricks/02: 192 368
+:matt/bricks/02: 256 368
+:matt/bricks/02: 320 368
+:matt/bricks/02: 384 368
+:matt/bricks/02: 448 368
+:matt/bricks/02: 512 368
+:matt/bricks/02: 576 368
+:matt/bricks/12: 608 336
+:matt/bricks/12: 608 304
+:matt/bricks/12: 608 272
+:matt/bricks/09: 576 272
+:matt/bricks/12: 608 240
+:matt/bricks/12: 608 208
+:matt/bricks/12: 608 176
+:matt/bricks/09: 576 176
+:matt/bricks/08: 552 176
+:matt/bricks/10: 136 112
+:matt/bricks/12: 136 144
+:matt/bricks/12: 136 176
+:matt/bricks/12: 136 208
+:matt/bricks/10: 104 208
+:matt/bricks/12: 104 240
+:matt/bricks/12: 136 240
+:matt/bricks/10: 72 240
+:matt/bricks/12: 72 272
+:matt/bricks/12: 104 272
+:matt/bricks/12: 136 272
+:matt/bricks/02: 296 112
+:matt/bricks/12: 360 112
+:matt/bricks/08: 392 112
+:matt/bricks/02: 264 208
+:matt/bricks/12: 232 240
+:matt/bricks/10: 232 208
+:matt/bricks/10: 200 272
+:matt/bricks/12: 232 272
+:matt/bricks/11: 264 240
+:matt/bricks/11: 232 144
+:matt/bricks/09: 328 144
+:matt/bricks/02: 360 272
+:matt/bricks/02: 424 272
+:matt/bricks/02: 488 272
+:matt/bricks/11: 168 176
+:matt/bricks/12b: 640 176
+:matt/bricks/12b: 640 208
+:matt/bricks/12b: 640 240
+:matt/bricks/12b: 640 272
+:matt/bricks/12b: 640 304
+:matt/bricks/12b: 640 336
+:matt/bricks/02b: 640 368
+:matt/bricks/02b: 704 368
+:matt/bricks/02b: 768 368
+:matt/bricks/02b: 832 368
+:matt/bricks/02b: 896 368
+:matt/bricks/02b: 960 368
+:matt/bricks/02b: 1024 368
+:matt/bricks/02b: 1088 368
+:matt/bricks/02b: 1152 368
+:matt/bricks/02b: 1216 368
+:matt/bricks/11b: 672 176
+:matt/bricks/11b: 672 272
+:matt/bricks/10b: 688 176
+:matt/bricks/03b: 720 176
+:matt/bricks/01b: 784 200
+:matt/bricks/02b: 784 208
+:matt/bricks/02b: 848 208
+:matt/bricks/02b: 720 272
+:matt/bricks/02b: 784 272
+:matt/bricks/02b: 848 272
+:matt/bricks/02b: 848 144
+:matt/bricks/10b: 848 112
+:matt/bricks/02b: 912 112
+:matt/bricks/02b: 976 112
+:matt/bricks/11b: 912 144
+:matt/bricks/09b: 1008 144
+:matt/bricks/03b: 1040 112
+:matt/bricks/08b: 1104 112
+:matt/bricks/12b: 1104 144
+:matt/bricks/12b: 1104 176
+:matt/bricks/09b: 1072 176
+:matt/bricks/12b: 1104 208
+:matt/bricks/12b: 1104 240
+:matt/bricks/12b: 1136 240
+:matt/bricks/12b: 1104 272
+:matt/bricks/12b: 1136 272
+:matt/bricks/12b: 1168 272
+:matt/bricks/08b: 1136 208
+:matt/bricks/08b: 1168 240
+:matt/bricks/02b: 944 208
+:matt/bricks/08b: 1008 208
+:matt/bricks/09b: 976 240
+:matt/bricks/12b: 1008 240
+:matt/bricks/12b: 1008 272
+:matt/bricks/08b: 1040 272
+:matt/bricks/12b: 880 112
+:geoo/steel/dark_32x16o.S: 280 112
+:geoo/steel/dark_32x16o.S: 960 112
+:geoo/steel/dark_32x32o.S: 1216 368
+:geoo/steel/dark_32x32o.S: 32 368

@@ -1,0 +1,220 @@
+$BUILT 2017-09-27 19:04:52
+$AUTHOR Michael S. Repton
+$ENGLISH Old Man of the Mountain
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 3200
+#SIZE_Y 320
+#START_X 0
+#START_Y 0
+
+#SECONDS 120
+#INITIAL 100
+#REQUIRED 60
+#SPAWN_INTERVAL 44
+
+#WALKER 10
+#CLIMBER 10
+#FLOATER 4
+#EXPLODER2 10
+#BLOCKER 10
+#BUILDER 80
+#BASHER 10
+#MINER 10
+#DIGGER 4
+#BATTER 10
+
+:matt/earth/Hatch.H: 48 128
+:matt/earth/Hatch.H: 3088 144 r
+:matt/earth/Hatch.H: 48 128
+:matt/earth/Hatch.H: 3088 144 r
+:matt/earth/Hatch.H: 2592 32
+:matt/earth/Hatch.H: 688 -16 r
+:matt/earth/Hatch.H: 48 128
+:matt/earth/Hatch.H: 3088 144 r
+:matt/earth/Hatch.H: 48 128
+:matt/earth/Hatch.H: 3088 144 r
+
+:matt/earth/Goal.G: 1568 0
+
+:matt/10tons.T: 208 248
+:matt/10tons.T: 952 232
+:matt/10tons.T: 2304 248
+
+:simon/water.W: 1232 272
+:simon/water.W: 1280 272
+:simon/water.W: 1792 272
+:simon/water.W: 1856 272
+:simon/water.W: 1904 272
+:simon/water.W: 1952 272
+:simon/water.W: 2000 272
+
+:matt/earth/09: 1656 56
+:matt/earth/08: 1648 40
+:matt/earth/05: 1808 160
+:matt/earth/05: 1824 184
+:matt/earth/06: 1488 120
+:matt/earth/09: 1792 160
+:matt/earth/06: 1536 56
+:matt/earth/03: 1552 56
+:matt/earth/21: 1304 96
+:matt/earth/17: 1320 96
+:matt/earth/05: 384 0
+:matt/earth/17: -16 176
+:matt/earth/03: -8 280
+:matt/earth/10: 112 288
+:matt/earth/03: 64 296
+:matt/earth/16: -48 248
+:matt/earth/10: 192 296
+:matt/earth/03: 152 288
+:matt/earth/05: 376 264
+:matt/earth/00: 336 296
+:matt/earth/17: 552 256
+:matt/earth/19: 416 264
+:matt/earth/05: 128 24
+:matt/earth/05: 120 -8 f
+:matt/earth/10: 200 -8
+:matt/earth/03: 216 -16
+:matt/earth/05: 176 -72
+:matt/earth/25: 136 240
+:geoo/steel/dark_32x32o.S: 64 288
+:matt/earth/17: 1152 96
+:matt/earth/05: 1152 112
+:matt/earth/05: 1160 104 frr
+:geoo/steel/dark_32x48o.S: 1200 272
+:matt/earth/05: 1320 112
+:matt/earth/05: 1328 104 frr
+:geoo/steel/dark_32x48o.S: 1320 272
+:matt/earth/16: 656 40
+:matt/earth/17: 656 128
+:matt/earth/16: 616 208
+:matt/earth/17: 704 144
+:matt/earth/17: 720 128
+:matt/earth/17: 752 216
+:matt/earth/17: 704 224
+:matt/earth/10: 904 280
+:matt/earth/06: 904 288
+:matt/earth/06: 936 272
+:matt/earth/09: 968 272
+:matt/earth/08: 1008 272
+:matt/earth/09: 1008 288
+:matt/earth/08: 1048 288
+:matt/earth/06: 1152 88
+:matt/earth/09: 1312 88
+:matt/earth/07: 1344 88
+:matt/earth/20: 1208 96
+:matt/earth/27: 168 240
+:matt/earth/03: 152 208
+:matt/earth/18: 272 224
+:matt/earth/25: 240 240
+:matt/earth/23: 208 248
+:matt/earth/28: 264 240
+:matt/earth/04: 176 88
+:matt/earth/01: 248 104
+:matt/earth/00: 256 72
+:matt/earth/00: 288 64
+:matt/earth/26: 288 144
+:matt/earth/29: 312 144
+:matt/earth/25: 320 136
+:matt/earth/28: 336 128
+:matt/earth/02: 384 -8
+:matt/earth/01: 352 -8
+:matt/earth/01: 464 24
+:matt/earth/04: 384 -8
+:matt/earth/29: 368 192
+:matt/earth/02: 352 96
+:matt/earth/01: 360 64
+:matt/earth/01: 512 144
+:matt/earth/07: 528 128
+:matt/earth/18: 488 152
+:matt/earth/04: 440 32
+:matt/earth/09: 464 16
+:matt/earth/07: 488 16
+:matt/earth/24: 528 184
+:matt/earth/04: 400 72
+:matt/earth/27: 440 232
+:matt/earth/18: 504 208
+:matt/earth/03: 384 200
+:matt/earth/23: 384 224
+:matt/earth/06: 1496 128
+:matt/earth/06: 1456 160
+:matt/earth/16: 1400 176
+:matt/earth/01: 1384 280
+:matt/earth/03: 1384 288
+:matt/earth/06: 1520 80
+:matt/earth/01: 1496 136
+:matt/earth/01: 1472 168
+:matt/earth/01: 1504 104
+:matt/earth/04: 1504 64
+:matt/earth/09: 1688 144
+:matt/earth/08: 1672 120
+:matt/earth/04: 1568 40
+:geoo/steel/dark_32x32o.S: 1584 64
+:matt/earth/02: 1648 64
+:matt/earth/00: 1520 184
+:matt/earth/00: 1592 160
+:matt/earth/00: 1504 232
+:matt/earth/04: 1440 192
+:matt/earth/04: 1672 136
+:matt/earth/29: 1768 192
+:matt/earth/04: 1688 208
+:geoo/steel/dark_32x48o.S: 1760 272
+:geoo/steel/dark_64x48o.S: 1816 272
+:matt/earth/09: 1760 152
+:matt/earth/03: 1688 160
+:matt/earth/00: 1656 152
+:matt/earth/04: 1608 144
+:matt/earth/04: 1536 216
+:matt/earth/04: 1616 232
+:matt/earth/25: 1784 184
+:matt/earth/07: 1832 152
+:matt/earth/16: 2064 176
+:matt/earth/17: 2072 256
+:geoo/steel/dark_32x48o.S: 2048 272
+:matt/earth/17: 2120 240
+:matt/earth/17: 2176 232
+:matt/earth/09: 2264 304
+:matt/earth/06: 2280 280
+:matt/earth/16: 2192 280
+:matt/earth/08: 2384 288
+:matt/earth/09: 2424 304
+:matt/earth/07: 2400 296
+:matt/earth/09: 2336 280
+:matt/earth/10: 2272 288
+:matt/earth/09: 2448 296
+:matt/earth/10: 2248 288
+:matt/earth/09: 2464 296
+:matt/earth/15: 2568 104
+:matt/earth/14: 2536 112
+:matt/earth/11: 2504 152
+:matt/earth/11: 2504 208
+:matt/earth/15: 2616 104
+:matt/earth/13: 2680 112
+:matt/earth/11: 2704 152
+:matt/earth/11: 2704 208
+:matt/earth/09: 2680 288
+:matt/earth/11: 2704 264
+:matt/earth/06: 2568 280
+:matt/earth/10: 2400 304
+:matt/earth/09: 2608 272
+:matt/earth/08: 2656 272
+:matt/earth/10: 2552 280
+:matt/earth/11: 2512 264
+:matt/earth/09: 2760 296
+:matt/earth/00: 2736 304
+:matt/earth/09: 2808 296
+:matt/earth/09: 2856 288
+:matt/earth/09: 2832 288
+:matt/earth/09: 2896 296
+:matt/earth/03: 2784 296
+:matt/earth/09: 2944 296
+:matt/earth/09: 2984 304
+:matt/earth/03: 2872 304
+:matt/earth/09: 3048 288
+:matt/earth/01: 3008 288
+:matt/earth/09: 3104 272
+:matt/earth/00: 3064 272
+:matt/earth/01: 3040 296
+:matt/earth/01: 3112 280
+:matt/earth/07: 3136 272
+:geoo/steel/dark_32x32o.S: 3104 288

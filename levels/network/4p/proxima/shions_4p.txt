@@ -1,0 +1,148 @@
+$BUILT 2017-09-27 19:06:43
+$AUTHOR Michael S. Repton
+$ENGLISH Shion's Fun Fun Torture Room
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 576
+#SIZE_Y 496
+#TORUS_X 1
+#TORUS_Y 1
+
+#INITIAL 1
+#REQUIRED 1
+#SPAWN_INTERVAL 32
+
+#WALKER -1
+#BUILDER -1
+#PLATFORMER -1
+#BASHER -1
+#MINER -1
+#DIGGER -1
+#JUMPER -1
+#BATTER -1
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 144 128
+:geoo/construction/Hatch.H: 80 128 r
+:geoo/construction/Hatch.H: 432 128
+:geoo/construction/Hatch.H: 368 128 r
+
+:geoo/abstract/goal.G: 544 432
+
+:geoo/construction/factory.T: 248 416
+
+:geoo/construction/sawblade_medium.F: 64 192
+:geoo/construction/sawblade_medium.F: 128 192
+:geoo/construction/sawblade_medium.F: 80 208
+:geoo/construction/sawblade_medium.F: 112 208
+:geoo/construction/sawblade.F: 160 192
+:geoo/construction/sawblade.F: 56 192
+:geoo/construction/sawblade_medium.F: 352 352
+:geoo/construction/sawblade_medium.F: 416 352
+:geoo/construction/sawblade_medium.F: 368 336
+:geoo/construction/sawblade_medium.F: 400 336
+:geoo/construction/sawblade.F: 344 376
+:geoo/construction/sawblade.F: 448 376
+:geoo/construction/sawblade_medium.F: 352 192
+:geoo/construction/sawblade_medium.F: 416 192
+:geoo/construction/sawblade_medium.F: 368 208
+:geoo/construction/sawblade_medium.F: 400 208
+:geoo/construction/sawblade.F: 448 192
+:geoo/construction/sawblade.F: 344 192
+:geoo/construction/sawblade_medium.F: 64 352
+:geoo/construction/sawblade_medium.F: 128 352
+:geoo/construction/sawblade_medium.F: 80 336
+:geoo/construction/sawblade_medium.F: 112 336
+:geoo/construction/sawblade.F: 56 376
+:geoo/construction/sawblade.F: 160 376
+:geoo/construction/sawblade_small.F: 528 264
+:geoo/construction/sawblade_small.F: 520 272
+:geoo/construction/sawblade_small.F: 560 264
+:geoo/construction/sawblade_small.F: 568 272
+:geoo/construction/sawblade_small.F: 520 304
+:geoo/construction/sawblade_small.F: 528 312
+:geoo/construction/sawblade_small.F: 560 312
+:geoo/construction/sawblade_small.F: 568 304
+:geoo/construction/sawblade_small.F: 240 264
+:geoo/construction/sawblade_small.F: 272 264
+:geoo/construction/sawblade_small.F: 280 272
+:geoo/construction/sawblade_small.F: 240 312
+:geoo/construction/sawblade_small.F: 272 312
+:geoo/construction/sawblade_small.F: 280 304
+:geoo/construction/sawblade_small.F: 232 304
+:geoo/construction/sawblade_small.F: 232 272
+:geoo/construction/Laseremit_vrb_16.F: 120 176
+:geoo/construction/Laser_vr_64.F: 120 112
+:geoo/construction/Laser_vr_16.F: 120 96
+:geoo/construction/Laseremit_vrb_16.F: 408 176
+:geoo/construction/Laser_vr_64.F: 408 112
+:geoo/construction/Laser_vr_16.F: 408 96
+:geoo/construction/sawblade_medium.F: 64 32
+:geoo/construction/sawblade_medium.F: 128 32
+:geoo/construction/sawblade_medium.F: 80 16
+:geoo/construction/sawblade_medium.F: 112 16
+:geoo/construction/sawblade.F: 56 56
+:geoo/construction/sawblade.F: 160 56
+:geoo/construction/sawblade_medium.F: 352 32
+:geoo/construction/sawblade_medium.F: 416 32
+:geoo/construction/sawblade_medium.F: 368 16
+:geoo/construction/sawblade_medium.F: 400 16
+:geoo/construction/sawblade.F: 344 56
+:geoo/construction/sawblade.F: 448 56
+:proxima/flame.F: 396 448
+:proxima/flame.F: 108 448
+
+:geoo/construction/concrete/032hc: 32 192
+:geoo/construction/concrete/032h: 96 192
+:geoo/construction/concrete/032hd: 160 192
+:geoo/construction/concrete/032vc: 96 224
+:geoo/construction/concrete/032vd: 128 224
+:geoo/construction/concrete/032ha: 320 384
+:geoo/construction/concrete/032h: 384 384
+:geoo/construction/concrete/032hb: 448 384
+:geoo/construction/concrete/032va: 384 320
+:geoo/construction/concrete/032vb: 416 320
+:geoo/construction/concrete/032h: 192 288
+:geoo/construction/concrete/032hc: 320 192
+:geoo/construction/concrete/032h: 384 192
+:geoo/construction/concrete/032hd: 448 192
+:geoo/construction/concrete/032vc: 384 224
+:geoo/construction/concrete/032vd: 416 224
+:geoo/construction/concrete/032ha: 32 384
+:geoo/construction/concrete/032h: 96 384
+:geoo/construction/concrete/032hb: 160 384
+:geoo/construction/concrete/032va: 96 320
+:geoo/construction/concrete/032vb: 128 320
+:geoo/construction/concrete/032v: 544 224
+:geoo/construction/concrete/032h: 480 288
+:geoo/construction/concrete/016c: 560 288
+:geoo/construction/concrete/016a: 560 304
+:geoo/construction/concrete/016d: 544 288
+:geoo/construction/concrete/016b: 544 304
+:geoo/construction/concrete/032v: 544 320
+:geoo/construction/concrete/032h: 0 288
+:geoo/construction/concrete/032v: 256 224
+:geoo/construction/concrete/032h: 288 288
+:geoo/construction/concrete/016c: 272 288
+:geoo/construction/concrete/016a: 272 304
+:geoo/construction/concrete/016d: 256 288
+:geoo/construction/concrete/016b: 256 304
+:geoo/construction/concrete/032v: 256 320
+:geoo/construction/concrete/032ha: 32 64
+:geoo/construction/concrete/032h: 96 64
+:geoo/construction/concrete/032hb: 160 64
+:geoo/construction/concrete/032va: 96 0
+:geoo/construction/concrete/032vb: 128 0
+:geoo/construction/concrete/032ha: 320 64
+:geoo/construction/concrete/032h: 384 64
+:geoo/construction/concrete/032hb: 448 64
+:geoo/construction/concrete/032va: 384 0
+:geoo/construction/concrete/032vb: 416 0
+:geoo/construction/concrete/032: 528 480
+:geoo/construction/concrete/032: 560 480
+:geoo/construction/concrete/032a: 496 480
+:geoo/construction/concrete/032: 240 480
+:geoo/construction/concrete/032: 272 480
+:geoo/construction/concrete/032a: 208 480
+:geoo/construction/concrete/032b: 304 480
+:geoo/construction/concrete/032b: 16 480
