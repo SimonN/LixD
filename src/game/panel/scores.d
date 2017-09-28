@@ -58,12 +58,7 @@ private:
     void sortScores()
     {
         reqDraw();
-        scores.sort!((a, b) =>
-              a.current > b.current ? true
-            : a.current < b.current ? false
-            : a.potential > b.potential ? true
-            : a.potential < b.potential ? false
-            : a.style == _ourStyle);
+        scores.sortPreferringTeam(_ourStyle);
     }
 
     void drawFrame()

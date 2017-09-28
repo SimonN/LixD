@@ -10,21 +10,22 @@ import game.window.multi;
 import game.core.active;
 import game.core.passive;
 import game.core.speed;
+import game.score;
 import gui;
 import hardware.keyset;
 
 package void
-implGameCalc(Game game)
+implGameCalc(Game game) { with (game)
 {
     assert (game.runmode == Runmode.INTERACTIVE);
     void noninputCalc()
     {
-        if (game._netClient)
-            game._netClient.calc();
+        if (_netClient)
+            _netClient.calc();
         if (! game.isFinished)
             game.updatePhysicsAccordingToSpeedButtons();
     }
-    if (game.modalWindow) {
+    if (modalWindow) {
         game.calcModalWindow;
         if (game.view.continuePhysicsDuringModalWindow)
             noninputCalc();
@@ -35,10 +36,16 @@ implGameCalc(Game game)
         game.calcPassive();
         game.calcActive();
         noninputCalc();
-        if (game.isFinished)
-            game.createModalWindow;
+        if (game.isFinished) {
+            if (view.printResultToConsole)
+                _chatArea.printScores(nurse.scores, nurse.replay, localStyle);
+            if (view.showModalWindowAfterGame)
+                game.createModalWindow;
+            else
+                _gotoMainMenu = true;
+        }
     }
-}
+}}
 
 private bool
 isFinished(const(Game) game) { with (game)

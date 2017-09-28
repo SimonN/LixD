@@ -6,7 +6,13 @@ module game.core.chatarea;
  * draw anything.
  */
 
+import std.algorithm;
+import std.format;
+import std.range;
+
 import basics.user;
+import game.score;
+import game.replay;
 import file.language;
 import graphic.color;
 import gui;
@@ -19,6 +25,7 @@ private:
     RichClient _network; // not owned. May be null.
 
 public:
+    // netw may be null, then we don't register our console there.
     this(Geom g, RichClient netw)
     {
         g.yl = 20f;
@@ -64,6 +71,24 @@ public:
     // announce that overtime has started. Leave it to the network to get
     // lines out of the console and into the lobby console.
     @property inout(Console) console() inout { return _console; }
+
+    // After a networking game, we print the results to the console.
+    // Needs a range of scores, and a preferred style to tiebreak the sort.
+    // Example print: Game outcome: Player1 32 -- Player2, Player3 16
+    void printScores(R)(R rangeOfScores, in Replay rep, in Style preferred)
+        if (isInputRange!R && is (ElementType!R == Score))
+    {
+        Score[] scores = rangeOfScores.array;
+        scores.sortPreferringTeam(preferred);
+
+        string line = Lang.netGameEndResult.transl ~ " ";
+        foreach (i, score; scores)
+            line ~= format!"%s %d%s"(
+                rep.styleToNames(score.style),
+                score.current,
+                i != scores.length - 1 ? " -- " : "");
+        _console.add(line);
+    }
 
 protected:
     override void calcSelf()

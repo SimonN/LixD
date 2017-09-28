@@ -1,7 +1,12 @@
 module game.score;
 
-/* Plain old data, to be passed between the UI and the Tribe team status.
+/*
+ * struct Score, function sortPreferringTeam
+ *
+ * Plain old data, to be passed between the UI and the Tribe team status.
  */
+
+import std.algorithm;
 
 import net.style;
 
@@ -9,8 +14,29 @@ struct Score {
     Style style;
     int current; // should be > 0
     int potential; // should be larger than current to be visible
+}
 
-    /* We don't supply an opCmp here. To compare scores, you prefer the local
-     * team in ties. This needs extra information that Score doesn't have.
-     */
+// Sort better scores to earlier positions.
+void sortPreferringTeam(Score[] arr, in Style preferred)
+{
+    arr.sort!((a, b) =>
+          a.current > b.current ? true
+        : a.current < b.current ? false
+        : a.potential > b.potential ? true
+        : a.potential < b.potential ? false
+        : a.style == preferred && b.style != preferred ? true
+        : a.style != preferred && b.style == preferred ? false
+        : a.style < b.style);
+}
+
+unittest {
+    Score[] arr = [
+        Score(Style.yellow, 0, 0),
+        Score(Style.blue, 0, 0),
+        Score(Style.green, 0, 0),
+        Score(Style.garden, 0, 0),
+    ];
+    arr.sortPreferringTeam(Style.green);
+    assert (arr[0].style == Style.green);
+    assert (arr[1].style == Style.garden);
 }
