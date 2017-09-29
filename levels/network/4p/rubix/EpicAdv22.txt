@@ -1,36 +1,31 @@
-$BUILT 2014-04-17 10:43:55
+$BUILT 2017-09-30 14:25:34
 $AUTHOR Rubix
-#INTENDED_NUMBER_OF_PLAYERS 4
 $ENGLISH Sharing The Water Supply (4p)
 
+#INTENDED_NUMBER_OF_PLAYERS 4
 #SIZE_X 1696
 #SIZE_Y 1344
 #TORUS_X 1
 #TORUS_Y 1
-#START_X 0
-#START_Y 180
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #SECONDS 60
 #INITIAL 99
 #REQUIRED 60
 #SPAWN_INTERVAL 32
-#SPAWN_INTERVAL_FAST 4
 
 #WALKER 80
-#JUMPER 80
+#RUNNER 10
 #CLIMBER 10
 #FLOATER 10
-#RUNNER 10
 #BLOCKER 10
 #BUILDER 90
 #PLATFORMER 80
 #BASHER 75
 #MINER 75
 #DIGGER 40
+#JUMPER 80
 #BATTER 35
+#EXPLODER2 0
 
 :matt/marble/Hatch.H: 128 706
 :matt/marble/Hatch.H: 1504 706 r
@@ -42,7 +37,6 @@ $ENGLISH Sharing The Water Supply (4p)
 :matt/marble/Goal.G: 1632 1072
 :matt/marble/Goal.G: 0 1072
 
-:matt/water.W: 16 624
 :matt/water.W: 48 624
 :matt/water.W: 80 624
 :matt/water.W: 112 624
@@ -54,7 +48,6 @@ $ENGLISH Sharing The Water Supply (4p)
 :matt/water.W: 304 624
 :matt/water.W: 336 624
 :matt/water.W: 368 624
-:matt/water.W: 16 640
 :matt/water.W: 48 640
 :matt/water.W: 80 640
 :matt/water.W: 112 640
@@ -66,17 +59,10 @@ $ENGLISH Sharing The Water Supply (4p)
 :matt/water.W: 304 640
 :matt/water.W: 336 640
 :matt/water.W: 368 640
-:matt/water.W: 432 624
 :matt/water.W: 464 624
 :matt/water.W: 496 624
-:matt/water.W: 528 624
-:matt/water.W: 560 624
-:matt/water.W: 432 640
 :matt/water.W: 464 640
 :matt/water.W: 496 640
-:matt/water.W: 528 640
-:matt/water.W: 560 640
-:matt/water.W: 1648 624
 :matt/water.W: 1616 624
 :matt/water.W: 1584 624
 :matt/water.W: 1552 624
@@ -88,7 +74,6 @@ $ENGLISH Sharing The Water Supply (4p)
 :matt/water.W: 1360 624
 :matt/water.W: 1328 624
 :matt/water.W: 1296 624
-:matt/water.W: 1648 640
 :matt/water.W: 1616 640
 :matt/water.W: 1584 640
 :matt/water.W: 1552 640
@@ -100,17 +85,10 @@ $ENGLISH Sharing The Water Supply (4p)
 :matt/water.W: 1360 640
 :matt/water.W: 1328 640
 :matt/water.W: 1296 640
-:matt/water.W: 1232 624
 :matt/water.W: 1200 624
 :matt/water.W: 1168 624
-:matt/water.W: 1136 624
-:matt/water.W: 1104 624
-:matt/water.W: 1232 640
 :matt/water.W: 1200 640
 :matt/water.W: 1168 640
-:matt/water.W: 1136 640
-:matt/water.W: 1104 640
-:matt/water.W: 16 1296
 :matt/water.W: 48 1296
 :matt/water.W: 80 1296
 :matt/water.W: 112 1296
@@ -122,7 +100,6 @@ $ENGLISH Sharing The Water Supply (4p)
 :matt/water.W: 304 1296
 :matt/water.W: 336 1296
 :matt/water.W: 368 1296
-:matt/water.W: 16 1312
 :matt/water.W: 48 1312
 :matt/water.W: 80 1312
 :matt/water.W: 112 1312
@@ -134,17 +111,10 @@ $ENGLISH Sharing The Water Supply (4p)
 :matt/water.W: 304 1312
 :matt/water.W: 336 1312
 :matt/water.W: 368 1312
-:matt/water.W: 432 1296
 :matt/water.W: 464 1296
 :matt/water.W: 496 1296
-:matt/water.W: 528 1296
-:matt/water.W: 560 1296
-:matt/water.W: 432 1312
 :matt/water.W: 464 1312
 :matt/water.W: 496 1312
-:matt/water.W: 528 1312
-:matt/water.W: 560 1312
-:matt/water.W: 1648 1296
 :matt/water.W: 1616 1296
 :matt/water.W: 1584 1296
 :matt/water.W: 1552 1296
@@ -156,7 +126,6 @@ $ENGLISH Sharing The Water Supply (4p)
 :matt/water.W: 1360 1296
 :matt/water.W: 1328 1296
 :matt/water.W: 1296 1296
-:matt/water.W: 1648 1312
 :matt/water.W: 1616 1312
 :matt/water.W: 1584 1312
 :matt/water.W: 1552 1312
@@ -168,16 +137,10 @@ $ENGLISH Sharing The Water Supply (4p)
 :matt/water.W: 1360 1312
 :matt/water.W: 1328 1312
 :matt/water.W: 1296 1312
-:matt/water.W: 1232 1296
 :matt/water.W: 1200 1296
 :matt/water.W: 1168 1296
-:matt/water.W: 1136 1296
-:matt/water.W: 1104 1296
-:matt/water.W: 1232 1312
 :matt/water.W: 1200 1312
 :matt/water.W: 1168 1312
-:matt/water.W: 1136 1312
-:matt/water.W: 1104 1312
 
 :matt/marble/08c: 144 496 r
 :matt/marble/08a: 0 448
@@ -191,7 +154,6 @@ $ENGLISH Sharing The Water Supply (4p)
 :matt/marble/08a: 528 640 rr
 :matt/marble/09b: 0 544
 :matt/marble/09b: 0 480
-:matt/marble/09b: 0 608
 :matt/marble/09c: 128 352
 :matt/marble/09c: 128 288
 :matt/marble/09c: 128 224
@@ -358,7 +320,6 @@ $ENGLISH Sharing The Water Supply (4p)
 :geoo/steel/64x32o.S: 1632 448
 :matt/marble/09b: 1632 544
 :matt/marble/09b: 1632 480
-:matt/marble/09b: 1632 608
 :matt/marble/08c: 144 1168 r
 :matt/marble/08a: 0 1120
 :matt/marble/08a: 64 1120
@@ -371,7 +332,6 @@ $ENGLISH Sharing The Water Supply (4p)
 :matt/marble/08a: 528 1312 rr
 :matt/marble/09b: 0 1216
 :matt/marble/09b: 0 1152
-:matt/marble/09b: 0 1280
 :matt/marble/09c: 128 1024
 :matt/marble/09c: 128 960
 :matt/marble/09c: 128 896
@@ -538,7 +498,6 @@ $ENGLISH Sharing The Water Supply (4p)
 :geoo/steel/64x32o.S: 1632 1120
 :matt/marble/09b: 1632 1216
 :matt/marble/09b: 1632 1152
-:matt/marble/09b: 1632 1280
 :matt/marble/05a: 1280 0 frr
 :matt/marble/05a: 1248 0 frr
 :matt/marble/05a: 1216 0 frr
@@ -627,3 +586,13 @@ $ENGLISH Sharing The Water Supply (4p)
 :matt/marble/05a: 1344 672 frr
 :matt/marble/05a: 992 672 frr
 :matt/marble/05a: 992 0 frr
+:matt/marble/13b: 1632 1280
+:matt/marble/11b: 48 1280
+:matt/marble/06b: 1648 1280
+:matt/marble/06b: 1680 1280
+:matt/marble/06b: 16 1280
+:matt/marble/13b: 1632 608
+:matt/marble/11b: 48 608
+:matt/marble/06b: 1648 608
+:matt/marble/06b: 1680 608
+:matt/marble/06b: 16 608
