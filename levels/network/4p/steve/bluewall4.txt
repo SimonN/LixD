@@ -1,0 +1,92 @@
+$BUILT 2012-08-16 01:03:48
+$AUTHOR Insane Steve
+$GERMAN
+$ENGLISH Blue Wall (2P/4P)
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 640
+#SIZE_Y 416
+#TORUS_X 0
+#TORUS_Y 1
+
+#SECONDS 45
+#INITIAL 70
+#REQUIRED 20
+#SPAWN_INTERVAL 24
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 12
+#JUMPER 50
+#EXPLODER2 20
+#PLATFORMER 30
+#BUILDER 50
+#BASHER 50
+#MINER 50
+#DIGGER 5
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/marble/Hatch.H: 96 0
+:matt/marble/Hatch.H: 480 0 r
+:matt/marble/Hatch.H: 96 208
+:matt/marble/Hatch.H: 480 208 r
+
+:matt/marble/Goal.G: 576 224
+:matt/marble/Goal.G: 0 224
+:matt/marble/Goal.G: 576 16
+:matt/marble/Goal.G: 0 16
+
+:geoo/steel/dark_64x32o.S: 0 64
+:geoo/steel/dark_64x32o.S: 64 64
+:geoo/steel/dark_64x32o.S: 128 64
+:geoo/steel/dark_48x48o.S: 144 96
+:geoo/steel/dark_64x32o.S: 448 64
+:geoo/steel/dark_64x32o.S: 512 64
+:geoo/steel/dark_64x32o.S: 576 64
+:geoo/steel/dark_48x48o.S: 448 96
+:geoo/steel/dark_64x32o.S: 0 272
+:geoo/steel/dark_64x32o.S: 64 272
+:geoo/steel/dark_64x32o.S: 128 272
+:geoo/steel/dark_48x48o.S: 144 304
+:geoo/steel/dark_64x32o.S: 448 272
+:geoo/steel/dark_64x32o.S: 512 272
+:geoo/steel/dark_64x32o.S: 576 272
+:geoo/steel/dark_48x48o.S: 448 304
+:proxima/tile/cyan1: 256 64
+:proxima/tile/cyan1: 192 64
+:proxima/tile/cyan1: 256 128
+:proxima/tile/cyan1: 192 128
+:proxima/tile/spheres/blue: 240 104
+:proxima/tile/cyan1: 256 192
+:proxima/tile/cyan1: 192 192
+:proxima/tile/cyan1: 256 256
+:proxima/tile/cyan1: 192 256
+:proxima/tile/spheres/blue: 240 208
+:proxima/tile/cyan1: 256 320
+:proxima/tile/cyan1: 192 320
+:proxima/tile/spheres/blue: 208 304
+:proxima/tile/cyan1: 192 0
+:proxima/tile/cyan1: 256 0
+:proxima/tile/cyan1: 192 384
+:proxima/tile/cyan1: 256 384
+:proxima/tile/spheres/blue: 248 400
+:proxima/tile/cyan1: 320 0
+:proxima/tile/cyan1: 384 0
+:proxima/tile/cyan1: 384 64
+:proxima/tile/cyan1: 320 64
+:proxima/tile/spheres/blue: 328 48
+:proxima/tile/cyan1: 384 128
+:proxima/tile/cyan1: 320 128
+:proxima/tile/spheres/blue: 360 128
+:proxima/tile/cyan1: 384 192
+:proxima/tile/cyan1: 320 192
+:proxima/tile/cyan1: 384 256
+:proxima/tile/cyan1: 320 256
+:proxima/tile/spheres/blue: 328 232
+:proxima/tile/cyan1: 384 320
+:proxima/tile/cyan1: 320 320
+:proxima/tile/cyan1: 320 384
+:proxima/tile/cyan1: 384 384
+:proxima/tile/spheres/blue: 360 352

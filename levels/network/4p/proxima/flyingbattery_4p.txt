@@ -1,4 +1,4 @@
-$BUILT 2017-09-27 19:06:11
+$BUILT 2017-09-30 16:35:37
 $AUTHOR Michael S. Repton
 $ENGLISH Flying Batter-y Zone (4P)
 
@@ -8,7 +8,7 @@ $ENGLISH Flying Batter-y Zone (4P)
 #TORUS_X 1
 #TORUS_Y 1
 
-#SECONDS 60
+#SECONDS 30
 #INITIAL 100
 #REQUIRED 100
 #SPAWN_INTERVAL 2
@@ -29,10 +29,6 @@ $ENGLISH Flying Batter-y Zone (4P)
 :raymanni/lab/goal.G: 304 32
 :raymanni/lab/goal.G: 272 32
 
-:geoo/construction/squisher.T: 96 128
-:geoo/construction/squisher.T: 128 128
-:geoo/construction/squisher.T: 96 320
-:geoo/construction/squisher.T: 128 320
 :geoo/construction/squisher.T: 96 128
 :geoo/construction/squisher.T: 128 128
 :geoo/construction/squisher.T: 96 320

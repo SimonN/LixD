@@ -1,0 +1,98 @@
+$BUILT 2012-08-16 18:31:11
+$AUTHOR Insane Steve
+$GERMAN
+$ENGLISH You take the high road...
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1280
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+
+#SECONDS 40
+#INITIAL 80
+#REQUIRED 20
+#SPAWN_INTERVAL 43
+#SPAWN_INTERVAL_FAST 4
+
+#JUMPER 50
+#CLIMBER 20
+#EXPLODER2 10
+#BLOCKER 10
+#BUILDER 50
+#BASHER 30
+#MINER 30
+#DIGGER 30
+#BATTER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/underworld/Hatch.H: 432 88
+:matt/underworld/Hatch.H: 784 88 r
+
+:matt/underworld/Goal.G: 872 144
+:matt/underworld/Goal.G: 160 288
+:matt/underworld/Goal.G: 1056 288
+:matt/underworld/Goal.G: 344 144
+
+:proxima/flame.F: 48 352
+:proxima/flame.F: 80 360
+:proxima/flame.F: 112 352
+:proxima/flame.F: 1128 352
+:proxima/flame.F: 1160 360
+:proxima/flame.F: 1192 352
+
+:matt/underworld/02: 0 0
+:matt/underworld/02: 0 96
+:matt/underworld/02: 0 192
+:matt/underworld/02: 0 288
+:matt/underworld/00: 0 384
+:matt/underworld/02: 1216 0
+:matt/underworld/02: 1216 96
+:matt/underworld/02: 1216 192
+:matt/underworld/02: 1216 288
+:matt/underworld/00: 1216 384
+:matt/underworld/02: 336 208
+:matt/underworld/02: 400 208
+:matt/underworld/02: 432 192
+:matt/underworld/00: 432 192 d
+:matt/underworld/02: 336 304
+:matt/underworld/02: 400 304
+:matt/underworld/02: 432 288
+:matt/underworld/02: 496 288
+:matt/underworld/02: 304 288
+:matt/underworld/02: 240 352
+:matt/underworld/00: 304 384
+:geoo/steel/dark_48x48o.S: 192 352
+:geoo/steel/dark_48x48o.S: 144 352
+:matt/underworld/02: 528 208
+:matt/underworld/02: 608 208
+:matt/underworld/02: 688 208
+:matt/underworld/02: 816 208
+:matt/underworld/02: 880 208
+:matt/underworld/02: 784 192
+:matt/underworld/00: 784 192 d
+:matt/underworld/02: 528 304
+:matt/underworld/02: 592 304
+:matt/underworld/02: 656 304
+:matt/underworld/02: 720 304
+:matt/underworld/02: 784 304
+:matt/underworld/02: 848 304
+:matt/underworld/00: 752 288
+:matt/underworld/00: 560 288
+:matt/underworld/00: 688 288
+:matt/underworld/00: 624 288
+:matt/underworld/00: 432 384
+:matt/underworld/00: 496 384
+:matt/underworld/02: 912 304
+:matt/underworld/00: 816 288
+:matt/underworld/00: 880 288
+:matt/underworld/00: 944 288
+:matt/underworld/00: 976 288 d
+:matt/underworld/02: 976 336
+:matt/underworld/00: 976 336 d
+:geoo/steel/dark_48x48o.S: 1040 352
+:geoo/steel/dark_48x48o.S: 1088 352
+:geoo/steel/dark_32x16o.S: 464 208
+:geoo/steel/dark_32x16o.S: 784 208

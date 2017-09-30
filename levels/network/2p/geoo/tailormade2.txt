@@ -1,0 +1,203 @@
+$BUILT 2014-01-13 01:46:56
+$AUTHOR geoo
+$GERMAN
+$ENGLISH Tailor-made for... (2P)
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 754
+#SIZE_Y 320
+#TORUS_X 0
+#TORUS_Y 1
+
+#SECONDS 30
+#INITIAL 80
+#REQUIRED 65
+#SPAWN_INTERVAL 21
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 0
+#FLOATER 20
+#EXPLODER2 20
+#BLOCKER 20
+#BUILDER 20
+#BASHER 0
+#MINER 0
+#DIGGER 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/abstract/hatch.H: 256 16
+:geoo/abstract/hatch.H: 448 16 r
+
+:geoo/abstract/goal.G: 448 256
+:geoo/abstract/goal.G: 256 256
+
+:geoo/steel/dark_48x48o.S: 0 64
+:geoo/steel/dark_48x48o.S: 0 112
+:geoo/steel/dark_48x48o.S: 0 160
+:geoo/steel/dark_48x48o.S: 0 208
+:geoo/steel/dark_48x48o.S: 0 256
+:geoo/steel/dark_48x48o.S: 0 304
+:geoo/steel/dark_48x48o.S: 0 16
+:geoo/steel/dark_48x48o.S: 688 48
+:geoo/steel/dark_48x48o.S: 688 96
+:geoo/steel/dark_48x48o.S: 688 144
+:geoo/steel/dark_48x48o.S: 688 192
+:geoo/steel/dark_48x48o.S: 688 240
+:geoo/steel/dark_48x48o.S: 688 288
+:geoo/steel/dark_48x48o.S: 688 0
+:geoo/steel/dark_48x32o.S: 224 304
+:geoo/steel/dark_48x32o.S: 272 304
+:geoo/steel/dark_48x32o.S: 416 304
+:geoo/steel/dark_48x32o.S: 464 304
+:geoo/abstract/pipes/central4: 208 48
+:geoo/abstract/pipes/central4: 240 48
+:geoo/abstract/pipes/central4: 272 48
+:geoo/abstract/pipes/central4: 304 48
+:geoo/abstract/pipes/central4: 336 48
+:geoo/abstract/pipes/central4: 368 48
+:geoo/abstract/pipes/central4: 400 48
+:geoo/abstract/pipes/central4: 432 48
+:geoo/abstract/pipes/central4: 464 48
+:geoo/abstract/pipes/central4: 496 48
+:geoo/abstract/pipes/central4: 624 48
+:geoo/abstract/pipes/central4: 656 48
+:geoo/abstract/pipes/central4: 560 48
+:geoo/abstract/pipes/central4: 592 48
+:geoo/abstract/pipes/central4: 48 48
+:geoo/abstract/pipes/central4: 80 48
+:geoo/abstract/pipes/central4: 112 48
+:geoo/abstract/pipes/central4: 144 48
+:geoo/abstract/pipes/central4: 48 16
+:geoo/abstract/pipes/central4: 80 16
+:geoo/abstract/pipes/central4: 136 16
+:geoo/abstract/pipes/central4: 168 16
+:geoo/abstract/pipes/central4: 536 16
+:geoo/abstract/pipes/central4: 568 16
+:geoo/abstract/pipes/central4: 624 16
+:geoo/abstract/pipes/central4: 656 16
+:geoo/abstract/pipes/central4: 320 8
+:geoo/abstract/pipes/central4: 352 8
+:geoo/abstract/pipes/central4: 384 8
+:geoo/abstract/pipes/central4: 320 304
+:geoo/abstract/pipes/central4: 352 304
+:geoo/abstract/pipes/central4: 384 304
+:geoo/abstract/pipes/central4: 336 272
+:geoo/abstract/pipes/central4: 368 272
+:geoo/abstract/pipes/central4: 48 272
+:geoo/abstract/pipes/central4: 80 272
+:geoo/abstract/pipes/central4: 136 272
+:geoo/abstract/pipes/central4: 168 272
+:geoo/abstract/pipes/central4: 536 272
+:geoo/abstract/pipes/central4: 568 272
+:geoo/abstract/pipes/central4: 624 272
+:geoo/abstract/pipes/central4: 656 272
+:geoo/abstract/pipes/central4: 576 304
+:geoo/abstract/pipes/central4: 608 304
+:geoo/abstract/pipes/central4: 512 304
+:geoo/abstract/pipes/central4: 544 304
+:geoo/abstract/pipes/central4: 96 304
+:geoo/abstract/pipes/central4: 128 304
+:geoo/abstract/pipes/central4: 160 304
+:geoo/abstract/pipes/central4: 192 304
+:geoo/abstract/pipes/central4: 168 80
+:geoo/abstract/pipes/central4: 200 80
+:geoo/abstract/pipes/central4: 232 80
+:geoo/abstract/pipes/central4: 264 80
+:geoo/abstract/pipes/central4: 448 80
+:geoo/abstract/pipes/central4: 480 80
+:geoo/abstract/pipes/central4: 512 80
+:geoo/abstract/pipes/central4: 544 80
+:geoo/abstract/pipes/central4: 336 80
+:geoo/abstract/pipes/central4: 368 80
+:geoo/abstract/pipes/central4: 48 112
+:geoo/abstract/pipes/central4: 80 112
+:geoo/abstract/pipes/central4: 112 112
+:geoo/abstract/pipes/central4: 144 112
+:geoo/abstract/pipes/central4: 160 112
+:geoo/abstract/pipes/central4: 544 112
+:geoo/abstract/pipes/central4: 576 112
+:geoo/abstract/pipes/central4: 608 112
+:geoo/abstract/pipes/central4: 640 112
+:geoo/abstract/pipes/central4: 656 112
+:geoo/abstract/pipes/central4: 448 112
+:geoo/abstract/pipes/central4: 480 112
+:geoo/abstract/pipes/central4: 384 112
+:geoo/abstract/pipes/central4: 416 112
+:geoo/abstract/pipes/central4: 224 112
+:geoo/abstract/pipes/central4: 256 112
+:geoo/abstract/pipes/central4: 288 112
+:geoo/abstract/pipes/central4: 320 112
+:geoo/abstract/pipes/central4: 48 144
+:geoo/abstract/pipes/central4: 80 144
+:geoo/abstract/pipes/central4: 624 144
+:geoo/abstract/pipes/central4: 656 144
+:geoo/abstract/pipes/central4: 144 144
+:geoo/abstract/pipes/central4: 176 144
+:geoo/abstract/pipes/central4: 208 144
+:geoo/abstract/pipes/central4: 240 144
+:geoo/abstract/pipes/central4: 272 144
+:geoo/abstract/pipes/central4: 304 144
+:geoo/abstract/pipes/central4: 336 144
+:geoo/abstract/pipes/central4: 368 144
+:geoo/abstract/pipes/central4: 400 144
+:geoo/abstract/pipes/central4: 432 144
+:geoo/abstract/pipes/central4: 464 144
+:geoo/abstract/pipes/central4: 496 144
+:geoo/abstract/pipes/central4: 528 144
+:geoo/abstract/pipes/central4: 560 144
+:geoo/abstract/pipes/central4: 48 176
+:geoo/abstract/pipes/central4: 80 176
+:geoo/abstract/pipes/central4: 112 176
+:geoo/abstract/pipes/central4: 144 176
+:geoo/abstract/pipes/central4: 176 176
+:geoo/abstract/pipes/central4: 208 176
+:geoo/abstract/pipes/central4: 240 176
+:geoo/abstract/pipes/central4: 272 176
+:geoo/abstract/pipes/central4: 304 176
+:geoo/abstract/pipes/central4: 320 176
+:geoo/abstract/pipes/central4: 384 176
+:geoo/abstract/pipes/central4: 416 176
+:geoo/abstract/pipes/central4: 448 176
+:geoo/abstract/pipes/central4: 480 176
+:geoo/abstract/pipes/central4: 512 176
+:geoo/abstract/pipes/central4: 544 176
+:geoo/abstract/pipes/central4: 576 176
+:geoo/abstract/pipes/central4: 608 176
+:geoo/abstract/pipes/central4: 640 176
+:geoo/abstract/pipes/central4: 656 176
+:geoo/abstract/pipes/central4: 384 240
+:geoo/abstract/pipes/central4: 416 240
+:geoo/abstract/pipes/central4: 448 240
+:geoo/abstract/pipes/central4: 480 240
+:geoo/abstract/pipes/central4: 512 240
+:geoo/abstract/pipes/central4: 544 240
+:geoo/abstract/pipes/central4: 576 240
+:geoo/abstract/pipes/central4: 608 240
+:geoo/abstract/pipes/central4: 640 240
+:geoo/abstract/pipes/central4: 656 240
+:geoo/abstract/pipes/central4: 48 240
+:geoo/abstract/pipes/central4: 80 240
+:geoo/abstract/pipes/central4: 112 240
+:geoo/abstract/pipes/central4: 144 240
+:geoo/abstract/pipes/central4: 176 240
+:geoo/abstract/pipes/central4: 208 240
+:geoo/abstract/pipes/central4: 240 240
+:geoo/abstract/pipes/central4: 272 240
+:geoo/abstract/pipes/central4: 304 240
+:geoo/abstract/pipes/central4: 320 240
+:geoo/abstract/pipes/central4: 112 208
+:geoo/abstract/pipes/central4: 144 208
+:geoo/abstract/pipes/central4: 176 208
+:geoo/abstract/pipes/central4: 208 208
+:geoo/abstract/pipes/central4: 288 208
+:geoo/abstract/pipes/central4: 320 208
+:geoo/abstract/pipes/central4: 352 208
+:geoo/abstract/pipes/central4: 384 208
+:geoo/abstract/pipes/central4: 416 208
+:geoo/abstract/pipes/central4: 560 208
+:geoo/abstract/pipes/central4: 592 208
+:geoo/abstract/pipes/central4: 496 208
+:geoo/abstract/pipes/central4: 528 208

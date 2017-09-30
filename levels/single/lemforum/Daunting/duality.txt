@@ -1,4 +1,4 @@
-$BUILT 2017-07-21 18:23:23
+$BUILT 2017-09-30 22:11:57
 $AUTHOR Yawg
 $ENGLISH Duality
 
@@ -205,10 +205,8 @@ $ENGLISH Duality
 :geoo/construction/squarebrick_large: 1256 96
 :geoo/construction/squarebrick_large: 1304 88
 :geoo/steel/dark_48x48o.S: 1512 320
-:geoo/construction/wall/small_64x64: 1432 0
 :geoo/construction/wall/small_64x64: 1560 64
 :geoo/construction/wall/big_brickdiag_td: 1400 0 d
-:geoo/construction/wall/small_64x64: 1496 0
 :geoo/construction/wall/small_64x64: 1560 0
 :geoo/construction/wall/small_64x64: 1624 0
 :geoo/construction/wall/small_64x64: 1624 64
@@ -217,7 +215,7 @@ $ENGLISH Duality
 :geoo/construction/wall/small_64x64: 1624 192
 :geoo/construction/wall/small_64x64: 1624 256
 :geoo/construction/wall/small_64x64: 1624 320
-:geoo/construction/wall/big_brickdiag_td: 1432 32 d
+:geoo/construction/wall/big_brickdiag_td: 1464 32 d
 :geoo/construction/wall/small_64x64: 1448 176
 :geoo/construction/wall/small_64x64: 1448 240
 :geoo/construction/wall/small_64x64: 1448 304
@@ -292,3 +290,7 @@ $END_TILE_GROUP
 :geoo/construction/fence_rust_64x64: 1056 320
 :geoo/construction/squarebrick_small: 1400 208
 :geoo/construction/squarebrick_small: 1384 208
+:geoo/construction/squarebrick_large: 1432 32 d
+:geoo/construction/wall/small_64x64: 1496 0
+:geoo/construction/wall/big_brickdiag_td: 1496 32 d
+:geoo/construction/wall/big_brickdiag_td: 1464 0 d

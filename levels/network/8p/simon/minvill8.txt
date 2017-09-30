@@ -1,0 +1,167 @@
+$BUILT 2014-01-13 01:14:44
+$AUTHOR Simon
+$ENGLISH Mining Village 8P
+
+#INTENDED_NUMBER_OF_PLAYERS 8
+#SIZE_X 640
+#SIZE_Y 1672
+#TORUS_X 0
+#TORUS_Y 1
+
+#SECONDS 45
+#INITIAL 70
+#REQUIRED 20
+#SPAWN_INTERVAL 28
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 35
+#JUMPER 35
+#EXPLODER2 35
+#BLOCKER 5
+#BUILDER 60
+#BASHER 35
+#MINER 35
+#DIGGER 5
+#BATTER 5
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: 16 392
+:matt/winter/Hatch.H: 560 600 r
+:matt/winter/Hatch.H: 16 808
+:matt/winter/Hatch.H: 560 1016 r
+:matt/winter/Hatch.H: 16 1224
+:matt/winter/Hatch.H: 560 1432 r
+:matt/winter/Hatch.H: 16 1640
+:matt/winter/Hatch.H: 560 184 r
+
+:matt/winter/Goal.G: 544 848
+:matt/winter/Goal.G: 0 1064
+:matt/winter/Goal.G: 544 1272
+:matt/winter/Goal.G: 0 1480
+:matt/winter/Goal.G: 544 16
+:matt/winter/Goal.G: 0 224
+:matt/winter/Goal.G: 544 432
+:matt/winter/Goal.G: 0 648
+
+:matt/winter/03: 8 480
+:geoo/steel/dark_32x32o.S: 32 488
+:geoo/steel/dark_48x32o.S: 544 496
+:geoo/steel/dark_48x32o.S: 592 496
+:geoo/steel/dark_48x32o.S: 0 288
+:geoo/steel/dark_48x32o.S: 48 288
+:matt/winter/03: 488 280 frr
+:geoo/steel/dark_32x32o.S: 576 280
+:matt/winter/04: 424 376
+:matt/winter/10: 296 320
+:matt/winter/05: 96 112
+:matt/winter/16: 96 264
+:matt/winter/10: 104 336
+:matt/winter/05: 112 368
+:matt/winter/04: 152 400
+:matt/winter/10: 248 376 rr
+:matt/winter/04: 184 232
+:matt/winter/05: 144 128 rr
+:matt/winter/04: 232 408 rr
+:matt/winter/04: 320 432 f
+:matt/winter/04: 176 136
+:matt/winter/10: 264 248
+:matt/winter/04: 408 232
+:matt/winter/10: 312 176 rr
+:matt/winter/04: 256 136
+:matt/winter/04: 400 472 f
+:matt/winter/10: 160 512 f
+:matt/winter/03: 8 64
+:matt/winter/04: 424 792
+:matt/winter/10: 296 744
+:matt/winter/05: 96 536
+:matt/winter/16: 96 688
+:matt/winter/10: 104 760
+:matt/winter/05: 112 792
+:matt/winter/04: 152 824
+:matt/winter/10: 248 800 rr
+:matt/winter/04: 184 656
+:matt/winter/05: 144 552 rr
+:matt/winter/04: 232 832 rr
+:matt/winter/04: 320 16 f
+:matt/winter/04: 176 560
+:matt/winter/10: 264 672
+:matt/winter/04: 408 656
+:matt/winter/10: 312 600 rr
+:matt/winter/04: 256 560
+:matt/winter/04: 400 56 f
+:matt/winter/10: 160 96 f
+:matt/winter/10: 312 528
+:matt/winter/05: 464 496 rr
+:matt/winter/05: 464 104 rr
+:matt/winter/10: 312 112
+:geoo/steel/dark_32x32o.S: 32 72
+:matt/winter/05: 464 224 rr
+:matt/winter/05: 464 632 rr
+:matt/winter/03: 488 696 frr
+:geoo/steel/dark_32x32o.S: 576 696
+:geoo/steel/dark_48x32o.S: 544 80
+:geoo/steel/dark_48x32o.S: 592 80
+:geoo/steel/dark_48x32o.S: 0 712
+:geoo/steel/dark_48x32o.S: 48 712
+:matt/winter/03: 8 896
+:geoo/steel/dark_32x32o.S: 32 904
+:geoo/steel/dark_48x32o.S: 544 912
+:geoo/steel/dark_48x32o.S: 592 912
+:matt/winter/04: 320 848 f
+:matt/winter/04: 400 888 f
+:matt/winter/10: 160 928 f
+:matt/winter/04: 424 1216
+:matt/winter/10: 296 1160
+:matt/winter/05: 96 952
+:matt/winter/16: 96 1104
+:matt/winter/10: 104 1176
+:matt/winter/05: 112 1208
+:matt/winter/04: 152 1240
+:matt/winter/10: 248 1216 rr
+:matt/winter/04: 184 1072
+:matt/winter/05: 144 968 rr
+:matt/winter/04: 232 1248 rr
+:matt/winter/04: 176 976
+:matt/winter/10: 264 1088
+:matt/winter/04: 408 1072
+:matt/winter/10: 312 1016 rr
+:matt/winter/04: 256 976
+:matt/winter/10: 312 944
+:matt/winter/05: 464 912 rr
+:matt/winter/05: 464 1048 rr
+:matt/winter/03: 488 1112 frr
+:geoo/steel/dark_32x32o.S: 576 1112
+:geoo/steel/dark_48x32o.S: 0 1128
+:geoo/steel/dark_48x32o.S: 48 1128
+:matt/winter/04: 400 1304 f
+:matt/winter/10: 160 1344 f
+:matt/winter/04: 424 1632
+:matt/winter/10: 296 1576
+:matt/winter/05: 96 1368
+:matt/winter/16: 96 1520
+:matt/winter/10: 104 1592
+:matt/winter/05: 112 1624
+:matt/winter/04: 152 1656
+:matt/winter/10: 248 1632 rr
+:matt/winter/04: 184 1488
+:matt/winter/05: 144 1384 rr
+:matt/winter/04: 232 1664 rr
+:matt/winter/04: 176 1392
+:matt/winter/10: 264 1504
+:matt/winter/04: 408 1488
+:matt/winter/10: 312 1432 rr
+:matt/winter/04: 256 1392
+:matt/winter/10: 312 1360
+:matt/winter/05: 464 1328 rr
+:matt/winter/05: 464 1464 rr
+:matt/winter/03: 488 1528 frr
+:geoo/steel/dark_32x32o.S: 576 1528
+:geoo/steel/dark_48x32o.S: 0 1544
+:geoo/steel/dark_48x32o.S: 48 1544
+:matt/winter/03: 0 1312
+:geoo/steel/dark_32x32o.S: 24 1320
+:geoo/steel/dark_48x32o.S: 544 1336
+:geoo/steel/dark_48x32o.S: 592 1336
+:matt/winter/04: 328 1280 f

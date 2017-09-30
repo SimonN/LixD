@@ -1,0 +1,128 @@
+$BUILT 2014-01-13 01:42:34
+$AUTHOR Insane Steve
+$GERMAN
+$ENGLISH Try Something Else (4P)
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 640
+#SIZE_Y 420
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 45
+#INITIAL 60
+#REQUIRED 20
+#SPAWN_INTERVAL 21
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 50
+#CLIMBER 10
+#EXPLODER2 20
+#BUILDER 50
+#PLATFORMER 20
+#BASHER 30
+#MINER 30
+#DIGGER 5
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/bricks/Hatch.H: 16 400
+:matt/bricks/Hatch.H: 336 400
+:matt/bricks/Hatch.H: 16 192
+:matt/bricks/Hatch.H: 336 192
+
+:matt/bricks/Goal.G: 256 224
+:matt/bricks/Goal.G: 576 224
+:matt/bricks/Goal.G: 256 16
+:matt/bricks/Goal.G: 576 16
+
+:proxima/tile/blue1s: 536 176
+:proxima/tile/blue1s: 504 208
+:proxima/tile/blue1s: 536 208
+:proxima/tile/blue1s: 536 240
+:proxima/tile/blue2s: 440 208
+:proxima/tile/blue2s: 408 176
+:proxima/tile/blue2s: 408 208
+:proxima/tile/blue2s: 408 240
+:proxima/tile/red1: 8 272
+:proxima/tile/red1: 72 272
+:proxima/tile/red1: 8 304
+:proxima/tile/red1: 72 304
+:geoo/steel/dark_48x32o.S: 40 336
+:proxima/tile/red1: 136 272
+:proxima/tile/red1: 136 304
+:geoo/steel/dark_48x48o.S: 144 296
+:proxima/tile/red1: 200 272
+:proxima/tile/red1: 200 304
+:proxima/tile/red1: 264 304
+:geoo/steel/dark_48x32o.S: 248 336
+:proxima/tile/red1: 264 272
+:geoo/steel/dark_32x32o.S: 272 272
+:proxima/tile/red1: 328 272
+:proxima/tile/red1: 328 304
+:geoo/steel/dark_48x32o.S: 360 336
+:proxima/tile/red1: 456 272
+:proxima/tile/red1: 456 304
+:geoo/steel/dark_48x48o.S: 464 296
+:proxima/tile/red1: 520 272
+:proxima/tile/red1: 520 304
+:proxima/tile/red1: 584 304
+:geoo/steel/dark_48x32o.S: 568 336
+:proxima/tile/red1: 584 272
+:geoo/steel/dark_32x32o.S: 592 272
+:proxima/tile/red1: 392 272
+:proxima/tile/red1: 392 304
+:proxima/tile/blue1s: 536 392
+:proxima/tile/blue1s: 504 0
+:proxima/tile/blue1s: 536 0
+:proxima/tile/blue1s: 536 32
+:proxima/tile/blue2s: 440 0
+:proxima/tile/blue2s: 408 392
+:proxima/tile/blue2s: 408 0
+:proxima/tile/blue2s: 408 32
+:proxima/tile/blue1s: 216 392
+:proxima/tile/blue1s: 184 0
+:proxima/tile/blue1s: 216 0
+:proxima/tile/blue1s: 216 32
+:proxima/tile/blue2s: 120 0
+:proxima/tile/blue2s: 88 392
+:proxima/tile/blue2s: 88 0
+:proxima/tile/blue2s: 88 32
+:proxima/tile/blue1s: 216 176
+:proxima/tile/blue1s: 184 208
+:proxima/tile/blue1s: 216 208
+:proxima/tile/blue1s: 216 240
+:proxima/tile/blue2s: 120 208
+:proxima/tile/blue2s: 88 176
+:proxima/tile/blue2s: 88 208
+:proxima/tile/blue2s: 88 240
+:proxima/tile/red1: 8 64
+:proxima/tile/red1: 72 64
+:proxima/tile/red1: 8 96
+:proxima/tile/red1: 72 96
+:geoo/steel/dark_48x32o.S: 40 128
+:proxima/tile/red1: 136 64
+:proxima/tile/red1: 136 96
+:geoo/steel/dark_48x48o.S: 144 88
+:proxima/tile/red1: 200 64
+:proxima/tile/red1: 200 96
+:proxima/tile/red1: 264 96
+:geoo/steel/dark_48x32o.S: 248 128
+:proxima/tile/red1: 264 64
+:geoo/steel/dark_32x32o.S: 272 64
+:proxima/tile/red1: 328 64
+:proxima/tile/red1: 328 96
+:proxima/tile/red1: 392 96
+:geoo/steel/dark_48x32o.S: 360 128
+:proxima/tile/red1: 456 64
+:proxima/tile/red1: 456 96
+:geoo/steel/dark_48x48o.S: 464 88
+:proxima/tile/red1: 520 64
+:proxima/tile/red1: 520 96
+:proxima/tile/red1: 584 96
+:geoo/steel/dark_48x32o.S: 568 128
+:proxima/tile/red1: 584 64
+:geoo/steel/dark_32x32o.S: 592 64
+:proxima/tile/red1: 392 64

@@ -1,0 +1,97 @@
+$BUILT 2014-01-13 01:46:36
+$AUTHOR geoo
+$GERMAN
+$ENGLISH Pave the Way (2P, long)
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 640
+#SIZE_Y 416
+#TORUS_X 0
+#TORUS_Y 0
+
+#SECONDS 40
+#INITIAL 75
+#REQUIRED 4
+#SPAWN_INTERVAL 28
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 20
+#JUMPER 20
+#EXPLODER2 5
+#PLATFORMER 20
+#BUILDER 10
+#BASHER 30
+#MINER 30
+#DIGGER 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/earth/Hatch.H: 64 0
+:matt/earth/Hatch.H: 496 0
+
+:matt/earth/Goal.G: 496 320
+:matt/earth/Goal.G: 64 320
+
+:proxima/tile/green3: 192 320
+:geoo/steel/dark_48x32o.S: 0 384
+:geoo/steel/dark_48x32o.S: 48 384
+:geoo/steel/dark_48x32o.S: 96 384
+:geoo/steel/dark_48x32o.S: 144 384
+:geoo/steel/dark_48x32o.S: 192 384
+:geoo/steel/dark_48x32o.S: 240 384
+:geoo/steel/dark_48x32o.S: 288 384
+:geoo/steel/dark_48x32o.S: 336 384
+:geoo/steel/dark_48x32o.S: 384 384
+:geoo/steel/dark_48x32o.S: 432 384
+:geoo/steel/dark_48x32o.S: 480 384
+:geoo/steel/dark_48x32o.S: 528 384
+:geoo/steel/dark_48x32o.S: 576 384
+:proxima/tile/green3: 256 320
+:proxima/tile/green3: 320 320
+:geoo/steel/dark_48x48o.S: 288 336
+:proxima/tile/green3: 368 320
+:proxima/tile/green3: 192 160
+:proxima/tile/green3: 256 160
+:proxima/tile/green3: 320 160
+:proxima/tile/green3: 368 160
+:proxima/tile/green3: 192 96
+:proxima/tile/green3: 256 96
+:proxima/tile/green3: 320 96
+:proxima/tile/green3: 368 96
+:proxima/tile/green3: 192 32
+:proxima/tile/green3: 256 32
+:proxima/tile/green3: 320 32
+:proxima/tile/green3: 368 32
+:proxima/tile/blue1as: 192 32 d
+:proxima/tile/blue2as: 224 32 d
+:proxima/tile/blue1as: 256 32 d
+:proxima/tile/blue1as: 280 24 d
+:proxima/tile/blue1as: 320 32 d
+:proxima/tile/blue1as: 400 32 d
+:proxima/tile/blue2as: 176 48 d
+:proxima/tile/blue1as: 216 24 d
+:proxima/tile/blue2as: 248 24 d
+:proxima/tile/blue2as: 312 24 d
+:proxima/tile/blue1as: 352 32 d
+:proxima/tile/blue1bs: 192 16 d
+:proxima/tile/blue1as: 368 32 d
+:geoo/steel/dark_48x32o.S: 0 128
+:geoo/steel/dark_48x32o.S: 48 128
+:geoo/steel/dark_48x32o.S: 96 128
+:geoo/steel/dark_48x32o.S: 144 128
+:geoo/steel/dark_48x32o.S: 432 128
+:geoo/steel/dark_48x32o.S: 480 128
+:geoo/steel/dark_48x32o.S: 528 128
+:geoo/steel/dark_48x32o.S: 576 128
+:geoo/steel/dark_48x32o.S: 0 96
+:geoo/steel/dark_48x32o.S: 576 96
+:proxima/tile/green3: 192 288
+:proxima/tile/green3: 256 288
+:proxima/tile/green3: 320 288
+:proxima/tile/green3: 368 288
+:proxima/tile/green3: 192 224
+:proxima/tile/green3: 256 224
+:proxima/tile/green3: 320 224
+:proxima/tile/green3: 368 224
