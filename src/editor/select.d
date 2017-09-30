@@ -145,10 +145,12 @@ bool mouseOnSolidPixel(Editor editor, in TerOcc pos) {
     with (editor)
 {
     auto mol = _map.mouseOnLand;
-    if (pos.selboxOnMap.x < 0) mol.x -= _map.xl;
-    if (pos.selboxOnMap.y < 0) mol.y -= _map.yl;
-    while (mol.x < pos.selboxOnMap.x) mol.x += _map.xl;
-    while (mol.y < pos.selboxOnMap.y) mol.y += _map.yl;
+    immutable tile = pos.selboxOnMap;
+
+    while (mol.x >= tile.x + tile.xl) mol.x -= _map.xl;
+    while (mol.y >= tile.y + tile.yl) mol.y -= _map.yl;
+    while (mol.x < tile.x) mol.x += _map.xl;
+    while (mol.y < tile.y) mol.y += _map.yl;
     version (assert) {
         string str()
         {
@@ -159,10 +161,10 @@ bool mouseOnSolidPixel(Editor editor, in TerOcc pos) {
                 (pos.selboxOnMap.topLeft + pos.selboxOnMap.len).toString,
                 _map.mouseOnLand.toString);
         }
-        assert (mol.x >= pos.selboxOnMap.x, str());
-        assert (mol.y >= pos.selboxOnMap.y, str());
-        assert (mol.x <  pos.selboxOnMap.x + pos.selboxOnMap.xl, str());
-        assert (mol.y <  pos.selboxOnMap.y + pos.selboxOnMap.yl, str());
+        assert (mol.x >= tile.x, str());
+        assert (mol.y >= tile.y, str());
+        assert (mol.x <  tile.x + tile.xl, str());
+        assert (mol.y <  tile.y + tile.yl, str());
     }
     return 0 != pos.phybitsOnMap(mol);
 }}
