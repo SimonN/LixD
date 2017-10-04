@@ -11,6 +11,7 @@ import basics.user;
 import file.language;
 import gui;
 import hardware.mouse;
+import hardware.sound;
 import level.level;
 import menu.lobby.connect;
 import menu.lobby.lists;
@@ -166,9 +167,7 @@ protected:
             assert (_netClient);
             if (_browser.gotoGame)
                 _netClient.selectLevel(_browser.fileRecent.readIntoVoidArray);
-            rmFocus(_browser);
-            destroy(_browser);
-            _browser = null;
+            destroyBrowser();
         }
         if (_netClient)
             _netClient.calc();
@@ -288,6 +287,15 @@ private:
                             == Profile.Feeling.ready;
     }
 
+    void destroyBrowser()
+    {
+        if (! _browser)
+            return;
+        rmFocus(_browser);
+        destroy(_browser);
+        _browser = null;
+    }
+
     // Keep this the last private function in this class, it's so long
     void setOurEventHandlers()
     {
@@ -302,6 +310,7 @@ private:
         _netClient.onPeerJoinsRoom = (const(Profile*) profile)
         {
             refreshPeerList();
+            playLoud(Sound.JOIN);
         };
 
         _netClient.onPeerLeavesRoomTo = (string name, Room toRoom)
@@ -337,11 +346,13 @@ private:
             _preview.level = _netClient.level;
             _console.add("%s %s %s".format(senderName,
                 Lang.netChatLevelChange.transl, _netClient.level.name));
+            playLoud(Sound.pageTurn);
         };
 
         _netClient.onGameStart = (Permu permu)
         {
             refreshPeerList();
+            destroyBrowser(); // Observers got stuck in their browser otherwise
             _console.add("%s%s%s".format(Lang.netGameHowToChat1.transl,
                 keyChat.nameLong, Lang.netGameHowToChat2.transl));
             _gotoGame = true;

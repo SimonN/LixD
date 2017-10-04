@@ -13,6 +13,7 @@ enum Sound {
     NOTHING,
     DISKSAVE,    // Save a file to disk, from editor or replay
     JOIN,        // Someone joins the network
+    pageTurn,    // Someone selects a map to play for the entire room
 
     PANEL,       // Choice of skill on the panel
     PANEL_EMPTY, // Trying to select a skill that's empty or nonpresent
@@ -69,6 +70,7 @@ void initialize()
 
     samples[Sound.DISKSAVE]    = loadLazily("disksave.ogg");
     samples[Sound.JOIN]        = loadLazily("join.ogg");
+    samples[Sound.pageTurn]    = loadLazily("pageturn.ogg");
 
     samples[Sound.PANEL]       = loadLazily("panel.ogg");
     samples[Sound.PANEL_EMPTY] = loadLazily("panel_em.ogg");
