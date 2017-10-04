@@ -19,6 +19,7 @@ import std.conv; // to!long for string length
 import std.file;
 import std.string;
 import std.stdio; // File
+import std.utf;
 
 import basics.help;
 import file.filename.base;
@@ -134,6 +135,11 @@ public:
 
     this(in string s) immutable nothrow
     {
+        try
+            s.validate();
+        catch (Exception)
+            return; // We are nothrow. Probably bad design
+
         assert (s.length < int.max);
         _rootless = pruneRoots(s);
 

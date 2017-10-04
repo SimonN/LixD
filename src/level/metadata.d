@@ -1,5 +1,9 @@
 module level.metadata;
 
+/*
+ * This throws on malformed UTF! If you call new LevelMetaData("a.zip"), catch.
+ */
+
 import basics.globals;
 import file.date;
 import file.filename;

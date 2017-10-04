@@ -87,7 +87,8 @@ unittest {
 // If the entire input satisfies pred, return old string instead of allocating.
 pure string pruneString(in string input, bool function(dchar) pure pred)
 {
-    std.utf.validate(input);
+    version (assert)
+        std.utf.validate(input);
     return input.all!pred ? input : input.filter!pred.to!string;
 }
 

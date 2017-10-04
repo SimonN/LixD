@@ -22,6 +22,7 @@ import basics.globals;
 import basics.user;
 import file.language;
 import file.filename;
+import file.log;
 import gui;
 import gui.picker.scrolist;
 import level.metadata;
@@ -133,20 +134,28 @@ private:
         // early enough to make the program feel responsive.
         immutable long beforeWork = timerTicks;
         while (! _unprocessed.empty && timerTicks == beforeWork) {
-            _database ~= CachedFilename(_unprocessed[0]);
+            try {
+                auto cf = CachedFilename(_unprocessed[0]);
+                _database ~= cf;
+            }
+            catch (Exception e) {
+                // The metadata has already logged about bad UTF.
+                logf("    -> Can't search for `%s'", _unprocessed[0].rootless);
+            }
             _unprocessed = _unprocessed[1 .. $];
         }
     }
 }
 
 // We can search either for filename or for title.
+// This's constructor throws on bad UTF-8 in the metadata.
 private struct CachedFilename {
     Filename result;
     string titleDisplay;
     string titleSearchable;
     string fnSearchable;
 
-    this(in Filename fn)
+    this(in Filename fn) // this throws on bad UTF-8 in the metadata!
     {
         result = fn;
         fnSearchable = fn.rootlessNoExt.toLower;

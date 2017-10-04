@@ -10,6 +10,7 @@ import std.file;
 import std.range;
 import std.stdio; // File
 import std.string;
+import std.utf;
 
 import file.filename.base;
 
@@ -22,8 +23,10 @@ private:
 public:
     this(string raw) immutable nothrow
     {
-        try
+        try {
+            raw.validate();
             _s = raw.tr("\\", "/");
+        }
         catch (Exception)
             { }
     }
