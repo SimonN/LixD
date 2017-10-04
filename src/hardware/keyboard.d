@@ -10,12 +10,11 @@ import std.array;
 import std.utf;
 
 import basics.alleg5;
+import file.log;
 import hardware.keynames;
 import hardware.mouse;
 
 static import basics.globals;
-
-string utf8Input() { return _bufferUTF8; }
 
 bool keyTapped  (int alkey) { return _once[alkey];     }
 bool keyHeld    (int alkey) { return _hold[alkey] > 0; }
@@ -44,6 +43,37 @@ bool keyTappedAllowingRepeats(int alkey)
 }
 
 void clearKeyBufferAfterAltTab() { _hold[] = 0; }
+
+// Take great care to not introduce malformed UTF8, even though we build
+// _bufferUTF8 already only by encoing codepoints with the D standard lib.
+string utf8Input() nothrow
+{
+    try {
+        std.utf.validate(_bufferUTF8);
+        return _bufferUTF8;
+    }
+    catch (Exception) {
+        import std.format;
+        import std.conv;
+
+        string ints;
+        // Prevent autodecoding by explicit array indexing.
+        // Don't use _bufferUTF8 as a range or foreach here.
+        for (int i = 0; i < _bufferUTF8.length; ++i) {
+            try
+                ints ~= format!" %2x"(_bufferUTF8[i].to!ubyte);
+            catch (Exception)
+                ints ~= " ??";
+        }
+        logf("Bad UTF-8 keyboard input:%s", ints); // yes, no space before %s
+        _bufferUTF8 = "";
+        return "";
+    }
+}
+
+// ############################################################################
+// #################################################################### private
+// ############################################################################
 
 private:
     ALLEGRO_EVENT_QUEUE* _queue;
