@@ -4,6 +4,7 @@ import std.algorithm; // swap
 import std.conv;
 import std.string; // format, for codegen
 
+import basics.alleg5; // BlenderMinus
 import basics.globals; // fuse image
 import basics.help;
 import basics.matrix;
@@ -362,8 +363,25 @@ final void drawAgainHighlit() const
 {
     assert (ac != Ac.nothing, "we shouldn't highlight dead lix");
     // No need to draw the fuse, because we draw on top of the old lix drawing.
-    graphic.internal.getLixSpritesheet(Style.highlight)
-        .draw(loc, xf, yf, mirror, rotation);
+    const cb = graphic.internal.getLixSpritesheet(Style.highlight);
+    with (Blender(
+        // cb is very light. We draw its colors like BlenderMinus and
+        // its alpha like the standard blender's alpha. This will draw a near-
+        // -black outline of the lix. The desired result is a black outline,
+        // this is close enough.
+        ALLEGRO_BLEND_OPERATIONS.ALLEGRO_DEST_MINUS_SRC,
+        ALLEGRO_BLEND_MODE.ALLEGRO_ONE,
+        ALLEGRO_BLEND_MODE.ALLEGRO_ONE,
+        ALLEGRO_BLEND_OPERATIONS.ALLEGRO_ADD,
+        ALLEGRO_BLEND_MODE.ALLEGRO_ONE,
+        ALLEGRO_BLEND_MODE.ALLEGRO_INVERSE_ALPHA,
+    )) {
+        cb.draw(loc + Point(1, 0), xf, yf, mirror, rotation);
+        cb.draw(loc - Point(1, 0), xf, yf, mirror, rotation);
+        cb.draw(loc - Point(0, 1), xf, yf, mirror, rotation);
+        // Don't draw outline below. We don't want to obscure the ground.
+    }
+    cb.draw(loc, xf, yf, mirror, rotation);
     drawFlame(&this);
 }
 
