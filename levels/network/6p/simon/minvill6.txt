@@ -1,4 +1,4 @@
-$BUILT 2014-01-13 01:12:52
+$BUILT 2017-10-06 09:53:35
 $AUTHOR Simon
 $ENGLISH Mining Village 6P
 
@@ -12,20 +12,16 @@ $ENGLISH Mining Village 6P
 #INITIAL 70
 #REQUIRED 20
 #SPAWN_INTERVAL 28
-#SPAWN_INTERVAL_FAST 4
 
 #WALKER 35
-#JUMPER 35
 #EXPLODER2 35
 #BLOCKER 5
 #BUILDER 60
 #BASHER 35
 #MINER 35
 #DIGGER 5
+#JUMPER 35
 #BATTER 5
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 
 :matt/winter/Hatch.H: 16 392
 :matt/winter/Hatch.H: 560 600 r
@@ -54,17 +50,17 @@ $ENGLISH Mining Village 6P
 :matt/winter/05: 96 112
 :matt/winter/16: 96 264
 :matt/winter/10: 104 336
+:matt/winter/09a: 212 376
 :matt/winter/05: 112 368
 :matt/winter/04: 152 400
-:matt/winter/10: 248 376 rr
+:matt/winter/10: 248 374 rr
 :matt/winter/04: 184 232
 :matt/winter/05: 144 128 rr
 :matt/winter/04: 232 408 rr
-:matt/winter/04: 320 432 f
 :matt/winter/04: 176 136
+:matt/winter/07: 296 348 f
 :matt/winter/10: 264 248
 :matt/winter/04: 408 232
-:matt/winter/10: 312 176 rr
 :matt/winter/04: 256 136
 :matt/winter/04: 400 472 f
 :matt/winter/10: 160 512 f
@@ -73,21 +69,27 @@ $ENGLISH Mining Village 6P
 :matt/winter/10: 296 744
 :matt/winter/05: 96 536
 :matt/winter/16: 96 688
+:matt/winter/07: 316 756 f
 :matt/winter/10: 104 760
 :matt/winter/05: 112 792
 :matt/winter/04: 152 824
+:matt/winter/09a: 222 798
 :matt/winter/10: 248 800 rr
 :matt/winter/04: 184 656
 :matt/winter/05: 144 552 rr
-:matt/winter/04: 232 832 rr
+:matt/winter/04: 226 832 rr
 :matt/winter/04: 320 16 f
-:matt/winter/04: 176 560
+:matt/winter/09a: 248 548
+:matt/winter/04: 256 560
 :matt/winter/10: 264 672
 :matt/winter/04: 408 656
+:matt/winter/07: 416 688 f
 :matt/winter/10: 312 600 rr
-:matt/winter/04: 256 560
 :matt/winter/04: 400 56 f
+:matt/winter/07: 236 192 f
 :matt/winter/10: 160 96 f
+:matt/winter/07: 190 102 f
+:matt/winter/07: 442 604 f
 :matt/winter/10: 312 528
 :matt/winter/05: 464 496 rr
 :matt/winter/05: 464 104 rr
@@ -115,15 +117,22 @@ $ENGLISH Mining Village 6P
 :matt/winter/10: 104 1176
 :matt/winter/05: 112 1208
 :matt/winter/04: 152 1240
+:matt/winter/07: 366 62 f
+:matt/winter/09a: 300 1210
 :matt/winter/10: 248 1216 rr
+:matt/winter/07: 218 1192 f
 :matt/winter/04: 184 1072
 :matt/winter/05: 144 968 rr
 :matt/winter/04: 232 1248 rr
+:matt/winter/07: 184 1096 f
 :matt/winter/04: 176 976
 :matt/winter/10: 264 1088
 :matt/winter/04: 408 1072
+:matt/winter/07: 428 1116 f
 :matt/winter/10: 312 1016 rr
 :matt/winter/04: 256 976
+:matt/winter/07: 314 1008 f
+:matt/winter/09a: 370 910
 :matt/winter/10: 312 944
 :matt/winter/05: 464 912 rr
 :matt/winter/05: 464 1048 rr
@@ -131,3 +140,10 @@ $ENGLISH Mining Village 6P
 :geoo/steel/dark_32x32o.S: 576 1112
 :geoo/steel/dark_48x32o.S: 0 1128
 :geoo/steel/dark_48x32o.S: 48 1128
+:matt/winter/07: 208 688 f
+:matt/winter/04: 176 560
+:matt/winter/07: 348 538 f
+:matt/winter/04: 304 432 frrr
+:matt/winter/07: 426 282 f
+:matt/winter/09a: 350 150
+:matt/winter/10: 314 176 rr
