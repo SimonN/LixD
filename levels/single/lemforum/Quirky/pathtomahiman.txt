@@ -1,12 +1,10 @@
-$BUILT 2017-07-31 00:09:40
+$BUILT 2017-10-07 14:44:07
 $AUTHOR M. Zurlinden/mobius/geoo
 $ENGLISH Path to Mahiman
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 398
-#START_X 0
-#START_Y -20
 
 #INITIAL 1
 #REQUIRED 1
@@ -234,8 +232,8 @@ $END_TILE_GROUP
 :Group-0: 330 66 frrr
 :Group-0: 306 66 f
 :Group-0: 330 66 f
-:Group-0: 354 90 r
 :Group-0: 354 114 r
+:Group-0: 354 138 r
 :Group-0: 162 354 rr
 :Group-1: 90 114 r
 :Group-1: 90 186 r

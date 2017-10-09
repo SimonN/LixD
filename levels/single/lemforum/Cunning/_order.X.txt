@@ -1,13 +1,13 @@
 lix.txt
 undertherainbow.txt
 wreckofthehesp.txt
-therainbowroad.txt
+exitstageright.txt
 lixcannon.txt
 tapestry.txt
 labyrinth.txt
 leapoffaith.txt
 breackout.txt
-exitstageright.txt
+therunaround.txt
 babylonfading.txt
 cryforme.txt
 itsalongwayup.txt
