@@ -1,6 +1,6 @@
-temporaldisrupti.txt
-bangarangpeter.txt
-justanotherwinte.txt
+loopback.txt
+thestockade.txt
+astoughasyouwant.txt
 letmypeoplego.txt
 ergonomicallyter.txt
 buildmeupbutterc.txt
@@ -16,6 +16,7 @@ itdoesntseemtofit.txt
 earthcapade.txt
 quarantine.txt
 thetorturechamber.txt
+quotethatsanasty.txt
 hateleadstosuffe.txt
 headtothesouthpo.txt
 towertension.txt
@@ -33,5 +34,5 @@ thequeenmaidpeas.txt
 factor31.txt
 hellodarknessmyo.txt
 speechless.txt
-endwithabang.txt
 sandinyoureyes.txt
+endwithabang.txt

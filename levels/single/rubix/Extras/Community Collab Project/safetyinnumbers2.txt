@@ -1,0 +1,546 @@
+$BUILT 2017-10-10 03:16:43
+$AUTHOR Proxima
+$ENGLISH Safety in Numbers
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1280
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+
+#INITIAL 72
+#REQUIRED 71
+#SPAWN_INTERVAL 32
+
+#WALKER 2
+#CLIMBER 7
+#FLOATER 2
+#EXPLODER 1
+#BUILDER 7
+#PLATFORMER 2
+#BASHER 1
+#MINER 7
+#JUMPER 1
+
+:matt/earth/Hatch.H: 1104 64 r
+
+:proxima/tile/goal.G: 880 304
+
+:simon/water.W: 928 64
+:simon/water.W: 944 64
+:simon/water.W: 1168 112
+:simon/water.W: 1200 112
+:geoo/construction/sawblade.F: 1040 176
+:matt/underworld/Lava.W: 144 152
+:matt/underworld/Lava.W: 160 152
+:matt/underworld/Lava.W: 32 152
+
+:matt/earth/15: 1244 102 rrr
+:matt/earth/02: 1008 -16 rrr
+:matt/earth/12: 982 10
+:matt/earth/05: 992 -16 rrr
+:geoo/abstract/cvblocks/020: 1216 224
+:matt/underworld/09a: 233 3 rr
+:geoo/construction/stairsbrick_ru_32: 152 216
+:geoo/construction/stairsbrick_ru_32: 216 208
+:geoo/construction/fence_rust_32x32: 368 208
+:geoo/construction/fence_rust_32x32: 32 368
+:geoo/construction/stairsbrick_ru_32: 24 304
+:geoo/construction/stairsbrick_ru_32: 24 280
+:geoo/construction/fence_rust_32x32: 288 240
+:geoo/construction/fence_rust_32x32: 256 256
+:geoo/construction/fence_rust_32x32: 224 272
+:geoo/construction/fence_rust_32x32: 192 288
+:geoo/construction/fence_rust_32x32: 160 304
+:geoo/construction/fence_rust_32x32: 128 320
+:geoo/construction/fence_rust_32x32: 288 256
+:geoo/construction/fence_rust_32x32: 256 272
+:geoo/construction/fence_rust_32x32: 224 288
+:geoo/construction/fence_rust_32x32: 192 304
+:geoo/construction/fence_rust_32x32: 160 320
+:geoo/construction/fence_rust_32x32: 128 336
+:geoo/construction/fence_rust_32x32: 96 336
+:geoo/construction/fence_rust_32x32: 320 240
+:geoo/construction/wall/small_brick1: 208 368
+:geoo/construction/wall/small_brick1: 240 352
+:geoo/construction/wall/small_brick1: 272 336
+:geoo/construction/wall/small_brick1: 304 320
+:geoo/construction/concrete/008h: 224 360
+:geoo/construction/concrete/008h: 240 368
+:geoo/construction/concrete/008h: 272 352
+:geoo/construction/concrete/008h: 256 344
+:geoo/construction/concrete/008h: 288 328
+:geoo/construction/concrete/008h: 304 336
+:geoo/construction/wall/small_brick1: 336 304
+:geoo/construction/concrete/008h: 320 312
+:geoo/construction/concrete/008h: 336 320
+:geoo/construction/fence_rust_32x32: 320 224
+:geoo/construction/fence_rust_32x32: 352 224
+:geoo/construction/fence_rust_32x32: 96 352
+:geoo/construction/fence_rust_32x32: 64 352
+:geoo/construction/wall/small_brick1: 368 288
+:geoo/construction/concrete/008h: 192 376
+:geoo/construction/concrete/008h: 352 296
+:geoo/construction/concrete/008h: 368 304
+:geoo/construction/concrete/008h: 384 280
+:geoo/construction/stairsbrick_ru_32: 88 248
+:geoo/construction/stairsbrick_ru_32: 88 272
+:geoo/construction/stairsbrick_ru_32: 152 240
+:geoo/construction/rod_steel/straight32.S: 112 296
+:geoo/construction/rod_steel/straight32.S: 112 304 rr
+:geoo/construction/rod_steel/straight32.S: 128 296
+:geoo/construction/rod_steel/straight32.S: 192 304 rr
+:geoo/construction/rod_steel/straight32.S: 224 296
+:geoo/construction/rod_steel/straight32.S: 288 304 rr
+:geoo/construction/rod_steel/straight32.S: 304 296
+:geoo/construction/rod_steel/straight32.S: 304 304 rr
+:geoo/construction/concrete/016a: 370 240 d
+:geoo/construction/concrete/016a: 338 256 d
+:geoo/construction/concrete/016a: 306 272 d
+:geoo/construction/concrete/016a: 274 288 d
+:geoo/construction/rod_steel/straight32.S: 288 296
+:geoo/construction/rod_steel/straight32.S: 256 296
+:geoo/construction/concrete/016a: 242 304 d
+:geoo/construction/rod_steel/straight32.S: 256 304 rr
+:geoo/construction/rod_steel/straight32.S: 224 304 rr
+:geoo/construction/concrete/016a: 210 320 d
+:geoo/construction/concrete/016a: 178 336 d
+:geoo/construction/concrete/016a: 146 352 d
+:geoo/construction/concrete/016a: 114 368 d
+:geoo/construction/concrete/016d: 318 224 d
+:geoo/construction/concrete/016d: 286 240 d
+:geoo/construction/concrete/016d: 254 256 d
+:geoo/construction/concrete/016d: 222 272 d
+:geoo/construction/concrete/016d: 190 288 d
+:geoo/construction/rod_steel/straight32.S: 192 296
+:geoo/construction/rod_steel/straight32.S: 160 296
+:geoo/construction/concrete/016d: 158 304 d
+:geoo/construction/rod_steel/straight32.S: 160 304 rr
+:geoo/construction/rod_steel/straight32.S: 128 304 rr
+:geoo/construction/concrete/016d: 126 320 d
+:geoo/construction/concrete/016d: 94 336 d
+:geoo/construction/concrete/016d: 62 352 d
+:geoo/construction/rod_steel/edge_rd.S: 112 296
+:geoo/construction/rod_steel/edge_rd.S: 112 304 rrr
+:geoo/construction/rod_steel/edge_rd.S: 328 304 rr
+:geoo/construction/rod_steel/edge_rd.S: 328 296 r
+:geoo/construction/concrete/016d: 46 368 d
+:geoo/construction/concrete/016a: 386 224 d
+:geoo/construction/concrete/016hd: 128 224
+:geoo/construction/concrete/016hd: 96 240
+:geoo/construction/concrete/016hd: 64 256
+:geoo/construction/concrete/016hd: 32 272
+:geoo/construction/concrete/016ha: 96 224
+:geoo/construction/concrete/016ha: 64 240
+:geoo/construction/concrete/016ha: 32 256
+:geoo/construction/wall/small_brickdiag_td: 304 368
+:geoo/construction/concrete/008h: 400 288
+:geoo/construction/wall/small_square: 400 272
+:geoo/construction/wall/small_brickdiag_tu: 272 368
+:geoo/construction/wall/small_brickdiag_td: 336 352
+:geoo/construction/wall/small_brickdiag_tu: 304 352
+:geoo/construction/wall/small_brickdiag_td: 368 336
+:geoo/construction/wall/small_brickdiag_tu: 336 336
+:geoo/construction/wall/small_brickdiag_tu: 368 320
+:geoo/construction/wall/small_square: 400 320
+:geoo/construction/wall/small_diag_td: 400 304
+:matt/earth/09: 882 126
+:matt/earth/03: 884 -14
+:matt/earth/27: 912 0
+:matt/earth/27: 882 6
+:matt/earth/08: 860 112
+:matt/earth/18: 832 100 frr
+:matt/earth/18: 840 112
+:matt/earth/02: 1042 106 frr
+:matt/earth/17: 880 112 rrr
+:matt/earth/08: 946 134
+:matt/earth/02: 880 128 rrr
+:matt/earth/14: 960 160
+:matt/earth/02: 848 114 rrr
+:matt/earth/18: 854 146
+:matt/earth/18: 880 160
+:matt/earth/18: 864 160
+:geoo/steel/dark_32x16o.S: 1200 96
+:matt/earth/06: 1056 128
+:matt/earth/10: 1050 112
+:matt/earth/06: 1130 16 rrr
+:matt/earth/04: 1136 -84
+:matt/earth/06: 1124 2
+:matt/underworld/01: 80 34
+:matt/underworld/05: 83 -13
+:matt/underworld/05: 17 -11
+:geoo/steel/32x32o.S: 16 0
+:matt/underworld/09a: 338 -2 rr
+:geoo/steel/32x32o.S: 400 0
+:geoo/steel/32x16o.S: 48 0
+:geoo/steel/32x16o.S: 80 0
+:geoo/steel/32x16o.S: 112 0
+:geoo/steel/32x16o.S: 144 0
+:geoo/steel/32x16o.S: 176 0
+:geoo/steel/32x16o.S: 208 0
+:matt/underworld/09a: 263 0 rr
+:geoo/steel/32x16o.S: 240 0
+:matt/underworld/09a: 299 -1 rr
+:geoo/steel/32x16o.S: 272 0
+:geoo/steel/32x16o.S: 304 0
+:geoo/steel/32x16o.S: 336 0
+:geoo/steel/32x16o.S: 368 0
+:matt/underworld/01: 80 160
+:matt/underworld/04: 1279 129
+:geoo/steel/32x16o.S: 48 176
+:geoo/steel/32x16o.S: 112 176
+:geoo/steel/32x16o.S: 144 176
+:matt/underworld/04: 272 148
+:matt/underworld/04: 291 139
+:matt/underworld/02: 208 96
+:geoo/steel/32x16o.S: 176 176
+:geoo/steel/32x16o.S: 208 176
+:matt/underworld/09b: 266 146
+:geoo/steel/32x16o.S: 240 176
+:geoo/steel/32x16o.S: 272 176
+:matt/underworld/09c: 298 148
+:matt/underworld/02: 336 96
+:matt/underworld/09c: 301 144
+:geoo/steel/32x16o.S: 304 176
+:geoo/steel/32x32o.S: 16 160
+:geoo/steel/32x32o.S: 400 160
+:geoo/steel/16x32o.S: 16 64
+:geoo/steel/16x32o.S: 16 128
+:geoo/steel/16x32o.S: 16 96
+:matt/underworld/00: 367 64
+:geoo/steel/16x32o.S: 432 64
+:geoo/steel/16x32o.S: 416 96
+:geoo/steel/32x32o.S: 16 208
+:geoo/steel/32x32o.S: 400 208
+:geoo/steel/32x16o.S: 80 208
+:geoo/steel/32x16o.S: 112 208
+:geoo/steel/32x16o.S: 144 208
+:geoo/steel/32x16o.S: 176 208
+:geoo/steel/32x16o.S: 208 208
+:geoo/steel/32x16o.S: 240 208
+:geoo/steel/32x16o.S: 272 208
+:geoo/steel/32x16o.S: 304 208
+:geoo/steel/32x16o.S: 48 384
+:geoo/steel/32x16o.S: 80 384
+:geoo/steel/32x16o.S: 112 384
+:geoo/steel/32x16o.S: 144 384
+:geoo/steel/32x16o.S: 176 384
+:geoo/steel/32x16o.S: 208 384
+:geoo/steel/32x16o.S: 240 384
+:geoo/steel/32x16o.S: 272 384
+:geoo/steel/32x16o.S: 304 384
+:geoo/steel/32x16o.S: 336 384
+:geoo/steel/32x16o.S: 368 384
+:geoo/steel/32x32o.S: 16 368
+:geoo/steel/32x32o.S: 400 368
+:geoo/steel/16x32o.S: 16 272
+:geoo/steel/16x32o.S: 16 304
+:geoo/steel/16x32o.S: 416 240
+:geoo/steel/16x32o.S: 416 304
+:geoo/steel/32x32o.S: 432 0
+:geoo/steel/32x32o.S: 816 0
+:geoo/steel/32x16o.S: 464 0
+:geoo/steel/32x16o.S: 496 0
+:geoo/steel/32x16o.S: 528 0
+:geoo/steel/32x16o.S: 560 0
+:geoo/steel/32x16o.S: 592 0
+:geoo/steel/32x16o.S: 624 0
+:geoo/steel/32x16o.S: 656 0
+:geoo/steel/32x16o.S: 688 0
+:geoo/steel/32x16o.S: 720 0
+:geoo/steel/32x16o.S: 752 0
+:geoo/steel/32x16o.S: 784 0
+:geoo/steel/32x16o.S: 496 176
+:geoo/steel/32x16o.S: 720 176
+:geoo/steel/32x16o.S: 752 176
+:geoo/steel/32x16o.S: 784 176
+:geoo/steel/32x32o.S: 432 160
+:geoo/steel/32x32o.S: 816 160
+:geoo/steel/16x32o.S: 432 96
+:geoo/steel/16x32o.S: 832 96
+:geoo/steel/16x32o.S: 832 128
+:geoo/steel/32x32o.S: 848 0
+:geoo/steel/32x32o.S: 1232 0
+:geoo/steel/32x16o.S: 880 0
+:geoo/steel/32x16o.S: 912 0
+:geoo/steel/32x16o.S: 944 0
+:geoo/steel/32x16o.S: 976 0
+:geoo/steel/32x16o.S: 1008 0
+:matt/earth/28: 1056 0 frr
+:geoo/steel/32x16o.S: 1040 0
+:geoo/steel/32x16o.S: 1072 0
+:geoo/steel/32x16o.S: 1104 0
+:geoo/steel/32x16o.S: 1136 0
+:geoo/steel/32x16o.S: 1168 0
+:matt/earth/28: 1200 0
+:geoo/steel/32x16o.S: 1200 0
+:geoo/steel/32x16o.S: 880 176
+:geoo/steel/32x16o.S: 912 176
+:geoo/steel/32x16o.S: 944 176
+:geoo/steel/32x16o.S: 1040 176
+:geoo/steel/32x16o.S: 1072 176
+:geoo/steel/32x16o.S: 1104 176
+:geoo/steel/32x16o.S: 1136 176
+:geoo/steel/32x16o.S: 1168 176
+:geoo/steel/32x16o.S: 1200 176
+:geoo/steel/32x32o.S: 1232 160
+:geoo/steel/16x32o.S: 848 96
+:geoo/steel/16x32o.S: 1248 32
+:geoo/steel/16x32o.S: 1248 128
+:geoo/steel/16x32o.S: 1248 96
+:geoo/steel/32x32o.S: 1232 208
+:geoo/steel/32x16o.S: 912 208
+:geoo/steel/32x16o.S: 944 208
+:geoo/steel/32x16o.S: 976 208
+:geoo/steel/32x16o.S: 1008 208
+:geoo/steel/32x16o.S: 1040 208
+:geoo/steel/32x16o.S: 1072 208
+:geoo/steel/32x16o.S: 1104 208
+:geoo/steel/32x16o.S: 1136 208
+:geoo/steel/32x16o.S: 1168 208
+:geoo/steel/32x16o.S: 1200 208
+:geoo/steel/32x16o.S: 880 384
+:geoo/steel/32x16o.S: 912 384
+:geoo/steel/32x16o.S: 944 384
+:geoo/steel/32x16o.S: 976 384
+:geoo/steel/32x16o.S: 1008 384
+:geoo/steel/32x16o.S: 1040 384
+:geoo/steel/32x16o.S: 1072 384
+:geoo/steel/32x16o.S: 1104 384
+:geoo/steel/32x16o.S: 1136 384
+:geoo/steel/32x16o.S: 1168 384
+:geoo/steel/32x16o.S: 1200 384
+:geoo/steel/32x32o.S: 848 368
+:geoo/steel/32x32o.S: 1232 368
+:geoo/steel/16x32o.S: 848 272
+:geoo/steel/16x32o.S: 848 336
+:geoo/steel/16x32o.S: 848 304
+:geoo/steel/16x32o.S: 1248 240
+:geoo/steel/16x32o.S: 1248 336
+:geoo/steel/16x32o.S: 1248 304
+:geoo/steel/32x32o.S: 432 208
+:geoo/steel/32x16o.S: 464 208
+:geoo/steel/32x16o.S: 496 208
+:geoo/steel/32x16o.S: 528 208
+:geoo/steel/32x16o.S: 560 208
+:geoo/steel/32x16o.S: 592 208
+:geoo/steel/32x16o.S: 624 208
+:geoo/steel/32x16o.S: 656 208
+:geoo/steel/32x16o.S: 688 208
+:geoo/steel/32x16o.S: 720 208
+:geoo/steel/32x16o.S: 752 208
+:geoo/steel/32x16o.S: 464 384
+:geoo/steel/32x16o.S: 496 384
+:geoo/steel/32x16o.S: 528 384
+:geoo/steel/32x16o.S: 560 384
+:geoo/steel/32x16o.S: 592 384
+:geoo/steel/32x16o.S: 624 384
+:geoo/steel/32x16o.S: 656 384
+:geoo/steel/32x16o.S: 688 384
+:geoo/steel/32x16o.S: 720 384
+:geoo/steel/32x16o.S: 752 384
+:geoo/steel/32x16o.S: 784 384
+:geoo/steel/32x32o.S: 432 368
+:geoo/steel/32x32o.S: 816 368
+:geoo/steel/16x32o.S: 432 240
+:geoo/steel/16x32o.S: 432 304
+:geoo/steel/16x32o.S: 832 272
+:geoo/steel/16x32o.S: 832 336
+:geoo/steel/16x32o.S: 832 304
+:geoo/steel/32x16o.S: 480 192
+:geoo/steel/32x16o.S: 512 192
+:geoo/steel/32x16o.S: 576 192
+:geoo/steel/32x16o.S: 544 192
+:geoo/steel/32x16o.S: 640 192
+:geoo/steel/32x16o.S: 672 192
+:geoo/steel/32x16o.S: 736 192
+:geoo/steel/32x16o.S: 768 192
+:geoo/steel/32x16o.S: 832 224
+:geoo/steel/32x16o.S: 896 192
+:geoo/steel/32x16o.S: 928 192
+:geoo/steel/32x16o.S: 960 192
+:geoo/steel/32x16o.S: 1056 192
+:geoo/steel/32x16o.S: 1088 192
+:geoo/steel/32x16o.S: 1120 192
+:geoo/steel/32x16o.S: 1152 192
+:geoo/steel/32x16o.S: 128 192
+:geoo/steel/32x16o.S: 160 192
+:geoo/steel/32x16o.S: 192 192
+:geoo/steel/32x16o.S: 224 192
+:geoo/steel/32x16o.S: 256 192
+:geoo/steel/32x16o.S: 288 192
+:geoo/steel/32x16o.S: 320 192
+:geoo/steel/32x16o.S: 416 64 rrr
+:geoo/steel/32x16o.S: 32 192
+:geoo/steel/32x16o.S: 96 192
+:geoo/steel/32x16o.S: 1184 192
+:geoo/steel/32x16o.S: 1216 192
+:geoo/steel/32x16o.S: 1248 192
+:geoo/steel/32x16o.S: 0 192
+:geoo/steel/32x16o.S: 368 208
+:geoo/steel/32x16o.S: 336 176
+:geoo/steel/32x16o.S: 704 192
+:geoo/steel/32x16o.S: 592 208
+:geoo/steel/32x16o.S: 608 192
+:geoo/steel/32x16o.S: 624 176
+:geoo/steel/32x16o.S: 656 176
+:geoo/steel/32x16o.S: 688 176
+:geoo/steel/32x16o.S: 528 176
+:geoo/steel/32x16o.S: 560 176
+:geoo/steel/32x16o.S: 592 176
+:geoo/steel/32x16o.S: 432 32 rrr
+:geoo/steel/32x16o.S: 416 32 rrr
+:geoo/steel/16x32o.S: 832 240
+:geoo/steel/16x32o.S: 848 240
+:geoo/steel/dark_32x32o.S: 896 64
+:geoo/steel/dark_32x32o.S: 864 64
+:geoo/steel/dark_32x16o.S: 896 96 rr
+:geoo/steel/dark_32x16o.S: 928 96 rr
+:geoo/steel/dark_32x16o.S: 928 112 rr
+:geoo/steel/dark_32x16o.S: 960 112 rr
+:geoo/steel/dark_32x32o.S: 1056 80
+:geoo/steel/dark_32x16o.S: 1040 112 r
+:geoo/steel/dark_32x16o.S: 1040 80 r
+:geoo/steel/dark_32x16o.S: 992 64 r
+:geoo/steel/dark_16x16o.S: 992 96
+:geoo/steel/dark_16x16o.S: 992 112
+:geoo/steel/dark_32x16o.S: 1152 128 r
+:geoo/steel/dark_16x16o.S: 1152 160
+:geoo/steel/dark_16x16o.S: 1232 96
+:matt/earth/08: 862 114
+:matt/earth/09: 884 124 d
+:matt/earth/09: 896 128
+:matt/earth/09: 870 128
+:matt/earth/09: 874 116 d
+:geoo/sandstone/64x32: 752 144
+:geoo/sandstone/64x32: 496 144
+:geoo/sandstone/64x32: 560 144
+:geoo/sandstone/64x32: 624 144
+:geoo/sandstone/64x32: 688 144
+:geoo/sandstone/pillar_bottom_ext: 496 112
+:geoo/sandstone/pillar_bottom_ext: 576 112
+:geoo/sandstone/pillar_bottom_ext: 752 112
+:geoo/sandstone/pillar_bottom_ext: 672 112
+:geoo/sandstone/pillar_top: 512 48
+:geoo/sandstone/64x16: 496 128
+:geoo/sandstone/64x16: 560 128
+:geoo/sandstone/64x16: 624 128
+:geoo/sandstone/64x16: 688 128
+:geoo/sandstone/64x16: 752 128
+:geoo/sandstone/pillar_bottom: 512 80
+:geoo/sandstone/pillar_top: 592 48
+:geoo/sandstone/pillar_bottom: 592 80
+:geoo/sandstone/pillar_top: 688 48
+:geoo/sandstone/pillar_bottom: 688 80
+:geoo/sandstone/pillar_top: 768 48
+:geoo/sandstone/pillar_bottom: 768 80
+:geoo/sandstone/pillar_top_ext: 496 32
+:geoo/sandstone/pillar_top_ext: 576 32
+:geoo/sandstone/pillar_top_ext: 672 32
+:geoo/sandstone/pillar_top_ext: 752 32
+:geoo/sandstone/64x16: 496 16
+:geoo/sandstone/64x16: 560 16
+:geoo/sandstone/64x16: 624 16
+:geoo/sandstone/64x16: 688 16
+:geoo/sandstone/64x16: 752 16
+:geoo/sandstone/32x64: 640 96 d
+:geoo/sandstone/16x16: 816 144
+:geoo/sandstone/16x16: 816 128
+:geoo/sandstone/slopes/64x32rt: 688 144
+:geoo/sandstone/slopes/64x32lb: 688 144
+:geoo/sandstone/slopes/64x32rt: 560 144
+:geoo/sandstone/slopes/64x32lb: 560 144
+:proxima/tile/green2: 496 320
+:proxima/tile/green2: 496 256
+:proxima/tile/32.S: 560 256
+:proxima/tile/32.S: 560 288
+:proxima/tile/32.S: 560 352
+:proxima/tile/32.S: 624 224
+:proxima/tile/32.S: 624 256
+:proxima/tile/32.S: 624 320
+:proxima/tile/pink2: 704 240
+:proxima/tile/pink2: 768 304
+:proxima/tile/pink3: 768 240
+:proxima/tile/pink3: 704 304
+:geoo/steel/32x16o.S: 80 176
+:geoo/steel/32x16o.S: 64 192
+:geoo/steel/32x16o.S: 48 208
+:geoo/steel/32x16o.S: 384 192
+:geoo/steel/32x16o.S: 416 192
+:geoo/steel/32x16o.S: 448 192
+:geoo/steel/32x16o.S: 464 176
+:geoo/steel/16x32o.S: 432 272
+:geoo/steel/16x32o.S: 416 272
+:geoo/steel/32x16o.S: 800 192
+:geoo/steel/32x16o.S: 864 192
+:geoo/steel/32x16o.S: 880 208
+:geoo/steel/32x16o.S: 848 208
+:geoo/steel/32x16o.S: 784 208
+:geoo/steel/16x32o.S: 848 64
+:geoo/steel/16x32o.S: 832 64
+:geoo/steel/16x32o.S: 848 128
+:matt/underworld/00: 144 128
+:matt/underworld/00: 272 96
+:matt/underworld/09a: 206 92
+:matt/underworld/01: 80 128
+:matt/underworld/09b: 87 132 rr
+:matt/underworld/01: 336 64
+:matt/underworld/01: 208 16
+:matt/underworld/00: 112 66
+:matt/underworld/09c: 355 142
+:matt/underworld/00: 48 66
+:matt/underworld/09b: 95 132 rr
+:matt/underworld/09b: 348 115
+:matt/underworld/09c: 342 101
+:matt/underworld/09b: 340 70
+:geoo/abstract/cvblocks/035: 992 256
+:geoo/abstract/cvblocks/036: 928 256
+:geoo/abstract/cvblocks/037: 1056 256
+:geoo/abstract/cvblocks/045: 1040 288
+:geoo/abstract/cvblocks/045: 944 288
+:geoo/abstract/cvblocks/025: 864 336
+:geoo/abstract/cvblocks/025: 864 304
+:geoo/abstract/cvblocks/025: 1232 336
+:geoo/abstract/cvblocks/025: 1232 304
+:geoo/abstract/cvblocks/020: 880 368
+:geoo/abstract/cvblocks/020: 912 368
+:geoo/abstract/cvblocks/020: 1072 368
+:geoo/abstract/cvblocks/020: 1104 368
+:geoo/abstract/cvblocks/020: 1136 368
+:geoo/abstract/cvblocks/020: 1168 368
+:geoo/abstract/cvblocks/020: 1200 368
+:geoo/abstract/cvblocks/030: 1200 336
+:geoo/abstract/cvblocks/030: 1168 336
+:geoo/abstract/cvblocks/030: 1200 304
+:geoo/abstract/cvblocks/020: 1152 224
+:geoo/abstract/cvblocks/020: 1184 224
+:geoo/abstract/cvblocks/020: 1024 224
+:geoo/abstract/cvblocks/020: 1088 224
+:geoo/abstract/cvblocks/020: 1120 224
+:geoo/abstract/cvblocks/020: 928 224
+:geoo/abstract/cvblocks/020: 960 224
+:geoo/abstract/cvblocks/020: 992 224
+:geoo/abstract/cvblocks/020: 944 368
+:geoo/abstract/cvblocks/020: 864 224
+:geoo/abstract/cvblocks/020: 896 224
+:geoo/abstract/cvblocks/020: 976 368
+:geoo/abstract/cvblocks/020: 1008 368
+:geoo/abstract/cvblocks/020: 1040 368
+:geoo/abstract/cvblocks/020: 992 352
+:geoo/abstract/cvblocks/020: 1024 352
+:geoo/abstract/cvblocks/030: 1168 304
+:geoo/abstract/cvblocks/030: 1136 336
+:matt/steel/32x64.S: 1008 288
+:geoo/abstract/cvblocks/030: 1216 240
+:geoo/abstract/cvblocks/030: 1184 240
+:geoo/abstract/cvblocks/030: 896 240
+:geoo/abstract/cvblocks/030: 864 240
+:geoo/abstract/cvblocks/033: 1088 240
+:geoo/abstract/cvblocks/030: 1152 240
+:geoo/abstract/cvblocks/030: 1120 240
+:geoo/abstract/cvblocks/034: 928 240
+:geoo/abstract/cvblocks/020: 1056 224
+:matt/bricks/02: 1264 128 rrrd
+:matt/bricks/02: 1264 64 rrrd
+:matt/bricks/02: 1264 128 rrrd
+:matt/bricks/02: 1264 64 rrrd

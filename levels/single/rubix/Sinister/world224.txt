@@ -1,6 +1,6 @@
 $BUILT 2016-09-11 17:15:37
 $AUTHOR Rubix
-$ENGLISH World 2-30
+$ENGLISH World 2-24
 
 $HINT_ENGLISH Yes, its like you are playing a mario brothers game.
 
