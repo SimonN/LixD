@@ -2,6 +2,7 @@ module menu.browser.single;
 
 import std.algorithm;
 import std.format;
+import std.conv;
 
 import basics.globals;
 import basics.user;
@@ -23,6 +24,7 @@ private:
     TextButton _newLevel;
     TextButton _exportImage;
     LabelTwo _by, _save, _resultSaved, _resultSkills;
+    Label _exportImageDone1, _exportImageDone2;
     Element[] _hideWhenNullLevelHighlit;
 
 public:
@@ -48,16 +50,32 @@ public:
             basics.user.singleLastLevel = currentDir.guaranteedDirOnly;
             _gotoEditorNewLevel = true;
         };
-        _exportImage = new TextButton(new Geom(infoX, 60, infoXl/2, 40,
-            From.BOTTOM_LEFT), Lang.browserExportImage.transl);
+
+        {
+            auto g = new Geom(infoX - this.xlg/2 + infoXl/4,
+                                60, infoXl/2, 40, From.BOTTOM);
+            _exportImage = new TextButton(new Geom(g),
+                Lang.browserExportImage.transl);
+            g.yl = 20;
+            g.y += 20;
+            _exportImageDone1 = new Label(new Geom(g),
+                Lang.browserExportImageDone.transl);
+            g.y -= 20;
+            _exportImageDone2 = new Label(new Geom(g));
+        }
         _exportImage.hotkey = basics.user.keyMenuExport;
         _exportImage.onExecute = () {
             assert (fileRecent !is null);
             assert (levelRecent !is null);
-            levelRecent.exportImage(fileRecent);
+            Filename imgFn = Level.exportImageFilename(fileRecent);
+            levelRecent.exportImageTo(imgFn);
             _exportImage.hide();
+            _exportImageDone1.show();
+            _exportImageDone2.show();
+            _exportImageDone2.text = imgFn.stringzForWriting.to!string;
             hardware.sound.playLoud(Sound.DISKSAVE);
         };
+
         _delete = new TextButton(new Geom(infoX, 20,
             infoXl/4, 40, From.BOTTOM_LEFT), Lang.browserDelete.transl);
         _delete.hotkey = basics.user.keyMenuDelete;
@@ -76,7 +94,8 @@ public:
             infoXl - savedXl, 20), Lang.browserInfoResultSkills.transl);
 
         _hideWhenNullLevelHighlit = [ _edit, _delete, _exportImage,
-            _by, _save, _resultSaved, _resultSkills ];
+            _by, _save, _resultSaved, _resultSkills,
+            _exportImageDone1, _exportImageDone2];
         _hideWhenNullLevelHighlit.each!(la => addChild(la));
         addChildren(_newLevel);
     }
@@ -97,8 +116,11 @@ protected:
     override void onFileHighlight(Filename fn)
     {
         assert (_edit);
-        _levelRecent = fn is null ? null : new Level(fileRecent);
         _hideWhenNullLevelHighlit.each!(e => e.shown = fn !is null);
+        _exportImageDone1.hide();
+        _exportImageDone2.hide();
+
+        _levelRecent = fn is null ? null : new Level(fileRecent);
         previewLevel(_levelRecent);
         if (! _levelRecent)
             return;

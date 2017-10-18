@@ -10,8 +10,6 @@ $commonYes                    Ja
 $commonNo                     Nein
 $commonBack                   Zurück
 $commonExit                   Beenden
-$commonDirParent             ..
-$commonDirFlipPage          (weitere...)
 $commonVersion                Version
 
 // Browser
@@ -25,9 +23,9 @@ $browserNewLevel              Level erstellen
 $browserReplay                Abspielen
 $browserDelete                Löschen
 $browserSearch                Suchen
-$browserExtract               Level extrah.
-$browserExportImage          Bild export.
-$browserExportImageDone     Fertig.
+$browserExtract              Level extrahieren
+$browserExportImage          Bild exportieren
+$browserExportImageDone      Liegt in:
 
 $browserMkdirTitle          Ordner erstellen
 $browserMkdirPleaseEnter    Name des neuen Ordners:

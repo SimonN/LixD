@@ -63,7 +63,12 @@ protected:
         _replay = rep;
         _level  = lev;
         _saveReplayDone = new Label(new Geom(_saveReplay.geom));
-        _saveReplayDone.text = Lang.browserExportImageDone.transl;
+        _saveReplayDone.text = () {
+            import std.conv;
+            import basics.globals;
+            // This isn't particularly good, maybe return proper file
+            return dirReplayManual.stringzForWriting.to!string;
+        }();
         _saveReplayDone.hide();
         _saveReplay.onExecute = () {
             assert (_replay !is null);

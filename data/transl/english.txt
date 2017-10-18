@@ -14,8 +14,6 @@ $commonYes                  Yes
 $commonNo                   No
 $commonBack                 Back
 $commonExit                 Exit
-$commonDirParent            ..
-$commonDirFlipPage          (more...)
 $commonVersion              Version
 
 // level browsers
@@ -30,8 +28,8 @@ $browserReplay              Replay
 $browserDelete              Delete
 $browserSearch              Search
 $browserExtract             Extract level
-$browserExportImage        Export image
-$browserExportImageDone    Done.
+$browserExportImage         Export image
+$browserExportImageDone     Exported to:
 
 $browserMkdirTitle          Create Folder
 $browserMkdirPleaseEnter    Name of new folder:

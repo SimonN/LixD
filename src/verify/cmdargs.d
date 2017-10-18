@@ -38,7 +38,7 @@ public void processFileArgsForRunmode(Cmdargs cmdargs)
     else if (cmdargs.exportImages) {
         cmdargs.dispatch((Filename fn) {
             auto l = new Level(fn);
-            l.exportImage(fn);
+            l.exportImageTo(Level.exportImageFilename(fn));
             maybeGC();
         });
     }

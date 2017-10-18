@@ -40,8 +40,6 @@ enum Lang {
     commonNo,
     commonBack,
     commonExit,
-    commonDirParent,
-    commonDirFlipPage,
     commonVersion,
 
     // browsers

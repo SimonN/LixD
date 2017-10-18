@@ -85,12 +85,6 @@ package Torbit implCreatePreview(
     return ret;
 }
 
-package Filename exportImageFilename(in Filename levelFilename)
-{
-    return new VfsFilename("%s%s.png".format(dirExportImages.rootless,
-                                             levelFilename.fileNoExtNoPre));
-}
-
 package void implExportImage(in Level level, in Filename fnToSaveImage)
 in {
     assert (level);

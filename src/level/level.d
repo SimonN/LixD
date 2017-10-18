@@ -1,10 +1,12 @@
 module level.level;
 
+import std.format;
 import enumap;
 
 public import net.ac;
 public import level.save;
 
+import basics.globals;
 import basics.topology;
 import file.date;
 import file.filename;
@@ -144,11 +146,19 @@ public:
 
     void saveToFile (in Filename fn) const { implSaveToFile (this, fn); }
 
-    // Call this with on a level with the level's filename.
-    // package exportImageFilename will mangle that to a PNG in the export dir.
-    void exportImage(in Filename fn) const
+    // Given a level filename, returns the filename where the level-to-image
+    // exporter would write the exported image.
+    static Filename exportImageFilename(in Filename levelFilename)
     {
-        implExportImage(this, exportImageFilename(fn));
+        return new VfsFilename("%s%s.png".format(dirExportImages.rootless,
+                                levelFilename.fileNoExtNoPre));
+    }
+
+    // You should probably call this like:
+    // ourLevel.exportImageTo(exportImageFilename(ourLevelFilename));
+    void exportImageTo(in Filename fn) const
+    {
+        implExportImage(this, fn);
     }
 
     int teamIDforGadget(int gadgetID) const
