@@ -48,24 +48,13 @@ public:
     Torbit land;
     Phymap lookup;
 
-    this(this) { this.opAssign(this); }
+    this(this) { opAssignImpl(this); }
 
     ref RawGameState opAssign(ref const(RawGameState) rhs)
     {
         if (this is rhs)
             return this;
-        this.copyValuesArraysFrom(rhs);
-        if (! land) {
-            land = rhs.land.clone();
-        }
-        else if (land.matches(rhs.land))
-            land.copyFrom(rhs.land);
-        else {
-            land.dispose();
-            land = rhs.land.clone();
-        }
-        lookup = rhs.lookup.clone();
-        return this;
+        return opAssignImpl(rhs);
     }
 
     ~this()
@@ -134,6 +123,26 @@ public:
     }
 
 private:
+    ref RawGameState opAssignImpl(ref const(RawGameState) rhs)
+    {
+        copyValuesArraysFrom(rhs);
+        copyLandFrom(rhs);
+        lookup = rhs.lookup ? rhs.lookup.clone() : null;
+        return this;
+    }
+
+    void copyLandFrom(ref const(RawGameState) rhs)
+    {
+        if (land && land.matches(rhs.land)) {
+            land.copyFrom(rhs.land);
+        }
+        else {
+            if (land)
+                land.dispose();
+            land = rhs.land ? rhs.land.clone() : null;
+        }
+    }
+
     void copyValuesArraysFrom(ref const(RawGameState) rhs)
     {
         overtimeAtStartInPhyus = rhs.overtimeAtStartInPhyus;
