@@ -10,9 +10,11 @@ import std.range;
 import std.typecons;
 import core.memory; // GC.collect();
 
+import basics.alleg5 : OutOfVramException;
 import basics.help; // clone(T[]), a deep copy for arrays
 import game.replay;
 import game.model.state;
+import file.log;
 import hardware.tharsis;
 import net.repdata;
 
@@ -49,6 +51,8 @@ public:
         assert (! _auto[0].refCountedStore.isInitialized);
     }
 
+    // This throws if we can't allocate VRAM for the zero state.
+    // Letting that exception fly out of main is fine for the zero state.
     void saveZero(in GameState s) { _zero = s.clone(); }
 
     @property Phyu zeroStatePhyu() const {
@@ -58,12 +62,16 @@ public:
 
     void saveUser(in GameState s, in Replay r)
     {
-        _userState  = s.clone();
-        assert (r);
-        if (_userReplay is null
-            || ! r.firstDifference(_userReplay).thisBeginsWithRhs)
-            // r has info that _userReplay hasn't, store r
-            _userReplay = r.clone();
+        try {
+            _userState = s.clone();
+            assert (r);
+            if (_userReplay is null
+                || ! r.firstDifference(_userReplay).thisBeginsWithRhs)
+                // r has info that _userReplay hasn't, store r
+                _userReplay = r.clone();
+        }
+        catch (OutOfVramException e)
+            log(e.msg);
     }
 
     bool userStateExists() const { return _userReplay !is null; }
@@ -133,16 +141,23 @@ public:
         // array indices 0 and 1. The next one has array indices 2 and 3, ...
         for (int pair = pairsToKeep - 1; pair >= 0; --pair) {
             immutable int umfp = updateMultipleForPair(pair);
-            if (s.update % umfp == 0) {
-                int whichOfPair = (s.update / umfp) % 2;
-                if (pair > 0)
-                    // Make a shallow copy of the more-frequently-hit state:
-                    // We treat states inside PhysicsCache like immutable.
-                    // Only clone when we return to outside of PhysicsCache.
-                    _auto[2*pair + whichOfPair] = _auto[2*(pair-1)];
-                else
-                    // Make a hard copy of the current state.
-                    _auto[0 + whichOfPair] = s.clone();
+            if (s.update % umfp != 0)
+                continue;
+
+            int whichOfPair = (s.update / umfp) % 2;
+            if (pair > 0)
+                // Make a shallow copy of the more-frequently-hit state:
+                // We treat states inside PhysicsCache like immutable.
+                // Only clone when we return to outside of PhysicsCache.
+                _auto[2*pair + whichOfPair] = _auto[2*(pair-1)];
+            else {
+                try {
+                    _auto[0 + whichOfPair] = s.clone(); // deep copy of current
+                }
+                catch (OutOfVramException e) {
+                    _auto[0 + whichOfPair] = GameState.init;
+                    log(e.msg);
+                }
             }
         }
     }

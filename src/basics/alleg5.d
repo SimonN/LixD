@@ -18,6 +18,16 @@ alias ALLEGRO_BITMAP* Albit;
 alias ALLEGRO_COLOR   Alcol;
 alias const(ALLEGRO_FONT)* Alfont;
 
+class OutOfVramException : Exception
+{
+    this(in int xl, in int yl, in int flags)
+    {
+        import std.format;
+            super(format!("Out of video memory. Can't create bitmap"
+                        ~ " of size %dx%d with flags %d.")(xl, yl, flags));
+    }
+}
+
 void initializeInteractive()
 {
     initOrThrow();
@@ -215,11 +225,9 @@ private Albit albitCreateWithFlags(in int xl, in int yl, in int flags)
         al_set_new_bitmap_flags(_defaultNewBitmapFlags);
 
     Albit ret = al_create_bitmap(xl, yl);
-    if (! ret) {
-        import std.format;
-        throw new Exception(format!("Out of video memory. Can't create bitmap"
-            ~ " of size %dx%d with flags %d.")(xl, yl, flags));
-    }
+    if (! ret)
+        throw new OutOfVramException(xl, yl, flags);
+
     assert (al_get_bitmap_width (ret) == xl);
     assert (al_get_bitmap_height(ret) == yl);
     _totalPixelsAllocated += vramConsumption(ret);
