@@ -150,25 +150,36 @@ private:
 // We can search either for filename or for title.
 // This's constructor throws on bad UTF-8 in the metadata.
 private struct CachedFilename {
+private:
+    string titleAllLower;
+    string fnAllLower;
+
+public:
     Filename result;
     string titleDisplay;
-    string titleSearchable;
-    string fnSearchable;
 
-    this(in Filename fn) // this throws on bad UTF-8 in the metadata!
+    // Constructor throws on bad UTF-8 in the metadata!
+    this(in Filename fn)
     {
         result = fn;
-        fnSearchable = fn.rootlessNoExt.toLower;
-        auto metadata = new LevelMetaData(fn);
+
+        // We cut off the prefix that should be common to all found files
+        fnAllLower = fn.rootlessNoExt.toLower;
+        if (fnAllLower.startsWith(dirLevels.rootless))
+            fnAllLower = fnAllLower[dirLevels.rootless.length .. $];
+
+        auto metadata = new LevelMetaData(fn); // throws on bad UTF-8
         titleDisplay = metadata.name;
-        titleSearchable = titleDisplay.toLower;
+        titleAllLower = titleDisplay.toLower;
     }
 
     bool matches(R)(R rangeOfWords) const pure
     {
         return ! rangeOfWords.save.empty
             && rangeOfWords.all!(word =>
-                fnSearchable.canFind(word) || titleSearchable.canFind(word));
+                    fnAllLower.canFind(word)
+                ||  titleAllLower.canFind(word)
+            );
     }
 }
 
