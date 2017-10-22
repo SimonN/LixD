@@ -1,6 +1,28 @@
 Version history
 ===============
 
+0.9.2
+-----
+
+2017-10-22
+
+Rubix reordered his singleplayer levels and added the Community Collab
+Project: 4 levels in single/rubix/Extras.
+
+lemforum: Path to Mahiman, removed indirect jump backroute. Runaround up to
+Cunning, Raindow Road down to Quirky.
+
+Fix #252: Level search queries won't match the prefix 'levels/' in the
+filenames because all levels would match.
+
+Fix #256: When you export levels to images or save replays manually, the button replacement will not say "done", but instead tell you the filename.
+
+Fix #254: When you run out of VRAM during a level, the game won't crash, but
+instead stop making internal savestates. This won't display a warning, it will
+merely log. Recalculation due to incoming network packets will take longer,
+but that's better than crashing. The game remains VRAM-hungry and this
+solution is not ideal.
+
 0.9.1
 -----
 
