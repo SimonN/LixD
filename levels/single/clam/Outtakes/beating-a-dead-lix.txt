@@ -1,0 +1,82 @@
+$BUILT 2015-08-05 06:38:51
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Beating a dead Lix
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 380
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 2
+#REQUIRED 2
+#SPAWN_INTERVAL 4
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#RUNNER 1
+#JUMPER 4
+#BATTER 4
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/carnival/Hatch.H: 96 152
+
+:matt/carnival/Goal.G: 544 144
+
+:geoo/construction/sawblade_small.F: 176 240
+:geoo/construction/sawblade_small.F: 304 240
+:geoo/construction/sawblade_small.F: 432 240
+:geoo/construction/sawblade_small.F: 48 240
+:geoo/construction/sawblade_medium.F: 544 240
+:geoo/construction/sawblade_medium.F: 576 208
+:geoo/construction/sawblade_medium.F: 576 272
+:geoo/construction/sawblade_medium.F: 512 272
+:geoo/construction/sawblade_medium.F: 512 208
+:geoo/construction/sawblade_small.F: 560 304
+:geoo/construction/sawblade_small.F: 608 256
+:geoo/construction/sawblade_small.F: 560 208
+:geoo/construction/sawblade_small.F: 512 256
+:geoo/construction/sawblade_small.F: 64 256
+:geoo/construction/sawblade_small.F: 192 256
+
+:matt/carnival/39: 176 240
+:matt/carnival/42: 304 240
+:matt/carnival/41: 432 240
+:matt/carnival/24: 128 272
+:matt/carnival/24: 192 272
+:matt/carnival/27: 256 272
+:matt/carnival/27: 320 272
+:matt/carnival/25: 64 272
+:matt/carnival/25: 0 272
+:matt/carnival/26: 384 272
+:matt/carnival/26: 448 272
+:matt/carnival/40: 48 240
+:matt/carnival/40: 512 208
+:matt/carnival/40: 544 240
+:matt/carnival/40: 576 272
+:matt/carnival/40: 608 304
+:matt/carnival/39: 544 208
+:matt/carnival/39: 576 240
+:matt/carnival/39: 608 272
+:matt/carnival/39: 512 304
+:matt/carnival/41: 512 240
+:matt/carnival/41: 544 272
+:matt/carnival/41: 576 304
+:matt/carnival/41: 608 208
+:matt/carnival/42: 576 208
+:matt/carnival/42: 608 240
+:matt/carnival/42: 512 272
+:matt/carnival/42: 544 304

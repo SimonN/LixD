@@ -1,0 +1,58 @@
+$BUILT 2015-08-05 06:49:14
+$AUTHOR Clam Spammer
+$GERMAN 
+$ENGLISH Long Jump
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 96
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 5
+#REQUIRED 1
+#SPAWN_INTERVAL 18
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 10
+#EXPLODER2 10
+#BLOCKER 10
+#JUMPER 10
+
+:matt/carnival/Hatch.H: 32 64
+
+:matt/carnival/Goal.G: 480 112
+
+:matt/carnival/58: 384 176
+:matt/carnival/56: 0 176
+:matt/carnival/26: 0 208
+:matt/carnival/26: 64 208
+:matt/carnival/26: 128 208
+:matt/carnival/26: 192 208
+:matt/carnival/25: 384 208
+:matt/carnival/25: 448 208
+:matt/carnival/25: 512 208
+:matt/carnival/25: 576 208
+:matt/carnival/24: 0 272
+:matt/carnival/24: 64 272
+:matt/carnival/24: 128 272
+:matt/carnival/24: 192 272
+:matt/carnival/27: 384 272
+:matt/carnival/27: 448 272
+:matt/carnival/27: 512 272
+:matt/carnival/27: 576 272
+:matt/carnival/24: 0 336
+:matt/carnival/24: 64 336
+:matt/carnival/24: 128 336
+:matt/carnival/24: 192 336
+:matt/carnival/27: 384 336
+:matt/carnival/27: 448 336
+:matt/carnival/27: 512 336
+:matt/carnival/27: 576 336
+:geoo/steel/16x16o.S: 240 160
+:geoo/steel/16x16o.S: 0 160

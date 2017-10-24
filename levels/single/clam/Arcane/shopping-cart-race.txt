@@ -1,0 +1,89 @@
+$BUILT 2017-10-25 02:56:42
+$AUTHOR Clam
+$ENGLISH Shopping Cart Race
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 448
+#TORUS_X 0
+#TORUS_Y 1
+
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 90
+
+#WALKER 10
+#FLOATER 1
+#BUILDER 3
+#MINER 3
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 152 0
+
+:geoo/construction/Goal2.G: 8 16
+
+:geoo/construction/sawblade_small.F: 312 72
+:geoo/construction/sawblade_small.F: 327 98
+:geoo/construction/sawblade_small.F: 356 155
+:geoo/construction/sawblade_small.F: 371 184
+:geoo/construction/sawblade_small.F: 342 126
+:geoo/construction/sawblade_small.F: 384 214
+:geoo/construction/sawblade_small.F: 399 240
+:geoo/construction/sawblade_small.F: 412 271
+:geoo/construction/sawblade_small.F: 427 297
+:geoo/construction/sawblade_small.F: 440 325
+:geoo/construction/sawblade_small.F: 455 351
+:geoo/construction/sawblade_small.F: 470 378
+
+:geoo/construction/concrete/128: 8 272
+:geoo/construction/concrete/032v: 200 208
+:geoo/construction/concrete/032v: 264 336
+:geoo/construction/concrete/128: 136 272
+:geoo/construction/wall/big_128x64: 376 144
+:geoo/construction/wall/big_128x64: 504 272
+:geoo/construction/wall/big_128x64: 440 272
+:geoo/construction/wall/big_128x128: 504 80
+:geoo/construction/wall/big_128x64: 376 80
+:geoo/construction/wall/big_128x64: 504 208
+:geoo/construction/wall/big_128x64: 440 208
+:geoo/steel/dark_32x64o.S: 344 80
+:geoo/construction/concrete/032vb: 344 81 d
+:geoo/steel/dark_32x64o.S: 376 144
+:geoo/construction/concrete/032vb: 376 146 d
+:geoo/steel/dark_32x64o.S: 408 208
+:geoo/construction/concrete/032vb: 408 210 d
+:geoo/steel/dark_32x64o.S: 440 272
+:geoo/construction/concrete/032vb: 440 274 d
+:geoo/construction/wall/big_square: 408 144
+:geoo/construction/wall/big_square: 472 272
+:geoo/construction/wall/big_square: 600 112
+:geoo/construction/wall/big_square: 600 176
+:geoo/construction/wall/big_square: 600 240
+:geoo/construction/wall/big_square: 600 304
+:geoo/construction/concrete/064v: 8 144
+:geoo/construction/concrete/128: 72 144
+:geoo/steel/32x64o.S: 200 144
+:geoo/steel/32x64o.S: 232 208
+:geoo/steel/32x64o.S: 264 272
+:geoo/steel/32x64o.S: 296 336
+:geoo/construction/concrete/032vc: 200 142 d
+:geoo/construction/concrete/032vc: 232 206 d
+:geoo/construction/concrete/032vc: 264 270 d
+:geoo/construction/concrete/032vc: 296 334 d
+:geoo/construction/wall/big_128x64: 504 336
+:geoo/steel/dark_32x64o.S: 472 336
+:geoo/construction/concrete/032vb: 472 338 d
+:geoo/construction/concrete/064h: 8 80
+:geoo/construction/concrete/032v: 136 80
+:geoo/steel/32x64o.S: 168 80
+:geoo/construction/concrete/032vc: 168 78 d
+:geoo/steel/dark_16x32o.S: 376 112
+:geoo/steel/dark_16x32o.S: 408 176
+:geoo/steel/dark_16x32o.S: 440 240
+:geoo/steel/dark_16x32o.S: 472 304
+:geoo/steel/dark_16x32o.S: 504 368
+:geoo/steel/16x32o.S: 184 144
+:geoo/steel/16x32o.S: 152 80
+:geoo/steel/16x32o.S: 216 208
+:geoo/steel/16x32o.S: 248 272
+:geoo/steel/16x32o.S: 280 336

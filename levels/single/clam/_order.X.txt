@@ -1,0 +1,4 @@
+Humane/
+Arcane/
+Insane/
+Flingsane/

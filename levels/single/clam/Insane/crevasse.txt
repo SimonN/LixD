@@ -1,0 +1,116 @@
+$BUILT 2014-06-08 16:17:39
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Crevasse
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 127
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 17
+#SPAWN_INTERVAL 70
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#CLIMBER 4
+#FLOATER 10
+#RUNNER 2
+#EXPLODER 3
+#BUILDER 3
+#PLATFORMER 4
+#DIGGER 2
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: 180 -6
+
+:matt/winter/Goal.G: 388 48
+
+:matt/winter/14: 430 256
+:matt/winter/06: 352 272 rr
+:matt/winter/06: 352 224 rr
+:matt/winter/10: 478 96
+:matt/winter/17: 486 164
+:matt/winter/10: 526 -40
+:matt/winter/10: 550 32
+:matt/winter/10: 542 168
+:matt/winter/10: 478 240
+:matt/winter/10: 534 312
+:matt/winter/10: 390 320
+:matt/winter/04: 486 0
+:matt/winter/10: 72 -72 rrr
+:matt/winter/17: 96 120 rr
+:matt/winter/10: -32 -48
+:matt/winter/10: -32 104
+:matt/winter/10: 0 312
+:matt/winter/10: -16 240
+:matt/winter/10: -32 168
+:matt/winter/17: 128 224
+:matt/winter/14: 316 350
+:matt/winter/10: 128 312
+:matt/winter/00: 154 222
+:matt/winter/06: 352 32 rr
+:matt/winter/06: 352 96 rr
+:matt/winter/06: 352 160 rr
+:matt/winter/06: 380 144
+:matt/winter/06: 380 208
+:matt/winter/06: 380 272
+:matt/winter/06: 412 112 r
+:matt/winter/06: 476 128
+:matt/winter/06: 476 192
+:matt/winter/06: 168 0 rr
+:matt/winter/06: 168 64 rr
+:matt/winter/06: 168 128 rr
+:matt/winter/06: 168 192 rr
+:matt/winter/06: 168 256 rr
+:matt/winter/06: 168 320 rr
+:matt/winter/06: 168 336 rr
+:matt/winter/03: 202 334
+:matt/winter/13: 242 292
+:matt/winter/00: 192 272
+:matt/winter/13: 200 230
+:matt/winter/06: 272 0 r
+:matt/winter/06: 338 32 rrd
+:matt/winter/06: 338 96 rrd
+:matt/winter/06: 338 160 rrd
+:matt/winter/14: 275 144 frr
+:matt/winter/16: 248 144 frr
+:matt/winter/06: 394 144 rrd
+:matt/winter/06: 394 208 rrd
+:matt/winter/06: 394 272 rrd
+:matt/winter/16: 396 256
+:matt/winter/06: 248 256 rd
+:matt/winter/06: 268 256 rd
+:matt/winter/10: -96 -16
+:matt/winter/10: -80 40
+:matt/winter/10: -128 144
+:matt/winter/10: -104 304
+:matt/winter/10: -96 200
+:matt/winter/17: 494 -48
+:matt/winter/06: 476 256
+:matt/winter/06: 476 320
+:matt/winter/06: 476 336
+:matt/winter/06: 330 342
+:matt/winter/06: 346 342 d
+:geoo/steel/32x64o.S: 372 336
+:geoo/steel/32x64o.S: 240 192
+:geoo/steel/32x64o.S: 240 128
+:geoo/steel/32x64o.S: 240 64
+:geoo/steel/32x64o.S: 240 0
+:geoo/steel/64x32o.S: 272 224
+:geoo/steel/32x64o.S: 332 256
+:geoo/steel/32x32o.S: 332 224
+:geoo/steel/32x16o.S: 332 320
+:geoo/steel/32x32o.S: 336 0
+:geoo/steel/32x32o.S: 380 112
+:geoo/steel/32x32o.S: 460 112

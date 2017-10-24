@@ -1,0 +1,96 @@
+$BUILT 2015-08-07 07:29:17
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Bucket List
+
+#SIZE_X 640
+#SIZE_Y 896
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 128
+#BACKGROUND_GREEN 128
+#BACKGROUND_BLUE 255
+
+#SECONDS 0
+#INITIAL 40
+#REQUIRED 20
+#SPAWN_INTERVAL 45
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 10
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 10
+#BLOCKER 10
+#BUILDER 10
+#PLATFORMER 10
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#JUMPER 10
+#BATTER 10
+#CUBER 10
+
+:matt/beach/decor/sun.D: 32 8
+
+:matt/beach/Hatch.H: 208 24
+
+:matt/beach/goal.G: 272 808
+
+:matt/water.W: 0 864
+:matt/water.W: 32 864
+:matt/water.W: 576 864
+:matt/water.W: 608 864
+:matt/water.W: 48 864
+:matt/water.W: 560 864
+
+:matt/beach/daytime/03: 400 160 f
+:matt/beach/decor/shovel: 272 80
+:matt/beach/daytime/03: 302 160 f
+:matt/beach/daytime/03: 196 160 f
+:matt/beach/daytime/03: 96 158 f
+:matt/beach/decor/pail: 104 80
+:matt/beach/decor/pail: 448 80
+:matt/beach/decor/shovel: 112 256
+:matt/beach/daytime/03: 400 336 f
+:matt/beach/daytime/03: 302 336 f
+:matt/beach/daytime/03: 194 336 f
+:matt/beach/daytime/03: 96 336 f
+:matt/beach/daytime/03: 400 512 f
+:matt/beach/daytime/03: 302 512 f
+:matt/beach/daytime/03: 194 512 f
+:matt/beach/daytime/03: 96 512 f
+:matt/beach/daytime/03: 400 688 f
+:matt/beach/daytime/03: 302 688 f
+:matt/beach/daytime/03: 194 688 f
+:matt/beach/daytime/03: 96 688 f
+:matt/beach/decor/pail: 336 256
+:matt/beach/decor/pail: 216 432
+:matt/beach/decor/pail: 104 608
+:matt/beach/decor/pail: 448 608
+:matt/beach/decor/shovel: 498 784
+:matt/beach/daytime/03: 426 864 f
+:matt/beach/daytime/03: 306 864 f
+:matt/beach/daytime/03: 202 864 f
+:matt/beach/decor/shovel: 112 784
+:matt/beach/daytime/03: 82 864 f
+:matt/beach/daytime/03: 576 248
+:matt/beach/decor/beach ball: 608 224
+:matt/beach/daytime/03: -86 424 frr
+:matt/beach/decor/beach ball: 2 400
+:matt/beach/daytime/03: -86 776 frr
+:matt/beach/decor/beach ball: 2 752
+:matt/beach/daytime/03: 576 600
+:matt/beach/decor/beach ball: 608 576
+:geoo/steel/32x32o.S: 80 864
+:geoo/steel/32x32o.S: 528 864
+:matt/beach/daytime/03: -86 248 frr
+:matt/beach/decor/beach ball: 2 224
+:matt/beach/daytime/03: -86 600 frr
+:matt/beach/decor/beach ball: 2 576
+:matt/beach/daytime/03: 576 424
+:matt/beach/decor/beach ball: 608 400
+:matt/beach/daytime/03: 576 776
+:matt/beach/decor/beach ball: 608 752
+:geoo/steel/16x32o.S: 560 864 d

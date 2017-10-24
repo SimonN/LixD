@@ -1,0 +1,85 @@
+$BUILT 2014-06-08 15:46:57
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Throw the Switch
+
+#SIZE_X 640
+#SIZE_Y 384
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y -36
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 21
+#REQUIRED 21
+#SPAWN_INTERVAL 30
+#SPAWN_INTERVAL_FAST 30
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#CLIMBER 7
+#FLOATER 7
+#RUNNER 7
+#JUMPER 7
+#BATTER 2
+#BLOCKER 2
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/carnival/Hatch.H: 336 24
+
+:matt/carnival/Goal.G: 512 256
+
+:matt/carnival/18: 336 80
+:matt/carnival/18: 400 80
+:matt/carnival/18: 464 80
+:matt/carnival/25: 576 0
+:matt/carnival/25: 576 64
+:matt/carnival/25: 576 128
+:matt/carnival/25: 576 192
+:matt/carnival/25: 576 256
+:matt/carnival/25: 576 320
+:matt/carnival/25: 512 320
+:matt/carnival/25: 448 320
+:matt/carnival/25: 384 320
+:matt/carnival/25: 192 320
+:matt/carnival/25: 128 320
+:matt/carnival/25: 64 320
+:matt/carnival/25: 0 320
+:matt/carnival/25: 0 0
+:matt/carnival/25: 0 64
+:matt/carnival/25: 0 128
+:matt/carnival/25: 0 192
+:matt/carnival/25: 0 256
+:matt/carnival/16: 352 208
+:matt/carnival/17: 256 144
+:matt/carnival/16: 448 224
+:matt/carnival/25: 256 320
+:matt/carnival/25: 320 320
+:matt/carnival/18: 528 80 fr
+:matt/carnival/18: 528 144 fr
+:matt/carnival/16: 416 192 fr
+:matt/carnival/16: 416 128 fr
+:matt/carnival/16: 320 176 fr
+:matt/carnival/17: 192 240 fr
+:matt/carnival/17: 192 144
+:matt/carnival/19: 496 16
+:matt/carnival/19: 432 16
+:matt/carnival/19: 368 16
+:matt/carnival/19: 304 16
+:matt/carnival/19: 240 80
+:matt/carnival/19: 272 16 fr
+:matt/carnival/19: 176 80
+:matt/carnival/17: 240 256
+:matt/carnival/17: 272 288
+:matt/carnival/16: 320 144
+:matt/carnival/18: 464 112 fr
+:matt/carnival/17: 288 176 fr
+:matt/carnival/19: 128 256
+:matt/carnival/19: 64 256

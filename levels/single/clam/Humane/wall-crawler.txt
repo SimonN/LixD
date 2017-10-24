@@ -1,0 +1,86 @@
+$BUILT 2015-08-03 20:19:37
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Wall Crawler
+
+#SIZE_X 640
+#SIZE_Y 384
+#TORUS_X 0
+#TORUS_Y 1
+#START_X 0
+#START_Y 336
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 8
+#SPAWN_INTERVAL 30
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#CLIMBER 10
+#JUMPER 10
+#EXPLODER2 2
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/sandstone/Hatch.H: 184 168
+
+:geoo/sandstone/Goal.G: 496 32
+
+:geoo/sandstone/torch.F: 216 368
+:geoo/sandstone/torch.F: 304 48
+:geoo/sandstone/torch.F: 392 368
+:geoo/sandstone/torch.F: 392 112
+:geoo/sandstone/torch.F: 216 112
+
+:geoo/sandstone/32x64: 464 160
+:geoo/sandstone/32x64: 464 224
+:geoo/sandstone/32x64: 464 352
+:geoo/sandstone/32x64: 464 32
+:geoo/sandstone/64x32: 496 96
+:geoo/sandstone/32x64: 464 288
+:geoo/sandstone/64x32: 368 288
+:geoo/sandstone/64x32: 304 288
+:geoo/sandstone/64x32: 328 256
+:geoo/sandstone/64x32: 264 256
+:geoo/sandstone/64x32: 200 256
+:geoo/sandstone/64x32: 496 0
+:geoo/sandstone/32x64: 560 32
+:geoo/sandstone/32x64: 560 96
+:geoo/sandstone/64x64: 496 320
+:geoo/sandstone/64x64: 496 256
+:geoo/sandstone/64x64: 496 192
+:geoo/sandstone/64x64: 496 128
+:geoo/sandstone/32x64: 560 160
+:geoo/sandstone/32x64: 560 224
+:geoo/sandstone/32x64: 560 288
+:geoo/sandstone/32x64: 560 352
+:geoo/sandstone/32x64: 40 160
+:geoo/sandstone/32x64: 40 224
+:geoo/sandstone/32x64: 40 352
+:geoo/sandstone/32x64: 40 288
+:geoo/sandstone/64x64: 72 320
+:geoo/sandstone/64x64: 72 256
+:geoo/sandstone/64x64: 72 192
+:geoo/sandstone/64x64: 72 128
+:geoo/sandstone/32x64: 136 160
+:geoo/sandstone/32x64: 136 224
+:geoo/sandstone/32x64: 136 288
+:geoo/sandstone/32x64: 136 352
+:geoo/sandstone/32x64: 40 32
+:geoo/sandstone/32x64: 40 96
+:geoo/sandstone/64x64: 72 64
+:geoo/sandstone/64x64: 72 0
+:geoo/sandstone/32x64: 136 32
+:geoo/sandstone/32x64: 136 96
+:geoo/sandstone/64x32: 240 288
+:geoo/sandstone/32x64: 464 96

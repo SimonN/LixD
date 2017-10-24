@@ -1,0 +1,80 @@
+$BUILT 2017-10-28 09:44:54
+$AUTHOR Clam
+$ENGLISH Square Squabble
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 10
+#REQUIRED 7
+#SPAWN_INTERVAL 40
+
+#CLIMBER 2
+#BLOCKER 3
+#BUILDER 10
+#MINER 1
+#EXPLODER2 0
+
+:matt/bricks/Hatch.H: 48 176
+
+:matt/bricks/Goal.G: 336 76
+
+:geoo/sandstone/brazier.F: 392 100
+:geoo/sandstone/brazier.F: 312 100
+
+:matt/bricks/04: 416 238
+:matt/bricks/05: 352 302
+:matt/bricks/06: 416 302
+:matt/bricks/07: 352 238
+:matt/bricks/04: 560 182
+:matt/bricks/05: 496 246
+:matt/bricks/06: 560 246
+:matt/bricks/07: 496 182
+:matt/bricks/03: 418 140
+:matt/bricks/03a: 32 224
+:matt/bricks/03a: 64 224
+:matt/bricks/03a: 32 256
+:matt/bricks/03a: 64 256
+:matt/bricks/07a: 128 272
+:matt/bricks/04a: 192 272
+:matt/bricks/05a: 128 336
+:matt/bricks/06a: 192 336
+:matt/bricks/08a: 192 168
+:matt/bricks/11a: 192 200
+:matt/bricks/10a: 160 168
+:matt/bricks/09a: 160 200
+:matt/bricks/03b: 64 92
+:matt/bricks/03b: 144 76
+:matt/bricks/03b: 224 76
+:matt/bricks/03b: 256 76
+:matt/bricks/03b: 256 108
+:matt/bricks/03b: 224 108
+:geoo/steel/32x32o.S: 256 108
+:geoo/steel/32x32o.S: 64 256
+:matt/bricks/03b: 336 124
+:geoo/steel/32x32o.S: 352 140
+:geoo/steel/32x32o.S: 160 92
+:geoo/steel/32x32o.S: 176 184
+:geoo/steel/32x32o.S: 176 320
+:geoo/steel/32x32o.S: 400 286
+:geoo/steel/32x32o.S: 544 230
+:matt/bricks/03: 418 108
+:matt/bricks/03b: 32 92
+:matt/bricks/03b: 32 60
+:matt/bricks/03b: 64 60
+:geoo/steel/32x32o.S: 64 92
+:matt/bricks/03: 450 108
+:matt/bricks/03: 450 140
+:geoo/steel/32x32o.S: 450 140
+:matt/bricks/03: 418 12
+:geoo/steel/32x32o.S: 434 28
+:matt/bricks/03: 522 96
+:matt/bricks/03: 522 64
+:matt/bricks/03: 554 64
+:matt/bricks/03: 554 96
+:geoo/steel/32x32o.S: 554 96
+:matt/bricks/04: 516 102 d
+:matt/bricks/04: 522 52 rd
+:matt/bricks/04: 562 98 rrrd
+:matt/bricks/04: 558 58 rrd

@@ -1,0 +1,186 @@
+$BUILT 2014-06-08 15:46:14
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH The Turnaround Compendium
+
+#SIZE_X 640
+#SIZE_Y 1184
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 16
+#REQUIRED 12
+#SPAWN_INTERVAL 40
+#SPAWN_INTERVAL_FAST 40
+
+#WALKER 1
+#JUMPER 2
+#RUNNER 1
+#EXPLODER2 1
+#BLOCKER 1
+#CUBER 1
+#BATTER 1
+#BUILDER 1
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+
+:matt/carnival/Hatch.H: 48 16
+:matt/carnival/Hatch.H: 48 112
+:matt/carnival/Hatch.H: 48 208
+:matt/carnival/Hatch.H: 48 304
+:matt/carnival/Hatch.H: 152 304
+:matt/carnival/Hatch.H: 112 392
+:matt/carnival/Hatch.H: 176 392
+:matt/carnival/Hatch.H: 112 520
+:matt/carnival/Hatch.H: 176 488
+:matt/carnival/Hatch.H: 176 616
+:matt/carnival/Hatch.H: 264 584
+:matt/carnival/Hatch.H: 208 688
+:matt/carnival/Hatch.H: 208 784
+:matt/carnival/Hatch.H: 208 880
+:matt/carnival/Hatch.H: 208 976
+:matt/carnival/Hatch.H: 208 1072
+
+:matt/carnival/Goal.G: 0 32
+:matt/carnival/Goal.G: 0 128
+:matt/carnival/Goal.G: 0 224
+:matt/carnival/Goal.G: 0 320
+:matt/carnival/Goal.G: 0 416
+:matt/carnival/Goal.G: 0 512
+:matt/carnival/Goal.G: 0 608
+:matt/carnival/Goal.G: 0 704
+:matt/carnival/Goal.G: 0 800
+:matt/carnival/Goal.G: 0 896
+:matt/carnival/Goal.G: 0 992
+:matt/carnival/Goal.G: 0 1088
+
+:geoo/construction/Laseremit_hzl_16.F: 128 104
+:geoo/construction/Laser_hz_64.F: 144 104
+:geoo/construction/Laseremit_hzl_16.F: 128 200
+:geoo/construction/Laser_hz_64.F: 144 200
+:geoo/construction/Laseremit_hzl_16.F: 192 296
+:geoo/construction/Laser_hz_64.F: 208 296
+:geoo/construction/Laseremit_hzl_16.F: 384 584
+:geoo/construction/Laser_hz_64.F: 400 584
+:geoo/construction/Laseremit_hzl_16.F: 384 680
+:geoo/construction/Laser_hz_64.F: 400 680
+:geoo/construction/Laseremit_hzl_16.F: 384 488
+:geoo/construction/Laser_hz_64.F: 400 488
+:geoo/construction/Laseremit_hzl_16.F: 384 392
+:geoo/construction/Laser_hz_64.F: 400 392
+:geoo/construction/Laseremit_hzl_16.F: 384 776
+:geoo/construction/Laser_hz_64.F: 400 776
+:geoo/construction/Laseremit_hzl_16.F: 384 872
+:geoo/construction/Laser_hz_64.F: 400 872
+:geoo/construction/Laseremit_hzl_16.F: 448 968
+:geoo/construction/Laser_hz_64.F: 464 968
+:geoo/construction/Laseremit_hzl_16.F: 448 1064
+:geoo/construction/Laser_hz_64.F: 504 1064
+:geoo/construction/sawblade_small.F: 312 528
+:geoo/construction/sawblade_small.F: 328 528
+:geoo/construction/sawblade_small.F: 344 528
+:geoo/construction/sawblade_small.F: 360 528
+:geoo/construction/sawblade_small.F: 312 432
+:geoo/construction/sawblade_small.F: 328 432
+:geoo/construction/sawblade_small.F: 344 432
+:geoo/construction/sawblade_small.F: 360 432
+:geoo/construction/Laser_hz_64.F: 208 104
+:geoo/construction/Laser_hz_64.F: 208 200
+:geoo/construction/Laser_hz_64.F: 272 104
+:geoo/construction/Laser_hz_64.F: 272 200
+:geoo/construction/Laser_hz_64.F: 336 104
+:geoo/construction/Laser_hz_64.F: 336 200
+:geoo/construction/Laser_hz_64.F: 400 104
+:geoo/construction/Laser_hz_64.F: 400 200
+:geoo/construction/Laser_hz_64.F: 464 104
+:geoo/construction/Laser_hz_64.F: 464 200
+:geoo/construction/Laser_hz_64.F: 528 104
+:geoo/construction/Laser_hz_64.F: 528 200
+:geoo/construction/Laser_hz_64.F: 576 104
+:geoo/construction/Laser_hz_64.F: 576 200
+:geoo/construction/Laser_hz_64.F: 272 296
+:geoo/construction/Laser_hz_64.F: 336 296
+:geoo/construction/Laser_hz_64.F: 400 296
+:geoo/construction/Laser_hz_64.F: 464 296
+:geoo/construction/Laser_hz_64.F: 528 296
+:geoo/construction/Laser_hz_64.F: 576 296
+:geoo/construction/Laser_hz_64.F: 464 584
+:geoo/construction/Laser_hz_64.F: 464 680
+:geoo/construction/Laser_hz_64.F: 464 488
+:geoo/construction/Laser_hz_64.F: 464 392
+:geoo/construction/Laser_hz_64.F: 464 776
+:geoo/construction/Laser_hz_64.F: 464 872
+:geoo/construction/Laser_hz_64.F: 528 584
+:geoo/construction/Laser_hz_64.F: 528 680
+:geoo/construction/Laser_hz_64.F: 528 488
+:geoo/construction/Laser_hz_64.F: 528 392
+:geoo/construction/Laser_hz_64.F: 528 776
+:geoo/construction/Laser_hz_64.F: 528 872
+:geoo/construction/Laser_hz_64.F: 576 584
+:geoo/construction/Laser_hz_64.F: 576 680
+:geoo/construction/Laser_hz_64.F: 576 488
+:geoo/construction/Laser_hz_64.F: 576 392
+:geoo/construction/Laser_hz_64.F: 576 776
+:geoo/construction/Laser_hz_64.F: 576 872
+:geoo/construction/Laser_hz_64.F: 528 968
+:geoo/construction/Laser_hz_64.F: 576 968
+:geoo/construction/Laser_hz_64.F: 568 1064
+:matt/water.W: 512 1152
+:matt/water.W: 544 1152
+:geoo/construction/sawblade_small.F: 248 432
+:geoo/construction/sawblade_small.F: 264 432
+:geoo/construction/sawblade_small.F: 280 432
+:geoo/construction/sawblade_small.F: 296 432
+:geoo/construction/sawblade_small.F: 248 528
+:geoo/construction/sawblade_small.F: 264 528
+:geoo/construction/sawblade_small.F: 280 528
+:geoo/construction/sawblade_small.F: 296 528
+:geoo/construction/Laseremit_hzl_16.F: 488 1064
+:matt/water.W: 576 1152
+:matt/water.W: 608 1152
+:geoo/construction/Laser_hz_64.F: 576 1064
+
+:matt/carnival/55: 0 576
+:matt/carnival/57: -64 288
+:matt/carnival/01: 144 144
+:matt/carnival/01: 224 224
+:matt/carnival/57: -128 192
+:matt/carnival/57: -128 96
+:matt/carnival/57: -128 0
+:matt/carnival/55: 0 480
+:matt/carnival/02: 416 608
+:matt/carnival/55: 0 384
+:matt/carnival/58: 0 768
+:matt/carnival/58: 0 864
+:matt/carnival/03: 416 846
+:matt/carnival/56: 0 960
+:geoo/steel/32x32o.S: 416 920
+:matt/carnival/56: 0 1056
+:geoo/steel/32x32o.S: 454 1056
+:matt/carnival/55: 128 384
+:matt/carnival/55: 128 480
+:matt/carnival/55: 128 576
+:matt/carnival/58: 128 768
+:matt/carnival/58: 128 864
+:matt/carnival/56: 192 960
+:matt/carnival/56: 192 1056
+:matt/carnival/38: 320 704 rr
+:matt/carnival/58: 128 672
+:matt/carnival/58: 0 672
+:geoo/steel/64x32o.S: 0 1152
+:geoo/steel/64x32o.S: 64 1152
+:geoo/steel/64x32o.S: 128 1152
+:geoo/steel/64x32o.S: 192 1152
+:geoo/steel/64x32o.S: 256 1152
+:geoo/steel/64x32o.S: 320 1152
+:geoo/steel/64x32o.S: 384 1152
+:geoo/steel/64x32o.S: 448 1152
+:matt/carnival/45: 480 1120

@@ -1,0 +1,178 @@
+$BUILT 2014-06-08 16:02:58
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Flotilla
+
+#SIZE_X 1024
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 15
+#REQUIRED 12
+#SPAWN_INTERVAL 11
+#SPAWN_INTERVAL_FAST 11
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#FLOATER 15
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 32 64
+
+:geoo/construction/Goal2.G: 960 240
+
+:geoo/construction/squisher.T: 864 240
+:geoo/construction/squisher.T: 208 128
+:geoo/construction/squisher.T: 32 128
+:geoo/construction/squisher.T: 272 128
+:geoo/construction/squisher.T: 416 128
+:geoo/construction/squisher.T: 480 128
+:geoo/construction/squisher.T: 832 128
+:geoo/construction/squisher.T: 832 184
+:geoo/construction/squisher.T: 896 128
+:geoo/construction/squisher.T: 896 184
+:geoo/construction/squisher.T: 624 128
+:geoo/construction/squisher.T: 624 184
+:geoo/construction/squisher.T: 688 128
+:geoo/construction/squisher.T: 688 184
+:geoo/construction/squisher.T: 448 184
+
+:geoo/construction/steam_up.T: 96 272
+:geoo/construction/steam_up.T: 304 272
+:geoo/construction/steam_up.T: 512 272
+
+:geoo/construction/pillar_32: 864 192
+:geoo/construction/wall/big_128x128: 0 304
+:geoo/construction/wall/big_128x128: 128 304
+:geoo/construction/wall/big_128x128: 256 304
+:geoo/construction/wall/big_128x128: 384 304
+:geoo/construction/wall/big_128x128: 512 304
+:geoo/construction/pillar_top: 208 128
+:geoo/construction/pillar_32: 208 144
+:geoo/construction/pillar_32: 208 176
+:geoo/construction/pillar_32: 208 208
+:geoo/construction/pillar_32: 208 240
+:geoo/construction/pillar_bottom: 208 288
+:geoo/construction/pillar_32: 208 256
+:geoo/construction/pillar_32: 208 132 d
+:geoo/construction/pillar_32: 208 152
+:geoo/construction/pillar_top: 32 128
+:geoo/construction/pillar_32: 32 144
+:geoo/construction/pillar_32: 32 176
+:geoo/construction/pillar_32: 32 208
+:geoo/construction/pillar_32: 32 240
+:geoo/construction/pillar_bottom: 32 288
+:geoo/construction/pillar_32: 32 256
+:geoo/construction/pillar_32: 32 132 d
+:geoo/construction/pillar_32: 32 152
+:geoo/construction/wall/big_128x128: 640 304
+:geoo/construction/pillar_bottom: 240 288
+:geoo/construction/pillar_32: 240 256
+:geoo/construction/pillar_32: 240 224
+:geoo/construction/pillar_32: 240 192
+:geoo/construction/pillar_32: 240 160
+:geoo/construction/pillar_32: 240 144
+:geoo/construction/pillar_top: 240 128
+:geoo/construction/pillar_bottom: 64 288
+:geoo/construction/pillar_32: 64 256
+:geoo/construction/pillar_32: 64 224
+:geoo/construction/pillar_32: 64 192
+:geoo/construction/pillar_32: 64 160
+:geoo/construction/pillar_32: 64 144
+:geoo/construction/pillar_top: 64 128
+:geoo/construction/pillar_bottom: 0 288
+:geoo/construction/pillar_32: 0 256
+:geoo/construction/pillar_32: 0 224
+:geoo/construction/pillar_32: 0 192
+:geoo/construction/pillar_32: 0 160
+:geoo/construction/pillar_32: 0 144
+:geoo/construction/pillar_top: 0 128
+:geoo/construction/wall/big_128x128: 768 304
+:geoo/construction/wall/big_128x128: 896 304
+:geoo/construction/pillar_bottom: 832 256
+:geoo/construction/pillar_32: 832 224
+:geoo/construction/pillar_top: 272 128
+:geoo/construction/pillar_32: 272 144
+:geoo/construction/pillar_32: 272 176
+:geoo/construction/pillar_32: 272 208
+:geoo/construction/pillar_32: 272 240
+:geoo/construction/pillar_bottom: 272 288
+:geoo/construction/pillar_32: 272 256
+:geoo/construction/pillar_32: 272 132 d
+:geoo/construction/pillar_32: 272 152
+:geoo/construction/pillar_top: 416 128
+:geoo/construction/pillar_32: 416 144
+:geoo/construction/pillar_32: 416 176
+:geoo/construction/pillar_32: 416 208
+:geoo/construction/pillar_32: 416 240
+:geoo/construction/pillar_bottom: 416 288
+:geoo/construction/pillar_32: 416 256
+:geoo/construction/pillar_32: 416 132 d
+:geoo/construction/pillar_32: 416 152
+:geoo/construction/pillar_top: 480 128
+:geoo/construction/pillar_32: 480 144
+:geoo/construction/pillar_32: 480 176
+:geoo/construction/pillar_32: 480 208
+:geoo/construction/pillar_32: 480 240
+:geoo/construction/pillar_bottom: 480 288
+:geoo/construction/pillar_32: 480 256
+:geoo/construction/pillar_32: 480 132 d
+:geoo/construction/pillar_32: 480 152
+:geoo/construction/pillar_32: 624 224
+:geoo/construction/pillar_bottom: 624 288
+:geoo/construction/pillar_32: 624 256
+:geoo/construction/pillar_bottom: 656 288
+:geoo/construction/pillar_32: 656 256
+:geoo/construction/pillar_32: 656 224
+:geoo/construction/pillar_32: 656 192
+:geoo/construction/pillar_32: 656 160
+:geoo/construction/pillar_32: 656 144
+:geoo/construction/pillar_top: 656 128
+:geoo/construction/pillar_32: 688 224
+:geoo/construction/pillar_bottom: 688 288
+:geoo/construction/pillar_32: 688 256
+:geoo/construction/pillar_top: 832 128
+:geoo/construction/pillar_32: 864 160
+:geoo/construction/pillar_32: 864 144
+:geoo/construction/pillar_top: 864 128
+:geoo/construction/pillar_top: 832 132 d
+:geoo/construction/pillar_32: 832 152
+:geoo/construction/pillar_32: 864 208
+:geoo/construction/pillar_32: 832 212
+:geoo/construction/pillar_bottom: 896 256
+:geoo/construction/pillar_32: 896 224
+:geoo/construction/pillar_top: 896 128
+:geoo/construction/pillar_top: 896 132 d
+:geoo/construction/pillar_32: 896 152
+:geoo/construction/pillar_32: 896 212
+:geoo/construction/pillar_top: 624 128
+:geoo/construction/pillar_top: 624 132 d
+:geoo/construction/pillar_32: 624 152
+:geoo/construction/pillar_32: 624 212
+:geoo/construction/pillar_top: 688 128
+:geoo/construction/pillar_top: 688 132 d
+:geoo/construction/pillar_32: 688 152
+:geoo/construction/pillar_32: 688 212
+:geoo/construction/pillar_32: 448 224
+:geoo/construction/pillar_bottom: 448 288
+:geoo/construction/pillar_32: 448 256
+:geoo/construction/pillar_32: 448 212
+:geoo/construction/pillar_top: 448 128
+:geoo/construction/pillar_32: 448 144
+:geoo/construction/pillar_32: 448 152
+:matt/beach/decor/umbrella_yellow: 810 45 frr

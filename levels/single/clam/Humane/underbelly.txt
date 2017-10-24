@@ -1,0 +1,172 @@
+$BUILT 2014-06-08 15:47:59
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Underbelly
+
+#SIZE_X 1280
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 244
+#START_Y 380
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 25
+#REQUIRED 20
+#SPAWN_INTERVAL 48
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#FLOATER 5
+#EXPLODER 2
+#BLOCKER 5
+#BUILDER 10
+#BASHER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/underworld/Hatch.H: 544 0
+
+:matt/underworld/Goal.G: 1136 212
+
+:matt/underworld/Lava.W: 0 368
+:matt/underworld/Lava.W: 240 368
+:matt/underworld/Lava.W: 400 368
+:matt/underworld/Lava.W: 704 368
+:matt/underworld/Lava.W: 1008 368
+:matt/underworld/Lava.W: 1056 368
+:matt/underworld/Lava.W: 1104 368
+:matt/underworld/Lava.W: 1152 368
+:matt/underworld/Lava.W: 1200 368
+:matt/underworld/Lava.W: 544 368
+:matt/underworld/Lava.W: 48 368
+:geoo/construction/Laser_vr_64.F: 864 132
+:geoo/construction/Laser_vr_64.F: 896 132
+:geoo/construction/Laseremit_vrt_16.F: 864 116
+:geoo/construction/Laseremit_vrt_16.F: 896 116
+:geoo/construction/Laseremit_vrb_16.F: 864 228
+:geoo/construction/Laseremit_vrb_16.F: 896 228
+:geoo/construction/Laser_vr_64.F: 864 164
+:geoo/construction/Laser_vr_64.F: 896 164
+
+:matt/underworld/02: 448 272
+:matt/underworld/02: 928 100
+:matt/underworld/02: 960 84
+:matt/underworld/02: 1024 20
+:matt/underworld/02: 1088 20
+:matt/underworld/02: 1152 20
+:matt/underworld/05: 416 92
+:matt/underworld/07: 362 116
+:matt/underworld/06: 494 122
+:matt/underworld/06: 320 80
+:matt/underworld/06: 274 44 rr
+:matt/underworld/09c: 272 112
+:matt/underworld/06: 736 84
+:matt/underworld/05: 624 100
+:matt/underworld/07: 568 126
+:matt/underworld/07: 748 142
+:matt/underworld/09a: 768 234 frr
+:matt/underworld/06: 718 122
+:matt/underworld/06: 632 112
+:matt/underworld/06: 560 104
+:matt/underworld/02: 340 300
+:matt/underworld/02: 752 304
+:matt/underworld/02: 276 300
+:matt/underworld/02: 180 288
+:matt/underworld/02: 180 192
+:matt/underworld/02: 180 320
+:geoo/steel/dark_32x32o.S: 372 300
+:geoo/steel/dark_32x32o.S: 276 300
+:matt/underworld/02: 116 288
+:matt/underworld/02: 116 192
+:matt/underworld/02: 116 320
+:matt/underworld/02: 52 288
+:matt/underworld/02: 52 192
+:matt/underworld/02: 52 320
+:geoo/steel/dark_64x32o.S: 272 84
+:geoo/steel/dark_64x32o.S: 336 84
+:geoo/steel/dark_64x32o.S: 400 84
+:geoo/steel/dark_64x32o.S: 464 84
+:geoo/steel/dark_64x32o.S: 624 84
+:geoo/steel/dark_64x32o.S: 688 84
+:geoo/steel/dark_64x32o.S: 752 84
+:geoo/steel/dark_64x32o.S: 816 84
+:geoo/steel/dark_64x32o.S: 896 84
+:geoo/steel/dark_64x32o.S: 816 244
+:geoo/steel/dark_64x32o.S: 896 244
+:geoo/steel/dark_32x64o.S: 912 116
+:geoo/steel/dark_32x64o.S: 912 180
+:geoo/steel/dark_32x64o.S: 832 180
+:geoo/steel/dark_32x64o.S: 832 116
+:geoo/steel/dark_64x32o.S: 960 84
+:geoo/steel/dark_32x64o.S: 992 20
+:matt/underworld/02: 816 304
+:matt/underworld/02: 880 304
+:matt/underworld/02: 944 304
+:matt/underworld/01: 1088 276
+:geoo/steel/dark_32x32o.S: 212 192
+:geoo/steel/dark_32x32o.S: 52 192
+:matt/underworld/01: 1152 276
+:matt/underworld/02: 1216 308
+:matt/underworld/02: 1216 212
+:matt/underworld/02: 1216 116
+:matt/underworld/02: 1216 20
+:geoo/steel/dark_32x32o.S: 752 304
+:geoo/steel/dark_32x32o.S: 976 304
+:geoo/steel/dark_32x32o.S: 1088 276
+:matt/underworld/09a: 586 220
+:matt/underworld/09a: 506 218 frr
+:geoo/steel/dark_32x64o.S: 560 180
+:geoo/steel/dark_32x64o.S: 560 116
+:matt/underworld/07: 416 124
+:matt/underworld/02: 1024 84
+:matt/underworld/02: 1088 84
+:matt/underworld/02: 1152 84
+:matt/underworld/01: 1024 -12
+:matt/underworld/01: 1088 -12
+:matt/underworld/01: 1152 -12
+:matt/underworld/01: 1216 -12
+:matt/underworld/00: 944 180 d
+:geoo/steel/dark_64x32o.S: 580 368
+:matt/underworld/02: 644 272
+:matt/underworld/02: 644 304
+:geoo/steel/dark_32x32o.S: 676 272
+:matt/underworld/02: 580 272
+:matt/bricks/06: 612 272 d
+:matt/bricks/06: 580 304 d
+:geoo/steel/dark_32x32o.S: 580 272 d
+:geoo/steel/dark_32x32o.S: 448 272
+:matt/underworld/02: 448 304
+:matt/underworld/02: 480 256
+:matt/underworld/02: 480 352
+:matt/underworld/00: 480 256 d
+:geoo/steel/dark_32x64o.S: 560 244
+:geoo/steel/dark_32x32o.S: 528 84
+:geoo/steel/dark_32x32o.S: 560 84
+:geoo/steel/dark_32x32o.S: 592 84
+:geoo/steel/dark_32x64o.S: 992 -44
+:matt/underworld/02: 276 332
+:matt/underworld/02: 340 332
+:geoo/steel/dark_32x64o.S: 512 272
+:geoo/steel/dark_32x64o.S: 512 336
+:matt/underworld/09c: 368 192
+:matt/underworld/09a: 462 214
+:matt/underworld/09a: 398 212 frr
+:matt/underworld/09b: 288 128 frr
+:matt/underworld/09b: 320 152 frr
+:matt/underworld/09b: 336 168 frr
+:matt/underworld/09a: 672 208
+:matt/underworld/09b: 636 210
+:matt/underworld/09b: 734 210 frr
+:matt/underworld/09c: 620 232 fd
+:matt/underworld/03: 632 236 d
+:matt/underworld/01: 272 52 d
+:matt/underworld/01: 336 52 d
+:matt/underworld/01: 304 44 d

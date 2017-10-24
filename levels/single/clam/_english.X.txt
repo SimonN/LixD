@@ -1,0 +1,21 @@
+Welcome to ClamLix!
+This pack contains 100 levels
+(note: still a work-in-progress!)
+across four ratings:
+
+Humane: Simple puzzles.
+Arcane: Hard puzzles.
+Insane: Harrrrrrd puzzles.
+Flingsane: Exploder flinging puzzles!
+
+For more levels check out TameLix
+and the ClamLix Outtakes pack.
+
+You can contact me via the Lix
+IRC channel (irc.quakenet.org #lix),
+or lemmingsforums.net.
+
+Thanks to the LF regulars
+for playtesting!
+
+- Clam 8()

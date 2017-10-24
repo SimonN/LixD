@@ -1,0 +1,78 @@
+$BUILT 2014-06-08 16:03:05
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Hidden Springs
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 70
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#JUMPER 10
+#BASHER 10
+#PLATFORMER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 240 176
+:geoo/construction/Hatch.H: 368 176 r
+
+:geoo/construction/Goal2.G: 144 80
+
+:geoo/construction/sawblade_medium.F: 432 112
+
+:geoo/construction/spring_fast.T: 304 240
+
+:geoo/construction/concrete/032b: 352 240
+:geoo/construction/concrete/032a: 256 240
+:geoo/construction/concrete/016v: 336 240
+:geoo/construction/concrete/016v: 288 240
+:geoo/construction/concrete/032a: 288 208
+:geoo/construction/concrete/032b: 320 208
+:geoo/construction/wall/big_128x128: 0 272
+:geoo/construction/wall/big_128x128: 128 272
+:geoo/construction/wall/big_128x128: 256 272
+:geoo/construction/wall/big_128x128: 384 272
+:geoo/construction/wall/big_128x128: 512 272
+:geoo/construction/concrete/032d: 240 144
+:geoo/construction/concrete/032c: 368 144
+:geoo/construction/concrete/032b: 528 144
+:geoo/construction/concrete/032b: 560 176
+:geoo/construction/concrete/032b: 592 208
+:geoo/construction/concrete/032b: 624 240
+:geoo/construction/concrete/032a: 80 144
+:geoo/construction/concrete/032a: 48 176
+:geoo/construction/concrete/032a: 16 208
+:geoo/construction/concrete/032a: -16 240
+:geoo/construction/concrete/064: 48 208
+:geoo/construction/concrete/064: 528 208
+:geoo/construction/concrete/032: 80 176
+:geoo/construction/concrete/032: 16 240
+:geoo/construction/concrete/032: 528 176
+:geoo/construction/concrete/032: 592 240
+:geoo/steel/64x64.S: 112 144
+:geoo/steel/64x64.S: 176 144
+:geoo/steel/64x64.S: 112 208
+:geoo/steel/64x64.S: 176 208
+:geoo/steel/64x64.S: 400 144
+:geoo/steel/64x64.S: 464 144
+:geoo/steel/64x64.S: 400 208
+:geoo/steel/64x64.S: 464 208

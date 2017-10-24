@@ -1,0 +1,391 @@
+$BUILT 2016-01-31 15:04:14
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Set Fire to the Rain
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 60
+#REQUIRED 31
+#SPAWN_INTERVAL 20
+#SPAWN_INTERVAL_FAST 20
+
+#EXPLODER2 30
+#PLATFORMER 4
+
+:matt/underworld/Hatch.H: 48 40
+:matt/underworld/Hatch.H: 48 128
+
+:matt/underworld/Goal.G: 576 274
+
+:matt/underworld/Lava.W: 256 352
+:matt/underworld/Lava.W: 352 352
+:matt/underworld/Lava.W: 400 352
+:matt/underworld/Lava.W: 448 352
+:matt/underworld/Lava.W: 496 352
+:matt/underworld/Lava.W: 544 352
+:matt/underworld/Lava.W: 304 352
+:matt/underworld/Lava.W: 592 352
+:proxima/flame.F: 396 120
+:proxima/flame.F: 428 120
+:proxima/flame.F: 460 120
+:geoo/construction/sawblade_small.F: 264 288
+
+:matt/underworld/02: 64 320
+:matt/underworld/02: 576 336
+:geoo/steel/dark_64x32o.S: 32 240
+:geoo/steel/dark_64x32o.S: 96 240
+:matt/underworld/00: 320 336
+:matt/underworld/00: 368 304
+:matt/underworld/02: 0 320
+:matt/underworld/02: 128 320
+:matt/underworld/02: 192 320
+:geoo/steel/dark_32x64o.S: 224 336
+:geoo/steel/dark_32x64o.S: 576 336
+:geoo/steel/dark_32x64o.S: 224 240
+:matt/earth/07b: 632 130 d
+:matt/underworld/09b: 592 112
+:matt/earth/07b: 584 130 d
+:matt/earth/07b: 594 132 rd
+:matt/earth/07b: 592 118 rd
+:matt/earth/07b: 606 116 rd
+:matt/earth/07b: 610 128 rrrd
+:matt/earth/07b: 598 144 rrrd
+:matt/earth/07b: 612 114 rrrd
+:matt/earth/07b: 624 114 rd
+:matt/earth/07b: 618 124 rd
+:matt/earth/07b: 604 138 rd
+:matt/underworld/09b: 544 112
+:matt/earth/07b: 536 130 d
+:matt/earth/07b: 546 132 rd
+:matt/earth/07b: 544 118 rd
+:matt/earth/07b: 558 116 rd
+:matt/earth/07b: 562 128 rrrd
+:matt/earth/07b: 550 144 rrrd
+:matt/earth/07b: 564 114 rrrd
+:matt/earth/07b: 576 114 rd
+:matt/earth/07b: 570 124 rd
+:matt/earth/07b: 556 138 rd
+:matt/underworld/09b: 496 112
+:matt/earth/07b: 488 130 d
+:matt/earth/07b: 498 132 rd
+:matt/earth/07b: 496 118 rd
+:matt/earth/07b: 510 116 rd
+:matt/earth/07b: 514 128 rrrd
+:matt/earth/07b: 502 144 rrrd
+:matt/earth/07b: 516 114 rrrd
+:matt/earth/07b: 528 114 rd
+:matt/earth/07b: 522 124 rd
+:matt/earth/07b: 508 138 rd
+:matt/underworld/09b: 448 112
+:matt/earth/07b: 440 130 d
+:matt/earth/07b: 450 132 rd
+:matt/earth/07b: 448 118 rd
+:matt/earth/07b: 462 116 rd
+:matt/earth/07b: 466 128 rrrd
+:matt/earth/07b: 454 144 rrrd
+:matt/earth/07b: 468 114 rrrd
+:matt/earth/07b: 480 114 rd
+:matt/earth/07b: 474 124 rd
+:matt/earth/07b: 460 138 rd
+:matt/underworld/09b: 400 112
+:matt/earth/07b: 392 130 d
+:matt/earth/07b: 402 132 rd
+:matt/earth/07b: 400 118 rd
+:matt/earth/07b: 414 116 rd
+:matt/earth/07b: 418 128 rrrd
+:matt/earth/07b: 406 144 rrrd
+:matt/earth/07b: 420 114 rrrd
+:matt/earth/07b: 432 114 rd
+:matt/earth/07b: 426 124 rd
+:matt/earth/07b: 412 138 rd
+:matt/underworld/09b: 352 112
+:matt/earth/07b: 344 130 d
+:matt/earth/07b: 354 132 rd
+:matt/earth/07b: 352 118 rd
+:matt/earth/07b: 366 116 rd
+:matt/earth/07b: 370 128 rrrd
+:matt/earth/07b: 358 144 rrrd
+:matt/earth/07b: 372 114 rrrd
+:matt/earth/07b: 384 114 rd
+:matt/earth/07b: 378 124 rd
+:matt/earth/07b: 364 138 rd
+:matt/underworld/09b: 304 112
+:matt/earth/07b: 296 130 d
+:geoo/steel/dark_32x64o.S: 272 80
+:matt/earth/07b: 306 132 rd
+:matt/earth/07b: 304 118 rd
+:matt/earth/07b: 318 116 rd
+:matt/earth/07b: 322 128 rrrd
+:matt/earth/07b: 310 144 rrrd
+:matt/earth/07b: 324 114 rrrd
+:matt/earth/07b: 336 114 rd
+:matt/earth/07b: 330 124 rd
+:matt/earth/07b: 316 138 rd
+:geoo/steel/dark_32x64o.S: 272 16
+:matt/underworld/09b: 608 64
+:matt/earth/07b: 600 82 d
+:matt/earth/07b: 610 84 rd
+:matt/earth/07b: 608 70 rd
+:matt/earth/07b: 622 68 rd
+:matt/earth/07b: 626 80 rrrd
+:matt/earth/07b: 614 96 rrrd
+:matt/earth/07b: 628 66 rrrd
+:matt/earth/07b: 634 76 rd
+:matt/earth/07b: 620 90 rd
+:matt/underworld/09b: 560 64
+:matt/earth/07b: 552 82 d
+:matt/earth/07b: 562 84 rd
+:matt/earth/07b: 560 70 rd
+:matt/earth/07b: 574 68 rd
+:matt/earth/07b: 578 80 rrrd
+:matt/earth/07b: 566 96 rrrd
+:matt/earth/07b: 580 66 rrrd
+:matt/earth/07b: 592 66 rd
+:matt/earth/07b: 586 76 rd
+:matt/earth/07b: 572 90 rd
+:matt/underworld/09b: 512 64
+:matt/earth/07b: 504 82 d
+:matt/earth/07b: 514 84 rd
+:matt/earth/07b: 512 70 rd
+:matt/earth/07b: 526 68 rd
+:matt/earth/07b: 530 80 rrrd
+:matt/earth/07b: 518 96 rrrd
+:matt/earth/07b: 532 66 rrrd
+:matt/earth/07b: 544 66 rd
+:matt/earth/07b: 538 76 rd
+:matt/earth/07b: 524 90 rd
+:matt/underworld/09b: 464 64
+:matt/earth/07b: 456 82 d
+:matt/earth/07b: 466 84 rd
+:matt/earth/07b: 464 70 rd
+:matt/earth/07b: 478 68 rd
+:matt/earth/07b: 482 80 rrrd
+:matt/earth/07b: 470 96 rrrd
+:matt/earth/07b: 484 66 rrrd
+:matt/earth/07b: 496 66 rd
+:matt/earth/07b: 490 76 rd
+:matt/earth/07b: 476 90 rd
+:matt/underworld/09b: 416 64
+:matt/earth/07b: 408 82 d
+:matt/earth/07b: 418 84 rd
+:matt/earth/07b: 416 70 rd
+:matt/earth/07b: 430 68 rd
+:matt/earth/07b: 434 80 rrrd
+:matt/earth/07b: 422 96 rrrd
+:matt/earth/07b: 436 66 rrrd
+:matt/earth/07b: 448 66 rd
+:matt/earth/07b: 442 76 rd
+:matt/earth/07b: 428 90 rd
+:matt/underworld/09b: 368 64
+:matt/earth/07b: 360 82 d
+:matt/earth/07b: 370 84 rd
+:matt/earth/07b: 368 70 rd
+:matt/earth/07b: 382 68 rd
+:matt/earth/07b: 386 80 rrrd
+:matt/earth/07b: 374 96 rrrd
+:matt/earth/07b: 388 66 rrrd
+:matt/earth/07b: 400 66 rd
+:matt/earth/07b: 394 76 rd
+:matt/earth/07b: 380 90 rd
+:matt/underworld/09b: 320 64
+:matt/earth/07b: 312 82 d
+:matt/earth/07b: 322 84 rd
+:matt/earth/07b: 320 70 rd
+:matt/earth/07b: 334 68 rd
+:matt/earth/07b: 338 80 rrrd
+:matt/earth/07b: 326 96 rrrd
+:matt/earth/07b: 340 66 rrrd
+:matt/earth/07b: 352 66 rd
+:matt/earth/07b: 346 76 rd
+:matt/earth/07b: 332 90 rd
+:matt/underworld/09b: 336 16
+:matt/earth/07b: 328 34 d
+:matt/earth/07b: 338 36 rd
+:matt/earth/07b: 336 22 rd
+:matt/earth/07b: 350 20 rd
+:matt/earth/07b: 354 32 rrrd
+:matt/earth/07b: 342 48 rrrd
+:matt/earth/07b: 356 18 rrrd
+:matt/earth/07b: 368 18 rd
+:matt/earth/07b: 362 28 rd
+:matt/earth/07b: 348 42 rd
+:matt/underworld/09b: 384 16
+:matt/earth/07b: 376 34 d
+:matt/earth/07b: 386 36 rd
+:matt/earth/07b: 384 22 rd
+:matt/earth/07b: 398 20 rd
+:matt/earth/07b: 402 32 rrrd
+:matt/earth/07b: 390 48 rrrd
+:matt/earth/07b: 404 18 rrrd
+:matt/earth/07b: 416 18 rd
+:matt/earth/07b: 410 28 rd
+:matt/earth/07b: 396 42 rd
+:matt/underworld/09b: 432 16
+:matt/earth/07b: 424 34 d
+:matt/earth/07b: 434 36 rd
+:matt/earth/07b: 432 22 rd
+:matt/earth/07b: 446 20 rd
+:matt/earth/07b: 450 32 rrrd
+:matt/earth/07b: 438 48 rrrd
+:matt/earth/07b: 452 18 rrrd
+:matt/earth/07b: 464 18 rd
+:matt/earth/07b: 458 28 rd
+:matt/earth/07b: 444 42 rd
+:matt/underworld/09b: 480 16
+:matt/earth/07b: 472 34 d
+:matt/earth/07b: 482 36 rd
+:matt/earth/07b: 480 22 rd
+:matt/earth/07b: 494 20 rd
+:matt/earth/07b: 498 32 rrrd
+:matt/earth/07b: 486 48 rrrd
+:matt/earth/07b: 500 18 rrrd
+:matt/earth/07b: 512 18 rd
+:matt/earth/07b: 506 28 rd
+:matt/earth/07b: 492 42 rd
+:matt/earth/07b: 520 34 d
+:matt/earth/07b: 530 36 rd
+:matt/earth/07b: 528 22 rd
+:matt/earth/07b: 542 20 rd
+:matt/earth/07b: 546 32 rrrd
+:matt/earth/07b: 534 48 rrrd
+:matt/earth/07b: 554 28 rd
+:matt/earth/07b: 540 42 rd
+:matt/underworld/06: 316 -74 rr
+:matt/underworld/06: 400 -80
+:matt/underworld/05: 330 -18
+:matt/underworld/05: 454 -6
+:matt/underworld/05: 558 -4
+:matt/underworld/06: 592 -80
+:matt/underworld/06: 496 -80
+:matt/underworld/09a: 344 26 frr
+:matt/underworld/09c: 316 0
+:matt/underworld/09a: 404 26 frr
+:matt/underworld/09a: 456 30 frr
+:matt/underworld/09a: 510 34
+:matt/underworld/09a: 556 38 frr
+:matt/underworld/09a: 616 40
+:matt/underworld/01: 0 96
+:matt/underworld/01: 64 96
+:matt/underworld/01: 128 96
+:matt/underworld/01: 192 96
+:matt/beach/decor/umbrella_red: 400 144
+:matt/underworld/02: 400 224
+:geoo/steel/dark_32x16o.S: 272 0
+:proxima/tile/spheres/bluesmall: 0 16
+:matt/earth/07b: 22 10 rd
+:matt/earth/07b: 22 22 rd
+:matt/earth/07b: 8 10 rd
+:matt/earth/07b: 10 22 frd
+:matt/earth/07b: -6 20 frrrd
+:matt/earth/07b: 8 36 rd
+:matt/earth/07b: -6 34 frrrd
+:matt/earth/07b: 20 36 rd
+:proxima/tile/spheres/bluesmall: 100 18
+:matt/earth/07b: 122 12 rd
+:matt/earth/07b: 122 24 rd
+:matt/earth/07b: 108 12 rd
+:matt/earth/07b: 110 24 frd
+:matt/earth/07b: 94 22 frrrd
+:matt/earth/07b: 108 38 rd
+:matt/earth/07b: 94 36 frrrd
+:matt/earth/07b: 120 38 rd
+:proxima/tile/spheres/bluesmall: 136 20
+:matt/earth/07b: 158 14 rd
+:matt/earth/07b: 158 26 rd
+:matt/earth/07b: 144 14 rd
+:matt/earth/07b: 146 26 frd
+:matt/earth/07b: 130 24 frrrd
+:matt/earth/07b: 144 40 rd
+:matt/earth/07b: 130 38 frrrd
+:matt/earth/07b: 156 40 rd
+:proxima/tile/spheres/bluesmall: 176 16
+:matt/earth/07b: 198 10 rd
+:matt/earth/07b: 198 22 rd
+:matt/earth/07b: 184 10 rd
+:matt/earth/07b: 186 22 frd
+:matt/earth/07b: 170 20 frrrd
+:matt/earth/07b: 184 36 rd
+:matt/earth/07b: 170 34 frrrd
+:matt/earth/07b: 196 36 rd
+:proxima/tile/spheres/bluesmall: 204 6
+:matt/earth/07b: 226 0 rd
+:matt/earth/07b: 226 12 rd
+:matt/earth/07b: 212 0 rd
+:matt/earth/07b: 214 12 frd
+:matt/earth/07b: 198 10 frrrd
+:matt/earth/07b: 212 26 rd
+:matt/earth/07b: 198 24 frrrd
+:matt/earth/07b: 224 26 rd
+:proxima/tile/spheres/bluesmall: 234 12
+:matt/earth/07b: 256 6 rd
+:matt/earth/07b: 256 18 rd
+:matt/earth/07b: 242 6 rd
+:matt/earth/07b: 244 18 frd
+:matt/earth/07b: 228 16 frrrd
+:matt/earth/07b: 242 32 rd
+:matt/earth/07b: 228 30 frrrd
+:matt/earth/07b: 254 32 rd
+:proxima/tile/spheres/bluesmall: 32 8
+:matt/earth/07b: 54 2 rd
+:matt/earth/07b: 54 14 rd
+:matt/earth/07b: 40 2 rd
+:matt/earth/07b: 42 14 frd
+:matt/earth/07b: 26 12 frrrd
+:matt/earth/07b: 40 28 rd
+:matt/earth/07b: 26 26 frrrd
+:matt/earth/07b: 52 28 rd
+:proxima/tile/spheres/bluesmall: 68 6
+:matt/earth/07b: 90 0 rd
+:matt/earth/07b: 90 12 rd
+:matt/earth/07b: 76 0 rd
+:matt/earth/07b: 78 12 frd
+:matt/earth/07b: 62 10 frrrd
+:matt/earth/07b: 76 26 rd
+:matt/earth/07b: 62 24 frrrd
+:matt/earth/07b: 88 26 rd
+:matt/winter/10: -80 -80
+:matt/winter/10: 80 -80
+:geoo/steel/dark_64x32o.S: 160 240
+:matt/underworld/01: 32 272
+:matt/underworld/01: 96 272
+:matt/underworld/01: 160 272
+:geoo/steel/dark_32x16o.S: 224 320
+:geoo/steel/dark_16x32o.S: 0 96
+:geoo/steel/dark_16x32o.S: 0 128
+:geoo/steel/dark_16x32o.S: 0 160
+:geoo/steel/dark_16x32o.S: 0 192
+:geoo/steel/dark_16x32o.S: 0 224
+:matt/underworld/00: 8 256 fr
+:geoo/steel/dark_16x32o.S: 0 256
+:geoo/steel/dark_16x32o.S: 0 288
+:geoo/steel/dark_16x32o.S: 32 112
+:geoo/steel/dark_16x32o.S: 32 144
+:matt/underworld/00: 24 176 fr
+:geoo/steel/dark_16x32o.S: 32 176
+:geoo/steel/dark_16x32o.S: 32 208
+:geoo/steel/dark_16x32o.S: 16 96 d
+:geoo/steel/dark_16x32o.S: 240 96
+:geoo/steel/dark_32x16o.S: 48 112
+:geoo/steel/dark_32x16o.S: 80 112
+:geoo/steel/dark_32x16o.S: 112 112
+:geoo/steel/dark_32x16o.S: 144 112
+:geoo/steel/dark_32x16o.S: 176 112
+:geoo/steel/dark_32x16o.S: 208 112
+:geoo/steel/dark_32x16o.S: 0 320
+:geoo/steel/dark_32x16o.S: 32 320
+:geoo/steel/dark_32x16o.S: 64 320
+:geoo/steel/dark_32x16o.S: 96 320
+:geoo/steel/dark_32x16o.S: 128 320
+:geoo/steel/dark_32x16o.S: 160 320
+:geoo/steel/dark_32x16o.S: 192 320
+:geoo/steel/dark_32x16o.S: 304 272
+:geoo/steel/dark_32x16o.S: 336 272
+:geoo/steel/dark_32x16o.S: 368 304

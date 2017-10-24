@@ -1,0 +1,87 @@
+$BUILT 2014-02-13 21:42:07
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Climb Ev'ry Mountain
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 15
+#REQUIRED 15
+#SPAWN_INTERVAL 45
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#CLIMBER 15
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/winter/Hatch.H: 16 240
+:matt/winter/Hatch.H: 296 240
+:matt/winter/Hatch.H: 560 240
+
+:matt/winter/Goal.G: 144 32
+:matt/winter/Goal.G: 400 0
+
+:matt/winter/06: 224 288 r
+:matt/winter/06: 216 272 r
+:matt/winter/10: 151 173 frrr
+:matt/winter/07: 100 196
+:matt/winter/05: 106 186 rr
+:matt/winter/10: 88 200 rrr
+:matt/winter/17: 166 104 rr
+:matt/winter/16: 98 97
+:matt/winter/06: 0 296
+:matt/winter/06: 16 352 r
+:matt/winter/05: -48 352 rrr
+:matt/winter/06: 80 296
+:matt/winter/11: 80 256 frr
+:matt/winter/05: 112 352 rrr
+:matt/winter/10: 412 188 rrr
+:matt/winter/03: 510 222 frrr
+:matt/winter/05: 288 344 rrr
+:matt/winter/05: 480 352 rrr
+:matt/winter/15: 426 60
+:matt/winter/15: 394 61 f
+:matt/winter/10: 392 64 r
+:matt/winter/05: 362 116 frr
+:matt/winter/05: 354 208
+:matt/winter/17: 230 288
+:matt/winter/07: 252 208
+:matt/winter/06: 240 128
+:matt/winter/04: 166 176
+:matt/winter/04: 616 256
+:matt/winter/06: 0 232
+:matt/winter/06: -32 232 r
+:matt/winter/16: -84 256
+:matt/winter/14: 512 288
+:matt/winter/06: 144 96 fr
+:matt/winter/06: 176 96 fr
+:matt/winter/06: 240 96
+:matt/winter/07: 240 32
+:matt/winter/14: 64 134 d
+:matt/winter/14: 64 160 d
+:matt/winter/12: 81 136 rd
+:matt/winter/06: 128 96 n
+:matt/winter/05: 456 64 frr
+:matt/winter/03: 496 180 frrr
+:matt/winter/03: 376 64 fr
+:matt/winter/03: 516 290 frrr
+:matt/winter/06: 360 136 d
+:matt/winter/06: 360 200 d
+:matt/winter/03: 334 184 rd
+:matt/winter/03: 330 202 rd

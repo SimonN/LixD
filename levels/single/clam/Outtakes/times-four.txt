@@ -1,0 +1,231 @@
+$BUILT 2014-06-08 16:03:41
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Times Four
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 4
+#REQUIRED 4
+#SPAWN_INTERVAL 16
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#CLIMBER 4
+#WALKER 4
+#JUMPER 4
+#BUILDER 4
+#PLATFORMER 4
+#BASHER 4
+#MINER 4
+#DIGGER 4
+#NOTHING 0
+#NOTHING 0
+
+:matt/carnival/Hatch.H: 136 54
+:geoo/construction/Hatch.H: 464 84
+:matt/bricks/Hatch.H: 448 250
+:matt/marble/Hatch.H: 136 272
+
+:matt/marble/Goal.G: 242 336
+:matt/carnival/Goal.G: 244 128
+:geoo/construction/Goal2.G: 554 128
+:matt/bricks/Goal.G: 554 336
+
+:geoo/construction/Laser_vr_64.F: 226 128
+:geoo/construction/Laser_vr_64.F: 226 88
+:geoo/construction/Laseremit_vrt_16.F: 226 72
+:geoo/construction/Laser_vr_64.F: 226 336
+:geoo/construction/Laser_vr_64.F: 226 280
+:geoo/construction/Laseremit_vrt_16.F: 226 264
+:geoo/construction/Laser_vr_64.F: 538 336
+:geoo/construction/Laser_vr_64.F: 538 280
+:geoo/construction/Laseremit_vrt_16.F: 538 264
+:geoo/construction/Laser_vr_64.F: 538 128
+:geoo/construction/Laser_vr_64.F: 538 88
+:geoo/construction/Laseremit_vrt_16.F: 538 72
+:geoo/sandstone/brazier.F: 128 120
+:geoo/sandstone/brazier.F: 8 8
+:geoo/sandstone/brazier.F: 288 8
+:geoo/sandstone/brazier.F: 440 120
+:geoo/sandstone/brazier.F: 320 8
+:geoo/sandstone/brazier.F: 600 8
+:geoo/sandstone/brazier.F: 440 312
+:geoo/sandstone/brazier.F: 320 200
+:geoo/sandstone/brazier.F: 600 200
+:geoo/sandstone/brazier.F: 128 312
+:geoo/sandstone/brazier.F: 8 200
+:geoo/sandstone/brazier.F: 288 200
+
+:matt/carnival/46: 136 176
+:matt/carnival/45: 72 176
+:geoo/steel/16x32o.S: 312 32
+:geoo/steel/16x32o.S: 312 64
+:geoo/steel/16x32o.S: 312 96
+:matt/carnival/13: 300 128
+:geoo/steel/16x32o.S: 312 128
+:geoo/steel/16x32o.S: 312 160
+:geoo/steel/16x32o.S: 312 208
+:geoo/steel/16x32o.S: 312 240
+:geoo/steel/16x32o.S: 312 272
+:geoo/steel/16x32o.S: 312 304
+:geoo/steel/16x32o.S: 312 336
+:geoo/steel/32x16o.S: 16 192
+:geoo/steel/32x16o.S: 48 192
+:geoo/steel/32x16o.S: 80 192
+:geoo/steel/32x16o.S: 112 192
+:geoo/steel/32x16o.S: 144 192
+:geoo/steel/32x16o.S: 176 192
+:geoo/steel/32x16o.S: 208 192
+:geoo/steel/32x16o.S: 240 192
+:geoo/steel/32x16o.S: 272 192
+:geoo/steel/32x16o.S: 336 192
+:geoo/steel/32x16o.S: 368 192
+:geoo/steel/32x16o.S: 400 192
+:geoo/steel/32x16o.S: 432 192
+:geoo/steel/32x16o.S: 464 192
+:geoo/steel/32x16o.S: 496 192
+:geoo/steel/32x16o.S: 528 192
+:geoo/steel/32x16o.S: 560 192
+:geoo/steel/32x16o.S: 592 192
+:geoo/steel/16x16o.S: 624 192
+:geoo/steel/16x16o.S: 0 192
+:geoo/steel/32x16o.S: 304 192
+:geoo/steel/32x16o.S: 168 336
+:geoo/steel/32x16o.S: 136 336
+:geoo/steel/16x32o.S: 120 320
+:geoo/steel/16x32o.S: 120 272
+:geoo/steel/16x16o.S: 120 304
+:geoo/steel/32x16o.S: 168 144
+:geoo/steel/32x16o.S: 136 144
+:geoo/steel/16x32o.S: 120 128
+:geoo/steel/16x32o.S: 120 80
+:geoo/steel/16x16o.S: 120 112
+:geoo/steel/32x16o.S: 480 144
+:geoo/steel/32x16o.S: 448 144
+:geoo/steel/16x32o.S: 432 128
+:geoo/steel/16x32o.S: 432 80
+:geoo/steel/16x16o.S: 432 112
+:geoo/steel/32x16o.S: 480 336
+:geoo/steel/32x16o.S: 448 336
+:geoo/steel/16x32o.S: 432 320
+:geoo/steel/16x32o.S: 432 272
+:geoo/steel/16x16o.S: 432 304
+:matt/carnival/46: 48 144
+:matt/carnival/46: 16 112
+:matt/carnival/13: 48 176
+:matt/carnival/13: 64 176
+:geoo/construction/wall/big_diag_bu: 544 48
+:geoo/construction/wall/big_square: 512 144
+:geoo/construction/wall/big_brick1: 416 48
+:geoo/construction/wall/big_brick1: 480 48
+:matt/bricks/12: 512 272
+:matt/bricks/12: 512 304
+:matt/bricks/12: 512 336
+:matt/bricks/02: 416 240
+:matt/bricks/02: 480 240
+:matt/bricks/11: 544 240
+:matt/carnival/13: 104 176
+:matt/carnival/13: 120 176
+:matt/bricks/10: 384 368
+:matt/bricks/02: 328 368
+:geoo/steel/32x16o.S: 304 0
+:geoo/steel/32x16o.S: 304 384
+:geoo/steel/16x16o.S: 312 16
+:geoo/steel/16x16o.S: 312 368
+:matt/carnival/55: 48 -16
+:matt/carnival/00: 16 144
+:matt/carnival/13: 32 176
+:matt/carnival/13: 16 176
+:matt/carnival/56: -208 -16
+:matt/carnival/56: -16 -64 fr
+:matt/carnival/56: 48 -16
+:matt/carnival/04: 104 48 fr
+:matt/carnival/04: 168 48 fr
+:matt/carnival/04: 200 80
+:matt/carnival/00: 200 144
+:matt/carnival/43: 232 48
+:matt/carnival/13: 236 128
+:matt/carnival/13: 252 128
+:matt/carnival/13: 268 128
+:matt/carnival/13: 284 128
+:geoo/construction/wall/small_brick1: 328 176
+:geoo/construction/wall/big_diag_td: 360 144
+:geoo/construction/wall/big_diag_td: 328 112
+:geoo/construction/wall/small_brick1: 360 176
+:geoo/construction/wall/big_square: 328 144
+:geoo/construction/wall/small_square: 548 128
+:geoo/construction/wall/small_square: 564 128
+:geoo/construction/wall/small_square: 580 128
+:geoo/construction/wall/small_square: 596 128
+:geoo/construction/wall/small_square: 612 128
+:geoo/construction/wall/small_brick1: 336 0
+:geoo/construction/wall/small_brick1: 368 0
+:geoo/construction/wall/small_brick1: 400 0
+:geoo/construction/wall/small_brick1: 432 0
+:geoo/construction/wall/small_brick1: 464 0
+:geoo/construction/wall/small_brick1: 496 0
+:geoo/construction/wall/small_brick1: 528 0
+:geoo/construction/wall/small_brick1: 560 0
+:geoo/construction/wall/small_brick1: 592 0
+:geoo/construction/wall/small_brick1: 624 0 fr
+:geoo/construction/wall/small_brick1: 624 32 fr
+:geoo/construction/wall/small_brick1: 624 64 fr
+:geoo/construction/wall/small_brick1: 624 96 fr
+:geoo/construction/wall/small_brick1: 624 128 fr
+:geoo/construction/wall/small_brick1: 624 160 fr
+:geoo/construction/wall/small_diag_td: 400 176
+:geoo/construction/wall/small_brick1: 416 176
+:geoo/construction/wall/small_diag_tu: 448 176
+:matt/bricks/01: 584 384
+:matt/bricks/03: 624 208
+:matt/bricks/03: 624 272
+:matt/bricks/03: 624 336
+:matt/bricks/01: 552 384
+:matt/bricks/01: 520 384
+:matt/bricks/01: 488 384
+:matt/bricks/08: 448 368
+:matt/bricks/01: 456 384
+:matt/bricks/01: 424 384
+:matt/bricks/01: 392 384
+:matt/bricks/01: 416 368
+:matt/bricks/04: 328 304
+:matt/bricks/01: 616 384
+:matt/bricks/01: 548 320
+:matt/bricks/01: 580 320
+:matt/bricks/01: 612 320
+:matt/marble/21: 236 320
+:matt/marble/21: 248 320
+:matt/marble/21: 0 208 rrr
+:matt/marble/21: 0 272 rrr
+:matt/marble/21: 0 384
+:matt/marble/10d: 0 384 rrd
+:matt/marble/21: 0 336 rrrn
+:matt/marble/21: 64 384
+:matt/marble/21: 128 384
+:matt/marble/21: 192 384
+:matt/marble/21: 240 384
+:matt/marble/05: 16 336
+:matt/marble/08: 104 240
+:matt/marble/08: 168 240
+:matt/marble/15: 232 240
+:matt/marble/12: 136 368
+:matt/marble/10: 88 368
+:matt/marble/16: 16 304
+:matt/marble/16: 48 336
+:matt/marble/04: 104 368
+:geoo/construction/wall/big_brick1: 512 80 fr
+:matt/marble/05: 200 336
+:matt/marble/06: 200 272
+:matt/marble/04: 16 368
+:matt/marble/04: 48 368

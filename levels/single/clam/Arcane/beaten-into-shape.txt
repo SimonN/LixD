@@ -1,0 +1,111 @@
+$BUILT 2014-06-08 16:17:32
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Beaten into shape
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 45
+#SPAWN_INTERVAL 4
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#BATTER 50
+#BASHER 1
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 128 176
+
+:geoo/construction/Goal2.G: 384 208
+
+:geoo/construction/squisher.T: 288 208
+
+:geoo/construction/sawblade.F: 320 216
+
+:geoo/construction/pillar_32: 288 176
+:geoo/construction/pillar_32: 288 144
+:geoo/construction/pillar_top_shaded: 288 128
+:geoo/construction/pillar_base: 272 112
+:geoo/construction/wall/small_64x64: 224 208
+:geoo/construction/wall/small_64x64: 0 208
+:geoo/construction/wall/small_64x64: 0 144
+:geoo/construction/wall/small_64x64: 0 80
+:geoo/construction/wall/small_64x64: 0 272
+:geoo/construction/wall/small_64x64: 64 272
+:geoo/construction/wall/small_64x64: 128 272
+:geoo/construction/wall/small_64x64: 192 272
+:geoo/construction/wall/small_64x64: 256 272
+:geoo/construction/wall/small_64x64: 320 272
+:geoo/construction/wall/small_64x64: 384 272
+:geoo/construction/wall/small_64x64: 448 272
+:geoo/construction/wall/small_64x64: 64 48
+:geoo/construction/wall/small_64x64: 0 48
+:geoo/construction/wall/small_64x64: 128 48
+:geoo/construction/wall/small_64x64: 192 48
+:geoo/construction/wall/small_64x64: 256 48
+:geoo/construction/wall/small_64x64: 320 48
+:geoo/construction/wall/small_64x64: 384 48
+:geoo/construction/wall/small_64x64: 448 48
+:geoo/construction/squarebrick_large: 496 240
+:geoo/construction/squarebrick_large: 528 240
+:geoo/construction/wall/small_64x64: 512 272
+:geoo/construction/wall/small_64x64: 512 48
+:geoo/construction/squarebrick_large: 512 208
+:geoo/construction/squarebrick_large: 496 176
+:geoo/construction/squarebrick_large: 528 176
+:geoo/construction/squarebrick_large: 512 144
+:geoo/construction/squarebrick_large: 496 112
+:geoo/construction/squarebrick_large: 528 112
+:geoo/construction/wall/small_64x64: 576 208
+:geoo/construction/wall/small_64x64: 576 144
+:geoo/construction/wall/small_64x64: 576 80
+:geoo/construction/wall/small_64x64: 576 272
+:geoo/construction/wall/small_64x64: 576 48
+:geoo/construction/wall/small_64x64: 64 -16
+:geoo/construction/wall/small_64x64: 0 -16
+:geoo/construction/wall/small_64x64: 128 -16
+:geoo/construction/wall/small_64x64: 192 -16
+:geoo/construction/wall/small_64x64: 256 -16
+:geoo/construction/wall/small_64x64: 320 -16
+:geoo/construction/wall/small_64x64: 384 -16
+:geoo/construction/wall/small_64x64: 448 -16
+:geoo/construction/wall/small_64x64: 512 -16
+:geoo/construction/wall/small_64x64: 576 -16
+:geoo/construction/wall/small_64x64: 64 336
+:geoo/construction/wall/small_64x64: 0 336
+:geoo/construction/wall/small_64x64: 128 336
+:geoo/construction/wall/small_64x64: 192 336
+:geoo/construction/wall/small_64x64: 256 336
+:geoo/construction/wall/small_64x64: 320 336
+:geoo/construction/wall/small_64x64: 384 336
+:geoo/construction/wall/small_64x64: 448 336
+:geoo/construction/wall/small_64x64: 512 336
+:geoo/construction/wall/small_64x64: 576 336
+:geoo/construction/pillar_base: 432 112
+:geoo/construction/pillar_bottom: 448 160
+:geoo/construction/pillar_32: 448 128
+:geoo/construction/pillar_base: 112 112
+:geoo/construction/pillar_bottom: 128 160
+:geoo/construction/pillar_32: 128 128
+:geoo/construction/pillar_top_shaded: 128 128
+:geoo/construction/pillar_top_shaded: 448 128
+:geoo/construction/squarebrick_large: 80 112
+:geoo/construction/squarebrick_large: 64 144

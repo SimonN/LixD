@@ -1,0 +1,90 @@
+$BUILT 2017-11-27 02:12:08
+$AUTHOR Clam Spammer
+$ENGLISH Abridged Version (v1)
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 40
+#REQUIRED 20
+#SPAWN_INTERVAL 45
+
+#WALKER 10
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER 10
+#BLOCKER 10
+#BUILDER 10
+#PLATFORMER 10
+#BASHER 10
+#MINER 10
+#DIGGER 10
+#JUMPER 10
+
+:simon/oriental/hatch.H: 72 194
+
+:simon/oriental/goal.G: 524 118
+
+:geoo/construction/rod_steel/straight32.S: 268 154 rrr
+:geoo/construction/rod_steel/straight32.S: 316 154 rrr
+:geoo/construction/rod_steel/straight32.S: 366 154 rrr
+:geoo/construction/rod_steel/straight32.S: 422 200 rrr
+:geoo/construction/rod_steel/straight32.S: 422 168 rrr
+:geoo/construction/rod_steel/straight32.S: 422 128 rrr
+:geoo/construction/rod_steel/straight32.S: 212 200 rrr
+:geoo/construction/rod_steel/straight32.S: 212 168 rrr
+:geoo/construction/rod_steel/straight32.S: 212 136 rrr
+:simon/oriental/gate: 466 198
+:simon/oriental/gate: 520 198
+:simon/oriental/branch1: 14 248 r
+:simon/oriental/branch1: 20 248 r
+:simon/oriental/branch1: 10 248 r
+:simon/oriental/branch1: 2 244 r
+:simon/oriental/bonsai: -66 58
+$BEGIN_TILE_GROUP 0
+:simon/oriental/bridge2: 0 0
+:simon/oriental/bridge2: 41 0
+:simon/oriental/bridge2: 0 49 rr
+:simon/oriental/bridge2: 41 49 rr
+$END_TILE_GROUP
+:Group-0: 268 200
+$BEGIN_TILE_GROUP 1
+:simon/oriental/bridge1: 0 22
+:simon/oriental/bridge1: 44 0
+:simon/oriental/bridge1: 0 69 rr
+:simon/oriental/bridge1: 44 47 rr
+$END_TILE_GROUP
+:Group-1: 162 200
+:Group-1: 372 200 frr
+:simon/oriental/08: 464 256
+:simon/oriental/08: 96 256
+:simon/oriental/08: 532 256
+:simon/oriental/08: 532 324
+:simon/oriental/08: 600 256
+:simon/oriental/08: 598 324
+:simon/oriental/08: 28 256
+:simon/oriental/08: 28 324
+:simon/oriental/08: -40 256
+:simon/oriental/08: -40 324
+:Group-0: 268 50
+:geoo/construction/rod_steel/straight32.S: 422 140 rrr
+:Group-1: 372 -2 rr
+:geoo/construction/rod_steel/straight32.S: 212 130 rrr
+:Group-1: 160 -2 f
+:Group-1: 54 -54 f
+:Group-1: 480 -56 rr
+:Group-0: 586 -56
+:Group-0: -50 -54
+:Group-0: 268 -44
+:Group-1: 372 -98 rr
+:Group-1: 162 -96 f
+:Group-0: 268 298
+:Group-1: 162 298
+:simon/oriental/08: 96 324
+:Group-1: 372 298 frr
+:simon/oriental/08: 464 324
+:geoo/construction/rod_steel/straight32.S: 268 168 rrr
+:geoo/construction/rod_steel/straight32.S: 366 168 rrr
+:geoo/construction/rod_steel/straight32.S: 316 168 rrr

@@ -1,0 +1,279 @@
+$BUILT 2014-06-08 16:18:04
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Bumpy Ride
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 128
+#BACKGROUND_GREEN 128
+#BACKGROUND_BLUE 255
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 50
+#SPAWN_INTERVAL 5
+#SPAWN_INTERVAL_FAST 5
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#CLIMBER 1
+#PLATFORMER 2
+#DIGGER 6
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/beach/decor/sun.D: 504 16
+
+:matt/winter/Hatch.H: 0 16
+:matt/winter/Hatch.H: 0 136
+
+:matt/winter/Goal.G: 544 272
+
+:matt/winter/06: 0 320 r
+:matt/winter/06: 64 320 r
+:matt/winter/06: 128 320 r
+:matt/winter/06: 192 320 r
+:matt/winter/06: 544 336 r
+:matt/winter/06: 576 336 r
+:matt/winter/06: 0 368 r
+:matt/winter/06: 64 368 r
+:matt/winter/06: 128 368 r
+:matt/winter/06: 192 368 r
+:matt/winter/06: 256 368 r
+:matt/winter/06: 320 368 r
+:matt/winter/06: 544 352 r
+:matt/winter/06: 576 352 r
+:matt/winter/06: 384 368 r
+:matt/winter/06: 448 368 r
+:matt/winter/06: 256 320 r
+:matt/winter/06: 320 320 r
+:matt/winter/06: 512 368 r
+:matt/winter/06: 576 368 r
+:matt/winter/06: 0 384 r
+:matt/winter/06: 64 384 r
+:matt/winter/06: 128 384 r
+:matt/winter/06: 192 384 r
+:matt/winter/06: 256 384 r
+:matt/winter/06: 320 384 r
+:matt/winter/06: 384 384 r
+:matt/winter/06: 448 384 r
+:matt/winter/06: 512 384 r
+:matt/winter/06: 576 384 r
+:matt/winter/06: 544 336
+:matt/winter/06: 624 336
+:geoo/steel/16x16o.S: 544 336
+:geoo/steel/16x16o.S: 624 336
+:matt/winter/06: 328 320 r
+:matt/winter/06: 0 256
+:matt/goldmine/plank: -6 188 rrrd
+:matt/goldmine/plank: -4 176 rrrd
+:matt/goldmine/plank: -2 172 rrrd
+:matt/winter/06: 16 256
+:matt/winter/06: 48 256
+:matt/winter/06: 16 192
+:matt/winter/06: 32 256
+:matt/winter/06: 32 192
+:matt/goldmine/plank: 0 160 rrrd
+:matt/goldmine/plank: 2 156 rrrd
+:matt/goldmine/plank: 4 144 rrrd
+:matt/goldmine/plank: 6 140 rrrd
+:matt/goldmine/plank: 8 128 rrrd
+:matt/goldmine/plank: 10 124 rrrd
+:matt/goldmine/plank: 12 112 rrrd
+:matt/goldmine/plank: 14 108 rrrd
+:matt/goldmine/plank: 16 96 rrrd
+:matt/goldmine/plank: 18 92 rrrd
+:matt/goldmine/plank: 20 80 rrrd
+:matt/goldmine/plank: 22 76 rrrd
+:matt/goldmine/plank: 34 76 rrrd
+:matt/goldmine/plank: 36 80 rrrd
+:matt/goldmine/plank: 38 92 rrrd
+:matt/goldmine/plank: 40 96 rrrd
+:matt/goldmine/plank: 42 108 rrrd
+:matt/goldmine/plank: 44 112 rrrd
+:matt/goldmine/plank: 46 124 rrrd
+:matt/goldmine/plank: 48 128 rrrd
+:matt/goldmine/plank: 50 140 rrrd
+:matt/goldmine/plank: 52 144 rrrd
+:matt/goldmine/plank: 54 156 rrrd
+:matt/goldmine/plank: 56 160 rrrd
+:matt/goldmine/plank: 58 172 rrrd
+:matt/goldmine/plank: 60 176 rrrd
+:matt/winter/06: 80 256
+:matt/goldmine/plank: 74 184 rrrd
+:matt/goldmine/plank: 76 176 rrrd
+:matt/goldmine/plank: 78 168 rrrd
+:matt/winter/06: 96 256
+:matt/winter/06: 128 256
+:matt/winter/06: 96 192
+:matt/winter/06: 112 256
+:matt/winter/06: 112 192
+:matt/goldmine/plank: 80 160 rrrd
+:matt/goldmine/plank: 82 152 rrrd
+:matt/goldmine/plank: 84 144 rrrd
+:matt/goldmine/plank: 86 136 rrrd
+:matt/goldmine/plank: 88 128 rrrd
+:matt/goldmine/plank: 90 120 rrrd
+:matt/goldmine/plank: 92 112 rrrd
+:matt/goldmine/plank: 94 104 rrrd
+:matt/goldmine/plank: 96 96 rrrd
+:matt/goldmine/plank: 98 88 rrrd
+:matt/goldmine/plank: 100 80 rrrd
+:matt/goldmine/plank: 102 72 rrrd
+:matt/goldmine/plank: 114 72 rrrd
+:matt/goldmine/plank: 116 80 rrrd
+:matt/goldmine/plank: 118 88 rrrd
+:matt/goldmine/plank: 120 96 rrrd
+:matt/goldmine/plank: 122 104 rrrd
+:matt/goldmine/plank: 124 112 rrrd
+:matt/goldmine/plank: 126 120 rrrd
+:matt/goldmine/plank: 128 128 rrrd
+:matt/goldmine/plank: 130 136 rrrd
+:matt/goldmine/plank: 132 144 rrrd
+:matt/goldmine/plank: 134 152 rrrd
+:matt/goldmine/plank: 136 160 rrrd
+:matt/goldmine/plank: 138 168 rrrd
+:matt/goldmine/plank: 140 176 rrrd
+:matt/goldmine/plank: 142 184 rrrd
+:matt/goldmine/plank: 62 188 rrrd
+:matt/winter/06: 160 256
+:matt/goldmine/plank: 154 184 rrrd
+:matt/goldmine/plank: 156 176 rrrd
+:matt/goldmine/plank: 158 168 rrrd
+:matt/winter/06: 176 256
+:matt/winter/06: 208 256
+:matt/winter/06: 176 192
+:matt/winter/06: 192 256
+:matt/winter/06: 192 192
+:matt/goldmine/plank: 160 160 rrrd
+:matt/goldmine/plank: 162 152 rrrd
+:matt/goldmine/plank: 164 144 rrrd
+:matt/goldmine/plank: 166 136 rrrd
+:matt/goldmine/plank: 168 128 rrrd
+:matt/goldmine/plank: 170 120 rrrd
+:matt/goldmine/plank: 172 112 rrrd
+:matt/goldmine/plank: 174 104 rrrd
+:matt/goldmine/plank: 176 96 rrrd
+:matt/goldmine/plank: 178 88 rrrd
+:matt/goldmine/plank: 180 80 rrrd
+:matt/goldmine/plank: 182 72 rrrd
+:matt/goldmine/plank: 194 72 rrrd
+:matt/goldmine/plank: 196 80 rrrd
+:matt/goldmine/plank: 198 88 rrrd
+:matt/goldmine/plank: 200 96 rrrd
+:matt/goldmine/plank: 202 104 rrrd
+:matt/goldmine/plank: 204 112 rrrd
+:matt/goldmine/plank: 206 120 rrrd
+:matt/goldmine/plank: 208 128 rrrd
+:matt/goldmine/plank: 210 136 rrrd
+:matt/goldmine/plank: 212 144 rrrd
+:matt/goldmine/plank: 214 152 rrrd
+:matt/goldmine/plank: 216 160 rrrd
+:matt/goldmine/plank: 218 168 rrrd
+:matt/goldmine/plank: 220 176 rrrd
+:matt/goldmine/plank: 222 184 rrrd
+:matt/winter/06: 240 256
+:matt/goldmine/plank: 234 184 rrrd
+:matt/goldmine/plank: 236 176 rrrd
+:matt/goldmine/plank: 238 168 rrrd
+:matt/winter/06: 256 256
+:matt/winter/06: 288 256
+:matt/winter/06: 256 192
+:matt/winter/06: 272 256
+:matt/winter/06: 272 192
+:matt/goldmine/plank: 240 160 rrrd
+:matt/goldmine/plank: 242 152 rrrd
+:matt/goldmine/plank: 244 144 rrrd
+:matt/goldmine/plank: 246 136 rrrd
+:matt/goldmine/plank: 248 128 rrrd
+:matt/goldmine/plank: 250 120 rrrd
+:matt/goldmine/plank: 252 112 rrrd
+:matt/goldmine/plank: 254 104 rrrd
+:matt/goldmine/plank: 256 96 rrrd
+:matt/goldmine/plank: 258 88 rrrd
+:matt/goldmine/plank: 260 80 rrrd
+:matt/goldmine/plank: 262 72 rrrd
+:matt/goldmine/plank: 274 72 rrrd
+:matt/goldmine/plank: 276 80 rrrd
+:matt/goldmine/plank: 278 88 rrrd
+:matt/goldmine/plank: 280 96 rrrd
+:matt/goldmine/plank: 282 104 rrrd
+:matt/goldmine/plank: 284 112 rrrd
+:matt/goldmine/plank: 286 120 rrrd
+:matt/goldmine/plank: 288 128 rrrd
+:matt/goldmine/plank: 290 136 rrrd
+:matt/goldmine/plank: 292 144 rrrd
+:matt/goldmine/plank: 294 152 rrrd
+:matt/goldmine/plank: 296 160 rrrd
+:matt/goldmine/plank: 298 168 rrrd
+:matt/goldmine/plank: 300 176 rrrd
+:matt/goldmine/plank: 302 184 rrrd
+:matt/winter/06: 320 256
+:matt/goldmine/plank: 314 184 rrrd
+:matt/goldmine/plank: 316 176 rrrd
+:matt/goldmine/plank: 318 168 rrrd
+:matt/winter/06: 336 256
+:matt/winter/06: 368 256
+:matt/winter/06: 336 192
+:matt/winter/06: 352 256
+:matt/winter/06: 352 192
+:matt/goldmine/plank: 320 160 rrrd
+:matt/goldmine/plank: 322 152 rrrd
+:matt/goldmine/plank: 324 144 rrrd
+:matt/goldmine/plank: 326 136 rrrd
+:matt/goldmine/plank: 328 128 rrrd
+:matt/goldmine/plank: 330 120 rrrd
+:matt/goldmine/plank: 332 112 rrrd
+:matt/goldmine/plank: 334 104 rrrd
+:matt/goldmine/plank: 336 96 rrrd
+:matt/goldmine/plank: 338 88 rrrd
+:matt/goldmine/plank: 340 80 rrrd
+:matt/goldmine/plank: 342 72 rrrd
+:matt/goldmine/plank: 354 72 rrrd
+:matt/goldmine/plank: 356 80 rrrd
+:matt/goldmine/plank: 358 88 rrrd
+:matt/goldmine/plank: 360 96 rrrd
+:matt/goldmine/plank: 362 104 rrrd
+:matt/goldmine/plank: 364 112 rrrd
+:matt/goldmine/plank: 366 120 rrrd
+:matt/goldmine/plank: 368 128 rrrd
+:matt/goldmine/plank: 370 136 rrrd
+:matt/goldmine/plank: 372 144 rrrd
+:matt/goldmine/plank: 374 152 rrrd
+:matt/goldmine/plank: 376 160 rrrd
+:matt/goldmine/plank: 378 168 rrrd
+:matt/goldmine/plank: 380 176 rrrd
+:matt/goldmine/plank: 382 184 rrrd
+:matt/winter/06: 16 96 r
+:matt/winter/06: 80 96 r
+:matt/winter/06: 16 112 r
+:matt/winter/06: 80 112 r
+:matt/winter/06: 144 96 r
+:matt/winter/06: 144 112 r
+:matt/winter/06: 16 80 r
+:matt/winter/06: 80 80 r
+:matt/winter/06: 144 80 r
+:matt/winter/06: 0 80
+:matt/winter/06: 336 80
+:matt/winter/06: 208 112 r
+:matt/winter/06: 208 80 r
+:matt/winter/06: 208 96 r
+:matt/winter/06: 272 112 r
+:matt/winter/06: 272 80 r
+:matt/winter/06: 272 96 r
+:matt/winter/06: 16 128 r
+:matt/winter/06: 80 128 r
+:matt/winter/06: 144 128 r
+:matt/winter/06: 208 128 r
+:matt/winter/06: 272 128 r
+:matt/winter/06: 360 320 r

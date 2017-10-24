@@ -1,0 +1,73 @@
+$BUILT 2016-01-31 10:17:48
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Builders Without Borders II
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 10
+#SPAWN_INTERVAL 96
+#SPAWN_INTERVAL_FAST 4
+
+#EXPLODER2 10
+#BUILDER 15
+
+:matt/marble/Hatch.H: 40 208
+
+:matt/marble/Goal.G: 40 80
+
+:geoo/construction/Laseremit_hzl_16.F: 0 352
+:geoo/construction/Laseremit_hzr_16.F: 624 352
+:geoo/construction/Laser_hz_64.F: 16 352
+:geoo/construction/Laser_hz_64.F: 80 352
+:geoo/construction/Laser_hz_64.F: 144 352
+:geoo/construction/Laser_hz_64.F: 208 352
+:geoo/construction/Laser_hz_64.F: 272 352
+:geoo/construction/Laser_hz_64.F: 336 352
+:geoo/construction/Laser_hz_64.F: 400 352
+:geoo/construction/Laser_hz_64.F: 464 352
+:geoo/construction/Laser_hz_64.F: 528 352
+:geoo/construction/Laser_hz_64.F: 560 352
+:geoo/construction/Laseremit_hzl_16.F: 0 368
+:geoo/construction/Laseremit_hzr_16.F: 624 368
+:geoo/construction/Laser_hz_64.F: 16 368
+:geoo/construction/Laser_hz_64.F: 80 368
+:geoo/construction/Laser_hz_64.F: 144 368
+:geoo/construction/Laser_hz_64.F: 208 368
+:geoo/construction/Laser_hz_64.F: 272 368
+:geoo/construction/Laser_hz_64.F: 336 368
+:geoo/construction/Laser_hz_64.F: 400 368
+:geoo/construction/Laser_hz_64.F: 464 368
+:geoo/construction/Laser_hz_64.F: 528 368
+:geoo/construction/Laser_hz_64.F: 560 368
+
+:matt/marble/21: 80 320
+:matt/marble/21: 144 320
+:matt/marble/21: 0 272 rrr
+:matt/marble/21: 80 128
+:matt/marble/21: 144 128
+:matt/marble/21: 0 0 rrr
+:matt/marble/21: 16 128
+:matt/marble/21: 16 320
+:matt/marble/21: 144 304
+:matt/marble/21: 144 112
+:geoo/steel/16x32o.S: 128 112
+:geoo/steel/16x32o.S: 128 304
+:matt/marble/21: 208 272 rrr
+:matt/marble/21: 208 240 rrrd
+:matt/marble/21: 208 80 rrr
+:matt/marble/21: 208 48 rrrd
+:matt/marble/21: 0 64 rrr
+:matt/marble/21: 0 128 rrr
+:matt/marble/21: 0 192 rrr
+:matt/marble/21: 0 256 rrr

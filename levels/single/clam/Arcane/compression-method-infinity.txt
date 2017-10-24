@@ -1,0 +1,118 @@
+$BUILT 2014-06-08 16:04:30
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Compression Method Infinity
+
+#SIZE_X 640
+#SIZE_Y 256
+#TORUS_X 0
+#TORUS_Y 1
+#START_X 0
+#START_Y 160
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 50
+#REQUIRED 30
+#SPAWN_INTERVAL 4
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#BATTER 10
+#BASHER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/marble/Hatch.H: 400 240
+:matt/marble/Hatch.H: 296 240
+:matt/marble/Hatch.H: 192 240
+:matt/marble/Hatch.H: 88 240
+
+:matt/marble/Goal.G: 480 112
+
+:geoo/construction/squisher.T: 156 96
+:geoo/construction/squisher.T: 260 96
+:geoo/construction/squisher.T: 364 96
+:geoo/construction/squisher.T: 468 96
+
+:geoo/construction/Laseremit_hzl_16.F: 544 92
+:geoo/construction/Laser_hz_64.F: 560 92
+
+:matt/marble/04d: 136 80
+:matt/marble/20d: 164 0
+:matt/marble/20d: 268 0
+:matt/marble/04d: 260 64
+:matt/marble/20d: 372 0
+:matt/marble/04d: 364 64
+:matt/marble/20d: 476 0
+:matt/marble/04d: 468 64
+:matt/marble/04d: 240 80
+:matt/marble/04d: 344 80
+:matt/marble/04d: 488 80
+:matt/marble/04d: 448 80
+:matt/marble/04d: 156 64
+:matt/marble/20d: 0 96
+:matt/marble/08d: 96 160
+:matt/marble/08d: 160 160
+:matt/marble/08d: 224 160
+:matt/marble/08d: 288 160
+:matt/marble/08d: 352 160
+:matt/marble/08d: 416 160
+:matt/marble/20d: 0 160
+:matt/marble/20d: 0 32
+:matt/marble/20d: 0 224
+:matt/marble/04d: 176 80
+:matt/marble/04d: 280 80
+:matt/marble/04d: 384 80
+:matt/marble/08d: 480 160
+:matt/marble/001d: 168 80
+:matt/marble/001d: 272 80
+:matt/marble/001d: 376 80
+:matt/marble/001d: 480 80
+:matt/marble/01d: 96 96
+:matt/marble/01d: 112 96
+:matt/marble/01d: 128 96
+:matt/marble/01d: 144 96
+:matt/marble/01d: 160 96
+:matt/marble/01d: 176 96
+:matt/marble/01d: 192 96
+:matt/marble/01d: 208 96
+:matt/marble/01d: 224 96
+:matt/marble/01d: 240 96
+:matt/marble/01d: 256 96
+:matt/marble/01d: 272 96
+:matt/marble/01d: 288 96
+:matt/marble/01d: 304 96
+:matt/marble/01d: 320 96
+:matt/marble/01d: 336 96
+:matt/marble/01d: 352 96
+:matt/marble/01d: 368 96
+:matt/marble/01d: 384 96
+:matt/marble/01d: 400 96
+:matt/marble/01d: 416 96
+:matt/marble/01d: 432 96
+:matt/marble/01d: 448 96
+:matt/marble/01d: 464 96
+:matt/marble/01d: 480 96
+:matt/marble/01d: 496 96
+:matt/marble/01d: 512 96
+:matt/marble/01d: 528 96
+:matt/marble/20d: 624 96
+:matt/marble/20d: 624 160
+:matt/marble/20d: 624 32
+:matt/marble/20d: 624 224
+:matt/marble/20d: 164 192
+:matt/marble/20d: 268 192
+:matt/marble/20d: 372 192
+:matt/marble/20d: 476 192
+:matt/marble/14d: 96 128
+:matt/marble/16d: 128 128

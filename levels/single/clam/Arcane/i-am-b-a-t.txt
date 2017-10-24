@@ -1,0 +1,107 @@
+$BUILT 2014-06-08 16:16:45
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH I Am B.A.T.
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 38
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#BATTER 10
+#DIGGER 10
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/bricks/Hatch.H: 128 192
+
+:matt/bricks/Goal.G: 448 192
+
+:matt/water.W: 256 304
+:matt/water.W: 288 304
+:matt/water.W: 320 304
+:matt/water.W: 352 304
+
+:matt/bricks/03b: 256 240
+:matt/bricks/03b: 320 240
+:matt/bricks/01a: 224 288
+:matt/bricks/04a: 192 240
+:matt/bricks/03a: 64 240
+:matt/bricks/01: 384 288
+:matt/bricks/03: 448 240
+:matt/bricks/03a: 16 192
+:matt/bricks/03a: 0 240
+:matt/bricks/07: 384 240
+:matt/bricks/03: 512 240
+:matt/bricks/03: 560 192
+:geoo/steel/32x32o.S: 224 304
+:geoo/steel/32x32o.S: 384 304
+:matt/bricks/03a: 0 304
+:matt/bricks/03a: 64 304
+:matt/bricks/03a: 160 304
+:matt/bricks/03: 416 304
+:matt/bricks/03: 480 304
+:matt/bricks/03: 512 304
+:matt/bricks/03b: 256 176
+:matt/bricks/03b: 320 176
+:matt/bricks/03b: 256 144
+:matt/bricks/03b: 320 144
+:matt/bricks/04a: 80 192
+:matt/bricks/10a: 80 160
+:matt/bricks/03a: 16 128
+:matt/bricks/03a: 128 240
+:matt/bricks/03a: 128 304
+:matt/bricks/03: 576 240
+:matt/bricks/03: 576 304
+:matt/bricks/07: 496 192
+:matt/bricks/08: 512 144
+:matt/bricks/02: 448 144
+:matt/bricks/03: 560 128
+:geoo/steel/64x64o.S: 224 336
+:geoo/steel/64x64o.S: 288 336
+:geoo/steel/64x64o.S: 352 336
+:matt/bricks/03a: 0 336
+:matt/bricks/03a: 64 336
+:matt/bricks/03a: 160 336
+:matt/bricks/03a: 128 336
+:matt/bricks/03: 416 336
+:matt/bricks/03: 480 336
+:matt/bricks/03: 512 336
+:matt/bricks/03: 576 336
+:matt/bricks/10a: 96 144
+:matt/bricks/08: 528 160
+:matt/bricks/02a: 112 160
+:matt/bricks/02: 464 160
+:matt/bricks/12a: 160 176
+:matt/bricks/12: 448 176
+:matt/bricks/01: 160 192 d
+:matt/bricks/01: 448 192 d
+:matt/bricks/03: 592 192
+:matt/bricks/03: 592 128
+:matt/bricks/03a: -16 128
+:matt/bricks/03a: -16 176
+:matt/bricks/03a: 16 96
+:matt/bricks/03a: -16 96
+:matt/bricks/03: 560 96
+:matt/bricks/03: 592 96
+:matt/bricks/01a: 128 144
+:matt/bricks/02a: 128 144

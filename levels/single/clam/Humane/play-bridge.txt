@@ -1,0 +1,116 @@
+$BUILT 2015-08-08 16:50:14
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Play Bridge
+
+#SIZE_X 1088
+#SIZE_Y 352
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 224
+#START_Y -48
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 15
+#SPAWN_INTERVAL 60
+#SPAWN_INTERVAL_FAST 4
+
+#BUILDER 25
+
+:matt/marble/Hatch.H: 512 100
+
+:matt/marble/Goal.G: 512 240
+
+:geoo/construction/squisher.T: 960 144
+:geoo/construction/squisher.T: 96 144
+
+:matt/water.W: 256 320
+:matt/water.W: 352 320
+:matt/water.W: 368 320
+:matt/water.W: 464 320
+:matt/water.W: 480 320
+:matt/water.W: 576 320
+:matt/water.W: 592 320
+:matt/water.W: 688 320
+:matt/water.W: 704 320
+:matt/water.W: 800 320
+
+:matt/marble/20a: 536 40
+:matt/marble/20c: 760 40
+:matt/marble/20c: 312 40
+:matt/marble/08c: 288 208
+:matt/marble/08c: 736 208
+:matt/marble/08a: 464 208
+:matt/marble/08a: 560 208
+:matt/marble/05a: 528 208
+:matt/marble/08b: 400 144
+:matt/marble/08b: 400 208
+:matt/marble/08b: 624 144
+:matt/marble/08b: 624 208
+:matt/marble/21: 864 208
+:matt/marble/21: 896 208
+:matt/marble/21: 864 128
+:matt/marble/21: 896 128
+:matt/marble/08c: 736 80
+:matt/marble/08c: 288 80
+:matt/marble/21: 128 208
+:matt/marble/21: 160 208
+:matt/marble/21: 128 128
+:matt/marble/21: 160 128
+:matt/marble/08a: 512 80
+:matt/marble/09: 128 0
+:matt/marble/09: 192 0
+:matt/marble/09: 128 288
+:matt/marble/09: 192 288
+:matt/marble/09: 832 0
+:matt/marble/09: 896 0
+:matt/marble/09: 832 288
+:matt/marble/09: 896 288
+:matt/marble/09c: 288 288
+:matt/marble/09c: 736 288
+:matt/marble/09b: 400 288
+:matt/marble/09b: 624 288
+:matt/marble/09a: 512 288
+:matt/marble/21c: 256 24
+:matt/marble/21c: 320 24
+:matt/marble/21c: 336 24
+:matt/marble/21c: 688 24
+:matt/marble/21c: 752 24
+:matt/marble/21c: 768 24
+:matt/marble/21a: 464 24
+:matt/marble/21a: 528 24
+:matt/marble/21a: 560 24
+:matt/marble/09b: 400 0
+:matt/marble/09b: 624 0
+:matt/marble/09d: 64 0
+:matt/marble/09d: 64 288
+:matt/marble/21d: 64 128
+:matt/marble/21d: 64 208
+:matt/marble/21d: 960 128
+:matt/marble/21d: 960 208
+:matt/marble/09d: 960 0
+:matt/marble/09d: 960 288
+:matt/marble/09d: 0 0
+:matt/marble/09d: 0 64
+:matt/marble/09d: 0 144
+:matt/marble/09d: 0 224
+:matt/marble/09d: 0 288
+:matt/marble/21d: 0 128
+:matt/marble/21d: 0 208
+:matt/marble/21d: 1024 128
+:matt/marble/21d: 1024 208
+:matt/marble/09d: 1024 0
+:matt/marble/09d: 1024 64
+:matt/marble/09d: 1024 144
+:matt/marble/09d: 1024 224
+:matt/marble/09d: 1024 288
+:matt/marble/05d: 960 96
+:matt/marble/05d: 960 256
+:matt/marble/05d: 96 256
+:matt/marble/05d: 96 64
+:matt/marble/16: 128 256
+:matt/marble/02: 944 272

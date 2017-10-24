@@ -1,0 +1,152 @@
+$BUILT 2015-08-08 17:44:04
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Pachinkube
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 62
+#REQUIRED 31
+#SPAWN_INTERVAL 15
+#SPAWN_INTERVAL_FAST 4
+
+#BASHER 1
+#CUBER 31
+
+:matt/carnival/Hatch.H: 288 -24
+:matt/carnival/Hatch.H: 576 264
+
+:matt/carnival/Goal.G: 0 288
+
+:matt/carnival/21: 56 320 n
+:matt/marble/20: 96 304 d
+:matt/carnival/21: 88 320 n
+:matt/carnival/01: 320 64
+:matt/carnival/02: 352 64
+:matt/carnival/03: 384 64
+:matt/carnival/00: 416 64
+:matt/carnival/01: 288 64
+:matt/carnival/02: 256 64
+:matt/carnival/03: 224 64
+:matt/carnival/00: 192 64
+:matt/carnival/01: 224 128
+:matt/carnival/02: 192 128
+:matt/carnival/03: 160 128
+:matt/carnival/00: 128 128
+:matt/carnival/01: 384 128
+:matt/carnival/02: 416 128
+:matt/carnival/03: 448 128
+:matt/carnival/00: 480 128
+:matt/carnival/01: 256 192
+:matt/carnival/02: 224 192
+:matt/carnival/03: 128 192
+:matt/carnival/00: 96 192
+:matt/carnival/01: 352 192
+:matt/carnival/02: 384 192
+:matt/carnival/03: 480 192
+:matt/carnival/00: 512 192
+:matt/carnival/01: 272 256
+:matt/carnival/02: 208 256
+:matt/carnival/03: 144 256
+:matt/carnival/00: 80 256
+:matt/carnival/01: 336 256
+:matt/carnival/02: 400 256
+:matt/carnival/03: 464 256
+:matt/carnival/00: 528 256
+:matt/marble/20: 128 304 d
+:matt/carnival/23: 120 320 n
+:matt/marble/20: 160 304 d
+:matt/carnival/23: 152 320 n
+:matt/marble/20: 192 304 d
+:matt/carnival/22: 184 320 n
+:matt/marble/20: 224 304 d
+:matt/carnival/22: 216 320 n
+:matt/marble/20: 256 304 d
+:matt/carnival/20: 248 320 n
+:matt/marble/20: 288 304 d
+:matt/carnival/20: 280 320 n
+:matt/carnival/21: 536 320 frrn
+:matt/marble/20: 528 304 frrd
+:matt/carnival/21: 504 320 frrn
+:matt/marble/20: 496 304 frrd
+:matt/carnival/23: 472 320 frrn
+:matt/marble/20: 464 304 frrd
+:matt/carnival/23: 440 320 frrn
+:matt/marble/20: 432 304 frrd
+:matt/carnival/22: 408 320 frrn
+:matt/marble/20: 400 304 frrd
+:matt/carnival/22: 376 320 frrn
+:matt/marble/20: 368 304 frrd
+:matt/carnival/20: 344 320 frrn
+:matt/marble/20: 320 304 d
+:matt/marble/20: 336 304 d
+:matt/carnival/20: 312 320 n
+:matt/carnival/19: 256 368
+:matt/carnival/19: 320 368
+:matt/carnival/16: 192 368
+:matt/carnival/16: 384 368
+:matt/carnival/17: 128 368
+:matt/carnival/17: 448 368
+:matt/carnival/18: 64 368
+:matt/carnival/18: 512 368
+:matt/carnival/18: 576 368
+:matt/carnival/18: 0 368
+:matt/carnival/13: 200 72 rr
+:matt/carnival/15: 232 72 rr
+:matt/carnival/14: 264 72 rr
+:matt/carnival/12: 296 72 rr
+:matt/carnival/13: 136 136 rr
+:matt/carnival/15: 168 136 rr
+:matt/carnival/14: 200 136 rr
+:matt/carnival/12: 232 136 rr
+:matt/carnival/13: 104 200 rr
+:matt/carnival/15: 136 200 rr
+:matt/carnival/14: 232 200 rr
+:matt/carnival/12: 264 200 rr
+:matt/carnival/13: 88 264 rr
+:matt/carnival/15: 152 264 rr
+:matt/carnival/14: 216 264 rr
+:matt/carnival/12: 280 264 rr
+:matt/carnival/12: 328 72 rr
+:matt/carnival/14: 360 72 rr
+:matt/carnival/15: 392 72 rr
+:matt/carnival/13: 424 72 rr
+:matt/carnival/12: 392 136 rr
+:matt/carnival/14: 424 136 rr
+:matt/carnival/15: 456 136 rr
+:matt/carnival/13: 488 136 rr
+:matt/carnival/12: 360 200 rr
+:matt/carnival/14: 392 200 rr
+:matt/carnival/15: 488 200 rr
+:matt/carnival/13: 520 200 rr
+:matt/carnival/12: 344 264 rr
+:matt/carnival/14: 408 264 rr
+:matt/carnival/15: 472 264 rr
+:matt/carnival/13: 536 264 rr
+:matt/marble/20: 48 304 d
+:matt/carnival/21: 24 320 n
+:matt/carnival/14: 26 352 d
+:matt/carnival/21: 10 320 n
+:matt/carnival/14: 12 352 d
+:matt/carnival/21: -4 320 n
+:matt/carnival/14: -2 352 d
+:matt/carnival/00: 0 320 d
+:matt/carnival/21: -8 320 n
+:matt/carnival/00: 24 320 d
+:matt/marble/20: 576 304 frrd
+:matt/carnival/21: 568 320 frrn
+:matt/carnival/14: 598 352 frrd
+:matt/carnival/21: 582 320 frrn
+:matt/carnival/14: 612 352 frrd
+:matt/carnival/21: 596 320 frrn
+:matt/carnival/14: 626 352 frrd
+:matt/carnival/00: 608 320 frrd
+:matt/carnival/21: 600 320 frrn
+:matt/carnival/00: 584 320 frrd

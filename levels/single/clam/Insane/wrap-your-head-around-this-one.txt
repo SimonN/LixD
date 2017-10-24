@@ -1,0 +1,65 @@
+$BUILT 2017-11-22 09:32:42
+$AUTHOR Clam
+$ENGLISH Wrap your head around this one!
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 1
+
+#INITIAL 2
+#REQUIRED 2
+#SPAWN_INTERVAL 20
+
+#RUNNER 1
+#CLIMBER 2
+#FLOATER 1
+#MINER 1
+#DIGGER 2
+#JUMPER 3
+#EXPLODER2 0
+
+:matt/marble/Hatch.H: 80 96
+
+:matt/marble/Goal.G: 480 112
+
+:geoo/abstract/tbeam_right.T: 320 64
+
+:matt/marble/15b: 272 192
+:matt/marble/17b: 48 192
+:geoo/steel/32x16o.S: 144 176
+:geoo/steel/32x16o.S: 48 176
+:matt/marble/15c: 240 192
+:matt/marble/14b: 240 192
+:matt/marble/14c: 144 192
+:matt/marble/16b: 208 192
+:matt/marble/16c: 176 192
+:matt/marble/17b: 176 192
+:matt/marble/17c: 208 192
+:matt/marble/15b: 144 192
+:matt/marble/17c: 80 192
+:matt/marble/15c: 112 192
+:matt/marble/14b: 112 192
+:matt/marble/16b: 80 192
+:matt/marble/15d: 576 224
+:matt/marble/14d: 544 224
+:matt/marble/15: 544 224
+:matt/marble/17: 512 224
+:matt/marble/16d: 512 224
+:matt/marble/14d: 480 224
+:matt/marble/15: 480 224
+:matt/marble/17: 448 224
+:matt/marble/16d: 448 224
+:matt/marble/17d: 416 224
+:matt/marble/17a: 320 96
+:matt/marble/15a: 352 96
+:matt/marble/14d: 512 160
+:matt/marble/15: 512 160
+:matt/marble/17: 480 160
+:matt/marble/16d: 480 160
+:matt/marble/17d: 448 160
+:matt/marble/15d: 544 160
+:amanda/steel/steel8x16.S: 272 192
+:amanda/steel/steel_flange_right24x16.S: 272 200 frrr
+:amanda/steel/steel_flange_right24x16.S: 280 192 rr

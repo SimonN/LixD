@@ -1,0 +1,99 @@
+$BUILT 2017-11-13 20:07:56
+$AUTHOR Clam
+$ENGLISH Santa's Workshop
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 4
+#REQUIRED 4
+#SPAWN_INTERVAL 26
+
+#RUNNER 3
+#CLIMBER 1
+#BLOCKER 1
+#PLATFORMER 4
+#BASHER 2
+#MINER 2
+#JUMPER 1
+#EXPLODER2 0
+
+:matt/winter/Hatch.H: 378 20
+:matt/winter/Hatch.H: 430 272
+
+:matt/winter/Goal.G: 128 296
+
+:matt/winter/13: 280 58 frr
+:matt/winter/17: 302 26
+:matt/winter/13: 364 270 f
+:geoo/steel/32x64o.S: 368 136
+:matt/winter/06: 270 368 r
+:matt/winter/06: 308 294 r
+:matt/winter/17: 328 292
+:matt/winter/17: 302 296
+:matt/winter/10: 324 362
+:matt/winter/13: 379 314
+:matt/winter/10: 512 352
+:matt/winter/03: 448 352
+:matt/winter/06: 624 0
+:matt/winter/06: 624 64
+:matt/winter/06: 624 128
+:matt/winter/06: 624 192
+:matt/winter/06: 624 256
+:matt/winter/06: 624 320
+:matt/winter/06: 624 336
+:geoo/steel/64x32o.S: 432 104
+:geoo/steel/64x32o.S: 368 104
+:geoo/steel/64x32o.S: 304 104
+:matt/winter/11: 208 -24
+:matt/winter/05: 160 -152 rr
+:matt/winter/13: 230 56
+:matt/winter/17: 183 20
+:geoo/steel/64x32o.S: 240 104
+:geoo/steel/64x32o.S: 176 104
+:matt/winter/04: 24 272
+:matt/winter/16: -32 248
+:matt/winter/10: -56 184
+:matt/winter/06: 74 184 r
+:matt/winter/10: 40 200
+:geoo/steel/64x32o.S: 112 192
+:geoo/steel/64x32o.S: 48 192
+:matt/winter/03: 382 348
+:matt/winter/06: 128 360 r
+:matt/winter/06: 160 360 r
+:matt/winter/10: 368 368
+:matt/winter/03: 248 -30 f
+:geoo/steel/32x32o.S: 208 72
+:geoo/steel/32x32o.S: 448 358
+:matt/winter/03: 208 376
+:matt/winter/03: 136 360
+:matt/winter/03: 72 376
+:matt/winter/03: 48 360
+:matt/winter/10: -48 360
+:matt/winter/06: 38 -74
+:matt/winter/13: 450 38 frr
+:matt/winter/06: 184 40
+:matt/winter/06: 184 -24
+:matt/winter/06: 168 0 d
+:matt/winter/06: 168 24 d
+:geoo/steel/32x64o.S: 368 200
+:matt/winter/06: 0 176 rd
+:matt/winter/06: 0 172 rd
+:matt/winter/06: 22 160
+:matt/winter/16: -70 186 frrr
+:matt/winter/06: -16 192 fr
+:geoo/steel/32x64o.S: 400 232 d
+:geoo/steel/32x32o.S: 416 358
+:geoo/steel/32x64o.S: 336 228 d
+:matt/winter/06: 252 294 r
+:matt/winter/08: 244 294 fr
+:geoo/steel/32x32o.S: 292 310
+:geoo/steel/32x32o.S: 292 342
+:geoo/steel/32x32o.S: 292 374
+:matt/winter/13: 360 288 frr
+:geoo/steel/32x32o.S: 368 264
+:geoo/steel/32x32o.S: 294 72
+:matt/winter/06: 356 40
+:matt/winter/08: 356 32 frr
+:geoo/steel/64x64o.S: 304 136 d

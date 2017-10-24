@@ -1,0 +1,62 @@
+$BUILT 2015-08-05 06:46:12
+$AUTHOR Clam Spammer
+$GERMAN 
+$ENGLISH High Jump
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 96
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 5
+#REQUIRED 1
+#SPAWN_INTERVAL 18
+#SPAWN_INTERVAL_FAST 4
+
+#WALKER 10
+#EXPLODER2 10
+#BLOCKER 10
+#JUMPER 10
+
+:matt/carnival/Hatch.H: 248 128
+
+:matt/carnival/Goal.G: 448 176
+
+:matt/carnival/25: 0 208
+:matt/carnival/25: 576 208
+:matt/carnival/00: 320 208
+:matt/carnival/00: 352 208
+:matt/carnival/55: 64 240
+:matt/carnival/55: 320 240
+:geoo/construction/rod_steel/end_rect.S: 312 160 fr
+:geoo/construction/rod_steel/straight32.S: 312 168 rrr
+:geoo/construction/rod_steel/straight32.S: 312 200 rrr
+:geoo/construction/rod_steel/straight32.S: 312 232 rrr
+:matt/carnival/25: 0 272
+:matt/carnival/25: 576 272
+:matt/carnival/26: 64 272
+:matt/carnival/26: 128 272
+:matt/carnival/26: 192 272
+:matt/carnival/26: 256 272
+:matt/carnival/26: 320 272
+:matt/carnival/26: 384 272
+:matt/carnival/26: 448 272
+:matt/carnival/26: 512 272
+:geoo/steel/32x32o.S: 320 240
+:geoo/construction/rod_steel/straight32.S: 312 240 rrr
+:matt/carnival/25: 0 336
+:matt/carnival/25: 576 336
+:matt/carnival/26: 64 336
+:matt/carnival/26: 128 336
+:matt/carnival/26: 192 336
+:matt/carnival/26: 256 336
+:matt/carnival/26: 320 336
+:matt/carnival/26: 384 336
+:matt/carnival/26: 448 336
+:matt/carnival/26: 512 336

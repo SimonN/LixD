@@ -1,0 +1,96 @@
+$BUILT 2016-01-31 14:58:56
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Polar Pop
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y -20
+#BACKGROUND_RED 128
+#BACKGROUND_GREEN 128
+#BACKGROUND_BLUE 255
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 15
+#SPAWN_INTERVAL 20
+#SPAWN_INTERVAL_FAST 4
+
+#CLIMBER 20
+#EXPLODER2 5
+#BLOCKER 4
+
+:matt/winter/Hatch.H: 96 240
+:matt/winter/Hatch.H: 480 240 r
+
+:matt/winter/Goal.G: 72 136
+:matt/winter/Goal.G: 472 136
+
+:matt/winter/06: 312 32
+:matt/winter/15: 190 57
+:matt/winter/06: 480 288 r
+:matt/winter/15: 483 294 f
+:matt/winter/06: 32 224
+:matt/winter/15: 346 288 f
+:matt/winter/15: 207 208
+:matt/winter/15: 144 208
+:matt/winter/15: 128 208
+:matt/winter/15: 96 208
+:matt/winter/15: 68 208
+:matt/winter/15: 32 208
+:matt/winter/15: 506 206
+:matt/winter/15: 474 206
+:matt/winter/15: 458 206
+:matt/winter/15: 426 206
+:matt/winter/15: 398 206
+:matt/winter/15: 352 206 f
+:matt/winter/06: 312 160
+:matt/winter/06: 312 224
+:matt/winter/06: 592 224
+:matt/winter/06: 592 160
+:matt/winter/06: 592 96
+:matt/winter/06: 32 160
+:matt/winter/06: 32 96
+:matt/winter/06: 96 288 r
+:matt/winter/10: 496 352
+:matt/winter/10: 352 336
+:matt/winter/10: 144 336
+:matt/winter/10: 240 287
+:matt/winter/10: 372 285
+:matt/winter/10: 520 287
+:matt/winter/10: -32 336
+:matt/winter/10: 88 288
+:matt/winter/10: -12 285
+:matt/winter/17: -23 229
+:matt/winter/17: -39 152 rr
+:matt/winter/17: -41 70 rr
+:matt/winter/15: 507 288 f
+:matt/winter/15: 208 292 f
+:matt/winter/10: -32 -64
+:matt/winter/10: -26 -12
+:matt/winter/10: 256 -80
+:matt/winter/10: 512 -48
+:matt/winter/10: 427 -19
+:matt/winter/10: 586 16
+:matt/winter/10: 116 -17
+:matt/winter/03: 388 195
+:matt/winter/15: 532 206
+:matt/winter/03: 480 190
+:matt/winter/03: 362 192
+:matt/winter/17: 599 185
+:matt/winter/17: 595 95
+:matt/winter/03: 122 190
+:matt/winter/03: -4 192
+:matt/winter/00: 312 12
+:matt/winter/00: 248 12 frr
+:matt/winter/10: 348 -14
+:matt/winter/10: 269 47 d
+:matt/winter/10: 157 47 frrd
+:matt/winter/10: 186 43 frrd
+:matt/winter/06: 312 32 n
+:matt/winter/06: 312 96
+:matt/bricks/16: 352 192 d
+:matt/bricks/16: 224 192 frrd

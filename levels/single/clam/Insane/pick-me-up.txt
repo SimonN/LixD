@@ -1,0 +1,110 @@
+$BUILT 2014-06-08 16:18:11
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Pick me up
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 380
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 15
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#CLIMBER 10
+#WALKER 10
+#BUILDER 1
+#PLATFORMER 1
+#BASHER 1
+#MINER 20
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:matt/bricks/Hatch.H: 128 208
+
+:matt/bricks/Goal.G: 576 144
+
+:matt/bricks/03a: 0 128
+:matt/bricks/03a: 256 192
+:matt/bricks/03a: 256 160
+:matt/bricks/03a: 320 192
+:matt/bricks/03a: 320 160
+:matt/bricks/03a: 0 192
+:matt/bricks/03: 0 256
+:matt/bricks/03b: -16 80
+:matt/bricks/03: 64 256
+:matt/bricks/03b: 48 80
+:matt/bricks/03: 128 256
+:matt/bricks/03b: 112 80
+:matt/bricks/03: 192 256
+:matt/bricks/03b: 176 80
+:matt/bricks/03: 256 256
+:matt/bricks/03b: 240 80
+:matt/bricks/03: 320 256
+:matt/bricks/03b: 304 80
+:matt/bricks/03: 384 256
+:matt/bricks/03b: 368 80
+:matt/bricks/03: 448 256
+:matt/bricks/03b: 432 80
+:matt/bricks/03: 512 256
+:matt/bricks/03b: 496 80
+:matt/bricks/03: 576 256
+:matt/bricks/03b: 560 80
+:matt/bricks/03: 0 320
+:matt/bricks/03: 64 320
+:matt/bricks/03: 128 320
+:matt/bricks/03: 192 320
+:matt/bricks/03: 256 320
+:matt/bricks/03: 320 320
+:matt/bricks/03: 384 320
+:matt/bricks/03: 448 320
+:matt/bricks/03: 512 320
+:matt/bricks/03: 576 320
+:matt/bricks/03b: -16 16
+:matt/bricks/03b: 48 16
+:matt/bricks/03b: 112 16
+:matt/bricks/03b: 176 16
+:matt/bricks/03b: 240 16
+:matt/bricks/03b: 304 16
+:matt/bricks/03b: 368 16
+:matt/bricks/03b: 432 16
+:matt/bricks/03b: 496 16
+:matt/bricks/03b: 560 16
+:geoo/steel/64x64.S: 576 192
+:matt/bricks/03: 0 352
+:matt/bricks/03: 64 352
+:matt/bricks/03: 128 352
+:matt/bricks/03: 192 352
+:matt/bricks/03: 256 352
+:matt/bricks/03: 320 352
+:matt/bricks/03: 384 352
+:matt/bricks/03: 448 352
+:matt/bricks/03: 512 352
+:matt/bricks/03: 576 352
+:matt/bricks/03b: 592 80
+:matt/bricks/03b: 592 16
+:matt/bricks/03b: -16 -16
+:matt/bricks/03b: 48 -16
+:matt/bricks/03b: 112 -16
+:matt/bricks/03b: 176 -16
+:matt/bricks/03b: 240 -16
+:matt/bricks/03b: 304 -16
+:matt/bricks/03b: 368 -16
+:matt/bricks/03b: 432 -16
+:matt/bricks/03b: 496 -16
+:matt/bricks/03b: 560 -16
+:matt/bricks/03b: 592 -16
+:matt/marble/21: 256 150 d
+:matt/marble/21: 320 150 d

@@ -1,0 +1,90 @@
+$BUILT 2015-12-09 21:07:06
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Sandy Knolls
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 20
+#SPAWN_INTERVAL_FAST 4
+
+#FLOATER 2
+#BLOCKER 5
+#PLATFORMER 3
+#BASHER 6
+
+:matt/beach/Hatch.H: 224 16
+
+:matt/beach/goal.G: -8 312
+
+:matt/water.W: 160 368
+:matt/water.W: 192 368
+:matt/water.W: 224 368
+:matt/water.W: 256 368
+:matt/water.W: 288 368
+:matt/water.W: 320 368
+:matt/water.W: 352 368
+:matt/water.W: 384 368
+:matt/water.W: 416 368
+:matt/water.W: 448 368
+:matt/water.W: 480 368
+:matt/water.W: 512 368
+:matt/water.W: 544 368
+:matt/water.W: 576 368
+:matt/water.W: 608 368
+
+:matt/beach/nighttime/15: 358 114
+:matt/beach/decor/grass02: 328 152 rr
+:matt/beach/decor/grass02: 288 160 rr
+:matt/beach/decor/grass02: 192 160 rr
+:matt/beach/decor/grass02: 240 160 rr
+:matt/beach/decor/grass02: 488 248 rr
+:matt/beach/decor/grass02: 448 248 rr
+:matt/beach/nighttime/03: 208 128
+:matt/beach/nighttime/03: 32 368
+:matt/beach/nighttime/15: 78 352
+:matt/beach/nighttime/03: -48 372
+:matt/beach/nighttime/02: 448 208 r
+:matt/beach/nighttime/14: 608 304
+:matt/beach/nighttime/14: 608 224
+:matt/beach/nighttime/15: 522 304
+:matt/beach/decor/grass02: 456 336 rr
+:matt/beach/decor/grass02: 408 336 rr
+:matt/beach/decor/grass02: 360 336 rr
+:matt/beach/nighttime/03: 400 304
+:matt/beach/decor/grass02: 312 336 rr
+:matt/beach/decor/grass02: 264 336 rr
+:matt/beach/nighttime/03: 304 304
+:matt/beach/nighttime/03: 224 304
+:matt/beach/decor/grass03: 144 320 rr
+:matt/beach/nighttime/15: 154 304
+:matt/beach/nighttime/05: 128 112
+:matt/beach/nighttime/02: 224 320 rr
+:matt/beach/nighttime/05: 492 308 f
+:matt/beach/nighttime/15: 268 288
+:matt/beach/nighttime/15: 484 192
+:matt/beach/nighttime/15: 494 200
+:geoo/steel/dark_32x64o.S: 148 256
+:matt/beach/nighttime/15: 310 114
+:matt/beach/nighttime/05: 130 -98 rr
+:matt/beach/nighttime/03: 254 128
+:matt/beach/nighttime/03: 168 128
+:matt/beach/nighttime/15: 360 124
+:matt/beach/nighttime/02: 122 136 rr
+:matt/beach/nighttime/15: 122 112 rrd
+:matt/beach/nighttime/15: 110 118 rrd
+:matt/marble/04: 312 102 d
+:matt/marble/04: 360 102 d
+:matt/marble/04: 488 182 d
+:matt/marble/04: 272 278 d
+:matt/marble/04: 80 342 d
+:matt/beach/nighttime/15: 448 208

@@ -1,0 +1,318 @@
+$BUILT 2017-11-12 21:20:26
+$AUTHOR Clam
+$ENGLISH Skyline Skydiving
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 2000
+
+#INITIAL 11
+#REQUIRED 6
+#SPAWN_INTERVAL 4
+
+#FLOATER 10
+#EXPLODER2 10
+#BASHER 1
+
+:geoo/construction/Hatch.H: 512 1960 r
+:matt/bricks/Hatch.H: 160 16
+:matt/bricks/Hatch.H: 160 16
+:matt/bricks/Hatch.H: 160 16
+:matt/bricks/Hatch.H: 160 16
+:matt/bricks/Hatch.H: 160 16
+:matt/bricks/Hatch.H: 160 16
+:matt/bricks/Hatch.H: 160 16
+:matt/bricks/Hatch.H: 160 16
+:matt/bricks/Hatch.H: 160 16
+:matt/bricks/Hatch.H: 160 16
+
+:matt/bricks/Goal.G: 250 1936
+
+:geoo/abstract/tbeam_down.T: 352 1872
+:geoo/abstract/tbeam_down.T: 384 1872
+:geoo/abstract/tbeam_down.T: 416 1872
+:geoo/abstract/tbeam_down.T: 352 1840
+:geoo/abstract/tbeam_down.T: 384 1840
+:geoo/abstract/tbeam_down.T: 416 1840
+:geoo/abstract/tbeam_down.T: 256 1872
+:geoo/abstract/tbeam_down.T: 288 1872
+:geoo/abstract/tbeam_down.T: 320 1872
+:geoo/abstract/tbeam_down.T: 256 1840
+:geoo/abstract/tbeam_down.T: 288 1840
+:geoo/abstract/tbeam_down.T: 320 1840
+
+:matt/bricks/01a: 432 1984
+:matt/bricks/01a: 368 1984
+:matt/bricks/03a: 256 1984
+:geoo/construction/rod_steel/straight32.S: 240 1912
+:geoo/construction/rod_steel/link.S: 440 1956 frr
+:geoo/construction/rod_steel/link.S: 432 1924
+:matt/bricks/03: 192 64
+:matt/bricks/03: 128 64
+:matt/bricks/03: 192 608
+:matt/bricks/03: 128 608
+:matt/bricks/03: 192 672
+:matt/bricks/03: 128 672
+:matt/bricks/03: 192 736
+:matt/bricks/03: 128 736
+:matt/bricks/03: 192 800
+:matt/bricks/03: 128 800
+:matt/bricks/03: 192 864
+:matt/bricks/03: 128 864
+:matt/bricks/03: 192 928
+:matt/bricks/03: 128 928
+:matt/bricks/03: 192 992
+:matt/bricks/03: 128 992
+:matt/bricks/03: 192 1056
+:matt/bricks/03: 128 1056
+:matt/bricks/03: 192 1120
+:matt/bricks/03: 128 1120
+:matt/bricks/03: 192 1184
+:matt/bricks/03: 128 1184
+:matt/bricks/03: 192 1248
+:matt/bricks/03: 128 1248
+:matt/bricks/03: 192 1312
+:matt/bricks/03: 128 1312
+:matt/bricks/03: 192 1376
+:matt/bricks/03: 128 1376
+:matt/bricks/03: 192 1440
+:matt/bricks/03: 128 1440
+:matt/bricks/03: 192 1504
+:matt/bricks/03: 128 1504
+:matt/bricks/03: 192 1568
+:matt/bricks/03: 128 1568
+:matt/bricks/03: 192 1632
+:matt/bricks/03: 128 1632
+:matt/bricks/03: 192 1696
+:matt/bricks/03: 128 1696
+:matt/bricks/03: 192 1760
+:matt/bricks/03: 128 1760
+:matt/bricks/03: 192 1824
+:matt/bricks/03: 128 1824
+:matt/bricks/03: 192 1888
+:matt/bricks/03: 128 1888
+:matt/bricks/03: 192 1952
+:matt/bricks/03: 128 1952
+:matt/bricks/18: 168 624
+:matt/bricks/18: 200 624
+:matt/bricks/18: 168 800
+:matt/bricks/18: 200 800
+:matt/bricks/18: 168 976
+:matt/bricks/18: 200 976
+:matt/bricks/18: 168 1152
+:matt/bricks/18: 200 1152
+:matt/bricks/18: 168 1328
+:matt/bricks/18: 200 1328
+:matt/bricks/18: 168 1504
+:matt/bricks/18: 200 1504
+:matt/bricks/18: 168 1680
+:matt/bricks/18: 200 1680
+:matt/bricks/18: 168 1856
+:matt/bricks/18: 200 1856
+:matt/bricks/03b: 448 1840
+:matt/bricks/03b: 512 1840
+:matt/bricks/03b: 544 1840
+:matt/bricks/03b: 448 1776
+:matt/bricks/03b: 512 1776
+:matt/bricks/03b: 544 1776
+:matt/bricks/03b: 448 1712
+:matt/bricks/03b: 512 1712
+:matt/bricks/03b: 544 1712
+:matt/bricks/03b: 448 1648
+:matt/bricks/03b: 512 1648
+:matt/bricks/03b: 544 1648
+:matt/bricks/03b: 448 1584
+:matt/bricks/03b: 512 1584
+:matt/bricks/03b: 544 1584
+:matt/bricks/03b: 448 1520
+:matt/bricks/03b: 512 1520
+:matt/bricks/03b: 544 1520
+:matt/bricks/03b: 448 1456
+:matt/bricks/03b: 512 1456
+:matt/bricks/03b: 544 1456
+:matt/bricks/03b: 448 1392
+:matt/bricks/03b: 512 1392
+:matt/bricks/03b: 544 1392
+:matt/bricks/03b: 448 1360
+:matt/bricks/03b: 512 1360
+:matt/bricks/03b: 544 1360
+:matt/bricks/03b: 448 1296
+:matt/bricks/03b: 512 1296
+:matt/bricks/03b: 544 1296
+:matt/bricks/03a: 0 1920
+:matt/bricks/03a: 0 1856
+:matt/bricks/03a: 0 1792
+:matt/bricks/18: 520 1248
+:matt/bricks/19: 512 1280
+:matt/bricks/20: 512 1224
+:matt/bricks/18: 520 1240
+:matt/bricks/17: 448 1240
+:matt/bricks/17: 456 1232
+:matt/bricks/17: 544 1240 f
+:matt/bricks/17: 536 1232 f
+:matt/beach/decor/umbrella_red: 0 1710
+:matt/winter/09b: 512 1192
+:matt/bricks/18: 184 1844 d
+:matt/bricks/18: 184 1852 d
+:matt/bricks/18: 184 1676 d
+:matt/bricks/18: 184 1668 d
+:matt/bricks/18: 184 1500 d
+:matt/bricks/18: 184 1492 d
+:matt/bricks/18: 184 1324 d
+:matt/bricks/18: 184 1316 d
+:matt/bricks/18: 184 1148 d
+:matt/bricks/18: 184 1140 d
+:matt/bricks/18: 184 972 d
+:matt/bricks/18: 184 964 d
+:matt/bricks/18: 184 796 d
+:matt/bricks/18: 184 788 d
+:matt/bricks/18: 184 620 d
+:matt/bricks/18: 184 612 d
+:matt/bricks/20: 160 608
+:matt/bricks/20: 192 608
+:matt/bricks/19: 192 640
+:matt/bricks/19: 160 640
+:matt/bricks/20: 160 784
+:matt/bricks/20: 192 784
+:matt/bricks/19: 192 816
+:matt/bricks/19: 160 816
+:matt/bricks/20: 160 960
+:matt/bricks/20: 192 960
+:matt/bricks/19: 192 992
+:matt/bricks/19: 160 992
+:matt/bricks/20: 160 1136
+:matt/bricks/20: 192 1136
+:matt/bricks/19: 192 1168
+:matt/bricks/19: 160 1168
+:matt/bricks/20: 160 1312
+:matt/bricks/20: 192 1312
+:matt/bricks/19: 192 1344
+:matt/bricks/19: 160 1344
+:matt/bricks/20: 160 1488
+:matt/bricks/20: 192 1488
+:matt/bricks/19: 192 1520
+:matt/bricks/19: 160 1520
+:matt/bricks/20: 160 1840
+:matt/bricks/20: 192 1840
+:matt/bricks/19: 192 1872
+:matt/bricks/19: 160 1872
+:matt/bricks/19: 160 1696
+:matt/bricks/19: 192 1696
+:matt/bricks/20: 192 1664
+:matt/bricks/20: 160 1664
+:matt/bricks/18: 504 1792
+:matt/bricks/18: 536 1792
+:matt/bricks/18: 520 1780 d
+:matt/bricks/18: 520 1788 d
+:matt/bricks/20: 496 1776
+:matt/bricks/20: 528 1776
+:matt/bricks/19: 528 1808
+:matt/bricks/19: 496 1808
+:matt/bricks/18: 504 1616
+:matt/bricks/18: 536 1616
+:matt/bricks/18: 520 1604 d
+:matt/bricks/18: 520 1612 d
+:matt/bricks/20: 496 1600
+:matt/bricks/20: 528 1600
+:matt/bricks/19: 528 1632
+:matt/bricks/19: 496 1632
+:matt/bricks/18: 504 1440
+:matt/bricks/18: 536 1440
+:matt/bricks/18: 520 1428 d
+:matt/bricks/18: 520 1436 d
+:matt/bricks/20: 496 1424
+:matt/bricks/20: 528 1424
+:matt/bricks/19: 528 1456
+:matt/bricks/19: 496 1456
+:matt/bricks/03: 128 544
+:matt/bricks/03: 192 544
+:matt/bricks/03: 128 480
+:matt/bricks/03: 192 480
+:matt/bricks/03: 128 416
+:matt/bricks/03: 192 416
+:matt/bricks/03: 128 352
+:matt/bricks/03: 192 352
+:matt/bricks/03: 128 288
+:matt/bricks/03: 192 288
+:matt/bricks/03: 128 224
+:matt/bricks/03: 192 224
+:matt/bricks/03: 128 96
+:matt/bricks/03: 192 96
+:matt/bricks/18: 168 448
+:matt/bricks/18: 200 448
+:matt/bricks/18: 184 444 d
+:matt/bricks/18: 184 436 d
+:matt/bricks/20: 160 432
+:matt/bricks/20: 192 432
+:matt/bricks/19: 192 464
+:matt/bricks/19: 160 464
+:matt/bricks/18: 168 272
+:matt/bricks/18: 200 272
+:matt/bricks/18: 184 268 d
+:matt/bricks/18: 184 260 d
+:matt/bricks/20: 160 256
+:matt/bricks/20: 192 256
+:matt/bricks/19: 192 288
+:matt/bricks/19: 160 288
+:geoo/construction/rod_steel/straight32.S: 400 1912
+:geoo/construction/rod_steel/straight32.S: 384 1912
+:geoo/construction/rod_steel/straight32.S: 352 1912
+:geoo/construction/rod_steel/straight32.S: 336 1912
+:matt/bricks/03a: 0 1952
+:matt/bricks/03b: 448 1872
+:matt/bricks/03b: 512 1872
+:matt/bricks/03b: 544 1872
+:geoo/construction/rod_steel/straight32.S: 272 1912
+:geoo/construction/rod_steel/straight32.S: 304 1912
+:geoo/construction/rod_steel/edge_ru.S: 336 1972
+:matt/bricks/06: 256 64
+:matt/bricks/05: 64 64
+:matt/bricks/03b: 448 1936
+:matt/bricks/03b: 512 1936
+:matt/bricks/03b: 544 1936
+:matt/bricks/18: 504 1968
+:matt/bricks/18: 536 1968
+:matt/bricks/18: 520 1956 d
+:matt/bricks/18: 520 1964 d
+:matt/bricks/20: 496 1952
+:matt/bricks/20: 528 1952
+:matt/bricks/19: 528 1984
+:matt/bricks/19: 496 1984
+:matt/bricks/03: 128 160
+:matt/bricks/03: 192 160
+:geoo/construction/platform_single.S: 528 1992 rd
+:geoo/construction/rod_steel/edge_ld.S: 432 1912
+:geoo/construction/rod_steel/straight32.S: 432 1920 rrr
+:geoo/construction/rod_steel/edge_lu.S: 432 1972
+:geoo/construction/rod_steel/straight32.S: 432 1940 rrr
+:geoo/construction/rod_steel/straight32.S: 400 1972
+:geoo/construction/rod_steel/straight32.S: 368 1972
+:geoo/construction/rod_steel/link.S: 336 1914 rrr
+:geoo/construction/rod_steel/straight32.S: 336 1930 fr
+:geoo/construction/rod_steel/straight32.S: 336 1940 fr
+:geoo/construction/platformbrick_single: 440 1978
+:matt/bricks/01a: 304 1984
+:matt/bricks/01a: 336 1984
+:matt/bricks/01a: 368 1984
+:matt/bricks/01a: 400 1984
+:geoo/construction/rod_steel/straight32.S: 344 1972
+:geoo/construction/platformbrick: 336 1980
+:geoo/construction/platformbrick: 368 1980
+:geoo/construction/platformbrick: 384 1980
+:geoo/construction/platformbrick: 336 1982
+:geoo/construction/platformbrick: 368 1982
+:geoo/construction/platformbrick: 384 1982
+:geoo/construction/rod_steel/edge_ld.S: 424 1920
+:geoo/construction/rod_steel/edge_lu.S: 424 1964
+:geoo/construction/rod_steel/edge_ru.S: 344 1964
+:geoo/construction/rod_steel/edge_rd.S: 344 1920
+:geoo/construction/rod_steel/straight32.S: 344 1932 fr
+:geoo/construction/rod_steel/straight32.S: 424 1932 fr
+:geoo/construction/rod_steel/straight32.S: 424 1928 fr
+:geoo/construction/rod_steel/straight32.S: 344 1928 fr
+:geoo/construction/rod_steel/straight32.S: 352 1920
+:geoo/construction/rod_steel/straight32.S: 376 1920
+:geoo/construction/rod_steel/straight32.S: 392 1920
+:geoo/construction/rod_steel/straight32.S: 352 1964
+:geoo/construction/rod_steel/straight32.S: 368 1964
+:geoo/construction/rod_steel/straight32.S: 392 1964

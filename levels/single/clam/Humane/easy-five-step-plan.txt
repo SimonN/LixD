@@ -1,0 +1,62 @@
+$BUILT 2015-12-08 21:42:19
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Easy five-step plan!
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 50
+#SPAWN_INTERVAL_FAST 4
+
+#BUILDER 4
+
+:matt/underworld/Hatch.H: 64 176
+
+:matt/underworld/Goal.G: 464 104
+
+:matt/underworld/Lava.W: 56 368
+:matt/underworld/Lava.W: 104 368
+:matt/underworld/Lava.W: 152 368
+:matt/underworld/Lava.W: 200 368
+:matt/underworld/Lava.W: 248 368
+:matt/underworld/Lava.W: 296 368
+:matt/underworld/Lava.W: 344 368
+:matt/underworld/Lava.W: 392 368
+:matt/underworld/Lava.W: 440 368
+:matt/underworld/Lava.W: 488 368
+:matt/underworld/Lava.W: 536 368
+
+:matt/underworld/05: -96 256
+:matt/underworld/05: 18 256
+:matt/underworld/05: 192 256
+:matt/underworld/05: 352 256
+:matt/underworld/05: 432 256
+:matt/underworld/00: 144 232
+:matt/underworld/00: 224 216
+:matt/underworld/00: 304 200
+:matt/underworld/00: 384 184
+:matt/underworld/00: 464 168
+:matt/underworld/05: 560 256
+:matt/underworld/02: 0 288
+:matt/underworld/02: 0 192
+:matt/underworld/02: 0 96
+:matt/underworld/05: 464 40
+:matt/underworld/05: 336 40
+:matt/underworld/05: 176 40
+:matt/underworld/05: 64 40
+:matt/underworld/02: 0 0
+:matt/underworld/02: 0 320
+:matt/underworld/02: 576 320
+:matt/underworld/02: 576 192
+:matt/underworld/02: 576 288
+:matt/underworld/02: 576 96
+:matt/underworld/02: 576 0

@@ -1,0 +1,42 @@
+$BUILT 2017-11-22 16:46:29
+$AUTHOR Clam
+$ENGLISH Square Dancing
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 16
+#REQUIRED 14
+#SPAWN_INTERVAL 64
+
+#CLIMBER 4
+#FLOATER 1
+#BUILDER 4
+#BASHER 1
+#MINER 4
+#DIGGER 4
+#EXPLODER 0
+
+:matt/carnival/Hatch.H: 80 16
+
+:matt/carnival/Goal.G: 512 80
+
+:matt/carnival/24: 80 86
+:matt/carnival/25: 512 144
+:matt/carnival/26: 208 176
+:matt/carnival/27: 144 256
+:matt/carnival/25: 304 216
+:matt/carnival/24: 320 80
+:matt/carnival/27: 416 176
+:matt/carnival/26: 480 272
+:matt/carnival/26: 576 0
+:matt/carnival/25: 0 336
+:matt/carnival/24: 576 336
+:matt/carnival/27: 0 0
+$BEGIN_TILE_GROUP 0
+:matt/carnival/12: 0 10
+:matt/carnival/12: 0 0
+$END_TILE_GROUP
+:Group-0: 136 230
+:Group-0: 128 230 d

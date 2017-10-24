@@ -1,0 +1,59 @@
+$BUILT 2017-10-24 21:31:59
+$AUTHOR Clam Spammer
+$ENGLISH Tribute to Sliding
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 320
+
+#INITIAL 10
+#REQUIRED 8
+#SPAWN_INTERVAL 32
+
+#BUILDER 2
+#EXPLODER2 0
+
+:matt/bricks/Hatch.H: 192 144
+
+:matt/bricks/Goal.G: 416 32
+
+:matt/bricks/03: 416 80
+:matt/bricks/03: 416 112
+:matt/bricks/03: 384 208
+:matt/bricks/03: 416 176
+:matt/bricks/03: 256 208
+:matt/bricks/03: 320 208
+:matt/bricks/01: 358 176
+:matt/bricks/01: 390 182
+:matt/bricks/01: 392 166
+:matt/bricks/01: 358 170
+:matt/bricks/01: 390 164
+:matt/bricks/01: 390 158
+:matt/bricks/01: 392 142
+:matt/bricks/01: 358 152
+:matt/bricks/01: 356 154
+:matt/bricks/01: 390 140
+:matt/bricks/01: 356 144
+:matt/bricks/01: 358 146
+:matt/bricks/01: 358 128
+:matt/bricks/01: 390 134
+:matt/bricks/01: 392 118
+:matt/bricks/01: 390 116
+:matt/bricks/01: 390 110
+:matt/bricks/01: 358 104
+:matt/bricks/01: 356 106
+:matt/bricks/01: 356 96
+:matt/bricks/01: 358 98
+:matt/bricks/01: 392 94
+:matt/bricks/01: 390 92
+:matt/bricks/01: 358 80
+:matt/bricks/01: 356 82
+:matt/bricks/01: 358 122
+:matt/bricks/01: 390 86
+:matt/bricks/03: 416 208
+:matt/bricks/01: 386 196
+:matt/bricks/03: 192 208
+:matt/bricks/01: 192 192
+:matt/bricks/01: 224 192
+:matt/bricks/01: 288 192
+:matt/bricks/01: 354 178

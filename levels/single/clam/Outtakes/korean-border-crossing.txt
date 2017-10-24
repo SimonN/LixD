@@ -1,0 +1,122 @@
+$BUILT 2017-11-27 02:01:17
+$AUTHOR Clam
+$ENGLISH Korean border crossing
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 952
+#SIZE_Y 400
+
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 45
+
+#WALKER 2
+#RUNNER 1
+#PLATFORMER 2
+#BASHER 4
+#MINER 2
+#JUMPER 3
+#EXPLODER2 0
+
+:simon/oriental/hatch.H: 224 194
+
+:simon/oriental/goal.G: 750 124
+
+$BEGIN_TILE_GROUP 0
+:geoo/abstract/pipes/central0: 0 0
+:geoo/abstract/pipes/central0: 30 0
+$END_TILE_GROUP
+:Group-0: 362 370
+$BEGIN_TILE_GROUP 1
+:geoo/abstract/pipes/central0: 0 0
+:geoo/abstract/pipes/central0: 32 0
+:geoo/abstract/pipes/central0: 62 0
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:Group-1: 92 0
+:Group-1: 0 0
+$END_TILE_GROUP
+:Group-2: 408 370
+:geoo/abstract/pipes/central0: 591 369
+:simon/oriental/gate: 692 204
+$BEGIN_TILE_GROUP 3
+:simon/oriental/bridge2: 0 0
+:simon/oriental/bridge2: 41 0
+:simon/oriental/bridge2: 0 49 rr
+:simon/oriental/bridge2: 41 49 rr
+$END_TILE_GROUP
+:Group-3: 372 200
+$BEGIN_TILE_GROUP 4
+:simon/oriental/bridge1: 0 22
+:simon/oriental/bridge1: 44 0
+:simon/oriental/bridge1: 0 69 rr
+:simon/oriental/bridge1: 44 47 rr
+$END_TILE_GROUP
+:Group-4: 266 200
+:Group-4: 580 200 frr
+:simon/oriental/08: 672 256
+:simon/oriental/10: 26 234
+:simon/oriental/bush3: 10 166
+:simon/oriental/08: 202 256
+:simon/oriental/bush6: 100 74
+:simon/oriental/bonsai: 40 64
+:simon/oriental/bush2: 134 182
+:simon/oriental/gate: 746 204
+:simon/oriental/08: 740 256
+:simon/oriental/08: 740 324
+:simon/oriental/08: 808 256
+:simon/oriental/08: 806 324
+:simon/oriental/08: 134 256
+:simon/oriental/08: 134 324
+:simon/oriental/08: 66 256
+:simon/oriental/08: 66 324
+:Group-3: 372 56
+:geoo/abstract/pipes/central0: 630 104
+:geoo/abstract/pipes/central0: 599 105
+:geoo/abstract/pipes/central0: 646 104
+:Group-4: 580 4 rr
+:geoo/abstract/pipes/central0: 276 104
+:geoo/abstract/pipes/central0: 308 104
+:Group-4: 266 4 f
+:Group-4: 158 -50 f
+:Group-4: 688 -50 rr
+:Group-3: 796 -52
+:Group-3: 54 -52
+:Group-3: 372 -44
+:Group-4: 580 -96 rr
+:Group-4: 266 -96 f
+:Group-3: 372 298
+:geoo/abstract/pipes/central0: 331 369
+:Group-4: 266 298
+:simon/oriental/08: 202 324
+:Group-4: 580 298 frr
+:simon/oriental/08: 672 324
+:geoo/construction/rod_steel/straight32.S: 472 168 rrr
+:Group-3: 476 200
+:Group-3: 476 298
+:Group-3: 476 56
+:Group-3: 476 -44
+:simon/oriental/02: 924 220
+:simon/oriental/10: 894 234 frr
+:simon/oriental/08: -2 324
+:Group-3: 900 -52
+:Group-3: -50 -52
+:geoo/construction/rod_steel/straight32.S: 472 200 rrr
+:geoo/construction/rod_steel/straight32.S: 472 232 rrr
+:geoo/construction/rod_steel/straight32.S: 472 264 rrr
+:geoo/construction/rod_steel/straight32.S: 472 296 rrr
+:geoo/construction/rod_steel/straight32.S: 472 307 rrr
+:geoo/construction/rod_steel/straight32.S: 472 136 rrr
+:geoo/construction/rod_steel/straight32.S: 472 127 rrr
+:geoo/steel/16x16o.S: 468 126
+:geoo/steel/16x16o.S: 468 323
+:simon/oriental/leaf2: 852 217 fr
+:simon/oriental/leaf2: 680 217 r
+:simon/oriental/leaf3: 808 217
+:simon/oriental/leaf3: 728 217 frr
+:simon/oriental/02: 924 218
+:simon/oriental/08: 876 256
+:simon/oriental/08: 874 324
+:simon/oriental/02: -2 220 frr
+:simon/oriental/02: -2 218 frr
+:simon/oriental/08: -2 256

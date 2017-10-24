@@ -1,0 +1,126 @@
+$BUILT 2014-06-08 16:16:59
+$AUTHOR Clam
+$GERMAN 
+$ENGLISH Made to (mis)measure
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#START_X 0
+#START_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 10
+#REQUIRED 7
+#SPAWN_INTERVAL 50
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#JUMPER 3
+#EXPLODER 3
+#BLOCKER 3
+#BUILDER 3
+#PLATFORMER 3
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+
+:geoo/construction/Hatch.H: 32 168
+
+:geoo/construction/Goal2.G: 576 128
+
+:geoo/construction/Laseremit_hzl_16.F: 400 344
+:geoo/construction/Laser_hz_64.F: 416 344
+:geoo/construction/Laser_hz_64.F: 480 344
+:geoo/construction/Laser_hz_64.F: 496 344
+:geoo/construction/Laseremit_hzr_16.F: 560 344
+
+:geoo/construction/concrete/016v: 480 160
+:geoo/construction/concrete/032h: 112 248
+:geoo/construction/rod_rust/straight32: 252 176 rrr
+:geoo/construction/rod_rust/straight32: 252 200 fr
+:geoo/construction/concrete/016v: 0 216
+:geoo/construction/concrete/032h: 48 248
+:geoo/construction/concrete/032: 16 248
+:geoo/construction/concrete/016v: 0 248
+:geoo/construction/concrete/064: 576 192
+:geoo/construction/rod_rust/straight32: 228 232
+:geoo/construction/rod_rust/edge_lu: 252 232
+:geoo/construction/rod_rust/end_rect: 188 224
+:geoo/construction/concrete/016v: 480 192
+:geoo/construction/rod_rust/straight32: 196 232
+:geoo/construction/concrete/016v: 0 184
+:geoo/steel/32x32o.S: 236 172
+:geoo/steel/16x16o.S: 236 204
+:geoo/construction/concrete/032b: 80 216
+:geoo/construction/concrete/032h: 16 216
+:geoo/construction/rod_rust/edge_ru: 196 232
+:geoo/construction/rod_rust/edge_ld: 196 224
+:geoo/construction/concrete/016hd: 180 216 d
+:geoo/construction/concrete/032h: 112 376
+:geoo/construction/concrete/064: 336 192
+:geoo/construction/concrete/032h: 48 376
+:geoo/construction/concrete/032: 16 376
+:geoo/construction/concrete/016v: 0 376
+:geoo/construction/concrete/016v: 0 344
+:geoo/construction/concrete/016v: 0 312
+:geoo/construction/concrete/064: 336 320
+:geoo/construction/concrete/064: 576 320
+:geoo/construction/concrete/032b: 80 344
+:geoo/construction/concrete/032h: 16 344
+:geoo/construction/concrete/032h: 112 120
+:geoo/construction/concrete/032h: 48 120
+:geoo/construction/concrete/032: 16 120
+:geoo/construction/concrete/016v: 0 120
+:geoo/construction/concrete/016v: 0 88
+:geoo/construction/concrete/016v: 0 56
+:geoo/construction/concrete/064: 336 64
+:geoo/construction/concrete/064: 576 64
+:geoo/construction/concrete/032b: 80 88
+:geoo/construction/concrete/032h: 16 88
+:geoo/construction/concrete/016v: 0 152
+:geoo/construction/concrete/016v: 0 280
+:geoo/construction/concrete/016v: 0 24
+:geoo/construction/concrete/032: 16 -8
+:geoo/construction/concrete/016v: 0 -8
+:geoo/construction/concrete/032h: 48 -8
+:geoo/construction/concrete/032h: 112 -8
+:geoo/construction/stairsbrick_rd_8: 304 34
+:geoo/construction/stairsbrick_ru_8: 312 40
+:geoo/construction/stairsbrick_rd_8: 168 40
+:geoo/construction/stairsbrick_ru_8: 176 34
+:geoo/construction/platformbrick: 188 40
+:geoo/construction/platformbrick: 220 40
+:geoo/construction/platformbrick: 252 40
+:geoo/construction/platformbrick: 284 40
+:geoo/construction/platformbrick: 292 40
+:geoo/construction/stairsbrick_ru_8: 160 96 fr
+:geoo/construction/stairsbrick_rd_8: 154 88 fr
+:geoo/construction/stairsbrick_rd_8: 160 56 fr
+:geoo/construction/stairsbrick_ru_8: 154 64 fr
+:geoo/construction/platformbrick: 160 76 fr
+:geoo/construction/rod_rust/link_h_dd: 254 58
+:geoo/construction/rod_rust/link_du_h: 234 46
+:geoo/construction/rod_rust/end_rect_du: 220 60 rrr
+:geoo/construction/rod_rust/link_du_h: 270 64 r
+:geoo/construction/rod_rust/link_h_du: 253 86
+:geoo/construction/rod_rust/link_h_dd: 268 70 r
+:geoo/construction/rod_rust/edge_rd: 248 88
+:geoo/construction/rod_rust/end_rect: 248 104 rrr
+:geoo/construction/rod_rust/straight8: 248 96 rrr
+:geoo/construction/rod_rust/edge_lu: 248 120
+:geoo/construction/concrete/016d: 240 119 d
+:geoo/construction/rod_rust/edge_rd: 248 120 n
+:geoo/construction/concrete/032: 352 80 rr
+:geoo/construction/concrete/032: 352 208 rr
+:geoo/construction/concrete/032: 352 336 rr
+:geoo/construction/concrete/032: 592 336 rr
+:geoo/construction/concrete/032: 592 208 rr
+:geoo/construction/concrete/032: 592 80 rr
