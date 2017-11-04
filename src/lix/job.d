@@ -12,11 +12,10 @@ module lix.job;
  */
 
 import std.algorithm;
-import std.conv;
+import std.conv : to;
 import std.string;
-import lix;
-
 import game.tribe; // interface for returnSkills
+import lix;
 
 package enum AfterAssignment : ubyte {
     becomeNormally,
@@ -25,18 +24,30 @@ package enum AfterAssignment : ubyte {
 }
 
 abstract class Job {
-package:
-    inout(Lixxie) lixxie() inout @system
-    {
-        return cast (inout(Lixxie)) (cast (void*) this - Lixxie.jobOffset);
-    }
-
 private:
     Ac  _ac;
     byte _frame;
     byte _spriteOffsetX;
 
 public:
+    // lixxie: This should be package, but it must be public to be callable
+    // from either std.conv.emplace or my workaround basics.emplace.emplace
+    // since DMD 2.077.
+    // Therefore: Take care! If you're unsure whether the Job is attached to a
+    // lix, don't call lixxie(), it would then point into random memory!
+    inout(Lixxie) lixxie() inout @system
+    in {
+        assert (this !is null);
+        void* lixVoid = cast (void*) this - Lixxie.jobOffset;
+        assert (lixVoid !is null);
+        const(Lixxie) lix = cast (const(Lixxie)) lixVoid;
+        assert (lix !is null);
+        assert (lix.job is this);
+    }
+    body {
+        return cast (inout(Lixxie)) (cast (void*) this - Lixxie.jobOffset);
+    }
+
     @property final ac()            const pure { return _ac;            }
     @property final frame()         const pure { return _frame;         }
     @property final spriteOffsetX() const pure { return _spriteOffsetX; }
@@ -107,7 +118,7 @@ struct JobUnion {
     }
 
     this(in Ac ac) {
-        import std.conv;
+        import basics.emplace; // work around segfault in Lix on dmd 2.077
         final switch (ac) {
             case Ac.nothing:    emplace!RemovedLix(data[]); break;
             case Ac.faller:     emplace!Faller(data[]);     break;
