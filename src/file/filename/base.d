@@ -7,14 +7,14 @@ import std.file : SpanMode, isDir;
 package interface IFilename {
 public:
 immutable:
-    @property string rootless()       nothrow;
-    @property string extension()      nothrow;
-    @property string file()           nothrow;
-    @property string rootlessNoExt()  nothrow;
-    @property string fileNoExtNoPre() nothrow;
-    @property string dirRootless()    nothrow;
-    @property string dirInnermost()   nothrow;
-    @property char   preExtension()   nothrow;
+    @property string rootless()       nothrow pure;
+    @property string extension()      nothrow pure;
+    @property string file()           nothrow pure;
+    @property string rootlessNoExt()  nothrow pure;
+    @property string fileNoExtNoPre() nothrow pure;
+    @property string dirRootless()    nothrow pure;
+    @property string dirInnermost()   nothrow pure;
+    @property char   preExtension()   nothrow pure;
 
     Filename guaranteedDirOnly() nothrow;
 

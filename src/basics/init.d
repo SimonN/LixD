@@ -20,6 +20,7 @@ import hardware.keyboard;
 import hardware.mouse;
 import hardware.mousecur;
 import hardware.sound;
+import hardware.music;
 import hardware.tharsis;
 import tile.tilelib;
 
@@ -76,6 +77,15 @@ void deinitialize()
     hardware.tharsis.deinitialize();
     basics.user.save();
     basics.globconf.save();
+
+    // If we don't abort music, Linux Lix crashes on exit.
+    // Several places lead into basics.init.deinitialize: Clicking the X
+    // in the windowmanager-window's corner, pressing Shift+ESC, exiting
+    // from the main menu.
+    // Sending sigint or sigterm to Lix doesn't go here, instead crashes.
+    // Maybe I should register deinitialize by atexit or install signal
+    // handlers?
+    hardware.music.deinitialize();
 }
 
 private void initializeGUI()

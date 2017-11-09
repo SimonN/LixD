@@ -79,7 +79,11 @@ UserOption!bool showFPS;
 UserOption!int guiColorRed;
 UserOption!int guiColorGreen;
 UserOption!int guiColorBlue;
-UserOption!int soundVolume;
+
+UserOption!bool soundEnabled;
+UserOption!bool musicEnabled;
+UserOption!int soundDecibels;
+UserOption!int musicDecibels;
 
 UserOptionFilename singleLastLevel;
 UserOptionFilename networkLastLevel;
@@ -221,7 +225,11 @@ static this()
     guiColorRed = newOpt("GUI_COLOR_RED", Lang.optionGuiColorRed, 0x60);
     guiColorGreen = newOpt("GUI_COLOR_GREEN", Lang.optionGuiColorGreen, 0x80);
     guiColorBlue = newOpt("GUI_COLOR_BLUE", Lang.optionGuiColorBlue, 0xB0);
-    soundVolume = newOpt("SOUND_VOLUME", Lang.optionSoundVolume, 10);
+
+    soundEnabled = newOpt("SOUND_ENABLED", Lang.optionSoundEnabled, true);
+    musicEnabled = newOpt("MUSIC_ENABLED", Lang.optionMusicEnabled, true);
+    soundDecibels = newOpt("SOUND_DECIBELS", Lang.optionSoundDecibels, 0);
+    musicDecibels = newOpt("MUSIC_DECIBELS", Lang.optionMusicDecibels, -10);
 
     singleLastLevel = newOpt("SINGLE_LAST_LEVEL", fileSingleplayerFirstLevel);
     networkLastLevel = newOpt("NETWORK_LAST_LEVEL", dirLevelsNetwork);

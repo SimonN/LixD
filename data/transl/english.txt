@@ -311,11 +311,19 @@ $optionUserName               Player name
 $optionLanguage               Language
 $optionReplayAutoSolutions    Auto-save level solutions
 $optionReplayAutoMulti        Auto-save multiplayer games
+$optionSoundEnabled             Sound
+$optionMusicEnabled             Music
+$optionSoundDecibels            Sound gain in dB
+$optionMusicDecibels            Music gain in dB
 
 $optionUserNameDesc Your name appears in replays and in multiplayer games.|Lix saves settings to a file in ./data/user/ named after you.
 $optionLanguageDesc Language throughout Lix's user interface.
 $optionReplayAutoSolutionsDesc Saves a replay automatically when you solve a singleplayer level.
 $optionReplayAutoMultiDesc Saves a replay automatically when you have finished a multiplayer game.
+$optionSoundEnabledDesc Enable sound effects.
+$optionMusicEnabledDesc Enable background music.
+$optionSoundDecibelsDesc Adjust the sound volume. 0 is already pretty loud.|Raise/lower by 10 dB to double/halve the sound volume.
+$optionMusicDecibelsDesc Adjust the music volume. −10 dB should be loud enough.|Raise/lower by 10 dB to double/halve the music volume.
 
 $optionScreenWindowed           Start in windowed mode
 $optionScreenWindowedRes        Windowed resolution
@@ -326,7 +334,6 @@ $optionShowFPS                  Count physics and FPS
 $optionGuiColorRed              Menu color red
 $optionGuiColorGreen            Menu color green
 $optionGuiColorBlue             Menu color blue
-$optionSoundVolume              Sound volume
 
 $optionScreenWindowedDesc Run Lix in a window, or in fullscreen mode?|Restart Lix after you change this!
 $optionScreenWindowedResDesc Size of the Lix window. Only for windowed mode, not for fullscreen.|Restart Lix after you change this!
@@ -334,7 +341,6 @@ $optionPaintTorusSeamsDesc Mark the wrapping seam with a thin line whenever a le
 $optionIngameTooltipsDesc Explain buttons and lix-selecting hotkeys during play, e.g., to select left-facing lix.|Some buttons have two functions: One on left-click, one on right-click.
 $optionShowButtonHotkeysDesc On every button, print the button's hotkeys in the bottom-right-hand corner.
 $optionShowFPSDesc Print number of physics updates since the game started.|Print the number of video frames per second, during play or editor.
-$optionSoundVolumeDesc Playback volume of all sound effects.|Set to 0 to turn off sound in Lix.
 
 $optionKeyZoomIn Zoom +
 $optionKeyZoomOut Zoom −

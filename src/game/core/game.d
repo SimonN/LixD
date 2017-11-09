@@ -41,8 +41,9 @@ import game.replay;
 
 import graphic.map;
 import gui;
-import hardware.sound;
 import hardware.display; // fps for framestepping speed
+import hardware.music;
+import hardware.sound;
 import level.level;
 import lix; // _drawHerHighlit
 import net.repdata;
@@ -111,9 +112,7 @@ public:
         assert (lv.good);
         level = lv;
         prepareNurse(levelFilename, rp);
-        initializePanel();
-        initializeConsole();
-        setLastPhyuToNow();
+        commonConstructor();
     }
 
     this(RichClient client)
@@ -135,9 +134,7 @@ public:
             this.adjustToMatchMillisecondsSinceGameStart(millis);
         };
         prepareNurse(null, null);
-        initializePanel();
-        initializeConsole();
-        setLastPhyuToNow();
+        commonConstructor();
     }
 
     /* Using ~this to dispose stuff is probably bad style.
@@ -279,7 +276,15 @@ private:
         return nurse.stateOnlyPrivatelyForGame;
     }
 
-    private void prepareNurse(Filename levelFilename, Replay rp)
+    void commonConstructor()
+    {
+        initializePanel();
+        initializeConsole();
+        stopMusic();
+        setLastPhyuToNow();
+    }
+
+    void prepareNurse(Filename levelFilename, Replay rp)
     {
         assert (! nurse);
         _replayNeverCancelledThereforeDontSaveAutoReplay = rp !is null;

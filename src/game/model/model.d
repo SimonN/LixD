@@ -169,7 +169,7 @@ private:
     {
         foreach (int teamNumber, Tribe tribe; _cs.tribes) {
             if (tribe.lixHatch == 0
-                || _cs.update < 60
+                || _cs.update < _cs.updateFirstSpawn
                 || _cs.update < tribe.updatePreviousSpawn + tribe.spawnint)
                 continue;
             // the only interesting part of OutsideWorld right now is the

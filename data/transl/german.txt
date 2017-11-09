@@ -294,17 +294,23 @@ $optionGroupControls          Steuerung
 $optionGroupGameKeys          Spieltasten
 $optionGroupEditorKeys        Editortasten
 $optionGroupMenuKeys          Menütasten
-$optionGroupSound             Audio
 $optionUserName              Spielername
 $optionLanguage              Sprache/Language
 $optionReplayAutoSolutions   Level-Lösungen auto-speichern
 $optionReplayAutoMulti       Im Mehrspieler auto-speichern
-$optionAvoidBuilderQueuing   Builder eher an Nicht-Builder
-$optionAvoidBatterToExploder Batter eher an Nicht-Exploder
-$optionPausedAssign           Fähigkeitszuweisung bei Pause:
-$optionPausedAssignStayPaused Gar nicht weiter
-$optionPausedAssignAdvance    Nur 1 Bild weiter
-$optionPausedAssignUnpause    Pause ausschalten
+$optionSoundEnabled             Sound
+$optionMusicEnabled             Music
+$optionSoundDecibels            Sound gain in dB
+$optionMusicDecibels            Music gain in dB
+
+$optionUserNameDesc Dein Name erscheint in Replays und im Netzwerkspiel.|Lix speichert Einstellungen in ./data/user/ unter deinem Namen.
+$optionLanguageDesc Sprache der Lix-Benutzeroberfläche.
+$optionReplayAutoSolutionsDesc Replays all deiner Einzelspieler-Lösungen speichern.|Wenn ein Versuch nicht klappt, wird er auch nicht gespeichert.
+$optionReplayAutoMultiDesc Replays all deiner Mehrspieler-Partien automatisch speichern.|Dies speichert gewonnene und verlorene Partien.
+$optionSoundEnabledDesc Enable sound effects.
+$optionMusicEnabledDesc Enable background music.
+$optionSoundDecibelsDesc Adjust the sound volume. 0 is already pretty loud.|Raise/lower by 10 dB to double/halve the sound volume.
+$optionMusicDecibelsDesc Adjust the music volume. −10 dB should be loud enough.|Raise/lower by 10 dB to double/halve the music volume.
 
 $optionScreenWindowed           Im Fenstermodus starten
 $optionScreenWindowedRes        Fenster-Auflösung
@@ -315,7 +321,13 @@ $optionShowFPS                  Physik und FPS zählen
 $optionGuiColorRed              Menüfarbe Rot
 $optionGuiColorGreen            Menüfarbe Grün
 $optionGuiColorBlue             Menüfarbe Blau
-$optionSoundVolume              Klanglautstärke
+
+$optionScreenWindowedDesc Lix im Fenstermodus oder Vollbildmodus starten?|Starte Lix neu, nachdem du diese Einstellung änderst!
+$optionScreenWindowedResDesc Größe des Lix-Fensters bei Programmstart. Keine Auswirkung auf Vollbildmodus.|Starte Lix neu, nachdem du diese Einstellung änderst!
+$optionPaintTorusSeamsDesc Torus-Nahtstellen in der Landschaft mit einer dünnen Linie kennzeichnen.|Dies hat keine Auswirkung auf die Physik; es dient zur Orientierung.
+$optionIngameTooltipsDesc Buttons und Lix-wählende Hotkeys im Spiel erklären, z.B. nur Linksläufer.|Einige Buttons haben eine Linksklick- und eine Rechtsklick-Funktion.
+$optionShowButtonHotkeysDesc Auf jedem Button die Hotkeys des Buttons in der rechten unteren Ecke anzeigen.
+$optionShowFPSDesc Anzahl Physik-Updates seit Spielbeginn anzeigen.|Im Editor und Spiel: Frames pro Sekunde und Grafikspeicher anzeigen.
 
 $optionKeyZoomIn             Zoom +
 $optionKeyZoomOut            Zoom −
@@ -327,7 +339,6 @@ $optionScrollSpeedEdge       Scroll-Geschw. am Bildrand
 $optionScrollSpeedClick      Scroll-Geschw. mit Scrolltaste
 $optionFastMovementFreesMouse Schnelle Beweg. befreit Maus
 
-$optionShowFPSDesc Anzahl Physik-Updates seit Spielbeginn anzeigen.|Bilder pro Sekunde zählen und anzeigen.
 $optionKeyZoomInDesc Level größer darstellen, dafür weniger auf einmal sehen.
 $optionKeyZoomOutDesc Level kleiner darstellen, dafür mehr auf einmal sehen.
 $optionKeyScrollDesc Halte dies (Standard: rechte Maustaste ⟁) und bewege die Maus zum Scrollen.|Das ist einfacher, schneller und präziser als Scrollen am Bildschirmrand.
@@ -355,6 +366,20 @@ $optionKeySpecTribe         Team zusehen
 $optionKeyPingGoals         Klappen & Ziele pingen
 $optionKeyNuke               Atombombe
 
+$optionKeyForceLeftDesc Halte gedrückt, um Fähigkeiten an Linksläufer zuzuweisen.|Das ist nützlich in dichten Ansammlungen von Lix.
+$optionKeyForceRightDesc Halte gedrückt, um Fähigkeiten an Rechtsläufer zuzuweisen.|Das ist nützlich in dichten Ansammlungen von Lix.
+$optionKeyPauseDesc Das Spiel pausieren.|Du kannst unten bestimmen, ob Fähigkeitszuweisungen die Pause beenden.
+$optionKeyFrameBackManyDesc Das Spiel um 1 Sekunde zurückspulen.
+$optionKeyFrameBackOneDesc Das Spiel um 1 Physik-Update zurückspulen, also um ¹⁄₁₅ einer Sekunde.
+$optionKeyFrameAheadOneDesc Das Spiel um 1 Physik-Update vorspulen, also um ¹⁄₁₅ einer Sekunde.
+$optionKeyFrameAheadManyDesc Das Spiel um 10 Sekunden vorspulen.
+$optionKeySpeedFastDesc Schnellen Vorlauf an- und ausschalten.|Schneller Vorlauf ist 4-mal so schnell wie normales Spiel.
+$optionKeySpeedTurboDesc Turbo-Vorlauf an- und ausschalten.|Turbo-Vorlauf ist 36-mal so schnell wie normales Spiel.
+$optionKeyRestartDesc Den Level komplett von vorne starten, mit Replay deiner Aktionen.|Um das Replay abzubrechen, klicke in die Luft.
+$optionKeyStateLoadDesc Zum schnellgespeicherten Spielstand zurückkehren.
+$optionKeyStateSaveDesc Spielstand schnellspeichern.
+$optionKeyChatDesc Die Chat-Konsole während einer Mehrspieler-Partie öffnen.
+$optionKeySpecTribeDesc Die Fähigkeiten eines anderen Teams anzeigen, während du einer|Mehrspieler-Partie zuschaust oder ein Mehrspieler-Replay guckst.
 $optionKeyPingGoalsDesc Eigene Klappen und Ziele im Netzwerkspiel kurz hervorheben.|Das hilft in wilden Partien oder bei verdeckten Markierungen.
 $optionKeyNukeDesc Im Einzelspieler alle Lix sprengen, um den Level zu beenden.|Im Netzwerkspiel die Nachspielzeit starten, sofern mindestens 1 Lix gerettet ist.
 $winGameTitleDesc Das Menü während des Spiels aufrufen,|um den Level zu beenden oder das Replay zu speichern.
@@ -367,7 +392,14 @@ $optionPausedAssignStayPaused Gar nicht weiter
 $optionPausedAssignAdvance    Nur 1 Bild weiter
 $optionPausedAssignUnpause    Pause ausschalten
 
-$optionReplayAfterFrameBackDesc Zukünftige Replay-Aktionen beibehalten und wieder abspielen, wenn du in der Zeit zurückgehst (◀▮).|Ohne Haken: Replay-Aktionen werden entfernt, sobald sie durch ◀▮ ungeschehen gemacht werden.
+$optionAvoidBuilderQueuingDesc Builder vorrangig an Nicht-Builder zuweisen anstatt an bestehende Builder.|Halte "Priorität invertieren" (Reiter "Steuerung"), um das jeweils andere zu tun.
+$optionAvoidBatterToExploderDesc Batter vorrangig an normale Lix zuweisen anstatt an brennende Exploder.|Halte "Priorität invertieren" (Reiter "Steuerung"), um das jeweils andere zu tun.
+$optionReplayAfterFrameBackDesc Replay-Aktionen zum späteren Abspiel beibehalten, wenn du zurückspulst (◀▮).|Ohne Haken: Replay-Aktionen entfernen, die durch ◀▮ ungeschehen werden.
+
+$optionPausedAssignDesc Die Pause ausschalten, sobald du eine Fähigkeit zuweist.|Ohne Haken: Nur 1 Physik-Update weiterspielen bei Fähigkeitszuweisung.
+$optionPausedAssignStayPausedDesc Die Physik bleibt stehen, selbst wenn du Fähigkeiten zuweist.|Du kannst mehrere Fähigkeiten auf einmal zuweisen.
+$optionPausedAssignAdvanceDesc Die Physik um 1 Update weiterspielen, wenn du eine Fähigkeit zuweist.|Die Pause bleibt aktiviert.
+$optionPausedAssignUnpauseDesc Die Pause ausschalten, wenn du eine Fähigkeit zuweist.
 
 $optionKeyMenuOkay           Okay/ja
 $optionKeyMenuEdit           Editieren
@@ -380,6 +412,25 @@ $optionKeyMenuUpBy1          Rauf um 1
 $optionKeyMenuDownBy1        Runter um 1
 $optionKeyMenuDownBy5        Runter um 5
 $optionKeyMenuExit           Zurück/abbr.
+
+$optionKeyMenuOkayDesc Den markierten Level spielen.|Dialog-Einstellungen übernehmen und Dialoge beenden.
+$optionKeyMenuEditDesc Den markierten Level mit dem Leveleditor öffnen.
+$optionKeyMenuNewLevelDesc Einen neuen Level im Leveleditor erstellen.
+$optionKeyMenuExportDesc Den markierten Level als Bilddatei exportieren.
+$optionKeyMenuDeleteDesc Die markierte Datei löschen.|Ungespeicherte Daten verwerfen, wenn der Editor zum Speichern fragt.
+$optionKeyMenuUpDirDesc In den übergeordneten Ordner wechseln.|Du kannst zu anderen Levels, Replays oder Terrainstücken navigieren.
+$optionKeyMenuUpBy5Desc Die Markierung um 5 Dateien nach oben bewegen.|Hiermit kannst du Levels ohne die Maus auswählen.
+$optionKeyMenuUpBy1Desc Die Markierung um 1 Datei nach oben bewegen.|Hiermit kannst du Levels ohne die Maus auswählen.
+$optionKeyMenuDownBy1Desc Die Markierung um 1 Datei nach unten bewegen.|Hiermit kannst du Levels ohne die Maus auswählen.
+$optionKeyMenuDownBy5Desc Die Markierung um 5 Dateien nach unten bewegen.|Hiermit kannst du Levels ohne die Maus auswählen.
+$optionKeyMenuExitDesc Einen Browser schließen.|Einen Dialog abbrechen, ohne zu speichern.
+$browserSingleTitleDesc Vom Hauptmenü den Einzelspieler-Browser aufrufen.
+$winLobbyTitleDesc Vom Hauptmenü die Netzwerk-Lobby aufrufen.
+$browserReplayTitleDesc Vom Hauptmenü den Replay-Browser aufrufen.
+$optionTitleDesc Vom Hauptmenü das Optionsmenü aufrufen.
+$optionGuiColorRedDesc Die Grafikoberfläche in Lix anders färben.
+$optionGuiColorGreenDesc Die Grafikoberfläche in Lix anders färben.
+$optionGuiColorBlueDesc Die Grafikoberfläche in Lix anders färben.
 
 $optionEdLeft                Nach links
 $optionEdRight               Nach rechts
@@ -409,6 +460,11 @@ $optionEdAddGoal            Ziel hinzuf.
 $optionEdAddDeco            Deko hinzuf.
 $optionEdAddHazard          Gefahr hinzuf.
 $optionEdGridCustom         Benutzerdefinierte Rastergröße
+
+$optionEdLeftDesc Ausgewählte Stücke nach links bewegen.|Das Raster wird eingehalten. Halte die Taste zum schnellen Bewegen.
+$optionEdRightDesc Ausgewählte Stücke nach rechts bewegen.|Das Raster wird eingehalten. Halte die Taste zum schnellen Bewegen.
+$optionEdUpDesc Ausgewählte Stücke nach oben bewegen.|Das Raster wird eingehalten. Halte die Taste zum schnellen Bewegen.
+$optionEdDownDesc Ausgewählte Stücke nach unten bewegen.|Das Raster wird eingehalten. Halte die Taste zum schnellen Bewegen.
 
 // Neuen Spieler begruessen (Mini-Dialog)
 $windowAskNameTitle          Lix

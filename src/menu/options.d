@@ -17,6 +17,7 @@ import gui;
 import gui.option;
 import graphic.color;
 import hardware.mouse; // RMB to OK the window away
+import hardware.music; // reapplyVolumeMusic
 
 class OptionsMenu : Window {
 
@@ -91,6 +92,7 @@ protected override void calcSelf()
     }
     if (okay.execute || hardware.mouse.mouseClickRight) {
         saveEverything();
+        reapplyVolumeMusic(); // ideally, do this on all music numpick changes
         _gotoMainMenu = true;
     }
     else if (cancel.execute) {
@@ -203,9 +205,13 @@ void populateGeneral()
     scope (exit)
         groups[OptionGroup.general] = grp;
     auto fac = facLeft();
-    fac.y = 250;
+    fac.y += 30;
     grp ~= fac.factory!BoolOption(replayAutoSolutions);
     grp ~= fac.factory!BoolOption(replayAutoMulti);
+
+    fac.y = 250;
+    grp ~= fac.factory!BoolOption(soundEnabled);
+    grp ~= fac.factory!BoolOption(musicEnabled);
 
     fac = facRight();
     grp ~= fac.factory!TextOption(Lang.optionUserName.transl, &userName);
@@ -217,9 +223,12 @@ void populateGeneral()
     fac.yl = 20;
     fac.y  = 250;
     auto cfg = NumPickConfig();
+    cfg.digits = 3;
+    cfg.signAlways = true;
+    cfg.min = -50;
     cfg.max = 20;
-    cfg.min =  0;
-    grp ~= fac.factory!NumPickOption(cfg, soundVolume);
+    grp ~= fac.factory!NumPickOption(cfg, soundDecibels);
+    grp ~= fac.factory!NumPickOption(cfg, musicDecibels);
 }
 
 void populateGraphics()

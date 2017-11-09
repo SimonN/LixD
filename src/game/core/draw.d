@@ -17,6 +17,7 @@ import graphic.internal;
 import graphic.map;
 import graphic.torbit;
 import hardware.display;
+import hardware.music;
 import hardware.tharsis;
 
 package void
@@ -55,6 +56,9 @@ implGameDraw(Game game) { with (game)
         map.drawCamera();
     }
     game.drawReplaySign();
+    with (game.nurse.constStateForDrawingOnly)
+        if (! isMusicPlaying && update >= updateFirstSpawn)
+            suggestRandomMusic();
 }}
 // end with(game), end implGameDraw()
 

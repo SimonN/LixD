@@ -14,12 +14,14 @@ import core.memory;
 
 import basics.alleg5;
 import basics.globconf;
+import basics.globals;
 import editor.editor;
 import game.core.game;
 import file.filename; // running levels from the command-line
 import file.log; // logging uncaught Exceptions
 import hardware.display;
 import hardware.keyboard;
+import hardware.music;
 import menu.askname;
 import menu.browser.replay;
 import menu.browser.single;
@@ -250,6 +252,7 @@ public:
         else if (game) {
             game.calc();
             if (game.gotoMainMenu) {
+                suggestMusic(fileMusicMenu);
                 auto net = game.loseOwnershipOfRichClient();
                 kill();
                 if (net) {
@@ -272,6 +275,7 @@ public:
                 kill();
                 browSin = new BrowserSingle();
                 gui.addElder(browSin);
+                suggestMusic(fileMusicMenu);
             }
         }
         else {
@@ -284,6 +288,7 @@ public:
                 askName = new MenuAskName;
                 gui.addElder(askName);
             }
+            suggestMusic(fileMusicMenu);
         }
 
     }

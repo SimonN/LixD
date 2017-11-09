@@ -111,12 +111,14 @@ immutable dirDataBitmapScale = "data/images/scale";
 
 // Class objects will be instantiated in the module constructor.
 Filename dirLevels, dirLevelsSingle, dirLevelsNetwork, dirReplays, dirData,
-    dirDataBitmap, dirDataSound, dirDataUser, dirDataTransl, dirImages,
+    dirDataBitmap, dirDataSound, dirDataMusic,
+    dirDataUser, dirDataTransl, dirImages,
     dirImagesOrig, dirImagesOrigL1, dirImagesOrigL2, dirReplayAutoSolutions,
     dirReplayAutoMulti, dirReplayManual, dirExportImages;
 
 Filename fileGlobalConfig, fileLog, fileReplayVerifier, fileTharsisProf,
-    fileLanguageEnglish, fileSingleplayerFirstLevel;
+    fileLanguageEnglish, fileMusicMenu, fileMusicGain,
+    fileSingleplayerFirstLevel;
 
 Filename fileImageGuiNumber, fileImageAppIcon,
     fileImageDebris, fileImageEditFlip, fileImageEditHatch,
@@ -140,6 +142,7 @@ static this()
     dirData = new Fn("data/");
     dirDataBitmap = new Fn("data/images/");
     dirDataSound = new Fn("data/sound/");
+    dirDataMusic = new Fn("music/");
     dirDataUser = new Fn("data/user/");
     dirDataTransl = new Fn("data/transl/");
     dirImages = new Fn("images/");
@@ -156,6 +159,8 @@ static this()
     fileReplayVerifier = new Fn("data/verifier.txt");
     fileTharsisProf = new Fn("data/profile.txt");
     fileLanguageEnglish = new Fn("data/transl/english.txt");
+    fileMusicMenu = new Fn(dirDataMusic.rootless ~ "menulix");
+    fileMusicGain = new Fn(dirDataMusic.rootless ~ "gain.txt");
     fileSingleplayerFirstLevel = new Fn(dirLevelsSingle.rootless
                                     ~ "lemforum/Lovely/anyway.txt");
 

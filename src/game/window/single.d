@@ -55,8 +55,12 @@ public:
         }
         _saveReplay = addButton(y, xlg - 40);
         _exitGame   = addButton(y, xlg - 40);
-        if (won)
+        if (won) {
             _exitGame.hotkey = keyMenuOkay;
+            import hardware.music;
+            import basics.globals;
+            suggestMusic(fileMusicMenu);
+        }
         super.captionSuperElements();
         super.setReplayAndLevel(replay, level);
 

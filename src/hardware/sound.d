@@ -5,6 +5,7 @@ import basics.globals;
 import basics.user;
 import file.filename;
 import file.log;
+import hardware.music;
 import hardware.tharsis;
 
 enum Loudness { loud, quiet }
@@ -141,11 +142,35 @@ void draw()
     foreach (sample; samples)
         if (sample)
             sample.draw();
+    drawMusic();
 }
 
-private Sample[Sound.MAX] samples;
+package float dbToGain(in int db) pure nothrow
+{
+    return (2.0f) ^^ (db / 5f);
+}
 
-private class Sample {
+package void logAllegroSupportsFormat()
+{
+    static bool oggErrorLogged = false;
+    if (oggErrorLogged)
+        return;
+    oggErrorLogged = true;
+    log("    -> Check if other programs play this, and if Allegro 5");
+    log("    -> has been compiled with support for this format.");
+}
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+private: /////////////////////////////////////////////////////////////: private
+///////////////////////////////////////////////////////////////////////////////
+
+
+
+Sample[Sound.MAX] samples;
+
+class Sample {
 private:
     alias ALLEGRO_SAMPLE*   AlSamp;
     alias ALLEGRO_SAMPLE_ID PlayId;
@@ -178,16 +203,12 @@ public:
     {
         if (_loud || (_quiet && !_lastWasLoud))
             stop();
-        if ((_loud || _quiet) && basics.user.soundVolume.value > 0) {
+        if ((_loud || _quiet) && basics.user.soundEnabled.value) {
             _lastWasLoud = _loud;
             loadFromDisk();
             if (! _sample)
                 return;
-            al_play_sample(_sample,
-                // The user setting allows sound volumes between 0 and 20.
-                // Setting 10 corresponds to Allegro 5's default volume of 1.0.
-                // Allegro 5 can work with higher settings than 1.0.
-                (_loud ? 0.1f : 0.02f) * soundVolume,
+            al_play_sample(_sample, dbToGain(soundDecibels) * _loud ? 1 : 0.2f,
                 ALLEGRO_AUDIO_PAN_NONE, 1.0f, // speed factor
                 ALLEGRO_PLAYMODE.ALLEGRO_PLAYMODE_ONCE, &_playID);
         }
@@ -216,12 +237,8 @@ private:
                 logf("Missing sound file `%s'", _filename.rootless);
             }
             else {
-                logf("Can't decode sound file `%s'.", _filename.rootless);
-                static bool oggErrorLogged = false;
-                if (! oggErrorLogged) {
-                    oggErrorLogged = true;
-                    log("    -> Make sure this is really an .ogg file. If it is,");
-                    log("    -> check if Allegro 5 has been compiled with .ogg support.");
-    }   }   }   }
+                logf("Unplayable sound sample `%s'.", _filename.rootless);
+                logAllegroSupportsFormat();
+    }   }   }
 }
 // end class Sample
