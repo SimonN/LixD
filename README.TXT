@@ -9,8 +9,11 @@ sound, and input, and uses enet for networking.
 License/Copying/Public domain
 -----------------------------
 
-Lix is placed in the public domain via the CC0 public domain dedication.
-An exception is the text font, DejaVu Sans. See `./doc/copying.txt'.
+Lix's code, graphic sets, sprites, sound effects, and some music tracks
+(but not all music tracks) are released into the public domain via the CC0 public domain dedication.
+
+The text font, DejaVu Sans, and some music tracks come with their own licenses.
+See `./doc/copying.txt' for details.
 
 Build instructions
 ------------------

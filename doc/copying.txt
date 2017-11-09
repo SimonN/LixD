@@ -1,15 +1,26 @@
 Lix -- a single- and multiplayer action-puzzle game
 
 Written in 2006 to 2017 by Simon Naarmann <s.naarmann@gmail.com>.
-Character sprites and non-level graphics by Simon N.
-In-Level graphics, e.g., terrain, by Matt C., geoo, Proxima, and Amanda (NaOH).
-Logo in ./data/images/lix_logo.svg by Lucki. Levels carry an author field.
+Character sprites and GUI icon graphics by Simon Naarmann.
+In-Level graphics, e.g., terrain, by Matt C., geoo, Proxima, Amanda (NaOH),
+and Simon. Logo in ./data/images/lix_logo.svg by Lucki.
+Levels carry an author field. All these assets are released under the
+following public domain dedication/CC0 waiver, see below.
 
-The font djvusans.ttf in ./data/fonts/ is exempt from the following public
-domain dedication/CC0 waiver. It's licensed under the Bitstream Vera Fonts
-Copyright, see http://dejavu-fonts.org/wiki/License
+If your game has music in ./music/: The menu music ./music/menulix.ogg
+by Mike Spanner and all tracks in ./music/minim-mobius/ by Minim and mobius
+are also released under the public domain dedication/CC0 waiver.
 
-For everything except that font, the following shall hold.
+The tracks in ./music/rubix/ by Mike Spanner are not in the public domain;
+they are released under the Creative Commons Attribution 4.0 International
+license, see: https://creativecommons.org/licenses/by/4.0/
+
+The font ./data/fonts/djvusans.ttf is not in the public domain either; it's
+licensed under the Bitstream Vera Fonts Copyright, see:
+https://dejavu-fonts.github.io/License.html
+
+For everything that has not been specifically released under a different
+license than the CC0 waiver, the following shall hold.
 
 To the extent possible under law, the authors have dedicated all
 copyright and related and neighboring rights to this software to the
@@ -21,6 +32,8 @@ warranty. In no event will the authors be held liable for any damages
 arising from the use of this software.
 
 
+
+===============================================================================
 
 Creative Commons Legal Code
 

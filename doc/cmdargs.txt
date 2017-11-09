@@ -87,7 +87,7 @@ This never examines included levels. If there is only an included level and
 no pointed-to level, the replay produces a level-missing line in the output.
 
 lix --coverage replay1 [replay2 ...]
---------------------------------------------
+------------------------------------
 
 Like --verify, but afterwards, this prints a list of levels that lack a proof
 of solvability. A level is printed as not-yet-covered iff all of these apply:
