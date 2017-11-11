@@ -63,12 +63,9 @@ public:
     void saveUser(in GameState s, in Replay r)
     {
         try {
-            _userState = s.clone();
             assert (r);
-            if (_userReplay is null
-                || ! r.firstDifference(_userReplay).thisBeginsWithRhs)
-                // r has info that _userReplay hasn't, store r
-                _userReplay = r.clone();
+            _userState = s.clone();
+            _userReplay = r.clone();
         }
         catch (OutOfVramException e)
             log(e.msg);
