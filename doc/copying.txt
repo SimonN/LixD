@@ -1,26 +1,16 @@
 Lix -- a single- and multiplayer action-puzzle game
 
 Written in 2006 to 2017 by Simon Naarmann <s.naarmann@gmail.com>.
-Character sprites and GUI icon graphics by Simon Naarmann.
-In-Level graphics, e.g., terrain, by Matt C., geoo, Proxima, Amanda (NaOH),
-and Simon. Logo in ./data/images/lix_logo.svg by Lucki.
-Levels carry an author field. All these assets are released under the
-following public domain dedication/CC0 waiver, see below.
 
-If your game has music in ./music/: The menu music ./music/menulix.ogg
-by Mike Spanner and all tracks in ./music/minim-mobius/ by Minim and mobius
-are also released under the public domain dedication/CC0 waiver.
+Most of Lix is public domain: The following parts of Lix are released
+into the public domain under the CC0 1.0 public domain dedication/waiver.
 
-The tracks in ./music/rubix/ by Mike Spanner are not in the public domain;
-they are released under the Creative Commons Attribution 4.0 International
-license, see: https://creativecommons.org/licenses/by/4.0/
-
-The font ./data/fonts/djvusans.ttf is not in the public domain either; it's
-licensed under the Bitstream Vera Fonts Copyright, see:
-https://dejavu-fonts.github.io/License.html
-
-For everything that has not been specifically released under a different
-license than the CC0 waiver, the following shall hold.
+*   The entire source code, by Simon Naarmann
+*   All sprites and menu icons, by Simon Naarmann
+*   All sound effects, by Simon Naarmann
+*   All tileset graphics, by Matt C., geoo, Proxima, Amanda (NaOH), Simon N.
+*   The music from the main menu, music/menulix.ogg, by Mike Spanner
+*   The music in ./music/minim-mobius, by Minim and mobius.
 
 To the extent possible under law, the authors have dedicated all
 copyright and related and neighboring rights to this software to the
@@ -30,6 +20,19 @@ dedication (see below). This software is published from Germany.
 This software is provided 'as-is', without any express or implied
 warranty. In no event will the authors be held liable for any damages
 arising from the use of this software.
+
+The following parts of Lix are NOT in the public domain; rather, they are
+released with the given license:
+
+*   The font ./data/fonts/djvusans.ttf, it's licensed under the Bitstream
+    Vera Fonts Copyright, see: https://dejavu-fonts.github.io/License.html
+
+*   The music in ./music/rubix, by Mike Spanner, this music is released
+    under the Creative Commons Attribution 4.0 International license,
+    see: https://creativecommons.org/licenses/by/4.0/
+
+For everything that has not been specifically released under a different
+license than the CC0 waiver, the following CC0 waiver shall hold.
 
 
 

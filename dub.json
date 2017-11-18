@@ -1,9 +1,9 @@
 {
     "name": "lix",
     "description": "single-/multiplayer puzzle game, inspired by Lemmings",
-    "homepage": "http://asdfasdf.ethz.ch/~simon/",
+    "homepage": "http://www.lixgame.com",
     "copyright": "public domain",
-    "authors": ["Simon N."],
+    "authors": ["Simon Naarmann"],
 
     "targetName": "lix",
     "targetPath": "bin",
