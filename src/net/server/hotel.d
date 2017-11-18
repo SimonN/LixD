@@ -47,11 +47,6 @@ public:
             fe.dispose();
     }
 
-    PlNr owner(in Room ofRoom)
-    {
-        return festivals[ofRoom].owner;
-    }
-
     // Returns new room ID > 0 when we have successfully created that room.
     // Returns Room(0) when we're full. The player should stay in the lobby.
     Room firstFreeRoomElseLobby()
@@ -90,7 +85,8 @@ public:
         assert (from != to);
         ob.unreadyAllInRoom(from);
         ob.unreadyAllInRoom(to);
-        makeOwnerIfAlone(mover);
+        housekeep(from);
+        housekeep(to); // make mover the owner if alone
         ob.describeRoom(mover, festivals[to].level,festivals[to].levelChooser);
         foreach (pl, prof; ob.allPlayers)
             if (prof.room == from) {
@@ -100,7 +96,6 @@ public:
             }
             else if (prof.room == to && pl != mover)
                 ob.sendPeerEnteredYourRoom(pl, mover);
-        maybeCleanRoom(from);
     }
 
     // The server calls this while the player is still in the profile array,
@@ -113,7 +108,7 @@ public:
         auto room = prof.room;
         ob.broadcastDisconnectionOfAndRemove(who);
         ob.unreadyAllInRoom(room);
-        maybeCleanRoom(room);
+        housekeep(room);
     }
 
     void maybeStartGame(Room room)
@@ -157,12 +152,34 @@ private:
         return ptr && ptr.room == room;
     }
 
-    void maybeCleanRoom(Room room) @nogc
+    // Call housekeep() after the room changes.
+    // If the room is empty, we will dispose it.
+    // Otherwise, if it has no owner inside, make someone the owner.
+    void housekeep(in Room room) @nogc
     {
+        assert (ob);
+        if (room == 0)
+            return;
+        // Dispose room if empty
+        bool someoneIsHere = false;
         foreach (ref const prof; ob.allPlayers)
             if (prof.room == room)
-                return;
-        festivals[room].dispose();
+                someoneIsHere = true;
+        if (! someoneIsHere) {
+            festivals[room].dispose();
+            return;
+        }
+        if (! isInRoom(festivals[room].owner, room)) {
+            // Make someone the owner. We're guaranteed that somebody is here
+            // because we didn't return from housekeep() during the check
+            // (room-empty ? dispose : continue) above.
+            foreach (pl, ref const prof; ob.allPlayers)
+                if (prof.room == room) {
+                    festivals[room].owner = pl;
+                    break;
+                }
+        }
+        assert (isInRoom(festivals[room].owner, room));
     }
 
     void relayLevelToAll(Room room)
@@ -171,19 +188,6 @@ private:
             if (profile.room == room)
                 ob.sendLevelByChooser(plNr, festivals[room].level,
                                             festivals[room].levelChooser);
-    }
-
-    void makeOwnerIfAlone(PlNr plNr) @nogc
-    {
-        Room room = Room(0);
-        foreach (pl, prof; ob.allPlayers) {
-            if (pl == plNr)
-                room = prof.room;
-            else if (prof.room == room)
-                return; // we aren't alone
-        }
-        if (room != Room(0))
-            festivals[room].owner = plNr;
     }
 
     void sendTimeSyncingPackets()
