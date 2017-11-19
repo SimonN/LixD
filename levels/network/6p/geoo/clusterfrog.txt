@@ -1,4 +1,4 @@
-$BUILT 2017-09-20 23:00:24
+$BUILT 2017-11-19 20:09:52
 $AUTHOR geoo
 $ENGLISH Clusterfrog
 
@@ -57,12 +57,31 @@ $ENGLISH Clusterfrog
 :raymanni/lab/goo.W: 404 376
 :raymanni/lab/goo.W: 660 376
 
-:raymanni/lab/pipe_4: 591 46
-:raymanni/lab/pipe_4: 79 46
-:raymanni/lab/pipe_4: 335 46
-:raymanni/lab/pipe_4: 207 254
-:raymanni/lab/pipe_4: 719 254
-:raymanni/lab/pipe_4: 463 254
+:raymanni/lab/pipe_2: 591 45 rr
+$BEGIN_TILE_GROUP 0
+:raymanni/lab/pipe_2: 0 0 r
+:raymanni/lab/pipe_2: 16 0 rd
+$END_TILE_GROUP
+:Group-0: 592 44
+$BEGIN_TILE_GROUP 1
+:geoo/steel/32x16o.S: 0 0
+:geoo/abstract/cvblocks/005: 7 0 d
+:geoo/abstract/cvblocks/005: 9 0 d
+$END_TILE_GROUP
+:Group-1: 608 40
+:raymanni/lab/pipe_2: 335 45 rr
+:Group-0: 336 44
+:Group-1: 352 40
+:raymanni/lab/pipe_2: 79 45 rr
+:Group-0: 80 44
+:Group-1: 96 40
+:raymanni/lab/pipe_2: 719 253 rr
+:Group-0: 720 252
+:Group-1: 736 248
+:raymanni/lab/pipe_2: 207 253 rr
+:Group-0: 208 252
+:Group-1: 224 248
+:raymanni/lab/pipe_2: 463 253 rr
 :raymanni/lab/block_2: 0 96
 :raymanni/lab/block_1: 0 32
 :raymanni/lab/block_3: 0 64
@@ -72,20 +91,20 @@ $ENGLISH Clusterfrog
 :raymanni/lab/block_1: 160 96
 :raymanni/lab/scen_6: 64 32
 :geoo/steel/32x32o.S: 128 96
-:raymanni/lab/pipe_1: 72 192
-:raymanni/lab/pipe_1: 104 192
-:raymanni/lab/pipe_1: 72 128 fr
-:raymanni/lab/pipe_1: 72 160 fr
-:raymanni/lab/pipe_1: 136 128 fr
-:raymanni/lab/pipe_1: 136 160 fr
-:raymanni/lab/pipe_1: 136 192
+:raymanni/lab/pipe_1: 72 192 r
+:raymanni/lab/pipe_1: 104 192 r
+:raymanni/lab/pipe_1: 72 128
+:raymanni/lab/pipe_1: 72 160
+:raymanni/lab/pipe_1: 136 128
+:raymanni/lab/pipe_1: 136 160
+:raymanni/lab/pipe_1: 136 192 r
 :raymanni/lab/slope_1: 0 160
 :raymanni/lab/slope_2: 40 160
-:raymanni/lab/pipe_1: 0 192
-:raymanni/lab/pipe_1: 24 192
-:raymanni/lab/pipe_1: 40 192
-:raymanni/lab/pipe_1: 168 192
-:raymanni/lab/pipe_1: 200 192
+:raymanni/lab/pipe_1: 0 192 r
+:raymanni/lab/pipe_1: 24 192 r
+:raymanni/lab/pipe_1: 40 192 r
+:raymanni/lab/pipe_1: 168 192 r
+:raymanni/lab/pipe_1: 200 192 r
 :raymanni/lab/scen_4: 96 160
 :geoo/steel/32x32o.S: 32 96
 :raymanni/toys/letter_2: 176 0
@@ -93,9 +112,9 @@ $ENGLISH Clusterfrog
 :raymanni/toys/letter_1: 192 32
 :raymanni/lab/block_3: 192 96
 :geoo/steel/32x32o.S: 224 96
-:raymanni/lab/pipe_1: 240 128 fr
-:raymanni/lab/pipe_1: 240 160 fr
-:raymanni/lab/pipe_1: 224 192
+:raymanni/lab/pipe_1: 240 128
+:raymanni/lab/pipe_1: 240 160
+:raymanni/lab/pipe_1: 224 192 r
 :raymanni/lab/block_2: 256 96
 :raymanni/lab/block_1: 256 32
 :raymanni/lab/block_3: 256 64
@@ -105,20 +124,20 @@ $ENGLISH Clusterfrog
 :raymanni/lab/block_1: 416 96
 :raymanni/lab/scen_6: 320 32
 :geoo/steel/32x32o.S: 384 96
-:raymanni/lab/pipe_1: 328 192
-:raymanni/lab/pipe_1: 360 192
-:raymanni/lab/pipe_1: 328 128 fr
-:raymanni/lab/pipe_1: 328 160 fr
-:raymanni/lab/pipe_1: 392 128 fr
-:raymanni/lab/pipe_1: 392 160 fr
-:raymanni/lab/pipe_1: 392 192
+:raymanni/lab/pipe_1: 328 192 r
+:raymanni/lab/pipe_1: 360 192 r
+:raymanni/lab/pipe_1: 328 128
+:raymanni/lab/pipe_1: 328 160
+:raymanni/lab/pipe_1: 392 128
+:raymanni/lab/pipe_1: 392 160
+:raymanni/lab/pipe_1: 392 192 r
 :raymanni/lab/slope_1: 256 160
 :raymanni/lab/slope_2: 296 160
-:raymanni/lab/pipe_1: 256 192
-:raymanni/lab/pipe_1: 280 192
-:raymanni/lab/pipe_1: 296 192
-:raymanni/lab/pipe_1: 424 192
-:raymanni/lab/pipe_1: 456 192
+:raymanni/lab/pipe_1: 256 192 r
+:raymanni/lab/pipe_1: 280 192 r
+:raymanni/lab/pipe_1: 296 192 r
+:raymanni/lab/pipe_1: 424 192 r
+:raymanni/lab/pipe_1: 456 192 r
 :raymanni/lab/scen_4: 352 160
 :geoo/steel/32x32o.S: 288 96
 :raymanni/toys/letter_2: 432 0
@@ -126,9 +145,9 @@ $ENGLISH Clusterfrog
 :raymanni/toys/letter_1: 448 32
 :raymanni/lab/block_3: 448 96
 :geoo/steel/32x32o.S: 480 96
-:raymanni/lab/pipe_1: 496 128 fr
-:raymanni/lab/pipe_1: 496 160 fr
-:raymanni/lab/pipe_1: 480 192
+:raymanni/lab/pipe_1: 496 128
+:raymanni/lab/pipe_1: 496 160
+:raymanni/lab/pipe_1: 480 192 r
 :raymanni/lab/block_2: 512 96
 :raymanni/lab/block_1: 512 32
 :raymanni/lab/block_3: 512 64
@@ -138,20 +157,20 @@ $ENGLISH Clusterfrog
 :raymanni/lab/block_1: 672 96
 :raymanni/lab/scen_6: 576 32
 :geoo/steel/32x32o.S: 640 96
-:raymanni/lab/pipe_1: 584 192
-:raymanni/lab/pipe_1: 616 192
-:raymanni/lab/pipe_1: 584 128 fr
-:raymanni/lab/pipe_1: 584 160 fr
-:raymanni/lab/pipe_1: 648 128 fr
-:raymanni/lab/pipe_1: 648 160 fr
-:raymanni/lab/pipe_1: 648 192
+:raymanni/lab/pipe_1: 584 192 r
+:raymanni/lab/pipe_1: 616 192 r
+:raymanni/lab/pipe_1: 584 128
+:raymanni/lab/pipe_1: 584 160
+:raymanni/lab/pipe_1: 648 128
+:raymanni/lab/pipe_1: 648 160
+:raymanni/lab/pipe_1: 648 192 r
 :raymanni/lab/slope_1: 512 160
 :raymanni/lab/slope_2: 552 160
-:raymanni/lab/pipe_1: 512 192
-:raymanni/lab/pipe_1: 536 192
-:raymanni/lab/pipe_1: 552 192
-:raymanni/lab/pipe_1: 680 192
-:raymanni/lab/pipe_1: 712 192
+:raymanni/lab/pipe_1: 512 192 r
+:raymanni/lab/pipe_1: 536 192 r
+:raymanni/lab/pipe_1: 552 192 r
+:raymanni/lab/pipe_1: 680 192 r
+:raymanni/lab/pipe_1: 712 192 r
 :raymanni/lab/scen_4: 608 160
 :geoo/steel/32x32o.S: 544 96
 :raymanni/toys/letter_2: 688 0
@@ -159,9 +178,9 @@ $ENGLISH Clusterfrog
 :raymanni/toys/letter_1: 704 32
 :raymanni/lab/block_3: 704 96
 :geoo/steel/32x32o.S: 736 96
-:raymanni/lab/pipe_1: 752 128 fr
-:raymanni/lab/pipe_1: 752 160 fr
-:raymanni/lab/pipe_1: 736 192
+:raymanni/lab/pipe_1: 752 128
+:raymanni/lab/pipe_1: 752 160
+:raymanni/lab/pipe_1: 736 192 r
 :raymanni/lab/block_2: 128 304
 :raymanni/lab/block_1: 128 240
 :raymanni/lab/block_3: 128 272
@@ -171,20 +190,20 @@ $ENGLISH Clusterfrog
 :raymanni/lab/block_1: 288 304
 :raymanni/lab/scen_6: 192 240
 :geoo/steel/32x32o.S: 256 304
-:raymanni/lab/pipe_1: 192 400
-:raymanni/lab/pipe_1: 224 400
-:raymanni/lab/pipe_1: 200 336 fr
-:raymanni/lab/pipe_1: 200 368 fr
-:raymanni/lab/pipe_1: 264 336 fr
-:raymanni/lab/pipe_1: 264 368 fr
-:raymanni/lab/pipe_1: 256 400
+:raymanni/lab/pipe_1: 192 400 r
+:raymanni/lab/pipe_1: 224 400 r
+:raymanni/lab/pipe_1: 200 336
+:raymanni/lab/pipe_1: 200 368
+:raymanni/lab/pipe_1: 264 336
+:raymanni/lab/pipe_1: 264 368
+:raymanni/lab/pipe_1: 256 400 r
 :raymanni/lab/slope_1: 128 368
 :raymanni/lab/slope_2: 168 368
-:raymanni/lab/pipe_1: 120 400
-:raymanni/lab/pipe_1: 144 400
-:raymanni/lab/pipe_1: 160 400
-:raymanni/lab/pipe_1: 288 400
-:raymanni/lab/pipe_1: 320 400
+:raymanni/lab/pipe_1: 120 400 r
+:raymanni/lab/pipe_1: 144 400 r
+:raymanni/lab/pipe_1: 160 400 r
+:raymanni/lab/pipe_1: 288 400 r
+:raymanni/lab/pipe_1: 320 400 r
 :raymanni/lab/scen_4: 224 368
 :geoo/steel/32x32o.S: 160 304
 :raymanni/toys/letter_2: 304 208
@@ -192,9 +211,9 @@ $ENGLISH Clusterfrog
 :raymanni/toys/letter_1: 320 240
 :raymanni/lab/block_3: 320 304
 :geoo/steel/32x32o.S: 352 304
-:raymanni/lab/pipe_1: 368 336 fr
-:raymanni/lab/pipe_1: 368 368 fr
-:raymanni/lab/pipe_1: 344 400
+:raymanni/lab/pipe_1: 368 336
+:raymanni/lab/pipe_1: 368 368
+:raymanni/lab/pipe_1: 344 400 r
 :raymanni/lab/block_2: 384 304
 :raymanni/lab/block_1: 384 240
 :raymanni/lab/block_3: 384 272
@@ -204,20 +223,20 @@ $ENGLISH Clusterfrog
 :raymanni/lab/block_1: 544 304
 :raymanni/lab/scen_6: 448 240
 :geoo/steel/32x32o.S: 512 304
-:raymanni/lab/pipe_1: 448 400
-:raymanni/lab/pipe_1: 480 400
-:raymanni/lab/pipe_1: 456 336 fr
-:raymanni/lab/pipe_1: 456 368 fr
-:raymanni/lab/pipe_1: 520 336 fr
-:raymanni/lab/pipe_1: 520 368 fr
-:raymanni/lab/pipe_1: 512 400
+:raymanni/lab/pipe_1: 448 400 r
+:raymanni/lab/pipe_1: 480 400 r
+:raymanni/lab/pipe_1: 456 336
+:raymanni/lab/pipe_1: 456 368
+:raymanni/lab/pipe_1: 520 336
+:raymanni/lab/pipe_1: 520 368
+:raymanni/lab/pipe_1: 512 400 r
 :raymanni/lab/slope_1: 384 368
 :raymanni/lab/slope_2: 424 368
-:raymanni/lab/pipe_1: 376 400
-:raymanni/lab/pipe_1: 400 400
-:raymanni/lab/pipe_1: 416 400
-:raymanni/lab/pipe_1: 544 400
-:raymanni/lab/pipe_1: 576 400
+:raymanni/lab/pipe_1: 376 400 r
+:raymanni/lab/pipe_1: 400 400 r
+:raymanni/lab/pipe_1: 416 400 r
+:raymanni/lab/pipe_1: 544 400 r
+:raymanni/lab/pipe_1: 576 400 r
 :raymanni/lab/scen_4: 480 368
 :geoo/steel/32x32o.S: 416 304
 :raymanni/toys/letter_2: 560 208
@@ -225,9 +244,9 @@ $ENGLISH Clusterfrog
 :raymanni/toys/letter_1: 576 240
 :raymanni/lab/block_3: 576 304
 :geoo/steel/32x32o.S: 608 304
-:raymanni/lab/pipe_1: 624 336 fr
-:raymanni/lab/pipe_1: 624 368 fr
-:raymanni/lab/pipe_1: 600 400
+:raymanni/lab/pipe_1: 624 336
+:raymanni/lab/pipe_1: 624 368
+:raymanni/lab/pipe_1: 600 400 r
 :raymanni/lab/block_2: 640 304
 :raymanni/lab/block_1: 640 240
 :raymanni/lab/block_3: 640 272
@@ -237,20 +256,20 @@ $ENGLISH Clusterfrog
 :raymanni/lab/block_1: 32 304
 :raymanni/lab/scen_6: 704 240
 :geoo/steel/32x32o.S: 0 304
-:raymanni/lab/pipe_1: 704 400
-:raymanni/lab/pipe_1: 736 400
-:raymanni/lab/pipe_1: 712 336 fr
-:raymanni/lab/pipe_1: 712 368 fr
-:raymanni/lab/pipe_1: 8 336 fr
-:raymanni/lab/pipe_1: 8 368 fr
-:raymanni/lab/pipe_1: 0 400
+:raymanni/lab/pipe_1: 704 400 r
+:raymanni/lab/pipe_1: 736 400 r
+:raymanni/lab/pipe_1: 712 336
+:raymanni/lab/pipe_1: 712 368
+:raymanni/lab/pipe_1: 8 336
+:raymanni/lab/pipe_1: 8 368
+:raymanni/lab/pipe_1: 0 400 r
 :raymanni/lab/slope_1: 640 368
 :raymanni/lab/slope_2: 680 368
-:raymanni/lab/pipe_1: 632 400
-:raymanni/lab/pipe_1: 656 400
-:raymanni/lab/pipe_1: 672 400
-:raymanni/lab/pipe_1: 32 400
-:raymanni/lab/pipe_1: 64 400
+:raymanni/lab/pipe_1: 632 400 r
+:raymanni/lab/pipe_1: 656 400 r
+:raymanni/lab/pipe_1: 672 400 r
+:raymanni/lab/pipe_1: 32 400 r
+:raymanni/lab/pipe_1: 64 400 r
 :raymanni/lab/scen_4: 736 368
 :geoo/steel/32x32o.S: 672 304
 :raymanni/toys/letter_2: 48 208
@@ -258,18 +277,8 @@ $ENGLISH Clusterfrog
 :raymanni/toys/letter_1: 64 240
 :raymanni/lab/block_3: 64 304
 :geoo/steel/32x32o.S: 96 304
-:raymanni/lab/pipe_1: 112 336 fr
-:raymanni/lab/pipe_1: 112 368 fr
-:raymanni/lab/pipe_1: 88 400
-$BEGIN_TILE_GROUP 0
-:raymanni/lab/pipe_3: 0 5
-:geoo/steel/32x16o.S: 16 0
-:geoo/abstract/cvblocks/005: 23 0 d
-:geoo/abstract/cvblocks/005: 25 0 d
-$END_TILE_GROUP
-:Group-0: 336 40
-:Group-0: 592 40
-:Group-0: 80 40
-:Group-0: 208 248
-:Group-0: 464 248
-:Group-0: 720 248
+:raymanni/lab/pipe_1: 112 336
+:raymanni/lab/pipe_1: 112 368
+:raymanni/lab/pipe_1: 88 400 r
+:Group-0: 464 252
+:Group-1: 480 248
