@@ -1,0 +1,86 @@
+$BUILT 2017-11-21 16:42:21
+$AUTHOR Colorful Arty
+$ENGLISH Showdown at Chainsaw Gap (2p)
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 640
+#SIZE_Y 160
+
+#INITIAL 3
+#REQUIRED 3
+#SPAWN_INTERVAL 3
+
+#WALKER -1
+#RUNNER 3
+#CLIMBER 3
+#FLOATER 3
+#MINER -1
+#JUMPER -1
+#BATTER -1
+#EXPLODER2 0
+
+:geoo/abstract/hatch.H: 16 112
+:geoo/abstract/hatch.H: 592 112 r
+
+:geoo/abstract/goal.G: 600 48
+:geoo/abstract/goal.G: 8 48
+
+:geoo/construction/sawblade_small.F: 112 132
+:geoo/construction/sawblade_small.F: 144 132
+:geoo/construction/sawblade_small.F: 176 132
+:geoo/construction/sawblade_small.F: 208 132
+:geoo/construction/sawblade_small.F: 240 132
+:geoo/construction/sawblade_small.F: 272 132
+:geoo/construction/sawblade_small.F: 304 132
+:geoo/construction/sawblade_small.F: 336 132
+:geoo/construction/sawblade_small.F: 368 132
+:geoo/construction/sawblade_small.F: 400 132
+:geoo/construction/sawblade_small.F: 432 132
+:geoo/construction/sawblade_small.F: 464 132
+:geoo/construction/sawblade_small.F: 496 132
+:geoo/construction/sawblade_small.F: 112 68
+:geoo/construction/sawblade_small.F: 144 68
+:geoo/construction/sawblade_small.F: 176 68
+:geoo/construction/sawblade_small.F: 208 68
+:geoo/construction/sawblade_small.F: 240 68
+:geoo/construction/sawblade_small.F: 272 68
+:geoo/construction/sawblade_small.F: 304 68
+:geoo/construction/sawblade_small.F: 336 68
+:geoo/construction/sawblade_small.F: 368 68
+:geoo/construction/sawblade_small.F: 400 68
+:geoo/construction/sawblade_small.F: 432 68
+:geoo/construction/sawblade_small.F: 464 68
+:geoo/construction/sawblade_small.F: 496 68
+
+:matt/goldmine/plank: 112 128
+:matt/goldmine/plank: 192 128
+:matt/goldmine/plank: 400 128
+:matt/goldmine/plank: 320 128
+:amanda/steel/steel16x16.S: 528 128
+:amanda/steel/steel16x16.S: 544 128
+:amanda/steel/steel16x16.S: 544 144
+:amanda/steel/steel16x16.S: 560 144
+:amanda/steel/steel16x16.S: 576 144
+:amanda/steel/steel16x16.S: 592 144
+:amanda/steel/steel16x16.S: 608 144
+:amanda/steel/steel16x16.S: 624 144
+:amanda/steel/steel16x16.S: 624 128
+:amanda/steel/steel16x16.S: 624 112
+:amanda/steel/steel16x16.S: 624 96
+:amanda/steel/steel16x16.S: 608 96
+:amanda/steel/steel_flange_right24x16.S: 584 96
+:amanda/steel/steel_flange_right24x16.S: 568 112
+:amanda/steel/steel16x16.S: 0 144
+:amanda/steel/steel16x16.S: 16 144
+:amanda/steel/steel16x16.S: 32 144
+:amanda/steel/steel16x16.S: 48 144
+:amanda/steel/steel16x16.S: 64 144
+:amanda/steel/steel16x16.S: 0 128
+:amanda/steel/steel16x16.S: 0 112
+:amanda/steel/steel16x16.S: 0 96
+:amanda/steel/steel16x16.S: 16 96
+:amanda/steel/steel_flange_left24x16.S: 32 96
+:amanda/steel/steel_flange_left24x16.S: 48 112
+:amanda/steel/steel16x16.S: 80 144
+:amanda/steel/steel16x16.S: 80 128
+:amanda/steel/steel16x16.S: 96 128

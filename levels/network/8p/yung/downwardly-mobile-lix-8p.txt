@@ -1,0 +1,494 @@
+$BUILT 2017-11-24 15:53:36
+$AUTHOR Yung Gotenks
+$ENGLISH Downwarldy Mobile Lix 8P
+
+#INTENDED_NUMBER_OF_PLAYERS 8
+#SIZE_X 1798
+#SIZE_Y 1808
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 100
+#INITIAL 130
+#REQUIRED 100
+#SPAWN_INTERVAL 38
+
+#WALKER 5
+#CLIMBER 5
+#BUILDER 20
+#MINER 5
+#EXPLODER2 0
+
+:matt/carnival/Hatch.H: 368 1404
+:matt/carnival/Hatch.H: 354 1020
+:matt/carnival/Hatch.H: 354 618
+:matt/carnival/Hatch.H: 354 228
+:matt/carnival/Hatch.H: 1172 144
+:matt/carnival/Hatch.H: 1188 534
+:matt/carnival/Hatch.H: 1200 936
+:matt/carnival/Hatch.H: 1216 1320
+
+:matt/carnival/Goal.G: 408 1716
+:matt/carnival/Goal.G: 394 1332
+:matt/carnival/Goal.G: 394 930
+:matt/carnival/Goal.G: 394 540
+:matt/carnival/Goal.G: 1212 456
+:matt/carnival/Goal.G: 1228 846
+:matt/carnival/Goal.G: 1240 1248
+:matt/carnival/Goal.G: 1256 1632
+
+:raymanni/toys/soldier_1: 610 1690 frr
+:matt/carnival/01: 416 1514
+:matt/carnival/01: 446 1514
+:matt/carnival/01: 478 1514
+:matt/carnival/01: 510 1514
+:matt/carnival/01: 384 1514
+:matt/carnival/01: 352 1514
+:matt/carnival/01: 542 1514
+:matt/carnival/01: 542 1546
+:matt/carnival/01: 574 1546
+:matt/carnival/01: 606 1546
+:matt/carnival/01: 638 1546
+:matt/carnival/01: 670 1546
+:matt/carnival/01: 702 1546
+:matt/carnival/01: 702 1514
+:matt/carnival/01: 734 1514
+:matt/carnival/01: 766 1514
+:matt/carnival/01: 798 1514
+:matt/carnival/01: 798 1544
+:matt/carnival/01: 686 1578
+:matt/carnival/balloons: 682 1610 rr
+:matt/carnival/balloons: 788 1576 rr
+:matt/carnival/00: 352 1598
+:matt/carnival/00: 384 1598
+:matt/carnival/00: 416 1598
+:matt/carnival/00: 320 1598
+:matt/carnival/00: 288 1598
+:matt/carnival/00: 256 1598
+:matt/carnival/00: 224 1598
+:matt/carnival/00: 192 1598
+:matt/carnival/00: 182 1630
+:matt/carnival/00: 214 1630
+:matt/carnival/00: 150 1630
+:matt/carnival/00: 118 1630
+:matt/carnival/00: 86 1630
+:matt/carnival/00: 54 1630
+:matt/carnival/00: 54 1598
+:matt/carnival/00: 24 1598
+:matt/carnival/01: 830 1514
+:matt/carnival/01: 830 1544
+:matt/carnival/01: 830 1574
+:matt/carnival/01: 830 1602
+:matt/carnival/03: 542 1678
+:matt/carnival/03: 510 1678
+:matt/carnival/03: 478 1678
+:matt/carnival/03: 446 1678
+:matt/carnival/03: 414 1678
+:matt/carnival/03: 382 1678
+:matt/carnival/03: 352 1678
+:matt/carnival/03: 320 1678
+:matt/carnival/03: 336 1710
+:matt/carnival/58: 158 1778
+:matt/carnival/07: 510 1740
+:matt/carnival/07: 618 1738
+:matt/carnival/58: 414 1778
+:matt/carnival/07: 184 1714
+:matt/carnival/balloons: 102 1662 rr
+:raymanni/toys/soldier_2: 198 1446
+:raymanni/toys/brick_8: 192 1494
+:raymanni/toys/brick_5: 612 1464
+:raymanni/toys/soldier_1: 596 1306 frr
+:matt/carnival/01: 402 1130
+:matt/carnival/01: 432 1130
+:matt/carnival/01: 464 1130
+:matt/carnival/01: 496 1130
+:matt/carnival/01: 370 1130
+:matt/carnival/01: 338 1130
+:matt/carnival/01: 528 1130
+:matt/carnival/01: 528 1162
+:matt/carnival/01: 560 1162
+:matt/carnival/01: 592 1162
+:matt/carnival/01: 624 1162
+:matt/carnival/01: 656 1162
+:matt/carnival/01: 688 1162
+:matt/carnival/01: 688 1130
+:matt/carnival/01: 720 1130
+:matt/carnival/01: 752 1130
+:matt/carnival/01: 784 1130
+:matt/carnival/01: 784 1160
+:matt/carnival/01: 672 1194
+:matt/carnival/balloons: 668 1226 rr
+:matt/carnival/balloons: 774 1192 rr
+:matt/carnival/00: 338 1214
+:matt/carnival/00: 370 1214
+:matt/carnival/00: 402 1214
+:matt/carnival/00: 306 1214
+:matt/carnival/00: 274 1214
+:matt/carnival/00: 242 1214
+:matt/carnival/00: 210 1214
+:matt/carnival/00: 178 1214
+:matt/carnival/00: 168 1246
+:matt/carnival/00: 200 1246
+:matt/carnival/00: 136 1246
+:matt/carnival/00: 104 1246
+:matt/carnival/00: 72 1246
+:matt/carnival/00: 40 1246
+:matt/carnival/00: 40 1214
+:matt/carnival/00: 10 1214
+:matt/carnival/03: 528 1294
+:matt/carnival/03: 496 1294
+:matt/carnival/03: 464 1294
+:matt/carnival/03: 432 1294
+:matt/carnival/03: 400 1294
+:matt/carnival/03: 368 1294
+:matt/carnival/03: 338 1294
+:matt/carnival/03: 306 1294
+:matt/carnival/03: 322 1326
+:matt/carnival/58: 144 1394
+:matt/carnival/07: 496 1356
+:matt/carnival/07: 604 1354
+:matt/carnival/58: 400 1394
+:raymanni/toys/soldier_3: 620 1416 frr
+:matt/carnival/07: 170 1330
+:matt/carnival/balloons: 88 1278 rr
+:raymanni/toys/soldier_2: 184 1062
+:raymanni/toys/brick_8: 178 1110
+:raymanni/toys/soldier_3: 606 1026 frr
+:raymanni/toys/brick_5: 598 1074
+:raymanni/toys/soldier_1: 596 904 frr
+:matt/carnival/01: 402 728
+:matt/carnival/01: 432 728
+:matt/carnival/01: 464 728
+:matt/carnival/01: 496 728
+:matt/carnival/01: 370 728
+:matt/carnival/01: 338 728
+:matt/carnival/01: 528 728
+:matt/carnival/01: 528 760
+:matt/carnival/01: 560 760
+:matt/carnival/01: 592 760
+:matt/carnival/01: 624 760
+:matt/carnival/01: 656 760
+:matt/carnival/01: 688 760
+:matt/carnival/01: 688 728
+:matt/carnival/01: 720 728
+:matt/carnival/01: 752 728
+:matt/carnival/01: 784 728
+:matt/carnival/01: 784 758
+:matt/carnival/01: 672 792
+:matt/carnival/balloons: 668 824 rr
+:matt/carnival/balloons: 774 790 rr
+:matt/carnival/00: 338 812
+:matt/carnival/00: 370 812
+:matt/carnival/00: 402 812
+:matt/carnival/00: 306 812
+:matt/carnival/00: 274 812
+:matt/carnival/00: 242 812
+:matt/carnival/00: 210 812
+:matt/carnival/00: 178 812
+:matt/carnival/00: 168 844
+:matt/carnival/00: 200 844
+:matt/carnival/00: 136 844
+:matt/carnival/00: 104 844
+:matt/carnival/00: 72 844
+:matt/carnival/00: 40 844
+:matt/carnival/00: 40 812
+:matt/carnival/00: 10 812
+:matt/carnival/03: 528 892
+:matt/carnival/03: 496 892
+:matt/carnival/03: 464 892
+:matt/carnival/03: 432 892
+:matt/carnival/03: 400 892
+:matt/carnival/03: 368 892
+:matt/carnival/03: 338 892
+:matt/carnival/03: 306 892
+:matt/carnival/03: 322 924
+:matt/carnival/58: 144 992
+:matt/carnival/07: 496 954
+:matt/carnival/07: 604 952
+:matt/carnival/58: 400 992
+:matt/carnival/07: 170 928
+:matt/carnival/balloons: 88 876 rr
+:raymanni/toys/soldier_2: 184 660
+:raymanni/toys/brick_8: 178 708
+:raymanni/toys/soldier_3: 606 624 frr
+:raymanni/toys/brick_5: 598 672
+:raymanni/toys/soldier_1: 596 514 frr
+:matt/carnival/01: 402 338
+:matt/carnival/01: 432 338
+:matt/carnival/01: 464 338
+:matt/carnival/01: 496 338
+:matt/carnival/01: 370 338
+:matt/carnival/01: 338 338
+:matt/carnival/01: 528 338
+:matt/carnival/01: 528 370
+:matt/carnival/01: 560 370
+:matt/carnival/01: 592 370
+:matt/carnival/01: 624 370
+:matt/carnival/01: 656 370
+:matt/carnival/01: 688 370
+:matt/carnival/01: 688 338
+:matt/carnival/01: 720 338
+:matt/carnival/01: 752 338
+:matt/carnival/01: 784 338
+:matt/carnival/01: 784 368
+:matt/carnival/01: 672 402
+:matt/carnival/balloons: 668 434 rr
+:matt/carnival/balloons: 774 400 rr
+:matt/carnival/00: 338 422
+:matt/carnival/00: 370 422
+:matt/carnival/00: 402 422
+:matt/carnival/00: 306 422
+:matt/carnival/00: 274 422
+:matt/carnival/00: 242 422
+:matt/carnival/00: 210 422
+:matt/carnival/00: 178 422
+:matt/carnival/00: 168 454
+:matt/carnival/00: 200 454
+:matt/carnival/00: 136 454
+:matt/carnival/00: 104 454
+:matt/carnival/00: 72 454
+:matt/carnival/00: 40 454
+:matt/carnival/00: 40 422
+:matt/carnival/03: 528 502
+:matt/carnival/03: 496 502
+:matt/carnival/03: 464 502
+:matt/carnival/03: 432 502
+:matt/carnival/03: 400 502
+:matt/carnival/03: 368 502
+:matt/carnival/03: 338 502
+:matt/carnival/03: 306 502
+:matt/carnival/03: 322 534
+:matt/carnival/58: 144 602
+:matt/carnival/07: 496 564
+:matt/carnival/07: 604 562
+:matt/carnival/58: 400 602
+:matt/carnival/07: 170 538
+:matt/carnival/balloons: 88 486 rr
+:raymanni/toys/soldier_2: 184 270
+:raymanni/toys/brick_8: 178 318
+:raymanni/toys/soldier_3: 606 234 frr
+:raymanni/toys/brick_5: 598 282
+:raymanni/toys/soldier_1: 1414 430 frr
+:matt/carnival/01: 1220 254
+:matt/carnival/01: 1250 254
+:matt/carnival/01: 1282 254
+:matt/carnival/01: 1314 254
+:matt/carnival/01: 1188 254
+:matt/carnival/01: 1156 254
+:matt/carnival/01: 1346 254
+:matt/carnival/01: 1346 286
+:matt/carnival/01: 1378 286
+:matt/carnival/01: 1410 286
+:matt/carnival/01: 1442 286
+:matt/carnival/01: 1474 286
+:matt/carnival/01: 1506 286
+:matt/carnival/01: 1506 254
+:matt/carnival/01: 1538 254
+:matt/carnival/01: 1570 254
+:matt/carnival/01: 1602 254
+:matt/carnival/01: 1602 284
+:matt/carnival/01: 1490 318
+:matt/carnival/balloons: 1486 350 rr
+:matt/carnival/balloons: 1592 316 rr
+:matt/carnival/00: 1156 338
+:matt/carnival/00: 1188 338
+:matt/carnival/00: 1220 338
+:matt/carnival/00: 1124 338
+:matt/carnival/00: 1092 338
+:matt/carnival/00: 1060 338
+:matt/carnival/00: 1028 338
+:matt/carnival/00: 996 338
+:matt/carnival/00: 986 370
+:matt/carnival/00: 1018 370
+:matt/carnival/00: 954 370
+:matt/carnival/00: 922 370
+:matt/carnival/00: 890 370
+:matt/carnival/00: 858 370
+:matt/carnival/00: 858 338
+:matt/carnival/03: 1346 418
+:matt/carnival/03: 1314 418
+:matt/carnival/03: 1282 418
+:matt/carnival/03: 1250 418
+:matt/carnival/03: 1218 418
+:matt/carnival/03: 1186 418
+:matt/carnival/03: 1156 418
+:matt/carnival/03: 1124 418
+:matt/carnival/03: 1140 450
+:matt/carnival/58: 962 518
+:matt/carnival/07: 1314 480
+:matt/carnival/07: 1422 478
+:matt/carnival/58: 1218 518
+:matt/carnival/07: 988 454
+:matt/carnival/balloons: 906 402 rr
+:raymanni/toys/soldier_2: 1002 186
+:raymanni/toys/brick_8: 996 234
+:raymanni/toys/soldier_3: 1424 150 frr
+:raymanni/toys/brick_5: 1416 198
+:raymanni/toys/soldier_1: 1430 820 frr
+:matt/carnival/01: 1236 644
+:matt/carnival/01: 1266 644
+:matt/carnival/01: 1298 644
+:matt/carnival/01: 1330 644
+:matt/carnival/01: 1204 644
+:matt/carnival/01: 1172 644
+:matt/carnival/01: 1362 644
+:matt/carnival/01: 1362 676
+:matt/carnival/01: 1394 676
+:matt/carnival/01: 1426 676
+:matt/carnival/01: 1458 676
+:matt/carnival/01: 1490 676
+:matt/carnival/01: 1522 676
+:matt/carnival/01: 1522 644
+:matt/carnival/01: 1554 644
+:matt/carnival/01: 1586 644
+:matt/carnival/01: 1618 644
+:matt/carnival/01: 1618 674
+:matt/carnival/01: 1506 708
+:matt/carnival/balloons: 1502 740 rr
+:matt/carnival/balloons: 1608 706 rr
+:matt/carnival/00: 1172 728
+:matt/carnival/00: 1204 728
+:matt/carnival/00: 1236 728
+:matt/carnival/00: 1140 728
+:matt/carnival/00: 1108 728
+:matt/carnival/00: 1076 728
+:matt/carnival/00: 1044 728
+:matt/carnival/00: 1012 728
+:matt/carnival/00: 1002 760
+:matt/carnival/00: 1034 760
+:matt/carnival/00: 970 760
+:matt/carnival/00: 938 760
+:matt/carnival/00: 906 760
+:matt/carnival/00: 874 760
+:matt/carnival/00: 874 728
+:matt/carnival/03: 1362 808
+:matt/carnival/03: 1330 808
+:matt/carnival/03: 1298 808
+:matt/carnival/03: 1266 808
+:matt/carnival/03: 1234 808
+:matt/carnival/03: 1202 808
+:matt/carnival/03: 1172 808
+:matt/carnival/03: 1140 808
+:matt/carnival/03: 1156 840
+:matt/carnival/58: 978 908
+:matt/carnival/07: 1330 870
+:matt/carnival/07: 1438 868
+:matt/carnival/58: 1234 908
+:matt/carnival/07: 1004 844
+:matt/carnival/balloons: 922 792 rr
+:raymanni/toys/soldier_2: 1018 576
+:raymanni/toys/brick_8: 1012 624
+:raymanni/toys/soldier_3: 1440 540 frr
+:raymanni/toys/brick_5: 1432 588
+:raymanni/toys/soldier_1: 1442 1222 frr
+:matt/carnival/01: 1248 1046
+:matt/carnival/01: 1278 1046
+:matt/carnival/01: 1310 1046
+:matt/carnival/01: 1342 1046
+:matt/carnival/01: 1216 1046
+:matt/carnival/01: 1184 1046
+:matt/carnival/01: 1374 1046
+:matt/carnival/01: 1374 1078
+:matt/carnival/01: 1406 1078
+:matt/carnival/01: 1438 1078
+:matt/carnival/01: 1470 1078
+:matt/carnival/01: 1502 1078
+:matt/carnival/01: 1534 1078
+:matt/carnival/01: 1534 1046
+:matt/carnival/01: 1566 1046
+:matt/carnival/01: 1598 1046
+:matt/carnival/01: 1630 1046
+:matt/carnival/01: 1630 1076
+:matt/carnival/01: 1518 1110
+:matt/carnival/balloons: 1514 1142 rr
+:matt/carnival/balloons: 1620 1108 rr
+:matt/carnival/00: 1184 1130
+:matt/carnival/00: 1216 1130
+:matt/carnival/00: 1248 1130
+:matt/carnival/00: 1152 1130
+:matt/carnival/00: 1120 1130
+:matt/carnival/00: 1088 1130
+:matt/carnival/00: 1056 1130
+:matt/carnival/00: 1024 1130
+:matt/carnival/00: 1014 1162
+:matt/carnival/00: 1046 1162
+:matt/carnival/00: 982 1162
+:matt/carnival/00: 950 1162
+:matt/carnival/00: 918 1162
+:matt/carnival/00: 886 1162
+:matt/carnival/00: 886 1130
+:matt/carnival/03: 1374 1210
+:matt/carnival/03: 1342 1210
+:matt/carnival/03: 1310 1210
+:matt/carnival/03: 1278 1210
+:matt/carnival/03: 1246 1210
+:matt/carnival/03: 1214 1210
+:matt/carnival/03: 1184 1210
+:matt/carnival/03: 1152 1210
+:matt/carnival/03: 1168 1242
+:matt/carnival/58: 990 1310
+:matt/carnival/07: 1342 1272
+:matt/carnival/07: 1450 1270
+:matt/carnival/58: 1246 1310
+:matt/carnival/07: 1016 1246
+:matt/carnival/balloons: 934 1194 rr
+:raymanni/toys/soldier_2: 1030 978
+:raymanni/toys/brick_8: 1024 1026
+:raymanni/toys/soldier_3: 1452 942 frr
+:raymanni/toys/brick_5: 1444 990
+:raymanni/toys/soldier_1: 1458 1606 frr
+:matt/carnival/01: 1264 1430
+:matt/carnival/01: 1294 1430
+:matt/carnival/01: 1326 1430
+:matt/carnival/01: 1358 1430
+:matt/carnival/01: 1232 1430
+:matt/carnival/01: 1200 1430
+:matt/carnival/01: 1390 1430
+:matt/carnival/01: 1390 1462
+:matt/carnival/01: 1422 1462
+:matt/carnival/01: 1454 1462
+:matt/carnival/01: 1486 1462
+:matt/carnival/01: 1518 1462
+:matt/carnival/01: 1550 1462
+:matt/carnival/01: 1550 1430
+:matt/carnival/01: 1582 1430
+:matt/carnival/01: 1614 1430
+:matt/carnival/01: 1646 1430
+:matt/carnival/01: 1646 1460
+:matt/carnival/01: 1534 1494
+:matt/carnival/balloons: 1530 1526 rr
+:matt/carnival/balloons: 1636 1492 rr
+:matt/carnival/00: 1200 1514
+:matt/carnival/00: 1232 1514
+:matt/carnival/00: 1264 1514
+:matt/carnival/00: 1168 1514
+:matt/carnival/00: 1136 1514
+:matt/carnival/00: 1104 1514
+:matt/carnival/00: 1072 1514
+:matt/carnival/00: 1040 1514
+:matt/carnival/00: 1030 1546
+:matt/carnival/00: 1062 1546
+:matt/carnival/00: 998 1546
+:matt/carnival/00: 966 1546
+:matt/carnival/00: 934 1546
+:matt/carnival/00: 902 1546
+:matt/carnival/00: 902 1514
+:matt/carnival/03: 1390 1594
+:matt/carnival/03: 1358 1594
+:matt/carnival/03: 1326 1594
+:matt/carnival/03: 1294 1594
+:matt/carnival/03: 1262 1594
+:matt/carnival/03: 1230 1594
+:matt/carnival/03: 1200 1594
+:matt/carnival/03: 1168 1594
+:matt/carnival/03: 1184 1626
+:matt/carnival/58: 1006 1694
+:matt/carnival/07: 1358 1656
+:matt/carnival/07: 1466 1654
+:matt/carnival/58: 1262 1694
+:matt/carnival/07: 1032 1630
+:matt/carnival/balloons: 950 1578 rr
+:raymanni/toys/soldier_2: 1046 1362
+:raymanni/toys/brick_8: 1040 1410
+:raymanni/toys/soldier_3: 1468 1326 frr
+:raymanni/toys/brick_5: 1460 1374

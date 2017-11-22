@@ -1,0 +1,252 @@
+$BUILT 2017-11-21 16:36:13
+$AUTHOR Colorful Arty
+$ENGLISH Hammerhead Bridge (2p)
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1376
+#SIZE_Y 400
+
+#INITIAL 4
+#REQUIRED 4
+#SPAWN_INTERVAL 4
+
+#WALKER -1
+#RUNNER 4
+#CLIMBER 4
+#BUILDER 50
+#PLATFORMER 50
+#BASHER 50
+#MINER 50
+#DIGGER 50
+#JUMPER -1
+#BATTER -1
+#EXPLODER2 0
+
+:matt/beach/Hatch.H: 128 48
+:matt/beach/Hatch.H: 1199 48 r
+
+:matt/bricks/Goal.G: 1248 48
+:matt/bricks/Goal.G: 64 48
+
+:simon/water_thin.W: -8 368
+:simon/water_thin.W: 40 368
+:simon/water_thin.W: 88 368
+:simon/water_thin.W: 136 368
+:simon/water_thin.W: 184 368
+:simon/water_thin.W: 232 368
+:simon/water_thin.W: 280 368
+:simon/water_thin.W: 328 368
+:simon/water_thin.W: 376 368
+:simon/water_thin.W: 424 368
+:simon/water_thin.W: 472 368
+:simon/water_thin.W: 520 368
+:simon/water_thin.W: 568 368
+:simon/water_thin.W: 616 368
+:simon/water_thin.W: 664 368
+:simon/water_thin.W: 712 368
+:simon/water_thin.W: 760 368
+:simon/water_thin.W: 808 368
+:simon/water_thin.W: 856 368
+:simon/water_thin.W: 904 368
+:simon/water_thin.W: 952 368
+:simon/water_thin.W: 1000 368
+:simon/water_thin.W: 1048 368
+:simon/water_thin.W: 1096 368
+:simon/water_thin.W: 1144 368
+:simon/water_thin.W: 1192 368
+:simon/water_thin.W: 1240 368
+:simon/water_thin.W: 1288 368
+:simon/water_thin.W: 1336 368
+:geoo/construction/sawblade_medium.F: 656 72
+
+:geoo/construction/concrete/032hb: 128 96
+:geoo/construction/concrete/032h: 64 96
+:geoo/construction/concrete/032v: 0 96
+:geoo/construction/concrete/032h: 96 128
+:geoo/construction/concrete/032h: 64 160
+:geoo/construction/concrete/032h: 128 160
+:geoo/construction/concrete/064: 496 224
+:geoo/construction/concrete/064: 496 288
+:geoo/construction/concrete/032v: 0 32
+:geoo/construction/concrete/032v: 0 224
+:geoo/construction/concrete/032v: 0 288
+:geoo/construction/concrete/032v: 0 160
+:geoo/steel/32x16o.S: 80 96
+:geoo/construction/concrete/016h: 32 352
+:geoo/construction/concrete/016h: 64 352
+:geoo/construction/concrete/016h: 96 352
+:geoo/construction/concrete/016h: 128 352
+:geoo/construction/concrete/016h: 160 352
+:geoo/construction/concrete/016h: 192 352
+:geoo/construction/fence_rust_32x32: 288 160
+:geoo/construction/fence_rust_32x32: 320 160
+:geoo/construction/fence_rust_32x32: 400 160
+:geoo/construction/fence_rust_32x32: 432 160
+:geoo/construction/fence_rust_32x32: 464 160
+:geoo/construction/fence_rust_32x32: 560 160
+:geoo/construction/fence_rust_32x32: 592 160
+:geoo/construction/fence_rust_32x32: 624 160
+:geoo/construction/fence_rust_32x32: 656 160
+:geoo/construction/concrete/016h: 224 352
+:geoo/construction/concrete/016h: 256 352
+:geoo/construction/concrete/016h: 288 352
+:geoo/construction/concrete/016h: 320 352
+:geoo/construction/concrete/016h: 352 352
+:geoo/construction/concrete/016h: 384 352
+:geoo/construction/concrete/016h: 416 352
+:geoo/construction/concrete/016h: 448 352
+:geoo/construction/concrete/016h: 480 352
+:geoo/construction/concrete/016h: 512 352
+:geoo/construction/concrete/016h: 544 352
+:geoo/construction/concrete/016h: 576 352
+:geoo/construction/concrete/016h: 608 352
+:geoo/construction/fence_rust_32x32: 352 160
+:geoo/construction/concrete/064: 496 160
+:geoo/construction/concrete/016v: 384 160
+:geoo/construction/concrete/032h: 160 128
+:geoo/construction/concrete/032b: 224 128
+:geoo/steel/32x32o.S: 256 160
+:geoo/construction/concrete/032c: 256 160 d
+:geoo/construction/concrete/032c: 255 161 d
+:geoo/construction/concrete/032c: 256 160
+:geoo/construction/concrete/032c: 224 160
+:geoo/construction/concrete/032a: 256 190 d
+:geoo/construction/concrete/032b: 288 179 d
+:geoo/construction/concrete/032c: 256 192
+:geoo/construction/concrete/032c: 288 224
+:geoo/construction/concrete/032h: 320 224
+:geoo/construction/concrete/032h: 432 256
+:geoo/construction/concrete/032hb: 384 224
+:geoo/construction/concrete/032c: 400 256
+:geoo/construction/concrete/032d: 192 160
+:geoo/construction/concrete/016h: 0 352
+:geoo/construction/concrete/032: 64 128
+:geoo/construction/concrete/032h: 96 320
+:geoo/construction/concrete/032h: 160 320
+:geoo/construction/concrete/032h: 128 288
+:geoo/construction/concrete/032: 96 288
+:geoo/construction/concrete/032: 192 288
+:geoo/construction/concrete/032: 128 256
+:geoo/construction/concrete/016h: 640 352
+:geoo/construction/concrete/032hb: 1184 96 frr
+:geoo/construction/concrete/032h: 1248 96 frr
+:geoo/construction/concrete/032v: 1344 96 frr
+:geoo/construction/concrete/032h: 1216 128 frr
+:geoo/construction/concrete/032h: 1248 160 frr
+:geoo/construction/concrete/032h: 1184 160 frr
+:geoo/construction/concrete/064: 816 224 frr
+:geoo/construction/concrete/064: 816 288 frr
+:geoo/construction/concrete/032v: 1344 32 frr
+:geoo/construction/concrete/032v: 1344 224 frr
+:geoo/construction/concrete/032v: 1344 288 frr
+:geoo/construction/concrete/032v: 1344 160 frr
+:geoo/steel/32x16o.S: 1264 96 frr
+:geoo/construction/concrete/016h: 1312 352 frr
+:geoo/construction/concrete/016h: 1280 352 frr
+:geoo/construction/concrete/016h: 1248 352 frr
+:geoo/construction/concrete/016h: 1216 352 frr
+:geoo/construction/concrete/016h: 1184 352 frr
+:geoo/construction/concrete/016h: 1152 352 frr
+:geoo/construction/fence_rust_32x32: 1056 160 frr
+:geoo/construction/fence_rust_32x32: 1024 160 frr
+:geoo/construction/fence_rust_32x32: 944 160 frr
+:geoo/construction/fence_rust_32x32: 912 160 frr
+:geoo/construction/fence_rust_32x32: 880 160 frr
+:geoo/construction/fence_rust_32x32: 784 160 frr
+:geoo/construction/fence_rust_32x32: 752 160 frr
+:geoo/construction/fence_rust_32x32: 720 160 frr
+:geoo/construction/fence_rust_32x32: 688 160 frr
+:geoo/construction/concrete/016h: 1120 352 frr
+:geoo/construction/concrete/016h: 1088 352 frr
+:geoo/construction/concrete/016h: 1056 352 frr
+:geoo/construction/concrete/016h: 1024 352 frr
+:geoo/construction/concrete/016h: 992 352 frr
+:geoo/construction/concrete/016h: 960 352 frr
+:geoo/construction/concrete/016h: 928 352 frr
+:geoo/construction/concrete/016h: 896 352 frr
+:geoo/construction/concrete/016h: 864 352 frr
+:geoo/construction/concrete/016h: 832 352 frr
+:geoo/construction/concrete/016h: 800 352 frr
+:geoo/construction/concrete/016h: 768 352 frr
+:geoo/construction/concrete/016h: 736 352 frr
+:geoo/construction/fence_rust_32x32: 992 160 frr
+:geoo/construction/concrete/064: 816 160 frr
+:geoo/construction/concrete/016v: 976 160 frr
+:geoo/construction/concrete/032h: 1152 128 frr
+:geoo/construction/concrete/032b: 1120 128 frr
+:geoo/steel/32x32o.S: 1088 160 frr
+:geoo/construction/concrete/032c: 1088 160 frrd
+:geoo/construction/concrete/032c: 1089 161 frrd
+:geoo/construction/concrete/032c: 1088 160 frr
+:geoo/construction/concrete/032c: 1120 160 frr
+:geoo/construction/concrete/032a: 1088 190 frrd
+:geoo/construction/concrete/032b: 1056 179 frrd
+:geoo/construction/concrete/032c: 1088 192 frr
+:geoo/construction/concrete/032c: 1056 224 frr
+:geoo/construction/concrete/032h: 992 224 frr
+:geoo/construction/concrete/032h: 880 256 frr
+:geoo/construction/concrete/032hb: 928 224 frr
+:geoo/construction/concrete/032c: 944 256 frr
+:geoo/construction/concrete/032d: 1152 160 frr
+:geoo/construction/concrete/016h: 1344 352 frr
+:geoo/construction/concrete/032: 1280 128 frr
+:geoo/construction/concrete/032h: 1216 320 frr
+:geoo/construction/concrete/032h: 1152 320 frr
+:geoo/construction/concrete/032h: 1184 288 frr
+:geoo/construction/concrete/032: 1248 288 frr
+:geoo/construction/concrete/032: 1152 288 frr
+:geoo/construction/concrete/032: 1216 256 frr
+:geoo/construction/concrete/016h: 704 352 frr
+:geoo/construction/concrete/032b: 288 192
+:geoo/construction/concrete/032b: 1056 192 frr
+:geoo/construction/concrete/032: 672 320
+:geoo/construction/concrete/032: 672 288
+:geoo/construction/concrete/032: 744 320
+:geoo/construction/concrete/032: 600 320
+:geoo/construction/concrete/032: 416 320
+:geoo/construction/concrete/032: 384 320
+:geoo/construction/concrete/032: 288 320
+:geoo/construction/concrete/032: 1056 320 frr
+:geoo/construction/concrete/032: 928 320 frr
+:geoo/construction/concrete/032: 960 320 frr
+:geoo/construction/concrete/032v: 1280 192 frr
+:geoo/construction/concrete/032v: 64 192
+:geoo/construction/concrete/032va: 32 96
+:geoo/construction/concrete/032va: 32 224
+:geoo/construction/concrete/032vb: 32 288
+:geoo/construction/concrete/032vb: 32 160
+:geoo/construction/concrete/032h: 0 0
+:geoo/construction/concrete/032h: 64 0
+:geoo/construction/concrete/032h: 128 0
+:geoo/construction/concrete/032h: 1312 0 frr
+:geoo/construction/concrete/032h: 1248 0 frr
+:geoo/construction/concrete/032h: 1184 0 frr
+:geoo/construction/concrete/032va: 1312 96 frr
+:geoo/construction/concrete/032va: 1312 224 frr
+:geoo/construction/concrete/032vb: 1312 288 frr
+:geoo/construction/concrete/032vb: 1312 160 frr
+:geoo/construction/concrete/032d: 1280 256 frr
+:geoo/construction/concrete/032d: 64 256
+:geoo/construction/concrete/032b: 160 256
+:geoo/construction/concrete/032b: 1184 256 frr
+:geoo/construction/concrete/032a: 992 320 frr
+:geoo/construction/concrete/032a: 1088 320 frr
+:geoo/construction/concrete/032a: 256 320
+:geoo/construction/concrete/032a: 352 320
+:geoo/construction/concrete/032: 832 128 frr
+:geoo/construction/concrete/032: 512 128
+:geoo/construction/concrete/032d: 1152 0 frr
+:geoo/construction/concrete/032d: 1312 32 frr
+:geoo/construction/concrete/032d: 32 32
+:geoo/construction/concrete/032d: 192 0
+:geoo/construction/concrete/016v: 680 24
+:geoo/construction/concrete/016v: 680 -8
+:geoo/construction/concrete/016v: 680 56
+:geoo/construction/concrete/032hd: 560 256
+:geoo/construction/concrete/032ha: 560 224
+:geoo/construction/concrete/032hd: 752 256 frr
+:geoo/construction/concrete/032ha: 752 224 frr
+:geoo/construction/concrete/032h: 624 224
+:geoo/construction/concrete/032h: 688 224 frr
+:geoo/construction/concrete/016h: 656 352
+:geoo/construction/concrete/016h: 688 352 frr

@@ -1,0 +1,246 @@
+$BUILT 2017-11-18 17:07:53
+$AUTHOR Yung Gotenks
+$ENGLISH By the Power of Lix!
+
+#INTENDED_NUMBER_OF_PLAYERS 8
+#SIZE_X 2688
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 90
+#INITIAL 60
+#REQUIRED 20
+#SPAWN_INTERVAL 5
+
+#WALKER 10
+#CLIMBER 5
+#BLOCKER 5
+#BUILDER 50
+#PLATFORMER 30
+#BATTER 15
+#EXPLODER2 0
+
+:simon/hatch001.H: 1148 238
+:simon/hatch001.H: 829 237
+:simon/hatch001.H: 510 236
+:simon/hatch001.H: 194 235
+:simon/hatch001.H: 1468 238
+:simon/hatch001.H: 1787 238
+:simon/hatch001.H: 2106 238
+:simon/hatch001.H: 2424 238
+
+:matt/marble/Goal.G: 1240 144
+:matt/marble/Goal.G: 921 143
+:matt/marble/Goal.G: 602 142
+:matt/marble/Goal.G: 286 141
+:matt/marble/Goal.G: 1560 144
+:matt/marble/Goal.G: 1879 144
+:matt/marble/Goal.G: 2198 144
+:matt/marble/Goal.G: 2516 144
+
+:simon/acid.W: 1128 368
+:simon/acid.W: 1176 368
+:simon/acid.W: 1224 368
+:simon/acid.W: 1272 368
+:simon/acid.W: 1192 368
+:simon/acid.W: 1240 368
+:simon/acid.W: 1288 368
+:simon/acid.W: 809 367
+:simon/acid.W: 857 367
+:simon/acid.W: 905 367
+:simon/acid.W: 953 367
+:simon/acid.W: 873 367
+:simon/acid.W: 921 367
+:simon/acid.W: 969 367
+:simon/acid.W: 490 366
+:simon/acid.W: 538 366
+:simon/acid.W: 586 366
+:simon/acid.W: 634 366
+:simon/acid.W: 554 366
+:simon/acid.W: 602 366
+:simon/acid.W: 650 366
+:simon/acid.W: 174 365
+:simon/acid.W: 222 365
+:simon/acid.W: 270 365
+:simon/acid.W: 318 365
+:simon/acid.W: 238 365
+:simon/acid.W: 286 365
+:simon/acid.W: 334 365
+:simon/acid.W: 1448 368
+:simon/acid.W: 1496 368
+:simon/acid.W: 1544 368
+:simon/acid.W: 1592 368
+:simon/acid.W: 1512 368
+:simon/acid.W: 1560 368
+:simon/acid.W: 1608 368
+:simon/acid.W: 1767 368
+:simon/acid.W: 1815 368
+:simon/acid.W: 1863 368
+:simon/acid.W: 1911 368
+:simon/acid.W: 1831 368
+:simon/acid.W: 1879 368
+:simon/acid.W: 1927 368
+:simon/acid.W: 2086 368
+:simon/acid.W: 2134 368
+:simon/acid.W: 2182 368
+:simon/acid.W: 2230 368
+:simon/acid.W: 2150 368
+:simon/acid.W: 2198 368
+:simon/acid.W: 2246 368
+:simon/acid.W: 2404 368
+:simon/acid.W: 2452 368
+:simon/acid.W: 2500 368
+:simon/acid.W: 2548 368
+:simon/acid.W: 2468 368
+:simon/acid.W: 2516 368
+:simon/acid.W: 2564 368
+:simon/acid.W: 2612 368
+
+:matt/underworld/thinplatform128: 1126 312
+:matt/underworld/thinplatform128: 1152 312
+:matt/underworld/00: 1240 192
+:matt/underworld/thinplatform128: 1250 344
+:matt/underworld/thinplatform128: 1154 344
+:matt/underworld/thinplatform128: 1200 344
+:matt/underworld/02: 1320 312
+:matt/underworld/02: 1320 216
+:matt/underworld/01: 1024 0
+:matt/underworld/01: 1088 0
+:matt/underworld/01: 1152 0
+:matt/underworld/01: 1216 0
+:matt/underworld/01: 1152 0
+:matt/underworld/01: 1216 0
+:matt/underworld/01: 1280 0
+:matt/underworld/01: 1344 0
+:matt/underworld/01: 1408 0
+:matt/underworld/01: 1472 0
+:matt/underworld/01: 1536 0
+:matt/underworld/01: 1600 0
+:matt/underworld/thinplatform128: 807 311
+:matt/underworld/thinplatform128: 833 311
+:matt/underworld/00: 921 191
+:matt/underworld/thinplatform128: 931 343
+:matt/underworld/thinplatform128: 835 343
+:matt/underworld/thinplatform128: 881 343
+:matt/underworld/02: 1001 311
+:matt/underworld/02: 1001 217
+:matt/underworld/thinplatform128: 488 310
+:matt/underworld/thinplatform128: 514 310
+:matt/underworld/00: 602 190
+:matt/underworld/thinplatform128: 612 342
+:matt/underworld/thinplatform128: 516 342
+:matt/underworld/thinplatform128: 562 342
+:matt/underworld/02: 682 310
+:matt/underworld/02: 682 216
+:matt/underworld/thinplatform128: 172 309
+:matt/underworld/thinplatform128: 198 309
+:matt/underworld/02: 110 311
+:matt/underworld/02: 110 217
+:matt/underworld/00: 286 189
+:matt/underworld/thinplatform128: 296 341
+:matt/underworld/thinplatform128: 200 341
+:matt/underworld/thinplatform128: 246 341
+:matt/underworld/02: 366 309
+:matt/underworld/02: 366 215
+:matt/underworld/thinplatform128: 1446 312
+:matt/underworld/thinplatform128: 1472 312
+:matt/underworld/02: 1384 312
+:matt/underworld/02: 1384 216
+:matt/underworld/00: 1560 192
+:matt/underworld/thinplatform128: 1570 344
+:matt/underworld/thinplatform128: 1474 344
+:matt/underworld/thinplatform128: 1520 344
+:matt/underworld/02: 1640 312
+:matt/underworld/02: 1640 216
+:matt/underworld/thinplatform128: 1765 312
+:matt/underworld/thinplatform128: 1791 312
+:matt/underworld/02: 1703 312
+:matt/underworld/02: 1703 216
+:matt/underworld/00: 1879 192
+:matt/underworld/thinplatform128: 1889 344
+:matt/underworld/thinplatform128: 1793 344
+:matt/underworld/thinplatform128: 1839 344
+:matt/underworld/02: 1959 312
+:matt/underworld/02: 1959 216
+:matt/underworld/thinplatform128: 2084 312
+:matt/underworld/thinplatform128: 2110 312
+:matt/underworld/02: 2022 312
+:matt/underworld/02: 2022 216
+:matt/underworld/00: 2198 192
+:matt/underworld/thinplatform128: 2208 344
+:matt/underworld/thinplatform128: 2112 344
+:matt/underworld/thinplatform128: 2158 344
+:matt/underworld/02: 2278 312
+:matt/underworld/02: 2278 216
+:matt/underworld/thinplatform128: 2402 312
+:matt/underworld/thinplatform128: 2428 312
+:matt/underworld/02: 2340 312
+:matt/underworld/02: 2340 216
+:matt/underworld/00: 2516 192
+:matt/underworld/thinplatform128: 2526 344
+:matt/underworld/thinplatform128: 2430 344
+:matt/underworld/thinplatform128: 2476 344
+:matt/underworld/01: 384 -1
+:matt/underworld/01: 448 -1
+:matt/underworld/01: 512 -1
+:matt/underworld/01: 576 -1
+:matt/underworld/01: 512 -1
+:matt/underworld/01: 576 -1
+:matt/underworld/01: 640 -1
+:matt/underworld/01: 704 -1
+:matt/underworld/01: 768 -1
+:matt/underworld/01: 832 -1
+:matt/underworld/01: 896 -1
+:matt/underworld/01: 960 -1
+:matt/underworld/01: 2432 -2
+:matt/underworld/01: 2496 -2
+:matt/underworld/01: 2560 -2
+:matt/underworld/01: 2624 -2
+:matt/underworld/01: 2560 -2
+:matt/underworld/01: 2624 -2
+:matt/underworld/01: 0 -1
+:matt/underworld/01: 64 -1
+:matt/underworld/01: 128 -1
+:matt/underworld/01: 192 -1
+:matt/underworld/01: 256 -1
+:matt/underworld/01: 320 -1
+:matt/underworld/01: 2368 1
+:matt/underworld/01: 2432 1
+:matt/underworld/01: 2496 1
+:matt/underworld/01: 2560 1
+:matt/underworld/01: 2496 1
+:matt/underworld/01: 2560 1
+:matt/underworld/01: 2624 1
+:matt/underworld/01: 0 -1
+:matt/underworld/01: 64 -1
+:matt/underworld/01: 128 -1
+:matt/underworld/01: 192 -1
+:matt/underworld/01: 256 -1
+:matt/underworld/01: 1728 0
+:matt/underworld/01: 1792 0
+:matt/underworld/01: 1856 0
+:matt/underworld/01: 1920 0
+:matt/underworld/01: 1856 0
+:matt/underworld/01: 1920 0
+:matt/underworld/01: 1984 0
+:matt/underworld/01: 2048 0
+:matt/underworld/01: 2112 0
+:matt/underworld/01: 2176 0
+:matt/underworld/01: 2240 0
+:matt/underworld/01: 2304 0
+:matt/underworld/01: 1664 0
+:matt/underworld/02: 46 311
+:matt/underworld/02: 46 217
+:matt/underworld/02: 2686 311
+:matt/underworld/02: 2686 217
+:matt/underworld/02: 2654 311
+:matt/underworld/02: 2654 217
+:matt/underworld/02: 430 309
+:matt/underworld/02: 430 215
+:matt/underworld/thinplatform128: 676 342
+:matt/underworld/02: 746 310
+:matt/underworld/02: 746 216
+:matt/underworld/thinplatform128: 995 343
+:matt/underworld/02: 1065 311
+:matt/underworld/02: 1065 217

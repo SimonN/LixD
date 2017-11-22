@@ -1,0 +1,179 @@
+$BUILT 2017-11-20 23:22:32
+$AUTHOR Colorful Arty
+$ENGLISH Murder in a minute (8p)
+
+#INTENDED_NUMBER_OF_PLAYERS 8
+#SIZE_X 672
+#SIZE_Y 384
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 10
+#INITIAL 2
+#REQUIRED 1
+#SPAWN_INTERVAL 32
+
+#WALKER -1
+#RUNNER 2
+#BLOCKER 2
+#PLATFORMER 10
+#MINER 10
+#DIGGER 10
+#BATTER -1
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 4 48
+:geoo/construction/Hatch.H: 340 48
+:geoo/construction/Hatch.H: 4 144
+:geoo/construction/Hatch.H: 340 144
+:geoo/construction/Hatch.H: 4 240
+:geoo/construction/Hatch.H: 340 240
+:geoo/construction/Hatch.H: 4 336
+:geoo/construction/Hatch.H: 340 336
+
+:geoo/abstract/goal.G: 4 376
+:geoo/abstract/goal.G: 340 376
+:geoo/abstract/goal.G: 4 88
+:geoo/abstract/goal.G: 340 88
+:geoo/abstract/goal.G: 4 184
+:geoo/abstract/goal.G: 340 184
+:geoo/abstract/goal.G: 4 280
+:geoo/abstract/goal.G: 340 280
+
+:geoo/construction/sawblade.F: 48 0
+:geoo/construction/sawblade.F: 96 0
+:geoo/construction/sawblade.F: 144 0
+:geoo/construction/sawblade.F: 192 0
+:geoo/construction/sawblade.F: 240 0
+:geoo/construction/sawblade.F: 288 0
+:geoo/construction/sawblade.F: 384 0
+:geoo/construction/sawblade.F: 432 0
+:geoo/construction/sawblade.F: 480 0
+:geoo/construction/sawblade.F: 528 0
+:geoo/construction/sawblade.F: 576 0
+:geoo/construction/sawblade.F: 624 0
+:geoo/construction/sawblade.F: 48 28
+:geoo/construction/sawblade.F: 96 28
+:geoo/construction/sawblade.F: 144 28
+:geoo/construction/sawblade.F: 192 28
+:geoo/construction/sawblade.F: 240 28
+:geoo/construction/sawblade.F: 288 28
+:geoo/construction/sawblade.F: 384 28
+:geoo/construction/sawblade.F: 432 28
+:geoo/construction/sawblade.F: 480 28
+:geoo/construction/sawblade.F: 528 28
+:geoo/construction/sawblade.F: 576 28
+:geoo/construction/sawblade.F: 624 28
+:geoo/construction/sawblade.F: 48 96
+:geoo/construction/sawblade.F: 96 96
+:geoo/construction/sawblade.F: 144 96
+:geoo/construction/sawblade.F: 192 96
+:geoo/construction/sawblade.F: 240 96
+:geoo/construction/sawblade.F: 288 96
+:geoo/construction/sawblade.F: 384 96
+:geoo/construction/sawblade.F: 432 96
+:geoo/construction/sawblade.F: 480 96
+:geoo/construction/sawblade.F: 528 96
+:geoo/construction/sawblade.F: 576 96
+:geoo/construction/sawblade.F: 624 96
+:geoo/construction/sawblade.F: 48 120
+:geoo/construction/sawblade.F: 96 120
+:geoo/construction/sawblade.F: 144 120
+:geoo/construction/sawblade.F: 192 120
+:geoo/construction/sawblade.F: 240 120
+:geoo/construction/sawblade.F: 288 120
+:geoo/construction/sawblade.F: 384 120
+:geoo/construction/sawblade.F: 432 120
+:geoo/construction/sawblade.F: 480 120
+:geoo/construction/sawblade.F: 528 120
+:geoo/construction/sawblade.F: 576 120
+:geoo/construction/sawblade.F: 624 120
+:geoo/construction/sawblade.F: 48 192
+:geoo/construction/sawblade.F: 96 192
+:geoo/construction/sawblade.F: 144 192
+:geoo/construction/sawblade.F: 192 192
+:geoo/construction/sawblade.F: 240 192
+:geoo/construction/sawblade.F: 288 192
+:geoo/construction/sawblade.F: 384 192
+:geoo/construction/sawblade.F: 432 192
+:geoo/construction/sawblade.F: 480 192
+:geoo/construction/sawblade.F: 528 192
+:geoo/construction/sawblade.F: 576 192
+:geoo/construction/sawblade.F: 624 192
+:geoo/construction/sawblade.F: 48 216
+:geoo/construction/sawblade.F: 96 216
+:geoo/construction/sawblade.F: 144 216
+:geoo/construction/sawblade.F: 192 216
+:geoo/construction/sawblade.F: 240 216
+:geoo/construction/sawblade.F: 288 216
+:geoo/construction/sawblade.F: 384 216
+:geoo/construction/sawblade.F: 432 216
+:geoo/construction/sawblade.F: 480 216
+:geoo/construction/sawblade.F: 528 216
+:geoo/construction/sawblade.F: 576 216
+:geoo/construction/sawblade.F: 624 216
+:geoo/construction/sawblade.F: 48 288
+:geoo/construction/sawblade.F: 96 288
+:geoo/construction/sawblade.F: 144 288
+:geoo/construction/sawblade.F: 192 288
+:geoo/construction/sawblade.F: 240 288
+:geoo/construction/sawblade.F: 288 288
+:geoo/construction/sawblade.F: 384 288
+:geoo/construction/sawblade.F: 432 288
+:geoo/construction/sawblade.F: 480 288
+:geoo/construction/sawblade.F: 528 288
+:geoo/construction/sawblade.F: 576 288
+:geoo/construction/sawblade.F: 624 288
+:geoo/construction/sawblade.F: 48 312
+:geoo/construction/sawblade.F: 96 312
+:geoo/construction/sawblade.F: 144 312
+:geoo/construction/sawblade.F: 192 312
+:geoo/construction/sawblade.F: 240 312
+:geoo/construction/sawblade.F: 288 312
+:geoo/construction/sawblade.F: 384 312
+:geoo/construction/sawblade.F: 432 312
+:geoo/construction/sawblade.F: 480 312
+:geoo/construction/sawblade.F: 528 312
+:geoo/construction/sawblade.F: 576 312
+:geoo/construction/sawblade.F: 624 312
+
+:matt/goldmine/plank: 0 80
+:matt/goldmine/plank: 128 80
+:matt/goldmine/plank: 256 80
+:matt/goldmine/plank: 384 80
+:matt/goldmine/plank: 512 80
+:matt/goldmine/plank: 640 80
+:matt/goldmine/plank: 4 40
+:matt/goldmine/plank: 36 40 d
+:matt/goldmine/plank: 340 40
+:matt/goldmine/plank: 372 40 d
+:matt/goldmine/plank: 0 176
+:matt/goldmine/plank: 128 176
+:matt/goldmine/plank: 256 176
+:matt/goldmine/plank: 384 176
+:matt/goldmine/plank: 512 176
+:matt/goldmine/plank: 640 176
+:matt/goldmine/plank: 4 136
+:matt/goldmine/plank: 36 136 d
+:matt/goldmine/plank: 340 136
+:matt/goldmine/plank: 372 136 d
+:matt/goldmine/plank: 0 272
+:matt/goldmine/plank: 128 272
+:matt/goldmine/plank: 256 272
+:matt/goldmine/plank: 384 272
+:matt/goldmine/plank: 512 272
+:matt/goldmine/plank: 640 272
+:matt/goldmine/plank: 4 232
+:matt/goldmine/plank: 36 232 d
+:matt/goldmine/plank: 340 232
+:matt/goldmine/plank: 372 232 d
+:matt/goldmine/plank: 0 368
+:matt/goldmine/plank: 128 368
+:matt/goldmine/plank: 256 368
+:matt/goldmine/plank: 384 368
+:matt/goldmine/plank: 512 368
+:matt/goldmine/plank: 640 368
+:matt/goldmine/plank: 4 328
+:matt/goldmine/plank: 36 328 d
+:matt/goldmine/plank: 340 328
+:matt/goldmine/plank: 372 328 d
