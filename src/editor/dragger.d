@@ -45,6 +45,7 @@ public:
     void startFrame(const(Map) map)
     {
         _mode = DragMode.frame;
+        _snapper = null; // probably already null, but let's not guess
         saveFroms(map);
     }
 
@@ -64,6 +65,7 @@ public:
 
     void startMove(const(Map) map, Hover snapper)
     {
+        assert (snapper, "must startMove with a non-null snapper");
         _mode = DragMode.move;
         _snapper = snapper;
         saveFroms(map);
@@ -92,7 +94,13 @@ public:
     }
 
 private:
-    invariant() { assert ((_snapper !is null) == (_mode == DragMode.move)); }
+    invariant()
+    {
+        import std.format;
+        assert ((_snapper !is null) == (_mode == DragMode.move),
+            format!"_snapper is %s, but _mode is %s."(
+            _snapper ? "non-null" : "null", _mode));
+    }
 
     void saveFroms(const(Map) map)
     {
