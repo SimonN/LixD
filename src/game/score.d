@@ -14,6 +14,7 @@ struct Score {
     Style style;
     int current; // should be > 0
     int potential; // should be larger than current to be visible
+    bool prefersGameToEnd; // should be filled by Tribe
 }
 
 // Sort better scores to earlier positions.

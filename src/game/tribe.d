@@ -93,10 +93,11 @@ final class Tribe {
             ret.style = style;
             ret.current = _lixSaved;
             ret.potential = _lixSaved + _lixOut + lixHatch;
+            ret.prefersGameToEnd = prefersGameToEnd;
             return ret;
         }
 
-        bool hasScored() { return score.current > 0; }
+        bool hasScored() { return _lixSaved > 0; }
 
         Phyu firstScoring()
         in { assert (hasScored); }

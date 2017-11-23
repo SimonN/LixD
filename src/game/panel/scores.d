@@ -89,6 +89,8 @@ private:
         immutable ryls = (yls - 4*th) / div;
         drawRatio(rycs, ryls/3, score.potential / maxPotential, score.style);
         drawRatio(rycs, ryls, score.current / maxPotential, score.style);
+        if (score.prefersGameToEnd)
+            drawNukeOverlay(rycs, ryls);
     }
 
     // This draws a single colorful rectangle. We assume that there's a
@@ -107,5 +109,20 @@ private:
         Alcol3D cols = getAlcol3DforStyle(style);
         draw3DButton(xs + 2*gui.thicks, rycs - ryls/2f,
             (xls - 4*gui.thicks) * ratio, ryls, cols.l, cols.m, cols.d);
+    }
+
+    // When a player nukes or has finished playing, mark bar with a square
+    void drawNukeOverlay(in float rycs, in float ryls)
+    {
+        Alcol grey(in float f) pure { return Alcol(f, f, f, 1); }
+
+        // copypasta from drawRatio's call to draw3DButton.
+        // See drawRatio for explanation of the cryptic variable names
+        draw3DButton(xs + 2*gui.thicks, rycs - ryls/2f,
+            ryls, ryls, // draw a square
+            grey(0.95f), grey(0.8f), grey(0.65f));
+        draw3DButton(xs + 3*gui.thicks, rycs - ryls/2f + gui.thicks,
+            ryls - 2*gui.thicks, ryls - 2*gui.thicks,
+            grey(0.00f), grey(0.15f), grey(0.3f));
     }
 }
