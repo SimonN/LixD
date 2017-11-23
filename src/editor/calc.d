@@ -22,9 +22,13 @@ void implEditorWork(Editor editor)
     editor.maybeCloseTerrainBrowser();
     editor.maybeCloseOkCancelWindow();
     editor.maybeCloseSaveBrowser();
-    editor.selectGrid();
-    if (! editor.mainUIisActive) {
-        // This is probably a bad hack.
+    if (editor.mainUIisActive) {
+        // We handle keypresses independently from the UI focus here,
+        // therefore we must hide selectGrid in this if branch
+        editor.selectGrid();
+    }
+    else {
+        // This else branch is probably a bad hack.
         // Otherwise, the hover description remains on the info bar even
         // with windows open. When the editor doesn't have focus: bar empty.
         editor._panel.forceClearInfo();
