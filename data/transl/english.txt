@@ -126,7 +126,7 @@ $gameFramestepAhead  %s to step ahead, %s to jump ahead.
 $gameFastForward     %s for fast-forward, %s for turbo.
 $gameRestart         Restart level.
 $gameNuke            Nuke. Double-click to activate.
-$gamePingGoals       Highlight own goals.
+$gameClearPhysics    Show splat ruler, hatches, goals.
 $gameSpecTribe       View skillset of another team.
 
 // main editor screen
@@ -306,7 +306,6 @@ $optionGroupControls           Controls
 $optionGroupGameKeys           Game keys
 $optionGroupEditorKeys         Editor keys
 $optionGroupMenuKeys           Menu keys
-$optionGroupSound              Sound
 $optionUserName               Player name
 $optionLanguage               Language
 $optionReplayAutoSolutions    Auto-save level solutions
@@ -376,7 +375,7 @@ $optionKeyStateLoad          Load state
 $optionKeyStateSave          Save state
 $optionKeyChat                Chat
 $optionKeySpecTribe          Cycle teams
-$optionKeyPingGoals          Ping hatches & goals
+$optionKeyClearPhysics       Clear physics
 $optionKeyNuke               Nuke
 
 $optionKeyForceLeftDesc Hold to assign skills to lix facing left.|This is useful in a dense bunch of lix.
@@ -393,7 +392,7 @@ $optionKeyStateLoadDesc Go back to the remembered game position.|You can remembe
 $optionKeyStateSaveDesc Remember the exact game position.|You can come back to that position via Load state.
 $optionKeyChatDesc Open the console to chat during a multiplayer game.
 $optionKeySpecTribeDesc Show the skillset of a different team when you observe a live multiplayer game|or when you replay a saved multiplayer game.
-$optionKeyPingGoalsDesc Highlight own hatches and goals during a networking game.|This helps in chaotic games, or when terrain covers the colored markers.
+$optionKeyClearPhysicsDesc Display a ruler to measure splat height during play.|Highlight own hatches and goals during a networking game.
 $optionKeyNukeDesc In singleplayer, explode all your lix to finish the level.|In multiplayer, start overtime if you have saved at least 1 lix.
 $winGameTitleDesc Open the game menu dialog.|Exit the level or save replays from this dialog.
 

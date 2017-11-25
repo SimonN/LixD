@@ -30,7 +30,7 @@ struct Tooltip {
         fastForward = 0x1000,
         restart = 0x2000,
         nuke = 0x4000,
-        pingGoals = 0x8000,
+        coolShades = 0x8000,
     }
 
     static string format(int manyIDs) nothrow
@@ -87,7 +87,7 @@ static this()
     mouse(Tooltip.ID.fastForward, Lang.gameFastForward);
     none(Tooltip.ID.restart, Lang.gameRestart);
     none(Tooltip.ID.nuke, Lang.gameNuke);
-    none(Tooltip.ID.pingGoals, Lang.gamePingGoals);
+    none(Tooltip.ID.coolShades, Lang.gameClearPhysics);
 }
 
 void key(Tooltip.ID id, Lang lang, UserOption!KeySet opt)

@@ -124,7 +124,7 @@ Filename fileImageGuiNumber, fileImageAppIcon,
     fileImageDebris, fileImageEditFlip, fileImageEditHatch,
     fileImageEditPanel, fileImageExplosion, fileImageFuse,
     fileImageFuseFlame, fileImageGameArrow, fileImageGameIcon,
-    fileImageGameNuke, fileImageGamePanel, fileImageGamePanel2,
+    fileImageGamePanel, fileImageGamePanel2,
     fileImageGamePanelHints, fileImageGameSpawnint, fileImageGamePause,
     fileImageGameReplay, fileImageImplosion, fileImageSpritesheet,
     fileImageStyleRecol, fileImageLobbySpec, fileImageMenuBackground,
@@ -178,7 +178,6 @@ static this()
     fileImageFuseFlame = new Fn("data/images/fuse_fla.I");
     fileImageGameArrow = new Fn("data/images/game_arr.I");
     fileImageGameIcon = new Fn("data/images/game_ico.I");
-    fileImageGameNuke = new Fn("data/images/game_nuk.I");
     fileImageGamePanel = new Fn("data/images/game_pan.I");
     fileImageGamePanel2 = new Fn("data/images/game_pa2.I");
     fileImageGamePanelHints = new Fn("data/images/game_pah.I");

@@ -34,7 +34,6 @@ bool needGuiRecoloring(Filename fn)
             fileImageEditHatch,
             fileImageEditPanel,
             fileImageGameArrow,
-            fileImageGameNuke,
             fileImageGamePanel,
             fileImageGamePanel2,
             fileImageGamePanelHints,

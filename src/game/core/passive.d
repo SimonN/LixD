@@ -30,8 +30,9 @@ calcPassive(Game game) { with (game)
     if (map.scrollingNow)
         mouseCursor.xf = 3;
 
-    if (game.pan.pingGoals) {
-        _altickPingGoalsUntil = timerTicks + ticksPerSecond * 4;
-        playLoud(Sound.CLOCK);
+    if (pan.coolShadesExecute) {
+        _altickPingGoalsUntil = pan.coolShadesAreOn
+            ? timerTicks + ticksPerSecond : 0;
+        playQuiet(Sound.CLOCK);
     }
 }}

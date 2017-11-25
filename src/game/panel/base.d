@@ -10,6 +10,7 @@ import std.algorithm;
 import std.range;
 
 import basics.user;
+import basics.globals;
 import game.core.view;
 import game.panel.infobar;
 import game.panel.nuke;
@@ -18,6 +19,7 @@ import game.panel.taperec;
 import game.panel.tooltip;
 import game.tribe;
 import game.score;
+import graphic.internal;
 import gui;
 import hardware.keyboard; // we need a different behavior of skill button
 import hardware.keyset;
@@ -35,7 +37,7 @@ private:
     SaveStateButtons _ssbs;
     TapeRecorderButtons _trbs; // contains the singleplayer nuke button
     NukeButton _nukeMulti;
-    TextButton _pingGoals; // often null
+    BitmapButton _coolShades;
     ScoreGraph _scoreGraph;
 
 public:
@@ -51,9 +53,14 @@ public:
             addChild(_skills[id]);
         }
         auto barGeom = new Geom(0, 0, xlg - 4 * skillXl, ylg - skillYl);
+        auto shadesGeom = new Geom(0, 0, skillXl, ylg - skillYl,
+                                    From.TOP_RIGHT);
+
         if (aView.showTapeRecorderButtons && aView.showScoreGraph) {
             stats = new InfoBarMultiplayer(barGeom);
-            // We don't have SaveStateButtons in this mode to preserve UI space
+            // We don't have SaveStateButtons in this mode to preserve UI
+            // space, and we don't have cool shades to preserve space
+            shadesGeom = null;
             immutable ya = this.ylg * 0.6f;
             immutable yb = this.ylg - ya;
             _scoreGraph = new ScoreGraph(
@@ -64,8 +71,8 @@ public:
         }
         else if (aView.showTapeRecorderButtons) {
             stats = new InfoBarSingleplayer(barGeom, lixRequired);
-            _ssbs = new SaveStateButtons(
-                    new Geom(0, 0, 4*skillXl, ylg - skillYl, From.TOP_RIGHT));
+            _ssbs = new SaveStateButtons(new Geom(shadesGeom.xlg, 0,
+                4 * skillXl - shadesGeom.xlg, ylg - skillYl, From.TOP_RIGHT));
             _trbs = new TapeRecorderButtons(
                     new Geom(0, 0, 4*skillXl, skillYl, From.BOTTOM_RIGHT));
             addChildren(stats, _ssbs, _trbs);
@@ -77,13 +84,20 @@ public:
             stats = new InfoBarMultiplayer(barGeom);
             _scoreGraph = new ScoreGraph(new Geom(0, 0, 4 * skillXl,
                                                   ylg - 20f, From.TOP_RIGHT));
-            enum pingXl = 25f;
-            _nukeMulti = new NukeButton(new Geom(pingXl, 0, 4*skillXl - pingXl,
-                20f, From.BOTTOM_RIGHT), NukeButton.WideDesign.yes);
-            _pingGoals = new TextButton(new Geom(0, 0, pingXl, 20f,
-                            From.BOTTOM_RIGHT), "\u2302?");
-            _pingGoals.hotkey = basics.user.keyPingGoals;
-            addChildren(stats, _scoreGraph, _nukeMulti, _pingGoals);
+            shadesGeom.from = From.BOTTOM_RIGHT;
+            _nukeMulti = new NukeButton(new Geom(skillXl, 0,
+                4 * skillXl - shadesGeom.xlg, 20f, From.BOTTOM_RIGHT),
+                NukeButton.WideDesign.yes);
+            addChildren(stats, _scoreGraph, _nukeMulti);
+        }
+
+        // Most modes have cool shades.
+        if (shadesGeom) {
+            _coolShades = new BitmapButton(shadesGeom,
+                                           getInternal(fileImageGamePanel2));
+            _coolShades.xf = 0;
+            _coolShades.hotkey = basics.user.keyPingGoals;
+            addChild(_coolShades);
         }
     }
 
@@ -146,7 +160,8 @@ public:
         bool framestepAheadOne()  { return _trbs && _trbs.framestepAheadOne; }
         bool framestepAheadMany() { return _trbs && _trbs.framestepAheadMany; }
         bool nukeDoubleclicked()  { return nuke.doubleclicked; }
-        bool pingGoals()          { return _pingGoals && _pingGoals.execute; }
+        bool coolShadesAreOn()    { return _coolShades && _coolShades.on; }
+        bool coolShadesExecute()  { return _coolShades && _coolShades.execute;}
         bool zoomIn()             { return _trbs && _trbs.zoomIn
                                       || ! _trbs && keyZoomIn.keyTapped; }
         bool zoomOut()            { return _trbs && _trbs.zoomOut
@@ -181,6 +196,8 @@ protected:
             else
                 hardware.sound.playQuiet(Sound.PANEL_EMPTY);
         });
+        if (_coolShades && _coolShades.execute)
+            _coolShades.on = ! _coolShades.on;
         suggestTooltips();
     }
 
@@ -209,7 +226,7 @@ private:
     {
         if (nuke.isMouseHere)
             suggestTooltip(Tooltip.ID.nuke);
-        if (_pingGoals && _pingGoals.isMouseHere)
-            suggestTooltip(Tooltip.ID.pingGoals);
+        if (_coolShades && _coolShades.isMouseHere)
+            suggestTooltip(Tooltip.ID.coolShades);
     }
 }

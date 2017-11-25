@@ -296,7 +296,7 @@ static this()
     keyStateSave = newKey("KEY_STATE_SAVE", Lang.optionKeyStateSave, ALLEGRO_KEY_F3);
     keyNuke = newKey("KEY_NUKE", Lang.optionKeyNuke, ALLEGRO_KEY_F12);
     keySpecTribe = newKey("KEY_SPECTATE_NEXT_PLAYER", Lang.optionKeySpecTribe, ALLEGRO_KEY_TAB);
-    keyPingGoals = newOpt("KEY_PING_GOALS", Lang.optionKeyPingGoals, KeySet());
+    keyPingGoals = newOpt("KEY_PING_GOALS", Lang.optionKeyClearPhysics, KeySet());
     keyChat = newKey("KEY_CHAT", Lang.optionKeyChat, ALLEGRO_KEY_ENTER);
     keyGameExit = newKey("KEY_GAME_EXIT", Lang.winGameTitle, ALLEGRO_KEY_ESCAPE);
 

@@ -24,11 +24,12 @@ public:
 
     this(Geom g, in WideDesign wide)
     {
-        super(g, getInternal(wide ? fileImageGameNuke : fileImageGamePanel));
+        super(g, getInternal(wide ? fileImageGamePanel2 : fileImageGamePanel));
         hotkey = keyNuke;
-        xf = wide ? 0 : 9;
+        xf = wide ? 1 : 9;
         if (wide) {
-            _label = new Label(new Geom(0, 0, xlg, 20, From.CENTER), "0:00");
+            _label = new Label(new Geom(-xlg/4 - 5, 0, xlg/2 - 10,
+                20, From.CENTER), "0:00");
             addChild(_label);
         }
     }

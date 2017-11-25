@@ -19,6 +19,7 @@ import graphic.torbit;
 import hardware.display;
 import hardware.music;
 import hardware.tharsis;
+import lix.skill.faller; // pixelsSafeToFall
 
 package void
 implGameDraw(Game game) { with (game)
@@ -36,6 +37,7 @@ implGameDraw(Game game) { with (game)
         with (level)
             map.clearScreenRect(color.makecol(bgRed, bgGreen, bgBlue));
         game.drawGadgets();
+        game.drawSplatRuler();
         game.drawLand();
         game.pingOwnGadgets();
 
@@ -74,15 +76,19 @@ void drawGadgets(Game game)
 void pingOwnGadgets(Game game) { with (game)
 {
     immutable remains = _altickPingGoalsUntil - timerTicks;
-    if (remains < 0)
+    if (remains < 0 || ! multiplayer)
+        // Usually, we haven't clicked the cool shades button. Do nothing then.
+        // Never ping hatches/exits in singleplayer either.
         return;
-    immutable int period = ticksPerSecond / 4;
+    immutable int period = ticksPerSecond / 2;
     assert (period > 0);
-    Alcol colOuter = remains % period > period / 2 ? color.white : color.black;
+    if (remains % period < period / 2)
+        return; // draw nothing extra during the off-part of flashing
     foreach (g; nurse.gadgetsOfTeam(localTribe.style)) {
-        Rect outer = Rect(g.loc - Point(5, 5), g.xl + 10, g.yl + 10);
+        enum th = 3; // thickness of the border
+        Rect outer = Rect(g.loc - Point(th, th), g.xl + 2*th, g.yl + 2*th);
         Rect inner = Rect(g.loc, g.xl, g.yl);
-        map.drawFilledRectangle(outer, colOuter);
+        map.drawFilledRectangle(outer, color.white);
         map.drawFilledRectangle(inner, color.black);
         g.draw();
     }
@@ -128,5 +134,55 @@ void drawReplaySign(Game game)
         const(Cutbit) rep = getInternal(fileImageGameReplay);
         rep.drawToCurrentAlbitNotTorbit(Point(0,
             (rep.yl/5 * (1 + sin(timerTicks * 0.08f))).to!int));
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// Splat ruler ////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+
+void drawSplatRuler(Game game)
+{
+    if (game.modalWindow || ! game.pan.coolShadesAreOn)
+        return;
+    Point top = game.map.mouseOnLand;
+    bool solid()
+    {
+        return game.nurse.constStateForDrawingOnly.lookup.getSolidEven(top);
+    }
+    // Find walkable terrain reasonably close under or over mouse cursor.
+    // Walkable terrain is terrain with air at the pixel above.
+    int upOrDown = solid() ? -1 : 1;
+    foreach (int iters; 0 .. (100 + 1)) {
+        if (iters == 100)
+            return; // from the entire function. Don't draw a bar.
+        top += Point(0, upOrDown);
+        if (solid() == (upOrDown == 1))
+            break;
+    }
+    if (! solid())
+        top += Point(0, 1);
+    game.drawSplatRulerBarBelowGivenStartOfFall(top);
+}
+
+void drawSplatRulerBarBelowGivenStartOfFall(Game game, Point startOfFall)
+{
+    enum wh = 40; // wh = width half, half of the line's x-length
+    Point lower = startOfFall + Point(-wh, Faller.pixelsSafeToFall);
+    Point ledge = startOfFall + Point(-wh, 0);
+    Point upper = startOfFall + Point(-wh, -Faller.pixelsSafeToFall);
+
+    void f(in Point p, in int plusY, in Alcol col)
+    {
+        game.map.drawFilledRectangle(Rect(p + Point(0, plusY), 2*wh, 1), col);
+    }
+    foreach (int plusY; 0 .. 5) {
+        float shade = (1 - 0.2f * plusY);
+        // shade *= 0.3f + 0.7f * (timerTicks * 0.03f).sin.abs; // no time-dep
+        f(upper, plusY, game.level.bgBlue > 0xA0 // some by Rubix: bright bg
+            ? Alcol(0, 0, 0, shade)
+            : Alcol(shade * 0.2f, shade * 0.4f, shade, shade)); // blue
+        f(ledge, plusY, Alcol(0, shade * 0.8f, 0, 0.8f * shade));
+        f(lower, plusY, Alcol(shade, shade * 0.2f, shade * 0.2f, shade));
     }
 }
