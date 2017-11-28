@@ -37,6 +37,6 @@ public:
     }
 
     void clearTribes() { _tribes = []; }
-    @property inout(Style[]) tribes() inout { return _tribes; }
+    @property inout(Style)[] tribes() inout { return _tribes; }
 }
 // end class GadgetWithTribeList

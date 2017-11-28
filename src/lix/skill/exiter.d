@@ -32,7 +32,16 @@ public:
 
     void playSound(in Goal goal)
     {
-        lixxie.playSound(goal.hasTribe(style) ? Sound.GOAL : Sound.GOAL_BAD);
+        if (goal.hasTribe(style)) {
+            lixxie.playSound(Sound.GOAL);
+        }
+        else {
+            lixxie.playSound(Sound.GOAL_BAD);
+            foreach (tr; goal.tribes)
+                outsideWorld.effect.addSound(outsideWorld.state.update, tr,
+                    outsideWorld.lixID, // arbitrary ID because not same tribe
+                    Sound.GOAL);
+        }
     }
 
     override void perform()
