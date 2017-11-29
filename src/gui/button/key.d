@@ -107,20 +107,35 @@ private:
     KeySet _addTheseToBig; // Saves _big's keys when we click _plus
     void delegate() _onChange;
 
-    enum plusXlg = 15f;
+    // Layout if _smallBelowBig == false: [-][+][big]
+    //
+    // Layout if _smallBelowBig == true:  [big ]
+    //                                    [-][+]
+    immutable bool _smallBelowBig = false;
 
 public:
     this(Geom g)
     {
         super(g);
-        _big = new SingleKeyButton(new Geom(0, 0, xlg, ylg, From.RIGHT));
-        _big.onChange = () { this.formatButtonsAndCallCallback(); };
-        _plus = new TextButton(new Geom(plusXlg, 0, plusXlg, ylg), "+");
-        _minus = new TextButton(new Geom(0, 0, plusXlg, ylg), "\u2212");
-        addChildren(_big, _plus, _minus);
-        keySet = KeySet();
+        _smallBelowBig = g.ylg >= 30f;
 
-        assert (! _onChange);
+        if (_smallBelowBig) {
+            _big = new SingleKeyButton(new Geom(0, 0, xlg, ylg));
+            immutable pYlg = ylg - 20f;
+            immutable pY = ylg - pYlg;
+            _plus = new SmallButton(new Geom(xlg/2, pY, xlg/2, pYlg), "+");
+            _minus = new SmallButton(new Geom(0, pY, xlg/2, pYlg) ,"\u2212");
+        }
+        else {
+            enum pXlg = 15f;
+            _big = new SingleKeyButton(new Geom(0, 0, xlg, ylg, From.RIGHT));
+            _plus = new SmallButton(new Geom(pXlg, 0, pXlg, ylg), "+");
+            _minus = new SmallButton(new Geom(0, 0, pXlg, ylg), "\u2212");
+        }
+        _big.onChange = () { this.formatButtonsAndCallCallback(); };
+        assert (! this._onChange);
+        addChildren(_big, _minus, _plus);
+
         formatButtonsAndCallCallback();
     }
 
@@ -178,8 +193,23 @@ private:
     {
         _minus.shown = keySet.len >= 1;
         _plus.shown = keySet.len >= 1 && keySet.len < 3;
-        _big.resize(xlg - plusXlg * (_minus.shown + _plus.shown), ylg);
+        if (_smallBelowBig) {
+            _minus.resize(_plus.shown ? xlg/2 : xlg, _minus.ylg);
+            _big.resize(_big.xlg, _minus.shown || _plus.shown
+                                    ? ylg - _minus.ylg : ylg);
+        }
+        else {
+            _big.resize(xlg - _minus.xlg * (_minus.shown + _plus.shown), ylg);
+        }
         if (_onChange !is null)
             _onChange();
+    }
+
+    static class SmallButton : TextButton {
+        this(Geom g, in string s) { super(g, s); }
+        @property override Alcol colorText() const
+        {
+            return on ? super.colorText : color.guiOnM;
+        }
     }
 }

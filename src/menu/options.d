@@ -286,7 +286,7 @@ void populateGameKeys()
     immutable float skillXl = (xlg - 40) / skillSort.length;
     foreach (x, ac; skillSort)
         groups[OptionGroup.gameKeys] ~= new SkillHotkeyOption(new Geom(
-            20 + x * skillXl, 80, skillXl, 70), ac, keySkill[ac], watcher);
+            20 + x * skillXl, 75, skillXl, 85), ac, keySkill[ac], watcher);
 
     enum plusBelowSkills = 70f;
     auto fac = facKeys!0;

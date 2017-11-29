@@ -149,7 +149,7 @@ public:
 class SkillHotkeyOption : Option
 {
     private SkillIcon _cb;
-    private SingleKeyButton _keyb;
+    private MultiKeyButton _keyb;
     private UserOption!KeySet _userOption;
 
     // watcher may be null, then we won't register ourselves with any watcher
@@ -157,8 +157,9 @@ class SkillHotkeyOption : Option
     {
         super(g);
         assert (opt);
-        _keyb = new SingleKeyButton(new Geom(0, 0, xlg, 20, From.BOTTOM));
-        _cb   = new SkillIcon(new Geom(0, 0, xlg, ylg-20, From.TOP));
+        enum kbYl = 35;
+        _keyb = new MultiKeyButton(new Geom(0, 0, xlg, kbYl, From.BOTTOM));
+        _cb   = new SkillIcon(new Geom(0, 0, xlg, ylg - kbYl, From.TOP));
         _cb.ac = ac;
         addChildren(_cb, _keyb);
         _userOption = opt;
