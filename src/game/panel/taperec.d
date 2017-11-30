@@ -92,7 +92,7 @@ protected:
         assert (!!_pause && !!_speedBack && !!_speedAhead && !!_speedFast);
         if (_pause.execute)
             setSpeedTo(paused ? 1 : 0);
-        else if (_restart.execute && paused)
+        else if (_restart.execute)
             setSpeedTo(1);
         else if (_speedFast.executeLeft)
             setSpeedTo(_speedFast.on ? 1 : 2);
