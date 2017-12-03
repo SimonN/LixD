@@ -207,12 +207,22 @@ final class Tribe {
         }
 
         Phyu triggersOvertimeSince()
-        in { assert (triggersOvertime); }
-        out (ret) { assert (ret >= firstScoring); }
+        in { assert (triggersOvertime, "call only when we trigger overtime"); }
+        out (ret) {
+            assert (ret != Phyu(int.max), "At least one of the ?: in this "
+                ~ "function should return a good value instead of int.max. "
+                ~ "If all return int.max, we probably shouldn't "
+                ~ "triggersOvertimeSince. Check its in contract.");
+            assert (hasScored, "We can only trigger overtime after scoring.");
+            assert (ret >= firstScoring, "If we nuke before saving a lix, "
+                ~ "we should trigger overtime on first save. Such an earlier "
+                ~ "nuke counts as prefersGameToEnd, not as triggersOvertime.");
+        }
         body {
             return min(nukePressed ? max(_nukePressedSince, firstScoring)
                                    : Phyu(int.max),
-                outOfLix ? finishedPlayingAt : Phyu(int.max),
+                outOfLix ? max(finishedPlayingAt, firstScoring)
+                         : Phyu(int.max),
                 rule == rule.raceToFirstSave ? firstScoring : Phyu(int.max));
         }
     }

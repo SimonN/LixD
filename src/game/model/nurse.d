@@ -226,7 +226,8 @@ private:
         auto result = new Result(_levelBuilt);
         result.lixSaved = tr.score.current;
         result.skillsUsed = tr.skillsUsed;
-        result.phyusUsed = tr.recentScoring;
+        if (tr.hasScored)
+            result.phyusUsed = tr.recentScoring;
         return result;
     }
 }
