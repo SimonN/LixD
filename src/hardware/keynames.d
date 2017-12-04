@@ -37,6 +37,14 @@ package enum string[hardwareKeyboardArrLen] keyNames = ()
     arr[ALLEGRO_KEY_UP] = "\u2191";
     arr[ALLEGRO_KEY_DOWN] = "\u2193";
 
+    arr[ALLEGRO_KEY_FULLSTOP] = ".";
+    arr[ALLEGRO_KEY_COMMA] = ",";
+    arr[ALLEGRO_KEY_SLASH] = "Slash";
+    arr[ALLEGRO_KEY_OPENBRACE] = "[";
+    arr[ALLEGRO_KEY_CLOSEBRACE] = "]";
+    arr[ALLEGRO_KEY_SEMICOLON] = ";";
+    arr[ALLEGRO_KEY_QUOTE] = "\"";
+
     arr[ALLEGRO_KEY_LSHIFT] = strShift;
     arr[ALLEGRO_KEY_RSHIFT] = strShift;
     arr[ALLEGRO_KEY_LCTRL] = "Ctrl";

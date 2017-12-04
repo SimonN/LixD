@@ -121,7 +121,11 @@ private string hotkeyNiceLong(in int hotkey)
     string ret;
     foreach (int i, dchar c; s) {
         if (i == 0) ret ~= std.uni.toUpper(c);
-        else if (c != '_') ret ~= c;
+        else if (c != '_') ret ~= std.uni.toLower(c);
     }
+    // On Windows Allgero, unknown keys are called KEY79. We have changed
+    // this to Key97, but still, remove uninformative bloat.
+    if (ret.length >= 3 && ret[0] == 'K' && ret[1] == 'e' && ret[2] == 'y')
+        ret = ret[3 .. $];
     return ret;
 }
