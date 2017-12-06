@@ -406,7 +406,16 @@ const(Result) getLevelResult(in Filename fn)
     return ret ? (*ret) : null;
 }
 
-void setLevelResult(
+/*
+ * setLevelResult: Update user's progress database (list of checkmarks)
+ * with a new level result. This tries to save the best result per level.
+ * Call this only with winning results! The progress database doesn't know
+ * whether a result is winning, it merely knows how many lix were saved.
+ *
+ * Returns true if we updated the previous result or if no previous result
+ * existed. Returns false if the previous result was already equal or better.
+ */
+bool setLevelResult(
     in Filename _fn,
     Result r,
 ) {
@@ -414,8 +423,12 @@ void setLevelResult(
     auto savedResult = (fn in results);
     if (savedResult is null
         || savedResult.built != r.built
-        || *savedResult < r)
+        || *savedResult < r
+    ) {
         results[fn] = r;
+        return true;
+    }
+    return false;
 }
 
 // ############################################################################

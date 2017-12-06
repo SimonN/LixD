@@ -6,7 +6,8 @@ import std.algorithm;
 import std.array;
 import std.format;
 
-import basics.user; // Result
+import basics.globconf; // remember results if playername == username
+import basics.user; // Result, update results if our own replay solves
 import file.filename;
 import game.core.game;
 import game.replay;
@@ -34,6 +35,7 @@ private:
     VerifyPrinter vp;
 
     int total, noPtr, noLev, badLev, multi, fail, ok;
+    int userResultsUpdated; // number of checkmarks updated with better results
 
     string[] levelDirsToCover;
     MutFilename[] levelsCovered; // this may contain duplicates until output
@@ -65,13 +67,16 @@ public:
         if (noPtr)
             vp.log(noPtr.format!"%5dx (NO-PTR): replay ignored, it doesn't name a level file.");
         if (noLev)
-            vp.log(noLev.format!"%5dx (NO-LEV): replay ignored, it names a level file that doens't exist.");
+            vp.log(noLev.format!"%5dx (NO-LEV): replay ignored, it names a level file that doesn't exist.");
         if (badLev)
             vp.log(badLev.format!"%5dx (BADLEV): replay ignored, it names a level file with a bad level.");
         if (fail)
             vp.log(fail.format!"%5dx (FAIL): replay names an existing level file, but doesn't solve it.");
         if (ok)
             vp.log(ok.format!"%5dx (OK): replay names an existing level file and solves that level.");
+        if (userResultsUpdated)
+            vp.log(format!"%d checkmarks for player `%s' updated."
+            (userResultsUpdated, userName));
     }
 
     void writeLevelsNotCovered()
@@ -139,7 +144,9 @@ private:
         Game game = new Game(Runmode.VERIFY, lev, rep.levelFilename, rep);
         auto result = game.evaluateReplay();
         destroy(game);
+
         rememberCoverage(rep.levelFilename, result.lixSaved >= lev.required);
+        maybeSetUserResult(result, rep, lev);
         writeResult(result, fn, rep, lev);
     }
 
@@ -154,6 +161,17 @@ private:
         if (solved)
             levelsCovered = (levelsCovered ~ MutFilename(levelFn))
                 .sort!fnLessThan.uniq.array;
+    }
+
+    void maybeSetUserResult(Result result, in Replay rep, in Level lev)
+    {
+        if (result.lixSaved < lev.required
+            || userName.empty
+            || userName != rep.playerLocalOrSmallest.name)
+            return;
+        assert (rep.numPlayers == 1);
+        if (setLevelResult(rep.levelFilename, result))
+            ++userResultsUpdated;
     }
 
     void writeResult(in Result res, Filename fn, in Replay rep, in Level lev)
