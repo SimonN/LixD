@@ -23,7 +23,7 @@ private:
     TextButton _edit;
     TextButton _newLevel;
     TextButton _exportImage;
-    LabelTwo _by, _save, _resultSaved, _resultSkills;
+    LabelTwo _by, _save, _trophySaved, _trophySkills;
     Label _exportImageDone1, _exportImageDone2;
     Element[] _hideWhenNullLevelHighlit;
 
@@ -88,13 +88,13 @@ public:
         _save = new LabelTwo(new Geom(infoX, infoY + 40, infoXl, 20),
             Lang.browserInfoInitgoal.transl);
         immutable savedXl = min(110f, infoXl/2f);
-        _resultSaved = new LabelTwo(new Geom(infoX, infoY + 60, savedXl, 20),
+        _trophySaved = new LabelTwo(new Geom(infoX, infoY + 60, savedXl, 20),
             Lang.browserInfoResultSaved.transl);
-        _resultSkills = new LabelTwo(new Geom(infoX + savedXl, infoY + 60,
+        _trophySkills = new LabelTwo(new Geom(infoX + savedXl, infoY + 60,
             infoXl - savedXl, 20), Lang.browserInfoResultSkills.transl);
 
         _hideWhenNullLevelHighlit = [ _edit, _delete, _exportImage,
-            _by, _save, _resultSaved, _resultSkills,
+            _by, _save, _trophySaved, _trophySkills,
             _exportImageDone1, _exportImageDone2];
         _hideWhenNullLevelHighlit.each!(la => addChild(la));
         addChildren(_newLevel);
@@ -127,12 +127,12 @@ protected:
         _by  .value = _levelRecent.author;
         _save.value = "%d/%d".format(_levelRecent.required,
                                      _levelRecent.initial);
-        const(Result) res = getLevelResult(fn);
-        _resultSaved.shown = res !is null;
-        _resultSkills.shown = res !is null;
-        if (res) {
-            _resultSaved.value = "%d".format(res.lixSaved);
-            _resultSkills.value = "%d".format(res.skillsUsed);
+        const tro = getTrophy(fn);
+        _trophySaved.shown = tro !is null;
+        _trophySkills.shown = tro !is null;
+        if (tro) {
+            _trophySaved.value = "%d".format(tro.lixSaved);
+            _trophySkills.value = "%d".format(tro.skillsUsed);
         }
     }
 

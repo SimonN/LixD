@@ -155,7 +155,7 @@ public:
     }
 
     // again, only noninteractive mode should call this
-    Result evaluateReplayUntilSingleplayerHasSavedAtLeast(in int lixRequired)
+    Trophy evaluateReplayUntilSingleplayerHasSavedAtLeast(in int lixRequired)
     {
         assert (_model);
         assert (_replay);
@@ -164,10 +164,10 @@ public:
                 // allow 5 minutes after the last replay data before cancelling
                 && upd < _replay.latestPhyu + 5 * (60 * 15))
             updateOnce();
-        return resultForTribe(_replay.playerLocalOrSmallest.style);
+        return trophyForTribe(_replay.playerLocalOrSmallest.style);
     }
 
-    Result resultForTribe(in Style style) const
+    Trophy trophyForTribe(in Style style) const
     {
         assert (style in _model.cs.tribes);
         return resultOf(_model.cs.tribes[style]);
@@ -221,9 +221,9 @@ private:
         }
     }
 
-    Result resultOf(in Tribe tr) const
+    Trophy resultOf(in Tribe tr) const
     {
-        auto result = new Result(_levelBuilt);
+        auto result = new Trophy(_levelBuilt);
         result.lixSaved = tr.score.current;
         result.skillsUsed = tr.skillsUsed;
         if (tr.hasScored)

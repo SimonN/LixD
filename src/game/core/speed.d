@@ -112,7 +112,7 @@ private:
 struct LoadStateRAII
 {
     private Game _game;
-    this(Game g) { _game = g; _game.saveResult(); }
+    this(Game g) { _game = g; _game.saveTrophy(); }
     ~this()      { _game.setLastPhyuToNow();    }
 }
 

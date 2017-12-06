@@ -23,7 +23,7 @@ import std.exception;
 import basics.alleg5;
 import basics.globals;
 import basics.globconf; // username, to determine whether to save result
-import basics.user; // Result
+import basics.user; // Trophy
 import file.filename;
 
 import game.core.calc;
@@ -155,7 +155,7 @@ public:
             gui.rmFocus(modalWindow);
             modalWindow = null;
         }
-        saveResult();
+        saveTrophy();
         saveAutoReplay();
         if (nurse) {
             nurse.dispose();
@@ -163,7 +163,7 @@ public:
         }
     }
 
-    Result evaluateReplay()
+    Trophy evaluateReplay()
     {
         assert (level);
         return nurse.evaluateReplayUntilSingleplayerHasSavedAtLeast(
@@ -261,12 +261,12 @@ package:
         altickLastPhyu = timerTicks;
     }
 
-    void saveResult()
+    void saveTrophy()
     {
         if (nurse && nurse.singleplayerHasSavedAtLeast(level.required)
                   && playerLocal.name == basics.globconf.userName)
-            setLevelResult(nurse.replay.levelFilename,
-                           nurse.resultForTribe(localStyle));
+            addTrophy(nurse.replay.levelFilename,
+                      nurse.trophyForTribe(localStyle));
     }
 
 private:

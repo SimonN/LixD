@@ -27,7 +27,7 @@ import net.ac;
 import net.phyu;
 import net.style;
 
-private Result[Filename] results;
+private Trophy[Filename] _trophies;
 
 // These is only for iteration during option saving/loading.
 // Outside of this module, refer to options by their static variable name.
@@ -352,10 +352,10 @@ static this()
 
 // ############################################################################
 
-class Result {
+class Trophy {
     const(Date) built;
-    int    lixSaved;
-    int    skillsUsed;
+    int lixSaved;
+    int skillsUsed;
     Phyu phyusUsed;
 
     this (const(Date) bu)
@@ -363,21 +363,26 @@ class Result {
         built = bu;
     }
 
-    int opEquals(in Result rhs) const
+    override bool opEquals(Object rhsObj)
     {
-        return built       == rhs.built
-            && lixSaved    == rhs.lixSaved
-            && skillsUsed  == rhs.skillsUsed
-            && phyusUsed == rhs.phyusUsed;
+        const(Trophy) rhs = cast (const Trophy) rhsObj;
+        if (! rhs)
+            return false;
+        return built      == rhs.built
+            && lixSaved   == rhs.lixSaved
+            && skillsUsed == rhs.skillsUsed
+            && phyusUsed  == rhs.phyusUsed;
     }
 
     // Returns < 0 on a worse rhs result, > 0 for a better rhs result.
     // The user wouldn't want to replace an old solving result with
     // a new-built-using non-solving result.
-    // To check in results into the database of solved levels, use
+    // To check in _trophies into the database of solved levels, use
     // setLevelResult() from this module.
-    int opCmp(in Result rhs) const
+    override int opCmp(Object rhsObj)
     {
+        const(Trophy) rhs = cast (const Trophy) rhsObj;
+        assert (rhs, "should be bug in Dlang, not in Lix");
         if (lixSaved != rhs.lixSaved)
             return lixSaved - rhs.lixSaved; // more lix saved is better
         if (skillsUsed != rhs.skillsUsed)
@@ -388,8 +393,8 @@ class Result {
     }
 
     unittest {
-        Result a = new Result(Date.now());
-        Result b = new Result(Date.now());
+        auto a = new typeof(this)(Date.now());
+        auto b = new typeof(this)(Date.now());
         a.lixSaved = 4;
         b.lixSaved = 5;
         assert (b > a);
@@ -400,32 +405,29 @@ class Result {
     }
 }
 
-const(Result) getLevelResult(in Filename fn)
+const(Trophy) getTrophy(in Filename fn)
 {
-    Result* ret = (rebindable!(const Filename)(fn) in results);
+    Trophy* ret = (rebindable!(const Filename)(fn) in _trophies);
     return ret ? (*ret) : null;
 }
 
 /*
- * setLevelResult: Update user's progress database (list of checkmarks)
+ * addTrophy: Update trophy database (user progress, list of checkmarks)
  * with a new level result. This tries to save the best result per level.
- * Call this only with winning results! The progress database doesn't know
+ * Call this only with winning _trophies! The progress database doesn't know
  * whether a result is winning, it merely knows how many lix were saved.
  *
  * Returns true if we updated the previous result or if no previous result
  * existed. Returns false if the previous result was already equal or better.
  */
-bool setLevelResult(
+bool addTrophy(
     in Filename _fn,
-    Result r,
+    Trophy r,
 ) {
     auto fn = rebindable!(const Filename)(_fn);
-    auto savedResult = (fn in results);
-    if (savedResult is null
-        || savedResult.built != r.built
-        || *savedResult < r
-    ) {
-        results[fn] = r;
+    auto existing = (fn in _trophies);
+    if (existing is null || existing.built != r.built || *existing < r) {
+        _trophies[fn] = r;
         return true;
     }
     return false;
@@ -465,24 +467,27 @@ void load()
             lines = null;
         }
     }
-    results = null;
+    _trophies = null;
 
     foreach (i; lines) {
         if (i.type == '<') {
             import std.string;
             auto fn = rebindable!(const Filename)(new VfsFilename(
                 // Backwards compat for renaming Simple to Lovely:
-                // Load all old user results. We would save with the new name.
+                // Load all old user _trophies. We would save with the new name.
                 // Remove the call to replace during early 2018.
                 i.text1.replace("lemforum/Simple/", "lemforum/Lovely/")
             ));
-            Result read = new Result(new Date(i.text2));
+            Trophy read = new Trophy(new Date(i.text2));
             read.lixSaved    = i.nr1;
             read.skillsUsed  = i.nr2;
             read.phyusUsed = Phyu(i.nr3);
-            Result* old = (fn in results);
+
+            // Don't call addTrophy because that always overwrites the date.
+            // We want the newest date here to tiebreak, unlike addTrophy.
+            Trophy* old = (fn in _trophies);
             if (! old || *old < read)
-                results[fn] = read;
+                _trophies[fn] = read;
         }
         else if (auto opt = i.text1 in _optvecLoad)
             opt.set(i);
@@ -504,7 +509,7 @@ nothrow void save()
         foreach (opt; _optvecSave)
             f.writeln(opt.ioLine);
         f.writeln();
-        foreach (key, r; results)
+        foreach (key, r; _trophies)
             f.writeln(IoLine.Angle(key.rootless,
                 r.lixSaved, r.skillsUsed, r.phyusUsed, r.built.toString));
     }

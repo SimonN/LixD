@@ -57,14 +57,14 @@ protected:
         assert (fn);
         TextButton ret;
         try {
-            const result = basics.user.getLevelResult(fn);
+            const trophy = basics.user.getTrophy(fn);
             const dat = new LevelMetaData(fn);
             ret = new TextButton(newButtonGeom(), "%s%d. %s".format(
                 fileID < 9 ? "  " : "", fileID + 1, dat.name));
-            ret.checkFrame = result is null       ? 0
-                : result.built    != dat.built    ? 3
-                : result.lixSaved >= dat.required ? 2 : 0;
-                // Never display the little ring for looked-at-but-didn't-solve.
+            ret.checkFrame = trophy is null       ? 0
+                : trophy.built    != dat.built    ? 3
+                : trophy.lixSaved >= dat.required ? 2 : 0;
+                // Never display the little ring for looked-at-but-not-solved.
                 // It makes people sad!
         }
         catch (Exception e) {

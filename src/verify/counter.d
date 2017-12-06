@@ -35,7 +35,7 @@ private:
     VerifyPrinter vp;
 
     int total, noPtr, noLev, badLev, multi, fail, ok;
-    int userResultsUpdated; // number of checkmarks updated with better results
+    int trophiesUpdated; // number of checkmarks updated with better results
 
     string[] levelDirsToCover;
     MutFilename[] levelsCovered; // this may contain duplicates until output
@@ -74,9 +74,9 @@ public:
             vp.log(fail.format!"%5dx (FAIL): replay names an existing level file, but doesn't solve it.");
         if (ok)
             vp.log(ok.format!"%5dx (OK): replay names an existing level file and solves that level.");
-        if (userResultsUpdated)
+        if (trophiesUpdated)
             vp.log(format!"%d checkmarks for player `%s' updated."
-            (userResultsUpdated, userName));
+            (trophiesUpdated, userName));
     }
 
     void writeLevelsNotCovered()
@@ -136,18 +136,18 @@ private:
         Level  lev = new Level(rep.levelFilename);
         // We never look at the included level
         if (fn == rep.levelFilename || ! lev.good || rep.numPlayers > 1) {
-            // give a result with all zeroes to pad the fields
-            writeResult(new Result(lev.built), fn, rep, lev);
+            // dummy result with all zeroes to pad the fields
+            writeResult(new Trophy(lev.built), fn, rep, lev);
             return;
         }
         // The pointed-to level is good.
         Game game = new Game(Runmode.VERIFY, lev, rep.levelFilename, rep);
-        auto result = game.evaluateReplay();
+        auto trophy = game.evaluateReplay();
         destroy(game);
 
-        rememberCoverage(rep.levelFilename, result.lixSaved >= lev.required);
-        maybeSetUserResult(result, rep, lev);
-        writeResult(result, fn, rep, lev);
+        rememberCoverage(rep.levelFilename, trophy.lixSaved >= lev.required);
+        maybeAddTrophy(trophy, rep, lev);
+        writeResult(trophy, fn, rep, lev);
     }
 
     void rememberCoverage(in Filename levelFn, bool solved)
@@ -163,18 +163,18 @@ private:
                 .sort!fnLessThan.uniq.array;
     }
 
-    void maybeSetUserResult(Result result, in Replay rep, in Level lev)
+    void maybeAddTrophy(Trophy tro, in Replay rep, in Level lev)
     {
-        if (result.lixSaved < lev.required
+        if (tro.lixSaved < lev.required
             || userName.empty
             || userName != rep.playerLocalOrSmallest.name)
             return;
         assert (rep.numPlayers == 1);
-        if (setLevelResult(rep.levelFilename, result))
-            ++userResultsUpdated;
+        if (addTrophy(rep.levelFilename, tro))
+            ++trophiesUpdated;
     }
 
-    void writeResult(in Result res, Filename fn, in Replay rep, in Level lev)
+    void writeResult(in Trophy res, Filename fn, in Replay rep, in Level lev)
     in {
         assert (res);
         assert (fn);
