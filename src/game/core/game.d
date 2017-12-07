@@ -163,7 +163,7 @@ public:
         }
     }
 
-    Trophy evaluateReplay()
+    Nurse.EvalResult evaluateReplay()
     {
         assert (level);
         return nurse.evaluateReplayUntilSingleplayerHasSavedAtLeast(

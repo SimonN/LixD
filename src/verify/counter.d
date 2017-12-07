@@ -5,13 +5,12 @@ module verify.counter;
 import std.algorithm;
 import std.array;
 import std.format;
+import enumap;
 
 import basics.globconf; // remember results if playername == username
 import basics.user; // Result, update results if our own replay solves
 import file.filename;
-import game.core.game;
-import game.replay;
-import level.level;
+import verify.tested;
 
 // Pass such an object to VerifyCounter.
 interface VerifyPrinter {
@@ -34,8 +33,8 @@ class VerifyCounter {
 private:
     VerifyPrinter vp;
 
-    int total, noPtr, noLev, badLev, multi, fail, ok;
-    int trophiesUpdated; // number of checkmarks updated with better results
+    Enumap!(verify.tested.Status, int) _stats; // number of replays per stat
+    int _trophiesUpdated; // number of checkmarks updated with better results
 
     string[] levelDirsToCover;
     MutFilename[] levelsCovered; // this may contain duplicates until output
@@ -61,22 +60,15 @@ public:
     void writeStatistics()
     {
         vp.log("");
-        vp.log(format!"%s%d%s"("Statistics from ", total, " replays:"));
-        if (multi)
-            vp.log(multi.format!"%5dx (MULTI): replay ignored, it is multiplayer.");
-        if (noPtr)
-            vp.log(noPtr.format!"%5dx (NO-PTR): replay ignored, it doesn't name a level file.");
-        if (noLev)
-            vp.log(noLev.format!"%5dx (NO-LEV): replay ignored, it names a level file that doesn't exist.");
-        if (badLev)
-            vp.log(badLev.format!"%5dx (BADLEV): replay ignored, it names a level file with a bad level.");
-        if (fail)
-            vp.log(fail.format!"%5dx (FAIL): replay names an existing level file, but doesn't solve it.");
-        if (ok)
-            vp.log(ok.format!"%5dx (OK): replay names an existing level file and solves that level.");
-        if (trophiesUpdated)
+        vp.log(format!"Statistics from %d replays:"(_stats.byValue.sum));
+        foreach (Status st, int nr; _stats) {
+            if (nr <= 0)
+                continue;
+            vp.log(format!"%5dx %s: %s"(nr, statusWord[st], statusDesc[st]));
+        }
+        if (_trophiesUpdated)
             vp.log(format!"%d checkmarks for player `%s' updated."
-            (trophiesUpdated, userName));
+            (_trophiesUpdated, userName));
     }
 
     void writeLevelsNotCovered()
@@ -131,66 +123,29 @@ public:
 private:
     void verifyImpl(Filename fn)
     {
-        ++total;
-        Replay rep = Replay.loadFromFile(fn);
-        Level  lev = new Level(rep.levelFilename);
-        // We never look at the included level
-        if (fn == rep.levelFilename || ! lev.good || rep.numPlayers > 1) {
-            // dummy result with all zeroes to pad the fields
-            writeResult(new Trophy(lev.built), fn, rep, lev);
-            return;
-        }
-        // The pointed-to level is good.
-        Game game = new Game(Runmode.VERIFY, lev, rep.levelFilename, rep);
-        auto trophy = game.evaluateReplay();
-        destroy(game);
-
-        rememberCoverage(rep.levelFilename, trophy.lixSaved >= lev.required);
-        maybeAddTrophy(trophy, rep, lev);
-        writeResult(trophy, fn, rep, lev);
+        auto tested = new TestedReplay(fn);
+        vp.log(tested.toString);
+        _stats[tested.status] += 1;
+        _trophiesUpdated += tested.maybeAddTrophy();
+        rememberCoverage(tested);
     }
 
-    void rememberCoverage(in Filename levelFn, bool solved)
+    void rememberCoverage(in TestedReplay tested)
     {
-        if (! vp.printCoverage)
+        if (! vp.printCoverage || ! tested.levelFilename)
             return;
-        if (! levelDirsToCover.canFind(levelFn.dirRootless)) {
-            levelDirsToCover ~= levelFn.dirRootless;
+        if (! levelDirsToCover.canFind(tested.levelFilename.dirRootless)) {
+            levelDirsToCover ~= tested.levelFilename.dirRootless;
             levelDirsToCover = levelDirsToCover.sort().uniq.array;
+            // This sorting-arraying is expensive, but usually, we have very
+            // few different level dirs per run. Therefore, we rarely enter
+            // this branch.
         }
-        if (solved)
-            levelsCovered = (levelsCovered ~ MutFilename(levelFn))
+        if (tested.solved) {
+            // This is more expensive, but maybe still not enough to opitmize
+            // away the sort-arraying.
+            levelsCovered = (levelsCovered ~ MutFilename(tested.levelFilename))
                 .sort!fnLessThan.uniq.array;
-    }
-
-    void maybeAddTrophy(Trophy tro, in Replay rep, in Level lev)
-    {
-        if (tro.lixSaved < lev.required
-            || userName.empty
-            || userName != rep.playerLocalOrSmallest.name)
-            return;
-        assert (rep.numPlayers == 1);
-        if (addTrophy(rep.levelFilename, tro))
-            ++trophiesUpdated;
-    }
-
-    void writeResult(in Trophy res, Filename fn, in Replay rep, in Level lev)
-    in {
-        assert (res);
-        assert (fn);
-        assert (rep);
-    }
-    body {
-        string key;
-        if      (rep.numPlayers > 1)          { key = "(MULTI)";  ++multi;  }
-        else if (fn == rep.levelFilename)     { key = "(NO-PTR)"; ++noPtr;  }
-        else if (! lev.nonempty)              { key = "(NO-LEV)"; ++noLev;  }
-        else if (! lev.good)                  { key = "(BADLEV)"; ++badLev; }
-        else if (res.lixSaved < lev.required) { key = "(FAIL)";   ++fail;   }
-        else                                  { key = "(OK)";     ++ok;     }
-        vp.log(format!"%s,%s,%s,%s,%d,%d,%d,%d"(key, fn.rootless,
-            rep.levelFilename ? rep.levelFilename.rootless : "",
-            rep.playerLocalOrSmallest.name, res.lixSaved,
-            lev ? lev.required : 0, res.skillsUsed, res.phyusUsed));
+        }
     }
 }

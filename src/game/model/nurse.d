@@ -154,17 +154,31 @@ public:
         _model.applyChangesToLand();
     }
 
-    // again, only noninteractive mode should call this
-    Trophy evaluateReplayUntilSingleplayerHasSavedAtLeast(in int lixRequired)
-    {
+    struct EvalResult {
+        Trophy trophy; //
+        bool mercyKilled; // replay took too long after last assign before win
+    }
+
+    // Again, only noninteractive mode should call this
+    EvalResult evaluateReplayUntilSingleplayerHasSavedAtLeast(int lixRequired)
+    in {
         assert (_model);
         assert (_replay);
+    }
+    body {
+        EvalResult ret;
         while (! _model.cs.singleplayerHasSavedAtLeast(lixRequired)
-                && ! everybodyOutOfLix
-                // allow 5 minutes after the last replay data before cancelling
-                && upd < _replay.latestPhyu + 5 * (60 * 15))
+            && ! everybodyOutOfLix
+        ) {
             updateOnce();
-        return trophyForTribe(_replay.playerLocalOrSmallest.style);
+            // allow 5 minutes after the last replay data before cancelling
+            if (upd >= _replay.latestPhyu + 5 * (60 * 15)) {
+                ret.mercyKilled = true;
+                break;
+            }
+        }
+        ret.trophy = trophyForTribe(_replay.playerLocalOrSmallest.style);
+        return ret;
     }
 
     Trophy trophyForTribe(in Style style) const
