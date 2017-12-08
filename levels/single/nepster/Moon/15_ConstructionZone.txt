@@ -1,4 +1,4 @@
-$BUILT 2017-03-07 21:43:31
+$BUILT 2017-11-23 20:09:41
 $AUTHOR Nepster
 $ENGLISH Construction Zone
 
@@ -22,6 +22,7 @@ $ENGLISH Construction Zone
 :geoo/construction/Goal2.G: 571 44
 
 :geoo/sandstone/brazier.F: 207 149
+:geoo/sandstone/brazier.F: 76 116
 
 :geoo/construction/rod_rust/straight_diagd8: 87 102
 :geoo/construction/rod_rust/straight_diagd32: 492 308 frr

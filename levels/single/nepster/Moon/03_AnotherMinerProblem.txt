@@ -1,4 +1,4 @@
-$BUILT 2016-01-03 13:55:09
+$BUILT 2017-11-23 20:04:45
 $AUTHOR Nepster
 $ENGLISH Another Miner Problem
 
@@ -6,7 +6,6 @@ $ENGLISH Another Miner Problem
 #SIZE_X 640
 #SIZE_Y 400
 
-#SECONDS 0
 #INITIAL 20
 #REQUIRED 20
 #SPAWN_INTERVAL 4
@@ -17,13 +16,11 @@ $ENGLISH Another Miner Problem
 #MINER 3
 #EXPLODER 0
 
-:matt/goldmine/Hatch.H: 64 256
+:matt/goldmine/Hatch.H: 66 268
 
 :matt/goldmine/Goal.G: 288 192
 
-:matt/goldmine/GoalTop.D: 288 144
-:matt/goldmine/shovel.D: 576 226
-
+:matt/goldmine/shovel: 576 226
 :amanda/steel/steel32x32.S: 224 240
 :amanda/steel/steel32x32.S: 384 240
 :matt/goldmine/crate64: 160 240
@@ -53,12 +50,12 @@ $ENGLISH Another Miner Problem
 :matt/goldmine/08: 546 64 f
 :matt/goldmine/08: 502 -8 f
 :matt/goldmine/08: 244 296 f
-:matt/goldmine/08: 162 298 f
-:matt/goldmine/03: 70 298
+:matt/goldmine/08: 154 298 f
+:matt/goldmine/03: 72 310
 :matt/goldmine/09: -28 194 frr
-:matt/goldmine/04: -24 276 frrr
+:matt/goldmine/04: -24 288 frrr
 :matt/goldmine/04: -58 290
-:matt/goldmine/04: 86 308
+:matt/goldmine/04: 82 306
 :matt/goldmine/04: 218 306
 :matt/goldmine/04: 406 288
 :matt/goldmine/04: 562 272
@@ -86,7 +83,7 @@ $ENGLISH Another Miner Problem
 :matt/goldmine/08: -6 24 rr
 :matt/goldmine/04: -42 -82 rr
 :matt/goldmine/04: -80 14 rr
-:matt/goldmine/04: 102 302 rr
+:matt/goldmine/04: 112 314 rr
 :matt/goldmine/04: 342 308 rr
 :matt/goldmine/explosivecrate: 224 176
 $BEGIN_TILE_GROUP 0

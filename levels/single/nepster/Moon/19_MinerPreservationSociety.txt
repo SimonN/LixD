@@ -1,4 +1,4 @@
-$BUILT 2015-12-30 23:34:19
+$BUILT 2017-11-23 20:14:37
 $AUTHOR Nepster
 $ENGLISH Miner Preservation Society
 
@@ -6,7 +6,6 @@ $ENGLISH Miner Preservation Society
 #SIZE_X 640
 #SIZE_Y 400
 
-#SECONDS 0
 #INITIAL 40
 #REQUIRED 39
 #SPAWN_INTERVAL 20
@@ -24,6 +23,7 @@ $ENGLISH Miner Preservation Society
 
 :geoo/sandstone/Goal.G: 576 272
 
+:geoo/sandstone/32x64: 224 352
 :geoo/sandstone/32x64: 544 160
 :geoo/sandstone/32x64: 576 112
 $BEGIN_TILE_GROUP 0
@@ -141,7 +141,6 @@ $END_TILE_GROUP
 :Group-0: 128 352
 :Group-0: 160 352
 :Group-0: 192 352
-:geoo/sandstone/32x64: 224 336
 :Group-0: 256 352
 :Group-0: 288 352
 :Group-0: 352 352
@@ -162,3 +161,8 @@ $END_TILE_GROUP
 :geoo/sandstone/32x64: 576 336
 :geoo/sandstone/32x64: 608 336
 :geoo/sandstone/32x32: 544 0
+$BEGIN_TILE_GROUP 1
+:geoo/sandstone/32x64: 0 24
+:geoo/sandstone/32x64: 0 0 d
+$END_TILE_GROUP
+:Group-1: 224 376

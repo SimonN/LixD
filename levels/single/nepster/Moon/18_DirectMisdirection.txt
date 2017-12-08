@@ -1,4 +1,4 @@
-$BUILT 2016-08-10 22:11:35
+$BUILT 2017-11-23 20:13:33
 $AUTHOR Nepster
 $ENGLISH Direct Misdirection
 
@@ -15,12 +15,12 @@ $ENGLISH Direct Misdirection
 #BLOCKER 1
 #PLATFORMER 2
 #BASHER 1
-#JUMPER 2
+#JUMPER 1
 #CUBER 1
 #EXPLODER 0
 
-:geoo/construction/Hatch.H: 320 64
-:geoo/construction/Hatch.H: 288 64 r
+:geoo/construction/Hatch.H: 320 56
+:geoo/construction/Hatch.H: 288 56 r
 
 :proxima/tile/goal.G: 16 80
 :proxima/tile/goal.G: 560 80
@@ -35,26 +35,26 @@ $ENGLISH Direct Misdirection
 :proxima/flame.F: -8 352
 :proxima/flame.F: 606 352
 
-:proxima/tile/green1: 320 176
-:proxima/tile/green1: 256 176
+:proxima/tile/green1: 320 168
+:proxima/tile/green1: 256 168
 :proxima/tile/green1: 368 272
 :proxima/tile/green1: 368 336
 :proxima/tile/green1: 208 336
 :proxima/tile/green1: 208 272
-:proxima/tile/green1: 448 48
-:proxima/tile/green1: 128 48
-:proxima/tile/green1: 128 112
-:proxima/tile/blue1b: 128 112 d
-:proxima/tile/green1: 192 112
-:proxima/tile/blue1a: 192 112 d
-:proxima/tile/green1: 192 176
-:proxima/tile/blue1b: 192 176 d
-:proxima/tile/green1: 448 112
-:proxima/tile/green1: 384 112
-:proxima/tile/green1: 384 176
-:proxima/tile/blue2a: 384 112 d
-:proxima/tile/blue2b: 384 176 d
-:proxima/tile/blue2b: 448 112 d
+:proxima/tile/green1: 448 40
+:proxima/tile/green1: 128 40
+:proxima/tile/green1: 128 104
+:proxima/tile/blue1b: 128 104 d
+:proxima/tile/green1: 192 104
+:proxima/tile/blue1a: 192 104 d
+:proxima/tile/green1: 192 168
+:proxima/tile/blue1b: 192 168 d
+:proxima/tile/green1: 448 104
+:proxima/tile/green1: 384 104
+:proxima/tile/green1: 384 168
+:proxima/tile/blue2a: 384 104 d
+:proxima/tile/blue2b: 384 168 d
+:proxima/tile/blue2b: 448 104 d
 :proxima/tile/green1: 464 208
 :proxima/tile/green1: 464 272
 :proxima/tile/green1: 464 336

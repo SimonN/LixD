@@ -1,12 +1,10 @@
-$BUILT 2017-08-09 01:51:20
+$BUILT 2017-11-23 20:24:00
 $AUTHOR Nepster
 $ENGLISH White Wonder
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 800
 #SIZE_Y 400
-#START_X 32
-#START_Y 0
 
 #INITIAL 20
 #REQUIRED 17
@@ -92,3 +90,9 @@ $ENGLISH White Wonder
 :matt/winter/05: 343 -45 rrr
 :matt/winter/07: 288 265 f
 :matt/winter/08: 203 345 rd
+:matt/winter/18: 169 168 d
+:matt/winter/18: 163 171 frrd
+:matt/winter/18: 125 171 frrd
+:matt/winter/18: 113 170 d
+:matt/winter/18: 91 169 d
+:matt/winter/18: 148 169 frrd

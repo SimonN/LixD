@@ -1,4 +1,4 @@
-$BUILT 2017-03-07 20:50:43
+$BUILT 2017-11-30 15:17:21
 $AUTHOR Nepster
 $ENGLISH Lix Playground
 
@@ -28,10 +28,10 @@ $ENGLISH Lix Playground
 :proxima/flame.F: 1308 326
 
 :geoo/abstract/pipes/central0: 632 177
-:proxima/tile/spheres/cyan: 1192 116 frr
-:proxima/tile/spheres/cyan: 1272 116 frr
-:proxima/tile/spheres/cyan: 72 116
-:proxima/tile/spheres/cyan: 152 116
+:proxima/tile/spheres/cyan: 1192 107 frr
+:proxima/tile/spheres/cyan: 1272 107 frr
+:proxima/tile/spheres/cyan: 72 107
+:proxima/tile/spheres/cyan: 152 107
 :proxima/tile/cyan1b: 1136 304 frr
 :proxima/tile/cyan1b: 1152 320 frr
 :proxima/tile/cyan1b: 1136 336 frr
@@ -221,12 +221,8 @@ $END_TILE_GROUP
 :proxima/tile/32.S: 544 16
 :proxima/tile/32.S: 32 336
 :proxima/tile/32.S: 96 336
-:proxima/tile/spheres/cyan: 72 125
-:proxima/tile/spheres/cyan: 152 125
-:proxima/tile/spheres/cyan: 112 160
-:proxima/tile/spheres/cyan: 112 176
-:proxima/tile/spheres/cyan: 112 192
-:proxima/tile/spheres/cyan: 112 208
+:proxima/tile/spheres/cyan: 72 116
+:proxima/tile/spheres/cyan: 152 116
 :proxima/tile/cyan3a: 256 336
 :proxima/tile/cyan3a: 256 304
 :proxima/tile/cyan3a: 256 272
@@ -242,8 +238,6 @@ $END_TILE_GROUP
 :proxima/tile/blue1a: 192 304 rrrd
 :proxima/tile/cyan1: 320 80
 :proxima/tile/cyan1: 352 80
-:proxima/tile/cyan1: 480 80
-:proxima/tile/cyan1: 480 88 d
 :proxima/tile/cyan1b: 320 88 d
 :proxima/tile/cyan1b: 320 104 d
 :proxima/tile/cyan1b: 320 120 d
@@ -505,8 +499,6 @@ $END_TILE_GROUP
 :proxima/tile/cyan1: 928 80 frr
 :proxima/tile/cyan1: 1024 80 frr
 :proxima/tile/cyan1: 992 80 frr
-:proxima/tile/cyan1: 864 80 frr
-:proxima/tile/cyan1: 864 88 frrd
 :proxima/tile/cyan1b: 1056 88 frrd
 :proxima/tile/cyan1b: 1056 104 frrd
 :proxima/tile/cyan1b: 1056 120 frrd
@@ -789,18 +781,12 @@ $END_TILE_GROUP
 :proxima/tile/32.S: 1056 16
 :proxima/tile/32.S: 1088 16
 :proxima/tile/32.S: 1120 16
-:proxima/tile/cyan1a: 541 80 d
-:proxima/tile/cyan1a: 835 80 d
 :proxima/tile/red3s: 704 145 frr
 :proxima/tile/red3s: 672 145
 :proxima/tile/red3s: 736 145 frr
 :proxima/tile/blue2as: 736 145 rd
-:proxima/tile/spheres/cyan: 1272 125 frr
-:proxima/tile/spheres/cyan: 1192 125 frr
-:proxima/tile/spheres/cyan: 1232 160 frr
-:proxima/tile/spheres/cyan: 1232 176 frr
-:proxima/tile/spheres/cyan: 1232 192 frr
-:proxima/tile/spheres/cyan: 1232 208 frr
+:proxima/tile/spheres/cyan: 1272 116 frr
+:proxima/tile/spheres/cyan: 1192 116 frr
 :proxima/tile/32.S: 128 368
 :proxima/tile/32.S: 64 16
 :proxima/tile/32.S: 1216 16
@@ -1224,3 +1210,43 @@ $END_TILE_GROUP
 :Group-14: 762 177 frr
 :proxima/tile/32.S: 640 368
 :proxima/tile/32.S: 736 368
+$BEGIN_TILE_GROUP 15
+:proxima/tile/cyan1: 0 0
+:proxima/tile/cyan1: 0 8 d
+$END_TILE_GROUP
+:Group-15: 480 80
+:Group-15: 864 80 frr
+:proxima/tile/spheres/cyan: 72 125
+:proxima/tile/spheres/cyan: 152 125
+:proxima/tile/spheres/cyan: 112 160
+:proxima/tile/spheres/cyan: 112 176
+:proxima/tile/spheres/cyan: 112 192
+:proxima/tile/spheres/cyan: 112 208
+:proxima/tile/spheres/cyan: 1272 125 frr
+:proxima/tile/spheres/cyan: 1192 125 frr
+:proxima/tile/spheres/cyan: 1232 160 frr
+:proxima/tile/spheres/cyan: 1232 176 frr
+:proxima/tile/spheres/cyan: 1232 192 frr
+:proxima/tile/spheres/cyan: 1232 208 frr
+:proxima/tile/cyan1b: 256 72
+:proxima/tile/cyan1b: 288 72
+:proxima/tile/cyan1b: 416 72
+:proxima/tile/cyan1b: 448 72
+:proxima/tile/cyan1b: 416 56
+:proxima/tile/cyan1b: 448 56
+:proxima/tile/cyan1b: 416 48 d
+:proxima/tile/cyan1b: 448 48 d
+:Group-15: 544 80
+:Group-15: 608 80
+:Group-15: 800 80 frr
+:Group-15: 736 80 frr
+:Group-15: 704 80 frr
+:Group-15: 640 80
+:proxima/tile/cyan1b: 960 72 frr
+:proxima/tile/cyan1b: 928 72 frr
+:proxima/tile/cyan1b: 960 56 frr
+:proxima/tile/cyan1b: 928 56 frr
+:proxima/tile/cyan1b: 960 48 frrd
+:proxima/tile/cyan1b: 928 48 frrd
+:proxima/tile/cyan1b: 1120 72 frr
+:proxima/tile/cyan1b: 1088 72 frr

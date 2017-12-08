@@ -1,4 +1,4 @@
-$BUILT 2017-03-07 19:00:04
+$BUILT 2017-11-23 20:05:29
 $AUTHOR Nepster
 $ENGLISH You need Blockers this time
 
@@ -23,6 +23,7 @@ $ENGLISH You need Blockers this time
 :geoo/sandstone/chopper.T: 326 228
 :geoo/sandstone/chopper.T: 76 227
 :geoo/sandstone/chopper.T: 1034 180
+:geoo/sandstone/chopper.T: 42 227
 
 :amanda/tar.W: 274 376
 

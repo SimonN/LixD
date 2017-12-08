@@ -1,4 +1,4 @@
-$BUILT 2017-03-02 12:24:18
+$BUILT 2017-11-23 20:08:57
 $AUTHOR Nepster
 $ENGLISH Horror Ping-Pong
 
@@ -19,7 +19,7 @@ $ENGLISH Horror Ping-Pong
 :amanda/occult/hatch_tentacle.H: 266 56
 
 :amanda/occult/goal_skull.G: 506 232
-:amanda/occult/goal_skull.G: 9 232
+:amanda/occult/goal_skull.G: 5 232
 
 :amanda/tar.W: 0 368
 :amanda/tar.W: 128 368
@@ -58,9 +58,9 @@ $ENGLISH Horror Ping-Pong
 :amanda/occult/wax16x16: 504 149 r
 :amanda/occult/wax16x16: 592 152 rrr
 :amanda/occult/wax16x16: 464 155 rrr
-:amanda/occult/wax32x48_cap_left_sheer: 7 304
-:amanda/occult/wax64x48: 39 304
-:amanda/occult/wax32x48_cap_right_sheer: 103 304
+:amanda/occult/wax32x48_cap_left_sheer: 3 304
+:amanda/occult/wax64x48: 35 304
+:amanda/occult/wax32x48_cap_right_sheer: 99 304
 :amanda/occult/wax32x48_cap_left_sheer: 506 304
 :amanda/occult/wax64x64: 538 304
 :amanda/occult/wax32x48_cap_right_sheer: 602 304
@@ -234,4 +234,4 @@ $END_TILE_GROUP
 :amanda/occult/wax_details_drip_b: 26 21 rr
 :amanda/occult/overlay32x32_d: -16 25 rrr
 :amanda/occult/overlay32x32_c: 15 -3 r
-:amanda/occult/wax32x16_cap_left: 131 322 rrrd
+:amanda/occult/wax32x16_cap_left: 127 322 rrrd
