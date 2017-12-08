@@ -98,6 +98,15 @@ public:
         return rhs && this._s == rhs._s;
     }
 
+    // This function exists only to please the runtime during AA lookup.
+    // I got runtime crashes due to missing opCmp, but no compiler errors. :-/
+    override int opCmp(Object rhs)
+    {
+        auto r = cast (immutable(typeof(this))) rhs;
+        auto l = cast (immutable(typeof(this))) this;
+        return r.fnLessThan(l) - l.fnLessThan(r);
+    }
+
     @trusted override size_t toHash() const nothrow
     {
         return typeid(_s).getHash(&_s);
@@ -148,15 +157,6 @@ public:
     // These throw on error.
     void mkdirRecurse() immutable { std.file.mkdirRecurse(_s); }
     void deleteFile() immutable { if (fileExists) std.file.remove(_s); }
-
-    // This function exists only to please the runtime during AA lookup.
-    // I got runtime crashes due to missing opCmp, but no compiler errors. :-/
-    override int opCmp(Object rhs)
-    {
-        auto r = cast (immutable(typeof(this))) rhs;
-        auto l = cast (immutable(typeof(this))) this;
-        return r.fnLessThan(l) - l.fnLessThan(r);
-    }
 
 protected:
     MutFilename[] findImpl(in SpanMode spanMode,

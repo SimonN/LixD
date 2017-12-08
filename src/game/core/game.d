@@ -86,7 +86,7 @@ package:
     int _profilingGadgetCount;
     bool _gotoMainMenu;
     bool _replayNeverCancelledThereforeDontSaveAutoReplay;
-    bool _levelMatchesLevelFilenameThereforeSaveTrophy;
+    bool _maySaveTrophy;
 
 private:
     Phyu _setLastPhyuToNowLastCalled = Phyu(-1);
@@ -107,13 +107,13 @@ public:
     }
 
     this(Runmode rm, Level lv, Filename levelFilename, Replay rp,
-                     bool levelMatchesFilename // may save trophy?
+        in bool maySaveTrophy
     ) {
         this.runmode = rm;
         assert (lv);
         assert (lv.good);
         level = lv;
-        _levelMatchesLevelFilenameThereforeSaveTrophy = levelMatchesFilename;
+        _maySaveTrophy = maySaveTrophy;
         prepareNurse(levelFilename, rp);
         commonConstructor();
     }
@@ -267,8 +267,8 @@ package:
     void saveTrophy()
     {
         if (nurse && nurse.singleplayerHasSavedAtLeast(level.required)
-                  && _levelMatchesLevelFilenameThereforeSaveTrophy
-                  && playerLocal.name == basics.globconf.userName)
+                  && playerLocal.name == basics.globconf.userName
+                  && _maySaveTrophy)
             addTrophy(nurse.replay.levelFilename,
                       nurse.trophyForTribe(localStyle));
     }

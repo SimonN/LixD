@@ -1,5 +1,13 @@
 module menu.browser.replay;
 
+/*
+ * This must be refactored: Even though we inherit
+ * from BrowserCalledFromMainMenu, we may not implement levelRecent() inout
+ * despite the base class's promise. Reason: _matcher requires mutability.
+ * For now, we have assert(false) in levelRecent() and thus violate OO.
+ * See comment at that method.
+ */
+
 import basics.user;
 import file.filename;
 import file.language;
@@ -15,13 +23,10 @@ static import basics.globals;
 
 class BrowserReplay : BrowserCalledFromMainMenu {
 private:
-    Replay _replayRecent;
-    Level _included;
-    Level _pointedTo;
+    ReplayToLevelMatcher _matcher; // may be null if no replay previewed
+
     TextButton _buttonPlayWithPointedTo;
     TextButton _buttonVerify;
-    bool _forcePointedTo;
-
     mixin DeleteMixin deleteMixin;
 
 public:
@@ -47,57 +52,36 @@ public:
         addChildren(_buttonPlayWithPointedTo, _buttonVerify, _delete);
     }
 
-    override @property inout(Level) levelRecent() inout
-    {
-        return (_pointedTo !is null && _pointedTo.good
-            && (_forcePointedTo || _included is null || ! _included.good))
-            ? _pointedTo : _included;
-    }
-
-    override @property inout(Replay) replayRecent() inout
-    {
-        return _replayRecent;
-    }
-
-    // This shall be passed to the Game by the main menu to tell the
-    // game that it may save trophies based on how the replay worked.
-    @property bool levelRecentEqualsPointedToLevel() const
-    {
-        return levelRecent() == _pointedTo;
-    }
+    // Override method with assert(false): Violates fundamental OO principles.
+    // We shouldn't inherit from BrowserCalledFromMainMenu as long
+    // as that forces us to implement such a levelRecent(). BrowserReplay's
+    // caller (the main loop) should get the entire LevelToReplayMatcher
+    // instead, then it can start a game from there.
+    override @property inout(Level) levelRecent() inout { assert (false); }
+    @property inout(ReplayToLevelMatcher) matcher() inout { return _matcher; }
 
 protected:
-
     override void onFileHighlight(Filename fn)
     {
         assert (_delete);
         if (fn is null) {
-            _replayRecent = null;
-            _included = null;
-            _pointedTo = null;
+            _matcher = null;
             _buttonPlayWithPointedTo.hide();
             _delete.hide();
         }
         else {
-            _forcePointedTo = false;
-            _replayRecent = Replay.loadFromFile(fn);
-            _included = new Level(fn); // open the replay file as level
-            _pointedTo = new Level(_replayRecent.levelFilename);
+            _matcher = new ReplayToLevelMatcher(fn);
             _delete.show();
-            _buttonPlayWithPointedTo.shown = _pointedTo.good;
+            _buttonPlayWithPointedTo.shown = _matcher.pointedToIsGood;
             // _extract.shown = _included.nonempty; -- _extract not yet impl
-            // Even without _extract implemented, we need _included,
-            // for this.levelRecent().
         }
-        previewLevel(levelRecent);
+        previewLevel(_matcher ? _matcher.preferredLevel : null);
     }
 
     override void onFileSelect(Filename fn)
     {
-        assert (replayRecent !is null);
-        assert (levelRecent  !is null);
-        _forcePointedTo = false;
-        if (levelRecent.good) {
+        assert (_matcher);
+        if (_matcher.includedIsGood) {
             basics.user.replayLastLevel = super.fileRecent;
             gotoGame = true;
         }
@@ -107,13 +91,13 @@ protected:
     {
         super.calcSelf();
         calcDeleteMixin();
-        if (_buttonPlayWithPointedTo.execute && replayRecent !is null) {
+        if (_buttonPlayWithPointedTo.execute
+            && _matcher && _matcher.pointedToIsGood
+        ) {
             // like onFileSelect, but for pointedTo
-            _forcePointedTo = true;
-            if (levelRecent && levelRecent.good) {
-                basics.user.replayLastLevel = super.fileRecent;
-                gotoGame = true;
-            }
+            _matcher.forcePointedTo();
+            basics.user.replayLastLevel = super.fileRecent;
+            gotoGame = true;
         }
         else if (_buttonVerify.execute) {
             basics.user.replayLastLevel = currentDir;

@@ -50,7 +50,7 @@ static immutable Enumap!(Status, string) statusDesc = enumap.enumap(
 class TestedReplay {
 private:
     Filename _rpFn; // filename of the replay
-    Replay _rp; // has _replay.levelFilename
+    ReplayToLevelMatcher _matcher;
     Level _lv; // may be null, e.g., if noPointer or missingLevel
     Trophy _trophy; // may be null
     Status _status;
@@ -60,10 +60,12 @@ public:
     in { assert (fn); }
     body {
         _rpFn = fn;
-        _rp = Replay.loadFromFile(_rpFn);
-        _lv = new Level(_rp.levelFilename); // Never look at the included level
+        _matcher = new ReplayToLevelMatcher(_rpFn);
+        _matcher.forcePointedTo();
+        _lv = _matcher.preferredLevel();
         _status = replayFilename == levelFilename ? Status.noPointer
-            : _rp.numPlayers > 1                  ? Status.multiplayer
+            : _matcher.isMultiplayer              ? Status.multiplayer
+            : ! _lv                               ? Status.noPointer
             : ! _lv.good && _lv.nonempty          ? Status.badLevel
             : ! _lv.good                          ? Status.missingLevel
                                                   : Status.untested;
@@ -73,7 +75,7 @@ public:
         assert (_lv.good);
         // false == disallow saving trophies. If we want trophies, our
         // caller should explicitly tell us maybeAddTrophy() later.
-        Game game = new Game(Runmode.VERIFY, _lv, levelFilename, _rp, false);
+        Game game = _matcher.createGame(Runmode.VERIFY);
         auto eval = game.evaluateReplay();
         destroy(game);
         _trophy = eval.trophy;
@@ -86,15 +88,15 @@ public:
         Status status() { return _status; }
         bool solved() { return _status == Status.solved; }
         Filename replayFilename() { return _rpFn; }
-        Filename levelFilename() { return _rp ? _rp.levelFilename : null; }
+        Filename levelFilename() { return _matcher.pointedToFilename; }
     }
 
     override string toString() const
     {
         return format!"%s,%s,%s,%s,%d,%d,%d,%d"(statusWord[_status],
             _rpFn.rootless,
-            _rp.levelFilename ? _rp.levelFilename.rootless : "",
-            _rp.playerLocalOrSmallest.name,
+            levelFilename ? levelFilename.rootless : "",
+            _matcher.playerLocalOrSmallest.name,
             _trophy ? _trophy.lixSaved : 0, _lv ? _lv.required : 0,
             _trophy ? _trophy.skillsUsed : 0,
             _trophy ? _trophy.phyusUsed : 0);
@@ -104,9 +106,9 @@ public:
     bool maybeAddTrophy()
     {
         if (! solved || userName == ""
-                     || userName != _rp.playerLocalOrSmallest.name)
+                     || userName != _matcher.playerLocalOrSmallest.name)
             return false;
-        assert (_rp.numPlayers == 1);
+        assert (! _matcher.isMultiplayer);
         return addTrophy(levelFilename, _trophy);
     }
 }

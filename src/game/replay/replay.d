@@ -96,23 +96,18 @@ private:
     }
 
 public:
-    @property gameVersionRequired() const { return _gameVersionRequired; }
-    @property const(Player[PlNr]) players() const  { return _players;  }
-    @property int numPlayers() const { return _players.length & 0x7FFF_FFFF; }
-    @property const(Permu)    permu()   const  { return _permu;        }
-    @property       Permu     permu(Permu p)   { _permu = p; return p; }
-
-    @property bool empty() const
-    {
-        return _data.length == 0 && _players.length == 0;
+    @property const @nogc nothrow {
+        Version gameVersionRequired() { return _gameVersionRequired; }
+        int numPlayers() { return _players.length & 0x7FFF_FFFF; }
+        const(Player[PlNr]) players() { return _players; }
+        const(Permu) permu() { return _permu; }
+        bool hasLocal() { return  _hasLocal; }
+        bool empty() { return _data.length == 0; }
+        int latestPhyu() { return (_data.length > 0) ? _data[$-1].update : 0; }
     }
 
-    @property int latestPhyu() const
-    {
-        return (_data.length > 0) ? _data[$-1].update : 0;
-    }
+    @property Permu permu(Permu p) { _permu = p; return p; }
 
-    @property bool hasLocal()  const { return  _hasLocal; }
     @property PlNr plNrLocalOrSmallest() const
     {
         if (_hasLocal) {

@@ -104,22 +104,15 @@ public:
         loadFromVoidArray(this, src);
     }
 
-    @property string
-    name() const
-    {
-        // DTODOLANG
-        // if (Lang.get_current() == Language.GERMAN)
-        //      return nameGerman  == null ? nameEnglish : nameGerman;
-        return nameEnglish == null ? nameGerman  : nameEnglish;
-    }
-
-    @property LevelStatus status() const { return _status; }
-    @property bool        good()   const { return _status == LevelStatus.GOOD;}
-
-    @property bool nonempty() const
-    {
-        return _status != LevelStatus.BAD_FILE_NOT_FOUND
-            && _status != LevelStatus.BAD_EMPTY;
+    @property const nothrow @nogc @safe {
+        string name() { return nameEnglish == "" ? nameGerman : nameEnglish; }
+        LevelStatus status() { return _status; }
+        bool        good()   { return _status == LevelStatus.GOOD;}
+        bool        nonempty()
+        {
+            return _status != LevelStatus.BAD_FILE_NOT_FOUND
+                && _status != LevelStatus.BAD_EMPTY;
+        }
     }
 
     @property Alcol bgColor() const

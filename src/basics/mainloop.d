@@ -18,6 +18,7 @@ import basics.globals;
 import basics.resol;
 import editor.editor;
 import game.core.game;
+import game.replay; // ReplayToLevelMatcher
 import file.filename; // running levels from the command-line
 import file.log; // logging uncaught Exceptions
 import hardware.display;
@@ -55,44 +56,22 @@ class MainLoop {
 public:
     this(in Cmdargs cmdargs)
     {
-        // I don't like this function. This takes 1 or 2 arguments, finds out
-        // which level and replay to run, and creates a game with that.
-        // Maybe the replay should be responsibile for finding the level?
-        // 2017-10: Oh please yes, let's remove this function, it duplicates
-        // even more logic now (which level, save trophies yes/no).
         auto args = cmdargs.fileArgs;
-        if (args.length >= 1) {
-            import level.level;
-            import game.replay;
-            auto rp = Replay.loadFromFile(args[$-1]);
-            if (! cmdargs.preferPointedTo) {
-                // Load the level file. This may or may not be the the replay
-                // file, depending on whether 1 or 2 args were given to Lix.
-                auto lv = new Level(args[0]);
-                if (lv.good) {
-                    this.game = new Game(Runmode.INTERACTIVE, lv, args[0],
-                        rp.empty ? null : rp,
-                        args.length == 2); // We allow saving trophies here
-                        // when we load both a replay and a level. Ideally,
-                        // we allow saving trophies if pointedTo == included.
-                        // That would then also work well with the case where
-                        // we specify only one file on the command line. Now,
-                        // if we give only one file, we never allow saving
-                        // checkmarks, which is wrong behavior when
-                        // pointedTo == included unknowlingly.
-                    return;
-                }
-            }
-            // The level in the replay file was bad or unwanted.
-            // Always run against the pointed-to level.
-            auto lv = new Level(rp.levelFilename);
-            if (lv.good)
-                this.game = new Game(Runmode.INTERACTIVE, lv,
-                                     rp.levelFilename, rp.empty ? null : rp,
-                                     true); // allow saving trophies
-            // DTODO: render an error on the graphical screen
+        if (args.length == 0) {
+            // let calc() decide what menu to spawn
+            return;
         }
-        // if no fileArgs, let calc() decide what menu to spawn
+
+        auto matcher = new ReplayToLevelMatcher(args[$-1]);
+        if (cmdargs.preferPointedTo)
+            matcher.forcePointedTo();
+        else if (args.length == 2)
+            matcher.forceLevel(args[0]);
+
+        if (matcher.preferredLevel.good)
+            this.game = matcher.createGame(Runmode.INTERACTIVE);
+        else
+            throw new Exception("Level or replay isn't playable.");
     }
 
     void mainLoop()
@@ -211,17 +190,18 @@ public:
             }
         }
         else if (browSin || browRep) {
-            auto brow = (browSin !is null ? browSin : browRep);
-            if (brow.gotoGame) {
-                auto fn = brow.fileRecent;
-                auto lv = brow.levelRecent;
-                auto rp = brow.replayRecent;
-                _afterGameGoto = (brow is browSin ? AfterGameGoto.single
-                                                  : AfterGameGoto.replays);
-                bool lvMatchesFn = brow is browSin ? true
-                                 : browRep.levelRecentEqualsPointedToLevel();
+            if (browSin && browSin.gotoGame) {
+                auto fn = browSin.fileRecent;
+                auto lv = browSin.levelRecent;
+                _afterGameGoto = AfterGameGoto.single;
                 kill();
-                game = new Game(Runmode.INTERACTIVE, lv, fn, rp, lvMatchesFn);
+                game = new Game(Runmode.INTERACTIVE, lv, fn, null, true);
+            }
+            else if (browRep && browRep.gotoGame) {
+                auto matcher = browRep.matcher;
+                _afterGameGoto = AfterGameGoto.replays;
+                kill();
+                game = matcher.createGame(Runmode.INTERACTIVE);
             }
             else if (browSin && (browSin.gotoEditorNewLevel
                              ||  browSin.gotoEditorLoadFileRecent)
@@ -232,7 +212,9 @@ public:
                 editor = new Editor(fn);
                 gui.addElder(editor);
             }
-            else if (brow.gotoMainMenu) {
+            else if ((browSin && browSin.gotoMainMenu)
+                ||   (browRep && browRep.gotoMainMenu)
+            ) {
                 kill();
                 mainMenu = new MainMenu;
                 gui.addElder(mainMenu);
