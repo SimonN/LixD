@@ -71,7 +71,9 @@ public:
             return;
 
         assert (_lv.good);
-        Game game = new Game(Runmode.VERIFY, _lv, levelFilename, _rp);
+        // false == disallow saving trophies. If we want trophies, our
+        // caller should explicitly tell us maybeAddTrophy() later.
+        Game game = new Game(Runmode.VERIFY, _lv, levelFilename, _rp, false);
         auto eval = game.evaluateReplay();
         destroy(game);
         _trophy = eval.trophy;

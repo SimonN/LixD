@@ -57,24 +57,38 @@ public:
         // I don't like this function. This takes 1 or 2 arguments, finds out
         // which level and replay to run, and creates a game with that.
         // Maybe the replay should be responsibile for finding the level?
+        // 2017-10: Oh please yes, let's remove this function, it duplicates
+        // even more logic now (which level, save trophies yes/no).
         auto args = cmdargs.fileArgs;
         if (args.length >= 1) {
             import level.level;
             import game.replay;
             auto rp = Replay.loadFromFile(args[$-1]);
             if (! cmdargs.preferPointedTo) {
+                // Load the level file. This may or may not be the the replay
+                // file, depending on whether 1 or 2 args were given to Lix.
                 auto lv = new Level(args[0]);
                 if (lv.good) {
                     this.game = new Game(Runmode.INTERACTIVE, lv, args[0],
-                        rp.empty ? null : rp);
+                        rp.empty ? null : rp,
+                        args.length == 2); // We allow saving trophies here
+                        // when we load both a replay and a level. Ideally,
+                        // we allow saving trophies if pointedTo == included.
+                        // That would then also work well with the case where
+                        // we specify only one file on the command line. Now,
+                        // if we give only one file, we never allow saving
+                        // checkmarks, which is wrong behavior when
+                        // pointedTo == included unknowlingly.
                     return;
                 }
             }
             // The level in the replay file was bad or unwanted.
+            // Always run against the pointed-to level.
             auto lv = new Level(rp.levelFilename);
             if (lv.good)
                 this.game = new Game(Runmode.INTERACTIVE, lv,
-                                     rp.levelFilename, rp.empty ? null : rp);
+                                     rp.levelFilename, rp.empty ? null : rp,
+                                     true); // allow saving trophies
             // DTODO: render an error on the graphical screen
         }
         // if no fileArgs, let calc() decide what menu to spawn
@@ -203,8 +217,10 @@ public:
                 auto rp = brow.replayRecent;
                 _afterGameGoto = (brow is browSin ? AfterGameGoto.single
                                                   : AfterGameGoto.replays);
+                bool lvMatchesFn = brow is browSin ? true
+                                 : browRep.levelRecentEqualsPointedToLevel();
                 kill();
-                game = new Game(Runmode.INTERACTIVE, lv, fn, rp);
+                game = new Game(Runmode.INTERACTIVE, lv, fn, rp, lvMatchesFn);
             }
             else if (browSin && (browSin.gotoEditorNewLevel
                              ||  browSin.gotoEditorLoadFileRecent)

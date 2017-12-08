@@ -59,6 +59,13 @@ public:
         return _replayRecent;
     }
 
+    // This shall be passed to the Game by the main menu to tell the
+    // game that it may save trophies based on how the replay worked.
+    @property bool levelRecentEqualsPointedToLevel() const
+    {
+        return levelRecent() == _pointedTo;
+    }
+
 protected:
 
     override void onFileHighlight(Filename fn)
