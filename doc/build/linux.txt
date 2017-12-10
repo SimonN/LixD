@@ -30,20 +30,23 @@ themselves to your system.
 
 This part of the instructions is about installing binary files that can be
 called from various programming languages. It's not particular to D.
-We need the following libraries:
+
+If you use a package manager, install these libraries; they should come with
+
+* Allegro 5
+* enet
+
+If you install manually, install the following libraries in the order listed,
+because Allegro 5 relies on everything above it. You can get away without
+dumb, but Lix won't play any tracked music then.
 
 * zlib
 * libpng
 * libvorbis
 * freetype
+* dumb 2.0 or 0.9.3
 * Allegro 5
 * enet
-
-You can get these from your distribution. Alternatively, go to the libraries'
-homepages, download the source, then build and install them yourself.
-
-If you install manually, you should install the libraries in the order listed,
-because Allegro depends on all others coming before it. enet has no dependency.
 
 
 
@@ -96,4 +99,5 @@ If you run into any kind of roadblock, don't be shy and ask:
 
 IRC channel: irc.quakenet.org #lix
 Email Simon: eiderdaus@gmail.com
-Lix website: http://asdfasdf.etzh.ch/~simon
+Lix website: http://www.lixgame.com
+Forum:       https://www.lemmingsforums.net -- we have a Lix board

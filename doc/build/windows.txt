@@ -6,7 +6,8 @@ This is hard. If you get stuck at any point, don't hesitate to contact me
 
     IRC:    irc.quakenet.org #lix
     E-Mail: eiderdaus@gmail.com
-    Forum:  asdfasdf.ethz.ch/~simon/bb/forum.php -- or -- lemmingsforums.net
+    Web:    http://www.lixgame.com
+    Forum:  https://www.lemmingsforums.net -- we have a Lix board
 
 
 
@@ -97,9 +98,12 @@ Install enet
 I don't remember anything for this. Look at the enet section of
 `./doc/build/linux.txt' and guess what you must do in Windows.
 
-Most likely, you don't have to do anything now. Later, you should find an enet
-DLL on the internet and put that in the path of the Lix binary. Otherwise,
-the game will error out when you click "Networking mode" in the main menu.
+Most likely, you don't have to do anything now. The DLL is already bundled
+with the download of alleg-5.2-dlls-libs.zip to which I pointed in the
+earlier secton on installing Allegro.
+
+If anything goes wrong, the game will terminate when you click
+"Networking mode" in the main menu.
 
 
 
@@ -112,9 +116,6 @@ Enter the Lix directory, and run:
 
 It should build the game, finding and linking against the Allegro 5 libraries
 in the progress.
-
-If the game finds all libraries, but crashes upon program startup, see
-appendix 2.
 
 If the game starts and runs without errors, compile a release build
 for maximum performance:
