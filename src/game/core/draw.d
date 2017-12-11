@@ -80,12 +80,12 @@ void pingOwnGadgets(Game game) { with (game)
         // Usually, we haven't clicked the cool shades button. Do nothing then.
         // Never ping hatches/exits in singleplayer either.
         return;
-    immutable int period = ticksPerSecond / 2;
+    immutable int period = ticksPerSecond / 4;
     assert (period > 0);
     if (remains % period < period / 2)
         return; // draw nothing extra during the off-part of flashing
     foreach (g; nurse.gadgetsOfTeam(localTribe.style)) {
-        enum th = 3; // thickness of the border
+        enum th = 5; // thickness of the border
         Rect outer = Rect(g.loc - Point(th, th), g.xl + 2*th, g.yl + 2*th);
         Rect inner = Rect(g.loc, g.xl, g.yl);
         map.drawFilledRectangle(outer, color.white);
