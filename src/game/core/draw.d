@@ -37,8 +37,8 @@ implGameDraw(Game game) { with (game)
         with (level)
             map.clearScreenRect(color.makecol(bgRed, bgGreen, bgBlue));
         game.drawGadgets();
-        game.drawSplatRuler();
         game.drawLand();
+        game.drawSplatRuler();
         game.pingOwnGadgets();
 
         assert (_effect);
@@ -145,24 +145,30 @@ void drawSplatRuler(Game game)
 {
     if (game.modalWindow || ! game.pan.coolShadesAreOn)
         return;
-    Point top = game.map.mouseOnLand;
+    immutable snap = game.splatRulerSnap();
+    game.drawSplatRulerBarBelowGivenStartOfFall(snap);
+}
+
+Point splatRulerSnap(in Game game)
+{
+    Point ret = game.map.mouseOnLand;
     bool solid()
     {
-        return game.nurse.constStateForDrawingOnly.lookup.getSolidEven(top);
+        return game.nurse.constStateForDrawingOnly.lookup.getSolidEven(ret);
     }
     // Find walkable terrain reasonably close under or over mouse cursor.
     // Walkable terrain is terrain with air at the pixel above.
     int upOrDown = solid() ? -1 : 1;
-    foreach (int iters; 0 .. (100 + 1)) {
-        if (iters == 100)
-            return; // from the entire function. Don't draw a bar.
-        top += Point(0, upOrDown);
+    foreach (int iters; 0 .. Faller.pixelsSafeToFall) {
+        if (iters == Faller.pixelsSafeToFall - 1)
+            return game.map.mouseOnLand; // nothing to snap to
+        ret += Point(0, upOrDown);
         if (solid() == (upOrDown == 1))
             break;
     }
     if (! solid())
-        top += Point(0, 1);
-    game.drawSplatRulerBarBelowGivenStartOfFall(top);
+        ret += Point(0, 1);
+    return ret;
 }
 
 void drawSplatRulerBarBelowGivenStartOfFall(Game game, Point startOfFall)
@@ -176,6 +182,14 @@ void drawSplatRulerBarBelowGivenStartOfFall(Game game, Point startOfFall)
     {
         game.map.drawFilledRectangle(Rect(p + Point(0, plusY), 2*wh, 1), col);
     }
+    // draw vertical line
+    foreach (int plusX; -1 .. 2) {
+        float shade = plusX == -1 ? 0.3f : plusX == 0 ? 0.4f : 0.15f;
+        game.map.drawFilledRectangle(
+            Rect(upper + Point(wh + plusX, 0), 1, 2 * Faller.pixelsSafeToFall),
+            Alcol(shade, shade, shade, shade));
+    }
+    // draw colored bars
     foreach (int plusY; 0 .. 5) {
         float shade = (1 - 0.2f * plusY);
         // shade *= 0.3f + 0.7f * (timerTicks * 0.03f).sin.abs; // no time-dep
