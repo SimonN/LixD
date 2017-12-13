@@ -1,4 +1,4 @@
-$BUILT 2017-11-27 02:01:17
+$BUILT 2017-12-13 16:23:52
 $AUTHOR Clam
 $ENGLISH Korean border crossing
 
@@ -23,37 +23,45 @@ $ENGLISH Korean border crossing
 :simon/oriental/goal.G: 750 124
 
 $BEGIN_TILE_GROUP 0
+:geoo/abstract/pipes/central0: 31 0
+:geoo/abstract/pipes/central0: 94 0
+:geoo/abstract/pipes/central0: 62 0
+:geoo/abstract/pipes/central0: 0 0
+$END_TILE_GROUP
+:Group-0: 360 378
+:Group-0: 471 378
+$BEGIN_TILE_GROUP 1
 :geoo/abstract/pipes/central0: 0 0
 :geoo/abstract/pipes/central0: 30 0
 $END_TILE_GROUP
-:Group-0: 362 370
-$BEGIN_TILE_GROUP 1
+:Group-1: 362 370
+$BEGIN_TILE_GROUP 2
 :geoo/abstract/pipes/central0: 0 0
 :geoo/abstract/pipes/central0: 32 0
 :geoo/abstract/pipes/central0: 62 0
 $END_TILE_GROUP
-$BEGIN_TILE_GROUP 2
-:Group-1: 92 0
-:Group-1: 0 0
+$BEGIN_TILE_GROUP 3
+:Group-2: 92 0
+:Group-2: 0 0
 $END_TILE_GROUP
-:Group-2: 408 370
+:Group-3: 408 370
 :geoo/abstract/pipes/central0: 591 369
 :simon/oriental/gate: 692 204
-$BEGIN_TILE_GROUP 3
+$BEGIN_TILE_GROUP 4
 :simon/oriental/bridge2: 0 0
 :simon/oriental/bridge2: 41 0
 :simon/oriental/bridge2: 0 49 rr
 :simon/oriental/bridge2: 41 49 rr
 $END_TILE_GROUP
-:Group-3: 372 200
-$BEGIN_TILE_GROUP 4
+:Group-4: 374 211
+$BEGIN_TILE_GROUP 5
 :simon/oriental/bridge1: 0 22
 :simon/oriental/bridge1: 44 0
-:simon/oriental/bridge1: 0 69 rr
-:simon/oriental/bridge1: 44 47 rr
+:simon/oriental/bridge1: 0 70 rr
+:simon/oriental/bridge1: 44 48 rr
 $END_TILE_GROUP
-:Group-4: 266 200
-:Group-4: 580 200 frr
+:Group-5: 266 212
+:Group-5: 582 210 frr
 :simon/oriental/08: 672 256
 :simon/oriental/10: 26 234
 :simon/oriental/bush3: 10 166
@@ -70,37 +78,37 @@ $END_TILE_GROUP
 :simon/oriental/08: 134 324
 :simon/oriental/08: 66 256
 :simon/oriental/08: 66 324
-:Group-3: 372 56
+:Group-4: 374 58
 :geoo/abstract/pipes/central0: 630 104
 :geoo/abstract/pipes/central0: 599 105
 :geoo/abstract/pipes/central0: 646 104
-:Group-4: 580 4 rr
+:Group-5: 580 4 rr
 :geoo/abstract/pipes/central0: 276 104
 :geoo/abstract/pipes/central0: 308 104
-:Group-4: 266 4 f
-:Group-4: 158 -50 f
-:Group-4: 688 -50 rr
-:Group-3: 796 -52
-:Group-3: 54 -52
-:Group-3: 372 -44
-:Group-4: 580 -96 rr
-:Group-4: 266 -96 f
-:Group-3: 372 298
+:Group-5: 266 4 f
+:Group-5: 158 -50 f
+:Group-5: 688 -50 rr
+:Group-4: 795 -51
+:Group-4: 55 -50
+:Group-4: 374 -43
+:Group-5: 580 -96 rr
+:Group-5: 266 -96 f
+:Group-4: 374 305
 :geoo/abstract/pipes/central0: 331 369
-:Group-4: 266 298
+:Group-5: 268 305
 :simon/oriental/08: 202 324
-:Group-4: 580 298 frr
+:Group-5: 582 305 frr
 :simon/oriental/08: 672 324
 :geoo/construction/rod_steel/straight32.S: 472 168 rrr
-:Group-3: 476 200
-:Group-3: 476 298
-:Group-3: 476 56
-:Group-3: 476 -44
+:Group-4: 478 210
+:Group-4: 478 305
+:Group-4: 475 58
+:Group-4: 475 -43
 :simon/oriental/02: 924 220
 :simon/oriental/10: 894 234 frr
 :simon/oriental/08: -2 324
-:Group-3: 900 -52
-:Group-3: -50 -52
+:Group-4: 898 -51
+:Group-4: -50 -50
 :geoo/construction/rod_steel/straight32.S: 472 200 rrr
 :geoo/construction/rod_steel/straight32.S: 472 232 rrr
 :geoo/construction/rod_steel/straight32.S: 472 264 rrr
@@ -109,7 +117,6 @@ $END_TILE_GROUP
 :geoo/construction/rod_steel/straight32.S: 472 136 rrr
 :geoo/construction/rod_steel/straight32.S: 472 127 rrr
 :geoo/steel/16x16o.S: 468 126
-:geoo/steel/16x16o.S: 468 323
 :simon/oriental/leaf2: 852 217 fr
 :simon/oriental/leaf2: 680 217 r
 :simon/oriental/leaf3: 808 217
@@ -120,3 +127,5 @@ $END_TILE_GROUP
 :simon/oriental/02: -2 220 frr
 :simon/oriental/02: -2 218 frr
 :simon/oriental/08: -2 256
+:geoo/construction/rod_steel/straight32.S: 472 311 rrr
+:geoo/steel/16x16o.S: 468 337
