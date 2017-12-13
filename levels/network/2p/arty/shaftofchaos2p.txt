@@ -1,4 +1,4 @@
-$BUILT 2017-11-20 21:37:52
+$BUILT 2017-12-06 00:35:17
 $AUTHOR Colorful Arty
 $ENGLISH Shaft of Chaos (2p)
 
@@ -8,7 +8,7 @@ $ENGLISH Shaft of Chaos (2p)
 #TORUS_X 1
 #TORUS_Y 1
 
-#SECONDS 30
+#SECONDS 60
 #INITIAL 100
 #REQUIRED 20
 #SPAWN_INTERVAL 32
@@ -25,11 +25,11 @@ $ENGLISH Shaft of Chaos (2p)
 #DIGGER 30
 #JUMPER 60
 
-:matt/goldmine/Hatch.H: 448 32
-:matt/goldmine/Hatch.H: 448 128
+:matt/goldmine/Hatch.H: 128 32
+:matt/goldmine/Hatch.H: 128 128
 
-:matt/goldmine/Goal.G: 128 128
-:matt/goldmine/Goal.G: 128 32
+:matt/goldmine/Goal.G: 448 128
+:matt/goldmine/Goal.G: 448 32
 
 :matt/goldmine/09: 0 0
 :matt/goldmine/09: 0 32
@@ -37,61 +37,69 @@ $ENGLISH Shaft of Chaos (2p)
 :matt/goldmine/09: 0 96
 :matt/goldmine/09: 0 128
 :matt/goldmine/09: 0 160
-:matt/goldmine/09: 64 0
-:matt/goldmine/09: 64 32
-:matt/goldmine/09: 64 64
 :matt/goldmine/09: 64 96
 :matt/goldmine/09: 64 128
 :matt/goldmine/09: 64 160
+:matt/goldmine/09: 64 0
+:matt/goldmine/09: 64 32
+:matt/goldmine/09: 64 64
 :matt/goldmine/09: 128 0
 :matt/goldmine/09: 128 32
 :matt/goldmine/09: 128 64
 :matt/goldmine/09: 128 96
 :matt/goldmine/09: 128 128
 :matt/goldmine/09: 128 160
-:matt/goldmine/09: 192 0
-:matt/goldmine/09: 192 32
-:matt/goldmine/09: 192 64
 :matt/goldmine/09: 192 96
 :matt/goldmine/09: 192 128
 :matt/goldmine/09: 192 160
+:matt/goldmine/09: 192 0
+:matt/goldmine/09: 192 32
+:matt/goldmine/09: 192 64
 :matt/goldmine/09: 256 0
 :matt/goldmine/09: 256 32
 :matt/goldmine/09: 256 64
 :matt/goldmine/09: 256 96
 :matt/goldmine/09: 256 128
 :matt/goldmine/09: 256 160
-:matt/goldmine/09: 320 0
-:matt/goldmine/09: 320 32
-:matt/goldmine/09: 320 64
 :matt/goldmine/09: 320 96
 :matt/goldmine/09: 320 128
 :matt/goldmine/09: 320 160
+:matt/goldmine/09: 320 0
+:matt/goldmine/09: 320 32
+:matt/goldmine/09: 320 64
 :matt/goldmine/09: 384 0
 :matt/goldmine/09: 384 32
 :matt/goldmine/09: 384 64
 :matt/goldmine/09: 384 96
 :matt/goldmine/09: 384 128
 :matt/goldmine/09: 384 160
-:matt/goldmine/09: 448 0
-:matt/goldmine/09: 448 32
-:matt/goldmine/09: 448 64
 :matt/goldmine/09: 448 96
 :matt/goldmine/09: 448 128
 :matt/goldmine/09: 448 160
+:matt/goldmine/09: 448 0
+:matt/goldmine/09: 448 32
+:matt/goldmine/09: 448 64
 :matt/goldmine/09: 512 0
 :matt/goldmine/09: 512 32
 :matt/goldmine/09: 512 64
 :matt/goldmine/09: 512 96
 :matt/goldmine/09: 512 128
 :matt/goldmine/09: 512 160
-:matt/goldmine/09: 576 0
-:matt/goldmine/09: 576 32
-:matt/goldmine/09: 576 64
 :matt/goldmine/09: 576 96
 :matt/goldmine/09: 576 128
 :matt/goldmine/09: 576 160
-:matt/goldmine/crate64: 128 16 d
-:matt/goldmine/crate64: 448 16 d
-:matt/goldmine/crate64: 448 112 d
-:matt/goldmine/crate64: 128 112 d
+:matt/goldmine/09: 576 0
+:matt/goldmine/09: 576 32
+:matt/goldmine/09: 576 64
+:matt/goldmine/crate64: 112 16 d
+:matt/goldmine/crate64: 144 16 d
+:matt/goldmine/crate64: 112 112 d
+:matt/goldmine/crate64: 144 112 d
+:matt/goldmine/crate64: 432 112 d
+:matt/goldmine/crate64: 464 112 d
+:matt/goldmine/crate64: 432 16 d
+:matt/goldmine/crate64: 464 16 d
+:geoo/steel/32x16o.S: 144 80
+:geoo/steel/32x16o.S: 144 176
+:geoo/steel/32x16o.S: 464 176
+:geoo/steel/32x16o.S: 464 80

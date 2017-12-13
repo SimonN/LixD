@@ -1,0 +1,300 @@
+$BUILT 2017-09-16 18:38:20
+$AUTHOR Colorful Arty
+$ENGLISH In the attic (2p)
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1792
+#SIZE_Y 400
+
+#SECONDS 60
+#INITIAL 50
+#REQUIRED 20
+#SPAWN_INTERVAL 20
+
+#WALKER 50
+#RUNNER 5
+#CLIMBER 20
+#FLOATER 20
+#EXPLODER 20
+#BLOCKER 5
+#BUILDER 50
+#BASHER 20
+#MINER 20
+#DIGGER 20
+#JUMPER 50
+#BATTER 5
+
+:matt/marble/Hatch.H: 564 318
+:matt/marble/Hatch.H: 1164 318 r
+
+:matt/marble/Goal.G: 820 112
+:matt/marble/Goal.G: 908 112
+
+:simon/acid.W: 728 352
+:simon/acid.W: 776 352
+:simon/acid.W: 824 352
+:simon/acid.W: 920 352
+:simon/acid.W: 968 352
+:simon/acid.W: 1016 352
+:simon/acid.W: 872 352
+
+:geoo/steel/dark_32x64o.S: 704 336
+:matt/marble/25d: 0 272
+:matt/marble/25d: 32 272
+:matt/marble/25d: 0 144
+:matt/marble/25d: 32 144
+:matt/marble/25d: 0 16
+:matt/marble/25d: 32 16
+:matt/marble/25d: 0 0
+:matt/marble/26d: 43 9 frr
+:matt/marble/25d: 32 0
+:matt/marble/08d: 576 392
+:matt/marble/08d: 512 392
+:matt/marble/08d: 448 392
+:matt/marble/08d: 384 392
+:matt/marble/08d: 320 392
+:matt/marble/08d: 256 408
+:geoo/steel/dark_32x64o.S: 704 272
+:matt/marble/26d: 65 -13 frr
+:matt/marble/24d: 196 0 r
+:matt/marble/24d: 228 0 r
+:matt/marble/24d: 260 0 r
+:matt/marble/24d: 292 0 r
+:matt/marble/24d: 324 0 r
+:matt/marble/24d: 356 0 r
+:matt/marble/24d: 388 0 r
+:matt/marble/24d: 420 0 r
+:matt/marble/24d: 452 0 r
+:matt/marble/24d: 484 0 r
+:matt/marble/24d: 516 0 r
+:matt/marble/24d: 548 0 r
+:matt/marble/24d: 580 0 r
+:matt/marble/24d: 612 0 r
+:matt/marble/15d: 736 240
+:matt/marble/15d: 768 208
+:matt/marble/23d: 640 368
+:matt/marble/23d: 672 368
+:matt/marble/23d: 672 336
+:matt/marble/23d: 640 336
+:matt/marble/23d: 640 304
+:matt/marble/23d: 672 304
+:matt/marble/23d: 672 272
+:matt/marble/23d: 640 272
+:matt/marble/23d: 640 240
+:matt/marble/23d: 672 240
+:matt/marble/23d: 672 208
+:matt/marble/23d: 640 208
+:matt/marble/23d: 640 176
+:matt/marble/23d: 672 176
+:matt/marble/23d: 672 144
+:matt/marble/23d: 640 144
+:matt/marble/23d: 640 112
+:matt/marble/23d: 640 80
+:matt/marble/23d: 640 48
+:matt/marble/23d: 672 48
+:matt/marble/23d: 672 16
+:matt/marble/23d: 640 16
+:matt/marble/23d: 672 -16
+:matt/marble/23d: 640 -16
+:matt/marble/23d: 672 112
+:matt/marble/23d: 672 80
+:matt/marble/04d: 800 192
+:matt/marble/04d: 832 192
+:matt/marble/23d: 736 160
+:matt/marble/23d: 704 160
+:matt/marble/23d: 704 128
+:matt/marble/23d: 704 96
+:matt/marble/23d: 704 64
+:matt/marble/23d: 736 64
+:matt/marble/23d: 736 32
+:matt/marble/23d: 704 32
+:matt/marble/23d: 736 0
+:matt/marble/23d: 704 0
+:matt/marble/23d: 736 128
+:matt/marble/23d: 736 96
+:matt/marble/23d: 800 160
+:matt/marble/23d: 768 160
+:matt/marble/23d: 768 128
+:matt/marble/23d: 768 96
+:matt/marble/23d: 768 64
+:matt/marble/23d: 800 64
+:matt/marble/23d: 800 32
+:matt/marble/23d: 768 32
+:matt/marble/23d: 800 0
+:matt/marble/23d: 768 0
+:matt/marble/23d: 800 128
+:matt/marble/23d: 800 96
+:matt/marble/23d: 912 160
+:matt/marble/23d: 832 160
+:matt/marble/23d: 832 128
+:matt/marble/23d: 832 96
+:matt/marble/23d: 832 64
+:matt/marble/23d: 912 64
+:matt/marble/23d: 832 32
+:matt/marble/23d: 832 0
+:matt/marble/23d: 912 128
+:matt/marble/23d: 912 96
+:matt/marble/23d: 976 160
+:matt/marble/23d: 944 160
+:matt/marble/23d: 944 128
+:matt/marble/23d: 944 96
+:matt/marble/23d: 944 64
+:matt/marble/23d: 976 64
+:matt/marble/23d: 976 32
+:matt/marble/23d: 944 32
+:matt/marble/23d: 976 0
+:matt/marble/23d: 944 0
+:matt/marble/23d: 976 128
+:matt/marble/23d: 976 96
+:matt/marble/25d: 664 128 rd
+:matt/marble/23d: 704 240
+:matt/marble/23d: 704 208
+:matt/marble/23d: 736 208
+:matt/marble/23d: 704 176
+:matt/marble/23d: 736 176
+:matt/marble/23d: 768 176
+:matt/marble/23d: 1008 160
+:matt/marble/23d: 1008 128
+:matt/marble/23d: 1008 96
+:matt/marble/23d: 1008 64
+:matt/marble/23d: 1008 32
+:matt/marble/23d: 1008 0
+:matt/marble/23d: 1040 160
+:matt/marble/23d: 1040 128
+:matt/marble/23d: 1040 96
+:matt/marble/23d: 1040 64
+:matt/marble/23d: 1040 32
+:matt/marble/23d: 1040 0
+:matt/marble/23d: 1072 160
+:matt/marble/23d: 1072 128
+:matt/marble/23d: 1072 96
+:matt/marble/23d: 1072 64
+:matt/marble/23d: 1072 32
+:matt/marble/23d: 1072 0
+:matt/marble/23d: 1104 160
+:matt/marble/23d: 1104 128
+:matt/marble/23d: 1104 96
+:matt/marble/23d: 1104 64
+:matt/marble/23d: 1104 32
+:matt/marble/23d: 1104 0
+:matt/marble/23d: 1136 160
+:matt/marble/23d: 1136 128
+:matt/marble/23d: 1136 96
+:matt/marble/23d: 1136 64
+:matt/marble/23d: 1136 32
+:matt/marble/25d: 1000 128 rd
+:matt/marble/23d: 1152 160 d
+:matt/marble/23d: 1152 128 d
+:matt/marble/23d: 1152 96 d
+:matt/marble/23d: 1152 64 d
+:matt/marble/23d: 1152 32 d
+:matt/marble/23d: 1152 0 d
+:matt/marble/24d: 1148 0 r
+:matt/marble/04d: 928 192
+:matt/marble/04d: 960 192
+:matt/marble/17d: 992 208
+:matt/marble/17d: 1024 240
+:geoo/steel/dark_32x64o.S: 1056 272
+:geoo/steel/dark_32x64o.S: 1056 336
+:matt/marble/23d: 992 176
+:matt/marble/23d: 1024 176
+:matt/marble/23d: 1024 208
+:matt/marble/23d: 1056 176
+:matt/marble/23d: 1056 208
+:matt/marble/23d: 1056 240
+:matt/marble/23d: 1088 208
+:matt/marble/23d: 1088 176
+:matt/marble/23d: 1120 176
+:matt/marble/23d: 1120 208
+:matt/marble/23d: 1088 240
+:matt/marble/23d: 1120 240
+:matt/marble/23d: 1088 272
+:matt/marble/23d: 1088 304
+:matt/marble/23d: 1088 336
+:matt/marble/23d: 1088 368
+:matt/marble/23d: 1120 368
+:matt/marble/23d: 1120 336
+:matt/marble/23d: 1120 304
+:matt/marble/23d: 1120 272
+:matt/marble/08d: 1472 392
+:matt/marble/08d: 1408 392
+:matt/marble/08d: 1344 392
+:matt/marble/08d: 1280 392
+:matt/marble/08d: 1216 392
+:matt/marble/08d: 1152 392
+:matt/marble/24d: 1180 0 r
+:matt/marble/24d: 1212 0 r
+:matt/marble/24d: 1244 0 r
+:matt/marble/24d: 1276 0 r
+:matt/marble/24d: 1308 0 r
+:matt/marble/24d: 1340 0 r
+:matt/marble/24d: 1372 0 r
+:matt/marble/24d: 1404 0 r
+:matt/marble/24d: 1436 0 r
+:matt/marble/24d: 1468 0 r
+:matt/marble/24d: 1500 0 r
+:matt/marble/24d: 1532 0 r
+:matt/marble/26d: 1647 -13
+:matt/marble/24d: 1564 0 r
+:matt/marble/25d: 1728 272
+:matt/marble/25d: 1760 272
+:matt/marble/25d: 1728 144
+:matt/marble/25d: 1760 144
+:matt/marble/25d: 1728 16
+:matt/marble/25d: 1760 16
+:matt/marble/26d: 1669 9
+:matt/marble/25d: 1728 0
+:matt/marble/25d: 1760 0
+:matt/marble/23d: 1136 0
+:matt/marble/23d: 1152 0 d
+:matt/marble/24d: 1152 0 r
+:matt/marble/14d: 80 88
+:matt/marble/14d: 112 56
+:matt/marble/14d: 144 24
+:matt/marble/05d: 112 88
+:matt/marble/05d: 144 88
+:matt/marble/05d: 144 56
+:matt/marble/16d: 1616 24
+:matt/marble/16d: 1648 56
+:matt/marble/16d: 1680 88
+:matt/marble/05d: 1648 88
+:matt/marble/05d: 1616 88
+:matt/marble/05d: 1616 56
+:matt/marble/24d: 164 0 r
+:matt/marble/24d: 132 0 r
+:matt/marble/24d: 100 0 r
+:matt/marble/24d: 68 0 r
+:matt/marble/24d: 64 0 r
+:matt/marble/08d: 272 424
+:matt/marble/08d: 256 392
+:matt/marble/08d: 192 392
+:matt/marble/08d: 128 392
+:matt/marble/24d: 1596 0 r
+:matt/marble/24d: 1628 0 r
+:matt/marble/24d: 1660 0 r
+:matt/marble/24d: 1692 0 r
+:matt/marble/24d: 1696 0 r
+:matt/marble/08d: 1536 392
+:matt/marble/08d: 1600 392
+:matt/marble/23d: 864 32
+:matt/marble/23d: 864 0
+:matt/marble/23d: 896 32
+:matt/marble/23d: 896 0
+:matt/marble/23d: 912 32
+:matt/marble/23d: 912 0
+:matt/marble/23d: 864 160
+:matt/marble/23d: 880 160
+:matt/marble/04d: 864 192
+:matt/marble/04d: 896 192
+:matt/marble/25d: 808 128 rd
+:matt/marble/25d: 808 96 rd
+:matt/marble/25d: 808 64 rd
+:matt/marble/25d: 856 128 rd
+:matt/marble/25d: 856 96 rd
+:matt/marble/25d: 856 64 rd
+:geoo/steel/dark_32x16o.S: 576 392
+:geoo/steel/dark_32x16o.S: 608 392
+:geoo/steel/dark_32x16o.S: 1184 392
+:geoo/steel/dark_32x16o.S: 1152 392
+:geoo/steel/dark_32x16o.S: 924 160
+:geoo/steel/dark_32x16o.S: 836 160

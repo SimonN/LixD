@@ -1,0 +1,90 @@
+$BUILT 2017-12-05 23:28:31
+$AUTHOR Colorful Arty
+$ENGLISH Showdown at Chainsaw Gap (2p)
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1056
+#SIZE_Y 160
+
+#INITIAL 3
+#REQUIRED 3
+#SPAWN_INTERVAL 3
+
+#WALKER -1
+#RUNNER 3
+#CLIMBER 3
+#FLOATER 3
+#BLOCKER -1
+#BUILDER -1
+#PLATFORMER -1
+#BASHER -1
+#MINER -1
+#DIGGER -1
+#JUMPER -1
+#BATTER -1
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 96 64
+:geoo/construction/Hatch.H: 928 64 r
+
+:geoo/construction/Goal2.G: 992 64
+:geoo/construction/Goal2.G: 0 64
+
+:geoo/construction/sawblade_small.F: 128 84
+:geoo/construction/sawblade_small.F: 160 84
+:geoo/construction/sawblade_small.F: 192 84
+:geoo/construction/sawblade_small.F: 224 84
+:geoo/construction/sawblade_small.F: 256 84
+:geoo/construction/sawblade_small.F: 288 68
+:geoo/construction/sawblade_small.F: 320 68
+:geoo/construction/sawblade_small.F: 352 68
+:geoo/construction/sawblade_small.F: 384 68
+:geoo/construction/sawblade_small.F: 416 68
+:geoo/construction/sawblade_small.F: 448 36
+:geoo/construction/sawblade_small.F: 480 36
+:geoo/construction/sawblade_small.F: 512 36
+:simon/water_thin.W: 120 128
+:simon/water_thin.W: 168 128
+:simon/water_thin.W: 216 128
+:simon/water_thin.W: 264 128
+:simon/water_thin.W: 312 128
+:simon/water_thin.W: 360 128
+:geoo/construction/sawblade_small.F: 544 36
+:geoo/construction/sawblade_small.F: 576 36
+:geoo/construction/sawblade_small.F: 608 68
+:geoo/construction/sawblade_small.F: 640 68
+:geoo/construction/sawblade_small.F: 672 68
+:geoo/construction/sawblade_small.F: 704 68
+:geoo/construction/sawblade_small.F: 736 68
+:geoo/construction/sawblade_small.F: 768 84
+:geoo/construction/sawblade_small.F: 800 84
+:geoo/construction/sawblade_small.F: 832 84
+:geoo/construction/sawblade_small.F: 864 84
+:geoo/construction/sawblade_small.F: 896 84
+:simon/water_thin.W: 408 128
+:simon/water_thin.W: 456 128
+:simon/water_thin.W: 504 128
+:simon/water_thin.W: 552 128
+:simon/water_thin.W: 600 128
+:simon/water_thin.W: 648 128
+:simon/water_thin.W: 696 128
+:simon/water_thin.W: 744 128
+:simon/water_thin.W: 792 128
+:simon/water_thin.W: 840 128
+:simon/water_thin.W: 888 128
+
+:matt/goldmine/plank: 128 128
+:amanda/steel/steel32x32.S: 0 128
+:amanda/steel/steel32x32.S: 32 128
+:amanda/steel/steel32x32.S: 64 128
+:amanda/steel/steel32x32.S: 96 128
+:matt/goldmine/plank: 800 128
+:matt/goldmine/plank: 672 128
+:matt/goldmine/plank: 544 128
+:matt/goldmine/plank: 256 128
+:matt/goldmine/plank: 384 128
+:matt/goldmine/plank: 464 128
+:amanda/steel/steel32x32.S: 928 128
+:amanda/steel/steel32x32.S: 960 128
+:amanda/steel/steel32x32.S: 992 128
+:amanda/steel/steel32x32.S: 1024 128
