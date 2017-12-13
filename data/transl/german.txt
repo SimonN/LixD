@@ -386,20 +386,13 @@ $winGameTitleDesc Das Menü während des Spiels aufrufen,|um den Level zu beende
 
 $optionAvoidBuilderQueuing   Builder eher an Nicht-Builder
 $optionAvoidBatterToExploder Batter eher an Nicht-Exploder
-$optionReplayAfterFrameBack   Replay bei ◀▮ behalten
-$optionPausedAssign           Fähigkeitszuweisung bei Pause:
-$optionPausedAssignStayPaused Gar nicht weiter
-$optionPausedAssignAdvance    Nur 1 Bild weiter
-$optionPausedAssignUnpause    Pause ausschalten
+$optionReplayAfterFrameBack  Replay bei ◀▮ behalten
+$optionUnpauseOnAssign       Pause aus bei Fähigk.-Zwsg.
 
 $optionAvoidBuilderQueuingDesc Builder vorrangig an Nicht-Builder zuweisen anstatt an bestehende Builder.|Halte "Priorität invertieren" (Reiter "Steuerung"), um das jeweils andere zu tun.
 $optionAvoidBatterToExploderDesc Batter vorrangig an normale Lix zuweisen anstatt an brennende Exploder.|Halte "Priorität invertieren" (Reiter "Steuerung"), um das jeweils andere zu tun.
 $optionReplayAfterFrameBackDesc Replay-Aktionen zum späteren Abspiel beibehalten, wenn du zurückspulst (◀▮).|Ohne Haken: Replay-Aktionen entfernen, die durch ◀▮ ungeschehen werden.
-
-$optionPausedAssignDesc Die Pause ausschalten, sobald du eine Fähigkeit zuweist.|Ohne Haken: Nur 1 Physik-Update weiterspielen bei Fähigkeitszuweisung.
-$optionPausedAssignStayPausedDesc Die Physik bleibt stehen, selbst wenn du Fähigkeiten zuweist.|Du kannst mehrere Fähigkeiten auf einmal zuweisen.
-$optionPausedAssignAdvanceDesc Die Physik um 1 Update weiterspielen, wenn du eine Fähigkeit zuweist.|Die Pause bleibt aktiviert.
-$optionPausedAssignUnpauseDesc Die Pause ausschalten, wenn du eine Fähigkeit zuweist.
+$optionUnpauseOnAssignDesc Die Pause ausschalten, wenn du eine Fähigkeit zuweist.|Ohne Haken: Nur 1 Physik-Update weiter, wenn du eine Fähigkeit zuweist.
 
 $optionKeyMenuOkay           Okay/ja
 $optionKeyMenuEdit           Editieren

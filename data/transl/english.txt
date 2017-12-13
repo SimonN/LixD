@@ -399,19 +399,12 @@ $winGameTitleDesc Open the game menu dialog.|Exit the level or save replays from
 $optionAvoidBuilderQueuing    Prefer spamming over queuing
 $optionAvoidBatterToExploder  Prefer batters to non-exploders
 $optionReplayAfterFrameBack   Keep replay after ◀▮
-$optionPausedAssign           Skill assignment during pause:
-$optionPausedAssignStayPaused Don't advance
-$optionPausedAssignAdvance    Advance by 1 frame
-$optionPausedAssignUnpause    Unpause
+$optionUnpauseOnAssign        Unpause on skill assignment
 
 $optionAvoidBuilderQueuingDesc Prefer builder assignments to non-builders over queuing to existing builders.|You can hold priority invert (see Controls tab) to do what you don't prefer.
 $optionAvoidBatterToExploderDesc Prefer batter assignments to walkers over batter assignments to timed exploders.|You can hold priority invert (see Controls tab) to do what you don't prefer.
 $optionReplayAfterFrameBackDesc On framestepping back (◀▮), keep future replay actions until you cancel the replay by clicking into air.|If not checked, replay actions are removed when you undo them by framestepping.
-
-$optionPausedAssignDesc Unpause the game when you assign a skill during pause.|If not checked, skill assignments during pause advance the game by 1 frame.
-$optionPausedAssignStayPausedDesc Don't advance when you assign skills during pause.|You can assign several skills at once.
-$optionPausedAssignAdvanceDesc Advance by 1 frame when you assign a skill during pause, but stay paused.
-$optionPausedAssignUnpauseDesc Unpause when you assign a skill during pause.
+$optionUnpauseOnAssignDesc Unpause the game when you assign a skill during pause.|If not checked, skill assignments during pause advance the game by 1 frame.
 
 $optionKeyMenuOkay            Okay/yes
 $optionKeyMenuEdit            Edit

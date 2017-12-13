@@ -332,10 +332,7 @@ enum Lang {
     optionAvoidBuilderQueuing, optionAvoidBuilderQueuingDesc,
     optionAvoidBatterToExploder, optionAvoidBatterToExploderDesc,
     optionReplayAfterFrameBack, optionReplayAfterFrameBackDesc,
-    optionPausedAssign, optionPausedAssignDesc,
-    optionPausedAssignStayPaused, optionPausedAssignStayPausedDesc,
-    optionPausedAssignAdvance, optionPausedAssignAdvanceDesc,
-    optionPausedAssignUnpause, optionPausedAssignUnpauseDesc,
+    optionUnpauseOnAssign, optionUnpauseOnAssignDesc,
 
     optionScreenWindowed, optionScreenWindowedDesc,
     optionScreenWindowedRes, optionScreenWindowedResDesc,

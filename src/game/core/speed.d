@@ -4,7 +4,7 @@ static import basics.globals;
 
 import basics.alleg5;
 import net.repdata; // Phyu
-import basics.user; // pausedAssign
+import basics.user; // replayAfterFrameBack
 import game.core.game;
 import game.core.active; // findAgainHighlitLixAfterPhyu
 import game.panel.base;
@@ -55,9 +55,10 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
     else if (pan.framestepAheadMany) {
         upd(updatesAheadMany);
     }
-    else if (pan.paused && ! pan.isMouseHere && mouseClickLeft
-        && basics.user.pausedAssign.value > 0) {
+    else if (pan.paused && ! pan.isMouseHere && mouseClickLeft) {
         // Clicking into the non-panel screen advances physics once.
+        // This happens both when we unpause on assignment and when we
+        // merely advance 1 frame, but keep the game paused, on assignment.
         // This happens either because you've assigned something, or because
         // you have cancelled the replay.
         upd();

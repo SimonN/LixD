@@ -245,7 +245,7 @@ void assignToPotentialAssignee(
     _effect.addArrowDontShow(data.update, localStyle, potAss.id);
     _effect.addSound(        data.update, localStyle, potAss.id, Sound.ASSIGN);
 
-    if (basics.user.pausedAssign.value == 2)
+    if (basics.user.unpauseOnAssign.value == true)
         pan.pause = false;
 }}
 // end PotentialAssignee assignToPotentialAssignee()

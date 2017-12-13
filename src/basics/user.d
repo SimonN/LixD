@@ -67,8 +67,8 @@ UserOption!bool fastMovementFreesMouse;
 UserOption!bool avoidBuilderQueuing;
 UserOption!bool avoidBatterToExploder;
 UserOption!bool replayAfterFrameBack;
-UserOption!int pausedAssign; // 0 = nothing (allows multiple assignments),
-                             // 1 = advance 1 frame, 2 = unpause
+UserOption!bool unpauseOnAssign;
+
 UserOption!bool screenWindowed;
 UserOption!int screenWindowedX;
 UserOption!int screenWindowedY;
@@ -213,7 +213,7 @@ static this()
     avoidBuilderQueuing = newOpt("AVOID_BUILDER_QUEUING", Lang.optionAvoidBuilderQueuing, true);
     avoidBatterToExploder = newOpt("AVOID_BATTER_TO_EXPLODER", Lang.optionAvoidBatterToExploder, false);
     replayAfterFrameBack = newOpt("REPLAY_AFTER_FRAME_BACK", Lang.optionReplayAfterFrameBack, true);
-    pausedAssign = newOpt("PAUSED_ASSIGN", Lang.optionPausedAssign, 1);
+    unpauseOnAssign = newOpt("UNPAUSE_ON_ASSIGN", Lang.optionUnpauseOnAssign, false);
 
     screenWindowed = newOpt("SCREEN_WINDOWED", Lang.optionScreenWindowed, false);
     screenWindowedX = newOpt("SCREEN_WINDOWED_X", Lang.optionScreenWindowedRes, 640);
