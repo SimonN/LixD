@@ -12,6 +12,7 @@ import std.algorithm;
 import std.range;
 
 import net.repdata; // update
+import basics.globconf; // update player name on cut replay
 import basics.user; // Result
 import file.date;
 import game.effect;
@@ -124,6 +125,7 @@ public:
     void cutReplay()
     {
         _replay.deleteAfterPhyu(upd);
+        _replay.setPlayerLocalName(basics.globconf.userName);
     }
 
     // DTODO: Refactor into SaveStatingNurse : Nurse for the interactive

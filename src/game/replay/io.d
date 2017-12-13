@@ -230,6 +230,7 @@ unittest
             "! 268 0 ASSIGN=JUMPER 0\n",
             "! 125 0 ASSIGN=CLIMBER 0\n",
             "! 506 0 NUKE 0\n",
+            "+PLAYER 0 Yellow TestName\n",
             "! 489 0 ASSIGN=BASHER 0\n");
     }
     catch (Exception)
@@ -244,9 +245,15 @@ unittest
     assert (r._data[0].update == 125);
     assert (r._data[0].skill == Ac.climber);
 
+    assert (r.playerLocalOrSmallest.name == "TestName");
+    assert (r.playerLocalOrSmallest.style == Style.yellow);
+    r.setPlayerLocalName("TestName2");
+
     implSaveToFile(r, fn1, lev);
     r = Replay.loadFromFile(fn1);
     assert (data_len == r._data.len);
+    assert (r.playerLocalOrSmallest.name == "TestName2");
+    assert (r.playerLocalOrSmallest.style == Style.yellow);
 
     implSaveToFile(r, fn2, lev);
     [fn0, fn1, fn2, fnl].each!(f => f.deleteFile);

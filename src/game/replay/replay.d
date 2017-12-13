@@ -16,8 +16,6 @@ public import net.ac;
 public import net.style;
 
 import basics.help; // array.len of type int
-import basics.globconf;
-import basics.help;
 import net.repdata;
 import net.permu;
 import net.versioning;
@@ -171,6 +169,17 @@ public:
             _hasLocal = true;
             _plNrLocal = nr;
         }
+    }
+
+    // This should only be useful while you alter already-existing
+    // singleplayer replays. When you cut the replay, call this too
+    void setPlayerLocalName(string aName)
+    {
+        auto ptr = _plNrLocal in _players;
+        if (! ptr)
+            return;
+        touch();
+        ptr.name = aName;
     }
 
     // This doesn't check whether the metadata/general data is the same.
