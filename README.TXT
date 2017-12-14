@@ -27,15 +27,13 @@ Build instructions
     $ dub -b release
 
 Detailed instructions: `./doc/build/windows.txt' or `./doc/build/linux.txt'.
-
 Linux package maintainers, please see `./doc/build/package.txt'.
-
-Found a bug, have an idea? Report on https://github.com/SimonN/LixD/issues.
 
 Contact
 -------
 
     Web:    http://www.lixgame.com
-    E-Mail: eiderdaus@gmail.com
+    Issues: https://github.com/SimonN/LixD/issues
+    E-Mail: s.naarmann@gmail.com
     IRC:    irc.quakenet.org #lix, I'm SimonN or SimonNa
     Forums: lemmingsforums.net, I'm Simon

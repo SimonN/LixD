@@ -61,34 +61,39 @@ It might be in one of these paths:
 
     C:/D/dmd2/windows/
     C:/"Program Files"/D/dmd2/windows/
+    ~/.wine/drive_c/D/dmd2/windows/ (if you're cross-compiling on Linux)
 
 This also has subdirectories bin/ and lib/. If you like, make backups of these
 directories, so you can retry if something goes wrong.
 
-Download the Allegro DLLs and *.lib files from my website:
+To install Allegro 5, you have a choice between two methods.
 
-    http://www.lixgame.com/dow/alleg-5.2-dlls-libs.zip
+Method 1:
+    Download the Allegro DLLs and *.lib files from my website:
 
-Extract this into your D installation's windows/ directory.
+        http://www.lixgame.com/dow/alleg-5.2-dlls-libs.zip
 
-Maybe you don't trust me instructing you to download opaque binaries? :-)
-You can find or build Allegro 5.2 DLLs yourself, then follow the instructions
-by SiegeLord on how to generate your .lib files from your own DLLs:
+    Extract this into your D installation's windows/ directory. This way, the
+    DLLs should automatically land in windows/bin/, and the *.lib files should
+    land in windows/lib/.
 
-    https://github.com/SiegeLord/DAllegro5#windows-notes
+Method 2:
+    Maybe you don't trust me instructing you to download opaque binaries? :-)
+    You can find or build Allegro 5.2 DLLs yourself, then follow the
+    instructions by SiegeLord on how to generate your .lib files from your own
+    DLLs:
 
-Summary of that page: Find implib.exe, then, for each Allegro DLL xyz, call:
+        https://github.com/SiegeLord/DAllegro5#windows-notes
 
-    implib /s allegro_xyz.lib allegro_xyz-5.2.dll
+    Summary: Find implib.exe, then, for each Allegro DLL xyz, call:
 
-Put the resulting .lib files in the D installation's lib/ dir.
-Remove the version number, e.g., `-5.2', from Allegro's .lib files in lib/.
-Do not remove the version number from the DLL files, and keep those in bin/.
+        implib /s allegro_xyz.lib allegro_xyz-5.2.dll
 
-If it's not clear, ask me -- see top of file for contact details.
+    Put the resulting .lib files in the D installation's lib/ dir. Remove the
+    version number, e.g., `-5.2', from Allegro's .lib files in lib/. Do not
+    remove the version number from the DLL files, and keep those in bin/.
 
-There's a German joke. What does "DLL" stand for? "Die lass liegen."
-("Let this one lie around.")
+    If it's not clear, ask me. See top of file for contact details.
 
 
 
@@ -100,10 +105,10 @@ I don't remember anything for this. Look at the enet section of
 
 Most likely, you don't have to do anything now. The DLL is already bundled
 with the download of alleg-5.2-dlls-libs.zip to which I pointed in the
-earlier secton on installing Allegro.
+earlier secton on installing Allegro, Option 1.
 
 If anything goes wrong, the game will terminate when you click
-"Networking mode" in the main menu.
+"Networking mode" from the main menu, then "Connect to central server".
 
 
 
