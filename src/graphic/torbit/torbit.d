@@ -115,14 +115,14 @@ public:
         useDrawingDelegate(delegate void(int x, int y) {
             al_draw_rectangle(x + 0.5f,           y + 0.5f,
                               x + rect.xl - 0.5f, y + rect.yl - 0.5f, col, 1);
-        }, wrap(rect.topLeft));
+        }, rect.topLeft);
     }
 
     void drawFilledRectangle(Rect rect, Alcol col)
     {
         useDrawingDelegate(delegate void(int x, int y) {
             al_draw_filled_rectangle(x, y, x + rect.xl, y + rect.yl, col);
-        }, wrap(rect.topLeft));
+        }, rect.topLeft);
     }
 
     void saveToFile(in Filename fn)
@@ -148,6 +148,30 @@ public:
         al_draw_scaled_bitmap(cast (Albit) from.bitmap,
             0, 0, from.xl, from.yl,
             (xl-destXl)/2, (yl-destYl)/2, destXl, destYl, 0);
+    }
+
+    // Draws once or several times depending on whether it's a torus or not.
+    // It's the delegate's responsibility to draw to target bitmap.
+    // Ideally, you don't call this yourself. Call the nice functions above
+    // instead. But we'll let the editor call this since we don't handle text.
+    void useDrawingDelegate(
+        void delegate(int, int) drawing_delegate,
+        Point targetCorner
+    ) in {
+        assert (bitmap);
+        assert (bitmap.isTargetBitmap);
+        assert (drawing_delegate != null);
+    }
+    body {
+        targetCorner = wrap(targetCorner);
+        // We don't lock the bitmap; drawing with high-level primitives
+        // and blitting other VRAM bitmaps is best without locking
+        with (targetCorner) {
+                                  drawing_delegate(x,      y     );
+            if (torusX          ) drawing_delegate(x - xl, y     );
+            if (          torusY) drawing_delegate(x,      y - yl);
+            if (torusX && torusY) drawing_delegate(x - xl, y - yl);
+        }
     }
 
 protected:
@@ -260,7 +284,7 @@ package:
                 );
             };
         }
-        useDrawingDelegate(drawFrom_at, wrap(targetCorner));
+        useDrawingDelegate(drawFrom_at, targetCorner);
     }
 
     // We need this for nontrivial physics drawing that can't blit everything
@@ -277,26 +301,6 @@ package:
         toPoint = wrap(toPoint);
         al_draw_bitmap_region(cast (Albit) from,
             fromPoint.x, fromPoint.y, 1, 1, toPoint.x, toPoint.y, 0);
-    }
-
-private:
-    final void useDrawingDelegate(
-        void delegate(int, int) drawing_delegate,
-        Point targetCorner
-    ) {
-        assert (bitmap);
-        assert (bitmap.isTargetBitmap);
-        assert (drawing_delegate != null);
-        assert (targetCorner == wrap(targetCorner));
-
-        // We don't lock the bitmap; drawing with high-level primitives
-        // and blitting other VRAM bitmaps is best without locking
-        with (targetCorner) {
-                                  drawing_delegate(x,      y     );
-            if (torusX          ) drawing_delegate(x - xl, y     );
-            if (          torusY) drawing_delegate(x,      y - yl);
-            if (torusX && torusY) drawing_delegate(x - xl, y - yl);
-        }
     }
 }
 // end class Torbit

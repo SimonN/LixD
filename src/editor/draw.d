@@ -112,8 +112,9 @@ void drawGadgetAnnotations(Editor editor) {
         void print(const(typeof(gadgets[0][0])) g, in int plusY, in string str)
         {
             forceUnscaledGUIDrawing = true;
-            drawTextCentered(djvuL, str,
-                g.loc.x + g.tile.cb.xl/2, g.loc.y + plusY, color.guiText);
+            editor._map.useDrawingDelegate((int x, int y) {
+                drawTextCentered(djvuL, str,
+                x + g.tile.cb.xl/2, y + plusY, color.guiText); }, g.loc);
             forceUnscaledGUIDrawing = false;
         }
 
