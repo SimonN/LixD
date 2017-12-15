@@ -114,16 +114,16 @@ private:
 // Returns start and length without +1 along one dimension due to
 // (mouse position when we started framing) and (mouse position now)
 Side framePart(
-    in int oldMap,    in int newMap,
-    in int oldScreen, in int newScreen,
+    in int oldMap,    in int newMap, // one-dimensional coordinate on map
+    in int oldScreen, in int newScreen, // one-dimensional coordinate on screen
     in int mapLen,    in bool torus
 ) pure
 {
     bool frameGoesOverTorusSeam() {
         if (! torus)
             return false;
-        return newMap <= oldMap && newScreen > oldScreen
-            || newMap >= oldMap && newScreen < oldScreen;
+        return newMap < oldMap && newScreen > oldScreen
+            || newMap > oldMap && newScreen < oldScreen;
     }
     return frameGoesOverTorusSeam()
         ? Side(max(oldMap, newMap), mapLen - abs(newMap - oldMap))
