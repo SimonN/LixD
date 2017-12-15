@@ -34,6 +34,7 @@ import tile.phymap;
 import game.mask;
 import game.terchang;
 import graphic.color;
+import graphic.cutbit;
 import graphic.torbit;
 import graphic.internal; // must be initialized first
 import hardware.tharsis;
@@ -384,10 +385,8 @@ private:
         version (tharsisprofiling)
             auto zone = Zone(profiler, format("PhysDraw pix-one %s",
                                               tc.type.to!string));
-        immutable spriteXl = al_get_bitmap_width (sprite);
-        immutable spriteYl = al_get_bitmap_height(sprite);
-        foreach (y; 0 .. spriteYl)
-            foreach (x; 0 .. spriteXl) {
+        foreach (y; 0 .. sprite.yl)
+            foreach (x; 0 .. sprite.xl) {
                 immutable fromPoint = Point(x, y);
                 immutable toPoint   = tc.loc + fromPoint;
                 static if (is (T == FlaggedDeletion)) {
@@ -496,14 +495,12 @@ private:
         auto targetBitmap = TargetBitmap(_mask);
         al_clear_to_color(color.transp);
 
-        Albit recol = getInternal(basics.globals.fileImageStyleRecol).albit;
+        const recol = getInternal(basics.globals.fileImageStyleRecol).albit;
         if (! recol)
             throw new Exception("We lack the recoloring bitmap. "
                 ~ "Is Lix installed properly? We're looking for: `"
                 ~ basics.globals.fileImageStyleRecol.rootless ~ "'.");
-        immutable int recolXl = al_get_bitmap_width (recol);
-        immutable int recolYl = al_get_bitmap_height(recol);
-        assert (recolXl >= 3);
+        assert (recol.xl >= 3);
 
         auto lockRecol = LockReadOnly(recol);
 
@@ -544,24 +541,28 @@ private:
 
         // the first row of recol contains the file colors, then come several
         // rows, one per style < MAX.
-        for (int i = 0; i < Style.max && i < recolYl + 1; ++i) {
-            immutable int y = i + 1;
+        for (int i = 0; i < Style.max && i < recol.yl + 1; ++i) {
+            Alcol getCol(in int x)
+            {
+                // DALLEGCONST: Function is not const-correct, we have to cast.
+                return al_get_pixel(cast (Albit) recol, x, i+1);
+            }
             drawBrick(i * builderBrickXl, 0, builderBrickXl,
-                al_get_pixel(recol, recolXl - 3, y),
-                al_get_pixel(recol, recolXl - 2, y),
-                al_get_pixel(recol, recolXl - 1, y));
+                getCol(recol.xl - 3),
+                getCol(recol.xl - 2),
+                getCol(recol.xl - 1));
             drawBrick(i * platformLongXl, brickYl, platformLongXl,
-                al_get_pixel(recol, recolXl - 3, y),
-                al_get_pixel(recol, recolXl - 2, y),
-                al_get_pixel(recol, recolXl - 1, y));
+                getCol(recol.xl - 3),
+                getCol(recol.xl - 2),
+                getCol(recol.xl - 1));
             drawBrick(i * platformShortXl, 2 * brickYl, platformShortXl,
-                al_get_pixel(recol, recolXl - 3, y),
-                al_get_pixel(recol, recolXl - 2, y),
-                al_get_pixel(recol, recolXl - 1, y));
+                getCol(recol.xl - 3),
+                getCol(recol.xl - 2),
+                getCol(recol.xl - 1));
             drawCube(i * Cuber.cubeSize, cubeY,
-                al_get_pixel(recol, recolXl - 3, y),
-                al_get_pixel(recol, recolXl - 2, y),
-                al_get_pixel(recol, recolXl - 1, y));
+                getCol(recol.xl - 3),
+                getCol(recol.xl - 2),
+                getCol(recol.xl - 1));
         }
 
         // digger swing

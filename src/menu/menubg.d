@@ -14,7 +14,8 @@ protected:
     {
         auto bg = getInternal(fileImageMenuBackground);
         if (bg && bg.valid)
-            al_draw_scaled_bitmap(bg.albit, 0, 0, bg.xl, bg.yl,
+            // DALLEGCONST: We have to cast
+            al_draw_scaled_bitmap(cast (Albit) bg.albit, 0, 0, bg.xl, bg.yl,
                 0, 0, gui.screenXls, gui.screenYls, 0);
         else
             torbit.clearToBlack();

@@ -6,6 +6,7 @@ module tile.draw;
  */
 
 import basics.alleg5; // blender
+import graphic.cutbit;
 import graphic.torbit;
 import hardware.tharsis;
 import tile.occur;

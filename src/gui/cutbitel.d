@@ -6,7 +6,8 @@ import std.algorithm;
 import std.conv;
 import std.math;
 
-import graphic.cutbit;
+public import graphic.cutbit;
+
 import gui.element;
 import gui.geometry;
 
@@ -37,8 +38,8 @@ protected:
             return;
         float cbX = xs + (xls - cutbit.xl) / 2f;
         float cbY = ys + (yls - cutbit.yl) / 2f;
-        // Shrink, preserving the aspect ratio.
-        float scal = min(xls / cutbit.xl, yls / cutbit.yl);
+        // Shrink, preserving the aspect ratio. Avoid div by 0 on !valid.
+        float scal = cutbit.valid ? min(xls / cutbit.xl, yls / cutbit.yl) : 1;
         if (scal >= 1)
             // Allow upscaling only by integers for good looks, or not at all.
             scal = _allowUpscaling ? scal.floor : 1;

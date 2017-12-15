@@ -41,8 +41,10 @@ static if (selfContained) {
         else if (exists("../images") && isDir("../images"))
             return "../";
         else
-            throw new FileException("Can't find the Lix file tree. "
-                ~ "Run the game from its root directory or from ./bin/.");
+            throw new FileException("Can't find the Lix file tree: "
+                ~ "No directory `./images/'. "
+                ~ "Is your installation broken? "
+                ~ "Run Lix from its root directory or from `./bin/'.");
     }
 }
 else {

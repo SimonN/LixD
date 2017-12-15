@@ -15,6 +15,16 @@ import file.filename;
 import file.language;
 import file.log; // log bad filename when trying to load a bitmap
 
+/*
+ * These were member functions, but should work even for null Cutbits.
+ * Often, we do things only if the cutbit is not null and its bitmap exists.
+ */
+bool         valid(in    Cutbit cb) { return cb && cb.bitmap; }
+inout(Albit) albit(inout Cutbit cb)
+{
+    return cb ? cast(inout Albit) cb.bitmap : null;
+}
+
 class Cutbit {
 private:
     Albit bitmap;
@@ -84,9 +94,6 @@ public:
 
     bool opEquals(const Cutbit rhs) const { return bitmap == rhs.bitmap; }
 
-    @property bool  valid() const { return bitmap != null; }
-    @property Albit albit() const { return cast (Albit) bitmap; }
-
     // get size of a single frame, not necessarily size of entire bitmap
     @property int   xl()  const { return _xl;  }
     @property int   yl()  const { return _yl;  }
@@ -153,8 +160,12 @@ public:
     void drawToCurrentAlbitNotTorbit(in Point targetCorner,
         in int xf = 0, in int yf = 0) const
     {
-        if (xf < 0 || xf >= _xfs
-         || yf < 0 || yf >= _yfs) return;
+        if (! bitmap || xf < 0 || xf >= _xfs
+                     || yf < 0 || yf >= _yfs
+        ) {
+            drawMissingFrameError(targetCorner, xf, yf);
+            return;
+        }
         // usually, select only the correct frame. If we'd draw off the screen
         // to the left or top, instead do extra cutting by passing > 0 to the
         // latter two args.

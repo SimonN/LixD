@@ -10,7 +10,10 @@ import std.conv;
 import std.math;
 import std.range;
 
-import basics.alleg5;
+// Don't import all of alleg5, because that imports xl(Albit) which interferes
+// with our (alias torbit this).xl.
+import basics.alleg5 : al_draw_filled_rectangle, al_draw_bitmap_region,
+                       al_draw_scaled_bitmap, Albit;
 import basics.help;
 import basics.topology;
 import graphic.color;

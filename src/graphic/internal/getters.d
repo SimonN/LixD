@@ -1,5 +1,7 @@
 module graphic.internal.getters;
 
+import std.exception : enforce;
+
 import basics.globals;
 import file.filename;
 import graphic.cutbit;
@@ -13,7 +15,7 @@ package:
 
 Cutbit getLixRawSprites()
 out (ret) {
-    assert (ret && ret != nullCutbit, "can't find Lix spritesheet");
+    assert (valid(ret), "can't find Lix spritesheet");
 }
 body {
     static Cutbit cached = null;
@@ -21,7 +23,10 @@ body {
         return cached;
     auto fn = new VfsFilename(fileImageSpritesheet.rootless ~ imgExt);
     loadFromDisk(fn);
-    assert (fn.rootlessNoExt in internal, "can't find Lix spritesheet");
+    enforce(fn.rootlessNoExt in internal, "Can't find Lix spritesheet"
+        ~ " at `" ~ fn.rootless ~ "'. The spritesheet is required for physics"
+        ~ " because the number of sprites per row affect worker cycles."
+        ~ " Is your Lix installation broken?");
     cached = *(fn.rootlessNoExt in internal);
     return cached;
 }

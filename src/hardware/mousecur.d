@@ -8,6 +8,7 @@ module hardware.mousecur;
 
 import basics.globals;
 import basics.rect;
+import file.log;
 import graphic.cutbit;
 import graphic.internal;
 import graphic.graphic;
@@ -19,9 +20,8 @@ void initialize()
 {
     assert (mouseCursor is null, "mouse cursor is already initialized");
     const(Cutbit) cb = getInternal(fileImageMouse);
-    assert (cb, "mouse cursor bitmap is not loaded or missing");
-    assert (cb.valid, "mouse cursor bitmap is not valid");
-
+    if (! cb.valid)
+        logf("Mouse cursor not found: `%s'", fileImageMouse.rootless);
     mouseCursor = new Graphic(cb, null);
 }
 

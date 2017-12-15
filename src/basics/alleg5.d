@@ -97,10 +97,19 @@ Albit albitCreateSmoothlyScalable(in int xl, in int yl)
         _defaultNewBitmapFlags | ALLEGRO_MIN_LINEAR | ALLEGRO_MAG_LINEAR);
 }
 
-// This should be used only in assertions.
-bool isTargetBitmap(in Albit b)
-{
-    return al_get_target_bitmap() == b;
+/*
+ * Wrappers around Allegro's missing const-correctness.
+ * If this gets ever added in DAllgero5 {
+ *      Search the source for DALLEGCONST and remove the casts.
+ *      Change the following wrapper functions into aliases.
+ * }
+ */
+@nogc nothrow {
+    int xl(in Albit b) { return al_get_bitmap_width (cast (Albit) b); }
+    int yl(in Albit b) { return al_get_bitmap_height(cast (Albit) b); }
+
+    // This should be used only in assertions.
+    bool isTargetBitmap(in Albit b) { return al_get_target_bitmap() == b; }
 }
 
 // The following structs implement RAII.
@@ -182,16 +191,20 @@ alias LockReadWrite = LockTemplate!(ALLEGRO_LOCK_READWRITE);
 alias LockReadOnly  = LockTemplate!(ALLEGRO_LOCK_READONLY);
 alias LockWriteOnly = LockTemplate!(ALLEGRO_LOCK_WRITEONLY);
 
-struct LockTemplate(alias flags)
-{
-    Albit albit;
+struct LockTemplate(alias flags) {
+private:
+    static if (flags == ALLEGRO_LOCK_READONLY)
+        const(Albit) albit;
+    else
+        Albit albit;
     ALLEGRO_LOCKED_REGION* region;
 
-    this(Albit b)
+public:
+    this(typeof(this.albit) b)
     {
         assert (b !is null, "can't lock a null bitmap");
         albit = b;
-        region = al_lock_bitmap(albit,
+        region = al_lock_bitmap(cast (Albit) albit,
             ALLEGRO_PIXEL_FORMAT.ALLEGRO_PIXEL_FORMAT_ANY, flags);
         assert (region, "error locking a bitmap, even though not null");
     }
@@ -199,7 +212,7 @@ struct LockTemplate(alias flags)
     ~this()
     {
         if (albit)
-            al_unlock_bitmap(albit);
+            al_unlock_bitmap(cast (Albit) albit);
     }
     @disable this();
     @disable this(this);
