@@ -75,7 +75,7 @@ public:
         bool nukeDoubleclicked()  { return _nuke.doubleclicked; }
     }
 
-    void speedToNormal() { setSpeedTo(1); }
+    void setSpeedNormal() { setSpeedTo(1); }
     void pause(bool b)
     {
         if (b)
@@ -92,8 +92,6 @@ protected:
         assert (!!_pause && !!_speedBack && !!_speedAhead && !!_speedFast);
         if (_pause.execute)
             setSpeedTo(paused ? 1 : 0);
-        else if (_restart.execute)
-            setSpeedTo(1);
         else if (_speedFast.executeLeft)
             setSpeedTo(_speedFast.on ? 1 : 2);
         else if (_speedFast.executeRight)
@@ -101,6 +99,10 @@ protected:
         else if (_speedBack.executeLeft || _speedBack.executeRight
                                         || _speedAhead.executeLeft)
             setSpeedTo(0);
+        // We don't handle (speed back to normal) on level restart.
+        // Game will tell us to set the speed. Reason: Not only we can
+        // restart the level, but the game can get that command from
+        // the end-of-level dialog.
     }
 
 

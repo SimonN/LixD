@@ -80,6 +80,7 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
 
 void restartLevel(Game game)
 {
+    game.pan.setSpeedNormal();
     with (LoadStateRAII(game))
         game.nurse.restartLevel();
 }

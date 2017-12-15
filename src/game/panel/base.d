@@ -145,6 +145,7 @@ public:
         return null;
     }
 
+    void setSpeedNormal() { if (_trbs) _trbs.setSpeedNormal(); }
     void pause(bool b) { if (_trbs) _trbs.pause(b); }
 
     @property const {
