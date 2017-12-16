@@ -1,0 +1,72 @@
+$BUILT 2017-12-16 11:32:22
+$AUTHOR Simon
+$ENGLISH Downward Reduction Short 2p
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 320
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 10
+#INITIAL 80
+#REQUIRED 20
+#SPAWN_INTERVAL 11
+
+#WALKER 20
+#BUILDER 10
+#PLATFORMER 10
+#BASHER 10
+#MINER 30
+#JUMPER 20
+#EXPLODER2 0
+
+:geoo/sandstone/fennec.H: 8 24
+:geoo/sandstone/fennec.H: 168 24
+
+:simon/tapir/goal.G: 224 320
+:simon/tapir/goal.G: 64 320
+
+:geoo/sandstone/64x32_blank: 32 120
+:geoo/sandstone/64x32: 0 88
+:geoo/sandstone/64x32: 64 88
+:geoo/sandstone/64x32_blank: 96 120
+:geoo/sandstone/64x32: 128 88
+:geoo/sandstone/64x32: 192 88
+:geoo/sandstone/64x32: 256 88
+:geoo/sandstone/64x32_blank: 160 120
+:geoo/sandstone/64x32_blank: 224 120
+:geoo/sandstone/64x32_blank: 288 120
+:geoo/sandstone/64x32_blank: 32 184
+:geoo/sandstone/64x32: 0 152
+:geoo/sandstone/64x32: 64 152
+:geoo/sandstone/64x32_blank: 96 184
+:geoo/sandstone/64x32: 128 152
+:geoo/sandstone/64x32: 192 152
+:geoo/sandstone/64x32: 256 152
+:geoo/sandstone/64x32_blank: 160 184
+:geoo/sandstone/64x32_blank: 224 184
+:geoo/sandstone/64x32_blank: 288 184
+:geoo/sandstone/64x32_blank: 32 248
+:geoo/sandstone/64x32: 0 216
+:geoo/sandstone/64x32: 64 216
+:geoo/sandstone/64x32_blank: 96 248
+:geoo/sandstone/64x32: 128 216
+:geoo/sandstone/64x32: 192 216
+:geoo/sandstone/64x32: 256 216
+:geoo/sandstone/64x32_blank: 160 248
+:geoo/sandstone/64x32_blank: 224 248
+:geoo/sandstone/64x32_blank: 288 248
+:geoo/sandstone/64x32: 0 280
+:geoo/sandstone/64x32: 64 280
+:geoo/sandstone/64x32: 128 280
+:geoo/sandstone/64x32: 192 280
+:geoo/sandstone/64x32: 256 280
+:geoo/steel/dark_64x32o.S: 32 368
+:geoo/steel/dark_64x32o.S: 96 368
+:geoo/steel/dark_64x32o.S: 192 368
+:geoo/steel/dark_64x32o.S: 256 368
+:geoo/steel/dark_16x32o.S: 144 336
+:geoo/steel/dark_16x32o.S: 192 336
+:geoo/steel/dark_16x32o.S: 304 336
+:geoo/steel/dark_16x32o.S: 32 336
