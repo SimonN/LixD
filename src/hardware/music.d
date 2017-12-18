@@ -72,7 +72,7 @@ Filename scheduledMusic()
     if (_wantRandom || ret && ! ret.fileExists)
         ret = resolveBySearching();
     if (ret && ! ret.fileExists) {
-        logf("Missing music file `%s'.", ret.rootless);
+        logfMusicOnce("Missing music file `%s'.", ret);
         if (_sched == ret)
             _sched = null;
     }
@@ -123,7 +123,7 @@ void loadMusicFromDisk(in Filename fn)
         setGain(fn);
     }
     else {
-        logf("Unplayable music `%s'.", fn.rootless);
+        logfMusicOnce("Unplayable music `%s'.", fn);
         logAllegroSupportsFormat();
     }
     _last = _music ? fn : null;
@@ -153,4 +153,19 @@ void setGain(in Filename fn)
         { } // gain file not found is OK, play everything at normal volume
     al_set_audio_stream_gain(_music,
         dbToGain(dBFromFile + basics.user.musicDecibels));
+}
+
+/*
+ * formatStr should have exactly one argument %s and no other arguments.
+ * We will call logf exactly when we haven't called it for that file yet.
+ * We suppose that we only ever have to log one message per file, even if
+ * there are several messages that hardware.music can log.
+ */
+void logfMusicOnce(in string formatStr, Filename fn)
+{
+    static bool[Filename] alreadyLogged;
+    if (! fn || fn in alreadyLogged)
+        return;
+    alreadyLogged[fn] = true;
+    logf(formatStr, fn.rootless);
 }
