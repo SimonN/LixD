@@ -46,7 +46,12 @@ private:
     // little, and _unprocessed to store the unsearchable leftover work.
     CachedFilename[] _database; // readily searchable
     MutFilename[] _unprocessed; // not searched
-    string _lastQuery; // if different from _query.text, search
+
+    // search already-built database only after this has gotten different
+    // from _query.text. While the database is building, search every time.
+    // To search every time while building the db, this gets set to ""
+    // artificially.
+    string _lastQuery;
 
 public:
     this()
@@ -103,7 +108,9 @@ private:
 
     void search()
     {
-        if (isDatabaseComplete && _lastQuery == _query.text.toLower)
+        // See comment at the definition of _lastQuery for how we force
+        // the search every time while the database is getting built.
+        if (_lastQuery == _query.text.toLower)
             return;
         _lastQuery = _query.text.toLower;
         _results.recreateButtonsFor(matchesInDatabase.take(_results.pageLen));
@@ -115,15 +122,11 @@ private:
         return _database.filter!(entry => entry.matches(rangeOfWords.save));
     }
 
-    bool isDatabaseComplete() const @nogc pure
-    {
-        return _database.length > 0 && _unprocessed.empty;
-    }
-
     // Build the database little by little over many calls to this
     void buildDatabase()
     {
-        if (isDatabaseComplete)
+        if (_database.length > 0 && _unprocessed.empty)
+            // Database is complete
             return;
         if (_unprocessed.empty) {
             assert (_database.empty, "let's not do this twice");
@@ -144,6 +147,8 @@ private:
             }
             _unprocessed = _unprocessed[1 .. $];
         }
+        // Force the UI to search again the now-added-to database
+        _lastQuery = "";
     }
 }
 
@@ -153,6 +158,7 @@ private struct CachedFilename {
 private:
     string titleAllLower;
     string fnAllLower;
+    string authorAllLower;
 
 public:
     Filename result;
@@ -171,6 +177,7 @@ public:
         auto metadata = new LevelMetaData(fn); // throws on bad UTF-8
         titleDisplay = metadata.name;
         titleAllLower = titleDisplay.toLower;
+        authorAllLower = metadata.author.toLower;
     }
 
     bool matches(R)(R rangeOfWords) const pure
@@ -179,6 +186,7 @@ public:
             && rangeOfWords.all!(word =>
                     fnAllLower.canFind(word)
                 ||  titleAllLower.canFind(word)
+                ||  authorAllLower.canFind(word)
             );
     }
 }

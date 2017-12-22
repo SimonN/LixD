@@ -19,6 +19,7 @@ public:
     int        required;
     string     nameGerman;
     string     nameEnglish;
+    string     author;
 
     this(in Filename fn) // throws onwards any caught exception
     {
@@ -71,6 +72,12 @@ private:
             if (i.text1 == levelNameEnglish) nameEnglish = i.text2;
             if (i.text1 == levelInitial)     initial     = i.nr1;
             if (i.text1 == levelRequired)    required    = i.nr1;
+            if (i.text1 == levelAuthor)      author      = i.text2;
+
+            // Speed up loading many Metadatas by not processing too many
+            // lines. We hope that no important data appears after first tiles.
+            if (i.type == ':')
+                break;
         }
     }
 
