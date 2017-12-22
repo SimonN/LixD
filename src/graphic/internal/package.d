@@ -13,14 +13,17 @@ import graphic.internal.vars;
 
 void initialize(Runmode runmode)
 {
-    nullCutbit = new Cutbit(cast (Cutbit) null);
+    if (! nullCutbit)
+        // This doesn't allocate VRAM, OK to not kill it on deinitialize
+        nullCutbit = new Cutbit(cast (Cutbit) null);
 
     final switch (runmode) {
         case Runmode.VERIFY:
-            dontWantRecoloredGraphics = true;
+            wantRecoloredGraphics = false;
             break;
         case Runmode.INTERACTIVE:
         case Runmode.EXPORT_IMAGES:
+            wantRecoloredGraphics = true;
             break;
         case Runmode.PRINT_AND_EXIT:
             assert (false);
@@ -28,6 +31,7 @@ void initialize(Runmode runmode)
 }
 
 void initializeScale(float scale) { implSetScale(scale); }
+void deinitialize()               { implDeinitialize();  }
 
 const(Cutbit) getInternal    (Filename fn) { return getInternalMutable  (fn); }
 const(Cutbit) getLixSpritesheet (Style st) { return implGetLixSprites   (st); }

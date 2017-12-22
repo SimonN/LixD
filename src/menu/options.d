@@ -25,7 +25,6 @@ class OptionsMenu : Window {
 //  this(); -- exists, see below
 
 private:
-
     bool _gotoMainMenu;
 
     TextButton okay;
@@ -87,13 +86,15 @@ public this()
 
 protected override void calcSelf()
 {
+    explainOptions();
+
     if (_userName.on == false && _userName.text.strip.length == 0) {
         _userName.text = basics.globconf.userName;
     }
     if (okay.execute || hardware.mouse.mouseClickRight) {
         saveEverything();
         reapplyVolumeMusic(); // ideally, do this on all music numpick changes
-        _gotoMainMenu = true;
+        _gotoMainMenu = true; // main menu will change resolution if necessary
     }
     else if (cancel.execute) {
         graphic.color.initialize(); // throw away just-in-time computed colors
@@ -105,7 +106,6 @@ protected override void calcSelf()
         explainer.undrawColor = guiRed.undrawColor = guiGreen.undrawColor
             = guiBlue.undrawColor = color.guiM;
     }
-    explainOptions();
 }
 
 

@@ -19,10 +19,27 @@ import graphic.color; // gui shadow color
 
 void initialize(in int aScreenXl, in int aScreenYl)
 {
-    assert (! _scaled);
+    if (_scaled) {
+        assert (aScreenXl == _scaled._screenXls
+            &&  aScreenYl == _scaled._screenYls,
+            "if you want to switch resolutions, deinitialize the GUI first");
+        return;
+    }
     _scaled = new Context(aScreenXl, aScreenYl);
-    if (! _unscaled && aScreenXl == 640 && aScreenYl == 480)
+    if (aScreenXl == 640 && aScreenYl == 480)
         _unscaled = _scaled;
+}
+
+void deinitialize()
+{
+    void deinitImpl(ref Context ct) {
+        if (ct) {
+            ct.dispose();
+            ct = null;
+        }
+    }
+    deinitImpl(_scaled);
+    deinitImpl(_unscaled); // safe even when _scaled was _unscaled before
 }
 
 bool forceUnscaledGUIDrawing = false; // public, set to true to choose context
@@ -95,9 +112,9 @@ final class Context {
     // but print with a dark surrounding
     immutable(bool) _smallScreenDjvuSSurround;
 
-    const(Alfont) djvuL;
-    const(Alfont) djvuM;
-    const(Alfont) djvuS;
+    ALLEGRO_FONT* djvuL; // must be non-const to allow destruction
+    ALLEGRO_FONT* djvuM;
+    ALLEGRO_FONT* djvuS;
 
     this(in int aScreenXl, in int aScreenYl)
     in { assert (aScreenYl > 0); }
@@ -122,11 +139,23 @@ final class Context {
         _djvuMOffset = (aScreenYl / 24f - al_get_font_line_height(djvuM)) / 2f;
     }
 
-    Alfont makeFont(in float size)
+    void dispose()
+    {
+        void disposeImpl(ref ALLEGRO_FONT* fo)
+        {
+            al_destroy_font(fo);
+            fo = null;
+        }
+        disposeImpl(djvuS);
+        disposeImpl(djvuM);
+        disposeImpl(djvuL);
+    }
+
+    ALLEGRO_FONT* makeFont(in float size)
     {
         immutable fn = new VfsFilename("./data/fonts/djvusans.ttf");
         const(char*) fnp = fn.stringzForReading;
-        Alfont f = al_load_ttf_font(fnp, to!int(floor(size)), 0);
+        ALLEGRO_FONT* f = al_load_ttf_font(fnp, to!int(floor(size)), 0);
         return f ? f : al_create_builtin_font();
     }
 

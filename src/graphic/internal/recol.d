@@ -9,7 +9,6 @@ import graphic.color;
 import graphic.cutbit;
 import graphic.internal.getters;
 import graphic.internal.vars;
-import hardware.display; // print startup progress info; maybe make it lazy
 import hardware.tharsis;
 
 package:

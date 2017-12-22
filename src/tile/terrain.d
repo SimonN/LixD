@@ -90,6 +90,15 @@ protected:
         makeDarkVersion();
     }
 
+    override void onDispose()
+    {
+        _phymap = null;
+        if (_dark) {
+            _dark.dispose();
+            _dark = null;
+        }
+    }
+
 private:
     void makePhymapFindSelbox(bool steel)
     {

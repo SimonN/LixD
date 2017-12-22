@@ -57,6 +57,20 @@ private auto newOpt(T)(string fileKey, T defaultVal)
     return fileLanguage.value == basics.globals.fileLanguageEnglish;
 }
 
+struct DisplayTryMode {
+    bool full;
+    int x, y;
+}
+
+@property DisplayTryMode displayTryMode()
+{
+    DisplayTryMode ret;
+    ret.full = screenWindowed is null ? false : ! screenWindowed.value;
+    ret.x = (screenWindowedX is null || ret.full) ? 0 : screenWindowedX.value;
+    ret.y = (screenWindowedY is null || ret.full) ? 0 : screenWindowedY.value;
+    return ret;
+}
+
 UserOptionFilename fileLanguage;
 UserOption!int optionGroup;
 

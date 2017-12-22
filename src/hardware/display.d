@@ -69,6 +69,15 @@ void flip_display()
     return al_get_display_height(display);
 }
 
+@property DisplayTryMode currentMode()
+in { assert (display, "no current mode because no display exists"); }
+body {
+    DisplayTryMode ret;
+    ret.x = displayXl;
+    ret.y = displayYl;
+    ret.full = 0 == (al_get_display_flags(display) & ALLEGRO_WINDOWED);
+    return ret;
+}
 
 
 // This is like initialize() of other modules.
@@ -76,11 +85,7 @@ void flip_display()
 // For winwoded, use the wanted resolution, or fall back to 640 x 480.
 void setScreenMode(in Cmdargs cmdargs)
 {
-    struct TryMode {
-        bool full;
-        int x, y;
-    }
-
+    alias TryMode = DisplayTryMode;
     // FIFO queue of screen modes to try
     TryMode[] try_modes;
 

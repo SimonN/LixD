@@ -27,6 +27,12 @@ private:
     Rect _selbox; // Smallest rectangle, relative to the cutbit's (0, 0),
                   // that still contains all nontransparent pixels.
 public:
+    final void dispose()
+    {
+        onDispose();
+        _cb.dispose();
+    }
+
           @property const(Cutbit) cb() const { return _cb;     }
     final @property Rect      selbox() const { return _selbox; }
 
@@ -48,6 +54,7 @@ protected:
         _selbox = Rect(0, 0, _cb.xl, _cb.yl);
     }
 
+    void onDispose() { }
     void findSelboxAssumeLocked() { _selbox = .findSelboxAssumeLocked(_cb); }
 }
 

@@ -1,5 +1,9 @@
 module graphic.internal.vars;
 
+/*
+ *  All global state of package graphic.internal goes in here.
+ */
+
 import basics.globals;
 import basics.matrix;
 import graphic.cutbit;
@@ -8,8 +12,9 @@ public import net.style;
 
 package:
 
-bool dontWantRecoloredGraphics;
+bool wantRecoloredGraphics;
 
+Cutbit _lixRawSprites;
 Cutbit[string]    internal;
 Cutbit[Style.max] spritesheets;
 Cutbit[Style.max] panelInfoIcons;

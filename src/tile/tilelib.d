@@ -49,8 +49,18 @@ void initialize()
 
 void deinitialize()
 {
+    void destroyArray(T)(ref T arr)
+    {
+        foreach (tile; arr)
+            if (tile !is null)
+                tile.dispose();
+        arr = null;
+    }
     destroyArray(terrain);
     destroyArray(gadgets);
+    destroyArray(groups);
+    queue = null;
+    _loggedMissingImages = null;
 }
 
 // Feeble attempt to avoid dynamic cast :-( Maybe ripe for the visitor pattern.

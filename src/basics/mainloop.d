@@ -15,6 +15,7 @@ import core.memory;
 import basics.alleg5;
 import basics.globconf;
 import basics.globals;
+import basics.resol;
 import editor.editor;
 import game.core.game;
 import file.filename; // running levels from the command-line
@@ -250,18 +251,12 @@ public:
             }
         }
         else if (optionsMenu) {
-            if (optionsMenu.gotoMainMenu) {
-                kill();
-                mainMenu = new MainMenu;
-                gui.addElder(mainMenu);
-            }
+            if (optionsMenu.gotoMainMenu)
+                toMainMenuWithResChange();
         }
         else if (askName) {
-            if (askName.gotoMainMenu) {
-                kill();
-                mainMenu = new MainMenu;
-                gui.addElder(mainMenu);
-            }
+            if (askName.gotoMainMenu)
+                toMainMenuWithResChange();
             else if (askName.gotoExitApp)
                 exit = true;
         }
@@ -321,6 +316,19 @@ public:
             hardware.mousecur.draw();
         hardware.sound.draw();
         flip_display();
+    }
+
+    /*
+     * The options menu reinitializes many modules itself, but
+     * it's a GUI dialog, therefore it feels safer to change resolution
+     * outside of that dialog. Let's do it here.
+     */
+    private void toMainMenuWithResChange()
+    {
+        kill();
+        changeResolutionBasedOnUserFileAlone();
+        mainMenu = new MainMenu;
+        gui.addElder(mainMenu);
     }
 }
 // end class MainLoop

@@ -1,5 +1,6 @@
 module graphic.internal.getters;
 
+import std.range;
 import std.exception : enforce;
 
 import basics.globals;
@@ -18,17 +19,17 @@ out (ret) {
     assert (valid(ret), "can't find Lix spritesheet");
 }
 body {
-    static Cutbit cached = null;
-    if (cached)
-        return cached;
+    if (_lixRawSprites)
+        return _lixRawSprites;
     auto fn = new VfsFilename(fileImageSpritesheet.rootless ~ imgExt);
     loadFromDisk(fn);
     enforce(fn.rootlessNoExt in internal, "Can't find Lix spritesheet"
         ~ " at `" ~ fn.rootless ~ "'. The spritesheet is required for physics"
         ~ " because the number of sprites per row affect worker cycles."
         ~ " Is your Lix installation broken?");
-    cached = *(fn.rootlessNoExt in internal);
-    return cached;
+    _lixRawSprites = *(fn.rootlessNoExt in internal);
+    assert (_lixRawSprites);
+    return _lixRawSprites;
 }
 
 // Input: filename without any scaling subdir
@@ -36,7 +37,7 @@ body {
 // See comment near graphic.internal.vars.internal about how we save strings
 Cutbit getInternalMutable(in Filename fn)
 {
-    if (dontWantRecoloredGraphics)
+    if (! wantRecoloredGraphics)
         return nullCutbit;
     auto correctScale  = new VfsFilename(scaleDir ~ fn.file ~ imgExt);
     auto fallbackScale = new VfsFilename(fn.rootless ~ imgExt);
@@ -64,7 +65,7 @@ Cutbit getInternalMutable(in Filename fn)
 const(Cutbit) implGetLixSprites(in Style st)
 out (ret) { assert(ret); }
 body {
-    if (dontWantRecoloredGraphics)
+    if (! wantRecoloredGraphics)
         return getLixRawSprites();
     if (spritesheets[st] is null)
         makeLixSprites(st);
@@ -74,7 +75,7 @@ body {
 const(Cutbit) implGetPanelInfoIcon(in Style st)
 out (ret) { assert(ret); }
 body {
-    if (dontWantRecoloredGraphics)
+    if (! wantRecoloredGraphics)
         return nullCutbit;
     if (panelInfoIcons[st] is null)
         makePanelInfoIcon(st);
@@ -84,7 +85,7 @@ body {
 const(Cutbit) implGetSkillButton(in Style st)
 out (ret) { assert(ret); }
 body {
-    if (dontWantRecoloredGraphics)
+    if (! wantRecoloredGraphics)
         return nullCutbit;
     if (skillButtonIcons[st] is null)
         makeSkillButtonIcon(st);
@@ -98,3 +99,30 @@ body {
     return alcol3DforStyles[style];
 }
 
+/*
+ * Deallocate all VRAM. See all state in graphic.internal.vars to make
+ * sure we go over all possible resources here.
+ * We don't destroy non-VRAM resources like color tables for now.
+ */
+void implDeinitialize()
+out { assert (spritesheets[Style.garden] is null, "badly deinitialized"); }
+body {
+    void deinitArray(T)(ref T arr)
+    {
+        foreach (ref cb; arr) {
+            if (cb) {
+                cb.dispose();
+                cb = null;
+            }
+        }
+    }
+    deinitArray(internal);
+    deinitArray(spritesheets);
+    deinitArray(panelInfoIcons);
+    deinitArray(skillButtonIcons);
+    internal = null;
+    if (_lixRawSprites) {
+        _lixRawSprites.dispose();
+        _lixRawSprites = null;
+    }
+}

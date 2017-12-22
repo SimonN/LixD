@@ -69,8 +69,6 @@ roundInt(F)(in F f)
     return (f + 0.5f).floor.to!int;
 }
 
-
-
 string
 backspace(in string str)
 {
@@ -107,8 +105,6 @@ unittest {
     assert (escapeStringForFilename("リッくス") == "リッくス");
 }
 
-
-
 pure nothrow int
 len(T)(in T[] arr)
 {
@@ -117,21 +113,6 @@ len(T)(in T[] arr)
     // effect, but doesn't check if it has to throw.
     return arr.length & 0x7F_FF_FF_FF;
 }
-
-
-
-void
-destroyArray(T)(ref T arr)
-{
-    foreach (ref var; arr) {
-        destroy(var);
-        var = null;
-    }
-    destroy(arr);
-    arr = null;
-}
-
-
 
 @property T[]
 clone(T)(in const(T)[] arr)

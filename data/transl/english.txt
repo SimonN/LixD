@@ -324,7 +324,7 @@ $optionMusicEnabledDesc Enable background music.
 $optionSoundDecibelsDesc Adjust the sound volume. 0 is already pretty loud.|Raise/lower by 10 dB to double/halve the sound volume.
 $optionMusicDecibelsDesc Adjust the music volume. −10 dB should be loud enough.|Raise/lower by 10 dB to double/halve the music volume.
 
-$optionScreenWindowed           Start in windowed mode
+$optionScreenWindowed           Windowed (no fullscreen)
 $optionScreenWindowedRes        Windowed resolution
 $optionPaintTorusSeams          Paint torus seams
 $optionIngameTooltips           Tooltips during game
@@ -334,8 +334,8 @@ $optionGuiColorRed              Menu color red
 $optionGuiColorGreen            Menu color green
 $optionGuiColorBlue             Menu color blue
 
-$optionScreenWindowedDesc Run Lix in a window, or in fullscreen mode?|Restart Lix after you change this!
-$optionScreenWindowedResDesc Size of the Lix window. Only for windowed mode, not for fullscreen.|Restart Lix after you change this!
+$optionScreenWindowedDesc Play Lix in a window. You can choose the window's size.|If not checked, Lix runs in fullscreen mode.
+$optionScreenWindowedResDesc Size of the Lix window when you have chosen windowed mode.|This has no effect in fullscreen mode.
 $optionPaintTorusSeamsDesc Mark the wrapping seam with a thin line whenever a level wraps around.|This doesn't affect game physics, but may improve your orientation.
 $optionIngameTooltipsDesc Explain buttons and lix-selecting hotkeys during play, e.g., to select left-facing lix.|Some buttons have two functions: One on left-click, one on right-click.
 $optionShowButtonHotkeysDesc On every button, print the button's hotkeys in the bottom-right-hand corner.
@@ -403,7 +403,7 @@ $optionUnpauseOnAssign        Unpause on skill assignment
 
 $optionAvoidBuilderQueuingDesc Prefer builder assignments to non-builders over queuing to existing builders.|You can hold priority invert (see Controls tab) to do what you don't prefer.
 $optionAvoidBatterToExploderDesc Prefer batter assignments to walkers over batter assignments to timed exploders.|You can hold priority invert (see Controls tab) to do what you don't prefer.
-$optionReplayAfterFrameBackDesc On framestepping back (◀▮), keep future replay actions until you cancel the replay by clicking into air.|If not checked, replay actions are removed when you undo them by framestepping.
+$optionReplayAfterFrameBackDesc On framestepping back (◀▮), keep future replay actions until you click air.|If not checked, replay actions are removed when you undo them by framestepping.
 $optionUnpauseOnAssignDesc Unpause the game when you assign a skill during pause.|If not checked, skill assignments during pause advance the game by 1 frame.
 
 $optionKeyMenuOkay            Okay/yes

@@ -59,7 +59,10 @@ public:
 
     this(string[] args)
     {
-        // argument 0 is the program name, loop over the extra ones only
+        if (args.empty) {
+            // argument 0 is the program name, loop over the extra ones only
+            return;
+        }
         foreach (arg; args[1 .. $]) {
             if (arg.startsWith("--"))
                 parseDashDashArgument(arg);

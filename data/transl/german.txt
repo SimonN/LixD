@@ -312,7 +312,7 @@ $optionMusicEnabledDesc Musik einschalten.
 $optionSoundDecibelsDesc Tonlautstärke anpassen. 0 ist schon recht laut.|Erhöhe/senke um 10 dB, um die Tonlautstärke zu verdoppeln/halbieren.
 $optionMusicDecibelsDesc Musiklautstärke anpassen. −10 dB sollte laut genug sein.|Erhöhe/senke um 10 dB, um die Musiklautstärke zu verdoppeln/halbieren.
 
-$optionScreenWindowed           Im Fenstermodus starten
+$optionScreenWindowed           Fenster statt Vollbild
 $optionScreenWindowedRes        Fenster-Auflösung
 $optionPaintTorusSeams          Torus-Nahtstellen anmalen
 $optionIngameTooltips           Tooltips im Spiel
@@ -322,8 +322,8 @@ $optionGuiColorRed              Menüfarbe Rot
 $optionGuiColorGreen            Menüfarbe Grün
 $optionGuiColorBlue             Menüfarbe Blau
 
-$optionScreenWindowedDesc Lix im Fenstermodus oder Vollbildmodus starten?|Starte Lix neu, nachdem du diese Einstellung änderst!
-$optionScreenWindowedResDesc Größe des Lix-Fensters bei Programmstart. Keine Auswirkung auf Vollbildmodus.|Starte Lix neu, nachdem du diese Einstellung änderst!
+$optionScreenWindowedDesc Lix im Fenstermodus spielen mit wählbarer Auflösung.|Ohne Haken: Lix im Vollbildmodus spielen.
+$optionScreenWindowedResDesc Größe des Lix-Fensters im Fenstermodus.|Dies hat keine Auswirkung auf den Vollbildmodus.
 $optionPaintTorusSeamsDesc Torus-Nahtstellen in der Landschaft mit einer dünnen Linie kennzeichnen.|Dies hat keine Auswirkung auf die Physik; es dient zur Orientierung.
 $optionIngameTooltipsDesc Buttons und Lix-wählende Hotkeys im Spiel erklären, z.B. nur Linksläufer.|Einige Buttons haben eine Linksklick- und eine Rechtsklick-Funktion.
 $optionShowButtonHotkeysDesc Auf jedem Button die Hotkeys des Buttons in der rechten unteren Ecke anzeigen.
@@ -391,7 +391,7 @@ $optionUnpauseOnAssign       Pause aus bei Fähigk.-Zwsg.
 
 $optionAvoidBuilderQueuingDesc Builder vorrangig an Nicht-Builder zuweisen anstatt an bestehende Builder.|Halte "Priorität invertieren" (Reiter "Steuerung"), um das jeweils andere zu tun.
 $optionAvoidBatterToExploderDesc Batter vorrangig an normale Lix zuweisen anstatt an brennende Exploder.|Halte "Priorität invertieren" (Reiter "Steuerung"), um das jeweils andere zu tun.
-$optionReplayAfterFrameBackDesc Replay-Aktionen zum späteren Abspiel beibehalten, wenn du zurückspulst (◀▮).|Ohne Haken: Replay-Aktionen entfernen, die durch ◀▮ ungeschehen werden.
+$optionReplayAfterFrameBackDesc Replay-Aktionen beim Zurückspulen (◀▮) behalten, bis du in die Luft klickst.|Ohne Haken: Replay-Aktionen entfernen, die durch ◀▮ ungeschehen werden.
 $optionUnpauseOnAssignDesc Die Pause ausschalten, wenn du eine Fähigkeit zuweist.|Ohne Haken: Nur 1 Physik-Update weiter, wenn du eine Fähigkeit zuweist.
 
 $optionKeyMenuOkay           Okay/ja

@@ -4,21 +4,15 @@ import derelict.enet.enet;
 
 import basics.alleg5;
 import basics.cmdargs;
-import basics.globals;
 import basics.globconf;
+import basics.resol;
 import basics.user;
 import file.language;
 import file.filename;
 import game.mask;
-import game.physdraw;
 import graphic.color;
-import graphic.internal;
-import gui.context;
-import gui.root;
-import hardware.display;
 import hardware.keyboard;
 import hardware.mouse;
-import hardware.mousecur;
 import hardware.sound;
 import hardware.music;
 import hardware.tharsis;
@@ -55,20 +49,20 @@ void initialize(in Cmdargs cmdargs)
             al_init_ttf_addon();
             al_init_primitives_addon();
             hardware.tharsis.initialize();
-    if (ia) hardware.display.setScreenMode(cmdargs);
     if (ia) hardware.keyboard.initialize();
     if (ia) hardware.mouse.initialize();
     if (ia) hardware.sound.initialize();
-
             graphic.color.initialize();
-            graphic.internal.initialize(cmdargs.mode);
     if (ph) game.mask.initialize();
 
-    if (ia) game.physdraw.initialize();
-    if (ia) hardware.mousecur.initialize();
-    if (ia) initializeGUI();
-            tile.tilelib.initialize();
+    if (ia) changeResolutionBasedOnCmdargsThenUserFile(cmdargs); // inits tiles
+    else    tile.tilelib.initialize(); // we need these in any case
 }
+
+/*
+ * See also the resolution functions in basics.resol.
+ * They initialize and deinitialize several other modules.
+ */
 
 void deinitialize()
 {
@@ -86,14 +80,4 @@ void deinitialize()
     // Maybe I should register deinitialize by atexit or install signal
     // handlers?
     hardware.music.deinitialize();
-}
-
-private void initializeGUI()
-{
-    assert (display);
-    immutable xl = al_get_display_width(display);
-    immutable yl = al_get_display_height(display);
-    gui.context.initialize(xl, yl);
-    gui.root.initialize(xl, yl);
-    graphic.internal.initializeScale(gui.stretchFactor);
 }
