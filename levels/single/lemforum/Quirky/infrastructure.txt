@@ -1,12 +1,10 @@
-$BUILT 2016-07-21 17:41:25
+$BUILT 2017-08-25 08:15:58
 $AUTHOR Insane Steve
 $ENGLISH Infrastructure Budget Cut
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
-#SIZE_Y 400
-#START_X 0
-#START_Y 0
+#SIZE_Y 320
 
 #INITIAL 30
 #REQUIRED 29
@@ -19,88 +17,79 @@ $ENGLISH Infrastructure Budget Cut
 #BASHER 2
 #EXPLODER 0
 
-:matt/marble/Hatch.H: 272 64
+:matt/marble/Hatch.H: 272 32
 
-:matt/marble/Goal.G: 560 176
+:matt/marble/Goal.G: 560 144
 
-:geoo/construction/squisher.T: 352 96
-:geoo/construction/squisher.T: 384 96
-:geoo/construction/squisher.T: 416 96
-:geoo/construction/squisher.T: 448 96
-:geoo/construction/squisher.T: 480 96
+:geoo/construction/squisher.T: 352 64
+:geoo/construction/squisher.T: 384 64
+:geoo/construction/squisher.T: 416 64
+:geoo/construction/squisher.T: 448 64
+:geoo/construction/squisher.T: 480 64
 
-:matt/marble/05: 256 160
-:matt/marble/05a: 288 160
-:matt/marble/05b: 320 160
+:matt/marble/05: 256 128
+:matt/marble/05a: 288 128
+:matt/marble/05b: 320 128
+:matt/marble/05c: 480 128
+:matt/marble/05d: 512 128
+:matt/marble/05a: 320 160
+:matt/marble/05b: 448 160
 :matt/marble/05c: 480 160
-:matt/marble/05d: 512 160
-:matt/marble/05a: 320 192
-:matt/marble/05b: 448 192
-:matt/marble/05c: 480 192
-:matt/marble/05d: 416 160
-:matt/marble/05b: 256 192
-:matt/marble/05c: 288 192
-:matt/marble/05d: 448 160
-:matt/marble/05: 352 160
-:matt/marble/05a: 384 160
-:matt/marble/05b: 512 192
-:matt/marble/05c: 320 224
-:matt/marble/05d: 128 256
-:matt/marble/05: 160 256
-:matt/marble/05a: 256 224
-:matt/marble/05b: 288 224
-:matt/marble/05c: 352 192
-:matt/marble/05d: 384 192
-:matt/marble/05: 416 192
-:matt/marble/05a: 512 224
-:matt/marble/05b: 352 224
-:matt/marble/05c: 384 224
-:matt/marble/05d: 416 224
-:matt/marble/05: 544 224
-:matt/marble/05a: 576 224
-:matt/marble/05b: 608 224
-:matt/marble/09d: 192 80
-:matt/marble/09c: 192 144
-:matt/marble/09: 192 208
-:matt/marble/09a: 192 272
-:matt/marble/09b: 192 336
-:matt/marble/05c: 160 224
-:matt/marble/05a: 96 224
-:matt/marble/05b: 128 224
-:matt/marble/05c: 96 256
-:matt/marble/05a: 32 256
-:matt/marble/05b: 64 256
-:matt/marble/05d: 448 224
-:matt/marble/05: 480 224
-:matt/marble/15d: 32 288
-:matt/marble/17b: 160 288
-:matt/marble/05a: 0 288
-:matt/marble/05c: 0 256
-:matt/marble/05d: 0 320
-:matt/marble/05: 0 352
-:matt/marble/05d: 0 384
-:matt/marble/15d: 256 256
-:matt/marble/05: 608 256
-:matt/marble/05c: 608 288
-:matt/marble/05b: 608 320
-:matt/marble/05a: 608 352
-:matt/marble/05c: 608 384
-:matt/marble/17b: 576 256
-:matt/marble/05d: 0 224
-:matt/marble/05d: 32 224
-:matt/marble/05: 64 224
-:matt/marble/05b: 448 32
-:matt/marble/05a: 448 64
-:matt/marble/05b: 384 0
-:matt/marble/05d: 448 0
-:matt/marble/05d: 480 0
-:matt/marble/05: 480 32
-:matt/marble/05a: 416 0
-:matt/marble/05c: 480 64
-:matt/marble/05d: 416 32
-:matt/marble/05: 352 0
-:matt/marble/05c: 352 32
-:matt/marble/05a: 384 32
-:matt/marble/05c: 384 64
-:matt/marble/05b: 352 64
-:matt/marble/05: 416 64
+:matt/marble/05d: 416 128
+:matt/marble/05b: 256 160
+:matt/marble/05c: 288 160
+:matt/marble/05d: 448 128
+:matt/marble/05: 352 128
+:matt/marble/05a: 384 128
+:matt/marble/05b: 512 160
+:matt/marble/05c: 320 192
+:matt/marble/05d: 128 224
+:matt/marble/05: 160 224
+:matt/marble/05a: 256 192
+:matt/marble/05b: 288 192
+:matt/marble/05c: 352 160
+:matt/marble/05d: 384 160
+:matt/marble/05: 416 160
+:matt/marble/05a: 512 192
+:matt/marble/05b: 352 192
+:matt/marble/05c: 384 192
+:matt/marble/05d: 416 192
+:matt/marble/05: 544 192
+:matt/marble/05a: 576 192
+:matt/marble/05b: 608 192
+:matt/marble/09d: 192 48
+:matt/marble/09c: 192 112
+:matt/marble/09: 192 176
+:matt/marble/09a: 192 240
+:matt/marble/09b: 192 304
+:matt/marble/05c: 160 192
+:matt/marble/05a: 96 192
+:matt/marble/05b: 128 192
+:matt/marble/05c: 96 224
+:matt/marble/05a: 32 224
+:matt/marble/05b: 64 224
+:matt/marble/05d: 448 192
+:matt/marble/05: 480 192
+:matt/marble/15d: 32 256
+:matt/marble/17b: 160 256
+:matt/marble/05a: 0 256
+:matt/marble/05c: 0 224
+:matt/marble/05d: 0 288
+:matt/marble/15d: 256 224
+:matt/marble/05: 608 224
+:matt/marble/05c: 608 256
+:matt/marble/05b: 608 288
+:matt/marble/17b: 576 224
+:matt/marble/05d: 0 192
+:matt/marble/05d: 32 192
+:matt/marble/05: 64 192
+:matt/marble/05b: 448 0
+:matt/marble/05a: 448 32
+:matt/marble/05: 480 0
+:matt/marble/05c: 480 32
+:matt/marble/05d: 416 0
+:matt/marble/05c: 352 0
+:matt/marble/05a: 384 0
+:matt/marble/05c: 384 32
+:matt/marble/05b: 352 32
+:matt/marble/05: 416 32

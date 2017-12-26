@@ -1,116 +1,102 @@
-$BUILT                                             2012-03-17 14:56:22
-$AUTHOR                                                     Nortaneous
-$GERMAN                                                               
-$ENGLISH                                       Another Lix in the Wall
+$BUILT 2017-08-25 06:40:36
+$AUTHOR Nortaneous
+$ENGLISH Another Lix in the Wall
 
-#SIZE_X                                                            640
-#SIZE_Y                                                            400
-#TORUS_X                                                             0
-#TORUS_Y                                                             0
-#START_X                                                           -32
-#START_Y                                                           -20
-#BACKGROUND_RED                                                      0
-#BACKGROUND_GREEN                                                    0
-#BACKGROUND_BLUE                                                     0
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 320
 
-#INITIAL                                                             8
-#REQUIRED                                                            5
-#SPAWN_INTERVAL                                                     10
+#INITIAL 8
+#REQUIRED 5
+#SPAWN_INTERVAL 10
 
-#CLIMBER                                                             6
-#CUBER                                                               3
-#BATTER                                                              1
-#BUILDER                                                             1
-#PLATFORMER                                                          1
-#DIGGER                                                              1
-#WALKER                                                              1
-#NOTHING                                                             0
-#NOTHING                                                             0
-#NOTHING                                                             0
-#NOTHING                                                             0
-#NOTHING                                                             0
+#WALKER 1
+#CLIMBER 6
+#BUILDER 1
+#PLATFORMER 1
+#DIGGER 1
+#BATTER 1
+#CUBER 3
+#EXPLODER2 0
 
-:geoo/construction/Hatch.H:                       208       160
-:geoo/construction/Hatch.H:                       112       272
-:geoo/construction/Hatch.H:                       208       272
-:geoo/construction/Hatch.H:                       304       272
+:geoo/construction/Hatch.H: 208 80
+:geoo/construction/Hatch.H: 112 192
+:geoo/construction/Hatch.H: 208 192
+:geoo/construction/Hatch.H: 304 192
 
-:geoo/construction/Goal2.G:                       400       152
+:geoo/construction/Goal2.G: 400 72
 
-:geoo/construction/wall/small_64x32:              288       216
-:geoo/construction/wall/small_64x32:              224       216
-:geoo/construction/wall/small_64x32:               96       216
-:geoo/construction/wall/small_64x32:              480       216
-:geoo/construction/wall/small_64x32:              416       216
-:geoo/construction/wall/small_64x32:              352       216
-:geoo/construction/wall/small_64x32:               96       360
-:geoo/construction/wall/small_64x32:              288       360
-:geoo/construction/wall/small_64x32:              224       360
-:geoo/construction/wall/small_64x32:              160       360
-:geoo/construction/wall/small_64x32:              416       360
-:geoo/construction/wall/small_64x32:              352       360
-:geoo/construction/wall/small_64x32:              480       360
-:geoo/construction/pillar_32:                     544       336
-:geoo/construction/pillar_32:                     544       224
-:geoo/construction/pillar_top:                    544       208
-:geoo/construction/wall/small_64x32:              160       216
-:geoo/construction/pillar_bottom:                 544       288
-:geoo/construction/pillar_32:                     544       256
-:geoo/construction/pillar_top:                    544       320
-:geoo/construction/pillar_32:                     544       368
-:geoo/construction/pillar_32:                      64       336
-:geoo/construction/pillar_32:                      64       224
-:geoo/construction/pillar_top:                     64       208
-:geoo/construction/pillar_bottom:                  64       288
-:geoo/construction/pillar_32:                      64       256
-:geoo/construction/pillar_top:                     64       320
-:geoo/construction/pillar_32:                      64       368
-:geoo/construction/wall/big_diag_bd:               32       240
-:geoo/construction/wall/big_diag_tu:                0       368
-:geoo/construction/wall/big_diag_td:              576       336
-:geoo/construction/wall/big_diag_bu:              576       240
-:geoo/construction/wall/big_diag_bu:              608       208
-:geoo/construction/wall/big_diag_bd:                0       208
-:geoo/construction/wall/big_diag_tu:               32       336
-:geoo/construction/wall/big_diag_td:              608       368
-:geoo/construction/wall/big_diag_bd:              256        64
-:geoo/construction/wall/big_diag_bu:              352        64
-:geoo/construction/wall/big_diag_bd:              224        32
-:geoo/construction/wall/big_diag_bd:              192         0
-:geoo/construction/wall/big_diag_bu:              384        32
-:geoo/construction/wall/big_diag_bu:              416         0
-:geoo/construction/wall/big_brick1:               288        64
-:geoo/construction/wall/big_brick2:               256        32
-:geoo/construction/wall/big_brick3:               320        32
-:geoo/construction/wall/big_brick1:               288         0
-:geoo/construction/wall/big_brick3:               224         0
-:geoo/construction/wall/big_brick2:               352         0
-:geoo/construction/pillar_32:                     304        63
-:geoo/construction/pillar_32:                     304        32
-:geoo/construction/pillar_32:                     304         0
-:geoo/construction/pillar_32:                     208        16     rn
-:geoo/construction/pillar_32:                     400        16     rn
-:geoo/construction/pillar_32:                     176        16     rn
-:geoo/construction/pillar_32:                     432        16     rn
-:geoo/construction/wall/big_diag_bd:               16         0
-:geoo/construction/wall/big_diag_bd:               48        32
-:geoo/construction/wall/big_diag_bu:               80        32
-:geoo/construction/wall/big_diag_bu:              112         0
-:geoo/construction/wall/big_brick2:                48         0
-:geoo/construction/wall/big_diag_bd:              496         0
-:geoo/construction/wall/big_diag_bd:              528        32
-:geoo/construction/wall/big_diag_bu:              560        32
-:geoo/construction/wall/big_diag_bu:              592         0
-:geoo/construction/wall/big_brick2:               528         0
-:geoo/construction/pillar_32:                     464        16     rn
-:geoo/construction/pillar_32:                     496        16     rn
-:geoo/construction/pillar_32:                     528        16     rn
-:geoo/construction/pillar_32:                     144        16     rn
-:geoo/construction/pillar_32:                     112        16     rn
-:geoo/construction/pillar_32:                      80        16     rn
-:geoo/construction/wall/big_diag_bd:              288        96
-:geoo/construction/wall/big_diag_bu:              320        96
-:geoo/construction/wall/big_square:                32       208
-:geoo/construction/wall/big_square:               576       208
-:geoo/construction/wall/big_square:               576       368
-:geoo/construction/wall/big_square:                32       368
+:geoo/construction/pillar_32: 368 16 r
+:geoo/construction/pillar_32: 240 16 r
+:geoo/construction/pillar_32: 80 16 r
+:geoo/construction/pillar_32: 112 16 r
+:geoo/construction/pillar_32: 144 16 r
+:geoo/construction/pillar_32: 528 16 r
+:geoo/construction/pillar_32: 496 16 r
+:geoo/construction/pillar_32: 464 16 r
+:geoo/construction/pillar_32: 432 16 r
+:geoo/construction/pillar_32: 176 16 r
+:geoo/construction/pillar_32: 400 16 r
+:geoo/construction/pillar_32: 208 16 r
+:geoo/construction/wall/small_64x32: 288 136
+:geoo/construction/wall/small_64x32: 224 136
+:geoo/construction/wall/small_64x32: 96 136
+:geoo/construction/wall/small_64x32: 480 136
+:geoo/construction/wall/small_64x32: 416 136
+:geoo/construction/wall/small_64x32: 352 136
+:geoo/construction/wall/small_64x32: 96 280
+:geoo/construction/wall/small_64x32: 288 280
+:geoo/construction/wall/small_64x32: 224 280
+:geoo/construction/wall/small_64x32: 160 280
+:geoo/construction/wall/small_64x32: 416 280
+:geoo/construction/wall/small_64x32: 352 280
+:geoo/construction/wall/small_64x32: 480 280
+:geoo/construction/pillar_32: 544 256
+:geoo/construction/pillar_32: 544 144
+:geoo/construction/pillar_top: 544 128
+:geoo/construction/wall/small_64x32: 160 136
+:geoo/construction/pillar_bottom: 544 208
+:geoo/construction/pillar_32: 544 176
+:geoo/construction/pillar_top: 544 240
+:geoo/construction/pillar_32: 544 288
+:geoo/construction/pillar_32: 64 256
+:geoo/construction/pillar_32: 64 144
+:geoo/construction/pillar_top: 64 128
+:geoo/construction/pillar_bottom: 64 208
+:geoo/construction/pillar_32: 64 176
+:geoo/construction/pillar_top: 64 240
+:geoo/construction/pillar_32: 64 288
+:geoo/construction/wall/big_diag_bd: 32 160
+:geoo/construction/wall/big_diag_tu: 0 288
+:geoo/construction/wall/big_diag_td: 576 256
+:geoo/construction/wall/big_diag_bu: 576 160
+:geoo/construction/wall/big_diag_bu: 608 128
+:geoo/construction/wall/big_diag_bd: 0 128
+:geoo/construction/wall/big_diag_tu: 32 256
+:geoo/construction/wall/big_diag_td: 608 288
+:geoo/construction/wall/big_diag_bd: 256 32
+:geoo/construction/wall/big_diag_bu: 352 32
+:geoo/construction/wall/big_diag_bd: 224 0
+:geoo/construction/wall/big_diag_bu: 384 0
+:geoo/construction/wall/big_brick1: 288 32
+:geoo/construction/wall/big_brick2: 256 0
+:geoo/construction/wall/big_brick3: 320 0
+:geoo/construction/pillar_32: 304 31
+:geoo/construction/pillar_32: 304 0
+:geoo/construction/pillar_32: 304 -112
+:geoo/construction/wall/big_diag_bd: 16 0
+:geoo/construction/wall/big_diag_bd: 48 32
+:geoo/construction/wall/big_diag_bu: 80 32
+:geoo/construction/wall/big_diag_bu: 112 0
+:geoo/construction/wall/big_brick2: 48 0
+:geoo/construction/wall/big_diag_bd: 496 0
+:geoo/construction/wall/big_diag_bd: 528 32
+:geoo/construction/wall/big_diag_bu: 560 32
+:geoo/construction/wall/big_diag_bu: 592 0
+:geoo/construction/wall/big_brick2: 528 0
+:geoo/construction/wall/big_diag_bd: 288 64
+:geoo/construction/wall/big_diag_bu: 320 64
+:geoo/construction/wall/big_square: 32 128
+:geoo/construction/wall/big_square: 576 128
+:geoo/construction/wall/big_square: 576 288
+:geoo/construction/wall/big_square: 32 288

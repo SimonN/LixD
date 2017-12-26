@@ -1,15 +1,10 @@
-$BUILT 2013-06-16 20:28:11
+$BUILT 2017-08-25 05:43:50
 $AUTHOR mobius
-$GERMAN 
 $ENGLISH 6 Gaps, 5 Builders
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
-#SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
+#SIZE_Y 320
 
 #INITIAL 1
 #REQUIRED 1
@@ -20,74 +15,65 @@ $ENGLISH 6 Gaps, 5 Builders
 #BUILDER 5
 #BASHER 2
 #DIGGER 2
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#EXPLODER2 0
 
-:simon/hatch001.H: 96 240
+:simon/hatch001.H: 96 160
 
-:simon/tapir/goal.G: 484 288
+:simon/tapir/goal.G: 484 208
 
-:matt/water.W: 176 368
-:matt/water.W: 208 368
-:matt/water.W: 240 368
-:matt/water.W: 272 368
-:matt/water.W: 304 368
-:matt/water.W: 336 368
-:matt/water.W: 368 368
-:matt/water.W: 400 368
-:matt/water.W: 432 368
-:geoo/sandstone/torch.F: 288 176
-:geoo/sandstone/torch.F: 320 176
-:geoo/sandstone/torch.F: 128 176
-:geoo/sandstone/torch.F: 480 176
-:geoo/sandstone/brazier.F: 16 288
-:geoo/sandstone/brazier.F: 592 288
+:matt/water.W: 176 288
+:matt/water.W: 208 288
+:matt/water.W: 240 288
+:matt/water.W: 272 288
+:matt/water.W: 304 288
+:matt/water.W: 336 288
+:matt/water.W: 368 288
+:matt/water.W: 400 288
+:matt/water.W: 432 288
+:geoo/sandstone/torch.F: 288 120
+:geoo/sandstone/torch.F: 320 120
+:geoo/sandstone/torch.F: 128 120
+:geoo/sandstone/torch.F: 480 120
+:geoo/sandstone/brazier.F: 16 208
+:geoo/sandstone/brazier.F: 592 208
 
-:simon/tapir/064h: 64 336
-:simon/tapir/064h: 448 336
-:simon/tapir/128: 64 0
-:simon/tapir/128: 192 0
-:simon/tapir/128: 320 0
-:simon/tapir/128: 448 0
-:geoo/steel/dark_64x64o.S: 384 128
-:geoo/steel/dark_64x64o.S: 384 192
-:geoo/steel/dark_64x64o.S: 192 128
-:geoo/steel/dark_64x64o.S: 192 192
-:simon/tapir/032v: 350 336
-:simon/tapir/032v: 346 336 d
-:simon/tapir/032v: 354 336 n
-:matt/underworld/thinplatform64: 382 336 rrrd
-:matt/underworld/thinplatform64: 384 336 rrrd
-:simon/tapir/032v: 390 336
-:simon/tapir/032v: 386 336 d
-:simon/tapir/032v: 394 336 n
-:matt/underworld/thinplatform64: 422 336 rrrd
-:matt/underworld/thinplatform64: 424 336 rrrd
-:simon/tapir/032v: 308 336
-:simon/tapir/032v: 304 336 d
-:simon/tapir/032v: 312 336 n
-:matt/underworld/thinplatform64: 340 336 rrrd
-:matt/underworld/thinplatform64: 342 336 rrrd
-:simon/tapir/032v: 262 336
-:simon/tapir/032v: 258 336 d
-:simon/tapir/032v: 266 336 n
-:matt/underworld/thinplatform64: 294 336 rrrd
-:matt/underworld/thinplatform64: 296 336 rrrd
-:simon/tapir/032v: 208 336
-:simon/tapir/032v: 204 336 d
-:simon/tapir/032v: 212 336 n
-:matt/underworld/thinplatform64: 240 336 rrrd
-:matt/underworld/thinplatform64: 242 336 rrrd
+:simon/tapir/032v: 212 256
+:simon/tapir/032v: 266 256
+:simon/tapir/032v: 312 256
+:simon/tapir/032v: 394 256
+:simon/tapir/032v: 354 256
+:simon/tapir/064h: 64 256
+:simon/tapir/064h: 448 256
+:simon/tapir/128: 64 -24
+:simon/tapir/128: 192 -24
+:simon/tapir/128: 320 -24
+:simon/tapir/128: 448 -24
+:geoo/steel/dark_64x64o.S: 384 104
+:geoo/steel/dark_64x64o.S: 192 104
+$BEGIN_TILE_GROUP 0
+:simon/tapir/032v: 4 0
+:simon/tapir/032v: 0 0 d
+$END_TILE_GROUP
+:Group-0: 378 256
+:matt/underworld/thinplatform64: 382 256 rrrd
+:matt/underworld/thinplatform64: 384 256 rrrd
+:Group-0: 418 256
+:matt/underworld/thinplatform64: 422 256 rrrd
+:matt/underworld/thinplatform64: 424 256 rrrd
+:Group-0: 336 256
+:matt/underworld/thinplatform64: 340 256 rrrd
+:matt/underworld/thinplatform64: 342 256 rrrd
+:Group-0: 290 256
+:matt/underworld/thinplatform64: 294 256 rrrd
+:matt/underworld/thinplatform64: 296 256 rrrd
+:Group-0: 236 256
+:matt/underworld/thinplatform64: 240 256 rrrd
+:matt/underworld/thinplatform64: 242 256 rrrd
 :geoo/steel/dark_64x64o.S: 0 0
 :geoo/steel/dark_64x64o.S: 576 0
-:simon/tapir/032c: 160 128
-:simon/tapir/032d: 256 128
-:simon/tapir/032d: 448 128
-:simon/tapir/032c: 352 128
-:geoo/steel/dark_64x64o.S: 0 336
-:geoo/steel/dark_64x64o.S: 576 336
+:simon/tapir/032c: 160 104
+:simon/tapir/032d: 256 104
+:simon/tapir/032d: 448 104
+:simon/tapir/032c: 352 104
+:geoo/steel/dark_64x64o.S: 0 256
+:geoo/steel/dark_64x64o.S: 576 256
