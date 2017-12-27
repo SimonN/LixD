@@ -102,9 +102,12 @@ UserOption!int musicDecibels;
 UserOptionFilename singleLastLevel;
 UserOptionFilename networkLastLevel;
 UserOptionFilename replayLastLevel;
-UserOption!int networkLastStyle;
 UserOption!bool replayAutoSolutions;
 UserOption!bool replayAutoMulti;
+
+UserOption!int networkLastStyle;
+UserOption!bool networkPreferCustom;
+UserOption!string networkIpLastUsed;
 
 UserOption!int  editorGridSelected;
 UserOption!int  editorGridCustom;
@@ -248,10 +251,12 @@ static this()
     singleLastLevel = newOpt("SINGLE_LAST_LEVEL", fileSingleplayerFirstLevel);
     networkLastLevel = newOpt("NETWORK_LAST_LEVEL", dirLevelsNetwork);
     replayLastLevel = newOpt("REPLAY_LAST_LEVEL", dirReplays);
-    networkLastStyle = newOpt("NETWORK_LAST_STYLE", Style.red.to!int);
-
     replayAutoSolutions = newOpt("REPLAY_AUTO_SAVE_SOLUTIONS", Lang.optionReplayAutoSolutions, true);
     replayAutoMulti = newOpt("REPLAY_AUTO_SAVE_MULTI", Lang.optionReplayAutoMulti, true);
+
+    networkLastStyle = newOpt("NETWORK_LAST_STYLE", Style.red.to!int);
+    networkPreferCustom = newOpt("NETWORK_PREFER_CUSTOM", Lang.winLobbyStartCustom, false);
+    networkIpLastUsed = newOpt("NETWORK_IP_LAST_USED", Lang.winLobbyStartCustom, "127.0.0.1");
 
     editorLastDirTerrain = newOpt("EDITOR_LAST_DIR_TERRAIN", Lang.addTerrain, dirImages);
     editorLastDirSteel = newOpt("EDITOR_LAST_DIR_STEEL", Lang.addSteel, dirImages);

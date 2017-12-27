@@ -66,7 +66,7 @@ public:
         _console = new LobbyConsole(new Geom(0, 60, xlg-40, 160, From.BOTTOM));
         addChild(_console);
 
-        _connections = new ConnectionPicker(new Geom(0, 40, 300,100,From.TOP));
+        _connections = new ConnectionPicker(new Geom(0, 40, 320,100,From.TOP));
         _connections.onExecute = (string ip) { this.connect(ip); };
         _showWhenDisconnected ~= _connections;
 

@@ -14,8 +14,8 @@ import file.language;
 
 class ConnectionPicker : Element {
 private:
-    TextButton _central;
-    TextButton _custom;
+    RadioButtons _radio;
+    TextButton _connect;
     Texttype _customIP;
 
     void delegate(string ip) _onExecute;
@@ -24,24 +24,49 @@ public:
     this(Geom g)
     {
         super(g);
-        _central = new TextButton(new Geom(0, 0, xlg, 40));
-        _custom = new TextButton( new Geom(0, 60, xlg/2, 20));
-        _customIP = new Texttype( new Geom(xlg/2, 60, xlg/2, 20));
+        _radio = new RadioButtons(new Geom(0, 0, xlg, 40));
+        _connect = new TextButton( new Geom(0, 0, 100, 40, From.BOTTOM));
+        _customIP = new Texttype( new Geom(0, 20, xlg/2, 20, From.TOP_RIGHT));
 
-        _central.text = Lang.winLobbyStartCentral.transl
-                            ~ " " ~ ipCentralServer;
-        _custom.text = Lang.winLobbyStartClient.transl;
-        _customIP.text = ipLastUsed;
-        _central.hotkey = keyMenuMainNetwork;
-        _custom.hotkey = keyMenuMainSingle;
-        _central.onExecute = () { _onExecute && _onExecute(ipCentralServer); };
-        _custom.onExecute = () {
-            ipLastUsed = _customIP.text.strip;
-            _onExecute && _onExecute(ipLastUsed);
+        _customIP.allowScrolling = true;
+        _customIP.text = networkIpLastUsed.strip;
+        _customIP.onEnter = () { connectToCustomIP(); };
+
+        _radio.addChoice(Lang.winLobbyStartCentral.transl
+                            ~ " (" ~ ipCentralServer ~ ")");
+        _radio.addChoice(Lang.winLobbyStartCustom.transl);
+        _radio.onExecute = (int chosen) {
+            _customIP.shown = _customIP.on = (chosen == 1);
         };
-        addChildren(_central, _custom, _customIP);
+        _radio.choose(networkPreferCustom.value ? 1 : 0);
+
+        _connect.text = Lang.winLobbyStartConnect.transl;
+        _connect.hotkey = keyMenuMainNetwork;
+        _connect.onExecute = () {
+            if (! _onExecute)
+                return;
+            else if (_radio.chosen == 0) {
+                networkPreferCustom.value = false;
+                _onExecute(ipCentralServer);
+            }
+            else
+                connectToCustomIP();
+        };
+        addChildren(_radio, _connect, _customIP);
     }
 
     @property void onExecute(typeof(_onExecute) f) { _onExecute = f; }
+
+private:
+    void connectToCustomIP()
+    {
+        if (_customIP.text.strip.empty) {
+            _customIP.on = true;
+            return;
+        }
+        networkPreferCustom.value = true;
+        networkIpLastUsed = _customIP.text.strip;
+        _onExecute(networkIpLastUsed);
+    }
 }
 

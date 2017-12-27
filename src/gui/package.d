@@ -19,6 +19,7 @@ public import gui.label;
 public import gui.labeltwo;
 public import gui.msgbox;
 public import gui.numpick;
+public import gui.radio;
 public import gui.richcli;
 public import gui.root;
 public import gui.skillico;

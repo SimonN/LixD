@@ -67,10 +67,9 @@ $winLobbyTitle               Network Game
 $winLobbyTitleLobby          Lobby
 $winLobbyTitleRoom           Room #
 $winLobbyDisconnect          Disconnect
-$winLobbyUnstableCentral     (Experimental version. Please don't use central server.)
-$winLobbyStartCentral        Connect to
-$winLobbyStartServer         Host a game yourself
-$winLobbyStartClient         Connect to:
+$winLobbyStartCentral        Central server
+$winLobbyStartCustom         Custom address:
+$winLobbyStartConnect        Connect
 $winLobbyChat                Chat:
 $winLobbySelectLevel         Choose level
 $winLobbyReady               Ready to start

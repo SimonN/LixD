@@ -15,7 +15,6 @@ import file.log;
 private enum defaultIpCentralServer = "lixgame.com";
 
 string userName          = "";
-string ipLastUsed        = "127.0.0.1";
 string ipCentralServer   = defaultIpCentralServer;
 int    serverPort        = 22934;
 
@@ -33,7 +32,6 @@ void load()
     }
     foreach (i; lines) {
         if      (i.text1 == cfgUserName       ) userName         = i.text2;
-        else if (i.text1 == cfgIPLastUsed     ) ipLastUsed       = i.text2;
         else if (i.text1 == cfgIPCentralServer) ipCentralServer  = i.text2;
         else if (i.text1 == cfgServerPort     ) serverPort       = i.nr1;
     }
@@ -53,7 +51,6 @@ void save()
 
         f.writeln(IoLine.Dollar(cfgUserName,        userName));
         f.writeln();
-        f.writeln(IoLine.Dollar(cfgIPLastUsed,      ipLastUsed));
         f.writeln(IoLine.Dollar(cfgIPCentralServer, ipCentralServer));
         f.writeln(IoLine.Hash  (cfgServerPort,      serverPort));
         f.close();
