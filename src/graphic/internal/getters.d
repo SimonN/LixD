@@ -37,8 +37,10 @@ body {
 // See comment near graphic.internal.vars.internal about how we save strings
 Cutbit getInternalMutable(in Filename fn)
 {
-    if (! wantRecoloredGraphics)
+    if (! wantRecoloredGraphics) {
+        assert (nullCutbit, "call graphic.internal.initialize() first");
         return nullCutbit;
+    }
     auto correctScale  = new VfsFilename(scaleDir ~ fn.file ~ imgExt);
     auto fallbackScale = new VfsFilename(fn.rootless ~ imgExt);
     if (auto ret = correctScale.rootlessNoExt in internal)

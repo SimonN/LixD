@@ -11,6 +11,7 @@ import file.language;
 import file.filename;
 import game.mask;
 import graphic.color;
+import graphic.internal;
 import hardware.keyboard;
 import hardware.mouse;
 import hardware.sound;
@@ -29,11 +30,19 @@ static import file.log;
 
 void initialize(in Cmdargs cmdargs)
 {
+    initializeNoninteractive(cmdargs.mode); // common to interactive and nonint
+    if (cmdargs.mode == Runmode.INTERACTIVE)
+        // This initializes tiles and many other things.
+        changeResolutionBasedOnCmdargsThenUserFile(cmdargs);
+}
+
+void initializeNoninteractive(Runmode mode)
+{
     // ph == need physics, may or may not need graphics.
     // gr == need graphics, may or may not need physics.
-    immutable ia = cmdargs.mode == Runmode.INTERACTIVE;
-    immutable ph = cmdargs.mode == Runmode.VERIFY || ia;
-    immutable gr = cmdargs.mode == Runmode.EXPORT_IMAGES || ia;
+    immutable ia = mode == Runmode.INTERACTIVE;
+    immutable ph = mode == Runmode.VERIFY || ia;
+    immutable gr = mode == Runmode.EXPORT_IMAGES || ia;
 
     if (ia) basics.alleg5.initializeInteractive();
     else    basics.alleg5.initializeNoninteractive();
@@ -55,23 +64,19 @@ void initialize(in Cmdargs cmdargs)
             graphic.color.initialize();
     if (ph) game.mask.initialize();
 
-    if (ia) changeResolutionBasedOnCmdargsThenUserFile(cmdargs); // inits tiles
-    else    tile.tilelib.initialize(); // we need these in any case
+    if (! ia) {
+        // We need tiles and some graphics in any case
+        tile.tilelib.initialize();
+        graphic.internal.initialize(mode);
+    }
 }
 
 /*
  * See also the resolution functions in basics.resol.
  * They initialize and deinitialize several other modules.
  */
-
 void deinitialize()
 {
-    // We don't deinitialize much. It should be okay to leak at end of
-    // application on any modern OS, it makes for faster exiting.
-    hardware.tharsis.deinitialize();
-    basics.user.save();
-    basics.globconf.save();
-
     // If we don't abort music, Linux Lix crashes on exit.
     // Several places lead into basics.init.deinitialize: Clicking the X
     // in the windowmanager-window's corner, pressing Shift+ESC, exiting
@@ -80,4 +85,17 @@ void deinitialize()
     // Maybe I should register deinitialize by atexit or install signal
     // handlers?
     hardware.music.deinitialize();
+
+    // We don't deinitialize much. It should be okay to leak at end of
+    // application on any modern OS, it makes for faster exiting.
+    hardware.tharsis.deinitialize();
+    basics.user.save();
+    basics.globconf.save();
+}
+
+void deinitializeAfterUnittest()
+{
+    tile.tilelib.deinitialize();
+    graphic.internal.deinitialize();
+    hardware.tharsis.deinitialize();
 }

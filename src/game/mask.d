@@ -17,7 +17,11 @@ const(Mask)[TerrainDeletion.Type] masks; // DTODO: should be const to outsiders
 
 void initialize() { with (TerrainDeletion.Type)
 {
-    assert (! masks.length, "game.mask.initialize is called twice.");
+    if (masks.length > 0)
+        // This doesn't depend on anything, doens't allocate VRAM or anything,
+        // it merely allocates RAM. Thus, this needs no deinit.
+        return;
+
     Mask[TerrainDeletion.Type] mutableMasks;
     scope (success)
         masks = mutableMasks;

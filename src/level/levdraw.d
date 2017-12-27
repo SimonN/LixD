@@ -128,20 +128,28 @@ body {
         // the gadgets.
         tempLand.clearToColor(color.transp);
         level.terrain.each!drawOccurrence;
-        // Torus icon in the top-left corner of the level
-        import graphic.internal;
-        getInternal(fileImagePreviewIcon).draw(Point(0, 0),
-            level.topology.torusX + 2 * level.topology.torusY, 1);
+
         drawToImg();
     }
 
-    // Draw UI near the bottom
+    // Draw UI
     {
         import gui;
         gui.forceUnscaledGUIDrawing = true;
         scope (exit)
             gui.forceUnscaledGUIDrawing = false;
 
+        // Torus icon in the top-left corner of the level
+        {
+            import graphic.internal;
+            import std.exception;
+            auto icon = getInternal(fileImagePreviewIcon);
+            enforce(icon, "we need internal graphics to render levels");
+            with (level.topology)
+                icon.draw(Point(0, 0), torusX + 2 * torusY, 1);
+        }
+
+        // Draw UI near bottom of the level
         img.drawFilledRectangle(Rect(0, tp.yl, img.xl, extraYl), color.guiM);
         import basics.user : skillSort;
         import file.language;
@@ -169,4 +177,39 @@ body {
 
     // Done rendering the image.
     img.saveToFile(fnToSaveImage);
+}
+
+// Testing the level drawing is expensive and relies on a lot of modules
+// getting initialized. Doesn't matter. Noninteractive level dump is important
+// and should work.
+unittest {
+    import basics.init;
+    import basics.cmdargs;
+
+    al_run_allegro({
+        initializeNoninteractive(Runmode.EXPORT_IMAGES);
+        scope (exit)
+            deinitializeAfterUnittest();
+
+        Filename lvFn = new VfsFilename(dirLevelsSingle.rootless
+            ~ "lemforum/Lovely/anyway.txt");
+        Level l = new Level(lvFn);
+        assert (l.nonempty, "Test level `" ~ lvFn.rootless
+            ~ "' isn't found or is empty.");
+        assert (l.good, "Level `" ~ l.name ~ "' couldn't be loaded properly "
+            ~ " to test image export. Is the tile library initialized?");
+
+        Filename imgFn = Level.exportImageFilename(lvFn);
+        imgFn.deleteFile();
+        l.exportImageTo(imgFn);
+        assert (imgFn.fileExists, "`" ~ l.name ~ "' wasn't exported to `"
+            ~ imgFn.rootless ~ "'.");
+
+        import std.file;
+        import std.conv;
+        assert (std.file.getSize(imgFn.stringzForReading.to!string) > 100_000,
+            "`" ~ l.name ~ "' is a large level, it should produce a large"
+            ~ " image file `" ~ imgFn.rootless ~ "`', but hasn't.");
+        return 0;
+    });
 }
