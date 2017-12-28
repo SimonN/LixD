@@ -27,13 +27,21 @@ class Basher : Job {
     override void perform()
     {
         advanceFrame();
-        switch (frame) {
-            case  7: performSwing();   break;
-            case 10: continueOrStop(); break;
-            case 11: ..
-            case 15: moveAhead();      break; // "..15" is inclusive! 5 cases!
-            default: break;
+        if (frame == 7) {
+            performSwing();
         }
+        else if (frame == 10 && (steelWasHit || nothingMoreToBash)) {
+            if (steelWasHit)
+                turn();
+            become(Ac.walker);
+            return;
+        }
+        else if (frame >= 11 && frame < 16) {
+            // This happens on 5 frames.
+            moveAhead();
+        }
+        // If we're walker/faller, we'll have returned from perform() already.
+        // This can return again, but that's fine, no code after this.
         stopIfMovedDownTooFar();
     }
 
@@ -85,20 +93,11 @@ private:
         }
     }
 
-    void continueOrStop()
-    {
-        if (steelWasHit) {
-            turn();
-            become(Ac.walker);
-        }
-        else if (nothingMoreToBash)
-            become(Ac.walker);
-    }
-
     void stopIfMovedDownTooFar()
     {
         immutable stepSize = () {
-            assert (halfPixelsMovedDown < halfPixelsToFall);
+            assert (this is lixxie.job, "memory corruption");
+            assert (halfPixelsMovedDown < halfPixelsToFall, "bad math?");
             for (int y; 2*y < halfPixelsToFall - halfPixelsMovedDown; ++y)
                 if (lixxie.isSolid(0, 2 + y))
                     return y;
