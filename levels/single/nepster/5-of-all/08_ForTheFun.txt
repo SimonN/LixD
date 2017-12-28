@@ -6,7 +6,6 @@ $ENGLISH For the Fun of it!
 #SIZE_X 1280
 #SIZE_Y 400
 
-#SECONDS 0
 #INITIAL 30
 #REQUIRED 20
 #SPAWN_INTERVAL 30
@@ -30,8 +29,6 @@ $ENGLISH For the Fun of it!
 :amanda/forest/hatch.H: 864 34
 
 :amanda/forest/exit_tent.G: 642 240
-
-:amanda/forest/lantern.D: 664 322
 
 :matt/10tons.T: 518 120
 :matt/10tons.T: 807 120

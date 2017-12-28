@@ -5,13 +5,10 @@ $ENGLISH Sand in your eyes
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 850
-#START_X 0
-#START_Y 0
 #BACKGROUND_RED 64
 #BACKGROUND_GREEN 96
 #BACKGROUND_BLUE 255
 
-#SECONDS 195
 #INITIAL 50
 #REQUIRED 50
 #SPAWN_INTERVAL 4
@@ -32,8 +29,7 @@ $ENGLISH Sand in your eyes
 :matt/beach/goal.G: 462 760
 :geoo/abstract/goal.G: 112 736
 
-:matt/beach/decor/sun.D: 554 -21
-
+:matt/beach/decor/sun: 554 -21
 :matt/beach/decor/grass04: 228 63
 :matt/beach/decor/grass04: 43 557
 :matt/beach/decor/grass03: 601 623 f

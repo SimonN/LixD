@@ -1,38 +1,29 @@
 $BUILT 2014-02-27 22:57:41
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH Run Forrest!
-$HINT_ENGLISH Wasn't Forrest a guy?  
+
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1300
 #SIZE_Y 1940
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 660
-#START_Y 1100
 #BACKGROUND_RED 0
 #BACKGROUND_GREEN 116
 #BACKGROUND_BLUE 192
 
-#SECONDS 450
 #INITIAL 1
 #REQUIRED 1
 #SPAWN_INTERVAL 53
-#SPAWN_INTERVAL_FAST 4
 
 #WALKER 4
-#JUMPER 50
+#RUNNER 1
 #CLIMBER 1
 #FLOATER 1
-#RUNNER 1
 #BUILDER 3
 #PLATFORMER 3
 #BASHER 20
 #MINER 1
 #DIGGER 2
-#NOTHING 0
-#NOTHING 0
-
-:matt/goldmine/minecart.D: 275 1413
+#JUMPER 50
+#EXPLODER2 0
 
 :matt/underworld/Hatch.H: 1232 1600 r
 
@@ -61,6 +52,7 @@ $HINT_ENGLISH Wasn't Forrest a guy?
 :geoo/construction/sawblade.F: 976 96
 :geoo/construction/sawblade.F: 976 128
 
+:matt/goldmine/minecart: 275 1413
 :matt/earth/07: 166 1001
 :matt/earth/09: 136 1058 f
 :matt/earth/07: 19 1059 f

@@ -1,36 +1,21 @@
 $BUILT 2014-02-28 16:49:31
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH feLIX Baumgartner saves the day!
-$HINT_ENGLISH Whos is felix Baumgartner?... Better google it 
+
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 2000
-#TORUS_X 0
-#TORUS_Y 0
 #BACKGROUND_RED 0
 #BACKGROUND_GREEN 48
 #BACKGROUND_BLUE 159
 
-#SECONDS 0
 #INITIAL 2
 #REQUIRED 2
 #SPAWN_INTERVAL 32
-#SPAWN_INTERVAL_FAST 4
 
 #FLOATER 1
 #PLATFORMER 1
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-
-:matt/beach/decor/moon.D: 560 16
+#EXPLODER2 0
 
 :geoo/abstract/hatch.H: 158 114 r
 :geoo/abstract/hatch.H: 608 832 r
@@ -45,6 +30,7 @@ $HINT_ENGLISH Whos is felix Baumgartner?... Better google it
 :simon/water.W: 48 1952
 :simon/water.W: 400 1952
 
+:matt/beach/decor/moon: 560 16
 :matt/earth/07: 40 1954
 :matt/earth/13: 560 1808
 :matt/earth/13: 576 1792

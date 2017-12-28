@@ -68,7 +68,6 @@ struct ResolvedTile {
     const(TerrainTile) terrain;
     const(GadgetTile) gadget;
     const(TileGroup) group;
-    const(bool) weRemovedThisTileThereforeDontRaiseErrors;
 
     @property const(AbstractTile) tile() const
     {
@@ -84,16 +83,9 @@ ResolvedTile resolveTileName(in string name)
         return ResolvedTile(ter, null, null);
     else if (auto gad = get_tile!(GadgetTile, gadgets)(name))
         return ResolvedTile(null, gad, null);
-    else if (name == "")
-        // If _silentReplacements decides to replace a string with "", then
-        // that means that we removed a tile from the project, but don't want
-        // the levels to fail that used that tile.
-        return ResolvedTile(null, null, null, true);
-    else if (auto replaced = name in _silentReplacements)
-        // This is recursive, but _silentReplacements's entries are
-        // designed such that we recurse at most once here.
-        return resolveTileName(*replaced);
-    return ResolvedTile();
+    else
+        // This should be interpreted as a missing tile
+        return ResolvedTile();
 }
 
 ResolvedTile resolveTileName(Filename fn)
@@ -138,22 +130,6 @@ GadgetTile [string] gadgets;
 TileGroup[TileGroupKey] groups;
 Rebindable!(const Filename)[string] queue;
 bool[string] _loggedMissingImages;
-
-// In September 2016, 0.6.17, I removed the no-effect decoration. I sed'd the
-// levels that ship with the game, they don't feature no-effect decoration
-// since. Backwards-compat replacement for levels that I don't maintain:
-enum string[string] _silentReplacements = [
-    "amanda/forest/lantern.D" : "", // Replace with "" means don't add a tile,
-    "amanda/forest/exit_decal.D" : "", // but don't raise an error either.
-    "matt/beach/decor/bonfire.D" : "matt/beach/decor/bonfire.F",
-    "matt/beach/decor/moon.D" : "matt/beach/decor/moon",
-    "matt/beach/decor/sun.D" : "matt/beach/decor/sun",
-    "matt/goldmine/GoalTop.D" : "",
-    "matt/goldmine/minecart.D" : "matt/goldmine/minecart",
-    "matt/goldmine/pickaxe.D" : "matt/goldmine/pickaxe",
-    "matt/goldmine/shovel.D" : "matt/goldmine/shovel",
-    "simon/rabbit.D" : "",
-];
 
 private const(T) get_tile(T : AbstractTile, alias container)(in string str)
 {

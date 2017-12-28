@@ -63,8 +63,7 @@ Occurrence addFromLine(
         return newpos;
     }
     else {
-        if (! resolvedTile.weRemovedThisTileThereforeDontRaiseErrors)
-            level._status = LevelStatus.BAD_IMAGE;
+        level._status = LevelStatus.BAD_IMAGE;
         return null;
     }
 }
@@ -89,7 +88,6 @@ ResolvedTile resolveTileName(
             }
         }
     // Neither the lib nor the level has resolved this tile name.
-    if (! resolvedByLib.weRemovedThisTileThereforeDontRaiseErrors)
-        logMissingImage(name);
+    logMissingImage(name);
     return resolvedByLib;
 }

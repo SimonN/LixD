@@ -2,15 +2,10 @@ $BUILT 2016-09-08 10:29:41
 $AUTHOR Rubix
 $ENGLISH Alone
 
-$HINT_ENGLISH Its just a walk in the park..
-
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1120
 #SIZE_Y 400
-#START_X 0
-#START_Y 380
 
-#SECONDS 130
 #INITIAL 1
 #REQUIRED 1
 #SPAWN_INTERVAL 53
@@ -30,9 +25,9 @@ $HINT_ENGLISH Its just a walk in the park..
 
 :matt/beach/goal.G: 1043 314
 
-:matt/beach/decor/bonfire.D: 1006 345
-:matt/beach/decor/moon.D: 370 8
+:matt/beach/decor/bonfire.F: 1006 345
 
+:matt/beach/decor/moon: 370 8
 :matt/beach/decor/shovel: 111 41 rr
 :matt/beach/decor/grass08: 792 -39
 :matt/beach/decor/grass08: 655 -15

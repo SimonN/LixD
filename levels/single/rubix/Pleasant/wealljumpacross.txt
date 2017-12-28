@@ -1,38 +1,20 @@
 $BUILT 2014-06-04 10:20:34
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH We all jump across
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 500
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 0
-#START_Y 80
 #BACKGROUND_RED 0
 #BACKGROUND_GREEN 64
 #BACKGROUND_BLUE 224
 
-#SECONDS 0
 #INITIAL 36
 #REQUIRED 36
 #SPAWN_INTERVAL 4
-#SPAWN_INTERVAL_FAST 4
 
 #JUMPER 72
-#FLOATER 0
 #EXPLODER 0
-#BLOCKER 0
-#BUILDER 0
-#BASHER 0
-#MINER 0
-#DIGGER 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-
-:matt/beach/decor/sun.D: 589 -31
 
 :matt/beach/Hatch.H: 20 222 r
 :matt/beach/Hatch.H: 20 222 r
@@ -100,6 +82,7 @@ $ENGLISH We all jump across
 :matt/water.W: -16 480
 :matt/water.W: 16 480
 
+:matt/beach/decor/sun: 589 -31
 :matt/beach/decor/grass02: -4 405
 :matt/beach/decor/grass02: -44 392
 :matt/beach/decor/grass02: 457 218

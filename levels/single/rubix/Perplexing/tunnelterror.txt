@@ -1,45 +1,31 @@
 $BUILT 2012-08-25 08:38:32
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH Tunnel terror
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1440
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 0
-#START_Y 380
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
-#SECONDS 0
 #INITIAL 99
 #REQUIRED 84
 #SPAWN_INTERVAL 53
-#SPAWN_INTERVAL_FAST 4
 
 #CLIMBER 1
-#JUMPER 1
 #FLOATER 1
 #BLOCKER 1
 #BUILDER 7
 #PLATFORMER 1
 #BASHER 3
 #MINER 1
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-
-:matt/goldmine/GoalTop.D: 1392 -32
-:matt/goldmine/minecart.D: 1136 339
+#JUMPER 1
+#EXPLODER2 0
 
 :matt/goldmine/Hatch.H: -16 308
 :matt/goldmine/Hatch.H: 608 -32
 
 :matt/goldmine/Goal.G: 1392 16
 
+:matt/goldmine/minecart: 1136 339
 :matt/goldmine/crate16: 832 0
 :matt/goldmine/10: -17 38
 :matt/goldmine/04: 224 -36

@@ -1,36 +1,24 @@
 $BUILT 2013-11-22 18:38:56
 $AUTHOR Clam
-$GERMAN 
 $ENGLISH Abridged Inversion
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 816
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 0
-#START_Y 420
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
-#SECONDS 0
 #INITIAL 40
 #REQUIRED 20
 #SPAWN_INTERVAL 45
-#SPAWN_INTERVAL_FAST 4
 
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 #BUILDER 25
 #PLATFORMER 25
 #BASHER 25
 #MINER 25
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0 
+#EXPLODER2 0
+
+:simon/oriental/hatch.H: 22 720
+
+:simon/oriental/goal.G: 554 56
 
 $BEGIN_TILE_GROUP 0
 :simon/oriental/bridge1: 0 22
@@ -38,19 +26,7 @@ $BEGIN_TILE_GROUP 0
 :simon/oriental/bridge1: 0 69 rr
 :simon/oriental/bridge1: 44 47 rr
 $END_TILE_GROUP
-$BEGIN_TILE_GROUP 1
-:simon/oriental/bridge2: 0 0
-:simon/oriental/bridge2: 41 0
-:simon/oriental/bridge2: 0 49 rr
-:simon/oriental/bridge2: 41 49 rr
-$END_TILE_GROUP
-:simon/oriental/hatch.H: 22 720
-
-:simon/oriental/goal.G: 554 56
-
-:
 :Group-0: 106 319
-
 :Group-0: 213 258
 :Group-0: 320 197
 :Group-0: 427 136
@@ -74,6 +50,12 @@ $END_TILE_GROUP
 :geoo/steel/16x16o.S: 151 589
 :geoo/steel/16x16o.S: 258 528
 :geoo/steel/16x16o.S: 364 467
+$BEGIN_TILE_GROUP 1
+:simon/oriental/bridge2: 0 0
+:simon/oriental/bridge2: 41 0
+:simon/oriental/bridge2: 0 49 rr
+:simon/oriental/bridge2: 41 49 rr
+$END_TILE_GROUP
 :Group-1: 534 136
 :Group-1: 534 234
 :Group-1: 534 332

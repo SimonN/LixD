@@ -5,8 +5,6 @@ $ENGLISH Its the race against riches
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1160
 #SIZE_Y 400
-#START_X 40
-#START_Y 380
 
 #INITIAL 40
 #REQUIRED 38
@@ -21,8 +19,6 @@ $ENGLISH Its the race against riches
 :matt/goldmine/Hatch.H: 8 276
 
 :matt/goldmine/Goal.G: 1088 112
-
-:matt/goldmine/GoalTop.D: 1088 64
 
 :matt/goldmine/08: 460 376 r
 :matt/goldmine/09: 924 56

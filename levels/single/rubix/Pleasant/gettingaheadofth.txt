@@ -1,38 +1,22 @@
 $BUILT 2014-06-04 10:13:42
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH Getting ahead of the game
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 2820
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 1600
-#START_Y 220
 #BACKGROUND_RED 0
 #BACKGROUND_GREEN 137
 #BACKGROUND_BLUE 255
 
-#SECONDS 0
 #INITIAL 99
 #REQUIRED 89
 #SPAWN_INTERVAL 4
-#SPAWN_INTERVAL_FAST 4
 
-#JUMPER 40
 #FLOATER 1
 #BUILDER 4
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-
-:matt/beach/decor/sun.D: 2579 18
+#JUMPER 40
+#EXPLODER2 0
 
 :matt/beach/Hatch.H: 96 50
 
@@ -49,6 +33,7 @@ $ENGLISH Getting ahead of the game
 :matt/water.W: 2544 368
 :matt/water.W: 2576 368
 
+:matt/beach/decor/sun: 2579 18
 :matt/beach/decor/pail: 2078 231
 :matt/beach/daytime/06: 1914 169 r
 :matt/beach/daytime/06: 1911 92 r

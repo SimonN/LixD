@@ -6,7 +6,6 @@ $ENGLISH Dunes
 #SIZE_X 960
 #SIZE_Y 400
 
-#SECONDS 0
 #INITIAL 20
 #REQUIRED 20
 #SPAWN_INTERVAL 40
@@ -24,8 +23,7 @@ $ENGLISH Dunes
 
 :matt/beach/goal.G: 451 211
 
-:matt/beach/decor/sun.D: 144 0
-
+:matt/beach/decor/sun: 144 0
 :matt/beach/decor/beach ball: 897 309
 :matt/beach/daytime/06: 462 266 r
 :matt/beach/daytime/06: 156 334 rr

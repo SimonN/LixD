@@ -1,21 +1,17 @@
 $BUILT 2015-08-07 07:29:17
 $AUTHOR Clam
-$GERMAN 
 $ENGLISH Bucket List
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 896
-#TORUS_X 0
-#TORUS_Y 0
 #BACKGROUND_RED 128
 #BACKGROUND_GREEN 128
 #BACKGROUND_BLUE 255
 
-#SECONDS 0
 #INITIAL 40
 #REQUIRED 20
 #SPAWN_INTERVAL 45
-#SPAWN_INTERVAL_FAST 4
 
 #WALKER 10
 #RUNNER 10
@@ -32,8 +28,6 @@ $ENGLISH Bucket List
 #BATTER 10
 #CUBER 10
 
-:matt/beach/decor/sun.D: 32 8
-
 :matt/beach/Hatch.H: 208 24
 
 :matt/beach/goal.G: 272 808
@@ -45,6 +39,7 @@ $ENGLISH Bucket List
 :matt/water.W: 48 864
 :matt/water.W: 560 864
 
+:matt/beach/decor/sun: 32 8
 :matt/beach/daytime/03: 400 160 f
 :matt/beach/decor/shovel: 272 80
 :matt/beach/daytime/03: 302 160 f

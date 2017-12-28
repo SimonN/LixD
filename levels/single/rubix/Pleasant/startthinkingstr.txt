@@ -1,27 +1,16 @@
 $BUILT 2012-04-24 20:02:46
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH Start thinking strategically
-$HINT_ENGLISH Think outside the box!
-$HINT_ENGLISH Is there really enough time to go through all those obstacles??
+
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1000
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 0
-#START_Y 380
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
-#SECONDS 150
 #INITIAL 80
 #REQUIRED 79
 #SPAWN_INTERVAL 4
-#SPAWN_INTERVAL_FAST 4
 
 #CLIMBER 1
-#JUMPER 1
 #EXPLODER 2
 #BLOCKER 2
 #BUILDER 10
@@ -29,19 +18,15 @@ $HINT_ENGLISH Is there really enough time to go through all those obstacles??
 #BASHER 15
 #MINER 2
 #DIGGER 2
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-
-:matt/goldmine/minecart.D: 372 325
-:matt/goldmine/minecart.D: 663 257
-:matt/goldmine/GoalTop.D: 938 206
-:matt/goldmine/shovel.D: 396 311
+#JUMPER 1
 
 :matt/goldmine/Hatch.H: 0 256
 
 :matt/goldmine/Goal.G: 938 252
 
+:matt/goldmine/minecart: 372 325
+:matt/goldmine/minecart: 663 257
+:matt/goldmine/shovel: 396 311
 :matt/goldmine/07: 208 333
 :matt/goldmine/04: 118 309 r
 :matt/goldmine/07: 52 315

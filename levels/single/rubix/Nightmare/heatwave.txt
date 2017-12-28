@@ -5,13 +5,10 @@ $ENGLISH Heat Wave
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1520
 #SIZE_Y 680
-#START_X 160
-#START_Y 0
 #BACKGROUND_RED 48
 #BACKGROUND_GREEN 147
 #BACKGROUND_BLUE 255
 
-#SECONDS 170
 #INITIAL 99
 #REQUIRED 98
 #SPAWN_INTERVAL 26
@@ -28,8 +25,6 @@ $ENGLISH Heat Wave
 
 :matt/beach/goal.G: 14 544
 :geoo/abstract/goal.G: 1082 202
-
-:matt/beach/decor/sun.D: 707 12
 
 :matt/water.W: 240 640
 :matt/water.W: 208 640
@@ -80,6 +75,7 @@ $ENGLISH Heat Wave
 :matt/water.W: 960 656
 :matt/water.W: 928 656
 
+:matt/beach/decor/sun: 707 12
 :matt/beach/daytime/04: 1196 -82 r
 :matt/beach/daytime/06: 576 256
 :matt/beach/daytime/06: 560 272 d

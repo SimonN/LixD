@@ -1,29 +1,22 @@
 $BUILT 2014-10-11 12:09:42
 $AUTHOR Clam
-$GERMAN 
 $ENGLISH Canyon Canon
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 0
-#START_Y 0
 #BACKGROUND_RED 128
 #BACKGROUND_GREEN 128
 #BACKGROUND_BLUE 224
 
-#SECONDS 0
 #INITIAL 40
 #REQUIRED 20
 #SPAWN_INTERVAL 45
-#SPAWN_INTERVAL_FAST 4
 
+#WALKER 10
+#RUNNER 10
 #CLIMBER 10
 #FLOATER 10
-#RUNNER 10
-#WALKER 10
-#JUMPER 10
 #EXPLODER2 10
 #BLOCKER 10
 #BUILDER 10
@@ -31,8 +24,7 @@ $ENGLISH Canyon Canon
 #BASHER 10
 #MINER 10
 #DIGGER 10
-
-:matt/beach/decor/sun.D: 48 -16
+#JUMPER 10
 
 :geoo/sandstone/Hatch.H: 144 16
 
@@ -43,6 +35,7 @@ $ENGLISH Canyon Canon
 :matt/water.W: 320 376
 :matt/water.W: 352 376
 
+:matt/beach/decor/sun: 48 -16
 :geoo/sandstone/ebony/h16r: 300 88
 :geoo/sandstone/ebony/h16a: 268 88
 :geoo/sandstone/ebony/h16b: 236 88

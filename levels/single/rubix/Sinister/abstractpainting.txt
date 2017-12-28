@@ -2,15 +2,10 @@ $BUILT 2016-09-11 08:26:49
 $AUTHOR Rubix
 $ENGLISH Abstract painting at the beach
 
-$HINT_ENGLISH Theres only 1 place that can make any possible sense to mine... obviously!
-
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#START_X 0
-#START_Y 0
 
-#SECONDS 96
 #INITIAL 50
 #REQUIRED 50
 #SPAWN_INTERVAL 4
@@ -29,10 +24,9 @@ $HINT_ENGLISH Theres only 1 place that can make any possible sense to mine... ob
 
 :matt/beach/goal.G: 486 176
 
-:matt/beach/decor/moon.D: 542 38
-
 :amanda/forest/frog.T: 112 288
 
+:matt/beach/decor/moon: 542 38
 :matt/beach/decor/grass08: 444 -27
 :matt/beach/nighttime/06: 390 -37 r
 :matt/beach/decor/grass08: 222 160

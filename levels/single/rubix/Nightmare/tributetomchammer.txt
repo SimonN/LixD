@@ -5,8 +5,6 @@ $ENGLISH Tribute to M.C Hammer
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 690
 #SIZE_Y 400
-#START_X 30
-#START_Y 380
 #BACKGROUND_RED 80
 #BACKGROUND_GREEN 16
 #BACKGROUND_BLUE 208
@@ -29,8 +27,6 @@ $ENGLISH Tribute to M.C Hammer
 :matt/goldmine/Hatch.H: 64 304
 
 :matt/goldmine/Goal.G: 560 304
-
-:matt/goldmine/GoalTop.D: 560 256
 
 :matt/goldmine/crate16: 348 216
 :matt/goldmine/crate16: 316 200

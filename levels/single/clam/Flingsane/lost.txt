@@ -1,29 +1,21 @@
 $BUILT 2015-08-24 07:17:10
 $AUTHOR Clam
-$GERMAN 
 $ENGLISH Lost?
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 0
-#START_Y 0
 #BACKGROUND_RED 96
 #BACKGROUND_GREEN 128
 #BACKGROUND_BLUE 255
 
-#SECONDS 0
 #INITIAL 10
 #REQUIRED 5
 #SPAWN_INTERVAL 28
-#SPAWN_INTERVAL_FAST 4
 
 #WALKER 5
 #EXPLODER2 5
 #BLOCKER 5
-
-:matt/beach/decor/sun.D: 560 96
 
 :matt/beach/Hatch.H: 32 32
 
@@ -36,6 +28,7 @@ $ENGLISH Lost?
 :matt/water.W: 192 368
 :matt/water.W: 208 368
 
+:matt/beach/decor/sun: 560 96
 :matt/beach/decor/umbrella_red: 542 266
 :matt/beach/decor/grass04: 182 134
 :matt/beach/daytime/15: 133 214

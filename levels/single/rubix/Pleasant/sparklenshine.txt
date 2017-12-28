@@ -1,41 +1,27 @@
 $BUILT 2015-08-28 09:18:33
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH Sparkle N Shine
 
-$HINT_ENGLISH Start pre-thinking a puzzle.  Look at your skills, especially the builder/platformer amounts, then how many skills can be used to digging. 
-$HINT_ENGLISH Now take a good look at the high terrain and then think about what pieces DEFINITELY would have to be tunneled through to be successful.  Tips like this will help you become a great puzzle solver in time.
-$HINT_ENGLISH As you can see the last 2 big pieces of terrain have a massive drop-off.  Without a doubt, you MUST lower yourself, thus both terrain removal abilities are only used here.  Then the rest of the puzzle can become evident. 
-
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1600
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 0
-#START_Y 380
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
-#SECONDS 0
 #INITIAL 40
 #REQUIRED 39
 #SPAWN_INTERVAL 16
-#SPAWN_INTERVAL_FAST 4
 
 #BUILDER 7
 #PLATFORMER 1
 #BASHER 1
 #MINER 1
 #CUBER 1
-
-:matt/goldmine/GoalTop.D: 1530 271
-:matt/goldmine/minecart.D: 1578 316
+#EXPLODER2 0
 
 :matt/goldmine/Hatch.H: 46 276
 
 :matt/goldmine/Goal.G: 1530 319
 
+:matt/goldmine/minecart: 1578 316
 :matt/goldmine/06: 176 0
 :matt/goldmine/08: 334 217
 :matt/goldmine/09: 360 314 frr

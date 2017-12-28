@@ -1,38 +1,19 @@
 $BUILT 2015-06-01 13:12:25
 $AUTHOR Clam
-$GERMAN 
 $ENGLISH Works on so many levels...
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 0
-#START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
-#SECONDS 0
 #INITIAL 60
 #REQUIRED 50
 #SPAWN_INTERVAL 50
-#SPAWN_INTERVAL_FAST 4
 
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 #EXPLODER 5
 #BLOCKER 3
 #BUILDER 12
 #DIGGER 12
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-
-:matt/goldmine/GoalTop.D: 544 -16
 
 :matt/goldmine/Hatch.H: 32 32
 :matt/goldmine/Hatch.H: 32 232
@@ -62,6 +43,8 @@ $ENGLISH Works on so many levels...
 :geoo/construction/Laseremit_hzr_16.F: 592 316
 :geoo/construction/Laseremit_hzr_16.F: 592 356
 
+:matt/goldmine/plank: 224 80
+:matt/goldmine/plank: 224 280
 :matt/goldmine/plank: 32 80
 :geoo/steel/dark_32x32o.S: 0 80
 :geoo/steel/dark_32x32o.S: 0 112
@@ -90,14 +73,14 @@ $ENGLISH Works on so many levels...
 :geoo/steel/dark_32x32o.S: 608 176
 :geoo/steel/dark_32x32o.S: 608 208
 :geoo/steel/dark_32x32o.S: 608 240
-:matt/goldmine/plank: 288 280
-:matt/goldmine/plank: 320 280 d
-:matt/goldmine/plank: 224 280 n
+$BEGIN_TILE_GROUP 0
+:matt/goldmine/plank: 0 0
+:matt/goldmine/plank: 32 0 d
+$END_TILE_GROUP
+:Group-0: 288 280
 :matt/goldmine/plank: 160 280
 :matt/goldmine/plank: 352 280
-:matt/goldmine/plank: 288 80
-:matt/goldmine/plank: 320 80 d
-:matt/goldmine/plank: 224 80 n
+:Group-0: 288 80
 :matt/goldmine/plank: 352 80
 :matt/goldmine/plank: 160 80
 :geoo/steel/dark_32x32o.S: 0 272

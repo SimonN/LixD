@@ -1,38 +1,20 @@
 $BUILT 2014-06-08 16:03:19
 $AUTHOR Clam
-$GERMAN 
 $ENGLISH Things can only get Batter
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 0
-#START_Y 0
 #BACKGROUND_RED 0
 #BACKGROUND_GREEN 48
 #BACKGROUND_BLUE 0
 
-#SECONDS 0
 #INITIAL 10
 #REQUIRED 10
 #SPAWN_INTERVAL 50
-#SPAWN_INTERVAL_FAST 4
 
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 #BATTER 20
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-
-:matt/goldmine/GoalTop.D: 12 208
+#EXPLODER2 0
 
 :matt/goldmine/Hatch.H: 108 176
 
@@ -40,6 +22,7 @@ $ENGLISH Things can only get Batter
 
 :geoo/construction/sawblade_small.F: 608 248
 
+:matt/goldmine/plank: 210 240
 :matt/goldmine/plank: 584 304
 :proxima/tile/spheres/gold: 456 0
 :geoo/construction/stairs_rd_32.S: 488 64 fr
@@ -74,7 +57,13 @@ $ENGLISH Things can only get Batter
 :matt/goldmine/plankdiag: 185 208
 :matt/goldmine/crate16: 216 208 d
 :matt/goldmine/plank: 0 312
-:matt/goldmine/plankdiag: 178 240
+$BEGIN_TILE_GROUP 0
+:matt/goldmine/plankdiag: 16 0
+:matt/goldmine/plankdiag: 0 16
+:matt/goldmine/plankdiag: 10 16 d
+:matt/goldmine/plankdiag: 26 0 d
+$END_TILE_GROUP
+:Group-0: 162 240
 :matt/goldmine/plankdiag2: 186 288
 :matt/goldmine/plankdiag: 608 264
 :matt/goldmine/plankdiag: 598 288
@@ -84,9 +73,6 @@ $ENGLISH Things can only get Batter
 :matt/goldmine/plankdiag: 50 288
 :matt/goldmine/plankdiag: 64 288
 :matt/goldmine/plankdiag2: 50 208
-:matt/goldmine/plankdiag: 162 256
-:matt/goldmine/plankdiag: 172 256 d
-:matt/goldmine/plankdiag: 188 240 d
 :matt/goldmine/plankdiag: 296 224
 :matt/goldmine/plankdiag: 614 272
 :matt/marble/12: 65 224 d
@@ -99,7 +85,6 @@ $ENGLISH Things can only get Batter
 :matt/marble/04: 94 208 d
 :matt/marble/13: 78 208 d
 :matt/marble/04: 126 208 d
-:matt/goldmine/plank: 210 240 n
 :matt/marble/10: 311 240 d
 :matt/goldmine/crate16: 327 240 d
 :matt/marble/001: 576 208 d
