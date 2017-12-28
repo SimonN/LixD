@@ -333,7 +333,10 @@ enum Lang {
     optionReplayAfterFrameBack, optionReplayAfterFrameBackDesc,
     optionUnpauseOnAssign, optionUnpauseOnAssignDesc,
 
-    optionScreenWindowed, optionScreenWindowedDesc,
+    optionScreenMode, optionScreenModeDesc,
+    optionScreenWindowed,
+    optionScreenSoftwareFullscreen,
+    optionScreenHardwareFullscreen,
     optionScreenWindowedRes, optionScreenWindowedResDesc,
     optionPaintTorusSeams, optionPaintTorusSeamsDesc,
     optionIngameTooltips, optionIngameTooltipsDesc,

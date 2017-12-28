@@ -82,9 +82,9 @@ public:
         _defaultValue = aValue;
         _value        = aValue;
     }
-    @property T defaultValue() const { return _defaultValue;   }
-    @property T value()        const { return _value;          }
-    @property T value(T aValue)      { return _value = aValue; }
+    @property T defaultValue() const nothrow { return _defaultValue;   }
+    @property T value()        const nothrow { return _value;          }
+    @property T value(T aValue)      nothrow { return _value = aValue; }
 
     alias value this;
 
@@ -174,9 +174,9 @@ public:
         _defaultValue = aValue;
         _value        = aValue;
     }
-    @property Filename defaultValue() const   { return _defaultValue;   }
-    @property Filename value()        const   { return _value;          }
-    @property Filename value(Filename fn)
+    @property Filename defaultValue() const nothrow { return _defaultValue; }
+    @property Filename value()        const nothrow { return _value;        }
+    @property Filename value(Filename fn) nothrow
     {
         _value = fn;
         return fn;

@@ -311,8 +311,11 @@ $optionMusicEnabledDesc Musik einschalten.
 $optionSoundDecibelsDesc Tonlautstärke anpassen. 0 ist schon recht laut.|Erhöhe/senke um 10 dB, um die Tonlautstärke zu verdoppeln/halbieren.
 $optionMusicDecibelsDesc Musiklautstärke anpassen. −10 dB sollte laut genug sein.|Erhöhe/senke um 10 dB, um die Musiklautstärke zu verdoppeln/halbieren.
 
-$optionScreenWindowed           Fenster statt Vollbild
-$optionScreenWindowedRes        Fenster-Auflösung
+$optionScreenMode               Bildschirmmodus
+$optionScreenWindowed           Fenstermodus
+$optionScreenSoftwareFullscreen Software-Vollbild
+$optionScreenHardwareFullscreen Hardware-Vollbild
+$optionScreenWindowedRes        Fenster-/Hardware-Auflösung
 $optionPaintTorusSeams          Torus-Nahtstellen anmalen
 $optionIngameTooltips           Tooltips im Spiel
 $optionShowButtonHotkeys        Button-Hotkeys anzeigen
@@ -321,8 +324,8 @@ $optionGuiColorRed              Menüfarbe Rot
 $optionGuiColorGreen            Menüfarbe Grün
 $optionGuiColorBlue             Menüfarbe Blau
 
-$optionScreenWindowedDesc Lix im Fenstermodus spielen mit wählbarer Auflösung.|Ohne Haken: Lix im Vollbildmodus spielen.
-$optionScreenWindowedResDesc Größe des Lix-Fensters im Fenstermodus.|Dies hat keine Auswirkung auf den Vollbildmodus.
+$optionScreenModeDesc Fenstermodus und Software-Vollbild erlauben gutes Alt+Tab.|Fenstermodus und Hardware-Vollbild benutzen die Auflösung rechts.
+$optionScreenWindowedResDesc Größe des Lix-Fensters im Fenstermodus.|Monitor-Auflösung im Hardware-Vollbild. Software-Vollbild ignoriert dies.
 $optionPaintTorusSeamsDesc Torus-Nahtstellen in der Landschaft mit einer dünnen Linie kennzeichnen.|Dies hat keine Auswirkung auf die Physik; es dient zur Orientierung.
 $optionIngameTooltipsDesc Buttons und Lix-wählende Hotkeys im Spiel erklären, z.B. nur Linksläufer.|Einige Buttons haben eine Linksklick- und eine Rechtsklick-Funktion.
 $optionShowButtonHotkeysDesc Auf jedem Button die Hotkeys des Buttons in der rechten unteren Ecke anzeigen.

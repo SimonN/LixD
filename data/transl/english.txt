@@ -323,8 +323,11 @@ $optionMusicEnabledDesc Enable background music.
 $optionSoundDecibelsDesc Adjust the sound volume. 0 is already pretty loud.|Raise/lower by 10 dB to double/halve the sound volume.
 $optionMusicDecibelsDesc Adjust the music volume. −10 dB should be loud enough.|Raise/lower by 10 dB to double/halve the music volume.
 
-$optionScreenWindowed           Windowed (no fullscreen)
-$optionScreenWindowedRes        Windowed resolution
+$optionScreenMode               Screen mode
+$optionScreenWindowed           Windowed
+$optionScreenSoftwareFullscreen Software fullscreen
+$optionScreenHardwareFullscreen Hardware fullscreen
+$optionScreenWindowedRes        Windowed/hardware resolution
 $optionPaintTorusSeams          Paint torus seams
 $optionIngameTooltips           Tooltips during game
 $optionShowButtonHotkeys        Show button hotkeys
@@ -333,8 +336,8 @@ $optionGuiColorRed              Menu color red
 $optionGuiColorGreen            Menu color green
 $optionGuiColorBlue             Menu color blue
 
-$optionScreenWindowedDesc Play Lix in a window. You can choose the window's size.|If not checked, Lix runs in fullscreen mode.
-$optionScreenWindowedResDesc Size of the Lix window when you have chosen windowed mode.|This has no effect in fullscreen mode.
+$optionScreenModeDesc Windowed and software fullscreen allow for good Alt+Tab.|Windowed and hardware fullscreen use the resolution on the right.
+$optionScreenWindowedResDesc Size of the Lix window when you have chosen windowed mode.|Monitor resolution for hardware fullscreen. Software fullscreen ignores this.
 $optionPaintTorusSeamsDesc Mark the wrapping seam with a thin line whenever a level wraps around.|This doesn't affect game physics, but may improve your orientation.
 $optionIngameTooltipsDesc Explain buttons and lix-selecting hotkeys during play, e.g., to select left-facing lix.|Some buttons have two functions: One on left-click, one on right-click.
 $optionShowButtonHotkeysDesc On every button, print the button's hotkeys in the bottom-right-hand corner.

@@ -57,18 +57,29 @@ private auto newOpt(T)(string fileKey, T defaultVal)
     return fileLanguage.value == basics.globals.fileLanguageEnglish;
 }
 
+enum ScreenMode {
+    windowed = 0,
+    softwareFullscreen = 1,
+    hardwareFullscreen = 2,
+}
+
 struct DisplayTryMode {
-    bool full;
+    ScreenMode mode;
     int x, y;
 }
 
-@property DisplayTryMode displayTryMode()
+@property DisplayTryMode displayTryMode() nothrow
 {
-    DisplayTryMode ret;
-    ret.full = screenWindowed is null ? false : ! screenWindowed.value;
-    ret.x = (screenWindowedX is null || ret.full) ? 0 : screenWindowedX.value;
-    ret.y = (screenWindowedY is null || ret.full) ? 0 : screenWindowedY.value;
-    return ret;
+    if (screenMode !is null
+        && screenMode.value != ScreenMode.softwareFullscreen
+        && screenWindowedX !is null && screenWindowedY !is null
+    ) {
+        try return DisplayTryMode(screenMode.value.to!ScreenMode,
+            screenWindowedX.value, screenWindowedY.value);
+        catch (Exception)
+            screenMode.value = ScreenMode.softwareFullscreen;
+    }
+    return DisplayTryMode(ScreenMode.softwareFullscreen, 0, 0);
 }
 
 UserOptionFilename fileLanguage;
@@ -83,7 +94,7 @@ UserOption!bool avoidBatterToExploder;
 UserOption!bool replayAfterFrameBack;
 UserOption!bool unpauseOnAssign;
 
-UserOption!bool screenWindowed;
+UserOption!int screenMode;
 UserOption!int screenWindowedX;
 UserOption!int screenWindowedY;
 UserOption!bool paintTorusSeams;
@@ -232,7 +243,7 @@ static this()
     replayAfterFrameBack = newOpt("REPLAY_AFTER_FRAME_BACK", Lang.optionReplayAfterFrameBack, true);
     unpauseOnAssign = newOpt("UNPAUSE_ON_ASSIGN", Lang.optionUnpauseOnAssign, false);
 
-    screenWindowed = newOpt("SCREEN_WINDOWED", Lang.optionScreenWindowed, false);
+    screenMode = newOpt("SCREEN_MODE", Lang.optionScreenMode, ScreenMode.softwareFullscreen.to!int);
     screenWindowedX = newOpt("SCREEN_WINDOWED_X", Lang.optionScreenWindowedRes, 640);
     screenWindowedY = newOpt("SCREEN_WINDOWED_Y", 480);
     paintTorusSeams = newOpt("PAINT_TORUS_SEAMS", Lang.optionPaintTorusSeams, true);
@@ -510,10 +521,18 @@ void load()
         }
         else if (auto opt = i.text1 in _optvecLoad)
             opt.set(i);
+
         // Backwards compatibility: Before 0.6.2, I had hacked in two hotkeys
         // for pause that saved to different variables. Load this other var.
         else if (i.nr1 != 0 && i.text1 == "KEY_PAUSE2")
             keyPause.value = KeySet(keyPause.value, KeySet(i.nr1));
+        // Backwards compatibility: Before 0.9.7, I had a boolean for windowed
+        // mode (0 = software fullscreen, 1 = windowed), but now I have a
+        // three-valued int option (0 = windowed, 1 = software fullscreen,
+        // 2 = hardware fullscreen).
+        else if (i.text1 == "SCREEN_WINDOWED")
+            screenMode.value = i.nr1 == 1 ? ScreenMode.windowed
+                                          : ScreenMode.softwareFullscreen;
     }
 }
 

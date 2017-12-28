@@ -48,7 +48,8 @@ private bool weHaveAReasonToChange()
 {
     if (! display)
         return true;
-    if (displayTryMode.full && currentMode.full)
+    if (displayTryMode.mode == ScreenMode.softwareFullscreen
+        && currentMode.mode == ScreenMode.softwareFullscreen)
         return false;
     return displayTryMode != currentMode;
 }

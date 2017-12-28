@@ -238,9 +238,12 @@ void populateGraphics()
         groups[OptionGroup.graphics] = grp;
     auto fac = facLeft();
     grp ~= [
-        fac.factory!BoolOption(screenWindowed),
+        fac.factory!RadioButtonsOption(screenMode,
+            Lang.optionScreenWindowed.transl,
+            Lang.optionScreenSoftwareFullscreen.transl,
+            Lang.optionScreenHardwareFullscreen.transl),
     ];
-    fac.y += fac.incrementY;
+    fac.y += fac.incrementY + 40; // 40 = 20+20 for the 2 extra radio buttons
     grp ~= [
         fac.factory!BoolOption(paintTorusSeams),
         fac.factory!BoolOption(showButtonHotkeys),

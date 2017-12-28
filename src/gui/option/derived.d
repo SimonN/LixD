@@ -1,5 +1,6 @@
 module gui.option.derived;
 
+import std.algorithm;
 import std.conv;
 import std.string; // strip
 
@@ -183,6 +184,32 @@ class NumPickOption : Option
     @property bool execute() const { return _num.execute;    }
     override void loadValue() { _num.number = _userOption.value; }
     override void saveValue() { _userOption.value = _num.number; }
+    override string explain() const { return _userOption.descLong; }
+}
+
+
+
+class RadioButtonsOption : Option {
+private:
+    RadioButtons _radio;
+    UserOption!int _userOption;
+
+public:
+    this(Geom g, UserOption!int target, string[] choices...)
+    in { assert (choices.length >= 1); }
+    body {
+        _radio = new RadioButtons(new Geom(0, 0, g.xl, g.yl));
+        choices[].each!(ch => _radio.addChoice(ch));
+
+        // super(..., null) means no label. The RadioButtons have labels.
+        g.yl = _radio.ylg;
+        super(g, null);
+        _userOption = target;
+        addChild(_radio);
+    }
+
+    override void loadValue() { _radio.choose(_userOption.value); }
+    override void saveValue() { _userOption.value = _radio.chosen; }
     override string explain() const { return _userOption.descLong; }
 }
 
