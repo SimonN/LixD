@@ -34,7 +34,6 @@ void changeResolutionBasedOnCmdargsThenUserFile(const(Cmdargs) cmdargs)
     graphic.internal.initialize(cmdargs.mode);
     graphic.internal.initializeScale(gui.stretchFactor);
     game.physdraw.initialize();
-    tile.tilelib.initialize();
     hardware.mousecur.initialize();
 }
 

@@ -66,7 +66,6 @@ void initializeNoninteractive(Runmode mode)
 
     if (! ia) {
         // We need tiles and some graphics in any case
-        tile.tilelib.initialize();
         graphic.internal.initialize(mode);
     }
 }

@@ -45,8 +45,7 @@ immutable:
 
     final bool hasImageExtension() nothrow
     {
-        return [ ".png", ".bmp", ".tga", ".pcx",
-                 ".PNG", ".BMP", ".TGA", ".PCX" ].find(extension) != null;
+        return imageExtensions.find(extension) != null;
     }
 
     // Search files in a directory, with or without recursion through subdirs.
@@ -95,6 +94,9 @@ bool fnLessThan(Filename lhs, Filename rhs)
     // If we get here, one string is an initial segment of the other.
     return lhs.rootless.length < rhs.rootless.length;
 }
+
+static immutable imageExtensions = [ ".png", ".bmp", ".tga", ".pcx",
+                                     ".PNG", ".BMP", ".TGA", ".PCX" ];
 
 package pure bool hasEnding(in string fn, in string ending)
 {

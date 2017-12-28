@@ -68,26 +68,25 @@ Occurrence addFromLine(
     }
 }
 
+// Might return ResolvedTile(null, null, null) if tile doesn't exist.
+// The tile library is responsible for any logging, we won't log.
 ResolvedTile resolveTileName(
     const(TileGroupKey[string]) groupsRead,
     in string name,
 ) {
-    auto resolvedByLib = tile.tilelib.resolveTileName(name);
-    if (resolvedByLib.tile !is null)
-        return resolvedByLib;
-    // The level has more knowledge than the tile lib:
-    // If the lib doesn't know the tile, resolve the name as a group.
+    // The level knows about groupsRead, the tile lib doesn't.
     if (name.length >= glo.levelUseGroup.length)
         if (auto group = name[glo.levelUseGroup.length .. $] in groupsRead) {
             try {
                 return ResolvedTile(null, null, getGroup(*group));
             }
             catch (TileGroup.InvisibleException) {
-                logMissingImage(name ~ " has no visible pixels");
-                return resolvedByLib;
+                logf(name ~ " has no visible pixels");
+                return ResolvedTile(); // tile not found
             }
         }
-    // Neither the lib nor the level has resolved this tile name.
-    logMissingImage(name);
-    return resolvedByLib;
+    // This name doesn't refer to a group. Let the lib resolve this, as normal.
+    // The lib is guaranteed to be called only with names it can understand
+    // (not "Group-1") and the lib can thus log any encountered error.
+    return tile.tilelib.resolveTileName(name);
 }

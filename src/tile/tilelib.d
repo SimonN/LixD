@@ -22,31 +22,8 @@ import tile.terrain;
 
 public:
 
-void initialize()
-{
-    version (tharsisprofiling)
-        auto zone = Zone(profiler, "tilelib.init");
-    immutable string imgdir = glo.dirImages.dirRootless;
-    MutFilename[] files;
-    {
-        version (tharsisprofiling)
-            auto zone2 = Zone(profiler, "tilelib.init find recursively");
-        files = glo.dirImages.findTree;
-    }
-    foreach (fn; files) {
-        if (! fn.hasImageExtension()) continue;
-        string rootless = fn.rootlessNoExt;
-        // fill the queue will all files on the disk, but chop off the
-        // "images/" prefix before using the path as the tile's name
-        if (imgdir.length <= rootless.length
-            && rootless[0 .. imgdir.length] == imgdir
-        ) {
-            rootless = rootless[imgdir.length .. $];
-        }
-        queue[rootless] = fn;
-    }
-}
-
+// There is no initialize(). Choose a screen mode, then start loading tiles.
+// deinitialize() clears all VRAM, allowing you to select a new screen mode.
 void deinitialize()
 {
     void destroyArray(T)(ref T arr)
@@ -59,7 +36,6 @@ void deinitialize()
     destroyArray(terrain);
     destroyArray(gadgets);
     destroyArray(groups);
-    queue = null;
     _loggedMissingImages = null;
 }
 
@@ -77,15 +53,18 @@ struct ResolvedTile {
 
 // For most tiles, their name is the filename without "images/", without
 // extension, but with pre-extension in case the filename has one
+// This doesn't resolve groups because tilelib doesn't know about group
+// names, it merely knows about group keys, see getGroup().
 ResolvedTile resolveTileName(in string name)
 {
-    if (auto ter = get_tile!(TerrainTile, terrain)(name))
-        return ResolvedTile(ter, null, null);
-    else if (auto gad = get_tile!(GadgetTile, gadgets)(name))
-        return ResolvedTile(null, gad, null);
-    else
-        // This should be interpreted as a missing tile
+    if (auto ptr = name in terrain)
+        return ResolvedTile(*ptr, null, null);
+    else if (auto ptr = name in gadgets)
+        return ResolvedTile(null, *ptr, null);
+    else if (name in _loggedMissingImages)
         return ResolvedTile();
+    loadTileFromDisk(name);
+    return resolveTileName(name);
 }
 
 ResolvedTile resolveTileName(Filename fn)
@@ -109,18 +88,6 @@ body {
     return groups[key] = new TileGroup(key);
 }
 
-// Called from the level loading function. The level may resolve tile names
-// that the tile library cannot resolve, because they're groups that are only
-// known to the level during level-load time. Therefore, when the lib can't
-// resolve an image, the lib doesn't yet log anything. The level may, later.
-void logMissingImage(in string key)
-{
-    if (key in _loggedMissingImages)
-        return;
-    _loggedMissingImages[key] = true;
-    logf("Missing image: `%s'", key);
-}
-
 // ############################################################################
 
 private:
@@ -128,36 +95,35 @@ private:
 TerrainTile[string] terrain;
 GadgetTile [string] gadgets;
 TileGroup[TileGroupKey] groups;
-Rebindable!(const Filename)[string] queue;
 bool[string] _loggedMissingImages;
 
-private const(T) get_tile(T : AbstractTile, alias container)(in string str)
+void loadTileFromDisk(in string name)
 {
-    // This function has a lot of returns along its way. Successfully found
-    // objects are always returned directly. If the object isn't found in time,
-    // the function may recurse.
-
-    // Return tile from already loaded image file.
-    auto tile_ptr = (str in container);
-    if (tile_ptr) return *tile_ptr;
-
-    // Seek object name in the prefetch queue. If it's there, load and return.
-    auto to_load_ptr = (str in queue);
-    if (to_load_ptr) {
-        load_tile_from_disk(str, *to_load_ptr);
-        queue.remove(str);
-        return get_tile!(T, container)(str);
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "tilelib loadTileFromDisk");
+    Filename fn = nameToFoundFileOrNull(name);
+    if (! fn) {
+        logBadTile!"Tile missing"(name);
+        return;
     }
-    return null;
+    immutable pe = fn.preExtension;
+    if (pe == 0 || pe == glo.preExtSteel)
+        loadTerrainFromDisk(name, pe, fn);
+    else
+        loadGadgetFromDisk(name, pe, fn);
 }
 
-void load_tile_from_disk(in string strNoExt, in Filename fn)
+Filename nameToFoundFileOrNull(in string name)
 {
-    auto pe = fn.preExtension;
-    if (pe == 0 || pe == glo.preExtSteel)
-        loadTerrainFromDisk(strNoExt, pe == glo.preExtSteel, fn);
-    else
-        loadGadgetFromDisk(strNoExt, pe, fn);
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "tilelib nameToFilename");
+    static assert (imageExtensions[0] == ".png", "png should be most common");
+    foreach (ext; imageExtensions) {
+        auto fn = new VfsFilename(glo.dirImages.dirRootless ~ name ~ ext);
+        if (fn.fileExists)
+            return fn;
+    }
+    return null;
 }
 
 void loadGadgetFromDisk(in string strNoExt, in char pe, in Filename fn)
@@ -170,13 +136,13 @@ void loadGadgetFromDisk(in string strNoExt, in char pe, in Filename fn)
     else if (pe == glo.preExtWater) { type = GadType.WATER; }
     else if (pe == glo.preExtFire)  { type = GadType.WATER; subtype = true; }
     else {
-        logf("Unrecognized pre-extension `%c': `%s'", pe, fn.rootless);
+        logBadTile!"Unknown pre-extension"(strNoExt);
         return;
     }
 
     Cutbit cb = new Cutbit(fn, Cutbit.Cut.ifGridExists);
     if (! cb.valid) {
-        cb.logBecauseInvalid(fn);
+        logBadTile!"Canvas too large"(strNoExt);
         return;
     }
     gadgets[strNoExt] = GadgetTile.takeOverCutbit(strNoExt, cb, type, subtype);
@@ -194,20 +160,21 @@ void loadGadgetFromDisk(in string strNoExt, in char pe, in Filename fn)
     tile.logAnyErrors(strNoExt);
 }
 
-void loadTerrainFromDisk(in string strNoExt, in bool steel, in Filename fn)
+void loadTerrainFromDisk(in string strNoExt, in char pe, in Filename fn)
 {
     Cutbit cb = new Cutbit(fn, Cutbit.Cut.no);
     if (! cb.valid) {
-        cb.logBecauseInvalid(fn);
+        logBadTile!"Canvas too large"(strNoExt);
         return;
     }
-    terrain[strNoExt] = TerrainTile.takeOverCutbit(strNoExt, cb, steel);
+    terrain[strNoExt] = TerrainTile
+        .takeOverCutbit(strNoExt, cb, pe == glo.preExtSteel);
 }
 
-void logBecauseInvalid(const(Cutbit) cb, in Filename fn)
+void logBadTile(string reason)(in string name)
 {
-    assert (! cb.valid);
-    logf("Image has too large proportions: `%s'", fn.rootless);
-    log ("    -> See bug report: https://github.com/SimonN/LixD/issues/4");
+    if (name in _loggedMissingImages)
+        return;
+    _loggedMissingImages[name] = true;
+    logf("%s: `%s'", reason, name);
 }
-
