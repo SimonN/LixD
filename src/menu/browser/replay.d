@@ -8,6 +8,7 @@ module menu.browser.replay;
  * See comment at that method.
  */
 
+import basics.globals : dirLevels;
 import basics.user;
 import file.filename;
 import file.language;
@@ -25,6 +26,7 @@ class BrowserReplay : BrowserCalledFromMainMenu {
 private:
     ReplayToLevelMatcher _matcher; // may be null if no replay previewed
 
+    LabelTwo _labelPointedTo;
     TextButton _buttonPlayWithPointedTo;
     TextButton _buttonVerify;
     mixin DeleteMixin deleteMixin;
@@ -45,11 +47,14 @@ public:
             return b;
         }
         // DTODOLANG: caption these two buttons, even if they're hacks
+        _labelPointedTo = new LabelTwo(new Geom(infoX, infoY + 20f,
+            infoXl, 20), "\u27F6"); // unicode long arrow right
         _buttonPlayWithPointedTo = newInfo(1, 100, "pointedTo", keyMenuEdit);
         _buttonVerify = newInfo(1, 60, "Verify Dir", KeySet());
 
         _delete  = newInfo(0, 20, Lang.browserDelete.transl, keyMenuDelete);
-        addChildren(_buttonPlayWithPointedTo, _buttonVerify, _delete);
+        addChildren(_labelPointedTo,
+            _buttonPlayWithPointedTo, _buttonVerify, _delete);
     }
 
     // Override method with assert(false): Violates fundamental OO principles.
@@ -66,6 +71,7 @@ protected:
         assert (_delete);
         if (fn is null) {
             _matcher = null;
+            _labelPointedTo.hide();
             _buttonPlayWithPointedTo.hide();
             _delete.hide();
         }
@@ -73,7 +79,18 @@ protected:
             _matcher = new ReplayToLevelMatcher(fn);
             _delete.show();
             _buttonPlayWithPointedTo.shown = _matcher.pointedToIsGood;
-            // _extract.shown = _included.nonempty; -- _extract not yet impl
+            if (_matcher.pointedToFilename.rootless.length
+                > dirLevels.rootless.length
+            ) {
+                // We show this even if the level is bad. It's probably
+                // most important then
+                _labelPointedTo.show();
+                _labelPointedTo.value = _matcher.pointedToFilename.rootless[
+                    dirLevels.rootless.length .. $];
+            }
+            else {
+                _labelPointedTo.hide();
+            }
         }
         previewLevel(_matcher ? _matcher.preferredLevel : null);
     }
