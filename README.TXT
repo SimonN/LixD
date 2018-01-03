@@ -24,7 +24,9 @@ Build instructions
     Install dub, the D package handler: http://code.dlang.org/download
     Install the Allegro 5.2 runtime library.
     Install the enet 1.3 runtime library.
-    $ dub -b release
+    $ dub build -b release
+    Extract in Lix's directory: http://www.lixgame.com/dow/lix-music.zip
+    $ bin/lix
 
 Detailed instructions: `./doc/build/windows.txt' or `./doc/build/linux.txt'.
 Linux package maintainers, please see `./doc/build/package.txt'.

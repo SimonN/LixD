@@ -22,6 +22,7 @@ Build Lix with:
 
 Please update when I bump minor version, to support netplay. Many thanks! <3
 For a desktop icon, `data/images/lix_logo.svg' might be handy.
+For music, extract in read-only dir: http://www.lixgame.com/dow/lix-music.zip
 
 
 
@@ -86,7 +87,20 @@ reference compiler DMD.
 
 
 
-5. Minor version increments (y in x.y.z)
+5. Music
+--------
+
+Lix has music, but the music is not in version control. I encourage you to
+ship the music inside your package. To get the music, download:
+
+    http://www.lixgame.com/dow/lix-music.zip
+
+If you extract this in Lix's directory, you'll get a subdirectory `./music/'.
+This subdirectory `./music/' should be installed to the read-only directory.
+
+
+
+6. Minor version increments (y in x.y.z)
 ----------------------------------------
 
 The networking game server rejects connection attempts from different minor

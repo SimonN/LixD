@@ -92,12 +92,25 @@ might want to build a release version for better performance:
 
 
 
+Add music
+---------
+
+Lix has music, but the music is not in version control. I encourage you to
+add the music for a more complete experience. To get the music, download:
+
+    http://www.lixgame.com/dow/lix-music.zip
+
+Extract this into Lix's directory, you'll get a subdirectory `./music/'.
+
+
+
 Get help
 --------
 
 If you run into any kind of roadblock, don't be shy and ask:
 
-IRC channel: irc.quakenet.org #lix
-Email Simon: eiderdaus@gmail.com
-Lix website: http://www.lixgame.com
-Forum:       https://www.lemmingsforums.net -- we have a Lix board
+    Web:    http://www.lixgame.com
+    Issues: https://github.com/SimonN/LixD/issues
+    E-Mail: s.naarmann@gmail.com
+    IRC:    irc.quakenet.org #lix, I'm SimonN or SimonNa
+    Forums: lemmingsforums.net, I'm Simon
