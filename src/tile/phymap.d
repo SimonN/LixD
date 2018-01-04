@@ -256,7 +256,11 @@ private:
 
     Phybitset getAt(in Point p) const    { return lt[p.y * xl + p.x]; }
     void  addAt(in Point p, Phybitset n) { lt[p.y * xl + p.x] |= n;   }
-    void  rmAt (in Point p, Phybitset n) { lt[p.y * xl + p.x] &= ~n;  }
+    void  rmAt (in Point p, Phybitset n)
+    {
+        static assert (Phybitset.sizeof == 2);
+        lt[p.y * xl + p.x] &= ~ cast(int) n;
+    }
 
     bool inside(in Point p) const
     {
@@ -267,3 +271,14 @@ private:
 }
 
 private alias allZero = all!(nr => nr == 0);
+
+unittest {
+    import std.conv : to;
+    immutable Phybitset a = to!Phybitset(0x7F00);
+    immutable Phybitset b = to!Phybitset(0x0400);
+    immutable Phybitset difference = to!Phybitset(0x7B00);
+    Phymap phymap = new Phymap(2, 2);
+    phymap.add(Point(1, 1), a);
+    phymap.rm (Point(1, 1), b);
+    assert (phymap.get(Point(1, 1)) == difference);
+}

@@ -155,7 +155,10 @@ public:
         return _elements;
     }
 
-    bool opEquals(ref const typeof(this) rhs) const @safe pure nothrow
+    // dmd 2.078: This opEquals should be declared @safe nothrow pure,
+    // but the compiler doesn't like that and wouldn't consider TileGroupKey
+    // a possible AA key type then.
+    bool opEquals(ref const typeof(this) rhs) const
     {
         return rhs._elements == this._elements;
     }
