@@ -13,7 +13,6 @@ import level.level;
 
 class LevelMetaData {
 public:
-    FileFormat format;
     Date       built;
     int        initial;
     int        required;
@@ -24,11 +23,8 @@ public:
     this(in Filename fn) // throws onwards any caught exception
     {
         try {
-            format = getFileFormat(fn);
             MutableDate tmp;
-            if      (format == FileFormat.LIX)     metadata_lix    (fn, tmp);
-            else if (format == FileFormat.BINARY)  metadata_binary (fn, tmp);
-            else if (format == FileFormat.LEMMINI) metadata_lemmini(fn, tmp);
+            readFile(fn, tmp);
             built = tmp;
         }
         catch (Exception e) {
@@ -40,30 +36,19 @@ public:
         }
     }
 
-    @property string name() const
+    @property string name() const nothrow @nogc
     {
         // DTODO, see comment in like-named function in level.level
         return nameEnglish == "" ? nameGerman : nameEnglish;
     }
 
-    @property bool empty() const
+    @property bool empty() const nothrow @nogc
     {
         return initial == 0 && nameEnglish == "";
     }
 
-package:
-    static FileFormat getFileFormat(in Filename fn)
-    {
-        if (! fn || ! fn.fileExists)
-            return FileFormat.NOTHING;
-        // DTODO: Implement the remaining function from C++/A4 Lix that opens
-        // a file in binary mode. Implement L1 loader functions.
-        // Consider taking not Filename, but an already opened (ref std.File)!
-        else return FileFormat.LIX;
-    }
-
 private:
-    void metadata_lix(in Filename fn, out MutableDate builtTemp)
+    void readFile(in Filename fn, out MutableDate builtTemp)
     {
         IoLine[] lines = fillVectorFromFile(fn);
         foreach (i; lines) {
@@ -79,20 +64,5 @@ private:
             if (i.type == ':')
                 break;
         }
-    }
-
-    // these functions are defined in levelBi.cpp
-    // std::string read_levelName_bytes (std::ifstream&);
-    // int         read_two_bytes_levelbi(std::ifstream&);
-    void metadata_binary(in Filename fn, out MutableDate builtTemp)
-    {
-        import file.log;
-        log("DTODO: reading binary metadata not impl");
-    }
-
-    void metadata_lemmini(in Filename fn, out MutableDate builtTemp)
-    {
-        import file.log;
-        log("DTODO: reading Lemmini metadata not impl");
     }
 }

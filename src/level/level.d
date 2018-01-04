@@ -29,13 +29,6 @@ enum LevelStatus {
     BAD_EMPTY           // file exists, but no tiles
 }
 
-enum FileFormat {
-    NOTHING,
-    LIX,
-    BINARY,
-    LEMMINI
-}
-
 class Level {
 public:
     enum minXl = 160;

@@ -20,8 +20,6 @@ immutable netIPLocalhost = "127.0.0.1";
 
 // loading files
 immutable filenameExtLevel           = ".txt";
-immutable filenameExtLevelOrig       = ".lvl";
-immutable filenameExtLevelLemmini    = ".ini";
 immutable filenameExtReplay          = ".txt";
 immutable filenameExtConfig          = ".txt";
 immutable filenameExtTransl          = ".txt";
@@ -113,8 +111,8 @@ immutable dirDataBitmapScale = "data/images/scale";
 Filename dirLevels, dirLevelsSingle, dirLevelsNetwork, dirReplays, dirData,
     dirDataBitmap, dirDataSound, dirDataMusic,
     dirDataUser, dirDataTransl, dirImages,
-    dirImagesOrig, dirImagesOrigL1, dirImagesOrigL2, dirReplayAutoSolutions,
-    dirReplayAutoMulti, dirReplayManual, dirExportImages;
+    dirReplayAutoSolutions, dirReplayAutoMulti, dirReplayManual,
+    dirExportImages;
 
 Filename fileGlobalConfig, fileLog, fileReplayVerifier, fileTharsisProf,
     fileLanguageEnglish, fileMusicMenu, fileMusicGain,
@@ -146,9 +144,6 @@ static this()
     dirDataUser = new Fn("data/user/");
     dirDataTransl = new Fn("data/transl/");
     dirImages = new Fn("images/");
-    dirImagesOrig = new Fn("images/orig/");
-    dirImagesOrigL1 = new Fn("images/orig/L1/");
-    dirImagesOrigL2 = new Fn("images/orig/L2/");
     dirReplayAutoSolutions = new Fn("replays/solved/");
     dirReplayAutoMulti = new Fn("replays/network/");
     dirReplayManual = new Fn("replays/manual/");

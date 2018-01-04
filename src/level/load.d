@@ -12,7 +12,6 @@ import file.filename;
 import file.io;
 import level.addtile;
 import level.level;
-import level.metadata;
 import level.noowalgo;
 import tile.gadtile;
 import tile.group;
@@ -21,27 +20,10 @@ import tile.occur;
 package void loadFromFile(Level level, in Filename fn)
 {
     level._status = LevelStatus.GOOD;
-
-    final switch (LevelMetaData.getFileFormat(fn)) {
-    case FileFormat.NOTHING:
+    try
+        load_from_vector(level, fillVectorFromFile(fn));
+    catch (Exception e)
         level._status = LevelStatus.BAD_FILE_NOT_FOUND;
-        break;
-    case FileFormat.LIX:
-        try
-            load_from_vector(level, fillVectorFromFile(fn));
-        catch (Exception e)
-            level._status = LevelStatus.BAD_FILE_NOT_FOUND;
-        break;
-    case FileFormat.BINARY:
-        // load an original .LVL file from L1/ONML/...
-        // DTODOLEVELFORMAT
-        // load_from_binary(level, fn);
-        break;
-    case FileFormat.LEMMINI:
-        // DTODOLEVELFORMAT
-        // load_from_lemmini(level, fn);
-        break;
-    }
     level.load_level_finalize();
 }
 
