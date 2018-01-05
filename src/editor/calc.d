@@ -55,7 +55,7 @@ void implEditorCalc(Editor editor) {
     editor.hoverTiles();
     editor.selectTiles();
     editor.moveTiles();
-    editor._panel.info = editor.describeHover();
+    editor.describeOnStatusBar();
 }}
 
 package:
@@ -120,21 +120,8 @@ void moveTiles(Editor editor) {
         _selection.each!(tile => tile.moveBy(total));
 }}
 
-string describeHover(Editor editor) { with (editor)
-{
-    const(Hover[]) list = _hover.empty ? _selection : _hover;
-    if (list.empty)
-        return "";
-    string name = list.length == 1
-        ? list[0].tileDescription
-        : "%d %s".format(list.length, list is _hover
-            ? Lang.editorBarHover.transl : Lang.editorBarSelection.transl);
-    int x = list.map!(hov => hov.occ.loc.x).reduce!min;
-    int y = list.map!(hov => hov.occ.loc.y).reduce!min;
-    return "%s %s (%d, %d) (\u2080\u2093%X, \u2080\u2093%X)"
-        .format(name, Lang.editorBarAt.transl, x, y, x, y);
-}}
-
+// ############################################################################
+private: // ########################################################### private
 // ############################################################################
 
 void maybeCloseTerrainBrowser(Editor editor) {
@@ -208,4 +195,46 @@ body {
             ret.y -= grid;
     }
     return ret;
+}
+
+void describeOnStatusBar(Editor editor)
+{
+    import std.array : join;
+    string[2] parts;
+    parts[0] = editor.describeMousePosition();
+    parts[1] = editor.describeHoveredTiles();
+    editor._panel.info = parts[].filter!(s => ! s.empty).join(" ");
+}
+
+string describeHoveredTiles(Editor editor) { with (editor)
+{
+    const(Hover[]) list = _hover.empty ? _selection : _hover;
+    if (list.empty)
+        return "";
+    string name = list.length == 1
+        ? list[0].tileDescription
+        : "%d %s".format(list.length, list is _hover
+            ? Lang.editorBarHover.transl : Lang.editorBarSelection.transl);
+    immutable Point p = Point(list.map!(hov => hov.occ.loc.x).reduce!min,
+                              list.map!(hov => hov.occ.loc.y).reduce!min);
+    return format!"%s %s %s"(name, Lang.editorBarAt.transl, p.toDecHex);
+}}
+
+string describeMousePosition(Editor editor)
+{
+    if (editor._panel.isMouseHere)
+        return "";
+    return editor._map.mouseOnLand.toDecHex;
+}
+
+string toDecHex(in Point p) pure
+{
+    return format!"(%d, %d) (%s, %s)"(p.x, p.y, p.x.toHex, p.y.toHex);
+}
+
+string toHex(in int x) pure
+{
+    import std.math : abs;
+    return x >= 0 ? x.format!"\u2080\u2093%X" // small 0, small x
+        : x.abs.format!"\u2080\u2093\u2212%X"; // mathematical minus
 }
