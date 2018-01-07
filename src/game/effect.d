@@ -84,8 +84,7 @@ private:
      */
     Debris[] _debris;
 
-    int _overtimeInPhyusToAnnounce;
-    bool _weScheduledOvertimeAnnouncementBefore;
+    int _overtimeInPhyusToAnnounce; // keep at 0 if nothing to announce
 
 public:
     Style localTribe;
@@ -190,13 +189,15 @@ public:
         addPlosion!true(upd, pa, foot);
     }
 
-    void announceOvertime(in Phyu upd, in int overtimeInPhyus)
+    void announceOvertime(in Phyu whenOvertimeStarted, in int overtimeInPhyus)
     {
-        if (_weScheduledOvertimeAnnouncementBefore)
-            return;
-        _weScheduledOvertimeAnnouncementBefore = true;
-        _overtimeInPhyusToAnnounce = overtimeInPhyus;
-        hardware.sound.play(Sound.OVERTIME, Loudness.loud);
+        Effect e = Effect(whenOvertimeStarted, Passport(localTribe, 0),
+            Sound.OVERTIME, Loudness.loud);
+        if (e !in _alreadyPlayed) {
+            _alreadyPlayed.insert(e);
+            hardware.sound.play(e.sound, e.loudness);
+            _overtimeInPhyusToAnnounce = overtimeInPhyus;
+        }
     }
 
 // ############################################################################

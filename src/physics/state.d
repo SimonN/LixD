@@ -108,6 +108,26 @@ public:
             || tribes.byValue.any!(tr => tr.triggersOvertime);
     }
 
+    // Call this only if overtimeRunning.
+    // Use this only for effect handling. For nuking or exit locking,
+    // use nukeIsAssigningExploders or lixMayUseGoals.
+    Phyu overtimeRunningSince() const
+    in {
+        assert (overtimeRunning);
+        assert (tribes.length > 0);
+    }
+    do {
+        if (tribes.byValue.all!(tr => tr.prefersGameToEnd)) {
+            return tribes.byValue.map!(tr => tr.prefersGameToEndSince)
+                                 .reduce!max;
+        }
+        else {
+            assert (tribes.byValue.any!(tr => tr.triggersOvertime));
+            return tribes.byValue.filter!(tr => tr.triggersOvertime)
+                .map!(tr => tr.triggersOvertimeSince).reduce!min;
+        }
+    }
+
     // This doesn't return Phyu because Phyu is a point in time, not a duration
     @property int overtimeRemainingInPhyus() const
     {
@@ -119,9 +139,21 @@ public:
                     0, overtimeAtStartInPhyus);
     }
 
-    @property bool nuking() const
+    @property bool nukeIsAssigningExploders() const
     {
         return overtimeRunning() && overtimeRemainingInPhyus == 0;
+    }
+
+    // Extra check (other than nukeIsAssigningExploders) for edge case during
+    // race maps (overtime 0, i.e., terminate on first scoring):
+    // Assume 3 players enter the exit at the same time. Since one
+    // player has to be processed first, that player would, without
+    // the next comparison, change the nuke status before processing
+    // the next player. The nuke prevents lixes from exiting.
+    // Solution: In race maps, allow that one update to finish with scoring.
+    @property bool lixMayUseGoals() const
+    {
+        return ! nukeIsAssigningExploders || overtimeRunningSince == update;
     }
 
 private:
@@ -162,22 +194,5 @@ private:
         foreach (style, tribe; rhs.tribes)
             temp[style] = tribe.clone();
         tribes = temp;
-    }
-
-    @property Phyu overtimeRunningSince() const
-    in {
-        assert (overtimeRunning);
-        assert (tribes.length > 0);
-    }
-    do {
-        if (tribes.byValue.all!(tr => tr.prefersGameToEnd)) {
-            return tribes.byValue.map!(tr => tr.prefersGameToEndSince)
-                                 .reduce!max;
-        }
-        else {
-            assert (tribes.byValue.any!(tr => tr.triggersOvertime));
-            return tribes.byValue.filter!(tr => tr.triggersOvertime)
-                .map!(tr => tr.triggersOvertimeSince).reduce!min;
-        }
     }
 }

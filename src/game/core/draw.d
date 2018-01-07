@@ -80,7 +80,9 @@ void drawGadgets(Game game) { with (game)
     cs.foreachConstGadget(delegate void (const(Gadget) g) {
         g.draw(localTribe.style);
     });
-    if (cs.nuking && ! cs.tribes.byValue.all!(tr => tr.outOfLix)) {
+    if (cs.nukeIsAssigningExploders
+		&& ! cs.tribes.byValue.all!(tr => tr.outOfLix)
+	) {
         foreach (g; cs.goals)
             g.drawNoSign();
     }

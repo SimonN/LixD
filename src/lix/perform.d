@@ -22,7 +22,7 @@ package void performUseGadgets(Lixxie l)
     l.useFlingers();
 
     assert (l.outsideWorld);
-    if (! l.outsideWorld.state.nuking)
+    if (l.outsideWorld.state.lixMayUseGoals)
         l.useGoals();
 }
 

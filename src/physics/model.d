@@ -84,8 +84,10 @@ public:
         spawnLixxiesFromHatches();
         updateLixxies();
         finalizePhyuAnimateGadgets();
-        if (_cs.overtimeRunning && _cs.multiplayer) {
-            _effect.announceOvertime(_cs.update,
+        if (_cs.overtimeRunning
+            && _cs.tribes.byValue.any!(tr => ! tr.prefersGameToEnd)
+        ) {
+            _effect.announceOvertime(_cs.overtimeRunningSince,
                 _cs.overtimeAtStartInPhyus);
         }
     }
@@ -114,7 +116,7 @@ private:
         if (! tribe)
             // Ignore bogus data that can come from anywhere
             return;
-        if (tribe.nukePressed || _cs.nuking)
+        if (tribe.nukePressed || _cs.nukeIsAssigningExploders)
             // Game rule: After you call for the nuke, you may not assign
             // other things, nuke again, or do whatever we allow in the future.
             // During the nuke, nobody can assign or save lixes.
@@ -164,7 +166,7 @@ private:
 
     void updateNuke()
     {
-        if (! _cs.nuking)
+        if (! _cs.nukeIsAssigningExploders)
             return;
         foreach (tribe; _cs.tribes) {
             tribe.stopSpawningAnyMoreLixBecauseWeAreNuking();
