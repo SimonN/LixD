@@ -1,12 +1,10 @@
-$BUILT 2017-02-21 11:46:45
+$BUILT 2018-01-14 14:57:43
 $AUTHOR Ben Bryant
 $ENGLISH Lix Cannon
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1280
 #SIZE_Y 352
-#START_X 0
-#START_Y 0
 
 #INITIAL 50
 #REQUIRED 49
@@ -23,6 +21,9 @@ $ENGLISH Lix Cannon
 
 :geoo/construction/Goal2.G: 1104 64
 
+:geoo/construction/wall/big_brickdiag_bd: 336 128
+:geoo/construction/wall/small_brick3: 304 144
+:geoo/construction/wall/small_64x32: 480 128
 :geoo/construction/rod_rust/straight_diagd32: 204 124
 :geoo/construction/rod_rust/straight_diagd32: 202 186
 :geoo/construction/rod_rust/straight_diagd32: 196 244
@@ -58,44 +59,42 @@ $ENGLISH Lix Cannon
 :geoo/construction/rod_rust/straight32: 320 336
 :geoo/steel/dark_16x16o.S: 208 112
 :geoo/steel/dark_16x16o.S: 288 112
-:geoo/construction/wall/small_64x64: 320 128
 :geoo/construction/wall/small_64x64: 512 128
 :geoo/construction/wall/small_64x64: 576 96
-:geoo/construction/rod_rust/straight_diagu32: 688 96
+:geoo/construction/rod_rust/straight_diagu32: 690 94
 :geoo/construction/wall/small_64x64: 640 64
-:geoo/construction/rod_rust/straight_diagu32: 688 128
-:geoo/construction/rod_rust/straight_diagu32: 688 160
+:geoo/construction/rod_rust/straight_diagu32: 690 126
+:geoo/construction/rod_rust/straight_diagu32: 690 158
 :geoo/construction/wall/small_64x64: 640 128
 :geoo/construction/wall/small_64x32: 640 192
-:geoo/construction/wall/small_64x32: 704 64
-:geoo/construction/rod_rust/straight_diagu32: 720 128
-:geoo/construction/rod_rust/straight_diagu32: 752 128
-:geoo/construction/rod_rust/straight_diagu32: 720 160
-:geoo/construction/rod_rust/straight_diagu32: 752 160
-:geoo/construction/wall/small_64x32: 704 192
-:geoo/construction/wall/small_64x32: 768 64
-:geoo/construction/rod_rust/straight_diagu32: 816 128
-:geoo/construction/rod_rust/straight_diagu32: 784 128
-:geoo/construction/rod_rust/straight_diagu32: 784 160
-:geoo/construction/rod_rust/straight_diagu32: 808 168
-:geoo/construction/wall/small_64x32: 768 192
-:geoo/construction/rod_rust/straight_diagu32: 816 96
+:geoo/construction/rod_rust/straight_diagu32: 722 126
+:geoo/construction/rod_rust/straight_diagu32: 754 126
+:geoo/construction/rod_rust/straight_diagu32: 722 158
+:geoo/construction/rod_rust/straight_diagu32: 754 158
+:geoo/construction/rod_rust/straight_diagu32: 818 126
+:geoo/construction/rod_rust/straight_diagu32: 786 126
+:geoo/construction/rod_rust/straight_diagu32: 786 158
+:geoo/construction/rod_rust/straight_diagu32: 810 166
+:geoo/construction/rod_rust/straight_diagu32: 818 94
 :geoo/construction/wall/small_64x64: 832 64
 :geoo/construction/wall/small_64x64: 832 128
-:geoo/construction/rod_rust/straight32: 704 96
-:geoo/construction/rod_rust/straight_diagu32: 720 96
-:geoo/construction/rod_rust/straight32: 736 96
-:geoo/construction/rod_rust/straight_diagu32: 752 96
-:geoo/construction/rod_rust/straight32: 768 96
-:geoo/construction/rod_rust/straight_diagu32: 784 96
-:geoo/construction/rod_rust/straight32: 800 96
-:geoo/construction/rod_rust/straight32: 704 184
-:geoo/construction/rod_rust/straight32: 736 184
-:geoo/construction/rod_rust/straight32: 768 184
-:geoo/construction/rod_rust/straight32: 800 184
+:geoo/construction/rod_rust/straight32: 704 92
+:geoo/construction/rod_rust/straight_diagu32: 722 94
+:geoo/construction/rod_rust/straight32: 736 92
+:geoo/construction/wall/small_64x32: 704 64
+:geoo/construction/rod_rust/straight_diagu32: 754 94
+:geoo/construction/rod_rust/straight32: 768 92
+:geoo/construction/rod_rust/straight_diagu32: 786 94
+:geoo/construction/rod_rust/straight32: 800 92
+:geoo/construction/wall/small_64x32: 768 64
+:geoo/construction/rod_rust/straight32: 704 188
+:geoo/construction/rod_rust/straight32: 736 188
+:geoo/construction/wall/small_64x32: 704 192
+:geoo/construction/rod_rust/straight32: 768 188
+:geoo/construction/rod_rust/straight32: 800 188
+:geoo/construction/wall/small_64x32: 768 192
 :geoo/construction/wall/small_64x64: 576 160
 :geoo/construction/wall/small_64x32: 832 192
-:geoo/construction/wall/small_64x32: 384 128
 :geoo/construction/wall/big_diag_bu: 384 160
 :geoo/construction/wall/big_diag_bu: 320 192
 :geoo/construction/wall/big_diag_bd: 480 160
@@ -168,23 +167,20 @@ $ENGLISH Lix Cannon
 :geoo/construction/concrete/016vd: 992 0
 :geoo/construction/concrete/016vd: 1088 0
 :geoo/construction/concrete/032va: 72 288
-:geoo/construction/wall/small_64x32: 448 128
 :geoo/construction/rod_rust/straight32: 416 336
 :geoo/construction/wall/big_diag_bu: 416 128
 :geoo/construction/wall/big_diag_bd: 448 128
-:geoo/construction/wall/big_diag_tu: 416 128 d
-:geoo/construction/wall/big_diag_td: 448 128 d
 :geoo/construction/rod_rust/straight32: 448 336
-:geoo/construction/wall/small_diag_td: 352 128 d
-:geoo/construction/wall/small_diag_tu: 368 128 d
+:geoo/construction/wall/small_diag_td: 352 129 d
+:geoo/construction/wall/small_diag_tu: 368 129 d
 :geoo/construction/wall/small_diag_td: 368 144
 :geoo/construction/wall/small_diag_tu: 352 144
 :geoo/construction/wall/small_diag_bd: 352 144 d
 :geoo/construction/wall/small_diag_bu: 368 144 d
-:geoo/construction/wall/small_diag_tu: 384 128 d
-:geoo/construction/wall/small_diag_td: 368 128 d
-:geoo/construction/wall/small_diag_tu: 352 128 d
-:geoo/construction/wall/small_diag_td: 336 128 d
+:geoo/construction/wall/small_diag_tu: 384 129 d
+:geoo/construction/wall/small_diag_td: 336 129 d
+:geoo/construction/wall/small_diag_tu: 352 129 d
+:geoo/construction/wall/small_diag_td: 368 129 d
 :geoo/construction/wall/small_diag_tu: 336 128
 :geoo/construction/wall/small_brickdiag_tu: 384 128
 :geoo/construction/wall/small_brickdiag_td: 320 128
@@ -193,3 +189,9 @@ $ENGLISH Lix Cannon
 :geoo/construction/rod_rust/straight32: 266 344 d
 :geoo/construction/rod_rust/straight32: 256 216 d
 :geoo/construction/rod_rust/straight32: 256 280 d
+:geoo/construction/wall/small_64x32: 320 160
+:geoo/construction/wall/small_square: 400 144
+:geoo/construction/wall/small_square: 480 144
+:geoo/construction/wall/small_square: 512 176
+:geoo/construction/wall/small_square: 368 176
+:geoo/construction/wall/small_square: 576 208

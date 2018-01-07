@@ -1,12 +1,10 @@
-$BUILT 2017-02-16 11:48:34
+$BUILT 2018-01-13 10:58:22
 $AUTHOR Insane Steve
 $ENGLISH Snowjump
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 272
-#START_X 0
-#START_Y 0
 
 #INITIAL 20
 #REQUIRED 10
@@ -23,7 +21,7 @@ $ENGLISH Snowjump
 
 :matt/winter/18: 552 172
 :matt/winter/17: 402 192
-:matt/winter/00: 394 162
+:matt/winter/00: 394 160
 :matt/winter/10: 6 162
 :matt/winter/10: 0 164
 :matt/winter/14: 288 224
@@ -52,7 +50,7 @@ $ENGLISH Snowjump
 :matt/winter/06: -18 224 rrr
 :matt/winter/06: 268 208 rrrd
 :matt/winter/03: 198 182 rrd
-:matt/winter/06: 392 194
+:matt/winter/06: 392 192
 :matt/winter/06: 392 218
 :matt/winter/06: 316 240
 :matt/winter/16: 422 156

@@ -1,12 +1,10 @@
-$BUILT 2016-06-28 11:29:39
+$BUILT 2018-01-08 00:56:12
 $AUTHOR Michael S. Repton
 $ENGLISH Pipe Dream
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 2080
 #SIZE_Y 400
-#START_X 0
-#START_Y 0
 
 #INITIAL 20
 #REQUIRED 10
@@ -15,13 +13,13 @@ $ENGLISH Pipe Dream
 #BUILDER 20
 #PLATFORMER 20
 #BASHER 20
-#MINER 10
 #EXPLODER2 0
 
 :matt/marble/Hatch.H: 192 144
 
-:proxima/tile/goal.G: 1776 208
+:proxima/tile/goal.G: 1744 304
 
+:proxima/tile/cyan1b: 1056 272
 :proxima/tile/spheres/blue: 704 -24
 :proxima/tile/spheres/blue: 704 0
 :proxima/tile/spheres/blue: 704 56
@@ -89,8 +87,6 @@ $ENGLISH Pipe Dream
 :proxima/tile/blue1b: 32 240
 :proxima/tile/blue1a: 48 256
 :proxima/tile/blue1a: 64 336
-:geoo/steel/dark_64x32o.S: 160 272
-:geoo/steel/dark_64x32o.S: 224 272
 :proxima/tile/cyan2: 192 352
 :proxima/tile/cyan2: 128 352
 :proxima/tile/blue1b: 16 160
@@ -105,18 +101,15 @@ $ENGLISH Pipe Dream
 :proxima/tile/blue2b: 536 144
 :proxima/tile/blue1a: 520 128
 :proxima/tile/spheres/red: 600 208
+:proxima/tile/blue1a: 648 256
 :proxima/tile/blue2b: 624 256
 :proxima/tile/blue2a: 688 256
 :proxima/tile/blue2b: 688 192
-:proxima/tile/spheres/red: 624 216
 :proxima/tile/spheres/red: 648 184
 :proxima/tile/blue2a: 752 192
 :proxima/tile/spheres/red: 672 176
 :proxima/tile/blue1b: 648 192
 :proxima/tile/blue2a: 536 208
-:proxima/tile/blue1b: 712 256
-:proxima/tile/blue1a: 648 256
-:proxima/tile/blue1a: 712 320
 :proxima/tile/blue2b: 472 208
 :proxima/tile/cyan1: 464 272
 :proxima/tile/blue2b: 408 272
@@ -187,11 +180,11 @@ $ENGLISH Pipe Dream
 :proxima/tile/blue2b: 792 192
 :proxima/tile/spheres/red: 760 240
 :proxima/tile/spheres/red: 784 256
-:proxima/tile/spheres/red: 808 264
-:proxima/tile/spheres/red: 832 280
-:proxima/tile/spheres/red: 840 304
-:proxima/tile/spheres/red: 832 328
-:proxima/tile/spheres/red: 808 344
+:proxima/tile/spheres/red: 810 264
+:proxima/tile/spheres/red: 834 280
+:proxima/tile/spheres/red: 846 304
+:proxima/tile/spheres/red: 834 328
+:proxima/tile/spheres/red: 810 344
 :proxima/tile/spheres/red: 784 328
 :proxima/tile/spheres/red: 760 320
 :proxima/tile/spheres/red: 744 336
@@ -216,9 +209,9 @@ $ENGLISH Pipe Dream
 :proxima/tile/spheres/pink: 904 248
 :proxima/tile/blue1a: 888 192
 :proxima/tile/pink6: 872 144
-:proxima/tile/spheres/pink: 896 272
-:proxima/tile/spheres/pink: 904 296
-:proxima/tile/spheres/pink: 920 312
+:proxima/tile/spheres/pink: 894 272
+:proxima/tile/spheres/pink: 900 296
+:proxima/tile/spheres/pink: 918 312
 :proxima/tile/blue1b: 1056 192
 :proxima/tile/blue1a: 1056 256
 :proxima/tile/cyan1b: 1184 272
@@ -239,7 +232,7 @@ $ENGLISH Pipe Dream
 :proxima/tile/spheres/cyan: 984 264
 :proxima/tile/spheres/cyan: 984 280
 :proxima/tile/spheres/cyan: 984 304
-:proxima/tile/spheres/pink: 944 320
+:proxima/tile/spheres/pink: 942 320
 :proxima/tile/blue1b: 1016 256
 :proxima/tile/blue1a: 952 256
 :proxima/tile/spheres/cyan: 1008 328
@@ -257,8 +250,6 @@ $ENGLISH Pipe Dream
 :proxima/tile/spheres/red: 1112 328
 :proxima/tile/blue1a: 1120 320
 :proxima/tile/spheres/red: 1088 344
-:proxima/tile/cyan1b: 1312 272
-:proxima/tile/cyan1b: 1344 272
 :proxima/tile/spheres/blue: 1224 320
 :proxima/tile/blue2a: 1280 256
 :proxima/tile/blue2b: 1280 192
@@ -277,14 +268,14 @@ $ENGLISH Pipe Dream
 :proxima/tile/cyan3a: 1424 272
 :proxima/tile/cyan3a: 1424 240
 :proxima/tile/spheres/blue: 1392 312
-:proxima/tile/spheres/blue: 1368 320
-:proxima/tile/spheres/blue: 1344 336
-:proxima/tile/spheres/blue: 1312 344
-:proxima/tile/spheres/blue: 1296 328
-:proxima/tile/spheres/blue: 1304 304
-:proxima/tile/spheres/blue: 1320 280
+:proxima/tile/spheres/blue: 1368 322
+:proxima/tile/spheres/blue: 1344 340
+:proxima/tile/spheres/blue: 1314 346
+:proxima/tile/spheres/blue: 1294 328
+:proxima/tile/spheres/blue: 1304 306
+:proxima/tile/spheres/blue: 1318 282
 :proxima/tile/spheres/blue: 1336 264
-:proxima/tile/spheres/blue: 1360 248
+:proxima/tile/spheres/blue: 1358 248
 :proxima/tile/spheres/blue: 1376 232
 :proxima/tile/spheres/blue: 1384 208
 :proxima/tile/spheres/blue: 1376 184
@@ -352,17 +343,16 @@ $ENGLISH Pipe Dream
 :proxima/tile/cyan2: 1728 368
 :proxima/tile/spheres/blue: 1672 352
 :proxima/tile/spheres/blue: 1680 336
-:proxima/tile/cyan1: 1712 272
 :proxima/tile/spheres/blue: 1688 312
 :proxima/tile/spheres/blue: 1680 288
 :proxima/tile/spheres/blue: 1664 264
 :proxima/tile/spheres/blue: 1632 248
-:proxima/tile/spheres/blue: 1600 240
-:proxima/tile/spheres/blue: 1568 240
+:proxima/tile/spheres/blue: 1602 240
+:proxima/tile/spheres/blue: 1570 240
 :proxima/tile/cyan1b: 1520 272
-:proxima/tile/spheres/blue: 1544 248
-:proxima/tile/spheres/blue: 1528 272
-:proxima/tile/spheres/blue: 1512 296
+:proxima/tile/spheres/blue: 1546 250
+:proxima/tile/spheres/blue: 1530 272
+:proxima/tile/spheres/blue: 1514 296
 :proxima/tile/spheres/blue: 1496 320
 :proxima/tile/spheres/blue: 1472 336
 :proxima/tile/spheres/blue: 1448 328
@@ -372,16 +362,12 @@ $ENGLISH Pipe Dream
 :proxima/tile/cyan3a: 1424 304
 :proxima/tile/cyan1b: 1456 272
 :proxima/tile/cyan1b: 1488 272
-:proxima/tile/cyan1: 1776 272
 :proxima/tile/cyan2: 1472 96
 :proxima/tile/cyan2: 1536 96
 :proxima/tile/cyan2: 1600 96
 :proxima/tile/cyan2: 1664 96
 :proxima/tile/cyan2: 1728 96
 :proxima/tile/cyan2: 1792 96
-:geoo/steel/dark_64x32o.S: 1744 272
-:proxima/tile/cyan1: 1840 272
-:geoo/steel/dark_64x32o.S: 1808 272
 :proxima/tile/cyan2: 1856 96
 :proxima/tile/cyan2: 1792 368
 :proxima/tile/blue2b: 1840 272
@@ -417,3 +403,4 @@ $ENGLISH Pipe Dream
 :proxima/tile/blue1b: 2032 80
 :proxima/tile/blue1b: 1840 336
 :proxima/tile/blue2b: 1776 336
+:geoo/construction/concrete/032a: 688 288 d
