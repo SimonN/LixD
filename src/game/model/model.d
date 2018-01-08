@@ -41,6 +41,17 @@ package: // eventually delete cs() and alias cs this;
     @property inout(GameState) cs() inout { return _cs; }
 
 public:
+    // The replay data comes with player information (PlNr).
+    // Physics only work with tribe information (Style).
+    // To preserve database normal form, we shouldn't put the Style in the
+    // replay's ReplayData, but still must ask the caller of advance(),
+    // which is the Nurse, to associate ReplayData to Style via this struct.
+    struct ColoredData {
+        ReplayData replayData;
+        Style style;
+        alias replayData this;
+    }
+
     // This remembers the effect manager, but not anything else.
     // We don't own the effect manager.
     this(in Level level, in Style[] tribesToMake,
@@ -65,29 +76,12 @@ public:
         _physicsDrawer.applyChangesToLand(_cs.update);
     }
 
-    /* Design burden: These methods must all be called in the correct order:
-     *  1. incrementPhyu()
-     *  2. applyReplayData(...) for each piece of data from that update
-     *  3. advance()
-     * Refactor this eventually!
-     */
-
-    void incrementPhyu()
+    void advance(R)(R range)
+        if (isInputRange!R && is (ElementType!R : const(ColoredData)))
     {
         ++_cs.update;
-    }
+        range.each!(cd => applyReplayData(cd));
 
-    void applyReplayData(
-        ref const(ReplayData) i,
-        in Style tribeStyle
-    ) {
-        assert (i.update == _cs.update,
-            "increase update manually before applying replay data");
-        implApplyReplayData(i, tribeStyle);
-    }
-
-    void advance()
-    {
         updateNuke(); // sets lixHatch = 0, thus affects spawnLixxiesFromHatch
         spawnLixxiesFromHatches();
         updateLixxies();
@@ -117,13 +111,13 @@ private:
         return ow;
     }
 
-    void
-    implApplyReplayData(
-        ref const(ReplayData) i,
-        in Style tribeStyle,
-    ) {
+    public void applyReplayData(in ColoredData i) // debugging remove public
+    {
         immutable upd = _cs.update;
-        auto tribe = tribeStyle in _cs.tribes;
+        assert (i.update == upd,
+            "increase update manually before applying replay data");
+
+        auto tribe = i.style in _cs.tribes;
         if (! tribe)
             // Ignore bogus data that can come from anywhere
             return;

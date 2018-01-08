@@ -210,14 +210,10 @@ private:
     {
         version (tharsisprofiling)
             Zone zone = Zone(profiler, "PhysSeq updateOnceNoSync");
-        _model.incrementPhyu();
-        {
-            auto dataSlice = _replay.getDataForPhyu(upd);
-            assert (dataSlice.isSorted!("a.player < b.player"));
-            foreach (data; dataSlice)
-                _model.applyReplayData(data, _replay.plNrToStyle(data.player));
-        }
-        _model.advance();
+        auto dataSlice = _replay.getDataForPhyu(Phyu(upd + 1));
+        assert (dataSlice.isSorted!("a.player < b.player"));
+        _model.advance(dataSlice.map!(rd =>
+            GameModel.ColoredData(rd, _replay.plNrToStyle(rd.player))));
     }
 
     void considerAutoSavestateIfCloseTo(in Phyu target, in DuringTurbo turbo)
