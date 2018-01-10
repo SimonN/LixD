@@ -208,7 +208,8 @@ public:
             loadFromDisk();
             if (! _sample)
                 return;
-            al_play_sample(_sample, dbToGain(soundDecibels) * _loud ? 1 : 0.2f,
+            al_play_sample(_sample,
+                dbToGain(soundDecibels) * (_loud ? 1 : 0.2f),
                 ALLEGRO_AUDIO_PAN_NONE, 1.0f, // speed factor
                 ALLEGRO_PLAYMODE.ALLEGRO_PLAYMODE_ONCE, &_playID);
         }
