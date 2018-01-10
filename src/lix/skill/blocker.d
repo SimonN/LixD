@@ -58,14 +58,15 @@ class Blocker : Job {
             && dy > - forceFieldYlBelow
             && dy <   forceFieldYlAbove
         ) {
-            immutable blockedByR = li.facingLeft  && dx < 0;
-            immutable blockedByL = li.facingRight && dx > 0;
-            if ((blockedByR || blockedByL) && ! li.turnedByBlocker) {
-                li.turn();
+            immutable inR2LField = dx > 0; // li is in a field that turns r->l
+            immutable inL2RField = dx < 0; // li is on the right side of us
+            if (inR2LField && li.facingRight || inL2RField && li.facingLeft) {
+                if (! li.turnedByBlocker)
+                    li.turn;
                 li.turnedByBlocker = true;
             }
-            li.inBlockerFieldLeft  = li.inBlockerFieldLeft  || blockedByL;
-            li.inBlockerFieldRight = li.inBlockerFieldRight || blockedByR;
+            li.inBlockerFieldLeft  = li.inBlockerFieldLeft  || inR2LField;
+            li.inBlockerFieldRight = li.inBlockerFieldRight || inL2RField;
         }
     }
 }
