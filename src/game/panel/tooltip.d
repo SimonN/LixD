@@ -14,6 +14,8 @@ struct Tooltip {
     bool formatWithButtons;
     UserOption!KeySet keyToHold;
 
+    // Sorted from most important (smallest ID) to least important.
+    // When several are requested, only the most important is shown.
     enum ID : int {
         forceLeft = 0x1,
         forceRight = 0x2,
@@ -21,16 +23,17 @@ struct Tooltip {
         queueBuilder = 0x8,
         queuePlatformer = 0x10,
         holdToScroll = 0x20,
-        pause = 0x40,
-        zoom = 0x80,
-        stateSave = 0x100,
-        stateLoad = 0x200,
-        framestepBack = 0x400,
-        framestepAhead = 0x800,
-        fastForward = 0x1000,
-        restart = 0x2000,
-        nuke = 0x4000,
-        coolShades = 0x8000,
+        clickToCancelReplay = 0x40,
+        pause = 0x80,
+        zoom = 0x100,
+        stateSave = 0x200,
+        stateLoad = 0x400,
+        framestepBack = 0x800,
+        framestepAhead = 0x1000,
+        fastForward = 0x2000,
+        restart = 0x4000,
+        nuke = 0x8000,
+        coolShades = 0x1_0000,
     }
 
     static string format(int manyIDs) nothrow
@@ -78,6 +81,7 @@ static this()
     none(Tooltip.ID.queueBuilder, Lang.gameQueueBuilder);
     none(Tooltip.ID.queuePlatformer, Lang.gameQueuePlatformer);
     key(Tooltip.ID.holdToScroll, Lang.gameHoldToScroll, keyScroll);
+    none(Tooltip.ID.clickToCancelReplay, Lang.gameClickToCancelReplay);
     none(Tooltip.ID.pause, Lang.gamePause);
     mouse(Tooltip.ID.zoom, Lang.gameZoom);
     none(Tooltip.ID.stateSave, Lang.gameStateSave);

@@ -8,7 +8,9 @@ import std.string; // format
 
 import basics.alleg5;
 import basics.globals; // replay sign
+import basics.user : showFPS;
 import game.core.game;
+import game.panel.tooltip;
 import game.tribe;
 import graphic.color;
 import graphic.cutbit; // replay sign
@@ -130,10 +132,17 @@ void showSpawnIntervalOnHatches(Game game)
 
 void drawReplaySign(Game game)
 {
-    if (game.replaying && game.view.showReplaySign) {
+    if (! game.replaying)
+        return;
+    if (game.view.showReplaySign) {
         const(Cutbit) rep = getInternal(fileImageGameReplay);
         rep.drawToCurrentAlbitNotTorbit(Point(0,
             (rep.yl/5 * (1 + sin(timerTicks * 0.08f))).to!int));
+    }
+    if (game.view.canInterruptReplays && ! game.pan.isMouseHere
+        && ! showFPS.value // power user setting, it overrides us
+    ) {
+        game.pan.suggestTooltip(Tooltip.ID.clickToCancelReplay);
     }
 }
 
