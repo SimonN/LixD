@@ -9,6 +9,7 @@ import file.filename;
 // Untranslated strings; for translations of other strings see file.language
 immutable nameOfTheGame = "Lix";
 immutable homepageURL   = "www.lixgame.com";
+immutable musicDownloadURL = "www.lixgame.com/dow/lix-music.zip";
 
 enum int ticksPerSecond       = 60;
 enum int ticksForDoubleClick  = 20; // 1/3 of a second at 60 ticks/sec
