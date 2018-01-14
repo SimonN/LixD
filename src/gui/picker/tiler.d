@@ -1,5 +1,15 @@
 module gui.picker.tiler;
 
+/*
+ * This places buttons in a list, depending on what input it gets
+ * from loadDirsFiles().
+ *
+ * You cannot poll it for what happened; instead, register callbacks:
+ * onDirSelect, onFileSelect. These don't return files, they return IDs of
+ * the file entry. Reason: We don't know files, our caller should look it
+ * up, e.g., in an Ls.
+ */
+
 import std.algorithm;
 import std.array;
 import std.range;
@@ -19,18 +29,19 @@ private:
     Button[] _files;
     int _top; // Counts dirs as dirSizeMultiplier each, files as 1 each.
               // To compare arbitrary IDs with top, use shiftedID(other).
-    bool _executeDir;
-    bool _executeFile;
-    int _executeDirID;
-    int _executeFileID;
+
+    void delegate(int) _onDirSelect;
+    void delegate(int) _onFileSelect;
 
 public:
     this(Geom g) { super(g); }
 
-    @property bool executeDir()    const { return _executeDir;    }
-    @property bool executeFile()   const { return _executeFile;   }
-    @property int  executeDirID()  const { return _executeDirID;  }
-    @property int  executeFileID() const { return _executeFileID; }
+    /*
+     * We will call the registered callback with the ID of the selected button.
+     * Both ID counts will start from zero. Directory 0 is not file 0.
+     */
+    @property void onDirSelect(typeof(_onDirSelect) f) { _onDirSelect = f; }
+    @property void onFileSelect(typeof(_onFileSelect) f) { _onFileSelect = f; }
 
     final int totalLen() const {
         return _dirs.len * dirSizeMultiplier + _files.len;
@@ -114,8 +125,12 @@ protected:
 
     override void calcSelf()
     {
-        calcExecute(_dirs,  _executeDir,  _executeDirID);
-        calcExecute(_files, _executeFile, _executeFileID);
+        foreach (int i, const(Button) b; _dirs)
+            if (b.execute && _onDirSelect)
+                _onDirSelect(i);
+        foreach (int i, const(Button) b; _files)
+            if (b.execute && _onFileSelect)
+                _onFileSelect(i);
     }
 
     override void drawSelf()
@@ -135,16 +150,6 @@ private:
             if (b.shown)
                 b.move(buttonXg(shifted - top), buttonYg(shifted - top));
         }
-    }
-
-    void calcExecute(const(Button[]) range, ref bool anyInRange, ref int which)
-    {
-        anyInRange = false;
-        foreach (int i, const(Button) b; range)
-            if (b.execute) {
-                anyInRange = true;
-                which = i;
-            }
     }
 
     void maybeCenterOn(in int id, in CenterOnHighlitFile chf)

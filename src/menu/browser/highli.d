@@ -36,8 +36,11 @@ public:
         cfg.bread = new Geom(0, 0, cfg.all.xl, 20);
         cfg.files = new Geom(0, 30, pickerXl, cfg.all.yl - 30);
         cfg.ls    = new OrderFileLs;
+        cfg.baseDir = baseDir;
+        cfg.onDirSelect = (Filename fn) { onPickerExecuteDir(); };
+        cfg.onFileSelect = (Filename fn) { onPickerExecuteFile(fn); };
         _picker   = new Picker(cfg);
-        _picker.basedir = baseDir;
+
         _buttonExit = new TextButton(new Geom(infoX + infoXl/2, 20,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.commonBack.transl);
         _buttonExit.hotkey = basics.user.keyMenuExit;
@@ -113,9 +116,5 @@ protected:
         super.calcSelf();
         if (hardware.mouse.mouseClickRight || _buttonExit.execute)
             _gotoMainMenu = true;
-        else if (_picker.executeFile)
-            onPickerExecuteFile(_picker.executeFileFilename);
-        else if (_picker.executeDir)
-            onPickerExecuteDir();
     }
 }

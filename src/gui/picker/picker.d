@@ -1,5 +1,11 @@
 module gui.picker.picker;
 
+/*
+ * Navigate directories and select files from them.
+ * To be notified of selected files and directories, register callbacks:
+ * onDirSelect, onFileSelect. Register these directly in the PickerConfig.
+ */
+
 import std.algorithm;
 import std.file; // FileException
 import std.conv;
@@ -15,6 +21,11 @@ struct PickerConfig(T)
     Geom bread;
     Geom files; // Tiler including scrollbar
     Ls ls;
+    MutFilename baseDir;
+    bool showSearchButton;
+
+    void delegate(Filename) onDirSelect;
+    void delegate(Filename) onFileSelect;
 }
 
 class Picker : Element {
@@ -22,6 +33,12 @@ private:
     Breadcrumb _bread;
     Ls _ls;
     ScrolledFiles _list;
+
+    TextButton _searchButton; // null when not wanted by PickerConfig
+    LevelSearch _searchWindow; // null when closed
+
+    void delegate(Filename) _onDirSelect;
+    void delegate(Filename) _onFileSelect;
 
     // We access _list.tiler outside of _list freely. That's okay, ScrolledList
     // allows subclasses to do that, and we fully control the subclass.
@@ -45,48 +62,38 @@ public:
         import graphic.color;
         undrawColor = color.transp; // Hack. Picker should not be a drawable
                                     // element, but rather only have children.
-        _bread = new Breadcrumb(cfg.bread);
+        _bread = new Breadcrumb(cfg.bread, cfg.baseDir);
         _ls = cfg.ls;
         _list = new ScrolledFiles(cfg.files, delegate FileTiler(Geom gg)
-                                                  { return new T(gg); });
+        {
+            auto t = new T(gg);
+            t.onDirSelect = (int id) { currentDir = _ls.dirs[id]; };
+            if (cfg.onFileSelect)
+                t.onFileSelect = (int id) { cfg.onFileSelect(_ls.files[id]); };
+            return t;
+        });
         addChildren(_bread, _list);
+        if (cfg.showSearchButton)
+            createSearchButton(cfg.onFileSelect);
+        _onDirSelect = cfg.onDirSelect;
+        _onFileSelect = cfg.onFileSelect;
     }
 
-    @property Filename basedir() const { return _bread.basedir; }
-    @property Filename basedir(Filename fn)
-    {
-        _bread.basedir = fn; // this resets currentDir if no longer child
-        updateAccordingToBreadCurrentDir();
-        return basedir;
-    }
-
+    @property Filename baseDir() const { return _bread.baseDir; }
     @property Filename currentDir() const { return _bread.currentDir; }
     @property Filename currentDir(Filename fn)
     {
-        if (fn && fn.dirRootless != currentDir.dirRootless) {
+        if (! currentDir || (fn && fn.dirRootless != currentDir.dirRootless)) {
             _bread.currentDir = fn;
             updateAccordingToBreadCurrentDir();
         }
         return currentDir;
     }
 
-    @property bool executeDir() const
-    {
-        return _list.tiler.executeDir || _bread.execute;
-    }
-    @property bool executeFile() const { return _list.tiler.executeFile; }
-    @property int executeFileID() const { return _list.tiler.executeFileID; }
-
     void highlightNothing() { _list.tiler.highlightNothing(); }
     bool highlightFile(int i, CenterOnHighlitFile chf)
     {
         return _list.tiler.highlightFile(i, chf);
-    }
-
-    Filename executeFileFilename() const
-    {
-        assert (executeFile, "call this only when executeFile == true");
-        return _ls.files[executeFileID];
     }
 
     bool navigateToAndHighlightFile(Filename fn, CenterOnHighlitFile chf)
@@ -128,11 +135,16 @@ protected:
     {
         if (_bread.execute)
             updateAccordingToBreadCurrentDir();
-        else if (_list.tiler.executeDir)
-            currentDir = _ls.dirs[_list.tiler.executeDirID];
     }
 
 private:
+    /*
+     * I don't know whether updateAccording...'s callers should have
+     * checked and prevented unneccessary calls, or wethere updateAccording...
+     * should abort when it realizes that no work has to be done.
+     * Well, I'll let updateAccording... fire an event every time it's called.
+     * If we fire this too often, investigate.
+     */
     void updateAccordingToBreadCurrentDir(
         KeepScrollingPosition ksp = KeepScrollingPosition.no
     ) {
@@ -140,12 +152,43 @@ private:
             _ls.currentDir = currentDir;
         catch (FileException e) {
             log(e.msg);
-            if (currentDir == basedir && basedir !is null)
+            if (currentDir == baseDir && baseDir !is null)
                 // This throws if the dir doesn't exist afterwards
-                basedir.mkdirRecurse();
-            currentDir = basedir;
+                baseDir.mkdirRecurse();
+            currentDir = baseDir;
             return;
         }
         _list.tiler.loadDirsFiles(_ls.dirs, _ls.files, ksp);
+        if (_onDirSelect)
+            _onDirSelect(currentDir);
+    }
+
+    void createSearchButton(void delegate(Filename) aOnFileSelect)
+    in {
+        assert (aOnFileSelect, "you should provide onFileSelect if you "
+        ~ "need the search button, to do something at all with the result");
+    }
+    body {
+        import basics.user;
+        import file.language;
+        _searchButton = new TextButton(new Geom(0, 0, Breadcrumb.butXl,
+            _bread.ylg, From.TOP_RIGHT), Lang.browserSearch.transl);
+        _searchButton.hotkey = basics.user.keyMenuSearch;
+
+        _searchButton.onExecute = ()
+        {
+            assert (! _searchWindow);
+            _searchWindow = new LevelSearch();
+            _searchWindow.onDone = (Filename fn)
+            {
+                _searchWindow = null;
+                if (! fn)
+                    return;
+                this.currentDir = fn;
+                aOnFileSelect(fn);
+            };
+            addFocus(_searchWindow);
+        };
+        addChild(_searchButton);
     }
 }

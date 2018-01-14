@@ -29,18 +29,13 @@ public:
         cfg.bread = new Geom(-9999, -9999, 10, 10); // hack: offscreen
         cfg.files = new Geom(cfg.all);
         cfg.ls    = new AlphabeticalLs;
-        _picker   = new Picker(cfg);
-        _picker.basedir = basics.globals.dirDataTransl;
+        cfg.baseDir = basics.globals.dirDataTransl;
+        cfg.onFileSelect = (Filename fn) { this.highlight(fn); };
+        _picker = new Picker(cfg);
         addChild(_picker);
     }
 
-    override void loadValue()
-    {
-        _lastChosen = basics.user.fileLanguage;
-        _picker.navigateToAndHighlightFile(_lastChosen,
-                                           CenterOnHighlitFile.always);
-    }
-
+    override void loadValue() { highlight(basics.user.fileLanguage); }
     override void saveValue()
     {
         if (_lastChosen !is null
@@ -52,15 +47,6 @@ public:
     }
 
 protected:
-    override void calcSelf()
-    {
-        if (_picker.executeFile) {
-            _lastChosen = _picker.executeFileFilename;
-            _picker.highlightFile(_picker.executeFileID,
-                                  CenterOnHighlitFile.onlyIfOffscreen);
-        }
-    }
-
     static class LanguageTiler : LevelOrReplayTiler {
     public:
         this(Geom g) { super(g); }
@@ -84,5 +70,13 @@ protected:
             }
             return ret;
         }
+    }
+
+private:
+    void highlight(Filename fn)
+    {
+        _lastChosen = fn;
+        _picker.navigateToAndHighlightFile(fn,
+            CenterOnHighlitFile.onlyIfOffscreen);
     }
 }

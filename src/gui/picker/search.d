@@ -1,16 +1,19 @@
-module menu.search;
+module gui.picker.search;
 
 /*
- * SearchWindow
+ * LevelSearch
  *
  * The window in which you earch for levels. You can type a query string,
- * and SearchWindow will offer you a list of levels such that the query
+ * and LevelSearch will offer you a list of levels such that the query
  * matches the level's filename or title.
  *
  * This doesn't start the level immediately, but merely returns it to the
  * main browser, which should then navigate to it.
  *
  * Convention: Callers give us focus. We remove our own focus.
+ *
+ * You can't ask us whether we're done. Rather, register a callback that
+ * we'll call with null on cancel, and with the filename on selected result.
  */
 
 import std.algorithm;
@@ -30,13 +33,12 @@ import hardware.mouse : mouseClickRight;
 import hardware.keyboard;
 import hardware.keyset;
 
-class SearchWindow : Window {
+class LevelSearch : Window {
 private:
     Texttype _query;
     TextButton _back;
 
-    bool _done;
-    MutFilename _selectedResult;
+    void delegate(Filename) _onDone; // called with null on cancel
     SearchResultList _results;
 
     // _database contains what we search through. But it's expensive to build
@@ -79,8 +81,7 @@ public:
         addChildren(_results, _query, _back);
     }
 
-    bool done() const @nogc pure { return _done; }
-    Filename selectedResult() const @nogc pure { return _selectedResult; }
+    void onDone(typeof(_onDone) f) { _onDone = f; }
 
 protected:
     override void calcSelf()
@@ -101,9 +102,9 @@ protected:
 private:
     void setDoneWith(Filename fn)
     {
-        _done = true;
-        _selectedResult = fn;
         rmFocus(this);
+        if (_onDone)
+            _onDone(fn);
     }
 
     void search()

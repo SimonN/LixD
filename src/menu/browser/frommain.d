@@ -3,6 +3,7 @@ module menu.browser.frommain;
 import game.replay;
 import file.filename;
 import gui;
+import gui.picker;
 import level.level;
 import menu.browser.select;
 
@@ -20,6 +21,13 @@ public:
 
 protected:
     @property bool gotoGame(bool b) { return _gotoGame = b; }
+
+    auto pickerConfig() const
+    {
+        auto cfg = PickerConfig!LevelTiler();
+        cfg.showSearchButton = true;
+        return cfg;
+    }
 }
 
 /* How to use the DeleteMixin:
@@ -53,40 +61,6 @@ mixin template DeleteMixin()
                 KeySet(keyMenuDelete, keyMenuExit),
                 () { _boxDelete = null; });
             addFocus(_boxDelete);
-        }
-    }
-}
-
-/*
- * How to use the SearchMixin:
- * Mix it into a browser. In the browser's constructor, call
- * createSearchButton with the desired geom. In the browser's workSelf(),
- * call workSearchMixin().
- */
-mixin template SearchMixin()
-{
-    private Button _button;
-    private SearchWindow _window;
-
-    private void createSearchButton(Geom g)
-    {
-        _button = new TextButton(g, Lang.browserSearch.transl);
-        _button.hotkey = basics.user.keyMenuSearch;
-        _button.onExecute = () {
-            assert (! _window);
-            _window = new SearchWindow();
-            addFocus(_window);
-        };
-        addChild(_button);
-    }
-
-    private void workSearchMixin()
-    {
-        assert (_button);
-        if (_window && _window.done) {
-            if (_window.selectedResult)
-                highlight(_window.selectedResult);
-            _window = null;
         }
     }
 }

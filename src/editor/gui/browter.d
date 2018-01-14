@@ -15,6 +15,7 @@ private:
     Picker _picker;
     TextButton _cancel;
     UserOptionFilename _curDir;
+    MutFilename _chosenTile; // null until we're good to exit
 
 public:
     this(string allowedPreExts, UserOptionFilename curDir, MergeAllDirs merge,
@@ -26,7 +27,6 @@ public:
             _curDir.descShort);
         _picker = merge ? makePicker!true(allowedPreExts)
                         : makePicker!false(allowedPreExts);
-        _picker.basedir = dirImages;
         _picker.currentDir = merge ? dirImages
             : overrideStartDir && overrideStartDir.dirExists ? overrideStartDir
             : _curDir.value;
@@ -36,17 +36,12 @@ public:
         addChildren(_picker, _cancel);
     }
 
-    bool done() const
+    @property bool done() const
     {
         return chosenTile !is null || _cancel.execute || mouseClickRight;
     }
 
-    Filename chosenTile() const
-    {
-        if (_picker.executeFile)
-            return _picker.executeFileFilename;
-        return null;
-    }
+    @property Filename chosenTile() const { return _chosenTile; }
 
     void saveDirOfChosenTileToUserCfg()
     {
@@ -55,7 +50,7 @@ public:
     }
 
 private:
-    Picker makePicker(bool merge)(string allowedPreExts) const
+    Picker makePicker(bool merge)(string allowedPreExts)
     {
         static if (merge) {
             auto cfg = PickerConfig!(ImageTiler!GadgetBrowserButton)();
@@ -68,6 +63,8 @@ private:
         cfg.all   = new Geom(20, 40, xlg-40, ylg-60);
         cfg.bread = new Geom(0, 0, cfg.all.xl - 80, 30);
         cfg.files = new Geom(0, 40, cfg.all.xl, cfg.all.yl - 40);
+        cfg.baseDir = dirImages;
+        cfg.onFileSelect = (Filename fn) { _chosenTile = fn; };
         return new Picker(cfg);
     }
 }

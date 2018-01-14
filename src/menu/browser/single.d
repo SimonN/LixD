@@ -13,7 +13,6 @@ import gui.picker;
 import hardware.sound;
 import level.level;
 import menu.browser.frommain;
-import menu.search;
 
 class BrowserSingle : BrowserCalledFromMainMenu {
 private:
@@ -31,7 +30,7 @@ public:
     this()
     {
         super(Lang.browserSingleTitle.transl,
-            basics.globals.dirLevels, PickerConfig!LevelTiler());
+            basics.globals.dirLevels, super.pickerConfig());
         scope (success)
             super.highlight(basics.user.singleLastLevel);
 
@@ -79,9 +78,6 @@ public:
         _delete = new TextButton(new Geom(infoX, 20,
             infoXl/4, 40, From.BOTTOM_LEFT), Lang.browserDelete.transl);
         _delete.hotkey = basics.user.keyMenuDelete;
-
-        createSearchButton(new Geom(infoX + infoXl/4, 20,
-            infoXl/4, 40, From.BOTTOM_LEFT));
 
         _by = new LabelTwo(new Geom(infoX, infoY + 20, infoXl, 20),
             Lang.browserInfoAuthor.transl);
@@ -154,15 +150,8 @@ protected:
         calcDeleteMixin();
     }
 
-    override void workSelf()
-    {
-        super.workSelf();
-        workSearchMixin();
-    }
-
 private:
     mixin DeleteMixin deleteMixin;
-    mixin SearchMixin searchMixin;
 
     MsgBox newMsgBoxDelete()
     {
