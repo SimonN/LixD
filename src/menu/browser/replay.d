@@ -79,7 +79,8 @@ protected:
             _matcher = new ReplayToLevelMatcher(fn);
             _delete.show();
             _buttonPlayWithPointedTo.shown = _matcher.pointedToIsGood;
-            if (_matcher.pointedToFilename.rootless.length
+            if (_matcher.pointedToFilename !is null
+                && _matcher.pointedToFilename.rootless.length
                 > dirLevels.rootless.length
             ) {
                 // We show this even if the level is bad. It's probably
