@@ -98,7 +98,11 @@ protected:
     override void onFileSelect(Filename fn)
     {
         assert (_matcher);
-        if (_matcher.includedIsGood) {
+        if (_matcher.includedIsGood
+            // Ideally, we don't choose this silently when included is bad.
+            // But how to handle doubleclick on replay then? Thus, for now:
+            || _matcher.pointedToIsGood
+        ) {
             basics.user.replayLastLevel = super.fileRecent;
             gotoGame = true;
         }
