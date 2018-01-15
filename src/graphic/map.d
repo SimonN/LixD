@@ -26,55 +26,14 @@ static import hardware.keyboard;
 static import hardware.mouse;
 
 class Map {
-
-/*  this(in int xl, int yl, int srceen_xl, int screen_yl)
- *
- *      Deduct from the real screen xl/yl the GUI elements' yl, then pass the
- *      remainder to this constructor.
- */
-    @property bool scrollableUp()   const { return _cameraY > minY || torusY; }
-    @property bool scrollableRight()const { return _cameraX < maxX || torusX; }
-    @property bool scrollableLeft() const { return _cameraX > minX || torusX; }
-    @property bool scrollableDown() const { return _cameraY < maxY || torusY; }
-
-    @property bool scrollable() const
-    {
-        return scrollableUp()   || scrollableDown()
-            || scrollableLeft() || scrollableRight();
-    }
-
-    @property bool scrollingNow() const { return scrollingContinues;}
-    @property int  cameraXl()     const { return _cameraXl; }
-    @property int  cameraYl()     const { return _cameraYl; }
-
-/* New and exciting difference to A4/C++ Lix:
- * screen_x/y point to the center of the visible area. This makes computing
- * zoom easier, and copying the resulting viewed area is encapsulated in
- * draw() anyway.
- */
-    @property int cameraX() const { return _cameraX; }
-    @property int cameraY() const { return _cameraY; }
-    @property float zoom() const pure { return _zoom.current; }
-
-    alias torbit this;
-    @property inout(Torbit) torbit() inout
-    {
-        assert (_zoom);
-        assert (_nearestNeighbor);
-        assert (_blurryScaling);
-        return _zoom.preferNearestNeighbor ? _nearestNeighbor : _blurryScaling;
-    }
-
 private:
-
     immutable int _cameraXl;
     immutable int _cameraYl;
     int _cameraX;
     int _cameraY;
-    int  scrollGrabbedX;
-    int  scrollGrabbedY;
-    bool scrollingStarts;
-    bool scrollingContinues;
+    Point _scrollGrabbed;
+    bool _isHoldScrolling;
+    bool _suggestTooltip;
 
     // We have two ground torbits, because we must choose at their creation
     // whether we want nearest-neighbor scaling or blurry linear interpolation.
@@ -82,25 +41,58 @@ private:
     Torbit _nearestNeighbor;
     Torbit _blurryScaling;
 
-    @property int divByZoom(in float i) const { return ceil(i / zoom).to!int; }
+    @property const pure {
+        int divByZoom(in float i) { return (i / zoom).ceil.to!int; }
 
-    // Number of pixels from the map that are copied in that dimension.
-    // If zoom is far in (large _zooom), then these are small.
-    @property int cameraZoomedXl() const { return divByZoom(_cameraXl); }
-    @property int cameraZoomedYl() const { return divByZoom(_cameraYl); }
+        // Number of pixels from the map that are copied in that dimension.
+        // If zoom is far in (large _zooom), then these are small.
+        int cameraZoomedXl() { return divByZoom(_cameraXl); }
+        int cameraZoomedYl() { return divByZoom(_cameraYl); }
 
-    @property int minX() const { return cameraZoomedXl / 2; }
-    @property int minY() const { return cameraZoomedYl / 2; }
-    @property int maxX() const { return xl - cameraZoomedXl + minX; }
-    @property int maxY() const { return yl - cameraZoomedYl + minY; }
-    // Why not simply maxX = xl - minX? If cameraZoomedXl is odd, dividing
-    // by 2 discards length, and we want (maxX - minX) == cameraZoomedXl
-    // exactly. This prevents scrolling too far on strong zoom.
-
-
+        int minX() { return cameraZoomedXl / 2; }
+        int minY() { return cameraZoomedYl / 2; }
+        int maxX() { return this.xl - cameraZoomedXl + minX; }
+        int maxY() { return this.yl - cameraZoomedYl + minY; }
+        // Why not simply maxX = xl - minX? If cameraZoomedXl is odd, dividing
+        // by 2 discards length, and we want (maxX - minX) == cameraZoomedXl
+        // exactly. This prevents scrolling too far on strong zoom.
+    }
 
 public:
+    @property const pure {
+        bool scrollableUp()   { return _cameraY > minY || torusY; }
+        bool scrollableRight(){ return _cameraX < maxX || torusX; }
+        bool scrollableLeft() { return _cameraX > minX || torusX; }
+        bool scrollableDown() { return _cameraY < maxY || torusY; }
+        bool scrollable()
+        {
+            return scrollableUp()   || scrollableDown()
+                || scrollableLeft() || scrollableRight();
+        }
 
+        bool isHoldScrolling() { return _isHoldScrolling; }
+        bool suggestHoldScrollingTooltip() { return _suggestTooltip; }
+        int  cameraXl() { return _cameraXl; }
+        int  cameraYl() { return _cameraYl; }
+
+        int cameraX() { return _cameraX; }
+        int cameraY() { return _cameraY; }
+        float zoom() { return _zoom.current; }
+    }
+
+    alias torbit this;
+    @property inout(Torbit) torbit() inout pure
+    {
+        assert (_zoom);
+        assert (_nearestNeighbor);
+        assert (_blurryScaling);
+        return _zoom.preferNearestNeighbor ? _nearestNeighbor : _blurryScaling;
+    }
+
+/*
+ * Deduct from the real screen xl/yl the GUI elements' yl, then pass the
+ * remainder to this constructor.
+ */
 this(in Topology tp, in int aCameraXl, in int aCameraYl)
 {
     assert (aCameraXl > 0);
@@ -256,70 +248,80 @@ mouseOnLand() const
         f(_cameraY, yl, torusY, borderUpperSideYl,minY,hardware.mouse.mouseY));
 }
 
-void
-calcScrolling()
+void calcScrolling()
+{
+    calcEdgeScrolling();
+    calcHoldScrolling();
+}
+
+private void calcEdgeScrolling()
+{
+    _suggestTooltip = false;
+    if (! scrollable || ! hardware.mouse.hardwareMouseInsideWindow
+        || basics.user.scrollSpeedEdge.value <= 0)
+        return;
+
+    float scrd = basics.user.scrollSpeedEdge;
+    if (hardware.mouse.mouseHeldRight())
+        scrd *= 4;
+    scrd /= zoom;
+    if (scrd < 1)
+        scrd = 1;
+    immutable dxl = hardware.display.displayXl - 1;
+    immutable dyl = hardware.display.displayYl - 1;
+    immutable int a = scrd.roundInt;
+    void msg(bool b) { _suggestTooltip = _suggestTooltip || b; }
+
+    with (hardware.mouse) {
+        // Deliberately, we suggest the tooltip when we could scroll into
+        // the opposite direction, not into the scrolling direction. The idea
+        // is that I don't want the tooltip at the bottom edge when you can't
+        // scroll down, but tooltip should persist after scrolled all the way.
+        if (mouseX == 0)   { cameraX = _cameraX - a; msg(scrollableRight); }
+        if (mouseX == dxl) { cameraX = _cameraX + a; msg(scrollableLeft); }
+        if (mouseY == 0)   { cameraY = _cameraY - a; msg(scrollableDown); }
+        if (mouseY == dyl) { cameraY = _cameraY + a; msg(scrollableUp); }
+    }
+}
+
+private void calcHoldScrolling()
 {
     if (! scrollable) {
-        scrollingStarts = false;
-        scrollingContinues = false;
+        _isHoldScrolling = false;
         return;
     }
+    if (basics.user.keyScroll.keyHeld && ! _isHoldScrolling) {
+        // first frame of scrolling
+        _scrollGrabbed = hardware.mouse.mouseOnScreen;
+    }
+    _isHoldScrolling = basics.user.keyScroll.keyHeld;
+    if (! _isHoldScrolling)
+        return;
 
-    if (hardware.mouse.hardwareMouseInsideWindow
-        && basics.user.scrollSpeedEdge.value > 0
+    int clickScrollingOneDimension(in bool minus, in bool plus,
+        in int grabbed, in int mouse, in int mickey, in int cameraCurrent,
+        void function() freeze
     ) {
-        float scrd = basics.user.scrollSpeedEdge;
-        if (hardware.mouse.mouseHeldRight())
-            scrd *= 4;
-        scrd /= zoom;
-        if (scrd < 1)
-            scrd = 1;
-        immutable edgeR = hardware.display.displayXl - 1;
-        immutable edgeU = hardware.display.displayYl - 1;
-        with (hardware.mouse) {
-            if (mouseY() == 0)     cameraY = _cameraY - scrd.roundInt;
-            if (mouseX() == edgeR) cameraX = _cameraX + scrd.roundInt;
-            if (mouseY() == edgeU) cameraY = _cameraY + scrd.roundInt;
-            if (mouseX() == 0)     cameraX = _cameraX - scrd.roundInt;
-        }
-    }
-
-    scrollingStarts    = basics.user.keyScroll.keyHeld && ! scrollingContinues;
-    scrollingContinues = basics.user.keyScroll.keyHeld;
-
-    if (scrollingStarts) {
-        // remember old position of the mouse
-        scrollGrabbedX = hardware.mouse.mouseX();
-        scrollGrabbedY = hardware.mouse.mouseY();
-    }
-    if (scrollingContinues) {
-        int clickScrollingOneDimension(in bool minus, in bool plus,
-            in int grabbed, in int mouse, in int mickey, in int cameraCurrent,
-            void function() freeze
+        int ret = cameraCurrent;
+        if (   (minus && mouse <= grabbed && mickey < 0)
+            || (plus  && mouse >= grabbed && mickey > 0)
         ) {
-            int ret = cameraCurrent;
-            if (   (minus && mouse <= grabbed && mickey < 0)
-                || (plus  && mouse >= grabbed && mickey > 0)
-            ) {
-                ret += roundInt(mickey * basics.user.scrollSpeedClick
-                        / zoom / 4); // the factor /4 comes from C++ Lix
-                freeze();
-            }
-            return ret;
+            ret += roundInt(mickey * basics.user.scrollSpeedClick
+                    / zoom / 4); // the factor /4 comes from C++ Lix
+            freeze();
         }
-        cameraX = clickScrollingOneDimension(scrollableLeft, scrollableRight,
-            scrollGrabbedX, hardware.mouse.mouseX,
-            hardware.mouse.mouseMickey.x,
-            _cameraX, &hardware.mouse.freezeMouseX);
-
-        cameraY = clickScrollingOneDimension(scrollableUp, scrollableDown,
-            scrollGrabbedY, hardware.mouse.mouseY,
-            hardware.mouse.mouseMickey.y,
-            _cameraY, &hardware.mouse.freezeMouseY);
+        return ret;
     }
-    // end right-click scrolling
+    cameraX = clickScrollingOneDimension(scrollableLeft, scrollableRight,
+        _scrollGrabbed.x, hardware.mouse.mouseX,
+        hardware.mouse.mouseMickey.x,
+        _cameraX, &hardware.mouse.freezeMouseX);
+
+    cameraY = clickScrollingOneDimension(scrollableUp, scrollableDown,
+        _scrollGrabbed.y, hardware.mouse.mouseY,
+        hardware.mouse.mouseMickey.y,
+        _cameraY, &hardware.mouse.freezeMouseY);
 }
-// end calcScrolling()
 
 
 

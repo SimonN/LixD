@@ -11,6 +11,7 @@ module game.core.passive;
 import basics.alleg5;
 import basics.globals;
 import game.core.game;
+import game.panel.tooltip;
 import hardware.keyboard;
 import hardware.mousecur;
 import hardware.sound;
@@ -27,7 +28,9 @@ calcPassive(Game game) { with (game)
     mouseCursor.yf = 0;
 
     map.calcScrolling();
-    if (map.scrollingNow)
+    if (map.suggestHoldScrollingTooltip)
+        game.pan.suggestTooltip(Tooltip.ID.holdToScroll);
+    if (map.isHoldScrolling)
         mouseCursor.xf = 3;
 
     if (pan.coolShadesExecute) {

@@ -30,7 +30,7 @@ public:
     void zoomIn()  { if (zoomableIn) ++_selected; }
     void zoomOut() { if (zoomableOut) --_selected; }
 
-    bool preferNearestNeighbor() const
+    bool preferNearestNeighbor() const pure
     {
         return abs(current.roundInt - current) < 0.01f || current >= 3;
     }
