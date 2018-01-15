@@ -3,316 +3,234 @@
 // mainNameOfLanguage: This is how your translated language appears in the
 // options dialogue. Translate this to your language ("Deutsch" or "Français"),
 // don't have your language's name in English (don't put "German" or "French")
-
-$mainNameOfLanguage         English
+$mainNameOfLanguage English
 
 // used in various dialogues
+$commonOk Okay
+$commonCancel Cancel
+$commonNo No
+$commonBack Back
+$commonExit Exit
+$commonVersion Version
 
-$commonOk                   Okay
-$commonCancel               Cancel
-$commonYes                  Yes
-$commonNo                   No
-$commonBack                 Back
-$commonExit                 Exit
-$commonVersion              Version
+$mainMenuGetMusic Extract the music into Lix's directory:
 
 // level browsers
+$browserSingleTitle Single Player
+$browserNetworkTitle Select Multiplayer level
+$browserReplayTitle Replays
+$browserPlay Play
+$browserEdit Edit
+$browserNewLevel Create Level
+$browserReplay Replay
+$browserDelete Delete
+$browserSearch Search
+$browserExportImage Export image
+$browserExportImageDone Exported to:
+$browserMkdirTitle Create Folder
+$browserMkdirPleaseEnter Name of new folder:
+$browserInfoAuthor By:
+$browserInfoInitgoal Save:
+$browserInfoResultSaved Saved:
+$browserInfoResultSkills Skills:
 
-$browserSingleTitle         Single Player
-$browserNetworkTitle        Select Multiplayer level
-$browserReplayTitle         Replays
-$browserPlay                Play
-$browserEdit                Edit
-$browserNewLevel            Create Level
-$browserReplay              Replay
-$browserDelete              Delete
-$browserSearch              Search
-$browserExtract             Extract level
-$browserExportImage         Export image
-$browserExportImageDone     Exported to:
-
-$browserMkdirTitle          Create Folder
-$browserMkdirPleaseEnter    Name of new folder:
-
-$browserInfoAuthor          By:
-$browserInfoInitgoal        Save:
-$browserInfoInitial         Lix:
-$browserInfoHatches         Hatches:
-$browserInfoGoals           Goals:
-$browserInfoSkills          Skills:
-$browserInfoClock2          Overtime:
-$browserInfoAuthorNone      ?
-$browserInfoClockNone       --
-
-$browserInfoResultSaved     Saved:
-$browserInfoResultSkills    Skills:
-$browserInfoResultOld1      The level has
-$browserInfoResultOld2      been edited.
-
-$browserInfoPlayer           Player:
-$browserInfoVersion          Game:
-$browserInfoBuilt            Level:
-$browserInfoNew              is too new
-$browserInfoSame             fits!
-$browserInfoOld              is too old
-$browserInfoHoldsLevel       contained
-
-$winSearchTitle              Level Search
-
-$winVerifyTitle              Replay Verifier
+$winSearchTitle Level Search
+$winVerifyTitle Replay Verifier
 
 // networking lobby
-
-$winLobbyTitle               Network Game
-$winLobbyTitleLobby          Lobby
-$winLobbyTitleRoom           Room #
-$winLobbyDisconnect          Disconnect
-$winLobbyStartCentral        Central server
-$winLobbyStartCustom         Custom address:
-$winLobbyStartConnect        Connect
-$winLobbyChat                Chat:
-$winLobbySelectLevel         Choose level
-$winLobbyReady               Ready to start
-$winLobbyRoomNumber          Room #
-$winLobbyRoomCreate          Open a new room
-$winLobbyRoomLeave           Leave room
+$winLobbyTitle Network Game
+$winLobbyDisconnect Disconnect
+$winLobbyStartCentral Central server
+$winLobbyStartCustom Custom address:
+$winLobbyStartConnect Connect
+$winLobbyChat Chat:
+$winLobbySelectLevel Choose level
+$winLobbyReady Ready to start
+$winLobbyRoomNumber Room #
+$winLobbyRoomCreate Open a new room
+$winLobbyRoomLeave Leave room
 
 // end-of-game dialog, or pause dialog
-$winGameTitle                 Game Menu
-$winGameResult                Result
-$winGameLixSaved             Lix saved:
-$winGameLixSavedInTime     Lix saved in time:
-$winGameResume                Continue
-$winGameFramestepBack         ◀▮ Rewind time ◀▮
-$winGameRestart               Restart level
-$winGameSaveReplay           Save replay
-$winGameMenu                  Exit
-$winGameCommentPerfect       Perfect! All saved!
-$winGameCommentMore          Super, more than necessary!
-$winGameCommentExactly       Target reached exactly!
-$winGameCommentFewer         Sorry, those were not enough.
-$winGameCommentNone          That was nothing... Try again?
-$winGameResultSkillsUsed         Skills used:
-$winGameResultTimeUsed           Time taken:
-$winGameNetFirst             Awesome! You're the champion!
-$winGameNetSecond            Well done, nice second place.
-$winGameNetMiddle            An okay outcome... Revanche?
-$winGameNetLast              Sorry, you lie behind this time.
-$winGameNetTieForFirst         Great, you're among the champs!
-$winGameNetTieForLast          At least you're not alone there.
-$winGameNetEverybodyTies           What's that? No true winner?
-$winGameNetZero              Rock bottom! Did you nuke them?
-$winGameNetEverybodyZero          Do we have a nuclear winter?
-$winGameReplayWinOne        has won!
-$winGameReplayWinTeam       have won!
-$winGameReplayTie            The game is a tie.
-$winGameOverwriteTitle       Overwrite Replay?
-$winGameOverwriteQuestion    Do you really want to overwrite this replay?
+$winGameTitle Game Menu
+$winGameResult Result
+$winGameLixSaved Lix saved:
+$winGameResume Continue
+$winGameFramestepBack ◀▮ Rewind time ◀▮
+$winGameRestart Restart level
+$winGameSaveReplay Save replay
+$winGameMenu Exit
+$winGameCommentPerfect Perfect! All saved!
+$winGameCommentMore Super, more than necessary!
+$winGameCommentExactly Target reached exactly!
+$winGameCommentFewer Sorry, those were not enough.
+$winGameCommentNone That was nothing... Try again?
 
 // help texts inside the game
-$gameForceLeft       [%s] for left-facing.
-$gameForceRight      [%s] for right-facing.
-$gamePriorityInvert  [%s] for hindmost lix.
-$gameQueueBuilder    Click again to queue.
+$gameForceLeft [%s] for left-facing.
+$gameForceRight [%s] for right-facing.
+$gamePriorityInvert [%s] for hindmost lix.
+$gameQueueBuilder Click again to queue.
 $gameQueuePlatformer Click again to queue.
-$gameHoldToScroll    [%s] for mouse scrolling.
-$gamePause           Pause.
-$gameZoom            %s to zoom in, %s to zoom out.
-$gameStateSave       Quicksave game position.
-$gameStateLoad       Load quicksaved position.
-$gameFramestepBack   %s to step back, %s to jump back.
-$gameFramestepAhead  %s to step ahead, %s to jump ahead.
-$gameFastForward     %s for fast-forward, %s for turbo.
-$gameRestart         Restart level.
-$gameNuke            Nuke. Double-click to activate.
-$gameClearPhysics    Show splat ruler, hatches, goals.
-$gameSpecTribe       View skillset of another team.
+$gameHoldToScroll Hold [%s] and move mouse to scroll.
+$gameClickToCancelReplay Click to interrupt the replay.
+$gamePause Pause.
+$gameZoom %s to zoom in, %s to zoom out.
+$gameStateSave Quicksave game position.
+$gameStateLoad Load quicksaved position.
+$gameFramestepBack %s to step back, %s to jump back.
+$gameFramestepAhead %s to step ahead, %s to jump ahead.
+$gameFastForward %s for fast-forward, %s for turbo.
+$gameRestart Restart level.
+$gameNuke Nuke. Double-click to activate.
+$gameClearPhysics Show splat ruler, hatches, goals.
 
 // main editor screen
-
-$editorHotkey                  Hotkey:
-$editorHotkeyHold             Hotkey: hold
-$editorBarAt                  at
-$editorBarGroup               -tile-group
-$editorBarHover               tiles about to be selected
-$editorBarSelection           tiles selected
-$editorBarMoveWithKeysLong       Drag tiles or move them with [
-$editorBarMoveWithKeysShort      Move with [
-$editorBarMoveWithKeysMid        ], [
-$editorBarMoveWithKeysEnd        ].
+$editorHotkey Hotkey:
+$editorBarAt at
+$editorBarGroup -tile-group
+$editorBarHover tiles about to be selected
+$editorBarSelection tiles selected
 
 // editor buttons
+$editorButtonFileNew New: Deletes everything on screen and starts a new level.
+$editorButtonFileExit Quit: Exits the editor and asks about saving changed data.
+$editorButtonFileSave Save:
+$editorButtonFileSaveAs Save As: Saves the current level under a new file name.
+$editorButtonGrid2 Grid 2: Rounds tiles' coordinates to multiples of 2.
+$editorButtonGridCustom Custom grid: This grid size is settable in the options.
+$editorButtonGrid16 Grid 16: Rounds tiles' coordinates to multiples of 16.
+$editorButtonSelectAll Everything: Selects all tiles in the level.
+$editorButtonSelectFrame Frame: Drag a frame with the mouse to select tiles.
+$editorButtonSelectAdd Add: Keep tiles selected when selecting additional tiles.
+$editorButtonUndo Undo: Reverts your latest changes to the level.
+$editorButtonRedo Redo: Re-applies undone changes to the level.
+$editorButtonGroup Make group: Creates a new single tile from all selected tiles.
+$editorButtonUngroup Ungroup: Retrieve the individual tiles from selected groups.
+$editorButtonSelectCopy Copy: Clones the selected tiles for placing them elsewhere.
+$editorButtonSelectDelete Delete: Removes the selected tiles from the level.
+$editorButtonBackground Background: Puts the selected tiles behind some others.
+$editorButtonForeground Foreground: Puts the selected tiles in front of some others.
+$editorButtonSelectFlip Flip: Mirrors the selected terrain horizontally.
+$editorButtonSelectRotate Rotate: Performs a quarter turn on the selected terrain.
+$editorButtonSelectDark Dark: Selected terrain erases normal terrain.
+$editorButtonViewZoom Zoom: Left-click zooms into the map, right-click zooms out.
+$editorButtonAddTerrain Terrain: Add a terrain tile.
+$editorButtonAddSteel Steel: Add a steel tile that cannot be dug through.
+$editorButtonAddHatch Hatch: Add a lix entrance hatch.
+$editorButtonAddGoal Goal: Add a goal, i.e., an exit, for the lix.
+$editorButtonAddDeco Decoration: Add a non-interactive decoration tile.
+$editorButtonAddHazard Hazard: Add a trap, water or fire.
+$editorButtonMenuConstants Constants: Name the level, set fundamental values.
+$editorButtonMenuTopology Map: Resize the level, wrap the edges.
+$editorButtonMenuLooks Looks: Color the background, choose screen starting position.
+$editorButtonMenuSkills Skills: Decide how many lix skills each player may assign.
 
-$editorButtonFileNew         New: Deletes everything on screen and starts a new level.
-$editorButtonFileExit        Quit: Exits the editor and asks about saving changed data.
-$editorButtonFileSave        Save:
-$editorButtonFileSaveAs      Save As: Saves the current level under a new file name.
-$editorButtonGrid2           Grid 2: Rounds tiles' coordinates to multiples of 2.
-$editorButtonGridCustom      Custom grid: This grid size is settable in the options.
-$editorButtonGrid16          Grid 16: Rounds tiles' coordinates to multiples of 16.
-$editorButtonSelectAll       Everything: Selects all tiles in the level.
-$editorButtonSelectFrame     Frame: Drag a frame with the mouse to select tiles.
-$editorButtonSelectAdd       Add: Keep tiles selected when selecting additional tiles.
-$editorButtonUndo            Undo: Reverts your latest changes to the level in order.
-$editorButtonRedo            Redo: Re-applies undone changes.
-$editorButtonGroup           Make group: Creates a new single tile from all selected tiles.
-$editorButtonUngroup         Ungroup: Retrieve the individual tiles from selected groups.
-$editorButtonSelectCopy      Copy: Clones the selected tiles for placing them elsewhere.
-$editorButtonSelectDelete    Delete: Removes the selected tiles from the level.
-$editorButtonBackground      Background: Puts the selected tiles behind some others.
-$editorButtonForeground      Foreground: Puts the selected tiles in front of some others.
-$editorButtonSelectFlip      Flip: Mirrors the selected terrain horizontally.
-$editorButtonSelectRotate    Rotate: Performs a quarter turn on the selected terrain.
-$editorButtonSelectDark      Dark: Selected terrain erases normal terrain.
-$editorButtonViewZoom        Zoom: Left-click zooms into the map, right-click zooms out.
-$editorButtonAddTerrain      Terrain: Add a terrain tile.
-$editorButtonAddSteel        Steel: Add a steel tile that cannot be dug through.
-$editorButtonAddHatch        Hatch: Add a lix entrance hatch.
-$editorButtonAddGoal         Goal: Add a goal, i.e., an exit, for the lix.
-$editorButtonAddDeco         Decoration: Add a non-interactive decoration tile.
-$editorButtonAddHazard       Hazard: Add a trap, water or fire.
-$editorButtonMenuConstants   Constants: Name the level, set fundamental values.
-$editorButtonMenuTopology    Map: Resize the level, wrap the edges.
-$editorButtonMenuLooks       Looks: Color the background, choose screen starting position.
-$editorButtonMenuSkills      Skills: Decide how many lix skills each player may assign.
+$saveBrowserTitle Save As
+$saveBrowserWhatToType Filename without extension:
+$saveBoxOverwriteTitle Overwrite?
+$saveBoxOverwriteQuestion Really overwrite this level?
+$saveBoxOverwrite Overwrite
 
-// save browser
-
-$saveBrowserTitle            Save As
-$saveBrowserWhatToType       Filename without extension:
-$saveBoxOverwriteTitle       Overwrite?
-$saveBoxOverwriteQuestion    Really overwrite this level?
-$saveBoxOverwrite            Overwrite
-
-$saveBoxTitleDelete       Delete?
-$saveBoxTitleSave         Save?
+$saveBoxTitleDelete Delete?
+$saveBoxTitleSave Save?
 $saveBoxQuestionUnsavedChangedLevel Save changes to this level?
 $saveBoxQuestionUnsavedNewLevel Save this new level?
 $saveBoxQuestionDeleteReplay Really delete this replay?
-$saveBoxQuestionDeleteLevel  Really delete this level?
-$saveBoxDirectory         Folder:
-$saveBoxFileName          File:
-$saveBoxLevelName         Title:
-$saveBoxYesSave           Save
-$saveBoxNoDiscard         Discard
-$saveBoxNoCancel          Cancel
+$saveBoxQuestionDeleteLevel Really delete this level?
+$saveBoxDirectory Folder:
+$saveBoxFileName File:
+$saveBoxLevelName Title:
+$saveBoxYesSave Save
+$saveBoxNoDiscard Discard
+$saveBoxNoCancel Cancel
 
 // BitmapBrowser
-
-$addTerrain                    Add terrain
-$addSteel                      Add steel
-$addHatch                      Add hatch
-$addGoal                       Add goal
-$addDeco                       Add decoration
-$addHazard                     Add hazard
+$addTerrain Add terrain
+$addSteel Add steel
+$addHatch Add hatch
+$addGoal Add goal
+$addHazard Add hazard
 
 // editor window about the size of map
-
-$winTopologyTitle                 Map
-$winTopologyL                     Left:
-$winTopologyR                     Right:
-$winTopologyU                     Top:
-$winTopologyD                     Bottom:
-$winTopologyX                     Width:
-$winTopologyY                     Height:
-$winTopologyHex                   Show size in hexadecimal
-$winTopologyTorusX               Wrap around horizontally
-$winTopologyTorusY               Wrap around vertically
+$winTopologyTitle Map
+$winTopologyL Left:
+$winTopologyR Right:
+$winTopologyU Top:
+$winTopologyD Bottom:
+$winTopologyTorusX Wrap around horizontally
+$winTopologyTorusY Wrap around vertically
 
 // scrolling start position
-
-$winLooksTitle               Looks
-$winLooksManual              Manually set initially visible region
-$winLooksX                   X Coordinate (0 = left)
-$winLooksY                   Y Coordinate (0 = top)
-$winLooksRed                 Background red
-$winLooksGreen               Background green
-$winLooksBlue                Background blue
-$winLooksJump                Scroll there
-$winLooksCurrent             Current Position
+$winLooksTitle Looks
+$winLooksRed Background red
+$winLooksGreen Background green
+$winLooksBlue Background blue
 
 // editor window to set level variables
-
-$winConstantsTitle            Constants
-$winConstantsAuthor           Author
-$winConstantsLevelName        Level title
-$winConstantsPlayers          Players
-$winConstantsInitial          Initial lix
-$winConstantsRequired         Lix to save
-$winConstantsSpawnint         Spawn interval
-$winConstantsOvertime         Overtime
+$winConstantsTitle Constants
+$winConstantsAuthor Author
+$winConstantsLevelName Level title
+$winConstantsPlayers Players
+$winConstantsInitial Initial lix
+$winConstantsRequired Lix to save
+$winConstantsSpawnint Spawn interval
+$winConstantsOvertime Overtime
 
 // editor window to set skills
-
-$winSkillsTitle               Skills
-$winSkillsUseExploder         Fling-exploder
-$winSkillsClear               All to zero
-$winSkillsEightTo             Classic 8 to:
-$winSkillsAllTo               All 14 to:
+$winSkillsTitle Skills
+$winSkillsUseExploder Fling-exploder
+$winSkillsClear All to zero
+$winSkillsEightTo Classic 8 to:
+$winSkillsAllTo All 14 to:
 
 // exporting a level into a file
-
-$exportSingleInitial          Lix:
-$exportSingleRequired         Save:
-$exportSingleSpawnint         SI:
-$exportMultiLix               Lix:
-$exportMultiSpawnint          Spawn int.:
-$exportMultiClock             Overtime:
+$exportSingleInitial Lix:
+$exportSingleRequired Save:
+$exportSingleSpawnint SI:
 
 // network chat messages
+$netChatStartClient Connecting to
+$netChatStartCancel Connection attempt cancelled.
+$netChatYouLoggedOut You left the network.
+$netChatYouCannotConnect Server not found.
+$netChatYouLostConnection Connection to server lost!
+$netChatPeerDisconnected left the network.
+$netChatWeTooOld You have too old a Lix version to connect to the server.
+$netChatWeTooNew You have too new a Lix version. The server should upgrade.
+$netChatVersionYours Your version is
+$netChatVersionServer The server requires
+$netChatPleaseDownload Download the newest version:
+$netChatWeInRoom You have entered room #
+$netChatWeInRoom2 .
+$netChatWeInLobby You are in the lobby.
+$netChatPlayerInRoom has joined room #
+$netChatPlayerInRoom2 .
+$netChatPlayerInLobby has entered the lobby.
+$netChatPlayerOutRoom has entered room #
+$netChatPlayerOutRoom2 .
+$netChatPlayerOutLobby has left the room.
+$netChatLevelChange has selected this level:
+$netGameHowToChat1 Press [
+$netGameHowToChat2 ] to chat.
+$netGameEnd The game is over.
+$netGameEndResult Game outcome:
+$netGameOvertimeNukeIn Overtime is running! Nuke in
 
-$netChatStartServer          You are the server. Other players can connect to you now.
-$netChatStartClient          Connecting to
-$netChatStartCancel          Connection attempt cancelled.
-$netChatYouLoggedOut         You left the network.
-$netChatYouCannotConnect     Server not found.
-$netChatYouLostConnection    Connection to server lost!
-$netChatPeerDisconnected     left the network.
-$netChatWeTooOld            You have too old a Lix version to connect to the server.
-$netChatWeTooNew            You have too new a Lix version. The server should upgrade.
-$netChatSomeoneOld           Someone with too old a Lix version tried to connect.
-$netChatSomeoneNew           Someone with too new a Lix version tried to connect.
-$netChatNamedGuyOld          must update his Lix version to continue.
-$netChatVersionYours         Your version is
-$netChatVersionServer        The server requires
-$netChatServerUpdate         The server should update to the most recent Lix version.
-$netChatPleaseDownload       Download the newest version:
-$netChatWeInRoom            You have entered room #
-$netChatWeInRoom2          .
-$netChatWeInLobby           You are in the lobby.
-$netChatPlayerInRoom         has joined room #
-$netChatPlayerInRoom2      .
-$netChatPlayerInLobby        has entered the lobby.
-$netChatPlayerOutRoom        has entered room #
-$netChatPlayerOutRoom2     .
-$netChatPlayerOutLobby       has left the room.
-$netChatLevelChange          has selected this level:
-$netGameStart                 The game has started.
-$netGameHowToChat1          Press [
-$netGameHowToChat2         ] to chat.
-$netGameEnd                   The game is over.
-$netGameEndResult            Game outcome:
-$netGameOvertimeNukeIn    Overtime is running! Nuke in
-$netGameTriggersOvertime    has triggered overtime! Nuke in
-$netGameWantsAbortiveTie    wants to cancel the game. To cancel, double-click the nuke, otherwise play on.
-
-// Optionsfenster
-
-$optionTitle                   Options
-$optionGroupGraphics           Graphics
-$optionGroupGeneral            General
-$optionGroupControls           Controls
-$optionGroupGameKeys           Game keys
-$optionGroupEditorKeys         Editor keys
-$optionGroupMenuKeys           Menu keys
-$optionUserName               Player name
-$optionLanguage               Language
-$optionReplayAutoSolutions    Auto-save level solutions
-$optionReplayAutoMulti        Auto-save multiplayer games
-$optionSoundEnabled             Sound
-$optionMusicEnabled             Music
-$optionSoundDecibels            Sound gain in dB
-$optionMusicDecibels            Music gain in dB
+$optionTitle Options
+$optionGroupGraphics Graphics
+$optionGroupGeneral General
+$optionGroupControls Controls
+$optionGroupGameKeys Game keys
+$optionGroupEditorKeys Editor keys
+$optionGroupMenuKeys Menu keys
+$optionUserName Player name
+$optionLanguage Language
+$optionReplayAutoSolutions Auto-save level solutions
+$optionReplayAutoMulti Auto-save multiplayer games
+$optionSoundEnabled Sound
+$optionMusicEnabled Music
+$optionSoundDecibels Sound gain in dB
+$optionMusicDecibels Music gain in dB
 
 $optionUserNameDesc Your name appears in replays and in multiplayer games.|Lix saves settings to a file in ./data/user/ named after you.
 $optionLanguageDesc Language throughout Lix's user interface.
@@ -323,18 +241,18 @@ $optionMusicEnabledDesc Enable background music.
 $optionSoundDecibelsDesc Adjust the sound volume. 0 is already pretty loud.|Raise/lower by 10 dB to double/halve the sound volume.
 $optionMusicDecibelsDesc Adjust the music volume. −10 dB should be loud enough.|Raise/lower by 10 dB to double/halve the music volume.
 
-$optionScreenMode               Screen mode
-$optionScreenWindowed           Windowed
+$optionScreenMode Screen mode
+$optionScreenWindowed Windowed
 $optionScreenSoftwareFullscreen Software fullscreen
 $optionScreenHardwareFullscreen Hardware fullscreen
-$optionScreenWindowedRes        Windowed/hardware resolution
-$optionPaintTorusSeams          Paint torus seams
-$optionIngameTooltips           Tooltips during game
-$optionShowButtonHotkeys        Show button hotkeys
-$optionShowFPS                  Count physics and FPS
-$optionGuiColorRed              Menu color red
-$optionGuiColorGreen            Menu color green
-$optionGuiColorBlue             Menu color blue
+$optionScreenWindowedRes Windowed/hardware resolution
+$optionPaintTorusSeams Paint torus seams
+$optionIngameTooltips Tooltips during game
+$optionShowButtonHotkeys Show button hotkeys
+$optionShowFPS Count physics and FPS
+$optionGuiColorRed Menu color red
+$optionGuiColorGreen Menu color green
+$optionGuiColorBlue Menu color blue
 
 $optionScreenModeDesc Windowed and software fullscreen allow for good Alt+Tab.|Windowed and hardware fullscreen use the resolution on the right.
 $optionScreenWindowedResDesc Size of the Lix window when you have chosen windowed mode.|Monitor resolution for hardware fullscreen. Software fullscreen ignores this.
@@ -363,22 +281,21 @@ $optionScrollSpeedEdgeDesc Scroll speed when the mouse cursor touches the screen
 $optionScrollSpeedClickDesc Scroll speed when you move the mouse while holding the scrolling key.|The standard scrolling key is the right mouse button ⟁, see left to remap.
 $optionFastMovementFreesMouseDesc The mouse leaves the Lix window when you move quickly against the sides.|If not checked, untrap the mouse by Alt+Tab.
 
-$optionKeyForceLeft          Force left
-$optionKeyForceRight         Force right
-$optionKeyPause               Pause
-$optionKeyFrameBackMany       ◀▮ 1 sec.
-$optionKeyFrameBackOne        ◀▮ 1 frame
-$optionKeyFrameAheadOne       ▮▶ 1 frame
-$optionKeyFrameAheadMany      ▮▶ 10 sec.
-$optionKeySpeedFast           ▶▶
-$optionKeySpeedTurbo          ▶▶▶
-$optionKeyRestart             Restart
-$optionKeyStateLoad          Load state
-$optionKeyStateSave          Save state
-$optionKeyChat                Chat
-$optionKeySpecTribe          Cycle teams
-$optionKeyClearPhysics       Clear physics
-$optionKeyNuke               Nuke
+$optionKeyForceLeft Force left
+$optionKeyForceRight Force right
+$optionKeyPause Pause
+$optionKeyFrameBackMany ◀▮ 1 sec.
+$optionKeyFrameBackOne ◀▮ 1 frame
+$optionKeyFrameAheadOne ▮▶ 1 frame
+$optionKeyFrameAheadMany ▮▶ 10 sec.
+$optionKeySpeedFast ▶▶
+$optionKeySpeedTurbo ▶▶▶
+$optionKeyRestart Restart
+$optionKeyStateLoad Load state
+$optionKeyStateSave Save state
+$optionKeyChat Chat
+$optionKeyClearPhysics Clear physics
+$optionKeyNuke Nuke
 
 $optionKeyForceLeftDesc Hold to assign skills to lix facing left.|This is useful in a dense bunch of lix.
 $optionKeyForceRightDesc Hold to assign skills to lix facing right.|This is useful in a dense bunch of lix.
@@ -393,32 +310,31 @@ $optionKeyRestartDesc Restart the level from the beginning. All your actions wil
 $optionKeyStateLoadDesc Go back to the remembered game position.|You can remember the position via Save state.
 $optionKeyStateSaveDesc Remember the exact game position.|You can come back to that position via Load state.
 $optionKeyChatDesc Open the console to chat during a multiplayer game.
-$optionKeySpecTribeDesc Show the skillset of a different team when you observe a live multiplayer game|or when you replay a saved multiplayer game.
 $optionKeyClearPhysicsDesc Display a ruler to measure splat height during play.|Highlight own hatches and goals during a networking game.
 $optionKeyNukeDesc In singleplayer, explode all your lix to finish the level.|In multiplayer, start overtime if you have saved at least 1 lix.
 $winGameTitleDesc Open the game menu dialog.|Exit the level or save replays from this dialog.
 
-$optionAvoidBuilderQueuing    Prefer spamming over queuing
-$optionAvoidBatterToExploder  Prefer batters to non-exploders
-$optionReplayAfterFrameBack   Keep replay after ◀▮
-$optionUnpauseOnAssign        Unpause on skill assignment
+$optionAvoidBuilderQueuing Prefer spamming over queuing
+$optionAvoidBatterToExploder Prefer batters to non-exploders
+$optionReplayAfterFrameBack Keep replay after ◀▮
+$optionUnpauseOnAssign Unpause on skill assignment
 
 $optionAvoidBuilderQueuingDesc Prefer builder assignments to non-builders over queuing to existing builders.|You can hold priority invert (see Controls tab) to do what you don't prefer.
 $optionAvoidBatterToExploderDesc Prefer batter assignments to walkers over batter assignments to timed exploders.|You can hold priority invert (see Controls tab) to do what you don't prefer.
 $optionReplayAfterFrameBackDesc On framestepping back (◀▮), keep future replay actions until you click air.|If not checked, replay actions are removed when you undo them by framestepping.
 $optionUnpauseOnAssignDesc Unpause the game when you assign a skill during pause.|If not checked, skill assignments during pause advance the game by 1 frame.
 
-$optionKeyMenuOkay            Okay/yes
-$optionKeyMenuEdit            Edit
-$optionKeyMenuNewLevel        Create
-$optionKeyMenuExport          Export
-$optionKeyMenuDelete          Lose data
-$optionKeyMenuUpDir           Parent dir
-$optionKeyMenuUpBy5           Up by 5
-$optionKeyMenuUpBy1           Up by 1
-$optionKeyMenuDownBy1         Down by 1
-$optionKeyMenuDownBy5         Down by 5
-$optionKeyMenuExit            Back/cancel
+$optionKeyMenuOkay Okay/yes
+$optionKeyMenuEdit Edit
+$optionKeyMenuNewLevel Create
+$optionKeyMenuExport Export
+$optionKeyMenuDelete Lose data
+$optionKeyMenuUpDir Parent dir
+$optionKeyMenuUpBy5 Up by 5
+$optionKeyMenuUpBy1 Up by 1
+$optionKeyMenuDownBy1 Down by 1
+$optionKeyMenuDownBy5 Down by 5
+$optionKeyMenuExit Back/cancel
 
 $optionKeyMenuOkayDesc Play the highlighted level. Save and close a dialog.
 $optionKeyMenuEditDesc Open the editor on the highlighted level.
@@ -439,34 +355,33 @@ $optionGuiColorRedDesc Recolor Lix's graphical user interface.
 $optionGuiColorGreenDesc Recolor Lix's graphical user interface.
 $optionGuiColorBlueDesc Recolor Lix's graphical user interface.
 
-$optionEdLeft                 Move left
-$optionEdRight                Move right
-$optionEdUp                   Move up
-$optionEdDown                 Move down
-$optionEdSave                 Save
-$optionEdSaveAs               Save as
-$optionEdGrid                 Grid size
-$optionEdGridCustom           Custom grid size
-$optionEdSelectAll            Select all
-$optionEdSelectFrame          Select frame
-$optionEdSelectAdd            Add to sel.
-$optionEdUndo                 Undo
-$optionEdRedo                 Redo
-$optionEdGroup                Make group
-$optionEdUngroup              Ungroup
-$optionEdCopy                 Copy
-$optionEdDelete               Delete
-$optionEdForeground           Foreground
-$optionEdBackground           Background
-$optionEdMirror               Mirror
-$optionEdRotate               Rotate
-$optionEdDark                 Draw black
-$optionEdAddTerrain           Add terrain
-$optionEdAddSteel             Add steel
-$optionEdAddHatch             Add hatch
-$optionEdAddGoal              Add goal
-$optionEdAddDeco              Add deco
-$optionEdAddHazard            Add hazard
+$optionEdLeft Move left
+$optionEdRight Move right
+$optionEdUp Move up
+$optionEdDown Move down
+$optionEdSave Save
+$optionEdSaveAs Save as
+$optionEdGrid Grid size
+$optionEdGridCustom Custom grid size
+$optionEdSelectAll Select all
+$optionEdSelectFrame Select frame
+$optionEdSelectAdd Add to sel.
+$optionEdUndo Undo
+$optionEdRedo Redo
+$optionEdGroup Make group
+$optionEdUngroup Ungroup
+$optionEdCopy Copy
+$optionEdDelete Delete
+$optionEdForeground Foreground
+$optionEdBackground Background
+$optionEdMirror Mirror
+$optionEdRotate Rotate
+$optionEdDark Draw black
+$optionEdAddTerrain Add terrain
+$optionEdAddSteel Add steel
+$optionEdAddHatch Add hatch
+$optionEdAddGoal Add goal
+$optionEdAddHazard Add hazard
 
 $optionEdLeftDesc Move selected tiles to the left.|Movement respects the grid. Hold this key for fast movement.
 $optionEdRightDesc Move selected tiles to the right.|Movement respects the grid. Hold this key for fast movement.
@@ -474,6 +389,6 @@ $optionEdUpDesc Move selected tiles up.|Movement respects the grid. Hold this ke
 $optionEdDownDesc Move selected tiles down.|Movement respects the grid. Hold this key for fast movement.
 
 // mini-dialogue to greet a new player
-$windowAskNameTitle          Lix
-$windowAskNameFirst          Hello and Welcome!
-$windowAskNameSecond         What's your name?
+$windowAskNameTitle Lix
+$windowAskNameFirst Hello and Welcome!
+$windowAskNameSecond What's your name?

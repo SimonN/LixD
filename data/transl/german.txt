@@ -1,306 +1,230 @@
 ﻿// See `english.txt' for instructions on how to translate the game.
-
-$mainNameOfLanguage         Deutsch
+$mainNameOfLanguage Deutsch
 
 // Verschiedene Dialoge
+$commonOk Okay
+$commonCancel Abbrechen
+$commonNo Nein
+$commonBack Zurück
+$commonExit Beenden
+$commonVersion Version
 
-$commonOk                     Okay
-$commonCancel                 Abbrechen
-$commonYes                    Ja
-$commonNo                     Nein
-$commonBack                   Zurück
-$commonExit                   Beenden
-$commonVersion                Version
+$mainMenuGetMusic Extrahiere die Musik im Lix-Verzeichnis:
 
 // Browser
+$browserSingleTitle Einzelspieler
+$browserNetworkTitle Netzwerk-Level aussuchen
+$browserReplayTitle Replays
+$browserPlay Spielen
+$browserEdit Editieren
+$browserNewLevel Level erstellen
+$browserReplay Abspielen
+$browserDelete Löschen
+$browserSearch Suchen
+$browserExportImage Bild exportieren
+$browserExportImageDone Liegt in:
+$browserMkdirTitle Ordner erstellen
+$browserMkdirPleaseEnter Name des neuen Ordners:
+$browserInfoAuthor Von:
+$browserInfoInitgoal Ziel:
+$browserInfoResultSaved Gerettet:
+$browserInfoResultSkills Fähigkeiten:
 
-$browserSingleTitle          Einzelspieler
-$browserNetworkTitle         Netzwerk-Level aussuchen
-$browserReplayTitle          Replays
-$browserPlay                  Spielen
-$browserEdit                  Editieren
-$browserNewLevel              Level erstellen
-$browserReplay                Abspielen
-$browserDelete                Löschen
-$browserSearch                Suchen
-$browserExtract              Level extrahieren
-$browserExportImage          Bild exportieren
-$browserExportImageDone      Liegt in:
-
-$browserMkdirTitle          Ordner erstellen
-$browserMkdirPleaseEnter    Name des neuen Ordners:
-
-$browserInfoAuthor           Von:
-$browserInfoInitgoal         Ziel:
-$browserInfoInitial          Anzahl Lix:
-$browserInfoHatches          Klappen:
-$browserInfoGoals            Ausgänge:
-$browserInfoSkills           Fähigktn.:
-$browserInfoClock2          Nachzeit:
-$browserInfoAuthorNone      ?
-$browserInfoClockNone       --
-
-$browserInfoResultSaved     Gerettet:
-$browserInfoResultSkills    Fähigkeiten:
-$browserInfoResultOld1     Der Level wurde
-$browserInfoResultOld2     seitdem editiert.
-
-$browserInfoPlayer           Spieler:
-$browserInfoVersion          Spiel:
-$browserInfoBuilt            Level:
-$browserInfoNew              ist zu neu
-$browserInfoSame             passt!
-$browserInfoOld              ist zu alt
-$browserInfoHoldsLevel       enthalten
-
-$winSearchTitle              Levelsuche
-
-$winVerifyTitle              Replay-Verifizierer
+$winSearchTitle Levelsuche
+$winVerifyTitle Replay-Verifizierer
 
 // Lobby
+$winLobbyTitle Netzwerkspiel
+$winLobbyDisconnect Netz verlassen
+$winLobbyStartCentral Zentraler Server
+$winLobbyStartCustom Andere Adresse:
+$winLobbyStartConnect Verbinden
+$winLobbyChat Chat:
+$winLobbySelectLevel Level aussuchen
+$winLobbyReady Bereit zum Start
+$winLobbyRoomNumber Raum Nr.
+$winLobbyRoomCreate Raum eröffnen
+$winLobbyRoomLeave Raum verlassen
 
-$winLobbyTitle              Netzwerkspiel
-$winLobbyTitleLobby         Lobby
-$winLobbyTitleRoom          Raum Nr.
-$winLobbyDisconnect         Netz verlassen
-$winLobbyStartCentral       Zentraler Server
-$winLobbyStartCustom        Andere Adresse:
-$winLobbyStartConnect       Verbinden
-$winLobbyChat               Chat:
-$winLobbySelectLevel        Level aussuchen
-$winLobbyReady              Bereit zum Start
-$winLobbyRoomNumber         Raum Nr.
-$winLobbyRoomCreate         Raum eröffnen
-$winLobbyRoomLeave          Raum verlassen
-
-// Spielfenster
-
-$winGameTitle                Spielmenü
-$winGameResult               Ergebnis
-$winGameLixSaved            Lix gerettet:
-$winGameLixSavedInTime    Lix rechtzeitig gerettet:
-$winGameResume               Weiterspielen
-$winGameFramestepBack         ◀▮ Zeit zurückdrehen ◀▮
-$winGameRestart              Level neustarten
-$winGameSaveReplay          Replay speichern
-$winGameMenu                 Beenden
-$winGameCommentPerfect      Perfekt! Alle gerettet!
-$winGameCommentMore         Super, mehr als notwendig!
-$winGameCommentExactly      Ziel haargenau erreicht!
-$winGameCommentFewer        Das sind leider zu wenige.
-$winGameCommentNone         Das war wohl nix. Nochmal?
-$winGameResultSkillsUsed        Fähigkeiten:
-$winGameResultTimeUsed          Gebrauchte Zeit:
-$winGameNetFirst            Ein hervorragender Sieg!
-$winGameNetSecond           Fein, guter zweiter Platz.
-$winGameNetMiddle           Naja, ganz okay. Revanche?
-$winGameNetLast             Schade, du liegst hinten.
-$winGameNetTieForFirst        Super, einer der Ersten!
-$winGameNetTieForLast         Immerhin nicht alleine unten.
-$winGameNetEverybodyTies          Wie das? Kein klarer Sieger?
-$winGameNetZero             Null komma nix, diese Runde!
-$winGameNetEverybodyZero         Haben wir nuklearen Winter?
-$winGameReplayWinOne       hat gewonnen!
-$winGameReplayWinTeam      haben gewonnen!
-$winGameReplayTie           Das Spiel ist unentschieden.
-$winGameOverwriteTitle      Replay überschreiben?
-$winGameOverwriteQuestion   Soll dieses Replay wirklich überschrieben werden?
+// Game window
+$winGameTitle Spielmenü
+$winGameResult Ergebnis
+$winGameLixSaved Lix gerettet:
+$winGameResume Weiterspielen
+$winGameFramestepBack ◀▮ Zeit zurückdrehen ◀▮
+$winGameRestart Level neustarten
+$winGameSaveReplay Replay speichern
+$winGameMenu Beenden
+$winGameCommentPerfect Perfekt! Alle gerettet!
+$winGameCommentMore Super, mehr als notwendig!
+$winGameCommentExactly Ziel haargenau erreicht!
+$winGameCommentFewer Das sind leider zu wenige.
+$winGameCommentNone Das war wohl nix. Nochmal?
 
 // Help texts inside the game
-
-$gameForceLeft       [%s] für Linksläufer.
-$gameForceRight      [%s] für Rechtsläufer.
-$gamePriorityInvert  [%s] für hintere Lix.
-$gameQueueBuilder    Klicke zum Vormerken.
+$gameForceLeft [%s] für Linksläufer.
+$gameForceRight [%s] für Rechtsläufer.
+$gamePriorityInvert [%s] für hintere Lix.
+$gameQueueBuilder Klicke zum Vormerken.
 $gameQueuePlatformer Klicke zum Vormerken.
-$gameHoldToScroll    [%s] erlaubt Maus-Scrolling.
-$gamePause           Pause.
-$gameZoom            %s zum Hineinzoomen, %s zum Herauszoomen.
-$gameStateSave       Spielstand schnellspeichern.
-$gameStateLoad       Schnellgespeicherten Spielstand laden.
-$gameFramestepBack   %s für Schritt zurück, %s für Sprung zurück.
-$gameFramestepAhead  %s für Schritt vorwärts, %s für Sprung vorwärts.
-$gameFastForward     %s für schnellen Vorlauf, %s für Turbo.
-$gameRestart         Level neu starten.
-$gameNuke            Atombombe. Doppelklicke zum Aktivieren.
-$gameClearPhysics    Fallhöhen-Lineal anzeigen, Ziele hervorheben.
-$gameSpecTribe       Fähigkeiten anderer Teams ansehen.
+$gameHoldToScroll Halte [%s] und bewege Maus zum Scrollen.
+$gameClickToCancelReplay Klicke zum Unterbrechen des Replays.
+$gamePause Pause.
+$gameZoom %s zum Hineinzoomen, %s zum Herauszoomen.
+$gameStateSave Spielstand schnellspeichern.
+$gameStateLoad Schnellgespeicherten Spielstand laden.
+$gameFramestepBack %s für Schritt zurück, %s für Sprung zurück.
+$gameFramestepAhead %s für Schritt vorwärts, %s für Sprung vorwärts.
+$gameFastForward %s für schnellen Vorlauf, %s für Turbo.
+$gameRestart Level neu starten.
+$gameNuke Atombombe. Doppelklicke zum Aktivieren.
+$gameClearPhysics Fallhöhen-Lineal anzeigen, Ziele hervorheben.
 
-// Editor allgemein
+$editorHotkey Hotkey:
+$editorBarAt an
+$editorBarGroup -Stücke-Gruppe
+$editorBarHover Stücke werden markiert
+$editorBarSelection Stücke markiert
 
-$editorHotkey                 Hotkey:
-$editorHotkeyHold            Hotkey: halte
-$editorBarAt                 an
-$editorBarGroup              -Stücke-Gruppe
-$editorBarHover              Stücke werden markiert
-$editorBarSelection          Stücke markiert
-$editorBarMoveWithKeysLong      Ziehe Stücke umher oder bewege sie mit [
-$editorBarMoveWithKeysShort     Bewegen mit [
-$editorBarMoveWithKeysMid       ], [
-$editorBarMoveWithKeysEnd       ].
+$editorButtonFileNew Neu: Karte leeren und einen ganz neuen Level bauen.
+$editorButtonFileExit Beenden: Editor verlassen, auf Wunsch Änderungen speichern.
+$editorButtonFileSave Speichern:
+$editorButtonFileSaveAs Speichern unter: Level unter einem neuen Dateinamen abspeichern.
+$editorButtonGrid2 Raster 2: Objekt-Koordinaten beim Umherziehen auf 2er runden.
+$editorButtonGridCustom Benutzerdef. Raster: In den Hauptmenü-Optionen verstellbar.
+$editorButtonGrid16 Raster 16: Objekt-Koordinaten beim Umherziehen auf 16er runden.
+$editorButtonSelectAll Alles: Alle Objekte auf dem Bildschirm in die Auswahl setzen.
+$editorButtonSelectFrame Rahmen: Mehrfachauswahl von Objekten durch Rahmenziehen.
+$editorButtonSelectAdd Hinzufügen: Neue Objekte auswählen, ohne alte abzuwählen.
+$editorButtonUndo Rückgängig: Nimmt die jüngsten Änderungen am Level zurück.
+$editorButtonRedo Doch wieder: Zurückgenommene Änderungen wiederherstellen.
+$editorButtonGroup Gruppieren: Erzeugt ein Terrainstück aus den markierten Stücken.
+$editorButtonUngroup Degruppieren: Löst markierte Gruppen in ihre Einzelstücke auf.
+$editorButtonSelectCopy Kopieren: Ausgewählte Objekte klonen.
+$editorButtonSelectDelete Löschen: Ausgewählte Objekte löschen.
+$editorButtonBackground Hintergrund: Ausgewählte Teile hinter andere setzen.
+$editorButtonForeground Vordergrund: Ausgewählte Teile vor andere holen.
+$editorButtonSelectFlip Spiegeln: Ausgewähltes Terrain horizontal spiegeln.
+$editorButtonSelectRotate Drehen: Ausgewähltes Terrain um ein Viertel drehen.
+$editorButtonSelectDark Dunkel: Ausgewähltes Terrain im Spiel schwarz zeichnen.
+$editorButtonViewZoom Zoom: Linksklick zoomt in die Karte, Rechtsklick zoomt heraus.
+$editorButtonAddTerrain Terrain: Ein durchgrabbares Terrainstück platzieren.
+$editorButtonAddSteel Stahl: Ein nicht-durchgrabbares Stahlobjekt platzieren.
+$editorButtonAddHatch Klappe: Eine Lix-Eingangsklappe platzieren.
+$editorButtonAddGoal Ziel: Ein Ziel, also einen Lix-Ausgang platzieren.
+$editorButtonAddDeco Dekoration: Ein harmloses Dekorationsobjekt platzieren.
+$editorButtonAddHazard Gefahr: Eine Falle, Wasser oder Feuer platzieren.
+$editorButtonMenuConstants Konstanten: Titel und wichtige Zahlen einstellen.
+$editorButtonMenuTopology Karte: Abmessungen ändern, Außenkanten verkleben.
+$editorButtonMenuLooks Aussehen: Hintergrund färben, Bildschirm-Start ändern.
+$editorButtonMenuSkills Fähigkeiten: Anzahl Lix-Fähigkeiten pro Spieler einstellen.
 
-$editorButtonFileNew        Neu: Karte leeren und einen ganz neuen Level bauen.
-$editorButtonFileExit       Beenden: Editor verlassen, auf Wunsch Änderungen speichern.
-$editorButtonFileSave       Speichern:
-$editorButtonFileSaveAs     Speichern unter: Level unter einem neuen Dateinamen abspeichern.
-$editorButtonGrid2          Raster 2: Objekt-Koordinaten beim Umherziehen auf 2er runden.
-$editorButtonGridCustom     Benutzerdef. Raster: In den Hauptmenü-Optionen verstellbar.
-$editorButtonGrid16         Raster 16: Objekt-Koordinaten beim Umherziehen auf 16er runden.
-$editorButtonSelectAll      Alles: Alle Objekte auf dem Bildschirm in die Auswahl setzen.
-$editorButtonSelectFrame    Rahmen: Mehrfachauswahl von Objekten durch Rahmenziehen.
-$editorButtonSelectAdd      Hinzufügen: Neue Objekte auswählen, ohne alte abzuwählen.
-$editorButtonUndo           Rückgängig: Nimmt die jüngsten Änderungen am Level zurück.
-$editorButtonRedo           Doch wieder: Führt zurückgenommene Änderungen doch wieder aus.
-$editorButtonGroup          Gruppieren: Erzeugt ein Terrainstück aus den markierten Stücken.
-$editorButtonUngroup        Degruppieren: Löst markierte Gruppen in ihre Einzelstücke auf.
-$editorButtonSelectCopy     Kopieren: Ausgewählte Objekte klonen.
-$editorButtonSelectDelete   Löschen: Ausgewählte Objekte löschen.
-$editorButtonBackground     Hintergrund: Ausgewählte Teile hinter andere setzen.
-$editorButtonForeground     Vordergrund: Ausgewählte Teile vor andere holen.
-$editorButtonSelectFlip     Spiegeln: Ausgewähltes Terrain horizontal spiegeln.
-$editorButtonSelectRotate   Drehen: Ausgewähltes Terrain um ein Viertel drehen.
-$editorButtonSelectDark     Dunkel: Ausgewähltes Terrain im Spiel schwarz zeichnen.
-$editorButtonViewZoom       Zoom: Linksklick zoomt in die Karte, Rechtsklick zoomt heraus.
-$editorButtonAddTerrain     Terrain: Ein durchgrabbares Terrainstück platzieren.
-$editorButtonAddSteel       Stahl: Ein nicht-durchgrabbares Stahlobjekt platzieren.
-$editorButtonAddHatch       Klappe: Eine Lix-Eingangsklappe platzieren.
-$editorButtonAddGoal        Ziel: Ein Ziel, also einen Lix-Ausgang platzieren.
-$editorButtonAddDeco        Dekoration: Ein harmloses Dekorationsobjekt platzieren.
-$editorButtonAddHazard      Gefahr: Eine Falle, Wasser oder Feuer platzieren.
-$editorButtonMenuConstants  Konstanten: Titel und wichtige Zahlen einstellen.
-$editorButtonMenuTopology   Karte: Abmessungen ändern, Außenkanten verkleben.
-$editorButtonMenuLooks      Aussehen: Hintergrund färben, Bildschirm-Start ändern.
-$editorButtonMenuSkills     Fähigkeiten: Anzahl Lix-Fähigkeiten pro Spieler einstellen.
-
-// SaveBrowser
-$saveBrowserTitle           Speichern unter
-$saveBrowserWhatToType      Dateiname ohne Erweiterung:
-$saveBoxOverwriteTitle      Überschreiben?
-$saveBoxOverwriteQuestion   Diesen Level wirklich überschreiben?
-$saveBoxOverwrite           Überschreiben
-
-$saveBoxTitleDelete       Löschen?
-$saveBoxTitleSave         Speichern?
+$saveBrowserTitle Speichern unter
+$saveBrowserWhatToType Dateiname ohne Erweiterung:
+$saveBoxOverwriteTitle Überschreiben?
+$saveBoxOverwriteQuestion Diesen Level wirklich überschreiben?
+$saveBoxOverwrite Überschreiben
+$saveBoxTitleDelete Löschen?
+$saveBoxTitleSave Speichern?
 $saveBoxQuestionUnsavedChangedLevel Änderungen an diesem Level speichern?
 $saveBoxQuestionUnsavedNewLevel Neuen Level speichern?
 $saveBoxQuestionDeleteReplay Dieses Replay wirklich löschen?
-$saveBoxQuestionDeleteLevel  Diesen Level wirklich löschen?
-$saveBoxDirectory         Ordner:
-$saveBoxFileName          Datei:
-$saveBoxLevelName         Titel:
-$saveBoxYesSave                  Speichern
-$saveBoxNoDiscard                Verwerfen
-$saveBoxNoCancel                 Abbrechen
+$saveBoxQuestionDeleteLevel Diesen Level wirklich löschen?
+$saveBoxDirectory Ordner:
+$saveBoxFileName Datei:
+$saveBoxLevelName Titel:
+$saveBoxYesSave Speichern
+$saveBoxNoDiscard Verwerfen
+$saveBoxNoCancel Abbrechen
 
 // BitmapBrowser
-$addTerrain                   Terrain hinzufügen
-$addSteel                     Stahl hinzufügen
-$addHatch                     Klappe hinzufügen
-$addGoal                      Ziel hinzufügen
-$addDeco                      Dekoration hinzufügen
-$addHazard                    Gefahr hinzufügen
+$addTerrain Terrain hinzufügen
+$addSteel Stahl hinzufügen
+$addHatch Klappe hinzufügen
+$addGoal Ziel hinzufügen
+$addHazard Gefahr hinzufügen
 
 // Kartengroesse
-$winTopologyTitle                Karte
-$winTopologyL                    Links:
-$winTopologyR                    Rechts:
-$winTopologyU                    Oben:
-$winTopologyD                    Unten:
-$winTopologyX                    Breite:
-$winTopologyY                    Höhe:
-$winTopologyHex                  Hexadezimal anzeigen
-$winTopologyTorusX              Horizontal rundumgehend
-$winTopologyTorusY              Vertikal rundumgehend
+$winTopologyTitle Karte
+$winTopologyL Links:
+$winTopologyR Rechts:
+$winTopologyU Oben:
+$winTopologyD Unten:
+$winTopologyTorusX Horizontal rundumgehend
+$winTopologyTorusY Vertikal rundumgehend
 
 // Scrollposition
-$winLooksTitle              Aussehen
-$winLooksManual             Anfangs sichtbaren Bereich manuell festlegen
-$winLooksX                  X-Koordinate (0 = links)
-$winLooksY                  Y-Koordinate (0 = oben)
-$winLooksRed                  Hintergrund Rot
-$winLooksGreen                  Hintergrund Grün
-$winLooksBlue                  Hintergrund Blau
-$winLooksJump               Dorthin scrollen
-$winLooksCurrent            Aktuelle Position
+$winLooksTitle Aussehen
+$winLooksRed Hintergrund Rot
+$winLooksGreen Hintergrund Grün
+$winLooksBlue Hintergrund Blau
 
 // Variablenfenster
-$winConstantsTitle           Konstanten
-$winConstantsAuthor          Autor
-$winConstantsLevelName       Leveltitel
-$winConstantsPlayers         Spieler
-$winConstantsInitial         Lix zu Beginn
-$winConstantsRequired        Lix zu retten
-$winConstantsSpawnint        Fall-Intervall
-$winConstantsOvertime        Nachspielzeit
+$winConstantsTitle Konstanten
+$winConstantsAuthor Autor
+$winConstantsLevelName Leveltitel
+$winConstantsPlayers Spieler
+$winConstantsInitial Lix zu Beginn
+$winConstantsRequired Lix zu retten
+$winConstantsSpawnint Fall-Intervall
+$winConstantsOvertime Nachspielzeit
 
 // Faehigkeits-Fenster
-$winSkillsTitle              Fähigkeiten
-$winSkillsUseExploder        Explodierer
-$winSkillsClear              Alle auf null
-$winSkillsEightTo            Klassische 8:
-$winSkillsAllTo              Alle 14 auf:
+$winSkillsTitle Fähigkeiten
+$winSkillsUseExploder Explodierer
+$winSkillsClear Alle auf null
+$winSkillsEightTo Klassische 8:
+$winSkillsAllTo Alle 14 auf:
 
 // Exporting a level into a file
-$exportSingleInitial         Lix:
-$exportSingleRequired        Rette:
-$exportSingleSpawnint        SI:
-$exportMultiLix              Lix:
-$exportMultiSpawnint         Fall-Int.:
-$exportMultiClock            Nachspielzeit:
+$exportSingleInitial Lix:
+$exportSingleRequired Rette:
+$exportSingleSpawnint SI:
 
 // Netzwerk-Chatnachrichten
-$netChatStartServer         Du bist der Server. Andere Spieler koennen zu dir verbinden.
-$netChatStartClient         Verbinde zu
-$netChatStartCancel         Verbindungsaufbau abgebrochen.
-$netChatYouLoggedOut        Du hast das Netzwerk verlassen.
-$netChatYouCannotConnect    Server nicht gefunden.
-$netChatYouLostConnection   Verbindung zum Server verloren!
-$netChatPeerDisconnected    hat das Netzwerk verlassen.
-$netChatWeTooOld           Deine Lix-Version ist zu alt, um verbinden zu koennen.
-$netChatWeTooNew           Deine Lix-Version ist zu neu, um verbinden zu koennen.
-$netChatSomeoneOld          Jemand wollte verbinden, aber seine Lix-Version war zu alt.
-$netChatSomeoneNew          Jemand wollte verbinden, aber seine Lix-Version war zu neu.
-$netChatNamedGuyOld        %s muss zunächst seine Lix-Version aktualisieren.
-$netChatServerUpdate        Der Server sollte stets eine aktuelle Lix-Version nutzen.
-$netChatWeInRoom           Du hast Raum Nr.
-$netChatWeInRoom2         betreten.
-$netChatWeInLobby          Du bist in der Lobby.
-$netChatPlayerInRoom       hat Raum Nr.
-$netChatPlayerInRoom2     betreten.
-$netChatPlayerInLobby      hat die Lobby betreten.
-$netChatPlayerOutRoom      wechselt in Raum Nr.
-$netChatPlayerOutRoom2    .
-$netChatPlayerOutLobby     hat den Raum verlassen.
-$netChatVersionYours        Deine Version ist
-$netChatVersionServer       Der Server verlangt
-$netChatServerUpdate        Der Server sollte seine Lix-Version aktualisieren.
-$netChatPleaseDownload      Lade die neueste Version herunter:
-$netChatLevelChange         hat diesen Level gewaehlt:
-$netGameStart                Das Spiel beginnt.
-$netGameHowToChat1        Du kannst mit [
-$netGameHowToChat2        ] chatten.
-$netGameEnd                  Das Spiel ist zu Ende.
-$netGameEndResult           Spielergebnis:
-$netGameOvertimeNukeIn    Die Nachspielzeit läuft! Atombombe in
-$netGameTriggersOvertime    hat die Nachspielzeit ausgelöst! Atombombe in
-$netGameWantsAbortiveTie    möchte das Spiel abbrechen. Zum Abbruch doppelklicke auf die Atombombe, ansonsten spiele weiter.
+$netChatStartClient Verbinde zu
+$netChatStartCancel Verbindungsaufbau abgebrochen.
+$netChatYouLoggedOut Du hast das Netzwerk verlassen.
+$netChatYouCannotConnect Server nicht gefunden.
+$netChatYouLostConnection Verbindung zum Server verloren!
+$netChatPeerDisconnected hat das Netzwerk verlassen.
+$netChatWeTooOld Deine Lix-Version ist zu alt, um verbinden zu koennen.
+$netChatWeTooNew Deine Lix-Version ist zu neu, um verbinden zu koennen.
+$netChatWeInRoom Du hast Raum Nr.
+$netChatWeInRoom2 betreten.
+$netChatWeInLobby Du bist in der Lobby.
+$netChatPlayerInRoom hat Raum Nr.
+$netChatPlayerInRoom2 betreten.
+$netChatPlayerInLobby hat die Lobby betreten.
+$netChatPlayerOutRoom wechselt in Raum Nr.
+$netChatPlayerOutRoom2 .
+$netChatPlayerOutLobby hat den Raum verlassen.
+$netChatVersionYours Deine Version ist
+$netChatVersionServer Der Server verlangt
+$netChatPleaseDownload Lade die neueste Version herunter:
+$netChatLevelChange hat diesen Level gewaehlt:
+$netGameHowToChat1 Du kannst mit [
+$netGameHowToChat2 ] chatten.
+$netGameEnd Das Spiel ist zu Ende.
+$netGameEndResult Spielergebnis:
+$netGameOvertimeNukeIn Die Nachspielzeit läuft! Atombombe in
 
 // Optionsfenster
-$optionTitle                  Optionen
-$optionGroupGeneral           Allgemein
-$optionGroupGraphics          Grafik
-$optionGroupControls          Steuerung
-$optionGroupGameKeys          Spieltasten
-$optionGroupEditorKeys        Editortasten
-$optionGroupMenuKeys          Menütasten
-$optionUserName              Spielername
-$optionLanguage              Sprache/Language
-$optionReplayAutoSolutions   Level-Lösungen auto-speichern
-$optionReplayAutoMulti       Im Mehrspieler auto-speichern
-$optionSoundEnabled             Ton
-$optionMusicEnabled             Musik
-$optionSoundDecibels            Tonverstärkung in dB
-$optionMusicDecibels            Musikverstärkung in dB
+$optionTitle Optionen
+$optionGroupGeneral Allgemein
+$optionGroupGraphics Grafik
+$optionGroupControls Steuerung
+$optionGroupGameKeys Spieltasten
+$optionGroupEditorKeys Editortasten
+$optionGroupMenuKeys Menütasten
+$optionUserName Spielername
+$optionLanguage Sprache/Language
+$optionReplayAutoSolutions Level-Lösungen auto-speichern
+$optionReplayAutoMulti Im Mehrspieler auto-speichern
+$optionSoundEnabled Ton
+$optionMusicEnabled Musik
+$optionSoundDecibels Tonverstärkung in dB
+$optionMusicDecibels Musikverstärkung in dB
 
 $optionUserNameDesc Dein Name erscheint in Replays und im Netzwerkspiel.|Lix speichert Einstellungen in ./data/user/ unter deinem Namen.
 $optionLanguageDesc Sprache der Lix-Benutzeroberfläche.
@@ -311,18 +235,18 @@ $optionMusicEnabledDesc Musik einschalten.
 $optionSoundDecibelsDesc Tonlautstärke anpassen. 0 ist schon recht laut.|Erhöhe/senke um 10 dB, um die Tonlautstärke zu verdoppeln/halbieren.
 $optionMusicDecibelsDesc Musiklautstärke anpassen. −10 dB sollte laut genug sein.|Erhöhe/senke um 10 dB, um die Musiklautstärke zu verdoppeln/halbieren.
 
-$optionScreenMode               Bildschirmmodus
-$optionScreenWindowed           Fenstermodus
+$optionScreenMode Bildschirmmodus
+$optionScreenWindowed Fenstermodus
 $optionScreenSoftwareFullscreen Software-Vollbild
 $optionScreenHardwareFullscreen Hardware-Vollbild
-$optionScreenWindowedRes        Fenster-/Hardware-Auflösung
-$optionPaintTorusSeams          Torus-Nahtstellen anmalen
-$optionIngameTooltips           Tooltips im Spiel
-$optionShowButtonHotkeys        Button-Hotkeys anzeigen
-$optionShowFPS                  Physik und FPS zählen
-$optionGuiColorRed              Menüfarbe Rot
-$optionGuiColorGreen            Menüfarbe Grün
-$optionGuiColorBlue             Menüfarbe Blau
+$optionScreenWindowedRes Fenster-/Hardware-Auflösung
+$optionPaintTorusSeams Torus-Nahtstellen anmalen
+$optionIngameTooltips Tooltips im Spiel
+$optionShowButtonHotkeys Button-Hotkeys anzeigen
+$optionShowFPS Physik und FPS zählen
+$optionGuiColorRed Menüfarbe Rot
+$optionGuiColorGreen Menüfarbe Grün
+$optionGuiColorBlue Menüfarbe Blau
 
 $optionScreenModeDesc Fenstermodus und Software-Vollbild erlauben gutes Alt+Tab.|Fenstermodus und Hardware-Vollbild benutzen die Auflösung rechts.
 $optionScreenWindowedResDesc Größe des Lix-Fensters im Fenstermodus.|Monitor-Auflösung im Hardware-Vollbild. Software-Vollbild ignoriert dies.
@@ -331,14 +255,14 @@ $optionIngameTooltipsDesc Buttons und Lix-wählende Hotkeys im Spiel erklären, 
 $optionShowButtonHotkeysDesc Auf jedem Button die Hotkeys des Buttons in der rechten unteren Ecke anzeigen.
 $optionShowFPSDesc Anzahl Physik-Updates seit Spielbeginn anzeigen.|Im Editor und Spiel: Frames pro Sekunde und Grafikspeicher anzeigen.
 
-$optionKeyZoomIn             Zoom +
-$optionKeyZoomOut            Zoom −
-$optionKeyScroll             Halten zum Scrollen
-$optionKeyPriorityInvert     Priorität invertieren
+$optionKeyZoomIn Zoom +
+$optionKeyZoomOut Zoom −
+$optionKeyScroll Halten zum Scrollen
+$optionKeyPriorityInvert Priorität invertieren
 
-$optionMouseSpeed            Mausgeschwindigkeit
-$optionScrollSpeedEdge       Scroll-Geschw. am Bildrand
-$optionScrollSpeedClick      Scroll-Geschw. mit Scrolltaste
+$optionMouseSpeed Mausgeschwindigkeit
+$optionScrollSpeedEdge Scroll-Geschw. am Bildrand
+$optionScrollSpeedClick Scroll-Geschw. mit Scrolltaste
 $optionFastMovementFreesMouse Schnelle Beweg. befreit Maus
 
 $optionKeyZoomInDesc Level größer darstellen, dafür weniger auf einmal sehen.
@@ -351,22 +275,21 @@ $optionScrollSpeedEdgeDesc Scroll-Geschwindigkeit, wenn die Maus am Rand des Bil
 $optionScrollSpeedClickDesc Scroll-Geschwindigkeit bei Mausbewegung, während die Scrolltaste gehalten wird.|Die Standard-Scrolltaste ist die rechte Maustaste ⟁, änderbar links.
 $optionFastMovementFreesMouseDesc Die Maus verlässt das Lix-Fenster, wenn du sie ruckartig bewegst.|Ohne Haken: Befreie die Maus mit Alt+Tab.
 
-$optionKeyForceLeft          Nur links
-$optionKeyForceRight         Nur rechts
-$optionKeyPause              Pause
-$optionKeyFrameBackMany      ◀▮ 1 Sek.
-$optionKeyFrameBackOne       ◀▮ 1 Bild
-$optionKeyFrameAheadOne      ▮▶ 1 Bild
-$optionKeyFrameAheadMany     ▮▶ 10 Sek.
-$optionKeySpeedFast          ▶▶
-$optionKeySpeedTurbo         ▶▶▶
-$optionKeyRestart            Neustart
-$optionKeyStateLoad         Stand laden
-$optionKeyStateSave         Stand speich.
-$optionKeyChat               Chat
-$optionKeySpecTribe         Team zusehen
-$optionKeyClearPhysics       Klarphysik
-$optionKeyNuke               Atombombe
+$optionKeyForceLeft Nur links
+$optionKeyForceRight Nur rechts
+$optionKeyPause Pause
+$optionKeyFrameBackMany ◀▮ 1 Sek.
+$optionKeyFrameBackOne ◀▮ 1 Bild
+$optionKeyFrameAheadOne ▮▶ 1 Bild
+$optionKeyFrameAheadMany ▮▶ 10 Sek.
+$optionKeySpeedFast ▶▶
+$optionKeySpeedTurbo ▶▶▶
+$optionKeyRestart Neustart
+$optionKeyStateLoad Stand laden
+$optionKeyStateSave Stand speich.
+$optionKeyChat Chat
+$optionKeyClearPhysics Klarphysik
+$optionKeyNuke Atombombe
 
 $optionKeyForceLeftDesc Halte gedrückt, um Fähigkeiten an Linksläufer zuzuweisen.|Das ist nützlich in dichten Ansammlungen von Lix.
 $optionKeyForceRightDesc Halte gedrückt, um Fähigkeiten an Rechtsläufer zuzuweisen.|Das ist nützlich in dichten Ansammlungen von Lix.
@@ -381,32 +304,31 @@ $optionKeyRestartDesc Den Level komplett von vorne starten, mit Replay deiner Ak
 $optionKeyStateLoadDesc Zum schnellgespeicherten Spielstand zurückkehren.
 $optionKeyStateSaveDesc Spielstand schnellspeichern.
 $optionKeyChatDesc Die Chat-Konsole während einer Mehrspieler-Partie öffnen.
-$optionKeySpecTribeDesc Die Fähigkeiten eines anderen Teams anzeigen, während du einer|Mehrspieler-Partie zuschaust oder ein Mehrspieler-Replay guckst.
 $optionKeyClearPhysicsDesc Lineal zum Messen der tödlichen Falldistanz anzeigen.|Eigene Klappen und Ziele im Netzwerkspiel kurz hervorheben.
 $optionKeyNukeDesc Im Einzelspieler alle Lix sprengen, um den Level zu beenden.|Im Netzwerkspiel die Nachspielzeit starten, sofern mindestens 1 Lix gerettet ist.
 $winGameTitleDesc Das Menü während des Spiels aufrufen,|um den Level zu beenden oder das Replay zu speichern.
 
-$optionAvoidBuilderQueuing   Builder eher an Nicht-Builder
+$optionAvoidBuilderQueuing Builder eher an Nicht-Builder
 $optionAvoidBatterToExploder Batter eher an Nicht-Exploder
-$optionReplayAfterFrameBack  Replay bei ◀▮ behalten
-$optionUnpauseOnAssign       Pause aus bei Fähigk.-Zwsg.
+$optionReplayAfterFrameBack Replay bei ◀▮ behalten
+$optionUnpauseOnAssign Pause aus bei Fähigk.-Zwsg.
 
 $optionAvoidBuilderQueuingDesc Builder vorrangig an Nicht-Builder zuweisen anstatt an bestehende Builder.|Halte "Priorität invertieren" (Reiter "Steuerung"), um das jeweils andere zu tun.
 $optionAvoidBatterToExploderDesc Batter vorrangig an normale Lix zuweisen anstatt an brennende Exploder.|Halte "Priorität invertieren" (Reiter "Steuerung"), um das jeweils andere zu tun.
 $optionReplayAfterFrameBackDesc Replay-Aktionen beim Zurückspulen (◀▮) behalten, bis du in die Luft klickst.|Ohne Haken: Replay-Aktionen entfernen, die durch ◀▮ ungeschehen werden.
 $optionUnpauseOnAssignDesc Die Pause ausschalten, wenn du eine Fähigkeit zuweist.|Ohne Haken: Nur 1 Physik-Update weiter, wenn du eine Fähigkeit zuweist.
 
-$optionKeyMenuOkay           Okay/ja
-$optionKeyMenuEdit           Editieren
-$optionKeyMenuNewLevel       Erstellen
-$optionKeyMenuExport         Exportieren
-$optionKeyMenuDelete         Löschen/nein
-$optionKeyMenuUpDir          Ordner hoch
-$optionKeyMenuUpBy5          Rauf um 5
-$optionKeyMenuUpBy1          Rauf um 1
-$optionKeyMenuDownBy1        Runter um 1
-$optionKeyMenuDownBy5        Runter um 5
-$optionKeyMenuExit           Zurück/abbr.
+$optionKeyMenuOkay Okay/ja
+$optionKeyMenuEdit Editieren
+$optionKeyMenuNewLevel Erstellen
+$optionKeyMenuExport Exportieren
+$optionKeyMenuDelete Löschen/nein
+$optionKeyMenuUpDir Ordner hoch
+$optionKeyMenuUpBy5 Rauf um 5
+$optionKeyMenuUpBy1 Rauf um 1
+$optionKeyMenuDownBy1 Runter um 1
+$optionKeyMenuDownBy5 Runter um 5
+$optionKeyMenuExit Zurück/abbr.
 
 $optionKeyMenuOkayDesc Den markierten Level spielen.|Dialog-Einstellungen übernehmen und Dialoge beenden.
 $optionKeyMenuEditDesc Den markierten Level mit dem Leveleditor öffnen.
@@ -427,34 +349,33 @@ $optionGuiColorRedDesc Die Grafikoberfläche in Lix anders färben.
 $optionGuiColorGreenDesc Die Grafikoberfläche in Lix anders färben.
 $optionGuiColorBlueDesc Die Grafikoberfläche in Lix anders färben.
 
-$optionEdLeft                Nach links
-$optionEdRight               Nach rechts
-$optionEdUp                  Nach oben
-$optionEdDown                Nach unten
-$optionEdSave                Speichern
-$optionEdSaveAs              Speich. unter
-$optionEdGrid                Raster
-$optionEdSelectAll           Alles ausw.
-$optionEdSelectFrame         Rahmen
-$optionEdSelectAdd           Mehr ausw.
-$optionEdUndo                Rückgängig
-$optionEdRedo                Doch wieder
-$optionEdGroup               Gruppieren
-$optionEdUngroup             Degruppieren
-$optionEdCopy                Kopieren
-$optionEdDelete              Loeschen
-$optionEdForeground          Nach vorn
-$optionEdBackground          Nach hinten
-$optionEdMirror              Spiegeln
-$optionEdRotate              Drehen
-$optionEdDark                Schwarz
-$optionEdAddTerrain         Terrain hinzuf.
-$optionEdAddSteel           Stahl hinzuf.
-$optionEdAddHatch           Klappe hinzuf.
-$optionEdAddGoal            Ziel hinzuf.
-$optionEdAddDeco            Deko hinzuf.
-$optionEdAddHazard          Gefahr hinzuf.
-$optionEdGridCustom         Benutzerdefinierte Rastergröße
+$optionEdLeft Nach links
+$optionEdRight Nach rechts
+$optionEdUp Nach oben
+$optionEdDown Nach unten
+$optionEdSave Speichern
+$optionEdSaveAs Speich. unter
+$optionEdGrid Raster
+$optionEdSelectAll Alles ausw.
+$optionEdSelectFrame Rahmen
+$optionEdSelectAdd Mehr ausw.
+$optionEdUndo Rückgängig
+$optionEdRedo Doch wieder
+$optionEdGroup Gruppieren
+$optionEdUngroup Degruppieren
+$optionEdCopy Kopieren
+$optionEdDelete Loeschen
+$optionEdForeground Nach vorn
+$optionEdBackground Nach hinten
+$optionEdMirror Spiegeln
+$optionEdRotate Drehen
+$optionEdDark Schwarz
+$optionEdAddTerrain Terrain hinzuf.
+$optionEdAddSteel Stahl hinzuf.
+$optionEdAddHatch Klappe hinzuf.
+$optionEdAddGoal Ziel hinzuf.
+$optionEdAddHazard Gefahr hinzuf.
+$optionEdGridCustom Benutzerdefinierte Rastergröße
 
 $optionEdLeftDesc Ausgewählte Stücke nach links bewegen.|Das Raster wird eingehalten. Halte die Taste zum schnellen Bewegen.
 $optionEdRightDesc Ausgewählte Stücke nach rechts bewegen.|Das Raster wird eingehalten. Halte die Taste zum schnellen Bewegen.
@@ -462,6 +383,6 @@ $optionEdUpDesc Ausgewählte Stücke nach oben bewegen.|Das Raster wird eingehal
 $optionEdDownDesc Ausgewählte Stücke nach unten bewegen.|Das Raster wird eingehalten. Halte die Taste zum schnellen Bewegen.
 
 // Neuen Spieler begruessen (Mini-Dialog)
-$windowAskNameTitle          Lix
-$windowAskNameFirst          Hallo und Willkommen!
-$windowAskNameSecond         Wie heißt du?
+$windowAskNameTitle Lix
+$windowAskNameFirst Hallo und Willkommen!
+$windowAskNameSecond Wie heißt du?

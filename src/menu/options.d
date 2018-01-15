@@ -330,7 +330,6 @@ void populateGameKeys()
     fac.y += fac.incrementY / 2;
     groups[OptionGroup.gameKeys] ~= [
         fac.factory!HotkeyOption(keyChat, watcher),
-        fac.factory!HotkeyOption(keySpecTribe, watcher),
         fac.factory!HotkeyOption(keyPingGoals, watcher),
     ];
 

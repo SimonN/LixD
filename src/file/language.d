@@ -36,11 +36,11 @@ enum Lang {
     // used in various dialogues
     commonOk,
     commonCancel,
-    commonYes,
     commonNo,
     commonBack,
     commonExit,
     commonVersion,
+    mainMenuGetMusic,
 
     // browsers
     browserSingleTitle, browserSingleTitleDesc, // DTODOOPTION
@@ -52,7 +52,6 @@ enum Lang {
     browserReplay,
     browserDelete,
     browserSearch,
-    browserExtract,
     browserExportImage,
     browserExportImageDone,
 
@@ -61,26 +60,10 @@ enum Lang {
 
     browserInfoAuthor,
     browserInfoInitgoal,
-    browserInfoInitial,
-    browserInfoHatches,
-    browserInfoGoals,
-    browserInfoSkills,
-    browserInfoClock2,
-    browserInfoAuthorNone,
-    browserInfoClockNone,
 
     browserInfoResultSaved,
     browserInfoResultSkills,
-    browserInfoResultOld1,
-    browserInfoResultOld2,
 
-    browserInfoPlayer,
-    browserInfoVersion,
-    browserInfoBuilt,
-    browserInfoNew,
-    browserInfoSame,
-    browserInfoOld,
-    browserInfoHoldsLevel,
 
     winSearchTitle,
 
@@ -88,8 +71,6 @@ enum Lang {
 
     // networking lobby
     winLobbyTitle, winLobbyTitleDesc, // DTODOOPTION
-    winLobbyTitleLobby,
-    winLobbyTitleRoom,
     winLobbyDisconnect,
     winLobbyStartCentral,
     winLobbyStartCustom,
@@ -105,7 +86,6 @@ enum Lang {
     winGameTitle, winGameTitleDesc, // DTODOOPTION: option menu explains this
     winGameResult,
     winGameLixSaved,
-    winGameLixSavedInTime,
     winGameResume,
     winGameFramestepBack,
     winGameRestart,
@@ -116,22 +96,6 @@ enum Lang {
     winGameCommentExactly,
     winGameCommentFewer,
     winGameCommentNone,
-    winGameResultSkillsUsed,
-    winGameResultTimeUsed,
-    winGameNetFirst,
-    winGameNetSecond,
-    winGameNetMiddle,
-    winGameNetLast,
-    winGameNetTieForFirst,
-    winGameNetTieForLast,
-    winGameNetEverybodyTies,
-    winGameNetZero,
-    winGameNetEverybodyZero,
-    winGameReplayWinOne,
-    winGameReplayWinTeam,
-    winGameReplayTie,
-    winGameOverwriteTitle,
-    winGameOverwriteQuestion,
 
     // help texts inside the game
     gameForceLeft,
@@ -140,6 +104,7 @@ enum Lang {
     gameQueueBuilder,
     gameQueuePlatformer,
     gameHoldToScroll,
+    gameClickToCancelReplay,
     gamePause,
     gameZoom,
     gameStateSave,
@@ -150,19 +115,13 @@ enum Lang {
     gameRestart,
     gameNuke,
     gameClearPhysics,
-    gameSpecTribe,
 
     // main editor screen
     editorHotkey,
-    editorHotkeyHold,
     editorBarAt,
     editorBarGroup,
     editorBarHover,
     editorBarSelection,
-    editorBarMoveWithKeysLong,
-    editorBarMoveWithKeysShort,
-    editorBarMoveWithKeysMid,
-    editorBarMoveWithKeysEnd,
 
     // make sure these come in the same order as the editor button enum.
     // I don't know how to generate source code for these these enum values.
@@ -200,7 +159,6 @@ enum Lang {
     editorButtonMenuLooks,
     editorButtonMenuSkills,
 
-    // save browser
     saveBrowserTitle,
     saveBrowserWhatToType,
     saveBoxOverwriteTitle,
@@ -225,7 +183,6 @@ enum Lang {
     addSteel,
     addHatch,
     addGoal,
-    addDeco,
     addHazard,
 
     // editor window about the size of map
@@ -234,22 +191,14 @@ enum Lang {
     winTopologyR,
     winTopologyU,
     winTopologyD,
-    winTopologyX,
-    winTopologyY,
-    winTopologyHex,
     winTopologyTorusX,
     winTopologyTorusY,
 
     // scrolling start position
     winLooksTitle,
-    winLooksManual,
-    winLooksX,
-    winLooksY,
     winLooksRed,
     winLooksGreen,
     winLooksBlue,
-    winLooksJump,
-    winLooksCurrent,
 
     // editor window to set level variables
     winConstantsTitle,
@@ -272,12 +221,8 @@ enum Lang {
     exportSingleInitial,
     exportSingleRequired,
     exportSingleSpawnint,
-    exportMultiLix,
-    exportMultiSpawnint,
-    exportMultiClock,
 
     // network chat messages
-    netChatStartServer,
     netChatStartClient,
     netChatStartCancel,
     netChatYouLoggedOut,
@@ -286,12 +231,8 @@ enum Lang {
     netChatPeerDisconnected,
     netChatWeTooOld,
     netChatWeTooNew,
-    netChatSomeoneOld,
-    netChatSomeoneNew,
-    netChatNamedGuyOld,
     netChatVersionYours,
     netChatVersionServer,
-    netChatServerUpdate,
     netChatPleaseDownload,
     netChatWeInRoom,
     netChatWeInRoom2,
@@ -303,14 +244,11 @@ enum Lang {
     netChatPlayerOutRoom2,
     netChatPlayerOutLobby,
     netChatLevelChange,
-    netGameStart,
     netGameHowToChat1,
     netGameHowToChat2,
     netGameEnd,
     netGameEndResult,
     netGameOvertimeNukeIn,
-    netGameTriggersOvertime,
-    netGameWantsAbortiveTie,
 
     // Optionsfenster
     optionTitle, optionTitleDesc, // DTODOOPTION
@@ -367,7 +305,6 @@ enum Lang {
     optionKeyZoomIn, optionKeyZoomInDesc,
     optionKeyZoomOut, optionKeyZoomOutDesc,
     optionKeyChat, optionKeyChatDesc,
-    optionKeySpecTribe, optionKeySpecTribeDesc,
     optionKeyClearPhysics, optionKeyClearPhysicsDesc,
     optionKeyNuke, optionKeyNukeDesc,
 
@@ -409,7 +346,6 @@ enum Lang {
     optionEdAddSteel,
     optionEdAddHatch,
     optionEdAddGoal,
-    optionEdAddDeco,
     optionEdAddHazard,
 
     // mini-dialogue to greet a new player
