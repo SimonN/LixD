@@ -351,6 +351,7 @@ private:
         if (! _replayNeverCancelledThereforeDontSaveAutoReplay
             && nurse && nurse.replay
         ) {
+            nurse.terminateSingleplayerWithNuke();
             nurse.replay.saveAsAutoReplay(level,
                 nurse.singleplayerHasSavedAtLeast(level.required));
         }

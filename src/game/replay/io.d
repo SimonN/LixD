@@ -247,12 +247,11 @@ unittest
 
     assert (r.playerLocalOrSmallest.name == "TestName");
     assert (r.playerLocalOrSmallest.style == Style.yellow);
-    r.setPlayerLocalName("TestName2");
 
     implSaveToFile(r, fn1, lev);
     r = Replay.loadFromFile(fn1);
     assert (data_len == r._data.len);
-    assert (r.playerLocalOrSmallest.name == "TestName2");
+    assert (r.playerLocalOrSmallest.name == "TestName");
     assert (r.playerLocalOrSmallest.style == Style.yellow);
 
     implSaveToFile(r, fn2, lev);

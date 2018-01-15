@@ -91,12 +91,8 @@ public:
     }
 
     Phyu updatesSinceZero() const
-    out (result) {
-        assert (result >= 0);
-    }
-    body {
-        return Phyu(_model.cs.update - _cache.zeroStatePhyu);
-    }
+    out (result) { assert (result >= 0); }
+    body { return Phyu(upd - _cache.zeroStatePhyu); }
 
     bool userStateExists() { return _cache.userStateExists; }
     void saveUserState()   { _cache.saveUser(_model.cs, _replay); }
@@ -122,18 +118,22 @@ public:
         framestepBackTo(Phyu(vec.map!(data => data.update).reduce!min - 1));
     }
 
-    void cutReplay()
+    // Both of these will touch the replay, i.e., reset version and 1p name.
+    void cutReplay() { _replay.deleteAfterPhyu(upd); }
+    void terminateSingleplayerWithNuke()
     {
-        _replay.deleteAfterPhyu(upd);
-        _replay.setPlayerLocalName(basics.globconf.userName);
+        if (everybodyOutOfLix)
+            return;
+        _replay.terminateSingleplayerWithNukeAfter(upd);
     }
 
+    // This should only be called during interactive mode. But we don't know
+    // the runmode here, therefore I won't assert() for that.
     // DTODO: Refactor into SaveStatingNurse : Nurse for the interactive
     // mode, and the regular nurse otherwise
     void updateTo(in Phyu targetPhyu, in DuringTurbo duringTurbo)
     {
-        // assert (game.runmode == Runmode.INTERACTIVE);
-        while (! doneAnimating && _model.cs.update < targetPhyu) {
+        while (! doneAnimating && upd < targetPhyu) {
             updateOnce();
             considerAutoSavestateIfCloseTo(targetPhyu, duringTurbo);
         }
@@ -148,7 +148,7 @@ public:
 
     void framestepBackBy(int backBy)
     {
-        framestepBackTo(Phyu(_model.cs.update - backBy));
+        framestepBackTo(Phyu(upd - backBy));
     }
 
     void applyChangesToLand()

@@ -16,6 +16,7 @@ public import net.ac;
 public import net.style;
 
 import basics.help; // array.len of type int
+import basics.globconf : userName;
 import net.repdata;
 import net.permu;
 import net.versioning;
@@ -109,7 +110,11 @@ public:
     @property Permu permu(Permu p) { _permu = p; return p; }
 
     @property PlNr plNrLocalOrSmallest() const
-    {
+    in {
+        assert (_players.length >= 1, "localOrSmallest requires at least "
+            ~ "one player in the replay already");
+    }
+    body {
         if (_hasLocal) {
             assert (_plNrLocal in _players);
             return _plNrLocal;
@@ -140,6 +145,7 @@ public:
         return Style.garden;
     }
 
+    // Allocates and returns a new array with the report
     Style[] stylesInUse() const
     {
         Style[] ret;
@@ -153,6 +159,9 @@ public:
     void touch()
     {
         _gameVersionRequired = gameVersion();
+        auto ptr = _plNrLocal in _players;
+        if (ptr)
+            ptr.name = userName;
     }
 
     void addPlayer(PlNr nr, Style s, string name, in bool local)
@@ -164,17 +173,6 @@ public:
             _hasLocal = true;
             _plNrLocal = nr;
         }
-    }
-
-    // This should only be useful while you alter already-existing
-    // singleplayer replays. When you cut the replay, call this too
-    void setPlayerLocalName(string aName)
-    {
-        auto ptr = _plNrLocal in _players;
-        if (! ptr)
-            return;
-        touch();
-        ptr.name = aName;
     }
 
     // This doesn't check whether the metadata/general data is the same.
@@ -193,19 +191,6 @@ public:
                                _data.length >= rhs._data.length);
     }
 
-    // this function is necessary to keep old replays working in new versions
-    // that skip the first 30 or so updates, to get into the action faster.
-    // The first spawn is still at update 60.
-    void increaseEarlyDataToPhyu(in Phyu upd)
-    {
-        foreach (ref d; _data) {
-            if (d.update < upd)
-                d.update = upd;
-            else break;
-        }
-        // This doesn't call touch().
-    }
-
     void eraseEarlySingleplayerNukes()
     {
         // Game updates nukes, then spawns, then lix perform.
@@ -221,6 +206,28 @@ public:
             }
         }
         // doesn't call touch(), because it's housekeeping
+    }
+
+    /*
+     * Multiplayer: Accidental drops should ideally send nukes for those
+     * players, but that's not handled here. That should be implemented
+     * by the server.
+     * Singleplayer: Call this function on exiting with ESC during play
+     * to ensure, for style, that all replays end with a nuke.
+     * Existing nukes in the replay take priority
+     */
+    void terminateSingleplayerWithNukeAfter(in Phyu lastActionsToKeep)
+    {
+        if (_players.length != 1
+            || _data.canFind!(rd => rd.action == RepAc.NUKE))
+            return;
+        deleteAfterPhyu(lastActionsToKeep);
+
+        ReplayData termNuke = ReplayData();
+        termNuke.player = plNrLocalOrSmallest;
+        termNuke.update = Phyu(lastActionsToKeep + 1);
+        termNuke.action = RepAc.NUKE;
+        add(termNuke);
     }
 
     void deleteAfterPhyu(in Phyu upd)
@@ -294,8 +301,7 @@ package:
         // Add after the latest record that's smaller than or equal to d
         // Equivalently, add before the earliest record that's greater than d.
         // dataSliceBeforePhyu doesn't do exactly that, it ignores players.
-        // DTODO: I believe the C++ version had a bug in the choice of
-        // comparison. I have fixed that here. Test to see if it's good now.
+        // I believe the C++ version had a bug in the comparison. Fixed here.
         auto slice = dataSliceBeforePhyu(Phyu(d.update + 1));
         while (slice.length && slice[$-1] > d)
             slice = slice[0 .. $-1];
