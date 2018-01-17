@@ -1,5 +1,12 @@
 module hardware.sound;
 
+/*
+ * Do not call A5 audio functions directly outside of hardware.sound or
+ * hardware.music. All other modules should call these two modules instead.
+ * Reason: In here, we check for isAudioInstalled and we don't want to force
+ * that burden to our clients.
+ */
+
 import basics.alleg5;
 import basics.globals;
 import basics.user;
@@ -52,17 +59,192 @@ enum Sound {
     MAX          // no sound, only the total number of sounds
 };
 
+// Normally, this should have package visibility. But the main menu wants
+// to print whether there was an error initializing audio. Let's offer it.
+// Returns true if audio has been successfully initialized, now or before.
+bool tryInitialize()
+{
+    // We assume Allegro has been initialized.
+    // It's legal to initialize the audio twice; 2nd call shall be NOP.
+    // Reason: We initialize audio lazily. See comment on deinitialize().
+    if (! _isAudioInitialized && ! _weInitializedUnsuccessfullyBefore)
+        initialize();
+    return _isAudioInitialized;
+}
+
+// I don't think we ever have to call this. Maybe when the following bug hits?
+// Allegro 5, https://github.com/liballeg/allegro5/issues/877
+// That bug is: al_install_audio() is 0 when A5 app is quicklaunched from
+// Windows 7/8 taskbar. ccexplore conjectures it's a race against the window.
+void deinitialize()
+{
+    if (! _isAudioInitialized)
+        return;
+    al_stop_samples();
+    foreach (ref Sample sample; samples) {
+        if (sample is null) continue;
+        sample.stop();
+        destroy(sample);
+        sample = null;
+    }
+    al_uninstall_audio();
+    _isAudioInitialized = false;
+}
+
+void playLoud (in Sound id) { play(id, Loudness.loud); }
+void playQuiet(in Sound id) { play(id, Loudness.quiet); }
+void play(in Sound id, in Loudness loudness)
+{
+    if (! tryInitialize() || ! samples[id])
+        return;
+    final switch (loudness) {
+        case Loudness.loud: samples[id].scheduleLoud(); break;
+        case Loudness.quiet: samples[id].scheduleQuiet(); break;
+    }
+}
+
+// Call this once per main loop, after scheduling sounds with playLoud et al.
+void draw()
+{
+    foreach (sample; samples)
+        if (sample)
+            sample.draw();
+    drawMusic();
+}
+
+///////////////////////////////////////////////////////////////////////////////
+package: ///////////////////////////////////////////////////////////// :package
+///////////////////////////////////////////////////////////////////////////////
+
+package bool isAudioInitialized() { return _isAudioInitialized; }
+
+package float dbToGain(in int db) pure @nogc nothrow
+{
+    return (2.0f) ^^ (db / 5f);
+}
+
+package void logAllegroSupportsFormat()
+{
+    static bool oggErrorLogged = false;
+    if (oggErrorLogged)
+        return;
+    oggErrorLogged = true;
+    log("    -> Check if other programs play this, and if Allegro 5");
+    log("    -> has been compiled with support for this format.");
+}
+
+///////////////////////////////////////////////////////////////////////////////
+private: ///////////////////////////////////////////////////////////// :private
+///////////////////////////////////////////////////////////////////////////////
+
+bool _isAudioInitialized;
+bool _weInitializedUnsuccessfullyBefore;
+Sample[Sound.MAX] samples;
+
+class Sample {
+private:
+    alias ALLEGRO_SAMPLE*   AlSamp;
+    alias ALLEGRO_SAMPLE_ID PlayId;
+
+    Filename _filename;
+    AlSamp _sample; // may be null if file was missing or bad file
+    PlayId _playID;
+    bool   _loud; // if true, scheduled to be played normally
+    bool   _quiet; // if true, scheduled to be played quietly
+    bool   _lastWasLoud;
+    bool   _loadedFromDisk;
+
+public:
+    const(Filename) filename() const { return _filename; }
+    void scheduleLoud (in bool b = true) { _loud  = b; }
+    void scheduleQuiet(in bool b = true) { _quiet = b; }
+
+    this(in Filename fn) { _filename = fn; }
+
+    ~this()
+    {
+        if (_sample)
+            al_destroy_sample(_sample);
+        _sample = null;
+        _loadedFromDisk = false;
+    }
+
+    // draw plays each sample if it was scheduled by setting (loud) or (quiet)
+    void draw()
+    {
+        if (_loud || (_quiet && !_lastWasLoud))
+            stop();
+        if ((_loud || _quiet) && basics.user.soundEnabled.value) {
+            _lastWasLoud = _loud;
+            loadFromDisk();
+            if (! _sample)
+                return;
+            assert (_isAudioInitialized);
+            al_play_sample(_sample,
+                dbToGain(soundDecibels) * (_loud ? 1 : 0.2f),
+                ALLEGRO_AUDIO_PAN_NONE, 1.0f, // speed factor
+                ALLEGRO_PLAYMODE.ALLEGRO_PLAYMODE_ONCE, &_playID);
+        }
+        // reset the scheduling variables
+        _loud  = false;
+        _quiet = false;
+    }
+
+    void stop()
+    {
+        static PlayId _nullID;
+        if (_playID != _nullID) {
+            assert (_isAudioInitialized);
+            al_stop_sample(&_playID);
+        }
+    }
+
+private:
+    void loadFromDisk()
+    {
+        if (_loadedFromDisk)
+            return;
+        _loadedFromDisk = true;
+        assert (! _sample);
+        assert (_isAudioInitialized);
+        _sample = al_load_sample(_filename.stringzForReading);
+        if (! _sample) {
+            if (! _filename.fileExists()) {
+                logf("Missing sound file `%s'", _filename.rootless);
+            }
+            else {
+                logf("Unplayable sound sample `%s'.", _filename.rootless);
+                logAllegroSupportsFormat();
+    }   }   }
+}
+// end class Sample
+
 void initialize()
 {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "sound initialization");
-    // assumes Allegro has been initialized, but audio hasn't been initialized
-    if (! al_install_audio())
-        log("Allegro 5 can't install audio");
-    if (! al_init_acodec_addon())
+
+    if (! al_install_audio()) {
+        _weInitializedUnsuccessfullyBefore = true;
+        log("Allegro 5 can't install audio (al_install_audio() returned 0)");
+        log("    -> If you run Lix from the Windows quicklaunch bar, audio");
+        log("    -> may fail completely. Workaround: Start Lix somehow else.");
+        // Allegro 5 issue: https://github.com/liballeg/allegro5/issues/877
+        return;
+    }
+    if (! al_init_acodec_addon()) {
+        _weInitializedUnsuccessfullyBefore = true;
         log("Allegro 5 can't install codecs");
-    if (! al_reserve_samples(8))
-        log("Allegro 5 can't reserve 8 samples.");
+        al_uninstall_audio();
+        return;
+    }
+    if (! al_reserve_samples(8)) {
+        _weInitializedUnsuccessfullyBefore = true;
+        log("Allegro 5 can't reserve 8 samples");
+        al_uninstall_audio();
+        return;
+    }
+    _isAudioInitialized = true;
 
     Sample loadLazily(in string str)
     {
@@ -106,140 +288,3 @@ void initialize()
     samples[Sound.AWARD_3]     = loadLazily("award_3.ogg");
     samples[Sound.AWARD_4]     = loadLazily("award_4.ogg");
 }
-
-void deinitialize()
-{
-    al_stop_samples();
-    foreach (ref Sample sample; samples) {
-        if (sample is null) continue;
-        sample.stop();
-        destroy(sample);
-        sample = null;
-    }
-    al_uninstall_audio();
-}
-
-void play(in Sound id, in Loudness loudness)
-{
-    final switch (loudness) {
-        case Loudness.loud:  playLoud(id);  break;
-        case Loudness.quiet: playQuiet(id); break;
-    }
-}
-
-void playLoud (in Sound id) { if (samples[id]) samples[id].scheduleLoud();  }
-void playQuiet(in Sound id) { if (samples[id]) samples[id].scheduleQuiet(); }
-
-void playLoudIf(in Sound id, in bool loud)
-{
-    if (loud) samples[id].scheduleLoud();
-    else      samples[id].scheduleQuiet();
-}
-
-// Call this once per main loop, after scheduling sounds with playLoud et al.
-void draw()
-{
-    foreach (sample; samples)
-        if (sample)
-            sample.draw();
-    drawMusic();
-}
-
-package float dbToGain(in int db) pure nothrow
-{
-    return (2.0f) ^^ (db / 5f);
-}
-
-package void logAllegroSupportsFormat()
-{
-    static bool oggErrorLogged = false;
-    if (oggErrorLogged)
-        return;
-    oggErrorLogged = true;
-    log("    -> Check if other programs play this, and if Allegro 5");
-    log("    -> has been compiled with support for this format.");
-}
-
-
-
-///////////////////////////////////////////////////////////////////////////////
-private: /////////////////////////////////////////////////////////////: private
-///////////////////////////////////////////////////////////////////////////////
-
-
-
-Sample[Sound.MAX] samples;
-
-class Sample {
-private:
-    alias ALLEGRO_SAMPLE*   AlSamp;
-    alias ALLEGRO_SAMPLE_ID PlayId;
-
-    Filename _filename;
-    AlSamp _sample; // may be null if file was missing or bad file
-    PlayId _playID;
-    bool   _loud; // if true, scheduled to be played normally
-    bool   _quiet; // if true, scheduled to be played quietly
-    bool   _lastWasLoud;
-    bool   _loadedFromDisk;
-
-public:
-    const(Filename) filename() const { return _filename; }
-    void scheduleLoud (in bool b = true) { _loud  = b; }
-    void scheduleQuiet(in bool b = true) { _quiet = b; }
-
-    this(in Filename fn) { _filename = fn; }
-
-    ~this()
-    {
-        if (_sample)
-            al_destroy_sample(_sample);
-        _sample = null;
-        _loadedFromDisk = false;
-    }
-
-    // draw plays each sample if it was scheduled by setting (loud) or (quiet)
-    void draw()
-    {
-        if (_loud || (_quiet && !_lastWasLoud))
-            stop();
-        if ((_loud || _quiet) && basics.user.soundEnabled.value) {
-            _lastWasLoud = _loud;
-            loadFromDisk();
-            if (! _sample)
-                return;
-            al_play_sample(_sample,
-                dbToGain(soundDecibels) * (_loud ? 1 : 0.2f),
-                ALLEGRO_AUDIO_PAN_NONE, 1.0f, // speed factor
-                ALLEGRO_PLAYMODE.ALLEGRO_PLAYMODE_ONCE, &_playID);
-        }
-        // reset the scheduling variables
-        _loud  = false;
-        _quiet = false;
-    }
-
-    void stop()
-    {
-        static PlayId _nullID;
-        if (_playID != _nullID)
-            al_stop_sample(&_playID);
-    }
-
-private:
-    void loadFromDisk()
-    {
-        if (_loadedFromDisk)
-            return;
-        _loadedFromDisk = true;
-        assert (! _sample);
-        _sample = al_load_sample(_filename.stringzForReading);
-        if (! _sample) {
-            if (! _filename.fileExists()) {
-                logf("Missing sound file `%s'", _filename.rootless);
-            }
-            else {
-                logf("Unplayable sound sample `%s'.", _filename.rootless);
-                logAllegroSupportsFormat();
-    }   }   }
-}
-// end class Sample

@@ -14,6 +14,8 @@ import gui;
 import menu.menubg;
 
 static import basics.globals;
+static import hardware.sound; // ...to warn about errors initializing audio.
+                              // Maybe redesign into displaying the logfile?
 
 class MainMenu : MenuWithBackground {
 private:
@@ -85,9 +87,6 @@ private:
 
     void warnAboutMissingMusic()
     {
-        if (! basics.user.musicEnabled.value || dirDataMusic.dirExists)
-            return;
-
         void printLine(in float yFromBottom, in string text)
         {
             import basics.alleg5;
@@ -101,7 +100,15 @@ private:
             l.color = Alcol(0.4, 0.35, 0.3, 1);
             addChild(l);
         }
-        printLine(20, Lang.mainMenuGetMusic.transl);
-        printLine( 0, musicDownloadURL);
+        int y = 0;
+        if (basics.user.musicEnabled.value && ! dirDataMusic.dirExists) {
+            printLine(y + 20, Lang.mainMenuGetMusic.transl);
+            printLine(y +  0, musicDownloadURL);
+            y += 40;
+        }
+        if (! hardware.sound.tryInitialize) {
+            printLine(y, "Error initializing audio. See data/log.txt");
+            y += 20;
+        }
     }
 }

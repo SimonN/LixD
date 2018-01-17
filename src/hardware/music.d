@@ -1,6 +1,12 @@
 module hardware.music;
 
-// Call hardware.sound.initialize() before you call this module's drawMusic.
+/*
+ * Call hardware.sound.initialize() before you call this module's drawMusic.
+ *
+ * All functions in hardware.music are safe to call even when audio hasn't
+ * yet been initiailized or audio initialization has failed. You merely won't
+ * hear anything, but it's no error.
+ */
 
 import std.algorithm;
 import std.range;
@@ -10,7 +16,7 @@ import basics.globals;
 import file.filename;
 import file.io;
 import file.log;
-import hardware.sound : logAllegroSupportsFormat, dbToGain;
+import hardware.sound;
 
 static import basics.user;
 
@@ -31,8 +37,11 @@ void suggestRandomMusic()
 
 void stopMusic()
 {
-    if (_music)
+    if (_music) {
+        assert (isAudioInitialized(), "we should land here only if we have"
+            ~ " already called sound.tryInitialize before and it succeeded");
         al_destroy_audio_stream(_music);
+    }
     _music = null;
     _last = null;
 }
@@ -55,6 +64,11 @@ MutFilename _last; // full filename including extension
 MutFilename _sched; // can be a filename stub that must be extended
 bool _wantRandom;
 
+bool isMusicEnabled()
+{
+    return basics.user.musicEnabled.value && hardware.sound.tryInitialize();
+}
+
 bool isAcceptableMusicExtension(in string ext) pure @nogc
 {
     if (ext == filenameExtConfig)
@@ -64,9 +78,9 @@ bool isAcceptableMusicExtension(in string ext) pure @nogc
 
 Filename scheduledMusic()
 {
-    if (! basics.user.musicEnabled.value)
-        return null;
     if (! _wantRandom && ! goodConcreteScheduled)
+        return null;
+    if (! isMusicEnabled)
         return null;
     MutFilename ret = _sched;
     if (_wantRandom || ret && ! ret.fileExists)
@@ -109,10 +123,14 @@ Filename resolveBySearching()
     return notMenuMusic.drop(uniform(0, notMenuMusic.walkLength)).front;
 }
 
+// When ! isAudioInitialized, it's still okay to call this with fn is null,
+// but calling this with fn !is null requires isAudioInitialized.
 void loadMusicFromDisk(in Filename fn)
 {
     if (! fn)
         return;
+    assert (isAudioInitialized(), "we should land here only if we have"
+        ~ " already called sound.tryInitialize before and it succeeded");
     if (_music)
         al_destroy_audio_stream(_music);
     _music = al_load_audio_stream(fn.stringzForReading, 3, 1024);
@@ -133,7 +151,7 @@ void loadMusicFromDisk(in Filename fn)
 
 void setGain(in Filename fn)
 {
-    if (! fn || basics.user.musicEnabled.value == false) {
+    if (! fn || ! isMusicEnabled) {
         auto remember = _last;
         stopMusic(); // resets _last, but we need _last for next setGain() call
         _last = remember;
@@ -143,6 +161,8 @@ void setGain(in Filename fn)
         loadMusicFromDisk(_last);
         return; // because loadMusicFromDisk calls setGain anyway
     }
+    assert (isAudioInitialized(), "we should land here only if we have"
+        ~ " already called sound.tryInitialize before and it succeeded");
     int dBFromFile = 0;
     try fillVectorFromFile(basics.globals.fileMusicGain)
             .find!(line => line.text1.length > 2

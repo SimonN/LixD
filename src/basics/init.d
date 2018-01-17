@@ -60,9 +60,9 @@ void initializeNoninteractive(Runmode mode)
             hardware.tharsis.initialize();
     if (ia) hardware.keyboard.initialize();
     if (ia) hardware.mouse.initialize();
-    if (ia) hardware.sound.initialize();
             graphic.color.initialize();
     if (ph) game.mask.initialize();
+    // Sound will be lazily initialized when required.
 
     if (! ia) {
         // We need tiles and some graphics in any case
