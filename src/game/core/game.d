@@ -297,7 +297,8 @@ private:
     {
         initializePanel();
         initializeConsole();
-        stopMusic();
+        if (runmode == Runmode.INTERACTIVE)
+            stopMusic();
         setLastPhyuToNow();
     }
 
