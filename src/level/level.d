@@ -136,7 +136,7 @@ public:
     // exporter would write the exported image.
     static Filename exportImageFilename(in Filename levelFilename)
     {
-        return new VfsFilename("%s%s.png".format(dirExportImages.rootless,
+        return new VfsFilename("%s%s.png".format(dirExport.rootless,
                                 levelFilename.fileNoExtNoPre));
     }
 

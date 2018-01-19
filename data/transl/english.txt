@@ -265,6 +265,7 @@ $optionKeyZoomIn Zoom +
 $optionKeyZoomOut Zoom −
 $optionKeyScroll Hold to scroll
 $optionKeyPriorityInvert Priority invert
+$optionKeyScreenshot Screenshot
 
 $optionMouseSpeed Mouse speed
 $optionScrollSpeedEdge Scroll speed at screen edge
@@ -275,6 +276,7 @@ $optionKeyZoomInDesc Zoom into the level.
 $optionKeyZoomOutDesc Zoom out of the level.
 $optionKeyScrollDesc Hold this (standard: right mouse button ⟁) and move the mouse to scroll.|This is easier, faster, and more precise than scrolling at the screen edge.
 $optionKeyPriorityInvertDesc Hold to assign skills to the lix with the lowest priority instead of the highest.|In the editor, hold to select the bottommost tile instead of the topmost.
+$optionKeyScreenshotDesc Take a screenshot of the entire Lix window.|Screenshots are saved in ./export/ or ~/local/share/lix/export/.
 
 $optionMouseSpeedDesc Speed of the mouse cursor.
 $optionScrollSpeedEdgeDesc Scroll speed when the mouse cursor touches the screen edge.|

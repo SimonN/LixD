@@ -259,6 +259,7 @@ $optionKeyZoomIn Zoom +
 $optionKeyZoomOut Zoom −
 $optionKeyScroll Halten zum Scrollen
 $optionKeyPriorityInvert Priorität invertieren
+$optionKeyScreenshot Screenshot
 
 $optionMouseSpeed Mausgeschwindigkeit
 $optionScrollSpeedEdge Scroll-Geschw. am Bildrand
@@ -269,6 +270,7 @@ $optionKeyZoomInDesc Level größer darstellen, dafür weniger auf einmal sehen.
 $optionKeyZoomOutDesc Level kleiner darstellen, dafür mehr auf einmal sehen.
 $optionKeyScrollDesc Halte dies (Standard: rechte Maustaste ⟁) und bewege die Maus zum Scrollen.|Das ist einfacher, schneller und präziser als Scrollen am Bildschirmrand.
 $optionKeyPriorityInvertDesc Halte dies, um Fähigkeiten der Lix mit der niedrigsten Priorität zuzuweisen.|Halte dies im Editor, um das hinterste Element anstatt des vordersten zu wählen.
+$optionKeyScreenshotDesc Screenshot (Bildschirmfoto) des gesamten Lix-Fensters speichern.|Screenshots werden gespeichert in ./export/ oder ~/local/share/lix/export/.
 
 $optionMouseSpeedDesc Geschwindigkeit des Mauscursors im Spiel, im Editor und im Menü.
 $optionScrollSpeedEdgeDesc Scroll-Geschwindigkeit, wenn die Maus am Rand des Bildschirms ist.

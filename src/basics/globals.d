@@ -113,7 +113,7 @@ Filename dirLevels, dirLevelsSingle, dirLevelsNetwork, dirReplays, dirData,
     dirDataBitmap, dirDataSound, dirDataMusic,
     dirDataUser, dirDataTransl, dirImages,
     dirReplayAutoSolutions, dirReplayAutoMulti, dirReplayManual,
-    dirExportImages;
+    dirExport;
 
 Filename fileGlobalConfig, fileLog, fileReplayVerifier, fileTharsisProf,
     fileLanguageEnglish, fileMusicMenu, fileMusicGain,
@@ -148,7 +148,7 @@ static this()
     dirReplayAutoSolutions = new Fn("replays/solved/");
     dirReplayAutoMulti = new Fn("replays/network/");
     dirReplayManual = new Fn("replays/manual/");
-    dirExportImages = new Fn("export/");
+    dirExport = new Fn("export/");
 
     fileGlobalConfig = new Fn("data/config.txt");
     fileLog = new Fn("data/log.txt");

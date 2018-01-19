@@ -262,6 +262,7 @@ void populateControls()
         fac.factory!HotkeyOption(keyZoomOut),
         fac.factory!HotkeyOption(keyScroll),
         fac.factory!HotkeyOption(keyPriorityInvert),
+        fac.factory!HotkeyOption(keyScreenshot),
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.controls] ~= [

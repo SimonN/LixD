@@ -41,17 +41,6 @@ public:
     return _displayActive;
 }
 
-void flip_display()
-{
-    assert (display, "display hasn't been created");
-    al_flip_display();
-
-    // compute FPS, query result with displayFps()
-    _fpsArr ~= timerTicks;
-    while (_fpsArr != null && _fpsArr[0] <= _fpsArr[$-1] - ticksPerSecond)
-        _fpsArr = _fpsArr[1 .. $];
-}
-
 @property int displayFps()
 {
     return _fpsArr.len;
@@ -77,6 +66,13 @@ body {
     ret.y = displayYl;
     ret.mode = flagsToScreenMode(al_get_display_flags(display));
     return ret;
+}
+
+void flip_display()
+{
+    assert (display, "display hasn't been created");
+    al_flip_display();
+    computeFPS();
 }
 
 // This is like initialize() of other modules.
@@ -226,4 +222,11 @@ int screenModeToFlags(in ScreenMode mode) pure nothrow @nogc
         case ScreenMode.softwareFullscreen: return ALLEGRO_FULLSCREEN_WINDOW;
         case ScreenMode.hardwareFullscreen: return ALLEGRO_FULLSCREEN;
     }
+}
+
+void computeFPS()
+{
+    _fpsArr ~= timerTicks;
+    while (_fpsArr != null && _fpsArr[0] <= _fpsArr[$-1] - ticksPerSecond)
+        _fpsArr = _fpsArr[1 .. $];
 }

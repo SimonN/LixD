@@ -133,6 +133,7 @@ UserOption!KeySet
     keyPriorityInvert,
     keyZoomIn,
     keyZoomOut,
+    keyScreenshot,
 
     keyForceLeft,
     keyForceRight,
@@ -309,6 +310,8 @@ static this()
     keyPriorityInvert = newKey("KEY_PRIORITY_INVERT", Lang.optionKeyPriorityInvert, keyRMB);
     keyZoomIn = newKey("KEY_ZOOM_IN", Lang.optionKeyZoomIn, hardware.keynames.keyWheelUp);
     keyZoomOut = newKey("KEY_ZOOM_OUT", Lang.optionKeyZoomOut, hardware.keynames.keyWheelDown);
+    keyScreenshot = newOpt("KEY_SCREENSHOT", Lang.optionKeyScreenshot,
+        KeySet());
 
     // Game keys
     keyForceLeft = newKey2("KEY_FORCE_LEFT", Lang.optionKeyForceLeft, ALLEGRO_KEY_S, ALLEGRO_KEY_LEFT);

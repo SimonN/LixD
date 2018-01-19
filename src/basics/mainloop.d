@@ -298,6 +298,7 @@ public:
             hardware.mousecur.draw();
         hardware.sound.draw();
         flip_display();
+        takeScreenshot();
     }
 
     /*
@@ -311,6 +312,16 @@ public:
         changeResolutionBasedOnUserFileAlone();
         mainMenu = new MainMenu;
         gui.addElder(mainMenu);
+    }
+
+    private void takeScreenshot()
+    {
+        import basics.user;
+        import hardware.scrshot;
+        if (! keyScreenshot.keyTapped)
+            return;
+        hardware.scrshot.takeScreenshot(
+            game ? game.filenamePrefixForScreenshot : "screenshot");
     }
 }
 // end class MainLoop

@@ -188,6 +188,19 @@ public:
         return ret;
     }
 
+    string filenamePrefixForScreenshot() const
+    out (ret) { assert (ret != ""); }
+    body {
+        assert (nurse);
+        assert (nurse.replay);
+        if (nurse.replay.levelFilename
+            && nurse.replay.levelFilename.fileNoExtNoPre != "")
+            return nurse.replay.levelFilename.fileNoExtNoPre;
+        else
+            return nurse.constStateForDrawingOnly.multiplayer
+                ? "multiplayer" : "singleplayer";
+    }
+
     void calc()
     {
         assert (runmode == Runmode.INTERACTIVE);
