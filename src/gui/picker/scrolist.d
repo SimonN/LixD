@@ -101,10 +101,7 @@ public:
     @property int top() const { return _top; }
     @property int top(int newTop)
     {
-        // DTODOGUI: There is a bug left behind here.
-        // When the list enlarges or shrinks due to newly-arrived data,
-        // we would like to keep our scrolling position roughly the same.
-        // Yet we should make sure that we aren't scrolled out of bounds.
+        newTop = max(0, min(newTop, totalLen - pageLen));
         if (newTop == _top)
             return _top;
         _top = newTop;
@@ -122,6 +119,10 @@ protected:
         _buttons.each!(b => rmChild(b));
         _buttons = array;
         _buttons.each!(b => addChild(b));
+        // We would like to keep our scrolling position roughly the same.
+        // top = top is not perfect, it errs towards scrolling too low
+        // when buttons vanish, and too high when extra buttons appear
+        top = top;
         alignButtons();
     }
 
@@ -139,7 +140,8 @@ private:
         reqDraw();
         foreach (int i, b; _buttons) {
             b.shown = (i >= _top && i < _top + pageLen);
-            b.move(0, (i - _top) * buttonYlg);
+            if (b.shown)
+                b.move(0, (i - _top) * buttonYlg);
         }
     }
 }
