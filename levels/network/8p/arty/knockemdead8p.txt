@@ -1,0 +1,320 @@
+$BUILT 2018-01-17 17:41:36
+$AUTHOR Arty
+$ENGLISH Knock 'em dead! (8p)
+
+#INTENDED_NUMBER_OF_PLAYERS 8
+#SIZE_X 640
+#SIZE_Y 1536
+#TORUS_X 0
+#TORUS_Y 1
+
+#SECONDS 80
+#INITIAL 100
+#REQUIRED 20
+#SPAWN_INTERVAL 12
+
+#WALKER 60
+#RUNNER 10
+#CLIMBER 20
+#FLOATER 20
+#EXPLODER2 20
+#BLOCKER 20
+#BUILDER 30
+#PLATFORMER 30
+#BASHER 20
+#MINER 20
+#DIGGER 20
+#JUMPER 60
+#BATTER 80
+
+:matt/bricks/Hatch.H: 32 0
+:matt/bricks/Hatch.H: 32 192
+:matt/bricks/Hatch.H: 32 384
+:matt/bricks/Hatch.H: 32 576
+:matt/bricks/Hatch.H: 32 768
+:matt/bricks/Hatch.H: 32 960
+:matt/bricks/Hatch.H: 32 1152
+:matt/bricks/Hatch.H: 32 1344
+:matt/bricks/Hatch.H: 448 48
+:matt/bricks/Hatch.H: 448 240
+:matt/bricks/Hatch.H: 448 432
+:matt/bricks/Hatch.H: 448 624
+:matt/bricks/Hatch.H: 448 816
+:matt/bricks/Hatch.H: 448 1008
+:matt/bricks/Hatch.H: 448 1200
+:matt/bricks/Hatch.H: 448 1392
+:matt/bricks/Hatch.H: 448 1328
+:matt/bricks/Hatch.H: 448 1520
+:matt/bricks/Hatch.H: 448 176
+:matt/bricks/Hatch.H: 448 368
+:matt/bricks/Hatch.H: 448 560
+:matt/bricks/Hatch.H: 448 752
+:matt/bricks/Hatch.H: 448 944
+:matt/bricks/Hatch.H: 448 1136
+:matt/bricks/Hatch.H: 448 1456
+:matt/bricks/Hatch.H: 448 112
+:matt/bricks/Hatch.H: 448 304
+:matt/bricks/Hatch.H: 448 496
+:matt/bricks/Hatch.H: 448 688
+:matt/bricks/Hatch.H: 448 880
+:matt/bricks/Hatch.H: 448 1072
+:matt/bricks/Hatch.H: 448 1264
+
+:matt/bricks/Goal.G: 576 208
+:matt/bricks/Goal.G: 576 400
+:matt/bricks/Goal.G: 576 592
+:matt/bricks/Goal.G: 576 784
+:matt/bricks/Goal.G: 576 976
+:matt/bricks/Goal.G: 576 1168
+:matt/bricks/Goal.G: 576 1360
+:matt/bricks/Goal.G: 576 16
+:matt/bricks/Goal.G: 160 288
+:matt/bricks/Goal.G: 160 480
+:matt/bricks/Goal.G: 160 672
+:matt/bricks/Goal.G: 160 864
+:matt/bricks/Goal.G: 160 1056
+:matt/bricks/Goal.G: 160 1248
+:matt/bricks/Goal.G: 160 1440
+:matt/bricks/Goal.G: 160 96
+
+:geoo/construction/squisher.T: 240 80
+:geoo/construction/squisher.T: 240 272
+:geoo/construction/squisher.T: 240 464
+:geoo/construction/squisher.T: 240 656
+:geoo/construction/squisher.T: 240 848
+:geoo/construction/squisher.T: 240 1040
+:geoo/construction/squisher.T: 240 1232
+:geoo/construction/squisher.T: 240 1424
+
+:matt/bricks/16b: 416 48
+:matt/bricks/02b: 352 48
+:matt/bricks/02b: 352 80
+:matt/bricks/02b: 352 112
+:matt/bricks/02b: 288 112
+:matt/bricks/02b: 288 80
+:matt/bricks/02b: 288 48
+:matt/bricks/02b: 224 48
+:matt/bricks/02b: 160 48
+:matt/bricks/02b: 96 48
+:matt/bricks/02b: 96 80
+:matt/bricks/02b: 96 112
+:matt/bricks/02b: 32 112
+:matt/bricks/02b: 32 80
+:matt/bricks/02b: 32 48
+:matt/bricks/02b: 352 144
+:matt/bricks/02b: 288 144
+:matt/bricks/02b: 224 144
+:matt/bricks/02b: 160 144
+:matt/bricks/02b: 96 144
+:matt/bricks/02b: 32 144
+:matt/bricks/16b: 416 240
+:matt/bricks/02b: 352 240
+:matt/bricks/02b: 352 272
+:matt/bricks/02b: 352 304
+:matt/bricks/02b: 288 304
+:matt/bricks/02b: 288 272
+:matt/bricks/02b: 288 240
+:matt/bricks/02b: 224 240
+:matt/bricks/02b: 160 240
+:matt/bricks/02b: 96 240
+:matt/bricks/02b: 96 272
+:matt/bricks/02b: 96 304
+:matt/bricks/02b: 32 304
+:matt/bricks/02b: 32 272
+:matt/bricks/02b: 32 240
+:matt/bricks/02b: 352 336
+:matt/bricks/02b: 288 336
+:matt/bricks/02b: 224 336
+:matt/bricks/02b: 160 336
+:matt/bricks/02b: 96 336
+:matt/bricks/02b: 32 336
+:matt/bricks/05b: 160 176
+:matt/bricks/04b: 224 176
+:matt/bricks/05b: 352 160
+:matt/bricks/05b: 352 352
+:matt/bricks/06b: 96 336
+:matt/bricks/06b: 96 144
+:matt/bricks/05b: 160 368
+:matt/bricks/04b: 224 368
+:matt/bricks/16b: 416 432
+:matt/bricks/02b: 352 432
+:matt/bricks/02b: 352 464
+:matt/bricks/02b: 352 496
+:matt/bricks/02b: 288 496
+:matt/bricks/02b: 288 464
+:matt/bricks/02b: 288 432
+:matt/bricks/02b: 224 432
+:matt/bricks/02b: 160 432
+:matt/bricks/02b: 96 432
+:matt/bricks/02b: 96 464
+:matt/bricks/02b: 96 496
+:matt/bricks/02b: 32 496
+:matt/bricks/02b: 32 464
+:matt/bricks/02b: 32 432
+:matt/bricks/02b: 352 528
+:matt/bricks/02b: 288 528
+:matt/bricks/02b: 224 528
+:matt/bricks/02b: 160 528
+:matt/bricks/02b: 96 528
+:matt/bricks/02b: 32 528
+:matt/bricks/05b: 352 544
+:matt/bricks/06b: 96 528
+:matt/bricks/05b: 160 560
+:matt/bricks/04b: 224 560
+:matt/bricks/16b: 416 624
+:matt/bricks/02b: 352 624
+:matt/bricks/02b: 352 656
+:matt/bricks/02b: 352 688
+:matt/bricks/02b: 288 688
+:matt/bricks/02b: 288 656
+:matt/bricks/02b: 288 624
+:matt/bricks/02b: 224 624
+:matt/bricks/02b: 160 624
+:matt/bricks/02b: 96 624
+:matt/bricks/02b: 96 656
+:matt/bricks/02b: 96 688
+:matt/bricks/02b: 32 688
+:matt/bricks/02b: 32 656
+:matt/bricks/02b: 32 624
+:matt/bricks/02b: 352 720
+:matt/bricks/02b: 288 720
+:matt/bricks/02b: 224 720
+:matt/bricks/02b: 160 720
+:matt/bricks/02b: 96 720
+:matt/bricks/02b: 32 720
+:matt/bricks/05b: 352 736
+:matt/bricks/06b: 96 720
+:matt/bricks/05b: 160 752
+:matt/bricks/04b: 224 752
+:matt/bricks/16b: 416 816
+:matt/bricks/02b: 352 816
+:matt/bricks/02b: 352 848
+:matt/bricks/02b: 352 880
+:matt/bricks/02b: 288 880
+:matt/bricks/02b: 288 848
+:matt/bricks/02b: 288 816
+:matt/bricks/02b: 224 816
+:matt/bricks/02b: 160 816
+:matt/bricks/02b: 96 816
+:matt/bricks/02b: 96 848
+:matt/bricks/02b: 96 880
+:matt/bricks/02b: 32 880
+:matt/bricks/02b: 32 848
+:matt/bricks/02b: 32 816
+:matt/bricks/02b: 352 912
+:matt/bricks/02b: 288 912
+:matt/bricks/02b: 224 912
+:matt/bricks/02b: 160 912
+:matt/bricks/02b: 96 912
+:matt/bricks/02b: 32 912
+:matt/bricks/05b: 352 928
+:matt/bricks/06b: 96 912
+:matt/bricks/05b: 160 944
+:matt/bricks/04b: 224 944
+:geoo/steel/dark_64x32o.S: 576 832
+:geoo/steel/dark_64x32o.S: 576 64
+:geoo/steel/dark_64x32o.S: 576 256
+:geoo/steel/dark_64x32o.S: 576 448
+:geoo/steel/dark_64x32o.S: 576 640
+:geoo/steel/dark_16x32o.S: 624 32
+:geoo/steel/dark_16x32o.S: 624 224
+:geoo/steel/dark_16x32o.S: 624 416
+:geoo/steel/dark_16x32o.S: 624 608
+:geoo/steel/dark_16x32o.S: 624 800
+:matt/bricks/16b: 416 1008
+:matt/bricks/02b: 352 1008
+:matt/bricks/02b: 352 1040
+:matt/bricks/02b: 352 1072
+:matt/bricks/02b: 288 1072
+:matt/bricks/02b: 288 1040
+:matt/bricks/02b: 288 1008
+:matt/bricks/02b: 224 1008
+:matt/bricks/02b: 160 1008
+:matt/bricks/02b: 96 1008
+:matt/bricks/02b: 96 1040
+:matt/bricks/02b: 96 1072
+:matt/bricks/02b: 32 1072
+:matt/bricks/02b: 32 1040
+:matt/bricks/02b: 32 1008
+:matt/bricks/02b: 352 1104
+:matt/bricks/02b: 288 1104
+:matt/bricks/02b: 224 1104
+:matt/bricks/02b: 160 1104
+:matt/bricks/02b: 96 1104
+:matt/bricks/02b: 32 1104
+:matt/bricks/05b: 352 1120
+:matt/bricks/06b: 96 1104
+:matt/bricks/05b: 160 1136
+:matt/bricks/04b: 224 1136
+:geoo/steel/dark_64x32o.S: 576 1024
+:geoo/steel/dark_16x32o.S: 624 992
+:matt/bricks/16b: 416 1200
+:matt/bricks/02b: 352 1200
+:matt/bricks/02b: 352 1232
+:matt/bricks/02b: 352 1264
+:matt/bricks/02b: 288 1264
+:matt/bricks/02b: 288 1232
+:matt/bricks/02b: 288 1200
+:matt/bricks/02b: 224 1200
+:matt/bricks/02b: 160 1200
+:matt/bricks/02b: 96 1200
+:matt/bricks/02b: 96 1232
+:matt/bricks/02b: 96 1264
+:matt/bricks/02b: 32 1264
+:matt/bricks/02b: 32 1232
+:matt/bricks/02b: 32 1200
+:matt/bricks/02b: 352 1296
+:matt/bricks/02b: 288 1296
+:matt/bricks/02b: 224 1296
+:matt/bricks/02b: 160 1296
+:matt/bricks/02b: 96 1296
+:matt/bricks/02b: 32 1296
+:matt/bricks/05b: 352 1312
+:matt/bricks/06b: 96 1296
+:matt/bricks/05b: 160 1328
+:matt/bricks/04b: 224 1328
+:geoo/steel/dark_64x32o.S: 576 1216
+:geoo/steel/dark_16x32o.S: 624 1184
+:matt/bricks/16b: 416 1392
+:matt/bricks/02b: 352 1392
+:matt/bricks/02b: 352 1424
+:matt/bricks/02b: 352 1456
+:matt/bricks/02b: 288 1456
+:matt/bricks/02b: 288 1424
+:matt/bricks/02b: 288 1392
+:matt/bricks/02b: 224 1392
+:matt/bricks/02b: 160 1392
+:matt/bricks/02b: 96 1392
+:matt/bricks/02b: 96 1424
+:matt/bricks/02b: 96 1456
+:matt/bricks/02b: 32 1456
+:matt/bricks/02b: 32 1424
+:matt/bricks/02b: 32 1392
+:matt/bricks/02b: 352 1488
+:matt/bricks/02b: 288 1488
+:matt/bricks/02b: 224 1488
+:matt/bricks/02b: 160 1488
+:matt/bricks/02b: 96 1488
+:matt/bricks/02b: 32 1488
+:matt/bricks/05b: 352 1504
+:matt/bricks/06b: 96 1488
+:matt/bricks/05b: 160 1520
+:matt/bricks/04b: 224 1520
+:geoo/steel/dark_64x32o.S: 576 1408
+:geoo/steel/dark_16x32o.S: 624 1376
+:geoo/steel/dark_16x16o.S: 56 816
+:geoo/steel/dark_16x16o.S: 56 1008
+:geoo/steel/dark_16x16o.S: 56 1200
+:geoo/steel/dark_16x16o.S: 56 1392
+:geoo/steel/dark_16x16o.S: 56 48
+:geoo/steel/dark_16x16o.S: 56 240
+:geoo/steel/dark_16x16o.S: 56 432
+:geoo/steel/dark_16x16o.S: 56 624
+:geoo/steel/dark_16x16o.S: 184 720
+:geoo/steel/dark_16x16o.S: 184 912
+:geoo/steel/dark_16x16o.S: 184 1104
+:geoo/steel/dark_16x16o.S: 184 1296
+:geoo/steel/dark_16x16o.S: 184 1488
+:geoo/steel/dark_16x16o.S: 184 144
+:geoo/steel/dark_16x16o.S: 184 336
+:geoo/steel/dark_16x16o.S: 184 528
