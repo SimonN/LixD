@@ -152,7 +152,7 @@ void drawReplaySign(Game game)
 
 void drawSplatRuler(Game game)
 {
-    if (game.modalWindow || ! game.pan.coolShadesAreOn)
+    if (game.modalWindow || ! game.pan.coolShadesAreOn || game.pan.isMouseHere)
         return;
     immutable snap = game.splatRulerSnap();
     game.drawSplatRulerBarBelowGivenStartOfFall(snap);
@@ -200,12 +200,12 @@ void drawSplatRulerBarBelowGivenStartOfFall(Game game, Point startOfFall)
     }
     // draw colored bars
     foreach (int plusY; 0 .. 5) {
-        float shade = (1 - 0.2f * plusY);
-        // shade *= 0.3f + 0.7f * (timerTicks * 0.03f).sin.abs; // no time-dep
+        immutable float shade = (1 - 0.2f * plusY);
+        immutable float alpha = 0.8f * shade;
         f(upper, plusY, game.level.bgBlue > 0xA0 // some by Rubix: bright bg
-            ? Alcol(0, 0, 0, shade)
-            : Alcol(shade * 0.2f, shade * 0.4f, shade, shade)); // blue
-        f(ledge, plusY, Alcol(0, shade * 0.8f, 0, 0.8f * shade));
-        f(lower, plusY, Alcol(shade, shade * 0.2f, shade * 0.2f, shade));
+            ? Alcol(0, 0, 0, alpha)
+            : Alcol(shade * 0.2f, shade * 0.4f, shade, alpha)); // blue
+        f(ledge, plusY, Alcol(0, shade * 0.8f, 0, alpha));
+        f(lower, plusY, Alcol(shade, shade * 0.2f, shade * 0.2f, alpha));
     }
 }

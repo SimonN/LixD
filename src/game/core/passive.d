@@ -36,6 +36,5 @@ calcPassive(Game game) { with (game)
     if (pan.coolShadesExecute) {
         _altickPingGoalsUntil = pan.coolShadesAreOn
             ? timerTicks + ticksPerSecond * 3 / 2 : 0;
-        playQuiet(Sound.CLOCK);
     }
 }}
