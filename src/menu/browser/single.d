@@ -72,7 +72,7 @@ public:
             _exportImageDone1.show();
             _exportImageDone2.show();
             _exportImageDone2.text = imgFn.stringzForWriting.to!string;
-            hardware.sound.playLoud(Sound.DISKSAVE);
+            hardware.sound.playQuiet(Sound.DISKSAVE);
         };
 
         _delete = new TextButton(new Geom(infoX, 20,

@@ -73,7 +73,7 @@ protected:
         _saveReplay.onExecute = () {
             assert (_replay !is null);
             _replay.saveManually(_level);
-            hardware.sound.playLoud(Sound.DISKSAVE);
+            hardware.sound.playQuiet(Sound.DISKSAVE);
             if (_saveReplayDone) {
                 _saveReplay.hide();
                 _saveReplayDone.show();

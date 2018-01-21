@@ -77,6 +77,7 @@ private:
                 "not sure whether command-line dirs should ever be here");
             _createdDir = new VfsFilename(_parentDir.dirRootless ~ fn ~ "/");
             _createdDir.mkdirRecurse();
+            playQuiet(Sound.DISKSAVE);
         }
         catch (Exception e) {
             log(e.msg);
@@ -85,7 +86,6 @@ private:
             _name.text = "";
             _name.on = true;
         }
-        playLoud(Sound.DISKSAVE);
         setDone();
     }
 

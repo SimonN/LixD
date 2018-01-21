@@ -85,7 +85,7 @@ void saveToExistingFile(Editor editor) {
             _level.built = Date.now();
         _level.saveToFile(_loadedFrom);
         _levelToCompareForDataLoss = new Level(_loadedFrom);
-        playLoud(Sound.DISKSAVE);
+        playQuiet(Sound.DISKSAVE);
     }
     else
         editor.openSaveAsBrowser();

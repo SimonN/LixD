@@ -39,7 +39,8 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
     }
     else if (pan.saveState) {
         nurse.saveUserState();
-        hardware.sound.playLoud(Sound.DISKSAVE);
+        // Don't play Sound.DISKSAVE: The savestate isn't written to disk
+        hardware.sound.playQuiet(Sound.CLOCK);
     }
     else if (pan.loadState) {
         if (! nurse.userStateExists)
