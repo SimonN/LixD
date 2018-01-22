@@ -116,7 +116,9 @@ void drawAllLixes(Game game)
         foreach (otherTribe; nurse.constStateForDrawingOnly.tribes)
             if (otherTribe !is game.localTribe)
                 drawTribe(otherTribe);
-        drawTribe(game.localTribe);
+        import lix.fuse : drawAbilities; // onto opponents, behind our own
+        localTribe.lixvec.retro.each!(l => drawAbilities(l));
+        drawTribe(localTribe);
         if (_drawHerHighlit)
             _drawHerHighlit.drawAgainHighlit();
     }

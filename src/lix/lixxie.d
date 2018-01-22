@@ -357,6 +357,8 @@ void draw() const
     drawFuse(&this);
     cutbit.draw(loc, xf, yf, mirror, rotation);
     drawFlame(&this);
+    // Don't draw abilities here. The game should draw these before drawing any
+    // lix, to have the lixes always in the foreground. Not good OO, but hm.
 }
 
 final void drawAgainHighlit() const
@@ -382,6 +384,7 @@ final void drawAgainHighlit() const
         // Don't draw outline below. We don't want to obscure the ground.
     }
     cb.draw(loc, xf, yf, mirror, rotation);
+    drawAbilities(&this, true);
     drawFlame(&this);
 }
 

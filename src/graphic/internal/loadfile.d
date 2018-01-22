@@ -29,7 +29,8 @@ void loadFromDisk(Filename fn)
 
 bool needGuiRecoloring(Filename fn)
 {
-    return [fileImageGuiNumber,
+    return [fileImageAbility,
+            fileImageGuiNumber,
             fileImageEditFlip,
             fileImageEditHatch,
             fileImageEditPanel,

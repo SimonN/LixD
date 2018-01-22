@@ -119,7 +119,7 @@ Filename fileGlobalConfig, fileLog, fileReplayVerifier, fileTharsisProf,
     fileLanguageEnglish, fileMusicMenu, fileMusicGain,
     fileSingleplayerFirstLevel;
 
-Filename fileImageGuiNumber, fileImageAppIcon,
+Filename fileImageAbility, fileImageGuiNumber, fileImageAppIcon,
     fileImageDebris, fileImageEditFlip, fileImageEditHatch,
     fileImageEditPanel, fileImageExplosion, fileImageFuse,
     fileImageFuseFlame, fileImageGameArrow, fileImageGameIcon,
@@ -164,6 +164,7 @@ static this()
 
     // These are without image extensions due to legacy design that tried
     // to stay format-agnostic. But PNG has become the standard since.
+    fileImageAbility = new Fn("data/images/ability.I");
     fileImageGuiNumber = new Fn("data/images/api_numb.I");
     fileImageDebris = new Fn("data/images/debris.I");
     fileImageEditFlip = new Fn("data/images/edit_flp.I");

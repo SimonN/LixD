@@ -41,6 +41,27 @@ void handlePloderTimer(Lixxie li, OutsideWorld* ow)
 void drawFuse (in Lixxie lixxie) { drawFuseOrFlame!false(lixxie); }
 void drawFlame(in Lixxie lixxie) { drawFuseOrFlame!true (lixxie); }
 
+void drawAbilities(in Lixxie lixxie, bool highlit = false) { with (lixxie)
+{
+    if (! healthy || ploderTimer > 0
+        || ! (abilityToRun || abilityToClimb || abilityToFloat))
+        return;
+
+    const cb = getInternal(fileImageAbility);
+    Point topLeft = Point(
+        lixxie.eyeOnMap.x - (cb.xl + 1) / 2 + 1 * facingLeft, loc.y - cb.yl/3);
+    void printIf(in bool condition, in int frame)
+    {
+        if (! condition)
+            return;
+        cb.draw(topLeft, frame + facingLeft * cb.xfs / 2, highlit);
+        topLeft.y -= cb.yl + 1;
+    }
+    printIf(lixxie.abilityToFloat, 2);
+    printIf(lixxie.abilityToRun, 0);
+    printIf(lixxie.abilityToClimb, 1);
+}}
+
 // ############################################################################
 
 private:
