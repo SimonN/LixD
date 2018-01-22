@@ -217,24 +217,17 @@ string describeHoveredTiles(Editor editor) { with (editor)
             ? Lang.editorBarHover.transl : Lang.editorBarSelection.transl);
     immutable Point p = Point(list.map!(hov => hov.occ.loc.x).reduce!min,
                               list.map!(hov => hov.occ.loc.y).reduce!min);
-    return format!"%s %s %s"(name, Lang.editorBarAt.transl, p.toDecHex);
+    return format!"%s %s %s"(name, Lang.editorBarAt.transl, p.toDec);
 }}
 
 string describeMousePosition(Editor editor)
 {
     if (editor._panel.isMouseHere)
         return "";
-    return editor._map.mouseOnLand.toDecHex;
+    return editor._map.mouseOnLand.toDec;
 }
 
-string toDecHex(in Point p) pure
+string toDec(in Point p) pure
 {
-    return format!"(%d, %d) (%s, %s)"(p.x, p.y, p.x.toHex, p.y.toHex);
-}
-
-string toHex(in int x) pure
-{
-    import std.math : abs;
-    return x >= 0 ? x.format!"\u2080\u2093%X" // small 0, small x
-        : x.abs.format!"\u2080\u2093\u2212%X"; // mathematical minus
+    return format!"(%d, %d)"(p.x, p.y);
 }
