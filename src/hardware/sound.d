@@ -51,11 +51,6 @@ enum Sound {
     BATTER_MISS, // Batter doesn't hit anything
     BATTER_HIT,  // Batter hits something
 
-    AWARD_1,     // Player is first in multiplayer
-    AWARD_2,     // Player is second or ties for first place, no super tie.
-    AWARD_3,     // Player is not last, but no award_1/2, or super tie.
-    AWARD_4,     // Player is last or among last, no super tie.
-
     MAX          // no sound, only the total number of sounds
 };
 
@@ -282,9 +277,4 @@ void initialize()
     samples[Sound.CLIMBER]     = loadLazily("climber.ogg");
     samples[Sound.BATTER_MISS] = loadLazily("bat_miss.ogg");
     samples[Sound.BATTER_HIT]  = loadLazily("bat_hit.ogg");
-
-    samples[Sound.AWARD_1]     = loadLazily("award_1.ogg");
-    samples[Sound.AWARD_2]     = loadLazily("award_2.ogg");
-    samples[Sound.AWARD_3]     = loadLazily("award_3.ogg");
-    samples[Sound.AWARD_4]     = loadLazily("award_4.ogg");
 }
