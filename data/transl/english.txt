@@ -35,6 +35,7 @@ $browserInfoResultSaved Saved:
 $browserInfoResultSkills Skills:
 
 $winSearchTitle Level Search
+$winSearchPrompt Search for level titles or filenames:
 $winVerifyTitle Replay Verifier
 
 // networking lobby

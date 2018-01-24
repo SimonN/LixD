@@ -64,9 +64,8 @@ enum Lang {
     browserInfoResultSaved,
     browserInfoResultSkills,
 
-
     winSearchTitle,
-
+    winSearchPrompt,
     winVerifyTitle,
 
     // networking lobby

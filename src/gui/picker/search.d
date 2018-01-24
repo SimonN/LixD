@@ -61,8 +61,7 @@ public:
         super(new Geom(0, 0, gui.screenXlg, gui.screenYlg),
             Lang.winSearchTitle.transl);
         addChild(new Label(new Geom(20, 40, 400, 20, From.BOTTOM_LEFT),
-            // DTODOLANG
-            "Search for filenames or level titles:"));
+            Lang.winSearchPrompt.transl));
         _results = new SearchResultList(new Geom(20, 40, xlg - 40, ylg - 120));
 
         _query = new Texttype(new Geom(20, 20, 400, 20, From.BOTTOM_LEFT));
