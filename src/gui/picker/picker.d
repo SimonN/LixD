@@ -18,7 +18,7 @@ struct PickerConfig(T)
     if (is (T : FileTiler)
 ) {
     Geom all;
-    Geom bread;
+    Geom bread; // Picker will deduct xlg for search button if you want one
     Geom files; // Tiler including scrollbar
     Ls ls;
     MutFilename baseDir;
@@ -62,6 +62,8 @@ public:
         import graphic.color;
         undrawColor = color.transp; // Hack. Picker should not be a drawable
                                     // element, but rather only have children.
+        if (cfg.showSearchButton)
+            cfg.bread.xl -= (Breadcrumb.butXl + 20);
         _bread = new Breadcrumb(cfg.bread, cfg.baseDir);
         _ls = cfg.ls;
         _list = new ScrolledFiles(cfg.files, delegate FileTiler(Geom gg)
@@ -72,9 +74,9 @@ public:
                 t.onFileSelect = (int id) { cfg.onFileSelect(_ls.files[id]); };
             return t;
         });
-        addChildren(_bread, _list);
         if (cfg.showSearchButton)
             createSearchButton(cfg.onFileSelect);
+        addChildren(_bread, _list);
         _onDirSelect = cfg.onDirSelect;
         _onFileSelect = cfg.onFileSelect;
     }
@@ -165,6 +167,7 @@ private:
 
     void createSearchButton(void delegate(Filename) aOnFileSelect)
     in {
+        assert (_bread, "create breadcrumb navigation first");
         assert (aOnFileSelect, "you should provide onFileSelect if you "
         ~ "need the search button, to do something at all with the result");
     }
