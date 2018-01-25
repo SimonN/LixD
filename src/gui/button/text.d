@@ -30,7 +30,11 @@ private:
     static immutable chXlg = 20; // size in geoms of checkbox
 
 public:
-    enum textXFromLeft = gui.thickg * 2; // *2 for nice spacing at ends
+    static float textXFromLeft()
+    {
+        // *2 for nice spacing at both ends
+        return gui.thickg * 2;
+    }
 
     static Geom newGeomForLeftAlignedLabelInside(in Geom g)
     {

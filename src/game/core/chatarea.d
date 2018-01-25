@@ -11,7 +11,7 @@ import std.format;
 import std.range;
 
 import basics.user;
-import game.score;
+import game.score.score;
 import game.replay;
 import file.language;
 import graphic.color;

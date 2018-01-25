@@ -10,7 +10,7 @@ import game.core.active;
 import game.core.passive;
 import game.core.speed;
 import game.panel.tooltip;
-import game.score;
+import game.score.score;
 import gui;
 import hardware.keyset;
 

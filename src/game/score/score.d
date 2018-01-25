@@ -1,4 +1,4 @@
-module game.score;
+module game.score.score;
 
 /*
  * struct Score, function sortPreferringTeam
@@ -17,17 +17,21 @@ struct Score {
     bool prefersGameToEnd; // should be filled by Tribe
 }
 
-// Sort better scores to earlier positions.
 void sortPreferringTeam(Score[] arr, in Style preferred)
 {
-    arr.sort!((a, b) =>
-          a.current > b.current ? true
+    arr.sort!((a, b) => betterThanPreferringTeam(a, b, preferred));
+}
+
+// Sort better scores to earlier positions.
+bool betterThanPreferringTeam(in Score a, in Score b, in Style preferred)
+{
+    return a.current > b.current ? true
         : a.current < b.current ? false
         : a.potential > b.potential ? true
         : a.potential < b.potential ? false
         : a.style == preferred && b.style != preferred ? true
         : a.style != preferred && b.style == preferred ? false
-        : a.style < b.style);
+        : a.style < b.style;
 }
 
 unittest {

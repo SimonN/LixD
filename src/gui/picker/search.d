@@ -213,8 +213,6 @@ public:
     body {
         super(g);
         fn = afn;
-        enum space = 2 * gui.thickg; // space between text and edge of this
-
         Label makeLabel(in float ax, in float axl, in string aText)
         {
             auto ret = new Label(new Geom(ax, 0, axl, g.ylg));
@@ -223,9 +221,9 @@ public:
         }
         auto mangledFn = fn.dirRootless.find('/').dropOne;
         addChildren(
-            makeLabel(space,        g.xlg/3 + 40 - space, mangledFn),
+            makeLabel(textXFromLeft, g.xlg/3 + 40 - textXFromLeft, mangledFn),
             makeLabel(g.xlg/3 + 40, g.xlg/3 - 40, fn.fileNoExtNoPre),
-            makeLabel(g.xlg*2/3,    g.xlg/3 - space, title));
+            makeLabel(g.xlg*2/3, g.xlg/3 - textXFromLeft, title));
     }
 }
 

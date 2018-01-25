@@ -14,11 +14,11 @@ import basics.globals;
 import game.core.view;
 import game.panel.infobar;
 import game.panel.nuke;
-import game.panel.scores;
+import game.score.graph;
 import game.panel.taperec;
 import game.panel.tooltip;
 import game.tribe;
-import game.score;
+import game.score.score;
 import graphic.internal;
 import gui;
 import hardware.keyboard; // we need a different behavior of skill button

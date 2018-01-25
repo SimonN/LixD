@@ -44,8 +44,9 @@ void deinitialize()
 
 bool forceUnscaledGUIDrawing = false; // public, set to true to choose context
 
-enum      thickg = 2; // button thickness of GUI, in unscaled geoms
-@property thicks()        { return currentContext._thicks; } // and in pixels
+// thickg != 2, because thicks was floored from 2!
+@property thickg() { return currentContext._thicks / stretchFactor; }
+@property thicks()        { return currentContext._thicks; }
 @property screenXlg()     { return currentContext._screenXlg; }
 @property screenYlg()     { return currentContext._screenYlg; }
 @property screenXls()     { return currentContext._screenXls; }

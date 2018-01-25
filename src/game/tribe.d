@@ -15,7 +15,7 @@ import enumap;
 import basics.globals;
 import basics.help;
 import basics.rect;
-import game.score;
+import game.score.score;
 import net.repdata;
 import lix;
 import level.level; // spawnintMax
