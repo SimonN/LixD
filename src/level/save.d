@@ -54,7 +54,8 @@ body{
     if (l.intendedNumberOfPlayers > 1 && l.overtimeSeconds != 0)
         file.writeln(IoLine.Hash(glo.levelSeconds, l.overtimeSeconds));
     file.writeln(IoLine.Hash(glo.levelInitial,  l.initial ));
-    file.writeln(IoLine.Hash(glo.levelRequired, l.required));
+    if (l.intendedNumberOfPlayers <= 1)
+        file.writeln(IoLine.Hash(glo.levelRequired, l.required));
     file.writeln(IoLine.Hash(glo.levelSpawnint, l.spawnint));
 
     file.writeln();

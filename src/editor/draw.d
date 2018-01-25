@@ -144,7 +144,8 @@ void drawGadgetAnnotations(Editor editor) {
         }
     }
     annotate(gadgets[GadType.HATCH]);
-    annotate(gadgets[GadType.GOAL]);
+    if (intendedNumberOfPlayers > 1)
+        annotate(gadgets[GadType.GOAL]);
 }}
 
 // Returns value in 0 .. 256
