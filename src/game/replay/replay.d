@@ -14,10 +14,10 @@ import std.range;
 
 public import net.ac;
 public import net.style;
+public import net.repdata;
 
 import basics.help; // array.len of type int
 import basics.globconf : userName;
-import net.repdata;
 import net.permu;
 import net.versioning;
 import game.replay.io;
@@ -25,17 +25,6 @@ import file.date;
 import file.filename;
 import level.level;
 import level.metadata;
-
-struct FirstDifference {
-    bool thisBeginsWithRhs;
-    bool rhsBeginsWithThis;
-    Phyu firstDifferenceIfMismatch;
-
-    @property bool mismatch() const
-    {
-        return ! thisBeginsWithRhs && ! rhsBeginsWithThis;
-    }
-}
 
 class Replay {
     static struct Player {
@@ -177,18 +166,13 @@ public:
 
     // This doesn't check whether the metadata/general data is the same.
     // We assume that Game only calls this on replays of the same level.
-    // Returns the inner struct, check its fields. E.g., to test if (this)
-    // replay is subset of (rhs): this.firstDifference(rhs).thisIsSubsetOfRhs.
-    // The subset relation is not proper: this is a subset of this.
-    auto firstDifference(in Replay rhs) const
-    {
+    // "Before" is exclusive, you might want to pass Phyu(now + 1).
+    bool equalBefore(in Replay rhs, in Phyu before) const @nogc nothrow
+    in {
         assert (rhs !is null);
-        for (size_t i = 0; i < _data.length && i < rhs._data.length; ++i)
-            if (_data[i] != rhs._data[i])
-                return FirstDifference(false, false,
-                    min(_data[i].update, rhs._data[i].update));
-        return FirstDifference(_data.length <= rhs._data.length,
-                               _data.length >= rhs._data.length);
+    }
+    body {
+        return dataSliceBeforePhyu(before) == rhs.dataSliceBeforePhyu(before);
     }
 
     void eraseEarlySingleplayerNukes()
@@ -274,7 +258,7 @@ public:
     }
 
 package:
-    inout(ReplayData)[] dataSliceBeforePhyu(in Phyu upd) inout
+    inout(ReplayData)[] dataSliceBeforePhyu(in Phyu upd) @nogc nothrow inout
     {
         // The binary search algo works also for this case.
         // But we add mostly to the end of the data, so check here for speed.
@@ -316,4 +300,31 @@ package:
         }
         assert (_data.isSorted);
     }
+}
+
+unittest {
+    Replay a = Replay.newForLevel(null, null);
+    Replay b = Replay.newForLevel(null, null);
+    ReplayData d;
+    d.skill = Ac.digger;
+    d.toWhichLix = 50;
+    d.update = Phyu(20);
+    a.add(d);
+    b.add(d);
+    d.skill = Ac.builder;
+    d.update = Phyu(5);
+    a.add(d);
+    assert (! a.equalBefore(b, Phyu(30)));
+    assert (! b.equalBefore(a, Phyu(30)));
+    b.add(d);
+    assert (a.equalBefore(b, Phyu(30)));
+    assert (b.equalBefore(a, Phyu(30)));
+
+    d.skill = Ac.basher;
+    d.update = Phyu(10);
+    b.add(d);
+    assert (! a.equalBefore(b, Phyu(30)));
+    assert (! b.equalBefore(a, Phyu(30)));
+    assert (a.equalBefore(b, Phyu(10)));
+    assert (b.equalBefore(a, Phyu(10)));
 }

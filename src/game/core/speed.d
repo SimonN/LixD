@@ -29,10 +29,12 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
     }
 
     if (pan.framestepBackOne) {
-        game.framestepBackBy(1);
+        with (LoadStateRAII(game))
+            game.nurse.framestepBackBy(1);
     }
     else if (pan.framestepBackMany) {
-        game.framestepBackBy(Game.updatesBackMany);
+        with (LoadStateRAII(game))
+            game.nurse.framestepBackBy(Game.updatesBackMany);
     }
     else if (pan.restart) {
         game.restartLevel();
@@ -43,12 +45,9 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
         hardware.sound.playQuiet(Sound.CLOCK);
     }
     else if (pan.loadState) {
-        if (! nurse.userStateExists)
-            hardware.sound.playLoud(Sound.PANEL_EMPTY);
-        else
+        if (nurse.userStateExists)
             with (LoadStateRAII(game))
-                if (nurse.loadUserStateDoesItMismatch)
-                    hardware.sound.playLoud(Sound.SCISSORS);
+                nurse.loadUserState();
     }
     else if (pan.framestepAheadOne) {
         upd();
@@ -86,15 +85,6 @@ void restartLevel(Game game)
         game.nurse.restartLevel();
 }
 
-void framestepBackBy(Game game, in int by)
-{
-    with (LoadStateRAII(game)) {
-        game.nurse.framestepBackBy(by);
-        if (! replayAfterFrameBack.value)
-            game.cancelReplay();
-    }
-}
-
 // The server tells us the milliseconds since game start, and the net client
 // has added our lag. We think in Phyus or Allegro ticks, not in millis,
 // therefore convert millis to Phyus.
@@ -110,9 +100,7 @@ void adjustToMatchMillisecondsSinceGameStart(Game game, in int suggMillis)
     game._alticksToAdjust = suggTicks - ourTicks;
 }}
 
-private:
-
-struct LoadStateRAII
+package struct LoadStateRAII
 {
     private Game _game;
     this(Game g) { _game = g; _game.saveTrophy(); }
@@ -121,7 +109,7 @@ struct LoadStateRAII
 
 // Combat the network time-lag, affect _alticksToAdjust.
 // _alticksToAdjust is < 0 if we have to slow down, > 0 if we have to speed up.
-bool shallWeUpdateAtAdjustedNormalSpeed(Game game) { with (game)
+private bool shallWeUpdateAtAdjustedNormalSpeed(Game game) { with (game)
 {
     immutable long updAgo = timerTicks - game.altickLastPhyu;
     immutable long adjust = _alticksToAdjust < -20 ? 2

@@ -3,15 +3,14 @@ module game.core.game;
 /* Game is the gameplay part of the program: The part of the program that has
  * a skill panel at the bottom, a level map above, and occasionally dialogs.
  *
+ * You should only construct a Game in interactive mode.
+ * To unittest or to verify replays, create a Nurse directly.
+ *
  * Game contains a Nurse. Game also contains UI to affect the nurse.
  *
  * Nurse contains states of physics. One of these states is in a Model and
  * thereby can advance. Other states are in a PhysicsCache and the nurse
  * loads them as appropriate to recalculate during netgames or framestepping.
- *
- * Noninteractive games don't need the UI. I'm confused why I don't
- * bypass Game in that case and let the verifier work directly on the Nurse.
- * Game instantiates differently based on Runmode.
  */
 
 public import basics.cmdargs; // Runmode;
@@ -32,7 +31,7 @@ import game.core.draw;
 import game.core.scrstart;
 import game.core.speed;
 import game.window.base;
-import game.model.nurse;
+import game.nurse.interact;
 import game.panel.base;
 import game.effect;
 import game.physdraw;
@@ -51,13 +50,12 @@ import net.structs;
 
 class Game {
 package:
-    immutable Runmode runmode;
     Level level;
     Map map; // The map does not hold the referential level image, that's
              // in cs.land and cs.lookup. Instead, the map loads a piece
              // of that land, blits gadgets and lixes on it, and blits the
              // result to the screen. It is both a renderer and a camera.
-    Nurse nurse;
+    InteractiveNurse nurse;
     EffectManager _effect; // null if we're verifying
     RichClient _netClient; // null unless playing/observing multiplayer
 
@@ -106,10 +104,8 @@ public:
             /  (displayFps     + 1) / ticksNormalSpeed;
     }
 
-    this(Runmode rm, Level lv, Filename levelFilename, Replay rp,
-        in bool maySaveTrophy
-    ) {
-        this.runmode = rm;
+    this(Level lv, Filename levelFilename, Replay rp, in bool maySaveTrophy)
+    {
         assert (lv);
         assert (lv.good);
         level = lv;
@@ -120,7 +116,6 @@ public:
 
     this(RichClient client)
     {
-        this.runmode = Runmode.INTERACTIVE;
         enforce(client, "Game started without networking client.");
         enforce(client.level, "Networking game started without level.");
         enforce(client.level.good, "Networking level is unplayable.");
@@ -166,13 +161,6 @@ public:
         }
     }
 
-    Nurse.EvalResult evaluateReplay()
-    {
-        assert (level);
-        return nurse.evaluateReplayUntilSingleplayerHasSavedAtLeast(
-            level.required);
-    }
-
     auto loseOwnershipOfRichClient()
     {
         if (! _netClient)
@@ -192,26 +180,17 @@ public:
     out (ret) { assert (ret != ""); }
     body {
         assert (nurse);
-        assert (nurse.replay);
-        if (nurse.replay.levelFilename
-            && nurse.replay.levelFilename.fileNoExtNoPre != "")
-            return nurse.replay.levelFilename.fileNoExtNoPre;
+        assert (nurse.constReplay);
+        if (nurse.constReplay.levelFilename
+            && nurse.constReplay.levelFilename.fileNoExtNoPre != "")
+            return nurse.constReplay.levelFilename.fileNoExtNoPre;
         else
             return nurse.constStateForDrawingOnly.multiplayer
                 ? "multiplayer" : "singleplayer";
     }
 
-    void calc()
-    {
-        assert (runmode == Runmode.INTERACTIVE);
-        implGameCalc(this);
-    }
-
-    void draw()
-    {
-        assert (runmode == Runmode.INTERACTIVE);
-        implGameDraw(this);
-    }
+    void calc() { implGameCalc(this); }
+    void draw() { implGameDraw(this); }
 
 package:
     @property bool replaying() const
@@ -222,7 +201,7 @@ package:
         // then we are replaying.
         // DTODONETWORKING: Add a check that we are never replaying while
         // we're connected with other players.
-        return nurse.replay.latestPhyu > nurse.upd;
+        return nurse.constReplay.latestPhyu > nurse.upd;
     }
 
     @property bool multiplayer() const
@@ -232,7 +211,7 @@ package:
 
     @property Style localStyle() const
     {
-        return nurse.replay.playerLocalOrSmallest.style;
+        return nurse.constReplay.playerLocalOrSmallest.style;
     }
 
     @property const(Tribe) localTribe() const
@@ -244,18 +223,18 @@ package:
 
     @property PlNr plNrLocal() const
     {
-        return nurse.replay.plNrLocalOrSmallest;
+        return nurse.constReplay.plNrLocalOrSmallest;
     }
 
     @property auto playerLocal() const
     {
-        return nurse.replay.playerLocalOrSmallest;
+        return nurse.constReplay.playerLocalOrSmallest;
     }
 
     @property View view() const
     {
-        assert (nurse && nurse.replay, "call view() after init'ing replay");
-        return createView(nurse.replay.numPlayers,
+        assert (nurse && nurse.constReplay, "call view() after replay init");
+        return createView(nurse.constReplay.numPlayers,
             // need && and ?: due to _netClient's alias inner() this
             _netClient && _netClient.inner ? _netClient.inner : null);
     }
@@ -268,9 +247,7 @@ package:
         if (pan)
             pan.setLikeTribe(localTribe, level.ploder,
                              cs.overtimeRunning, cs.overtimeRemainingInPhyus);
-        if (runmode == Runmode.INTERACTIVE && nurse.updatesSinceZero == 0
-            && _setLastPhyuToNowLastCalled != 0
-        ) {
+        if (nurse.updatesSinceZero == 0 && _setLastPhyuToNowLastCalled != 0) {
             hardware.sound.playLoud(Sound.LETS_GO);
         }
         nurse.considerGC();
@@ -283,7 +260,7 @@ package:
         if (nurse && nurse.singleplayerHasSavedAtLeast(level.required)
                   && playerLocal.name == basics.globconf.userName
                   && _maySaveTrophy)
-            addTrophy(nurse.replay.levelFilename,
+            addTrophy(nurse.constReplay.levelFilename,
                       nurse.trophyForTribe(localStyle));
     }
 
@@ -298,8 +275,7 @@ private:
     {
         initializePanel();
         initializeConsole();
-        if (runmode == Runmode.INTERACTIVE)
-            stopMusic();
+        stopMusic();
         setLastPhyuToNow();
     }
 
@@ -312,9 +288,8 @@ private:
         // DTODONETWORK: Eventually, observers shall cycle through the
         // spectating teams. Don't set a final style here, but somehow
         // make the effect manager depend on what the GUI chooses.
-        if (runmode == Runmode.INTERACTIVE)
-            _effect = new EffectManager(rp.playerLocalOrSmallest.style);
-        nurse = new Nurse(level, rp, _effect);
+        _effect = new EffectManager(rp.playerLocalOrSmallest.style);
+        nurse = new InteractiveNurse(level, rp, _effect);
     }
 
     Replay generateFreshReplay(Filename levelFilename)
@@ -334,17 +309,16 @@ private:
     }
 
     void initializePanel()
-    {
+    in {
         assert (nurse);
-        assert (nurse.replay);
+        assert (nurse.constReplay);
+        assert (level);
         assert (pan is null);
-        if (runmode != Runmode.INTERACTIVE)
-            return;
-
+    }
+    body {
         map = new Map(cs.land, gui.screenXls.to!int,
                               (gui.screenYls - gui.panelYls).to!int);
         this.centerCameraOnHatchAverage();
-        assert (level);
         pan = new Panel(view, level.required);
         gui.addElder(pan);
         setLastPhyuToNow(); // to fill skills, needed for highlightFirstSkill
@@ -354,8 +328,6 @@ private:
     void initializeConsole()
     {
         assert (! _chatArea);
-        if (runmode != Runmode.INTERACTIVE)
-            return;
         _chatArea = new ChatArea(new Geom(0, 0, gui.screenXlg, 0),
             _netClient);
         gui.addElder(_chatArea);
@@ -364,10 +336,10 @@ private:
     void saveAutoReplay()
     {
         if (! _replayNeverCancelledThereforeDontSaveAutoReplay
-            && nurse && nurse.replay
+            && nurse && nurse.constReplay
         ) {
             nurse.terminateSingleplayerWithNuke();
-            nurse.replay.saveAsAutoReplay(level,
+            nurse.constReplay.saveAsAutoReplay(level,
                 nurse.singleplayerHasSavedAtLeast(level.required));
         }
     }

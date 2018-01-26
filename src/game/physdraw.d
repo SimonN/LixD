@@ -482,7 +482,8 @@ private:
         // Physics are in RAM entirely, physics masks are done by CTFE.
         version (tharsisprofiling)
             auto zoneInitialize = Zone(profiler, "physDraw initialize");
-        assert (! _mask);
+        assert (! _mask, "don't call physdraw.initialize() twice,"
+            ~ " deinitialize first before you call this a second time");
         assert (masks.length, "please initialize game.masks before this");
         alias Type = TerrainDeletion.Type;
         alias rf   = al_draw_filled_rectangle;

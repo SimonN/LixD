@@ -13,7 +13,7 @@ import file.filename;
 import basics.globconf; // add trophy to user's trophy database
 import basics.user; // trophy
 import level.level;
-import game.core.game;
+import game.nurse.verify;
 import game.replay;
 
 enum Status {
@@ -75,9 +75,9 @@ public:
         assert (_lv.good);
         // false == disallow saving trophies. If we want trophies, our
         // caller should explicitly tell us maybeAddTrophy() later.
-        Game game = _matcher.createGame(Runmode.VERIFY);
-        auto eval = game.evaluateReplay();
-        destroy(game);
+        VerifyingNurse nurse = _matcher.createVerifyingNurse();
+        auto eval = nurse.evaluateReplay();
+        destroy(nurse);
         _trophy = eval.trophy;
         _status = _trophy.lixSaved >= _lv.required ? Status.solved
                                 : eval.mercyKilled ? Status.mercyKilled

@@ -17,7 +17,6 @@ import hardware.keyset;
 package void
 implGameCalc(Game game) { with (game)
 {
-    assert (game.runmode == Runmode.INTERACTIVE);
     void noninputCalc()
     {
         if (_netClient)
@@ -38,7 +37,8 @@ implGameCalc(Game game) { with (game)
         noninputCalc();
         if (game.isFinished) {
             if (view.printResultToConsole)
-                _chatArea.printScores(nurse.scores, nurse.replay, localStyle);
+                _chatArea.printScores(nurse.scores,
+                    nurse.constReplay, localStyle);
             if (view.showModalWindowAfterGame)
                 game.createModalWindow;
             else
@@ -51,13 +51,8 @@ private bool
 isFinished(const(Game) game) { with (game)
 {
     assert (nurse);
-    if (runmode == Runmode.VERIFY) {
-        return nurse.everybodyOutOfLix();
-    }
-    else {
-        assert (_effect);
-        return nurse.doneAnimating() && _effect.nothingGoingOn;
-    }
+    assert (_effect);
+    return nurse.doneAnimating() && _effect.nothingGoingOn;
 }}
 
 private void
@@ -71,10 +66,10 @@ createModalWindow(Game game) { with (game)
         // to refine the data from the nurse.
         modalWindow = multiplayer ? new WindowEndMulti(
                                     nurse.stateOnlyPrivatelyForGame.tribes,
-                                    nurse.replay, level)
-            : new WindowEndSingle(localTribe, nurse.replay, level);
+                                    nurse.constReplay, level)
+            : new WindowEndSingle(localTribe, nurse.constReplay, level);
     else
-        modalWindow = new WindowDuringOffline(nurse.replay, level);
+        modalWindow = new WindowDuringOffline(nurse.constReplay, level);
     addFocus(game.modalWindow);
 }}
 
@@ -92,9 +87,11 @@ calcModalWindow(Game game) { with (game)
         killWindow();
     }
     else if (modalWindow.framestepBack) {
-        game.framestepBackBy(3 * Game.updatesBackMany);
-        game.pan.pause = true;
-        killWindow();
+        with (LoadStateRAII(game)) {
+            game.nurse.framestepBackBy(3 * Game.updatesBackMany);
+            game.pan.pause = true;
+            killWindow();
+        }
     }
     else if (modalWindow.restart) {
         game.restartLevel();

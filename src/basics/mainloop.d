@@ -69,7 +69,7 @@ public:
             matcher.forceLevel(args[0]);
 
         if (matcher.preferredLevel.good)
-            this.game = matcher.createGame(Runmode.INTERACTIVE);
+            this.game = matcher.createGame();
         else
             throw new Exception("Level or replay isn't playable.");
     }
@@ -196,13 +196,13 @@ public:
                 auto lv = browSin.levelRecent;
                 _afterGameGoto = AfterGameGoto.single;
                 kill();
-                game = new Game(Runmode.INTERACTIVE, lv, fn, null, true);
+                game = new Game(lv, fn, null, true);
             }
             else if (browRep && browRep.gotoGame) {
                 auto matcher = browRep.matcher;
                 _afterGameGoto = AfterGameGoto.replays;
                 kill();
-                game = matcher.createGame(Runmode.INTERACTIVE);
+                game = matcher.createGame();
             }
             else if (browSin && (browSin.gotoEditorNewLevel
                              ||  browSin.gotoEditorLoadFileRecent)

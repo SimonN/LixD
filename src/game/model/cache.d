@@ -82,27 +82,39 @@ public:
             log(e.msg);
     }
 
-    bool userStateExists() const { return _userReplay !is null; }
+    bool userStateExists() const @nogc nothrow
+    out (ret) {
+        assert (ret == _userState.refCountedStore.isInitialized,
+            "Bad user savestate: We have a replay XOR we have state");
+    }
+    body {
+        return _userReplay !is null;
+    }
 
     // Depending on mismatches between Nurse's replay and our saved replay,
     // some cached states must be invalidated. Fixes user-stateload desyncs.
-    auto loadUser(in Replay nurseReplay)
+    // See inner struct for the many return values.
+    auto loadUser(in Replay nurseReplay, in Phyu wantEqualBefore)
     in {
         assert (userStateExists, "don't load if there is nothing to load");
         assert (nurseReplay, "need reference so I know what to invalidate");
     }
     body {
-        auto deleteAfter = _userState.update;
-        auto diff = _userReplay.firstDifference(nurseReplay);
-        if (diff.mismatch && diff.firstDifferenceIfMismatch < deleteAfter)
-            deleteAfter = diff.firstDifferenceIfMismatch;
-        forgetAutoSavesOnAndAfter(deleteAfter);
+        forgetAutoSavesOnAndAfter(Phyu(0));
+        /+
+         + Anything here but the line above is instead speed optimization.
+         + Make the thing correct first, then fast!
+         +
+        // Different 'before' than in SaveStatingNurse; see her comment too.
+        immutable before = min(wantEqualBefore, Phyu(_userState.update + 1));
+        forgetAutoSavesOnAndAfter(nurseReplay.equalBefore(_userReplay, before)
+            ? before : Phyu(0));
+         +/
         struct Ret {
             const(GameState) state;
             const(Replay) replay;
-            FirstDifference loadedVsNurseReplay;
         }
-        return Ret(_userState, _userReplay, diff);
+        return Ret(_userState, _userReplay);
     }
 
     const(GameState) loadBeforePhyu(in Phyu u)

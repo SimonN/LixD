@@ -56,7 +56,6 @@ package void cancelReplay(Game game) { with (game)
     if (replaying && game.view.canInterruptReplays) {
         _replayNeverCancelledThereforeDontSaveAutoReplay = false;
         nurse.cutReplay();
-        playLoud(Sound.SCISSORS);
     }
 }}
 

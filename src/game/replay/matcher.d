@@ -19,6 +19,7 @@ import enumap;
 
 import file.filename;
 import game.core.game;
+import game.nurse.verify;
 import game.replay.replay;
 import level.level;
 
@@ -85,13 +86,21 @@ public:
 
     // It is illegal to call this when the preferred level is bad.
     // Callers should do something reasonable instead.
-    Game createGame(in Runmode runmode)
+    Game createGame()
     in { assert (preferredLevel.good); }
     out (ret) { assert (ret); }
     body {
         auto pref = preferredInitializedStruct();
-        return new Game(runmode, pref.level, pref.fn,
+        return new Game(pref.level, pref.fn,
             _rp.empty ? null : _rp, pref.lvMatchesFn);
+    }
+
+    VerifyingNurse createVerifyingNurse()
+    in { assert (preferredLevel.good); }
+    out (ret) { assert (ret); }
+    body {
+        auto pref = preferredInitializedStruct();
+        return new VerifyingNurse(pref.level, _rp, pref.lvMatchesFn);
     }
 
     @property bool isMultiplayer() const @nogc nothrow
@@ -171,10 +180,8 @@ unittest {
             assert (! repFn.fileExists, "didn't delete properly");
         }
 
-        Filename levFn = new VfsFilename(dirLevelsSingle.rootless ~
-            "lemforum/Lovely/anyway.txt");
-        assert (levFn.fileExists, "need first level to test");
-        Level lv = new Level(levFn);
+        assert (fileSingleplayerFirstLevel.fileExists, "need first level");
+        Level lv = new Level(fileSingleplayerFirstLevel);
         assert (lv.nonempty, "first level is empty");
         assert (lv.good, "first level isn't good");
         immutable int origTerrain = lv.terrain.len;
@@ -183,7 +190,7 @@ unittest {
         lv.terrain = lv.terrain[0 .. origTerrain/2];
         immutable int shortTerrain = lv.terrain.len;
         assert (shortTerrain < origTerrain, "first level had no terrain");
-        Replay rp = Replay.newForLevel(levFn, lv.built);
+        Replay rp = Replay.newForLevel(fileSingleplayerFirstLevel, lv.built);
         rp.implSaveToFile(repFn, lv);
         assert (repFn.fileExists, "couldn't create unittest replay");
 

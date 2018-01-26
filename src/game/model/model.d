@@ -37,9 +37,6 @@ private:
     PhysicsDrawer _physicsDrawer; // owned
     EffectManager _effect;        // not owned. May be null.
 
-package: // eventually delete cs() and alias cs this;
-    @property inout(GameState) cs() inout { return _cs; }
-
 public:
     // The replay data comes with player information (PlNr).
     // Physics only work with tribe information (Style).
@@ -52,6 +49,7 @@ public:
         alias replayData this;
     }
 
+    // Add players to the replay before you pass the replay to Nurse.ctor!
     // This remembers the effect manager, but not anything else.
     // We don't own the effect manager.
     this(in Level level, in Style[] tribesToMake,
@@ -64,6 +62,10 @@ public:
         _physicsDrawer = new PhysicsDrawer(_cs.land, _cs.lookup);
         finalizePhyuAnimateGadgets();
     }
+
+    // Should be accsessible by the Nurse. Shouldn't be accessed straight from
+    // the game, but it's the Nurse's task to hide that information.
+    @property inout(GameState) cs() inout { return _cs; }
 
     void takeOwnershipOf(GameState s)
     {
@@ -111,7 +113,7 @@ private:
         return ow;
     }
 
-    public void applyReplayData(in ColoredData i) // debugging remove public
+    void applyReplayData(in ColoredData i)
     {
         immutable upd = _cs.update;
         assert (i.update == upd,
