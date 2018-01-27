@@ -290,10 +290,16 @@ void findEyesOnSpritesheet(in Cutbit spri, in Alcol colBreak)
                     else if (c == colBreak)
                         continue FRAME_LOOP;
                 }
+            // We didn't find an eye.
+            // Sometimes, the lix covers her eyes with her hands.
             assert (eyesOnSpritesheet.get(xf, yf) == Point.init);
-            if (xf > 0)
-                // Sometimes, the lix covers her eyes with her hands.
+            if (xf > 0) {
                 // Use the previous frame's eye position then.
                 eyesOnSpritesheet.set(xf, yf, eyesOnSpritesheet.get(xf-1, yf));
+            }
+            else {
+                // The miner has this problem in the first frame. Hardcode:
+                eyesOnSpritesheet.set(xf, yf, Point(17, 13));
+            }
         }
 }
