@@ -273,6 +273,7 @@ package:
         ) {
             hardware.sound.playLoud(Sound.LETS_GO);
         }
+        nurse.considerGC();
         _setLastPhyuToNowLastCalled = nurse.updatesSinceZero;
         altickLastPhyu = timerTicks;
     }

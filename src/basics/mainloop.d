@@ -144,6 +144,7 @@ public:
             askName = null;
         }
         core.memory.GC.collect();
+        core.memory.GC.minimize();
     }
 
     private void calc()

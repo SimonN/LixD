@@ -65,6 +65,8 @@ public:
         }
     }
 
+    void considerGC() nothrow { if (_cache) _cache.considerGC(); }
+
     @property bool everybodyOutOfLix() const
     {
         assert (_model);

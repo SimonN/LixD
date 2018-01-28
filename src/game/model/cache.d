@@ -8,7 +8,6 @@ module game.model.cache;
 import std.algorithm;
 import std.range;
 import std.typecons;
-import core.memory; // GC.collect();
 
 import basics.alleg5 : OutOfVramException;
 import basics.help; // clone(T[]), a deep copy for arrays
@@ -39,16 +38,26 @@ private:
     // deviating, and then load the user state that supposes the old,
     // differing replay.
     Replay _userReplay;
+    bool _recommendGC; // because we don't call the GC ourselves
 
 public:
-
     void dispose()
     {
         destroy(_zero);
         destroy(_userState);
-        foreach (ref gs; _auto)
-            destroy(gs);
+        forgetAutoSavesOnAndAfter(Phyu(0));
         assert (! _auto[0].refCountedStore.isInitialized);
+    }
+
+    void considerGC() nothrow
+    {
+        if (! _recommendGC)
+            return;
+        _recommendGC = false;
+
+        import core.memory;
+        GC.collect();
+        GC.minimize();
     }
 
     // This throws if we can't allocate VRAM for the zero state.
@@ -63,6 +72,8 @@ public:
     void saveUser(in GameState s, in Replay r)
     {
         try {
+            if (_userState.refCountedStore.isInitialized)
+                _recommendGC = true;
             assert (r);
             _userState = s.clone();
             _userReplay = r.clone();
@@ -129,6 +140,7 @@ public:
     {
         if (! wouldAutoSave(s, ultimatelyTo, DuringTurbo.no))
             return;
+        _recommendGC = true;
         // Potentially push older auto-saved states down the hierarchy.
         // First, if it's time to copy a frequent state into a less frequent
         // state, make these copies. Start with least frequent copying the
@@ -163,8 +175,9 @@ private:
     void forgetAutoSavesOnAndAfter(in Phyu u)
     {
         foreach (ref GameState gs; _auto)
-            if (gs.refCountedStore.isInitialized && gs.update >= u)
+            if (gs.refCountedStore.isInitialized && (u <= 0 || gs.update >= u))
                 destroy(gs);
+        _recommendGC = true;
     }
 
     int updateMultipleForPair(in int pair) const pure
