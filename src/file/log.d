@@ -9,7 +9,13 @@ import basics.globals;
 import net.versioning;
 import file.date;
 
-/*  nothrow static void initialize();
+/*
+ * Logging: We disable it during unittests, to avoid spam: Tests should be
+ * run often, and they might simulate error conditions.
+ * If you want important messages printed during tests, print them
+ * right to standard output.
+ *
+ *  nothrow static void initialize();
  *  nothrow static void deinitialize();
  *
  *  nothrow static void log       (string);
@@ -17,12 +23,9 @@ import file.date;
  */
 
 private:
-
     bool _initialized;
     bool _somethingAlreadyLoggedThisSession;
     std.stdio.File _file;
-
-
 
 public:
 
@@ -32,17 +35,20 @@ initialize()
     if (_initialized)
         return;
     _somethingAlreadyLoggedThisSession = false;
-    try {
-        _file = basics.globals.fileLog.openForWriting("a");
-        _initialized = true;
+
+    version (unittest) {
     }
-    catch (Exception) {
-        try _file = _file.init;
-        catch (Exception) { }
+    else {
+        try {
+            _file = basics.globals.fileLog.openForWriting("a");
+            _initialized = true;
+        }
+        catch (Exception) {
+            try _file = _file.init;
+            catch (Exception) { }
+        }
     }
 }
-
-
 
 nothrow static void
 deinitialize()
@@ -57,7 +63,33 @@ deinitialize()
     _initialized = false;
 }
 
+nothrow static void
+log(string s)
+{
+    if (! _initialized)
+        return;
+    try {
+        logHeaderIfNecessary();
+        _file.writefln("%s %s", formatAlTicks(), s);
+        _file.flush();
+    }
+    catch (Exception) { }
+}
 
+nothrow static void
+logf(T...)(string formatstr, T formatargs)
+{
+    if (! _initialized)
+        return;
+    try {
+        logHeaderIfNecessary();
+        _file.writefln("%s " ~ formatstr, formatAlTicks(), formatargs);
+        _file.flush();
+    }
+    catch (Exception) { }
+}
+
+///////////////////////////////////////////////////////////////////////////////
 
 private static void
 logHeaderIfNecessary()
@@ -75,8 +107,6 @@ logHeaderIfNecessary()
     }
 }
 
-
-
 private nothrow static string
 formatAlTicks()
 {
@@ -84,34 +114,4 @@ formatAlTicks()
     catch (Exception) {
         return "bad time!";
     }
-}
-
-
-
-nothrow static void
-log(string s)
-{
-    if (! _initialized)
-        return;
-    try {
-        logHeaderIfNecessary();
-        _file.writefln("%s %s", formatAlTicks(), s);
-        _file.flush();
-    }
-    catch (Exception) { }
-}
-
-
-
-nothrow static void
-logf(T...)(string formatstr, T formatargs)
-{
-    if (! _initialized)
-        return;
-    try {
-        logHeaderIfNecessary();
-        _file.writefln("%s " ~ formatstr, formatAlTicks(), formatargs);
-        _file.flush();
-    }
-    catch (Exception) { }
 }
