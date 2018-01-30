@@ -1,6 +1,6 @@
-$BUILT 2018-01-29 12:01:54
+$BUILT 2018-01-29 12:02:38
 $AUTHOR Arty
-$ENGLISH Pandemonium Box (8p)
+$ENGLISH Pandemonium Box (cubers) (8p)
 
 #INTENDED_NUMBER_OF_PLAYERS 8
 #SIZE_X 768
@@ -22,6 +22,7 @@ $ENGLISH Pandemonium Box (8p)
 #BASHER 20
 #MINER 20
 #JUMPER 50
+#CUBER 20
 #EXPLODER2 0
 
 :matt/carnival/Hatch.H: 80 8

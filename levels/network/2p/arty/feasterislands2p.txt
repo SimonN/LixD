@@ -1,0 +1,180 @@
+$BUILT 2018-01-29 19:28:23
+$AUTHOR Arty
+$ENGLISH Feaster Islands (2p)
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1280
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 90
+#INITIAL 100
+#REQUIRED 20
+#SPAWN_INTERVAL 32
+
+#WALKER 50
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 20
+#BLOCKER 5
+#BUILDER 100
+#BASHER 30
+#MINER 30
+#DIGGER 30
+#JUMPER 50
+#BATTER 20
+#CUBER 20
+
+:matt/marble/Hatch.H: 144 80
+:matt/marble/Hatch.H: 784 80
+
+:raymanni/gore/goal.G: 1104 96
+:raymanni/gore/goal.G: 464 96
+
+:raymanni/gore/eater.T: 48 320
+:raymanni/gore/eater.T: 528 320
+:raymanni/gore/eater.T: 688 320
+:raymanni/gore/eater.T: 1168 320
+
+:amanda/occult/wax32x48: 144 184
+:amanda/occult/wax32x48: 176 184
+:amanda/occult/wax32x48: 208 184
+:amanda/occult/wax32x48: 240 184
+:amanda/occult/wax32x48: 272 184
+:amanda/occult/wax32x48: 304 184
+:amanda/occult/wax32x48: 336 184
+:amanda/occult/wax32x48: 368 184
+:amanda/occult/wax32x48: 400 184
+:amanda/occult/wax32x48: 432 184
+:amanda/occult/wax32x48: 464 184
+:amanda/occult/wax32x48: 496 184
+:raymanni/gore/blob_2: 768 304
+:raymanni/gore/blob_2: 832 304
+:raymanni/gore/blob_2: 896 304
+:raymanni/gore/blob_2: 960 304
+:raymanni/gore/blob_2: 1024 304
+:raymanni/gore/blob_2: 1088 304
+:matt/marble/08: 1168 320 rrd
+:raymanni/gore/blob_2: 768 240
+:raymanni/gore/blob_2: 832 240
+:raymanni/gore/blob_2: 896 240
+:raymanni/gore/blob_2: 960 240
+:raymanni/gore/blob_2: 1024 240
+:raymanni/gore/blob_2: 1088 240
+:matt/marble/08: 1168 256 rrd
+:raymanni/gore/blob_2: 768 176
+:raymanni/gore/blob_2: 832 176
+:raymanni/gore/blob_2: 896 176
+:raymanni/gore/blob_2: 960 176
+:raymanni/gore/blob_2: 1024 176
+:raymanni/gore/blob_2: 1088 176
+:matt/marble/08: 1168 192 rrd
+:matt/marble/21a: 48 384
+:matt/marble/21a: 112 384
+:matt/marble/21a: 176 384
+:matt/marble/21a: 240 384
+:matt/marble/21a: 304 384
+:matt/marble/21a: 368 384
+:amanda/occult/wax32x48: 144 312
+:amanda/occult/wax32x48: 176 312
+:matt/marble/08d: 144 352
+:amanda/occult/wax32x48: 208 312
+:amanda/occult/wax32x48: 240 312
+:matt/marble/08d: 208 352
+:amanda/occult/wax32x48: 272 312
+:amanda/occult/wax32x48: 304 312
+:matt/marble/08d: 272 352
+:amanda/occult/wax32x48: 336 312
+:amanda/occult/wax32x48: 368 312
+:matt/marble/08d: 336 352
+:matt/marble/08d: 112 320 r
+:matt/marble/08d: 112 256 r
+:matt/marble/08d: 112 192 r
+:amanda/occult/wax32x48: 144 248
+:amanda/occult/wax32x48: 176 248
+:matt/marble/08d: 144 288
+:amanda/occult/wax32x48: 208 248
+:amanda/occult/wax32x48: 240 248
+:matt/marble/08d: 208 288
+:amanda/occult/wax32x48: 272 248
+:amanda/occult/wax32x48: 304 248
+:matt/marble/08d: 272 288
+:amanda/occult/wax32x48: 336 248
+:amanda/occult/wax32x48: 368 248
+:matt/marble/08d: 336 288
+:matt/marble/08d: 144 224
+:matt/marble/08d: 208 224
+:matt/marble/08d: 272 224
+:matt/marble/08d: 336 224
+:matt/marble/08d: 144 160
+:matt/marble/08d: 208 160
+:matt/marble/08d: 272 160
+:matt/marble/08d: 336 160
+:matt/marble/05d: 112 160
+:amanda/occult/wax32x48: 400 312
+:amanda/occult/wax32x48: 432 312
+:matt/marble/08d: 400 352
+:amanda/occult/wax32x48: 400 248
+:amanda/occult/wax32x48: 432 248
+:matt/marble/08d: 400 288
+:matt/marble/08d: 400 224
+:matt/marble/08d: 400 160
+:matt/marble/21a: 432 384
+:matt/marble/21a: 496 384
+:amanda/occult/wax32x48: 464 312
+:amanda/occult/wax32x48: 496 312
+:matt/marble/08d: 464 352
+:amanda/occult/wax32x48: 464 248
+:amanda/occult/wax32x48: 496 248
+:matt/marble/08d: 464 288
+:matt/marble/08d: 464 224
+:matt/marble/08d: 464 160
+:matt/marble/21a: 528 384
+:matt/marble/21a: 688 384
+:matt/marble/21a: 752 384
+:matt/marble/21a: 816 384
+:matt/marble/21a: 880 384
+:matt/marble/21a: 944 384
+:matt/marble/21a: 1008 384
+:matt/marble/21a: 1072 384
+:matt/marble/21a: 1136 384
+:matt/marble/21a: 1168 384
+:matt/marble/08: 784 352
+:matt/marble/08: 848 352
+:matt/marble/08: 912 352
+:matt/marble/08: 976 352
+:matt/marble/08: 1040 352
+:matt/marble/08: 1104 352
+:matt/marble/08: 752 320 r
+:matt/marble/08: 784 288
+:matt/marble/08: 848 288
+:matt/marble/08: 912 288
+:matt/marble/08: 976 288
+:matt/marble/08: 1040 288
+:matt/marble/08: 1104 288
+:matt/marble/08: 752 256 r
+:matt/marble/08: 784 224
+:matt/marble/08: 848 224
+:matt/marble/08: 912 224
+:matt/marble/08: 976 224
+:matt/marble/08: 1040 224
+:matt/marble/08: 1104 224
+:matt/marble/08: 752 192 r
+:matt/marble/08: 784 160
+:matt/marble/08: 848 160
+:matt/marble/08: 912 160
+:matt/marble/08: 976 160
+:matt/marble/08: 1040 160
+:matt/marble/08: 1104 160
+:matt/marble/05: 752 160
+:matt/marble/08: 1168 160 rrd
+:matt/marble/08: 1168 224 rrd
+:matt/marble/08: 1168 224 rrd
+:matt/marble/08: 1168 288 rrd
+:matt/marble/08: 1168 352 rrd
+:matt/marble/10: 576 384 d
+:matt/marble/10: 48 384 frrd
+:matt/marble/10: 1216 384 d
+:matt/marble/10: 688 384 frrd
