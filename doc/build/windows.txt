@@ -20,9 +20,12 @@ Get dmd here:
 
     http://dlang.org/download
 
-During the installation, select the option to add the programs to PATH. You
-want to call them from the command line later. You don't have to add anything
-to the start menu. You don't need D1 support either.
+During the installation, when asked:
+
+* Add the programs to PATH. You want to call them from the command line later.
+* You don't need to add anything to the start menu.
+* You don't need 64-bit support (32-bit building is easier to set up).
+* You don't need D1 support.
 
 If you would like, you may test the D environment. See appendix 1 at the
 bottom of this file for how to write and compile a hello world program.
@@ -88,6 +91,10 @@ Method 2:
     Summary: Find implib.exe, then, for each Allegro DLL xyz, call:
 
         implib /s allegro_xyz.lib allegro_xyz-5.2.dll
+
+    Instead of calling implib for each file by hand, you could write a Windows
+    batch file that calls implib for each DLL. Here's SiegeLord's batch file:
+    https://github.com/SiegeLord/DAllegro5/blob/master/create_import_libs.bat
 
     Put the resulting .lib files in the D installation's lib/ dir. Remove the
     version number, e.g., `-5.2', from Allegro's .lib files in lib/. Do not
