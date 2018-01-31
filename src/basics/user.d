@@ -246,7 +246,7 @@ static this()
     screenMode = newOpt("SCREEN_MODE", Lang.optionScreenMode, ScreenMode.softwareFullscreen.to!int);
     screenWindowedX = newOpt("SCREEN_WINDOWED_X", Lang.optionScreenWindowedRes, 640);
     screenWindowedY = newOpt("SCREEN_WINDOWED_Y", 480);
-    paintTorusSeams = newOpt("PAINT_TORUS_SEAMS", Lang.optionPaintTorusSeams, true);
+    paintTorusSeams = newOpt("PAINT_TORUS_SEAMS", Lang.optionPaintTorusSeams, false);
     showButtonHotkeys = newOpt("SHOW_BUTTON_HOTKEYS", Lang.optionShowButtonHotkeys, true);
     ingameTooltips = newOpt("INGAME_TOOLTIPS", Lang.optionIngameTooltips, true);
     showFPS = newOpt("SHOW_FRAMES_PER_SECOND", Lang.optionShowFPS, false);
