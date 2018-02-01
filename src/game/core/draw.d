@@ -21,7 +21,6 @@ import graphic.torbit;
 import hardware.display;
 import hardware.music;
 import hardware.tharsis;
-import lix.skill.faller; // pixelsSafeToFall
 
 package void
 implGameDraw(Game game) { with (game)
@@ -36,13 +35,23 @@ implGameDraw(Game game) { with (game)
         // This RAII struct is used in each innermost loop, too, but it does
         // nothing except comparing two pointers there if we've set stuff here.
         auto drata = TargetTorbit(map);
-        with (level)
-            map.clearScreenRect(color.makecol(bgRed, bgGreen, bgBlue));
+        Alcol levBg = color.makecol(level.bgRed, level.bgGreen, level.bgBlue);
+        map.clearScreenRect(levBg);
         game.drawGadgets();
-        game.drawLand();
-        game.drawSplatRuler();
-        game.pingOwnGadgets();
 
+        if (modalWindow || ! pan.coolShadesAreOn || pan.isMouseHere) {
+            game.drawLand();
+            game.pingOwnGadgets();
+        }
+        else {
+            _splatRuler.considerBackgroundColor(levBg);
+            _splatRuler.determineSnap(nurse.constStateForDrawingOnly.lookup,
+                map.mouseOnLand);
+            _splatRuler.drawBelowLand(map);
+            game.drawLand();
+            game.pingOwnGadgets();
+            _splatRuler.drawAboveLand(map);
+        }
         assert (_effect);
         _effect.draw(_chatArea.console);
         _effect.calc(); // --timeToLive, moves. No physics, so OK to calc here.
@@ -145,69 +154,5 @@ void drawReplaySign(Game game)
         && ! showFPS.value // power user setting, it overrides us
     ) {
         game.pan.suggestTooltip(Tooltip.ID.clickToCancelReplay);
-    }
-}
-
-///////////////////////////////////////////////////////////////////////////////
-// Splat ruler ////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-
-void drawSplatRuler(Game game)
-{
-    if (game.modalWindow || ! game.pan.coolShadesAreOn || game.pan.isMouseHere)
-        return;
-    immutable snap = game.splatRulerSnap();
-    game.drawSplatRulerBarBelowGivenStartOfFall(snap);
-}
-
-Point splatRulerSnap(in Game game)
-{
-    Point ret = game.map.mouseOnLand;
-    bool solid()
-    {
-        return game.nurse.constStateForDrawingOnly.lookup.getSolidEven(ret);
-    }
-    // Find walkable terrain reasonably close under or over mouse cursor.
-    // Walkable terrain is terrain with air at the pixel above.
-    int upOrDown = solid() ? -1 : 1;
-    foreach (int iters; 0 .. Faller.pixelsSafeToFall) {
-        if (iters == Faller.pixelsSafeToFall - 1)
-            return game.map.mouseOnLand; // nothing to snap to
-        ret += Point(0, upOrDown);
-        if (solid() == (upOrDown == 1))
-            break;
-    }
-    if (! solid())
-        ret += Point(0, 1);
-    return ret;
-}
-
-void drawSplatRulerBarBelowGivenStartOfFall(Game game, Point startOfFall)
-{
-    enum wh = 40; // wh = width half, half of the line's x-length
-    Point lower = startOfFall + Point(-wh, Faller.pixelsSafeToFall);
-    Point ledge = startOfFall + Point(-wh, 0);
-    Point upper = startOfFall + Point(-wh, -Faller.pixelsSafeToFall);
-
-    void f(in Point p, in int plusY, in Alcol col)
-    {
-        game.map.drawFilledRectangle(Rect(p + Point(0, plusY), 2*wh, 1), col);
-    }
-    // draw vertical line
-    foreach (int plusX; -1 .. 2) {
-        float shade = plusX == -1 ? 0.3f : plusX == 0 ? 0.4f : 0.15f;
-        game.map.drawFilledRectangle(
-            Rect(upper + Point(wh + plusX, 0), 1, 2 * Faller.pixelsSafeToFall),
-            Alcol(shade, shade, shade, shade));
-    }
-    // draw colored bars
-    foreach (int plusY; 0 .. 5) {
-        immutable float shade = (1 - 0.2f * plusY);
-        immutable float alpha = 0.8f * shade;
-        f(upper, plusY, game.level.bgBlue > 0xA0 // some by Rubix: bright bg
-            ? Alcol(0, 0, 0, alpha)
-            : Alcol(shade * 0.2f, shade * 0.4f, shade, alpha)); // blue
-        f(ledge, plusY, Alcol(0, shade * 0.8f, 0, alpha));
-        f(lower, plusY, Alcol(shade, shade * 0.2f, shade * 0.2f, alpha));
     }
 }

@@ -30,6 +30,7 @@ import game.core.chatarea;
 import game.core.draw;
 import game.core.scrstart;
 import game.core.speed;
+import game.core.splatrul;
 import game.window.base;
 import game.nurse.interact;
 import game.panel.base;
@@ -80,6 +81,7 @@ package:
     GameWindow modalWindow;
     Panel pan;
     ChatArea _chatArea;
+    SplatRuler _splatRuler;
 
     int _profilingGadgetCount;
     bool _gotoMainMenu;
@@ -277,6 +279,7 @@ private:
         initializeConsole();
         stopMusic();
         setLastPhyuToNow();
+        _splatRuler = createSplatRuler();
     }
 
     void prepareNurse(Filename levelFilename, Replay rp)

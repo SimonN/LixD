@@ -98,6 +98,7 @@ UserOption!bool unpauseOnAssign;
 UserOption!int screenMode;
 UserOption!int screenWindowedX;
 UserOption!int screenWindowedY;
+UserOption!int splatRulerDesign;
 UserOption!bool paintTorusSeams;
 UserOption!bool showButtonHotkeys;
 UserOption!bool ingameTooltips;
@@ -248,6 +249,7 @@ static this()
     screenMode = newOpt("SCREEN_MODE", Lang.optionScreenMode, ScreenMode.softwareFullscreen.to!int);
     screenWindowedX = newOpt("SCREEN_WINDOWED_X", Lang.optionScreenWindowedRes, 640);
     screenWindowedY = newOpt("SCREEN_WINDOWED_Y", 480);
+    splatRulerDesign = newOpt("SPLAT_RULER_DESIGN", Lang.commonNo /* hidden option */, 0);
     paintTorusSeams = newOpt("PAINT_TORUS_SEAMS", Lang.optionPaintTorusSeams, false);
     showButtonHotkeys = newOpt("SHOW_BUTTON_HOTKEYS", Lang.optionShowButtonHotkeys, true);
     ingameTooltips = newOpt("INGAME_TOOLTIPS", Lang.optionIngameTooltips, true);
