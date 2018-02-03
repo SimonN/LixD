@@ -4,6 +4,7 @@ module gui.option.explain;
 
 import std.algorithm;
 
+import file.language;
 import gui;
 import gui.option.base;
 
@@ -33,18 +34,14 @@ public:
             return;
         _alreadyExplained = opt;
         reqDraw();
-        if (opt is null) {
-            _lines.each!(line => line.hide());
-            return;
-        }
-        auto range = opt.explain().splitter('|');
+        auto range = opt !is null ? opt.lang.descr[] : [];
         foreach (line; _lines) {
-            if (range.empty)
+            if (range.length == 0)
                 line.hide();
             else {
                 line.show();
-                line.text = range.front;
-                range.popFront();
+                line.text = range[0];
+                range = range[1 .. $];
             }
         }
     }

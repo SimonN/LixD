@@ -14,6 +14,7 @@ module gui.option.base;
  * constructors.
  */
 
+import file.language;
 import gui.element;
 import gui.geometry;
 import gui.label;
@@ -25,7 +26,6 @@ enum keyButtonXl   =  85f;
 abstract class Option : Element {
 private:
     Label _desc; // may be null
-    string _longDesc;
 
 public:
     // Idea for refactoring: Let this take a UserOption instead of
@@ -40,7 +40,7 @@ public:
 
     abstract void loadValue();
     abstract void saveValue(); // can't be const
-    string explain() const { return ""; } // DTODO: make fully abstract
+    abstract @property Lang lang() const;
 }
 
 struct OptionFactory {

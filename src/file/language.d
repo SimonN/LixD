@@ -6,19 +6,16 @@ module file.language;
  *  string transl(Lang)
  *      translate the ID
  *
+ *  string dsecr(Lang)
+ *      give a translated longer `|'-linebroken description for the options
+ *
  *  void loadUserLanguageAndIfNotExistSetUserOptionToEnglish()
  *      Should be used by loading the user file, or by the options dialogue.
  *      Both of these write to the user file anyway.
- *
- * DTODOOPTION
- *      These appear out of place from regular option names.
- *      The options menu hijacks some names from elsewhere and reuses them
- *      as captions in the options menu. The contract in basics.useropt
- *      demand that the explanation comes right after. Thus, the explanation
- *      appears out of place from the options, even though only the options
- *      menu uses it.
  */
 
+import std.array;
+import std.algorithm : splitter;
 import std.conv; // (enum constant) <-> (string of its variable name)
                  // This is done by to!Lang or to!string. This capability
                  // for D enums is awesome, the entire module is built on it
@@ -43,9 +40,9 @@ enum Lang {
     mainMenuGetMusic,
 
     // browsers
-    browserSingleTitle, browserSingleTitleDesc, // DTODOOPTION
+    browserSingleTitle,
     browserNetworkTitle,
-    browserReplayTitle, browserReplayTitleDesc, // DTODOOPTION
+    browserReplayTitle,
     browserPlay,
     browserEdit,
     browserNewLevel,
@@ -69,7 +66,7 @@ enum Lang {
     winVerifyTitle,
 
     // networking lobby
-    winLobbyTitle, winLobbyTitleDesc, // DTODOOPTION
+    winLobbyTitle,
     winLobbyDisconnect,
     winLobbyStartCentral,
     winLobbyStartCustom,
@@ -82,7 +79,7 @@ enum Lang {
     winLobbyRoomLeave,
 
     // end-of-game dialog, or pause dialog
-    winGameTitle, winGameTitleDesc, // DTODOOPTION: option menu explains this
+    winGameTitle,
     winGameResult,
     winGameLixSaved,
     winGameResume,
@@ -122,9 +119,7 @@ enum Lang {
     editorBarHover,
     editorBarSelection,
 
-    // make sure these come in the same order as the editor button enum.
-    // I don't know how to generate source code for these these enum values.
-    // If you have cute D code for that, tell me. :-)
+    // These must come in the same order as the editor button enum.
     editorButtonFileNew,
     editorButtonFileExit,
     editorButtonFileSave,
@@ -250,81 +245,81 @@ enum Lang {
     netGameOvertimeNukeIn,
 
     // Optionsfenster
-    optionTitle, optionTitleDesc, // DTODOOPTION
+    optionTitle,
     optionGroupGeneral,
     optionGroupGraphics,
     optionGroupControls,
     optionGroupGameKeys,
     optionGroupEditorKeys,
     optionGroupMenuKeys,
-    optionUserName, optionUserNameDesc,
-    optionLanguage, optionLanguageDesc,
-    optionReplayAutoSolutions, optionReplayAutoSolutionsDesc,
-    optionReplayAutoMulti, optionReplayAutoMultiDesc,
-    optionMouseSpeed, optionMouseSpeedDesc,
-    optionScrollSpeedEdge, optionScrollSpeedEdgeDesc,
-    optionScrollSpeedClick, optionScrollSpeedClickDesc,
-    optionFastMovementFreesMouse, optionFastMovementFreesMouseDesc,
-    optionAvoidBuilderQueuing, optionAvoidBuilderQueuingDesc,
-    optionAvoidBatterToExploder, optionAvoidBatterToExploderDesc,
-    optionReplayAfterFrameBack, optionReplayAfterFrameBackDesc,
-    optionUnpauseOnAssign, optionUnpauseOnAssignDesc,
+    optionUserName,
+    optionLanguage,
+    optionReplayAutoSolutions,
+    optionReplayAutoMulti,
+    optionMouseSpeed,
+    optionScrollSpeedEdge,
+    optionScrollSpeedClick,
+    optionFastMovementFreesMouse,
+    optionAvoidBuilderQueuing,
+    optionAvoidBatterToExploder,
+    optionReplayAfterFrameBack,
+    optionUnpauseOnAssign,
 
-    optionScreenMode, optionScreenModeDesc,
+    optionScreenMode,
     optionScreenWindowed,
     optionScreenSoftwareFullscreen,
     optionScreenHardwareFullscreen,
-    optionScreenWindowedRes, optionScreenWindowedResDesc,
-    optionPaintTorusSeams, optionPaintTorusSeamsDesc,
-    optionIngameTooltips, optionIngameTooltipsDesc,
-    optionShowButtonHotkeys, optionShowButtonHotkeysDesc,
-    optionShowFPS, optionShowFPSDesc,
-    optionGuiColorRed, optionGuiColorRedDesc,
-    optionGuiColorGreen, optionGuiColorGreenDesc,
-    optionGuiColorBlue, optionGuiColorBlueDesc,
-    optionSoundEnabled, optionSoundEnabledDesc,
-    optionMusicEnabled, optionMusicEnabledDesc,
-    optionSoundDecibels, optionSoundDecibelsDesc,
-    optionMusicDecibels, optionMusicDecibelsDesc,
+    optionScreenWindowedRes,
+    optionPaintTorusSeams,
+    optionIngameTooltips,
+    optionShowButtonHotkeys,
+    optionShowFPS,
+    optionGuiColorRed,
+    optionGuiColorGreen,
+    optionGuiColorBlue,
+    optionSoundEnabled,
+    optionMusicEnabled,
+    optionSoundDecibels,
+    optionMusicDecibels,
 
-    optionKeyScroll, optionKeyScrollDesc,
-    optionKeyPriorityInvert, optionKeyPriorityInvertDesc,
-    optionKeyZoomIn, optionKeyZoomInDesc,
-    optionKeyZoomOut, optionKeyZoomOutDesc,
-    optionKeyScreenshot, optionKeyScreenshotDesc,
+    optionKeyScroll,
+    optionKeyPriorityInvert,
+    optionKeyZoomIn,
+    optionKeyZoomOut,
+    optionKeyScreenshot,
 
-    optionKeyForceLeft, optionKeyForceLeftDesc,
-    optionKeyForceRight, optionKeyForceRightDesc,
-    optionKeyPause, optionKeyPauseDesc,
-    optionKeyFrameBackMany, optionKeyFrameBackManyDesc,
-    optionKeyFrameBackOne, optionKeyFrameBackOneDesc,
-    optionKeyFrameAheadOne, optionKeyFrameAheadOneDesc,
-    optionKeyFrameAheadMany, optionKeyFrameAheadManyDesc,
-    optionKeySpeedFast, optionKeySpeedFastDesc,
-    optionKeySpeedTurbo, optionKeySpeedTurboDesc,
-    optionKeyRestart, optionKeyRestartDesc,
-    optionKeyStateLoad, optionKeyStateLoadDesc,
-    optionKeyStateSave, optionKeyStateSaveDesc,
-    optionKeyChat, optionKeyChatDesc,
-    optionKeyClearPhysics, optionKeyClearPhysicsDesc,
-    optionKeyNuke, optionKeyNukeDesc,
+    optionKeyForceLeft,
+    optionKeyForceRight,
+    optionKeyPause,
+    optionKeyFrameBackMany,
+    optionKeyFrameBackOne,
+    optionKeyFrameAheadOne,
+    optionKeyFrameAheadMany,
+    optionKeySpeedFast,
+    optionKeySpeedTurbo,
+    optionKeyRestart,
+    optionKeyStateLoad,
+    optionKeyStateSave,
+    optionKeyChat,
+    optionKeyClearPhysics,
+    optionKeyNuke,
 
-    optionKeyMenuOkay, optionKeyMenuOkayDesc,
-    optionKeyMenuEdit, optionKeyMenuEditDesc,
-    optionKeyMenuNewLevel, optionKeyMenuNewLevelDesc,
-    optionKeyMenuExport, optionKeyMenuExportDesc,
-    optionKeyMenuDelete, optionKeyMenuDeleteDesc,
-    optionKeyMenuUpDir, optionKeyMenuUpDirDesc,
-    optionKeyMenuUpBy1, optionKeyMenuUpBy1Desc,
-    optionKeyMenuUpBy5, optionKeyMenuUpBy5Desc,
-    optionKeyMenuDownBy1, optionKeyMenuDownBy1Desc,
-    optionKeyMenuDownBy5, optionKeyMenuDownBy5Desc,
-    optionKeyMenuExit, optionKeyMenuExitDesc,
+    optionKeyMenuOkay,
+    optionKeyMenuEdit,
+    optionKeyMenuNewLevel,
+    optionKeyMenuExport,
+    optionKeyMenuDelete,
+    optionKeyMenuUpDir,
+    optionKeyMenuUpBy1,
+    optionKeyMenuUpBy5,
+    optionKeyMenuDownBy1,
+    optionKeyMenuDownBy5,
+    optionKeyMenuExit,
 
-    optionEdLeft, optionEdLeftDesc,
-    optionEdRight, optionEdRightDesc,
-    optionEdUp, optionEdUpDesc,
-    optionEdDown, optionEdDownDesc,
+    optionEdLeft,
+    optionEdRight,
+    optionEdUp,
+    optionEdDown,
     optionEdSave,
     optionEdSaveAs,
     optionEdGrid,
@@ -362,13 +357,18 @@ enum Lang {
 
 
 // translated strings of currently loaded language
-private string[Lang.MAX] lang;
+private:
 
-public string
-transl(in Lang key)
-{
-    return lang[key];
+struct Transl {
+    string transl;
+    string[] descr;
 }
+Transl[Lang.MAX] _lang;
+
+public:
+
+string transl(in Lang key) { return _lang[key].transl; }
+string[] descr(in Lang key) { return _lang[key].descr; }
 
 
 
@@ -421,8 +421,17 @@ loadUserLanguageAndIfNotExistSetUserOptionToEnglish()
             continue;
         }
         // now langId is a good index
-        lang[langId] = line.text2;
+        auto range = line.text2.splitter('|');
+        if (range.empty) {
+            localLogf("Key without translation: %s", line.text1);
+            continue;
+        }
+        _lang[langId].transl = range.front;
         langIdsReadIn[langId] = true;
+        range.popFront;
+        if (range.empty)
+            continue;
+        _lang[langId].descr = range.array; // all remaining fields
     }
     // end foreach line
 
@@ -431,7 +440,7 @@ loadUserLanguageAndIfNotExistSetUserOptionToEnglish()
         if (! langIdsReadIn[id]) {
             string langIdStr = id.to!Lang.to!string;
             localLogf("New translation required: %s", langIdStr);
-            lang[id] = "!" ~ langIdStr ~ "!";
+            _lang[id].transl = "!" ~ langIdStr ~ "!";
         }
     }
     // end foreach for undefined IDs

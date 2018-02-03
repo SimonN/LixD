@@ -137,9 +137,9 @@ private:
         _eqYDec = new Equation( 80, _oldYl, Equation.Format.dec);
         _eqYHex = new Equation(100, _oldYl, Equation.Format.hex);
         _torusX = new BoolOption(new Geom(20, 140, boolXl, 20),
-                                 Lang.winTopologyTorusX.transl);
+                                 Lang.winTopologyTorusX);
         _torusY = new BoolOption(new Geom(20, 170, boolXl, 20),
-                                 Lang.winTopologyTorusY.transl);
+                                 Lang.winTopologyTorusY);
         _torusX.checked = level.topology.torusX;
         _torusY.checked = level.topology.torusY;
         addChildren(_left, _right, _top, _bottom,

@@ -32,7 +32,7 @@ public:
         super(new Geom(0, 0, thisXl, 240, From.CENTER),
             Lang.winSkillsTitle.transl);
         _useExploder = new BoolOption(new Geom(20, 50, expXl, 20,
-            From.BOT_LEF), Lang.winSkillsUseExploder.transl);
+            From.BOT_LEF), Lang.winSkillsUseExploder);
         _allToZero = new TextButton(new Geom(20, 20, expXl, 20, From.BOT_LEF),
             Lang.winSkillsClear.transl);
         _numPick = new NumPick(new Geom(pickX, 20, pickXl, 20,

@@ -4,6 +4,7 @@ import std.algorithm;
 import std.conv;
 import std.string; // strip
 
+import file.language;
 import file.useropt;
 import graphic.internal;
 import gui;
@@ -22,15 +23,15 @@ public:
     {
         assert (opt !is null);
         _userOption = opt;
-        this(g, opt.descShort);
+        this(g, opt.lang);
     }
 
-    this(Geom g, string cap)
+    this(Geom g, Lang cap)
     {
         // Hack use of this class: I use it in Editor's skill window.
         // opt will be null there, you may not call load/saveValue then.
         _checkbox = new Checkbox(new Geom(0, 0, 20, 20));
-        super(g, new Label(new Geom(30, 0, g.xlg - 30, g.yl), cap));
+        super(g, new Label(new Geom(30, 0, g.xlg - 30, g.yl), cap.transl));
         addChild(_checkbox);
     }
 
@@ -50,11 +51,7 @@ public:
         _userOption.value = _checkbox.checked;
     }
 
-    override string explain() const
-    {
-        assert (_userOption);
-        return _userOption.descLong;
-    }
+    override @property Lang lang() const { return _userOption.lang; }
 
 protected:
     override void calcSelf()
@@ -77,21 +74,23 @@ class TextOption : Option {
 private:
     Texttype _texttype;
     string*  _target;
+    Lang _cap;
 
 public:
-    this(Geom g, string cap, string* t)
+    this(Geom g, Lang cap, string* t)
     {
         assert (t);
         _texttype = new Texttype(new Geom(0, 0, mostButtonsXl, 20));
         super(g, new Label(new Geom(mostButtonsXl + spaceGuiTextX, 0,
                             g.xlg - mostButtonsXl + spaceGuiTextX, g.yl),
-                            cap));
+                            cap.transl));
         addChild(_texttype);
         _target = t;
     }
 
     override void loadValue() { _texttype.text = *_target; }
     override void saveValue() { *_target = _texttype.text.strip; }
+    override @property Lang lang() const { return _cap; }
 
     // hack, to enable immediate check of nonempty
     @property inout(Texttype) texttype() inout { return _texttype; }
@@ -120,7 +119,7 @@ public:
         _keyb = new MultiKeyButton(new Geom(0, 0, keyButtonXl, 20));
         super(g, new Label(new Geom(keyButtonXl + spaceGuiTextX, 0,
                             g.xlg - keyButtonXl + spaceGuiTextX, g.yl),
-                            opt.descShort));
+                            opt.lang.transl));
         addChild(_keyb);
         _userOption = opt;
         registerAtWatcher(watcher, _keyb);
@@ -128,7 +127,7 @@ public:
 
     override void loadValue() { _keyb.keySet = _userOption.value; }
     override void saveValue() { _userOption.value = _keyb.keySet; }
-    override string explain() const { return _userOption.descLong; }
+    override @property Lang lang() const { return _userOption.lang; }
 }
 
 class SkillHotkeyOption : Option
@@ -151,6 +150,7 @@ class SkillHotkeyOption : Option
         registerAtWatcher(watcher, _keyb);
     }
 
+    override @property Lang lang() const { return Lang.commonOk; } // hack
     override void loadValue() { _keyb.keySet = _userOption.value; }
     override void saveValue() { _userOption.value = _keyb.keySet; }
 }
@@ -175,7 +175,7 @@ class NumPickOption : Option
         _num = new NumPick(new Geom(0, 0, mostButtonsXl + plusXl, 20), cfg);
         super(g, new Label(new Geom(mostButtonsXl + plusXl + spaceGuiTextX, 0,
                             g.xlg - mostButtonsXl + plusXl + spaceGuiTextX,
-                            g.yl), opt.descShort));
+                            g.yl), opt.lang.transl));
         addChild(_num);
         _userOption = opt;
     }
@@ -184,7 +184,7 @@ class NumPickOption : Option
     @property bool execute() const { return _num.execute;    }
     override void loadValue() { _num.number = _userOption.value; }
     override void saveValue() { _userOption.value = _num.number; }
-    override string explain() const { return _userOption.descLong; }
+    override @property Lang lang() const { return _userOption.lang; }
 }
 
 
@@ -210,7 +210,7 @@ public:
 
     override void loadValue() { _radio.choose(_userOption.value); }
     override void saveValue() { _userOption.value = _radio.chosen; }
-    override string explain() const { return _userOption.descLong; }
+    override @property Lang lang() const { return _userOption.lang; }
 }
 
 
@@ -230,7 +230,7 @@ public:
         assert (targets[0]);
         super(g, new Label(new Geom(mostButtonsXl + spaceGuiTextX, 0,
                             g.xlg - mostButtonsXl + spaceGuiTextX, g.yl),
-                            targets[0].descShort));
+                            targets[0].lang.transl));
         foreach (i; 0 .. fields) {
             _texttype[i] = new Texttype(new Geom(
                 i * mostButtonsXl/fields, 0, mostButtonsXl/fields, 20));
@@ -253,5 +253,5 @@ public:
             _userOptions[i].value = _texttype[i].number;
     }
 
-    override string explain() const { return _userOptions[0].descLong; }
+    override @property Lang lang() const { return _userOptions[0].lang; }
 }

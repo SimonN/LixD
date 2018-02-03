@@ -26,19 +26,16 @@ import hardware.keyset;
 abstract class AbstractUserOption {
 private:
     immutable string _userFileKey;
-    immutable Lang _descShort;
-    immutable Lang _descLong;
+    immutable Lang _lang; // translatable name for the options dialog
 
 public:
-    this(string aKey, Lang aShort)
+    this(string aKey, Lang aLang)
     {
         _userFileKey = aKey;
-        _descShort = aShort;
-        _descLong = cast (Lang) (aShort + 1);
+        _lang = aLang;
     }
 
-    final @property string descShort() const { return _descShort.transl; }
-    final @property string descLong() const { return _descLong.transl; }
+    final @property Lang lang() const { return _lang; }
 
     final void set(in IoLine ioLine)
     {

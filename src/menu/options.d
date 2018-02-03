@@ -214,11 +214,11 @@ void populateGeneral()
     grp ~= fac.factory!BoolOption(musicEnabled);
 
     fac = facRight();
-    grp ~= fac.factory!TextOption(Lang.optionUserName.transl, &userName);
+    grp ~= fac.factory!TextOption(Lang.optionUserName, &userName);
     _userName = (cast (TextOption) grp[$-1]).texttype;
 
     fac.yl = 100;
-    grp ~= fac.factory!LanguageOption(Lang.optionLanguage.transl);
+    grp ~= fac.factory!LanguageOption();
 
     fac.yl = 20;
     fac.y  = 250;

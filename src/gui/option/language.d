@@ -20,10 +20,11 @@ private:
     MutFilename _lastChosen;
 
 public:
-    this(Geom g, string cap)
+    this(Geom g)
     {
         super(g, new Label(new Geom(mostButtonsXl + spaceGuiTextX, 0,
-                            g.xlg - mostButtonsXl + spaceGuiTextX, 20), cap));
+                            g.xlg - mostButtonsXl + spaceGuiTextX, 20),
+                            Lang.optionLanguage.transl));
         auto cfg  = PickerConfig!LanguageTiler();
         cfg.all   = new Geom(0, 0, mostButtonsXl, this.ylg);
         cfg.bread = new Geom(-9999, -9999, 10, 10); // hack: offscreen
@@ -35,6 +36,7 @@ public:
         addChild(_picker);
     }
 
+    override @property Lang lang() const { return Lang.optionLanguage; }
     override void loadValue() { highlight(basics.user.fileLanguage); }
     override void saveValue()
     {

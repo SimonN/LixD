@@ -24,7 +24,7 @@ public:
         assert (curDir !is null);
         _curDir = curDir;
         super(new Geom(0, 0, gui.screenXlg, gui.mapYlg, From.TOP),
-            _curDir.descShort);
+            _curDir.lang.transl);
         _picker = merge ? makePicker!true(allowedPreExts)
                         : makePicker!false(allowedPreExts);
         _picker.currentDir = merge ? dirImages
