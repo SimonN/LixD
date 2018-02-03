@@ -25,9 +25,9 @@ class PhysicsCache {
 
 private:
 
-    enum updatesMostFrequentPair = 10;
-    enum updatesMultiplierNextPairIsSlowerBy = 5; // 10, 50, 250, 1250
-    enum pairsToKeep = 4;
+    enum updatesMostFrequentPair = 12;
+    enum updatesMultiplierNextPairIsSlowerBy = 5; // 12, 60, 300
+    enum pairsToKeep = 3;
 
     GameState _zero;
     GameState _userState;
@@ -192,13 +192,11 @@ private:
         _recommendGC = true;
     }
 
-    int updateMultipleForPair(in int pair) const pure
-    {
-        assert (pair >= 0 && pair < pairsToKeep);
-        int ret = updatesMostFrequentPair;
-        foreach (i; 0 .. pair)
-            ret *= updatesMultiplierNextPairIsSlowerBy;
-        return ret;
+    int updateMultipleForPair(in int pair) const pure @nogc
+    in { assert (pair >= 0 && pair < pairsToKeep); }
+    body {
+        return updatesMostFrequentPair
+            * updatesMultiplierNextPairIsSlowerBy^^pair;
     }
 }
 // end class StateManager
