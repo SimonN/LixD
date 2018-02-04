@@ -266,6 +266,7 @@ void populateControls()
     ];
     fac.y += fac.incrementY;
     groups[OptionGroup.controls] ~= [
+        fac.factory!BoolOption(holdToScrollInvert),
         fac.factory!BoolOption(fastMovementFreesMouse),
     ];
     fac = facRight();
@@ -278,7 +279,7 @@ void populateControls()
     }
     addNumPick(mouseSpeed, 1);
     addNumPick(scrollSpeedEdge, 0);
-    addNumPick(scrollSpeedClick, 1);
+    addNumPick(holdToScrollSpeed, 1);
 }
 
 void populateGameKeys()

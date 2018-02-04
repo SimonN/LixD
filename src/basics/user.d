@@ -87,7 +87,8 @@ UserOption!int optionGroup;
 
 UserOption!int mouseSpeed;
 UserOption!int scrollSpeedEdge;
-UserOption!int scrollSpeedClick;
+UserOption!int holdToScrollSpeed;
+UserOption!bool holdToScrollInvert;
 UserOption!bool fastMovementFreesMouse;
 UserOption!bool avoidBuilderQueuing;
 UserOption!bool avoidBatterToExploder;
@@ -229,7 +230,8 @@ static this()
 
     mouseSpeed = newOpt("MOUSE_SPEED", Lang.optionMouseSpeed, mouseStandardDivisor);
     scrollSpeedEdge = newOpt("SCROLL_SPEED_EDGE", Lang.optionScrollSpeedEdge, mouseStandardDivisor);
-    scrollSpeedClick = newOpt("SCROLL_SPEED_CLICK", Lang.optionScrollSpeedClick, mouseStandardDivisor / 2);
+    holdToScrollSpeed = newOpt("SCROLL_SPEED_CLICK", Lang.optionHoldToScrollSpeed, mouseStandardDivisor / 2);
+    holdToScrollInvert = newOpt("HOLD_TO_SCROLL_INVERT", Lang.optionHoldToScrollInvert, false);
     version (linux) {
         fastMovementFreesMouse = newOpt("FAST_MOVEMENT_FREES_MOUSE",
             Lang.optionFastMovementFreesMouse, false);

@@ -302,12 +302,17 @@ private void calcHoldScrolling()
         in int grabbed, in int mouse, in int mickey, in int cameraCurrent,
         void function() freeze
     ) {
+        immutable dir = basics.user.holdToScrollInvert.value ? -1 : 1;
+        immutable uninvertedScrollingAllowed =
+               (minus && mouse <= grabbed && mickey < 0)
+            || (plus  && mouse >= grabbed && mickey > 0);
         int ret = cameraCurrent;
-        if (   (minus && mouse <= grabbed && mickey < 0)
-            || (plus  && mouse >= grabbed && mickey > 0)
+
+        if (dir == 1 && uninvertedScrollingAllowed
+            || dir == -1 && (plus || minus)
         ) {
-            ret += roundInt(mickey * basics.user.scrollSpeedClick
-                    / zoom / 4); // the factor /4 comes from C++ Lix
+            ret += roundInt(mickey * basics.user.holdToScrollSpeed
+                    * dir / zoom / 4); // the factor /4 comes from C++ Lix
             freeze();
         }
         return ret;

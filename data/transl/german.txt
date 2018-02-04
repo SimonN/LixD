@@ -138,14 +138,12 @@ $saveBoxYesSave Speichern
 $saveBoxNoDiscard Verwerfen
 $saveBoxNoCancel Abbrechen
 
-// BitmapBrowser
 $addTerrain Terrain hinzufügen
 $addSteel Stahl hinzufügen
 $addHatch Klappe hinzufügen
 $addGoal Ziel hinzufügen
 $addHazard Gefahr hinzufügen
 
-// Kartengroesse
 $winTopologyTitle Karte
 $winTopologyL Links:
 $winTopologyR Rechts:
@@ -154,13 +152,11 @@ $winTopologyD Unten:
 $winTopologyTorusX Horizontal rundumgehend
 $winTopologyTorusY Vertikal rundumgehend
 
-// Scrollposition
 $winLooksTitle Aussehen
 $winLooksRed Hintergrund Rot
 $winLooksGreen Hintergrund Grün
 $winLooksBlue Hintergrund Blau
 
-// Variablenfenster
 $winConstantsTitle Konstanten
 $winConstantsAuthor Autor
 $winConstantsLevelName Leveltitel
@@ -170,7 +166,6 @@ $winConstantsRequired Lix zu retten
 $winConstantsSpawnint Fall-Intervall
 $winConstantsOvertime Nachspielzeit
 
-// Faehigkeits-Fenster
 $winSkillsTitle Fähigkeiten
 $winSkillsUseExploder Explodierer
 $winSkillsClear Alle auf null
@@ -248,7 +243,8 @@ $optionKeyScreenshot Screenshot|Screenshot (Bildschirmfoto) des gesamten Lix-Fen
 
 $optionMouseSpeed Mausgeschwindigkeit|Geschwindigkeit des Mauscursors im Spiel, im Editor und im Menü.
 $optionScrollSpeedEdge Scroll-Geschw. am Bildrand|Scroll-Geschwindigkeit, wenn die Maus am Rand des Bildschirms ist.
-$optionScrollSpeedClick Scroll-Geschw. mit Scrolltaste|Scroll-Geschwindigkeit bei Mausbewegung, während die Scrolltaste gehalten wird.|Die Standard-Scrolltaste ist die rechte Maustaste ⟁, änderbar links.
+$optionHoldToScrollSpeed Scroll-Geschw. mit Scrolltaste|Scroll-Geschwindigkeit bei Mausbewegung, während du die Scrolltaste hältst.|Die Standard-Scrolltaste ist die rechte Maustaste ⟁, änderbar links.
+$optionHoldToScrollInvert Halte-Scrollen invertieren|Entgegen der Mausbewegung scrollen, während du die Scrolltaste hältst.|Die Standard-Scrolltaste ist die rechte Maustaste ⟁, änderbar oben.
 $optionFastMovementFreesMouse Schnelle Beweg. befreit Maus|Die Maus verlässt das Lix-Fenster, wenn du sie ruckartig bewegst.|Ohne Haken: Befreie die Maus mit Alt+Tab.
 
 $optionKeyForceLeft Nur links|Halte gedrückt, um Fähigkeiten an Linksläufer zuzuweisen.|Das ist nützlich in dichten Ansammlungen von Lix.

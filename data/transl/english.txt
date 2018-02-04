@@ -251,7 +251,8 @@ $optionKeyScreenshot Screenshot|Take a screenshot of the entire Lix window.|Scre
 
 $optionMouseSpeed Mouse speed|Movement speed of the mouse cursor.
 $optionScrollSpeedEdge Scroll speed at screen edge|Scroll speed when the mouse cursor touches the screen edge.
-$optionScrollSpeedClick Scroll speed with scroll key|Scroll speed when you move the mouse while holding the scrolling key.|The standard scrolling key is the right mouse button ⟁, see left to remap.
+$optionHoldToScrollSpeed Scroll speed with scroll key|Scroll speed when you move the mouse while you hold the scrolling key.|The standard scrolling key is the right mouse button ⟁, see left to remap.
+$optionHoldToScrollInvert Invert hold-to-scroll|Scroll against the mouse movement while you hold the scrolling key.|The standard scrolling key is the right mouse button ⟁, see above to remap.
 $optionFastMovementFreesMouse Fast movement untraps mouse|The mouse leaves the Lix window when you move quickly against the sides.|If not checked, untrap the mouse by Alt+Tab.
 
 $optionKeyForceLeft Force left|Hold to assign skills to lix facing left.|This is useful in a dense bunch of lix.
