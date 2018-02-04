@@ -1,0 +1,78 @@
+$BUILT 2018-02-08 00:04:47
+$AUTHOR Yung Gotenks
+$ENGLISH Team Attack!
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 1040
+#SIZE_Y 320
+
+#SECONDS 50
+#INITIAL 60
+#SPAWN_INTERVAL 50
+
+#WALKER 10
+#EXPLODER2 10
+#BLOCKER 10
+#BUILDER 60
+#PLATFORMER 60
+#BASHER 5
+#MINER 5
+#DIGGER 10
+#JUMPER 10
+#BATTER 10
+#CUBER 10
+
+:matt/underworld/Hatch.H: 276 116
+:matt/underworld/Hatch.H: 718 114 r
+
+:matt/underworld/Goal.G: 888 132
+:matt/underworld/Goal.G: 110 144
+
+:matt/underworld/06: 1504 572
+:matt/underworld/07: 386 730
+:matt/underworld/06: 368 766
+:matt/underworld/04: 216 220
+:matt/underworld/07: 256 204
+:matt/underworld/04: 232 250
+:matt/underworld/04: 230 204
+:matt/underworld/02: 196 120
+:matt/underworld/05: 192 206
+:matt/underworld/04: 176 220
+:matt/underworld/04: 192 258
+:matt/underworld/04: 142 218
+:matt/underworld/04: 144 256
+:matt/underworld/07: 122 206 r
+:matt/underworld/07: 106 208 r
+:matt/underworld/07: 64 210 r
+:matt/underworld/09a: 82 206
+:matt/underworld/09a: 144 206
+:matt/underworld/09a: 200 204
+:matt/underworld/09a: 258 204
+:matt/underworld/07: 280 208
+:matt/underworld/04: 328 212
+:matt/underworld/09a: 306 204
+:matt/underworld/04: 810 210
+:matt/underworld/07: 850 194
+:matt/underworld/04: 826 240
+:matt/underworld/04: 824 194
+:matt/underworld/02: 790 110
+:matt/underworld/05: 786 196
+:matt/underworld/04: 770 210
+:matt/underworld/04: 786 248
+:matt/underworld/04: 736 208
+:matt/underworld/04: 738 246
+:matt/underworld/07: 716 196 r
+:matt/underworld/07: 700 198 r
+:matt/underworld/07: 658 200 r
+:matt/underworld/09a: 676 196
+:matt/underworld/09a: 738 196
+:matt/underworld/09a: 794 194
+:matt/underworld/09a: 852 194
+:matt/underworld/07: 874 198
+:matt/underworld/04: 922 202
+:matt/underworld/09a: 900 194
+:matt/underworld/02: 196 24
+:matt/underworld/02: 196 -72
+:matt/underworld/02: 790 14
+:matt/underworld/02: 790 -82
+:matt/underworld/02: 790 -178

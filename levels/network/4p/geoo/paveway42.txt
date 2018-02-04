@@ -1,32 +1,24 @@
-$BUILT 2014-01-13 01:46:48
+$BUILT 2018-02-06 04:26:56
 $AUTHOR geoo
-$GERMAN
 $ENGLISH Pave the Way (4P, offset)
 
 #INTENDED_NUMBER_OF_PLAYERS 4
-#SIZE_X 640
+#SIZE_X 624
 #SIZE_Y 640
 #TORUS_X 0
 #TORUS_Y 1
 
 #SECONDS 40
 #INITIAL 75
-#REQUIRED 4
 #SPAWN_INTERVAL 28
-#SPAWN_INTERVAL_FAST 4
 
-#CLIMBER 20
 #WALKER 40
+#CLIMBER 20
 #EXPLODER2 10
-#PLATFORMER 30
 #BUILDER 10
+#PLATFORMER 30
 #BASHER 30
 #MINER 30
-#DIGGER 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 
 :matt/earth/Hatch.H: 104 224
 :matt/earth/Hatch.H: 456 384 r
@@ -34,9 +26,9 @@ $ENGLISH Pave the Way (4P, offset)
 :matt/earth/Hatch.H: 456 64 r
 
 :matt/earth/Goal.G: 496 128
-:matt/earth/Goal.G: 64 608
-:matt/earth/Goal.G: 496 448
 :matt/earth/Goal.G: 64 288
+:matt/earth/Goal.G: 496 448
+:matt/earth/Goal.G: 64 608
 
 :geoo/steel/dark_48x32o.S: 0 32
 :geoo/steel/dark_48x32o.S: 48 32

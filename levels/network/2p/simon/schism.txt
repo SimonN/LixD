@@ -1,0 +1,104 @@
+$BUILT 2018-02-06 02:32:07
+$AUTHOR Simon
+$ENGLISH Schism
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 800
+#SIZE_Y 320
+
+#SECONDS 22
+#INITIAL 44
+#SPAWN_INTERVAL 22
+
+#WALKER 22
+#EXPLODER2 22
+#BUILDER 44
+#PLATFORMER 22
+#BASHER 22
+#MINER 22
+#DIGGER 22
+#JUMPER 22
+#BATTER 22
+#CUBER 22
+
+:simon/hatch001.H: 64 32
+:simon/hatch001.H: 672 32 r
+:simon/hatch001.H: 80 232
+:simon/hatch001.H: 656 232 r
+
+:geoo/sandstone/Goal.G: 704 224
+:matt/marble/Goal.G: 32 240
+
+:matt/bricks/18: 704 208
+:matt/bricks/18: 656 192
+$BEGIN_TILE_GROUP 0
+:geoo/construction/pillar_long: 0 0
+:geoo/construction/pillar_long: 11 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:geoo/construction/pillar_long: 19 0
+:Group-0: 29 0
+:geoo/construction/pillar_long: 0 0 d
+:geoo/construction/pillar_long: 48 0 d
+$END_TILE_GROUP
+:Group-1: 80 208 f
+:geoo/construction/fence_32x32.S: 624 256
+:geoo/construction/fence_32x32.S: 624 224
+:geoo/construction/fence_32x32.S: 144 256
+:geoo/construction/fence_32x32.S: 144 224
+:geoo/sandstone/slopes/32x16rb: 688 216
+:geoo/sandstone/slopes/32x16lb: 656 216
+:geoo/construction/concrete/016hb: 80 216
+:geoo/construction/concrete/016ha: 112 216
+:matt/bricks/18: 704 176
+:matt/bricks/18: 656 176
+:matt/bricks/18: 656 224
+:matt/bricks/18: 608 224
+:Group-1: 176 232 f
+:Group-1: 176 244
+:Group-1: 128 272
+:Group-1: 128 152
+:Group-1: 80 144 f
+:geoo/construction/concrete/032va: 32 160
+:geoo/construction/concrete/032vb: 64 160
+:geoo/construction/concrete/032va: 80 80
+:geoo/construction/concrete/032vb: 112 80
+:Group-1: 32 232
+:matt/steel/32x32.S: 32 288
+:matt/steel/32x32.S: 64 288
+:matt/steel/32x32.S: 96 288
+:matt/steel/32x32.S: 128 288
+:matt/steel/32x32.S: 160 288
+:geoo/construction/concrete/008h: 80 224
+:geoo/construction/concrete/008h: 128 224
+:geoo/construction/concrete/008h: 80 144
+:geoo/construction/concrete/008h: 128 144
+:geoo/construction/concrete/008h: 32 224
+:geoo/construction/concrete/008h: 176 224
+:geoo/sandstone/slopes/32x64lb: 640 160
+:geoo/sandstone/slopes/32x64rb: 608 160
+:geoo/sandstone/slopes/32x64lb: 688 80
+:geoo/sandstone/slopes/32x64rb: 656 80
+:geoo/sandstone/slopes/32x64lb: 736 160
+:matt/bricks/18: 608 256
+:matt/bricks/18: 656 256
+:matt/bricks/18: 704 256
+:matt/bricks/18: 752 256
+:matt/bricks/18: 704 224
+:matt/bricks/18: 752 224
+:matt/bricks/18: 656 144
+:geoo/sandstone/slopes/32x64rb: 704 160
+:matt/bricks/18: 704 144
+:geoo/sandstone/16x8: 608 224
+:geoo/sandstone/16x8: 656 224
+:geoo/sandstone/16x8: 704 224
+:geoo/sandstone/16x8: 752 224
+:geoo/sandstone/16x8: 656 144
+:geoo/sandstone/16x8: 704 144
+:geoo/construction/concrete/032va: 128 160
+:geoo/construction/concrete/032vb: 160 160
+:geoo/steel/dark_32x32o.S: 608 288
+:geoo/steel/dark_32x32o.S: 640 288
+:geoo/steel/dark_32x32o.S: 672 288
+:geoo/steel/dark_32x32o.S: 704 288
+:geoo/steel/dark_32x32o.S: 736 288
