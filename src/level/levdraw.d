@@ -69,7 +69,11 @@ package Torbit implCreatePreview(
     // Render the gadgets, then the terrain, using a temporary bitmap.
     // If the level has torus, the following temporary torbit need torus, too
     {
-        Torbit temp = new Torbit(Torbit.Cfg(level.topology));
+        Torbit temp = () {
+            Torbit.Cfg cfg = Torbit.Cfg(level.topology);
+            cfg.smoothlyScalable = true;
+            return new Torbit(cfg);
+        }();
         scope (exit)
             destroy(temp);
         auto target = TargetTorbit(temp);
