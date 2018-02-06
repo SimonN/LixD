@@ -106,10 +106,15 @@ private void load_from_vector(Level level, in IoLine[] lines) { with (level)
 
     // new tile for the level
     case ':':
-        addFromLine(level,
+        Occurrence occ = addFromLine(level,
             // in case of TerOcc: Where to add the tile? All Gadgets -> level.
             groupName == "" ? &level.terrain : &groupElements,
             resolveTileName(groupsRead, text1), Point(nr1, nr2), text2);
+        if (occ is null && ! text1.startsWith(glo.levelUseGroup)
+            && ! _missingTiles.canFind(text1)
+        ) {
+            _missingTiles ~= text1;
+        }
         break;
 
     default:

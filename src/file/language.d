@@ -57,9 +57,11 @@ enum Lang {
 
     browserInfoAuthor,
     browserInfoInitgoal,
-
     browserInfoResultSaved,
     browserInfoResultSkills,
+
+    previewMissingTiles,
+    previewMissingTilesMoreSee,
 
     winSearchTitle,
     winSearchPrompt,

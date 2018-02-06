@@ -30,6 +30,9 @@ $browserInfoInitgoal Ziel:
 $browserInfoResultSaved Gerettet:
 $browserInfoResultSkills Fähigkeiten:
 
+$previewMissingTiles fehlende Stücke:
+$previewMissingTilesMoreSee weitere, siehe
+
 $winSearchTitle Levelsuche
 $winSearchPrompt Suche nach Leveltiteln oder Dateinamen:
 $winVerifyTitle Replay-Verifizierer

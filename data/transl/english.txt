@@ -34,6 +34,14 @@ $browserInfoInitgoal Save:
 $browserInfoResultSaved Saved:
 $browserInfoResultSkills Skills:
 
+// Report missing tiles in the preview. Example rendering:
+// 5 missing tiles:
+// (name of first tile)
+// (name of second tile)
+// 3 more, see `./data/log.txt'
+$previewMissingTiles missing tiles:
+$previewMissingTilesMoreSee more, see
+
 $winSearchTitle Level Search
 $winSearchPrompt Search for level titles or filenames:
 $winVerifyTitle Replay Verifier

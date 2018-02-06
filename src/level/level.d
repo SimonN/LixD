@@ -71,6 +71,7 @@ public:
                                    // indexed by ints, not by GadType enum vals
 package:
     LevelStatus _status;
+    immutable(string)[] _missingTiles;
 
 public:
     this()
@@ -99,9 +100,10 @@ public:
 
     @property const nothrow @nogc @safe {
         string name() { return nameEnglish == "" ? nameGerman : nameEnglish; }
+        immutable(string)[] missingTiles() { return _missingTiles; }
         LevelStatus status() { return _status; }
-        bool        good()   { return _status == LevelStatus.GOOD;}
-        bool        nonempty()
+        bool good() { return _status == LevelStatus.GOOD;}
+        bool nonempty()
         {
             return _status != LevelStatus.BAD_FILE_NOT_FOUND
                 && _status != LevelStatus.BAD_EMPTY;
