@@ -1,7 +1,7 @@
 How to build Lix on a Windows machine
 =====================================
 
-This is hard. If you get stuck at any point, don't hesitate to contact me
+If you get stuck at any point, don't hesitate to contact me
 (Simon N.) and ask me for help:
 
     IRC:    irc.quakenet.org #lix
