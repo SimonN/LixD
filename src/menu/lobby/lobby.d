@@ -121,14 +121,19 @@ public:
             addChild(e);
 
         if (aRichClient) {
-            _netClient = aRichClient;
-            _netClient.console = _console;
-            setOurEventHandlers();
-            _preview.level = _netClient.level;
-            _chat.text = _netClient.unsentChat;
-            _netClient.unsentChat = "";
-            _chat.on = _chat.text != "";
-            refreshPeerList();
+            aRichClient.console = _console;
+            // Game's RichClient will always return to use here, usually still
+            // connected. Sometimes, the connection dropped, then we get an
+            // unconnected RichClient -- we don't want this in _netClient.
+            if (aRichClient.connected) {
+                _netClient = aRichClient;
+                setOurEventHandlers();
+                _preview.level = _netClient.level;
+                _chat.text = _netClient.unsentChat;
+                _netClient.unsentChat = "";
+                _chat.on = _chat.text != "";
+                refreshPeerList();
+            }
         }
         showOrHideGuiBasedOnConnection();
     }

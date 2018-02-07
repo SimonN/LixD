@@ -39,7 +39,8 @@ implGameCalc(Game game) { with (game)
             if (view.printResultToConsole)
                 _chatArea.printScores(nurse.scores,
                     nurse.constReplay, localStyle);
-            if (view.showModalWindowAfterGame)
+            // Losing connection directly sets _gotoMainMenu, don't show window
+            if (! _gotoMainMenu && view.showModalWindowAfterGame)
                 game.createModalWindow;
             else
                 _gotoMainMenu = true;
@@ -52,7 +53,7 @@ isFinished(const(Game) game) { with (game)
 {
     assert (nurse);
     assert (_effect);
-    return nurse.doneAnimating() && _effect.nothingGoingOn;
+    return ! _gotoMainMenu && nurse.doneAnimating() && _effect.nothingGoingOn;
 }}
 
 private void

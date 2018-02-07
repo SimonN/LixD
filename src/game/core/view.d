@@ -21,7 +21,7 @@ enum View {
 View createView(in int numPlayers, in INetClient netClient) pure
 {
     assert (numPlayers > 0);
-    if (netClient) {
+    if (netClient && netClient.connected) {
         return netClient.ourProfile.feeling == Profile.Feeling.observing
             ? View.observeBattle : View.battle;
     }

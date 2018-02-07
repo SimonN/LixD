@@ -92,7 +92,7 @@ private:
     Phyu _setLastPhyuToNowLastCalled = Phyu(-1);
 
 public:
-    @property bool gotoMainMenu()         { return _gotoMainMenu; }
+    @property bool gotoMainMenu() { return _gotoMainMenu; }
 
     enum phyusPerSecond     = 15;
     enum ticksNormalSpeed   = ticksPerSecond / phyusPerSecond;
@@ -125,6 +125,11 @@ public:
 
         level = client.level;
         _netClient = client;
+        _netClient.onConnectionLost = ()
+        {
+            // Maybe too drastic? Lobby will catch us
+            this._gotoMainMenu = true;
+        };
         _netClient.onPeerSendsReplayData = (ReplayData data)
         {
             this.undispatchedAssignments ~= data;
@@ -172,7 +177,7 @@ public:
 
         if (_chatArea)
             _chatArea.saveUnsentMessageAndDispose();
-        // Null all our event handlers. Maybe refactor to observer pattern?
+        ret.onConnectionLost = null;
         ret.onPeerSendsReplayData = null;
         ret.onMillisecondsSinceGameStart = null;
         return ret;
