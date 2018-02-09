@@ -1,4 +1,4 @@
-$BUILT 2017-08-10 16:32:08
+$BUILT 2018-02-15 23:51:27
 $AUTHOR Rubix
 $ENGLISH Postcards arrived, colorized.
 
@@ -7,9 +7,7 @@ $HINT_ENGLISH Take a break, clear your head and try again later.   This for some
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1982
-#SIZE_Y 400
-#START_X 258
-#START_Y 380
+#SIZE_Y 336
 #BACKGROUND_RED 16
 #BACKGROUND_GREEN 95
 #BACKGROUND_BLUE 112
@@ -24,184 +22,182 @@ $HINT_ENGLISH Take a break, clear your head and try again later.   This for some
 #BLOCKER 6
 #DIGGER 5
 
-:matt/carnival/Hatch.H: 368 250
+:matt/carnival/Hatch.H: 368 186
 
-:matt/carnival/Goal.G: 1488 208
+:matt/carnival/Goal.G: 1488 144
 
-:matt/water.W: 1680 352
-:matt/water.W: 1712 352
-:matt/water.W: 256 352
-:matt/water.W: 288 352
-:matt/water.W: 1680 368
-:matt/water.W: 1712 368
-:matt/water.W: 256 368
-:matt/water.W: 288 368
-:matt/water.W: 128 352
-:matt/water.W: 160 352
-:matt/water.W: 192 352
-:matt/water.W: 224 352
-:matt/water.W: 128 368
-:matt/water.W: 160 368
-:matt/water.W: 192 368
-:matt/water.W: 224 368
-:matt/water.W: 1744 352
-:matt/water.W: 1776 352
-:matt/water.W: 1744 368
-:matt/water.W: 1776 368
-:matt/water.W: 1808 352
-:matt/water.W: 1840 352
-:matt/water.W: 1808 368
-:matt/water.W: 1840 368
+:matt/water.W: 1680 288
+:matt/water.W: 1712 288
+:matt/water.W: 256 288
+:matt/water.W: 288 288
+:matt/water.W: 1680 304
+:matt/water.W: 1712 304
+:matt/water.W: 256 304
+:matt/water.W: 288 304
+:matt/water.W: 128 288
+:matt/water.W: 160 288
+:matt/water.W: 192 288
+:matt/water.W: 224 288
+:matt/water.W: 128 304
+:matt/water.W: 160 304
+:matt/water.W: 192 304
+:matt/water.W: 224 304
+:matt/water.W: 1744 288
+:matt/water.W: 1776 288
+:matt/water.W: 1744 304
+:matt/water.W: 1776 304
+:matt/water.W: 1808 288
+:matt/water.W: 1840 288
+:matt/water.W: 1808 304
+:matt/water.W: 1840 304
 
-:matt/carnival/25: 1920 316
-:matt/carnival/25: 0 316
+:matt/carnival/25: 1920 252
+:matt/carnival/25: 0 252
 :matt/carnival/06: 1654 16
 :matt/carnival/06: 312 16
-:matt/carnival/10: 1302 304 rrrd
-:matt/carnival/10: 1302 272 rd
-:matt/carnival/02: 1334 272
-:matt/carnival/00: 1334 304
-:matt/carnival/02: 1366 272
-:matt/carnival/00: 1366 304
-:matt/carnival/02: 1238 272
-:matt/carnival/00: 1238 304
-:matt/carnival/02: 1270 272
-:matt/carnival/00: 1270 304
-:matt/carnival/02: 1174 272
-:matt/carnival/00: 1174 304
-:matt/carnival/02: 1206 272
-:matt/carnival/00: 1206 304
-:matt/carnival/02: 1110 272
-:matt/carnival/00: 1110 304
-:matt/carnival/02: 1142 272
-:matt/carnival/00: 1142 304
-:matt/carnival/02: 1526 272
-:matt/carnival/00: 1526 304
-:matt/carnival/02: 1558 272
-:matt/carnival/00: 1558 304
-:matt/carnival/02: 1462 272
-:matt/carnival/00: 1462 304
-:matt/carnival/02: 1494 272
-:matt/carnival/00: 1494 304
-:matt/carnival/02: 1398 272
-:matt/carnival/00: 1398 304
-:matt/carnival/02: 1430 272
-:matt/carnival/00: 1430 304
-:matt/carnival/02: 1590 272
-:matt/carnival/00: 1590 304
-:matt/carnival/02: 1622 272
-:matt/carnival/00: 1622 304
-:matt/carnival/00: 1334 336
-:matt/carnival/00: 1366 336
-:matt/carnival/00: 1526 336
-:matt/carnival/00: 1558 336
-:matt/carnival/00: 1462 336
-:matt/carnival/00: 1494 336
-:matt/carnival/00: 1398 336
-:matt/carnival/00: 1430 336
-:matt/carnival/00: 1590 336
-:matt/carnival/00: 1622 336
-:matt/carnival/02: 1334 368
-:matt/carnival/02: 1366 368
-:matt/carnival/02: 1526 368
-:matt/carnival/02: 1558 368
-:matt/carnival/02: 1462 368
-:matt/carnival/02: 1494 368
-:matt/carnival/02: 1398 368
-:matt/carnival/02: 1430 368
-:matt/carnival/02: 1590 368
-:matt/carnival/02: 1622 368
-:matt/carnival/00: 1110 336
-:matt/carnival/00: 1142 336
-:matt/carnival/00: 1238 336
-:matt/carnival/00: 1270 336
-:matt/carnival/00: 1174 336
-:matt/carnival/00: 1206 336
-:matt/carnival/02: 1110 368
-:matt/carnival/02: 1142 368
-:matt/carnival/02: 1238 368
-:matt/carnival/02: 1270 368
-:matt/carnival/02: 1174 368
-:matt/carnival/02: 1206 368
-:matt/carnival/00: 1302 336
-:matt/carnival/02: 1302 368
-:matt/carnival/00: 824 336
-:matt/carnival/00: 856 336
-:matt/carnival/00: 1016 336
-:matt/carnival/00: 1048 336
-:matt/carnival/00: 952 336
-:matt/carnival/00: 984 336
-:matt/carnival/00: 888 336
-:matt/carnival/00: 920 336
-:matt/carnival/00: 1080 336
-:matt/carnival/02: 824 368
-:matt/carnival/02: 856 368
-:matt/carnival/02: 1016 368
-:matt/carnival/02: 1048 368
-:matt/carnival/02: 952 368
-:matt/carnival/02: 984 368
-:matt/carnival/02: 888 368
-:matt/carnival/02: 920 368
-:matt/carnival/02: 1080 368
-:matt/carnival/00: 600 336
-:matt/carnival/00: 632 336
-:matt/carnival/00: 728 336
-:matt/carnival/00: 760 336
-:matt/carnival/00: 664 336
-:matt/carnival/00: 696 336
-:matt/carnival/02: 600 368
-:matt/carnival/02: 632 368
-:matt/carnival/02: 728 368
-:matt/carnival/02: 760 368
-:matt/carnival/02: 664 368
-:matt/carnival/02: 696 368
-:matt/carnival/00: 792 336
-:matt/carnival/02: 792 368
-:matt/carnival/00: 536 336
-:matt/carnival/00: 568 336
-:matt/carnival/02: 536 368
-:matt/carnival/02: 568 368
-:matt/carnival/00: 312 336
-:matt/carnival/00: 344 336
-:matt/carnival/00: 440 336
-:matt/carnival/00: 472 336
-:matt/carnival/00: 376 336
-:matt/carnival/00: 408 336
-:matt/carnival/02: 312 368
-:matt/carnival/02: 344 368
-:matt/carnival/02: 440 368
-:matt/carnival/02: 472 368
-:matt/carnival/02: 376 368
-:matt/carnival/02: 408 368
-:matt/carnival/00: 504 336
-:matt/carnival/02: 504 368
-:matt/carnival/02: 790 304
-:matt/carnival/02: 790 282 d
-:matt/carnival/02: 822 304
-:matt/carnival/02: 822 282 d
-:matt/carnival/02: 854 304
-:matt/carnival/02: 854 282 d
-:matt/carnival/02: 886 304
-:matt/carnival/02: 886 282 d
-:matt/carnival/02: 918 304
-:matt/carnival/02: 918 282 d
-:matt/carnival/02: 950 304
-:matt/carnival/02: 950 282 d
-:matt/carnival/02: 982 304
-:matt/carnival/02: 982 282 d
-:matt/carnival/02: 1014 304
-:matt/carnival/02: 1046 304
-:matt/carnival/02: 1046 282 d
-:matt/carnival/02: 1046 283
-:matt/carnival/02: 1046 262 d
-:matt/carnival/02: 1078 304
-:matt/carnival/02: 1078 282 d
-:matt/carnival/02: 1078 283
-:matt/carnival/04: 1654 336
+:matt/carnival/10: 1302 240 rrrd
+:matt/carnival/10: 1302 208 rd
+:matt/carnival/02: 1334 208
+:matt/carnival/00: 1334 240
+:matt/carnival/02: 1366 208
+:matt/carnival/00: 1366 240
+:matt/carnival/02: 1238 208
+:matt/carnival/00: 1238 240
+:matt/carnival/02: 1270 208
+:matt/carnival/00: 1270 240
+:matt/carnival/02: 1174 208
+:matt/carnival/00: 1174 240
+:matt/carnival/02: 1206 208
+:matt/carnival/00: 1206 240
+:matt/carnival/02: 1110 208
+:matt/carnival/00: 1110 240
+:matt/carnival/02: 1142 208
+:matt/carnival/00: 1142 240
+:matt/carnival/02: 1526 208
+:matt/carnival/00: 1526 240
+:matt/carnival/02: 1558 208
+:matt/carnival/00: 1558 240
+:matt/carnival/02: 1462 208
+:matt/carnival/00: 1462 240
+:matt/carnival/02: 1494 208
+:matt/carnival/00: 1494 240
+:matt/carnival/02: 1398 208
+:matt/carnival/00: 1398 240
+:matt/carnival/02: 1430 208
+:matt/carnival/00: 1430 240
+:matt/carnival/02: 1590 208
+:matt/carnival/00: 1590 240
+:matt/carnival/02: 1622 208
+:matt/carnival/00: 1622 240
+:matt/carnival/00: 1334 272
+:matt/carnival/00: 1366 272
+:matt/carnival/00: 1526 272
+:matt/carnival/00: 1558 272
+:matt/carnival/00: 1462 272
+:matt/carnival/00: 1494 272
+:matt/carnival/00: 1398 272
+:matt/carnival/00: 1430 272
+:matt/carnival/00: 1590 272
+:matt/carnival/00: 1622 272
+:matt/carnival/02: 1334 304
+:matt/carnival/02: 1366 304
+:matt/carnival/02: 1526 304
+:matt/carnival/02: 1558 304
+:matt/carnival/02: 1462 304
+:matt/carnival/02: 1494 304
+:matt/carnival/02: 1398 304
+:matt/carnival/02: 1430 304
+:matt/carnival/02: 1590 304
+:matt/carnival/02: 1622 304
+:matt/carnival/00: 1110 272
+:matt/carnival/00: 1142 272
+:matt/carnival/00: 1238 272
+:matt/carnival/00: 1270 272
+:matt/carnival/00: 1174 272
+:matt/carnival/00: 1206 272
+:matt/carnival/02: 1110 304
+:matt/carnival/02: 1142 304
+:matt/carnival/02: 1238 304
+:matt/carnival/02: 1270 304
+:matt/carnival/02: 1174 304
+:matt/carnival/02: 1206 304
+:matt/carnival/00: 1302 272
+:matt/carnival/02: 1302 304
+:matt/carnival/00: 824 272
+:matt/carnival/00: 856 272
+:matt/carnival/00: 1016 272
+:matt/carnival/00: 1048 272
+:matt/carnival/00: 952 272
+:matt/carnival/00: 984 272
+:matt/carnival/00: 888 272
+:matt/carnival/00: 920 272
+:matt/carnival/00: 1080 272
+:matt/carnival/02: 824 304
+:matt/carnival/02: 856 304
+:matt/carnival/02: 1016 304
+:matt/carnival/02: 1048 304
+:matt/carnival/02: 952 304
+:matt/carnival/02: 984 304
+:matt/carnival/02: 888 304
+:matt/carnival/02: 920 304
+:matt/carnival/02: 1080 304
+:matt/carnival/00: 600 272
+:matt/carnival/00: 632 272
+:matt/carnival/00: 728 272
+:matt/carnival/00: 760 272
+:matt/carnival/00: 664 272
+:matt/carnival/00: 696 272
+:matt/carnival/02: 600 304
+:matt/carnival/02: 632 304
+:matt/carnival/02: 728 304
+:matt/carnival/02: 760 304
+:matt/carnival/02: 664 304
+:matt/carnival/02: 696 304
+:matt/carnival/00: 792 272
+:matt/carnival/02: 792 304
+:matt/carnival/00: 536 272
+:matt/carnival/00: 568 272
+:matt/carnival/02: 536 304
+:matt/carnival/02: 568 304
+:matt/carnival/00: 312 272
+:matt/carnival/00: 344 272
+:matt/carnival/00: 440 272
+:matt/carnival/00: 472 272
+:matt/carnival/00: 376 272
+:matt/carnival/00: 408 272
+:matt/carnival/02: 312 304
+:matt/carnival/02: 344 304
+:matt/carnival/02: 440 304
+:matt/carnival/02: 472 304
+:matt/carnival/02: 376 304
+:matt/carnival/02: 408 304
+:matt/carnival/00: 504 272
+:matt/carnival/02: 504 304
+:matt/carnival/02: 790 240
+:matt/carnival/02: 790 218 d
+:matt/carnival/02: 822 240
+:matt/carnival/02: 822 218 d
+:matt/carnival/02: 854 240
+:matt/carnival/02: 854 218 d
+:matt/carnival/02: 886 240
+:matt/carnival/02: 886 218 d
+:matt/carnival/02: 918 240
+:matt/carnival/02: 918 218 d
+:matt/carnival/02: 950 240
+:matt/carnival/02: 950 218 d
+:matt/carnival/02: 982 240
+:matt/carnival/02: 982 218 d
+:matt/carnival/02: 1014 240
+:matt/carnival/02: 1046 240
+:matt/carnival/02: 1046 218 d
+:matt/carnival/02: 1046 219
+:matt/carnival/02: 1046 198 d
+:matt/carnival/02: 1078 240
+:matt/carnival/02: 1078 218 d
+:matt/carnival/02: 1078 219
 :matt/carnival/04: 1654 272
 :matt/carnival/04: 1654 208
 :matt/carnival/04: 1654 144
-:matt/carnival/04: 312 272
 :matt/carnival/04: 312 208
 :matt/carnival/04: 312 144
 :matt/carnival/32: 1672 12
@@ -243,11 +239,11 @@ $HINT_ENGLISH Take a break, clear your head and try again later.   This for some
 :matt/carnival/32: 264 12 frr
 :matt/carnival/04: 1654 80
 :matt/carnival/04: 312 80
-:matt/carnival/27: 1920 348
-:matt/carnival/25: 1856 348
-:matt/carnival/27: 0 348
-:matt/carnival/25: 64 348
-:matt/carnival/34: 64 316
-:matt/carnival/35: 1856 316 f
-:matt/carnival/38: 1920 284 frr
-:matt/carnival/38: 0 284
+:matt/carnival/27: 1920 284
+:matt/carnival/25: 1856 284
+:matt/carnival/27: 0 284
+:matt/carnival/25: 64 284
+:matt/carnival/34: 64 252
+:matt/carnival/35: 1856 252 f
+:matt/carnival/38: 1920 220 frr
+:matt/carnival/38: 0 220

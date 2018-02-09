@@ -1,34 +1,22 @@
-$BUILT 2012-05-18 16:14:21
+$BUILT 2018-02-10 02:06:27
 $AUTHOR Michael S. Repton
-$GERMAN 
 $ENGLISH This Lix is Your Lix
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1600
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 0
-#START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #INITIAL 2
 #REQUIRED 2
 #SPAWN_INTERVAL 4
 
-#NOTHING 0
-#NOTHING 0
 #WALKER 4
-#JUMPER 4
 #BUILDER 4
 #PLATFORMER 3
 #BASHER 2
 #MINER 1
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#JUMPER 4
+#EXPLODER2 0
 
 :matt/marble/Hatch.H: 64 192
 :matt/marble/Hatch.H: 1440 80
@@ -55,6 +43,7 @@ $ENGLISH This Lix is Your Lix
 :simon/water.W: 1296 352
 :simon/water.W: 1344 352
 :simon/water.W: 1392 352
+:geoo/construction/sawblade.F: 1068 156
 
 :proxima/tile/pink1a: 304 200
 :proxima/tile/pink5: 288 208
