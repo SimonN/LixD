@@ -92,30 +92,37 @@ Method 2:
 
         implib /s allegro_xyz.lib allegro_xyz-5.2.dll
 
-    Instead of calling implib for each file by hand, you could write a Windows
-    batch file that calls implib for each DLL. Here's SiegeLord's batch file:
-    https://github.com/SiegeLord/DAllegro5/blob/master/create_import_libs.bat
-
     Put the resulting .lib files in the D installation's lib/ dir. Remove the
     version number, e.g., `-5.2', from Allegro's .lib files in lib/. Do not
     remove the version number from the DLL files, and keep those in bin/.
 
     If it's not clear, ask me. See top of file for contact details.
 
+    Instead of calling implib for each file by hand, you could write a Windows
+    batch file that calls implib for each DLL. Here's SiegeLord's batch file:
+    https://github.com/SiegeLord/DAllegro5/blob/master/create_import_libs.bat
+    -- but take care: This script assumes that your abolsute path contains
+    neither spaces ` ' nor hyphens `-'; otherwise, the script will write all
+    .lib files to the same wrongly-named file in a parent directory. See issue
+    on github: https://github.com/SiegeLord/DAllegro5/issues/43
+
 
 
 Install enet
 ------------
 
-I don't remember anything for this. Look at the enet section of
-`./doc/build/linux.txt' and guess what you must do in Windows.
+Method 1:
+    If you extracted the `alleg-5.2-dlls-libs.zip' to which I pointed in the
+    earlier section on installing Allegro, Option 1, you already have the
+    enet DLL in the correct place, and don't have to do anything here.
 
-Most likely, you don't have to do anything now. The DLL is already bundled
-with the download of alleg-5.2-dlls-libs.zip to which I pointed in the
-earlier secton on installing Allegro, Option 1.
+Method 2:
+    Again, if you don't trust me, feel free to find an enet DLL of version
+    1.3.x on the internet or build one yourself from enet's source. :-)
+    Put enet.dll in the D installation directory's `windows/bin/'.
 
-If anything goes wrong, the game will terminate when you click
-"Networking mode" from the main menu, then "Connect to central server".
+In a pinch, Lix singleplayer works without the enet DLL, but Lix will
+terminate with an error once you try to connect to a networking server.
 
 
 
