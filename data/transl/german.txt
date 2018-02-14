@@ -81,8 +81,24 @@ $gameFramestepBack %s für Schritt zurück, %s für Sprung zurück.
 $gameFramestepAhead %s für Schritt vorwärts, %s für Sprung vorwärts.
 $gameFastForward %s für schnellen Vorlauf, %s für Turbo.
 $gameRestart Level neu starten.
-$gameNuke Atombombe. Doppelklicke zum Aktivieren.
+$gameNuke Atombombe. Aktiviere per Doppelklick.
 $gameClearPhysics Fallhöhen-Lineal anzeigen, Ziele hervorheben.
+
+$skillTooltip walker|Walker. Dreht um, beendet Blocker.
+$skillTooltip jumper|Jumper. Runner springen weiter.
+$skillTooltip climber|Climber. Klettert alle Wände hoch.
+$skillTooltip floater|Floater. Überlebt jede Fallhöhe.
+$skillTooltip runner|Runner. Läuft doppelt so schnell.
+$skillTooltip exploder|Imploder. Zerstört Erde, beendet Blocker.
+$skillTooltip exploder2|Exploder. Schleudert andere Lix.
+$skillTooltip blocker|Blocker. Dreht andere Lix um.
+$skillTooltip batter|Batter. Schleudert andere Lix.
+$skillTooltip cuber|Cuber. Verwandelt sich in Erde.
+$skillTooltip builder|Builder. Baut diagonale Treppen.
+$skillTooltip platformer|Platformer. Baut horizontale Brücken.
+$skillTooltip basher|Basher. Bohrt horizontale Tunnel.
+$skillTooltip miner|Miner. Hackt diagonale Tunnel.
+$skillTooltip digger|Digger. Gräbt vertikale Löcher.
 
 $editorHotkey Hotkey:
 $editorBarAt an

@@ -93,6 +93,22 @@ $gameRestart Restart level.
 $gameNuke Nuke. Double-click to activate.
 $gameClearPhysics Show splat ruler, hatches, goals.
 
+$skillTooltip walker|Walk back or cancel blockers.
+$skillTooltip jumper|Jump once. Runners jump further.
+$skillTooltip climber|Climb all vertical walls.
+$skillTooltip floater|Float to survive all falls.
+$skillTooltip runner|Run faster than walkers.
+$skillTooltip exploder|Implode to destroy earth/cancel blockers.
+$skillTooltip exploder2|Explode to fling other lix.
+$skillTooltip blocker|Block other lix, turning them.
+$skillTooltip batter|Bat other lix, flinging them.
+$skillTooltip cuber|Cube to generate earth quickly.
+$skillTooltip builder|Build a diagonal staircase.
+$skillTooltip platformer|Platform a horizontal bridge.
+$skillTooltip basher|Bash a horizontal tunnel.
+$skillTooltip miner|Mine a diagonal tunnel.
+$skillTooltip digger|Dig a vertical hole.
+
 // main editor screen
 $editorHotkey Hotkey:
 $editorBarAt at

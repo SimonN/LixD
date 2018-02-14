@@ -225,9 +225,16 @@ private:
 
     void suggestTooltips()
     {
+        if (_trbs && _trbs.anyTooltipSuggested)
+            suggestTooltip(_trbs.tooltipSuggested);
+        if (_ssbs && _ssbs.anyTooltipSuggested)
+            suggestTooltip(_ssbs.tooltipSuggested);
         if (nuke.isMouseHere)
+            // can be the same button that TapeRecorderButtons has reported
             suggestTooltip(Tooltip.ID.nuke);
         if (_coolShades && _coolShades.isMouseHere)
             suggestTooltip(Tooltip.ID.coolShades);
+        foreach (sk; _skills.filter!(sk => sk.isMouseHere).takeOne)
+            stats.suggestTooltip(sk.skill);
     }
 }

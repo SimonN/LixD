@@ -6,25 +6,46 @@ module file.language;
  *  string transl(Lang)
  *      translate the ID
  *
- *  string dsecr(Lang)
+ *  string descr(Lang)
  *      give a translated longer `|'-linebroken description for the options
+ *
+ *  string skillTooltip(Ac)
+ *      give the skill tooltip if defined or empty string
  *
  *  void loadUserLanguageAndIfNotExistSetUserOptionToEnglish()
  *      Should be used by loading the user file, or by the options dialogue.
  *      Both of these write to the user file anyway.
  */
 
+import enumap;
+
 import std.array;
-import std.algorithm : splitter;
-import std.conv; // (enum constant) <-> (string of its variable name)
-                 // This is done by to!Lang or to!string. This capability
-                 // for D enums is awesome, the entire module is built on it
+import std.algorithm;
+import std.conv; // (enum constant) --to!Lang--> (string of its variable name)
 
 import basics.globals; // fileLanguageEnglish
-import basics.user;    // fileLanguage, which file does the user want
+import basics.user; // fileLanguage, which file does the user want
 import file.io;
 import file.log;
 import file.filename;
+import net.ac;
+
+string transl(in Lang key) { return _lang[key].transl; }
+string[] descr(in Lang key) { return _lang[key].descr; }
+string skillTooltip(in Ac ac) { return _skillTooltips[ac]; }
+
+void loadUserLanguageAndIfNotExistSetUserOptionToEnglish()
+{
+    _fnWrittenToLog = false;
+    IoLine[] lines = readFileUserLanguageOrNullArray();
+    foreach (line; lines.filter!(l => l.type == '$')) {
+        if (line.text1 == skillTooltipKeyword)
+            parseSkillTooltip(line.text2);
+        else
+            parseTranslation(line.text1, line.text2);
+    }
+    warnAboutUndefinedLanguageIds();
+}
 
 enum Lang {
     // fundamental things
@@ -357,95 +378,92 @@ enum Lang {
     MAX
 }
 
+/////////////////////////////////////////////////////////////////////// private
 
-
-// translated strings of currently loaded language
 private:
+    enum string skillTooltipKeyword = "skillTooltip";
 
-struct Transl {
-    string transl;
-    string[] descr;
-}
-Transl[Lang.MAX] _lang;
-
-public:
-
-string transl(in Lang key) { return _lang[key].transl; }
-string[] descr(in Lang key) { return _lang[key].descr; }
-
-
-
-public void
-loadUserLanguageAndIfNotExistSetUserOptionToEnglish()
-{
-    IoLine[] lines;
-    try {
-        assert (fileLanguage !is null);
-        assert (fileLanguage.value !is null);
-        lines = fillVectorFromFile(fileLanguage);
+    // translated strings of currently loaded language
+    struct Transl {
+        string transl;
+        string[] descr;
     }
-    catch (Exception e) {
-        log(e.msg);
-        if (! languageIsEnglish) {
-            log("Falling back to English.");
-            fileLanguage = fileLanguageEnglish;
-            loadUserLanguageAndIfNotExistSetUserOptionToEnglish();
-            return;
-        }
-        else {
-            log("English language file not found. Broken installation?");
-            return;
-        }
-    }
-    // from here on, the user's language (fileLanguage) is not used anymore
+    Transl[Lang.MAX] _lang;
+    Enumap!(Ac, string) _skillTooltips;
 
-    bool[Lang.MAX] langIdsReadIn; // all false right now
-    bool fnWrittenToLog = false;
+    bool _fnWrittenToLog = false;
 
     void localLogf(T...)(string formatstr, T formatargs)
     {
-        if (! fnWrittenToLog) {
-            fnWrittenToLog = true;
+        if (! _fnWrittenToLog) {
+            _fnWrittenToLog = true;
             logf("While reading `%s':", fileLanguage.rootless);
         }
         logf("    -> " ~ formatstr, formatargs);
     }
 
-    foreach (line; lines) {
-        if (line.type != '$') continue;
+    IoLine[] readFileUserLanguageOrNullArray()
+    {
+        try {
+            assert (fileLanguage !is null);
+            assert (fileLanguage.value !is null);
+            return fillVectorFromFile(fileLanguage);
+        }
+        catch (Exception e) {
+            log(e.msg);
+            if (! languageIsEnglish) {
+                log("Falling back to English.");
+                fileLanguage = fileLanguageEnglish;
+                return readFileUserLanguageOrNullArray();
+            }
+            else {
+                log("English language file not found. Broken installation?");
+                return null;
+            }
+        }
+    }
 
-        // now come lines in the format $langId my translated unquoted string
+    void parseTranslation(in string key, in string translFromFile)
+    {
         Lang langId;
         try {
-            langId = to!Lang(line.text1);
+            langId = key.to!Lang;
         }
         catch (ConvException) {
-            localLogf("Unnecessary line: %s", line.text1);
-            continue;
+            localLogf("Unnecessary line: %s", key);
+            return;
         }
-        // now langId is a good index
-        auto range = line.text2.splitter('|');
-        if (range.empty) {
-            localLogf("Key without translation: %s", line.text1);
-            continue;
-        }
+        auto range = translFromFile.splitter('|');
+        if (range.empty)
+            return;
         _lang[langId].transl = range.front;
-        langIdsReadIn[langId] = true;
         range.popFront;
         if (range.empty)
-            continue;
+            return;
         _lang[langId].descr = range.array; // all remaining fields
     }
-    // end foreach line
 
-    // warn about undefined language IDs
-    foreach (int id; 0 .. Lang.MAX) {
-        if (! langIdsReadIn[id]) {
+    void parseSkillTooltip(in string acBarTooltip)
+    {
+        auto range = acBarTooltip.splitter('|');
+        if (range.empty)
+            return;
+        Ac ac = stringToAc(range.front);
+        if (ac == Ac.max) {
+            localLogf("Unknown skill: %s", range.front);
+            return;
+        }
+        range.popFront;
+        _skillTooltips[ac] = range.empty ? "" : range.front;
+    }
+
+    void warnAboutUndefinedLanguageIds()
+    {
+        foreach (int id; 0 .. Lang.MAX) {
+            if (_lang[id].transl.length > 0)
+                continue;
             string langIdStr = id.to!Lang.to!string;
             localLogf("New translation required: %s", langIdStr);
             _lang[id].transl = "!" ~ langIdStr ~ "!";
         }
     }
-    // end foreach for undefined IDs
-}
-// end function loadLanguageFile

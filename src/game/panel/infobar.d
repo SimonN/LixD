@@ -23,6 +23,9 @@ private:
     int _spawnInterval;
     int _targetDescNumber;
     int _tooltipsSuggested; // bitset, values are in enum Tooltip
+    Ac _skillTooltipSuggested; // Ac.nothing unless caller wants one this frame
+    static assert (Ac.init == Ac.nothing);
+
     Phyu _age;
     ConstLix _targetDescLixxie;
     Rebindable!(const(Tribe))  _tribe;
@@ -55,6 +58,14 @@ public:
             return;
         reqDraw();
         _tooltipsSuggested |= id;
+    }
+
+    void suggestTooltip(in Ac ac)
+    {
+        if (ac == _skillTooltipSuggested)
+            return;
+        reqDraw();
+        _skillTooltipSuggested = ac;
     }
 
     void dontShowSpawnInterval()
@@ -167,13 +178,17 @@ private:
     void formatTooltip()
     {
         string s;
-        if (basics.user.ingameTooltips.value)
+        if (basics.user.ingameTooltips.value) {
             s = Tooltip.format(_tooltipsSuggested);
+            if (s == "")
+                s = file.language.skillTooltip(_skillTooltipSuggested);
+        }
         if (basics.user.showFPS.value && s == "")
             s = format!"Phyu: %d   FPS: %d   VRAM: %d MB"(
                 _age, displayFps, vramAllocatedInMB);
         _tooltip.text = s;
         _tooltipsSuggested = 0;
+        _skillTooltipSuggested = Ac.nothing;
     }
 }
 

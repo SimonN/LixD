@@ -4,9 +4,12 @@ module game.panel.taperec;
  * during singleplayer: Pause, framestepping, nuke, ...
  */
 
+import std.algorithm;
+
 import basics.globals;
 import basics.user;
 import game.panel.nuke;
+import game.panel.tooltip;
 import graphic.internal;
 import gui;
 import hardware.keyset;
@@ -17,6 +20,7 @@ private:
     enum frameFast  = 4;
     enum frameTurbo = 5;
 
+    // All the buttons are non-null, always
     BitmapButton _restart, _pause;
     NukeButton _nuke;
     TwoTasksButton _zoom, _speedBack, _speedAhead, _speedFast;
@@ -73,6 +77,23 @@ public:
         bool framestepAheadOne()  { return _speedAhead.executeLeft; }
         bool framestepAheadMany() { return _speedAhead.executeRight; }
         bool nukeDoubleclicked()  { return _nuke.doubleclicked; }
+
+        bool anyTooltipSuggested()
+        {
+            return children.any!(ch => ch.isMouseHere);
+        }
+
+        Tooltip.ID tooltipSuggested()
+        in { assert (anyTooltipSuggested); }
+        body {
+            return _restart.isMouseHere ? Tooltip.ID.restart
+                : _pause.isMouseHere ? Tooltip.ID.pause
+                : _nuke.isMouseHere ? Tooltip.ID.nuke
+                : _zoom.isMouseHere ? Tooltip.ID.zoom
+                : _speedBack.isMouseHere ? Tooltip.ID.framestepBack
+                : _speedAhead.isMouseHere ? Tooltip.ID.framestepAhead
+                : Tooltip.ID.fastForward;
+        }
     }
 
     void setSpeedNormal() { setSpeedTo(1); }
@@ -142,8 +163,22 @@ public:
         showLoadState(false);
     }
 
-    @property bool saveState() const { return _saveState.execute; }
-    @property bool loadState() const { return _loadState.execute; }
+    @property const {
+        bool saveState() { return _saveState.execute; }
+        bool loadState() { return _loadState.execute; }
+
+        bool anyTooltipSuggested()
+        {
+            return children.any!(ch => ch.isMouseHere);
+        }
+
+        Tooltip.ID tooltipSuggested()
+        in { assert (anyTooltipSuggested); }
+        body {
+            return _saveState.isMouseHere ? Tooltip.ID.stateSave
+                : Tooltip.ID.stateLoad;
+        }
+    }
 
 protected:
     override void calcSelf()

@@ -59,7 +59,7 @@ struct Tooltip {
         try {
             string s = lang.transl;
             return formatWithButtons // see hardware.keynames for these
-                ? s.format("\u27BF" /+ lmb +/, "u27C1" /+ rmb +/)
+                ? s.format("\u27BF" /+ lmb +/, "\u27C1" /+ rmb +/)
                 : keyToHold ? s.format(keyToHold.nameShort) : s;
         }
         catch (Exception e) {
