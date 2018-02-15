@@ -25,7 +25,7 @@ enum Runmode {
 
 private void writeHelp()
 {
-    writeln(
+    write(
         "-h or -? or --help     print this help and exit\n",
         "-v or --version        print version and exit\n",
         "-w                     run windowed at 640x480\n",
@@ -35,7 +35,10 @@ private void writeHelp()
         "--image level.txt      export all given levels as images\n",
         "--verify replay.txt    verify all given replays for solvability\n",
         "--verify replaydir     verify all replays in all given directories\n",
-        "--coverage replaydir   like --verify, then print levels without proof"
+        "--coverage replaydir   like --verify, then print levels without proof\n",
+        "level.txt              play the given level\n",
+        "replay.txt             load the replay's level, watch the replay\n",
+        "level.txt replay.txt   load the given level, watch the given replay\n",
     );
 }
 
@@ -59,14 +62,17 @@ public:
 
     this(string[] args)
     {
-        if (args.empty) {
+        if (args.length < 2) {
             // argument 0 is the program name, loop over the extra ones only
             return;
         }
+        bool moreArgsAllowed = true;
         foreach (arg; args[1 .. $]) {
-            if (arg.startsWith("--"))
+            if (moreArgsAllowed && arg == "--")
+                moreArgsAllowed = false;
+            else if (moreArgsAllowed && arg.startsWith("--"))
                 parseDashDashArgument(arg);
-            else if (arg.startsWith("-"))
+            else if (moreArgsAllowed && arg.startsWith("-"))
                 // allow arguments chained like -nw
                 foreach (c; arg[1 .. $]) switch (c) {
                     case 'h': helpAndExit    = true; break;
@@ -144,8 +150,8 @@ public:
                         writeln("Error: `", fn.rootless,
                                 "' is a directory, not a level or replay.");
                     else
-                        writeln("Error: Level or replay `", fn.rootless,
-                                "' doesn't exist.");
+                        writeln("Error: Level or replay file `", fn.rootless,
+                                "' not found.");
         }
         writeln("Try -h or -? for help.");
     }
