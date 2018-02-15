@@ -58,11 +58,10 @@ void deinitialize()
 
 // ############################################################################
 
-@property long timerTicks() { return _timer ? al_get_timer_count(_timer) : 0; }
-@property int totalPixelsAllocated() { return _totalPixelsAllocated; }
-@property int vramAllocatedInMB()
-{
-    return _totalPixelsAllocated / 1024 * 4 / 1024; // 32-bit colors
+@property nothrow @nogc {
+    long timerTicks() { return _timer ? al_get_timer_count(_timer) : 0; }
+    int totalPixelsAllocated() { return _totalPixelsAllocated; }
+    int vramAllocatedInMB() { return _totalPixelsAllocated / 1024 * 4 / 1024; }
 }
 
 Albit albitCreate(in int xl, in int yl)

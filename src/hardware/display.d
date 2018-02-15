@@ -1,24 +1,25 @@
 module hardware.display;
 
+/*
+ * Switching the screen resolution: Look at basics.resol to do that from
+ * within the program. That deinitializes all bitmaps, then switches by
+ * calling hardware.display.setScreenMode, then reloads all bitmaps.
+ * Thus, all bitmaps are always tied to VRAM screens, otherwise they're slow.
+ */
+
 import std.array;
 import std.string;
+import std.exception;
 
+import basics.alleg5;
 import basics.cmdargs;
 import basics.help; // positive mod
-import basics.alleg5;
 import basics.globals; // nameOfTheGame
-import basics.user; // what windowed resolution does the user want
+import basics.user;
 import file.log;
 
 static import hardware.keyboard; // clear after changing resolution
 static import hardware.mouse; // untrap the mouse when we leave the display
-
-/* A module for setting a screen resolution.
- * Right now, if you switch the screen resolution after having created all
- * the bitmaps, they will be put into RAM, and subsequent drawing will be
- * extremely slow. Avoid switching the resolution at all costs, or implement
- * something to improve performance after the switch.
- */
 
 ALLEGRO_DISPLAY* display;
 
@@ -31,41 +32,31 @@ private:
 
 public:
 
-@property bool displayCloseWasClicked()
-{
-    return _displayCloseWasClicked;
-}
+@property @nogc nothrow {
+    bool displayCloseWasClicked() { return _displayCloseWasClicked; }
+    bool displayActive() { return _displayActive; }
+    int displayFps() { return _fpsArr.len; }
+    int displayXl()
+    {
+        assert(display, "display hasn't been created");
+        return al_get_display_width(display);
+    }
 
-@property bool displayActive()
-{
-    return _displayActive;
-}
+    int displayYl()
+    {
+        assert(display, "display hasn't been created");
+        return al_get_display_height(display);
+    }
 
-@property int displayFps()
-{
-    return _fpsArr.len;
-}
-
-@property int displayXl()
-{
-    assert(display, "display hasn't been created");
-    return al_get_display_width(display);
-}
-
-@property int displayYl()
-{
-    assert(display, "display hasn't been created");
-    return al_get_display_height(display);
-}
-
-@property DisplayTryMode currentMode()
-in { assert (display, "no current mode because no display exists"); }
-body {
-    DisplayTryMode ret;
-    ret.x = displayXl;
-    ret.y = displayYl;
-    ret.mode = flagsToScreenMode(al_get_display_flags(display));
-    return ret;
+    DisplayTryMode currentMode()
+    in { assert (display, "no current mode because no display exists"); }
+    body {
+        DisplayTryMode ret;
+        ret.x = displayXl;
+        ret.y = displayYl;
+        ret.mode = flagsToScreenMode(al_get_display_flags(display));
+        return ret;
+    }
 }
 
 void flip_display()
@@ -76,61 +67,17 @@ void flip_display()
 }
 
 // This is like initialize() of other modules.
-// For fullscreen, query the underlying desktop environment for resolution.
-// For winwoded, use the wanted resolution, or fall back to 640 x 480.
 void setScreenMode(in Cmdargs cmdargs)
 {
-    alias TryMode = DisplayTryMode;
-    // FIFO queue of screen modes to try
-    TryMode[] try_modes;
-
-    // first priority goes to using setScreenMode()'s arguments, if they exist
-    void addForcedMode(in ScreenMode mode)
-    {
-        try_modes ~= cmdargs.wantResolutionX > 0 && cmdargs.wantResolutionY > 0
-            ? TryMode(mode, cmdargs.wantResolutionX, cmdargs.wantResolutionY)
-            : TryMode(mode, 640, 480);
-    }
-    if (cmdargs.forceHardwareFullscreen)
-        addForcedMode(ScreenMode.hardwareFullscreen);
-    if (cmdargs.forceSoftwareFullscreen)
-        try_modes ~= TryMode(ScreenMode.hardwareFullscreen, 0, 0);
-    if (cmdargs.forceWindowed)
-        addForcedMode(ScreenMode.windowed);
-
-    // second priority goes to the normal fullscreen/windowed modes.
-    void addTryModes(in ScreenMode mode)
-    {
-        if (screenWindowedX.value > 0 && screenWindowedY.value > 0)
-            try_modes ~= TryMode(mode, screenWindowedX, screenWindowedY);
-        try_modes ~= TryMode(mode, 640, 480);
-    }
-    switch (basics.user.screenMode.value) {
-    case ScreenMode.windowed:
-        addTryModes(ScreenMode.windowed);
-        addTryModes(ScreenMode.softwareFullscreen);
-        addTryModes(ScreenMode.hardwareFullscreen);
-        break;
-    case ScreenMode.hardwareFullscreen:
-        addTryModes(ScreenMode.hardwareFullscreen);
-        addTryModes(ScreenMode.softwareFullscreen);
-        addTryModes(ScreenMode.windowed);
-        break;
-    default:
-        addTryModes(ScreenMode.softwareFullscreen);
-        addTryModes(ScreenMode.windowed);
-        addTryModes(ScreenMode.hardwareFullscreen);
-        break;
-    }
-
-    // now try the modes in the desired order
-    foreach (ref tryMode; try_modes) {
-        immutable int flags = al_get_new_display_flags()
-            & ~ ALLEGRO_WINDOWED
-            & ~ ALLEGRO_FULLSCREEN
-            & ~ ALLEGRO_FULLSCREEN_WINDOW;
-        al_set_new_display_flags(flags | screenModeToFlags(tryMode.mode));
+    immutable int flags = al_get_new_display_flags()
+        & ~ ALLEGRO_WINDOWED
+        & ~ ALLEGRO_FULLSCREEN
+        & ~ ALLEGRO_FULLSCREEN_WINDOW;
+    foreach (ref tryMode;
+        cmdArgModes(cmdargs) ~ userFileModes() ~ fallbackModes()
+    ) {
         deinitialize();
+        al_set_new_display_flags(flags | screenModeToFlags(tryMode.mode));
         display = al_create_display(tryMode.x, tryMode.y);
         if (display) {
             al_flip_display();
@@ -138,9 +85,9 @@ void setScreenMode(in Cmdargs cmdargs)
             break;
         }
     }
-
-    // cleaning up after the change, (re)instantiating the event queue
-    assert (display);
+    enforce(display, "Can't instantiate a display even though we want"
+        ~ " to run Lix in interactive mode. This is very strange; normally,"
+        ~ " at least a window of size 640x480 should have spawned.");
     _displayActive = true;
     al_set_window_title(display, nameOfTheGame.toStringz);
     loadIcon();
@@ -195,6 +142,53 @@ void calc()
 
 private:
 
+DisplayTryMode[] cmdArgModes(in Cmdargs args)
+{
+    immutable wantX = args.wantResolutionX > 0 ? args.wantResolutionX : 640;
+    immutable wantY = args.wantResolutionY > 0 ? args.wantResolutionY : 480;
+    typeof(return) ret;
+    if (args.forceHardwareFullscreen)
+        ret ~= DisplayTryMode(ScreenMode.hardwareFullscreen, wantX, wantY);
+    if (args.forceSoftwareFullscreen)
+        // Software fullscreen won't work (display won't be created by A5)
+        // if we want software fullscreen with dimensions 0x0. We have to
+        // pass arbitrary numbers > 0 here to entice A5 to use the desktop res.
+        // Thus, we may as well pass wantX, wantY.
+        ret ~= DisplayTryMode(ScreenMode.softwareFullscreen, wantX, wantY);
+    if (args.forceWindowed)
+        ret ~= DisplayTryMode(ScreenMode.windowed, wantX, wantY);
+    return ret;
+}
+
+DisplayTryMode[] userFileModes()
+{
+    immutable wantX = screenWindowedX.value > 0 ? screenWindowedX.value : 640;
+    immutable wantY = screenWindowedY.value > 0 ? screenWindowedY.value : 480;
+    typeof(return) ret;
+    switch (basics.user.screenMode.value) {
+    case ScreenMode.windowed:
+        ret ~= DisplayTryMode(ScreenMode.windowed, wantX, wantY);
+        ret ~= DisplayTryMode(ScreenMode.softwareFullscreen, wantX, wantY);
+        ret ~= DisplayTryMode(ScreenMode.hardwareFullscreen, wantX, wantY);
+        return ret;
+    case ScreenMode.hardwareFullscreen:
+        ret ~= DisplayTryMode(ScreenMode.hardwareFullscreen, wantX, wantY);
+        ret ~= DisplayTryMode(ScreenMode.softwareFullscreen, wantX, wantY);
+        ret ~= DisplayTryMode(ScreenMode.windowed, wantX, wantY);
+        return ret;
+    default:
+        ret ~= DisplayTryMode(ScreenMode.softwareFullscreen, wantX, wantY);
+        ret ~= DisplayTryMode(ScreenMode.windowed, wantX, wantY);
+        ret ~= DisplayTryMode(ScreenMode.hardwareFullscreen, wantX, wantY);
+        return ret;
+    }
+}
+
+DisplayTryMode[] fallbackModes()
+{
+    return [ DisplayTryMode(ScreenMode.windowed, 640, 480) ];
+}
+
 void loadIcon()
 {
     assert (display);
@@ -224,7 +218,7 @@ int screenModeToFlags(in ScreenMode mode) pure nothrow @nogc
     }
 }
 
-void computeFPS()
+void computeFPS() nothrow
 {
     _fpsArr ~= timerTicks;
     while (_fpsArr != null && _fpsArr[0] <= _fpsArr[$-1] - ticksPerSecond)
