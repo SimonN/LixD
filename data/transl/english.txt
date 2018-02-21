@@ -184,6 +184,9 @@ $winTopologyU Top:
 $winTopologyD Bottom:
 $winTopologyTorusX Wrap around horizontally
 $winTopologyTorusY Wrap around vertically
+$winTopologyWarnSize1 A level so large, at
+$winTopologyWarnSize2 pixels,
+$winTopologyWarnSize3 crashes on some PCs.
 
 // scrolling start position
 $winLooksTitle Looks

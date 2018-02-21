@@ -109,7 +109,7 @@ public:
     this(Level lv, Filename levelFilename, Replay rp, in bool maySaveTrophy)
     {
         assert (lv);
-        assert (lv.good);
+        assert (lv.playable);
         level = lv;
         _maySaveTrophy = maySaveTrophy;
         prepareNurse(levelFilename, rp);
@@ -120,7 +120,7 @@ public:
     {
         enforce(client, "Game started without networking client.");
         enforce(client.level, "Networking game started without level.");
-        enforce(client.level.good, "Networking level is unplayable.");
+        enforce(client.level.playable, "Networking level is unplayable.");
         enforce(client.permu, "Networking game has no player permutation.");
 
         level = client.level;

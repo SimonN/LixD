@@ -141,7 +141,7 @@ version (unittest) {
         assert (fn.fileExists, "I'd like to test with Declination"
             ~ " Innovation Station, the level doesn't exist");
         Level lv = new Level(fn);
-        assert (lv.good, "Test level isn't good");
+        assert (lv.playable, "Test level isn't playable");
         return new SaveStatingNurse(lv, ()
             {
                 Replay rep = Replay.newForLevel(fn, lv.built);

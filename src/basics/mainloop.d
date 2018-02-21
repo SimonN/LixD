@@ -68,7 +68,7 @@ public:
         else if (args.length == 2)
             matcher.forceLevel(args[0]);
 
-        if (matcher.preferredLevel.good)
+        if (matcher.preferredLevel.playable)
             this.game = matcher.createGame();
         else
             throw new Exception("Level or replay isn't playable.");

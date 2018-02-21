@@ -61,11 +61,8 @@ package Torbit implCreatePreview(
         // to a temp bitmap, then blit from the temp bitmap to ret.
     }
     ret.clearToColor(c);
-    if (   level.status == LevelStatus.BAD_FILE_NOT_FOUND
-        || level.status == LevelStatus.BAD_EMPTY
-    ) {
+    if (level.errorFileNotFound || level.errorEmpty)
         return ret;
-    }
     // Render the gadgets, then the terrain, using a temporary bitmap.
     // If the level has torus, the following temporary torbit need torus, too
     {
@@ -198,10 +195,11 @@ unittest {
         Filename lvFn = new VfsFilename(dirLevelsSingle.rootless
             ~ "lemforum/Lovely/anyway.txt");
         Level l = new Level(lvFn);
-        assert (l.nonempty, "Test level `" ~ lvFn.rootless
-            ~ "' isn't found or is empty.");
-        assert (l.good, "Level `" ~ l.name ~ "' couldn't be loaded properly "
+        assert (! l.errorMissingTiles, "Level `" ~ l.name
+            ~ "' couldn't be loaded properly "
             ~ " to test image export. Is the tile library initialized?");
+        assert (l.playable, "Test level `" ~ lvFn.rootless
+            ~ "' isn't playable, that is strange even during unittest.");
 
         Filename imgFn = Level.exportImageFilename(lvFn);
         imgFn.deleteFile();

@@ -170,6 +170,9 @@ $winTopologyU Oben:
 $winTopologyD Unten:
 $winTopologyTorusX Horizontal rundumgehend
 $winTopologyTorusY Vertikal rundumgehend
+$winTopologyWarnSize1 Ein so großer Level mit
+$winTopologyWarnSize2 Pixeln
+$winTopologyWarnSize3 crasht auf einigen PCs.
 
 $winLooksTitle Aussehen
 $winLooksRed Hintergrund Rot

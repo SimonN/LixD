@@ -47,10 +47,12 @@ public:
     }
 
     final const pure @nogc {
-        @property int  xl()     { return _xl; }
-        @property int  yl()     { return _yl; }
-        @property bool torusX() { return _tx; }
-        @property bool torusY() { return _ty; }
+        @property @safe nothrow {
+            int xl() { return _xl; }
+            int yl() { return _yl; }
+            bool torusX() { return _tx; }
+            bool torusY() { return _ty; }
+        }
 
         bool matches(in Topology rhs)
         {

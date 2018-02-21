@@ -17,6 +17,16 @@ enum int ticksForDoubleClick  = 20; // 1/3 of a second at 60 ticks/sec
 enum int teamsPerLevelMax     =  8;
 enum int mouseStandardDivisor = 20;
 
+/*
+ * Large levels may crash Lix because of gigantic VRAM bitmaps swapped into
+ * RAM that never get freed properly, or the graphics card hogs this RAM. See:
+ * https://www.lemmingsforums.net/index.php?topic=3701.msg69288#msg69288
+ *
+ * Our workaround is to warn when setting the size of a level to this constant
+ * or more, and to warn in the level-browser-preview before playing.
+ */
+enum int levelPixelsToWarn = 1024 * 1024 * 28 / 10;
+
 immutable netIPLocalhost = "127.0.0.1";
 
 // loading files

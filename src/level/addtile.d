@@ -63,7 +63,7 @@ Occurrence addFromLine(
         return newpos;
     }
     else {
-        level._status = LevelStatus.BAD_IMAGE;
+        // We expect our caller to add the tile name to _missingTiles
         return null;
     }
 }

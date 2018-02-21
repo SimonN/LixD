@@ -22,6 +22,7 @@ import enumap;
 import std.array;
 import std.algorithm;
 import std.conv; // (enum constant) --to!Lang--> (string of its variable name)
+import std.format;
 
 import basics.globals; // fileLanguageEnglish
 import basics.user; // fileLanguage, which file does the user want
@@ -45,6 +46,14 @@ void loadUserLanguageAndIfNotExistSetUserOptionToEnglish()
             parseTranslation(line.text1, line.text2);
     }
     warnAboutUndefinedLanguageIds();
+}
+
+string formattedWinTopologyWarnSize2() // strange here, but it's needed 2x
+{
+    return format!"\u2265 %3.1f \u00D7 2\u00b2\u2070 %s"(
+        // greaterThan %d times 2^20 pixels
+        levelPixelsToWarn * 1.0f / 2^^20,
+        Lang.winTopologyWarnSize2.transl);
 }
 
 enum Lang {
@@ -210,6 +219,9 @@ enum Lang {
     winTopologyD,
     winTopologyTorusX,
     winTopologyTorusY,
+    winTopologyWarnSize1,
+    winTopologyWarnSize2,
+    winTopologyWarnSize3,
 
     // scrolling start position
     winLooksTitle,

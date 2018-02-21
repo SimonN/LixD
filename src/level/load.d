@@ -19,17 +19,17 @@ import tile.occur;
 
 package void loadFromFile(Level level, in Filename fn)
 {
-    level._status = LevelStatus.GOOD;
+    level._fileNotFound = false;
     try
         load_from_vector(level, fillVectorFromFile(fn));
     catch (Exception e)
-        level._status = LevelStatus.BAD_FILE_NOT_FOUND;
+        level._fileNotFound = true;
     level.load_level_finalize();
 }
 
 package void loadFromVoidArray(Level level, immutable(void)[] arr)
 {
-    level._status = LevelStatus.GOOD;
+    level._fileNotFound = false;
     level.load_from_vector(fillVectorFromVoidArray(arr));
     level.load_level_finalize();
 }
@@ -142,15 +142,6 @@ private void load_level_finalize(Level level) {
         skills[Ac.exploder] = 0;
 
     terrain = terrain.noowAlgorithm(topology);
-
-    if (_status == LevelStatus.GOOD) {
-        if (terrain.empty && gadgets[].all!(li => li.empty))
-            _status = LevelStatus.BAD_EMPTY;
-        else if (gadgets[GadType.HATCH].empty)
-            _status = LevelStatus.BAD_HATCH;
-        else if (gadgets[GadType.GOAL].empty)
-            _status = LevelStatus.BAD_GOAL;
-    }
 }}
 
 unittest {
@@ -162,6 +153,5 @@ unittest {
         IoLine.Dollar(glo.levelEndGroup, ""),
         IoLine.Colon(glo.levelUseGroup ~ "0", 100, 100, ""),
     ]);
-    // This shall not crash despite empty tile group. TileGroup checks that.
-    assert (l.status == LevelStatus.BAD_IMAGE);
+    assert (l.errorMissingTiles);
 }

@@ -62,7 +62,7 @@ public:
 
     bool mayWeDeclareReady() const
     {
-        return _inner.mayWeDeclareReady && _level && _level.good;
+        return _inner.mayWeDeclareReady && _level && _level.playable;
     }
 
     @property void onCannotConnect(void delegate() f)

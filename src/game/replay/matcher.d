@@ -75,19 +75,19 @@ public:
     @property bool includedIsGood()
     {
         initialize(Choice.included);
-        return _choices.included.level && _choices.included.level.good;
+        return _choices.included.level && _choices.included.level.playable;
     }
 
     @property bool pointedToIsGood()
     {
         initialize(Choice.pointed);
-        return _choices.pointed.level && _choices.pointed.level.good;
+        return _choices.pointed.level && _choices.pointed.level.playable;
     }
 
     // It is illegal to call this when the preferred level is bad.
     // Callers should do something reasonable instead.
     Game createGame()
-    in { assert (preferredLevel.good); }
+    in { assert (preferredLevel.playable); }
     out (ret) { assert (ret); }
     body {
         auto pref = preferredInitializedStruct();
@@ -96,7 +96,7 @@ public:
     }
 
     VerifyingNurse createVerifyingNurse()
-    in { assert (preferredLevel.good); }
+    in { assert (preferredLevel.playable); }
     out (ret) { assert (ret); }
     body {
         auto pref = preferredInitializedStruct();
@@ -182,8 +182,7 @@ unittest {
 
         assert (fileSingleplayerFirstLevel.fileExists, "need first level");
         Level lv = new Level(fileSingleplayerFirstLevel);
-        assert (lv.nonempty, "first level is empty");
-        assert (lv.good, "first level isn't good");
+        assert (lv.playable, "first level isn't playable");
         immutable int origTerrain = lv.terrain.len;
 
         // Change the level that will be written into the replay file

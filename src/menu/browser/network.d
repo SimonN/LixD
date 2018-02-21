@@ -40,7 +40,7 @@ protected:
         assert (_levelRecent !is null);
         // the super class guarantees that on_file_select is only called after
         // onFileHighlight has been called with the same fn immediately before
-        if (_levelRecent.good) {
+        if (_levelRecent.playable) {
             basics.user.networkLastLevel = fileRecent;
             gotoGame = true;
         }

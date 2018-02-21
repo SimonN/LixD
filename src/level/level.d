@@ -1,6 +1,9 @@
 module level.level;
 
+import std.algorithm;
 import std.format;
+import std.range;
+
 import enumap;
 
 public import net.ac;
@@ -19,15 +22,6 @@ import level.levdraw;
 import level.load;
 import tile.occur;
 import tile.gadtile;
-
-enum LevelStatus {
-    GOOD,
-    BAD_HATCH,          // level doens't contain >= 1 hatch
-    BAD_GOAL,           // level doesn't contain >= 1 goal
-    BAD_IMAGE,          // can't load all necessary tile images from disk
-    BAD_FILE_NOT_FOUND, // can't load the level, level file not found
-    BAD_EMPTY           // file exists, but no tiles
-}
 
 class Level {
 public:
@@ -70,14 +64,13 @@ public:
     GadOcc[][GadType.MAX] gadgets; // one array GadOcc[] for each GadType,
                                    // indexed by ints, not by GadType enum vals
 package:
-    LevelStatus _status;
+    bool _fileNotFound;
     immutable(string)[] _missingTiles;
 
 public:
     this()
     {
         built   = Date.now();
-        _status = LevelStatus.BAD_EMPTY;
         intendedNumberOfPlayers = 1;
         topology = new Topology(cppLixOneScreenXl, 400);
         initial  =  20;
@@ -101,12 +94,33 @@ public:
     @property const nothrow @nogc @safe {
         string name() { return nameEnglish == "" ? nameGerman : nameEnglish; }
         immutable(string)[] missingTiles() { return _missingTiles; }
-        LevelStatus status() { return _status; }
-        bool good() { return _status == LevelStatus.GOOD;}
-        bool nonempty()
+
+        bool excellent()
         {
-            return _status != LevelStatus.BAD_FILE_NOT_FOUND
-                && _status != LevelStatus.BAD_EMPTY;
+            return playable
+                // List all possible warnings in here
+                && ! warningNoGoals && ! warningTooLarge;
+        }
+
+        bool playable()
+        {
+            // List all possible errors in here
+            return ! errorFileNotFound && ! errorNoHatches
+                && ! errorMissingTiles; // ! errorEmpty is implicit with hatch
+        }
+
+        bool errorFileNotFound() { return _fileNotFound; }
+        bool errorNoHatches() { return gadgets[GadType.HATCH].empty; }
+        bool errorMissingTiles() { return ! _missingTiles.empty; }
+        bool errorEmpty()
+        {
+            return terrain.empty && gadgets[].all!(list => list.empty);
+        }
+
+        bool warningNoGoals() { return gadgets[GadType.GOAL].empty; }
+        bool warningTooLarge()
+        {
+            return topology.xl * topology.yl >= levelPixelsToWarn;
         }
     }
 

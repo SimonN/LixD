@@ -158,7 +158,7 @@ void saveToStdioFile(
 
     bool okToSave(in Level lev)
     {
-        return lev !is null && lev.nonempty;
+        return lev !is null && ! lev.errorFileNotFound && ! lev.errorEmpty;
     }
 
     const(Level) levToSave = okToSave(lev) ? lev

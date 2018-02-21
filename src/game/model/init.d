@@ -88,7 +88,6 @@ void assignTribesToGoals(GameState state, in Permu permu, in Style hatchBlink)
 in {
     import std.format;
     assert (state.hatches.len, "we'll do modulo on the hatches, 0 is bad");
-    assert (state.goals.len, "can't assign 0 goals to the players");
     assert (state.numTribes, "can't assign the goals to 0 players");
     assert (permu.len == state.numTribes,
         format!"permu length mismatch: permu len = %d, numTribes = %d"
@@ -98,10 +97,10 @@ body { with (state)
 {
     while (hatches.len % numTribes != 0 && numTribes % hatches.len != 0)
         hatches = hatches[0 .. $-1];
-    while (goals.len % numTribes != 0 && numTribes % goals.len != 0)
-        goals = goals[0 .. $-1];
     assert (hatches.len);
-    assert (goals.len);
+    while (goals.len
+        && goals.len % numTribes != 0 && numTribes % goals.len != 0)
+        goals = goals[0 .. $-1];
 
     auto stylesInPlay = tribes.keys;
     stylesInPlay.sort();
@@ -114,6 +113,9 @@ body { with (state)
             for (int j = ha; j < hatches.len; j += numTribes)
                 hatches[j].blinkStyle = hatchBlink;
     }
+
+    if (goals.len == 0)
+        return;
     // Goals: Distribute to players
     foreach (int i, style; stylesInPlay) {
         // Permu 0 3 1 2 for tribes red, orange, yellow, green means:

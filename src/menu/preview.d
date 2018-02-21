@@ -19,19 +19,18 @@ import level.level;
 
 class Preview : Frame {
 private:
-    LevelStatus _status;
     Torbit  torbit; // the little canvas, sized like (this), to draw on
     Graphic iconStatus;
     Graphic iconTorus;
 
     immutable(string)[] _missingTiles;
-    Label _mtl; // (missing tiles)-label
+    bool _warningTooLarge;
+    Label _mtl; // (missing tiles)-label or printing too-large-warning
 
 public:
     this(Geom g)
     {
         super(g);
-        _status = LevelStatus.BAD_EMPTY;
         auto cb = getInternal(fileImagePreviewIcon);
         iconStatus = new Graphic(cb, guiosd);
         iconTorus  = new Graphic(cb, guiosd);
@@ -48,8 +47,6 @@ public:
         torbit = null;
     }
 
-    @property LevelStatus status() { return _status; }
-
     public @property void level(in Level level) // to clear, set level = 0
     {
         if (torbit)
@@ -62,12 +59,14 @@ public:
             torbit  = level.create_preview(
                 (xs + xls).roundInt - xs.roundInt,
                 (ys + yls).roundInt - ys.roundInt, color.screenBorder);
-            _status = level.status;
-            iconStatus.xf = status;
+            iconStatus.xf = level.errorMissingTiles ? 3
+                : level.errorNoHatches ? 1
+                : level.warningNoGoals ? 2 : 0;
             iconTorus .xf = level.topology.torusX + 2 * level.topology.torusY;
-            if (_status == LevelStatus.BAD_EMPTY)
+            if (level.errorEmpty)
                 iconStatus.xf = 0;
             _missingTiles = level.missingTiles;
+            _warningTooLarge = level.warningTooLarge;
         }
         reqDraw();
     }
@@ -83,7 +82,7 @@ protected:
         else
             // target is guiosd already, because we're in an Element's draw
             al_draw_filled_rectangle(xs, ys, xs + xls, ys + yls, undrawColor);
-        drawMissingTiles();
+        drawWarningTexts();
         drawIcons();
     }
 
@@ -103,15 +102,22 @@ private:
         iconTorus.draw();
     }
 
-    void drawMissingTiles()
+    void drawWarningTexts()
     {
-        if (_missingTiles.length == 0) {
+        if (! _missingTiles.len && ! _warningTooLarge) {
             _mtl.hide();
             return;
         }
         al_draw_filled_rectangle(xs, ys, xs + xls, ys + yls, darkeningColor());
-
         _mtl.show();
+        if (_missingTiles.len)
+            drawMissingTiles();
+        else
+            drawWarningTooLarge();
+    }
+
+    void drawMissingTiles()
+    {
         _mtl.resize(xlg - 2 * thickg - 2 * iconTorus.xl / stretchFactor, 20);
         _mtl.move(iconTorus.xl / stretchFactor + thickg,
                   iconTorus.yl / stretchFactor / 2f - 10);
@@ -138,6 +144,20 @@ private:
                 Lang.previewMissingTilesMoreSee.transl,  fileLog.rootless);
             _mtl.draw();
         }
+    }
+
+    void drawWarningTooLarge()
+    {
+        void printLine(in int nthLine, in string str)
+        {
+            _mtl.resize(xlg - 2 * thickg, 20);
+            _mtl.move(thickg, iconTorus.yl / stretchFactor + nthLine * 20);
+            _mtl.text = str;
+            _mtl.draw();
+        }
+        printLine(0, Lang.winTopologyWarnSize1.transl);
+        printLine(1, formattedWinTopologyWarnSize2());
+        printLine(2, Lang.winTopologyWarnSize3.transl);
     }
 }
 

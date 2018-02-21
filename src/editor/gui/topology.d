@@ -3,6 +3,7 @@ module editor.gui.topology;
 import std.algorithm;
 import std.math;
 
+import basics.globals;
 import basics.topology;
 import basics.user;
 import editor.gui.okcancel;
@@ -27,6 +28,7 @@ private:
     Equation _eqYHex;
     BoolOption _torusX;
     BoolOption _torusY;
+    Label[] _warnTooLarge;
 
     NumPick _red, _green, _blue;
     enum thisXl = 480;
@@ -39,6 +41,7 @@ public:
         _oldXl = level.topology.xl;
         _oldYl = level.topology.yl;
         makeTopologyChildren(level);
+        makeWarningChildren();
         makeColorChildren(level);
     }
 
@@ -86,6 +89,7 @@ protected:
             _eqYDec.change = suggestedYl - _oldYl;
             _eqYHex.change = suggestedYl - _oldYl;
         }
+        warnIfTooLarge();
     }
 
 private:
@@ -101,11 +105,35 @@ private:
                      Level.minYl, Level.maxYl);
     }
 
+    void warnIfTooLarge()
+    {
+        foreach (label; _warnTooLarge)
+            label.shown = suggestedXl * suggestedYl >= levelPixelsToWarn;
+    }
+
+    void makeWarningChildren()
+    in {
+        assert (_warnTooLarge.length == 0);
+        assert (_torusX !is null);
+    }
+    body {
+        const float textXl = this.xlg/2 - 20; // -> makeTopologyChildren.boolXl
+        _warnTooLarge ~= new Label(new Geom(20, -this.yg + _torusX.yg,
+            textXl, 20, From.TOP_RIGHT), Lang.winTopologyWarnSize1.transl);
+        _warnTooLarge ~= new Label(new Geom(20, -this.yg + _torusX.yg + 15,
+            textXl, 20, From.TOP_RIGHT), formattedWinTopologyWarnSize2());
+        _warnTooLarge ~= new Label(new Geom(20, -this.yg + _torusX.yg + 30,
+            textXl, 20, From.TOP_RIGHT), Lang.winTopologyWarnSize3.transl);
+        foreach (label; _warnTooLarge)
+            addChild(label);
+        warnIfTooLarge();
+    }
+
     void makeTopologyChildren(Level level)
     {
         enum butX   = 100f;
         enum textXl = 80f;
-        enum boolXl = thisXl - 3*20 - 100; // 100 is super's button xlg
+        enum boolXl = thisXl/2 + 20; // overlaps makeWarningChildren.textXl
         void label(in float y, in Lang cap)
         {
             addChild(new Label(new Geom(20, y, textXl, 20), cap.transl));

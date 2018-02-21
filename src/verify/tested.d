@@ -66,15 +66,14 @@ public:
         _status = replayFilename == levelFilename ? Status.noPointer
             : _matcher.isMultiplayer              ? Status.multiplayer
             : ! _lv                               ? Status.noPointer
-            : ! _lv.good && _lv.nonempty          ? Status.badLevel
-            : ! _lv.good                          ? Status.missingLevel
+            : _lv.errorFileNotFound               ? Status.missingLevel
+            : ! _lv.playable                      ? Status.badLevel
                                                   : Status.untested;
         if (_status != Status.untested)
             return;
 
-        assert (_lv.good);
-        // false == disallow saving trophies. If we want trophies, our
-        // caller should explicitly tell us maybeAddTrophy() later.
+        assert (_lv.playable);
+        // If we want trophies, caller should tell us maybeAddTrophy() later.
         VerifyingNurse nurse = _matcher.createVerifyingNurse();
         auto eval = nurse.evaluateReplay();
         destroy(nurse);
