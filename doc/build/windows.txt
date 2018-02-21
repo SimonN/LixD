@@ -92,19 +92,14 @@ Method 2:
 
         implib /s allegro_xyz.lib allegro_xyz-5.2.dll
 
+    You can automate these calls with this batch file:
+    https://github.com/SiegeLord/DAllegro5/blob/master/create_import_libs.bat
+
     Put the resulting .lib files in the D installation's lib/ dir. Remove the
     version number, e.g., `-5.2', from Allegro's .lib files in lib/. Do not
     remove the version number from the DLL files, and keep those in bin/.
 
     If it's not clear, ask me. See top of file for contact details.
-
-    Instead of calling implib for each file by hand, you could write a Windows
-    batch file that calls implib for each DLL. Here's SiegeLord's batch file:
-    https://github.com/SiegeLord/DAllegro5/blob/master/create_import_libs.bat
-    -- but take care: This script assumes that your abolsute path contains
-    neither spaces ` ' nor hyphens `-'; otherwise, the script will write all
-    .lib files to the same wrongly-named file in a parent directory. See issue
-    on github: https://github.com/SiegeLord/DAllegro5/issues/43
 
 
 

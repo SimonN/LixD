@@ -1,23 +1,16 @@
 How to build Lix on a Linux machine
 ===================================
 
-Lix is written in the D Programming Language and uses Allegro 5.
-
-I'm describing the build process for Linux. It should be very similar for
-Windows. I don't know where you install libraries, though.
-
-
-
 Install a D compiler and dub
 ----------------------------
 
-I recommend dmd as the D compiler, which ships with dub, the D packaging tool.
-Get dmd from your package manager, or download it here:
+Get dmd (a D compiler) and dub from your package manager, or download here:
 
     http://dlang.org/download.html
+    https://code.dlang.org/download
 
-dub automates the build process, i.e., it replaces make, and it will fetch
-the D bindings for installed and used libraries.
+dub automates the build and fetches D bindings for libraries.
+dub does not install the libraries themselves, see next paragraph.
 
 
 
@@ -31,15 +24,17 @@ themselves to your system.
 This part of the instructions is about installing binary files that can be
 called from various programming languages. It's not particular to D.
 
-If you use a package manager, install these libraries; they should come with
+If you use a package manager, install:
 
-* Allegro 5
-* enet
+* pkg-config (Package `pkg-config' on Arch/Debian/Ubuntu)
+* Allegro 5  (Package `allegro'    on Arch, `liballegro5-dev' on Debian/Ubuntu)
+* enet       (Package `enet'       on Arch, `libenet-dev'     on Debian/Ubuntu)
 
 If you install manually, install the following libraries in the order listed,
 because Allegro 5 relies on everything above it. You can get away without
 dumb, but Lix won't play any tracked music then.
 
+* pkg-config
 * zlib
 * libpng
 * libvorbis
@@ -50,13 +45,13 @@ dumb, but Lix won't play any tracked music then.
 
 
 
-Installing enet
----------------
+Installing enet manually
+------------------------
 
-Skip this section if you installed enet via your Linux package manager.
+(Skip this section if you installed enet via your Linux package manager.)
 
-Right now, August 2016, I rely on enet 1.3.x. Download it from enet.bespin.org,
-or clone from github:
+Now (since August 2016), I rely on enet 1.3.x. Download it from
+enet.bespin.org, or clone from github:
 
     $ git clone https://github.com/lsalzman/enet
 

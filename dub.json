@@ -22,14 +22,20 @@
         "allegro_ttf",
         "allegro_image",
         "allegro_primitives",
-        "allegro",
     ],
     "libs-linux": ["allegro-5"],
+    "libs-dragonflybsd": ["allegro-5"],
+    "libs-freebsd": ["allegro-5"],
+    "libs-netbsd": ["allegro-5"],
+    "libs-openbsd": ["allegro-5"],
+    "libs-solaris": ["allegro-5"],
+
+    "libs-osx": ["allegro"],
+    "libs-windows": ["allegro"],
     "sourceFiles-windows": ["src\\icon.res"],
     "dflags-windows": ["-Jsrc\\icon.res"],
     "lflags-windows": ["-L/subsystem:windows"],
 
-    "buildRequirements": ["disallowDeprecations"],
     "versions": ["ALLEGRO_NO_PRAGMA_LIB"],
     "buildTypes": {
         "debug": {
