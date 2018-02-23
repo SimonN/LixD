@@ -27,14 +27,14 @@ hardtoport.txt
 impetus.txt
 lixlata.txt
 prelude.txt
-snowballbattle.txt
+leapoffaith.txt
 allover.txt
 boxset.txt
 infrastructure.txt
 thepit.txt
 pathtomahiman.txt
 towerofbabel.txt
-snowjump.txt
+exitstageright.txt
 therainbowroad.txt
 therazorsedge.txt
 thefinalsacrifice.txt
