@@ -1,0 +1,124 @@
+$BUILT 2018-02-01 12:59:13
+$AUTHOR Arty
+$ENGLISH The fifth layer of Hell (6p)
+
+#INTENDED_NUMBER_OF_PLAYERS 6
+#SIZE_X 704
+#SIZE_Y 1152
+#TORUS_X 0
+#TORUS_Y 1
+
+#SECONDS 376
+#INITIAL 66
+#SPAWN_INTERVAL 13
+
+#WALKER 66
+#CLIMBER 66
+#EXPLODER2 66
+#BUILDER 66
+#PLATFORMER 66
+#BASHER 66
+#MINER 66
+#DIGGER 66
+#JUMPER 66
+#CUBER 66
+
+:matt/underworld/Hatch.H: 544 32
+:matt/underworld/Hatch.H: 544 224
+:matt/underworld/Hatch.H: 544 416
+:matt/underworld/Hatch.H: 544 608
+:matt/underworld/Hatch.H: 544 800
+:matt/underworld/Hatch.H: 544 992
+
+:matt/underworld/Goal.G: 96 224
+:matt/underworld/Goal.G: 96 416
+:matt/underworld/Goal.G: 96 608
+:matt/underworld/Goal.G: 96 800
+:matt/underworld/Goal.G: 96 992
+:matt/underworld/Goal.G: 96 32
+
+:proxima/flame.F: 64 48
+:proxima/flame.F: 152 48
+:proxima/flame.F: 64 240
+:proxima/flame.F: 152 240
+:proxima/flame.F: 512 48
+:proxima/flame.F: 600 48
+:proxima/flame.F: 512 240
+:proxima/flame.F: 600 240
+:proxima/flame.F: 64 432
+:proxima/flame.F: 152 432
+:proxima/flame.F: 64 624
+:proxima/flame.F: 152 624
+:proxima/flame.F: 512 432
+:proxima/flame.F: 600 432
+:proxima/flame.F: 512 624
+:proxima/flame.F: 600 624
+:proxima/flame.F: 64 816
+:proxima/flame.F: 152 816
+:proxima/flame.F: 64 1008
+:proxima/flame.F: 152 1008
+:proxima/flame.F: 512 816
+:proxima/flame.F: 600 816
+:proxima/flame.F: 512 1008
+:proxima/flame.F: 600 1008
+
+:matt/underworld/02: 0 0
+:matt/underworld/02: 0 96
+:matt/underworld/02: 0 192
+:matt/underworld/01: 64 96
+:matt/underworld/02: 0 288
+:matt/underworld/02: 640 0
+:matt/underworld/02: 640 96
+:matt/underworld/02: 640 192
+:matt/underworld/02: 640 288
+:matt/underworld/01: 64 288
+:matt/underworld/01: 128 96
+:matt/underworld/01: 128 288
+:matt/underworld/02: 320 0
+:matt/underworld/02: 320 96
+:matt/underworld/02: 320 192
+:matt/underworld/02: 320 288
+:matt/underworld/01: 512 96
+:matt/underworld/01: 576 96
+:matt/underworld/01: 512 288
+:matt/underworld/01: 576 288
+:matt/underworld/02: 0 384
+:matt/underworld/02: 0 480
+:matt/underworld/02: 0 576
+:matt/underworld/01: 64 480
+:matt/underworld/02: 0 672
+:matt/underworld/02: 640 384
+:matt/underworld/02: 640 480
+:matt/underworld/02: 640 576
+:matt/underworld/02: 640 672
+:matt/underworld/01: 64 672
+:matt/underworld/01: 128 480
+:matt/underworld/01: 128 672
+:matt/underworld/02: 320 384
+:matt/underworld/02: 320 480
+:matt/underworld/02: 320 576
+:matt/underworld/02: 320 672
+:matt/underworld/01: 512 480
+:matt/underworld/01: 576 480
+:matt/underworld/01: 512 672
+:matt/underworld/01: 576 672
+:matt/underworld/02: 0 768
+:matt/underworld/02: 0 864
+:matt/underworld/02: 0 960
+:matt/underworld/01: 64 864
+:matt/underworld/02: 0 1056
+:matt/underworld/02: 640 768
+:matt/underworld/02: 640 864
+:matt/underworld/02: 640 960
+:matt/underworld/02: 640 1056
+:matt/underworld/01: 64 1056
+:matt/underworld/01: 128 864
+:matt/underworld/01: 128 1056
+:matt/underworld/02: 320 768
+:matt/underworld/02: 320 864
+:matt/underworld/02: 320 960
+:matt/underworld/02: 320 1056
+:matt/underworld/01: 512 864
+:matt/underworld/01: 576 864
+:matt/underworld/01: 512 1056
+:matt/underworld/01: 576 1056

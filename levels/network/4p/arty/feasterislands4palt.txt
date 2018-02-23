@@ -1,8 +1,8 @@
-$BUILT 2018-02-11 16:34:13
+$BUILT 2018-02-23 11:06:45
 $AUTHOR Arty
-$ENGLISH Let them eat cake! (2p)
+$ENGLISH Let them eat cake! (4p alt)
 
-#INTENDED_NUMBER_OF_PLAYERS 2
+#INTENDED_NUMBER_OF_PLAYERS 4
 #SIZE_X 1280
 #SIZE_Y 400
 #TORUS_X 1
@@ -26,11 +26,15 @@ $ENGLISH Let them eat cake! (2p)
 #BATTER 20
 #CUBER 20
 
-:matt/marble/Hatch.H: 144 80
-:matt/marble/Hatch.H: 784 80
+:matt/marble/Hatch.H: 384 80
+:matt/marble/Hatch.H: 192 80 r
+:matt/marble/Hatch.H: 1024 80
+:matt/marble/Hatch.H: 832 80 r
 
-:raymanni/gore/goal.G: 1104 96
-:raymanni/gore/goal.G: 464 96
+:raymanni/gore/goal.G: 896 96
+:raymanni/gore/goal.G: 960 96
+:raymanni/gore/goal.G: 256 96
+:raymanni/gore/goal.G: 320 96
 
 :raymanni/gore/eater.T: 48 320
 :raymanni/gore/eater.T: 528 320

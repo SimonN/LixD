@@ -1,0 +1,484 @@
+$BUILT 2018-02-05 15:57:46
+$AUTHOR Arty
+$ENGLISH Origins and Lix (5p)
+
+#INTENDED_NUMBER_OF_PLAYERS 5
+#SIZE_X 2720
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 90
+#INITIAL 80
+#SPAWN_INTERVAL 32
+
+#WALKER 50
+#RUNNER 10
+#CLIMBER 20
+#FLOATER 20
+#EXPLODER 20
+#BLOCKER 5
+#BUILDER 50
+#PLATFORMER 50
+#BASHER 20
+#MINER 20
+#DIGGER 20
+#JUMPER 50
+#BATTER 20
+#CUBER 10
+
+:geoo/sandstone/Hatch.H: 120 80
+:geoo/sandstone/Hatch.H: 664 80
+:geoo/sandstone/Hatch.H: 1208 80
+:geoo/sandstone/Hatch.H: 1752 80
+:geoo/sandstone/Hatch.H: 2296 80
+
+:geoo/sandstone/Goal.G: 1496 208
+:geoo/sandstone/Goal.G: 2040 208
+:geoo/sandstone/Goal.G: 2584 208
+:geoo/sandstone/Goal.G: 408 208
+:geoo/sandstone/Goal.G: 952 208
+
+:simon/water.W: 0 352
+:simon/water.W: 48 352
+:simon/water.W: 96 352
+:simon/water.W: 144 352
+:simon/water.W: 192 352
+:simon/water.W: 240 352
+:simon/water.W: 288 352
+:simon/water.W: 336 352
+:simon/water.W: 384 352
+:simon/water.W: 432 352
+:simon/water.W: 480 352
+:simon/water.W: 528 352
+:simon/water.W: 576 352
+:simon/water.W: 624 352
+:simon/water.W: 672 352
+:simon/water.W: 720 352
+:simon/water.W: 768 352
+:simon/water.W: 816 352
+:simon/water.W: 864 352
+:simon/water.W: 912 352
+:simon/water.W: 960 352
+:simon/water.W: 1008 352
+:simon/water.W: 1056 352
+:simon/water.W: 1104 352
+:simon/water.W: 1152 352
+:simon/water.W: 1200 352
+:simon/water.W: 1248 352
+:simon/water.W: 1296 352
+:simon/water.W: 1344 352
+:simon/water.W: 1392 352
+:simon/water.W: 1440 352
+:simon/water.W: 1488 352
+:simon/water.W: 1536 352
+:simon/water.W: 1584 352
+:simon/water.W: 1632 352
+:simon/water.W: 1680 352
+:simon/water.W: 1728 352
+:simon/water.W: 1776 352
+:simon/water.W: 1824 352
+:simon/water.W: 1872 352
+:simon/water.W: 1920 352
+:simon/water.W: 1968 352
+:simon/water.W: 2016 352
+:simon/water.W: 2064 352
+:simon/water.W: 2112 352
+:simon/water.W: 2160 352
+:simon/water.W: 2208 352
+:simon/water.W: 2256 352
+:simon/water.W: 2304 352
+:simon/water.W: 2352 352
+:simon/water.W: 2400 352
+:simon/water.W: 2448 352
+:simon/water.W: 2496 352
+:simon/water.W: 2544 352
+:simon/water.W: 2592 352
+:simon/water.W: 2640 352
+:simon/water.W: 2688 352
+
+:geoo/sandstone/pillar_bottom: 240 160 r
+:geoo/sandstone/pillar_bottom: 209 160 r
+:geoo/sandstone/pillar_bottom: 178 160 r
+:geoo/sandstone/pillar_bottom: 147 160 r
+:geoo/sandstone/pillar_bottom: 116 160 r
+:geoo/sandstone/pillar_bottom: 85 160 r
+:geoo/sandstone/pillar_bottom: 64 160 r
+:geoo/sandstone/pillar_bottom: 240 192 r
+:geoo/sandstone/pillar_bottom: 209 192 r
+:geoo/sandstone/pillar_bottom: 178 192 r
+:geoo/sandstone/pillar_bottom: 147 192 r
+:geoo/sandstone/pillar_bottom: 116 192 r
+:geoo/sandstone/pillar_bottom: 85 192 r
+:geoo/sandstone/pillar_bottom: 64 192 r
+:geoo/sandstone/pillar_bottom: 272 368 rr
+:geoo/sandstone/pillar_bottom: 272 337 rr
+:geoo/sandstone/pillar_bottom: 272 306 rr
+:geoo/sandstone/pillar_bottom: 272 275 rr
+:geoo/sandstone/pillar_bottom: 272 244 rr
+:geoo/sandstone/pillar_bottom: 272 213 rr
+:geoo/sandstone/pillar_bottom: 272 182 rr
+:geoo/sandstone/pillar_bottom: 272 151 rr
+:geoo/sandstone/pillar_bottom: 272 120 rr
+:geoo/sandstone/pillar_bottom: 272 96 rr
+:geoo/sandstone/pillar_bottom: 304 368 rr
+:geoo/sandstone/pillar_bottom: 304 337 rr
+:geoo/sandstone/pillar_bottom: 304 306 rr
+:geoo/sandstone/pillar_bottom: 304 275 rr
+:geoo/sandstone/pillar_bottom: 304 244 rr
+:geoo/sandstone/pillar_bottom: 304 213 rr
+:geoo/sandstone/pillar_bottom: 304 182 rr
+:geoo/sandstone/pillar_bottom: 304 151 rr
+:geoo/sandstone/pillar_bottom: 304 120 rr
+:geoo/sandstone/pillar_bottom: 304 96 rr
+:geoo/sandstone/pillar_bottom: 0 368 rr
+:geoo/sandstone/pillar_bottom: 0 337 rr
+:geoo/sandstone/pillar_bottom: 0 306 rr
+:geoo/sandstone/pillar_bottom: 0 275 rr
+:geoo/sandstone/pillar_bottom: 0 244 rr
+:geoo/sandstone/pillar_bottom: 0 213 rr
+:geoo/sandstone/pillar_bottom: 0 182 rr
+:geoo/sandstone/pillar_bottom: 0 151 rr
+:geoo/sandstone/pillar_bottom: 0 120 rr
+:geoo/sandstone/pillar_bottom: 0 96 rr
+:geoo/sandstone/pillar_bottom: 32 368 rr
+:geoo/sandstone/pillar_bottom: 32 337 rr
+:geoo/sandstone/pillar_bottom: 32 306 rr
+:geoo/sandstone/pillar_bottom: 32 275 rr
+:geoo/sandstone/pillar_bottom: 32 244 rr
+:geoo/sandstone/pillar_bottom: 32 213 rr
+:geoo/sandstone/pillar_bottom: 32 182 rr
+:geoo/sandstone/pillar_bottom: 32 151 rr
+:geoo/sandstone/pillar_bottom: 32 120 rr
+:geoo/sandstone/pillar_bottom: 32 96 rr
+:geoo/sandstone/pillar_bottom: 512 272 r
+:geoo/sandstone/pillar_bottom: 481 272 r
+:geoo/sandstone/pillar_bottom: 450 272 r
+:geoo/sandstone/pillar_bottom: 419 272 r
+:geoo/sandstone/pillar_bottom: 388 272 r
+:geoo/sandstone/pillar_bottom: 357 272 r
+:geoo/sandstone/pillar_bottom: 336 272 r
+:geoo/sandstone/pillar_bottom: 512 304 r
+:geoo/sandstone/pillar_bottom: 481 304 r
+:geoo/sandstone/pillar_bottom: 450 304 r
+:geoo/sandstone/pillar_bottom: 419 304 r
+:geoo/sandstone/pillar_bottom: 388 304 r
+:geoo/sandstone/pillar_bottom: 357 304 r
+:geoo/sandstone/pillar_bottom: 336 304 r
+:geoo/sandstone/pillar_bottom: 784 160 r
+:geoo/sandstone/pillar_bottom: 753 160 r
+:geoo/sandstone/pillar_bottom: 722 160 r
+:geoo/sandstone/pillar_bottom: 691 160 r
+:geoo/sandstone/pillar_bottom: 660 160 r
+:geoo/sandstone/pillar_bottom: 629 160 r
+:geoo/sandstone/pillar_bottom: 608 160 r
+:geoo/sandstone/pillar_bottom: 784 192 r
+:geoo/sandstone/pillar_bottom: 753 192 r
+:geoo/sandstone/pillar_bottom: 722 192 r
+:geoo/sandstone/pillar_bottom: 691 192 r
+:geoo/sandstone/pillar_bottom: 660 192 r
+:geoo/sandstone/pillar_bottom: 629 192 r
+:geoo/sandstone/pillar_bottom: 608 192 r
+:geoo/sandstone/pillar_bottom: 816 368 rr
+:geoo/sandstone/pillar_bottom: 816 337 rr
+:geoo/sandstone/pillar_bottom: 816 306 rr
+:geoo/sandstone/pillar_bottom: 816 275 rr
+:geoo/sandstone/pillar_bottom: 816 244 rr
+:geoo/sandstone/pillar_bottom: 816 213 rr
+:geoo/sandstone/pillar_bottom: 816 182 rr
+:geoo/sandstone/pillar_bottom: 816 151 rr
+:geoo/sandstone/pillar_bottom: 816 120 rr
+:geoo/sandstone/pillar_bottom: 816 96 rr
+:geoo/sandstone/pillar_bottom: 848 368 rr
+:geoo/sandstone/pillar_bottom: 848 337 rr
+:geoo/sandstone/pillar_bottom: 848 306 rr
+:geoo/sandstone/pillar_bottom: 848 275 rr
+:geoo/sandstone/pillar_bottom: 848 244 rr
+:geoo/sandstone/pillar_bottom: 848 213 rr
+:geoo/sandstone/pillar_bottom: 848 182 rr
+:geoo/sandstone/pillar_bottom: 848 151 rr
+:geoo/sandstone/pillar_bottom: 848 120 rr
+:geoo/sandstone/pillar_bottom: 848 96 rr
+:geoo/sandstone/pillar_bottom: 544 368 rr
+:geoo/sandstone/pillar_bottom: 544 337 rr
+:geoo/sandstone/pillar_bottom: 544 306 rr
+:geoo/sandstone/pillar_bottom: 544 275 rr
+:geoo/sandstone/pillar_bottom: 544 244 rr
+:geoo/sandstone/pillar_bottom: 544 213 rr
+:geoo/sandstone/pillar_bottom: 544 182 rr
+:geoo/sandstone/pillar_bottom: 544 151 rr
+:geoo/sandstone/pillar_bottom: 544 120 rr
+:geoo/sandstone/pillar_bottom: 544 96 rr
+:geoo/sandstone/pillar_bottom: 576 368 rr
+:geoo/sandstone/pillar_bottom: 576 337 rr
+:geoo/sandstone/pillar_bottom: 576 306 rr
+:geoo/sandstone/pillar_bottom: 576 275 rr
+:geoo/sandstone/pillar_bottom: 576 244 rr
+:geoo/sandstone/pillar_bottom: 576 213 rr
+:geoo/sandstone/pillar_bottom: 576 182 rr
+:geoo/sandstone/pillar_bottom: 576 151 rr
+:geoo/sandstone/pillar_bottom: 576 120 rr
+:geoo/sandstone/pillar_bottom: 576 96 rr
+:geoo/sandstone/pillar_bottom: 1056 272 r
+:geoo/sandstone/pillar_bottom: 1025 272 r
+:geoo/sandstone/pillar_bottom: 994 272 r
+:geoo/sandstone/pillar_bottom: 963 272 r
+:geoo/sandstone/pillar_bottom: 932 272 r
+:geoo/sandstone/pillar_bottom: 901 272 r
+:geoo/sandstone/pillar_bottom: 880 272 r
+:geoo/sandstone/pillar_bottom: 1056 304 r
+:geoo/sandstone/pillar_bottom: 1025 304 r
+:geoo/sandstone/pillar_bottom: 994 304 r
+:geoo/sandstone/pillar_bottom: 963 304 r
+:geoo/sandstone/pillar_bottom: 932 304 r
+:geoo/sandstone/pillar_bottom: 901 304 r
+:geoo/sandstone/pillar_bottom: 880 304 r
+:geoo/sandstone/pillar_bottom: 1328 160 r
+:geoo/sandstone/pillar_bottom: 1297 160 r
+:geoo/sandstone/pillar_bottom: 1266 160 r
+:geoo/sandstone/pillar_bottom: 1235 160 r
+:geoo/sandstone/pillar_bottom: 1204 160 r
+:geoo/sandstone/pillar_bottom: 1173 160 r
+:geoo/sandstone/pillar_bottom: 1152 160 r
+:geoo/sandstone/pillar_bottom: 1328 192 r
+:geoo/sandstone/pillar_bottom: 1297 192 r
+:geoo/sandstone/pillar_bottom: 1266 192 r
+:geoo/sandstone/pillar_bottom: 1235 192 r
+:geoo/sandstone/pillar_bottom: 1204 192 r
+:geoo/sandstone/pillar_bottom: 1173 192 r
+:geoo/sandstone/pillar_bottom: 1152 192 r
+:geoo/sandstone/pillar_bottom: 1360 368 rr
+:geoo/sandstone/pillar_bottom: 1360 337 rr
+:geoo/sandstone/pillar_bottom: 1360 306 rr
+:geoo/sandstone/pillar_bottom: 1360 275 rr
+:geoo/sandstone/pillar_bottom: 1360 244 rr
+:geoo/sandstone/pillar_bottom: 1360 213 rr
+:geoo/sandstone/pillar_bottom: 1360 182 rr
+:geoo/sandstone/pillar_bottom: 1360 151 rr
+:geoo/sandstone/pillar_bottom: 1360 120 rr
+:geoo/sandstone/pillar_bottom: 1360 96 rr
+:geoo/sandstone/pillar_bottom: 1392 368 rr
+:geoo/sandstone/pillar_bottom: 1392 337 rr
+:geoo/sandstone/pillar_bottom: 1392 306 rr
+:geoo/sandstone/pillar_bottom: 1392 275 rr
+:geoo/sandstone/pillar_bottom: 1392 244 rr
+:geoo/sandstone/pillar_bottom: 1392 213 rr
+:geoo/sandstone/pillar_bottom: 1392 182 rr
+:geoo/sandstone/pillar_bottom: 1392 151 rr
+:geoo/sandstone/pillar_bottom: 1392 120 rr
+:geoo/sandstone/pillar_bottom: 1392 96 rr
+:geoo/sandstone/pillar_bottom: 1088 368 rr
+:geoo/sandstone/pillar_bottom: 1088 337 rr
+:geoo/sandstone/pillar_bottom: 1088 306 rr
+:geoo/sandstone/pillar_bottom: 1088 275 rr
+:geoo/sandstone/pillar_bottom: 1088 244 rr
+:geoo/sandstone/pillar_bottom: 1088 213 rr
+:geoo/sandstone/pillar_bottom: 1088 182 rr
+:geoo/sandstone/pillar_bottom: 1088 151 rr
+:geoo/sandstone/pillar_bottom: 1088 120 rr
+:geoo/sandstone/pillar_bottom: 1088 96 rr
+:geoo/sandstone/pillar_bottom: 1120 368 rr
+:geoo/sandstone/pillar_bottom: 1120 337 rr
+:geoo/sandstone/pillar_bottom: 1120 306 rr
+:geoo/sandstone/pillar_bottom: 1120 275 rr
+:geoo/sandstone/pillar_bottom: 1120 244 rr
+:geoo/sandstone/pillar_bottom: 1120 213 rr
+:geoo/sandstone/pillar_bottom: 1120 182 rr
+:geoo/sandstone/pillar_bottom: 1120 151 rr
+:geoo/sandstone/pillar_bottom: 1120 120 rr
+:geoo/sandstone/pillar_bottom: 1120 96 rr
+:geoo/sandstone/pillar_bottom: 1600 272 r
+:geoo/sandstone/pillar_bottom: 1569 272 r
+:geoo/sandstone/pillar_bottom: 1538 272 r
+:geoo/sandstone/pillar_bottom: 1507 272 r
+:geoo/sandstone/pillar_bottom: 1476 272 r
+:geoo/sandstone/pillar_bottom: 1445 272 r
+:geoo/sandstone/pillar_bottom: 1424 272 r
+:geoo/sandstone/pillar_bottom: 1600 304 r
+:geoo/sandstone/pillar_bottom: 1569 304 r
+:geoo/sandstone/pillar_bottom: 1538 304 r
+:geoo/sandstone/pillar_bottom: 1507 304 r
+:geoo/sandstone/pillar_bottom: 1476 304 r
+:geoo/sandstone/pillar_bottom: 1445 304 r
+:geoo/sandstone/pillar_bottom: 1424 304 r
+:geoo/sandstone/pillar_bottom: 1872 160 r
+:geoo/sandstone/pillar_bottom: 1841 160 r
+:geoo/sandstone/pillar_bottom: 1810 160 r
+:geoo/sandstone/pillar_bottom: 1779 160 r
+:geoo/sandstone/pillar_bottom: 1748 160 r
+:geoo/sandstone/pillar_bottom: 1717 160 r
+:geoo/sandstone/pillar_bottom: 1696 160 r
+:geoo/sandstone/pillar_bottom: 1872 192 r
+:geoo/sandstone/pillar_bottom: 1841 192 r
+:geoo/sandstone/pillar_bottom: 1810 192 r
+:geoo/sandstone/pillar_bottom: 1779 192 r
+:geoo/sandstone/pillar_bottom: 1748 192 r
+:geoo/sandstone/pillar_bottom: 1717 192 r
+:geoo/sandstone/pillar_bottom: 1696 192 r
+:geoo/sandstone/pillar_bottom: 1904 368 rr
+:geoo/sandstone/pillar_bottom: 1904 337 rr
+:geoo/sandstone/pillar_bottom: 1904 306 rr
+:geoo/sandstone/pillar_bottom: 1904 275 rr
+:geoo/sandstone/pillar_bottom: 1904 244 rr
+:geoo/sandstone/pillar_bottom: 1904 213 rr
+:geoo/sandstone/pillar_bottom: 1904 182 rr
+:geoo/sandstone/pillar_bottom: 1904 151 rr
+:geoo/sandstone/pillar_bottom: 1904 120 rr
+:geoo/sandstone/pillar_bottom: 1904 96 rr
+:geoo/sandstone/pillar_bottom: 1936 368 rr
+:geoo/sandstone/pillar_bottom: 1936 337 rr
+:geoo/sandstone/pillar_bottom: 1936 306 rr
+:geoo/sandstone/pillar_bottom: 1936 275 rr
+:geoo/sandstone/pillar_bottom: 1936 244 rr
+:geoo/sandstone/pillar_bottom: 1936 213 rr
+:geoo/sandstone/pillar_bottom: 1936 182 rr
+:geoo/sandstone/pillar_bottom: 1936 151 rr
+:geoo/sandstone/pillar_bottom: 1936 120 rr
+:geoo/sandstone/pillar_bottom: 1936 96 rr
+:geoo/sandstone/pillar_bottom: 1632 368 rr
+:geoo/sandstone/pillar_bottom: 1632 337 rr
+:geoo/sandstone/pillar_bottom: 1632 306 rr
+:geoo/sandstone/pillar_bottom: 1632 275 rr
+:geoo/sandstone/pillar_bottom: 1632 244 rr
+:geoo/sandstone/pillar_bottom: 1632 213 rr
+:geoo/sandstone/pillar_bottom: 1632 182 rr
+:geoo/sandstone/pillar_bottom: 1632 151 rr
+:geoo/sandstone/pillar_bottom: 1632 120 rr
+:geoo/sandstone/pillar_bottom: 1632 96 rr
+:geoo/sandstone/pillar_bottom: 1664 368 rr
+:geoo/sandstone/pillar_bottom: 1664 337 rr
+:geoo/sandstone/pillar_bottom: 1664 306 rr
+:geoo/sandstone/pillar_bottom: 1664 275 rr
+:geoo/sandstone/pillar_bottom: 1664 244 rr
+:geoo/sandstone/pillar_bottom: 1664 213 rr
+:geoo/sandstone/pillar_bottom: 1664 182 rr
+:geoo/sandstone/pillar_bottom: 1664 151 rr
+:geoo/sandstone/pillar_bottom: 1664 120 rr
+:geoo/sandstone/pillar_bottom: 1664 96 rr
+:geoo/sandstone/pillar_bottom: 2144 272 r
+:geoo/sandstone/pillar_bottom: 2113 272 r
+:geoo/sandstone/pillar_bottom: 2082 272 r
+:geoo/sandstone/pillar_bottom: 2051 272 r
+:geoo/sandstone/pillar_bottom: 2020 272 r
+:geoo/sandstone/pillar_bottom: 1989 272 r
+:geoo/sandstone/pillar_bottom: 1968 272 r
+:geoo/sandstone/pillar_bottom: 2144 304 r
+:geoo/sandstone/pillar_bottom: 2113 304 r
+:geoo/sandstone/pillar_bottom: 2082 304 r
+:geoo/sandstone/pillar_bottom: 2051 304 r
+:geoo/sandstone/pillar_bottom: 2020 304 r
+:geoo/sandstone/pillar_bottom: 1989 304 r
+:geoo/sandstone/pillar_bottom: 1968 304 r
+:geoo/sandstone/pillar_bottom: 2416 160 r
+:geoo/sandstone/pillar_bottom: 2385 160 r
+:geoo/sandstone/pillar_bottom: 2354 160 r
+:geoo/sandstone/pillar_bottom: 2323 160 r
+:geoo/sandstone/pillar_bottom: 2292 160 r
+:geoo/sandstone/pillar_bottom: 2261 160 r
+:geoo/sandstone/pillar_bottom: 2240 160 r
+:geoo/sandstone/pillar_bottom: 2416 192 r
+:geoo/sandstone/pillar_bottom: 2385 192 r
+:geoo/sandstone/pillar_bottom: 2354 192 r
+:geoo/sandstone/pillar_bottom: 2323 192 r
+:geoo/sandstone/pillar_bottom: 2292 192 r
+:geoo/sandstone/pillar_bottom: 2261 192 r
+:geoo/sandstone/pillar_bottom: 2240 192 r
+:geoo/sandstone/pillar_bottom: 2448 368 rr
+:geoo/sandstone/pillar_bottom: 2448 337 rr
+:geoo/sandstone/pillar_bottom: 2448 306 rr
+:geoo/sandstone/pillar_bottom: 2448 275 rr
+:geoo/sandstone/pillar_bottom: 2448 244 rr
+:geoo/sandstone/pillar_bottom: 2448 213 rr
+:geoo/sandstone/pillar_bottom: 2448 182 rr
+:geoo/sandstone/pillar_bottom: 2448 151 rr
+:geoo/sandstone/pillar_bottom: 2448 120 rr
+:geoo/sandstone/pillar_bottom: 2448 96 rr
+:geoo/sandstone/pillar_bottom: 2480 368 rr
+:geoo/sandstone/pillar_bottom: 2480 337 rr
+:geoo/sandstone/pillar_bottom: 2480 306 rr
+:geoo/sandstone/pillar_bottom: 2480 275 rr
+:geoo/sandstone/pillar_bottom: 2480 244 rr
+:geoo/sandstone/pillar_bottom: 2480 213 rr
+:geoo/sandstone/pillar_bottom: 2480 182 rr
+:geoo/sandstone/pillar_bottom: 2480 151 rr
+:geoo/sandstone/pillar_bottom: 2480 120 rr
+:geoo/sandstone/pillar_bottom: 2480 96 rr
+:geoo/sandstone/pillar_bottom: 2176 368 rr
+:geoo/sandstone/pillar_bottom: 2176 337 rr
+:geoo/sandstone/pillar_bottom: 2176 306 rr
+:geoo/sandstone/pillar_bottom: 2176 275 rr
+:geoo/sandstone/pillar_bottom: 2176 244 rr
+:geoo/sandstone/pillar_bottom: 2176 213 rr
+:geoo/sandstone/pillar_bottom: 2176 182 rr
+:geoo/sandstone/pillar_bottom: 2176 151 rr
+:geoo/sandstone/pillar_bottom: 2176 120 rr
+:geoo/sandstone/pillar_bottom: 2176 96 rr
+:geoo/sandstone/pillar_bottom: 2208 368 rr
+:geoo/sandstone/pillar_bottom: 2208 337 rr
+:geoo/sandstone/pillar_bottom: 2208 306 rr
+:geoo/sandstone/pillar_bottom: 2208 275 rr
+:geoo/sandstone/pillar_bottom: 2208 244 rr
+:geoo/sandstone/pillar_bottom: 2208 213 rr
+:geoo/sandstone/pillar_bottom: 2208 182 rr
+:geoo/sandstone/pillar_bottom: 2208 151 rr
+:geoo/sandstone/pillar_bottom: 2208 120 rr
+:geoo/sandstone/pillar_bottom: 2208 96 rr
+:geoo/sandstone/pillar_bottom: 2688 272 r
+:geoo/sandstone/pillar_bottom: 2657 272 r
+:geoo/sandstone/pillar_bottom: 2626 272 r
+:geoo/sandstone/pillar_bottom: 2595 272 r
+:geoo/sandstone/pillar_bottom: 2564 272 r
+:geoo/sandstone/pillar_bottom: 2533 272 r
+:geoo/sandstone/pillar_bottom: 2512 272 r
+:geoo/sandstone/pillar_bottom: 2688 304 r
+:geoo/sandstone/pillar_bottom: 2657 304 r
+:geoo/sandstone/pillar_bottom: 2626 304 r
+:geoo/sandstone/pillar_bottom: 2595 304 r
+:geoo/sandstone/pillar_bottom: 2564 304 r
+:geoo/sandstone/pillar_bottom: 2533 304 r
+:geoo/sandstone/pillar_bottom: 2512 304 r
+:geoo/sandstone/pillar_bottom_ext: 1344 384
+:geoo/sandstone/pillar_bottom_ext: 1376 384
+:geoo/sandstone/pillar_bottom_ext: 1616 384
+:geoo/sandstone/pillar_bottom_ext: 1648 384
+:geoo/sandstone/pillar_bottom_ext: 1888 384
+:geoo/sandstone/pillar_bottom_ext: 1920 384
+:geoo/sandstone/pillar_bottom_ext: 2160 384
+:geoo/sandstone/pillar_bottom_ext: 2192 384
+:geoo/sandstone/pillar_bottom_ext: 2432 384
+:geoo/sandstone/pillar_bottom_ext: 2464 384
+:geoo/sandstone/pillar_bottom_ext: 2704 384
+:geoo/sandstone/pillar_bottom_ext: 16 384
+:geoo/sandstone/pillar_bottom_ext: 256 384
+:geoo/sandstone/pillar_bottom_ext: 288 384
+:geoo/sandstone/pillar_bottom_ext: 528 384
+:geoo/sandstone/pillar_bottom_ext: 560 384
+:geoo/sandstone/pillar_bottom_ext: 800 384
+:geoo/sandstone/pillar_bottom_ext: 832 384
+:geoo/sandstone/pillar_bottom_ext: 1072 384
+:geoo/sandstone/pillar_bottom_ext: 1104 384
+:geoo/sandstone/pillar_top_jaggedl: 1360 88 frr
+:geoo/sandstone/pillar_top_jaggedl: 1392 88 frr
+:geoo/sandstone/pillar_top_jaggedl: 1632 88 frr
+:geoo/sandstone/pillar_top_jaggedl: 1664 88 frr
+:geoo/sandstone/pillar_top_jaggedl: 1904 88 frr
+:geoo/sandstone/pillar_top_jaggedl: 1936 88 frr
+:geoo/sandstone/pillar_top_jaggedl: 2176 88 frr
+:geoo/sandstone/pillar_top_jaggedl: 2208 88 frr
+:geoo/sandstone/pillar_top_jaggedl: 2448 88 frr
+:geoo/sandstone/pillar_top_jaggedl: 2480 88 frr
+:geoo/sandstone/pillar_top_jaggedl: 0 88 frr
+:geoo/sandstone/pillar_top_jaggedl: 32 88 frr
+:geoo/sandstone/pillar_top_jaggedl: 272 88 frr
+:geoo/sandstone/pillar_top_jaggedl: 304 88 frr
+:geoo/sandstone/pillar_top_jaggedl: 544 88 frr
+:geoo/sandstone/pillar_top_jaggedl: 576 88 frr
+:geoo/sandstone/pillar_top_jaggedl: 816 88 frr
+:geoo/sandstone/pillar_top_jaggedl: 848 88 frr
+:geoo/sandstone/pillar_top_jaggedl: 1088 88 frr
+:geoo/sandstone/pillar_top_jaggedl: 1120 88 frr
+:geoo/steel/16x16o.S: 432 272
+:geoo/steel/16x16o.S: 976 272
+:geoo/steel/16x16o.S: 1520 272
+:geoo/steel/16x16o.S: 2064 272
+:geoo/steel/16x16o.S: 2608 272

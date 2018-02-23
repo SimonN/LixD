@@ -1,0 +1,60 @@
+$BUILT 2018-02-01 13:02:59
+$AUTHOR Arty
+$ENGLISH The first layer of Hell (2p)
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 704
+#SIZE_Y 384
+#TORUS_X 0
+#TORUS_Y 1
+
+#SECONDS 376
+#INITIAL 66
+#SPAWN_INTERVAL 13
+
+#WALKER 66
+#CLIMBER 66
+#EXPLODER2 66
+#BUILDER 66
+#PLATFORMER 66
+#BASHER 66
+#MINER 66
+#DIGGER 66
+#JUMPER 66
+#CUBER 66
+
+:matt/underworld/Hatch.H: 544 32
+:matt/underworld/Hatch.H: 544 224
+
+:matt/underworld/Goal.G: 96 224
+:matt/underworld/Goal.G: 96 32
+
+:proxima/flame.F: 64 48
+:proxima/flame.F: 152 48
+:proxima/flame.F: 64 240
+:proxima/flame.F: 152 240
+:proxima/flame.F: 512 48
+:proxima/flame.F: 600 48
+:proxima/flame.F: 512 240
+:proxima/flame.F: 600 240
+
+:matt/underworld/02: 0 0
+:matt/underworld/02: 0 96
+:matt/underworld/02: 0 192
+:matt/underworld/01: 64 96
+:matt/underworld/02: 0 288
+:matt/underworld/02: 640 0
+:matt/underworld/02: 640 96
+:matt/underworld/02: 640 192
+:matt/underworld/02: 640 288
+:matt/underworld/01: 64 288
+:matt/underworld/01: 128 96
+:matt/underworld/01: 128 288
+:matt/underworld/02: 320 0
+:matt/underworld/02: 320 96
+:matt/underworld/02: 320 192
+:matt/underworld/02: 320 288
+:matt/underworld/01: 512 96
+:matt/underworld/01: 576 96
+:matt/underworld/01: 512 288
+:matt/underworld/01: 576 288
