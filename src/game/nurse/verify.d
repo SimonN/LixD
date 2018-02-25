@@ -25,6 +25,7 @@ public:
     in {
         assert (model);
         assert (replay);
+        assert (! model.cs.multiplayer, "don't evaluate multiplayer replays");
     }
     body {
         EvalResult ret;
@@ -38,7 +39,7 @@ public:
                 break;
             }
         }
-        ret.trophy = trophyForTribe(replay.playerLocalOrSmallest.style);
+        ret.trophy = trophyForTribe(model.cs.singleplayerStyle);
         return ret;
     }
 }

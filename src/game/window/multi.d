@@ -20,7 +20,7 @@ private:
 
 public:
     this(in Tribe[Style] rawTribes,
-        in Replay replay, in Level level)
+        in Replay replay, in Level level, in Style aOurStyle)
     {
         super(myGeom(2, butXl + 40,
             20 // space between list and first button
@@ -36,7 +36,7 @@ public:
             super.captionSuperElements();
             super.setReplayAndLevel(replay, level);
         }
-        _ourStyle = replay.playerLocalOrSmallest.style;
+        _ourStyle = aOurStyle;
         foreach (int i, tribe; sortedTribes(rawTribes))
             addChild(new Line(new Geom(0, 40 + 20*i, xlg-40, 20, From.TOP),
                 tribe, replay.styleToNames(tribe.style)));

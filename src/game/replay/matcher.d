@@ -108,9 +108,9 @@ public:
         return _rp.numPlayers > 1;
     }
 
-    @property Replay.Player playerLocalOrSmallest() const
+    @property string playerName() const @nogc nothrow
     {
-        return _rp.playerLocalOrSmallest;
+        return _rp.players.length > 1 ? _rp.players.byValue.front.name : "";
     }
 
 private:

@@ -4,6 +4,7 @@ import std.algorithm;
 import std.stdio; // save file, and needed for unittest
 import std.string;
 
+import basics.globconf : userName; // for filename during saving
 import basics.help;
 import net.repdata;
 import basics.globals;
@@ -78,13 +79,16 @@ auto implLoadFromFile(Replay replay, Filename fn) { with (replay)
             ret.levelFilename = new VfsFilename(dirLevels.dirRootless ~ i.text2);
         break;
     case '+':
+        // For back-compat, we accept the FRIEND directive, even though
+        // since March 2018, we only write PLAYER directives.
         if (i.text1 == replayPlayer || i.text1 == replayFriend)
-            addPlayer(PlNr(i.nr1 & 0xFF), stringToStyle(i.text2), i.text3,
-                      i.text1 == replayPlayer);
+            addPlayer(PlNr(i.nr1 & 0xFF), stringToStyle(i.text2), i.text3);
         break;
     case '!': {
         // replays contain ASSIGN=BASHER or ASSIGN_RIGHT=BUILDER.
         auto iSplit = std.algorithm.splitter(i.text1, '=');
+        if (iSplit.empty)
+            break;
         string assign = iSplit.front;
         iSplit.popFront;
         string skill = iSplit.empty ? "" : iSplit.front;
@@ -106,10 +110,6 @@ auto implLoadFromFile(Replay replay, Filename fn) { with (replay)
     default:
         break;
     }
-
-    // Sanity-fix the replay
-    if (_players.length == 0)
-        addPlayer(PlNr(0), Style.garden, "", true); // add unknown local player
     return ret;
 }}
 
@@ -133,8 +133,7 @@ void saveToStdioFile(
     if (_players.length)
         file.writeln();
     foreach (plNr, pl; _players)
-        file.writeln(IoLine.Plus(_hasLocal && plNr == _plNrLocal
-             ? basics.globals.replayPlayer : basics.globals.replayFriend,
+        file.writeln(IoLine.Plus(basics.globals.replayPlayer,
              plNr, styleToString(pl.style), pl.name));
     if (_players.length > 1)
         file.writeln(IoLine.Dollar(replayPermu, permu.toString));
@@ -187,7 +186,7 @@ void saveToTree(
         treebase.rootless,
         replay.mimickLevelPath(),
         replay.levelFilename ? replay.levelFilename.fileNoExtNoPre : "unknown",
-        replay.playerLocalOrSmallest.name.escapeStringForFilename(),
+        userName.escapeStringForFilename(),
         Date.now().toStringForFilename(),
         basics.globals.filenameExtReplay);
     replay.implSaveToFile(new VfsFilename(outfile), lev);
@@ -239,21 +238,23 @@ unittest
     Level lev = new Level(fn0);
     lev.saveToFile(fnl);
 
-    Replay r = Replay.loadFromFile(fn0);
-    const int data_len = r._data.len;
-    assert (data_len == 5);
-    assert (r._data[0].update == 125);
-    assert (r._data[0].skill == Ac.climber);
+    void assertReplay(in Replay r)
+    {
+        assert (r._data.len == 5);
+        assert (r._data[0].update == 125);
+        assert (r._data[0].skill == Ac.climber);
+        assert (r.players.length == 1);
+        assert (r.players[PlNr(0)].name == "TestName");
+        assert (r.players[PlNr(0)].style == Style.yellow);
+    }
 
-    assert (r.playerLocalOrSmallest.name == "TestName");
-    assert (r.playerLocalOrSmallest.style == Style.yellow);
+    Replay loaded = Replay.loadFromFile(fn0);
+    assertReplay(loaded);
 
-    implSaveToFile(r, fn1, lev);
-    r = Replay.loadFromFile(fn1);
-    assert (data_len == r._data.len);
-    assert (r.playerLocalOrSmallest.name == "TestName");
-    assert (r.playerLocalOrSmallest.style == Style.yellow);
+    implSaveToFile(loaded, fn1, lev);
+    loaded = Replay.loadFromFile(fn1);
+    assertReplay(loaded);
 
-    implSaveToFile(r, fn2, lev);
+    implSaveToFile(loaded, fn2, lev);
     [fn0, fn1, fn2, fnl].each!(f => f.deleteFile);
 }

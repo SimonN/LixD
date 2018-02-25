@@ -80,17 +80,28 @@ public:
         return cs.tribes.byValue.map!(tr => tr.score);
     }
 
+    auto gadgetsOfTeam(in Style st) const
+    {
+        return chain(
+            cs.goals.filter!(g => g.hasTribe(st)),
+            cs.hatches.filter!(h => h.blinkStyle == st));
+    }
+
     Trophy trophyForTribe(in Style style) const
     {
         assert (style in cs.tribes);
         return resultOf(cs.tribes[style]);
     }
 
-    auto gadgetsOfTeam(in Style st) const
+    // This should be refactored. The base Nurse is happy to compute trophies,
+    // but doesn't like to check whether it's fine to save trophies.
+    void saveTrophyIfSingleplayerSavedAtLeast(in int lixRequired)
     {
-        return chain(
-            cs.goals.filter!(g => g.hasTribe(st)),
-            cs.hatches.filter!(h => h.blinkStyle == st));
+        if (cs.multiplayer
+            || ! _replay.players.byValue.canFind!(pl => pl.name == userName)
+            || ! singleplayerHasSavedAtLeast(lixRequired))
+            return;
+        addTrophy(_replay.levelFilename, trophyForTribe(cs.singleplayerStyle));
     }
 
 protected:

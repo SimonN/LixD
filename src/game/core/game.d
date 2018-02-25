@@ -18,10 +18,12 @@ public import game.core.view;
 
 import std.conv; // float to int in prepare nurse
 import std.exception;
+import std.range;
 
 import basics.alleg5;
 import basics.globals;
 import basics.globconf; // username, to determine whether to save result
+import basics.help : len;
 import basics.user; // Trophy
 import file.filename;
 
@@ -59,6 +61,8 @@ package:
     InteractiveNurse nurse;
     EffectManager _effect; // null if we're verifying
     RichClient _netClient; // null unless playing/observing multiplayer
+
+    Style _localStyle;
 
     long altickLastPhyu;
     long _altickPingGoalsUntil; // starts at 0, which means don't ping goals
@@ -216,26 +220,12 @@ package:
         return nurse.stateOnlyPrivatelyForGame.multiplayer;
     }
 
-    @property Style localStyle() const
-    {
-        return nurse.constReplay.playerLocalOrSmallest.style;
-    }
-
+    @property Style localStyle() const @nogc nothrow { return _localStyle; }
     @property const(Tribe) localTribe() const
     {
         auto ptr = localStyle in cs.tribes;
         assert (ptr, "badly cloned cs? Local style isn't there");
         return *ptr;
-    }
-
-    @property PlNr plNrLocal() const
-    {
-        return nurse.constReplay.plNrLocalOrSmallest;
-    }
-
-    @property auto playerLocal() const
-    {
-        return nurse.constReplay.playerLocalOrSmallest;
     }
 
     @property View view() const
@@ -262,13 +252,10 @@ package:
         altickLastPhyu = timerTicks;
     }
 
-    void saveTrophy()
-    {
-        if (nurse && nurse.singleplayerHasSavedAtLeast(level.required)
-                  && playerLocal.name == basics.globconf.userName
-                  && _maySaveTrophy)
-            addTrophy(nurse.constReplay.levelFilename,
-                      nurse.trophyForTribe(localStyle));
+    void saveTrophy() {
+        if (! nurse || ! level || ! _maySaveTrophy)
+            return;
+        nurse.saveTrophyIfSingleplayerSavedAtLeast(level.required);
     }
 
 private:
@@ -293,27 +280,55 @@ private:
         _replayNeverCancelledThereforeDontSaveAutoReplay = rp !is null;
         if (! rp)
             rp = generateFreshReplay(levelFilename);
+        determineLocalStyle(rp);
         // DTODONETWORK: Eventually, observers shall cycle through the
         // spectating teams. Don't set a final style here, but somehow
         // make the effect manager depend on what the GUI chooses.
-        _effect = new EffectManager(rp.playerLocalOrSmallest.style);
+        _effect = new EffectManager(_localStyle);
         nurse = new InteractiveNurse(level, rp, _effect);
     }
 
     Replay generateFreshReplay(Filename levelFilename)
     {
         auto rp = Replay.newForLevel(levelFilename, level.built);
-        if (! _netClient)
-            rp.addPlayer(PlNr(0), Style.garden,
-                         basics.globconf.userName, true);
+        if (! _netClient) {
+            rp.addPlayer(PlNr(0), Style.garden, basics.globconf.userName);
+        }
         else {
             rp.permu = _netClient.permu;
             foreach (plNr, prof; _netClient.profilesInOurRoom)
                 if (prof.feeling != Profile.Feeling.observing)
-                    rp.addPlayer(plNr, prof.style, prof.name,
-                                 plNr == _netClient.ourPlNr);
+                    rp.addPlayer(plNr, prof.style, prof.name);
         }
         return rp;
+    }
+
+    void determineLocalStyle(in Replay rp)
+    in {
+        assert (_localStyle == Style.init, "don't initialize local style 2x");
+    }
+    body {
+        if (rp.players.length == 0) {
+            _localStyle = Style.garden;
+            return;
+        }
+        if (_netClient) {
+            auto ptr = _netClient.ourPlNr in rp.players;
+            if (ptr) {
+                _localStyle = ptr.style;
+                return;
+            }
+        }
+        foreach (plNr, pl; rp.players) {
+            if (pl.name == userName) {
+                _localStyle = pl.style;
+                return;
+            }
+        }
+        // We aren't in the players list, but it's nonempty. Observe randomly.
+        import std.random;
+        _localStyle = rp.players.byValue
+            .drop(uniform(0, rp.players.length.to!int)).front.style;
     }
 
     void initializePanel()

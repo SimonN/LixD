@@ -145,7 +145,7 @@ version (unittest) {
         return new SaveStatingNurse(lv, ()
             {
                 Replay rep = Replay.newForLevel(fn, lv.built);
-                rep.addPlayer(PlNr(0), Style.garden, "Mr. Unittest", true);
+                rep.addPlayer(PlNr(0), Style.garden, "Mr. Unittest");
                 return rep;
             }());
     }

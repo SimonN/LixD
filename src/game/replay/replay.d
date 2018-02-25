@@ -37,8 +37,6 @@ package:
     Player[PlNr] _players;
     Permu _permu; // contains natural numbers [0 .. #players[, not the plNrs
     ReplayData[] _data;
-    PlNr _plNrLocal;
-    bool _hasLocal; // if false, all players were observed netplayers
 
 public:
     Date     levelBuiltRequired;
@@ -60,8 +58,6 @@ public:
         _gameVersionRequired = rhs._gameVersionRequired;
         levelBuiltRequired   = rhs.levelBuiltRequired;
         levelFilename        = rhs.levelFilename;
-        _plNrLocal           = rhs._plNrLocal;
-        _hasLocal            = rhs._hasLocal;
         _permu               = rhs._permu.clone();
         _data                = rhs._data.dup;
 
@@ -91,30 +87,11 @@ public:
         int numPlayers() { return _players.length & 0x7FFF_FFFF; }
         const(Player[PlNr]) players() { return _players; }
         const(Permu) permu() { return _permu; }
-        bool hasLocal() { return  _hasLocal; }
         bool empty() { return _data.length == 0; }
         int latestPhyu() { return (_data.length > 0) ? _data[$-1].update : 0; }
     }
 
     @property Permu permu(Permu p) { _permu = p; return p; }
-
-    @property PlNr plNrLocalOrSmallest() const
-    in {
-        assert (_players.length >= 1, "localOrSmallest requires at least "
-            ~ "one player in the replay already");
-    }
-    body {
-        if (_hasLocal) {
-            assert (_plNrLocal in _players);
-            return _plNrLocal;
-        }
-        return _players.byKey.reduce!min;
-    }
-
-    @property Player playerLocalOrSmallest() const
-    {
-        return _players[plNrLocalOrSmallest];
-    }
 
     @property string styleToNames(in Style st) const
     {
@@ -148,20 +125,15 @@ public:
     void touch()
     {
         _gameVersionRequired = gameVersion();
-        auto ptr = _plNrLocal in _players;
-        if (ptr)
-            ptr.name = userName;
+        if (_players.length == 1) {
+            foreach (ref Player pl; _players)
+                pl.name = userName;
+        }
     }
 
-    void addPlayer(PlNr nr, Style s, string name, in bool local)
+    void addPlayer(PlNr nr, Style st, string name)
     {
-        if (nr in _players)
-            return;
-        _players[nr] = Player(s, name);
-        if (local && ! _hasLocal) {
-            _hasLocal = true;
-            _plNrLocal = nr;
-        }
+        _players[nr] = Player(st, name);
     }
 
     // This doesn't check whether the metadata/general data is the same.
@@ -208,7 +180,7 @@ public:
         deleteAfterPhyu(lastActionsToKeep);
 
         ReplayData termNuke = ReplayData();
-        termNuke.player = plNrLocalOrSmallest;
+        termNuke.player = _players.byKey.front;
         termNuke.update = Phyu(lastActionsToKeep + 1);
         termNuke.action = RepAc.NUKE;
         add(termNuke);

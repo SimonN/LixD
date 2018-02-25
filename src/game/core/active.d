@@ -46,7 +46,7 @@ package void findAgainHighlitLixAfterPhyu(Game game)
 package ReplayData newReplayDataForNextPhyu(Game game)
 {
     ReplayData data;
-    data.player = game.plNrLocal;
+    data.player = game._netClient ? game._netClient.ourPlNr : PlNr(0);
     data.update = game.nurse.upd + 1;
     return data;
 }

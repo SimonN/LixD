@@ -67,7 +67,7 @@ createModalWindow(Game game) { with (game)
         // to refine the data from the nurse.
         modalWindow = multiplayer ? new WindowEndMulti(
                                     nurse.stateOnlyPrivatelyForGame.tribes,
-                                    nurse.constReplay, level)
+                                    nurse.constReplay, level, localStyle)
             : new WindowEndSingle(localTribe, nurse.constReplay, level);
     else
         modalWindow = new WindowDuringOffline(nurse.constReplay, level);

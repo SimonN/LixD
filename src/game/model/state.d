@@ -95,6 +95,10 @@ public:
         return numTribes > 1;
     }
 
+    @property Style singleplayerStyle() const @nogc nothrow
+    in { assert (! multiplayer, "call this only in singleplayer"); }
+    body { return tribes.byKey.front; }
+
     @property bool singleplayerHasSavedAtLeast(in int lixRequired) const @nogc
     {
         return ! multiplayer
