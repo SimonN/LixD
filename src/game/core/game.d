@@ -62,8 +62,6 @@ package:
     EffectManager _effect; // null if we're verifying
     RichClient _netClient; // null unless playing/observing multiplayer
 
-    Style _localStyle;
-
     long altickLastPhyu;
     long _altickPingGoalsUntil; // starts at 0, which means don't ping goals
 
@@ -220,7 +218,10 @@ package:
         return nurse.stateOnlyPrivatelyForGame.multiplayer;
     }
 
-    @property Style localStyle() const @nogc nothrow { return _localStyle; }
+    @property Style localStyle() const @nogc nothrow
+    in { assert (_effect, "create effect manager before querying style"); }
+    body { return _effect.localTribe; }
+
     @property const(Tribe) localTribe() const
     {
         auto ptr = localStyle in cs.tribes;
@@ -280,11 +281,10 @@ private:
         _replayNeverCancelledThereforeDontSaveAutoReplay = rp !is null;
         if (! rp)
             rp = generateFreshReplay(levelFilename);
-        determineLocalStyle(rp);
         // DTODONETWORK: Eventually, observers shall cycle through the
         // spectating teams. Don't set a final style here, but somehow
         // make the effect manager depend on what the GUI chooses.
-        _effect = new EffectManager(_localStyle);
+        _effect = new EffectManager(determineLocalStyle(rp));
         nurse = new InteractiveNurse(level, rp, _effect);
     }
 
@@ -303,31 +303,21 @@ private:
         return rp;
     }
 
-    void determineLocalStyle(in Replay rp)
-    in {
-        assert (_localStyle == Style.init, "don't initialize local style 2x");
-    }
-    body {
-        if (rp.players.length == 0) {
-            _localStyle = Style.garden;
-            return;
-        }
+    Style determineLocalStyle(in Replay rp) const
+    {
+        if (rp.players.length == 0)
+            return Style.garden;
         if (_netClient) {
             auto ptr = _netClient.ourPlNr in rp.players;
-            if (ptr) {
-                _localStyle = ptr.style;
-                return;
-            }
+            if (ptr)
+                return ptr.style;
         }
-        foreach (plNr, pl; rp.players) {
-            if (pl.name == userName) {
-                _localStyle = pl.style;
-                return;
-            }
-        }
+        foreach (plNr, pl; rp.players)
+            if (pl.name == userName)
+                return pl.style;
         // We aren't in the players list, but it's nonempty. Observe randomly.
         import std.random;
-        _localStyle = rp.players.byValue
+        return rp.players.byValue
             .drop(uniform(0, rp.players.length.to!int)).front.style;
     }
 
