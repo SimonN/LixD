@@ -3,7 +3,6 @@ module game.panel.infobar;
 import std.string; // format;
 import std.typecons; // Rebindable;
 
-import basics.alleg5;
 import basics.globals; // game panel icons
 import net.repdata; // Phyu
 import basics.user; // languageIsEnglish
@@ -184,8 +183,7 @@ private:
                 s = file.language.skillTooltip(_skillTooltipSuggested);
         }
         if (basics.user.showFPS.value && s == "")
-            s = format!"Phyu: %d   FPS: %d   VRAM: %d MB"(
-                _age, displayFps, vramAllocatedInMB);
+            s = format!"Phyu: %d   FPS: %d"(_age, displayFps);
         _tooltip.text = s;
         _tooltipsSuggested = 0;
         _skillTooltipSuggested = Ac.nothing;
