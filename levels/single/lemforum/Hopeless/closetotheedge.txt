@@ -1,135 +1,123 @@
-$BUILT                                             2012-01-30 16:08:11
+$BUILT 2018-03-08 23:29:44
 $AUTHOR Michael S. Repton
-$GERMAN                                                               
-$ENGLISH                                             Close to the Edge
+$ENGLISH Close to the Edge
 
-#SIZE_X                                                           1280
-#SIZE_Y                                                            400
-#TORUS_X                                                             0
-#TORUS_Y                                                             0
-#START_X                                                             0
-#START_Y                                                           380
-#BACKGROUND_RED                                                      0
-#BACKGROUND_GREEN                                                    0
-#BACKGROUND_BLUE                                                     0
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1280
+#SIZE_Y 400
 
-#INITIAL                                                            50
-#REQUIRED                                                           46
-#SPAWN_INTERVAL                                                     40
+#INITIAL 20
+#REQUIRED 16
+#SPAWN_INTERVAL 40
 
-#CLIMBER                                                             1
-#FLOATER                                                             3
-#EXPLODER                                                            3
-#BLOCKER                                                             3
-#BUILDER                                                             1
-#BASHER                                                              1
-#PLATFORMER                                                          1
-#WALKER                                                              1
-#NOTHING                                                             0
-#NOTHING                                                             0
-#NOTHING                                                             0
-#NOTHING                                                             0
+#WALKER 1
+#CLIMBER 1
+#FLOATER 3
+#EXPLODER 3
+#BLOCKER 3
+#BUILDER 1
+#PLATFORMER 1
+#BASHER 1
 
+:matt/goldmine/Hatch.H: 32 320
 
-:matt/goldmine/Hatch.H:                      32       320
+:matt/goldmine/Goal.G: 1116 288
 
-:matt/goldmine/Goal.G:                     1116       288
+:simon/water.W: 480 364
+:simon/water.W: 432 364
+:simon/water.W: 384 364
+:simon/water.W: 336 364
+:simon/water.W: 288 364
+:simon/water.W: 240 364
+:simon/water.W: 192 364
 
-:simon/water.W:                                   480       364
-:simon/water.W:                                   432       364
-:simon/water.W:                                   384       364
-:simon/water.W:                                   336       364
-:simon/water.W:                                   288       364
-:simon/water.W:                                   240       364
-:simon/water.W:                                   192       364
-
-:matt/goldmine/crate64:                     688       336
-:matt/goldmine/crate64:                     752       336
-:matt/goldmine/crate64:                     752       272
-:matt/goldmine/crate64:                     688       272
-:matt/goldmine/crate64:                     688       208
-:matt/goldmine/crate64:                     752       208
-:matt/goldmine/crate64:                     752       144
-:matt/goldmine/crate64:                     688       144
-:matt/goldmine/crate64:                     688        80
-:matt/goldmine/crate64:                     688        16
-:matt/goldmine/crate64:                     752        16
-:matt/goldmine/crate64:                     752        80
-:matt/goldmine/crate64:                     560       336
-:matt/goldmine/crate64:                     624       336
-:matt/goldmine/crate64:                     624       272
-:matt/goldmine/crate64:                     560       272
-:matt/goldmine/crate64:                     560       208
-:matt/goldmine/crate64:                     624       208
-:matt/goldmine/crate64:                     624       144
-:matt/goldmine/crate64:                     560       144
-:matt/goldmine/crate64:                     560        80
-:matt/goldmine/crate64:                     560        16
-:matt/goldmine/crate64:                     624        16
-:matt/goldmine/crate64:                     624        80
-:matt/goldmine/03:                          800       384
-:geoo/steel/dark_32x32o.S:                        528       368
-:matt/earth/30:                              504        16
-:matt/earth/30:                              456        64
-:matt/earth/30:                              408       112
-:matt/earth/30:                              360       160
-:matt/earth/30:                              312       208
-:matt/earth/30:                              264       256
-:matt/earth/30:                              216       304
-:matt/earth/30:                              168       352
-:geoo/steel/dark_32x32o.S:                        192       368
-:matt/goldmine/07:                          920       336
-:matt/goldmine/09:                         1176       296
-:matt/goldmine/planksupport2:            1116       336
-:matt/goldmine/04:                         1032       336
-:matt/goldmine/08:                         1216       216
-:matt/goldmine/04:                         1224       288
-:matt/goldmine/crate32:                     160       368
-:matt/goldmine/crate32:                     128       368
-:matt/goldmine/crate32:                      96       368
-:matt/goldmine/crate32:                      64       368
-:matt/goldmine/crate32:                      32       368
-:geoo/steel/dark_32x32o.S:                          0       368
-:matt/goldmine/00:                           80       -16
-:matt/goldmine/01:                          144       -32
-:matt/goldmine/00:                          128         0
-:matt/goldmine/01:                           80        32
-:matt/goldmine/00:                          -24        -8
-:matt/goldmine/01:                           40       -24
-:matt/goldmine/00:                           24         8
-:matt/goldmine/01:                          -24        40
-:matt/goldmine/00:                          -48        64
-:matt/goldmine/01:                           16        48
-:matt/goldmine/00:                            0        80
-:matt/goldmine/01:                          -48       112
-:matt/goldmine/00:                           64        64
-:matt/goldmine/01:                          128        48
-:matt/goldmine/00:                          112        80
-:matt/goldmine/01:                           64       112
-:matt/goldmine/00:                          -48       128
-:matt/goldmine/01:                           16       112
-:matt/goldmine/00:                            0       144
-:matt/goldmine/01:                          -48       176
-:matt/goldmine/00:                          192       -16
-:matt/goldmine/01:                          256       -32
-:matt/goldmine/00:                          240         0
-:matt/goldmine/01:                          192        32
-:matt/goldmine/01:                            0       192
-:matt/goldmine/00:                           64       112     f
-:matt/goldmine/01:                          224        32
-:matt/goldmine/00:                          304        32
-:matt/goldmine/00:                          288       -16
-:matt/goldmine/00:                          336       -16
-:matt/goldmine/01:                          400       -16
-:matt/goldmine/01:                          448       -32     f
-:matt/goldmine/09:                         1200         0     f
-:matt/goldmine/08:                         1120       -16     f
-:matt/goldmine/04:                         1024       -16     f
-:matt/goldmine/03:                          976       -16     f
-:matt/goldmine/08:                          944        16     f
-:matt/goldmine/07:                          848       -32     f
-:matt/goldmine/05:                         1104        16
-:matt/goldmine/08:                          992        80     f
-:matt/goldmine/09:                         1232        80     f
-:matt/goldmine/07:                         1216       -16
-:matt/goldmine/05:                          832       -16     f
+:matt/goldmine/crate64: 688 336
+:matt/goldmine/crate64: 752 336
+:matt/goldmine/crate64: 752 272
+:matt/goldmine/crate64: 688 272
+:matt/goldmine/crate64: 688 208
+:matt/goldmine/crate64: 752 208
+:matt/goldmine/crate64: 752 144
+:matt/goldmine/crate64: 688 144
+:matt/goldmine/crate64: 688 80
+:matt/goldmine/crate64: 688 16
+:matt/goldmine/crate64: 752 16
+:matt/goldmine/crate64: 752 80
+:matt/goldmine/crate64: 560 336
+:matt/goldmine/crate64: 624 336
+:matt/goldmine/crate64: 624 272
+:matt/goldmine/crate64: 560 272
+:matt/goldmine/crate64: 560 208
+:matt/goldmine/crate64: 624 208
+:matt/goldmine/crate64: 624 144
+:matt/goldmine/crate64: 560 144
+:matt/goldmine/crate64: 560 80
+:matt/goldmine/crate64: 560 16
+:matt/goldmine/crate64: 624 16
+:matt/goldmine/crate64: 624 80
+:matt/goldmine/03: 800 384
+:geoo/steel/dark_32x32o.S: 528 368
+:matt/earth/30: 504 16
+:matt/earth/30: 456 64
+:matt/earth/30: 408 112
+:matt/earth/30: 360 160
+:matt/earth/30: 312 208
+:matt/earth/30: 264 256
+:matt/earth/30: 216 304
+:matt/earth/30: 168 352
+:geoo/steel/dark_32x32o.S: 192 368
+:matt/goldmine/07: 920 336
+:matt/goldmine/09: 1176 296
+:matt/goldmine/planksupport2: 1116 336
+:matt/goldmine/04: 1032 336
+:matt/goldmine/08: 1216 216
+:matt/goldmine/04: 1224 288
+:matt/goldmine/crate32: 160 368
+:matt/goldmine/crate32: 128 368
+:matt/goldmine/crate32: 96 368
+:matt/goldmine/crate32: 64 368
+:matt/goldmine/crate32: 32 368
+:geoo/steel/dark_32x32o.S: 0 368
+:matt/goldmine/00: 80 -16
+:matt/goldmine/01: 144 -32
+:matt/goldmine/00: 128 0
+:matt/goldmine/01: 80 32
+:matt/goldmine/00: -24 -8
+:matt/goldmine/01: 40 -24
+:matt/goldmine/00: 24 8
+:matt/goldmine/01: -24 40
+:matt/goldmine/00: -48 64
+:matt/goldmine/01: 16 48
+:matt/goldmine/00: 0 80
+:matt/goldmine/01: -48 112
+:matt/goldmine/00: 64 64
+:matt/goldmine/01: 128 48
+:matt/goldmine/00: 112 80
+:matt/goldmine/01: 64 112
+:matt/goldmine/00: -48 128
+:matt/goldmine/01: 16 112
+:matt/goldmine/00: 0 144
+:matt/goldmine/01: -48 176
+:matt/goldmine/00: 192 -16
+:matt/goldmine/01: 256 -32
+:matt/goldmine/00: 240 0
+:matt/goldmine/01: 192 32
+:matt/goldmine/01: 0 192
+:matt/goldmine/00: 64 112 f
+:matt/goldmine/01: 224 32
+:matt/goldmine/00: 304 32
+:matt/goldmine/00: 288 -16
+:matt/goldmine/00: 336 -16
+:matt/goldmine/01: 400 -16
+:matt/goldmine/01: 448 -32 f
+:matt/goldmine/09: 1200 0 f
+:matt/goldmine/08: 1120 -16 f
+:matt/goldmine/04: 1024 -16 f
+:matt/goldmine/03: 976 -16 f
+:matt/goldmine/08: 944 16 f
+:matt/goldmine/07: 848 -32 f
+:matt/goldmine/05: 1104 16
+:matt/goldmine/08: 992 80 f
+:matt/goldmine/09: 1232 80 f
+:matt/goldmine/07: 1216 -16
+:matt/goldmine/05: 832 -16 f

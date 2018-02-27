@@ -1,6 +1,5 @@
-$BUILT 2014-01-13 01:51:08
+$BUILT 2018-03-12 00:42:54
 $AUTHOR Insane Steve
-$GERMAN
 $ENGLISH Blue Wall (8P)
 
 #INTENDED_NUMBER_OF_PLAYERS 8
@@ -11,38 +10,32 @@ $ENGLISH Blue Wall (8P)
 
 #SECONDS 45
 #INITIAL 70
-#REQUIRED 20
 #SPAWN_INTERVAL 24
-#SPAWN_INTERVAL_FAST 4
 
 #WALKER 12
-#JUMPER 50
 #EXPLODER2 20
-#PLATFORMER 30
 #BUILDER 50
+#PLATFORMER 30
 #BASHER 50
 #MINER 50
 #DIGGER 5
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#JUMPER 50
 
 :matt/marble/Hatch.H: 96 0
 :matt/marble/Hatch.H: 480 0 r
 :matt/marble/Hatch.H: 96 208
 :matt/marble/Hatch.H: 480 208 r
-:matt/marble/Hatch.H: 96 400
-:matt/marble/Hatch.H: 480 400 r
-:matt/marble/Hatch.H: 96 592
-:matt/marble/Hatch.H: 480 592 r
+:matt/marble/Hatch.H: 96 416
+:matt/marble/Hatch.H: 480 416 r
+:matt/marble/Hatch.H: 96 624
+:matt/marble/Hatch.H: 480 624 r
 
 :matt/marble/Goal.G: 576 224
 :matt/marble/Goal.G: 0 224
-:matt/marble/Goal.G: 576 416
-:matt/marble/Goal.G: 0 416
-:matt/marble/Goal.G: 576 608
-:matt/marble/Goal.G: 0 608
+:matt/marble/Goal.G: 576 432
+:matt/marble/Goal.G: 0 432
+:matt/marble/Goal.G: 576 640
+:matt/marble/Goal.G: 0 640
 :matt/marble/Goal.G: 576 16
 :matt/marble/Goal.G: 0 16
 
@@ -97,14 +90,14 @@ $ENGLISH Blue Wall (8P)
 :proxima/tile/cyan1: 320 384
 :proxima/tile/cyan1: 384 384
 :proxima/tile/spheres/blue: 360 352
-:geoo/steel/dark_64x32o.S: 0 464
-:geoo/steel/dark_64x32o.S: 64 464
-:geoo/steel/dark_64x32o.S: 128 464
-:geoo/steel/dark_48x48o.S: 144 496
-:geoo/steel/dark_64x32o.S: 448 464
-:geoo/steel/dark_64x32o.S: 512 464
-:geoo/steel/dark_64x32o.S: 576 464
-:geoo/steel/dark_48x48o.S: 448 496
+:geoo/steel/dark_64x32o.S: 0 480
+:geoo/steel/dark_64x32o.S: 64 480
+:geoo/steel/dark_64x32o.S: 128 480
+:geoo/steel/dark_48x48o.S: 144 512
+:geoo/steel/dark_64x32o.S: 448 480
+:geoo/steel/dark_64x32o.S: 512 480
+:geoo/steel/dark_64x32o.S: 576 480
+:geoo/steel/dark_48x48o.S: 448 512
 :proxima/tile/cyan1: 256 448
 :proxima/tile/spheres/blue: 248 400
 :proxima/tile/cyan1: 192 448
@@ -121,14 +114,14 @@ $ENGLISH Blue Wall (8P)
 :proxima/tile/cyan1: 320 576
 :proxima/tile/cyan1: 384 576
 :proxima/tile/spheres/blue: 360 544
-:geoo/steel/dark_64x32o.S: 0 656
-:geoo/steel/dark_64x32o.S: 64 656
-:geoo/steel/dark_64x32o.S: 128 656
-:geoo/steel/dark_48x48o.S: 144 688
-:geoo/steel/dark_64x32o.S: 448 656
-:geoo/steel/dark_64x32o.S: 512 656
-:geoo/steel/dark_64x32o.S: 576 656
-:geoo/steel/dark_48x48o.S: 448 688
+:geoo/steel/dark_64x32o.S: 0 688
+:geoo/steel/dark_64x32o.S: 64 688
+:geoo/steel/dark_64x32o.S: 128 688
+:geoo/steel/dark_48x48o.S: 144 720
+:geoo/steel/dark_64x32o.S: 448 688
+:geoo/steel/dark_64x32o.S: 512 688
+:geoo/steel/dark_64x32o.S: 576 688
+:geoo/steel/dark_48x48o.S: 448 720
 :proxima/tile/cyan1: 256 640
 :proxima/tile/spheres/blue: 248 592
 :proxima/tile/cyan1: 192 640
