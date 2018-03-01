@@ -30,6 +30,14 @@ $browserInfoInitgoal Ziel:
 $browserInfoResultSaved Gerettet:
 $browserInfoResultSkills Fähigkeiten:
 
+$harvestYouSavedEnough Du hast %d/%d Lix gerettet!
+$harvestTrophyFirst Level abgehakt.
+$harvestTrophyBuiltReset Haken wieder da.
+$harvestTrophyImproved Neue Bestleistung!
+$harvestReplayAutoSaved Replay auto-gespeichert.
+$harvestReplayAutoNotSaved Replay ignoriert.
+$harvestReplaySaveManually Manuell speichern
+
 $previewMissingTiles fehlende Stücke:
 $previewMissingTilesMoreSee weitere, siehe
 
@@ -52,18 +60,8 @@ $winLobbyRoomLeave Raum verlassen
 
 // Game window
 $winGameTitle Spielmenü|Das Menü während des Spiels aufrufen,|um den Level zu beenden oder das Replay zu speichern.
-$winGameResult Ergebnis
-$winGameLixSaved Lix gerettet:
 $winGameResume Weiterspielen
-$winGameFramestepBack ◀▮ Zeit zurückdrehen ◀▮
-$winGameRestart Level neustarten
-$winGameSaveReplay Replay speichern
 $winGameMenu Beenden
-$winGameCommentPerfect Perfekt! Alle gerettet!
-$winGameCommentMore Super, mehr als notwendig!
-$winGameCommentExactly Ziel haargenau erreicht!
-$winGameCommentFewer Das sind leider zu wenige.
-$winGameCommentNone Das war wohl nix. Nochmal?
 
 // Help texts inside the game
 $gameForceLeft [%s] für Linksläufer.
@@ -73,6 +71,7 @@ $gameQueueBuilder Klicke zum Vormerken.
 $gameQueuePlatformer Klicke zum Vormerken.
 $gameHoldToScroll Halte [%s] und bewege Maus zum Scrollen.
 $gameClickToCancelReplay Klicke zum Unterbrechen des Replays.
+$gameFramestepOrQuit Gehe zurück (◀▮) oder beende mit [%s].
 $gamePause Pause.
 $gameZoom %s zum Hineinzoomen, %s zum Herauszoomen.
 $gameStateSave Spielstand schnellspeichern.

@@ -57,12 +57,6 @@ bool showTapeRecorderButtons(in View v)
         || v == View.replayBattle;
 }
 
-bool continuePhysicsDuringModalWindow(in View v)
-{
-    return v == View.solveTogether || v == View.observeBattle
-        || v == View.battle        || v == View.observeSolving;
-}
-
 bool showModalWindowAfterGame(in View v)
 {
     return v.canAssignSkills || v == View.replayBattle;

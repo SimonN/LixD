@@ -83,14 +83,20 @@ enum Lang {
     browserSearch,
     browserExportImage,
     browserExportImageDone,
-
     browserMkdirTitle,
     browserMkdirPleaseEnter,
-
     browserInfoAuthor,
     browserInfoInitgoal,
     browserInfoResultSaved,
     browserInfoResultSkills,
+
+    harvestYouSavedEnough,
+    harvestTrophyFirst,
+    harvestTrophyBuiltReset,
+    harvestTrophyImproved,
+    harvestReplayAutoSaved,
+    harvestReplayAutoNotSaved,
+    harvestReplaySaveManually,
 
     previewMissingTiles,
     previewMissingTilesMoreSee,
@@ -114,18 +120,8 @@ enum Lang {
 
     // end-of-game dialog, or pause dialog
     winGameTitle,
-    winGameResult,
-    winGameLixSaved,
     winGameResume,
-    winGameFramestepBack,
-    winGameRestart,
-    winGameSaveReplay,
     winGameMenu,
-    winGameCommentPerfect,
-    winGameCommentMore,
-    winGameCommentExactly,
-    winGameCommentFewer,
-    winGameCommentNone,
 
     // help texts inside the game
     gameForceLeft,
@@ -135,6 +131,7 @@ enum Lang {
     gameQueuePlatformer,
     gameHoldToScroll,
     gameClickToCancelReplay,
+    gameFramestepOrQuit,
     gamePause,
     gameZoom,
     gameStateSave,

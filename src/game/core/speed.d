@@ -7,6 +7,7 @@ import net.repdata; // Phyu
 import basics.user; // replayAfterFrameBack
 import game.core.game;
 import game.core.active; // findAgainHighlitLixAfterPhyu
+import game.model.cache : DuringTurbo;
 import game.panel.base;
 import hardware.mouse;
 import hardware.sound;
@@ -15,19 +16,6 @@ package:
 
 void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
 {
-    import game.model.cache : DuringTurbo;
-    void upd(in int howmany = 1, in DuringTurbo duringTurbo = DuringTurbo.no)
-    {
-        immutable before = nurse.upd;
-        // Don't send undispatched via network, we did that earlier already.
-        // Some from undispatchedAssignments have even come from the net.
-        nurse.addReplayDataMaybeGoBack(undispatchedAssignments);
-        undispatchedAssignments = null;
-        nurse.updateTo(Phyu(before + howmany), duringTurbo);
-        game.findAgainHighlitLixAfterPhyu();
-        game.setLastPhyuToNow();
-    }
-
     if (pan.framestepBackOne) {
         with (LoadStateRAII(game))
             game.nurse.framestepBackBy(1);
@@ -50,10 +38,10 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
                 nurse.loadUserState();
     }
     else if (pan.framestepAheadOne) {
-        upd();
+        game.upd();
     }
     else if (pan.framestepAheadMany) {
-        upd(updatesAheadMany);
+        game.upd(updatesAheadMany);
     }
     else if (pan.paused && ! pan.isMouseHere && mouseClickLeft) {
         // Clicking into the non-panel screen advances physics once.
@@ -61,18 +49,18 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
         // merely advance 1 frame, but keep the game paused, on assignment.
         // This happens either because you've assigned something, or because
         // you have cancelled the replay.
-        upd();
+        game.upd();
     }
     else if (! pan.paused) {
         if (pan.speedIsNormal) {
             if (game.shallWeUpdateAtAdjustedNormalSpeed())
-                upd();
+                game.upd();
         }
         else if (pan.speedIsTurbo)
-            upd(updatesDuringTurbo, DuringTurbo.yes);
+            game.upd(updatesDuringTurbo, DuringTurbo.yes);
         else {
             assert (pan.speedIsFast);
-            upd();
+            game.upd();
         }
     }
 }}
@@ -107,6 +95,8 @@ package struct LoadStateRAII
     ~this()      { _game.setLastPhyuToNow();    }
 }
 
+private:
+
 // Combat the network time-lag, affect _alticksToAdjust.
 // _alticksToAdjust is < 0 if we have to slow down, > 0 if we have to speed up.
 private bool shallWeUpdateAtAdjustedNormalSpeed(Game game) { with (game)
@@ -121,4 +111,21 @@ private bool shallWeUpdateAtAdjustedNormalSpeed(Game game) { with (game)
         return true;
     }
     return false;
+}}
+
+// Call upd() only during updatePhysicsAccordingToSpeedButtons()
+// Dispatch new assignments, then move forward in the gametime
+void upd(Game game, in int howmany = 1,
+    in DuringTurbo duringTurbo = DuringTurbo.no) { with (game)
+{
+    if (nurse.doneAnimating())
+        return;
+    immutable before = nurse.upd;
+    // Don't send undispatched via network, we did that earlier already.
+    // Some from undispatchedAssignments have even come from the net.
+    nurse.addReplayDataMaybeGoBack(undispatchedAssignments);
+    undispatchedAssignments = null;
+    nurse.updateTo(Phyu(before + howmany), duringTurbo);
+    game.findAgainHighlitLixAfterPhyu();
+    game.setLastPhyuToNow();
 }}

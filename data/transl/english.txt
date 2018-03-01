@@ -34,6 +34,14 @@ $browserInfoInitgoal Save:
 $browserInfoResultSaved Saved:
 $browserInfoResultSkills Skills:
 
+$harvestYouSavedEnough You saved %d/%d lix!
+$harvestTrophyFirst Checkmark earned.
+$harvestTrophyBuiltReset Checkmark restored.
+$harvestTrophyImproved New personal best!
+$harvestReplayAutoSaved Replay auto-saved.
+$harvestReplayAutoNotSaved Replay ignored.
+$harvestReplaySaveManually Save manually
+
 // Report missing tiles in the preview. Example rendering:
 // 5 missing tiles:
 // (name of first tile)
@@ -61,18 +69,8 @@ $winLobbyRoomLeave Leave room
 
 // end-of-game dialog, or pause dialog
 $winGameTitle Game Menu|Open the game menu dialog.|Exit the level or save replays from this dialog.
-$winGameResult Result
-$winGameLixSaved Lix saved:
 $winGameResume Continue
-$winGameFramestepBack ◀▮ Rewind time ◀▮
-$winGameRestart Restart level
-$winGameSaveReplay Save replay
 $winGameMenu Exit
-$winGameCommentPerfect Perfect! All saved!
-$winGameCommentMore Super, more than necessary!
-$winGameCommentExactly Target reached exactly!
-$winGameCommentFewer Sorry, those were not enough.
-$winGameCommentNone That was nothing... Try again?
 
 // help texts inside the game
 $gameForceLeft [%s] for left-facing.
@@ -82,6 +80,7 @@ $gameQueueBuilder Click again to queue.
 $gameQueuePlatformer Click again to queue.
 $gameHoldToScroll Hold [%s] and move mouse to scroll.
 $gameClickToCancelReplay Click to interrupt the replay.
+$gameFramestepOrQuit Rewind time (◀▮) or quit with [%s].
 $gamePause Pause.
 $gameZoom %s to zoom in, %s to zoom out.
 $gameStateSave Quicksave game position.

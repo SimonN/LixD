@@ -80,7 +80,7 @@ package:
     // the undispatched data too is emptied.
     ReplayData[] undispatchedAssignments;
 
-    GameWindow modalWindow;
+    ReallyExitWindow modalWindow;
     Panel pan;
     ChatArea _chatArea;
     SplatRuler _splatRuler;
@@ -251,6 +251,12 @@ package:
         nurse.considerGC();
         _setLastPhyuToNowLastCalled = nurse.updatesSinceZero;
         altickLastPhyu = timerTicks;
+    }
+
+    bool singleplayerHasWon() const
+    {
+        return ! multiplayer && nurse && level
+            && nurse.singleplayerHasSavedAtLeast(level.required);
     }
 
     void saveTrophy() {

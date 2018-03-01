@@ -5,11 +5,11 @@ import std.algorithm; // all
 import basics.user;
 import basics.cmdargs;
 import game.core.game;
-import game.window.single;
-import game.window.multi;
+import game.window.base;
 import game.core.active;
 import game.core.passive;
 import game.core.speed;
+import game.panel.tooltip;
 import game.score;
 import gui;
 import hardware.keyset;
@@ -21,85 +21,57 @@ implGameCalc(Game game) { with (game)
     {
         if (_netClient)
             _netClient.calc();
-        if (! game.isFinished)
-            game.updatePhysicsAccordingToSpeedButtons();
+        game.updatePhysicsAccordingToSpeedButtons();
     }
     if (modalWindow) {
         game.calcModalWindow;
-        if (game.view.continuePhysicsDuringModalWindow)
-            noninputCalc();
+        noninputCalc();
     }
-    else if (keyGameExit.keyTapped)
-        game.createModalWindow;
+    else if (keyGameExit.keyTapped) {
+        if (multiplayer) {
+            modalWindow = new ReallyExitWindow();
+            addFocus(game.modalWindow);
+        }
+        else {
+            _gotoMainMenu = true;
+        }
+    }
     else {
         game.calcPassive();
         game.calcActive();
         noninputCalc();
-        if (game.isFinished) {
-            if (view.printResultToConsole)
-                _chatArea.printScores(nurse.scores,
-                    nurse.constReplay, localStyle);
-            // Losing connection directly sets _gotoMainMenu, don't show window
-            if (! _gotoMainMenu && view.showModalWindowAfterGame)
-                game.createModalWindow;
-            else
-                _gotoMainMenu = true;
-        }
+        game.atEndOfGame();
     }
 }}
 
-private bool
-isFinished(const(Game) game) { with (game)
-{
-    assert (nurse);
-    assert (_effect);
-    return ! _gotoMainMenu && nurse.doneAnimating() && _effect.nothingGoingOn;
-}}
+private:
 
-private void
-createModalWindow(Game game) { with (game)
+void calcModalWindow(Game game) { with (game)
 {
-    assert (! modalWindow);
-    if (game.isFinished)
-        // Refactoring idea: I didn't want to pass mutable tribes across the
-        // program, but here I do nonetheless. I don't know who should spawn
-        // the window: The nurse shouldn't spawn it, but we shouldn't have
-        // to refine the data from the nurse.
-        modalWindow = multiplayer ? new WindowEndMulti(
-                                    nurse.stateOnlyPrivatelyForGame.tribes,
-                                    nurse.constReplay, level, localStyle)
-            : new WindowEndSingle(localTribe, nurse.constReplay, level);
-    else
-        modalWindow = new WindowDuringOffline(nurse.constReplay, level);
-    addFocus(game.modalWindow);
-}}
-
-private void
-calcModalWindow(Game game) { with (game)
-{
-    void killWindow()
-    {
+    assert (modalWindow);
+    if (modalWindow.exitGame) {
+        _gotoMainMenu = true;
+    }
+    if (modalWindow.exitGame || modalWindow.resume) {
         rmFocus(modalWindow);
         modalWindow = null;
         game.setLastPhyuToNow();
     }
-    assert (modalWindow);
-    if (modalWindow.resume) {
-        killWindow();
-    }
-    else if (modalWindow.framestepBack) {
-        with (LoadStateRAII(game)) {
-            game.nurse.framestepBackBy(3 * Game.updatesBackMany);
-            game.pan.pause = true;
-            killWindow();
-        }
-    }
-    else if (modalWindow.restart) {
-        game.restartLevel();
-        killWindow();
-    }
-    else if (modalWindow.exitGame) {
+}}
+
+void atEndOfGame(Game game) { with (game)
+{
+    if (! nurse.doneAnimating())
+        return;
+    // Physics are finished
+    if (! multiplayer && ! singleplayerHasWon)
+        pan.suggestTooltip(Tooltip.ID.framestepOrQuit);
+
+    if (! _effect.nothingGoingOn)
+        return;
+    // Physics and animations are finished, there is nothing else to see
+    if (multiplayer || singleplayerHasWon)
         _gotoMainMenu = true;
-        killWindow();
-    }
+    if (view.printResultToConsole)
+        _chatArea.printScores(nurse.scores, nurse.constReplay, localStyle);
 }}

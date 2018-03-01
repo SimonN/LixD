@@ -17,23 +17,25 @@ struct Tooltip {
     // Sorted from most important (smallest ID) to least important.
     // When several are requested, only the most important is shown.
     enum ID : int {
-        forceLeft = 0x1,
-        forceRight = 0x2,
-        priorityInvert = 0x4,
-        queueBuilder = 0x8,
-        queuePlatformer = 0x10,
-        holdToScroll = 0x20,
-        clickToCancelReplay = 0x40,
-        pause = 0x80,
-        zoom = 0x100,
-        stateSave = 0x200,
-        stateLoad = 0x400,
-        framestepBack = 0x800,
-        framestepAhead = 0x1000,
-        fastForward = 0x2000,
-        restart = 0x4000,
-        nuke = 0x8000,
-        coolShades = 0x1_0000,
+        pause = 0x1,
+        zoom = 0x2,
+        stateSave = 0x4,
+        stateLoad = 0x8,
+        framestepBack = 0x10,
+        framestepAhead = 0x20,
+        fastForward = 0x40,
+        restart = 0x80,
+        nuke = 0x100,
+        coolShades = 0x200,
+
+        forceLeft = 0x1000,
+        forceRight = 0x2000,
+        priorityInvert = 0x4000,
+        queueBuilder = 0x8000,
+        queuePlatformer = 0x1_0000,
+        holdToScroll = 0x2_0000,
+        clickToCancelReplay = 0x4_0000,
+        framestepOrQuit = 0x8_0000,
     }
 
     static string format(int manyIDs) nothrow
@@ -82,6 +84,7 @@ static this()
     none(Tooltip.ID.queuePlatformer, Lang.gameQueuePlatformer);
     key(Tooltip.ID.holdToScroll, Lang.gameHoldToScroll, keyScroll);
     none(Tooltip.ID.clickToCancelReplay, Lang.gameClickToCancelReplay);
+    key(Tooltip.ID.framestepOrQuit, Lang.gameFramestepOrQuit, keyGameExit);
     none(Tooltip.ID.pause, Lang.gamePause);
     mouse(Tooltip.ID.zoom, Lang.gameZoom);
     none(Tooltip.ID.stateSave, Lang.gameStateSave);
