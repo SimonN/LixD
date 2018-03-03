@@ -13,6 +13,8 @@ module menu.browser.select;
 import std.conv;
 static import std.file;
 
+import optional;
+
 import basics.user; // hotkeys
 import file.filename;
 import file.language;
@@ -27,9 +29,9 @@ class BrowserHighlightSelect : BrowserHighlight {
 private:
     MutFilename _fileRecent; // highlight, not select. May be in different dir.
                              // May not point to a directory.
-    MutFilename _upDownTo; // Last-highlit dir or file with up/down keys.
-                           // We need this because it may point to dirs.
-    TextButton buttonPlay;
+    Optional!MutFilename _upDownTo; // Last-highlit dir or file with up/down keys.
+                                 // We need this because it may point to dirs.
+    TextButton _buttonPlay;
 
 public:
     // See constructor comment in menu.browser.highli.
@@ -39,40 +41,53 @@ public:
         PickerConfig!SomeTiler cfg
     ) {
         super(title, baseDir, cfg);
-        buttonPlay = new TextButton(new Geom(infoX, 100,
+        _buttonPlay = new TextButton(new Geom(infoX, 20,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.browserPlay.transl);
-        buttonPlay.hotkey = basics.user.keyMenuOkay;
-        addChildren(buttonPlay);
+        _buttonPlay.hotkey = basics.user.keyMenuOkay;
+        addChildren(_buttonPlay);
     }
 
-    void setButtonPlayText(in string s) { buttonPlay.text = s; }
+    @property auto fileRecent() inout { return _fileRecent; }
 
-    @property auto fileRecent()   inout { return _fileRecent;   }
+    final void highlightNone()
+    {
+        _buttonPlay.hide();
+        // keep _fileRecent as it is, we might highlight that again later
+        onHighlightNone();
+    }
 
     final void highlight(Filename fn)
-    {
-        if (fn && super.navigateToAndHighlightFile(fn)) {
-            buttonPlay.show();
+    in { assert (fn, "call highlightNone() instead"); }
+    body {
+        if (super.navigateToAndHighlightFile(fn)) {
+            _buttonPlay.show();
             _fileRecent = fn;
-            _upDownTo = fn;
-            onFileHighlight(fn);
+            _upDownTo = some(MutFilename(fn));
+            onHighlight(fn);
         }
-        else {
-            buttonPlay.hide();
-            // keep _fileRecent as it is, we might highlight that again later
-            onFileHighlight(null);
-        }
+        else
+            highlightNone();
     }
 
 protected:
-    // override these
-    void onFileHighlight(Filename) {}
-    void onFileSelect   (Filename) {}
+    abstract void onHighlightNone();
+    abstract void onHighlight(Filename);
+    abstract void onPlay(Filename);
+
+    final void buttonPlayYFromBottom(in float newY)
+    {
+        _buttonPlay.move(_buttonPlay.geom.x, newY);
+    }
+
+    final void buttonPlayText(in string s) { _buttonPlay.text = s; }
 
     final void deleteFileRecentHighlightNeighbor()
     {
-        highlight(super.deleteFileHighlightNeighbor(_fileRecent));
-        _upDownTo = null;
+        if (auto newFn = super.deleteFileHighlightNeighbor(_fileRecent).unwrap)
+            highlight(*newFn);
+        else
+            highlightNone();
+        _upDownTo = none;
         playLoud(Sound.SCISSORS);
     }
 
@@ -83,13 +98,13 @@ protected:
         if (clicked != _fileRecent)
             highlight(clicked);
         else
-            onFileSelect(_fileRecent);
+            onPlay(_fileRecent);
     }
 
     final override void onPickerExecuteDir()
     {
         highlightIfInCurrentDir(_fileRecent);
-        _upDownTo = null;
+        _upDownTo = none;
     }
 
     override void calcSelf()
@@ -98,14 +113,14 @@ protected:
         if (gotoMainMenu) {
             return;
         }
-        else if (buttonPlay.execute) {
+        else if (_buttonPlay.execute) {
             assert (_fileRecent !is null);
-            onFileSelect(_fileRecent);
+            onPlay(_fileRecent);
         }
-        else if (keyMenuOkay.keyTapped && _upDownTo) {
-            super.navigateTo(_upDownTo);
+        else if (keyMenuOkay.keyTapped && _upDownTo.unwrap) {
+            super.navigateTo(*_upDownTo.unwrap);
             highlightIfInCurrentDir(_fileRecent);
-            _upDownTo = null;
+            _upDownTo = none;
         }
         else {
             immutable moveBy = keyMenuUpBy1  .keyTappedAllowingRepeats * -1
@@ -113,9 +128,11 @@ protected:
                              + keyMenuDownBy1.keyTappedAllowingRepeats * 1
                              + keyMenuDownBy5.keyTappedAllowingRepeats * 5;
             if (moveBy != 0) {
-                _upDownTo = super.moveHighlightBy(
-                            _upDownTo ? _upDownTo : _fileRecent, moveBy);
-                highlightIfInCurrentDir(_upDownTo);
+                _upDownTo = some(MutFilename(super.moveHighlightBy(
+                    _upDownTo.unwrap ? *_upDownTo.unwrap
+                    : _fileRecent, moveBy)));
+                highlightIfInCurrentDir(
+                    _upDownTo.unwrap ? *_upDownTo.unwrap : null);
             }
         }
     }
@@ -123,7 +140,9 @@ protected:
 private:
     @property void highlightIfInCurrentDir(Filename fn)
     {
-        highlight(fn && fn.dirRootless == currentDir.dirRootless
-            ? fn : null);
+        if (fn && fn.dirRootless == currentDir.dirRootless)
+            highlight(fn);
+        else
+            highlightNone();
     }
 }

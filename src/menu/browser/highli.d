@@ -1,5 +1,7 @@
 module menu.browser.highli;
 
+import optional;
+
 import basics.user;
 import file.filename;
 import file.language;
@@ -44,11 +46,11 @@ public:
         _buttonExit = new TextButton(new Geom(infoX + infoXl/2, 20,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.commonBack.transl);
         _buttonExit.hotkey = basics.user.keyMenuExit;
-        _preview = new Preview(new Geom(20, 60, infoXl, 160, From.TOP_RIG));
+        _preview = new Preview(newPreviewGeom());
         _previewLevelTitle = new Label(new Geom(infoX, infoY, infoXl+17, 20));
         _previewLevelTitle.undrawBeforeDraw = true;
         addChildren(_picker, _buttonExit, _preview, _previewLevelTitle);
-        previewLevel(null);
+        previewNone();
     }
 
     ~this()
@@ -70,20 +72,30 @@ public:
 
     @property bool gotoMainMenu() const { return _gotoMainMenu; }
 
-    void previewLevel(Level l)
+    void previewNone()
     {
-        _preview.shown = l !is null;
-        _previewLevelTitle.text = l ? l.name : "";
-        if (l)
-            _preview.level = l;
+        _preview.shown = false;
+        _previewLevelTitle.text = "";
+    }
+
+    void previewLevel(Level l)
+    in { assert (l, "call previewNone() instead"); }
+    body {
+        _preview.shown = true;
+        _previewLevelTitle.text = l.name;
+        _preview.level = l;
     }
 
     final Filename currentDir() const { return _picker.currentDir; }
 
 protected:
-    // override these as soon as possible
-    void onPickerExecuteFile(Filename) {}
-    void onPickerExecuteDir ()         {}
+    abstract void onPickerExecuteFile(Filename fn);
+    abstract void onPickerExecuteDir();
+
+    final Geom newPreviewGeom() const
+    {
+        return new Geom(20, 60, infoXl, 160, From.TOP_RIG);
+    }
 
     // This browser doesn't support setting file buttons to on.
     // But it must expose the on-setting (highlighting) functionality
@@ -100,9 +112,10 @@ protected:
         _picker.currentDir = fn;
     }
 
-    final auto deleteFileHighlightNeighbor(Filename fn)
+    final Optional!Filename deleteFileHighlightNeighbor(Filename fn)
     {
-        return _picker.deleteFileHighlightNeighbor(fn);
+        auto ret = _picker.deleteFileHighlightNeighbor(fn);
+        return ret ? some(ret) : Optional!Filename();
     }
 
     final auto moveHighlightBy(Filename old, in int by)

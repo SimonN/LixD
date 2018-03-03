@@ -36,6 +36,7 @@ public:
     {
         super(Lang.browserReplayTitle.transl,
             basics.globals.dirReplays, PickerConfig!ReplayTiler());
+        buttonPlayYFromBottom = 100f;
         scope (success)
             super.highlight(basics.user.replayLastLevel);
         TextButton newInfo(float x, float y, string caption, KeySet hotkey)
@@ -66,37 +67,38 @@ public:
     @property inout(ReplayToLevelMatcher) matcher() inout { return _matcher; }
 
 protected:
-    override void onFileHighlight(Filename fn)
+    override void onHighlightNone()
     {
-        assert (_delete);
-        if (fn is null) {
-            _matcher = null;
-            _labelPointedTo.hide();
-            _buttonPlayWithPointedTo.hide();
-            _delete.hide();
-        }
-        else {
-            _matcher = new ReplayToLevelMatcher(fn);
-            _delete.show();
-            _buttonPlayWithPointedTo.shown = _matcher.pointedToIsGood;
-            if (_matcher.pointedToFilename !is null
-                && _matcher.pointedToFilename.rootless.length
-                > dirLevels.rootless.length
-            ) {
-                // We show this even if the level is bad. It's probably
-                // most important then
-                _labelPointedTo.show();
-                _labelPointedTo.value = _matcher.pointedToFilename.rootless[
-                    dirLevels.rootless.length .. $];
-            }
-            else {
-                _labelPointedTo.hide();
-            }
-        }
-        previewLevel(_matcher ? _matcher.preferredLevel : null);
+        _matcher = null;
+        _labelPointedTo.hide();
+        _buttonPlayWithPointedTo.hide();
+        _delete.hide();
     }
 
-    override void onFileSelect(Filename fn)
+    override void onHighlight(Filename fn)
+    in { assert (fn, "call onHighlightNone() instead"); }
+    body {
+        assert (_delete);
+        _matcher = new ReplayToLevelMatcher(fn);
+        _delete.show();
+        _buttonPlayWithPointedTo.shown = _matcher.pointedToIsGood;
+        if (_matcher.pointedToFilename !is null
+            && _matcher.pointedToFilename.rootless.length
+            > dirLevels.rootless.length
+        ) {
+            // We show this even if the level is bad. It's probably
+            // most important then
+            _labelPointedTo.show();
+            _labelPointedTo.value = _matcher.pointedToFilename.rootless[
+                dirLevels.rootless.length .. $];
+        }
+        else {
+            _labelPointedTo.hide();
+        }
+        previewLevel(_matcher.preferredLevel);
+    }
+
+    override void onPlay(Filename fn)
     {
         assert (_matcher);
         if (_matcher.includedIsGood

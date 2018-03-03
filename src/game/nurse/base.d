@@ -13,7 +13,7 @@ import std.range;
 
 import net.repdata; // update
 import basics.globconf; // update player name on cut replay
-import basics.user; // Result
+import basics.trophy;
 import file.date;
 import game.model.model;
 import game.model.state;
@@ -93,17 +93,6 @@ public:
         return resultOf(cs.tribes[style]);
     }
 
-    // This should be refactored. The base Nurse is happy to compute trophies,
-    // but doesn't like to check whether it's fine to save trophies.
-    void saveTrophyIfSingleplayerSavedAtLeast(in int lixRequired)
-    {
-        if (cs.multiplayer
-            || ! _replay.players.byValue.canFind!(pl => pl.name == userName)
-            || ! singleplayerHasSavedAtLeast(lixRequired))
-            return;
-        addTrophy(_replay.levelFilename, trophyForTribe(cs.singleplayerStyle));
-    }
-
 protected:
     void onDispose() { }
 
@@ -128,7 +117,7 @@ protected:
 private:
     Trophy resultOf(in Tribe tr) const
     {
-        auto result = new Trophy(_levelBuilt);
+        auto result = Trophy(_levelBuilt);
         result.lixSaved = tr.score.current;
         result.skillsUsed = tr.skillsUsed;
         if (tr.hasScored)

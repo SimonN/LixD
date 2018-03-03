@@ -3,15 +3,18 @@ module gui.picker.tilerlev;
 // This is used in the main singleplayer browser,
 // and in the replay browser.
 
+import optional;
+
 import std.conv;
 import std.string;
 
+import basics.trophy;
+import basics.user;
+import file.date;
 import gui;
 import gui.picker.tiler;
 import level.metadata;
 import game.replay;
-
-static import basics.user;
 
 abstract class LevelOrReplayTiler : FileTiler {
 public:
@@ -57,21 +60,29 @@ protected:
         assert (fn);
         TextButton ret;
         try {
-            const trophy = basics.user.getTrophy(fn);
             const dat = new LevelMetaData(fn);
             ret = new TextButton(newButtonGeom(), "%s%d. %s".format(
                 fileID < 9 ? "  " : "", fileID + 1, dat.name));
-            ret.checkFrame = trophy is null       ? 0
-                : trophy.built    != dat.built    ? 3
-                : trophy.lixSaved >= dat.required ? 2 : 0;
-                // Never display the little ring for looked-at-but-not-solved.
-                // It makes people sad!
+            ret.checkFrame = determineCheckFrame(dat, getTrophy(fn));
         }
         catch (Exception e) {
             ret = new TextButton(newButtonGeom(), fn.file);
         }
         ret.alignLeft = true;
         return ret;
+    }
+
+private:
+    int determineCheckFrame(const(LevelMetaData) dat, Optional!Trophy tro)
+    {
+        if (tro.empty)
+            return 0;
+        Date troDate = tro.unwrap.built;
+        return dat.built != troDate ? 3
+            : tro.unwrap.lixSaved >= dat.required ? 2
+            : 0;
+        // Never display the little ring for looked-at-but-not-solved.
+        // It makes people sad!
     }
 }
 

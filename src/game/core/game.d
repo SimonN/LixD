@@ -20,6 +20,8 @@ import std.conv; // float to int in prepare nurse
 import std.exception;
 import std.range;
 
+import optional;
+
 import basics.alleg5;
 import basics.globals;
 import basics.globconf; // username, to determine whether to save result
@@ -33,13 +35,14 @@ import game.core.draw;
 import game.core.scrstart;
 import game.core.speed;
 import game.core.splatrul;
-import game.window.base;
+import game.effect;
+import game.harvest;
 import game.nurse.interact;
 import game.panel.base;
-import game.effect;
 import game.physdraw;
-import game.tribe;
 import game.replay;
+import game.tribe;
+import game.window.base;
 
 import graphic.map;
 import gui;
@@ -52,8 +55,10 @@ import net.repdata;
 import net.structs;
 
 class Game {
+public:
+    const(Level) level;
+
 package:
-    Level level;
     Map map; // The map does not hold the referential level image, that's
              // in cs.land and cs.lookup. Instead, the map loads a piece
              // of that land, blits gadgets and lixes on it, and blits the
@@ -162,13 +167,20 @@ public:
             gui.rmFocus(modalWindow);
             modalWindow = null;
         }
-        saveTrophy();
-        saveAutoReplay();
         if (nurse) {
             nurse.dispose();
             nurse = null;
         }
     }
+
+    Harvest harvest() const
+    {
+        return Harvest(level, nurse.constReplay,
+            some(nurse.trophyForTribe(localStyle)),
+            ! _replayNeverCancelledThereforeDontSaveAutoReplay);
+    }
+
+    const(Replay) replay() const { return nurse.constReplay; }
 
     auto loseOwnershipOfRichClient()
     {
@@ -259,12 +271,6 @@ package:
             && nurse.singleplayerHasSavedAtLeast(level.required);
     }
 
-    void saveTrophy() {
-        if (! nurse || ! level || ! _maySaveTrophy)
-            return;
-        nurse.saveTrophyIfSingleplayerSavedAtLeast(level.required);
-    }
-
 private:
     @property cs() inout
     {
@@ -350,16 +356,5 @@ private:
         _chatArea = new ChatArea(new Geom(0, 0, gui.screenXlg, 0),
             _netClient);
         gui.addElder(_chatArea);
-    }
-
-    void saveAutoReplay()
-    {
-        if (! _replayNeverCancelledThereforeDontSaveAutoReplay
-            && nurse && nurse.constReplay
-        ) {
-            nurse.terminateSingleplayerWithNuke();
-            nurse.constReplay.saveAsAutoReplay(level,
-                nurse.singleplayerHasSavedAtLeast(level.required));
-        }
     }
 }

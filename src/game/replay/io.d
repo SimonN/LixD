@@ -2,7 +2,6 @@ module game.replay.io;
 
 import std.algorithm;
 import std.stdio; // save file, and needed for unittest
-import std.string;
 
 import basics.globconf : userName; // for filename during saving
 import basics.help;
@@ -17,9 +16,28 @@ import file.log;
 import game.replay.replay;
 import level.level;
 
-static import basics.user;
-
 package:
+
+string mimickLevelPath(in Replay replay)
+out (result) {
+    assert (result == "" || result[0]   != '/');
+    assert (result == "" || result[$-1] == '/');
+}
+body {
+    // DTODOFHS: Is this still good? See comment in mangledLevelFilename, too.
+    void cutFront(ref string str, in string front)
+    {
+        if (str.length >= front.length && str[0 .. front.length] == front)
+            str = str[front.length .. $];
+    }
+    if (! replay || ! replay.levelFilename)
+        return "";
+    string path = replay.levelFilename.dirRootless;
+    [   dirLevelsSingle, dirLevelsNetwork, dirLevels,
+        dirReplayAutoSolutions, dirReplayAutoMulti, dirReplayManual, dirReplays
+        ].each!(dir => cutFront(path, dir.dirRootless));
+    return path;
+}
 
 nothrow void implSaveToFile(
     in Replay replay,
@@ -32,23 +50,6 @@ nothrow void implSaveToFile(
     }
     catch (Exception e)
         log(e.msg);
-}
-
-void implSaveAsAutoReplay(
-    in Replay replay,
-    in Level lev,
-    bool solves
-) {
-    immutable bool multi = (replay._players.length > 1);
-    if (multi && basics.user.replayAutoMulti.value)
-        replay.saveToTree(basics.globals.dirReplayAutoMulti, lev);
-    if (! multi && solves && basics.user.replayAutoSolutions.value)
-        replay.saveToTree(basics.globals.dirReplayAutoSolutions, lev);
-}
-
-void implSaveManually(in Replay replay, in Level lev)
-{
-    replay.saveToTree(basics.globals.dirReplayManual, lev);
 }
 
 auto implLoadFromFile(Replay replay, Filename fn) { with (replay)
@@ -175,42 +176,6 @@ string mangledLevelFilename(in Replay replay)
         || dirLevels.rootless.length >= replay.levelFilename.rootless.length)
         return null;
     return replay.levelFilename.rootless[dirLevels.rootless.length .. $];
-}
-
-void saveToTree(
-    in Replay   replay,
-    in Filename treebase,
-    in Level lev
-) {
-    string outfile = "%s%s%s-%s-%s%s".format(
-        treebase.rootless,
-        replay.mimickLevelPath(),
-        replay.levelFilename ? replay.levelFilename.fileNoExtNoPre : "unknown",
-        userName.escapeStringForFilename(),
-        Date.now().toStringForFilename(),
-        basics.globals.filenameExtReplay);
-    replay.implSaveToFile(new VfsFilename(outfile), lev);
-}
-
-string mimickLevelPath(in Replay replay)
-out (result) {
-    assert (result == "" || result[0]   != '/');
-    assert (result == "" || result[$-1] == '/');
-}
-body {
-    // DTODOFHS: Is this still good? See comment in mangledLevelFilename, too.
-    void cutFront(ref string str, in string front)
-    {
-        if (str.length >= front.length && str[0 .. front.length] == front)
-            str = str[front.length .. $];
-    }
-    if (! replay || ! replay.levelFilename)
-        return "";
-    string path = replay.levelFilename.dirRootless;
-    [   dirLevelsSingle, dirLevelsNetwork, dirLevels,
-        dirReplayAutoSolutions, dirReplayAutoMulti, dirReplayManual, dirReplays
-        ].each!(dir => cutFront(path, dir.dirRootless));
-    return path;
 }
 
 unittest

@@ -28,13 +28,20 @@ public:
     }
 
 protected:
-    override void onFileHighlight(Filename fn)
+    override void onHighlightNone()
     {
-        _levelRecent = fn is null ? null : new Level(fileRecent);
+        _levelRecent = null;
+        previewNone();
+    }
+
+    override void onHighlight(Filename fn)
+    in { assert (fn, "call onHighlightNone() instead"); }
+    body {
+        _levelRecent = new Level(fileRecent);
         previewLevel(_levelRecent);
     }
 
-    override void onFileSelect(Filename fn)
+    override void onPlay(Filename fn)
     {
         assert (fileRecent  !is null);
         assert (_levelRecent !is null);

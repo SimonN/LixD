@@ -88,14 +88,14 @@ void adjustToMatchMillisecondsSinceGameStart(Game game, in int suggMillis)
     game._alticksToAdjust = suggTicks - ourTicks;
 }}
 
-package struct LoadStateRAII
+private:
+
+struct LoadStateRAII
 {
     private Game _game;
-    this(Game g) { _game = g; _game.saveTrophy(); }
+    this(Game g) { _game = g; }
     ~this()      { _game.setLastPhyuToNow();    }
 }
-
-private:
 
 // Combat the network time-lag, affect _alticksToAdjust.
 // _alticksToAdjust is < 0 if we have to slow down, > 0 if we have to speed up.

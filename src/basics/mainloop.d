@@ -18,6 +18,7 @@ import basics.globals;
 import basics.resol;
 import editor.editor;
 import game.core.game;
+import game.harvest;
 import game.replay; // ReplayToLevelMatcher
 import file.filename; // running levels from the command-line
 import file.log; // logging uncaught Exceptions
@@ -248,6 +249,7 @@ public:
             if (game.gotoMainMenu) {
                 suggestMusic(fileMusicMenu);
                 auto net = game.loseOwnershipOfRichClient();
+                auto harvest = game.harvest;
                 kill();
                 if (net) {
                     lobby = new Lobby(net);
@@ -258,7 +260,7 @@ public:
                     gui.addElder(browRep);
                 }
                 else {
-                    browSin = new BrowserSingle;
+                    browSin = new BrowserSingle(harvest);
                     gui.addElder(browSin);
                 }
             }

@@ -17,7 +17,9 @@ public import net.style;
 public import net.repdata;
 
 import basics.help; // array.len of type int
+import basics.globals;
 import basics.globconf : userName;
+import basics.user;
 import net.permu;
 import net.versioning;
 import game.replay.io;
@@ -219,14 +221,35 @@ public:
         this.addWithoutTouching(d);
     }
 
-    void saveAsAutoReplay(in Level lev, bool solves) const
-    {
-        this.implSaveAsAutoReplay(lev, solves);
-    }
-
     void saveManually(in Level lev) const
     {
-        this.implSaveManually(lev);
+        this.implSaveToFile(manualSaveFilename(lev), lev);
+    }
+
+    bool shouldWeAutoSave() const
+    {
+        return _players.length > 1
+            ? replayAutoMulti.value
+            : replayAutoSolutions.value;
+    }
+
+    void saveAsAutoReplay(in Level lev) const
+    {
+        if (! shouldWeAutoSave)
+            return;
+        this.implSaveToFile(autoSaveFilename(lev), lev);
+    }
+
+    VfsFilename manualSaveFilename(in Level lev) const
+    {
+        return saveFilenameCustomBase(dirReplayManual, lev);
+    }
+
+    VfsFilename autoSaveFilename(in Level lev) const
+    {
+        return saveFilenameCustomBase(
+            _players.length > 1 ? dirReplayAutoMulti : dirReplayAutoSolutions,
+            lev);
     }
 
 package:
@@ -271,6 +294,23 @@ package:
             _data ~= d;
         }
         assert (_data.isSorted);
+    }
+
+private:
+    VfsFilename saveFilenameCustomBase(
+        in Filename treebase,
+        in Level lev) const
+    {
+        import std.format;
+        return new VfsFilename(format!"%s%s%s-%s-%s%s"(
+            treebase.rootless,
+            this.mimickLevelPath(),
+            this.levelFilename
+                ? this.levelFilename.fileNoExtNoPre
+                : format!"%dp"(_players.length),
+            userName.escapeStringForFilename(),
+            Date.now().toStringForFilename(),
+            basics.globals.filenameExtReplay));
     }
 }
 

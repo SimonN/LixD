@@ -9,9 +9,10 @@ module verify.tested;
 import std.format;
 import enumap;
 
+import basics.user;
+import basics.globconf : userName;
+import basics.trophy;
 import file.filename;
-import basics.globconf; // add trophy to user's trophy database
-import basics.user; // trophy
 import level.level;
 import game.nurse.verify;
 import game.replay;
@@ -52,7 +53,7 @@ private:
     Filename _rpFn; // filename of the replay
     ReplayToLevelMatcher _matcher;
     Level _lv; // may be null, e.g., if noPointer or missingLevel
-    Trophy _trophy; // may be null
+    Trophy _trophy; // never null since it's a struct, but may be default-ctord
     Status _status;
 
 public:
@@ -95,10 +96,9 @@ public:
         return format!"%s,%s,%s,%s,%d,%d,%d,%d"(statusWord[_status],
             _rpFn.rootless,
             levelFilename ? levelFilename.rootless : "",
-            _matcher.playerName,
-            _trophy ? _trophy.lixSaved : 0, _lv ? _lv.required : 0,
-            _trophy ? _trophy.skillsUsed : 0,
-            _trophy ? _trophy.phyusUsed : 0);
+            _matcher.playerName, _trophy.lixSaved,
+            _lv ? _lv.required : 0,
+            _trophy.skillsUsed, _trophy.phyusUsed);
     }
 
     // Returns true if we updated the trophy, false if the old was >= ours
@@ -107,6 +107,6 @@ public:
         if (! solved || userName == "" || userName != _matcher.playerName)
             return false;
         assert (! _matcher.isMultiplayer);
-        return addTrophy(levelFilename, _trophy);
+        return _trophy.addToUser(levelFilename);
     }
 }

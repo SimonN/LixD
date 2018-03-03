@@ -65,6 +65,7 @@ public:
     }
 
 protected:
+    final override void onPickerExecuteDir() { }
     final override void onPickerExecuteFile(Filename executeFileFilename)
     {
         _texttype.text = executeFileFilename.fileNoExtNoPre;

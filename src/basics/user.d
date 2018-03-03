@@ -10,13 +10,14 @@ import std.algorithm; // sort filenames before outputting them
 import std.conv;
 
 import enumap;
+import optional;
 
 import basics.alleg5;
 import basics.globals;
 import basics.globconf;
 import basics.help;
+import basics.trophy;
 import file.filename;
-import file.date;
 import file.io;
 import file.language;
 import file.log; // when writing to disk fails
@@ -24,7 +25,6 @@ import file.useropt;
 import hardware.keynames;
 import hardware.keyset;
 import net.ac;
-import net.phyu;
 import net.style;
 
 private Trophy[Filename] _trophies;
@@ -80,6 +80,33 @@ struct DisplayTryMode {
             screenMode.value = ScreenMode.softwareFullscreen;
     }
     return DisplayTryMode(ScreenMode.softwareFullscreen, 0, 0);
+}
+
+/*
+ * addToUser: Update trophy database (user progress, list of checkmarks)
+ * with a new level result. This tries to save the best result per level.
+ * Call this only with winning _trophies! The progress database doesn't know
+ * whether a result is winning, it merely knows how many lix were saved.
+ *
+ * Returns true if we updated the previous result or if no previous result
+ * existed. Returns false if the previous result was already equal or better.
+ */
+bool addToUser(Trophy tro, in Filename _fn)
+{
+    auto fn = rebindable!(const Filename)(_fn);
+    auto existing = (fn in _trophies);
+    if (! existing || tro.shouldReplaceAfterPlay(*existing)) {
+        _trophies[fn] = tro;
+        return true;
+    }
+    else
+        return false;
+}
+
+Optional!Trophy getTrophy(in Filename fn)
+{
+    Trophy* ret = (rebindable!(const Filename)(fn) in _trophies);
+    return ret ? some(*ret) : Optional!Trophy();
 }
 
 UserOptionFilename fileLanguage;
@@ -387,89 +414,6 @@ static this()
 
 // ############################################################################
 
-class Trophy {
-    const(Date) built;
-    int lixSaved;
-    int skillsUsed;
-    Phyu phyusUsed;
-
-    this (const(Date) bu)
-    {
-        built = bu;
-    }
-
-    override bool opEquals(Object rhsObj)
-    {
-        const(Trophy) rhs = cast (const Trophy) rhsObj;
-        if (! rhs)
-            return false;
-        return built      == rhs.built
-            && lixSaved   == rhs.lixSaved
-            && skillsUsed == rhs.skillsUsed
-            && phyusUsed  == rhs.phyusUsed;
-    }
-
-    // Returns < 0 on a worse rhs result, > 0 for a better rhs result.
-    // The user wouldn't want to replace an old solving result with
-    // a new-built-using non-solving result.
-    // To check in _trophies into the database of solved levels, use
-    // setLevelResult() from this module.
-    override int opCmp(Object rhsObj)
-    {
-        const(Trophy) rhs = cast (const Trophy) rhsObj;
-        assert (rhs, "should be bug in Dlang, not in Lix");
-        if (lixSaved != rhs.lixSaved)
-            return lixSaved - rhs.lixSaved; // more lix saved is better
-        if (skillsUsed != rhs.skillsUsed)
-            return rhs.skillsUsed - skillsUsed; // fewer skills used is better
-        if (phyusUsed != rhs.phyusUsed)
-            return rhs.phyusUsed - phyusUsed; // less time taken is better
-        return built.opCmp(rhs.built); // newer result better
-    }
-
-    unittest {
-        auto a = new typeof(this)(Date.now());
-        auto b = new typeof(this)(Date.now());
-        a.lixSaved = 4;
-        b.lixSaved = 5;
-        assert (b > a);
-        b.lixSaved = 4;
-        assert (a >= b);
-        b.phyusUsed = 1;
-        assert (a > b);
-    }
-}
-
-const(Trophy) getTrophy(in Filename fn)
-{
-    Trophy* ret = (rebindable!(const Filename)(fn) in _trophies);
-    return ret ? (*ret) : null;
-}
-
-/*
- * addTrophy: Update trophy database (user progress, list of checkmarks)
- * with a new level result. This tries to save the best result per level.
- * Call this only with winning _trophies! The progress database doesn't know
- * whether a result is winning, it merely knows how many lix were saved.
- *
- * Returns true if we updated the previous result or if no previous result
- * existed. Returns false if the previous result was already equal or better.
- */
-bool addTrophy(
-    in Filename _fn,
-    Trophy r,
-) {
-    auto fn = rebindable!(const Filename)(_fn);
-    auto existing = (fn in _trophies);
-    if (existing is null || existing.built != r.built || *existing < r) {
-        _trophies[fn] = r;
-        return true;
-    }
-    return false;
-}
-
-// ############################################################################
-
 private Filename userFileName()
 {
     return new VfsFilename(dirDataUser.dirRootless
@@ -513,15 +457,12 @@ void load()
                 // Remove the call to replace during early 2018.
                 i.text1.replace("lemforum/Simple/", "lemforum/Lovely/")
             ));
-            Trophy read = new Trophy(new Date(i.text2));
-            read.lixSaved    = i.nr1;
-            read.skillsUsed  = i.nr2;
-            read.phyusUsed = Phyu(i.nr3);
+            Trophy read = Trophy(i.text2, i.nr1, i.nr2, i.nr3);
 
             // Don't call addTrophy because that always overwrites the date.
             // We want the newest date here to tiebreak, unlike addTrophy.
             Trophy* old = (fn in _trophies);
-            if (! old || *old < read)
+            if (! old || read.shouldReplaceDuringUserDataLoad(*old))
                 _trophies[fn] = read;
         }
         else if (auto opt = i.text1 in _optvecLoad)

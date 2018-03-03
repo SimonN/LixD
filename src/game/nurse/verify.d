@@ -1,6 +1,6 @@
 module game.nurse.verify;
 
-import basics.user : Trophy;
+import basics.trophy;
 import game.nurse.base;
 
 class VerifyingNurse : Nurse {
