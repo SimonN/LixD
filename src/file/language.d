@@ -31,9 +31,11 @@ import file.log;
 import file.filename;
 import net.ac;
 
-string transl(in Lang key) { return _lang[key].transl; }
-string[] descr(in Lang key) { return _lang[key].descr; }
-string skillTooltip(in Ac ac) { return _skillTooltips[ac]; }
+nothrow @nogc {
+    string transl(in Lang key) { return _lang[key].transl; }
+    string[] descr(in Lang key) { return _lang[key].descr; }
+    string skillTooltip(in Ac ac) { return _skillTooltips[ac]; }
+}
 
 void loadUserLanguageAndIfNotExistSetUserOptionToEnglish()
 {

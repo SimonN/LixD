@@ -43,7 +43,7 @@ $previewMissingTiles missing tiles:
 $previewMissingTilesMoreSee more, see
 
 $winSearchTitle Level Search
-$winSearchPrompt Search for level titles or filenames:
+$winSearchPrompt Search by title, author, or filename in %d levels:
 $winVerifyTitle Replay Verifier
 
 // networking lobby

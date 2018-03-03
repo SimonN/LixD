@@ -34,7 +34,7 @@ $previewMissingTiles fehlende Stücke:
 $previewMissingTilesMoreSee weitere, siehe
 
 $winSearchTitle Levelsuche
-$winSearchPrompt Suche nach Leveltiteln oder Dateinamen:
+$winSearchPrompt Suche nach Titel, Autor oder Dateiname in %d Levels:
 $winVerifyTitle Replay-Verifizierer
 
 // Lobby

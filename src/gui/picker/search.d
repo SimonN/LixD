@@ -26,6 +26,7 @@ import basics.user;
 import file.language;
 import file.filename;
 import file.log;
+import graphic.color; // undrawColor for the label
 import gui;
 import gui.picker.scrolist;
 import level.metadata;
@@ -35,6 +36,7 @@ import hardware.keyset;
 
 class LevelSearch : Window {
 private:
+    Label _prompt; // updates with results found
     Texttype _query;
     TextButton _back;
 
@@ -60,8 +62,8 @@ public:
     {
         super(new Geom(0, 0, gui.screenXlg, gui.screenYlg),
             Lang.winSearchTitle.transl);
-        addChild(new Label(new Geom(20, 40, 400, 20, From.BOTTOM_LEFT),
-            Lang.winSearchPrompt.transl));
+        _prompt = new Label(new Geom(20, 40, 400, 20, From.BOTTOM_LEFT));
+        _prompt.undrawBeforeDraw = true;
         _results = new SearchResultList(new Geom(20, 40, xlg - 40, ylg - 120));
 
         _query = new Texttype(new Geom(20, 20, 400, 20, From.BOTTOM_LEFT));
@@ -77,7 +79,8 @@ public:
             Lang.commonBack.transl);
         _back.hotkey = keyMenuExit;
 
-        addChildren(_results, _query, _back);
+        addChildren(_prompt, _results, _query, _back);
+        updatePrompt();
     }
 
     void onDone(typeof(_onDone) f) { _onDone = f; }
@@ -128,14 +131,14 @@ private:
         if (_database.length > 0 && _unprocessed.empty)
             // Database is complete
             return;
-        if (_unprocessed.empty) {
-            assert (_database.empty, "let's not do this twice");
-            _unprocessed = dirLevels.findTree();
-        }
 
         // Work on the database for a small part of the time, but return
         // early enough to make the program feel responsive.
         immutable long beforeWork = timerTicks;
+        if (_unprocessed.empty) {
+            assert (_database.empty, "let's not do this twice");
+            _unprocessed = dirLevels.findTree();
+        }
         while (! _unprocessed.empty && timerTicks == beforeWork) {
             try {
                 auto cf = CachedFilename(_unprocessed[0]);
@@ -147,8 +150,17 @@ private:
             }
             _unprocessed = _unprocessed[1 .. $];
         }
-        // Force the UI to search again the now-added-to database
-        _lastQuery = "";
+        _lastQuery = ""; // Force UI to search again the now-added-to database
+        updatePrompt();
+    }
+
+    void updatePrompt()
+    {
+        try
+            _prompt.text = format(Lang.winSearchPrompt.transl,
+                _database.length);
+        catch (Exception)
+            _prompt.text = Lang.winSearchPrompt.transl;
     }
 }
 
