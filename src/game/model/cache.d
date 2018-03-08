@@ -10,6 +10,7 @@ import std.range;
 import std.typecons;
 
 import basics.alleg5 : OutOfVramException;
+import basics.globals : levelPixelsToWarn;
 import basics.help; // clone(T[]), a deep copy for arrays
 import game.replay;
 import game.model.state;
@@ -25,9 +26,9 @@ class PhysicsCache {
 
 private:
 
-    enum updatesMostFrequentPair = 12;
-    enum updatesMultiplierNextPairIsSlowerBy = 5; // 12, 60, 300
-    enum pairsToKeep = 3;
+    enum updatesMostFrequentPair = 10;
+    enum updatesMultiplierNextPairIsSlowerBy = 5; // 10, 50, 250, 1250
+    enum pairsToKeep = 4;
 
     GameState _zero;
     GameState _userState;
@@ -153,6 +154,13 @@ public:
         if (! wouldAutoSave(s, ultimatelyTo, DuringTurbo.no))
             return;
         _recommendGC = true;
+        // For large maps, don't save the final pair. This is a feeble attempt
+        // at conserving RAM. See github issue 296 about RAM on Windows:
+        // https://github.com/SimonN/LixD/issues/296
+        static assert (pairsToKeep >= 2);
+        immutable int pairsToKeepForThisMap = s.land.xl * s.land.yl
+            > levelPixelsToWarn ? pairsToKeep - 1 : pairsToKeep;
+
         // Potentially push older auto-saved states down the hierarchy.
         // First, if it's time to copy a frequent state into a less frequent
         // state, make these copies. Start with least frequent copying the
@@ -160,7 +168,7 @@ public:
         // After copying the internal states like that, save s into the most
         // frequently updated pair. The most frequently updated pair has
         // array indices 0 and 1. The next one has array indices 2 and 3, ...
-        for (int pair = pairsToKeep - 1; pair >= 0; --pair) {
+        for (int pair = pairsToKeepForThisMap - 1; pair >= 0; --pair) {
             immutable int umfp = updateMultipleForPair(pair);
             if (s.update % umfp != 0)
                 continue;
