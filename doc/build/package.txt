@@ -4,8 +4,9 @@ Notes for package maintainers
 1. tl;dr
 --------
 
-If Lix shall read from `/usr/share/lix' or `/usr/local/share/lix', or wherever
-the user's `${XDG_DATA_DIRS}/lix/' points, don't change the Lix D source.
+If Lix shall read from `${XDG_DATA_DIRS}/lix/', don't change the Lix D source.
+(This usually points to `/usr/share/lix' or `/usr/local/share/lix' and Lix
+will use these as fallbacks in case the variable is not set.)
 If you want a custom install path, replace in `src/file/filename/fhs.d':
 
     enum customReadOnlyDir = "";
@@ -20,9 +21,10 @@ Build Lix with:
 
     dub build -f -b releaseXDG
 
-Please update when I bump minor version, to support netplay. Many thanks! <3
-For a desktop icon, `data/images/lix_logo.svg' might be handy.
-For music, extract in read-only dir: http://www.lixgame.com/dow/lix-music.zip
+Please update when I bump minor version (y in x.y.z), to support netplay.
+Many thanks! <3 For a desktop icon, `data/images/lix_logo.svg' might be handy.
+For music, extract in read-only dir: `http://www.lixgame.com/dow/lix-music.zip'
+See section below for list of files to exclude from a binary package.
 
 
 
@@ -52,16 +54,15 @@ Then, Lix will read and write only within its working directory.
 
 
 
-
 3. Directories
 --------------
 
-Lix will read from `/usr/local/share/lix' or, if that directory doesn't exist,
-from `/usr/share/lix'. These paths can be configured at runtime with
-environment variable XDG_DATA_DIRS according to the XDG Base Directory
-Specification: Lix will read from `${XDG_DATA_DIRS}/lix/'. If the variable has
-several colon-separated paths, they will be tried in order per file from the
-leftmost to the rightmost, until a required file is found.
+Lix will read from `${XDG_DATA_DIRS}/lix/', or, if that environment variable
+doesn't exist, from `/usr/local/share/lix' or from `/usr/share/lix'. The exact
+path can be configured at runtime with the environment variable XDG_DATA_DIRS
+according to the XDG Base Directory Specification. If the variable has several
+colon-separated paths, they will be tried in order per file from the leftmost
+to the rightmost, until a required file is found.
 
 If the source in `src/file/filename/fhs.d' defines `customReadOnlyDir' as a
 nonempty string, that string will override the user's XDG environment
@@ -75,6 +76,8 @@ then Lix will read and write from `${XDG_DATA_HOME}/lix/'.
 Read the entire `src/file/filename/fhs.d' if you would like to know all
 details, and ask questions on github or in IRC. Contact details are in the
 readme file in the project's root dir.
+
+See below for what files to exclude from a binary distribution.
 
 
 
@@ -100,7 +103,24 @@ This subdirectory `./music/' should be installed to the read-only directory.
 
 
 
-6. Minor version increments (y in x.y.z)
+6. Files to exclude
+-------------------
+
+In a binary distribution, you don't have to ship these files that the Lix
+repository has, that the build system creates, or that the game creates.
+You should probable delete these before packaging the game:
+
+*   `./src'                              -- the source code
+*   `.git/' and `.gitignore'             -- version control files
+*   `./dub.json' and `./win-build.bat'   -- build system control files
+*   `./.dub/' and `.dub.selections.json' -- build system artifacts
+*   `./doc/build'                        -- the build documentation
+*   `./data/config.txt'                  -- created on first game start
+*   `./replays/'                         -- auto-saved game replays
+
+
+
+7. Minor version increments (y in x.y.z)
 ----------------------------------------
 
 The networking game server rejects connection attempts from different minor

@@ -15,6 +15,9 @@ information:
 
 *   Or use the command line, this prints results to standard output:
     lix --coverage replays/path/to/dir
+    On Windows, stdout is closed to suppress extra console windows.
+    To verify replays from the console, redirect output to a file:
+    lix --coverage replays/path/to/dir > a.txt
 
 This tests every replay in replays/path/to/dir/ for whether it solves its
 the pointed-to level. Here, Lix will never consider any level saved within

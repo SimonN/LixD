@@ -37,7 +37,8 @@ private void writeHelp()
         "--verify replaydir     verify all replays in all given directories\n",
         "--coverage replaydir   like --verify, then print levels without proof\n",
         "level.txt              play the given level\n",
-        "replay.txt             load the replay's level, watch the replay\n",
+        "replay.txt             load the included level, watch the replay\n",
+        "--pointed-to repl.txt  load the pointed-to level, watch the replay\n",
         "level.txt replay.txt   load the given level, watch the given replay\n",
     );
 }

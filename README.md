@@ -27,16 +27,13 @@ Build instructions
     * On Windows, follow [my detailed build instructions
     ](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/windows.txt).
     * On Linux/Mac, your package manager should provide them.
-* Build Lix: `$ dub build -b release`
+* Build Lix: `$ dub build -b release` or, on Windows, run `win-build.bat`.
 * [Download the game music](http://www.lixgame.com/dow/lix-music.zip),
     extract in Lix's directory.
 * Run Lix: `$ bin/lix`
 
-Detailed instructions
-[for Windows](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/windows.txt),
-[for Linux](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/linux.txt).
-
-[Notes for Linux package maintainers](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/package.txt).
+You can read my [detailed instructions for Windows](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/windows.txt) or my
+[detailed instructions for Linux](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/linux.txt). Would you like to package Lix for Linux distributions? Please see my [notes for Linux package maintainers](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/package.txt).
 
 Contact
 -------

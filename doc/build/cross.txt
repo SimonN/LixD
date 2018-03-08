@@ -26,6 +26,13 @@ from the .dlls with `implib'. Your command lines might look like:
 
     wine implib.exe /s myfile.lib myfile.dll
 
+Here is a shellscript do create LIBs from the the required DLLs:
+
+    #!/bin/sh
+    for a in "" _acodec _audio _font _image _primitives _ttf; do
+        wine implib /s "allegro${a}.lib" "allegro${a}-5.2.dll"
+    done
+
 You have to put the .dlls and .libs into where the Windows version of dmd will
 find them: The default installation part of the Windows dmd compiler is
 `~/.wine/drive_c/D' or `~/.wine/drive_c/"Program Files"/D'.

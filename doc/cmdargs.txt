@@ -1,6 +1,16 @@
 Lix command-line arguments
 ==========================
 
+These command-line arguments work on Windows, Linux, and everyhwere else.
+
+On Windows, you should redirect all output to a separate file. This is because
+Lix for Windows has been linked with stdout closed, to suppress extra console
+windows from spawning when you double-click on Lix in the file browser.
+
+To redirect shell output, append " > a.txt" without quotes to any command
+below, this redirects  output to a.txt. E.g., "lix --coverage replays/proofs"
+becomes "lix --coverage replays/proofs > a.txt".
+
 Synopsis
 --------
 
