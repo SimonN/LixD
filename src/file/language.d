@@ -322,6 +322,10 @@ enum Lang {
     optionKeyZoomIn,
     optionKeyZoomOut,
     optionKeyScreenshot,
+    optionSplatRulerDesign,
+    optionSplatRulerDesignTwoBars,
+    optionSplatRulerDesign094,
+    optionSplatRulerDesignSuperSnap,
 
     optionKeyForceLeft,
     optionKeyForceRight,

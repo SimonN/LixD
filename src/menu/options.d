@@ -244,6 +244,7 @@ void populateGraphics()
             Lang.optionScreenHardwareFullscreen.transl),
     ];
     fac.y += fac.incrementY + 40; // 40 = 20+20 for the 2 extra radio buttons
+    immutable bottomHalfY = fac.y;
     grp ~= [
         fac.factory!BoolOption(paintTorusSeams),
         fac.factory!BoolOption(showButtonHotkeys),
@@ -251,7 +252,16 @@ void populateGraphics()
         fac.factory!BoolOption(showFPS),
     ];
     fac = facRight();
-    grp ~= fac.factory!ResolutionOption(screenWindowedX, screenWindowedY);
+    grp ~= [
+        fac.factory!ResolutionOption(screenWindowedX, screenWindowedY),
+    ];
+    fac.y = bottomHalfY;
+    grp ~= [
+        fac.factory!RadioButtonsOption(splatRulerDesign,
+            Lang.optionSplatRulerDesignTwoBars.transl,
+            Lang.optionSplatRulerDesign094.transl,
+            Lang.optionSplatRulerDesignSuperSnap.transl),
+    ];
 }
 
 void populateControls()

@@ -251,7 +251,7 @@ $optionScreenWindowedRes Fenster-/Hardware-Auflösung|Größe des Lix-Fensters i
 $optionPaintTorusSeams Torus-Nahtstellen anmalen|Torus-Nahtstellen in der Landschaft mit einer dünnen Linie kennzeichnen.|Dies hat keine Auswirkung auf die Physik; es dient zur Orientierung.
 $optionIngameTooltips Tooltips im Spiel|Buttons und Lix-wählende Hotkeys im Spiel erklären, z.B. nur Linksläufer.|Einige Buttons haben eine Linksklick- und eine Rechtsklick-Funktion.
 $optionShowButtonHotkeys Button-Hotkeys anzeigen|Auf jedem Button die Hotkeys des Buttons in der rechten unteren Ecke anzeigen.
-$optionShowFPS Physik und FPS zählen|Anzahl Physik-Updates seit Spielbeginn anzeigen.|Im Editor und Spiel: Frames pro Sekunde und Grafikspeicher anzeigen.
+$optionShowFPS Physik und FPS zählen|Anzahl Physik-Updates seit Spielbeginn anzeigen.|Im Editor und Spiel: Frames pro Sekunde anzeigen.
 $optionGuiColorRed Menüfarbe Rot|Die Grafikoberfläche in Lix anders färben.
 $optionGuiColorGreen Menüfarbe Grün|Die Grafikoberfläche in Lix anders färben.
 $optionGuiColorBlue Menüfarbe Blau|Die Grafikoberfläche in Lix anders färben.
@@ -261,6 +261,10 @@ $optionKeyZoomOut Zoom −|Level kleiner darstellen, dafür mehr auf einmal sehe
 $optionKeyScroll Halten zum Scrollen|Halte dies (Standard: rechte Maustaste ⟁) und bewege die Maus zum Scrollen.|Das ist einfacher, schneller und präziser als Scrollen am Bildschirmrand.
 $optionKeyPriorityInvert Priorität invertieren|Halte dies, um Fähigkeiten der Lix mit der niedrigsten Priorität zuzuweisen.|Halte dies im Editor, um das hinterste Element anstatt des vordersten zu wählen.
 $optionKeyScreenshot Screenshot|Screenshot (Bildschirmfoto) des gesamten Lix-Fensters speichern.|Screenshots werden gespeichert in ./export/ oder ~/local/share/lix/export/.
+$optionSplatRulerDesign Fallhöhen-Lineal-Design|Schalte das Fallhöhen-Lineal an/aus mit "Klarphysik" bei Spieltasten.|3-Stich-Lineale snappen an Kanten und messen Fallhöhe nach oben und unten.
+$optionSplatRulerDesignTwoBars 2-Strich-Fallhöhen-Lineal, wenig Snap
+$optionSplatRulerDesign094 3-Strich-Fallhöhen-Lineal, hinter Terrain
+$optionSplatRulerDesignSuperSnap 3-Strich-Fallhöhen-Lineal, viel Snap
 
 $optionMouseSpeed Mausgeschwindigkeit|Geschwindigkeit des Mauscursors im Spiel, im Editor und im Menü.
 $optionScrollSpeedEdge Scroll-Geschw. am Bildrand|Scroll-Geschwindigkeit, wenn die Maus am Rand des Bildschirms ist.

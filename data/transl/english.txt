@@ -274,6 +274,10 @@ $optionKeyZoomOut Zoom −|Zoom out of the level.
 $optionKeyScroll Hold to scroll|Hold this (standard: right mouse button ⟁) and move the mouse to scroll.|This is easier, faster, and more precise than scrolling at the screen edge.
 $optionKeyPriorityInvert Priority invert|Hold to assign skills to the lix with the lowest priority instead of the highest.|In the editor, hold to select the bottommost tile instead of the topmost.
 $optionKeyScreenshot Screenshot|Take a screenshot of the entire Lix window.|Screenshots are saved in ./export/ or ~/local/share/lix/export/.
+$optionSplatRulerDesign Splat ruler design|Toggle splat ruler on/off during play with "Clear Physics" on the Game Keys tab.|3-bar rulers snap to ledges, then measure splat distance above and below.
+$optionSplatRulerDesignTwoBars 2-bar splat ruler, little snap
+$optionSplatRulerDesign094 3-bar splat ruler, behind terrain
+$optionSplatRulerDesignSuperSnap 3-bar splat ruler, huge snap
 
 $optionMouseSpeed Mouse speed|Movement speed of the mouse cursor.
 $optionScrollSpeedEdge Scroll speed at screen edge|Scroll speed when the mouse cursor touches the screen edge.

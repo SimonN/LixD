@@ -56,7 +56,7 @@ private:
 public:
     void determineSnap(in Phymap phy, in Point mouseOnLand)
     {
-        enum maxSnap = 16; // maximal snap distance near either end
+        enum maxSnap = 10; // maximal snap distance near either end
         _snapTarget = max(Snap(true, int.max, mouseOnLand),
             findSnapNear(phy, mouseOnLand, Point(0, half), maxSnap),
             findSnapNear(phy, mouseOnLand, Point(0, -half), maxSnap)).snapTo;
