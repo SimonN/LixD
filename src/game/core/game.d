@@ -93,34 +93,48 @@ package:
     int _profilingGadgetCount;
     bool _gotoMainMenu;
     bool _replayNeverCancelledThereforeDontSaveAutoReplay;
-    bool _maySaveTrophy;
+    bool _levelMatchesReplayThereforeMaySaveTrophy;
 
 private:
     Phyu _setLastPhyuToNowLastCalled = Phyu(-1);
 
 public:
-    @property bool gotoMainMenu() { return _gotoMainMenu; }
-
     enum phyusPerSecond     = 15;
     enum ticksNormalSpeed   = ticksPerSecond / phyusPerSecond;
     enum updatesDuringTurbo = 9;
     enum updatesAheadMany   = ticksPerSecond / ticksNormalSpeed * 10;
 
-    static int updatesBackMany()
-    {
-        // This is (1/lag) * 1 second. No lag => displayFPS == ticksPerSecond.
-        return (ticksPerSecond + 1) * ticksPerSecond
-            /  (displayFps     + 1) / ticksNormalSpeed;
-    }
-
-    this(Level lv, Filename levelFilename, Replay rp, in bool maySaveTrophy)
-    {
+    /*
+     * Create Game without replay. Pass level filename such that the Game
+     * can create its own replay. You will always be able to save tropies.
+     */
+    this(Level lv, Filename levelFilename)
+    in {
         assert (lv);
         assert (lv.playable);
+        assert (levelFilename);
+    }
+    body {
         level = lv;
-        _maySaveTrophy = maySaveTrophy;
-        prepareNurse(levelFilename, rp);
-        commonConstructor();
+        _levelMatchesReplayThereforeMaySaveTrophy = true;
+        _replayNeverCancelledThereforeDontSaveAutoReplay = false;
+        commonConstructor(generateFreshReplay(levelFilename));
+    }
+
+    /*
+     * Create Game with replay, which provides the level filename.
+     */
+    this(Level lv, Replay rp, in bool maySaveTrophy)
+    in {
+        assert (lv);
+        assert (lv.playable);
+        assert (rp);
+    }
+    body {
+        level = lv;
+        _levelMatchesReplayThereforeMaySaveTrophy = maySaveTrophy;
+        _replayNeverCancelledThereforeDontSaveAutoReplay = true;
+        commonConstructor(rp);
     }
 
     this(RichClient client)
@@ -131,6 +145,9 @@ public:
         enforce(client.permu, "Networking game has no player permutation.");
 
         level = client.level;
+        _levelMatchesReplayThereforeMaySaveTrophy = false;
+        _replayNeverCancelledThereforeDontSaveAutoReplay = false;
+
         _netClient = client;
         _netClient.onConnectionLost = ()
         {
@@ -145,8 +162,7 @@ public:
         {
             this.adjustToMatchMillisecondsSinceGameStart(millis);
         };
-        prepareNurse(null, null);
-        commonConstructor();
+        commonConstructor(generateFreshReplay(null));
     }
 
     /* Using ~this to dispose stuff is probably bad style.
@@ -173,10 +189,13 @@ public:
         }
     }
 
+    @property bool gotoMainMenu() { return _gotoMainMenu; }
+
     Harvest harvest() const
     {
         return Harvest(level, nurse.constReplay,
-            some(nurse.trophyForTribe(localStyle)),
+            nurse.trophyForTribe(localStyle),
+            _levelMatchesReplayThereforeMaySaveTrophy,
             ! _replayNeverCancelledThereforeDontSaveAutoReplay);
     }
 
@@ -214,6 +233,13 @@ public:
     void draw() { implGameDraw(this); }
 
 package:
+    static int updatesBackMany()
+    {
+        // This is (1/lag) * 1 second. No lag => displayFPS == ticksPerSecond.
+        return (ticksPerSecond + 1) * ticksPerSecond
+            /  (displayFps     + 1) / ticksNormalSpeed;
+    }
+
     @property bool replaying() const
     {
         assert (nurse);
@@ -278,26 +304,19 @@ private:
         return nurse.stateOnlyPrivatelyForGame;
     }
 
-    void commonConstructor()
+    void commonConstructor(Replay rp)
     {
-        initializePanel();
-        initializeConsole();
-        stopMusic();
-        setLastPhyuToNow();
-        _splatRuler = createSplatRuler();
-    }
-
-    void prepareNurse(Filename levelFilename, Replay rp)
-    {
-        assert (! nurse);
-        _replayNeverCancelledThereforeDontSaveAutoReplay = rp !is null;
-        if (! rp)
-            rp = generateFreshReplay(levelFilename);
         // DTODONETWORK: Eventually, observers shall cycle through the
         // spectating teams. Don't set a final style here, but somehow
         // make the effect manager depend on what the GUI chooses.
         _effect = new EffectManager(determineLocalStyle(rp));
         nurse = new InteractiveNurse(level, rp, _effect);
+
+        initializePanel();
+        initializeConsole();
+        stopMusic();
+        _splatRuler = createSplatRuler();
+        setLastPhyuToNow();
     }
 
     Replay generateFreshReplay(Filename levelFilename)

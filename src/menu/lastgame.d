@@ -36,17 +36,16 @@ public:
         _autoReplayDesc = new Label(new Geom(0, 40, xlg/2f, 20),
             Lang.harvestReplayAutoNotSaved.transl);
         addChild(_autoReplayDesc);
-        auto tro = trophy.unwrap;
-        if (! tro || tro.lixSaved < level.required)
+        if (lixSaved < level.required)
             return;
 
         _fraction = some(new Label(new Geom(0, 00, xlg, 40)));
         _trophyUpdate = some(new Label(new Geom(0, 20, xlg, 20)));
         addChildren(_fraction.unwrap, _trophyUpdate.unwrap);
 
-        _fraction.unwrap.text = formatWinnerText(*tro);
+        _fraction.unwrap.text = formatWinnerText();
         _fraction.unwrap.color = color.white;
-        saveTrophy(*tro);
+        saveTrophy();
         if (saveAutoReplay())
             _autoReplayDesc.text = Lang.harvestReplayAutoSaved.transl;
     }
@@ -74,31 +73,31 @@ protected:
             ch.undraw();
     }
 
-private:
-    void saveTrophy(Trophy tro) { with (Trophy.Cmp)
+    override void onFirstTrophy()
     {
-        Filename lfn = replay.levelFilename;
-        if (! lfn)
-            return;
-        const old = getTrophy(lfn);
-        const bool addResult = tro.addToUser(lfn);
-        if (old.empty)
-            _trophyUpdate.unwrap.text = Lang.harvestTrophyFirst.transl;
-        else if (tro.shouldReplace(*old.unwrap) == yesSameBuildBetterPlay)
-            _trophyUpdate.unwrap.text = Lang.harvestTrophyImproved.transl;
-        else if (tro.shouldReplace(*old.unwrap) != noSameBuildWorsePlay)
-            _trophyUpdate.unwrap.text = Lang.harvestTrophyBuiltReset.transl;
-    }}
+        _trophyUpdate.unwrap.text(Lang.harvestTrophyFirst.transl);
+    }
 
-    string formatWinnerText(Trophy tro) const
+    override void onRestoredTrophy()
+    {
+        _trophyUpdate.unwrap.text = Lang.harvestTrophyBuiltReset.transl;
+    }
+
+    override void onImprovedTrophy()
+    {
+        _trophyUpdate.unwrap.text = Lang.harvestTrophyImproved.transl;
+    }
+
+private:
+    string formatWinnerText() const
     {
         try {
             return format(Lang.harvestYouSavedEnough.transl,
-                tro.lixSaved, level.initial);
+                lixSaved, level.initial);
         }
         catch (FormatException e)
             return format!"Saved %d, needed %d/%d"(
-                tro.lixSaved, level.required, level.initial);
+                lixSaved, level.required, level.initial);
     }
 }
 
@@ -134,19 +133,36 @@ public:
     @property const @nogc nothrow {
         const(Level) level() { return _harvest.level; }
         const(Replay) replay() { return _harvest.replay; }
+        int lixSaved() { return _harvest.trophy.lixSaved; }
     }
 
 protected:
-    inout(Optional!Trophy) trophy() inout nothrow
-    {
-        return _harvest.trophy;
-    }
-
     bool saveAutoReplay() const // returns whether we really saved
     {
-        if (! _harvest.autoReplayAllowed)
+        if (! _harvest.maySaveAutoReplay)
             return false;
         replay.saveAsAutoReplay(level);
         return replay.shouldWeAutoSave;
+    }
+
+    // Override these to react to the result of saving the trophy
+    void onFirstTrophy() { }
+    void onRestoredTrophy() { }
+    void onImprovedTrophy() { }
+
+    final void saveTrophy()
+    {
+        if (! _harvest.maySaveTrophy || ! replay.levelFilename)
+            return;
+        Optional!Trophy old = getTrophy(replay.levelFilename);
+        if (! _harvest.trophy.addToUser(replay.levelFilename))
+            return;
+
+        if (old.empty)
+            onFirstTrophy();
+        else if (level.built != old.unwrap.built)
+            onRestoredTrophy();
+        else
+            onImprovedTrophy();
     }
 }

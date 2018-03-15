@@ -15,10 +15,14 @@ import level.level;
 struct Harvest {
     const(Level) level;
     const(Replay) replay;
-    Optional!Trophy trophy; // exists after a singleplayer game.
+    const(Trophy) trophy; // of the local team, designed for singleplayer.
+
+    // Harvest gets a Trophy even if Game forbids to save the Trophy.
+    // Saving the trophy is forbidden when the level doesn't match what's
+    // saved at the replay's pointed-to filename.
+    // Game got told this bool, then Game tells us this bool:
+    const bool maySaveTrophy;
 
     // False if we started from a replay and never cancelled it. Game decides.
-    bool autoReplayAllowed;
-
-    // Still need something for multiplayer. Or have two Harvest structs?
+    const bool maySaveAutoReplay;
 }

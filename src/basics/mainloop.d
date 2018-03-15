@@ -197,7 +197,7 @@ public:
                 auto lv = browSin.levelRecent;
                 _afterGameGoto = AfterGameGoto.single;
                 kill();
-                game = new Game(lv, fn, null, true);
+                game = new Game(lv, fn);
             }
             else if (browRep && browRep.gotoGame) {
                 auto matcher = browRep.matcher;

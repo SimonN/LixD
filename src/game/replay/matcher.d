@@ -91,8 +91,9 @@ public:
     out (ret) { assert (ret); }
     body {
         auto pref = preferredInitializedStruct();
-        return new Game(pref.level, pref.fn,
-            _rp.empty ? null : _rp, pref.lvMatchesFn);
+        return _rp.empty
+            ? new Game(pref.level, pref.fn)
+            : new Game(pref.level, _rp, pref.lvMatchesFn);
     }
 
     VerifyingNurse createVerifyingNurse()
