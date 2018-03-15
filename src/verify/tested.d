@@ -96,7 +96,7 @@ public:
         return format!"%s,%s,%s,%s,%d,%d,%d,%d"(statusWord[_status],
             _rpFn.rootless,
             levelFilename ? levelFilename.rootless : "",
-            _matcher.playerName, _trophy.lixSaved,
+            _matcher.singleplayerName, _trophy.lixSaved,
             _lv ? _lv.required : 0,
             _trophy.skillsUsed, _trophy.phyusUsed);
     }
@@ -104,7 +104,8 @@ public:
     // Returns true if we updated the trophy, false if the old was >= ours
     bool maybeAddTrophy()
     {
-        if (! solved || userName == "" || userName != _matcher.playerName)
+        if (! solved || userName == ""
+                     || userName != _matcher.singleplayerName)
             return false;
         assert (! _matcher.isMultiplayer);
         return _trophy.addToUser(levelFilename);

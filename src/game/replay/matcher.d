@@ -108,9 +108,9 @@ public:
         return _rp.numPlayers > 1;
     }
 
-    @property string playerName() const @nogc nothrow
+    @property string singleplayerName() const @nogc nothrow
     {
-        return _rp.players.length > 1 ? _rp.players.byValue.front.name : "";
+        return _rp.players.length == 1 ? _rp.players.byValue.front.name : "";
     }
 
 private:

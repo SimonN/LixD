@@ -1,4 +1,0 @@
-Bugs in the nowin branch:
-
-You can't save trophies/repalys when you play levels from the replay
-browser. (Harvest isn't evaluated and Game doesn't save on its own anymore.)
