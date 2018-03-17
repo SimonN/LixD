@@ -257,10 +257,12 @@ public:
                 }
                 else if (_afterGameGoto == AfterGameGoto.replays) {
                     browRep = new BrowserReplay;
+                    browRep.harvest = harvest;
                     gui.addElder(browRep);
                 }
                 else {
-                    browSin = new BrowserSingle(harvest);
+                    browSin = new BrowserSingle();
+                    browSin.harvest = harvest;
                     gui.addElder(browSin);
                 }
             }

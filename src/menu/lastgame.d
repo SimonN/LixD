@@ -39,7 +39,7 @@ public:
         super(g, ha);
         _autoReplayDesc = new Label(new Geom(0, 40, xlg/2f, 20));
         addChild(_autoReplayDesc);
-        if (lixSaved < level.required)
+        if (! solved)
             return;
 
         _youSaved = () {
@@ -138,6 +138,9 @@ public:
         const(Level) level() { return _harvest.level; }
         const(Replay) replay() { return _harvest.replay; }
         int lixSaved() { return _harvest.trophy.lixSaved; }
+        bool solved() {
+            return _harvest.trophy.lixSaved >= _harvest.level.required;
+        }
     }
 
 protected:

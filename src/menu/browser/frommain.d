@@ -29,38 +29,3 @@ protected:
         return cfg;
     }
 }
-
-/* How to use the DeleteMixin:
- * Mix it into a browser. Implement the following method by filling out
- * title and msgs, but without adding buttons:
- *
- *  MsgBox newMsgBoxDelete();
- *
- * In the using class's calcSelf, call calcDeleteMixin.
- */
-mixin template DeleteMixin()
-{
-    import hardware.keyset;
-
-    private Button _delete;
-    private MsgBox _boxDelete;
-
-    private void calcDeleteMixin()
-    {
-        assert (_delete);
-        if (_delete.execute) {
-            assert (! _boxDelete);
-            assert (fileRecent);
-            _boxDelete = newMsgBoxDelete();
-            _boxDelete.addButton(Lang.browserDelete.transl, keyMenuOkay, () {
-                assert (fileRecent);
-                deleteFileRecentHighlightNeighbor();
-                _boxDelete = null;
-            });
-            _boxDelete.addButton(Lang.commonNo.transl,
-                KeySet(keyMenuDelete, keyMenuExit),
-                () { _boxDelete = null; });
-            addFocus(_boxDelete);
-        }
-    }
-}

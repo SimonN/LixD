@@ -8,28 +8,30 @@ module menu.browser.replay;
  * See comment at that method.
  */
 
+import optional;
+
 import basics.globals : dirLevels;
 import basics.user;
 import file.filename;
 import file.language;
+import game.harvest;
 import game.replay;
 import gui;
 import gui.picker;
 import hardware.keyset;
 import level.level;
-import menu.browser.frommain;
+import menu.browser.withlast;
+import menu.lastgame;
 import menu.verify;
 
 static import basics.globals;
 
-class BrowserReplay : BrowserCalledFromMainMenu {
+class BrowserReplay : BrowserWithLastAndDelete {
 private:
-    ReplayToLevelMatcher _matcher; // may be null if no replay previewed
-
+    Optional!ReplayToLevelMatcher _matcher; // empty if no replay previewed
     LabelTwo _labelPointedTo;
     TextButton _buttonPlayWithPointedTo;
     TextButton _buttonVerify;
-    mixin DeleteMixin deleteMixin;
 
 public:
     this()
@@ -53,9 +55,8 @@ public:
         _buttonPlayWithPointedTo = newInfo(1, 100, "pointedTo", keyMenuEdit);
         _buttonVerify = newInfo(1, 60, "Verify Dir", KeySet());
 
-        _delete  = newInfo(0, 20, Lang.browserDelete.transl, keyMenuDelete);
         addChildren(_labelPointedTo,
-            _buttonPlayWithPointedTo, _buttonVerify, _delete);
+            _buttonPlayWithPointedTo, _buttonVerify);
     }
 
     // Override method with assert(false): Violates fundamental OO principles.
@@ -64,47 +65,53 @@ public:
     // caller (the main loop) should get the entire LevelToReplayMatcher
     // instead, then it can start a game from there.
     override @property inout(Level) levelRecent() inout { assert (false); }
-    @property inout(ReplayToLevelMatcher) matcher() inout { return _matcher; }
+
+    @property ReplayToLevelMatcher matcher()
+    in { assert (_matcher.unwrap, "call this only when matcher exists"); }
+    body { return _matcher.unwrap; }
 
 protected:
-    override void onHighlightNone()
+    final override void onOnHighlightNone()
     {
         _matcher = null;
         _labelPointedTo.hide();
         _buttonPlayWithPointedTo.hide();
-        _delete.hide();
     }
 
-    override void onHighlight(Filename fn)
+    final override void onHighlightWithLastGame(Filename fn, bool solved)
     in { assert (fn, "call onHighlightNone() instead"); }
     body {
-        assert (_delete);
-        _matcher = new ReplayToLevelMatcher(fn);
-        _delete.show();
-        _buttonPlayWithPointedTo.shown = _matcher.pointedToIsGood;
-        if (_matcher.pointedToFilename !is null
-            && _matcher.pointedToFilename.rootless.length
+        _matcher = some(new ReplayToLevelMatcher(fn));
+        previewLevel(matcher.preferredLevel);
+        _buttonPlayWithPointedTo.shown = matcher.pointedToIsGood;
+
+        if (! solved && matcher.pointedToFilename !is null
+            && matcher.pointedToFilename.rootless.length
             > dirLevels.rootless.length
         ) {
             // We show this even if the level is bad. It's probably
             // most important then
             _labelPointedTo.show();
-            _labelPointedTo.value = _matcher.pointedToFilename.rootless[
+            _labelPointedTo.value = matcher.pointedToFilename.rootless[
                 dirLevels.rootless.length .. $];
         }
         else {
             _labelPointedTo.hide();
         }
-        previewLevel(_matcher.preferredLevel);
+    }
+
+    final override void onHighlightWithoutLastGame(Filename fn)
+    {
+        onHighlightWithLastGame(fn, false);
     }
 
     override void onPlay(Filename fn)
     {
-        assert (_matcher);
-        if (_matcher.includedIsGood
+        assert (_matcher.unwrap);
+        if (matcher.includedIsGood
             // Ideally, we don't choose this silently when included is bad.
             // But how to handle doubleclick on replay then? Thus, for now:
-            || _matcher.pointedToIsGood
+            || matcher.pointedToIsGood
         ) {
             basics.user.replayLastLevel = super.fileRecent;
             gotoGame = true;
@@ -114,12 +121,11 @@ protected:
     override void calcSelf()
     {
         super.calcSelf();
-        calcDeleteMixin();
         if (_buttonPlayWithPointedTo.execute
-            && _matcher && _matcher.pointedToIsGood
+            && _matcher.unwrap && matcher.pointedToIsGood
         ) {
             // like onFileSelect, but for pointedTo
-            _matcher.forcePointedTo();
+            matcher.forcePointedTo();
             basics.user.replayLastLevel = super.fileRecent;
             gotoGame = true;
         }
@@ -130,8 +136,7 @@ protected:
         }
     }
 
-private:
-    MsgBox newMsgBoxDelete()
+    override MsgBox newMsgBoxDelete()
     {
         auto m = new MsgBox(Lang.saveBoxTitleDelete.transl);
         m.addMsg(Lang.saveBoxQuestionDeleteReplay.transl);
