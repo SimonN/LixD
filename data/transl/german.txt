@@ -30,12 +30,12 @@ $browserInfoInitgoal Ziel:
 $browserInfoResultSaved Gerettet:
 $browserInfoResultSkills Fähigkeiten:
 
-$harvestYouSavedEnough Du hast %d/%d Lix gerettet!
+$harvestYouSaved Du hast:
+$harvestYouNeeded Ziel:
 $harvestTrophyFirst Level abgehakt.
 $harvestTrophyBuiltReset Haken wieder da.
 $harvestTrophyImproved Neue Bestleistung!
-$harvestReplayAutoSaved Replay auto-gespeichert.
-$harvestReplayAutoNotSaved Replay ignoriert.
+$harvestReplayAutoSaved Replay gespeichert.
 $harvestReplaySaveManually Manuell speichern
 
 $previewMissingTiles fehlende Stücke:

@@ -223,7 +223,7 @@ protected:
             _singleplayerWinSoundPlayed = false;
         }
         else {
-            _lSaved.text = "%d/%d".format(score.current, _lixRequired);
+            _lSaved.text = "+%d".format(score.current - _lixRequired);
             if (! _singleplayerWinSoundPlayed) {
                 _singleplayerWinSoundPlayed = true;
                 hardware.sound.playLoud(Sound.YIPPIE);

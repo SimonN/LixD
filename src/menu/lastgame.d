@@ -1,9 +1,12 @@
 module menu.lastgame;
 
 /*
- * Stats after playing a level, displayed instead of the preview.
+ * Stats after playing a level, displayed below the preview instead
+ * of a couple other stats that would normally show when you highlight a level
+ * or replay in the browser.
  */
 
+import std.algorithm;
 import std.format;
 import optional;
 
@@ -21,8 +24,9 @@ import level.level;
 
 class SingleplayerLastGameStats : LastGameStats {
 private:
-    Optional!Label _fraction;
     Optional!Label _trophyUpdate;
+    Optional!LabelTwo _goal;
+    Optional!LabelTwo _youSaved;
     Label _autoReplayDesc;
 
 public:
@@ -33,18 +37,30 @@ public:
     }
     body {
         super(g, ha);
-        _autoReplayDesc = new Label(new Geom(0, 40, xlg/2f, 20),
-            Lang.harvestReplayAutoNotSaved.transl);
+        _autoReplayDesc = new Label(new Geom(0, 40, xlg/2f, 20));
         addChild(_autoReplayDesc);
         if (lixSaved < level.required)
             return;
 
-        _fraction = some(new Label(new Geom(0, 00, xlg, 40)));
-        _trophyUpdate = some(new Label(new Geom(0, 20, xlg, 20)));
-        addChildren(_fraction.unwrap, _trophyUpdate.unwrap);
-
-        _fraction.unwrap.text = formatWinnerText();
-        _fraction.unwrap.color = color.white;
+        _youSaved = () {
+            auto ret = new LabelTwo(new Geom(0, 00, xlg/2f, 40),
+                Lang.harvestYouSaved.transl);
+            ret.value = format!"%d/%d"(lixSaved, level.initial);
+            addChild(ret);
+            return some(ret);
+        }();
+        _trophyUpdate = () {
+            auto ret = new Label(new Geom(xlg/2f, 00, xlg/2f, 20));
+            addChild(ret);
+            return some(ret);
+        }();
+        _goal = () {
+            auto ret = new LabelTwo(new Geom(0, 20, xlg, 40),
+                Lang.harvestYouNeeded.transl);
+            ret.value = format!"%d/%d"(level.required, level.initial);
+            addChild(ret);
+            return some(ret);
+        }();
         saveTrophy();
         if (saveAutoReplay())
             _autoReplayDesc.text = Lang.harvestReplayAutoSaved.transl;
@@ -52,7 +68,7 @@ public:
 
     bool isOnlyFinalRowShown() const
     {
-        return _fraction.empty && _trophyUpdate.empty;
+        return _goal.empty && _youSaved.empty && _trophyUpdate.empty;
     }
 
 protected:
@@ -86,18 +102,6 @@ protected:
     override void onImprovedTrophy()
     {
         _trophyUpdate.unwrap.text = Lang.harvestTrophyImproved.transl;
-    }
-
-private:
-    string formatWinnerText() const
-    {
-        try {
-            return format(Lang.harvestYouSavedEnough.transl,
-                lixSaved, level.initial);
-        }
-        catch (FormatException e)
-            return format!"Saved %d, needed %d/%d"(
-                lixSaved, level.required, level.initial);
     }
 }
 

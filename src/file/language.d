@@ -90,12 +90,12 @@ enum Lang {
     browserInfoResultSaved,
     browserInfoResultSkills,
 
-    harvestYouSavedEnough,
+    harvestYouNeeded,
+    harvestYouSaved,
     harvestTrophyFirst,
     harvestTrophyBuiltReset,
     harvestTrophyImproved,
     harvestReplayAutoSaved,
-    harvestReplayAutoNotSaved,
     harvestReplaySaveManually,
 
     previewMissingTiles,

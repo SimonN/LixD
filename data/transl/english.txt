@@ -30,16 +30,16 @@ $browserExportImageDone Exported to:
 $browserMkdirTitle Create Folder
 $browserMkdirPleaseEnter Name of new folder:
 $browserInfoAuthor By:
-$browserInfoInitgoal Save:
+$browserInfoInitgoal Goal:
 $browserInfoResultSaved Saved:
 $browserInfoResultSkills Skills:
 
-$harvestYouSavedEnough You saved %d/%d lix!
+$harvestYouSaved Saved:
+$harvestYouNeeded Goal:
 $harvestTrophyFirst Checkmark earned.
 $harvestTrophyBuiltReset Checkmark restored.
 $harvestTrophyImproved New personal best!
-$harvestReplayAutoSaved Replay auto-saved.
-$harvestReplayAutoNotSaved Replay ignored.
+$harvestReplayAutoSaved Replay saved.
 $harvestReplaySaveManually Save manually
 
 // Report missing tiles in the preview. Example rendering:
