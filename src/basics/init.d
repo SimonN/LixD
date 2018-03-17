@@ -49,8 +49,8 @@ void initializeNoninteractive(Runmode mode)
 
             file.filename.initialize(); // the virtual filesystem
             file.log.initialize();
-    if (gr) basics.globconf.load();
-    if (gr) basics.user.load();
+            basics.globconf.load();
+            basics.user.load();
     if (gr) loadUserLanguageAndIfNotExistSetUserOptionToEnglish();
 
             al_init_image_addon();

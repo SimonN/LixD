@@ -22,6 +22,9 @@ public void processFileArgsForRunmode(Cmdargs cmdargs)
         return;
     }
     basics.init.initialize(cmdargs);
+    scope (exit)
+        basics.init.deinitialize();
+
     if (cmdargs.verifyReplays) {
         auto vc = new VerifyCounter(new class VerifyPrinter {
             override bool printCoverage() { return cmdargs.printCoverage; }
@@ -43,7 +46,7 @@ public void processFileArgsForRunmode(Cmdargs cmdargs)
         });
     }
     else
-        assert (false);
+        assert (false, "unhandled noninteractive runmode");
 }
 
 private void dispatch(Cmdargs cmdargs, void delegate(Filename) func)
