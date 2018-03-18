@@ -26,7 +26,7 @@ import menu.verify;
 
 static import basics.globals;
 
-class BrowserReplay : BrowserWithLastAndDelete {
+final class BrowserReplay : BrowserWithLastAndDelete {
 private:
     Optional!ReplayToLevelMatcher _matcher; // empty if no replay previewed
     LabelTwo _labelPointedTo;
@@ -38,25 +38,18 @@ public:
     {
         super(Lang.browserReplayTitle.transl,
             basics.globals.dirReplays, PickerConfig!ReplayTiler());
-        buttonPlayYFromBottom = 100f;
-        scope (success)
-            super.highlight(basics.user.replayLastLevel);
-        TextButton newInfo(float x, float y, string caption, KeySet hotkey)
-        {
-            auto b = new TextButton(new Geom(infoX + x*infoXl/2, y,
-                infoXl/2, 40, From.BOTTOM_LEFT));
-            b.text = caption;
-            b.hotkey = hotkey;
-            return b;
-        }
-        // DTODOLANG: caption these two buttons, even if they're hacks
-        _labelPointedTo = new LabelTwo(new Geom(infoX, infoY + 20f,
-            infoXl, 20), "\u27F6"); // unicode long arrow right
-        _buttonPlayWithPointedTo = newInfo(1, 100, "pointedTo", keyMenuEdit);
-        _buttonVerify = newInfo(1, 60, "Verify Dir", KeySet());
+        commonConstructor();
+        // Final class calls:
+        super.highlight(basics.user.replayLastLevel);
+    }
 
-        addChildren(_labelPointedTo,
-            _buttonPlayWithPointedTo, _buttonVerify);
+    this(Harvest ha)
+    {
+        super(Lang.browserReplayTitle.transl,
+            basics.globals.dirReplays, PickerConfig!ReplayTiler());
+        commonConstructor();
+        // Final class calls:
+        super.addHarvestThenHighlight(ha, basics.user.replayLastLevel);
     }
 
     // Override method with assert(false): Violates fundamental OO principles.
@@ -76,6 +69,7 @@ protected:
         _matcher = null;
         _labelPointedTo.hide();
         _buttonPlayWithPointedTo.hide();
+        previewNone();
     }
 
     final override void onHighlightWithLastGame(Filename fn, bool solved)
@@ -143,5 +137,27 @@ protected:
         m.addMsg(Lang.saveBoxDirectory.transl~ " " ~ fileRecent.dirRootless);
         m.addMsg(Lang.saveBoxFileName.transl ~ " " ~ fileRecent.file);
         return m;
+    }
+
+private:
+    void commonConstructor()
+    {
+        buttonPlayYFromBottom = 100f;
+        TextButton newInfo(float x, float y, string caption, KeySet hotkey)
+        {
+            auto b = new TextButton(new Geom(infoX + x*infoXl/2, y,
+                infoXl/2, 40, From.BOTTOM_LEFT));
+            b.text = caption;
+            b.hotkey = hotkey;
+            return b;
+        }
+        // DTODOLANG: caption these two buttons, even if they're hacks
+        _labelPointedTo = new LabelTwo(new Geom(infoX, infoY + 20f,
+            infoXl, 20), "\u27F6"); // unicode long arrow right
+        _buttonPlayWithPointedTo = newInfo(1, 100, "pointedTo", keyMenuEdit);
+        _buttonVerify = newInfo(1, 60, "Verify Dir", KeySet());
+
+        addChildren(_labelPointedTo,
+            _buttonPlayWithPointedTo, _buttonVerify);
     }
 }

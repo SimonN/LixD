@@ -256,13 +256,11 @@ public:
                     gui.addElder(lobby);
                 }
                 else if (_afterGameGoto == AfterGameGoto.replays) {
-                    browRep = new BrowserReplay;
-                    browRep.harvest = harvest;
+                    browRep = new BrowserReplay(harvest);
                     gui.addElder(browRep);
                 }
                 else {
-                    browSin = new BrowserSingle();
-                    browSin.harvest = harvest;
+                    browSin = new BrowserSingle(harvest);
                     gui.addElder(browSin);
                 }
             }
