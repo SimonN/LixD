@@ -84,6 +84,20 @@ private:
     }
 
 public:
+    // == ignores levelBuiltRequired and _gameVersionRequired.
+    // I'm not sure how good that decision is. The idea is that replays
+    // will behave identically anyway even when those differ.
+    override bool opEquals(Object rhsObj)
+    {
+        if (const rhs = cast(const(Replay)) rhsObj)
+            return _data == rhs._data
+                && cast(const(Player[PlNr])) _players == rhs._players
+                && _permu == rhs._permu
+                && levelFilename == rhs.levelFilename;
+        else
+            return false;
+    }
+
     @property const @nogc nothrow {
         Version gameVersionRequired() { return _gameVersionRequired; }
         int numPlayers() { return _players.length & 0x7FFF_FFFF; }

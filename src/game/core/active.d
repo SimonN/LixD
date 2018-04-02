@@ -53,10 +53,8 @@ package ReplayData newReplayDataForNextPhyu(Game game)
 
 package void cancelReplay(Game game) { with (game)
 {
-    if (replaying && game.view.canInterruptReplays) {
-        _replayNeverCancelledThereforeDontSaveAutoReplay = false;
+    if (replaying && game.view.canInterruptReplays)
         nurse.cutReplay();
-    }
 }}
 
 // ############################################################################

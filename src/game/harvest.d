@@ -22,7 +22,4 @@ struct Harvest {
     // saved at the replay's pointed-to filename.
     // Game got told this bool, then Game tells us this bool:
     const bool maySaveTrophy;
-
-    // False if we started from a replay and never cancelled it. Game decides.
-    const bool maySaveAutoReplay;
 }

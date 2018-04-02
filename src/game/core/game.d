@@ -90,9 +90,7 @@ package:
     ChatArea _chatArea;
     SplatRuler _splatRuler;
 
-    int _profilingGadgetCount;
     bool _gotoMainMenu;
-    bool _replayNeverCancelledThereforeDontSaveAutoReplay;
     bool _levelMatchesReplayThereforeMaySaveTrophy;
 
 private:
@@ -117,7 +115,6 @@ public:
     body {
         level = lv;
         _levelMatchesReplayThereforeMaySaveTrophy = true;
-        _replayNeverCancelledThereforeDontSaveAutoReplay = false;
         commonConstructor(generateFreshReplay(levelFilename));
     }
 
@@ -133,7 +130,6 @@ public:
     body {
         level = lv;
         _levelMatchesReplayThereforeMaySaveTrophy = maySaveTrophy;
-        _replayNeverCancelledThereforeDontSaveAutoReplay = true;
         commonConstructor(rp);
     }
 
@@ -146,8 +142,6 @@ public:
 
         level = client.level;
         _levelMatchesReplayThereforeMaySaveTrophy = false;
-        _replayNeverCancelledThereforeDontSaveAutoReplay = false;
-
         _netClient = client;
         _netClient.onConnectionLost = ()
         {
@@ -195,8 +189,7 @@ public:
     {
         return Harvest(level, nurse.constReplay,
             nurse.trophyForTribe(localStyle),
-            _levelMatchesReplayThereforeMaySaveTrophy,
-            ! _replayNeverCancelledThereforeDontSaveAutoReplay);
+            _levelMatchesReplayThereforeMaySaveTrophy);
     }
 
     const(Replay) replay() const { return nurse.constReplay; }

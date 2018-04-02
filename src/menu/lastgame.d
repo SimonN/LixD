@@ -12,7 +12,7 @@ import optional;
 
 import basics.trophy;
 import basics.globals;
-import basics.user : addToUser, getTrophy;
+import basics.user : addToUser, getTrophy, replayLastLevel;
 import file.filename;
 import game.harvest;
 import game.replay;
@@ -146,8 +146,18 @@ public:
 protected:
     bool saveAutoReplay() const // returns whether we really saved
     {
-        if (! _harvest.maySaveAutoReplay)
-            return false;
+        if (_harvest.replay.numPlayers == 1) {
+            const(Replay) old = Replay.loadFromFile(replayLastLevel);
+            if (old == _harvest.replay) {
+                return false;
+            }
+            else {
+                import basics.globconf;
+                assert (_harvest.replay.players.byValue.front.name == userName,
+                    "You changed the replay but didn't change its player.");
+                // and continue to save the replay.
+            }
+        }
         replay.saveAsAutoReplay(level);
         return replay.shouldWeAutoSave;
     }
