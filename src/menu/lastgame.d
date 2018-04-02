@@ -177,9 +177,25 @@ protected:
 
         if (old.empty)
             onFirstTrophy();
-        else if (level.built != old.unwrap.built)
+        else if (! privateEqual(level.built, old.unwrap.built))
             onRestoredTrophy();
         else
             onImprovedTrophy();
     }
+}
+
+private:
+
+// Work around Phobos 18615: Rebindable!_Date doesn't use _Date.opEquals.
+// Date is immutable(_Date) and MutableDate is Rebindable!Date.
+import file.date;
+bool privateEqual(Date a, Date b) { return a == b; }
+
+unittest {
+    Optional!Trophy old = Trophy("2000-01-01", 1, 2, 3);
+    Level level = new Level();
+    level.built = new Date("2000-01-01");
+    assert (privateEqual(level.built, old.unwrap.built),
+        "should be equal if we explicitly compare two Dates, even"
+        ~ " when one is Rebindable!_Date.");
 }
