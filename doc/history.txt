@@ -1,6 +1,23 @@
 Version history
 ===============
 
+0.9.14
+------
+
+2018-04-03
+
+Waltz in C Sharp Miner, removed backroute.
+
+Moved Arty's race maps (Heart of a Gambler, one map per player count, 2-8
+players) from network/*p/arty to network/races/arty.
+
+Fix #314, #315, #318: When you win a singleplayer game or win an edited
+replay, either browser shows the game's stats under the preview and saves the
+replay automatically. (These bugs were regressions after I removed the
+end-of-singleplayer dialog.)
+
+Fix: The command-line verifier generates checkmarks again.
+
 0.9.13
 ------
 
