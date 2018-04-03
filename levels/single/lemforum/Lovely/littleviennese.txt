@@ -1,34 +1,24 @@
-$BUILT 2014-09-11 00:15:44
+$BUILT 2018-03-28 03:13:06
 $AUTHOR Michael S. Repton
-$GERMAN 
 $ENGLISH Little Viennese Waltz
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 960
 #SIZE_Y 512
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 320
-#START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #INITIAL 30
 #REQUIRED 20
 #SPAWN_INTERVAL 30
 
+#WALKER 5
 #CLIMBER 5
 #FLOATER 5
-#WALKER 5
 #BLOCKER 5
 #BUILDER 10
 #PLATFORMER 10
 #BASHER 10
 #MINER 10
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#EXPLODER2 0
 
 :matt/marble/Hatch.H: 544 48
 :matt/marble/Hatch.H: 416 208
@@ -200,7 +190,7 @@ $ENGLISH Little Viennese Waltz
 :geoo/steel/32x32o.S: 704 416
 :geoo/steel/32x32o.S: 736 416
 :geoo/steel/32x32o.S: 768 416
-:geoo/steel/32x32o.S: 800 320
+:geoo/steel/32x32o.S: 864 320
 :geoo/steel/32x32o.S: 800 352
 :geoo/steel/32x32o.S: 768 288
 :geoo/steel/32x32o.S: 800 224
@@ -211,7 +201,7 @@ $ENGLISH Little Viennese Waltz
 :geoo/construction/concrete/032: 768 320
 :geoo/construction/concrete/032d: 672 288
 :geoo/sandstone/64x64: 800 256
-:geoo/construction/concrete/032h: 832 320
+:geoo/construction/concrete/032h: 800 320
 :geoo/construction/concrete/032v: 864 256
 :geoo/steel/32x32o.S: 896 160
 :geoo/steel/32x32o.S: 576 192
