@@ -1,50 +1,21 @@
-$BUILT 2014-06-08 16:20:30
+$BUILT 2018-04-13 17:34:00
 $AUTHOR Clam
-$GERMAN 
 $ENGLISH BEHIND YOU
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 320
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 0
-#START_Y 220
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
-#SECONDS 0
 #INITIAL 20
 #REQUIRED 10
 #SPAWN_INTERVAL 18
-#SPAWN_INTERVAL_FAST 4
 
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 #EXPLODER2 20
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 
 :matt/marble/Hatch.H: 96 64
 
 :matt/marble/Goal.G: 48 160
 
-:matt/marble/08c: 16 208
-:matt/marble/08c: 80 208
-:matt/marble/08c: 144 208
-:matt/marble/08c: 208 208
-:matt/marble/08c: 272 208
-:matt/marble/08c: 336 208
-:matt/marble/08c: 400 208
-:matt/marble/08c: 464 208
-:matt/marble/08c: 560 208
 :matt/marble/05c: 592 176
 :matt/marble/11c: 48 96
 :matt/marble/10c: 0 48
@@ -65,3 +36,33 @@ $ENGLISH BEHIND YOU
 :matt/marble/06c: 448 -48
 :matt/marble/06c: 512 -48
 :matt/marble/08c: 576 -16
+$BEGIN_TILE_GROUP 0
+:matt/marble/08c: 0 0
+:matt/marble/08c: 64 0
+:matt/marble/08c: 128 0
+:matt/marble/08c: 192 0
+:matt/marble/08c: 256 0
+:matt/marble/08c: 320 0
+:matt/marble/08c: 384 0
+:matt/marble/08c: 448 0
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:Group-0: 0 0
+:Group-0: 0 18 d
+$END_TILE_GROUP
+:Group-1: 16 208
+$BEGIN_TILE_GROUP 2
+:Group-0: 0 18
+:Group-0: 0 0 d
+$END_TILE_GROUP
+:Group-2: 16 218
+$BEGIN_TILE_GROUP 3
+:matt/marble/08c: 0 15
+:matt/marble/08c: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 4
+:matt/marble/08c: 0 0
+:matt/marble/08c: 0 13 d
+:Group-3: 0 13
+$END_TILE_GROUP
+:Group-4: 560 208

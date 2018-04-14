@@ -1,0 +1,102 @@
+$BUILT 2018-04-08 15:08:53
+$AUTHOR Proxima
+$ENGLISH Twelve-Bar Blues
+
+#INTENDED_NUMBER_OF_PLAYERS 2
+#SIZE_X 512
+#SIZE_Y 400
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 30
+#INITIAL 80
+#SPAWN_INTERVAL 20
+
+#WALKER 20
+#CLIMBER 5
+#FLOATER 5
+#EXPLODER 20
+#BLOCKER 5
+#BUILDER 50
+#BASHER 20
+#DIGGER 5
+#JUMPER 20
+#BATTER 20
+
+:geoo/abstract/hatch.H: 64 192
+:geoo/abstract/hatch.H: 320 192
+
+:proxima/tile/goal.G: 304 64
+:proxima/tile/goal.G: 48 64
+
+:proxima/flame.F: 192 320
+:proxima/flame.F: 448 320
+
+:proxima/tile/cyan2: 96 272
+:proxima/tile/cyan2: 160 272
+:proxima/tile/cyan2: 224 272
+:proxima/tile/cyan2: 288 272
+:proxima/tile/cyan2: 352 272
+:proxima/tile/cyan2: 416 272
+:proxima/tile/cyan2: 480 272
+:proxima/tile/cyan2: 32 272
+:proxima/tile/cyan3: 128 176
+:proxima/tile/cyan3a: 128 208
+:proxima/tile/cyan3a: 128 240
+:proxima/tile/cyan3: 256 112
+:proxima/tile/cyan3a: 256 144
+:proxima/tile/cyan3a: 256 176
+:proxima/tile/cyan3a: 256 208
+:proxima/tile/cyan3a: 256 240
+:proxima/tile/cyan3: 384 176
+:proxima/tile/cyan3a: 384 208
+:proxima/tile/cyan3a: 384 240
+:proxima/tile/cyan3: 0 112
+:proxima/tile/cyan3a: 0 144
+:proxima/tile/cyan3a: 0 176
+:proxima/tile/cyan3a: 0 208
+:proxima/tile/cyan3a: 0 240
+:proxima/tile/cyan2s: 416 192
+:proxima/tile/cyan2s: 448 192
+:proxima/tile/cyan2s: 480 192
+:proxima/tile/cyan2s: 160 192
+:proxima/tile/cyan2s: 192 192
+:proxima/tile/cyan2s: 224 192
+:proxima/tile/cyan2s: 32 128
+:proxima/tile/cyan2s: 64 128
+:proxima/tile/cyan2s: 96 128
+:proxima/tile/cyan2s: 288 128
+:proxima/tile/cyan2s: 320 128
+:proxima/tile/cyan2s: 352 128
+:proxima/tile/cyan3: 128 304
+:proxima/tile/cyan3a: 128 336
+:proxima/tile/cyan3a: 128 368
+:proxima/tile/cyan3: 256 304
+:proxima/tile/cyan3a: 256 336
+:proxima/tile/cyan3a: 256 368
+:proxima/tile/cyan3: 384 304
+:proxima/tile/cyan3a: 384 336
+:proxima/tile/cyan3a: 384 368
+:proxima/tile/cyan3: 0 304
+:proxima/tile/cyan3a: 0 336
+:proxima/tile/cyan3a: 0 368
+:proxima/tile/cyan2s: 160 368
+:proxima/tile/cyan2s: 192 368
+:proxima/tile/cyan2s: 224 368
+:proxima/tile/cyan3a: 128 0
+:proxima/tile/cyan3a: 128 32
+:proxima/tile/cyan3a: 384 0
+:proxima/tile/cyan3a: 384 32
+:proxima/tile/cyan2s: 416 368
+:proxima/tile/cyan2s: 448 368
+:proxima/tile/cyan2s: 480 368
+:proxima/tile/cyan2s: 32 32
+:proxima/tile/cyan2s: 64 32
+:proxima/tile/cyan2s: 96 32
+:proxima/tile/cyan2s: 288 32
+:proxima/tile/cyan2s: 320 32
+:proxima/tile/cyan2s: 352 32
+:geoo/steel/16x16o.S: 72 128
+:geoo/steel/16x16o.S: 328 128
+:geoo/steel/16x16o.S: 72 272
+:geoo/steel/16x16o.S: 328 272
