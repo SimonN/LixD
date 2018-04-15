@@ -72,7 +72,9 @@ package:
             Zone zone = Zone(profiler,
                 "grouping %d tiles".format(_key.elements.walkLength));
         }
-        Rect surround = _key.elements.map!(occ => occ.selboxOnMap)
+        // Because of github 322 (see comment at top of TileGroupKey),
+        // allow space for occ.cutbitOnMap, not merely occ.selboxOnMap.
+        Rect surround = _key.elements.map!(occ => occ.cutbitOnMap)
                                      .reduce!(Rect.smallestContainer);
         // Unlike regular tile creation, we make the phymap first for groups,
         // only then make the image for groups. We make the phymap too large
@@ -115,6 +117,9 @@ private:
     // Array of dupped tile occurrences, all moved by a constant amount
     // such that their relative positions remain the same, but the leftmost
     // element starts at (0, y) and the topmost element starts at (x, 0).
+    // These "starts" refer to the bitmap's positions, not the selboxes!
+    // The selbox may be smaller if the bitmap has a transparent outline.
+    // (There was a bug here with github issue 322.)
     immutable(TerOcc)[] _elements;
     const(TerrainTile)[] _tilesOfElements; // for AbstractTile.dependencies()
 
@@ -132,21 +137,17 @@ public:
         if (occRange.empty)
             return;
         auto tmp = occRange.map!(occ => occ.clone).array;
-        Rect surround = tmp.map!(occ => occ.selboxOnMap)
-                           .reduce!(Rect.smallestContainer);
-        assert (surround.xl > 0 && surround.yl > 0);
-        tmp.each!(occ => occ.loc -= surround.topLeft);
+        // occ => occ.cutbitOnMap instead of occ => occ.selboxOnMap
+        // because of Github 322; see comment at top of struct TileGroupKey.
+        Point offsetFrom00ofTmp = tmp.map!(occ => occ.cutbitOnMap)
+                           .reduce!(Rect.smallestContainer).topLeft;
+        tmp.each!(occ => occ.loc -= offsetFrom00ofTmp);
         _elements = tmp.assumeUnique;
-
-        const(TerrainTile) unrebind(Rebindable!(const(TerrainTile)) a)
-        {
-            return a;
-        }
         _tilesOfElements = _elements.map!(occ => rebindable(occ.tile))
             .array
             .sort!((a, b) => a.toHash < b.toHash)
             .uniq
-            .map!unrebind
+            .map!(occ => occ.get) // Rebindable!(const A) => const(A)
             .array;
     }
 

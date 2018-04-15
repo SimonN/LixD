@@ -35,7 +35,7 @@ void createGroup(Editor editor) {
     // by giving to Level the key and the position.
     // Here, we add the new occurrence ourselves.
     TerOcc groupOcc = new TerOcc(group);
-    groupOcc.loc  = occurrences.map!(occ => occ.selboxOnMap)
+    groupOcc.loc  = occurrences.map!(occ => occ.cutbitOnMap)
                               .reduce!(Rect.smallestContainer)
                               .topLeft + group.transpCutOff;
     _level.terrain ~= groupOcc;
