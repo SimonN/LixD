@@ -33,7 +33,15 @@ Occurrence addFromLine(
         {
             assert (terrainGoesHere);
             TerOcc newpos = new TerOcc(te);
-            newpos.loc = level.topology.wrap(cornerAt);
+            if (terrainGoesHere == &level.terrain) {
+                newpos.loc = level.topology.wrap(cornerAt);
+            }
+            else {
+                // We're in the middle of defining a tile group. The torus
+                // settings have no say here; never wrap. Only the entire
+                // group, if it's added to the level later, will be wrapped.
+                newpos.loc = cornerAt;
+            }
             foreach (char c; text2) switch (c) {
                 case 'f': newpos.mirrY = ! newpos.mirrY;          break;
                 case 'r': newpos.rotCw =  (newpos.rotCw + 1) % 4; break;
