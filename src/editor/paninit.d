@@ -134,9 +134,14 @@ void makePanel(Editor editor)
                     });
                 }.format(name, name, constructorArgs, name);
         }
+        // We pass editor._selection here.
+        // I don't go through chain(_selection, _hover) because I believe that
+        // will irritate users. If you don't click something, you haven't done
+        // anything, you shouldn't affect the browser's starting directory.
         mixin (mkBrowser!("Terrain",
-            "[0], editorLastDirTerrain, MergeAllDirs.no, editor.overrideCurrentDirectoryWithTileFilename"));
-        mixin (mkBrowser!("Steel", "[preExtSteel], editorLastDirSteel, MergeAllDirs.no, null"));
+            "[0], editorLastDirTerrain, MergeAllDirs.no, editor._selection"));
+        mixin (mkBrowser!("Steel",
+            "[preExtSteel], editorLastDirSteel, MergeAllDirs.no, editor._selection"));
         mixin (mkBrowser!("Hatch", "[preExtHatch], editorLastDirHatch, MergeAllDirs.yes, null"));
         mixin (mkBrowser!("Goal", "[preExtGoal], editorLastDirGoal, MergeAllDirs.yes, null"));
         mixin (mkBrowser!("Hazard", "['W','T','F'], editorLastDirHazard, MergeAllDirs.yes, null"));
@@ -150,15 +155,4 @@ Rect smallestRectContainingSelection(in Editor editor)
     return editor._selection.empty ? Rect()
         :  editor._selection.map   !(hov => hov.occ.selboxOnMap)
                             .reduce!(Rect.smallestContainer);
-}
-
-Filename overrideCurrentDirectoryWithTileFilename(in Editor editor)
-{
-    // I don't go through chain(_selection, _hover), because I believe that
-    // will irritate users. If you don't click something, you haven't done
-    // anything, you shouldn't affect the browser's starting directory.
-    foreach (const(Hover) hov; editor._selection)
-        if (hov.occ.tile.name != "")
-            return new VfsFilename(dirImages.rootless ~ hov.occ.tile.name);
-    return null;
 }

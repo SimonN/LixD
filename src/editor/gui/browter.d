@@ -1,7 +1,12 @@
 module editor.gui.browter;
 
+import std.algorithm;
+
+import optional;
+
 import basics.globals;
 import basics.user;
+import editor.hover;
 import file.language;
 import file.useropt;
 import gui;
@@ -19,8 +24,13 @@ private:
 
 public:
     this(string allowedPreExts, UserOptionFilename curDir, MergeAllDirs merge,
-        Filename overrideStartDir)
-    {
+        /*
+         * If this array contains at least one hover that points to a tile
+         * with an allowed pre-extension, the first such tile in the hover
+         * determines the starting directory.
+         */
+        const(Hover)[] allHoveredTiles
+    ) {
         assert (curDir !is null);
         _curDir = curDir;
         super(new Geom(0, 0, gui.screenXlg, gui.mapYlg, From.TOP),
@@ -28,8 +38,7 @@ public:
         _picker = merge ? makePicker!true(allowedPreExts)
                         : makePicker!false(allowedPreExts);
         _picker.currentDir = merge ? dirImages
-            : overrideStartDir && overrideStartDir.dirExists ? overrideStartDir
-            : _curDir.value;
+            : suitableDir(allHoveredTiles, allowedPreExts).or(_curDir.value);
         _cancel = new TextButton(new Geom(
             20, 40, 80, 30, From.TOP_RIGHT), Lang.commonCancel.transl);
         _cancel.hotkey = keyMenuExit;
@@ -66,5 +75,24 @@ private:
         cfg.baseDir = dirImages;
         cfg.onFileSelect = (Filename fn) { _chosenTile = fn; };
         return new Picker(cfg);
+    }
+
+    Optional!Filename suitableDir(
+        const(Hover)[] allHoveredTiles,
+        string allowedPreExts
+    ) {
+        bool suitableTile(in Hover hov)
+        {
+            auto name = hov.occ.tile.name;
+            if (name.length < 2)
+                return false;
+            // This name check for type is bad. Replace the name in the tile
+            // class with Optional!Filename and check for its pre-extension?
+            return allowedPreExts.canFind(name[$-1])
+                || allowedPreExts.canFind('\0') && name[$-2] != '.';
+        }
+        auto ret = allHoveredTiles.find!suitableTile;
+        return ret.length == 0 ? no!Filename : some!Filename(
+            new VfsFilename(dirImages.rootless ~ ret[0].occ.tile.name));
     }
 }
