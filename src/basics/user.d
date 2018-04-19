@@ -301,7 +301,8 @@ static this()
     networkIpLastUsed = newOpt("NETWORK_IP_LAST_USED", Lang.winLobbyStartCustom, "127.0.0.1");
 
     editorLastDirTerrain = newOpt("EDITOR_LAST_DIR_TERRAIN", Lang.addTerrain, dirImages);
-    editorLastDirSteel = newOpt("EDITOR_LAST_DIR_STEEL", Lang.addSteel, dirImages);
+    editorLastDirSteel = newOpt("EDITOR_LAST_DIR_STEEL", Lang.addSteel,
+        cast (Filename) new VfsFilename(dirImages.rootless ~ "geoo/steel/"));
     editorLastDirHatch = newOpt("EDITOR_LAST_DIR_HATCH", Lang.addHatch, dirImages);
     editorLastDirGoal = newOpt("EDITOR_LAST_DIR_GOAL", Lang.addGoal, dirImages);
     editorLastDirHazard = newOpt("EDITOR_LAST_DIR_HAZARD", Lang.addHazard, dirImages);
