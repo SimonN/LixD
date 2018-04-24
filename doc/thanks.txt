@@ -1,0 +1,87 @@
+Contributors to Lix
+===================
+
+I (Simon Naarmann) wrote nearly all of the code and drew the character sprites,
+but my thanks go to all community memebrs that shaped Lix over the years:
+
+geoo
+    * Tilesets in images/geoo.
+    * Many levels contributed to levels/lemforum/, the flagship levelpack.
+    * Initiating and maintaining levels/lemforum/ for several years.
+    * Lots of technical feedback on game mechanics over many years.
+    * Code to load Lemmings 2 tilesets in C++ Lix in 2009.
+        D Lix can no longer load Lemmings 1/2 tilesets. I cannot ship these
+        tilesets with Lix anyway because of their third-party copyrights.
+
+Raymanni:
+    *  Toys, lab, gore, and holiday tilesets in images/raymanni.
+
+Matt C.
+    * Tilesets in images/matt/.
+        These tilesets helped tremendously towards releasing Lix as
+        free-and-open-source in 2011.
+
+Rubix
+    * levels/rubix, an entire levelpack.
+    * Many multiplayer maps, both for D Lix and for early C++ Lix in 2009.
+    * Lix introduction videos on Youtube.
+    * The menu music, released as public domain, and two custom tracks
+        in music/rubix/, released as CC4-BY (see doc/copying.txt).
+
+Forestidia
+    * Many issue reports and super-quick feedback on bugfixes.
+    * Playing through most included levels, reporting backroutes.
+    * Renovating ClamLix, an entire levelpack by Clam, for D Lix in 2017.
+    * Collecting and renovating old standalone Lix levels for D Lix:
+        https://www.lemmingsforums.net/index.php?topic=3782.0
+
+Amanda B. (NaOH)
+    * Tilesets in images/naoh
+    * Pushing for simpler game mechanics, e.g., no variable spawn interval
+        in singleplayer. I had that idea before but lacked courage in 2015.
+
+Proxima
+    * Contributing many levels to levels/lemforum, the flagship pack.
+    * Maintaining levels/lemforum/ since 2016.
+    * The tiles in images/proxima/: Abstract square tiles and spheres.
+
+Nepster
+    * NepsterLix, an entire levelpack.
+
+mobius
+    * Together with minim, 5 tracks in music/minim-mobius, released as
+        public domain.
+    * Several levels in levels/lemforum.
+    * Project Capybara, a levelpack for Lix that I did not include because
+        it felt too close to the copyrighted Lemmings 1 levels.
+
+Lucki
+    * Maintaining the Arch Linux Lix package in the AUR:
+        https://aur.archlinux.org/packages/lix/
+
+Gürkan S. (tarzeau)
+    * Hosting the Lix website and game server from 2010 to 2016.
+
+Mindless
+    * Running the IRC bot in irc.quakenet.org #lix to announce forum topics.
+    * Hosting my game server in 2009 and 2010.
+
+Clam
+    * ClamLix, an entire levelpack. This pack has no maintainer these days,
+        Forestidia and mobius renovated it for D Lix in 2017.
+
+Insane Steve
+    * Many levels in levels/lemforum/.
+    * Early multiplayer maps and playtesting in 2009.
+
+minim
+    * Together with mobius, 5 tracks in music/minim-mobius, released as
+        public domain.
+
+CyberShadow
+    * Contributing code to early D Lix to for better bitmap buttons
+        on large resolutions.
+
+All multiplayer level designers
+    * Many playtesting sessions.
+    * Building over 600 maps in total.

@@ -42,6 +42,68 @@ They shall be accessible in Windows Notepad.
 
 
 
+Non-null class references and Optional
+--------------------------------------
+
+D doesn't have non-null class references. Every reference may be null.
+Because many references are non-null in normal program flow, wrapping
+most references in wrappers would be painful. Thus, codebase-wide rules:
+
+*   A field of class type should be non-null outside constructors.
+*   A function argument of class type should be non-null, always.
+*   A function return value of class type should be non-null, always.
+*   Wherever null is an allowed value outside of a constructor, use
+    Optional!T instead of T. This relies on the package "optional" in the dub
+    registry.
+
+Examples:
+
+    class T { ... }
+    T myFreeFoo(T a)
+    {
+        // You may assume that "a" is always non-null here.
+        // You don't need to write "assert (a)" or "if (a !is null)" here,
+        // only do that if you expect legacy code to (wrongly) pass nulls.
+        // You must return a non-null T.
+    }
+
+    class T { ... }
+    class U {
+        T a;
+        this()
+        {
+            // During the constructor, "a" may be null, but you must
+            // have assigned to "a" something non-null by the end.
+            a = new T();
+        }
+        void foo()
+        {
+            // You may assume that "a" is always non-null here!
+        }
+    }
+
+    class T { ... }
+    import optional;
+    Optional!T myFreeFoo(Optional!T a)
+    {
+        // This can take any non-null T or no!T (see optional's documentation).
+        // I discourage to wrap "T null" in "Optional!T".
+    }
+
+To assign to T from an Optional!T, unwrap "Optional!T" with "unwrap"
+or call "or" or "dispatch" on it, see the documentation of package "optional".
+
+Nullable references are my biggest gripe with D. Maybe something will happen
+in a few years! Until then, I'd like to write my code by clearly separating
+between nullable and non-nullable. No rule can be perfect today. I hope
+mine is not too confusing.
+
+An alternative would be to name all nullable T fields "maybeX" instead of "x",
+but, unlike "Optional!T", this would make it syntactially legal to assign
+"x = maybeX;" and I prefer an error here.
+
+
+
 Source code style
 -----------------
 
@@ -147,7 +209,8 @@ has to be broken into separate lines, you can do this:
 Reason: Anything else requires a third, made-up level of identation to
 differentiate between the expression/parameter list and the body. ") {" is
 shorter than the indentation width of 4 spaces, and therefore is a good
-visual separator.
+visual separator. You can easily reorder lines when each function argument
+sits on its own line.
 
 This rule takes precedence over "put the opening brace on the same line".
 There is no "the" line anyway.
