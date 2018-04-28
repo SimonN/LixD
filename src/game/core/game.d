@@ -214,12 +214,12 @@ public:
     body {
         assert (nurse);
         assert (nurse.constReplay);
-        if (nurse.constReplay.levelFilename
-            && nurse.constReplay.levelFilename.fileNoExtNoPre != "")
-            return nurse.constReplay.levelFilename.fileNoExtNoPre;
-        else
-            return nurse.constStateForDrawingOnly.multiplayer
-                ? "multiplayer" : "singleplayer";
+        if (auto fn = nurse.constReplay.levelFilename.unwrap) {
+            if (fn.fileNoExtNoPre != "")
+                return fn.fileNoExtNoPre;
+        }
+        return nurse.constStateForDrawingOnly.multiplayer
+            ? "multiplayer" : "singleplayer";
     }
 
     void calc() { implGameCalc(this); }

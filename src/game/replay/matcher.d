@@ -16,6 +16,7 @@ module game.replay.matcher;
  */
 
 import enumap;
+import optional;
 
 import file.filename;
 import game.core.game;
@@ -33,7 +34,7 @@ private:
     struct LevelForChoice {
         bool forcedByCaller; // used even while (! initialized).
         bool lvMatchesFn; // usually true. False if included -> pointedFn
-        MutFilename fn; // initialized in constructor or forceLevel
+        Optional!Filename fn; // initialized in constructor or forceLevel
         Level level; // loaded only when necessary
     }
 
@@ -43,7 +44,7 @@ public:
     body {
         _fnRp = aReplayFn;
         _rp = Replay.loadFromFile(_fnRp);
-        _choices.included.fn = _rp.levelFilename ? _rp.levelFilename : _fnRp;
+        _choices.included.fn = some(_rp.levelFilename.or(_fnRp));
         _choices.pointed.fn = _rp.levelFilename;
         _choices.pointed.lvMatchesFn = true;
     }
@@ -62,11 +63,12 @@ public:
         _choices.explicit.lvMatchesFn = true;
     }
 
-    @property Filename pointedToFilename() const @nogc nothrow
+    @property Optional!Filename pointedToFilename() const @nogc nothrow
     {
         return _choices.pointed.fn;
     }
 
+    // DTODONULLABLE: Refactor to Optional!Level.
     // Preferred level may be null, e.g., if force pointed and replay no line.
     // preferredLevel() cannot be inout because it affects the cache.
     Level preferredLevel()
@@ -84,16 +86,27 @@ public:
         return _choices.pointed.level && _choices.pointed.level.playable;
     }
 
-    // It is illegal to call this when the preferred level is bad.
-    // Callers should do something reasonable instead.
+    @property bool mayCreateGame()
+    {
+        return preferredLevel.playable
+            && (! _rp.empty || ! preferredInitializedStruct.fn.empty);
+    }
+
     Game createGame()
-    in { assert (preferredLevel.playable); }
+    in {
+        // It is illegal to call createGame when the preferred level is bad.
+        // Callers should do something reasonable instead.
+        assert (mayCreateGame);
+    }
     out (ret) { assert (ret); }
     body {
         auto pref = preferredInitializedStruct();
-        return _rp.empty
-            ? new Game(pref.level, pref.fn)
-            : new Game(pref.level, _rp, pref.lvMatchesFn);
+        if (_rp.empty) {
+            // pref.fn is nonzero because of in contract
+            return new Game(pref.level, *pref.fn.unwrap);
+        }
+        else
+            return new Game(pref.level, _rp, pref.lvMatchesFn);
     }
 
     VerifyingNurse createVerifyingNurse()
@@ -133,7 +146,9 @@ private:
         final switch (ch) {
         case Choice.included:
             _choices.included.level = new Level(_fnRp);
-            if (_choices.included.fn == _fnRp) {
+            if (! _choices.included.fn.empty
+                && *_choices.included.fn.unwrap == _fnRp
+            ) {
                 _choices.included.lvMatchesFn = true;
             }
             else {
@@ -143,12 +158,12 @@ private:
             }
             break;
         case Choice.pointed:
-            _choices.pointed.level = _rp.levelFilename
-                ? new Level(_rp.levelFilename) : null;
+            _choices.pointed.level = _rp.levelFilename.empty ? null
+                : new Level(*_rp.levelFilename.unwrap);
             break;
         case Choice.explicit:
-            _choices.explicit.level = _choices.explicit.fn
-                ? new Level(_choices.explicit.fn) : null;
+            _choices.explicit.level = _choices.explicit.fn.empty ? null
+                : new Level(*_choices.explicit.fn.unwrap);
             break;
         }
     }

@@ -79,14 +79,14 @@ protected:
         previewLevel(matcher.preferredLevel);
         _buttonPlayWithPointedTo.shown = matcher.pointedToIsGood;
 
-        if (! solved && matcher.pointedToFilename !is null
-            && matcher.pointedToFilename.rootless.length
+        if (! solved && ! matcher.pointedToFilename.empty
+            && matcher.pointedToFilename.unwrap.rootless.length
             > dirLevels.rootless.length
         ) {
             // We show this even if the level is bad. It's probably
             // most important then
             _labelPointedTo.show();
-            _labelPointedTo.value = matcher.pointedToFilename.rootless[
+            _labelPointedTo.value = matcher.pointedToFilename.unwrap.rootless[
                 dirLevels.rootless.length .. $];
         }
         else {

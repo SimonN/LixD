@@ -2,6 +2,7 @@ module game.replay.io;
 
 import std.algorithm;
 import std.stdio; // save file, and needed for unittest
+import optional;
 
 import basics.globconf : userName; // for filename during saving
 import basics.help;
@@ -23,11 +24,11 @@ VfsFilename saveFilenameCustomBase(
     in Filename treebase
 ) {
     import std.format;
-    if (replay.levelFilename)
+    if (auto fn = replay.levelFilename.unwrap)
         return new VfsFilename(format!"%s%s%s-%s-%s%s"(
             treebase.rootless,
-            replay.mimickLevelPath(),
-            replay.levelFilename.fileNoExtNoPre,
+            mimickLevelPath(*fn),
+            fn.fileNoExtNoPre,
             userName.escapeStringForFilename(),
             Date.now().toStringForFilename(),
             basics.globals.filenameExtReplay));
@@ -40,7 +41,9 @@ VfsFilename saveFilenameCustomBase(
             basics.globals.filenameExtReplay));
 }
 
-string mimickLevelPath(in Replay replay)
+// Input: Filename to a level.
+// Output: Filename to a subdirectory of the replays.
+string mimickLevelPath(in Filename fn)
 out (result) {
     assert (result == "" || result[0]   != '/');
     assert (result == "" || result[$-1] == '/');
@@ -52,9 +55,7 @@ body {
         if (str.length >= front.length && str[0 .. front.length] == front)
             str = str[front.length .. $];
     }
-    if (! replay || ! replay.levelFilename)
-        return "";
-    string path = replay.levelFilename.dirRootless;
+    string path = fn.dirRootless;
     [   dirLevelsSingle, dirLevelsNetwork, dirLevels,
         dirReplayAutoSolutions, dirReplayAutoMulti, dirReplayManual, dirReplays
         ].each!(dir => cutFront(path, dir.dirRootless));
@@ -77,11 +78,10 @@ nothrow void implSaveToFile(
 auto implLoadFromFile(Replay replay, Filename fn) { with (replay)
 {
     struct Return {
-        MutFilename levelFilename;
+        Optional!Filename levelFilename;
         MutableDate levelBuiltRequired;
     }
-    auto ret = Return(MutFilename(null),
-                      MutableDate(new Date("0")));
+    auto ret = Return(no!Filename, MutableDate(new Date("0")));
     IoLine[] lines;
     try {
         lines = fillVectorFromFile(fn);
@@ -99,7 +99,8 @@ auto implLoadFromFile(Replay replay, Filename fn) { with (replay)
         else if (i.text1 == replayGameVersionRequired)
             _gameVersionRequired = Version(i.text2);
         else if (i.text1 == replayLevelFilename)
-            ret.levelFilename = new VfsFilename(dirLevels.dirRootless ~ i.text2);
+            ret.levelFilename
+                = new VfsFilename(dirLevels.dirRootless ~ i.text2);
         break;
     case '+':
         // For back-compat, we accept the FRIEND directive, even though
@@ -145,8 +146,9 @@ void saveToStdioFile(
     std.stdio.File file,
     in Level lev) { with (replay)
 {
-    file.writeln(IoLine.Dollar(basics.globals.replayLevelFilename,
-        replay.mangledLevelFilename));
+    if (auto fn = replay.levelFilename.unwrap)
+        file.writeln(IoLine.Dollar(basics.globals.replayLevelFilename,
+            mangledLevelFilename(*fn)));
     if (levelBuiltRequired !is null)
         file.writeln(IoLine.Dollar(replayLevelBuiltRequired,
             levelBuiltRequired.toString));
@@ -178,26 +180,29 @@ void saveToStdioFile(
         file.writeln(IoLine.Bang(d.update, d.player, word, d.toWhichLix));
     }
 
-    bool okToSave(in Level lev)
+    bool okToSave(Optional!(const Level) l)
     {
-        return lev !is null && ! lev.errorFileNotFound && ! lev.errorEmpty;
+        return ! l.dispatch.errorFileNotFound.or(true)
+            && ! l.dispatch.errorEmpty.or(true);
     }
-
-    const(Level) levToSave = okToSave(lev) ? lev
-                             : new Level(levelFilename);
+    Optional!(const Level) levToSave
+        = lev ? some(lev) // lev should always be non-null. ?:?: guards legacy.
+        : ! levelFilename.empty
+        ? some!(const Level)(new Level(*levelFilename.unwrap))
+        : Optional!(const Level)();
     if (okToSave(levToSave)) {
         file.writeln();
-        level.level.saveToFile(levToSave, file);
+        level.level.saveToFile(levToSave.unwrap, file);
     }
 }}
 
-string mangledLevelFilename(in Replay replay)
+// Input: A replay's level filename
+// Output: The path to the level with (dir-levels)/ trimmed from front
+string mangledLevelFilename(in Filename fn)
 {
-    // Write the path to the level, but omit the leading (dir-levels)/
-    if (replay.levelFilename is null
-        || dirLevels.rootless.length >= replay.levelFilename.rootless.length)
-        return null;
-    return replay.levelFilename.rootless[dirLevels.rootless.length .. $];
+    if (dirLevels.rootless.length >= fn.rootless.length)
+        return "";
+    return fn.rootless[dirLevels.rootless.length .. $];
 }
 
 unittest

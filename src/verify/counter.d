@@ -132,10 +132,11 @@ private:
 
     void rememberCoverage(in TestedReplay tested)
     {
-        if (! vp.printCoverage || ! tested.levelFilename)
+        if (! vp.printCoverage || tested.levelFilename.empty)
             return;
-        if (! levelDirsToCover.canFind(tested.levelFilename.dirRootless)) {
-            levelDirsToCover ~= tested.levelFilename.dirRootless;
+        auto tlfn = *tested.levelFilename.unwrap;
+        if (! levelDirsToCover.canFind(tlfn.dirRootless)) {
+            levelDirsToCover ~= tlfn.dirRootless;
             levelDirsToCover = levelDirsToCover.sort().uniq.array;
             // This sorting-arraying is expensive, but usually, we have very
             // few different level dirs per run. Therefore, we rarely enter
@@ -144,7 +145,7 @@ private:
         if (tested.solved) {
             // This is more expensive, but maybe still not enough to opitmize
             // away the sort-arraying.
-            levelsCovered = (levelsCovered ~ MutFilename(tested.levelFilename))
+            levelsCovered = (levelsCovered ~ MutFilename(tlfn))
                 .sort!fnLessThan.uniq.array;
         }
     }

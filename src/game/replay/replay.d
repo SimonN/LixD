@@ -11,6 +11,7 @@ import core.stdc.string; // memmove
 import std.array;
 import std.algorithm; // isSorted
 import std.range;
+import optional;
 
 public import net.ac;
 public import net.style;
@@ -41,8 +42,8 @@ package:
     ReplayData[] _data;
 
 public:
-    Date     levelBuiltRequired;
-    Filename levelFilename;
+    Date levelBuiltRequired;
+    Optional!Filename levelFilename; // null always legal, usually multiplayer
 
     static newForLevel(Filename levFn, Date levBuilt)
     {
@@ -68,17 +69,18 @@ public:
     }
 
 private:
+    // DTODONULLABLE: Take Optional!Filename levFn
     this(Filename levFn, Date levBuilt, Filename loadFrom)
     {
         touch();
         _permu = new Permu("0");
         if (loadFrom) {
             auto loaded = this.implLoadFromFile(loadFrom);
-            levelFilename      = loaded.levelFilename;
+            levelFilename = loaded.levelFilename;
             levelBuiltRequired = loaded.levelBuiltRequired;
         }
         else {
-            levelFilename      = levFn;
+            levelFilename = levFn ? some(levFn) : Optional!Filename();
             levelBuiltRequired = levBuilt;
         }
     }

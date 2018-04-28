@@ -168,10 +168,11 @@ protected:
 
     final void saveTrophy()
     {
-        if (! _harvest.maySaveTrophy || ! replay.levelFilename)
+        if (! _harvest.maySaveTrophy || replay.levelFilename.empty)
             return;
-        Optional!Trophy old = getTrophy(replay.levelFilename);
-        if (! _harvest.trophy.addToUser(replay.levelFilename))
+        auto lfn = *replay.levelFilename.unwrap;
+        Optional!Trophy old = getTrophy(lfn);
+        if (! _harvest.trophy.addToUser(lfn))
             return;
 
         if (old.empty)

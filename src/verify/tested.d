@@ -64,7 +64,7 @@ public:
         _matcher = new ReplayToLevelMatcher(_rpFn);
         _matcher.forcePointedTo();
         _lv = _matcher.preferredLevel();
-        _status = replayFilename == levelFilename ? Status.noPointer
+        _status = pointsToItself                  ? Status.noPointer
             : _matcher.isMultiplayer              ? Status.multiplayer
             : ! _lv                               ? Status.noPointer
             : _lv.errorFileNotFound               ? Status.missingLevel
@@ -87,15 +87,15 @@ public:
     @property const @nogc {
         Status status() { return _status; }
         bool solved() { return _status == Status.solved; }
-        Filename replayFilename() { return _rpFn; }
-        Filename levelFilename() { return _matcher.pointedToFilename; }
+        auto replayFilename() { return _rpFn; }
+        auto levelFilename() { return _matcher.pointedToFilename; }
     }
 
     override string toString() const
     {
         return format!"%s,%s,%s,%s,%d,%d,%d,%d"(statusWord[_status],
             _rpFn.rootless,
-            levelFilename ? levelFilename.rootless : "",
+            levelFilename.empty ? "" : levelFilename.unwrap.rootless,
             _matcher.singleplayerName, _trophy.lixSaved,
             _lv ? _lv.required : 0,
             _trophy.skillsUsed, _trophy.phyusUsed);
@@ -105,9 +105,17 @@ public:
     bool maybeAddTrophy()
     {
         if (! solved || userName == ""
-                     || userName != _matcher.singleplayerName)
+                     || userName != _matcher.singleplayerName
+                     || levelFilename.empty)
             return false;
         assert (! _matcher.isMultiplayer);
-        return _trophy.addToUser(levelFilename);
+        return _trophy.addToUser(*levelFilename.unwrap);
+    }
+
+private:
+    @property bool pointsToItself() const
+    {
+        return levelFilename.empty
+            || *levelFilename.unwrap == replayFilename;
     }
 }
