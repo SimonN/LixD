@@ -1,34 +1,23 @@
-$BUILT 2012-05-29 16:19:45
+$BUILT 2018-04-29 16:26:34
 $AUTHOR Michael S. Repton
-$GERMAN 
 $ENGLISH From the Other Side
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1280
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 288
-#START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #INITIAL 40
 #REQUIRED 38
 #SPAWN_INTERVAL 50
 
-#NOTHING 0
 #CLIMBER 2
 #EXPLODER 2
 #BLOCKER 2
 #BUILDER 2
-#NOTHING 0
 #MINER 1
 #DIGGER 1
 #JUMPER 1
 #BATTER 1
-#NOTHING 0
-#NOTHING 0
 
 :geoo/sandstone/Hatch.H: 400 176
 
@@ -100,7 +89,6 @@ $ENGLISH From the Other Side
 :geoo/sandstone/32x32: 736 272
 :geoo/sandstone/32x32: 896 272
 :geoo/sandstone/64x32: 736 176
-:geoo/sandstone/64x32: 800 176
 :geoo/sandstone/64x32: 864 176
 :geoo/sandstone/64x32: 768 144
 :geoo/sandstone/64x32: 832 144
@@ -154,3 +142,5 @@ $ENGLISH From the Other Side
 :geoo/sandstone/pillar_32: 592 384
 :geoo/sandstone/64x64: 736 208
 :geoo/sandstone/64x64: 864 208
+:geoo/sandstone/32x16: 800 176
+:geoo/sandstone/32x16: 832 176

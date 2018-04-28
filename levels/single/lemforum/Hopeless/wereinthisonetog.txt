@@ -1,12 +1,10 @@
-$BUILT 2016-08-02 22:14:15
+$BUILT 2018-04-28 22:15:22
 $AUTHOR Insane Steve
 $ENGLISH We're in This One Together
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1024
 #SIZE_Y 400
-#START_X 320
-#START_Y -20
 
 #INITIAL 80
 #REQUIRED 20
@@ -142,3 +140,5 @@ $END_TILE_GROUP
 :geoo/steel/32x16o.S: 384 32
 :matt/winter/07: 288 48 rr
 :matt/winter/06: 62 234
+:geoo/steel/32x64o.S: 512 288 d
+:geoo/steel/32x64o.S: 512 256
