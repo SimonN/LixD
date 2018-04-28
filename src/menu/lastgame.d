@@ -127,8 +127,7 @@ public:
             replay.saveManually(level);
             _saveManually.hide();
             _doneSavingManually.show();
-            _doneSavingManually.text =
-                replay.manualSaveFilename(level).rootless;
+            _doneSavingManually.text = replay.manualSaveFilename.rootless;
             playQuiet(Sound.DISKSAVE);
         };
         addChildren(_saveManually, _doneSavingManually);

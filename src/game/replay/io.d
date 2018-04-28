@@ -18,6 +18,28 @@ import level.level;
 
 package:
 
+VfsFilename saveFilenameCustomBase(
+    in Replay replay,
+    in Filename treebase
+) {
+    import std.format;
+    if (replay.levelFilename)
+        return new VfsFilename(format!"%s%s%s-%s-%s%s"(
+            treebase.rootless,
+            replay.mimickLevelPath(),
+            replay.levelFilename.fileNoExtNoPre,
+            userName.escapeStringForFilename(),
+            Date.now().toStringForFilename(),
+            basics.globals.filenameExtReplay));
+    else
+        return new VfsFilename(format!"%s%s-%s-%dp%s"(
+            treebase.rootless,
+            Date.now().toStringForFilename(),
+            userName.escapeStringForFilename(),
+            replay._players.length,
+            basics.globals.filenameExtReplay));
+}
+
 string mimickLevelPath(in Replay replay)
 out (result) {
     assert (result == "" || result[0]   != '/');

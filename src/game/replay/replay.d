@@ -237,7 +237,7 @@ public:
 
     void saveManually(in Level lev) const
     {
-        this.implSaveToFile(manualSaveFilename(lev), lev);
+        this.implSaveToFile(manualSaveFilename(), lev);
     }
 
     bool shouldWeAutoSave() const
@@ -251,19 +251,18 @@ public:
     {
         if (! shouldWeAutoSave)
             return;
-        this.implSaveToFile(autoSaveFilename(lev), lev);
+        this.implSaveToFile(autoSaveFilename(), lev);
     }
 
-    VfsFilename manualSaveFilename(in Level lev) const
+    VfsFilename manualSaveFilename() const
     {
-        return saveFilenameCustomBase(dirReplayManual, lev);
+        return this.saveFilenameCustomBase(dirReplayManual);
     }
 
-    VfsFilename autoSaveFilename(in Level lev) const
+    VfsFilename autoSaveFilename() const
     {
-        return saveFilenameCustomBase(
-            _players.length > 1 ? dirReplayAutoMulti : dirReplayAutoSolutions,
-            lev);
+        return this.saveFilenameCustomBase(
+            _players.length > 1 ? dirReplayAutoMulti : dirReplayAutoSolutions);
     }
 
 package:
@@ -308,23 +307,6 @@ package:
             _data ~= d;
         }
         assert (_data.isSorted);
-    }
-
-private:
-    VfsFilename saveFilenameCustomBase(
-        in Filename treebase,
-        in Level lev) const
-    {
-        import std.format;
-        return new VfsFilename(format!"%s%s%s-%s-%s%s"(
-            treebase.rootless,
-            this.mimickLevelPath(),
-            this.levelFilename
-                ? this.levelFilename.fileNoExtNoPre
-                : format!"%dp"(_players.length),
-            userName.escapeStringForFilename(),
-            Date.now().toStringForFilename(),
-            basics.globals.filenameExtReplay));
     }
 }
 
