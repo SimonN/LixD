@@ -75,32 +75,26 @@ nothrow void implSaveToFile(
         log(e.msg);
 }
 
-auto implLoadFromFile(Replay replay, Filename fn) { with (replay)
+void implLoadFromFile(Replay replay, Filename fn) { with (replay)
 {
-    struct Return {
-        Optional!Filename levelFilename;
-        MutableDate levelBuiltRequired;
-    }
-    auto ret = Return(no!Filename, MutableDate(new Date("0")));
     IoLine[] lines;
     try {
         lines = fillVectorFromFile(fn);
     }
     catch (Exception e) {
         log(e.msg);
-        return ret;
+        return;
     }
     foreach (i; lines) switch (i.type) {
     case '$':
         if (i.text1 == replayLevelBuiltRequired)
-            ret.levelBuiltRequired = new Date(i.text2);
+            _levelBuiltRequired = new Date(i.text2);
         else if (i.text1 == replayPermu)
             _permu = new Permu(i.text2);
         else if (i.text1 == replayGameVersionRequired)
             _gameVersionRequired = Version(i.text2);
         else if (i.text1 == replayLevelFilename)
-            ret.levelFilename
-                = new VfsFilename(dirLevels.dirRootless ~ i.text2);
+            _levelFn = new VfsFilename(dirLevels.dirRootless ~ i.text2);
         break;
     case '+':
         // For back-compat, we accept the FRIEND directive, even though
@@ -134,7 +128,6 @@ auto implLoadFromFile(Replay replay, Filename fn) { with (replay)
     default:
         break;
     }
-    return ret;
 }}
 
 // ############################################################################
@@ -149,9 +142,8 @@ void saveToStdioFile(
     if (auto fn = replay.levelFilename.unwrap)
         file.writeln(IoLine.Dollar(basics.globals.replayLevelFilename,
             mangledLevelFilename(*fn)));
-    if (levelBuiltRequired !is null)
-        file.writeln(IoLine.Dollar(replayLevelBuiltRequired,
-            levelBuiltRequired.toString));
+    file.writeln(IoLine.Dollar(replayLevelBuiltRequired,
+        _levelBuiltRequired.or(lev.built).toString));
     file.writeln(IoLine.Dollar(replayGameVersionRequired,
         _gameVersionRequired.toString));
 

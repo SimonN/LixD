@@ -115,7 +115,7 @@ public:
     body {
         level = lv;
         _levelMatchesReplayThereforeMaySaveTrophy = true;
-        commonConstructor(generateFreshReplay(levelFilename));
+        commonConstructor(generateFreshReplay(some(levelFilename)));
     }
 
     /*
@@ -156,7 +156,7 @@ public:
         {
             this.adjustToMatchMillisecondsSinceGameStart(millis);
         };
-        commonConstructor(generateFreshReplay(null));
+        commonConstructor(generateFreshReplay(no!Filename));
     }
 
     /* Using ~this to dispose stuff is probably bad style.
@@ -312,9 +312,10 @@ private:
         setLastPhyuToNow();
     }
 
-    Replay generateFreshReplay(Filename levelFilename)
+    Replay generateFreshReplay(Optional!Filename levelFilename)
     {
-        auto rp = Replay.newForLevel(levelFilename, level.built);
+        auto rp = levelFilename.empty ? Replay.newNoLevelFilename(level.built)
+            : Replay.newForLevel(*levelFilename.unwrap, level.built);
         if (! _netClient) {
             rp.addPlayer(PlNr(0), Style.garden, basics.globconf.userName);
         }

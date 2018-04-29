@@ -36,53 +36,61 @@ class Replay {
     }
 
 package:
+    // The pointed-to level filename.
+    // May be none, e.g., in networking games.
+    Optional!Filename _levelFn;
+
+    // The required date when the level was built. This is useful to check
+    // whether a replay plays against the same version of the level against
+    // which the replay was recorded originally.
+    Optional!Date _levelBuiltRequired;
+
     Version _gameVersionRequired;
     Player[PlNr] _players;
     Permu _permu; // contains natural numbers [0 .. #players[, not the plNrs
     ReplayData[] _data;
 
 public:
-    Date levelBuiltRequired;
-    Optional!Filename levelFilename; // null always legal, usually multiplayer
-
     static newForLevel(Filename levFn, Date levBuilt)
     {
-        return new this(levFn, levBuilt, null);
+        Replay ret = new Replay();
+        ret._levelFn = levFn;
+        ret._levelBuiltRequired = levBuilt;
+        return ret;
+    }
+
+    static newNoLevelFilename(Date levBuilt)
+    {
+        Replay ret = new Replay();
+        ret._levelBuiltRequired = levBuilt;
+        return ret;
     }
 
     static loadFromFile(Filename loadFrom)
     {
-        return new this(null, null, loadFrom);
+        Replay ret = new Replay();
+        ret.implLoadFromFile(loadFrom);
+        return ret;
     }
 
     auto clone() const { return new Replay(this); }
     this(in typeof(this) rhs)
     {
         _gameVersionRequired = rhs._gameVersionRequired;
-        levelBuiltRequired   = rhs.levelBuiltRequired;
-        levelFilename        = rhs.levelFilename;
-        _permu               = rhs._permu.clone();
-        _data                = rhs._data.dup;
+        _levelBuiltRequired = rhs._levelBuiltRequired;
+        _levelFn = rhs._levelFn;
+        _permu = rhs._permu.clone();
+        _data = rhs._data.dup;
 
         assert (! _players.length);
         rhs._players.byKeyValue.each!(a => _players[a.key] = a.value);
     }
 
 private:
-    // DTODONULLABLE: Take Optional!Filename levFn
-    this(Filename levFn, Date levBuilt, Filename loadFrom)
+    this()
     {
         touch();
         _permu = new Permu("0");
-        if (loadFrom) {
-            auto loaded = this.implLoadFromFile(loadFrom);
-            levelFilename = loaded.levelFilename;
-            levelBuiltRequired = loaded.levelBuiltRequired;
-        }
-        else {
-            levelFilename = levFn ? some(levFn) : Optional!Filename();
-            levelBuiltRequired = levBuilt;
-        }
     }
 
 public:
@@ -100,6 +108,10 @@ public:
             return false;
     }
 
+    @property const nothrow {
+        Optional!Filename levelFilename() { return _levelFn; }
+        Optional!Date levelBuiltRequired() { return _levelBuiltRequired; }
+    }
     @property const @nogc nothrow {
         Version gameVersionRequired() { return _gameVersionRequired; }
         int numPlayers() { return _players.length & 0x7FFF_FFFF; }
@@ -313,8 +325,8 @@ package:
 }
 
 unittest {
-    Replay a = Replay.newForLevel(null, null);
-    Replay b = Replay.newForLevel(null, null);
+    Replay a = Replay.newNoLevelFilename(Date.now());
+    Replay b = Replay.newNoLevelFilename(Date.now());
     ReplayData d;
     d.skill = Ac.digger;
     d.toWhichLix = 50;
