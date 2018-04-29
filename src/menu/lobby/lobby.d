@@ -9,6 +9,7 @@ import std.range;
 import basics.globconf;
 import basics.user;
 import file.language;
+import game.harvest;
 import gui;
 import hardware.mouse;
 import hardware.sound;
@@ -53,88 +54,38 @@ private:
     Element[] _showDuringGameRoom;
 
 public:
-    this(RichClient aRichClient // existing client or null if not connected
-    ) {
+    // Create Lobby that is not connected
+    this() {
         super(new Geom(0, 0, gui.screenXlg, gui.screenYlg),
             Lang.winLobbyTitle.transl);
-        _buttonExit = new TextButton(new Geom(20, 20, 120, 20, From.BOT_RIG),
-            Lang.commonBack.transl);
-        _buttonExit.hotkey = basics.user.keyMenuExit;
-        _buttonExit.onExecute = () { onExitButtonExecute(); };
-        addChild(_buttonExit);
+        commonConstructor();
+        showOrHideGuiBasedOnConnection();
+    }
 
-        _console = new LobbyConsole(new Geom(0, 60, xlg-40, 160, From.BOTTOM));
-        addChild(_console);
+    // Create Lobby after finishing a game
+    this(RichClient aRichClient, Harvest harvest)
+    in { assert(aRichClient, "RichClient should exist after a netgame"); }
+    body {
+        super(new Geom(0, 0, gui.screenXlg, gui.screenYlg),
+            Lang.winLobbyTitle.transl);
+        commonConstructor();
 
-        _connections = new ConnectionPicker(new Geom(0, 40, 320,100,From.TOP));
-        _connections.onExecute = (string ip) { this.connect(ip); };
-        _showWhenDisconnected ~= _connections;
-
-        _peerList = new PeerList(new Geom(20, 40, 120, 20*8));
-        _showWhenConnected ~= _peerList;
-        _colorSelector = new ColorSelector(new Geom(160, 40, 40, 20*8));
-        _showWhenConnected ~= _colorSelector;
-        _roomList = new RoomList(new Geom(20, 40, 300, 20*8, From.TOP_RIGHT));
-        _showDuringLobby ~= _roomList;
-        _preview = new Preview(new Geom(_roomList.geom));
-        _showDuringGameRoom ~= _preview;
-
-        enum midButtonsY = 60+20*8;
-        _declareReady = new TextButton(new Geom(20, midButtonsY,
-            _peerList.xlg, 20), Lang.winLobbyReady.transl);
-        _declareReady.hotkey = keyMenuOkay;
-        addChild(_declareReady);
-        // See showOrHideGuiBasedOnConnection for particular showing/hiding,
-        // because _declareReady isn't in any of the _showXyz arrays
-
-        _chooseLevel = new TextButton(new Geom(20, midButtonsY, 120, 20,
-            From.TOP_RIGHT), Lang.winLobbySelectLevel.transl);
-        _chooseLevel.onExecute = ()
-        {
-            assert (! _browser);
-            _browser = new BrowserNetwork();
-            addFocus(_browser);
-        };
-        _chooseLevel.hotkey = keyMenuEdit;
-        _showDuringGameRoom ~= _chooseLevel;
-
-        enum chatLabelXl = 50;
-        _chat = new Texttype(new Geom(20 + chatLabelXl, 20,
-            gui.screenXlg - _buttonExit.xlg - chatLabelXl - 60,
-            20, From.BOT_LEF));
-        _chat.allowScrolling = true;
-        _chat.onEnter = ()
-        {
-            if (_chat.text == "")
-                return;
-            assert (connected);
-            _netClient.sendChatMessage(_chat.text);
-            _chat.text = "";
-        };
-        _chat.onEsc = () { _chat.text = ""; };
-        _chat.hotkey = basics.user.keyChat;
-        _showWhenConnected ~= _chat;
-        _showWhenConnected ~= new Label(new Geom(20, 20, chatLabelXl,
-                                20, From.BOT_LEF), Lang.winLobbyChat.transl);
-        foreach (e; chain(_showWhenDisconnected, _showWhenConnected,
-                          _showDuringLobby, _showDuringGameRoom))
-            addChild(e);
-
-        if (aRichClient) {
-            aRichClient.console = _console;
-            // Game's RichClient will always return to use here, usually still
-            // connected. Sometimes, the connection dropped, then we get an
-            // unconnected RichClient -- we don't want this in _netClient.
-            if (aRichClient.connected) {
-                _netClient = aRichClient;
-                setOurEventHandlers();
-                _preview.level = _netClient.level;
-                _chat.text = _netClient.unsentChat;
-                _netClient.unsentChat = "";
-                _chat.on = _chat.text != "";
-                refreshPeerList();
-            }
+        aRichClient.console = _console;
+        // Game's RichClient will always return to use here, usually still
+        // connected. Sometimes, the connection dropped, then we get an
+        // unconnected RichClient -- we don't want this in _netClient.
+        if (aRichClient.connected) {
+            _netClient = aRichClient;
+            setOurEventHandlers();
+            _preview.level = _netClient.level;
+            _chat.text = _netClient.unsentChat;
+            _netClient.unsentChat = "";
+            _chat.on = _chat.text != "";
+            refreshPeerList();
         }
+
+        harvest.replay.saveAsAutoReplay(harvest.level);
+        // Later, the Lobby should draw nice stats from the harvest.
         showOrHideGuiBasedOnConnection();
     }
 
@@ -217,6 +168,72 @@ protected:
     }
 
 private:
+    void commonConstructor()
+    {
+        _buttonExit = new TextButton(new Geom(20, 20, 120, 20, From.BOT_RIG),
+            Lang.commonBack.transl);
+        _buttonExit.hotkey = basics.user.keyMenuExit;
+        _buttonExit.onExecute = () { onExitButtonExecute(); };
+        addChild(_buttonExit);
+
+        _console = new LobbyConsole(new Geom(0, 60, xlg-40, 160, From.BOTTOM));
+        addChild(_console);
+
+        _connections = new ConnectionPicker(new Geom(0, 40, 320,100,From.TOP));
+        _connections.onExecute = (string ip) { this.connect(ip); };
+        _showWhenDisconnected ~= _connections;
+
+        _peerList = new PeerList(new Geom(20, 40, 120, 20*8));
+        _showWhenConnected ~= _peerList;
+        _colorSelector = new ColorSelector(new Geom(160, 40, 40, 20*8));
+        _showWhenConnected ~= _colorSelector;
+        _roomList = new RoomList(new Geom(20, 40, 300, 20*8, From.TOP_RIGHT));
+        _showDuringLobby ~= _roomList;
+        _preview = new Preview(new Geom(_roomList.geom));
+        _showDuringGameRoom ~= _preview;
+
+        enum midButtonsY = 60+20*8;
+        _declareReady = new TextButton(new Geom(20, midButtonsY,
+            _peerList.xlg, 20), Lang.winLobbyReady.transl);
+        _declareReady.hotkey = keyMenuOkay;
+        addChild(_declareReady);
+        // See showOrHideGuiBasedOnConnection for particular showing/hiding,
+        // because _declareReady isn't in any of the _showXyz arrays
+
+        _chooseLevel = new TextButton(new Geom(20, midButtonsY, 120, 20,
+            From.TOP_RIGHT), Lang.winLobbySelectLevel.transl);
+        _chooseLevel.onExecute = ()
+        {
+            assert (! _browser);
+            _browser = new BrowserNetwork();
+            addFocus(_browser);
+        };
+        _chooseLevel.hotkey = keyMenuEdit;
+        _showDuringGameRoom ~= _chooseLevel;
+
+        enum chatLabelXl = 50;
+        _chat = new Texttype(new Geom(20 + chatLabelXl, 20,
+            gui.screenXlg - _buttonExit.xlg - chatLabelXl - 60,
+            20, From.BOT_LEF));
+        _chat.allowScrolling = true;
+        _chat.onEnter = ()
+        {
+            if (_chat.text == "")
+                return;
+            assert (connected);
+            _netClient.sendChatMessage(_chat.text);
+            _chat.text = "";
+        };
+        _chat.onEsc = () { _chat.text = ""; };
+        _chat.hotkey = basics.user.keyChat;
+        _showWhenConnected ~= _chat;
+        _showWhenConnected ~= new Label(new Geom(20, 20, chatLabelXl,
+                                20, From.BOT_LEF), Lang.winLobbyChat.transl);
+        foreach (e; chain(_showWhenDisconnected, _showWhenConnected,
+                          _showDuringLobby, _showDuringGameRoom))
+            addChild(e);
+    }
+
     bool connected() const { return _netClient && _netClient.connected; }
     bool connecting() const { return _netClient && _netClient.connecting; }
     bool offline() const { return ! connected && ! connecting; }

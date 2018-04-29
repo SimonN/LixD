@@ -174,7 +174,7 @@ public:
             }
             else if (mainMenu.gotoNetwork) {
                 kill();
-                lobby = new Lobby(null);
+                lobby = new Lobby();
                 gui.addElder(lobby);
             }
             else if (mainMenu.gotoReplays) {
@@ -252,7 +252,7 @@ public:
                 auto harvest = game.harvest;
                 kill();
                 if (net) {
-                    lobby = new Lobby(net);
+                    lobby = new Lobby(net, harvest);
                     gui.addElder(lobby);
                 }
                 else if (_afterGameGoto == AfterGameGoto.replays) {
