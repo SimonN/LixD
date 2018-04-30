@@ -89,6 +89,25 @@ protected:
             ch.undraw();
     }
 
+    override bool saveAutoReplay() const
+    {
+        if (_harvest.replay.numPlayers > 1) {
+            // This is the subclass of LastGameStats for singleplayer.
+            // This is also called after watching a saved netgame replay.
+            // Never save those playbacks again.
+            return false;
+        }
+        const(Replay) old = Replay.loadFromFile(replayLastLevel);
+        if (old == _harvest.replay)
+            return false;
+
+        import basics.globconf;
+        assert (_harvest.replay.players.byValue.front.name == userName,
+            "You changed the replay but didn't change its player.");
+        replay.saveAsAutoReplay(level);
+        return replay.shouldWeAutoSave;
+    }
+
     override void onFirstTrophy()
     {
         _trophyUpdate.unwrap.text(Lang.harvestTrophyFirst.transl);
@@ -143,23 +162,7 @@ public:
     }
 
 protected:
-    bool saveAutoReplay() const // returns whether we really saved
-    {
-        if (_harvest.replay.numPlayers == 1) {
-            const(Replay) old = Replay.loadFromFile(replayLastLevel);
-            if (old == _harvest.replay) {
-                return false;
-            }
-            else {
-                import basics.globconf;
-                assert (_harvest.replay.players.byValue.front.name == userName,
-                    "You changed the replay but didn't change its player.");
-                // and continue to save the replay.
-            }
-        }
-        replay.saveAsAutoReplay(level);
-        return replay.shouldWeAutoSave;
-    }
+    abstract bool saveAutoReplay() const; // returns whether we really saved
 
     // Override these to react to the result of saving the trophy
     void onFirstTrophy() { }
