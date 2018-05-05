@@ -1,6 +1,9 @@
 module file.date;
 
 import core.stdc.time;
+import std.algorithm;
+import std.conv : to;
+import std.range;
 import std.string;
 import std.typecons;
 
@@ -26,36 +29,21 @@ public:
 
     this(in string s) pure immutable
     {
-        int _year, _month, _day, _hour, _minute, _second;
-        int what = 0;
-        foreach (const c; s) {
-            immutable int digit = c - '0';
-            if (what >= 14) break;
-            if (c >= '0' && c <= '9') switch (what++) {
-                case  0: _year   += digit * 1000; break;
-                case  1: _year   += digit * 100;  break;
-                case  2: _year   += digit * 10;   break;
-                case  3: _year   += digit;        break;
-                case  4: _month  += digit * 10;   break;
-                case  5: _month  += digit;        break;
-                case  6: _day    += digit * 10;   break;
-                case  7: _day    += digit;        break;
-
-                case  8: _hour   += digit * 10;   break;
-                case  9: _hour   += digit;        break;
-                case 10: _minute += digit * 10;   break;
-                case 11: _minute += digit;        break;
-                case 12: _second += digit * 10;   break;
-                case 13: _second += digit;        break;
-                default:                          break;
-            }
+        auto digits = s.representation
+            .filter!(c => c >= '0' && c <= '9')
+            .map!(c => to!int(c - '0'));
+        int takeDigits(in int start, in int howMany) {
+            int ret = 0;
+            foreach (int digit; digits.drop(start).take(howMany))
+                ret = ret * 10 + digit;
+            return ret;
         }
-        year   = _year;
-        month  = _month;
-        day    = _day;
-        hour   = _hour;
-        minute = _minute;
-        second = _second;
+        year = takeDigits(0, 4);
+        month = takeDigits(4, 2);
+        day = takeDigits(6, 2);
+        hour = takeDigits(8, 2);
+        minute = takeDigits(10, 2);
+        second = takeDigits(12, 2);
     }
 
     override string toString() const
@@ -117,4 +105,13 @@ private:
         minute = loctime.tm_min;
         second = loctime.tm_sec;
     }
+}
+
+unittest {
+    string s = "2018-05-02 21:08:37";
+    Date d = new Date(s);
+    assert (d.year == 2018);
+    assert (d.month == 05);
+    assert (d.second == 37);
+    assert (d.toString == s);
 }
