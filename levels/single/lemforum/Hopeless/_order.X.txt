@@ -1,13 +1,13 @@
 recyclingplant.txt
 emptyspace.txt
-systematicsep.txt
+bipolar.txt
 closetotheedge.txt
 dontcatchmeifyoucan.txt
 thehotelinhell.txt
 crownjewelheist.txt
 yukimuon.txt
 divisionoflabor.txt
-bipolar.txt
+systematicsep.txt
 panicattack.txt
 ascending.txt
 feelthepressure.txt
