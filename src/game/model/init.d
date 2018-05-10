@@ -25,7 +25,10 @@ package:
 
 GameState newZeroState(in Level level, in Style[] tribesToMake,
                        in Permu permu, in Style makeHatchesBlink
-) {
+) in {
+    assert (tribesToMake.len >= 1);
+}
+body {
     GameState s;
     s.refCountedStore.ensureInitialized();
     with (level) {
@@ -49,10 +52,12 @@ private:
 
 void preparePlayers(GameState state, in Level level,
                     in Style[] tribesToMake, in Permu permu)
-{
+in {
     assert (state.tribes == null);
     assert (tribesToMake.len >= 1);
     assert (tribesToMake.isStrictlyMonotonic);
+}
+body {
     foreach (int i, style; tribesToMake) {
         Tribe tr = new Tribe(
             tribesToMake.len > 1 && level.overtimeSeconds == 0

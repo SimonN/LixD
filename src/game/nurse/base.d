@@ -41,11 +41,14 @@ public:
     void drawAllGadgets() { _model.cs.drawAllGadgets(); }
 
     // We get to own the replay, but not the level or the effect manager.
-    // EffectManager may be null.
+    // EffectManager may be null. DTODONULL: Use Optional!EffectManager.
     this(in Level lev, Replay rp, EffectManager ef)
-    {
+    body {
+        Style[] stylesToMake = rp.stylesInUse;
+        if (stylesToMake.empty)
+            stylesToMake = [ Style.garden ];
         _replay = rp;
-        _model = new GameModel(lev, rp.stylesInUse, rp.permu, ef);
+        _model = new GameModel(lev, stylesToMake, rp.permu, ef);
         _levelBuilt = lev.built;
         assert (_replay);
     }

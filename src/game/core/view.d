@@ -18,15 +18,15 @@ enum View {
     replayBattle, // one player watches the replay of a a multiplayer battle
 }
 
+// netClient may be null.
 View createView(in int numPlayers, in INetClient netClient) pure
 {
-    assert (numPlayers > 0);
     if (netClient && netClient.connected) {
         return netClient.ourProfile.feeling == Profile.Feeling.observing
             ? View.observeBattle : View.battle;
     }
     else {
-        return numPlayers == 1 ? View.solveAlone : View.replayBattle;
+        return numPlayers >= 2 ? View.replayBattle : View.solveAlone;
     }
 }
 

@@ -54,7 +54,8 @@ public:
     // We don't own the effect manager.
     this(in Level level, in Style[] tribesToMake,
          in Permu permu, EffectManager ef)
-    {
+    in { assert (tribesToMake.len >= 1); }
+    body {
         _effect = ef;
         _cs = newZeroState(level, tribesToMake, permu,
             ef ? ef.localTribe : Style.garden // only to make hatches blink
