@@ -69,8 +69,12 @@ public:
         else if (args.length == 2)
             matcher.forceLevel(args[0]);
 
-        if (matcher.mayCreateGame)
-            this.game = matcher.createGame();
+        if (matcher.mayCreateGame) {
+            ReplayToLevelMatcher.CreatedGame cg = matcher.createGame();
+            this.game = cg.createdGame;
+            this._afterGameGoto = cg.replayWasEmpty ? AfterGameGoto.single
+                                                    : AfterGameGoto.replays;
+        }
         else
             throw new Exception("Level or replay isn't playable.");
     }
@@ -203,7 +207,7 @@ public:
                 auto matcher = browRep.matcher;
                 _afterGameGoto = AfterGameGoto.replays;
                 kill();
-                game = matcher.createGame();
+                game = matcher.createGame().createdGame;
             }
             else if (browSin && (browSin.gotoEditorNewLevel
                              ||  browSin.gotoEditorLoadFileRecent)

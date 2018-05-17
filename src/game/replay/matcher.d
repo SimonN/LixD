@@ -39,6 +39,11 @@ private:
     }
 
 public:
+    struct CreatedGame {
+        Game createdGame;
+        bool replayWasEmpty;
+    }
+
     this(Filename aReplayFn)
     in { assert (aReplayFn); }
     body {
@@ -92,21 +97,21 @@ public:
             && (! _rp.empty || ! preferredInitializedStruct.fn.empty);
     }
 
-    Game createGame()
+    CreatedGame createGame()
     in {
         // It is illegal to call createGame when the preferred level is bad.
         // Callers should do something reasonable instead.
         assert (mayCreateGame);
     }
-    out (ret) { assert (ret); }
+    out (ret) { assert (ret.createdGame); }
     body {
         auto pref = preferredInitializedStruct();
-        if (_rp.empty) {
+        return CreatedGame(
             // pref.fn is nonzero because of in contract
-            return new Game(pref.level, *pref.fn.unwrap);
-        }
-        else
-            return new Game(pref.level, _rp, pref.lvMatchesFn);
+            _rp.empty ?
+                new Game(pref.level, *pref.fn.unwrap)
+            :   new Game(pref.level, _rp, pref.lvMatchesFn),
+            _rp.empty);
     }
 
     VerifyingNurse createVerifyingNurse()
