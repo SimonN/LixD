@@ -12,6 +12,7 @@ import optional;
 
 import basics.trophy;
 import basics.globals;
+import basics.globconf;
 import basics.user : addToUser, getTrophy, replayLastLevel;
 import file.filename;
 import game.harvest;
@@ -22,6 +23,8 @@ import file.language;
 import hardware.sound;
 import level.level;
 
+// This class has a strange name, it's also called from the replay browser,
+// not only from the singleplayer browser.
 class SingleplayerLastGameStats : LastGameStats {
 private:
     Optional!Label _trophyUpdate;
@@ -101,9 +104,6 @@ protected:
         if (old == _harvest.replay)
             return false;
 
-        import basics.globconf;
-        assert (_harvest.replay.players.byValue.front.name == userName,
-            "You changed the replay but didn't change its player.");
         replay.saveAsAutoReplay(level);
         return replay.shouldWeAutoSave;
     }
@@ -171,8 +171,11 @@ protected:
 
     final void saveTrophy()
     {
-        if (! _harvest.maySaveTrophy || replay.levelFilename.empty)
+        if (! _harvest.maySaveTrophy || replay.levelFilename.empty
+            || replay.players.length != 1
+            || replay.players.byValue.front.name != basics.globconf.userName)
             return;
+
         auto lfn = *replay.levelFilename.unwrap;
         Optional!Trophy old = getTrophy(lfn);
         if (! _harvest.trophy.addToUser(lfn))
