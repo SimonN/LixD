@@ -11,6 +11,7 @@ module basics.mainloop;
  */
 
 import core.memory;
+import optional;
 
 import basics.alleg5;
 import basics.globconf;
@@ -51,8 +52,9 @@ class MainLoop {
     Game   game;
     Editor editor;
 
-    enum AfterGameGoto { single, replays }
-    AfterGameGoto _afterGameGoto;
+    // If this is present, prefer to go to the replay browser instead of the
+    // singleplayer browser. This obviates the bool for that.
+    Optional!(const Replay) _lastLoaded;
 
 public:
     this(in Cmdargs cmdargs)
@@ -70,10 +72,8 @@ public:
             matcher.forceLevel(args[0]);
 
         if (matcher.mayCreateGame) {
-            ReplayToLevelMatcher.CreatedGame cg = matcher.createGame();
-            this.game = cg.createdGame;
-            this._afterGameGoto = cg.replayWasEmpty ? AfterGameGoto.single
-                                                    : AfterGameGoto.replays;
+            this._lastLoaded = matcher.replay;
+            this.game = matcher.createGame();
         }
         else
             throw new Exception("Level or replay isn't playable.");
@@ -199,15 +199,15 @@ public:
             if (browSin && browSin.gotoGame) {
                 auto fn = browSin.fileRecent;
                 auto lv = browSin.levelRecent;
-                _afterGameGoto = AfterGameGoto.single;
+                _lastLoaded = no!(const Replay);
                 kill();
                 game = new Game(lv, fn);
             }
             else if (browRep && browRep.gotoGame) {
                 auto matcher = browRep.matcher;
-                _afterGameGoto = AfterGameGoto.replays;
+                _lastLoaded = matcher.replay;
                 kill();
-                game = matcher.createGame().createdGame;
+                game = matcher.createGame();
             }
             else if (browSin && (browSin.gotoEditorNewLevel
                              ||  browSin.gotoEditorLoadFileRecent)
@@ -259,8 +259,8 @@ public:
                     lobby = new Lobby(net, harvest);
                     gui.addElder(lobby);
                 }
-                else if (_afterGameGoto == AfterGameGoto.replays) {
-                    browRep = new BrowserReplay(harvest);
+                else if (_lastLoaded.unwrap) {
+                    browRep = new BrowserReplay(harvest, _lastLoaded.unwrap);
                     gui.addElder(browRep);
                 }
                 else {

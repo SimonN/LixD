@@ -20,8 +20,8 @@ class BrowserWithLastAndDelete : BrowserCalledFromMainMenu {
 private:
     Button _delete;
     Optional!MsgBox _boxDelete;
-    Optional!SingleplayerLastGameStats _lastGame; // if exist => never killed
-    bool _showLastGameOnNextHighlight = false;
+    Optional!StatsAfterGame _lastGame; // if exist => never killed
+    bool _showLastGameOnNextHighlight = false; // workaround for 2x highlights
 
 public:
     this(T)(string title, Filename baseDir, T t)
@@ -40,15 +40,18 @@ protected:
     abstract void onHighlightWithoutLastGame(Filename);
 
     // Call this from the final class.
-    void addHarvestThenHighlight(Harvest ha, Filename fn)
+    void addStatsThenHighlight(StatsAfterGame lgs, Filename fn)
     {
-        // Creating _lastGame saves the trophies.
-        auto lg = new SingleplayerLastGameStats(
-            new Geom(20, infoY + 20, infoXl, 60, From.TOP_RIGHT), ha);
-        _lastGame = some(lg);
-        addChild(lg);
+        // The final class creates lgs and thereby already saves the trophies.
+        _lastGame = some(lgs);
+        addChild(lgs);
         _showLastGameOnNextHighlight = true;
         super.highlight(fn);
+    }
+
+    final Geom newStatsGeom() const
+    {
+        return new Geom(20, infoY + 20, infoXl, 60, From.TOP_RIGHT);
     }
 
     final override void onHighlightNone()

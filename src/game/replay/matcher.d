@@ -39,11 +39,6 @@ private:
     }
 
 public:
-    struct CreatedGame {
-        Game createdGame;
-        bool replayWasEmpty;
-    }
-
     this(Filename aReplayFn)
     in { assert (aReplayFn); }
     body {
@@ -66,6 +61,11 @@ public:
         _choices.explicit.forcedByCaller = true;
         _choices.explicit.fn = aExpli;
         _choices.explicit.lvMatchesFn = true;
+    }
+
+    @property const(Replay) replay() const @nogc nothrow
+    {
+        return _rp;
     }
 
     @property Optional!Filename pointedToFilename() const @nogc nothrow
@@ -97,21 +97,19 @@ public:
             && (! _rp.empty || ! preferredInitializedStruct.fn.empty);
     }
 
-    CreatedGame createGame()
+    Game createGame()
     in {
         // It is illegal to call createGame when the preferred level is bad.
         // Callers should do something reasonable instead.
         assert (mayCreateGame);
     }
-    out (ret) { assert (ret.createdGame); }
+    out (ret) { assert (ret); }
     body {
         auto pref = preferredInitializedStruct();
-        return CreatedGame(
+        return _rp.empty
             // pref.fn is nonzero because of in contract
-            _rp.empty ?
-                new Game(pref.level, *pref.fn.unwrap)
-            :   new Game(pref.level, _rp, pref.lvMatchesFn),
-            _rp.empty);
+            ? new Game(pref.level, *pref.fn.unwrap)
+            : new Game(pref.level, _rp, pref.lvMatchesFn);
     }
 
     VerifyingNurse createVerifyingNurse()

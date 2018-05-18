@@ -17,6 +17,7 @@ import gui.picker;
 import hardware.sound;
 import level.level;
 import menu.browser.withlast;
+import menu.lastgame;
 
 final class BrowserSingle : BrowserWithLastAndDelete {
 private:
@@ -45,7 +46,9 @@ public:
             basics.globals.dirLevels, super.pickerConfig());
         commonConstructor();
         // Final class calls in correct order:
-        super.addHarvestThenHighlight(ha, basics.user.singleLastLevel);
+        super.addStatsThenHighlight(
+            new StatsAfterSingleplayer(super.newStatsGeom(), ha),
+            basics.user.singleLastLevel);
     }
 
     override @property inout(Level) levelRecent() inout

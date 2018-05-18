@@ -43,13 +43,15 @@ public:
         super.highlight(basics.user.replayLastLevel);
     }
 
-    this(Harvest ha)
+    this(Harvest ha, const(Replay) lastLoaded)
     {
         super(Lang.browserReplayTitle.transl,
             basics.globals.dirReplays, PickerConfig!ReplayTiler());
         commonConstructor();
         // Final class calls:
-        super.addHarvestThenHighlight(ha, basics.user.replayLastLevel);
+        super.addStatsThenHighlight(
+            new StatsAfterReplay(super.newStatsGeom, ha, lastLoaded),
+            basics.user.replayLastLevel);
     }
 
     // Override method with assert(false): Violates fundamental OO principles.

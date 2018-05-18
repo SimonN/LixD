@@ -23,9 +23,25 @@ import file.language;
 import hardware.sound;
 import level.level;
 
-// This class has a strange name, it's also called from the replay browser,
-// not only from the singleplayer browser.
-class SingleplayerLastGameStats : LastGameStats {
+class StatsAfterReplay : StatsAfterSingleplayer {
+private:
+    const(Replay) _lastLoaded;
+
+public:
+    this(Geom g, Harvest ha, const(Replay) lastLoaded)
+    {
+        _lastLoaded = lastLoaded;
+        super(g, ha);
+    }
+
+protected:
+    override bool maySaveAutoReplay() const
+    {
+        return super.maySaveAutoReplay() && _harvest.replay != _lastLoaded;
+    }
+}
+
+class StatsAfterSingleplayer : StatsAfterGame {
 private:
     Optional!Label _trophyUpdate;
     Optional!LabelTwo _goal;
@@ -92,20 +108,14 @@ protected:
             ch.undraw();
     }
 
-    override bool saveAutoReplay() const
+    override bool maySaveAutoReplay() const
     {
-        if (_harvest.replay.numPlayers > 1) {
-            // This is the subclass of LastGameStats for singleplayer.
-            // This is also called after watching a saved netgame replay.
-            // Never save those playbacks again.
-            return false;
-        }
-        const(Replay) old = Replay.loadFromFile(replayLastLevel);
-        if (old == _harvest.replay)
-            return false;
-
-        replay.saveAsAutoReplay(level);
-        return replay.shouldWeAutoSave;
+        // This is the subclass of LastGameStats for singleplayer.
+        // This is also called after watching a saved netgame replay (bad OO).
+        // Never save those playbacks again.
+        return _harvest.replay.numPlayers == 1
+            // Don't autosave other people's singleplayer solutions again.
+            && _harvest.replay.players.byValue.front.name == userName;
     }
 
     override void onFirstTrophy()
@@ -124,7 +134,7 @@ protected:
     }
 }
 
-abstract class LastGameStats : Element {
+abstract class StatsAfterGame : Element {
 private:
     TextButton _saveManually;
     Label _doneSavingManually;
@@ -162,7 +172,7 @@ public:
     }
 
 protected:
-    abstract bool saveAutoReplay() const; // returns whether we really saved
+    abstract bool maySaveAutoReplay() const;
 
     // Override these to react to the result of saving the trophy
     void onFirstTrophy() { }
@@ -187,6 +197,15 @@ protected:
             onRestoredTrophy();
         else
             onImprovedTrophy();
+    }
+
+    // Returns whether the Replay calss decided to save.
+    final bool saveAutoReplay() const
+    {
+        if (! maySaveAutoReplay())
+            return false;
+        replay.saveAsAutoReplay(level);
+        return replay.shouldWeAutoSave;
     }
 }
 
