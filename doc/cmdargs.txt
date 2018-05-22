@@ -38,7 +38,8 @@ These start Lix as a pure command-line tool, they don't create a window:
 Extra switches:
 
     -h or -? or --help      print help and exit
-    -v or --version         print version and exit
+    -v or --version         print version of Lix and exit
+    --allegro-version       print version of Allegro DLLs and exit
 
 lix
 ---

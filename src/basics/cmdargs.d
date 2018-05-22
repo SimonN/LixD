@@ -13,6 +13,7 @@ import std.algorithm; // splitter
 import std.conv;
 import std.stdio;
 
+import basics.alleg5;
 import net.versioning;
 import file.filename;
 
@@ -27,7 +28,8 @@ private void writeHelp()
 {
     write(
         "-h or -? or --help     print this help and exit\n",
-        "-v or --version        print version and exit\n",
+        "-v or --version        print version of Lix and exit\n",
+        "--allegro-version      print version of Allegro DLLs and exit\n",
         "-w                     run windowed at 640x480\n",
         "--resol=800x600        run windowed at the given resolution\n",
         "--fullscreen           use software fullscreen mode (good Alt+Tab)\n",
@@ -49,6 +51,7 @@ public:
     bool forceSoftwareFullscreen;
     bool forceHardwareFullscreen;
     bool versionAndExit;
+    bool allegroVersionAndExit;
     bool helpAndExit;
     bool preferPointedTo; // interactive mode with exactly 1 replay argument
     bool exportImages; // image-exporting mode with any number of arguments
@@ -89,7 +92,7 @@ public:
 
     @property Runmode mode() const
     {
-        if (! good || versionAndExit || helpAndExit)
+        if (! good || versionAndExit || allegroVersionAndExit || helpAndExit)
             return Runmode.PRINT_AND_EXIT;
         else if (verifyReplays)
             return Runmode.VERIFY;
@@ -127,10 +130,13 @@ public:
         else
             writeln("Lix version ", gameVersion);
 
+        if (allegroVersionAndExit)
+            writeln("Allegro DLL version ", allegroDLLVersion());
         if (helpAndExit)
             writeHelp();
         if (good)
             return;
+
         if (badSwitches != null) {
             foreach (sw; badSwitches)
                 writeln("Error: `", sw, "' is an unknown switch.");
@@ -166,6 +172,9 @@ private:
 
         if (arg == "--version") {
             versionAndExit = true;
+        }
+        else if (arg == "--allegro-version") {
+            allegroVersionAndExit = true;
         }
         else if (arg == "--help") {
             helpAndExit = true;
@@ -221,9 +230,6 @@ private:
             badSwitches ~= arg;
     }
 }
-// end class
-
-
 
 private bool
 startsWith(string large, string small)
