@@ -58,7 +58,8 @@ implGameDraw(Game game) { with (game)
         game.drawAllLixes();
     }
     pan.showInfo(localTribe);
-    pan.update(nurse.scores);
+    foreach (sc; nurse.scores)
+        pan.update(sc);
     pan.age = nurse.constStateForDrawingOnly.update;
     game.showSpawnIntervalOnHatches();
 

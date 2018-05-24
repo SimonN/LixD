@@ -17,9 +17,12 @@ struct Score {
     bool prefersGameToEnd; // should be filled by Tribe
 }
 
-void sortPreferringTeam(Score[] arr, in Style preferred)
+void sortPreferringTeam(T)(T[] arr, in Style pref)
 {
-    arr.sort!((a, b) => betterThanPreferringTeam(a, b, preferred));
+    static if (is (T : Score))
+        arr.sort!((a, b) => betterThanPreferringTeam(a, b, pref));
+    else
+        arr.sort!((a, b) => betterThanPreferringTeam(a.score, b.score, pref));
 }
 
 // Sort better scores to earlier positions.
@@ -44,4 +47,18 @@ unittest {
     arr.sortPreferringTeam(Style.green);
     assert (arr[0].style == Style.green);
     assert (arr[1].style == Style.garden);
+}
+
+// Test the else branch of sortPreferringTeam
+unittest {
+    struct Complicated { Score score; int unrelated; }
+    Complicated[] arr = [
+        Complicated(Score(Style.yellow, 0, 0), 333),
+        Complicated(Score(Style.orange, 0, 0), 999),
+        Complicated(Score(Style.red, 0, 0), 888),
+    ];
+    arr.sortPreferringTeam(Style.orange);
+    assert (arr[0].unrelated == 999);
+    assert (arr[1].unrelated == 888);
+    assert (arr[2].unrelated == 333);
 }

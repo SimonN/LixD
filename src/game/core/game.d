@@ -358,6 +358,9 @@ private:
                               (gui.screenYls - gui.panelYls).to!int);
         this.centerCameraOnHatchAverage();
         pan = new Panel(view, level.required);
+        foreach (player; nurse.constReplay.players) {
+            pan.add(player.style, player.name);
+        }
         gui.addElder(pan);
         setLastPhyuToNow(); // to fill skills, needed for highlightFirstSkill
         pan.highlightFirstSkill();

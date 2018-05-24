@@ -17,7 +17,7 @@ import gui;
 
 class ScoreGraph : Element {
 private:
-    ScoreBar[] bars; // not an associative array because we want to sort it
+    NukeBoxBar[] _bars; // not an AA because we want to sort it
     Style _ourStyle; // tiebreak in favor of this for sorting
 
 public:
@@ -25,13 +25,12 @@ public:
 
     void update(Score updatedScore)
     {
-        auto found = bars.find!(bar => bar.style == updatedScore.style);
+        auto found = _bars.find!(bar => bar.style == updatedScore.style);
         if (found.length > 0 && found[0].score == updatedScore)
             return;
-
-        ScoreBar toUpdate = found.length > 0 ? found[0] : newScoreBar();
-        toUpdate.update(updatedScore, bars.map!(bar => bar.score.potential)
-                                          .fold!max(updatedScore.potential));
+        NukeBoxBar toUpdate = found.length > 0 ? found[0] : newScoreBar();
+        toUpdate.score = updatedScore;
+        updateMaxPotentials(_bars);
         sortScores();
     }
 
@@ -56,23 +55,49 @@ protected:
     }
 
 private:
-    ScoreBar newScoreBar()
+    NukeBoxBar newScoreBar()
     {
-        bars ~= new ScoreBar(new Geom());
-        addChild(bars[$-1]);
-        foreach (bar; bars)
+        _bars ~= new NukeBoxBar(new Geom());
+        addChild(_bars[$-1]);
+        foreach (bar; _bars)
             bar.resize(xlg - 4 * gui.thickg,
-            (ylg - 4*gui.thickg) / bars.length);
-        return bars[$-1];
+            (ylg - 4*gui.thickg) / _bars.length);
+        return _bars[$-1];
     }
 
     void sortScores()
     {
         reqDraw();
-        bars.sort!((a, b)
+        _bars.sort!((a, b)
             => betterThanPreferringTeam(a.score, b.score, _ourStyle));
-        foreach (int i, ScoreBar bar; bars)
+        foreach (int i, Element bar; _bars)
             bar.move(2 * gui.thickg,
-                2 * gui.thickg + (ylg - 4 * gui.thickg) * i / bars.length);
+                2 * gui.thickg + (ylg - 4 * gui.thickg) * i / _bars.length);
+    }
+}
+
+class NukeBoxBar : SimpleBar {
+public:
+    this(Geom g) { super(g); }
+
+protected:
+    override void drawSelf()
+    {
+        super.drawSelf();
+        if (score.prefersGameToEnd)
+            drawNukeOverlay();
+    }
+
+private:
+    // When a player nukes or has finished playing, mark bar with a square
+    void drawNukeOverlay()
+    {
+        Alcol grey(in float f) pure { return Alcol(f, f, f, 1); }
+        immutable float boxXl = 10 * stretchFactor;
+        draw3DButton(xs, ys, boxXl, yls, // draw a square
+            grey(0.95f), grey(0.8f), grey(0.65f));
+        draw3DButton(xs + gui.thicks, ys + gui.thicks,
+            boxXl - 2*gui.thicks, yls - 2*gui.thicks,
+            grey(0.00f), grey(0.15f), grey(0.3f));
     }
 }

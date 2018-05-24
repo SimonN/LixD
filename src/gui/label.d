@@ -60,8 +60,15 @@ public:
     }
 
     @property number(in int i) { _text  = i.to!string; shorten_text();     }
-    @property color (Alcol  c) { _color = c; reqDraw(); return _color;     }
     @property fixed (bool   b) { _fixed = b; shorten_text(); return b;     }
+    @property Alcol color(in Alcol  c)
+    {
+        if (c == _color)
+            return _color;
+        reqDraw();
+        _color = c;
+        return _color;
+    }
 
     float textLg()         const { return textLg(this._text); }
     float textLg(string s) const

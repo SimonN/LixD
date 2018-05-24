@@ -9,6 +9,8 @@ module game.panel.base;
 import std.algorithm;
 import std.range;
 
+import optional;
+
 import basics.user;
 import basics.globals;
 import game.core.view;
@@ -19,6 +21,7 @@ import game.panel.taperec;
 import game.panel.tooltip;
 import game.tribe;
 import game.score.score;
+import game.score.board;
 import graphic.internal;
 import gui;
 import hardware.keyboard; // we need a different behavior of skill button
@@ -38,9 +41,14 @@ private:
     TapeRecorderButtons _trbs; // contains the singleplayer nuke button
     NukeButton _nukeMulti;
     BitmapButton _coolShades;
-    ScoreGraph _scoreGraph;
+    Optional!ScoreGraph _scoreGraph;
+    Optional!ScoreBoard _scoreBoard; // Can be present and nonetheless hidden.
 
 public:
+    /*
+     * After you create this, add names for the multiplayer score board.
+     * lixRequired is ignored for multiplayer games.
+     */
     this(in View aView, in int lixRequired)
     {
         super(new Geom(0, 0, gui.screenXlg, gui.panelYlg, From.BOTTOM));
@@ -61,13 +69,11 @@ public:
             // We don't have SaveStateButtons in this mode to preserve UI
             // space, and we don't have cool shades to preserve space
             shadesGeom = null;
-            immutable ya = this.ylg * 0.6f;
-            immutable yb = this.ylg - ya;
-            _scoreGraph = new ScoreGraph(
-                    new Geom(0, 0, 4 * skillXl, yb, From.TOP_RIGHT));
+            immutable yTape = this.ylg * 0.6f;
+            makeGraphWithYl(this.ylg - yTape);
             _trbs = new TapeRecorderButtons(
-                    new Geom(0, 0, 4 * skillXl, ya, From.BOTTOM_RIGHT));
-            addChildren(stats, _scoreGraph, _trbs);
+                    new Geom(0, 0, 4 * skillXl, yTape, From.BOTTOM_RIGHT));
+            addChildren(stats, _trbs);
         }
         else if (aView.showTapeRecorderButtons) {
             stats = new InfoBarSingleplayer(barGeom, lixRequired);
@@ -82,13 +88,12 @@ public:
             // Hack: Even if neither score graph or trbs shown, still
             // enter this branch: Show the score graph to fill the void.
             stats = new InfoBarMultiplayer(barGeom);
-            _scoreGraph = new ScoreGraph(new Geom(0, 0, 4 * skillXl,
-                                                  ylg - 20f, From.TOP_RIGHT));
+            makeGraphWithYl(ylg - 20f);
             shadesGeom.from = From.BOTTOM_RIGHT;
             _nukeMulti = new NukeButton(new Geom(skillXl, 0,
                 4 * skillXl - shadesGeom.xlg, 20f, From.BOTTOM_RIGHT),
                 NukeButton.WideDesign.yes);
-            addChildren(stats, _scoreGraph, _nukeMulti);
+            addChildren(stats, _nukeMulti);
         }
 
         // Most modes have cool shades.
@@ -121,12 +126,8 @@ public:
         nuke.on = tr.nukePressed || multiNuking;
         nuke.overtimeRunning = overtimeRunning;
         nuke.overtimeRemainingInPhyus = overtimeRemainingInPhyus;
-        if (_scoreGraph)
-            _scoreGraph.ourStyle = tr.style;
-        /*
-        stats.set_tribe_local(tr);
-        spec_tribe .set_text(tr->get_name());
-        */
+        _scoreGraph.dispatch.ourStyle = tr.style;
+        _scoreBoard.dispatch.ourStyle = tr.style;
         makeCurrent(lastOnForRestoringAfterStateLoad);
     }
 
@@ -148,7 +149,7 @@ public:
     void setSpeedNormal() { if (_trbs) _trbs.setSpeedNormal(); }
     void pause(bool b) { if (_trbs) _trbs.pause(b); }
 
-    @property const {
+    const @property {
         bool paused()             { return _trbs && _trbs.paused; }
         bool speedIsNormal()      { return ! _trbs || _trbs.speedIsNormal; }
         bool speedIsFast()        { return _trbs && _trbs.speedIsFast; }
@@ -174,14 +175,18 @@ public:
     void dontShowSpawnInterval() { stats.dontShowSpawnInterval(); }
     void showSpawnInterval(in int si) { stats.showSpawnInterval(si); }
     void suggestTooltip(in Tooltip.ID id) { stats.suggestTooltip(id); }
+
     @property Phyu age(in Phyu phyu) { return stats.age = phyu; }
 
-    void update(T)(T scoreRange)
-        if (isInputRange!T && is (ElementType!T : const(Score)))
+    void update(in Score score)
     {
-        if (_scoreGraph)
-            foreach (sc; scoreRange)
-                _scoreGraph.update(sc);
+        _scoreGraph.dispatch.update(score);
+        _scoreBoard.dispatch.update(score);
+    }
+
+    void add(Style style, string name)
+    {
+        _scoreBoard.dispatch.add(style, name);
     }
 
 protected:
@@ -199,6 +204,7 @@ protected:
         });
         if (_coolShades && _coolShades.execute)
             _coolShades.on = ! _coolShades.on;
+        showOrHideScoreBoard();
         suggestTooltips();
     }
 
@@ -236,5 +242,36 @@ private:
             suggestTooltip(Tooltip.ID.coolShades);
         foreach (sk; _skills.filter!(sk => sk.isMouseHere).takeOne)
             stats.suggestTooltip(sk.skill);
+    }
+
+    void makeGraphWithYl(in float graphYl)
+    {
+        _scoreGraph = some(new ScoreGraph(
+            new Geom(0, 0, 4 * skillXl, graphYl, From.TOP_RIGHT)));
+        _scoreBoard = some(new ScoreBoard(
+            new Geom(0, this.ylg, 400, 100, From.BOTTOM_RIGHT)));
+
+        import graphic.color;
+        _scoreBoard.unwrap.undrawColor = color.transp;
+        _scoreBoard.unwrap.hide();
+        addChild(_scoreGraph.unwrap);
+        addChild(_scoreBoard.unwrap);
+        showOrHideScoreBoard();
+    }
+
+    void showOrHideScoreBoard()
+    {
+        if (_scoreBoard.empty || _scoreGraph.empty)
+            return;
+        auto sb = _scoreBoard.unwrap;
+        auto sg = _scoreGraph.unwrap;
+        if (! sb.shown && sg.isMouseHere)
+            sb.shown = true;
+        else if (sb.shown && ! sg.isMouseHere) {
+            sb.shown = false;
+            // This is a hack. Ideally, only _scoreBoard's rectangle
+            // should be redrawn with transp, without blending.
+            gui.requireCompleteRedraw();
+        }
     }
 }

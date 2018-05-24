@@ -10,6 +10,8 @@ module game.score.bar;
  * we won't draw all the way to the right anyway.
  */
 
+import std.algorithm;
+
 import basics.alleg5;
 import game.score.score;
 import graphic.color;
@@ -18,16 +20,54 @@ import gui;
 
 package:
 
-class ScoreBar : Element {
+interface ScoreBar {
+    @property Score score() const;
+    @property Score score(in Score sco)
+    out { assert (score.potential <= maxPotential); }
+
+    @property int maxPotential() const;
+    @property int maxPotential(in int maxPot)
+    in { assert (maxPot >= score.potential); }
+    out { assert (score.potential <= maxPotential); }
+
+    final @property Style style() const { return score.style; }
+}
+
+void updateMaxPotentials(T)(T[] arr)
+    if (is (T : ScoreBar))
+{
+    if (arr.length == 0)
+        return;
+    immutable int maxPot = arr.map!(bar => bar.score.potential).fold!max;
+    arr.each!(bar => bar.maxPotential = maxPot);
+}
+
+class SimpleBar : Element, ScoreBar {
 private:
     Score _score;
     int _maxPotential;
 
 public:
     this(Geom g) { super(g); }
-    @property Style style() const { return _score.style; }
-    @property Score score() const { return _score; }
+
     @property int maxPotential() const { return _maxPotential; }
+    @property int maxPotential(in int mp)
+    {
+        if (mp == _maxPotential)
+            return _maxPotential;
+        reqDraw();
+        return _maxPotential = mp;
+    }
+
+    @property Score score() const { return _score; }
+    @property Score score(in Score sc)
+    {
+        if (sc == _score)
+            return _score;
+        reqDraw();
+        _maxPotential = max(sc.potential, _maxPotential);
+        return _score = sc;
+    }
 
     void update(in Score sco, in int maxPot)
     in {
@@ -48,8 +88,6 @@ protected:
         al_draw_filled_rectangle(xs, ys, xs + xls, ys + yls, color.black);
         drawOneBar(1f / 3f, _score.potential);
         drawOneBar(1f, _score.current);
-        if (_score.prefersGameToEnd)
-            drawNukeOverlay();
     }
 
 private:
@@ -65,16 +103,5 @@ private:
             xls * scoreValue / maxPotential,
             yls * ylFactor,
             cols.l, cols.m, cols.d);
-    }
-
-    // When a player nukes or has finished playing, mark bar with a square
-    void drawNukeOverlay()
-    {
-        Alcol grey(in float f) pure { return Alcol(f, f, f, 1); }
-        draw3DButton(xs, ys, yls, yls, // draw a square
-            grey(0.95f), grey(0.8f), grey(0.65f));
-        draw3DButton(xs + gui.thicks, ys + gui.thicks,
-            yls - 2*gui.thicks, yls - 2*gui.thicks,
-            grey(0.00f), grey(0.15f), grey(0.3f));
     }
 }
