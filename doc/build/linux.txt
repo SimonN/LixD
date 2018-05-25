@@ -80,10 +80,10 @@ at a later time, invoke dub again, or run:
 
     ./bin/lix
 
-If the debugging version compiles, links, and runs with no problems, you
-might want to build a release version for better performance:
+If the debugging version compiles, links, and runs with no problems,
+build a release version for performance:
 
-    dub build -b release-nobounds
+    dub build -b release
 
 
 

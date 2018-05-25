@@ -132,12 +132,14 @@ It should build the game, finding and linking against the Allegro 5 libraries
 in the progress.
 
 If the game starts and runs without errors, compile a release build
-for maximum performance:
+for performance:
 
-    dub build -b release-nobounds
+    dub build -b release
 
 This takes longer to build. In case of a crash, you won't get a good
 crash report either. Non-fatal errors go to ./data/log.txt.
+Instead of entering the build command in the shell, you can double-click
+./win-build.bat to build a release version.
 
 
 

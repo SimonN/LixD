@@ -3,6 +3,7 @@
 # build tool autogenerations
 /.dub
 /dub.selections.json
+/dub_platform_probe-*
 
 # built binaries
 /bin/*

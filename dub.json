@@ -10,7 +10,7 @@
     "workingDirectory": "./",
 
     "dependencies": {
-        "allegro": "~>4.0",
+        "allegro": ">=4.0.2",
         "enumap": ">=0.4.2",
         "derelict-enet": "~>2.0.0",
         "optional": ">=0.4.1",
@@ -24,6 +24,9 @@
         "allegro_image",
         "allegro_primitives",
     ],
+    "libs-ldc": ["allegro_color"],
+    "libs-ldc2": ["allegro_color"],
+
     "libs-linux": ["allegro-5"],
     "libs-dragonflybsd": ["allegro-5"],
     "libs-freebsd": ["allegro-5"],
