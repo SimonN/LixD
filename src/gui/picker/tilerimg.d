@@ -2,6 +2,7 @@ module gui.picker.tilerimg;
 
 // this is used in the editor's terrain browser.
 
+import std.algorithm;
 import std.conv;
 import std.range;
 import std.string;
@@ -33,9 +34,14 @@ protected:
     override TextButton newDirButton(Filename fn)
     {
         assert (fn);
+        // We want to print the innermost two dirs.
+        auto head = fn.rootless.representation.retro;
+        head.findSkip("/");
+        head.findSkip("/");
+        head = head.find("/");
         return new TextButton(new Geom(0, 0,
             xlg / buttonsPerPageX * dirSizeMultiplier,
-            ylg / buttonsPerPageY), fn.dirInnermost);
+            ylg / buttonsPerPageY), fn.rootless[head.length .. $]);
     }
 
     override ButtonType newFileButton(Filename fn, in int fileID)

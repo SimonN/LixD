@@ -116,6 +116,11 @@ protected:
     final override void sortFiles(MutFilename[] arr) const { arr.sort!fnLessThan; }
 }
 
+/*
+ * OrderFileLs is for level directories.
+ * Level directories may be ordered by a separate file named
+ * basics.globals.fileLevelDirOrder that sits in the to-be-ordered dir.
+ */
 class OrderFileLs : Ls {
 private:
     string[] _order;

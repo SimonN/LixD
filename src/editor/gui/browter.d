@@ -1,9 +1,12 @@
 module editor.gui.browter;
 
 import std.algorithm;
+import std.conv;
+import std.string : representation;
 
 import optional;
 
+import basics.help : len;
 import basics.globals;
 import basics.user;
 import editor.hover;
@@ -13,7 +16,10 @@ import gui;
 import gui.picker;
 import hardware.mouse;
 
-enum MergeAllDirs : bool { no = false, yes = true }
+enum MergeDirs : int {
+    depthTwo = 1,
+    allIntoRoot = 2,
+}
 
 class TerrainBrowser : Window {
 private:
@@ -23,7 +29,7 @@ private:
     MutFilename _chosenTile; // null until we're good to exit
 
 public:
-    this(string allowedPreExts, UserOptionFilename curDir, MergeAllDirs merge,
+    this(string allowedPreExts, UserOptionFilename curDir, MergeDirs merge,
         /*
          * If this array contains at least one hover that points to a tile
          * with an allowed pre-extension, the first such tile in the hover
@@ -35,10 +41,9 @@ public:
         _curDir = curDir;
         super(new Geom(0, 0, gui.screenXlg, gui.mapYlg, From.TOP),
             _curDir.lang.transl);
-        _picker = merge ? makePicker!true(allowedPreExts)
-                        : makePicker!false(allowedPreExts);
-        _picker.currentDir = merge ? dirImages
-            : suitableDir(allHoveredTiles, allowedPreExts).or(_curDir.value);
+        _picker = makePicker(allowedPreExts, merge);
+        _picker.currentDir = merge == MergeDirs.allIntoRoot ? dirImages
+            : suitableDepthTwoDir(allHoveredTiles, allowedPreExts);
         _cancel = new TextButton(new Geom(
             20, 40, 80, 30, From.TOP_RIGHT), Lang.commonCancel.transl);
         _cancel.hotkey = keyMenuExit;
@@ -59,29 +64,50 @@ public:
     }
 
 private:
-    Picker makePicker(bool merge)(string allowedPreExts)
+    Picker makePicker(string allowedPreExts, MergeDirs merge)
     {
-        static if (merge) {
+        void commonCfgCode(T)(ref T cfg)
+        {
+            cfg.all   = new Geom(20, 40, xlg-40, ylg-60);
+            cfg.bread = new Geom(0, 0, cfg.all.xl - 80, 30);
+            cfg.files = new Geom(0, 40, cfg.all.xl, cfg.all.yl - 40);
+            cfg.baseDir = dirImages;
+            cfg.onFileSelect = (Filename fn) { _chosenTile = fn; };
+        }
+        final switch (merge) {
+        case MergeDirs.allIntoRoot:
             auto cfg = PickerConfig!(ImageTiler!GadgetBrowserButton)();
-            cfg.ls  = new RecursingImageLs(allowedPreExts);
+            cfg.ls = new MergeAllDirsLs(allowedPreExts);
+            commonCfgCode(cfg);
+            return new Picker(cfg);
+        case MergeDirs.depthTwo:
+            auto cfg = PickerConfig!(ImageTiler!TerrainBrowserButton)();
+            cfg.ls = new TilesetLs(dirImages, allowedPreExts);
+            commonCfgCode(cfg);
+            return new Picker(cfg);
         }
-        else {
-            auto cfg  = PickerConfig!(ImageTiler!TerrainBrowserButton)();
-            cfg.ls = new ImageLs(allowedPreExts);
-        }
-        cfg.all   = new Geom(20, 40, xlg-40, ylg-60);
-        cfg.bread = new Geom(0, 0, cfg.all.xl - 80, 30);
-        cfg.files = new Geom(0, 40, cfg.all.xl, cfg.all.yl - 40);
-        cfg.baseDir = dirImages;
-        cfg.onFileSelect = (Filename fn) { _chosenTile = fn; };
-        return new Picker(cfg);
     }
 
-    Optional!Filename suitableDir(
+    Filename suitableDepthTwoDir(
         const(Hover)[] allHoveredTiles,
         string allowedPreExts
-    ) {
-        bool suitableTile(in Hover hov)
+    ) const
+    {
+        // Return either dirImages or exactly a 2-depth subdir.
+        Filename makeSuitable(Filename candidate)
+        {
+            const string full = candidate.rootless;
+            if (full.length < dirImages.rootless.length)
+                return dirImages;
+            assert (dirImages.rootless[$-1] == '/');
+            auto tail = full[dirImages.rootless.length .. $].representation;
+            if (tail.count('/') < 2)
+                return dirImages;
+            tail.findSkip("/");
+            tail.findSkip("/");
+            return new VfsFilename(full[0 .. full.length - tail.length]);
+        }
+        bool allowedTile(in Hover hov)
         {
             auto name = hov.occ.tile.name;
             if (name.length < 2)
@@ -91,8 +117,8 @@ private:
             return allowedPreExts.canFind(name[$-1])
                 || allowedPreExts.canFind('\0') && name[$-2] != '.';
         }
-        auto ret = allHoveredTiles.find!suitableTile;
-        return ret.length == 0 ? no!Filename : some!Filename(
-            new VfsFilename(dirImages.rootless ~ ret[0].occ.tile.name));
+        auto ret = allHoveredTiles.find!allowedTile;
+        return makeSuitable(ret.length == 0 ? _curDir.value
+            : new VfsFilename(dirImages.rootless ~ ret[0].occ.tile.name));
     }
 }

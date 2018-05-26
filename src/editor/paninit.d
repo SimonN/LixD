@@ -139,12 +139,12 @@ void makePanel(Editor editor)
         // will irritate users. If you don't click something, you haven't done
         // anything, you shouldn't affect the browser's starting directory.
         mixin (mkBrowser!("Terrain",
-            "[0], editorLastDirTerrain, MergeAllDirs.no, editor._selection"));
+            "[0], editorLastDirTerrain, MergeDirs.depthTwo, editor._selection"));
         mixin (mkBrowser!("Steel",
-            "[preExtSteel], editorLastDirSteel, MergeAllDirs.no, editor._selection"));
-        mixin (mkBrowser!("Hatch", "[preExtHatch], editorLastDirHatch, MergeAllDirs.yes, null"));
-        mixin (mkBrowser!("Goal", "[preExtGoal], editorLastDirGoal, MergeAllDirs.yes, null"));
-        mixin (mkBrowser!("Hazard", "['W','T','F'], editorLastDirHazard, MergeAllDirs.yes, null"));
+            "[preExtSteel], editorLastDirSteel, MergeDirs.depthTwo, editor._selection"));
+        mixin (mkBrowser!("Hatch", "[preExtHatch], editorLastDirHatch, MergeDirs.allIntoRoot, null"));
+        mixin (mkBrowser!("Goal", "[preExtGoal], editorLastDirGoal, MergeDirs.allIntoRoot, null"));
+        mixin (mkBrowser!("Hazard", "['W','T','F'], editorLastDirHazard, MergeDirs.allIntoRoot, null"));
     }
 }
 
