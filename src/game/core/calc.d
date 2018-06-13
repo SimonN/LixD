@@ -70,7 +70,7 @@ void atEndOfGame(Game game) { with (game)
     if (! _effect.nothingGoingOn)
         return;
     // Physics and animations are finished, there is nothing else to see
-    if (multiplayer || singleplayerHasWon)
+    if (multiplayer || singleplayerHasWon || singleplayerHasNuked)
         _gotoMainMenu = true;
     if (view.printResultToConsole)
         _chatArea.printScores(nurse.scores, nurse.constReplay, localStyle);

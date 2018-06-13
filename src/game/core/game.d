@@ -284,10 +284,15 @@ package:
         altickLastPhyu = timerTicks;
     }
 
-    bool singleplayerHasWon() const
+    @property bool singleplayerHasWon() const
     {
         return ! multiplayer && nurse && level
             && nurse.singleplayerHasSavedAtLeast(level.required);
+    }
+
+    @property bool singleplayerHasNuked() const
+    {
+        return ! multiplayer && nurse && level && nurse.singleplayerHasNuked;
     }
 
 private:

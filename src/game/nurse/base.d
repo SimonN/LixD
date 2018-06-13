@@ -78,6 +78,11 @@ public:
         return cs.singleplayerHasSavedAtLeast(lixRequired);
     }
 
+    @property bool singleplayerHasNuked() const
+    {
+        return cs.singleplayerHasNuked();
+    }
+
     final @property auto scores() const
     {
         return cs.tribes.byValue.map!(tr => tr.score);

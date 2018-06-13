@@ -105,6 +105,11 @@ public:
             && tribes.byValue.front.score.current >= lixRequired;
     }
 
+    @property bool singleplayerHasNuked() const @nogc
+    {
+        return ! multiplayer && tribes.byValue.front.nukePressed;
+    }
+
     @property bool overtimeRunning() const
     in { assert (tribes.length > 0); }
     body{
