@@ -1,15 +1,13 @@
-$BUILT 2016-07-26 23:28:49
+$BUILT 2018-06-29 23:18:09
 $AUTHOR Michael S. Repton
 $ENGLISH Behind Bars
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1920
 #SIZE_Y 400
-#START_X 650
-#START_Y 380
 
-#INITIAL 10
-#REQUIRED 7
+#INITIAL 12
+#REQUIRED 8
 #SPAWN_INTERVAL 55
 
 #CLIMBER 6
@@ -23,9 +21,6 @@ $ENGLISH Behind Bars
 
 :matt/marble/Goal.G: 928 128
 
-:matt/goldmine/shovel: 496 312
-:matt/goldmine/pickaxe: 464 312
-
 :simon/water.W: 48 368
 :simon/water.W: 96 368
 :simon/water.W: 144 368
@@ -35,6 +30,8 @@ $ENGLISH Behind Bars
 :simon/water.W: 1568 360
 :simon/water.W: 1616 360
 
+:matt/goldmine/shovel: 496 312
+:matt/goldmine/pickaxe: 464 312
 :matt/marble/21d: 64 304
 :matt/marble/22d: 112 304 f
 :matt/marble/22d: 160 352 f

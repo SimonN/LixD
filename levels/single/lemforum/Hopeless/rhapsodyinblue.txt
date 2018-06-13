@@ -1,17 +1,10 @@
-$BUILT 2014-01-26 15:42:18
+$BUILT 2018-06-17 09:59:22
 $AUTHOR Michael S. Repton
-$GERMAN 
 $ENGLISH Rhapsody in Blue
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1440
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 320
-#START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #INITIAL 80
 #REQUIRED 78
@@ -25,22 +18,18 @@ $ENGLISH Rhapsody in Blue
 #BASHER 2
 #MINER 2
 #DIGGER 2
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 
 :geoo/construction/Hatch.H: 544 144
 
 :proxima/tile/goal.G: 1120 176
 
-:matt/10tons.T: 616 200
-:matt/10tons.T: 648 200
-:matt/10tons.T: 680 200
-:matt/10tons.T: 712 200
-:matt/10tons.T: 744 200
-:matt/10tons.T: 776 200
-:matt/10tons.T: 808 200
+:matt/10tons.T: 615 200
+:matt/10tons.T: 647 200
+:matt/10tons.T: 679 200
+:matt/10tons.T: 711 200
+:matt/10tons.T: 743 200
+:matt/10tons.T: 775 200
+:matt/10tons.T: 807 200
 
 :simon/crystal.W: 0 352
 :simon/crystal.W: 48 352
@@ -116,13 +105,13 @@ $ENGLISH Rhapsody in Blue
 :proxima/tile/cyan1: 800 272
 :proxima/tile/64.S: 800 240
 :proxima/tile/cyan1: 800 336
-:proxima/tile/spheres/bluesmall: 624 168
-:proxima/tile/spheres/bluesmall: 656 168
-:proxima/tile/spheres/bluesmall: 688 168
-:proxima/tile/spheres/bluesmall: 720 168
-:proxima/tile/spheres/bluesmall: 752 168
-:proxima/tile/spheres/bluesmall: 784 168
-:proxima/tile/spheres/bluesmall: 816 168
+:proxima/tile/spheres/bluesmall: 624 169
+:proxima/tile/spheres/bluesmall: 656 169
+:proxima/tile/spheres/bluesmall: 688 169
+:proxima/tile/spheres/bluesmall: 720 169
+:proxima/tile/spheres/bluesmall: 752 169
+:proxima/tile/spheres/bluesmall: 784 169
+:proxima/tile/spheres/bluesmall: 816 169
 :geoo/abstract/pipes/central4: 732 138 rrr
 :geoo/abstract/pipes/central4: 636 138 rrr
 :geoo/abstract/pipes/central4: 668 138 rrr

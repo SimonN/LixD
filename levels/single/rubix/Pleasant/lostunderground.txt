@@ -1,4 +1,4 @@
-$BUILT 2015-08-22 09:21:44
+$BUILT 2018-06-22 20:27:33
 $AUTHOR Rubix
 $ENGLISH Lost underground
 
@@ -47,6 +47,7 @@ $ENGLISH Lost underground
 :matt/goldmine/crate64: 592 160
 :matt/goldmine/crate64: 592 96
 :matt/goldmine/04: 16 -80 r
+:matt/goldmine/00: 192 -48 rr
 :matt/goldmine/04: 128 -16 r
 :matt/goldmine/04: 348 117 r
 :matt/goldmine/crate64: 592 32
