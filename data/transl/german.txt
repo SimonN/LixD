@@ -1,6 +1,12 @@
 ﻿// See `english.txt' for instructions on how to translate the game.
 $mainNameOfLanguage Deutsch
 
+// English opening quote: “
+// English closing quote: ”
+// German opening quote: „
+// German closing quote: “ (this closing quote is the English opening quote)
+// File/shell output: " (ASCII double quote, both opening and closing)
+
 // Verschiedene Dialoge
 $commonOk Okay
 $commonCancel Abbrechen
@@ -33,10 +39,10 @@ $browserReplayPointedTo Verwiesener Level
 $browserReplayVerifyDir Ordner verifizieren
 
 $winVerifyTitle Replay-Verifizierer
-$winVerifyOutputWrittenTo Ausgabe auch in `%s'. Klicke, um zurückzukehren.
+$winVerifyOutputWrittenTo Ausgabe auch in „%s“. Klicke, um zurückzukehren.
 $verifyHeader Ergebnis,Replay,Level,Spieler,Gerettet,Ziel,Fähigkeiten,Phyus
 $verifyStatisticsFrom Statistiken über %d Replays:
-$verifyTrophiesUpdated %d Trophäen für Spieler `%s' aktualisiert.
+$verifyTrophiesUpdated %d Trophäen für %s aktualisiert.
 $verifyLevelsNoProof Diesen %d Levels fehlen Beweise:
 $verifyDirectoryCoverage Ordner-Abdeckung:
 $verifyAllLevelsCovered Alle %d Levels sind lösbar.
@@ -57,8 +63,8 @@ $harvestTrophyImproved Neue Bestleistung!
 $harvestReplayAutoSaved Replay gespeichert.
 $harvestReplaySaveManually Manuell speichern
 
-$previewMissingTiles fehlende Stücke:
-$previewMissingTilesMoreSee weitere, siehe
+$previewMissingTiles %d fehlende Stücke:
+$previewMissingTilesMoreSee und %d weitere, siehe „%s“
 
 $winSearchTitle Levelsuche
 $winSearchPrompt Suche nach Titel, Autor oder Dateiname in %d Levels:

@@ -156,11 +156,7 @@ private:
 
     void updatePrompt()
     {
-        try
-            _prompt.text = format(Lang.winSearchPrompt.transl,
-                _database.length);
-        catch (Exception)
-            _prompt.text = Lang.winSearchPrompt.transl;
+        _prompt.text = Lang.winSearchPrompt.translf(_database.length);
     }
 }
 

@@ -1,5 +1,11 @@
 // Translations file for Lix
 
+// English opening quote: “
+// English closing quote: ”
+// German opening quote: „
+// German closing quote: “ (this closing quote is the English opening quote)
+// File/shell output: " (ASCII double quote, both opening and closing)
+
 // mainNameOfLanguage: This is how your translated language appears in the
 // options dialogue. Translate this to your language ("Deutsch" or "Français"),
 // don't have your language's name in English (don't put "German" or "French")
@@ -37,10 +43,10 @@ $browserReplayPointedTo Pointed-to level
 $browserReplayVerifyDir Verify directory
 
 $winVerifyTitle Replay Verifier
-$winVerifyOutputWrittenTo Output written to `%s'. Click to return.
+$winVerifyOutputWrittenTo Output written to “%s”. Click to return.
 $verifyHeader Result,Replay,Level,Player,Saved,Required,Skills,Phyus
 $verifyStatisticsFrom Statistics from %d replays:
-$verifyTrophiesUpdated %d trophies for player `%s' updated.
+$verifyTrophiesUpdated %d trophies for %s updated.
 $verifyLevelsNoProof These %d levels have no proof:
 $verifyDirectoryCoverage Directory coverage:
 $verifyAllLevelsCovered All %d levels are solvable.
@@ -61,13 +67,8 @@ $harvestTrophyImproved New personal best!
 $harvestReplayAutoSaved Replay saved.
 $harvestReplaySaveManually Save manually
 
-// Report missing tiles in the preview. Example rendering:
-// 5 missing tiles:
-// (name of first tile)
-// (name of second tile)
-// 3 more, see `./data/log.txt'
-$previewMissingTiles missing tiles:
-$previewMissingTilesMoreSee more, see
+$previewMissingTiles %d missing tiles:
+$previewMissingTilesMoreSee and %d more, see “%s”
 
 $winSearchTitle Level Search
 $winSearchPrompt Search by title, author, or filename in %d levels:

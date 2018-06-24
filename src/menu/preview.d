@@ -121,8 +121,7 @@ private:
         _mtl.resize(xlg - 2 * thickg - 2 * iconTorus.xl / stretchFactor, 20);
         _mtl.move(iconTorus.xl / stretchFactor + thickg,
                   iconTorus.yl / stretchFactor / 2f - 10);
-        _mtl.text = format!"%d %s"(_missingTiles.length,
-            Lang.previewMissingTiles.transl);
+        _mtl.text = Lang.previewMissingTiles.translf(_missingTiles.length);
         _mtl.draw();
 
         int i = 0; // number of tiles reported
@@ -139,9 +138,8 @@ private:
             _mtl.resize(xlg - 2*thickg - 2*iconTorus.xl/stretchFactor, 20);
             _mtl.move(iconTorus.xl / stretchFactor + thickg,
                       this.ylg - 10 - iconTorus.yl / stretchFactor / 2f);
-            _mtl.text = format!"%d %s `%s'"(
-                _missingTiles.length - i,
-                Lang.previewMissingTilesMoreSee.transl,  fileLog.rootless);
+            _mtl.text = Lang.previewMissingTilesMoreSee.translf(
+                _missingTiles.length - i, fileLog.rootless);
             _mtl.draw();
         }
     }
