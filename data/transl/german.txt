@@ -78,7 +78,7 @@ $winLobbyStartConnect Verbinden
 $winLobbyChat Chat:
 $winLobbySelectLevel Level wählen
 $winLobbyReady Bereit zum Start
-$winLobbyRoomNumber Raum Nr.
+$winLobbyRoomNumber Raum Nr. %d
 $winLobbyRoomCreate Raum eröffnen
 $winLobbyRoomLeave Raum verlassen
 
@@ -228,24 +228,20 @@ $netChatStartCancel Verbindungsaufbau abgebrochen.
 $netChatYouLoggedOut Du hast das Netzwerk verlassen.
 $netChatYouCannotConnect Server nicht gefunden.
 $netChatYouLostConnection Verbindung zum Server verloren!
-$netChatPeerDisconnected hat das Netzwerk verlassen.
+$netChatPeerDisconnected %s hat das Netzwerk verlassen.
 $netChatWeTooOld Deine Lix-Version ist zu alt, um verbinden zu können.
 $netChatWeTooNew Deine Lix-Version ist zu neu, um verbinden zu können.
-$netChatWeInRoom Du hast Raum Nr.
-$netChatWeInRoom2 betreten.
+$netChatWeInRoom Du hast Raum Nr. %d betreten.
 $netChatWeInLobby Du bist in der Lobby.
-$netChatPlayerInRoom hat Raum Nr.
-$netChatPlayerInRoom2 betreten.
-$netChatPlayerInLobby hat die Lobby betreten.
-$netChatPlayerOutRoom wechselt in Raum Nr.
-$netChatPlayerOutRoom2 .
-$netChatPlayerOutLobby hat den Raum verlassen.
+$netChatPlayerInRoom %s hat Raum Nr. %d betreten.
+$netChatPlayerInLobby %s hat die Lobby betreten.
+$netChatPlayerOutRoom %s wechselt in Raum Nr. %d.
+$netChatPlayerOutLobby %s hat den Raum verlassen.
 $netChatVersionYours Deine Version ist
 $netChatVersionServer Der Server verlangt
 $netChatPleaseDownload Lade die neueste Version herunter:
-$netChatLevelChange hat diesen Level gewählt:
-$netGameHowToChat1 Du kannst mit [
-$netGameHowToChat2 ] chatten.
+$netChatLevelChange %s hat „%s“ gewählt.
+$netGameHowToChat Du kannst mit [%s] chatten.
 $netGameEnd Das Spiel ist zu Ende.
 $netGameEndResult Spielergebnis:
 $netGameOvertimeNukeIn Die Nachspielzeit läuft! Atombombe in

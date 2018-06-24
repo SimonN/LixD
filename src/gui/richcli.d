@@ -105,7 +105,7 @@ public:
     {
         _inner.onChatMessage = delegate void(string name, string chat)
         {
-           _console.addWhite("%s: %s".format(name, chat));
+            _console.addWhite("%s: %s".format(name, chat));
             if (f)
                 f(name, chat);
         };
@@ -115,8 +115,7 @@ public:
     {
         _inner.onPeerDisconnect = delegate void(string name)
         {
-            _console.add("%s %s".format(name,
-                                        Lang.netChatPeerDisconnected.transl));
+            _console.add(Lang.netChatPeerDisconnected.translf(name));
             if (f)
                 f(name);
         };
@@ -124,18 +123,14 @@ public:
 
     @property void onPeerJoinsRoom(void delegate(const(Profile*)) f)
     {
-        _inner.onPeerJoinsRoom = delegate void(const(Profile*) profile)
+        _inner.onPeerJoinsRoom = delegate void(const(Profile*) prof)
         {
-            assert (profile, "the network shouldn't send null pointers");
-            if (profile.room == 0)
-                _console.add("%s %s".format(profile.name,
-                    Lang.netChatPlayerInLobby.transl));
-            else
-                _console.add("%s %s%d%s".format(profile.name,
-                    Lang.netChatPlayerInRoom.transl, profile.room,
-                    Lang.netChatPlayerInRoom2.transl));
+            assert (prof, "the network shouldn't send null pointers");
+            _console.add(prof.room == 0
+                ? Lang.netChatPlayerInLobby.translf(prof.name)
+                : Lang.netChatPlayerInRoom.translf(prof.name, prof.room));
             if (f)
-                f(profile);
+                f(prof);
         };
     }
 
@@ -143,13 +138,9 @@ public:
     {
         _inner.onPeerLeavesRoomTo = delegate void(string name, Room toRoom)
         {
-            if (toRoom == 0)
-                _console.add("%s %s".format(name,
-                    Lang.netChatPlayerOutLobby.transl));
-            else
-                _console.add("%s %s%d%s".format(name,
-                    Lang.netChatPlayerOutRoom.transl, toRoom,
-                    Lang.netChatPlayerOutRoom2.transl));
+            _console.add(toRoom == 0
+                ? Lang.netChatPlayerOutLobby.translf(name)
+                : Lang.netChatPlayerOutRoom.translf(name, toRoom));
             if (f)
                 f(name, toRoom);
         };
@@ -160,8 +151,7 @@ public:
         _inner.onWeChangeRoom = delegate void(Room toRoom)
         {
             _console.add(toRoom != 0
-                ? "%s%d%s".format(Lang.netChatWeInRoom.transl, toRoom,
-                                  Lang.netChatWeInRoom2.transl)
+                ? Lang.netChatWeInRoom.translf(toRoom)
                 : Lang.netChatWeInLobby.transl);
             if (f)
                 f(toRoom);

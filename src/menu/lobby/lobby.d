@@ -366,8 +366,8 @@ private:
         {
             refreshPeerList();
             _preview.level = _netClient.level;
-            _console.add("%s %s %s".format(senderName,
-                Lang.netChatLevelChange.transl, _netClient.level.name));
+            _console.add(Lang.netChatLevelChange.translf(
+                senderName, _netClient.level.name));
             playLoud(Sound.pageTurn);
         };
 
@@ -375,8 +375,7 @@ private:
         {
             refreshPeerList();
             destroyBrowser(); // Observers got stuck in their browser otherwise
-            _console.add("%s%s%s".format(Lang.netGameHowToChat1.transl,
-                keyChat.nameLong, Lang.netGameHowToChat2.transl));
+            _console.add(Lang.netGameHowToChat.translf(keyChat.nameLong));
             _gotoGame = true;
         };
     }

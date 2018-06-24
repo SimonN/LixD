@@ -82,7 +82,7 @@ $winLobbyStartConnect Connect
 $winLobbyChat Chat:
 $winLobbySelectLevel Choose level
 $winLobbyReady Ready to start
-$winLobbyRoomNumber Room #
+$winLobbyRoomNumber Room #%d
 $winLobbyRoomCreate Open a new room
 $winLobbyRoomLeave Leave room
 
@@ -240,24 +240,20 @@ $netChatStartCancel Connection attempt cancelled.
 $netChatYouLoggedOut You left the network.
 $netChatYouCannotConnect Server not found.
 $netChatYouLostConnection Connection to server lost!
-$netChatPeerDisconnected left the network.
+$netChatPeerDisconnected %s left the network.
 $netChatWeTooOld You have too old a Lix version to connect to the server.
 $netChatWeTooNew You have too new a Lix version. The server should upgrade.
 $netChatVersionYours Your version is
 $netChatVersionServer The server requires
 $netChatPleaseDownload Download the newest version:
-$netChatWeInRoom You have entered room #
-$netChatWeInRoom2 .
+$netChatWeInRoom You have entered room #%d.
 $netChatWeInLobby You are in the lobby.
-$netChatPlayerInRoom has joined room #
-$netChatPlayerInRoom2 .
-$netChatPlayerInLobby has entered the lobby.
-$netChatPlayerOutRoom has entered room #
-$netChatPlayerOutRoom2 .
-$netChatPlayerOutLobby has left the room.
-$netChatLevelChange has selected this level:
-$netGameHowToChat1 Press [
-$netGameHowToChat2 ] to chat.
+$netChatPlayerInRoom %s has joined room #%d.
+$netChatPlayerInLobby %s has entered the lobby.
+$netChatPlayerOutRoom %s has entered room #%d.
+$netChatPlayerOutLobby %s has left the room.
+$netChatLevelChange %s has selected “%s”.
+$netGameHowToChat Press [%s] to chat.
 $netGameEnd The game is over.
 $netGameEndResult Game outcome:
 $netGameOvertimeNukeIn Overtime is running! Nuke in
