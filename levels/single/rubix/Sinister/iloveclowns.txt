@@ -1,34 +1,25 @@
-$BUILT 2014-02-27 10:56:53
+$BUILT 2018-06-25 00:34:23
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH I love clowns!
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #BACKGROUND_RED 0
 #BACKGROUND_GREEN 127
 #BACKGROUND_BLUE 255
 
-#SECONDS 90
 #INITIAL 8
 #REQUIRED 8
 #SPAWN_INTERVAL 24
-#SPAWN_INTERVAL_FAST 4
 
-#NOTHING 0
+#RUNNER 8
 #CLIMBER 8
 #FLOATER 8
-#EXPLODER 8
 #BLOCKER 8
-#RUNNER 8
 #BUILDER 2
 #BASHER 1
-#CUBER 8
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#EXPLODER 0
 
 :matt/carnival/Hatch.H: 304 16
 
@@ -44,6 +35,7 @@ $ENGLISH I love clowns!
 :simon/water.W: 496 352
 :simon/water.W: 544 352
 
+:matt/carnival/21: 24 62 frr
 :matt/carnival/24: 48 224
 :matt/carnival/26: 480 176 frr
 :matt/carnival/26: 416 112 frr
@@ -105,7 +97,6 @@ $ENGLISH I love clowns!
 :matt/carnival/18: 336 0
 :matt/carnival/42: 496 0
 :matt/carnival/41: 528 0
-:matt/carnival/21: 24 62 frrn
 :matt/carnival/20: 24 110 rr
 :matt/carnival/13: 88 142
 :matt/carnival/13: 88 126

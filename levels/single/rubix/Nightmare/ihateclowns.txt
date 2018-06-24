@@ -1,34 +1,26 @@
-$BUILT 2014-02-25 12:05:33
+$BUILT 2018-06-25 00:37:26
 $AUTHOR Rubix
-$GERMAN 
 $ENGLISH I Hate Clowns!
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
 #BACKGROUND_RED 0
 #BACKGROUND_GREEN 127
 #BACKGROUND_BLUE 255
 
-#SECONDS 85
 #INITIAL 8
 #REQUIRED 8
 #SPAWN_INTERVAL 24
-#SPAWN_INTERVAL_FAST 4
 
-#JUMPER 2
+#RUNNER 8
 #CLIMBER 8
 #FLOATER 8
-#EXPLODER 8
 #BLOCKER 8
-#RUNNER 8
 #BUILDER 2
 #BASHER 1
-#CUBER 8
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#JUMPER 2
+#EXPLODER 0
 
 :matt/carnival/Hatch.H: 304 16
 
@@ -49,6 +41,7 @@ $ENGLISH I Hate Clowns!
 :geoo/construction/sawblade_small.F: 336 112
 :geoo/construction/sawblade_small.F: 240 272
 
+:matt/carnival/21: 24 62 frr
 :matt/carnival/31: 488 290 f
 :matt/carnival/24: 48 224
 :matt/carnival/26: 480 176 frr
@@ -111,7 +104,6 @@ $ENGLISH I Hate Clowns!
 :matt/carnival/18: 336 0
 :matt/carnival/42: 496 0
 :matt/carnival/41: 528 0
-:matt/carnival/21: 24 62 frrn
 :matt/carnival/20: 24 110 rr
 :matt/carnival/13: 88 142
 :matt/carnival/13: 88 126

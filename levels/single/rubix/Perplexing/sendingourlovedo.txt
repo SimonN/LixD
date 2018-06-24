@@ -1,4 +1,4 @@
-$BUILT 2016-09-18 15:17:16
+$BUILT 2018-06-25 00:35:52
 $AUTHOR Rubix
 $ENGLISH Sending our love down the well
 
@@ -12,14 +12,13 @@ $ENGLISH Sending our love down the well
 
 #CLIMBER 10
 #FLOATER 10
-#EXPLODER2 10
 #BLOCKER 10
 #PLATFORMER 1
 #BASHER 1
 #DIGGER 1
 #JUMPER 17
 #BATTER 1
-#CUBER 10
+#EXPLODER2 0
 
 :matt/goldmine/Hatch.H: -32 112
 

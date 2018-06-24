@@ -1,36 +1,19 @@
-$BUILT 2014-06-08 16:21:39
+$BUILT 2018-06-25 00:28:55
 $AUTHOR Clam
-$GERMAN 
 $ENGLISH Falling Forever
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 320
 #TORUS_X 0
 #TORUS_Y 1
-#START_X 0
-#START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
-#SECONDS 0
 #INITIAL 10
 #REQUIRED 8
 #SPAWN_INTERVAL 18
-#SPAWN_INTERVAL_FAST 4
 
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 #FLOATER 10
-#EXPLODER2 10
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
+#EXPLODER2 2
 
 :geoo/construction/Hatch.H: 296 80
 :geoo/construction/Hatch.H: 312 240 r
@@ -38,12 +21,62 @@ $ENGLISH Falling Forever
 :matt/earth/Goal.G: 360 160
 :matt/earth/Goal.G: 216 0
 
-:matt/earth/10: -40 264 rrr
-:matt/earth/10: -40 104 rrr
-:matt/earth/10: 24 192 rrr
-:matt/earth/10: 24 32 rrr
-:matt/earth/10: 88 128 rrr
-:matt/earth/10: 88 280 rrr
+:matt/goldmine/plank: 512 232
+$BEGIN_TILE_GROUP 0
+:matt/earth/10: 128 16 r
+:matt/earth/10: 128 176 r
+:matt/earth/10: 72 94 r
+:matt/earth/10: 64 264 r
+:matt/earth/10: 0 0 r
+:matt/earth/10: 0 152 r
+:matt/goldmine/plank: 104 200 rrr
+:matt/goldmine/plank: 112 200 rrr
+:matt/goldmine/plank: 104 56 rrr
+:matt/goldmine/plank: 112 56 rrr
+:matt/marble/20: 104 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:matt/goldmine/plank: 112 264 fr
+:matt/goldmine/plank: 104 264 fr
+:Group-0: 0 0
+:matt/goldmine/plank: 24 184
+:matt/goldmine/plank: 144 184 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:matt/goldmine/plank: 72 184
+:Group-1: 0 0
+:matt/goldmine/plank: 24 192
+:matt/goldmine/plank: 144 192 d
+$END_TILE_GROUP
+:Group-2: 440 40
+:matt/goldmine/plank: 88 144 fr
+:matt/goldmine/plank: 80 144 fr
+$BEGIN_TILE_GROUP 3
+:matt/earth/10: 32 232 rrr
+:matt/earth/10: 32 72 rrr
+:matt/earth/10: 96 160 rrr
+:matt/earth/10: 96 0 rrr
+:matt/earth/10: 160 96 rrr
+:matt/earth/10: 160 248 rrr
+:matt/goldmine/plank: 120 32
+:matt/goldmine/plank: 0 32 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 4
+:matt/goldmine/plank: 72 32
+:Group-3: 32 0
+:matt/goldmine/plank: 120 40
+:matt/goldmine/plank: 0 40 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 5
+:matt/goldmine/plank: 40 40
+:Group-4: 0 0
+:matt/goldmine/plank: 120 48 rrr
+:matt/goldmine/plank: 128 48 rrr
+:matt/goldmine/plank: 120 224 rrr
+:matt/goldmine/plank: 128 224 rrr
+:matt/marble/20: 120 168 d
+$END_TILE_GROUP
+:Group-5: -40 32
 :geoo/steel/32x64o.S: 176 16
 :geoo/steel/32x64o.S: 176 272
 :geoo/steel/32x64o.S: 176 208
@@ -53,12 +86,6 @@ $ENGLISH Falling Forever
 :geoo/steel/32x16o.S: 240 64
 :geoo/steel/32x16o.S: 272 64
 :geoo/steel/16x32o.S: 288 32
-:matt/earth/10: 568 56 r
-:matt/earth/10: 568 216 r
-:matt/earth/10: 512 134 r
-:matt/earth/10: 504 304 r
-:matt/earth/10: 440 40 r
-:matt/earth/10: 440 192 r
 :geoo/steel/32x64o.S: 432 272
 :geoo/steel/32x64o.S: 432 16
 :geoo/steel/32x64o.S: 432 80
@@ -68,29 +95,3 @@ $ENGLISH Falling Forever
 :geoo/steel/32x16o.S: 368 224
 :geoo/steel/32x16o.S: 336 224
 :geoo/steel/16x32o.S: 336 192
-:matt/goldmine/plank: 48 64
-:matt/goldmine/plank: 48 72
-:matt/goldmine/plank: -72 64 d
-:matt/goldmine/plank: -72 72 d
-:matt/goldmine/plank: 80 80 rrr
-:matt/goldmine/plank: 88 80 rrr
-:matt/goldmine/plank: 0 64 n
-:matt/goldmine/plank: 0 72 n
-:matt/goldmine/plank: 80 256 rrr
-:matt/goldmine/plank: 88 256 rrr
-:matt/marble/20: 80 200 d
-:matt/goldmine/plank: 80 144 frn
-:matt/goldmine/plank: 88 144 frn
-:matt/goldmine/plank: 544 240 rrr
-:matt/goldmine/plank: 552 240 rrr
-:matt/goldmine/plank: 544 96 rrr
-:matt/goldmine/plank: 552 96 rrr
-:matt/marble/20: 544 40 d
-:matt/goldmine/plank: 544 304 frn
-:matt/goldmine/plank: 552 304 frn
-:matt/goldmine/plank: 464 224
-:matt/goldmine/plank: 464 232
-:matt/goldmine/plank: 584 224 d
-:matt/goldmine/plank: 584 232 d
-:matt/goldmine/plank: 512 224 n
-:matt/goldmine/plank: 512 232 n

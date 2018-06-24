@@ -1,4 +1,4 @@
-$BUILT 2017-11-12 21:20:26
+$BUILT 2018-06-25 00:29:43
 $AUTHOR Clam
 $ENGLISH Skyline Skydiving
 
@@ -11,7 +11,7 @@ $ENGLISH Skyline Skydiving
 #SPAWN_INTERVAL 4
 
 #FLOATER 10
-#EXPLODER2 10
+#EXPLODER2 5
 #BASHER 1
 
 :geoo/construction/Hatch.H: 512 1960 r

@@ -1,4 +1,4 @@
-$BUILT 2016-07-29 20:18:40
+$BUILT 2018-06-25 00:52:48
 $AUTHOR Michael S. Repton
 $ENGLISH Metal City Mayhem
 
@@ -7,8 +7,6 @@ $ENGLISH Metal City Mayhem
 #SIZE_Y 960
 #TORUS_X 0
 #TORUS_Y 1
-#START_X 0
-#START_Y 0
 
 #INITIAL 32
 #REQUIRED 32
@@ -16,13 +14,13 @@ $ENGLISH Metal City Mayhem
 
 #CLIMBER 3
 #FLOATER 4
-#EXPLODER 3
 #BLOCKER 3
 #BUILDER 12
 #BASHER 3
 #MINER 6
 #DIGGER 3
 #JUMPER 3
+#EXPLODER 0
 
 :geoo/sandstone/Hatch.H: 128 32
 

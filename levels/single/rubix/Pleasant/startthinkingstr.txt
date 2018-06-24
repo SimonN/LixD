@@ -1,4 +1,4 @@
-$BUILT 2012-04-24 20:02:46
+$BUILT 2018-06-25 00:31:33
 $AUTHOR Rubix
 $ENGLISH Start thinking strategically
 
@@ -11,7 +11,7 @@ $ENGLISH Start thinking strategically
 #SPAWN_INTERVAL 4
 
 #CLIMBER 1
-#EXPLODER 2
+#EXPLODER 1
 #BLOCKER 2
 #BUILDER 10
 #PLATFORMER 5
