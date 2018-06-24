@@ -13,10 +13,10 @@ $mainMenuGetMusic Extrahiere die Musik im Lix-Verzeichnis:
 
 // Browser
 $browserSingleTitle Einzelspieler|Vom Hauptmenü den Einzelspieler-Browser aufrufen.
-$browserNetworkTitle Netzwerk-Level aussuchen
+$browserNetworkTitle Netzwerk-Level wählen
 $browserReplayTitle Replays|Vom Hauptmenü den Replay-Browser aufrufen.
 $browserPlay Spielen
-$browserEdit Editieren
+$browserEdit Bearbeiten
 $browserNewLevel Level erstellen
 $browserReplay Abspielen
 $browserDelete Löschen
@@ -47,12 +47,12 @@ $winVerifyTitle Replay-Verifizierer
 
 // Lobby
 $winLobbyTitle Netzwerkspiel|Vom Hauptmenü die Netzwerk-Lobby aufrufen.
-$winLobbyDisconnect Netz verlassen
+$winLobbyDisconnect Trennen
 $winLobbyStartCentral Zentraler Server
 $winLobbyStartCustom Andere Adresse:
 $winLobbyStartConnect Verbinden
 $winLobbyChat Chat:
-$winLobbySelectLevel Level aussuchen
+$winLobbySelectLevel Level wählen
 $winLobbyReady Bereit zum Start
 $winLobbyRoomNumber Raum Nr.
 $winLobbyRoomCreate Raum eröffnen
@@ -95,9 +95,9 @@ $skillTooltip batter|Batter. Schleudert andere Lix.
 $skillTooltip cuber|Cuber. Verwandelt sich in Erde.
 $skillTooltip builder|Builder. Baut diagonale Treppen.
 $skillTooltip platformer|Platformer. Baut horizontale Brücken.
-$skillTooltip basher|Basher. Bohrt horizontale Tunnel.
+$skillTooltip basher|Basher. Gräbt horizontale Tunnel.
 $skillTooltip miner|Miner. Hackt diagonale Tunnel.
-$skillTooltip digger|Digger. Gräbt vertikale Löcher.
+$skillTooltip digger|Digger. Bohrt vertikale Löcher.
 
 $editorHotkey Hotkey:
 $editorBarAt an
@@ -171,7 +171,7 @@ $winTopologyTorusX Horizontal rundumgehend
 $winTopologyTorusY Vertikal rundumgehend
 $winTopologyWarnSize1 Ein so großer Level mit
 $winTopologyWarnSize2 Pixeln
-$winTopologyWarnSize3 crasht auf einigen PCs.
+$winTopologyWarnSize3 stürzt auf einigen PCs ab.
 
 $winLooksTitle Aussehen
 $winLooksRed Hintergrund Rot
@@ -188,7 +188,7 @@ $winConstantsSpawnint Fall-Intervall
 $winConstantsOvertime Nachspielzeit
 
 $winSkillsTitle Fähigkeiten
-$winSkillsUseExploder Explodierer
+$winSkillsUseExploder Exploder
 $winSkillsClear Alle auf null
 $winSkillsEightTo Klassische 8:
 $winSkillsAllTo Alle 14 auf:
@@ -205,8 +205,8 @@ $netChatYouLoggedOut Du hast das Netzwerk verlassen.
 $netChatYouCannotConnect Server nicht gefunden.
 $netChatYouLostConnection Verbindung zum Server verloren!
 $netChatPeerDisconnected hat das Netzwerk verlassen.
-$netChatWeTooOld Deine Lix-Version ist zu alt, um verbinden zu koennen.
-$netChatWeTooNew Deine Lix-Version ist zu neu, um verbinden zu koennen.
+$netChatWeTooOld Deine Lix-Version ist zu alt, um verbinden zu können.
+$netChatWeTooNew Deine Lix-Version ist zu neu, um verbinden zu können.
 $netChatWeInRoom Du hast Raum Nr.
 $netChatWeInRoom2 betreten.
 $netChatWeInLobby Du bist in der Lobby.
@@ -219,7 +219,7 @@ $netChatPlayerOutLobby hat den Raum verlassen.
 $netChatVersionYours Deine Version ist
 $netChatVersionServer Der Server verlangt
 $netChatPleaseDownload Lade die neueste Version herunter:
-$netChatLevelChange hat diesen Level gewaehlt:
+$netChatLevelChange hat diesen Level gewählt:
 $netGameHowToChat1 Du kannst mit [
 $netGameHowToChat2 ] chatten.
 $netGameEnd Das Spiel ist zu Ende.
@@ -236,8 +236,8 @@ $optionGroupEditorKeys Editortasten
 $optionGroupMenuKeys Menütasten
 $optionUserName Spielername|Dein Name erscheint in Replays und im Netzwerkspiel.|Lix speichert Einstellungen in ./data/user/ unter deinem Namen.
 $optionLanguage Sprache/Language|Sprache der Lix-Benutzeroberfläche.
-$optionReplayAutoSolutions Level-Lösungen auto-speichern|Replays all deiner Einzelspieler-Lösungen speichern.|Wenn ein Versuch nicht klappt, wird er auch nicht gespeichert.
-$optionReplayAutoMulti Im Mehrspieler auto-speichern|Replays all deiner Mehrspieler-Partien automatisch speichern.|Dies speichert gewonnene und verlorene Partien.
+$optionReplayAutoSolutions Level-Lösungen autospeichern|Replays all deiner Einzelspieler-Lösungen speichern.|Wenn ein Versuch nicht klappt, wird er auch nicht gespeichert.
+$optionReplayAutoMulti Im Mehrspieler autospeichern|Replays all deiner Mehrspieler-Partien automatisch speichern.|Dies speichert gewonnene und verlorene Partien.
 $optionSoundEnabled Ton|Ton einschalten.
 $optionMusicEnabled Musik|Musik einschalten.
 $optionSoundDecibels Tonverstärkung in dB|Tonlautstärke anpassen. 0 ist schon recht laut.|Erhöhe/senke um 10 dB, um die Tonlautstärke zu verdoppeln/halbieren.
@@ -260,13 +260,13 @@ $optionKeyZoomIn Zoom +|Level größer darstellen, dafür weniger auf einmal seh
 $optionKeyZoomOut Zoom −|Level kleiner darstellen, dafür mehr auf einmal sehen.
 $optionKeyScroll Halten zum Scrollen|Halte dies (Standard: rechte Maustaste ⟁) und bewege die Maus zum Scrollen.|Das ist einfacher, schneller und präziser als Scrollen am Bildschirmrand.
 $optionKeyPriorityInvert Priorität invertieren|Halte dies, um Fähigkeiten der Lix mit der niedrigsten Priorität zuzuweisen.|Halte dies im Editor, um das hinterste Element anstatt des vordersten zu wählen.
-$optionKeyScreenshot Screenshot|Screenshot (Bildschirmfoto) des gesamten Lix-Fensters speichern.|Screenshots werden gespeichert in ./export/ oder ~/local/share/lix/export/.
-$optionSplatRulerDesign Fallhöhen-Lineal-Design|Schalte das Fallhöhen-Lineal an/aus mit "Klarphysik" bei Spieltasten.|3-Stich-Lineale snappen an Kanten und messen Fallhöhe nach oben und unten.
-$optionSplatRulerDesignTwoBars 2-Strich-Fallhöhen-Lineal, wenig Snap
+$optionKeyScreenshot Screenshot|Screenshot (Bildschirmfoto) des gesamten Lix-Fensters speichern.|Screenshots werden gespeichert in ./export/ oder ~/.local/share/lix/export/.
+$optionSplatRulerDesign Fallhöhen-Lineal-Stil|Schalte das Fallhöhen-Lineal an/aus mit „Klarphysik“ bei Spieltasten.|3-Strich-Lineale rasten an Kanten ein und messen Fallhöhe nach oben und unten.
+$optionSplatRulerDesignTwoBars 2-Strich-Fallhöhen-Lineal, schwaches Einrasten
 $optionSplatRulerDesign094 3-Strich-Fallhöhen-Lineal, hinter Terrain
-$optionSplatRulerDesignSuperSnap 3-Strich-Fallhöhen-Lineal, viel Snap
+$optionSplatRulerDesignSuperSnap 3-Strich-Fallhöhen-Lineal, empfindliches Einrasten
 
-$optionMouseSpeed Mausgeschwindigkeit|Geschwindigkeit des Mauscursors im Spiel, im Editor und im Menü.
+$optionMouseSpeed Mausgeschwindigkeit|Geschwindigkeit des Mauszeigers im Spiel, im Editor und im Menü.
 $optionScrollSpeedEdge Scroll-Geschw. am Bildrand|Scroll-Geschwindigkeit, wenn die Maus am Rand des Bildschirms ist.
 $optionHoldToScrollSpeed Scroll-Geschw. mit Scrolltaste|Scroll-Geschwindigkeit bei Mausbewegung, während du die Scrolltaste hältst.|Die Standard-Scrolltaste ist die rechte Maustaste ⟁, änderbar links.
 $optionHoldToScrollInvert Halte-Scrollen invertieren|Entgegen der Mausbewegung scrollen, während du die Scrolltaste hältst.|Die Standard-Scrolltaste ist die rechte Maustaste ⟁, änderbar oben.
@@ -279,8 +279,8 @@ $optionKeyFrameBackMany ◀▮ 1 Sek.|Das Spiel um 1 Sekunde zurückspulen.
 $optionKeyFrameBackOne ◀▮ 1 Bild|Das Spiel um 1 Physik-Update zurückspulen, also um ¹⁄₁₅ einer Sekunde.
 $optionKeyFrameAheadOne ▮▶ 1 Bild|Das Spiel um 1 Physik-Update vorspulen, also um ¹⁄₁₅ einer Sekunde.
 $optionKeyFrameAheadMany ▮▶ 10 Sek.|Das Spiel um 10 Sekunden vorspulen.
-$optionKeySpeedFast ▶▶|Schnellen Vorlauf an- und ausschalten.|Schneller Vorlauf ist 4-mal so schnell wie normales Spiel.
-$optionKeySpeedTurbo ▶▶▶|Turbo-Vorlauf an- und ausschalten.|Turbo-Vorlauf ist 36-mal so schnell wie normales Spiel.
+$optionKeySpeedFast ▶▶|Schnellen Vorlauf an- und ausschalten.|Schneller Vorlauf ist 4 mal so schnell wie normales Spiel.
+$optionKeySpeedTurbo ▶▶▶|Turbo-Vorlauf an- und ausschalten.|Turbo-Vorlauf ist 36 mal so schnell wie normales Spiel.
 $optionKeyRestart Neustart|Den Level komplett von vorne starten, mit Replay deiner Aktionen.|Um das Replay abzubrechen, klicke in die Luft.
 $optionKeyStateLoad Stand laden|Zum schnellgespeicherten Spielstand zurückkehren.
 $optionKeyStateSave Stand speich.|Spielstand schnellspeichern.
@@ -288,13 +288,13 @@ $optionKeyChat Chat|Die Chat-Konsole während einer Mehrspieler-Partie öffnen.
 $optionKeyClearPhysics Klarphysik|Lineal zum Messen der tödlichen Falldistanz anzeigen.|Eigene Klappen und Ziele im Netzwerkspiel kurz hervorheben.
 $optionKeyNuke Atombombe|Im Einzelspieler alle Lix sprengen, um den Level zu beenden.|Im Netzwerkspiel die Nachspielzeit starten, sofern mindestens 1 Lix gerettet ist.
 
-$optionAvoidBuilderQueuing Builder eher an Nicht-Builder|Builder vorrangig an Nicht-Builder zuweisen anstatt an bestehende Builder.|Halte "Priorität invertieren" (Reiter "Steuerung"), um das jeweils andere zu tun.
-$optionAvoidBatterToExploder Batter eher an Nicht-Exploder|Batter vorrangig an normale Lix zuweisen anstatt an brennende Exploder.|Halte "Priorität invertieren" (Reiter "Steuerung"), um das jeweils andere zu tun.
+$optionAvoidBuilderQueuing Builder eher an Nicht-Builder|Builder vorrangig an Nicht-Builder zuweisen anstatt an bestehende Builder.|Halte „Priorität invertieren“ (Reiter „Steuerung“), um das jeweils andere zu tun.
+$optionAvoidBatterToExploder Batter eher an Nicht-Exploder|Batter vorrangig an normale Lix zuweisen anstatt an brennende Exploder.|Halte „Priorität invertieren“ (Reiter „Steuerung“), um das jeweils andere zu tun.
 $optionReplayAfterFrameBack Replay bei ◀▮ behalten|Replay-Aktionen beim Zurückspulen (◀▮) behalten, bis du in die Luft klickst.|Ohne Haken: Replay-Aktionen entfernen, die durch ◀▮ ungeschehen werden.
 $optionUnpauseOnAssign Pause aus bei Fähigk.-Zwsg.|Die Pause ausschalten, wenn du eine Fähigkeit zuweist.|Ohne Haken: Nur 1 Physik-Update weiter, wenn du eine Fähigkeit zuweist.
 
 $optionKeyMenuOkay Okay/ja|Den markierten Level spielen.|Dialog-Einstellungen übernehmen und Dialoge beenden.
-$optionKeyMenuEdit Editieren|Den markierten Level mit dem Leveleditor öffnen.
+$optionKeyMenuEdit Bearbeiten|Den markierten Level mit dem Leveleditor öffnen.
 $optionKeyMenuNewLevel Erstellen|Einen neuen Level im Leveleditor erstellen.
 $optionKeyMenuExport Exportieren|Den markierten Level als Bilddatei exportieren.
 $optionKeyMenuDelete Löschen/nein|Die markierte Datei löschen.|Ungespeicherte Daten verwerfen, wenn der Editor zum Speichern fragt.
@@ -320,7 +320,7 @@ $optionEdRedo Doch wieder
 $optionEdGroup Gruppieren
 $optionEdUngroup Degruppieren
 $optionEdCopy Kopieren
-$optionEdDelete Loeschen
+$optionEdDelete Löschen
 $optionEdForeground Nach vorn
 $optionEdBackground Nach hinten
 $optionEdMirror Spiegeln
@@ -335,5 +335,5 @@ $optionEdGridCustom Benutzerdefinierte Rastergröße
 
 // Neuen Spieler begruessen (Mini-Dialog)
 $windowAskNameTitle Lix
-$windowAskNameFirst Hallo und Willkommen!
+$windowAskNameFirst Hallo und willkommen!
 $windowAskNameSecond Wie heißt du?
