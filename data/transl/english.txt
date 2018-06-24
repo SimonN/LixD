@@ -18,11 +18,9 @@ $mainMenuGetMusic Extract the music into Lix's directory:
 // level browsers
 $browserSingleTitle Single Player|From the main menu, go to the singleplayer browser.
 $browserNetworkTitle Select Multiplayer level
-$browserReplayTitle Replays|From the main menu, go to the replay browser.
 $browserPlay Play
 $browserEdit Edit
 $browserNewLevel Create Level
-$browserReplay Replay
 $browserDelete Delete
 $browserSearch Search
 $browserExportImage Export image
@@ -33,6 +31,27 @@ $browserInfoAuthor By:
 $browserInfoInitgoal Goal:
 $browserInfoResultSaved Saved:
 $browserInfoResultSkills Skills:
+
+$browserReplayTitle Replays|From the main menu, go to the replay browser.
+$browserReplayPointedTo Pointed-to level
+$browserReplayVerifyDir Verify directory
+
+$winVerifyTitle Replay Verifier
+$winVerifyOutputWrittenTo Output written to `%s'. Click to return.
+$verifyHeader Result,Replay,Level,Player,Saved,Required,Skills,Phyus
+$verifyStatisticsFrom Statistics from %d replays:
+$verifyTrophiesUpdated %d trophies for player `%s' updated.
+$verifyLevelsNoProof These %d levels have no proof:
+$verifyDirectoryCoverage Directory coverage:
+$verifyAllLevelsCovered All %d levels are solvable.
+$verifySomeLevelsCovered %d of %d levels are solvable, %d may be unsolvable.
+$verifyStatusMultiplayer Replay ignored, it is multiplayer.
+$verifyStatusNoPointer Replay doesn't name a level file.
+$verifyStatusMissingLevel Replay points to a nonexistant level.
+$verifyStatusBadLevel Replay points to a malformed level.
+$verifyStatusFailed Replay doesn't solve the pointed-to level.
+$verifyStatusMercyKilled Replay ran over %d minutes after final skill.
+$verifyStatusSolved Replay solves the pointed-to level.
 
 $harvestYouSaved Saved:
 $harvestYouNeeded Goal:
@@ -52,7 +71,6 @@ $previewMissingTilesMoreSee more, see
 
 $winSearchTitle Level Search
 $winSearchPrompt Search by title, author, or filename in %d levels:
-$winVerifyTitle Replay Verifier
 
 // networking lobby
 $winLobbyTitle Network Game|From the main menu, go to the networking lobby.

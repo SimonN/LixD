@@ -71,8 +71,8 @@ private:
         if (_queue.length == 0) {
             _vc.writeLevelsNotCovered();
             _vc.writeStatistics();
-            _console.addWhite("Output written to `" // DTODOLANG
-                ~ fileReplayVerifier.rootless ~ "'. Click to return.");
+            _console.addWhite(Lang.winVerifyOutputWrittenTo.translf(
+                fileReplayVerifier.rootless));
             _permanent.close();
         }
     }

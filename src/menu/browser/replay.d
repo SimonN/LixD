@@ -153,11 +153,12 @@ private:
             b.hotkey = hotkey;
             return b;
         }
-        // DTODOLANG: caption these two buttons, even if they're hacks
         _labelPointedTo = new LabelTwo(new Geom(infoX, infoY + 20f,
             infoXl, 20), "\u27F6"); // unicode long arrow right
-        _buttonPlayWithPointedTo = newInfo(1, 100, "pointedTo", keyMenuEdit);
-        _buttonVerify = newInfo(1, 60, "Verify Dir", KeySet());
+        _buttonPlayWithPointedTo = newInfo(1, 100,
+            Lang.browserReplayPointedTo.transl, keyMenuEdit);
+        _buttonVerify = newInfo(1, 60,
+            Lang.browserReplayVerifyDir.transl, keyMenuNewLevel);
 
         addChildren(_labelPointedTo,
             _buttonPlayWithPointedTo, _buttonVerify);

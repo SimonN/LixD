@@ -37,6 +37,28 @@ nothrow @nogc {
     string skillTooltip(in Ac ac) { return _skillTooltips[ac]; }
 }
 
+// Get a translated string after %d/%s substitution.
+// If the translation doesn't allow substitution, log and return fallback.
+nothrow string translf(FormatArgs...)(in Lang key, FormatArgs args)
+{
+    static assert (args.length >= 1,
+        "Call transl instead of translf for 0 args.");
+    try {
+        return format(key.transl, args);
+    }
+    catch (Exception e) {
+        logf("Cannot format translation of `%s':", key);
+        logf("    -> Translation is `%s'", key.transl);
+        logf("    -> %s", e.msg);
+    }
+    try {
+        return text(key.transl, args);
+    }
+    catch (Exception) {
+        return key.transl;
+    }
+}
+
 void loadUserLanguageAndIfNotExistSetUserOptionToEnglish()
 {
     _fnWrittenToLog = false;
@@ -74,11 +96,9 @@ enum Lang {
     // browsers
     browserSingleTitle,
     browserNetworkTitle,
-    browserReplayTitle,
     browserPlay,
     browserEdit,
     browserNewLevel,
-    browserReplay,
     browserDelete,
     browserSearch,
     browserExportImage,
@@ -89,6 +109,27 @@ enum Lang {
     browserInfoInitgoal,
     browserInfoResultSaved,
     browserInfoResultSkills,
+
+    browserReplayTitle,
+    browserReplayPointedTo,
+    browserReplayVerifyDir,
+
+    winVerifyTitle,
+    winVerifyOutputWrittenTo,
+    verifyHeader,
+    verifyStatisticsFrom,
+    verifyTrophiesUpdated,
+    verifyLevelsNoProof,
+    verifyDirectoryCoverage,
+    verifyAllLevelsCovered,
+    verifySomeLevelsCovered,
+    verifyStatusMultiplayer,
+    verifyStatusNoPointer,
+    verifyStatusMissingLevel,
+    verifyStatusBadLevel,
+    verifyStatusFailed,
+    verifyStatusMercyKilled,
+    verifyStatusSolved,
 
     harvestYouNeeded,
     harvestYouSaved,
@@ -103,7 +144,6 @@ enum Lang {
 
     winSearchTitle,
     winSearchPrompt,
-    winVerifyTitle,
 
     // networking lobby
     winLobbyTitle,

@@ -10,6 +10,7 @@ import enumap;
 import basics.globconf; // remember results if playername == username
 import basics.user; // Result, update results if our own replay solves
 import file.filename;
+import file.language;
 import verify.tested;
 
 // Pass such an object to VerifyCounter.
@@ -48,8 +49,7 @@ public:
 
     void writeCSVHeader()
     {
-        vp.log("Result,Replay filename,Level filename,"
-            ~  "Player,Saved,Required,Skills,Phyus");
+        vp.log(Lang.verifyHeader.transl);
     }
 
     void verifyOneReplay(Filename fn)
@@ -60,15 +60,15 @@ public:
     void writeStatistics()
     {
         vp.log("");
-        vp.log(format!"Statistics from %d replays:"(_stats.byValue.sum));
+        vp.log(Lang.verifyStatisticsFrom.translf(_stats.byValue.sum));
         foreach (Status st, int nr; _stats) {
             if (nr <= 0)
                 continue;
-            vp.log(format!"%5dx %s: %s"(nr, statusWord[st], statusDesc[st]));
+            vp.log(format!"%5dx %s: %s"(nr, statusWord[st], statusDesc(st)));
         }
         if (_trophiesUpdated)
-            vp.log(format!"%d checkmarks for player `%s' updated."
-            (_trophiesUpdated, userName));
+            vp.log(Lang.verifyTrophiesUpdated.translf(
+                _trophiesUpdated, userName));
     }
 
     void writeLevelsNotCovered()
@@ -106,18 +106,17 @@ public:
         // Done algo. levelsToCover and levelsCovered are clobbered.
         if (levelsNotCovered.length > 0) {
             vp.log("");
-            vp.log(format!"These %d levels have no proof:"(
-                levelsNotCovered.length));
+            vp.log(Lang.verifyLevelsNoProof.translf(levelsNotCovered.length));
             levelsNotCovered.each!(fn => vp.log(fn.rootless));
         }
         vp.log("");
-        vp.log("Directory coverage: ");
+        vp.log(Lang.verifyDirectoryCoverage.transl);
         if (levelsNotCovered.empty)
-            vp.log(totalLevelsToCover.format!"All %d levels are solvable.");
+            vp.log(Lang.verifyAllLevelsCovered.translf(totalLevelsToCover));
         else
-            vp.log(format!"%d of %d levels are solvable, %d may be unsolvable."
-                (totalLevelsToCover - levelsNotCovered.length,
-                 totalLevelsToCover,  levelsNotCovered.length));
+            vp.log(Lang.verifySomeLevelsCovered.translf(
+                totalLevelsToCover - levelsNotCovered.length,
+                totalLevelsToCover,  levelsNotCovered.length));
     }
 
 private:
@@ -148,5 +147,23 @@ private:
             levelsCovered = (levelsCovered ~ MutFilename(tlfn))
                 .sort!fnLessThan.uniq.array;
         }
+    }
+
+    static string statusDesc(Status st)
+    {
+        Lang la = Lang.MAX;
+        final switch (st) {
+            case Status.untested: assert (false, "Replay wasn't tested.");
+            case Status.multiplayer: la = Lang.verifyStatusMultiplayer; break;
+            case Status.noPointer: la = Lang.verifyStatusNoPointer; break;
+            case Status.missingLevel: la = Lang.verifyStatusMissingLevel;break;
+            case Status.badLevel: la = Lang.verifyStatusBadLevel; break;
+            case Status.failed: la = Lang.verifyStatusFailed; break;
+            case Status.mercyKilled: la = Lang.verifyStatusMercyKilled; break;
+            case Status.solved: la = Lang.verifyStatusSolved; break;
+        }
+        if (la == Lang.verifyStatusMercyKilled)
+            return la.translf(5);
+        else return la.transl;
     }
 }

@@ -38,16 +38,6 @@ static immutable Enumap!(Status, string) statusWord = enumap.enumap(
     Status.mercyKilled, "(FAIL-T)",
     Status.solved, "(OK)");
 
-static immutable Enumap!(Status, string) statusDesc = enumap.enumap(
-    Status.untested, "bug, this shouldn't ever get printed.",
-    Status.multiplayer, "replay ignored, it is multiplayer.",
-    Status.noPointer, "replay doesn't name a level file.",
-    Status.missingLevel, "replay points to a nonexistant level.",
-    Status.badLevel, "replay points to a malformed level.",
-    Status.failed, "replay doesn't solve the pointed-to level.",
-    Status.mercyKilled, "replay ran over 5 minutes after final skill.",
-    Status.solved, "replay solves the pointed-to level.");
-
 class TestedReplay {
 private:
     Filename _rpFn; // filename of the replay

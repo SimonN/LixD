@@ -9,16 +9,14 @@ $commonBack Zurück
 $commonExit Beenden
 $commonVersion Version
 
-$mainMenuGetMusic Extrahiere die Musik im Lix-Verzeichnis:
+$mainMenuGetMusic Extrahiere die Musik im Lix-Ordner:
 
 // Browser
 $browserSingleTitle Einzelspieler|Vom Hauptmenü den Einzelspieler-Browser aufrufen.
 $browserNetworkTitle Netzwerk-Level wählen
-$browserReplayTitle Replays|Vom Hauptmenü den Replay-Browser aufrufen.
 $browserPlay Spielen
 $browserEdit Bearbeiten
 $browserNewLevel Level erstellen
-$browserReplay Abspielen
 $browserDelete Löschen
 $browserSearch Suchen
 $browserExportImage Bild exportieren
@@ -29,6 +27,27 @@ $browserInfoAuthor Von:
 $browserInfoInitgoal Ziel:
 $browserInfoResultSaved Gerettet:
 $browserInfoResultSkills Fähigkeiten:
+
+$browserReplayTitle Replays|Vom Hauptmenü den Replay-Browser aufrufen.
+$browserReplayPointedTo Verwiesener Level
+$browserReplayVerifyDir Ordner verifizieren
+
+$winVerifyTitle Replay-Verifizierer
+$winVerifyOutputWrittenTo Ausgabe auch in `%s'. Klicke, um zurückzukehren.
+$verifyHeader Ergebnis,Replay,Level,Spieler,Gerettet,Ziel,Fähigkeiten,Phyus
+$verifyStatisticsFrom Statistiken über %d Replays:
+$verifyTrophiesUpdated %d Trophäen für Spieler `%s' aktualisiert.
+$verifyLevelsNoProof Diesen %d Levels fehlen Beweise:
+$verifyDirectoryCoverage Ordner-Abdeckung:
+$verifyAllLevelsCovered Alle %d Levels sind lösbar.
+$verifySomeLevelsCovered %d von %d Levels sind lösbar, %d sind ohne Beweis.
+$verifyStatusMultiplayer Replay ignoriert, es ist Mehrspieler.
+$verifyStatusNoPointer Replay hat keinen Leveldatei-Verweis.
+$verifyStatusMissingLevel Replay verweist auf fehlenden Level.
+$verifyStatusBadLevel Replay verweist auf unspielbaren Level.
+$verifyStatusFailed Replay löst den verwiesenen Level nicht.
+$verifyStatusMercyKilled Replay läuft über %d Minuten nach letzter Fähigkeits-Zuweisung.
+$verifyStatusSolved Replay löst den verwiesenen Level.
 
 $harvestYouSaved Du hast:
 $harvestYouNeeded Ziel:
@@ -43,7 +62,6 @@ $previewMissingTilesMoreSee weitere, siehe
 
 $winSearchTitle Levelsuche
 $winSearchPrompt Suche nach Titel, Autor oder Dateiname in %d Levels:
-$winVerifyTitle Replay-Verifizierer
 
 // Lobby
 $winLobbyTitle Netzwerkspiel|Vom Hauptmenü die Netzwerk-Lobby aufrufen.

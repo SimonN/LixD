@@ -47,17 +47,21 @@ void initializeNoninteractive(Runmode mode)
     if (ia) basics.alleg5.initializeInteractive();
     else    basics.alleg5.initializeNoninteractive();
 
-            file.filename.initialize(); // the virtual filesystem
-            file.log.initialize();
-            basics.globconf.load();
-            basics.user.load();
-    if (gr) loadUserLanguageAndIfNotExistSetUserOptionToEnglish();
+    file.filename.initialize(); // the virtual filesystem
+    file.log.initialize();
+    basics.globconf.load();
+    basics.user.load();
 
-            al_init_image_addon();
-            al_init_font_addon();
-            al_init_ttf_addon();
-            al_init_primitives_addon();
-            hardware.tharsis.initialize();
+    // We need the language (at least English) in every runmode:
+    // Verifier explains results, image export prints lixes and spawn interval.
+    loadUserLanguageAndIfNotExistSetUserOptionToEnglish();
+
+    al_init_image_addon();
+    al_init_font_addon();
+    al_init_ttf_addon();
+    al_init_primitives_addon();
+    hardware.tharsis.initialize();
+
     if (ia) hardware.keyboard.initialize();
     if (ia) hardware.mouse.initialize();
             graphic.color.initialize();
