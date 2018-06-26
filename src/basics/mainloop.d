@@ -54,6 +54,8 @@ class MainLoop {
 
     // If this is present, prefer to go to the replay browser instead of the
     // singleplayer browser. This obviates the bool for that.
+    // Whenever you assign a replay to this, clone the replay first.
+    // _lastLoaded should be treated like an immutable replay.
     Optional!(const Replay) _lastLoaded;
 
 public:
@@ -72,7 +74,7 @@ public:
             matcher.forceLevel(args[0]);
 
         if (matcher.mayCreateGame) {
-            this._lastLoaded = matcher.replay;
+            this._lastLoaded = matcher.replay.clone();
             this.game = matcher.createGame();
         }
         else
@@ -205,7 +207,7 @@ public:
             }
             else if (browRep && browRep.gotoGame) {
                 auto matcher = browRep.matcher;
-                _lastLoaded = matcher.replay;
+                _lastLoaded = matcher.replay.clone;
                 kill();
                 game = matcher.createGame();
             }
