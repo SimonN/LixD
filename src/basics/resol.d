@@ -12,6 +12,7 @@ import graphic.internal;
 import gui.context;
 import gui.root;
 import hardware.display;
+import hardware.mouse;
 import hardware.mousecur;
 import tile.tilelib;
 
@@ -21,6 +22,7 @@ import tile.tilelib;
 void changeResolutionBasedOnCmdargsThenUserFile(const(Cmdargs) cmdargs)
 {
     hardware.mousecur.deinitialize();
+    hardware.mouse.deinitialize();
     tile.tilelib.deinitialize();
     game.physdraw.deinitialize();
     graphic.internal.deinitialize();
@@ -34,6 +36,7 @@ void changeResolutionBasedOnCmdargsThenUserFile(const(Cmdargs) cmdargs)
     graphic.internal.initialize(cmdargs.mode);
     graphic.internal.initializeScale(gui.stretchFactor);
     game.physdraw.initialize();
+    hardware.mouse.initialize();
     hardware.mousecur.initialize();
 }
 

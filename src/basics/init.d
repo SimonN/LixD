@@ -13,7 +13,6 @@ import game.mask;
 import graphic.color;
 import graphic.internal;
 import hardware.keyboard;
-import hardware.mouse;
 import hardware.sound;
 import hardware.music;
 import hardware.tharsis;
@@ -63,7 +62,7 @@ void initializeNoninteractive(Runmode mode)
     hardware.tharsis.initialize();
 
     if (ia) hardware.keyboard.initialize();
-    if (ia) hardware.mouse.initialize();
+    // Mouse will be (re)initialized whenever we change resolution.
             graphic.color.initialize();
     if (ph) game.mask.initialize();
     // Sound will be lazily initialized when required.
