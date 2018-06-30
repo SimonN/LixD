@@ -1,6 +1,10 @@
 module game.effect;
 
-/* Convention: Effects are passed from the working lix by specifying the
+/*
+ * Effects are eye candy and sounds that the physics generate, but that have
+ * no physical meaning themselves.
+ *
+ * Convention: Effects are passed from the working lix by specifying the
  * lix's own ex/ey. The effect manager is responsible for drawing the effects
  * at the correct position/offset. The effect managager does this by passing
  * the lix's own ex/ey straight on to the debris, which therefore becomes
@@ -45,8 +49,41 @@ private struct Effect {
 
 class EffectManager {
 private:
-    RedBlackTree!Effect _tree;
+    /*
+     * When you go back in time and recompute, the recomputation happens
+     * quickly. Effects should not be replayed, only new effects should be
+     * played. Remember played effects in this list. Example:
+     *
+     * 1. We're in frame 200.
+     * 2. Game framesteps back to frame 190.
+     * 3. This requires recomputation from frame 180 to 190.
+     * 4. _alreadyPlayed contains effects between 180 and 200, good.
+     * 5. Game tells us to delete from _alreadyPlayed after frame 190.
+     * 6. Game progresses from 190 to 191.
+     * 7. We replay the effects from 191 because they're not in _alreadyPlayed.
+     */
+    RedBlackTree!Effect _alreadyPlayed;
+
+    /*
+     * When we quicksave, we must deep-copy the played effects.
+     * When we quickload, we must deep-copy this onto _alreadyPlayed.
+     * This fixes: https://github.com/SimonN/LixD/issues/23
+     * Load user state, framestep back -> unnecessary replay arrows
+     * How to repro: Load a user savestate from the very future, with lots of
+     * assignments in that savestate/replay, while having no effects in the
+     * EffectManager recorded. Then framestep back continuously.
+     * Observed: Replay arrows are shown during the on-the-fly forward
+     * recalculation. Expected: These arrows should not be shown during
+     * framestepping back. They should only be visible while going forward.
+     */
+    RedBlackTree!Effect _playedWhenLastQuicksaved;
+
+    /*
+     * Effects like flying pickaxes on the screen. Even if they won't be
+     * replayed back, they should still finish to animate.
+     */
     Debris[] _debris;
+
     int _overtimeInPhyusToAnnounce;
     bool _weScheduledOvertimeAnnouncementBefore;
 
@@ -56,25 +93,40 @@ public:
     this(Style st)
     {
         localTribe = st;
-        _tree = new RedBlackTree!Effect;
+        _alreadyPlayed = new RedBlackTree!Effect;
+        _playedWhenLastQuicksaved = _alreadyPlayed.dup;
     }
 
     bool nothingGoingOn() const
     {
-        // _tree is irrelevant for checking whether anything is still flying,
-        // because _tree remembers whether the same effect was added before.
+        // _alreadyPlayed is irrelevant for checking whether anything is
+        // still flying, because _alreadyPlayed remembers whether the same
+        // effect was added before.
         return _debris.length == 0;
     }
 
     void deleteAfter(in Phyu upd)
     out {
-        foreach (e; _tree)
+        foreach (e; _alreadyPlayed)
             assert (e.update <= upd);
     }
     body {
         // Throw away what has update (upd + 1) or more.
         // Since I can't specify (upd+1, Style.min - 1), I'll cut here:
-        _tree.remove(_tree.upperBound(Effect(upd, Style.max, 0)));
+        _alreadyPlayed.remove(
+            _alreadyPlayed.upperBound(Effect(upd, Style.max, 0)));
+    }
+
+    void quicksave()
+    {
+        if (_playedWhenLastQuicksaved != _alreadyPlayed)
+            _playedWhenLastQuicksaved = _alreadyPlayed.dup;
+    }
+
+    void quickload()
+    {
+        if (_alreadyPlayed != _playedWhenLastQuicksaved)
+            _alreadyPlayed = _playedWhenLastQuicksaved.dup;
     }
 
     void addSoundGeneral(in Phyu upd, in Sound sound)
@@ -92,8 +144,8 @@ public:
             // batter and its target play sounds for their tribe.
             return;
         Effect e = Effect(upd, tribe, lix, sound, lou);
-        if (e !in _tree) {
-            _tree.insert(e);
+        if (e !in _alreadyPlayed) {
+            _alreadyPlayed.insert(e);
             hardware.sound.play(sound, lou);
         }
     }
@@ -102,8 +154,8 @@ public:
         in int ex, in int ey, in Ac ac
     ) {
         Effect e = Effect(upd, tribe, lix);
-        if (e !in _tree) {
-            _tree.insert(e);
+        if (e !in _alreadyPlayed) {
+            _alreadyPlayed.insert(e);
             _debris ~= Debris.newArrow(ex, ey, tribe, ac);
         }
     }
@@ -113,8 +165,8 @@ public:
     void addArrowDontShow(in Phyu upd, in Style tribe, in int lix)
     {
         Effect e = Effect(upd, tribe, lix);
-        if (e !in _tree)
-            _tree.insert(e);
+        if (e !in _alreadyPlayed)
+            _alreadyPlayed.insert(e);
     }
 
     public alias addDigHammer = addDigHammerOrPickaxe!false;
@@ -125,8 +177,8 @@ public:
     ) {
         Effect e = Effect(upd, tribe, lix,
             tribe == localTribe ? Sound.STEEL : Sound.NOTHING, Loudness.loud);
-        if (e !in _tree) {
-            _tree.insert(e);
+        if (e !in _alreadyPlayed) {
+            _alreadyPlayed.insert(e);
             hardware.sound.play(e.sound, e.loudness);
             static if (axe) {
                 // frame 0 (4th argument) is the pickaxe
@@ -142,8 +194,8 @@ public:
     {
         Effect e = Effect(upd, tribe, lix, Sound.POP,
             tribe == localTribe ? Loudness.loud : Loudness.quiet);
-        if (e !in _tree) {
-            _tree.insert(e);
+        if (e !in _alreadyPlayed) {
+            _alreadyPlayed.insert(e);
             hardware.sound.play(e.sound, e.loudness);
             _debris ~= Debris.newImplosion(ex, ey);
         }
@@ -153,8 +205,8 @@ public:
     {
         Effect e = Effect(upd, tribe, lix, Sound.POP,
             tribe == localTribe ? Loudness.loud : Loudness.quiet);
-        if (e !in _tree) {
-            _tree.insert(e);
+        if (e !in _alreadyPlayed) {
+            _alreadyPlayed.insert(e);
             hardware.sound.play(e.sound, e.loudness);
             _debris ~= Debris.newExplosion(ex, ey);
         }

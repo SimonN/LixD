@@ -29,13 +29,16 @@ void updatePhysicsAccordingToSpeedButtons(Game game) { with (game)
     }
     else if (pan.saveState) {
         nurse.saveUserState();
+        _effect.quicksave();
         // Don't play Sound.DISKSAVE: The savestate isn't written to disk
         hardware.sound.playQuiet(Sound.CLOCK);
     }
     else if (pan.loadState) {
         if (nurse.userStateExists)
-            with (LoadStateRAII(game))
+            with (LoadStateRAII(game)) {
                 nurse.loadUserState();
+                _effect.quickload();
+            }
     }
     else if (pan.framestepAheadOne) {
         game.upd();
