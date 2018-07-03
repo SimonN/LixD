@@ -25,7 +25,7 @@ public:
         super(g, new Label(new Geom(mostButtonsXl + spaceGuiTextX, 0,
                             g.xlg - mostButtonsXl + spaceGuiTextX, 20),
                             Lang.optionLanguage.transl));
-        auto cfg  = PickerConfig!LanguageTiler();
+        auto cfg  = PickerConfig!(Breadcrumb, LanguageTiler)();
         cfg.all   = new Geom(0, 0, mostButtonsXl, this.ylg);
         cfg.bread = new Geom(-9999, -9999, 10, 10); // hack: offscreen
         cfg.files = new Geom(cfg.all);

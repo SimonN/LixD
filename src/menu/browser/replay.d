@@ -36,8 +36,8 @@ private:
 public:
     this()
     {
-        super(Lang.browserReplayTitle.transl,
-            basics.globals.dirReplays, PickerConfig!ReplayTiler());
+        super(Lang.browserReplayTitle.transl, basics.globals.dirReplays,
+            PickerConfig!(Breadcrumb, ReplayTiler)());
         commonConstructor();
         // Final class calls:
         super.highlight(basics.user.replayLastLevel);
@@ -45,8 +45,8 @@ public:
 
     this(Harvest ha, const(Replay) lastLoaded)
     {
-        super(Lang.browserReplayTitle.transl,
-            basics.globals.dirReplays, PickerConfig!ReplayTiler());
+        super(Lang.browserReplayTitle.transl, basics.globals.dirReplays,
+            PickerConfig!(Breadcrumb, ReplayTiler)());
         commonConstructor();
         // Final class calls:
         super.addStatsThenHighlight(

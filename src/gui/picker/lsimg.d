@@ -82,26 +82,22 @@ protected:
             // We give Breadcrumb full control over dir switching,
             // including switching to a depth-1-dir, and from such a
             // depth-1-dir, we still list everything depth-2 from _baseDir.
-            return _baseDir.findDirs().map!(dir => dir.findDirs()).join;
+            return _baseDir.findDirs().map!(
+                // Hack: guideline/ should be listed as a depth-1 dir.
+                // Thus, list depth-1 dirs without subdirectories
+                dir => dir.findDirs().empty ? [dir] : dir.findDirs()
+                ).join;
         }
     }
 
     final override MutFilename[] filesInCurrentDir() const
     {
-        if (isWithinTileset) {
-            return currentDir.findTree();
-        }
-        else {
-            return [];
-        }
+        return isWithinTileset ? currentDir.findTree() : [];
     }
 
 private:
     bool isWithinTileset() const
     {
-        string base = _baseDir.rootless;
-        string cur = currentDir.rootless;
-        return cur.length > base.length
-            && cur[base.length .. $].count('/') >= 2;
+        return currentDir.rootless.length > _baseDir.rootless.length;
     }
 }

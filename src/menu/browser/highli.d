@@ -22,16 +22,14 @@ private:
 public:
     // after calling this(), it's a good idea to call
     // highlight(file) with whatever is deemed the correct current file
-    this(SomeTiler)(
+    this(SomePickerConfig)(
         in string title,
         Filename  baseDir,
-        PickerConfig!SomeTiler cfg // Hack! I overwrite every field of this
-                                   // argument during the constructor! Why do
-                                   // I ask for cfg at all here? I want to pass
-                                   // SomeTiler to BrowserHighlight.this(), but
-                                   // can't call super!SomeTiler() explicitly.
-                                   // IFTI works, so cfg is to pass the type.
-    )   if (is (SomeTiler : FileTiler)
+        // Hack! I overwrite every field of this argument during the ctor!
+        // Why do I ask for cfg at all here? I want to pass the picker to
+        // super(), but I can't call super!SomeTiler() because how IFTI works,
+        // therefore cfg is here to resolve the types.
+        SomePickerConfig cfg
     ) {
         super(new Geom(0, 0, gui.screenXlg, gui.screenYlg), title);
         cfg.all   = new Geom(20, 30, xlg-40, ylg-50);

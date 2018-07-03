@@ -14,8 +14,8 @@ import file.log;
 import gui;
 import gui.picker;
 
-struct PickerConfig(T)
-    if (is (T : FileTiler)
+struct PickerConfig(Br, Ti)
+    if (is (Br : Breadcrumb) && is (Ti : FileTiler)
 ) {
     Geom all;
     Geom bread; // Picker will deduct xlg for search button if you want one
@@ -53,7 +53,7 @@ private:
 
 public:
     // Create all class objects in cfg, then give them to this constructor.
-    this(T)(PickerConfig!T cfg)
+    this(Br, Ti)(PickerConfig!(Br, Ti) cfg)
     out {
         assert (_ls);
     }
@@ -64,11 +64,11 @@ public:
                                     // element, but rather only have children.
         if (cfg.showSearchButton)
             cfg.bread.xl -= (Breadcrumb.butXl + 20);
-        _bread = new Breadcrumb(cfg.bread, cfg.baseDir);
+        _bread = new Br(cfg.bread, cfg.baseDir);
         _ls = cfg.ls;
         _list = new ScrolledFiles(cfg.files, delegate FileTiler(Geom gg)
         {
-            auto t = new T(gg);
+            auto t = new Ti(gg);
             t.onDirSelect = (int id) { currentDir = _ls.dirs[id]; };
             if (cfg.onFileSelect)
                 t.onFileSelect = (int id) { cfg.onFileSelect(_ls.files[id]); };

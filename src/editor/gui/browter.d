@@ -41,9 +41,7 @@ public:
         _curDir = curDir;
         super(new Geom(0, 0, gui.screenXlg, gui.mapYlg, From.TOP),
             _curDir.lang.transl);
-        _picker = makePicker(allowedPreExts, merge);
-        _picker.currentDir = merge == MergeDirs.allIntoRoot ? dirImages
-            : suitableDepthTwoDir(allHoveredTiles, allowedPreExts);
+        _picker = makePicker(allHoveredTiles, allowedPreExts, merge);
         _cancel = new TextButton(new Geom(
             20, 40, 80, 30, From.TOP_RIGHT), Lang.commonCancel.transl);
         _cancel.hotkey = keyMenuExit;
@@ -64,61 +62,100 @@ public:
     }
 
 private:
-    Picker makePicker(string allowedPreExts, MergeDirs merge)
-    {
-        void commonCfgCode(T)(ref T cfg)
+    Picker makePicker(
+        const(Hover)[] allHoveredTiles,
+        string allowedPreExts,
+        MergeDirs merge
+    ) {
+        Picker commonCfgCode(T)(ref T cfg)
         {
             cfg.all   = new Geom(20, 40, xlg-40, ylg-60);
             cfg.bread = new Geom(0, 0, cfg.all.xl - 80, 30);
             cfg.files = new Geom(0, 40, cfg.all.xl, cfg.all.yl - 40);
             cfg.baseDir = dirImages;
             cfg.onFileSelect = (Filename fn) { _chosenTile = fn; };
+            return new Picker(cfg);
         }
         final switch (merge) {
-        case MergeDirs.allIntoRoot:
-            auto cfg = PickerConfig!(ImageTiler!GadgetBrowserButton)();
+        case MergeDirs.allIntoRoot: {
+            auto cfg = PickerConfig!(ImageBreadcrumb,
+                ImageTiler!GadgetBrowserButton)();
             cfg.ls = new MergeAllDirsLs(allowedPreExts);
-            commonCfgCode(cfg);
-            return new Picker(cfg);
-        case MergeDirs.depthTwo:
-            auto cfg = PickerConfig!(ImageTiler!TerrainBrowserButton)();
-            cfg.ls = new TilesetLs(dirImages, allowedPreExts);
-            commonCfgCode(cfg);
-            return new Picker(cfg);
+            Picker p = commonCfgCode(cfg);
+            p.currentDir = dirImages;
+            return p;
         }
+        case MergeDirs.depthTwo: {
+            auto cfg = PickerConfig!(ImageBreadcrumb,
+                ImageTiler!TerrainBrowserButton)();
+            cfg.ls = new TilesetLs(dirImages, allowedPreExts);
+            Picker p = commonCfgCode(cfg);
+            p.navigateToAndHighlightFile(
+                allowedTileOr(allHoveredTiles, allowedPreExts, _curDir.value),
+                CenterOnHighlitFile.always);
+            return p;
+        }}
+    }
+}
+
+private:
+
+Filename allowedTileOr(
+    const(Hover)[] hoveredTiles, // find a suitable tile among these
+    string allowedPreExts, // require these pre-extensions to allow a tile
+    Filename fallback, // if no tile was allowed, return this
+) {
+    bool allowedTile(in Hover hov) {
+        auto name = hov.occ.tile.name;
+        if (name.length < 2)
+            return false;
+        // This name check for type is bad. Replace the name in the tile
+        // class with Optional!Filename and check for its pre-extension?
+        return allowedPreExts.canFind(name[$-1])
+            || allowedPreExts.canFind('\0') && name[$-2] != '.';
+    }
+    auto allowed = hoveredTiles.find!allowedTile;
+    return allowed.length == 0 ? fallback
+        : allowed[0].occ.tile.name.tileNameToFilename;
+}
+
+/*
+ * This is very hackish. The tile library should do it instead.
+ * Or redesign the tile browser to make this unnecessary.
+ */
+Filename tileNameToFilename(string name)
+{
+    return new VfsFilename(dirImages.rootless ~ name ~ ".png");
+}
+
+class ImageBreadcrumb : Breadcrumb {
+public:
+    this(Geom g, Filename aBaseDir) { super(g, aBaseDir); }
+
+protected:
+    override Filename makeAllowed(Filename candidate) const
+    {
+        MutFilename cand = candidate.guaranteedDirOnly;
+        while (cand.dirRootless[baseDir.dirRootless.len .. $].count('/') > 2) {
+            assert (cand.rootless[$-1] == '/');
+            string s = cand.rootless[0 .. $-1];
+            while (s.length && s[$-1] != '/')
+                s = s[0 .. $-1];
+            cand = new VfsFilename(s);
+        }
+        return cand;
     }
 
-    Filename suitableDepthTwoDir(
-        const(Hover)[] allHoveredTiles,
-        string allowedPreExts
-    ) const
+    override int makeButtons()
     {
-        // Return either dirImages or exactly a 2-depth subdir.
-        Filename makeSuitable(Filename candidate)
-        {
-            const string full = candidate.rootless;
-            if (full.length < dirImages.rootless.length)
-                return dirImages;
-            assert (dirImages.rootless[$-1] == '/');
-            auto tail = full[dirImages.rootless.length .. $].representation;
-            if (tail.count('/') < 2)
-                return dirImages;
-            tail.findSkip("/");
-            tail.findSkip("/");
-            return new VfsFilename(full[0 .. full.length - tail.length]);
+        int iter = baseDir.dirRootless.len;
+        for ( ; iter < currentDir.dirRootless.len; ++iter) {
+            string cap = currentDir.dirRootless[0 .. iter];
+            if (cap.len > 0 && cap[$-1] == '/') {
+                add(new TextButton(new Geom(butX, 0, butXl, ylg), cap));
+                return iter;
+            }
         }
-        bool allowedTile(in Hover hov)
-        {
-            auto name = hov.occ.tile.name;
-            if (name.length < 2)
-                return false;
-            // This name check for type is bad. Replace the name in the tile
-            // class with Optional!Filename and check for its pre-extension?
-            return allowedPreExts.canFind(name[$-1])
-                || allowedPreExts.canFind('\0') && name[$-2] != '.';
-        }
-        auto ret = allHoveredTiles.find!allowedTile;
-        return makeSuitable(ret.length == 0 ? _curDir.value
-            : new VfsFilename(dirImages.rootless ~ ret[0].occ.tile.name));
+        return 0;
     }
 }

@@ -24,7 +24,7 @@ protected:
 
     auto pickerConfig() const
     {
-        auto cfg = PickerConfig!LevelTiler();
+        auto cfg = PickerConfig!(Breadcrumb, LevelTiler)();
         cfg.showSearchButton = true;
         return cfg;
     }

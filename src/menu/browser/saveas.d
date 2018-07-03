@@ -26,7 +26,7 @@ public:
     this(Filename baseDir)
     {
         super(Lang.saveBrowserTitle.transl, baseDir,
-            PickerConfig!LevelWithFilenameTiler());
+            PickerConfig!(Breadcrumb, LevelWithFilenameTiler)());
 
         _mkdirButton = new TextButton(new Geom(infoX, 140, infoXl/2, 40,
             From.BOTTOM_LEFT), Lang.browserMkdirTitle.transl);

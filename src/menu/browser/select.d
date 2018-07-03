@@ -35,10 +35,10 @@ private:
 
 public:
     // See constructor comment in menu.browser.highli.
-    this(SomeTiler)(
+    this(SomePickerConfig)(
         in string title,
         Filename  baseDir,
-        PickerConfig!SomeTiler cfg
+        SomePickerConfig cfg
     ) {
         super(title, baseDir, cfg);
         _buttonPlay = new TextButton(new Geom(infoX, 20,
