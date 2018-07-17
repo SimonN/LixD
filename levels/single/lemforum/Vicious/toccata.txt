@@ -1,12 +1,10 @@
-$BUILT 2016-07-16 19:23:19
+$BUILT 2018-07-21 16:34:39
 $AUTHOR Michael S. Repton
 $ENGLISH Toccata
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1280
 #SIZE_Y 640
-#START_X 420
-#START_Y 220
 
 #INITIAL 60
 #REQUIRED 58
@@ -26,6 +24,7 @@ $ENGLISH Toccata
 :geoo/construction/Goal2.G: 832 320
 
 :geoo/construction/sawblade_small.F: 928 432
+:geoo/construction/sawblade_small.F: 48 48
 
 :geoo/construction/rod_steel/straight32.S: 764 548 rrr
 :geoo/construction/fence_rust_64x64: 52 524
@@ -478,7 +477,8 @@ $END_TILE_GROUP
 :geoo/abstract/pipes/central7: 768 388 rd
 :geoo/abstract/pipes/central7: 768 416 rd
 :geoo/steel/dark_64x64o.S: 832 448 d
-:geoo/construction/rod_steel/straight32.S: 764 388 rrr
+:geoo/abstract/pipes/central7: 764 388 r
+:geoo/construction/rod_steel/straight32.S: 764 392 rrr
 :geoo/abstract/pipes/central7: 760 388 rd
 :geoo/construction/rod_steel/straight32.S: 764 420 rrr
 :geoo/abstract/pipes/central7: 760 418 rd

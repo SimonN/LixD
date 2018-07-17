@@ -1,15 +1,10 @@
-$BUILT 2014-06-03 21:20:22
+$BUILT 2018-08-02 04:36:31
 $AUTHOR geoo
-$GERMAN 
 $ENGLISH Striking News at Ten
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1152
 #SIZE_Y 736
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #INITIAL 85
 #REQUIRED 81
@@ -23,10 +18,6 @@ $ENGLISH Striking News at Ten
 #BASHER 1
 #MINER 1
 #DIGGER 1
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
-#NOTHING 0
 
 :geoo/abstract/hatch.H: 1064 56
 
@@ -34,15 +25,27 @@ $ENGLISH Striking News at Ten
 
 :geoo/construction/sawblade_small.F: 208 624
 :simon/water.W: 0 704
+:simon/water.W: 396 278
 
 :geoo/construction/steam_right.T: 210 498
 :geoo/construction/steam_right.T: 210 498
 
+:geoo/nopales/nopal_12: 499 654 fr
+:geoo/construction/squarebrick_large: 144 704
+$BEGIN_TILE_GROUP 0
+:matt/beach/daytime/04: 126 16 rrr
+:geoo/construction/concrete/064h: 0 0
+:geoo/construction/concrete/064h: 40 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:geoo/construction/concrete/064h: 32 0
+:Group-0: 0 0
+:geoo/construction/squarebrick_large: 112 16
+:geoo/construction/squarebrick_large: 112 40 d
+$END_TILE_GROUP
+:Group-1: 32 672
 :matt/beach/daytime/00: 466 246 rr
 :matt/beach/daytime/02: 686 64 frr
-:geoo/construction/concrete/064h: 32 672
-:matt/beach/daytime/04: 158 688 rrrn
-:geoo/construction/concrete/064h: 72 672 d
 :matt/beach/daytime/05: 416 704 rrr
 :matt/beach/daytime/14: 719 84
 :matt/beach/daytime/15: 524 177 r
@@ -52,11 +55,10 @@ $ENGLISH Striking News at Ten
 :matt/beach/daytime/06: 562 216 rrd
 :matt/beach/daytime/13: 622 274
 :matt/beach/daytime/05: 522 171 rrr
-:geoo/nopales/nopal_10: 558 662 frr
-:geoo/nopales/nopal_04: 530 678
-:geoo/nopales/nopal_12: 508 660
-:geoo/nopales/nopal_08: 592 636 frr
-:geoo/nopales/nopal_00: 598 654 frr
+:geoo/nopales/nopal_10: 530 662 frr
+:geoo/nopales/nopal_04: 502 678
+:geoo/nopales/nopal_08: 564 636 frr
+:geoo/nopales/nopal_00: 570 654 frr
 :geoo/nopales/nopal_05: 582 294 frr
 :geoo/nopales/nopal_10: 546 276
 :geoo/nopales/nopal_09: 604 272
@@ -70,14 +72,10 @@ $ENGLISH Striking News at Ten
 :geoo/construction/pillar_32: 192 656
 :geoo/construction/pillar_32: 192 672
 :geoo/construction/pillar_32: 192 704
-:geoo/construction/concrete/064h: 64 672 n
 :geoo/construction/squarebrick_small: 96 688
 :geoo/construction/squarebrick_small: 112 688
 :geoo/construction/squarebrick_small: 96 704
 :geoo/construction/squarebrick_small: 112 704
-:geoo/construction/squarebrick_large: 144 688
-:geoo/construction/squarebrick_large: 144 712 d
-:geoo/construction/squarebrick_large: 144 704 n
 :matt/beach/daytime/05: 754 74 r
 :matt/beach/daytime/05: 256 712 rrr
 :geoo/nopales/nopal_07: 416 682
@@ -95,21 +93,21 @@ $ENGLISH Striking News at Ten
 :geoo/nopales/fruit_00: 346 666
 :geoo/nopales/fruit_05: 350 679 fr
 :geoo/nopales/fruit_03: 347 674 fr
-:geoo/nopales/fruit_03: 597 630
-:geoo/nopales/fruit_06: 602 633
-:geoo/nopales/fruit_06: 630 649
-:geoo/nopales/fruit_03: 632 656 r
-:geoo/nopales/fruit_05: 631 662 r
+:geoo/nopales/fruit_03: 569 630
+:geoo/nopales/fruit_06: 574 633
+:geoo/nopales/fruit_06: 602 649
+:geoo/nopales/fruit_03: 604 656 r
+:geoo/nopales/fruit_05: 603 662 r
 :matt/beach/daytime/03: 228 264
 :matt/beach/daytime/05: 626 113 rrr
 :matt/beach/daytime/05: 574 139 rrr
 :matt/beach/daytime/05: 833 74 r
 :matt/beach/daytime/00: 413 233 frd
-:matt/beach/daytime/00: 455 297 rrd
+:matt/beach/daytime/00: 458 296 rrd
+:matt/beach/daytime/15: 437 316
 :matt/beach/daytime/15: 462 290 rd
 :geoo/nopales/nopal_09: 432 220
 :matt/beach/daytime/15: 438 304 rd
-:matt/beach/daytime/00: 414 259 fr
 :geoo/nopales/nopal_04: 409 242
 :geoo/nopales/nopal_06: 282 162 fr
 :geoo/nopales/nopal_11: 260 168 frr
@@ -168,6 +166,11 @@ $ENGLISH Striking News at Ten
 :geoo/nopales/fruit_01: 300 201
 :geoo/nopales/fruit_00: 296 206
 :geoo/nopales/nopal_10: 316 160 fr
+:matt/beach/daytime/00: 414 259 fr
 :matt/beach/daytime/00: 363 273 frd
+:matt/beach/daytime/01: 404 304
+:matt/beach/daytime/00: 360 288 fr
 :matt/beach/daytime/03: 264 272
-:matt/beach/daytime/00: 383 329 frd
+:matt/beach/daytime/01: 352 308 rd
+:matt/beach/daytime/01: 368 346 d
+:matt/beach/daytime/15: 434 288 rr

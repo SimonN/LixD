@@ -1,12 +1,10 @@
-$BUILT 2017-08-11 01:01:10
+$BUILT 2018-08-10 19:11:00
 $AUTHOR I.S./Michael
 $ENGLISH Let's All Go Down the Strand
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 768
 #SIZE_Y 400
-#START_X 128
-#START_Y -20
 
 #INITIAL 16
 #REQUIRED 8
@@ -26,6 +24,25 @@ $ENGLISH Let's All Go Down the Strand
 
 :simon/tapir/goal.G: 32 96
 
+$BEGIN_TILE_GROUP 0
+:simon/tapir/016hb: 0 0
+:simon/tapir/016h: 8 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:simon/tapir/016hb: 8 0
+:simon/tapir/016h: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:simon/tapir/008h: 16 6
+:simon/tapir/016hc: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:Group-0: 0 0
+:Group-1: 8 4
+:Group-2: 0 3
+$END_TILE_GROUP
+:Group-3: 688 200
+:Group-3: 592 136
 :simon/tapir/032: 320 144
 :simon/tapir/032: 320 176
 :simon/tapir/032: 352 176
@@ -51,7 +68,6 @@ $ENGLISH Let's All Go Down the Strand
 :simon/tapir/064: 448 336
 :simon/tapir/064: 512 336
 :simon/tapir/064: 640 336
-:simon/tapir/016h: 672 208
 :simon/tapir/032: 640 208
 :simon/tapir/032: 640 240
 :simon/tapir/032: 640 272
@@ -60,23 +76,15 @@ $ENGLISH Let's All Go Down the Strand
 :simon/tapir/032: 448 80
 :simon/tapir/016: 576 344
 :simon/tapir/016: 624 344
-:simon/tapir/016h: 576 144
 :simon/tapir/016h: 608 208
 :simon/tapir/032v: 320 208
-:simon/tapir/016h: 704 272
 :simon/tapir/016: 384 272
 :simon/tapir/016: 560 304
 :simon/tapir/016: 352 208
 :simon/tapir/016: 656 304
 :simon/tapir/032: 448 304
-:simon/tapir/016h: 480 80
 :simon/tapir/008h: 480 72
-:simon/tapir/008h: 496 72
 :simon/tapir/008h: 576 136
-:simon/tapir/008h: 592 136
-:simon/tapir/008h: 672 200
-:simon/tapir/008h: 688 200
-:simon/tapir/064h: 128 336
 :simon/tapir/064: 128 272
 :simon/tapir/128: 0 144
 :simon/tapir/128: 0 272
@@ -121,13 +129,28 @@ $ENGLISH Let's All Go Down the Strand
 :simon/tapir/008v: 240 272
 :simon/tapir/008v: 240 272
 :simon/tapir/008v: 248 272
-$BEGIN_TILE_GROUP 0
+:geoo/steel/64x64o.S: 192 336
+:simon/tapir/064: 128 336
+$BEGIN_TILE_GROUP 4
 :simon/tapir/008v: 2 0
 :simon/tapir/008v: 0 0 d
 $END_TILE_GROUP
-:Group-0: 766 320
-$BEGIN_TILE_GROUP 1
+$BEGIN_TILE_GROUP 5
 :simon/tapir/008v: 0 0
 :simon/tapir/008v: 2 0 d
 $END_TILE_GROUP
-:Group-1: 764 320
+$BEGIN_TILE_GROUP 6
+:Group-5: 0 0
+:Group-4: 2 0
+$END_TILE_GROUP
+:Group-6: 764 320
+:Group-0: 496 72
+:Group-1: 504 76
+:Group-2: 496 75
+:simon/tapir/016h: 480 80
+:simon/tapir/016h: 576 144
+:simon/tapir/016: 672 200
+:simon/tapir/016: 688 208
+:Group-3: 720 272
+:simon/tapir/016: 704 272
+:simon/tapir/016: 720 280
