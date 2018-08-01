@@ -1,0 +1,86 @@
+$BUILT 2018-07-10 18:21:16
+$AUTHOR Flopsy
+$ENGLISH Corkscrewed 6P
+
+#INTENDED_NUMBER_OF_PLAYERS 6
+#SIZE_X 624
+#SIZE_Y 240
+#TORUS_X 0
+#TORUS_Y 1
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 32
+
+#WALKER 30
+#RUNNER 10
+#FLOATER 30
+#EXPLODER2 30
+#BUILDER 50
+#PLATFORMER 50
+#MINER 30
+#DIGGER 30
+#JUMPER 30
+#BATTER 30
+#CUBER 10
+
+:geoo/abstract/hatch.H: 512 160 r
+:geoo/abstract/hatch.H: 512 0 r
+:geoo/abstract/hatch.H: 512 80 r
+:geoo/abstract/hatch.H: 64 80
+:geoo/abstract/hatch.H: 64 160
+:geoo/abstract/hatch.H: 64 0
+:geoo/abstract/hatch.H: 304 80
+:geoo/abstract/hatch.H: 304 160
+:geoo/abstract/hatch.H: 304 0
+:geoo/abstract/hatch.H: 272 160 r
+:geoo/abstract/hatch.H: 272 0 r
+:geoo/abstract/hatch.H: 272 80 r
+
+:geoo/abstract/goal.G: 16 0
+:geoo/abstract/goal.G: 16 80
+:geoo/abstract/goal.G: 16 160
+:geoo/abstract/goal.G: 560 0
+:geoo/abstract/goal.G: 560 80
+:geoo/abstract/goal.G: 560 160
+
+:geoo/steel/dark_32x32o.S: 528 128
+:geoo/steel/dark_32x32o.S: 496 128
+:geoo/steel/dark_32x32o.S: 496 208
+:geoo/steel/dark_32x32o.S: 528 208
+:geoo/steel/dark_32x32o.S: 304 208
+:geoo/steel/dark_32x32o.S: 272 208
+:geoo/steel/dark_32x32o.S: 304 128
+:geoo/steel/dark_32x32o.S: 272 128
+:geoo/steel/dark_32x32o.S: 272 48
+:geoo/steel/dark_32x32o.S: 304 48
+:geoo/steel/dark_32x32o.S: 496 48
+:geoo/steel/dark_32x32o.S: 528 48
+:geoo/steel/dark_32x32o.S: 80 208
+:geoo/steel/dark_32x32o.S: 48 208
+:geoo/steel/dark_32x32o.S: 80 128
+:geoo/steel/dark_32x32o.S: 48 128
+:geoo/steel/dark_32x32o.S: 48 48
+:geoo/steel/dark_32x32o.S: 80 48
+:geoo/steel/dark_32x32o.S: 16 208
+:geoo/steel/dark_32x32o.S: 16 128
+:geoo/steel/dark_32x32o.S: 16 48
+:geoo/steel/dark_32x32o.S: 560 48
+:geoo/steel/dark_32x32o.S: 560 128
+:geoo/steel/dark_32x32o.S: 560 208
+:geoo/steel/dark_32x32o.S: -16 0
+:geoo/steel/dark_32x32o.S: -16 32
+:geoo/steel/dark_32x32o.S: -16 64
+:geoo/steel/dark_32x32o.S: -16 96
+:geoo/steel/dark_32x32o.S: -16 128
+:geoo/steel/dark_32x32o.S: -16 160
+:geoo/steel/dark_32x32o.S: -16 192
+:geoo/steel/dark_32x32o.S: 592 0
+:geoo/steel/dark_32x32o.S: 592 32
+:geoo/steel/dark_32x32o.S: 592 64
+:geoo/steel/dark_32x32o.S: 592 96
+:geoo/steel/dark_32x32o.S: 592 128
+:geoo/steel/dark_32x32o.S: 592 160
+:geoo/steel/dark_32x32o.S: 592 192
+:geoo/steel/dark_32x32o.S: -16 224
+:geoo/steel/dark_32x32o.S: 592 224

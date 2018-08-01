@@ -1,0 +1,352 @@
+$BUILT 2018-08-01 13:58:00
+$AUTHOR Raymanni
+$ENGLISH Follow the thread
+
+#INTENDED_NUMBER_OF_PLAYERS 8
+#SIZE_X 896
+#SIZE_Y 1024
+#TORUS_X 0
+#TORUS_Y 1
+
+#SECONDS 40
+#INITIAL 60
+#SPAWN_INTERVAL 32
+
+#WALKER 30
+#RUNNER 10
+#EXPLODER2 5
+#BUILDER 30
+#PLATFORMER 30
+#BASHER 20
+#MINER 20
+#DIGGER 20
+#JUMPER 30
+#BATTER 10
+#CUBER 10
+
+:geoo/construction/Hatch.H: 208 16
+:geoo/construction/Hatch.H: 208 272
+:geoo/construction/Hatch.H: 208 528
+:geoo/construction/Hatch.H: 208 784
+:geoo/construction/Hatch.H: 656 144 r
+:geoo/construction/Hatch.H: 656 400 r
+:geoo/construction/Hatch.H: 656 656 r
+:geoo/construction/Hatch.H: 656 912 r
+
+:geoo/abstract/goal.G: 528 384
+:geoo/abstract/goal.G: 528 640
+:geoo/abstract/goal.G: 528 896
+:geoo/abstract/goal.G: 528 128
+:geoo/abstract/goal.G: 336 512
+:geoo/abstract/goal.G: 336 768
+:geoo/abstract/goal.G: 336 0
+:geoo/abstract/goal.G: 336 256
+
+:geoo/construction/Laser_vr_64.F: 698 64
+:geoo/construction/Laser_vr_64.F: 698 128
+:geoo/construction/Laser_vr_64.F: 698 192
+:geoo/construction/Laser_vr_64.F: 698 256
+:geoo/construction/Laser_vr_64.F: 698 320
+:geoo/construction/Laser_vr_64.F: 698 384
+:geoo/construction/Laser_vr_64.F: 698 448
+:geoo/construction/Laser_vr_64.F: 698 512
+:geoo/construction/Laser_vr_64.F: 698 576
+:geoo/construction/Laser_vr_64.F: 698 640
+:geoo/construction/Laser_vr_64.F: 698 704
+:geoo/construction/Laser_vr_64.F: 698 768
+:geoo/construction/Laser_vr_64.F: 698 832
+:geoo/construction/Laser_vr_64.F: 698 896
+:geoo/construction/Laser_vr_64.F: 182 0
+:geoo/construction/Laser_vr_64.F: 182 128
+:geoo/construction/Laser_vr_64.F: 182 192
+:geoo/construction/Laser_vr_64.F: 182 256
+:geoo/construction/Laser_vr_64.F: 182 320
+:geoo/construction/Laser_vr_64.F: 182 384
+:geoo/construction/Laser_vr_64.F: 182 448
+:geoo/construction/Laser_vr_64.F: 182 512
+:geoo/construction/Laser_vr_64.F: 182 576
+:geoo/construction/Laser_vr_64.F: 182 640
+:geoo/construction/Laser_vr_64.F: 182 704
+:geoo/construction/Laser_vr_64.F: 182 768
+:geoo/construction/Laser_vr_64.F: 182 832
+:geoo/construction/Laser_vr_64.F: 182 896
+:geoo/construction/Laser_vr_64.F: 182 960
+:geoo/construction/Laser_vr_64.F: 250 0
+:geoo/construction/Laser_vr_64.F: 250 128
+:geoo/construction/Laser_vr_64.F: 250 256
+:geoo/construction/Laser_vr_64.F: 250 320
+:geoo/construction/Laser_vr_64.F: 250 384
+:geoo/construction/Laser_vr_64.F: 250 512
+:geoo/construction/Laser_vr_64.F: 250 576
+:geoo/construction/Laser_vr_64.F: 250 640
+:geoo/construction/Laser_vr_64.F: 250 768
+:geoo/construction/Laser_vr_64.F: 250 832
+:geoo/construction/Laser_vr_64.F: 250 896
+:geoo/construction/Laser_vr_64.F: 630 640
+:geoo/construction/Laser_vr_64.F: 630 704
+:geoo/construction/Laser_vr_64.F: 630 768
+:geoo/construction/Laser_vr_64.F: 630 384
+:geoo/construction/Laser_vr_64.F: 630 448
+:geoo/construction/Laser_vr_64.F: 630 512
+:geoo/construction/Laser_vr_64.F: 630 128
+:geoo/construction/Laser_vr_64.F: 630 192
+:geoo/construction/Laser_vr_64.F: 630 256
+:geoo/construction/Laser_vr_64.F: 630 896
+:geoo/construction/Laser_vr_64.F: 570 896
+:geoo/construction/Laser_vr_64.F: 570 960
+:geoo/construction/Laser_vr_64.F: 570 640
+:geoo/construction/Laser_vr_64.F: 570 704
+:geoo/construction/Laser_vr_64.F: 570 768
+:geoo/construction/Laser_vr_64.F: 570 384
+:geoo/construction/Laser_vr_64.F: 570 448
+:geoo/construction/Laser_vr_64.F: 570 512
+:geoo/construction/Laser_vr_64.F: 570 128
+:geoo/construction/Laser_vr_64.F: 570 192
+:geoo/construction/Laser_vr_64.F: 250 64
+:geoo/construction/Laser_vr_64.F: 570 0
+:geoo/construction/Laser_vr_64.F: 310 0
+:geoo/construction/Laser_vr_64.F: 310 64
+:geoo/construction/Laser_vr_64.F: 310 128
+:geoo/construction/Laser_vr_64.F: 310 256
+:geoo/construction/Laser_vr_64.F: 310 320
+:geoo/construction/Laser_vr_64.F: 310 384
+:geoo/construction/Laser_vr_64.F: 310 512
+:geoo/construction/Laser_vr_64.F: 310 576
+:geoo/construction/Laser_vr_64.F: 310 640
+:geoo/construction/Laser_vr_64.F: 310 768
+:geoo/construction/Laser_vr_64.F: 310 832
+:geoo/construction/Laser_hz_64.F: 256 506
+:geoo/construction/Laser_hz_64.F: 256 250
+:geoo/construction/Laser_hz_64.F: 256 506
+:geoo/construction/Laser_hz_64.F: 256 762
+:geoo/construction/Laser_hz_64.F: 576 890
+:geoo/construction/Laser_hz_64.F: 576 634
+:geoo/construction/Laser_hz_64.F: 576 378
+:geoo/construction/Laser_hz_64.F: 576 122
+:geoo/construction/Laser_hz_64.F: 384 506
+:geoo/construction/Laser_hz_64.F: 448 506
+:geoo/construction/Laser_hz_64.F: 384 122
+:geoo/construction/Laser_hz_64.F: 448 122
+:geoo/construction/Laser_hz_64.F: 384 250
+:geoo/construction/Laser_hz_64.F: 448 250
+:geoo/construction/Laser_hz_64.F: 384 378
+:geoo/construction/Laser_hz_64.F: 448 378
+:geoo/construction/Laser_hz_64.F: 384 506
+:geoo/construction/Laser_hz_64.F: 448 506
+:geoo/construction/Laser_hz_64.F: 384 634
+:geoo/construction/Laser_hz_64.F: 448 634
+:geoo/construction/Laser_hz_64.F: 384 762
+:geoo/construction/Laser_hz_64.F: 448 762
+:geoo/construction/Laser_hz_64.F: 384 890
+:geoo/construction/Laser_hz_64.F: 448 890
+:geoo/construction/Laser_hz_64.F: 256 182
+:geoo/construction/Laser_hz_64.F: 256 438
+:geoo/construction/Laser_hz_64.F: 256 694
+:geoo/construction/Laser_hz_64.F: 256 950
+:geoo/construction/Laser_hz_64.F: 576 822
+:geoo/construction/Laser_hz_64.F: 576 566
+:geoo/construction/Laser_hz_64.F: 576 310
+:geoo/construction/Laser_hz_64.F: 576 54
+:geoo/construction/Laser_hz_64.F: 384 54
+:geoo/construction/Laser_hz_64.F: 448 54
+:geoo/construction/Laser_vr_64.F: 378 0
+:geoo/construction/Laser_vr_64.F: 502 0
+:geoo/construction/Laser_hz_64.F: 384 182
+:geoo/construction/Laser_hz_64.F: 448 182
+:geoo/construction/Laser_vr_64.F: 502 128
+:geoo/construction/Laser_hz_64.F: 384 310
+:geoo/construction/Laser_hz_64.F: 448 310
+:geoo/construction/Laser_vr_64.F: 182 64
+:geoo/construction/Laser_hz_64.F: 384 438
+:geoo/construction/Laser_hz_64.F: 448 438
+:geoo/construction/Laser_vr_64.F: 502 384
+:geoo/construction/Laser_hz_64.F: 384 566
+:geoo/construction/Laser_hz_64.F: 448 566
+:geoo/construction/Laser_vr_64.F: 502 512
+:geoo/construction/Laser_hz_64.F: 384 694
+:geoo/construction/Laser_hz_64.F: 448 694
+:geoo/construction/Laser_vr_64.F: 502 640
+:geoo/construction/Laser_hz_64.F: 384 822
+:geoo/construction/Laser_hz_64.F: 448 822
+:geoo/construction/Laser_vr_64.F: 502 768
+:geoo/construction/Laser_hz_64.F: 384 950
+:geoo/construction/Laser_hz_64.F: 448 950
+:geoo/construction/Laser_vr_64.F: 502 896
+:geoo/construction/Laser_vr_64.F: 378 128
+:geoo/construction/Laser_vr_64.F: 378 256
+:geoo/construction/Laser_vr_64.F: 378 384
+:geoo/construction/Laser_vr_64.F: 378 512
+:geoo/construction/Laser_vr_64.F: 378 640
+:geoo/construction/Laser_vr_64.F: 378 768
+:geoo/construction/Laser_vr_64.F: 378 896
+:geoo/construction/Laser_vr_64.F: 310 896
+:geoo/construction/Laser_vr_64.F: 502 256
+:geoo/construction/Laser_vr_64.F: 570 256
+:geoo/construction/Laser_vr_64.F: 630 960
+:geoo/construction/Laser_vr_64.F: 698 960
+:geoo/construction/Laser_vr_64.F: 630 0
+:geoo/construction/Laser_vr_64.F: 698 0
+:geoo/construction/Laser_hz_64.F: 384 1018
+:geoo/construction/Laser_hz_64.F: 448 1018
+:geoo/construction/Laser_hz_64.F: 256 1018
+
+:proxima/tile/orange2: 192 512
+:proxima/tile/orange2: 192 576
+:proxima/tile/orange2: 192 640
+:proxima/tile/orange2: 192 704
+:proxima/tile/orange2: 256 704
+:proxima/tile/orange2: 384 704
+:proxima/tile/orange2: 448 704
+:proxima/tile/orange2: 512 704
+:proxima/tile/orange2: 512 768
+:proxima/tile/orange2: 512 896
+:proxima/tile/green1: 320 768
+:proxima/tile/green1: 320 640
+:proxima/tile/green1: 320 576
+:proxima/tile/green1: 384 576
+:proxima/tile/green1: 448 576
+:proxima/tile/green1: 576 576
+:proxima/tile/green1: 640 576
+:proxima/tile/green1: 640 512
+:proxima/tile/green1: 640 448
+:proxima/tile/green1: 640 384
+:proxima/tile/red3: 512 640
+:proxima/tile/red3: 512 512
+:proxima/tile/red3: 512 448
+:proxima/tile/red3: 448 448
+:proxima/tile/red3: 384 448
+:proxima/tile/red3: 256 448
+:proxima/tile/red3: 192 448
+:proxima/tile/red3: 192 384
+:proxima/tile/red3: 192 320
+:proxima/tile/red3: 192 256
+:proxima/tile/pink2: 320 512
+:proxima/tile/pink2: 320 384
+:proxima/tile/pink2: 320 320
+:proxima/tile/pink2: 384 320
+:proxima/tile/pink2: 576 320
+:proxima/tile/pink2: 448 320
+:proxima/tile/pink2: 640 320
+:proxima/tile/pink2: 640 256
+:proxima/tile/pink2: 640 192
+:proxima/tile/pink2: 640 128
+:proxima/tile/blue1: 512 384
+:proxima/tile/blue1: 192 64
+:proxima/tile/blue1: 512 192
+:proxima/tile/blue1: 448 192
+:proxima/tile/blue1: 384 192
+:proxima/tile/blue1: 256 192
+:proxima/tile/blue1: 192 192
+:proxima/tile/blue1: 192 128
+:proxima/tile/blue1: 192 0
+:proxima/tile/orange3: 320 256
+:proxima/tile/orange3: 320 128
+:proxima/tile/orange3: 320 64
+:proxima/tile/orange3: 384 64
+:proxima/tile/orange3: 448 64
+:proxima/tile/orange3: 576 64
+:proxima/tile/orange3: 640 64
+:proxima/tile/cyan1: 320 832
+:proxima/tile/cyan1: 320 896
+:proxima/tile/cyan1: 320 0
+:proxima/tile/cyan1: 384 832
+:proxima/tile/cyan1: 448 832
+:proxima/tile/cyan1: 576 832
+:proxima/tile/cyan1: 640 832
+:proxima/tile/cyan1: 640 768
+:proxima/tile/cyan1: 640 704
+:proxima/tile/cyan1: 640 640
+:proxima/tile/pink4: 192 768
+:proxima/tile/pink4: 192 832
+:proxima/tile/pink4: 192 896
+:proxima/tile/pink4: 192 960
+:proxima/tile/pink4: 256 960
+:proxima/tile/pink4: 384 960
+:proxima/tile/pink4: 448 960
+:proxima/tile/pink4: 512 960
+:proxima/tile/pink4: 512 0
+:proxima/tile/pink4: 512 128
+:proxima/tile/orange3: 640 896
+:geoo/shadow/tile1: 544 64
+:geoo/shadow/tile1: 512 96
+:geoo/shadow/tile2: 512 64
+:geoo/shadow/tile2: 544 96
+:geoo/shadow/tile1: 352 192
+:geoo/shadow/tile1: 320 224
+:geoo/shadow/tile2: 320 192
+:geoo/shadow/tile2: 352 224
+:geoo/shadow/tile1: 544 320
+:geoo/shadow/tile1: 512 352
+:geoo/shadow/tile2: 512 320
+:geoo/shadow/tile2: 544 352
+:geoo/shadow/tile1: 352 448
+:geoo/shadow/tile1: 320 480
+:geoo/shadow/tile2: 320 448
+:geoo/shadow/tile2: 352 480
+:geoo/shadow/tile1: 544 576
+:geoo/shadow/tile1: 512 608
+:geoo/shadow/tile2: 512 576
+:geoo/shadow/tile2: 544 608
+:geoo/shadow/tile1: 352 704
+:geoo/shadow/tile1: 320 736
+:geoo/shadow/tile2: 320 704
+:geoo/shadow/tile2: 352 736
+:geoo/shadow/tile1: 544 832
+:geoo/shadow/tile1: 512 864
+:geoo/shadow/tile2: 512 832
+:geoo/shadow/tile2: 544 864
+:geoo/shadow/tile1: 352 960
+:geoo/shadow/tile1: 320 992
+:geoo/shadow/tile2: 320 960
+:geoo/shadow/tile2: 352 992
+:geoo/shadow/tile1: 208 16 d
+:geoo/shadow/tile1: 208 272 d
+:geoo/shadow/tile1: 208 528 d
+:geoo/shadow/tile1: 208 784 d
+:geoo/shadow/tile1: 656 656 d
+:geoo/shadow/tile1: 656 912 d
+:geoo/shadow/tile1: 656 400 d
+:geoo/shadow/tile1: 656 144 d
+:geoo/shadow/tile1: 336 16 d
+:geoo/shadow/tile1: 528 144 d
+:geoo/shadow/tile1: 336 272 d
+:geoo/shadow/tile1: 528 400 d
+:geoo/shadow/tile1: 336 528 d
+:geoo/shadow/tile1: 528 656 d
+:geoo/shadow/tile1: 336 784 d
+:geoo/shadow/tile1: 528 912 d
+:geoo/steel/32x16o.S: 192 0
+:geoo/steel/32x16o.S: 224 0
+:geoo/steel/32x16o.S: 512 176
+:geoo/steel/32x16o.S: 544 176
+:geoo/steel/32x16o.S: 320 48
+:geoo/steel/32x16o.S: 352 48
+:geoo/steel/32x16o.S: 320 304
+:geoo/steel/32x16o.S: 352 304
+:geoo/steel/32x16o.S: 512 432
+:geoo/steel/32x16o.S: 544 432
+:geoo/steel/32x16o.S: 320 560
+:geoo/steel/32x16o.S: 352 560
+:geoo/steel/32x16o.S: 512 688
+:geoo/steel/32x16o.S: 544 688
+:geoo/steel/32x16o.S: 320 816
+:geoo/steel/32x16o.S: 352 816
+:geoo/steel/32x16o.S: 512 944
+:geoo/steel/32x16o.S: 544 944
+:geoo/steel/32x16o.S: 640 896
+:geoo/steel/32x16o.S: 672 896
+:geoo/steel/32x16o.S: 192 768
+:geoo/steel/32x16o.S: 224 768
+:geoo/steel/32x16o.S: 192 512
+:geoo/steel/32x16o.S: 224 512
+:geoo/steel/32x16o.S: 640 640
+:geoo/steel/32x16o.S: 672 640
+:geoo/steel/32x16o.S: 640 384
+:geoo/steel/32x16o.S: 672 384
+:geoo/steel/32x16o.S: 192 256
+:geoo/steel/32x16o.S: 224 256
+:geoo/steel/32x16o.S: 640 128
+:geoo/steel/32x16o.S: 672 128
+:proxima/tile/blue1: 512 256
+:proxima/tile/orange3: 640 960
+:proxima/tile/orange3: 640 0

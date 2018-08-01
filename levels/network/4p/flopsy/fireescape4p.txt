@@ -1,0 +1,124 @@
+$BUILT 2018-07-28 19:38:05
+$AUTHOR Flopsy
+$ENGLISH Fire Escape 4P
+
+#INTENDED_NUMBER_OF_PLAYERS 4
+#SIZE_X 1088
+#SIZE_Y 192
+#TORUS_X 0
+#TORUS_Y 1
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 32
+
+#WALKER 20
+#RUNNER 20
+#CLIMBER 20
+#FLOATER 20
+#EXPLODER2 20
+#BLOCKER 1
+#BUILDER 20
+#PLATFORMER 20
+#BASHER 20
+#MINER 20
+#DIGGER 20
+#JUMPER 20
+#BATTER 20
+#CUBER 20
+
+:matt/marble/Hatch.H: 64 176
+:matt/marble/Hatch.H: 64 80
+:matt/marble/Hatch.H: 960 176 r
+:matt/marble/Hatch.H: 960 80 r
+
+:matt/marble/Goal.G: 1008 16
+:matt/marble/Goal.G: 1008 112
+:matt/marble/Goal.G: 16 16
+:matt/marble/Goal.G: 16 112
+
+:geoo/steel/32x32o.S: 32 160
+:geoo/steel/32x32o.S: 64 160
+:geoo/steel/32x32o.S: 32 64
+:geoo/steel/32x32o.S: 64 64
+:geoo/steel/32x32o.S: 96 160
+:geoo/steel/32x32o.S: 96 64
+:geoo/steel/32x32o.S: 160 176
+:geoo/steel/32x32o.S: 160 32
+:geoo/steel/32x32o.S: 160 128
+:geoo/steel/32x32o.S: 160 80
+:geoo/steel/64x64.S: 224 96
+:geoo/steel/64x64.S: 224 0
+:matt/bricks/07a: 320 128
+:matt/bricks/07b: 320 32
+:matt/bricks/11a: 384 96
+:matt/bricks/11b: 384 0
+:matt/bricks/15b: 400 32
+:matt/bricks/15a: 400 128
+:matt/bricks/08b: 464 32
+:matt/bricks/08a: 464 128
+:matt/bricks/09a: 512 128
+:matt/bricks/09b: 512 32
+:matt/bricks/17: 480 64
+:matt/bricks/07a: 704 128 frr
+:matt/bricks/07b: 704 32 frr
+:matt/bricks/11a: 672 96 frr
+:matt/bricks/11b: 672 0 frr
+:matt/bricks/15b: 624 32 frr
+:matt/bricks/15a: 624 128 frr
+:matt/bricks/08b: 592 32 frr
+:matt/bricks/08a: 592 128 frr
+:matt/bricks/09a: 544 128 frr
+:matt/bricks/09b: 544 32 frr
+:matt/bricks/17: 544 64 frr
+:geoo/steel/64x64.S: 800 96
+:geoo/steel/64x64.S: 800 0
+:geoo/steel/32x32o.S: 896 80
+:geoo/steel/32x32o.S: 896 128
+:geoo/steel/32x32o.S: 896 32
+:geoo/steel/32x32o.S: 960 160
+:geoo/steel/32x32o.S: 992 160
+:geoo/steel/32x32o.S: 960 64
+:geoo/steel/32x32o.S: 992 64
+:geoo/steel/32x32o.S: 1024 160
+:geoo/steel/32x32o.S: 1024 64
+:matt/bricks/11b: 464 64
+:matt/bricks/11b: 592 64 frr
+:matt/bricks/11a: 464 160
+:matt/bricks/11a: 592 160 frr
+:matt/bricks/14a: 400 160
+:matt/bricks/14a: 624 160 frr
+:matt/bricks/08a: 384 160
+:matt/bricks/08a: 672 160 frr
+:matt/bricks/14b: 400 64
+:matt/bricks/16b: 624 64
+:matt/bricks/08b: 672 64 frr
+:matt/bricks/08b: 384 64
+:matt/bricks/17: 472 72
+:matt/bricks/17: 552 72 frr
+:matt/bricks/11b: 704 0
+:matt/bricks/11b: 352 0 frr
+:matt/bricks/09a: 704 96 frr
+:matt/bricks/09a: 352 96
+:matt/bricks/08a: 544 96
+:matt/bricks/08a: 512 96 frr
+:matt/bricks/08b: 512 0 frr
+:matt/bricks/08b: 544 0
+:geoo/steel/32x32o.S: 0 160
+:geoo/steel/32x32o.S: 0 128
+:geoo/steel/32x32o.S: 0 96
+:geoo/steel/32x32o.S: 0 64
+:geoo/steel/32x32o.S: 0 32
+:geoo/steel/32x32o.S: 0 0
+:geoo/steel/32x32o.S: 0 0
+:geoo/steel/32x32o.S: 1056 64
+:geoo/steel/32x32o.S: 1056 32
+:geoo/steel/32x32o.S: 1056 0
+:geoo/steel/32x32o.S: 1056 160
+:geoo/steel/32x32o.S: 1056 128
+:geoo/steel/32x32o.S: 1056 96
+:geoo/steel/32x32o.S: 896 176
+:matt/bricks/17: 480 160
+:matt/bricks/17: 472 168
+:matt/bricks/17: 544 160 frr
+:matt/bricks/17: 552 168 frr

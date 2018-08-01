@@ -1,0 +1,160 @@
+$BUILT 2018-08-01 14:00:02
+$AUTHOR Raymanni
+$ENGLISH Rainbow Road
+
+#INTENDED_NUMBER_OF_PLAYERS 6
+#SIZE_X 1728
+#SIZE_Y 320
+#TORUS_X 1
+#TORUS_Y 0
+
+#SECONDS 20
+#INITIAL 180
+#SPAWN_INTERVAL 16
+
+#WALKER 20
+#CLIMBER 20
+#EXPLODER2 10
+#BUILDER 40
+#PLATFORMER 30
+#BASHER 20
+#MINER 10
+#JUMPER 20
+#BATTER 30
+#CUBER 20
+
+:simon/hatch001.H: 96 96
+:simon/hatch001.H: 384 96
+:simon/hatch001.H: 672 96
+:simon/hatch001.H: 960 96
+:simon/hatch001.H: 1248 96
+:simon/hatch001.H: 1536 96
+
+:geoo/abstract/goal.G: 688 208
+:geoo/abstract/goal.G: 976 208
+:geoo/abstract/goal.G: 1264 208
+:geoo/abstract/goal.G: 1552 208
+:geoo/abstract/goal.G: 112 208
+:geoo/abstract/goal.G: 400 208
+
+:proxima/tile/blue1: 1152 0
+:proxima/tile/blue1: 1216 0
+:proxima/tile/blue1: 1280 0
+:proxima/tile/blue1: 1344 0
+:proxima/tile/blue1: 1344 64
+:proxima/tile/blue1: 1344 192
+:proxima/tile/blue1: 1344 256
+:proxima/tile/blue1: 1280 256
+:proxima/tile/blue1: 1216 256
+:proxima/tile/blue1: 1152 256
+:proxima/tile/blue1: 1152 192
+:proxima/tile/blue1: 1152 64
+:proxima/tile/green1: 576 0
+:proxima/tile/green1: 640 0
+:proxima/tile/green1: 704 0
+:proxima/tile/green1: 768 0
+:proxima/tile/green1: 768 64
+:proxima/tile/green1: 768 192
+:proxima/tile/green1: 768 256
+:proxima/tile/green1: 576 256
+:proxima/tile/green1: 640 256
+:proxima/tile/green1: 704 256
+:proxima/tile/green1: 576 64
+:proxima/tile/green1: 576 192
+:proxima/tile/red3: 0 0
+:proxima/tile/red3: 64 0
+:proxima/tile/red3: 128 0
+:proxima/tile/red3: 192 0
+:proxima/tile/red3: 192 64
+:proxima/tile/red3: 192 192
+:proxima/tile/red3: 192 256
+:proxima/tile/red3: 128 256
+:proxima/tile/red3: 64 256
+:proxima/tile/red3: 0 256
+:proxima/tile/red3: 0 192
+:proxima/tile/red3: 0 64
+:proxima/tile/orange2: 288 0
+:proxima/tile/orange2: 352 0
+:proxima/tile/orange2: 416 0
+:proxima/tile/orange2: 480 0
+:proxima/tile/orange2: 480 64
+:proxima/tile/orange2: 480 192
+:proxima/tile/orange2: 480 256
+:proxima/tile/orange2: 416 256
+:proxima/tile/orange2: 352 256
+:proxima/tile/orange2: 288 256
+:proxima/tile/orange2: 288 192
+:proxima/tile/orange2: 288 64
+:proxima/tile/pink2: 1440 0
+:proxima/tile/pink2: 1504 0
+:proxima/tile/pink2: 1568 0
+:proxima/tile/pink2: 1632 0
+:proxima/tile/pink2: 1632 64
+:proxima/tile/pink2: 1440 64
+:proxima/tile/pink2: 1440 192
+:proxima/tile/pink2: 1440 256
+:proxima/tile/pink2: 1504 256
+:proxima/tile/pink2: 1568 256
+:proxima/tile/pink2: 1632 256
+:proxima/tile/pink2: 1632 192
+:proxima/tile/cyan1: 864 0
+:proxima/tile/cyan1: 928 0
+:proxima/tile/cyan1: 992 0
+:proxima/tile/cyan1: 1056 0
+:proxima/tile/cyan1: 1056 64
+:proxima/tile/cyan1: 864 64
+:proxima/tile/cyan1: 864 192
+:proxima/tile/cyan1: 864 256
+:proxima/tile/cyan1: 928 256
+:proxima/tile/cyan1: 992 256
+:proxima/tile/cyan1: 1056 256
+:proxima/tile/cyan1: 1056 192
+:proxima/tile/red1a: 112 160
+:proxima/tile/orange1a: 400 160 r
+:proxima/tile/green1s: 688 160
+:proxima/tile/cyan2s: 688 176 d
+:proxima/tile/cyan1a: 976 160
+:proxima/tile/cyan2s: 1264 160
+:proxima/tile/pink1a: 1552 160
+:geoo/steel/silhouette_32x64.S: 256 0
+:geoo/steel/silhouette_32x64.S: 256 64
+:geoo/steel/silhouette_32x64.S: 256 192
+:geoo/steel/silhouette_32x64.S: 256 256
+:geoo/steel/silhouette_32x64.S: 544 192
+:geoo/steel/silhouette_32x64.S: 544 256
+:geoo/steel/silhouette_32x64.S: 544 0
+:geoo/steel/silhouette_32x64.S: 544 64
+:geoo/steel/silhouette_32x64.S: 832 0
+:geoo/steel/silhouette_32x64.S: 832 64
+:geoo/steel/silhouette_32x64.S: 832 192
+:geoo/steel/silhouette_32x64.S: 832 256
+:geoo/steel/silhouette_32x64.S: 1120 0
+:geoo/steel/silhouette_32x64.S: 1120 64
+:geoo/steel/silhouette_32x64.S: 1120 192
+:geoo/steel/silhouette_32x64.S: 1120 256
+:geoo/steel/silhouette_32x64.S: 1408 0
+:geoo/steel/silhouette_32x64.S: 1408 64
+:geoo/steel/silhouette_32x64.S: 1408 192
+:geoo/steel/silhouette_32x64.S: 1408 256
+:geoo/steel/silhouette_32x64.S: 1696 0
+:geoo/steel/silhouette_32x64.S: 1696 64
+:geoo/steel/silhouette_32x64.S: 1696 192
+:geoo/steel/silhouette_32x64.S: 1696 256
+:amanda/steel/steel16x16.S: 976 160
+:amanda/steel/steel16x16.S: 992 160
+:amanda/steel/steel16x16.S: 1264 160
+:amanda/steel/steel16x16.S: 1280 160
+:amanda/steel/steel16x16.S: 1552 160
+:amanda/steel/steel16x16.S: 1568 160
+:amanda/steel/steel16x16.S: 112 160
+:amanda/steel/steel16x16.S: 128 160
+:amanda/steel/steel16x16.S: 400 160
+:amanda/steel/steel16x16.S: 416 160
+:amanda/steel/steel16x16.S: 688 160
+:amanda/steel/steel16x16.S: 704 160
+:amanda/steel/steel24x8.S: 980 256
+:amanda/steel/steel24x8.S: 692 256
+:amanda/steel/steel24x8.S: 1268 256
+:amanda/steel/steel24x8.S: 1556 256
+:amanda/steel/steel24x8.S: 116 256
+:amanda/steel/steel24x8.S: 404 256
