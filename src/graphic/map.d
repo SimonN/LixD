@@ -336,8 +336,41 @@ private void calcHoldScrolling()
 
 
 
-void
-drawCamera() // ...onto the current drawing target, most likely the screen
+void drawCamera()
+{
+    drawBorders();
+    drawCameraBorderless();
+}
+
+// To tell apart air from areas outside of the map, color screen borders.
+private void drawBorders()
+{
+    void draw_border(in int ax, in int ay, in int axl, in int ayl)
+    {
+        // we assume the correct target bitmap is set.
+        // D/A5 Lix doesn't make screen border coloring optional
+        al_draw_filled_rectangle(ax, ay, ax + axl, ay + ayl,
+                                 color.screenBorder);
+    }
+    if (borderOneSideXl > 0) {
+        // Left edge.
+        draw_border(0, 0, borderOneSideXl, cameraYl);
+        // Right edge. With fractional zoom, drawCameraBorderless might draw
+        // a smaller rectangle than its plusX (see drawCameraBorderless).
+        // To prevent leftover pixel rows from the last frame, make the border
+        // thicker by 1 pixel here. The camera will draw over it.
+        draw_border(cameraXl - borderOneSideXl - 1, 0,
+            borderOneSideXl + 1, cameraYl);
+    }
+    if (borderUpperSideYl > 0) {
+        draw_border(borderOneSideXl, 0, cameraXl - 2 * borderOneSideXl,
+            borderUpperSideYl);
+    }
+}
+
+// Draw camera (maybe several times next to itself)
+// to the current drawing target, most likely the screen
+private void drawCameraBorderless()
 {
     immutable int overallMaxX = _cameraXl - borderOneSideXl;
     immutable int plusX = (xl * zoom).ceil.to!int;
@@ -356,22 +389,6 @@ drawCamera() // ...onto the current drawing target, most likely the screen
         }
         if (borderOneSideXl != 0) break;
     }
-
-    // To tell apart air from areas outside of the map, color screen borders.
-    void draw_border(in int ax, in int ay, in int axl, in int ayl)
-    {
-        // we assume the correct target bitmap is set.
-        // D/A5 Lix doesn't make screen border coloring optional
-        al_draw_filled_rectangle(ax, ay, ax + axl, ay + ayl,
-                                 color.screenBorder);
-    }
-    if (borderOneSideXl > 0) {
-        draw_border(0, 0, borderOneSideXl, cameraYl);
-        draw_border(cameraXl - borderOneSideXl, 0, borderOneSideXl, cameraYl);
-    }
-    if (borderUpperSideYl > 0)
-        draw_border(borderOneSideXl, 0, cameraXl - 2 * borderOneSideXl,
-                                        borderUpperSideYl);
 }
 
 // This rectangle describes a portion of the source torbit, considering zoom.
