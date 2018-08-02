@@ -13,7 +13,7 @@ import std.string;
 
 import basics.alleg5; // we shorten the hotkey label ourselves, not a Label
 import basics.help;
-import basics.user; // hotkey display option
+import file.option; // hotkey display option
 
 import graphic.color;
 import gui;
@@ -108,7 +108,7 @@ protected:
         auto c3 = _down ? color.guiDownL : _on ? color.guiOnL : color.guiD;
         draw3DButton(xs, ys, xls, yls, c1, c2, c3);
         drawOntoButton();
-        if (basics.user.showButtonHotkeys.value) {
+        if (file.option.showButtonHotkeys.value) {
             children.each!(ch => ch.draw); // force drawing now, such that...
             drawHotkey();                  // the hotkey is drawn on top
         }

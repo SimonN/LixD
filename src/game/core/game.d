@@ -24,10 +24,10 @@ import optional;
 
 import basics.alleg5;
 import basics.globals;
-import basics.globconf; // username, to determine whether to save result
+import file.option; // username, to determine whether to save result
 import basics.help : len;
-import basics.user; // Trophy
 import file.filename;
+import file.trophy;
 
 import game.core.calc;
 import game.core.chatarea;
@@ -90,8 +90,9 @@ package:
     ChatArea _chatArea;
     SplatRuler _splatRuler;
 
+    const(TrophyKey) _trophyKeyOfTheLevel;
+    Filename _levelFnForHarvest;
     bool _gotoMainMenu;
-    bool _levelMatchesReplayThereforeMaySaveTrophy;
 
 private:
     Phyu _setLastPhyuToNowLastCalled = Phyu(-1);
@@ -104,33 +105,30 @@ public:
 
     /*
      * Create Game without replay. Pass level filename such that the Game
-     * can create its own replay. You will always be able to save tropies.
+     * can create its own replay. You will be able to save tropies as long
+     * as the TrophyKey's fileNoExt is nonempty. If fileNoExt is empty,
+     * maybeImprove() will reject the trophy anyway.
      */
-    this(Level lv, Filename levelFilename)
+    this(Level lv, TrophyKey keyOfLv,
+        Filename levelFnForLegacyPointedTo,
+        Optional!Replay orp)
     in {
         assert (lv);
         assert (lv.playable);
-        assert (levelFilename);
+        assert (levelFnForLegacyPointedTo !is null);
     }
     body {
         level = lv;
-        _levelMatchesReplayThereforeMaySaveTrophy = true;
-        commonConstructor(generateFreshReplay(some(levelFilename)));
-    }
-
-    /*
-     * Create Game with replay, which provides the level filename.
-     */
-    this(Level lv, Replay rp, in bool maySaveTrophy)
-    in {
-        assert (lv);
-        assert (lv.playable);
-        assert (rp);
-    }
-    body {
-        level = lv;
-        _levelMatchesReplayThereforeMaySaveTrophy = maySaveTrophy;
-        commonConstructor(rp);
+        _trophyKeyOfTheLevel = keyOfLv;
+        _levelFnForHarvest = levelFnForLegacyPointedTo;
+        import optional;
+        if (orp.empty) { // Hack! orp.match failed with crazy template error
+            commonConstructor(generateFreshReplay(
+                some(levelFnForLegacyPointedTo)));
+        }
+        else {
+            commonConstructor(orp.front);
+        }
     }
 
     this(RichClient client)
@@ -141,8 +139,9 @@ public:
         enforce(client.permu, "Networking game has no player permutation.");
 
         level = client.level;
-        _levelMatchesReplayThereforeMaySaveTrophy = false;
         _netClient = client;
+        _trophyKeyOfTheLevel = TrophyKey(""); // empty fileNoExt => never save
+        _levelFnForHarvest = new VfsFilename(""); // shouldn't be important
         _netClient.onConnectionLost = ()
         {
             // Maybe too drastic? Lobby will catch us
@@ -187,9 +186,9 @@ public:
 
     Harvest harvest() const
     {
-        return Harvest(level, nurse.constReplay,
-            nurse.trophyForTribe(localStyle),
-            _levelMatchesReplayThereforeMaySaveTrophy);
+        Trophy tro = Trophy(level.built, _levelFnForHarvest);
+        tro.copyFrom(nurse.trophyForTribe(localStyle));
+        return Harvest(level, nurse.constReplay, _trophyKeyOfTheLevel, tro);
     }
 
     const(Replay) replay() const { return nurse.constReplay; }
@@ -321,7 +320,7 @@ private:
         auto rp = levelFilename.empty ? Replay.newNoLevelFilename(level.built)
             : Replay.newForLevel(levelFilename.unwrap, level.built);
         if (! _netClient) {
-            rp.addPlayer(PlNr(0), Style.garden, basics.globconf.userName);
+            rp.addPlayer(PlNr(0), Style.garden, file.option.userName);
         }
         else {
             rp.permu = _netClient.permu;
@@ -333,7 +332,8 @@ private:
     }
 
     Style determineLocalStyle(in Replay rp) const
-    {
+    in { assert (rp); }
+    body {
         if (rp.players.length == 0)
             return Style.garden;
         if (_netClient) {

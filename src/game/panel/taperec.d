@@ -7,7 +7,7 @@ module game.panel.taperec;
 import std.algorithm;
 
 import basics.globals;
-import basics.user;
+import file.option;
 import game.panel.nuke;
 import game.panel.tooltip;
 import graphic.internal;

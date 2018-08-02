@@ -1,12 +1,12 @@
-module file.useropt;
+module file.option.useropt;
 
 /* This expresses a single global option settable by the user. This option
  * will be saved into the user file, not the all-user global config file.
  *
  * For the collection of all user options, including the methods to save/load
- * them all at once to/from the user file see module basics.user instead.
+ * them all at once to/from the user file see module file.option instead.
  *
- * For the global config file, see basics.globconf instead.
+ * For the global config file, see file.option instead.
  *
  * Contract with file.language.Lang:
  * Each short option description (caption in the options menu)

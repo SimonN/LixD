@@ -172,11 +172,11 @@ private:
         ~ "need the search button, to do something at all with the result");
     }
     body {
-        import basics.user;
+        import file.option;
         import file.language;
         _searchButton = new TextButton(new Geom(0, 0, Breadcrumb.butXl,
             _bread.ylg, From.TOP_RIGHT), Lang.browserSearch.transl);
-        _searchButton.hotkey = basics.user.keyMenuSearch;
+        _searchButton.hotkey = file.option.keyMenuSearch;
 
         _searchButton.onExecute = ()
         {

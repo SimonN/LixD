@@ -20,7 +20,7 @@ import graphic.color;
 import graphic.torbit;
 import graphic.zoom;
 
-static import basics.user;
+static import file.option;
 static import hardware.display;
 static import hardware.keyboard;
 static import hardware.mouse;
@@ -258,10 +258,10 @@ private void calcEdgeScrolling()
 {
     _suggestTooltip = false;
     if (! scrollable || ! hardware.mouse.hardwareMouseInsideWindow
-        || basics.user.scrollSpeedEdge.value <= 0)
+        || file.option.scrollSpeedEdge.value <= 0)
         return;
 
-    float scrd = basics.user.scrollSpeedEdge;
+    float scrd = file.option.scrollSpeedEdge;
     if (hardware.mouse.mouseHeldRight())
         scrd *= 4;
     scrd /= zoom;
@@ -290,11 +290,11 @@ private void calcHoldScrolling()
         _isHoldScrolling = false;
         return;
     }
-    if (basics.user.keyScroll.keyHeld && ! _isHoldScrolling) {
+    if (file.option.keyScroll.keyHeld && ! _isHoldScrolling) {
         // first frame of scrolling
         _scrollGrabbed = hardware.mouse.mouseOnScreen;
     }
-    _isHoldScrolling = basics.user.keyScroll.keyHeld;
+    _isHoldScrolling = file.option.keyScroll.keyHeld;
     if (! _isHoldScrolling)
         return;
 
@@ -302,7 +302,7 @@ private void calcHoldScrolling()
         in int grabbed, in int mouse, in int mickey, in int cameraCurrent,
         void function() freeze
     ) {
-        immutable dir = basics.user.holdToScrollInvert.value ? -1 : 1;
+        immutable dir = file.option.holdToScrollInvert.value ? -1 : 1;
         immutable uninvertedScrollingAllowed =
                (minus && mouse <= grabbed && mickey < 0)
             || (plus  && mouse >= grabbed && mickey > 0);
@@ -311,7 +311,7 @@ private void calcHoldScrolling()
         if (dir == 1 && uninvertedScrollingAllowed
             || dir == -1 && (plus || minus)
         ) {
-            ret += roundInt(mickey * basics.user.holdToScrollSpeed
+            ret += roundInt(mickey * file.option.holdToScrollSpeed
                     * dir / zoom / 4); // the factor /4 comes from C++ Lix
             freeze();
         }
@@ -468,7 +468,7 @@ loadCameraRect(in Torbit src)
     immutable bool drty = torusY && r.yl < cameraZoomedYl;
 
     auto targetTorbit = TargetTorbit(this);
-    if (basics.user.paintTorusSeams.value)
+    if (file.option.paintTorusSeams.value)
         drawTorusSeams();
 
     void drawHere(int ax, int ay, int axl, int ayl)

@@ -15,7 +15,7 @@ import core.memory;
 import optional;
 
 import basics.alleg5;
-import basics.globconf;
+import file.option;
 import basics.globals;
 import basics.resol;
 import editor.editor;
@@ -24,6 +24,7 @@ import game.harvest;
 import game.replay; // ReplayToLevelMatcher
 import file.filename; // running levels from the command-line
 import file.log; // logging uncaught Exceptions
+import file.trophy : TrophyKey;
 import hardware.display;
 import hardware.keyboard;
 import hardware.music;
@@ -225,7 +226,11 @@ public:
                 _lastLoaded = none;
                 kill();
                 afterGameGoto = AfterGameGoto.browSin;
-                game = new Game(lv, fn);
+                TrophyKey key;
+                key.fileNoExt = fn.fileNoExtNoPre;
+                key.title = lv.name;
+                key.author = lv.author;
+                game = new Game(lv, key, fn, no!Replay);
             }
             else if (browSin && browSin.gotoRepForLev) {
                 auto fn = browSin.fileRecent;
@@ -330,7 +335,7 @@ public:
         }
         else {
             // program has just started, nothing exists yet
-            if (basics.globconf.userName.length) {
+            if (file.option.userName.length) {
                 mainMenu = new MainMenu;
                 gui.addElder(mainMenu);
             }
@@ -373,7 +378,7 @@ public:
 
     private void takeScreenshot()
     {
-        import basics.user;
+        import file.option;
         import hardware.scrshot;
         if (! keyScreenshot.keyTapped)
             return;

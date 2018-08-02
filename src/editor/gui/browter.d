@@ -8,10 +8,10 @@ import optional;
 
 import basics.help : len;
 import basics.globals;
-import basics.user;
+import file.option;
 import editor.hover;
 import file.language;
-import file.useropt;
+import file.option;
 import gui;
 import gui.picker;
 import hardware.mouse;

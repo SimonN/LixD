@@ -5,8 +5,8 @@ import std.conv;
 import std.string;
 
 import basics.globals;
-import basics.globconf;
-import basics.user; // hotkeys for the popup dialogs
+import file.option;
+import file.option; // hotkeys for the popup dialogs
 import editor.dragger;
 import editor.editor;
 import editor.gui.panel;
@@ -68,7 +68,7 @@ private void newLevelNoQuestions(Editor editor) {
     Level f()
     {
         Level l = new Level;
-        l.author = basics.globconf.userName;
+        l.author = file.option.userName;
         l.overtimeSeconds = 30; // Level discards this if saved as 1-pl
         return l;
     }
@@ -80,7 +80,7 @@ void saveToExistingFile(Editor editor) {
     with (editor)
 {
     if (editor._loadedFrom) {
-        basics.user.singleLastLevel = editor._loadedFrom;
+        file.option.singleLastLevel = editor._loadedFrom;
         if (_level != _levelToCompareForDataLoss)
             _level.built = Date.now();
         _level.saveToFile(_loadedFrom);

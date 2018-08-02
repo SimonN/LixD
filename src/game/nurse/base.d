@@ -11,10 +11,13 @@ module game.nurse.base;
 import std.algorithm;
 import std.range;
 
+import optional;
+
 import net.repdata; // update
-import basics.globconf; // update player name on cut replay
-import basics.trophy;
+import file.option; // update player name on cut replay
 import file.date;
+import file.filename;
+import file.trophy;
 import game.model.model;
 import game.model.state;
 import game.tribe;
@@ -28,7 +31,6 @@ abstract class Nurse {
 private:
     Replay _replay;
     GameModel _model;
-    const(Date) _levelBuilt; // to write it into to results generated later
 
 public:
     @property const(Replay) constReplay() const { return _replay; }
@@ -49,7 +51,6 @@ public:
             stylesToMake = [ Style.garden ];
         _replay = rp;
         _model = new GameModel(lev, stylesToMake, rp.permu, ef);
-        _levelBuilt = lev.built;
         assert (_replay);
     }
 
@@ -95,10 +96,13 @@ public:
             cs.hatches.filter!(h => h.blinkStyle == st));
     }
 
-    Trophy trophyForTribe(in Style style) const
+    HalfTrophy trophyForTribe(in Style style) const
     {
         assert (style in cs.tribes);
-        return resultOf(cs.tribes[style]);
+        HalfTrophy ret;
+        ret.lixSaved = cs.tribes[style].score.current;
+        ret.skillsUsed = cs.tribes[style].skillsUsed;
+        return ret;
     }
 
 protected:
@@ -120,16 +124,5 @@ protected:
         assert (dataSlice.isSorted!("a.player < b.player"));
         _model.advance(dataSlice.map!(rd =>
             GameModel.ColoredData(rd, _replay.plNrToStyle(rd.player))));
-    }
-
-private:
-    Trophy resultOf(in Tribe tr) const
-    {
-        auto result = Trophy(_levelBuilt);
-        result.lixSaved = tr.score.current;
-        result.skillsUsed = tr.skillsUsed;
-        if (tr.hasScored)
-            result.phyusUsed = tr.recentScoring;
-        return result;
     }
 }

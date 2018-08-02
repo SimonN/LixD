@@ -1,4 +1,4 @@
-module basics.user;
+module file.option.allopts;
 
 /* User settings read from the user config file. This file differs from the
  * global config file, see globconf.d. Whenever the user file doesn't exist,
@@ -14,20 +14,18 @@ import optional;
 
 import basics.alleg5;
 import basics.globals;
-import basics.globconf;
+import file.option;
 import basics.help;
-import basics.trophy;
 import file.filename;
 import file.io;
 import file.language;
 import file.log; // when writing to disk fails
-import file.useropt;
+import file.option;
 import hardware.keynames;
 import hardware.keyset;
+import hardware.tharsis;
 import net.ac;
 import net.style;
-
-private Trophy[Filename] _trophies;
 
 // These is only for iteration during option saving/loading.
 // Outside of this module, refer to options by their static variable name.
@@ -80,33 +78,6 @@ struct DisplayTryMode {
             screenMode.value = ScreenMode.softwareFullscreen;
     }
     return DisplayTryMode(ScreenMode.softwareFullscreen, 0, 0);
-}
-
-/*
- * addToUser: Update trophy database (user progress, list of checkmarks)
- * with a new level result. This tries to save the best result per level.
- * Call this only with winning _trophies! The progress database doesn't know
- * whether a result is winning, it merely knows how many lix were saved.
- *
- * Returns true if we updated the previous result or if no previous result
- * existed. Returns false if the previous result was already equal or better.
- */
-bool addToUser(Trophy tro, in Filename fn)
-{
-    const(Trophy*) existing = (fn in _trophies);
-    if (! existing || tro.shouldReplaceAfterPlay(*existing)) {
-        _trophies[fn] = tro;
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
-Optional!Trophy getTrophy(in Filename fn)
-{
-    Trophy* ret = (fn in _trophies);
-    return ret ? some(*ret) : Optional!Trophy();
 }
 
 UserOptionFilename fileLanguage;
@@ -417,14 +388,15 @@ static this()
 
 // ############################################################################
 
-private Filename userFileName()
+// This should be private. But for legacy trophy loading, file.trophy needs it.
+public Filename userFileName()
 {
     return new VfsFilename(dirDataUser.dirRootless
      ~ basics.help.escapeStringForFilename(userName)
      ~ filenameExtConfig);
 }
 
-void load()
+void loadUserOptions()
 {
     if (userName == null)
         // This happens upon first start after installation.
@@ -449,44 +421,15 @@ void load()
             lines = null;
         }
     }
-    _trophies = null;
-
-    foreach (i; lines) {
-        if (i.type == '<') {
-            import std.string;
-            auto fn = rebindable!(const Filename)(new VfsFilename(
-                // Backwards compat for renaming Simple to Lovely:
-                // Load all old user _trophies. We would save with the new name.
-                // Remove the call to replace during early 2018.
-                i.text1.replace("lemforum/Simple/", "lemforum/Lovely/")
-            ));
-            Trophy read = Trophy(i.text2, i.nr1, i.nr2, i.nr3);
-
-            // Don't call addTrophy because that always overwrites the date.
-            // We want the newest date here to tiebreak, unlike addTrophy.
-            Trophy* old = (fn in _trophies);
-            if (! old || read.shouldReplaceDuringUserDataLoad(*old))
-                _trophies[fn] = read;
-        }
-        else if (auto opt = i.text1 in _optvecLoad)
+    foreach (i; lines.filter!(i => i.type != '<'))
+        if (auto opt = i.text1 in _optvecLoad)
             opt.set(i);
-
-        // Backwards compatibility: Before 0.6.2, I had hacked in two hotkeys
-        // for pause that saved to different variables. Load this other var.
-        else if (i.nr1 != 0 && i.text1 == "KEY_PAUSE2")
-            keyPause.value = KeySet(keyPause.value, KeySet(i.nr1));
-        // Backwards compatibility: Before 0.9.7, I had a boolean for windowed
-        // mode (0 = software fullscreen, 1 = windowed), but now I have a
-        // three-valued int option (0 = windowed, 1 = software fullscreen,
-        // 2 = hardware fullscreen).
-        else if (i.text1 == "SCREEN_WINDOWED")
-            screenMode.value = i.nr1 == 1 ? ScreenMode.windowed
-                                          : ScreenMode.softwareFullscreen;
-    }
 }
 
-nothrow void save()
+nothrow void saveUserOptions()
 {
+    version (tharsisprofiling)
+        auto zone = Zone(profiler, "save user config");
     if (userName == null) {
         log("User name is empty. User configuration will not be saved.");
         return;
@@ -496,9 +439,6 @@ nothrow void save()
         foreach (opt; _optvecSave)
             f.writeln(opt.ioLine);
         f.writeln();
-        foreach (key, r; _trophies)
-            f.writeln(IoLine.Angle(key.rootless,
-                r.lixSaved, r.skillsUsed, r.phyusUsed, r.built.toString));
     }
     catch (Exception e) {
         log("Can't save user configuration for `" ~ userName ~ "':");

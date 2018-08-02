@@ -5,7 +5,7 @@ import std.algorithm;
 import optional;
 
 import basics.globals;
-import basics.user;
+import file.option;
 import file.language;
 import file.filename;
 import game.harvest;
@@ -29,7 +29,7 @@ public:
         super(title, baseDir, t);
         _delete = new TextButton(newDeleteButtonGeom,
             Lang.browserDelete.transl);
-        _delete.hotkey = basics.user.keyMenuDelete;
+        _delete.hotkey = file.option.keyMenuDelete;
         addChildren(_delete);
     }
 

@@ -5,7 +5,7 @@ import std.random;
 public import basics.alleg5 : Alcol;
 
 import basics.alleg5;
-import basics.user;
+import file.option;
 
 public ColorPrivate color;
 
@@ -18,9 +18,9 @@ public struct Alcol3D {
 
 void initialize()
 {
-    computeColors(basics.user.guiColorRed,
-                  basics.user.guiColorGreen,
-                  basics.user.guiColorBlue);
+    computeColors(file.option.guiColorRed,
+                  file.option.guiColorGreen,
+                  file.option.guiColorBlue);
 }
 
 void deinitialize() { destroy(color); color = null; }

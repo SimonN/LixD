@@ -5,7 +5,7 @@ import std.math;
 
 import basics.globals;
 import basics.topology;
-import basics.user;
+import file.option;
 import editor.gui.okcancel;
 import file.language;
 import gui;

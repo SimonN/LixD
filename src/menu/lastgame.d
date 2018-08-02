@@ -10,11 +10,11 @@ import std.algorithm;
 import std.format;
 import optional;
 
-import basics.trophy;
 import basics.globals;
-import basics.globconf;
-import basics.user : addToUser, getTrophy, replayLastLevel;
+import file.option;
+import file.option : replayLastLevel;
 import file.filename;
+import file.trophy;
 import game.harvest;
 import game.replay;
 import graphic.color;
@@ -148,14 +148,10 @@ protected:
 
     final void saveTrophy()
     {
-        if (! _harvest.maySaveTrophy || replay.levelFilename.empty
-            || replay.players.length != 1
-            || replay.players.byValue.front.name != basics.globconf.userName)
+        if (replay.players.length != 1
+            || replay.players.byValue.front.name != file.option.userName)
             return;
-
-        Filename lfn = replay.levelFilename.unwrap;
-        Optional!Trophy old = getTrophy(lfn);
-        _harvest.trophy.addToUser(lfn); // This adds only if it improves.
+        maybeImprove(_harvest.trophyKey, _harvest.trophy);
     }
 
     // Returns whether the Replay class decided to save.
@@ -181,7 +177,8 @@ import file.date;
 bool privateEqual(Date a, Date b) { return a == b; }
 
 unittest {
-    Optional!Trophy old = Trophy("2000-01-01", 1, 2, 3);
+    Optional!Trophy old = Trophy(new Date("2000-01-01"),
+        new VfsFilename("./levels/a.txt"));
     Level level = new Level();
     level.built = new Date("2000-01-01");
     assert (privateEqual(level.built, old.unwrap.built),

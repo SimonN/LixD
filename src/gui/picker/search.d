@@ -22,7 +22,7 @@ import std.string;
 
 import basics.alleg5;
 import basics.globals;
-import basics.user;
+import file.option;
 import file.language;
 import file.filename;
 import file.log;

@@ -9,10 +9,10 @@ import std.conv;
 
 import enumap;
 
-import basics.globconf;
-import basics.user;
+import file.option;
+import file.option;
 import file.language;
-import file.useropt; // only to name the type for addNumPick
+import file.option; // only to name the type for addNumPick
 import gui;
 import gui.option;
 import graphic.color;
@@ -79,7 +79,7 @@ public this()
         }
     }
     try
-        showGroup(basics.user.optionGroup.value.to!OptionGroup);
+        showGroup(file.option.optionGroup.value.to!OptionGroup);
     catch (Exception)
         showGroup(OptionGroup.general);
 }
@@ -89,7 +89,7 @@ protected override void calcSelf()
     explainOptions();
 
     if (_userName.on == false && _userName.text.strip.length == 0) {
-        _userName.text = basics.globconf.userName;
+        _userName.text = file.option.userName;
     }
     if (okay.execute || hardware.mouse.mouseClickRight) {
         saveEverything();
@@ -116,7 +116,7 @@ void explainOptions()
 {
     Option[] group;
     try {
-        group = groups[basics.user.optionGroup.value.to!OptionGroup];
+        group = groups[file.option.optionGroup.value.to!OptionGroup];
         // DTODOLANGUAGE: The editor relies on the enum range of editor buttons
         // to be connected. The UserOptions rely on the enum range of options
         // to be interspersed with their explanations. DRY demands that I
@@ -139,7 +139,7 @@ void explainOptions()
 
 void showGroup(in OptionGroup gr)
 {
-    basics.user.optionGroup = gr;
+    file.option.optionGroup = gr;
     reqDraw();
     foreach (enumVal, group; groups) {
         if (enumVal == gr) {
@@ -160,11 +160,11 @@ void saveEverything()
         group.each!(option => option.saveValue);
 
     if (oldUser != userName) {
-        basics.user.load();
-        basics.user.optionGroup = OptionGroup.general;
+        loadUserOptions();
+        file.option.optionGroup = OptionGroup.general;
     }
-    basics.user    .save();
-    basics.globconf.save();
+    saveUserOptions();
+    file.option.save();
     // On user switch, why load, then save?
     // If the user is new:
     //      Then loading doesn't overwrite any values at all, so the

@@ -6,7 +6,7 @@ module basics.resol;
  */
 
 import basics.cmdargs;
-import basics.user; // don't always change resolution if already OK
+import file.option; // don't always change resolution if already OK
 import game.physdraw;
 import graphic.internal;
 import gui.context;

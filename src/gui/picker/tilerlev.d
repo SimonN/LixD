@@ -8,8 +8,8 @@ import optional;
 import std.conv;
 import std.string;
 
-import basics.trophy;
-import basics.user;
+import file.option;
+import file.trophy;
 import file.date;
 import gui;
 import gui.picker.tiler;
@@ -61,9 +61,14 @@ protected:
         TextButton ret;
         try {
             const dat = new LevelMetaData(fn);
+            TrophyKey key;
+            key.fileNoExt = fn.fileNoExtNoPre;
+            key.title = dat.nameEnglish;
+            key.author = dat.author;
+
             ret = new TextButton(newButtonGeom(), "%s%d. %s".format(
                 fileID < 9 ? "  " : "", fileID + 1, dat.name));
-            ret.checkFrame = determineCheckFrame(dat, getTrophy(fn));
+            ret.checkFrame = determineCheckFrame(dat, getTrophy(key));
         }
         catch (Exception e) {
             ret = new TextButton(newButtonGeom(), fn.file);

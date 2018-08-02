@@ -11,7 +11,7 @@ module menu.rep4lev;
 import optional;
 
 import basics.globals;
-import basics.user;
+import file.option;
 import file.filename;
 import file.language;
 import game.replay.matcher;

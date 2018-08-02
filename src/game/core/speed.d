@@ -4,7 +4,7 @@ static import basics.globals;
 
 import basics.alleg5;
 import net.repdata; // Phyu
-import basics.user; // replayAfterFrameBack
+import file.option; // replayAfterFrameBack
 import game.core.game;
 import game.core.active; // findAgainHighlitLixAfterPhyu
 import game.model.cache : DuringTurbo;

@@ -8,7 +8,7 @@ import std.range;
 
 import net.repdata;
 import basics.rect;
-import basics.user; // hotkeys
+import file.option; // hotkeys
 import game.core.game;
 import game.panel.tooltip;
 import gui : SkillButton;
@@ -242,7 +242,7 @@ void assignToPotentialAssignee(
     _effect.addArrowDontShow(data.update, localStyle, potAss.id);
     _effect.addSound(        data.update, localStyle, potAss.id, Sound.ASSIGN);
 
-    if (basics.user.unpauseOnAssign.value == true)
+    if (file.option.unpauseOnAssign.value == true)
         pan.pause = false;
 }}
 // end PotentialAssignee assignToPotentialAssignee()

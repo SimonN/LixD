@@ -5,7 +5,7 @@ import std.typecons; // Rebindable;
 
 import basics.globals; // game panel icons
 import net.repdata; // Phyu
-import basics.user; // languageIsEnglish
+import file.option; // languageIsEnglish
 import file.language;
 import game.tribe;
 import game.panel.tooltip;
@@ -177,12 +177,12 @@ private:
     void formatTooltip()
     {
         string s;
-        if (basics.user.ingameTooltips.value) {
+        if (file.option.ingameTooltips.value) {
             s = Tooltip.format(_tooltipsSuggested);
             if (s == "")
                 s = file.language.skillTooltip(_skillTooltipSuggested);
         }
-        if (basics.user.showFPS.value && s == "")
+        if (file.option.showFPS.value && s == "")
             s = format!"Phyu: %d   FPS: %d"(_age, displayFps);
         _tooltip.text = s;
         _tooltipsSuggested = 0;

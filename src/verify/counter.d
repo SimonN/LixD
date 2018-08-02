@@ -7,8 +7,8 @@ import std.array;
 import std.format;
 import enumap;
 
-import basics.globconf; // remember results if playername == username
-import basics.user; // Result, update results if our own replay solves
+import file.option; // remember results if playername == username
+import file.option; // Result, update results if our own replay solves
 import file.filename;
 import file.language;
 import verify.tested;

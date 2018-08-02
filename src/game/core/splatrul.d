@@ -24,7 +24,7 @@ package:
  */
 SplatRuler createSplatRuler()
 {
-    import basics.user;
+    import file.option;
     switch (splatRulerDesign) {
         case 0: default: return new SplatRulerTwoBars;
         case 1: return new SplatRuler094;

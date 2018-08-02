@@ -6,8 +6,8 @@ import std.file;
 import std.format;
 import std.range;
 
-import basics.globconf;
-import basics.user;
+import file.option;
+import file.option;
 import file.language;
 import game.harvest;
 import gui;
@@ -147,7 +147,7 @@ protected:
                 _netClient.ourFeeling = Profile.Feeling.observing;
             else {
                 _netClient.ourStyle = _colorSelector.style;
-                basics.user.networkLastStyle = _colorSelector.style;
+                file.option.networkLastStyle = _colorSelector.style;
             }
         }
         if (_roomList.executeExistingRoom)
@@ -173,7 +173,7 @@ private:
     {
         _buttonExit = new TextButton(new Geom(20, 20, 120, 20, From.BOT_RIG),
             Lang.commonBack.transl);
-        _buttonExit.hotkey = basics.user.keyMenuExit;
+        _buttonExit.hotkey = file.option.keyMenuExit;
         _buttonExit.onExecute = () { onExitButtonExecute(); };
         addChild(_buttonExit);
 
@@ -232,7 +232,7 @@ private:
             _chat.text = "";
         };
         _chat.onEsc = () { _chat.text = ""; };
-        _chat.hotkey = basics.user.keyChat;
+        _chat.hotkey = file.option.keyChat;
         _showWhenConnected ~= _chat;
         _showWhenConnected ~= new Label(new Geom(20, 20, chatLabelXl,
                                 20, From.BOT_LEF), Lang.winLobbyChat.transl);
@@ -265,14 +265,14 @@ private:
     {
         NetClientCfg cfg;
         cfg.hostname = hostname;
-        cfg.ourPlayerName = basics.globconf.userName;
+        cfg.ourPlayerName = file.option.userName;
         try
-            cfg.ourStyle = basics.user.networkLastStyle.value.to!Style;
+            cfg.ourStyle = file.option.networkLastStyle.value.to!Style;
         catch (Exception)
             // Both client and server handle illegal values and will give
             // us a legal default value
             { }
-        cfg.port = basics.globconf.serverPort;
+        cfg.port = file.option.serverPort;
         _netClient = new RichClient(new NetClient(cfg), _console);
         setOurEventHandlers();
         _console.add("Lix %s, enet %s. %s %s:%d...".format(gameVersion,

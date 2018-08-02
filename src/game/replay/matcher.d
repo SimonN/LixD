@@ -21,6 +21,7 @@ import enumap;
 import optional;
 
 import file.filename;
+import file.trophy : TrophyKey;
 import game.core.game;
 import game.nurse.verify;
 import game.replay.replay;
@@ -110,10 +111,15 @@ public:
     out (ret) { assert (ret); }
     body {
         auto pref = preferredInitializedStruct();
-        return _rp.empty
-            // pref.fn is nonzero because of in contract
-            ? new Game(pref.level.unwrap, pref.fn.unwrap)
-            : new Game(pref.level.unwrap, _rp, pref.lvMatchesFn);
+        TrophyKey key;
+        key.fileNoExt = pref.fn.dispatch.fileNoExtNoPre.orElse(
+            _rp.levelFilename.dispatch.fileNoExtNoPre.orElse(""));
+        key.title = pref.level.unwrap.name;
+        key.author = pref.level.unwrap.author;
+
+        Filename fallback = new VfsFilename("");
+        return new Game(pref.level.unwrap, key,
+            pref.fn.get.orElse(fallback), some(_rp));
     }
 
     VerifyingNurse createVerifyingNurse()

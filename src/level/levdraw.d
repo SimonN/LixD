@@ -152,7 +152,7 @@ body {
 
         // Draw UI near bottom of the level
         img.drawFilledRectangle(Rect(0, tp.yl, img.xl, extraYl), color.guiM);
-        import basics.user : skillSort;
+        import file.option : skillSort;
         import file.language;
         enum sbXl = 40;
         auto sb = new SkillButton(new Geom(0, tp.yl, sbXl, extraYl));

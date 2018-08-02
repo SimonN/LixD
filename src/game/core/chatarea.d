@@ -10,7 +10,7 @@ import std.algorithm;
 import std.format;
 import std.range;
 
-import basics.user;
+import file.option;
 import game.score.score;
 import game.replay;
 import file.language;

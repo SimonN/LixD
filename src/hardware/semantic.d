@@ -3,18 +3,18 @@ module hardware.semantic;
 // High-level input information that's gathered from mouse and keyboard,
 // according to user options.
 
-import basics.user;
+import file.option;
 
 bool forcingLeft()
 {
-    return   basics.user.keyForceLeft.keyHeld
-        && ! basics.user.keyForceRight.keyHeld;
+    return   file.option.keyForceLeft.keyHeld
+        && ! file.option.keyForceRight.keyHeld;
 }
 
 bool forcingRight()
 {
-    return ! basics.user.keyForceLeft.keyHeld
-        &&   basics.user.keyForceRight.keyHeld;
+    return ! file.option.keyForceLeft.keyHeld
+        &&   file.option.keyForceRight.keyHeld;
 }
 
 int keyMenuMoveByTotal()

@@ -12,11 +12,11 @@ import std.algorithm;
 import std.format;
 import enumap;
 
-import basics.user;
-import basics.globconf : userName;
-import basics.trophy;
+import file.option;
+import file.option : userName;
 import file.date;
 import file.filename;
+import file.trophy;
 import level.level;
 import game.nurse.verify;
 import game.replay;
@@ -49,6 +49,7 @@ private:
     Optional!Level _lv; // may be none, e.g., if noPointer or missingLevel
     Trophy _trophy; // Always has _lv's built. If _lv is none: random built.
     Status _status;
+    int _phyusUsed;
 
 public:
     this(Filename fn)
@@ -73,7 +74,8 @@ public:
         VerifyingNurse nurse = _matcher.createVerifyingNurse();
         auto eval = nurse.evaluateReplay();
         destroy(nurse);
-        _trophy = eval.trophy;
+        _trophy.copyFrom(eval.halfTrophy);
+        _phyusUsed = eval.phyusUsed;
         _status = _trophy.lixSaved >= _lv.unwrap.required ? Status.solved
             : eval.mercyKilled ? Status.mercyKilled : Status.failed;
     }
@@ -92,7 +94,7 @@ public:
             levelFilename.dispatch.rootless.orElse(""),
             _matcher.singleplayerName, _trophy.lixSaved,
             _lv.empty ? 0 : _lv.unwrap.required,
-            _trophy.skillsUsed, _trophy.phyusUsed);
+            _trophy.skillsUsed, _phyusUsed);
     }
 
     // Returns true if we updated the trophy, false if the old was >= ours
@@ -102,8 +104,14 @@ public:
                      || userName != _matcher.singleplayerName
                      || levelFilename.empty)
             return false;
+        assert (! _lv.empty);
         assert (! _matcher.isMultiplayer);
-        return _trophy.addToUser(levelFilename.unwrap);
+        TrophyKey key;
+        key.fileNoExt = _matcher.pointedToFilename
+            .dispatch.fileNoExtNoPre.orElse("");
+        key.title = _lv.dispatch.name.orElse("");
+        key.author = _lv.dispatch.author.orElse("");
+        return maybeImprove(key, _trophy);
     }
 
 private:

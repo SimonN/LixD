@@ -8,7 +8,7 @@ import std.string; // format
 
 import basics.alleg5;
 import basics.globals; // replay sign
-import basics.user : showFPS;
+import file.option : showFPS;
 import game.core.game;
 import game.panel.tooltip;
 import game.tribe;

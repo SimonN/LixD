@@ -6,7 +6,7 @@ import std.algorithm;
 import std.range;
 
 import basics.rect;
-import basics.user; // keyPriorityInvert
+import file.option; // keyPriorityInvert
 import editor.editor;
 import editor.hover;
 import hardware.keyboard;

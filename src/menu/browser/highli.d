@@ -2,7 +2,7 @@ module menu.browser.highli;
 
 import optional;
 
-import basics.user;
+import file.option;
 import file.filename;
 import file.language;
 import gui;
@@ -43,7 +43,7 @@ public:
 
         _buttonExit = new TextButton(new Geom(infoX + infoXl/2, 20,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.commonBack.transl);
-        _buttonExit.hotkey = basics.user.keyMenuExit;
+        _buttonExit.hotkey = file.option.keyMenuExit;
         _preview = new Preview(newPreviewGeom());
         _previewLevelTitle = new Label(new Geom(infoX, infoY, infoXl+17, 20));
         _previewLevelTitle.undrawBeforeDraw = true;

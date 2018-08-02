@@ -2,12 +2,13 @@ module menu.askname;
 
 import std.string;
 
-static import basics.globconf;
-static import basics.user;
+static import file.option;
 static import hardware.keyboard;
 
 import basics.alleg5; // Explicit press of ESC
+import file.option;
 import file.language;
+import file.trophy;
 import gui;
 import menu.menubg;
 
@@ -34,8 +35,9 @@ public:
         _tt = new Texttype(new Geom(0, 100, this.xlg-40, 20, From.TOP));
         _tt.onEnter = () {
             if (_tt.text.strip.length > 0) {
-                basics.globconf.userName = _tt.text.strip;
-                basics.user.load();
+                file.option.userName = _tt.text.strip;
+                loadUserOptions();
+                loadTrophies();
                 _gotoMainMenu = true;
                 // Main menu will change resolution for us.
                 // I don't dare to do it here because we're in a GUI dialog.

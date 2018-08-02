@@ -4,7 +4,7 @@ import std.string; // strip whitespace
 
 import basics.alleg5; // return accepts the file, too
 import basics.globals; // extension
-import basics.user; // hotkey
+import file.option; // hotkey
 import menu.browser.highli;
 import menu.browser.mkdir;
 import file.language;

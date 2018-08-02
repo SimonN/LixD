@@ -8,7 +8,7 @@ module game.nurse.unittest_;
 import basics.alleg5;
 import basics.cmdargs;
 import basics.globals;
-import basics.user : replayAfterFrameBack;
+import file.option : replayAfterFrameBack;
 import basics.init;
 import file.filename;
 import game.nurse.savestat;

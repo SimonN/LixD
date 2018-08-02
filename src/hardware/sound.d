@@ -9,7 +9,7 @@ module hardware.sound;
 
 import basics.alleg5;
 import basics.globals;
-import basics.user;
+import file.option;
 import file.filename;
 import file.log;
 import hardware.music;
@@ -169,7 +169,7 @@ public:
     {
         if (_loud || (_quiet && !_lastWasLoud))
             stop();
-        if ((_loud || _quiet) && basics.user.soundEnabled.value) {
+        if ((_loud || _quiet) && file.option.soundEnabled.value) {
             _lastWasLoud = _loud;
             loadFromDisk();
             if (! _sample)

@@ -15,7 +15,7 @@ static import std.file;
 
 import optional;
 
-import basics.user; // hotkeys
+import file.option; // hotkeys
 import file.filename;
 import file.language;
 import file.log;
@@ -49,11 +49,11 @@ public:
         super(title, baseDir, cfg);
         _buttonPlay = new TextButton(new Geom(infoX, 20,
             infoXl/2, 40, From.BOTTOM_LEFT), Lang.browserPlay.transl);
-        _buttonPlay.hotkey = basics.user.keyMenuOkay;
+        _buttonPlay.hotkey = file.option.keyMenuOkay;
         addChildren(_buttonPlay);
     }
 
-    @property auto fileRecent() inout { return _fileRecent; }
+    @property Filename fileRecent() inout { return _fileRecent; }
 
     final void highlightNone()
     {

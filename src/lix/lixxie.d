@@ -9,7 +9,7 @@ import basics.globals; // fuse image
 import basics.help;
 import basics.matrix;
 import basics.topology;
-import basics.user; // multipleBuilders
+import file.option; // multipleBuilders
 import game.mask;
 import tile.phymap;
 import graphic.color;

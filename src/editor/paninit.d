@@ -6,7 +6,7 @@ import std.string;
 
 import basics.globals;
 import basics.rect;
-import basics.user;
+import file.option;
 import editor.editor;
 import editor.group;
 import editor.hover;

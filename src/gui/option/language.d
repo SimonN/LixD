@@ -4,7 +4,7 @@ import std.algorithm;
 import std.conv;
 import std.range; // takeOne
 
-static import basics.user;
+static import file.option;
 static import basics.globals;
 import file.filename;
 import file.io;
@@ -37,13 +37,13 @@ public:
     }
 
     override @property Lang lang() const { return Lang.optionLanguage; }
-    override void loadValue() { highlight(basics.user.fileLanguage); }
+    override void loadValue() { highlight(file.option.fileLanguage); }
     override void saveValue()
     {
         if (_lastChosen !is null
-            && _lastChosen != MutFilename(basics.user.fileLanguage)
+            && _lastChosen != MutFilename(file.option.fileLanguage)
         ) {
-            basics.user.fileLanguage = _lastChosen;
+            file.option.fileLanguage = _lastChosen;
             loadUserLanguageAndIfNotExistSetUserOptionToEnglish();
         }
     }

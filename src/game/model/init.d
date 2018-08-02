@@ -7,7 +7,7 @@ import std.typecons;
 
 import basics.alleg5;
 import basics.help; // len
-import basics.globconf;
+import file.option;
 import graphic.gadget;
 import graphic.torbit;
 import game.core.game;

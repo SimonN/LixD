@@ -1,4 +1,4 @@
-module basics.globconf;
+module file.option.globconf;
 
 /* global variables that may change during program run, and are saved
  * to the global config file. The global config file is different from the

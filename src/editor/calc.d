@@ -5,7 +5,7 @@ import std.format;
 import std.range;
 
 import basics.topology;
-import basics.user; // hotkeys for movement
+import file.option; // hotkeys for movement
 import editor.editor;
 import editor.hover;
 import editor.io;

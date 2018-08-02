@@ -5,7 +5,7 @@ import std.conv;
 import std.string; // strip
 
 import file.language;
-import file.useropt;
+import file.option;
 import graphic.internal;
 import gui;
 import gui.option;

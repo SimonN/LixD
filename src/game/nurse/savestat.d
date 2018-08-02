@@ -2,7 +2,7 @@ module game.nurse.savestat;
 
 import std.algorithm;
 
-import basics.user; // replayAfterFrameBack
+import file.option; // replayAfterFrameBack
 import game.model.cache;
 import game.model.state;
 import hardware.tharsis;
@@ -63,7 +63,7 @@ public:
     void framestepBackBy(int backBy)
     {
         framestepBackTo(Phyu(upd - backBy));
-        if (! basics.user.replayAfterFrameBack.value)
+        if (! file.option.replayAfterFrameBack.value)
             cutReplay();
     }
 

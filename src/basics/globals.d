@@ -126,6 +126,7 @@ Filename dirLevels, dirLevelsSingle, dirLevelsNetwork, dirReplays, dirData,
     dirExport;
 
 Filename fileGlobalConfig, fileLog, fileReplayVerifier, fileTharsisProf,
+    fileTrophies,
     fileLanguageEnglish, fileMusicMenu, fileMusicGain,
     fileSingleplayerFirstLevel;
 
@@ -160,6 +161,12 @@ static this()
     dirReplayAutoMulti = new Fn("replays/network/");
     dirReplayManual = new Fn("replays/manual/");
     dirExport = new Fn("export/");
+
+    // This should really be "./trophies.sdl" and Lix's virtual file system
+    // should decide whether to prefix with the "user/" dir or not.
+    // Self-contained: prepend "user/", FHS-installed: no extra subdir,
+    // write to "~/./local/share/lix/trophies.sdl".
+    fileTrophies = new Fn("./user/trophies.sdl");
 
     fileGlobalConfig = new Fn("data/config.txt");
     fileLog = new Fn("data/log.txt");

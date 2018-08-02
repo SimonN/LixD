@@ -9,7 +9,7 @@ import std.string;
 import std.stdio;
 
 import basics.globals;
-import basics.user; // hotkeys to cancel the dialog;
+import file.option; // hotkeys to cancel the dialog;
 import file.filename;
 import file.language;
 import file.log;

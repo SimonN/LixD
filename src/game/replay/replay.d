@@ -19,8 +19,8 @@ public import net.repdata;
 
 import basics.help; // array.len of type int
 import basics.globals;
-import basics.globconf : userName;
-import basics.user;
+import file.option : userName;
+import file.option;
 import net.permu;
 import net.versioning;
 import game.replay.io;

@@ -4,11 +4,12 @@ import derelict.enet.enet;
 
 import basics.alleg5;
 import basics.cmdargs;
-import basics.globconf;
+import file.option;
 import basics.resol;
-import basics.user;
+import file.option;
 import file.language;
 import file.filename;
+import file.trophy;
 import game.mask;
 import graphic.color;
 import graphic.internal;
@@ -48,8 +49,9 @@ void initializeNoninteractive(Runmode mode)
 
     file.filename.initialize(); // the virtual filesystem
     file.log.initialize();
-    basics.globconf.load();
-    basics.user.load();
+    file.option.load();
+    loadUserOptions();
+    loadTrophies();
 
     // We need the language (at least English) in every runmode:
     // Verifier explains results, image export prints lixes and spawn interval.
@@ -91,8 +93,9 @@ void deinitialize()
     // We don't deinitialize much. It should be okay to leak at end of
     // application on any modern OS, it makes for faster exiting.
     hardware.tharsis.deinitialize();
-    basics.user.save();
-    basics.globconf.save();
+    saveUserOptions();
+    saveTrophies();
+    file.option.save();
 }
 
 void deinitializeAfterUnittest()

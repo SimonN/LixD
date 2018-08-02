@@ -4,7 +4,7 @@ module menu.browser.mkdir;
  * We remove our own focus once we're done.
  */
 
-import basics.user; // hotkeys
+import file.option; // hotkeys
 import file.filename;
 import file.language;
 import file.log;

@@ -1,6 +1,6 @@
 module game.nurse.verify;
 
-import basics.trophy;
+import file.trophy;
 import game.nurse.base;
 
 class VerifyingNurse : Nurse {
@@ -10,7 +10,8 @@ private:
 
 public:
     struct EvalResult {
-        Trophy trophy; //
+        HalfTrophy halfTrophy;
+        int phyusUsed;
         bool mercyKilled; // replay took too long after last assign before win
     }
 
@@ -40,6 +41,6 @@ public:
             }
         }
         return EvalResult(
-            trophyForTribe(model.cs.singleplayerStyle), mercyKilled);
+            trophyForTribe(model.cs.singleplayerStyle), upd, mercyKilled);
     }
 }

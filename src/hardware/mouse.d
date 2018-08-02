@@ -5,7 +5,7 @@ import std.math; // abs
 import basics.alleg5;
 import basics.globals;
 import basics.rect;
-import basics.user;
+import file.option;
 import hardware.display;
 
 void initialize();
@@ -207,7 +207,7 @@ void handleTrappedMouse()
     }
     bool isCloseToEdge(in int pos, in int length)
     {
-        return ! basics.user.fastMovementFreesMouse.value
+        return ! file.option.fastMovementFreesMouse.value
             ? pos != length/2 // hard to leave
             : pos * 16 < length || pos * 16 >= length * 15; // easy to leave
     }

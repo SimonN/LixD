@@ -15,7 +15,7 @@ import basics.alleg5;
 import basics.cmdargs;
 import basics.help; // positive mod
 import basics.globals; // nameOfTheGame
-import basics.user;
+import file.option;
 import file.log;
 
 static import hardware.keyboard; // clear after changing resolution
@@ -165,7 +165,7 @@ DisplayTryMode[] userFileModes()
     immutable wantX = screenWindowedX.value > 0 ? screenWindowedX.value : 640;
     immutable wantY = screenWindowedY.value > 0 ? screenWindowedY.value : 480;
     typeof(return) ret;
-    switch (basics.user.screenMode.value) {
+    switch (file.option.screenMode.value) {
     case ScreenMode.windowed:
         ret ~= DisplayTryMode(ScreenMode.windowed, wantX, wantY);
         ret ~= DisplayTryMode(ScreenMode.softwareFullscreen, wantX, wantY);

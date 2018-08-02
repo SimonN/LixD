@@ -25,7 +25,7 @@ import std.conv; // (enum constant) --to!Lang--> (string of its variable name)
 import std.format;
 
 import basics.globals; // fileLanguageEnglish
-import basics.user; // fileLanguage, which file does the user want
+import file.option; // fileLanguage, which file does the user want
 import file.io;
 import file.log;
 import file.filename;

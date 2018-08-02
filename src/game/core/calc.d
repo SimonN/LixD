@@ -2,7 +2,7 @@ module game.core.calc;
 
 import std.algorithm; // all
 
-import basics.user;
+import file.option;
 import basics.cmdargs;
 import game.core.game;
 import game.window.base;

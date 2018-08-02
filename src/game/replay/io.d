@@ -4,7 +4,7 @@ import std.algorithm;
 import std.stdio; // save file, and needed for unittest
 import optional;
 
-import basics.globconf : userName; // for filename during saving
+import file.option : userName; // for filename during saving
 import basics.help;
 import net.repdata;
 import basics.globals;

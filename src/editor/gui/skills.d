@@ -2,7 +2,7 @@ module editor.gui.skills;
 
 import std.algorithm;
 
-import basics.user; // length of sorted skill array
+import file.option; // length of sorted skill array
 import basics.globals;
 import editor.gui.okcancel;
 import file.language;

@@ -8,18 +8,18 @@ module game.harvest;
 
 import optional;
 
-import basics.trophy;
+import file.trophy;
 import game.replay;
 import level.level;
 
 struct Harvest {
     const(Level) level;
     const(Replay) replay;
-    const(Trophy) trophy; // of the local team, designed for singleplayer.
 
-    // Harvest gets a Trophy even if Game forbids to save the Trophy.
-    // Saving the trophy is forbidden when the level doesn't match what's
-    // saved at the replay's pointed-to filename.
-    // Game got told this bool, then Game tells us this bool:
-    const bool maySaveTrophy;
+    // Specify an empty trophyKey.fileNoExt if the level doesn't exist
+    // anywhere in the file tree. Always specify the loaded level's key.
+    // When a replay is played against an arbitrarily chosen level, specify
+    // still specify the loaded level's key, not the pointed-to level's key.
+    const(TrophyKey) trophyKey;
+    const(Trophy) trophy; // of the local team, designed for singleplayer.
 }

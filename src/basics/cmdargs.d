@@ -1,7 +1,7 @@
 module basics.cmdargs;
 
 /* Parsing command-line arguments: These act like global config options in
- * basics.globconf, but command-line switches are not written to that module
+ * file.option, but command-line switches are not written to that module
  * and therefore not saved to the config file.
  *
  * Right now, all the using code throughout the program must look up the

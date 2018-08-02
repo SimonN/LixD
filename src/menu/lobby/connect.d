@@ -7,8 +7,8 @@ module menu.lobby.connect;
 
 import std.string;
 
-import basics.globconf;
-import basics.user;
+import file.option;
+import file.option;
 import gui;
 import file.language;
 

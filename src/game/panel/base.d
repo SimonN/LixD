@@ -11,7 +11,7 @@ import std.range;
 
 import optional;
 
-import basics.user;
+import file.option;
 import basics.globals;
 import game.core.view;
 import game.panel.infobar;
@@ -52,12 +52,12 @@ public:
     this(in View aView, in int lixRequired)
     {
         super(new Geom(0, 0, gui.screenXlg, gui.panelYlg, From.BOTTOM));
-        _skills.length = basics.user.skillSort.length;
-        foreach (int id, ac; basics.user.skillSort) {
+        _skills.length = file.option.skillSort.length;
+        foreach (int id, ac; file.option.skillSort) {
             _skills[id] = new SkillButton(new Geom(id * skillXl, 0,
                                      skillXl, skillYl, From.BOTTOM_LEFT));
             _skills[id].skill = ac;
-            _skills[id].hotkey = basics.user.keySkill[skillSort[id]];
+            _skills[id].hotkey = file.option.keySkill[skillSort[id]];
             addChild(_skills[id]);
         }
         auto barGeom = new Geom(0, 0, xlg - 4 * skillXl, ylg - skillYl);
@@ -101,7 +101,7 @@ public:
             _coolShades = new BitmapButton(shadesGeom,
                                            getInternal(fileImageGamePanel2));
             _coolShades.xf = 0;
-            _coolShades.hotkey = basics.user.keyPingGoals;
+            _coolShades.hotkey = file.option.keyPingGoals;
             addChild(_coolShades);
         }
     }

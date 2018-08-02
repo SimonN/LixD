@@ -9,13 +9,17 @@ package interface IFilename {
 public:
 immutable:
     @property string rootless()       nothrow pure;
-    @property string extension()      nothrow pure;
-    @property string file()           nothrow pure;
+    @property string extension()      nothrow pure; // with leading '.'
+    @property string file()           nothrow pure; // without preceding '/'
     @property string rootlessNoExt()  nothrow pure;
     @property string fileNoExtNoPre() nothrow pure;
-    @property string dirRootless()    nothrow pure;
+    @property string dirRootless()    nothrow pure; // with trailing '/' [1]
     @property string dirInnermost()   nothrow pure;
     @property char   preExtension()   nothrow pure;
+    /*
+     * [1]: I'm not sure what should happen when the directory is Lix's root
+     * directory.
+     */
 
     Filename guaranteedDirOnly() nothrow;
 

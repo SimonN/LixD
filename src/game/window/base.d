@@ -1,6 +1,6 @@
 module game.window.base;
 
-import basics.user; // hotkeys
+import file.option; // hotkeys
 import file.language;
 import gui;
 import hardware.keyset;

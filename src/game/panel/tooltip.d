@@ -3,10 +3,9 @@ module game.panel.tooltip;
 import std.format;
 import std.conv;
 
-import basics.user;
 import file.language;
 import file.log;
-import file.useropt;
+import file.option;
 import hardware.keyset;
 
 struct Tooltip {

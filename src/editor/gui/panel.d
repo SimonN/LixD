@@ -6,8 +6,8 @@ import std.range;
 import std.string;
 
 import basics.globals;
-import basics.user; // FPS
 import editor.gui.custgrid;
+import file.option : showFPS;
 import file.filename; // currentFilename
 import file.language;
 import graphic.internal;
@@ -207,7 +207,7 @@ private:
         assert (_info);
         _info.down = false;
         _info.text = "";
-        if (basics.user.showFPS.value) {
+        if (showFPS.value) {
             _fps.text = "FPS: %d".format(displayFps);
             // Prevent the text to smear over old text
             _info.reqDraw();

@@ -11,7 +11,7 @@ module menu.browser.replay;
 import optional;
 
 import basics.globals : dirLevels;
-import basics.user;
+import file.option;
 import file.filename;
 import file.language;
 import game.harvest;
@@ -40,7 +40,7 @@ public:
             PickerConfig!(Breadcrumb, ReplayTiler)());
         commonConstructor();
         // Final class calls:
-        super.highlight(basics.user.replayLastLevel);
+        super.highlight(file.option.replayLastLevel);
     }
 
     this(Harvest ha, Optional!(const Replay) lastLoaded)
@@ -51,7 +51,7 @@ public:
         // Final class calls:
         super.addStatsThenHighlight(
             new StatsAfterReplay(super.newStatsGeom, ha, lastLoaded),
-            basics.user.replayLastLevel);
+            file.option.replayLastLevel);
     }
 
     // Override method with assert(false): Violates fundamental OO principles.
@@ -110,7 +110,7 @@ protected:
             // But how to handle doubleclick on replay then? Thus, for now:
             || matcher.pointedToIsGood
         ) {
-            basics.user.replayLastLevel = super.fileRecent;
+            file.option.replayLastLevel = super.fileRecent;
             gotoGame = true;
         }
     }
@@ -123,11 +123,11 @@ protected:
         ) {
             // like onFileSelect, but for pointedTo
             matcher.forcePointedTo();
-            basics.user.replayLastLevel = super.fileRecent;
+            file.option.replayLastLevel = super.fileRecent;
             gotoGame = true;
         }
         else if (_buttonVerify.execute) {
-            basics.user.replayLastLevel = currentDir;
+            file.option.replayLastLevel = currentDir;
             auto win = new VerifyMenu(currentDir);
             addFocus(win);
         }

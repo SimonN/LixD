@@ -4,7 +4,7 @@ import std.string;
 
 import basics.alleg5;
 import basics.globals;
-import basics.user;
+import file.option;
 import game.core.game;
 import graphic.color;
 import graphic.internal;

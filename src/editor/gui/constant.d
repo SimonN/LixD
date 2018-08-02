@@ -1,6 +1,6 @@
 module editor.gui.constant;
 
-import basics.user;
+import file.option;
 import basics.globals;
 import editor.gui.okcancel;
 import file.language;
