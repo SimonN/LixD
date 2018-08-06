@@ -29,7 +29,8 @@ $browserEdit Edit
 $browserNewLevel Create Level
 $browserDelete Delete
 $browserSearch Search
-$browserExportImage Export image
+$browserOpenRepForLev Load Replay
+$browserExportImage Export Image
 $browserExportImageDone Exported to:
 $browserMkdirTitle Create Folder
 $browserMkdirPleaseEnter Name of new folder:
@@ -72,6 +73,8 @@ $previewMissingTilesMoreSee and %d more, see “%s”
 
 $winSearchTitle Level Search
 $winSearchPrompt Search by title, author, or filename in %d levels:
+
+$repForLevTitle Load replay for “%s”
 
 // networking lobby
 $winLobbyTitle Network Game|From the main menu, go to the networking lobby.
@@ -324,6 +327,7 @@ $optionUnpauseOnAssign Unpause on skill assignment|Unpause the game when you ass
 $optionKeyMenuOkay Okay/yes|Play the highlighted level. Save and close a dialog.
 $optionKeyMenuEdit Edit|Open the editor on the highlighted level.
 $optionKeyMenuNewLevel Create|Open the editor on a blank level.
+$optionKeyMenuRepForLev Load Replay|In the singleplayer browser, load a replay for the highlighted level.
 $optionKeyMenuExport Export|Export the highlighted level as an image file.
 $optionKeyMenuDelete Lose data|Delete a file. Lose unsaved data when the editor prompts you.
 $optionKeyMenuUpDir Parent dir|Go back up one folder.|You can navigate to other levels, replays, or tiles.

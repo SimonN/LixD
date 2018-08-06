@@ -25,10 +25,10 @@ import level.level;
 
 class StatsAfterReplay : StatsAfterSingleplayer {
 private:
-    const(Replay) _lastLoaded;
+    Optional!(const Replay) _lastLoaded;
 
 public:
-    this(Geom g, Harvest ha, const(Replay) lastLoaded)
+    this(Geom g, Harvest ha, Optional!(const Replay) lastLoaded)
     {
         _lastLoaded = lastLoaded;
         super(g, ha);

@@ -445,10 +445,10 @@ void populateMenuKeys()
         fac.factory!HotkeyOption(keyMenuOkay, watcher),
         fac.factory!HotkeyOption(keyMenuEdit, watcher),
         fac.factory!HotkeyOption(keyMenuNewLevel, watcher),
+        fac.factory!HotkeyOption(keyMenuRepForLev, watcher),
         fac.factory!HotkeyOption(keyMenuExport, watcher),
         fac.factory!HotkeyOption(keyMenuDelete, watcher),
         fac.factory!HotkeyOption(keyMenuSearch, watcher),
-        fac.factory!HotkeyOption(keyMenuExit, watcher),
     ];
     fac = facKeys!1;
     grp ~= [
@@ -467,6 +467,8 @@ void populateMenuKeys()
         fac.factory!HotkeyOption(keyMenuMainReplays, watcher),
         fac.factory!HotkeyOption(keyMenuMainOptions, watcher),
     ];
+    fac.y += 20;
+    grp ~= fac.factory!HotkeyOption(keyMenuExit, watcher);
 
     auto guiCol   = NumPickConfig();
     guiCol.max    = 240;

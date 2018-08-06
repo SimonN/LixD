@@ -184,6 +184,7 @@ UserOption!KeySet
     keyMenuOkay,
     keyMenuEdit,
     keyMenuNewLevel,
+    keyMenuRepForLev,
     keyMenuExport,
     keyMenuDelete,
     keyMenuSearch,
@@ -365,6 +366,7 @@ static this()
 
     keyMenuOkay = newKey("KEY_MENU_OKAY", Lang.optionKeyMenuOkay, ALLEGRO_KEY_SPACE);
     keyMenuEdit = newKey("KEY_MENU_EDIT", Lang.optionKeyMenuEdit, ALLEGRO_KEY_F);
+    keyMenuRepForLev = newOpt("KEY_MENU_REP_FOR_LEV", Lang.optionKeyMenuRepForLev, KeySet());
     keyMenuNewLevel = newKey("KEY_MENU_NEW_LEVEL", Lang.optionKeyMenuNewLevel, ALLEGRO_KEY_F1);
     keyMenuExport = newKey("KEY_MENU_EXPORT", Lang.optionKeyMenuExport, ALLEGRO_KEY_R);
     keyMenuDelete = newKey2("KEY_MENU_DELETE", Lang.optionKeyMenuDelete, ALLEGRO_KEY_G, ALLEGRO_KEY_DELETE);

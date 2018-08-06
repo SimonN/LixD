@@ -5,6 +5,7 @@ import std.algorithm;
 import basics.user; // replayAfterFrameBack
 import game.model.cache;
 import game.model.state;
+import hardware.tharsis;
 
 public import game.nurse.base;
 

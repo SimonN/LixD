@@ -25,6 +25,7 @@ $browserEdit Bearbeiten
 $browserNewLevel Level erstellen
 $browserDelete Löschen
 $browserSearch Suchen
+$browserOpenRepForLev Replay laden
 $browserExportImage Bild exportieren
 $browserExportImageDone Liegt in:
 $browserMkdirTitle Ordner erstellen
@@ -68,6 +69,8 @@ $previewMissingTilesMoreSee und %d weitere, siehe „%s“
 
 $winSearchTitle Levelsuche
 $winSearchPrompt Suche nach Titel, Autor oder Dateiname in %d Levels:
+
+$repForLevTitle Replay für „%s“ laden
 
 // Lobby
 $winLobbyTitle Netzwerkspiel|Vom Hauptmenü die Netzwerk-Lobby aufrufen.
@@ -316,6 +319,7 @@ $optionUnpauseOnAssign Pause aus bei Fähigk.-Zwsg.|Die Pause ausschalten, wenn 
 $optionKeyMenuOkay Okay/ja|Den markierten Level spielen.|Dialog-Einstellungen übernehmen und Dialoge beenden.
 $optionKeyMenuEdit Bearbeiten|Den markierten Level mit dem Leveleditor öffnen.
 $optionKeyMenuNewLevel Erstellen|Einen neuen Level im Leveleditor erstellen.
+$optionKeyMenuRepForLev Replay laden|Im Einzelspieler-Browser ein Replay zum markierten Level laden.
 $optionKeyMenuExport Exportieren|Den markierten Level als Bilddatei exportieren.
 $optionKeyMenuDelete Löschen/nein|Die markierte Datei löschen.|Ungespeicherte Daten verwerfen, wenn der Editor zum Speichern fragt.
 $optionKeyMenuUpDir Ordner hoch|In den übergeordneten Ordner wechseln.|Du kannst zu anderen Levels, Replays oder Terrainstücken navigieren.

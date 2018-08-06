@@ -101,6 +101,7 @@ enum Lang {
     browserNewLevel,
     browserDelete,
     browserSearch,
+    browserOpenRepForLev,
     browserExportImage,
     browserExportImageDone,
     browserMkdirTitle,
@@ -144,6 +145,8 @@ enum Lang {
 
     winSearchTitle,
     winSearchPrompt,
+
+    repForLevTitle,
 
     // networking lobby
     winLobbyTitle,
@@ -382,6 +385,7 @@ enum Lang {
     optionKeyMenuOkay,
     optionKeyMenuEdit,
     optionKeyMenuNewLevel,
+    optionKeyMenuRepForLev,
     optionKeyMenuExport,
     optionKeyMenuDelete,
     optionKeyMenuUpDir,

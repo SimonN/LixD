@@ -21,7 +21,7 @@ import file.language;
 import file.log;
 import gui;
 import gui.picker;
-import hardware.keyboard; // up/down change of highlighted file
+import hardware.semantic; // up/down change of highlighted file
 import hardware.sound;
 import menu.browser.highli;
 
@@ -122,18 +122,12 @@ protected:
             highlightIfInCurrentDir(_fileRecent);
             _upDownTo = none;
         }
-        else {
-            immutable moveBy = keyMenuUpBy1  .keyTappedAllowingRepeats * -1
-                             + keyMenuUpBy5  .keyTappedAllowingRepeats * -5
-                             + keyMenuDownBy1.keyTappedAllowingRepeats * 1
-                             + keyMenuDownBy5.keyTappedAllowingRepeats * 5;
-            if (moveBy != 0) {
-                _upDownTo = some(MutFilename(super.moveHighlightBy(
-                    _upDownTo.unwrap ? *_upDownTo.unwrap
-                    : _fileRecent, moveBy)));
-                highlightIfInCurrentDir(
-                    _upDownTo.unwrap ? *_upDownTo.unwrap : null);
-            }
+        else if (keyMenuMoveByTotal() != 0) {
+            _upDownTo = some(MutFilename(super.moveHighlightBy(
+                _upDownTo.unwrap ? *_upDownTo.unwrap
+                : _fileRecent, keyMenuMoveByTotal)));
+            highlightIfInCurrentDir(
+                _upDownTo.unwrap ? *_upDownTo.unwrap : null);
         }
     }
 

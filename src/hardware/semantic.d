@@ -16,3 +16,11 @@ bool forcingRight()
     return ! basics.user.keyForceLeft.keyHeld
         &&   basics.user.keyForceRight.keyHeld;
 }
+
+int keyMenuMoveByTotal()
+{
+    return keyMenuUpBy1  .keyTappedAllowingRepeats * -1
+        +  keyMenuUpBy5  .keyTappedAllowingRepeats * -5
+        +  keyMenuDownBy1.keyTappedAllowingRepeats * 1
+        +  keyMenuDownBy5.keyTappedAllowingRepeats * 5;
+}

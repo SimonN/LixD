@@ -137,7 +137,7 @@ private:
         immutable long beforeWork = timerTicks;
         if (_unprocessed.empty) {
             assert (_database.empty, "let's not do this twice");
-            _unprocessed = dirLevels.findTree();
+            _unprocessed = dirLevels.findTree(filenameExtLevel);
         }
         while (! _unprocessed.empty && timerTicks == beforeWork) {
             try {

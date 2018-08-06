@@ -32,6 +32,7 @@ import menu.browser.single;
 import menu.lobby.lobby;
 import menu.mainmenu;
 import menu.options;
+import menu.rep4lev;
 
 static import gui;
 static import hardware.keyboard;
@@ -42,8 +43,10 @@ static import hardware.sound;
 class MainLoop {
     bool exit;
 
+private:
     MainMenu mainMenu;
     BrowserSingle browSin;
+    RepForLev repForLev;
     Lobby lobby;
     BrowserReplay browRep;
     OptionsMenu optionsMenu;
@@ -52,8 +55,10 @@ class MainLoop {
     Game   game;
     Editor editor;
 
-    // If this is present, prefer to go to the replay browser instead of the
-    // singleplayer browser. This obviates the bool for that.
+    enum AfterGameGoto { browSin, browRep }
+    AfterGameGoto afterGameGoto;
+    // Prevent harvests from saving duplicate replays: Remember what replay
+    // we loaded last and pass that to program components that handle harvests.
     // Whenever you assign a replay to this, clone the replay first.
     // _lastLoaded should be treated like an immutable replay.
     Optional!(const Replay) _lastLoaded;
@@ -132,6 +137,11 @@ public:
                               // Torbit to be destroyed in browser's preview.
             browSin = null;
         }
+        if (repForLev) {
+            gui.rmElder(repForLev);
+            destroy(repForLev); // see comment for destroy(browSin);
+            repForLev = null;
+        }
         if (lobby) {
             lobby.disconnect();
             gui.rmElder(lobby);
@@ -203,12 +213,21 @@ public:
                 auto lv = browSin.levelRecent;
                 _lastLoaded = no!(const Replay);
                 kill();
+                afterGameGoto = AfterGameGoto.browSin;
                 game = new Game(lv, fn);
+            }
+            else if (browSin && browSin.gotoRepForLev) {
+                auto fn = browSin.fileRecent;
+                auto lv = browSin.levelRecent;
+                kill();
+                repForLev = new RepForLev(fn, lv);
+                gui.addElder(repForLev);
             }
             else if (browRep && browRep.gotoGame) {
                 auto matcher = browRep.matcher;
                 _lastLoaded = matcher.replay.clone;
                 kill();
+                afterGameGoto = AfterGameGoto.browRep;
                 game = matcher.createGame();
             }
             else if (browSin && (browSin.gotoEditorNewLevel
@@ -226,6 +245,20 @@ public:
                 kill();
                 mainMenu = new MainMenu;
                 gui.addElder(mainMenu);
+            }
+        }
+        else if (repForLev) {
+            if (repForLev.gotoGame) {
+                auto matcher = repForLev.matcher;
+                _lastLoaded = matcher.replay.clone;
+                kill();
+                afterGameGoto = AfterGameGoto.browSin;
+                game = matcher.createGame();
+            }
+            else if (repForLev.gotoBrowSin) {
+                kill();
+                browSin = new BrowserSingle();
+                gui.addElder(browSin);
             }
         }
         else if (lobby) {
@@ -261,13 +294,17 @@ public:
                     lobby = new Lobby(net, harvest);
                     gui.addElder(lobby);
                 }
-                else if (_lastLoaded.unwrap) {
-                    browRep = new BrowserReplay(harvest, _lastLoaded.unwrap);
-                    gui.addElder(browRep);
-                }
                 else {
-                    browSin = new BrowserSingle(harvest);
-                    gui.addElder(browSin);
+                    final switch (afterGameGoto) {
+                    case AfterGameGoto.browSin:
+                        browSin = new BrowserSingle(harvest, _lastLoaded);
+                        gui.addElder(browSin);
+                        break;
+                    case AfterGameGoto.browRep:
+                        browRep = new BrowserReplay(harvest, _lastLoaded);
+                        gui.addElder(browRep);
+                        break;
+                    }
                 }
             }
         }

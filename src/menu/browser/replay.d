@@ -43,7 +43,7 @@ public:
         super.highlight(basics.user.replayLastLevel);
     }
 
-    this(Harvest ha, const(Replay) lastLoaded)
+    this(Harvest ha, Optional!(const Replay) lastLoaded)
     {
         super(Lang.browserReplayTitle.transl, basics.globals.dirReplays,
             PickerConfig!(Breadcrumb, ReplayTiler)());

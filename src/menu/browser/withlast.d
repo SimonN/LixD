@@ -27,8 +27,8 @@ public:
     this(T)(string title, Filename baseDir, T t)
     {
         super(title, baseDir, t);
-        _delete = new TextButton(new Geom(infoX, 20,
-            infoXl/2, 40, From.BOTTOM_LEFT), Lang.browserDelete.transl);
+        _delete = new TextButton(newDeleteButtonGeom,
+            Lang.browserDelete.transl);
         _delete.hotkey = basics.user.keyMenuDelete;
         addChildren(_delete);
     }
@@ -52,6 +52,12 @@ protected:
     final Geom newStatsGeom() const
     {
         return new Geom(20, infoY + 20, infoXl, 60, From.TOP_RIGHT);
+    }
+
+    Geom newDeleteButtonGeom() const
+    {
+        return new Geom(infoX, 20, infoXl/2,
+            40, From.BOTTOM_LEFT);
     }
 
     final override void onHighlightNone()
