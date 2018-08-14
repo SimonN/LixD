@@ -8,6 +8,7 @@ import std.math;
 
 public import graphic.cutbit;
 
+import basics.help; // roundInt
 import gui.element;
 import gui.geometry;
 
@@ -50,7 +51,7 @@ protected:
         // Draw the cutbit to the center of this's Element area.
         cbX = xs + (xls - cutbit.xl * scal) / 2f;
         cbY = ys + (yls - cutbit.yl * scal) / 2f;
-        cutbit.draw(Point(cbX.to!int, cbY.to!int), _xf, _yf, 0, 0,
+        cutbit.draw(Point(cbX.roundInt, cbY.roundInt), _xf, _yf, 0, 0,
                                                    scal == 1 ? 0 : scal);
     }
 }

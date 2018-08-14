@@ -166,8 +166,10 @@ final class Context {
         assert(f);
         immutable char* s = str.toStringz();
 
-        static if (tplFlag == ALLEGRO_ALIGN_CENTRE)
-            x = (x - _shaOffset / 2).ceil.to!int;
+        static if (tplFlag == ALLEGRO_ALIGN_CENTRE) {
+            // not "- _shaOffset / 2.0" because that looks too far right
+            x = (x - _shaOffset).ceil.to!int;
+        }
         else static if (tplFlag == ALLEGRO_ALIGN_RIGHT)
             x = (x - _shaOffset).ceil.to!int;
 
