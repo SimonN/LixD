@@ -39,7 +39,7 @@ enum  Phybit    : Phybitset {
     all     = 0x7FFF,
 }
 
-class Phymap : Topology {
+final class Phymap : Topology {
 
     this(in int xl, in int yl, in bool _tx = false, in bool _ty = false) {
         super(xl, yl, _tx, _ty);
@@ -122,22 +122,40 @@ class Phymap : Topology {
         lt = cropped;
     }
 
-    Phybitset get(in Point p)              const { return getAt(clamp(p));   }
-    bool      get(in Point p, Phybitset n) const { return (get(p) & n) != 0; }
+    /*
+     * get(p): return physics at the pixel p.
+     * Desired change in Lix 0.10.0: Clamp only horizontally to force
+     * out-of-bounds pixels onto the map. If p is out of bounds vertically,
+     * always return featureless air. Diggers should not see floor beneath
+     * the lowermost row, and walkers should walk out of the deadly ceiling.
+     */
+    Phybitset get(in Point p) const
+    {
+        if ((p.y < 0 || p.y >= yl) && ! torusY) {
+            // Always hollow out of top and bottom.
+            return 0;
+        }
+        return getAt(clamp(p));
+    }
 
     bool getSolid(in Point p) const { return (get(p) & Phybit.terrain) != 0; }
+
+    /*
+     * getSolidEven: Stuff is solid at a 2x1 physics unit iff at least one
+     * of its 1x1 pixels is solid.
+     */
     bool getSolidEven(in Point p) const
-    {
+    in {
         assert (xl % 2 == 0, "can't call getSolidEven on an odd-xl Phymap");
-        // x & ~1 makes numbers even by zeroing the last bit
-        // x |  1 makes numbers odd
-        return ((getAt(clamp(Point(p.x & ~1, p.y)))
-               | getAt(clamp(Point(p.x |  1, p.y)))) & Phybit.terrain) != 0;
+        assert (p.x % 2 == 0, "can only query double-pixels at even x");
+    }
+    do {
+        return 0 != (Phybit.terrain & (get(p) | get(p + Point(1, 0))));
     }
 
     bool getSteel(in Point p) const
     out (ret) { if (ret) assert (getSolid(p)); }
-    do { return get(p, Phybit.steel); }
+    do { return (get(p) & Phybit.steel) != 0; }
 
     bool getSteelUnlessMaskIgnores(in Point eff, in Mask mask) const
     {
@@ -239,10 +257,10 @@ class Phymap : Topology {
 
         foreach (y; 0 .. yl) foreach (x; 0 .. xl) {
             immutable Point p = Point(x, y);
-            immutable int red   = get(p, Phybit.terrain);
-            immutable int green = get(p, Phybit.steel);
-            immutable int blue  = get(p, Phybit.goal | Phybit.fire
-                        | Phybit.water | Phybit.trap | Phybit.fling);
+            immutable int red   = !!(get(p) & Phybit.terrain);
+            immutable int green = !!(get(p) & Phybit.steel);
+            immutable int blue  = !!(get(p) & (Phybit.goal | Phybit.fire
+                        | Phybit.water | Phybit.trap | Phybit.fling));
             al_put_pixel(x, y, al_map_rgb_f(red, blue, green));
         }
         al_save_bitmap(fn.stringForWriting.toStringz, outputBitmap);
@@ -254,7 +272,7 @@ private:
     // written in C++ without it and works well
     Phybitset[] lt;
 
-    Phybitset getAt(in Point p) const    { return lt[p.y * xl + p.x]; }
+    Phybitset getAt(in Point p) const { return lt[p.y * xl + p.x]; }
     void  addAt(in Point p, Phybitset n) { lt[p.y * xl + p.x] |= n;   }
     void  rmAt (in Point p, Phybitset n)
     {

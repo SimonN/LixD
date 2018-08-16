@@ -185,7 +185,8 @@ Snap findSnapNear(
         iota(-maxSnap, maxSnap + 1).radial.enumerate!int
     ) {
         immutable Point p = mouse + searchOffset + Point(0, plusY);
-        if (phy.getSolidEven(p) && ! phy.getSolidEven(p - Point(0, 1)))
+        immutable Point e = p - Point(p.x % 2, 0); // getSolidEven needs even x
+        if (phy.getSolidEven(e) && ! phy.getSolidEven(e - Point(0, 1)))
             return Snap(true, badness, p - searchOffset);
     }
     return Snap(false);
