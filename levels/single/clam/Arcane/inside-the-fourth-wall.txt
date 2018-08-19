@@ -1,4 +1,4 @@
-$BUILT 2017-10-29 18:30:41
+$BUILT 2018-08-29 23:24:39
 $AUTHOR Clam
 $ENGLISH Inside the Fourth Wall
 
@@ -11,7 +11,6 @@ $ENGLISH Inside the Fourth Wall
 #SPAWN_INTERVAL 20
 
 #CLIMBER 1
-#BUILDER 1
 #BASHER 3
 #JUMPER 4
 #EXPLODER2 0
@@ -51,8 +50,8 @@ $ENGLISH Inside the Fourth Wall
 :geoo/construction/wall/small_brick3: 368 296
 :geoo/steel/16x32o.S: 432 184
 :geoo/construction/wall/small_64x32: 128 312
-:geoo/construction/wall/small_diag_td: 272 280
-:geoo/construction/wall/small_64x64: 288 280
+:geoo/construction/wall/small_diag_td: 336 280
+:geoo/construction/wall/small_64x64: 304 296
 :geoo/construction/wall/small_brick3: 272 296
 :geoo/construction/wall/small_brick3: 240 296
 :geoo/construction/wall/small_64x32: 112 200
@@ -139,7 +138,7 @@ $ENGLISH Inside the Fourth Wall
 :geoo/construction/wall/big_square: 576 280
 :geoo/steel/16x32o.S: 176 104
 :geoo/steel/32x16o.S: 176 136
-:geoo/construction/wall/small_diag_td: 288 264
+:geoo/construction/wall/small_diag_td: 352 264
 :geoo/construction/wall/small_diag_bu: 384 120
 :geoo/construction/wall/small_diag_bu: 400 104
 :geoo/construction/wall/small_diag_bu: 416 88
@@ -183,9 +182,6 @@ $ENGLISH Inside the Fourth Wall
 :geoo/construction/wall/small_square: 352 136
 :geoo/construction/wall/small_brickdiag_bu: 288 184
 :geoo/construction/wall/small_brickdiag_tu: 336 184
-:geoo/construction/wall/small_brick2: 304 264
-:geoo/construction/wall/small_brickdiag_td: 336 264
-:geoo/construction/wall/small_brickdiag_td: 352 280
 :geoo/construction/wall/small_brick3: 336 296
 :geoo/construction/wall/small_64x32: 320 88
 :geoo/construction/wall/small_64x32: 256 88
@@ -193,3 +189,6 @@ $ENGLISH Inside the Fourth Wall
 :geoo/steel/32x16o.S: 384 216
 :geoo/construction/wall/small_brickdiag_tu: 368 248
 :geoo/construction/wall/small_square: 400 232
+:geoo/construction/wall/small_diag_tu: 368 264
+:geoo/construction/wall/small_diag_tu: 384 280
+:geoo/construction/wall/small_brick1: 352 280

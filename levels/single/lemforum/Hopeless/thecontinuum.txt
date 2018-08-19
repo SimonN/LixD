@@ -1,15 +1,10 @@
-$BUILT 2016-03-21 18:29:44
+$BUILT 2018-08-19 16:01:49
 $AUTHOR Michael S. Repton
-$GERMAN 
 $ENGLISH The Continuum Hypothesis
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1280
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #INITIAL 50
 #REQUIRED 48
@@ -40,14 +35,42 @@ $ENGLISH The Continuum Hypothesis
 :simon/water.W: 1232 352
 :proxima/flame.F: 52 48
 
-:proxima/tile/red1: 0 336
-:proxima/tile/red1: 64 336
-:proxima/tile/red1: 64 272
-:proxima/tile/blue2a: 0 336 d
-:proxima/tile/blue2a: 64 272 d
-:proxima/tile/blue2b: 64 336 d
-:proxima/tile/red1: 128 272
-:proxima/tile/blue2b: 128 272 d
+:proxima/tile/orange3: 192 352
+:proxima/tile/orange3: 64 336
+:proxima/tile/orange3: 128 272
+:proxima/tile/orange3: 256 288
+:matt/bricks/18: 312 80
+:matt/bricks/18: 216 80
+:matt/bricks/18: 184 0
+:matt/bricks/18: 344 0
+:matt/bricks/18: 64 112
+:matt/bricks/18: 80 160
+:matt/bricks/18: 48 160
+:matt/bricks/18: 64 208
+:matt/bricks/18: 32 208
+:matt/bricks/18: 96 208
+:matt/bricks/18: 64 240
+:matt/bricks/18: 32 240
+:matt/bricks/18: 32 272
+:matt/bricks/18: 96 240
+:matt/bricks/18: 64 272
+:matt/bricks/18: 96 272
+:matt/bricks/18: 64 304
+:matt/bricks/18: 32 304
+:matt/bricks/18: 32 336
+:proxima/tile/red3: 672 304
+$BEGIN_TILE_GROUP 0
+:proxima/tile/red1: 0 0
+:proxima/tile/blue2a: 0 0 d
+$END_TILE_GROUP
+:Group-0: 1 337
+$BEGIN_TILE_GROUP 1
+:proxima/tile/red1: 0 0
+:proxima/tile/blue2b: 0 0 d
+$END_TILE_GROUP
+:Group-1: 64 336
+:Group-0: 65 273
+:Group-1: 128 272
 :geoo/steel/dark_32x64o.S: 320 272
 :geoo/steel/dark_32x64o.S: 320 336
 :geoo/steel/dark_64x32o.S: 352 272
@@ -67,9 +90,11 @@ $ENGLISH The Continuum Hypothesis
 :proxima/tile/blue2b: 736 304 d
 :proxima/tile/orange1: 672 368
 :proxima/tile/blue2b: 672 368 d
-:proxima/tile/orange1: 672 304
-:proxima/tile/blue2a: 672 304 d
-:proxima/tile/red3: 672 304 n
+$BEGIN_TILE_GROUP 2
+:proxima/tile/orange1: 0 0
+:proxima/tile/blue2a: 0 0 d
+$END_TILE_GROUP
+:Group-2: 673 305
 :proxima/tile/red1: 432 208
 :proxima/tile/red1: 496 208
 :proxima/tile/red1: 432 144
@@ -106,26 +131,11 @@ $ENGLISH The Continuum Hypothesis
 :geoo/sandstone/pillar_32: 1152 352
 :geoo/sandstone/pillar_32: 1152 384
 :geoo/sandstone/64x16: 968 160
-:matt/bricks/18: 32 336 n
-:matt/bricks/18: 32 304 n
-:matt/bricks/18: 64 304 n
-:matt/bricks/18: 96 272 n
-:matt/bricks/18: 64 272 n
-:matt/bricks/18: 96 240 n
-:matt/bricks/18: 32 272 n
-:matt/bricks/18: 32 240 n
-:matt/bricks/18: 64 240 n
-:matt/bricks/18: 96 208 n
-:matt/bricks/18: 32 208 n
-:matt/bricks/18: 64 208 n
 :matt/bricks/20: 24 192
 :matt/bricks/20: 56 192
 :matt/bricks/20: 88 192
-:matt/bricks/18: 48 160 n
-:matt/bricks/18: 80 160 n
 :matt/bricks/20: 40 144
 :matt/bricks/20: 72 144
-:matt/bricks/18: 64 112 n
 :matt/bricks/20: 56 96
 :matt/bricks/18: 208 128 r
 :matt/bricks/18: 240 128 r
@@ -135,12 +145,8 @@ $ENGLISH The Continuum Hypothesis
 :matt/bricks/19: 192 120 r
 :matt/bricks/19: 176 32
 :matt/bricks/19: 336 32
-:matt/bricks/18: 344 0 n
-:matt/bricks/18: 184 0 n
 :matt/bricks/20: 208 64
 :matt/bricks/20: 304 64
-:matt/bricks/18: 216 80 n
-:matt/bricks/18: 312 80 n
 :matt/bricks/19: 208 112
 :matt/bricks/19: 304 112
 :matt/bricks/18: 176 48 r
@@ -157,16 +163,10 @@ $ENGLISH The Continuum Hypothesis
 :geoo/sandstone/pillar_bottom: 912 32
 :proxima/tile/orange3: 128 336
 :proxima/tile/orange3: 192 288
-:proxima/tile/red1: 256 288
-:proxima/tile/blue2a: 256 288 d
-:proxima/tile/orange3: 256 288 n
-:proxima/tile/orange3: 128 272 n
-:proxima/tile/orange3: 64 336 n
+:Group-0: 257 289
 :geoo/sandstone/arc_small: 880 0 f
 :geoo/sandstone/arc_small: 1184 0 f
-:proxima/tile/red1: 192 352
-:proxima/tile/blue2a: 192 352 d
-:proxima/tile/orange3: 192 352 n
+:Group-0: 193 353
 :proxima/tile/red1: 256 352
 :proxima/tile/orange3a: 192 256
 :proxima/tile/orange3a: 224 256
@@ -179,3 +179,6 @@ $ENGLISH The Continuum Hypothesis
 :proxima/tile/orange1: 480 368
 :proxima/tile/orange1: 544 368
 :proxima/tile/orange1: 608 368
+:geoo/steel/dark_64x32o.S: 256 272
+:geoo/steel/dark_64x32o.S: 192 272
+:geoo/steel/dark_64x32o.S: 128 272

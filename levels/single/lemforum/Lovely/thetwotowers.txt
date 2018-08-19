@@ -1,4 +1,4 @@
-$BUILT 2016-06-28 12:12:50
+$BUILT 2018-08-19 16:02:03
 $AUTHOR Michael S. Repton
 $ENGLISH The Two Towers
 
@@ -181,3 +181,6 @@ $END_TILE_GROUP
 :proxima/tile/orange1: 480 368
 :proxima/tile/orange1: 544 368
 :proxima/tile/orange1: 608 368
+:geoo/steel/dark_64x32o.S: 256 272
+:geoo/steel/dark_64x32o.S: 192 272
+:geoo/steel/dark_64x32o.S: 128 272
