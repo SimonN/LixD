@@ -75,8 +75,10 @@ protected:
     {
         _delete.show();
         if (_showLastGameOnNextHighlight) {
-            _lastGame.dispatch.show();
-            onHighlightWithLastGame(fn, _lastGame.unwrap.solved);
+            foreach (lg; _lastGame) {
+                lg.show();
+                onHighlightWithLastGame(fn, lg.solved);
+            }
         }
         else {
             _lastGame.dispatch.hide();
@@ -98,16 +100,17 @@ private:
         if (_delete.execute) {
             assert (_boxDelete.empty);
             assert (fileRecent);
-            _boxDelete = some(newMsgBoxDelete());
-            _boxDelete.unwrap.addButton(Lang.browserDelete.transl,
+            MsgBox box = newMsgBoxDelete();
+            _boxDelete = some(box);
+            box.addButton(Lang.browserDelete.transl,
                 keyMenuOkay, () {
                     assert (fileRecent);
                     deleteFileRecentHighlightNeighbor();
                     _boxDelete = null;
                 });
-            _boxDelete.unwrap.addButton(Lang.commonNo.transl,
+            box.addButton(Lang.commonNo.transl,
                 KeySet(keyMenuDelete, keyMenuExit), () { _boxDelete = none; });
-            addFocus(_boxDelete.unwrap);
+            addFocus(box);
         }
     }
 }

@@ -34,8 +34,6 @@ public:
     enum spawnintMax = 96;
     enum initialMax = 999;
 
-    // DTODO: implement players_intended;
-    MutableDate built;
     string author;
     string nameGerman;
     string nameEnglish;
@@ -63,9 +61,11 @@ public:
     TerOcc[] terrain;
     GadOcc[][GadType.MAX] gadgets; // one array GadOcc[] for each GadType,
                                    // indexed by ints, not by GadType enum vals
+
 package:
     bool _fileNotFound;
     immutable(string)[] _missingTiles;
+    MutableDate _built;
 
 public:
     this()
@@ -94,6 +94,7 @@ public:
     @property const nothrow @nogc @safe {
         string name() { return nameEnglish == "" ? nameGerman : nameEnglish; }
         immutable(string)[] missingTiles() { return _missingTiles; }
+        Date built() { return _built; }
 
         bool excellent()
         {
@@ -122,6 +123,12 @@ public:
         {
             return topology.xl * topology.yl >= levelPixelsToWarn;
         }
+    }
+
+    @property Date built(Date aDate)
+    {
+        _built = aDate;
+        return built;
     }
 
     @property Alcol bgColor() const

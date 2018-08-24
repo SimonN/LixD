@@ -214,10 +214,9 @@ public:
     body {
         assert (nurse);
         assert (nurse.constReplay);
-        if (auto fn = nurse.constReplay.levelFilename.unwrap) {
+        foreach (fn; nurse.constReplay.levelFilename)
             if (fn.fileNoExtNoPre != "")
                 return fn.fileNoExtNoPre;
-        }
         return nurse.constStateForDrawingOnly.multiplayer
             ? "multiplayer" : "singleplayer";
     }
@@ -320,7 +319,7 @@ private:
     Replay generateFreshReplay(Optional!Filename levelFilename)
     {
         auto rp = levelFilename.empty ? Replay.newNoLevelFilename(level.built)
-            : Replay.newForLevel(*levelFilename.unwrap, level.built);
+            : Replay.newForLevel(levelFilename.unwrap, level.built);
         if (! _netClient) {
             rp.addPlayer(PlNr(0), Style.garden, basics.globconf.userName);
         }

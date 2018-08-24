@@ -27,10 +27,16 @@ import menu.browser.highli;
 
 class BrowserHighlightSelect : BrowserHighlight {
 private:
-    MutFilename _fileRecent; // highlight, not select. May be in different dir.
-                             // May not point to a directory.
-    Optional!MutFilename _upDownTo; // Last-highlit dir or file with up/down keys.
-                                 // We need this because it may point to dirs.
+    // highlight, not select. May be in different dir. Never a directory.
+    MutFilename _fileRecent;
+
+    // Last-highlit dir or file with up/down keys.
+    // We need this because it may point to dirs, not only to files as
+    // _fileRecent would allow.
+    // _upDownToCanBeNull cannot be Optional because Optional doesn't behave
+    // well with Rebindable!Filename == MutFilename: Both together corrupt RAM.
+    MutFilename _upDownToCanBeNull;
+
     TextButton _buttonPlay;
 
 public:
@@ -62,7 +68,7 @@ public:
         if (super.navigateToAndHighlightFile(fn)) {
             _buttonPlay.show();
             _fileRecent = fn;
-            _upDownTo = some(MutFilename(fn));
+            _upDownToCanBeNull = fn;
             onHighlight(fn);
         }
         else
@@ -83,11 +89,14 @@ protected:
 
     final void deleteFileRecentHighlightNeighbor()
     {
-        if (auto newFn = super.deleteFileHighlightNeighbor(_fileRecent).unwrap)
-            highlight(*newFn);
-        else
+        Optional!Filename opt = super.deleteFileHighlightNeighbor(_fileRecent);
+        // Super class only tells the picker to highlight the neighbor.
+        // We, as a browser, must highlight the neighbor, too. Bad OO? <_<
+        if (opt.empty)
             highlightNone();
-        _upDownTo = none;
+        else
+            highlight(opt.unwrap);
+        _upDownToCanBeNull = null;
         playLoud(Sound.SCISSORS);
     }
 
@@ -104,7 +113,7 @@ protected:
     final override void onPickerExecuteDir()
     {
         highlightIfInCurrentDir(_fileRecent);
-        _upDownTo = none;
+        _upDownToCanBeNull = null;
     }
 
     override void calcSelf()
@@ -117,17 +126,16 @@ protected:
             assert (_fileRecent !is null);
             onPlay(_fileRecent);
         }
-        else if (keyMenuOkay.keyTapped && _upDownTo.unwrap) {
-            super.navigateTo(*_upDownTo.unwrap);
+        else if (keyMenuOkay.keyTapped && _upDownToCanBeNull) {
+            super.navigateTo(_upDownToCanBeNull);
             highlightIfInCurrentDir(_fileRecent);
-            _upDownTo = none;
+            _upDownToCanBeNull = null;
         }
         else if (keyMenuMoveByTotal() != 0) {
-            _upDownTo = some(MutFilename(super.moveHighlightBy(
-                _upDownTo.unwrap ? *_upDownTo.unwrap
-                : _fileRecent, keyMenuMoveByTotal)));
-            highlightIfInCurrentDir(
-                _upDownTo.unwrap ? *_upDownTo.unwrap : null);
+            _upDownToCanBeNull = super.moveHighlightBy(
+                _upDownToCanBeNull ? _upDownToCanBeNull
+                : _fileRecent, keyMenuMoveByTotal);
+            highlightIfInCurrentDir(_upDownToCanBeNull); // may be null here
         }
     }
 

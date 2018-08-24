@@ -24,21 +24,20 @@ VfsFilename saveFilenameCustomBase(
     in Filename treebase
 ) {
     import std.format;
-    if (auto fn = replay.levelFilename.unwrap)
-        return new VfsFilename(format!"%s%s%s-%s-%s%s"(
+    return replay.levelFilename.match!(
+        (fn) => new VfsFilename(format!"%s%s%s-%s-%s%s"(
             treebase.rootless,
-            mimickLevelPath(*fn),
+            mimickLevelPath(fn),
             fn.fileNoExtNoPre,
             userName.escapeStringForFilename(),
             Date.now().toStringForFilename(),
-            basics.globals.filenameExtReplay));
-    else
-        return new VfsFilename(format!"%s%s-%s-%dp%s"(
+            basics.globals.filenameExtReplay)),
+        () => new VfsFilename(format!"%s%s-%s-%dp%s"(
             treebase.rootless,
             Date.now().toStringForFilename(),
             userName.escapeStringForFilename(),
             replay._players.length,
-            basics.globals.filenameExtReplay));
+            basics.globals.filenameExtReplay)));
 }
 
 // Input: Filename to a level.
@@ -94,7 +93,7 @@ void implLoadFromFile(Replay replay, Filename fn) { with (replay)
         else if (i.text1 == replayGameVersionRequired)
             _gameVersionRequired = Version(i.text2);
         else if (i.text1 == replayLevelFilename)
-            _levelFn = new VfsFilename(dirLevels.dirRootless ~ i.text2);
+            levelFilename = new VfsFilename(dirLevels.dirRootless ~ i.text2);
         break;
     case '+':
         // For back-compat, we accept the FRIEND directive, even though
@@ -139,11 +138,11 @@ void saveToStdioFile(
     std.stdio.File file,
     in Level lev) { with (replay)
 {
-    if (auto fn = replay.levelFilename.unwrap)
+    foreach (lfn; replay.levelFilename)
         file.writeln(IoLine.Dollar(basics.globals.replayLevelFilename,
-            mangledLevelFilename(*fn)));
+            mangledLevelFilename(lfn)));
     file.writeln(IoLine.Dollar(replayLevelBuiltRequired,
-        _levelBuiltRequired.or(lev.built).toString));
+        _levelBuiltRequired.toString));
     file.writeln(IoLine.Dollar(replayGameVersionRequired,
         _gameVersionRequired.toString));
 
@@ -174,16 +173,17 @@ void saveToStdioFile(
 
     bool okToSave(Optional!(const Level) l)
     {
-        return ! l.dispatch.errorFileNotFound.or(true)
-            && ! l.dispatch.errorEmpty.or(true);
+        return ! l.dispatch.errorFileNotFound.orElse(true)
+            && ! l.dispatch.errorEmpty.orElse(true);
     }
     Optional!(const Level) levToSave
         = lev ? some(lev) // lev should always be non-null. ?:?: guards legacy.
-        : ! levelFilename.empty
-        ? some!(const Level)(new Level(*levelFilename.unwrap))
-        : Optional!(const Level)();
+        : levelFilename.match!(
+            (fn) => some!(const Level)(new Level(fn)),
+            () => no!(const Level));
     if (okToSave(levToSave)) {
         file.writeln();
+        assert (! levToSave.empty);
         level.level.saveToFile(levToSave.unwrap, file);
     }
 }}

@@ -9,6 +9,8 @@ struct Trophy {
     int skillsUsed;
     Phyu phyusUsed;
 
+    @disable this(); // always construct with a valid date
+
     this(Date aDate) { built = aDate; }
     this(string aDate, int aLixSaved, int aSkillsUsed, int aPhyusUsed)
     {

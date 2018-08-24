@@ -186,7 +186,7 @@ protected:
             || replay.players.byValue.front.name != basics.globconf.userName)
             return;
 
-        auto lfn = *replay.levelFilename.unwrap;
+        Filename lfn = replay.levelFilename.unwrap;
         Optional!Trophy old = getTrophy(lfn);
         if (! _harvest.trophy.addToUser(lfn))
             return;

@@ -10,6 +10,7 @@ module basics.mainloop;
  * exit the program when that function is done.
  */
 
+import std.typecons;
 import core.memory;
 import optional;
 
@@ -57,11 +58,21 @@ private:
 
     enum AfterGameGoto { browSin, browRep }
     AfterGameGoto afterGameGoto;
+
     // Prevent harvests from saving duplicate replays: Remember what replay
     // we loaded last and pass that to program components that handle harvests.
     // Whenever you assign a replay to this, clone the replay first.
     // _lastLoaded should be treated like an immutable replay.
-    Optional!(const Replay) _lastLoaded;
+    // Either _lastLoaded contains exactly one replay
+    Optional!(Rebindable!(const Replay)) _lastLoaded;
+
+    @property Optional!(const Replay) lastLoaded() const @nogc nothrow
+    {
+        if (_lastLoaded.empty)
+            return no!(const Replay);
+        const(Replay) ret = *_lastLoaded.unwrap;
+        return some(ret);
+    }
 
 public:
     this(in Cmdargs cmdargs)
@@ -79,7 +90,7 @@ public:
             matcher.forceLevel(args[0]);
 
         if (matcher.mayCreateGame) {
-            this._lastLoaded = matcher.replay.clone();
+            this._lastLoaded = Rebindable!(const Replay)(matcher.replay.clone);
             this.game = matcher.createGame();
         }
         else
@@ -211,7 +222,7 @@ public:
             if (browSin && browSin.gotoGame) {
                 auto fn = browSin.fileRecent;
                 auto lv = browSin.levelRecent;
-                _lastLoaded = no!(const Replay);
+                _lastLoaded = none;
                 kill();
                 afterGameGoto = AfterGameGoto.browSin;
                 game = new Game(lv, fn);
@@ -225,7 +236,7 @@ public:
             }
             else if (browRep && browRep.gotoGame) {
                 auto matcher = browRep.matcher;
-                _lastLoaded = matcher.replay.clone;
+                _lastLoaded = Rebindable!(const Replay)(matcher.replay.clone);
                 kill();
                 afterGameGoto = AfterGameGoto.browRep;
                 game = matcher.createGame();
@@ -250,7 +261,7 @@ public:
         else if (repForLev) {
             if (repForLev.gotoGame) {
                 auto matcher = repForLev.matcher;
-                _lastLoaded = matcher.replay.clone;
+                _lastLoaded = Rebindable!(const Replay)(matcher.replay.clone);
                 kill();
                 afterGameGoto = AfterGameGoto.browSin;
                 game = matcher.createGame();
@@ -297,11 +308,11 @@ public:
                 else {
                     final switch (afterGameGoto) {
                     case AfterGameGoto.browSin:
-                        browSin = new BrowserSingle(harvest, _lastLoaded);
+                        browSin = new BrowserSingle(harvest, lastLoaded);
                         gui.addElder(browSin);
                         break;
                     case AfterGameGoto.browRep:
-                        browRep = new BrowserReplay(harvest, _lastLoaded);
+                        browRep = new BrowserReplay(harvest, lastLoaded);
                         gui.addElder(browRep);
                         break;
                     }

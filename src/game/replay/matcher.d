@@ -15,6 +15,8 @@ module game.replay.matcher;
  * first construct an instance and then call forceLevel() on it.
  */
 
+import std.typecons;
+
 import enumap;
 import optional;
 
@@ -31,11 +33,12 @@ private:
     Enumap!(Choice, LevelForChoice) _choices;
 
     enum Choice { included, pointed, explicit }
+
     struct LevelForChoice {
         bool forcedByCaller; // used even while (! initialized).
         bool lvMatchesFn; // usually true. False if included -> pointedFn
-        Optional!Filename fn; // initialized in constructor or forceLevel
-        Level level; // loaded only when necessary
+        OptionalFilename fn; // initialized in ctor or forceLevel
+        Optional!Level level; // loaded only when necessary and only if exists
     }
 
 public:
@@ -44,7 +47,7 @@ public:
     body {
         _fnRp = aReplayFn;
         _rp = Replay.loadFromFile(_fnRp);
-        _choices.included.fn = some(_rp.levelFilename.or(_fnRp));
+        _choices.included.fn = _rp.levelFilename.orElse(_fnRp);
         _choices.pointed.fn = _rp.levelFilename;
         _choices.pointed.lvMatchesFn = true;
     }
@@ -73,27 +76,28 @@ public:
         return _choices.pointed.fn;
     }
 
-    // DTODONULLABLE: Refactor to Optional!Level.
-    // Preferred level may be null, e.g., if force pointed and replay no line.
-    // preferredLevel() cannot be inout because it affects the cache.
-    Level preferredLevel()
-    body { return preferredInitializedStruct.level; }
+    // Initializes the cache for the desired choice if necessary.
+    // This function cannot be inout because it affects the cache.
+    @property Optional!Level preferredLevel()
+    {
+        return preferredInitializedStruct.level;
+    }
 
     @property bool includedIsGood()
     {
         initialize(Choice.included);
-        return _choices.included.level && _choices.included.level.playable;
+        return _choices.included.level.dispatch.playable.orElse(false);
     }
 
     @property bool pointedToIsGood()
     {
         initialize(Choice.pointed);
-        return _choices.pointed.level && _choices.pointed.level.playable;
+        return _choices.pointed.level.dispatch.playable.orElse(false);
     }
 
     @property bool mayCreateGame()
     {
-        return preferredLevel.playable
+        return preferredLevel.dispatch.playable.orElse(false)
             && (! _rp.empty || ! preferredInitializedStruct.fn.empty);
     }
 
@@ -108,16 +112,16 @@ public:
         auto pref = preferredInitializedStruct();
         return _rp.empty
             // pref.fn is nonzero because of in contract
-            ? new Game(pref.level, *pref.fn.unwrap)
-            : new Game(pref.level, _rp, pref.lvMatchesFn);
+            ? new Game(pref.level.unwrap, pref.fn.unwrap)
+            : new Game(pref.level.unwrap, _rp, pref.lvMatchesFn);
     }
 
     VerifyingNurse createVerifyingNurse()
-    in { assert (preferredLevel.playable); }
+    in { assert (preferredLevel.dispatch.playable.orElse(false)); }
     out (ret) { assert (ret); }
     body {
         auto pref = preferredInitializedStruct();
-        return new VerifyingNurse(pref.level, _rp, pref.lvMatchesFn);
+        return new VerifyingNurse(pref.level.unwrap, _rp, pref.lvMatchesFn);
     }
 
     @property bool isMultiplayer() const @nogc nothrow
@@ -144,13 +148,15 @@ private:
 
     void initialize(Choice ch)
     {
-        if (_choices[ch].level)
+        if (! _choices[ch].level.empty) {
+            // Nothing to do: Everything for Choice ch is already initialized.
             return;
+        }
         final switch (ch) {
         case Choice.included:
             _choices.included.level = new Level(_fnRp);
             if (! _choices.included.fn.empty
-                && *_choices.included.fn.unwrap == _fnRp
+                && _choices.included.fn.unwrap == _fnRp
             ) {
                 _choices.included.lvMatchesFn = true;
             }
@@ -162,13 +168,43 @@ private:
             break;
         case Choice.pointed:
             _choices.pointed.level = _rp.levelFilename.empty ? null
-                : new Level(*_rp.levelFilename.unwrap);
+                : new Level(_rp.levelFilename.unwrap);
             break;
         case Choice.explicit:
             _choices.explicit.level = _choices.explicit.fn.empty ? null
-                : new Level(*_choices.explicit.fn.unwrap);
+                : new Level(_choices.explicit.fn.unwrap);
             break;
         }
+    }
+}
+
+struct OptionalFilename {
+private:
+    MutFilename _fnCanBeNull;
+    alias get this;
+
+public @nogc nothrow pure:
+    @property Optional!Filename get() const
+    {
+        return _fnCanBeNull ? some!Filename(_fnCanBeNull.get) : no!Filename;
+    }
+
+    @property Filename unwrap() const
+    in { assert (_fnCanBeNull, "can't call unwrap when this == none"); }
+    body { return _fnCanBeNull; }
+
+    Optional!Filename opAssign(Filename aFn)
+    {
+        _fnCanBeNull = aFn;
+        return get();
+    }
+
+    Optional!Filename opAssign(Optional!Filename optFn)
+    {
+        _fnCanBeNull = optFn.match!(
+            (aFn) => MutFilename(aFn),
+            () => MutFilename());
+        return get();
     }
 }
 
@@ -214,17 +250,17 @@ unittest {
 
         with (ReplayToLevelMatcher.Choice) {
             auto ma = new ReplayToLevelMatcher(repFn);
-            assert (! ma._choices[included].level, "we aren't lazy");
-            assert (! ma._choices[pointed].level, "we aren't lazy");
+            assert (ma._choices[included].level.empty, "we aren't lazy");
+            assert (ma._choices[pointed].level.empty, "we aren't lazy");
             assert (ma.pointedToIsGood);
-            assert (! ma._choices[included].level, "shouldn't use included");
-            assert (ma._choices[pointed].level, "should use pointed");
+            assert (ma._choices[included].level.empty, "shouldn't use incl");
+            assert (! ma._choices[pointed].level.empty, "should use pointed");
 
             ma = new ReplayToLevelMatcher(repFn);
-            Level maLv = ma.preferredLevel();
-            assert (maLv, "since Any Way You Want existed, this should exist");
-            assert (ma._choices[included].level, "should use included");
-            assert (ma._choices[pointed].level, "When we initialize included,"
+            assert (! ma.preferredLevel.empty,
+                "since Any Way You Want existed, this should exist");
+            assert (! ma._choices[included].level.empty, "should use incl");
+            assert (! ma._choices[pointed].level.empty, "On initializing incl,"
                 ~ " we initialize all of it. In particular, we initialize"
                 ~ " included.lvMatchesFn, for which we must analyze pointed."
                 ~ " Or do we want another layer of laziness for lvMatchesFn?");
@@ -234,8 +270,8 @@ unittest {
 
             ma = new ReplayToLevelMatcher(repFn);
             ma.forcePointedTo();
-            maLv = ma.preferredLevel();
-            assert (! ma._choices[included].level, "should ignore included");
+            ma.preferredLevel();
+            assert (ma._choices[included].level.empty, "should ignore incl");
         }
         return 0;
     });

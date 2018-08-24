@@ -13,7 +13,7 @@
         "allegro": ">=4.0.2",
         "enumap": ">=0.4.2",
         "derelict-enet": "~>2.0.0",
-        "optional": "~>0.4.1",
+        "optional": "~>0.6.3",
     },
 
     "libs": [

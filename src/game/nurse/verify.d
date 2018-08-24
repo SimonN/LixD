@@ -28,18 +28,18 @@ public:
         assert (! model.cs.multiplayer, "don't evaluate multiplayer replays");
     }
     body {
-        EvalResult ret;
+        bool mercyKilled = false;
         while (! cs.singleplayerHasSavedAtLeast(_required)
             && ! everybodyOutOfLix
         ) {
             updateOnce();
             // allow 5 minutes after the last replay data before cancelling
             if (upd >= replay.latestPhyu + 5 * (60 * 15)) {
-                ret.mercyKilled = true;
+                mercyKilled = true;
                 break;
             }
         }
-        ret.trophy = trophyForTribe(model.cs.singleplayerStyle);
-        return ret;
+        return EvalResult(
+            trophyForTribe(model.cs.singleplayerStyle), mercyKilled);
     }
 }

@@ -121,7 +121,8 @@ public:
 
 private:
     void verifyImpl(Filename fn)
-    {
+    in { assert(fn, "Filename shouldn't be null, Optional!Filename might be");}
+    body {
         auto tested = new TestedReplay(fn);
         vp.log(tested.toString);
         _stats[tested.status] += 1;
@@ -133,7 +134,7 @@ private:
     {
         if (! vp.printCoverage || tested.levelFilename.empty)
             return;
-        auto tlfn = *tested.levelFilename.unwrap;
+        Filename tlfn = tested.levelFilename.unwrap;
         if (! levelDirsToCover.canFind(tlfn.dirRootless)) {
             levelDirsToCover ~= tlfn.dirRootless;
             levelDirsToCover = levelDirsToCover.sort().uniq.array;

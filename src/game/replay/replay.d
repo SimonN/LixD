@@ -38,12 +38,16 @@ class Replay {
 package:
     // The pointed-to level filename.
     // May be none, e.g., in networking games.
-    Optional!Filename _levelFn;
+    // Can't use Optional with Rebindable because of memory corruption, thus
+    // the private variable is non-Optional and still accepts null legally,
+    // and we have public/package get/set properties called levelFilename
+    // that correctly return Optional!Filename.
+    MutFilename _levelFnCanBeNullInNetgames;
 
     // The required date when the level was built. This is useful to check
     // whether a replay plays against the same version of the level against
     // which the replay was recorded originally.
-    Optional!Date _levelBuiltRequired;
+    MutableDate _levelBuiltRequired;
 
     Version _gameVersionRequired;
     Player[PlNr] _players;
@@ -54,7 +58,7 @@ public:
     static newForLevel(Filename levFn, Date levBuilt)
     {
         Replay ret = new Replay();
-        ret._levelFn = levFn;
+        ret.levelFilename = levFn;
         ret._levelBuiltRequired = levBuilt;
         return ret;
     }
@@ -78,7 +82,9 @@ public:
     {
         _gameVersionRequired = rhs._gameVersionRequired;
         _levelBuiltRequired = rhs._levelBuiltRequired;
-        _levelFn = rhs._levelFn;
+        rhs.levelFilename.match!(
+            (fn) { levelFilename = fn; },
+            () { _levelFnCanBeNullInNetgames = MutFilename(null); });
         _permu = rhs._permu.clone();
         _data = rhs._data.dup;
 
@@ -90,8 +96,17 @@ private:
     this()
     {
         touch();
+        _levelBuiltRequired = Date.now;
         _permu = new Permu("0");
     }
+
+package:
+    @property Optional!Filename levelFilename(Filename fn) @nogc nothrow
+    {
+        _levelFnCanBeNullInNetgames = fn;
+        return levelFilename();
+    }
+
 
 public:
     // == ignores levelBuiltRequired and _gameVersionRequired.
@@ -108,11 +123,14 @@ public:
             return false;
     }
 
-    @property const nothrow {
-        Optional!Filename levelFilename() { return _levelFn; }
-        Optional!Date levelBuiltRequired() { return _levelBuiltRequired; }
+    @property Optional!Filename levelFilename() const @nogc nothrow
+    {
+        return _levelFnCanBeNullInNetgames is null ? no!Filename
+            : some!Filename(_levelFnCanBeNullInNetgames.get);
     }
+
     @property const @nogc nothrow {
+        Date levelBuiltRequired() {return _levelBuiltRequired; }
         Version gameVersionRequired() { return _gameVersionRequired; }
         int numPlayers() { return _players.length & 0x7FFF_FFFF; }
         const(Player[PlNr]) players() { return _players; }

@@ -62,7 +62,7 @@ public:
     override @property inout(Level) levelRecent() inout { assert (false); }
 
     @property ReplayToLevelMatcher matcher()
-    in { assert (_matcher.unwrap, "call this only when matcher exists"); }
+    in { assert (! _matcher.empty, "call this only when matcher exists"); }
     body { return _matcher.unwrap; }
 
 protected:
@@ -78,7 +78,8 @@ protected:
     in { assert (fn, "call onHighlightNone() instead"); }
     body {
         _matcher = some(new ReplayToLevelMatcher(fn));
-        previewLevel(matcher.preferredLevel);
+        foreach (lv; matcher.preferredLevel)
+            previewLevel(lv);
         _buttonPlayWithPointedTo.shown = matcher.pointedToIsGood;
 
         if (! solved && ! matcher.pointedToFilename.empty
@@ -103,7 +104,7 @@ protected:
 
     override void onPlay(Filename fn)
     {
-        assert (_matcher.unwrap);
+        assert (! _matcher.empty);
         if (matcher.includedIsGood
             // Ideally, we don't choose this silently when included is bad.
             // But how to handle doubleclick on replay then? Thus, for now:
@@ -118,7 +119,7 @@ protected:
     {
         super.calcSelf();
         if (_buttonPlayWithPointedTo.execute
-            && _matcher.unwrap && matcher.pointedToIsGood
+            && ! _matcher.empty && matcher.pointedToIsGood
         ) {
             // like onFileSelect, but for pointedTo
             matcher.forcePointedTo();

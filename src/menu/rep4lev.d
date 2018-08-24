@@ -26,7 +26,10 @@ private:
     TextButton _back;
 
     Filename _levelFn;
-    Optional!Filename _replayFn; // set once you select a replay.
+
+    // Optional + Rebindable = corrupt memory. Hack solution: Null in var name:
+    // This variable can be legally null after RepForLev's constructor.
+    MutFilename _replayFnNullUntilReplayIsSelected;
     bool _gotoBrowSin; // cancel the dialog
 
 public:
@@ -43,16 +46,17 @@ public:
     }
 
     @property bool gotoBrowSin() const @nogc nothrow { return _gotoBrowSin; }
-    @property bool gotoGame() const @nogc nothrow {
-        return _replayFn.unwrap !is null;
+    @property bool gotoGame() const @nogc nothrow
+    {
+        return null !is _replayFnNullUntilReplayIsSelected;
     }
 
     @property ReplayToLevelMatcher matcher()
     in { assert (gotoGame, "demand the matcher only when its data is ready"); }
     body {
-        auto ret = new ReplayToLevelMatcher(*_replayFn.unwrap);
-        ret.forceLevel(_levelFn);
-        return ret;
+        auto m = new ReplayToLevelMatcher(_replayFnNullUntilReplayIsSelected);
+        m.forceLevel(_levelFn);
+        return m;
     }
 
 private:
@@ -66,7 +70,9 @@ private:
             cfg.ls = new ReplayFinderLs(_levelFn);
             cfg.baseDir = dirReplays;
             cfg.showSearchButton = false;
-            cfg.onFileSelect = (Filename fn) { _replayFn = fn; };
+            cfg.onFileSelect = (Filename fn) {
+                _replayFnNullUntilReplayIsSelected = fn;
+            };
             _picker = new Picker(cfg);
 
             version (tharsisprofiling)

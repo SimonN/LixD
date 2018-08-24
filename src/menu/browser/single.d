@@ -9,6 +9,7 @@ import optional;
 
 import basics.globals;
 import basics.user;
+import basics.trophy;
 import file.language;
 import file.filename;
 import game.harvest;
@@ -109,16 +110,14 @@ protected:
         _by.value = _levelRecent.author;
         _save.value = "%d/%d".format(_levelRecent.required,
                                      _levelRecent.initial);
-        if (auto tro = getTrophy(fn).unwrap) {
+        _trophySaved.shown = false;
+        _trophySkills.shown = false;
+        getTrophy(fn).each!((Trophy tro) {
             _trophySaved.shown = true;
             _trophySkills.shown = true;
-            _trophySaved.value = "%d".format(tro.lixSaved);
-            _trophySkills.value = "%d".format(tro.skillsUsed);
-        }
-        else {
-            _trophySaved.shown = false;
-            _trophySkills.shown = false;
-        }
+            _trophySaved.value = tro.lixSaved;
+            _trophySkills.value = tro.skillsUsed;
+        });
     }
 
     override void onPlay(Filename fn)

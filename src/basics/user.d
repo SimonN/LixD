@@ -91,21 +91,21 @@ struct DisplayTryMode {
  * Returns true if we updated the previous result or if no previous result
  * existed. Returns false if the previous result was already equal or better.
  */
-bool addToUser(Trophy tro, in Filename _fn)
+bool addToUser(Trophy tro, in Filename fn)
 {
-    auto fn = rebindable!(const Filename)(_fn);
-    auto existing = (fn in _trophies);
+    const(Trophy*) existing = (fn in _trophies);
     if (! existing || tro.shouldReplaceAfterPlay(*existing)) {
         _trophies[fn] = tro;
         return true;
     }
-    else
+    else {
         return false;
+    }
 }
 
 Optional!Trophy getTrophy(in Filename fn)
 {
-    Trophy* ret = (rebindable!(const Filename)(fn) in _trophies);
+    Trophy* ret = (fn in _trophies);
     return ret ? some(*ret) : Optional!Trophy();
 }
 
