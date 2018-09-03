@@ -43,52 +43,39 @@ protected:
 
 class StatsAfterSingleplayer : StatsAfterGame {
 private:
-    Optional!Label _trophyUpdate;
-    Optional!LabelTwo _goal;
-    Optional!LabelTwo _youSaved;
+    Optional!Label _youSaved;
     Label _autoReplayDesc;
 
 public:
     this(Geom g, Harvest ha)
     in {
-        assert (g.xl >= 120, "Stats need more space");
+        assert (g.xl >= 60, "Stats need more space");
         assert (g.yl >= 60, "Stats need more space");
     }
     body {
         super(g, ha);
-        _autoReplayDesc = new Label(new Geom(0, 40, xlg/2f, 20));
+        // Hack: In 640x480, the English text "Replay autosaved"
+        // was shortened to "Replay autosave.". To remedy, give some geoms of
+        // leeway both to the left and to the right outside of this's xlg.
+        _autoReplayDesc = new Label(new Geom(0, 20, xlg+15, 20, From.TOP));
         addChild(_autoReplayDesc);
         if (! solved)
             return;
 
         _youSaved = () {
-            auto ret = new LabelTwo(new Geom(0, 00, xlg/2f, 40),
-                Lang.harvestYouSaved.transl);
-            ret.value = format!"%d/%d"(lixSaved, level.initial);
-            addChild(ret);
-            return some(ret);
-        }();
-        _trophyUpdate = () {
-            auto ret = new Label(new Geom(xlg/2f, 00, xlg/2f, 20));
-            addChild(ret);
-            return some(ret);
-        }();
-        _goal = () {
-            auto ret = new LabelTwo(new Geom(0, 20, xlg, 40),
-                Lang.harvestYouNeeded.transl);
-            ret.value = format!"%d/%d"(level.required, level.initial);
+            auto ret = new Label(new Geom(0, 00, xlg, 40, From.TOP),
+                Lang.harvestYouSavedThisTime.translf(lixSaved));
             addChild(ret);
             return some(ret);
         }();
         saveTrophy();
-        if (saveAutoReplay())
+        if (saveAutoReplay()) {
             _autoReplayDesc.text = Lang.harvestReplayAutoSaved.transl;
+            saveManuallyText = Lang.harvestReplaySaveManuallyToo.transl;
+        }
     }
 
-    bool isOnlyFinalRowShown() const
-    {
-        return _goal.empty && _youSaved.empty && _trophyUpdate.empty;
-    }
+    bool isOnlyFinalRowShown() const { return _youSaved.empty; }
 
 protected:
     /*
@@ -117,21 +104,6 @@ protected:
             // Don't autosave other people's singleplayer solutions again.
             && _harvest.replay.players.byValue.front.name == userName;
     }
-
-    override void onFirstTrophy()
-    {
-        _trophyUpdate.unwrap.text(Lang.harvestTrophyFirst.transl);
-    }
-
-    override void onRestoredTrophy()
-    {
-        _trophyUpdate.unwrap.text = Lang.harvestTrophyBuiltReset.transl;
-    }
-
-    override void onImprovedTrophy()
-    {
-        _trophyUpdate.unwrap.text = Lang.harvestTrophyImproved.transl;
-    }
 }
 
 abstract class StatsAfterGame : Element {
@@ -146,10 +118,10 @@ public:
         super(g);
         _harvest = ha;
         {
-            Geom newG() { return new Geom(0, 0, xlg/2f, 20, From.BOT_RIG); }
+            Geom newG() { return new Geom(0, 0, xlg, 20, From.BOT_RIG); }
             _doneSavingManually = new Label(newG());
             _saveManually = new TextButton(newG(),
-                Lang.harvestReplaySaveManually.transl);
+                Lang.harvestReplaySaveManuallyAtAll.transl);
         }
         _doneSavingManually.hide();
         _saveManually.onExecute = () {
@@ -174,11 +146,6 @@ public:
 protected:
     abstract bool maySaveAutoReplay() const;
 
-    // Override these to react to the result of saving the trophy
-    void onFirstTrophy() { }
-    void onRestoredTrophy() { }
-    void onImprovedTrophy() { }
-
     final void saveTrophy()
     {
         if (! _harvest.maySaveTrophy || replay.levelFilename.empty
@@ -188,24 +155,21 @@ protected:
 
         Filename lfn = replay.levelFilename.unwrap;
         Optional!Trophy old = getTrophy(lfn);
-        if (! _harvest.trophy.addToUser(lfn))
-            return;
-
-        if (old.empty)
-            onFirstTrophy();
-        else if (! privateEqual(level.built, old.unwrap.built))
-            onRestoredTrophy();
-        else
-            onImprovedTrophy();
+        _harvest.trophy.addToUser(lfn); // This adds only if it improves.
     }
 
-    // Returns whether the Replay calss decided to save.
+    // Returns whether the Replay class decided to save.
     final bool saveAutoReplay() const
     {
         if (! maySaveAutoReplay())
             return false;
         replay.saveAsAutoReplay(level);
         return replay.shouldWeAutoSave;
+    }
+
+    @property string saveManuallyText(string s)
+    {
+        return _saveManually.text = s;
     }
 }
 

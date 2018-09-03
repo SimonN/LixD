@@ -51,7 +51,7 @@ protected:
 
     final Geom newStatsGeom() const
     {
-        return new Geom(20, infoY + 20, infoXl, 60, From.TOP_RIGHT);
+        return new Geom(20, infoY + 20, infoXl/2, 60, From.TOP_RIGHT);
     }
 
     Geom newDeleteButtonGeom() const

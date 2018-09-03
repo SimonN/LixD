@@ -108,8 +108,8 @@ enum Lang {
     browserMkdirPleaseEnter,
     browserInfoAuthor,
     browserInfoInitgoal,
-    browserInfoResultSaved,
-    browserInfoResultSkills,
+    browserInfoBestSaved,
+    browserInfoBestSkills,
 
     browserReplayTitle,
     browserReplayPointedTo,
@@ -132,13 +132,10 @@ enum Lang {
     verifyStatusMercyKilled,
     verifyStatusSolved,
 
-    harvestYouNeeded,
-    harvestYouSaved,
-    harvestTrophyFirst,
-    harvestTrophyBuiltReset,
-    harvestTrophyImproved,
+    harvestYouSavedThisTime,
     harvestReplayAutoSaved,
-    harvestReplaySaveManually,
+    harvestReplaySaveManuallyAtAll,
+    harvestReplaySaveManuallyToo,
 
     previewMissingTiles,
     previewMissingTilesMoreSee,

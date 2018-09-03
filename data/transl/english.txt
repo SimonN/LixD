@@ -36,8 +36,8 @@ $browserMkdirTitle Create Folder
 $browserMkdirPleaseEnter Name of new folder:
 $browserInfoAuthor By:
 $browserInfoInitgoal Goal:
-$browserInfoResultSaved Saved:
-$browserInfoResultSkills Skills:
+$browserInfoBestSaved Best:
+$browserInfoBestSkills Skills:
 
 $browserReplayTitle Replays|From the main menu, go to the replay browser.
 $browserReplayPointedTo Pointed-to level
@@ -60,13 +60,10 @@ $verifyStatusFailed Replay doesn't solve the pointed-to level.
 $verifyStatusMercyKilled Replay ran over %d minutes after final skill.
 $verifyStatusSolved Replay solves the pointed-to level.
 
-$harvestYouSaved Saved:
-$harvestYouNeeded Goal:
-$harvestTrophyFirst Checkmark earned.
-$harvestTrophyBuiltReset Checkmark restored.
-$harvestTrophyImproved New personal best!
-$harvestReplayAutoSaved Replay saved.
-$harvestReplaySaveManually Save manually
+$harvestYouSavedThisTime You saved %d lix!
+$harvestReplayAutoSaved Replay autosaved.
+$harvestReplaySaveManuallyAtAll Save replay
+$harvestReplaySaveManuallyToo Save manually
 
 $previewMissingTiles %d missing tiles:
 $previewMissingTilesMoreSee and %d more, see “%s”

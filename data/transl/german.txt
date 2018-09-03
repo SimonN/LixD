@@ -32,8 +32,8 @@ $browserMkdirTitle Ordner erstellen
 $browserMkdirPleaseEnter Name des neuen Ordners:
 $browserInfoAuthor Von:
 $browserInfoInitgoal Ziel:
-$browserInfoResultSaved Gerettet:
-$browserInfoResultSkills Fähigkeiten:
+$browserInfoBestSaved Rekord:
+$browserInfoBestSkills Fähigkeiten:
 
 $browserReplayTitle Replays|Vom Hauptmenü den Replay-Browser aufrufen.
 $browserReplayPointedTo Verwiesener Level
@@ -56,13 +56,10 @@ $verifyStatusFailed Replay löst den verwiesenen Level nicht.
 $verifyStatusMercyKilled Replay läuft über %d Minuten nach letzter Fähigkeits-Zuweisung.
 $verifyStatusSolved Replay löst den verwiesenen Level.
 
-$harvestYouSaved Du hast:
-$harvestYouNeeded Ziel:
-$harvestTrophyFirst Level abgehakt.
-$harvestTrophyBuiltReset Haken wieder da.
-$harvestTrophyImproved Neue Bestleistung!
-$harvestReplayAutoSaved Replay gespeichert.
-$harvestReplaySaveManually Manuell speichern
+$harvestYouSavedThisTime %d Lix gerettet!
+$harvestReplayAutoSaved Replay autogespeichert.
+$harvestReplaySaveManuallyAtAll Replay speichern
+$harvestReplaySaveManuallyToo Manuell speichern
 
 $previewMissingTiles %d fehlende Stücke:
 $previewMissingTilesMoreSee und %d weitere, siehe „%s“

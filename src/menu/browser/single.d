@@ -86,38 +86,30 @@ protected:
     final override void onHighlightWithLastGame(Filename fn, bool solved)
     in { assert (fn, "call onHighlightNone() instead"); }
     body {
-        only(_edit, _exportImage, _repForLev).each!(e => e.show());
-        only(_trophySaved, _trophySkills, _exportImageDone)
-            .each!(e => e.hide());
-        _levelRecent = new Level(fileRecent);
-        previewLevel(_levelRecent);
-
-        only(_by, _save).each!(e => e.shown = ! solved);
-        if (! solved) {
-            _by.value = _levelRecent.author;
-            _save.value = "%d/%d".format(_levelRecent.required,
-                                         _levelRecent.initial);
-        }
+        onHighlightWithoutLastGame(fn);
+        _trophySkills.shown = false;
     }
 
     final override void onHighlightWithoutLastGame(Filename fn)
-    {
+    in { assert (fn, "call onHighlightNone() instead"); }
+    body {
         only(_edit, _exportImage, _repForLev, _by, _save).each!(e => e.show());
-        only(_exportImageDone).each!(e => e.hide());
+        _exportImageDone.hide();
         _levelRecent = new Level(fileRecent);
         previewLevel(_levelRecent);
-
         _by.value = _levelRecent.author;
         _save.value = "%d/%d".format(_levelRecent.required,
                                      _levelRecent.initial);
-        _trophySaved.shown = false;
-        _trophySkills.shown = false;
-        getTrophy(fn).each!((Trophy tro) {
-            _trophySaved.shown = true;
-            _trophySkills.shown = true;
-            _trophySaved.value = tro.lixSaved;
-            _trophySkills.value = tro.skillsUsed;
-        });
+        getTrophy(fn).match!(
+            (Trophy tro) {
+                _trophySaved.shown = true;
+                _trophySkills.shown = true;
+                _trophySaved.value = tro.lixSaved;
+                _trophySkills.value = tro.skillsUsed;
+            }, () {
+                _trophySaved.shown = false;
+                _trophySkills.shown = false;
+            });
     }
 
     override void onPlay(Filename fn)
@@ -199,9 +191,9 @@ private:
             Lang.browserInfoInitgoal.transl);
         immutable savedXl = min(110f, infoXl/2f);
         _trophySaved = new LabelTwo(new Geom(infoX, infoY + 60, savedXl, 20),
-            Lang.browserInfoResultSaved.transl);
+            Lang.browserInfoBestSaved.transl);
         _trophySkills = new LabelTwo(new Geom(infoX + savedXl, infoY + 60,
-            infoXl - savedXl, 20), Lang.browserInfoResultSkills.transl);
+            infoXl - savedXl, 20), Lang.browserInfoBestSkills.transl);
 
         addChildren(_edit, _repForLev, _exportImage, _by, _save, _trophySaved,
             _trophySkills, _exportImageDone, _newLevel);
