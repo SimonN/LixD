@@ -16,8 +16,7 @@ import hardware.mouse;
 import hardware.mousecur;
 import tile.tilelib;
 
-// //i means not called because not yet implemented. It should be implemented
-// before we release changing resolution.
+private bool _cmdargsForcedResolutionThusNeverChangeThat = false;
 
 void changeResolutionBasedOnCmdargsThenUserFile(const(Cmdargs) cmdargs)
 {
@@ -30,6 +29,8 @@ void changeResolutionBasedOnCmdargsThenUserFile(const(Cmdargs) cmdargs)
     gui.context.deinitialize();
 
     hardware.display.setScreenMode(cmdargs);
+    if (cmdargs.forceSomeDisplayMode)
+        _cmdargsForcedResolutionThusNeverChangeThat = true;
 
     gui.context.initialize(displayXl, displayYl);
     gui.root.initialize(displayXl, displayYl);
@@ -42,7 +43,7 @@ void changeResolutionBasedOnCmdargsThenUserFile(const(Cmdargs) cmdargs)
 
 void changeResolutionBasedOnUserFileAlone()
 {
-    if (weHaveAReasonToChange)
+    if (weHaveAReasonToChange && ! _cmdargsForcedResolutionThusNeverChangeThat)
         changeResolutionBasedOnCmdargsThenUserFile(new Cmdargs([]));
 }
 

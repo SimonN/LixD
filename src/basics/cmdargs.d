@@ -120,6 +120,12 @@ public:
         return (fileArgs.length <= 2 && fileArgs.all!(fn => fn.fileExists));
     }
 
+    @property bool forceSomeDisplayMode() const pure nothrow @nogc
+    {
+        return forceWindowed
+            || forceSoftwareFullscreen || forceHardwareFullscreen;
+    }
+
     void printNoninteractiveOutput()
     {
         // always print the version; -v is basically used to enter this
