@@ -177,8 +177,6 @@ static this()
     fileImageAbility = new Fn("data/images/ability.I");
     fileImageGuiNumber = new Fn("data/images/api_numb.I");
     fileImageDebris = new Fn("data/images/debris.I");
-    fileImageEditFlip = new Fn("data/images/edit_flp.I");
-    fileImageEditHatch = new Fn("data/images/edit_hat.I");
     fileImageEditPanel = new Fn("data/images/edit_pan.I");
     fileImageExplosion = new Fn("data/images/explode.I");
     fileImageFuse = new Fn("data/images/fuse.I");
@@ -187,8 +185,6 @@ static this()
     fileImageGameIcon = new Fn("data/images/game_ico.I");
     fileImageGamePanel = new Fn("data/images/game_pan.I");
     fileImageGamePanel2 = new Fn("data/images/game_pa2.I");
-    fileImageGamePanelHints = new Fn("data/images/game_pah.I");
-    fileImageGameSpawnint = new Fn("data/images/game_spi.I");
     fileImageGamePause = new Fn("data/images/game_pau.I");
     fileImageGameReplay = new Fn("data/images/game_rep.I");
     fileImageImplosion = new Fn("data/images/implode.I");
