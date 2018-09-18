@@ -153,7 +153,8 @@ $editorButtonSelectCopy Copy: Clones the selected tiles for placing them elsewhe
 $editorButtonSelectDelete Delete: Removes the selected tiles from the level.
 $editorButtonBackground Background: Puts the selected tiles behind some others.
 $editorButtonForeground Foreground: Puts the selected tiles in front of some others.
-$editorButtonSelectFlip Flip: Mirrors the selected terrain horizontally.
+$editorButtonMirrorHorizontally Mirror: Mirrors the selected terrain horizontally.
+$editorButtonFlipVertically Flip: Flips the selected terrain vertically.
 $editorButtonSelectRotate Rotate: Performs a quarter turn on the selected terrain.
 $editorButtonSelectDark Dark: Selected terrain erases normal terrain.
 $editorButtonViewZoom Zoom: Left-click zooms into the map, right-click zooms out.
@@ -161,7 +162,6 @@ $editorButtonAddTerrain Terrain: Add a terrain tile.
 $editorButtonAddSteel Steel: Add a steel tile that cannot be dug through.
 $editorButtonAddHatch Hatch: Add a lix entrance hatch.
 $editorButtonAddGoal Goal: Add a goal, i.e., an exit, for the lix.
-$editorButtonAddDeco Decoration: Add a non-interactive decoration tile.
 $editorButtonAddHazard Hazard: Add a trap, water or fire.
 $editorButtonMenuConstants Constants: Name the level, set fundamental values.
 $editorButtonMenuTopology Map: Resize the level, wrap the edges.

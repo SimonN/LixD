@@ -147,7 +147,8 @@ $editorButtonSelectCopy Kopieren: Ausgewählte Objekte klonen.
 $editorButtonSelectDelete Löschen: Ausgewählte Objekte löschen.
 $editorButtonBackground Hintergrund: Ausgewählte Teile hinter andere setzen.
 $editorButtonForeground Vordergrund: Ausgewählte Teile vor andere holen.
-$editorButtonSelectFlip Spiegeln: Ausgewähltes Terrain horizontal spiegeln.
+$editorButtonMirrorHorizontally Spiegeln: Ausgewähltes Terrain horizontal spiegeln.
+$editorButtonFlipVertically Kopfüber: Ausgewähltes Terrain vertikal spiegeln.
 $editorButtonSelectRotate Drehen: Ausgewähltes Terrain um ein Viertel drehen.
 $editorButtonSelectDark Dunkel: Ausgewähltes Terrain im Spiel schwarz zeichnen.
 $editorButtonViewZoom Zoom: Linksklick zoomt in die Karte, Rechtsklick zoomt heraus.
@@ -155,7 +156,6 @@ $editorButtonAddTerrain Terrain: Ein durchgrabbares Terrainstück platzieren.
 $editorButtonAddSteel Stahl: Ein nicht-durchgrabbares Stahlobjekt platzieren.
 $editorButtonAddHatch Klappe: Eine Lix-Eingangsklappe platzieren.
 $editorButtonAddGoal Ziel: Ein Ziel, also einen Lix-Ausgang platzieren.
-$editorButtonAddDeco Dekoration: Ein harmloses Dekorationsobjekt platzieren.
 $editorButtonAddHazard Gefahr: Eine Falle, Wasser oder Feuer platzieren.
 $editorButtonMenuConstants Konstanten: Titel und wichtige Zahlen einstellen.
 $editorButtonMenuTopology Karte: Abmessungen ändern, Außenkanten verkleben.

@@ -93,7 +93,7 @@ void makePanel(Editor editor)
         buttonZoom.hotkey = keyZoomIn;
         buttonZoom.hotkeyRight = keyZoomOut;
 
-        onExecute(Lang.editorButtonSelectFlip, keyEditorMirror, () {
+        onExecute(Lang.editorButtonMirrorHorizontally, keyEditorMirror, () {
             immutable box = editor.smallestRectContainingSelection();
             editor._selection.each!(sel => sel.mirrorHorizontallyWithin(box));
         });

@@ -135,15 +135,19 @@ private:
         if (lang < Lang.editorButtonMenuConstants)
             return lang - Lang.editorButtonFileNew
                 // DTODOUNDO: undo isn't implemented yet, otherwise rm this
-                - (lang >= Lang.editorButtonUndo ? 2 : 0);
+                - (lang >= Lang.editorButtonUndo ? 2 : 0)
+                // DTODO: Flip vertically isn't implemented yet
+                - (lang >= Lang.editorButtonFlipVertically ? 1 : 0);
         else
             return lang - Lang.editorButtonMenuConstants
                         - (lang >= Lang.editorButtonMenuLooks ? 1 : 0);
     }
     Lang indexToLang(int id) const
     {
-        return to!Lang(id + Lang.editorButtonFileNew + (id
-            >= Lang.editorButtonUndo - Lang.editorButtonFileNew ? 2 : 0));
+        enum ebfn = Lang.editorButtonFileNew;
+        return to!Lang(id + Lang.editorButtonFileNew
+            + (id >= Lang.editorButtonUndo - ebfn ? 2 : 0)
+            + (id+2 >= Lang.editorButtonFlipVertically - ebfn ? 1 : 0));
     }
 
     void makeButtons()
@@ -160,14 +164,11 @@ private:
 
         Geom newGeomForButton(int i)
         {
-            if (langToButtonIndex(Lang.editorButtonAddTerrain) == i)
+            if (i == langToButtonIndex(Lang.editorButtonAddTerrain))
                 return new Geom(i/2*bitmapXl, _info.ylg + i%2*bitmapYl,
                                 bitmapXl, 2 * bitmapYl);
-            if (langToButtonIndex(Lang.editorButtonAddDeco) == i)
-                // massive hack, put outside of screen, but make valid geom
-                return new Geom(9999, 9999, 20, 20);
-            if (langToButtonIndex(Lang.editorButtonAddTerrain) < i
-                && langToButtonIndex(Lang.editorButtonAddDeco) > i)
+            if (i > langToButtonIndex(Lang.editorButtonAddTerrain))
+                // Terrain button is twice the size
                 ++i;
             return new Geom(i/2*bitmapXl, _info.ylg + i%2*bitmapYl,
                             bitmapXl, bitmapYl);
