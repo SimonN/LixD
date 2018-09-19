@@ -202,7 +202,7 @@ private:
         _loadedFromDisk = true;
         assert (! _sample);
         assert (_isAudioInitialized);
-        _sample = al_load_sample(_filename.stringzForReading);
+        _sample = al_load_sample(_filename.stringForReading.toStringz);
         if (! _sample) {
             if (! _filename.fileExists()) {
                 logf("Missing sound file `%s'", _filename.rootless);

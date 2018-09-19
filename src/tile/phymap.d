@@ -245,7 +245,7 @@ class Phymap : Topology {
                         | Phybit.water | Phybit.trap | Phybit.fling);
             al_put_pixel(x, y, Alcol(red, blue, green, 1));
         }
-        al_save_bitmap(fn.stringzForWriting, outputBitmap);
+        al_save_bitmap(fn.stringForWriting.toStringz, outputBitmap);
     }
 
 private:

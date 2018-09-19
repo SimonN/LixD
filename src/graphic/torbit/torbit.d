@@ -127,7 +127,7 @@ public:
 
     void saveToFile(in Filename fn)
     {
-        al_save_bitmap(fn.stringzForWriting, bitmap);
+        al_save_bitmap(fn.stringForWriting.toStringz, bitmap);
     }
 
     void drawFromPreservingAspectRatio(in Torbit from)

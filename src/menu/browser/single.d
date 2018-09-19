@@ -181,7 +181,7 @@ private:
             levelRecent.exportImageTo(imgFn);
             _exportImage.hide();
             _exportImageDone.show();
-            _exportImageDone.text = imgFn.stringzForWriting.to!string;
+            _exportImageDone.text = imgFn.stringForWriting;
             hardware.sound.playQuiet(Sound.DISKSAVE);
         };
 

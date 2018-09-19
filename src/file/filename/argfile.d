@@ -130,8 +130,8 @@ public:
     }
 
     // Silently return null if file not found
-    const(char*) stringzForReading() nothrow immutable { return _s.toStringz; }
-    const(char*) stringzForWriting() nothrow immutable { return _s.toStringz; }
+    string stringForReading() nothrow immutable { return _s; }
+    string stringForWriting() nothrow immutable { return _s; }
 
     // may throw on error
     const(void)[] readIntoVoidArray() immutable { return std.file.read(_s); }

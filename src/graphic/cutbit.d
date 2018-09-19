@@ -76,7 +76,7 @@ public:
     this(const Filename fn, in Cut cut)
     {
         // Try loading the file. If not found, don't crash, but log.
-        bitmap = al_load_bitmap(fn.stringzForReading);
+        bitmap = al_load_bitmap(fn.stringForReading.toStringz);
         if (bitmap)
             al_convert_mask_to_alpha(bitmap, color.pink);
         this(bitmap, cut);

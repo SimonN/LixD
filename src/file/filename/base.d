@@ -3,6 +3,7 @@ module file.filename.base;
 import std.algorithm;
 import std.typecons;
 import std.file : SpanMode, isDir;
+public import std.string : toStringz; // for stringForReading/Writing
 
 package interface IFilename {
 public:
@@ -24,8 +25,8 @@ immutable:
     const(void)[] readIntoVoidArray();
 
     // Silently return null if file not found
-    const(char*) stringzForReading() nothrow;
-    const(char*) stringzForWriting();
+    string stringForReading() nothrow;
+    string stringForWriting();
 
     // dirExists(a/b/) checks if b exists.
     // dirExists(a/b/c) checks if b exists, no matter whether file c is inside.

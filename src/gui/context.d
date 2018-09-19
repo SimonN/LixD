@@ -155,8 +155,8 @@ final class Context {
     ALLEGRO_FONT* makeFont(in float size)
     {
         immutable fn = new VfsFilename("./data/fonts/djvusans.ttf");
-        const(char*) fnp = fn.stringzForReading;
-        ALLEGRO_FONT* f = al_load_ttf_font(fnp, to!int(floor(size)), 0);
+        ALLEGRO_FONT* f = al_load_ttf_font(
+            fn.stringForReading.toStringz, to!int(floor(size)), 0);
         return f ? f : al_create_builtin_font();
     }
 

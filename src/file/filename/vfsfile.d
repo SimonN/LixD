@@ -75,9 +75,9 @@ public:
     }
 
     // Silently returns null if file not found
-    const(char*) stringzForReading() immutable nothrow
+    string stringForReading() immutable nothrow
     {
-        return resolveForReading(this, LookFor.filesAndDirs).toStringz;
+        return resolveForReading(this, LookFor.filesAndDirs);
     }
 
     // throws on error
@@ -86,11 +86,11 @@ public:
         return std.file.read(resolveForReading(this, LookFor.files));
     }
 
-    const(char*) stringzForWriting() immutable
+    string stringForWriting() immutable
     {
         assert (rootForWriting != "", "call VFS initialize before this");
         this.mkdirRecurse();
-        return (rootForWriting ~ rootless).toStringz;
+        return rootForWriting ~ rootless;
     }
 
     // Test if a file exists for reading in one of the trees.
@@ -336,6 +336,6 @@ unittest {
     assert (fn !is null);
     assert (fn.rootless != "");
     assert (fn.fileExists, "unittest relies on sound file `hatch.ogg'");
-    Filename fn2 = new VfsFilename(fn.stringzForReading.to!string);
+    Filename fn2 = new VfsFilename(fn.stringForReading);
     assert (fn == fn2);
 }

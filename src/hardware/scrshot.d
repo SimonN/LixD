@@ -15,7 +15,7 @@ void takeScreenshot(string prefix)
 {
     assert (display);
     al_save_bitmap(
-        prefix.nonexistantFile().stringzForWriting,
+        prefix.nonexistantFile().stringForWriting.toStringz,
         al_get_backbuffer(display));
     playQuiet(Sound.DISKSAVE);
 }

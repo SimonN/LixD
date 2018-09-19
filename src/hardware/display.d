@@ -193,7 +193,7 @@ void loadIcon()
 {
     assert (display);
     if (! _appIcon)
-        _appIcon = al_load_bitmap(fileImageAppIcon.stringzForReading);
+        _appIcon = al_load_bitmap(fileImageAppIcon.stringForReading.toStringz);
     if (_appIcon)
         al_set_display_icon(display, _appIcon);
 }

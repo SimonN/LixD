@@ -133,7 +133,7 @@ void loadMusicFromDisk(in Filename fn)
         ~ " already called sound.tryInitialize before and it succeeded");
     if (_music)
         al_destroy_audio_stream(_music);
-    _music = al_load_audio_stream(fn.stringzForReading, 3, 1024);
+    _music = al_load_audio_stream(fn.stringForReading.toStringz, 3, 1024);
     if (_music) {
         al_set_audio_stream_playmode(_music,
             ALLEGRO_PLAYMODE.ALLEGRO_PLAYMODE_LOOP);

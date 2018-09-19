@@ -209,7 +209,7 @@ unittest {
 
         import std.file;
         import std.conv;
-        assert (std.file.getSize(imgFn.stringzForReading.to!string) > 100_000,
+        assert (std.file.getSize(imgFn.stringForReading) > 100_000,
             "`" ~ l.name ~ "' is a large level, it should produce a large"
             ~ " image file `" ~ imgFn.rootless ~ "`', but hasn't.");
         return 0;
