@@ -7,6 +7,7 @@ import std.string;
 
 import basics.globals;
 import basics.user; // FPS
+import editor.gui.custgrid;
 import file.filename; // currentFilename
 import file.language;
 import graphic.internal;
@@ -176,7 +177,11 @@ private:
 
         foreach (int i; 0 .. bitmaps) {
             auto g = newGeomForButton(i);
-            if (langToButtonIndex(Lang.editorButtonViewZoom) == i) {
+            if (langToButtonIndex(Lang.editorButtonGridCustom) == i) {
+                _buttons ~= new CustGridButton(g);
+                _buttons[$-1].xf = -1;
+            }
+            else if (langToButtonIndex(Lang.editorButtonViewZoom) == i) {
                 _zoom = new TwoTasksButton(g, cutbit);
                 _zoom.xf = langToButtonXf(Lang.editorButtonViewZoom);
                 _buttons ~= _zoom;
