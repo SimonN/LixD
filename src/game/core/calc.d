@@ -61,11 +61,23 @@ void calcModalWindow(Game game) { with (game)
 
 void atEndOfGame(Game game) { with (game)
 {
-    if (! nurse.doneAnimating())
+    if (! nurse.doneAnimating()) {
+        // Not end of game yet
         return;
+    }
     // Physics are finished
-    if (! multiplayer && ! singleplayerHasWon)
-        pan.suggestTooltip(Tooltip.ID.framestepOrQuit);
+    if (! multiplayer && ! singleplayerHasWon) {
+        // The nuke button is checked here in addition to checking it during
+        // physics in game.core.active. In game.core.active, it generates
+        // the nuke input for the replay, but we won't process any further
+        // replay updates after all lixes have died. Thus, after all lixes
+        // have died, cancel the game immediately here without affecting
+        // physics.
+        if (pan.nukeDoubleclicked)
+            _gotoMainMenu = true;
+        else
+            pan.suggestTooltip(Tooltip.ID.framestepOrQuit);
+    }
 
     if (! _effect.nothingGoingOn)
         return;
