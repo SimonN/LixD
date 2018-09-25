@@ -100,7 +100,7 @@ this(in Topology tp, in int aCameraXl, in int aCameraYl)
     _cameraXl = aCameraXl;
     _cameraYl = aCameraYl;
 
-    _zoom = new Zoom(Point(tp.xl, tp.yl), Point(_cameraXl, _cameraYl));
+    _zoom = new Zoom(tp, Point(_cameraXl, _cameraYl));
     auto cfg = Torbit.Cfg(tp);
     _nearestNeighbor = new Torbit(cfg);
     cfg.smoothlyScalable = true;
@@ -130,7 +130,7 @@ void resize(in int newXl, in int newYl)
         return;
     _nearestNeighbor.resize(newXl, newYl);
     _blurryScaling.resize(newXl, newYl);
-    _zoom = new Zoom(Point(newXl, newYl), Point(_cameraXl, _cameraYl));
+    _zoom = new Zoom(torbit, Point(_cameraXl, _cameraYl));
     cameraX = cameraX; // re-snap to boundaries
     cameraY = cameraY;
 }
