@@ -1,17 +1,10 @@
-$BUILT 2015-09-07 20:55:11
+$BUILT 2018-09-25 23:23:16
 $AUTHOR Michael S. Repton
-$GERMAN 
 $ENGLISH The Borderland
 
+#INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 1600
 #SIZE_Y 400
-#TORUS_X 0
-#TORUS_Y 0
-#START_X 0
-#START_Y 0
-#BACKGROUND_RED 0
-#BACKGROUND_GREEN 0
-#BACKGROUND_BLUE 0
 
 #INITIAL 60
 #REQUIRED 30
@@ -57,6 +50,7 @@ $ENGLISH The Borderland
 :simon/water.W: 1296 352
 :simon/water.W: 1344 352
 :simon/water.W: 1392 352
+:geoo/construction/sawblade.F: 1068 156
 
 :proxima/tile/pink1a: 304 200
 :proxima/tile/pink5: 288 208

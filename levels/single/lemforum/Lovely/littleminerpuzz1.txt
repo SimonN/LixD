@@ -1,12 +1,10 @@
-$BUILT 2016-06-28 11:36:44
+$BUILT 2018-09-25 23:12:23
 $AUTHOR geoo
 $ENGLISH Little Miner Puzzle (Part 1)
 
 #INTENDED_NUMBER_OF_PLAYERS 1
 #SIZE_X 640
 #SIZE_Y 640
-#START_X 0
-#START_Y 0
 
 #INITIAL 10
 #REQUIRED 10
@@ -113,9 +111,9 @@ $ENGLISH Little Miner Puzzle (Part 1)
 :geoo/shadow/wall/left: 600 304
 :geoo/shadow/wall/center: 632 336
 :geoo/shadow/wall/left: 600 336
-:geoo/shadow/pillar_hztl_32: 200 432
-:geoo/shadow/pillar_hztl_32: 232 432
-:geoo/shadow/pillar_hztl_32: 248 432
+:geoo/shadow/pillar_hztl_32: 200 416
+:geoo/shadow/pillar_hztl_32: 232 416
+:geoo/shadow/pillar_hztl_32: 248 416
 :geoo/shadow/wall/center: 152 320
 :geoo/shadow/wall/left: 120 320
 :geoo/shadow/wall/right: 168 320
