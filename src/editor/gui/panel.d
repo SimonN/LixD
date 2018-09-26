@@ -153,11 +153,14 @@ private:
 
     void makeButtons()
     {
-        immutable int bitmaps = Lang.editorButtonAddHazard
-                              - Lang.editorButtonFileNew + 1
+        immutable int bitmaps = Lang.editorButtonAddHazard + 1
+                              - Lang.editorButtonFileNew
+                              - 1 // because no vertical flip
                               - 2; // because no undo or redo yet
         immutable int texts = 3;
-        immutable bitmapXl = infoXl * 2f / bitmaps;
+        // Xl computes with (bitmaps + 1) becasue the button for the
+        // terrain brower is double-sized.
+        immutable bitmapXl = infoXl * 2f / (bitmaps + 1);
         immutable bitmapYl = (gui.panelYlg - _info.ylg) / 2;
         immutable textXl = gui.screenXlg - infoXl();
         immutable textYl = gui.panelYlg / texts;
