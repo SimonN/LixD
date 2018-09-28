@@ -18,7 +18,7 @@ private:
     TextButton _connect;
     Texttype _customIP;
 
-    void delegate(string ip) _onExecute;
+    void delegate(string ip, int port) _onExecute;
 
 public:
     this(Geom g)
@@ -29,11 +29,11 @@ public:
         _customIP = new Texttype( new Geom(0, 20, xlg/2, 20, From.TOP_RIGHT));
 
         _customIP.allowScrolling = true;
-        _customIP.text = networkIpLastUsed.strip;
+        _customIP.text = networkLastCustomAddress.strip;
         _customIP.onEnter = () { connectToCustomIP(); };
 
         _radio.addChoice(Lang.winLobbyStartCentral.transl
-                            ~ " (" ~ ipCentralServer ~ ")");
+                            ~ " (" ~ networkCentralServerAddress ~ ")");
         _radio.addChoice(Lang.winLobbyStartCustom.transl);
         _radio.onExecute = (int chosen) {
             _customIP.shown = _customIP.on = (chosen == 1);
@@ -47,7 +47,8 @@ public:
                 return;
             else if (_radio.chosen == 0) {
                 networkPreferCustom.value = false;
-                _onExecute(ipCentralServer);
+                _onExecute(
+                    networkCentralServerAddress, networkCentralServerPort);
             }
             else
                 connectToCustomIP();
@@ -65,8 +66,8 @@ private:
             return;
         }
         networkPreferCustom.value = true;
-        networkIpLastUsed = _customIP.text.strip;
-        _onExecute(networkIpLastUsed);
+        networkLastCustomAddress = _customIP.text.strip;
+        _onExecute(networkLastCustomAddress, networkLastCustomPort);
     }
 }
 

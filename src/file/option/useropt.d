@@ -6,8 +6,6 @@ module file.option.useropt;
  * For the collection of all user options, including the methods to save/load
  * them all at once to/from the user file see module file.option instead.
  *
- * For the global config file, see file.option instead.
- *
  * Contract with file.language.Lang:
  * Each short option description (caption in the options menu)
  * is immediately followed in Lang by the long description, for the option bar.
@@ -17,6 +15,8 @@ import std.algorithm;
 import std.array;
 import std.conv;
 import std.string;
+
+import sdlang;
 
 import file.filename;
 import file.io;
@@ -39,28 +39,34 @@ public:
 
     final void set(in IoLine ioLine)
     {
-        assert (ioLine.text1 == _userFileKey);
+        assert (ioLine.text1 == _userFileKey,
+            "Mismatch in user option setter: IoLine=" ~ ioLine.text1
+            ~ " ourName=" ~ _userFileKey);
         setImpl(ioLine);
     }
 
-    final IoLine ioLine() const
+    final void set(Tag tag)
     {
-        auto ioLine  = toIoLineExceptForKey();
-        ioLine.text1 = _userFileKey;
-        return ioLine;
+        assert (tag.name == _userFileKey);
+        setImpl(tag);
+    }
+
+    final Tag createTag() const
+    {
+        Tag tag = new Tag(null, _userFileKey);
+        this.addValueTo(tag);
+        return tag;
     }
 
 protected:
-    abstract void setImpl(in IoLine ioLine);
-
-    abstract IoLine toIoLineExceptForKey() const
-    out (ret) {
-        assert (ret);
-        assert (ret.text1 == "");
-    }
-    body { return null; }
-
+    abstract void setImpl(in IoLine ioLine); // legacy, keep until early 2020
+    abstract void setImpl(Tag tag);
     abstract void revertToDefault();
+
+    // To be called from the base class's createTag().
+    // The child class should add their values to the tag, but keep the
+    // tag's name as-is.
+    abstract void addValueTo(Tag) const;
 }
 
 // ############################################################################
@@ -105,17 +111,27 @@ protected:
             static assert (false);
     }
 
-    override IoLine toIoLineExceptForKey() const
+    override void setImpl(Tag tag)
     {
-        static if (is (T == int))
-            return IoLine.Hash(null, _value);
-        else static if (is (T == bool))
-            return IoLine.Hash(null, _value ? 1 : 0);
-        else static if (is (T == string))
-            return IoLine.Dollar(null, _value);
+        static if (is (T == KeySet)) {
+            _value = KeySet();
+            import std.variant;
+            foreach (value; tag.values.filter!(v => v.convertsTo!int))
+                _value = KeySet(_value, KeySet(value.get!int));
+        }
+        else {
+            _value = tag.getValue!T;
+        }
+    }
+
+    override void addValueTo(Tag tag) const
+    {
+        static if (is (T == int) || is (T == bool) || is (T == string)) {
+            tag.add(Value(value));
+        }
         else static if (is (T == KeySet))
-            return IoLine.Dollar(null,
-                _value.keysAsInts.map!(to!string).join(", "));
+            foreach (int scancode; _value.keysAsInts)
+                tag.add(Value(scancode));
         else
             static assert (false);
     }
@@ -127,8 +143,8 @@ unittest
 {
     UserOption!int a = new UserOption!int("myUnittestKey", Lang.commonOk, 4);
     a.value = 5;
-    assert (a.ioLine().text1 == "myUnittestKey");
-    assert (a.ioLine().nr1 == 5);
+    assert (a.createTag().name == "myUnittestKey");
+    assert (a.createTag().values.front == 5);
 }
 
 private KeySet parseStringOfIntsIntoKeySet(string s) pure nothrow
@@ -147,14 +163,15 @@ private KeySet parseStringOfIntsIntoKeySet(string s) pure nothrow
 unittest {
     UserOption!KeySet mykey = new UserOption!KeySet("myHotkeyKey",
         Lang.optionKeyMenuOkay, KeySet(45));
-    assert (mykey.ioLine().text1 == "myHotkeyKey");
-    assert (mykey.ioLine().text2 == "45");
+    assert (mykey.createTag().name == "myHotkeyKey");
+    assert (mykey.createTag().values.front == 45);
     mykey.set(IoLine.Dollar("myHotkeyKey", "2, 1, ,, 4, 3"));
-    assert (mykey.ioLine().text2 == "1, 2, 3, 4");
+    import std.algorithm;
+    assert (mykey.createTag().values.equal([1, 2, 3, 4]));
     mykey.value = KeySet();
-    assert (mykey.ioLine().text2 == "");
+    assert (mykey.createTag().values.empty);
     mykey.set(IoLine.Dollar("myHotkeyKey", ""));
-    assert (mykey.ioLine().text2 == "");
+    assert (mykey.createTag().values.empty);
 }
 
 // ############################################################################[
@@ -187,9 +204,14 @@ protected:
         _value = MutFilename(new VfsFilename(ioLine.text2));
     }
 
-    override IoLine toIoLineExceptForKey() const
+    override void setImpl(Tag tag)
     {
-        return IoLine.Dollar(null, _value.rootless);
+        _value = MutFilename(new VfsFilename(tag.getValue!string));
+    }
+
+    override void addValueTo(Tag tag) const
+    {
+        tag.add(Value(_value.rootless));
     }
 
     override void revertToDefault() { _value = _defaultValue; }

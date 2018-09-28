@@ -20,6 +20,7 @@ import sdlang;
 
 import basics.globals;
 import file.date;
+import file.backup;
 import file.filename;
 import file.log;
 import file.trophy.trophy;
@@ -86,7 +87,7 @@ void loadTrophies()
     catch (Exception e) {
         log("Syntax errors in trophy file: " ~ fileTrophies.rootless);
         log("    -> " ~ e.msg);
-        backupBrokenSdlang(e);
+        backupBrokenSdlang(fileTrophies, e);
     }
 }
 
@@ -96,7 +97,6 @@ void saveTrophies()
         auto zone = Zone(profiler, "save trophies as SDLang");
     auto root = new Tag();
     foreach (key, tro; _trophies) {
-        import std.stdio; // debugging
         assert (tro.built !is null, "null built for " ~ key.fileNoExt);
         root.add(new Tag(null, tagName, [], [
             new Attribute("", attrFileNoExt, Value(key.fileNoExt)),
@@ -188,7 +188,7 @@ void loadTrophies2017format()
     // Copypasta from file.option.load
     IoLine[] lines;
     try {
-        lines = fillVectorFromFile(userFileName());
+        lines = fillVectorFromFile(legacyUserOptionFilename);
     }
     catch (Exception e) {
         // We won't log anything for the legacy format.
@@ -211,22 +211,5 @@ void loadTrophies2017format()
         TrophyKey key;
         key.fileNoExt = fullPath.fileNoExtNoPre;
         addDuringLoad(key, tro);
-    }
-}
-
-void backupBrokenSdlang(Exception rethrowIfUnsuccessful)
-{
-    try {
-        Filename bak = new VfsFilename(fileTrophies.rootlessNoExt
-            ~ "-backup-" ~ Date.now().toStringForFilename
-            ~ fileTrophies.extension);
-        copy(fileTrophies.stringForReading, bak.stringForWriting);
-        log("    -> Backed up erroneous trophy file as: " ~ bak.rootless);
-        log("    -> Fix manually the errors, then rename to: "
-            ~ fileTrophies.rootless);
-    }
-    catch (Exception e) {
-        log("    -> Can't backup trophies: " ~ e.msg);
-        throw rethrowIfUnsuccessful;
     }
 }

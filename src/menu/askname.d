@@ -35,7 +35,7 @@ public:
         _tt = new Texttype(new Geom(0, 100, this.xlg-40, 20, From.TOP));
         _tt.onEnter = () {
             if (_tt.text.strip.length > 0) {
-                file.option.userName = _tt.text.strip;
+                file.option.userNameOption = _tt.text.strip;
                 loadUserOptions();
                 loadTrophies();
                 _gotoMainMenu = true;

@@ -50,14 +50,6 @@ immutable preExtFire                 = 'F';
 immutable preExtWater                = 'W';
 immutable preExtHiddenFile           = 'X';
 
-// keys for saving/loading the global config file
-immutable cfgUserName                = "USER_NAME";
-immutable cfgUserNameAsk             = "USER_NAME_ASK";
-
-immutable cfgIPLastUsed              = "IP_LAST_USED";
-immutable cfgIPCentralServer         = "IP_CENTRAL_SERVER";
-immutable cfgServerPort              = "SERVER_PORT";
-
 // keys for saving/loading level files
 immutable levelBuilt                  = "BUILT";
 immutable levelAuthor                 = "AUTHOR";
@@ -125,8 +117,8 @@ Filename dirLevels, dirLevelsSingle, dirLevelsNetwork, dirReplays, dirData,
     dirReplayAutoSolutions, dirReplayAutoMulti, dirReplayManual,
     dirExport;
 
-Filename fileGlobalConfig, fileLog, fileReplayVerifier, fileTharsisProf,
-    fileTrophies,
+Filename fileGlobalConfigLegacy, fileLog, fileReplayVerifier, fileTharsisProf,
+    fileHotkeys, fileOptions, fileTrophies,
     fileLanguageEnglish, fileMusicMenu, fileMusicGain,
     fileSingleplayerFirstLevel;
 
@@ -166,12 +158,14 @@ static this()
     // should decide whether to prefix with the "user/" dir or not.
     // Self-contained: prepend "user/", FHS-installed: no extra subdir,
     // write to "~/./local/share/lix/trophies.sdl".
-    fileTrophies = new Fn("./user/trophies.sdl");
+    fileHotkeys = new Fn("user/hotkeys.sdl");
+    fileOptions = new Fn("user/options.sdl");
+    fileTrophies = new Fn("user/trophies.sdl");
+    fileLog = new Fn("user/log.txt");
+    fileReplayVerifier = new Fn("user/verifier.txt");
+    fileTharsisProf = new Fn("user/profiler.txt");
 
-    fileGlobalConfig = new Fn("data/config.txt");
-    fileLog = new Fn("data/log.txt");
-    fileReplayVerifier = new Fn("data/verifier.txt");
-    fileTharsisProf = new Fn("data/profile.txt");
+    fileGlobalConfigLegacy = new Fn("data/config.txt");
     fileLanguageEnglish = new Fn("data/transl/english.txt");
     fileMusicMenu = new Fn(dirDataMusic.rootless ~ "menulix");
     fileMusicGain = new Fn(dirDataMusic.rootless ~ "gain.txt");

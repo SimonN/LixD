@@ -155,28 +155,9 @@ void showGroup(in OptionGroup gr)
 
 void saveEverything()
 {
-    string oldUser = userName;
     foreach (enumVal, group; groups)
         group.each!(option => option.saveValue);
-
-    if (oldUser != userName) {
-        loadUserOptions();
-        file.option.optionGroup = OptionGroup.general;
-    }
     saveUserOptions();
-    file.option.save();
-    // On user switch, why load, then save?
-    // If the user is new:
-    //      Then loading doesn't overwrite any values at all, so the
-    //      values set by the options menu are applied to the new user.
-    //      The previous user isn't affected. In practice, the new user
-    //      takes over the previous user's options as defaults. I don't
-    //      know whether this is best.
-    // If the changed-to user already exists:
-    //      Then everything set in the options is discarded completely,
-    //      even on hitting OK, and is replaced with the changed-to user's
-    //      disk-saved settings. They're written to disk again, which
-    //      shouldn't change the existing file on disk.
 }
 
 void populateOptionGroups()
@@ -214,7 +195,7 @@ void populateGeneral()
     grp ~= fac.factory!BoolOption(musicEnabled);
 
     fac = facRight();
-    grp ~= fac.factory!TextOption(Lang.optionUserName, &userName);
+    grp ~= fac.factory!TextOption(userNameOption);
     _userName = (cast (TextOption) grp[$-1]).texttype;
 
     fac.yl = 100;
@@ -423,7 +404,6 @@ void populateEditorKeys()
     groups[OptionGroup.editorKeys] ~= [
         fac.factory!HotkeyOption(keyEditorMenuConstants, watcher),
         fac.factory!HotkeyOption(keyEditorMenuTopology, watcher),
-        fac.factory!HotkeyOption(keyEditorMenuLooks, watcher),
         fac.factory!HotkeyOption(keyEditorMenuSkills, watcher),
     ];
     fac.y += fac.incrementY;

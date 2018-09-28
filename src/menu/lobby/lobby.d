@@ -7,7 +7,6 @@ import std.format;
 import std.range;
 
 import file.option;
-import file.option;
 import file.language;
 import game.harvest;
 import gui;
@@ -181,7 +180,9 @@ private:
         addChild(_console);
 
         _connections = new ConnectionPicker(new Geom(0, 40, 320,100,From.TOP));
-        _connections.onExecute = (string ip) { this.connect(ip); };
+        _connections.onExecute = (string ip, int port) {
+            this.connect(ip, port);
+        };
         _showWhenDisconnected ~= _connections;
 
         _peerList = new PeerList(new Geom(20, 40, 120, 20*8));
@@ -261,7 +262,7 @@ private:
             _declareReady.shown = false;
     }
 
-    void connect(in string hostname)
+    void connect(in string hostname, in int port)
     {
         NetClientCfg cfg;
         cfg.hostname = hostname;
@@ -272,7 +273,7 @@ private:
             // Both client and server handle illegal values and will give
             // us a legal default value
             { }
-        cfg.port = file.option.serverPort;
+        cfg.port = port;
         _netClient = new RichClient(new NetClient(cfg), _console);
         setOurEventHandlers();
         _console.add("Lix %s, enet %s. %s %s:%d...".format(gameVersion,

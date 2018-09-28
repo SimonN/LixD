@@ -49,7 +49,6 @@ void initializeNoninteractive(Runmode mode)
 
     file.filename.initialize(); // the virtual filesystem
     file.log.initialize();
-    file.option.load();
     loadUserOptions();
     loadTrophies();
 
@@ -95,7 +94,6 @@ void deinitialize()
     hardware.tharsis.deinitialize();
     saveUserOptions();
     saveTrophies();
-    file.option.save();
 }
 
 void deinitializeAfterUnittest()

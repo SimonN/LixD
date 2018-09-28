@@ -73,24 +73,24 @@ protected:
 class TextOption : Option {
 private:
     Texttype _texttype;
-    string*  _target;
+    UserOption!string _userOption;
     Lang _cap;
 
 public:
-    this(Geom g, Lang cap, string* t)
+    this(Geom g, UserOption!string opt)
     {
-        assert (t);
+        assert (opt);
         _texttype = new Texttype(new Geom(0, 0, mostButtonsXl, 20));
         super(g, new Label(new Geom(mostButtonsXl + spaceGuiTextX, 0,
                             g.xlg - mostButtonsXl + spaceGuiTextX, g.yl),
-                            cap.transl));
+                            opt.lang.transl));
         addChild(_texttype);
-        _target = t;
+        _userOption = opt;
     }
 
-    override void loadValue() { _texttype.text = *_target; }
-    override void saveValue() { *_target = _texttype.text.strip; }
-    override @property Lang lang() const { return _cap; }
+    override void loadValue() { _texttype.text = _userOption.value; }
+    override void saveValue() { _userOption.value = _texttype.text.strip; }
+    override @property Lang lang() const { return _userOption.lang; }
 
     // hack, to enable immediate check of nonempty
     @property inout(Texttype) texttype() inout { return _texttype; }
