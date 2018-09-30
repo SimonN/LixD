@@ -38,6 +38,7 @@ private:
     ColorSelector _colorSelector;
     RoomList _roomList;
     Preview _preview;
+    Label _levelTitle;
     BrowserCalledFromMainMenu _browser;
 
     TextButton _chooseLevel;
@@ -189,17 +190,11 @@ private:
         _showWhenConnected ~= _colorSelector;
         _roomList = new RoomList(new Geom(20, 40, 300, 20*8, From.TOP_RIGHT));
         _showDuringLobby ~= _roomList;
+
         _preview = new Preview(new Geom(_roomList.geom));
         _showDuringGameRoom ~= _preview;
 
         enum midButtonsY = 60+20*8;
-        _declareReady = new TextButton(new Geom(20, midButtonsY,
-            _peerList.xlg, 20), Lang.winLobbyReady.transl);
-        _declareReady.hotkey = keyMenuOkay;
-        addChild(_declareReady);
-        // See showOrHideGuiBasedOnConnection for particular showing/hiding,
-        // because _declareReady isn't in any of the _showXyz arrays
-
         _chooseLevel = new TextButton(new Geom(20, midButtonsY, 120, 20,
             From.TOP_RIGHT), Lang.winLobbySelectLevel.transl);
         _chooseLevel.onExecute = ()
@@ -210,6 +205,18 @@ private:
         };
         _chooseLevel.hotkey = keyMenuEdit;
         _showDuringGameRoom ~= _chooseLevel;
+
+        _levelTitle = new Label(new Geom(30 + _chooseLevel.xlg,
+            midButtonsY, 300, 20, From.TOP_RIGHT));
+        _levelTitle.undrawBeforeDraw = true;
+        _showDuringGameRoom ~= _levelTitle;
+
+        _declareReady = new TextButton(new Geom(20, midButtonsY,
+            _peerList.xlg, 20), Lang.winLobbyReady.transl);
+        _declareReady.hotkey = keyMenuOkay;
+        addChild(_declareReady);
+        // See showOrHideGuiBasedOnConnection for particular showing/hiding,
+        // because _declareReady isn't in any of the _showXyz arrays
 
         enum chatLabelXl = 50;
         _chat = new Texttype(new Geom(20 + chatLabelXl, 20,
@@ -290,6 +297,7 @@ private:
         if (connected && ! inLobby) {
             _netClient.gotoExistingRoom(Room(0));
             _preview.level = null;
+            _levelTitle.text = "";
         }
         else {
             if (offline)
@@ -366,6 +374,7 @@ private:
         {
             refreshPeerList();
             _preview.level = _netClient.level;
+            _levelTitle.text = _netClient.level.name;
             _console.add(Lang.netChatLevelChange.translf(
                 senderName, _netClient.level.name));
             playLoud(Sound.pageTurn);
