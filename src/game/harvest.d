@@ -6,8 +6,6 @@ module game.harvest;
  * statistics based on these stats.
  */
 
-import optional;
-
 import file.trophy;
 import game.replay;
 import level.level;

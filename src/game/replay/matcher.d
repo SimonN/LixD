@@ -38,8 +38,14 @@ private:
     struct LevelForChoice {
         bool forcedByCaller; // used even while (! initialized).
         bool lvMatchesFn; // usually true. False if included -> pointedFn
-        OptionalFilename fn; // initialized in ctor or forceLevel
+        MutFilename fnMayBeZero; // initialized in ctor or forceLevel
         Optional!Level level; // loaded only when necessary and only if exists
+        /*
+         * Warning! Optional!MutFilename is bugged when compiled in release
+         * mode with LDC. Probably some optimization fails in the interplay
+         * of Lix, optional, unions, Rebindable, DMD spec, LDC optimization.
+         * Thus, work around with MutFilename fnMayBeZero and allow null here.
+         */
     }
 
 public:
@@ -48,8 +54,8 @@ public:
     body {
         _fnRp = aReplayFn;
         _rp = Replay.loadFromFile(_fnRp);
-        _choices.included.fn = _rp.levelFilename.orElse(_fnRp);
-        _choices.pointed.fn = _rp.levelFilename;
+        _choices.included.fnMayBeZero = _rp.levelFilename.orElse(_fnRp);
+        _choices.pointed.fnMayBeZero = _rp.levelFilename.orElse(Filename.init);
         _choices.pointed.lvMatchesFn = true;
     }
 
@@ -63,7 +69,7 @@ public:
     {
         _choices.pointed.forcedByCaller = false;
         _choices.explicit.forcedByCaller = true;
-        _choices.explicit.fn = aExpli;
+        _choices.explicit.fnMayBeZero = aExpli;
         _choices.explicit.lvMatchesFn = true;
     }
 
@@ -74,7 +80,8 @@ public:
 
     @property Optional!Filename pointedToFilename() const @nogc nothrow
     {
-        return _choices.pointed.fn;
+        return _choices.pointed.fnMayBeZero is null ? no!Filename
+            : some(_choices.pointed.fnMayBeZero.get);
     }
 
     // Initializes the cache for the desired choice if necessary.
@@ -98,8 +105,8 @@ public:
 
     @property bool mayCreateGame()
     {
-        return preferredLevel.dispatch.playable.orElse(false)
-            && (! _rp.empty || ! preferredInitializedStruct.fn.empty);
+        return preferredLevel.dispatch.playable.orElse(false) && (! _rp.empty
+            || preferredInitializedStruct.fnMayBeZero !is null);
     }
 
     Game createGame()
@@ -112,14 +119,14 @@ public:
     body {
         auto pref = preferredInitializedStruct();
         TrophyKey key;
-        key.fileNoExt = pref.fn.dispatch.fileNoExtNoPre.orElse(
-            _rp.levelFilename.dispatch.fileNoExtNoPre.orElse(""));
+        key.fileNoExt = pref.fnMayBeZero !is null
+            ? pref.fnMayBeZero.fileNoExtNoPre
+            : _rp.levelFilename.dispatch.fileNoExtNoPre.orElse("");
         key.title = pref.level.unwrap.name;
         key.author = pref.level.unwrap.author;
-
-        Filename fallback = new VfsFilename("");
         return new Game(pref.level.unwrap, key,
-            pref.fn.get.orElse(fallback), some(_rp));
+            pref.fnMayBeZero !is null ? pref.fnMayBeZero : new VfsFilename(""),
+            some(_rp));
     }
 
     VerifyingNurse createVerifyingNurse()
@@ -161,9 +168,7 @@ private:
         final switch (ch) {
         case Choice.included:
             _choices.included.level = new Level(_fnRp);
-            if (! _choices.included.fn.empty
-                && _choices.included.fn.unwrap == _fnRp
-            ) {
+            if (_choices.included.fnMayBeZero == _fnRp) {
                 _choices.included.lvMatchesFn = true;
             }
             else {
@@ -177,40 +182,10 @@ private:
                 : new Level(_rp.levelFilename.unwrap);
             break;
         case Choice.explicit:
-            _choices.explicit.level = _choices.explicit.fn.empty ? null
-                : new Level(_choices.explicit.fn.unwrap);
+            _choices.explicit.level = _choices.explicit.fnMayBeZero !is null
+                ? new Level(_choices.explicit.fnMayBeZero) : null;
             break;
         }
-    }
-}
-
-struct OptionalFilename {
-private:
-    MutFilename _fnCanBeNull;
-    alias get this;
-
-public @nogc nothrow pure:
-    @property Optional!Filename get() const
-    {
-        return _fnCanBeNull ? some!Filename(_fnCanBeNull.get) : no!Filename;
-    }
-
-    @property Filename unwrap() const
-    in { assert (_fnCanBeNull, "can't call unwrap when this == none"); }
-    body { return _fnCanBeNull; }
-
-    Optional!Filename opAssign(Filename aFn)
-    {
-        _fnCanBeNull = aFn;
-        return get();
-    }
-
-    Optional!Filename opAssign(Optional!Filename optFn)
-    {
-        _fnCanBeNull = optFn.match!(
-            (aFn) => MutFilename(aFn),
-            () => MutFilename());
-        return get();
     }
 }
 
