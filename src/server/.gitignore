@@ -1,0 +1,14 @@
+.dub
+docs.json
+__dummy.html
+docs/
+lix-server.so
+lix-server.dylib
+lix-server.dll
+lix-server.a
+lix-server.lib
+lix-server-test-*
+*.exe
+*.o
+*.obj
+*.lst

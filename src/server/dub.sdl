@@ -1,0 +1,15 @@
+name "lix-server"
+description "Standalone Lix multiplayer server"
+authors "Simon Naarmann"
+copyright "public domain"
+license "public domain"
+
+targetType "executable"
+targetName "server"
+targetPath "../../bin"
+versions "lixDaemon"
+
+dependency "derelict-enet" version="~>2.0.0"
+
+importPaths "src" "../net"
+sourcePaths "src" "../net"
