@@ -30,6 +30,7 @@ import graphic.torbit;
 import tile.phymap;
 import tile.occur;
 import tile.gadtile;
+import net.style; // dubious, but I need it for fat interface antipattern
 
 public alias Water     = Gadget;
 public alias Fire      = Gadget;
@@ -102,6 +103,9 @@ public:
         super.draw();
         drawInner();
     }
+
+    // For semi-transparent goal markers in multiplayer.
+    void drawExtrasOnTopOfLand(in Style st) const { }
 
     final void drawLookup(Phymap lk) const
     {

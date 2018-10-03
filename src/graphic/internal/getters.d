@@ -94,6 +94,16 @@ body {
     return skillButtonIcons[st];
 }
 
+const(Cutbit) implGetGoalMarker(in Style st)
+out (ret) { assert(ret); }
+body {
+    if (! wantRecoloredGraphics)
+        return nullCutbit;
+    if (goalMarkers[st] is null)
+        makeGoalMarker(st);
+    return goalMarkers[st];
+}
+
 const(Alcol3D) implGetAlcol3D(in Style style)
 body {
     if (! alcol3DforStyles[style].isValid)
@@ -122,6 +132,7 @@ body {
     deinitArray(spritesheets);
     deinitArray(panelInfoIcons);
     deinitArray(skillButtonIcons);
+    deinitArray(goalMarkers);
     internal = null;
     if (_lixRawSprites) {
         _lixRawSprites.dispose();

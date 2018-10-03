@@ -19,6 +19,7 @@ Cutbit[string]    internal;
 Cutbit[Style.max] spritesheets;
 Cutbit[Style.max] panelInfoIcons;
 Cutbit[Style.max] skillButtonIcons;
+Cutbit[Style.max] goalMarkers;
 
 Cutbit nullCutbit; // invalid bitmap to return instead of null pointer
 

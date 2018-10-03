@@ -87,22 +87,29 @@ void drawGadgets(Game game)
 
 void pingOwnGadgets(Game game) { with (game)
 {
-    immutable remains = _altickPingGoalsUntil - timerTicks;
-    if (remains < 0 || ! multiplayer)
-        // Usually, we haven't clicked the cool shades button. Do nothing then.
-        // Never ping hatches/exits in singleplayer either.
+    if (! multiplayer)
         return;
-    immutable int period = ticksPerSecond / 4;
-    assert (period > 0);
-    if (remains % period < period / 2)
-        return; // draw nothing extra during the off-part of flashing
-    foreach (g; nurse.gadgetsOfTeam(localTribe.style)) {
-        enum th = 5; // thickness of the border
-        Rect outer = Rect(g.loc - Point(th, th), g.xl + 2*th, g.yl + 2*th);
-        Rect inner = Rect(g.loc, g.xl, g.yl);
-        map.drawFilledRectangle(outer, color.white);
-        map.drawFilledRectangle(inner, color.black);
-        g.draw();
+    immutable remains = _altickPingGoalsUntil - timerTicks;
+    if (remains < 0) {
+        // Usually, we haven't clicked the cool shades button.
+        // Merely draw the own goals with semi-transparent extra lixes.
+        foreach (g; nurse.gadgetsOfTeam(localTribe.style))
+            g.drawExtrasOnTopOfLand(localTribe.style);
+    }
+    else {
+        // Draw the glaring black-and-white rectangles.
+        immutable int period = ticksPerSecond / 4;
+        assert (period > 0);
+        if (remains % period < period / 2)
+            return; // draw nothing extra during the off-part of flashing
+        foreach (g; nurse.gadgetsOfTeam(localTribe.style)) {
+            enum th = 5; // thickness of the border
+            Rect outer = Rect(g.loc - Point(th, th), g.xl + 2*th, g.yl + 2*th);
+            Rect inner = Rect(g.loc, g.xl, g.yl);
+            map.drawFilledRectangle(outer, color.white);
+            map.drawFilledRectangle(inner, color.black);
+            g.draw();
+        }
     }
 }}
 

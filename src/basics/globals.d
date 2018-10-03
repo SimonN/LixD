@@ -135,6 +135,7 @@ Filename fileImageAbility, fileImageGuiNumber, fileImageAppIcon,
     fileImageFuseFlame, fileImageGameArrow, fileImageGameIcon,
     fileImageGamePanel, fileImageGamePanel2,
     fileImageGamePanelHints, fileImageGameSpawnint, fileImageGamePause,
+    fileImageGoalMarker,
     fileImageGameReplay, fileImageImplosion, fileImageSpritesheet,
     fileImageStyleRecol, fileImageLobbySpec, fileImageMenuBackground,
     fileImageMenuCheckmark, fileImageMouse, fileImagePreviewIcon,
@@ -187,6 +188,7 @@ static this()
     fileImageGamePanel2 = new Fn("data/images/game_pa2.I");
     fileImageGamePause = new Fn("data/images/game_pau.I");
     fileImageGameReplay = new Fn("data/images/game_rep.I");
+    fileImageGoalMarker = new Fn("data/images/goalmark.I");
     fileImageImplosion = new Fn("data/images/implode.I");
     fileImageSpritesheet = new Fn("data/images/lix.I");
     fileImageStyleRecol = new Fn("data/images/lixrecol.I");

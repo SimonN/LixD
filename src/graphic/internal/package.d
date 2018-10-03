@@ -37,6 +37,7 @@ const(Cutbit) getInternal    (Filename fn) { return getInternalMutable  (fn); }
 const(Cutbit) getLixSpritesheet (Style st) { return implGetLixSprites   (st); }
 const(Cutbit) getPanelInfoIcon  (Style st) { return implGetPanelInfoIcon(st); }
 const(Cutbit) getSkillButtonIcon(Style st) { return implGetSkillButton  (st); }
+const(Cutbit) getGoalMarker     (Style st) { return implGetGoalMarker   (st); }
 
 const(Alcol3D) getAlcol3DforStyle(Style st) { return implGetAlcol3D(st); }
 

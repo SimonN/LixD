@@ -65,6 +65,15 @@ void makeSkillButtonIcon(in Style st)
         fileImageSkillIcons, skillButtonIcons, st);
 }
 
+void makeGoalMarker(in Style st)
+in { assert (goalMarkers[st] is null); }
+body {
+    // magicnrSkillButtonIcons isn't a perfect descripition: It recolors
+    // exactly the first row. But goal markers have only one frame, thus OK.
+    recolorForGuiAndPlayer!magicnrSkillButtonIcons(
+        fileImageGoalMarker, goalMarkers, st);
+}
+
 private:
 
 void recolorForGuiAndPlayer(int magicnr)(
