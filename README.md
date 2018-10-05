@@ -11,9 +11,9 @@ sound, and input, and uses enet for networking.
 License/Copying/Public domain
 -----------------------------
 
-Lix's code, graphic sets, sprites, sound effects, and some music tracks (but
-not all music tracks) are released into the public domain via the CC0 public
-domain dedication.
+Lix's code, graphic sets, sprites, levels, sound effects, and some music
+tracks (but not all music tracks) are released into the public domain
+via the CC0 public domain dedication.
 
 The text font, DejaVu Sans, and some music tracks have their own licenses.
 [Full license/copying text](https://raw.githubusercontent.com/SimonN/LixD/master/doc/copying.txt)

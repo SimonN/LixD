@@ -5,10 +5,12 @@ Written in 2006 to 2017 by Simon Naarmann <s.naarmann@gmail.com>.
 Most of Lix is public domain: The following parts of Lix are released
 into the public domain under the CC0 1.0 public domain dedication/waiver.
 
-*   The entire source code, by Simon Naarmann
+*   All source code, by Simon Naarmann
 *   All sprites and menu icons, by Simon Naarmann
+*   All tileset graphics, by Matt C., geoo, Proxima, Amanda (NaOH), Simon N.,
+        Raymanni, and others
+*   All levels by various authors, too many to name
 *   All sound effects, by Simon Naarmann
-*   All tileset graphics, by Matt C., geoo, Proxima, Amanda (NaOH), Simon N.
 *   The music from the main menu, music/menulix.ogg, by Mike Spanner
 *   The music in ./music/minim-mobius, by Minim and mobius.
 
