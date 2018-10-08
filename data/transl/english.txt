@@ -76,9 +76,11 @@ $repForLevTitle Load replay for “%s”
 // networking lobby
 $winLobbyTitle Network Game|From the main menu, go to the networking lobby.
 $winLobbyDisconnect Disconnect
-$winLobbyStartCentral Central server
-$winLobbyStartCustom Custom address:
-$winLobbyStartConnect Connect
+$winLobbyStartCentral Play on the central server
+$winLobbyStartServer Host a game yourself
+$winLobbyStartCustom Connect to somebody else
+$winLobbyTitleAddress Address
+$winLobbyTitlePort UDP port
 $winLobbyChat Chat:
 $winLobbySelectLevel Choose level
 $winLobbyReady Ready to start

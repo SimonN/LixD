@@ -173,16 +173,14 @@ private:
         _buttonExit = new TextButton(new Geom(20, 20, 120, 20, From.BOT_RIG),
             Lang.commonBack.transl);
         _buttonExit.hotkey = file.option.keyMenuExit;
-        _buttonExit.onExecute = () { onExitButtonExecute(); };
+        _buttonExit.onExecute = &this.onExitButtonExecute;
         addChild(_buttonExit);
 
         _console = new LobbyConsole(new Geom(0, 60, xlg-40, 160, From.BOTTOM));
         addChild(_console);
 
-        _connections = new ConnectionPicker(new Geom(0, 40, 320,100,From.TOP));
-        _connections.onExecute = (string ip, int port) {
-            this.connect(ip, port);
-        };
+        _connections = new ConnectionPicker(new Geom(0, 40, 320,180,From.TOP));
+        _connections.onExecute = &this.acceptConnection;
         _showWhenDisconnected ~= _connections;
 
         _peerList = new PeerList(new Geom(20, 40, 120, 20*8));
@@ -262,23 +260,13 @@ private:
             _declareReady.shown = false;
     }
 
-    void connect(in string hostname, in int port)
+    void acceptConnection(INetClient cli, NetClientCfg cfgThatWasUsed)
     {
-        NetClientCfg cfg;
-        cfg.hostname = hostname;
-        cfg.ourPlayerName = file.option.userName;
-        try
-            cfg.ourStyle = file.option.networkLastStyle.value.to!Style;
-        catch (Exception)
-            // Both client and server handle illegal values and will give
-            // us a legal default value
-            { }
-        cfg.port = port;
-        _netClient = new RichClient(new NetClient(cfg), _console);
+        _netClient = new RichClient(cli, _console);
         setOurEventHandlers();
         _console.add("Lix %s, enet %s. %s %s:%d...".format(gameVersion,
             _netClient.enetLinkedVersion, Lang.netChatStartClient.transl,
-            hostname, cfg.port));
+            cfgThatWasUsed.hostname, cfgThatWasUsed.port));
     }
 
     // This is dubious. Nepster suggests that we shouldn't treat RMB special

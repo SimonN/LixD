@@ -1,0 +1,36 @@
+module net.cliserv;
+
+/*
+ * A networking client (to be created by the interactive game)
+ * that contains a server and connects to that server.
+ * This should be created when the interactive game wants to host.
+ * This is not the command-line server app: See module net.server.daemon.
+ */
+
+import net.client;
+import net.server.server;
+
+class ClientWithServer : NetClient {
+private:
+    NetServer _server;
+
+public:
+    this(NetClientCfg cfg)
+    {
+        assert (cfg.hostname == "127.0.0.1" || cfg.hostname == "localhost");
+        _server = new NetServer(cfg.port);
+        super(cfg);
+    }
+
+    override void disconnectAndDispose()
+    {
+        super.disconnectAndDispose();
+        destroy(_server);
+    }
+
+    override void calc()
+    {
+        super.calc();
+        _server.calc();
+    }
+}

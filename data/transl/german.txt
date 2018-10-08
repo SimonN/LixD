@@ -72,9 +72,11 @@ $repForLevTitle Replay für „%s“ laden
 // Lobby
 $winLobbyTitle Netzwerkspiel|Vom Hauptmenü die Netzwerk-Lobby aufrufen.
 $winLobbyDisconnect Trennen
-$winLobbyStartCentral Zentraler Server
-$winLobbyStartCustom Andere Adresse:
-$winLobbyStartConnect Verbinden
+$winLobbyStartCentral Am zentralen Server spielen
+$winLobbyStartServer Selbst ein Spiel hosten
+$winLobbyStartCustom Zu jemand anderem verbinden
+$winLobbyTitleAddress Adresse
+$winLobbyTitlePort UDP-Port
 $winLobbyChat Chat:
 $winLobbySelectLevel Level wählen
 $winLobbyReady Bereit zum Start

@@ -9,7 +9,7 @@ import std.string;
 import derelict.enet.enet;
 
 private bool _enetDllLoaded = false;
-private bool _enetIsInitialized = false;
+private int _enetInits = 0;
 
 package:
 
@@ -19,19 +19,19 @@ void initializeEnet()
         _enetDllLoaded = true;
         DerelictENet.load();
     }
-    if (! _enetIsInitialized) {
-        _enetIsInitialized = true;
+    if (_enetInits == 0) {
         if (enet_initialize() != 0)
             assert (false, "error initializing enet");
     }
+    ++_enetInits;
+    assert (_enetInits > 0);
 }
 
 void deinitializeEnet()
 {
-    if (_enetIsInitialized) {
-        _enetIsInitialized = false;
+    _enetInits = (_enetInits > 0) ? (_enetInits - 1) : 0;
+    if (_enetInits == 0)
         enet_deinitialize();
-    }
 }
 
 ENetPacket* createPacket(T)(T wantLen) nothrow

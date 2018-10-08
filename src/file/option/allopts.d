@@ -125,11 +125,13 @@ UserOption!bool replayAutoSolutions;
 UserOption!bool replayAutoMulti;
 
 UserOption!int networkLastStyle;
-UserOption!bool networkPreferCustom;
+UserOption!int networkConnectionMethod;
 UserOption!string networkCentralServerAddress;
 UserOption!int networkCentralServerPort;
-UserOption!string networkLastCustomAddress;
-UserOption!int networkLastCustomPort;
+UserOption!string networkOwnServerAddress;
+UserOption!int networkOwnServerPort;
+UserOption!string networkConnectToAddress;
+UserOption!int networkConnectToPort;
 
 UserOption!int  editorGridSelected;
 UserOption!int  editorGridCustom;
@@ -279,11 +281,13 @@ static this()
     replayAutoMulti = newOpt("replayAutoSaveMulti", Lang.optionReplayAutoMulti, true);
 
     networkLastStyle = newOpt("networkLastStyle", Style.red.to!int);
-    networkPreferCustom = newOpt("networkPreferCustom", Lang.winLobbyStartCustom, false);
+    networkConnectionMethod = newOpt("networkConnectionMethod", Lang.winLobbyStartCustom, 0);
     networkCentralServerAddress = newOpt("networkCentralServerAddress", "lixgame.com");
     networkCentralServerPort = newOpt("networkCentralServerPort", 22934);
-    networkLastCustomAddress = newOpt("networkLastCustomAddress", "127.0.0.1");
-    networkLastCustomPort = newOpt("networkLastCustomPort", 22934);
+    networkOwnServerAddress = newOpt("networkOwnServerAddress", "127.0.0.1");
+    networkOwnServerPort = newOpt("networkOwnServerPort", 22934);
+    networkConnectToAddress = newOpt("networkConnectToAddress", "127.0.0.1");
+    networkConnectToPort = newOpt("networkConnectToPort", 22934);
 
     editorLastDirTerrain = newOpt("editorLastDirTerrain", Lang.addTerrain, dirImages);
     editorLastDirSteel = newOpt("editorLastDirSteel", Lang.addSteel,
