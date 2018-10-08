@@ -32,8 +32,29 @@ Build instructions
     extract in Lix's directory.
 * Run Lix: `$ bin/lix`
 
-You can read my [detailed instructions for Windows](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/windows.txt) or my
+If these build instructions were too short, read my [detailed instructions for Windows](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/windows.txt) or my
 [detailed instructions for Linux](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/linux.txt). Would you like to package Lix for Linux distributions? Please see my [notes for Linux package maintainers](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/package.txt).
+
+Networked multiplayer
+---------------------
+
+Lix has competitive multiplayer: Route as many lix as possible into your exit,
+even if they're your opponents' lix.
+
+The easiest way to play networked games is on our central server: From
+Lix's main menu, go to Network Game and check “Play on the central server”.
+
+Alternatively, you can host private games independently from the central
+server. Check “Host a game yourself” in the Network Game menu, then tell
+your friends to connect to your machine via “Connect to somebody else”.
+To host, UDP port 22934 must be forwarded to your machine, or you can agree
+on a different UDP port with your players.
+
+It's possible to run your own standalone server outside of Lix.
+To build this server program, `$ cd src/server/`, then `$ dub build`,
+switch back to Lix's base directory with `$ cd ../../` and run the server
+with `$ bin/server`. The server will listen on UDP port 22934; you can choose
+a different port by `$ bin/server --port=<number>`.
 
 Contact
 -------
