@@ -458,14 +458,13 @@ private:
     {
         try {
             assert (fileLanguage !is null);
-            assert (fileLanguage.value !is null);
             return fillVectorFromFile(fileLanguage);
         }
         catch (Exception e) {
             log(e.msg);
             if (! languageIsEnglish) {
                 log("Falling back to English.");
-                fileLanguage = fileLanguageEnglish;
+                languageBasenameNoExt = englishBasenameNoExt;
                 return readFileUserLanguageOrNullArray();
             }
             else {

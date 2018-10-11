@@ -109,6 +109,7 @@ immutable replayAssignLeft            = "ASSIGN_LEFT";
 immutable replayAssignRight           = "ASSIGN_RIGHT";
 
 immutable dirDataBitmapScale = "data/images/scale";
+immutable englishBasenameNoExt = "english";
 
 // Class objects will be instantiated in the module constructor.
 Filename dirLevels, dirLevelsSingle, dirLevelsNetwork, dirReplays, dirData,
@@ -119,7 +120,7 @@ Filename dirLevels, dirLevelsSingle, dirLevelsNetwork, dirReplays, dirData,
 
 Filename fileGlobalConfigLegacy, fileLog, fileReplayVerifier, fileTharsisProf,
     fileHotkeys, fileOptions, fileTrophies,
-    fileLanguageEnglish, fileMusicMenu, fileMusicGain,
+    fileMusicMenu, fileMusicGain,
     fileSingleplayerFirstLevel;
 
 Filename fileImageAbility, fileImageGuiNumber, fileImageAppIcon,
@@ -166,7 +167,6 @@ static this()
     fileTharsisProf = new Fn("user/profiler.txt");
 
     fileGlobalConfigLegacy = new Fn("data/config.txt");
-    fileLanguageEnglish = new Fn("data/transl/english.txt");
     fileMusicMenu = new Fn(dirDataMusic.rootless ~ "menulix");
     fileMusicGain = new Fn(dirDataMusic.rootless ~ "gain.txt");
     fileSingleplayerFirstLevel = new Fn(dirLevelsSingle.rootless

@@ -17,7 +17,7 @@ import gui.picker;
 class LanguageOption : Option {
 private:
     Picker _picker;
-    MutFilename _lastChosen;
+    string _basenameNoExtLastChosen;
 
 public:
     this(Geom g)
@@ -40,10 +40,10 @@ public:
     override void loadValue() { highlight(file.option.fileLanguage); }
     override void saveValue()
     {
-        if (_lastChosen !is null
-            && _lastChosen != MutFilename(file.option.fileLanguage)
+        if (_basenameNoExtLastChosen
+            != file.option.languageBasenameNoExt.value
         ) {
-            file.option.fileLanguage = _lastChosen;
+            file.option.languageBasenameNoExt = _basenameNoExtLastChosen;
             loadUserLanguageAndIfNotExistSetUserOptionToEnglish();
         }
     }
@@ -77,7 +77,7 @@ protected:
 private:
     void highlight(Filename fn)
     {
-        _lastChosen = fn;
+        _basenameNoExtLastChosen = fn.fileNoExtNoPre;
         _picker.navigateToAndHighlightFile(fn,
             CenterOnHighlitFile.onlyIfOffscreen);
     }

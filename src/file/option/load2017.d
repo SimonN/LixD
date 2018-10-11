@@ -8,6 +8,7 @@ module file.option.load2017;
 
 import std.algorithm;
 import std.conv;
+import std.string;
 import std.uni;
 
 import basics.globals;
@@ -28,42 +29,6 @@ Filename legacyUserOptionFilename()
 ///////////////////////////////////////////////////////////////////////////////
 
 package:
-
-string convert2017OptionNameToCamelCase(string optName)
-{
-    switch (optName) {
-        case "SCROLL_SPEED_EDGE": return "edgeScrollSpeed";
-        case "SCROLL_SPEED_CLICK": return "holdToScrollSpeed";
-        default: break;
-    } {
-        Ac ac = stringToAc(optName);
-        if (ac != Ac.max)
-            return "keySkill" ~ ac.acToNiceCase.to!string;
-    }
-    // Otherwise return an automatic conversion of SNAKE_UPPERCASE
-    // to camelCase.
-    {
-        string ret = "";
-        bool capitalizeNext = false;
-        foreach (dchar c; optName.asLowerCase) {
-            if (c == '_') {
-                capitalizeNext = true;
-            }
-            else {
-                ret ~= capitalizeNext ? c.toUpper : c.toLower;
-                capitalizeNext = false;
-            }
-        }
-        return ret;
-    }
-}
-
-unittest {
-    assert ("BLOCKER".convert2017OptionNameToCamelCase == "keySkillBlocker");
-    assert ("EXPLODER2".convert2017OptionNameToCamelCase =="keySkillExploder");
-    assert ("AN_OLD_NAME".convert2017OptionNameToCamelCase == "anOldName");
-    assert ("".convert2017OptionNameToCamelCase == "");
-}
 
 void loadUserName2017format()
 {
@@ -104,7 +69,67 @@ void loadUserOptions2017format()
     }
     foreach (i; lines.filter!(i => i.type != '<')) {
         i.text1 = i.text1.convert2017OptionNameToCamelCase;
+        i.text2 = convert2017OptionStringValue(i.text1, i.text2);
         if (auto opt = i.text1 in _optvecLoad)
             opt.set(i);
     }
+}
+
+///////////////////////////////////////////////////////////////////////////////
+
+private:
+
+string convert2017OptionNameToCamelCase(string optName)
+{
+    switch (optName) {
+        case "SCROLL_SPEED_EDGE": return "edgeScrollSpeed";
+        case "SCROLL_SPEED_CLICK": return "holdToScrollSpeed";
+        default: break;
+    } {
+        Ac ac = stringToAc(optName);
+        if (ac != Ac.max)
+            return "keySkill" ~ ac.acToNiceCase.to!string;
+    }
+    // Otherwise return an automatic conversion of SNAKE_UPPERCASE
+    // to camelCase.
+    {
+        string ret = "";
+        bool capitalizeNext = false;
+        foreach (dchar c; optName.asLowerCase) {
+            if (c == '_') {
+                capitalizeNext = true;
+            }
+            else {
+                ret ~= capitalizeNext ? c.toUpper : c.toLower;
+                capitalizeNext = false;
+            }
+        }
+        return ret;
+    }
+}
+
+unittest {
+    assert ("BLOCKER".convert2017OptionNameToCamelCase == "keySkillBlocker");
+    assert ("EXPLODER2".convert2017OptionNameToCamelCase =="keySkillExploder");
+    assert ("AN_OLD_NAME".convert2017OptionNameToCamelCase == "anOldName");
+    assert ("".convert2017OptionNameToCamelCase == "");
+}
+
+string convert2017OptionStringValue(
+    in string optName, // already converted to camelCase
+    in string optValue
+) {
+    if (optName == "language") {
+        return optValue.chompPrefix("data/transl/").chomp(".txt");
+    }
+    else {
+        return optValue;
+    }
+}
+
+unittest {
+    assert (convert2017OptionStringValue("hi", "data/transl/english.txt")
+        == "data/transl/english.txt");
+    assert (convert2017OptionStringValue("language", "data/transl/english.txt")
+        == "english");
 }

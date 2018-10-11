@@ -47,11 +47,17 @@ private auto newOpt(T)(string fileKey, T defaultVal)
     return newOpt(fileKey, Lang.min, defaultVal);
 }
 
+@property Filename fileLanguage()
+{
+    return new VfsFilename(dirDataTransl.dirRootless
+        ~ (languageBasenameNoExt is null ? "" : languageBasenameNoExt.value)
+        ~ ".txt");
+}
+
 @property bool languageIsEnglish()
 {
     assert (fileLanguage !is null);
-    assert (fileLanguage.value !is null);
-    return fileLanguage.value == basics.globals.fileLanguageEnglish;
+    return fileLanguage.fileNoExtNoPre == basics.globals.englishBasenameNoExt;
 }
 
 enum ScreenMode {
@@ -82,7 +88,7 @@ struct DisplayTryMode {
 string userName() { return userNameOption is null ? "" : userNameOption.value;}
 UserOption!string userNameOption; // userName is string for back-compat
 
-UserOptionFilename fileLanguage;
+UserOption!string languageBasenameNoExt;
 UserOption!int optionGroup;
 
 UserOption!int mouseSpeed;
@@ -227,10 +233,9 @@ private Ac[14] _skillSort = [
 
 static this()
 {
-    assert (! fileLanguage);
-    assert (fileLanguageEnglish);
+    assert (! languageBasenameNoExt);
     userNameOption = newOpt("userName", Lang.optionUserName, "");
-    fileLanguage = newOpt("language", Lang.optionLanguage, fileLanguageEnglish);
+    languageBasenameNoExt = newOpt("language", Lang.optionLanguage, englishBasenameNoExt);
     optionGroup = newOpt("optionGroup", 0);
 
     mouseSpeed = newOpt("mouseSpeed", Lang.optionMouseSpeed, mouseStandardDivisor);
