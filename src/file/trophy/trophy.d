@@ -1,5 +1,8 @@
 module file.trophy.trophy;
 
+import std.string;
+
+import basics.globals : dirLevels;
 import file.date;
 import file.filename;
 import net.phyu;
@@ -18,7 +21,7 @@ import net.phyu;
  * if both have the same fileNoExt.
  *
  * Reasons: A trophy from the 2006-2017 IoLine format matched by exact filename
- * that is lastDir + fileNoExt + ".txt". These trophies were converted to
+ * that is directory + fileNoExt + ".txt". These trophies were converted to
  * SDLang trophies by adding empty level title and empty author.
  * Matching only by fileNoExt might produce extra matches, but that's fine:
  * Levels should be allowed to move freely in the tree. The 2018-09 level tree
@@ -41,23 +44,40 @@ struct HalfTrophy { // Only for passing info from Nurse to the menu
 }
 
 struct Trophy {
+private:
+    /*
+     * lastDirWithinLevels: E.g., "single/lemforum/Lovely/" in the case
+     * of Any Way You Want. Without the preceding dirLevels, without preceding
+     * slash. Not a MutFilename because it's only for trophy I/O at the moment.
+     * - If empty, it means that the level was found in the root dir
+     *   of dirLevels (although nobody should put levels there).
+     * - If nonempty, this always is terminated with a slash.
+     */
+    string _lastDirWithinLevels;
+
+public:
     int lixSaved;
     int skillsUsed;
     MutableDate built;
-    MutFilename lastDir; // including leading "levels/" not written to SDLang
 
     @disable this(); // always construct with a valid date
 
-    this(Date aDate, Filename aLastDir) // Use this constructor if possible.
+    this(Date aDate, string aDirWithinLevels)
     {
+        _lastDirWithinLevels = aDirWithinLevels.sanitizeForLastDir;
         built = aDate;
-        lastDir = aLastDir.guaranteedDirOnly;
     }
 
-    this(Date aDate) // Avoid this constructor. Maybe refactor.
+    this(Date aDate, Filename aLastDir) // Use this constructor if possible.
     {
+        _lastDirWithinLevels = aLastDir.rootless
+            .chompPrefix(dirLevels.rootless).sanitizeForLastDir;
         built = aDate;
-        lastDir = new VfsFilename("");
+    }
+
+    @property string lastDirWithinLevels() const pure @nogc nothrow
+    {
+        return _lastDirWithinLevels;
     }
 
     void copyFrom(HalfTrophy ht)
@@ -68,7 +88,11 @@ struct Trophy {
 
     invariant()
     {
-        assert (this == Trophy.init || (built !is null && lastDir !is null));
+        if (this == Trophy.init)
+            return;
+        assert (built !is null);
+        assert (_lastDirWithinLevels
+            == _lastDirWithinLevels.sanitizeForLastDir);
     }
 
     enum Cmp {
@@ -102,12 +126,24 @@ struct Trophy {
     }
 
     unittest {
-        auto a = typeof(this)(Date.now());
-        auto b = typeof(this)(a.built);
+        auto a = typeof(this)(Date.now(), "single/somedir/");
+        auto b = typeof(this)(a.built, "single/somedir/");
         a.lixSaved = 4;
         b.lixSaved = 5;
         assert (b.shouldReplaceAfterPlay(a));
         b.lixSaved = 4;
         assert (! b.shouldReplaceAfterPlay(a));
     }
+}
+
+///////////////////////////////////////////////////////////////////////////////
+
+private:
+
+string sanitizeForLastDir(string ret)
+{
+    while (ret.length > 0 && ret[$-1] != '/') {
+        ret = ret[0 .. $-1];
+    }
+    return ret;
 }

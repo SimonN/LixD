@@ -59,21 +59,24 @@ public:
         _matcher = new ReplayToLevelMatcher(_rpFn);
         _matcher.forcePointedTo();
         _lv = _matcher.preferredLevel();
-        _trophy = Trophy(_lv.dispatch.built.orElse(Date.now));
+        _trophy = levelFilename.match!(
+            () => Trophy(_lv.dispatch.built.orElse(Date.now), ""),
+            (lfn) => Trophy(_lv.dispatch.built.orElse(Date.now), lfn));
         _status = pointsToItself ? Status.noPointer
             : _matcher.isMultiplayer ? Status.multiplayer
             : _lv.empty ? Status.noPointer
             : _lv.unwrap.errorFileNotFound ? Status.missingLevel
             : ! _lv.unwrap.playable ? Status.badLevel
             : Status.untested;
-        if (_status != Status.untested)
+        if (_status != Status.untested) {
             return;
-
+        }
         assert (_lv.dispatch.playable.orElse(false));
         // If we want trophies, caller should tell us maybeAddTrophy() later.
         VerifyingNurse nurse = _matcher.createVerifyingNurse();
         auto eval = nurse.evaluateReplay();
         destroy(nurse);
+
         _trophy.copyFrom(eval.halfTrophy);
         _phyusUsed = eval.phyusUsed;
         _status = _trophy.lixSaved >= _lv.unwrap.required ? Status.solved

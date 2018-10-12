@@ -43,7 +43,6 @@ void deleteAllTrophies()
  */
 bool maybeImprove(in TrophyKey key, in Trophy tro)
 in {
-    assert (tro.lastDir !is null, "don't save trophies without a lastDir");
     assert (tro.built !is null, "don't save trophies without a built Date");
 }
 body {
@@ -99,7 +98,6 @@ void saveTrophies()
     foreach (key, tro; _trophies) {
         import std.stdio; // debugging
         assert (tro.built !is null, "null built for " ~ key.fileNoExt);
-        assert (tro.lastDir !is null, "null lastDir for " ~ key.fileNoExt);
         root.add(new Tag(null, tagName, [], [
             new Attribute("", attrFileNoExt, Value(key.fileNoExt)),
             new Attribute("", attrTitle, Value(key.title)),
@@ -107,7 +105,7 @@ void saveTrophies()
             new Attribute("", attrLixSaved, Value(tro.lixSaved)),
             new Attribute("", attrSkillsUsed, Value(tro.skillsUsed)),
             new Attribute("", attrBuilt, Value(tro.built.toString)),
-            new Attribute("", attrLastDir, Value(tro.lastDir.rootless))]));
+            new Attribute("", attrLastDir, Value(tro.lastDirWithinLevels))]));
     }
     auto f = fileTrophies.openForWriting;
     f.write(root.toSDLDocument);
@@ -125,7 +123,7 @@ enum attrAuthor = "author";
 enum attrLixSaved = "lixSaved";
 enum attrSkillsUsed = "skillsUsed";
 enum attrBuilt = "built";
-enum attrLastDir = "lastDir";
+enum attrLastDir = "lastDir"; // saved without leading "levels/"
 
 TrophyKey legacyKeyFor(in TrophyKey normalKey) pure @nogc nothrow
 {
@@ -138,7 +136,6 @@ TrophyKey legacyKeyFor(in TrophyKey normalKey) pure @nogc nothrow
 
 void addDuringLoad(in TrophyKey key, in Trophy tro)
 in {
-    assert (tro.lastDir !is null, "don't save trophies without a lastDir");
     assert (tro.built !is null, "don't save trophies without a built Date");
 }
 body {
@@ -163,13 +160,14 @@ void loadTrophiesSdlang()
         if (key.fileNoExt == "")
             continue;
 
-        Trophy tr = Trophy(new Date(tag.getAttribute(attrBuilt, "0000-00-00")),
-            new VfsFilename(tag.getAttribute(attrLastDir, "")));
-        tr.lixSaved = tag.getAttribute(attrLixSaved, 0);
-        tr.skillsUsed = tag.getAttribute(attrSkillsUsed, 0);
-        if (tr.lixSaved <= 0)
+        Trophy tro = Trophy(
+            new Date(tag.getAttribute(attrBuilt, "0000-00-00")),
+            tag.getAttribute(attrLastDir, ""));
+        tro.lixSaved = tag.getAttribute(attrLixSaved, 0);
+        tro.skillsUsed = tag.getAttribute(attrSkillsUsed, 0);
+        if (tro.lixSaved <= 0)
             continue;
-        addDuringLoad(key, tr);
+        addDuringLoad(key, tro);
     }
 }
 
