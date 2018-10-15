@@ -161,18 +161,34 @@ final class Tribe {
     }
 
     void spawnLixxie(OutsideWorld* ow)
-    {
+    in {
+        if (! ow.state.hatches[this.nextHatch].hasTribe(this.style)) {
+            import std.string;
+            string msg = format("Style %s spawns from wrong hatch #%d.",
+                this.style, this.nextHatch);
+            foreach (int i, hatch; ow.state.hatches) {
+                msg ~= format("\nHatch #%d has styles:", i);
+                foreach (Style st; hatch.tribes) {
+                    msg ~= " " ~ styleToString(st);
+                }
+            }
+            assert (false, msg);
+        }
+    }
+    body {
         const hatch = ow.state.hatches[nextHatch];
         LixxieImpl newLix = LixxieImpl(ow, Point(
-            hatch.x + hatch.tile.trigger.x - 2 * hatch.spawnFacingLeft,
-            hatch.y + hatch.tile.trigger.y));
+            hatch.loc.x + hatch.tile.trigger.x - 2 * hatch.spawnFacingLeft,
+            hatch.loc.y + hatch.tile.trigger.y));
         if (hatch.spawnFacingLeft)
             newLix.turn();
         lixvecImpl ~= newLix;
         recordSpawnedFromHatch();
         updatePreviousSpawn = ow.state.update;
-        nextHatch += ow.state.numTribes;
-        nextHatch %= ow.state.hatches.len;
+        do {
+            nextHatch = (nextHatch + 1) % ow.state.hatches.len;
+        }
+        while (! ow.state.hatches[nextHatch].hasTribe(this.style));
     }
 
 

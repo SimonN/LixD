@@ -89,9 +89,8 @@ private:
         tc.y = ey - masks[tc.type].offsetY;
         outsideWorld.physicsDrawer.add(tc);
         if (wouldHitSteel(masks[tc.type])) {
-            if (outsideWorld.effect)
-                outsideWorld.effect.addPickaxe(outsideWorld.state.update,
-                    style, outsideWorld.lixID, ex, ey, dir);
+            outsideWorld.effect.dispatch.addPickaxe(outsideWorld.state.update,
+                style, outsideWorld.lixID, ex, ey, dir);
             turn();
             become(Ac.walker);
         }

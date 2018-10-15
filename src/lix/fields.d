@@ -1,5 +1,7 @@
 module lix.fields;
 
+import optional;
+
 import game.model.state;
 import game.effect;
 import game.tribe;
@@ -9,9 +11,9 @@ import game.physdraw;
 // blocking or batting other lixes, or returning extra builder assignments.
 // Each lix has a pointer to a struct. Game must keep the struct up-to-date.
 struct OutsideWorld {
-    GameState     state;
+    GameState state;
     PhysicsDrawer physicsDrawer;
-    EffectManager effect;
-    Tribe         tribe;
-    int           lixID;
+    Optional!EffectManager effect;
+    Tribe tribe;
+    int lixID;
 }

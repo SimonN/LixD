@@ -19,9 +19,12 @@ module graphic.gadget.gadget;
 import std.algorithm;
 import std.conv;
 
+import optional;
+
 import basics.help;
 import net.repdata;
 import basics.topology;
+import game.effect;
 import graphic.cutbit;
 import graphic.color;
 import graphic.graphic;
@@ -42,7 +45,11 @@ package immutable string StandardGadgetCtor =
         super(top, levelpos);
     }";
 
-class Gadget : Graphic {
+class Gadget {
+private:
+    Graphic _graphic;
+    int _frame; // between 0 incl. and (_graphic.xfs * _graphic.yfs) exclusive
+
 public:
     const(GadgetTile) tile;
 
@@ -54,7 +61,8 @@ protected:
         assert (levelpos.tile.cb, "we shouldn't make gadgets from bad tiles");
     }
     body {
-        super(levelpos.tile.cb, top, levelpos.loc);
+        _graphic = new Graphic(levelpos.tile.cb, top, levelpos.loc);
+        _frame = 0;
         tile = levelpos.tile;
     }
 
@@ -75,33 +83,38 @@ public:
         }
     }
 
-    override Gadget clone() const { return new Gadget(this); }
+    Gadget clone() const { return new Gadget(this); }
     this(in Gadget rhs)
     in {
         assert (rhs !is null, "we shouldn't copy from null rhs");
+        assert (rhs._graphic !is null, "don't copy from rhs without graphic");
         assert (rhs.tile !is null, "don't copy from rhs with missing tile");
     }
     body {
-        super(rhs);
+        _graphic = rhs._graphic.clone;
+        _frame = rhs._frame;
         tile = rhs.tile;
     }
 
-    void animateForPhyu(in Phyu upd)
-    {
-        // Most graphics have only one animation. This can be in a row,
-        // in column, or in a rectangular sheet. We traverse a rectangular
-        // sheet row-majorly, like we read a western book.
-        // The rectangular sheet solves github issues #4 and #213 about
-        // graphics card limitation with Amanda's tar.
-        xf = positiveMod(upd, xfs);
-        yf = positiveMod(upd / xfs, yfs);
+    @property final const pure nothrow @nogc {
+        Point loc() { return _graphic.loc; }
+        Rect rect() { return _graphic.rect; }
+        int xl() { return _graphic.xl; }
+        int yl() { return _graphic.yl; }
+        int frame() { return _frame; }
     }
 
-    protected void drawInner() const { } // override if necessary
-    final override void draw() const
+    // This affects physics. Call during physics update. It does not draw.
+    void perform(in Phyu upd, Optional!EffectManager ef)
     {
-        super.draw();
-        drawInner();
+        frame = upd;
+    }
+
+    protected void onDraw(in Style treatSpecially) const { }
+    final void draw(in Style treatSpecially) const
+    {
+        _graphic.draw();
+        onDraw(treatSpecially);
     }
 
     // For semi-transparent goal markers in multiplayer.
@@ -123,6 +136,34 @@ public:
             case GadType.FLINGPERM: phyb = Phybit.fling; break;
         }
         lk.rect!(Phymap.add)(tile.triggerArea + this.loc, phyb);
+    }
+
+protected:
+    @property final nothrow @nogc pure {
+        // Subclasses should override animateForPhyu instead.
+        // Game should call animateForPhyu instead.
+        // Most graphics have only one animation. This can be in a row,
+        // in column, or in a rectangular sheet. We traverse a rectangular
+        // sheet row-majorly, like we read a western book.
+        // The rectangular sheet solves github issues #4 and #213 about
+        // graphics card limitation with Amanda's tar.
+        int frames() const { return max(1, _graphic.xfs * _graphic.yfs); }
+        int frame(in int fr)
+        {
+            _graphic.xf = positiveMod(fr, _graphic.xfs);
+            _graphic.yf = positiveMod(fr / _graphic.xfs, _graphic.yfs);
+            return _graphic.yf * _graphic.xfs + _graphic.xf;
+        }
+
+        // Traps need access to two different rows. Allow to break the
+        // abstraction of frame() earlier. >_>
+        Point exactXfYf() const { return Point(_graphic.xf, _graphic.yf); }
+        Point exactXfYf(Point p)
+        {
+            _graphic.xf = p.x;
+            _graphic.yf = p.y;
+            return exactXfYf;
+        }
     }
 }
 // end class Gadget

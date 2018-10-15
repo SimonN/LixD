@@ -78,12 +78,20 @@ implGameDraw(Game game) { with (game)
 
 private:
 
-void drawGadgets(Game game)
+void drawGadgets(Game game) { with (game)
 {
     version (tharsisprofiling)
         auto zone = Zone(profiler, "game draws gadgets");
-    game.nurse.drawAllGadgets();
-}
+    auto cs = nurse.constStateForDrawingOnly;
+
+    cs.foreachConstGadget(delegate void (const(Gadget) g) {
+        g.draw(localTribe.style);
+    });
+    if (cs.nuking && ! cs.tribes.byValue.all!(tr => tr.outOfLix)) {
+        foreach (g; cs.goals)
+            g.drawNoSign();
+    }
+}}
 
 void pingOwnGadgets(Game game) { with (game)
 {
@@ -108,7 +116,7 @@ void pingOwnGadgets(Game game) { with (game)
             Rect inner = Rect(g.loc, g.xl, g.yl);
             map.drawFilledRectangle(outer, color.white);
             map.drawFilledRectangle(inner, color.black);
-            g.draw();
+            g.draw(localTribe.style);
         }
     }
 }}

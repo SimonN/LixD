@@ -22,48 +22,43 @@ import net.repdata;
 
 class Goal : GadgetWithTribeList {
 public:
-    bool lockedWithNoSign = false;
-
     this(const(Topology) top, in ref GadOcc levelpos) { super(top, levelpos); }
     this(in Goal rhs) { super(rhs); }
     override Goal clone() const { return new Goal(this); }
 
     override void drawExtrasOnTopOfLand(in Style st) const
     {
-        drawOwner(st, 1);
+        drawOwner(st, 2);
+    }
+
+    void drawNoSign() const
+    {
+        const(Cutbit) c = getInternal(fileImageMouse);
+        c.draw(Point(
+            this.loc.x + tile.trigger.x + tile.triggerXl / 2 - c.xl / 2,
+            this.loc.y + tile.trigger.y + tile.triggerYl / 2 - c.yl),
+            2, 2); // (2,2) are the (xf,yf) of the international "no" sign
     }
 
 protected:
-    override void drawInner() const
+    override void onDraw(in Style markWithArrow) const
     {
-        foreach (st; tribes) {
-            drawOwner(st, 0);
-        }
-        drawNoSign();
+        foreach (st; tribes)
+            drawOwner(st, hasTribe(markWithArrow) ? 1 : 0);
     }
 
 private:
     void drawOwner(in Style st, in int xf) const
     {
-        if (lockedWithNoSign || st == Style.garden || ! tribes.canFind(st))
+        if (st == Style.garden || ! tribes.canFind(st))
             return;
         int offset = tribes.countUntil(st) & 0x7FFF_FFFF;
         auto icon = graphic.internal.getGoalMarker(st);
-        icon.draw(Point(x + tile.trigger.x + tile.triggerXl/2 - icon.xl/2
-                          + (20 * offset++) - 10 * (tribes.len - 1),
+        icon.draw(Point(this.loc.x + tile.trigger.x
+            + tile.triggerXl/2 - icon.xl/2
+            + (20 * offset++) - 10 * (tribes.len - 1),
             // Sit 12 pixels above the top of the trigger area.
             // Reason: Amanda's tent is very high, arrow should overlap tent.
-            y + tile.trigger.y - icon.yl - 12), xf, 0);
-    }
-
-    void drawNoSign() const
-    {
-        if (lockedWithNoSign) {
-            const(Cutbit) c = getInternal(fileImageMouse);
-            c.draw(Point(
-                x + tile.trigger.x + tile.triggerXl / 2 - c.xl / 2,
-                y + tile.trigger.y + tile.triggerYl / 2 - c.yl),
-                2, 2); // (2,2) are the (xf,yf) of the international "no" sign
-        }
+            this.loc.y + tile.trigger.y - icon.yl - 12), xf, 0);
     }
 }

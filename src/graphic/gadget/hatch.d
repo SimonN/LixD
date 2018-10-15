@@ -2,6 +2,8 @@ module graphic.gadget.hatch;
 
 import std.algorithm; // min
 
+import optional;
+
 import basics.help;
 import basics.globals; // hatch arrow graphic
 import basics.topology;
@@ -15,12 +17,11 @@ import net.repdata;
 import net.style;
 import tile.occur;
 
-class Hatch : Gadget {
+class Hatch : GadgetWithTribeList {
 private:
     bool _blinkNow;
 
 public:
-    Style blinkStyle = Style.garden; // if left at garden, then don't blink
     immutable bool spawnFacingLeft;
 
     enum updateOpen      = 55;
@@ -39,25 +40,18 @@ public:
         assert (rhs);
         super(rhs);
         spawnFacingLeft = rhs.spawnFacingLeft;
-        blinkStyle      = rhs.blinkStyle;
         _blinkNow       = rhs._blinkNow;
     }
 
     override Hatch clone() const { return new Hatch(this); }
 
-    // Don't call animateForPhyu on Hatches. Use animate() instead.
-    // Still, the game iterates over all gadgets and calls our animateForPhyu.
-    // Bad OO because we don't recommend parent class's interface.
-    override void animateForPhyu(in Phyu) { }
-
-    void animate(EffectManager effect, in Phyu u)
+    override void perform(in Phyu u, Optional!EffectManager effect)
     {
         // (of) is first absolute frame of opening. This is earlier if the
         // sound shall match a later frame of the hatch, as given by specialX.
         // xfs * yfs is length of animation, see Gadget.animateForPhyu.
         immutable int of = updateOpen - tile.specialX;
-        immutable int animLen = max(1, xfs * yfs);
-        super.animateForPhyu(Phyu(max(0, min(u - of, animLen - 1))));
+        frame = (u - of).clamp(0, frames - 1);
 
         if (u >= updateBlinkStop)
             _blinkNow = false;
@@ -65,14 +59,14 @@ public:
             _blinkNow
             = (u % (updatesBlinkOn + updatesBlinkOff) < updatesBlinkOn);
         }
-        if (u == updateOpen && effect)
-            effect.addSoundGeneral(u, Sound.HATCH_OPEN);
+        if (u == updateOpen)
+            effect.dispatch.addSoundGeneral(u, Sound.HATCH_OPEN);
     }
 
 protected:
-    override void drawInner() const
+    override void onDraw(in Style blinkStyle) const
     {
-        if (_blinkNow && blinkStyle != Style.garden) {
+        if (_blinkNow && hasTribe(blinkStyle) && blinkStyle != Style.garden) {
             const(Cutbit) c = getSkillButtonIcon(blinkStyle);
             c.draw(loc + tile.trigger - c.len/2,
                 Ac.walker.acToSkillIconXf, 0);

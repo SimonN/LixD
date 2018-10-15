@@ -2,6 +2,8 @@ module game.nurse.savestat;
 
 import std.algorithm;
 
+import optional;
+
 import file.option; // replayAfterFrameBack
 import game.model.cache;
 import game.model.state;
@@ -16,7 +18,7 @@ private:
 public:
     this(in Level lev, Replay rp)
     {
-        this(lev, rp, null);
+        this(lev, rp, no!EffectManager);
     }
 
     void considerGC() nothrow
@@ -87,11 +89,11 @@ public:
 protected:
     /*
      * Forwarding constructor. We get to own the replay, but not the level
-     * or the effect manager. EffectManager may be null. Need to forward
+     * or the effect manager. Need to forward
      * this constructor between the Nurse backend and the InteractiveNurse.
      * This necessity feels strange.
      */
-    this(in Level lev, Replay rp, EffectManager ef)
+    this(in Level lev, Replay rp, Optional!EffectManager ef)
     {
         super(lev, rp, ef);
         _cache = new PhysicsCache();

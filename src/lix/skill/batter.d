@@ -41,10 +41,9 @@ class Batter : Job {
                     if (flingIfCloseTo(batted, lixxie.ex + 6 * lixxie.dir,
                                                lixxie.ey - 4)) {
                         hit = true;
-                        if (lixxie.outsideWorld.effect)
-                            lixxie.outsideWorld.effect.addSound(
-                                lixxie.outsideWorld.state.update, batted.style,
-                                id, Sound.BATTER_HIT);
+                        lixxie.outsideWorld.effect.dispatch.addSound(
+                            lixxie.outsideWorld.state.update, batted.style,
+                            id, Sound.BATTER_HIT);
                     }
             // Both the hitter and the target will play the hit sound.
             // This hitting sound isn't played even quietly if an enemy lix

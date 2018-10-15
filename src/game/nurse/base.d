@@ -40,11 +40,9 @@ public:
     @property constStateForDrawingOnly()  const { return _model.cs; }
     @property stateOnlyPrivatelyForGame() const { return _model.cs; }
     // end bad
-    void drawAllGadgets() { _model.cs.drawAllGadgets(); }
 
     // We get to own the replay, but not the level or the effect manager.
-    // EffectManager may be null. DTODONULL: Use Optional!EffectManager.
-    this(in Level lev, Replay rp, EffectManager ef)
+    this(in Level lev, Replay rp, Optional!EffectManager ef)
     body {
         Style[] stylesToMake = rp.stylesInUse;
         if (stylesToMake.empty)
@@ -93,7 +91,7 @@ public:
     {
         return chain(
             cs.goals.filter!(g => g.hasTribe(st)),
-            cs.hatches.filter!(h => h.blinkStyle == st));
+            cs.hatches.filter!(h => h.hasTribe(st)));
     }
 
     HalfTrophy trophyForTribe(in Style style) const

@@ -1,5 +1,7 @@
 module game.nurse.interact;
 
+import optional;
+
 import game.model.cache;
 import hardware.sound;
 
@@ -13,7 +15,7 @@ class InteractiveNurse : SaveStatingNurse {
     this(in Level lev, Replay rp, EffectManager ef)
     {
         assert (ef !is null);
-        super(lev, rp, ef);
+        super(lev, rp, some(ef));
     }
 
     void updateTo(in Phyu targetPhyu, in DuringTurbo duringTurbo)

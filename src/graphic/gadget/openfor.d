@@ -19,8 +19,11 @@ module graphic.gadget.openfor;
  * into frame 0 and show frame 0 at least once between two eatings.
  */
 
+import optional;
+
 import net.repdata;
 import basics.topology;
+import game.effect;
 import graphic.gadget;
 import tile.occur;
 import net.style;
@@ -95,16 +98,11 @@ public:
         _lastFed = upd;
     }
 
-    override void animateForPhyu(in Phyu upd)
+    override void perform(in Phyu upd, Optional!EffectManager)
     {
-        if (isEating(upd)) {
-            yf = 1;
-            xf = upd - _lastFed;
-        }
-        else {
-            yf = 0;
-            xf = (upd - firstIdlingPhyuAfterEating) % _idleAnimLen;
-        }
+        exactXfYf = isEating(upd)
+            ? Point(upd - _lastFed, 1)
+            : Point((upd - firstIdlingPhyuAfterEating) % _idleAnimLen, 0);
         clearTribes();
     }
 

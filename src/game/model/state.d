@@ -82,13 +82,6 @@ public:
         chain(hatches, goals, waters, traps, flingPerms, flingTrigs).each!func;
     }
 
-    void drawAllGadgets()
-    {
-        goals.each!(g => g.lockedWithNoSign =
-            nuking && ! tribes.byValue.all!(tr => tr.outOfLix));
-        foreachConstGadget(delegate void (const(Gadget) g) { g.draw; });
-    }
-
     @property bool multiplayer() const @nogc
     {
         assert (numTribes > 0);

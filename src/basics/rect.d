@@ -16,6 +16,7 @@ struct Side {
     string toString() const { return format("(%d;%d)", start, len); }
 
 pure:
+nothrow:
 @nogc:
     static Side smallestContainer(in Side a, in Side b)
     {
@@ -37,6 +38,7 @@ struct Rect {
     string toString() const { return format("(%d,%d;%d,%d)", x, y, xl, yl); }
 
 pure:
+nothrow:
 @nogc:
     this(in int ax, in int ay, in int axl, in int ayl)
     {

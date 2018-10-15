@@ -14,6 +14,8 @@ import std.array;
 import std.conv;
 import std.range;
 
+import optional;
+
 import basics.help; // len
 import net.repdata;
 import hardware.tharsis;
@@ -35,7 +37,7 @@ class GameModel {
 private:
     GameState     _cs;            // owned (current state)
     PhysicsDrawer _physicsDrawer; // owned
-    EffectManager _effect;        // not owned. May be null.
+    Optional!EffectManager _effect; // not owned
 
 public:
     // The replay data comes with player information (PlNr).
@@ -53,13 +55,11 @@ public:
     // This remembers the effect manager, but not anything else.
     // We don't own the effect manager.
     this(in Level level, in Style[] tribesToMake,
-         in Permu permu, EffectManager ef)
+         in Permu permu, Optional!EffectManager ef)
     in { assert (tribesToMake.len >= 1); }
     body {
         _effect = ef;
-        _cs = newZeroState(level, tribesToMake, permu,
-            ef ? ef.localTribe : Style.garden // only to make hatches blink
-        );
+        _cs = newZeroState(level, tribesToMake, permu);
         _physicsDrawer = new PhysicsDrawer(_cs.land, _cs.lookup);
         finalizePhyuAnimateGadgets();
     }
@@ -89,8 +89,10 @@ public:
         spawnLixxiesFromHatches();
         updateLixxies();
         finalizePhyuAnimateGadgets();
-        if (_cs.overtimeRunning && _cs.multiplayer && _effect)
-            _effect.announceOvertime(_cs.update, _cs.overtimeAtStartInPhyus);
+        if (_cs.overtimeRunning && _cs.multiplayer) {
+            _effect.dispatch.announceOvertime(_cs.update,
+                _cs.overtimeAtStartInPhyus);
+        }
     }
 
     void dispose()
@@ -149,16 +151,14 @@ private:
             OutsideWorld ow = makeGypsyWagon(*tribe, i.toWhichLix);
             lixxie.assignManually(&ow, i.skill);
 
-            if (_effect) {
-                _effect.addSound(upd, tribe.style, i.toWhichLix, Sound.ASSIGN);
-                _effect.addArrow(upd, tribe.style, i.toWhichLix,
-                                 lixxie.ex, lixxie.ey, i.skill);
-            }
+            _effect.dispatch.addSound(
+                upd, tribe.style, i.toWhichLix, Sound.ASSIGN);
+            _effect.dispatch.addArrow(
+                upd, tribe.style, i.toWhichLix, lixxie.ex, lixxie.ey, i.skill);
         }
         else if (i.action == RepAc.NUKE) {
             tribe.nukePressedSince = upd;
-            if (_effect)
-                _effect.addSound(upd, tribe.style, 0, Sound.NUKE);
+            _effect.dispatch.addSound(upd, tribe.style, 0, Sound.NUKE);
         }
     }
 
@@ -271,11 +271,7 @@ private:
     {
         // Animate after we had the traps eat lixes. Eating a lix sets a flag
         // in the trap to run through the animation, showing the first killing
-        // frame after this next animate() call. Physics depend on this anim!
-        foreach (hatch; _cs.hatches)
-            hatch.animate(_effect, _cs.update);
-        _cs.foreachGadget((Gadget g) {
-            g.animateForPhyu(_cs.update);
-        });
+        // frame after this next perform() call. Physics depend on this anim!
+        _cs.foreachGadget((Gadget g) { g.perform(_cs.update, _effect); });
     }
 }

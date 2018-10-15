@@ -1,5 +1,7 @@
 module game.nurse.verify;
 
+import optional;
+
 import file.trophy;
 import game.nurse.base;
 
@@ -17,7 +19,7 @@ public:
 
     this(in Level lev, Replay rp, in bool mst)
     {
-        super(lev, rp, null);
+        super(lev, rp, no!EffectManager);
         _maySaveTrophy = mst;
         _required = lev.required;
     }

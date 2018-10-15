@@ -21,9 +21,9 @@ public:
         enum midLoRes = 5; // stop if steel in the middle N of 9 lo-res pixels
         immutable bool enoughSteel = countSteel(1-midLoRes, 2, midLoRes, 2) >0;
         if (enoughSteel) {
-            if (outsideWorld.effect)
-                outsideWorld.effect.addDigHammer(outsideWorld.state.update,
-                    style, outsideWorld.lixID, ex, ey, dir);
+            outsideWorld.effect.dispatch.addDigHammer(
+                outsideWorld.state.update,
+                style, outsideWorld.lixID, ex, ey, dir);
             become(Ac.walker);
         }
         return enoughSteel;

@@ -19,10 +19,12 @@ import file.log; // log bad filename when trying to load a bitmap
  * These were member functions, but should work even for null Cutbits.
  * Often, we do things only if the cutbit is not null and its bitmap exists.
  */
-bool         valid(in    Cutbit cb) { return cb && cb.bitmap; }
-inout(Albit) albit(inout Cutbit cb)
-{
-    return cb ? cast(inout Albit) cb.bitmap : null;
+pure nothrow @nogc {
+    bool valid(in Cutbit cb) { return cb && cb.bitmap; }
+    inout(Albit) albit(inout Cutbit cb)
+    {
+        return cb ? cast(inout Albit) cb.bitmap : null;
+    }
 }
 
 class Cutbit {
@@ -94,12 +96,14 @@ public:
 
     bool opEquals(const Cutbit rhs) const { return bitmap == rhs.bitmap; }
 
-    // get size of a single frame, not necessarily size of entire bitmap
-    @property int   xl()  const { return _xl;  }
-    @property int   yl()  const { return _yl;  }
-    @property Point len() const { return Point(_xl, _yl); }
-    @property int   xfs() const { return _xfs; }
-    @property int   yfs() const { return _yfs; }
+    @property const pure nothrow @nogc {
+        // get size of a single frame, not necessarily size of entire bitmap
+        int xl() { return _xl;  }
+        int yl() { return _yl;  }
+        Point len(){ return Point(_xl, _yl); }
+        int xfs() { return _xfs; }
+        int yfs() { return _yfs; }
+    }
 
     // These two are slow, consider frameExists() instead
     // or lock the Cutbit's underlying Allegro bitmap yourself.

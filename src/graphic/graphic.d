@@ -48,44 +48,46 @@ public:
         _yf     = rhs._yf;
     }
 
-    @property const(Albit)  albit()  const { return cutbit.albit; }
+    // This should go in the following "@property pure nothrow @nogc {",
+    // but fmod is not yet pure in the D standard library.
+    // https://issues.dlang.org/show_bug.cgi?id=11320
+    double rotation(double dbl) nothrow @nogc { return _rot = fmod(dbl, 4); }
 
-    // Phase these out eventually, replace with loc() below
-    @property int x() const { return _loc.x; }
-    @property int y() const { return _loc.y; }
+    @property pure nothrow @nogc {
+        const(Albit) albit() const { return cutbit.albit; }
 
-    @property bool        mirror  () const { return _mirror; }
-    @property double      rotation() const { return _rot;    }
-    @property bool        mirror  (bool b)        { return _mirror = b;       }
-    @property double      rotation(double dbl)    { return _rot = fmod(dbl,4);}
+        bool mirror () const { return _mirror; }
+        double rotation() const { return _rot; }
+        bool mirror (bool b) { return _mirror = b; }
 
-    // This looks dumb, why not make _xf/_yf public? Lixxie overrides these,
-    // because it wants to choose the frame to draw even while const.
-    // This is bad design, maybe the Lixxie shouldn't even inherit from this.
-    @property int xf() const { return _xf; }
-    @property int yf() const { return _yf; }
-    @property int xf(in int i) { return _xf = i; }
-    @property int yf(in int i) { return _yf = i; }
+        // Looks dumb, why not make _xf/_yf public? Lixxie overrides these,
+        // because it wants to choose the frame to draw even while const.
+        // This is bad design, maybe the Lixxie shouldn't even inherit from us.
+        int xf() const { return _xf; }
+        int yf() const { return _yf; }
+        int xf(in int i) { return _xf = i; }
+        int yf(in int i) { return _yf = i; }
 
-    @property Rect rect() const { return Rect(_loc, xl, yl); }
-    @property Point loc() const { return _loc; }
-    @property Point loc(in Point newLoc)
-    {
-        return _loc = env ? env.wrap(newLoc) : newLoc;
+        Rect rect() const { return Rect(_loc, xl, yl); }
+        Point loc() const { return _loc; }
+        Point loc(in Point newLoc)
+        {
+            return _loc = env ? env.wrap(newLoc) : newLoc;
+        }
+
+        int xl() const
+        {
+            return (_rot == 0 || _rot == 2) ? cutbit.xl : cutbit.yl;
+        }
+
+        int yl() const
+        {
+            return (_rot == 0 || _rot == 2) ? cutbit.yl : cutbit.xl;
+        }
+
+        int xfs() const { return cutbit ? cutbit.xfs : 1; }
+        int yfs() const { return cutbit ? cutbit.yfs : 1; }
     }
-
-    @property int xl() const
-    {
-        return (_rot == 0 || _rot == 2) ? cutbit.xl : cutbit.yl;
-    }
-
-    @property int yl() const
-    {
-        return (_rot == 0 || _rot == 2) ? cutbit.yl : cutbit.xl;
-    }
-
-    @property int xfs() const { return cutbit ? cutbit.xfs : 1; }
-    @property int yfs() const { return cutbit ? cutbit.yfs : 1; }
 
     bool isLastFrame() const
     {
