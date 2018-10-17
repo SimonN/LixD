@@ -83,10 +83,16 @@ protected:
             // including switching to a depth-1-dir, and from such a
             // depth-1-dir, we still list everything depth-2 from _baseDir.
             return _baseDir.findDirs().map!(
-                // Hack: guideline/ should be listed as a depth-1 dir.
-                // Thus, list depth-1 dirs without subdirectories
-                dir => dir.findDirs().empty ? [dir] : dir.findDirs()
-                ).join;
+                    // Hack: guideline/ should be listed as a depth-1 dir.
+                    // Thus, list depth-1 dirs without subdirectories
+                    dir => dir.findDirs().empty ? [dir] : dir.findDirs()
+                ).joiner.filter!(
+                    // Hack: Terrain browser should not list steel dirs.
+                    // We assume here that we'll only ever be used on terrain.
+                    // It happens that all steel dirs are called "steel/",
+                    // an unwritten convention, thus...
+                    dir => dir.dirInnermost != "steel/"
+                ).array;
         }
     }
 
