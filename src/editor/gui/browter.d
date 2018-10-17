@@ -80,7 +80,9 @@ private:
         case MergeDirs.allIntoRoot: {
             auto cfg = PickerConfig!(ImageBreadcrumb,
                 ImageTiler!GadgetBrowserButton)();
-            cfg.ls = new MergeAllDirsLs(allowedPreExts);
+            cfg.ls = allowedPreExts.canFind(preExtSteel)
+                ? new SteelLs()
+                : new MergeAllDirsLs(allowedPreExts);
             Picker p = commonCfgCode(cfg);
             p.currentDir = dirImages;
             return p;
@@ -157,5 +159,40 @@ protected:
             }
         }
         return 0;
+    }
+}
+
+class SteelLs : MergeAllDirsLs {
+public:
+    this() { super([preExtSteel]); }
+
+protected:
+    override void sortFiles(MutFilename[] arr) const
+    {
+        bool hasEnd(string s, string tail)
+        {
+            return s.representation.length >= tail.representation.length
+                && s.representation[$ - tail.representation.length .. $]
+                == tail.representation;
+        }
+        int weight(Filename a)
+        {
+            return hasEnd(a.dirRootless, "/geoo/steel/") ? 0
+                : hasEnd(a.dirRootless, "/amanda/steel/") ? 1
+                // All uncaught tiles will go here in the middle. At the end:
+                : hasEnd(a.dirRootless, "/geoo/construction/") ? 200
+                : hasEnd(a.dirRootless, "/rod_steel/") ? 201
+                : hasEnd(a.dirRootless, "/matt/steel/") ? 202
+                : hasEnd(a.dirRootless, "/toys/") ? 203
+                : hasEnd(a.dirRootless, "/overlays/") ? 204
+                : 100;
+        }
+        bool steelLessThan(Filename a, Filename b)
+        {
+            immutable wa = weight(a);
+            immutable wb = weight(b);
+            return wa != wb ? wa < wb : a.fnLessThan(b);
+        }
+        arr.sort!steelLessThan;
     }
 }

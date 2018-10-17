@@ -111,9 +111,9 @@ protected:
 
 class AlphabeticalLs : Ls {
 protected:
-    final override void beforeSortingForCurrentDir() { }
-    final override void sortDirs (MutFilename[] arr) const { arr.sort!fnLessThan; }
-    final override void sortFiles(MutFilename[] arr) const { arr.sort!fnLessThan; }
+    override void beforeSortingForCurrentDir() { }
+    override void sortDirs (MutFilename[] arr) const { arr.sort!fnLessThan; }
+    override void sortFiles(MutFilename[] arr) const { arr.sort!fnLessThan; }
 }
 
 /*
