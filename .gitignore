@@ -1,9 +1,12 @@
 # Lix D port gitignore
 
-# build tool autogenerations
+# build artifacts
 /.dub
-/dub.selections.json
 /dub_platform_probe-*
+# dub.selections.json would be generated, since Lix is an application,
+# not a library, we should include dub.selections.json with correct values
+# in the repository nonetheless. See:
+# https://github.com/dlang/dub/issues/829#issuecomment-215741874
 
 # built binaries
 /bin/*
