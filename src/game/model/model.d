@@ -104,16 +104,9 @@ public:
 
 private:
 
-    lix.OutsideWorld
-    makeGypsyWagon(Tribe tribe, in int lixID)
+    lix.OutsideWorld makeGypsyWagon(in Passport pa) pure nothrow @nogc
     {
-        OutsideWorld ow;
-        ow.state         = _cs;
-        ow.physicsDrawer = _physicsDrawer;
-        ow.effect        = _effect;
-        ow.tribe         = tribe;
-        ow.lixID         = lixID;
-        return ow;
+        return OutsideWorld(_cs, _physicsDrawer, _effect, pa);
     }
 
     void applyReplayData(in ColoredData i)
@@ -131,6 +124,8 @@ private:
             // other things, nuke again, or do whatever we allow in the future.
             // During the nuke, nobody can assign or save lixes.
             return;
+
+        immutable Passport pa = Passport(i.style, i.toWhichLix);
         if (i.isSomeAssignment) {
             // never assert based on the content in ReplayData, which may have
             // been a maleficious attack from a third party, carrying a lix ID
@@ -148,17 +143,15 @@ private:
             ++(tribe.skillsUsed);
             if (tribe.skills[i.skill] != lix.skillInfinity)
                 --(tribe.skills[i.skill]);
-            OutsideWorld ow = makeGypsyWagon(*tribe, i.toWhichLix);
+            OutsideWorld ow = makeGypsyWagon(pa);
             lixxie.assignManually(&ow, i.skill);
 
-            _effect.dispatch.addSound(
-                upd, tribe.style, i.toWhichLix, Sound.ASSIGN);
-            _effect.dispatch.addArrow(
-                upd, tribe.style, i.toWhichLix, lixxie.ex, lixxie.ey, i.skill);
+            _effect.dispatch.addSound(upd, pa, Sound.ASSIGN);
+            _effect.dispatch.addArrow(upd, pa, lixxie.ex, lixxie.ey, i.skill);
         }
         else if (i.action == RepAc.NUKE) {
             tribe.nukePressedSince = upd;
-            _effect.dispatch.addSound(upd, tribe.style, 0, Sound.NUKE);
+            _effect.dispatch.addSound(upd, pa, Sound.NUKE);
         }
     }
 
@@ -172,7 +165,7 @@ private:
             // the only interesting part of OutsideWorld right now is the
             // lookupmap inside the current state. Everything else will be
             // passed anew when the lix are updated.
-            auto ow = makeGypsyWagon(tribe, tribe.lixlen);
+            auto ow = makeGypsyWagon(Passport(tribe.style, tribe.lixlen));
             tribe.spawnLixxie(&ow);
         }
     }
@@ -181,14 +174,14 @@ private:
     {
         if (! _cs.nuking)
             return;
-        foreach (int tribeID, tribe; _cs.tribes) {
+        foreach (tribe; _cs.tribes) {
             tribe.lixHatch = 0;
             foreach (int lixID, lix; tribe.lixvec.enumerate!int) {
                 if (! lix.healthy || lix.ploderTimer > 0)
                     continue;
-                auto ow = makeGypsyWagon(tribe, lixID);
+                OutsideWorld ow = makeGypsyWagon(Passport(tribe.style, lixID));
                 lix.assignManually(&ow, Ac.exploder);
-                break; // only one lix is hit by the nuke per update
+                break; // only one lix per tribe is hit by the nuke per update
             }
         }
     }
@@ -218,13 +211,13 @@ private:
             foreachLix((Tribe tribe, in int lixID, Lixxie lixxie) {
                 lixxie.setNoEncountersNoBlockerFlags();
                 if (lixxie.ploderTimer != 0) {
-                    auto ow = makeGypsyWagon(tribe, lixID);
+                    auto ow = makeGypsyWagon(Passport(tribe.style, lixID));
                     handlePloderTimer(lixxie, &ow);
                 }
                 if (lixxie.updateOrder == PhyuOrder.flinger) {
                     lixxie.marked = true;
                     anyFlingers = true;
-                    auto ow = makeGypsyWagon(tribe, lixID);
+                    auto ow = makeGypsyWagon(Passport(tribe.style, lixID));
                     lixxie.perform(&ow);
                 }
                 else
@@ -237,7 +230,7 @@ private:
             if (! anyFlingers)
                 return;
             foreachLix((Tribe tribe, in int lixID, Lixxie lixxie) {
-                auto ow = makeGypsyWagon(tribe, lixID);
+                auto ow = makeGypsyWagon(Passport(tribe.style, lixID));
                 lixxie.applyFlingXY(&ow);
             });
         }
@@ -247,7 +240,7 @@ private:
             foreachLix((Tribe tribe, in int lixID, Lixxie lixxie) {
                 if (! lixxie.marked && lixxie.updateOrder == uo) {
                     lixxie.marked = true;
-                    auto ow = makeGypsyWagon(tribe, lixID);
+                    auto ow = makeGypsyWagon(Passport(tribe.style, lixID));
                     lixxie.perform(&ow);
                 }
             });

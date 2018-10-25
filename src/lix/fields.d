@@ -6,6 +6,7 @@ import game.model.state;
 import game.effect;
 import game.tribe;
 import game.physdraw;
+import net.style;
 
 // Some tight coupling between lix and tribes are unavoidable, e.g., when
 // blocking or batting other lixes, or returning extra builder assignments.
@@ -14,6 +15,20 @@ struct OutsideWorld {
     GameState state;
     PhysicsDrawer physicsDrawer;
     Optional!EffectManager effect;
-    Tribe tribe;
-    int lixID;
+    Passport passport;
+
+    inout(Tribe) tribe() inout { return state.tribes[passport.style]; }
+}
+
+// Enough information to retrieve a specific lix from a given GameState.
+// Lixes are value types and can't be identified by equality comparision.
+struct Passport {
+    Style style; // GameState has at most one Tribe per Style
+    int id; // which entry entry of the tribe's vector of Lixxies
+
+    int opCmp(ref const(typeof(this)) rhs) const
+    {
+        return style != rhs.style ? style - rhs.style
+            : id - rhs.id;
+    }
 }

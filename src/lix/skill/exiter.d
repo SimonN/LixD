@@ -39,8 +39,9 @@ public:
             lixxie.playSound(Sound.GOAL_BAD);
             foreach (tr; goal.tribes)
                 outsideWorld.effect.dispatch.addSound(
-                    outsideWorld.state.update, tr,
-                    outsideWorld.lixID, // arbitrary ID because not same tribe
+                    outsideWorld.state.update,
+                    // arbitrary ID because not same tribe
+                    Passport(tr, outsideWorld.passport.id),
                     Sound.GOAL);
         }
     }

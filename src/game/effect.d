@@ -28,22 +28,21 @@ import game.core.game; // Game.phyusPerSecond
 import gui.console;
 import graphic.torbit;
 import hardware.sound;
+import lix.fields;
 
 private struct Effect {
-    Phyu   update;
-    Style    tribe;
-    int      lix;   // if not necessary, set to 0
-    Sound    sound; // if not necessary, set to 0 == Sound::NOTHING
+    Phyu phyu;
+    Passport pa; // if no Lixxie required (e.g., nuke), set pa.id = 0.
+    Sound sound; // if not necessary, set to 0 == Sound::NOTHING
     Loudness loudness;
 
     int opCmp(ref in Effect rhs) const
     {
-        return update   != rhs.update   ? update   - rhs.update
-            :  tribe    != rhs.tribe    ? tribe    - rhs.tribe
-            :  lix      != rhs.lix      ? lix      - rhs.lix
-            :  sound    != rhs.sound    ? sound    - rhs.sound
-            :  loudness != rhs.loudness ? loudness - rhs.loudness
-            :  0;
+        return phyu != rhs.phyu ? phyu - rhs.phyu
+            : pa != rhs.pa ? pa.opCmp(rhs.pa)
+            : sound != rhs.sound ? sound - rhs.sound
+            : loudness != rhs.loudness ? loudness - rhs.loudness
+            : 0;
     }
 }
 
@@ -108,13 +107,13 @@ public:
     void deleteAfter(in Phyu upd)
     out {
         foreach (e; _alreadyPlayed)
-            assert (e.update <= upd);
+            assert (e.phyu <= upd);
     }
     body {
         // Throw away what has update (upd + 1) or more.
         // Since I can't specify (upd+1, Style.min - 1), I'll cut here:
-        _alreadyPlayed.remove(
-            _alreadyPlayed.upperBound(Effect(upd, Style.max, 0)));
+        const Effect e = Effect(upd, Passport(Style.max, 0));
+        _alreadyPlayed.remove(_alreadyPlayed.upperBound(e));
     }
 
     void quicksave()
@@ -131,40 +130,40 @@ public:
 
     void addSoundGeneral(in Phyu upd, in Sound sound)
     {
-        addSound(upd, localTribe, 0, sound);
+        addSound(upd, Passport(localTribe, 0), sound);
     }
 
-    void addSound(in Phyu upd, in Style tribe, in int lix, in Sound sound)
+    void addSound(in Phyu upd, in Passport pa, in Sound sound)
     {
-        Loudness lou = tribe == localTribe ? Loudness.loud : Loudness.quiet;
-        if (tribe != localTribe && ! [Sound.NUKE, Sound.SPLAT, Sound.POP,
-                    Sound.OBLIVION, Sound.FIRE, Sound.WATER].canFind(sound))
+        if (! isLocal(pa) && ! [Sound.NUKE, Sound.SPLAT, Sound.POP,
+            Sound.OBLIVION, Sound.FIRE, Sound.WATER].canFind(sound)
+        ) {
             // Most sounds aren't played for other teams. Only death-related
             // sounds go through here. See lix.skill.batter for how both the
             // batter and its target play sounds for their tribe.
             return;
-        Effect e = Effect(upd, tribe, lix, sound, lou);
+        }
+        immutable e = Effect(upd, pa, sound, loudness(pa));
         if (e !in _alreadyPlayed) {
             _alreadyPlayed.insert(e);
-            hardware.sound.play(sound, lou);
+            hardware.sound.play(e.sound, e.loudness);
         }
     }
 
-    void addArrow(in Phyu upd, in Style tribe, in int lix,
-        in int ex, in int ey, in Ac ac
-    ) {
-        Effect e = Effect(upd, tribe, lix);
+    void addArrow(in Phyu upd, in Passport pa, in int ex, in int ey, in Ac ac)
+    {
+        Effect e = Effect(upd, pa);
         if (e !in _alreadyPlayed) {
             _alreadyPlayed.insert(e);
-            _debris ~= Debris.newArrow(ex, ey, tribe, ac);
+            _debris ~= Debris.newArrow(ex, ey, pa.style, ac);
         }
     }
 
     // Only remember the effect, don't draw any debris now.
     // This is used for assignments by the local tribe master.
-    void addArrowDontShow(in Phyu upd, in Style tribe, in int lix)
+    void addArrowDontShow(in Phyu upd, in Passport pa)
     {
-        Effect e = Effect(upd, tribe, lix);
+        Effect e = Effect(upd, pa);
         if (e !in _alreadyPlayed)
             _alreadyPlayed.insert(e);
     }
@@ -173,10 +172,10 @@ public:
     public alias addPickaxe = addDigHammerOrPickaxe!true;
 
     private void addDigHammerOrPickaxe(bool axe)(
-        Phyu upd, Style tribe, int lix, int ex, int ey, int dir
+        Phyu upd, in Passport pa, int ex, int ey, int dir
     ) {
-        Effect e = Effect(upd, tribe, lix,
-            tribe == localTribe ? Sound.STEEL : Sound.NOTHING, Loudness.loud);
+        immutable e = Effect(upd, pa,
+            isLocal(pa) ? Sound.STEEL : Sound.NOTHING, Loudness.loud);
         if (e !in _alreadyPlayed) {
             _alreadyPlayed.insert(e);
             hardware.sound.play(e.sound, e.loudness);
@@ -190,10 +189,9 @@ public:
         }
     }
 
-    void addImplosion(in Phyu upd, in Style tribe, int lix, int ex, int ey)
+    void addImplosion(in Phyu upd, in Passport pa, int ex, int ey)
     {
-        Effect e = Effect(upd, tribe, lix, Sound.POP,
-            tribe == localTribe ? Loudness.loud : Loudness.quiet);
+        immutable e = Effect(upd, pa, Sound.POP, loudness(pa));
         if (e !in _alreadyPlayed) {
             _alreadyPlayed.insert(e);
             hardware.sound.play(e.sound, e.loudness);
@@ -201,10 +199,9 @@ public:
         }
     }
 
-    void addExplosion(in Phyu upd, in Style tribe, int lix, int ex, int ey)
+    void addExplosion(in Phyu upd, in Passport pa, int ex, int ey)
     {
-        Effect e = Effect(upd, tribe, lix, Sound.POP,
-            tribe == localTribe ? Loudness.loud : Loudness.quiet);
+        immutable e = Effect(upd, pa, Sound.POP, loudness(pa));
         if (e !in _alreadyPlayed) {
             _alreadyPlayed.insert(e);
             hardware.sound.play(e.sound, e.loudness);
@@ -244,5 +241,16 @@ public:
                 (_overtimeInPhyusToAnnounce / Game.phyusPerSecond) % 60));
             _overtimeInPhyusToAnnounce = 0; // don't print again on next draw
         }
+    }
+
+private:
+    Loudness loudness(in Passport pa) const pure nothrow @nogc
+    {
+        return isLocal(pa) ? Loudness.loud : Loudness.quiet;
+    }
+
+    bool isLocal(in Passport pa) const pure nothrow @nogc
+    {
+        return pa.style == localTribe;
     }
 }

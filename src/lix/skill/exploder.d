@@ -67,7 +67,7 @@ protected:
     override void makeEffect()
     {
         outsideWorld.effect.dispatch.addImplosion(
-            outsideWorld.state.update, style, outsideWorld.lixID, ex, ey);
+            outsideWorld.state.update, outsideWorld.passport, ex, ey);
     }
 }
 
@@ -80,7 +80,7 @@ protected:
     override void makeEffect()
     {
         outsideWorld.effect.dispatch.addExplosion(
-            outsideWorld.state.update, style, outsideWorld.lixID, ex, ey);
+            outsideWorld.state.update, outsideWorld.passport, ex, ey);
     }
 
     override void flingOtherLix()
