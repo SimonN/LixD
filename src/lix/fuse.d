@@ -49,7 +49,8 @@ void drawAbilities(in Lixxie lixxie, bool highlit = false) { with (lixxie)
 
     const cb = getInternal(fileImageAbility);
     Point topLeft = Point(
-        lixxie.eyeOnMap.x - (cb.xl + 1) / 2 + 1 * facingLeft, loc.y - cb.yl/3);
+        lixxie.eyeOnMap.x - (cb.xl + 1) / 2 + 1 * facingLeft,
+        locCutbit.y - cb.yl/3);
     void printIf(in bool condition, in int frame)
     {
         if (! condition)
@@ -71,7 +72,7 @@ Point eyeOnMap(in Lixxie lixxie)
     Point eyeOnSprite = eyesOnSpritesheet.get(lixxie.xf, lixxie.yf);
     if (lixxie.facingLeft)
         eyeOnSprite.x = lixxie.cutbit.xl - eyeOnSprite.x;
-    return eyeOnSprite + lixxie.loc;
+    return eyeOnSprite + lixxie.locCutbit;
 }
 
 void drawFuseOrFlame(bool fuseIfFalseFlameIfTrue)(in Lixxie lixxie)

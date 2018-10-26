@@ -18,6 +18,7 @@ import std.math; // fmod, to rotate pickaxes
 import std.random;
 
 import basics.globals;
+import basics.rect;
 import file.filename;
 import game.mask; // exploder offset
 import graphic.color;
@@ -30,8 +31,8 @@ public import net.style;
 struct Debris {
     const(Type) type;
     int timeToLive;
-    int x, y;
-    int speedX, speedY;
+    Point foot; // Not top-left of the debris sprite! Instead relative to foot.
+    Point speed; // speed vector to be added to foot per frame
     int frame; // yf for flying tools, xf for the Ac on arrows
     union {
         Style style; // for arrows
@@ -54,34 +55,33 @@ struct Debris {
         return uniform(40, 90);
     }
 
-    static auto newArrow(in int ex, in int ey, in Style style, in Ac ac)
+    static auto newArrow(in Point foot, in Style style, in Ac ac)
     {
-        auto ret = typeof(this)(Type.arrow, arrowTimeToLive, ex, ey);
+        auto ret = typeof(this)(Type.arrow, arrowTimeToLive, foot);
         ret.timeToLive = arrowTimeToLive;
         ret.style = style;
         ret.frame = ac.acToSkillIconXf;
         return ret;
     }
 
-    static auto newImplosion(in int ex, in int ey)
+    static auto newImplosion(in Point foot)
     {
         auto cb = getInternal(fileImageImplosion);
-        return typeof(this)(Type.implosion, cb.xfs, ex, ey);
+        return typeof(this)(Type.implosion, cb.xfs, foot);
     }
 
-    static auto newExplosion(in int ex, in int ey)
+    static auto newExplosion(in Point foot)
     {
         auto cb = getInternal(fileImageExplosion);
-        return typeof(this)(Type.explosion, cb.xfs + 2, ex, ey);
+        return typeof(this)(Type.explosion, cb.xfs + 2, foot);
     }
 
-    static auto newFlyingTool(in int ex, in int ey, in int dir,
-                              in int toolFrame
+    static auto newFlyingTool(in Point foot, in int dir, in int toolFrame
     ) {
         auto cb = getInternal(fileImageDebris);
         auto ret = typeof(this)(Type.flyingTool, debrisTimeToLive,
-            ex + 10 * dir, ey,
-            uniform(1, 6) * dir, uniform(-11, -7),
+            foot + Point(10 * dir, 0),
+            Point(uniform(1, 6) * dir, uniform(-11, -7)),
             toolFrame);
         // Left-facing pickaxe starts with rotation, digging equipment doesn't.
         // toolFrame 0 is the pickaxe.
@@ -116,10 +116,9 @@ private:
 
     void moveThenAccelerateByGravity()
     {
-        x += speedX;
-        y += speedY;
+        foot += speed;
         if (timeToLive % 2 == 0)
-            speedY += 1;
+            speed += Point(0, 1);
     }
 
     void calcArrow()
@@ -127,18 +126,19 @@ private:
         // doesn't use speedY at all
         auto a = arrowTimeToLive - timeToLive - 3;
         assert (a >= -2, "already deducted 1 from TTL in Debris.calc()");
-        y -=  a == -2 ? 8
+        foot -= Point(0,
+              a == -2 ? 8
             : a == -1 ? 4
             : a ==  0 ? 2
             : a ==  1 || a == 2 || a == 4 || a == 8 || a == 16 ? 1
-            : 0;
+            : 0);
     }
 
     void calcFlyingTool()
     {
         moveThenAccelerateByGravity();
         // The first 4 + is to produce positive values even with negative speed
-        rotCw = fmod(4 + rotCw + speedX * 0.03125f, 4);
+        rotCw = fmod(4 + rotCw + speed.x * 0.03125f, 4);
     }
 
     void calcParticle()
@@ -150,15 +150,14 @@ private:
     {
         auto cbA = getInternal(fileImageGameArrow);
         auto cbI = getSkillButtonIcon(style);
-        // x and y are the bottom tip of the arrow
-        cbA.draw(Point(x - cbA.xl/2, y - cbA.yl));
-        cbI.draw(Point(x - cbI.xl/2, y - cbA.yl*15/16), frame);
+        cbA.draw(foot - Point(cbA.xl/2, cbA.yl));
+        cbI.draw(foot - Point(cbI.xl/2, cbA.yl*15/16), frame);
     }
 
     void drawFlyingTool()
     {
         auto cb = getInternal(fileImageDebris);
-        cb.draw(Point(x - cb.xl/2, y - cb.yl/2),
+        cb.draw(foot - Point(cb.xl/2, cb.yl/2),
                 clamp(cb.xfs - timeToLive/4, 0, cb.xfs - 1),
                 frame, false, rotCw);
     }
@@ -166,7 +165,7 @@ private:
     void drawPlosion(in Filename fn)
     {
         auto cb = getInternal(fn);
-        cb.draw(Point(x - cb.xl/2, y - cb.yl/2 + game.mask.explodeMaskOffsetY),
+        cb.draw(foot - Point(cb.xl/2, cb.yl/2 + game.mask.explodeMaskOffsetY),
                 clamp(cb.xfs - timeToLive, 0, cb.xfs - 1));
     }
 

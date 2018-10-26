@@ -147,7 +147,7 @@ private:
             lixxie.assignManually(&ow, i.skill);
 
             _effect.dispatch.addSound(upd, pa, Sound.ASSIGN);
-            _effect.dispatch.addArrow(upd, pa, lixxie.ex, lixxie.ey, i.skill);
+            _effect.dispatch.addArrow(upd, pa, lixxie.foot, i.skill);
         }
         else if (i.action == RepAc.NUKE) {
             tribe.nukePressedSince = upd;

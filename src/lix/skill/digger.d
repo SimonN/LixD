@@ -22,7 +22,7 @@ public:
         immutable bool enoughSteel = countSteel(1-midLoRes, 2, midLoRes, 2) >0;
         if (enoughSteel) {
             outsideWorld.effect.dispatch.addDigHammer(
-                outsideWorld.state.update, outsideWorld.passport, ex, ey, dir);
+                outsideWorld.state.update, outsideWorld.passport, foot, dir);
             become(Ac.walker);
         }
         return enoughSteel;

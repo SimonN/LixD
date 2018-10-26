@@ -44,8 +44,8 @@ private:
     OutsideWorld* _outsideWorld; // set whenever physics and tight coupling
                                  // are needed, nulled again at end of those
 
-    enum int exOffset = 16; // offset of the effective coordinate of the lix
-    enum int eyOffset = 26; // sprite from the top left corner
+    // Offset of our effective coordinate from top left sprite corner
+    enum Point footOffsetFromCutbit = Point(16, 26);
 
     enum string tmpOutsideWorld = q{
         assert (ow);
@@ -76,9 +76,12 @@ public:
 
     Style style() const { return _style; }
 
-    @property int ex() const { return _ex; }
-    @property int ey() const { return _ey; }
-    // setters for these are below in the main code
+    @property const pure nothrow @nogc {
+        Point foot() { return Point(_ex, _ey); }
+        // Setters for the foot (i.e., to move the lix) are below in main code
+        short ex() { return _ex; } // deprecate eventually, use foot
+        short ey() { return _ey; } // deprecate eventually, use foot
+    }
 
             @property const(Job) constJob() const { return _job.asClass; }
     package @property inout(Job) job()      inout { return _job.asClass; }
@@ -208,11 +211,6 @@ void addEncountersFromHere()
              |  lookup.get(Point(_ex, _ey -  4))
              |  lookup.get(Point(_ex, _ey -  8))
              |  lookup.get(Point(_ex, _ey - 12));
-}
-
-package Point loc() const
-{
-    return Point(_ex - exOffset + job.spriteOffsetX, _ey - eyOffset);
 }
 
 @property int ex(in int n)
@@ -349,12 +347,17 @@ const(Cutbit) cutbit() const { return getLixSpritesheet(_style); }
 bool isLastFrame() const { return ! cutbit.frameExists(frame + 1, ac); }
 void advanceFrame() { frame = (isLastFrame() ? 0 : frame + 1); }
 
+package Point locCutbit() const // top left of sprite
+{
+    return foot - footOffsetFromCutbit + Point(job.spriteOffsetX, 0);
+}
+
 void draw() const
 {
     if (ac == Ac.nothing)
         return;
     drawFuse(&this);
-    cutbit.draw(loc, xf, yf, mirror, rotation);
+    cutbit.draw(locCutbit, xf, yf, mirror, rotation);
     drawFlame(&this);
     // Don't draw abilities here. The game should draw these before drawing any
     // lix, to have the lixes always in the foreground. Not good OO, but hm.
@@ -377,12 +380,12 @@ final void drawAgainHighlit() const
         ALLEGRO_BLEND_MODE.ALLEGRO_ONE,
         ALLEGRO_BLEND_MODE.ALLEGRO_INVERSE_ALPHA,
     )) {
-        cb.draw(loc + Point(1, 0), xf, yf, mirror, rotation);
-        cb.draw(loc - Point(1, 0), xf, yf, mirror, rotation);
-        cb.draw(loc - Point(0, 1), xf, yf, mirror, rotation);
+        cb.draw(locCutbit + Point(1, 0), xf, yf, mirror, rotation);
+        cb.draw(locCutbit - Point(1, 0), xf, yf, mirror, rotation);
+        cb.draw(locCutbit - Point(0, 1), xf, yf, mirror, rotation);
         // Don't draw outline below. We don't want to obscure the ground.
     }
-    cb.draw(loc, xf, yf, mirror, rotation);
+    cb.draw(locCutbit, xf, yf, mirror, rotation);
     drawAbilities(&this, true);
     drawFlame(&this);
 }

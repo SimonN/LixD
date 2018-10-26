@@ -150,12 +150,12 @@ public:
         }
     }
 
-    void addArrow(in Phyu upd, in Passport pa, in int ex, in int ey, in Ac ac)
+    void addArrow(in Phyu upd, in Passport pa, in Point foot, in Ac ac)
     {
         Effect e = Effect(upd, pa);
         if (e !in _alreadyPlayed) {
             _alreadyPlayed.insert(e);
-            _debris ~= Debris.newArrow(ex, ey, pa.style, ac);
+            _debris ~= Debris.newArrow(foot, pa.style, ac);
         }
     }
 
@@ -172,7 +172,7 @@ public:
     public alias addPickaxe = addDigHammerOrPickaxe!true;
 
     private void addDigHammerOrPickaxe(bool axe)(
-        Phyu upd, in Passport pa, int ex, int ey, int dir
+        Phyu upd, in Passport pa, in Point foot, int dir
     ) {
         immutable e = Effect(upd, pa,
             isLocal(pa) ? Sound.STEEL : Sound.NOTHING, Loudness.loud);
@@ -180,32 +180,32 @@ public:
             _alreadyPlayed.insert(e);
             hardware.sound.play(e.sound, e.loudness);
             static if (axe) {
-                // frame 0 (4th argument) is the pickaxe
-                _debris ~= Debris.newFlyingTool(ex, ey, dir, 0);
+                enum framePickaxe = 0;
+                _debris ~= Debris.newFlyingTool(foot, dir, framePickaxe);
             }
             else {
-                // DTODOEFFECT: animate the dig hammer at(x, y - 10)
+                // DTODOEFFECT: animate the dig hammer at(footX, footY - 10)
             }
         }
     }
 
-    void addImplosion(in Phyu upd, in Passport pa, int ex, int ey)
+    void addImplosion(in Phyu upd, in Passport pa, in Point foot)
     {
         immutable e = Effect(upd, pa, Sound.POP, loudness(pa));
         if (e !in _alreadyPlayed) {
             _alreadyPlayed.insert(e);
             hardware.sound.play(e.sound, e.loudness);
-            _debris ~= Debris.newImplosion(ex, ey);
+            _debris ~= Debris.newImplosion(foot);
         }
     }
 
-    void addExplosion(in Phyu upd, in Passport pa, int ex, int ey)
+    void addExplosion(in Phyu upd, in Passport pa, in Point foot)
     {
         immutable e = Effect(upd, pa, Sound.POP, loudness(pa));
         if (e !in _alreadyPlayed) {
             _alreadyPlayed.insert(e);
             hardware.sound.play(e.sound, e.loudness);
-            _debris ~= Debris.newExplosion(ex, ey);
+            _debris ~= Debris.newExplosion(foot);
         }
     }
 

@@ -90,7 +90,7 @@ private:
         outsideWorld.physicsDrawer.add(tc);
         if (wouldHitSteel(masks[tc.type])) {
             outsideWorld.effect.dispatch.addPickaxe(
-                outsideWorld.state.update, outsideWorld.passport, ex, ey, dir);
+                outsideWorld.state.update, outsideWorld.passport, foot, dir);
             turn();
             become(Ac.walker);
         }
