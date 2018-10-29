@@ -21,9 +21,9 @@ import basics.resol;
 import editor.editor;
 import game.core.game;
 import game.harvest;
-import game.replay; // ReplayToLevelMatcher
 import file.filename; // running levels from the command-line
 import file.log; // logging uncaught Exceptions
+import file.replay;
 import file.trophy : TrophyKey;
 import hardware.display;
 import hardware.keyboard;
@@ -35,6 +35,7 @@ import menu.lobby.lobby;
 import menu.mainmenu;
 import menu.options;
 import menu.rep4lev;
+import menu.repmatch;
 
 static import gui;
 static import hardware.keyboard;

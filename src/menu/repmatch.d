@@ -1,4 +1,4 @@
-module game.replay.matcher;
+module menu.repmatch;
 
 /*
  * There are three levels that a replay might run against:
@@ -21,10 +21,10 @@ import enumap;
 import optional;
 
 import file.filename;
+import file.replay;
 import file.trophy : TrophyKey;
 import game.core.game;
 import game.nurse.verify;
-import game.replay.replay;
 import level.level;
 
 class ReplayToLevelMatcher {
@@ -202,7 +202,7 @@ unittest {
     import basics.help;
     import basics.init;
     import file.date;
-    import game.replay.io;
+    import file.replay.io;
 
     al_run_allegro(delegate int() {
         initializeNoninteractive(Runmode.VERIFY);

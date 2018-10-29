@@ -13,7 +13,7 @@ import file.language;
 import file.filename;
 import file.trophy;
 import game.harvest;
-import game.replay;
+import file.replay;
 import gui;
 import gui.picker;
 import hardware.sound;

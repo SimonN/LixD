@@ -24,7 +24,7 @@ import game.tribe;
 import hardware.tharsis;
 
 public import level.level;
-public import game.replay;
+public import file.replay;
 public import game.effect;
 
 abstract class Nurse {

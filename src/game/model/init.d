@@ -12,7 +12,7 @@ import graphic.gadget;
 import graphic.torbit;
 import game.core.game;
 import game.model.state;
-import game.replay;
+import file.replay;
 import game.effect;
 import tile.phymap;
 import game.tribe;

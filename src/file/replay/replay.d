@@ -1,4 +1,4 @@
-module game.replay.replay;
+module file.replay.replay;
 
 /* Replay: Holds all history for a game, but not the physical map.
  *
@@ -19,15 +19,14 @@ public import net.repdata;
 
 import basics.help; // array.len of type int
 import basics.globals;
-import file.option : userName;
-import file.option;
-import net.permu;
-import net.versioning;
-import game.replay.io;
 import file.date;
 import file.filename;
+import file.option;
+import file.replay.io;
 import level.level;
 import level.metadata;
+import net.permu;
+import net.versioning;
 
 class Replay {
     static struct Player {

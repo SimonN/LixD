@@ -12,7 +12,7 @@ import file.option : replayAfterFrameBack;
 import basics.init;
 import file.filename;
 import game.nurse.savestat;
-import game.replay;
+import file.replay;
 import level.level;
 import lix.lixxie;
 

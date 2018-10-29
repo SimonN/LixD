@@ -21,7 +21,7 @@ import net.repdata;
 import hardware.tharsis;
 import game.effect;
 import game.physdraw;
-import game.replay;
+import file.replay;
 import game.tribe;
 import game.model.state;
 import game.model.init;

@@ -40,7 +40,7 @@ import game.harvest;
 import game.nurse.interact;
 import game.panel.base;
 import game.physdraw;
-import game.replay;
+import file.replay;
 import game.tribe;
 import game.window.base;
 

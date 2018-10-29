@@ -14,7 +14,7 @@ import file.date;
 import gui;
 import gui.picker.tiler;
 import level.metadata;
-import game.replay;
+import file.replay;
 
 abstract class LevelOrReplayTiler : FileTiler {
 public:

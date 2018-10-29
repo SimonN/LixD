@@ -14,11 +14,11 @@ import basics.globals;
 import file.option;
 import file.filename;
 import file.language;
-import game.replay.matcher;
 import gui;
 import gui.picker;
 import hardware.tharsis;
 import level.level;
+import menu.repmatch;
 
 class RepForLev : Window {
 private:

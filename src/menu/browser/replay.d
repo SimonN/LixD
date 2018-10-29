@@ -14,14 +14,15 @@ import basics.globals : dirLevels;
 import file.option;
 import file.filename;
 import file.language;
+import file.replay;
 import game.harvest;
-import game.replay;
 import gui;
 import gui.picker;
 import hardware.keyset;
 import level.level;
 import menu.browser.withlast;
 import menu.lastgame;
+import menu.repmatch;
 import menu.verify;
 
 static import basics.globals;

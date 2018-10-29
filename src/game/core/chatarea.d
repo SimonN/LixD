@@ -12,7 +12,7 @@ import std.range;
 
 import file.option;
 import game.score.score;
-import game.replay;
+import file.replay;
 import file.language;
 import graphic.color;
 import gui;

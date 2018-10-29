@@ -1,21 +1,43 @@
-module game.replay.io;
+module file.replay.io;
+
+/*
+ * Replay writing/loading.
+ * Don't import this module during interactive or noninteractive program runs.
+ * Import file.replay instead.
+ * Import file.replay.io only during unittests in other modules.
+ */
 
 import std.algorithm;
 import std.stdio; // save file, and needed for unittest
 import optional;
 
-import file.option : userName; // for filename during saving
 import basics.help;
-import net.repdata;
 import basics.globals;
-import net.permu;
-import net.versioning;
 import file.date;
 import file.filename;
 import file.io;
 import file.log;
-import game.replay.replay;
+import file.option : userName; // for filename during saving
+import file.replay.replay;
 import level.level;
+import net.permu;
+import net.repdata;
+import net.versioning;
+
+public: // public only to unittest. Should be package outside of that.
+
+nothrow void implSaveToFile(
+    in Replay replay,
+    in Filename fn,
+    in Level lev
+) {
+    try {
+        std.stdio.File file = fn.openForWriting();
+        saveToStdioFile(replay, file, lev);
+    }
+    catch (Exception e)
+        log(e.msg);
+}
 
 package:
 
@@ -59,19 +81,6 @@ body {
         dirReplayAutoSolutions, dirReplayAutoMulti, dirReplayManual, dirReplays
         ].each!(dir => cutFront(path, dir.dirRootless));
     return path;
-}
-
-nothrow void implSaveToFile(
-    in Replay replay,
-    in Filename fn,
-    in Level lev
-) {
-    try {
-        std.stdio.File file = fn.openForWriting();
-        saveToStdioFile(replay, file, lev);
-    }
-    catch (Exception e)
-        log(e.msg);
 }
 
 void implLoadFromFile(Replay replay, Filename fn) { with (replay)

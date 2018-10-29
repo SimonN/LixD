@@ -16,7 +16,7 @@ import file.option : replayLastLevel;
 import file.filename;
 import file.trophy;
 import game.harvest;
-import game.replay;
+import file.replay;
 import graphic.color;
 import gui;
 import file.language;

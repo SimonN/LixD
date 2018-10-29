@@ -12,7 +12,7 @@ import std.typecons;
 import basics.alleg5 : OutOfVramException;
 import basics.globals : levelPixelsToWarn;
 import basics.help; // clone(T[]), a deep copy for arrays
-import game.replay;
+import file.replay;
 import game.model.state;
 import file.log;
 import hardware.tharsis;

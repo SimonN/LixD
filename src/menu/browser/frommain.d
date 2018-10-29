@@ -1,6 +1,6 @@
 module menu.browser.frommain;
 
-import game.replay;
+import file.replay;
 import file.filename;
 import gui;
 import gui.picker;

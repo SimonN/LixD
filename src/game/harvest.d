@@ -7,7 +7,7 @@ module game.harvest;
  */
 
 import file.trophy;
-import game.replay;
+import file.replay;
 import level.level;
 
 struct Harvest {

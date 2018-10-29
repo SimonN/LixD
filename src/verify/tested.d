@@ -19,7 +19,7 @@ import file.filename;
 import file.trophy;
 import level.level;
 import game.nurse.verify;
-import game.replay;
+import menu.repmatch;
 
 enum Status {
     untested,
