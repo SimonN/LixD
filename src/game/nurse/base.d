@@ -20,8 +20,8 @@ import file.filename;
 import file.trophy;
 import game.model.model;
 import game.model.state;
-import game.tribe;
 import hardware.tharsis;
+import physics.tribe;
 
 public import level.level;
 public import file.replay;

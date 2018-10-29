@@ -4,8 +4,8 @@ import std.math;
 import std.range;
 
 import hardware.sound;
-import game.tribe;
 import lix;
+import physics.tribe;
 
 class Batter : Job {
     mixin JobChild;

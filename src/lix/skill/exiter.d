@@ -1,9 +1,9 @@
 module lix.skill.exiter;
 
-import game.tribe;
 import graphic.gadget.goal;
 import hardware.sound;
 import lix;
+import physics.tribe;
 
 class Exiter : Leaver {
 private:

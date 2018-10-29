@@ -10,8 +10,9 @@ module game.score.graph;
 import std.algorithm;
 import std.conv;
 
+public import physics.score;
+
 import game.score.bar;
-import game.score.score;
 import graphic.color;
 import gui;
 

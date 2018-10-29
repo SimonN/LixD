@@ -28,6 +28,7 @@ import file.option; // username, to determine whether to save result
 import basics.help : len;
 import file.filename;
 import file.trophy;
+import file.replay;
 
 import game.core.calc;
 import game.core.chatarea;
@@ -40,8 +41,6 @@ import game.harvest;
 import game.nurse.interact;
 import game.panel.base;
 import game.physdraw;
-import file.replay;
-import game.tribe;
 import game.window.base;
 
 import graphic.map;
@@ -51,6 +50,7 @@ import hardware.music;
 import hardware.sound;
 import level.level;
 import lix; // _drawHerHighlit
+import physics.tribe;
 import net.repdata;
 import net.structs;
 

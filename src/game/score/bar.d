@@ -12,8 +12,8 @@ module game.score.bar;
 
 import std.algorithm;
 
+public import physics.score;
 import basics.alleg5;
-import game.score.score;
 import graphic.color;
 import graphic.internal : getAlcol3DforStyle;
 import gui;

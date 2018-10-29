@@ -12,13 +12,12 @@ module game.score.board;
 
 import std.array;
 import std.algorithm;
-
 import enumap;
 
+public import physics.score;
 import basics.alleg5;
 import basics.globals : fileImageGamePanel2; // nuke graphicr
 import gui;
-import game.score.score;
 import game.score.bar;
 import graphic.color;
 import graphic.internal;

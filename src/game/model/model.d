@@ -22,7 +22,6 @@ import hardware.tharsis;
 import game.effect;
 import game.physdraw;
 import file.replay;
-import game.tribe;
 import game.model.state;
 import game.model.init;
 import graphic.gadget;
@@ -32,6 +31,7 @@ import level.level;
 import lix;
 import net.permu;
 import tile.phymap;
+import physics.tribe;
 
 class GameModel {
 private:

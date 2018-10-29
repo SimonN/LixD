@@ -15,11 +15,11 @@ import basics.help; // clone(T[]), a deep copy for arrays
 import net.repdata;
 import basics.topology;
 import tile.phymap;
-import game.tribe;
 import graphic.torbit;
 import graphic.gadget;
 import hardware.tharsis;
 import net.style;
+import physics.tribe;
 
 alias GameState = RefCounted!(RawGameState, RefCountedAutoInitialize.no);
 

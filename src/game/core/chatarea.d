@@ -11,11 +11,11 @@ import std.format;
 import std.range;
 
 import file.option;
-import game.score.score;
 import file.replay;
 import file.language;
 import graphic.color;
 import gui;
+import physics.score;
 
 class ChatArea : Element {
 private:

@@ -11,15 +11,15 @@ import file.option;
 import graphic.gadget;
 import graphic.torbit;
 import game.core.game;
+import game.effect;
 import game.model.state;
 import file.replay;
-import game.effect;
-import tile.phymap;
-import game.tribe;
 import level.level;
-import tile.gadtile;
 import lix;
 import net.permu;
+import physics.tribe;
+import tile.phymap;
+import tile.gadtile;
 
 package:
 

@@ -7,7 +7,6 @@ import basics.globals; // game panel icons
 import net.repdata; // Phyu
 import file.option; // languageIsEnglish
 import file.language;
-import game.tribe;
 import game.panel.tooltip;
 import graphic.color;
 import graphic.internal;
@@ -15,6 +14,7 @@ import gui;
 import hardware.display; // show fps
 import hardware.sound; // warn when too few lix alive to win
 import lix;
+import physics.tribe;
 
 abstract class InfoBar : Button {
 private:

@@ -4,8 +4,8 @@ import optional;
 
 import game.model.state;
 import game.effect;
-import game.tribe;
 import game.physdraw;
+import physics.tribe;
 import net.style;
 
 // Some tight coupling between lix and tribes are unavoidable, e.g., when

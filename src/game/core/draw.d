@@ -11,7 +11,6 @@ import basics.globals; // replay sign
 import file.option : showFPS;
 import game.core.game;
 import game.panel.tooltip;
-import game.tribe;
 import graphic.color;
 import graphic.cutbit; // replay sign
 import graphic.gadget;
@@ -21,6 +20,7 @@ import graphic.torbit;
 import hardware.display;
 import hardware.music;
 import hardware.tharsis;
+import physics.tribe;
 
 package void
 implGameDraw(Game game) { with (game)

@@ -1,9 +1,11 @@
-module game.score.score;
+module physics.score;
 
 /*
  * struct Score, function sortPreferringTeam
  *
  * Plain old data, to be passed between the UI and the Tribe team status.
+ * Part of physics because Tribe must know about this. It's also sensible
+ * to keep winner determination close to the physics.
  */
 
 import std.algorithm;

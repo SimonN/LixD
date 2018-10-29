@@ -6,10 +6,10 @@ import std.math; // sqrt
 import std.range;
 
 import tile.phymap;
-import game.tribe;
 import graphic.gadget;
 import hardware.sound;
 import lix;
+import physics.tribe;
 
 // called from Lixxie.perform(OutsideWorld*)
 package void performUseGadgets(Lixxie l)

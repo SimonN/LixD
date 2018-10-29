@@ -6,15 +6,15 @@ import std.math;
 import basics.globals; // fileImageMouse
 import basics.help; // len
 import basics.topology;
-import game.tribe;
 import graphic.cutbit;
 import graphic.gadget;
 import graphic.internal;
 import graphic.torbit;
-import tile.occur;
 import net.ac;
 import net.style;
 import net.repdata;
+import physics.tribe;
+import tile.occur;
 
 /* owners are always drawn onto the goal, unless the owner is GARDEN.
  * When overtime runs out, set drawWithNoSign.

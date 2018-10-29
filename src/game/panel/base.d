@@ -16,12 +16,10 @@ import basics.globals;
 import game.core.view;
 import game.panel.infobar;
 import game.panel.nuke;
-import game.score.graph;
 import game.panel.taperec;
 import game.panel.tooltip;
-import game.tribe;
-import game.score.score;
 import game.score.board;
+import game.score.graph;
 import graphic.internal;
 import gui;
 import hardware.keyboard; // we need a different behavior of skill button
@@ -30,6 +28,7 @@ import hardware.mouse;    // execution and skill button warning sound
 import hardware.sound;
 import lix; // forward method of InfoBar to our users
 import net.phyu;
+import physics.tribe;
 
 class Panel : Element {
 private:

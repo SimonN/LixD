@@ -1,11 +1,11 @@
-module game.tribe;
+module physics.tribe;
 
-/* A tribe is a team. It can have multiple masters, when a multiplayer
+/* A Tribe is a colored team. It can have multiple players, when a multiplayer
  * team game is played. Each tribe has a color, number of lixes, etc.
  * In singleplayer, there is one tribe with one master.
  *
- * Tribe doesn't know about masters; if that info is needed, the game must
- * fetch it from the replay.
+ * Tribe (as physics in general) doesn't know about players.
+ * If player info is needed, the game must fetch it from the replay.
  */
 
 import std.algorithm;
@@ -15,10 +15,10 @@ import enumap;
 import basics.globals;
 import basics.help;
 import basics.rect;
-import game.score.score;
-import net.repdata;
 import lix;
 import level.level; // spawnintMax
+import net.repdata;
+import physics.score;
 
 final class Tribe {
     private static struct ValueFields {

@@ -14,7 +14,7 @@ module lix.job;
 import std.algorithm;
 import std.conv : to;
 import std.string;
-import game.tribe; // interface for returnSkills
+import physics.tribe; // interface for returnSkills
 import lix;
 
 package enum AfterAssignment : ubyte {

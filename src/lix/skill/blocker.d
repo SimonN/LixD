@@ -3,7 +3,7 @@ module lix.skill.blocker;
 import std.math; // abs
 
 import lix;
-import game.tribe;
+import physics.tribe;
 
 class Blocker : Job {
     mixin JobChild;
