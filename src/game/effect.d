@@ -20,6 +20,8 @@ import std.algorithm;
 import std.container;
 import std.format;
 
+public import physics.effect;
+
 import basics.help;
 import file.language;
 import net.repdata;
@@ -27,8 +29,6 @@ import game.debris;
 import game.core.game; // Game.phyusPerSecond
 import gui.console;
 import graphic.torbit;
-import hardware.sound;
-import lix.fields;
 
 private struct Effect {
     Phyu phyu;
@@ -46,7 +46,7 @@ private struct Effect {
     }
 }
 
-class EffectManager {
+class EffectManager : EffectSink {
 private:
     /*
      * When you go back in time and recompute, the recomputation happens
@@ -168,25 +168,14 @@ public:
             _alreadyPlayed.insert(e);
     }
 
-    public alias addDigHammer = addDigHammerOrPickaxe!false;
-    public alias addPickaxe = addDigHammerOrPickaxe!true;
+    void addDigHammer(in Phyu upd, in Passport pa, in Point foot, in int dir)
+    {
+        addDigHammerOrPickaxe!true(upd, pa, foot, dir);
+    }
 
-    private void addDigHammerOrPickaxe(bool axe)(
-        Phyu upd, in Passport pa, in Point foot, int dir
-    ) {
-        immutable e = Effect(upd, pa,
-            isLocal(pa) ? Sound.STEEL : Sound.NOTHING, Loudness.loud);
-        if (e !in _alreadyPlayed) {
-            _alreadyPlayed.insert(e);
-            hardware.sound.play(e.sound, e.loudness);
-            static if (axe) {
-                enum framePickaxe = 0;
-                _debris ~= Debris.newFlyingTool(foot, dir, framePickaxe);
-            }
-            else {
-                // DTODOEFFECT: animate the dig hammer at(footX, footY - 10)
-            }
-        }
+    void addPickaxe(in Phyu upd, in Passport pa, in Point foot, in int dir)
+    {
+        addDigHammerOrPickaxe!false(upd, pa, foot, dir);
     }
 
     void addImplosion(in Phyu upd, in Passport pa, in Point foot)
@@ -209,7 +198,7 @@ public:
         }
     }
 
-    void announceOvertime(in Phyu upd, int overtimeInPhyus)
+    void announceOvertime(in Phyu upd, in int overtimeInPhyus)
     {
         if (_weScheduledOvertimeAnnouncementBefore)
             return;
@@ -252,5 +241,23 @@ private:
     bool isLocal(in Passport pa) const pure nothrow @nogc
     {
         return pa.style == localTribe;
+    }
+
+    private void addDigHammerOrPickaxe(bool axe)(
+        Phyu upd, in Passport pa, in Point foot, int dir
+    ) {
+        immutable e = Effect(upd, pa,
+            isLocal(pa) ? Sound.STEEL : Sound.NOTHING, Loudness.loud);
+        if (e !in _alreadyPlayed) {
+            _alreadyPlayed.insert(e);
+            hardware.sound.play(e.sound, e.loudness);
+            static if (axe) {
+                enum framePickaxe = 0;
+                _debris ~= Debris.newFlyingTool(foot, dir, framePickaxe);
+            }
+            else {
+                // DTODOEFFECT: animate the dig hammer at(footX, footY - 10)
+            }
+        }
     }
 }
