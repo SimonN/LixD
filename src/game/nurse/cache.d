@@ -1,4 +1,4 @@
-module game.model.cache;
+module game.nurse.cache;
 
 /* PhysicsCache (former name: StateManager) holds many states, and knows when
  * to auto-save. Feed the StateManager with the current state all the time,

@@ -7,7 +7,7 @@ import net.repdata; // Phyu
 import file.option; // replayAfterFrameBack
 import game.core.game;
 import game.core.active; // findAgainHighlitLixAfterPhyu
-import game.model.cache : DuringTurbo;
+import game.nurse.cache : DuringTurbo;
 import game.panel.base;
 import hardware.mouse;
 import hardware.sound;

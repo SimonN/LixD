@@ -2,7 +2,7 @@ module game.nurse.interact;
 
 import optional;
 
-import game.model.cache;
+import game.nurse.cache;
 import hardware.sound;
 
 public import game.nurse.savestat;
