@@ -3,10 +3,8 @@ module lix.skill.basher;
 import std.algorithm; // min, max
 
 import lix;
-import game.mask;
-import game.physdraw;
-import game.terchang;
 import hardware.sound;
+import physics;
 
 class Basher : Job {
 

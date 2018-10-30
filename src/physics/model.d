@@ -1,6 +1,7 @@
-module game.model.model;
+module physics.model;
 
-/* Everything from the physics collected in one class, according to MVC.
+/*
+ * Everything from the physics collected in one class, according to MVC.
  *
  * Does not manage the replay. Whenever you want to advance physics, cut off
  * from the replay the correct hunk, and feed it one-by-one to the model.
@@ -19,19 +20,21 @@ import optional;
 import basics.help; // len
 import net.repdata;
 import hardware.tharsis;
-import game.effect;
-import game.physdraw;
 import file.replay;
-import game.model.state;
-import game.model.init;
 import graphic.gadget;
 import graphic.torbit;
 import hardware.sound;
 import level.level;
 import lix;
 import net.permu;
-import tile.phymap;
+import physics.effect;
+import physics.physdraw;
+import physics.state;
+import physics.statinit;
 import physics.tribe;
+import tile.phymap;
+
+import game.effect; // DTODOREFACTOR
 
 class GameModel {
 private:

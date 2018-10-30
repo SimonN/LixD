@@ -1,10 +1,8 @@
 module lix.skill.builder;
 
 import lix;
-import game.physdraw;
-import game.terchang;
 import hardware.sound;
-import physics.tribe;
+import physics;
 
 // base class for Builder and Platformer
 abstract class BrickCounter : Job {

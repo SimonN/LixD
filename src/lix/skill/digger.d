@@ -1,8 +1,7 @@
 module lix.skill.digger;
 
-import game.physdraw;
-import game.terchang;
 import lix;
+import physics;
 
 class Digger : Job {
 private:

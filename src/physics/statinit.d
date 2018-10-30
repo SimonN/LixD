@@ -1,4 +1,4 @@
-module game.model.init;
+module physics.statinit;
 
 import std.algorithm;
 import std.array;
@@ -10,13 +10,12 @@ import basics.help; // len
 import file.option;
 import graphic.gadget;
 import graphic.torbit;
-import game.core.game;
-import game.effect;
-import game.model.state;
+import game.core.game : Game; // phyusPerSecond
 import file.replay;
 import level.level;
 import lix;
 import net.permu;
+import physics.state;
 import physics.tribe;
 import tile.phymap;
 import tile.gadtile;

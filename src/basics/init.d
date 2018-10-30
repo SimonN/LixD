@@ -10,13 +10,13 @@ import file.option;
 import file.language;
 import file.filename;
 import file.trophy;
-import game.mask;
 import graphic.color;
 import graphic.internal;
 import hardware.keyboard;
 import hardware.sound;
 import hardware.music;
 import hardware.tharsis;
+import physics.mask;
 import tile.tilelib;
 
 static import file.log;
@@ -65,7 +65,7 @@ void initializeNoninteractive(Runmode mode)
     if (ia) hardware.keyboard.initialize();
     // Mouse will be (re)initialized whenever we change resolution.
             graphic.color.initialize();
-    if (ph) game.mask.initialize();
+    if (ph) physics.mask.initialize();
     // Sound will be lazily initialized when required.
 
     if (! ia) {

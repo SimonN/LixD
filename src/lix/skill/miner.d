@@ -2,11 +2,9 @@ module lix.skill.miner;
 
 import std.algorithm; // max
 
-import game.mask;
-import game.physdraw;
-import game.terchang;
 import hardware.sound;
 import lix;
+import physics;
 
 class Miner : Job {
 private:

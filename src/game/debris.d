@@ -20,12 +20,12 @@ import std.random;
 import basics.globals;
 import basics.rect;
 import file.filename;
-import game.mask; // exploder offset
 import graphic.color;
 import graphic.internal;
 import graphic.torbit;
-public import net.ac;
-public import net.style;
+import net.ac;
+import net.style;
+import physics.mask; // exploder offset
 
 // not a class, I'd like to avoid GC for many flying pixels
 struct Debris {
@@ -165,7 +165,7 @@ private:
     void drawPlosion(in Filename fn)
     {
         auto cb = getInternal(fn);
-        cb.draw(foot - Point(cb.xl/2, cb.yl/2 + game.mask.explodeMaskOffsetY),
+        cb.draw(foot - Point(cb.xl/2, cb.yl/2 + explodeMaskOffsetY),
                 clamp(cb.xfs - timeToLive, 0, cb.xfs - 1));
     }
 

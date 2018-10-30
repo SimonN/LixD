@@ -40,7 +40,6 @@ import game.effect;
 import game.harvest;
 import game.nurse.interact;
 import game.panel.base;
-import game.physdraw;
 import game.window.base;
 
 import graphic.map;
@@ -50,7 +49,7 @@ import hardware.music;
 import hardware.sound;
 import level.level;
 import lix; // _drawHerHighlit
-import physics.tribe;
+import physics;
 import net.repdata;
 import net.structs;
 

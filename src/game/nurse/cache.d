@@ -7,18 +7,17 @@ module game.nurse.cache;
 
 import std.algorithm;
 import std.range;
+import std.string;
 import std.typecons;
 
 import basics.alleg5 : OutOfVramException;
 import basics.globals : levelPixelsToWarn;
 import basics.help; // clone(T[]), a deep copy for arrays
 import file.replay;
-import game.model.state;
 import file.log;
 import hardware.tharsis;
 import net.repdata;
-
-import std.string; // format
+import physics.state;
 
 enum DuringTurbo : bool { no = false, yes = true }
 

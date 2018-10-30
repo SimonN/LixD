@@ -10,9 +10,9 @@ module lix.skill.exploder;
 import std.math; // sqrt
 
 import basics.help; // roundInt
-import game.mask;
-import game.terchang;
 import lix;
+import physics.mask;
+import physics.terchang;
 
 abstract class Ploder : Leaver {
     mixin JobChild;

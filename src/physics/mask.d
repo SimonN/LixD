@@ -1,4 +1,4 @@
-module game.mask;
+module physics.mask;
 
 import std.conv;
 import std.algorithm;
@@ -9,7 +9,7 @@ import enumap;
 
 import basics.help;
 import basics.matrix;
-import game.terchang;
+import physics.terchang;
 
 enum explodeMaskOffsetY = -6; // used in game.debris, too
 

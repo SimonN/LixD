@@ -10,7 +10,6 @@ import basics.help;
 import basics.matrix;
 import basics.topology;
 import file.option; // multipleBuilders
-import game.mask;
 import tile.phymap;
 import graphic.color;
 import graphic.cutbit;
@@ -19,6 +18,7 @@ import graphic.internal;
 import graphic.torbit;
 import hardware.sound;
 import lix;
+import physics.mask;
 
 alias Lixxie = LixxieImpl*;
 alias ConstLix = const(LixxieImpl)*;

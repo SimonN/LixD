@@ -2,11 +2,9 @@ module lix.fields;
 
 import optional;
 
-import game.model.state;
-import game.effect;
-import game.physdraw;
-import physics.tribe;
-import net.style;
+public import net.style;
+
+import physics;
 
 // Some tight coupling between lix and tribes are unavoidable, e.g., when
 // blocking or batting other lixes, or returning extra builder assignments.

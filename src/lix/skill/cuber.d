@@ -1,8 +1,7 @@
 module lix.skill.cuber;
 
-import game.physdraw;
-import game.terchang;
 import lix;
+import physics;
 
 class Cuber : Leaver {
     mixin JobChild;

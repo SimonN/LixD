@@ -5,9 +5,9 @@ import std.algorithm;
 import optional;
 
 import file.option; // replayAfterFrameBack
-import game.model.state;
 import game.nurse.cache;
 import hardware.tharsis;
+import physics.state;
 
 public import game.nurse.base;
 

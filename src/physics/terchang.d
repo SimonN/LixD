@@ -1,4 +1,4 @@
-module game.terchang;
+module physics.terchang;
 
 import basics.rect;
 import net.repdata;

@@ -18,10 +18,8 @@ import file.option; // update player name on cut replay
 import file.date;
 import file.filename;
 import file.trophy;
-import game.model.model;
-import game.model.state;
 import hardware.tharsis;
-import physics.tribe;
+import physics;
 
 public import level.level;
 public import file.replay;

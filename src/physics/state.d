@@ -1,4 +1,4 @@
-module game.model.state;
+module physics.state;
 
 /* A gamestate. It saves everything about the current position, but not
  * how we got here. The class Replay saves everything about the history,
@@ -12,14 +12,14 @@ import std.range;
 import std.typecons;
 
 import basics.help; // clone(T[]), a deep copy for arrays
-import net.repdata;
 import basics.topology;
-import tile.phymap;
 import graphic.torbit;
 import graphic.gadget;
 import hardware.tharsis;
+import net.repdata;
 import net.style;
 import physics.tribe;
+import tile.phymap;
 
 alias GameState = RefCounted!(RawGameState, RefCountedAutoInitialize.no);
 

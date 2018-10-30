@@ -7,13 +7,13 @@ module basics.resol;
 
 import basics.cmdargs;
 import file.option; // don't always change resolution if already OK
-import game.physdraw;
 import graphic.internal;
 import gui.context;
 import gui.root;
 import hardware.display;
 import hardware.mouse;
 import hardware.mousecur;
+import physics.physdraw;
 import tile.tilelib;
 
 private bool _cmdargsForcedResolutionThusNeverChangeThat = false;
@@ -23,7 +23,7 @@ void changeResolutionBasedOnCmdargsThenUserFile(const(Cmdargs) cmdargs)
     hardware.mousecur.deinitialize();
     hardware.mouse.deinitialize();
     tile.tilelib.deinitialize();
-    game.physdraw.deinitialize();
+    physics.physdraw.deinitialize();
     graphic.internal.deinitialize();
     gui.root.deinitialize();
     gui.context.deinitialize();
@@ -36,7 +36,7 @@ void changeResolutionBasedOnCmdargsThenUserFile(const(Cmdargs) cmdargs)
     gui.root.initialize(displayXl, displayYl);
     graphic.internal.initialize(cmdargs.mode);
     graphic.internal.initializeScale(gui.stretchFactor);
-    game.physdraw.initialize();
+    physics.physdraw.initialize();
     hardware.mouse.initialize();
     hardware.mousecur.initialize();
 }

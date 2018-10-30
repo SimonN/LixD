@@ -1,4 +1,4 @@
-module game.physdraw;
+module physics.physdraw;
 
 /* PhysicsDrawer: responsible for adding/removing terrain on the level torbit
  * during a game. This doesn't render the level at start of game.
@@ -31,8 +31,6 @@ import basics.globals;
 import basics.help;
 import net.repdata;
 import tile.phymap;
-import game.mask;
-import game.terchang;
 import graphic.color;
 import graphic.cutbit;
 import graphic.torbit;
@@ -42,6 +40,8 @@ import lix.skill.cuber; // Cuber.cubeSize
 import lix.skill.digger; // diggerTunnelWidth
 import net.ac;
 import net.style;
+import physics.mask;
+import physics.terchang;
 
 void initialize() { PhysicsDrawer.initialize(); }
 void deinitialize() { PhysicsDrawer.deinitialize(); }
@@ -176,17 +176,17 @@ private:
     enum remY  = cubeY + Cuber.cubeSize;
  	enum remYl = 32;
     enum ploY  = remY + remYl;
-    static ploYl() { return game.mask.masks[TerrainDeletion.Type.implode]
+    static ploYl() { return physics.mask.masks[TerrainDeletion.Type.implode]
                         .solid.yl; }
 
     enum bashX  = Digger.tunnelWidth + 1;
-    static bashXl() { return game.mask.masks[TerrainDeletion.Type.bashRight]
+    static bashXl() { return physics.mask.masks[TerrainDeletion.Type.bashRight]
                         .solid.xl + 1; }
     static mineX() { return bashX + 4 * bashXl; } // 4 basher masks
-    static mineXl() { return game.mask.masks[TerrainDeletion.Type.mineRight]
+    static mineXl() { return physics.mask.masks[TerrainDeletion.Type.mineRight]
                         .solid.xl + 1; }
     enum implodeX = 0;
-    static explodeX() { return game.mask.masks[TerrainDeletion.Type.implode]
+    static explodeX() { return physics.mask.masks[TerrainDeletion.Type.implode]
                         .solid.xl + 1; }
 
     static void

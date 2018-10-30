@@ -25,7 +25,7 @@ import basics.alleg5;
 import basics.help;
 import basics.topology;
 import file.filename;
-import game.mask;
+import physics.mask;
 
 alias Phybitset = short;
 enum  Phybit    : Phybitset {
