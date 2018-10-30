@@ -147,7 +147,8 @@ version (unittest) {
                 Replay rep = Replay.newForLevel(fn, lv.built);
                 rep.addPlayer(PlNr(0), Style.garden, "Mr. Unittest");
                 return rep;
-            }());
+            }(),
+            new NullEffectSink);
     }
 
     void assign(SaveStatingNurse nurse, Phyu phyu, Ac ac)

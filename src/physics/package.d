@@ -8,5 +8,3 @@ public import physics.score;
 public import physics.state;
 public import physics.terchang;
 public import physics.tribe;
-
-public import game.effect; // to be removed DTODOREFACTOR

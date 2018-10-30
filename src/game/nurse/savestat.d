@@ -2,8 +2,6 @@ module game.nurse.savestat;
 
 import std.algorithm;
 
-import optional;
-
 import file.option; // replayAfterFrameBack
 import game.nurse.cache;
 import hardware.tharsis;
@@ -16,9 +14,17 @@ private:
     PhysicsCache _cache;
 
 public:
-    this(in Level lev, Replay rp)
+    /*
+     * Forwarding constructor. We get to own the replay, but not the level
+     * or the effect manager. Need to forward
+     * this constructor between the Nurse backend and the InteractiveNurse.
+     * This necessity feels strange.
+     */
+    this(in Level lev, Replay rp, EffectSink ef)
     {
-        this(lev, rp, no!EffectManager);
+        super(lev, rp, ef);
+        _cache = new PhysicsCache();
+        _cache.saveZero(cs);
     }
 
     void considerGC() nothrow
@@ -87,19 +93,6 @@ public:
     }
 
 protected:
-    /*
-     * Forwarding constructor. We get to own the replay, but not the level
-     * or the effect manager. Need to forward
-     * this constructor between the Nurse backend and the InteractiveNurse.
-     * This necessity feels strange.
-     */
-    this(in Level lev, Replay rp, Optional!EffectManager ef)
-    {
-        super(lev, rp, ef);
-        _cache = new PhysicsCache();
-        _cache.saveZero(cs);
-    }
-
     final override void onDispose()
     {
         if (_cache) {

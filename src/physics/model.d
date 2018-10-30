@@ -15,8 +15,6 @@ import std.array;
 import std.conv;
 import std.range;
 
-import optional;
-
 import basics.help; // len
 import net.repdata;
 import hardware.tharsis;
@@ -34,13 +32,11 @@ import physics.statinit;
 import physics.tribe;
 import tile.phymap;
 
-import game.effect; // DTODOREFACTOR
-
 class GameModel {
 private:
     GameState     _cs;            // owned (current state)
     PhysicsDrawer _physicsDrawer; // owned
-    Optional!EffectManager _effect; // not owned
+    EffectSink _effect; // not owned, never null. May be the NullEffectSink.
 
 public:
     // The replay data comes with player information (PlNr).
@@ -58,7 +54,7 @@ public:
     // This remembers the effect manager, but not anything else.
     // We don't own the effect manager.
     this(in Level level, in Style[] tribesToMake,
-         in Permu permu, Optional!EffectManager ef)
+         in Permu permu, EffectSink ef)
     in { assert (tribesToMake.len >= 1); }
     body {
         _effect = ef;
@@ -93,7 +89,7 @@ public:
         updateLixxies();
         finalizePhyuAnimateGadgets();
         if (_cs.overtimeRunning && _cs.multiplayer) {
-            _effect.dispatch.announceOvertime(_cs.update,
+            _effect.announceOvertime(_cs.update,
                 _cs.overtimeAtStartInPhyus);
         }
     }
@@ -149,12 +145,12 @@ private:
             OutsideWorld ow = makeGypsyWagon(pa);
             lixxie.assignManually(&ow, i.skill);
 
-            _effect.dispatch.addSound(upd, pa, Sound.ASSIGN);
-            _effect.dispatch.addArrow(upd, pa, lixxie.foot, i.skill);
+            _effect.addSound(upd, pa, Sound.ASSIGN);
+            _effect.addArrow(upd, pa, lixxie.foot, i.skill);
         }
         else if (i.action == RepAc.NUKE) {
             tribe.nukePressedSince = upd;
-            _effect.dispatch.addSound(upd, pa, Sound.NUKE);
+            _effect.addSound(upd, pa, Sound.NUKE);
         }
     }
 

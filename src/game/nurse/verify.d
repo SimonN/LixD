@@ -1,7 +1,5 @@
 module game.nurse.verify;
 
-import optional;
-
 import file.trophy;
 import game.nurse.base;
 
@@ -17,10 +15,10 @@ public:
         bool mercyKilled; // replay took too long after last assign before win
     }
 
-    this(in Level lev, Replay rp, in bool mst)
+    this(in Level lev, Replay rp, in bool maySaveTrophy)
     {
-        super(lev, rp, no!EffectManager);
-        _maySaveTrophy = mst;
+        super(lev, rp, new NullEffectSink);
+        _maySaveTrophy = maySaveTrophy;
         _required = lev.required;
     }
 

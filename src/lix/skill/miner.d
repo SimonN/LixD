@@ -87,7 +87,7 @@ private:
         tc.y = ey - masks[tc.type].offsetY;
         outsideWorld.physicsDrawer.add(tc);
         if (wouldHitSteel(masks[tc.type])) {
-            outsideWorld.effect.dispatch.addPickaxe(
+            outsideWorld.effect.addPickaxe(
                 outsideWorld.state.update, outsideWorld.passport, foot, dir);
             turn();
             become(Ac.walker);

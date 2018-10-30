@@ -11,8 +11,6 @@ module game.nurse.base;
 import std.algorithm;
 import std.range;
 
-import optional;
-
 import net.repdata; // update
 import file.option; // update player name on cut replay
 import file.date;
@@ -40,7 +38,7 @@ public:
     // end bad
 
     // We get to own the replay, but not the level or the effect manager.
-    this(in Level lev, Replay rp, Optional!EffectManager ef)
+    this(in Level lev, Replay rp, EffectSink ef)
     body {
         Style[] stylesToMake = rp.stylesInUse;
         if (stylesToMake.empty)

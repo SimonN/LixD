@@ -105,7 +105,7 @@ public:
     }
 
     // This affects physics. Call during physics update. It does not draw.
-    void perform(in Phyu upd, Optional!EffectManager ef)
+    void perform(in Phyu upd, EffectSink ef)
     {
         frame = upd;
     }

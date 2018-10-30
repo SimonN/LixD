@@ -66,7 +66,7 @@ class Imploder : Ploder {
 protected:
     override void makeEffect()
     {
-        outsideWorld.effect.dispatch.addImplosion(
+        outsideWorld.effect.addImplosion(
             outsideWorld.state.update, outsideWorld.passport, foot);
     }
 }
@@ -79,7 +79,7 @@ class Exploder : Ploder {
 protected:
     override void makeEffect()
     {
-        outsideWorld.effect.dispatch.addExplosion(
+        outsideWorld.effect.addExplosion(
             outsideWorld.state.update, outsideWorld.passport, foot);
     }
 

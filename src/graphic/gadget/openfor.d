@@ -23,10 +23,10 @@ import optional;
 
 import net.repdata;
 import basics.topology;
-import game.effect;
 import graphic.gadget;
 import tile.occur;
 import net.style;
+import physics.effect;
 
 public alias TrapTrig  = GadgetAnimsOnFeed;
 public alias FlingTrig = GadgetAnimsOnFeed; // see gadget.d for FlingPerm
@@ -98,7 +98,7 @@ public:
         _lastFed = upd;
     }
 
-    override void perform(in Phyu upd, Optional!EffectManager)
+    override void perform(in Phyu upd, EffectSink ef)
     {
         exactXfYf = isEating(upd)
             ? Point(upd - _lastFed, 1)

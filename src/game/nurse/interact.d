@@ -1,7 +1,5 @@
 module game.nurse.interact;
 
-import optional;
-
 import game.nurse.cache;
 import hardware.sound;
 
@@ -12,10 +10,10 @@ class InteractiveNurse : SaveStatingNurse {
      * Forwarding constructor. We get to own the replay, but not the level
      * or the EffectManager. EffectManager must exist for interactive mode.
      */
-    this(in Level lev, Replay rp, EffectManager ef)
+    this(in Level lev, Replay rp, EffectSink ef)
     {
         assert (ef !is null);
-        super(lev, rp, some(ef));
+        super(lev, rp, ef);
     }
 
     void updateTo(in Phyu targetPhyu, in DuringTurbo duringTurbo)

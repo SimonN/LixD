@@ -63,7 +63,7 @@ package:
              // of that land, blits gadgets and lixes on it, and blits the
              // result to the screen. It is both a renderer and a camera.
     InteractiveNurse nurse;
-    EffectManager _effect; // null if we're verifying
+    EffectManager _effect; // never null, never the NullEffectSink
     RichClient _netClient; // null unless playing/observing multiplayer
 
     long altickLastPhyu;

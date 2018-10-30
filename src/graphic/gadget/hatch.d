@@ -2,8 +2,6 @@ module graphic.gadget.hatch;
 
 import std.algorithm; // min
 
-import optional;
-
 import basics.help;
 import basics.globals; // hatch arrow graphic
 import basics.topology;
@@ -45,7 +43,7 @@ public:
 
     override Hatch clone() const { return new Hatch(this); }
 
-    override void perform(in Phyu u, Optional!EffectManager effect)
+    override void perform(in Phyu u, EffectSink effect)
     {
         // (of) is first absolute frame of opening. This is earlier if the
         // sound shall match a later frame of the hatch, as given by specialX.
@@ -60,7 +58,7 @@ public:
             = (u % (updatesBlinkOn + updatesBlinkOff) < updatesBlinkOn);
         }
         if (u == updateOpen)
-            effect.dispatch.addSoundGeneral(u, Sound.HATCH_OPEN);
+            effect.addSoundGeneral(u, Sound.HATCH_OPEN);
     }
 
 protected:

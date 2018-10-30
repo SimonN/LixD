@@ -12,7 +12,7 @@ import physics;
 struct OutsideWorld {
     GameState state;
     PhysicsDrawer physicsDrawer;
-    Optional!EffectManager effect;
+    EffectSink effect;
     Passport passport;
 
     inout(Tribe) tribe() inout { return state.tribes[passport.style]; }
