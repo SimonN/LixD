@@ -36,8 +36,6 @@ public:
         _tt.onEnter = () {
             if (_tt.text.strip.length > 0) {
                 file.option.userNameOption = _tt.text.strip;
-                loadUserOptions();
-                loadTrophies();
                 _gotoMainMenu = true;
                 // Main menu will change resolution for us.
                 // I don't dare to do it here because we're in a GUI dialog.
