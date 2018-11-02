@@ -158,10 +158,6 @@ public:
         commonConstructor(generateFreshReplay(no!Filename));
     }
 
-    /* Using ~this to dispose stuff is probably bad style.
-     * Maybe refactor into a dispose() method that we call at exactly one
-     * point. ~this might be called more often by the language.
-     */
     void dispose()
     {
         if (pan) {
@@ -179,6 +175,10 @@ public:
         if (nurse) {
             nurse.dispose();
             nurse = null;
+        }
+        if (map) {
+            map.dispose();
+            map = null;
         }
     }
 
