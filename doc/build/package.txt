@@ -110,14 +110,15 @@ In a binary distribution, you don't have to ship these files that the Lix
 repository has, that the build system creates, or that the game creates.
 You should probable delete these before packaging the game:
 
-*   `./src'                              -- the source code
-*   `.git/' and `.gitignore'             -- version control files
-*   `./dub.json' and `./win-build.bat'   -- build system control files
-*   `./.dub/' and `.dub.selections.json' -- build system artifacts
-*   `./doc/build'                        -- the build documentation
-*   `./replays/'                         -- auto-saved game replays
-*   `./export/'                          -- exported level pics, screenshots
-*   `./user/'                            -- user options, trophies, logs
+*   src/                              -- the source code
+*   .git/ and .gitignore              -- version control
+*   dub.json and .dub.selections.json -- build system control files
+*   .dub/                             -- build artifacts
+*   win-build.bat                     -- batch file to build Lix on Windows
+*   doc/build/                        -- the build documentation
+*   replays/                          -- auto-saved game replays
+*   export/                           -- exported level pics, screenshots
+*   user/                             -- user options, trophies, logs
 
 
 

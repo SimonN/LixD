@@ -21,18 +21,23 @@ The text font, DejaVu Sans, and some music tracks have their own licenses.
 Build instructions
 ------------------
 
-* Install a [D compiler, e.g., dmd](https://dlang.org/download).
-* Install [dub, the D package handler](http://code.dlang.org/download).
+* Install a D compiler and dub, the build system:
+    * On Windows, get [LDC for Windows-x64](https://github.com/ldc-developers/ldc/releases), it ships with dub.
+    * On Arch Linux, install the `dlang` group package.
+    * On other Linuxes or Mac, follow [my detailed build instructions
+    ](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/linux.txt).
 * Install Allegro 5.2 and enet 1.3:
     * On Windows, follow [my detailed build instructions
-    ](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/windows.txt).
-    * On Linux/Mac, your package manager should provide them.
+    ](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/win64.txt).
+    * On Arch Linux, install the `pkg-config`, `allegro` and `enet` packages.
+    * On other Linuxes or Mac, follow [my detailed build instructions
+    ](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/linux.txt).
 * Build Lix: `$ dub build -b release` or, on Windows, run `win-build.bat`.
 * [Download the game music](http://www.lixgame.com/dow/lix-music.zip),
     extract in Lix's directory.
 * Run Lix: `$ bin/lix`
 
-If these build instructions were too short, read my [detailed instructions for Windows](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/windows.txt) or my
+If these build instructions were too short, read my [detailed instructions for Windows](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/win64.txt) or my
 [detailed instructions for Linux](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/linux.txt). Would you like to package Lix for Linux distributions? Please see my [notes for Linux package maintainers](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/package.txt).
 
 Networked multiplayer

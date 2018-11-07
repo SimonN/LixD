@@ -1,16 +1,28 @@
 How to build Lix on a Linux machine
 ===================================
 
-Install a D compiler and dub
-----------------------------
+I expect that Mac builds will be very similar to Linux builds. I don't have
+a Mac to test. Follow the same
 
-Get dmd (a D compiler) and dub from your package manager, or download here:
+Install a D environment
+-----------------------
 
+You need:
+
+* a D compiler: I encourage LDC. DMD is also supported, GDC is untested.
+* the D standard library Phobos (might be called libphobos or liblphobos),
+* the build system dub.
+
+Look into your package manager how to install these. E.g., for Arch linux,
+you can install the group package "dlang" to get everything. On other systems,
+look for packages called "ldc"/"ldc2" and "dub".
+
+If you don't use a package manager, here are some links. LDC from here might
+already ship with Phobos? Experiment.
+
+    https://github.com/ldc-developers/ldc/releases
     http://dlang.org/download.html
     https://code.dlang.org/download
-
-dub automates the build and fetches D bindings for libraries.
-dub does not install the libraries themselves, see next paragraph.
 
 
 
@@ -53,16 +65,16 @@ Installing enet manually
 Now (since August 2016), I rely on enet 1.3.x. Download it from
 enet.bespin.org, or clone from github:
 
-    $ git clone https://github.com/lsalzman/enet
+    git clone https://github.com/lsalzman/enet
 
 Lix uses enet via Derelict-enet. Derelict is a set of D library bindings and
 wants dynamically linked libraries, not static libraries. Therefore, we will
 build enet as a shared object:
 
-    $ autoreconf -vfi
-    $ ./configure --enable-shared=yes --enable-static=no
-    $ make
-    $ sudo make install
+    autoreconf -vfi
+    ./configure --enable-shared=yes --enable-static=no
+    make
+    sudo make install
 
 If the game doesn't find the newly-built lib, run sudo /sbin/ldconfig.
 
@@ -73,17 +85,16 @@ Build Lix
 
 Open a shell, navigate to Lix's root directory, and run:
 
-    dub
+    dub build
 
-This builds a debug version and runs it immediately. To play the game
-at a later time, invoke dub again, or run:
+This builds a debug version. To play the game, run:
 
     ./bin/lix
 
 If the debugging version compiles, links, and runs with no problems,
 build a release version for performance:
 
-    dub build -b release
+    dub build -b release --compiler=ldc
 
 
 

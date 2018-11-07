@@ -21,9 +21,9 @@
         "allegro_acodec",
         "allegro_audio",
         "allegro_font",
-        "allegro_ttf",
         "allegro_image",
         "allegro_primitives",
+        "allegro_ttf",
     ],
     "libs-ldc": ["allegro_color"],
     "libs-ldc2": ["allegro_color"],
@@ -34,13 +34,19 @@
     "libs-netbsd": ["allegro-5"],
     "libs-openbsd": ["allegro-5"],
     "libs-solaris": ["allegro-5"],
-
     "libs-osx": ["allegro"],
     "libs-windows": ["allegro"],
-    "sourceFiles-windows": ["src\\icon.res"],
-    "lflags-windows": ["-L/subsystem:windows"],
+
+    "lflags-windows-dmd": ["-L/subsystem:windows"],
+    "lflags-windows-ldc": ["-subsystem:windows", "-entry:mainCRTStartup"],
+    "lflags-windows-ldc2": ["-subsystem:windows", "-entry:mainCRTStartup"],
+
+    "sourceFiles-windows-x86": ["src\\icon\\win32.res"],
+    "sourceFiles-windows-x86_64": ["src\\icon\\win64.res"],
 
     "versions": ["ALLEGRO_NO_PRAGMA_LIB"],
+    "versions-windows-x86_64": ["ALLEGRO_MSVC"],
+
     "buildTypes": {
         "debug": {
             "buildOptions": ["debugMode", "debugInfo"],

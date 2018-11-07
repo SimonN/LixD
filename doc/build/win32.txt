@@ -1,5 +1,5 @@
-How to build Lix on a Windows machine
-=====================================
+How to build Lix on a 32-bit Windows machine
+============================================
 
 If you get stuck at any point, don't hesitate to contact me
 (Simon N.) and ask me for help:
@@ -8,6 +8,21 @@ If you get stuck at any point, don't hesitate to contact me
     E-Mail: s.naarmann@gmail.com
     Web:    http://www.lixgame.com
     Forum:  https://www.lemmingsforums.net -- we have a Lix board
+
+
+
+Really consider 64-bit
+----------------------
+
+I encourage you to build the 64-bit version of Lix instead of 32-bit Lix!
+Please see ./doc/build/win64.txt instead of this file, and continue there.
+
+Since 2010, computers with 32-bit Windows are extremely rare. Most likely,
+you and your fellow players all have 64-bit machines.
+
+32-bit Lix is inferior: D's garbage collector will often be confused by 32-bit
+pointers and thus will hog memory that could be easily freed. On large maps,
+32-bit Lix will even crash.
 
 
 
@@ -74,7 +89,7 @@ To install Allegro 5, you have a choice between two methods.
 Method 1:
     Download the Allegro DLLs and *.lib files from my website:
 
-        http://www.lixgame.com/dow/alleg-5.2-dlls-libs.zip
+        http://www.lixgame.com/dow/lix-dlls-libs-win32.zip
 
     Extract this into your D installation's windows/ directory. This way, the
     DLLs should automatically land in windows/bin/, and the *.lib files should
@@ -138,8 +153,6 @@ for performance:
 
 This takes longer to build. In case of a crash, you won't get a good
 crash report either. Non-fatal errors go to ./data/log.txt.
-Instead of entering the build command in the shell, you can double-click
-./win-build.bat to build a release version.
 
 
 

@@ -1,0 +1,155 @@
+How to build 64-bit Lix for Windows
+===================================
+
+If you get stuck at any point, don't hesitate to contact me
+(Simon N.) and ask me for help:
+
+    IRC:    irc.quakenet.org #lix, I'm SimonN or SimonNa
+    E-Mail: s.naarmann@gmail.com
+    Web:    http://www.lixgame.com
+    Forum:  https://www.lemmingsforums.net -- we have a Lix board
+
+
+
+Install LDC and dub
+-------------------
+
+Download the D compiler LDC, version 1.13.0-beta2 or newer, for Windows-x64:
+
+    https://github.com/ldc-developers/ldc/releases
+
+7z files can be extracted with 7-Zip, available at:
+
+    https://www.7-zip.org/download.html
+
+Extract the LDC archive to a directory of your choice. We will refer
+to that directory as the LDC directory.
+
+Add LDC's bin/ subdirectory to your Windows PATH variable. How to do that
+depends on your system:
+
+* In Windows 7:
+    1. Right-click My Computer.
+    2. Select Properties in the pop-up menu.
+    3. Go to the Advanced tab.
+    4. Click Environment Variables.
+    5. Highlight PATH and click Edit.
+    6. Move the cursor to the end of PATH's value text.
+    7. Add a semicolon ";" without quotes.
+    8. Add the path to your LDC directory, followed by "\bin" without quotes.
+    9. Click OK everywhere.
+
+* In Windows 10:
+    1. Open the Control Panel.
+    2. Select System and Security.
+    3. In the left column, select Advanced system settings.
+    4. Go to the Advanced tab.
+    5. Click Environment Variables.
+    6. Highlight PATH and click Edit.
+    7. Move the cursor to the end of PATH's value text.
+    8. Add a semicolon ";" without quotes.
+    8. Add the path to your LDC directory, followed by "\bin" without quotes.
+    10. Click OK everywhere.
+
+* In Wine on non-Windows systems:
+    1. Run "wine regedit" from a shell.
+    2. Go to HKEY_LOCAL_MACHINE -> System -> CurrentControlSet -> Control
+        -> Environment.
+    3. Edit the PATH variable.
+    4. Append a semicolon ";" without quotes.
+    5. Append the installation path of LDC, followed by "\bin" without quotes.
+        Use backslashes instead of slashes, but I haven't tried slashes.
+        C:\ will usually mean ~/.wine/drive_c/.
+        Z:\ will usually mean the Linux sysem's root directory /.
+
+Windows LDC already ships with a Windows version of dub, the D package manager.
+
+To verify that both LDC and dub are installed properly:
+    1. Open a command prompt.
+    2. Run "dub" or "ldc2" without quotes.
+    3. Check that both programs are found and output something different
+        than "is not a recognized program or command".
+
+
+
+Install Allegro 5 and enet
+--------------------------
+
+I have prepared all necessary DLLs in a single archive. Download this:
+
+    http://www.lixgame.com/dow/lix-dlls-libs-win64.zip
+
+Extract this into your LDC directory. You will get new DLLs in bin/ and
+new LIBs in lib/. Proceed to the next section, "Get the Lix source".
+
+If you don't trust me or prefer another way to get these files, you could
+build Allegro 5 from source, or get the Allegro DLLs and LIBs from its NuGet
+binary package. If you get them from the NuGet package, remove all files with
+"debug" within their name. Copy the other DLLs to LDC's bin/ dir, the other
+LIBs to LDC's lib/ dir. Match the filenames to what I provided in my archive.
+above, for example bin/allegro_acodec-5.2.dll or lib/allegro_acodec.lib.
+You'd also have to build enet from source.
+
+
+
+Get the Lix source
+------------------
+
+* If you have git:
+    Clone the repository:
+
+        git clone https://github.com/SimonN/LixD.git
+
+* If you don't have git:
+    Download the source as a zip archive here:
+
+        https://github.com/SimonN/LixD/archive/master.zip
+
+    Extract to a directory of your choice. We will refer to that directory
+    as the Lix directory.
+
+
+Compile Lix
+-----------
+
+Doubleclick win-build.bat in the Lix directory to build the game.
+If successful, you will get an executable ./bin/lix.exe, run it to start Lix.
+If Lix runs, proceed to the next section, "Add music".
+
+Alternatively, if you prefer the command line instead of the batch file,
+try either of these commands:
+
+    dub build --compiler=ldc2
+    dub build -b release --compiler=ldc2
+
+The first command builds a debugging version that builds faster and produces
+better error messages in case of a crash, but runs slower.
+
+The second command is the same as the batch file win-build.bat. This builds
+a release version that takes longer to build, but runs faster. Non-fatal
+errors during play will be written to ./user/log.txt.
+
+
+
+Add music
+---------
+
+Lix has music, but the music is not in version control. I encourage you to
+add the music for a more complete experience. To get the music, download:
+
+    http://www.lixgame.com/dow/lix-music.zip
+
+Extract this into Lix's directory, you'll get a subdirectory ./music/.
+
+
+
+Get help
+--------
+
+If you run into any kind of roadblock, don't be shy and ask:
+
+    Web:    http://www.lixgame.com
+    Issues: https://github.com/SimonN/LixD/issues
+    E-Mail: s.naarmann@gmail.com
+    IRC:    irc.quakenet.org #lix, I'm SimonN or SimonNa
+    Forums: lemmingsforums.net, I'm Simon
