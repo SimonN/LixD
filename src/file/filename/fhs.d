@@ -52,7 +52,7 @@ else {
     // XDG Base Directory Specification, version 0.7 from 2010:
     // https://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
     // rootForWriting "~/.local/share/lix/", and rootsForReading should be
-    // [ "~/.local/lix/", "/usr/local/share/lix/", "/usr/share/lix/" ].
+    // [ "~/.local/share/lix/", "/usr/local/share/lix/", "/usr/share/lix/" ].
     // See customReadOnlyDir at the top of this module for overriding XDG vars.
     version (Windows) {
         static assert (false, "On Windows, I support only self-contained Lix. "

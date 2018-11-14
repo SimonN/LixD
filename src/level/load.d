@@ -145,6 +145,9 @@ private void load_level_finalize(Level level) {
 }}
 
 unittest {
+    static import file.filename.vfsfile;
+    file.filename.vfsfile.initialize();
+
     Level l = new Level();
     l.load_from_vector([
         IoLine.Dollar(glo.levelBeginGroup, "0"),
