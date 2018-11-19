@@ -256,8 +256,14 @@ static this()
     avoidBatterToExploder = newOpt("avoidBatterToExploder", Lang.optionAvoidBatterToExploder, false);
     replayAfterFrameBack = newOpt("replayAfterFrameBack", Lang.optionReplayAfterFrameBack, true);
     unpauseOnAssign = newOpt("unpauseOnAssign", Lang.optionUnpauseOnAssign, false);
-
-    screenMode = newOpt("screenMode", Lang.optionScreenMode, ScreenMode.softwareFullscreen.to!int);
+    version (assert) {
+        screenMode = newOpt("screenMode", Lang.optionScreenMode,
+            ScreenMode.windowed.to!int);
+    }
+    else {
+        screenMode = newOpt("screenMode", Lang.optionScreenMode,
+            ScreenMode.softwareFullscreen.to!int);
+    }
     screenWindowedX = newOpt("screenWindowedX", Lang.optionScreenWindowedRes, 640);
     screenWindowedY = newOpt("screenWindowedY", 480);
     splatRulerDesign = newOpt("splatRulerDesign", Lang.optionSplatRulerDesign, 2);
