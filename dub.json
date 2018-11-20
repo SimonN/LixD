@@ -38,7 +38,6 @@
     "libs-osx": ["allegro"],
     "libs-windows": ["allegro"],
     "sourceFiles-windows": ["src\\icon.res"],
-    "dflags-windows": ["-Jsrc\\icon.res"],
     "lflags-windows": ["-L/subsystem:windows"],
 
     "versions": ["ALLEGRO_NO_PRAGMA_LIB"],
