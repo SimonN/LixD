@@ -1,12 +1,21 @@
 Lix
 ===
 
-Lix is an action-puzzle game inspired by Lemmings (DMA Design, 1991),
-with singleplayer puzzles, networked multiplayer, and a level editor.
-Lix is written in the D programming language, uses Allegro 5 for graphics,
-sound, and input, and uses enet for networking.
+Lix is an action-puzzle game inspired by Lemmings (DMA Design, 1991). Lix is free and open source.
+
+Assign skills to guide the lix through over 600 singleplayer puzzles. Design your own levels with the included editor.
+
+Attack and defend in real-time multiplayer for 2 to 8 players: Who can save the most lix?
 
 ![Lix screenshot](http://lixgame.com/img/lix-d-screenshot.png)
+
+Download
+--------
+
+[![Download icon](http://lixgame.com/img/download-icon.png)](https://github.com/SimonN/LixD/releases)
+[Download Lix for Windows or Linux](https://github.com/SimonN/LixD/releases)
+
+Mac or other systems: Build from source, see below.
 
 License/Copying/Public domain
 -----------------------------
@@ -17,28 +26,6 @@ via the CC0 public domain dedication.
 
 The text font, DejaVu Sans, and some music tracks have their own licenses.
 [Full license/copying text](https://raw.githubusercontent.com/SimonN/LixD/master/doc/copying.txt)
-
-Build instructions
-------------------
-
-* Install a D compiler and dub, the build system:
-    * On Windows, get [LDC for Windows-x64](https://github.com/ldc-developers/ldc/releases), it ships with dub.
-    * On Arch Linux, install the `dlang` group package.
-    * On other Linuxes or Mac, follow [my detailed build instructions
-    ](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/linux.txt).
-* Install Allegro 5.2 and enet 1.3:
-    * On Windows, follow [my detailed build instructions
-    ](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/win64.txt).
-    * On Arch Linux, install the `pkg-config`, `allegro` and `enet` packages.
-    * On other Linuxes or Mac, follow [my detailed build instructions
-    ](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/linux.txt).
-* Build Lix: `$ dub build -b release` or, on Windows, run `win-build.bat`.
-* [Download the game music](http://www.lixgame.com/dow/lix-music.zip),
-    extract in Lix's directory.
-* Run Lix: `$ bin/lix`
-
-If these build instructions were too short, read my [detailed instructions for Windows](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/win64.txt) or my
-[detailed instructions for Linux](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/linux.txt). Would you like to package Lix for Linux distributions? Please see my [notes for Linux package maintainers](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/package.txt).
 
 Networked multiplayer
 ---------------------
@@ -60,6 +47,34 @@ To build this server program, `$ cd src/server/`, then `$ dub build`,
 switch back to Lix's base directory with `$ cd ../../` and run the server
 with `$ bin/server`. The server will listen on UDP port 22934; you can choose
 a different port by `$ bin/server --port=<number>`.
+
+Build instructions
+------------------
+
+Detailed instructions:
+
+* [Detailed build instructions for Windows](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/win64.txt)
+* [Detailed instructions for Linux](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/linux.txt), Mac should be similar
+* [Notes for Linux package maintainers](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/package.txt)
+
+Quick build instructions:
+
+* Install a D compiler and dub, the build system:
+    * On Windows, get [LDC for Windows-x64](https://github.com/ldc-developers/ldc/releases), it ships with dub.
+    * On Arch Linux, install the `dlang` group package.
+    * On other Linuxes or Mac, follow [my detailed build instructions
+    ](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/linux.txt).
+* Install Allegro 5.2 and enet 1.3:
+    * On Windows, follow [my detailed build instructions
+    ](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/win64.txt).
+    * On Arch Linux, install the `pkg-config`, `allegro`, and `enet` packages.
+    * On Debian or Ubuntu, install the `pkg-config`, `liballegro5-dev`, and `libenet-dev` packages.
+    * On other Linuxes or Mac, follow [my detailed build instructions
+    ](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/linux.txt).
+* Build Lix: `$ dub build -b release` or, on Windows, run `win-build.bat`.
+* [Download the game music](http://www.lixgame.com/dow/lix-music.zip),
+    extract in Lix's directory.
+* Run Lix: `$ bin/lix`
 
 Contact
 -------
