@@ -1,0 +1,240 @@
+$BUILT 2018-11-25 20:00:00
+$AUTHOR F/Simon
+$ENGLISH Tea or Mulled Wine?
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 480
+
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 37
+
+#RUNNER 1
+#CLIMBER 1
+#BUILDER 1
+#PLATFORMER 2
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#JUMPER 1
+#EXPLODER2 0
+
+:raymanni/holiday/hatch.H: 208 128 r
+
+:raymanni/holiday/goal.G: 476 114
+
+:raymanni/holiday/porcupine.T: 494 384
+:raymanni/holiday/porcupine.T: 410 384
+
+:raymanni/lab/goo.W: 470 256
+:raymanni/lab/goo.W: 502 224
+:raymanni/lab/goo.W: 438 208
+:raymanni/lab/goo.W: 502 176
+:raymanni/lab/goo.W: 470 176
+:raymanni/lab/goo.W: 438 176
+:raymanni/lab/goo.W: 406 176
+:raymanni/lab/goo.W: 438 240
+:raymanni/lab/goo.W: 470 240
+:raymanni/lab/goo.W: 502 240
+:raymanni/lab/goo.W: 406 256
+:raymanni/lab/goo.W: 438 256
+:raymanni/lab/goo.W: 502 256
+:raymanni/lab/goo.W: 406 272
+:raymanni/lab/goo.W: 438 272
+:raymanni/lab/goo.W: 470 272
+:raymanni/lab/goo.W: 502 272
+:raymanni/lab/goo_fall.W: 530 174
+:raymanni/lab/goo_fall.W: 530 158
+:raymanni/lab/goo_fall.W: 530 143
+:raymanni/lab/goo_fall.W: 530 127
+:proxima/flame.F: 108 416
+:proxima/flame.F: 140 416
+:raymanni/lab/goo.W: 406 192
+:raymanni/lab/goo.W: 438 192
+:raymanni/lab/goo.W: 470 192
+:raymanni/lab/goo.W: 502 192
+:raymanni/lab/goo.W: 470 208
+:raymanni/lab/goo.W: 502 208
+:raymanni/lab/goo.W: 406 224
+:raymanni/lab/goo.W: 438 224
+:raymanni/lab/goo.W: 470 224
+:raymanni/lab/goo_fall.W: 530 111
+:raymanni/lab/goo.W: 406 240
+:raymanni/lab/goo.W: 406 208
+:raymanni/lab/goo.W: 534 208
+:raymanni/lab/goo.W: 534 176
+:raymanni/lab/goo.W: 534 240
+:raymanni/lab/goo.W: 534 256
+:raymanni/lab/goo.W: 534 272
+:raymanni/lab/goo.W: 534 192
+:raymanni/lab/goo.W: 534 224
+
+:geoo/construction/steam_up.T: 262 226
+
+:proxima/tile/spheres/greysmall.S: 464 346
+:raymanni/holiday/cane_mid: 558 304 r
+:raymanni/holiday/cane_b: 576 194
+$BEGIN_TILE_GROUP 0
+:matt/winter/08: 1 3
+:matt/winter/08: 14 0 rd
+:matt/winter/08: 0 0 rrrd
+:matt/winter/08: 3 0 rrrd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:Group-0: 3 0
+:Group-0: 0 3 r
+$END_TILE_GROUP
+:Group-1: 129 118
+:Group-1: 105 91
+:Group-1: 126 81
+:Group-1: 66 142
+:Group-1: 126 142
+:Group-1: 87 146
+:matt/winter/07: 156 30 rr
+:matt/winter/07: 64 38 rr
+:matt/winter/07: 94 26 rr
+:matt/winter/07: 130 24 rr
+:matt/winter/07: 144 44 rr
+:matt/winter/07: 86 56 rr
+:matt/winter/07: 74 33 rr
+:matt/winter/14: 138 120
+:matt/winter/17: 68 156 rrr
+:raymanni/holiday/snowlix: 130 148
+:raymanni/holiday/plank_long: 112 80 fr
+:matt/bricks/18: 572 36
+:matt/bricks/18: 530 64 r
+:raymanni/holiday/cane_end1: 560 264 fr
+:raymanni/holiday/cane_end1: 560 194 fr
+:raymanni/holiday/cane_d: 576 248
+:geoo/construction/fence_rust_32x32: 176 432
+:geoo/construction/fence_rust_32x32: 192 432
+:geoo/construction/fence_rust_32x32: 64 432
+:geoo/construction/fence_rust_32x32: 80 432
+:raymanni/holiday/plank_mid1: 224 432 fr
+:raymanni/holiday/plank_mid1: 48 432 fr
+:geoo/construction/concrete/016vd: 240 288
+:geoo/construction/pillar_32: 184 384
+:geoo/construction/pillar_32: 184 368
+:geoo/construction/pillar_32: 184 336
+:geoo/construction/concrete/064: 128 288
+:geoo/construction/concrete/016vb: 192 288
+:geoo/construction/concrete/016h: 192 320
+:geoo/construction/concrete/016h: 96 288
+:raymanni/holiday/cane_mid: 398 272
+:raymanni/holiday/cane_mid: 398 240
+:raymanni/holiday/cane_mid: 398 208
+:raymanni/holiday/cane_mid: 398 176
+:raymanni/holiday/cane_mid: 550 272
+:raymanni/holiday/cane_mid: 550 240
+:raymanni/holiday/cane_mid: 550 208
+:raymanni/holiday/cane_mid: 550 176
+:raymanni/holiday/cane_mid: 398 304 r
+:raymanni/holiday/cane_mid: 592 222
+:geoo/construction/concrete/016ha: 112 272
+:geoo/construction/concrete/016hb: 160 272
+:geoo/construction/concrete/016: 144 272
+:geoo/construction/concrete/032va: 72 288
+:geoo/construction/concrete/016ha: 192 304
+:geoo/construction/concrete/016va: 224 272
+:geoo/construction/concrete/016hd: 240 280
+:geoo/construction/concrete/016hd: 192 336
+:geoo/construction/concrete/016d: 224 320
+:geoo/construction/concrete/016: 224 304
+:geoo/construction/concrete/008h: 240 272
+:geoo/construction/concrete/008h: 256 272
+:geoo/construction/concrete/016ha: 48 272
+:geoo/construction/concrete/016vb: 48 320
+:geoo/construction/concrete/016vd: 48 288
+:geoo/construction/concrete/016va: 32 288
+:geoo/construction/concrete/016vc: 32 320
+:geoo/construction/concrete/016hb: 80 272
+:geoo/construction/concrete/016hc: 64 288
+:geoo/construction/concrete/032c: 48 352
+:geoo/construction/concrete/064h: 72 352
+:geoo/construction/concrete/064: 104 288
+:geoo/construction/concrete/032vb: 168 288
+:geoo/construction/fence_rust_32x32: 64 416
+:geoo/construction/fence_rust_32x32: 96 416
+:geoo/construction/fence_rust_32x32: 128 416
+:geoo/construction/fence_rust_32x32: 160 416
+:geoo/construction/fence_rust_32x32: 192 416
+:raymanni/holiday/plank_long: 80 464
+:raymanni/holiday/plank_left: 48 416 fr
+:raymanni/holiday/plank_left: 224 416 fr
+:raymanni/holiday/plank_right: 208 464
+:raymanni/holiday/plank_left: 48 464
+:raymanni/holiday/cane_end1: 398 160
+:raymanni/holiday/cane_end1: 550 160
+:raymanni/holiday/cane_mid: 430 304 r
+:raymanni/holiday/cane_mid: 462 304 r
+:raymanni/holiday/cane_mid: 494 304 r
+:matt/bricks/19: 522 96
+$BEGIN_TILE_GROUP 2
+:matt/bricks/18: 0 0
+:matt/bricks/09b: 0 0 d
+$END_TILE_GROUP
+:Group-2: 530 65
+:matt/bricks/18: 552 64 r
+:matt/bricks/18: 584 64 r
+:matt/bricks/18: 616 64 r
+:matt/bricks/19: 596 28 rrr
+:matt/bricks/20: 548 28 rrr
+:matt/bricks/18: 564 36 rrr
+$BEGIN_TILE_GROUP 3
+:raymanni/holiday/snow4: 6 24
+:raymanni/holiday/snow4: 46 0 d
+:matt/underworld/09a: 0 42 d
+:raymanni/holiday/snow4: 32 42 d
+:matt/underworld/09a: 66 12 d
+:raymanni/holiday/snow4: 67 32 d
+:raymanni/holiday/snow4: 72 20 d
+$END_TILE_GROUP
+:Group-3: 477 174
+:raymanni/holiday/plank_long: 64 192
+:raymanni/holiday/plank_long: 48 128
+:raymanni/holiday/plank_long: 48 64
+:raymanni/holiday/plank_long: 48 80 fr
+:raymanni/holiday/plank_long: 176 80 fr
+:raymanni/holiday/plank_left: 48 64
+:raymanni/holiday/plank_left: 176 64 fr
+:raymanni/holiday/plank_right: 160 192
+:raymanni/holiday/plank_right: 48 176 fr
+:raymanni/holiday/screw1: 48 192
+:raymanni/holiday/screw1: 48 64
+:raymanni/holiday/screw1: 176 64
+:raymanni/holiday/screw1: 176 192
+:raymanni/holiday/garland: 0 0
+:raymanni/holiday/garland: 192 0
+:raymanni/holiday/garland: 256 0
+:raymanni/holiday/garland: 320 0
+:raymanni/holiday/garland: 384 0
+:raymanni/holiday/garland: 448 0
+:raymanni/holiday/garland: 512 0
+:raymanni/holiday/garland: 576 0
+:geoo/construction/concrete/064h: 64 208 d
+:geoo/construction/concrete/064h: 64 0 d
+:raymanni/holiday/garland: 64 0
+:raymanni/holiday/garland: 128 0
+:Group-1: 75 107
+:Group-1: 101 117
+:Group-1: 72 165
+:Group-1: 95 157
+:Group-1: 138 96
+:Group-1: 151 113
+:Group-1: 166 92
+$BEGIN_TILE_GROUP 4
+:geoo/steel/dark_32x16o.S: 2 0
+:geoo/construction/concrete/016hd: 0 0 d
+$END_TILE_GROUP
+:Group-4: 240 256
+:geoo/steel/dark_64x32o.S: 394 320
+:proxima/tile/spheres/greysmall.S: 464 374
+:proxima/tile/spheres/greysmall.S: 464 402
+:proxima/tile/spheres/greysmall.S: 464 430
+:geoo/steel/dark_64x32o.S: 416 448
+:geoo/steel/dark_64x32o.S: 480 448
+:geoo/steel/dark_48x32o.S: 458 320
+:raymanni/holiday/cane_mid: 526 304 r
+:geoo/steel/dark_64x32o.S: 506 320
+:raymanni/holiday/cane_mid: 566 304 rd

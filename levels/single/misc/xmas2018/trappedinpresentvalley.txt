@@ -1,0 +1,64 @@
+$BUILT 2018-11-25 20:00:00
+$AUTHOR F/Simon
+$ENGLISH Trapped in Present Valley
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 464
+#SIZE_Y 208
+
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 6
+
+#CLIMBER 1
+#PLATFORMER 1
+#MINER 1
+#BATTER 2
+#EXPLODER2 0
+
+:raymanni/holiday/hatch.H: 160 16 r
+
+:raymanni/holiday/goal.G: 366 42
+
+:raymanni/holiday/porcupine.T: 400 -30
+
+:simon/crystal.W: 304 114
+
+:raymanni/holiday/gift2: -52 192
+:raymanni/holiday/gift4: -20 160
+:raymanni/holiday/snow4: 146 100 frr
+:raymanni/holiday/snow1: 96 96
+:raymanni/holiday/plank_long: 96 136 rrr
+:raymanni/holiday/snow4: 50 188 rr
+:raymanni/holiday/gift1: 12 160 fr
+:raymanni/holiday/snow4: -12 194
+:raymanni/holiday/gift4: 408 66
+:raymanni/holiday/gift2: 408 98
+:raymanni/holiday/gift3: 440 66
+:raymanni/holiday/snow2: 416 104
+:raymanni/holiday/snow3: 276 144 fr
+:raymanni/holiday/snow3: 96 100
+:raymanni/holiday/snow1: 88 168
+:raymanni/holiday/plank_left: 96 104 fr
+:raymanni/holiday/snow4: 112 96
+:raymanni/holiday/gift4: 154 102
+:raymanni/holiday/gift3: 186 102
+:raymanni/holiday/snow2: 144 120
+:raymanni/holiday/snow2: 198 106 frr
+:raymanni/holiday/snow2: 332 104
+:raymanni/holiday/gift1: 0 128
+:raymanni/holiday/gift4: 0 96
+:raymanni/holiday/gift3: 32 96
+:raymanni/holiday/gift2: 238 172
+:raymanni/holiday/snow4: 236 188 frr
+:raymanni/holiday/snow4: 362 140 frr
+:raymanni/holiday/gift2: 0 64
+:raymanni/holiday/gift4: 32 32
+:raymanni/holiday/gift3: 0 32
+:raymanni/holiday/gift2: 0 0
+:raymanni/holiday/snow1: 178 122 r
+:raymanni/holiday/gift4: 270 140
+:raymanni/holiday/gift3: 238 140
+:raymanni/holiday/gift1: 388 130 fr
+:raymanni/holiday/snow4: 368 186
+:raymanni/holiday/gift2: 408 34

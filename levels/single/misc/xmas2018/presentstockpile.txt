@@ -1,0 +1,85 @@
+$BUILT 2018-11-25 20:00:00
+$AUTHOR F
+$ENGLISH Stockpile of Presents
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 480
+#SIZE_Y 272
+
+#INITIAL 5
+#REQUIRED 5
+#SPAWN_INTERVAL 22
+
+#RUNNER 5
+#CLIMBER 5
+#PLATFORMER 2
+#BASHER 1
+#MINER 1
+#JUMPER 6
+#EXPLODER2 0
+
+:raymanni/holiday/hatch.H: 24 199
+
+:raymanni/holiday/goal.G: 416 112
+
+:raymanni/holiday/porcupine.T: 296 192
+
+:raymanni/holiday/plank_long: 16 256
+:raymanni/holiday/gift2: 144 240
+:raymanni/holiday/gift2: 208 240
+:raymanni/holiday/gift1: 144 208
+:raymanni/holiday/gift1: 208 208
+:raymanni/holiday/gift2: 144 176
+:raymanni/holiday/gift2: 208 176
+:raymanni/holiday/gift1: 208 144
+:raymanni/holiday/gift3: 176 144
+:raymanni/holiday/gift2: 208 112
+:raymanni/holiday/gift2: 144 112
+:raymanni/holiday/steel1.S: 272 240
+:raymanni/holiday/steel1.S: 272 208
+:raymanni/holiday/steel1.S: 272 176
+:raymanni/holiday/steel1.S: 272 144
+:raymanni/holiday/steel1.S: 272 112
+:raymanni/holiday/steel1.S: 272 80
+:raymanni/holiday/gift2: 352 208
+:raymanni/holiday/gift2: 416 208
+:raymanni/holiday/gift1: 352 176
+:raymanni/holiday/gift1: 416 176
+:raymanni/holiday/gift2: 352 144
+:raymanni/holiday/gift2: 352 80
+:raymanni/holiday/gift3: 384 112
+:raymanni/holiday/plank_long: 22 272
+:raymanni/holiday/cane_mid: 0 224
+:raymanni/holiday/cane_mid: 0 192
+:raymanni/holiday/cane_mid: 0 160
+:raymanni/holiday/cane_a: 0 96
+:raymanni/holiday/cane_end2: 64 192
+:raymanni/holiday/cane_b: 48 160
+:raymanni/holiday/steel1.S: 240 80
+:raymanni/holiday/steel1.S: 208 80
+:raymanni/holiday/steel1.S: 176 80
+:raymanni/holiday/steel1.S: 144 80
+:raymanni/holiday/gift1: 352 240
+:raymanni/holiday/gift1: 416 240
+:raymanni/holiday/cane_mid: 16 192
+:raymanni/holiday/cane_mid: 16 224
+:raymanni/holiday/cane_a: 16 160
+:raymanni/holiday/cane_mid: 0 128
+:raymanni/holiday/cane_end2: 48 128
+:raymanni/holiday/cane_b: 32 96
+:raymanni/holiday/screw1: 216 88
+:raymanni/holiday/screw1: 294 74
+:raymanni/holiday/garland: -16 0
+:raymanni/holiday/garland: 48 0
+:raymanni/holiday/garland: 112 0
+:raymanni/holiday/garland: 176 0
+:raymanni/holiday/garland: 240 0
+:raymanni/holiday/garland: 304 0
+:raymanni/holiday/garland: 368 0
+:raymanni/holiday/garland: 432 0
+:raymanni/holiday/steel1.S: 416 80
+:raymanni/holiday/steel1.S: 448 80
+:raymanni/holiday/plank_left: 0 256
+:raymanni/holiday/plank_right: 112 256
+:raymanni/holiday/plank_right: 320 256
+:raymanni/holiday/plank_left: 304 256

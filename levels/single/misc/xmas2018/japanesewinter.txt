@@ -1,0 +1,190 @@
+$BUILT 2018-11-25 20:00:00
+$AUTHOR Simon
+$ENGLISH Japanese Winter
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 768
+#SIZE_Y 400
+
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 69
+
+#CLIMBER 1
+#BUILDER 1
+#BASHER 2
+#MINER 2
+#JUMPER 3
+#EXPLODER2 0
+
+:raymanni/holiday/hatch.H: 486 240 r
+
+:raymanni/holiday/goal.G: 502 179
+
+:raymanni/holiday/porcupine.T: 422 180
+
+:simon/oriental/culm_open: 457 223
+:simon/oriental/pebble3: 576 308
+:simon/oriental/fat_long: 440 242 r
+:raymanni/holiday/snow4: 72 112
+:simon/oriental/05_btm: 86 92 fr
+:simon/oriental/branch5: -12 310 rr
+:simon/oriental/bush5: 6 332
+:simon/oriental/bush4: 236 192 frr
+:raymanni/holiday/snow3: 240 98 fr
+:simon/oriental/bush4: 284 118 frr
+:raymanni/holiday/snow1: 350 71 fr
+:raymanni/holiday/snow1: 374 81
+:raymanni/holiday/snow3: 326 98 fr
+:raymanni/holiday/snow1: 324 101 rr
+:raymanni/holiday/snow1: 328 85 fr
+:raymanni/holiday/snow1: 392 85 r
+$BEGIN_TILE_GROUP 0
+:amanda/forest/stone_01: 12 26 r
+:raymanni/gore/goop_5: 68 18 frrd
+:raymanni/gore/goop_5: 18 26 d
+:simon/oriental/05: 0 0 rd
+$END_TILE_GROUP
+:Group-0: 328 106
+:amanda/forest/stone_00: 320 146 fr
+:amanda/forest/stone_00: 386 154 r
+:amanda/forest/stone_00: 242 106 r
+:raymanni/holiday/snow1: 214 122 r
+:amanda/forest/stone_01: 218 118 r
+:amanda/forest/stone_00: 278 176 r
+:amanda/forest/stone_00: 344 150 r
+:simon/oriental/culm_long: 440 254 r
+:amanda/forest/stone_01: 326 176 r
+:amanda/forest/stone_01: 262 208 r
+:amanda/forest/stone_01: 166 208 r
+:simon/oriental/earth: 150 272
+:simon/oriental/earth: 310 272
+:raymanni/holiday/snow4: 112 114 frr
+:raymanni/holiday/snow4: 108 120 frr
+:raymanni/holiday/snow1: 161 127 rr
+:raymanni/holiday/snow1: 88 128
+:amanda/forest/stone_00: 180 160 r
+$BEGIN_TILE_GROUP 1
+:amanda/forest/stone_00: 24 38 r
+:raymanni/gore/goop_1: 28 46 d
+:simon/oriental/05: 0 0 rd
+$END_TILE_GROUP
+:Group-1: 180 130
+:simon/oriental/bonsai: 182 96
+:simon/oriental/earth: 230 272
+:raymanni/holiday/snow3: 133 130 f
+:raymanni/holiday/snow1: 104 124
+:simon/oriental/08: 118 292
+:simon/oriental/pebbles5: 214 304
+:simon/oriental/pebbles6: 164 310
+:amanda/forest/stone_01: -18 368 fr
+:simon/oriental/bush4: -10 368 frr
+:amanda/forest/stone_01: 204 332 r
+:amanda/forest/stone_01: 102 368 fr
+:amanda/forest/stone_02: 374 328 r
+:simon/oriental/leaf2: 380 162 rrr
+:simon/oriental/leaf1: 254 198 f
+:simon/oriental/culm_d_half: 268 182 frr
+:simon/oriental/leaf2: 252 162 rr
+:simon/oriental/fat_d_long: 278 192 frr
+:simon/oriental/culm_long: 442 156
+:simon/oriental/earth: 374 246
+:simon/oriental/fat_long: 368 160
+:raymanni/holiday/snow3: 754 130 f
+:raymanni/holiday/snow1: 728 110
+:raymanni/holiday/snow3: 729 136 f
+:raymanni/holiday/snow1: 777 121 fr
+:simon/oriental/08: 736 216 frr
+:amanda/forest/stone_01: 646 344 r
+:simon/oriental/branch1: 672 212 rrr
+:simon/oriental/branch3: 653 250 rr
+:simon/oriental/branch3: 655 254
+:simon/oriental/pebbles3: 604 246 rr
+:simon/oriental/pebbles3: 641 252 rrr
+:simon/oriental/pebbles3: 622 254 r
+:simon/oriental/pebbles3: 594 268
+:simon/oriental/branch5: 606 237 rr
+:simon/oriental/earth: 588 284
+:simon/oriental/branch7: 657 283 frr
+:simon/oriental/branch7: 653 226 f
+:simon/oriental/branch7: 585 251 rr
+:simon/oriental/branch7: 578 308
+:simon/oriental/fat_half1: 564 242 r
+:raymanni/holiday/snow1: 601 44 r
+:raymanni/holiday/snow3: 609 67 f
+:raymanni/holiday/snow1: 584 54
+:raymanni/holiday/snow3: 584 73 f
+:simon/oriental/08: 590 160
+:simon/oriental/culm_long: 533 253 r
+:raymanni/holiday/snow1: 626 58 fr
+$BEGIN_TILE_GROUP 2
+:simon/oriental/08: 4 20
+:raymanni/gore/goop_5: 0 0 d
+:raymanni/gore/goop_6: 42 14 d
+$END_TILE_GROUP
+:Group-2: 590 83
+:simon/oriental/07: 422 288
+:simon/oriental/10: 502 288
+:simon/oriental/02b: 534 272
+:amanda/forest/stone_00: 622 296 r
+:simon/oriental/pebbles6: 570 304
+:amanda/forest/stone_02: 593 331 r
+:amanda/forest/stone_01: 712 272
+:Group-2: 736 139 frr
+:simon/oriental/07: 502 320
+:amanda/forest/stone_02: 534 347 r
+:simon/oriental/pebble3: 620 313
+:simon/oriental/pebble1: 599 305 rr
+:simon/oriental/culm_half2: 442 132
+:simon/oriental/leaf2: 463 70 rrr
+:simon/oriental/culm_half1: 443 109
+:simon/oriental/leaf5: 431 114 rrr
+:simon/oriental/gate: 338 224
+:simon/oriental/leaf2: 410 200 r
+:simon/oriental/leaf3: 414 154 f
+:simon/oriental/pebbles5: 272 308 rr
+:simon/oriental/07: 342 288
+:amanda/forest/stone_01: 436 324 r
+:simon/oriental/pebbles6: 342 312
+:amanda/forest/stone_01: 386 310 r
+:amanda/forest/stone_02: 302 334 r
+:simon/oriental/05: 70 208
+:simon/oriental/05: 70 288
+:simon/oriental/pebbles6: 114 328 r
+:simon/oriental/05: 70 368
+:amanda/forest/stone_01: 56 364 fr
+:simon/oriental/bush4: 56 366 frr
+:simon/oriental/bush4: 114 364
+:simon/oriental/bush3: 212 338
+:simon/oriental/bush6: 284 342
+:simon/oriental/bush3: 232 332
+:simon/oriental/bush3: 320 336
+:simon/oriental/bush5: 296 338
+:simon/oriental/bush5: 268 336
+:simon/oriental/05_top: 70 92 fr
+$BEGIN_TILE_GROUP 3
+:simon/oriental/08: 48 98
+:simon/oriental/05: 0 18
+:simon/oriental/05_top: 0 18
+:simon/oriental/08: 48 18
+:raymanni/gore/goop_5: 25 0 d
+:raymanni/gore/goop_3: 68 11 d
+$END_TILE_GROUP
+:Group-3: 70 132
+:simon/oriental/01: 450 108 d
+:simon/oriental/culm_end: 456 101
+:simon/oriental/culm_half2: 456 123
+:simon/oriental/01: 450 174 d
+:simon/oriental/01: 450 152 d
+:simon/oriental/bush7: 228 218
+:simon/oriental/bush7: -12 348 frr
+:simon/oriental/bush7: 12 310
+:simon/oriental/bush4: 585 233 frr
+:simon/oriental/leaf6: 268 214 r
+:simon/oriental/pebble1: 447 102 rrd
+:simon/oriental/01: 450 204 d
+:simon/oriental/culm_long: 456 146
+:simon/oriental/01: 464 199 d
+:simon/oriental/01: 464 173 d
+:simon/oriental/01: 464 143 d
+:simon/oriental/01: 464 115 d

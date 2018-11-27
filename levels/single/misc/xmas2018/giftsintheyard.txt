@@ -1,0 +1,67 @@
+$BUILT 2018-11-25 20:00:00
+$AUTHOR Simon
+$ENGLISH Gifts in the Yard
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 480
+#SIZE_Y 208
+
+#INITIAL 7
+#REQUIRED 7
+#SPAWN_INTERVAL 17
+
+#CLIMBER 1
+#BASHER 2
+#JUMPER 3
+#EXPLODER2 0
+
+:raymanni/holiday/hatch.H: 64 0
+
+:raymanni/holiday/goal.G: 378 93
+
+:raymanni/holiday/porcupine.T: 386 10
+
+:simon/crystal.W: 336 176
+:simon/crystal.W: 384 176
+:simon/crystal.W: 432 176
+
+:raymanni/holiday/gift3: 430 122
+:raymanni/holiday/snowlix: 184 116 fr
+:raymanni/holiday/snow2: -72 122
+:raymanni/holiday/snow3: 60 96
+$BEGIN_TILE_GROUP 0
+:raymanni/holiday/snow1: 10 0
+:raymanni/holiday/cane_d: 40 12 d
+:raymanni/holiday/cane_d: 0 12 rd
+:raymanni/holiday/gift1: 0 29 d
+$END_TILE_GROUP
+:Group-0: 100 112 fr
+:raymanni/holiday/snow4: 350 153
+:raymanni/holiday/gift1: 246 102
+:raymanni/holiday/snowlix: 152 120
+:Group-0: 169 36 fr
+:raymanni/holiday/snow2: 94 124
+:raymanni/holiday/snow3: 142 144 fr
+:raymanni/holiday/snow2: 172 124
+:raymanni/holiday/snow2: 240 128 frr
+:raymanni/holiday/snow3: 282 126 r
+:raymanni/holiday/snow1: 158 84
+:Group-0: 163 65
+:raymanni/holiday/snowlix: 174 18
+:raymanni/holiday/plank_left: 240 86
+:raymanni/holiday/plank_right: 270 86
+:raymanni/holiday/gift3: 234 54
+:raymanni/holiday/snow4: 42 146
+:raymanni/holiday/snow4: 206 154 frr
+:raymanni/holiday/gift3: 360 42
+:raymanni/holiday/plank_left: 374 74
+:raymanni/holiday/plank_right: 406 74
+:raymanni/holiday/gift1: 378 90
+:raymanni/holiday/snow3: -40 72 frd
+:raymanni/holiday/snow2: 12 126
+:raymanni/holiday/gift1: -18 98
+:raymanni/holiday/snow4: -78 124 frr
+:raymanni/holiday/plank_left: -10 82
+:raymanni/holiday/plank_right: 20 82
+:raymanni/holiday/gift3: 26 50
+:raymanni/holiday/snow3: 41 153

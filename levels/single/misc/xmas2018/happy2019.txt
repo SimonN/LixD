@@ -1,0 +1,181 @@
+$BUILT 2018-11-25 20:00:00
+$AUTHOR F
+$ENGLISH Happy 2019
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 606
+#SIZE_Y 304
+
+#INITIAL 19
+#REQUIRED 19
+#SPAWN_INTERVAL 19
+
+#WALKER 1
+#RUNNER 1
+#CLIMBER 1
+#FLOATER 1
+#BUILDER 3
+#PLATFORMER 1
+#BASHER 3
+#MINER 3
+#DIGGER 2
+#JUMPER 2
+#BATTER 1
+#EXPLODER2 0
+
+:raymanni/holiday/hatch.H: 80 32
+
+:raymanni/holiday/goal.G: 376 208
+
+:raymanni/holiday/porcupine.T: 262 16
+
+:raymanni/holiday/cane_mid: 408 160 r
+:raymanni/holiday/cane_mid: 264 272 r
+:raymanni/holiday/cane_mid: 232 272 r
+:raymanni/holiday/cane_mid: 136 224 f
+:raymanni/holiday/cane_mid: 184 176 frr
+:raymanni/holiday/cane_mid: 328 256
+:raymanni/holiday/cane_mid: 424 192
+:raymanni/holiday/cane_mid: 424 224
+:raymanni/holiday/cane_mid: 328 224
+:raymanni/holiday/cane_mid: 328 192
+:raymanni/holiday/cane_mid: 328 160
+:raymanni/holiday/cane_mid: 280 224 frr
+:raymanni/holiday/cane_mid: 280 192 frr
+:raymanni/holiday/cane_mid: 184 208 frr
+:raymanni/holiday/cane_mid: 176 216 r
+:raymanni/holiday/cane_mid: 136 256 frr
+:raymanni/holiday/cane_mid: 144 216 r
+:raymanni/holiday/cane_mid: 120 272 r
+:raymanni/holiday/cane_mid: 80 112
+:raymanni/holiday/cane_mid: 80 80
+:raymanni/holiday/cane_mid: 80 48
+:raymanni/holiday/cane_mid: 80 16
+:raymanni/holiday/cane_mid: 128 112 frr
+:raymanni/holiday/cane_mid: 128 80 frr
+:raymanni/holiday/cane_mid: 128 48 frr
+:raymanni/holiday/cane_mid: 128 16 frr
+:raymanni/holiday/cane_mid: 96 80 r
+:raymanni/holiday/cane_mid: 168 112
+:raymanni/holiday/cane_mid: 168 80
+:raymanni/holiday/cane_mid: 168 48
+:raymanni/holiday/cane_mid: 168 16
+:raymanni/holiday/cane_mid: 216 112 frr
+:raymanni/holiday/cane_mid: 216 80 frr
+:raymanni/holiday/cane_mid: 216 48 frr
+:raymanni/holiday/cane_mid: 216 16 frr
+:raymanni/holiday/cane_mid: 184 80 r
+:raymanni/holiday/cane_mid: 184 16 r
+:raymanni/holiday/cane_mid: 256 112
+:raymanni/holiday/cane_mid: 256 80
+:raymanni/holiday/cane_mid: 256 48
+:raymanni/holiday/cane_mid: 256 16
+:raymanni/holiday/cane_mid: 304 80 frr
+:raymanni/holiday/cane_mid: 304 48 frr
+:raymanni/holiday/cane_mid: 304 16 frr
+:raymanni/holiday/cane_mid: 272 80 r
+:raymanni/holiday/cane_mid: 272 16 r
+:raymanni/holiday/cane_mid: 304 96 frrd
+:raymanni/holiday/cane_mid: 432 112
+:raymanni/holiday/cane_mid: 432 80
+:raymanni/holiday/cane_mid: 432 48
+:raymanni/holiday/cane_mid: 432 16
+:raymanni/holiday/cane_mid: 480 80 frr
+:raymanni/holiday/cane_mid: 480 48 frr
+:raymanni/holiday/cane_mid: 480 16 frr
+:raymanni/holiday/cane_mid: 448 80 r
+:raymanni/holiday/cane_mid: 452 130 frrd
+:raymanni/holiday/cane_mid: 480 96 frrd
+:raymanni/holiday/cane_mid: 136 160 rrr
+:raymanni/holiday/cane_mid: 168 160 rrr
+:raymanni/holiday/cane_mid: 280 256 frr
+:raymanni/holiday/cane_mid: 232 256
+:raymanni/holiday/cane_mid: 232 224
+:raymanni/holiday/cane_mid: 232 192
+:raymanni/holiday/cane_mid: 232 160
+:raymanni/holiday/cane_mid: 248 160 r
+:raymanni/holiday/cane_mid: 424 160
+:raymanni/holiday/cane_mid: 424 256
+:raymanni/holiday/cane_mid: 392 272 r
+:raymanni/holiday/cane_mid: 376 160 r
+:raymanni/holiday/cane_mid: 376 160 frr
+:raymanni/holiday/cane_mid: 376 192 frr
+:raymanni/holiday/cane_mid: 392 208 r
+:raymanni/holiday/cane_mid: 376 256 frr
+:raymanni/holiday/cane_mid: 136 200 rd
+:matt/marble/00a: 524 44
+:matt/marble/00a: 560 60
+:matt/marble/00a: 508 78
+:matt/marble/00a: 514 108
+:matt/marble/00a: 558 130
+:matt/marble/00a: 496 168
+:matt/marble/00a: 548 196
+:matt/marble/00a: 504 236
+:matt/marble/00a: 540 250
+:matt/marble/00a: 464 266
+:matt/marble/00a: 14 22
+:matt/marble/00a: 46 54
+:matt/marble/00a: 18 94
+:matt/marble/00a: 52 114
+:matt/marble/00a: 22 158
+:matt/marble/00a: 60 166
+:matt/marble/00a: 30 220
+:matt/marble/00a: 84 212
+:matt/marble/00a: 72 262
+:matt/marble/00a: 26 254
+:matt/marble/00b: 546 32
+:matt/marble/00b: 532 70
+:matt/marble/00b: 468 130
+:matt/marble/00b: 538 156
+:matt/marble/00b: 486 206
+:matt/marble/00b: 570 226
+:matt/marble/00b: 510 264
+:matt/marble/00b: 48 14
+:matt/marble/00b: 20 66
+:matt/marble/00b: 60 90
+:matt/marble/00b: 32 134
+:matt/marble/00b: 30 184
+:matt/marble/00b: 106 182
+:matt/marble/00b: 60 238
+:matt/marble/00b: 110 260
+:matt/marble/00d: 30 40
+:matt/marble/00d: 38 84
+:matt/marble/00d: 58 202
+:matt/marble/00d: 94 238
+:matt/marble/00d: 8 198
+:matt/marble/00d: 10 120
+:matt/marble/00d: 514 16
+:matt/marble/00d: 566 90
+:matt/marble/00d: 504 138
+:matt/marble/00d: 522 204
+:matt/marble/00d: 582 176
+:matt/marble/00d: 576 268
+:matt/marble/00d: 462 170
+:matt/marble/00d: 468 232
+:matt/marble/00d: 580 36
+:raymanni/holiday/cane_mid: 344 112
+:raymanni/holiday/cane_mid: 344 80
+:raymanni/holiday/cane_mid: 344 48
+:raymanni/holiday/cane_mid: 344 16
+:raymanni/holiday/cane_mid: 392 80 frr
+:raymanni/holiday/cane_mid: 392 48 frr
+:raymanni/holiday/cane_mid: 392 16 frr
+:raymanni/holiday/cane_mid: 360 80 r
+:raymanni/holiday/cane_mid: 360 16 r
+:raymanni/holiday/cane_mid: 392 96 frrd
+:raymanni/holiday/cane_mid: 152 272 r
+:matt/marble/00d: 40 286
+:matt/marble/00b: 90 282
+:matt/marble/00b: 10 276
+:matt/marble/00d: 488 282
+:matt/marble/00b: 554 282
+:matt/marble/00b: 586 114
+:matt/marble/00a: 584 12
+:raymanni/holiday/cane_mid: 184 232 frrd
+:raymanni/holiday/cane_mid: 200 208 frrd
+:raymanni/holiday/cane_mid: 112 216 r
+:raymanni/holiday/cane_mid: 104 216 frrrd
+:raymanni/holiday/cane_mid: 104 272 frrrd
+:raymanni/holiday/cane_mid: 184 272 r
+:raymanni/holiday/cane_mid: 200 256 frrd
+:raymanni/holiday/cane_mid: 280 160 frr

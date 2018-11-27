@@ -1,0 +1,173 @@
+$BUILT 2018-11-25 20:00:00
+$AUTHOR F
+$ENGLISH Snow Cat Love
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 624
+#SIZE_Y 272
+
+#INITIAL 2
+#REQUIRED 2
+#SPAWN_INTERVAL 42
+
+#WALKER 2
+#CLIMBER 1
+#BASHER 1
+#MINER 1
+#JUMPER 2
+#EXPLODER2 0
+
+:raymanni/holiday/hatch.H: -9 140
+
+:raymanni/holiday/goal.G: 548 175
+
+:raymanni/holiday/porcupine.T: 476 136
+:raymanni/holiday/porcupine.T: 78 172
+
+:raymanni/holiday/snow1: 314 236
+$BEGIN_TILE_GROUP 0
+:raymanni/holiday/snow1: 0 0
+:raymanni/holiday/cane_end2: 14 19 rd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:raymanni/holiday/snow1: 0 0
+:Group-0: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:raymanni/holiday/snow1: 0 0
+:raymanni/holiday/bauble_string: 6 10 rd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:raymanni/holiday/snow1: 0 0
+:Group-2: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 4
+:raymanni/holiday/snow1: 0 0
+:raymanni/holiday/bauble_cross: 20 20 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 5
+:raymanni/holiday/snow1: 0 0
+:Group-4: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 6
+:raymanni/holiday/brick_red_a: 12 0
+:raymanni/holiday/brick_red_a: 0 0 frr
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 7
+:raymanni/holiday/snow2: 0 0
+:Group-6: 41 32 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 8
+:raymanni/holiday/snow2: 0 0
+:Group-7: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 9
+:raymanni/holiday/snow1: 0 0
+:raymanni/holiday/cane_mid: 16 8 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 10
+:raymanni/holiday/snow1: 0 0
+:Group-9: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 11
+:raymanni/holiday/cane_b: 0 0
+:raymanni/holiday/cane_end2: 16 29
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 12
+:raymanni/holiday/snow1: 0 0
+:Group-11: 14 1 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 13
+:raymanni/holiday/snow1: 0 0
+:Group-12: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 14
+:Group-1: 86 122
+:Group-3: 0 45
+:Group-5: 1 38
+:Group-8: 9 0
+:raymanni/holiday/snow1: 6 13
+:raymanni/holiday/snow1: 23 53
+:raymanni/holiday/snow1: 43 58
+:raymanni/holiday/snow1: 65 61
+:raymanni/holiday/snow1: 66 73
+:Group-1: 41 112
+:Group-10: 51 96
+:raymanni/holiday/snow1: 39 71
+:raymanni/holiday/snow1: 22 68
+:Group-10: 96 106
+:Group-13: 110 74
+:raymanni/holiday/snow1: 31 71
+:raymanni/holiday/snow1: 51 72
+:Group-1: 18 120
+:Group-10: 28 104
+:Group-1: 66 125
+:Group-10: 76 109
+$END_TILE_GROUP
+:Group-14: 302 101
+:raymanni/holiday/snow2: -28 234
+:raymanni/holiday/snow2: 55 235
+:raymanni/holiday/snow2: 142 234
+:raymanni/holiday/snow2: 231 234
+:raymanni/holiday/snow2: 327 234
+:raymanni/holiday/snow2: 430 235
+:raymanni/holiday/snow2: 521 236
+:Group-14: 161 101 frr
+$BEGIN_TILE_GROUP 15
+:matt/carnival/04: 5 0
+:geoo/nopales/nopal_02: 0 14 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 16
+:matt/carnival/04: 0 0
+:Group-15: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 17
+:Group-16: 20 0
+:Group-16: 0 0 frr
+$END_TILE_GROUP
+:Group-17: 278 60
+$BEGIN_TILE_GROUP 18
+:raymanni/holiday/snow2: 0 0
+:Group-17: 32 27 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 19
+:raymanni/holiday/snow2: 0 0
+:Group-18: 0 0 d
+$END_TILE_GROUP
+:Group-19: 482 198
+:matt/winter/09a: 592 -16
+$BEGIN_TILE_GROUP 20
+:matt/winter/06: 0 0
+:raymanni/holiday/bauble_cross: 0 10 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 21
+:matt/winter/06: 0 0
+:Group-20: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 22
+:matt/winter/06: 6 12
+:raymanni/holiday/bauble_string: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 23
+:matt/winter/06: 0 0
+:Group-22: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 24
+:Group-21: 2 2 rr
+:Group-23: 0 9 r
+:Group-23: 9 0 rr
+$END_TILE_GROUP
+:Group-24: 16 16
+:Group-24: 48 48
+:Group-24: 80 16
+:Group-24: 112 48
+:Group-24: 144 16
+:Group-24: 176 48
+:Group-24: 208 16
+:Group-24: 368 16
+:Group-24: 400 48
+:Group-24: 432 16
+:Group-24: 464 48
+:Group-24: 496 16
+:Group-24: 528 48
+:Group-24: 560 16

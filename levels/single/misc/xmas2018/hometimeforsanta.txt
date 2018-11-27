@@ -1,0 +1,134 @@
+$BUILT 2018-11-25 20:00:00
+$AUTHOR F
+$ENGLISH Home Time for Santa
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 1
+#REQUIRED 1
+#SPAWN_INTERVAL 32
+
+#WALKER 1
+#RUNNER 1
+#BUILDER 1
+#BASHER 1
+#MINER 1
+#JUMPER 3
+#EXPLODER2 0
+
+:raymanni/holiday/hatch.H: 496 200 r
+
+:raymanni/holiday/goal.G: 560 64
+
+:raymanni/holiday/porcupine.T: 328 64
+:raymanni/toys/monkey.T: 280 304
+:raymanni/holiday/porcupine.T: 264 64
+
+:proxima/flame.F: 76 331
+:proxima/flame.F: 108 331
+
+:geoo/construction/steam_up.T: 36 336
+:geoo/construction/steam_right.T: 28 112
+:geoo/construction/steam_up.T: 36 207
+
+:raymanni/holiday/plank_mid1: 272 192
+:raymanni/holiday/plank_right: 304 192
+:raymanni/holiday/plank_long: 96 128
+:matt/winter/06: 480 64
+:raymanni/holiday/gift2: 528 336
+:raymanni/holiday/gift2: 464 336
+:raymanni/holiday/gift2: 496 304
+:raymanni/holiday/brick_red: 0 336
+:raymanni/holiday/brick_red: 0 304
+:raymanni/holiday/brick_red: 0 272
+:raymanni/holiday/brick_red: 0 240
+:raymanni/holiday/brick_red: 0 208
+:raymanni/holiday/brick_red: 0 176
+:raymanni/holiday/brick_red: 0 144
+:raymanni/holiday/brick_red: 0 112
+:raymanni/holiday/brick_red: 0 80
+:raymanni/holiday/brick_red: 64 272
+:raymanni/holiday/brick_red: 64 240
+:raymanni/holiday/brick_red: 64 208
+:raymanni/holiday/brick_red: 64 176
+:raymanni/holiday/brick_red: 64 144
+:raymanni/holiday/brick_red: 96 272
+:raymanni/holiday/brick_red: 128 272
+:raymanni/holiday/plank_long: 128 128
+:raymanni/holiday/plank_long: 256 128
+:raymanni/holiday/plank_long: 384 128
+:raymanni/holiday/plank_long: 512 128
+:raymanni/holiday/garland: 96 144
+:raymanni/holiday/garland: 160 144
+:raymanni/holiday/garland: 224 144
+:raymanni/holiday/garland: 288 144
+:raymanni/holiday/garland: 352 144
+:raymanni/holiday/garland: 416 144
+:raymanni/holiday/garland: 480 144
+:raymanni/holiday/garland: 544 144
+:raymanni/holiday/garland: 608 144
+:raymanni/holiday/plank_left: 240 192
+:raymanni/holiday/wreath: 256 192
+:raymanni/holiday/screw1: 280 192
+:geoo/sandstone/8x8: 129 21
+:geoo/sandstone/8x8: 187 14
+:geoo/sandstone/8x8: 241 25
+:geoo/sandstone/8x8: 299 18
+:geoo/sandstone/8x8: 354 22
+:geoo/sandstone/8x8: 412 15
+:geoo/sandstone/8x8: 466 26
+:geoo/sandstone/8x8: 538 15
+:geoo/sandstone/8x8: 632 12
+:geoo/sandstone/8x8: 581 26
+:geoo/sandstone/8x8: -45 18
+:geoo/sandstone/8x8: 13 11
+:geoo/sandstone/8x8: 67 22
+:matt/winter/09a: 600 -18
+:matt/winter/07: 136 64
+:matt/winter/06: 480 0
+:matt/winter/06: 496 64
+:matt/winter/06: 512 0
+:matt/winter/06: 512 64
+:matt/winter/06: 496 0
+:matt/winter/07: 152 64
+:matt/winter/07: 168 64
+:raymanni/holiday/brick_red: 0 368
+:raymanni/holiday/brick_red: 32 368
+:raymanni/holiday/brick_red: 64 368
+:raymanni/holiday/brick_red: 96 368
+:raymanni/holiday/brick_red: 128 368
+:raymanni/holiday/brick_red: 160 368
+:raymanni/holiday/brick_red: 192 368
+:raymanni/holiday/brick_red: 224 368
+:raymanni/holiday/brick_red: 256 368
+:raymanni/holiday/brick_red: 288 368
+:raymanni/holiday/brick_red: 320 368
+:raymanni/holiday/brick_red: 352 368
+:raymanni/holiday/brick_red: 384 368
+:raymanni/holiday/brick_red: 416 368
+:raymanni/holiday/brick_red: 448 368
+:raymanni/holiday/brick_red: 480 368
+:raymanni/holiday/brick_red: 512 368
+:raymanni/holiday/brick_red: 544 368
+:raymanni/holiday/brick_red: 576 368
+:raymanni/holiday/brick_red: 608 368
+:raymanni/holiday/brick_red_b: 160 272
+:raymanni/holiday/brick_red_b: 96 240
+:raymanni/holiday/brick_red_b: 0 48
+:raymanni/holiday/plank_left: 96 128
+:raymanni/holiday/brick_red: 64 112
+:raymanni/holiday/brick_red_a: 48 111 frrrd
+:geoo/construction/platform.S: 96 128
+:geoo/construction/platform.S: 128 128
+:geoo/construction/platform.S: 160 128
+:geoo/construction/platform.S: 192 128
+:geoo/construction/platform.S: 224 128
+:geoo/construction/platform.S: 256 128
+:geoo/construction/platform.S: 288 128
+:geoo/construction/platform.S: 320 128
+:geoo/construction/platform.S: 352 128
+:geoo/construction/platform.S: 384 128
+:geoo/construction/platform.S: 416 128
+:geoo/construction/platform.S: 448 128

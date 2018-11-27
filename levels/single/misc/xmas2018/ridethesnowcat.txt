@@ -1,0 +1,213 @@
+$BUILT 2018-11-25 20:00:00
+$AUTHOR F/Simon
+$ENGLISH Ride the Snow Cat
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 30
+
+#RUNNER 1
+#CLIMBER 1
+#BLOCKER 1
+#BUILDER 3
+#PLATFORMER 4
+#BASHER 2
+#DIGGER 1
+#JUMPER 1
+#BATTER 1
+#EXPLODER2 0
+
+:raymanni/holiday/hatch.H: 497 198 r
+
+:raymanni/holiday/goal.G: 16 32
+
+:raymanni/holiday/porcupine.T: 64 32
+
+:simon/crystal.W: 264 366
+:simon/crystal.W: 216 366
+:simon/crystal.W: 208 350
+:simon/crystal.W: 256 350
+:simon/crystal.W: 304 350
+:matt/beach/decor/bonfire.F: 610 311
+
+:raymanni/holiday/bauble_string: 24 104
+:raymanni/holiday/gift3: 452 32
+:raymanni/holiday/snowlix: 396 74
+:raymanni/holiday/garland: 440 104
+:raymanni/holiday/garland: 360 104
+:raymanni/holiday/screw3: 376 72 rrr
+:raymanni/holiday/plank_left: 368 72 fr
+:raymanni/holiday/plank_d2: 512 96 fr
+:raymanni/holiday/plank_d2: 320 96 r
+:geoo/construction/stairsbrick_rd_32: 72 288 frr
+$BEGIN_TILE_GROUP 0
+:raymanni/holiday/steel1.S: 0 8
+:raymanni/holiday/steel1.S: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:raymanni/holiday/steel1.S: 0 0
+:raymanni/holiday/steel1.S: 0 8 d
+:Group-0: 0 8
+$END_TILE_GROUP
+:Group-1: 128 288
+:raymanni/holiday/snow3: 176 360 frr
+:raymanni/holiday/snow3: 282 357
+:raymanni/holiday/snow2: 558 360 frr
+:raymanni/holiday/snow2: 486 368 frr
+:raymanni/holiday/snow2: 438 382
+:raymanni/holiday/snow2: 358 370 frr
+:raymanni/holiday/snow2: 310 360 frr
+:raymanni/holiday/snow2: 104 358 frr
+:raymanni/holiday/snow2: 64 368
+:raymanni/holiday/snow2: -32 368 rr
+:raymanni/holiday/plank_long: 0 0 rrr
+:geoo/construction/stairsbrick_rd_32: 72 256
+$BEGIN_TILE_GROUP 2
+:geoo/construction/pillar_long: 16 0
+:geoo/construction/pillar_long: 0 0 d
+$END_TILE_GROUP
+:Group-2: 144 224
+:geoo/construction/stairsbrick_rd_32: 8 320 frr
+:geoo/construction/pillar_long: -16 240
+$BEGIN_TILE_GROUP 3
+:raymanni/holiday/snow1: 0 0
+:raymanni/holiday/cane_end2: 14 19 rd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 4
+:raymanni/holiday/snow1: 0 0
+:Group-3: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 5
+:raymanni/holiday/snow1: 0 0
+:raymanni/holiday/bauble_string: 6 10 rd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 6
+:raymanni/holiday/snow1: 0 0
+:Group-5: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 7
+:raymanni/holiday/snow1: 0 0
+:raymanni/holiday/bauble_cross: 20 20 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 8
+:raymanni/holiday/snow1: 0 0
+:Group-7: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 9
+:raymanni/holiday/brick_red_a: 12 0
+:raymanni/holiday/brick_red_a: 0 0 frr
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 10
+:raymanni/holiday/snow2: 0 0
+:Group-9: 41 32 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 11
+:raymanni/holiday/snow2: 0 0
+:Group-10: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 12
+:raymanni/holiday/snow1: 0 0
+:raymanni/holiday/cane_mid: 16 8 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 13
+:raymanni/holiday/snow1: 0 0
+:Group-12: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 14
+:raymanni/holiday/cane_b: 0 0
+:raymanni/holiday/cane_end2: 16 29
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 15
+:raymanni/holiday/snow1: 0 0
+:Group-14: 14 1 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 16
+:raymanni/holiday/snow1: 0 0
+:Group-15: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 17
+:Group-4: 86 122
+:Group-6: 0 45
+:Group-8: 1 38
+:Group-11: 9 0
+:raymanni/holiday/snow1: 6 13
+:raymanni/holiday/snow1: 23 53
+:raymanni/holiday/snow1: 43 58
+:raymanni/holiday/snow1: 65 61
+:raymanni/holiday/snow1: 66 73
+:Group-4: 41 112
+:Group-13: 51 96
+:raymanni/holiday/snow1: 39 71
+:raymanni/holiday/snow1: 22 68
+:Group-13: 96 106
+:Group-16: 110 74
+:raymanni/holiday/snow1: 31 71
+:raymanni/holiday/snow1: 51 72
+:Group-4: 18 120
+:Group-13: 28 104
+:Group-4: 66 125
+:Group-13: 76 109
+$END_TILE_GROUP
+:Group-17: 442 213
+:raymanni/holiday/snow4: -20 350
+:geoo/shadow/door: 128 304
+:raymanni/holiday/snow4: 93 349
+:raymanni/holiday/snow4: 312 348
+:raymanni/holiday/snow4: 417 350
+:raymanni/holiday/snow4: 525 348
+:geoo/construction/stairsbrick_rd_32: 8 224
+:geoo/construction/stairsbrick_rd_32: 12 192 frr
+:geoo/construction/stairsbrick_rd_32: 76 160 frr
+:geoo/construction/stairsbrick_rd_32: 72 128
+:geoo/construction/stairsbrick_rd_32: 8 96
+:geoo/construction/pillar_long: -16 112
+:raymanni/holiday/plank_broken: 252 80 rrr
+:raymanni/holiday/plank_broken: 124 96 frr
+:raymanni/holiday/plank_long: 16 0
+:raymanni/holiday/plank_long: 140 0
+:raymanni/holiday/plank_long: 252 -40 fr
+:raymanni/holiday/screw1: 252 0
+:raymanni/holiday/screw1: 0 0
+:Group-1: 32 96
+:Group-1: 64 96
+:Group-2: 144 112
+:raymanni/holiday/plank_right: 0 96
+:raymanni/holiday/plank_broken: 148 88 frrd
+:raymanni/holiday/plank_mid1: 484 348
+:raymanni/holiday/plank_mid1: 516 348
+:raymanni/holiday/plank_left: 452 348
+:raymanni/holiday/plank_right: 548 348
+:Group-1: 96 96
+:raymanni/holiday/plank_long: 368 128
+:raymanni/holiday/plank_d3: 336 112 frr
+:raymanni/holiday/plank_d3: 496 112
+:raymanni/holiday/plank_long: 368 96
+:raymanni/holiday/plank_right: 472 96
+:raymanni/holiday/plank_left: 360 96
+:raymanni/holiday/screw3: 360 112
+:raymanni/holiday/screw3: 376 112
+:raymanni/holiday/screw3: 392 112
+:raymanni/holiday/screw3: 408 112
+:raymanni/holiday/screw3: 424 112
+:raymanni/holiday/screw3: 440 112
+:raymanni/holiday/screw3: 456 112
+:raymanni/holiday/screw3: 472 112
+:raymanni/holiday/screw3: 488 112
+:raymanni/holiday/gift2: 424 64
+:raymanni/holiday/screw2: 392 72 r
+:raymanni/holiday/gift4: 430 32
+:raymanni/holiday/bauble_navy: 24 136
+:raymanni/holiday/bauble_string: 58 8
+:raymanni/holiday/bauble_red: 58 38
+:raymanni/holiday/bauble_cross: 66 0
+:raymanni/holiday/bauble_string: 130 8
+:raymanni/holiday/bauble_red: 130 24
+:raymanni/holiday/bauble_string: 200 8
+:raymanni/holiday/bauble_red: 200 32
+:raymanni/holiday/bauble_cross: 138 0
+:raymanni/holiday/bauble_cross: 208 0
+:raymanni/holiday/plank_broken: 184 78 rrd

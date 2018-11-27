@@ -1,0 +1,213 @@
+$BUILT 2018-11-25 20:00:00
+$AUTHOR Simon
+$ENGLISH Docked at the North Pole
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1168
+#SIZE_Y 320
+
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 43
+
+#CLIMBER 2
+#MINER 10
+#EXPLODER2 0
+
+:raymanni/holiday/hatch.H: 112 80
+
+:matt/winter/Goal.G: 1074 120
+
+:simon/crystal.W: 0 272
+:simon/crystal.W: 48 272
+:simon/crystal.W: 96 272
+:simon/crystal.W: 144 272
+:simon/crystal.W: 816 272
+:simon/crystal.W: 864 272
+:simon/crystal.W: 912 272
+:simon/crystal.W: 960 272
+:simon/crystal.W: 1008 272
+:simon/crystal.W: 416 272
+:simon/crystal.W: 368 272
+
+$BEGIN_TILE_GROUP 0
+:matt/earth/26: 6 0 f
+:raymanni/holiday/gift1: 0 16 frrrd
+$END_TILE_GROUP
+:Group-0: 968 162 frr
+:raymanni/holiday/plank_long: 288 256
+:raymanni/holiday/plank_long: 192 272
+:Group-0: 972 166
+:raymanni/holiday/bauble_string: 720 168 r
+:raymanni/holiday/bauble_string: 744 176 r
+:matt/winter/07: 810 -36 f
+:matt/winter/07: 1136 38 f
+:matt/winter/07: 1110 -14 rr
+:matt/winter/07: 1090 28 rr
+:matt/winter/07: 1078 40 rr
+:matt/winter/07: 1058 0 rr
+:matt/winter/07: 1042 -16 rr
+:matt/winter/07: 1014 -10 f
+:matt/winter/07: 946 -10 f
+:matt/winter/07: 912 70 f
+:matt/winter/07: 898 40 f
+:matt/winter/07: 856 -20 f
+:raymanni/holiday/snow3: 884 -26 f
+:matt/winter/07: 842 216 f
+:raymanni/holiday/plank_long: 608 288
+:raymanni/holiday/snow2: 1068 271 frr
+:matt/earth/26: 1139 126 f
+:raymanni/holiday/snow4: 1119 174
+:raymanni/holiday/snow2: 1084 186 frr
+:matt/earth/25: 1135 255 f
+$BEGIN_TILE_GROUP 1
+:raymanni/holiday/snow3: 40 8
+:raymanni/holiday/snow3: 32 0 d
+:raymanni/holiday/snow3: 0 80 rrrd
+:raymanni/holiday/snow3: 48 32 rd
+$END_TILE_GROUP
+:Group-1: 1065 130 frr
+:Group-1: 1054 131
+:raymanni/holiday/plank_long: 304 288
+:geoo/steel/silhouette_64x32.S: 488 208
+:raymanni/holiday/snow2: 1023 266
+:raymanni/holiday/snow2: 1018 182 frr
+:matt/earth/23: 1074 254 rr
+:matt/earth/26: 962 154 rr
+:raymanni/holiday/bauble_string: 768 160 r
+:geoo/shadow/rope1: 834 230
+:geoo/shadow/rope1: 920 176 frr
+:geoo/shadow/rope1: 856 176
+:matt/winter/15: 138 186
+:matt/winter/15: 92 188 frr
+:matt/winter/15: 770 202
+:matt/winter/07: 114 238 f
+:matt/winter/07: 96 192 rr
+:matt/winter/07: 84 198 f
+:raymanni/holiday/gift1: 424 208
+:raymanni/holiday/gift2: 432 176
+:raymanni/holiday/bauble_string: 832 160 r
+:raymanni/holiday/bauble_string: 704 160 r
+:raymanni/holiday/bauble_string: 696 176
+:raymanni/holiday/bauble_string: 720 176
+:raymanni/holiday/bauble_string: 744 176
+:raymanni/holiday/snow3: 947 192 r
+:geoo/shadow/rope1: 898 230 frr
+:raymanni/holiday/snow4: 963 181
+:matt/earth/25: 1028 185 rr
+:raymanni/holiday/snow2: 963 203 frr
+:matt/earth/26: 992 212 f
+:raymanni/holiday/snow3: 881 288
+:raymanni/holiday/plank_long: 688 304
+:raymanni/holiday/plank_long: 688 288
+:raymanni/holiday/plank_d1: 720 192 frr
+:raymanni/holiday/plank_d1: 688 176 frr
+:raymanni/holiday/plank_d1: 656 160 frr
+:raymanni/holiday/plank_d1: 696 192 frr
+:raymanni/holiday/plank_d1: 736 192 frr
+:raymanni/holiday/plank_right: 816 240
+:raymanni/holiday/plank_right: 816 224
+:raymanni/holiday/plank_d2: 576 160
+:raymanni/holiday/plank_d2: 560 168
+:raymanni/holiday/plank_d2: 568 176
+:raymanni/holiday/plank_d2: 552 192 fr
+:raymanni/holiday/plank_d1: 544 208 fr
+:raymanni/holiday/plank_long: 224 208
+:raymanni/holiday/plank_long: 224 208
+:raymanni/holiday/plank_left: 80 192
+:raymanni/holiday/plank_long: 112 192
+:raymanni/holiday/plank_long: 192 192
+:raymanni/holiday/plank_left: 96 208
+:raymanni/holiday/plank_long: 128 208
+:raymanni/holiday/plank_left: 112 224
+:raymanni/holiday/plank_long: 144 224
+:raymanni/holiday/plank_long: 256 224
+:raymanni/holiday/plank_left: 128 240
+:raymanni/holiday/plank_long: 160 240
+:raymanni/holiday/plank_long: 288 240
+:raymanni/holiday/plank_left: 144 256
+:raymanni/holiday/plank_long: 176 256
+:raymanni/holiday/plank_left: 160 272
+:raymanni/holiday/plank_long: 320 272
+:raymanni/holiday/plank_left: 176 288
+:raymanni/holiday/plank_long: 208 288
+:raymanni/holiday/plank_left: 192 304
+:raymanni/holiday/plank_long: 224 304
+:raymanni/holiday/plank_long: 352 304
+:raymanni/holiday/cane_a: 224 216
+:raymanni/holiday/cane_b: 256 216
+:raymanni/holiday/cane_c: 224 248
+:raymanni/holiday/cane_d: 256 248
+:raymanni/holiday/plank_d1: 320 192 frr
+:raymanni/holiday/plank_d1: 352 208 frr
+:raymanni/holiday/plank_d1: 384 224 frr
+:raymanni/holiday/plank_long: 416 240
+:raymanni/holiday/plank_long: 400 256
+:raymanni/holiday/plank_long: 448 272
+:raymanni/holiday/plank_long: 480 304
+:raymanni/holiday/plank_d1: 528 208 fr
+:raymanni/holiday/plank_d2: 544 176 fr
+:raymanni/holiday/plank_d2: 560 160
+:raymanni/holiday/plank_mid1: 592 160
+:raymanni/holiday/plank_mid1: 600 176
+:raymanni/holiday/plank_mid1: 624 160
+:raymanni/holiday/plank_mid1: 632 176
+:raymanni/holiday/plank_right: 528 240
+:raymanni/holiday/plank_right: 528 256
+:raymanni/holiday/plank_long: 576 272
+:raymanni/holiday/plank_long: 528 288
+:raymanni/holiday/plank_long: 608 304
+:raymanni/holiday/snow1: 246 100
+:raymanni/holiday/snow1: 292 46
+:raymanni/holiday/snow1: 308 46 r
+:raymanni/holiday/snow2: 322 -56 frr
+:raymanni/lab/pipe_7: 248 160 f
+:raymanni/lab/pipe_7: 264 160 f
+:raymanni/holiday/plank_left: 672 208
+:raymanni/holiday/plank_left: 672 224
+:raymanni/holiday/plank_left: 672 240
+:raymanni/holiday/plank_left: 672 256
+:raymanni/holiday/plank_long: 704 208
+:raymanni/holiday/plank_long: 704 224
+:raymanni/holiday/plank_long: 704 240
+:raymanni/holiday/plank_long: 704 256
+:raymanni/holiday/plank_long: 704 272
+:raymanni/holiday/plank_d1: 800 288 fr
+:raymanni/holiday/plank_d1: 816 256 fr
+:raymanni/holiday/plank_d1: 832 224 fr
+:raymanni/holiday/plank_right: 832 208
+:raymanni/holiday/plank_mid1: 640 160
+:raymanni/holiday/plank_d1: 672 160 frr
+:raymanni/holiday/plank_d1: 664 176 frr
+:raymanni/holiday/plank_d1: 704 176 frr
+:raymanni/holiday/snowlix: 909 267
+:matt/earth/24: 964 226 rr
+:matt/earth/23: 954 223 f
+:raymanni/holiday/snow2: 950 237
+:raymanni/holiday/snowlix: 994 160
+:raymanni/holiday/bauble_string: 840 176
+:raymanni/holiday/bauble_string: 816 176
+:raymanni/holiday/bauble_string: 792 176
+:raymanni/holiday/bauble_string: 768 176
+:raymanni/holiday/bauble_string: 736 160 r
+:raymanni/holiday/bauble_string: 800 160 r
+:raymanni/holiday/gift1: 448 144
+:raymanni/holiday/gift4: 464 112
+:raymanni/holiday/snowlix: 82 169
+:geoo/steel/dark_32x32o.S: 496 176
+:matt/beach/decor/moon: 24 24
+:geoo/steel/dark_32x16o.S: 464 288
+:raymanni/holiday/plank_left: 496 288
+:raymanni/holiday/snowlix: 1056 159
+:raymanni/holiday/snow3: 1048 -60 f
+:raymanni/holiday/snow4: 1030 -106 fr
+:raymanni/holiday/snow3: 966 -84 f
+:raymanni/holiday/snow4: 824 -62 fr
+:raymanni/holiday/snow4: 948 -88 r
+:raymanni/holiday/snow4: 1126 -54 fr
+:raymanni/holiday/bauble_string: 792 176 r
+:raymanni/holiday/bauble_string: 768 168 r
+:raymanni/holiday/bauble_string: 816 168 r
+:raymanni/holiday/bauble_string: 840 176 r
+:raymanni/holiday/bauble_string: 864 176 rd
+:raymanni/holiday/plank_broken: 416 288 frr

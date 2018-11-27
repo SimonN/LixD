@@ -1,1 +1,5 @@
 lemforum
+clam
+nepster
+rubix
+misc

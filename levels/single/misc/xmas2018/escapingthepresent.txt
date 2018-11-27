@@ -1,0 +1,136 @@
+$BUILT 2018-11-25 20:00:00
+$AUTHOR F
+$ENGLISH Escaping the Present
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 636
+#SIZE_Y 400
+
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 20
+
+#WALKER 7
+#RUNNER 7
+#CLIMBER 7
+#FLOATER 7
+#BLOCKER 7
+#BUILDER 7
+#PLATFORMER 7
+#BASHER 7
+#MINER 7
+#DIGGER 7
+#JUMPER 7
+#BATTER 7
+#EXPLODER2 0
+
+:raymanni/holiday/hatch.H: 222 160 r
+:raymanni/holiday/hatch.H: 350 160
+:raymanni/holiday/hatch.H: 222 280 r
+:raymanni/holiday/hatch.H: 350 280
+
+:raymanni/holiday/goal.G: 288 50
+
+:raymanni/holiday/porcupine.T: 14 -20
+
+:simon/crystal.W: 550 361
+:simon/crystal.W: 31 361
+
+:raymanni/holiday/bauble_string: 112 -2
+:raymanni/holiday/bauble_string: 61 23
+:raymanni/holiday/bauble_string: 11 48
+:raymanni/holiday/brick_green: 216 369
+:raymanni/holiday/snow2: 128 368
+:raymanni/holiday/brick_green: 216 368
+:raymanni/holiday/brick_green: 209 368
+:raymanni/holiday/brick_green: 241 368
+:raymanni/holiday/brick_green: 271 368
+:raymanni/holiday/brick_green: 344 368
+:raymanni/holiday/brick_green: 335 368
+:raymanni/holiday/brick_green: 367 368
+:raymanni/holiday/snow2: 447 368
+:raymanni/holiday/brick_green: 399 368
+:raymanni/holiday/brick_green: 430 368
+:raymanni/holiday/brick_green: 430 336
+:raymanni/holiday/brick_green: 430 305
+:raymanni/holiday/brick_green: 430 273
+:raymanni/holiday/brick_green: 430 241
+:raymanni/holiday/brick_green: 430 210
+:raymanni/holiday/brick_green: 430 178
+:raymanni/holiday/brick_green: 430 146
+:raymanni/holiday/brick_green: 430 115
+:raymanni/holiday/brick_green: 176 115
+:raymanni/holiday/brick_green: 176 114
+:raymanni/holiday/brick_green: 208 114
+:raymanni/holiday/brick_green: 240 114
+:raymanni/holiday/brick_green: 272 114
+:raymanni/holiday/brick_green: 304 114
+:raymanni/holiday/brick_green: 336 114
+:raymanni/holiday/brick_green: 367 114
+:raymanni/holiday/brick_green: 399 114
+:raymanni/holiday/brick_green: 430 114
+:raymanni/holiday/snow2: 60 368
+:raymanni/holiday/brick_green: 177 368
+:raymanni/holiday/brick_green: 176 336
+:raymanni/holiday/brick_green: 176 305
+:raymanni/holiday/brick_green: 176 273
+:raymanni/holiday/brick_green: 176 241
+:raymanni/holiday/brick_green: 176 210
+:raymanni/holiday/brick_green: 176 178
+:raymanni/holiday/brick_green: 176 146
+:raymanni/holiday/brick_green: 176 115
+:raymanni/holiday/brick_green: 176 114
+:geoo/sandstone/ribbon_main: 304 114
+:geoo/sandstone/ribbon_main: 304 146
+:geoo/sandstone/ribbon_main: 304 177
+:geoo/sandstone/ribbon_main: 304 209
+:geoo/sandstone/ribbon_main: 291 241
+:geoo/sandstone/ribbon_main: 304 273
+:geoo/sandstone/ribbon_main: 304 304
+:geoo/sandstone/ribbon_main: 304 336
+:geoo/sandstone/ribbon_main: 303 368
+:geoo/sandstone/ribbon_main: 430 241 r
+:geoo/sandstone/ribbon_main: 398 241 r
+:geoo/sandstone/ribbon_main: 367 241 r
+:geoo/sandstone/ribbon_main: 335 241 r
+:geoo/sandstone/ribbon_main: 303 241 r
+:geoo/sandstone/ribbon_main: 271 241 r
+:geoo/sandstone/ribbon_main: 240 241 r
+:geoo/sandstone/ribbon_main: 208 241 r
+:geoo/sandstone/ribbon_main: 176 241 r
+:raymanni/holiday/snow2: -69 368
+:raymanni/holiday/snow2: 575 368
+:raymanni/holiday/snow2: 591 368
+:raymanni/holiday/cane_mid: 4 338
+:raymanni/holiday/cane_mid: 4 306
+:raymanni/holiday/cane_mid: 4 275
+:raymanni/holiday/cane_a: 5 243
+:raymanni/holiday/cane_b: 37 243
+:raymanni/holiday/cane_end2: 53 274
+:raymanni/holiday/cane_mid: 616 338 frr
+:raymanni/holiday/cane_mid: 616 306 frr
+:raymanni/holiday/cane_mid: 616 275 frr
+:raymanni/holiday/cane_a: 599 243 frr
+:raymanni/holiday/cane_b: 567 243 frr
+:raymanni/holiday/cane_end2: 567 274 frr
+:raymanni/toys/cracker: 243 50
+:raymanni/toys/cracker: 349 50
+:geoo/shadow/rope1: 524 228
+:geoo/shadow/rope1: 462 211
+:geoo/shadow/rope1: 50 229 frr
+:geoo/shadow/rope1: 112 212 frr
+:geoo/shadow/sock: 465 216
+:geoo/shadow/sock: 499 223
+:geoo/shadow/sock: 531 233
+:geoo/shadow/sock: 142 219 frr
+:geoo/shadow/sock: 109 226 frr
+:geoo/shadow/sock: 75 235 frr
+:matt/winter/09a: 586 -6
+:raymanni/holiday/plank_d1: -3 46
+:raymanni/holiday/plank_d1: 29 30
+:raymanni/holiday/plank_d1: 60 14
+:raymanni/holiday/plank_d1: 92 -2
+:raymanni/holiday/plank_d1: 121 -17
+:raymanni/holiday/bauble_blue: 11 80
+:raymanni/holiday/bauble_blue: 112 30
+:raymanni/holiday/bauble_navy: 61 55

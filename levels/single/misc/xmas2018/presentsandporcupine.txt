@@ -1,0 +1,99 @@
+$BUILT 2018-11-25 20:00:00
+$AUTHOR F/Simon
+$ENGLISH Presents and Porcupine
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 576
+#SIZE_Y 192
+
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 32
+
+#CLIMBER 1
+#BUILDER 1
+#BASHER 1
+#DIGGER 1
+#EXPLODER2 0
+
+:raymanni/holiday/hatch.H: 32 80
+
+:raymanni/holiday/goal.G: 472 112
+
+:raymanni/holiday/porcupine.T: 384 112
+
+:raymanni/holiday/bauble_string: 400 56
+:raymanni/holiday/bauble_string: 40 -8
+:raymanni/holiday/plank_d2: 536 96 rrr
+:raymanni/holiday/plank_d2: 528 80 rrr
+:raymanni/holiday/plank_right: 540 48
+:raymanni/holiday/cane_mid: 368 144
+:raymanni/holiday/plank_broken: 8 32 fr
+:raymanni/holiday/plank_long: 0 176
+:raymanni/holiday/plank_long: 15 194
+:raymanni/holiday/plank_long: 223 176
+:raymanni/holiday/plank_long: 350 176
+:raymanni/holiday/plank_long: 478 176
+:raymanni/holiday/cane_mid: 128 144
+:raymanni/holiday/cane_mid: 128 112
+:raymanni/holiday/cane_mid: 128 80
+:raymanni/holiday/cane_a: 128 48
+:raymanni/holiday/cane_b: 160 48
+:raymanni/holiday/cane_end2: 176 80
+:raymanni/holiday/gift2: 144 144
+:raymanni/holiday/gift1: 208 144
+:raymanni/holiday/gift4: 176 112
+:raymanni/holiday/gift4: 208 112
+:raymanni/holiday/gift3: 192 80
+:raymanni/holiday/cane_mid: 272 144
+:raymanni/holiday/cane_mid: 272 112
+:raymanni/holiday/cane_mid: 272 80
+:raymanni/holiday/cane_a: 224 48
+:raymanni/holiday/cane_b: 256 48
+:raymanni/holiday/cane_end2: 224 80
+:raymanni/holiday/plank_long: 16 192
+:raymanni/holiday/cane_mid: 368 112
+:raymanni/holiday/plank_long: 8 48 fr
+:raymanni/holiday/screw1: 8 176
+:raymanni/holiday/cane_mid: 368 80
+:raymanni/holiday/plank_long: 552 48 fr
+:raymanni/holiday/screw1: 552 176
+:raymanni/holiday/plank_broken: 552 16 fr
+:raymanni/holiday/plank_left: 444 48
+:raymanni/holiday/plank_mid1: 476 48
+:raymanni/holiday/plank_mid1: 508 48
+:raymanni/holiday/screw1: 552 48
+:raymanni/holiday/gift2: 480 16
+:raymanni/holiday/gift4: 448 16
+:raymanni/holiday/plank_d2: 520 64 rrr
+:raymanni/holiday/screw1: 518 48
+:raymanni/holiday/screw1: 552 114
+:raymanni/holiday/bauble_string: 296 16
+:raymanni/holiday/bauble_string: 296 48
+:raymanni/holiday/bauble_navy: 296 80
+:raymanni/holiday/bauble_string: 328 0
+:raymanni/holiday/bauble_string: 328 32
+:raymanni/holiday/bauble_ruby: 328 64
+:raymanni/holiday/bauble_string: 296 -16
+:raymanni/holiday/bauble_yellow: 80 48
+:raymanni/holiday/bauble_string: 80 16
+:raymanni/holiday/bauble_navy: 40 24
+:raymanni/holiday/bauble_string: 80 -16
+:raymanni/holiday/bauble_ruby: 176 16
+:raymanni/holiday/bauble_string: 176 -16
+:raymanni/holiday/bauble_blue: 400 88
+:raymanni/holiday/steel1.S: 192 176
+:raymanni/holiday/plank_right: 160 176
+:raymanni/holiday/plank_mid1: 128 176
+:raymanni/holiday/plank_left: 224 176
+$BEGIN_TILE_GROUP 0
+:raymanni/holiday/garland: 4 24
+:raymanni/holiday/bauble_blue: 0 0 d
+:raymanni/holiday/bauble_blue: 40 0 d
+$END_TILE_GROUP
+:Group-0: 224 72
+:Group-0: 128 72
+:raymanni/holiday/cane_end1: 368 64
+:raymanni/holiday/garland: 444 48
+:raymanni/holiday/bauble_string: 400 24
+:raymanni/holiday/bauble_string: 400 -8

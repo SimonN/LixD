@@ -1,0 +1,121 @@
+$BUILT 2018-11-25 20:00:00
+$AUTHOR F/Simon
+$ENGLISH Three Wise Visitors
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 576
+#SIZE_Y 328
+
+#INITIAL 3
+#REQUIRED 3
+#SPAWN_INTERVAL 32
+
+#RUNNER 1
+#CLIMBER 1
+#FLOATER 1
+#BUILDER 1
+#PLATFORMER 2
+#JUMPER 1
+#EXPLODER2 0
+
+:raymanni/holiday/hatch.H: 336 16 r
+:raymanni/holiday/hatch.H: 96 104
+:raymanni/holiday/hatch.H: 382 150 r
+
+:raymanni/holiday/goal.G: 64 152
+
+:raymanni/holiday/porcupine.T: 232 248
+
+:matt/beach/decor/bonfire.F: 508 182
+
+:raymanni/holiday/snow1: 276 10 rr
+:raymanni/holiday/snow1: 250 26
+:raymanni/holiday/snow1: 288 -2
+:raymanni/holiday/snow1: 450 102 rr
+:raymanni/holiday/snow1: 450 84 frr
+:raymanni/holiday/snow3: 456 192
+:raymanni/holiday/snow2: 472 234 frr
+:raymanni/holiday/snow2: 448 256
+:raymanni/holiday/snow4: 460 218
+:raymanni/holiday/snow1: 456 224
+:raymanni/holiday/plank_long: 448 248 fr
+:raymanni/holiday/snow1: 428 48 r
+:raymanni/holiday/snow1: 420 38 r
+:raymanni/holiday/snow1: 440 64 r
+:raymanni/holiday/snow1: 404 30 r
+:raymanni/holiday/snow1: 376 16 r
+:raymanni/holiday/snow1: 360 -8
+:raymanni/holiday/snow1: 320 -16
+:raymanni/holiday/plank_long: 48 144 fr
+:raymanni/holiday/plank_long: 448 80 fr
+:raymanni/holiday/plank_d1: 32 136
+:raymanni/holiday/brick_red_c: 192 56
+:raymanni/holiday/brick_red_c: 192 56 rrrd
+:raymanni/holiday/brick_red: 224 56
+:raymanni/holiday/brick_red_d: 320 24
+:raymanni/holiday/brick_red: 288 24
+:raymanni/holiday/brick_red_a: 256 24
+:raymanni/holiday/brick_red: 256 56
+:raymanni/holiday/brick_red_c: 224 88
+:raymanni/holiday/brick_red_d: 256 88
+:raymanni/holiday/brick_red: 240 104
+:raymanni/holiday/wreath: 224 80
+:raymanni/holiday/snow2: -56 216
+:raymanni/holiday/snow2: -58 292
+:raymanni/holiday/plank_long: 336 216
+:raymanni/holiday/plank_left: 448 216 fr
+:raymanni/holiday/plank_long: 320 312 frr
+:raymanni/holiday/gift2: 352 120 fr
+:raymanni/holiday/plank_long: 304 216
+:raymanni/holiday/plank_long: 48 216 fr
+:raymanni/holiday/plank_long: 192 312 frr
+:raymanni/holiday/screw1: 448 216
+:raymanni/holiday/screw1: 48 312
+:raymanni/holiday/plank_broken: 272 216
+:raymanni/holiday/screw1: 448 312
+:raymanni/holiday/brick_green: 128 216
+:raymanni/holiday/brick_green: 96 216
+:raymanni/holiday/brick_green: 64 216
+:raymanni/holiday/brick_green: 128 248
+:raymanni/holiday/brick_green: 96 248
+:raymanni/holiday/brick_green: 64 248
+:raymanni/holiday/brick_green_d: 160 216
+:raymanni/holiday/brick_green: 128 280
+:raymanni/holiday/brick_green: 96 280
+:raymanni/holiday/brick_green: 64 280
+:raymanni/holiday/brick_green_b: 160 280
+:raymanni/holiday/plank_long: 64 312 frr
+:raymanni/holiday/wreath: 80 232
+:raymanni/holiday/gift1: 328 280
+:raymanni/holiday/gift2: 304 248
+:raymanni/holiday/gift4: 296 280
+:raymanni/holiday/plank_d1: 64 120
+:raymanni/holiday/plank_d1: 96 104
+:raymanni/holiday/plank_d1: 128 88
+:raymanni/holiday/plank_d1: 160 72
+:raymanni/holiday/plank_d1: 192 56
+:raymanni/holiday/plank_d1: 352 24 frr
+:raymanni/holiday/plank_d1: 384 40 frr
+:raymanni/holiday/plank_d1: 416 56 frr
+:raymanni/holiday/plank_d1: 224 40
+:raymanni/holiday/plank_d1: 256 24
+:raymanni/holiday/plank_d1: 320 8 frr
+:raymanni/holiday/plank_d1: 288 8
+:raymanni/holiday/brick_red_d: 288 56
+:raymanni/holiday/snowlix: 20 196
+:raymanni/holiday/plank_d1: 378 54 frrd
+:raymanni/holiday/plank_d1: 402 66 frrd
+:raymanni/holiday/plank_d1: 416 72 frrd
+:raymanni/holiday/plank_d1: 416 88 frrd
+:raymanni/holiday/plank_right: 448 176 fr
+:raymanni/holiday/gift4: 352 88
+:raymanni/holiday/gift3: 352 184
+:raymanni/holiday/plank_right: 352 72
+$BEGIN_TILE_GROUP 0
+:raymanni/holiday/plank_left: 0 0
+:raymanni/holiday/plank_right: 16 0 d
+$END_TILE_GROUP
+:Group-0: 352 72
+:raymanni/toys/cracker: 384 248
+:raymanni/toys/cracker: 408 248
+:raymanni/holiday/plank_d1: 448 72 frr

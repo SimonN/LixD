@@ -1,0 +1,98 @@
+$BUILT 2018-11-25 20:00:00
+$AUTHOR F/Simon
+$ENGLISH Climb to Christmas
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 480
+#SIZE_Y 368
+
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 3
+
+#CLIMBER 6
+#BUILDER 1
+#BASHER 1
+#DIGGER 1
+#EXPLODER2 0
+
+:raymanni/holiday/hatch.H: 208 112
+:raymanni/holiday/hatch.H: 240 288
+
+:raymanni/holiday/goal.G: 408 80
+
+:raymanni/holiday/porcupine.T: 40 0
+
+:raymanni/holiday/garland: 207 286
+:raymanni/holiday/plank_left: 160 240 frr
+:raymanni/holiday/plank_mid1: 160 208 fr
+:raymanni/holiday/plank_left: 160 176
+:raymanni/holiday/plank_mid1: 80 224 fr
+:raymanni/holiday/plank_long: 96 272
+:raymanni/holiday/plank_right: 80 256 fr
+:raymanni/holiday/plank_left: 48 64
+:raymanni/holiday/plank_long: 80 96 fr
+:raymanni/holiday/plank_left: 80 96 fr
+:raymanni/holiday/plank_long: 288 64 fr
+:raymanni/holiday/plank_right: 288 160 fr
+:raymanni/holiday/plank_long: 360 128 rrr
+:raymanni/holiday/plank_long: 320 240 fr
+:raymanni/holiday/gift1: 256 336
+:raymanni/holiday/gift1: 224 272
+:raymanni/holiday/gift1: 224 304 fr
+:raymanni/holiday/plank_long: 360 32 rrr
+:raymanni/holiday/plank_long: 362 144
+:geoo/construction/stairsbrick_ru_32: 80 64
+:raymanni/holiday/plank_mid1: 48 80 fr
+:raymanni/holiday/gift2: 224 160
+:raymanni/holiday/gift2: 192 128 fr
+:raymanni/holiday/gift2: 192 96
+:raymanni/holiday/plank_long: 360 -96 rrr
+:raymanni/holiday/plank_right: 288 160
+:raymanni/holiday/screw1: 360 144
+:raymanni/holiday/plank_right: 344 240
+:raymanni/holiday/screw1: 360 240
+:raymanni/holiday/plank_left: 320 240
+:raymanni/holiday/screw1: 320 240
+:raymanni/holiday/screw1: 80 272
+:raymanni/holiday/screw1: 80 96
+:geoo/construction/stairsbrick_ru_32: 128 40
+:raymanni/holiday/plank_left: 288 64 fr
+:geoo/construction/stairsbrick_rd_32: 224 32
+:geoo/construction/stairsbrick_rd_32: 256 208
+:raymanni/holiday/plank_left: 48 96
+:raymanni/holiday/plank_right: 56 64
+:geoo/construction/stairsbrick_rd_32: 96 144
+:raymanni/holiday/plank_right: 160 224 fr
+:raymanni/holiday/plank_left: 160 176 fr
+:raymanni/holiday/screw1: 160 176
+:raymanni/holiday/gift1: -16 208
+:raymanni/holiday/gift2: 0 240
+:raymanni/holiday/gift4: 8 272
+:raymanni/holiday/gift3: -24 272
+:raymanni/holiday/gift2: 40 272 fr
+:raymanni/holiday/gift1: -24 304
+:raymanni/holiday/gift4: 48 336
+:raymanni/holiday/gift2: -16 336
+:raymanni/holiday/plank_left: 62 152
+:raymanni/holiday/screw1: 80 152
+:geoo/construction/stairsbrick_rd_32: -2 120
+:raymanni/holiday/screw1: 160 240
+:geoo/construction/stairsbrick_ru_32: 176 208
+:raymanni/holiday/plank_long: 368 296 fr
+:raymanni/holiday/plank_left: 368 296 fr
+:raymanni/holiday/plank_left: 350 296
+:raymanni/holiday/screw1: 368 296
+:geoo/construction/stairsbrick_ru_32: 368 264
+:raymanni/holiday/garland: 80 288
+:raymanni/holiday/garland: 144 288
+:raymanni/holiday/garland: 376 160
+:raymanni/holiday/garland: 440 160
+:raymanni/holiday/gift1: 424 336
+:raymanni/holiday/gift4: 448 304
+:raymanni/holiday/gift2: 456 272
+:raymanni/holiday/plank_left: 440 56
+:geoo/construction/stairsbrick_rd_32: 376 24
+:raymanni/holiday/gift2: 122 348
+:raymanni/holiday/gift3: 130 316
+:amanda/steel/steel16x16.S: 288 160

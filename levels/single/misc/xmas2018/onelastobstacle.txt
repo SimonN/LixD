@@ -1,0 +1,95 @@
+$BUILT 2018-11-25 20:00:00
+$AUTHOR Simon
+$ENGLISH One Last Obstacle
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 272
+
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 39
+
+#WALKER 1
+#CLIMBER 1
+#BUILDER 1
+#MINER 1
+#JUMPER 1
+#EXPLODER2 0
+
+:raymanni/holiday/hatch.H: 464 48 r
+
+:raymanni/holiday/goal.G: 208 48
+
+:raymanni/holiday/snow3: 464 232
+:raymanni/holiday/snow3: 576 224
+:raymanni/holiday/snow3: 504 200 frr
+:raymanni/holiday/plank_mid1: 88 80 fr
+:raymanni/holiday/snow1: 402 184
+:raymanni/holiday/plank_mid1: 608 144
+:raymanni/holiday/snow1: 10 224 rr
+:raymanni/holiday/snow2: 100 242
+:raymanni/holiday/snow2: 10 246 frr
+:raymanni/holiday/snow1: 8 200
+:raymanni/holiday/snow1: 88 176 rrr
+:raymanni/holiday/gift1: 80 176
+:raymanni/holiday/snow3: 112 176 fr
+:raymanni/holiday/plank_long: 304 32 rrr
+:raymanni/holiday/plank_right: 304 128 fr
+:raymanni/holiday/snow2: 344 200 rr
+:raymanni/holiday/snow4: 336 200 rr
+:raymanni/holiday/snow4: 296 216 rr
+:raymanni/holiday/snow2: 256 240
+:raymanni/holiday/snow2: 168 184 frr
+:raymanni/holiday/snow4: 304 192
+:raymanni/holiday/snow3: 264 176 r
+:raymanni/holiday/snow1: 416 176
+:raymanni/holiday/screw2: 288 128 fr
+:raymanni/holiday/screw1: 304 128
+:raymanni/holiday/plank_broken: 336 144
+:raymanni/holiday/garland: 416 160
+:raymanni/holiday/plank_long: 368 144
+:raymanni/holiday/bauble_string: 464 136 rd
+:raymanni/holiday/plank_long: 496 144
+:raymanni/holiday/cane_mid: 592 112
+:raymanni/holiday/cane_b: 576 80
+:raymanni/holiday/cane_a: 544 80
+:raymanni/holiday/cane_end2: 544 112
+:raymanni/holiday/plank_left: 304 32 fr
+:raymanni/holiday/snow2: 168 112
+:raymanni/holiday/gift4: 88 144
+:raymanni/holiday/gift2: 64 112
+:raymanni/holiday/gift2: 16 176
+:raymanni/holiday/gift3: 56 144
+:raymanni/holiday/snowlix: 88 224
+:raymanni/holiday/snow1: -8 232
+:raymanni/holiday/garland: 352 160
+:raymanni/holiday/garland: 480 160
+:raymanni/holiday/garland: 544 160
+:raymanni/holiday/garland: 608 160
+:raymanni/holiday/bauble_string: 400 136 rd
+:raymanni/holiday/bauble_string: 528 136 rd
+:raymanni/holiday/bauble_string: 592 136 rd
+:raymanni/holiday/bauble_string: 296 88 rrd
+:raymanni/holiday/bauble_string: 296 40 rrd
+:raymanni/holiday/screw1: 440 144
+:raymanni/holiday/screw2: 320 128 r
+:raymanni/holiday/screw1: 376 144
+:raymanni/holiday/screw1: 504 144
+:raymanni/holiday/screw1: 568 144
+:raymanni/holiday/screw1: 632 144
+:raymanni/holiday/screw2: 376 128
+:raymanni/holiday/screw2: 440 128
+:raymanni/holiday/screw2: 504 128
+:raymanni/holiday/screw2: 568 128
+:raymanni/holiday/screw2: 632 128
+:raymanni/holiday/screw2: 632 160 rr
+:raymanni/holiday/screw2: 568 160 f
+:raymanni/holiday/screw2: 504 160 f
+:raymanni/holiday/screw2: 440 160 f
+:raymanni/holiday/screw2: 376 160 f
+:raymanni/holiday/plank_left: 88 48 fr
+:raymanni/holiday/bauble_string: 80 72 rrd
+:raymanni/holiday/screw1: 88 48
+:raymanni/holiday/screw2: 104 48 r
+:raymanni/holiday/screw2: 72 48 fr

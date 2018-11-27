@@ -1,0 +1,85 @@
+$BUILT 2018-11-25 20:00:00
+$AUTHOR F/Simon
+$ENGLISH Porcupine Burrow
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 592
+#SIZE_Y 160
+
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 40
+
+#RUNNER 1
+#PLATFORMER 1
+#MINER 2
+#BATTER 1
+#EXPLODER2 0
+
+:raymanni/holiday/hatch.H: 17 50
+
+:raymanni/holiday/goal.G: 490 44
+
+:raymanni/holiday/porcupine.T: 196 50
+:raymanni/holiday/porcupine.T: 222 50
+
+:simon/crystal.W: 398 130
+:simon/crystal.W: 446 130
+:simon/crystal.W: 494 131
+
+:raymanni/holiday/bauble_string: 402 16
+:raymanni/holiday/bauble_ruby: 402 32
+:raymanni/holiday/bauble_string: 460 14
+:raymanni/holiday/bauble_navy: 460 46
+:raymanni/holiday/plank_long: 328 8
+:raymanni/holiday/plank_long: 200 8
+:raymanni/holiday/garland: 272 24
+:raymanni/holiday/garland: 208 24
+:raymanni/holiday/plank_mid1: 54 8
+:raymanni/holiday/plank_mid1: 6 8
+:raymanni/holiday/garland: 16 24
+:raymanni/holiday/plank_long: 456 8
+:raymanni/holiday/cane_mid: 192 24
+:raymanni/holiday/cane_end1: 192 8
+:raymanni/holiday/cane_mid: 80 24
+:raymanni/holiday/garland: 528 24
+:raymanni/holiday/cane_mid: 0 88
+:raymanni/holiday/cane_mid: 576 88
+:raymanni/holiday/snow2: -11 115
+:raymanni/holiday/snow2: 87 112
+:raymanni/holiday/snow2: 190 111
+:raymanni/holiday/snow2: 274 112
+:raymanni/holiday/snow2: 494 109
+:raymanni/holiday/cane_mid: 0 56
+:raymanni/holiday/cane_mid: 0 24
+:raymanni/holiday/cane_end1: 0 8
+:raymanni/holiday/snow3: 470 110
+:raymanni/holiday/snow3: 400 112
+:raymanni/holiday/snow2: 336 114
+:raymanni/holiday/cane_mid: 576 56
+:raymanni/holiday/cane_mid: 576 24
+:raymanni/holiday/cane_end1: 576 8
+:raymanni/holiday/garland: 464 24
+:raymanni/holiday/brick_red_d: 176 40
+:raymanni/holiday/brick_red_c: 80 40
+:raymanni/holiday/brick_red: 112 40
+:raymanni/holiday/brick_red: 144 40
+:raymanni/holiday/brick_red_a: 80 8
+:raymanni/holiday/brick_red_b: 176 8
+:raymanni/holiday/brick_red: 112 8
+:raymanni/holiday/brick_red: 144 8
+:raymanni/holiday/cane_end1: 80 8
+:raymanni/holiday/brick_red_c: 72 33 rrd
+:raymanni/holiday/brick_red_a: 176 41 d
+:raymanni/holiday/snow1: 118 16 d
+:raymanni/holiday/snowlix: 133 32
+:raymanni/holiday/wreath: 112 8
+:raymanni/holiday/plank_mid1: 38 8
+:raymanni/holiday/garland: 400 24
+:raymanni/holiday/garland: 336 24
+:raymanni/holiday/brick_red_a: 294 128
+:raymanni/holiday/brick_red_b: 390 128
+:raymanni/holiday/brick_red: 358 128
+:raymanni/holiday/brick_red: 326 128
+:raymanni/holiday/snow1: 334 144 d
+:raymanni/holiday/wreath: 326 136

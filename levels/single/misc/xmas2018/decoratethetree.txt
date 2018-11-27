@@ -1,0 +1,171 @@
+$BUILT 2018-11-25 20:00:00
+$AUTHOR Simon
+$ENGLISH Decorate the Tree
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 544
+#SIZE_Y 320
+
+#INITIAL 5
+#REQUIRED 5
+#SPAWN_INTERVAL 59
+
+#RUNNER 1
+#CLIMBER 5
+#BUILDER 1
+#BASHER 1
+#DIGGER 1
+#JUMPER 5
+#EXPLODER2 0
+
+:raymanni/holiday/hatch.H: 32 208
+
+:raymanni/holiday/goal.G: 448 224
+
+:raymanni/holiday/porcupine.T: 344 224
+
+:amanda/forest/moss_00: 290 218 rr
+:amanda/forest/moss_00: 202 192
+:amanda/forest/moss_00: 194 224 frr
+:amanda/forest/moss_00: 282 224
+:amanda/forest/moss_00: 256 156
+:amanda/forest/moss_00: 210 202
+:amanda/forest/moss_00: 222 150 rr
+:raymanni/holiday/bauble_string: 320 64
+:raymanni/holiday/bauble_string: 308 212
+:raymanni/holiday/bauble_ruby: 308 244
+:amanda/forest/moss_00: 236 228 frr
+:raymanni/holiday/bauble_string: 104 128
+:raymanni/holiday/bauble_string: 104 96
+:raymanni/holiday/bauble_string: 160 80
+:raymanni/holiday/bauble_string: 160 112
+:raymanni/holiday/bauble_string: 128 96
+:amanda/forest/moss_00: 254 216 f
+:amanda/forest/moss_00: 278 218
+:amanda/forest/bark_00: 252 194
+:amanda/forest/moss_00: 196 218 frr
+:amanda/forest/moss_00: 232 126
+:raymanni/holiday/garland: 240 32
+:raymanni/holiday/garland: 320 64
+:raymanni/holiday/garland: 160 64
+:amanda/forest/bark_00: 254 217
+:amanda/forest/bark_00: 269 216 f
+:matt/underworld/05: 64 288
+:matt/underworld/05: 304 288 frr
+:matt/underworld/05: 256 288
+:matt/underworld/05: 176 288
+:amanda/forest/rope_c: 265 57
+:amanda/forest/rope_c: 264 57
+:amanda/forest/moss_00: 274 208 frr
+:amanda/forest/moss_00: 252 202 frr
+:amanda/forest/moss_00: 306 164 frrr
+:amanda/forest/moss_00: 241 189 frr
+:amanda/forest/moss_00: 254 160 fr
+:amanda/forest/moss_00: 268 80 frrr
+:amanda/forest/moss_00: 242 134
+:amanda/forest/moss_00: 274 98 r
+:amanda/forest/moss_00: 258 70 rrr
+:amanda/forest/moss_00: 232 120
+:amanda/forest/moss_00: 244 98 rrr
+:amanda/forest/moss_00: 212 168
+:amanda/forest/moss_00: 256 170
+:amanda/forest/moss_00: 204 178 frr
+:amanda/forest/moss_00: 198 186 frr
+:amanda/forest/moss_00: 227 144
+:amanda/forest/moss_00: 218 138
+:raymanni/holiday/bauble_string: 216 202
+:amanda/forest/moss_00: 202 208
+:amanda/forest/moss_00: 240 176
+:raymanni/holiday/bauble_string: 228 159
+:amanda/forest/moss_00: 272 182
+:amanda/forest/moss_00: 276 192
+:raymanni/holiday/bauble_string: 290 172
+:amanda/forest/moss_00: 258 148 frr
+:amanda/forest/moss_00: 204 198
+:amanda/forest/rope_c: 264 60 r
+:amanda/forest/rope_c: 264 54 r
+:raymanni/holiday/garland: 96 96
+:raymanni/holiday/brick_red: 64 96
+:raymanni/holiday/brick_red: 64 128
+:raymanni/holiday/brick_red: 64 160
+:matt/underworld/00: 240 272
+:raymanni/holiday/plank_long: 224 288
+:raymanni/holiday/plank_long: 96 288
+:raymanni/holiday/plank_long: 320 288
+:raymanni/holiday/brick_red: 64 288
+:raymanni/holiday/brick_red: 448 288
+:raymanni/holiday/brick_red: 448 160
+:raymanni/holiday/brick_red: 448 128
+:raymanni/holiday/garland: 384 96
+:raymanni/holiday/brick_red: 448 96
+:raymanni/holiday/brick_red_a: 64 64
+:raymanni/holiday/brick_red_a: 128 32
+:raymanni/holiday/brick_red: 96 64
+:raymanni/holiday/brick_red: 128 64
+:raymanni/holiday/brick_red: 384 64
+:raymanni/holiday/brick_red: 416 64
+:raymanni/holiday/brick_red_d: 160 64
+:raymanni/holiday/brick_red: 160 32
+:raymanni/holiday/brick_red: 352 32
+:raymanni/holiday/brick_red_b: 384 32
+:raymanni/holiday/brick_red_b: 448 64
+:raymanni/holiday/brick_red_c: 352 64
+:raymanni/holiday/brick_red_d: 224 32
+:raymanni/holiday/brick_red_c: 288 32
+:raymanni/holiday/brick_red: 192 32
+:raymanni/holiday/brick_red: 320 32
+:raymanni/holiday/brick_red_a: 192 0
+:raymanni/holiday/brick_red: 224 0
+:raymanni/holiday/brick_red: 256 0
+:raymanni/holiday/brick_red: 288 0
+:raymanni/holiday/brick_red_b: 320 0
+:raymanni/holiday/cane_mid: 416 256
+:raymanni/holiday/cane_a: 368 160
+:raymanni/holiday/cane_b: 400 160
+:raymanni/holiday/cane_mid: 416 192
+:raymanni/holiday/cane_mid: 416 224
+:raymanni/holiday/cane_end2: 368 192
+:raymanni/holiday/brick_red: 32 128
+:raymanni/holiday/brick_red: 480 288
+:raymanni/holiday/brick_red: 512 288
+:raymanni/holiday/brick_red: 512 256
+:raymanni/holiday/brick_red: 512 224
+:raymanni/holiday/brick_red_c: 480 192
+:raymanni/holiday/brick_red: 512 192
+:raymanni/holiday/brick_red: 480 160
+:raymanni/holiday/brick_red_b: 480 96
+:raymanni/holiday/brick_red: 480 128
+:raymanni/holiday/brick_red_b: 512 128
+:raymanni/holiday/brick_red: 512 160
+:raymanni/holiday/brick_red_a: 32 96
+:raymanni/holiday/brick_red: 32 160
+:raymanni/holiday/brick_red: 32 288
+:raymanni/holiday/brick_red: 0 160
+:raymanni/holiday/brick_red: 0 192
+:raymanni/holiday/brick_red: 0 224
+:raymanni/holiday/brick_red: 0 256
+:raymanni/holiday/brick_red: 0 288
+:raymanni/holiday/brick_red_a: 0 128
+:raymanni/holiday/bauble_string: 128 192
+:raymanni/holiday/bauble_string: 128 160
+:raymanni/holiday/bauble_string: 128 128
+:raymanni/holiday/bauble_ruby: 160 144
+:raymanni/holiday/bauble_navy: 128 224
+:raymanni/holiday/bauble_blue: 104 160
+:raymanni/holiday/brick_red_d: 32 192
+:raymanni/holiday/bauble_blue: 320 96
+:raymanni/holiday/wreath: 28 124
+:matt/beach/decor/moon: 464 16
+:amanda/forest/moss_00: 198 190
+:raymanni/holiday/bauble_blue: 216 234
+:geoo/steel/16x16o.S: 236 191
+:geoo/steel/16x16o.S: 298 204
+:raymanni/holiday/bauble_string: 254 112
+:geoo/steel/16x16o.S: 262 128
+:amanda/forest/moss_00: 262 166 frr
+:amanda/forest/moss_00: 223 156
+:amanda/forest/moss_00: 225 143 frr
+:raymanni/holiday/plank_left: 96 288
+:raymanni/holiday/plank_right: 416 288
+:raymanni/holiday/steel1.S: 408 288
+:amanda/forest/fern_00: 351 219 d

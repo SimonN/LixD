@@ -1,0 +1,188 @@
+$BUILT 2018-11-25 20:00:00
+$AUTHOR Simon
+$ENGLISH Three Wise Travellers
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 768
+#SIZE_Y 656
+
+#INITIAL 3
+#REQUIRED 3
+#SPAWN_INTERVAL 32
+
+#RUNNER 1
+#CLIMBER 1
+#FLOATER 1
+#MINER 4
+#JUMPER 2
+#EXPLODER2 0
+
+:raymanni/holiday/hatch.H: 560 -8 r
+
+:raymanni/holiday/goal.G: 40 490
+
+:geoo/sandstone/brazier.F: 272 88
+:geoo/sandstone/brazier.F: 320 88
+:geoo/sandstone/brazier.F: 456 80
+:geoo/sandstone/brazier.F: 272 312
+:geoo/sandstone/brazier.F: 408 320
+:geoo/sandstone/brazier.F: 112 432
+:geoo/sandstone/brazier.F: 0 432
+:geoo/sandstone/brazier.F: 16 416
+:geoo/sandstone/brazier.F: 96 416
+:geoo/sandstone/torch.F: 34 408
+:geoo/sandstone/torch.F: 46 408
+:geoo/sandstone/torch.F: 66 408
+:geoo/sandstone/torch.F: 78 408
+
+:matt/beach/nighttime/13: 222 598 rrr
+:geoo/sandstone/ebony/v16a: 176 546
+:geoo/sandstone/ebony/v16b: 160 554
+:geoo/sandstone/ebony/v16b: 144 546
+:geoo/sandstone/ebony/v16a: 128 554
+:geoo/sandstone/ebony/v16a: 112 552
+:geoo/sandstone/ebony/v16a: 112 520
+:geoo/sandstone/ebony/v16l: 112 472
+:geoo/sandstone/ebony/v16b: 112 488
+:geoo/sandstone/ebony/v16a: 16 520
+:matt/beach/nighttime/04: -68 564 rrr
+:geoo/sandstone/ebony/v16l: 128 538
+:matt/beach/nighttime/04: 12 554 rrr
+:matt/beach/nighttime/03: -72 544 f
+:matt/beach/nighttime/03: 32 560 f
+:matt/beach/nighttime/04: 306 592 r
+:matt/beach/nighttime/04: 94 563 r
+:matt/beach/decor/grass05: 654 554
+:geoo/steel/dark_32x32o.S: 736 516
+:matt/beach/nighttime/04: 712 272
+:matt/beach/nighttime/04: 608 568 rrr
+:geoo/sandstone/ebony/v16r: 376 328
+:geoo/sandstone/ebony/v16l: 376 304
+:matt/beach/nighttime/01: 390 452 frr
+:matt/beach/nighttime/13: 354 550 r
+:matt/beach/nighttime/13: 320 516 r
+:matt/beach/nighttime/01: 152 304 rr
+:matt/beach/nighttime/01: 120 312
+:matt/beach/nighttime/01: 464 272 f
+:matt/beach/nighttime/01: 452 432 frr
+:matt/beach/nighttime/01: 356 440 f
+:matt/beach/nighttime/01: 484 416 rr
+:geoo/sandstone/ribbon_end: 112 144
+:geoo/sandstone/pillar_top: 144 176
+:geoo/sandstone/pillar_top: 80 176
+:matt/beach/nighttime/03: 52 194 frr
+:geoo/sandstone/slopes/32x16lb: 8 304
+:geoo/steel/dark_32x32o.S: 8 320
+:geoo/sandstone/ebony/v16r: 312 376
+:matt/beach/nighttime/01: 310 232 rr
+:geoo/sandstone/pillar_top: 640 192
+:geoo/sandstone/pillar_top: 704 192
+:matt/beach/nighttime/00: 376 164
+:geoo/sandstone/slopes/16x32rb: 704 128
+:geoo/sandstone/slopes/16x32lb: 656 128
+:matt/beach/nighttime/04: 616 200 r
+:matt/beach/decor/grass11: 688 246
+:matt/beach/nighttime/04: 512 216 r
+:matt/beach/nighttime/02: 572 216 rrr
+:matt/beach/nighttime/02: 462 208 r
+:geoo/sandstone/ebony/v16a: 488 56
+:matt/beach/nighttime/03: 312 216
+:matt/beach/nighttime/04: 376 188 r
+:geoo/sandstone/pillar_top_ext: 560 64
+:geoo/sandstone/pillar_top: 576 80
+:geoo/sandstone/pillar_32: 576 112
+:geoo/sandstone/pillar_32: 576 144
+:geoo/sandstone/pillar_bottom_ext: 560 208
+:geoo/sandstone/pillar_bottom: 576 176
+:geoo/sandstone/ebony/v16l: 488 40
+:geoo/sandstone/ebony/v16r: 488 88
+:geoo/sandstone/ebony/v16a: 440 88
+:geoo/sandstone/ebony/v16l: 440 72
+:geoo/sandstone/ebony/v16r: 440 120
+:geoo/sandstone/32x32: 640 160
+:geoo/sandstone/32x32: 704 160
+:geoo/sandstone/arc_small: 640 128
+:geoo/sandstone/slopes/16x32rt: 624 128
+:geoo/sandstone/slopes/16x32lt: 736 128
+:geoo/sandstone/slopes/64x32rb: 624 96
+:geoo/sandstone/slopes/64x32lb: 688 96
+:matt/beach/nighttime/14: 186 234 rrr
+:matt/beach/nighttime/14: 296 168 rrr
+:matt/beach/nighttime/14: 156 246 rrr
+:geoo/sandstone/ebony/h16r: 472 56
+:geoo/sandstone/ebony/h16c: 440 56
+:geoo/sandstone/ebony/h16l: 424 56
+:geoo/sandstone/ebony/h16l: 424 104
+:geoo/sandstone/ebony/h16r: 488 104
+:geoo/sandstone/ebony/h16c: 456 104
+:geoo/sandstone/ebony/h16c: 296 112
+:geoo/sandstone/ebony/h16l: 280 112
+:geoo/sandstone/ebony/h16r: 328 112
+:geoo/sandstone/ebony/v16a: 304 80
+:geoo/sandstone/ebony/h16l: 272 80
+:geoo/sandstone/ebony/h16r: 288 80
+:geoo/sandstone/ebony/h16l: 320 80
+:geoo/sandstone/ebony/h16r: 336 80
+:matt/beach/nighttime/14: 86 256 rrr
+:matt/beach/nighttime/14: 8 270 rrr
+:geoo/sandstone/ebony/h16c: 288 336
+:geoo/sandstone/ebony/h16l: 272 336
+:geoo/sandstone/ebony/h16r: 320 336
+:geoo/sandstone/ebony/h16c: 320 368
+:geoo/sandstone/ebony/h16l: 304 368
+:geoo/sandstone/ebony/h16r: 352 368
+:geoo/sandstone/ebony/v16l: 304 80
+:geoo/sandstone/ebony/v16l: 312 352
+:geoo/sandstone/slopes/16x32lb: 160 144
+:geoo/sandstone/slopes/16x32rb: 80 144
+:geoo/sandstone/slopes/16x32rt: 128 144
+:geoo/sandstone/slopes/16x32lt: 112 144
+:geoo/sandstone/16x32: 96 144
+:geoo/sandstone/16x32: 144 144
+:geoo/sandstone/pillar_bottom_ext: 96 128
+:matt/beach/nighttime/04: 348 368 r
+:matt/beach/nighttime/01: 352 224 rr
+:matt/beach/nighttime/01: 104 304 rr
+:matt/beach/nighttime/02: 280 536
+:matt/beach/nighttime/00: 290 494
+:matt/beach/nighttime/13: 454 616 frrr
+:geoo/sandstone/ebony/h16c: 328 312
+:geoo/sandstone/ebony/h16l: 312 312
+:geoo/sandstone/ebony/h16c: 360 312
+:geoo/sandstone/ebony/h16c: 392 312
+:geoo/sandstone/ebony/h16c: 424 312
+:geoo/sandstone/ebony/h16r: 440 312
+:geoo/sandstone/ebony/h16c: 360 344
+:geoo/sandstone/ebony/h16l: 344 344
+:geoo/sandstone/ebony/h16c: 392 344
+:geoo/sandstone/ebony/h16r: 424 344
+:matt/beach/nighttime/04: 544 608 r
+:matt/beach/decor/grass07: 632 250
+:matt/beach/nighttime/04: 552 256 rrr
+:matt/beach/decor/grass08: 668 222
+:matt/beach/nighttime/04: 632 272
+:geoo/steel/dark_32x32o.S: 736 484
+$BEGIN_TILE_GROUP 0
+:matt/beach/nighttime/04: 8 104
+:matt/beach/nighttime/04: 0 0 rr
+:matt/beach/nighttime/01: 88 96 frd
+$END_TILE_GROUP
+:Group-0: 657 384
+:matt/beach/decor/moon: 36 22
+:geoo/sandstone/ebony/v16l: 16 472
+:geoo/sandstone/ebony/v16b: 16 488
+:geoo/sandstone/ribbon_end: 56 456
+:geoo/sandstone/ebony/h16r: 24 456
+:geoo/sandstone/ebony/h16l: 8 456
+:geoo/sandstone/ebony/h16r: 120 456
+:geoo/sandstone/ebony/h16l: 104 456
+:geoo/sandstone/ebony/h16r: 104 440
+:geoo/sandstone/ebony/h16l: 24 440
+:geoo/sandstone/ebony/h16c: 40 440
+:geoo/sandstone/16x8: 48 432
+:geoo/sandstone/ebony/v16l: 144 530
+:geoo/sandstone/ebony/v16l: 160 538
+:geoo/sandstone/ebony/v16l: 176 530
+:geoo/sandstone/ebony/h16a: 72 440
+:geoo/sandstone/16x8: 80 432
+:matt/beach/nighttime/01: 244 598

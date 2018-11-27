@@ -1,0 +1,118 @@
+$BUILT 2018-11-25 20:00:00
+$AUTHOR F
+$ENGLISH Past the Xmas Tree
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 608
+#SIZE_Y 300
+
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 4
+
+#BLOCKER 1
+#PLATFORMER 2
+#BASHER 3
+#DIGGER 1
+#EXPLODER2 0
+
+:raymanni/holiday/hatch.H: 17 32
+
+:raymanni/holiday/goal.G: 520 212
+
+:raymanni/holiday/porcupine.T: 330 -24
+:raymanni/toys/monkey.T: 427 201
+
+:geoo/sandstone/torch.F: 277 146
+:geoo/sandstone/torch.F: 279 101
+:geoo/sandstone/torch.F: 283 62
+:geoo/sandstone/torch.F: 407 56
+:geoo/sandstone/torch.F: 410 103
+:geoo/sandstone/torch.F: 408 149
+:simon/crystal.W: 160 254
+:simon/crystal.W: 208 254
+:simon/crystal.W: -32 324
+:simon/crystal.W: 16 254
+:simon/crystal.W: 64 254
+:simon/crystal.W: 112 254
+:matt/beach/decor/bonfire.F: -3 7
+:simon/crystal.W: 256 254
+:simon/crystal.W: 304 254
+
+:matt/winter/06: 0 260
+:raymanni/holiday/plank_long: -39 181
+$BEGIN_TILE_GROUP 0
+:amanda/forest/leaves_03: 0 49
+:amanda/forest/bark_05: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:Group-0: 73 0
+:Group-0: 11 3 frr
+:amanda/forest/bark_03: 0 62 rd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:Group-1: 7 0
+:Group-1: 4 41
+:amanda/forest/bark_01: 67 102
+:Group-1: 0 85
+$END_TILE_GROUP
+:Group-2: 287 31
+:raymanni/holiday/bauble_red: 296 88
+:raymanni/holiday/bauble_navy: 391 132
+:raymanni/holiday/bauble_blue: 392 88
+:raymanni/holiday/bauble_yellow: 293 174
+:raymanni/holiday/bauble_ruby: 294 129
+:raymanni/holiday/bauble_green: 386 174
+:raymanni/holiday/garland: 326 142
+:raymanni/holiday/garland: 330 94
+:raymanni/holiday/garland: 331 56
+:raymanni/holiday/snow3: 326 192
+:raymanni/holiday/snow1: 370 274 frrr
+:raymanni/holiday/snow4: 413 280
+:raymanni/holiday/snow1: 433 262
+:raymanni/holiday/snow4: 364 276
+:raymanni/holiday/snow4: 477 274
+:raymanni/holiday/snow4: 528 280
+:raymanni/holiday/plank_d1: 7 47 r
+:raymanni/holiday/plank_d1: 23 79 r
+:raymanni/holiday/plank_d1: 39 111 r
+:raymanni/holiday/plank_d1: 55 143 r
+:raymanni/holiday/plank_d1: 71 175 r
+:raymanni/holiday/plank_d1: 87 207 r
+:raymanni/holiday/plank_d1: 102 236 r
+:raymanni/holiday/plank_d1: 118 268 r
+:raymanni/holiday/plank_d1: 135 303 r
+:raymanni/holiday/plank_d1: 144 367 r
+:raymanni/holiday/wreath: 17 184
+:matt/winter/09a: 552 -14
+:matt/winter/06: 0 292
+:matt/winter/06: 0 209
+:matt/winter/06: 0 145
+:matt/winter/06: 0 83
+:matt/winter/06: 0 47
+$BEGIN_TILE_GROUP 3
+:raymanni/holiday/steel1.S: 0 0
+:raymanni/holiday/plank_d1: 2 0 rd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 4
+:raymanni/holiday/steel1.S: 0 0
+:Group-3: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 5
+:Group-4: 0 0
+:Group-4: 2 0 d
+$END_TILE_GROUP
+:Group-5: 75 152
+:Group-5: 73 148
+:raymanni/holiday/steel1.S: 162 222
+:raymanni/holiday/steel1.S: 98 222
+:raymanni/holiday/steel1.S: 130 222
+:raymanni/holiday/plank_d1: 78 222 rd
+:raymanni/holiday/plank_long: 66 254
+:raymanni/holiday/plank_d1: 87 240 rd
+:raymanni/holiday/steel1.S: 76 248 d
+:raymanni/holiday/steel1.S: 54 248 d
+:raymanni/holiday/plank_right: 162 254
+:raymanni/holiday/cane_b: 344 210 d
+:raymanni/holiday/cane_c: 360 242 d
+:raymanni/holiday/cane_end1: 330 210 rrrd
