@@ -24,7 +24,7 @@ Lix's code, graphic sets, sprites, levels, sound effects, and some music
 tracks (but not all music tracks) are released into the public domain
 via the CC0 public domain dedication.
 
-The text font, DejaVu Sans, and some music tracks have their own licenses.
+The text font DejaVu Sans and some music tracks have their own licenses.
 [Full license/copying text](https://raw.githubusercontent.com/SimonN/LixD/master/doc/copying.txt)
 
 Networked multiplayer
@@ -67,8 +67,9 @@ Quick build instructions:
 * Install Allegro 5.2 and enet 1.3:
     * On Windows, follow [my detailed build instructions
     ](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/win64.txt).
-    * On Arch Linux, install the `pkg-config`, `allegro`, and `enet` packages.
-    * On Debian or Ubuntu, install the `pkg-config`, `liballegro5-dev`, and `libenet-dev` packages.
+    * On Arch Linux, install the packages `pkgconf`, `allegro`, and `enet`.
+    * On Debian or Ubuntu, install the packages `pkg-config`, `liballegro5-dev`, and `libenet-dev`.
+    * On Fedora 29, install the packages `pkgconf-pkg-config`, `allegro5-devel`, `allegro5-addon-acodec-devel`, `allegro5-addon-audio-devel`, `allegro5-addon-image-devel`, `allegro5-addon-ttf-devel`, and `enet-devel`.
     * On other Linuxes or Mac, follow [my detailed build instructions
     ](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/linux.txt).
 * Build Lix: `$ dub build -b release` or, on Windows, run `win-build.bat`.

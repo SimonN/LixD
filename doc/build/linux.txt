@@ -24,6 +24,10 @@ already ship with Phobos? Experiment.
     http://dlang.org/download.html
     https://code.dlang.org/download
 
+Is LDC or DMD better? If you only build Lix occasionally, use LDC. Its compile
+times are longer, but it produces faster code. DMD is best for debugging
+versions, it compiles Lix faster than any other compiler would.
+
 
 
 Install required libraries
@@ -38,15 +42,37 @@ called from various programming languages. It's not particular to D.
 
 If you use a package manager, install:
 
-* pkg-config (Package `pkg-config' on Arch/Debian/Ubuntu)
-* Allegro 5  (Package `allegro'    on Arch, `liballegro5-dev' on Debian/Ubuntu)
-* enet       (Package `enet'       on Arch, `libenet-dev'     on Debian/Ubuntu)
+* pkgconf
+    * On Arch/Debian/Ubuntu, this is package "pkgconf".
+    * On Fedora 29, this is package "pkgconf-pkg-config".
+* Allegro 5
+    * On Arch, this is package "allegro".
+    * On Debian/Ubuntu, this is package "liballegro5-dev".
+    * On Fedora 29, you need the 5 packages "allegro5-devel",
+        "allegro5-addon-acodec-devel", "allegro5-addon-audio-devel",
+        "allegro5-addon-image-devel", and "allegro5-addon-ttf-devel".
+* enet
+    * On Arch, this is package "enet".
+    * On Debian/Ubuntu, this is package "libenet-dev".
+    * On Fedora 29, this is package "enet-devel".
 
-If you install manually, install the following libraries in the order listed,
-because Allegro 5 relies on everything above it. You can get away without
-dumb, but Lix won't play any tracked music then.
+After you've installed these via package manager, skip the next section
+"Installing dependencies manually", instead proceed with "Build Lix" below.
 
-* pkg-config
+
+
+Installing dependencies manually
+--------------------------------
+
+(Skip this section if you've installed the libraries by package manager,
+see above.)
+
+If you prefer to build or install Allegro 5 manually (not via package manager),
+install the following libraries in the order listed because Allegro 5 relies
+on everything above it. You can get away without dumb, but Lix won't play
+any tracked music then.
+
+* pkgconf or pkg-config
 * zlib
 * libpng
 * libvorbis
@@ -54,13 +80,6 @@ dumb, but Lix won't play any tracked music then.
 * dumb 2.0 or 0.9.3
 * Allegro 5
 * enet
-
-
-
-Installing enet manually
-------------------------
-
-(Skip this section if you installed enet via your Linux package manager.)
 
 Now (since August 2016), I rely on enet 1.3.x. Download it from
 enet.bespin.org, or clone from github:
