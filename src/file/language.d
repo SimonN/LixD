@@ -176,6 +176,8 @@ enum Lang {
     gameFramestepOrQuit,
     gamePause,
     gameZoom,
+    gameShowSplatRuler,
+    gamePingHatchesGoals,
     gameStateSave,
     gameStateLoad,
     gameFramestepBack,
@@ -183,7 +185,6 @@ enum Lang {
     gameFastForward,
     gameRestart,
     gameNuke,
-    gameClearPhysics,
 
     // main editor screen
     editorHotkey,

@@ -237,8 +237,11 @@ private:
         if (nuke.isMouseHere)
             // can be the same button that TapeRecorderButtons has reported
             suggestTooltip(Tooltip.ID.nuke);
-        if (_coolShades && _coolShades.isMouseHere)
-            suggestTooltip(Tooltip.ID.coolShades);
+        if (_coolShades && _coolShades.isMouseHere) {
+            // Hack: We want to distinguish between single- and multiplayer.
+            suggestTooltip(_scoreBoard.empty ? Tooltip.ID.showSplatRuler
+                : Tooltip.ID.pingHatchesGoals);
+        }
         foreach (sk; _skills.filter!(sk => sk.isMouseHere).takeOne)
             stats.suggestTooltip(sk.skill);
     }

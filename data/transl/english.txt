@@ -104,6 +104,8 @@ $gameClickToCancelReplay Click to interrupt the replay.
 $gameFramestepOrQuit Rewind time (◀▮) or quit with [%s].
 $gamePause Pause.
 $gameZoom %s to zoom in, %s to zoom out.
+$gameShowSplatRuler Show splat ruler.
+$gamePingHatchesGoals Show splat ruler. Highlight hatches and goals.
 $gameStateSave Quicksave game position.
 $gameStateLoad Load quicksaved position.
 $gameFramestepBack %s to step back, %s to jump back.
@@ -111,7 +113,6 @@ $gameFramestepAhead %s to step ahead, %s to jump ahead.
 $gameFastForward %s for fast-forward, %s for turbo.
 $gameRestart Restart level.
 $gameNuke Nuke. Double-click to activate.
-$gameClearPhysics Show splat ruler, hatches, goals.
 
 $skillTooltip walker|Walk back or cancel blockers.
 $skillTooltip jumper|Jump once. Runners jump further.

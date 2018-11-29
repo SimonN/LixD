@@ -18,14 +18,15 @@ struct Tooltip {
     enum ID : int {
         pause = 0x1,
         zoom = 0x2,
-        stateSave = 0x4,
-        stateLoad = 0x8,
-        framestepBack = 0x10,
-        framestepAhead = 0x20,
-        fastForward = 0x40,
-        restart = 0x80,
-        nuke = 0x100,
-        coolShades = 0x200,
+        showSplatRuler = 0x4,
+        pingHatchesGoals = 0x8,
+        stateSave = 0x10,
+        stateLoad = 0x20,
+        framestepBack = 0x40,
+        framestepAhead = 0x80,
+        fastForward = 0x100,
+        restart = 0x200,
+        nuke = 0x400,
 
         forceLeft = 0x1000,
         forceRight = 0x2000,
@@ -86,6 +87,8 @@ static this()
     key(Tooltip.ID.framestepOrQuit, Lang.gameFramestepOrQuit, keyGameExit);
     none(Tooltip.ID.pause, Lang.gamePause);
     mouse(Tooltip.ID.zoom, Lang.gameZoom);
+    none(Tooltip.ID.showSplatRuler, Lang.gameShowSplatRuler);
+    none(Tooltip.ID.pingHatchesGoals, Lang.gamePingHatchesGoals);
     none(Tooltip.ID.stateSave, Lang.gameStateSave);
     none(Tooltip.ID.stateLoad, Lang.gameStateLoad);
     mouse(Tooltip.ID.framestepBack, Lang.gameFramestepBack);
@@ -93,7 +96,6 @@ static this()
     mouse(Tooltip.ID.fastForward, Lang.gameFastForward);
     none(Tooltip.ID.restart, Lang.gameRestart);
     none(Tooltip.ID.nuke, Lang.gameNuke);
-    none(Tooltip.ID.coolShades, Lang.gameClearPhysics);
 }
 
 void key(Tooltip.ID id, Lang lang, UserOption!KeySet opt)

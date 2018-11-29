@@ -100,6 +100,8 @@ $gameClickToCancelReplay Klicke zum Unterbrechen des Replays.
 $gameFramestepOrQuit Gehe zurück (◀▮) oder beende mit [%s].
 $gamePause Pause.
 $gameZoom %s zum Hineinzoomen, %s zum Herauszoomen.
+$gameShowSplatRuler Fallhöhen-Lineal anzeigen.
+$gamePingHatchesGoals Fallhöhen-Lineal anzeigen. Ziele hervorheben.
 $gameStateSave Spielstand schnellspeichern.
 $gameStateLoad Schnellgespeicherten Spielstand laden.
 $gameFramestepBack %s für Schritt zurück, %s für Sprung zurück.
@@ -107,7 +109,6 @@ $gameFramestepAhead %s für Schritt vorwärts, %s für Sprung vorwärts.
 $gameFastForward %s für schnellen Vorlauf, %s für Turbo.
 $gameRestart Level neu starten.
 $gameNuke Atombombe. Aktiviere per Doppelklick.
-$gameClearPhysics Fallhöhen-Lineal anzeigen, Ziele hervorheben.
 
 $skillTooltip walker|Walker. Dreht um, beendet Blocker.
 $skillTooltip jumper|Jumper. Runner springen weiter.
