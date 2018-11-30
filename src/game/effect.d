@@ -180,22 +180,12 @@ public:
 
     void addImplosion(in Phyu upd, in Passport pa, in Point foot)
     {
-        immutable e = Effect(upd, pa, Sound.POP, loudness(pa));
-        if (e !in _alreadyPlayed) {
-            _alreadyPlayed.insert(e);
-            hardware.sound.play(e.sound, e.loudness);
-            _debris ~= Debris.newImplosion(foot);
-        }
+        addPlosion!false(upd, pa, foot);
     }
 
     void addExplosion(in Phyu upd, in Passport pa, in Point foot)
     {
-        immutable e = Effect(upd, pa, Sound.POP, loudness(pa));
-        if (e !in _alreadyPlayed) {
-            _alreadyPlayed.insert(e);
-            hardware.sound.play(e.sound, e.loudness);
-            _debris ~= Debris.newExplosion(foot);
-        }
+        addPlosion!true(upd, pa, foot);
     }
 
     void announceOvertime(in Phyu upd, in int overtimeInPhyus)
@@ -248,16 +238,32 @@ private:
     ) {
         immutable e = Effect(upd, pa,
             isLocal(pa) ? Sound.STEEL : Sound.NOTHING, Loudness.loud);
-        if (e !in _alreadyPlayed) {
-            _alreadyPlayed.insert(e);
-            hardware.sound.play(e.sound, e.loudness);
-            static if (axe) {
-                enum framePickaxe = 0;
-                _debris ~= Debris.newFlyingTool(foot, dir, framePickaxe);
-            }
-            else {
-                // DTODOEFFECT: animate the dig hammer at(footX, footY - 10)
-            }
+        if (e in _alreadyPlayed) {
+            return;
+        }
+        _alreadyPlayed.insert(e);
+        hardware.sound.play(e.sound, e.loudness);
+        static if (axe) {
+            _debris ~= Debris.newFlyingTool(foot, dir, Debris.framePickaxe);
+        }
+        else {
+            // DTODOEFFECT: animate the dig hammer at(footX, footY - 10)
+        }
+    }
+
+    void addPlosion(bool ex)(in Phyu upd, in Passport pa, in Point foot)
+    {
+        immutable e = Effect(upd, pa, Sound.POP, loudness(pa));
+        if (e in _alreadyPlayed) {
+            return;
+        }
+        _alreadyPlayed.insert(e);
+        hardware.sound.play(e.sound, e.loudness);
+        static if (ex) {
+            _debris ~= Debris.newExplosion(foot);
+        }
+        else {
+            _debris ~= Debris.newImplosion(foot);
         }
     }
 }

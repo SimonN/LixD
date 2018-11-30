@@ -49,6 +49,7 @@ struct Debris {
     }
 
     enum arrowTimeToLive = 50;
+    enum framePickaxe = 0;
 
     static int debrisTimeToLive()
     {
@@ -83,9 +84,9 @@ struct Debris {
             foot + Point(10 * dir, 0),
             Point(uniform(1, 6) * dir, uniform(-11, -7)),
             toolFrame);
-        // Left-facing pickaxe starts with rotation, digging equipment doesn't.
-        // toolFrame 0 is the pickaxe.
-        ret.rotCw = (dir < 0 && toolFrame == 0) ? 1f : 0f;
+        // Left-facing pickaxe starts with nonzero rotation.
+        // Right-facing pickaxe starts in its default rotation 0.
+        ret.rotCw = (dir < 0 && toolFrame == framePickaxe) ? 1f : 0f;
         return ret;
     }
 
