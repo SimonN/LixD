@@ -170,12 +170,12 @@ public:
 
     void addDigHammer(in Phyu upd, in Passport pa, in Point foot, in int dir)
     {
-        addDigHammerOrPickaxe!true(upd, pa, foot, dir);
+        addDigHammerOrPickaxe!false(upd, pa, foot, dir);
     }
 
     void addPickaxe(in Phyu upd, in Passport pa, in Point foot, in int dir)
     {
-        addDigHammerOrPickaxe!false(upd, pa, foot, dir);
+        addDigHammerOrPickaxe!true(upd, pa, foot, dir);
     }
 
     void addImplosion(in Phyu upd, in Passport pa, in Point foot)
