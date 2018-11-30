@@ -250,7 +250,7 @@ private:
     {
         _scoreGraph = some(new ScoreGraph(
             new Geom(0, 0, 4 * skillXl, graphYl, From.TOP_RIGHT)));
-        _scoreBoard = some(new ScoreBoard(
+        _scoreBoard = some!ScoreBoard(new ScoreBoardOn3DBackground(
             new Geom(0, this.ylg, 400, 100, From.BOTTOM_RIGHT)));
 
         import graphic.color;

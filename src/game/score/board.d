@@ -22,19 +22,62 @@ import game.score.bar;
 import graphic.color;
 import graphic.internal;
 
+class ScoreBoardOn3DBackground : ScoreBoard {
+public:
+    this(Geom g) { super(g, 10); }
+
+protected:
+    override void drawSelf()
+    {
+        if (! _bars.length)
+            return;
+        draw3DButton(xs, ys, xls, yls, color.guiL, color.guiM, color.guiD);
+        draw3DFrame(_bars[0].barXs - thicks, _bars[0].ys - thicks,
+            _bars[0].xls - _bars[0].barXs + _bars[0].xs + 2*thicks,
+            yls - 20*stretchFactor + 2*thicks,
+            color.guiD, color.guiM, color.guiL);
+    }
+}
+
+class ScoreBoardTransparentBg : ScoreBoard {
+public:
+    this(Geom g) { super(g, 0); }
+
+protected:
+    override void drawSelf()
+    {
+        if (! _bars.length)
+            return;
+        draw3DFrame(_bars[0].barXs - thicks, _bars[0].ys - thicks,
+            _bars[0].xls - _bars[0].barXs + _bars[0].xs + 2*thicks,
+            yls - 20*stretchFactor + 2*thicks,
+            color.guiD, color.guiM, color.guiL);
+    }
+}
+
+/*
+ * ScoreBoard, the base class of the above.
+ * Still public, but module-private constructor.
+ * Other modules choose a derived class and treat ScoreBoard as an interface.
+ */
 class ScoreBoard : Element {
 private:
     AnnotatedBar[] _bars;
     Style _ourStyle;
+    public immutable int padding; // room around AnnotatedBar array on 4 sides
+
+    this(Geom g, in int pa)
+    {
+        super(g);
+        padding = pa;
+    }
 
 public:
-    this(Geom g) { super(g); }
-
     void add(in Style style, in string name)
     {
         if (! _bars.canFind!(bar => bar.style == style)) {
             _bars ~= new AnnotatedBar(
-                new Geom(10, 10, this.xlg-10-10, 20), style);
+                new Geom(padding, padding, this.xlg - 2 * padding, 20), style);
             addChild(_bars[$-1]);
         }
         // The creation in the above 'if' ensures that this will find sth.:
@@ -65,31 +108,17 @@ public:
         return _ourStyle;
     }
 
-protected:
-    override void drawSelf()
-    {
-        if (! _bars.length)
-            return;
-        draw3DButton(xs, ys, xls, yls, color.guiL, color.guiM, color.guiD);
-        draw3DFrame(_bars[0].barXs - thicks, _bars[0].ys - thicks,
-            _bars[0].xls - _bars[0].barXs + _bars[0].xs + 2*thicks,
-            yls - 20*stretchFactor + 2*thicks,
-            color.guiD, color.guiM, color.guiL);
-    }
-
 private:
     void reformatBars()
     {
         reqDraw();
         updateMaxPotentials(_bars);
         _bars.sortPreferringTeam(_ourStyle);
-        this.resize(this.xlg, 10 + 10 + _bars.map!(b => b.ylg).sum);
+        this.resize(this.xlg, 2 * padding + _bars.map!(b => b.ylg).sum);
         foreach (const size_t i, bar; _bars)
-            bar.move(10, 10 + _bars[0 .. i].map!(b => b.ylg).sum);
+            bar.move(padding, padding + _bars[0 .. i].map!(b => b.ylg).sum);
     }
 }
-
-private:
 
 /*
  * AnnotatedBar: A long row with names at the left, stats in the middle,
