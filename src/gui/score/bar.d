@@ -1,4 +1,4 @@
-module game.score.bar;
+module gui.score.bar;
 
 /*
  * A single score bar, showing score and potential.

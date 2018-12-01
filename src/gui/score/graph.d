@@ -1,4 +1,4 @@
-module game.score.graph;
+module gui.score.graph;
 
 /* ScoreGraph: The UI element in multiplayer games that displays lovely
  * bar graphs of the current score and the potential score.
@@ -13,9 +13,9 @@ import std.range;
 public import physics.score;
 
 import basics.alleg5 : al_map_rgb_f;
-import game.score.bar;
 import graphic.color;
 import gui;
+import gui.score.bar; // for the package-declared SimpleBar
 
 class ScoreGraph : Element {
 private:

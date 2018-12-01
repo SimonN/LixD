@@ -1,4 +1,4 @@
-module game.score.board;
+module gui.score.board;
 
 /*
  * Big score table. To be shown while you hover over the score bars during
@@ -18,7 +18,7 @@ public import physics.score;
 import basics.alleg5;
 import basics.globals : fileImageGamePanel2; // nuke graphicr
 import gui;
-import game.score.bar;
+import gui.score.bar; // for the package-declared SimpleBar
 import graphic.color;
 import graphic.internal;
 

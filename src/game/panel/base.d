@@ -18,8 +18,6 @@ import game.panel.infobar;
 import game.panel.nuke;
 import game.panel.taperec;
 import game.panel.tooltip;
-import game.score.board;
-import game.score.graph;
 import graphic.internal;
 import gui;
 import hardware.keyboard; // we need a different behavior of skill button
