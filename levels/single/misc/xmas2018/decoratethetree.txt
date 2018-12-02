@@ -1,4 +1,4 @@
-$BUILT 2018-11-25 20:00:00
+$BUILT 2018-12-08 14:22:39
 $AUTHOR Simon
 $ENGLISH Decorate the Tree
 
@@ -22,9 +22,11 @@ $ENGLISH Decorate the Tree
 
 :raymanni/holiday/goal.G: 448 224
 
+:raymanni/holiday/porcupine.T: 360 168
 :raymanni/holiday/porcupine.T: 344 224
 
-:amanda/forest/moss_00: 290 218 rr
+:raymanni/holiday/plank_d3: 392 232 frr
+:raymanni/holiday/plank_left: 352 232
 :amanda/forest/moss_00: 202 192
 :amanda/forest/moss_00: 194 224 frr
 :amanda/forest/moss_00: 282 224
@@ -123,7 +125,6 @@ $ENGLISH Decorate the Tree
 :raymanni/holiday/cane_a: 368 160
 :raymanni/holiday/cane_b: 400 160
 :raymanni/holiday/cane_mid: 416 192
-:raymanni/holiday/cane_mid: 416 224
 :raymanni/holiday/cane_end2: 368 192
 :raymanni/holiday/brick_red: 32 128
 :raymanni/holiday/brick_red: 480 288
@@ -168,4 +169,6 @@ $ENGLISH Decorate the Tree
 :raymanni/holiday/plank_left: 96 288
 :raymanni/holiday/plank_right: 416 288
 :raymanni/holiday/steel1.S: 408 288
-:amanda/forest/fern_00: 351 219 d
+:raymanni/holiday/plank_mid1: 384 232
+:raymanni/holiday/cane_mid: 416 224
+:raymanni/holiday/screw1: 392 232

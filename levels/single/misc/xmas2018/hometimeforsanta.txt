@@ -1,4 +1,4 @@
-$BUILT 2018-11-25 20:00:00
+$BUILT 2018-12-09 15:19:39
 $AUTHOR F
 $ENGLISH Home Time for Santa
 
@@ -23,7 +23,7 @@ $ENGLISH Home Time for Santa
 :raymanni/holiday/goal.G: 560 64
 
 :raymanni/holiday/porcupine.T: 328 64
-:raymanni/toys/monkey.T: 280 304
+:raymanni/toys/monkey.T: 288 304
 :raymanni/holiday/porcupine.T: 264 64
 
 :proxima/flame.F: 76 331
@@ -33,9 +33,10 @@ $ENGLISH Home Time for Santa
 :geoo/construction/steam_right.T: 28 112
 :geoo/construction/steam_up.T: 36 207
 
+:raymanni/holiday/plank_long: 512 136
+:raymanni/holiday/plank_long: 384 136
 :raymanni/holiday/plank_mid1: 272 192
 :raymanni/holiday/plank_right: 304 192
-:raymanni/holiday/plank_long: 96 128
 :matt/winter/06: 480 64
 :raymanni/holiday/gift2: 528 336
 :raymanni/holiday/gift2: 464 336
@@ -56,19 +57,17 @@ $ENGLISH Home Time for Santa
 :raymanni/holiday/brick_red: 64 144
 :raymanni/holiday/brick_red: 96 272
 :raymanni/holiday/brick_red: 128 272
-:raymanni/holiday/plank_long: 128 128
-:raymanni/holiday/plank_long: 256 128
-:raymanni/holiday/plank_long: 384 128
-:raymanni/holiday/plank_long: 512 128
-:raymanni/holiday/garland: 96 144
-:raymanni/holiday/garland: 160 144
-:raymanni/holiday/garland: 224 144
-:raymanni/holiday/garland: 288 144
-:raymanni/holiday/garland: 352 144
-:raymanni/holiday/garland: 416 144
-:raymanni/holiday/garland: 480 144
-:raymanni/holiday/garland: 544 144
-:raymanni/holiday/garland: 608 144
+:raymanni/holiday/plank_long: 128 136
+:raymanni/holiday/plank_long: 256 136
+:raymanni/holiday/garland: 96 152
+:raymanni/holiday/garland: 160 152
+:raymanni/holiday/garland: 224 152
+:raymanni/holiday/garland: 288 152
+:raymanni/holiday/garland: 352 152
+:raymanni/holiday/garland: 416 152
+:raymanni/holiday/garland: 480 152
+:raymanni/holiday/garland: 544 152
+:raymanni/holiday/garland: 608 152
 :raymanni/holiday/plank_left: 240 192
 :raymanni/holiday/wreath: 256 192
 :raymanni/holiday/screw1: 280 192
@@ -78,10 +77,10 @@ $ENGLISH Home Time for Santa
 :geoo/sandstone/8x8: 299 18
 :geoo/sandstone/8x8: 354 22
 :geoo/sandstone/8x8: 412 15
-:geoo/sandstone/8x8: 466 26
-:geoo/sandstone/8x8: 538 15
+:geoo/sandstone/8x8: 456 24
+:geoo/sandstone/8x8: 552 15
 :geoo/sandstone/8x8: 632 12
-:geoo/sandstone/8x8: 581 26
+:geoo/sandstone/8x8: 587 26
 :geoo/sandstone/8x8: -45 18
 :geoo/sandstone/8x8: 13 11
 :geoo/sandstone/8x8: 67 22
@@ -117,18 +116,37 @@ $ENGLISH Home Time for Santa
 :raymanni/holiday/brick_red_b: 160 272
 :raymanni/holiday/brick_red_b: 96 240
 :raymanni/holiday/brick_red_b: 0 48
-:raymanni/holiday/plank_left: 96 128
+:raymanni/holiday/plank_left: 96 136
 :raymanni/holiday/brick_red: 64 112
 :raymanni/holiday/brick_red_a: 48 111 frrrd
-:geoo/construction/platform.S: 96 128
-:geoo/construction/platform.S: 128 128
-:geoo/construction/platform.S: 160 128
-:geoo/construction/platform.S: 192 128
-:geoo/construction/platform.S: 224 128
-:geoo/construction/platform.S: 256 128
-:geoo/construction/platform.S: 288 128
-:geoo/construction/platform.S: 320 128
-:geoo/construction/platform.S: 352 128
-:geoo/construction/platform.S: 384 128
-:geoo/construction/platform.S: 416 128
-:geoo/construction/platform.S: 448 128
+:amanda/steel/steel24x8.S: 96 128
+:amanda/steel/steel24x8.S: 120 128
+:amanda/steel/steel24x8.S: 144 128
+:amanda/steel/steel24x8.S: 168 128
+:amanda/steel/steel24x8.S: 192 128
+:amanda/steel/steel24x8.S: 216 128
+:amanda/steel/steel24x8.S: 240 128
+:amanda/steel/steel24x8.S: 264 128
+:amanda/steel/steel24x8.S: 288 128
+:amanda/steel/steel24x8.S: 312 128
+:amanda/steel/steel24x8.S: 336 128
+:amanda/steel/steel24x8.S: 360 128
+:amanda/steel/steel24x8.S: 384 128
+:amanda/steel/steel24x8.S: 408 128
+:amanda/steel/steel24x8.S: 432 128
+:amanda/steel/steel24x8.S: 296 368
+:amanda/steel/steel24x8.S: 320 368
+$BEGIN_TILE_GROUP 0
+:raymanni/holiday/plank_left: 30 22
+:raymanni/holiday/brick_red_b: 0 0 d
+:raymanni/holiday/plank_left: 30 32 d
+$END_TILE_GROUP
+:Group-0: 456 128
+$BEGIN_TILE_GROUP 1
+:raymanni/holiday/plank_long: 0 0
+:raymanni/holiday/plank_long: 0 12 d
+$END_TILE_GROUP
+:Group-1: 488 128
+:Group-1: 616 128
+:matt/winter/06: 528 0
+:matt/winter/06: 528 64

@@ -1,4 +1,4 @@
-$BUILT 2018-11-25 20:00:00
+$BUILT 2018-12-01 19:32:47
 $AUTHOR F
 $ENGLISH Snow Cat Love
 
@@ -10,11 +10,10 @@ $ENGLISH Snow Cat Love
 #REQUIRED 2
 #SPAWN_INTERVAL 42
 
-#WALKER 2
 #CLIMBER 1
 #BASHER 1
 #MINER 1
-#JUMPER 2
+#JUMPER 3
 #EXPLODER2 0
 
 :raymanni/holiday/hatch.H: -9 140
@@ -107,6 +106,8 @@ $END_TILE_GROUP
 :Group-14: 302 101
 :raymanni/holiday/snow2: -28 234
 :raymanni/holiday/snow2: 55 235
+:raymanni/holiday/cane_mid: 168 208
+:raymanni/holiday/cane_mid: 168 176
 :raymanni/holiday/snow2: 142 234
 :raymanni/holiday/snow2: 231 234
 :raymanni/holiday/snow2: 327 234
@@ -171,3 +172,8 @@ $END_TILE_GROUP
 :Group-24: 496 16
 :Group-24: 528 48
 :Group-24: 560 16
+:raymanni/holiday/cane_mid: 168 144
+:raymanni/holiday/cane_a: 168 80
+:raymanni/holiday/cane_b: 200 80
+:raymanni/holiday/cane_mid: 168 112
+:raymanni/holiday/cane_end2: 216 112
