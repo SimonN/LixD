@@ -1,0 +1,39 @@
+.TH LIX "6" "December 2018" "lix 0.9.21" "User Commands"
+.SH NAME
+lix \- Puzzle game inspired by Lemmings
+.SH DESCRIPTION
+Lix is a single, or networked multiplayer game like Lemmings. You control
+the small creatures and have to guide them to the exit.
+.PP
+lix
+\fB\-h\fR or \-? or \fB\-\-help\fR     print this help and exit
+.br
+\fB\-v\fR or \fB\-\-version\fR        print version of Lix and exit
+.br
+\fB\-\-allegro\-version\fR      print version of Allegro DLLs and exit
+.br
+\fB\-w\fR                     run windowed at 640x480
+.br
+\fB\-\-resol\fR=\fI\,800x600\/\fR        run windowed at the given resolution
+.br
+\fB\-\-fullscreen\fR           use software fullscreen mode (good Alt+Tab)
+.br
+\fB\-\-hardfull\fR=\fI\,1600x900\/\fR    use hardware fullscreen at given resolution
+.br
+\fB\-\-image\fR level.txt      export all given levels as images
+.br
+\fB\-\-verify\fR replay.txt    verify all given replays for solvability
+.br
+\fB\-\-verify\fR replaydir     verify all replays in all given directories
+.br
+\fB\-\-coverage\fR replaydir   like \fB\-\-verify\fR, then print levels without proof
+.br
+level.txt              play the given level
+.br
+replay.txt             load the included level, watch the replay
+.br
+\fB\-\-pointed\-to\fR repl.txt  load the pointed\-to level, watch the replay
+.br
+level.txt replay.txt   load the given level, watch the given replay
+.SH "INTERNET"
+http://www.lixgame.com/
