@@ -1,4 +1,4 @@
-$BUILT 2017-11-18 08:35:29
+$BUILT 2018-12-07 23:11:36
 $AUTHOR Clam
 $ENGLISH Time Is Running Out
 
@@ -36,6 +36,7 @@ $ENGLISH Time Is Running Out
 
 :geoo/abstract/goal.G: 576 329
 
+:proxima/tile/spheres/greysmall.S: 355 315
 :geoo/shadow/pillar_hztl_32: 32 144
 :geoo/shadow/pillar_hztl_32: 64 144
 :geoo/shadow/pillar_hztl_32: 96 144
@@ -237,6 +238,38 @@ $BEGIN_TILE_GROUP 2
 :geoo/shadow/pillar_hztl_32: 77 0
 $END_TILE_GROUP
 :Group-2: 224 337
-:matt/steel/32x16.S: 348 360
-:matt/steel/32x16.S: 380 360
-:Group-2: 322 373
+:proxima/tile/spheres/greysmall.S: 355 343
+$BEGIN_TILE_GROUP 3
+:matt/carnival/03: 0 0
+:proxima/tile/spheres/greysmall.S: 0 1 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 4
+:matt/carnival/03: 0 0
+:Group-3: 0 0 frrd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 5
+:Group-4: 3 1
+:geoo/sandstone/ebony/v16b: 18 0 d
+:geoo/sandstone/ebony/v16b: 0 0 d
+$END_TILE_GROUP
+:Group-5: 370 337
+:geoo/sandstone/ebony/v8c: 355 308 r
+:geoo/sandstone/ebony/v8c: 354 373 r
+:geoo/sandstone/16x8: 338 373
+:geoo/sandstone/16x8: 322 373
+:geoo/sandstone/16x8: 402 373
+:geoo/sandstone/16x8: 386 373
+$BEGIN_TILE_GROUP 6
+:Group-4: 0 1
+:proxima/tile/spheres/greysmall.S: 8 0 frrd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 7
+:Group-4: 0 0
+:Group-6: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 8
+:Group-7: 5 13
+:matt/carnival/03: 0 0 d
+$END_TILE_GROUP
+:Group-8: 360 360
+:Group-8: 360 330
