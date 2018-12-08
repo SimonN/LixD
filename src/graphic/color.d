@@ -39,12 +39,12 @@ private class ColorPrivate {
         alias rnd = uniform01!float;
         float[] arr = [rnd(), 0.7 + 0.3 * rnd(), 0.3 * rnd()];
         arr.randomShuffle();
-        return Alcol(arr[0], arr[1], arr[2], 1);
+        return al_map_rgba_f(arr[0], arr[1], arr[2], 1);
     }
 
     Alcol makecol(int r, int g, int b)
     {
-        return Alcol(r / 255f, g / 255f, b / 255f, 1);
+        return al_map_rgba_f(r / 255f, g / 255f, b / 255f, 1);
     }
 
     Alcol
@@ -102,18 +102,18 @@ private:
         _guiColorBlue  = _b;
 
         //                    red   green blue  alpha
-        bad           = Alcol(0.00, 0.00, 0.00, 0.5);
-        transp        = Alcol(0.00, 0.00, 0.00, 0  );
-        pink          = Alcol(1,    0,    1,    1  );
+        bad           = al_map_rgba_f(0.00, 0.00, 0.00, 0.5);
+        transp        = al_map_rgba_f(0.00, 0.00, 0.00, 0  );
+        pink          = al_map_rgba_f(1,    0,    1,    1  );
 
-        cbBadFrame  = Alcol(0.8,  0.8,  0.8,  1  );
-        cbBadBitmap = Alcol(1,    0.5,  0.5,  1  );
+        cbBadFrame  = al_map_rgba_f(0.8,  0.8,  0.8,  1  );
+        cbBadBitmap = al_map_rgba_f(1,    0.5,  0.5,  1  );
 
         lixFileEye   = makecol(0x50, 0x50, 0x50);
 
-        white         = Alcol(1,    1,    1,    1  );
-        red           = Alcol(1,    0,    0,    1  );
-        black         = Alcol(0,    0,    0,    1  );
+        white         = al_map_rgba_f(1,    1,    1,    1  );
+        red           = al_map_rgba_f(1,    0,    0,    1  );
+        black         = al_map_rgba_f(0,    0,    0,    1  );
 
         // how it looks in an image file
         guiFileSha = makecol(0x40, 0x40, 0x40);
@@ -151,8 +151,8 @@ private:
     // light: max is 1.0, min is 0.0
     Alcol make_sepia(in float light)
     {
-        if      (light <= 0.0) return Alcol(0, 0, 0, 1);
-        else if (light >= 1.0) return Alcol(1, 1, 1, 1);
+        if      (light <= 0.0) return al_map_rgba_f(0, 0, 0, 1);
+        else if (light >= 1.0) return al_map_rgba_f(1, 1, 1, 1);
 
         // the user file suggests a base color via integers in 0 .. 255+1
         alias r = _guiColorRed;
@@ -161,11 +161,11 @@ private:
         r = (r > 0xFF ? 0xFF : r < 0 ? 0 : r);
         g = (g > 0xFF ? 0xFF : g < 0 ? 0 : g);
         b = (b > 0xFF ? 0xFF : b < 0 ? 0 : b);
-        if      (light == 0.5) return Alcol(r / 255f, g / 255f, b / 255f, 1);
-        else if (light <  0.5) return Alcol(r * 2 * light / 255f,
+        if      (light == 0.5) return al_map_rgba_f(r / 255f, g / 255f, b / 255f, 1);
+        else if (light <  0.5) return al_map_rgba_f(r * 2 * light / 255f,
                                             g * 2 * light / 255f,
                                             b * 2 * light / 255f, 1);
-        else return Alcol((r + (255 - r) * 2 * (light - 0.5)) / 255f,
+        else return al_map_rgba_f((r + (255 - r) * 2 * (light - 0.5)) / 255f,
                           (g + (255 - g) * 2 * (light - 0.5)) / 255f,
                           (b + (255 - b) * 2 * (light - 0.5)) / 255f, 1);
     }

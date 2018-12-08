@@ -243,7 +243,7 @@ class Phymap : Topology {
             immutable int green = get(p, Phybit.steel);
             immutable int blue  = get(p, Phybit.goal | Phybit.fire
                         | Phybit.water | Phybit.trap | Phybit.fling);
-            al_put_pixel(x, y, Alcol(red, blue, green, 1));
+            al_put_pixel(x, y, al_map_rgb_f(red, blue, green));
         }
         al_save_bitmap(fn.stringForWriting.toStringz, outputBitmap);
     }

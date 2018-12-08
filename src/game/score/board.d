@@ -185,7 +185,7 @@ private:
     {
         float r, g, b;
         al_unmap_rgb_f(getAlcol3DforStyle(st).m, &r, &g, &b);
-        return Alcol(r/3 + 0.66f, g/3 + 0.66f, b/3 + 0.66f);
+        return al_map_rgb_f(r/3 + 0.66f, g/3 + 0.66f, b/3 + 0.66f);
     }
 }
 

@@ -97,7 +97,7 @@ private:
                 xlg / 2f - screenXlg / 2f + thickg,
                 ylg / 2f - screenYlg / 2f + yFromBottom,
                 screenXlg, 20, From.BOTTOM_LEFT), text);
-            l.color = Alcol(0.4, 0.35, 0.3, 1);
+            l.color = al_map_rgb_f(0.4, 0.35, 0.3);
             addChild(l);
         }
         int y = 0;

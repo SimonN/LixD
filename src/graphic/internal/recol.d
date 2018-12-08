@@ -142,7 +142,7 @@ void makeAlcol3DforStyle(in Style st)
     // Initialize with a default, so we don't query the image several times
     // if the image fails to exist
     with (alcol3DforStyles[st])
-        l = m = d = Alcol(1, 1, 1, 1);
+        l = m = d = color.white;
     Cutbit rclCb = getInternalMutable(fileImageStyleRecol);
     assert (rclCb);
     Albit recol = rclCb.albit;

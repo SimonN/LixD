@@ -69,8 +69,9 @@ public:
         enum wh = 40; // wh = half of the line's x-length
         immutable Point lower = _snapTarget + Point(-wh, half);
         immutable Point upper = _snapTarget + Point(-wh, -half);
-        drawColoredBar(tb, upper, 2*wh, Alcol(0, 0.8f, 0, 1), InvertBar.no);
-        drawColoredBar(tb, lower, 2*wh, Alcol(0, 0.8f, 0, 1), InvertBar.yes);
+        immutable col = al_map_rgb_f(0, 0.8f, 0);
+        drawColoredBar(tb, upper, 2*wh, col, InvertBar.no);
+        drawColoredBar(tb, lower, 2*wh, col, InvertBar.yes);
     }
 
     void drawBelowLand(Torbit) const { }
@@ -150,9 +151,12 @@ protected:
         immutable Point upper = ledge - Point(0, Faller.pixelsSafeToFall);
         immutable Point lower = ledge + Point(0, Faller.pixelsSafeToFall);
         drawColoredBar(tb, upper, barXl, _topBarIsBlack
-            ? Alcol(0, 0, 0) : Alcol(0.2f, 0.4f, 1), InvertBar.no);
-        drawColoredBar(tb, ledge, barXl, Alcol(0, 0.8f, 0), InvertBar.no);
-        drawColoredBar(tb, lower, barXl, Alcol(1, 0.2f, 0.2f), InvertBar.no);
+            ? al_map_rgb_f(0, 0, 0)
+            : al_map_rgb_f(0.2f, 0.4f, 1), InvertBar.no);
+        drawColoredBar(tb, ledge, barXl,
+            al_map_rgb_f(0, 0.8f, 0), InvertBar.no);
+        drawColoredBar(tb, lower, barXl,
+            al_map_rgb_f(1, 0.2f, 0.2f), InvertBar.no);
     }
 }
 
@@ -192,7 +196,7 @@ void drawVerticalLine(Torbit tb, in Point topMiddle, in int height)
     foreach (int plusX; -1 .. 2) {
         float shade = plusX == -1 ? 0.3f : plusX == 0 ? 0.4f : 0.15f;
         tb.drawFilledRectangle(Rect(topMiddle + Point(plusX, 0),
-            1, height), Alcol(shade, shade, shade, shade));
+            1, height), al_map_rgba_f(shade, shade, shade, shade));
     }
 }
 
@@ -211,6 +215,7 @@ void drawColoredBar(
         immutable float shade = (1 - 0.2f * stripe);
         tb.drawFilledRectangle(
             Rect(topLeft + Point(0, invert ? -1 - stripe : stripe), width, 1),
-            Alcol(red * shade, green * shade, blue * shade, 0.8f * shade));
+            al_map_rgba_f(red * shade, green * shade, blue * shade,
+                0.8f * shade));
     }
 }

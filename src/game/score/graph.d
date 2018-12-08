@@ -12,6 +12,7 @@ import std.conv;
 
 public import physics.score;
 
+import basics.alleg5 : al_map_rgb_f;
 import game.score.bar;
 import graphic.color;
 import gui;
@@ -93,7 +94,7 @@ private:
     // When a player nukes or has finished playing, mark bar with a square
     void drawNukeOverlay()
     {
-        Alcol grey(in float f) pure { return Alcol(f, f, f, 1); }
+        Alcol grey(in float f) { return al_map_rgb_f(f, f, f); }
         immutable float boxXl = 10 * stretchFactor;
         draw3DButton(xs, ys, boxXl, yls, // draw a square
             grey(0.95f), grey(0.8f), grey(0.65f));

@@ -163,5 +163,5 @@ private Alcol darkeningColor()
 {
     float r, g, b;
     al_unmap_rgb_f(color.screenBorder, &r, &g, &b);
-    return Alcol(r, g, b, 0.9f);
+    return al_map_rgba_f(r, g, b, 0.9f);
 }
