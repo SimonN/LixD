@@ -22,9 +22,11 @@ Build Lix with:
     dub build -f -b releaseXDG
 
 Please update when I bump minor version (y in x.y.z), to support netplay.
-Many thanks! <3 For a desktop icon, `data/images/lix_logo.svg' might be handy.
-For music, extract in read-only dir: `http://www.lixgame.com/dow/lix-music.zip'
-See section below for list of files to exclude from a binary package.
+Many thanks! <3 See section below for files to exclude from a binary package.
+
+Extract music into read-only dir: http://www.lixgame.com/dow/lix-music.zip
+Dektop icon: data/images/lix_logo.svg
+Manpage: doc/lix.6
 
 
 
@@ -115,7 +117,9 @@ You should probable delete these before packaging the game:
 *   dub.json and .dub.selections.json -- build system control files
 *   .dub/                             -- build artifacts
 *   win-build.bat                     -- batch file to build Lix on Windows
+*   data/images/lix_logo.svg          -- app icon template (3.7 MB)
 *   doc/build/                        -- the build documentation
+*   doc/lix.6                         -- move this manpage to where man looks
 *   replays/                          -- auto-saved game replays
 *   export/                           -- exported level pics, screenshots
 *   user/                             -- user options, trophies, logs

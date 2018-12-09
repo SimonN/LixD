@@ -59,7 +59,7 @@ Lucki
     * Maintaining the Arch Linux Lix package in the AUR:
         https://aur.archlinux.org/packages/lix/
 
-Gürkan S. (tarzeau)
+Alex M. (tarzeau)
     * Hosting the Lix website and game server from 2010 to 2016.
 
 Mindless
