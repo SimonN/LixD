@@ -68,7 +68,7 @@ Quick build instructions:
     * On Windows, follow [my detailed build instructions
     ](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/win64.txt).
     * On Arch Linux, install the packages `pkgconf`, `allegro`, and `enet`.
-    * On Debian or Ubuntu, install the packages `pkg-config`, `liballegro5-dev`, and `libenet-dev`.
+    * On Debian or Ubuntu, install the packages `pkg-config`, `ldc`, `dub`, `liballegro-acodec5-dev`, `liballegro-audio5-dev`, `liballegro-ttf5-dev`, `liballegro-image5-dev`, `liballegro5-dev`, and `libenet-dev`.
     * On Fedora 29, install the packages `pkgconf-pkg-config`, `allegro5-devel`, `allegro5-addon-acodec-devel`, `allegro5-addon-audio-devel`, `allegro5-addon-image-devel`, `allegro5-addon-ttf-devel`, and `enet-devel`.
     * On other Linuxes or Mac, follow [my detailed build instructions
     ](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/linux.txt).
