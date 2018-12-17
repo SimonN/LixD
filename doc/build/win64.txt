@@ -14,7 +14,7 @@ If you get stuck at any point, don't hesitate to contact me
 Install LDC and dub
 -------------------
 
-Download the D compiler LDC, version 1.13.0-beta2 or newer, for Windows-x64:
+Download the D compiler LDC, version 1.13.0 or newer, for Windows-x64:
 
     https://github.com/ldc-developers/ldc/releases
 

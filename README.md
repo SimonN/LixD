@@ -51,31 +51,14 @@ a different port by `$ bin/server --port=<number>`.
 Build instructions
 ------------------
 
-Detailed instructions:
+* [Detailed build instructions for Windows](
+https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/win64.txt)
+* [Detailed instructions for Linux and MacOS](
+https://github.com/SimonN/LixD/blob/master/doc/build/linux.md)
+* [Notes for Linux package maintainers](
+https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/package.txt)
 
-* [Detailed build instructions for Windows](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/win64.txt)
-* [Detailed instructions for Linux](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/linux.txt), Mac should be similar
-* [Notes for Linux package maintainers](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/package.txt)
-
-Quick build instructions:
-
-* Install a D compiler and dub, the build system:
-    * On Windows, get [LDC for Windows-x64](https://github.com/ldc-developers/ldc/releases), it ships with dub.
-    * On Arch Linux, install the `dlang` group package.
-    * On other Linuxes or Mac, follow [my detailed build instructions
-    ](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/linux.txt).
-* Install Allegro 5.2 and enet 1.3:
-    * On Windows, follow [my detailed build instructions
-    ](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/win64.txt).
-    * On Arch Linux, install the packages `pkgconf`, `allegro`, and `enet`.
-    * On Debian or Ubuntu, install the packages `pkg-config`, `ldc`, `dub`, `liballegro-acodec5-dev`, `liballegro-audio5-dev`, `liballegro-ttf5-dev`, `liballegro-image5-dev`, `liballegro5-dev`, and `libenet-dev`.
-    * On Fedora 29, install the packages `pkgconf-pkg-config`, `allegro5-devel`, `allegro5-addon-acodec-devel`, `allegro5-addon-audio-devel`, `allegro5-addon-image-devel`, `allegro5-addon-ttf-devel`, and `enet-devel`.
-    * On other Linuxes or Mac, follow [my detailed build instructions
-    ](https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/linux.txt).
-* Build Lix: `$ dub build -b release` or, on Windows, run `win-build.bat`.
-* [Download the game music](http://www.lixgame.com/dow/lix-music.zip),
-    extract in Lix's directory.
-* Run Lix: `$ bin/lix`
+Quick build instructions: You need a D compiler, dub, Allegro 5.2, and enet 1.3. Build Lix with `$ dub build -b release`, then [download the game music](http://www.lixgame.com/dow/lix-music.zip) and extract it in Lix's directory.
 
 Contact
 -------
