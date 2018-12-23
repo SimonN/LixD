@@ -51,14 +51,14 @@ a different port by `$ bin/server --port=<number>`.
 Build instructions
 ------------------
 
-* [Detailed build instructions for Windows](
+* [Build instructions for Windows](
 https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/win64.txt)
-* [Detailed instructions for Linux and MacOS](
+* [Build instructions for Linux or MacOS](
 https://github.com/SimonN/LixD/blob/master/doc/build/linux.md)
 * [Notes for Linux package maintainers](
 https://raw.githubusercontent.com/SimonN/LixD/master/doc/build/package.txt)
 
-Quick build instructions: You need a D compiler, dub, Allegro 5.2, and enet 1.3. Build Lix with `$ dub build -b release`, then [download the game music](http://www.lixgame.com/dow/lix-music.zip) and extract it in Lix's directory.
+Quick instructions: You need a D compiler, dub, Allegro 5.2, and enet 1.3. Build Lix with `$ dub build -b release`, then [download the game music](http://www.lixgame.com/dow/lix-music.zip) and extract it in Lix's directory.
 
 Contact
 -------
