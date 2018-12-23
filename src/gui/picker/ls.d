@@ -128,10 +128,11 @@ private:
 protected:
     final override void beforeSortingForCurrentDir()
     {
+        _order = [];
         try _order = fillVectorFromFileRaw(new VfsFilename(
             currentDir.dirRootless ~ basics.globals.fileLevelDirOrder));
         catch (Exception e) {
-            // do nothing, missing ordering file is not an error at all
+            // Don't report. A missing ordering file is not an error at all.
         }
     }
 
