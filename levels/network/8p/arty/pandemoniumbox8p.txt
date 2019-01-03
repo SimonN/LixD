@@ -1,4 +1,4 @@
-$BUILT 2018-01-29 12:01:54
+$BUILT 2019-01-03 13:59:16
 $AUTHOR Arty
 $ENGLISH Pandemonium Box (8p)
 
@@ -10,7 +10,6 @@ $ENGLISH Pandemonium Box (8p)
 
 #SECONDS 60
 #INITIAL 120
-#REQUIRED 20
 #SPAWN_INTERVAL 22
 
 #WALKER 50
@@ -24,8 +23,8 @@ $ENGLISH Pandemonium Box (8p)
 #JUMPER 50
 #EXPLODER2 0
 
-:matt/carnival/Hatch.H: 80 8
-:matt/carnival/Hatch.H: 464 8
+:matt/carnival/Hatch.H: 88 8
+:matt/carnival/Hatch.H: 472 8
 :matt/carnival/Hatch.H: 208 200
 :matt/carnival/Hatch.H: 592 200
 :matt/carnival/Hatch.H: 16 392
@@ -35,8 +34,8 @@ $ENGLISH Pandemonium Box (8p)
 
 :matt/carnival/Goal.G: 464 672
 :matt/carnival/Goal.G: 80 672
-:matt/carnival/Goal.G: 672 96
-:matt/carnival/Goal.G: 288 96
+:matt/carnival/Goal.G: 688 96
+:matt/carnival/Goal.G: 304 96
 :matt/carnival/Goal.G: 416 288
 :matt/carnival/Goal.G: 32 288
 :matt/carnival/Goal.G: 688 480
@@ -362,38 +361,38 @@ $ENGLISH Pandemonium Box (8p)
 :matt/carnival/03: 736 256
 :matt/carnival/03: 736 288
 :matt/carnival/03: 736 320
-:matt/carnival/00: 32 96
-:matt/carnival/00: 128 64
-:matt/carnival/00: 96 128
-:matt/carnival/00: 64 32
-:matt/carnival/00: 416 96
-:matt/carnival/00: 512 64
-:matt/carnival/00: 480 128
-:matt/carnival/00: 448 32
-:matt/carnival/00: 224 480
-:matt/carnival/00: 320 448
-:matt/carnival/00: 288 512
-:matt/carnival/00: 256 416
-:matt/carnival/00: 608 480
-:matt/carnival/00: 704 448
-:matt/carnival/00: 672 512
-:matt/carnival/00: 640 416
-:matt/carnival/01: 256 128
+:matt/carnival/00: 32 80
+:matt/carnival/00: 128 80
+:matt/carnival/00: 80 128
+:matt/carnival/00: 80 32
+:matt/carnival/00: 416 80
+:matt/carnival/00: 512 80
+:matt/carnival/00: 464 128
+:matt/carnival/00: 464 32
+:matt/carnival/00: 224 464
+:matt/carnival/00: 320 464
+:matt/carnival/00: 272 512
+:matt/carnival/00: 272 416
+:matt/carnival/00: 608 464
+:matt/carnival/00: 704 464
+:matt/carnival/00: 656 512
+:matt/carnival/00: 656 416
+:matt/carnival/01: 288 128
 :matt/carnival/01: 256 96
 :matt/carnival/01: 288 64
-:matt/carnival/01: 288 32
-:matt/carnival/01: 640 128
+:matt/carnival/01: 256 32
+:matt/carnival/01: 672 128
 :matt/carnival/01: 640 96
 :matt/carnival/01: 672 64
-:matt/carnival/01: 672 32
-:matt/carnival/01: 448 512
+:matt/carnival/01: 640 32
+:matt/carnival/01: 480 512
 :matt/carnival/01: 448 480
 :matt/carnival/01: 480 448
-:matt/carnival/01: 480 416
-:matt/carnival/01: 64 512
+:matt/carnival/01: 448 416
+:matt/carnival/01: 96 512
 :matt/carnival/01: 64 480
 :matt/carnival/01: 96 448
-:matt/carnival/01: 96 416
+:matt/carnival/01: 64 416
 :matt/carnival/02: 64 256
 :matt/carnival/02: 96 288
 :matt/carnival/02: 32 256
@@ -464,5 +463,5 @@ $ENGLISH Pandemonium Box (8p)
 :amanda/steel/steel16x16.S: 712 544
 :amanda/steel/steel16x16.S: 104 736
 :amanda/steel/steel16x16.S: 488 736
-:amanda/steel/steel16x16.S: 696 160
-:amanda/steel/steel16x16.S: 312 160
+:amanda/steel/steel16x16.S: 712 160
+:amanda/steel/steel16x16.S: 328 160

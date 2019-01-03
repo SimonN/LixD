@@ -1,0 +1,1299 @@
+$BUILT 2018-11-25 22:10:48
+$AUTHOR Flopsy
+$ENGLISH The Storeroom 8P
+
+#INTENDED_NUMBER_OF_PLAYERS 8
+#SIZE_X 1696
+#SIZE_Y 768
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 60
+#INITIAL 60
+#SPAWN_INTERVAL 32
+
+#WALKER 40
+#RUNNER 40
+#CLIMBER 20
+#FLOATER 20
+#EXPLODER2 20
+#BLOCKER 5
+#BUILDER 30
+#PLATFORMER 30
+#BASHER 20
+#MINER 20
+#DIGGER 20
+#JUMPER 40
+#BATTER 20
+#CUBER 5
+
+:geoo/abstract/hatch.H: 1632 32 r
+:geoo/abstract/hatch.H: 1632 224 r
+:geoo/abstract/hatch.H: 1632 416 r
+:geoo/abstract/hatch.H: 32 32
+:geoo/abstract/hatch.H: 32 224
+:geoo/abstract/hatch.H: 32 416
+:geoo/abstract/hatch.H: 1632 608 r
+:geoo/abstract/hatch.H: 32 608
+
+:geoo/abstract/goal.G: 800 464
+:geoo/abstract/goal.G: 800 656
+:geoo/abstract/goal.G: 800 80
+:geoo/abstract/goal.G: 864 464
+:geoo/abstract/goal.G: 864 656
+:geoo/abstract/goal.G: 864 80
+:geoo/abstract/goal.G: 800 272
+:geoo/abstract/goal.G: 864 272
+
+:proxima/tile/green1s: 1664 0
+:proxima/tile/green1s: 1632 0
+:proxima/tile/green1s: 1600 0
+:proxima/tile/green1s: 1568 0
+:proxima/tile/green1s: 1536 0
+:proxima/tile/green1s: 1504 0
+:proxima/tile/green1s: 1472 0
+:proxima/tile/green1s: 1440 0
+:proxima/tile/green1s: 1664 64
+:proxima/tile/green1s: 1632 64
+:proxima/tile/green1s: 1600 64
+:proxima/tile/green1s: 1568 64
+:proxima/tile/green1s: 1536 64
+:proxima/tile/green1s: 1440 32
+:proxima/tile/green1s: 1440 64
+:proxima/tile/green1s: 1440 96
+:proxima/tile/green1s: 1504 64
+:proxima/tile/green1s: 1664 128
+:proxima/tile/green1s: 1632 128
+:proxima/tile/green1s: 1600 128
+:proxima/tile/green1s: 1568 128
+:proxima/tile/green1s: 1536 128
+:proxima/tile/green1s: 1504 128
+:proxima/tile/green1s: 1664 96
+:proxima/tile/green1s: 1664 192
+:proxima/tile/green1s: 1632 192
+:proxima/tile/green1s: 1600 192
+:proxima/tile/green1s: 1568 192
+:proxima/tile/green1s: 1536 192
+:proxima/tile/green1s: 1504 192
+:proxima/tile/green1s: 1472 192
+:proxima/tile/green1s: 1440 128
+:proxima/tile/green1s: 1440 192
+:proxima/tile/green1s: 1664 192
+:proxima/tile/green1s: 1632 192
+:proxima/tile/green1s: 1600 192
+:proxima/tile/green1s: 1568 192
+:proxima/tile/green1s: 1536 192
+:proxima/tile/green1s: 1504 192
+:proxima/tile/green1s: 1472 192
+:proxima/tile/green1s: 1440 192
+:proxima/tile/green1s: 1664 256
+:proxima/tile/green1s: 1632 256
+:proxima/tile/green1s: 1600 256
+:proxima/tile/green1s: 1568 256
+:proxima/tile/green1s: 1536 256
+:proxima/tile/green1s: 1440 224
+:proxima/tile/green1s: 1440 256
+:proxima/tile/green1s: 1440 288
+:proxima/tile/green1s: 1504 256
+:proxima/tile/green1s: 1664 320
+:proxima/tile/green1s: 1632 320
+:proxima/tile/green1s: 1600 320
+:proxima/tile/green1s: 1568 320
+:proxima/tile/green1s: 1536 320
+:proxima/tile/green1s: 1504 320
+:proxima/tile/green1s: 1664 288
+:proxima/tile/green1s: 1440 320
+:proxima/tile/orange2s: 1664 192
+:proxima/tile/orange2s: 1632 192
+:proxima/tile/orange2s: 1600 192
+:proxima/tile/orange2s: 1568 192
+:proxima/tile/orange2s: 1536 192
+:proxima/tile/orange2s: 1504 192
+:proxima/tile/orange2s: 1472 192
+:proxima/tile/orange2s: 1440 192
+:proxima/tile/orange2s: 1440 224
+:proxima/tile/orange2s: 1440 256
+:proxima/tile/orange2s: 1440 288
+:proxima/tile/orange2s: 1440 320
+:proxima/tile/orange2s: 1504 320
+:proxima/tile/orange2s: 1536 320
+:proxima/tile/orange2s: 1568 320
+:proxima/tile/orange2s: 1600 320
+:proxima/tile/orange2s: 1632 320
+:proxima/tile/orange2s: 1664 320
+:proxima/tile/orange2s: 1664 288
+:proxima/tile/orange2s: 1664 256
+:proxima/tile/orange2s: 1632 256
+:proxima/tile/orange2s: 1600 256
+:proxima/tile/orange2s: 1568 256
+:proxima/tile/orange2s: 1536 256
+:proxima/tile/orange2s: 1504 256
+:proxima/tile/green1s: 1664 384
+:proxima/tile/green1s: 1632 384
+:proxima/tile/green1s: 1600 384
+:proxima/tile/green1s: 1568 384
+:proxima/tile/green1s: 1536 384
+:proxima/tile/green1s: 1504 384
+:proxima/tile/green1s: 1472 384
+:proxima/tile/green1s: 1440 384
+:proxima/tile/green1s: 1664 384
+:proxima/tile/green1s: 1632 384
+:proxima/tile/green1s: 1600 384
+:proxima/tile/green1s: 1568 384
+:proxima/tile/green1s: 1536 384
+:proxima/tile/green1s: 1504 384
+:proxima/tile/green1s: 1472 384
+:proxima/tile/green1s: 1440 384
+:proxima/tile/green1s: 1664 448
+:proxima/tile/green1s: 1632 448
+:proxima/tile/green1s: 1600 448
+:proxima/tile/green1s: 1568 448
+:proxima/tile/green1s: 1536 448
+:proxima/tile/green1s: 1440 416
+:proxima/tile/green1s: 1440 448
+:proxima/tile/green1s: 1440 480
+:proxima/tile/green1s: 1504 448
+:proxima/tile/green1s: 1664 512
+:proxima/tile/green1s: 1632 512
+:proxima/tile/green1s: 1600 512
+:proxima/tile/green1s: 1568 512
+:proxima/tile/green1s: 1536 512
+:proxima/tile/green1s: 1504 512
+:proxima/tile/green1s: 1664 480
+:proxima/tile/green1s: 1440 512
+:proxima/tile/orange2s: 1664 384
+:proxima/tile/orange2s: 1632 384
+:proxima/tile/orange2s: 1600 384
+:proxima/tile/orange2s: 1568 384
+:proxima/tile/orange2s: 1536 384
+:proxima/tile/orange2s: 1504 384
+:proxima/tile/orange2s: 1472 384
+:proxima/tile/orange2s: 1440 384
+:proxima/tile/orange2s: 1440 416
+:proxima/tile/orange2s: 1440 448
+:proxima/tile/orange2s: 1440 480
+:proxima/tile/orange2s: 1440 512
+:proxima/tile/orange2s: 1504 512
+:proxima/tile/orange2s: 1536 512
+:proxima/tile/orange2s: 1568 512
+:proxima/tile/orange2s: 1600 512
+:proxima/tile/orange2s: 1632 512
+:proxima/tile/orange2s: 1664 512
+:proxima/tile/orange2s: 1664 480
+:proxima/tile/orange2s: 1664 448
+:proxima/tile/orange2s: 1632 448
+:proxima/tile/orange2s: 1600 448
+:proxima/tile/orange2s: 1568 448
+:proxima/tile/orange2s: 1536 448
+:proxima/tile/orange2s: 1504 448
+:proxima/tile/pink6s: 1664 384
+:proxima/tile/pink6s: 1632 384
+:proxima/tile/pink6s: 1600 384
+:proxima/tile/pink6s: 1568 384
+:proxima/tile/pink6s: 1536 384
+:proxima/tile/pink6s: 1504 384
+:proxima/tile/pink6s: 1472 384
+:proxima/tile/pink6s: 1440 384
+:proxima/tile/pink6s: 1440 416
+:proxima/tile/pink6s: 1440 448
+:proxima/tile/pink6s: 1440 480
+:proxima/tile/pink6s: 1440 512
+:proxima/tile/pink6s: 1504 512
+:proxima/tile/pink6s: 1536 512
+:proxima/tile/pink6s: 1568 512
+:proxima/tile/pink6s: 1600 512
+:proxima/tile/pink6s: 1632 512
+:proxima/tile/pink6s: 1664 512
+:proxima/tile/pink6s: 1664 480
+:proxima/tile/pink6s: 1664 448
+:proxima/tile/pink6s: 1632 448
+:proxima/tile/pink6s: 1600 448
+:proxima/tile/pink6s: 1568 448
+:proxima/tile/pink6s: 1536 448
+:proxima/tile/pink6s: 1504 448
+:proxima/tile/green1s: 1088 0
+:proxima/tile/green1s: 1056 0
+:proxima/tile/green1s: 1024 0
+:proxima/tile/green1s: 992 0
+:proxima/tile/green1s: 960 0
+:proxima/tile/green1s: 928 0
+:proxima/tile/green1s: 896 0
+:proxima/tile/green1s: 864 0
+:proxima/tile/green1s: 1088 0
+:proxima/tile/green1s: 1056 0
+:proxima/tile/green1s: 1024 0
+:proxima/tile/green1s: 992 0
+:proxima/tile/green1s: 960 0
+:proxima/tile/green1s: 928 0
+:proxima/tile/green1s: 896 0
+:proxima/tile/green1s: 864 0
+:proxima/tile/green1s: 1088 64
+:proxima/tile/green1s: 1056 64
+:proxima/tile/green1s: 1024 64
+:proxima/tile/green1s: 992 64
+:proxima/tile/green1s: 960 64
+:proxima/tile/green1s: 864 32
+:proxima/tile/green1s: 928 64
+:proxima/tile/green1s: 1088 128
+:proxima/tile/green1s: 1056 128
+:proxima/tile/green1s: 1024 128
+:proxima/tile/green1s: 992 128
+:proxima/tile/green1s: 960 128
+:proxima/tile/green1s: 928 128
+:proxima/tile/green1s: 864 128
+:proxima/tile/orange2s: 1088 0
+:proxima/tile/orange2s: 1056 0
+:proxima/tile/orange2s: 1024 0
+:proxima/tile/orange2s: 992 0
+:proxima/tile/orange2s: 960 0
+:proxima/tile/orange2s: 928 0
+:proxima/tile/orange2s: 896 0
+:proxima/tile/orange2s: 864 0
+:proxima/tile/orange2s: 864 32
+:proxima/tile/orange2s: 864 128
+:proxima/tile/orange2s: 928 128
+:proxima/tile/orange2s: 960 128
+:proxima/tile/orange2s: 992 128
+:proxima/tile/orange2s: 1024 128
+:proxima/tile/orange2s: 1056 128
+:proxima/tile/orange2s: 1088 128
+:proxima/tile/orange2s: 1088 64
+:proxima/tile/orange2s: 1056 64
+:proxima/tile/orange2s: 1024 64
+:proxima/tile/orange2s: 992 64
+:proxima/tile/orange2s: 960 64
+:proxima/tile/orange2s: 928 64
+:proxima/tile/pink6s: 1088 0
+:proxima/tile/pink6s: 1056 0
+:proxima/tile/pink6s: 1024 0
+:proxima/tile/pink6s: 992 0
+:proxima/tile/pink6s: 960 0
+:proxima/tile/pink6s: 928 0
+:proxima/tile/pink6s: 896 0
+:proxima/tile/pink6s: 864 0
+:proxima/tile/pink6s: 864 32
+:proxima/tile/pink6s: 928 128
+:proxima/tile/pink6s: 960 128
+:proxima/tile/pink6s: 992 128
+:proxima/tile/pink6s: 1024 128
+:proxima/tile/pink6s: 1056 128
+:proxima/tile/pink6s: 1088 128
+:proxima/tile/pink6s: 928 96
+:proxima/tile/pink6s: 1088 64
+:proxima/tile/pink6s: 1056 64
+:proxima/tile/pink6s: 1024 64
+:proxima/tile/pink6s: 992 64
+:proxima/tile/pink6s: 960 64
+:proxima/tile/pink6s: 928 64
+:proxima/tile/blue1s: 0 192
+:proxima/tile/blue1s: 32 192
+:proxima/tile/blue1s: 64 192
+:proxima/tile/blue1s: 96 192
+:proxima/tile/blue1s: 128 192
+:proxima/tile/blue1s: 160 192
+:proxima/tile/blue1s: 192 192
+:proxima/tile/blue1s: 224 192
+:proxima/tile/blue1s: 224 224
+:proxima/tile/blue1s: 224 256
+:proxima/tile/blue1s: 224 288
+:proxima/tile/blue1s: 224 320
+:proxima/tile/blue1s: 0 320
+:proxima/tile/blue1s: 0 288
+:proxima/tile/blue1s: 0 256
+:proxima/tile/blue1s: 32 256
+:proxima/tile/blue1s: 64 256
+:proxima/tile/blue1s: 96 256
+:proxima/tile/blue1s: 128 256
+:proxima/tile/blue1s: 160 256
+:proxima/tile/blue1s: 32 320
+:proxima/tile/blue1s: 64 320
+:proxima/tile/blue1s: 96 320
+:proxima/tile/blue1s: 128 320
+:proxima/tile/blue1s: 160 320
+:proxima/tile/blue1s: 576 576
+:proxima/tile/blue1s: 608 576
+:proxima/tile/blue1s: 640 576
+:proxima/tile/blue1s: 672 576
+:proxima/tile/blue1s: 704 576
+:proxima/tile/blue1s: 736 576
+:proxima/tile/blue1s: 768 576
+:proxima/tile/blue1s: 800 576
+:proxima/tile/blue1s: 800 608
+:proxima/tile/blue1s: 576 704
+:proxima/tile/blue1s: 736 672
+:proxima/tile/blue1s: 576 640
+:proxima/tile/blue1s: 608 640
+:proxima/tile/blue1s: 640 640
+:proxima/tile/blue1s: 672 640
+:proxima/tile/blue1s: 704 640
+:proxima/tile/blue1s: 736 640
+:proxima/tile/blue1s: 608 704
+:proxima/tile/blue1s: 640 704
+:proxima/tile/blue1s: 672 704
+:proxima/tile/blue1s: 704 704
+:proxima/tile/blue1s: 736 704
+:proxima/tile/pink6s: 1152 704
+:proxima/tile/pink6s: 1216 704
+:proxima/tile/pink6s: 1280 704
+:proxima/tile/pink6s: 1280 672
+:proxima/tile/pink6s: 1280 640
+:proxima/tile/pink6s: 1216 672
+:proxima/tile/pink6s: 1216 640
+:proxima/tile/pink6s: 1248 640
+:proxima/tile/pink6s: 1248 576
+:proxima/tile/pink6s: 1216 576
+:proxima/tile/pink6s: 1184 576
+:proxima/tile/pink6s: 1152 576
+:proxima/tile/pink6s: 1152 608
+:proxima/tile/pink6s: 1152 672
+:proxima/tile/pink6s: 1312 576
+:proxima/tile/pink6s: 1344 576
+:proxima/tile/pink6s: 1344 608
+:proxima/tile/pink6s: 1376 608
+:proxima/tile/pink6s: 1376 640
+:proxima/tile/pink6s: 1376 672
+:proxima/tile/pink6s: 1344 672
+:proxima/tile/pink6s: 1376 704
+:proxima/tile/pink6s: 1152 320
+:proxima/tile/pink6s: 1216 320
+:proxima/tile/pink6s: 1280 320
+:proxima/tile/pink6s: 1280 288
+:proxima/tile/pink6s: 1280 256
+:proxima/tile/pink6s: 1216 288
+:proxima/tile/pink6s: 1216 256
+:proxima/tile/pink6s: 1248 256
+:proxima/tile/pink6s: 1248 192
+:proxima/tile/pink6s: 1216 192
+:proxima/tile/pink6s: 1184 192
+:proxima/tile/pink6s: 1152 192
+:proxima/tile/pink6s: 1152 224
+:proxima/tile/pink6s: 1152 288
+:proxima/tile/pink6s: 1312 192
+:proxima/tile/pink6s: 1344 192
+:proxima/tile/pink6s: 1344 224
+:proxima/tile/pink6s: 1376 224
+:proxima/tile/pink6s: 1376 256
+:proxima/tile/pink6s: 1376 288
+:proxima/tile/pink6s: 1344 288
+:proxima/tile/pink6s: 1376 320
+:proxima/tile/pink6s: 1152 512
+:proxima/tile/pink6s: 1216 512
+:proxima/tile/pink6s: 1280 512
+:proxima/tile/pink6s: 1280 480
+:proxima/tile/pink6s: 1280 448
+:proxima/tile/pink6s: 1216 480
+:proxima/tile/pink6s: 1216 448
+:proxima/tile/pink6s: 1248 448
+:proxima/tile/pink6s: 1248 384
+:proxima/tile/pink6s: 1216 384
+:proxima/tile/pink6s: 1184 384
+:proxima/tile/pink6s: 1152 384
+:proxima/tile/pink6s: 1152 416
+:proxima/tile/pink6s: 1152 480
+:proxima/tile/pink6s: 1312 384
+:proxima/tile/pink6s: 1344 384
+:proxima/tile/pink6s: 1344 416
+:proxima/tile/pink6s: 1376 416
+:proxima/tile/pink6s: 1376 448
+:proxima/tile/pink6s: 1376 480
+:proxima/tile/pink6s: 1344 480
+:proxima/tile/pink6s: 1376 512
+:proxima/tile/orange2s: 1376 512
+:proxima/tile/orange2s: 1376 480
+:proxima/tile/orange2s: 1344 480
+:proxima/tile/orange2s: 1376 448
+:proxima/tile/orange2s: 1376 416
+:proxima/tile/orange2s: 1344 416
+:proxima/tile/orange2s: 1344 384
+:proxima/tile/orange2s: 1312 384
+:proxima/tile/orange2s: 1248 384
+:proxima/tile/orange2s: 1216 384
+:proxima/tile/orange2s: 1184 384
+:proxima/tile/orange2s: 1152 384
+:proxima/tile/orange2s: 1152 416
+:proxima/tile/orange2s: 1152 480
+:proxima/tile/orange2s: 1152 512
+:proxima/tile/orange2s: 1216 512
+:proxima/tile/orange2s: 1216 480
+:proxima/tile/orange2s: 1216 448
+:proxima/tile/orange2s: 1248 448
+:proxima/tile/orange2s: 1280 448
+:proxima/tile/orange2s: 1280 480
+:proxima/tile/orange2s: 1280 512
+:proxima/tile/green1s: 1376 320
+:proxima/tile/green1s: 1376 288
+:proxima/tile/green1s: 1344 288
+:proxima/tile/green1s: 1376 256
+:proxima/tile/green1s: 1376 224
+:proxima/tile/green1s: 1344 224
+:proxima/tile/green1s: 1344 192
+:proxima/tile/green1s: 1312 192
+:proxima/tile/green1s: 1248 192
+:proxima/tile/green1s: 1216 192
+:proxima/tile/green1s: 1184 192
+:proxima/tile/green1s: 1152 192
+:proxima/tile/green1s: 1152 224
+:proxima/tile/green1s: 1152 288
+:proxima/tile/green1s: 1152 320
+:proxima/tile/green1s: 1216 320
+:proxima/tile/green1s: 1216 288
+:proxima/tile/green1s: 1216 256
+:proxima/tile/green1s: 1248 256
+:proxima/tile/green1s: 1280 256
+:proxima/tile/green1s: 1280 288
+:proxima/tile/green1s: 1280 320
+:proxima/tile/green1s: 1088 384
+:proxima/tile/green1s: 1056 384
+:proxima/tile/green1s: 1024 384
+:proxima/tile/green1s: 992 384
+:proxima/tile/green1s: 960 384
+:proxima/tile/green1s: 928 384
+:proxima/tile/green1s: 896 384
+:proxima/tile/green1s: 864 384
+:proxima/tile/green1s: 1088 384
+:proxima/tile/green1s: 1056 384
+:proxima/tile/green1s: 1024 384
+:proxima/tile/green1s: 992 384
+:proxima/tile/green1s: 960 384
+:proxima/tile/green1s: 928 384
+:proxima/tile/green1s: 896 384
+:proxima/tile/green1s: 864 384
+:proxima/tile/green1s: 1088 448
+:proxima/tile/green1s: 1056 448
+:proxima/tile/green1s: 1024 448
+:proxima/tile/green1s: 992 448
+:proxima/tile/green1s: 960 448
+:proxima/tile/green1s: 864 416
+:proxima/tile/green1s: 928 448
+:proxima/tile/green1s: 1088 512
+:proxima/tile/green1s: 1056 512
+:proxima/tile/green1s: 1024 512
+:proxima/tile/green1s: 992 512
+:proxima/tile/green1s: 960 512
+:proxima/tile/green1s: 928 512
+:proxima/tile/green1s: 864 512
+:proxima/tile/orange2s: 1088 384
+:proxima/tile/orange2s: 1056 384
+:proxima/tile/orange2s: 1024 384
+:proxima/tile/orange2s: 992 384
+:proxima/tile/orange2s: 960 384
+:proxima/tile/orange2s: 928 384
+:proxima/tile/orange2s: 896 384
+:proxima/tile/orange2s: 864 384
+:proxima/tile/orange2s: 864 416
+:proxima/tile/orange2s: 864 512
+:proxima/tile/orange2s: 928 512
+:proxima/tile/orange2s: 960 512
+:proxima/tile/orange2s: 992 512
+:proxima/tile/orange2s: 1024 512
+:proxima/tile/orange2s: 1056 512
+:proxima/tile/orange2s: 1088 512
+:proxima/tile/orange2s: 1088 448
+:proxima/tile/orange2s: 1056 448
+:proxima/tile/orange2s: 1024 448
+:proxima/tile/orange2s: 992 448
+:proxima/tile/orange2s: 960 448
+:proxima/tile/orange2s: 928 448
+:proxima/tile/pink6s: 1088 384
+:proxima/tile/pink6s: 1056 384
+:proxima/tile/pink6s: 1024 384
+:proxima/tile/pink6s: 992 384
+:proxima/tile/pink6s: 960 384
+:proxima/tile/pink6s: 928 384
+:proxima/tile/pink6s: 896 384
+:proxima/tile/pink6s: 864 384
+:proxima/tile/pink6s: 864 416
+:proxima/tile/pink6s: 864 512
+:proxima/tile/pink6s: 928 512
+:proxima/tile/pink6s: 960 512
+:proxima/tile/pink6s: 992 512
+:proxima/tile/pink6s: 1024 512
+:proxima/tile/pink6s: 1056 512
+:proxima/tile/pink6s: 1088 512
+:proxima/tile/pink6s: 928 480
+:proxima/tile/pink6s: 1088 448
+:proxima/tile/pink6s: 1056 448
+:proxima/tile/pink6s: 1024 448
+:proxima/tile/pink6s: 992 448
+:proxima/tile/pink6s: 960 448
+:proxima/tile/pink6s: 928 448
+:proxima/tile/green1s: 1088 384
+:proxima/tile/green1s: 1056 384
+:proxima/tile/green1s: 1024 384
+:proxima/tile/green1s: 992 384
+:proxima/tile/green1s: 960 384
+:proxima/tile/green1s: 928 384
+:proxima/tile/green1s: 896 384
+:proxima/tile/green1s: 864 384
+:proxima/tile/green1s: 864 416
+:proxima/tile/green1s: 928 512
+:proxima/tile/green1s: 960 512
+:proxima/tile/green1s: 992 512
+:proxima/tile/green1s: 1024 512
+:proxima/tile/green1s: 1056 512
+:proxima/tile/green1s: 1088 512
+:proxima/tile/green1s: 1088 448
+:proxima/tile/green1s: 1056 448
+:proxima/tile/green1s: 1024 448
+:proxima/tile/green1s: 992 448
+:proxima/tile/green1s: 960 448
+:proxima/tile/green1s: 928 448
+:proxima/tile/green1s: 928 480
+:proxima/tile/green1s: 1088 576
+:proxima/tile/green1s: 1056 576
+:proxima/tile/green1s: 1024 576
+:proxima/tile/green1s: 992 576
+:proxima/tile/green1s: 960 576
+:proxima/tile/green1s: 928 576
+:proxima/tile/green1s: 896 576
+:proxima/tile/green1s: 864 576
+:proxima/tile/green1s: 1088 576
+:proxima/tile/green1s: 1056 576
+:proxima/tile/green1s: 1024 576
+:proxima/tile/green1s: 992 576
+:proxima/tile/green1s: 960 576
+:proxima/tile/green1s: 928 576
+:proxima/tile/green1s: 896 576
+:proxima/tile/green1s: 864 576
+:proxima/tile/green1s: 1088 640
+:proxima/tile/green1s: 1056 640
+:proxima/tile/green1s: 1024 640
+:proxima/tile/green1s: 992 640
+:proxima/tile/green1s: 960 640
+:proxima/tile/green1s: 864 608
+:proxima/tile/green1s: 928 640
+:proxima/tile/green1s: 1088 704
+:proxima/tile/green1s: 1056 704
+:proxima/tile/green1s: 1024 704
+:proxima/tile/green1s: 992 704
+:proxima/tile/green1s: 960 704
+:proxima/tile/green1s: 928 704
+:proxima/tile/green1s: 864 704
+:proxima/tile/orange2s: 1088 576
+:proxima/tile/orange2s: 1056 576
+:proxima/tile/orange2s: 1024 576
+:proxima/tile/orange2s: 992 576
+:proxima/tile/orange2s: 960 576
+:proxima/tile/orange2s: 928 576
+:proxima/tile/orange2s: 896 576
+:proxima/tile/orange2s: 864 576
+:proxima/tile/orange2s: 864 608
+:proxima/tile/orange2s: 864 704
+:proxima/tile/blue1s: 864 704
+:proxima/tile/orange2s: 928 704
+:proxima/tile/orange2s: 960 704
+:proxima/tile/orange2s: 992 704
+:proxima/tile/orange2s: 1024 704
+:proxima/tile/orange2s: 1056 704
+:proxima/tile/orange2s: 1088 704
+:proxima/tile/orange2s: 1088 640
+:proxima/tile/orange2s: 1056 640
+:proxima/tile/orange2s: 1024 640
+:proxima/tile/orange2s: 992 640
+:proxima/tile/orange2s: 960 640
+:proxima/tile/orange2s: 928 640
+:proxima/tile/pink6s: 1088 576
+:proxima/tile/pink6s: 1056 576
+:proxima/tile/pink6s: 1024 576
+:proxima/tile/pink6s: 992 576
+:proxima/tile/pink6s: 960 576
+:proxima/tile/pink6s: 928 576
+:proxima/tile/pink6s: 896 576
+:proxima/tile/pink6s: 864 576
+:proxima/tile/pink6s: 864 608
+:proxima/tile/pink6s: 928 704
+:proxima/tile/pink6s: 960 704
+:proxima/tile/pink6s: 992 704
+:proxima/tile/pink6s: 1024 704
+:proxima/tile/pink6s: 1056 704
+:proxima/tile/pink6s: 1088 704
+:proxima/tile/pink6s: 928 672
+:proxima/tile/pink6s: 1088 640
+:proxima/tile/pink6s: 1056 640
+:proxima/tile/pink6s: 1024 640
+:proxima/tile/pink6s: 992 640
+:proxima/tile/pink6s: 960 640
+:proxima/tile/pink6s: 928 640
+:proxima/tile/green1s: 1088 576
+:proxima/tile/green1s: 1056 576
+:proxima/tile/green1s: 1024 576
+:proxima/tile/green1s: 992 576
+:proxima/tile/green1s: 960 576
+:proxima/tile/green1s: 928 576
+:proxima/tile/green1s: 896 576
+:proxima/tile/green1s: 864 576
+:proxima/tile/green1s: 864 608
+:proxima/tile/green1s: 928 704
+:proxima/tile/green1s: 960 704
+:proxima/tile/green1s: 992 704
+:proxima/tile/green1s: 1024 704
+:proxima/tile/green1s: 1056 704
+:proxima/tile/green1s: 1088 704
+:proxima/tile/green1s: 1088 640
+:proxima/tile/green1s: 1056 640
+:proxima/tile/green1s: 1024 640
+:proxima/tile/green1s: 992 640
+:proxima/tile/green1s: 960 640
+:proxima/tile/green1s: 928 640
+:proxima/tile/green1s: 928 672
+:proxima/tile/orange2s: 864 576
+:proxima/tile/orange2s: 864 608
+:proxima/tile/orange2s: 800 704
+:proxima/tile/orange2s: 896 576
+:proxima/tile/orange2s: 928 576
+:proxima/tile/orange2s: 960 576
+:proxima/tile/orange2s: 992 576
+:proxima/tile/orange2s: 1024 576
+:proxima/tile/orange2s: 1056 576
+:proxima/tile/orange2s: 1088 576
+:proxima/tile/orange2s: 1088 640
+:proxima/tile/orange2s: 1056 640
+:proxima/tile/orange2s: 1024 640
+:proxima/tile/orange2s: 992 640
+:proxima/tile/orange2s: 960 640
+:proxima/tile/orange2s: 928 640
+:proxima/tile/orange2s: 928 672
+:proxima/tile/orange2s: 928 704
+:proxima/tile/orange2s: 960 704
+:proxima/tile/orange2s: 992 704
+:proxima/tile/orange2s: 1024 704
+:proxima/tile/orange2s: 1088 704
+:proxima/tile/orange2s: 1056 704
+:proxima/tile/blue1s: 576 0
+:proxima/tile/blue1s: 608 0
+:proxima/tile/blue1s: 640 0
+:proxima/tile/blue1s: 672 0
+:proxima/tile/blue1s: 704 0
+:proxima/tile/blue1s: 736 0
+:proxima/tile/blue1s: 768 0
+:proxima/tile/blue1s: 800 0
+:proxima/tile/blue1s: 800 32
+:proxima/tile/blue1s: 800 128
+:proxima/tile/pink6s: 800 128
+:proxima/tile/blue1s: 576 128
+:proxima/tile/blue1s: 736 96
+:proxima/tile/blue1s: 576 64
+:proxima/tile/blue1s: 608 64
+:proxima/tile/blue1s: 640 64
+:proxima/tile/blue1s: 672 64
+:proxima/tile/blue1s: 704 64
+:proxima/tile/blue1s: 736 64
+:proxima/tile/blue1s: 608 128
+:proxima/tile/blue1s: 640 128
+:proxima/tile/blue1s: 672 128
+:proxima/tile/blue1s: 704 128
+:proxima/tile/blue1s: 736 128
+:proxima/tile/blue1s: 576 384
+:proxima/tile/blue1s: 608 384
+:proxima/tile/blue1s: 640 384
+:proxima/tile/blue1s: 672 384
+:proxima/tile/blue1s: 704 384
+:proxima/tile/blue1s: 736 384
+:proxima/tile/blue1s: 768 384
+:proxima/tile/blue1s: 800 384
+:proxima/tile/blue1s: 800 416
+:proxima/tile/blue1s: 800 512
+:proxima/tile/green1s: 800 512
+:proxima/tile/blue1s: 576 512
+:proxima/tile/blue1s: 736 480
+:proxima/tile/blue1s: 576 448
+:proxima/tile/blue1s: 608 448
+:proxima/tile/blue1s: 640 448
+:proxima/tile/blue1s: 672 448
+:proxima/tile/blue1s: 704 448
+:proxima/tile/blue1s: 736 448
+:proxima/tile/blue1s: 608 512
+:proxima/tile/blue1s: 640 512
+:proxima/tile/blue1s: 672 512
+:proxima/tile/blue1s: 704 512
+:proxima/tile/blue1s: 736 512
+:proxima/tile/pink6s: 512 512 frr
+:proxima/tile/pink6s: 448 512 frr
+:proxima/tile/pink6s: 384 512 frr
+:proxima/tile/pink6s: 384 480 frr
+:proxima/tile/pink6s: 384 448 frr
+:proxima/tile/pink6s: 448 480 frr
+:proxima/tile/pink6s: 448 448 frr
+:proxima/tile/pink6s: 416 448 frr
+:proxima/tile/pink6s: 416 384 frr
+:proxima/tile/pink6s: 448 384 frr
+:proxima/tile/pink6s: 480 384 frr
+:proxima/tile/pink6s: 512 384 frr
+:proxima/tile/pink6s: 512 416 frr
+:proxima/tile/pink6s: 512 480 frr
+:proxima/tile/pink6s: 352 384 frr
+:proxima/tile/pink6s: 320 384 frr
+:proxima/tile/pink6s: 320 416 frr
+:proxima/tile/pink6s: 288 416 frr
+:proxima/tile/pink6s: 288 448 frr
+:proxima/tile/pink6s: 288 480 frr
+:proxima/tile/pink6s: 320 480 frr
+:proxima/tile/pink6s: 288 512 frr
+:proxima/tile/green1s: 288 512 frr
+:proxima/tile/green1s: 288 480 frr
+:proxima/tile/green1s: 320 480 frr
+:proxima/tile/green1s: 288 448 frr
+:proxima/tile/green1s: 288 416 frr
+:proxima/tile/green1s: 320 416 frr
+:proxima/tile/green1s: 320 384 frr
+:proxima/tile/green1s: 352 384 frr
+:proxima/tile/green1s: 416 384 frr
+:proxima/tile/green1s: 448 384 frr
+:proxima/tile/green1s: 480 384 frr
+:proxima/tile/green1s: 512 384 frr
+:proxima/tile/green1s: 512 416 frr
+:proxima/tile/green1s: 512 480 frr
+:proxima/tile/green1s: 512 512 frr
+:proxima/tile/green1s: 448 512 frr
+:proxima/tile/green1s: 448 480 frr
+:proxima/tile/green1s: 448 448 frr
+:proxima/tile/green1s: 416 448 frr
+:proxima/tile/green1s: 384 448 frr
+:proxima/tile/green1s: 384 480 frr
+:proxima/tile/green1s: 384 512 frr
+:proxima/tile/pink6s: 512 320 frr
+:proxima/tile/pink6s: 448 320 frr
+:proxima/tile/pink6s: 384 320 frr
+:proxima/tile/pink6s: 384 288 frr
+:proxima/tile/pink6s: 384 256 frr
+:proxima/tile/pink6s: 448 288 frr
+:proxima/tile/pink6s: 448 256 frr
+:proxima/tile/pink6s: 416 256 frr
+:proxima/tile/pink6s: 416 192 frr
+:proxima/tile/pink6s: 448 192 frr
+:proxima/tile/pink6s: 480 192 frr
+:proxima/tile/pink6s: 512 192 frr
+:proxima/tile/pink6s: 512 224 frr
+:proxima/tile/pink6s: 512 288 frr
+:proxima/tile/pink6s: 352 192 frr
+:proxima/tile/pink6s: 320 192 frr
+:proxima/tile/pink6s: 320 224 frr
+:proxima/tile/pink6s: 288 224 frr
+:proxima/tile/pink6s: 288 256 frr
+:proxima/tile/pink6s: 288 288 frr
+:proxima/tile/pink6s: 320 288 frr
+:proxima/tile/pink6s: 288 320 frr
+:proxima/tile/green1s: 288 320 frr
+:proxima/tile/green1s: 288 288 frr
+:proxima/tile/green1s: 320 288 frr
+:proxima/tile/green1s: 288 256 frr
+:proxima/tile/green1s: 288 224 frr
+:proxima/tile/green1s: 320 224 frr
+:proxima/tile/green1s: 320 192 frr
+:proxima/tile/green1s: 352 192 frr
+:proxima/tile/green1s: 416 192 frr
+:proxima/tile/green1s: 448 192 frr
+:proxima/tile/green1s: 480 192 frr
+:proxima/tile/green1s: 512 192 frr
+:proxima/tile/green1s: 512 224 frr
+:proxima/tile/green1s: 512 288 frr
+:proxima/tile/green1s: 512 320 frr
+:proxima/tile/green1s: 448 320 frr
+:proxima/tile/green1s: 448 288 frr
+:proxima/tile/green1s: 448 256 frr
+:proxima/tile/green1s: 416 256 frr
+:proxima/tile/green1s: 384 256 frr
+:proxima/tile/green1s: 384 288 frr
+:proxima/tile/green1s: 384 320 frr
+:proxima/tile/pink6s: 512 704 frr
+:proxima/tile/pink6s: 448 704 frr
+:proxima/tile/pink6s: 384 704 frr
+:proxima/tile/pink6s: 384 672 frr
+:proxima/tile/pink6s: 384 640 frr
+:proxima/tile/pink6s: 448 672 frr
+:proxima/tile/pink6s: 448 640 frr
+:proxima/tile/pink6s: 416 640 frr
+:proxima/tile/pink6s: 416 576 frr
+:proxima/tile/pink6s: 448 576 frr
+:proxima/tile/pink6s: 480 576 frr
+:proxima/tile/pink6s: 512 576 frr
+:proxima/tile/pink6s: 512 608 frr
+:proxima/tile/pink6s: 512 672 frr
+:proxima/tile/pink6s: 352 576 frr
+:proxima/tile/pink6s: 320 576 frr
+:proxima/tile/pink6s: 320 608 frr
+:proxima/tile/pink6s: 288 608 frr
+:proxima/tile/pink6s: 288 640 frr
+:proxima/tile/pink6s: 288 672 frr
+:proxima/tile/pink6s: 320 672 frr
+:proxima/tile/pink6s: 288 704 frr
+:proxima/tile/green1s: 288 704 frr
+:proxima/tile/green1s: 288 672 frr
+:proxima/tile/green1s: 320 672 frr
+:proxima/tile/green1s: 288 640 frr
+:proxima/tile/green1s: 288 608 frr
+:proxima/tile/green1s: 320 608 frr
+:proxima/tile/green1s: 320 576 frr
+:proxima/tile/green1s: 352 576 frr
+:proxima/tile/green1s: 416 576 frr
+:proxima/tile/green1s: 448 576 frr
+:proxima/tile/green1s: 480 576 frr
+:proxima/tile/green1s: 512 576 frr
+:proxima/tile/green1s: 512 608 frr
+:proxima/tile/green1s: 512 672 frr
+:proxima/tile/green1s: 512 704 frr
+:proxima/tile/green1s: 448 704 frr
+:proxima/tile/green1s: 448 672 frr
+:proxima/tile/green1s: 448 640 frr
+:proxima/tile/green1s: 416 640 frr
+:proxima/tile/green1s: 384 640 frr
+:proxima/tile/green1s: 384 672 frr
+:proxima/tile/green1s: 384 704 frr
+:proxima/tile/blue1s: 288 512
+:proxima/tile/blue1s: 320 480
+:proxima/tile/blue1s: 288 480
+:proxima/tile/blue1s: 288 448
+:proxima/tile/blue1s: 288 416
+:proxima/tile/blue1s: 320 416
+:proxima/tile/blue1s: 320 384
+:proxima/tile/blue1s: 352 384
+:proxima/tile/blue1s: 416 384
+:proxima/tile/blue1s: 448 384
+:proxima/tile/blue1s: 480 384
+:proxima/tile/blue1s: 512 384
+:proxima/tile/blue1s: 512 416
+:proxima/tile/blue1s: 512 480
+:proxima/tile/blue1s: 512 512
+:proxima/tile/blue1s: 448 512
+:proxima/tile/blue1s: 448 480
+:proxima/tile/blue1s: 448 448
+:proxima/tile/blue1s: 416 448
+:proxima/tile/blue1s: 384 448
+:proxima/tile/blue1s: 384 480
+:proxima/tile/blue1s: 384 512
+:proxima/tile/red3s: 0 0
+:proxima/tile/red3s: 32 0
+:proxima/tile/red3s: 64 0
+:proxima/tile/red3s: 96 0
+:proxima/tile/red3s: 128 0
+:proxima/tile/red3s: 160 0
+:proxima/tile/red3s: 192 0
+:proxima/tile/red3s: 224 0
+:proxima/tile/red3s: 224 32
+:proxima/tile/red3s: 224 64
+:proxima/tile/red3s: 224 96
+:proxima/tile/red3s: 224 128
+:proxima/tile/red3s: 0 128
+:proxima/tile/red3s: 0 96
+:proxima/tile/red3s: 0 64
+:proxima/tile/red3s: 32 64
+:proxima/tile/red3s: 64 64
+:proxima/tile/red3s: 96 64
+:proxima/tile/red3s: 128 64
+:proxima/tile/red3s: 160 64
+:proxima/tile/red3s: 32 128
+:proxima/tile/red3s: 64 128
+:proxima/tile/red3s: 96 128
+:proxima/tile/red3s: 128 128
+:proxima/tile/red3s: 160 128
+:proxima/tile/red3s: 352 192
+:proxima/tile/red3s: 320 192
+:proxima/tile/red3s: 320 224
+:proxima/tile/red3s: 288 224
+:proxima/tile/red3s: 288 256
+:proxima/tile/red3s: 288 288
+:proxima/tile/red3s: 288 320
+:proxima/tile/red3s: 320 288
+:proxima/tile/red3s: 384 320
+:proxima/tile/red3s: 384 288
+:proxima/tile/red3s: 384 256
+:proxima/tile/red3s: 416 256
+:proxima/tile/red3s: 448 256
+:proxima/tile/red3s: 448 288
+:proxima/tile/red3s: 448 320
+:proxima/tile/red3s: 512 320
+:proxima/tile/red3s: 512 288
+:proxima/tile/red3s: 512 224
+:proxima/tile/red3s: 512 192
+:proxima/tile/red3s: 480 192
+:proxima/tile/red3s: 448 192
+:proxima/tile/red3s: 416 192
+:proxima/tile/red3s: 576 384
+:proxima/tile/red3s: 608 384
+:proxima/tile/red3s: 640 384
+:proxima/tile/red3s: 672 384
+:proxima/tile/red3s: 704 384
+:proxima/tile/red3s: 736 384
+:proxima/tile/red3s: 768 384
+:proxima/tile/red3s: 800 384
+:proxima/tile/red3s: 800 416
+:proxima/tile/red3s: 864 512
+:proxima/tile/red3s: 576 448
+:proxima/tile/red3s: 608 448
+:proxima/tile/red3s: 640 448
+:proxima/tile/red3s: 672 448
+:proxima/tile/red3s: 704 448
+:proxima/tile/red3s: 736 448
+:proxima/tile/red3s: 736 480
+:proxima/tile/red3s: 736 512
+:proxima/tile/red3s: 576 512
+:proxima/tile/red3s: 608 512
+:proxima/tile/red3s: 640 512
+:proxima/tile/red3s: 672 512
+:proxima/tile/red3s: 704 512
+:proxima/tile/cyan3: 0 384
+:proxima/tile/cyan3: 32 384
+:proxima/tile/cyan3: 64 384
+:proxima/tile/cyan3: 96 384
+:proxima/tile/cyan3: 128 384
+:proxima/tile/cyan3: 160 384
+:proxima/tile/cyan3: 192 384
+:proxima/tile/cyan3: 224 384
+:proxima/tile/cyan3: 224 416
+:proxima/tile/cyan3: 224 448
+:proxima/tile/cyan3: 224 480
+:proxima/tile/cyan3: 224 512
+:proxima/tile/cyan3: 0 448
+:proxima/tile/cyan3: 32 448
+:proxima/tile/cyan3: 64 448
+:proxima/tile/cyan3: 96 448
+:proxima/tile/cyan3: 128 448
+:proxima/tile/cyan3: 160 448
+:proxima/tile/cyan3: 0 480
+:proxima/tile/cyan3: 0 512
+:proxima/tile/cyan3: 32 512
+:proxima/tile/cyan3: 64 512
+:proxima/tile/cyan3: 96 512
+:proxima/tile/cyan3: 128 512
+:proxima/tile/cyan3: 160 512
+:proxima/tile/cyan3: 320 576
+:proxima/tile/cyan3: 352 576
+:proxima/tile/cyan3: 416 576
+:proxima/tile/cyan3: 448 576
+:proxima/tile/cyan3: 480 576
+:proxima/tile/cyan3: 512 576
+:proxima/tile/cyan3: 512 608
+:proxima/tile/cyan3: 512 672
+:proxima/tile/cyan3: 512 704
+:proxima/tile/cyan3: 448 704
+:proxima/tile/cyan3: 448 672
+:proxima/tile/cyan3: 448 640
+:proxima/tile/cyan3: 416 640
+:proxima/tile/cyan3: 384 640
+:proxima/tile/cyan3: 384 672
+:proxima/tile/cyan3: 384 704
+:proxima/tile/cyan3: 288 704
+:proxima/tile/cyan3: 288 672
+:proxima/tile/cyan3: 320 672
+:proxima/tile/cyan3: 288 640
+:proxima/tile/cyan3: 288 608
+:proxima/tile/cyan3: 320 608
+:proxima/tile/cyan3: 576 0
+:proxima/tile/cyan3: 608 0
+:proxima/tile/cyan3: 640 0
+:proxima/tile/cyan3: 672 0
+:proxima/tile/cyan3: 704 0
+:proxima/tile/cyan3: 736 0
+:proxima/tile/cyan3: 768 0
+:proxima/tile/cyan3: 800 0
+:proxima/tile/cyan3: 800 32
+:proxima/tile/cyan3: 864 128
+:proxima/tile/cyan3: 576 64
+:proxima/tile/cyan3: 608 64
+:proxima/tile/cyan3: 640 64
+:proxima/tile/cyan3: 672 64
+:proxima/tile/cyan3: 704 64
+:proxima/tile/cyan3: 736 64
+:proxima/tile/cyan3: 736 96
+:proxima/tile/cyan3: 736 128
+:proxima/tile/cyan3: 704 128
+:proxima/tile/cyan3: 672 128
+:proxima/tile/cyan3: 640 128
+:proxima/tile/cyan3: 608 128
+:proxima/tile/cyan3: 576 128
+:geoo/steel/16x16o.S: 808 128
+:geoo/steel/16x16o.S: 872 128
+:geoo/steel/16x16o.S: 872 704
+:geoo/steel/16x16o.S: 808 704
+:geoo/steel/16x16o.S: 808 512
+:geoo/steel/16x16o.S: 872 512
+:geoo/steel/16x16o.S: 1640 256
+:geoo/steel/16x16o.S: 1640 448
+:geoo/steel/16x16o.S: 1640 64
+:geoo/steel/16x16o.S: 40 64
+:geoo/steel/16x16o.S: 40 256
+:geoo/steel/16x16o.S: 40 448
+:proxima/tile/pink2s: 928 320
+:proxima/tile/spheres/cyansmall: 928 320
+:proxima/tile/pink2s: 928 288
+:proxima/tile/spheres/cyansmall: 928 288
+:proxima/tile/pink2s: 928 256
+:proxima/tile/spheres/cyansmall: 928 256
+:proxima/tile/pink2s: 960 320
+:proxima/tile/spheres/cyansmall: 960 320
+:proxima/tile/pink2s: 992 320
+:proxima/tile/spheres/cyansmall: 992 320
+:proxima/tile/pink2s: 1024 320
+:proxima/tile/spheres/cyansmall: 1024 320
+:proxima/tile/pink2s: 1056 320
+:proxima/tile/spheres/cyansmall: 1056 320
+:proxima/tile/pink2s: 1088 320
+:proxima/tile/spheres/cyansmall: 1088 320
+:proxima/tile/pink2s: 960 256
+:proxima/tile/spheres/cyansmall: 960 256
+:proxima/tile/pink2s: 992 256
+:proxima/tile/spheres/cyansmall: 992 256
+:proxima/tile/pink2s: 1024 256
+:proxima/tile/spheres/cyansmall: 1024 256
+:proxima/tile/pink2s: 1056 256
+:proxima/tile/spheres/cyansmall: 1056 256
+:proxima/tile/pink2s: 1088 256
+:proxima/tile/spheres/cyansmall: 1088 256
+:proxima/tile/pink2s: 864 192
+:proxima/tile/spheres/cyansmall: 864 192
+:proxima/tile/pink2s: 896 192
+:proxima/tile/spheres/cyansmall: 896 192
+:proxima/tile/pink2s: 928 192
+:proxima/tile/spheres/cyansmall: 928 192
+:proxima/tile/pink2s: 960 192
+:proxima/tile/spheres/cyansmall: 960 192
+:proxima/tile/pink2s: 992 192
+:proxima/tile/spheres/cyansmall: 992 192
+:proxima/tile/pink2s: 1024 192
+:proxima/tile/spheres/cyansmall: 1024 192
+:proxima/tile/pink2s: 1056 192
+:proxima/tile/spheres/cyansmall: 1056 192
+:proxima/tile/pink2s: 1088 192
+:proxima/tile/spheres/cyansmall: 1088 192
+:proxima/tile/pink2s: 864 224
+:proxima/tile/spheres/cyansmall: 864 224
+:proxima/tile/pink2s: 1152 0
+:proxima/tile/spheres/cyansmall: 1152 0
+:proxima/tile/pink2s: 1152 32
+:proxima/tile/spheres/cyansmall: 1152 32
+:proxima/tile/pink2s: 1152 96
+:proxima/tile/spheres/cyansmall: 1152 96
+:proxima/tile/pink2s: 1152 128
+:proxima/tile/spheres/cyansmall: 1152 128
+:proxima/tile/pink2s: 1184 0
+:proxima/tile/spheres/cyansmall: 1184 0
+:proxima/tile/pink2s: 1216 0
+:proxima/tile/spheres/cyansmall: 1216 0
+:proxima/tile/pink2s: 1248 0
+:proxima/tile/spheres/cyansmall: 1248 0
+:proxima/tile/pink2s: 1312 0
+:proxima/tile/spheres/cyansmall: 1312 0
+:proxima/tile/pink2s: 1344 0
+:proxima/tile/spheres/cyansmall: 1344 0
+:proxima/tile/pink2s: 1344 32
+:proxima/tile/spheres/cyansmall: 1344 32
+:proxima/tile/pink2s: 1376 32
+:proxima/tile/spheres/cyansmall: 1376 32
+:proxima/tile/pink2s: 1376 64
+:proxima/tile/spheres/cyansmall: 1376 64
+:proxima/tile/pink2s: 1376 96
+:proxima/tile/spheres/cyansmall: 1376 96
+:proxima/tile/pink2s: 1376 128
+:proxima/tile/spheres/cyansmall: 1376 128
+:proxima/tile/pink2s: 1344 96
+:proxima/tile/spheres/cyansmall: 1344 96
+:proxima/tile/pink2s: 1280 128
+:proxima/tile/spheres/cyansmall: 1280 128
+:proxima/tile/pink2s: 1280 96
+:proxima/tile/spheres/cyansmall: 1280 96
+:proxima/tile/pink2s: 1280 64
+:proxima/tile/spheres/cyansmall: 1280 64
+:proxima/tile/pink2s: 1248 64
+:proxima/tile/spheres/cyansmall: 1248 64
+:proxima/tile/pink2s: 1216 64
+:proxima/tile/spheres/cyansmall: 1216 64
+:proxima/tile/pink2s: 1216 96
+:proxima/tile/spheres/cyansmall: 1216 96
+:proxima/tile/pink2s: 1216 128
+:proxima/tile/spheres/cyansmall: 1216 128
+:proxima/tile/pink2s: 1440 704
+:proxima/tile/spheres/cyansmall: 1440 704
+:proxima/tile/pink2s: 1440 672
+:proxima/tile/spheres/cyansmall: 1440 672
+:proxima/tile/pink2s: 1440 640
+:proxima/tile/spheres/cyansmall: 1440 640
+:proxima/tile/pink2s: 1440 608
+:proxima/tile/spheres/cyansmall: 1440 608
+:proxima/tile/pink2s: 1440 576
+:proxima/tile/spheres/cyansmall: 1440 576
+:proxima/tile/pink2s: 1472 576
+:proxima/tile/spheres/cyansmall: 1472 576
+:proxima/tile/pink2s: 1504 576
+:proxima/tile/spheres/cyansmall: 1504 576
+:proxima/tile/pink2s: 1536 576
+:proxima/tile/spheres/cyansmall: 1536 576
+:proxima/tile/pink2s: 1568 576
+:proxima/tile/spheres/cyansmall: 1568 576
+:proxima/tile/pink2s: 1600 576
+:proxima/tile/spheres/cyansmall: 1600 576
+:proxima/tile/pink2s: 1632 576
+:proxima/tile/spheres/cyansmall: 1632 576
+:proxima/tile/pink2s: 1664 576
+:proxima/tile/spheres/cyansmall: 1664 576
+:proxima/tile/pink2s: 1504 640
+:proxima/tile/spheres/cyansmall: 1504 640
+:proxima/tile/pink2s: 1536 640
+:proxima/tile/spheres/cyansmall: 1536 640
+:proxima/tile/pink2s: 1568 640
+:proxima/tile/spheres/cyansmall: 1568 640
+:proxima/tile/pink2s: 1600 640
+:proxima/tile/spheres/cyansmall: 1600 640
+:proxima/tile/pink2s: 1632 640
+:proxima/tile/spheres/cyansmall: 1632 640
+:proxima/tile/pink2s: 1664 640
+:proxima/tile/spheres/cyansmall: 1664 640
+:proxima/tile/pink2s: 1664 672
+:proxima/tile/spheres/cyansmall: 1664 672
+:proxima/tile/pink2s: 1664 704
+:proxima/tile/spheres/cyansmall: 1664 704
+:proxima/tile/pink2s: 1632 704
+:proxima/tile/spheres/cyansmall: 1632 704
+:proxima/tile/pink2s: 1600 704
+:proxima/tile/spheres/cyansmall: 1600 704
+:proxima/tile/pink2s: 1568 704
+:proxima/tile/spheres/cyansmall: 1568 704
+:proxima/tile/pink2s: 1536 704
+:proxima/tile/spheres/cyansmall: 1536 704
+:proxima/tile/pink2s: 1504 704
+:proxima/tile/spheres/cyansmall: 1504 704
+:proxima/tile/pink2s: 800 320
+:proxima/tile/spheres/cyansmall: 800 320
+:geoo/steel/16x16o.S: 808 320
+:geoo/steel/16x16o.S: 1640 640
+:proxima/tile/blue2s: 0 576
+:proxima/tile/spheres/goldsmall: 0 576
+:proxima/tile/blue2s: 32 576
+:proxima/tile/spheres/goldsmall: 32 576
+:proxima/tile/blue2s: 64 576
+:proxima/tile/spheres/goldsmall: 64 576
+:proxima/tile/blue2s: 96 576
+:proxima/tile/spheres/goldsmall: 96 576
+:proxima/tile/blue2s: 128 576
+:proxima/tile/spheres/goldsmall: 128 576
+:proxima/tile/blue2s: 160 576
+:proxima/tile/spheres/goldsmall: 160 576
+:proxima/tile/blue2s: 192 576
+:proxima/tile/spheres/goldsmall: 192 576
+:proxima/tile/blue2s: 224 576
+:proxima/tile/spheres/goldsmall: 224 576
+:proxima/tile/blue2s: 224 608
+:proxima/tile/spheres/goldsmall: 224 608
+:proxima/tile/blue2s: 224 640
+:proxima/tile/spheres/goldsmall: 224 640
+:proxima/tile/blue2s: 224 672
+:proxima/tile/spheres/goldsmall: 224 672
+:proxima/tile/blue2s: 224 704
+:proxima/tile/spheres/goldsmall: 224 704
+:proxima/tile/blue2s: 0 640
+:proxima/tile/spheres/goldsmall: 0 640
+:proxima/tile/blue2s: 32 640
+:proxima/tile/spheres/goldsmall: 32 640
+:proxima/tile/blue2s: 64 640
+:proxima/tile/spheres/goldsmall: 64 640
+:proxima/tile/blue2s: 96 640
+:proxima/tile/spheres/goldsmall: 96 640
+:proxima/tile/blue2s: 128 640
+:proxima/tile/spheres/goldsmall: 128 640
+:proxima/tile/blue2s: 160 640
+:proxima/tile/spheres/goldsmall: 160 640
+:proxima/tile/blue2s: 0 672
+:proxima/tile/spheres/goldsmall: 0 672
+:proxima/tile/blue2s: 0 704
+:proxima/tile/spheres/goldsmall: 0 704
+:proxima/tile/blue2s: 32 704
+:proxima/tile/spheres/goldsmall: 32 704
+:proxima/tile/blue2s: 64 704
+:proxima/tile/spheres/goldsmall: 64 704
+:proxima/tile/blue2s: 96 704
+:proxima/tile/spheres/goldsmall: 96 704
+:proxima/tile/blue2s: 128 704
+:proxima/tile/spheres/goldsmall: 128 704
+:proxima/tile/blue2s: 160 704
+:proxima/tile/spheres/goldsmall: 160 704
+:proxima/tile/blue2s: 288 32
+:proxima/tile/spheres/goldsmall: 288 32
+:proxima/tile/blue2s: 288 64
+:proxima/tile/spheres/goldsmall: 288 64
+:proxima/tile/blue2s: 288 96
+:proxima/tile/spheres/goldsmall: 288 96
+:proxima/tile/blue2s: 288 128
+:proxima/tile/spheres/goldsmall: 288 128
+:proxima/tile/blue2s: 320 96
+:proxima/tile/spheres/goldsmall: 320 96
+:proxima/tile/blue2s: 320 32
+:proxima/tile/spheres/goldsmall: 320 32
+:proxima/tile/blue2s: 320 0
+:proxima/tile/spheres/goldsmall: 320 0
+:proxima/tile/blue2s: 352 0
+:proxima/tile/spheres/goldsmall: 352 0
+:proxima/tile/blue2s: 416 0
+:proxima/tile/spheres/goldsmall: 416 0
+:proxima/tile/blue2s: 448 0
+:proxima/tile/spheres/goldsmall: 448 0
+:proxima/tile/blue2s: 480 0
+:proxima/tile/spheres/goldsmall: 480 0
+:proxima/tile/blue2s: 512 0
+:proxima/tile/spheres/goldsmall: 512 0
+:proxima/tile/blue2s: 512 32
+:proxima/tile/spheres/goldsmall: 512 32
+:proxima/tile/blue2s: 512 96
+:proxima/tile/spheres/goldsmall: 512 96
+:proxima/tile/blue2s: 512 128
+:proxima/tile/spheres/goldsmall: 512 128
+:proxima/tile/blue2s: 384 128
+:proxima/tile/spheres/goldsmall: 384 128
+:proxima/tile/blue2s: 384 96
+:proxima/tile/spheres/goldsmall: 384 96
+:proxima/tile/blue2s: 384 64
+:proxima/tile/spheres/goldsmall: 384 64
+:proxima/tile/blue2s: 416 64
+:proxima/tile/spheres/goldsmall: 416 64
+:proxima/tile/blue2s: 448 64
+:proxima/tile/spheres/goldsmall: 448 64
+:proxima/tile/blue2s: 448 96
+:proxima/tile/spheres/goldsmall: 448 96
+:proxima/tile/blue2s: 448 128
+:proxima/tile/spheres/goldsmall: 448 128
+:proxima/tile/blue2s: 576 192
+:proxima/tile/spheres/goldsmall: 576 192
+:proxima/tile/blue2s: 608 192
+:proxima/tile/spheres/goldsmall: 608 192
+:proxima/tile/blue2s: 640 192
+:proxima/tile/spheres/goldsmall: 640 192
+:proxima/tile/blue2s: 672 192
+:proxima/tile/spheres/goldsmall: 672 192
+:proxima/tile/blue2s: 704 192
+:proxima/tile/spheres/goldsmall: 704 192
+:proxima/tile/blue2s: 736 192
+:proxima/tile/spheres/goldsmall: 736 192
+:proxima/tile/blue2s: 768 192
+:proxima/tile/spheres/goldsmall: 768 192
+:proxima/tile/blue2s: 800 192
+:proxima/tile/spheres/goldsmall: 800 192
+:proxima/tile/blue2s: 800 224
+:proxima/tile/spheres/goldsmall: 800 224
+:proxima/tile/blue2s: 576 256
+:proxima/tile/spheres/goldsmall: 576 256
+:proxima/tile/blue2s: 608 256
+:proxima/tile/spheres/goldsmall: 608 256
+:proxima/tile/blue2s: 640 256
+:proxima/tile/spheres/goldsmall: 640 256
+:proxima/tile/blue2s: 672 256
+:proxima/tile/spheres/goldsmall: 672 256
+:proxima/tile/blue2s: 704 256
+:proxima/tile/spheres/goldsmall: 704 256
+:proxima/tile/blue2s: 736 256
+:proxima/tile/spheres/goldsmall: 736 256
+:proxima/tile/blue2s: 736 288
+:proxima/tile/spheres/goldsmall: 736 288
+:proxima/tile/blue2s: 736 320
+:proxima/tile/spheres/goldsmall: 736 320
+:proxima/tile/blue2s: 576 320
+:proxima/tile/spheres/goldsmall: 576 320
+:proxima/tile/blue2s: 608 320
+:proxima/tile/spheres/goldsmall: 608 320
+:proxima/tile/blue2s: 640 320
+:proxima/tile/spheres/goldsmall: 640 320
+:proxima/tile/blue2s: 672 320
+:proxima/tile/spheres/goldsmall: 672 320
+:proxima/tile/blue2s: 704 320
+:proxima/tile/spheres/goldsmall: 704 320
+:proxima/tile/blue2s: 864 320
+:proxima/tile/spheres/goldsmall: 864 320
+:geoo/steel/16x16o.S: 872 320
+:geoo/steel/16x16o.S: 40 640

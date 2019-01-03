@@ -1,0 +1,1000 @@
+$BUILT 2018-11-25 18:57:21
+$AUTHOR Flopsy
+$ENGLISH Cascade Squared 6P
+
+#INTENDED_NUMBER_OF_PLAYERS 6
+#SIZE_X 2176
+#SIZE_Y 1296
+#TORUS_X 1
+#TORUS_Y 1
+
+#SECONDS 60
+#INITIAL 100
+#SPAWN_INTERVAL 1
+
+#WALKER 10
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#EXPLODER2 20
+#BLOCKER 1
+#BUILDER 40
+#BASHER 20
+#MINER 20
+#DIGGER 20
+#JUMPER 10
+#BATTER 20
+#CUBER 10
+
+:matt/marble/Hatch.H: 2080 688 r
+:matt/marble/Hatch.H: 32 688
+:matt/marble/Hatch.H: 2080 1120 r
+:matt/marble/Hatch.H: 32 1120
+:matt/marble/Hatch.H: 2080 256 r
+:matt/marble/Hatch.H: 32 256
+
+:matt/marble/Goal.G: 976 192
+:matt/marble/Goal.G: 1136 192
+:matt/marble/Goal.G: 976 624
+:matt/marble/Goal.G: 1136 624
+:matt/marble/Goal.G: 976 1056
+:matt/marble/Goal.G: 1136 1056
+
+:raymanni/gore/eater.T: 1056 1040
+:raymanni/gore/eater.T: 1056 608
+:raymanni/gore/eater.T: 1056 176
+
+:simon/water.W: 2000 1232
+:simon/water.W: 1952 1232
+:simon/water.W: 1904 1232
+:simon/water.W: 128 1232
+:simon/water.W: 176 1232
+:simon/water.W: 224 1232
+:simon/water.W: 2000 800
+:simon/water.W: 1952 800
+:simon/water.W: 1904 800
+:simon/water.W: 128 800
+:simon/water.W: 176 800
+:simon/water.W: 224 800
+:simon/water.W: 2000 368
+:simon/water.W: 1952 368
+:simon/water.W: 1904 368
+:simon/water.W: 128 368
+:simon/water.W: 176 368
+:simon/water.W: 224 368
+
+:matt/bricks/17: 1992 1176 frr
+:matt/marble/05b: 2144 1232
+:matt/marble/05b: 2112 1232
+:matt/marble/05b: 2080 1232
+:matt/marble/05b: 2048 1232
+:matt/bricks/17: 1944 1128 frr
+:matt/bricks/17: 1896 1080 frr
+:matt/bricks/17: 1848 1032 frr
+:matt/bricks/17: 1800 984 frr
+:matt/bricks/17: 1752 936 frr
+:matt/marble/05b: 1728 1232
+:matt/marble/05b: 1696 1232
+:matt/marble/05b: 1664 1232
+:matt/marble/05b: 1632 1232
+:matt/marble/05b: 1872 1232
+:matt/bricks/17: 1576 1176 frr
+:matt/bricks/17: 1528 1128 frr
+:matt/bricks/17: 1480 1080 frr
+:geoo/sandstone/pillar_top_ext: 1416 1080
+:geoo/sandstone/pillar_top: 1432 1096
+:geoo/sandstone/pillar_top: 1432 1128
+:geoo/sandstone/pillar_top: 1432 1160
+:geoo/sandstone/pillar_top_shaded: 1432 1096
+:geoo/sandstone/pillar_32: 1432 1130
+:geoo/sandstone/pillar_top_jaggedl: 1432 1224 f
+:geoo/sandstone/pillar_top_ext: 1352 1080
+:geoo/sandstone/pillar_top: 1368 1096
+:geoo/sandstone/pillar_top: 1368 1128
+:geoo/sandstone/pillar_top: 1368 1160
+:geoo/sandstone/pillar_top_shaded: 1368 1096
+:geoo/sandstone/pillar_32: 1368 1130
+:geoo/sandstone/pillar_top_jaggedl: 1368 1224 f
+:geoo/sandstone/pillar_top_ext: 1351 1014 rr
+:geoo/sandstone/pillar_top: 1367 982 rr
+:geoo/sandstone/pillar_top: 1367 950 rr
+:geoo/sandstone/pillar_top: 1367 918 rr
+:geoo/sandstone/pillar_top_shaded: 1367 982 rr
+:geoo/sandstone/pillar_32: 1367 948 rr
+:geoo/sandstone/pillar_top_jaggedl: 1367 886 frr
+:geoo/sandstone/pillar_top_ext: 1415 1014 rr
+:geoo/sandstone/pillar_top: 1431 982 rr
+:geoo/sandstone/pillar_top: 1431 950 rr
+:geoo/sandstone/pillar_top: 1431 918 rr
+:geoo/sandstone/pillar_top_shaded: 1431 982 rr
+:geoo/sandstone/pillar_32: 1431 948 rr
+:geoo/sandstone/pillar_top_jaggedl: 1431 886 frr
+:geoo/sandstone/pillar_top: 1288 1232
+:geoo/sandstone/pillar_top: 1288 1264
+:geoo/sandstone/pillar_32: 1288 1234
+:geoo/sandstone/pillar_top: 1288 1168
+:geoo/sandstone/pillar_top: 1288 1200
+:geoo/sandstone/pillar_32: 1288 1170
+:geoo/sandstone/pillar_top: 1256 1232
+:geoo/sandstone/pillar_top: 1256 1264
+:geoo/sandstone/pillar_32: 1256 1234
+:geoo/sandstone/pillar_top: 1256 1168
+:geoo/sandstone/pillar_top: 1256 1200
+:geoo/sandstone/pillar_32: 1256 1170
+:geoo/sandstone/pillar_top: 1288 1104
+:geoo/sandstone/pillar_top: 1288 1136
+:geoo/sandstone/pillar_32: 1288 1106
+:geoo/sandstone/pillar_top: 1288 1040
+:geoo/sandstone/pillar_top: 1288 1072
+:geoo/sandstone/pillar_32: 1288 1042
+:geoo/sandstone/pillar_top: 1256 1104
+:geoo/sandstone/pillar_top: 1256 1136
+:geoo/sandstone/pillar_32: 1256 1106
+:geoo/sandstone/pillar_top: 1256 1040
+:geoo/sandstone/pillar_top: 1256 1072
+:geoo/sandstone/pillar_32: 1256 1042
+:geoo/sandstone/pillar_top: 1256 976
+:geoo/sandstone/pillar_top: 1256 1008
+:geoo/sandstone/pillar_32: 1256 978
+:geoo/sandstone/pillar_top: 1256 912
+:geoo/sandstone/pillar_top: 1256 944
+:geoo/sandstone/pillar_32: 1256 914
+:geoo/sandstone/pillar_top: 1288 976
+:geoo/sandstone/pillar_top: 1288 1008
+:geoo/sandstone/pillar_32: 1288 978
+:geoo/sandstone/pillar_top: 1288 912
+:geoo/sandstone/pillar_top: 1288 944
+:geoo/sandstone/pillar_32: 1288 914
+:geoo/sandstone/pillar_top: 1256 880
+:geoo/sandstone/pillar_32: 1256 882
+:geoo/sandstone/pillar_top: 1288 880
+:geoo/sandstone/pillar_32: 1288 882
+:matt/marble/05b: 1184 1104
+:matt/marble/05b: 1152 1104
+:matt/marble/05b: 1120 1104
+:matt/marble/05b: 1088 1104
+:matt/bricks/17: 120 1176
+:matt/marble/05b: 0 1232 frr
+:matt/marble/05b: 32 1232 frr
+:matt/marble/05b: 64 1232 frr
+:matt/marble/05b: 96 1232 frr
+:matt/bricks/17: 168 1128
+:matt/bricks/17: 216 1080
+:matt/bricks/17: 264 1032
+:matt/bricks/17: 312 984
+:matt/bricks/17: 360 936
+:matt/marble/05b: 416 1232 frr
+:matt/marble/05b: 448 1232 frr
+:matt/marble/05b: 480 1232 frr
+:matt/marble/05b: 512 1232 frr
+:matt/marble/05b: 272 1232 frr
+:matt/bricks/17: 536 1176
+:matt/bricks/17: 584 1128
+:matt/bricks/17: 632 1080
+:geoo/sandstone/pillar_top_ext: 696 1080 frr
+:geoo/sandstone/pillar_top: 712 1096 frr
+:geoo/sandstone/pillar_top: 712 1128 frr
+:geoo/sandstone/pillar_top: 712 1160 frr
+:geoo/sandstone/pillar_top_shaded: 712 1096 frr
+:geoo/sandstone/pillar_32: 712 1130 frr
+:geoo/sandstone/pillar_top_jaggedl: 712 1224 rr
+:geoo/sandstone/pillar_top_ext: 760 1080 frr
+:geoo/sandstone/pillar_top: 776 1096 frr
+:geoo/sandstone/pillar_top: 776 1128 frr
+:geoo/sandstone/pillar_top: 776 1160 frr
+:geoo/sandstone/pillar_top_shaded: 776 1096 frr
+:geoo/sandstone/pillar_32: 776 1130 frr
+:geoo/sandstone/pillar_top_jaggedl: 776 1224 rr
+:geoo/sandstone/pillar_top_ext: 761 1014 f
+:geoo/sandstone/pillar_top: 777 982 f
+:geoo/sandstone/pillar_top: 777 950 f
+:geoo/sandstone/pillar_top: 777 918 f
+:geoo/sandstone/pillar_top_shaded: 777 982 f
+:geoo/sandstone/pillar_32: 777 948 f
+:geoo/sandstone/pillar_top_jaggedl: 777 886
+:geoo/sandstone/pillar_top_ext: 697 1014 f
+:geoo/sandstone/pillar_top: 713 982 f
+:geoo/sandstone/pillar_top: 713 950 f
+:geoo/sandstone/pillar_top: 713 918 f
+:geoo/sandstone/pillar_top_shaded: 713 982 f
+:geoo/sandstone/pillar_32: 713 948 f
+:geoo/sandstone/pillar_top_jaggedl: 713 886
+:geoo/sandstone/pillar_top: 856 1232 frr
+:geoo/sandstone/pillar_top: 856 1264 frr
+:geoo/sandstone/pillar_32: 856 1234 frr
+:geoo/sandstone/pillar_top: 856 1168 frr
+:geoo/sandstone/pillar_top: 856 1200 frr
+:geoo/sandstone/pillar_32: 856 1170 frr
+:geoo/sandstone/pillar_top: 888 1232 frr
+:geoo/sandstone/pillar_top: 888 1264 frr
+:geoo/sandstone/pillar_32: 888 1234 frr
+:geoo/sandstone/pillar_top: 888 1168 frr
+:geoo/sandstone/pillar_top: 888 1200 frr
+:geoo/sandstone/pillar_32: 888 1170 frr
+:geoo/sandstone/pillar_top: 856 1104 frr
+:geoo/sandstone/pillar_top: 856 1136 frr
+:geoo/sandstone/pillar_32: 856 1106 frr
+:geoo/sandstone/pillar_top: 856 1040 frr
+:geoo/sandstone/pillar_top: 856 1072 frr
+:geoo/sandstone/pillar_32: 856 1042 frr
+:geoo/sandstone/pillar_top: 888 1104 frr
+:geoo/sandstone/pillar_top: 888 1136 frr
+:geoo/sandstone/pillar_32: 888 1106 frr
+:geoo/sandstone/pillar_top: 888 1040 frr
+:geoo/sandstone/pillar_top: 888 1072 frr
+:geoo/sandstone/pillar_32: 888 1042 frr
+:geoo/sandstone/pillar_top: 888 976 frr
+:geoo/sandstone/pillar_top: 888 1008 frr
+:geoo/sandstone/pillar_32: 888 978 frr
+:geoo/sandstone/pillar_top: 888 912 frr
+:geoo/sandstone/pillar_top: 888 944 frr
+:geoo/sandstone/pillar_32: 888 914 frr
+:geoo/sandstone/pillar_top: 856 976 frr
+:geoo/sandstone/pillar_top: 856 1008 frr
+:geoo/sandstone/pillar_32: 856 978 frr
+:geoo/sandstone/pillar_top: 856 912 frr
+:geoo/sandstone/pillar_top: 856 944 frr
+:geoo/sandstone/pillar_32: 856 914 frr
+:geoo/sandstone/pillar_top: 888 880 frr
+:geoo/sandstone/pillar_32: 888 882 frr
+:geoo/sandstone/pillar_top: 856 880 frr
+:geoo/sandstone/pillar_32: 856 882 frr
+:matt/marble/05b: 960 1104 frr
+:matt/marble/05b: 992 1104 frr
+:matt/marble/05b: 1024 1104 frr
+:matt/marble/05b: 1056 1104 frr
+:matt/marble/05: 1056 1104
+:matt/marble/05: 1024 1104
+:matt/marble/05: 992 1104
+:matt/marble/05: 960 1104
+:matt/marble/05b: 416 1232 frr
+:matt/marble/05b: 448 1232 frr
+:matt/marble/05b: 480 1232 frr
+:matt/marble/05b: 512 1232 frr
+:matt/marble/05: 512 1232
+:matt/marble/05: 480 1232
+:matt/marble/05: 448 1232
+:matt/marble/05: 416 1232
+:matt/marble/05b: 0 1232 frr
+:matt/marble/05b: 32 1232 frr
+:matt/marble/05b: 64 1232 frr
+:matt/marble/05b: 96 1232 frr
+:matt/marble/05: 96 1232
+:matt/marble/05: 64 1232
+:matt/marble/05: 32 1232
+:matt/marble/05: 0 1232
+:matt/marble/05: 272 1232
+:matt/marble/05b: 0 1264 frr
+:matt/marble/05b: 32 1264 frr
+:matt/marble/05b: 64 1264 frr
+:matt/marble/05b: 96 1264 frr
+:matt/marble/05b: 0 1264 frr
+:matt/marble/05b: 32 1264 frr
+:matt/marble/05b: 64 1264 frr
+:matt/marble/05b: 96 1264 frr
+:matt/marble/05: 96 1264
+:matt/marble/05: 64 1264
+:matt/marble/05: 32 1264
+:matt/marble/05: 0 1264
+:matt/marble/05b: 128 1264 frr
+:matt/marble/05b: 160 1264 frr
+:matt/marble/05b: 192 1264 frr
+:matt/marble/05b: 224 1264 frr
+:matt/marble/05b: 128 1264 frr
+:matt/marble/05b: 160 1264 frr
+:matt/marble/05b: 192 1264 frr
+:matt/marble/05b: 224 1264 frr
+:matt/marble/05: 224 1264
+:matt/marble/05: 192 1264
+:matt/marble/05: 160 1264
+:matt/marble/05: 128 1264
+:matt/marble/05: 256 1264
+:matt/marble/03: 288 1264
+:matt/marble/05b: 416 1264 frr
+:matt/marble/05b: 448 1264 frr
+:matt/marble/05b: 480 1264 frr
+:matt/marble/05b: 512 1264 frr
+:matt/marble/05b: 416 1264 frr
+:matt/marble/05b: 448 1264 frr
+:matt/marble/05b: 480 1264 frr
+:matt/marble/05b: 512 1264 frr
+:matt/marble/05: 512 1264
+:matt/marble/05: 480 1264
+:matt/marble/05: 448 1264
+:matt/marble/05: 416 1264
+:matt/marble/05b: 2144 1264
+:matt/marble/05b: 2112 1264
+:matt/marble/05b: 2080 1264
+:matt/marble/05b: 2048 1264
+:matt/marble/05b: 2016 1264
+:matt/marble/05b: 1984 1264
+:matt/marble/05b: 1952 1264
+:matt/marble/05b: 1920 1264
+:matt/marble/05b: 1888 1264
+:matt/marble/03b: 1872 1264
+:matt/marble/05b: 1728 1264
+:matt/marble/05b: 1696 1264
+:matt/marble/05b: 1664 1264
+:matt/marble/05b: 1632 1264
+:geoo/sandstone/pillar_top: 1256 1280
+:geoo/sandstone/pillar_32: 1256 1282
+:geoo/sandstone/pillar_top: 1288 1280
+:geoo/sandstone/pillar_32: 1288 1282
+:geoo/sandstone/pillar_top: 888 1282 frr
+:geoo/sandstone/pillar_32: 888 1284 frr
+:geoo/sandstone/pillar_top: 856 1282 frr
+:geoo/sandstone/pillar_32: 856 1284 frr
+:geoo/sandstone/pillar_top: 712 1192 frr
+:geoo/sandstone/pillar_top: 776 1192 frr
+:geoo/sandstone/pillar_top: 1432 1192
+:geoo/sandstone/pillar_top: 1368 1192
+:matt/bricks/17: 1992 744 frr
+:matt/marble/05b: 2144 800
+:matt/marble/05b: 2112 800
+:matt/marble/05b: 2080 800
+:matt/marble/05b: 2048 800
+:matt/bricks/17: 1944 696 frr
+:matt/bricks/17: 1896 648 frr
+:matt/bricks/17: 1848 600 frr
+:matt/bricks/17: 1800 552 frr
+:matt/bricks/17: 1752 504 frr
+:matt/marble/05b: 1728 800
+:matt/marble/05b: 1696 800
+:matt/marble/05b: 1664 800
+:matt/marble/05b: 1632 800
+:matt/marble/05b: 1872 800
+:matt/bricks/17: 1576 744 frr
+:matt/bricks/17: 1528 696 frr
+:matt/bricks/17: 1480 648 frr
+:geoo/sandstone/pillar_top_ext: 1416 648
+:geoo/sandstone/pillar_top: 1432 664
+:geoo/sandstone/pillar_top: 1432 696
+:geoo/sandstone/pillar_top: 1432 728
+:geoo/sandstone/pillar_top_shaded: 1432 664
+:geoo/sandstone/pillar_32: 1432 698
+:geoo/sandstone/pillar_top_jaggedl: 1432 792 f
+:geoo/sandstone/pillar_top_ext: 1352 648
+:geoo/sandstone/pillar_top: 1368 664
+:geoo/sandstone/pillar_top: 1368 696
+:geoo/sandstone/pillar_top: 1368 728
+:geoo/sandstone/pillar_top_shaded: 1368 664
+:geoo/sandstone/pillar_32: 1368 698
+:geoo/sandstone/pillar_top_jaggedl: 1368 792 f
+:geoo/sandstone/pillar_top_ext: 1351 582 rr
+:geoo/sandstone/pillar_top: 1367 550 rr
+:geoo/sandstone/pillar_top: 1367 518 rr
+:geoo/sandstone/pillar_top: 1367 486 rr
+:geoo/sandstone/pillar_top_shaded: 1367 550 rr
+:geoo/sandstone/pillar_32: 1367 516 rr
+:geoo/sandstone/pillar_top_jaggedl: 1367 454 frr
+:geoo/sandstone/pillar_top_ext: 1415 582 rr
+:geoo/sandstone/pillar_top: 1431 550 rr
+:geoo/sandstone/pillar_top: 1431 518 rr
+:geoo/sandstone/pillar_top: 1431 486 rr
+:geoo/sandstone/pillar_top_shaded: 1431 550 rr
+:geoo/sandstone/pillar_32: 1431 516 rr
+:geoo/sandstone/pillar_top_jaggedl: 1431 454 frr
+:geoo/sandstone/pillar_top: 1288 800
+:geoo/sandstone/pillar_top: 1288 832
+:geoo/sandstone/pillar_32: 1288 802
+:geoo/sandstone/pillar_top: 1288 736
+:geoo/sandstone/pillar_top: 1288 768
+:geoo/sandstone/pillar_32: 1288 738
+:geoo/sandstone/pillar_top: 1256 800
+:geoo/sandstone/pillar_top: 1256 832
+:geoo/sandstone/pillar_32: 1256 802
+:geoo/sandstone/pillar_top: 1256 736
+:geoo/sandstone/pillar_top: 1256 768
+:geoo/sandstone/pillar_32: 1256 738
+:geoo/sandstone/pillar_top: 1288 672
+:geoo/sandstone/pillar_top: 1288 704
+:geoo/sandstone/pillar_32: 1288 674
+:geoo/sandstone/pillar_top: 1288 608
+:geoo/sandstone/pillar_top: 1288 640
+:geoo/sandstone/pillar_32: 1288 610
+:geoo/sandstone/pillar_top: 1256 672
+:geoo/sandstone/pillar_top: 1256 704
+:geoo/sandstone/pillar_32: 1256 674
+:geoo/sandstone/pillar_top: 1256 608
+:geoo/sandstone/pillar_top: 1256 640
+:geoo/sandstone/pillar_32: 1256 610
+:geoo/sandstone/pillar_top: 1256 544
+:geoo/sandstone/pillar_top: 1256 576
+:geoo/sandstone/pillar_32: 1256 546
+:geoo/sandstone/pillar_top: 1256 480
+:geoo/sandstone/pillar_top: 1256 512
+:geoo/sandstone/pillar_32: 1256 482
+:geoo/sandstone/pillar_top: 1288 544
+:geoo/sandstone/pillar_top: 1288 576
+:geoo/sandstone/pillar_32: 1288 546
+:geoo/sandstone/pillar_top: 1288 480
+:geoo/sandstone/pillar_top: 1288 512
+:geoo/sandstone/pillar_32: 1288 482
+:geoo/sandstone/pillar_top: 1256 448
+:geoo/sandstone/pillar_32: 1256 450
+:geoo/sandstone/pillar_top: 1288 448
+:geoo/sandstone/pillar_32: 1288 450
+:matt/marble/05b: 1184 672
+:matt/marble/05b: 1152 672
+:matt/marble/05b: 1120 672
+:matt/marble/05b: 1088 672
+:matt/bricks/17: 120 744
+:matt/marble/05b: 0 800 frr
+:matt/marble/05b: 32 800 frr
+:matt/marble/05b: 64 800 frr
+:matt/marble/05b: 96 800 frr
+:matt/bricks/17: 168 696
+:matt/bricks/17: 216 648
+:matt/bricks/17: 264 600
+:matt/bricks/17: 312 552
+:matt/bricks/17: 360 504
+:matt/marble/05b: 416 800 frr
+:matt/marble/05b: 448 800 frr
+:matt/marble/05b: 480 800 frr
+:matt/marble/05b: 512 800 frr
+:matt/marble/05b: 272 800 frr
+:matt/bricks/17: 536 744
+:matt/bricks/17: 584 696
+:matt/bricks/17: 632 648
+:geoo/sandstone/pillar_top_ext: 696 648 frr
+:geoo/sandstone/pillar_top: 712 664 frr
+:geoo/sandstone/pillar_top: 712 696 frr
+:geoo/sandstone/pillar_top: 712 728 frr
+:geoo/sandstone/pillar_top_shaded: 712 664 frr
+:geoo/sandstone/pillar_32: 712 698 frr
+:geoo/sandstone/pillar_top_jaggedl: 712 792 rr
+:geoo/sandstone/pillar_top_ext: 760 648 frr
+:geoo/sandstone/pillar_top: 776 664 frr
+:geoo/sandstone/pillar_top: 776 696 frr
+:geoo/sandstone/pillar_top: 776 728 frr
+:geoo/sandstone/pillar_top_shaded: 776 664 frr
+:geoo/sandstone/pillar_32: 776 698 frr
+:geoo/sandstone/pillar_top_jaggedl: 776 792 rr
+:geoo/sandstone/pillar_top_ext: 761 582 f
+:geoo/sandstone/pillar_top: 777 550 f
+:geoo/sandstone/pillar_top: 777 518 f
+:geoo/sandstone/pillar_top: 777 486 f
+:geoo/sandstone/pillar_top_shaded: 777 550 f
+:geoo/sandstone/pillar_32: 777 516 f
+:geoo/sandstone/pillar_top_jaggedl: 777 454
+:geoo/sandstone/pillar_top_ext: 697 582 f
+:geoo/sandstone/pillar_top: 713 550 f
+:geoo/sandstone/pillar_top: 713 518 f
+:geoo/sandstone/pillar_top: 713 486 f
+:geoo/sandstone/pillar_top_shaded: 713 550 f
+:geoo/sandstone/pillar_32: 713 516 f
+:geoo/sandstone/pillar_top_jaggedl: 713 454
+:geoo/sandstone/pillar_top: 856 800 frr
+:geoo/sandstone/pillar_top: 856 832 frr
+:geoo/sandstone/pillar_32: 856 802 frr
+:geoo/sandstone/pillar_top: 856 736 frr
+:geoo/sandstone/pillar_top: 856 768 frr
+:geoo/sandstone/pillar_32: 856 738 frr
+:geoo/sandstone/pillar_top: 888 800 frr
+:geoo/sandstone/pillar_top: 888 832 frr
+:geoo/sandstone/pillar_32: 888 802 frr
+:geoo/sandstone/pillar_top: 888 736 frr
+:geoo/sandstone/pillar_top: 888 768 frr
+:geoo/sandstone/pillar_32: 888 738 frr
+:geoo/sandstone/pillar_top: 856 672 frr
+:geoo/sandstone/pillar_top: 856 704 frr
+:geoo/sandstone/pillar_32: 856 674 frr
+:geoo/sandstone/pillar_top: 856 608 frr
+:geoo/sandstone/pillar_top: 856 640 frr
+:geoo/sandstone/pillar_32: 856 610 frr
+:geoo/sandstone/pillar_top: 888 672 frr
+:geoo/sandstone/pillar_top: 888 704 frr
+:geoo/sandstone/pillar_32: 888 674 frr
+:geoo/sandstone/pillar_top: 888 608 frr
+:geoo/sandstone/pillar_top: 888 640 frr
+:geoo/sandstone/pillar_32: 888 610 frr
+:geoo/sandstone/pillar_top: 888 544 frr
+:geoo/sandstone/pillar_top: 888 576 frr
+:geoo/sandstone/pillar_32: 888 546 frr
+:geoo/sandstone/pillar_top: 888 480 frr
+:geoo/sandstone/pillar_top: 888 512 frr
+:geoo/sandstone/pillar_32: 888 482 frr
+:geoo/sandstone/pillar_top: 856 544 frr
+:geoo/sandstone/pillar_top: 856 576 frr
+:geoo/sandstone/pillar_32: 856 546 frr
+:geoo/sandstone/pillar_top: 856 480 frr
+:geoo/sandstone/pillar_top: 856 512 frr
+:geoo/sandstone/pillar_32: 856 482 frr
+:geoo/sandstone/pillar_top: 888 448 frr
+:geoo/sandstone/pillar_32: 888 450 frr
+:geoo/sandstone/pillar_top: 856 448 frr
+:geoo/sandstone/pillar_32: 856 450 frr
+:matt/marble/05b: 960 672 frr
+:matt/marble/05b: 992 672 frr
+:matt/marble/05b: 1024 672 frr
+:matt/marble/05b: 1056 672 frr
+:matt/marble/05: 1056 672
+:matt/marble/05: 1024 672
+:matt/marble/05: 992 672
+:matt/marble/05: 960 672
+:matt/marble/05b: 416 800 frr
+:matt/marble/05b: 448 800 frr
+:matt/marble/05b: 480 800 frr
+:matt/marble/05b: 512 800 frr
+:matt/marble/05: 512 800
+:matt/marble/05: 480 800
+:matt/marble/05: 448 800
+:matt/marble/05: 416 800
+:matt/marble/05b: 0 800 frr
+:matt/marble/05b: 32 800 frr
+:matt/marble/05b: 64 800 frr
+:matt/marble/05b: 96 800 frr
+:matt/marble/05: 96 800
+:matt/marble/05: 64 800
+:matt/marble/05: 32 800
+:matt/marble/05: 0 800
+:matt/marble/05: 272 800
+:matt/marble/05b: 0 832 frr
+:matt/marble/05b: 32 832 frr
+:matt/marble/05b: 64 832 frr
+:matt/marble/05b: 96 832 frr
+:matt/marble/05b: 0 832 frr
+:matt/marble/05b: 32 832 frr
+:matt/marble/05b: 64 832 frr
+:matt/marble/05b: 96 832 frr
+:matt/marble/05: 96 832
+:matt/marble/05: 64 832
+:matt/marble/05: 32 832
+:matt/marble/05: 0 832
+:matt/marble/05b: 128 832 frr
+:matt/marble/05b: 160 832 frr
+:matt/marble/05b: 192 832 frr
+:matt/marble/05b: 224 832 frr
+:matt/marble/05b: 128 832 frr
+:matt/marble/05b: 160 832 frr
+:matt/marble/05b: 192 832 frr
+:matt/marble/05b: 224 832 frr
+:matt/marble/05: 224 832
+:matt/marble/05: 192 832
+:matt/marble/05: 160 832
+:matt/marble/05: 128 832
+:matt/marble/05: 256 832
+:matt/marble/03: 288 832
+:matt/marble/05b: 416 832 frr
+:matt/marble/05b: 448 832 frr
+:matt/marble/05b: 480 832 frr
+:matt/marble/05b: 512 832 frr
+:matt/marble/05b: 416 832 frr
+:matt/marble/05b: 448 832 frr
+:matt/marble/05b: 480 832 frr
+:matt/marble/05b: 512 832 frr
+:matt/marble/05: 512 832
+:matt/marble/05: 480 832
+:matt/marble/05: 448 832
+:matt/marble/05: 416 832
+:matt/marble/05b: 2144 832
+:matt/marble/05b: 2112 832
+:matt/marble/05b: 2080 832
+:matt/marble/05b: 2048 832
+:matt/marble/05b: 2016 832
+:matt/marble/05b: 1984 832
+:matt/marble/05b: 1952 832
+:matt/marble/05b: 1920 832
+:matt/marble/05b: 1888 832
+:matt/marble/03b: 1872 832
+:matt/marble/05b: 1728 832
+:matt/marble/05b: 1696 832
+:matt/marble/05b: 1664 832
+:matt/marble/05b: 1632 832
+:geoo/sandstone/pillar_top: 1256 848
+:geoo/sandstone/pillar_32: 1256 850
+:geoo/sandstone/pillar_top: 1288 848
+:geoo/sandstone/pillar_32: 1288 850
+:geoo/sandstone/pillar_top: 888 850 frr
+:geoo/sandstone/pillar_32: 888 852 frr
+:geoo/sandstone/pillar_top: 856 850 frr
+:geoo/sandstone/pillar_32: 856 852 frr
+:geoo/sandstone/pillar_top: 712 760 frr
+:geoo/sandstone/pillar_top: 776 760 frr
+:geoo/sandstone/pillar_top: 1432 760
+:geoo/sandstone/pillar_top: 1368 760
+:matt/marble/05a: 0 800
+:matt/marble/05a: 0 832
+:matt/marble/05a: 32 832
+:matt/marble/05a: 32 800
+:matt/marble/05a: 64 800
+:matt/marble/05a: 96 800
+:matt/marble/05a: 64 832
+:matt/marble/05a: 96 832
+:matt/marble/05a: 128 832
+:matt/marble/05a: 160 832
+:matt/marble/05a: 192 832
+:matt/marble/05a: 224 832
+:matt/marble/05a: 256 832
+:matt/marble/05a: 272 800
+:matt/marble/05a: 416 800
+:matt/marble/05a: 448 800
+:matt/marble/05a: 480 800
+:matt/marble/05a: 512 800
+:matt/marble/05a: 512 832
+:matt/marble/05a: 480 832
+:matt/marble/05a: 448 832
+:matt/marble/05a: 416 832
+:matt/marble/03a: 288 832
+:matt/marble/05b: 960 672 frr
+:matt/marble/05b: 992 672 frr
+:matt/marble/05b: 1024 672 frr
+:matt/marble/05b: 1056 672 frr
+:matt/marble/05b: 960 672 frr
+:matt/marble/05b: 992 672 frr
+:matt/marble/05b: 1024 672 frr
+:matt/marble/05b: 1056 672 frr
+:matt/marble/05: 1056 672
+:matt/marble/05: 1024 672
+:matt/marble/05: 992 672
+:matt/marble/05: 960 672
+:matt/marble/05a: 1056 672
+:matt/marble/05a: 1024 672
+:matt/marble/05a: 992 672
+:matt/marble/05a: 960 672
+:matt/marble/05c: 2048 800
+:matt/marble/05c: 2080 800
+:matt/marble/05c: 2112 800
+:matt/marble/05c: 2144 800
+:matt/marble/05c: 2144 832
+:matt/marble/05c: 2112 832
+:matt/marble/05c: 2080 832
+:matt/marble/05c: 2048 832
+:matt/marble/05c: 2016 832
+:matt/marble/05c: 1984 832
+:matt/marble/05c: 1952 832
+:matt/marble/05c: 1920 832
+:matt/marble/05c: 1888 832
+:matt/marble/05c: 1872 800
+:matt/marble/05c: 1728 800
+:matt/marble/05c: 1696 800
+:matt/marble/05c: 1664 800
+:matt/marble/05c: 1632 800
+:matt/marble/05c: 1632 832
+:matt/marble/05c: 1664 832
+:matt/marble/05c: 1696 832
+:matt/marble/05c: 1728 832
+:matt/marble/05c: 1088 672
+:matt/marble/05c: 1120 672
+:matt/marble/05c: 1152 672
+:matt/marble/05c: 1184 672
+:geoo/steel/32x32o.S: 2080 800
+:geoo/steel/32x32o.S: 2112 800
+:geoo/steel/32x32o.S: 2080 1232
+:geoo/steel/32x32o.S: 2112 1232
+:geoo/steel/32x32o.S: 32 1232
+:geoo/steel/32x32o.S: 64 1232
+:geoo/steel/32x32o.S: 32 800
+:geoo/steel/32x32o.S: 64 800
+:geoo/steel/32x32o.S: 992 1104
+:geoo/steel/32x32o.S: 1152 1104
+:geoo/steel/32x32o.S: 1152 672
+:geoo/steel/32x32o.S: 992 672
+:matt/marble/03c: 1872 832
+:matt/bricks/17: 1992 312 frr
+:matt/marble/05b: 2144 368
+:matt/marble/05b: 2112 368
+:matt/marble/05b: 2080 368
+:matt/marble/05b: 2048 368
+:matt/bricks/17: 1944 264 frr
+:matt/bricks/17: 1896 216 frr
+:matt/bricks/17: 1848 168 frr
+:matt/bricks/17: 1800 120 frr
+:matt/bricks/17: 1752 72 frr
+:matt/marble/05b: 1728 368
+:matt/marble/05b: 1696 368
+:matt/marble/05b: 1664 368
+:matt/marble/05b: 1632 368
+:matt/marble/05b: 1872 368
+:matt/bricks/17: 1576 312 frr
+:matt/bricks/17: 1528 264 frr
+:matt/bricks/17: 1480 216 frr
+:geoo/sandstone/pillar_top_ext: 1416 216
+:geoo/sandstone/pillar_top: 1432 232
+:geoo/sandstone/pillar_top: 1432 264
+:geoo/sandstone/pillar_top: 1432 296
+:geoo/sandstone/pillar_top_shaded: 1432 232
+:geoo/sandstone/pillar_32: 1432 266
+:geoo/sandstone/pillar_top_jaggedl: 1432 360 f
+:geoo/sandstone/pillar_top_ext: 1352 216
+:geoo/sandstone/pillar_top: 1368 232
+:geoo/sandstone/pillar_top: 1368 264
+:geoo/sandstone/pillar_top: 1368 296
+:geoo/sandstone/pillar_top_shaded: 1368 232
+:geoo/sandstone/pillar_32: 1368 266
+:geoo/sandstone/pillar_top_jaggedl: 1368 360 f
+:geoo/sandstone/pillar_top_ext: 1351 150 rr
+:geoo/sandstone/pillar_top: 1367 118 rr
+:geoo/sandstone/pillar_top: 1367 86 rr
+:geoo/sandstone/pillar_top: 1367 54 rr
+:geoo/sandstone/pillar_top_shaded: 1367 118 rr
+:geoo/sandstone/pillar_32: 1367 84 rr
+:geoo/sandstone/pillar_top_jaggedl: 1367 22 frr
+:geoo/sandstone/pillar_top_ext: 1415 150 rr
+:geoo/sandstone/pillar_top: 1431 118 rr
+:geoo/sandstone/pillar_top: 1431 86 rr
+:geoo/sandstone/pillar_top: 1431 54 rr
+:geoo/sandstone/pillar_top_shaded: 1431 118 rr
+:geoo/sandstone/pillar_32: 1431 84 rr
+:geoo/sandstone/pillar_top_jaggedl: 1431 22 frr
+:geoo/sandstone/pillar_top: 1288 368
+:geoo/sandstone/pillar_top: 1288 400
+:geoo/sandstone/pillar_32: 1288 370
+:geoo/sandstone/pillar_top: 1288 304
+:geoo/sandstone/pillar_top: 1288 336
+:geoo/sandstone/pillar_32: 1288 306
+:geoo/sandstone/pillar_top: 1256 368
+:geoo/sandstone/pillar_top: 1256 400
+:geoo/sandstone/pillar_32: 1256 370
+:geoo/sandstone/pillar_top: 1256 304
+:geoo/sandstone/pillar_top: 1256 336
+:geoo/sandstone/pillar_32: 1256 306
+:geoo/sandstone/pillar_top: 1288 240
+:geoo/sandstone/pillar_top: 1288 272
+:geoo/sandstone/pillar_32: 1288 242
+:geoo/sandstone/pillar_top: 1288 176
+:geoo/sandstone/pillar_top: 1288 208
+:geoo/sandstone/pillar_32: 1288 178
+:geoo/sandstone/pillar_top: 1256 240
+:geoo/sandstone/pillar_top: 1256 272
+:geoo/sandstone/pillar_32: 1256 242
+:geoo/sandstone/pillar_top: 1256 176
+:geoo/sandstone/pillar_top: 1256 208
+:geoo/sandstone/pillar_32: 1256 178
+:geoo/sandstone/pillar_top: 1256 112
+:geoo/sandstone/pillar_top: 1256 144
+:geoo/sandstone/pillar_32: 1256 114
+:geoo/sandstone/pillar_top: 1256 48
+:geoo/sandstone/pillar_top: 1256 80
+:geoo/sandstone/pillar_32: 1256 50
+:geoo/sandstone/pillar_top: 1288 112
+:geoo/sandstone/pillar_top: 1288 144
+:geoo/sandstone/pillar_32: 1288 114
+:geoo/sandstone/pillar_top: 1288 48
+:geoo/sandstone/pillar_top: 1288 80
+:geoo/sandstone/pillar_32: 1288 50
+:geoo/sandstone/pillar_top: 1256 16
+:geoo/sandstone/pillar_32: 1256 18
+:geoo/sandstone/pillar_top: 1288 16
+:geoo/sandstone/pillar_32: 1288 18
+:matt/marble/05b: 1184 240
+:matt/marble/05b: 1152 240
+:matt/marble/05b: 1120 240
+:matt/marble/05b: 1088 240
+:matt/bricks/17: 120 312
+:matt/marble/05b: 0 368 frr
+:matt/marble/05b: 32 368 frr
+:matt/marble/05b: 64 368 frr
+:matt/marble/05b: 96 368 frr
+:matt/bricks/17: 168 264
+:matt/bricks/17: 216 216
+:matt/bricks/17: 264 168
+:matt/bricks/17: 312 120
+:matt/bricks/17: 360 72
+:matt/marble/05b: 416 368 frr
+:matt/marble/05b: 448 368 frr
+:matt/marble/05b: 480 368 frr
+:matt/marble/05b: 512 368 frr
+:matt/marble/05b: 272 368 frr
+:matt/bricks/17: 536 312
+:matt/bricks/17: 584 264
+:matt/bricks/17: 632 216
+:geoo/sandstone/pillar_top_ext: 696 216 frr
+:geoo/sandstone/pillar_top: 712 232 frr
+:geoo/sandstone/pillar_top: 712 264 frr
+:geoo/sandstone/pillar_top: 712 296 frr
+:geoo/sandstone/pillar_top_shaded: 712 232 frr
+:geoo/sandstone/pillar_32: 712 266 frr
+:geoo/sandstone/pillar_top_jaggedl: 712 360 rr
+:geoo/sandstone/pillar_top_ext: 760 216 frr
+:geoo/sandstone/pillar_top: 776 232 frr
+:geoo/sandstone/pillar_top: 776 264 frr
+:geoo/sandstone/pillar_top: 776 296 frr
+:geoo/sandstone/pillar_top_shaded: 776 232 frr
+:geoo/sandstone/pillar_32: 776 266 frr
+:geoo/sandstone/pillar_top_jaggedl: 776 360 rr
+:geoo/sandstone/pillar_top_ext: 761 150 f
+:geoo/sandstone/pillar_top: 777 118 f
+:geoo/sandstone/pillar_top: 777 86 f
+:geoo/sandstone/pillar_top: 777 54 f
+:geoo/sandstone/pillar_top_shaded: 777 118 f
+:geoo/sandstone/pillar_32: 777 84 f
+:geoo/sandstone/pillar_top_jaggedl: 777 22
+:geoo/sandstone/pillar_top_ext: 697 150 f
+:geoo/sandstone/pillar_top: 713 118 f
+:geoo/sandstone/pillar_top: 713 86 f
+:geoo/sandstone/pillar_top: 713 54 f
+:geoo/sandstone/pillar_top_shaded: 713 118 f
+:geoo/sandstone/pillar_32: 713 84 f
+:geoo/sandstone/pillar_top_jaggedl: 713 22
+:geoo/sandstone/pillar_top: 856 368 frr
+:geoo/sandstone/pillar_top: 856 400 frr
+:geoo/sandstone/pillar_32: 856 370 frr
+:geoo/sandstone/pillar_top: 856 304 frr
+:geoo/sandstone/pillar_top: 856 336 frr
+:geoo/sandstone/pillar_32: 856 306 frr
+:geoo/sandstone/pillar_top: 888 368 frr
+:geoo/sandstone/pillar_top: 888 400 frr
+:geoo/sandstone/pillar_32: 888 370 frr
+:geoo/sandstone/pillar_top: 888 304 frr
+:geoo/sandstone/pillar_top: 888 336 frr
+:geoo/sandstone/pillar_32: 888 306 frr
+:geoo/sandstone/pillar_top: 856 240 frr
+:geoo/sandstone/pillar_top: 856 272 frr
+:geoo/sandstone/pillar_32: 856 242 frr
+:geoo/sandstone/pillar_top: 856 176 frr
+:geoo/sandstone/pillar_top: 856 208 frr
+:geoo/sandstone/pillar_32: 856 178 frr
+:geoo/sandstone/pillar_top: 888 240 frr
+:geoo/sandstone/pillar_top: 888 272 frr
+:geoo/sandstone/pillar_32: 888 242 frr
+:geoo/sandstone/pillar_top: 888 176 frr
+:geoo/sandstone/pillar_top: 888 208 frr
+:geoo/sandstone/pillar_32: 888 178 frr
+:geoo/sandstone/pillar_top: 888 112 frr
+:geoo/sandstone/pillar_top: 888 144 frr
+:geoo/sandstone/pillar_32: 888 114 frr
+:geoo/sandstone/pillar_top: 888 48 frr
+:geoo/sandstone/pillar_top: 888 80 frr
+:geoo/sandstone/pillar_32: 888 50 frr
+:geoo/sandstone/pillar_top: 856 112 frr
+:geoo/sandstone/pillar_top: 856 144 frr
+:geoo/sandstone/pillar_32: 856 114 frr
+:geoo/sandstone/pillar_top: 856 48 frr
+:geoo/sandstone/pillar_top: 856 80 frr
+:geoo/sandstone/pillar_32: 856 50 frr
+:geoo/sandstone/pillar_top: 888 16 frr
+:geoo/sandstone/pillar_32: 888 18 frr
+:geoo/sandstone/pillar_top: 856 16 frr
+:geoo/sandstone/pillar_32: 856 18 frr
+:matt/marble/05b: 960 240 frr
+:matt/marble/05b: 992 240 frr
+:matt/marble/05b: 1024 240 frr
+:matt/marble/05b: 1056 240 frr
+:matt/marble/05: 1056 240
+:matt/marble/05: 1024 240
+:matt/marble/05: 992 240
+:matt/marble/05: 960 240
+:matt/marble/05b: 416 368 frr
+:matt/marble/05b: 448 368 frr
+:matt/marble/05b: 480 368 frr
+:matt/marble/05b: 512 368 frr
+:matt/marble/05: 512 368
+:matt/marble/05: 480 368
+:matt/marble/05: 448 368
+:matt/marble/05: 416 368
+:matt/marble/05b: 0 368 frr
+:matt/marble/05b: 32 368 frr
+:matt/marble/05b: 64 368 frr
+:matt/marble/05b: 96 368 frr
+:matt/marble/05: 96 368
+:matt/marble/05: 64 368
+:matt/marble/05: 32 368
+:matt/marble/05: 0 368
+:matt/marble/05: 272 368
+:matt/marble/05b: 0 400 frr
+:matt/marble/05b: 32 400 frr
+:matt/marble/05b: 64 400 frr
+:matt/marble/05b: 96 400 frr
+:matt/marble/05b: 0 400 frr
+:matt/marble/05b: 32 400 frr
+:matt/marble/05b: 64 400 frr
+:matt/marble/05b: 96 400 frr
+:matt/marble/05: 96 400
+:matt/marble/05: 64 400
+:matt/marble/05: 32 400
+:matt/marble/05: 0 400
+:matt/marble/05b: 128 400 frr
+:matt/marble/05b: 160 400 frr
+:matt/marble/05b: 192 400 frr
+:matt/marble/05b: 224 400 frr
+:matt/marble/05b: 128 400 frr
+:matt/marble/05b: 160 400 frr
+:matt/marble/05b: 192 400 frr
+:matt/marble/05b: 224 400 frr
+:matt/marble/05: 224 400
+:matt/marble/05: 192 400
+:matt/marble/05: 160 400
+:matt/marble/05: 128 400
+:matt/marble/05: 256 400
+:matt/marble/03: 288 400
+:matt/marble/05b: 416 400 frr
+:matt/marble/05b: 448 400 frr
+:matt/marble/05b: 480 400 frr
+:matt/marble/05b: 512 400 frr
+:matt/marble/05b: 416 400 frr
+:matt/marble/05b: 448 400 frr
+:matt/marble/05b: 480 400 frr
+:matt/marble/05b: 512 400 frr
+:matt/marble/05: 512 400
+:matt/marble/05: 480 400
+:matt/marble/05: 448 400
+:matt/marble/05: 416 400
+:matt/marble/05b: 2144 400
+:matt/marble/05b: 2112 400
+:matt/marble/05b: 2080 400
+:matt/marble/05b: 2048 400
+:matt/marble/05b: 2016 400
+:matt/marble/05b: 1984 400
+:matt/marble/05b: 1952 400
+:matt/marble/05b: 1920 400
+:matt/marble/05b: 1888 400
+:matt/marble/03b: 1872 400
+:matt/marble/05b: 1728 400
+:matt/marble/05b: 1696 400
+:matt/marble/05b: 1664 400
+:matt/marble/05b: 1632 400
+:geoo/sandstone/pillar_top: 1256 416
+:geoo/sandstone/pillar_32: 1256 418
+:geoo/sandstone/pillar_top: 1288 416
+:geoo/sandstone/pillar_32: 1288 418
+:geoo/sandstone/pillar_top: 888 418 frr
+:geoo/sandstone/pillar_32: 888 420 frr
+:geoo/sandstone/pillar_top: 856 418 frr
+:geoo/sandstone/pillar_32: 856 420 frr
+:geoo/sandstone/pillar_top: 712 328 frr
+:geoo/sandstone/pillar_top: 776 328 frr
+:geoo/sandstone/pillar_top: 1432 328
+:geoo/sandstone/pillar_top: 1368 328
+:geoo/sandstone/pillar_top: 1256 1280
+:geoo/sandstone/pillar_32: 1256 1282
+:geoo/sandstone/pillar_top: 1288 1280
+:geoo/sandstone/pillar_32: 1288 1282
+:geoo/sandstone/pillar_top: 888 1282 frr
+:geoo/sandstone/pillar_32: 888 1284 frr
+:geoo/sandstone/pillar_top: 856 1282 frr
+:geoo/sandstone/pillar_32: 856 1284 frr
+:geoo/steel/32x32o.S: 2080 368
+:geoo/steel/32x32o.S: 2112 368
+:geoo/steel/32x32o.S: 32 368
+:geoo/steel/32x32o.S: 64 368
+:geoo/steel/32x32o.S: 992 240
+:geoo/steel/32x32o.S: 1152 240
+:matt/marble/05e: 0 368
+:matt/marble/05e: 0 400
+:matt/marble/05e: 32 400
+:matt/marble/05e: 64 400
+:matt/marble/05e: 96 400
+:matt/marble/05e: 96 368
+:matt/marble/05e: 128 400
+:matt/marble/05e: 160 400
+:matt/marble/05e: 192 400
+:matt/marble/05e: 224 400
+:matt/marble/05e: 256 400
+:matt/marble/05e: 272 368
+:matt/marble/05e: 416 368
+:matt/marble/05e: 448 368
+:matt/marble/05e: 480 368
+:matt/marble/05e: 512 368
+:matt/marble/05e: 512 400
+:matt/marble/05e: 480 400
+:matt/marble/05e: 448 400
+:matt/marble/05e: 416 400
+:matt/marble/05e: 960 240
+:matt/marble/05e: 1024 240
+:matt/marble/05e: 1056 240
+:matt/marble/03e_1: 288 400
+:matt/marble/05d: 2144 368
+:matt/marble/05d: 2144 400
+:matt/marble/05d: 2112 400
+:matt/marble/05d: 2080 400
+:matt/marble/05d: 2048 400
+:matt/marble/05d: 2048 368
+:matt/marble/05d: 2016 400
+:matt/marble/05d: 1984 400
+:matt/marble/05d: 1952 400
+:matt/marble/05d: 1920 400
+:matt/marble/05d: 1888 400
+:matt/marble/05d: 1872 368
+:matt/marble/05d: 1728 368
+:matt/marble/05d: 1696 368
+:matt/marble/05d: 1664 368
+:matt/marble/05d: 1632 368
+:matt/marble/05d: 1632 400
+:matt/marble/05d: 1664 400
+:matt/marble/05d: 1696 400
+:matt/marble/05d: 1728 400
+:matt/marble/05d: 1184 240
+:matt/marble/05d: 1120 240
+:matt/marble/05d: 1088 240
+:matt/marble/03d: 1872 400
