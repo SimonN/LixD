@@ -39,27 +39,26 @@ private class ColorPrivate {
         alias rnd = uniform01!float;
         float[] arr = [rnd(), 0.7 + 0.3 * rnd(), 0.3 * rnd()];
         arr.randomShuffle();
-        return al_map_rgba_f(arr[0], arr[1], arr[2], 1);
+        return al_map_rgb_f(arr[0], arr[1], arr[2]);
     }
 
-    Alcol makecol(int r, int g, int b)
+    // This can't be an alias to al_map_rgb because al_map_rgb expects ubytes.
+    Alcol makecol(in int r, in int g, in int b)
     {
-        return al_map_rgba_f(r / 255f, g / 255f, b / 255f, 1);
+        return al_map_rgb_f(r / 255f, g / 255f, b / 255f);
     }
 
     Alcol
         bad,
         transp,
         pink,
-
         cbBadFrame,
         cbBadBitmap,
+        lixFileEye, // for detection of where exploder fuses are positioned
 
         white,
-        red,
         black,
-
-        lixFileEye, // for detection of where exploder fuses are positioned
+        red,
 
         guiFileSha, // how it looks in an image file, these get
         guiFileD,   // recolored to guiD, guiOnD, ..., accordingly.
@@ -101,19 +100,16 @@ private:
         _guiColorGreen = _g;
         _guiColorBlue  = _b;
 
-        //                    red   green blue  alpha
-        bad           = al_map_rgba_f(0.00, 0.00, 0.00, 0.5);
-        transp        = al_map_rgba_f(0.00, 0.00, 0.00, 0  );
-        pink          = al_map_rgba_f(1,    0,    1,    1  );
+        bad = al_map_rgba_f(0, 0, 0, 0.5f);
+        transp = al_map_rgba_f(0, 0, 0, 0);
+        pink = al_map_rgb_f(1, 0, 1);
+        cbBadFrame = al_map_rgb_f(0.8f, 0.8f, 0.8f);
+        cbBadBitmap = al_map_rgb_f(1, 0.5f, 0.5f);
+        lixFileEye = makecol(0x50, 0x50, 0x50);
 
-        cbBadFrame  = al_map_rgba_f(0.8,  0.8,  0.8,  1  );
-        cbBadBitmap = al_map_rgba_f(1,    0.5,  0.5,  1  );
-
-        lixFileEye   = makecol(0x50, 0x50, 0x50);
-
-        white         = al_map_rgba_f(1,    1,    1,    1  );
-        red           = al_map_rgba_f(1,    0,    0,    1  );
-        black         = al_map_rgba_f(0,    0,    0,    1  );
+        white = al_map_rgb_f(1, 1, 1);
+        black = al_map_rgb_f(0, 0, 0);
+        red = al_map_rgb_f(1, 0, 0);
 
         // how it looks in an image file
         guiFileSha = makecol(0x40, 0x40, 0x40);
@@ -151,9 +147,12 @@ private:
     // light: max is 1.0, min is 0.0
     Alcol make_sepia(in float light)
     {
-        if      (light <= 0.0) return al_map_rgba_f(0, 0, 0, 1);
-        else if (light >= 1.0) return al_map_rgba_f(1, 1, 1, 1);
-
+        if (light <= 0.0) {
+            return al_map_rgb_f(0, 0, 0);
+        }
+        else if (light >= 1.0) {
+            return al_map_rgb_f(1, 1, 1);
+        }
         // the user file suggests a base color via integers in 0 .. 255+1
         alias r = _guiColorRed;
         alias g = _guiColorGreen;
@@ -161,13 +160,20 @@ private:
         r = (r > 0xFF ? 0xFF : r < 0 ? 0 : r);
         g = (g > 0xFF ? 0xFF : g < 0 ? 0 : g);
         b = (b > 0xFF ? 0xFF : b < 0 ? 0 : b);
-        if      (light == 0.5) return al_map_rgba_f(r / 255f, g / 255f, b / 255f, 1);
-        else if (light <  0.5) return al_map_rgba_f(r * 2 * light / 255f,
-                                            g * 2 * light / 255f,
-                                            b * 2 * light / 255f, 1);
-        else return al_map_rgba_f((r + (255 - r) * 2 * (light - 0.5)) / 255f,
-                          (g + (255 - g) * 2 * (light - 0.5)) / 255f,
-                          (b + (255 - b) * 2 * (light - 0.5)) / 255f, 1);
+        if (light == 0.5) {
+            return al_map_rgb_f(r / 255f, g / 255f, b / 255f);
+        }
+        else if (light < 0.5) {
+            return al_map_rgb_f(
+                r * 2 * light / 255f,
+                g * 2 * light / 255f,
+                b * 2 * light / 255f);
+        }
+        else {
+            return al_map_rgb_f(
+                (r + (255 - r) * 2 * (light - 0.5)) / 255f,
+                (g + (255 - g) * 2 * (light - 0.5)) / 255f,
+                (b + (255 - b) * 2 * (light - 0.5)) / 255f);
+        }
     }
-
 }
