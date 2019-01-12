@@ -1,0 +1,91 @@
+$BUILT 2019-01-12 20:44:31
+$AUTHOR Rubix
+$GERMAN Kletterer und Fallschirme
+$ENGLISH Climbers and Floaters
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 256
+
+#INITIAL 8
+#REQUIRED 4
+#SPAWN_INTERVAL 28
+
+#CLIMBER 8
+#FLOATER 8
+#EXPLODER2 0
+
+:matt/carnival/Hatch.H: 104 96
+
+:matt/carnival/Goal.G: 432 160
+
+:matt/carnival/58: 416 224
+:matt/carnival/58: 32 224
+:matt/carnival/10: 288 192
+:matt/carnival/11: 320 192
+:matt/carnival/11: 288 224
+:matt/carnival/10: 352 192
+:matt/carnival/11: 384 192
+:matt/carnival/10: 320 224
+:matt/carnival/11: 352 224
+:matt/carnival/10: 384 224
+:matt/carnival/10: 320 160
+:matt/carnival/11: 352 160
+:matt/carnival/10: 384 160
+:matt/carnival/11: 352 96
+:matt/carnival/10: 384 96
+:matt/carnival/10: 352 128
+:matt/carnival/11: 384 128
+:matt/carnival/08: 0 192 rr
+:matt/carnival/08: 0 160 frr
+:matt/carnival/08: 0 128 rr
+:matt/carnival/08: 0 96 frr
+:matt/carnival/08: 0 64 rr
+:matt/carnival/08: 1 0 frrr
+:matt/carnival/45: 320 128
+:matt/carnival/08: 0 224 r
+:matt/carnival/08: 65 0 rr
+:matt/carnival/08: 129 0 rr
+:matt/carnival/08: 33 0 rrr
+:matt/carnival/08: 97 0 rrr
+:matt/carnival/08: 193 0 rr
+:matt/carnival/08: 257 0 rr
+:matt/carnival/08: 161 0 rrr
+:matt/carnival/08: 225 0 rrr
+:matt/carnival/08: 321 0 rr
+:matt/carnival/08: 385 0 rr
+:matt/carnival/08: 289 0 rrr
+:matt/carnival/08: 353 0 rrr
+:matt/carnival/08: 449 0 rr
+:matt/carnival/08: 513 0 rr
+:matt/carnival/08: 417 0 rrr
+:matt/carnival/08: 481 0 rrr
+:matt/carnival/08: 577 0 rr
+:matt/carnival/08: 545 0 rrr
+:matt/carnival/08: 609 0 rrr
+:matt/carnival/08: 608 64 rrr
+:matt/carnival/08: 608 96 fr
+:matt/carnival/08: 608 128 rrr
+:matt/carnival/08: 608 160 fr
+:matt/carnival/08: 608 192 rrr
+:matt/carnival/08: 608 224
+:matt/carnival/08: 0 32 frr
+:matt/carnival/08: 0 0 rr
+:matt/carnival/08: 608 0 rrr
+:matt/carnival/08: 608 32 fr
+:matt/carnival/27: 696 86
+:matt/carnival/26: 704 34
+:matt/carnival/13: 44 192
+:matt/carnival/13: 32 208
+:matt/carnival/13: 52 208
+:matt/carnival/13: 76 208
+:matt/carnival/13: 64 192
+:matt/carnival/39: 52 144
+:matt/carnival/14: 192 192
+:matt/carnival/06: 208 160
+:matt/carnival/14: 184 208
+:matt/carnival/14: 212 144
+:matt/carnival/13: 64 176
+:matt/carnival/13: 40 176
+:matt/carnival/54: 416 96
+:matt/carnival/47: 480 96

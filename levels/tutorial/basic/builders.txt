@@ -1,0 +1,113 @@
+$BUILT 2019-01-12 21:21:09
+$AUTHOR Simon
+$GERMAN Treppenbauer
+$ENGLISH Builders
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 320
+
+#INITIAL 10
+#REQUIRED 1
+#SPAWN_INTERVAL 43
+
+#BUILDER 15
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 104 152
+
+:geoo/construction/Goal2.G: 416 112
+
+:geoo/construction/steam_up.T: 34 22
+
+:geoo/construction/fence_64x64.S: 416 208
+:geoo/construction/wall/big_128x64: 64 256
+:geoo/construction/wall/big_128x64: 192 256
+:geoo/construction/pillar_32: 384 224
+:geoo/construction/pillar_32_b: 384 256
+:geoo/construction/wall/big_128x64: 320 256
+:geoo/construction/wall/big_128x128: -64 192
+:geoo/construction/wall/big_brickdiag_td: 32 224
+:geoo/construction/pillar_top_shaded: 200 240
+:geoo/construction/pillar_top_shaded: 384 208
+:geoo/construction/concrete/podium_32: 200 208
+:geoo/construction/concrete/032a: 384 176
+:geoo/construction/concrete/032h: 416 176
+:geoo/construction/concrete/032b: 480 176
+:geoo/construction/pillar_top_shaded: 480 208
+:geoo/construction/rod_steel/straight32.S: 560 256 rrr
+:geoo/construction/rod_steel/straight32.S: 568 256 rrr
+:geoo/construction/rod_steel/edge_lu.S: 560 288
+:geoo/construction/rod_steel/edge_lu.S: 568 296
+:geoo/construction/rod_steel/straight8.S: 568 288 rrr
+:geoo/construction/rod_steel/straight8.S: 560 296
+:geoo/construction/rod_steel/straight32.S: 528 296
+:geoo/construction/rod_steel/straight32.S: 528 288
+:geoo/construction/fence_64x64.S: 512 256
+:geoo/construction/wall/big_brickdiag_bu: 480 288
+:geoo/construction/wall/big_brick2: 416 288
+:geoo/construction/wall/big_brick3: 448 256
+:geoo/construction/wall/big_brickdiag_bu: 512 256
+:geoo/construction/fence_64x64.S: 576 256
+:geoo/construction/wall/big_brick1: 608 224
+:geoo/construction/pillar_base: 576 208
+:geoo/construction/pillar_base: 576 128
+:geoo/construction/pillar_bottom: 592 192
+:geoo/construction/pillar_top_shaded: 592 144
+:geoo/construction/rod_steel/straight32.S: 608 88 rrr
+:geoo/construction/rod_steel/straight32.S: 600 88 rrr
+:geoo/construction/pillar_top_shaded: 592 112
+:geoo/construction/stairsbrick_rd_8: 572 120
+:geoo/construction/stairsbrick_ru_8: 612 120
+:geoo/construction/stairsbrick_ru_8: 584 112
+:geoo/construction/stairsbrick_rd_8: 600 112
+:geoo/construction/pillar_base: 576 98
+:geoo/construction/pillar_base: 0 176
+:geoo/construction/pillar_base: 0 96
+:geoo/construction/pillar_bottom: 16 160
+:geoo/construction/pillar_32: 16 128
+:geoo/construction/pillar_top_shaded: 16 112
+:geoo/construction/pillar_top_shaded: 16 80
+:geoo/construction/stairsbrick_rd_8: -4 88
+:geoo/construction/stairsbrick_ru_8: 36 88
+:geoo/construction/stairsbrick_ru_8: 8 80
+:geoo/construction/stairsbrick_rd_8: 24 80
+:geoo/construction/rod_steel/link_du_h.S: 20 50 fr
+:geoo/construction/pillar_base: 0 66
+:geoo/construction/rod_steel/straight32.S: 48 136
+:geoo/construction/rod_steel/straight32.S: 48 128
+:geoo/construction/rod_steel/straight32.S: 80 136
+:geoo/construction/rod_steel/straight32.S: 80 128
+:geoo/construction/rod_steel/straight8.S: 112 144 rrr
+:geoo/construction/rod_steel/straight8.S: 120 144 rrr
+:geoo/construction/rod_steel/edge_ld.S: 112 136
+:geoo/construction/rod_steel/edge_ld.S: 120 128
+:geoo/construction/rod_steel/straight8.S: 112 128
+:geoo/construction/rod_steel/straight8.S: 120 136 rrr
+:geoo/construction/rod_steel/straight32.S: 576 168
+:geoo/construction/rod_steel/straight32.S: 576 160
+:geoo/construction/pillar_32: 592 160
+:geoo/construction/rod_steel/straight32.S: 624 192
+:geoo/construction/rod_steel/straight32.S: 624 184
+:geoo/construction/rod_steel/straight32.S: -16 160
+:geoo/construction/rod_steel/straight32.S: -16 152
+:geoo/construction/rod_steel/edge_rd.S: 568 168
+:geoo/construction/rod_steel/edge_rd.S: 560 160
+:geoo/construction/rod_steel/straight8.S: 568 160
+:geoo/construction/rod_steel/straight8.S: 560 168 rrr
+:geoo/construction/rod_steel/straight32.S: 568 176 rrr
+:geoo/construction/rod_steel/straight32.S: 560 176 rrr
+:geoo/construction/rod_steel/straight32.S: 560 208 rrr
+:geoo/construction/rod_steel/straight32.S: 568 208 rrr
+:geoo/construction/wall/big_brickdiag_tu: 544 224
+:geoo/construction/rod_steel/straight32.S: 616 80
+:geoo/construction/rod_steel/straight32.S: 616 72
+:geoo/construction/rod_steel/edge_rd.S: 608 80
+:geoo/construction/rod_steel/edge_rd.S: 600 72
+:geoo/construction/rod_steel/straight8.S: 608 72
+:geoo/construction/rod_steel/straight8.S: 600 80 rrr
+:geoo/construction/pillar_top_shaded: 232 240
+:geoo/construction/rod_steel/end_rect_dd.S: 20 38
+:geoo/construction/rod_steel/end_rect_dd.S: 26 44
+:geoo/construction/rod_steel/link_du_h.S: 12 46 fr
+:geoo/construction/pillar_32_c: 480 224

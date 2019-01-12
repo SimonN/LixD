@@ -1,0 +1,112 @@
+$BUILT 2018-06-23 00:13:08
+$AUTHOR geoo
+$GERMAN Batter und Richtkraft
+$ENGLISH Batters and Directional Force
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 120
+#REQUIRED 60
+#SPAWN_INTERVAL 1
+
+#BATTER -1
+#EXPLODER2 0
+
+:matt/winter/Hatch.H: 290 80
+:matt/winter/Hatch.H: 348 80 r
+:matt/winter/Hatch.H: 406 80
+:matt/winter/Hatch.H: 464 80 r
+
+:matt/winter/Goal.G: 334 282
+
+:simon/crystal.W: 584 232
+:simon/crystal.W: 536 232
+:simon/crystal.W: 584 216
+:simon/crystal.W: 536 216
+:simon/crystal.W: 536 200
+:simon/crystal.W: 584 200
+:simon/crystal.W: 632 232
+:simon/crystal.W: 632 216
+:simon/crystal.W: 632 200
+
+:matt/winter/07: 554 44 rr
+:matt/winter/07: 562 70 rr
+:matt/winter/07: 576 46 rr
+:matt/winter/07: 568 56 rr
+:matt/winter/07: 536 10 rr
+:matt/winter/02: 544 0
+:matt/winter/07: 420 -5 rr
+:matt/winter/07: 440 -22 rr
+:matt/winter/05: 416 -32 fr
+:matt/winter/07: 447 -14 rr
+:matt/winter/01: 560 0
+:matt/winter/07: 592 32 rr
+:matt/winter/07: 609 16 rr
+:matt/winter/01: 576 0
+:matt/winter/07: 618 34 rr
+:matt/winter/04: 616 -6 rr
+:matt/winter/08: 288 160
+:matt/winter/07: 298 232 rr
+:matt/marble/09a: 382 206
+:matt/winter/02: 282 176
+:matt/marble/09a: 318 206
+:matt/winter/07: 290 214 rr
+:matt/winter/06: 288 168
+:matt/winter/09c: 288 144
+:matt/marble/09a: 320 344
+:matt/winter/18: 344 351
+:matt/marble/09a: 384 344
+:matt/winter/16: 320 341 rrr
+:matt/winter/07: 370 218 rr
+:matt/winter/08: 400 160
+:matt/winter/06: 400 168
+:matt/winter/09c: 400 144
+:matt/winter/11: 432 169 frr
+:matt/winter/05: 146 194 rrr
+:matt/winter/07: 376 226 rr
+:matt/winter/07: 256 226 rr
+:matt/winter/07: 247 224 rr
+:matt/winter/10: 218 169 frr
+:matt/winter/00: 401 174 f
+:matt/winter/05: 425 261 r
+:matt/underworld/09b: -28 329
+:proxima/tile/cyan3: 78 246
+:matt/winter/13: 63 200 fd
+:matt/winter/13: 47 218 fd
+:matt/winter/13: 95 218 rrd
+:matt/winter/13: 79 200 rrd
+:matt/winter/09a: 62 188
+:matt/winter/08: 512 160
+:matt/winter/09c: 512 144
+:matt/winter/06: 512 168
+:matt/winter/04: 446 176 frr
+:matt/winter/04: 464 224 frr
+:matt/winter/00: 442 170
+:matt/winter/07: 520 -6 rr
+:matt/winter/02: 504 -62
+:matt/winter/07: 513 2 rr
+:matt/winter/07: 473 -9 rr
+:matt/winter/01: 442 -18
+:matt/winter/07: 479 -22 rr
+:matt/winter/00: 448 -46
+:matt/winter/00: 522 -36
+:matt/winter/00: 399 208
+:matt/winter/04: 406 270 frr
+:matt/winter/11: 590 295
+:matt/winter/10: 481 315
+:matt/winter/14: 278 329 rr
+:matt/winter/03: 268 330 rrr
+:matt/winter/05: 62 340 r
+:matt/winter/00: 208 370
+:proxima/tile/cyan3a: 78 278
+:proxima/tile/orange3: 0 336
+:proxima/tile/orange3: 32 352
+:proxima/tile/orange3: 16 336
+:matt/underworld/09b: 57 329 frr
+:proxima/tile/cyan3a: 78 310
+:matt/underworld/09a: 0 328
+:matt/winter/16: 282 327 r
+:proxima/tile/cyan3a: 78 342
+:proxima/tile/cyan3a: 78 374

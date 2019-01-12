@@ -1,0 +1,168 @@
+$BUILT 2012-04-28 12:19:02
+$AUTHOR Simon
+$GERMAN Vertikalgraeber
+$ENGLISH Diggers
+
+$HINT_GERMAN Klicke eine Lix an, um sie vertikal nach unten graben zu lassen.<br>Stahl kann nicht zerstoert werden, aber durch alles andere kannst du graben.
+$HINT_ENGLISH Click a lix to assign her the digger skill. She will dig a vertical hole.<br>Steel cannot be destroyed, but you can dig through anything else.
+
+#SIZE_X 640
+#SIZE_Y 400
+#TORUS_X 0
+#TORUS_Y 0
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 0
+#BACKGROUND_BLUE 0
+
+#SECONDS 0
+#INITIAL 20
+#REQUIRED 10
+#SPAWN_INTERVAL 15
+#SPAWN_INTERVAL_FAST 4
+
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#NOTHING 0
+#DIGGER 20
+
+:matt/earth/Hatch.H: 80 144
+:matt/earth/Hatch.H: 488 144 r
+
+:matt/earth/Goal.G: 288 320
+
+:matt/earth/06: 54 348
+:matt/steel/64x64.S: 0 384
+:matt/steel/64x64.S: 64 384
+:matt/steel/64x64.S: 128 384
+:matt/steel/64x64.S: 192 384
+:matt/steel/64x64.S: 256 384
+:matt/steel/64x64.S: 320 384
+:matt/earth/09: 558 349
+:matt/earth/25: 550 343 frr
+:matt/earth/07b: 538 278
+:matt/earth/17: 550 228
+:matt/earth/09: 568 226
+:matt/earth/10: 528 250
+:matt/steel/64x64.S: 384 384
+:matt/steel/64x64.S: 448 384
+:matt/steel/64x64.S: 512 384
+:matt/steel/64x64.S: 576 384
+:matt/earth/24: 111 329 frr
+:matt/earth/01: 46 318 frr
+:matt/earth/06: 148 300
+:matt/earth/17: 42 272 rrr
+:matt/earth/00: -2 306
+:matt/earth/19: -10 130 fr
+:matt/earth/19: 590 136 frrr
+:matt/earth/03: 448 286 frr
+:matt/earth/27: 246 312
+:matt/steel/32x32.S: 240 288
+:matt/earth/09: 318 310
+:matt/earth/29: 374 313
+:matt/steel/32x32.S: 368 288
+:matt/earth/09: 200 312
+:matt/earth/03: 92 274
+:matt/earth/18: 214 292
+:matt/earth/18: 196 292
+:matt/steel/32x32.S: 48 288
+:matt/earth/18: 66 284
+:matt/earth/18: 64 300
+:matt/earth/02: 470 292 r
+:matt/earth/28: 522 298
+:matt/earth/24: 403 320
+:matt/earth/03: 424 280
+:matt/earth/06: 548 230
+:matt/steel/32x32.S: 560 288
+:matt/earth/09: 434 316
+:matt/earth/18: 414 310
+:matt/earth/02: 392 280 fr
+:matt/earth/09: 74 278
+:matt/earth/09: 104 272 f
+:matt/earth/07: 152 270
+:matt/earth/25: 169 313
+:matt/earth/18: 180 296
+:matt/earth/28: 138 314
+:matt/earth/03: 66 294
+:matt/earth/09: 162 270
+:matt/earth/09: 166 276
+:matt/earth/09: 186 276
+:matt/earth/07b: 390 328
+:matt/earth/18: 386 302
+:matt/earth/18: 392 312 frr
+:matt/earth/09: 422 278 rr
+:matt/earth/09: 470 274
+:matt/earth/09: 490 274
+:matt/earth/09: 400 278
+:matt/earth/09: 434 274 rr
+:matt/steel/32x32.S: 272 288
+:matt/earth/28: 318 307
+:matt/steel/32x32.S: 304 288
+:matt/steel/32x32.S: 336 288
+:matt/earth/19: 242 188
+:geoo/steel/dark_64x32o.S: 192 192
+:geoo/steel/dark_64x32o.S: 128 192
+:geoo/steel/dark_64x32o.S: 64 192
+:geoo/steel/dark_64x32o.S: 512 192
+:geoo/steel/dark_64x32o.S: 448 192
+:geoo/steel/dark_64x32o.S: 384 192
+:geoo/steel/dark_64x32o.S: 352 160 d
+:geoo/steel/dark_64x32o.S: 224 160 d
+:matt/earth/07: 14 90
+:matt/earth/07: 28 80
+:matt/earth/07: 2 88
+:matt/earth/07: 0 98
+:matt/earth/06: 10 100
+:matt/earth/06: -8 120
+:matt/earth/07: -2 132
+:matt/earth/06: -10 144
+:matt/earth/07: -2 136
+:matt/earth/07: -4 138
+:matt/earth/19: 6 84 fr
+:geoo/steel/dark_64x32o.S: 2 50 d
+:geoo/steel/dark_64x32o.S: 14 224 d
+:matt/earth/19: 2 204 fr
+:matt/earth/19: -12 198 fr
+:matt/steel/32x32.S: -16 288
+:matt/steel/32x32.S: 16 288
+:matt/steel/64x64.S: 0 320
+:geoo/steel/dark_64x32o.S: 0 192
+:matt/earth/06: 2 90
+:matt/earth/07: 22 70
+:matt/earth/06: -8 66
+:matt/earth/06: 0 76
+:matt/earth/07: 14 78
+:matt/earth/07: 26 68
+:matt/earth/06: 576 126
+:matt/earth/06: 584 134
+:matt/earth/07: 590 122
+:matt/earth/07: 598 140
+:matt/earth/19: 610 44 r
+:matt/earth/19: 612 192 rrr
+:matt/steel/32x32.S: 592 288
+:geoo/steel/dark_64x32o.S: 576 192
+:matt/steel/32x32.S: 624 288
+:matt/steel/64x64.S: 576 320
+:matt/earth/06: 598 30
+:matt/earth/06: 602 42
+:matt/earth/06: 604 56
+:matt/earth/06: 612 70
+:matt/earth/06: 588 60
+:matt/earth/06: 612 42
+:matt/earth/06: 610 64
+:matt/earth/06: 618 80
+:matt/earth/07: 0 78
+:matt/earth/09: 124 270
+:matt/goldmine/crate16: 56 176
+:matt/goldmine/crate16: 64 176
+:matt/goldmine/crate16: 60 160
+:matt/earth/09: 396 282
+:geoo/steel/dark_64x32o.S: 224 224 d
+:geoo/steel/dark_64x32o.S: 352 224 d

@@ -1,0 +1,138 @@
+$BUILT 2019-01-12 19:51:14
+$AUTHOR Wuzzy
+$GERMAN Implodierer
+$ENGLISH Imploders
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 40
+#REQUIRED 1
+#SPAWN_INTERVAL 8
+
+#EXPLODER 39
+
+:matt/underworld/Hatch.H: 304 0
+
+:matt/underworld/Goal.G: 247 317
+
+:matt/underworld/Lava.W: 112 288
+:matt/underworld/Lava.W: 160 288
+:matt/underworld/Lava.W: -8 360
+:matt/underworld/Lava.W: 0 312
+
+:matt/underworld/00: 416 288
+:matt/underworld/04: 442 296 rrr
+:matt/underworld/04: 440 278 r
+:matt/underworld/04: 256 246 rr
+:matt/underworld/04: 186 206
+:matt/underworld/04: 352 132 r
+:matt/underworld/04: 314 62 r
+:matt/underworld/07: 414 160
+:matt/underworld/07: 512 72
+:matt/underworld/05: 480 48
+:matt/underworld/05: 464 368
+:matt/underworld/04: 528 248 r
+:matt/underworld/06: 497 296
+:matt/underworld/06: 438 316
+:matt/underworld/06: 464 352
+:matt/underworld/05: 412 54
+:matt/underworld/06: 348 328
+:matt/underworld/06: 397 360
+:matt/underworld/00: 432 160
+:matt/underworld/02: 560 304
+:matt/underworld/02: 560 208
+:matt/underworld/02: 560 112
+:geoo/steel/dark_48x48o.S: 320 368
+:geoo/steel/dark_48x48o.S: 320 160
+:matt/underworld/04: 280 56 r
+:geoo/steel/dark_48x48o.S: 160 -64
+:geoo/steel/dark_48x48o.S: 624 352
+:geoo/steel/dark_48x48o.S: 624 304
+:geoo/steel/dark_48x48o.S: 624 256
+:geoo/steel/dark_48x48o.S: 624 208
+:geoo/steel/dark_48x48o.S: 624 160
+:geoo/steel/dark_48x48o.S: 624 112
+:geoo/steel/dark_48x48o.S: 624 64
+:geoo/steel/dark_48x48o.S: 624 16
+:geoo/steel/dark_48x48o.S: 464 -64
+:geoo/steel/dark_48x48o.S: 432 352
+:geoo/steel/dark_48x48o.S: 480 352
+:geoo/steel/dark_48x48o.S: 576 352
+:geoo/steel/dark_48x48o.S: 368 368
+:geoo/steel/dark_32x32o.S: 432 240
+:geoo/steel/dark_16x32o.S: 416 360
+:geoo/steel/dark_32x32o.S: 464 240
+:geoo/steel/dark_32x32o.S: 400 160
+:matt/underworld/06: 128 304
+:matt/underworld/06: 16 352
+:matt/underworld/06: 112 320
+:matt/underworld/08: 198 152
+:matt/underworld/06: 32 300
+:matt/underworld/04: 64 272
+:matt/underworld/04: 160 224
+:matt/underworld/04: 272 224
+:matt/underworld/07: 224 176
+:matt/underworld/09a: 208 144
+:matt/underworld/09c: 161 250
+:matt/underworld/09b: 46 273
+:geoo/steel/dark_32x32o.S: 288 112
+:geoo/steel/dark_48x48o.S: 224 384
+:geoo/steel/dark_48x48o.S: 288 400
+:geoo/steel/dark_48x48o.S: 272 384
+:matt/underworld/04: 222 247
+:matt/underworld/00: 192 288
+:geoo/steel/dark_48x48o.S: 256 32
+:geoo/steel/dark_48x48o.S: 256 -16
+:matt/underworld/00: 368 80
+:geoo/steel/dark_32x32o.S: 256 112
+:matt/underworld/02: 560 16
+:geoo/steel/dark_48x48o.S: 560 64
+:geoo/steel/dark_16x16o.S: 608 80
+:geoo/steel/dark_16x16o.S: 608 64
+:geoo/steel/dark_16x16o.S: 608 96
+:matt/underworld/07: 240 112
+:matt/underworld/06: 640 16
+:matt/underworld/06: 560 -64
+:geoo/steel/dark_32x32o.S: 432 80
+:geoo/steel/dark_32x32o.S: 464 80
+:matt/underworld/00: 496 240
+:matt/underworld/00: 368 240
+:matt/underworld/00: 256 288
+:geoo/steel/dark_16x16o.S: 432 400
+:geoo/steel/dark_16x32o.S: 528 360
+:geoo/steel/dark_16x32o.S: 544 376
+:geoo/steel/dark_16x32o.S: 560 352
+:geoo/steel/dark_16x32o.S: 560 384
+:geoo/steel/dark_16x32o.S: 576 400
+:geoo/steel/dark_16x32o.S: 528 392
+:geoo/steel/dark_16x32o.S: 544 344
+:geoo/steel/dark_16x16o.S: 528 344
+:geoo/steel/dark_16x16o.S: 416 392
+:geoo/steel/dark_32x32o.S: 496 160
+:geoo/steel/dark_32x32o.S: 528 160
+:matt/underworld/00: 496 80
+:geoo/steel/dark_48x48o.S: 560 16
+:matt/underworld/06: 584 -48
+:matt/underworld/06: 504 -88
+:geoo/steel/dark_16x16o.S: 288 96
+:matt/underworld/07: 269 80
+:geoo/steel/dark_32x32o.S: 368 160
+:geoo/steel/dark_48x48o.S: 256 112
+:geoo/steel/dark_48x48o.S: 272 160
+:geoo/steel/dark_48x48o.S: 320 160
+:geoo/steel/dark_16x16o.S: 288 96
+:geoo/steel/dark_16x16o.S: 288 80
+:geoo/steel/dark_32x32o.S: 256 80
+:geoo/steel/dark_48x48o.S: 320 208
+:matt/underworld/04: 219 213 r
+:matt/underworld/04: 239 220 r
+:matt/underworld/04: 257 220 r
+:matt/underworld/06: 622 22 r
+:matt/underworld/00: 352 288
+:geoo/steel/dark_32x48o.S: 320 256
+:matt/underworld/00: 224 320 fr
+:matt/underworld/04: 176 288
+:matt/underworld/05: 184 188 rrr
+:matt/underworld/09b: 184 184

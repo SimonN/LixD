@@ -1,0 +1,15 @@
+bashers.txt
+diggers.txt
+miners.txt
+imploders.txt
+exploders.txt
+builders.txt
+platformers.txt
+cubers.txt
+blockers.txt
+climbers-floaters.txt
+jumpers.txt
+runners.txt
+batters.txt
+walkers-turn.txt
+walkers-cancel.txt
