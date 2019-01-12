@@ -84,7 +84,7 @@ private:
         updateMaxPotentials(_bars);
         _bars.sortPreferringTeam(_ourStyle);
         this.resize(this.xlg, 10 + 10 + _bars.map!(b => b.ylg).sum);
-        foreach (int i, bar; _bars)
+        foreach (const size_t i, bar; _bars)
             bar.move(10, 10 + _bars[0 .. i].map!(b => b.ylg).sum);
     }
 }

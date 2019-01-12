@@ -60,8 +60,8 @@ class MsgBox : Window {
             _buttons[$-1].onExecute = callback;
         addChild(_buttons[$-1]);
         resize(thisXl, appropriateYl);
-        foreach (int i, button; _buttons)
-            button.move((-_buttons.len + 2*i + 1) * (buttonXl+20)/2 - 10, 20);
+        _buttons.enumerate!int.each!((i, button) => button.move(
+            (-_buttons.len + 2 * i + 1) * (buttonXl+20)/2 - 10, 20));
         return this;
     }
 

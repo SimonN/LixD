@@ -12,6 +12,7 @@ module gui.picker.tiler;
 
 import std.algorithm;
 import std.array;
+import std.conv;
 import std.range;
 
 public import file.filename;
@@ -125,12 +126,14 @@ protected:
 
     override void calcSelf()
     {
-        foreach (int i, const(Button) b; _dirs)
+        foreach (const size_t i, const(Button) b; _dirs) {
             if (b.execute && _onDirSelect)
-                _onDirSelect(i);
-        foreach (int i, const(Button) b; _files)
+                _onDirSelect(i.to!int);
+        }
+        foreach (const size_t i, const(Button) b; _files) {
             if (b.execute && _onFileSelect)
-                _onFileSelect(i);
+                _onFileSelect(i.to!int);
+        }
     }
 
     override void drawSelf()

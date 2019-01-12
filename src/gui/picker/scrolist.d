@@ -138,7 +138,7 @@ private:
     void alignButtons()
     {
         reqDraw();
-        foreach (int i, b; _buttons) {
+        foreach (const size_t i, b; _buttons) {
             b.shown = (i >= _top && i < _top + pageLen);
             if (b.shown)
                 b.move(0, (i - _top) * buttonYlg);

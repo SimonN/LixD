@@ -56,7 +56,7 @@ in {
     assert (tribesToMake.isStrictlyMonotonic);
 }
 body {
-    foreach (int i, style; tribesToMake) {
+    foreach (style; tribesToMake) {
         Tribe tr = new Tribe(
             tribesToMake.len > 1 && level.overtimeSeconds == 0
                 ? Tribe.Rule.raceToFirstSave : Tribe.Rule.normalOvertime);
@@ -111,17 +111,19 @@ body { with (state)
     auto stylesInPlay = tribes.keys;
     stylesInPlay.sort();
 
-    // Permu 0 3 1 2 for 2 goals and tribes red, orange, yellow, green means:
-    // Red & green get goal 0. -- Orange & yellow get goal 1.
+    // Permu 0 3 1 2 for 2 goals and tribes red, orange, yellow, purple means:
+    // -> Red & purple get goal 0 because their slots are 0 mod 2.
+    // -> Orange & yellow get goal 1 because their slots are 1 mod 2.
     // Permu 0 2 1 for 6 goals and tribes red, orange, yellow means:
-    // Red gets goal 0 & 3. Orange gets 2 & 5. Yellow gets 1 & 4.
-    foreach (int i, style; stylesInPlay) {
-        tribes[style].nextHatch = permu[i] % hatches.len;
-        for (int j = permu[i] % hatches.len; j < hatches.len; j += numTribes)
+    // -> Red gets goal 0 & 3. Orange gets 2 & 5. Yellow gets 1 & 4.
+    foreach (size_t i, style; stylesInPlay) {
+        immutable int slot = permu[i.to!int];
+        tribes[style].nextHatch = slot % hatches.len;
+        for (int j = slot % hatches.len; j < hatches.len; j += numTribes)
             hatches[j].addTribe(style);
         if (goals.len == 0)
             continue;
-        for (int j = permu[i] % goals.len; j < goals.len; j += numTribes)
+        for (int j = slot % goals.len; j < goals.len; j += numTribes)
             goals[j].addTribe(style);
     }
 }}

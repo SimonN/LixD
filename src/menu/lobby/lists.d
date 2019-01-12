@@ -39,7 +39,7 @@ public:
     void recreateButtonsFor(const(Profile[]) players)
     {
         Button[] array;
-        foreach (int i, profile; players)
+        foreach (profile; players)
             array ~= new PeerButton(newGeomForButton(), profile);
         replaceAllButtons(array);
     }
@@ -127,9 +127,9 @@ public:
     @property bool observing() const { return _spec.on; }
     @property Style style() const
     {
-        foreach (int i, b; _buttons)
+        foreach (const size_t i, b; _buttons)
             if (b.on)
-                return idToStyle(i);
+                return idToStyle(i.to!int);
         return idToStyle(0);
     }
 
@@ -141,8 +141,8 @@ public:
 
     @property Style style(Style st)
     {
-        foreach (int i, b; _buttons)
-            b.on = idToStyle(i) == st;
+        foreach (const size_t i, b; _buttons)
+            b.on = idToStyle(i.to!int) == st;
         _spec.on = false;
         return st;
     }
@@ -155,9 +155,9 @@ protected:
             setObserving();
             _execute = true;
         }
-        foreach (int i, b; _buttons)
+        foreach (const size_t i, b; _buttons)
             if (b.execute && ! b.on) {
-                style = idToStyle(i);
+                style = idToStyle(i.to!int);
                 _execute = true;
             }
     }

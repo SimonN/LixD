@@ -70,10 +70,11 @@ void addFocus(Element toAdd)
     // Don't add a parent as a more important focus than its child.
     // This may happen: Parent constructor focuses on the child, but the
     // parent-creating code will focus on the parent.
-    foreach (int i, possibleParent; focus)
-        if (i > 0 && focus[i].isParentOf(focus[i-1]))
-            swap(focus[i-1], focus[i]);
-}
+    foreach (const size_t i, possibleParent; focus) {
+        if (i > 0) {
+            if (focus[i].isParentOf(focus[i-1])) {
+                swap(focus[i-1], focus[i]);
+}   }   }   }
 
 void rmFocus(Element toRm)
 {

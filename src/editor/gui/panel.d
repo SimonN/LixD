@@ -218,7 +218,8 @@ private:
 
     void writeButtonTooltips()
     {
-        foreach (int id, bb; _buttons)
+        foreach (const size_t idUnsigned, bb; _buttons) {
+            immutable int id = idUnsigned.to!int;
             if (bb.isMouseHere) {
                 try _info.text = indexToLang(id).transl;
                 catch (ConvException) { }
@@ -229,11 +230,13 @@ private:
                                         _currentFilename.rootless);
                 }
             }
-        foreach (id, tb; _textButtons)
+        }
+        foreach (const size_t id, tb; _textButtons) {
             if (tb.isMouseHere) {
                 try _info.text = (id + Lang.editorButtonMenuConstants)
                                    .to!Lang.transl;
                 catch (ConvException) { }
             }
+        }
     }
 }

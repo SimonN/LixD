@@ -133,14 +133,16 @@ struct Mask {
     body {
         _solid         = new Matrix!bool(strs[0].len, strs.len);
         bool offsetSet = false;
-        foreach     (const int y, const string s; strs)
-            foreach (const int x, const char   c; s) {
+        for (int y = 0; y < strs.len; ++y) {
+            for (int x = 0; x < strs[y].len; ++x) {
+                char c = strs[y][x];
                 CharOK cc;
                 try cc = std.conv.to!CharOK(c);
                 catch (Exception)
                     assert (false, format("Bad character in string %d, `%s', "
                         ~ "at position %d: `%c'. Expected "
-                        ~ "`.', `o', `X', `N', or `#'.", y, s, x, c).idup);
+                        ~ "`.', `o', `X', `N', or `#'.",
+                        y, strs[y], x, c).idup);
                 _solid.set(x, y, cc == CharOK.solid
                               || cc == CharOK.solidIgnore
                               || cc == CharOK.solidOffset);
@@ -159,6 +161,7 @@ struct Mask {
                     offsetSet = true;
                 }
             }
+        }
     }
     // end this()
 

@@ -82,8 +82,8 @@ private:
             onLineChange();
             reqDraw();
         }
-        foreach (int i, ref line; _lines)
-            moveLine(line, i);
+        foreach (const size_t i, ref line; _lines)
+            moveLine(line, i.to!int);
     }
 }
 

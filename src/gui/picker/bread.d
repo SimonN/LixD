@@ -62,12 +62,12 @@ protected:
     override void calcSelf()
     {
         _execute = false;
-        foreach (int i, Button b; _buttons) {
+        foreach (const size_t numSlashesToSkip, Button b; _buttons) {
             if (! b.execute)
                 continue;
             assert (currentDir.dirRootless.startsWith(baseDir.dirRootless));
             string s = currentDir.dirRootless[baseDir.dirRootless.length .. $];
-            foreach (_; 0 .. i)
+            foreach (_; 0 .. numSlashesToSkip)
                 s.findSkip("/");
             currentDir = new VfsFilename(
                 currentDir.dirRootless[0 .. $ - s.length]);

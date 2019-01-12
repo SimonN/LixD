@@ -65,11 +65,11 @@ protected:
         // Allow clicks on the label to select the button. This functionality
         // is duplicated in boolean options in the options menu.
         // Maybe design a label-button-class that does this for us.
-        foreach (int nr, ref Choice ch; _choices)
+        foreach (const size_t nr, ref Choice ch; _choices)
             if (ch.label.isMouseHere && nr != chosen) {
                 ch.button.down = mouseHeldLeft > 0;
                 if (mouseReleaseLeft)
-                    choose(nr);
+                    choose(nr.to!int);
             }
     }
 }

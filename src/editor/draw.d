@@ -1,6 +1,7 @@
 module editor.draw;
 
 import std.algorithm;
+import std.conv;
 import std.string;
 
 import basics.alleg5;
@@ -118,7 +119,7 @@ void drawGadgetAnnotations(Editor editor) {
             forceUnscaledGUIDrawing = false;
         }
 
-        foreach (int i, g; list)  {
+        foreach (const size_t i, g; list)  {
             assert (g.tile && g.tile.cb);
             assert (intendedNumberOfPlayers >= 1);
             // DTODOREFACTOR:
@@ -129,7 +130,7 @@ void drawGadgetAnnotations(Editor editor) {
             // I duplicate logic here that's also in the Game's state init.
             enum int plusY = 15;
             int y = -plusY;
-            immutable int team = teamIDforGadget(i);
+            immutable int team = teamIDforGadget(i.to!int);
             immutable int weGetTotal = howManyDoesTeamGetOutOf(team, list.len);
 
             if (intendedNumberOfPlayers > 1)

@@ -8,7 +8,7 @@ module game.score.graph;
  */
 
 import std.algorithm;
-import std.conv;
+import std.range;
 
 public import physics.score;
 
@@ -72,9 +72,10 @@ private:
         reqDraw();
         _bars.sort!((a, b)
             => betterThanPreferringTeam(a.score, b.score, _ourStyle));
-        foreach (int i, Element bar; _bars)
+        _bars.enumerate!int.each!((i, Element bar) {
             bar.move(2 * gui.thickg,
                 2 * gui.thickg + (ylg - 4 * gui.thickg) * i / _bars.length);
+            });
     }
 }
 

@@ -24,7 +24,7 @@ public:
         foreach (KeyButton but; _watched)
             but.warnAboutDuplicateBindings(false);
 
-        foreach (int id, KeyButton button; _watched)
+        foreach (const size_t id, KeyButton button; _watched)
             foreach (other; _watched[id + 1 .. $])
                 if (button.keySet.keysAsInts.any!(key =>
                     other.keySet.keysAsInts.canFind(key))
