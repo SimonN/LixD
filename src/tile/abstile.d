@@ -40,7 +40,7 @@ public:
     @property const(AbstractTile)[] dependencies() const { return null; }
 
     // Object.toHash is not const! WTF!
-    override @property size_t toHash() const nothrow @trusted
+    override @property size_t toHash() const pure nothrow @trusted
     {
         return cast(size_t) cast(void*) this;
     }

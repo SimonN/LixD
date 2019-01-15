@@ -47,13 +47,21 @@ body {
             output = MarkedOcc(next) ~ output;
         }
     }
-    return output.map!(mo => mo.occurrence).array;
+    return output.map!(mo => mo.occ).array;
 }
 
 private struct MarkedOcc {
-    TerOcc occurrence;
+    TerOcc occ;
     bool mustGroup;
-    alias occurrence this;
+    /*
+     * I'll remove...
+     *      alias occurrence this;
+     * ...because this prints a warning with DMD 2.084:
+     * Warning: struct MarkedOcc has method toHash, however it cannot be
+     * called with const(MarkedOcc) this.
+     * Re this warning: https://issues.dlang.org/show_bug.cgi?id=19517
+     * And I'll patiently wait for D's ProtoObject. >_>;
+     */
 }
 
 /* Algorithm: Find pieces for 0 or 1 new group, replace pieces by group.
@@ -74,42 +82,55 @@ private void groupWhatIsDangerousFor(
     const(Topology) topol)
 in {
     assert (next.noow);
-    assert (! list.any!(mo => mo.noow));
+    assert (! list.any!(mo => mo.occ.noow));
 }
 out {
-    assert (! list.any!(mo => mo.noow));
+    assert (! list.any!(mo => mo.occ.noow));
 }
 body {
     bool overlaps(in TerOcc top, in TerOcc bottom)
     {
         return topol.rectIntersectsRect(top.selboxOnMap, bottom.selboxOnMap);
     }
-    bool dangerous(in TerOcc occ)
+    bool isDangerous(in TerOcc occ)
     {
         return occ.dark && overlaps(next, occ);
     }
     version (tharsisprofiling)
         auto zone = Zone(profiler, "noow group, any noow");
-    if (! list.any!dangerous)
+    if (! list.any!(mo => isDangerous(mo.occ)))
         return;
     version (tharsisprofiling)
         auto zone2 = Zone(profiler, "noow group, exists danger");
 
     // Initialize the set of pieces to be grouped.
     foreach (ref mo; list)
-        mo.mustGroup = dangerous(mo);
+        mo.mustGroup = isDangerous(mo.occ);
     assert (list.any!(mo => mo.mustGroup));
 
     // Enlarge the group until we don't find anything worthwhile to add
     bool continueGrouping = true;
     while (continueGrouping) {
         continueGrouping = false;
-        // See comment under groupWhatIsDangerousFor for explanation
+        /* Explanation of the following long pipeline:
+         * (1) list.enumerate maps MarkedOccs to
+         *     struct { int index; MarkedOcc value; }
+         * (2) We want to enlarge the group:
+         *     We only care about what's not yet in it.
+         *     Thus, our subject of interest is a non-group piece.
+         * (3) Select only non-group pieces that are overlapped by a
+         *     group piece. Even though overlaps(a, b) == overlaps(b, a),
+         *     we only compare group pieces with higher list index
+         *     than the non-group piece. That's why we enumerated in (1).
+         * (4) Don't do addToGroupAndContinue(tuple.value) because structs
+         *     are value types and tuple.value is a copy of struct MarkedOcc.
+         *     We want to affect list[i]. Thus, access the list with index.
+         */
         list.enumerate // (1)
             .filter!(tuple => ! tuple.value.mustGroup) // (2)
             .filter!(tuple => list[tuple.index + 1 .. $]
                 .filter!(later => later.mustGroup)
-                .any!(later => overlaps(later, tuple.value))) // (3)
+                .any!(later => overlaps(later.occ, tuple.value.occ))) // (3)
             .each!((tuple) {
                 assert (! tuple.value.mustGroup);
                 list[tuple.index].mustGroup = true; // (4)
@@ -118,7 +139,7 @@ body {
     }
     // We create a large tile from all occurrences marked with mustGroup,
     // remove the marked occurrences, and put the large tile into the list.
-    auto key = list.filter!(elem => elem.mustGroup);
+    auto key = list.filter!(elem => elem.mustGroup).map!(mo => mo.occ);
     assert (! key.empty);
     auto loc = key.map!(occ => occ.selboxOnMap)
                   .reduce!(Rect.smallestContainer)
@@ -126,7 +147,7 @@ body {
     try {
         TileGroup group = getGroup(TileGroupKey(key));
         assert (group);
-        auto minPos = list.countUntil(key.front);
+        auto minPos = list.countUntil!(mo => mo.occ == key.front);
         assert (minPos < list.length);
         assert (minPos >= 0);
         // Alter the input list for the 1st time in this function.
@@ -146,15 +167,3 @@ body {
     // Now alter the input list for the 2nd time.
     list = std.algorithm.remove!(elem => elem.mustGroup)(list);
 }
-/* Explanation of the long pipe in while (continueGrouping):
- * (1) list.enumerate maps MarkedOccs to struct { int index; MarkedOcc value; }
- * (2) We want to enlarge the group: We only care about what's not yet in it.
- *     Thus, our subject of interest is a non-group piece.
- * (3) Select only non-group pieces that are overlapped by a group piece.
- *     Even though overlaps(a, b) == overlaps(b, a), we only compare group
- *     pieces with higher list index than the non-group piece. That's why
- *     we did list.enumerate at all in (1).
- * (4) Don't do addToGroupAndContinue(tuple.value), because structs are
- *     value types and tuple.value is a copy of struct MarkedOcc. We want to
- *     affect list[i]. Thus, access the list with index.
- */
