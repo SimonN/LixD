@@ -1,0 +1,96 @@
+$BUILT 2017-11-23 10:58:29
+$AUTHOR mobius
+$ENGLISH Oblique Strategy
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 30
+
+#CLIMBER 2
+#BUILDER 3
+#MINER 2
+#DIGGER 1
+#EXPLODER2 0
+
+:geoo/sandstone/fennec.H: 128 232
+:geoo/sandstone/fennec.H: 560 88
+
+:geoo/sandstone/Goal.G: 552 272
+
+:geoo/construction/sawblade_small.F: 216 264
+:geoo/construction/sawblade_small.F: 328 208
+:geoo/sandstone/torch.F: 200 88
+:geoo/sandstone/torch.F: 464 88
+:geoo/construction/sawblade_small.F: 528 144
+
+:matt/goldmine/plankdiag: 608 192 frr
+:matt/goldmine/plankdiag: 424 168
+:matt/goldmine/plank: 296 200 rr
+:matt/goldmine/plank: 336 200 rr
+:geoo/sandstone/64x64: -8 368
+:geoo/sandstone/64x64: 56 368
+:geoo/sandstone/64x64: 120 368
+:geoo/sandstone/64x64: 184 368
+:geoo/steel/dark_64x64o.S: 424 336
+:geoo/steel/dark_64x64o.S: 488 336
+:geoo/steel/dark_64x64o.S: 552 336
+:geoo/sandstone/pillar_bottom_ext: 32 352
+:geoo/sandstone/pillar_bottom: 48 320
+:geoo/sandstone/pillar_32: 48 288
+:geoo/sandstone/pillar_32: 48 224
+:geoo/sandstone/pillar_top_jaggedl: 48 192
+:geoo/sandstone/pillar_32: 48 256
+:geoo/sandstone/64x64: 248 368
+:geoo/sandstone/pillar_top_jaggedr: 136 192 f
+:geoo/sandstone/pillar_32: 136 104
+:geoo/sandstone/pillar_32: 136 136
+:geoo/steel/dark_64x64o.S: 0 0
+:geoo/steel/dark_64x64o.S: 64 0
+:geoo/steel/dark_64x64o.S: 128 0
+:geoo/steel/dark_64x64o.S: 192 0
+:geoo/steel/dark_64x64o.S: 256 0
+:geoo/steel/dark_64x64o.S: 320 0
+:geoo/steel/dark_64x64o.S: 384 0
+:geoo/steel/dark_64x64o.S: 448 0
+:geoo/steel/dark_64x64o.S: 512 0
+:geoo/steel/dark_64x64o.S: 576 0
+:geoo/sandstone/pillar_top_ext: 120 64
+:geoo/sandstone/pillar_top: 136 80
+:geoo/steel/dark_48x32o.S: 40 64
+:geoo/steel/dark_32x16o.S: 312 256
+:geoo/sandstone/pillar_32: 136 160
+:matt/goldmine/plank: 216 200 r
+:matt/goldmine/plank: 216 200 rr
+:geoo/steel/dark_32x16o.S: 512 208
+:geoo/steel/dark_32x16o.S: 544 208
+:geoo/steel/dark_32x16o.S: 576 208
+:geoo/steel/dark_32x16o.S: 608 208
+:geoo/steel/dark_16x32o.S: 624 144
+:geoo/steel/dark_16x32o.S: 624 176
+:geoo/steel/dark_16x32o.S: 624 80
+:geoo/steel/dark_16x32o.S: 624 112
+:geoo/steel/dark_16x16o.S: 624 64
+:geoo/steel/dark_16x32o.S: 528 96
+:geoo/steel/dark_16x32o.S: 528 64
+:geoo/steel/dark_32x16o.S: 480 208
+:geoo/steel/dark_16x32o.S: 472 248 fr
+:geoo/steel/dark_16x16o.S: 528 128
+:geoo/sandstone/64x64: 480 144
+:geoo/steel/dark_32x16o.S: 448 208
+:geoo/steel/dark_16x32o.S: 448 176
+:matt/goldmine/plank: 296 160 rr
+:geoo/steel/dark_48x32o.S: 392 152 d
+:geoo/sandstone/16x32: 344 336
+:geoo/steel/dark_16x32o.S: 504 248 fr
+:geoo/sandstone/16x32: 464 176
+:geoo/sandstone/16x16: 464 160
+:geoo/sandstone/16x16: 448 160
+:geoo/sandstone/32x64: 312 272
+:geoo/sandstone/32x32: 312 336
+:geoo/steel/dark_64x64o.S: 360 336
+:geoo/steel/dark_48x32o.S: 312 368
+:geoo/steel/dark_16x16o.S: 608 176

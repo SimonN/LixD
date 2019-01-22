@@ -1,0 +1,130 @@
+$BUILT 2017-11-23 14:25:50
+$AUTHOR mobius
+$ENGLISH Tailor Made for... Somebody
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 320
+
+#INITIAL 20
+#REQUIRED 20
+#SPAWN_INTERVAL 40
+
+#BUILDER 11
+#JUMPER 15
+#EXPLODER2 0
+
+:geoo/abstract/hatch.H: 296 216
+
+:simon/tapir/goal.G: 216 24
+
+:simon/water.W: 64 280
+:simon/water.W: 112 280
+:simon/water.W: 160 280
+:simon/water.W: 208 280
+:simon/water.W: 256 280
+:simon/water.W: 304 280
+:simon/water.W: 352 280
+:simon/water.W: 400 280
+:simon/water.W: 448 280
+:simon/water.W: 496 280
+:simon/water.W: 544 280
+
+:simon/tapir/016h: 224 256
+:simon/tapir/008h: 224 208
+:simon/tapir/016h: 256 256
+:simon/tapir/008h: 240 208
+:simon/tapir/008h: 256 208
+:simon/tapir/008h: 272 208
+:simon/tapir/008h: 288 208
+:simon/tapir/008h: 304 208
+:simon/tapir/008h: 320 208
+:simon/tapir/008h: 336 208
+:simon/tapir/008h: 352 208
+:simon/tapir/008h: 368 208
+:simon/tapir/008h: 384 208
+:simon/tapir/016h: 288 256
+:simon/tapir/016h: 320 256
+:simon/tapir/016h: 352 256
+:simon/tapir/016h: 384 256
+:simon/tapir/016h: 416 256
+:simon/tapir/016h: 448 256
+:simon/tapir/064: 576 256
+:simon/tapir/064: 576 192
+:simon/tapir/064: 576 128
+:simon/tapir/064: 576 64
+:simon/tapir/064: 0 256
+:simon/tapir/064: 0 192
+:simon/tapir/064: 0 128
+:simon/tapir/064: 0 64
+:simon/tapir/016h: 480 256
+:simon/tapir/016h: 512 256
+:simon/tapir/016h: 128 256
+:simon/tapir/016h: 160 256
+:simon/tapir/016h: 192 256
+:simon/tapir/008h: 96 176
+:simon/tapir/008h: 112 176
+:simon/tapir/008h: 128 176
+:simon/tapir/008h: 144 176
+:simon/tapir/008h: 160 176
+:simon/tapir/008h: 176 176
+:simon/tapir/008h: 192 176
+:simon/tapir/008h: 208 176
+:simon/tapir/008h: 224 176
+:simon/tapir/008h: 240 176
+:simon/tapir/008h: 304 152
+:simon/tapir/008h: 320 152
+:simon/tapir/008h: 336 152
+:simon/tapir/008h: 352 152
+:simon/tapir/008h: 368 152
+:simon/tapir/008h: 384 152
+:simon/tapir/008h: 96 128
+:simon/tapir/008h: 112 128
+:simon/tapir/008h: 128 128
+:simon/tapir/008h: 144 128
+:simon/tapir/008h: 160 128
+:simon/tapir/008h: 176 128
+:simon/tapir/008h: 192 128
+:simon/tapir/008h: 208 128
+:simon/tapir/008h: 224 128
+:simon/tapir/008h: 240 128
+:simon/tapir/008h: 368 72
+:simon/tapir/008h: 384 72
+:simon/tapir/008h: 400 72
+:simon/tapir/008h: 416 72
+:simon/tapir/008h: 432 72
+:simon/tapir/008h: 448 72
+:simon/tapir/008h: 488 104
+:simon/tapir/008h: 504 104
+:simon/tapir/008h: 520 104
+:simon/tapir/008h: 536 104
+:simon/tapir/008h: 160 72
+:simon/tapir/008h: 176 72
+:simon/tapir/008h: 192 72
+:simon/tapir/008h: 208 72
+:simon/tapir/008h: 224 72
+:simon/tapir/008h: 240 72
+:simon/tapir/008h: 256 72
+:simon/tapir/008h: 272 72
+:simon/tapir/008h: 288 72
+:simon/tapir/008h: 304 72
+:simon/tapir/016h: 96 256
+:simon/tapir/008v: 88 256
+:simon/tapir/064: 576 0
+:simon/tapir/064: 0 0
+:simon/tapir/016h: 192 0
+:simon/tapir/016h: 224 0
+:simon/tapir/016h: 256 0
+:simon/tapir/016h: 288 0
+:simon/tapir/016h: 320 0
+:simon/tapir/016h: 352 0
+:simon/tapir/016h: 384 0
+:simon/tapir/016h: 416 0
+:simon/tapir/016h: 448 0
+:simon/tapir/016h: 480 0
+:simon/tapir/016h: 96 0
+:simon/tapir/016h: 128 0
+:simon/tapir/016h: 160 0
+:simon/tapir/016h: 64 0
+:simon/tapir/016h: 512 0
+:simon/tapir/016h: 544 0

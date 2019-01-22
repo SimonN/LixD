@@ -1,0 +1,92 @@
+$BUILT 2017-11-22 22:09:11
+$AUTHOR mobius
+$ENGLISH Pinnacle of Defeat
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 832
+#SIZE_Y 400
+
+#INITIAL 50
+#REQUIRED 48
+#SPAWN_INTERVAL 4
+
+#RUNNER 1
+#CLIMBER 1
+#BLOCKER 1
+#BUILDER 3
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#CUBER 1
+#EXPLODER2 0
+
+:amanda/forest/hatch.H: 16 248
+:amanda/forest/hatch.H: 104 24
+
+:amanda/forest/exit_tent_condensed.G: 720 128
+
+:simon/water.W: -8 360
+:simon/water.W: 608 352
+:simon/water.W: 656 352
+:simon/water.W: 704 352
+
+:amanda/forest/stone_02: 400 72
+:amanda/forest/stone_02: 336 136
+:amanda/forest/stone_02: 392 240
+:amanda/forest/bark_06: 168 272 r
+:amanda/forest/stone_02: 232 208 frr
+:amanda/forest/stone_00: 288 184
+:amanda/forest/stone_02: 24 336
+:amanda/forest/stone_02: 72 328
+:amanda/forest/stone_02: 128 328
+:amanda/forest/stone_01: 184 288
+:amanda/forest/stone_01: 216 248
+:amanda/forest/stone_01: 240 296
+:amanda/forest/stone_01: 288 312
+:amanda/forest/stone_01: 280 224
+:amanda/forest/stone_02: 208 136
+:amanda/forest/stone_02: 168 128
+:amanda/forest/stone_02: 136 120
+:amanda/forest/stone_02: 448 264
+:amanda/forest/stone_02: 272 64
+:amanda/forest/stone_02: 176 104
+:amanda/forest/stone_00: 384 48
+:amanda/forest/stone_02: 264 120
+:amanda/forest/stone_02: 320 168
+:amanda/forest/stone_01: 264 104
+:amanda/forest/stone_01: 272 56
+:amanda/forest/stone_02: 368 88
+:amanda/forest/stone_00: 416 48
+:amanda/forest/stone_00: 440 40
+:amanda/forest/moss_00: 464 264
+:amanda/forest/stone_02: 440 328
+:amanda/forest/stone_02: 440 352
+:amanda/forest/stone_02: 496 280
+:amanda/forest/stone_02: 496 352
+:amanda/forest/moss_00: 508 272
+:amanda/forest/stone_00: 464 32
+:amanda/forest/stone_02: 544 280
+:amanda/forest/stone_02: 544 352
+:amanda/forest/moss_00: 552 274
+:amanda/forest/stone_02: 224 64
+:amanda/forest/stone_01: 712 304
+:amanda/forest/stone_01: 704 216
+:amanda/forest/stone_01: 752 216
+:amanda/forest/stone_01: 768 320
+:amanda/forest/bark_03: 808 224
+:amanda/forest/leaves_02: 776 136
+:amanda/forest/leaves_05: 808 208
+:amanda/forest/stone_02: 384 128
+:amanda/forest/stone_02: 320 192
+:amanda/forest/stone_00: 376 184
+:amanda/forest/stone_01: 304 248
+:amanda/forest/stone_01: 328 296
+:amanda/forest/stone_01: 376 312
+:amanda/forest/stone_01: 368 224
+:amanda/forest/stone_02: 352 120
+:amanda/forest/stone_02: 392 176
+:amanda/forest/stone_01: 352 104
+:amanda/forest/stone_00: 496 32
+:amanda/forest/stone_01: 320 56
+:amanda/forest/stone_01: 416 288
+:amanda/forest/stone_01: 448 304

@@ -1,0 +1,282 @@
+$BUILT 2017-11-21 21:53:32
+$AUTHOR mobius
+$ENGLISH Ascension
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 320
+
+#INITIAL 40
+#REQUIRED 34
+#SPAWN_INTERVAL 30
+
+#CLIMBER 8
+#EXPLODER 6
+#BLOCKER 12
+#DIGGER 4
+#JUMPER 4
+
+:raymanni/lab/hatch.H: 328 192
+:raymanni/lab/hatch.H: 280 192 r
+
+:raymanni/lab/goal.G: 288 16
+
+:geoo/sandstone/chopper.T: 420 382
+
+:raymanni/lab/goo.W: 128 288
+:raymanni/lab/goo.W: 160 288
+:raymanni/lab/goo.W: 192 288
+:raymanni/lab/goo.W: 224 288
+:raymanni/lab/goo.W: 256 288
+:raymanni/lab/goo.W: 408 384
+:raymanni/lab/goo.W: 440 384
+:raymanni/lab/goo.W: 472 384
+:raymanni/lab/goo.W: 272 144
+:raymanni/lab/goo.W: 288 288
+:raymanni/lab/goo.W: 320 288
+:raymanni/lab/goo.W: 352 288
+:raymanni/lab/goo.W: 384 288
+:raymanni/lab/goo.W: 416 288
+:raymanni/lab/goo.W: 448 288
+:raymanni/lab/goo.W: 480 288
+:raymanni/lab/goo.W: 336 144
+:raymanni/lab/goo.W: 304 144
+
+:geoo/construction/stairsbrick_ru_8: 424 176
+:geoo/construction/stairsbrick_ru_8: 432 80
+:geoo/construction/stairsbrick_ru_8: 424 128
+:geoo/construction/stairsbrick_ru_8: 416 200
+:geoo/construction/stairsbrick_ru_8: 400 392
+:geoo/construction/stairsbrick_rd_32: 368 376
+:amanda/occult/scrawl_pentagram: 408 352
+:raymanni/lab/pipe_1: 408 392
+:raymanni/lab/block_2: 96 256
+:raymanni/lab/block_3: 496 384
+:geoo/steel/64x64o.S: 232 384
+:geoo/steel/64x64o.S: 424 368
+:raymanni/lab/block_2: 96 288
+:raymanni/lab/block_2: 64 288
+:raymanni/lab/block_2: 32 288
+:raymanni/lab/block_2: 16 352
+:raymanni/lab/block_2: 32 256
+:raymanni/lab/block_2: 32 224
+:raymanni/lab/block_2: 32 192
+:raymanni/lab/block_2: 32 160
+:raymanni/lab/block_2: 32 128
+:raymanni/lab/block_2: 32 96
+:raymanni/lab/block_2: 576 256
+:raymanni/lab/block_2: 592 368
+:raymanni/lab/block_2: 576 288
+:raymanni/lab/block_2: 544 288
+:raymanni/lab/block_2: 512 288
+:raymanni/lab/block_2: 512 256
+:raymanni/lab/block_2: 576 224
+:raymanni/lab/block_2: 576 192
+:raymanni/lab/block_2: 576 160
+:raymanni/lab/block_2: 576 128
+:raymanni/lab/block_2: 576 96
+:geoo/steel/16x32o.S: 312 384
+:geoo/steel/16x32o.S: 320 384
+:geoo/steel/16x32o.S: 320 368
+:geoo/steel/16x32o.S: 328 384
+:geoo/steel/16x32o.S: 312 192
+:geoo/steel/16x32o.S: 320 368
+:geoo/steel/16x32o.S: 320 320
+:geoo/steel/32x16o.S: 272 176
+:geoo/steel/32x16o.S: 304 176
+:geoo/steel/32x16o.S: 336 176
+:raymanni/lab/scen_5: 328 360
+:raymanni/lab/scen_6: 608 64
+:raymanni/lab/block_4: 320 392
+:raymanni/lab/block_5: 336 384
+:raymanni/lab/scen_6: 424 360
+:raymanni/lab/scen_5: 0 64
+:raymanni/lab/block_4: 344 392
+:raymanni/lab/block_2: 392 384
+:geoo/steel/32x16o.S: 272 80
+:geoo/steel/32x16o.S: 336 80
+:raymanni/lab/pipe_2: 392 384
+:raymanni/lab/slope_1: 216 360
+:geoo/construction/stairsbrick_rd_8: 208 384
+:geoo/construction/stairsbrick_rd_8: 216 368
+:geoo/construction/stairsbrick_rd_8: 208 368
+:geoo/construction/rod_rust/straight_diagd8: 448 376
+:matt/goldmine/plankdiag2: 272 384
+:raymanni/lab/slope_1: 32 64
+:raymanni/lab/block_2: 144 384
+:raymanni/lab/block_2: 144 352
+:raymanni/lab/block_2: 144 320
+:raymanni/lab/block_2: 88 384
+:raymanni/lab/block_1: 0 256
+:raymanni/lab/block_1: 0 224
+:raymanni/lab/block_1: 0 192
+:raymanni/lab/block_1: 0 160
+:raymanni/lab/block_1: 0 128
+:raymanni/lab/block_1: 0 64
+:raymanni/lab/block_1: 0 32
+:raymanni/lab/block_1: 0 0
+:raymanni/lab/block_1: 32 0
+:raymanni/lab/block_1: 608 256
+:raymanni/lab/block_1: 608 224
+:raymanni/lab/block_1: 608 192
+:raymanni/lab/block_1: 608 160
+:raymanni/lab/block_1: 608 128
+:raymanni/lab/block_1: 608 64
+:raymanni/lab/block_1: 608 32
+:raymanni/lab/block_1: 608 0
+:raymanni/lab/block_1: 576 0
+:raymanni/lab/slope_2: 576 64
+:raymanni/lab/pipe_3: 512 224
+:raymanni/lab/block_2: 512 224
+:raymanni/lab/block_2: 96 224
+:raymanni/lab/block_1: 608 288
+:raymanni/lab/block_1: 0 288
+:geoo/steel/32x16o.S: 348 326 r
+:raymanni/lab/block_1: 64 0
+:raymanni/lab/block_1: 96 0
+:raymanni/lab/block_1: 128 0
+:raymanni/lab/block_1: 160 0
+:raymanni/lab/block_1: 192 0
+:raymanni/lab/block_1: 224 0
+:raymanni/lab/block_1: 256 0
+:raymanni/lab/block_1: 288 0
+:raymanni/lab/block_1: 320 0
+:raymanni/lab/block_1: 352 0
+:raymanni/lab/block_1: 384 0
+:raymanni/lab/block_1: 416 0
+:raymanni/lab/block_1: 448 0
+:raymanni/lab/block_1: 480 0
+:raymanni/lab/block_1: 448 0
+:raymanni/lab/block_1: 480 0
+:raymanni/lab/block_1: 512 0
+:raymanni/lab/block_1: 544 0
+:raymanni/lab/pipe_2: 128 224 r
+:raymanni/lab/pipe_2: 160 224 r
+:raymanni/lab/pipe_2: 192 224 r
+:raymanni/lab/pipe_2: 224 224 r
+:raymanni/lab/pipe_2: 248 224 r
+:raymanni/lab/pipe_2: 280 224 r
+:raymanni/lab/pipe_2: 312 224 r
+:raymanni/lab/pipe_2: 344 224 r
+:raymanni/lab/pipe_2: 376 224 r
+:raymanni/lab/pipe_2: 408 224 r
+:raymanni/lab/pipe_2: 440 224 r
+:raymanni/lab/pipe_2: 472 224 r
+:raymanni/lab/pipe_2: 480 224 r
+:raymanni/lab/pipe_2: 384 200 r
+:raymanni/lab/pipe_2: 416 200 r
+:raymanni/lab/pipe_2: 448 200 r
+:raymanni/lab/pipe_2: 480 200 r
+:raymanni/lab/pipe_2: 512 200 r
+:raymanni/lab/block_4: 368 80
+:raymanni/lab/block_4: 368 96
+:raymanni/lab/block_4: 368 112
+:raymanni/lab/block_4: 368 128
+:raymanni/lab/block_4: 368 144
+:raymanni/lab/block_4: 368 160
+:raymanni/lab/block_4: 368 176
+:raymanni/lab/block_4: 368 192
+:raymanni/lab/block_4: 256 80
+:raymanni/lab/block_4: 256 96
+:raymanni/lab/block_4: 256 112
+:raymanni/lab/block_4: 256 128
+:raymanni/lab/block_4: 256 144
+:raymanni/lab/block_4: 256 160
+:raymanni/lab/block_4: 256 176
+:raymanni/lab/pipe_2: 304 80 r
+:raymanni/lab/pipe_2: 384 176 r
+:raymanni/lab/pipe_2: 416 176 r
+:raymanni/lab/pipe_2: 448 176 r
+:raymanni/lab/pipe_2: 480 176 r
+:raymanni/lab/pipe_2: 512 176 r
+:raymanni/lab/pipe_2: 384 152 r
+:raymanni/lab/pipe_2: 416 152 r
+:raymanni/lab/pipe_2: 448 152 r
+:raymanni/lab/pipe_2: 480 152 r
+:raymanni/lab/pipe_2: 512 152 r
+:raymanni/lab/pipe_2: 384 128 r
+:raymanni/lab/pipe_2: 416 128 r
+:raymanni/lab/pipe_2: 448 128 r
+:raymanni/lab/pipe_2: 480 128 r
+:raymanni/lab/pipe_2: 512 128 r
+:raymanni/lab/pipe_2: 408 104 r
+:raymanni/lab/pipe_2: 448 104 r
+:raymanni/lab/pipe_2: 480 104 r
+:raymanni/lab/pipe_2: 512 104 r
+:raymanni/lab/pipe_2: 384 80 r
+:raymanni/lab/pipe_2: 416 80 r
+:raymanni/lab/pipe_2: 448 80 r
+:raymanni/lab/pipe_2: 480 80 r
+:raymanni/lab/pipe_2: 512 80 r
+:geoo/construction/stairsbrick_ru_8: 384 216
+:geoo/construction/stairsbrick_ru_8: 400 208
+:geoo/construction/stairsbrick_ru_8: 392 192
+:geoo/construction/stairsbrick_ru_8: 408 184
+:geoo/construction/stairsbrick_ru_8: 424 152
+:raymanni/lab/pipe_2: 392 152 r
+:raymanni/lab/pipe_2: 424 152 r
+:geoo/construction/stairsbrick_ru_8: 392 168
+:geoo/construction/stairsbrick_ru_8: 408 160
+:geoo/construction/stairsbrick_ru_8: 392 144
+:geoo/construction/stairsbrick_ru_8: 408 136
+:raymanni/lab/pipe_2: 416 104 r
+:geoo/construction/stairsbrick_ru_8: 424 104
+:raymanni/lab/pipe_2: 384 104 r
+:raymanni/lab/pipe_2: 424 104 r
+:geoo/construction/stairsbrick_ru_8: 392 120
+:geoo/construction/stairsbrick_ru_8: 408 112
+:geoo/construction/stairsbrick_ru_8: 400 96
+:geoo/construction/stairsbrick_ru_8: 416 88
+:geoo/construction/stairsbrick_ru_8: 184 176 frr
+:geoo/construction/stairsbrick_ru_8: 176 80 frr
+:geoo/construction/stairsbrick_ru_8: 184 128 frr
+:geoo/construction/stairsbrick_ru_8: 192 200 frr
+:raymanni/lab/pipe_2: 224 200 fr
+:raymanni/lab/pipe_2: 192 200 fr
+:raymanni/lab/pipe_2: 224 176 fr
+:raymanni/lab/pipe_2: 192 176 fr
+:raymanni/lab/pipe_2: 224 152 fr
+:raymanni/lab/pipe_2: 192 152 fr
+:raymanni/lab/pipe_2: 224 128 fr
+:raymanni/lab/pipe_2: 192 128 fr
+:raymanni/lab/pipe_2: 200 104 fr
+:raymanni/lab/pipe_2: 224 80 fr
+:raymanni/lab/pipe_2: 192 80 fr
+:geoo/construction/stairsbrick_ru_8: 224 216 frr
+:geoo/construction/stairsbrick_ru_8: 208 208 frr
+:geoo/construction/stairsbrick_ru_8: 216 192 frr
+:geoo/construction/stairsbrick_ru_8: 200 184 frr
+:geoo/construction/stairsbrick_ru_8: 184 152 frr
+:raymanni/lab/pipe_2: 216 152 fr
+:raymanni/lab/pipe_2: 184 152 fr
+:geoo/construction/stairsbrick_ru_8: 216 168 frr
+:geoo/construction/stairsbrick_ru_8: 200 160 frr
+:geoo/construction/stairsbrick_ru_8: 216 144 frr
+:geoo/construction/stairsbrick_ru_8: 200 136 frr
+:raymanni/lab/pipe_2: 192 104 fr
+:geoo/construction/stairsbrick_ru_8: 184 104 frr
+:raymanni/lab/pipe_2: 224 104 fr
+:raymanni/lab/pipe_2: 184 104 fr
+:geoo/construction/stairsbrick_ru_8: 216 120 frr
+:geoo/construction/stairsbrick_ru_8: 200 112 frr
+:geoo/construction/stairsbrick_ru_8: 208 96 frr
+:geoo/construction/stairsbrick_ru_8: 192 88 frr
+:raymanni/lab/pipe_2: 96 200 r
+:raymanni/lab/pipe_2: 128 200 r
+:raymanni/lab/pipe_2: 160 200 r
+:raymanni/lab/pipe_2: 96 176 r
+:raymanni/lab/pipe_2: 128 176 r
+:raymanni/lab/pipe_2: 160 176 r
+:raymanni/lab/pipe_2: 96 152 r
+:raymanni/lab/pipe_2: 128 152 r
+:raymanni/lab/pipe_2: 160 152 r
+:raymanni/lab/pipe_2: 96 128 r
+:raymanni/lab/pipe_2: 128 128 r
+:raymanni/lab/pipe_2: 160 128 r
+:raymanni/lab/pipe_2: 96 104 r
+:raymanni/lab/pipe_2: 128 104 r
+:raymanni/lab/pipe_2: 160 104 r
+:raymanni/lab/pipe_2: 96 80 r
+:raymanni/lab/pipe_2: 128 80 r
+:raymanni/lab/pipe_2: 160 80 r
+:raymanni/lab/block_4: 256 192

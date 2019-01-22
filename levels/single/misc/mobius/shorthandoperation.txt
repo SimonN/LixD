@@ -1,0 +1,91 @@
+$BUILT 2017-11-22 21:08:38
+$AUTHOR mobius
+$ENGLISH Short Hand Operation
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 10
+#REQUIRED 9
+#SPAWN_INTERVAL 10
+
+#RUNNER 5
+#CLIMBER 10
+#EXPLODER 1
+#BUILDER 1
+#PLATFORMER 2
+#BASHER 3
+
+:raymanni/lab/hatch.H: 568 232 r
+
+:raymanni/lab/goal.G: 40 168
+
+:raymanni/lab/shower.T: 280 168
+
+:raymanni/lab/goo.W: 264 296
+:raymanni/lab/goo.W: 296 296
+:raymanni/lab/goo.W: 328 296
+:raymanni/lab/goo.W: 168 296
+:raymanni/lab/goo.W: 200 296
+:raymanni/lab/goo.W: 232 296
+
+:raymanni/lab/steel_1.S: 120 328
+:raymanni/lab/block_2: 456 264
+:raymanni/lab/steel_1.S: 536 328
+:raymanni/lab/steel_1.S: 440 328
+:raymanni/lab/steel_1.S: 456 296
+:raymanni/lab/block_2: 456 232
+:raymanni/lab/block_2: 456 200
+:raymanni/lab/block_2: 456 168
+:raymanni/lab/block_2: 456 136
+:raymanni/lab/block_2: 456 104
+:raymanni/lab/steel_1.S: 504 328
+:raymanni/lab/steel_1.S: 408 328
+:raymanni/lab/steel_1.S: 392 296
+:raymanni/lab/steel_1.S: 472 328
+:raymanni/lab/steel_1.S: 376 328
+:raymanni/lab/steel_1.S: 360 296
+:raymanni/lab/steel_1.S: 344 328
+:raymanni/lab/steel_1.S: 248 328
+:raymanni/lab/steel_1.S: 312 328
+:raymanni/lab/steel_1.S: 216 328
+:raymanni/lab/steel_1.S: 280 328
+:raymanni/lab/steel_1.S: 184 328
+:raymanni/lab/block_2: 376 264
+:raymanni/lab/block_2: 376 232
+:raymanni/lab/block_2: 376 200
+:raymanni/lab/block_2: 376 168
+:raymanni/lab/block_2: 376 136
+:raymanni/lab/block_2: 376 72
+:raymanni/lab/steel_1.S: 424 296
+:raymanni/lab/steel_1.S: 152 328
+:raymanni/lab/steel_1.S: 136 296
+:raymanni/lab/steel_1.S: 136 264
+:raymanni/lab/steel_1.S: 344 72
+:raymanni/lab/steel_1.S: 312 72
+:raymanni/lab/steel_1.S: 280 72
+:raymanni/lab/steel_1.S: 248 72
+:raymanni/lab/steel_1.S: 216 72
+:raymanni/lab/steel_1.S: 344 232
+:raymanni/lab/steel_1.S: 312 232
+:raymanni/lab/steel_1.S: 280 232
+:raymanni/lab/steel_1.S: 248 232
+:raymanni/lab/steel_1.S: 216 232
+:raymanni/lab/steel_1.S: 136 232
+:raymanni/lab/block_7: 72 232
+:raymanni/lab/block_7: 8 296
+:raymanni/lab/block_8: 72 296
+:raymanni/lab/block_10: 8 232
+:raymanni/lab/steel_1.S: 280 136
+:raymanni/lab/steel_1.S: 280 72
+:raymanni/lab/block_2: 376 104
+:raymanni/lab/steel_1.S: 280 104
+:raymanni/lab/steel_1.S: 312 104
+:raymanni/lab/steel_1.S: 344 104
+:raymanni/lab/steel_1.S: 248 104
+:raymanni/lab/steel_1.S: 216 104
+:raymanni/lab/steel_1.S: 568 328
+:raymanni/lab/steel_1.S: 184 72
+:raymanni/lab/steel_1.S: 184 104
+:raymanni/lab/steel_1.S: 184 232

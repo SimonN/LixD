@@ -1,0 +1,90 @@
+$BUILT 2019-01-26 12:32:54
+$AUTHOR mobius
+$ENGLISH Now Use Builders and Blockers
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 880
+#SIZE_Y 272
+
+#INITIAL 100
+#REQUIRED 98
+#SPAWN_INTERVAL 10
+
+#BLOCKER 2
+#BUILDER 17
+#EXPLODER2 0
+
+:geoo/abstract/hatch.H: 200 168
+:geoo/abstract/hatch.H: 640 168
+
+:matt/goldmine/Goal.G: 784 32
+
+:geoo/construction/Laser_hz_16.F: 522 70
+:geoo/construction/Laseremit_vrt_16.F: 516 74
+:geoo/construction/Laser_vr_16.F: 528 80
+:geoo/construction/Laser_hz_64.F: 712 152
+:geoo/construction/Laser_hz_64.F: 656 152
+:geoo/construction/Laseremit_hzl_16.F: 640 152
+:geoo/construction/Laser_vr_64.F: 528 96
+:geoo/construction/Laser_vr_64.F: 528 160
+:geoo/construction/Laseremit_vrb_16.F: 528 224
+:geoo/construction/Laseremit_vrt_16.F: 528 74
+:geoo/construction/Laseremit_hzr_16.F: 192 152
+:geoo/construction/Laser_hz_64.F: 128 152
+:geoo/construction/Laser_hz_64.F: 72 152
+
+:matt/goldmine/crate64: 0 208
+:matt/goldmine/plank: 128 264
+:matt/goldmine/crate64: 0 144
+:matt/goldmine/crate64: 0 80
+:matt/goldmine/crate64: 344 208
+:matt/goldmine/crate64: 344 144
+:matt/goldmine/crate64: 344 80
+:matt/goldmine/crate64: 408 208
+:matt/goldmine/crate64: 408 144
+:matt/goldmine/crate64: 408 80
+:matt/goldmine/crate64: 472 208
+:matt/goldmine/crate64: 472 144
+:matt/goldmine/crate64: 472 80
+:matt/goldmine/plank: 88 272
+:matt/goldmine/plank: 216 264
+:matt/goldmine/plank: 536 264
+:matt/goldmine/plank: 624 264
+:matt/goldmine/crate64: 752 208
+:matt/goldmine/crate64: 752 144
+:matt/goldmine/crate64: 752 80
+:matt/goldmine/crate64: 816 208
+:matt/goldmine/crate64: 816 144
+:matt/goldmine/crate64: 816 80
+:matt/goldmine/crate64: 64 208
+:matt/goldmine/crate64: 64 144
+:matt/goldmine/crate64: 64 80
+:matt/goldmine/minecart: 32 32
+:matt/goldmine/00: 360 -32 r
+:matt/goldmine/08: 256 -64 rrr
+:matt/goldmine/07: 48 -72 rr
+:matt/goldmine/planksupport: 168 -8 rr
+:matt/goldmine/crate32: 224 112 d
+:matt/goldmine/crate32: 248 112 d
+:matt/goldmine/crate32: 264 104 d
+:matt/goldmine/crate32: 192 112 d
+:matt/goldmine/crate32: 168 112 d
+:matt/goldmine/10: 256 88 d
+:matt/goldmine/08: 584 -72 r
+:matt/goldmine/08: 480 -64 rrr
+:matt/goldmine/04: 400 -80 r
+:matt/goldmine/07: 584 -72 rr
+:matt/goldmine/00: 232 -48
+:matt/goldmine/explosivecrate: 408 208
+:matt/goldmine/explosivecrate: 752 80
+:matt/goldmine/explosivecrate: 344 80
+:matt/goldmine/explosivecrate: 64 144
+:matt/goldmine/planksupport: 584 -40 rr
+:matt/goldmine/10: 168 96 d
+:matt/goldmine/10: 176 88 d
+:matt/goldmine/10: 576 64 d
+:matt/goldmine/10: 576 80 d
+:matt/goldmine/10: 680 56 d
+:matt/goldmine/10: 688 80 d
+:matt/goldmine/10: 696 72 d
+:matt/goldmine/10: 664 72 d

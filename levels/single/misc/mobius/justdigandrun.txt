@@ -1,0 +1,62 @@
+$BUILT 2017-11-23 13:05:25
+$AUTHOR mobius
+$ENGLISH Just Dig... and Run
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1024
+#SIZE_Y 400
+
+#INITIAL 40
+#REQUIRED 35
+#SPAWN_INTERVAL 20
+
+#RUNNER 10
+#DIGGER 10
+#EXPLODER2 0
+
+:matt/goldmine/Hatch.H: 88 24
+
+:matt/goldmine/Goal.G: 832 256
+
+:matt/goldmine/00: 736 296
+:matt/goldmine/09: 232 302 f
+:matt/goldmine/09: 352 296 rrr
+:matt/goldmine/07: 128 298
+:matt/goldmine/07: 256 296
+:matt/goldmine/07: 112 328
+:matt/goldmine/07: 288 344
+:matt/goldmine/07: 400 296
+:matt/goldmine/07: 384 328
+:matt/goldmine/04: 560 280 d
+:matt/goldmine/00: 496 304
+:matt/goldmine/09: 416 232 frd
+:matt/goldmine/00: 456 300
+:matt/goldmine/explosivecrate: 152 136
+:matt/goldmine/crate64: 216 136
+:matt/goldmine/crate64: 280 136
+:matt/goldmine/crate64: 344 136
+:matt/goldmine/crate64: 408 136
+:matt/goldmine/explosivecrate: 280 136
+:matt/goldmine/explosivecrate: 408 136
+:matt/goldmine/crate64: 472 136
+:matt/goldmine/crate64: 88 136
+:matt/goldmine/09: 616 302 f
+:matt/goldmine/09: 736 296 rrr
+:matt/goldmine/07: 512 298
+:matt/goldmine/07: 640 296
+:matt/goldmine/07: 496 328
+:matt/goldmine/07: 672 344
+:matt/goldmine/07: 784 296
+:matt/goldmine/07: 768 328
+:matt/goldmine/04: 960 296 d
+:matt/goldmine/09: 800 232 frd
+:matt/goldmine/00: 840 300
+:matt/goldmine/explosivecrate: 536 136
+:matt/goldmine/crate64: 600 136
+:matt/goldmine/crate64: 664 136
+:matt/goldmine/crate64: 728 136
+:matt/goldmine/crate64: 792 136
+:matt/goldmine/explosivecrate: 664 136
+:matt/goldmine/explosivecrate: 792 136
+:matt/goldmine/crate64: 856 136
+:matt/goldmine/explosivecrate: 920 136

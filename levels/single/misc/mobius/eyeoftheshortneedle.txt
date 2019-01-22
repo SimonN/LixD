@@ -1,0 +1,73 @@
+$BUILT 2017-11-22 20:39:39
+$AUTHOR mobius
+$ENGLISH Eye of the Short Needle
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 10
+#REQUIRED 8
+#SPAWN_INTERVAL 10
+
+#RUNNER 1
+#CLIMBER 3
+#FLOATER 1
+#EXPLODER 1
+#BLOCKER 1
+#PLATFORMER 4
+#DIGGER 1
+
+:geoo/construction/Hatch.H: 152 176
+
+:geoo/construction/Goal2.G: 512 256
+
+:geoo/construction/squarebrick_large: 168 264
+:geoo/construction/squarebrick_large: 200 264
+:geoo/steel/64x64o.S: 232 232
+:geoo/steel/64x64o.S: 232 168
+:geoo/steel/64x64o.S: 232 104
+:geoo/steel/64x64o.S: 40 232
+:geoo/steel/64x64o.S: 40 168
+:geoo/steel/64x64o.S: 40 104
+:geoo/construction/squarebrick_large: 168 264
+:geoo/construction/squarebrick_large: 200 264
+:geoo/construction/squarebrick_large: 104 264
+:geoo/construction/squarebrick_large: 136 264
+:geoo/steel/64x64o.S: 384 320
+:geoo/steel/64x64o.S: 448 320
+:geoo/steel/64x64o.S: 512 320
+:geoo/steel/64x64o.S: 320 320
+:geoo/construction/wall/small_64x64: 296 104
+:geoo/construction/wall/small_64x64: 360 104
+:geoo/steel/64x64o.S: 40 296
+:geoo/construction/wall/small_64x64: 32 0
+:geoo/construction/wall/small_64x64: 96 -32
+:geoo/construction/wall/small_64x64: 160 -32
+:geoo/construction/wall/small_64x64: 208 -16
+:geoo/construction/wall/small_64x64: 272 -16
+:geoo/construction/wall/small_64x64: 320 -32
+:geoo/construction/wall/small_brickdiag_bu: 320 32
+:geoo/construction/wall/small_64x64: 368 -16
+:geoo/construction/wall/small_64x64: 432 -16
+:geoo/construction/wall/small_64x64: 480 0
+:geoo/construction/wall/small_64x64: 544 -32
+:geoo/construction/wall/small_brickdiag_bu: 80 48
+:geoo/construction/wall/small_brickdiag_bu: 96 32
+:geoo/construction/wall/small_brickdiag_bd: 192 32
+:geoo/construction/wall/small_brickdiag_bd: 464 48
+:geoo/construction/wall/small_brickdiag_bd: 384 32
+:geoo/construction/wall/small_brickdiag_bd: 376 152 fd
+:geoo/construction/wall/small_brickdiag_bu: 528 48
+:geoo/construction/wall/small_brickdiag_bu: 544 32
+:geoo/construction/wall/small_brickdiag_bd: 48 48
+:geoo/construction/wall/small_brickdiag_bd: 32 32
+:geoo/construction/wall/big_brickdiag_td: 0 32 d
+:geoo/construction/wall/small_brickdiag_bd: 16 16
+:geoo/construction/wall/small_brickdiag_bd: 0 0
+:geoo/construction/wall/small_brickdiag_bu: 592 16
+:geoo/construction/wall/small_brickdiag_bu: 608 0
+:geoo/construction/wall/small_brickdiag_bu: 344 152
+:geoo/construction/wall/small_brickdiag_bd: 360 152 fd
+:geoo/construction/wall/small_brickdiag_bd: 392 152 fd
+:geoo/construction/wall/small_brickdiag_bd: 368 32 rrd

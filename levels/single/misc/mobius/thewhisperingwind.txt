@@ -1,0 +1,192 @@
+$BUILT 2017-07-28 16:14:49
+$AUTHOR mobius
+$ENGLISH The Whispering Wind
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1376
+#SIZE_Y 400
+#START_X 160
+#START_Y -20
+
+#INITIAL 5
+#REQUIRED 5
+#SPAWN_INTERVAL 40
+
+#RUNNER 2
+#CLIMBER 3
+#FLOATER 2
+#BUILDER 3
+#BASHER 1
+#MINER 2
+#EXPLODER 0
+
+:matt/goldmine/Hatch.H: 226 46
+
+:matt/goldmine/Goal.G: 1232 288
+
+:simon/water.W: 208 352
+:simon/water.W: 256 352
+:simon/water.W: 304 352
+:simon/water.W: 352 352
+:simon/water.W: 400 352
+:simon/water.W: 448 352
+:simon/water.W: 112 352
+:simon/water.W: 160 352
+:simon/water.W: 64 352
+
+:matt/goldmine/plank: 704 200 r
+:matt/goldmine/crate64: 776 352
+:matt/goldmine/08: 752 -32 rr
+:matt/goldmine/04: -16 304
+:matt/goldmine/09: -32 336
+:matt/goldmine/crate64: 1008 144
+:matt/goldmine/crate64: 1008 208
+:matt/goldmine/09: 904 104
+:matt/goldmine/tracks: 1008 136
+:matt/goldmine/explosivecrate: 1008 144
+:matt/goldmine/09: 952 104
+:matt/goldmine/08: 952 160
+:matt/goldmine/08: 896 152
+:matt/goldmine/08: 848 128
+:matt/goldmine/crate64: 64 0
+:matt/goldmine/crate32: 200 160
+:matt/goldmine/crate32: 232 160
+:matt/goldmine/crate32: 264 160
+:matt/goldmine/crate32: 392 160
+:matt/goldmine/crate32: 424 160
+:matt/goldmine/crate32: 456 160
+:matt/goldmine/crate32: 488 160
+:matt/goldmine/crate64: 80 32
+:matt/goldmine/crate64: 96 0
+:matt/goldmine/07: 400 -64
+:matt/goldmine/07: 496 -16
+:matt/goldmine/05: 624 48
+:matt/goldmine/00: 576 32
+:matt/goldmine/00: 592 64
+:matt/goldmine/00: 608 80
+:matt/goldmine/00: 624 96
+:matt/goldmine/00: 672 112
+:matt/goldmine/00: 640 32
+:matt/goldmine/00: 656 48
+:matt/goldmine/00: 672 64
+:matt/goldmine/00: 688 80
+:matt/goldmine/00: 688 0
+:matt/goldmine/00: 704 16
+:matt/goldmine/00: 720 32
+:matt/goldmine/00: 736 48
+:matt/goldmine/07: 608 -32
+:matt/goldmine/explosivecrate: 648 288
+:matt/goldmine/explosivecrate: 712 352
+:matt/goldmine/explosivecrate: 712 288
+:matt/goldmine/explosivecrate: 816 336
+:matt/goldmine/explosivecrate: 776 288
+:matt/goldmine/explosivecrate: 880 336
+:matt/goldmine/explosivecrate: 880 272
+:matt/goldmine/explosivecrate: 944 336
+:matt/goldmine/explosivecrate: 944 272
+:matt/goldmine/explosivecrate: 1008 336
+:matt/goldmine/explosivecrate: 1008 272
+:matt/goldmine/explosivecrate: 1072 336
+:matt/goldmine/explosivecrate: 1072 272
+:matt/goldmine/explosivecrate: 1136 336
+:matt/goldmine/explosivecrate: 1136 272
+:matt/goldmine/07: 752 328
+:matt/goldmine/09: 816 232
+:matt/goldmine/07: 832 320
+:matt/goldmine/crate64: 1136 336
+:matt/goldmine/07: 944 352
+:matt/goldmine/08: 904 224
+:matt/goldmine/09: 824 168
+:matt/goldmine/09: 840 224
+:matt/goldmine/09: 888 232
+:matt/goldmine/08: 872 224
+:matt/goldmine/08: 928 232
+:matt/goldmine/08: 976 232
+:matt/goldmine/07: 968 336
+:matt/goldmine/07: 888 312
+:matt/goldmine/crate64: 1072 144
+:matt/goldmine/crate64: 1072 208
+:matt/goldmine/crate64: 1136 144
+:matt/goldmine/crate64: 1136 208
+:matt/goldmine/explosivecrate: 1200 336
+:matt/goldmine/explosivecrate: 1264 336
+:matt/goldmine/crate64: 1264 336
+:matt/goldmine/07: 1160 352
+:matt/goldmine/07: 576 -64
+:matt/goldmine/crate16: 624 384
+:matt/goldmine/crate16: 640 384
+:matt/goldmine/explosivecrate: 648 352
+:matt/goldmine/07: 656 360
+:matt/goldmine/crate32: 104 256
+:matt/goldmine/crate32: 136 256
+:matt/goldmine/crate32: 72 224 rrr
+:matt/goldmine/crate32: 72 192 rrr
+:matt/goldmine/crate32: 168 224 rrr
+:matt/goldmine/crate32: 168 192 rrr
+:matt/goldmine/crate32: 168 160
+:matt/goldmine/explosivecrate: 496 352
+:geoo/steel/64x64o.S: 960 336
+:geoo/steel/32x32o.S: 976 304
+:geoo/steel/32x16o.S: 992 288
+:geoo/steel/32x32o.S: 992 288
+:matt/goldmine/00: 1176 -32
+:matt/goldmine/00: 1200 -16
+:matt/goldmine/00: 1224 8
+:matt/goldmine/00: 1240 24
+:matt/goldmine/00: 1288 24
+:matt/goldmine/00: 1256 -40
+:matt/goldmine/00: 1272 -24
+:matt/goldmine/00: 1312 0
+:matt/goldmine/00: 1328 -40
+:matt/goldmine/00: 1144 -56
+:matt/goldmine/crate32: 72 256 rrr
+:matt/goldmine/crate32: 168 256 rrr
+:matt/goldmine/crate16: 200 192
+:matt/goldmine/crate16: 216 192
+:matt/goldmine/crate16: 232 192
+:matt/goldmine/crate16: 248 192
+:matt/goldmine/crate16: 264 192
+:matt/goldmine/crate16: 280 192
+:matt/goldmine/crate16: 392 192
+:matt/goldmine/crate16: 408 192
+:matt/goldmine/crate16: 424 192
+:matt/goldmine/crate16: 440 192
+:matt/goldmine/crate16: 456 192
+:matt/goldmine/crate16: 472 192
+:matt/goldmine/crate16: 488 192
+:matt/goldmine/crate16: 504 192
+:matt/goldmine/tracks: 1056 136
+:matt/goldmine/minecart: 1064 96
+:matt/goldmine/crate64: 712 288
+:matt/goldmine/explosivecrate: 1136 208
+:matt/goldmine/crate64: 1136 272
+:geoo/steel/64x64o.S: 656 0
+:geoo/steel/32x32o.S: 680 128
+:matt/goldmine/crate32: 520 160
+:matt/goldmine/crate32: 552 160
+:matt/goldmine/crate16: 520 192
+:matt/goldmine/crate16: 536 192
+:matt/goldmine/crate16: 552 192
+:matt/goldmine/crate16: 568 192
+:matt/goldmine/00: 576 136 rrd
+:matt/goldmine/00: 640 112
+:geoo/steel/64x64o.S: 656 64
+:geoo/steel/32x32o.S: 680 128
+:geoo/steel/16x32o.S: 184 160
+:geoo/steel/16x32o.S: 184 192
+:geoo/steel/16x32o.S: 184 224
+:matt/goldmine/crate16: 576 400
+:matt/goldmine/06: 554 360 d
+:matt/goldmine/crate16: 608 384
+:matt/goldmine/crate16: 592 384
+:matt/goldmine/crate16: 576 384
+:matt/goldmine/crate16: 560 384
+:matt/goldmine/crate32: 296 160
+:matt/goldmine/crate32: 328 160
+:matt/goldmine/crate32: 360 160
+:matt/goldmine/crate16: 296 192
+:matt/goldmine/crate16: 312 192
+:matt/goldmine/crate16: 328 192
+:matt/goldmine/crate16: 344 192
+:matt/goldmine/crate16: 360 192
+:matt/goldmine/crate16: 376 192

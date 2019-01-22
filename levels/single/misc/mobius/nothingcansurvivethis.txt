@@ -1,0 +1,130 @@
+$BUILT 2017-11-23 14:27:13
+$AUTHOR mobius
+$ENGLISH Nothing Can Survive This
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 20
+#REQUIRED 19
+#SPAWN_INTERVAL 70
+
+#RUNNER 10
+#CLIMBER 10
+#FLOATER 10
+#PLATFORMER 4
+#BASHER 1
+#EXPLODER2 0
+
+:simon/hatch001.H: 24 56
+
+:geoo/construction/Goal2.G: 544 104
+
+:geoo/construction/squarebrick_large: 0 304
+:geoo/construction/concrete/064h: 0 336
+:geoo/construction/concrete/064h: 128 336
+:geoo/construction/concrete/064h: 256 336
+:geoo/construction/concrete/064h: 384 336
+:geoo/construction/concrete/064h: 512 336
+:geoo/construction/squarebrick_large: 32 304
+:geoo/construction/squarebrick_large: 0 272
+:geoo/construction/squarebrick_large: 32 272
+:geoo/construction/squarebrick_large: 64 272
+:geoo/construction/squarebrick_large: 96 272
+:geoo/construction/squarebrick_large: 64 304
+:geoo/construction/squarebrick_large: 96 304
+:geoo/construction/squarebrick_large: 0 240
+:geoo/construction/squarebrick_large: 32 240
+:geoo/construction/squarebrick_large: 0 208
+:geoo/construction/squarebrick_large: 32 208
+:geoo/construction/squarebrick_large: 64 208
+:geoo/construction/squarebrick_large: 96 208
+:geoo/construction/squarebrick_large: 64 240
+:geoo/construction/squarebrick_large: 96 240
+:geoo/construction/squarebrick_large: 0 176
+:geoo/construction/squarebrick_large: 32 176
+:geoo/construction/squarebrick_large: 64 176
+:geoo/construction/squarebrick_large: 96 176
+:geoo/construction/squarebrick_large: 256 268
+:geoo/construction/squarebrick_large: 288 268
+:geoo/construction/squarebrick_large: 256 300
+:geoo/construction/squarebrick_large: 288 300
+:geoo/construction/squarebrick_large: 256 204
+:geoo/construction/squarebrick_large: 288 204
+:geoo/construction/squarebrick_large: 256 236
+:geoo/construction/squarebrick_large: 288 236
+:geoo/construction/squarebrick_large: 256 172
+:geoo/construction/squarebrick_large: 288 172
+:geoo/construction/squarebrick_large: 512 296
+:geoo/construction/squarebrick_large: 544 296
+:geoo/construction/squarebrick_large: 512 264
+:geoo/construction/squarebrick_large: 544 264
+:geoo/construction/squarebrick_large: 576 264
+:geoo/construction/squarebrick_large: 608 264
+:geoo/construction/squarebrick_large: 576 296
+:geoo/construction/squarebrick_large: 608 296
+:geoo/construction/squarebrick_large: 512 232
+:geoo/construction/squarebrick_large: 544 232
+:geoo/construction/squarebrick_large: 512 200
+:geoo/construction/squarebrick_large: 544 200
+:geoo/construction/squarebrick_large: 576 200
+:geoo/construction/squarebrick_large: 608 200
+:geoo/construction/squarebrick_large: 576 232
+:geoo/construction/squarebrick_large: 608 232
+:geoo/construction/squarebrick_large: 512 168
+:geoo/construction/squarebrick_large: 544 168
+:geoo/construction/squarebrick_large: 576 168
+:geoo/construction/squarebrick_large: 608 168
+:geoo/construction/concrete/064h: 640 336
+:geoo/construction/concrete/064h: 768 336
+:geoo/construction/squarebrick_large: 320 300
+:geoo/construction/squarebrick_large: 352 300
+:geoo/construction/squarebrick_large: 320 268
+:geoo/construction/squarebrick_large: 352 268
+:geoo/construction/squarebrick_large: 320 236
+:geoo/construction/squarebrick_large: 352 236
+:geoo/construction/squarebrick_large: 320 204
+:geoo/construction/squarebrick_large: 352 204
+:geoo/construction/squarebrick_large: 320 172
+:geoo/construction/squarebrick_large: 352 172
+:geoo/construction/platformbrick: 256 334
+:geoo/construction/platformbrick: 288 334
+:geoo/construction/platformbrick: 320 334
+:geoo/construction/platformbrick: 352 334
+:geoo/construction/platformbrick: 256 332
+:geoo/construction/platformbrick: 288 332
+:geoo/construction/platformbrick: 320 332
+:geoo/construction/platformbrick: 352 332
+:geoo/construction/platformbrick: 512 334
+:geoo/construction/platformbrick: 544 334
+:geoo/construction/platformbrick: 576 334
+:geoo/construction/platformbrick: 608 334
+:geoo/construction/platformbrick: 512 332
+:geoo/construction/platformbrick: 544 332
+:geoo/construction/platformbrick: 576 332
+:geoo/construction/platformbrick: 608 332
+:geoo/construction/platformbrick: 512 330
+:geoo/construction/platformbrick: 544 330
+:geoo/construction/platformbrick: 576 330
+:geoo/construction/platformbrick: 608 330
+:geoo/construction/platformbrick: 512 328
+:geoo/construction/platformbrick: 544 328
+:geoo/construction/platformbrick: 576 328
+:geoo/construction/platformbrick: 608 328
+:geoo/construction/wall/big_brick1: 0 0
+:geoo/construction/wall/big_brick1: 64 0
+:geoo/construction/wall/big_brick1: 128 0
+:geoo/construction/wall/big_brick1: 192 0
+:geoo/construction/wall/big_brick1: 256 0
+:geoo/construction/wall/big_brick1: 320 0
+:geoo/construction/wall/big_brick1: 384 0
+:geoo/construction/wall/big_brick1: 448 0
+:geoo/construction/wall/big_brick1: 512 0
+:geoo/construction/wall/big_brick1: 576 0
+:geoo/construction/wall/big_brickdiag_bu: 160 32
+:geoo/construction/wall/big_brickdiag_bd: 96 32
+:geoo/construction/wall/big_brickdiag_bu: 352 32
+:geoo/construction/wall/big_brickdiag_bd: 288 32
+:geoo/construction/wall/big_brickdiag_bu: 544 32
+:geoo/construction/wall/big_brickdiag_bd: 480 32
