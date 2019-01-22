@@ -1,0 +1,37 @@
+$BUILT 2017-09-30 11:14:00
+$AUTHOR geoo
+$ENGLISH Parrot Cage
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 222
+#SIZE_Y 160
+
+#INITIAL 5
+#REQUIRED 5
+#SPAWN_INTERVAL 40
+
+#CLIMBER 5
+#BUILDER 2
+#MINER 1
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 0 0
+
+:geoo/abstract/goal.G: 96 80
+
+:geoo/sandstone/torch.F: 68 95
+:geoo/sandstone/torch.F: 124 95
+:simon/water.W: -16 120
+:simon/water.W: 32 120
+:simon/water.W: 208 120
+
+:geoo/sandstone/32x32: 144 56
+:geoo/sandstone/32x32: 128 40
+:geoo/sandstone/32x64: 190 0
+:geoo/sandstone/32x32: 96 26
+:geoo/sandstone/32x32: 48 40
+:geoo/sandstone/64x32: 80 128
+:geoo/sandstone/64x32: 144 128
+:geoo/sandstone/64x32: 0 88
+:geoo/sandstone/32x32: 32 56
+:geoo/sandstone/32x32: 64 26

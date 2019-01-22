@@ -1,0 +1,54 @@
+$BUILT 2016-07-13 02:39:58
+$AUTHOR Simon
+$ENGLISH Jerboa Garden
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 320
+#SIZE_Y 200
+
+#SECONDS 0
+#INITIAL 7
+#REQUIRED 7
+#SPAWN_INTERVAL 13
+
+#CLIMBER 2
+#BUILDER 1
+#BASHER 1
+#MINER 1
+#DIGGER 2
+#EXPLODER2 0
+
+:matt/earth/Hatch.H: 8 16
+
+:matt/earth/Goal.G: 263 46
+
+:matt/earth/27: 262 124 frr
+:matt/earth/18: 266 110
+:matt/earth/09: 262 118
+:matt/earth/28: 256 116
+:matt/earth/19: 256 100
+:matt/earth/04: 4 122
+:geoo/sandstone/32x64: 132 66
+:matt/earth/01: 14 126
+:matt/earth/07: 34 120 rrr
+:geoo/sandstone/64x64: 80 88
+:matt/earth/18: 136 120
+:geoo/sandstone/64x64: 164 76
+:matt/earth/09: 138 114
+:matt/earth/07b: 186 112
+:matt/earth/10: 128 118 fr
+:matt/earth/06: 190 116 r
+:matt/earth/09: 108 136
+:matt/earth/28: 148 158 frr
+:matt/earth/09: 132 162 rr
+:matt/earth/13: 58 138
+:matt/earth/03: 88 136
+:matt/earth/09: 86 148
+:matt/earth/06: 114 150 frr
+:matt/earth/01: 82 152
+:matt/earth/08: 54 162 frr
+:matt/earth/01: 50 172 frr
+:geoo/sandstone/pillar_bottom_ext: 228 88 rrrd
+:matt/earth/09: 24 120 frr
+:geoo/sandstone/slopes/32x32lt: 252 94 d
+:matt/earth/09: 233 96 rrd

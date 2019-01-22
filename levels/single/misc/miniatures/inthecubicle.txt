@@ -1,0 +1,35 @@
+$BUILT 2017-10-04 23:01:54
+$AUTHOR geoo
+$ENGLISH In the Cubicle
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 160
+#SIZE_Y 176
+
+#INITIAL 8
+#REQUIRED 7
+#SPAWN_INTERVAL 21
+
+#PLATFORMER 3
+#DIGGER 1
+#CUBER 1
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 80 0
+
+:simon/tapir/goal.G: 48 128
+
+:geoo/sandstone/64x64: 48 56
+:geoo/sandstone/smaragd: 80 88
+:geoo/sandstone/smaragd: 64 72
+:geoo/construction/platform.S: 48 174
+:geoo/construction/platform.S: 80 174
+:geoo/sandstone/32x64: 0 56
+:geoo/sandstone/32x64: 128 56
+:geoo/sandstone/32x64: 128 -8
+:geoo/sandstone/32x64: 0 -8
+:geoo/sandstone/32x64: 128 120
+:geoo/sandstone/32x64: 0 120
+:geoo/construction/platform.S: 62 143
+:geoo/construction/platform.S: 70 143
+:geoo/construction/platform.S: 58 143

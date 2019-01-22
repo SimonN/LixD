@@ -1,0 +1,176 @@
+$BUILT 2018-08-19 13:51:03
+$AUTHOR Simon
+$ENGLISH Korean Washing Machine
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 528
+#SIZE_Y 460
+
+#INITIAL 12
+#REQUIRED 10
+#SPAWN_INTERVAL 29
+
+#WALKER 2
+#RUNNER 2
+#CLIMBER 2
+#FLOATER 2
+#EXPLODER2 2
+#BLOCKER 2
+#BUILDER 2
+#PLATFORMER 2
+#BASHER 2
+#MINER 2
+#DIGGER 2
+#JUMPER 2
+#BATTER 2
+#CUBER 2
+
+:simon/hatch001.H: 240 272
+
+:geoo/abstract/goal.G: 400 80
+
+:raymanni/lab/goo_fall.W: 466 214
+:raymanni/lab/goo_fall.W: 466 230
+:raymanni/lab/goo_fall.W: 466 246
+:raymanni/lab/goo_fall.W: 466 262
+:raymanni/lab/goo_fall.W: 466 278
+:raymanni/lab/goo_fall.W: 466 294
+:raymanni/lab/goo_fall.W: 466 310
+:raymanni/lab/goo_fall.W: 466 326
+:raymanni/lab/goo_fall.W: 466 342
+:raymanni/lab/goo_fall.W: 466 358
+:raymanni/lab/goo_fall.W: 466 374
+:raymanni/lab/goo_fall.W: 466 390
+:raymanni/lab/goo_fall.W: 466 406
+:raymanni/lab/goo_fall.W: 466 422
+:raymanni/lab/goo.W: 456 416
+:raymanni/lab/goo.W: 488 416
+:simon/water_thin.W: 218 194
+:simon/water_thin.W: 266 194
+:raymanni/lab/goo.W: 520 416
+
+:raymanni/lab/scen_1: 456 154 frr
+:raymanni/lab/scen_2: 415 156 r
+:geoo/construction/concrete/128: 72 192
+:geoo/construction/concrete/128: 328 192
+:geoo/construction/concrete/128: 72 64
+:geoo/construction/concrete/128: 200 64
+:geoo/construction/concrete/128: 200 320
+:geoo/construction/concrete/128: 72 320
+:geoo/construction/concrete/128: 328 320
+:geoo/construction/concrete/128: 328 64
+:geoo/construction/concrete/032v: 176 240 d
+:geoo/construction/concrete/032v: 176 288 d
+:geoo/construction/concrete/032v: 328 296 d
+:geoo/construction/concrete/032v: 328 232 d
+:geoo/construction/concrete/064h: 202 318 d
+$BEGIN_TILE_GROUP 0
+:proxima/tile/spheres/cyan: 24 40
+:proxima/tile/spheres/cyan: 48 16
+:proxima/tile/spheres/cyan: 80 0
+:proxima/tile/spheres/cyan: 112 0
+:proxima/tile/spheres/cyan: 144 6
+:proxima/tile/spheres/cyan: 176 22
+:proxima/tile/spheres/cyan: 200 46
+:proxima/tile/spheres/cyan: 216 78
+:proxima/tile/spheres/cyan: 216 110
+:proxima/tile/spheres/cyan: 216 110
+:proxima/tile/spheres/cyan: 210 142
+:proxima/tile/spheres/cyan: 194 174
+:proxima/tile/spheres/cyan: 170 198
+:proxima/tile/spheres/cyan: 138 214
+:proxima/tile/spheres/cyan: 106 214 r
+:proxima/tile/spheres/cyan: 106 214
+:proxima/tile/spheres/cyan: 74 208
+:proxima/tile/spheres/cyan: 42 192
+:proxima/tile/spheres/cyan: 18 168
+:proxima/tile/spheres/cyan: 2 136
+:proxima/tile/spheres/cyan: 0 102 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:proxima/tile/spheres/cyan: 0 101
+:proxima/tile/spheres/cyan: 8 69
+:Group-0: 3 0
+$END_TILE_GROUP
+:Group-1: 128 152
+:geoo/construction/concrete/032: 400 96 d
+:geoo/construction/concrete/032: 400 88 d
+:proxima/tile/pink5s: 352 96
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 86 78
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 98 78
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 86 86
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 98 86
+:proxima/tile/red1a: 88 80 rr
+:geoo/construction/concrete/032d: 104 136 d
+:geoo/construction/concrete/032b: 104 104 d
+:geoo/construction/concrete/032: 88 120 d
+:raymanni/lab/block_8: 216 80
+:raymanni/lab/scen_4: 120 32
+:geoo/sandstone/smaragd: 278 84
+:geoo/sandstone/smaragd: 278 94
+:geoo/sandstone/smaragd: 278 104
+:geoo/sandstone/smaragd: 278 114
+:geoo/nopales/fruit_04: 283 88
+:geoo/nopales/fruit_04: 283 108
+:geoo/nopales/fruit_04: 283 118
+:proxima/tile/spheres/pink: 144 104
+$BEGIN_TILE_GROUP 2
+:raymanni/holiday/garland: 24 4
+:proxima/tile/red1a: 56 12 rrd
+:proxima/tile/red1a: 72 4 rrd
+:proxima/tile/red1a: 38 10 rrd
+:proxima/tile/red1a: 0 2 rrd
+:proxima/tile/red1a: 20 0 rrd
+:proxima/tile/red1a: 36 1 rrd
+$END_TILE_GROUP
+:Group-2: 149 134
+:Group-2: 150 126
+:Group-2: 154 118
+:Group-2: 160 112
+:Group-2: 168 108
+:Group-2: 178 108
+:Group-2: 150 142
+:Group-2: 156 150
+:Group-2: 186 112
+:Group-2: 192 118
+:Group-2: 196 126
+:Group-2: 196 136
+:Group-2: 194 146
+:Group-2: 186 154
+:Group-2: 176 157
+:Group-2: 166 156
+:proxima/tile/spheres/pinksmall: 160 119
+:geoo/construction/platformbrick: 292 89
+:geoo/construction/platformbrick: 292 92
+:geoo/construction/platformbrick: 292 99
+:geoo/construction/platformbrick: 292 102
+:geoo/construction/platformbrick: 292 109
+:geoo/construction/platformbrick: 292 112
+:geoo/construction/platformbrick: 292 119
+:geoo/construction/platformbrick: 292 122
+:raymanni/toys/brick_17: 392 152
+:matt/marble/04a: 396 160
+:geoo/steel/dark_32x16o.S: 352 128
+:geoo/steel/dark_32x16o.S: 400 128
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 24 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 48 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 72 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 96 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 120 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 144 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 168 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 192 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 216 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 240 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 264 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 288 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 312 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 336 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 360 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 384 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 408 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 432 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 456 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 480 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 0 448
+:geoo/construction/squarebrickx12_nonsquare_for_proxima: 504 448

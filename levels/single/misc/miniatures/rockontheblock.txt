@@ -1,0 +1,68 @@
+$BUILT 2017-09-30 12:04:55
+$AUTHOR geoo
+$ENGLISH Rock on the Block
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 192
+#SIZE_Y 162
+
+#INITIAL 6
+#REQUIRED 6
+#SPAWN_INTERVAL 15
+
+#CLIMBER 1
+#BLOCKER 1
+#BASHER 5
+#DIGGER 1
+#BATTER 1
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 0 82
+:geoo/construction/Hatch.H: 128 2 r
+
+:geoo/abstract/goal.G: 160 50
+
+:geoo/construction/concrete/128: 32 34
+:geoo/construction/concrete/016h: 0 146
+:geoo/construction/concrete/032: 160 130
+:geoo/steel/32x32o.S: 160 130
+:geoo/steel/32x32o.S: 160 98
+:geoo/steel/32x32o.S: 0 130
+:geoo/construction/platform.S: 0 0
+:geoo/construction/platform.S: 32 0
+:geoo/construction/platform.S: 64 0
+:geoo/construction/platform.S: 96 0
+:geoo/construction/platform.S: 128 0
+:geoo/construction/platform.S: 160 0
+:geoo/steel/16x16o.S: 144 114
+:geoo/steel/16x16o.S: 112 146
+$BEGIN_TILE_GROUP 0
+:geoo/construction/concrete/032: 16 16
+:geoo/construction/concrete/032: 13 13 d
+:geoo/construction/concrete/032: 16 0 d
+:geoo/construction/concrete/032: 0 22 d
+$END_TILE_GROUP
+:Group-0: 96 146
+:Group-0: 112 130
+:Group-0: 128 114
+:Group-0: 144 98
+$BEGIN_TILE_GROUP 1
+:geoo/construction/concrete/016: 0 0
+:geoo/construction/concrete/016b: 6 0 rrd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:geoo/construction/concrete/016: 0 0
+:geoo/construction/concrete/016b: 0 8 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 3
+:Group-1: 3 9
+:Group-2: 10 3
+:geoo/steel/16x16o.S: 21 3 d
+:geoo/steel/16x16o.S: 3 21 d
+:geoo/steel/16x16o.S: 6 0 d
+:geoo/steel/16x16o.S: 0 6 d
+$END_TILE_GROUP
+:Group-3: 109 143
+:Group-3: 125 127
+:Group-3: 141 111
+:geoo/steel/32x32o.S: 128 130

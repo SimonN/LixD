@@ -1,0 +1,135 @@
+$BUILT 2017-11-09 12:38:07
+$AUTHOR Simon
+$ENGLISH Keep Everybody Happy
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 320
+
+#INITIAL 10
+#REQUIRED 10
+#SPAWN_INTERVAL 45
+
+#FLOATER 2
+#BLOCKER 1
+#BUILDER 2
+#BASHER 1
+#MINER 1
+#JUMPER 1
+#BATTER 1
+#EXPLODER2 0
+
+:simon/hatch001.H: 28 35
+
+:simon/oriental/goal.G: 502 178
+
+:geoo/sandstone/brazier.F: 292 56
+
+:simon/oriental/branch4: 564 182 rrr
+:simon/oriental/branch4: 586 182
+:simon/oriental/branch1: 622 166 rrr
+:simon/oriental/bush6: 480 256
+:simon/oriental/pebbles6: 128 264
+:amanda/steel/steel_flange_right24x16.S: 429 72
+:simon/oriental/pebbles5: 124 204
+:simon/oriental/branch3: 64 130
+:simon/oriental/branch3: 50 164 rrr
+:simon/oriental/bush7: 385 229
+:simon/oriental/culm_half1: 280 104
+:simon/oriental/leaf1: 432 60 r
+:simon/oriental/fat_d_long: 346 70
+:simon/oriental/fat_end: 323 152 r
+:simon/oriental/fat_end: 296 160
+:simon/oriental/fat_half1: 286 112
+:simon/oriental/leaf3: 236 176
+:simon/oriental/branch4: 376 219
+:simon/oriental/fat_end: 264 168
+:simon/oriental/fat_end: 272 168
+:simon/oriental/fat_end: 328 168
+:simon/oriental/fat_end: 320 168
+:simon/oriental/fat_end: 280 168
+:simon/oriental/fat_end: 312 168
+:simon/oriental/leaf2: 192 176 frr
+:simon/oriental/leaf2: 346 26 rr
+:simon/oriental/leaf5: 388 68 r
+:simon/oriental/leaf4: 358 96
+:simon/oriental/pebbles6: 164 276
+:simon/oriental/branch3: 398 264 r
+:simon/oriental/branch1: 393 232 r
+:simon/oriental/culm_d_half: 290 74
+:simon/oriental/branch1: 617 203 frrr
+:simon/oriental/branch5: 428 257 f
+:simon/oriental/bonsai: 460 193
+:simon/oriental/bush1: 581 197 frr
+:simon/oriental/fat_half1: 286 82
+$BEGIN_TILE_GROUP 0
+:simon/oriental/06: 32 6 frr
+:simon/oriental/04: 78 32 d
+:simon/oriental/04: 78 0 d
+:simon/oriental/06: 0 6 frr
+:simon/oriental/04: 8 62 d
+:simon/oriental/04: 48 62 d
+$END_TILE_GROUP
+:Group-0: 256 118
+:simon/oriental/culm_half1: 281 88
+:simon/oriental/branch7: 53 253 f
+:simon/oriental/fat_d_long: 333 17
+:simon/oriental/branch5: 34 191 f
+:simon/oriental/bush6: 38 156
+:simon/oriental/branch7: 54 165 rr
+:simon/oriental/branch7: 61 108
+:simon/oriental/03: 226 144 frr
+:simon/oriental/03: 180 144
+:simon/oriental/culm_long: 174 172 r
+:simon/oriental/05: 136 128
+:simon/oriental/03: 180 112
+:simon/oriental/02: 75 258
+:simon/oriental/pebbles5: 38 298
+:simon/oriental/02: 214 238
+:simon/oriental/branch3: 382 262 rr
+:simon/oriental/branch6: 392 214
+:simon/oriental/branch7: 404 260 frr
+:simon/oriental/pebbles1: 90 266
+:simon/oriental/pebbles3: 112 214
+:simon/oriental/pebbles5: 144 236
+:simon/oriental/pebbles5: 190 276
+:simon/oriental/pebbles6: 90 232
+:simon/oriental/pebbles5: 66 276
+:simon/oriental/05: 136 96
+:simon/oriental/bush1: 45 90
+:simon/oriental/05_top: 136 80
+:simon/oriental/03: 226 112 frr
+:simon/oriental/05_btm: 136 208
+:simon/oriental/pebbles2: 153 214
+:simon/oriental/pebbles4: 132 234
+:simon/oriental/pebbles2: 130 214
+:simon/oriental/pebble2: 178 218
+:geoo/construction/concrete/016vd: 399 216 rrd
+:simon/oriental/bush4: 389 213
+$BEGIN_TILE_GROUP 1
+:simon/oriental/08: 0 0
+:simon/oriental/04: 12 21 d
+:simon/oriental/04: 12 12 d
+:simon/oriental/04: 21 12 d
+:simon/oriental/04: 21 21 d
+$END_TILE_GROUP
+:Group-1: 264 96
+:simon/oriental/culm_long: 247 172 r
+:simon/oriental/bush2: 510 239 rrd
+:geoo/construction/concrete/016vd: 263 80 d
+:simon/oriental/bush7: 374 214 frr
+:simon/oriental/bush5: 432 258
+:simon/oriental/bush7: 371 206 rrd
+:simon/oriental/bush5: 30 212
+:simon/oriental/bush2: 58 124
+:simon/oriental/branch4: 320 88 rd
+:amanda/steel/steel_flange_right24x16.S: 354 152
+:amanda/steel/steel_flange_right24x16.S: 370 136
+:amanda/steel/steel_flange_right24x16.S: 386 120
+:simon/oriental/leaf1: 400 119 rr
+:amanda/steel/steel_flange_right24x16.S: 402 104
+:amanda/steel/steel_flange_right24x16.S: 418 88
+:simon/oriental/leaf6: 429 84
+:geoo/construction/concrete/016vd: 251 94 frd
+:simon/oriental/bush7: 616 164
+:simon/oriental/bush7: 580 181

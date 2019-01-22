@@ -1,0 +1,100 @@
+$BUILT 2017-03-06 16:57:07
+$AUTHOR Simon
+$ENGLISH African Wigwam
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 320
+#SIZE_Y 200
+
+#INITIAL 4
+#REQUIRED 4
+#SPAWN_INTERVAL 5
+
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#BATTER 1
+#EXPLODER2 0
+
+:geoo/sandstone/fennec.H: 200 40
+:geoo/sandstone/fennec.H: 98 92 r
+
+:matt/earth/Goal.G: 180 94
+
+:amanda/forest/frog.T: 128 142
+
+:geoo/sandstone/torch.F: 136 122
+:geoo/sandstone/torch.F: 8 122
+
+:geoo/sandstone/32x32: 8 64
+:geoo/sandstone/slopes/32x16rt: 8 55 frrd
+:geoo/sandstone/32x32: 136 64
+:geoo/sandstone/slopes/32x16rt: 136 55 d
+:matt/beach/daytime/00: 58 164
+:matt/earth/03: 122 180
+:matt/earth/08: 264 86 rrr
+:matt/beach/nighttime/03: -32 130
+:geoo/sandstone/ribbon_end: 56 76
+:geoo/sandstone/8x16: 32 32
+:geoo/sandstone/8x16: 136 32
+:geoo/sandstone/pillar_bottom: 8 112
+:geoo/sandstone/8x16: 20 124 d
+:matt/beach/daytime/13: -40 112 r
+:matt/earth/27: 294 46 f
+:matt/earth/07: 278 52 frr
+:matt/earth/28: 224 150 fr
+$BEGIN_TILE_GROUP 0
+:geoo/sandstone/pillar_bottom_ext: 66 0
+:matt/beach/daytime/03: 0 4
+:matt/beach/daytime/05: 60 8 d
+$END_TILE_GROUP
+:Group-0: 54 144
+:matt/earth/27: 180 148 f
+:matt/earth/03: 172 154
+:matt/earth/29: 200 152
+:matt/earth/16: 248 62
+:matt/earth/14: 254 130
+:matt/earth/01: 176 174
+:matt/earth/27: 190 158
+:matt/earth/09: 180 154
+:matt/earth/07b: 228 154
+:matt/earth/06: 246 122
+:matt/earth/29: 224 150 r
+:matt/earth/27: 260 108 r
+:matt/earth/08: 268 74 rrr
+:matt/earth/13: 260 122
+:matt/earth/06: 252 130
+:matt/earth/11: 250 142
+:matt/earth/09: 304 152 r
+:matt/earth/29: 270 142 frr
+:matt/earth/07: 262 118
+:matt/earth/09: 254 136
+:matt/beach/daytime/15: 34 158
+:geoo/sandstone/pillar_bottom: 136 112
+:geoo/sandstone/pillar_top_ext: -8 96
+:geoo/sandstone/pillar_top_ext: 120 96
+:geoo/sandstone/ribbon_end: 88 76
+:geoo/sandstone/arc_small: 40 64
+:geoo/sandstone/slopes/16x32rt: 161 64 d
+:geoo/sandstone/8x16: 168 80
+:geoo/sandstone/slopes/16x32rt: -1 64 frrd
+:geoo/sandstone/8x16: 0 80
+:geoo/sandstone/64x32: 56 32
+:geoo/sandstone/smaragd: 64 40
+:geoo/sandstone/smaragd: 96 40
+:geoo/sandstone/smaragd: 72 40
+:geoo/sandstone/smaragd: 88 40
+:geoo/sandstone/8x16: 128 48
+:geoo/sandstone/8x16: 144 48
+:geoo/sandstone/8x16: 40 48
+:geoo/sandstone/8x16: 24 48
+:geoo/sandstone/8x16: 132 40 fr
+:geoo/sandstone/8x16: 28 40 fr
+:geoo/sandstone/8x16: 148 124 d
+:geoo/sandstone/smaragd: 144 118 d
+:geoo/sandstone/smaragd: 16 118 d
+:geoo/sandstone/8x16: 148 128 d
+:matt/earth/06: 296 156
+:matt/earth/18: 302 176
+:geoo/sandstone/slopes/32x16rt: 219 138 frrd

@@ -1,0 +1,93 @@
+$BUILT 2017-12-03 15:41:06
+$AUTHOR geoo
+$ENGLISH Deadly Cells
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 208
+#SIZE_Y 160
+#BACKGROUND_RED 0
+#BACKGROUND_GREEN 8
+#BACKGROUND_BLUE 0
+
+#INITIAL 9
+#REQUIRED 8
+#SPAWN_INTERVAL 4
+
+#CLIMBER 1
+#EXPLODER2 1
+#BLOCKER 1
+#BUILDER 2
+#JUMPER 1
+
+:geoo/abstract/hatch.H: 24 56 r
+
+:geoo/abstract/goal.G: 152 56
+
+:amanda/tar.W: -48 144
+:amanda/tar.W: 80 144
+:raymanni/lab/goo_fall.W: 0 18
+:raymanni/lab/goo_fall.W: 0 34
+:raymanni/lab/goo_fall.W: 0 50
+:raymanni/lab/goo_fall.W: 0 66
+:raymanni/lab/goo_fall.W: 64 18
+:raymanni/lab/goo_fall.W: 64 34
+:raymanni/lab/goo_fall.W: 64 50
+:raymanni/lab/goo_fall.W: 64 66
+:raymanni/lab/goo_fall.W: 128 18
+:raymanni/lab/goo_fall.W: 128 34
+:raymanni/lab/goo_fall.W: 128 50
+:raymanni/lab/goo_fall.W: 128 66
+:raymanni/lab/goo_fall.W: 192 18
+:raymanni/lab/goo_fall.W: 192 34
+:raymanni/lab/goo_fall.W: 192 50
+:raymanni/lab/goo_fall.W: 192 66
+:raymanni/gore/bonesaw.F: 8 0
+:raymanni/gore/bonesaw.F: 136 0
+
+:geoo/construction/rod_steel/straight32.S: 192 97
+:geoo/construction/rod_steel/end_rect.S: 192 97
+:geoo/construction/rod_steel/straight32.S: -16 97
+:geoo/construction/rod_steel/end_rect.S: 8 97 frr
+:geoo/steel/16x16o.S: 64 104
+:geoo/steel/16x16o.S: 128 104
+:geoo/steel/16x16o.S: 64 82
+:geoo/steel/16x16o.S: 128 82
+:geoo/steel/16x16o.S: 144 104
+:geoo/steel/16x16o.S: 160 104
+:geoo/steel/16x16o.S: 176 104
+:geoo/steel/16x16o.S: 192 104
+:geoo/steel/16x16o.S: 192 82
+:geoo/steel/16x16o.S: 48 104
+:geoo/steel/16x16o.S: 32 104
+:geoo/steel/16x16o.S: 16 104
+:geoo/steel/16x16o.S: 0 104
+:geoo/steel/16x16o.S: 0 82
+:geoo/steel/16x16o.S: 96 120
+:raymanni/lab/scen_5: 8 120 rr
+:raymanni/lab/scen_6: 136 120 f
+:raymanni/lab/scen_5: 40 120 rr
+:raymanni/lab/scen_5: 170 120 rr
+:raymanni/lab/pipe_7: 0 0
+:raymanni/lab/pipe_7: 64 0
+:raymanni/lab/pipe_7: 128 0
+:raymanni/lab/pipe_7: 192 0
+:raymanni/lab/scen_8: 8 -8
+$BEGIN_TILE_GROUP 0
+:raymanni/lab/pipe_6: 0 0
+:raymanni/lab/pipe_7: 0 16 d
+$END_TILE_GROUP
+:Group-0: 0 0
+:raymanni/lab/scen_7: 136 -16
+:Group-0: 128 0
+$BEGIN_TILE_GROUP 1
+:raymanni/lab/pipe_4: 0 0
+:raymanni/lab/pipe_7: 16 16 d
+$END_TILE_GROUP
+:Group-1: 48 0
+:Group-1: 176 0
+:raymanni/lab/pipe_1: 24 0 r
+:raymanni/lab/pipe_1: 152 0 r
+:raymanni/lab/pipe_junction: 32 -24
+:raymanni/lab/scen_2: 40 -16
+:raymanni/lab/pipe_junction: 160 -24
+:raymanni/lab/scen_8: 160 0

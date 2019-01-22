@@ -1,0 +1,42 @@
+$BUILT 2019-01-26 16:41:11
+$AUTHOR geoo
+$ENGLISH Centipede
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 192
+#SIZE_Y 160
+
+#INITIAL 9
+#REQUIRED 6
+#SPAWN_INTERVAL 1
+
+#EXPLODER 2
+#BLOCKER 2
+
+:geoo/abstract/hatch.H: 48 16
+:geoo/abstract/hatch.H: 80 16 r
+:geoo/abstract/hatch.H: 112 16
+
+:geoo/abstract/goal.G: 160 80
+
+:matt/10tons.T: 88 88
+:raymanni/lab/shower.T: 128 64
+
+:geoo/construction/platformbrick: 112 64
+:geoo/construction/platform.S: 128 86
+:geoo/steel/32x32o.S: 160 56
+:geoo/steel/64x32o.S: 0 128
+:geoo/steel/64x32o.S: 64 128
+:geoo/steel/64x32o.S: 128 128
+:geoo/steel/64x32o.S: 192 128
+:geoo/construction/platform.S: 96 86
+:geoo/construction/platformbrick: 80 64
+:geoo/construction/platformbrick: 48 64
+:geoo/steel/32x32o.S: 160 24
+:geoo/steel/32x32o.S: 160 -8
+:geoo/construction/platformbrick: 64 86
+:geoo/construction/platformbrick: 32 86
+:geoo/steel/32x32o.S: 0 96
+:geoo/steel/32x32o.S: 0 64
+:geoo/steel/32x32o.S: 0 32
+:geoo/steel/32x32o.S: 0 0

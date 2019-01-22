@@ -1,0 +1,65 @@
+$BUILT 2019-01-28 04:51:50
+$AUTHOR geoo
+$ENGLISH The Bottomless Closet
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 256
+#SIZE_Y 198
+
+#INITIAL 9
+#REQUIRED 5
+#SPAWN_INTERVAL 44
+
+#FLOATER 1
+#EXPLODER 2
+#BLOCKER 2
+#BUILDER 2
+
+:matt/underworld/Hatch.H: 96 10
+
+:matt/underworld/Goal.G: 96 118
+
+:matt/underworld/thinplatform128: -192 42
+:matt/underworld/thinplatform128: -64 42
+:matt/underworld/thinplatform128: 64 42
+:matt/underworld/thinplatform128: 192 42
+:matt/underworld/thinplatform128: 320 42
+:matt/underworld/thinplatform8: 96 42 rrr
+:matt/underworld/thinplatform8: 128 42 rrr
+:matt/underworld/thinplatform8: 160 42 rrr
+:matt/underworld/thinplatform8: 192 42 rrr
+:matt/underworld/thinplatform8: 224 42 rrr
+:matt/underworld/thinplatform8: 256 42 rrr
+:matt/underworld/thinplatform8: 288 42 rrr
+:matt/underworld/thinplatform8: 320 42 rrr
+:matt/underworld/thinplatform8: 352 42 rrr
+:matt/underworld/thinplatform8: 384 42 rrr
+:matt/underworld/thinplatform8: 416 42 rrr
+:matt/underworld/thinplatform8: -160 42 rrr
+:matt/underworld/thinplatform8: -128 42 rrr
+:matt/underworld/thinplatform8: -96 42 rrr
+:matt/underworld/thinplatform8: -64 42 rrr
+:matt/underworld/thinplatform8: -32 42 rrr
+:matt/underworld/thinplatform8: 0 42 rrr
+:matt/underworld/thinplatform8: 32 42 rrr
+:matt/underworld/thinplatform8: 64 42 rrr
+:geoo/construction/concrete/064h: -192 44 d
+:geoo/construction/concrete/064h: -64 44 d
+:geoo/construction/concrete/064h: 64 44 d
+:geoo/construction/concrete/064h: 192 44 d
+:geoo/construction/concrete/064h: 320 44 d
+:matt/underworld/thinplatform128: -192 14
+:matt/underworld/thinplatform128: 320 14
+:amanda/steel/steel24x16.S: 104 182
+:amanda/steel/steel24x16.S: 128 182
+:amanda/steel/steel24x16.S: 0 0
+:amanda/steel/steel24x16.S: 24 0
+:amanda/steel/steel24x16.S: 48 0
+:amanda/steel/steel24x16.S: 72 0
+:amanda/steel/steel24x16.S: 96 0
+:amanda/steel/steel24x16.S: 136 0
+:amanda/steel/steel24x16.S: 160 0
+:amanda/steel/steel24x16.S: 184 0
+:amanda/steel/steel24x16.S: 208 0
+:amanda/steel/steel24x16.S: 232 0
+:amanda/steel/steel16x16.S: 120 0

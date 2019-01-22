@@ -1,0 +1,56 @@
+$BUILT 2018-07-31 14:34:49
+$AUTHOR Simon
+$ENGLISH Marshmallow Fort
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 416
+#SIZE_Y 240
+
+#INITIAL 5
+#REQUIRED 5
+#SPAWN_INTERVAL 17
+
+#CLIMBER 1
+#PLATFORMER 1
+#BASHER 1
+#MINER 1
+#DIGGER 1
+#EXPLODER2 0
+
+:simon/hatch001.H: 312 120 r
+
+:simon/tapir/goal.G: 200 80
+
+:matt/marble/26c: 256 200 frr
+:matt/marble/26: 72 208
+:matt/marble/26c: 328 160
+:matt/marble/26: 8 160 r
+:matt/marble/26c: 288 184 frr
+:matt/marble/07c: 112 32
+:matt/marble/07c: 160 80
+:matt/marble/07c: 112 128
+:matt/marble/07c: 160 176
+:matt/marble/07c: 208 128
+:matt/marble/07c: 208 32
+:matt/marble/07c: 256 80
+:matt/marble/07c: 256 176
+:matt/marble/26: 48 184
+:matt/marble/07: 112 176
+:matt/marble/07: 208 176
+:matt/marble/07: 256 128
+:matt/marble/07: 112 80
+:matt/marble/07: 160 32
+:matt/marble/07: 256 32
+:matt/marble/07: 160 128
+:matt/marble/26: -48 144
+:matt/marble/26c: 384 144 frr
+:matt/marble/13: 16 144
+:matt/marble/11c: 384 144
+:matt/marble/02: 56 120
+:matt/marble/02c: 56 136
+:matt/marble/02c: 72 120
+:matt/marble/02: 72 136
+:matt/marble/12: 88 120
+:matt/marble/11c: 88 136
+:matt/marble/13: 40 136
+:matt/marble/10c: 40 120

@@ -1,0 +1,90 @@
+$BUILT 2017-03-06 07:34:28
+$AUTHOR Simon
+$ENGLISH Overhead
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 320
+#SIZE_Y 200
+
+#INITIAL 8
+#REQUIRED 4
+#SPAWN_INTERVAL 21
+
+#CLIMBER 2
+#BLOCKER 2
+#BUILDER 2
+#DIGGER 3
+#EXPLODER2 0
+
+:geoo/abstract/hatch.H: 38 90
+:geoo/abstract/hatch.H: 236 124 r
+
+:geoo/abstract/goal.G: 144 32
+
+:amanda/tar.W: 96 172
+
+:geoo/construction/platformbrick: 38 88
+:geoo/shadow/rope1: 272 60 rrr
+:geoo/shadow/rope1: 200 60 frrr
+:geoo/shadow/rope1: 46 72 frr
+:geoo/shadow/rope1: -18 72
+:geoo/shadow/tile2: 0 40
+:geoo/shadow/tile2: 0 168
+:geoo/shadow/tile1: 32 168
+:geoo/shadow/tile2: 64 168
+:geoo/shadow/tile1: 224 168
+:geoo/shadow/tile2: 256 168
+:geoo/shadow/tile1: 288 168
+:geoo/shadow/tile1: 0 136
+:geoo/shadow/tile2: 0 104
+:geoo/shadow/tile1: 0 72
+:geoo/shadow/tile1: 288 104
+:geoo/shadow/tile2: 288 72
+:geoo/shadow/tile2: 288 136
+:geoo/construction/concrete/016c: 8 152 d
+:geoo/construction/concrete/016d: 4 138 d
+:geoo/construction/concrete/016c: 8 124 d
+:geoo/construction/concrete/016d: 4 110 d
+:geoo/construction/concrete/008v: 24 152 d
+:geoo/shadow/tile3: 104 80
+:geoo/shadow/tile4: 200 80
+:geoo/shadow/pillar_verti_32: 104 48
+:geoo/shadow/pillar_verti_32: 200 48
+:geoo/shadow/tile4: 104 32
+:geoo/shadow/tile3: 200 32
+:geoo/shadow/pillar_hztl_32: 120 80
+:geoo/shadow/pillar_hztl_32: 168 80
+:geoo/shadow/pillar_hztl_32: 144 80
+:geoo/shadow/pillar_hztl_32: 120 32
+:geoo/shadow/pillar_hztl_32: 168 32
+:geoo/construction/concrete/016d: 296 152 d
+:geoo/construction/concrete/016c: 302 140 d
+:geoo/construction/concrete/016d: 300 124 d
+:geoo/construction/concrete/016c: 302 108 d
+:geoo/shadow/pillar_hztl_32: 144 32
+:geoo/shadow/pillar_hztl_32: 144 40 d
+:geoo/construction/concrete/016d: 294 100 frrd
+:geoo/shadow/tile1: 288 40
+:geoo/construction/concrete/016c: 8 96 d
+:geoo/construction/concrete/016d: 4 82 d
+:geoo/construction/concrete/016d: 16 70 d
+:geoo/construction/concrete/016a: 4 66 d
+:geoo/construction/concrete/016a: 16 54 d
+:geoo/construction/concrete/016a: 302 92 frrd
+:geoo/construction/concrete/016a: 294 84 frrd
+:geoo/construction/platformbrick: 232 122
+:geoo/construction/platformbrick: 240 122
+:geoo/shadow/tile2: 288 8
+:geoo/shadow/tile1: 0 8
+:geoo/shadow/tile2: 0 -24
+:geoo/shadow/tile2: 64 -24
+:geoo/shadow/tile1: 32 -24
+:geoo/shadow/tile2: 128 -24
+:geoo/shadow/tile1: 96 -24
+:geoo/shadow/tile2: 192 -24
+:geoo/shadow/tile1: 160 -24
+:geoo/shadow/tile2: 256 -24
+:geoo/shadow/tile1: 224 -24
+:geoo/shadow/tile1: 288 -24
+:geoo/shadow/tile3: 216 56 d
+:geoo/shadow/tile3: 272 56 d

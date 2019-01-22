@@ -1,0 +1,44 @@
+$BUILT 2018-08-12 17:12:01
+$AUTHOR Simon
+$ENGLISH Sending a Postcard
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 192
+#SIZE_Y 160
+
+#INITIAL 4
+#REQUIRED 4
+#SPAWN_INTERVAL 19
+
+#BASHER 1
+#MINER 1
+#JUMPER 2
+#EXPLODER2 0
+
+:matt/bricks/Hatch.H: -10 72
+
+:matt/marble/Goal.G: 96 48
+
+:proxima/tile/orange1a: 0 96
+:proxima/tile/orange1a: 0 32
+:proxima/tile/orange1a: 0 64
+:proxima/tile/orange2s: 64 128
+:proxima/tile/orange2s: 96 128
+:proxima/tile/orange2s: 128 128
+:proxima/tile/orange2s: 96 96
+:proxima/tile/orange2s: 128 96
+:proxima/tile/orange2s: 64 96
+:proxima/tile/orange2s: 0 0
+:proxima/tile/orange2s: 32 0
+:proxima/tile/orange2s: 64 0
+:proxima/tile/orange2s: 96 0
+:proxima/tile/orange2s: 128 0
+:proxima/tile/orange2s: 0 120
+:proxima/tile/orange2s: 32 120
+:proxima/tile/orange2s: 32 152
+:proxima/tile/orange2s: 0 152
+:proxima/tile/orange2s: 160 128
+:proxima/tile/orange2s: 160 96
+:proxima/tile/orange2s: 160 0
+:proxima/tile/orange1a: 176 32
+:proxima/tile/orange1a: 176 64

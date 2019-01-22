@@ -1,0 +1,77 @@
+$BUILT 2018-08-19 20:42:49
+$AUTHOR Simon
+$ENGLISH Scraping the Scripture
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 320
+#SIZE_Y 200
+
+#INITIAL 5
+#REQUIRED 5
+#SPAWN_INTERVAL 7
+
+#BASHER 1
+#DIGGER 1
+#EXPLODER2 0
+
+:matt/underworld/Hatch.H: 20 19
+
+:matt/underworld/Goal.G: 204 115
+
+:simon/oriental/fat_open: 76 121
+:simon/oriental/fat_end: 78 119
+:simon/oriental/pebbles5: -38 173
+:simon/oriental/pebbles6: 20 155
+:simon/oriental/pebbles2: 256 185
+:simon/oriental/pebbles4: 272 185
+$BEGIN_TILE_GROUP 0
+:simon/oriental/fat_half2: 6 0
+:simon/oriental/fat_half2: 0 0 d
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 1
+:simon/oriental/fat_half1: 0 0
+:simon/oriental/fat_half1: 4 0 rrd
+$END_TILE_GROUP
+$BEGIN_TILE_GROUP 2
+:Group-0: 4 0
+:Group-1: 0 0
+$END_TILE_GROUP
+:Group-2: 162 127
+:Group-2: 142 125
+:Group-2: 122 123
+:Group-2: 102 121
+:simon/oriental/gate: 187 16
+:simon/oriental/branch2: 187 81
+:simon/oriental/branch3: 255 81 fr
+:simon/oriental/branch7: 262 85 r
+:simon/oriental/branch3: 160 73 r
+:simon/oriental/branch1: 192 89 rr
+:simon/oriental/bush4: 224 73
+:simon/oriental/bush1: 240 73
+:simon/oriental/bush6: 200 73
+:matt/earth/02: 202 189 frr
+:matt/earth/02: 94 155 r
+:matt/earth/00: 50 155
+:matt/earth/27: 78 157
+:matt/earth/09: 32 153
+:simon/oriental/05: 28 83
+:geoo/steel/dark_32x16o.S: 60 147
+:simon/oriental/bush2: 120 159 frr
+:simon/oriental/bush4: 62 145
+:simon/oriental/bush3: 138 147
+:simon/oriental/bush1: 202 181
+:simon/oriental/05_top: 28 67
+:geoo/steel/dark_32x16o.S: 28 147
+:simon/oriental/bush1: 160 65
+:simon/oriental/bush1: 224 65 frr
+:simon/oriental/bush7: 208 65
+:matt/earth/23: 41 103
+:matt/earth/23: 38 97 r
+:matt/earth/23: 52 103 f
+$BEGIN_TILE_GROUP 3
+:matt/earth/23: 6 4 rrr
+:simon/oriental/branch3: 0 0 rd
+:simon/oriental/branch3: 2 0 rd
+$END_TILE_GROUP
+:Group-3: 44 87 f
+:simon/oriental/pebbles3: 288 177

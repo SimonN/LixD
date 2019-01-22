@@ -1,0 +1,84 @@
+$BUILT 2017-08-17 02:48:21
+$AUTHOR Simon
+$ENGLISH At the Pond
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 320
+#SIZE_Y 192
+
+#INITIAL 8
+#REQUIRED 8
+#SPAWN_INTERVAL 17
+
+#BLOCKER 1
+#PLATFORMER 1
+#MINER 1
+#BATTER 3
+#EXPLODER2 0
+
+:matt/beach/Hatch.H: 10 2
+
+:simon/tapir/goal.G: 244 81
+
+:amanda/forest/frog.T: 279 2
+
+:simon/water.W: 0 144
+:simon/water.W: 48 144
+:simon/water.W: 144 144
+:simon/water.W: 192 144
+:simon/water.W: 240 144
+:simon/water.W: 288 144
+:simon/water.W: 96 144
+
+:geoo/nopales/fruit_02: 290 107
+:matt/beach/daytime/15: 152 116 rrr
+:matt/beach/daytime/15: 150 101 r
+:matt/beach/decor/grass02: 98 166
+:geoo/nopales/fruit_02: 294 76
+:simon/oriental/bush2: 163 115
+$BEGIN_TILE_GROUP 0
+:matt/beach/daytime/13: 0 32 r
+:matt/beach/daytime/01: 24 0 d
+$END_TILE_GROUP
+:Group-0: 158 104
+:simon/oriental/bush5: 207 122
+:matt/beach/daytime/03: -101 117
+:matt/beach/daytime/03: 174 126 rr
+:geoo/nopales/nopal_00: 293 72 r
+:geoo/nopales/fruit_02: 295 94
+:geoo/nopales/fruit_03: 292 100
+:geoo/nopales/fruit_08: 310 101
+:geoo/nopales/nopal_07: 296 95
+:geoo/nopales/fruit_02: 294 69
+:geoo/nopales/fruit_08: 30 106
+:geoo/nopales/fruit_07: 30 98
+:geoo/nopales/fruit_02: 19 82
+:geoo/nopales/fruit_05: 29 86
+:geoo/nopales/nopal_06: 24 90
+:geoo/nopales/fruit_06: 22 92
+:geoo/nopales/nopal_12: 16 108 fr
+:geoo/nopales/nopal_08: 15 85
+:geoo/nopales/fruit_07: 305 94
+:matt/beach/daytime/01: 180 166
+:matt/beach/decor/grass03: 20 107 frr
+:matt/beach/decor/palmtree: 271 36 frr
+:matt/beach/decor/palmtree: 295 52
+:matt/beach/daytime/03: 208 176
+:matt/beach/daytime/14: 224 120 rrr
+:matt/beach/decor/palmtree: -37 51
+:matt/beach/decor/grass03: -27 113
+:geoo/nopales/fruit_00: 11 105
+:geoo/nopales/fruit_04: 15 83
+:geoo/nopales/fruit_03: 10 91
+:matt/beach/daytime/05: 216 132 rrr
+$BEGIN_TILE_GROUP 1
+:matt/beach/daytime/04: 0 132 r
+:matt/beach/daytime/05: 140 0 d
+$END_TILE_GROUP
+:Group-1: -44 121
+:matt/beach/decor/grass02: 248 138
+:matt/beach/daytime/03: 198 168
+:matt/beach/decor/grass08: 204 142
+:matt/beach/decor/grass07: 1 150
+:matt/beach/decor/grass06: 104 156
+:simon/oriental/pebbles2: 301 24 rd

@@ -1,0 +1,67 @@
+$BUILT 2018-07-28 23:29:37
+$AUTHOR Simon
+$ENGLISH Pantheon of the Moon
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 576
+#SIZE_Y 320
+
+#INITIAL 10
+#REQUIRED 7
+#SPAWN_INTERVAL 11
+
+#CLIMBER 3
+#EXPLODER 3
+#BUILDER 1
+#MINER 3
+
+:matt/underworld/Hatch.H: 64 168
+:matt/underworld/Hatch.H: 448 168 r
+
+:matt/marble/Goal.G: 256 224
+:matt/marble/Goal.G: 400 48
+:matt/marble/Goal.G: 112 48
+
+:matt/beach/decor/moon: 256 24
+:matt/marble/06b: 128 208
+:matt/marble/06b: 128 144
+:matt/marble/06c: 416 208
+:matt/marble/06c: 416 144
+:matt/marble/07c: 96 272
+:matt/marble/07c: 144 272
+:matt/marble/07b: 384 272
+:matt/marble/07b: 432 272
+:matt/marble/06c: 224 208
+:matt/marble/07b: 192 272
+:matt/marble/07b: 240 272
+:matt/marble/06b: 320 208
+:matt/marble/06b: 320 144
+:matt/marble/07c: 288 272
+:matt/marble/07c: 336 272
+:matt/marble/06c: 224 144
+:matt/marble/06c: 32 208
+:matt/marble/07b: 0 272
+:matt/marble/07b: 48 272
+:matt/marble/06c: 32 144
+:matt/marble/06b: 512 208
+:matt/marble/06b: 512 144
+:matt/marble/07c: 480 272
+:matt/marble/07c: 528 272
+:matt/marble/07c: 96 96
+:matt/marble/07c: 144 96
+:matt/marble/07b: 384 96
+:matt/marble/07b: 192 96
+:matt/marble/07b: 48 96
+:matt/marble/07c: 336 96
+:matt/marble/07c: 480 96
+:matt/marble/07b: 432 96
+:matt/marble/09: 160 208
+:matt/marble/09: 160 144
+:matt/marble/09: 352 144
+:matt/marble/09: 352 208
+:matt/marble/01c: 300 264
+:matt/marble/01b: 260 264
+:matt/marble/02c: 64 144
+:matt/marble/02b: 112 144
+:matt/marble/02b: 496 144
+:matt/marble/02c: 448 144

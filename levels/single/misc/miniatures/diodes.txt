@@ -1,0 +1,78 @@
+$BUILT 2019-01-28 04:53:52
+$AUTHOR Simon
+$ENGLISH Diodes
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 320
+#SIZE_Y 200
+
+#INITIAL 5
+#REQUIRED 5
+#SPAWN_INTERVAL 3
+
+#CLIMBER 4
+#PLATFORMER 1
+#BASHER 2
+#DIGGER 1
+#EXPLODER2 0
+
+:matt/bricks/Hatch.H: 192 72 r
+:matt/bricks/Hatch.H: 160 -24 r
+
+:matt/bricks/Goal.G: 256 32
+
+:geoo/sandstone/brazier.F: 8 56
+:geoo/sandstone/brazier.F: 42 16
+
+:matt/bricks/20: 56 40
+:matt/bricks/02a: 64 176
+:matt/bricks/02a: 128 176
+:matt/bricks/02a: 192 176
+:matt/bricks/02a: 256 176
+:matt/bricks/01b: 144 80
+:matt/bricks/10b: 192 48
+:matt/bricks/01b: 176 80
+:matt/bricks/01b: 208 80
+:matt/bricks/01b: 240 80
+:matt/bricks/08b: 224 48
+:matt/bricks/01b: 272 80
+:matt/bricks/01b: 208 32
+:matt/bricks/20: 296 96
+:matt/bricks/19: 296 160
+:matt/bricks/18: 304 112
+:matt/bricks/18: 304 128
+:matt/bricks/03a: 96 112
+:matt/bricks/03a: 64 112
+:matt/bricks/03b: 96 16
+:matt/bricks/03b: 64 16
+:matt/bricks/01a: 128 96
+:matt/bricks/01a: 96 96
+:matt/bricks/01a: 64 96
+:matt/bricks/01b: 112 80
+:matt/bricks/01b: 80 80
+:matt/bricks/01b: 48 80
+:matt/bricks/01b: 304 80
+:matt/bricks/11a: 112 32
+:matt/bricks/09a: 80 32
+:matt/bricks/01a: 96 64
+:matt/bricks/09b: 112 144 rr
+:matt/bricks/11b: 80 144 rr
+:matt/bricks/01b: 96 128
+:matt/bricks/10a: 224 144
+:matt/bricks/08a: 256 144
+:matt/bricks/01a: 240 128
+:matt/bricks/01b: 64 0
+:matt/bricks/01b: 96 0
+:matt/bricks/01b: 128 0
+:matt/bricks/01b: 16 80
+:matt/bricks/01b: -16 80
+:matt/bricks/20: -8 16
+:matt/bricks/19: -8 64
+:matt/bricks/18: 0 32
+:matt/bricks/01b: 32 0
+:matt/bricks/01b: 0 0
+:matt/bricks/02a: 0 176
+:matt/bricks/20: -8 96
+:matt/bricks/19: -8 160
+:matt/bricks/18: 0 112
+:matt/bricks/18: 0 128

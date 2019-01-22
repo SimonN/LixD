@@ -1,0 +1,59 @@
+$BUILT 2017-10-05 21:48:35
+$AUTHOR geoo
+$ENGLISH Frog Fractions
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 304
+#SIZE_Y 160
+
+#INITIAL 5
+#REQUIRED 5
+#SPAWN_INTERVAL 16
+
+#BUILDER 2
+#PLATFORMER 1
+#BASHER 1
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 144 8
+
+:geoo/abstract/goal.G: 256 -8
+
+:amanda/forest/frog.T: 82 128
+:raymanni/gore/eater.T: 160 104
+:amanda/forest/frog.T: -26 124
+:amanda/forest/frog.T: 248 114
+:amanda/forest/frog_happy.T: 114 31
+:amanda/forest/frog_catch.T: -32 0
+
+:geoo/sandstone/brazier.F: 154 97
+:geoo/sandstone/brazier.F: 186 50
+
+:geoo/sandstone/pillar_32: 256 80
+:matt/beach/daytime/02: 96 80 r
+:matt/beach/daytime/02: 144 96 r
+:matt/beach/daytime/02: 80 96 r
+:geoo/nopales/nopal_10: 86 60
+:amanda/forest/fern_00: 114 68
+:geoo/sandstone/pillar_32: 256 48
+:matt/earth/15: 240 34
+:geoo/sandstone/pillar_32: 256 112
+:geoo/sandstone/pillar_32: 248 122
+:matt/beach/daytime/02: 192 112 r
+:matt/beach/daytime/02: 240 128 r
+:matt/beach/decor/shovel: 0 48
+:matt/beach/daytime/02: 16 128 rrr
+:matt/beach/daytime/02: -32 128 rrr
+:matt/beach/daytime/02: 112 128 rrr
+:geoo/nopales/nopal_11: 54 64 rrr
+:geoo/nopales/nopal_09: 54 36 frr
+:geoo/nopales/fruit_00: 50 34
+:geoo/nopales/fruit_03: 58 30
+:geoo/nopales/fruit_08: 48 42
+:geoo/nopales/fruit_08: 48 86
+:geoo/nopales/fruit_05: 54 92
+:matt/winter/09c: 162 106 d
+:matt/winter/09c: 98 138 d
+:matt/winter/09c: 184 144 d
+:geoo/nopales/fruit_03: 8 150 rrd
+:matt/winter/09c: 264 124 d
