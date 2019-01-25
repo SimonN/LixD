@@ -1,0 +1,189 @@
+$BUILT 2017-11-16 21:54:28
+$AUTHOR Nessy
+$ENGLISH Never Getting Back Together
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 640
+#SIZE_Y 400
+
+#INITIAL 2
+#REQUIRED 2
+#SPAWN_INTERVAL 1
+
+#CLIMBER 2
+#BLOCKER 2
+#BUILDER 1
+#MINER 1
+#DIGGER 1
+#EXPLODER 0
+
+:matt/bricks/Hatch.H: 248 112 r
+:matt/bricks/Hatch.H: 328 112
+
+:matt/bricks/Goal.G: 288 224
+
+:amanda/tar.W: -16 368
+:amanda/tar.W: 528 368
+
+:matt/bricks/18: 8 144
+:matt/bricks/18: 72 112
+:matt/bricks/18: 136 80
+:matt/bricks/18: 200 48
+:matt/bricks/18: 616 144
+:matt/bricks/18: 552 112
+:matt/bricks/18: 488 80
+:matt/bricks/19: 480 112
+:matt/bricks/18: 416 16
+:matt/bricks/18: 432 16
+:matt/bricks/18: 192 16
+:matt/bricks/18: 208 16
+:matt/bricks/18: 0 112
+:matt/bricks/18: 16 112
+:matt/bricks/18: 64 80
+:matt/bricks/18: 352 16
+:matt/bricks/18: 272 16
+:matt/bricks/12: 592 0
+:matt/bricks/18: 112 272
+:matt/bricks/03: 224 336
+:matt/bricks/03: 352 336
+:matt/bricks/03: 352 272
+:matt/bricks/03: 288 272
+:matt/bricks/03: 224 272
+:matt/bricks/01: 192 272
+:matt/bricks/01: 416 272
+:matt/bricks/18: 512 304
+:matt/bricks/18: 112 304
+:matt/bricks/02: 224 160 d
+:matt/bricks/02: 288 160 d
+:matt/bricks/02: 352 160 d
+:geoo/steel/64x32o.S: 288 160
+:geoo/steel/64x32o.S: 352 160
+:geoo/steel/64x32o.S: 224 160
+:matt/bricks/12: 272 0
+:matt/bricks/09: 240 0
+:matt/bricks/11: 368 0
+:matt/bricks/05b: 352 272
+:matt/bricks/06b: 224 272
+:matt/bricks/04b: 224 336
+:matt/bricks/07b: 352 336
+:matt/bricks/09b: 400 0
+:matt/bricks/11b: 432 0
+:matt/bricks/09b: 176 0
+:matt/bricks/11b: 208 0
+:matt/bricks/18: 80 80
+:matt/bricks/11b: 80 64
+:matt/bricks/18: 544 80
+:matt/bricks/09b: 528 64
+:matt/bricks/18: 560 80
+:matt/bricks/11b: 560 64
+:matt/bricks/18: 128 48
+:matt/bricks/09: 112 32
+:matt/bricks/18: 480 48
+:matt/bricks/09: 464 32
+:matt/bricks/18: 608 112
+:matt/bricks/09: 592 96
+:matt/bricks/09: -16 96
+:matt/bricks/18: 496 48
+:matt/bricks/11: 496 32
+:matt/bricks/18: 624 112
+:matt/bricks/11: 624 96
+:matt/bricks/18: 144 48
+:matt/bricks/11: 144 32
+:matt/bricks/11: 16 96
+:matt/bricks/12b: 304 32
+:matt/bricks/12: 336 0
+:matt/bricks/12b: 304 0
+:matt/bricks/12b: 304 64
+:matt/bricks/12b: 304 96
+:matt/bricks/01b: 448 272
+:matt/bricks/01: 448 280 d
+:matt/bricks/01: 416 280 d
+:matt/bricks/01b: 480 272
+:matt/bricks/01: 480 280 d
+:matt/bricks/18: 512 272
+:matt/bricks/01b: 128 272
+:matt/bricks/01: 128 280 d
+:matt/bricks/01b: 160 272
+:matt/bricks/01: 160 280 d
+:matt/bricks/01: 192 280 d
+:matt/bricks/12: 416 384
+:matt/bricks/12: 416 352
+:matt/bricks/12: 512 384
+:matt/bricks/12: 512 352
+:matt/bricks/12: 192 384
+:matt/bricks/12: 192 352
+:matt/bricks/12: 96 384
+:matt/bricks/12: 96 352
+:matt/bricks/12b: 480 384
+:matt/bricks/18: 512 320
+:matt/bricks/18: 112 320
+:matt/bricks/12b: 80 32
+:matt/bricks/12b: 48 32
+:matt/bricks/12b: 48 0
+:matt/bricks/12b: 80 0
+:matt/bricks/12b: 528 32
+:matt/bricks/12b: 560 32
+:matt/bricks/12b: 528 0
+:matt/bricks/12b: 560 0
+:matt/bricks/12: 112 0
+:matt/bricks/12: 144 0
+:matt/bricks/12: -16 0
+:matt/bricks/12: 16 0
+:matt/bricks/12: -16 32
+:matt/bricks/12: 16 32
+:matt/bricks/12: -16 64
+:matt/bricks/12: 16 64
+:matt/bricks/12: 464 0
+:matt/bricks/12: 496 0
+:matt/bricks/09b: 48 64
+:matt/bricks/11b: 144 0
+:matt/bricks/09b: 112 0
+:matt/bricks/09b: -16 0
+:matt/bricks/11b: 16 0
+:matt/bricks/11b: 496 0
+:matt/bricks/09b: 464 0
+:matt/bricks/12: 624 0
+:matt/bricks/11b: 624 0
+:matt/bricks/09b: 592 0
+:matt/bricks/09: 48 0
+:matt/bricks/11: 80 0
+:matt/bricks/09: 528 0
+:matt/bricks/11: 560 0
+:matt/bricks/12: 592 32
+:matt/bricks/12: 624 32
+:matt/bricks/12: 592 64
+:matt/bricks/12: 624 64
+:matt/bricks/18: 528 352 d
+:matt/bricks/18: 528 368 d
+:matt/bricks/18: 96 368 d
+:matt/bricks/18: 96 352 d
+:matt/bricks/18: 288 32
+:matt/bricks/18: 336 32
+:matt/bricks/19: 480 80 f
+:matt/bricks/19: 544 112 f
+:matt/bricks/19: 608 144 f
+:matt/bricks/18: 424 48
+:matt/bricks/19: 416 48 f
+:matt/bricks/19: 192 48 f
+:matt/bricks/19: 128 80 f
+:matt/bricks/19: 64 112 f
+:matt/bricks/19: 0 144 f
+:matt/bricks/19: 64 144
+:matt/bricks/19: 0 176
+:matt/bricks/19: 128 112
+:matt/bricks/19: 192 80
+:matt/bricks/19: 416 80
+:matt/bricks/19: 544 144
+:matt/bricks/19: 608 176
+:matt/bricks/12b: 304 128
+:matt/bricks/03: 288 336
+:matt/bricks/03a: 288 304
+:matt/bricks/12a: 256 320
+:matt/bricks/12a: 352 320
+:matt/bricks/12b: 480 352
+:matt/bricks/12b: 128 352
+:matt/bricks/12b: 128 384
+:matt/bricks/12a: 448 352
+:matt/bricks/12a: 448 384
+:matt/bricks/12a: 160 352
+:matt/bricks/12a: 160 384

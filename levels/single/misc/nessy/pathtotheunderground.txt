@@ -1,0 +1,136 @@
+$BUILT 2017-11-16 21:53:52
+$AUTHOR Nessy
+$ENGLISH Path to the Underground
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 512
+#SIZE_Y 336
+
+#INITIAL 30
+#REQUIRED 30
+#SPAWN_INTERVAL 20
+
+#BUILDER 1
+#BASHER 3
+#DIGGER 1
+#EXPLODER2 0
+
+:geoo/construction/Hatch.H: 80 0
+
+:geoo/construction/Goal2.G: 0 240
+
+:geoo/construction/sawblade.F: 186 136
+:raymanni/lab/goo.W: 64 304
+:raymanni/lab/goo.W: 96 304
+:raymanni/lab/goo.W: 128 304
+:raymanni/lab/goo.W: 160 304
+:raymanni/lab/goo.W: 192 304
+:raymanni/lab/goo.W: 224 304
+:raymanni/lab/goo.W: 256 304
+:raymanni/lab/goo.W: 288 304
+:raymanni/lab/goo.W: 320 304
+:raymanni/lab/goo.W: 352 304
+:raymanni/lab/goo.W: 384 304
+:raymanni/lab/goo.W: 416 304
+:raymanni/lab/goo.W: 448 304
+:raymanni/lab/goo.W: 480 304
+
+:geoo/construction/wall/small_64x32: 64 80
+:geoo/construction/wall/small_64x32: 192 176
+:geoo/construction/wall/small_64x32: 64 240
+:geoo/construction/wall/small_64x32: 128 240
+:geoo/construction/wall/small_64x32: 128 208
+:geoo/construction/wall/small_64x32: 256 144
+:geoo/construction/wall/small_64x32: 320 112
+:geoo/construction/wall/small_64x32: 384 80
+:geoo/construction/wall/small_64x32: 384 240
+:geoo/construction/wall/small_64x32: 320 240
+:geoo/construction/wall/small_64x32: 320 208
+:geoo/construction/wall/small_64x32: 320 176
+:geoo/construction/wall/small_64x32: 256 240
+:geoo/construction/wall/small_64x32: 192 240
+:geoo/construction/wall/small_64x32: 192 208
+:geoo/construction/wall/small_64x32: 320 144
+:geoo/construction/wall/small_64x32: 192 80
+:geoo/construction/wall/small_64x32: 0 176
+:geoo/construction/wall/small_64x32: 0 144
+:geoo/construction/wall/small_64x32: 0 80
+:geoo/construction/wall/small_64x32: 128 80
+:geoo/construction/wall/small_64x32: 0 304
+:geoo/construction/wall/small_64x32: 256 176
+:geoo/steel/32x64o.S: 144 208
+:geoo/steel/64x32o.S: 128 112
+:geoo/construction/fence_rust_64x64: 64 80
+:geoo/construction/fence_rust_64x64: 0 80
+:geoo/steel/64x32o.S: 0 112
+:geoo/construction/wall/small_64x32: 448 80
+:geoo/construction/wall/small_64x32: 448 48
+:geoo/construction/wall/small_64x32: 448 112
+:geoo/construction/wall/small_64x32: 448 144
+:geoo/construction/wall/small_64x32: 448 176
+:geoo/construction/wall/small_64x32: 448 208
+:geoo/construction/wall/small_64x32: 448 240
+:geoo/construction/fence_rust_64x64: 192 176
+:geoo/steel/32x16o.S: 224 186
+:geoo/steel/32x16o.S: 224 170
+:geoo/steel/32x16o.S: 192 186
+:geoo/steel/32x16o.S: 192 170
+:geoo/construction/fence_rust_64x64: 320 112
+:geoo/construction/fence_rust_64x64: 320 176
+:geoo/construction/fence_rust_64x64: 320 208
+:geoo/construction/fence_rust_64x64: 448 208
+:geoo/construction/fence_rust_64x64: 448 144
+:geoo/construction/fence_rust_64x64: 448 80
+:geoo/construction/fence_rust_64x64: 448 48
+:geoo/construction/fence_rust_64x64: 192 208
+:geoo/construction/fence_rust_64x64: 0 144
+:geoo/construction/wall/small_64x32: 64 144
+:geoo/construction/fence_rust_64x64: 64 112 frr
+:geoo/steel/64x32o.S: 64 112
+:geoo/construction/concrete/008h: 56 0
+:geoo/construction/concrete/008h: 40 6
+:geoo/construction/concrete/008h: 24 0
+:geoo/construction/concrete/008h: 8 6
+:geoo/construction/concrete/008h: -8 0
+:geoo/construction/concrete/008h: 184 0
+:geoo/construction/concrete/008h: 168 6
+:geoo/construction/concrete/008h: 152 0
+:geoo/construction/concrete/008h: 136 6
+:geoo/construction/concrete/008h: 120 0
+:geoo/construction/concrete/008h: 248 0
+:geoo/construction/concrete/008h: 232 6
+:geoo/construction/concrete/008h: 216 0
+:geoo/construction/concrete/008h: 200 6
+:geoo/construction/concrete/008h: 312 0
+:geoo/construction/concrete/008h: 296 6
+:geoo/construction/concrete/008h: 280 0
+:geoo/construction/concrete/008h: 264 6
+:geoo/construction/concrete/008h: 376 0
+:geoo/construction/concrete/008h: 360 6
+:geoo/construction/concrete/008h: 344 0
+:geoo/construction/concrete/008h: 328 6
+:geoo/construction/concrete/008h: 440 0
+:geoo/construction/concrete/008h: 424 6
+:geoo/construction/concrete/008h: 408 0
+:geoo/construction/concrete/008h: 392 6
+:geoo/construction/concrete/008h: 504 0
+:geoo/construction/concrete/008h: 488 6
+:geoo/construction/concrete/008h: 472 0
+:geoo/construction/concrete/008h: 456 6
+:geoo/construction/concrete/008h: 152 12
+:geoo/construction/concrete/008h: 120 12
+:geoo/construction/concrete/008h: 216 12
+:geoo/construction/concrete/008h: 184 12
+:geoo/construction/concrete/008h: 280 12
+:geoo/construction/concrete/008h: 248 12
+:geoo/construction/concrete/008h: 344 12
+:geoo/construction/concrete/008h: 312 12
+:geoo/construction/concrete/008h: 408 12
+:geoo/construction/concrete/008h: 376 12
+:geoo/construction/concrete/008h: 472 12
+:geoo/construction/concrete/008h: 440 12
+:geoo/construction/concrete/008h: 56 12
+:geoo/construction/concrete/008h: 24 12
+:geoo/construction/concrete/008h: -8 12
+:geoo/construction/concrete/008h: 504 12
+:geoo/steel/32x16o.S: 256 96

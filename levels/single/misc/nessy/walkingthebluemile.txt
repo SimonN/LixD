@@ -1,0 +1,305 @@
+$BUILT 2017-12-03 12:30:47
+$AUTHOR Nessy
+$ENGLISH Walking the Blue Mile
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 1968
+#SIZE_Y 400
+
+#INITIAL 30
+#REQUIRED 30
+#SPAWN_INTERVAL 40
+
+#CLIMBER 1
+#BUILDER 2
+#BASHER 2
+#MINER 2
+#DIGGER 3
+#EXPLODER2 0
+
+:amanda/forest/hatch.H: 399 41
+
+:amanda/forest/exit.G: 1374 160
+
+:simon/crystal.W: 384 352
+:simon/crystal.W: 336 352
+:simon/crystal.W: 288 352
+:simon/crystal.W: 240 352
+:simon/crystal.W: 192 352
+:simon/crystal.W: 144 352
+:simon/crystal.W: 96 352
+:simon/crystal.W: 48 352
+:simon/crystal.W: 0 352
+:simon/crystal.W: 464 352
+:simon/crystal.W: 512 352
+:simon/crystal.W: 560 352
+:simon/crystal.W: 608 352
+:simon/crystal.W: 656 352
+:simon/crystal.W: 720 352
+:simon/crystal.W: 768 352
+:simon/crystal.W: 816 352
+:simon/crystal.W: 864 352
+:simon/crystal.W: 912 352
+:simon/crystal.W: 960 352
+:simon/crystal.W: 1008 352
+:simon/crystal.W: 1056 352
+:simon/crystal.W: 1104 352
+:simon/crystal.W: 1152 352
+:simon/crystal.W: 1200 352
+:simon/crystal.W: 1248 352
+:simon/crystal.W: 1296 352
+:simon/crystal.W: 1344 352
+:simon/crystal.W: 1392 352
+:simon/crystal.W: 1440 352
+:simon/crystal.W: 1488 352
+:simon/crystal.W: 1536 352
+:simon/crystal.W: 1584 352
+:simon/crystal.W: 1632 352
+:simon/crystal.W: 1680 352
+:simon/crystal.W: 1728 352
+:simon/crystal.W: 1776 352
+:simon/crystal.W: 1824 352
+:simon/crystal.W: 1872 352
+:simon/crystal.W: 1920 352
+
+:proxima/tile/cyan1b: 1223 152
+:proxima/tile/cyan1b: 1223 144 d
+:proxima/tile/cyan1b: 1023 152 frr
+:proxima/tile/cyan1b: 1023 144 d
+:proxima/tile/cyan1b: 760 192
+:proxima/tile/cyan1b: 792 192
+:proxima/tile/cyan1b: 792 208
+:proxima/tile/cyan1b: 760 208
+:proxima/tile/blue1bs: 1535 15
+:geoo/construction/rod_rust/straight_diagu32: 187 59
+:geoo/construction/rod_rust/straight_diagd32: 96 53
+:geoo/construction/rod_rust/straight_diagd32: 978 122
+:geoo/construction/rod_rust/straight_diagu32: 887 127
+:geoo/construction/rod_rust/straight_diagd32: 763 245
+:geoo/construction/rod_rust/straight_diagd32: 827 309
+:geoo/construction/rod_rust/straight_diagu32: 1326 282
+:geoo/construction/rod_rust/straight_diagu32: 1294 314
+:proxima/tile/blue1: 384 160
+:proxima/tile/blue1: 448 160
+:proxima/tile/blue1: 448 224
+:proxima/tile/blue1: 384 224
+:proxima/tile/blue1: 640 160
+:proxima/tile/blue1: 704 160
+:proxima/tile/blue1: 704 224
+:proxima/tile/blue1: 640 224
+:proxima/tile/spheres/blue: 416 192
+:proxima/tile/spheres/blue: 672 192
+:proxima/tile/cyan1b: 512 160
+:proxima/tile/cyan1b: 544 160
+:proxima/tile/cyan1b: 576 160
+:proxima/tile/cyan1b: 608 160
+:proxima/tile/cyan1b: 608 176
+:proxima/tile/cyan1b: 576 176
+:proxima/tile/cyan1b: 544 176
+:proxima/tile/cyan1b: 512 176
+:proxima/tile/cyan1b: 512 256
+:proxima/tile/cyan1b: 544 256
+:proxima/tile/cyan1b: 576 256
+:proxima/tile/cyan1b: 608 256
+:proxima/tile/cyan1b: 608 272
+:proxima/tile/cyan1b: 576 272
+:proxima/tile/cyan1b: 544 272
+:proxima/tile/cyan1b: 512 272
+:proxima/tile/blue1: 640 0
+:proxima/tile/blue1: 704 0
+:proxima/tile/spheres/blue: 672 0
+:proxima/tile/cyan1b: 656 144
+:proxima/tile/cyan1b: 656 128
+:proxima/tile/cyan1b: 656 112
+:proxima/tile/cyan1b: 656 96
+:proxima/tile/cyan1b: 656 80
+:proxima/tile/cyan1b: 656 64
+:proxima/tile/cyan1b: 720 144
+:proxima/tile/cyan1b: 720 128
+:proxima/tile/cyan1b: 720 112
+:proxima/tile/cyan1b: 720 96
+:proxima/tile/cyan1b: 720 80
+:proxima/tile/cyan1b: 720 64
+:proxima/tile/blue1bs: 352 159 frr
+:proxima/tile/blue1as: 353 191 frr
+:proxima/tile/blue1bs: 321 190 frr
+:proxima/tile/blue1as: 322 222 frr
+:proxima/tile/blue1bs: 290 221 frr
+:proxima/tile/blue1as: 291 253 frr
+:proxima/tile/blue1bs: 259 252 frr
+:proxima/tile/blue1as: 260 284 frr
+:proxima/tile/blue1bs: 228 283 frr
+:proxima/tile/blue1as: 229 315 frr
+:proxima/tile/blue1: 96 0
+:proxima/tile/blue1: 160 0
+:proxima/tile/spheres/blue: 128 0
+:proxima/tile/cyan1b: 432 288
+:proxima/tile/cyan1b: 432 304
+:proxima/tile/cyan1b: 432 320
+:proxima/tile/cyan1b: 432 336
+:proxima/tile/cyan1b: 432 352
+:proxima/tile/cyan1b: 432 368
+:proxima/tile/cyan1b: 432 384
+:proxima/tile/cyan1b: 688 288
+:proxima/tile/cyan1b: 688 304
+:proxima/tile/cyan1b: 688 320
+:proxima/tile/cyan1b: 688 336
+:proxima/tile/cyan1b: 688 352
+:proxima/tile/cyan1b: 688 368
+:proxima/tile/cyan1b: 688 384
+:proxima/tile/blue1: 860 160
+:proxima/tile/cyan1b: 876 272
+:proxima/tile/cyan1b: 876 256
+:proxima/tile/cyan1b: 876 240
+:proxima/tile/cyan1b: 876 224
+:proxima/tile/blue1: 860 288
+:proxima/tile/blue1: 979 160
+:proxima/tile/cyan1b: 995 272
+:proxima/tile/cyan1b: 995 256
+:proxima/tile/cyan1b: 995 240
+:proxima/tile/cyan1b: 995 224
+:proxima/tile/blue1: 979 288
+:proxima/tile/blue1: 1235 160
+:proxima/tile/blue1: 1235 288
+:proxima/tile/blue1: 1358 256
+:proxima/tile/blue1: 1422 256
+:proxima/tile/blue1: 1422 320
+:proxima/tile/blue1: 1358 320
+:proxima/tile/spheres/blue: 1390 288
+:proxima/tile/blue1bs: 1486 255
+:proxima/tile/blue1as: 1485 287
+:proxima/tile/blue1bs: 1517 286
+:proxima/tile/blue1as: 1516 318
+:proxima/tile/blue1bs: 1548 317
+:proxima/tile/blue1as: 1547 349
+:proxima/tile/blue1bs: 1579 348
+:proxima/tile/blue1as: 1579 380
+:proxima/tile/blue1bs: 1611 379
+:geoo/construction/rod_rust/straight32: 1043 176
+:geoo/construction/rod_rust/straight32: 1075 176
+:geoo/construction/rod_rust/straight32: 1107 176
+:geoo/construction/rod_rust/straight32: 1139 176
+:geoo/construction/rod_rust/straight32: 1171 176
+:geoo/construction/rod_rust/straight32: 1203 176
+:geoo/construction/rod_rust/straight32: 1043 200
+:geoo/construction/rod_rust/straight32: 1075 200
+:geoo/construction/rod_rust/straight32: 1107 200
+:geoo/construction/rod_rust/straight32: 1139 200
+:geoo/construction/rod_rust/straight32: 1171 200
+:geoo/construction/rod_rust/straight32: 1203 200
+:geoo/construction/rod_rust/straight32: 1043 304
+:geoo/construction/rod_rust/straight32: 1075 304
+:geoo/construction/rod_rust/straight32: 1107 304
+:geoo/construction/rod_rust/straight32: 1139 304
+:geoo/construction/rod_rust/straight32: 1171 304
+:geoo/construction/rod_rust/straight32: 1203 304
+:geoo/construction/rod_rust/straight32: 1043 328
+:geoo/construction/rod_rust/straight32: 1075 328
+:geoo/construction/rod_rust/straight32: 1107 328
+:geoo/construction/rod_rust/straight32: 1139 328
+:geoo/construction/rod_rust/straight32: 1171 328
+:geoo/construction/rod_rust/straight32: 1203 328
+:geoo/construction/rod_rust/straight_diagd32: 795 277
+:geoo/construction/rod_rust/straight_diagu32: 919 95
+:geoo/construction/rod_rust/straight_diagd32: 946 90
+:geoo/construction/rod_rust/straight_diagu32: 155 91
+:geoo/construction/rod_rust/straight_diagd32: 128 85
+:geoo/construction/rod_rust/straight32: 768 40
+:geoo/construction/rod_rust/straight32: 800 40
+:geoo/construction/rod_rust/straight32: 832 40
+:geoo/construction/rod_rust/straight32: 864 40
+:geoo/construction/rod_rust/straight32: 896 40
+:geoo/construction/rod_rust/straight32: 928 40
+:geoo/construction/rod_rust/straight32: 960 40
+:geoo/construction/rod_rust/straight32: 992 40
+:geoo/construction/rod_rust/straight32: 1024 40
+:geoo/construction/rod_rust/straight32: 1056 40
+:geoo/construction/rod_rust/straight32: 1088 40
+:geoo/construction/rod_rust/straight32: 1120 40
+:geoo/construction/rod_rust/straight32: 1152 40
+:geoo/construction/rod_rust/straight32: 1184 40
+:geoo/construction/rod_rust/straight32: 1216 40
+:geoo/construction/rod_rust/straight32: 1248 40
+:geoo/construction/rod_rust/straight32: 1280 40
+:geoo/construction/rod_rust/straight32: 1312 40
+:geoo/construction/rod_rust/straight32: 1344 40
+:geoo/construction/fence_rust_64x64: 768 -24
+:geoo/construction/fence_rust_64x64: 832 -24
+:geoo/construction/fence_rust_64x64: 896 -24
+:geoo/construction/fence_rust_64x64: 960 -24
+:geoo/construction/fence_rust_64x64: 1024 -24
+:geoo/construction/fence_rust_64x64: 1088 -24
+:geoo/construction/fence_rust_64x64: 1152 -24
+:geoo/construction/fence_rust_64x64: 1216 -24
+:geoo/construction/fence_rust_64x64: 1280 -24
+:geoo/construction/fence_rust_64x64: 1344 -24
+:geoo/construction/rod_rust/straight32: 1376 40
+:geoo/construction/rod_rust/straight32: 1408 40
+:geoo/construction/fence_rust_64x64: 1408 -24
+:geoo/construction/rod_rust/straight32: 1440 40
+:geoo/construction/rod_rust/straight32: 1472 40
+:geoo/construction/fence_rust_64x64: 1472 -24
+:geoo/construction/rod_rust/straight32: 1504 40
+:proxima/tile/spheres/blue: 1502 -16
+:proxima/tile/blue1as: 1534 47
+:proxima/tile/blue1bs: 1566 46
+:proxima/tile/blue1as: 1565 78
+:proxima/tile/blue1bs: 1597 77
+:proxima/tile/blue1as: 1596 109
+:proxima/tile/blue1bs: 1628 108
+:proxima/tile/blue1as: 1627 140
+:proxima/tile/blue1bs: 1659 139
+:proxima/tile/blue1as: 1658 171
+:proxima/tile/blue1bs: 1690 170
+:proxima/tile/blue1as: 1689 202
+:proxima/tile/blue1bs: 1721 201
+:proxima/tile/blue1as: 1720 233
+:proxima/tile/blue1bs: 1752 232
+:proxima/tile/blue1as: 1751 264
+:proxima/tile/blue1bs: 1783 263
+:proxima/tile/blue1as: 1782 295
+:proxima/tile/blue1bs: 1814 294
+:proxima/tile/blue1as: 1813 326
+:proxima/tile/blue1bs: 1845 325
+:proxima/tile/blue1as: 1844 357
+:proxima/tile/blue1bs: 1876 356
+:proxima/tile/cyan1a: 232 0 rrr
+:proxima/tile/cyan1a: 264 -8 rrr
+:proxima/tile/cyan1a: 296 -24 rrr
+:proxima/tile/cyan1a: 328 -16 rrr
+:proxima/tile/cyan1a: 360 0 rrr
+:proxima/tile/cyan1a: 392 -16 rrr
+:proxima/tile/cyan1a: 424 -16 rrr
+:proxima/tile/cyan1a: 456 0 rrr
+:proxima/tile/cyan1a: 488 -24 rrr
+:proxima/tile/cyan1a: 520 -16 rrr
+:proxima/tile/cyan1a: 552 -8 rrr
+:proxima/tile/cyan1a: 584 -24 rrr
+:proxima/tile/cyan1a: 616 0 rrr
+:proxima/tile/cyan1a: 72 -8 rrr
+:proxima/tile/cyan1a: 40 -16 rrr
+:proxima/tile/cyan1a: 8 0 rrr
+:proxima/tile/cyan1a: 1573 -8 rrr
+:proxima/tile/cyan1a: 1605 -24 rrr
+:proxima/tile/cyan1a: 1637 -24 rrr
+:proxima/tile/cyan1a: 1669 0 rrr
+:proxima/tile/cyan1a: 1701 -24 rrr
+:proxima/tile/cyan1a: 1733 -8 rrr
+:proxima/tile/cyan1a: 1765 -16 rrr
+:proxima/tile/cyan1a: 1797 -16 rrr
+:proxima/tile/cyan1a: 1829 -8 rrr
+:proxima/tile/cyan1a: 1861 -24 rrr
+:proxima/tile/cyan1a: 1893 0 rrr
+:proxima/tile/cyan1a: 1925 -24 rrr
+:proxima/tile/cyan1a: 1957 -24 rrr
+:geoo/steel/dark_32x48o.S: 1011 176
+:geoo/steel/dark_32x48o.S: 1011 288
+:geoo/steel/dark_32x48o.S: 1235 288
+:geoo/steel/dark_32x48o.S: 1235 176
+:proxima/tile/blue1as: 1875 388
+:proxima/tile/blue1bs: 1907 387
+:proxima/tile/blue1bs: 197 314 frr
+:proxima/tile/blue1as: 198 346 frr
+:proxima/tile/blue1bs: 166 345 frr
+:proxima/tile/blue1as: 167 377 frr
+:proxima/tile/blue1bs: 135 376 frr

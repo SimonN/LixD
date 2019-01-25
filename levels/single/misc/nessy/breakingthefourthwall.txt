@@ -1,0 +1,148 @@
+$BUILT 2017-12-17 17:19:55
+$AUTHOR Nessy
+$ENGLISH Breaking the Fourth Wall
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 896
+#SIZE_Y 400
+
+#INITIAL 25
+#REQUIRED 24
+#SPAWN_INTERVAL 32
+
+#CLIMBER 3
+#BLOCKER 2
+#BUILDER 3
+#BASHER 4
+#EXPLODER2 0
+
+:matt/bricks/Hatch.H: 288 128
+
+:matt/bricks/Goal.G: 576 320
+
+:amanda/tar.W: 0 368
+:amanda/tar.W: 768 368
+
+:matt/bricks/18: 560 359
+:matt/bricks/18: 640 359
+:matt/bricks/03: 304 288
+:matt/bricks/03: 128 336
+:matt/bricks/03: 128 272
+:matt/bricks/03: 128 208
+:matt/bricks/03: 128 144
+:matt/bricks/03: 128 80
+:matt/bricks/03: 128 16
+:matt/bricks/03: 704 272
+:matt/bricks/03: 704 336
+:matt/bricks/03: 704 208
+:matt/bricks/03: 704 144
+:matt/bricks/03: 704 80
+:matt/bricks/03: 704 16
+:matt/bricks/03: 256 336
+:matt/bricks/03: 320 336
+:matt/bricks/03: 384 336
+:matt/bricks/02: 576 368
+:matt/bricks/02: 640 368
+:matt/bricks/03: 496 112
+:matt/bricks/02: 400 224
+:geoo/steel/dark_32x64o.S: 512 112
+:geoo/steel/dark_32x32o.S: 416 224
+:geoo/steel/dark_32x48o.S: 320 288
+:geoo/steel/dark_32x64o.S: 704 112
+:matt/bricks/02: 128 -16
+:matt/bricks/02: 192 -16
+:matt/bricks/02: 256 -16
+:matt/bricks/02: 320 -16
+:matt/bricks/02: 384 -16
+:matt/bricks/02: 448 -16
+:matt/bricks/02: 512 -16
+:matt/bricks/02: 576 -16
+:matt/bricks/02: 640 -16
+:matt/bricks/02: 704 -16
+:matt/bricks/17: 640 16 frr
+:matt/bricks/17: 192 16
+:matt/bricks/17: 320 16
+:matt/bricks/17: 448 16
+:matt/bricks/17: 576 16
+:matt/bricks/17: 512 16 frr
+:matt/bricks/17: 384 16 frr
+:matt/bricks/17: 256 16 frr
+:matt/bricks/17: 192 16 frr
+:matt/bricks/17: 320 16 frr
+:matt/bricks/17: 448 16 frr
+:matt/bricks/17: 576 16 frr
+:matt/bricks/17: 640 16
+:matt/bricks/17: 512 16
+:matt/bricks/17: 384 16
+:matt/bricks/17: 256 16
+:matt/bricks/19: 96 0
+:matt/bricks/19: 64 16
+:matt/bricks/19: 32 32
+:matt/bricks/19: 0 48
+:matt/bricks/19: 768 0
+:matt/bricks/19: 800 16
+:matt/bricks/19: 832 32
+:matt/bricks/19: 864 48
+:matt/bricks/18: 72 -16
+:matt/bricks/18: 8 16
+:matt/bricks/18: 8 -16
+:matt/bricks/18: 808 -16
+:matt/bricks/18: 840 0
+:matt/bricks/18: 872 16
+:matt/bricks/18: 872 -16
+:matt/bricks/18: 440 32
+:matt/bricks/18: 376 32
+:matt/bricks/18: 312 32
+:matt/bricks/18: 504 32
+:matt/bricks/18: 568 32
+:matt/bricks/18: 632 32
+:matt/bricks/18: 248 32
+:matt/bricks/02: 706 224 d
+:matt/bricks/18: 40 0
+:matt/bricks/02: 512 368
+:matt/bricks/03: 448 336
+:matt/bricks/03: 192 336
+:matt/bricks/01: 176 176
+:matt/bricks/01: 208 176
+:matt/bricks/01: 240 176
+:matt/bricks/01: 272 176
+:matt/bricks/01: 304 176
+:matt/bricks/01: 336 176
+:matt/bricks/01: 368 176
+:matt/bricks/01: 400 176
+:matt/bricks/01: 432 176
+:matt/bricks/01: 464 176
+:matt/bricks/01: 496 176
+:matt/bricks/01: 528 176
+:matt/bricks/01: 560 176
+:matt/bricks/01: 592 176
+:matt/bricks/01: 624 176
+:matt/bricks/01: 224 256
+:matt/bricks/01: 256 256
+:matt/bricks/01: 288 256
+:matt/bricks/01: 320 256
+:matt/bricks/01: 352 256
+:matt/bricks/01: 384 256
+:matt/bricks/01: 416 256
+:matt/bricks/01: 448 256
+:matt/bricks/01: 480 256
+:matt/bricks/01: 512 256
+:matt/bricks/01: 544 256
+:matt/bricks/01: 576 256
+:matt/bricks/01: 608 256
+:matt/bricks/01: 640 256
+:matt/bricks/01: 672 256
+:matt/bricks/01: 192 288
+:matt/bricks/01: 224 288
+:matt/bricks/01: 656 176
+:matt/bricks/01: 672 176 d
+:geoo/steel/dark_32x48o.S: 160 288
+:matt/marble/thinplatform128p: 576 270 d
+:matt/marble/thinplatform128p: 448 270 d
+:matt/marble/thinplatform128p: 320 270 d
+:matt/marble/thinplatform128p: 192 270 d
+:matt/marble/thinplatform128p: 192 190 d
+:matt/marble/thinplatform128p: 320 190 d
+:matt/marble/thinplatform128p: 448 190 d
+:matt/marble/thinplatform128p: 576 190 d
+:matt/marble/thinplatform64p: 192 302 d

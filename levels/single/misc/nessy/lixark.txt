@@ -1,0 +1,164 @@
+$BUILT 2017-11-28 17:04:48
+$AUTHOR Nessy
+$ENGLISH Lix Ark
+
+#INTENDED_NUMBER_OF_PLAYERS 1
+#SIZE_X 768
+#SIZE_Y 400
+
+#INITIAL 20
+#REQUIRED 19
+#SPAWN_INTERVAL 35
+
+#WALKER 1
+#CLIMBER 1
+#BLOCKER 1
+#BUILDER 4
+#BASHER 1
+#MINER 1
+#JUMPER 2
+#EXPLODER 0
+
+:matt/marble/Hatch.H: 156 236
+
+:matt/marble/Goal.G: 351 128
+
+:simon/water.W: 112 352
+:simon/water.W: 64 352
+:simon/water.W: 16 352
+:simon/water.W: -32 352
+:simon/water.W: 608 352
+:simon/water.W: 656 352
+:simon/water.W: 704 352
+:simon/water.W: 752 352
+
+:matt/marble/09d: 160 336
+:matt/marble/09d: 224 336
+:matt/marble/09d: 544 272
+:matt/marble/09d: 448 240
+:matt/marble/09d: 224 176
+:matt/marble/09d: 288 176
+:matt/marble/09d: 416 176
+:matt/marble/09d: 256 80
+:matt/marble/09d: 160 16
+:matt/marble/09d: 480 336
+:matt/marble/09d: 384 240
+:matt/marble/09d: 480 16
+:matt/marble/09d: 544 16
+:matt/marble/09d: 448 80
+:matt/marble/01d: 528 272
+:matt/marble/01d: 224 112
+:matt/marble/01d: 528 112
+:geoo/steel/32x64o.S: 160 112
+:geoo/steel/32x64o.S: 160 176
+:geoo/steel/32x64o.S: 576 176
+:geoo/steel/32x64o.S: 576 112
+:matt/marble/09d: 256 240
+:matt/marble/09c: 320 240
+:matt/marble/09d: 352 16
+:matt/marble/09c: 352 176
+:matt/marble/09c: 224 16
+:matt/marble/09c: 288 16
+:matt/marble/09c: 416 16
+:matt/marble/09c: 288 336
+:matt/marble/09c: 352 336
+:matt/marble/09c: 416 336
+:matt/marble/09c: 544 336
+:matt/marble/06d: 192 112
+:matt/marble/06d: 544 112
+:matt/marble/06d: 544 176
+:matt/marble/06c: 192 176
+:matt/marble/09c: 480 176
+:matt/marble/02b: 160 0
+:matt/marble/02b: 192 0
+:matt/marble/02b: 496 0
+:matt/marble/02b: 592 0
+:matt/marble/02b: 432 0
+:matt/marble/02b: 464 0
+:matt/marble/02b: 288 0
+:matt/marble/02b: 320 0
+:matt/marble/02b: 352 0
+:matt/marble/05b: 160 16
+:matt/marble/05b: 256 16
+:matt/marble/05b: 320 48
+:matt/marble/05b: 352 48
+:matt/marble/05b: 416 16
+:matt/marble/05b: 512 16
+:matt/marble/05b: 576 48
+:matt/marble/05b: 160 336
+:matt/marble/05b: 256 336
+:matt/marble/05b: 320 368
+:matt/marble/05b: 352 368
+:matt/marble/05b: 416 336
+:matt/marble/05b: 512 336
+:matt/marble/05b: 576 368
+:matt/marble/05b: 544 304
+:matt/marble/05b: 224 176
+:matt/marble/05b: 320 176
+:matt/marble/05b: 384 208
+:matt/marble/05b: 416 208
+:matt/marble/05b: 480 176
+:matt/marble/05b: 288 240
+:matt/marble/05b: 352 272
+:matt/marble/05b: 384 272
+:matt/marble/05b: 448 240
+:matt/marble/05b: 256 112
+:matt/marble/05b: 448 80
+:matt/marble/05a: 256 272
+:matt/marble/05a: 320 240
+:matt/marble/05a: 416 272
+:matt/marble/05a: 448 272
+:matt/marble/05a: 448 176
+:matt/marble/05a: 512 208
+:matt/marble/05a: 352 208
+:matt/marble/05a: 320 208
+:matt/marble/05a: 256 208
+:matt/marble/05a: 288 80
+:matt/marble/05a: 480 80
+:matt/marble/05a: 480 48
+:matt/marble/05a: 448 48
+:matt/marble/05a: 544 16
+:matt/marble/05a: 384 16
+:matt/marble/05a: 288 16
+:matt/marble/05a: 224 48
+:matt/marble/05a: 160 48
+:matt/marble/05a: 192 368
+:matt/marble/05a: 224 336
+:matt/marble/05a: 288 336
+:matt/marble/05a: 352 336
+:matt/marble/05a: 448 368
+:matt/marble/05a: 480 368
+:matt/marble/05a: 544 336
+:matt/marble/05a: 576 304
+:matt/marble/05a: 544 144
+:matt/marble/05a: 544 176
+:matt/marble/05a: 192 208
+:matt/marble/05a: 192 144
+:matt/marble/17b: 64 16
+:matt/marble/08a: 96 16
+:matt/marble/17b: 128 48
+:matt/marble/08b: 608 16
+:matt/marble/15a: 672 16
+:matt/marble/15a: 608 48
+:matt/marble/15a: 320 80
+:matt/marble/17b: 416 80
+:matt/marble/17b: 224 80
+:matt/marble/15a: 512 80
+:matt/marble/15a: 512 240
+:matt/marble/17b: 224 240
+:matt/marble/02b: 96 0
+:matt/marble/02b: 624 0
+:matt/marble/02b: 640 0
+:matt/marble/02a: 112 0
+:matt/marble/02a: 128 0
+:matt/marble/02a: 656 0
+:matt/marble/02a: 560 0
+:matt/marble/02a: 528 0
+:matt/marble/02a: 224 0
+:matt/marble/02a: 256 0
+:matt/marble/02a: 272 0
+:matt/marble/02a: 480 0
+:matt/marble/02a: 384 0
+:matt/marble/02a: 400 0
+:matt/marble/02a: 368 0
+:geoo/steel/32x32o.S: 576 240
