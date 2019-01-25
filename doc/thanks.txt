@@ -13,7 +13,7 @@ geoo
         D Lix can no longer load Lemmings 1/2 tilesets. I cannot ship these
         tilesets with Lix anyway because of their third-party copyrights.
 
-Raymanni:
+Raymanni
     *  Toys, lab, gore, and holiday tilesets in images/raymanni.
 
 Matt C.
@@ -52,6 +52,7 @@ mobius
     * Together with minim, 5 tracks in music/minim-mobius, released as
         public domain.
     * Several levels in levels/lemforum.
+    * Extra singleplayer puzzles in misc/mobius/.
     * Project Capybara, a levelpack for Lix that I did not include because
         it felt too close to the copyrighted Lemmings 1 levels.
 
@@ -77,6 +78,9 @@ Insane Steve
 minim
     * Together with mobius, 5 tracks in music/minim-mobius, released as
         public domain.
+
+Nessy
+    * 10 singleplayer puzzles in misc/nessy/.
 
 CyberShadow
     * Contributing code to early D Lix to for better bitmap buttons
