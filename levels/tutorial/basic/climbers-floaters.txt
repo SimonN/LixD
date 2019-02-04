@@ -1,5 +1,5 @@
 $BUILT 2019-01-12 20:44:31
-$AUTHOR Rubix
+$AUTHOR Rubix/Simon
 $GERMAN Kletterer und Fallschirme
 $ENGLISH Climbers and Floaters
 

@@ -1,5 +1,5 @@
 $BUILT 2019-01-12 19:30:25
-$AUTHOR Simon
+$AUTHOR Simon/Wuzzy
 $GERMAN Hacker und Platformer
 $ENGLISH Miners
 
