@@ -166,7 +166,7 @@ final class Tribe {
             import std.string;
             string msg = format("Style %s spawns from wrong hatch #%d.",
                 this.style, this.nextHatch);
-            foreach (long i, hatch; ow.state.hatches) {
+            foreach (const size_t i, hatch; ow.state.hatches) {
                 msg ~= format("\nHatch #%d has styles:", i);
                 foreach (Style st; hatch.tribes) {
                     msg ~= " " ~ styleToString(st);
