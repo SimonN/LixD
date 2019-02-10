@@ -1,8 +1,14 @@
 module graphic.internal.loadfile;
 
+/*
+ * These functions assume that there is work to be done.
+ * Don't call these if the result is already cached.
+ */
+
 import std.algorithm; // find
 
 import basics.alleg5;
+import basics.globals : dirDataBitmap;
 import file.filename;
 import graphic.color;
 import graphic.cutbit;
@@ -13,18 +19,24 @@ import graphic.internal.recol;
 
 package:
 
-void loadFromDisk(Filename fn)
-{
-    if (! fn.fileExists || ! fn.hasImageExtension) {
+void loadBestScaleFromDiskOrPutNullCutbit(in InternalImage id)
+in {
+    assert (loadedCutbitMayBeScaled[id] is null);
+}
+out {
+    assert (loadedCutbitMayBeScaled[id] !is null); // but may be nullCutbit
+}
+body {
+    immutable fn = toBestScaledFilenameOrNull(id);
+    if (fn is null) {
+        loadedCutbitMayBeScaled[id] = nullCutbit;
         return;
     }
-    Cutbit cb = new Cutbit(fn, Cutbit.Cut.ifGridExists);
-    if (!cb || !cb.valid) {
-        return;
+    loadedCutbitMayBeScaled[id] = new Cutbit(fn, Cutbit.Cut.ifGridExists);
+    al_convert_mask_to_alpha(loadedCutbitMayBeScaled[id].albit, color.pink);
+    if (id.needGuiRecoloring) {
+        eidrecol(loadedCutbitMayBeScaled[id], 0);
     }
-    al_convert_mask_to_alpha(cb.albit, color.pink);
-    internal[fn.rootlessNoExt] = cb;
-    assert (fn.rootlessNoExt in internal);
 }
 
 void makeLixSprites(in Style st)
@@ -56,6 +68,20 @@ body {
 }
 
 private:
+
+Filename toBestScaledFilenameOrNull(in InternalImage id)
+{
+    immutable correctScale = new VfsFilename(scaleDir ~ id.toBasename);
+    if (correctScale.fileExists && correctScale.hasImageExtension) {
+        return correctScale;
+    }
+    immutable fallbackScale = new VfsFilename(
+        dirDataBitmap.dirRootless ~ id.toBasename);
+    if (fallbackScale.fileExists && fallbackScale.hasImageExtension) {
+        return fallbackScale;
+    }
+    return null;
+}
 
 void recolorForGuiAndPlayer(int magicnr)(
     in InternalImage id,

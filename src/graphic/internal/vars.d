@@ -15,8 +15,7 @@ package:
 
 bool wantRecoloredGraphics;
 
-Cutbit _lixRawSprites;
-Cutbit[string]    internal;
+Cutbit[InternalImage.max + 1] loadedCutbitMayBeScaled;
 Cutbit[Style.max] spritesheets;
 Cutbit[Style.max] panelInfoIcons;
 Cutbit[Style.max] skillButtonIcons;

@@ -11,62 +11,47 @@ import graphic.internal.names;
 import graphic.internal.recol;
 import graphic.internal.vars;
 
-private enum imgExt = ".png";
-
 package:
 
+/*
+ * Mostly identical to getInternalMutable, except for:
+ *  - Returns the real bitmap even when we don't need recolored graphics.
+ *    (getInternalMutable would avoid unnecessary work then.)
+ *  - Noisily fails when the sprites aren't found.
+ *    (getInternalMutable would return nullCutbit silently.)
+ */
 Cutbit getLixRawSprites()
 out (ret) {
     assert (valid(ret), "can't find Lix spritesheet");
 }
 body {
-    if (_lixRawSprites)
-        return _lixRawSprites;
-    immutable fn = new VfsFilename(dirDataBitmap.dirRootless
-        ~ InternalImage.spritesheet.toBasename);
-    loadFromDisk(fn);
-    enforce(fn.rootlessNoExt in internal, "Can't find Lix spritesheet"
-        ~ " at `" ~ fn.rootless ~ "'. The spritesheet is required for physics"
+    if (loadedCutbitMayBeScaled[InternalImage.spritesheet] !is null) {
+        return loadedCutbitMayBeScaled[InternalImage.spritesheet];
+    }
+    loadBestScaleFromDiskOrPutNullCutbit(InternalImage.spritesheet);
+    enforce(valid(loadedCutbitMayBeScaled[InternalImage.spritesheet]),
+        "Can't find Lix spritesheet at: "
+        ~ dirDataBitmap.dirRootless
+        ~ InternalImage.spritesheet.toBasename
+        ~ ". The spritesheet is required for physics"
         ~ " because the number of sprites per row affect worker cycles."
         ~ " Is your Lix installation broken?");
-    _lixRawSprites = *(fn.rootlessNoExt in internal);
-    assert (_lixRawSprites);
-    return _lixRawSprites;
+    return loadedCutbitMayBeScaled[InternalImage.spritesheet];
 }
 
 // Input: ID of internal bitmap file (IDs don't know about scaling subdir)
 // Output: The cutbit from the correct scaling subdir, or a replacement image
-// See comment near graphic.internal.vars.internal about how we save strings
 Cutbit getInternalMutable(in InternalImage id)
 {
+    assert (nullCutbit, "call graphic.internal.initialize() first");
+    if (loadedCutbitMayBeScaled[id] !is null) {
+        return loadedCutbitMayBeScaled[id];
+    }
     if (! wantRecoloredGraphics) {
-        assert (nullCutbit, "call graphic.internal.initialize() first");
         return nullCutbit;
     }
-    immutable correctScale = new VfsFilename(scaleDir ~ id.toBasename);
-    if (auto ret = correctScale.rootlessNoExt in internal) {
-        return *ret;
-    }
-    immutable fallbackScale = new VfsFilename(
-        dirDataBitmap.dirRootless ~ id.toBasename);
-    if (auto ret = fallbackScale.rootlessNoExt in internal) {
-        return *ret;
-    }
-    // Neither the correcty-scaled image nor the fallback have already
-    // been successfully loaded. Try to load from disk in this order.
-    loadFromDisk(correctScale);
-    if (auto ret = correctScale.rootlessNoExt in internal) {
-        if (id.needGuiRecoloring)
-            eidrecol(*ret, 0);
-        return *ret;
-    }
-    loadFromDisk(fallbackScale);
-    if (auto ret = fallbackScale.rootlessNoExt in internal) {
-        if (id.needGuiRecoloring)
-            eidrecol(*ret, 0);
-        return *ret;
-    }
-    return nullCutbit;
+    loadBestScaleFromDiskOrPutNullCutbit(id);
+    return loadedCutbitMayBeScaled[id];
 }
 
 const(Cutbit) implGetLixSprites(in Style st)
@@ -133,14 +118,9 @@ body {
             }
         }
     }
-    deinitArray(internal);
+    deinitArray(loadedCutbitMayBeScaled);
     deinitArray(spritesheets);
     deinitArray(panelInfoIcons);
     deinitArray(skillButtonIcons);
     deinitArray(goalMarkers);
-    internal = null;
-    if (_lixRawSprites) {
-        _lixRawSprites.dispose();
-        _lixRawSprites = null;
-    }
 }
