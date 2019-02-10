@@ -64,30 +64,3 @@ protected:
         return "%s/%s".format(hotkey.nameShort, _hotkeyRight.nameShort);
     }
 }
-
-class SpawnIntervalButton : TwoTasksButton {
-public:
-    this(Geom g)
-    {
-        super(g, InternalImage.gamePanel2.toCutbit);
-        Geom g2 = new Geom(g);
-        g2.x   -= g.xl - 13;
-        g2.from = From.CENTER;
-        _label  = new Label(g2);
-        addChild(_label);
-    }
-
-    @property int spawnint() const { return _spawnint; }
-
-    @property int spawnint(in int i)
-    {
-        _spawnint = i;
-        _label.number = _spawnint;
-        reqDraw();
-        return _spawnint;
-    }
-
-private:
-    int   _spawnint;
-    Label _label;
-}
