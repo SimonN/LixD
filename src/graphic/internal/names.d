@@ -37,7 +37,8 @@ enum InternalImage {
 }
 
 enum GamePanel2Xf {
-    clearPhysics, nuke, quicksave, quickload
+    nuke, quicksave, quickload, editReplay,
+    splatRuler, pingGoals, unusedShades
 }
 
 @safe pure nothrow @nogc:

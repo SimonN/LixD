@@ -96,7 +96,7 @@ public:
         if (shadesGeom) {
             _coolShades = new BitmapButton(shadesGeom,
                 InternalImage.gamePanel2.toCutbit);
-            _coolShades.xf = GamePanel2Xf.clearPhysics;
+            _coolShades.xf = GamePanel2Xf.splatRuler;
             _coolShades.hotkey = file.option.keyPingGoals;
             addChild(_coolShades);
         }
